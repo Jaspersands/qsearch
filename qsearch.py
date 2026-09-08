@@ -290,6 +290,48 @@ from self_dual_wreath_recursive_polar_normalization_conservation_boundary import
 from self_dual_wreath_affine_gpe_nodelocal_naimark_access_boundary import write_affine_gpe_nodelocal_naimark_access_boundary_report
 from self_dual_wreath_positive_naimark_access_equivalence_boundary import write_positive_naimark_access_equivalence_boundary_report
 from self_dual_wreath_hierarchical_endpoint_schur_algebra_boundary import write_hierarchical_endpoint_schur_algebra_boundary_report
+from self_dual_wreath_affine_flag_aggregate_schur_query_boundary import write_affine_flag_aggregate_schur_query_boundary_report
+from self_dual_wreath_affine_node_frame_response_boundary import write_affine_node_frame_response_boundary_report
+from self_dual_wreath_scale_free_endpoint_graph_transfer_boundary import write_scale_free_endpoint_graph_transfer_boundary_report
+from self_dual_wreath_cayley_endpoint_gauge_compiler import write_cayley_endpoint_gauge_compiler_report
+from self_dual_wreath_affine_star_cayley_compiler import write_affine_star_cayley_compiler_report
+from self_dual_wreath_pair_carrier_label_contextuality import write_pair_carrier_label_contextuality_report
+from self_dual_wreath_occupied_carrier_octahedral_boundary import write_occupied_carrier_octahedral_boundary_report
+from self_dual_wreath_plancherel_carrier_contextuality import write_plancherel_carrier_contextuality_report
+from self_dual_wreath_plancherel_carrier_nonidentity_tail import write_plancherel_carrier_nonidentity_tail_report
+from self_dual_wreath_plancherel_carrier_near_derangement_reduction import (
+    write_plancherel_carrier_near_derangement_reduction_report,
+)
+from self_dual_wreath_plancherel_carrier_asymptotic_closure import (
+    write_plancherel_carrier_asymptotic_closure_report,
+)
+from self_dual_wreath_plancherel_carrier_racah_access_boundary import (
+    write_plancherel_carrier_racah_access_boundary_report,
+)
+from self_dual_wreath_carrier_noncentral_readout_boundary import (
+    write_carrier_noncentral_readout_boundary_report,
+)
+from self_dual_wreath_carrier_conditioned_pgm_boundary import (
+    write_carrier_conditioned_pgm_boundary_report,
+)
+from self_dual_wreath_carrier_holevo_budget_theorem import (
+    write_carrier_holevo_budget_theorem_report,
+)
+from self_dual_wreath_carrier_branch_pgm_success_certificate import (
+    write_carrier_branch_pgm_success_certificate_report,
+)
+from self_dual_wreath_disjoint_pair_branch_pgm_compiler_boundary import (
+    write_disjoint_pair_branch_pgm_compiler_boundary_report,
+)
+from self_dual_wreath_disjoint_pair_covariance_polar_reduction import (
+    write_disjoint_pair_covariance_polar_reduction_report,
+)
+from self_dual_wreath_dimensionless_pgm_truncation_bridge import (
+    write_dimensionless_pgm_truncation_bridge_report,
+)
+from self_dual_wreath_local_block_metric_normalization_no_go import (
+    write_local_block_metric_normalization_no_go_report,
+)
 import argparse
 import json
 from collections import Counter
@@ -1507,6 +1549,22 @@ from coset_hidden_involution_paired_tower_missing_label_boundary import write_pa
 from coset_hidden_involution_physical_target_convolution_normal_form import write_physical_target_convolution_report
 from coset_hidden_involution_plancherel_local_commutant_certificate import write_plancherel_local_commutant_report
 from coset_hidden_involution_rank_tracking_commutant_witness import write_rank_tracking_commutant_report
+from coset_hidden_involution_multiplicity_twirl_projection import (
+    write_multiplicity_twirl_projection_report,
+)
+from coset_hidden_involution_multiplicity_fiber_trace import (
+    write_multiplicity_fiber_trace_report,
+)
+from coset_hidden_involution_high_mass_support_scan import (
+    write_high_mass_support_scan_report,
+)
+from coset_hidden_involution_source_weighted_support_portfolio import (
+    write_source_weighted_support_portfolio_report,
+)
+from coset_hidden_involution_spectral_label_budget import write_spectral_label_budget_report
+from coset_hidden_involution_natural_support_six_mass_audit import (
+    write_natural_support_six_mass_audit,
+)
 from coset_hidden_involution_shared_conjugation_qsvt_lower_bound import write_shared_conjugation_QSVT_report
 from coset_hidden_involution_single_hecke_all_degree_moment_no_go import write_all_degree_moment_report
 from coset_hidden_involution_single_hecke_bounded_spectral_no_go import write_bounded_spectral_report
@@ -2226,6 +2284,647 @@ def command_sdw_hierarchical_endpoint_schur_algebra_boundary(
     )
     validation = validate_registry()
     print("self_dual_wreath_hierarchical_endpoint_schur_algebra_boundary complete")
+    print(
+        "Speedup claim allowed: "
+        f"{payload.get('claim_gate', {}).get('speedup_claim_allowed', False)}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_sdw_affine_flag_aggregate_schur_query_boundary(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_affine_flag_aggregate_schur_query_boundary_report(
+        write_registry=not args.no_registry
+    )
+    validation = validate_registry()
+    print("self_dual_wreath_affine_flag_aggregate_schur_query_boundary complete")
+    print(
+        "Speedup claim allowed: "
+        f"{payload.get('claim_gate', {}).get('speedup_claim_allowed', False)}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_sdw_affine_node_frame_response_boundary(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_affine_node_frame_response_boundary_report(
+        write_registry=not args.no_registry
+    )
+    validation = validate_registry()
+    print("self_dual_wreath_affine_node_frame_response_boundary complete")
+    print(
+        "Speedup claim allowed: "
+        f"{payload.get('claim_gate', {}).get('speedup_claim_allowed', False)}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_sdw_cayley_endpoint_gauge_compiler(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_cayley_endpoint_gauge_compiler_report(
+        write_registry=not args.no_registry
+    )
+    validation = validate_registry()
+    print("self_dual_wreath_cayley_endpoint_gauge_compiler complete")
+    print(
+        "Speedup claim allowed: "
+        f"{payload.get('claim_gate', {}).get('speedup_claim_allowed', False)}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_sdw_affine_star_cayley_compiler(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_affine_star_cayley_compiler_report(
+        write_registry=not args.no_registry
+    )
+    validation = validate_registry()
+    print("self_dual_wreath_affine_star_cayley_compiler complete")
+    print(
+        "Covered physical W6 channels: "
+        f"{payload.get('headline_metrics', {}).get('physical_w6_compiler_covered_channel_count', 0)}"
+    )
+    print(
+        "Speedup claim allowed: "
+        f"{payload.get('claim_gate', {}).get('speedup_claim_allowed', False)}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_sdw_pair_carrier_label_contextuality(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_pair_carrier_label_contextuality_report(
+        write_registry=not args.no_registry
+    )
+    validation = validate_registry()
+    print("self_dual_wreath_pair_carrier_label_contextuality complete")
+    print(
+        "Overlapping label commutator: "
+        f"{payload.get('headline_metrics', {}).get('overlapping_s3_projector_commutator_norm', 0.0)}"
+    )
+    print(
+        "Speedup claim allowed: "
+        f"{payload.get('claim_gate', {}).get('speedup_claim_allowed', False)}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_sdw_occupied_carrier_octahedral_boundary(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_occupied_carrier_octahedral_boundary_report(
+        write_registry=not args.no_registry
+    )
+    validation = validate_registry()
+    print("self_dual_wreath_occupied_carrier_octahedral_boundary complete")
+    print(
+        "Occupied support commutator: "
+        f"{payload.get('headline_metrics', {}).get('occupied_support_projector_commutator_norm', 0.0)}"
+    )
+    print(
+        "Unit-correlation minimum eigenvalue: "
+        f"{payload.get('headline_metrics', {}).get('unit_correlation_minimum_eigenvalue', 0.0)}"
+    )
+    print(
+        "Speedup claim allowed: "
+        f"{payload.get('claim_gate', {}).get('speedup_claim_allowed', False)}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_sdw_plancherel_carrier_contextuality(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_plancherel_carrier_contextuality_report(
+        write_registry=not args.no_registry,
+        sample_count=args.samples,
+    )
+    validation = validate_registry()
+    print("self_dual_wreath_plancherel_carrier_contextuality complete")
+    print(
+        "Tail weighted commuting probability: "
+        f"{payload.get('headline_metrics', {}).get('tail_estimated_weighted_commuting_probability', 0.0)}"
+    )
+    print(
+        "Tail contextuality confidence lower bound: "
+        f"{payload.get('headline_metrics', {}).get('tail_contextuality_confidence_lower', 0.0)}"
+    )
+    print(
+        "Asymptotic contextuality proved: "
+        f"{payload.get('claim_gate', {}).get('weighted_commuting_probability_asymptotically_vanishes_proved', False)}"
+    )
+    print(
+        "Speedup claim allowed: "
+        f"{payload.get('claim_gate', {}).get('speedup_claim_allowed', False)}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_sdw_plancherel_carrier_nonidentity_tail(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    default_degrees = (3, 4, 5, 6, 8, 10, 12, 14, 16, 18, 20)
+    exact_degrees = tuple(
+        degree for degree in default_degrees if degree <= args.max_exact_degree
+    )
+    if args.max_exact_degree not in exact_degrees:
+        exact_degrees += (args.max_exact_degree,)
+    payload = write_plancherel_carrier_nonidentity_tail_report(
+        write_registry=not args.no_registry,
+        exact_degrees=tuple(sorted(set(exact_degrees))),
+    )
+    validation = validate_registry()
+    print("self_dual_wreath_plancherel_carrier_nonidentity_tail complete")
+    print(
+        "Largest exact degree: "
+        f"{payload.get('headline_metrics', {}).get('largest_exact_weighted_commuting_degree', 0)}"
+    )
+    print(
+        "Exact conditional nonidentity commuting probability: "
+        f"{payload.get('headline_metrics', {}).get('tail_exact_nonidentity_conditional_commuting_probability', 0.0)}"
+    )
+    print(
+        "High-support tail theorem proved: "
+        f"{payload.get('claim_gate', {}).get('mesoscopic_macroscopic_commuting_tail_vanishes_proved', False)}"
+    )
+    print(
+        "Speedup claim allowed: "
+        f"{payload.get('claim_gate', {}).get('speedup_claim_allowed', False)}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_sdw_plancherel_carrier_near_derangement_reduction(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    default_degrees = (10, 12, 14, 16, 18, 20)
+    exact_degrees = tuple(
+        degree for degree in default_degrees if degree <= args.max_exact_degree
+    )
+    if args.max_exact_degree not in exact_degrees:
+        exact_degrees += (args.max_exact_degree,)
+    payload = write_plancherel_carrier_near_derangement_reduction_report(
+        write_registry=not args.no_registry,
+        exact_degrees=tuple(sorted(set(exact_degrees))),
+    )
+    validation = validate_registry()
+    print("self_dual_wreath_plancherel_carrier_near_derangement_reduction complete")
+    print(
+        "Largest exact near-derangement degree: "
+        f"{payload.get('headline_metrics', {}).get('largest_exact_near_derangement_degree', 0)}"
+    )
+    print(
+        "Tail log-corner contribution: "
+        f"{payload.get('headline_metrics', {}).get('tail_exact_log_corner_commuting_contribution', 0.0)}"
+    )
+    print(
+        "Logarithmic-fixed-point tail theorem proved: "
+        f"{payload.get('claim_gate', {}).get('logarithmic_fixed_point_commuting_tail_vanishes_proved', False)}"
+    )
+    print(
+        "Speedup claim allowed: "
+        f"{payload.get('claim_gate', {}).get('speedup_claim_allowed', False)}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_sdw_plancherel_carrier_asymptotic_closure(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_plancherel_carrier_asymptotic_closure_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    print("self_dual_wreath_plancherel_carrier_asymptotic_closure complete")
+    print(
+        "Weighted commuting probability vanishes proved: "
+        f"{payload.get('claim_gate', {}).get('weighted_commuting_probability_asymptotically_vanishes_proved', False)}"
+    )
+    print(
+        "Natural carrier contextuality limit two proved: "
+        f"{payload.get('claim_gate', {}).get('natural_aggregate_carrier_contextuality_limit_two_proved', False)}"
+    )
+    print(
+        "Structured Racah resolver compiled: "
+        f"{payload.get('claim_gate', {}).get('structured_multistar_racah_resolver_compiled', False)}"
+    )
+    print(
+        "Speedup claim allowed: "
+        f"{payload.get('claim_gate', {}).get('speedup_claim_allowed', False)}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_sdw_plancherel_carrier_racah_access_boundary(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_plancherel_carrier_racah_access_boundary_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    print("self_dual_wreath_plancherel_carrier_racah_access_boundary complete")
+    print(
+        "Minimum multiplicity Racah block identified: "
+        f"{payload.get('claim_gate', {}).get('minimum_multiplicity_racah_block_identified', False)}"
+    )
+    print(
+        "Carrier disturbance accessible by pair GPE: "
+        f"{payload.get('claim_gate', {}).get('carrier_contextuality_operationally_accessible_by_pair_gpe', False)}"
+    )
+    print(
+        "Active Racah physical mass tends to one: "
+        f"{payload.get('claim_gate', {}).get('active_racah_physical_mass_tends_to_one', False)}"
+    )
+    print(
+        "Carrier-only hidden-involution decoder: "
+        f"{payload.get('claim_gate', {}).get('carrier_only_protocol_can_identify_hidden_involution', False)}"
+    )
+    print(
+        "Speedup claim allowed: "
+        f"{payload.get('claim_gate', {}).get('speedup_claim_allowed', False)}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_sdw_carrier_noncentral_readout_boundary(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_carrier_noncentral_readout_boundary_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    print("self_dual_wreath_carrier_noncentral_readout_boundary complete")
+    print(
+        "Carrier transcript zero information: "
+        f"{payload.get('claim_gate', {}).get('carrier_transcript_zero_hidden_information_proved', False)}"
+    )
+    print(
+        "Minimum covariant noncentral readout compiled: "
+        f"{payload.get('claim_gate', {}).get('minimum_covariant_noncentral_readout_compiled', False)}"
+    )
+    print(
+        "Physical hidden-conditioned row signal: "
+        f"{payload.get('claim_gate', {}).get('physical_hidden_conditioned_row_signal_exhibited', False)}"
+    )
+    print(
+        "Robust product-baseline advantage: "
+        f"{payload.get('claim_gate', {}).get('finite_carrier_gain_robust_to_product_baselines', False)}"
+    )
+    print(
+        "Scalable hidden-involution decoder: "
+        f"{payload.get('claim_gate', {}).get('scalable_hidden_involution_decoder_compiled', False)}"
+    )
+    print(
+        "Speedup claim allowed: "
+        f"{payload.get('claim_gate', {}).get('speedup_claim_allowed', False)}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_sdw_carrier_conditioned_pgm_boundary(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_carrier_conditioned_pgm_boundary_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    print("self_dual_wreath_carrier_conditioned_pgm_boundary complete")
+    print(
+        "Hidden-independent carrier branch law: "
+        f"{payload.get('claim_gate', {}).get('carrier_branch_probability_hidden_independent', False)}"
+    )
+    print(
+        "Finite collective gain retained: "
+        f"{payload.get('claim_gate', {}).get('finite_collective_information_gain_retained', False)}"
+    )
+    print(
+        "Average support conditioning improved: "
+        f"{payload.get('claim_gate', {}).get('carrier_conditioning_improves_average_support_conditioning', False)}"
+    )
+    print(
+        "Multiplicity whitening eliminated: "
+        f"{payload.get('claim_gate', {}).get('carrier_conditioning_eliminates_multiplicity_whitening', False)}"
+    )
+    print(
+        "Polynomial branch PGM: "
+        f"{payload.get('claim_gate', {}).get('polynomial_carrier_branch_pgm_compiled', False)}"
+    )
+    print(
+        "Speedup claim allowed: "
+        f"{payload.get('claim_gate', {}).get('speedup_claim_allowed', False)}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_sdw_carrier_holevo_budget_theorem(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_carrier_holevo_budget_theorem_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    print("self_dual_wreath_carrier_holevo_budget_theorem complete")
+    print(
+        "Adaptive carrier Holevo budget proved: "
+        f"{payload.get('claim_gate', {}).get('adaptive_carrier_holevo_budget_proved', False)}"
+    )
+    print(
+        "Shallow hierarchy preserves extensive Holevo information: "
+        f"{payload.get('claim_gate', {}).get('shallow_carrier_hierarchy_preserves_extensive_holevo', False)}"
+    )
+    print(
+        "Accessible information retained: "
+        f"{payload.get('claim_gate', {}).get('carrier_hierarchy_accessible_information_retained', False)}"
+    )
+    print(
+        "Full linear-depth carrier tree certified: "
+        f"{payload.get('claim_gate', {}).get('full_linear_depth_carrier_tree_certified', False)}"
+    )
+    print(
+        "Hidden-involution decoder: "
+        f"{payload.get('claim_gate', {}).get('hidden_involution_decoder_compiled', False)}"
+    )
+    print(
+        "Speedup claim allowed: "
+        f"{payload.get('claim_gate', {}).get('speedup_claim_allowed', False)}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_sdw_carrier_branch_pgm_success_certificate(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_carrier_branch_pgm_success_certificate_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    print("self_dual_wreath_carrier_branch_pgm_success_certificate complete")
+    print(
+        "Carrier branch PGM success certificate: "
+        f"{payload.get('claim_gate', {}).get('carrier_branch_pgm_success_certificate_proved', False)}"
+    )
+    print(
+        "Finite accessible collective success certified: "
+        f"{payload.get('claim_gate', {}).get('finite_accessible_collective_success_certified', False)}"
+    )
+    print(
+        "Aggregate Jensen certificate: "
+        f"{payload.get('claim_gate', {}).get('aggregate_jensen_success_certificate_proved', False)}"
+    )
+    print(
+        "Operational pinching anti-locking: "
+        f"{payload.get('claim_gate', {}).get('all_n_operational_pinching_anti_locking_proved', False)}"
+    )
+    print(
+        "Natural outcome angle first moment bounded: "
+        f"{payload.get('claim_gate', {}).get('all_n_natural_outcome_angle_first_moment_proved', False)}"
+    )
+    print(
+        "Disjoint-pair collision transfer bounded: "
+        f"{payload.get('claim_gate', {}).get('disjoint_pair_collision_biased_angle_moment_bounded', False)}"
+    )
+    print(
+        "Overlapping adaptive collision control: "
+        f"{payload.get('claim_gate', {}).get('overlapping_adaptive_collision_control_proved', False)}"
+    )
+    print(
+        "Coherent branch PGM: "
+        f"{payload.get('claim_gate', {}).get('coherent_carrier_branch_pgm_compiled', False)}"
+    )
+    print(
+        "Speedup claim allowed: "
+        f"{payload.get('claim_gate', {}).get('speedup_claim_allowed', False)}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_sdw_disjoint_pair_branch_pgm_compiler_boundary(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_disjoint_pair_branch_pgm_compiler_boundary_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    print("self_dual_wreath_disjoint_pair_branch_pgm_compiler_boundary complete")
+    print(
+        "Shared-hidden-label covariance identity: "
+        f"{payload.get('claim_gate', {}).get('shared_hidden_label_covariance_identity_proved', False)}"
+    )
+    print(
+        "Naive pair-local branch PGM falsified: "
+        f"{payload.get('claim_gate', {}).get('naive_pair_local_branch_pgm_compiler_falsified', False)}"
+    )
+    print(
+        "Covariance-aware branch PGM: "
+        f"{payload.get('claim_gate', {}).get('covariance_aware_branch_pgm_compiled', False)}"
+    )
+    print(
+        "Hidden-involution decoder: "
+        f"{payload.get('claim_gate', {}).get('hidden_involution_decoder_compiled', False)}"
+    )
+    print(
+        "Speedup claim allowed: "
+        f"{payload.get('claim_gate', {}).get('speedup_claim_allowed', False)}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_sdw_disjoint_pair_covariance_polar_reduction(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_disjoint_pair_covariance_polar_reduction_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    gate = payload.get("claim_gate", {})
+    print("self_dual_wreath_disjoint_pair_covariance_polar_reduction complete")
+    print(
+        "Dimensionless covariance frame reduction: "
+        f"{gate.get('dimensionless_covariance_frame_reduction_proved', False)}"
+    )
+    print(
+        "Natural bounded-normalization schema: "
+        f"{gate.get('constant_mass_bounded_covariance_lcu_schema_proved', False)}"
+    )
+    print(
+        "Uniform public block encoding compiled: "
+        f"{gate.get('uniform_public_covariance_block_encoding_compiled', False)}"
+    )
+    print(
+        "Inverse-square-root spectral gap: "
+        f"{gate.get('inverse_square_root_spectral_gap_proved', False)}"
+    )
+    print(f"Speedup claim allowed: {gate.get('speedup_claim_allowed', False)}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_sdw_dimensionless_pgm_truncation_bridge(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_dimensionless_pgm_truncation_bridge_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    gate = payload.get("claim_gate", {})
+    print("self_dual_wreath_dimensionless_pgm_truncation_bridge complete")
+    print(
+        "Mixed-state truncated PGM retention: "
+        f"{gate.get('mixed_state_truncated_pgm_success_retention_proved', False)}"
+    )
+    print(
+        "Minimum positive spectral edge required: "
+        f"{gate.get('minimum_positive_spectral_edge_required', True)}"
+    )
+    print(
+        "Full threshold metric block encoding: "
+        f"{gate.get('full_threshold_metric_block_encoding_compiled', False)}"
+    )
+    print(
+        "PGM output isometry: "
+        f"{gate.get('pgm_output_isometry_compiled', False)}"
+    )
+    print(f"Speedup claim allowed: {gate.get('speedup_claim_allowed', False)}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_sdw_local_block_metric_normalization_no_go(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_local_block_metric_normalization_no_go_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    gate = payload.get("claim_gate", {})
+    print("self_dual_wreath_local_block_metric_normalization_no_go complete")
+    print(
+        "Pair-carrier natural marginal: "
+        f"{gate.get('pair_carrier_exact_natural_marginal_proved', False)}"
+    )
+    print(
+        "Local threshold metric composition falsified: "
+        f"{gate.get('local_singleton_pair_product_metric_access_falsified', False)}"
+    )
+    print(
+        "Global shared-label metric access compiled: "
+        f"{gate.get('global_shared_label_metric_access_compiled', False)}"
+    )
+    print(f"Speedup claim allowed: {gate.get('speedup_claim_allowed', False)}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_sdw_scale_free_endpoint_graph_transfer_boundary(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_scale_free_endpoint_graph_transfer_boundary_report(
+        write_registry=not args.no_registry
+    )
+    validation = validate_registry()
+    print("self_dual_wreath_scale_free_endpoint_graph_transfer_boundary complete")
     print(
         "Speedup claim allowed: "
         f"{payload.get('claim_gate', {}).get('speedup_claim_allowed', False)}"
@@ -18753,6 +19452,136 @@ def command_coset_hidden_involution_rank_tracking_commutant_witness(args: argpar
     return 0 if validation["valid"] else 1
 
 
+def command_coset_hidden_involution_multiplicity_twirl_projection(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_multiplicity_twirl_projection_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    gate = payload.get("claim_gate", {})
+    print("coset_hidden_involution_multiplicity_twirl_projection complete")
+    print(
+        "Compressed orbit projection verified: "
+        f"{gate.get('compressed_orbit_representative_method_verified', False)}"
+    )
+    print(
+        "Strict rank-tracking growth falsified: "
+        f"{gate.get('strict_rank_tracking_support_growth_falsified', False)}"
+    )
+    print(
+        "Uniform support-six theorem: "
+        f"{gate.get('universal_support_six_generation_proved', False)}"
+    )
+    print(f"Speedup claim allowed: {gate.get('speedup_claim_allowed', False)}")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_coset_hidden_involution_multiplicity_fiber_trace(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_multiplicity_fiber_trace_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    gate = payload.get("claim_gate", {})
+    print("coset_hidden_involution_multiplicity_fiber_trace complete")
+    print(
+        "Exact copy-fiber trace verified: "
+        f"{gate.get('exact_copy_fiber_trace_verified', False)}"
+    )
+    print(
+        "Polynomial typical compression proved: "
+        f"{gate.get('polynomial_typical_ambient_compression_proved', False)}"
+    )
+    print(
+        "Coherent multiplicity transform: "
+        f"{gate.get('coherent_multiplicity_transform_compiled', False)}"
+    )
+    print(f"Speedup claim allowed: {gate.get('speedup_claim_allowed', False)}")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_coset_hidden_involution_high_mass_support_scan(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_high_mass_support_scan_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload.get("headline_metrics", {})
+    gate = payload.get("claim_gate", {})
+    print("coset_hidden_involution_high_mass_support_scan complete")
+    print(
+        "Target natural mass: "
+        f"{metrics.get('target_natural_mass_probability', 0.0):.12f}"
+    )
+    print(
+        "Support-three algebra dimension: "
+        f"{metrics.get('support_three_generated_algebra_dimension', 0)}"
+    )
+    print(
+        "Support-four full copy algebra: "
+        f"{gate.get('support_four_full_copy_algebra_numerically_certified', False)}"
+    )
+    print(
+        "Direct commutant nullity: "
+        f"{metrics.get('support_four_direct_commutant_nullity', 0)}"
+    )
+    print(f"Speedup claim allowed: {gate.get('speedup_claim_allowed', False)}")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_coset_hidden_involution_source_weighted_support_portfolio(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_source_weighted_support_portfolio_report(
+        write_registry=not args.no_registry, target_count=args.target_count,
+    )
+    print(payload["summary"])
+    print(json.dumps(payload["headline_metrics"], indent=2))
+    return 0 if validate_registry()["valid"] else 1
+
+
+def command_coset_hidden_involution_spectral_label_budget(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_spectral_label_budget_report(write_registry=not args.no_registry)
+    print(payload["summary"])
+    print(json.dumps(payload["headline_metrics"], indent=2))
+    return 0 if validate_registry()["valid"] else 1
+
+
+def command_coset_hidden_involution_natural_support_six_mass_audit(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_natural_support_six_mass_audit(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload.get("headline_metrics", {})
+    print("coset_hidden_involution_natural_support_six_mass_audit complete")
+    print(
+        "Repeated natural mass: "
+        f"{metrics.get('repeated_natural_mass_probability', 0.0):.12f}"
+    )
+    print(
+        "Audited support-six natural mass: "
+        f"{metrics.get('audited_rank_natural_mass_probability', 0.0):.12g}"
+    )
+    print(
+        "Uniform support-six theorem: "
+        f"{payload.get('claim_gate', {}).get('uniform_support_six_generation_proved', False)}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
 def command_coset_hidden_involution_shared_conjugation_qsvt_lower_bound(args: argparse.Namespace) -> int:
     initialize_seed_registry(overwrite=False)
     try:
@@ -26138,6 +26967,39 @@ def build_parser() -> argparse.ArgumentParser:
     )
     parser_coset_hidden_involution_rank_tracking_commutant_witness.add_argument("--no-registry", action="store_true")
     parser_coset_hidden_involution_rank_tracking_commutant_witness.set_defaults(func=command_coset_hidden_involution_rank_tracking_commutant_witness)
+    parser_coset_hidden_involution_multiplicity_twirl_projection = subparsers.add_parser(
+        "coset-hidden-involution-multiplicity-twirl-projection",
+        help="Project bounded-support hyperoctahedral orbit representatives directly into repeated multiplicity blocks and audit support growth.",
+    )
+    parser_coset_hidden_involution_multiplicity_twirl_projection.add_argument("--no-registry", action="store_true")
+    parser_coset_hidden_involution_multiplicity_twirl_projection.set_defaults(func=command_coset_hidden_involution_multiplicity_twirl_projection)
+    parser_coset_hidden_involution_multiplicity_fiber_trace = subparsers.add_parser(
+        "coset-hidden-involution-multiplicity-fiber-trace",
+        help="Contract exact hyperoctahedral copy matrices through one signed YJM multiplicity fiber without forming a full isotypic basis.",
+    )
+    parser_coset_hidden_involution_multiplicity_fiber_trace.add_argument("--no-registry", action="store_true")
+    parser_coset_hidden_involution_multiplicity_fiber_trace.set_defaults(func=command_coset_hidden_involution_multiplicity_fiber_trace)
+    parser_coset_hidden_involution_high_mass_support_scan = subparsers.add_parser(
+        "coset-hidden-involution-high-mass-support-scan",
+        help="Test bounded-support copy-algebra generation on the highest-mass untested repeated S_14 branch.",
+    )
+    parser_coset_hidden_involution_high_mass_support_scan.add_argument("--no-registry", action="store_true")
+    parser_coset_hidden_involution_high_mass_support_scan.set_defaults(func=command_coset_hidden_involution_high_mass_support_scan)
+    portfolio = subparsers.add_parser("coset-hidden-involution-source-weighted-support-portfolio",
+                                      help="Scan exact source-ranked multiplicity blocks with numerical commutant diagnostics.")
+    portfolio.add_argument("--target-count", type=int, default=5)
+    portfolio.add_argument("--no-registry", action="store_true")
+    portfolio.set_defaults(func=command_coset_hidden_involution_source_weighted_support_portfolio)
+    label_budget = subparsers.add_parser("coset-hidden-involution-spectral-label-budget",
+                                         help="Audit the exact source-mass capacity of normalized spectral labels.")
+    label_budget.add_argument("--no-registry", action="store_true")
+    label_budget.set_defaults(func=command_coset_hidden_involution_spectral_label_budget)
+    parser_coset_hidden_involution_natural_support_six_mass_audit = subparsers.add_parser(
+        "coset-hidden-involution-natural-support-six-mass-audit",
+        help="Measure exact natural-source coverage of finite support-six multiplicity controls and rank untested high-mass blocks.",
+    )
+    parser_coset_hidden_involution_natural_support_six_mass_audit.add_argument("--no-registry", action="store_true")
+    parser_coset_hidden_involution_natural_support_six_mass_audit.set_defaults(func=command_coset_hidden_involution_natural_support_six_mass_audit)
     parser_coset_hidden_involution_shared_conjugation_qsvt_lower_bound = subparsers.add_parser(
         "coset-hidden-involution-shared-conjugation-qsvt-lower-bound",
         help="QSVT lower bound for the shared-conjugation likelihood average.",
@@ -26434,6 +27296,212 @@ def build_parser() -> argparse.ArgumentParser:
     endpoint_schur.add_argument("--no-registry", action="store_true")
     endpoint_schur.set_defaults(
         func=command_sdw_hierarchical_endpoint_schur_algebra_boundary
+    )
+
+    affine_aggregate_schur = subparsers.add_parser(
+        "self-dual-wreath-affine-flag-aggregate-schur-query-boundary",
+        help="Run the affine-flag label, nested Schur-short, and addressed aggregate-query boundary theorem.",
+    )
+    affine_aggregate_schur.add_argument("--no-registry", action="store_true")
+    affine_aggregate_schur.set_defaults(
+        func=command_sdw_affine_flag_aggregate_schur_query_boundary
+    )
+
+    affine_node_response = subparsers.add_parser(
+        "self-dual-wreath-affine-node-frame-response-boundary",
+        help="Run the exact affine-node representation frame and separate-QSVT natural response boundary theorem.",
+    )
+    affine_node_response.add_argument("--no-registry", action="store_true")
+    affine_node_response.set_defaults(
+        func=command_sdw_affine_node_frame_response_boundary
+    )
+
+    cayley_endpoint = subparsers.add_parser(
+        "self-dual-wreath-cayley-endpoint-gauge-compiler",
+        help="Run the scale-free Hermitian Cayley endpoint, recursive child-gauge, and root-anchor boundary theorem.",
+    )
+    cayley_endpoint.add_argument("--no-registry", action="store_true")
+    cayley_endpoint.set_defaults(
+        func=command_sdw_cayley_endpoint_gauge_compiler
+    )
+
+    affine_star_cayley = subparsers.add_parser(
+        "self-dual-wreath-affine-star-cayley-compiler",
+        help="Run the normalization-one label-resolved affine-star Cayley compiler and spectrum-degree boundary.",
+    )
+    affine_star_cayley.add_argument("--no-registry", action="store_true")
+    affine_star_cayley.set_defaults(
+        func=command_sdw_affine_star_cayley_compiler
+    )
+
+    pair_carrier_labels = subparsers.add_parser(
+        "self-dual-wreath-pair-carrier-label-contextuality",
+        help="Run the coherent local pair-carrier label compiler and overlapping-label contextuality boundary.",
+    )
+    pair_carrier_labels.add_argument("--no-registry", action="store_true")
+    pair_carrier_labels.set_defaults(
+        func=command_sdw_pair_carrier_label_contextuality
+    )
+
+    occupied_octahedral = subparsers.add_parser(
+        "self-dual-wreath-occupied-carrier-octahedral-boundary",
+        help="Run the all-n occupied octahedral channel and repeated-source natural-mass boundary theorem.",
+    )
+    occupied_octahedral.add_argument("--no-registry", action="store_true")
+    occupied_octahedral.set_defaults(
+        func=command_sdw_occupied_carrier_octahedral_boundary
+    )
+
+    plancherel_carrier_contextuality = subparsers.add_parser(
+        "self-dual-wreath-plancherel-carrier-contextuality",
+        help="Run the exact natural overlapping-carrier contextuality reduction and weighted commuting-moment probe.",
+    )
+    plancherel_carrier_contextuality.add_argument(
+        "--samples", type=int, default=20_000
+    )
+    plancherel_carrier_contextuality.add_argument(
+        "--no-registry", action="store_true"
+    )
+    plancherel_carrier_contextuality.set_defaults(
+        func=command_sdw_plancherel_carrier_contextuality
+    )
+
+    plancherel_carrier_tail = subparsers.add_parser(
+        "self-dual-wreath-plancherel-carrier-nonidentity-tail",
+        help="Run the exact centralizer cycle index and isolate the high-support character-squared commuting tail.",
+    )
+    plancherel_carrier_tail.add_argument(
+        "--max-exact-degree", type=int, default=20, choices=range(3, 25)
+    )
+    plancherel_carrier_tail.add_argument("--no-registry", action="store_true")
+    plancherel_carrier_tail.set_defaults(
+        func=command_sdw_plancherel_carrier_nonidentity_tail
+    )
+
+    near_derangement_reduction = subparsers.add_parser(
+        "self-dual-wreath-plancherel-carrier-near-derangement-reduction",
+        help="Reduce the exact Plancherel carrier tail to logarithmic-fixed-point near-derangement class pairs.",
+    )
+    near_derangement_reduction.add_argument(
+        "--max-exact-degree", type=int, default=20, choices=range(10, 25, 2)
+    )
+    near_derangement_reduction.add_argument("--no-registry", action="store_true")
+    near_derangement_reduction.set_defaults(
+        func=command_sdw_plancherel_carrier_near_derangement_reduction
+    )
+
+    carrier_asymptotic_closure = subparsers.add_parser(
+        "self-dual-wreath-plancherel-carrier-asymptotic-closure",
+        help="Close the logarithmic-fixed-point kernel and prove the natural Plancherel carrier contextuality limit.",
+    )
+    carrier_asymptotic_closure.add_argument("--no-registry", action="store_true")
+    carrier_asymptotic_closure.set_defaults(
+        func=command_sdw_plancherel_carrier_asymptotic_closure
+    )
+
+    carrier_racah_access = subparsers.add_parser(
+        "self-dual-wreath-plancherel-carrier-racah-access-boundary",
+        help="Resolve the minimum active Racah block, compile the carrier disturbance test, and audit conjugation-invariant decoder failure.",
+    )
+    carrier_racah_access.add_argument("--no-registry", action="store_true")
+    carrier_racah_access.set_defaults(
+        func=command_sdw_plancherel_carrier_racah_access_boundary
+    )
+
+    carrier_noncentral_readout = subparsers.add_parser(
+        "self-dual-wreath-carrier-noncentral-readout-boundary",
+        help="Audit the minimum covariant noncentral row readout after carrier measurements against product and PGM baselines.",
+    )
+    carrier_noncentral_readout.add_argument("--no-registry", action="store_true")
+    carrier_noncentral_readout.set_defaults(
+        func=command_sdw_carrier_noncentral_readout_boundary
+    )
+
+    carrier_conditioned_pgm = subparsers.add_parser(
+        "self-dual-wreath-carrier-conditioned-pgm-boundary",
+        help="Factor the natural PGM over one pair-carrier flag and audit information retention, conditioning, and residual multiplicity whitening.",
+    )
+    carrier_conditioned_pgm.add_argument("--no-registry", action="store_true")
+    carrier_conditioned_pgm.set_defaults(
+        func=command_sdw_carrier_conditioned_pgm_boundary
+    )
+
+    carrier_holevo_budget = subparsers.add_parser(
+        "self-dual-wreath-carrier-holevo-budget-theorem",
+        help="Prove the all-n log-outcome Holevo loss budget for shallow adaptive carrier hierarchies.",
+    )
+    carrier_holevo_budget.add_argument("--no-registry", action="store_true")
+    carrier_holevo_budget.set_defaults(
+        func=command_sdw_carrier_holevo_budget_theorem
+    )
+
+    carrier_branch_pgm_certificate = subparsers.add_parser(
+        "self-dual-wreath-carrier-branch-pgm-success-certificate",
+        help="Certify carrier-branch PGM success from self-purity inflation and distinct-hypothesis collision burden.",
+    )
+    carrier_branch_pgm_certificate.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    carrier_branch_pgm_certificate.set_defaults(
+        func=command_sdw_carrier_branch_pgm_success_certificate
+    )
+
+    disjoint_pair_branch_pgm_compiler = subparsers.add_parser(
+        "self-dual-wreath-disjoint-pair-branch-pgm-compiler-boundary",
+        help="Falsify naive pair-local factorization of disjoint carrier-branch PGMs and isolate the shared-label covariance polar.",
+    )
+    disjoint_pair_branch_pgm_compiler.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    disjoint_pair_branch_pgm_compiler.set_defaults(
+        func=command_sdw_disjoint_pair_branch_pgm_compiler_boundary
+    )
+
+    disjoint_pair_covariance_polar = subparsers.add_parser(
+        "self-dual-wreath-disjoint-pair-covariance-polar-reduction",
+        help="Reduce the two-pair carrier PGM to a dimensionless shared-label covariance polar and audit its access normalization.",
+    )
+    disjoint_pair_covariance_polar.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    disjoint_pair_covariance_polar.set_defaults(
+        func=command_sdw_disjoint_pair_covariance_polar_reduction
+    )
+
+    dimensionless_pgm_truncation = subparsers.add_parser(
+        "self-dual-wreath-dimensionless-pgm-truncation-bridge",
+        help="Remove the minimum-positive-eigenvalue requirement by truncating the rank-scaled carrier PGM metric at a success-adaptive cutoff.",
+    )
+    dimensionless_pgm_truncation.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    dimensionless_pgm_truncation.set_defaults(
+        func=command_sdw_dimensionless_pgm_truncation_bridge
+    )
+
+    local_block_metric_no_go = subparsers.add_parser(
+        "self-dual-wreath-local-block-metric-normalization-no-go",
+        help="Prove the exact natural pair-carrier marginal and rule out local singleton/pair LCU composition at threshold width.",
+    )
+    local_block_metric_no_go.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    local_block_metric_no_go.set_defaults(
+        func=command_sdw_local_block_metric_normalization_no_go
+    )
+
+    scale_free_graph = subparsers.add_parser(
+        "self-dual-wreath-scale-free-endpoint-graph-transfer-boundary",
+        help="Run the response/short complementarity and scale-free relative graph-transfer boundary theorem.",
+    )
+    scale_free_graph.add_argument("--no-registry", action="store_true")
+    scale_free_graph.set_defaults(
+        func=command_sdw_scale_free_endpoint_graph_transfer_boundary
     )
 
     validate = subparsers.add_parser("validate", help="Validate candidates and experiments against proof obligations.")

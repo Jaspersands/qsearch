@@ -1,0 +1,138 @@
+{
+  "created_at": "2026-09-03T03:53:30.951857+00:00",
+  "theorem_contract": {
+    "input": "a repeated hyperoctahedral branch, one bounded-support ambient permutation, and sparse Young-seminormal generator actions",
+    "output": "the exact b-by-b copy matrix of its K-conjugation orbit average",
+    "non_claim": "No polynomial compression of typical ambient Specht spaces, coherent isotypic transform, normalized gap theorem, decoder, or speedup."
+  },
+  "theorem": {
+    "direct_root_fiber_projection": "Commuting pair-flip and YJM spectral projectors isolate one signed tableau fiber of exact dimension b(lambda;alpha,beta).",
+    "tableau_propagation": "Young-seminormal adjacent-edge recurrences propagate the root fiber through every V_alpha tensor V_beta tableau with a common copy gauge.",
+    "carrier_partial_trace": "Averaging the representative contraction over propagated tableaux and equal-weight sign characters equals the copy matrix of the full K twirl.",
+    "width_reduction": "The maximum live column width is b rather than b dim(W_mu), while the ambient Specht dimension remains exponential on typical partitions.",
+    "direct_root_fiber_projection_verified": true,
+    "tableau_propagation_verified": true,
+    "carrier_partial_trace_matches_full_twirl": true,
+    "carrier_partial_trace_matches_commutant_projection": true,
+    "polynomial_ambient_compression_proved": false,
+    "coherent_multiplicity_transform_compiled": false,
+    "theorem_verified": true,
+    "status": "matrix-free-copy-fiber-trace-validated-typical-ambient-scaling-open"
+  },
+  "validations": [
+    {
+      "control_id": "EXACT-K4-SIGNED-FULL-TWIRL",
+      "half_degree": 4,
+      "symmetric_partition": [
+        4,
+        2,
+        2
+      ],
+      "hyperoctahedral_partition": [
+        2
+      ],
+      "negative_hyperoctahedral_partition": [
+        2
+      ],
+      "branching_multiplicity": 2,
+      "carrier_weight_dimension": 1,
+      "equal_weight_character_count": 6,
+      "full_carrier_dimension": 6,
+      "maximum_tableau_propagation_residual": 0.0,
+      "maximum_carrier_orthogonality_residual": 2.603703785810335e-16,
+      "exact_reference_residual": 4.191247964555845e-16,
+      "validation_passed": true,
+      "status": "fiber-trace-matches-exact-full-twirl"
+    },
+    {
+      "control_id": "S14-SIGNED-COMMUTANT-PROJECTION",
+      "half_degree": 7,
+      "symmetric_partition": [
+        10,
+        2,
+        2
+      ],
+      "hyperoctahedral_partition": [
+        4,
+        1
+      ],
+      "negative_hyperoctahedral_partition": [
+        2
+      ],
+      "branching_multiplicity": 2,
+      "carrier_weight_dimension": 4,
+      "equal_weight_character_count": 21,
+      "full_carrier_dimension": 84,
+      "maximum_tableau_propagation_residual": 4.22673457635741e-16,
+      "maximum_carrier_orthogonality_residual": 2.851960358632121e-14,
+      "exact_reference_residual": 2.5219801032797316e-16,
+      "validation_passed": true,
+      "status": "fiber-trace-matches-independent-commutant-projection"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "run_highest_natural_mass_s14_block",
+      "resolved": false,
+      "resolution": "Use the fiber-width reduction on the ranked multiplicity-26 block and search support cutoffs four through six."
+    },
+    {
+      "obligation": "remove_exponential_ambient_specht_dimension",
+      "resolved": false,
+      "resolution": "Derive a symbolic occupancy, partition-algebra, or tensor-network contraction before claiming polynomial typical-block access."
+    },
+    {
+      "obligation": "measure_normalized_copy_space_gaps",
+      "resolved": false,
+      "resolution": "Generation alone is insufficient; exact or certified spectra of succinct separator combinations are required."
+    }
+  ],
+  "adversarial_audit": [
+    {
+      "challenge": "A single tableau fiber loses the carrier trace.",
+      "survives": false,
+      "response": "Seminormal propagation reconstructs an aligned orthonormal carrier basis, and the result matches a full K_4 twirl."
+    },
+    {
+      "challenge": "Signed beta sectors invalidate tableau propagation.",
+      "survives": false,
+      "response": "Independent S_|alpha| and S_|beta| recurrences plus sign-character transport match the separate commutant-projection implementation."
+    },
+    {
+      "challenge": "Column-width reduction makes the method polynomial.",
+      "survives": true,
+      "response": "Every fiber still has one row per ambient standard tableau, which is exponential for natural typical partitions."
+    }
+  ],
+  "headline_metrics": {
+    "direct_root_multiplicity_fiber_projection_theorem_count": 1,
+    "tableau_fiber_propagation_theorem_count": 1,
+    "carrier_partial_trace_full_twirl_validation_count": 1,
+    "independent_commutant_projection_validation_count": 1,
+    "maximum_validated_branching_multiplicity": 2,
+    "maximum_validated_full_carrier_dimension": 84,
+    "polynomial_typical_ambient_compression_theorem_count": 0,
+    "coherent_multiplicity_transform_count": 0,
+    "hidden_involution_decoder_count": 0,
+    "new_quantum_algorithm_count": 0
+  },
+  "claim_gate": {
+    "exact_copy_fiber_trace_verified": true,
+    "full_k_twirl_validation_passed": true,
+    "independent_commutant_projection_validation_passed": true,
+    "polynomial_typical_ambient_compression_proved": false,
+    "coherent_multiplicity_transform_compiled": false,
+    "normalized_gap_on_natural_mass_proved": false,
+    "hidden_involution_decoder_compiled": false,
+    "classical_separation_proved": false,
+    "speedup_claim_allowed": false,
+    "reason": "The exact classical contraction removes carrier column width but not the exponential ambient Specht basis, and it supplies no coherent transform, typical gap theorem, or decoder."
+  },
+  "status": "matrix-free-copy-fiber-trace-validated-typical-ambient-scaling-open",
+  "summary": "Validated direct signed-YJM multiplicity fibers and carrier partial traces against a full K_4 twirl and an independent S_14 commutant projection.",
+  "falsifiers_triggered": [
+    "Full isotypic commutant matrices are unnecessary for exact classical copy-space contraction.",
+    "Carrier-width reduction does not remove exponential ambient Specht dimension.",
+    "Exact finite copy matrices do not provide a coherent transform, normalized gap theorem, or decoder."
+  ]
+}

@@ -66,8 +66,8 @@
       "target_claim": "The coset observable is not a disguised classical invariant."
     }
   ],
-  "created_at": "2026-08-26T22:55:31.916356+00:00",
-  "lemma_count": 1226,
+  "created_at": "2026-09-03T08:31:01.023177+00:00",
+  "lemma_count": 1249,
   "lemmas": [
     {
       "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -101,6 +101,285 @@
       "id": "LEMMA-CODE-COSET-COLLECTIVE-SCALABLE-FAMILY-HARDNESS",
       "statement": "The instance family remains hard for classical canonicalization as size grows, not only for a fixed graph pair.",
       "status": "blocked-unproved"
+    },
+    {
+      "candidate_id": "CODE-COSET-COLLECTIVE",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-SUCCESS"
+      ],
+      "falsification_test": "Expand the centered covariance exactly and verify every finite branch probability, PGM completeness relation, and channel normalization.",
+      "id": "LEMMA-CODE-COSET-COLLECTIVE-DISJOINT-CARRIER-SHARED-LABEL-COVARIANCE",
+      "statement": "Disjoint pair-carrier conditioned states tensor-factor for fixed h, but their hypothesis average contains the exact shared-hidden-label covariance term.",
+      "status": "proved-exact-shared-label-covariance-decomposition"
+    },
+    {
+      "candidate_id": "CODE-COSET-COLLECTIVE",
+      "depends_on": [
+        "LEMMA-CODE-COSET-COLLECTIVE-DISJOINT-CARRIER-SHARED-LABEL-COVARIANCE",
+        "PO-MEASUREMENT"
+      ],
+      "falsification_test": "Compare the legal all-outcome local-MAP channel with the global branch PGM and test support-projector completeness and maximum eigenvalue of the diagonal product effects.",
+      "id": "LEMMA-CODE-COSET-COLLECTIVE-DISJOINT-CARRIER-NAIVE-LOCAL-PGM-NO-GO",
+      "statement": "Independent pair PGMs, or scaled same-label products of their effects, do not implement the shared-label disjoint-carrier branch PGM.",
+      "status": "proved-finite-naive-pair-local-compiler-no-go"
+    },
+    {
+      "candidate_id": "CODE-COSET-COLLECTIVE",
+      "depends_on": [
+        "LEMMA-CODE-COSET-COLLECTIVE-DISJOINT-CARRIER-NAIVE-LOCAL-PGM-NO-GO",
+        "PO-COMPLEXITY",
+        "PO-MEASUREMENT",
+        "PO-SUCCESS"
+      ],
+      "falsification_test": "Require physical mixed-state access, controlled multiplicity normalization, complete gate/query accounting, hidden-label output, and a comparison with classical algorithms.",
+      "id": "LEMMA-CODE-COSET-COLLECTIVE-DISJOINT-CARRIER-COVARIANCE-AWARE-PGM-COMPILER",
+      "statement": "A uniform polynomial circuit implements the covariance-aware shared-label branch polar and decodes the hidden involution without enumerating all hypotheses.",
+      "status": "blocked-shared-label-multiplicity-polar-open"
+    },
+    {
+      "candidate_id": "CODE-COSET-COLLECTIVE",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-SUCCESS"
+      ],
+      "falsification_test": "Derive the class average symbolically and test multiplicity-greater-than-one branches against Q_alpha/r_alpha without selecting a multiplicity basis.",
+      "id": "LEMMA-CODE-COSET-COLLECTIVE-PAIR-CARRIER-ALL-N-FLATNESS",
+      "statement": "Every active pair-carrier branch has hidden-average state Q_alpha/[g(lambda,mu,alpha)d_alpha], including repeated Kronecker multiplicities.",
+      "status": "proved-central-class-sum-pair-carrier-flatness"
+    },
+    {
+      "candidate_id": "CODE-COSET-COLLECTIVE",
+      "depends_on": [
+        "LEMMA-CODE-COSET-COLLECTIVE-PAIR-CARRIER-ALL-N-FLATNESS",
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY"
+      ],
+      "falsification_test": "Check the exact natural branch law, rank-scaled four-term LCU identity, frame identity, and reduced PGM effects before dropping any rank or likelihood denominator.",
+      "id": "LEMMA-CODE-COSET-COLLECTIVE-PAIR-COVARIANCE-RANK-NORMALIZATION-CANCELLATION",
+      "statement": "For two disjoint pair branches, explicit carrier ranks cancel from the PGM polar and the natural expected centered-covariance LCU normalization is at most 25.",
+      "status": "proved-dimensionless-covariance-polar-and-natural-normalization"
+    },
+    {
+      "candidate_id": "CODE-COSET-COLLECTIVE",
+      "depends_on": [
+        "LEMMA-CODE-COSET-COLLECTIVE-PAIR-COVARIANCE-RANK-NORMALIZATION-CANCELLATION",
+        "PO-COMPLEXITY",
+        "PO-INPUT-MODEL"
+      ],
+      "falsification_test": "Provide explicit reversible circuits and gate/error costs for matching-class PREPARE, controlled Young actions, carrier projection, branch truncation, and uncomputation.",
+      "id": "LEMMA-CODE-COSET-COLLECTIVE-PAIR-COVARIANCE-PUBLIC-BLOCK-ENCODING",
+      "statement": "Uniform matching-class PREPARE and coherent carrier projectors compile the conditional covariance LCU schema into a polynomial public block encoding.",
+      "status": "blocked-coherent-carrier-projector-and-prepare-compiler-open"
+    },
+    {
+      "candidate_id": "CODE-COSET-COLLECTIVE",
+      "depends_on": [
+        "LEMMA-CODE-COSET-COLLECTIVE-PAIR-COVARIANCE-PUBLIC-BLOCK-ENCODING",
+        "PO-COMPLEXITY",
+        "PO-SUCCESS"
+      ],
+      "falsification_test": "Find natural branches whose smallest positive eigenvalue decays superpolynomially, or prove a uniform moment/lower-tail bound strong enough for inverse-square-root QSVT.",
+      "id": "LEMMA-CODE-COSET-COLLECTIVE-PAIR-COVARIANCE-POSITIVE-SPECTRAL-EDGE",
+      "statement": "On retained natural branch mass, the minimum positive eigenvalue of I+K is inverse polynomial at the relevant copy count.",
+      "status": "superseded-not-required-dimensionless-truncation-proved"
+    },
+    {
+      "candidate_id": "CODE-COSET-COLLECTIVE",
+      "depends_on": [
+        "LEMMA-CODE-COSET-COLLECTIVE-DIMENSIONLESS-PGM-SPECTRAL-TRUNCATION",
+        "LEMMA-CODE-COSET-COLLECTIVE-FULL-THRESHOLD-RANK-SCALED-METRIC-ACCESS",
+        "PO-MEASUREMENT",
+        "PO-SUCCESS",
+        "PO-COMPLEXITY"
+      ],
+      "falsification_test": "Expand three and more shared-label blocks, account for higher cumulants, compile the hypothesis output register, and compare the decoded statistic with the strongest classical baseline.",
+      "id": "LEMMA-CODE-COSET-COLLECTIVE-THRESHOLD-COVARIANCE-PGM-OUTPUT-DECODER",
+      "statement": "The covariance reduction extends to information-threshold copies and a polynomial Naimark/output map decodes the hidden involution without hypothesis enumeration.",
+      "status": "blocked-higher-cumulants-output-isometry-and-decoder-open"
+    },
+    {
+      "candidate_id": "CODE-COSET-COLLECTIVE",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-SUCCESS",
+        "PO-COMPLEXITY"
+      ],
+      "falsification_test": "Verify Tr(G)=D, the low-mass dimension bound, sub-POVM completeness, gentle success loss, and the c-adaptive cutoff for mixed states.",
+      "id": "LEMMA-CODE-COSET-COLLECTIVE-DIMENSIONLESS-PGM-SPECTRAL-TRUNCATION",
+      "statement": "For G=D times the branch-average state, truncating below c^2/16 retains at least c/2 success whenever the ideal PGM has proved success c, independent of lambda_min^+(G).",
+      "status": "proved-dimensionless-gentle-pgm-truncation"
+    },
+    {
+      "candidate_id": "CODE-COSET-COLLECTIVE",
+      "depends_on": [
+        "LEMMA-CODE-COSET-COLLECTIVE-DIMENSIONLESS-PGM-SPECTRAL-TRUNCATION",
+        "LEMMA-CODE-COSET-COLLECTIVE-PAIR-COVARIANCE-PUBLIC-BLOCK-ENCODING",
+        "LEMMA-CODE-COSET-COLLECTIVE-LOCAL-BLOCK-THRESHOLD-METRIC-NORMALIZATION-NO-GO",
+        "PO-INPUT-MODEL",
+        "PO-COMPLEXITY"
+      ],
+      "falsification_test": "Write the exact threshold metric, account for all shared-label cumulants, and give a reversible block-encoding construction whose normalization and error are polynomial.",
+      "id": "LEMMA-CODE-COSET-COLLECTIVE-FULL-THRESHOLD-RANK-SCALED-METRIC-ACCESS",
+      "statement": "A polynomial-normalization block encoding includes every residual singleton factor and higher shared-label cumulant in the information-threshold rank-scaled metric.",
+      "status": "blocked-local-products-falsified-global-shared-label-access-open"
+    },
+    {
+      "candidate_id": "CODE-COSET-COLLECTIVE",
+      "depends_on": [
+        "LEMMA-CODE-COSET-COLLECTIVE-FULL-THRESHOLD-RANK-SCALED-METRIC-ACCESS",
+        "PO-MEASUREMENT",
+        "PO-SUCCESS",
+        "PO-COMPLEXITY"
+      ],
+      "falsification_test": "Specify PREPARE/SELECT/uncomputation, the hypothesis register, failure handling, total gate complexity, and a classical attack on the resulting output statistic.",
+      "id": "LEMMA-CODE-COSET-COLLECTIVE-TRUNCATED-PGM-HYPOTHESIS-OUTPUT-DECODER",
+      "statement": "The truncated inverse is embedded in a polynomial Naimark isometry that writes a useful hidden-involution hypothesis or decodable statistic without enumerating all matchings.",
+      "status": "blocked-truncated-pgm-output-isometry-and-decoder-open"
+    },
+    {
+      "candidate_id": "CODE-COSET-COLLECTIVE",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-SUCCESS"
+      ],
+      "falsification_test": "Sum the exact Kronecker branch law over both source labels, verify regular-dimension and nonidentity regular-character cancellations, and compare every target probability exactly.",
+      "id": "LEMMA-CODE-COSET-COLLECTIVE-PAIR-CARRIER-NATURAL-MARGINAL",
+      "statement": "Under the exact natural pair-carrier branch law, every carrier target has the same d_alpha^2(1+r_alpha)/|S_n| marginal as a singleton weak-Fourier source label.",
+      "status": "proved-exact-pair-carrier-natural-marginal"
+    },
+    {
+      "candidate_id": "CODE-COSET-COLLECTIVE",
+      "depends_on": [
+        "LEMMA-CODE-COSET-COLLECTIVE-PAIR-CARRIER-NATURAL-MARGINAL",
+        "LEMMA-CODE-COSET-COLLECTIVE-PAIR-COVARIANCE-RANK-NORMALIZATION-CANCELLATION",
+        "PO-INPUT-MODEL",
+        "PO-COMPLEXITY"
+      ],
+      "falsification_test": "Check every singleton/pair partition s+2p=k under the simultaneous natural ratio envelope; do not extend the conclusion to global twirls or nonmultiplicative recursions.",
+      "id": "LEMMA-CODE-COSET-COLLECTIVE-LOCAL-BLOCK-THRESHOLD-METRIC-NORMALIZATION-NO-GO",
+      "statement": "Every independent tensor product of rank-scaled singleton and disjoint-pair LCUs has superpolynomial normalization on overwhelming natural mass at information-threshold width.",
+      "status": "proved-local-singleton-pair-threshold-normalization-no-go"
+    },
+    {
+      "candidate_id": "CODE-COSET-COLLECTIVE",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY"
+      ],
+      "falsification_test": "Check exact branching dimensions, isotypic projectors, commutant orthogonality and K commutators, sparse representation actions, and generated algebra dimensions.",
+      "id": "LEMMA-CODE-COSET-COLLECTIVE-MULTIPLICITY-TWIRL-PROJECTION-DIAGNOSTIC",
+      "statement": "K-conjugacy orbit sums can be audited by Hilbert-Schmidt projection of one representative onto each exact repeated multiplicity commutant, without constructing full orbit matrices.",
+      "status": "proved-compressed-multiplicity-twirl-projection"
+    },
+    {
+      "candidate_id": "CODE-COSET-COLLECTIVE",
+      "depends_on": [
+        "LEMMA-CODE-COSET-COLLECTIVE-MULTIPLICITY-TWIRL-PROJECTION-DIAGNOSTIC",
+        "PO-MEASUREMENT"
+      ],
+      "falsification_test": "Compare the transported-sector formula with explicit full K twirling and verify nontrivial-beta branching dimensions, stabilizer commutators, and generated copy algebras.",
+      "id": "LEMMA-CODE-COSET-COLLECTIVE-SIGNED-WEIGHT-TWIRL-PROJECTION",
+      "statement": "For any hyperoctahedral bipartition, full K-twirl restriction can be computed by signed-weight sector projection, transport over equal-weight characters, and stabilizer-commutant projection.",
+      "status": "proved-signed-weight-twirl-projection-finite-validation"
+    },
+    {
+      "candidate_id": "CODE-COSET-COLLECTIVE",
+      "depends_on": [
+        "LEMMA-CODE-COSET-COLLECTIVE-MULTIPLICITY-TWIRL-PROJECTION-DIAGNOSTIC"
+      ],
+      "falsification_test": "Recompute the exact branching multiplicity, 105-dimensional selected sector, and generated matrix-algebra dimension nine under support cutoffs two through six.",
+      "id": "LEMMA-CODE-COSET-COLLECTIVE-MULTIPLICITY-THREE-SUPPORT-FIVE-CONTROL",
+      "statement": "The S_14 block lambda=(9,4,1), mu=((4,2,1),empty), of branching multiplicity three has its full M_3 copy algebra generated by hyperoctahedral orbit sums of moved-point support at most five.",
+      "status": "proved-finite-multiplicity-three-support-five-control"
+    },
+    {
+      "candidate_id": "CODE-COSET-COLLECTIVE",
+      "depends_on": [
+        "LEMMA-CODE-COSET-COLLECTIVE-MULTIPLICITY-TWIRL-PROJECTION-DIAGNOSTIC",
+        "LEMMA-CODE-COSET-COLLECTIVE-SIGNED-WEIGHT-TWIRL-PROJECTION",
+        "LEMMA-CODE-COSET-COLLECTIVE-MULTIPLICITY-THREE-SUPPORT-FIVE-CONTROL",
+        "PO-MEASUREMENT",
+        "PO-SUCCESS",
+        "PO-COMPLEXITY"
+      ],
+      "falsification_test": "Scan all feasible repeated blocks and then prove natural-mass coverage and spectral gaps; compile a reversible source-aware transform rather than extrapolating from finite classical diagnostics.",
+      "id": "LEMMA-CODE-COSET-COLLECTIVE-UNIFORM-SUPPORT-SIX-NATURAL-COMMUTANT",
+      "statement": "Support-at-most-six hyperoctahedral orbit sums generate every naturally occupied repeated commutant block with inverse-polynomial resolving gaps and coherent source access.",
+      "status": "blocked-finite-controls-negligible-natural-mass-uniformity-gap-and-access-open"
+    },
+    {
+      "candidate_id": "CODE-COSET-COLLECTIVE",
+      "depends_on": [
+        "LEMMA-CODE-COSET-COLLECTIVE-MULTIPLICITY-TWIRL-PROJECTION-DIAGNOSTIC",
+        "PO-FAMILY",
+        "PO-SUCCESS"
+      ],
+      "falsification_test": "Enumerate all even bipartitions, verify exact integer normalization of 2 d_lambda d_mu b/14!, and sum the mass of only independently verified support-six controls.",
+      "id": "LEMMA-CODE-COSET-COLLECTIVE-NATURAL-SUPPORT-SIX-MASS-CENSUS",
+      "statement": "The exact h-even S_14 branching law is normalized, repeated blocks carry dominant source mass, and the currently audited support-six blocks carry negligible source mass.",
+      "status": "proved-finite-support-six-controls-negligible-natural-mass"
+    },
+    {
+      "candidate_id": "CODE-COSET-COLLECTIVE",
+      "depends_on": [
+        "LEMMA-CODE-COSET-COLLECTIVE-NATURAL-SUPPORT-SIX-MASS-CENSUS",
+        "LEMMA-CODE-COSET-COLLECTIVE-UNIFORM-SUPPORT-SIX-NATURAL-COMMUTANT",
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-SUCCESS"
+      ],
+      "falsification_test": "Attack the ranked high-mass blocks with a support-six counterexample search, then require a uniform symbolic generator and normalized gap theorem before any coherent compiler claim.",
+      "id": "LEMMA-CODE-COSET-COLLECTIVE-TYPICAL-SUPPORT-SIX-GAPPED-COMMUTANT",
+      "statement": "Support-six orbit sums generate and inverse-polynomially resolve multiplicity spaces on a one-minus-o(1) natural source family with coherent source access.",
+      "status": "blocked-high-mass-block-generation-gap-and-coherent-access-open"
+    },
+    {
+      "candidate_id": "CODE-COSET-COLLECTIVE",
+      "depends_on": [
+        "LEMMA-CODE-COSET-COLLECTIVE-SIGNED-WEIGHT-TWIRL-PROJECTION",
+        "PO-MEASUREMENT"
+      ],
+      "falsification_test": "Compare with a full K_4 Reynolds twirl and an independent nontrivial-beta S_14 commutant projection, including fiber rank, propagation, and orthogonality residuals.",
+      "id": "LEMMA-CODE-COSET-COLLECTIVE-MULTIPLICITY-FIBER-PARTIAL-TRACE",
+      "statement": "A signed YJM root fiber, seminormal carrier propagation, and equal-weight transport compute the exact copy-space partial trace without constructing a full isotypic basis.",
+      "status": "proved-exact-multiplicity-fiber-partial-trace"
+    },
+    {
+      "candidate_id": "CODE-COSET-COLLECTIVE",
+      "depends_on": [
+        "LEMMA-CODE-COSET-COLLECTIVE-MULTIPLICITY-FIBER-PARTIAL-TRACE",
+        "LEMMA-CODE-COSET-COLLECTIVE-NATURAL-SUPPORT-SIX-MASS-CENSUS",
+        "PO-COMPLEXITY"
+      ],
+      "falsification_test": "Give an explicit contraction whose state size and arithmetic complexity are polynomial for typical partitions; reducing columns while retaining dim(V_lambda) rows is insufficient.",
+      "id": "LEMMA-CODE-COSET-COLLECTIVE-TYPICAL-MULTIPLICITY-FIBER-COMPRESSION",
+      "statement": "The multiplicity-fiber trace has a uniform polynomial-time symbolic or tensor-network implementation on one-minus-o(1) natural source mass.",
+      "status": "blocked-exponential-ambient-specht-rows-remain"
+    },
+    {
+      "candidate_id": "CODE-COSET-COLLECTIVE",
+      "depends_on": [
+        "LEMMA-CODE-COSET-COLLECTIVE-MULTIPLICITY-FIBER-PARTIAL-TRACE",
+        "LEMMA-CODE-COSET-COLLECTIVE-NATURAL-SUPPORT-SIX-MASS-CENSUS"
+      ],
+      "falsification_test": "Recompute all support-three matrices and the support-four witness subset; require both a connected separator graph and direct commutator nullity one with stable numerical margins.",
+      "id": "LEMMA-CODE-COSET-COLLECTIVE-HIGH-MASS-S14-SUPPORT-FOUR-CLOSURE",
+      "statement": "On the highest-mass previously untested repeated S_14 branch, support-at-most-three orbit sums are proper while a support-four subset has scalar common commutant.",
+      "status": "proved-finite-numerical-high-mass-s14-support-four-closure"
+    },
+    {
+      "candidate_id": "CODE-COSET-COLLECTIVE",
+      "depends_on": [
+        "LEMMA-CODE-COSET-COLLECTIVE-HIGH-MASS-S14-SUPPORT-FOUR-CLOSURE",
+        "LEMMA-CODE-COSET-COLLECTIVE-TYPICAL-SUPPORT-SIX-GAPPED-COMMUTANT",
+        "PO-COMPLEXITY",
+        "PO-SUCCESS"
+      ],
+      "falsification_test": "Scan source-ranked branches across growing rank and prove concentration plus a uniform normalized gap lower bound; one sub-one-percent finite block is insufficient.",
+      "id": "LEMMA-CODE-COSET-COLLECTIVE-TYPICAL-LOW-SUPPORT-GAPPED-COMMUTANT",
+      "statement": "A fixed bounded-support family generates multiplicity algebras with inverse-polynomial LCU-normalized resolving gaps on one-minus-o(1) hidden-involution source mass.",
+      "status": "blocked-one-finite-block-no-mass-or-gap-scaling-theorem"
     },
     {
       "candidate_id": "CODE-COSET-COLLECTIVE",

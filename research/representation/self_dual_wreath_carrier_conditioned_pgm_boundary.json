@@ -1,0 +1,1151 @@
+{
+  "created_at": "2026-09-01T22:03:50.815587+00:00",
+  "theorem_contract": {
+    "input": "three natural same-hidden mixed S_5 coset states",
+    "public_conditioning": "one exact left-pair carrier label measured before discrimination",
+    "measurement": "exact source-specific PGM inside each carrier branch",
+    "comparison": "unconditioned global PGM, product one-copy PGM, separate Young measurement, Holevo information, and support condition number",
+    "structural_target": "compressed multiplicity inverse (c D_nu c)^(-1/2)"
+  },
+  "aggregate": {
+    "n": 5,
+    "transposition_count": 2,
+    "copy_count": 3,
+    "pair_source_type_count": 196,
+    "total_natural_source_probability": 1.0,
+    "full_global_pgm_mutual_information_bits": 1.0126388029372897,
+    "carrier_conditioned_pgm_mutual_information_bits": 0.5200976490491648,
+    "product_one_copy_pgm_mutual_information_bits": 0.2953472443350268,
+    "separate_young_mutual_information_bits": 0.5603900909151193,
+    "full_global_pgm_bayes_success_probability": 0.4651373105367063,
+    "carrier_conditioned_pgm_bayes_success_probability": 0.30423925630486265,
+    "product_one_copy_pgm_bayes_success_probability": 0.17543244577808267,
+    "separate_young_bayes_success_probability": 0.19346446062671477,
+    "full_holevo_information_bits": 2.628434623346469,
+    "carrier_dephased_holevo_information_bits": 2.00186426679038,
+    "holevo_retention_fraction": 0.7616184359349396,
+    "pgm_information_retention_fraction": 0.5136062804827884,
+    "pgm_bayes_retention_fraction": 0.6540848248742102,
+    "retained_collective_information_gain_fraction_over_product_pgm": 0.31333200846820747,
+    "retained_collective_bayes_gain_fraction_over_product_pgm": 0.4446139026146463,
+    "average_full_condition_number": 10.3240072956514,
+    "average_maximum_carrier_branch_condition_number": 4.03017740643058,
+    "average_condition_number_reduction_factor": 2.5616756421636278,
+    "average_carrier_dephasing_frobenius_fraction": 0.2489187553507714,
+    "average_maximum_carrier_commutator_fraction": 0.18587659731393802,
+    "average_active_pair_carrier_count": 4.69,
+    "natural_mass_with_at_least_80_percent_pgm_information_retention": 0.13492592592592592,
+    "maximum_hidden_branch_probability_residual": 5.551115123125783e-16,
+    "maximum_channel_normalization_residual": 1.5543122344752192e-15,
+    "maximum_branch_pgm_completeness_residual": 1.4076021383548951e-14,
+    "all_exact_controls_verified": true,
+    "status": "carrier-conditioning-retains-signal-compresses-not-eliminates-whitening"
+  },
+  "highest_weight_source_controls": [
+    {
+      "pair_partitions": [
+        [
+          3,
+          2
+        ],
+        [
+          2,
+          2,
+          1
+        ]
+      ],
+      "third_partition": [
+        3,
+        2
+      ],
+      "natural_source_probability": 0.03125,
+      "hidden_involution_count": 15,
+      "physical_dimension": 125,
+      "active_pair_carrier_count": 6,
+      "maximum_pair_carrier_branch_rank": 30,
+      "full_global_pgm_mutual_information_bits": 0.40352373431563304,
+      "carrier_conditioned_pgm_mutual_information_bits": 0.3112985455901782,
+      "full_global_pgm_bayes_success_probability": 0.3051503950375501,
+      "carrier_conditioned_pgm_bayes_success_probability": 0.23864042031065835,
+      "full_holevo_information_bits": 2.113167718736049,
+      "carrier_dephased_holevo_information_bits": 1.705489254474056,
+      "holevo_retention_fraction": 0.8070770906410409,
+      "pgm_information_retention_fraction": 0.7714503983715688,
+      "pgm_bayes_retention_fraction": 0.7820419838594428,
+      "full_average_state_condition_number": 6.443000468164709,
+      "maximum_carrier_branch_condition_number": 2.526315789473684,
+      "carrier_dephasing_frobenius_fraction": 0.17787471151882034,
+      "maximum_carrier_average_commutator_fraction": 0.12370926896765487,
+      "maximum_hidden_branch_probability_residual": 1.1102230246251565e-16,
+      "conditioned_channel_normalization_residual": 2.220446049250313e-16,
+      "maximum_branch_pgm_completeness_residual": 3.1662348568260182e-15,
+      "exact_branch_pgm_factorization_verified": true,
+      "status": "exact-carrier-conditioned-pgm-source-control"
+    },
+    {
+      "pair_partitions": [
+        [
+          3,
+          2
+        ],
+        [
+          2,
+          2,
+          1
+        ]
+      ],
+      "third_partition": [
+        2,
+        2,
+        1
+      ],
+      "natural_source_probability": 0.03125,
+      "hidden_involution_count": 15,
+      "physical_dimension": 125,
+      "active_pair_carrier_count": 6,
+      "maximum_pair_carrier_branch_rank": 30,
+      "full_global_pgm_mutual_information_bits": 0.40352373431563304,
+      "carrier_conditioned_pgm_mutual_information_bits": 0.3112985455901782,
+      "full_global_pgm_bayes_success_probability": 0.3051503950375501,
+      "carrier_conditioned_pgm_bayes_success_probability": 0.23864042031065835,
+      "full_holevo_information_bits": 2.1131677187360483,
+      "carrier_dephased_holevo_information_bits": 1.7054892544740587,
+      "holevo_retention_fraction": 0.8070770906410426,
+      "pgm_information_retention_fraction": 0.7714503983715688,
+      "pgm_bayes_retention_fraction": 0.7820419838594428,
+      "full_average_state_condition_number": 6.443000468164717,
+      "maximum_carrier_branch_condition_number": 2.526315789473686,
+      "carrier_dephasing_frobenius_fraction": 0.1778747115188202,
+      "maximum_carrier_average_commutator_fraction": 0.1237092689676549,
+      "maximum_hidden_branch_probability_residual": 1.1102230246251565e-16,
+      "conditioned_channel_normalization_residual": 4.440892098500626e-16,
+      "maximum_branch_pgm_completeness_residual": 2.4219383943139237e-15,
+      "exact_branch_pgm_factorization_verified": true,
+      "status": "exact-carrier-conditioned-pgm-source-control"
+    },
+    {
+      "pair_partitions": [
+        [
+          3,
+          2
+        ],
+        [
+          3,
+          1,
+          1
+        ]
+      ],
+      "third_partition": [
+        3,
+        2
+      ],
+      "natural_source_probability": 0.025,
+      "hidden_involution_count": 15,
+      "physical_dimension": 150,
+      "active_pair_carrier_count": 5,
+      "maximum_pair_carrier_branch_rank": 60,
+      "full_global_pgm_mutual_information_bits": 1.1907919115767198,
+      "carrier_conditioned_pgm_mutual_information_bits": 0.379138280570781,
+      "full_global_pgm_bayes_success_probability": 0.5127339680697327,
+      "carrier_conditioned_pgm_bayes_success_probability": 0.276738851392812,
+      "full_holevo_information_bits": 2.8435320648940214,
+      "carrier_dephased_holevo_information_bits": 1.8696429911448993,
+      "holevo_retention_fraction": 0.657507265076183,
+      "pgm_information_retention_fraction": 0.318391716373658,
+      "pgm_bayes_retention_fraction": 0.5397318465843773,
+      "full_average_state_condition_number": 8.000000000000039,
+      "maximum_carrier_branch_condition_number": 3.689897948556651,
+      "carrier_dephasing_frobenius_fraction": 0.3160557979442918,
+      "maximum_carrier_average_commutator_fraction": 0.22612275089196093,
+      "maximum_hidden_branch_probability_residual": 1.1102230246251565e-16,
+      "conditioned_channel_normalization_residual": 4.440892098500626e-16,
+      "maximum_branch_pgm_completeness_residual": 4.593556817611401e-15,
+      "exact_branch_pgm_factorization_verified": true,
+      "status": "exact-carrier-conditioned-pgm-source-control"
+    },
+    {
+      "pair_partitions": [
+        [
+          3,
+          2
+        ],
+        [
+          3,
+          1,
+          1
+        ]
+      ],
+      "third_partition": [
+        2,
+        2,
+        1
+      ],
+      "natural_source_probability": 0.025,
+      "hidden_involution_count": 15,
+      "physical_dimension": 150,
+      "active_pair_carrier_count": 5,
+      "maximum_pair_carrier_branch_rank": 60,
+      "full_global_pgm_mutual_information_bits": 1.1907919115767203,
+      "carrier_conditioned_pgm_mutual_information_bits": 0.3791382805707819,
+      "full_global_pgm_bayes_success_probability": 0.5127339680697328,
+      "carrier_conditioned_pgm_bayes_success_probability": 0.276738851392812,
+      "full_holevo_information_bits": 2.8435320648940223,
+      "carrier_dephased_holevo_information_bits": 1.8696429911448993,
+      "holevo_retention_fraction": 0.6575072650761827,
+      "pgm_information_retention_fraction": 0.31839171637365865,
+      "pgm_bayes_retention_fraction": 0.5397318465843772,
+      "full_average_state_condition_number": 8.000000000000007,
+      "maximum_carrier_branch_condition_number": 3.689897948556644,
+      "carrier_dephasing_frobenius_fraction": 0.3160557979442919,
+      "maximum_carrier_average_commutator_fraction": 0.22612275089196093,
+      "maximum_hidden_branch_probability_residual": 1.1102230246251565e-16,
+      "conditioned_channel_normalization_residual": 3.3306690738754696e-16,
+      "maximum_branch_pgm_completeness_residual": 3.1223889804829553e-15,
+      "exact_branch_pgm_factorization_verified": true,
+      "status": "exact-carrier-conditioned-pgm-source-control"
+    },
+    {
+      "pair_partitions": [
+        [
+          3,
+          2
+        ],
+        [
+          2,
+          2,
+          1
+        ]
+      ],
+      "third_partition": [
+        3,
+        1,
+        1
+      ],
+      "natural_source_probability": 0.025,
+      "hidden_involution_count": 15,
+      "physical_dimension": 150,
+      "active_pair_carrier_count": 6,
+      "maximum_pair_carrier_branch_rank": 36,
+      "full_global_pgm_mutual_information_bits": 1.1907919115767203,
+      "carrier_conditioned_pgm_mutual_information_bits": 0.8407841950464006,
+      "full_global_pgm_bayes_success_probability": 0.5127339680697328,
+      "carrier_conditioned_pgm_bayes_success_probability": 0.4002796790153724,
+      "full_holevo_information_bits": 2.8435320648940214,
+      "carrier_dephased_holevo_information_bits": 2.465924409832547,
+      "holevo_retention_fraction": 0.8672047135591038,
+      "pgm_information_retention_fraction": 0.7060714696433598,
+      "pgm_bayes_retention_fraction": 0.7806771229187094,
+      "full_average_state_condition_number": 8.000000000000002,
+      "maximum_carrier_branch_condition_number": 5.750000000000012,
+      "carrier_dephasing_frobenius_fraction": 0.25116784651301255,
+      "maximum_carrier_average_commutator_fraction": 0.16016895598534037,
+      "maximum_hidden_branch_probability_residual": 1.1102230246251565e-16,
+      "conditioned_channel_normalization_residual": 9.992007221626409e-16,
+      "maximum_branch_pgm_completeness_residual": 3.1541909149871297e-15,
+      "exact_branch_pgm_factorization_verified": true,
+      "status": "exact-carrier-conditioned-pgm-source-control"
+    },
+    {
+      "pair_partitions": [
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ]
+      ],
+      "third_partition": [
+        3,
+        2
+      ],
+      "natural_source_probability": 0.025,
+      "hidden_involution_count": 15,
+      "physical_dimension": 150,
+      "active_pair_carrier_count": 5,
+      "maximum_pair_carrier_branch_rank": 60,
+      "full_global_pgm_mutual_information_bits": 1.1907919115767203,
+      "carrier_conditioned_pgm_mutual_information_bits": 0.3791382805707828,
+      "full_global_pgm_bayes_success_probability": 0.5127339680697328,
+      "carrier_conditioned_pgm_bayes_success_probability": 0.276738851392812,
+      "full_holevo_information_bits": 2.8435320648940223,
+      "carrier_dephased_holevo_information_bits": 1.869642991144901,
+      "holevo_retention_fraction": 0.6575072650761834,
+      "pgm_information_retention_fraction": 0.3183917163736594,
+      "pgm_bayes_retention_fraction": 0.5397318465843772,
+      "full_average_state_condition_number": 7.999999999999989,
+      "maximum_carrier_branch_condition_number": 3.6898979485566468,
+      "carrier_dephasing_frobenius_fraction": 0.316055797944292,
+      "maximum_carrier_average_commutator_fraction": 0.22612275089196113,
+      "maximum_hidden_branch_probability_residual": 1.1102230246251565e-16,
+      "conditioned_channel_normalization_residual": 3.3306690738754696e-16,
+      "maximum_branch_pgm_completeness_residual": 3.0026221913437645e-15,
+      "exact_branch_pgm_factorization_verified": true,
+      "status": "exact-carrier-conditioned-pgm-source-control"
+    },
+    {
+      "pair_partitions": [
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ]
+      ],
+      "third_partition": [
+        2,
+        2,
+        1
+      ],
+      "natural_source_probability": 0.025,
+      "hidden_involution_count": 15,
+      "physical_dimension": 150,
+      "active_pair_carrier_count": 5,
+      "maximum_pair_carrier_branch_rank": 60,
+      "full_global_pgm_mutual_information_bits": 1.1907919115767198,
+      "carrier_conditioned_pgm_mutual_information_bits": 0.3791382805707819,
+      "full_global_pgm_bayes_success_probability": 0.5127339680697327,
+      "carrier_conditioned_pgm_bayes_success_probability": 0.276738851392812,
+      "full_holevo_information_bits": 2.843532064894023,
+      "carrier_dephased_holevo_information_bits": 1.8696429911448993,
+      "holevo_retention_fraction": 0.6575072650761825,
+      "pgm_information_retention_fraction": 0.31839171637365876,
+      "pgm_bayes_retention_fraction": 0.5397318465843773,
+      "full_average_state_condition_number": 8.000000000000094,
+      "maximum_carrier_branch_condition_number": 3.689897948556644,
+      "carrier_dephasing_frobenius_fraction": 0.31605579794429206,
+      "maximum_carrier_average_commutator_fraction": 0.22612275089196113,
+      "maximum_hidden_branch_probability_residual": 1.6653345369377348e-16,
+      "conditioned_channel_normalization_residual": 3.3306690738754696e-16,
+      "maximum_branch_pgm_completeness_residual": 3.005603111668646e-15,
+      "exact_branch_pgm_factorization_verified": true,
+      "status": "exact-carrier-conditioned-pgm-source-control"
+    },
+    {
+      "pair_partitions": [
+        [
+          3,
+          2
+        ],
+        [
+          3,
+          1,
+          1
+        ]
+      ],
+      "third_partition": [
+        3,
+        1,
+        1
+      ],
+      "natural_source_probability": 0.020000000000000004,
+      "hidden_involution_count": 15,
+      "physical_dimension": 180,
+      "active_pair_carrier_count": 5,
+      "maximum_pair_carrier_branch_rank": 72,
+      "full_global_pgm_mutual_information_bits": 1.9267410848872542,
+      "carrier_conditioned_pgm_mutual_information_bits": 0.9205469646295068,
+      "full_global_pgm_bayes_success_probability": 0.6862060625986124,
+      "carrier_conditioned_pgm_bayes_success_probability": 0.43273453805616896,
+      "full_holevo_information_bits": 3.2458017222963655,
+      "carrier_dephased_holevo_information_bits": 2.5480383049043525,
+      "holevo_retention_fraction": 0.7850258650739904,
+      "pgm_information_retention_fraction": 0.477774087992406,
+      "pgm_bayes_retention_fraction": 0.6306189374332176,
+      "full_average_state_condition_number": 19.859745765191697,
+      "maximum_carrier_branch_condition_number": 4.000000000000006,
+      "carrier_dephasing_frobenius_fraction": 0.5020943790086652,
+      "maximum_carrier_average_commutator_fraction": 0.3443595443377154,
+      "maximum_hidden_branch_probability_residual": 1.1102230246251565e-16,
+      "conditioned_channel_normalization_residual": 5.551115123125783e-16,
+      "maximum_branch_pgm_completeness_residual": 3.3543340469575105e-15,
+      "exact_branch_pgm_factorization_verified": true,
+      "status": "exact-carrier-conditioned-pgm-source-control"
+    },
+    {
+      "pair_partitions": [
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ]
+      ],
+      "third_partition": [
+        3,
+        1,
+        1
+      ],
+      "natural_source_probability": 0.020000000000000004,
+      "hidden_involution_count": 15,
+      "physical_dimension": 180,
+      "active_pair_carrier_count": 5,
+      "maximum_pair_carrier_branch_rank": 72,
+      "full_global_pgm_mutual_information_bits": 1.926741084887255,
+      "carrier_conditioned_pgm_mutual_information_bits": 0.9205469646295086,
+      "full_global_pgm_bayes_success_probability": 0.6862060625986125,
+      "carrier_conditioned_pgm_bayes_success_probability": 0.43273453805616896,
+      "full_holevo_information_bits": 3.2458017222963647,
+      "carrier_dephased_holevo_information_bits": 2.5480383049043525,
+      "holevo_retention_fraction": 0.7850258650739906,
+      "pgm_information_retention_fraction": 0.4777740879924067,
+      "pgm_bayes_retention_fraction": 0.6306189374332175,
+      "full_average_state_condition_number": 19.859745765191885,
+      "maximum_carrier_branch_condition_number": 4.000000000000005,
+      "carrier_dephasing_frobenius_fraction": 0.5020943790086664,
+      "maximum_carrier_average_commutator_fraction": 0.3443595443377153,
+      "maximum_hidden_branch_probability_residual": 1.6653345369377348e-16,
+      "conditioned_channel_normalization_residual": 5.551115123125783e-16,
+      "maximum_branch_pgm_completeness_residual": 3.103534900052322e-15,
+      "exact_branch_pgm_factorization_verified": true,
+      "status": "exact-carrier-conditioned-pgm-source-control"
+    },
+    {
+      "pair_partitions": [
+        [
+          4,
+          1
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "third_partition": [
+        3,
+        2
+      ],
+      "natural_source_probability": 0.016666666666666666,
+      "hidden_involution_count": 15,
+      "physical_dimension": 100,
+      "active_pair_carrier_count": 4,
+      "maximum_pair_carrier_branch_rank": 30,
+      "full_global_pgm_mutual_information_bits": 0.5404691098405103,
+      "carrier_conditioned_pgm_mutual_information_bits": 0.32898748380999265,
+      "full_global_pgm_bayes_success_probability": 0.362431077131392,
+      "carrier_conditioned_pgm_bayes_success_probability": 0.24709077223826773,
+      "full_holevo_information_bits": 2.3652847740783187,
+      "carrier_dephased_holevo_information_bits": 1.7665163168950535,
+      "holevo_retention_fraction": 0.746851430430153,
+      "pgm_information_retention_fraction": 0.6087072837651631,
+      "pgm_bayes_retention_fraction": 0.6817593408213446,
+      "full_average_state_condition_number": 6.544681791881461,
+      "maximum_carrier_branch_condition_number": 2.709677419354838,
+      "carrier_dephasing_frobenius_fraction": 0.21429266976405584,
+      "maximum_carrier_average_commutator_fraction": 0.17710742841140747,
+      "maximum_hidden_branch_probability_residual": 2.220446049250313e-16,
+      "conditioned_channel_normalization_residual": 1.2212453270876722e-15,
+      "maximum_branch_pgm_completeness_residual": 3.417713006754114e-15,
+      "exact_branch_pgm_factorization_verified": true,
+      "status": "exact-carrier-conditioned-pgm-source-control"
+    },
+    {
+      "pair_partitions": [
+        [
+          4,
+          1
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "third_partition": [
+        2,
+        2,
+        1
+      ],
+      "natural_source_probability": 0.016666666666666666,
+      "hidden_involution_count": 15,
+      "physical_dimension": 100,
+      "active_pair_carrier_count": 4,
+      "maximum_pair_carrier_branch_rank": 30,
+      "full_global_pgm_mutual_information_bits": 0.5404691098405112,
+      "carrier_conditioned_pgm_mutual_information_bits": 0.32898748380999177,
+      "full_global_pgm_bayes_success_probability": 0.36243107713139205,
+      "carrier_conditioned_pgm_bayes_success_probability": 0.24709077223826778,
+      "full_holevo_information_bits": 2.3652847740783205,
+      "carrier_dephased_holevo_information_bits": 1.7665163168950544,
+      "holevo_retention_fraction": 0.7468514304301528,
+      "pgm_information_retention_fraction": 0.6087072837651605,
+      "pgm_bayes_retention_fraction": 0.6817593408213447,
+      "full_average_state_condition_number": 6.544681791881483,
+      "maximum_carrier_branch_condition_number": 2.70967741935484,
+      "carrier_dephasing_frobenius_fraction": 0.2142926697640559,
+      "maximum_carrier_average_commutator_fraction": 0.17710742841140745,
+      "maximum_hidden_branch_probability_residual": 1.6653345369377348e-16,
+      "conditioned_channel_normalization_residual": 5.551115123125783e-16,
+      "maximum_branch_pgm_completeness_residual": 3.0246960015870287e-15,
+      "exact_branch_pgm_factorization_verified": true,
+      "status": "exact-carrier-conditioned-pgm-source-control"
+    },
+    {
+      "pair_partitions": [
+        [
+          4,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ]
+      ],
+      "third_partition": [
+        3,
+        2
+      ],
+      "natural_source_probability": 0.016666666666666666,
+      "hidden_involution_count": 15,
+      "physical_dimension": 100,
+      "active_pair_carrier_count": 4,
+      "maximum_pair_carrier_branch_rank": 30,
+      "full_global_pgm_mutual_information_bits": 0.5404691098405112,
+      "carrier_conditioned_pgm_mutual_information_bits": 0.32898748380999265,
+      "full_global_pgm_bayes_success_probability": 0.36243107713139205,
+      "carrier_conditioned_pgm_bayes_success_probability": 0.24709077223826773,
+      "full_holevo_information_bits": 2.3652847740783205,
+      "carrier_dephased_holevo_information_bits": 1.7665163168950535,
+      "holevo_retention_fraction": 0.7468514304301523,
+      "pgm_information_retention_fraction": 0.6087072837651621,
+      "pgm_bayes_retention_fraction": 0.6817593408213445,
+      "full_average_state_condition_number": 6.544681791881454,
+      "maximum_carrier_branch_condition_number": 2.70967741935484,
+      "carrier_dephasing_frobenius_fraction": 0.21429266976405567,
+      "maximum_carrier_average_commutator_fraction": 0.17710742841140747,
+      "maximum_hidden_branch_probability_residual": 1.6653345369377348e-16,
+      "conditioned_channel_normalization_residual": 5.551115123125783e-16,
+      "maximum_branch_pgm_completeness_residual": 2.3660000793011203e-15,
+      "exact_branch_pgm_factorization_verified": true,
+      "status": "exact-carrier-conditioned-pgm-source-control"
+    }
+  ],
+  "worst_information_retention_controls": [
+    {
+      "pair_partitions": [
+        [
+          4,
+          1
+        ],
+        [
+          3,
+          1,
+          1
+        ]
+      ],
+      "third_partition": [
+        5
+      ],
+      "natural_source_probability": 0.0008888888888888889,
+      "hidden_involution_count": 15,
+      "physical_dimension": 24,
+      "active_pair_carrier_count": 5,
+      "maximum_pair_carrier_branch_rank": 6,
+      "full_global_pgm_mutual_information_bits": 0.7498947642786029,
+      "carrier_conditioned_pgm_mutual_information_bits": 0.15415886830377357,
+      "full_global_pgm_bayes_success_probability": 0.3900376643655364,
+      "carrier_conditioned_pgm_bayes_success_probability": 0.156517094017094,
+      "full_holevo_information_bits": 2.5049353714587195,
+      "carrier_dephased_holevo_information_bits": 1.1560648475569044,
+      "holevo_retention_fraction": 0.46151484015481153,
+      "pgm_information_retention_fraction": 0.2055740027096656,
+      "pgm_bayes_retention_fraction": 0.40128712767187774,
+      "full_average_state_condition_number": 2.600000000000006,
+      "maximum_carrier_branch_condition_number": 1.000000000000001,
+      "carrier_dephasing_frobenius_fraction": 3.98150972958623e-16,
+      "maximum_carrier_average_commutator_fraction": 1.2868569603929418e-16,
+      "maximum_hidden_branch_probability_residual": 1.1102230246251565e-16,
+      "conditioned_channel_normalization_residual": 4.440892098500626e-16,
+      "maximum_branch_pgm_completeness_residual": 1.1873771788793498e-15,
+      "exact_branch_pgm_factorization_verified": true,
+      "status": "exact-carrier-conditioned-pgm-source-control"
+    },
+    {
+      "pair_partitions": [
+        [
+          4,
+          1
+        ],
+        [
+          3,
+          1,
+          1
+        ]
+      ],
+      "third_partition": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "natural_source_probability": 0.0008888888888888889,
+      "hidden_involution_count": 15,
+      "physical_dimension": 24,
+      "active_pair_carrier_count": 5,
+      "maximum_pair_carrier_branch_rank": 6,
+      "full_global_pgm_mutual_information_bits": 0.7498947642786029,
+      "carrier_conditioned_pgm_mutual_information_bits": 0.15415886830377357,
+      "full_global_pgm_bayes_success_probability": 0.3900376643655364,
+      "carrier_conditioned_pgm_bayes_success_probability": 0.156517094017094,
+      "full_holevo_information_bits": 2.5049353714587195,
+      "carrier_dephased_holevo_information_bits": 1.1560648475569044,
+      "holevo_retention_fraction": 0.46151484015481153,
+      "pgm_information_retention_fraction": 0.2055740027096656,
+      "pgm_bayes_retention_fraction": 0.40128712767187774,
+      "full_average_state_condition_number": 2.600000000000006,
+      "maximum_carrier_branch_condition_number": 1.000000000000001,
+      "carrier_dephasing_frobenius_fraction": 3.98150972958623e-16,
+      "maximum_carrier_average_commutator_fraction": 1.2868569603929418e-16,
+      "maximum_hidden_branch_probability_residual": 1.1102230246251565e-16,
+      "conditioned_channel_normalization_residual": 4.440892098500626e-16,
+      "maximum_branch_pgm_completeness_residual": 1.1873771788793498e-15,
+      "exact_branch_pgm_factorization_verified": true,
+      "status": "exact-carrier-conditioned-pgm-source-control"
+    },
+    {
+      "pair_partitions": [
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ]
+      ],
+      "third_partition": [
+        5
+      ],
+      "natural_source_probability": 0.0008888888888888889,
+      "hidden_involution_count": 15,
+      "physical_dimension": 24,
+      "active_pair_carrier_count": 5,
+      "maximum_pair_carrier_branch_rank": 6,
+      "full_global_pgm_mutual_information_bits": 0.7498947642786025,
+      "carrier_conditioned_pgm_mutual_information_bits": 0.15415886830377445,
+      "full_global_pgm_bayes_success_probability": 0.3900376643655364,
+      "carrier_conditioned_pgm_bayes_success_probability": 0.156517094017094,
+      "full_holevo_information_bits": 2.5049353714587177,
+      "carrier_dephased_holevo_information_bits": 1.1560648475569026,
+      "holevo_retention_fraction": 0.46151484015481115,
+      "pgm_information_retention_fraction": 0.20557400270966691,
+      "pgm_bayes_retention_fraction": 0.40128712767187774,
+      "full_average_state_condition_number": 2.6000000000000063,
+      "maximum_carrier_branch_condition_number": 1.0000000000000009,
+      "carrier_dephasing_frobenius_fraction": 3.9619114893169244e-16,
+      "maximum_carrier_average_commutator_fraction": 1.2638857503628603e-16,
+      "maximum_hidden_branch_probability_residual": 1.6653345369377348e-16,
+      "conditioned_channel_normalization_residual": 4.440892098500626e-16,
+      "maximum_branch_pgm_completeness_residual": 8.363015823602285e-16,
+      "exact_branch_pgm_factorization_verified": true,
+      "status": "exact-carrier-conditioned-pgm-source-control"
+    },
+    {
+      "pair_partitions": [
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ]
+      ],
+      "third_partition": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "natural_source_probability": 0.0008888888888888889,
+      "hidden_involution_count": 15,
+      "physical_dimension": 24,
+      "active_pair_carrier_count": 5,
+      "maximum_pair_carrier_branch_rank": 6,
+      "full_global_pgm_mutual_information_bits": 0.7498947642786025,
+      "carrier_conditioned_pgm_mutual_information_bits": 0.15415886830377445,
+      "full_global_pgm_bayes_success_probability": 0.3900376643655364,
+      "carrier_conditioned_pgm_bayes_success_probability": 0.156517094017094,
+      "full_holevo_information_bits": 2.5049353714587177,
+      "carrier_dephased_holevo_information_bits": 1.1560648475569026,
+      "holevo_retention_fraction": 0.46151484015481115,
+      "pgm_information_retention_fraction": 0.20557400270966691,
+      "pgm_bayes_retention_fraction": 0.40128712767187774,
+      "full_average_state_condition_number": 2.6000000000000063,
+      "maximum_carrier_branch_condition_number": 1.0000000000000009,
+      "carrier_dephasing_frobenius_fraction": 3.9619114893169244e-16,
+      "maximum_carrier_average_commutator_fraction": 1.2638857503628603e-16,
+      "maximum_hidden_branch_probability_residual": 1.6653345369377348e-16,
+      "conditioned_channel_normalization_residual": 4.440892098500626e-16,
+      "maximum_branch_pgm_completeness_residual": 8.363015823602285e-16,
+      "exact_branch_pgm_factorization_verified": true,
+      "status": "exact-carrier-conditioned-pgm-source-control"
+    },
+    {
+      "pair_partitions": [
+        [
+          4,
+          1
+        ],
+        [
+          3,
+          1,
+          1
+        ]
+      ],
+      "third_partition": [
+        2,
+        2,
+        1
+      ],
+      "natural_source_probability": 0.013333333333333334,
+      "hidden_involution_count": 15,
+      "physical_dimension": 120,
+      "active_pair_carrier_count": 5,
+      "maximum_pair_carrier_branch_rank": 30,
+      "full_global_pgm_mutual_information_bits": 1.444725119595021,
+      "carrier_conditioned_pgm_mutual_information_bits": 0.33541971854491237,
+      "full_global_pgm_bayes_success_probability": 0.5887224620561877,
+      "carrier_conditioned_pgm_bayes_success_probability": 0.2579184446360194,
+      "full_holevo_information_bits": 3.0487190457011795,
+      "carrier_dephased_holevo_information_bits": 1.847165515504229,
+      "holevo_retention_fraction": 0.6058824994414651,
+      "pgm_information_retention_fraction": 0.23216853780388047,
+      "pgm_bayes_retention_fraction": 0.4380985290338788,
+      "full_average_state_condition_number": 19.023224454924403,
+      "maximum_carrier_branch_condition_number": 2.4000000000000012,
+      "carrier_dephasing_frobenius_fraction": 0.3278876149930699,
+      "maximum_carrier_average_commutator_fraction": 0.21224285890965158,
+      "maximum_hidden_branch_probability_residual": 1.6653345369377348e-16,
+      "conditioned_channel_normalization_residual": 2.220446049250313e-16,
+      "maximum_branch_pgm_completeness_residual": 2.5414880239204704e-15,
+      "exact_branch_pgm_factorization_verified": true,
+      "status": "exact-carrier-conditioned-pgm-source-control"
+    },
+    {
+      "pair_partitions": [
+        [
+          4,
+          1
+        ],
+        [
+          3,
+          1,
+          1
+        ]
+      ],
+      "third_partition": [
+        3,
+        2
+      ],
+      "natural_source_probability": 0.013333333333333334,
+      "hidden_involution_count": 15,
+      "physical_dimension": 120,
+      "active_pair_carrier_count": 5,
+      "maximum_pair_carrier_branch_rank": 30,
+      "full_global_pgm_mutual_information_bits": 1.4447251195950215,
+      "carrier_conditioned_pgm_mutual_information_bits": 0.33541971854491326,
+      "full_global_pgm_bayes_success_probability": 0.5887224620561877,
+      "carrier_conditioned_pgm_bayes_success_probability": 0.25791844463601943,
+      "full_holevo_information_bits": 3.0487190457011804,
+      "carrier_dephased_holevo_information_bits": 1.8471655155042308,
+      "holevo_retention_fraction": 0.6058824994414655,
+      "pgm_information_retention_fraction": 0.232168537803881,
+      "pgm_bayes_retention_fraction": 0.4380985290338789,
+      "full_average_state_condition_number": 19.023224454924225,
+      "maximum_carrier_branch_condition_number": 2.400000000000002,
+      "carrier_dephasing_frobenius_fraction": 0.3278876149930699,
+      "maximum_carrier_average_commutator_fraction": 0.21224285890965158,
+      "maximum_hidden_branch_probability_residual": 1.6653345369377348e-16,
+      "conditioned_channel_normalization_residual": 5.551115123125783e-16,
+      "maximum_branch_pgm_completeness_residual": 2.4773398464889874e-15,
+      "exact_branch_pgm_factorization_verified": true,
+      "status": "exact-carrier-conditioned-pgm-source-control"
+    },
+    {
+      "pair_partitions": [
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ]
+      ],
+      "third_partition": [
+        3,
+        2
+      ],
+      "natural_source_probability": 0.013333333333333334,
+      "hidden_involution_count": 15,
+      "physical_dimension": 120,
+      "active_pair_carrier_count": 5,
+      "maximum_pair_carrier_branch_rank": 30,
+      "full_global_pgm_mutual_information_bits": 1.4447251195950215,
+      "carrier_conditioned_pgm_mutual_information_bits": 0.33541971854491326,
+      "full_global_pgm_bayes_success_probability": 0.5887224620561877,
+      "carrier_conditioned_pgm_bayes_success_probability": 0.25791844463601943,
+      "full_holevo_information_bits": 3.0487190457011804,
+      "carrier_dephased_holevo_information_bits": 1.8471655155042281,
+      "holevo_retention_fraction": 0.6058824994414647,
+      "pgm_information_retention_fraction": 0.232168537803881,
+      "pgm_bayes_retention_fraction": 0.4380985290338789,
+      "full_average_state_condition_number": 19.02322445492431,
+      "maximum_carrier_branch_condition_number": 2.400000000000001,
+      "carrier_dephasing_frobenius_fraction": 0.32788761499306984,
+      "maximum_carrier_average_commutator_fraction": 0.21224285890965172,
+      "maximum_hidden_branch_probability_residual": 1.6653345369377348e-16,
+      "conditioned_channel_normalization_residual": 5.551115123125783e-16,
+      "maximum_branch_pgm_completeness_residual": 2.3009240167884723e-15,
+      "exact_branch_pgm_factorization_verified": true,
+      "status": "exact-carrier-conditioned-pgm-source-control"
+    },
+    {
+      "pair_partitions": [
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ]
+      ],
+      "third_partition": [
+        2,
+        2,
+        1
+      ],
+      "natural_source_probability": 0.013333333333333334,
+      "hidden_involution_count": 15,
+      "physical_dimension": 120,
+      "active_pair_carrier_count": 5,
+      "maximum_pair_carrier_branch_rank": 30,
+      "full_global_pgm_mutual_information_bits": 1.444725119595021,
+      "carrier_conditioned_pgm_mutual_information_bits": 0.33541971854491326,
+      "full_global_pgm_bayes_success_probability": 0.5887224620561877,
+      "carrier_conditioned_pgm_bayes_success_probability": 0.2579184446360194,
+      "full_holevo_information_bits": 3.0487190457011812,
+      "carrier_dephased_holevo_information_bits": 1.8471655155042281,
+      "holevo_retention_fraction": 0.6058824994414646,
+      "pgm_information_retention_fraction": 0.23216853780388108,
+      "pgm_bayes_retention_fraction": 0.4380985290338788,
+      "full_average_state_condition_number": 19.023224454924144,
+      "maximum_carrier_branch_condition_number": 2.400000000000002,
+      "carrier_dephasing_frobenius_fraction": 0.3278876149930698,
+      "maximum_carrier_average_commutator_fraction": 0.21224285890965167,
+      "maximum_hidden_branch_probability_residual": 1.1102230246251565e-16,
+      "conditioned_channel_normalization_residual": 5.551115123125783e-16,
+      "maximum_branch_pgm_completeness_residual": 2.4513951509766323e-15,
+      "exact_branch_pgm_factorization_verified": true,
+      "status": "exact-carrier-conditioned-pgm-source-control"
+    },
+    {
+      "pair_partitions": [
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ]
+      ],
+      "third_partition": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "natural_source_probability": 0.0071111111111111115,
+      "hidden_involution_count": 15,
+      "physical_dimension": 96,
+      "active_pair_carrier_count": 5,
+      "maximum_pair_carrier_branch_rank": 24,
+      "full_global_pgm_mutual_information_bits": 1.9134297043775246,
+      "carrier_conditioned_pgm_mutual_information_bits": 0.4565760793301168,
+      "full_global_pgm_bayes_success_probability": 0.687118116591446,
+      "carrier_conditioned_pgm_bayes_success_probability": 0.3064337390655737,
+      "full_holevo_information_bits": 3.218227186344933,
+      "carrier_dephased_holevo_information_bits": 2.1057452039447284,
+      "holevo_retention_fraction": 0.6543183815236817,
+      "pgm_information_retention_fraction": 0.2386165942159081,
+      "pgm_bayes_retention_fraction": 0.445969523530663,
+      "full_average_state_condition_number": 12.31882341631139,
+      "maximum_carrier_branch_condition_number": 3.0000000000000027,
+      "carrier_dephasing_frobenius_fraction": 0.43905375437834115,
+      "maximum_carrier_average_commutator_fraction": 0.3040278773263579,
+      "maximum_hidden_branch_probability_residual": 1.6653345369377348e-16,
+      "conditioned_channel_normalization_residual": 3.3306690738754696e-16,
+      "maximum_branch_pgm_completeness_residual": 2.399315616045662e-15,
+      "exact_branch_pgm_factorization_verified": true,
+      "status": "exact-carrier-conditioned-pgm-source-control"
+    },
+    {
+      "pair_partitions": [
+        [
+          4,
+          1
+        ],
+        [
+          3,
+          1,
+          1
+        ]
+      ],
+      "third_partition": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "natural_source_probability": 0.0071111111111111115,
+      "hidden_involution_count": 15,
+      "physical_dimension": 96,
+      "active_pair_carrier_count": 5,
+      "maximum_pair_carrier_branch_rank": 24,
+      "full_global_pgm_mutual_information_bits": 1.9134297043775246,
+      "carrier_conditioned_pgm_mutual_information_bits": 0.4565760793301177,
+      "full_global_pgm_bayes_success_probability": 0.687118116591446,
+      "carrier_conditioned_pgm_bayes_success_probability": 0.3064337390655737,
+      "full_holevo_information_bits": 3.2182271863449325,
+      "carrier_dephased_holevo_information_bits": 2.1057452039447293,
+      "holevo_retention_fraction": 0.654318381523682,
+      "pgm_information_retention_fraction": 0.23861659421590858,
+      "pgm_bayes_retention_fraction": 0.445969523530663,
+      "full_average_state_condition_number": 12.31882341631149,
+      "maximum_carrier_branch_condition_number": 3.0000000000000044,
+      "carrier_dephasing_frobenius_fraction": 0.43905375437834143,
+      "maximum_carrier_average_commutator_fraction": 0.30402787732635794,
+      "maximum_hidden_branch_probability_residual": 1.6653345369377348e-16,
+      "conditioned_channel_normalization_residual": 6.661338147750939e-16,
+      "maximum_branch_pgm_completeness_residual": 2.5872893444013978e-15,
+      "exact_branch_pgm_factorization_verified": true,
+      "status": "exact-carrier-conditioned-pgm-source-control"
+    },
+    {
+      "pair_partitions": [
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ]
+      ],
+      "third_partition": [
+        4,
+        1
+      ],
+      "natural_source_probability": 0.0071111111111111115,
+      "hidden_involution_count": 15,
+      "physical_dimension": 96,
+      "active_pair_carrier_count": 5,
+      "maximum_pair_carrier_branch_rank": 24,
+      "full_global_pgm_mutual_information_bits": 1.9134297043775246,
+      "carrier_conditioned_pgm_mutual_information_bits": 0.4565760793301177,
+      "full_global_pgm_bayes_success_probability": 0.687118116591446,
+      "carrier_conditioned_pgm_bayes_success_probability": 0.3064337390655737,
+      "full_holevo_information_bits": 3.2182271863449334,
+      "carrier_dephased_holevo_information_bits": 2.10574520394473,
+      "holevo_retention_fraction": 0.6543183815236822,
+      "pgm_information_retention_fraction": 0.23861659421590858,
+      "pgm_bayes_retention_fraction": 0.445969523530663,
+      "full_average_state_condition_number": 12.31882341631144,
+      "maximum_carrier_branch_condition_number": 3.0000000000000004,
+      "carrier_dephasing_frobenius_fraction": 0.4390537543783412,
+      "maximum_carrier_average_commutator_fraction": 0.30402787732635794,
+      "maximum_hidden_branch_probability_residual": 1.6653345369377348e-16,
+      "conditioned_channel_normalization_residual": 3.3306690738754696e-16,
+      "maximum_branch_pgm_completeness_residual": 2.30394618605287e-15,
+      "exact_branch_pgm_factorization_verified": true,
+      "status": "exact-carrier-conditioned-pgm-source-control"
+    },
+    {
+      "pair_partitions": [
+        [
+          4,
+          1
+        ],
+        [
+          3,
+          1,
+          1
+        ]
+      ],
+      "third_partition": [
+        4,
+        1
+      ],
+      "natural_source_probability": 0.0071111111111111115,
+      "hidden_involution_count": 15,
+      "physical_dimension": 96,
+      "active_pair_carrier_count": 5,
+      "maximum_pair_carrier_branch_rank": 24,
+      "full_global_pgm_mutual_information_bits": 1.913429704377524,
+      "carrier_conditioned_pgm_mutual_information_bits": 0.4565760793301177,
+      "full_global_pgm_bayes_success_probability": 0.687118116591446,
+      "carrier_conditioned_pgm_bayes_success_probability": 0.3064337390655737,
+      "full_holevo_information_bits": 3.218227186344933,
+      "carrier_dephased_holevo_information_bits": 2.1057452039447284,
+      "holevo_retention_fraction": 0.6543183815236817,
+      "pgm_information_retention_fraction": 0.23861659421590867,
+      "pgm_bayes_retention_fraction": 0.445969523530663,
+      "full_average_state_condition_number": 12.318823416311412,
+      "maximum_carrier_branch_condition_number": 3.0000000000000013,
+      "carrier_dephasing_frobenius_fraction": 0.43905375437834143,
+      "maximum_carrier_average_commutator_fraction": 0.30402787732635794,
+      "maximum_hidden_branch_probability_residual": 1.6653345369377348e-16,
+      "conditioned_channel_normalization_residual": 2.220446049250313e-16,
+      "maximum_branch_pgm_completeness_residual": 2.00560624317963e-15,
+      "exact_branch_pgm_factorization_verified": true,
+      "status": "exact-carrier-conditioned-pgm-source-control"
+    }
+  ],
+  "theorem": {
+    "hidden_independent_branch_law": "Because every C_alpha commutes with the global action, Tr(C_alpha rho_h) is constant on the hidden conjugacy class.",
+    "direct_sum_pgm_factorization": "For the classical carrier flag, the dephased ensemble average is block diagonal and its PGM is exactly the direct sum of the normalized branch PGMs.",
+    "schur_multiplicity_compression": "If B_nu=I/d_nu tensor D_nu and C_alpha=I tensor c_(nu,alpha), branch whitening is (c D_nu c)^(-1/2) on ran(c).",
+    "residual_racah_path_space": "ran(c_(nu,alpha)) contains K_(lambda_1,lambda_2)^alpha tensor K_(alpha,lambda_3)^nu; one pair label need not make the multiplicity block one-dimensional or basis-accessible.",
+    "holevo_data_processing": "Carrier dephasing is a hidden-independent CPTP map, hence its Holevo information cannot exceed that of the original source branch.",
+    "finite_tradeoff": "The exact natural S_5 control retains substantial Holevo and PGM information and improves average conditioning, while losing most of the global PGM collective gain.",
+    "scope_limit": "No all-n retention theorem, coherent basis for c D_nu c, tightly normalized block encoding, branch polar circuit, outcome decoder, or classical separation is supplied.",
+    "hidden_independent_branch_law_proved": true,
+    "exact_branch_pgm_factorization_proved": true,
+    "multiplicity_whitening_compressed": true,
+    "multiplicity_whitening_eliminated": false,
+    "finite_collective_gain_retained": true,
+    "all_n_information_retention_proved": false,
+    "polynomial_branch_pgm_compiled": false,
+    "hidden_involution_decoder_compiled": false,
+    "theorem_verified": true,
+    "status": "pair-carrier-compresses-pgm-row-whitening-remains"
+  },
+  "proof_obligations": [
+    {
+      "obligation": "factor_pgm_over_hidden_independent_carrier_flag",
+      "resolved": true,
+      "resolution": "The flag is a direct-sum classical register and each branch has hidden-independent prior weight."
+    },
+    {
+      "obligation": "retain_nontrivial_collective_information",
+      "resolved": true,
+      "resolution": "The exact natural S_5 branch PGM beats the product one-copy PGM in both mutual information and Bayes success."
+    },
+    {
+      "obligation": "prove_all_n_constant_information_retention",
+      "resolved": false,
+      "resolution": "Only finite S_5 natural-source controls are available."
+    },
+    {
+      "obligation": "eliminate_source_specific_multiplicity_whitening",
+      "resolved": false,
+      "resolution": "Conditioning changes D_nu to c D_nu c but does not make the Racah path space scalar or expose its eigenbasis."
+    },
+    {
+      "obligation": "compile_branch_pgm_and_decode_outcome",
+      "resolved": false,
+      "resolution": "The exact dense branch PGMs are evaluation controls, not uniform circuits or polynomial hidden-label decoders."
+    }
+  ],
+  "adversarial_audit": [
+    {
+      "challenge": "Carrier conditioning creates information.",
+      "survives": false,
+      "response": "It is a hidden-independent CPTP instrument; Holevo data processing proves it can only retain or discard information."
+    },
+    {
+      "challenge": "One carrier label diagonalizes the PGM average.",
+      "survives": false,
+      "response": "The branch operator c D_nu c remains matrix-valued on the two-stage Kronecker/Racah path multiplicity."
+    },
+    {
+      "challenge": "Improved average condition number compiles the inverse.",
+      "survives": false,
+      "response": "A spectral condition number does not provide coherent SELECT, a multiplicity basis, or normalization-controlled block access."
+    },
+    {
+      "challenge": "The retained finite gain is negligible.",
+      "survives": false,
+      "response": "It remains above product PGM baselines in both information and Bayes success, so it is a legitimate architecture target."
+    },
+    {
+      "challenge": "Finite branch PGMs are an end-to-end algorithm.",
+      "survives": false,
+      "response": "They use dense eigendecomposition and direct hidden-labelled effects; scalability and outcome decoding remain open."
+    }
+  ],
+  "headline_metrics": {
+    "hidden_independent_carrier_branch_theorem_count": 1,
+    "exact_carrier_branch_pgm_factorization_theorem_count": 1,
+    "finite_collective_gain_retained_control_count": 1,
+    "pair_source_type_count": 196,
+    "natural_source_mass_control_count": 1,
+    "carrier_conditioned_pgm_information_bits": 0.5200976490491648,
+    "carrier_conditioned_pgm_bayes_success": 0.30423925630486265,
+    "carrier_dephased_holevo_retention_fraction": 0.7616184359349396,
+    "carrier_conditioned_pgm_information_retention_fraction": 0.5136062804827884,
+    "retained_collective_information_gain_fraction": 0.31333200846820747,
+    "average_condition_number_reduction_factor": 2.5616756421636278,
+    "multiplicity_whitening_elimination_theorem_count": 0,
+    "polynomial_branch_pgm_compiler_count": 0,
+    "hidden_involution_decoder_count": 0,
+    "classical_separation_theorem_count": 0,
+    "new_quantum_algorithm_count": 0
+  },
+  "claim_gate": {
+    "carrier_branch_probability_hidden_independent": true,
+    "carrier_conditioned_pgm_direct_sum_factorization_proved": true,
+    "finite_collective_information_gain_retained": true,
+    "carrier_conditioning_improves_average_support_conditioning": true,
+    "carrier_conditioning_eliminates_multiplicity_whitening": false,
+    "all_n_constant_information_retention_proved": false,
+    "polynomial_carrier_branch_pgm_compiled": false,
+    "hidden_involution_decoder_compiled": false,
+    "classical_separation_proved": false,
+    "speedup_claim_allowed": false,
+    "reason": "One carrier label gives a meaningful information/conditioning tradeoff but leaves a source-specific matrix inverse on a Racah multiplicity range."
+  },
+  "status": "carrier-conditioned-pgm-retains-gain-row-whitening-open",
+  "summary": "Factored the natural PGM over one hidden-independent pair-carrier flag. The exact S_5 control retains substantial Holevo information and finite collective gain while improving average conditioning, but the compressed multiplicity-row inverse remains unresolved.",
+  "falsifiers_triggered": [
+    "Carrier conditioning cannot create hidden information; its benefit can only be architectural.",
+    "One pair-carrier label does not scalarize the source-specific PGM multiplicity inverse.",
+    "The exact S_5 branch PGM retains only part of the global PGM collective gain.",
+    "Improved finite conditioning does not imply coherent block access or a polar circuit.",
+    "The surviving branch signal is real but has no all-n retention theorem or polynomial decoder."
+  ]
+}

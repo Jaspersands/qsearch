@@ -1,5 +1,19 @@
 # Mechanical Follow-Up Implementation Plan (pass 2)
 
+## Current Checkpoint (2026-09-08)
+
+The source-ranked support portfolio and spectral-label budget are wired in.
+Do not duplicate their modules or restore the single-complete-separator gap
+target. Read `research/SPECTRAL_LABEL_BUDGET.md` and the top handoff entry.
+Their numerical evidence is not formal proof; matrix caches without matching
+branch, gauge and source provenance must be recomputed, not relabelled.
+
+Mechanical follow-up priority remains the existing broad-suite integration
+failures documented below. Do not change mathematical assertions merely to
+make those tests pass. `index.js` no longer exists; the current JavaScript
+syntax check is `node --check site/progress.js`. Make one rare coherent
+checkpoint only after validation, not one commit per report.
+
 ## Completion Status (2026-08-24 - Pass 6)
 > **Status: 100% COMPLETED BY ANTIGRAVITY**. All 22 newly generated theorem modules in `self_dual_wreath_*` families (including branch-character cyclic polar compilers, quadrant overlaps, equivariant multiplier normal forms, GPE dilation separations, label-coherent power-map boundaries, Naimark Fourier bridges, and Schur dilated multiplicity access boundaries) have been registered in `core/research_registry.py`, added to `core/experiment_runner.py`, exposed via `qsearch.py` CLI subcommands, documented in `README.md`, and added to `tests/test_experiment_runner.py`. The registry tracks 746 experiments, 730 results, 1214 dequantization findings, and 812 negative results with 0 validation issues (`valid: true`), and all 745 theorem modules have 100% 1-to-1 dedicated unit test coverage in `tests/`. All mathematical contracts and claim gates remain intact.
 
@@ -5144,6 +5158,337 @@ artifact under `research/representation/`:
       fiber labels, all-depth native-mass recurrence, direct local Schur/Racah
       Naimark, physical PGM, decoder, classical separation, algorithm, and
       speedup false/open.
+58. `self_dual_wreath_affine_flag_aggregate_schur_query_boundary.py`
+    - ID: `EXP-CODE-SELF-DUAL-WREATH-AFFINE-FLAG-AGGREGATE-SCHUR-QUERY-BOUNDARY`
+    - Writer: `write_affine_flag_aggregate_schur_query_boundary_report`
+    - Preserve the table-free affine-flag label circuit: an invertible `k`-bit
+      flag uses at most `k^2` CNOTs and `O(k)` workspace to compute node
+      membership and internal/crossing edge labels. Preserve the nested PSD
+      Schur-short quotient identity in both elimination orders, including
+      singular Moore--Penrose blocks. Preserve the scoped oracle lower bound:
+      local shorts `e_i=1/q+x_i` with `|x| in {0,1}` give aggregate metric
+      `1+OR(x)`, endpoint probability gap `1/6`, condition number one,
+      two-sided edge at least `1/3`, and retained mass one, so BBBV forces
+      `Omega(sqrt(q))` addressed local-kernel queries. This does not rule out
+      representation-specific Racah identities or a direct local Naimark
+      transform. Keep the structured response oracle, all-depth common-trim
+      native-mass recurrence, physical PGM, decoder, separation, algorithm,
+      and speedup false/open.
+59. `self_dual_wreath_affine_node_frame_response_boundary.py`
+    - ID: `EXP-CODE-SELF-DUAL-WREATH-AFFINE-NODE-FRAME-RESPONSE-BOUNDARY`
+    - Writer: `write_affine_node_frame_response_boundary_report`
+    - Preserve the exact representation-specific affine-node formula
+      `Fbar_A=(|A||S_n|)^-1 sum_(e in A,g in S_n)R_e(g)` and its table-free
+      normalization-one affine/permutation PREPARE--SELECT--unprepare circuit.
+      Preserve `X^*Fbar_A^+X=|A|X^*F_A^+X` and exact cancellation of the
+      common width in a balanced two-child endpoint. Keep separate frame
+      access distinct from response access: the natural final-sibling theorem
+      makes every inverse-polynomial spectral window of `Fbar_A` retain only
+      `o(1)` full-sibling native mass and have rank `o(D)`. On the positive-mass
+      final-common-span event, the common intersection of the two separately
+      truncated spectral windows has `o(1)` relative common-fiber dimension.
+      This rules out a uniform common-fiber compiler based on separate generic
+      QSVT pseudoinversion, but does not prove parent-conditional native loss:
+      a native-state density bound on the common fiber is still missing. Keep
+      that recurrence, a joint scale-free generalized-eigenvalue or direct
+      Schur/Racah Naimark transform, physical PGM, decoder, classical
+      separation, algorithm, and speedup false/open.
+60. `self_dual_wreath_scale_free_endpoint_graph_transfer_boundary.py`
+    - ID: `EXP-CODE-SELF-DUAL-WREATH-SCALE-FREE-ENDPOINT-GRAPH-TRANSFER-BOUNDARY`
+    - Writer: `write_scale_free_endpoint_graph_transfer_boundary_report`
+    - The writer, live artifact, experiment result, negative result, capability
+      ledger entry, and focused tests already exist. Preserve the exact
+      complement identity for `B_s=X^*F_s^+X`, `E_s=B_s^-1`:
+      `C=[sqrt(E_L);sqrt(E_R)]sqrt(E_L+E_R)^-1` and
+      `R=[sqrt(B_L);-sqrt(B_R)]sqrt(B_L+B_R)^-1` are orthogonal isometries and
+      `[C R]` is unitary. Preserve the scale-free graph normal form
+      `T=sqrt(E_R)E_L^-1/2`,
+      `Q=[I;T](I+T^*T)^-1/2`, and
+      `Qp=[-T^*;I](I+TT^*)^-1/2`. A common child scale cancels exactly, and a
+      supplied polynomial-normalized `T` block encoding conditionally gives a
+      QSVT CS compiler with no lower singular-value cutoff. Do not mark `T`
+      access as compiled: full-support support/polar data can have
+      relative-transfer gap `0.6873619601599433` and graph-projector gap
+      `0.2557915332417837`. Keep representation-specific `T` access, recursive
+      gauge covariance, native mass, component Naimark, physical PGM, decoder,
+      classical separation, algorithm, and speedup false/open. The seed
+      registry, runner dispatch, CLI parser/handler, concise README entry, and
+      clean-registry dispatch test are now present; do not reinterpret the
+      theorem.
+61. `self_dual_wreath_cayley_endpoint_gauge_compiler.py`
+    - ID: `EXP-CODE-SELF-DUAL-WREATH-CAYLEY-ENDPOINT-GAUGE-COMPILER`
+    - Writer: `write_cayley_endpoint_gauge_compiler_report`
+    - The seed registry, runner dispatch, CLI parser/handler, capability-ledger
+      entry, live result, negative result, and focused tests already exist.
+      Preserve the canonical Hermitian contraction
+      `D=M^-1/2(E_L-E_R)M^-1/2`, its effects
+      `K_L=(I+D)/2`, `K_R=(I-D)/2`, and the exact branch-gauge factorization
+      `C=diag(U_L,U_R)[sqrt(K_L);sqrt(K_R)]`. Preserve the recursive gauge
+      theorem: matched child gauges telescope exactly, but an omitted root
+      input gauge changes a branch effect by `0.3355112665826154`. Keep a
+      representation-specific normalization-one `D` oracle, physical root
+      coordinate anchor, all-depth native-mass recurrence, physical PGM,
+      decoder, separation, algorithm, and speedup false/open. Mechanical work
+      is limited to a concise README/repository-map command entry and any
+      generated snapshot refresh; do not replace the canonical `D` target by
+      graph-coordinate `D_T` or claim that an abstract root relabeling is a
+      circuit.
+62. `self_dual_wreath_affine_star_cayley_compiler.py`
+    - ID: `EXP-CODE-SELF-DUAL-WREATH-AFFINE-STAR-CAYLEY-COMPILER`
+    - Writer: `write_affine_star_cayley_compiler_report`
+    - The seed registry, runner dispatch, CLI parser/handler, capability-ledger
+      entry, concise README command, live artifact/result/negative result, and
+      focused tests are already present. Preserve the exact two-sector scalar
+      formula `D=d_perp(I-|u><u|)+d_0|u><u|`, the normalization-one Walsh and
+      zero-address compiler, and the direct branch rotations. Preserve finite
+      coverage of eight extracted W6 channels only. Preserve the commuting
+      `Gamma` functional reduction as algebraic and the Markov
+      `Omega(sqrt(p))` spectrum-only QSVT degree boundary. The merged
+      two-center residual `0.11180992313067782` rejects the one-predicate
+      compiler outside stars. Keep the coherent natural channel/carrier
+      labeler, all-depth scalar-star classification, noncommuting matrix Racah
+      compiler, root anchor, parent-native mass recurrence, PGM, decoder,
+      separation, algorithm, and speedup false/open. Acceptance: twenty-two
+      theorem tests, capability-ledger tests, clean-registry dispatch, live CLI
+      and runner commands, compile checks, `git diff --check`, and registry
+      validation. Do not reinterpret normalization one as a generic low-degree
+      operator compiler.
+63. `self_dual_wreath_pair_carrier_label_contextuality.py`
+    - ID: `EXP-CODE-SELF-DUAL-WREATH-PAIR-CARRIER-LABEL-CONTEXTUALITY`
+    - Writer: `write_pair_carrier_label_contextuality_report`
+    - The registry, runner, CLI, capability ledger, README command, artifact,
+      result, negative result, and focused tests are already wired. Preserve
+      the positive selected-triple result: seven coherent GPE calls expose
+      `beta,p`, reversible hook arithmetic computes
+      `gamma=1/(d_beta d_p)`, and multiplicity registers remain opaque and
+      coherent. Preserve the exact `S_3` contextuality control
+      `||[P_12,P_23]||=sqrt(3)/4` with compression eigenvalue `1/4`, and the
+      disjoint commuting control. This rejects universal nondemolition
+      accumulation of pair labels, not a structured Racah resolver and not
+      the physical natural route. Keep physical occupied multistar
+      commutation/mass, coherent global atom labels, the Racah resolver,
+      label-free `D`, root anchor, native mass, PGM, decoder, separation, and
+      speedup false/open. Acceptance: ten theorem tests, capability-ledger
+      tests, clean-registry dispatch, live CLI/runner, compile checks,
+      `git diff --check`, and registry validation.
+64. `self_dual_wreath_occupied_carrier_octahedral_boundary.py`
+    - ID: `EXP-CODE-SELF-DUAL-WREATH-OCCUPIED-CARRIER-OCTAHEDRAL-BOUNDARY`
+    - Writer: `write_occupied_carrier_octahedral_boundary_report`
+    - The registry, runner, CLI, capability ledger, README command, artifact,
+      two negative results, and focused tests are already wired. Preserve the
+      exact all-`n` repeated-source decomposition: `K_(2,2,2)` has carrier
+      multiplicity `n-1`, `K_3` has multiplicity `(n-1)(n-2)`, and every
+      nonopposite overlap has
+      `gamma=2/[n(n-1)(n-3)]`. Preserve the distinction between commuting
+      occupied support atoms, failed unit-correlation clique normalization,
+      and the positive physical Gram with minimum `1-2 gamma`. The family
+      repeats source partitions, has explicit vanishing Plancherel mass, and
+      is excluded by the globally distinct typical event. It falsifies a
+      universal star/clique law but does not settle collision-free typical
+      compatibility. Keep coherent collision-free atoms, graph-general
+      Cayley compilation, root anchoring, physical PGM, decoder, separation,
+      and speedup false/open. Acceptance: five theorem tests, capability-ledger
+      tests, clean-registry dispatch, live CLI/runner, compile checks,
+      `git diff --check`, and registry validation.
+65. `self_dual_wreath_plancherel_carrier_contextuality.py`
+    - ID: `EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-CARRIER-CONTEXTUALITY`
+    - Writer: `write_plancherel_carrier_contextuality_report`
+    - The registry, runner, CLI, capability ledger, README command, artifact,
+      two negative results, and focused tests are already wired. Preserve the
+      exact formula `C_n=2(1-kappa_n)` with
+      `mu_n(g)=(n!)^-2 sum_lambda d_lambda^2 chi_lambda(g)^2`; preserve the
+      exact normalization and dense `n=3` source-average control. Exact
+      enumeration stops at `n=8`; larger records are seeded exact-law samples
+      with explicit Hoeffding intervals and must remain finite evidence. Keep
+      this module's asymptotic `kappa_n` and collision-free gap gates false as
+      a historical finite-stage report; item 68 closes those exact obligations.
+      Keep coherent Racah resolver, PGM, decoder, separation, and speedup
+      false/open. Acceptance: seven theorem tests, capability-ledger
+      tests, clean-registry dispatch, live CLI/runner, compile checks,
+      `git diff --check`, and registry validation. Mechanical follow-up may
+      reduce duplicate character-table recomputation or add cached report
+      loading, but must not change the theorem boundary.
+66. `self_dual_wreath_plancherel_carrier_nonidentity_tail.py`
+    - ID: `EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-CARRIER-NONIDENTITY-TAIL`
+    - Writer: `write_plancherel_carrier_nonidentity_tail_report`
+    - The seed registry, runner dispatch, CLI parser/handler, capability-ledger
+      entry, README command, artifact, two negative results, and focused tests
+      are already present. Preserve the exact `product_i C_i wr S_(m_i)` cycle
+      index, the identity-tail decomposition, class-atom domination, and the
+      theorem eliminating every support window at most `n^delta` for fixed
+      `delta<1`. Exact values now extend through `n=20`; do not replace them by
+      samples. Keep this intermediate module's mesoscopic/macroscopic kernel,
+      `kappa_n=o(1)`, and collision-free gap gates false; item 68 closes those
+      obligations by a later theorem. Keep coherent Racah resolver, PGM,
+      decoder, and speedup false/open. Mechanical follow-up may cache character weights and
+      centralizer inventories across capability-ledger calls or add concise
+      artifact tables. It must not promote finite low-support dominance or
+      transfer the class-uniform `7/(4p(n))` theorem without proof. Acceptance:
+      eight theorem tests, capability-ledger tests, clean-registry dispatch,
+      live CLI/runner, compile checks, `git diff --check`, and registry
+      validation.
+67. `self_dual_wreath_plancherel_carrier_near_derangement_reduction.py`
+    - ID: `EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-CARRIER-NEAR-DERANGEMENT-REDUCTION`
+    - Writer: `write_plancherel_carrier_near_derangement_reduction_report`
+    - The seed registry, runner, CLI, README command, capability entry, live
+      artifact/result, two negative results, and focused tests are present.
+      Preserve the invariant-subset exponential bound, the reduction to two
+      classes with fewer than `8log(n+1)` fixed points, and the exact
+      perfect-matching self-kernel. This report is a historical intermediate
+      theorem: keep its all-n extremality gate false even though item 68 closes
+      the corner by a different centralizer-gap proof. Mechanical work may
+      cache repeated matching controls or reformat long strings only.
+68. `self_dual_wreath_plancherel_carrier_asymptotic_closure.py`
+    - ID: `EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-CARRIER-ASYMPTOTIC-CLOSURE`
+    - Writer: `write_plancherel_carrier_asymptotic_closure_report`
+    - The seed registry, runner, CLI, README command, literature record,
+      capability entry, live artifact/result, two negative results, and seven
+      focused tests are present. Preserve the strong-induction centralizer
+      envelopes, the explicit `O(1/k)` gap away from `2^k`, fixed-point
+      factorization, exact perfect-matching exception, `kappa_n->0`, and
+      collision-free contextuality limit two. Keep coherent Racah resolver,
+      physical PGM, hidden-involution decoder, classical separation,
+      algorithm, and speedup false/open. Do not weaken the theorem back to a
+      finite trend and do not strengthen it into a circuit claim.
+69. `self_dual_wreath_plancherel_carrier_racah_access_boundary.py`
+    - ID: `EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-CARRIER-RACAH-ACCESS-BOUNDARY`
+    - Writer: `write_plancherel_carrier_racah_access_boundary_report`
+    - The seed registry, runner, CLI, README command, capability entry, live
+      artifact/result, two negative results, and focused tests are present.
+      Preserve the total-irrep multiplicity-space Racah decomposition, exact
+      Luders return identity, constant-query pair-GPE disturbance compiler,
+      and theorem that active physical Racah mass tends to one. Preserve the
+      conjugation-invariance no-go: adaptive effects generated only from
+      carrier PVMs cannot distinguish hidden involutions in one conjugacy
+      class. This no-go does not cover covariant noncentral row/orientation
+      outcomes. Keep the noncentral decoder, PGM, classical separation,
+      algorithm, and speedup false/open. Mechanical work may cache the finite
+      `S_3`/`S_4` controls or shorten report rendering only.
+70. `self_dual_wreath_carrier_noncentral_readout_boundary.py`
+    - ID: `EXP-CODE-SELF-DUAL-WREATH-CARRIER-NONCENTRAL-READOUT-BOUNDARY`
+    - Writer: `write_carrier_noncentral_readout_boundary_report`
+    - The seed registry, runner, CLI, README command, capability entry, live
+      artifact/result, two negative results, and six focused tests are present.
+      Preserve the natural informative-block normalization, exact zero carrier-
+      transcript information theorem, covariantized Young row readout, and all
+      three finite baseline controls. Keep the distinction between the small
+      `S_4` default-basis gain and a robust separable-measurement advantage.
+      Preserve that deeper carrier alternation loses information and that the
+      finite global PGM dominates every schedule. Keep all-n advantage,
+      source-specific row verifier, decoder, separation, and speedup false/open.
+71. `self_dual_wreath_carrier_conditioned_pgm_boundary.py`
+    - ID: `EXP-CODE-SELF-DUAL-WREATH-CARRIER-CONDITIONED-PGM-BOUNDARY`
+    - Writer: `write_carrier_conditioned_pgm_boundary_report`
+    - Preserve the exact carrier direct-sum factorization and the remaining
+      `(c D_nu c)^(-1/2)` Racah-path inverse. Keep the finite `S_5` information,
+      Bayes, condition-number, and baseline values exact. Do not promote finite
+      PGM retention into a circuit or decoder.
+72. `self_dual_wreath_carrier_holevo_budget_theorem.py`
+    - ID: `EXP-CODE-SELF-DUAL-WREATH-CARRIER-HOLEVO-BUDGET-THEOREM`
+    - Writer: `write_carrier_holevo_budget_theorem_report`
+    - Preserve the `log r` one-step entropy-loss bound, adaptive telescoping,
+      self-contained partition-number estimate, and `Omega(n log n)` threshold
+      input-Holevo argument. Keep accessible information, full linear depth,
+      decoder, separation, and speedup false.
+73. `self_dual_wreath_carrier_branch_pgm_success_certificate.py`
+    - ID: `EXP-CODE-SELF-DUAL-WREATH-CARRIER-BRANCH-PGM-SUCCESS-CERTIFICATE`
+    - Writer: `write_carrier_branch_pgm_success_certificate_report`
+    - Preserve the Holder branch certificate, Jensen aggregate reduction,
+      pinching operational bound, exact frame-inflation identity, mean-four
+      natural angle/self-purity theorem, and the disjoint-pair bound
+      `D_bar<=4^q+16^q(M-1)2^-k`. Preserve the exact `S_6` `kappa_max=20`
+      falsifier. Keep generic/overlapping collision gates false while the
+      explicitly scoped disjoint-pair constant/inverse-polynomial success gates
+      remain true. Keep compiler, decoder, classical separation, algorithm, and
+      speedup false/open.
+74. `self_dual_wreath_disjoint_pair_branch_pgm_compiler_boundary.py`
+    - ID: `EXP-CODE-SELF-DUAL-WREATH-DISJOINT-PAIR-BRANCH-PGM-COMPILER-BOUNDARY`
+    - Writer: `write_disjoint_pair_branch_pgm_compiler_boundary_report`
+    - Preserve the exact shared-hidden-label covariance identity, the legal
+      all-outcome pair-local PGM plus MAP baseline, and the separate invalid
+      scaled same-label product-effect test. Preserve natural `S_3`/`S_4` and
+      selected 15-hypothesis `S_5` controls. Do not promote finite
+      nonfactorization into a circuit lower bound, and do not claim that
+      disjoint source independence makes the hidden labels independent. Keep
+      covariance-aware polar, decoder, classical separation, algorithm, and
+      speedup false/open. Mechanical work may reduce repeated eigendecompositions
+      through exact caching or add concise report tables without changing the
+      access model or claim scope.
+75. `self_dual_wreath_disjoint_pair_covariance_polar_reduction.py`
+    - ID: `EXP-CODE-SELF-DUAL-WREATH-DISJOINT-PAIR-COVARIANCE-POLAR-REDUCTION`
+    - Writer: `write_disjoint_pair_covariance_polar_reduction_report`
+    - Preserve all-`n` pair-carrier branch flatness, including repeated
+      Kronecker multiplicities; the exact dimensionless covariance frame and
+      PGM reduction; rank cancellation; the natural `E[4/s]<=4`, centered mean
+      at most five, and two-pair covariance mean at most 25; and the Markov
+      constant-mass truncation. Keep the coherent public block encoding,
+      threshold-copy extension, output isometry, decoder, separation, and
+      speedup false. Do not relabel the conditional LCU schema as a compiled
+      circuit.
+76. `self_dual_wreath_dimensionless_pgm_truncation_bridge.py`
+    - ID: `EXP-CODE-SELF-DUAL-WREATH-DIMENSIONLESS-PGM-TRUNCATION-BRIDGE`
+    - Writer: `write_dimensionless_pgm_truncation_bridge_report`
+    - Preserve `Tr(G)=D`, discarded average mass at most `epsilon`, legal
+      truncated PGM effects, gentle success loss at most `2sqrt(epsilon)`, and
+      the adaptive cutoff `epsilon=c^2/16`. Keep the fixed-depth constant and
+      logarithmic-depth inverse-polynomial cutoff theorems. Preserve the
+      explicit boundary that two-pair covariance access is not full threshold
+      access. Keep full-metric block encoding, Naimark output, decoder,
+      separation, algorithm, and speedup false/open.
+77. `self_dual_wreath_local_block_metric_normalization_no_go.py`
+    - ID: `EXP-CODE-SELF-DUAL-WREATH-LOCAL-BLOCK-METRIC-NORMALIZATION-NO-GO`
+    - Writer: `write_local_block_metric_normalization_no_go_report`
+    - Preserve the exact pair-carrier target marginal identity, the union bound
+      over dependent source/carrier labels, and the all-schedule threshold
+      normalization lower bound. Keep the scope restricted to independent
+      local singleton/pair PREPARE-SELECT tensor products. Do not claim a
+      lower bound against global shared-label twirls, commutant Fourier
+      transforms, coherent source aggregation, or nonmultiplicative recursive
+      isometries. Keep full metric access, output, decoder, separation,
+      algorithm, and speedup false/open.
+78. `coset_hidden_involution_multiplicity_twirl_projection.py`
+    - ID: `EXP-COSET-HIDDEN-INVOLUTION-MULTIPLICITY-TWIRL-PROJECTION`
+    - Writer: `write_multiplicity_twirl_projection_report`
+    - Preserve the Hilbert-Schmidt commutant-projection identity, sparse signed-
+      weight sector construction, exact positive/negative Casimir extraction,
+      full-twirl validation, direct generated-algebra audit, reproduced rank-
+      five/rank-six thresholds, multiplicity-three support-five control,
+      nontrivial-beta support-four controls, and the rank-seven falsifier to
+      strict support growth. Keep universal support-six generation,
+      natural-mass coverage, gaps, coherent isotypic access, source polar,
+      decoder, separation, algorithm, and speedup false/open. Do not relabel
+      the classical compressed diagnostic as a quantum transform.
+79. `coset_hidden_involution_natural_support_six_mass_audit.py`
+    - ID: `EXP-COSET-HIDDEN-INVOLUTION-NATURAL-SUPPORT-SIX-MASS-AUDIT`
+    - Writer: `write_natural_support_six_mass_audit`
+    - Preserve the exact normalized `q(lambda,mu)=2 d_lambda d_mu b/14!`
+      census, repeated-block mass, audited-control mass, feasibility windows,
+      and source-weighted high-mass target queue. Keep uniform support-six
+      generation, normalized typical-block gaps, coherent source access,
+      decoder, separation, algorithm, and speedup false/open. Do not call
+      selected low-dimensional closure representative of the natural law.
+80. `coset_hidden_involution_multiplicity_fiber_trace.py`
+    - ID: `EXP-COSET-HIDDEN-INVOLUTION-MULTIPLICITY-FIBER-TRACE`
+    - Writer: `write_multiplicity_fiber_trace_report`
+    - Preserve direct signed-YJM root-fiber projection, common-gauge
+      seminormal tableau propagation, equal-weight sign transport, batched
+      conjugated-operator contraction, exact `K_4` full-twirl validation, and
+      independent nontrivial-beta `S_14` commutant validation. Keep polynomial
+      typical ambient compression, coherent transform, normalized natural-mass
+      gap, decoder, separation, algorithm, and speedup false/open. Do not infer
+      polynomial complexity from reducing live columns while retaining
+      `dim(V_lambda)` ambient rows.
+81. `coset_hidden_involution_high_mass_support_scan.py`
+    - ID: `EXP-COSET-HIDDEN-INVOLUTION-HIGH-MASS-SUPPORT-SCAN`
+    - Writer: `write_high_mass_support_scan_report`
+    - Preserve the exact source-selected multiplicity-26 target, exhaustive
+      support-three census, checkpointed support-four witness schedule, simple-
+      separator graph certificate, direct commutator-nullity cross-check, and
+      finite LCU-normalized gap. Keep the distinction between robust finite
+      floating-point closure and an exact symbolic theorem. Keep typical-mass
+      coverage, inverse-polynomial gap scaling, coherent access, decoder,
+      separation, algorithm, and speedup false/open. The local checkpoint under
+      `tmp/` is disposable and must not be committed.
 
 Mechanical actions:
 
@@ -5153,7 +5498,7 @@ Mechanical actions:
   parsers/handlers, clean-registry dispatch tests, and concise README command
   blocks by copying the existing hidden-involution theorem pattern.
 - Refresh `dequantize`, `proofs`, `query-models`, `frontiers`, `conjectures`,
-  `mutate`, the progress snapshot, and `validate` after wiring all fifty-seven as one
+  `mutate`, the progress snapshot, and `validate` after wiring all eighty-one as one
   batch.
 - Repair the pre-existing clean-registry defect in
   `write_complete_racah_control_report`: it currently accepts
@@ -5161,19 +5506,26 @@ Mechanical actions:
   `tests/test_coset_complete_racah_control.py::CompleteRacahControlTests::test_writer_runner_and_ledgers_record_finite_uniform_boundary`
   fails when `experiment_runner` appends the missing result. Copy a neighboring
   report writer's result/negative upsert pattern without changing Racah claims.
-- Repair the older clean-registry writer regressions exposed by the 2026-08-24
-  broad pytest checkpoint. The failing tests are
+- Repair the clean-registry writer regressions reproduced by the 2026-08-28
+  broad pytest checkpoint. That run was stopped after 296 passes and these 16
+  failures because every failure had the same missing-upsert shape:
   `test_character_decoder_search`, `test_character_moment_obstruction`,
   `test_character_query_information`, `test_character_shift_baselines`,
   `test_character_shift_complexity`, `test_character_shift_lower_bound`,
-  `test_classical_baseline_suite`, and `test_code_closure_attack`. Each writer
-  produces its JSON artifact but fails to upsert the expected scaling run or
-  experiment result into a freshly initialized registry. At least
+  `test_classical_baseline_suite`, `test_code_closure_attack`,
+  `test_code_schur_filtration`, `test_coset_carrier_information_audit`,
+  `test_coset_commutant_gap_certificate`,
+  `test_coset_commutant_information_obstruction`,
+  `test_coset_complete_racah_control`, `test_coset_covariant_frame`,
+  `test_coset_entanglement_width_gate`, and
+  `test_coset_growing_width_architecture`. Each writer creates its JSON
+  artifact but fails to upsert one or more expected scaling runs, experiment
+  results, or negative records in a freshly initialized registry. At least
   `write_character_decoder_search_report` has an unconditional return before
-  any registry update. Restore the existing neighboring writer pattern and
-  preserve every current claim gate; this is registry plumbing, not research
-  evidence. Run each named clean-registry test before another broad suite.
-- Run the fifty-six focused test files first, then adjacent hidden-involution
+  registry updates. Restore the neighboring writer pattern without changing
+  theorem text, metrics, claim gates, or negative-result scope. Run these 16
+  tests as one focused batch before another broad suite.
+- Run the eighty focused test files first, then adjacent hidden-involution
   tests, `python -m compileall -q .`, `node --check site/progress.js`,
   `git diff --check`, and `python qsearch.py validate`.
 - Make no separate commit per theorem.  Include these in the next rare coherent

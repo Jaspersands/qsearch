@@ -1,0 +1,595 @@
+{
+  "created_at": "2026-09-01T10:57:08.227289+00:00",
+  "theorem_contract": {
+    "input": "The exact conditional nonidentity character-squared commuting kernel after class-atom support elimination.",
+    "reduction": "Use support invariance twice to remove low, balanced, and intermediate fixed-point ranges.",
+    "residual": "Class pairs with fewer than 8log(n+1) fixed points each, including near-perfect involutions.",
+    "scope": "Finite matching extremality is evidence only; no all-n extremal theorem or contextuality gap is claimed."
+  },
+  "support_invariance_audits": [
+    {
+      "n": 2,
+      "checked_cycle_type_count": 2,
+      "checked_subset_size_count": 6,
+      "maximum_exact_invariant_subset_probability": 1.0,
+      "maximum_exponential_bound_violation": 0.0,
+      "exponential_support_invariance_bound_verified": true,
+      "status": "support-invariance-exponential-bound-verified"
+    },
+    {
+      "n": 3,
+      "checked_cycle_type_count": 3,
+      "checked_subset_size_count": 12,
+      "maximum_exact_invariant_subset_probability": 1.0,
+      "maximum_exponential_bound_violation": 0.0,
+      "exponential_support_invariance_bound_verified": true,
+      "status": "support-invariance-exponential-bound-verified"
+    },
+    {
+      "n": 4,
+      "checked_cycle_type_count": 5,
+      "checked_subset_size_count": 25,
+      "maximum_exact_invariant_subset_probability": 1.0,
+      "maximum_exponential_bound_violation": 0.0,
+      "exponential_support_invariance_bound_verified": true,
+      "status": "support-invariance-exponential-bound-verified"
+    },
+    {
+      "n": 5,
+      "checked_cycle_type_count": 7,
+      "checked_subset_size_count": 42,
+      "maximum_exact_invariant_subset_probability": 1.0,
+      "maximum_exponential_bound_violation": 0.0,
+      "exponential_support_invariance_bound_verified": true,
+      "status": "support-invariance-exponential-bound-verified"
+    },
+    {
+      "n": 6,
+      "checked_cycle_type_count": 11,
+      "checked_subset_size_count": 77,
+      "maximum_exact_invariant_subset_probability": 1.0,
+      "maximum_exponential_bound_violation": 0.0,
+      "exponential_support_invariance_bound_verified": true,
+      "status": "support-invariance-exponential-bound-verified"
+    },
+    {
+      "n": 7,
+      "checked_cycle_type_count": 15,
+      "checked_subset_size_count": 120,
+      "maximum_exact_invariant_subset_probability": 1.0,
+      "maximum_exponential_bound_violation": 0.0,
+      "exponential_support_invariance_bound_verified": true,
+      "status": "support-invariance-exponential-bound-verified"
+    },
+    {
+      "n": 8,
+      "checked_cycle_type_count": 22,
+      "checked_subset_size_count": 198,
+      "maximum_exact_invariant_subset_probability": 1.0,
+      "maximum_exponential_bound_violation": 0.0,
+      "exponential_support_invariance_bound_verified": true,
+      "status": "support-invariance-exponential-bound-verified"
+    },
+    {
+      "n": 9,
+      "checked_cycle_type_count": 30,
+      "checked_subset_size_count": 300,
+      "maximum_exact_invariant_subset_probability": 1.0,
+      "maximum_exponential_bound_violation": 0.0,
+      "exponential_support_invariance_bound_verified": true,
+      "status": "support-invariance-exponential-bound-verified"
+    },
+    {
+      "n": 10,
+      "checked_cycle_type_count": 42,
+      "checked_subset_size_count": 462,
+      "maximum_exact_invariant_subset_probability": 1.0,
+      "maximum_exponential_bound_violation": 0.0,
+      "exponential_support_invariance_bound_verified": true,
+      "status": "support-invariance-exponential-bound-verified"
+    }
+  ],
+  "matching_controls": [
+    {
+      "n": 4,
+      "matching_edge_count": 2,
+      "exact_commuting_matching_count": 3,
+      "exact_matching_class_size": 3,
+      "exact_self_commuting_probability": "1",
+      "self_commuting_probability": 1.0,
+      "analytic_upper_bound": 1.0,
+      "exact_cycle_index_formula_verified": true,
+      "analytic_decay_bound_verified": true,
+      "status": "perfect-matching-self-kernel-superexponential-decay"
+    },
+    {
+      "n": 6,
+      "matching_edge_count": 3,
+      "exact_commuting_matching_count": 7,
+      "exact_matching_class_size": 15,
+      "exact_self_commuting_probability": "7/15",
+      "self_commuting_probability": 0.4666666666666667,
+      "analytic_upper_bound": 1.0,
+      "exact_cycle_index_formula_verified": true,
+      "analytic_decay_bound_verified": true,
+      "status": "perfect-matching-self-kernel-superexponential-decay"
+    },
+    {
+      "n": 8,
+      "matching_edge_count": 4,
+      "exact_commuting_matching_count": 25,
+      "exact_matching_class_size": 105,
+      "exact_self_commuting_probability": "5/21",
+      "self_commuting_probability": 0.23809523809523808,
+      "analytic_upper_bound": 1.0,
+      "exact_cycle_index_formula_verified": true,
+      "analytic_decay_bound_verified": true,
+      "status": "perfect-matching-self-kernel-superexponential-decay"
+    },
+    {
+      "n": 10,
+      "matching_edge_count": 5,
+      "exact_commuting_matching_count": 81,
+      "exact_matching_class_size": 945,
+      "exact_self_commuting_probability": "3/35",
+      "self_commuting_probability": 0.08571428571428572,
+      "analytic_upper_bound": 1.0,
+      "exact_cycle_index_formula_verified": true,
+      "analytic_decay_bound_verified": true,
+      "status": "perfect-matching-self-kernel-superexponential-decay"
+    },
+    {
+      "n": 12,
+      "matching_edge_count": 6,
+      "exact_commuting_matching_count": 331,
+      "exact_matching_class_size": 10395,
+      "exact_self_commuting_probability": "331/10395",
+      "self_commuting_probability": 0.031842231842231845,
+      "analytic_upper_bound": 0.8540890775797767,
+      "exact_cycle_index_formula_verified": true,
+      "analytic_decay_bound_verified": true,
+      "status": "perfect-matching-self-kernel-superexponential-decay"
+    },
+    {
+      "n": 14,
+      "matching_edge_count": 7,
+      "exact_commuting_matching_count": 1303,
+      "exact_matching_class_size": 135135,
+      "exact_self_commuting_probability": "1303/135135",
+      "self_commuting_probability": 0.009642209642209642,
+      "analytic_upper_bound": 0.3141697735276738,
+      "exact_cycle_index_formula_verified": true,
+      "analytic_decay_bound_verified": true,
+      "status": "perfect-matching-self-kernel-superexponential-decay"
+    },
+    {
+      "n": 16,
+      "matching_edge_count": 8,
+      "exact_commuting_matching_count": 5937,
+      "exact_matching_class_size": 2027025,
+      "exact_self_commuting_probability": "1979/675675",
+      "self_commuting_probability": 0.002928922928922929,
+      "analytic_upper_bound": 0.10464919264795686,
+      "exact_cycle_index_formula_verified": true,
+      "analytic_decay_bound_verified": true,
+      "status": "perfect-matching-self-kernel-superexponential-decay"
+    },
+    {
+      "n": 18,
+      "matching_edge_count": 9,
+      "exact_commuting_matching_count": 26785,
+      "exact_matching_class_size": 34459425,
+      "exact_self_commuting_probability": "487/626535",
+      "self_commuting_probability": 0.0007772909733694048,
+      "analytic_upper_bound": 0.03203540479952428,
+      "exact_cycle_index_formula_verified": true,
+      "analytic_decay_bound_verified": true,
+      "status": "perfect-matching-self-kernel-superexponential-decay"
+    },
+    {
+      "n": 20,
+      "matching_edge_count": 10,
+      "exact_commuting_matching_count": 133651,
+      "exact_matching_class_size": 654729075,
+      "exact_self_commuting_probability": "19093/93532725",
+      "self_commuting_probability": 0.00020413176243929597,
+      "analytic_upper_bound": 0.009112839256494459,
+      "exact_cycle_index_formula_verified": true,
+      "analytic_decay_bound_verified": true,
+      "status": "perfect-matching-self-kernel-superexponential-decay"
+    },
+    {
+      "n": 22,
+      "matching_edge_count": 11,
+      "exact_commuting_matching_count": 669351,
+      "exact_matching_class_size": 13749310575,
+      "exact_self_commuting_probability": "11743/241215975",
+      "self_commuting_probability": 4.8682513668508064e-05,
+      "analytic_upper_bound": 0.0024295933103555224,
+      "exact_cycle_index_formula_verified": true,
+      "analytic_decay_bound_verified": true,
+      "status": "perfect-matching-self-kernel-superexponential-decay"
+    },
+    {
+      "n": 24,
+      "matching_edge_count": 12,
+      "exact_commuting_matching_count": 3609673,
+      "exact_matching_class_size": 316234143225,
+      "exact_self_commuting_probability": "3609673/316234143225",
+      "self_commuting_probability": 1.1414558096693957e-05,
+      "analytic_upper_bound": 0.0006112787922272422,
+      "exact_cycle_index_formula_verified": true,
+      "analytic_decay_bound_verified": true,
+      "status": "perfect-matching-self-kernel-superexponential-decay"
+    }
+  ],
+  "finite_controls": [
+    {
+      "n": 10,
+      "support_power": 0.7,
+      "moved_support_cutoff": 5,
+      "fixed_point_corner_cutoff": 4,
+      "exact_nonidentity_conditional_commuting_probability": "484523433520669415/41289008694002713287",
+      "nonidentity_conditional_commuting_probability": 0.011734925319024361,
+      "exact_low_support_commuting_contribution": "6998418906220089041/619335130410040699305",
+      "low_support_commuting_contribution": 0.011299890095991607,
+      "exact_balanced_support_commuting_contribution": "0",
+      "balanced_support_commuting_contribution": 0.0,
+      "exact_near_derangement_commuting_contribution": "269432596589952184/619335130410040699305",
+      "near_derangement_commuting_contribution": 0.00043503522303275455,
+      "exact_log_corner_commuting_contribution": "269432596589952184/619335130410040699305",
+      "log_corner_commuting_contribution": 0.00043503522303275455,
+      "maximum_log_corner_class_pair_probability": 0.08571428571428572,
+      "maximizing_log_corner_class_pair": [
+        [
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        [
+          2,
+          2,
+          2,
+          2,
+          2
+        ]
+      ],
+      "fixed_point_free_involution_is_finite_maximizer": true,
+      "exact_partition_verified": true,
+      "finite_extremality_only": true,
+      "status": "near-derangement-tail-partitioned-matching-extremal-finite"
+    },
+    {
+      "n": 12,
+      "support_power": 0.7,
+      "moved_support_cutoff": 5,
+      "fixed_point_corner_cutoff": 4,
+      "exact_nonidentity_conditional_commuting_probability": "255495612810346009941709/33234717725699205657083373",
+      "nonidentity_conditional_commuting_probability": 0.00768761193999191,
+      "exact_low_support_commuting_contribution": "606955761433818949247/79929576059882649487935",
+      "low_support_commuting_contribution": 0.007593631686212025,
+      "exact_balanced_support_commuting_contribution": "87397925690957408946896/1495562297656464254568751785",
+      "balanced_support_commuting_contribution": 5.843817126702736e-05,
+      "exact_near_derangement_commuting_contribution": "53155398586426679069392/1495562297656464254568751785",
+      "near_derangement_commuting_contribution": 3.5542082512858755e-05,
+      "exact_log_corner_commuting_contribution": "53155398586426679069392/1495562297656464254568751785",
+      "log_corner_commuting_contribution": 3.5542082512858755e-05,
+      "maximum_log_corner_class_pair_probability": 0.031842231842231845,
+      "maximizing_log_corner_class_pair": [
+        [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ]
+      ],
+      "fixed_point_free_involution_is_finite_maximizer": true,
+      "exact_partition_verified": true,
+      "finite_extremality_only": true,
+      "status": "near-derangement-tail-partitioned-matching-extremal-finite"
+    },
+    {
+      "n": 14,
+      "support_power": 0.7,
+      "moved_support_cutoff": 6,
+      "fixed_point_corner_cutoff": 4,
+      "exact_nonidentity_conditional_commuting_probability": "536215174937594105224987451431/104044093592516893275359808083175",
+      "nonidentity_conditional_commuting_probability": 0.005153730081379267,
+      "exact_low_support_commuting_contribution": "7623194452950122582333179573/1482109595334998479705980172125",
+      "low_support_commuting_contribution": 0.005143475541177551,
+      "exact_balanced_support_commuting_contribution": "533533767568292880941733407/80923183905290916991946517398025",
+      "balanced_support_commuting_contribution": 6.593089171982139e-06,
+      "exact_near_derangement_commuting_contribution": "13333332376769318439560585909/3641543275738091264637593282911125",
+      "near_derangement_commuting_contribution": 3.6614510297332202e-06,
+      "exact_log_corner_commuting_contribution": "115378228129643827390476096497/32773889481642821381738339546200125",
+      "log_corner_commuting_contribution": 3.5204313541811696e-06,
+      "maximum_log_corner_class_pair_probability": 0.009642209642209642,
+      "maximizing_log_corner_class_pair": [
+        [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ]
+      ],
+      "fixed_point_free_involution_is_finite_maximizer": true,
+      "exact_partition_verified": true,
+      "finite_extremality_only": true,
+      "status": "near-derangement-tail-partitioned-matching-extremal-finite"
+    },
+    {
+      "n": 16,
+      "support_power": 0.7,
+      "moved_support_cutoff": 6,
+      "fixed_point_corner_cutoff": 4,
+      "exact_nonidentity_conditional_commuting_probability": "6446971859747601141543343899213136558621/1870542229866434404803031681942544305111581",
+      "nonidentity_conditional_commuting_probability": 0.003446579155931671,
+      "exact_low_support_commuting_contribution": "5772229960078552851721745561900171615752/1678691744751928312002720740204847453305265",
+      "low_support_commuting_contribution": 0.003438528829443642,
+      "exact_balanced_support_commuting_contribution": "1515668847810818715421180152651662379712/196406934135975612504318326603967152036716005",
+      "balanced_support_commuting_contribution": 7.71698236866473e-06,
+      "exact_near_derangement_commuting_contribution": "5036238192047499629669117108276710193/15108225702767354808024486661843627079747385",
+      "near_derangement_commuting_contribution": 3.3334411936439485e-07,
+      "exact_log_corner_commuting_contribution": "17595683505576162678513690903416176693/53565527491629712501177725437445586919104365",
+      "log_corner_commuting_contribution": 3.2848894297411163e-07,
+      "maximum_log_corner_class_pair_probability": 0.002928922928922929,
+      "maximizing_log_corner_class_pair": [
+        [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ]
+      ],
+      "fixed_point_free_involution_is_finite_maximizer": true,
+      "exact_partition_verified": true,
+      "finite_extremality_only": true,
+      "status": "near-derangement-tail-partitioned-matching-extremal-finite"
+    },
+    {
+      "n": 18,
+      "support_power": 0.7,
+      "moved_support_cutoff": 7,
+      "fixed_point_corner_cutoff": 4,
+      "exact_nonidentity_conditional_commuting_probability": "1774914132803676519921715273103746378797265028839/732914355348714700088777256294930208741093915314919",
+      "nonidentity_conditional_commuting_probability": 0.0024217210644744253,
+      "exact_low_support_commuting_contribution": "9481960965829469236556186534026097726255205937/3919328103469062567319664472165402185781250884037",
+      "low_support_commuting_contribution": 0.002419282263568806,
+      "exact_balanced_support_commuting_contribution": "61282776400531559260928580764398787772963239648/25652002437205014503107203970322557305938287036022165",
+      "balanced_support_commuting_contribution": 2.3890055581644798e-06,
+      "exact_near_derangement_commuting_contribution": "1277350374270484738865112665914851790989912052/25652002437205014503107203970322557305938287036022165",
+      "near_derangement_commuting_contribution": 4.9795347454740925e-08,
+      "exact_log_corner_commuting_contribution": "780668865187263665107971440078103328872009924/25652002437205014503107203970322557305938287036022165",
+      "log_corner_commuting_contribution": 3.043305750100044e-08,
+      "maximum_log_corner_class_pair_probability": 0.0007772909733694048,
+      "maximizing_log_corner_class_pair": [
+        [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ]
+      ],
+      "fixed_point_free_involution_is_finite_maximizer": true,
+      "exact_partition_verified": true,
+      "finite_extremality_only": true,
+      "status": "near-derangement-tail-partitioned-matching-extremal-finite"
+    },
+    {
+      "n": 20,
+      "support_power": 0.7,
+      "moved_support_cutoff": 8,
+      "fixed_point_corner_cutoff": 4,
+      "exact_nonidentity_conditional_commuting_probability": "1949522257751931742500456064289707430980003155480314683/1160807228420518246631358755760577686889165772303532518203",
+      "nonidentity_conditional_commuting_probability": 0.0016794539265616037,
+      "exact_low_support_commuting_contribution": "3359916711019214308532701319039824931085750728048691991/2001110124986117157505508690974820808386192050481040437375",
+      "low_support_commuting_contribution": 0.0016790263909351435,
+      "exact_balanced_support_commuting_contribution": "3004434430559213968124913008634415461343701818757124236/7109944274075674260617072379033538332196140355359136673993375",
+      "balanced_support_commuting_contribution": 4.225679294722467e-07,
+      "exact_near_derangement_commuting_contribution": "1858949934435296341089169332927323342278354798298164/374207593372403908453530125212291491168217913439954561789125",
+      "near_derangement_commuting_contribution": 4.967696987873002e-09,
+      "exact_log_corner_commuting_contribution": "924466490129476069487153493308867467296593617599716/277010815873078217946119703079228766189460013845161169116625",
+      "log_corner_commuting_contribution": 3.3372938425373665e-09,
+      "maximum_log_corner_class_pair_probability": 0.00020413176243929597,
+      "maximizing_log_corner_class_pair": [
+        [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ]
+      ],
+      "fixed_point_free_involution_is_finite_maximizer": true,
+      "exact_partition_verified": true,
+      "finite_extremality_only": true,
+      "status": "near-derangement-tail-partitioned-matching-extremal-finite"
+    }
+  ],
+  "theorem": {
+    "exact_support_invariance_condition": "If gh=hg, supp(h) is a union of cycles of g and supp(g) is a union of cycles of h.",
+    "exponential_support_invariance_bound": "r_(alpha,beta)<=(n+1)exp(-m_alpha*(m_beta/n)*(1-m_beta/n)), and symmetrically.",
+    "sublinear_support_cutoff": "For M=n^delta, delta<1, the character-squared mass on support<=M is o(1).",
+    "balanced_support_bound": "For delta>2/3, supports>M and max fixed points>=M imply r<=(n+1)exp(-M^3/n^2)=o(1).",
+    "logarithmic_fixed_point_cutoff": "Inside fixed points<M, max fixed points>=8log(n+1) contributes o(1) by the same bound.",
+    "asymptotic_equivalence": "kappa_n^*=o(1) iff its contribution from two draws each having fewer than 8log(n+1) fixed points is o(1).",
+    "matching_self_kernel": "For n=2k, r_(2^k,2^k)=sum_j k!/((k-2j)!j!) divided by ((2k)!/(2^k k!)).",
+    "matching_decay": "r_(2^k,2^k)=exp(-Omega(k log k)).",
+    "residual_obligation": "Prove that fixed-point-free involutions extremize, or directly bound all class pairs with O(log n) fixed points.",
+    "support_invariance_bound_proved": true,
+    "low_and_balanced_support_contributions_vanish_proved": true,
+    "logarithmic_fixed_point_reduction_proved": true,
+    "perfect_matching_self_kernel_vanishes_proved": true,
+    "perfect_matching_extremal_for_all_near_derangements_proved": false,
+    "weighted_commuting_probability_vanishes_proved": false,
+    "status": "carrier-tail-reduced-to-logarithmic-fixed-point-extremality"
+  },
+  "literature_links": [
+    {
+      "paper_id": "aggarwal-elboim-maximal-dimension-2026",
+      "url": "https://arxiv.org/abs/2605.25995",
+      "supports": "The maximal Plancherel atom is exp(-Theta(sqrt(n))).",
+      "external_theorem_not_reproved_here": true
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "prove_uniform_support_invariance_probability_bound",
+      "resolved": true,
+      "resolution": "A generating-function coefficient bound and binomial modal-atom lower bound prove equation (1)."
+    },
+    {
+      "obligation": "eliminate_balanced_mesoscopic_macroscopic_support_pairs",
+      "resolved": true,
+      "resolution": "For every delta>2/3, M=n^delta makes the uniform kernel bound vanish."
+    },
+    {
+      "obligation": "reduce_near_derangements_to_logarithmically_many_fixed_points",
+      "resolved": true,
+      "resolution": "The same invariant-complement bound removes fixed-point counts between 8log(n+1) and M."
+    },
+    {
+      "obligation": "prove_perfect_matching_self_commuting_decay",
+      "resolved": true,
+      "resolution": "The exact alternating-four-cycle count and exp(t+t^2) coefficient bound give exp(-Omega(n log n))."
+    },
+    {
+      "obligation": "prove_near_derangement_extremality_or_uniform_kernel_bound",
+      "resolved": false,
+      "resolution": "Fixed-point-free involutions maximize every finite scan through n=24, but no all-n comparison covers O(log n) fixed points."
+    }
+  ],
+  "adversarial_audit": [
+    {
+      "objection": "Support invariance alone controls derangements.",
+      "resolved": true,
+      "resolution": "False at support n, where the support event is certain; the logarithmic-fixed-point corner remains separate."
+    },
+    {
+      "objection": "A worst-case centralizer-size product controls fixed-point-free involutions.",
+      "resolved": true,
+      "resolution": "False: z_(2^k)^2/(2k)! is polynomially large. The exact matching intersection is vastly smaller."
+    },
+    {
+      "objection": "Finite perfect-matching extremality proves the all-n tail bound.",
+      "resolved": true,
+      "resolution": "It does not. Near-involutions and mixed short-cycle types require an all-n injection or comparison theorem."
+    },
+    {
+      "objection": "The reduction proves a quantum circuit obstruction.",
+      "resolved": false,
+      "resolution": "Even kappa_n=o(1) would not compile or lower-bound the coherent Racah resolver."
+    }
+  ],
+  "headline_metrics": {
+    "support_invariance_exponential_bound_theorem_count": 1,
+    "balanced_support_commuting_tail_elimination_theorem_count": 1,
+    "logarithmic_fixed_point_reduction_theorem_count": 1,
+    "perfect_matching_self_kernel_decay_theorem_count": 1,
+    "support_invariance_audit_degree_count": 9,
+    "perfect_matching_control_count": 11,
+    "largest_matching_control_degree": 24,
+    "tail_matching_self_commuting_probability": 1.1414558096693957e-05,
+    "largest_exact_near_derangement_degree": 20,
+    "tail_exact_log_corner_commuting_contribution": 3.3372938425373665e-09,
+    "tail_maximum_log_corner_class_pair_probability": 0.00020413176243929597,
+    "finite_matching_extremality_control_count": 6,
+    "near_derangement_all_n_extremality_theorem_count": 0,
+    "weighted_commuting_probability_vanishing_theorem_count": 0,
+    "coherent_multistar_racah_resolver_count": 0,
+    "new_quantum_algorithm_count": 0
+  },
+  "claim_gate": {
+    "support_invariance_exponential_bound_proved": true,
+    "balanced_support_commuting_tail_eliminated": true,
+    "carrier_tail_reduced_to_logarithmic_fixed_point_classes": true,
+    "perfect_matching_self_commuting_probability_vanishes_proved": true,
+    "perfect_matching_is_all_n_near_derangement_extremizer": false,
+    "logarithmic_fixed_point_commuting_tail_vanishes_proved": false,
+    "weighted_commuting_probability_asymptotically_vanishes_proved": false,
+    "collision_free_positive_constant_contextuality_proved": false,
+    "structured_multistar_racah_resolver_compiled": false,
+    "speedup_claim_allowed": false,
+    "reason": "All support ranges except two logarithmic-fixed-point classes are eliminated, and the finite worst-case perfect matching decays, but its all-n extremality remains unproved."
+  },
+  "status": "carrier-tail-reduced-to-logarithmic-fixed-point-class-kernel",
+  "summary": "Proved a uniform support-invariance kernel bound, reduced the carrier tail to pairs with O(log n) fixed points, and proved superexponential decay for the finite extremal perfect-matching benchmark without claiming all-n extremality.",
+  "falsifiers_triggered": [
+    "Support size alone does not control two derangements, so an explicit near-derangement corner is retained.",
+    "Worst-case centralizer size is too weak for fixed-point-free involutions.",
+    "Finite perfect-matching extremality through n=24 is not an all-n theorem.",
+    "The remaining logarithmic-fixed-point comparison blocks kappa_n=o(1).",
+    "No contextuality moment has been promoted to a coherent quantum algorithm."
+  ]
+}

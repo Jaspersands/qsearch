@@ -1,6 +1,32 @@
 # Research Agent Handoff
 
-Last updated: 2026-08-25
+Last updated: 2026-09-08
+
+## Current Decision: Spectral Label Packing
+
+This entry supersedes older requests below to prove an inverse-polynomial
+minimum gap for one complete typical-block separator. Read
+`research/SPECTRAL_LABEL_BUDGET.md` before continuing that program.
+The existing exact branching law plus elementary spectral packing gives
+q{b<=L} <= 2 L I_(2m) J_m^+/(2m)!. For a fixed number of normalized,
+inverse-polynomial-gap joint observables, L is polynomial and this mass
+vanishes superpolynomially. This does not rule out growing-depth hierarchies,
+coarse task-relevant measurements, or direct transforms. The derivation is
+not machine checked and needs independent mathematical review.
+
+The source-ranked portfolio and spectral budget are now wired into CLI,
+runner, registry and proof tracking. Numerical matrix closures must retain
+`numerically-supported` status, not `proved`. A failed separator search is
+inconclusive, not a counterexample. Checkpoints without branch, gauge and
+contraction-source provenance are discarded. Portable generator matrices
+and coefficient vectors live in the scan reports.
+
+Next high-judgment work: specify a source-aware adaptive coarse-projector
+hierarchy and quantify surviving information about the hidden involution.
+Do not substitute dense eigendecomposition plus binary eigenvector labels.
+Distinguish a commutator superoperator's gap above its fixed space from a
+separator's minimum adjacent eigenvalue gap. They answer different questions.
+The former may stay large while the latter must shrink.
 
 ## Antigravity Mechanical Wiring Completion Note (2026-08-24 - Pass 6)
 
@@ -13612,7 +13638,7 @@ fixed arity + conditioning imply small endpoint algebra:       FALSE
 two well-conditioned generators can generate M_D:             PROVED
 full algebra dimension is a circuit lower bound:               FALSE
 current GPE/addressed pair access supplies aggregate E_s:       FALSE
-uniform reversible node/common-fiber labeler:                  OPEN
+uniform reversible affine-flag node/crossing labeler:          PROVED BY SUCCESSOR
 all-depth parent-compatible native-mass recurrence:            OPEN
 direct local Schur/Racah Naimark compiled/ruled out:            OPEN/FALSE
 physical PGM / decoder / classical separation / speedup:       OPEN
@@ -13622,7 +13648,7 @@ Two noncommuting Schur-short systems, two conditional compiler controls, four
 full-algebra controls, six typed interfaces, and eight natural scaling records
 pass. The focused suite has twenty-two tests.
 
-**Next high-reasoning task:** construct or obstruct the exact aggregate metric
+**Resolved in the next theorem pass:** construct or obstruct the exact aggregate metric
 interface. Express the internal/crossing coordinate projections and local
 Racah kernels as reversible functions of affine-flag node labels. Determine
 whether the Schur short can be carried from children to parents with
@@ -13632,6 +13658,1410 @@ normalization, workspace/query recurrence, and `o(1/L)` conditional native
 loss. A negative theorem must bind a typed local-kernel/Schur-complement oracle
 and preserve a direct local Naimark transform.
 
+## Affine-Flag Aggregate Schur Query Boundary
+
+The aggregate response-oracle pass is complete in
+`self_dual_wreath_affine_flag_aggregate_schur_query_boundary.py`.
+
+The combinatorial node-label problem is solved. For `q=2^k` orientation
+addresses and an invertible binary flag basis `f_1,...,f_k`, compute
+
+```text
+y_j(x) = <f_j,x> mod 2.
+```
+
+An out-of-place reversible circuit uses one CNOT for every nonzero flag-matrix
+entry, hence at most `k^2` CNOTs and `O(k)` workspace. Flag prefixes label every
+node without a leaf table; the next flag bit decides the two children and
+therefore whether a labeled edge is internal or crossing.
+
+The algebraic response recursion is also exact. For a PSD kernel on
+coordinates `I_1 + I_2 + C`, shorting first from `I_1`, then from `I_2`, equals
+shorting once from `I_1+I_2`. Both elimination orders agree, including singular
+internal blocks with Moore--Penrose inverses. Thus coherent child response
+matrices are sufficient algebraic state for a parent response.
+
+These two positive facts do not compile metric amplitudes from arbitrary
+addressed local-kernel queries. The exact counterfamily has
+
+```text
+G_i(x) = [1    rho; rho    rho^2+e_i(x)],
+e_i(x) = 1/q + x_i,
+|x| in {0,1}.
+```
+
+Give every leaf a private internal coordinate and one common crossing
+coordinate. The aggregate Schur short is
+
+```text
+E_x = sum_i e_i(x) = 1 + OR(x).
+```
+
+Pair it with the fixed right metric `E_R=1`. The binary endpoint isometry is
+
+```text
+T_x = [sqrt(E_x/(E_x+1)); sqrt(1/(E_x+1))].
+```
+
+The left endpoint probability changes from `1/2` to `2/3`. Therefore any
+constant-error endpoint compiler from addressed `G_i(x)` queries decides
+promised unstructured search with the same query order, and the BBBV lower
+bound forces `Omega(sqrt(q))` queries.
+
+The lower bound is not caused by a bad root window:
+
+```text
+root aggregate metric condition number:      1
+minimum two-sided endpoint edge:              1/3
+native retained mass:                         1
+endpoint probability gap:                     1/6
+```
+
+The canonical positive sum also has `Theta(q)` normalization in this family,
+but the query reduction is stronger: it applies to any compiler in the typed
+addressed-kernel oracle model, not only canonical LCU assembly.
+
+This remains a scoped black-box theorem. The marked metric family is not
+proved to occur under the natural Plancherel/Schur source. A succinct
+representation-specific Racah identity or a direct local Naimark transform
+may exclude arbitrary marked values and evade the lower bound.
+
+Claim boundary:
+
+```text
+table-free reversible affine-flag node labeler:                 PROVED
+internal/crossing edge classifier from flag labels:             PROVED
+nested PSD Schur-short associativity:                            PROVED
+child response matrices algebraically suffice for recursion:    PROVED
+affine labels determine metric amplitudes:                       FALSE
+generic addressed local kernels aggregate in polylog(q) queries: FALSE
+typed addressed aggregate endpoint query lower bound:           Omega(sqrt(q))
+lower bound caused by root conditioning/native-mass loss:        FALSE/FALSE
+structured all-n Racah response oracle:                          OPEN
+direct local Schur/Racah Naimark ruled out/compiled:             FALSE/OPEN
+all-depth parent-compatible native-mass recurrence:              OPEN
+physical PGM / decoder / classical separation / speedup:         OPEN
+```
+
+Two affine label controls, two nested Schur quotient controls, four addressed
+search controls, five typed interfaces, and six scaling records pass. The
+focused suite has twenty-two tests.
+
+**Next high-reasoning task:** leave generic address aggregation and inspect the
+actual local representation kernels. Seek an all-`n` low-description formula
+for the vertex/Racah response matrix—such as a bounded number of centralizer,
+Jucys--Murphy, or recoupling parameters—or a direct local Naimark recurrence
+that excludes arbitrary marked metric values. The theorem must state the
+uniform coherent evaluation circuit and normalization. In parallel, its
+retained projector must be one parent-propagated trim with conditional loss
+`o(1/L)` through depth `L`. A negative result must be representation-specific;
+the generic addressed-oracle lower bound is now exhausted.
+
+## Affine-Node Representation Frame Response Boundary
+
+The representation-specific response pass is complete in
+`self_dual_wreath_affine_node_frame_response_boundary.py`.
+
+The actual aggregate physical frame at an affine orientation node has a
+table-free all-`n` formula. For target `tau`, source pairs
+`(lambda_i,mu_i)`, and affine node `A=a+U`, define
+
+```text
+R_e(g)=rho_tau(g) tensor_i
+  [rho_lambda_i(g) tensor I,  e_i=0;
+   I tensor rho_mu_i(g),      e_i=1].
+```
+
+Then exactly
+
+```text
+Fbar_A = |A|^-1 sum_(e in A) E_e
+       = (|A||S_n|)^-1 sum_(e in A,g in S_n) R_e(g).
+```
+
+Prepare affine coordinates and a uniform permutation, reversibly compute the
+orientation mask, apply the controlled `S_n` representation action, and
+unprepare. This block-encodes `Fbar_A` at normalization one with
+`O(k dim(U))` affine CNOTs, `O(k+log(n!))` address workspace, and no table of
+leaf metrics. Thus the generic marked-metric oracle family from the preceding
+pass is not the right model for the actual aggregate frame.
+
+Frame access is still not response access. On the common physical child span
+`X`,
+
+```text
+F_A = |A| Fbar_A,
+A_A = X^*F_A^+X = |A|^-1 X^*Fbar_A^+X.
+```
+
+For equal-width binary children, multiplying both response metrics by `|A|`
+leaves the canonical endpoint effect unchanged. An exact `S_3` physical
+control verifies the response scaling and endpoint cancellation with zero
+numerical residual. The explicit width is therefore not an abstract endpoint
+conditioning obstruction.
+
+It remains a circuit obstruction for the strongest obvious compiler:
+separately apply QSVT pseudoinversion to the two normalization-one child-frame
+encodings. The exact natural final-sibling second moment, uniform rank theorem,
+global-distinct conditioning, and native-trace bridge imply that, uniformly
+over both siblings and all targets,
+
+```text
+native mass{Fbar_s >= 1/poly(n)} = o(1).
+```
+
+The common parent projection obtained by intersecting the two separately
+truncated QSVT spectral windows is contained in either child's high spectral
+window. The trace bound and threshold imply that each high window has rank
+`o(D)`. On the natural final-root event of probability `1/9-o(1)`, the common
+physical child span has rank at least `(19/128-o(1))D`; hence the common
+spectral intersection has `o(1)` relative dimension inside that fiber. This
+rules out separate QSVT as a uniform compiler on the whole common fiber.
+
+The full-sibling native-mass bound itself becomes nonvacuous by `n=32`; at
+`n=48` its degree-four upper bound is `5.966968830179406e-38`. It must not be
+relabelled as parent-conditional common-fiber mass. No theorem yet bounds the
+native parent-state density on the common span, so rank loss alone does not
+prove conditional physical loss.
+
+Claim boundary:
+
+```text
+actual affine-node representation frame formula:                 PROVED
+table-free normalized frame block encoding at alpha=1:           PROVED
+balanced endpoint common-width cancellation:                     PROVED
+normalized frame access equals compressed response access:       FALSE
+separate polynomial-resolution QSVT response keeps natural mass: FALSE
+separate QSVT is a uniform compiler on the common parent fiber:   FALSE
+parent common-fiber native-state density bound:                   OPEN
+parent-conditional native loss o(1/L):                            OPEN
+joint scale-free generalized-eigenvalue endpoint compiled:        OPEN
+direct local Schur/Racah Naimark ruled out/compiled:               FALSE/OPEN
+physical PGM / decoder / classical separation / speedup:          OPEN
+```
+
+Three physical affine-frame controls, one physical response-scale control,
+five circuit scaling records, and five natural-window records pass. The
+focused suite has sixteen tests.
+
+**Next high-reasoning task:** do not return to addressed metric aggregation or
+separate child-frame inversion. Attack the scale-free ratio directly. Seek a
+coherent generalized-eigenvalue/Racah transform for
+
+```text
+K_L=(B_L+B_R)^-1/2 B_L (B_L+B_R)^-1/2,
+B_s=X^*Fbar_s^+X,
+```
+
+that never materializes either `B_s` at its absolute normalized-frame scale.
+A positive theorem must give a joint block encoding or direct two-outcome
+Naimark recurrence, relative spectral gap, workspace/error recurrence, and
+one parent-propagated native-mass bound. A negative theorem may instead prove
+a source-weighted density obstruction on the natural common fiber, but must
+not infer it from dimension alone. Any circuit lower bound must be scoped to
+a stated joint functional-calculus/recoupling interface and remain
+representation-specific; the direct Racah/Naimark possibility is still open.
+
+## Scale-Free Endpoint Graph-Transfer Boundary
+
+The direct joint-endpoint pass is complete in
+`theorems/self_dual_wreath_scale_free_endpoint_graph_transfer_boundary.py`.
+It replaces the vague instruction to “solve a generalized eigenvalue problem”
+with an exact relative operator and a clean access boundary.
+
+On a common child fiber `X`, put
+
+```text
+B_s = X^*F_s^+X,
+E_s = B_s^-1.
+```
+
+The canonical short endpoint and minimum-preimage relation endpoint are
+
+```text
+C = [sqrt(E_L); sqrt(E_R)](E_L+E_R)^-1/2,
+R = [sqrt(B_L);-sqrt(B_R)](B_L+B_R)^-1/2.
+```
+
+They obey exactly
+
+```text
+C^*C=R^*R=I,
+C^*R=0,
+[C R] unitary.
+```
+
+Thus the short endpoint and compressed-response relation are complementary
+columns of one CS unitary, not rival endpoint definitions. A clean minimal
+implementation of either column supplies the other *subspace*, although its
+coordinate gauge is not fixed automatically.
+
+Define the positive relative transfer
+
+```text
+T = sqrt(E_R) E_L^-1/2.
+```
+
+The endpoint range is the graph of `T`. An exact scale-free completion is
+
+```text
+Q  = [I;T](I+T^*T)^-1/2,
+Qp = [-T^*;I](I+TT^*)^-1/2,
+U_T=[Q Qp].
+```
+
+There are input unitaries `W,Wp` with `Q=CW` and `Qp=RWp`. Multiplying both
+short metrics by the same positive scalar leaves `T` and `U_T` unchanged.
+Finite controls verify this through a common scale `2^-48`, despite the
+separate absolute inverse-resolution proxy reaching `2^48`.
+
+This gives a conditional quantum compiler with the right asymptotic shape.
+Given a `beta`-normalized coherent block encoding of `T`, QSVT applies the
+bounded singular functions
+
+```text
+c(sigma)=1/sqrt(1+sigma^2),
+s(sigma)=sigma/sqrt(1+sigma^2).
+```
+
+They are regular at `sigma=0`; the degree is polynomial in `beta` and
+`log(1/epsilon)` and requires no lower absolute frame-eigenvalue cutoff. This
+is the first explicit joint formulation that genuinely avoids separately
+resolving the tiny normalized child frames.
+
+The result does not yet compile `T`. A full-support two-dimensional
+counterexample has identical support projectors and support-polar transports
+but
+
+```text
+relative-transfer operator gap:  0.6873619601599433
+endpoint graph-projector gap:    0.2557915332417837
+```
+
+Therefore the existing GPE support/pair-polar interface cannot determine the
+positive relative endpoint amplitudes. The physical repeated-label `S_3`
+affine final-sibling control verifies the shorted-operator formula, the full
+CS unitary, and a relative transfer norm `sqrt(5)/2` on a five-dimensional
+common fiber. Three abstract controls, four scale controls, one physical
+control, five compiler records, and fifteen focused tests pass.
+
+Claim boundary:
+
+```text
+response/short endpoint complementarity:                   PROVED
+Anderson--Trapp short E_s=(X^*F_s^+X)^-1:                  PROVED
+scale-free relative graph-CS normal form:                  PROVED
+common exponential child scale cancellation:              PROVED
+conditional QSVT CS compiler given T block encoding:      PROVED
+support/GPE pair-polars determine positive T:              FALSE
+representation-specific polynomial T block encoding:      OPEN
+recursive graph-gauge covariance:                          OPEN
+parent-conditional native loss o(1/L):                     OPEN
+component Naimark / physical PGM / decoder / separation:   OPEN
+speedup claim:                                              FALSE
+```
+
+**Next high-reasoning task:** derive `T` without separately constructing
+`E_L` or `E_R`. Work in the actual affine-node Schur/Racah representation,
+not a generic addressed metric oracle. Candidate routes are:
+
+1. Express `T^*T=E_L^-1/2 E_R E_L^-1/2` as a bounded relative Racah operator
+   on the common fixed-space multiplicity carrier and seek a direct block
+   encoding with polynomial normalization.
+2. Derive the graph subspace directly as a fixed-space/subduction image in the
+   homogeneous-space incidence model, bypassing an explicit square root of
+   either short metric.
+3. Prove gauge covariance: show that opaque input gauges from `Q=CW` can be
+   absorbed consistently into parent common-fiber coordinates and conjugate
+   every component effect without changing the recursive POVM or decoder.
+4. If these fail, construct a representation-specific query reduction for
+   the natural affine frame formula. A generic marked-metric or support-blind
+   counterexample is no longer enough.
+
+A positive result must provide a coherent all-`n` evaluator for `T` or `U_T`,
+its normalization, workspace/error recurrence, and one parent-propagated
+native-mass statement. A negative result must charge the actual Schur/Racah
+access model and cannot infer native loss from rank alone.
+
+## Cayley Endpoint And Recursive Gauge Boundary (2026-08-30)
+
+The next joint-endpoint pass is complete in
+`theorems/self_dual_wreath_cayley_endpoint_gauge_compiler.py`. It sharpens
+the scale-free graph-transfer result and changes the preferred local compiler
+target.
+
+For positive child short metrics on one retained common fiber, define
+
+```text
+M   = E_L+E_R,
+K_s = M^-1/2 E_s M^-1/2,
+D   = K_L-K_R = M^-1/2(E_L-E_R)M^-1/2.
+```
+
+Then `D` is a Hermitian contraction and
+
+```text
+K_L=(I+D)/2,
+K_R=(I-D)/2.
+```
+
+The canonical positive-root endpoint
+
+```text
+C=[sqrt(E_L);sqrt(E_R)]M^-1/2
+```
+
+and the Cayley Naimark column
+
+```text
+N_D=[sqrt((I+D)/2);sqrt((I-D)/2)]
+```
+
+have exactly the same branch effects. More strongly,
+
+```text
+C=diag(U_L,U_R)N_D
+```
+
+for child-side unitaries `U_L,U_R`. Therefore the local binary POVM does not
+need the polar part of the non-Hermitian relative transfer `T`. Given a
+normalization-one block encoding of canonical `D` and a retained endpoint gap
+`delta`, bounded QSVT root functions conditionally compile the local Naimark
+column with polynomial dependence on `1/delta` and `log(1/epsilon)`, without
+an absolute child-scale cutoff.
+
+The graph-coordinate contraction is
+
+```text
+D_T=(I-T^*T)(I+T^*T)^-1.
+```
+
+It is unitarily similar to canonical `D`, not generally equal to it. This
+distinction matters only at the coordinate boundary. A depth-three random
+matrix tree proves exactly that matched child gauges telescope on every
+root-to-leaf path and leave every leaf POVM effect invariant; the maximum
+finite residual is about `1.2e-15`. Thus recursive *internal* gauge
+propagation is no longer an open algebraic obligation.
+
+The root remains an honest boundary. Omitting a noncommuting root input gauge
+changes a branch effect by `0.3355112665826154` in the adversarial control.
+Including the same gauge in the physical root common-fiber coordinate map
+restores the endpoint to machine precision. Do not claim that the graph input
+gauge can simply be ignored.
+
+The repeated-label physical `S_3` final-sibling control has
+
+```text
+common fiber dimension: 5
+child width:             4
+||D||:                   1/3
+endpoint gap:            1/3
+||T||:                   sqrt(5)/2
+```
+
+All exact identities pass below `2.4e-15`. Common short scales cancel through
+`2^-48`. Fourteen focused theorem tests, the capability-ledger tests, the
+clean-registry experiment dispatch, the CLI workflow, and registry validation
+pass. The negative result
+`UNANCHORED-RELATIVE-GRAPH-GAUGE-NOT-POVM-INVARIANT` records the root
+counterexample.
+
+Claim boundary:
+
+```text
+canonical scale-free Cayley contraction:                 PROVED
+Cayley Naimark equals canonical binary effects:          PROVED
+relative-transfer polar needed for local binary POVM:    FALSE
+matched internal child gauges telescope recursively:     PROVED
+unanchored root input gauge is harmless:                 FALSE
+conditional QSVT compiler given normalized D:            PROVED
+representation-specific normalization-one D oracle:      OPEN
+physical root coordinate anchor circuit:                 OPEN
+all-depth endpoint gap/native-mass recurrence:            OPEN
+physical PGM / decoder / classical separation:           OPEN
+speedup claim:                                             FALSE
+```
+
+**Next high-reasoning task:** work with canonical `D`, not generic `T`.
+Express the normalized shorted grading as an actual affine-node Schur/Racah
+observable. The strongest candidate routes are:
+
+1. Start from the exact vertex-kernel quotient `M_q=E_L+E_R`,
+   `J_q=E_L-E_R` and seek a normalization-one realization of the pair
+   `(M_q,J_q)` in a common fixed-space basis, so `D=M_q^-1/2J_qM_q^-1/2`
+   is obtained without separately resolving either child frame.
+2. Test whether the affine split character gives `J_q` directly and whether
+   the parent quotient metric `M_q` has a representation-specific polar or
+   Racah basis with a constant relative edge on parent-native mass.
+3. Anchor the final root gauge in the `D`-fixed to `B`-fixed homogeneous-space
+   incidence transform. An abstract coordinate relabeling is not a circuit.
+4. If these fail, prove a representation-specific query lower bound for
+   normalized `D` under the exact affine representation LCU. The existing
+   generic addressed-metric and support-blind counterexamples are insufficient.
+
+A positive result must provide a coherent evaluator for canonical `D` in the
+physical parent coordinate system, normalization, workspace/error recurrence,
+and parent-native retained mass. A negative result must charge the actual
+affine Schur/Racah interface.
+
+## Label-Resolved Affine-Star Cayley Compiler And Spectrum-Degree Boundary (2026-08-30)
+
+Files and experiment ID:
+
+```text
+theorems/self_dual_wreath_affine_star_cayley_compiler.py
+tests/test_self_dual_wreath_affine_star_cayley_compiler.py
+research/representation/self_dual_wreath_affine_star_cayley_compiler.json
+EXP-CODE-SELF-DUAL-WREATH-AFFINE-STAR-CAYLEY-COMPILER
+```
+
+The proposed complete-affine-clique route was already physically falsified by
+`self_dual_wreath_global_carrier_channel_extractor.py`: every current W6
+nontrivial channel is instead an incomplete affine star. The existing
+`self_dual_wreath_affine_star_channel_gap.py` proves that this graph family is
+spectrally safe. The new theorem closes the next local circuit question for a
+coherently label-resolved scalar star.
+
+For child half-width `p`, scalar correlation `gamma`, and uniform crossing
+address `|u>`, the exact child effects are
+
+```text
+E_R = I
+E_L = (1-gamma)I + gamma q J_p
+q   = (2-gamma)/(2(1-gamma)+p gamma).
+```
+
+The canonical Cayley contraction is
+
+```text
+D = d_perp (I-|u><u|) + d_0 |u><u|
+d_perp = -gamma/(2-gamma)
+d_0    = (t_p-1)/(t_p+1)
+t_p    = 1-gamma+p gamma q.
+```
+
+Consequently Walsh conjugation, one all-zero address predicate, and two
+label-computed rotations give both a normalization-one block encoding of `D`
+and the exact binary Naimark column. This direct scalar compiler uses no QSVT
+and no square-root width amplification. Twelve dense graph controls pass, and
+the physical extractor confirms coverage of all eight channels in all seven
+current W6 controls. The maximum physical defect residual is
+`1.249000902703301e-16`.
+
+There is also an exact commuting operator-valued formula. If every edge shares
+one Hermitian `Gamma`, the uniform and orthogonal address sectors carry matrix
+rational functions of `Gamma`. This is an algebraic reduction, not a generic
+efficient QSVT result. The uniform-sector eigenvalue changes by a constant
+between `Gamma=0` and `Gamma=I/p`. For a bounded QSVT polynomial uniformly
+approximating the function on `[0,1/2]`, the mean-value theorem plus Markov's
+inequality forces degree `Omega(sqrt(p))`. At `p=2^20` and error `1/64`, the
+explicit lower bound is 240. Coherent carrier labels bypass this uniform
+polynomial by reversible angle arithmetic; opaque operator access does not.
+
+A scalar merged two-center graph is the structural counterexample. It has
+three distinct Cayley eigenvalues and distance `0.11180992313067782` from the
+best one-uniform-versus-orthogonal predicate ansatz. Therefore affine support
+or sparsity alone does not make the star compiler universal.
+
+Claim boundary:
+
+```text
+label-resolved scalar affine-star canonical D compiler:      PROVED NORMALIZATION ONE
+label-resolved scalar affine-star binary Naimark compiler:   PROVED DIRECT
+all eight current physical W6 channels covered:              PROVED FINITE
+shared commuting Gamma functional reduction:                 PROVED ALGEBRAIC
+opaque Gamma uniform polylogarithmic QSVT degree:             FALSE
+one-predicate compiler covers merged centers:                FALSE
+natural all-depth scalar-star classification:                OPEN
+coherent natural channel/carrier label circuit:              OPEN
+noncommuting matrix-valued Racah compiler:                    OPEN
+physical root anchor / parent-native mass recurrence:         OPEN
+physical PGM / decoder / classical separation / speedup:     OPEN/FALSE
+```
+
+The negative result
+`OPAQUE-AFFINE-STAR-GAMMA-QSVT-NOT-POLYLOG-WIDTH` is live. The experiment
+writer, seed registry, runner, CLI, capability ledger, concise README command,
+and clean-registry dispatch test are wired. Twenty-two theorem tests, six
+capability-ledger tests, and the dispatch test pass.
+
+**Next high-reasoning task:** determine whether the scalar carrier label needed
+by the compiler is coherently present at natural growing multiplicity. Do not
+run another finite star-gap calculation. Work at the typed Schur/Racah
+interface:
+
+1. Express residual channel atoms in terms of explicit carrier irrep and
+   multiplicity labels before classical simultaneous atomization.
+2. Determine whether pair GPE plus the Schur companion preserves a coherent
+   carrier label around both endpoints of every global channel.
+3. Search the smallest growing-multiplicity physical controls for merged
+   centers, noncommuting edge operators, or channel-label holonomy. A positive
+   result needs natural positive-mass scaling; a finite counterexample is still
+   decisive against the all-depth scalar-star route.
+4. If carrier labels remain coherent, derive reversible `gamma=1/d_alpha` (or
+   product-carrier) angle arithmetic and its root-gauge interface. If they do
+   not, formalize a typed access obstruction rather than assuming an opaque
+   `Gamma` block encoding.
+5. Keep root anchoring, parent-native retained mass, PGM equivalence, decoder,
+   and classical separation as separate proof gates.
+
+## Coherent Pair-Carrier Labels And Global Contextuality Boundary (2026-08-30)
+
+Files and experiment ID:
+
+```text
+theorems/self_dual_wreath_pair_carrier_label_contextuality.py
+tests/test_self_dual_wreath_pair_carrier_label_contextuality.py
+research/representation/self_dual_wreath_pair_carrier_label_contextuality.json
+EXP-CODE-SELF-DUAL-WREATH-PAIR-CARRIER-LABEL-CONTEXTUALITY
+```
+
+The carrier scalar required by the affine-star Cayley compiler is no longer an
+opaque local assumption. For one selected shared-vertex triple, partition the
+target/source tensor factors into the seven nonempty membership-pattern
+blocks. Coherent generalized phase estimation on those blocks exports the two
+ordinary `S_n` irrep labels `beta,p`. Five equality/conjugacy tests enforce the
+exact channel conditions, and reversible hook-length arithmetic computes
+
+```text
+gamma = 1/(d_beta d_p).
+```
+
+Every Kronecker multiplicity register is preserved and need not be named. The
+operation uses seven GPE calls and inverses for a selected triple, with
+polynomially controlled Young actions. It is therefore a polynomial local
+carrier-label query at all `n`, not merely a finite lookup. The selected W6
+controls reproduce denominators 5, 9, and 10 with maximum dense-spectrum
+residual `5.828670879282072e-16`.
+
+The global label does not follow automatically. Different triples regroup
+overlapping tensor factors. In three copies of the standard two-dimensional
+`S_3` irrep, let `P_12` and `P_23` project the indicated factor pairs onto the
+trivial isotype. Exact character projectors give
+
+```text
+||[P_12,P_23]|| = sqrt(3)/4 = 0.4330127018922193
+spec(P_12 P_23 P_12 | ran P_12) = {1/4,1/4}.
+```
+
+No nondemolition unitary can copy both sharp labels to classical registers on
+arbitrary inputs. The disjoint control `P_12,P_34` commutes exactly, so this is
+an overlap/recoupling obstruction rather than a failure of GPE. The result
+kills only the universal strategy “run every local GPE and accumulate a
+classical channel table.” It does not prove that the physically occupied
+natural subspace is contextual or rule out a structured Racah resolver.
+
+Claim boundary:
+
+```text
+selected-triple beta,p carrier label query:              PROVED POLYNOMIAL
+gamma=1/(d_beta d_p) without multiplicity basis:         PROVED
+pair GPE preserves opaque multiplicity registers:        PROVED
+all overlapping pair labels jointly classical:           FALSE IN GENERAL
+pairwise GPE accumulation gives global channel atom:      FALSE IN GENERAL
+physical occupied multistar commutation all depth:        OPEN
+coherent global Boolean channel atom label:               OPEN
+structured multistar Racah label resolver:                OPEN
+label-free natural canonical-D observable:                OPEN
+root anchor / native mass / PGM / decoder / speedup:      OPEN/FALSE
+```
+
+The negative result
+`OVERLAPPING-PAIR-GPE-LABELS-NOT-JOINTLY-CLASSICAL` is live. Ten theorem
+tests, capability-ledger tests, the clean-registry dispatch test, live CLI,
+runner, and registry validation pass.
+
+**Next high-reasoning task:** move the commutator question onto the physically
+occupied natural subspace. Use the membership-pattern factorization rather
+than arbitrary tensor factors. Search the smallest source portfolios with
+genuine multiplicity greater than one and at least four incident pair cores.
+For each candidate:
+
+1. construct the exact coarse carrier-label projectors for two overlapping
+   triples in the same physical pair-core coefficient space;
+2. short away exact common directions before measuring the commutator;
+3. weight the noncommuting block by physical carrier multiplicity/native trace
+   mass, not ambient dimension;
+4. distinguish a finite counterexample from a positive-mass asymptotic
+   obstruction;
+5. if occupied projectors commute, extract their Boolean atom labels and test
+   compatibility with GPE pair transports and the star Cayley compiler;
+6. if they do not, derive the smallest Racah resolver and its normalization
+   rather than reverting to a dense global metric oracle.
+
+## Occupied Octahedral Carrier Boundary (2026-09-01)
+
+Files and experiment ID:
+
+```text
+theorems/self_dual_wreath_occupied_carrier_octahedral_boundary.py
+tests/test_self_dual_wreath_occupied_carrier_octahedral_boundary.py
+research/representation/self_dual_wreath_occupied_carrier_octahedral_boundary.json
+EXP-CODE-SELF-DUAL-WREATH-OCCUPIED-CARRIER-OCTAHEDRAL-BOUNDARY
+```
+
+The first growing-multiplicity physical occupied control has been resolved.
+For every `n>=5`, let `V=[n-1,1]`, `W=[n-2,2]`,
+`tau=[2,2,1^(n-4)]`, and use the four unequal labels
+
+```text
+(sign,V tensor sign), (W,V), (W,V), (W,V).
+```
+
+At orientation zero, the six live differences are
+`(6,7,10,11,12,13)`. Their occupied coefficient fibers decompose exactly as
+
+```text
+K_(2,2,2) tensor C^(n-1)
+  direct-sum
+K_3 tensor C^((n-1)(n-2)).
+```
+
+Every nonopposite overlap has
+
+```text
+gamma = 1/(d_W d_V) = 2/[n(n-1)(n-3)].
+```
+
+The three larger cores have rank `(n-1)^2`; the other three have rank `n-1`.
+The occupied support projectors commute and atomize. However, commuting atoms
+do not force a star or clique: the octahedral `K_(2,2,2)` unit-correlation
+Gram `I+A` has minimum eigenvalue `-1`, with negative dimension `2(n-1)`.
+The dense `n=5` support commutator is `1.6008727194229958e-15`, while the
+normalized Gram has eight negative directions. At the actual physical scale,
+the minimum is `1-2 gamma`; it is `0.9` at `n=5` and remains positive. Thus
+the failed statement is unit-correlation clique trivialization, not physical
+Gram positivity.
+
+This counterfamily is not naturally typical. It repeats source partitions;
+its exact source/target Plancherel mass vanishes, and the existing global
+partition-collision theorem proves that all source partitions are distinct
+with probability `1-o(1)` at the information threshold. Conditional on this
+exceptional portfolio, the octahedral coefficient trace mass is `2/n`, and
+the negative normalized trace fraction is `2/(3n)`. Rank growth, coefficient
+trace mass, and natural source mass must remain separate.
+
+Claim boundary:
+
+```text
+all-n occupied K_(2,2,2) plus K_3 decomposition:       PROVED
+occupied repeated-family support atomization:           PROVED
+commuting occupied supports force star/clique channels: FALSE
+physical small-correlation Gram remains positive:       PROVED
+repeated family has positive natural mass:               FALSE
+collision-free typical occupied compatibility:           OPEN
+coherent collision-free global atom labeler:             OPEN
+graph-general natural Cayley compiler:                    OPEN
+root anchor / physical PGM / decoder / speedup:           OPEN/FALSE
+```
+
+Two negative results are live:
+`COMMUTING-OCCUPIED-CARRIER-SUPPORTS-NOT-CLIQUE-CHANNELS` and
+`REPEATED-OCTAHEDRAL-CARRIER-FAMILY-NOT-NATURAL-MASS`.
+
+**Next high-reasoning task:** move from repeated-label controls to the
+globally distinct Plancherel event. Do not run another dense low-dimensional
+portfolio sweep. Build a coefficient-level incident-channel representation
+that avoids ambient tensor bases, then either:
+
+1. prove that globally distinct membership-pattern carriers force commuting
+   support atoms and classify their bounded channel graphs;
+2. find a globally distinct growing-multiplicity counterfamily and prove its
+   source/occupied mass; or
+3. derive a character-moment or random-partition bound showing that all
+   non-star/nonclique atoms carry `o(1)` physical mass.
+
+Any positive compiler result must be conditioned on the resulting graph
+class and coherent label access. Any negative result must distinguish source
+probability, coefficient trace mass, and parent-state mass.
+
+## Natural Plancherel Carrier Contextuality Moment (2026-09-01)
+
+Files and experiment ID:
+
+```text
+theorems/self_dual_wreath_plancherel_carrier_contextuality.py
+tests/test_self_dual_wreath_plancherel_carrier_contextuality.py
+research/representation/self_dual_wreath_plancherel_carrier_contextuality.json
+EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-CARRIER-CONTEXTUALITY
+```
+
+The stale coefficient-to-PGM mass obligation is already closed by the existing
+trace-weighted bridge and relation-cokernel theorems. The first live gap in the
+current Cayley/compiler chain is joint access to overlapping natural carrier
+labels. Pairwise carrier spectra cannot decide it because simultaneous support
+compatibility is fourth order.
+
+For three membership-pattern blocks `U,V,W`, each containing at least one fresh
+independent Plancherel `S_n` source factor, let `P_alpha` be the full isotypic
+PVM on `U tensor V` and `Q_beta` the PVM on `V tensor W`. The normalized
+aggregate incompatibility has the exact all-`n` reduction
+
+```text
+C_n = D^-1 sum_(alpha,beta) ||[P_alpha,Q_beta]||_F^2
+    = 2(1-kappa_n),
+
+A_n(g) = sum_lambda d_lambda^2 chi_lambda(g)^2,
+mu_n(g) = A_n(g)/(n!)^2,
+kappa_n = Pr_(g,h iid mu_n)[gh=hg].
+```
+
+Character orthogonality proves that `mu_n` normalizes and that the formula is
+the exact Plancherel source average. A separate dense average over all 27
+source triples and all carrier labels at `n=3` reproduces `C_3=7/27` with
+residual `2.22e-16`. Exact controls give
+
+```text
+n=3: kappa=47/54, C=7/27
+n=5: kappa=5063/12000, C=6937/6000
+n=8: kappa=1816880751517/8193540096000,
+     C=6376659344483/4096770048000 ~= 1.55651
+```
+
+Exact-law sampling with 20,000 pairs per degree reaches `n=20`, where
+`kappa_hat=0.02325` and the 99% Hoeffding lower bound on `C_20` is
+`1.9304819258699863`. This is a finite confidence statement, not an asymptotic
+theorem. Because `0<=C_n<=2`, conditioning on the globally distinct source
+event changes its expectation by at most twice that event's failure
+probability. Any eventual constant all-`n` gap therefore transfers to the
+collision-free physical event.
+
+Claim boundary:
+
+```text
+exact annealed character-squared contextuality reduction: PROVED
+dense physical/source verification at n=3:                PROVED
+nonzero incompatibility for every nonabelian S_n:          PROVED
+constant-gap transfer under source-distinct conditioning: CONDITIONAL/PROVED
+kappa_n <= 1-c or kappa_n=o(1):                            OPEN
+collision-free positive constant contextuality:           OPEN
+persistent global Boolean carrier label:                   FALSE UNIVERSALLY
+structured coherent multistar Racah resolver:              OPEN
+physical PGM / decoder / separation / speedup:             OPEN/FALSE
+```
+
+The negative results
+`NATURAL-OVERLAPPING-CARRIER-LABELS-NOT-EXACTLY-JOINT-CLASSICAL` and
+`FINITE-CARRIER-CONTEXTUALITY-TREND-NOT-ASYMPTOTIC-NO-GO` are live. Seven
+theorem tests, clean-registry dispatch, capability-ledger tests, live CLI, and
+live runner pass.
+
+**Next high-reasoning task:** prove or refute an asymptotic gap for the weighted
+commuting probability. Work with the exact central law `mu_n`, not dense Specht
+bases. The most plausible decomposition is by moved support and centralizer
+type:
+
+1. derive an exact formula or sharp bound for `mu_n` mass on permutations with
+   `m` moved points;
+2. combine it with the centralizer profile of a typical `mu_n` draw to bound
+   `E_g mu_n(C(g))`;
+3. use character-ratio, Plancherel collision, or RSK/partition asymptotics only
+   with explicit uniform constants and literature support;
+4. attempt counterexamples where `mu_n` concentrates on large-centralizer
+   classes before asserting decay;
+5. if a constant gap is proved, derive the minimum coherent Racah block needed
+   to resolve the incompatible labels; if it fails, identify the class family
+   carrying the commuting mass and test whether it supplies a scalar compiler.
+
+Do not infer the asymptotic result from the sampled trend, and do not promote
+contextuality to a circuit lower bound.
+
+## Plancherel Carrier Nonidentity Tail (2026-09-01)
+
+Files and experiment ID:
+
+```text
+theorems/self_dual_wreath_plancherel_carrier_nonidentity_tail.py
+tests/test_self_dual_wreath_plancherel_carrier_nonidentity_tail.py
+research/representation/self_dual_wreath_plancherel_carrier_nonidentity_tail.json
+EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-CARRIER-NONIDENTITY-TAIL
+```
+
+The factorial enumeration boundary in the preceding contextuality theorem is
+removed.  For a permutation with cycle multiplicities `m_i`, its centralizer
+is `product_i C_i wr S_(m_i)`.  If a `k`-cycle of equal `i`-cycles has net
+rotation `r mod i`, the induced action has `gcd(i,r)` cycles of length
+`ik/gcd(i,r)`, with `i^(k-1)` rotation assignments for each net rotation.
+Dynamic programming over these blocks gives the exact cycle-type inventory of
+every centralizer.  It matches brute centralizers class by class through `n=7`
+and reproduces every earlier factorial-enumeration value through `n=8`.
+
+Writing `c_n=mu_n(e)` and conditioning both draws to be nonidentity gives the
+exact identity
+
+```text
+kappa_n = 2 c_n - c_n^2 + (1-c_n)^2 kappa_n^*.
+```
+
+The new engine evaluates this exactly through `n=20`, without Monte Carlo:
+
+```text
+n=10: kappa_n^* = 0.011734925319024361
+n=12: kappa_n^* = 0.007687611939991910
+n=14: kappa_n^* = 0.005153730081379267
+n=16: kappa_n^* = 0.003446579155931671
+n=18: kappa_n^* = 0.002421721064474425
+n=20: kappa_n^* = 0.001679453926561604
+```
+
+At `n=20`, `kappa_n=0.02201584387509938`; identity pairs account for
+`0.9252700714390595` of it.  Among the conditional residual, a minimum moved
+support at most `2`, `4`, and `6` captures respectively
+`0.5403466360654514`, `0.9007449851974355`, and
+`0.9904358485605459`.  These are exact finite decompositions, not sampled
+trends.
+
+The asymptotic reduction is also rigorous.  If `Q_n(C)` is the induced class
+mass and `p_max(n)` the maximal Plancherel atom, character column
+orthogonality gives
+
+```text
+Q_n(C) <= p_max(n)
+```
+
+for every conjugacy class.  Aggarwal--Elboim gives
+`p_max(n)=exp(-Theta(sqrt(n)))`.  The number of cycle types moving at most
+`n^delta` points is `exp(O(n^(delta/2)))`, so for every fixed `delta<1` the
+entire conditional mass of that support window is `o(1)`.  In particular,
+the identity atom and every fixed, polynomially sublinear support explanation
+vanish.  The finite transposition/small-support dominance therefore cannot be
+the asymptotic obstruction.
+
+The module also proves exact class-pair commuting probabilities from the
+cycle index and audits two general upper bounds: commuting supports must be
+invariant under the other permutation, and
+`r_(alpha,beta)<=z_alpha z_beta/n!`.  Neither currently yields a uniform
+bound when both supports are mesoscopic/macroscopic.
+
+Claim boundary:
+
+```text
+exact centralizer wreath-product cycle index:                PROVED
+exact kappa_n and kappa_n^* through n=20:                    PROVED
+identity commuting contribution vanishes:                   PROVED
+all support windows <=n^delta vanish for every delta<1:      PROVED
+finite low-support dominance is asymptotic evidence:         FALSE
+class-uniform 7/(4p(n)) bound transfers automatically:       FALSE
+mesoscopic/macroscopic commuting tail vanishes:              OPEN
+kappa_n=o(1) / positive collision-free constant gap:         OPEN
+coherent Racah resolver / PGM / decoder / speedup:            OPEN/FALSE
+```
+
+Two negative results are live:
+`FINITE-LOW-SUPPORT-CARRIER-TAIL-NOT-ASYMPTOTIC-MECHANISM` and
+`CLASS-UNIFORM-COMMUTATOR-BOUND-NOT-DIRECT-PLANCHEREL-TAIL-PROOF`.
+Eight theorem tests, clean-registry runner dispatch, capability-ledger tests,
+live CLI, and live runner pass.
+
+**Next high-reasoning task:** control the exact class-pair kernel
+`r_(alpha,beta)` when both supports exceed `n^delta`, preferably for some
+`delta>3/4`.  The support-invariance coefficient admits the rigorous bound
+
+```text
+Pr[a random l-subset is g-invariant]
+  <= (n+1) exp(-supp(g) (l/n)(1-l/n)).
+```
+
+This kills the range where both support and cosupport are sufficiently large,
+after charging the `p(n)` class count.  The difficult residual is the
+near-derangement range, especially types with many repeated short cycles.
+Plausible routes are:
+
+1. prove a cycle-block partition invariance bound for near-derangements;
+2. split by cycle count and use centralizer size for few-cycle types, with a
+   random matching/short-cycle bound for many-cycle types;
+3. derive a bounded class-law chi-square theorem and an `O(p(n))` Frobenius
+   mass bound for the nonidentity commuting kernel;
+4. use Eberhard--Garzoni fixed-cycle-type generation results only after
+   separately controlling involution-heavy exceptions.
+
+Do not return to low-support exact sweeps.  They are now proved asymptotically
+irrelevant.  Do not transfer a class-uniform estimate to the character-squared
+law without an explicit density or quadratic-form comparison.
+
+## Plancherel Carrier Near-Derangement Reduction (2026-09-01)
+
+Files and experiment ID:
+
+```text
+theorems/self_dual_wreath_plancherel_carrier_near_derangement_reduction.py
+tests/test_self_dual_wreath_plancherel_carrier_near_derangement_reduction.py
+research/representation/self_dual_wreath_plancherel_carrier_near_derangement_reduction.json
+EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-CARRIER-NEAR-DERANGEMENT-REDUCTION
+```
+
+If `g` moves `m` points and `h` moves `l` points, commutation forces
+`supp(h)` to be a union of cycles of `g`.  A coefficient bound for its
+invariant-subset generating polynomial proves, with `x=l/n`,
+
+```text
+r_(g,h) <= (n+1) exp(-m x(1-x)),
+```
+
+and symmetrically.  Combining this with the already proved vanishing mass of
+support at most `M=n^delta`, for any fixed `2/3<delta<1`, eliminates the
+balanced support range and then every near-derangement pair where either draw
+has at least `8 log(n+1)` fixed points.  The entire residual is reduced to two
+classes with logarithmically many fixed points.
+
+For the fixed-point-free involution class in `S_(2k)`, the exact self-kernel is
+
+```text
+[sum_j k!/((k-2j)!j!)] / [(2k)!/(2^k k!)].
+```
+
+The numerator counts repeated matching edges and paired reference edges that
+form alternating four-cycles.  A Cauchy bound on `[t^k]exp(t+t^2)` proves
+`exp(-Omega(k log k))` decay.  Exact scans through `n=24` identify this class
+as the finite worst case among classes with at most four fixed points, but the
+reduction report correctly leaves all-n extremality false.  Six theorem tests,
+clean-registry runner dispatch, live CLI/runner, and capability integration
+pass.
+
+## Plancherel Carrier Asymptotic Closure (2026-09-01)
+
+Files and experiment ID:
+
+```text
+theorems/self_dual_wreath_plancherel_carrier_asymptotic_closure.py
+tests/test_self_dual_wreath_plancherel_carrier_asymptotic_closure.py
+research/representation/self_dual_wreath_plancherel_carrier_asymptotic_closure.json
+EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-CARRIER-ASYMPTOTIC-CLOSURE
+```
+
+This closes the all-n logarithmic-fixed-point corner.  Let
+`B_k=2^k k!`.  Strong induction on moved degree proves:
+
+```text
+max fixed-free z_alpha in S_(2k)     <= B_k,
+equality                              iff alpha=2^k,
+max fixed-free z_alpha in S_(2k+1)   <= (2k+1) B_(k-1),
+z_alpha/B_k for alpha!=2^k in S_(2k) <=
+  max{1/[2(k-1)], (2k-3)/[4(k-1)(k-2)]}=O(1/k).
+```
+
+For `f` fixed points, `z_(1^f union nu)=f!z_nu`.  Falling-factorial bounds
+therefore give an even nonexceptional ratio `O(F_n^2/k)` and a bounded odd
+ratio for `F_n=ceil(8 log(n+1))`.  Since
+`r_(alpha,beta)<=z_alpha z_beta/n!` and
+`B_k^2/(2k)! = O(sqrt(k))`, every nonexceptional even pair and every odd pair
+has vanishing kernel.  The unique even exception `(2^k,2^k)` is handled by
+the exact matching formula above.  Hence
+
+```text
+kappa_n^* -> 0,
+kappa_n   -> 0,
+E C_n = 2(1-kappa_n) -> 2.
+```
+
+This also transfers to the asymptotically full globally distinct source event.
+Centralizer envelopes were exhaustively audited through `n=24`; exact
+class-pair kernels were audited through `n=14`.  Seven theorem tests,
+clean-registry dispatch, live CLI/runner, literature extraction, capability
+integration, compile checks, and registry validation pass.  The supporting
+published centralizer reference is now structured as
+`liebeck-shalev-diameters-finite-simple-groups-2001`.
+
+Claim boundary:
+
+```text
+weighted character-squared commuting probability kappa_n -> 0: PROVED
+natural collision-free aggregate carrier contextuality -> 2:  PROVED
+coherent multistar Racah resolver:                            OPEN
+physical PGM and hidden-involution decoder:                   OPEN
+classical separation / quantum algorithm / speedup:           OPEN/FALSE
+```
+
+**Next high-reasoning task:** stop optimizing the character moment.  Derive
+the minimum physical multistar Racah block on which the two overlapping
+carrier PVMs act, and determine whether the proved average commutator can be
+accessed by a polynomial-description coherent operation.  Start from the
+existing pair-carrier GPE compiler, Schur companion register, addressed
+cross-map/polar boundaries, and Cayley endpoint gauge normal form.  Required
+outputs are:
+
+1. an explicit source-label-conditioned block matrix or intertwiner for the
+   incompatible pair-carrier PVMs, including all multiplicity registers;
+2. a uniform input/output encoding and normalization ledger;
+3. a candidate coherent operation whose gate/query cost is polynomial in
+   `n` and copy count, or an explicit reduction showing why it inherits the
+   existing `sqrt(width)`/dense-assembly barrier;
+4. a physical discrimination statistic tied to the hidden involution, not
+   merely carrier-label incompatibility;
+5. immediate classical tensor-network, low-rank, and sampling attacks against
+   that statistic.
+
+Do not infer a resolver from the asymptotic moment.  Do not perform more
+finite `kappa_n` sweeps unless they test a new physical-access construction.
+
+## Plancherel Carrier Racah Access Boundary (2026-09-02)
+
+Files and experiment ID:
+
+```text
+theorems/self_dual_wreath_plancherel_carrier_racah_access_boundary.py
+tests/test_self_dual_wreath_plancherel_carrier_racah_access_boundary.py
+research/representation/self_dual_wreath_plancherel_carrier_racah_access_boundary.json
+EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-CARRIER-RACAH-ACCESS-BOUNDARY
+```
+
+For fixed source irreps `a,b,c` and total irrep `tau`, the minimum physical
+Racah space is
+
+```text
+M_tau^L = direct_sum_alpha K_(a,b)^alpha tensor K_(alpha,c)^tau,
+M_tau^R = direct_sum_beta  K_(b,c)^beta tensor K_(a,beta)^tau.
+```
+
+Associativity gives equal dimensions and a Racah unitary `F_tau`.  In left
+coordinates the two overlapping carrier PVMs are
+`P_alpha=I_(V_tau) tensor Pi_alpha` and
+`Q_beta=I_(V_tau) tensor F_tau^* Pi_beta F_tau`.  For the normalized identity
+input, the exact Luders return identity is
+
+```text
+C = D^-1 sum_(alpha,beta) ||[P_alpha,Q_beta]||_F^2
+  = 2(1-p_return).
+```
+
+The known pair-carrier GPE compiler can query each PVM, so this disturbance is
+accessible with constant coherent query count without compiling the full
+Racah matrix.  Moreover `C<=2 w_active`; the preceding theorem `E C->2`
+therefore forces the physical dimension fraction of active Racah blocks to
+tend to one.  The signal is not confined to a rare low-rank sector.
+
+The decisive negative result is conjugation invariance.  Every carrier PVM is
+a central group average and commutes with simultaneous conjugation.  Every
+adaptive branch effect generated only from these PVMs is therefore invariant.
+Conjugate hidden involutions produce unitarily conjugate coset states, so all
+carrier-only outcome distributions are identical across the hidden class.
+Carrier contextuality has zero hidden-identity information even though its
+disturbance tends to the algebraic maximum.
+
+Finite `S_3` and `S_4` controls verify the Racah block decomposition, dense
+commutator energy, return identity, active-mass lower bound, and invariance of
+arbitrary carrier words.  Seven theorem tests, clean-registry dispatch, live
+CLI/runner, capability integration, compile checks, and registry validation
+pass.
+
+Claim boundary:
+
+```text
+minimum total-irrep Racah block:                 PROVED
+constant-query carrier disturbance experiment:  COMPILED
+active physical Racah mass tends to one:         PROVED
+carrier-PVM-only hidden-involution decoder:      IMPOSSIBLE
+covariant noncentral row/orientation decoder:    OPEN
+classical separation / quantum algorithm:        OPEN/FALSE
+```
+
+**Next high-reasoning task:** construct the minimum covariant noncentral
+row/orientation effect outside the carrier-PVM algebra.  Compute its exact
+hidden-involution-conditioned distributions on `S_3` and `S_4`, test whether
+one representation-matrix or row-reference operation suffices to break the
+invariance, and immediately attack the resulting statistic with character,
+tensor-network, and classical sampling baselines.  Merely breaking
+conjugation invariance is not a decoder; require nonzero identity information,
+a scalable coherent access model, and a complexity separation.
+
+## Carrier Noncentral Readout Boundary (2026-09-02)
+
+Files and experiment ID:
+
+```text
+theorems/self_dual_wreath_carrier_noncentral_readout_boundary.py
+tests/test_self_dual_wreath_carrier_noncentral_readout_boundary.py
+research/representation/self_dual_wreath_carrier_noncentral_readout_boundary.json
+EXP-CODE-SELF-DUAL-WREATH-CARRIER-NONCENTRAL-READOUT-BOUNDARY
+```
+
+This implements the minimum operation outside the carrier-PVM algebra.  For
+three natural coset states and conditioned source tuple `lambda`, the exact
+unnormalized informative block is
+
+```text
+tensor_i d_(lambda_i)/|S_n| [I + rho_(lambda_i)(h)].
+```
+
+Alternating left/right pair-carrier Luders instruments are followed by a
+fixed Young-basis rank-one readout.  Uniform public simultaneous conjugation,
+retained in the transcript, covariantizes this noncentral effect without
+changing its information under the uniform hidden-class prior.
+
+The information boundary is exact.  Source labels and carrier transcripts
+are conjugation invariant, so `I(H;T)=0`; all extended-protocol information is
+
+```text
+I(H;T,J) = I(H;J | T).
+```
+
+Exact natural `S_3` and `S_4` controls enumerate schedules through depth three.
+The `S_4` perfect-matching control has a small one-carrier gain over the
+default Young basis, proving that the noncentral extension genuinely escapes
+the previous no-go.  It does not survive as a compelling algorithmic signal:
+an exhaustive relative group-orbit product-basis search nearly matches the
+gain, the finite global PGM dominates every schedule, and depth-two/depth-three
+Racah alternation loses information on every class.  Carrier contextuality is
+therefore not a decoder amplifier.
+
+Claim boundary:
+
+```text
+carrier transcript hidden information:             EXACTLY ZERO
+minimum covariant noncentral row readout:           COMPILED
+finite hidden-conditioned row signal:               EXHIBITED
+robust advantage over general separable POVMs:      OPEN/FALSE
+source-specific PGM multiplicity-row verifier:      OPEN
+scalable hidden-involution decoder / speedup:        OPEN/FALSE
+```
+
+Six theorem tests, clean-registry dispatch, CLI/runner, 35-entry capability
+integration, compile checks, and registry validation pass.
+
+**Next high-reasoning task:** stop increasing carrier-measurement depth.  Work
+on the source-specific natural PGM multiplicity row that the Gelfand outcome
+spectrum cannot determine.  Derive the exact effect of inserting one carrier
+projection into the natural frame polar, seek a structured verifier for the
+physical row, and compare it against arbitrary separable POVMs rather than a
+single Young basis.  Any finite signal must survive the product one-copy PGM,
+global PGM, tensor-network, and classical sampling baselines.
+
+## Carrier-Conditioned PGM Boundary (2026-09-02)
+
+Files and experiment ID:
+
+```text
+theorems/self_dual_wreath_carrier_conditioned_pgm_boundary.py
+tests/test_self_dual_wreath_carrier_conditioned_pgm_boundary.py
+research/representation/self_dual_wreath_carrier_conditioned_pgm_boundary.json
+EXP-CODE-SELF-DUAL-WREATH-CARRIER-CONDITIONED-PGM-BOUNDARY
+```
+
+The natural carrier flag makes the dephased PGM an exact direct sum. In total
+irrep `nu` and carrier branch `alpha`, the remaining inverse is
+`(c_(nu,alpha) D_nu c_(nu,alpha))^(-1/2)`. One pair label therefore compresses
+the physical PGM but does not scalarize the Racah path space. The exact natural
+`S_5` three-copy audit retains a collective advantage over product PGM, reduces
+the average positive condition number by more than a factor two, and still has
+no polynomial branch-PGM circuit or hidden-label decoder.
+
+## Carrier Holevo Budget (2026-09-02)
+
+Files and experiment ID:
+
+```text
+theorems/self_dual_wreath_carrier_holevo_budget_theorem.py
+tests/test_self_dual_wreath_carrier_holevo_budget_theorem.py
+research/representation/self_dual_wreath_carrier_holevo_budget_theorem.json
+EXP-CODE-SELF-DUAL-WREATH-CARRIER-HOLEVO-BUDGET-THEOREM
+```
+
+A pinching with `r` outcomes loses at most `log2(r)` Holevo bits, and adaptive
+noncommuting rounds telescope. Since `log2 p(n)=O(sqrt(n))` while the
+perfect-matching source requires `Omega(n log n)` input Holevo information at
+the equal-overlap threshold, `q=o(sqrt(n) log n)` carrier rounds preserve an
+extensive Holevo budget. This is not accessible information: quantum data
+locking explicitly blocks that inference.
+
+## Carrier Branch PGM Anti-Locking Theorem (2026-09-02)
+
+Files and experiment ID:
+
+```text
+theorems/self_dual_wreath_carrier_branch_pgm_success_certificate.py
+tests/test_self_dual_wreath_carrier_branch_pgm_success_certificate.py
+research/representation/self_dual_wreath_carrier_branch_pgm_success_certificate.json
+EXP-CODE-SELF-DUAL-WREATH-CARRIER-BRANCH-PGM-SUCCESS-CERTIFICATE
+```
+
+For branch rank `r_a`, self-purity `u_a`, and distinct collision coefficient
+`v_a`, the branch PGM obeys
+
+```text
+p_(PGM,a) >= 1/[u_a+(M-1)v_a].
+```
+
+Jensen reduces the flagged PGM to one natural-average denominator. Writing
+`kappa_(s,a)=r_(s,a)/(R_s p_(s,a))`, exact source bookkeeping gives a mean
+angle-dilution bound at most four for every `n`, and `u_(s,a)<=kappa_(s,a)`
+closes the natural-average self-purity term. The apparent worst-sector pattern
+`kappa_max=n-1` is false: the exact `S_6` pair audit reaches `kappa=20` on tiny
+mass while the natural outcome mean remains below two.
+
+The decisive source-factorization theorem is:
+
+```text
+D_bar <= 4^q + 16^q (M-1)2^-k
+```
+
+for `q` disjoint pair-carrier pinches among `k` copies. At
+`k=ceil(log2 M)+s`, branch-PGM success is at least
+`1/[4^q+16^q 2^-s]`: constant for fixed `q`, inverse polynomial for
+`q=O(log n)`. This is a genuine all-`n` accessible-success theorem, not merely
+Holevo retention. Its scope is deliberately narrow: overlapping adaptive
+carriers break source-pair independence, and no coherent branch-PGM compiler,
+hidden-label decoder, or classical separation is known. Speedup remains false.
+
+## Disjoint Pair Branch-PGM Compiler Boundary (2026-09-02)
+
+Files and experiment ID:
+
+```text
+theorems/self_dual_wreath_disjoint_pair_branch_pgm_compiler_boundary.py
+tests/test_self_dual_wreath_disjoint_pair_branch_pgm_compiler_boundary.py
+research/representation/self_dual_wreath_disjoint_pair_branch_pgm_compiler_boundary.json
+EXP-CODE-SELF-DUAL-WREATH-DISJOINT-PAIR-BRANCH-PGM-COMPILER-BOUNDARY
+```
+
+Disjoint pair-carrier projectors factor the conditioned state for each fixed
+hidden involution, but they do not factor the hypothesis ensemble. For two
+blocks the exact frame identity is
+
+```text
+bar(omega) = bar(sigma) tensor bar(tau)
+             + M^-1 sum_h Delta(sigma_h) tensor Delta(tau_h).
+```
+
+The shared-hidden-label covariance is nonzero on positive natural source mass.
+Consequently the global inverse square root does not reduce to pair-local
+inverse square roots. The tempting effects `M E_h tensor F_h` fail POVM
+completeness and can sum above identity. The legal local baseline measures all
+pair-PGM outcomes and performs MAP decoding; exact natural controls give
+global/local Bayes success `0.7651/0.6296` on `S_3` and `0.8881/0.8796` on
+`S_4`. A selected `S_5` standard-source control with 15 hypotheses gives
+`0.5000/0.3080` and a weighted frame-covariance fraction `0.3856`.
+
+This falsifies only the naive pair-local compiler. It is not a circuit lower
+bound. A covariance-aware covariant polar, hidden-label decoder, and classical
+separation remain open, so speedup remains false.
+
+## Disjoint Pair Covariance-Polar Reduction (2026-09-03)
+
+Files and experiment ID:
+
+```text
+theorems/self_dual_wreath_disjoint_pair_covariance_polar_reduction.py
+tests/test_self_dual_wreath_disjoint_pair_covariance_polar_reduction.py
+research/representation/self_dual_wreath_disjoint_pair_covariance_polar_reduction.json
+EXP-CODE-SELF-DUAL-WREATH-DISJOINT-PAIR-COVARIANCE-POLAR-REDUCTION
+```
+
+Every active pair-carrier branch has exact hidden-average state
+`Q_alpha/[g(lambda,mu,alpha)d_alpha]`, including Kronecker multiplicity greater
+than one. For two disjoint pair branches, put
+`X_h=r_A sigma_h-Q_A`, `Y_h=r_B tau_h-Q_B`, and
+`K=E_h X_h tensor Y_h`. The joint frame and PGM reduce exactly to
+
+```text
+B = (Q_A tensor Q_B + K)/(r_A r_B),
+E_h = M^-1 (I+K)^(-1/2)
+      (r_A sigma_h tensor r_B tau_h)(I+K)^(-1/2).
+```
+
+The carrier ranks cancel. Moreover, the exact natural branch law cancels the
+small likelihood denominator in the rank-scaled four-term LCU:
+`E[4/s]<=4`, `E[4/s+1]<=5`, and the two-pair centered-covariance mean is at
+most 25. A cutoff at normalization 100 retains at least 3/4 natural two-pair
+mass. This is a conditional access schema, not a compiled block encoding:
+coherent matching-class preparation and carrier-isotypic projection are still
+uncosted. The full information-threshold frame also has residual singleton
+factors and higher shared-label cumulants.
+
+## Dimensionless PGM Truncation Bridge (2026-09-03)
+
+Files and experiment ID:
+
+```text
+theorems/self_dual_wreath_dimensionless_pgm_truncation_bridge.py
+tests/test_self_dual_wreath_dimensionless_pgm_truncation_bridge.py
+research/representation/self_dual_wreath_dimensionless_pgm_truncation_bridge.json
+EXP-CODE-SELF-DUAL-WREATH-DIMENSIONLESS-PGM-TRUNCATION-BRIDGE
+```
+
+For any carrier-conditioned ensemble on `D`-dimensional support, the
+rank-scaled metric `G=D B` has trace `D`. Discarding eigenvalues below
+`epsilon` therefore loses at most `epsilon` average input mass. Compressing
+the ideal PGM effects to the retained subspace is a legal sub-POVM and gentle
+measurement bounds its success loss by `2sqrt(epsilon)`. A certified ideal
+success `c` is retained at least `c/2` at cutoff `epsilon=c^2/16`.
+
+This removes the actual minimum positive eigenvalue from the compiler proof
+debt. For fixed disjoint-pair depth the cutoff is constant. For
+`q=ceil(log2 n)`, the existing all-`n` certificate gives
+`c>=1/(20n^4)` and `epsilon>=1/(6400n^8)`. Two exact `S_5` controls remove 11
+and 5 positive spectral directions while reproducing the truncated effects to
+machine precision. The result does not compile the full threshold-metric block
+encoding, the hypothesis-output isometry, or a decoder.
+
+The first local composition attempt is now closed. The exact natural pair-
+carrier marginal equals the singleton source law. A simultaneous character-
+ratio envelope therefore proves that every independent tensor product of
+rank-scaled singleton and disjoint-pair LCUs has normalization at least
+`2^(k/2)` on overwhelming natural mass at information threshold
+`k=ceil(log2((n-1)!!))`, for every local pairing schedule and even `n>=20`.
+This is superpolynomial and rules out local block multiplication, but not a
+global covariant implementation.
+
+**Next high-reasoning task:** derive the full shared-hidden-label twirl as an
+operator in the orbit/commutant algebra before expanding it into local factors.
+Search for a Fourier transform, coherent source-block aggregation, or
+nonmultiplicative recursive isometry whose normalization is controlled
+globally. The construction must avoid enumerating `(n-1)!!` hypotheses and
+must expose a reversible hypothesis-output statistic. If that route also has
+superpolynomial normalization, prove a scoped no-go and move to a different
+measurement family. Do not return to local singleton/pair tensor products or
+minimum-positive-edge proofs; both questions are settled for this route.
+
+### Multiplicity Twirl Projection Checkpoint
+
+The bounded-support commutant route now has a direct multiplicity-space audit.
+For a repeated `K_m=C_2 wr S_m` block, the `K_m` conjugation twirl is exactly
+Hilbert-Schmidt projection onto `End_K`, so one orbit representative can be
+compressed directly to the small copy algebra. Sparse signed-weight projectors,
+positive/negative stabilizer Casimirs, and transport over all equal-weight
+characters now extend this to arbitrary bipartitions. The formula agrees with
+an explicit 384-element `K_4` twirl to `5.2e-16`. At `m=7`, all eight audited
+repeated blocks close by support six: the multiplicity-three block
+`lambda=(9,4,1), mu=((4,2,1),empty)` closes at support five, and three
+nontrivial-beta controls close at support four. The prior `4,5,6` sequence is
+therefore not evidence for an unbounded-support obstruction.
+
+**Next commutant high-reasoning task:** use the compressed method to scan every
+computationally feasible repeated `S_14` bipartition, weighted by the actual
+hidden-involution source law. Measure normalized spectral gaps, not only algebra
+generation. Search actively for a support-six counterexample; if none appears,
+identify a symbolic invariant that could prove uniform support-six generation.
+Keep coherent quantum access false until a reversible signed-sector/isotypic
+transform, source-aware polar, and hypothesis-output decoder are compiled.
+
+### Source-weighted multiplicity-fiber checkpoint
+
+The commutant search now has a matrix-free carrier partial trace.  A signed
+pair-flip/YJM projector isolates one `b`-column root fiber; seminormal edge
+recurrences propagate a common copy gauge across the carrier; equal-weight
+sign transports then contract exact `b x b` orbit matrices.  It agrees with an
+explicit 384-element `K_4` twirl to `4.2e-16` and an independent nontrivial-
+beta `S_14` commutant projection to `2.6e-16`.  This reduces live columns by the
+carrier dimension but retains exponentially many ambient Specht rows.
+
+The exact source law selected the previously untested branch
+`lambda=(5,3,2,2,1,1)`, `mu=((2,1),(2,1,1))`, with multiplicity 26 and source
+mass `0.0087053571`.  Every support-at-most-three representative generates only
+a 7-dimensional algebra.  Eight total representatives, including a support-
+four witness subset, give a simple separator with LCU-normalized finite gap
+`7.53e-4`, connected-generator bottleneck `0.143`, and direct commutator
+nullity one; the next singular value is `0.223`.  Hence support four
+numerically generates `M_26` on this finite block.  The older word enumerator's
+rank 675 was numerical loss, not a valid proper star-algebra dimension.
+
+Audited rank-seven source mass is now `0.00873605`, up from `3.07e-5` but still
+below one percent.  Do not call this typical behavior, a gap-scaling theorem,
+or a quantum transform.  The next high-judgment task is to scan the next
+source-ranked blocks, then infer or falsify a symbolic bounded-support rule
+across shapes.  In parallel, seek a partition-algebra or tensor-network
+contraction that removes the ambient `dim(V_lambda)` rows.  Keep coherent
+access, decoder, classical separation, and speedup false.
+
 ## Resume Commands
 
 ```bash
@@ -13639,6 +15069,48 @@ python qsearch.py code-wreath-orientation-fourier
 python qsearch.py code-wreath-orientation-moments
 python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-FUSION-MOMENT
 python self_dual_wreath_physical_pgm_intertwiner.py
+python qsearch.py self-dual-wreath-cayley-endpoint-gauge-compiler
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-CAYLEY-ENDPOINT-GAUGE-COMPILER
+python qsearch.py self-dual-wreath-affine-star-cayley-compiler
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-AFFINE-STAR-CAYLEY-COMPILER
+python qsearch.py self-dual-wreath-pair-carrier-label-contextuality
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-PAIR-CARRIER-LABEL-CONTEXTUALITY
+python qsearch.py self-dual-wreath-occupied-carrier-octahedral-boundary
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-OCCUPIED-CARRIER-OCTAHEDRAL-BOUNDARY
+python qsearch.py self-dual-wreath-plancherel-carrier-contextuality
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-CARRIER-CONTEXTUALITY
+python qsearch.py self-dual-wreath-plancherel-carrier-nonidentity-tail
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-CARRIER-NONIDENTITY-TAIL
+python qsearch.py self-dual-wreath-plancherel-carrier-near-derangement-reduction
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-CARRIER-NEAR-DERANGEMENT-REDUCTION
+python qsearch.py self-dual-wreath-plancherel-carrier-asymptotic-closure
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-CARRIER-ASYMPTOTIC-CLOSURE
+python qsearch.py self-dual-wreath-plancherel-carrier-racah-access-boundary
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-CARRIER-RACAH-ACCESS-BOUNDARY
+python qsearch.py self-dual-wreath-carrier-noncentral-readout-boundary
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-CARRIER-NONCENTRAL-READOUT-BOUNDARY
+python qsearch.py self-dual-wreath-carrier-conditioned-pgm-boundary
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-CARRIER-CONDITIONED-PGM-BOUNDARY
+python qsearch.py self-dual-wreath-carrier-holevo-budget-theorem
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-CARRIER-HOLEVO-BUDGET-THEOREM
+python qsearch.py self-dual-wreath-carrier-branch-pgm-success-certificate
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-CARRIER-BRANCH-PGM-SUCCESS-CERTIFICATE
+python qsearch.py self-dual-wreath-disjoint-pair-branch-pgm-compiler-boundary
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-DISJOINT-PAIR-BRANCH-PGM-COMPILER-BOUNDARY
+python qsearch.py self-dual-wreath-disjoint-pair-covariance-polar-reduction
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-DISJOINT-PAIR-COVARIANCE-POLAR-REDUCTION
+python qsearch.py self-dual-wreath-dimensionless-pgm-truncation-bridge
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-DIMENSIONLESS-PGM-TRUNCATION-BRIDGE
+python qsearch.py self-dual-wreath-local-block-metric-normalization-no-go
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-LOCAL-BLOCK-METRIC-NORMALIZATION-NO-GO
+python qsearch.py coset-hidden-involution-multiplicity-twirl-projection
+python qsearch.py run EXP-COSET-HIDDEN-INVOLUTION-MULTIPLICITY-TWIRL-PROJECTION
+python qsearch.py coset-hidden-involution-multiplicity-fiber-trace
+python qsearch.py run EXP-COSET-HIDDEN-INVOLUTION-MULTIPLICITY-FIBER-TRACE
+python qsearch.py coset-hidden-involution-high-mass-support-scan
+python qsearch.py run EXP-COSET-HIDDEN-INVOLUTION-HIGH-MASS-SUPPORT-SCAN
+python qsearch.py coset-hidden-involution-natural-support-six-mass-audit
+python qsearch.py run EXP-COSET-HIDDEN-INVOLUTION-NATURAL-SUPPORT-SIX-MASS-AUDIT
 python self_dual_wreath_level_three_flag_audit.py
 python self_dual_wreath_common_core_atomization.py
 python self_dual_wreath_dependency_homology.py
@@ -13692,6 +15164,9 @@ PYTHONPATH=core:theorems python theorems/self_dual_wreath_recursive_polar_normal
 PYTHONPATH=core:theorems python theorems/self_dual_wreath_affine_gpe_nodelocal_naimark_access_boundary.py
 PYTHONPATH=core:theorems python theorems/self_dual_wreath_positive_naimark_access_equivalence_boundary.py
 PYTHONPATH=core:theorems python theorems/self_dual_wreath_hierarchical_endpoint_schur_algebra_boundary.py
+PYTHONPATH=core:theorems python theorems/self_dual_wreath_affine_flag_aggregate_schur_query_boundary.py
+PYTHONPATH=core:theorems python theorems/self_dual_wreath_affine_node_frame_response_boundary.py
+PYTHONPATH=core:theorems python theorems/self_dual_wreath_scale_free_endpoint_graph_transfer_boundary.py
 PYTHONPATH=core:theorems python theorems/self_dual_wreath_final_root_scalar_mixer_no_go.py
 PYTHONPATH=core:theorems python theorems/self_dual_wreath_final_root_metric_access_width_no_go.py
 python self_dual_wreath_final_root_natural_common_span.py

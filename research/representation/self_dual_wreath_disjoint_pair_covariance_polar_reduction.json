@@ -1,0 +1,1699 @@
+{
+  "created_at": "2026-09-02T20:39:26.591791+00:00",
+  "theorem_contract": {
+    "input": "public natural Fourier source labels and two disjoint measured pair-carrier labels for a uniform hidden-involution class",
+    "operator": "dimensionless shared-label correlation metric I+K",
+    "access": "uniform public conjugacy-class LCU using controlled representation actions and carrier projectors",
+    "output": "reduced branch-PGM inverse-square-root target"
+  },
+  "theorem": {
+    "pair_branch_flatness": "For every active (lambda,mu,alpha) branch, class averaging is Q_alpha/[g(lambda,mu,alpha)d_alpha], including multiplicity>1.",
+    "scaled_centered_states": "X_h=r_alpha sigma_h-Q_alpha has zero class mean and a five-term projected-unitary LCU with normalization at most 4/s+1.",
+    "dimensionless_frame": "Two disjoint pair branches obey B=(Q_A tensor Q_B+E_h X_h tensor Y_h)/(r_A r_B).",
+    "pgm_effect_reduction": "On product support, every PGM effect uses only the dimensionless inverse (I+K)^(-1/2); the explicit carrier ranks cancel.",
+    "rank_scaled_lcu": "r_alpha sigma_h=Q[(I+rho_lambda(h)) tensor (I+rho_mu(h))]Q/[1+r_lambda+r_mu+r_alpha].",
+    "natural_normalization_cancellation": "The exact natural branch probability contains the same likelihood scalar s, proving E[4/s]<=4, E[4/s+1]<=5, and two-pair mean<=25.",
+    "constant_mass_truncation": "Markov truncation at normalization 25/delta retains at least 1-delta of the natural two-pair branch law.",
+    "public_access_schema": "Conditional on coherent uniform conjugacy-class PREPARE and coherent carrier-isotypic projectors, controlled Young representation actions and a constant-term LCU give a bounded-normalization covariance access schema on every retained branch. Those access primitives are not compiled here.",
+    "scope": "No all-n lower bound on the positive edge of I+K is proved. The two-pair reduction is not yet the full threshold-copy PGM, Naimark output isometry, hidden-label decoder, or classical separation.",
+    "all_n_pair_branch_flatness_proved": true,
+    "dimensionless_covariance_frame_reduction_proved": true,
+    "pgm_rank_normalization_cancellation_proved": true,
+    "all_n_natural_lcu_expectation_bound_proved": true,
+    "constant_mass_constant_normalization_schema_proved": true,
+    "conditional_public_covariance_block_encoding_schema_proved": true,
+    "uniform_public_covariance_block_encoding_compiled": false,
+    "inverse_square_root_spectral_gap_proved": false,
+    "threshold_copy_extension_proved": false,
+    "pgm_output_isometry_compiled": false,
+    "hidden_involution_decoder_compiled": false,
+    "theorem_verified": true,
+    "status": "dimensionless-covariance-polar-access-normalized-spectral-gap-open"
+  },
+  "finite_pair_flatness_controls": [
+    {
+      "control_id": "S3-PAIR-0-1-TARGET-2-1",
+      "n": 3,
+      "transposition_count": 1,
+      "source_partitions": [
+        [
+          3
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "carrier_partition": [
+        2,
+        1
+      ],
+      "kronecker_multiplicity": 1,
+      "carrier_support_rank": 2,
+      "natural_source_branch_probability": 0.4444444444444444,
+      "branch_probability": 1.0,
+      "target_likelihood_scalar": 2.0,
+      "rank_scaled_state_lcu_normalization": 2.0,
+      "centered_state_lcu_normalization": 3.0,
+      "maximum_flat_average_residual": 0.0,
+      "maximum_rank_scaled_lcu_identity_residual": 0.0,
+      "maximum_centered_mean_residual": 0.0,
+      "exact_pair_branch_flatness_verified": true,
+      "exact_rank_scaled_lcu_verified": true,
+      "status": "pair-branch-flat-rank-scaled-four-term-lcu-exact"
+    },
+    {
+      "control_id": "S3-PAIR-1-1-TARGET-3",
+      "n": 3,
+      "transposition_count": 1,
+      "source_partitions": [
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "carrier_partition": [
+        3
+      ],
+      "kronecker_multiplicity": 1,
+      "carrier_support_rank": 1,
+      "natural_source_branch_probability": 0.22222222222222213,
+      "branch_probability": 0.49999999999999983,
+      "target_likelihood_scalar": 2.0,
+      "rank_scaled_state_lcu_normalization": 2.0,
+      "centered_state_lcu_normalization": 3.0,
+      "maximum_flat_average_residual": 1.7963785889362148e-16,
+      "maximum_rank_scaled_lcu_identity_residual": 3.708942158836198e-16,
+      "maximum_centered_mean_residual": 2.444545038787397e-16,
+      "exact_pair_branch_flatness_verified": true,
+      "exact_rank_scaled_lcu_verified": true,
+      "status": "pair-branch-flat-rank-scaled-four-term-lcu-exact"
+    },
+    {
+      "control_id": "S3-PAIR-1-1-TARGET-2-1",
+      "n": 3,
+      "transposition_count": 1,
+      "source_partitions": [
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "carrier_partition": [
+        2,
+        1
+      ],
+      "kronecker_multiplicity": 1,
+      "carrier_support_rank": 2,
+      "natural_source_branch_probability": 0.22222222222222213,
+      "branch_probability": 0.49999999999999983,
+      "target_likelihood_scalar": 1.0,
+      "rank_scaled_state_lcu_normalization": 4.0,
+      "centered_state_lcu_normalization": 5.0,
+      "maximum_flat_average_residual": 5.087635970274337e-16,
+      "maximum_rank_scaled_lcu_identity_residual": 3.354010220552734e-15,
+      "maximum_centered_mean_residual": 8.524258744652149e-16,
+      "exact_pair_branch_flatness_verified": true,
+      "exact_rank_scaled_lcu_verified": true,
+      "status": "pair-branch-flat-rank-scaled-four-term-lcu-exact"
+    },
+    {
+      "control_id": "S3-PAIR-0-0-TARGET-3",
+      "n": 3,
+      "transposition_count": 1,
+      "source_partitions": [
+        [
+          3
+        ],
+        [
+          3
+        ]
+      ],
+      "carrier_partition": [
+        3
+      ],
+      "kronecker_multiplicity": 1,
+      "carrier_support_rank": 1,
+      "natural_source_branch_probability": 0.1111111111111111,
+      "branch_probability": 1.0,
+      "target_likelihood_scalar": 4.0,
+      "rank_scaled_state_lcu_normalization": 1.0,
+      "centered_state_lcu_normalization": 2.0,
+      "maximum_flat_average_residual": 0.0,
+      "maximum_rank_scaled_lcu_identity_residual": 0.0,
+      "maximum_centered_mean_residual": 0.0,
+      "exact_pair_branch_flatness_verified": true,
+      "exact_rank_scaled_lcu_verified": true,
+      "status": "pair-branch-flat-rank-scaled-four-term-lcu-exact"
+    },
+    {
+      "control_id": "S4-PAIR-2-3-TARGET-2-1-1",
+      "n": 4,
+      "transposition_count": 2,
+      "source_partitions": [
+        [
+          2,
+          2
+        ],
+        [
+          2,
+          1,
+          1
+        ]
+      ],
+      "carrier_partition": [
+        2,
+        1,
+        1
+      ],
+      "kronecker_multiplicity": 1,
+      "carrier_support_rank": 3,
+      "natural_source_branch_probability": 0.08333333333333331,
+      "branch_probability": 0.49999999999999994,
+      "target_likelihood_scalar": 1.3333333333333333,
+      "rank_scaled_state_lcu_normalization": 3.0,
+      "centered_state_lcu_normalization": 4.0,
+      "maximum_flat_average_residual": 5.273640140743689e-16,
+      "maximum_rank_scaled_lcu_identity_residual": 6.381018097495459e-15,
+      "maximum_centered_mean_residual": 1.5689371984266953e-15,
+      "exact_pair_branch_flatness_verified": true,
+      "exact_rank_scaled_lcu_verified": true,
+      "status": "pair-branch-flat-rank-scaled-four-term-lcu-exact"
+    },
+    {
+      "control_id": "S4-PAIR-1-2-TARGET-3-1",
+      "n": 4,
+      "transposition_count": 2,
+      "source_partitions": [
+        [
+          3,
+          1
+        ],
+        [
+          2,
+          2
+        ]
+      ],
+      "carrier_partition": [
+        3,
+        1
+      ],
+      "kronecker_multiplicity": 1,
+      "carrier_support_rank": 3,
+      "natural_source_branch_probability": 0.0833333333333333,
+      "branch_probability": 0.49999999999999983,
+      "target_likelihood_scalar": 1.3333333333333333,
+      "rank_scaled_state_lcu_normalization": 3.0,
+      "centered_state_lcu_normalization": 4.0,
+      "maximum_flat_average_residual": 4.3966547600765836e-16,
+      "maximum_rank_scaled_lcu_identity_residual": 3.712165906785398e-15,
+      "maximum_centered_mean_residual": 1.304132056357243e-15,
+      "exact_pair_branch_flatness_verified": true,
+      "exact_rank_scaled_lcu_verified": true,
+      "status": "pair-branch-flat-rank-scaled-four-term-lcu-exact"
+    },
+    {
+      "control_id": "S4-PAIR-1-2-TARGET-2-1-1",
+      "n": 4,
+      "transposition_count": 2,
+      "source_partitions": [
+        [
+          3,
+          1
+        ],
+        [
+          2,
+          2
+        ]
+      ],
+      "carrier_partition": [
+        2,
+        1,
+        1
+      ],
+      "kronecker_multiplicity": 1,
+      "carrier_support_rank": 3,
+      "natural_source_branch_probability": 0.0833333333333333,
+      "branch_probability": 0.49999999999999983,
+      "target_likelihood_scalar": 1.3333333333333333,
+      "rank_scaled_state_lcu_normalization": 3.0,
+      "centered_state_lcu_normalization": 4.0,
+      "maximum_flat_average_residual": 4.2006435379388835e-16,
+      "maximum_rank_scaled_lcu_identity_residual": 5.93308710294925e-15,
+      "maximum_centered_mean_residual": 1.178172380571251e-15,
+      "exact_pair_branch_flatness_verified": true,
+      "exact_rank_scaled_lcu_verified": true,
+      "status": "pair-branch-flat-rank-scaled-four-term-lcu-exact"
+    },
+    {
+      "control_id": "S4-PAIR-2-3-TARGET-3-1",
+      "n": 4,
+      "transposition_count": 2,
+      "source_partitions": [
+        [
+          2,
+          2
+        ],
+        [
+          2,
+          1,
+          1
+        ]
+      ],
+      "carrier_partition": [
+        3,
+        1
+      ],
+      "kronecker_multiplicity": 1,
+      "carrier_support_rank": 3,
+      "natural_source_branch_probability": 0.0833333333333333,
+      "branch_probability": 0.49999999999999983,
+      "target_likelihood_scalar": 1.3333333333333333,
+      "rank_scaled_state_lcu_normalization": 3.0,
+      "centered_state_lcu_normalization": 4.0,
+      "maximum_flat_average_residual": 2.7284998027092963e-16,
+      "maximum_rank_scaled_lcu_identity_residual": 2.916588948808449e-15,
+      "maximum_centered_mean_residual": 7.707385667365684e-16,
+      "exact_pair_branch_flatness_verified": true,
+      "exact_rank_scaled_lcu_verified": true,
+      "status": "pair-branch-flat-rank-scaled-four-term-lcu-exact"
+    },
+    {
+      "control_id": "S4-PAIR-1-3-TARGET-2-2",
+      "n": 4,
+      "transposition_count": 2,
+      "source_partitions": [
+        [
+          3,
+          1
+        ],
+        [
+          2,
+          1,
+          1
+        ]
+      ],
+      "carrier_partition": [
+        2,
+        2
+      ],
+      "kronecker_multiplicity": 1,
+      "carrier_support_rank": 2,
+      "natural_source_branch_probability": 0.08333333333333327,
+      "branch_probability": 0.6666666666666662,
+      "target_likelihood_scalar": 1.3333333333333333,
+      "rank_scaled_state_lcu_normalization": 3.0,
+      "centered_state_lcu_normalization": 4.0,
+      "maximum_flat_average_residual": 1.9725234346688886e-16,
+      "maximum_rank_scaled_lcu_identity_residual": 7.462115049054209e-16,
+      "maximum_centered_mean_residual": 3.734243309024405e-16,
+      "exact_pair_branch_flatness_verified": true,
+      "exact_rank_scaled_lcu_verified": true,
+      "status": "pair-branch-flat-rank-scaled-four-term-lcu-exact"
+    },
+    {
+      "control_id": "S4-PAIR-0-2-TARGET-2-2",
+      "n": 4,
+      "transposition_count": 2,
+      "source_partitions": [
+        [
+          4
+        ],
+        [
+          2,
+          2
+        ]
+      ],
+      "carrier_partition": [
+        2,
+        2
+      ],
+      "kronecker_multiplicity": 1,
+      "carrier_support_rank": 2,
+      "natural_source_branch_probability": 0.05555555555555555,
+      "branch_probability": 1.0,
+      "target_likelihood_scalar": 4.0,
+      "rank_scaled_state_lcu_normalization": 1.0,
+      "centered_state_lcu_normalization": 2.0,
+      "maximum_flat_average_residual": 0.0,
+      "maximum_rank_scaled_lcu_identity_residual": 0.0,
+      "maximum_centered_mean_residual": 8.762127625861091e-17,
+      "exact_pair_branch_flatness_verified": true,
+      "exact_rank_scaled_lcu_verified": true,
+      "status": "pair-branch-flat-rank-scaled-four-term-lcu-exact"
+    },
+    {
+      "control_id": "S4-PAIR-2-4-TARGET-2-2",
+      "n": 4,
+      "transposition_count": 2,
+      "source_partitions": [
+        [
+          2,
+          2
+        ],
+        [
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "carrier_partition": [
+        2,
+        2
+      ],
+      "kronecker_multiplicity": 1,
+      "carrier_support_rank": 2,
+      "natural_source_branch_probability": 0.05555555555555555,
+      "branch_probability": 1.0,
+      "target_likelihood_scalar": 4.0,
+      "rank_scaled_state_lcu_normalization": 1.0,
+      "centered_state_lcu_normalization": 2.0,
+      "maximum_flat_average_residual": 0.0,
+      "maximum_rank_scaled_lcu_identity_residual": 0.0,
+      "maximum_centered_mean_residual": 8.762127625861091e-17,
+      "exact_pair_branch_flatness_verified": true,
+      "exact_rank_scaled_lcu_verified": true,
+      "status": "pair-branch-flat-rank-scaled-four-term-lcu-exact"
+    },
+    {
+      "control_id": "S4-PAIR-2-2-TARGET-2-2",
+      "n": 4,
+      "transposition_count": 2,
+      "source_partitions": [
+        [
+          2,
+          2
+        ],
+        [
+          2,
+          2
+        ]
+      ],
+      "carrier_partition": [
+        2,
+        2
+      ],
+      "kronecker_multiplicity": 1,
+      "carrier_support_rank": 2,
+      "natural_source_branch_probability": 0.055555555555555525,
+      "branch_probability": 0.4999999999999997,
+      "target_likelihood_scalar": 4.0,
+      "rank_scaled_state_lcu_normalization": 1.0,
+      "centered_state_lcu_normalization": 2.0,
+      "maximum_flat_average_residual": 1.1102230246251565e-16,
+      "maximum_rank_scaled_lcu_identity_residual": 5.551115123125784e-16,
+      "maximum_centered_mean_residual": 2.3253526591875074e-16,
+      "exact_pair_branch_flatness_verified": true,
+      "exact_rank_scaled_lcu_verified": true,
+      "status": "pair-branch-flat-rank-scaled-four-term-lcu-exact"
+    },
+    {
+      "control_id": "S4-PAIR-0-3-TARGET-2-1-1",
+      "n": 4,
+      "transposition_count": 2,
+      "source_partitions": [
+        [
+          4
+        ],
+        [
+          2,
+          1,
+          1
+        ]
+      ],
+      "carrier_partition": [
+        2,
+        1,
+        1
+      ],
+      "kronecker_multiplicity": 1,
+      "carrier_support_rank": 3,
+      "natural_source_branch_probability": 0.041666666666666664,
+      "branch_probability": 1.0,
+      "target_likelihood_scalar": 1.3333333333333333,
+      "rank_scaled_state_lcu_normalization": 3.0,
+      "centered_state_lcu_normalization": 4.0,
+      "maximum_flat_average_residual": 1.6755828462014357e-16,
+      "maximum_rank_scaled_lcu_identity_residual": 8.093720331536539e-16,
+      "maximum_centered_mean_residual": 5.615725921621076e-16,
+      "exact_pair_branch_flatness_verified": true,
+      "exact_rank_scaled_lcu_verified": true,
+      "status": "pair-branch-flat-rank-scaled-four-term-lcu-exact"
+    },
+    {
+      "control_id": "S4-PAIR-1-4-TARGET-2-1-1",
+      "n": 4,
+      "transposition_count": 2,
+      "source_partitions": [
+        [
+          3,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "carrier_partition": [
+        2,
+        1,
+        1
+      ],
+      "kronecker_multiplicity": 1,
+      "carrier_support_rank": 3,
+      "natural_source_branch_probability": 0.04166666666666666,
+      "branch_probability": 0.9999999999999999,
+      "target_likelihood_scalar": 1.3333333333333333,
+      "rank_scaled_state_lcu_normalization": 3.0,
+      "centered_state_lcu_normalization": 4.0,
+      "maximum_flat_average_residual": 1.6995032119431376e-16,
+      "maximum_rank_scaled_lcu_identity_residual": 5.551115123125784e-16,
+      "maximum_centered_mean_residual": 4.551619870335544e-16,
+      "exact_pair_branch_flatness_verified": true,
+      "exact_rank_scaled_lcu_verified": true,
+      "status": "pair-branch-flat-rank-scaled-four-term-lcu-exact"
+    },
+    {
+      "control_id": "S4-PAIR-0-1-TARGET-3-1",
+      "n": 4,
+      "transposition_count": 2,
+      "source_partitions": [
+        [
+          4
+        ],
+        [
+          3,
+          1
+        ]
+      ],
+      "carrier_partition": [
+        3,
+        1
+      ],
+      "kronecker_multiplicity": 1,
+      "carrier_support_rank": 3,
+      "natural_source_branch_probability": 0.04166666666666665,
+      "branch_probability": 0.9999999999999997,
+      "target_likelihood_scalar": 1.3333333333333333,
+      "rank_scaled_state_lcu_normalization": 3.0,
+      "centered_state_lcu_normalization": 4.0,
+      "maximum_flat_average_residual": 1.6958888116790432e-16,
+      "maximum_rank_scaled_lcu_identity_residual": 9.549028557745035e-16,
+      "maximum_centered_mean_residual": 4.770417320283472e-16,
+      "exact_pair_branch_flatness_verified": true,
+      "exact_rank_scaled_lcu_verified": true,
+      "status": "pair-branch-flat-rank-scaled-four-term-lcu-exact"
+    },
+    {
+      "control_id": "S4-PAIR-3-4-TARGET-3-1",
+      "n": 4,
+      "transposition_count": 2,
+      "source_partitions": [
+        [
+          2,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "carrier_partition": [
+        3,
+        1
+      ],
+      "kronecker_multiplicity": 1,
+      "carrier_support_rank": 3,
+      "natural_source_branch_probability": 0.04166666666666665,
+      "branch_probability": 0.9999999999999997,
+      "target_likelihood_scalar": 1.3333333333333333,
+      "rank_scaled_state_lcu_normalization": 3.0,
+      "centered_state_lcu_normalization": 4.0,
+      "maximum_flat_average_residual": 1.6856464795556845e-16,
+      "maximum_rank_scaled_lcu_identity_residual": 9.549028557745033e-16,
+      "maximum_centered_mean_residual": 5.488423132855811e-16,
+      "exact_pair_branch_flatness_verified": true,
+      "exact_rank_scaled_lcu_verified": true,
+      "status": "pair-branch-flat-rank-scaled-four-term-lcu-exact"
+    },
+    {
+      "control_id": "S4-PAIR-1-1-TARGET-2-2",
+      "n": 4,
+      "transposition_count": 2,
+      "source_partitions": [
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          1
+        ]
+      ],
+      "carrier_partition": [
+        2,
+        2
+      ],
+      "kronecker_multiplicity": 1,
+      "carrier_support_rank": 2,
+      "natural_source_branch_probability": 0.04166666666666664,
+      "branch_probability": 0.6666666666666662,
+      "target_likelihood_scalar": 1.3333333333333333,
+      "rank_scaled_state_lcu_normalization": 3.0,
+      "centered_state_lcu_normalization": 4.0,
+      "maximum_flat_average_residual": 1.5092177017985548e-16,
+      "maximum_rank_scaled_lcu_identity_residual": 8.071980283210045e-16,
+      "maximum_centered_mean_residual": 3.463242804049086e-16,
+      "exact_pair_branch_flatness_verified": true,
+      "exact_rank_scaled_lcu_verified": true,
+      "status": "pair-branch-flat-rank-scaled-four-term-lcu-exact"
+    },
+    {
+      "control_id": "S4-PAIR-1-3-TARGET-1-1-1-1",
+      "n": 4,
+      "transposition_count": 2,
+      "source_partitions": [
+        [
+          3,
+          1
+        ],
+        [
+          2,
+          1,
+          1
+        ]
+      ],
+      "carrier_partition": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "kronecker_multiplicity": 1,
+      "carrier_support_rank": 1,
+      "natural_source_branch_probability": 0.04166666666666664,
+      "branch_probability": 0.3333333333333331,
+      "target_likelihood_scalar": 1.3333333333333333,
+      "rank_scaled_state_lcu_normalization": 3.0,
+      "centered_state_lcu_normalization": 4.0,
+      "maximum_flat_average_residual": 3.1008747276104777e-16,
+      "maximum_rank_scaled_lcu_identity_residual": 7.053788956900747e-16,
+      "maximum_centered_mean_residual": 3.576924294605577e-16,
+      "exact_pair_branch_flatness_verified": true,
+      "exact_rank_scaled_lcu_verified": true,
+      "status": "pair-branch-flat-rank-scaled-four-term-lcu-exact"
+    },
+    {
+      "control_id": "S4-PAIR-3-3-TARGET-2-2",
+      "n": 4,
+      "transposition_count": 2,
+      "source_partitions": [
+        [
+          2,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          1
+        ]
+      ],
+      "carrier_partition": [
+        2,
+        2
+      ],
+      "kronecker_multiplicity": 1,
+      "carrier_support_rank": 2,
+      "natural_source_branch_probability": 0.04166666666666664,
+      "branch_probability": 0.6666666666666662,
+      "target_likelihood_scalar": 1.3333333333333333,
+      "rank_scaled_state_lcu_normalization": 3.0,
+      "centered_state_lcu_normalization": 4.0,
+      "maximum_flat_average_residual": 2.942129864254954e-16,
+      "maximum_rank_scaled_lcu_identity_residual": 2.0847159692707245e-15,
+      "maximum_centered_mean_residual": 6.490907805125111e-16,
+      "exact_pair_branch_flatness_verified": true,
+      "exact_rank_scaled_lcu_verified": true,
+      "status": "pair-branch-flat-rank-scaled-four-term-lcu-exact"
+    },
+    {
+      "control_id": "S5-PAIR-2-4-TARGET-2-2-1",
+      "n": 5,
+      "transposition_count": 2,
+      "source_partitions": [
+        [
+          3,
+          2
+        ],
+        [
+          2,
+          2,
+          1
+        ]
+      ],
+      "carrier_partition": [
+        2,
+        2,
+        1
+      ],
+      "kronecker_multiplicity": 1,
+      "carrier_support_rank": 5,
+      "natural_source_branch_probability": 0.027777777777777776,
+      "branch_probability": 0.2222222222222222,
+      "target_likelihood_scalar": 1.6,
+      "rank_scaled_state_lcu_normalization": 2.5,
+      "centered_state_lcu_normalization": 3.5,
+      "maximum_flat_average_residual": 1.6704673698302577e-16,
+      "maximum_rank_scaled_lcu_identity_residual": 2.712321882662168e-15,
+      "maximum_centered_mean_residual": 8.863302834140384e-16,
+      "exact_pair_branch_flatness_verified": true,
+      "exact_rank_scaled_lcu_verified": true,
+      "status": "pair-branch-flat-rank-scaled-four-term-lcu-exact"
+    },
+    {
+      "control_id": "S4-PAIR-2-2-TARGET-4",
+      "n": 4,
+      "transposition_count": 2,
+      "source_partitions": [
+        [
+          2,
+          2
+        ],
+        [
+          2,
+          2
+        ]
+      ],
+      "carrier_partition": [
+        4
+      ],
+      "kronecker_multiplicity": 1,
+      "carrier_support_rank": 1,
+      "natural_source_branch_probability": 0.027777777777777766,
+      "branch_probability": 0.24999999999999992,
+      "target_likelihood_scalar": 4.0,
+      "rank_scaled_state_lcu_normalization": 1.0,
+      "centered_state_lcu_normalization": 2.0,
+      "maximum_flat_average_residual": 2.220446049250313e-16,
+      "maximum_rank_scaled_lcu_identity_residual": 6.66133814775094e-16,
+      "maximum_centered_mean_residual": 2.9605947323337506e-16,
+      "exact_pair_branch_flatness_verified": true,
+      "exact_rank_scaled_lcu_verified": true,
+      "status": "pair-branch-flat-rank-scaled-four-term-lcu-exact"
+    },
+    {
+      "control_id": "S4-PAIR-2-2-TARGET-1-1-1-1",
+      "n": 4,
+      "transposition_count": 2,
+      "source_partitions": [
+        [
+          2,
+          2
+        ],
+        [
+          2,
+          2
+        ]
+      ],
+      "carrier_partition": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "kronecker_multiplicity": 1,
+      "carrier_support_rank": 1,
+      "natural_source_branch_probability": 0.027777777777777766,
+      "branch_probability": 0.24999999999999992,
+      "target_likelihood_scalar": 4.0,
+      "rank_scaled_state_lcu_normalization": 1.0,
+      "centered_state_lcu_normalization": 2.0,
+      "maximum_flat_average_residual": 2.220446049250313e-16,
+      "maximum_rank_scaled_lcu_identity_residual": 6.66133814775094e-16,
+      "maximum_centered_mean_residual": 2.9605947323337506e-16,
+      "exact_pair_branch_flatness_verified": true,
+      "exact_rank_scaled_lcu_verified": true,
+      "status": "pair-branch-flat-rank-scaled-four-term-lcu-exact"
+    },
+    {
+      "control_id": "S5-PAIR-2-4-TARGET-3-2",
+      "n": 5,
+      "transposition_count": 2,
+      "source_partitions": [
+        [
+          3,
+          2
+        ],
+        [
+          2,
+          2,
+          1
+        ]
+      ],
+      "carrier_partition": [
+        3,
+        2
+      ],
+      "kronecker_multiplicity": 1,
+      "carrier_support_rank": 5,
+      "natural_source_branch_probability": 0.027777777777777755,
+      "branch_probability": 0.22222222222222204,
+      "target_likelihood_scalar": 1.6,
+      "rank_scaled_state_lcu_normalization": 2.5,
+      "centered_state_lcu_normalization": 3.5,
+      "maximum_flat_average_residual": 2.0126131323103296e-16,
+      "maximum_rank_scaled_lcu_identity_residual": 3.233578706340162e-15,
+      "maximum_centered_mean_residual": 1.0558460423675247e-15,
+      "exact_pair_branch_flatness_verified": true,
+      "exact_rank_scaled_lcu_verified": true,
+      "status": "pair-branch-flat-rank-scaled-four-term-lcu-exact"
+    },
+    {
+      "control_id": "S5-PAIR-2-3-TARGET-3-1-1",
+      "n": 5,
+      "transposition_count": 2,
+      "source_partitions": [
+        [
+          3,
+          2
+        ],
+        [
+          3,
+          1,
+          1
+        ]
+      ],
+      "carrier_partition": [
+        3,
+        1,
+        1
+      ],
+      "kronecker_multiplicity": 2,
+      "carrier_support_rank": 12,
+      "natural_source_branch_probability": 0.02666666666666666,
+      "branch_probability": 0.2666666666666666,
+      "target_likelihood_scalar": 0.5333333333333333,
+      "rank_scaled_state_lcu_normalization": 7.5,
+      "centered_state_lcu_normalization": 8.5,
+      "maximum_flat_average_residual": 1.0928280160454361e-16,
+      "maximum_rank_scaled_lcu_identity_residual": 6.8765357829184015e-15,
+      "maximum_centered_mean_residual": 1.283811460168172e-15,
+      "exact_pair_branch_flatness_verified": true,
+      "exact_rank_scaled_lcu_verified": true,
+      "status": "pair-branch-flat-rank-scaled-four-term-lcu-exact"
+    },
+    {
+      "control_id": "S5-PAIR-3-4-TARGET-3-1-1",
+      "n": 5,
+      "transposition_count": 2,
+      "source_partitions": [
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ]
+      ],
+      "carrier_partition": [
+        3,
+        1,
+        1
+      ],
+      "kronecker_multiplicity": 2,
+      "carrier_support_rank": 12,
+      "natural_source_branch_probability": 0.02666666666666666,
+      "branch_probability": 0.2666666666666666,
+      "target_likelihood_scalar": 0.5333333333333333,
+      "rank_scaled_state_lcu_normalization": 7.5,
+      "centered_state_lcu_normalization": 8.5,
+      "maximum_flat_average_residual": 1.1776530844317329e-16,
+      "maximum_rank_scaled_lcu_identity_residual": 8.985069968932513e-15,
+      "maximum_centered_mean_residual": 1.4638214077155313e-15,
+      "exact_pair_branch_flatness_verified": true,
+      "exact_rank_scaled_lcu_verified": true,
+      "status": "pair-branch-flat-rank-scaled-four-term-lcu-exact"
+    },
+    {
+      "control_id": "S5-PAIR-3-4-TARGET-2-2-1",
+      "n": 5,
+      "transposition_count": 2,
+      "source_partitions": [
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ]
+      ],
+      "carrier_partition": [
+        2,
+        2,
+        1
+      ],
+      "kronecker_multiplicity": 1,
+      "carrier_support_rank": 5,
+      "natural_source_branch_probability": 0.022222222222222223,
+      "branch_probability": 0.2222222222222222,
+      "target_likelihood_scalar": 1.0666666666666667,
+      "rank_scaled_state_lcu_normalization": 3.75,
+      "centered_state_lcu_normalization": 4.75,
+      "maximum_flat_average_residual": 2.9525686169070652e-16,
+      "maximum_rank_scaled_lcu_identity_residual": 4.5659938447939e-15,
+      "maximum_centered_mean_residual": 1.3740947778444103e-15,
+      "exact_pair_branch_flatness_verified": true,
+      "exact_rank_scaled_lcu_verified": true,
+      "status": "pair-branch-flat-rank-scaled-four-term-lcu-exact"
+    },
+    {
+      "control_id": "S5-PAIR-2-3-TARGET-3-2",
+      "n": 5,
+      "transposition_count": 2,
+      "source_partitions": [
+        [
+          3,
+          2
+        ],
+        [
+          3,
+          1,
+          1
+        ]
+      ],
+      "carrier_partition": [
+        3,
+        2
+      ],
+      "kronecker_multiplicity": 1,
+      "carrier_support_rank": 5,
+      "natural_source_branch_probability": 0.022222222222222216,
+      "branch_probability": 0.22222222222222215,
+      "target_likelihood_scalar": 1.0666666666666667,
+      "rank_scaled_state_lcu_normalization": 3.75,
+      "centered_state_lcu_normalization": 4.75,
+      "maximum_flat_average_residual": 2.0036513281886956e-16,
+      "maximum_rank_scaled_lcu_identity_residual": 4.1303619081099516e-15,
+      "maximum_centered_mean_residual": 1.0826058667141165e-15,
+      "exact_pair_branch_flatness_verified": true,
+      "exact_rank_scaled_lcu_verified": true,
+      "status": "pair-branch-flat-rank-scaled-four-term-lcu-exact"
+    },
+    {
+      "control_id": "S5-PAIR-2-3-TARGET-2-2-1",
+      "n": 5,
+      "transposition_count": 2,
+      "source_partitions": [
+        [
+          3,
+          2
+        ],
+        [
+          3,
+          1,
+          1
+        ]
+      ],
+      "carrier_partition": [
+        2,
+        2,
+        1
+      ],
+      "kronecker_multiplicity": 1,
+      "carrier_support_rank": 5,
+      "natural_source_branch_probability": 0.022222222222222216,
+      "branch_probability": 0.22222222222222215,
+      "target_likelihood_scalar": 1.0666666666666667,
+      "rank_scaled_state_lcu_normalization": 3.75,
+      "centered_state_lcu_normalization": 4.75,
+      "maximum_flat_average_residual": 2.220988369474194e-16,
+      "maximum_rank_scaled_lcu_identity_residual": 3.771723962730074e-15,
+      "maximum_centered_mean_residual": 1.1629908083535755e-15,
+      "exact_pair_branch_flatness_verified": true,
+      "exact_rank_scaled_lcu_verified": true,
+      "status": "pair-branch-flat-rank-scaled-four-term-lcu-exact"
+    },
+    {
+      "control_id": "S5-PAIR-3-4-TARGET-3-2",
+      "n": 5,
+      "transposition_count": 2,
+      "source_partitions": [
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ]
+      ],
+      "carrier_partition": [
+        3,
+        2
+      ],
+      "kronecker_multiplicity": 1,
+      "carrier_support_rank": 5,
+      "natural_source_branch_probability": 0.022222222222222216,
+      "branch_probability": 0.22222222222222215,
+      "target_likelihood_scalar": 1.0666666666666667,
+      "rank_scaled_state_lcu_normalization": 3.75,
+      "centered_state_lcu_normalization": 4.75,
+      "maximum_flat_average_residual": 2.2708454536312377e-16,
+      "maximum_rank_scaled_lcu_identity_residual": 3.469575729480655e-15,
+      "maximum_centered_mean_residual": 1.0276441285055597e-15,
+      "exact_pair_branch_flatness_verified": true,
+      "exact_rank_scaled_lcu_verified": true,
+      "status": "pair-branch-flat-rank-scaled-four-term-lcu-exact"
+    },
+    {
+      "control_id": "S5-PAIR-2-4-TARGET-3-1-1",
+      "n": 5,
+      "transposition_count": 2,
+      "source_partitions": [
+        [
+          3,
+          2
+        ],
+        [
+          2,
+          2,
+          1
+        ]
+      ],
+      "carrier_partition": [
+        3,
+        1,
+        1
+      ],
+      "kronecker_multiplicity": 1,
+      "carrier_support_rank": 6,
+      "natural_source_branch_probability": 0.022222222222222213,
+      "branch_probability": 0.1777777777777777,
+      "target_likelihood_scalar": 1.0666666666666667,
+      "rank_scaled_state_lcu_normalization": 3.75,
+      "centered_state_lcu_normalization": 4.75,
+      "maximum_flat_average_residual": 1.806077707362993e-16,
+      "maximum_rank_scaled_lcu_identity_residual": 5.074367038518835e-15,
+      "maximum_centered_mean_residual": 1.0412956328410804e-15,
+      "exact_pair_branch_flatness_verified": true,
+      "exact_rank_scaled_lcu_verified": true,
+      "status": "pair-branch-flat-rank-scaled-four-term-lcu-exact"
+    },
+    {
+      "control_id": "S4-PAIR-1-1-TARGET-4",
+      "n": 4,
+      "transposition_count": 2,
+      "source_partitions": [
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          1
+        ]
+      ],
+      "carrier_partition": [
+        4
+      ],
+      "kronecker_multiplicity": 1,
+      "carrier_support_rank": 1,
+      "natural_source_branch_probability": 0.02083333333333332,
+      "branch_probability": 0.3333333333333331,
+      "target_likelihood_scalar": 1.3333333333333333,
+      "rank_scaled_state_lcu_normalization": 3.0,
+      "centered_state_lcu_normalization": 4.0,
+      "maximum_flat_average_residual": 3.378803598517165e-16,
+      "maximum_rank_scaled_lcu_identity_residual": 8.747727719657267e-16,
+      "maximum_centered_mean_residual": 3.789688127821157e-16,
+      "exact_pair_branch_flatness_verified": true,
+      "exact_rank_scaled_lcu_verified": true,
+      "status": "pair-branch-flat-rank-scaled-four-term-lcu-exact"
+    },
+    {
+      "control_id": "S4-PAIR-3-3-TARGET-4",
+      "n": 4,
+      "transposition_count": 2,
+      "source_partitions": [
+        [
+          2,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          1
+        ]
+      ],
+      "carrier_partition": [
+        4
+      ],
+      "kronecker_multiplicity": 1,
+      "carrier_support_rank": 1,
+      "natural_source_branch_probability": 0.02083333333333332,
+      "branch_probability": 0.3333333333333331,
+      "target_likelihood_scalar": 1.3333333333333333,
+      "rank_scaled_state_lcu_normalization": 3.0,
+      "centered_state_lcu_normalization": 4.0,
+      "maximum_flat_average_residual": 3.098362008211675e-16,
+      "maximum_rank_scaled_lcu_identity_residual": 4.507587621634546e-16,
+      "maximum_centered_mean_residual": 2.0873728736682358e-16,
+      "exact_pair_branch_flatness_verified": true,
+      "exact_rank_scaled_lcu_verified": true,
+      "status": "pair-branch-flat-rank-scaled-four-term-lcu-exact"
+    },
+    {
+      "control_id": "S5-PAIR-1-2-TARGET-3-2",
+      "n": 5,
+      "transposition_count": 2,
+      "source_partitions": [
+        [
+          4,
+          1
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "carrier_partition": [
+        3,
+        2
+      ],
+      "kronecker_multiplicity": 1,
+      "carrier_support_rank": 5,
+      "natural_source_branch_probability": 0.019444444444444438,
+      "branch_probability": 0.2916666666666666,
+      "target_likelihood_scalar": 1.4,
+      "rank_scaled_state_lcu_normalization": 2.857142857142857,
+      "centered_state_lcu_normalization": 3.857142857142857,
+      "maximum_flat_average_residual": 2.876401373478318e-16,
+      "maximum_rank_scaled_lcu_identity_residual": 3.963475074599815e-15,
+      "maximum_centered_mean_residual": 1.3391955795999394e-15,
+      "exact_pair_branch_flatness_verified": true,
+      "exact_rank_scaled_lcu_verified": true,
+      "status": "pair-branch-flat-rank-scaled-four-term-lcu-exact"
+    },
+    {
+      "control_id": "S5-PAIR-1-4-TARGET-2-2-1",
+      "n": 5,
+      "transposition_count": 2,
+      "source_partitions": [
+        [
+          4,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ]
+      ],
+      "carrier_partition": [
+        2,
+        2,
+        1
+      ],
+      "kronecker_multiplicity": 1,
+      "carrier_support_rank": 5,
+      "natural_source_branch_probability": 0.019444444444444438,
+      "branch_probability": 0.2916666666666666,
+      "target_likelihood_scalar": 1.4,
+      "rank_scaled_state_lcu_normalization": 2.857142857142857,
+      "centered_state_lcu_normalization": 3.857142857142857,
+      "maximum_flat_average_residual": 1.8630720637782613e-16,
+      "maximum_rank_scaled_lcu_identity_residual": 2.9041398277773046e-15,
+      "maximum_centered_mean_residual": 8.732291733174417e-16,
+      "exact_pair_branch_flatness_verified": true,
+      "exact_rank_scaled_lcu_verified": true,
+      "status": "pair-branch-flat-rank-scaled-four-term-lcu-exact"
+    },
+    {
+      "control_id": "S5-PAIR-2-5-TARGET-2-2-1",
+      "n": 5,
+      "transposition_count": 2,
+      "source_partitions": [
+        [
+          3,
+          2
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ]
+      ],
+      "carrier_partition": [
+        2,
+        2,
+        1
+      ],
+      "kronecker_multiplicity": 1,
+      "carrier_support_rank": 5,
+      "natural_source_branch_probability": 0.019444444444444438,
+      "branch_probability": 0.2916666666666666,
+      "target_likelihood_scalar": 1.4,
+      "rank_scaled_state_lcu_normalization": 2.857142857142857,
+      "centered_state_lcu_normalization": 3.857142857142857,
+      "maximum_flat_average_residual": 2.4180370428729516e-16,
+      "maximum_rank_scaled_lcu_identity_residual": 4.6347744510332415e-15,
+      "maximum_centered_mean_residual": 1.3141950342217195e-15,
+      "exact_pair_branch_flatness_verified": true,
+      "exact_rank_scaled_lcu_verified": true,
+      "status": "pair-branch-flat-rank-scaled-four-term-lcu-exact"
+    },
+    {
+      "control_id": "S5-PAIR-4-5-TARGET-3-2",
+      "n": 5,
+      "transposition_count": 2,
+      "source_partitions": [
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ]
+      ],
+      "carrier_partition": [
+        3,
+        2
+      ],
+      "kronecker_multiplicity": 1,
+      "carrier_support_rank": 5,
+      "natural_source_branch_probability": 0.019444444444444438,
+      "branch_probability": 0.2916666666666666,
+      "target_likelihood_scalar": 1.4,
+      "rank_scaled_state_lcu_normalization": 2.857142857142857,
+      "centered_state_lcu_normalization": 3.857142857142857,
+      "maximum_flat_average_residual": 2.0960773552946217e-16,
+      "maximum_rank_scaled_lcu_identity_residual": 2.68409773452718e-15,
+      "maximum_centered_mean_residual": 9.129716285787192e-16,
+      "exact_pair_branch_flatness_verified": true,
+      "exact_rank_scaled_lcu_verified": true,
+      "status": "pair-branch-flat-rank-scaled-four-term-lcu-exact"
+    },
+    {
+      "control_id": "S5-PAIR-2-4-TARGET-4-1",
+      "n": 5,
+      "transposition_count": 2,
+      "source_partitions": [
+        [
+          3,
+          2
+        ],
+        [
+          2,
+          2,
+          1
+        ]
+      ],
+      "carrier_partition": [
+        4,
+        1
+      ],
+      "kronecker_multiplicity": 1,
+      "carrier_support_rank": 4,
+      "natural_source_branch_probability": 0.019444444444444434,
+      "branch_probability": 0.15555555555555547,
+      "target_likelihood_scalar": 1.4,
+      "rank_scaled_state_lcu_normalization": 2.857142857142857,
+      "centered_state_lcu_normalization": 3.857142857142857,
+      "maximum_flat_average_residual": 1.4849400168837086e-16,
+      "maximum_rank_scaled_lcu_identity_residual": 2.525492788904993e-15,
+      "maximum_centered_mean_residual": 5.235050524009333e-16,
+      "exact_pair_branch_flatness_verified": true,
+      "exact_rank_scaled_lcu_verified": true,
+      "status": "pair-branch-flat-rank-scaled-four-term-lcu-exact"
+    },
+    {
+      "control_id": "S5-PAIR-2-4-TARGET-2-1-1-1",
+      "n": 5,
+      "transposition_count": 2,
+      "source_partitions": [
+        [
+          3,
+          2
+        ],
+        [
+          2,
+          2,
+          1
+        ]
+      ],
+      "carrier_partition": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "kronecker_multiplicity": 1,
+      "carrier_support_rank": 4,
+      "natural_source_branch_probability": 0.019444444444444434,
+      "branch_probability": 0.15555555555555547,
+      "target_likelihood_scalar": 1.4,
+      "rank_scaled_state_lcu_normalization": 2.857142857142857,
+      "centered_state_lcu_normalization": 3.857142857142857,
+      "maximum_flat_average_residual": 1.8507641931375027e-16,
+      "maximum_rank_scaled_lcu_identity_residual": 2.4562420792888812e-15,
+      "maximum_centered_mean_residual": 7.915116929905995e-16,
+      "exact_pair_branch_flatness_verified": true,
+      "exact_rank_scaled_lcu_verified": true,
+      "status": "pair-branch-flat-rank-scaled-four-term-lcu-exact"
+    },
+    {
+      "control_id": "S5-PAIR-1-2-TARGET-2-2-1",
+      "n": 5,
+      "transposition_count": 2,
+      "source_partitions": [
+        [
+          4,
+          1
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "carrier_partition": [
+        2,
+        2,
+        1
+      ],
+      "kronecker_multiplicity": 1,
+      "carrier_support_rank": 5,
+      "natural_source_branch_probability": 0.019444444444444427,
+      "branch_probability": 0.2916666666666664,
+      "target_likelihood_scalar": 1.4,
+      "rank_scaled_state_lcu_normalization": 2.857142857142857,
+      "centered_state_lcu_normalization": 3.857142857142857,
+      "maximum_flat_average_residual": 2.1371596032629068e-16,
+      "maximum_rank_scaled_lcu_identity_residual": 2.8753600532938136e-15,
+      "maximum_centered_mean_residual": 1.095382073095901e-15,
+      "exact_pair_branch_flatness_verified": true,
+      "exact_rank_scaled_lcu_verified": true,
+      "status": "pair-branch-flat-rank-scaled-four-term-lcu-exact"
+    },
+    {
+      "control_id": "S5-PAIR-1-4-TARGET-3-2",
+      "n": 5,
+      "transposition_count": 2,
+      "source_partitions": [
+        [
+          4,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ]
+      ],
+      "carrier_partition": [
+        3,
+        2
+      ],
+      "kronecker_multiplicity": 1,
+      "carrier_support_rank": 5,
+      "natural_source_branch_probability": 0.019444444444444427,
+      "branch_probability": 0.2916666666666664,
+      "target_likelihood_scalar": 1.4,
+      "rank_scaled_state_lcu_normalization": 2.857142857142857,
+      "centered_state_lcu_normalization": 3.857142857142857,
+      "maximum_flat_average_residual": 2.5376754063311085e-16,
+      "maximum_rank_scaled_lcu_identity_residual": 3.941454232197351e-15,
+      "maximum_centered_mean_residual": 1.2573816738200108e-15,
+      "exact_pair_branch_flatness_verified": true,
+      "exact_rank_scaled_lcu_verified": true,
+      "status": "pair-branch-flat-rank-scaled-four-term-lcu-exact"
+    }
+  ],
+  "natural_lcu_normalization_records": [
+    {
+      "n": 3,
+      "transposition_count": 1,
+      "active_ordered_source_carrier_branch_count": 5,
+      "exact_natural_branch_probability_mass": "1",
+      "exact_expected_rank_scaled_lcu_normalization": "7/3",
+      "expected_rank_scaled_lcu_normalization": 2.3333333333333335,
+      "all_n_rank_scaled_lcu_expectation_upper_bound": 4.0,
+      "expected_centered_lcu_normalization_upper_bound": 5.0,
+      "two_pair_expected_covariance_lcu_normalization_upper_bound": 25.0,
+      "markov_cutoff": 100.0,
+      "retained_natural_two_pair_mass_lower_bound": 0.75,
+      "maximum_finite_rank_scaled_lcu_normalization": 4.0,
+      "exact_expectation_bound_verified": true,
+      "status": "natural-rank-scaled-lcu-mean-at-most-four"
+    },
+    {
+      "n": 4,
+      "transposition_count": 2,
+      "active_ordered_source_carrier_branch_count": 35,
+      "exact_natural_branch_probability_mass": "1",
+      "exact_expected_rank_scaled_lcu_normalization": "5/2",
+      "expected_rank_scaled_lcu_normalization": 2.5,
+      "all_n_rank_scaled_lcu_expectation_upper_bound": 4.0,
+      "expected_centered_lcu_normalization_upper_bound": 5.0,
+      "two_pair_expected_covariance_lcu_normalization_upper_bound": 25.0,
+      "markov_cutoff": 100.0,
+      "retained_natural_two_pair_mass_lower_bound": 0.75,
+      "maximum_finite_rank_scaled_lcu_normalization": 3.0,
+      "exact_expectation_bound_verified": true,
+      "status": "natural-rank-scaled-lcu-mean-at-most-four"
+    },
+    {
+      "n": 5,
+      "transposition_count": 2,
+      "active_ordered_source_carrier_branch_count": 142,
+      "exact_natural_branch_probability_mass": "1",
+      "exact_expected_rank_scaled_lcu_normalization": "197/50",
+      "expected_rank_scaled_lcu_normalization": 3.94,
+      "all_n_rank_scaled_lcu_expectation_upper_bound": 4.0,
+      "expected_centered_lcu_normalization_upper_bound": 5.0,
+      "two_pair_expected_covariance_lcu_normalization_upper_bound": 25.0,
+      "markov_cutoff": 100.0,
+      "retained_natural_two_pair_mass_lower_bound": 0.75,
+      "maximum_finite_rank_scaled_lcu_normalization": 12.0,
+      "exact_expectation_bound_verified": true,
+      "status": "natural-rank-scaled-lcu-mean-at-most-four"
+    },
+    {
+      "n": 6,
+      "transposition_count": 3,
+      "active_ordered_source_carrier_branch_count": 475,
+      "exact_natural_branch_probability_mass": "1",
+      "exact_expected_rank_scaled_lcu_normalization": "171331/43200",
+      "expected_rank_scaled_lcu_normalization": 3.9659953703703703,
+      "all_n_rank_scaled_lcu_expectation_upper_bound": 4.0,
+      "expected_centered_lcu_normalization_upper_bound": 5.0,
+      "two_pair_expected_covariance_lcu_normalization_upper_bound": 25.0,
+      "markov_cutoff": 100.0,
+      "retained_natural_two_pair_mass_lower_bound": 0.75,
+      "maximum_finite_rank_scaled_lcu_normalization": 60.0,
+      "exact_expectation_bound_verified": true,
+      "status": "natural-rank-scaled-lcu-mean-at-most-four"
+    },
+    {
+      "n": 8,
+      "transposition_count": 4,
+      "active_ordered_source_carrier_branch_count": 5048,
+      "exact_natural_branch_probability_mass": "1",
+      "exact_expected_rank_scaled_lcu_normalization": "4",
+      "expected_rank_scaled_lcu_normalization": 4.0,
+      "all_n_rank_scaled_lcu_expectation_upper_bound": 4.0,
+      "expected_centered_lcu_normalization_upper_bound": 5.0,
+      "two_pair_expected_covariance_lcu_normalization_upper_bound": 25.0,
+      "markov_cutoff": 100.0,
+      "retained_natural_two_pair_mass_lower_bound": 0.75,
+      "maximum_finite_rank_scaled_lcu_normalization": 7.0,
+      "exact_expectation_bound_verified": true,
+      "status": "natural-rank-scaled-lcu-mean-at-most-four"
+    },
+    {
+      "n": 10,
+      "transposition_count": 5,
+      "active_ordered_source_carrier_branch_count": 40737,
+      "exact_natural_branch_probability_mass": "1",
+      "exact_expected_rank_scaled_lcu_normalization": "4389392851201/1097349120000",
+      "expected_rank_scaled_lcu_normalization": 3.9999966931226045,
+      "all_n_rank_scaled_lcu_expectation_upper_bound": 4.0,
+      "expected_centered_lcu_normalization_upper_bound": 5.0,
+      "two_pair_expected_covariance_lcu_normalization_upper_bound": 25.0,
+      "markov_cutoff": 100.0,
+      "retained_natural_two_pair_mass_lower_bound": 0.75,
+      "maximum_finite_rank_scaled_lcu_normalization": 7.269230769230769,
+      "exact_expectation_bound_verified": true,
+      "status": "natural-rank-scaled-lcu-mean-at-most-four"
+    }
+  ],
+  "two_pair_covariance_controls": [
+    {
+      "control_id": "S3-L1-1-R1-1",
+      "n": 3,
+      "transposition_count": 1,
+      "left_source_partitions": [
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "right_source_partitions": [
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "hidden_involution_count": 3,
+      "active_joint_branch_count": 4,
+      "total_joint_branch_probability": 0.9999999999999993,
+      "maximum_dimensionless_frame_identity_residual": 4.689807940626852e-16,
+      "maximum_reduced_pgm_effect_residual": 1.03640152779526e-15,
+      "maximum_reduced_pgm_completeness_residual": 9.523252721420722e-16,
+      "minimum_positive_dimensionless_metric_eigenvalue": 0.9999999999999998,
+      "maximum_dimensionless_metric_eigenvalue": 2.0000000000000018,
+      "maximum_dimensionless_metric_support_condition_number": 2.0,
+      "maximum_covariance_operator_schmidt_rank": 2,
+      "maximum_centered_orbit_span_rank": 2,
+      "maximum_operator_schmidt_rank_upper_bound_residual": 0,
+      "weighted_covariance_lcu_normalization": 15.99999999999999,
+      "maximum_covariance_lcu_normalization": 25.0,
+      "exact_covariance_polar_reduction_verified": true,
+      "status": "dimensionless-covariance-polar-reduction-exact-gap-open"
+    },
+    {
+      "control_id": "S5-L0-1-R0-1",
+      "n": 5,
+      "transposition_count": 2,
+      "left_source_partitions": [
+        [
+          5
+        ],
+        [
+          4,
+          1
+        ]
+      ],
+      "right_source_partitions": [
+        [
+          5
+        ],
+        [
+          4,
+          1
+        ]
+      ],
+      "hidden_involution_count": 15,
+      "active_joint_branch_count": 1,
+      "total_joint_branch_probability": 1.0,
+      "maximum_dimensionless_frame_identity_residual": 1.5316435384602263e-16,
+      "maximum_reduced_pgm_effect_residual": 9.966040865570112e-16,
+      "maximum_reduced_pgm_completeness_residual": 3.252970149175042e-15,
+      "minimum_positive_dimensionless_metric_eigenvalue": 0.6666666666666663,
+      "maximum_dimensionless_metric_eigenvalue": 1.9999999999999998,
+      "maximum_dimensionless_metric_support_condition_number": 3.0000000000000013,
+      "maximum_covariance_operator_schmidt_rank": 9,
+      "maximum_centered_orbit_span_rank": 9,
+      "maximum_operator_schmidt_rank_upper_bound_residual": 0,
+      "weighted_covariance_lcu_normalization": 9.0,
+      "maximum_covariance_lcu_normalization": 9.0,
+      "exact_covariance_polar_reduction_verified": true,
+      "status": "dimensionless-covariance-polar-reduction-exact-gap-open"
+    },
+    {
+      "control_id": "S5-L1-1-R1-1",
+      "n": 5,
+      "transposition_count": 2,
+      "left_source_partitions": [
+        [
+          4,
+          1
+        ],
+        [
+          4,
+          1
+        ]
+      ],
+      "right_source_partitions": [
+        [
+          4,
+          1
+        ],
+        [
+          4,
+          1
+        ]
+      ],
+      "hidden_involution_count": 15,
+      "active_joint_branch_count": 16,
+      "total_joint_branch_probability": 1.0,
+      "maximum_dimensionless_frame_identity_residual": 4.958310448179301e-16,
+      "maximum_reduced_pgm_effect_residual": 2.9628197829585892e-15,
+      "maximum_reduced_pgm_completeness_residual": 7.283098603083257e-15,
+      "minimum_positive_dimensionless_metric_eigenvalue": 0.3703703703703706,
+      "maximum_dimensionless_metric_eigenvalue": 5.999999999999999,
+      "maximum_dimensionless_metric_support_condition_number": 7.799999999999992,
+      "maximum_covariance_operator_schmidt_rank": 14,
+      "maximum_centered_orbit_span_rank": 14,
+      "maximum_operator_schmidt_rank_upper_bound_residual": 0,
+      "weighted_covariance_lcu_normalization": 25.0,
+      "maximum_covariance_lcu_normalization": 49.0,
+      "exact_covariance_polar_reduction_verified": true,
+      "status": "dimensionless-covariance-polar-reduction-exact-gap-open"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "prove_pair_carrier_branch_average_is_flat_all_n",
+      "resolved": true,
+      "resolution": "Central class sums act as character-ratio scalars on every target isotypic component, including repeated multiplicities."
+    },
+    {
+      "obligation": "remove_explicit_carrier_rank_from_two_pair_pgm",
+      "resolved": true,
+      "resolution": "Equations (2)--(4) give the exact dimensionless polar."
+    },
+    {
+      "obligation": "bound_public_covariance_lcu_normalization_on_natural_mass",
+      "resolved": true,
+      "resolution": "The target likelihood scalar cancels against the exact natural branch probability, giving means four, five, and twenty-five."
+    },
+    {
+      "obligation": "compile_uniform_public_covariance_block_encoding",
+      "resolved": false,
+      "resolution": "The algebraic LCU schema is conditional on coherent uniform matching-class PREPARE and coherent carrier-isotypic projectors; this report does not compile or cost those primitives."
+    },
+    {
+      "obligation": "prove_inverse_polynomial_positive_edge_of_dimensionless_metric",
+      "resolved": false,
+      "resolution": "Finite controls are well conditioned on support, but no all-n spectral-edge theorem for I+K is available."
+    },
+    {
+      "obligation": "extend_covariance_polar_to_information_threshold_blocks",
+      "resolved": false,
+      "resolution": "Higher shared-label cumulants appear for three or more blocks; the two-block correlation formula is not the full threshold frame."
+    },
+    {
+      "obligation": "compile_pgm_output_and_hidden_label_decoder",
+      "resolved": false,
+      "resolution": "Frame inversion alone does not provide the Naimark hypothesis register or a polynomial hidden-involution output map."
+    }
+  ],
+  "adversarial_audit": [
+    {
+      "challenge": "Kronecker multiplicity destroys pair-branch flatness.",
+      "survives": false,
+      "response": "The conjugacy-class sum is central and scalar on every copy of alpha."
+    },
+    {
+      "challenge": "Branch postselection introduces a carrier-rank normalization cost.",
+      "survives": false,
+      "response": "Rank scaling yields equation (5), and the rank cancels from the PGM effects."
+    },
+    {
+      "challenge": "Rare small likelihood scalars make the LCU exponentially costly on all mass.",
+      "survives": false,
+      "response": "Their branch probabilities contain the same scalar; mean normalization is at most four."
+    },
+    {
+      "challenge": "Bounded block-encoding normalization implies efficient inverse square root.",
+      "survives": false,
+      "response": "QSVT degree still depends on the unproved positive spectral edge of I+K."
+    },
+    {
+      "challenge": "A two-pair frame formula compiles the threshold-copy PGM.",
+      "survives": false,
+      "response": "More blocks introduce higher shared-label cumulants and still need an output isometry."
+    }
+  ],
+  "headline_metrics": {
+    "all_n_pair_carrier_branch_flatness_theorem_count": 1,
+    "dimensionless_covariance_frame_reduction_theorem_count": 1,
+    "pgm_rank_normalization_cancellation_theorem_count": 1,
+    "all_n_natural_rank_scaled_lcu_mean_bound_theorem_count": 1,
+    "constant_mass_bounded_covariance_lcu_schema_count": 1,
+    "conditional_public_covariance_block_encoding_schema_count": 1,
+    "uniform_public_covariance_block_encoding_compiler_count": 0,
+    "finite_pair_flatness_control_count": 111,
+    "finite_pair_flatness_failure_count": 0,
+    "maximum_pair_flatness_residual": 5.585220941548601e-16,
+    "maximum_rank_scaled_lcu_identity_residual": 9.49283721187321e-15,
+    "natural_rank_scaled_lcu_expectation_upper_bound": 4.0,
+    "natural_centered_lcu_expectation_upper_bound": 5.0,
+    "natural_two_pair_covariance_lcu_expectation_upper_bound": 25.0,
+    "normalization_100_retained_mass_lower_bound": 0.75,
+    "maximum_finite_expected_rank_scaled_lcu_normalization": 4.0,
+    "maximum_finite_branch_rank_scaled_lcu_normalization": 60.0,
+    "minimum_finite_positive_dimensionless_metric_eigenvalue": 0.3703703703703706,
+    "maximum_finite_dimensionless_metric_condition_number": 7.799999999999992,
+    "maximum_finite_covariance_operator_schmidt_rank": 14,
+    "inverse_square_root_spectral_gap_theorem_count": 0,
+    "threshold_copy_covariance_polar_extension_count": 0,
+    "pgm_output_isometry_compiler_count": 0,
+    "hidden_involution_decoder_count": 0,
+    "classical_separation_theorem_count": 0,
+    "new_quantum_algorithm_count": 0
+  },
+  "claim_gate": {
+    "all_n_pair_carrier_branch_flatness_proved": true,
+    "dimensionless_covariance_frame_reduction_proved": true,
+    "pgm_carrier_rank_normalization_cancelled": true,
+    "all_n_natural_lcu_expectation_bound_proved": true,
+    "constant_mass_bounded_covariance_lcu_schema_proved": true,
+    "conditional_public_covariance_block_encoding_schema_proved": true,
+    "uniform_public_covariance_block_encoding_compiled": false,
+    "inverse_square_root_spectral_gap_proved": false,
+    "threshold_copy_covariance_polar_extension_proved": false,
+    "pgm_output_isometry_compiled": false,
+    "hidden_involution_decoder_compiled": false,
+    "classical_separation_proved": false,
+    "speedup_claim_allowed": false,
+    "reason": "The two-pair branch PGM now has a constant-natural-mass, dimensionless covariance block-encoding target and a conditional LCU access schema. The access primitives, positive spectral edge, threshold-copy extension, output isometry, decoder, and classical separation remain open."
+  },
+  "status": "dimensionless-covariance-polar-access-normalized-spectral-gap-open",
+  "summary": "Proved all-n pair-branch flatness, removed carrier-rank normalization from the two-pair PGM, and bounded the natural covariance-LCU normalization by 25 in expectation. The next gates are compiling the conditional access primitives, proving the positive spectral edge of I+K, and extending the reduction to the full threshold-copy frame.",
+  "falsifiers_triggered": [
+    "Pair-branch averages are exactly flat even when Kronecker multiplicity exceeds one.",
+    "The disjoint-pair global PGM is not pair-local, but its frame inverse reduces to a dimensionless covariance polar.",
+    "Explicit carrier support ranks cancel from the reduced PGM effects.",
+    "Rare small target-likelihood scalars do not spoil natural average LCU normalization.",
+    "Finite conditioning does not prove an all-n inverse-square-root circuit.",
+    "Two-pair covariance access is not yet a threshold-copy decoder or speedup."
+  ]
+}

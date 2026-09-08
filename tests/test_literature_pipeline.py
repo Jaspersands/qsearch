@@ -32,6 +32,28 @@ class LiteraturePipelineTests(unittest.TestCase):
         self.assertTrue(hidden_shift[0].open_question)
         self.assertTrue(hidden_shift[0].reusable_abstraction)
 
+    def test_diagram_qft_record_keeps_large_loop_access_scope(self):
+        records = {record.id: record for record in extract_literature_records(refresh_arxiv=False)}
+        record = records["foxman-nehoran-ding-semisimple-qft-2026"]
+        self.assertIn("sufficiently large", record.problem_family)
+        self.assertIn("poly(dim A)", record.no_go_barrier)
+        self.assertIn("not justified", record.no_go_barrier)
+        self.assertIn("Project question", record.open_question)
+        self.assertEqual(record.url, "https://arxiv.org/abs/2605.05337")
+
+    def test_centralizer_source_extracts_extremal_class_kernel_mechanism(self):
+        records = {
+            record.id: record
+            for record in extract_literature_records(refresh_arxiv=False)
+        }
+        record = records[
+            "liebeck-shalev-diameters-finite-simple-groups-2001"
+        ]
+        self.assertIn("centralizer", record.mechanism.lower())
+        self.assertIn("perfect-matching", record.no_go_barrier.lower())
+        self.assertIn("strong induction", record.proof_technique.lower())
+        self.assertIn("racah", record.open_question.lower())
+
     def test_shifted_character_papers_use_specific_complexity_mechanism(self):
         records = extract_literature_records(refresh_arxiv=False)
         shifted = [record for record in records if "shifted-character" in record.tags]
@@ -58,6 +80,41 @@ class LiteraturePipelineTests(unittest.TestCase):
         self.assertTrue(all("random-multiplier" in record.problem_family for record in hidden_number))
         self.assertTrue(all("chosen" in record.no_go_barrier for record in hidden_number))
         self.assertTrue(all("one-shot" in record.open_question for record in hidden_number))
+
+    def test_locking_records_create_an_explicit_anti_locking_gate(self):
+        records = extract_literature_records(refresh_arxiv=False)
+        locking = [
+            record for record in records if "quantum-data-locking" in record.tags
+        ]
+
+        self.assertGreaterEqual(len(locking), 2)
+        self.assertTrue(all("Holevo" in record.mechanism for record in locking))
+        self.assertTrue(all("anti-locking" in record.no_go_barrier for record in locking))
+        self.assertTrue(all("branch" in record.reusable_abstraction for record in locking))
+
+    def test_state_discrimination_record_requires_direct_success_control(self):
+        records = {
+            record.id: record
+            for record in extract_literature_records(refresh_arxiv=False)
+        }
+        record = records["montanaro-state-discrimination-2019"]
+
+        self.assertIn("Pretty-good", record.mechanism)
+        self.assertIn("success", record.reduction)
+        self.assertIn("self-purity", record.open_question)
+        self.assertIn("implementation", record.reusable_abstraction)
+
+    def test_pgm_polar_record_preserves_physical_access_contract(self):
+        records = {
+            record.id: record
+            for record in extract_literature_records(refresh_arxiv=False)
+        }
+        record = records["quek-rebentrost-pgm-polar-2021"]
+
+        self.assertIn("polar", record.mechanism)
+        self.assertIn("controlled", record.mechanism)
+        self.assertIn("mixed coset", record.no_go_barrier)
+        self.assertIn("physical-access", record.reusable_abstraction)
 
     def test_toy_oracle_hypothesis_is_rejected(self):
         now = utc_now()

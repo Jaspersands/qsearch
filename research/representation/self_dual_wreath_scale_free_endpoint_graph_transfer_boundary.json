@@ -1,0 +1,390 @@
+{
+  "abstract_controls": [
+    {
+      "control_id": "COMMUTING-DIAGONAL",
+      "dual_unitary_residual": 3.369813915742135e-16,
+      "endpoint_relation_orthogonality_residual": 1.3321662962671623e-16,
+      "exact_response_short_graph_duality_verified": true,
+      "fiber_dimension": 3,
+      "graph_column_isometry_residual": 0.0,
+      "graph_complement_isometry_residual": 2.220446049250313e-16,
+      "graph_complement_to_response_gauge_residual": 3.510833468576701e-16,
+      "graph_cs_unitary_residual": 2.242873216132857e-16,
+      "graph_to_short_endpoint_gauge_residual": 1.5700924586837752e-16,
+      "maximum_response_eigenvalue": 1.4285714285714286,
+      "maximum_short_eigenvalue": 2.2,
+      "minimum_response_eigenvalue": 0.45454545454545453,
+      "minimum_short_eigenvalue": 0.7,
+      "positive_root_graph_column_operator_gap": 1.5700924586837752e-16,
+      "relative_transfer_norm": 1.6035674514745466,
+      "response_relation_gauge_unitarity_residual": 4.440892098500626e-16,
+      "response_relation_isometry_residual": 3.3306690738754696e-16,
+      "short_endpoint_gauge_unitarity_residual": 0.0,
+      "short_endpoint_isometry_residual": 0.0,
+      "short_metric_commutator_norm": 0.0,
+      "status": "exact-response-short-complement-and-scale-free-graph-cs"
+    },
+    {
+      "control_id": "NONCOMMUTING-ROTATED",
+      "dual_unitary_residual": 3.441613267432667e-16,
+      "endpoint_relation_orthogonality_residual": 7.938032276877694e-17,
+      "exact_response_short_graph_duality_verified": true,
+      "fiber_dimension": 2,
+      "graph_column_isometry_residual": 4.665890945172799e-16,
+      "graph_complement_isometry_residual": 4.492590572625274e-16,
+      "graph_complement_to_response_gauge_residual": 3.140697418698796e-16,
+      "graph_cs_unitary_residual": 4.681670132154326e-16,
+      "graph_to_short_endpoint_gauge_residual": 2.487182258518642e-16,
+      "maximum_response_eigenvalue": 1.6666666666666667,
+      "maximum_short_eigenvalue": 2.0000000000000004,
+      "minimum_response_eigenvalue": 0.4999999999999999,
+      "minimum_short_eigenvalue": 0.6,
+      "positive_root_graph_column_operator_gap": 0.01442191089335866,
+      "relative_transfer_norm": 1.3611102224419296,
+      "response_relation_gauge_unitarity_residual": 4.811219358924409e-17,
+      "response_relation_isometry_residual": 3.331500058637754e-16,
+      "short_endpoint_gauge_unitarity_residual": 5.243339170169247e-16,
+      "short_endpoint_isometry_residual": 2.2228595586010456e-16,
+      "short_metric_commutator_norm": 0.23017005345258693,
+      "status": "exact-response-short-complement-and-scale-free-graph-cs"
+    },
+    {
+      "control_id": "RANDOM-COMPLEX-D4",
+      "dual_unitary_residual": 3.876590056663632e-15,
+      "endpoint_relation_orthogonality_residual": 2.1073298181251702e-15,
+      "exact_response_short_graph_duality_verified": true,
+      "fiber_dimension": 4,
+      "graph_column_isometry_residual": 1.7171100186310431e-15,
+      "graph_complement_isometry_residual": 2.364159010195044e-15,
+      "graph_complement_to_response_gauge_residual": 3.761591837888652e-15,
+      "graph_cs_unitary_residual": 2.369357631726425e-15,
+      "graph_to_short_endpoint_gauge_residual": 2.9382596382092232e-15,
+      "maximum_response_eigenvalue": 7.563414911332243,
+      "maximum_short_eigenvalue": 1.997378165200824,
+      "minimum_response_eigenvalue": 0.5006563190798958,
+      "minimum_short_eigenvalue": 0.1322154095369943,
+      "positive_root_graph_column_operator_gap": 0.08172613027703675,
+      "relative_transfer_norm": 2.762985626910842,
+      "response_relation_gauge_unitarity_residual": 4.6959087168335924e-15,
+      "response_relation_isometry_residual": 3.110523049283727e-15,
+      "short_endpoint_gauge_unitarity_residual": 3.874740497961313e-15,
+      "short_endpoint_isometry_residual": 2.9203976023823784e-15,
+      "short_metric_commutator_norm": 0.7165530712078307,
+      "status": "exact-response-short-complement-and-scale-free-graph-cs"
+    }
+  ],
+  "adversarial_audit": [
+    {
+      "objection": "The graph transform is merely separate pseudoinversion under another name.",
+      "resolution": "Its scalar functions are regular at sigma=0 and invariant under a common child scale. The unresolved access object is the relative transfer, not either absolute inverse.",
+      "resolved": true
+    },
+    {
+      "objection": "Existing support/GPE pair polars already provide the relative transfer.",
+      "resolution": "The metric-blind full-support counterexample keeps every support and support-polar transport equal while moving T by more than 0.5 and the graph projector by more than 0.2.",
+      "resolved": true
+    },
+    {
+      "objection": "Any graph basis is the canonical positive endpoint circuit.",
+      "resolution": "Only the range is equal. Noncommuting controls have a nonzero direct column gap and an exact nontrivial input gauge.",
+      "resolved": true
+    },
+    {
+      "objection": "A clean graph half automatically closes the recursive algorithm.",
+      "resolution": "It supplies the complementary relation subspace, but recursive gauge propagation, component Naimark effects, native mass, and decoding remain open.",
+      "resolved": false
+    }
+  ],
+  "claim_gate": {
+    "all_depth_parent_native_mass_recurrence_proved": false,
+    "classical_separation_proved": false,
+    "common_exponential_child_scale_cancels_from_graph_endpoint": true,
+    "conditional_qsvt_graph_cs_compiler_given_relative_transfer": true,
+    "physical_pgm_compiled": false,
+    "recursive_endpoint_gauge_covariance_proved": false,
+    "representation_specific_relative_transfer_oracle_compiled": false,
+    "response_short_endpoint_complementarity_proved": true,
+    "scale_free_relative_graph_cs_normal_form_proved": true,
+    "shorted_operator_response_inverse_identity_proved": true,
+    "speedup_claim_allowed": false,
+    "support_pair_polars_determine_positive_relative_transfer": false
+  },
+  "compiler_records": [
+    {
+      "conditional_graph_cs_compiler_polynomial": true,
+      "conservative_qsvt_degree_proxy": 128,
+      "cosine_function_maximum": 1.0,
+      "relative_transfer_block_encoding_supplied_by_current_stack": false,
+      "requested_error": 1e-06,
+      "requires_absolute_child_frame_scale": false,
+      "requires_lower_singular_value_bound": false,
+      "requires_relative_transfer_block_encoding": true,
+      "scalar_rotation_identity_residual": 4.440892098500626e-16,
+      "sine_function_maximum": 0.7071067811865475,
+      "status": "conditional-relative-transfer-qsvt-graph-cs-compiler",
+      "transfer_norm_bound": 1.0
+    },
+    {
+      "conditional_graph_cs_compiler_polynomial": true,
+      "conservative_qsvt_degree_proxy": 266,
+      "cosine_function_maximum": 1.0,
+      "relative_transfer_block_encoding_supplied_by_current_stack": false,
+      "requested_error": 1e-06,
+      "requires_absolute_child_frame_scale": false,
+      "requires_lower_singular_value_bound": false,
+      "requires_relative_transfer_block_encoding": true,
+      "scalar_rotation_identity_residual": 4.440892098500626e-16,
+      "sine_function_maximum": 0.8944271909999159,
+      "status": "conditional-relative-transfer-qsvt-graph-cs-compiler",
+      "transfer_norm_bound": 2.0
+    },
+    {
+      "conditional_graph_cs_compiler_polynomial": true,
+      "conservative_qsvt_degree_proxy": 553,
+      "cosine_function_maximum": 1.0,
+      "relative_transfer_block_encoding_supplied_by_current_stack": false,
+      "requested_error": 1e-06,
+      "requires_absolute_child_frame_scale": false,
+      "requires_lower_singular_value_bound": false,
+      "requires_relative_transfer_block_encoding": true,
+      "scalar_rotation_identity_residual": 4.440892098500626e-16,
+      "sine_function_maximum": 0.9701425001453319,
+      "status": "conditional-relative-transfer-qsvt-graph-cs-compiler",
+      "transfer_norm_bound": 4.0
+    },
+    {
+      "conditional_graph_cs_compiler_polynomial": true,
+      "conservative_qsvt_degree_proxy": 1151,
+      "cosine_function_maximum": 1.0,
+      "relative_transfer_block_encoding_supplied_by_current_stack": false,
+      "requested_error": 1e-06,
+      "requires_absolute_child_frame_scale": false,
+      "requires_lower_singular_value_bound": false,
+      "requires_relative_transfer_block_encoding": true,
+      "scalar_rotation_identity_residual": 4.440892098500626e-16,
+      "sine_function_maximum": 0.9922778767136677,
+      "status": "conditional-relative-transfer-qsvt-graph-cs-compiler",
+      "transfer_norm_bound": 8.0
+    },
+    {
+      "conditional_graph_cs_compiler_polynomial": true,
+      "conservative_qsvt_degree_proxy": 2390,
+      "cosine_function_maximum": 1.0,
+      "relative_transfer_block_encoding_supplied_by_current_stack": false,
+      "requested_error": 1e-06,
+      "requires_absolute_child_frame_scale": false,
+      "requires_lower_singular_value_bound": false,
+      "requires_relative_transfer_block_encoding": true,
+      "scalar_rotation_identity_residual": 4.440892098500626e-16,
+      "sine_function_maximum": 0.9980525784828885,
+      "status": "conditional-relative-transfer-qsvt-graph-cs-compiler",
+      "transfer_norm_bound": 16.0
+    }
+  ],
+  "created_at": "2026-08-30T23:51:23.159995+00:00",
+  "falsifiers_triggered": [
+    "Separate absolute child-frame pseudoinversion is not the only mathematical endpoint normal form; the common scale cancels exactly in the relative graph transfer.",
+    "Support projectors and pair polar transports do not determine the positive relative transfer or endpoint graph.",
+    "For noncommuting metrics the graph CS column and canonical positive-root endpoint differ by a nontrivial input gauge.",
+    "A conditional graph-CS compiler does not supply its required representation-specific relative-transfer block encoding."
+  ],
+  "headline_metrics": {
+    "abstract_control_count": 3,
+    "common_scale_cancellation_theorem_count": 1,
+    "common_scale_control_count": 4,
+    "compiled_representation_relative_transfer_oracle_count": 0,
+    "conditional_relative_transfer_compiler_theorem_count": 1,
+    "finite_control_failure_count": 0,
+    "largest_cancelled_absolute_inverse_resolution_proxy": 281474976710656.0,
+    "metric_blind_graph_projector_gap": 0.2557915332417837,
+    "metric_blind_relative_transfer_gap": 0.6873619601599433,
+    "noncommuting_positive_root_graph_gauge_gap": 0.01442191089335866,
+    "physical_affine_graph_reduction_theorem_count": 1,
+    "physical_relative_transfer_norm": 1.1180339887498942,
+    "relative_graph_cs_normal_form_theorem_count": 1,
+    "response_short_complementarity_theorem_count": 1,
+    "speedup_claim_count": 0,
+    "support_pair_polar_indeterminacy_theorem_count": 1
+  },
+  "physical_controls": [
+    {
+      "child_width": 4,
+      "common_fiber_dimension": 5,
+      "control_id": "S3-AFFINE-FINAL-SIBLINGS",
+      "exact_physical_affine_graph_reduction_verified": true,
+      "graph_cs_unitary_residual": 1.721497014824965e-15,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ]
+      ],
+      "left_frame_rank": 8,
+      "minimum_normalized_frame_positive_eigenvalue": 0.12499999999999996,
+      "n": 3,
+      "physical_dimension": 8,
+      "physical_short_formula_residual": 1.457247753723847e-15,
+      "relative_transfer_inverse_norm": 1.4142135623730956,
+      "relative_transfer_norm": 1.1180339887498942,
+      "right_frame_rank": 5,
+      "status": "physical-affine-response-short-graph-reduction-exact",
+      "target_partition": [
+        3
+      ]
+    }
+  ],
+  "primary_literature": [
+    {
+      "scope": "Parallel sum and range-intersection identities for positive semidefinite matrices.",
+      "title": "Series and parallel addition of matrices",
+      "url": "https://doi.org/10.1016/0022-247X(69)90200-5"
+    },
+    {
+      "scope": "Positive-operator shorting to a prescribed subspace.",
+      "title": "Shorted Operators II",
+      "url": "https://doi.org/10.1137/0128007"
+    },
+    {
+      "scope": "Conditional coherent singular-value transformation of the bounded graph cosine/sine functions.",
+      "title": "Quantum singular value transformation and beyond",
+      "url": "https://arxiv.org/abs/1806.01838"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "evidence": "Equation (3) follows by direct cancellation sqrt(E_s)sqrt(B_s)=I; noncommuting complex and physical affine controls verify the full unitary.",
+      "obligation": "prove_response_short_endpoint_complementarity",
+      "resolved": true
+    },
+    {
+      "evidence": "Equation (4) and every graph-CS block are invariant under E_s -> cE_s; controls retain machine precision through c=2^-48.",
+      "obligation": "remove_common_absolute_frame_scale_from_joint_endpoint",
+      "resolved": true
+    },
+    {
+      "evidence": "The graph cosine and sine are bounded at zero and analytic with degree polynomial in an upper transfer norm and log inverse error; no lower singular cutoff is used.",
+      "obligation": "compile_relative_transfer_graph_cs_given_oracle",
+      "resolved": true
+    },
+    {
+      "evidence": "The exact affine average gives Fbar_s, while GPE gives support partial isometries. Neither supplies the positive relative transfer T at polynomial normalization.",
+      "obligation": "construct_representation_specific_relative_transfer_oracle",
+      "resolved": false
+    },
+    {
+      "evidence": "Q=CW and Qp=RWp for input gauges. A recursive interface must absorb or coherently track these gauges without changing component effects or decoder semantics.",
+      "obligation": "prove_recursive_gauge_covariance",
+      "resolved": false
+    },
+    {
+      "evidence": "The theorem is algebraic and conditional; it adds no all-depth native-mass recurrence, decoder, or classical lower bound.",
+      "obligation": "prove_parent_native_mass_and_end_to_end_advantage",
+      "resolved": false
+    }
+  ],
+  "scale_controls": [
+    {
+      "common_scale_cancels_from_relative_graph_exactly": true,
+      "common_short_scale": 0.00390625,
+      "graph_cs_unitary_residual": 6.104468273259231e-16,
+      "graph_projector_scale_residual": 0.0,
+      "relative_transfer_residual": 0.0,
+      "response_short_dual_unitary_residual": 5.669669759617731e-16,
+      "scale_bit_count": 8,
+      "separate_absolute_inverse_resolution_proxy": 256.0,
+      "status": "common-exponential-scale-cancels-from-relative-graph"
+    },
+    {
+      "common_scale_cancels_from_relative_graph_exactly": true,
+      "common_short_scale": 1.52587890625e-05,
+      "graph_cs_unitary_residual": 6.104468273259231e-16,
+      "graph_projector_scale_residual": 0.0,
+      "relative_transfer_residual": 0.0,
+      "response_short_dual_unitary_residual": 5.669669759617731e-16,
+      "scale_bit_count": 16,
+      "separate_absolute_inverse_resolution_proxy": 65536.0,
+      "status": "common-exponential-scale-cancels-from-relative-graph"
+    },
+    {
+      "common_scale_cancels_from_relative_graph_exactly": true,
+      "common_short_scale": 2.3283064365386963e-10,
+      "graph_cs_unitary_residual": 6.104468273259231e-16,
+      "graph_projector_scale_residual": 0.0,
+      "relative_transfer_residual": 0.0,
+      "response_short_dual_unitary_residual": 5.669669759617731e-16,
+      "scale_bit_count": 32,
+      "separate_absolute_inverse_resolution_proxy": 4294967296.0,
+      "status": "common-exponential-scale-cancels-from-relative-graph"
+    },
+    {
+      "common_scale_cancels_from_relative_graph_exactly": true,
+      "common_short_scale": 3.552713678800501e-15,
+      "graph_cs_unitary_residual": 6.104468273259231e-16,
+      "graph_projector_scale_residual": 0.0,
+      "relative_transfer_residual": 0.0,
+      "response_short_dual_unitary_residual": 5.669669759617731e-16,
+      "scale_bit_count": 48,
+      "separate_absolute_inverse_resolution_proxy": 281474976710656.0,
+      "status": "common-exponential-scale-cancels-from-relative-graph"
+    }
+  ],
+  "status": "scale-free-relative-graph-endpoint-exact-access-oracle-open",
+  "summary": "Replaced the vague joint-generalized-eigenvalue target by an exact scale-free graph-CS normal form. The short endpoint and compressed-inverse relation are complementary columns of one unitary, and their common absolute scale cancels in T=sqrt(E_R)E_L^-1/2. A polynomial relative-transfer block encoding would conditionally compile the graph rotation without a lower spectral cutoff. The current stack does not provide that positive relative transfer, and support pair-polars provably cannot determine it.",
+  "support_blind_control": {
+    "exact_metric_blind_counterexample_verified": true,
+    "fiber_dimension": 2,
+    "first_left_support_rank": 2,
+    "first_right_support_rank": 2,
+    "graph_endpoint_projector_gap": 0.2557915332417837,
+    "maximum_support_polar_transport_gap": 0.0,
+    "maximum_support_projector_gap": 0.0,
+    "relative_transfer_operator_gap": 0.6873619601599433,
+    "second_left_support_rank": 2,
+    "second_relative_generalized_maximum": 2.830421222269842,
+    "second_relative_generalized_minimum": 0.3974673420155504,
+    "second_right_support_rank": 2,
+    "status": "identical-support-polars-constant-separated-relative-graph",
+    "support_pair_polars_determine_relative_transfer": false
+  },
+  "theorem": {
+    "common_scale_cancellation": "A common positive rescaling of E_L,E_R cancels exactly from T and the graph CS unitary, even when the absolute scale is exponentially small.",
+    "conditional_compiler": "Given a beta-normalized coherent block encoding of T with beta=poly(n), QSVT of the bounded graph cosine/sine functions conditionally compiles the CS unitary in poly(beta,log(1/epsilon)) degree without a lower singular-value cutoff.",
+    "current_access_boundary": "The current affine-frame LCU and GPE pair-support polars do not provide T; identical full-support polar data can have constant-separated relative transfers and endpoint graph projectors.",
+    "gauge_boundary": "Graph and positive-root endpoint columns differ by an input unitary for noncommuting metrics. A clean minimal completion supplies the correct response-relation subspace, but canonical coordinate gauge and recursive gauge propagation remain to be proved.",
+    "relative_graph_normal_form": "With T=sqrt(E_R)E_L^-1/2, the endpoint range is graph(T), and the exact graph CS unitary has columns [I;T](I+T*T)^-1/2 and [-T*;I](I+TT*)^-1/2.",
+    "response_short_duality": "For B_s>0 and E_s=B_s^-1, C=[sqrt(E_L);sqrt(E_R)]/sqrt(E_L+E_R) and R=[sqrt(B_L);-sqrt(B_R)]/sqrt(B_L+B_R) are orthogonal isometries, so [C R] is unitary.",
+    "shorted_operator_identity": "For B_s=X*F_s^+X, X E_s X* is the Anderson--Trapp short of F_s to ran(X); finite physical affine controls verify the Schur-complement formula.",
+    "status": "scale-free-relative-graph-endpoint-exact-access-oracle-open",
+    "surviving_route": "Derive a representation-specific Racah/Schur block encoding of the scale-free relative transfer T, or a direct graph-CS transform with a gauge-covariant recursive interface.",
+    "theorem_verified": true
+  },
+  "theorem_contract": {
+    "falsifier": "A representation-specific lower bound or natural-law theorem showing that every coherent relative-transfer/graph-CS implementation needs superpolynomial queries, normalization, workspace, or loses nonnegligible parent-native mass.",
+    "hypothesis": "The balanced affine-node endpoint can be represented as a scale-free graph/CS transform of one relative response operator, avoiding separate resolution of the exponentially small absolute child-frame scales.",
+    "positive_signal": "A polynomial-normalized representation-specific block encoding of T=sqrt(E_R)E_L^-1/2, or a direct Racah circuit for its graph CS unitary, with recursively compatible gauge and native mass.",
+    "scope": "Exact finite-dimensional endpoint algebra and a conditional QSVT compiler. No natural all-n relative-transfer oracle, gauge recurrence, physical decoder, classical separation, or speedup."
+  }
+}

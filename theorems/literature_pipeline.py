@@ -62,6 +62,166 @@ class HypothesisFactoryResult:
 
 MECHANISM_RULES: list[tuple[set[str], dict[str, str]]] = [
     (
+        {"diagram-algebra-qft", "large-loop-regime"},
+        {
+            "mechanism": "Approximate recursive Fourier transforms for partition, Brauer, and walled Brauer algebras.",
+            "problem_family": "Semisimple diagram algebras with sufficiently large loop parameter d.",
+            "reduction": "Adapt a subalgebra chain with modified embeddings for nonunitary generators.",
+            "no_go_barrier": "The stated error includes poly(dim A) times d^(-1/2); a small-loop application is not justified by the gate count alone.",
+            "proof_technique": "Approximate Fourier-basis orthogonality and recursive representation-theoretic embeddings.",
+            "open_question": "Project question: can a source-weighted quotient support a useful normalized transform outside that regime?",
+            "reusable_abstraction": "Record the algebra dimension, loop parameter, physical inner product, embedding access, and error floor separately.",
+        },
+    ),
+    (
+        {
+            "pgm-implementation",
+            "quantum-polar-decomposition",
+            "state-preparation-oracle",
+        },
+        {
+            "mechanism": (
+                "Quantum polar decomposition implements pure-state pretty-good measurements from controlled "
+                "state-preparation and prior-preparation oracles with explicit condition and rank dependence."
+            ),
+            "problem_family": (
+                "Structured quantum state discrimination, including carrier-conditioned nonabelian HSP branches."
+            ),
+            "reduction": (
+                "Represent a pure-state synthesis matrix by a block encoding, apply a polar transform, and read "
+                "the hypothesis label from the PGM isometry."
+            ),
+            "no_go_barrier": (
+                "The oracle model assumes coherent controlled preparation of labelled pure states and pays rank, "
+                "condition, and square-root hypothesis-count costs; ordinary mixed coset samples do not supply "
+                "that interface."
+            ),
+            "proof_technique": (
+                "Projected unitary encodings, singular-value transformation, quantum polar decomposition, and "
+                "condition-number-dependent error analysis."
+            ),
+            "open_question": (
+                "Can covariance cancel hypothesis-count normalization while a representation-specific circuit "
+                "implements the remaining mixed multiplicity polar from physical coset-state access?"
+            ),
+            "reusable_abstraction": (
+                "PGM compiler access contract: state type, labelled preparation oracle, prior oracle, block-encoding "
+                "normalization, condition number, support rank, output decoder, and physical-access transfer."
+            ),
+        },
+    ),
+    (
+        {
+            "quantum-data-locking",
+            "accessible-information",
+            "holevo-information",
+        },
+        {
+            "mechanism": (
+                "Quantum data locking separates retained quantum/Holevo correlation from information obtainable "
+                "by a measurement after a small key or subsystem is removed."
+            ),
+            "problem_family": (
+                "Carrier-pinched multiregister hidden-involution coset-state ensembles and other covariant "
+                "state-discrimination problems."
+            ),
+            "reduction": (
+                "Treat carrier pinching as loss of a bounded-size coherence environment; use locking as an "
+                "adversarial countermodel to any inference from Holevo retention to accessible information."
+            ),
+            "no_go_barrier": (
+                "Extensive Holevo information alone does not imply a high-success or efficient decoder; a "
+                "source-specific anti-locking, fidelity, frame-collision, or PGM-success theorem is required."
+            ),
+            "proof_technique": (
+                "Random-unitary constructions, entropy and mutual-information inequalities, accessible-"
+                "information optimization, and subsystem/key-size accounting."
+            ),
+            "open_question": (
+                "Does symmetric-group covariance plus carrier-commutant pinching forbid locking on the natural "
+                "hidden-involution source law, or can branch PGM success collapse asymptotically?"
+            ),
+            "reusable_abstraction": (
+                "Anti-locking gate: retained Holevo budget, direct measurement-success certificate, branch "
+                "self-purity, cross-hypothesis collision, and explicit decoder access."
+            ),
+        },
+    ),
+    (
+        {
+            "state-discrimination",
+            "pretty-good-measurement",
+            "mixed-states",
+            "fidelity-bound",
+        },
+        {
+            "mechanism": (
+                "Pretty-good measurements convert quantitative mixed-state overlap, fidelity, rank, or frame-"
+                "purity control into direct hypothesis-identification success bounds."
+            ),
+            "problem_family": (
+                "Carrier-conditioned covariant coset-state branches and compressed nonabelian HSP measurements."
+            ),
+            "reduction": (
+                "Replace entropy-only evidence by a direct branch PGM success certificate and average it over "
+                "the public carrier flag and natural source law."
+            ),
+            "no_go_barrier": (
+                "Compression can inflate self-purity and normalized pairwise collisions; finite favorable values "
+                "do not establish all-n success or circuit efficiency."
+            ),
+            "proof_technique": (
+                "Cauchy--Schwarz, Holder square-root trace bounds, fidelity/overlap inequalities, frame moments, "
+                "and covariant state-discrimination symmetry."
+            ),
+            "open_question": (
+                "Can natural carrier branches be proved to have bounded self-purity inflation and collision burden "
+                "at the information-threshold copy count?"
+            ),
+            "reusable_abstraction": (
+                "Branch discrimination record: support rank, purity inflation, distinct collision burden, PGM "
+                "success lower bound, implementation access, and classical baseline."
+            ),
+        },
+    ),
+    (
+        {
+            "centralizer-bound",
+            "fixed-point-free-permutation",
+            "conjugacy-class",
+        },
+        {
+            "mechanism": (
+                "Extremal symmetric-group centralizer bounds that isolate perfect-matchings as the unique "
+                "fixed-point-free even-degree obstruction to generic conjugacy-class intersection estimates."
+            ),
+            "problem_family": (
+                "Character-weighted commuting kernels and multiregister carrier-label moments for symmetric-group "
+                "hidden-involution coset states."
+            ),
+            "reduction": (
+                "Bound each class-pair commuting probability by z_alpha z_beta/n!, derive a quantitative gap away "
+                "from the perfect-matching class, and count the exceptional matching intersection exactly."
+            ),
+            "no_go_barrier": (
+                "Maximal-centralizer ordering alone is too weak, and the centralizer-product estimate grows on the "
+                "perfect-matching pair; the exceptional class requires a separate exact kernel."
+            ),
+            "proof_technique": (
+                "Cycle-centralizer formulas, strong induction on moved degree, fixed-point factorization, falling "
+                "factorial bounds, and exact hyperoctahedral intersection counting."
+            ),
+            "open_question": (
+                "Can the resulting asymptotic carrier-label incompatibility be converted into an efficient coherent "
+                "Racah resolver, physical PGM, and hidden-involution decoder?"
+            ),
+            "reusable_abstraction": (
+                "Extremal-class kernel closure: generic centralizer envelope, quantitative second-class gap, "
+                "exception set, exact exception count, and downstream physical-access obligations."
+            ),
+        },
+    ),
+    (
         {
             "symmetric-character",
             "character-ratio",

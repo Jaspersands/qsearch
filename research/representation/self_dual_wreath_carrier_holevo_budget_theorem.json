@@ -1,0 +1,352 @@
+{
+  "created_at": "2026-09-01T22:13:40.278113+00:00",
+  "theorem_contract": {
+    "ensemble": "uniform perfect-matching hidden-involution mixed coset states at the information-threshold copy count",
+    "allowed_preprocessing": "an adaptive sequence of hidden-independent carrier PVM pinchings",
+    "information_measure": "Holevo quantum mutual information in bits",
+    "carrier_label_bound": "at most p(n) outcomes for every symmetric-group carrier label",
+    "not_claimed": "accessible-information retention, efficient branch measurement, outcome decoder, or quantum speedup"
+  },
+  "finite_controls": [
+    {
+      "control_id": "S3-STANDARD-CUBED",
+      "n": 3,
+      "transposition_count": 1,
+      "source_partitions": [
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "hidden_involution_count": 3,
+      "left_carrier_outcome_count": 3,
+      "right_carrier_outcome_count": 3,
+      "initial_holevo_information_bits": 1.5612781244591327,
+      "after_left_holevo_information_bits": 1.2499999999999996,
+      "after_left_right_holevo_information_bits": 0.7500000000000002,
+      "left_holevo_loss_bits": 0.31127812445913317,
+      "second_holevo_loss_bits": 0.49999999999999933,
+      "total_holevo_loss_bits": 0.8112781244591325,
+      "left_log_outcome_bound_bits": 1.584962500721156,
+      "two_round_log_outcome_bound_bits": 3.169925001442312,
+      "left_coherence_difference_identity_residual": 0.0,
+      "two_round_telescope_residual": 0.0,
+      "left_data_processing_residual": 0.0,
+      "second_data_processing_residual": 0.0,
+      "entropy_budget_verified": true,
+      "status": "carrier-pinching-holevo-budget-verified"
+    },
+    {
+      "control_id": "S4-STANDARD-CUBED-PERFECT-MATCHINGS",
+      "n": 4,
+      "transposition_count": 2,
+      "source_partitions": [
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          1
+        ]
+      ],
+      "hidden_involution_count": 3,
+      "left_carrier_outcome_count": 5,
+      "right_carrier_outcome_count": 5,
+      "initial_holevo_information_bits": 1.584962500721156,
+      "after_left_holevo_information_bits": 1.5849625007211547,
+      "after_left_right_holevo_information_bits": 1.584962500721155,
+      "left_holevo_loss_bits": 1.3322676295501878e-15,
+      "second_holevo_loss_bits": -2.220446049250313e-16,
+      "total_holevo_loss_bits": 1.1102230246251565e-15,
+      "left_log_outcome_bound_bits": 2.321928094887362,
+      "two_round_log_outcome_bound_bits": 4.643856189774724,
+      "left_coherence_difference_identity_residual": 1.1102230246251565e-16,
+      "two_round_telescope_residual": 0.0,
+      "left_data_processing_residual": 0.0,
+      "second_data_processing_residual": 2.220446049250313e-16,
+      "entropy_budget_verified": true,
+      "status": "carrier-pinching-holevo-budget-verified"
+    }
+  ],
+  "scaling_records": [
+    {
+      "n": 16,
+      "half_degree": 8,
+      "perfect_matching_count_decimal": "2027025",
+      "log2_hidden_count": 20.950932451495344,
+      "information_threshold_copy_count": 21,
+      "extra_copy_count": 2,
+      "pgm_success_lower_bound": 0.8053863654169041,
+      "fano_input_holevo_lower_bound_bits": 16.162571809949377,
+      "partition_number_decimal": "231",
+      "exact_log2_partition_count": 7.851749041416057,
+      "analytic_log2_partition_upper_bound": 14.802626237340029,
+      "carrier_round_count": 1,
+      "exact_total_pinching_loss_upper_bound_bits": 7.851749041416057,
+      "analytic_total_pinching_loss_upper_bound_bits": 14.802626237340029,
+      "post_pinching_holevo_lower_bound_bits": 8.31082276853332,
+      "post_pinching_fraction_of_fano_lower_bound": 0.5142017536724777,
+      "extensive_holevo_lower_bound_survives": true,
+      "accessible_information_lower_bound_proved": false,
+      "polynomial_decoder_compiled": false,
+      "status": "extensive-holevo-survives-shallow-carrier-hierarchy"
+    },
+    {
+      "n": 32,
+      "half_degree": 16,
+      "perfect_matching_count_decimal": "191898783962510625",
+      "log2_hidden_count": 57.41312318247768,
+      "information_threshold_copy_count": 58,
+      "extra_copy_count": 2,
+      "pgm_success_lower_bound": 0.8573052581124756,
+      "fano_input_holevo_lower_bound_bits": 48.6293195662505,
+      "partition_number_decimal": "8349",
+      "exact_log2_partition_count": 13.027387694052763,
+      "analytic_log2_partition_upper_bound": 20.934074783586084,
+      "carrier_round_count": 1,
+      "exact_total_pinching_loss_upper_bound_bits": 13.027387694052763,
+      "analytic_total_pinching_loss_upper_bound_bits": 20.934074783586084,
+      "post_pinching_holevo_lower_bound_bits": 35.60193187219774,
+      "post_pinching_fraction_of_fano_lower_bound": 0.7321083698013745,
+      "extensive_holevo_lower_bound_survives": true,
+      "accessible_information_lower_bound_proved": false,
+      "polynomial_decoder_compiled": false,
+      "status": "extensive-holevo-survives-shallow-carrier-hierarchy"
+    },
+    {
+      "n": 64,
+      "half_degree": 32,
+      "perfect_matching_count_decimal": "112275575285571389562324404930670903477890625",
+      "log2_hidden_count": 146.33188028936374,
+      "information_threshold_copy_count": 147,
+      "extra_copy_count": 2,
+      "pgm_success_lower_bound": 0.8640566001816284,
+      "fano_input_holevo_lower_bound_bits": 125.86551144101898,
+      "partition_number_decimal": "1741630",
+      "exact_log2_partition_count": 20.732006732949646,
+      "analytic_log2_partition_upper_bound": 29.605252474680057,
+      "carrier_round_count": 1,
+      "exact_total_pinching_loss_upper_bound_bits": 20.732006732949646,
+      "analytic_total_pinching_loss_upper_bound_bits": 29.605252474680057,
+      "post_pinching_holevo_lower_bound_bits": 105.13350470806934,
+      "post_pinching_fraction_of_fano_lower_bound": 0.8352844516691553,
+      "extensive_holevo_lower_bound_survives": true,
+      "accessible_information_lower_bound_proved": false,
+      "polynomial_decoder_compiled": false,
+      "status": "extensive-holevo-survives-shallow-carrier-hierarchy"
+    },
+    {
+      "n": 128,
+      "half_degree": 64,
+      "perfect_matching_count_decimal": "164749260436028300985882145742271020352352323765318815064452725844663571025238239569133424206748199462890625",
+      "log2_hidden_count": 356.16657814189784,
+      "information_threshold_copy_count": 357,
+      "extra_copy_count": 2,
+      "pgm_success_lower_bound": 0.8769628590003803,
+      "fano_input_holevo_lower_bound_bits": 311.8068321713066,
+      "partition_number_decimal": "4351078600",
+      "exact_log2_partition_count": 32.01872593264498,
+      "analytic_log2_partition_upper_bound": 41.86814956717217,
+      "carrier_round_count": 1,
+      "exact_total_pinching_loss_upper_bound_bits": 32.01872593264498,
+      "analytic_total_pinching_loss_upper_bound_bits": 41.86814956717217,
+      "post_pinching_holevo_lower_bound_bits": 279.7881062386616,
+      "post_pinching_fraction_of_fano_lower_bound": 0.8973123016270089,
+      "extensive_holevo_lower_bound_survives": true,
+      "accessible_information_lower_bound_proved": false,
+      "polynomial_decoder_compiled": false,
+      "status": "extensive-holevo-survives-shallow-carrier-hierarchy"
+    },
+    {
+      "n": 256,
+      "half_degree": 128,
+      "perfect_matching_count_decimal": "6537256156445168127472031390784012790976081721191252400924510089038323279351219359607493746481117847060897396843121499382013181689204739112626893248251494219283641558307674830456073042673717342005838768103257372002215545075555285834707319736480712890625",
+      "log2_hidden_count": 839.8345651405928,
+      "information_threshold_copy_count": 840,
+      "extra_copy_count": 2,
+      "pgm_success_lower_bound": 0.817718368473555,
+      "fano_input_holevo_lower_bound_bits": 686.0631073485358,
+      "partition_number_decimal": "365749566870782",
+      "exact_log2_partition_count": 48.37784948431453,
+      "analytic_log2_partition_upper_bound": 59.210504949360114,
+      "carrier_round_count": 2,
+      "exact_total_pinching_loss_upper_bound_bits": 96.75569896862906,
+      "analytic_total_pinching_loss_upper_bound_bits": 118.42100989872023,
+      "post_pinching_holevo_lower_bound_bits": 589.3074083799067,
+      "post_pinching_fraction_of_fano_lower_bound": 0.8589696808759096,
+      "extensive_holevo_lower_bound_survives": true,
+      "accessible_information_lower_bound_proved": false,
+      "polynomial_decoder_compiled": false,
+      "status": "extensive-holevo-survives-shallow-carrier-hierarchy"
+    },
+    {
+      "n": 512,
+      "half_degree": 256,
+      "perfect_matching_count_decimal": "3500797212601527945311188835604928985415461740919889354217764505357080396360998406091483003218728672644801916594739009357155247126876144691627054309744293857306604216733039930699855997627887399287546140236510911240627231189363279060378822843253015624610686680717952316550304464107615617448906048015587655768996105864260381049947531455557236610503889279665463833908304000148209455548787453670820143341389949801647285492388673498450158812613113366545959409498745510743189457819498892822692489318667853345863669937005801349364861955770908047967139575806783113876008428633213043212890625",
+      "log2_hidden_count": 1935.1698347189883,
+      "information_threshold_copy_count": 1936,
+      "extra_copy_count": 2,
+      "pgm_success_lower_bound": 0.8767190926385084,
+      "fano_input_holevo_lower_bound_bits": 1696.061622823946,
+      "partition_number_decimal": "4453575699570940947378",
+      "exact_log2_partition_count": 71.91545410907113,
+      "analytic_log2_partition_upper_bound": 83.73629913434434,
+      "carrier_round_count": 2,
+      "exact_total_pinching_loss_upper_bound_bits": 143.83090821814227,
+      "analytic_total_pinching_loss_upper_bound_bits": 167.47259826868867,
+      "post_pinching_holevo_lower_bound_bits": 1552.2307146058038,
+      "post_pinching_fraction_of_fano_lower_bound": 0.9151971212115139,
+      "extensive_holevo_lower_bound_survives": true,
+      "accessible_information_lower_bound_proved": false,
+      "polynomial_decoder_compiled": false,
+      "status": "extensive-holevo-survives-shallow-carrier-hierarchy"
+    },
+    {
+      "n": 1024,
+      "half_degree": 512,
+      "perfect_matching_count_decimal": "116220494773372624276817130161627293641598652671808779030117672078365275874055644258029402645171648189016952682364067499525370900883677020148774760415438606964943089232713474601889158987009797148448541619838053389567599811925118491006326931839717335924204524733892265081876215163475688354723298496103069233606330997369496447063478749646249465130385001976916826314463382482262771612085837285862582659154385639145661514269440751304782544240162210827285363541857329536022771690693938479508684705919189090030495257135349841481803239378412264251208095808906311224439170792804786181208716222181281915017372846281126108415626242141134609449516547928515479287090271182294186955526504579150826769846241770348452586710432344120584758019688665128779295580491965949904710422911299675213258232764074678437873833653114400339895422934354034765983938053557394188074668808352845828243946561076011293750286694596991211274328590676265414906090287790084730624971295404368099451870233114798117256805075517686863285071848560663703235915365627972208376202571661540716275671809208079184023170143187880281838065543176530722388083558232213593000142334413609673895587718769237585926290366518618293020540199380366550606131827666682227247649121294247270515019346362825318217541975104581897159441296639298944227969290210467079305090010166168212890625",
+      "log2_hidden_count": 4381.840021658054,
+      "information_threshold_copy_count": 4382,
+      "extra_copy_count": 2,
+      "pgm_success_lower_bound": 0.8171539394431981,
+      "fano_input_holevo_lower_bound_bits": 3579.9515719680467,
+      "partition_number_decimal": "61847822068260244309086870983975",
+      "exact_log2_partition_count": 105.60849373401557,
+      "analytic_log2_partition_upper_bound": 118.42100989872023,
+      "carrier_round_count": 4,
+      "exact_total_pinching_loss_upper_bound_bits": 422.43397493606227,
+      "analytic_total_pinching_loss_upper_bound_bits": 473.6840395948809,
+      "post_pinching_holevo_lower_bound_bits": 3157.517597031984,
+      "post_pinching_fraction_of_fano_lower_bound": 0.8820000867487062,
+      "extensive_holevo_lower_bound_survives": true,
+      "accessible_information_lower_bound_proved": false,
+      "polynomial_decoder_compiled": false,
+      "status": "extensive-holevo-survives-shallow-carrier-hierarchy"
+    }
+  ],
+  "theorem": {
+    "single_pinching_entropy_bound": "For the Stinespring isometry sum_a |a> C_a, subadditivity gives S(Phi_C(rho))-S(rho)<=H({Tr C_a rho})<=log_2 r; pinching is unital.",
+    "ensemble_holevo_loss_identity": "chi(E)-chi(Phi E)=E_h Delta(rho_h)-Delta(B), hence data processing and the state entropy bound give a loss in [0,log_2 r].",
+    "adaptive_telescope": "Apply the single-step inequality to each post-pinching ensemble; q rounds lose at most sum_t log_2 r_t even when the PVMs do not commute.",
+    "partition_count_bound": "The partition generating function obeys log p(n)<=tn+pi^2/(6t); t=pi/sqrt(6n) gives log_2 p(n)<=pi sqrt(2n/3)/ln 2.",
+    "threshold_input_information": "The equal-overlap PGM at ceil(log_2 M)+s copies has success at least 1/(1+2^-s); Fano lower-bounds both its mutual information and the input Holevo information by Omega(log M).",
+    "hierarchy_consequence": "For perfect matchings log M=Theta(n log n). Any q=o(sqrt(n) log n) carrier hierarchy loses o(n log n) Holevo bits; q=Theta(sqrt n) loses O(n), a vanishing fraction.",
+    "locking_scope_limit": "Holevo retention does not lower-bound accessible information after pinching and does not compile the branch PGM; data locking, coherent multiplicity access, and outcome decoding remain live barriers.",
+    "single_pinching_holevo_bound_proved": true,
+    "adaptive_holevo_budget_proved": true,
+    "partition_label_sqrt_n_bound_proved": true,
+    "threshold_extensive_input_holevo_proved": true,
+    "shallow_hierarchy_extensive_holevo_retention_proved": true,
+    "accessible_information_retention_proved": false,
+    "polynomial_branch_decoder_compiled": false,
+    "theorem_verified": true,
+    "status": "shallow-carrier-hierarchy-preserves-extensive-holevo-access-open"
+  },
+  "proof_obligations": [
+    {
+      "obligation": "bound_single_carrier_pinching_holevo_loss",
+      "resolved": true,
+      "resolution": "Stinespring subadditivity and Holevo data processing give the exact log-outcome budget."
+    },
+    {
+      "obligation": "bound_symmetric_group_carrier_label_count",
+      "resolved": true,
+      "resolution": "A generating-function argument proves log p(n)=O(sqrt n) with an explicit constant."
+    },
+    {
+      "obligation": "prove_extensive_input_holevo_at_threshold",
+      "resolved": true,
+      "resolution": "The all-n PGM success lower bound plus Fano gives an Omega(log M)=Omega(n log n) Holevo lower bound."
+    },
+    {
+      "obligation": "transfer_holevo_retention_to_accessible_information",
+      "resolved": false,
+      "resolution": "No anti-locking theorem specialized to these branch ensembles has been proved."
+    },
+    {
+      "obligation": "compile_and_decode_shallow_branch_measurement",
+      "resolved": false,
+      "resolution": "The theorem is information-theoretic and supplies no multiplicity whitening or output decoding circuit."
+    }
+  ],
+  "adversarial_audit": [
+    {
+      "challenge": "A carrier pinching can erase Theta(n log n) Holevo bits in one round.",
+      "survives": false,
+      "response": "One round has at most p(n) outcomes and loses at most log_2 p(n)=O(sqrt n) bits."
+    },
+    {
+      "challenge": "Noncommuting adaptive carrier rounds invalidate the bound.",
+      "survives": false,
+      "response": "The one-step bound applies to each current ensemble and telescopes without a commutativity assumption."
+    },
+    {
+      "challenge": "PGM success is being confused with an efficient circuit.",
+      "survives": false,
+      "response": "It is used only to lower-bound input Holevo information; every implementation and decoder gate remains false."
+    },
+    {
+      "challenge": "Large retained Holevo information guarantees a useful branch measurement.",
+      "survives": false,
+      "response": "Accessible information can be locked; a specialized anti-locking or branch-PGM theorem is explicitly required."
+    },
+    {
+      "challenge": "A full O(n log n)-round coupling tree is certified.",
+      "survives": false,
+      "response": "The generic budget is useful only for o(sqrt(n) log n) rounds; a full tree exceeds it without sharper structure."
+    }
+  ],
+  "headline_metrics": {
+    "single_pinching_holevo_budget_theorem_count": 1,
+    "adaptive_carrier_holevo_budget_theorem_count": 1,
+    "partition_label_sqrt_n_bound_theorem_count": 1,
+    "threshold_extensive_input_holevo_theorem_count": 1,
+    "shallow_hierarchy_extensive_holevo_retention_theorem_count": 1,
+    "finite_control_count": 2,
+    "finite_control_failure_count": 0,
+    "scaling_record_count": 7,
+    "positive_post_pinching_holevo_scaling_count": 7,
+    "largest_n_post_pinching_holevo_lower_bound_bits": 3157.517597031984,
+    "largest_n_post_pinching_fraction_of_fano_lower_bound": 0.8820000867487062,
+    "accessible_information_retention_theorem_count": 0,
+    "polynomial_branch_decoder_count": 0,
+    "classical_separation_theorem_count": 0,
+    "new_quantum_algorithm_count": 0
+  },
+  "claim_gate": {
+    "single_carrier_pinching_holevo_loss_log_outcome_bounded": true,
+    "adaptive_carrier_holevo_budget_proved": true,
+    "symmetric_group_carrier_log_label_count_sqrt_n_bounded": true,
+    "information_threshold_input_holevo_extensive": true,
+    "shallow_carrier_hierarchy_preserves_extensive_holevo": true,
+    "full_linear_depth_carrier_tree_certified": false,
+    "carrier_hierarchy_accessible_information_retained": false,
+    "polynomial_branch_measurement_compiled": false,
+    "hidden_involution_decoder_compiled": false,
+    "classical_separation_proved": false,
+    "speedup_claim_allowed": false,
+    "reason": "A shallow carrier hierarchy provably preserves extensive quantum correlation, but no anti-locking theorem or efficient measurement extracts it."
+  },
+  "status": "shallow-carrier-extensive-holevo-retained-accessible-decoder-open",
+  "summary": "Proved an all-n log-outcome Holevo loss budget for adaptive carrier pinchings and combined it with PGM/Fano and partition-count bounds. Sub-sqrt(n)log(n) carrier depth preserves extensive hidden correlation, while accessible information and decoding remain open.",
+  "falsifiers_triggered": [
+    "One pair-carrier pinching cannot erase more than O(sqrt(n)) Holevo bits.",
+    "The entropy budget telescopes through noncommuting adaptive carrier measurements.",
+    "A shallow carrier hierarchy preserves extensive quantum hidden correlation at the information threshold.",
+    "Holevo retention is not an accessible-information or efficient-measurement theorem.",
+    "The generic budget does not certify a full linear-depth coupling tree."
+  ]
+}

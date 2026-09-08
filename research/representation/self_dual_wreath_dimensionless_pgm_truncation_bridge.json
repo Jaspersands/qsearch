@@ -1,0 +1,467 @@
+{
+  "created_at": "2026-09-02T20:39:04.675824+00:00",
+  "theorem_contract": {
+    "input": "An equiprobable carrier-conditioned mixed-state ensemble, its D-dimensional support, and a proved ideal-PGM success lower bound c.",
+    "metric": "G=D times the average branch state.",
+    "measurement": "The ideal PGM compressed to the spectral subspace G>=c^2/16, plus an explicit failure effect.",
+    "output": "At least c/2 average correct probability.",
+    "implementation_dependency": "A poly-normalized block encoding of the full threshold metric and a coherent hypothesis-output isometry."
+  },
+  "theorem": {
+    "rank_scaled_metric": "For any branch ensemble on D-dimensional support, G=D B has trace D.",
+    "low_spectral_mass": "The B-mass on eigenvalues of G below epsilon is at most epsilon.",
+    "legal_truncated_pgm": "P_epsilon E_h P_epsilon are positive, sum to P_epsilon, and the complement is an explicit failure effect.",
+    "gentle_success_retention": "Average PGM success decreases by at most 2 sqrt(epsilon), for mixed states and without a minimum positive eigenvalue assumption.",
+    "certificate_cutoff": "A PGM lower bound c permits epsilon=c^2/16 and retained success c/2.",
+    "fixed_pair_depth_consequence": "The all-n disjoint-pair threshold certificate makes c and epsilon constant for every fixed pair depth q.",
+    "logarithmic_pair_depth_consequence": "For q=ceil(log2 n), c>=1/(20 n^4) and epsilon>=1/(6400 n^8).",
+    "qsvt_consequence": "Conditional on a poly-normalized full-metric block encoding, inverse square root only needs approximation above an inverse-polynomial cutoff.",
+    "scope": "The available covariance LCU covers two pair blocks, not the residual information-threshold copies or higher cumulants. No full-frame access, PGM output isometry, decoder, or classical separation is compiled.",
+    "dimensionless_low_mass_bound_proved": true,
+    "mixed_state_truncated_pgm_robustness_proved": true,
+    "certificate_adaptive_cutoff_proved": true,
+    "fixed_depth_constant_cutoff_proved": true,
+    "logarithmic_depth_inverse_polynomial_cutoff_proved": true,
+    "minimum_positive_spectral_edge_required": false,
+    "full_threshold_metric_block_encoding_compiled": false,
+    "pgm_output_isometry_compiled": false,
+    "hidden_involution_decoder_compiled": false,
+    "theorem_verified": true,
+    "status": "minimum-spectral-edge-removed-full-threshold-frame-access-open"
+  },
+  "finite_controls": [
+    {
+      "control_id": "S5-L4-1-R4-1-EPS-0.5",
+      "n": 5,
+      "transposition_count": 2,
+      "left_source_partitions": [
+        [
+          4,
+          1
+        ],
+        [
+          4,
+          1
+        ]
+      ],
+      "right_source_partitions": [
+        [
+          4,
+          1
+        ],
+        [
+          4,
+          1
+        ]
+      ],
+      "left_carrier_partition": [
+        4,
+        1
+      ],
+      "right_carrier_partition": [
+        4,
+        1
+      ],
+      "hidden_involution_count": 15,
+      "product_support_dimension": 16,
+      "dimensionless_metric_trace": 15.999999999999995,
+      "dimensionless_metric_trace_residual": 5.329070518200751e-15,
+      "spectral_cutoff": 0.5,
+      "retained_metric_rank": 5,
+      "discarded_support_dimension": 11,
+      "discarded_positive_eigenvalue_count": 11,
+      "discarded_average_state_mass": 0.2731481481481482,
+      "discarded_mass_dimension_bound": 0.34375,
+      "universal_discarded_mass_bound": 0.5,
+      "ideal_pgm_success": 0.3165411194401385,
+      "truncated_pgm_success": 0.2206357783888319,
+      "gentle_success_lower_bound": -0.7287304206835715,
+      "observed_success_loss": 0.09590534105130663,
+      "maximum_truncated_inverse_effect_residual": 4.2494808087537886e-16,
+      "truncated_effect_completeness_residual": 1.7933353819872405e-15,
+      "truncated_effect_subpovm_eigenvalue_violation": 2.5428685939216852e-15,
+      "minimum_retained_metric_eigenvalue": 2.1851851851851825,
+      "maximum_metric_eigenvalue": 2.8888888888888875,
+      "retained_metric_condition_number": 1.3220338983050857,
+      "nontrivial_positive_spectrum_truncation": true,
+      "exact_dimensionless_truncation_verified": true,
+      "status": "dimensionless-pgm-truncation-exact"
+    },
+    {
+      "control_id": "S5-L3-2-R3-2-EPS-0.9",
+      "n": 5,
+      "transposition_count": 2,
+      "left_source_partitions": [
+        [
+          4,
+          1
+        ],
+        [
+          4,
+          1
+        ]
+      ],
+      "right_source_partitions": [
+        [
+          4,
+          1
+        ],
+        [
+          4,
+          1
+        ]
+      ],
+      "left_carrier_partition": [
+        3,
+        2
+      ],
+      "right_carrier_partition": [
+        3,
+        2
+      ],
+      "hidden_involution_count": 15,
+      "product_support_dimension": 25,
+      "dimensionless_metric_trace": 24.999999999999986,
+      "dimensionless_metric_trace_residual": 1.4210854715202004e-14,
+      "spectral_cutoff": 0.9,
+      "retained_metric_rank": 16,
+      "discarded_support_dimension": 9,
+      "discarded_positive_eigenvalue_count": 5,
+      "discarded_average_state_mass": 0.17901234567901259,
+      "discarded_mass_dimension_bound": 0.324,
+      "universal_discarded_mass_bound": 0.9,
+      "ideal_pgm_success": 0.35452937169890136,
+      "truncated_pgm_success": 0.23960237715955637,
+      "gentle_success_lower_bound": -0.4916676400637557,
+      "observed_success_loss": 0.11492699453934499,
+      "maximum_truncated_inverse_effect_residual": 8.395586642956309e-16,
+      "truncated_effect_completeness_residual": 2.781865431373483e-15,
+      "truncated_effect_subpovm_eigenvalue_violation": 2.7926012231443974e-15,
+      "minimum_retained_metric_eigenvalue": 1.0288065843621386,
+      "maximum_metric_eigenvalue": 2.5308641975308626,
+      "retained_metric_condition_number": 2.4600000000000017,
+      "nontrivial_positive_spectrum_truncation": true,
+      "exact_dimensionless_truncation_verified": true,
+      "status": "dimensionless-pgm-truncation-exact"
+    }
+  ],
+  "scaling_records": [
+    {
+      "schedule": "fixed-two-pair",
+      "n": 8,
+      "hidden_involution_count_decimal": "105",
+      "information_threshold_copy_count": 7,
+      "disjoint_pair_count": 2,
+      "threshold_slack": 0,
+      "pgm_success_lower_bound": 0.003676470588235294,
+      "sufficient_dimensionless_cutoff": 8.447772491349481e-07,
+      "retained_success_lower_bound": 0.001838235294117647,
+      "inverse_square_root_amplification_upper_bound": 1088.0,
+      "conservative_condition_scale_upper_bound": 1183744.0,
+      "pair_budget_legal": true,
+      "cutoff_inverse_polynomial_proved": true,
+      "minimum_positive_eigenvalue_required": false,
+      "full_threshold_metric_block_encoding_compiled": false,
+      "status": "controlled-cutoff-polynomial-full-frame-access-open"
+    },
+    {
+      "schedule": "logarithmic-pair-depth",
+      "n": 8,
+      "hidden_involution_count_decimal": "105",
+      "information_threshold_copy_count": 7,
+      "disjoint_pair_count": 3,
+      "threshold_slack": 0,
+      "pgm_success_lower_bound": 0.0002403846153846154,
+      "sufficient_dimensionless_cutoff": 3.611547707100592e-09,
+      "retained_success_lower_bound": 0.0001201923076923077,
+      "inverse_square_root_amplification_upper_bound": 16640.0,
+      "conservative_condition_scale_upper_bound": 276889600.0,
+      "pair_budget_legal": true,
+      "cutoff_inverse_polynomial_proved": true,
+      "minimum_positive_eigenvalue_required": false,
+      "full_threshold_metric_block_encoding_compiled": false,
+      "status": "controlled-cutoff-polynomial-full-frame-access-open"
+    },
+    {
+      "schedule": "fixed-two-pair",
+      "n": 16,
+      "hidden_involution_count_decimal": "2027025",
+      "information_threshold_copy_count": 21,
+      "disjoint_pair_count": 2,
+      "threshold_slack": 0,
+      "pgm_success_lower_bound": 0.003676470588235294,
+      "sufficient_dimensionless_cutoff": 8.447772491349481e-07,
+      "retained_success_lower_bound": 0.001838235294117647,
+      "inverse_square_root_amplification_upper_bound": 1088.0,
+      "conservative_condition_scale_upper_bound": 1183744.0,
+      "pair_budget_legal": true,
+      "cutoff_inverse_polynomial_proved": true,
+      "minimum_positive_eigenvalue_required": false,
+      "full_threshold_metric_block_encoding_compiled": false,
+      "status": "controlled-cutoff-polynomial-full-frame-access-open"
+    },
+    {
+      "schedule": "logarithmic-pair-depth",
+      "n": 16,
+      "hidden_involution_count_decimal": "2027025",
+      "information_threshold_copy_count": 21,
+      "disjoint_pair_count": 4,
+      "threshold_slack": 0,
+      "pgm_success_lower_bound": 1.5199416342412452e-05,
+      "sufficient_dimensionless_cutoff": 1.4438891071874669e-11,
+      "retained_success_lower_bound": 7.599708171206226e-06,
+      "inverse_square_root_amplification_upper_bound": 263168.0,
+      "conservative_condition_scale_upper_bound": 69257396224.0,
+      "pair_budget_legal": true,
+      "cutoff_inverse_polynomial_proved": true,
+      "minimum_positive_eigenvalue_required": false,
+      "full_threshold_metric_block_encoding_compiled": false,
+      "status": "controlled-cutoff-polynomial-full-frame-access-open"
+    },
+    {
+      "schedule": "fixed-two-pair",
+      "n": 32,
+      "hidden_involution_count_decimal": "191898783962510625",
+      "information_threshold_copy_count": 58,
+      "disjoint_pair_count": 2,
+      "threshold_slack": 0,
+      "pgm_success_lower_bound": 0.003676470588235294,
+      "sufficient_dimensionless_cutoff": 8.447772491349481e-07,
+      "retained_success_lower_bound": 0.001838235294117647,
+      "inverse_square_root_amplification_upper_bound": 1088.0,
+      "conservative_condition_scale_upper_bound": 1183744.0,
+      "pair_budget_legal": true,
+      "cutoff_inverse_polynomial_proved": true,
+      "minimum_positive_eigenvalue_required": false,
+      "full_threshold_metric_block_encoding_compiled": false,
+      "status": "controlled-cutoff-polynomial-full-frame-access-open"
+    },
+    {
+      "schedule": "logarithmic-pair-depth",
+      "n": 32,
+      "hidden_involution_count_decimal": "191898783962510625",
+      "information_threshold_copy_count": 58,
+      "disjoint_pair_count": 5,
+      "threshold_slack": 0,
+      "pgm_success_lower_bound": 9.527439024390244e-07,
+      "sufficient_dimensionless_cutoff": 5.6732558977171326e-14,
+      "retained_success_lower_bound": 4.763719512195122e-07,
+      "inverse_square_root_amplification_upper_bound": 4198400.0,
+      "conservative_condition_scale_upper_bound": 17626562560000.0,
+      "pair_budget_legal": true,
+      "cutoff_inverse_polynomial_proved": true,
+      "minimum_positive_eigenvalue_required": false,
+      "full_threshold_metric_block_encoding_compiled": false,
+      "status": "controlled-cutoff-polynomial-full-frame-access-open"
+    },
+    {
+      "schedule": "fixed-two-pair",
+      "n": 64,
+      "hidden_involution_count_decimal": "112275575285571389562324404930670903477890625",
+      "information_threshold_copy_count": 147,
+      "disjoint_pair_count": 2,
+      "threshold_slack": 0,
+      "pgm_success_lower_bound": 0.003676470588235294,
+      "sufficient_dimensionless_cutoff": 8.447772491349481e-07,
+      "retained_success_lower_bound": 0.001838235294117647,
+      "inverse_square_root_amplification_upper_bound": 1088.0,
+      "conservative_condition_scale_upper_bound": 1183744.0,
+      "pair_budget_legal": true,
+      "cutoff_inverse_polynomial_proved": true,
+      "minimum_positive_eigenvalue_required": false,
+      "full_threshold_metric_block_encoding_compiled": false,
+      "status": "controlled-cutoff-polynomial-full-frame-access-open"
+    },
+    {
+      "schedule": "logarithmic-pair-depth",
+      "n": 64,
+      "hidden_involution_count_decimal": "112275575285571389562324404930670903477890625",
+      "information_threshold_copy_count": 147,
+      "disjoint_pair_count": 6,
+      "threshold_slack": 0,
+      "pgm_success_lower_bound": 5.959009641200879e-08,
+      "sufficient_dimensionless_cutoff": 2.219362243995314e-16,
+      "retained_success_lower_bound": 2.9795048206004393e-08,
+      "inverse_square_root_amplification_upper_bound": 67125248.0,
+      "conservative_condition_scale_upper_bound": 4505798919061504.0,
+      "pair_budget_legal": true,
+      "cutoff_inverse_polynomial_proved": true,
+      "minimum_positive_eigenvalue_required": false,
+      "full_threshold_metric_block_encoding_compiled": false,
+      "status": "controlled-cutoff-polynomial-full-frame-access-open"
+    },
+    {
+      "schedule": "fixed-two-pair",
+      "n": 128,
+      "hidden_involution_count_decimal": "164749260436028300985882145742271020352352323765318815064452725844663571025238239569133424206748199462890625",
+      "information_threshold_copy_count": 357,
+      "disjoint_pair_count": 2,
+      "threshold_slack": 0,
+      "pgm_success_lower_bound": 0.003676470588235294,
+      "sufficient_dimensionless_cutoff": 8.447772491349481e-07,
+      "retained_success_lower_bound": 0.001838235294117647,
+      "inverse_square_root_amplification_upper_bound": 1088.0,
+      "conservative_condition_scale_upper_bound": 1183744.0,
+      "pair_budget_legal": true,
+      "cutoff_inverse_polynomial_proved": true,
+      "minimum_positive_eigenvalue_required": false,
+      "full_threshold_metric_block_encoding_compiled": false,
+      "status": "controlled-cutoff-polynomial-full-frame-access-open"
+    },
+    {
+      "schedule": "logarithmic-pair-depth",
+      "n": 128,
+      "hidden_involution_count_decimal": "164749260436028300985882145742271020352352323765318815064452725844663571025238239569133424206748199462890625",
+      "information_threshold_copy_count": 357,
+      "disjoint_pair_count": 7,
+      "threshold_slack": 0,
+      "pgm_success_lower_bound": 3.7250629386634116e-09,
+      "sufficient_dimensionless_cutoff": 8.672558685627307e-19,
+      "retained_success_lower_bound": 1.8625314693317058e-09,
+      "inverse_square_root_amplification_upper_bound": 1073807360.0,
+      "conservative_condition_scale_upper_bound": 1.1530622463901696e+18,
+      "pair_budget_legal": true,
+      "cutoff_inverse_polynomial_proved": true,
+      "minimum_positive_eigenvalue_required": false,
+      "full_threshold_metric_block_encoding_compiled": false,
+      "status": "controlled-cutoff-polynomial-full-frame-access-open"
+    },
+    {
+      "schedule": "fixed-two-pair",
+      "n": 256,
+      "hidden_involution_count_decimal": "6537256156445168127472031390784012790976081721191252400924510089038323279351219359607493746481117847060897396843121499382013181689204739112626893248251494219283641558307674830456073042673717342005838768103257372002215545075555285834707319736480712890625",
+      "information_threshold_copy_count": 840,
+      "disjoint_pair_count": 2,
+      "threshold_slack": 0,
+      "pgm_success_lower_bound": 0.003676470588235294,
+      "sufficient_dimensionless_cutoff": 8.447772491349481e-07,
+      "retained_success_lower_bound": 0.001838235294117647,
+      "inverse_square_root_amplification_upper_bound": 1088.0,
+      "conservative_condition_scale_upper_bound": 1183744.0,
+      "pair_budget_legal": true,
+      "cutoff_inverse_polynomial_proved": true,
+      "minimum_positive_eigenvalue_required": false,
+      "full_threshold_metric_block_encoding_compiled": false,
+      "status": "controlled-cutoff-polynomial-full-frame-access-open"
+    },
+    {
+      "schedule": "logarithmic-pair-depth",
+      "n": 256,
+      "hidden_involution_count_decimal": "6537256156445168127472031390784012790976081721191252400924510089038323279351219359607493746481117847060897396843121499382013181689204739112626893248251494219283641558307674830456073042673717342005838768103257372002215545075555285834707319736480712890625",
+      "information_threshold_copy_count": 840,
+      "disjoint_pair_count": 8,
+      "threshold_slack": 0,
+      "pgm_success_lower_bound": 2.328270909944001e-10,
+      "sufficient_dimensionless_cutoff": 3.3880283938071668e-21,
+      "retained_success_lower_bound": 1.1641354549720005e-10,
+      "inverse_square_root_amplification_upper_bound": 17180131328.0,
+      "conservative_condition_scale_upper_bound": 2.9515691244732704e+20,
+      "pair_budget_legal": true,
+      "cutoff_inverse_polynomial_proved": true,
+      "minimum_positive_eigenvalue_required": false,
+      "full_threshold_metric_block_encoding_compiled": false,
+      "status": "controlled-cutoff-polynomial-full-frame-access-open"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "remove_actual_minimum_positive_metric_eigenvalue",
+      "resolved": true,
+      "resolution": "Trace(G)=D bounds discarded average mass by the dimensionless cutoff; gentle truncation controls success."
+    },
+    {
+      "obligation": "retain_disjoint_pair_threshold_success_at_polynomial_cutoff",
+      "resolved": true,
+      "resolution": "The existing all-n success certificate gives constant cutoff for fixed q and at worst inverse-polynomial cutoff for q=ceil(log2 n)."
+    },
+    {
+      "obligation": "compile_full_threshold_rank_scaled_metric_block_encoding",
+      "resolved": false,
+      "resolution": "Two-pair covariance access omits remaining singleton factors and all higher shared-label cumulants."
+    },
+    {
+      "obligation": "compile_truncated_pgm_hypothesis_output_isometry",
+      "resolved": false,
+      "resolution": "The legal effects are formalized, but no polynomial Naimark circuit writes h without hypothesis enumeration."
+    },
+    {
+      "obligation": "decode_hidden_involution_and_pass_classical_baselines",
+      "resolved": false,
+      "resolution": "Neither a decoded statistic nor a classical separation is supplied."
+    }
+  ],
+  "adversarial_audit": [
+    {
+      "challenge": "An exponentially small positive eigenvalue forces superpolynomial inversion.",
+      "survives": false,
+      "response": "Eigenvalues below c^2/16 may be discarded while retaining at least c/2 success."
+    },
+    {
+      "challenge": "The dimensionless cutoff secretly depends on support dimension.",
+      "survives": false,
+      "response": "Both Tr(G) and the support dimension equal D, so the factor cancels exactly."
+    },
+    {
+      "challenge": "Two-pair covariance access already covers the threshold PGM.",
+      "survives": false,
+      "response": "Threshold ensembles retain unmeasured copies and, beyond two blocks, higher shared-label cumulants."
+    },
+    {
+      "challenge": "A legal truncated sub-POVM is already a circuit and decoder.",
+      "survives": false,
+      "response": "The full metric block encoding and coherent hypothesis-output map remain independent compiler obligations."
+    }
+  ],
+  "primary_literature": [
+    {
+      "id": "watrous-gentle-measurement",
+      "title": "The Theory of Quantum Information / gentle measurement lemma",
+      "url": "https://cs.uwaterloo.ca/~watrous/TQI/"
+    },
+    {
+      "id": "quek-rebentrost-pgm-polar-2021",
+      "title": "Fast algorithm for quantum polar decomposition, pretty-good measurements, and the Procrustes problem",
+      "url": "https://arxiv.org/abs/2106.07634"
+    }
+  ],
+  "headline_metrics": {
+    "dimensionless_low_spectral_mass_theorem_count": 1,
+    "mixed_state_truncated_pgm_robustness_theorem_count": 1,
+    "certificate_adaptive_cutoff_theorem_count": 1,
+    "fixed_pair_depth_constant_cutoff_theorem_count": 1,
+    "logarithmic_pair_depth_inverse_polynomial_cutoff_theorem_count": 1,
+    "minimum_positive_spectral_edge_requirement_count": 0,
+    "finite_control_count": 2,
+    "finite_control_failure_count": 0,
+    "nontrivial_positive_spectrum_truncation_control_count": 2,
+    "maximum_finite_discarded_mass_to_cutoff_ratio": 0.5462962962962964,
+    "maximum_finite_truncated_inverse_effect_residual": 8.395586642956309e-16,
+    "full_threshold_metric_block_encoding_compiler_count": 0,
+    "pgm_output_isometry_compiler_count": 0,
+    "hidden_involution_decoder_count": 0,
+    "classical_separation_theorem_count": 0,
+    "new_quantum_algorithm_count": 0
+  },
+  "claim_gate": {
+    "dimensionless_low_spectral_mass_bound_proved": true,
+    "mixed_state_truncated_pgm_success_retention_proved": true,
+    "minimum_positive_spectral_edge_required": false,
+    "fixed_pair_depth_constant_cutoff_proved": true,
+    "logarithmic_pair_depth_inverse_polynomial_cutoff_proved": true,
+    "two_pair_covariance_metric_access_schema_available": true,
+    "full_threshold_metric_block_encoding_compiled": false,
+    "pgm_output_isometry_compiled": false,
+    "hidden_involution_decoder_compiled": false,
+    "classical_separation_proved": false,
+    "speedup_claim_allowed": false,
+    "reason": "Spectral truncation removes the minimum-positive-eigenvalue gate. The decisive remaining operators are a poly-normalized full threshold-metric block encoding and the hypothesis-output isometry."
+  },
+  "status": "minimum-spectral-edge-removed-full-threshold-frame-access-open",
+  "summary": "Removed the minimum positive covariance eigenvalue from the PGM compiler obligations: dimensionless truncation retains certified success at constant or inverse-polynomial cutoff. Full threshold-frame access and output decoding remain open.",
+  "falsifiers_triggered": [
+    "The actual minimum positive covariance eigenvalue is not required for certified average PGM success.",
+    "Rank-scaled trace normalization removes support dimension from the low-spectral-mass bound.",
+    "The two-pair covariance LCU is not a block encoding of the full information-threshold frame.",
+    "A formal truncated PGM is not yet a coherent output circuit or hidden-involution decoder."
+  ]
+}

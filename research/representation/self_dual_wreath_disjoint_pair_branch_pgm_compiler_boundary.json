@@ -1,0 +1,1187 @@
+{
+  "created_at": "2026-09-02T08:07:03.996421+00:00",
+  "theorem_contract": {
+    "ensemble": "uniform hidden involutions with two disjoint pair-carrier branches and public Fourier source labels",
+    "candidate_compiler": "independent pair PGMs or scaled same-label tensor-product effects",
+    "valid_baseline": "independent pair-PGM outcomes followed by MAP shared-label decoding",
+    "target": "exact carrier-flagged collective branch PGM"
+  },
+  "theorem": {
+    "conditioned_state_factorization": "Disjoint carrier projectors act on separate source pairs, so each fixed-hidden, fixed-branch state is exactly sigma_h tensor tau_h.",
+    "shared_label_covariance_identity": "The common hidden label gives bar(omega)=bar(sigma) tensor bar(tau)+M^-1 sum_h Delta sigma_h tensor Delta tau_h.",
+    "pgm_factorization_boundary": "A nonzero shared-label covariance enters the global frame inverse square root, so disjoint physical support alone does not factor the PGM.",
+    "valid_pair_local_baseline": "Independent pair PGMs followed by maximum-posterior classical decoding form a valid POVM and are strictly weaker in every reported nondegenerate aggregate/control.",
+    "diagonal_product_effect_boundary": "The scaled same-label effects M E_h tensor F_h generally fail completeness and can sum to an operator with eigenvalue above one.",
+    "asymptotic_block_count": "At the perfect-matching information threshold, q=ceil(log2 n) disjoint pair pinches leave k-q=Theta(n log n) tensor blocks tied to the same hidden label.",
+    "surviving_compiler_target": "Compile the covariance-aware covariant inverse square root on the shared-label multiplicity frame, or find an equivalent structured measurement that retains the disjoint-pair success guarantee.",
+    "scope": "The exact controls falsify naive pair-local PGM factorization. They do not prove a quantum query/circuit lower bound and do not exclude a representation-specific global polar or another decoder.",
+    "conditioned_state_factorization_proved": true,
+    "shared_label_covariance_identity_proved": true,
+    "finite_shared_label_covariance_nonzero_verified": true,
+    "pair_local_pgm_equals_global_branch_pgm": false,
+    "scaled_diagonal_product_is_povm": false,
+    "naive_pair_local_branch_pgm_compiler_falsified": true,
+    "covariance_aware_branch_pgm_compiled": false,
+    "hidden_involution_decoder_compiled": false,
+    "theorem_verified": true,
+    "status": "naive-pair-local-pgm-falsified-covariance-aware-polar-open"
+  },
+  "natural_aggregates": [
+    {
+      "n": 3,
+      "transposition_count": 1,
+      "hidden_involution_count": 3,
+      "pair_source_type_count": 3,
+      "source_quadruple_type_count": 9,
+      "active_joint_carrier_branch_count": 16,
+      "total_natural_source_probability": 1.0,
+      "natural_global_branch_pgm_bayes_success": 0.765068675907125,
+      "natural_pair_local_pgm_map_bayes_success": 0.6296296296296294,
+      "natural_global_advantage_over_pair_local_map": 0.13543904627749553,
+      "natural_weighted_frame_covariance_fraction": 0.25660011963983365,
+      "natural_weighted_scaled_diagonal_completeness_residual": 0.444444444444445,
+      "natural_weighted_scaled_diagonal_eigenvalue_excess": 0.4444444444444448,
+      "natural_weighted_global_effect_factorization_residual": 0.19238116605799166,
+      "maximum_frame_covariance_fraction": 0.5773502691896258,
+      "maximum_scaled_diagonal_completeness_residual": 1.0000000000000036,
+      "maximum_scaled_diagonal_eigenvalue_excess": 1.0000000000000036,
+      "source_mass_with_nonzero_covariance": 0.7901234567901234,
+      "source_mass_where_scaled_diagonal_product_fails_povm": 0.7901234567901234,
+      "all_controls_verified": true,
+      "status": "natural-shared-label-pgm-nonfactorization-verified"
+    },
+    {
+      "n": 4,
+      "transposition_count": 2,
+      "hidden_involution_count": 3,
+      "pair_source_type_count": 15,
+      "source_quadruple_type_count": 225,
+      "active_joint_carrier_branch_count": 484,
+      "total_natural_source_probability": 1.0,
+      "natural_global_branch_pgm_bayes_success": 0.8880945700219723,
+      "natural_pair_local_pgm_map_bayes_success": 0.8796296296296289,
+      "natural_global_advantage_over_pair_local_map": 0.008464940392343542,
+      "natural_weighted_frame_covariance_fraction": 0.33801278290717873,
+      "natural_weighted_scaled_diagonal_completeness_residual": 0.6944444444444441,
+      "natural_weighted_scaled_diagonal_eigenvalue_excess": 0.6944444444444435,
+      "natural_weighted_global_effect_factorization_residual": 0.6786904895452902,
+      "maximum_frame_covariance_fraction": 0.816496580927726,
+      "maximum_scaled_diagonal_completeness_residual": 2.0000000000000018,
+      "maximum_scaled_diagonal_eigenvalue_excess": 2.000000000000002,
+      "source_mass_with_nonzero_covariance": 0.5625,
+      "source_mass_where_scaled_diagonal_product_fails_povm": 0.5625,
+      "all_controls_verified": true,
+      "status": "natural-shared-label-pgm-nonfactorization-verified"
+    }
+  ],
+  "selected_growing_hypothesis_controls": [
+    {
+      "control_id": "S5-L0-1-R0-1",
+      "n": 5,
+      "transposition_count": 2,
+      "left_pair_partitions": [
+        [
+          5
+        ],
+        [
+          4,
+          1
+        ]
+      ],
+      "right_pair_partitions": [
+        [
+          5
+        ],
+        [
+          4,
+          1
+        ]
+      ],
+      "natural_source_probability": 1.9753086419753087e-05,
+      "hidden_involution_count": 15,
+      "left_pair_dimension": 4,
+      "right_pair_dimension": 4,
+      "joint_dimension": 16,
+      "active_joint_carrier_branch_count": 1,
+      "total_joint_branch_probability": 1.0,
+      "global_branch_pgm_bayes_success": 0.2656212352863974,
+      "pair_local_pgm_map_bayes_success": 0.13555555555555557,
+      "global_advantage_over_pair_local_map": 0.13006567973084185,
+      "weighted_frame_covariance_fraction": 0.32322996757772704,
+      "maximum_frame_covariance_fraction": 0.32322996757772704,
+      "weighted_scaled_diagonal_completeness_residual": 1.000000000000001,
+      "maximum_scaled_diagonal_completeness_residual": 1.000000000000001,
+      "weighted_scaled_diagonal_eigenvalue_excess": 1.0000000000000009,
+      "maximum_scaled_diagonal_eigenvalue_excess": 1.0000000000000009,
+      "weighted_global_effect_factorization_residual": 0.16934415118305754,
+      "maximum_global_effect_factorization_residual": 0.16934415118305754,
+      "maximum_covariance_identity_residual": 3.175375271343234e-17,
+      "maximum_global_pgm_completeness_residual": 1.5479309311668954e-15,
+      "maximum_pair_pgm_completeness_residual": 7.487969088291881e-16,
+      "maximum_channel_normalization_residual": 1.5543122344752192e-15,
+      "nonzero_shared_label_covariance_verified": true,
+      "scaled_diagonal_product_fails_povm_verified": true,
+      "global_pgm_differs_from_pair_local_map_verified": true,
+      "exact_control_verified": true,
+      "status": "shared-label-covariance-falsifies-pair-local-pgm-factorization"
+    },
+    {
+      "control_id": "S5-L1-1-R1-1",
+      "n": 5,
+      "transposition_count": 2,
+      "left_pair_partitions": [
+        [
+          4,
+          1
+        ],
+        [
+          4,
+          1
+        ]
+      ],
+      "right_pair_partitions": [
+        [
+          4,
+          1
+        ],
+        [
+          4,
+          1
+        ]
+      ],
+      "natural_source_probability": 0.0003160493827160494,
+      "hidden_involution_count": 15,
+      "left_pair_dimension": 16,
+      "right_pair_dimension": 16,
+      "joint_dimension": 256,
+      "active_joint_carrier_branch_count": 16,
+      "total_joint_branch_probability": 1.0,
+      "global_branch_pgm_bayes_success": 0.5000403775783382,
+      "pair_local_pgm_map_bayes_success": 0.30801692767870753,
+      "global_advantage_over_pair_local_map": 0.19202344989963066,
+      "weighted_frame_covariance_fraction": 0.38558526689172046,
+      "maximum_frame_covariance_fraction": 0.821460131696893,
+      "weighted_scaled_diagonal_completeness_residual": 1.092592592592593,
+      "maximum_scaled_diagonal_completeness_residual": 4.999999999999991,
+      "weighted_scaled_diagonal_eigenvalue_excess": 1.0787037037037055,
+      "maximum_scaled_diagonal_eigenvalue_excess": 5.000000000000001,
+      "weighted_global_effect_factorization_residual": 0.34888564743548894,
+      "maximum_global_effect_factorization_residual": 1.4959662798512317,
+      "maximum_covariance_identity_residual": 2.9406505148178845e-16,
+      "maximum_global_pgm_completeness_residual": 4.111881075677529e-15,
+      "maximum_pair_pgm_completeness_residual": 1.5863493639533077e-15,
+      "maximum_channel_normalization_residual": 3.9968028886505635e-15,
+      "nonzero_shared_label_covariance_verified": true,
+      "scaled_diagonal_product_fails_povm_verified": true,
+      "global_pgm_differs_from_pair_local_map_verified": true,
+      "exact_control_verified": true,
+      "status": "shared-label-covariance-falsifies-pair-local-pgm-factorization"
+    }
+  ],
+  "worst_natural_controls": [
+    {
+      "control_id": "S3-L0-1-R0-1",
+      "n": 3,
+      "transposition_count": 1,
+      "left_pair_partitions": [
+        [
+          3
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "right_pair_partitions": [
+        [
+          3
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "natural_source_probability": 0.19753086419753085,
+      "hidden_involution_count": 3,
+      "left_pair_dimension": 2,
+      "right_pair_dimension": 2,
+      "joint_dimension": 4,
+      "active_joint_carrier_branch_count": 1,
+      "total_joint_branch_probability": 1.0,
+      "global_branch_pgm_bayes_success": 0.9714045207910318,
+      "pair_local_pgm_map_bayes_success": 0.6666666666666666,
+      "global_advantage_over_pair_local_map": 0.30473785412436516,
+      "weighted_frame_covariance_fraction": 0.5773502691896257,
+      "maximum_frame_covariance_fraction": 0.5773502691896257,
+      "weighted_scaled_diagonal_completeness_residual": 0.9999999999999996,
+      "maximum_scaled_diagonal_completeness_residual": 0.9999999999999996,
+      "weighted_scaled_diagonal_eigenvalue_excess": 0.9999999999999993,
+      "maximum_scaled_diagonal_eigenvalue_excess": 0.9999999999999993,
+      "weighted_global_effect_factorization_residual": 0.43285762363048036,
+      "maximum_global_effect_factorization_residual": 0.43285762363048036,
+      "maximum_covariance_identity_residual": 0.0,
+      "maximum_global_pgm_completeness_residual": 6.875385515686446e-16,
+      "maximum_pair_pgm_completeness_residual": 2.220446049250313e-16,
+      "maximum_channel_normalization_residual": 7.771561172376096e-16,
+      "nonzero_shared_label_covariance_verified": true,
+      "scaled_diagonal_product_fails_povm_verified": true,
+      "global_pgm_differs_from_pair_local_map_verified": true,
+      "exact_control_verified": true,
+      "status": "shared-label-covariance-falsifies-pair-local-pgm-factorization"
+    },
+    {
+      "control_id": "S3-L0-1-R1-1",
+      "n": 3,
+      "transposition_count": 1,
+      "left_pair_partitions": [
+        [
+          3
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "right_pair_partitions": [
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "natural_source_probability": 0.19753086419753085,
+      "hidden_involution_count": 3,
+      "left_pair_dimension": 2,
+      "right_pair_dimension": 4,
+      "joint_dimension": 8,
+      "active_joint_carrier_branch_count": 2,
+      "total_joint_branch_probability": 0.9999999999999997,
+      "global_branch_pgm_bayes_success": 0.8190355937288489,
+      "pair_local_pgm_map_bayes_success": 0.6666666666666664,
+      "global_advantage_over_pair_local_map": 0.15236892706218252,
+      "weighted_frame_covariance_fraction": 0.28867513459481287,
+      "maximum_frame_covariance_fraction": 0.5773502691896258,
+      "weighted_scaled_diagonal_completeness_residual": 0.5000000000000007,
+      "maximum_scaled_diagonal_completeness_residual": 1.0000000000000016,
+      "weighted_scaled_diagonal_eigenvalue_excess": 0.5000000000000002,
+      "maximum_scaled_diagonal_eigenvalue_excess": 1.0000000000000009,
+      "weighted_global_effect_factorization_residual": 0.21642881181524062,
+      "maximum_global_effect_factorization_residual": 0.43285762363048114,
+      "maximum_covariance_identity_residual": 9.251858538542972e-17,
+      "maximum_global_pgm_completeness_residual": 4.537345946894867e-16,
+      "maximum_pair_pgm_completeness_residual": 3.9449466378682923e-16,
+      "maximum_channel_normalization_residual": 1.5543122344752192e-15,
+      "nonzero_shared_label_covariance_verified": true,
+      "scaled_diagonal_product_fails_povm_verified": true,
+      "global_pgm_differs_from_pair_local_map_verified": true,
+      "exact_control_verified": true,
+      "status": "shared-label-covariance-falsifies-pair-local-pgm-factorization"
+    },
+    {
+      "control_id": "S3-L1-1-R0-1",
+      "n": 3,
+      "transposition_count": 1,
+      "left_pair_partitions": [
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "right_pair_partitions": [
+        [
+          3
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "natural_source_probability": 0.19753086419753085,
+      "hidden_involution_count": 3,
+      "left_pair_dimension": 4,
+      "right_pair_dimension": 2,
+      "joint_dimension": 8,
+      "active_joint_carrier_branch_count": 2,
+      "total_joint_branch_probability": 0.9999999999999997,
+      "global_branch_pgm_bayes_success": 0.8190355937288489,
+      "pair_local_pgm_map_bayes_success": 0.6666666666666665,
+      "global_advantage_over_pair_local_map": 0.1523689270621824,
+      "weighted_frame_covariance_fraction": 0.28867513459481287,
+      "maximum_frame_covariance_fraction": 0.5773502691896258,
+      "weighted_scaled_diagonal_completeness_residual": 0.5000000000000003,
+      "maximum_scaled_diagonal_completeness_residual": 1.0000000000000007,
+      "weighted_scaled_diagonal_eigenvalue_excess": 0.5000000000000004,
+      "maximum_scaled_diagonal_eigenvalue_excess": 1.0000000000000013,
+      "weighted_global_effect_factorization_residual": 0.21642881181524068,
+      "maximum_global_effect_factorization_residual": 0.43285762363048086,
+      "maximum_covariance_identity_residual": 9.251858538542972e-17,
+      "maximum_global_pgm_completeness_residual": 7.88873571885001e-16,
+      "maximum_pair_pgm_completeness_residual": 3.9449466378682923e-16,
+      "maximum_channel_normalization_residual": 1.5543122344752192e-15,
+      "nonzero_shared_label_covariance_verified": true,
+      "scaled_diagonal_product_fails_povm_verified": true,
+      "global_pgm_differs_from_pair_local_map_verified": true,
+      "exact_control_verified": true,
+      "status": "shared-label-covariance-falsifies-pair-local-pgm-factorization"
+    },
+    {
+      "control_id": "S4-L1-1-R1-1",
+      "n": 4,
+      "transposition_count": 2,
+      "left_pair_partitions": [
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          1
+        ]
+      ],
+      "right_pair_partitions": [
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          1
+        ]
+      ],
+      "natural_source_probability": 0.00390625,
+      "hidden_involution_count": 3,
+      "left_pair_dimension": 9,
+      "right_pair_dimension": 9,
+      "joint_dimension": 81,
+      "active_joint_carrier_branch_count": 4,
+      "total_joint_branch_probability": 0.9999999999999987,
+      "global_branch_pgm_bayes_success": 0.7650686759071241,
+      "pair_local_pgm_map_bayes_success": 0.6296296296296287,
+      "global_advantage_over_pair_local_map": 0.13543904627749548,
+      "weighted_frame_covariance_fraction": 0.25660011963983426,
+      "maximum_frame_covariance_fraction": 0.5773502691896276,
+      "weighted_scaled_diagonal_completeness_residual": 0.444444444444444,
+      "maximum_scaled_diagonal_completeness_residual": 0.9999999999999993,
+      "weighted_scaled_diagonal_eigenvalue_excess": 0.44444444444444375,
+      "maximum_scaled_diagonal_eigenvalue_excess": 0.9999999999999996,
+      "weighted_global_effect_factorization_residual": 0.19238116605799097,
+      "maximum_global_effect_factorization_residual": 0.43285762363047975,
+      "maximum_covariance_identity_residual": 1.9078803932353503e-16,
+      "maximum_global_pgm_completeness_residual": 5.1010301375226235e-16,
+      "maximum_pair_pgm_completeness_residual": 4.074253791612457e-16,
+      "maximum_channel_normalization_residual": 8.881784197001252e-16,
+      "nonzero_shared_label_covariance_verified": true,
+      "scaled_diagonal_product_fails_povm_verified": true,
+      "global_pgm_differs_from_pair_local_map_verified": true,
+      "exact_control_verified": true,
+      "status": "shared-label-covariance-falsifies-pair-local-pgm-factorization"
+    },
+    {
+      "control_id": "S4-L1-1-R1-3",
+      "n": 4,
+      "transposition_count": 2,
+      "left_pair_partitions": [
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          1
+        ]
+      ],
+      "right_pair_partitions": [
+        [
+          3,
+          1
+        ],
+        [
+          2,
+          1,
+          1
+        ]
+      ],
+      "natural_source_probability": 0.0078125,
+      "hidden_involution_count": 3,
+      "left_pair_dimension": 9,
+      "right_pair_dimension": 9,
+      "joint_dimension": 81,
+      "active_joint_carrier_branch_count": 4,
+      "total_joint_branch_probability": 0.9999999999999986,
+      "global_branch_pgm_bayes_success": 0.7650686759071241,
+      "pair_local_pgm_map_bayes_success": 0.6296296296296287,
+      "global_advantage_over_pair_local_map": 0.13543904627749548,
+      "weighted_frame_covariance_fraction": 0.25660011963983415,
+      "maximum_frame_covariance_fraction": 0.5773502691896274,
+      "weighted_scaled_diagonal_completeness_residual": 0.44444444444444386,
+      "maximum_scaled_diagonal_completeness_residual": 0.9999999999999991,
+      "weighted_scaled_diagonal_eigenvalue_excess": 0.4444444444444433,
+      "maximum_scaled_diagonal_eigenvalue_excess": 0.9999999999999989,
+      "weighted_global_effect_factorization_residual": 0.19238116605799097,
+      "maximum_global_effect_factorization_residual": 0.4328576236304797,
+      "maximum_covariance_identity_residual": 1.897758940435832e-16,
+      "maximum_global_pgm_completeness_residual": 8.475104659308501e-16,
+      "maximum_pair_pgm_completeness_residual": 4.074253791612457e-16,
+      "maximum_channel_normalization_residual": 8.881784197001252e-16,
+      "nonzero_shared_label_covariance_verified": true,
+      "scaled_diagonal_product_fails_povm_verified": true,
+      "global_pgm_differs_from_pair_local_map_verified": true,
+      "exact_control_verified": true,
+      "status": "shared-label-covariance-falsifies-pair-local-pgm-factorization"
+    },
+    {
+      "control_id": "S4-L1-1-R3-3",
+      "n": 4,
+      "transposition_count": 2,
+      "left_pair_partitions": [
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          1
+        ]
+      ],
+      "right_pair_partitions": [
+        [
+          2,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          1
+        ]
+      ],
+      "natural_source_probability": 0.00390625,
+      "hidden_involution_count": 3,
+      "left_pair_dimension": 9,
+      "right_pair_dimension": 9,
+      "joint_dimension": 81,
+      "active_joint_carrier_branch_count": 4,
+      "total_joint_branch_probability": 0.9999999999999987,
+      "global_branch_pgm_bayes_success": 0.7650686759071241,
+      "pair_local_pgm_map_bayes_success": 0.6296296296296287,
+      "global_advantage_over_pair_local_map": 0.13543904627749548,
+      "weighted_frame_covariance_fraction": 0.25660011963983415,
+      "maximum_frame_covariance_fraction": 0.5773502691896274,
+      "weighted_scaled_diagonal_completeness_residual": 0.4444444444444442,
+      "maximum_scaled_diagonal_completeness_residual": 0.9999999999999997,
+      "weighted_scaled_diagonal_eigenvalue_excess": 0.4444444444444441,
+      "maximum_scaled_diagonal_eigenvalue_excess": 1.0,
+      "weighted_global_effect_factorization_residual": 0.19238116605799124,
+      "maximum_global_effect_factorization_residual": 0.4328576236304802,
+      "maximum_covariance_identity_residual": 2.1544120232613906e-16,
+      "maximum_global_pgm_completeness_residual": 8.010890043109166e-16,
+      "maximum_pair_pgm_completeness_residual": 4.074253791612457e-16,
+      "maximum_channel_normalization_residual": 1.3322676295501878e-15,
+      "nonzero_shared_label_covariance_verified": true,
+      "scaled_diagonal_product_fails_povm_verified": true,
+      "global_pgm_differs_from_pair_local_map_verified": true,
+      "exact_control_verified": true,
+      "status": "shared-label-covariance-falsifies-pair-local-pgm-factorization"
+    },
+    {
+      "control_id": "S4-L1-3-R1-1",
+      "n": 4,
+      "transposition_count": 2,
+      "left_pair_partitions": [
+        [
+          3,
+          1
+        ],
+        [
+          2,
+          1,
+          1
+        ]
+      ],
+      "right_pair_partitions": [
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          1
+        ]
+      ],
+      "natural_source_probability": 0.0078125,
+      "hidden_involution_count": 3,
+      "left_pair_dimension": 9,
+      "right_pair_dimension": 9,
+      "joint_dimension": 81,
+      "active_joint_carrier_branch_count": 4,
+      "total_joint_branch_probability": 0.9999999999999986,
+      "global_branch_pgm_bayes_success": 0.7650686759071241,
+      "pair_local_pgm_map_bayes_success": 0.6296296296296287,
+      "global_advantage_over_pair_local_map": 0.13543904627749548,
+      "weighted_frame_covariance_fraction": 0.25660011963983403,
+      "maximum_frame_covariance_fraction": 0.5773502691896272,
+      "weighted_scaled_diagonal_completeness_residual": 0.44444444444444403,
+      "maximum_scaled_diagonal_completeness_residual": 0.9999999999999994,
+      "weighted_scaled_diagonal_eigenvalue_excess": 0.44444444444444353,
+      "maximum_scaled_diagonal_eigenvalue_excess": 0.9999999999999993,
+      "weighted_global_effect_factorization_residual": 0.19238116605799108,
+      "maximum_global_effect_factorization_residual": 0.43285762363047997,
+      "maximum_covariance_identity_residual": 1.897758940435832e-16,
+      "maximum_global_pgm_completeness_residual": 6.271295311639921e-16,
+      "maximum_pair_pgm_completeness_residual": 4.074253791612457e-16,
+      "maximum_channel_normalization_residual": 1.3322676295501878e-15,
+      "nonzero_shared_label_covariance_verified": true,
+      "scaled_diagonal_product_fails_povm_verified": true,
+      "global_pgm_differs_from_pair_local_map_verified": true,
+      "exact_control_verified": true,
+      "status": "shared-label-covariance-falsifies-pair-local-pgm-factorization"
+    },
+    {
+      "control_id": "S4-L1-3-R1-3",
+      "n": 4,
+      "transposition_count": 2,
+      "left_pair_partitions": [
+        [
+          3,
+          1
+        ],
+        [
+          2,
+          1,
+          1
+        ]
+      ],
+      "right_pair_partitions": [
+        [
+          3,
+          1
+        ],
+        [
+          2,
+          1,
+          1
+        ]
+      ],
+      "natural_source_probability": 0.015625,
+      "hidden_involution_count": 3,
+      "left_pair_dimension": 9,
+      "right_pair_dimension": 9,
+      "joint_dimension": 81,
+      "active_joint_carrier_branch_count": 4,
+      "total_joint_branch_probability": 0.9999999999999986,
+      "global_branch_pgm_bayes_success": 0.7650686759071241,
+      "pair_local_pgm_map_bayes_success": 0.6296296296296287,
+      "global_advantage_over_pair_local_map": 0.13543904627749548,
+      "weighted_frame_covariance_fraction": 0.256600119639834,
+      "maximum_frame_covariance_fraction": 0.5773502691896271,
+      "weighted_scaled_diagonal_completeness_residual": 0.44444444444444375,
+      "maximum_scaled_diagonal_completeness_residual": 0.9999999999999987,
+      "weighted_scaled_diagonal_eigenvalue_excess": 0.44444444444444303,
+      "maximum_scaled_diagonal_eigenvalue_excess": 0.9999999999999982,
+      "weighted_global_effect_factorization_residual": 0.192381166057991,
+      "maximum_global_effect_factorization_residual": 0.4328576236304795,
+      "maximum_covariance_identity_residual": 1.8977589404358316e-16,
+      "maximum_global_pgm_completeness_residual": 1.0857000894163317e-15,
+      "maximum_pair_pgm_completeness_residual": 3.8019904426666057e-16,
+      "maximum_channel_normalization_residual": 1.3322676295501878e-15,
+      "nonzero_shared_label_covariance_verified": true,
+      "scaled_diagonal_product_fails_povm_verified": true,
+      "global_pgm_differs_from_pair_local_map_verified": true,
+      "exact_control_verified": true,
+      "status": "shared-label-covariance-falsifies-pair-local-pgm-factorization"
+    },
+    {
+      "control_id": "S4-L1-3-R3-3",
+      "n": 4,
+      "transposition_count": 2,
+      "left_pair_partitions": [
+        [
+          3,
+          1
+        ],
+        [
+          2,
+          1,
+          1
+        ]
+      ],
+      "right_pair_partitions": [
+        [
+          2,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          1
+        ]
+      ],
+      "natural_source_probability": 0.0078125,
+      "hidden_involution_count": 3,
+      "left_pair_dimension": 9,
+      "right_pair_dimension": 9,
+      "joint_dimension": 81,
+      "active_joint_carrier_branch_count": 4,
+      "total_joint_branch_probability": 0.9999999999999986,
+      "global_branch_pgm_bayes_success": 0.7650686759071241,
+      "pair_local_pgm_map_bayes_success": 0.6296296296296287,
+      "global_advantage_over_pair_local_map": 0.13543904627749548,
+      "weighted_frame_covariance_fraction": 0.2566001196398339,
+      "maximum_frame_covariance_fraction": 0.577350269189627,
+      "weighted_scaled_diagonal_completeness_residual": 0.4444444444444437,
+      "maximum_scaled_diagonal_completeness_residual": 0.9999999999999987,
+      "weighted_scaled_diagonal_eigenvalue_excess": 0.4444444444444433,
+      "maximum_scaled_diagonal_eigenvalue_excess": 0.9999999999999982,
+      "weighted_global_effect_factorization_residual": 0.19238116605799077,
+      "maximum_global_effect_factorization_residual": 0.43285762363047914,
+      "maximum_covariance_identity_residual": 2.145453930310668e-16,
+      "maximum_global_pgm_completeness_residual": 5.997154943604211e-16,
+      "maximum_pair_pgm_completeness_residual": 3.8019904426666057e-16,
+      "maximum_channel_normalization_residual": 1.3322676295501878e-15,
+      "nonzero_shared_label_covariance_verified": true,
+      "scaled_diagonal_product_fails_povm_verified": true,
+      "global_pgm_differs_from_pair_local_map_verified": true,
+      "exact_control_verified": true,
+      "status": "shared-label-covariance-falsifies-pair-local-pgm-factorization"
+    },
+    {
+      "control_id": "S4-L3-3-R1-1",
+      "n": 4,
+      "transposition_count": 2,
+      "left_pair_partitions": [
+        [
+          2,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          1
+        ]
+      ],
+      "right_pair_partitions": [
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          1
+        ]
+      ],
+      "natural_source_probability": 0.00390625,
+      "hidden_involution_count": 3,
+      "left_pair_dimension": 9,
+      "right_pair_dimension": 9,
+      "joint_dimension": 81,
+      "active_joint_carrier_branch_count": 4,
+      "total_joint_branch_probability": 0.9999999999999987,
+      "global_branch_pgm_bayes_success": 0.7650686759071241,
+      "pair_local_pgm_map_bayes_success": 0.6296296296296287,
+      "global_advantage_over_pair_local_map": 0.13543904627749548,
+      "weighted_frame_covariance_fraction": 0.25660011963983326,
+      "maximum_frame_covariance_fraction": 0.5773502691896254,
+      "weighted_scaled_diagonal_completeness_residual": 0.44444444444444403,
+      "maximum_scaled_diagonal_completeness_residual": 0.9999999999999993,
+      "weighted_scaled_diagonal_eigenvalue_excess": 0.4444444444444437,
+      "maximum_scaled_diagonal_eigenvalue_excess": 0.9999999999999991,
+      "weighted_global_effect_factorization_residual": 0.19238116605799094,
+      "maximum_global_effect_factorization_residual": 0.4328576236304797,
+      "maximum_covariance_identity_residual": 2.1544120232613904e-16,
+      "maximum_global_pgm_completeness_residual": 6.652845155268361e-16,
+      "maximum_pair_pgm_completeness_residual": 4.074253791612457e-16,
+      "maximum_channel_normalization_residual": 1.1102230246251565e-15,
+      "nonzero_shared_label_covariance_verified": true,
+      "scaled_diagonal_product_fails_povm_verified": true,
+      "global_pgm_differs_from_pair_local_map_verified": true,
+      "exact_control_verified": true,
+      "status": "shared-label-covariance-falsifies-pair-local-pgm-factorization"
+    },
+    {
+      "control_id": "S4-L3-3-R1-3",
+      "n": 4,
+      "transposition_count": 2,
+      "left_pair_partitions": [
+        [
+          2,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          1
+        ]
+      ],
+      "right_pair_partitions": [
+        [
+          3,
+          1
+        ],
+        [
+          2,
+          1,
+          1
+        ]
+      ],
+      "natural_source_probability": 0.0078125,
+      "hidden_involution_count": 3,
+      "left_pair_dimension": 9,
+      "right_pair_dimension": 9,
+      "joint_dimension": 81,
+      "active_joint_carrier_branch_count": 4,
+      "total_joint_branch_probability": 0.9999999999999986,
+      "global_branch_pgm_bayes_success": 0.7650686759071241,
+      "pair_local_pgm_map_bayes_success": 0.6296296296296287,
+      "global_advantage_over_pair_local_map": 0.13543904627749548,
+      "weighted_frame_covariance_fraction": 0.25660011963983337,
+      "maximum_frame_covariance_fraction": 0.5773502691896256,
+      "weighted_scaled_diagonal_completeness_residual": 0.44444444444444414,
+      "maximum_scaled_diagonal_completeness_residual": 0.9999999999999996,
+      "weighted_scaled_diagonal_eigenvalue_excess": 0.4444444444444436,
+      "maximum_scaled_diagonal_eigenvalue_excess": 0.9999999999999991,
+      "weighted_global_effect_factorization_residual": 0.19238116605799113,
+      "maximum_global_effect_factorization_residual": 0.4328576236304799,
+      "maximum_covariance_identity_residual": 2.145453930310668e-16,
+      "maximum_global_pgm_completeness_residual": 6.849285558982583e-16,
+      "maximum_pair_pgm_completeness_residual": 3.8019904426666057e-16,
+      "maximum_channel_normalization_residual": 1.7763568394002505e-15,
+      "nonzero_shared_label_covariance_verified": true,
+      "scaled_diagonal_product_fails_povm_verified": true,
+      "global_pgm_differs_from_pair_local_map_verified": true,
+      "exact_control_verified": true,
+      "status": "shared-label-covariance-falsifies-pair-local-pgm-factorization"
+    },
+    {
+      "control_id": "S4-L3-3-R3-3",
+      "n": 4,
+      "transposition_count": 2,
+      "left_pair_partitions": [
+        [
+          2,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          1
+        ]
+      ],
+      "right_pair_partitions": [
+        [
+          2,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          1
+        ]
+      ],
+      "natural_source_probability": 0.00390625,
+      "hidden_involution_count": 3,
+      "left_pair_dimension": 9,
+      "right_pair_dimension": 9,
+      "joint_dimension": 81,
+      "active_joint_carrier_branch_count": 4,
+      "total_joint_branch_probability": 0.9999999999999987,
+      "global_branch_pgm_bayes_success": 0.7650686759071241,
+      "pair_local_pgm_map_bayes_success": 0.6296296296296287,
+      "global_advantage_over_pair_local_map": 0.13543904627749548,
+      "weighted_frame_covariance_fraction": 0.2566001196398333,
+      "maximum_frame_covariance_fraction": 0.5773502691896255,
+      "weighted_scaled_diagonal_completeness_residual": 0.44444444444444425,
+      "maximum_scaled_diagonal_completeness_residual": 0.9999999999999992,
+      "weighted_scaled_diagonal_eigenvalue_excess": 0.4444444444444435,
+      "maximum_scaled_diagonal_eigenvalue_excess": 0.9999999999999987,
+      "weighted_global_effect_factorization_residual": 0.1923811660579912,
+      "maximum_global_effect_factorization_residual": 0.4328576236304799,
+      "maximum_covariance_identity_residual": 2.280353229183044e-16,
+      "maximum_global_pgm_completeness_residual": 6.069354171350411e-16,
+      "maximum_pair_pgm_completeness_residual": 3.3917824499145687e-16,
+      "maximum_channel_normalization_residual": 1.7763568394002505e-15,
+      "nonzero_shared_label_covariance_verified": true,
+      "scaled_diagonal_product_fails_povm_verified": true,
+      "global_pgm_differs_from_pair_local_map_verified": true,
+      "exact_control_verified": true,
+      "status": "shared-label-covariance-falsifies-pair-local-pgm-factorization"
+    },
+    {
+      "control_id": "S3-L1-1-R1-1",
+      "n": 3,
+      "transposition_count": 1,
+      "left_pair_partitions": [
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "right_pair_partitions": [
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "natural_source_probability": 0.19753086419753085,
+      "hidden_involution_count": 3,
+      "left_pair_dimension": 4,
+      "right_pair_dimension": 4,
+      "joint_dimension": 16,
+      "active_joint_carrier_branch_count": 4,
+      "total_joint_branch_probability": 0.9999999999999993,
+      "global_branch_pgm_bayes_success": 0.6595177968644241,
+      "pair_local_pgm_map_bayes_success": 0.583333333333333,
+      "global_advantage_over_pair_local_map": 0.0761844635310911,
+      "weighted_frame_covariance_fraction": 0.14433756729740652,
+      "maximum_frame_covariance_fraction": 0.5773502691896258,
+      "weighted_scaled_diagonal_completeness_residual": 0.25000000000000183,
+      "maximum_scaled_diagonal_completeness_residual": 1.0000000000000036,
+      "weighted_scaled_diagonal_eigenvalue_excess": 0.25000000000000155,
+      "maximum_scaled_diagonal_eigenvalue_excess": 1.0000000000000036,
+      "weighted_global_effect_factorization_residual": 0.10821440590762116,
+      "maximum_global_effect_factorization_residual": 0.43285762363048264,
+      "maximum_covariance_identity_residual": 1.548132042069375e-16,
+      "maximum_global_pgm_completeness_residual": 9.280006106646445e-16,
+      "maximum_pair_pgm_completeness_residual": 3.9449466378682923e-16,
+      "maximum_channel_normalization_residual": 3.3306690738754696e-15,
+      "nonzero_shared_label_covariance_verified": true,
+      "scaled_diagonal_product_fails_povm_verified": true,
+      "global_pgm_differs_from_pair_local_map_verified": true,
+      "exact_control_verified": true,
+      "status": "shared-label-covariance-falsifies-pair-local-pgm-factorization"
+    },
+    {
+      "control_id": "S4-L0-0-R0-3",
+      "n": 4,
+      "transposition_count": 2,
+      "left_pair_partitions": [
+        [
+          4
+        ],
+        [
+          4
+        ]
+      ],
+      "right_pair_partitions": [
+        [
+          4
+        ],
+        [
+          2,
+          1,
+          1
+        ]
+      ],
+      "natural_source_probability": 0.00028935185185185184,
+      "hidden_involution_count": 3,
+      "left_pair_dimension": 1,
+      "right_pair_dimension": 3,
+      "joint_dimension": 3,
+      "active_joint_carrier_branch_count": 1,
+      "total_joint_branch_probability": 1.0,
+      "global_branch_pgm_bayes_success": 1.0,
+      "pair_local_pgm_map_bayes_success": 0.9999999999999997,
+      "global_advantage_over_pair_local_map": 3.3306690738754696e-16,
+      "weighted_frame_covariance_fraction": 0.0,
+      "maximum_frame_covariance_fraction": 0.0,
+      "weighted_scaled_diagonal_completeness_residual": 2.220446049250313e-16,
+      "maximum_scaled_diagonal_completeness_residual": 2.220446049250313e-16,
+      "weighted_scaled_diagonal_eigenvalue_excess": 0.0,
+      "maximum_scaled_diagonal_eigenvalue_excess": 0.0,
+      "weighted_global_effect_factorization_residual": 5.2336415289459174e-17,
+      "maximum_global_effect_factorization_residual": 5.2336415289459174e-17,
+      "maximum_covariance_identity_residual": 0.0,
+      "maximum_global_pgm_completeness_residual": 2.220446049250313e-16,
+      "maximum_pair_pgm_completeness_residual": 2.220446049250313e-16,
+      "maximum_channel_normalization_residual": 3.3306690738754696e-16,
+      "nonzero_shared_label_covariance_verified": false,
+      "scaled_diagonal_product_fails_povm_verified": false,
+      "global_pgm_differs_from_pair_local_map_verified": false,
+      "exact_control_verified": true,
+      "status": "disjoint-pair-compiler-control-degenerate"
+    },
+    {
+      "control_id": "S4-L0-1-R0-2",
+      "n": 4,
+      "transposition_count": 2,
+      "left_pair_partitions": [
+        [
+          4
+        ],
+        [
+          3,
+          1
+        ]
+      ],
+      "right_pair_partitions": [
+        [
+          4
+        ],
+        [
+          2,
+          2
+        ]
+      ],
+      "natural_source_probability": 0.0023148148148148147,
+      "hidden_involution_count": 3,
+      "left_pair_dimension": 3,
+      "right_pair_dimension": 2,
+      "joint_dimension": 6,
+      "active_joint_carrier_branch_count": 1,
+      "total_joint_branch_probability": 0.9999999999999997,
+      "global_branch_pgm_bayes_success": 0.9999999999999997,
+      "pair_local_pgm_map_bayes_success": 0.9999999999999993,
+      "global_advantage_over_pair_local_map": 3.3306690738754696e-16,
+      "weighted_frame_covariance_fraction": 1.5539478864996787e-16,
+      "maximum_frame_covariance_fraction": 1.5539478864996792e-16,
+      "weighted_scaled_diagonal_completeness_residual": 6.82478932064517e-16,
+      "maximum_scaled_diagonal_completeness_residual": 6.824789320645172e-16,
+      "weighted_scaled_diagonal_eigenvalue_excess": 0.0,
+      "maximum_scaled_diagonal_eigenvalue_excess": 0.0,
+      "weighted_global_effect_factorization_residual": 3.8741644986890255e-16,
+      "maximum_global_effect_factorization_residual": 3.874164498689027e-16,
+      "maximum_covariance_identity_residual": 5.781938915934894e-17,
+      "maximum_global_pgm_completeness_residual": 4.731852124067421e-16,
+      "maximum_pair_pgm_completeness_residual": 2.3113914050356364e-16,
+      "maximum_channel_normalization_residual": 2.220446049250313e-16,
+      "nonzero_shared_label_covariance_verified": false,
+      "scaled_diagonal_product_fails_povm_verified": false,
+      "global_pgm_differs_from_pair_local_map_verified": false,
+      "exact_control_verified": true,
+      "status": "disjoint-pair-compiler-control-degenerate"
+    },
+    {
+      "control_id": "S4-L0-1-R2-4",
+      "n": 4,
+      "transposition_count": 2,
+      "left_pair_partitions": [
+        [
+          4
+        ],
+        [
+          3,
+          1
+        ]
+      ],
+      "right_pair_partitions": [
+        [
+          2,
+          2
+        ],
+        [
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "natural_source_probability": 0.0023148148148148147,
+      "hidden_involution_count": 3,
+      "left_pair_dimension": 3,
+      "right_pair_dimension": 2,
+      "joint_dimension": 6,
+      "active_joint_carrier_branch_count": 1,
+      "total_joint_branch_probability": 0.9999999999999997,
+      "global_branch_pgm_bayes_success": 0.9999999999999997,
+      "pair_local_pgm_map_bayes_success": 0.9999999999999993,
+      "global_advantage_over_pair_local_map": 3.3306690738754696e-16,
+      "weighted_frame_covariance_fraction": 1.5539478864996787e-16,
+      "maximum_frame_covariance_fraction": 1.5539478864996792e-16,
+      "weighted_scaled_diagonal_completeness_residual": 6.82478932064517e-16,
+      "maximum_scaled_diagonal_completeness_residual": 6.824789320645172e-16,
+      "weighted_scaled_diagonal_eigenvalue_excess": 0.0,
+      "maximum_scaled_diagonal_eigenvalue_excess": 0.0,
+      "weighted_global_effect_factorization_residual": 3.8741644986890255e-16,
+      "maximum_global_effect_factorization_residual": 3.874164498689027e-16,
+      "maximum_covariance_identity_residual": 5.781938915934894e-17,
+      "maximum_global_pgm_completeness_residual": 4.731852124067421e-16,
+      "maximum_pair_pgm_completeness_residual": 2.3113914050356364e-16,
+      "maximum_channel_normalization_residual": 2.220446049250313e-16,
+      "nonzero_shared_label_covariance_verified": false,
+      "scaled_diagonal_product_fails_povm_verified": false,
+      "global_pgm_differs_from_pair_local_map_verified": false,
+      "exact_control_verified": true,
+      "status": "disjoint-pair-compiler-control-degenerate"
+    }
+  ],
+  "scaling_records": [
+    {
+      "n": 8,
+      "hidden_involution_count_decimal": "105",
+      "hidden_involution_count_log2": 6.714245517666122,
+      "information_threshold_copy_count": 7,
+      "disjoint_pair_count": 3,
+      "residual_shared_hidden_label_block_count": 4,
+      "residual_block_fraction": 0.5714285714285714,
+      "conditioned_state_tensor_factorization_proved": true,
+      "hypothesis_average_tensor_factorization_proved": false,
+      "bounded_residual_block_count_proved": false,
+      "status": "logarithmic-pair-depth-leaves-growing-shared-label-frame"
+    },
+    {
+      "n": 16,
+      "hidden_involution_count_decimal": "2027025",
+      "hidden_involution_count_log2": 20.950932451495344,
+      "information_threshold_copy_count": 21,
+      "disjoint_pair_count": 4,
+      "residual_shared_hidden_label_block_count": 17,
+      "residual_block_fraction": 0.8095238095238095,
+      "conditioned_state_tensor_factorization_proved": true,
+      "hypothesis_average_tensor_factorization_proved": false,
+      "bounded_residual_block_count_proved": false,
+      "status": "logarithmic-pair-depth-leaves-growing-shared-label-frame"
+    },
+    {
+      "n": 32,
+      "hidden_involution_count_decimal": "191898783962510625",
+      "hidden_involution_count_log2": 57.41312318247768,
+      "information_threshold_copy_count": 58,
+      "disjoint_pair_count": 5,
+      "residual_shared_hidden_label_block_count": 53,
+      "residual_block_fraction": 0.9137931034482759,
+      "conditioned_state_tensor_factorization_proved": true,
+      "hypothesis_average_tensor_factorization_proved": false,
+      "bounded_residual_block_count_proved": false,
+      "status": "logarithmic-pair-depth-leaves-growing-shared-label-frame"
+    },
+    {
+      "n": 64,
+      "hidden_involution_count_decimal": "112275575285571389562324404930670903477890625",
+      "hidden_involution_count_log2": 146.33188028936374,
+      "information_threshold_copy_count": 147,
+      "disjoint_pair_count": 6,
+      "residual_shared_hidden_label_block_count": 141,
+      "residual_block_fraction": 0.9591836734693877,
+      "conditioned_state_tensor_factorization_proved": true,
+      "hypothesis_average_tensor_factorization_proved": false,
+      "bounded_residual_block_count_proved": false,
+      "status": "logarithmic-pair-depth-leaves-growing-shared-label-frame"
+    },
+    {
+      "n": 128,
+      "hidden_involution_count_decimal": "164749260436028300985882145742271020352352323765318815064452725844663571025238239569133424206748199462890625",
+      "hidden_involution_count_log2": 356.16657814189784,
+      "information_threshold_copy_count": 357,
+      "disjoint_pair_count": 7,
+      "residual_shared_hidden_label_block_count": 350,
+      "residual_block_fraction": 0.9803921568627451,
+      "conditioned_state_tensor_factorization_proved": true,
+      "hypothesis_average_tensor_factorization_proved": false,
+      "bounded_residual_block_count_proved": false,
+      "status": "logarithmic-pair-depth-leaves-growing-shared-label-frame"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "separate_disjoint_state_factorization_from_pgm_factorization",
+      "resolved": true,
+      "resolution": "Equation (2) exposes the exact shared-label covariance term."
+    },
+    {
+      "obligation": "test_pair_local_pgm_as_a_branch_compiler",
+      "resolved": true,
+      "resolution": "Natural S3/S4 and selected M=15 S5 controls show nonzero covariance, invalid diagonal effects, and a strict success gap."
+    },
+    {
+      "obligation": "compile_covariance_aware_shared_label_polar",
+      "resolved": false,
+      "resolution": "The frame inverse square root remains a joint operation over all source blocks sharing the hidden involution."
+    },
+    {
+      "obligation": "decode_hidden_involution_without_factorial_search",
+      "resolved": false,
+      "resolution": "No polynomial coherent output map is constructed."
+    }
+  ],
+  "adversarial_audit": [
+    {
+      "challenge": "Disjoint carrier projectors imply independent hidden labels.",
+      "survives": false,
+      "response": "The sources are independent, but every factor carries the same h."
+    },
+    {
+      "challenge": "Tensor-product conditioned states imply a tensor-product PGM.",
+      "survives": false,
+      "response": "The hypothesis average contains the nonzero covariance in equation (2)."
+    },
+    {
+      "challenge": "Multiplying same-label local PGM effects gives a POVM.",
+      "survives": false,
+      "response": "The scaled diagonal effect sum fails completeness and can exceed identity."
+    },
+    {
+      "challenge": "Finite nonfactorization proves every global compiler is hard.",
+      "survives": false,
+      "response": "Only the naive pair-local architecture is falsified; a covariant representation-specific polar remains open."
+    }
+  ],
+  "primary_literature": [
+    {
+      "paper_id": "quek-rebentrost-pgm-polar-2021",
+      "title": "Fast algorithm for quantum polar decomposition, pretty-good measurements, and the Procrustes problem",
+      "url": "https://arxiv.org/abs/2106.07634",
+      "use": "Generic pure-state PGM/polar implementation benchmark; its controlled state-preparation and condition assumptions do not supply this mixed shared-label branch polar.",
+      "external_theorem_not_reproved_here": true
+    }
+  ],
+  "headline_metrics": {
+    "shared_hidden_label_covariance_identity_theorem_count": 1,
+    "naive_pair_local_branch_pgm_compiler_no_go_count": 1,
+    "natural_nonfactorization_control_count": 2,
+    "growing_hypothesis_nonfactorization_control_count": 2,
+    "maximum_control_hidden_involution_count": 15,
+    "s3_natural_global_branch_pgm_bayes_success": 0.765068675907125,
+    "s3_natural_pair_local_map_bayes_success": 0.6296296296296294,
+    "s3_natural_global_pair_local_success_gap": 0.13543904627749553,
+    "s4_natural_global_branch_pgm_bayes_success": 0.8880945700219723,
+    "s4_natural_pair_local_map_bayes_success": 0.8796296296296289,
+    "s4_natural_global_pair_local_success_gap": 0.008464940392343542,
+    "s5_standard_global_pair_local_success_gap": 0.19202344989963066,
+    "s5_standard_weighted_frame_covariance_fraction": 0.38558526689172046,
+    "s5_standard_scaled_diagonal_completeness_residual": 1.092592592592593,
+    "covariance_aware_branch_pgm_compiler_count": 0,
+    "hidden_involution_decoder_count": 0,
+    "classical_separation_theorem_count": 0,
+    "new_quantum_algorithm_count": 0
+  },
+  "claim_gate": {
+    "disjoint_conditioned_state_factorization_proved": true,
+    "shared_hidden_label_covariance_identity_proved": true,
+    "naive_pair_local_branch_pgm_compiler_falsified": true,
+    "scaled_same_label_product_effects_form_povm": false,
+    "pair_local_pgm_equals_global_branch_pgm": false,
+    "covariance_aware_branch_pgm_compiled": false,
+    "hidden_involution_decoder_compiled": false,
+    "classical_separation_proved": false,
+    "speedup_claim_allowed": false,
+    "reason": "Disjoint carrier conditioning preserves information-theoretic success but leaves a shared-hidden-label covariance in the PGM frame. The naive local compiler is false and no covariance-aware polar or decoder is yet compiled."
+  },
+  "status": "naive-pair-local-pgm-falsified-covariance-aware-polar-open",
+  "summary": "Proved the exact shared-hidden-label covariance decomposition for disjoint carrier branches and falsified naive pair-local PGM factorization on natural S3/S4 and M=15 S5 controls. The surviving target is a covariance-aware covariant multiplicity polar.",
+  "falsifiers_triggered": [
+    "Disjoint carrier supports do not make the hidden labels independent.",
+    "The branch-average frame does not generally tensor-factor across disjoint pairs.",
+    "Scaled same-label products of pair-PGM effects need not form a POVM.",
+    "Independent pair-PGM measurement plus MAP decoding is strictly weaker on the exact controls.",
+    "The finite obstruction rules out only the naive local compiler, not every structured global polar."
+  ]
+}

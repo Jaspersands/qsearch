@@ -60,11 +60,83 @@ from self_dual_wreath_positive_naimark_access_equivalence_boundary import (
 from self_dual_wreath_hierarchical_endpoint_schur_algebra_boundary import (
     run_hierarchical_endpoint_schur_algebra_boundary,
 )
+from self_dual_wreath_affine_flag_aggregate_schur_query_boundary import (
+    run_affine_flag_aggregate_schur_query_boundary,
+)
+from self_dual_wreath_affine_node_frame_response_boundary import (
+    run_affine_node_frame_response_boundary,
+)
+from self_dual_wreath_scale_free_endpoint_graph_transfer_boundary import (
+    run_scale_free_endpoint_graph_transfer_boundary,
+)
+from self_dual_wreath_cayley_endpoint_gauge_compiler import (
+    run_cayley_endpoint_gauge_compiler,
+)
+from self_dual_wreath_affine_star_cayley_compiler import (
+    run_affine_star_cayley_compiler,
+)
+from self_dual_wreath_pair_carrier_label_contextuality import (
+    run_pair_carrier_label_contextuality,
+)
+from self_dual_wreath_occupied_carrier_octahedral_boundary import (
+    run_occupied_carrier_octahedral_boundary,
+)
+from self_dual_wreath_plancherel_carrier_contextuality import (
+    run_plancherel_carrier_contextuality,
+)
+from self_dual_wreath_plancherel_carrier_nonidentity_tail import (
+    run_plancherel_carrier_nonidentity_tail,
+)
+from self_dual_wreath_plancherel_carrier_near_derangement_reduction import (
+    run_plancherel_carrier_near_derangement_reduction,
+)
+from self_dual_wreath_plancherel_carrier_asymptotic_closure import (
+    run_plancherel_carrier_asymptotic_closure,
+)
+from self_dual_wreath_plancherel_carrier_racah_access_boundary import (
+    run_plancherel_carrier_racah_access_boundary,
+)
+from self_dual_wreath_carrier_noncentral_readout_boundary import (
+    run_carrier_noncentral_readout_boundary,
+)
+from self_dual_wreath_carrier_conditioned_pgm_boundary import (
+    run_carrier_conditioned_pgm_boundary,
+)
+from self_dual_wreath_carrier_holevo_budget_theorem import (
+    run_carrier_holevo_budget_theorem,
+)
+from self_dual_wreath_carrier_branch_pgm_success_certificate import (
+    run_carrier_branch_pgm_success_certificate,
+)
+from self_dual_wreath_disjoint_pair_branch_pgm_compiler_boundary import (
+    run_disjoint_pair_branch_pgm_compiler_boundary,
+)
+from self_dual_wreath_disjoint_pair_covariance_polar_reduction import (
+    run_disjoint_pair_covariance_polar_reduction,
+)
+from self_dual_wreath_dimensionless_pgm_truncation_bridge import (
+    run_dimensionless_pgm_truncation_bridge,
+)
+from self_dual_wreath_local_block_metric_normalization_no_go import (
+    run_local_block_metric_normalization_no_go,
+)
+from coset_hidden_involution_multiplicity_twirl_projection import (
+    run_multiplicity_twirl_projection,
+)
+from coset_hidden_involution_multiplicity_fiber_trace import (
+    run_multiplicity_fiber_trace,
+)
+from coset_hidden_involution_natural_support_six_mass_audit import (
+    run_natural_support_six_mass_audit,
+)
 from symmetric_character import kronecker_coefficient
 
 
 COSET_RECOUPLING_CAPABILITY_PATH = Path(
     "research/representation/coset_recoupling_capability_ledger.json"
+)
+HIGH_MASS_SUPPORT_SCAN_PATH = Path(
+    "research/representation/coset_hidden_involution_high_mass_support_scan.json"
 )
 DEFAULT_EXPERIMENT_ID = "EXP-COSET-RECOUPLING-CAPABILITY-LEDGER"
 DEFAULT_CANDIDATE_ID = "CODE-COSET-COLLECTIVE"
@@ -433,6 +505,530 @@ CAPABILITIES = (
         ),
     ),
     RepresentationCapability(
+        id="CAP-SCALE-FREE-ENDPOINT-GRAPH-TRANSFER-BOUNDARY",
+        literature_ids=[
+            "gilyen-su-low-wiebe-qsvt-2018",
+            "project-coset-multiplicity-commutant-search",
+        ],
+        primitive=(
+            "Exact response/short complementarity and scale-free relative graph-CS endpoint normal form"
+        ),
+        proved_scope=(
+            "For compressed inverse responses B_s=X^*F_s^+X and shorts E_s=B_s^-1, the short endpoint and "
+            "minimum-preimage relation endpoint are orthogonal columns of one unitary. Their joint endpoint range is "
+            "the graph of T=sqrt(E_R)E_L^-1/2, invariant under a common child scale. Given a polynomial-normalized "
+            "block encoding of T, bounded graph cosine/sine singular-value transforms conditionally compile a clean "
+            "CS rotation without any lower absolute frame-eigenvalue cutoff."
+        ),
+        availability="proved-scale-free-normal-form-relative-transfer-oracle-and-gauge-open",
+        uniform_polynomial_gate_complexity_proved=False,
+        resolves_internal_sn_kronecker_basis=False,
+        handles_overlapping_k_copy_associators=False,
+        supplies_hidden_involution_decoder=False,
+        classical_comparison=(
+            "The endpoint identities and finite affine controls are classically checkable. The conditional quantum "
+            "compiler has no advantage claim until a natural representation-specific T oracle, decoder, and classical "
+            "separation are proved."
+        ),
+        scope_limit=(
+            "The current affine-frame LCU and GPE support pair-polars do not supply the positive relative transfer. "
+            "Identical support/polar data can yield constant-separated graph endpoints. Noncommuting graph and "
+            "positive-root columns also differ by an input gauge whose all-depth propagation is open."
+        ),
+    ),
+    RepresentationCapability(
+        id="CAP-CAYLEY-ENDPOINT-GAUGE-COMPILER",
+        literature_ids=[
+            "gilyen-su-low-wiebe-qsvt-2018",
+            "project-coset-multiplicity-commutant-search",
+        ],
+        primitive=(
+            "Scale-free Hermitian Cayley endpoint and recursive child-gauge compiler"
+        ),
+        proved_scope=(
+            "The canonical signed binary effect D=M^-1/2(E_L-E_R)M^-1/2 is a Hermitian contraction. "
+            "Its QSVT Naimark roots reproduce the exact positive-root endpoint effects and differ only by "
+            "child-side unitaries. Matched child gauges telescope exactly through a recursive tree. Common "
+            "short scale cancels, while an unmatched root input gauge provably changes the POVM."
+        ),
+        availability="proved-cayley-normal-form-child-gauges-closed-normalized-oracle-and-root-anchor-open",
+        uniform_polynomial_gate_complexity_proved=False,
+        resolves_internal_sn_kronecker_basis=False,
+        handles_overlapping_k_copy_associators=False,
+        supplies_hidden_involution_decoder=False,
+        classical_comparison=(
+            "The exact identities and finite affine controls are classically checkable. The conditional QSVT "
+            "compiler has no separation claim until the natural normalized Cayley observable, root anchor, and "
+            "decoder are implemented."
+        ),
+        scope_limit=(
+            "This removes the relative-transfer polar and internal gauge accumulation from the local compiler "
+            "target. It does not construct the affine Schur/Racah block encoding of D, anchor the root coordinate "
+            "map, prove all-depth native mass, or compile the physical PGM."
+        ),
+    ),
+    RepresentationCapability(
+        id="CAP-LABEL-RESOLVED-AFFINE-STAR-CAYLEY-COMPILER",
+        literature_ids=[
+            "gilyen-su-low-wiebe-qsvt-2018",
+            "project-coset-multiplicity-commutant-search",
+        ],
+        primitive=(
+            "Normalization-one Walsh compiler for label-resolved affine-star Cayley endpoints"
+        ),
+        proved_scope=(
+            "For a balanced power-of-two affine star with coherently supplied scalar carrier overlap gamma, "
+            "canonical D has one uniform-address eigenvalue and one orthogonal eigenvalue. Walsh transforms, "
+            "one zero-address predicate, and label-computed rotations implement D and its binary Naimark column "
+            "at normalization one. The formula covers all eight current physical W6 channels. A shared commuting "
+            "operator Gamma has an exact functional extension."
+        ),
+        availability="proved-label-resolved-scalar-stars-natural-labeler-and-matrix-fibers-open",
+        uniform_polynomial_gate_complexity_proved=False,
+        resolves_internal_sn_kronecker_basis=False,
+        handles_overlapping_k_copy_associators=False,
+        supplies_hidden_involution_decoder=False,
+        classical_comparison=(
+            "The endpoint transform is a scoped quantum circuit primitive, not a separation. Its finite controls "
+            "and formulas are classically computable, and no decoder or classical lower bound is supplied."
+        ),
+        scope_limit=(
+            "The current stack does not coherently expose the natural all-depth channel/carrier label. Opaque "
+            "operator Gamma access has an Omega(sqrt(width)) uniform polynomial-degree edge, and merged-center or "
+            "noncommuting matrix-valued Racah channels are outside the one-predicate compiler. Root anchoring, "
+            "native-mass propagation, the physical PGM, and a decoder remain open."
+        ),
+    ),
+    RepresentationCapability(
+        id="CAP-LOCAL-PAIR-CARRIER-LABEL-QUERY",
+        literature_ids=[
+            "bacon-chuang-harrow-schur-2004",
+            "ikenmeyer-subramanian-kronecker-2023",
+            "project-coset-multiplicity-commutant-search",
+        ],
+        primitive=(
+            "Coherent selected-triple pair-carrier label and correlation query"
+        ),
+        proved_scope=(
+            "For one shared-vertex orientation triple, coherent GPE on the seven nonempty membership-pattern "
+            "blocks exports the two carrier irreps beta,p while preserving every opaque multiplicity register. "
+            "Five equality/conjugacy checks and reversible hook arithmetic compute gamma=1/(d_beta d_p) in "
+            "polynomial time."
+        ),
+        availability="proved-local-query-global-contextual-channel-label-open",
+        uniform_polynomial_gate_complexity_proved=True,
+        resolves_internal_sn_kronecker_basis=False,
+        handles_overlapping_k_copy_associators=False,
+        supplies_hidden_involution_decoder=False,
+        classical_comparison=(
+            "This supplies a coherent quantum representation label query, not a task separation. The carrier "
+            "dimensions and finite controls are classically computable once the labels are known."
+        ),
+        scope_limit=(
+            "Different triples regroup overlapping tensor factors. Their sharp coarse isotypic projectors can be "
+            "contextual: an exact S3 control has commutator sqrt(3)/4. The local queries therefore do not provide "
+            "one persistent global channel atom, a multistar Racah resolver, root anchor, PGM, or decoder."
+        ),
+    ),
+    RepresentationCapability(
+        id="CAP-OCCUPIED-OCTAHEDRAL-CARRIER-BOUNDARY",
+        literature_ids=[
+            "project-coset-multiplicity-commutant-search",
+            "project-global-plancherel-partition-collision",
+        ],
+        primitive=(
+            "Exact occupied carrier atom and channel-graph classifier for a growing repeated-source family"
+        ),
+        proved_scope=(
+            "For every n>=5, one stable physical family has commuting occupied support atoms that decompose "
+            "as K_(2,2,2) with multiplicity n-1 plus K_3 with multiplicity (n-1)(n-2), at correlation "
+            "2/[n(n-1)(n-3)]. The unit-correlation octahedral Gram is indefinite although the physical Gram is positive."
+        ),
+        availability="proved-exact-repeated-family-natural-mass-vanishes",
+        uniform_polynomial_gate_complexity_proved=False,
+        resolves_internal_sn_kronecker_basis=False,
+        handles_overlapping_k_copy_associators=False,
+        supplies_hidden_involution_decoder=False,
+        classical_comparison=(
+            "The atomization and graph spectra are exact classical representation calculations. The family repeats "
+            "source partitions and is excluded from the asymptotically full globally distinct natural event."
+        ),
+        scope_limit=(
+            "This refutes universal star/clique inference but proves no collision-free positive-mass contextuality, "
+            "coherent global atom labeler, graph-general Cayley compiler, physical PGM, or decoder."
+        ),
+    ),
+    RepresentationCapability(
+        id="CAP-PLANCHEREL-CARRIER-CONTEXTUALITY-MOMENT",
+        literature_ids=[
+            "project-coset-multiplicity-commutant-search",
+            "project-global-plancherel-partition-collision",
+        ],
+        primitive=(
+            "Exact natural overlapping-carrier contextuality character moment"
+        ),
+        proved_scope=(
+            "For three membership-pattern blocks containing fresh independent Plancherel sources, the annealed "
+            "aggregate squared commutator of the two overlapping full S_n isotypic PVMs is exactly 2(1-kappa_n). "
+            "Here kappa_n is the commuting probability of the normalized character-squared law "
+            "mu_n(g)=(n!)^-2 sum_lambda d_lambda^2 chi_lambda(g)^2. The identity is exact at every n and "
+            "transfers any eventual constant gap to the globally distinct source event."
+        ),
+        availability="proved-exact-character-reduction-asymptotic-gap-and-racah-resolver-open",
+        uniform_polynomial_gate_complexity_proved=False,
+        resolves_internal_sn_kronecker_basis=False,
+        handles_overlapping_k_copy_associators=False,
+        supplies_hidden_involution_decoder=False,
+        classical_comparison=(
+            "The weighted commuting moment is a classical character calculation and finite sampler. It identifies "
+            "joint carrier incompatibility but supplies neither a quantum Racah transform nor a separation."
+        ),
+        scope_limit=(
+            "The centralizer-envelope closure now proves kappa_n tends to zero and the moment tends to two. This "
+            "only rejects persistent sharp label accumulation; a "
+            "structured coherent Racah resolver, endpoint compiler, PGM, and decoder remain open."
+        ),
+    ),
+    RepresentationCapability(
+        id="CAP-PLANCHEREL-CARRIER-HIGH-SUPPORT-TAIL-REDUCTION",
+        literature_ids=[
+            "project-coset-multiplicity-commutant-search",
+            "aggarwal-elboim-maximal-dimension-2026",
+        ],
+        primitive="Exact centralizer cycle index and high-support commuting-tail reduction",
+        proved_scope=(
+            "The product_i C_i wr S_(m_i) cycle index computes the character-squared weighted commuting law exactly "
+            "through n=20. The identity contribution and every moved-support window at most n^delta for fixed "
+            "delta<1 vanish asymptotically by maximal-Plancherel-atom domination."
+        ),
+        availability="proved-exact-cycle-index-and-sublinear-support-elimination-high-support-tail-open",
+        uniform_polynomial_gate_complexity_proved=False,
+        resolves_internal_sn_kronecker_basis=False,
+        handles_overlapping_k_copy_associators=False,
+        supplies_hidden_involution_decoder=False,
+        classical_comparison=(
+            "This is an exact classical representation-theoretic evaluator and asymptotic reduction. It replaces "
+            "Monte Carlo at finite n but neither proves the high-support tail nor constructs a quantum transform."
+        ),
+        scope_limit=(
+            "The mesoscopic/macroscopic class-pair commuting kernel is still unbounded. The class-uniform 7/(4p(n)) "
+            "theorem cannot be transferred without a comparison theorem, and no Racah resolver or decoder follows."
+        ),
+    ),
+    RepresentationCapability(
+        id="CAP-PLANCHEREL-CARRIER-NEAR-DERANGEMENT-REDUCTION",
+        literature_ids=[
+            "project-coset-multiplicity-commutant-search",
+            "aggarwal-elboim-maximal-dimension-2026",
+        ],
+        primitive="Support-invariance reduction to logarithmic-fixed-point class pairs",
+        proved_scope=(
+            "A uniform invariant-subset coefficient bound eliminates every residual class pair except those in "
+            "which both permutations have O(log n) fixed points. The fixed-point-free involution self-kernel has "
+            "an exact alternating-four-cycle formula and decays as exp(-Omega(n log n))."
+        ),
+        availability="proved-logarithmic-fixed-point-reduction-uniform-near-derangement-bound-open",
+        uniform_polynomial_gate_complexity_proved=False,
+        resolves_internal_sn_kronecker_basis=False,
+        handles_overlapping_k_copy_associators=False,
+        supplies_hidden_involution_decoder=False,
+        classical_comparison=(
+            "This is a classical asymptotic class-kernel reduction. Exact scans through n=24 identify perfect "
+            "matchings as the finite extremizer but do not establish an all-n comparison."
+        ),
+        scope_limit=(
+            "Pairs of mixed near-derangement classes with O(log n) fixed points remain uncontrolled. Neither the "
+            "weighted commuting limit, a contextuality gap, a Racah resolver, nor a decoder follows."
+        ),
+    ),
+    RepresentationCapability(
+        id="CAP-PLANCHEREL-CARRIER-ASYMPTOTIC-CLOSURE",
+        literature_ids=[
+            "project-coset-multiplicity-commutant-search",
+            "aggarwal-elboim-maximal-dimension-2026",
+            "liebeck-shalev-diameters-finite-simple-groups-2001",
+        ],
+        primitive="All-n Plancherel carrier commuting-tail and contextuality-gap theorem",
+        proved_scope=(
+            "Fixed-point-free centralizer envelopes, an O(1/n) gap away from the unique even perfect-matching "
+            "class, logarithmic-fixed-point factorial control, and the exact exceptional matching kernel prove "
+            "kappa_n->0. The natural aggregate squared carrier commutator therefore tends to two, including after "
+            "conditioning on the asymptotically full collision-free source event."
+        ),
+        availability="proved-asymptotic-maximal-natural-contextuality-racah-resolver-open",
+        uniform_polynomial_gate_complexity_proved=False,
+        resolves_internal_sn_kronecker_basis=False,
+        handles_overlapping_k_copy_associators=False,
+        supplies_hidden_involution_decoder=False,
+        classical_comparison=(
+            "The closure is a classical representation-theoretic moment theorem. It proves that sharp pair-carrier "
+            "labels are maximally incompatible on average but does not make their basis transition accessible."
+        ),
+        scope_limit=(
+            "No coherent multistar Racah resolver, physical PGM, hidden-involution decoder, query advantage, or "
+            "end-to-end speedup follows from the contextuality gap alone."
+        ),
+    ),
+    RepresentationCapability(
+        id="CAP-PLANCHEREL-CARRIER-RACAH-DISTURBANCE-ACCESS",
+        literature_ids=[
+            "project-coset-multiplicity-commutant-search",
+            "beals-symmetric-qft-1997",
+            "bacon-chuang-harrow-schur-2004",
+        ],
+        primitive="Constant-query overlapping-carrier disturbance experiment on total-irrep Racah blocks",
+        proved_scope=(
+            "The left and right pair carrier PVMs restrict to coordinate projectors related by the Racah unitary "
+            "on each total-irrep multiplicity space. Three known coherent pair-label queries implement a P-Q-P "
+            "return experiment whose failure probability is half the aggregate commutator. The active physical "
+            "Racah-block dimension fraction tends to one under the natural Plancherel law."
+        ),
+        availability="proved-polynomial-disturbance-access-carrier-only-hidden-identity-no-go",
+        uniform_polynomial_gate_complexity_proved=True,
+        resolves_internal_sn_kronecker_basis=False,
+        handles_overlapping_k_copy_associators=False,
+        supplies_hidden_involution_decoder=False,
+        classical_comparison=(
+            "The traced disturbance scalar is already evaluated by the classical character/centralizer engine. "
+            "Moreover every carrier-only branch effect is conjugation-invariant and has identical statistics for "
+            "all hidden involutions of the fixed cycle type."
+        ),
+        scope_limit=(
+            "No covariant noncentral row/orientation outcome, hidden-conditioned signal, physical PGM, classical "
+            "separation, or decoder is supplied. The no-go applies to the carrier-PVM algebra, not all measurements."
+        ),
+    ),
+    RepresentationCapability(
+        id="CAP-CARRIER-NONCENTRAL-ROW-READOUT",
+        literature_ids=[
+            "project-coset-multiplicity-commutant-search",
+            "beals-symmetric-qft-1997",
+            "moore-russell-schulman-symmetric-hsp-2005",
+        ],
+        primitive="Covariantized noncentral Young-row readout after pair-carrier instruments",
+        proved_scope=(
+            "A fixed Young rank-one row effect escapes the invariant carrier algebra. Uniform public "
+            "conjugation with the group element retained makes the instrument covariant without changing "
+            "its information under the uniform hidden prior. Exact natural three-copy S_3/S_4 channels "
+            "localize all hidden information to the row outcome, not the carrier transcript."
+        ),
+        availability="proved-polynomial-readout-finite-signal-robust-advantage-open",
+        uniform_polynomial_gate_complexity_proved=True,
+        resolves_internal_sn_kronecker_basis=False,
+        handles_overlapping_k_copy_associators=False,
+        supplies_hidden_involution_decoder=False,
+        classical_comparison=(
+            "Exact carrier transcripts have zero information. Exhaustive relative group-orbit product bases "
+            "nearly match the only finite default-basis gain, and the finite global PGM dominates every "
+            "tested carrier-row schedule."
+        ),
+        scope_limit=(
+            "No advantage over arbitrary separable POVMs, all-n information gain, source-specific PGM row "
+            "verifier, polynomial outcome decoder, classical separation, or speedup is proved."
+        ),
+    ),
+    RepresentationCapability(
+        id="CAP-CARRIER-CONDITIONED-PGM-REDUCTION",
+        literature_ids=[
+            "project-coset-multiplicity-commutant-search",
+            "bacon-childs-van-dam-pgm-2005",
+            "beals-symmetric-qft-1997",
+        ],
+        primitive="Direct-sum natural PGM reduction after one pair-carrier label",
+        proved_scope=(
+            "A pair-carrier flag has hidden-independent probability and factors the dephased natural PGM "
+            "exactly into source-specific branch PGMs. In Schur form the unresolved inverse is compressed "
+            "from D_nu to c_(nu,alpha) D_nu c_(nu,alpha). Exact natural S_5 controls retain finite collective "
+            "gain and improve average support conditioning."
+        ),
+        availability="proved-reduction-finite-retention-branch-polar-open",
+        uniform_polynomial_gate_complexity_proved=False,
+        resolves_internal_sn_kronecker_basis=False,
+        handles_overlapping_k_copy_associators=False,
+        supplies_hidden_involution_decoder=False,
+        classical_comparison=(
+            "Carrier dephasing obeys Holevo data processing and loses substantial global-PGM information. "
+            "The exact branch PGMs are dense finite controls, not a scalable advantage."
+        ),
+        scope_limit=(
+            "One label does not scalarize the Racah-path multiplicity inverse. No all-n retention theorem, "
+            "coherent branch polar, arbitrary-separable separation, or outcome decoder is supplied."
+        ),
+    ),
+    RepresentationCapability(
+        id="CAP-CARRIER-HOLEVO-BUDGET",
+        literature_ids=[
+            "project-coset-multiplicity-commutant-search",
+            "bacon-childs-van-dam-pgm-2005",
+            "moore-russell-schulman-symmetric-hsp-2005",
+        ],
+        primitive="All-n information budget for adaptive carrier-label pinching hierarchies",
+        proved_scope=(
+            "A carrier pinching with r outcomes loses at most log_2 r Holevo bits, and the bound telescopes "
+            "through noncommuting adaptive rounds. Since pair-carrier labels number at most p(n), a "
+            "q=o(sqrt(n) log n) hierarchy preserves extensive Holevo information at the perfect-matching "
+            "information threshold."
+        ),
+        availability="proved-information-retention-accessible-measurement-open",
+        uniform_polynomial_gate_complexity_proved=False,
+        resolves_internal_sn_kronecker_basis=False,
+        handles_overlapping_k_copy_associators=False,
+        supplies_hidden_involution_decoder=False,
+        classical_comparison=(
+            "The theorem is information-theoretic and compatible with data locking. It neither supplies "
+            "accessible information nor separates quantum and classical computation."
+        ),
+        scope_limit=(
+            "The generic budget does not certify a full linear-depth tree. No anti-locking theorem, branch "
+            "measurement, multiplicity polar, outcome decoder, or classical separation is provided."
+        ),
+    ),
+    RepresentationCapability(
+        id="CAP-CARRIER-BRANCH-PGM-SUCCESS-CERTIFICATE",
+        literature_ids=[
+            "project-coset-multiplicity-commutant-search",
+            "bacon-childs-van-dam-pgm-2005",
+            "montanaro-state-discrimination-2019",
+        ],
+        primitive="Rank-purity/collision success certificate for carrier-flagged branch PGMs",
+        proved_scope=(
+            "For branch support rank r_a, self-purity inflation u_a, and normalized distinct collision "
+            "v_a, the branch PGM succeeds with probability at least 1/[u_a+(M-1)v_a]. The carrier-"
+            "flagged success is at least the reciprocal natural-average denominator. A J-outcome pinch "
+            "loses at most a factor J in optimal discrimination success, and natural pair-carrier outcome "
+            "mass has mean angle dilution at most four for every n. Exact S_5 controls certify a finite "
+            "advantage over product-PGM and separate-Young Bayes baselines."
+        ),
+        availability="proved-disjoint-pair-all-n-accessible-success-compiler-open",
+        uniform_polynomial_gate_complexity_proved=False,
+        resolves_internal_sn_kronecker_basis=False,
+        handles_overlapping_k_copy_associators=False,
+        supplies_hidden_involution_decoder=False,
+        classical_comparison=(
+            "The certificate proves information-theoretic PGM success, not circuit efficiency. Its finite "
+            "baseline advantage has no all-n classical separation."
+        ),
+        scope_limit=(
+            "Natural source factorization closes the collision transfer only for disjoint carrier pairs. "
+            "Overlapping adaptive pinches, coherent branch PGM, output decoder, and classical hardness remain open."
+        ),
+    ),
+    RepresentationCapability(
+        id="CAP-DISJOINT-PAIR-BRANCH-PGM-COMPILER-BOUNDARY",
+        literature_ids=[
+            "project-coset-multiplicity-commutant-search",
+            "montanaro-state-discrimination-2019",
+            "quek-rebentrost-pgm-polar-2021",
+        ],
+        primitive="Shared-hidden-label covariance boundary for disjoint pair-carrier PGMs",
+        proved_scope=(
+            "Disjoint pair branches factor for each fixed hidden involution, but the common hidden label creates "
+            "an exact covariance term in the hypothesis-averaged frame. Natural S_3/S_4 and selected M=15 S_5 "
+            "controls show that independent pair PGMs plus MAP are strictly weaker and that scaled same-label "
+            "product effects fail POVM completeness."
+        ),
+        availability="proved-naive-pair-local-compiler-no-go-covariance-aware-polar-open",
+        uniform_polynomial_gate_complexity_proved=False,
+        resolves_internal_sn_kronecker_basis=False,
+        handles_overlapping_k_copy_associators=False,
+        supplies_hidden_involution_decoder=False,
+        classical_comparison=(
+            "The finite global and local PGM channels are exactly classically diagonalized. The result is a scoped "
+            "compiler obstruction, not a quantum/classical separation."
+        ),
+        scope_limit=(
+            "Only naive pair-local factorization is falsified. A covariance-aware representation-specific polar, "
+            "another structured measurement with the certified success, output decoding, and classical hardness "
+            "remain open."
+        ),
+    ),
+    RepresentationCapability(
+        id="CAP-DISJOINT-PAIR-COVARIANCE-POLAR-REDUCTION",
+        literature_ids=[
+            "project-coset-multiplicity-commutant-search",
+            "bacon-childs-van-dam-pgm-2005",
+            "quek-rebentrost-pgm-polar-2021",
+        ],
+        primitive="Dimensionless covariance-polar reduction for disjoint pair-carrier PGMs",
+        proved_scope=(
+            "Pair-carrier class averages are exactly flat on every active isotypic support, including repeated "
+            "Kronecker multiplicities. For two disjoint pair branches the explicit support ranks cancel from "
+            "the PGM inverse, leaving I+K. The exact natural branch law bounds rank-scaled LCU normalization "
+            "by four in mean and centered two-pair covariance normalization by 25 in mean."
+        ),
+        availability="proved-algebraic-reduction-conditional-access-spectral-edge-open",
+        uniform_polynomial_gate_complexity_proved=False,
+        resolves_internal_sn_kronecker_basis=False,
+        handles_overlapping_k_copy_associators=False,
+        supplies_hidden_involution_decoder=False,
+        classical_comparison=(
+            "Exact finite PGM effects and spectra are classically diagonalized. No asymptotic classical "
+            "separation follows from the dimensionless reduction."
+        ),
+        scope_limit=(
+            "The LCU schema is conditional on coherent matching-class PREPARE and carrier projectors. No "
+            "uniform access compiler, positive spectral-edge theorem, threshold-copy cumulant reduction, "
+            "output isometry, or decoder is supplied."
+        ),
+    ),
+    RepresentationCapability(
+        id="CAP-DIMENSIONLESS-PGM-SPECTRAL-TRUNCATION-BRIDGE",
+        literature_ids=[
+            "project-coset-multiplicity-commutant-search",
+            "montanaro-state-discrimination-2019",
+            "quek-rebentrost-pgm-polar-2021",
+        ],
+        primitive="Success-adaptive spectral truncation for rank-scaled carrier PGM metrics",
+        proved_scope=(
+            "For G=D times any carrier-branch average state, spectral mass below epsilon is at most epsilon. "
+            "Compressing ideal PGM effects to G>=epsilon loses at most 2 sqrt(epsilon) success. The disjoint-"
+            "pair threshold certificate therefore permits constant cutoff at fixed pair depth and inverse-"
+            "polynomial cutoff at logarithmic pair depth without a minimum-positive-eigenvalue theorem."
+        ),
+        availability="proved-minimum-edge-removed-full-threshold-access-open",
+        uniform_polynomial_gate_complexity_proved=False,
+        resolves_internal_sn_kronecker_basis=False,
+        handles_overlapping_k_copy_associators=False,
+        supplies_hidden_involution_decoder=False,
+        classical_comparison=(
+            "The theorem preserves a quantum discrimination certificate but does not identify a decoded "
+            "statistic or compare its computation with classical matching/code-equivalence algorithms."
+        ),
+        scope_limit=(
+            "No poly-normalized block encoding of the full threshold metric, higher-cumulant access, PGM "
+            "output isometry, or hidden-involution decoder is compiled."
+        ),
+    ),
+    RepresentationCapability(
+        id="CAP-LOCAL-BLOCK-THRESHOLD-METRIC-NORMALIZATION-NO-GO",
+        literature_ids=[
+            "project-coset-multiplicity-commutant-search",
+            "bacon-childs-van-dam-pgm-2005",
+            "quek-rebentrost-pgm-polar-2021",
+        ],
+        primitive="Natural-law no-go for local singleton/pair threshold-metric LCU composition",
+        proved_scope=(
+            "The pair-carrier target marginal is exactly the natural weak-Fourier source law. Character-ratio "
+            "concentration therefore controls every source and carrier label, and every tensor product of "
+            "singleton and disjoint-pair rank-scaled LCUs has at least 2^(k/2) normalization on overwhelming "
+            "natural mass at information-threshold width."
+        ),
+        availability="proved-local-composition-no-go-global-shared-label-access-open",
+        uniform_polynomial_gate_complexity_proved=False,
+        resolves_internal_sn_kronecker_basis=False,
+        handles_overlapping_k_copy_associators=False,
+        supplies_hidden_involution_decoder=False,
+        classical_comparison=(
+            "The conclusion is representation-theoretic normalization accounting, not a quantum/classical "
+            "separation. It removes one proposed quantum compiler architecture."
+        ),
+        scope_limit=(
+            "Only independent local PREPARE-SELECT tensor products are excluded. A global shared-hidden-label "
+            "twirl, full commutant/orbit-algebra transform, coherent source aggregation, or nonmultiplicative "
+            "recursive isometry remains open."
+        ),
+    ),
+    RepresentationCapability(
         id="CAP-WEAK-IRREP-PROJECTION",
         literature_ids=["bacon-chuang-harrow-schur-2004", "ikenmeyer-subramanian-kronecker-2023"],
         primitive="Generalized phase estimation and invariant-space projection",
@@ -491,6 +1087,111 @@ CAPABILITIES = (
         scope_limit=(
             "Block encoding alone does not imply efficient eigenbasis resolution. The project now proves the needed "
             "normalized gap only for xi_n=(n-3,2,1) inside xi_n tensor (n-2,2); other sectors remain unaudited."
+        ),
+    ),
+    RepresentationCapability(
+        id="CAP-MULTIPLICITY-TWIRL-PROJECTION-DIAGNOSTIC",
+        literature_ids=[
+            "project-coset-multiplicity-commutant-search",
+            "kimura-ramgoolam-generalized-casimirs-2008",
+        ],
+        primitive="Direct commutant projection of hyperoctahedral orbit representatives",
+        proved_scope=(
+            "K-conjugation twirling equals Hilbert-Schmidt projection onto End_K. Sparse signed-weight "
+            "isotypic extraction and transported-sector averaging reduce arbitrary-bipartition generation "
+            "tests to small copy algebras and match a full K_4 twirl exactly. Eight audited m=7 repeated "
+            "blocks close by support six, including an M_3 block at support five and three nontrivial-beta "
+            "blocks at support four."
+        ),
+        availability="proved-classical-diagnostic-strict-growth-falsified-uniformity-open",
+        uniform_polynomial_gate_complexity_proved=False,
+        resolves_internal_sn_kronecker_basis=False,
+        handles_overlapping_k_copy_associators=False,
+        supplies_hidden_involution_decoder=False,
+        classical_comparison=(
+            "This is explicitly a classical representation-theoretic diagnostic. It improves theorem search "
+            "and falsification efficiency but supplies no quantum/classical separation."
+        ),
+        scope_limit=(
+            "The finite portfolio is selected despite including nontrivial beta and multiplicity three. Uniform "
+            "support-six generation, natural mass, "
+            "inverse-polynomial gaps, coherent isotypic access, source-aware polar normalization, and decoding "
+            "remain open."
+        ),
+    ),
+    RepresentationCapability(
+        id="CAP-MULTIPLICITY-FIBER-PARTIAL-TRACE",
+        literature_ids=[
+            "project-coset-multiplicity-commutant-search",
+            "kimura-ramgoolam-generalized-casimirs-2008",
+        ],
+        primitive="Signed-YJM multiplicity-fiber carrier partial trace",
+        proved_scope=(
+            "Project one b-dimensional signed tableau fiber, propagate a common copy gauge across the "
+            "V_alpha tensor V_beta carrier, transport all equal-weight sign characters, and contract exact "
+            "b-by-b orbit-sum copy matrices. The result matches an explicit K_4 twirl and an independent "
+            "nontrivial-beta S_14 commutant projection."
+        ),
+        availability="proved-exact-classical-fiber-trace-exponential-ambient-open",
+        uniform_polynomial_gate_complexity_proved=False,
+        resolves_internal_sn_kronecker_basis=False,
+        handles_overlapping_k_copy_associators=False,
+        supplies_hidden_involution_decoder=False,
+        classical_comparison=(
+            "This reduces live column width from b dim(W_mu) to b and extends finite counterexample search; "
+            "it remains a classical diagnostic over dim(V_lambda) ambient rows."
+        ),
+        scope_limit=(
+            "No symbolic typical-shape contraction, coherent multiplicity transform, normalized natural-mass "
+            "gap, decoder, or quantum/classical separation follows from the finite exact trace."
+        ),
+    ),
+    RepresentationCapability(
+        id="CAP-HIGH-MASS-S14-SUPPORT-FOUR-SCAN",
+        literature_ids=["project-coset-multiplicity-commutant-search"],
+        primitive="Source-weighted multiplicity-block support and commutant scan",
+        proved_scope=(
+            "The highest-mass previously untested repeated S_14 branch has multiplicity 26 and source "
+            "probability 0.008705. All support-at-most-three orbit sums generate dimension seven, while "
+            "a support-four witness subset has direct commutant nullity one with next singular value 0.223."
+        ),
+        availability="proved-finite-numerical-source-weighted-closure-asymptotics-open",
+        uniform_polynomial_gate_complexity_proved=False,
+        resolves_internal_sn_kronecker_basis=False,
+        handles_overlapping_k_copy_associators=False,
+        supplies_hidden_involution_decoder=False,
+        classical_comparison=(
+            "This is a finite classical falsification result selected by the exact source law. It neither "
+            "beats a classical algorithm nor supplies coherent access to the copy-space separator."
+        ),
+        scope_limit=(
+            "The branch carries less than one percent source mass. Exact symbolic closure, growing-rank "
+            "mass concentration, inverse-polynomial normalized gaps, and decoding remain open."
+        ),
+    ),
+    RepresentationCapability(
+        id="CAP-NATURAL-SUPPORT-SIX-MASS-CENSUS",
+        literature_ids=[
+            "project-coset-multiplicity-commutant-search",
+        ],
+        primitive="Exact source-weighted census of bounded-support multiplicity controls",
+        proved_scope=(
+            "Enumerate all h-even S_14-to-K_7 branching pairs under the exact joint source law. Repeated "
+            "blocks carry 0.9784 source mass. Adding the highest-mass source-ranked support-four control "
+            "raises audited coverage from 3.07e-5 to 0.008736, still below one percent."
+        ),
+        availability="proved-selection-bias-no-go-high-mass-scan-open",
+        uniform_polynomial_gate_complexity_proved=False,
+        resolves_internal_sn_kronecker_basis=False,
+        handles_overlapping_k_copy_associators=False,
+        supplies_hidden_involution_decoder=False,
+        classical_comparison=(
+            "This exact classical census prevents finite low-dimensional examples from being mistaken for "
+            "natural-source evidence; it supplies no separation."
+        ),
+        scope_limit=(
+            "It is one finite rank census. Uniform support-six generation, normalized gaps on typical blocks, "
+            "a matrix-free symbolic transfer, coherent source access, and decoding remain open."
         ),
     ),
     RepresentationCapability(
@@ -794,6 +1495,26 @@ def build_recoupling_capability_report(
     except (json.JSONDecodeError, OSError):
         typical_n9_payload = {}
     typical_n9_metrics = typical_n9_payload.get("headline_metrics", {})
+    try:
+        high_mass_support_payload = (
+            json.loads(HIGH_MASS_SUPPORT_SCAN_PATH.read_text())
+            if HIGH_MASS_SUPPORT_SCAN_PATH.exists()
+            else {}
+        )
+    except (json.JSONDecodeError, OSError):
+        high_mass_support_payload = {}
+    high_mass_support_scan_metrics = high_mass_support_payload.get(
+        "headline_metrics",
+        {},
+    )
+    # Consume saved diagnostics; building this ledger must not launch ambient scans.
+    new_evidence = {}
+    for name in ("source_weighted_support_portfolio", "spectral_label_budget"):
+        path = Path(f"research/representation/coset_hidden_involution_{name}.json")
+        try:
+            new_evidence[name] = json.loads(path.read_text())
+        except (OSError, ValueError):
+            new_evidence[name] = {}
     schur_branch_merger_metrics = (
         run_schur_branch_merger_polar_equivalence().headline_metrics
     )
@@ -823,6 +1544,75 @@ def build_recoupling_capability_report(
     )
     endpoint_schur_algebra_metrics = (
         run_hierarchical_endpoint_schur_algebra_boundary().headline_metrics
+    )
+    affine_flag_aggregate_metrics = (
+        run_affine_flag_aggregate_schur_query_boundary().headline_metrics
+    )
+    affine_node_response_metrics = (
+        run_affine_node_frame_response_boundary().headline_metrics
+    )
+    scale_free_graph_metrics = (
+        run_scale_free_endpoint_graph_transfer_boundary().headline_metrics
+    )
+    cayley_endpoint_metrics = (
+        run_cayley_endpoint_gauge_compiler().headline_metrics
+    )
+    affine_star_cayley_metrics = (
+        run_affine_star_cayley_compiler().headline_metrics
+    )
+    pair_carrier_label_metrics = (
+        run_pair_carrier_label_contextuality().headline_metrics
+    )
+    occupied_octahedral_metrics = (
+        run_occupied_carrier_octahedral_boundary().headline_metrics
+    )
+    plancherel_carrier_contextuality_metrics = (
+        run_plancherel_carrier_contextuality(sample_count=2_000).headline_metrics
+    )
+    plancherel_carrier_tail_metrics = (
+        run_plancherel_carrier_nonidentity_tail().headline_metrics
+    )
+    plancherel_carrier_near_derangement_metrics = (
+        run_plancherel_carrier_near_derangement_reduction().headline_metrics
+    )
+    plancherel_carrier_asymptotic_metrics = (
+        run_plancherel_carrier_asymptotic_closure().headline_metrics
+    )
+    plancherel_carrier_racah_access_metrics = (
+        run_plancherel_carrier_racah_access_boundary().headline_metrics
+    )
+    carrier_noncentral_readout_metrics = (
+        run_carrier_noncentral_readout_boundary().headline_metrics
+    )
+    carrier_conditioned_pgm_metrics = (
+        run_carrier_conditioned_pgm_boundary().headline_metrics
+    )
+    carrier_holevo_budget_metrics = (
+        run_carrier_holevo_budget_theorem().headline_metrics
+    )
+    carrier_branch_pgm_certificate_metrics = (
+        run_carrier_branch_pgm_success_certificate().headline_metrics
+    )
+    disjoint_pair_branch_pgm_compiler_metrics = (
+        run_disjoint_pair_branch_pgm_compiler_boundary().headline_metrics
+    )
+    disjoint_pair_covariance_polar_metrics = (
+        run_disjoint_pair_covariance_polar_reduction().headline_metrics
+    )
+    dimensionless_pgm_truncation_metrics = (
+        run_dimensionless_pgm_truncation_bridge().headline_metrics
+    )
+    local_block_metric_normalization_metrics = (
+        run_local_block_metric_normalization_no_go().headline_metrics
+    )
+    multiplicity_twirl_projection_metrics = (
+        run_multiplicity_twirl_projection().headline_metrics
+    )
+    multiplicity_fiber_trace_metrics = (
+        run_multiplicity_fiber_trace().headline_metrics
+    )
+    natural_support_six_mass_metrics = (
+        run_natural_support_six_mass_audit().headline_metrics
     )
     unresolved = [
         capability
@@ -1235,6 +2025,650 @@ def build_recoupling_capability_report(
             )
             or 0
         ),
+        "reversible_affine_flag_node_labeler_count": int(
+            affine_flag_aggregate_metrics.get(
+                "reversible_affine_flag_node_labeler_theorem_count",
+                0,
+            )
+            or 0
+        ),
+        "nested_psd_schur_short_associativity_count": int(
+            affine_flag_aggregate_metrics.get(
+                "nested_psd_schur_short_associativity_theorem_count",
+                0,
+            )
+            or 0
+        ),
+        "addressed_aggregate_schur_sqrt_q_query_lower_bound_count": int(
+            affine_flag_aggregate_metrics.get(
+                "addressed_local_kernel_aggregate_search_lower_bound_theorem_count",
+                0,
+            )
+            or 0
+        ),
+        "compiled_structured_racah_response_oracle_count": int(
+            affine_flag_aggregate_metrics.get(
+                "compiled_structured_racah_response_oracle_count",
+                0,
+            )
+            or 0
+        ),
+        "actual_affine_node_frame_formula_count": int(
+            affine_node_response_metrics.get(
+                "actual_affine_node_frame_formula_theorem_count",
+                0,
+            )
+            or 0
+        ),
+        "normalization_one_affine_node_frame_block_encoding_count": int(
+            affine_node_response_metrics.get(
+                "normalization_one_affine_node_frame_block_encoding_count",
+                0,
+            )
+            or 0
+        ),
+        "balanced_endpoint_width_scale_cancellation_count": int(
+            affine_node_response_metrics.get(
+                "equal_width_endpoint_scale_cancellation_theorem_count",
+                0,
+            )
+            or 0
+        ),
+        "separate_qsvt_full_sibling_mass_no_go_count": int(
+            affine_node_response_metrics.get(
+                "separate_qsvt_full_sibling_mass_no_go_theorem_count",
+                0,
+            )
+            or 0
+        ),
+        "separate_qsvt_common_fiber_dimension_no_go_count": int(
+            affine_node_response_metrics.get(
+                "separate_qsvt_common_fiber_dimension_no_go_theorem_count",
+                0,
+            )
+            or 0
+        ),
+        "response_short_endpoint_complementarity_count": int(
+            scale_free_graph_metrics.get(
+                "response_short_complementarity_theorem_count",
+                0,
+            )
+            or 0
+        ),
+        "scale_free_relative_graph_normal_form_count": int(
+            scale_free_graph_metrics.get(
+                "relative_graph_cs_normal_form_theorem_count",
+                0,
+            )
+            or 0
+        ),
+        "conditional_relative_transfer_graph_compiler_count": int(
+            scale_free_graph_metrics.get(
+                "conditional_relative_transfer_compiler_theorem_count",
+                0,
+            )
+            or 0
+        ),
+        "compiled_representation_relative_transfer_oracle_count": int(
+            scale_free_graph_metrics.get(
+                "compiled_representation_relative_transfer_oracle_count",
+                0,
+            )
+            or 0
+        ),
+        "canonical_cayley_endpoint_effect_count": int(
+            cayley_endpoint_metrics.get(
+                "cayley_endpoint_effect_theorem_count",
+                0,
+            )
+            or 0
+        ),
+        "recursive_child_gauge_covariance_count": int(
+            cayley_endpoint_metrics.get(
+                "recursive_child_gauge_covariance_theorem_count",
+                0,
+            )
+            or 0
+        ),
+        "root_gauge_anchor_boundary_count": int(
+            cayley_endpoint_metrics.get(
+                "root_gauge_anchor_boundary_theorem_count",
+                0,
+            )
+            or 0
+        ),
+        "conditional_cayley_qsvt_compiler_count": int(
+            cayley_endpoint_metrics.get(
+                "conditional_cayley_qsvt_compiler_count",
+                0,
+            )
+            or 0
+        ),
+        "representation_specific_cayley_oracle_count": int(
+            cayley_endpoint_metrics.get(
+                "representation_specific_cayley_oracle_count",
+                0,
+            )
+            or 0
+        ),
+        "label_resolved_scalar_star_cayley_compiler_count": int(
+            affine_star_cayley_metrics.get(
+                "normalization_one_scalar_star_cayley_compiler_count",
+                0,
+            )
+            or 0
+        ),
+        "label_resolved_scalar_star_naimark_compiler_count": int(
+            affine_star_cayley_metrics.get(
+                "direct_scalar_star_naimark_compiler_count",
+                0,
+            )
+            or 0
+        ),
+        "physical_w6_scalar_star_compiler_coverage_count": int(
+            affine_star_cayley_metrics.get(
+                "physical_w6_compiler_covered_channel_count",
+                0,
+            )
+            or 0
+        ),
+        "opaque_gamma_spectrum_only_degree_lower_bound_count": int(
+            affine_star_cayley_metrics.get(
+                "spectrum_only_qsvt_sqrt_width_degree_lower_bound_count",
+                0,
+            )
+            or 0
+        ),
+        "coherent_local_pair_carrier_label_query_count": int(
+            pair_carrier_label_metrics.get(
+                "coherent_local_pair_carrier_label_query_count",
+                0,
+            )
+            or 0
+        ),
+        "overlapping_pair_label_contextuality_boundary_count": int(
+            pair_carrier_label_metrics.get(
+                "overlapping_label_contextuality_counterexample_count",
+                0,
+            )
+            or 0
+        ),
+        "coherent_global_channel_atom_labeler_count": int(
+            pair_carrier_label_metrics.get(
+                "all_depth_global_channel_atom_labeler_count",
+                0,
+            )
+            or 0
+        ),
+        "occupied_octahedral_channel_formula_theorem_count": int(
+            occupied_octahedral_metrics.get(
+                "all_n_octahedral_channel_formula_theorem_count",
+                0,
+            )
+            or 0
+        ),
+        "occupied_support_commuting_control_count": int(
+            occupied_octahedral_metrics.get(
+                "occupied_support_commuting_control_count",
+                0,
+            )
+            or 0
+        ),
+        "collision_free_positive_mass_contextuality_theorem_count": int(
+            occupied_octahedral_metrics.get(
+                "collision_free_positive_mass_contextuality_theorem_count",
+                0,
+            )
+            or 0
+        ),
+        "natural_carrier_contextuality_character_reduction_theorem_count": int(
+            plancherel_carrier_contextuality_metrics.get(
+                "natural_carrier_contextuality_character_reduction_theorem_count",
+                0,
+            )
+            or 0
+        ),
+        "natural_carrier_contextuality_tail_confidence_lower": float(
+            plancherel_carrier_contextuality_metrics.get(
+                "tail_contextuality_confidence_lower",
+                0.0,
+            )
+            or 0.0
+        ),
+        "asymptotic_constant_carrier_contextuality_theorem_count": int(
+            plancherel_carrier_asymptotic_metrics.get(
+                "asymptotic_constant_contextuality_theorem_count",
+                0,
+            )
+            or 0
+        ),
+        "exact_centralizer_wreath_cycle_index_theorem_count": int(
+            plancherel_carrier_tail_metrics.get(
+                "exact_centralizer_wreath_cycle_index_theorem_count",
+                0,
+            )
+            or 0
+        ),
+        "sublinear_carrier_support_mass_vanishing_theorem_count": int(
+            plancherel_carrier_tail_metrics.get(
+                "sublinear_support_mass_vanishing_theorem_count",
+                0,
+            )
+            or 0
+        ),
+        "mesoscopic_macroscopic_carrier_tail_vanishing_theorem_count": int(
+            plancherel_carrier_tail_metrics.get(
+                "mesoscopic_macroscopic_tail_vanishing_theorem_count",
+                0,
+            )
+            or 0
+        ),
+        "carrier_support_invariance_exponential_bound_theorem_count": int(
+            plancherel_carrier_near_derangement_metrics.get(
+                "support_invariance_exponential_bound_theorem_count",
+                0,
+            )
+            or 0
+        ),
+        "balanced_carrier_support_tail_elimination_theorem_count": int(
+            plancherel_carrier_near_derangement_metrics.get(
+                "balanced_support_commuting_tail_elimination_theorem_count",
+                0,
+            )
+            or 0
+        ),
+        "carrier_logarithmic_fixed_point_reduction_theorem_count": int(
+            plancherel_carrier_near_derangement_metrics.get(
+                "logarithmic_fixed_point_reduction_theorem_count",
+                0,
+            )
+            or 0
+        ),
+        "carrier_near_derangement_uniform_bound_theorem_count": int(
+            plancherel_carrier_near_derangement_metrics.get(
+                "near_derangement_all_n_extremality_theorem_count",
+                0,
+            )
+            or 0
+        ),
+        "carrier_logarithmic_fixed_point_uniform_kernel_theorem_count": int(
+            plancherel_carrier_asymptotic_metrics.get(
+                "logarithmic_fixed_point_uniform_kernel_theorem_count",
+                0,
+            )
+            or 0
+        ),
+        "carrier_weighted_commuting_probability_vanishing_theorem_count": int(
+            plancherel_carrier_asymptotic_metrics.get(
+                "weighted_commuting_probability_vanishing_theorem_count",
+                0,
+            )
+            or 0
+        ),
+        "carrier_minimum_total_irrep_racah_block_theorem_count": int(
+            plancherel_carrier_racah_access_metrics.get(
+                "minimum_total_irrep_racah_block_theorem_count",
+                0,
+            )
+            or 0
+        ),
+        "carrier_constant_query_disturbance_compiler_count": int(
+            plancherel_carrier_racah_access_metrics.get(
+                "constant_query_carrier_disturbance_compiler_count",
+                0,
+            )
+            or 0
+        ),
+        "carrier_asymptotically_full_active_racah_mass_theorem_count": int(
+            plancherel_carrier_racah_access_metrics.get(
+                "asymptotically_full_active_racah_mass_theorem_count",
+                0,
+            )
+            or 0
+        ),
+        "carrier_pvm_invariant_decoder_no_go_theorem_count": int(
+            plancherel_carrier_racah_access_metrics.get(
+                "carrier_pvm_conjugation_invariance_no_go_theorem_count",
+                0,
+            )
+            or 0
+        ),
+        "carrier_transcript_zero_information_theorem_count": int(
+            carrier_noncentral_readout_metrics.get(
+                "carrier_transcript_zero_information_theorem_count",
+                0,
+            )
+            or 0
+        ),
+        "carrier_minimum_covariant_noncentral_readout_compiler_count": int(
+            carrier_noncentral_readout_metrics.get(
+                "minimum_covariant_noncentral_readout_compiler_count",
+                0,
+            )
+            or 0
+        ),
+        "carrier_noncentral_hidden_signal_control_count": int(
+            carrier_noncentral_readout_metrics.get(
+                "physical_hidden_conditioned_signal_control_count",
+                0,
+            )
+            or 0
+        ),
+        "carrier_noncentral_global_pgm_dominance_control_count": int(
+            carrier_noncentral_readout_metrics.get(
+                "finite_global_pgm_dominates_carrier_control_count",
+                0,
+            )
+            or 0
+        ),
+        "carrier_conditioned_pgm_factorization_theorem_count": int(
+            carrier_conditioned_pgm_metrics.get(
+                "exact_carrier_branch_pgm_factorization_theorem_count",
+                0,
+            )
+            or 0
+        ),
+        "carrier_conditioned_finite_collective_gain_control_count": int(
+            carrier_conditioned_pgm_metrics.get(
+                "finite_collective_gain_retained_control_count",
+                0,
+            )
+            or 0
+        ),
+        "carrier_conditioned_pgm_information_retention_fraction": float(
+            carrier_conditioned_pgm_metrics.get(
+                "carrier_conditioned_pgm_information_retention_fraction",
+                0.0,
+            )
+            or 0.0
+        ),
+        "carrier_conditioned_average_condition_reduction_factor": float(
+            carrier_conditioned_pgm_metrics.get(
+                "average_condition_number_reduction_factor",
+                0.0,
+            )
+            or 0.0
+        ),
+        "carrier_single_pinching_holevo_budget_theorem_count": int(
+            carrier_holevo_budget_metrics.get(
+                "single_pinching_holevo_budget_theorem_count",
+                0,
+            )
+            or 0
+        ),
+        "carrier_adaptive_holevo_budget_theorem_count": int(
+            carrier_holevo_budget_metrics.get(
+                "adaptive_carrier_holevo_budget_theorem_count",
+                0,
+            )
+            or 0
+        ),
+        "carrier_shallow_extensive_holevo_retention_theorem_count": int(
+            carrier_holevo_budget_metrics.get(
+                "shallow_hierarchy_extensive_holevo_retention_theorem_count",
+                0,
+            )
+            or 0
+        ),
+        "carrier_branch_pgm_success_certificate_theorem_count": int(
+            carrier_branch_pgm_certificate_metrics.get(
+                "carrier_branch_pgm_holder_certificate_theorem_count",
+                0,
+            )
+            or 0
+        ),
+        "carrier_branch_finite_accessible_success_control_count": int(
+            carrier_branch_pgm_certificate_metrics.get(
+                "finite_certified_collective_success_control_count",
+                0,
+            )
+            or 0
+        ),
+        "carrier_branch_natural_holder_success_lower_bound": float(
+            carrier_branch_pgm_certificate_metrics.get(
+                "natural_holder_success_lower_bound",
+                0.0,
+            )
+            or 0.0
+        ),
+        "carrier_branch_natural_jensen_success_lower_bound": float(
+            carrier_branch_pgm_certificate_metrics.get(
+                "natural_jensen_success_lower_bound",
+                0.0,
+            )
+            or 0.0
+        ),
+        "carrier_branch_effective_frame_inflation": float(
+            carrier_branch_pgm_certificate_metrics.get(
+                "effective_carrier_frame_inflation",
+                0.0,
+            )
+            or 0.0
+        ),
+        "carrier_branch_operational_anti_locking_theorem_count": int(
+            carrier_branch_pgm_certificate_metrics.get(
+                "all_n_operational_pinching_anti_locking_theorem_count",
+                0,
+            )
+            or 0
+        ),
+        "carrier_branch_natural_angle_first_moment_theorem_count": int(
+            carrier_branch_pgm_certificate_metrics.get(
+                "all_n_natural_outcome_angle_first_moment_theorem_count",
+                0,
+            )
+            or 0
+        ),
+        "carrier_branch_natural_average_self_purity_theorem_count": int(
+            carrier_branch_pgm_certificate_metrics.get(
+                "all_n_natural_average_self_purity_theorem_count",
+                0,
+            )
+            or 0
+        ),
+        "disjoint_pair_branch_pgm_shared_label_covariance_theorem_count": int(
+            disjoint_pair_branch_pgm_compiler_metrics.get(
+                "shared_hidden_label_covariance_identity_theorem_count",
+                0,
+            )
+            or 0
+        ),
+        "disjoint_pair_branch_pgm_naive_local_compiler_no_go_count": int(
+            disjoint_pair_branch_pgm_compiler_metrics.get(
+                "naive_pair_local_branch_pgm_compiler_no_go_count",
+                0,
+            )
+            or 0
+        ),
+        "disjoint_pair_branch_pgm_covariance_aware_compiler_count": int(
+            disjoint_pair_branch_pgm_compiler_metrics.get(
+                "covariance_aware_branch_pgm_compiler_count",
+                0,
+            )
+            or 0
+        ),
+        "disjoint_pair_covariance_dimensionless_frame_theorem_count": int(
+            disjoint_pair_covariance_polar_metrics.get(
+                "dimensionless_covariance_frame_reduction_theorem_count",
+                0,
+            )
+            or 0
+        ),
+        "disjoint_pair_covariance_natural_lcu_mean_bound_theorem_count": int(
+            disjoint_pair_covariance_polar_metrics.get(
+                "all_n_natural_rank_scaled_lcu_mean_bound_theorem_count",
+                0,
+            )
+            or 0
+        ),
+        "disjoint_pair_covariance_public_block_encoding_compiler_count": int(
+            disjoint_pair_covariance_polar_metrics.get(
+                "uniform_public_covariance_block_encoding_compiler_count",
+                0,
+            )
+            or 0
+        ),
+        "disjoint_pair_covariance_positive_edge_theorem_count": int(
+            disjoint_pair_covariance_polar_metrics.get(
+                "inverse_square_root_spectral_gap_theorem_count",
+                0,
+            )
+            or 0
+        ),
+        "dimensionless_pgm_low_spectral_mass_theorem_count": int(
+            dimensionless_pgm_truncation_metrics.get(
+                "dimensionless_low_spectral_mass_theorem_count",
+                0,
+            )
+            or 0
+        ),
+        "dimensionless_pgm_log_depth_polynomial_cutoff_theorem_count": int(
+            dimensionless_pgm_truncation_metrics.get(
+                "logarithmic_pair_depth_inverse_polynomial_cutoff_theorem_count",
+                0,
+            )
+            or 0
+        ),
+        "full_threshold_rank_scaled_metric_block_encoding_compiler_count": int(
+            dimensionless_pgm_truncation_metrics.get(
+                "full_threshold_metric_block_encoding_compiler_count",
+                0,
+            )
+            or 0
+        ),
+        "pair_carrier_exact_natural_marginal_theorem_count": int(
+            local_block_metric_normalization_metrics.get(
+                "pair_carrier_exact_natural_marginal_theorem_count",
+                0,
+            )
+            or 0
+        ),
+        "local_threshold_metric_product_normalization_no_go_count": int(
+            local_block_metric_normalization_metrics.get(
+                "local_singleton_pair_product_normalization_no_go_count",
+                0,
+            )
+            or 0
+        ),
+        "global_shared_label_metric_access_no_go_count": int(
+            local_block_metric_normalization_metrics.get(
+                "global_shared_label_metric_access_no_go_count",
+                0,
+            )
+            or 0
+        ),
+        "multiplicity_twirl_projection_theorem_count": int(
+            multiplicity_twirl_projection_metrics.get(
+                "hilbert_schmidt_commutant_projection_theorem_count",
+                0,
+            )
+            or 0
+        ),
+        "strict_rank_tracking_support_growth_falsifier_count": int(
+            multiplicity_twirl_projection_metrics.get(
+                "strict_rank_tracking_support_growth_falsifier_count",
+                0,
+            )
+            or 0
+        ),
+        "rank_seven_support_six_full_control_count": int(
+            multiplicity_twirl_projection_metrics.get(
+                "rank_seven_support_six_full_count",
+                0,
+            )
+            or 0
+        ),
+        "multiplicity_three_support_six_full_control_count": int(
+            multiplicity_twirl_projection_metrics.get(
+                "multiplicity_three_support_six_full_count",
+                0,
+            )
+            or 0
+        ),
+        "nontrivial_beta_support_six_full_control_count": int(
+            multiplicity_twirl_projection_metrics.get(
+                "nontrivial_beta_support_six_full_count",
+                0,
+            )
+            or 0
+        ),
+        "exact_signed_sector_full_twirl_validation_count": int(
+            multiplicity_twirl_projection_metrics.get(
+                "exact_signed_sector_full_twirl_validation_count",
+                0,
+            )
+            or 0
+        ),
+        "uniform_support_six_generation_theorem_count": int(
+            multiplicity_twirl_projection_metrics.get(
+                "universal_support_six_generation_theorem_count",
+                0,
+            )
+            or 0
+        ),
+        "multiplicity_fiber_partial_trace_theorem_count": int(
+            multiplicity_fiber_trace_metrics.get(
+                "direct_root_multiplicity_fiber_projection_theorem_count",
+                0,
+            )
+            or 0
+        ),
+        "multiplicity_fiber_full_twirl_validation_count": int(
+            multiplicity_fiber_trace_metrics.get(
+                "carrier_partial_trace_full_twirl_validation_count",
+                0,
+            )
+            or 0
+        ),
+        "polynomial_typical_fiber_compression_theorem_count": int(
+            multiplicity_fiber_trace_metrics.get(
+                "polynomial_typical_ambient_compression_theorem_count",
+                0,
+            )
+            or 0
+        ),
+        "high_mass_s14_support_four_closure_count": int(
+            high_mass_support_scan_metrics.get(
+                "support_four_full_copy_algebra_certificate_count",
+                0,
+            )
+            or 0
+        ),
+        "high_mass_s14_target_natural_mass_probability": float(
+            high_mass_support_scan_metrics.get(
+                "target_natural_mass_probability",
+                0.0,
+            )
+            or 0.0
+        ),
+        "high_mass_s14_direct_commutant_nullity": int(
+            high_mass_support_scan_metrics.get(
+                "support_four_direct_commutant_nullity",
+                0,
+            )
+            or 0
+        ),
+        "support_six_audited_natural_mass_probability": float(
+            natural_support_six_mass_metrics.get(
+                "audited_rank_natural_mass_probability",
+                0.0,
+            )
+            or 0.0
+        ),
+        "repeated_block_natural_mass_probability": float(
+            natural_support_six_mass_metrics.get(
+                "repeated_natural_mass_probability",
+                0.0,
+            )
+            or 0.0
+        ),
+        "typical_support_six_gapped_commutant_theorem_count": int(
+            natural_support_six_mass_metrics.get(
+                "inverse_polynomial_gap_on_natural_mass_theorem_count",
+                0,
+            )
+            or 0
+        ),
         "recursive_shorted_metric_scale_inheritance_theorem_count": int(
             recursive_normalization_metrics.get(
                 "shorted_metric_scale_inheritance_theorem_count",
@@ -1425,6 +2859,14 @@ def build_recoupling_capability_report(
                     "The theorem charges one q-wide normalized analysis. An absolute inverse-polynomial cutoff on S "
                     "lies at scale 1/(q poly(n)) in G/q and can still be preserved by a tightly normalized "
                     "hierarchical or direct structured implementation."
+                ),
+            },
+            {
+                "from": "normalization-one support projectors and GPE pair polar transports",
+                "invalid_to": "the positive scale-free relative endpoint transfer",
+                "reason": (
+                    "Full-support metric pairs can have identical support and support-polar data while their relative "
+                    "transfers T=sqrt(E_R)E_L^-1/2 and endpoint graph projectors remain constant separated."
                 ),
             },
             {
@@ -1628,6 +3070,507 @@ def build_recoupling_capability_report(
                 )
             ),
             "full_endpoint_algebra_dimension_is_circuit_lower_bound": False,
+            "reversible_affine_flag_node_labeler_compiled": bool(
+                affine_flag_aggregate_metrics.get(
+                    "reversible_affine_flag_node_labeler_theorem_count",
+                    0,
+                )
+            ),
+            "nested_psd_schur_short_associativity_proved": bool(
+                affine_flag_aggregate_metrics.get(
+                    "nested_psd_schur_short_associativity_theorem_count",
+                    0,
+                )
+            ),
+            "affine_flag_labels_determine_aggregate_metric_amplitudes": False,
+            "addressed_local_kernel_queries_compile_aggregate_short_in_polylog_q": False,
+            "addressed_aggregate_schur_sqrt_q_query_lower_bound_proved": bool(
+                affine_flag_aggregate_metrics.get(
+                    "addressed_local_kernel_aggregate_search_lower_bound_theorem_count",
+                    0,
+                )
+            ),
+            "addressed_query_lower_bound_uses_bad_root_conditioning": False,
+            "addressed_query_lower_bound_uses_small_native_mass": False,
+            "actual_affine_node_frame_low_description_formula_proved": bool(
+                affine_node_response_metrics.get(
+                    "actual_affine_node_frame_formula_theorem_count",
+                    0,
+                )
+            ),
+            "actual_affine_node_frame_block_encoding_normalization_one": bool(
+                affine_node_response_metrics.get(
+                    "normalization_one_affine_node_frame_block_encoding_count",
+                    0,
+                )
+            ),
+            "balanced_endpoint_width_scale_cancellation_proved": bool(
+                affine_node_response_metrics.get(
+                    "equal_width_endpoint_scale_cancellation_theorem_count",
+                    0,
+                )
+            ),
+            "normalized_affine_frame_access_equals_response_access": False,
+            "separate_polynomial_qsvt_response_preserves_full_sibling_native_mass": False,
+            "separate_qsvt_is_uniform_common_fiber_response_compiler": False,
+            "separate_qsvt_common_spectral_trim_has_nonvanishing_common_fiber_dimension": False,
+            "parent_common_fiber_native_density_bound_proved": False,
+            "parent_conditional_native_loss_o_one_over_depth_proved": False,
+            "separate_qsvt_uniform_response_architecture_natural_no_go_proved": bool(
+                affine_node_response_metrics.get(
+                    "separate_qsvt_common_fiber_dimension_no_go_theorem_count",
+                    0,
+                )
+            ),
+            "joint_scale_free_generalized_eigenvalue_compiler_proved": False,
+            "response_short_endpoint_complementarity_proved": bool(
+                scale_free_graph_metrics.get(
+                    "response_short_complementarity_theorem_count",
+                    0,
+                )
+            ),
+            "scale_free_relative_graph_cs_normal_form_proved": bool(
+                scale_free_graph_metrics.get(
+                    "relative_graph_cs_normal_form_theorem_count",
+                    0,
+                )
+            ),
+            "common_child_scale_cancels_from_relative_graph_proved": bool(
+                scale_free_graph_metrics.get(
+                    "common_scale_cancellation_theorem_count",
+                    0,
+                )
+            ),
+            "conditional_graph_cs_compiler_given_relative_transfer_proved": bool(
+                scale_free_graph_metrics.get(
+                    "conditional_relative_transfer_compiler_theorem_count",
+                    0,
+                )
+            ),
+            "support_pair_polars_determine_positive_relative_transfer": False,
+            "representation_specific_relative_transfer_oracle_compiled": False,
+            "canonical_cayley_endpoint_effect_proved": bool(
+                cayley_endpoint_metrics.get(
+                    "cayley_endpoint_effect_theorem_count",
+                    0,
+                )
+            ),
+            "conditional_cayley_qsvt_compiler_proved": bool(
+                cayley_endpoint_metrics.get(
+                    "conditional_cayley_qsvt_compiler_count",
+                    0,
+                )
+            ),
+            "recursive_relative_graph_gauge_covariance_proved": bool(
+                cayley_endpoint_metrics.get(
+                    "recursive_child_gauge_covariance_theorem_count",
+                    0,
+                )
+            ),
+            "root_relative_graph_gauge_anchor_compiled": False,
+            "representation_specific_cayley_oracle_compiled": False,
+            "label_resolved_scalar_affine_star_cayley_compiled": bool(
+                affine_star_cayley_metrics.get(
+                    "normalization_one_scalar_star_cayley_compiler_count",
+                    0,
+                )
+            ),
+            "all_current_physical_w6_star_channels_compiler_covered": (
+                int(
+                    affine_star_cayley_metrics.get(
+                        "physical_w6_compiler_covered_channel_count",
+                        0,
+                    )
+                    or 0
+                )
+                == int(
+                    affine_star_cayley_metrics.get(
+                        "physical_w6_channel_count",
+                        -1,
+                    )
+                    or -1
+                )
+            ),
+            "natural_all_depth_scalar_star_channel_labeler_compiled": False,
+            "opaque_operator_gamma_uniform_polylog_qsvt_compiled": False,
+            "noncommuting_matrix_racah_cayley_compiled": False,
+            "selected_triple_pair_carrier_label_query_polynomial": bool(
+                pair_carrier_label_metrics.get(
+                    "coherent_local_pair_carrier_label_query_count",
+                    0,
+                )
+            ),
+            "overlapping_pair_labels_jointly_classical": False,
+            "commuting_occupied_supports_force_clique_channels": False,
+            "occupied_repeated_octahedral_channel_formula_proved": bool(
+                occupied_octahedral_metrics.get(
+                    "all_n_octahedral_channel_formula_theorem_count",
+                    0,
+                )
+            ),
+            "repeated_octahedral_family_has_positive_natural_mass": False,
+            "natural_annealed_overlapping_carrier_contextuality_formula_proved": bool(
+                plancherel_carrier_contextuality_metrics.get(
+                    "natural_carrier_contextuality_character_reduction_theorem_count",
+                    0,
+                )
+            ),
+            "exact_centralizer_wreath_cycle_index_proved": bool(
+                plancherel_carrier_tail_metrics.get(
+                    "exact_centralizer_wreath_cycle_index_theorem_count",
+                    0,
+                )
+            ),
+            "identity_and_sublinear_carrier_support_tail_eliminated": bool(
+                plancherel_carrier_tail_metrics.get(
+                    "identity_tail_vanishing_theorem_count",
+                    0,
+                )
+                and plancherel_carrier_tail_metrics.get(
+                    "sublinear_support_mass_vanishing_theorem_count",
+                    0,
+                )
+            ),
+            "mesoscopic_macroscopic_carrier_commuting_tail_eliminated": bool(
+                plancherel_carrier_asymptotic_metrics.get(
+                    "weighted_commuting_probability_vanishing_theorem_count",
+                    0,
+                )
+            ),
+            "balanced_carrier_support_ranges_eliminated": bool(
+                plancherel_carrier_near_derangement_metrics.get(
+                    "balanced_support_commuting_tail_elimination_theorem_count",
+                    0,
+                )
+            ),
+            "carrier_tail_reduced_to_logarithmic_fixed_point_classes": bool(
+                plancherel_carrier_near_derangement_metrics.get(
+                    "logarithmic_fixed_point_reduction_theorem_count",
+                    0,
+                )
+            ),
+            "logarithmic_fixed_point_carrier_tail_eliminated": bool(
+                plancherel_carrier_asymptotic_metrics.get(
+                    "logarithmic_fixed_point_uniform_kernel_theorem_count",
+                    0,
+                )
+            ),
+            "weighted_commuting_probability_asymptotic_gap_proved": bool(
+                plancherel_carrier_asymptotic_metrics.get(
+                    "weighted_commuting_probability_vanishing_theorem_count",
+                    0,
+                )
+            ),
+            "collision_free_positive_mass_label_contextuality_proved": bool(
+                plancherel_carrier_asymptotic_metrics.get(
+                    "asymptotic_constant_contextuality_theorem_count",
+                    0,
+                )
+            ),
+            "carrier_contextuality_constant_query_disturbance_compiled": bool(
+                plancherel_carrier_racah_access_metrics.get(
+                    "constant_query_carrier_disturbance_compiler_count",
+                    0,
+                )
+            ),
+            "active_carrier_racah_physical_mass_tends_to_one": bool(
+                plancherel_carrier_racah_access_metrics.get(
+                    "asymptotically_full_active_racah_mass_theorem_count",
+                    0,
+                )
+            ),
+            "carrier_pvm_only_hidden_involution_decoder_possible": False,
+            "carrier_noncentral_row_readout_compiled": bool(
+                carrier_noncentral_readout_metrics.get(
+                    "minimum_covariant_noncentral_readout_compiler_count",
+                    0,
+                )
+            ),
+            "carrier_noncentral_hidden_conditioned_signal_exhibited": bool(
+                carrier_noncentral_readout_metrics.get(
+                    "physical_hidden_conditioned_signal_control_count",
+                    0,
+                )
+            ),
+            "carrier_noncentral_robust_product_advantage_proved": False,
+            "carrier_noncentral_scalable_decoder_compiled": False,
+            "carrier_conditioned_pgm_direct_sum_reduction_proved": bool(
+                carrier_conditioned_pgm_metrics.get(
+                    "exact_carrier_branch_pgm_factorization_theorem_count",
+                    0,
+                )
+            ),
+            "carrier_conditioned_finite_collective_gain_retained": bool(
+                carrier_conditioned_pgm_metrics.get(
+                    "finite_collective_gain_retained_control_count",
+                    0,
+                )
+            ),
+            "carrier_conditioning_eliminates_multiplicity_whitening": False,
+            "carrier_conditioned_branch_pgm_compiled": False,
+            "carrier_adaptive_holevo_budget_proved": bool(
+                carrier_holevo_budget_metrics.get(
+                    "adaptive_carrier_holevo_budget_theorem_count",
+                    0,
+                )
+            ),
+            "carrier_shallow_hierarchy_extensive_holevo_retained": bool(
+                carrier_holevo_budget_metrics.get(
+                    "shallow_hierarchy_extensive_holevo_retention_theorem_count",
+                    0,
+                )
+            ),
+            "carrier_hierarchy_accessible_information_retained": False,
+            "carrier_disjoint_pair_accessible_success_retained": bool(
+                carrier_branch_pgm_certificate_metrics.get(
+                    "disjoint_pair_all_n_collision_theorem_count",
+                    0,
+                )
+            ),
+            "carrier_fixed_disjoint_depth_constant_success_proved": bool(
+                carrier_branch_pgm_certificate_metrics.get(
+                    "fixed_depth_constant_success_theorem_count",
+                    0,
+                )
+            ),
+            "carrier_logarithmic_disjoint_depth_inverse_polynomial_success_proved": bool(
+                carrier_branch_pgm_certificate_metrics.get(
+                    "logarithmic_depth_inverse_polynomial_success_theorem_count",
+                    0,
+                )
+            ),
+            "carrier_full_linear_depth_tree_information_certified": False,
+            "carrier_branch_pgm_success_certificate_proved": bool(
+                carrier_branch_pgm_certificate_metrics.get(
+                    "carrier_branch_pgm_holder_certificate_theorem_count",
+                    0,
+                )
+            ),
+            "carrier_branch_finite_accessible_collective_success_certified": bool(
+                carrier_branch_pgm_certificate_metrics.get(
+                    "finite_certified_collective_success_control_count",
+                    0,
+                )
+            ),
+            "carrier_branch_aggregate_frame_inflation_reduction_proved": True,
+            "carrier_branch_operational_anti_locking_proved": bool(
+                carrier_branch_pgm_certificate_metrics.get(
+                    "all_n_operational_pinching_anti_locking_theorem_count",
+                    0,
+                )
+            ),
+            "carrier_branch_natural_outcome_angle_first_moment_proved": bool(
+                carrier_branch_pgm_certificate_metrics.get(
+                    "all_n_natural_outcome_angle_first_moment_theorem_count",
+                    0,
+                )
+            ),
+            "carrier_branch_natural_average_self_purity_control_proved": bool(
+                carrier_branch_pgm_certificate_metrics.get(
+                    "all_n_natural_average_self_purity_theorem_count",
+                    0,
+                )
+            ),
+            "carrier_branch_collision_biased_angle_moment_bounded": False,
+            "carrier_branch_disjoint_pair_collision_biased_angle_moment_bounded": bool(
+                carrier_branch_pgm_certificate_metrics.get(
+                    "collision_biased_angle_moment_theorem_count",
+                    0,
+                )
+            ),
+            "carrier_branch_polynomial_success_retention_proved": False,
+            "carrier_branch_disjoint_pair_polynomial_success_retention_proved": bool(
+                carrier_branch_pgm_certificate_metrics.get(
+                    "polynomial_success_retention_theorem_count",
+                    0,
+                )
+            ),
+            "carrier_branch_all_n_self_purity_control_proved": bool(
+                carrier_branch_pgm_certificate_metrics.get(
+                    "all_n_natural_average_self_purity_theorem_count",
+                    0,
+                )
+            ),
+            "carrier_branch_all_n_collision_control_proved": False,
+            "carrier_branch_disjoint_pair_all_n_collision_control_proved": bool(
+                carrier_branch_pgm_certificate_metrics.get(
+                    "disjoint_pair_all_n_collision_theorem_count",
+                    0,
+                )
+            ),
+            "carrier_branch_overlapping_adaptive_collision_control_proved": False,
+            "disjoint_pair_branch_pgm_shared_label_covariance_proved": bool(
+                disjoint_pair_branch_pgm_compiler_metrics.get(
+                    "shared_hidden_label_covariance_identity_theorem_count",
+                    0,
+                )
+            ),
+            "disjoint_pair_branch_pgm_naive_local_compiler_falsified": bool(
+                disjoint_pair_branch_pgm_compiler_metrics.get(
+                    "naive_pair_local_branch_pgm_compiler_no_go_count",
+                    0,
+                )
+            ),
+            "disjoint_pair_branch_pgm_covariance_aware_compiler_compiled": bool(
+                disjoint_pair_branch_pgm_compiler_metrics.get(
+                    "covariance_aware_branch_pgm_compiler_count",
+                    0,
+                )
+            ),
+            "disjoint_pair_covariance_dimensionless_frame_proved": bool(
+                disjoint_pair_covariance_polar_metrics.get(
+                    "dimensionless_covariance_frame_reduction_theorem_count",
+                    0,
+                )
+            ),
+            "disjoint_pair_covariance_natural_lcu_mean_bound_proved": bool(
+                disjoint_pair_covariance_polar_metrics.get(
+                    "all_n_natural_rank_scaled_lcu_mean_bound_theorem_count",
+                    0,
+                )
+            ),
+            "disjoint_pair_covariance_public_block_encoding_compiled": bool(
+                disjoint_pair_covariance_polar_metrics.get(
+                    "uniform_public_covariance_block_encoding_compiler_count",
+                    0,
+                )
+            ),
+            "disjoint_pair_covariance_positive_spectral_edge_proved": bool(
+                disjoint_pair_covariance_polar_metrics.get(
+                    "inverse_square_root_spectral_gap_theorem_count",
+                    0,
+                )
+            ),
+            "dimensionless_pgm_minimum_positive_edge_requirement_removed": bool(
+                dimensionless_pgm_truncation_metrics.get(
+                    "dimensionless_low_spectral_mass_theorem_count",
+                    0,
+                )
+                and dimensionless_pgm_truncation_metrics.get(
+                    "mixed_state_truncated_pgm_robustness_theorem_count",
+                    0,
+                )
+            ),
+            "dimensionless_pgm_log_depth_polynomial_cutoff_proved": bool(
+                dimensionless_pgm_truncation_metrics.get(
+                    "logarithmic_pair_depth_inverse_polynomial_cutoff_theorem_count",
+                    0,
+                )
+            ),
+            "full_threshold_rank_scaled_metric_block_encoding_compiled": bool(
+                dimensionless_pgm_truncation_metrics.get(
+                    "full_threshold_metric_block_encoding_compiler_count",
+                    0,
+                )
+            ),
+            "pair_carrier_exact_natural_marginal_proved": bool(
+                local_block_metric_normalization_metrics.get(
+                    "pair_carrier_exact_natural_marginal_theorem_count",
+                    0,
+                )
+            ),
+            "local_threshold_metric_product_access_falsified": bool(
+                local_block_metric_normalization_metrics.get(
+                    "local_singleton_pair_product_normalization_no_go_count",
+                    0,
+                )
+            ),
+            "global_shared_label_metric_access_ruled_out": bool(
+                local_block_metric_normalization_metrics.get(
+                    "global_shared_label_metric_access_no_go_count",
+                    0,
+                )
+            ),
+            "multiplicity_twirl_projection_diagnostic_proved": bool(
+                multiplicity_twirl_projection_metrics.get(
+                    "hilbert_schmidt_commutant_projection_theorem_count",
+                    0,
+                )
+            ),
+            "strict_rank_tracking_support_growth_falsified": bool(
+                multiplicity_twirl_projection_metrics.get(
+                    "strict_rank_tracking_support_growth_falsifier_count",
+                    0,
+                )
+            ),
+            "multiplicity_three_support_six_control_verified": bool(
+                multiplicity_twirl_projection_metrics.get(
+                    "multiplicity_three_support_six_full_count",
+                    0,
+                )
+            ),
+            "nontrivial_beta_support_six_controls_verified": bool(
+                multiplicity_twirl_projection_metrics.get(
+                    "nontrivial_beta_support_six_full_count",
+                    0,
+                )
+            ),
+            "signed_sector_projection_matches_full_twirl": bool(
+                multiplicity_twirl_projection_metrics.get(
+                    "exact_signed_sector_full_twirl_validation_count",
+                    0,
+                )
+            ),
+            "finite_support_six_controls_cover_nonnegligible_natural_mass": bool(
+                natural_support_six_mass_metrics.get(
+                    "audited_rank_natural_mass_probability",
+                    0.0,
+                )
+                >= 0.01
+            ),
+            "typical_support_six_inverse_polynomial_gap_proved": bool(
+                natural_support_six_mass_metrics.get(
+                    "inverse_polynomial_gap_on_natural_mass_theorem_count",
+                    0,
+                )
+            ),
+            "uniform_support_six_generation_proved": bool(
+                multiplicity_twirl_projection_metrics.get(
+                    "universal_support_six_generation_theorem_count",
+                    0,
+                )
+            ),
+            "multiplicity_fiber_partial_trace_verified": bool(
+                multiplicity_fiber_trace_metrics.get(
+                    "direct_root_multiplicity_fiber_projection_theorem_count",
+                    0,
+                )
+                and multiplicity_fiber_trace_metrics.get(
+                    "carrier_partial_trace_full_twirl_validation_count",
+                    0,
+                )
+            ),
+            "polynomial_typical_fiber_compression_proved": bool(
+                multiplicity_fiber_trace_metrics.get(
+                    "polynomial_typical_ambient_compression_theorem_count",
+                    0,
+                )
+            ),
+            "high_mass_s14_support_four_closure_verified": bool(
+                high_mass_support_scan_metrics.get(
+                    "support_four_full_copy_algebra_certificate_count",
+                    0,
+                )
+                and int(
+                    high_mass_support_scan_metrics.get(
+                        "support_four_direct_commutant_nullity",
+                        0,
+                    )
+                )
+                == 1
+            ),
+            "source_weighted_portfolio_numerical_closure": bool(
+                new_evidence["source_weighted_support_portfolio"].get("claim_gate", {}).get(
+                    "every_scanned_branch_closes_by_support_four", False)),
+            "complete_fixed_count_gapped_label_route_obstructed": bool(
+                new_evidence["spectral_label_budget"].get("claim_gate", {}).get(
+                    "fixed_count_inverse_polynomial_complete_label_route_obstructed", False)),
+            "spectral_label_packing_is_generic_circuit_lower_bound": False,
+            "high_mass_s14_closure_is_typical_mass_theorem": False,
+            "covariant_noncentral_carrier_decoder_compiled": False,
+            "coherent_global_channel_atom_labeler_compiled": False,
+            "coherent_multistar_label_racah_resolver_compiled": False,
+            "structured_racah_response_oracle_compiled": False,
             "aggregate_short_metric_block_encoding_compiled": False,
             "all_depth_endpoint_native_mass_recurrence_proved": False,
             "natural_cross_orientation_overlap_density_one_proved": True,
@@ -1672,20 +3615,28 @@ def build_recoupling_capability_report(
                 "branches, but the physical-interface detour supplies alpha-one addressed raw cross maps and GPE "
                 "supplies their pair polars. Phase-only global assembly is refuted by holonomy-induced "
                 "indefiniteness. Uniform linear address mixing compiles the exact PSD Gram G/q at sharp alpha=q, "
-                "but the exact natural sibling second moment now proves that every inverse-polynomial G/q spectral "
-                "window retains only o(1) trace-weighted mass. The useful absolute S cutoff lies at "
-                "inverse-factorial scale in G/q. A hierarchical or direct global polar, an outcome-information "
-                "theorem, decoding, and separation remain open."
+                "and the exact affine-node representation average has a table-free normalization-one LCU. Equal "
+                "child width cancels from the abstract endpoint, but separate inverse-polynomial QSVT windows retain "
+                "only o(1) full-sibling native mass and have o(D) rank. Their intersection therefore has o(1) "
+                "relative dimension in the positive-mass final common fiber. No parent-native density transfer is "
+                "proved, so the conditional loss recurrence remains open. The joint endpoint is now reduced further "
+                "to the canonical Hermitian Cayley contraction D=M^-1/2(E_L-E_R)M^-1/2. Its bounded QSVT roots "
+                "reproduce the exact binary effects without recovering the polar of T, and child gauges telescope "
+                "recursively. A representation-specific normalization-one D oracle, physical root coordinate anchor, "
+                "outcome-information theorem, decoding, and separation remain open."
             ),
         },
-        status="canonical-g-over-q-natural-window-falsified-hierarchical-global-polar-open",
+        status="cayley-endpoint-gauge-normal-form-proved-normalized-racah-oracle-open",
         summary=(
             f"Classified {len(CAPABILITIES)} representation primitives and exact finite Kronecker growth through "
             f"n={max(n_values)}. Separate-to-joint Schur dilation now supplies an encoded multiplicity carrier, "
             "the physical interface supplies alpha-one addressed raw cross maps, and GPE supplies direct pair "
-            "polars. Uniform linear assembly gives G/q at sharp alpha=q, but the exact natural sibling second "
-            "moment now falsifies every inverse-polynomial retained G/q window. The remaining metric route is a "
-            "genuinely hierarchical or direct representation-specific global polar."
+            "polars. The actual affine-node average is now block-encoded at normalization one and its common child "
+            "width cancels algebraically, but separate polynomial-resolution QSVT has vanishing full-sibling mass "
+            "and vanishing relative common-fiber dimension. The surviving joint endpoint is exactly a scale-free "
+            "Hermitian Cayley effect; its child gauges telescope, so the preferred target is a normalization-one "
+            "affine Schur/Racah oracle for that effect plus a root coordinate anchor. Parent-native density and the "
+            "complete global polar remain open."
         ),
         falsifiers_triggered=[
             "The S_n QFT is already polynomial and cannot be presented as the missing breakthrough.",
@@ -1696,6 +3647,8 @@ def build_recoupling_capability_report(
             "The companion-only Schur/QFT/CG plus projector stack is branch preserving, but a physical-interface detour does supply raw addressed cross-map entries.",
             "Normalization-one addressed pair polars cannot replace cross metrics globally: nonflat holonomy makes the phase-only block kernel indefinite.",
             "Dense natural support and exact low moments do not rescue the canonical G/q assembly: every inverse-polynomial normalized spectral window retains o(1) natural trace mass.",
+            "Support projectors and GPE pair polars do not determine the positive relative endpoint transfer, even though the joint endpoint itself has an exact common-scale-free graph-CS normal form.",
+            "The relative-transfer polar is unnecessary for the local binary effects once the canonical Cayley contraction is available; child gauges telescope, but an unanchored root gauge changes the POVM.",
             "Diagonal YJM tableau labels retain exact Kronecker multiplicity degeneracy.",
             "An encoded stable shape router does not construct a compressed Clebsch channel isometry.",
             "An encoded left/right relabelling isometry does not construct the state-dependent frame filter or decoder.",

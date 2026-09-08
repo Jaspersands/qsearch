@@ -28,6 +28,22 @@ Rather than optimizing for small-scale demonstrations, toy circuits, or prematur
 
 The central question driving Q-Search is: **Can genuine polynomial or super-polynomial quantum speedups be established for non-abelian hidden subgroup problems, linear code equivalence, or dihedral coset instances without falling to classical dequantization?**
 
+### Current Research Decision
+
+The latest audit rules out one specific target: a single bounded-norm,
+inverse-polynomial-gap operator cannot completely label typical hidden-involution
+multiplicity blocks. The same packing bound applies to any fixed number of
+commuting operators. This is not an HSP or general circuit lower bound.
+The next useful target is an adaptive coarse-label hierarchy or direct
+source-aware transform, not another fitted global separator.
+See [the derivation, assumptions, and attempted refutations](research/SPECTRAL_LABEL_BUDGET.md).
+
+Source-ranked S_14 scans remain **numerical algebra diagnostics**. Reports now
+retain generator matrices and separator coefficients for replay; caches are
+bound to the branch, numerical basis, and contraction source. Failed numerical
+searches remain inconclusive unless independently certified. No decoder or
+new quantum speedup has been established.
+
 ### The Core Problem with Standard Circuit Searches
 1. **Toy Instance Illusions**: Small circuits ($n \le 3$) often show high simulated success rates that merely rediscover trivial parity relations (Bernstein-Vazirani) without scaling.
 2. **Classical Dequantization**: Many heuristic quantum observables can be simulated efficiently by classical Information-Set Decoding (ISD), Weisfeiler-Leman (WL) graph refinements, sparse Fourier sampling, or lattice BDD heuristics.
@@ -35,9 +51,9 @@ The central question driving Q-Search is: **Can genuine polynomial or super-poly
 
 #### The Q-Search Solution: Proof-Gated Defense
 Q-Search enforces a strict **claim-gating policy**:
-- **761 Verified Theorem Modules**: Every hypothesis is codified into an executable verification module with explicit mathematical kill criteria.
-- **1,211 Dequantization Attacks**: Automated classical attack scanners test every quantum state-access model against correlation attacks, derivative spectra, and algebraic invariant learners.
-- **807 Retained Negative Results**: Every falsified claim or classical collision is permanently recorded in the registry (`research/registry/negative_results.json`).
+- **Executable Research Checks**: Modules contain derivations, finite diagnostics, and assumptions. Passing Python tests is not a machine-checked mathematical proof.
+- **Classical Baselines and Access Audits**: Implemented attacks and model checks can falsify proposals; surviving them is not a classical lower bound.
+- **Negative Results**: Scoped obstructions and failed hypotheses are retained in `research/registry/negative_results.json`; record counts are not independent discoveries.
 - **Speedup Claims Blocked**: The registry actively gates `speedup_claim_allowed = False` until a candidate provably defeats all named classical baselines across asymptotic families.
 
 ---
@@ -53,14 +69,14 @@ The repository automatically publishes interactive research telemetry and databa
 | **Frontier Map** | Machine-readable topological map of active research frontiers and kill criteria | [frontier.html](https://jaspersands.github.io/qsearch/frontier.html) |
 | **Negative Results** | Searchable database of 807 retained no-go theorems and dequantization findings | [negative-results.html](https://jaspersands.github.io/qsearch/negative-results.html) |
 | **Proof Debt** | Live ledger of 24 open proof obligations, 1,184 lemmas, and reduction edges | [proof-debt.html](https://jaspersands.github.io/qsearch/proof-debt.html) |
-| **Repository Map** | Interactive codebase architecture explorer and 761-module taxonomy | [repomap.html](https://jaspersands.github.io/qsearch/repomap.html) |
+| **Repository Map** | Interactive codebase architecture explorer and 788-module taxonomy | [repomap.html](https://jaspersands.github.io/qsearch/repomap.html) |
 
 ---
 
 ## Repository Architecture & Codebase Layout
 
 ### Why is the Root Directory Structured with Flat Modules?
-Q-Search contains **761 scientific verification modules**. The codebase organizes modules into domain-specific packages (`core/` and `theorems/`):
+Q-Search contains **788 scientific verification modules**. The codebase organizes modules into domain-specific packages (`core/` and `theorems/`):
 
 ```text
 quantum-algorithm-search/
@@ -71,7 +87,7 @@ quantum-algorithm-search/
 │   ├── dequantization_checks.py   # Automated classical attack matrix scanner
 │   └── mutation_engine.py         # Automated hypothesis mutation generator
 │
-├── theorems/                      # 761 Scientific Theorem Verification modules
+├── theorems/                      # 788 Scientific Theorem Verification modules
 │   ├── dcp_*.py                   # Dihedral Coset Problem (DHSP) & state-native sieves
 │   ├── coset_*.py, cfi_*.py       # Non-abelian coset observables & S_n representation theory
 │   ├── self_dual_wreath_*.py      # Self-dual wreath product representations & polar audits
@@ -97,7 +113,7 @@ quantum-algorithm-search/
 
 **Benefits of this Architecture:**
 1. **Uncluttered Root**: Only `qsearch.py` and configuration files reside at root.
-2. **Zero Packaging Friction**: All 761 workflows execute seamlessly via `python3 qsearch.py <command>`.
+2. **Zero Packaging Friction**: All 788 workflows execute seamlessly via `python3 qsearch.py <command>`.
 3. **Clean Separation of Concerns**: Core platform orchestration (`core/`) is cleanly separated from domain theorem proofs (`theorems/`).
 
 ---
@@ -117,6 +133,8 @@ quantum-algorithm-search/
 - **Core Results & No-Go Theorems**:
   - *PGM Polar Boundary*: Established exact quantum capacity limits on low-register tensor observables.
   - *Master Walsh Flatness No-Go*: Proved that hyperoctahedral adaptive Walsh operators suffer exponential signal cancellation on regular orbits.
+  - *Multiplicity Twirl Falsifier*: Sparse signed-sector projection matches an exact hyperoctahedral twirl and shows selected rank-seven multiplicity-three and nontrivial-beta blocks close by moved-point support at most five, refuting strict support-growth extrapolation while leaving uniformity and coherent access open.
+  - *Source-Weighted High-Mass Scan*: A matrix-free signed-YJM fiber trace reaches the highest-mass previously untested repeated `S_14` branch (`b=26`, source mass `0.008705`). Support three generates only dimension 7, while a support-four subset has direct common-commutant nullity one with next singular value `0.223`. Audited source coverage rises to `0.008736`, still below one percent; exact all-rank closure, gap scaling, coherent access, and decoding remain open.
 
 ### 3. Graph Isomorphisms & Combinatorial Reductions
 - **Objective**: Investigate algebraic and combinatorial invariants beyond strong Fourier sampling.
@@ -183,7 +201,7 @@ python3 -m pytest tests/test_experiment_runner.py
 
 ## Categorized CLI Command Reference
 
-All 761 research workflows are accessible via `python3 qsearch.py <subcommand>`.
+All 788 research workflows are accessible via `python3 qsearch.py <subcommand>`.
 
 ### Core Operating System Commands
 ```bash
@@ -251,6 +269,13 @@ python3 qsearch.py coset-hidden-involution-hecke-generator-exchange-reduction
 python3 qsearch.py coset-hidden-involution-highest-weight-multiplicity-separation
 python3 qsearch.py coset-hidden-involution-pair-matching-charge-hierarchy
 python3 qsearch.py coset-hidden-involution-racah-tensor-inversion-stability
+python3 qsearch.py coset-hidden-involution-multiplicity-twirl-projection
+python3 qsearch.py coset-hidden-involution-multiplicity-fiber-trace
+python3 qsearch.py coset-hidden-involution-high-mass-support-scan
+python3 qsearch.py coset-hidden-involution-source-weighted-support-portfolio
+python3 qsearch.py coset-hidden-involution-spectral-label-budget
+python3 qsearch.py run EXP-COSET-HIDDEN-INVOLUTION-SPECTRAL-LABEL-BUDGET
+python3 qsearch.py coset-hidden-involution-natural-support-six-mass-audit
 python3 qsearch.py cfi-code-reduction
 python3 qsearch.py cfi-structural-decoder
 ```
@@ -311,6 +336,26 @@ python3 qsearch.py self-dual-wreath-recursive-polar-normalization-conservation-b
 python3 qsearch.py self-dual-wreath-affine-gpe-nodelocal-naimark-access-boundary
 python3 qsearch.py self-dual-wreath-positive-naimark-access-equivalence-boundary
 python3 qsearch.py self-dual-wreath-hierarchical-endpoint-schur-algebra-boundary
+python3 qsearch.py self-dual-wreath-affine-flag-aggregate-schur-query-boundary
+python3 qsearch.py self-dual-wreath-affine-node-frame-response-boundary
+python3 qsearch.py self-dual-wreath-scale-free-endpoint-graph-transfer-boundary
+python3 qsearch.py self-dual-wreath-cayley-endpoint-gauge-compiler
+python3 qsearch.py self-dual-wreath-affine-star-cayley-compiler
+python3 qsearch.py self-dual-wreath-pair-carrier-label-contextuality
+python3 qsearch.py self-dual-wreath-occupied-carrier-octahedral-boundary
+python3 qsearch.py self-dual-wreath-plancherel-carrier-contextuality
+python3 qsearch.py self-dual-wreath-plancherel-carrier-nonidentity-tail
+python3 qsearch.py self-dual-wreath-plancherel-carrier-near-derangement-reduction
+python3 qsearch.py self-dual-wreath-plancherel-carrier-asymptotic-closure
+python3 qsearch.py self-dual-wreath-plancherel-carrier-racah-access-boundary
+python3 qsearch.py self-dual-wreath-carrier-noncentral-readout-boundary
+python3 qsearch.py self-dual-wreath-carrier-conditioned-pgm-boundary
+python3 qsearch.py self-dual-wreath-carrier-holevo-budget-theorem
+python3 qsearch.py self-dual-wreath-carrier-branch-pgm-success-certificate
+python3 qsearch.py self-dual-wreath-disjoint-pair-branch-pgm-compiler-boundary
+python3 qsearch.py self-dual-wreath-disjoint-pair-covariance-polar-reduction
+python3 qsearch.py self-dual-wreath-dimensionless-pgm-truncation-bridge
+python3 qsearch.py self-dual-wreath-local-block-metric-normalization-no-go
 ```
 </details>
 

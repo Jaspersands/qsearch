@@ -2,6 +2,29 @@
   {
     "applies_to": [
       "CODE-COSET-COLLECTIVE",
+      "PO-MECHANISM",
+      "PO-COMPLEXITY",
+      "PO-NOGO"
+    ],
+    "claim": "Reversible affine-flag labels and exact Schur-short recursion make arbitrary addressed local PSD kernels aggregatable into the endpoint in polylog(q) quantum queries.",
+    "evidence": {
+      "minimum_endpoint_edge": 0.33333333333333315,
+      "native_retained_mass": 1.0,
+      "nested_schur_short_associativity_proved": true,
+      "query_lower_bound": "Omega(sqrt(q))",
+      "representation_specific_racah_circuit_ruled_out": false,
+      "reversible_affine_labeler_compiled": true,
+      "root_metric_condition_number": 1.0,
+      "speedup_claim_allowed": false
+    },
+    "id": "AFFINE-FLAG-ADDRESSED-LOCAL-KERNELS-NO-POLYLOG-AGGREGATE-SCHUR-COMPILER",
+    "lesson": "Treat affine labeling and response-matrix access as separate primitives. The surviving construction must use representation-specific Racah identities or a direct local Naimark transform, not generic addressed aggregation.",
+    "reason_invalid": "A zero-or-one marked local short produces aggregate metric 1+OR(x) and a constant 1/6 endpoint probability gap while retaining condition number one, edge at least 1/3, and native mass one. BBBV forces Omega(sqrt(q)) addressed queries.",
+    "source": "research/representation/self_dual_wreath_affine_flag_aggregate_schur_query_boundary.json"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
       "PO-DEQUANTIZATION",
       "PO-FALSIFIERS"
     ],
@@ -1406,6 +1429,44 @@
     "lesson": "Affine-geometry incidence structure is not hardness evidence when collisions are AGL(2,q) controls or collapse under standard code baselines.",
     "reason_invalid": "Affine-geometry collisions found so far are affine-linear or canonical controls.",
     "source": "affine_geometry_code_search.py"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "PO-MECHANISM",
+      "PO-COMPLEXITY",
+      "PO-NOGO"
+    ],
+    "claim": "Normalization-one block encodings of the exact affine-node averaged frames can be separately pseudoinverted at inverse-polynomial resolution to give a uniform compiler on the natural balanced common fiber.",
+    "evidence": {
+      "actual_affine_node_frame_formula_proved": true,
+      "average_frame_block_encoding_normalization": 1.0,
+      "balanced_width_scale_cancels": true,
+      "direct_joint_racah_naimark_ruled_out": false,
+      "parent_conditional_native_loss_recurrence_proved": false,
+      "separate_qsvt_natural_mass_preserved": false,
+      "speedup_claim_allowed": false,
+      "tail_full_sibling_native_retained_mass_upper_bound": 5.966968830179406e-38
+    },
+    "id": "AFFINE-NODE-NORMALIZED-FRAME-QSVT-NO-NATURAL-RESPONSE",
+    "lesson": "Use the exact affine-node frame oracle only inside a joint scale-free endpoint or direct Naimark construction. Do not separately invert the normalized child frames with generic QSVT.",
+    "reason_invalid": "For natural final siblings, the exact second-moment/rank theorem makes the full-sibling native mass and rank above every inverse-polynomial eigenvalue of Fbar_s vanish. The final common span has Theta(D) rank on positive source mass, so the common intersection of the two truncated spectral windows has o(1) relative common-fiber dimension. Parent-conditional native mass is not inferred.",
+    "source": "research/representation/self_dual_wreath_affine_node_frame_response_boundary.json"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "carrier contextuality",
+      "nonabelian HSP measurement compilation"
+    ],
+    "claim": "A maximal asymptotic aggregate carrier commutator supplies a quantum algorithm or speedup.",
+    "evidence": {
+      "artifact": "research/representation/self_dual_wreath_plancherel_carrier_asymptotic_closure.json"
+    },
+    "id": "ASYMPTOTIC-CARRIER-CONTEXTUALITY-NOT-QUANTUM-ALGORITHM",
+    "lesson": "Move the research frontier to physical access and decoding rather than further finite character moments.",
+    "reason_invalid": "The theorem supplies no efficient coherent Racah resolver, PGM, hidden-involution decoder, or classical separation.",
+    "source": "EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-CARRIER-ASYMPTOTIC-CLOSURE"
   },
   {
     "applies_to": [
@@ -42730,6 +42791,111 @@
   {
     "applies_to": [
       "CODE-COSET-COLLECTIVE",
+      "dimensionless covariance polar",
+      "QSVT inverse square root"
+    ],
+    "claim": "A constant-natural-mass bounded-normalization block encoding of I+K yields a polynomial inverse square root.",
+    "evidence": {
+      "artifact": "research/representation/self_dual_wreath_disjoint_pair_covariance_polar_reduction.json"
+    },
+    "id": "BOUNDED-COVARIANCE-LCU-NOT-INVERSE-SQRT-GAP",
+    "lesson": "Prove a spectral edge or a robust trim before promoting the covariance access schema to a PGM circuit.",
+    "reason_invalid": "QSVT degree also depends on the minimum retained positive eigenvalue, for which no all-n lower bound is proved.",
+    "source": "EXP-CODE-SELF-DUAL-WREATH-DISJOINT-PAIR-COVARIANCE-POLAR-REDUCTION"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "pair covariance LCU",
+      "threshold-copy composition"
+    ],
+    "claim": "The constant natural expected normalization of one pair can be iterated over information-threshold-many blocks.",
+    "evidence": {
+      "artifact": "research/representation/self_dual_wreath_local_block_metric_normalization_no_go.json"
+    },
+    "id": "BOUNDED-PAIR-LCU-MEAN-NOT-THRESHOLD-COMPOSABLE",
+    "lesson": "Average normalization is useful only at fixed local depth unless a nonmultiplicative global construction is supplied.",
+    "reason_invalid": "The exact pair-carrier marginal obeys the same concentrated small-ratio law as each source, so a typical pair still costs approximately four, or two per source copy.",
+    "source": "EXP-CODE-SELF-DUAL-WREATH-LOCAL-BLOCK-METRIC-NORMALIZATION-NO-GO"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "carrier angle dilution",
+      "finite trend extrapolation"
+    ],
+    "claim": "The maximum carrier angle dilution follows the finite pattern kappa_max=n-1.",
+    "evidence": {
+      "artifact": "research/representation/self_dual_wreath_carrier_branch_pgm_success_certificate.json"
+    },
+    "id": "CARRIER-ANGLE-WORST-SECTOR-N-MINUS-ONE-PATTERN-FALSE",
+    "lesson": "Use natural weighted rank expansion, not worst-sector small-n extrapolation.",
+    "reason_invalid": "The exact S_6 natural pair audit contains a branch with kappa=20>5, despite natural outcome-weighted kappa below two.",
+    "source": "EXP-CODE-SELF-DUAL-WREATH-CARRIER-BRANCH-PGM-SUCCESS-CERTIFICATE"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "carrier branch PGM",
+      "anti-locking"
+    ],
+    "claim": "Distinct-hypothesis overlap alone controls the PGM after carrier compression.",
+    "evidence": {
+      "artifact": "research/representation/self_dual_wreath_carrier_branch_pgm_success_certificate.json"
+    },
+    "id": "CARRIER-BRANCH-OVERLAP-ALONE-NOT-PGM-CERTIFICATE",
+    "lesson": "Track effective rank/purity and cross collisions together.",
+    "reason_invalid": "Compression destroys projector flatness; the exact Holder denominator also contains self-purity inflation u_a.",
+    "source": "EXP-CODE-SELF-DUAL-WREATH-CARRIER-BRANCH-PGM-SUCCESS-CERTIFICATE"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "carrier-only adaptive protocols",
+      "symmetric-group hidden involution"
+    ],
+    "claim": "The maximal carrier disturbance itself identifies which conjugate involution is hidden.",
+    "evidence": {
+      "artifact": "research/representation/self_dual_wreath_plancherel_carrier_racah_access_boundary.json"
+    },
+    "id": "CARRIER-CONTEXTUALITY-NOT-HIDDEN-INVOLUTION-IDENTITY-SIGNAL",
+    "lesson": "Add a covariant noncentral row or orientation outcome before attempting a hidden-involution decoder.",
+    "reason_invalid": "Every carrier-PVM branch effect is invariant under simultaneous conjugation, so its distribution is identical for every involution in the fixed cycle-type conjugacy class.",
+    "source": "EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-CARRIER-RACAH-ACCESS-BOUNDARY"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "carrier hierarchy",
+      "Holevo information"
+    ],
+    "claim": "Preserving Omega(n log n) Holevo information after carrier pinching automatically supplies a useful measurement.",
+    "evidence": {
+      "artifact": "research/representation/self_dual_wreath_carrier_holevo_budget_theorem.json"
+    },
+    "id": "CARRIER-HOLEVO-RETENTION-NOT-ACCESSIBLE-INFORMATION",
+    "lesson": "Treat entropy retention as permission to search for a measurement, not as a decoder.",
+    "reason_invalid": "Holevo information is an upper bound on accessible information and may be locked; no branch anti-locking or measurement theorem is yet proved.",
+    "source": "EXP-CODE-SELF-DUAL-WREATH-CARRIER-HOLEVO-BUDGET-THEOREM"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "carrier contextuality",
+      "adaptive carrier-label protocols"
+    ],
+    "claim": "An adaptive transcript of noncommuting pair-carrier labels contains information about which conjugate involution is hidden.",
+    "evidence": {
+      "artifact": "research/representation/self_dual_wreath_carrier_noncentral_readout_boundary.json"
+    },
+    "id": "CARRIER-TRANSCRIPT-CONTEXTUALITY-NOT-HIDDEN-INFORMATION",
+    "lesson": "Attribute all identity information to an explicit noncentral outcome and audit it separately.",
+    "reason_invalid": "Every transcript effect remains in the simultaneous-conjugation commutant; exact channels and the algebraic invariance theorem give zero mutual information.",
+    "source": "EXP-CODE-SELF-DUAL-WREATH-CARRIER-NONCENTRAL-READOUT-BOUNDARY"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
       "PO-DEQUANTIZATION",
       "PO-FALSIFIERS"
     ],
@@ -44496,6 +44662,36 @@
   },
   {
     "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "class-uniform commutator filtering",
+      "character-squared commuting tail"
+    ],
+    "claim": "The existing class-uniform 7/(4p(n)) theorem directly proves the character-squared weighted commuting tail vanishes.",
+    "evidence": {
+      "artifact": "research/representation/self_dual_wreath_plancherel_carrier_nonidentity_tail.json",
+      "asymptotic_constant_contextuality_theorem_count": 0,
+      "brute_cycle_index_audit_degree_count": 6,
+      "coherent_multistar_racah_resolver_count": 0,
+      "exact_centralizer_wreath_cycle_index_theorem_count": 1,
+      "exact_weighted_commuting_degree_count": 11,
+      "identity_tail_vanishing_theorem_count": 1,
+      "largest_exact_weighted_commuting_degree": 20,
+      "mesoscopic_macroscopic_tail_vanishing_theorem_count": 0,
+      "new_quantum_algorithm_count": 0,
+      "sublinear_support_mass_vanishing_theorem_count": 1,
+      "tail_exact_nonidentity_conditional_commuting_probability": 0.0016794539265616037,
+      "tail_exact_weighted_commuting_probability": 0.02201584387509938,
+      "tail_fraction_captured_by_low_support": 0.9904358485605459,
+      "tail_identity_share_of_commuting_probability": 0.9252700714390595,
+      "tail_low_support_cutoff": 6
+    },
+    "id": "CLASS-UNIFORM-COMMUTATOR-BOUND-NOT-DIRECT-PLANCHEREL-TAIL-PROOF",
+    "lesson": "Prove a measure comparison or bound the exact centralizer kernel under the actual class law.",
+    "reason_invalid": "The character-squared law is nonuniform on conjugacy classes; the class-uniform proof supplies no domination or kernel comparison.",
+    "source": "EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-CARRIER-NONIDENTITY-TAIL"
+  },
+  {
+    "applies_to": [
       "DHS-GOWERS-SIEVE",
       "HYP-LIT-HIDDEN-SHIFT-SIEVE",
       "PO-DEQUANTIZATION",
@@ -44710,6 +44906,21 @@
     "lesson": "Random sampled access recovers the shift at tested budgets.",
     "reason_invalid": "Baseline sweep found 0 low-complexity evaluator recoveries and 14 random-sample recoveries.",
     "source": "classical_baseline_suite.py"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "multiplicity commutant projection",
+      "coherent subduction transform"
+    ],
+    "claim": "Efficient classical projection of orbit representatives into small multiplicity blocks supplies the missing quantum transform.",
+    "evidence": {
+      "artifact": "research/representation/coset_hidden_involution_multiplicity_twirl_projection.json"
+    },
+    "id": "CLASSICAL-COMMUTANT-TWIRL-PROJECTION-NOT-COHERENT-TRANSFORM",
+    "lesson": "Treat compressed generation as a theorem-search tool and keep all coherent access and decoder gates open.",
+    "reason_invalid": "The diagnostic uses classical isotypic eigendecomposition and Reynolds averages, with no reversible source lift, normalization, or coherent multiplicity basis circuit.",
+    "source": "EXP-COSET-HIDDEN-INVOLUTION-MULTIPLICITY-TWIRL-PROJECTION"
   },
   {
     "applies_to": [
@@ -47821,6 +48032,36 @@
     "lesson": "Code-coset rows must survive higher-order coordinate tuple profiles before motivating collective quantum observables.",
     "reason_invalid": "1-coordinate tuple residual weight profiles separate this code pair; a matching coset observable is a classical invariant shadow.",
     "source": "code_tuple_profile_baseline.py"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "global carrier-channel atomization",
+      "affine-star Cayley compilation"
+    ],
+    "claim": "Commuting occupied carrier support projectors and partial-isometry links force a star or positive clique channel.",
+    "evidence": {
+      "artifact": "research/representation/self_dual_wreath_occupied_carrier_octahedral_boundary.json"
+    },
+    "id": "COMMUTING-OCCUPIED-CARRIER-SUPPORTS-NOT-CLIQUE-CHANNELS",
+    "lesson": "Classify the occupied channel graph and its scale separately from support commutation before selecting a Cayley compiler.",
+    "reason_invalid": "The exact repeated-source family atomizes as K_(2,2,2) with multiplicity n-1 plus K_3 with multiplicity (n-1)(n-2); its unit-correlation Gram has eigenvalue -1.",
+    "source": "EXP-CODE-SELF-DUAL-WREATH-OCCUPIED-CARRIER-OCTAHEDRAL-BOUNDARY"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "support-six generation",
+      "multiplicity resolution"
+    ],
+    "claim": "Generating M_b with bounded-support orbit sums yields an efficient coherent multiplicity resolver.",
+    "evidence": {
+      "artifact": "research/representation/coset_hidden_involution_natural_support_six_mass_audit.json"
+    },
+    "id": "COPY-ALGEBRA-GENERATION-NOT-GAPPED-COHERENT-RESOLUTION",
+    "lesson": "Record normalized spectra and coherent access costs before treating copy-algebra generation as algorithmic progress.",
+    "reason_invalid": "Generation gives neither a succinct common separator nor an inverse-polynomial normalized gap, coherent isotypic access, or source-aware implementation.",
+    "source": "EXP-COSET-HIDDEN-INVOLUTION-NATURAL-SUPPORT-SIX-MASS-AUDIT"
   },
   {
     "applies_to": [
@@ -54594,6 +54835,170 @@
   },
   {
     "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "Racah disturbance",
+      "carrier-row decoder search"
+    ],
+    "claim": "Increasing the depth of overlapping carrier-PVM alternation converts larger Racah disturbance into more hidden-involution information.",
+    "evidence": {
+      "artifact": "research/representation/self_dual_wreath_carrier_noncentral_readout_boundary.json"
+    },
+    "id": "DEEPER-CARRIER-ALTERNATION-NOT-DECODER-AMPLIFIER",
+    "lesson": "Optimize a source-specific noncentral frame row, not the amount of carrier disturbance.",
+    "reason_invalid": "On every exact S_3/S_4 control, depth-two and depth-three alternation provide less row mutual information than the best depth-one carrier projection, and the global PGM dominates every schedule.",
+    "source": "EXP-CODE-SELF-DUAL-WREATH-CARRIER-NONCENTRAL-READOUT-BOUNDARY"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "disjoint pair carriers",
+      "branch PGM compiler"
+    ],
+    "claim": "Disjoint carrier projectors make the carrier-branch PGM a composition of pair-local PGMs.",
+    "evidence": {
+      "artifact": "research/representation/self_dual_wreath_disjoint_pair_branch_pgm_compiler_boundary.json"
+    },
+    "id": "DISJOINT-CARRIER-BRANCH-PGM-NOT-PAIR-LOCAL",
+    "lesson": "A compiler must implement or bypass the covariance-aware shared-label frame inverse square root.",
+    "reason_invalid": "The same hidden label appears in every factor, producing a nonzero covariance in the average frame. Exact S3/S4/S5 controls show a global/local success gap.",
+    "source": "EXP-CODE-SELF-DUAL-WREATH-DISJOINT-PAIR-BRANCH-PGM-COMPILER-BOUNDARY"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "overlapping carrier hierarchy",
+      "adaptive Racah measurement"
+    ],
+    "claim": "The disjoint-pair source-factorization bound applies unchanged to overlapping adaptive carrier measurements.",
+    "evidence": {
+      "artifact": "research/representation/self_dual_wreath_carrier_branch_pgm_success_certificate.json"
+    },
+    "id": "DISJOINT-CARRIER-COLLISION-BOUND-NOT-OVERLAPPING-HIERARCHY",
+    "lesson": "Track an explicit overlap graph and prove a new dependency-aware collision inequality before extending the theorem.",
+    "reason_invalid": "Overlapping pinches reuse source registers and destroy the independence that yields the 4^q and 16^q factors.",
+    "source": "EXP-CODE-SELF-DUAL-WREATH-CARRIER-BRANCH-PGM-SUCCESS-CERTIFICATE"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "PGM condition number",
+      "carrier hierarchy"
+    ],
+    "claim": "A reduced finite support condition number supplies a polynomial coherent implementation of the branch PGM.",
+    "evidence": {
+      "artifact": "research/representation/self_dual_wreath_carrier_conditioned_pgm_boundary.json"
+    },
+    "id": "FINITE-CARRIER-BRANCH-CONDITIONING-NOT-PGM-CIRCUIT",
+    "lesson": "Require a typed access model and explicit polar compiler, not only favorable finite spectra.",
+    "reason_invalid": "Conditioning improves the natural average but provides no multiplicity basis, tightly normalized block encoding, inverse implementation, or outcome decoder.",
+    "source": "EXP-CODE-SELF-DUAL-WREATH-CARRIER-CONDITIONED-PGM-BOUNDARY"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "finite PGM success",
+      "carrier hierarchy"
+    ],
+    "claim": "The finite natural Holder success certificate supplies an all-n efficient hidden-involution algorithm.",
+    "evidence": {
+      "artifact": "research/representation/self_dual_wreath_carrier_branch_pgm_success_certificate.json"
+    },
+    "id": "FINITE-CARRIER-BRANCH-SUCCESS-NOT-ALL-N-DECODER",
+    "lesson": "Use the certificate as an all-n proof target, not as a speedup.",
+    "reason_invalid": "The natural-average self-purity term is bounded, but no all-n distinct-collision bound, coherent branch PGM implementation, outcome decoder, or classical separation has been proved.",
+    "source": "EXP-CODE-SELF-DUAL-WREATH-CARRIER-BRANCH-PGM-SUCCESS-CERTIFICATE"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "asymptotic contextuality claims",
+      "Racah compiler lower bounds"
+    ],
+    "claim": "The sampled decrease of kappa_n through n=20 proves asymptotically maximal natural carrier contextuality.",
+    "evidence": {
+      "artifact": "research/representation/self_dual_wreath_plancherel_carrier_contextuality.json"
+    },
+    "id": "FINITE-CARRIER-CONTEXTUALITY-TREND-NOT-ASYMPTOTIC-NO-GO",
+    "lesson": "Prove the weighted commuting-moment asymptotics before using contextuality as a positive-mass compiler obstruction.",
+    "reason_invalid": "The samples have finite Hoeffding intervals but no uniform all-n character or centralizer bound.",
+    "source": "EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-CARRIER-CONTEXTUALITY"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "weighted commuting asymptotics",
+      "natural carrier contextuality"
+    ],
+    "claim": "The low moved-support classes dominating the finite nonidentity commuting tail can sustain its asymptotic mass.",
+    "evidence": {
+      "artifact": "research/representation/self_dual_wreath_plancherel_carrier_nonidentity_tail.json",
+      "asymptotic_constant_contextuality_theorem_count": 0,
+      "brute_cycle_index_audit_degree_count": 6,
+      "coherent_multistar_racah_resolver_count": 0,
+      "exact_centralizer_wreath_cycle_index_theorem_count": 1,
+      "exact_weighted_commuting_degree_count": 11,
+      "identity_tail_vanishing_theorem_count": 1,
+      "largest_exact_weighted_commuting_degree": 20,
+      "mesoscopic_macroscopic_tail_vanishing_theorem_count": 0,
+      "new_quantum_algorithm_count": 0,
+      "sublinear_support_mass_vanishing_theorem_count": 1,
+      "tail_exact_nonidentity_conditional_commuting_probability": 0.0016794539265616037,
+      "tail_exact_weighted_commuting_probability": 0.02201584387509938,
+      "tail_fraction_captured_by_low_support": 0.9904358485605459,
+      "tail_identity_share_of_commuting_probability": 0.9252700714390595,
+      "tail_low_support_cutoff": 6
+    },
+    "id": "FINITE-LOW-SUPPORT-CARRIER-TAIL-NOT-ASYMPTOTIC-MECHANISM",
+    "lesson": "The asymptotic analysis must control two mesoscopic or macroscopic permutations rather than extrapolate finite transpositions.",
+    "reason_invalid": "Every class has character-squared mass at most the maximal Plancherel atom, so even all classes moving at most n^delta points have total mass o(1) for every delta<1.",
+    "source": "EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-CARRIER-NONIDENTITY-TAIL"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "perfect matching commuting kernel",
+      "asymptotic carrier contextuality"
+    ],
+    "claim": "Perfect matchings maximizing the finite near-derangement scans proves all-n extremality.",
+    "evidence": {
+      "artifact": "research/representation/self_dual_wreath_plancherel_carrier_near_derangement_reduction.json"
+    },
+    "id": "FINITE-PERFECT-MATCHING-EXTREMALITY-NOT-ALL-N-CARRIER-THEOREM",
+    "lesson": "Prove an injection or factorial-loss comparison before closing the weighted commuting tail.",
+    "reason_invalid": "The scan ends at n=24 and does not compare arbitrary O(log n)-fixed-point, mixed short-cycle types.",
+    "source": "EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-CARRIER-NEAR-DERANGEMENT-REDUCTION"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "bounded-support commutant program"
+    ],
+    "claim": "Low-support closure on a visible-mass S_14 portfolio proves a uniform typical-source multiplicity transform.",
+    "evidence": {
+      "artifact": "research/representation/coset_hidden_involution_source_weighted_support_portfolio.json"
+    },
+    "id": "FINITE-S14-SOURCE-WEIGHTED-PORTFOLIO-NOT-ASYMPTOTIC-COMMUTANT-THEOREM",
+    "lesson": "Use the portfolio to discover a symbolic invariant or counterexample, not as a speedup claim.",
+    "reason_invalid": "The portfolio is one finite rank, uses branch-specific numerical separators, retains exponential ambient rows, and has no coherent decoder.",
+    "source": "EXP-COSET-HIDDEN-INVOLUTION-SOURCE-WEIGHTED-SUPPORT-PORTFOLIO"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "bounded-support hyperoctahedral commutants",
+      "finite multiplicity-space scans"
+    ],
+    "claim": "The selected rank-seven support-six closure controls are evidence for behavior on a representative natural source family.",
+    "evidence": {
+      "artifact": "research/representation/coset_hidden_involution_natural_support_six_mass_audit.json"
+    },
+    "id": "FINITE-S14-SUPPORT-SIX-CLOSURE-NEGLIGIBLE-NATURAL-MASS",
+    "lesson": "Prioritize source-weighted typical blocks or prove a symbolic all-block transfer; stop accumulating convenient low-dimensional examples.",
+    "reason_invalid": "Their exact joint source mass is only 0.00873605015098.",
+    "source": "EXP-COSET-HIDDEN-INVOLUTION-NATURAL-SUPPORT-SIX-MASS-AUDIT"
+  },
+  {
+    "applies_to": [
       "DHS-GOWERS-SIEVE",
       "HYP-LIT-HIDDEN-SHIFT-SIEVE",
       "PO-DEQUANTIZATION",
@@ -54746,6 +55151,36 @@
     "lesson": "Sample-limited sparse Fourier or derivative learning is enough to demote this family under tested budgets.",
     "reason_invalid": "24 evaluator-sparse row(s) and 19 sample-sparse row(s) identify a dequantization route.",
     "source": "fourier_compressibility_baselines.py"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "carrier contextuality",
+      "multistar Racah access"
+    ],
+    "claim": "The asymptotic carrier contextuality has no operational meaning until every Racah matrix is explicitly compiled.",
+    "evidence": {
+      "artifact": "research/representation/self_dual_wreath_plancherel_carrier_racah_access_boundary.json"
+    },
+    "id": "FULL-RACAH-MATRIX-NOT-REQUIRED-FOR-CARRIER-DISTURBANCE",
+    "lesson": "Separate access to noncommuting PVMs from a coordinate-level basis-transition compiler.",
+    "reason_invalid": "Known coherent left and right carrier-PVM queries implement the exact P-Q-P return experiment with a constant number of calls.",
+    "source": "EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-CARRIER-RACAH-ACCESS-BOUNDARY"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "adaptive carrier tree",
+      "entropy budget"
+    ],
+    "claim": "The log-outcome budget certifies an arbitrary full Theta(n log n)-round carrier coupling tree.",
+    "evidence": {
+      "artifact": "research/representation/self_dual_wreath_carrier_holevo_budget_theorem.json"
+    },
+    "id": "GENERIC-CARRIER-HOLEVO-BUDGET-NOT-FULL-TREE-CERTIFICATE",
+    "lesson": "Use a genuinely shallow hierarchy or prove redundancy of later carrier labels before extending the theorem.",
+    "reason_invalid": "The generic loss bound is subextensive only for o(sqrt(n) log n) rounds; a full tree needs sharper dependent-label or source-specific entropy control.",
+    "source": "EXP-CODE-SELF-DUAL-WREATH-CARRIER-HOLEVO-BUDGET-THEOREM"
   },
   {
     "applies_to": [
@@ -54987,6 +55422,20 @@
     "lesson": "Bounded graphlet/homomorphism tensor contractions are classical invariants, not quantum speedup evidence.",
     "reason_invalid": "The tensor observable is exactly a classical shadow: induced four-vertex graphlet count invariant.",
     "source": "graphlet_tensor_observables.py"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "rank-seven high-mass block"
+    ],
+    "claim": "The highest-mass untested S_14 multiplicity block requires moved-point support five or six to generate its full copy algebra.",
+    "evidence": {
+      "artifact": "research/representation/coset_hidden_involution_high_mass_support_scan.json"
+    },
+    "id": "HIGHEST-MASS-S14-BLOCK-DOES-NOT-REQUIRE-SUPPORT-FIVE-OR-SIX",
+    "lesson": "Search for a uniform low-support generation theorem rather than extrapolating monotone support growth from selected small blocks.",
+    "reason_invalid": "A support-four witness subset has a robust simple-separator connected-graph certificate for scalar common commutant.",
+    "source": "EXP-COSET-HIDDEN-INVOLUTION-HIGH-MASS-SUPPORT-SCAN"
   },
   {
     "applies_to": [
@@ -56312,6 +56761,66 @@
     "lesson": "Do not accept tiny custom-oracle runs as evidence of algorithmic speedup.",
     "reason_invalid": "arbitrary oracle_secret_finding proposal; N=3 simulation cap; claimed speedup despite zero simulation success; secret-finding framing with no natural scalable family",
     "source": "/Users/jaspersands/Desktop/quantum algorithm search/results/trinomial_product_secret_finding"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "threshold rank-scaled PGM metric",
+      "local singleton/pair PREPARE-SELECT composition"
+    ],
+    "claim": "Tensoring bounded rank-scaled singleton and pair LCUs yields polynomial-normalization access to the threshold-copy metric.",
+    "evidence": {
+      "artifact": "research/representation/self_dual_wreath_local_block_metric_normalization_no_go.json"
+    },
+    "id": "LOCAL-SINGLETON-PAIR-LCU-NOT-FULL-THRESHOLD-METRIC-ACCESS",
+    "lesson": "Stop extending local block products; search for a global shared-label or commutant-algebra transform.",
+    "reason_invalid": "On overwhelming natural mass, every local partition has normalization at least 2^(k/2), which is superpolynomial at k=ceil(log2((n-1)!!)).",
+    "source": "EXP-CODE-SELF-DUAL-WREATH-LOCAL-BLOCK-METRIC-NORMALIZATION-NO-GO"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "dimensionless carrier-conditioned PGM metrics",
+      "spectrally truncated inverse square root"
+    ],
+    "claim": "A polynomial PGM implementation must prove an inverse-polynomial lower bound on every positive eigenvalue of the rank-scaled frame.",
+    "evidence": {
+      "artifact": "research/representation/self_dual_wreath_dimensionless_pgm_truncation_bridge.json"
+    },
+    "id": "MINIMUM-COVARIANCE-EIGENVALUE-NOT-PGM-SUCCESS-OBLIGATION",
+    "lesson": "Prioritize full-metric block encoding and output synthesis, not the actual minimum positive spectral edge.",
+    "reason_invalid": "Dimensionless spectral truncation below c^2/16 loses at most c/2 success when the ideal PGM has certified success c.",
+    "source": "EXP-CODE-SELF-DUAL-WREATH-DIMENSIONLESS-PGM-TRUNCATION-BRIDGE"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "multiplicity-fiber trace",
+      "typical hyperoctahedral branches"
+    ],
+    "claim": "Reducing live isotypic columns from b dim(W_mu) to b makes the typical-block commutant audit polynomial.",
+    "evidence": {
+      "artifact": "research/representation/coset_hidden_involution_multiplicity_fiber_trace.json"
+    },
+    "id": "MULTIPLICITY-FIBER-WIDTH-REDUCTION-NOT-POLYNOMIAL-AMBIENT-COMPRESSION",
+    "lesson": "Use the fiber trace to extend finite falsification reach while keeping typical-shape ambient compression as an explicit blocker.",
+    "reason_invalid": "Each fiber still has dim(V_lambda) rows, exponential on typical partitions, and no symbolic or tensor-network compression is known.",
+    "source": "EXP-COSET-HIDDEN-INVOLUTION-MULTIPLICITY-FIBER-TRACE"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "global carrier-label accumulation",
+      "affine-star Cayley compilation"
+    ],
+    "claim": "Natural Plancherel source averaging makes all overlapping full S_n carrier labels exactly jointly classical.",
+    "evidence": {
+      "artifact": "research/representation/self_dual_wreath_plancherel_carrier_contextuality.json"
+    },
+    "id": "NATURAL-OVERLAPPING-CARRIER-LABELS-NOT-EXACTLY-JOINT-CLASSICAL",
+    "lesson": "A global compiler must resolve incompatible carrier frames coherently or avoid sharp label accumulation.",
+    "reason_invalid": "Their exact aggregate commutator is 2(1-kappa_n)>0 for every nonabelian S_n; kappa_n is an explicit weighted commuting probability.",
+    "source": "EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-CARRIER-CONTEXTUALITY"
   },
   {
     "applies_to": [
@@ -61663,58 +62172,143 @@
     ],
     "claim": "#BQP membership or a Kronecker projector supplies a coherent multiplicity transform.",
     "evidence": {
+      "active_carrier_racah_physical_mass_tends_to_one": true,
+      "actual_affine_node_frame_block_encoding_normalization_one": true,
+      "actual_affine_node_frame_low_description_formula_proved": true,
+      "addressed_aggregate_schur_sqrt_q_query_lower_bound_proved": true,
+      "addressed_local_kernel_queries_compile_aggregate_short_in_polylog_q": false,
+      "addressed_query_lower_bound_uses_bad_root_conditioning": false,
+      "addressed_query_lower_bound_uses_small_native_mass": false,
       "addressed_raw_cross_map_block_encoding_normalization_one": true,
+      "affine_flag_labels_determine_aggregate_metric_amplitudes": false,
+      "aggregate_short_metric_block_encoding_compiled": false,
+      "all_current_physical_w6_star_channels_compiler_covered": true,
+      "all_depth_endpoint_native_mass_recurrence_proved": false,
       "all_seven_stable_shape_local_labels_polynomial_proved": true,
+      "balanced_carrier_support_ranges_eliminated": true,
+      "balanced_endpoint_width_scale_cancellation_proved": true,
+      "binary_endpoint_compiles_given_aggregate_short_metric_access": true,
       "bounded_support_commutant_block_encoding_polynomial_proved": true,
       "bounded_tail_natural_access_no_go_proved": true,
+      "canonical_cayley_endpoint_effect_proved": true,
       "canonical_linear_global_metric_normalization_is_q": true,
       "canonical_linear_global_psd_metric_assembly_compiled": true,
+      "carrier_adaptive_holevo_budget_proved": true,
+      "carrier_branch_aggregate_frame_inflation_reduction_proved": true,
+      "carrier_branch_all_n_collision_control_proved": false,
+      "carrier_branch_all_n_self_purity_control_proved": true,
+      "carrier_branch_collision_biased_angle_moment_bounded": false,
+      "carrier_branch_disjoint_pair_all_n_collision_control_proved": true,
+      "carrier_branch_disjoint_pair_collision_biased_angle_moment_bounded": true,
+      "carrier_branch_disjoint_pair_polynomial_success_retention_proved": true,
+      "carrier_branch_finite_accessible_collective_success_certified": true,
+      "carrier_branch_natural_average_self_purity_control_proved": true,
+      "carrier_branch_natural_outcome_angle_first_moment_proved": true,
+      "carrier_branch_operational_anti_locking_proved": true,
+      "carrier_branch_overlapping_adaptive_collision_control_proved": false,
+      "carrier_branch_pgm_success_certificate_proved": true,
+      "carrier_branch_polynomial_success_retention_proved": false,
+      "carrier_conditioned_branch_pgm_compiled": false,
+      "carrier_conditioned_finite_collective_gain_retained": true,
+      "carrier_conditioned_pgm_direct_sum_reduction_proved": true,
+      "carrier_conditioning_eliminates_multiplicity_whitening": false,
+      "carrier_contextuality_constant_query_disturbance_compiled": true,
+      "carrier_disjoint_pair_accessible_success_retained": true,
+      "carrier_fixed_disjoint_depth_constant_success_proved": true,
+      "carrier_full_linear_depth_tree_information_certified": false,
+      "carrier_hierarchy_accessible_information_retained": false,
+      "carrier_logarithmic_disjoint_depth_inverse_polynomial_success_proved": true,
+      "carrier_noncentral_hidden_conditioned_signal_exhibited": true,
+      "carrier_noncentral_robust_product_advantage_proved": false,
+      "carrier_noncentral_row_readout_compiled": true,
+      "carrier_noncentral_scalable_decoder_compiled": false,
+      "carrier_pvm_only_hidden_involution_decoder_possible": false,
+      "carrier_shallow_hierarchy_extensive_holevo_retained": true,
+      "carrier_tail_reduced_to_logarithmic_fixed_point_classes": true,
       "classical_superpolynomial_separation_proved": false,
       "coefficient_only_recursive_normalization_cancels": false,
+      "coherent_global_channel_atom_labeler_compiled": false,
+      "coherent_multistar_label_racah_resolver_compiled": false,
+      "collision_free_positive_mass_label_contextuality_proved": true,
+      "common_child_scale_cancels_from_relative_graph_proved": true,
+      "commuting_occupied_supports_force_clique_channels": false,
       "companion_only_stack_supplies_global_cross_branch_whitening_multiplier": false,
+      "conditional_cayley_qsvt_compiler_proved": true,
+      "conditional_graph_cs_compiler_given_relative_transfer_proved": true,
+      "covariant_noncentral_carrier_decoder_compiled": false,
       "diagonal_jm_label_transform_polynomial_proved": true,
       "diagonal_jm_labels_resolve_multiplicity_basis": false,
       "direct_component_naimark_is_restricted_polar_equivalent": true,
       "direct_gpe_pair_polar_compiled": true,
       "direct_schur_racah_component_naimark_compiled": false,
+      "disjoint_pair_branch_pgm_covariance_aware_compiler_compiled": false,
+      "disjoint_pair_branch_pgm_naive_local_compiler_falsified": true,
+      "disjoint_pair_branch_pgm_shared_label_covariance_proved": true,
       "exact_bounded_stable_sector_family_proved": true,
+      "exact_centralizer_wreath_cycle_index_proved": true,
       "exact_holevo_copy_budget_proved": true,
       "final_root_addressed_weyl_blocks_require_shared_parent_whitening": true,
       "final_root_binary_merge_width_independent_given_aggregate_access": true,
       "final_root_constant_normalization_aggregate_child_access_compiled": false,
       "final_root_pair_local_functional_calculus_suffices": false,
+      "fixed_arity_conditioning_forces_small_endpoint_algebra": false,
       "flat_affine_gpe_child_embedding_normalization_one_proved": true,
+      "full_endpoint_algebra_dimension_is_circuit_lower_bound": false,
       "gapped_kronecker_multiplicity_transform_polynomial_proved": false,
       "global_address_transition_kernel_polynomial_normalization_proved": false,
       "global_operator_valued_metric_assembly_compiled": false,
       "hidden_involution_decoder_proved": false,
       "holevo_copy_budget_constructs_measurement": false,
+      "identity_and_sublinear_carrier_support_tail_eliminated": true,
       "independent_retained_child_trims_automatically_compose": false,
       "internal_sn_kronecker_transform_polynomial_proved": false,
+      "joint_scale_free_generalized_eigenvalue_compiler_proved": false,
       "kcopy_associator_polynomial_proved": false,
       "known_schur_projector_stack_compiles_orientation_polar": false,
       "known_schur_projector_stack_interfaces_typed": true,
+      "label_resolved_scalar_affine_star_cayley_compiled": true,
       "linear_equal_coefficient_dense_assembly_alpha_lower_bound_q": true,
+      "logarithmic_fixed_point_carrier_tail_eliminated": true,
+      "mesoscopic_macroscopic_carrier_commuting_tail_eliminated": true,
       "multiplicity_counting_implies_coherent_transform": false,
+      "natural_all_depth_scalar_star_channel_labeler_compiled": false,
+      "natural_annealed_overlapping_carrier_contextuality_formula_proved": true,
       "natural_cross_orientation_overlap_density_one_proved": true,
       "natural_g_over_q_inverse_polynomial_window_positive_mass_falsified": true,
       "natural_retained_spectrum_at_q_over_polynomial_scale_proved": false,
       "natural_small_positive_component_effect_edge_proved": false,
+      "nested_psd_schur_short_associativity_proved": true,
+      "noncommuting_matrix_racah_cayley_compiled": false,
       "nonlinear_hierarchical_metric_assembly_ruled_out": false,
       "normalization_one_local_relative_isometries_compiled": false,
       "normalization_one_nested_nodelocal_naimark_contract_proved": true,
+      "normalized_affine_frame_access_equals_response_access": false,
+      "occupied_repeated_octahedral_channel_formula_proved": true,
+      "opaque_operator_gamma_uniform_polylog_qsvt_compiled": false,
+      "operator_valued_endpoint_schur_short_normal_form_proved": true,
+      "overlapping_pair_labels_jointly_classical": false,
       "pair_local_cross_data_determine_component_positive_effect": false,
+      "parent_common_fiber_native_density_bound_proved": false,
+      "parent_conditional_native_loss_o_one_over_depth_proved": false,
       "phase_only_pair_polar_global_gram_ansatz_refuted": true,
       "physical_encoded_orientation_polar_compilers_interreducible": true,
       "physical_interface_supplies_addressed_raw_cross_map_block_encoding": true,
       "physical_invariant_to_schur_companion_interface_compiled": true,
       "positive_component_effect_physical_formula_proved": true,
-      "reason": "Coherent gapped eigenlabel transforms are proved for every nontrivial shape in one bounded stable family. Complete encoded labels and left/right relabelling are proved on one stable final branch, and its three-copy frame is directly block-encoded, all-n conditioned, and inverse-filterable, but the fixed branch is factorially rare under natural input. The known Schur/QFT/CG plus invariant-projector stack is now typed exactly. Its companion-only closure preserves source branches, but the physical-interface detour supplies alpha-one addressed raw cross maps and GPE supplies their pair polars. Phase-only global assembly is refuted by holonomy-induced indefiniteness. Uniform linear address mixing compiles the exact PSD Gram G/q at sharp alpha=q, but the exact natural sibling second moment now proves that every inverse-polynomial G/q spectral window retains only o(1) trace-weighted mass. The useful absolute S cutoff lies at inverse-factorial scale in G/q. A hierarchical or direct global polar, an outcome-information theorem, decoding, and separation remain open.",
+      "reason": "Coherent gapped eigenlabel transforms are proved for every nontrivial shape in one bounded stable family. Complete encoded labels and left/right relabelling are proved on one stable final branch, and its three-copy frame is directly block-encoded, all-n conditioned, and inverse-filterable, but the fixed branch is factorially rare under natural input. The known Schur/QFT/CG plus invariant-projector stack is now typed exactly. Its companion-only closure preserves source branches, but the physical-interface detour supplies alpha-one addressed raw cross maps and GPE supplies their pair polars. Phase-only global assembly is refuted by holonomy-induced indefiniteness. Uniform linear address mixing compiles the exact PSD Gram G/q at sharp alpha=q, and the exact affine-node representation average has a table-free normalization-one LCU. Equal child width cancels from the abstract endpoint, but separate inverse-polynomial QSVT windows retain only o(1) full-sibling native mass and have o(D) rank. Their intersection therefore has o(1) relative dimension in the positive-mass final common fiber. No parent-native density transfer is proved, so the conditional loss recurrence remains open. The joint endpoint is now reduced further to the canonical Hermitian Cayley contraction D=M^-1/2(E_L-E_R)M^-1/2. Its bounded QSVT roots reproduce the exact binary effects without recovering the polar of T, and child gauges telescope recursively. A representation-specific normalization-one D oracle, physical root coordinate anchor, outcome-information theorem, decoding, and separation remain open.",
       "recursive_normalization_squared_sum_law_proved": true,
       "recursive_polar_operator_factors_telescope_exactly": true,
+      "recursive_relative_graph_gauge_covariance_proved": true,
+      "repeated_octahedral_family_has_positive_natural_mass": false,
+      "representation_specific_cayley_oracle_compiled": false,
+      "representation_specific_relative_transfer_oracle_compiled": false,
+      "response_short_endpoint_complementarity_proved": true,
+      "reversible_affine_flag_node_labeler_compiled": true,
+      "root_relative_graph_gauge_anchor_compiled": false,
       "scalar_gpe_prepare_select_effect_criterion_proved": true,
       "scalar_gpe_select_compiles_matrix_component_effects": false,
       "scalar_positive_address_extraction_alpha_sqrt_width_proved": true,
+      "scale_free_relative_graph_cs_normal_form_proved": true,
       "schur_branch_encoding_removes_orientation_inverse_square_root": false,
       "schur_branch_merger_polar_equivalence_proved": true,
       "schur_branch_structured_direct_polar_compiled": false,
@@ -61725,6 +62319,11 @@
       "schur_dilated_standard_multiplicity_coordinates_exposed": false,
       "schur_dilation_improves_orientation_gram_conditioning": false,
       "schur_transform_implies_internal_kronecker_transform": false,
+      "selected_triple_pair_carrier_label_query_polynomial": true,
+      "separate_polynomial_qsvt_response_preserves_full_sibling_native_mass": false,
+      "separate_qsvt_common_spectral_trim_has_nonvanishing_common_fiber_dimension": false,
+      "separate_qsvt_is_uniform_common_fiber_response_compiler": false,
+      "separate_qsvt_uniform_response_architecture_natural_no_go_proved": true,
       "shorted_metric_scale_inheritance_proved": true,
       "shorted_metrics_cancel_recursive_access_normalization": false,
       "sn_qft_is_open_bottleneck": false,
@@ -61742,12 +62341,16 @@
       "stable_three_copy_frame_all_n_conditioning_proved": true,
       "stable_three_copy_frame_block_encoding_polynomial_proved": true,
       "stable_three_copy_frame_inverse_square_root_filter_polynomial_proved": true,
+      "structured_racah_response_oracle_compiled": false,
+      "support_pair_polars_determine_positive_relative_transfer": false,
       "support_polar_gpe_transports_determine_endpoint_metric_mixer": false,
+      "two_well_conditioned_endpoint_generators_can_generate_full_matrix_algebra": true,
       "typical_irrep_finite_bounded_support_non_scalarity_observed": true,
       "typical_irrep_uniform_joint_spectral_separation_proved": false,
       "typical_irrep_uniform_recoupling_transfer_proved": false,
       "uniform_component_effect_naimark_dilation_compiled": false,
-      "uniform_endpoint_metric_naimark_dilation_compiled": false
+      "uniform_endpoint_metric_naimark_dilation_compiled": false,
+      "weighted_commuting_probability_asymptotic_gap_proved": true
     },
     "id": "NEG-COSET-KRONECKER-COUNT-AS-TRANSFORM",
     "lesson": "Separate dimension, isotypic routing, addressed entry access, pair polars, global metric assembly, and the physical polar.",
@@ -61978,58 +62581,143 @@
     ],
     "claim": "Restricted multiplicity estimation alone is a Shor-level quantum advantage.",
     "evidence": {
+      "active_carrier_racah_physical_mass_tends_to_one": true,
+      "actual_affine_node_frame_block_encoding_normalization_one": true,
+      "actual_affine_node_frame_low_description_formula_proved": true,
+      "addressed_aggregate_schur_sqrt_q_query_lower_bound_proved": true,
+      "addressed_local_kernel_queries_compile_aggregate_short_in_polylog_q": false,
+      "addressed_query_lower_bound_uses_bad_root_conditioning": false,
+      "addressed_query_lower_bound_uses_small_native_mass": false,
       "addressed_raw_cross_map_block_encoding_normalization_one": true,
+      "affine_flag_labels_determine_aggregate_metric_amplitudes": false,
+      "aggregate_short_metric_block_encoding_compiled": false,
+      "all_current_physical_w6_star_channels_compiler_covered": true,
+      "all_depth_endpoint_native_mass_recurrence_proved": false,
       "all_seven_stable_shape_local_labels_polynomial_proved": true,
+      "balanced_carrier_support_ranges_eliminated": true,
+      "balanced_endpoint_width_scale_cancellation_proved": true,
+      "binary_endpoint_compiles_given_aggregate_short_metric_access": true,
       "bounded_support_commutant_block_encoding_polynomial_proved": true,
       "bounded_tail_natural_access_no_go_proved": true,
+      "canonical_cayley_endpoint_effect_proved": true,
       "canonical_linear_global_metric_normalization_is_q": true,
       "canonical_linear_global_psd_metric_assembly_compiled": true,
+      "carrier_adaptive_holevo_budget_proved": true,
+      "carrier_branch_aggregate_frame_inflation_reduction_proved": true,
+      "carrier_branch_all_n_collision_control_proved": false,
+      "carrier_branch_all_n_self_purity_control_proved": true,
+      "carrier_branch_collision_biased_angle_moment_bounded": false,
+      "carrier_branch_disjoint_pair_all_n_collision_control_proved": true,
+      "carrier_branch_disjoint_pair_collision_biased_angle_moment_bounded": true,
+      "carrier_branch_disjoint_pair_polynomial_success_retention_proved": true,
+      "carrier_branch_finite_accessible_collective_success_certified": true,
+      "carrier_branch_natural_average_self_purity_control_proved": true,
+      "carrier_branch_natural_outcome_angle_first_moment_proved": true,
+      "carrier_branch_operational_anti_locking_proved": true,
+      "carrier_branch_overlapping_adaptive_collision_control_proved": false,
+      "carrier_branch_pgm_success_certificate_proved": true,
+      "carrier_branch_polynomial_success_retention_proved": false,
+      "carrier_conditioned_branch_pgm_compiled": false,
+      "carrier_conditioned_finite_collective_gain_retained": true,
+      "carrier_conditioned_pgm_direct_sum_reduction_proved": true,
+      "carrier_conditioning_eliminates_multiplicity_whitening": false,
+      "carrier_contextuality_constant_query_disturbance_compiled": true,
+      "carrier_disjoint_pair_accessible_success_retained": true,
+      "carrier_fixed_disjoint_depth_constant_success_proved": true,
+      "carrier_full_linear_depth_tree_information_certified": false,
+      "carrier_hierarchy_accessible_information_retained": false,
+      "carrier_logarithmic_disjoint_depth_inverse_polynomial_success_proved": true,
+      "carrier_noncentral_hidden_conditioned_signal_exhibited": true,
+      "carrier_noncentral_robust_product_advantage_proved": false,
+      "carrier_noncentral_row_readout_compiled": true,
+      "carrier_noncentral_scalable_decoder_compiled": false,
+      "carrier_pvm_only_hidden_involution_decoder_possible": false,
+      "carrier_shallow_hierarchy_extensive_holevo_retained": true,
+      "carrier_tail_reduced_to_logarithmic_fixed_point_classes": true,
       "classical_superpolynomial_separation_proved": false,
       "coefficient_only_recursive_normalization_cancels": false,
+      "coherent_global_channel_atom_labeler_compiled": false,
+      "coherent_multistar_label_racah_resolver_compiled": false,
+      "collision_free_positive_mass_label_contextuality_proved": true,
+      "common_child_scale_cancels_from_relative_graph_proved": true,
+      "commuting_occupied_supports_force_clique_channels": false,
       "companion_only_stack_supplies_global_cross_branch_whitening_multiplier": false,
+      "conditional_cayley_qsvt_compiler_proved": true,
+      "conditional_graph_cs_compiler_given_relative_transfer_proved": true,
+      "covariant_noncentral_carrier_decoder_compiled": false,
       "diagonal_jm_label_transform_polynomial_proved": true,
       "diagonal_jm_labels_resolve_multiplicity_basis": false,
       "direct_component_naimark_is_restricted_polar_equivalent": true,
       "direct_gpe_pair_polar_compiled": true,
       "direct_schur_racah_component_naimark_compiled": false,
+      "disjoint_pair_branch_pgm_covariance_aware_compiler_compiled": false,
+      "disjoint_pair_branch_pgm_naive_local_compiler_falsified": true,
+      "disjoint_pair_branch_pgm_shared_label_covariance_proved": true,
       "exact_bounded_stable_sector_family_proved": true,
+      "exact_centralizer_wreath_cycle_index_proved": true,
       "exact_holevo_copy_budget_proved": true,
       "final_root_addressed_weyl_blocks_require_shared_parent_whitening": true,
       "final_root_binary_merge_width_independent_given_aggregate_access": true,
       "final_root_constant_normalization_aggregate_child_access_compiled": false,
       "final_root_pair_local_functional_calculus_suffices": false,
+      "fixed_arity_conditioning_forces_small_endpoint_algebra": false,
       "flat_affine_gpe_child_embedding_normalization_one_proved": true,
+      "full_endpoint_algebra_dimension_is_circuit_lower_bound": false,
       "gapped_kronecker_multiplicity_transform_polynomial_proved": false,
       "global_address_transition_kernel_polynomial_normalization_proved": false,
       "global_operator_valued_metric_assembly_compiled": false,
       "hidden_involution_decoder_proved": false,
       "holevo_copy_budget_constructs_measurement": false,
+      "identity_and_sublinear_carrier_support_tail_eliminated": true,
       "independent_retained_child_trims_automatically_compose": false,
       "internal_sn_kronecker_transform_polynomial_proved": false,
+      "joint_scale_free_generalized_eigenvalue_compiler_proved": false,
       "kcopy_associator_polynomial_proved": false,
       "known_schur_projector_stack_compiles_orientation_polar": false,
       "known_schur_projector_stack_interfaces_typed": true,
+      "label_resolved_scalar_affine_star_cayley_compiled": true,
       "linear_equal_coefficient_dense_assembly_alpha_lower_bound_q": true,
+      "logarithmic_fixed_point_carrier_tail_eliminated": true,
+      "mesoscopic_macroscopic_carrier_commuting_tail_eliminated": true,
       "multiplicity_counting_implies_coherent_transform": false,
+      "natural_all_depth_scalar_star_channel_labeler_compiled": false,
+      "natural_annealed_overlapping_carrier_contextuality_formula_proved": true,
       "natural_cross_orientation_overlap_density_one_proved": true,
       "natural_g_over_q_inverse_polynomial_window_positive_mass_falsified": true,
       "natural_retained_spectrum_at_q_over_polynomial_scale_proved": false,
       "natural_small_positive_component_effect_edge_proved": false,
+      "nested_psd_schur_short_associativity_proved": true,
+      "noncommuting_matrix_racah_cayley_compiled": false,
       "nonlinear_hierarchical_metric_assembly_ruled_out": false,
       "normalization_one_local_relative_isometries_compiled": false,
       "normalization_one_nested_nodelocal_naimark_contract_proved": true,
+      "normalized_affine_frame_access_equals_response_access": false,
+      "occupied_repeated_octahedral_channel_formula_proved": true,
+      "opaque_operator_gamma_uniform_polylog_qsvt_compiled": false,
+      "operator_valued_endpoint_schur_short_normal_form_proved": true,
+      "overlapping_pair_labels_jointly_classical": false,
       "pair_local_cross_data_determine_component_positive_effect": false,
+      "parent_common_fiber_native_density_bound_proved": false,
+      "parent_conditional_native_loss_o_one_over_depth_proved": false,
       "phase_only_pair_polar_global_gram_ansatz_refuted": true,
       "physical_encoded_orientation_polar_compilers_interreducible": true,
       "physical_interface_supplies_addressed_raw_cross_map_block_encoding": true,
       "physical_invariant_to_schur_companion_interface_compiled": true,
       "positive_component_effect_physical_formula_proved": true,
-      "reason": "Coherent gapped eigenlabel transforms are proved for every nontrivial shape in one bounded stable family. Complete encoded labels and left/right relabelling are proved on one stable final branch, and its three-copy frame is directly block-encoded, all-n conditioned, and inverse-filterable, but the fixed branch is factorially rare under natural input. The known Schur/QFT/CG plus invariant-projector stack is now typed exactly. Its companion-only closure preserves source branches, but the physical-interface detour supplies alpha-one addressed raw cross maps and GPE supplies their pair polars. Phase-only global assembly is refuted by holonomy-induced indefiniteness. Uniform linear address mixing compiles the exact PSD Gram G/q at sharp alpha=q, but the exact natural sibling second moment now proves that every inverse-polynomial G/q spectral window retains only o(1) trace-weighted mass. The useful absolute S cutoff lies at inverse-factorial scale in G/q. A hierarchical or direct global polar, an outcome-information theorem, decoding, and separation remain open.",
+      "reason": "Coherent gapped eigenlabel transforms are proved for every nontrivial shape in one bounded stable family. Complete encoded labels and left/right relabelling are proved on one stable final branch, and its three-copy frame is directly block-encoded, all-n conditioned, and inverse-filterable, but the fixed branch is factorially rare under natural input. The known Schur/QFT/CG plus invariant-projector stack is now typed exactly. Its companion-only closure preserves source branches, but the physical-interface detour supplies alpha-one addressed raw cross maps and GPE supplies their pair polars. Phase-only global assembly is refuted by holonomy-induced indefiniteness. Uniform linear address mixing compiles the exact PSD Gram G/q at sharp alpha=q, and the exact affine-node representation average has a table-free normalization-one LCU. Equal child width cancels from the abstract endpoint, but separate inverse-polynomial QSVT windows retain only o(1) full-sibling native mass and have o(D) rank. Their intersection therefore has o(1) relative dimension in the positive-mass final common fiber. No parent-native density transfer is proved, so the conditional loss recurrence remains open. The joint endpoint is now reduced further to the canonical Hermitian Cayley contraction D=M^-1/2(E_L-E_R)M^-1/2. Its bounded QSVT roots reproduce the exact binary effects without recovering the polar of T, and child gauges telescope recursively. A representation-specific normalization-one D oracle, physical root coordinate anchor, outcome-information theorem, decoding, and separation remain open.",
       "recursive_normalization_squared_sum_law_proved": true,
       "recursive_polar_operator_factors_telescope_exactly": true,
+      "recursive_relative_graph_gauge_covariance_proved": true,
+      "repeated_octahedral_family_has_positive_natural_mass": false,
+      "representation_specific_cayley_oracle_compiled": false,
+      "representation_specific_relative_transfer_oracle_compiled": false,
+      "response_short_endpoint_complementarity_proved": true,
+      "reversible_affine_flag_node_labeler_compiled": true,
+      "root_relative_graph_gauge_anchor_compiled": false,
       "scalar_gpe_prepare_select_effect_criterion_proved": true,
       "scalar_gpe_select_compiles_matrix_component_effects": false,
       "scalar_positive_address_extraction_alpha_sqrt_width_proved": true,
+      "scale_free_relative_graph_cs_normal_form_proved": true,
       "schur_branch_encoding_removes_orientation_inverse_square_root": false,
       "schur_branch_merger_polar_equivalence_proved": true,
       "schur_branch_structured_direct_polar_compiled": false,
@@ -62040,6 +62728,11 @@
       "schur_dilated_standard_multiplicity_coordinates_exposed": false,
       "schur_dilation_improves_orientation_gram_conditioning": false,
       "schur_transform_implies_internal_kronecker_transform": false,
+      "selected_triple_pair_carrier_label_query_polynomial": true,
+      "separate_polynomial_qsvt_response_preserves_full_sibling_native_mass": false,
+      "separate_qsvt_common_spectral_trim_has_nonvanishing_common_fiber_dimension": false,
+      "separate_qsvt_is_uniform_common_fiber_response_compiler": false,
+      "separate_qsvt_uniform_response_architecture_natural_no_go_proved": true,
       "shorted_metric_scale_inheritance_proved": true,
       "shorted_metrics_cancel_recursive_access_normalization": false,
       "sn_qft_is_open_bottleneck": false,
@@ -62057,12 +62750,16 @@
       "stable_three_copy_frame_all_n_conditioning_proved": true,
       "stable_three_copy_frame_block_encoding_polynomial_proved": true,
       "stable_three_copy_frame_inverse_square_root_filter_polynomial_proved": true,
+      "structured_racah_response_oracle_compiled": false,
+      "support_pair_polars_determine_positive_relative_transfer": false,
       "support_polar_gpe_transports_determine_endpoint_metric_mixer": false,
+      "two_well_conditioned_endpoint_generators_can_generate_full_matrix_algebra": true,
       "typical_irrep_finite_bounded_support_non_scalarity_observed": true,
       "typical_irrep_uniform_joint_spectral_separation_proved": false,
       "typical_irrep_uniform_recoupling_transfer_proved": false,
       "uniform_component_effect_naimark_dilation_compiled": false,
-      "uniform_endpoint_metric_naimark_dilation_compiled": false
+      "uniform_endpoint_metric_naimark_dilation_compiled": false,
+      "weighted_commuting_probability_asymptotic_gap_proved": true
     },
     "id": "NEG-COSET-RESTRICTED-MULTIPLICITY-AS-BREAKTHROUGH",
     "lesson": "Require a natural input model, end-to-end decoder, and explicit classical separation.",
@@ -62077,58 +62774,143 @@
     ],
     "claim": "Polynomial Schur-dilated multiplicity access automatically compiles the cross-orientation branch merger.",
     "evidence": {
+      "active_carrier_racah_physical_mass_tends_to_one": true,
+      "actual_affine_node_frame_block_encoding_normalization_one": true,
+      "actual_affine_node_frame_low_description_formula_proved": true,
+      "addressed_aggregate_schur_sqrt_q_query_lower_bound_proved": true,
+      "addressed_local_kernel_queries_compile_aggregate_short_in_polylog_q": false,
+      "addressed_query_lower_bound_uses_bad_root_conditioning": false,
+      "addressed_query_lower_bound_uses_small_native_mass": false,
       "addressed_raw_cross_map_block_encoding_normalization_one": true,
+      "affine_flag_labels_determine_aggregate_metric_amplitudes": false,
+      "aggregate_short_metric_block_encoding_compiled": false,
+      "all_current_physical_w6_star_channels_compiler_covered": true,
+      "all_depth_endpoint_native_mass_recurrence_proved": false,
       "all_seven_stable_shape_local_labels_polynomial_proved": true,
+      "balanced_carrier_support_ranges_eliminated": true,
+      "balanced_endpoint_width_scale_cancellation_proved": true,
+      "binary_endpoint_compiles_given_aggregate_short_metric_access": true,
       "bounded_support_commutant_block_encoding_polynomial_proved": true,
       "bounded_tail_natural_access_no_go_proved": true,
+      "canonical_cayley_endpoint_effect_proved": true,
       "canonical_linear_global_metric_normalization_is_q": true,
       "canonical_linear_global_psd_metric_assembly_compiled": true,
+      "carrier_adaptive_holevo_budget_proved": true,
+      "carrier_branch_aggregate_frame_inflation_reduction_proved": true,
+      "carrier_branch_all_n_collision_control_proved": false,
+      "carrier_branch_all_n_self_purity_control_proved": true,
+      "carrier_branch_collision_biased_angle_moment_bounded": false,
+      "carrier_branch_disjoint_pair_all_n_collision_control_proved": true,
+      "carrier_branch_disjoint_pair_collision_biased_angle_moment_bounded": true,
+      "carrier_branch_disjoint_pair_polynomial_success_retention_proved": true,
+      "carrier_branch_finite_accessible_collective_success_certified": true,
+      "carrier_branch_natural_average_self_purity_control_proved": true,
+      "carrier_branch_natural_outcome_angle_first_moment_proved": true,
+      "carrier_branch_operational_anti_locking_proved": true,
+      "carrier_branch_overlapping_adaptive_collision_control_proved": false,
+      "carrier_branch_pgm_success_certificate_proved": true,
+      "carrier_branch_polynomial_success_retention_proved": false,
+      "carrier_conditioned_branch_pgm_compiled": false,
+      "carrier_conditioned_finite_collective_gain_retained": true,
+      "carrier_conditioned_pgm_direct_sum_reduction_proved": true,
+      "carrier_conditioning_eliminates_multiplicity_whitening": false,
+      "carrier_contextuality_constant_query_disturbance_compiled": true,
+      "carrier_disjoint_pair_accessible_success_retained": true,
+      "carrier_fixed_disjoint_depth_constant_success_proved": true,
+      "carrier_full_linear_depth_tree_information_certified": false,
+      "carrier_hierarchy_accessible_information_retained": false,
+      "carrier_logarithmic_disjoint_depth_inverse_polynomial_success_proved": true,
+      "carrier_noncentral_hidden_conditioned_signal_exhibited": true,
+      "carrier_noncentral_robust_product_advantage_proved": false,
+      "carrier_noncentral_row_readout_compiled": true,
+      "carrier_noncentral_scalable_decoder_compiled": false,
+      "carrier_pvm_only_hidden_involution_decoder_possible": false,
+      "carrier_shallow_hierarchy_extensive_holevo_retained": true,
+      "carrier_tail_reduced_to_logarithmic_fixed_point_classes": true,
       "classical_superpolynomial_separation_proved": false,
       "coefficient_only_recursive_normalization_cancels": false,
+      "coherent_global_channel_atom_labeler_compiled": false,
+      "coherent_multistar_label_racah_resolver_compiled": false,
+      "collision_free_positive_mass_label_contextuality_proved": true,
+      "common_child_scale_cancels_from_relative_graph_proved": true,
+      "commuting_occupied_supports_force_clique_channels": false,
       "companion_only_stack_supplies_global_cross_branch_whitening_multiplier": false,
+      "conditional_cayley_qsvt_compiler_proved": true,
+      "conditional_graph_cs_compiler_given_relative_transfer_proved": true,
+      "covariant_noncentral_carrier_decoder_compiled": false,
       "diagonal_jm_label_transform_polynomial_proved": true,
       "diagonal_jm_labels_resolve_multiplicity_basis": false,
       "direct_component_naimark_is_restricted_polar_equivalent": true,
       "direct_gpe_pair_polar_compiled": true,
       "direct_schur_racah_component_naimark_compiled": false,
+      "disjoint_pair_branch_pgm_covariance_aware_compiler_compiled": false,
+      "disjoint_pair_branch_pgm_naive_local_compiler_falsified": true,
+      "disjoint_pair_branch_pgm_shared_label_covariance_proved": true,
       "exact_bounded_stable_sector_family_proved": true,
+      "exact_centralizer_wreath_cycle_index_proved": true,
       "exact_holevo_copy_budget_proved": true,
       "final_root_addressed_weyl_blocks_require_shared_parent_whitening": true,
       "final_root_binary_merge_width_independent_given_aggregate_access": true,
       "final_root_constant_normalization_aggregate_child_access_compiled": false,
       "final_root_pair_local_functional_calculus_suffices": false,
+      "fixed_arity_conditioning_forces_small_endpoint_algebra": false,
       "flat_affine_gpe_child_embedding_normalization_one_proved": true,
+      "full_endpoint_algebra_dimension_is_circuit_lower_bound": false,
       "gapped_kronecker_multiplicity_transform_polynomial_proved": false,
       "global_address_transition_kernel_polynomial_normalization_proved": false,
       "global_operator_valued_metric_assembly_compiled": false,
       "hidden_involution_decoder_proved": false,
       "holevo_copy_budget_constructs_measurement": false,
+      "identity_and_sublinear_carrier_support_tail_eliminated": true,
       "independent_retained_child_trims_automatically_compose": false,
       "internal_sn_kronecker_transform_polynomial_proved": false,
+      "joint_scale_free_generalized_eigenvalue_compiler_proved": false,
       "kcopy_associator_polynomial_proved": false,
       "known_schur_projector_stack_compiles_orientation_polar": false,
       "known_schur_projector_stack_interfaces_typed": true,
+      "label_resolved_scalar_affine_star_cayley_compiled": true,
       "linear_equal_coefficient_dense_assembly_alpha_lower_bound_q": true,
+      "logarithmic_fixed_point_carrier_tail_eliminated": true,
+      "mesoscopic_macroscopic_carrier_commuting_tail_eliminated": true,
       "multiplicity_counting_implies_coherent_transform": false,
+      "natural_all_depth_scalar_star_channel_labeler_compiled": false,
+      "natural_annealed_overlapping_carrier_contextuality_formula_proved": true,
       "natural_cross_orientation_overlap_density_one_proved": true,
       "natural_g_over_q_inverse_polynomial_window_positive_mass_falsified": true,
       "natural_retained_spectrum_at_q_over_polynomial_scale_proved": false,
       "natural_small_positive_component_effect_edge_proved": false,
+      "nested_psd_schur_short_associativity_proved": true,
+      "noncommuting_matrix_racah_cayley_compiled": false,
       "nonlinear_hierarchical_metric_assembly_ruled_out": false,
       "normalization_one_local_relative_isometries_compiled": false,
       "normalization_one_nested_nodelocal_naimark_contract_proved": true,
+      "normalized_affine_frame_access_equals_response_access": false,
+      "occupied_repeated_octahedral_channel_formula_proved": true,
+      "opaque_operator_gamma_uniform_polylog_qsvt_compiled": false,
+      "operator_valued_endpoint_schur_short_normal_form_proved": true,
+      "overlapping_pair_labels_jointly_classical": false,
       "pair_local_cross_data_determine_component_positive_effect": false,
+      "parent_common_fiber_native_density_bound_proved": false,
+      "parent_conditional_native_loss_o_one_over_depth_proved": false,
       "phase_only_pair_polar_global_gram_ansatz_refuted": true,
       "physical_encoded_orientation_polar_compilers_interreducible": true,
       "physical_interface_supplies_addressed_raw_cross_map_block_encoding": true,
       "physical_invariant_to_schur_companion_interface_compiled": true,
       "positive_component_effect_physical_formula_proved": true,
-      "reason": "Coherent gapped eigenlabel transforms are proved for every nontrivial shape in one bounded stable family. Complete encoded labels and left/right relabelling are proved on one stable final branch, and its three-copy frame is directly block-encoded, all-n conditioned, and inverse-filterable, but the fixed branch is factorially rare under natural input. The known Schur/QFT/CG plus invariant-projector stack is now typed exactly. Its companion-only closure preserves source branches, but the physical-interface detour supplies alpha-one addressed raw cross maps and GPE supplies their pair polars. Phase-only global assembly is refuted by holonomy-induced indefiniteness. Uniform linear address mixing compiles the exact PSD Gram G/q at sharp alpha=q, but the exact natural sibling second moment now proves that every inverse-polynomial G/q spectral window retains only o(1) trace-weighted mass. The useful absolute S cutoff lies at inverse-factorial scale in G/q. A hierarchical or direct global polar, an outcome-information theorem, decoding, and separation remain open.",
+      "reason": "Coherent gapped eigenlabel transforms are proved for every nontrivial shape in one bounded stable family. Complete encoded labels and left/right relabelling are proved on one stable final branch, and its three-copy frame is directly block-encoded, all-n conditioned, and inverse-filterable, but the fixed branch is factorially rare under natural input. The known Schur/QFT/CG plus invariant-projector stack is now typed exactly. Its companion-only closure preserves source branches, but the physical-interface detour supplies alpha-one addressed raw cross maps and GPE supplies their pair polars. Phase-only global assembly is refuted by holonomy-induced indefiniteness. Uniform linear address mixing compiles the exact PSD Gram G/q at sharp alpha=q, and the exact affine-node representation average has a table-free normalization-one LCU. Equal child width cancels from the abstract endpoint, but separate inverse-polynomial QSVT windows retain only o(1) full-sibling native mass and have o(D) rank. Their intersection therefore has o(1) relative dimension in the positive-mass final common fiber. No parent-native density transfer is proved, so the conditional loss recurrence remains open. The joint endpoint is now reduced further to the canonical Hermitian Cayley contraction D=M^-1/2(E_L-E_R)M^-1/2. Its bounded QSVT roots reproduce the exact binary effects without recovering the polar of T, and child gauges telescope recursively. A representation-specific normalization-one D oracle, physical root coordinate anchor, outcome-information theorem, decoding, and separation remain open.",
       "recursive_normalization_squared_sum_law_proved": true,
       "recursive_polar_operator_factors_telescope_exactly": true,
+      "recursive_relative_graph_gauge_covariance_proved": true,
+      "repeated_octahedral_family_has_positive_natural_mass": false,
+      "representation_specific_cayley_oracle_compiled": false,
+      "representation_specific_relative_transfer_oracle_compiled": false,
+      "response_short_endpoint_complementarity_proved": true,
+      "reversible_affine_flag_node_labeler_compiled": true,
+      "root_relative_graph_gauge_anchor_compiled": false,
       "scalar_gpe_prepare_select_effect_criterion_proved": true,
       "scalar_gpe_select_compiles_matrix_component_effects": false,
       "scalar_positive_address_extraction_alpha_sqrt_width_proved": true,
+      "scale_free_relative_graph_cs_normal_form_proved": true,
       "schur_branch_encoding_removes_orientation_inverse_square_root": false,
       "schur_branch_merger_polar_equivalence_proved": true,
       "schur_branch_structured_direct_polar_compiled": false,
@@ -62139,6 +62921,11 @@
       "schur_dilated_standard_multiplicity_coordinates_exposed": false,
       "schur_dilation_improves_orientation_gram_conditioning": false,
       "schur_transform_implies_internal_kronecker_transform": false,
+      "selected_triple_pair_carrier_label_query_polynomial": true,
+      "separate_polynomial_qsvt_response_preserves_full_sibling_native_mass": false,
+      "separate_qsvt_common_spectral_trim_has_nonvanishing_common_fiber_dimension": false,
+      "separate_qsvt_is_uniform_common_fiber_response_compiler": false,
+      "separate_qsvt_uniform_response_architecture_natural_no_go_proved": true,
       "shorted_metric_scale_inheritance_proved": true,
       "shorted_metrics_cancel_recursive_access_normalization": false,
       "sn_qft_is_open_bottleneck": false,
@@ -62156,12 +62943,16 @@
       "stable_three_copy_frame_all_n_conditioning_proved": true,
       "stable_three_copy_frame_block_encoding_polynomial_proved": true,
       "stable_three_copy_frame_inverse_square_root_filter_polynomial_proved": true,
+      "structured_racah_response_oracle_compiled": false,
+      "support_pair_polars_determine_positive_relative_transfer": false,
       "support_polar_gpe_transports_determine_endpoint_metric_mixer": false,
+      "two_well_conditioned_endpoint_generators_can_generate_full_matrix_algebra": true,
       "typical_irrep_finite_bounded_support_non_scalarity_observed": true,
       "typical_irrep_uniform_joint_spectral_separation_proved": false,
       "typical_irrep_uniform_recoupling_transfer_proved": false,
       "uniform_component_effect_naimark_dilation_compiled": false,
-      "uniform_endpoint_metric_naimark_dilation_compiled": false
+      "uniform_endpoint_metric_naimark_dilation_compiled": false,
+      "weighted_commuting_probability_asymptotic_gap_proved": true
     },
     "id": "NEG-COSET-SCHUR-ENCODING-AS-FREE-BRANCH-POLAR",
     "lesson": "Use Schur companion structure only if it yields a direct polar compiler or a decoder that retains branch characters; isotypic routing alone is not the missing measurement.",
@@ -62226,58 +63017,143 @@
     ],
     "claim": "An efficient S_n QFT supplies the missing multiregister decoder.",
     "evidence": {
+      "active_carrier_racah_physical_mass_tends_to_one": true,
+      "actual_affine_node_frame_block_encoding_normalization_one": true,
+      "actual_affine_node_frame_low_description_formula_proved": true,
+      "addressed_aggregate_schur_sqrt_q_query_lower_bound_proved": true,
+      "addressed_local_kernel_queries_compile_aggregate_short_in_polylog_q": false,
+      "addressed_query_lower_bound_uses_bad_root_conditioning": false,
+      "addressed_query_lower_bound_uses_small_native_mass": false,
       "addressed_raw_cross_map_block_encoding_normalization_one": true,
+      "affine_flag_labels_determine_aggregate_metric_amplitudes": false,
+      "aggregate_short_metric_block_encoding_compiled": false,
+      "all_current_physical_w6_star_channels_compiler_covered": true,
+      "all_depth_endpoint_native_mass_recurrence_proved": false,
       "all_seven_stable_shape_local_labels_polynomial_proved": true,
+      "balanced_carrier_support_ranges_eliminated": true,
+      "balanced_endpoint_width_scale_cancellation_proved": true,
+      "binary_endpoint_compiles_given_aggregate_short_metric_access": true,
       "bounded_support_commutant_block_encoding_polynomial_proved": true,
       "bounded_tail_natural_access_no_go_proved": true,
+      "canonical_cayley_endpoint_effect_proved": true,
       "canonical_linear_global_metric_normalization_is_q": true,
       "canonical_linear_global_psd_metric_assembly_compiled": true,
+      "carrier_adaptive_holevo_budget_proved": true,
+      "carrier_branch_aggregate_frame_inflation_reduction_proved": true,
+      "carrier_branch_all_n_collision_control_proved": false,
+      "carrier_branch_all_n_self_purity_control_proved": true,
+      "carrier_branch_collision_biased_angle_moment_bounded": false,
+      "carrier_branch_disjoint_pair_all_n_collision_control_proved": true,
+      "carrier_branch_disjoint_pair_collision_biased_angle_moment_bounded": true,
+      "carrier_branch_disjoint_pair_polynomial_success_retention_proved": true,
+      "carrier_branch_finite_accessible_collective_success_certified": true,
+      "carrier_branch_natural_average_self_purity_control_proved": true,
+      "carrier_branch_natural_outcome_angle_first_moment_proved": true,
+      "carrier_branch_operational_anti_locking_proved": true,
+      "carrier_branch_overlapping_adaptive_collision_control_proved": false,
+      "carrier_branch_pgm_success_certificate_proved": true,
+      "carrier_branch_polynomial_success_retention_proved": false,
+      "carrier_conditioned_branch_pgm_compiled": false,
+      "carrier_conditioned_finite_collective_gain_retained": true,
+      "carrier_conditioned_pgm_direct_sum_reduction_proved": true,
+      "carrier_conditioning_eliminates_multiplicity_whitening": false,
+      "carrier_contextuality_constant_query_disturbance_compiled": true,
+      "carrier_disjoint_pair_accessible_success_retained": true,
+      "carrier_fixed_disjoint_depth_constant_success_proved": true,
+      "carrier_full_linear_depth_tree_information_certified": false,
+      "carrier_hierarchy_accessible_information_retained": false,
+      "carrier_logarithmic_disjoint_depth_inverse_polynomial_success_proved": true,
+      "carrier_noncentral_hidden_conditioned_signal_exhibited": true,
+      "carrier_noncentral_robust_product_advantage_proved": false,
+      "carrier_noncentral_row_readout_compiled": true,
+      "carrier_noncentral_scalable_decoder_compiled": false,
+      "carrier_pvm_only_hidden_involution_decoder_possible": false,
+      "carrier_shallow_hierarchy_extensive_holevo_retained": true,
+      "carrier_tail_reduced_to_logarithmic_fixed_point_classes": true,
       "classical_superpolynomial_separation_proved": false,
       "coefficient_only_recursive_normalization_cancels": false,
+      "coherent_global_channel_atom_labeler_compiled": false,
+      "coherent_multistar_label_racah_resolver_compiled": false,
+      "collision_free_positive_mass_label_contextuality_proved": true,
+      "common_child_scale_cancels_from_relative_graph_proved": true,
+      "commuting_occupied_supports_force_clique_channels": false,
       "companion_only_stack_supplies_global_cross_branch_whitening_multiplier": false,
+      "conditional_cayley_qsvt_compiler_proved": true,
+      "conditional_graph_cs_compiler_given_relative_transfer_proved": true,
+      "covariant_noncentral_carrier_decoder_compiled": false,
       "diagonal_jm_label_transform_polynomial_proved": true,
       "diagonal_jm_labels_resolve_multiplicity_basis": false,
       "direct_component_naimark_is_restricted_polar_equivalent": true,
       "direct_gpe_pair_polar_compiled": true,
       "direct_schur_racah_component_naimark_compiled": false,
+      "disjoint_pair_branch_pgm_covariance_aware_compiler_compiled": false,
+      "disjoint_pair_branch_pgm_naive_local_compiler_falsified": true,
+      "disjoint_pair_branch_pgm_shared_label_covariance_proved": true,
       "exact_bounded_stable_sector_family_proved": true,
+      "exact_centralizer_wreath_cycle_index_proved": true,
       "exact_holevo_copy_budget_proved": true,
       "final_root_addressed_weyl_blocks_require_shared_parent_whitening": true,
       "final_root_binary_merge_width_independent_given_aggregate_access": true,
       "final_root_constant_normalization_aggregate_child_access_compiled": false,
       "final_root_pair_local_functional_calculus_suffices": false,
+      "fixed_arity_conditioning_forces_small_endpoint_algebra": false,
       "flat_affine_gpe_child_embedding_normalization_one_proved": true,
+      "full_endpoint_algebra_dimension_is_circuit_lower_bound": false,
       "gapped_kronecker_multiplicity_transform_polynomial_proved": false,
       "global_address_transition_kernel_polynomial_normalization_proved": false,
       "global_operator_valued_metric_assembly_compiled": false,
       "hidden_involution_decoder_proved": false,
       "holevo_copy_budget_constructs_measurement": false,
+      "identity_and_sublinear_carrier_support_tail_eliminated": true,
       "independent_retained_child_trims_automatically_compose": false,
       "internal_sn_kronecker_transform_polynomial_proved": false,
+      "joint_scale_free_generalized_eigenvalue_compiler_proved": false,
       "kcopy_associator_polynomial_proved": false,
       "known_schur_projector_stack_compiles_orientation_polar": false,
       "known_schur_projector_stack_interfaces_typed": true,
+      "label_resolved_scalar_affine_star_cayley_compiled": true,
       "linear_equal_coefficient_dense_assembly_alpha_lower_bound_q": true,
+      "logarithmic_fixed_point_carrier_tail_eliminated": true,
+      "mesoscopic_macroscopic_carrier_commuting_tail_eliminated": true,
       "multiplicity_counting_implies_coherent_transform": false,
+      "natural_all_depth_scalar_star_channel_labeler_compiled": false,
+      "natural_annealed_overlapping_carrier_contextuality_formula_proved": true,
       "natural_cross_orientation_overlap_density_one_proved": true,
       "natural_g_over_q_inverse_polynomial_window_positive_mass_falsified": true,
       "natural_retained_spectrum_at_q_over_polynomial_scale_proved": false,
       "natural_small_positive_component_effect_edge_proved": false,
+      "nested_psd_schur_short_associativity_proved": true,
+      "noncommuting_matrix_racah_cayley_compiled": false,
       "nonlinear_hierarchical_metric_assembly_ruled_out": false,
       "normalization_one_local_relative_isometries_compiled": false,
       "normalization_one_nested_nodelocal_naimark_contract_proved": true,
+      "normalized_affine_frame_access_equals_response_access": false,
+      "occupied_repeated_octahedral_channel_formula_proved": true,
+      "opaque_operator_gamma_uniform_polylog_qsvt_compiled": false,
+      "operator_valued_endpoint_schur_short_normal_form_proved": true,
+      "overlapping_pair_labels_jointly_classical": false,
       "pair_local_cross_data_determine_component_positive_effect": false,
+      "parent_common_fiber_native_density_bound_proved": false,
+      "parent_conditional_native_loss_o_one_over_depth_proved": false,
       "phase_only_pair_polar_global_gram_ansatz_refuted": true,
       "physical_encoded_orientation_polar_compilers_interreducible": true,
       "physical_interface_supplies_addressed_raw_cross_map_block_encoding": true,
       "physical_invariant_to_schur_companion_interface_compiled": true,
       "positive_component_effect_physical_formula_proved": true,
-      "reason": "Coherent gapped eigenlabel transforms are proved for every nontrivial shape in one bounded stable family. Complete encoded labels and left/right relabelling are proved on one stable final branch, and its three-copy frame is directly block-encoded, all-n conditioned, and inverse-filterable, but the fixed branch is factorially rare under natural input. The known Schur/QFT/CG plus invariant-projector stack is now typed exactly. Its companion-only closure preserves source branches, but the physical-interface detour supplies alpha-one addressed raw cross maps and GPE supplies their pair polars. Phase-only global assembly is refuted by holonomy-induced indefiniteness. Uniform linear address mixing compiles the exact PSD Gram G/q at sharp alpha=q, but the exact natural sibling second moment now proves that every inverse-polynomial G/q spectral window retains only o(1) trace-weighted mass. The useful absolute S cutoff lies at inverse-factorial scale in G/q. A hierarchical or direct global polar, an outcome-information theorem, decoding, and separation remain open.",
+      "reason": "Coherent gapped eigenlabel transforms are proved for every nontrivial shape in one bounded stable family. Complete encoded labels and left/right relabelling are proved on one stable final branch, and its three-copy frame is directly block-encoded, all-n conditioned, and inverse-filterable, but the fixed branch is factorially rare under natural input. The known Schur/QFT/CG plus invariant-projector stack is now typed exactly. Its companion-only closure preserves source branches, but the physical-interface detour supplies alpha-one addressed raw cross maps and GPE supplies their pair polars. Phase-only global assembly is refuted by holonomy-induced indefiniteness. Uniform linear address mixing compiles the exact PSD Gram G/q at sharp alpha=q, and the exact affine-node representation average has a table-free normalization-one LCU. Equal child width cancels from the abstract endpoint, but separate inverse-polynomial QSVT windows retain only o(1) full-sibling native mass and have o(D) rank. Their intersection therefore has o(1) relative dimension in the positive-mass final common fiber. No parent-native density transfer is proved, so the conditional loss recurrence remains open. The joint endpoint is now reduced further to the canonical Hermitian Cayley contraction D=M^-1/2(E_L-E_R)M^-1/2. Its bounded QSVT roots reproduce the exact binary effects without recovering the polar of T, and child gauges telescope recursively. A representation-specific normalization-one D oracle, physical root coordinate anchor, outcome-information theorem, decoding, and separation remain open.",
       "recursive_normalization_squared_sum_law_proved": true,
       "recursive_polar_operator_factors_telescope_exactly": true,
+      "recursive_relative_graph_gauge_covariance_proved": true,
+      "repeated_octahedral_family_has_positive_natural_mass": false,
+      "representation_specific_cayley_oracle_compiled": false,
+      "representation_specific_relative_transfer_oracle_compiled": false,
+      "response_short_endpoint_complementarity_proved": true,
+      "reversible_affine_flag_node_labeler_compiled": true,
+      "root_relative_graph_gauge_anchor_compiled": false,
       "scalar_gpe_prepare_select_effect_criterion_proved": true,
       "scalar_gpe_select_compiles_matrix_component_effects": false,
       "scalar_positive_address_extraction_alpha_sqrt_width_proved": true,
+      "scale_free_relative_graph_cs_normal_form_proved": true,
       "schur_branch_encoding_removes_orientation_inverse_square_root": false,
       "schur_branch_merger_polar_equivalence_proved": true,
       "schur_branch_structured_direct_polar_compiled": false,
@@ -62288,6 +63164,11 @@
       "schur_dilated_standard_multiplicity_coordinates_exposed": false,
       "schur_dilation_improves_orientation_gram_conditioning": false,
       "schur_transform_implies_internal_kronecker_transform": false,
+      "selected_triple_pair_carrier_label_query_polynomial": true,
+      "separate_polynomial_qsvt_response_preserves_full_sibling_native_mass": false,
+      "separate_qsvt_common_spectral_trim_has_nonvanishing_common_fiber_dimension": false,
+      "separate_qsvt_is_uniform_common_fiber_response_compiler": false,
+      "separate_qsvt_uniform_response_architecture_natural_no_go_proved": true,
       "shorted_metric_scale_inheritance_proved": true,
       "shorted_metrics_cancel_recursive_access_normalization": false,
       "sn_qft_is_open_bottleneck": false,
@@ -62305,12 +63186,16 @@
       "stable_three_copy_frame_all_n_conditioning_proved": true,
       "stable_three_copy_frame_block_encoding_polynomial_proved": true,
       "stable_three_copy_frame_inverse_square_root_filter_polynomial_proved": true,
+      "structured_racah_response_oracle_compiled": false,
+      "support_pair_polars_determine_positive_relative_transfer": false,
       "support_polar_gpe_transports_determine_endpoint_metric_mixer": false,
+      "two_well_conditioned_endpoint_generators_can_generate_full_matrix_algebra": true,
       "typical_irrep_finite_bounded_support_non_scalarity_observed": true,
       "typical_irrep_uniform_joint_spectral_separation_proved": false,
       "typical_irrep_uniform_recoupling_transfer_proved": false,
       "uniform_component_effect_naimark_dilation_compiled": false,
-      "uniform_endpoint_metric_naimark_dilation_compiled": false
+      "uniform_endpoint_metric_naimark_dilation_compiled": false,
+      "weighted_commuting_probability_asymptotic_gap_proved": true
     },
     "id": "NEG-COSET-SN-QFT-AS-MULTICOPY-DECODER",
     "lesson": "Treat the QFT as an available basis change and charge every subsequent collective operation.",
@@ -63479,6 +64364,19 @@
   {
     "applies_to": [
       "CODE-COSET-COLLECTIVE",
+      "EXP-DHS-DCP-CARRY-QUADRATIC-EXTENSION-BOUNDARY",
+      "PO-MEASUREMENT"
+    ],
+    "claim": "Initial negative claim for EXP-DHS-DCP-CARRY-QUADRATIC-EXTENSION-BOUNDARY.",
+    "evidence": {},
+    "id": "NEG-CP-CARRY-QUADRATIC-EXTENSION-BOUNDARY",
+    "lesson": "Lesson from exact theorem analysis for EXP-DHS-DCP-CARRY-QUADRATIC-EXTENSION-BOUNDARY.",
+    "reason_invalid": "Falsified or refined by exact theorem evaluation.",
+    "source": "EXP-DHS-DCP-CARRY-QUADRATIC-EXTENSION-BOUNDARY"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
       "EXP-DHS-DCP-CNOT-LINEAR-SPLIT-ENTANGLEMENT-NO-GO",
       "PO-MEASUREMENT"
     ],
@@ -63501,6 +64399,19 @@
     "lesson": "Lesson from exact theorem analysis for EXP-DHS-DCP-CNOT-LINEAR-SPLIT-ENTANGLEMENT-NO-GO.",
     "reason_invalid": "Falsified or refined by exact theorem evaluation.",
     "source": "EXP-DHS-DCP-CNOT-LINEAR-SPLIT-ENTANGLEMENT-NO-GO"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "EXP-DHS-DCP-LABEL-INCIDENCE-RANK-WIDTH-NO-GO",
+      "PO-MEASUREMENT"
+    ],
+    "claim": "Initial negative claim for EXP-DHS-DCP-LABEL-INCIDENCE-RANK-WIDTH-NO-GO.",
+    "evidence": {},
+    "id": "NEG-CP-LABEL-INCIDENCE-RANK-WIDTH-NO-GO",
+    "lesson": "Lesson from exact theorem analysis for EXP-DHS-DCP-LABEL-INCIDENCE-RANK-WIDTH-NO-GO.",
+    "reason_invalid": "Falsified or refined by exact theorem evaluation.",
+    "source": "EXP-DHS-DCP-LABEL-INCIDENCE-RANK-WIDTH-NO-GO"
   },
   {
     "applies_to": [
@@ -66657,6 +67568,34 @@
   {
     "applies_to": [
       "CODE-COSET-COLLECTIVE",
+      "EXP-CODE-SELF-DUAL-WREATH-COHERENT-COMPONENT-TRIM-HYBRID",
+      "PO-MEASUREMENT"
+    ],
+    "claim": "Initial negative claim for EXP-CODE-SELF-DUAL-WREATH-COHERENT-COMPONENT-TRIM-HYBRID.",
+    "evidence": {
+      "all_level_aggregate_rank_budget_theorem_count": 0,
+      "coherent_branch_trim_theorem_count": 1,
+      "coherent_recursive_trim_compiler_count": 0,
+      "conditional_child_flatness_requirement_count": 0,
+      "finite_control_count": 3,
+      "finite_control_failure_count": 0,
+      "natural_final_root_aggregate_budget_theorem_count": 1,
+      "natural_root_flatness_theorem_count": 0,
+      "new_quantum_algorithm_count": 0,
+      "postselection_flatness_counterfamily_row_count": 10,
+      "scaling_record_count": 8,
+      "tail_branch_probability_times_flatness": 1.0,
+      "tail_inverse_threshold_cost": 1256097339284.2104,
+      "tail_postselection_conditional_flatness": 1023.0019502686264
+    },
+    "id": "NEG-SELF-DUAL-WREATH-COHERENT-COMPONENT-TRIM-HYBRID",
+    "lesson": "Lesson from exact theorem analysis for EXP-CODE-SELF-DUAL-WREATH-COHERENT-COMPONENT-TRIM-HYBRID.",
+    "reason_invalid": "Falsified or refined by exact theorem evaluation.",
+    "source": "EXP-CODE-SELF-DUAL-WREATH-COHERENT-COMPONENT-TRIM-HYBRID"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
       "EXP-CODE-SELF-DUAL-WREATH-COHERENT-FOURIER-DECODER",
       "PO-MEASUREMENT"
     ],
@@ -67118,6 +68057,28 @@
     "lesson": "Lesson from exact theorem analysis for EXP-CODE-SELF-DUAL-WREATH-COMPONENT-POVM-SPECTRAL-TRIM.",
     "reason_invalid": "Falsified or refined by exact theorem evaluation.",
     "source": "EXP-CODE-SELF-DUAL-WREATH-COMPONENT-POVM-SPECTRAL-TRIM"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "EXP-CODE-SELF-DUAL-WREATH-CONJUGATE-PAIR-ADMISSION-NO-GO",
+      "PO-MEASUREMENT"
+    ],
+    "claim": "Initial negative claim for EXP-CODE-SELF-DUAL-WREATH-CONJUGATE-PAIR-ADMISSION-NO-GO.",
+    "evidence": {
+      "distributed_approximate_twist_theorem_count": 0,
+      "exact_conjugate_collision_identity_theorem_count": 1,
+      "finite_control_count": 13,
+      "finite_control_failure_count": 0,
+      "natural_high_weight_recoupling_algorithm_count": 0,
+      "new_quantum_algorithm_count": 0,
+      "polynomial_pool_exact_conjugate_admission_count": 0,
+      "stretched_exponential_admission_no_go_theorem_count": 1
+    },
+    "id": "NEG-SELF-DUAL-WREATH-CONJUGATE-PAIR-ADMISSION-NO-GO",
+    "lesson": "Lesson from exact theorem analysis for EXP-CODE-SELF-DUAL-WREATH-CONJUGATE-PAIR-ADMISSION-NO-GO.",
+    "reason_invalid": "Falsified or refined by exact theorem evaluation.",
+    "source": "EXP-CODE-SELF-DUAL-WREATH-CONJUGATE-PAIR-ADMISSION-NO-GO"
   },
   {
     "applies_to": [
@@ -67818,6 +68779,19 @@
     "lesson": "Lesson from exact theorem analysis for EXP-CODE-SELF-DUAL-WREATH-HIGH-CODIMENSION-FACE-WORD-FRONTIER.",
     "reason_invalid": "Falsified or refined by exact theorem evaluation.",
     "source": "EXP-CODE-SELF-DUAL-WREATH-HIGH-CODIMENSION-FACE-WORD-FRONTIER"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "EXP-CODE-SELF-DUAL-WREATH-INTERLEAVED-TARGET-MARGIN-STABILITY",
+      "PO-MEASUREMENT"
+    ],
+    "claim": "Initial negative claim for EXP-CODE-SELF-DUAL-WREATH-INTERLEAVED-TARGET-MARGIN-STABILITY.",
+    "evidence": {},
+    "id": "NEG-SELF-DUAL-WREATH-INTERLEAVED-TARGET-MARGIN-STABILITY",
+    "lesson": "Lesson from exact theorem analysis for EXP-CODE-SELF-DUAL-WREATH-INTERLEAVED-TARGET-MARGIN-STABILITY.",
+    "reason_invalid": "Falsified or refined by exact theorem evaluation.",
+    "source": "EXP-CODE-SELF-DUAL-WREATH-INTERLEAVED-TARGET-MARGIN-STABILITY"
   },
   {
     "applies_to": [
@@ -69097,6 +70071,72 @@
   {
     "applies_to": [
       "CODE-COSET-COLLECTIVE",
+      "EXP-CODE-SELF-DUAL-WREATH-POINT-CHILD-STAR-ENERGY",
+      "PO-MEASUREMENT"
+    ],
+    "claim": "Initial negative claim for EXP-CODE-SELF-DUAL-WREATH-POINT-CHILD-STAR-ENERGY.",
+    "evidence": {
+      "active_finite_child_star_count": 7,
+      "efficient_child_star_measurement_count": 0,
+      "finite_control_count": 3,
+      "finite_control_failure_count": 0,
+      "finite_offdiagonal_recoupling_witness_count": 16,
+      "new_quantum_algorithm_count": 0,
+      "positive_child_star_energy_theorem_count": 1,
+      "scalable_recoupling_magnitude_theorem_count": 0
+    },
+    "id": "NEG-SELF-DUAL-WREATH-POINT-CHILD-STAR-ENERGY",
+    "lesson": "Lesson from exact theorem analysis for EXP-CODE-SELF-DUAL-WREATH-POINT-CHILD-STAR-ENERGY.",
+    "reason_invalid": "Falsified or refined by exact theorem evaluation.",
+    "source": "EXP-CODE-SELF-DUAL-WREATH-POINT-CHILD-STAR-ENERGY"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "EXP-CODE-SELF-DUAL-WREATH-POINT-PARENT-COHERENCE-WITNESS",
+      "PO-MEASUREMENT"
+    ],
+    "claim": "Initial negative claim for EXP-CODE-SELF-DUAL-WREATH-POINT-PARENT-COHERENCE-WITNESS.",
+    "evidence": {
+      "all_n_parent_coherence_witness_theorem_count": 1,
+      "coherent_parent_filter_circuit_count": 0,
+      "complete_mrs_transcript_separation_count": 0,
+      "finite_control_count": 3,
+      "finite_control_failure_count": 0,
+      "finite_zero_information_parent_dephasing_count": 1,
+      "natural_inverse_polynomial_coherence_witness_count": 0,
+      "new_quantum_algorithm_count": 0,
+      "parent_energy_pythagorean_theorem_count": 1
+    },
+    "id": "NEG-SELF-DUAL-WREATH-POINT-PARENT-COHERENCE-WITNESS",
+    "lesson": "Lesson from exact theorem analysis for EXP-CODE-SELF-DUAL-WREATH-POINT-PARENT-COHERENCE-WITNESS.",
+    "reason_invalid": "Falsified or refined by exact theorem evaluation.",
+    "source": "EXP-CODE-SELF-DUAL-WREATH-POINT-PARENT-COHERENCE-WITNESS"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "EXP-CODE-SELF-DUAL-WREATH-POINT-PGM-COARSE-GRAINING",
+      "PO-MEASUREMENT"
+    ],
+    "claim": "Initial negative claim for EXP-CODE-SELF-DUAL-WREATH-POINT-PGM-COARSE-GRAINING.",
+    "evidence": {
+      "child_star_square_roots_avoided_by_inherited_route": 1,
+      "exact_coarse_graining_theorem_count": 1,
+      "finite_control_count": 3,
+      "finite_control_failure_count": 0,
+      "full_multiplicity_inverse_compiler_count": 0,
+      "new_quantum_algorithm_count": 0,
+      "polynomial_point_pgm_circuit_count": 0
+    },
+    "id": "NEG-SELF-DUAL-WREATH-POINT-PGM-COARSE-GRAINING",
+    "lesson": "Lesson from exact theorem analysis for EXP-CODE-SELF-DUAL-WREATH-POINT-PGM-COARSE-GRAINING.",
+    "reason_invalid": "Falsified or refined by exact theorem evaluation.",
+    "source": "EXP-CODE-SELF-DUAL-WREATH-POINT-PGM-COARSE-GRAINING"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
       "EXP-CODE-SELF-DUAL-WREATH-POLAR-FACTOR-TRANSFER",
       "PO-MEASUREMENT"
     ],
@@ -69344,6 +70384,19 @@
   {
     "applies_to": [
       "CODE-COSET-COLLECTIVE",
+      "EXP-CODE-SELF-DUAL-WREATH-REVERSIBLE-AUTOMATON-FIBER-COLLAPSE",
+      "PO-MEASUREMENT"
+    ],
+    "claim": "Initial negative claim for EXP-CODE-SELF-DUAL-WREATH-REVERSIBLE-AUTOMATON-FIBER-COLLAPSE.",
+    "evidence": {},
+    "id": "NEG-SELF-DUAL-WREATH-REVERSIBLE-AUTOMATON-FIBER-COLLAPSE",
+    "lesson": "Lesson from exact theorem analysis for EXP-CODE-SELF-DUAL-WREATH-REVERSIBLE-AUTOMATON-FIBER-COLLAPSE.",
+    "reason_invalid": "Falsified or refined by exact theorem evaluation.",
+    "source": "EXP-CODE-SELF-DUAL-WREATH-REVERSIBLE-AUTOMATON-FIBER-COLLAPSE"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
       "EXP-CODE-SELF-DUAL-WREATH-SECTOR-WEIGHT-CONCENTRATION",
       "PO-MEASUREMENT"
     ],
@@ -69372,6 +70425,28 @@
     "lesson": "Lesson from exact theorem analysis for EXP-CODE-SELF-DUAL-WREATH-SECTOR-WEIGHT-CONCENTRATION.",
     "reason_invalid": "Falsified or refined by exact theorem evaluation.",
     "source": "EXP-CODE-SELF-DUAL-WREATH-SECTOR-WEIGHT-CONCENTRATION"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "EXP-CODE-SELF-DUAL-WREATH-SHARED-PAIR-RECOUPLING-DECOUPLING",
+      "PO-MEASUREMENT"
+    ],
+    "claim": "Initial negative claim for EXP-CODE-SELF-DUAL-WREATH-SHARED-PAIR-RECOUPLING-DECOUPLING.",
+    "evidence": {
+      "coherent_multiplicity_path_information_theorem_count": 0,
+      "dephased_shared_pair_strong_information_resource_count": 0,
+      "exact_chi_square_decoupling_theorem_count": 1,
+      "finite_control_count": 8,
+      "finite_control_failure_count": 0,
+      "natural_collective_decoder_count": 0,
+      "new_quantum_algorithm_count": 0,
+      "shared_pair_joint_character_kernel_theorem_count": 1
+    },
+    "id": "NEG-SELF-DUAL-WREATH-SHARED-PAIR-RECOUPLING-DECOUPLING",
+    "lesson": "Lesson from exact theorem analysis for EXP-CODE-SELF-DUAL-WREATH-SHARED-PAIR-RECOUPLING-DECOUPLING.",
+    "reason_invalid": "Falsified or refined by exact theorem evaluation.",
+    "source": "EXP-CODE-SELF-DUAL-WREATH-SHARED-PAIR-RECOUPLING-DECOUPLING"
   },
   {
     "applies_to": [
@@ -69541,6 +70616,28 @@
     "lesson": "Lesson from exact theorem analysis for EXP-CODE-SELF-DUAL-WREATH-SIBLING-WORD-MAP-NORMAL-FORM.",
     "reason_invalid": "Falsified or refined by exact theorem evaluation.",
     "source": "EXP-CODE-SELF-DUAL-WREATH-SIBLING-WORD-MAP-NORMAL-FORM"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "EXP-CODE-SELF-DUAL-WREATH-SIGN-TWIST-COLLECTIVE-ACTIVATION",
+      "PO-MEASUREMENT"
+    ],
+    "claim": "Initial negative claim for EXP-CODE-SELF-DUAL-WREATH-SIGN-TWIST-COLLECTIVE-ACTIVATION.",
+    "evidence": {
+      "all_n_inverse_polynomial_activation_theorem_count": 1,
+      "conditional_signal_polynomial_exponent": 15,
+      "efficient_point_measurement_count": 0,
+      "finite_direct_formula_validation_count": 1,
+      "natural_source_admission_theorem_count": 0,
+      "new_quantum_algorithm_count": 0,
+      "structural_control_count": 8,
+      "structural_control_failure_count": 0
+    },
+    "id": "NEG-SELF-DUAL-WREATH-SIGN-TWIST-COLLECTIVE-ACTIVATION",
+    "lesson": "Lesson from exact theorem analysis for EXP-CODE-SELF-DUAL-WREATH-SIGN-TWIST-COLLECTIVE-ACTIVATION.",
+    "reason_invalid": "Falsified or refined by exact theorem evaluation.",
+    "source": "EXP-CODE-SELF-DUAL-WREATH-SIGN-TWIST-COLLECTIVE-ACTIVATION"
   },
   {
     "applies_to": [
@@ -69966,6 +71063,27 @@
   {
     "applies_to": [
       "CODE-COSET-COLLECTIVE",
+      "EXP-CODE-SELF-DUAL-WREATH-TRANSPOSE-EDGE-ADMISSION-NO-GO",
+      "PO-MEASUREMENT"
+    ],
+    "claim": "Initial negative claim for EXP-CODE-SELF-DUAL-WREATH-TRANSPOSE-EDGE-ADMISSION-NO-GO.",
+    "evidence": {
+      "collective_intermediate_recoupling_no_go_count": 0,
+      "finite_control_count": 13,
+      "finite_control_failure_count": 0,
+      "natural_typical_collective_decoder_count": 0,
+      "new_quantum_algorithm_count": 0,
+      "polynomial_pool_source_edge_admission_count": 0,
+      "source_local_transpose_edge_bound_theorem_count": 1
+    },
+    "id": "NEG-SELF-DUAL-WREATH-TRANSPOSE-EDGE-ADMISSION-NO-GO",
+    "lesson": "Lesson from exact theorem analysis for EXP-CODE-SELF-DUAL-WREATH-TRANSPOSE-EDGE-ADMISSION-NO-GO.",
+    "reason_invalid": "Falsified or refined by exact theorem evaluation.",
+    "source": "EXP-CODE-SELF-DUAL-WREATH-TRANSPOSE-EDGE-ADMISSION-NO-GO"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
       "EXP-CODE-SELF-DUAL-WREATH-TWO-COLOR-RETURN-WALK",
       "PO-MEASUREMENT"
     ],
@@ -70143,6 +71261,125 @@
     "lesson": "Lesson from exact theorem analysis for EXP-CODE-SELF-DUAL-WREATH-WEIGHTED-OVERLAP-EXCLUSION.",
     "reason_invalid": "Falsified or refined by exact theorem evaluation.",
     "source": "EXP-CODE-SELF-DUAL-WREATH-WEIGHTED-OVERLAP-EXCLUSION"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "EXP-CODE-SELF-DUAL-WREATH-WINDOWED-ROOT-FLATNESS-BRIDGE",
+      "PO-MEASUREMENT"
+    ],
+    "claim": "Initial negative claim for EXP-CODE-SELF-DUAL-WREATH-WINDOWED-ROOT-FLATNESS-BRIDGE.",
+    "evidence": {
+      "all_level_component_rank_budget_theorem_count": 0,
+      "finite_control_count": 3,
+      "finite_control_failure_count": 0,
+      "new_quantum_algorithm_count": 0,
+      "recursive_component_trim_compiler_count": 0,
+      "scaling_failure_count": 0,
+      "scaling_record_count": 8,
+      "structured_window_projector_count": 0,
+      "tail_final_root_component_threshold": 2.4790513891118684e-09,
+      "tail_root_flatness_upper_bound": 736944.4154917583,
+      "tail_windowed_success_lower_bound": 0.7684508445225571,
+      "windowed_root_flatness_bridge_theorem_count": 1
+    },
+    "id": "NEG-SELF-DUAL-WREATH-WINDOWED-ROOT-FLATNESS-BRIDGE",
+    "lesson": "Lesson from exact theorem analysis for EXP-CODE-SELF-DUAL-WREATH-WINDOWED-ROOT-FLATNESS-BRIDGE.",
+    "reason_invalid": "Falsified or refined by exact theorem evaluation.",
+    "source": "EXP-CODE-SELF-DUAL-WREATH-WINDOWED-ROOT-FLATNESS-BRIDGE"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "carrier-conditioned PGM",
+      "multiplicity whitening"
+    ],
+    "claim": "Resolving one pair-carrier label turns every natural PGM Fourier block into a scalar whitening problem.",
+    "evidence": {
+      "artifact": "research/representation/self_dual_wreath_carrier_conditioned_pgm_boundary.json"
+    },
+    "id": "ONE-CARRIER-LABEL-NOT-PGM-MULTIPLICITY-SCALARIZATION",
+    "lesson": "Track the residual source-specific path multiplicity after every proposed carrier hierarchy.",
+    "reason_invalid": "The branch inverse remains (c D_nu c)^(-1/2) on a Racah path space containing two Kronecker multiplicity factors.",
+    "source": "EXP-CODE-SELF-DUAL-WREATH-CARRIER-CONDITIONED-PGM-BOUNDARY"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "support-six commutant program"
+    ],
+    "claim": "Closure on the highest-mass repeated S_14 block proves bounded-support generation on one-minus-o(1) natural source mass.",
+    "evidence": {
+      "artifact": "research/representation/coset_hidden_involution_high_mass_support_scan.json"
+    },
+    "id": "ONE-HIGH-MASS-S14-BLOCK-NOT-TYPICAL-SUPPORT-THEOREM",
+    "lesson": "Use source mass to choose finite falsification targets, then require a uniform theorem before compiling coherent access.",
+    "reason_invalid": "The finite block has the recorded sub-one-percent mass and supplies no growing-rank concentration, exact symbolic certificate, or normalized-gap theorem.",
+    "source": "EXP-COSET-HIDDEN-INVOLUTION-HIGH-MASS-SUPPORT-SCAN"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "EXP-CODE-SELF-DUAL-WREATH-AFFINE-STAR-CAYLEY-COMPILER",
+      "PO-MEASUREMENT"
+    ],
+    "claim": "The commuting operator-valued affine-star formula gives a uniform polylogarithmic-degree spectrum-only QSVT compiler.",
+    "evidence": {
+      "merged_center_fit_residual": 0.11180992313067782,
+      "tail_markov_degree_lower_bound": 240,
+      "tail_side_width": 1048576
+    },
+    "id": "OPAQUE-AFFINE-STAR-GAMMA-QSVT-NOT-POLYLOG-WIDTH",
+    "lesson": "Use coherent carrier labels and reversible angle arithmetic, or derive additional spectral promises. Normalization one alone does not remove polynomial degree.",
+    "reason_invalid": "The uniform-sector Cayley eigenvalue changes by a constant between gamma=0 and gamma=1/p; Markov's inequality forces degree Omega(sqrt(p)).",
+    "source": "EXP-CODE-SELF-DUAL-WREATH-AFFINE-STAR-CAYLEY-COMPILER"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "EXP-CODE-SELF-DUAL-WREATH-PAIR-CARRIER-LABEL-CONTEXTUALITY",
+      "PO-MEASUREMENT"
+    ],
+    "claim": "Coherently querying every local pair carrier label produces one persistent nondemolition classical channel-label table.",
+    "evidence": {
+      "local_pair_carrier_query_compiled": true,
+      "overlapping_s3_compression_eigenvalue": 0.25,
+      "overlapping_s3_projector_commutator_norm": 0.4330127018922193
+    },
+    "id": "OVERLAPPING-PAIR-GPE-LABELS-NOT-JOINTLY-CLASSICAL",
+    "lesson": "Prove compatibility on the physically occupied subspace, compile a structured Racah resolver, or avoid persistent pair labels.",
+    "reason_invalid": "Overlapping S3 coarse isotypic projectors have exact commutator norm sqrt(3)/4 and compression eigenvalue 1/4.",
+    "source": "EXP-CODE-SELF-DUAL-WREATH-PAIR-CARRIER-LABEL-CONTEXTUALITY"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "pair carrier branches",
+      "Kronecker multiplicity"
+    ],
+    "claim": "Kronecker multiplicity greater than one makes the hidden-averaged pair-carrier branch state nonflat.",
+    "evidence": {
+      "artifact": "research/representation/self_dual_wreath_disjoint_pair_covariance_polar_reduction.json"
+    },
+    "id": "PAIR-CARRIER-KRONECKER-MULTIPLICITY-NOT-BRANCH-NONFLATNESS",
+    "lesson": "Move the compiler target from local pair whitening to the shared-label covariance metric across blocks.",
+    "reason_invalid": "Every term is a central class sum in the diagonal representation and acts as the same scalar on every copy of the target irrep.",
+    "source": "EXP-CODE-SELF-DUAL-WREATH-DISJOINT-PAIR-COVARIANCE-POLAR-REDUCTION"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "weighted commuting asymptotics",
+      "perfect matching conjugacy class"
+    ],
+    "claim": "The generic z_alpha z_beta/n! bound closes every logarithmic-fixed-point class pair.",
+    "evidence": {
+      "artifact": "research/representation/self_dual_wreath_plancherel_carrier_asymptotic_closure.json"
+    },
+    "id": "PERFECT-MATCHING-CENTRALIZER-PRODUCT-BOUND-NOT-VANISHING",
+    "lesson": "Isolate extremal centralizer classes and count their intersections exactly before applying a uniform product bound.",
+    "reason_invalid": "For the perfect-matching pair it grows as Theta(sqrt(n)); only the exact centralizer intersection gives decay.",
+    "source": "EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-CARRIER-ASYMPTOTIC-CLOSURE"
   },
   {
     "applies_to": [
@@ -76881,6 +78118,21 @@
   {
     "applies_to": [
       "CODE-COSET-COLLECTIVE",
+      "bounded-support hyperoctahedral commutants",
+      "rank-tracking support conjecture"
+    ],
+    "claim": "The finite support threshold sequence 4,5,6 demonstrates that the required hyperoctahedral commutant support grows with rank.",
+    "evidence": {
+      "artifact": "research/representation/coset_hidden_involution_multiplicity_twirl_projection.json"
+    },
+    "id": "RANK-TRACKING-4-5-6-NOT-UNBOUNDED-SUPPORT-EVIDENCE",
+    "lesson": "Use compressed multiplicity-block scans or a symbolic invariant; do not infer asymptotic growth from three finite thresholds.",
+    "reason_invalid": "Eight rank-seven controls, including a multiplicity-three block and three nontrivial-beta blocks, generate their copy algebra by support six; several close strictly earlier.",
+    "source": "EXP-COSET-HIDDEN-INVOLUTION-MULTIPLICITY-TWIRL-PROJECTION"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
       "PO-DEQUANTIZATION",
       "PO-FALSIFIERS"
     ],
@@ -81900,6 +83152,36 @@
   {
     "applies_to": [
       "CODE-COSET-COLLECTIVE",
+      "natural-mass extrapolation",
+      "repeated-label controls"
+    ],
+    "claim": "The growing-rank octahedral occupied family establishes a positive-mass obstruction for natural threshold tuples.",
+    "evidence": {
+      "artifact": "research/representation/self_dual_wreath_occupied_carrier_octahedral_boundary.json"
+    },
+    "id": "REPEATED-OCTAHEDRAL-CARRIER-FAMILY-NOT-NATURAL-MASS",
+    "lesson": "Continue on globally distinct typical partitions and report coefficient trace mass separately from source probability.",
+    "reason_invalid": "Its source portfolio repeats partitions; explicit Plancherel mass vanishes and global source collisions occur with o(1) probability.",
+    "source": "EXP-CODE-SELF-DUAL-WREATH-OCCUPIED-CARRIER-OCTAHEDRAL-BOUNDARY"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "tensor-product PGM effects",
+      "shared-label discrimination"
+    ],
+    "claim": "The effects M E_h tensor F_h obtained from two local PGMs form the global shared-label PGM.",
+    "evidence": {
+      "artifact": "research/representation/self_dual_wreath_disjoint_pair_branch_pgm_compiler_boundary.json"
+    },
+    "id": "SCALED-DIAGONAL-PAIR-PGM-EFFECTS-NOT-A-POVM",
+    "lesson": "Retain all independent local outcomes with classical MAP as the legal local baseline; do not keep only matching labels.",
+    "reason_invalid": "Their sum fails the global support-projector completeness condition and can have eigenvalue above one.",
+    "source": "EXP-CODE-SELF-DUAL-WREATH-DISJOINT-PAIR-BRANCH-PGM-COMPILER-BOUNDARY"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
       "PO-MECHANISM",
       "PO-MEASUREMENT",
       "PO-COMPLEXITY"
@@ -82438,6 +83720,57 @@
   {
     "applies_to": [
       "CODE-COSET-COLLECTIVE",
+      "rank-seven source-ranked portfolio"
+    ],
+    "claim": "The next source-ranked repeated S_14 branches require support five or six for full copy-algebra generation.",
+    "evidence": {
+      "artifact": "research/representation/coset_hidden_involution_source_weighted_support_portfolio.json"
+    },
+    "id": "SOURCE-RANKED-S14-PORTFOLIO-DOES-NOT-REQUIRE-SUPPORT-FIVE-OR-SIX",
+    "lesson": "The finite evidence now favors a low-support generator theorem; search for its exact partition-algebra mechanism while continuing counterexample scans.",
+    "reason_invalid": "Every scanned branch has a robust support-at-most-four scalar-commutant witness.",
+    "source": "EXP-COSET-HIDDEN-INVOLUTION-SOURCE-WEIGHTED-SUPPORT-PORTFOLIO"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "weighted commuting asymptotics",
+      "near-derangement carrier classes"
+    ],
+    "claim": "The moved-support invariant-subset bound directly controls permutations with full or near-full support.",
+    "evidence": {
+      "artifact": "research/representation/self_dual_wreath_plancherel_carrier_near_derangement_reduction.json"
+    },
+    "id": "SUPPORT-INVARIANCE-ALONE-NOT-DERANGEMENT-COMMUTING-BOUND",
+    "lesson": "Retain the logarithmic-fixed-point near-derangement corner explicitly rather than hiding it in a support estimate.",
+    "reason_invalid": "At full support the support subset is deterministic; a cycle-block or centralizer-intersection argument is still required.",
+    "source": "EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-CARRIER-NEAR-DERANGEMENT-REDUCTION"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "PO-MECHANISM",
+      "PO-MEASUREMENT",
+      "PO-COMPLEXITY"
+    ],
+    "claim": "Normalization-one support projectors, child support polars, and pair polar transports determine the positive relative endpoint transfer.",
+    "evidence": {
+      "graph_projector_gap": 0.2557915332417837,
+      "relative_transfer_gap": 0.6873619601599433,
+      "representation_specific_relative_transfer_compiled": false,
+      "scale_free_graph_normal_form_proved": true,
+      "speedup_claim_allowed": false,
+      "support_polar_transport_gap": 0.0,
+      "support_projector_gap": 0.0
+    },
+    "id": "SUPPORT-PAIR-POLARS-NO-POSITIVE-RELATIVE-ENDPOINT-TRANSFER",
+    "lesson": "Keep GPE as the support transport. Add a representation-specific positive relative-transfer/Racah primitive; do not infer endpoint amplitudes from support access.",
+    "reason_invalid": "Two full-support metric pairs have identical support and support-polar data but constant-separated relative transfers and endpoint graph projectors. Positive metric ratios are information not contained in support partial isometries.",
+    "source": "research/representation/self_dual_wreath_scale_free_endpoint_graph_transfer_boundary.json"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
       "PO-DEQUANTIZATION",
       "PO-FALSIFIERS"
     ],
@@ -82611,6 +83944,52 @@
     "lesson": "Natural algebraic description is not enough; every trace family must survive sample, spectral, and low-degree baselines.",
     "reason_invalid": "Constant-degree rational equations recover the hidden shift; this natural trace family is classically learnable.",
     "source": "trace_function_search.py"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "two-pair covariance polar",
+      "information-threshold PGM"
+    ],
+    "claim": "The bounded-normalization two-pair covariance LCU already encodes the information-threshold branch frame.",
+    "evidence": {
+      "artifact": "research/representation/self_dual_wreath_dimensionless_pgm_truncation_bridge.json"
+    },
+    "id": "TWO-PAIR-COVARIANCE-ACCESS-NOT-THRESHOLD-FRAME-ACCESS",
+    "lesson": "Build a recursive full rank-scaled metric access theorem before promoting truncation robustness to an end-to-end compiler.",
+    "reason_invalid": "The threshold ensemble includes residual singleton factors and higher shared-label cumulants beyond two pair blocks.",
+    "source": "EXP-CODE-SELF-DUAL-WREATH-DIMENSIONLESS-PGM-TRUNCATION-BRIDGE"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "complete spectral copy-label decoding"
+    ],
+    "claim": "One bounded-norm inverse-polynomial-gap simple-spectrum separator resolves typical multiplicity labels.",
+    "evidence": {
+      "artifact": "research/representation/coset_hidden_involution_spectral_label_budget.json",
+      "derivation": "research/SPECTRAL_LABEL_BUDGET.md"
+    },
+    "id": "TYPICAL-MULTIPLICITY-SINGLE-GAPPED-SEPARATOR-PACKING-OBSTRUCTION",
+    "lesson": "Pursue adaptive coarse labels, a direct transform, or a task-specific observable; this is not an HSP lower bound.",
+    "reason_invalid": "The packed label capacity is polynomial, while the exact source mass of such small multiplicities vanishes superpolynomially.",
+    "source": "EXP-COSET-HIDDEN-INVOLUTION-SPECTRAL-LABEL-BUDGET"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "EXP-CODE-SELF-DUAL-WREATH-CAYLEY-ENDPOINT-GAUGE-COMPILER",
+      "PO-MEASUREMENT"
+    ],
+    "claim": "The opaque input gauge relating the relative-transfer graph column to the canonical endpoint can be ignored at the root.",
+    "evidence": {
+      "anchored_physical_endpoint_residual": 3.726139449073863e-16,
+      "unanchored_root_branch_effect_gap": 0.3355112665826154
+    },
+    "id": "UNANCHORED-RELATIVE-GRAPH-GAUGE-NOT-POVM-INVARIANT",
+    "lesson": "Internal child gauges telescope when propagated covariantly, but the surviving root gauge must be included in the physical common-fiber coordinate embedding.",
+    "reason_invalid": "A three-dimensional noncommuting control changes a root branch effect by constant operator norm when that gauge is omitted.",
+    "source": "EXP-CODE-SELF-DUAL-WREATH-CAYLEY-ENDPOINT-GAUGE-COMPILER"
   },
   {
     "applies_to": [

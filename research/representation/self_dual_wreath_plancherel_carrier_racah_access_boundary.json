@@ -1,0 +1,988 @@
+{
+  "created_at": "2026-09-01T21:35:40.539850+00:00",
+  "theorem_contract": {
+    "minimum_physical_block": "M_tau^L=direct_sum_alpha K_(a,b)^alpha tensor K_(alpha,c)^tau and M_tau^R=direct_sum_beta K_(b,c)^beta tensor K_(a,beta)^tau.",
+    "operational_witness": "C=D^-1 sum_(alpha,beta)||[P_alpha,Q_beta]||_F^2=2(1-p_return).",
+    "positive_access_result": "Known coherent pair-carrier GPE label queries implement a constant-query P-Q-P disturbance test without materializing F_tau.",
+    "asymptotic_mass_result": "C<=2w_active and E C->2 imply E w_active->1, including after collision-free conditioning.",
+    "decoder_no_go": "All fixed-cycle-type hidden involutions are conjugate, so carrier-only branch distributions are identical and contain zero hidden-identity information.",
+    "scope": "The carrier disturbance is efficiently testable and physically extensive, but its invariant outcome algebra cannot identify a conjugate hidden involution."
+  },
+  "finite_controls": [
+    {
+      "control_id": "S3-STANDARD-CUBED",
+      "n": 3,
+      "source_partitions": [
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "source_dimensions": [
+        2,
+        2,
+        2
+      ],
+      "physical_dimension": 8,
+      "sectors": [
+        {
+          "total_partition": [
+            3
+          ],
+          "total_irrep_dimension": 1,
+          "left_path_dimensions": [
+            [
+              [
+                2,
+                1
+              ],
+              1
+            ]
+          ],
+          "right_path_dimensions": [
+            [
+              [
+                2,
+                1
+              ],
+              1
+            ]
+          ],
+          "left_total_multiplicity": 1,
+          "right_total_multiplicity": 1,
+          "dense_total_isotypic_rank": 1,
+          "physical_sector_dimension": 1,
+          "physical_dimension_fraction": 0.125,
+          "aggregate_commutator_energy": 1.8041578716943618e-64,
+          "multiplicity_normalized_commutator_energy": 1.8041578716943618e-64,
+          "noncommuting_racah_sector": false,
+          "associativity_dimension_identity_verified": true,
+          "dense_rank_formula_verified": true,
+          "status": "commuting-racah-sector"
+        },
+        {
+          "total_partition": [
+            2,
+            1
+          ],
+          "total_irrep_dimension": 2,
+          "left_path_dimensions": [
+            [
+              [
+                3
+              ],
+              1
+            ],
+            [
+              [
+                2,
+                1
+              ],
+              1
+            ],
+            [
+              [
+                1,
+                1,
+                1
+              ],
+              1
+            ]
+          ],
+          "right_path_dimensions": [
+            [
+              [
+                3
+              ],
+              1
+            ],
+            [
+              [
+                2,
+                1
+              ],
+              1
+            ],
+            [
+              [
+                1,
+                1,
+                1
+              ],
+              1
+            ]
+          ],
+          "left_total_multiplicity": 3,
+          "right_total_multiplicity": 3,
+          "dense_total_isotypic_rank": 6,
+          "physical_sector_dimension": 6,
+          "physical_dimension_fraction": 0.75,
+          "aggregate_commutator_energy": 6.999999999999995,
+          "multiplicity_normalized_commutator_energy": 3.4999999999999973,
+          "noncommuting_racah_sector": true,
+          "associativity_dimension_identity_verified": true,
+          "dense_rank_formula_verified": true,
+          "status": "active-multiplicity-racah-sector"
+        },
+        {
+          "total_partition": [
+            1,
+            1,
+            1
+          ],
+          "total_irrep_dimension": 1,
+          "left_path_dimensions": [
+            [
+              [
+                2,
+                1
+              ],
+              1
+            ]
+          ],
+          "right_path_dimensions": [
+            [
+              [
+                2,
+                1
+              ],
+              1
+            ]
+          ],
+          "left_total_multiplicity": 1,
+          "right_total_multiplicity": 1,
+          "dense_total_isotypic_rank": 1,
+          "physical_sector_dimension": 1,
+          "physical_dimension_fraction": 0.125,
+          "aggregate_commutator_energy": 1.8041578716943618e-64,
+          "multiplicity_normalized_commutator_energy": 1.8041578716943618e-64,
+          "noncommuting_racah_sector": false,
+          "associativity_dimension_identity_verified": true,
+          "dense_rank_formula_verified": true,
+          "status": "commuting-racah-sector"
+        }
+      ],
+      "aggregate_commutator": 0.8749999999999994,
+      "lueders_same_left_label_return_probability": 0.5624999999999998,
+      "disturbance_identity_residual": 9.992007221626409e-16,
+      "active_racah_physical_dimension": 6,
+      "active_racah_physical_dimension_fraction": 0.75,
+      "commutator_to_active_mass_bound_slack": 0.6250000000000006,
+      "maximum_total_projector_pair_pvm_commutator_residual": 1.1102230246251564e-16,
+      "maximum_global_conjugation_covariance_residual": 1.7554167342883506e-16,
+      "maximum_projector_idempotence_residual": 3.1401849173675503e-16,
+      "total_isotypic_completeness_residual": 0.0,
+      "block_energy_reconstruction_residual": 8.881784197001252e-16,
+      "minimum_active_multiplicity_dimension": 3,
+      "exact_racah_block_decomposition_verified": true,
+      "finite_dense_control_only": true,
+      "status": "minimum-racah-block-and-disturbance-identity-verified"
+    },
+    {
+      "control_id": "S4-STANDARD-CUBED",
+      "n": 4,
+      "source_partitions": [
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          1
+        ]
+      ],
+      "source_dimensions": [
+        3,
+        3,
+        3
+      ],
+      "physical_dimension": 27,
+      "sectors": [
+        {
+          "total_partition": [
+            4
+          ],
+          "total_irrep_dimension": 1,
+          "left_path_dimensions": [
+            [
+              [
+                3,
+                1
+              ],
+              1
+            ]
+          ],
+          "right_path_dimensions": [
+            [
+              [
+                3,
+                1
+              ],
+              1
+            ]
+          ],
+          "left_total_multiplicity": 1,
+          "right_total_multiplicity": 1,
+          "dense_total_isotypic_rank": 1,
+          "physical_sector_dimension": 1,
+          "physical_dimension_fraction": 0.037037037037037035,
+          "aggregate_commutator_energy": 2.9430497555050887e-34,
+          "multiplicity_normalized_commutator_energy": 2.9430497555050887e-34,
+          "noncommuting_racah_sector": false,
+          "associativity_dimension_identity_verified": true,
+          "dense_rank_formula_verified": true,
+          "status": "commuting-racah-sector"
+        },
+        {
+          "total_partition": [
+            3,
+            1
+          ],
+          "total_irrep_dimension": 3,
+          "left_path_dimensions": [
+            [
+              [
+                4
+              ],
+              1
+            ],
+            [
+              [
+                3,
+                1
+              ],
+              1
+            ],
+            [
+              [
+                2,
+                2
+              ],
+              1
+            ],
+            [
+              [
+                2,
+                1,
+                1
+              ],
+              1
+            ]
+          ],
+          "right_path_dimensions": [
+            [
+              [
+                4
+              ],
+              1
+            ],
+            [
+              [
+                3,
+                1
+              ],
+              1
+            ],
+            [
+              [
+                2,
+                2
+              ],
+              1
+            ],
+            [
+              [
+                2,
+                1,
+                1
+              ],
+              1
+            ]
+          ],
+          "left_total_multiplicity": 4,
+          "right_total_multiplicity": 4,
+          "dense_total_isotypic_rank": 12,
+          "physical_sector_dimension": 12,
+          "physical_dimension_fraction": 0.4444444444444444,
+          "aggregate_commutator_energy": 17.31481481481479,
+          "multiplicity_normalized_commutator_energy": 5.771604938271596,
+          "noncommuting_racah_sector": true,
+          "associativity_dimension_identity_verified": true,
+          "dense_rank_formula_verified": true,
+          "status": "active-multiplicity-racah-sector"
+        },
+        {
+          "total_partition": [
+            2,
+            2
+          ],
+          "total_irrep_dimension": 2,
+          "left_path_dimensions": [
+            [
+              [
+                3,
+                1
+              ],
+              1
+            ],
+            [
+              [
+                2,
+                1,
+                1
+              ],
+              1
+            ]
+          ],
+          "right_path_dimensions": [
+            [
+              [
+                3,
+                1
+              ],
+              1
+            ],
+            [
+              [
+                2,
+                1,
+                1
+              ],
+              1
+            ]
+          ],
+          "left_total_multiplicity": 2,
+          "right_total_multiplicity": 2,
+          "dense_total_isotypic_rank": 4,
+          "physical_sector_dimension": 4,
+          "physical_dimension_fraction": 0.14814814814814814,
+          "aggregate_commutator_energy": 2.999999999999996,
+          "multiplicity_normalized_commutator_energy": 1.499999999999998,
+          "noncommuting_racah_sector": true,
+          "associativity_dimension_identity_verified": true,
+          "dense_rank_formula_verified": true,
+          "status": "active-multiplicity-racah-sector"
+        },
+        {
+          "total_partition": [
+            2,
+            1,
+            1
+          ],
+          "total_irrep_dimension": 3,
+          "left_path_dimensions": [
+            [
+              [
+                3,
+                1
+              ],
+              1
+            ],
+            [
+              [
+                2,
+                2
+              ],
+              1
+            ],
+            [
+              [
+                2,
+                1,
+                1
+              ],
+              1
+            ]
+          ],
+          "right_path_dimensions": [
+            [
+              [
+                3,
+                1
+              ],
+              1
+            ],
+            [
+              [
+                2,
+                2
+              ],
+              1
+            ],
+            [
+              [
+                2,
+                1,
+                1
+              ],
+              1
+            ]
+          ],
+          "left_total_multiplicity": 3,
+          "right_total_multiplicity": 3,
+          "dense_total_isotypic_rank": 9,
+          "physical_sector_dimension": 9,
+          "physical_dimension_fraction": 0.3333333333333333,
+          "aggregate_commutator_energy": 10.49999999999999,
+          "multiplicity_normalized_commutator_energy": 3.4999999999999964,
+          "noncommuting_racah_sector": true,
+          "associativity_dimension_identity_verified": true,
+          "dense_rank_formula_verified": true,
+          "status": "active-multiplicity-racah-sector"
+        },
+        {
+          "total_partition": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "total_irrep_dimension": 1,
+          "left_path_dimensions": [
+            [
+              [
+                2,
+                1,
+                1
+              ],
+              1
+            ]
+          ],
+          "right_path_dimensions": [
+            [
+              [
+                2,
+                1,
+                1
+              ],
+              1
+            ]
+          ],
+          "left_total_multiplicity": 1,
+          "right_total_multiplicity": 1,
+          "dense_total_isotypic_rank": 1,
+          "physical_sector_dimension": 1,
+          "physical_dimension_fraction": 0.037037037037037035,
+          "aggregate_commutator_energy": 5.04380176871604e-35,
+          "multiplicity_normalized_commutator_energy": 5.04380176871604e-35,
+          "noncommuting_racah_sector": false,
+          "associativity_dimension_identity_verified": true,
+          "dense_rank_formula_verified": true,
+          "status": "commuting-racah-sector"
+        }
+      ],
+      "aggregate_commutator": 1.1412894375857332,
+      "lueders_same_left_label_return_probability": 0.4293552812071329,
+      "disturbance_identity_residual": 1.1102230246251565e-15,
+      "active_racah_physical_dimension": 25,
+      "active_racah_physical_dimension_fraction": 0.9259259259259259,
+      "commutator_to_active_mass_bound_slack": 0.7105624142661187,
+      "maximum_total_projector_pair_pvm_commutator_residual": 7.824331563506852e-16,
+      "maximum_global_conjugation_covariance_residual": 1.4954701464959092e-15,
+      "maximum_projector_idempotence_residual": 1.0954326521136726e-15,
+      "total_isotypic_completeness_residual": 6.700203201167516e-16,
+      "block_energy_reconstruction_residual": 2.1316282072803006e-14,
+      "minimum_active_multiplicity_dimension": 2,
+      "exact_racah_block_decomposition_verified": true,
+      "finite_dense_control_only": true,
+      "status": "minimum-racah-block-and-disturbance-identity-verified"
+    },
+    {
+      "control_id": "S4-TWO-TWO-CUBED",
+      "n": 4,
+      "source_partitions": [
+        [
+          2,
+          2
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          2,
+          2
+        ]
+      ],
+      "source_dimensions": [
+        2,
+        2,
+        2
+      ],
+      "physical_dimension": 8,
+      "sectors": [
+        {
+          "total_partition": [
+            4
+          ],
+          "total_irrep_dimension": 1,
+          "left_path_dimensions": [
+            [
+              [
+                2,
+                2
+              ],
+              1
+            ]
+          ],
+          "right_path_dimensions": [
+            [
+              [
+                2,
+                2
+              ],
+              1
+            ]
+          ],
+          "left_total_multiplicity": 1,
+          "right_total_multiplicity": 1,
+          "dense_total_isotypic_rank": 1,
+          "physical_sector_dimension": 1,
+          "physical_dimension_fraction": 0.125,
+          "aggregate_commutator_energy": 9.678842525240192e-65,
+          "multiplicity_normalized_commutator_energy": 9.678842525240192e-65,
+          "noncommuting_racah_sector": false,
+          "associativity_dimension_identity_verified": true,
+          "dense_rank_formula_verified": true,
+          "status": "commuting-racah-sector"
+        },
+        {
+          "total_partition": [
+            3,
+            1
+          ],
+          "total_irrep_dimension": 3,
+          "left_path_dimensions": [],
+          "right_path_dimensions": [],
+          "left_total_multiplicity": 0,
+          "right_total_multiplicity": 0,
+          "dense_total_isotypic_rank": 0,
+          "physical_sector_dimension": 0,
+          "physical_dimension_fraction": 0.0,
+          "aggregate_commutator_energy": 1.618465492461101e-62,
+          "multiplicity_normalized_commutator_energy": 5.394884974870337e-63,
+          "noncommuting_racah_sector": false,
+          "associativity_dimension_identity_verified": true,
+          "dense_rank_formula_verified": true,
+          "status": "commuting-racah-sector"
+        },
+        {
+          "total_partition": [
+            2,
+            2
+          ],
+          "total_irrep_dimension": 2,
+          "left_path_dimensions": [
+            [
+              [
+                4
+              ],
+              1
+            ],
+            [
+              [
+                2,
+                2
+              ],
+              1
+            ],
+            [
+              [
+                1,
+                1,
+                1,
+                1
+              ],
+              1
+            ]
+          ],
+          "right_path_dimensions": [
+            [
+              [
+                4
+              ],
+              1
+            ],
+            [
+              [
+                2,
+                2
+              ],
+              1
+            ],
+            [
+              [
+                1,
+                1,
+                1,
+                1
+              ],
+              1
+            ]
+          ],
+          "left_total_multiplicity": 3,
+          "right_total_multiplicity": 3,
+          "dense_total_isotypic_rank": 6,
+          "physical_sector_dimension": 6,
+          "physical_dimension_fraction": 0.75,
+          "aggregate_commutator_energy": 6.9999999999999885,
+          "multiplicity_normalized_commutator_energy": 3.4999999999999942,
+          "noncommuting_racah_sector": true,
+          "associativity_dimension_identity_verified": true,
+          "dense_rank_formula_verified": true,
+          "status": "active-multiplicity-racah-sector"
+        },
+        {
+          "total_partition": [
+            2,
+            1,
+            1
+          ],
+          "total_irrep_dimension": 3,
+          "left_path_dimensions": [],
+          "right_path_dimensions": [],
+          "left_total_multiplicity": 0,
+          "right_total_multiplicity": 0,
+          "dense_total_isotypic_rank": 0,
+          "physical_sector_dimension": 0,
+          "physical_dimension_fraction": 0.0,
+          "aggregate_commutator_energy": 1.0321220662235038e-62,
+          "multiplicity_normalized_commutator_energy": 3.4404068874116794e-63,
+          "noncommuting_racah_sector": false,
+          "associativity_dimension_identity_verified": true,
+          "dense_rank_formula_verified": true,
+          "status": "commuting-racah-sector"
+        },
+        {
+          "total_partition": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "total_irrep_dimension": 1,
+          "left_path_dimensions": [
+            [
+              [
+                2,
+                2
+              ],
+              1
+            ]
+          ],
+          "right_path_dimensions": [
+            [
+              [
+                2,
+                2
+              ],
+              1
+            ]
+          ],
+          "left_total_multiplicity": 1,
+          "right_total_multiplicity": 1,
+          "dense_total_isotypic_rank": 1,
+          "physical_sector_dimension": 1,
+          "physical_dimension_fraction": 0.125,
+          "aggregate_commutator_energy": 9.678842530830118e-65,
+          "multiplicity_normalized_commutator_energy": 9.678842530830118e-65,
+          "noncommuting_racah_sector": false,
+          "associativity_dimension_identity_verified": true,
+          "dense_rank_formula_verified": true,
+          "status": "commuting-racah-sector"
+        }
+      ],
+      "aggregate_commutator": 0.8749999999999994,
+      "lueders_same_left_label_return_probability": 0.5624999999999996,
+      "disturbance_identity_residual": 1.4432899320127035e-15,
+      "active_racah_physical_dimension": 6,
+      "active_racah_physical_dimension_fraction": 0.75,
+      "commutator_to_active_mass_bound_slack": 0.6250000000000006,
+      "maximum_total_projector_pair_pvm_commutator_residual": 2.081668171172168e-16,
+      "maximum_global_conjugation_covariance_residual": 3.605555036969182e-16,
+      "maximum_projector_idempotence_residual": 5.661048867003676e-16,
+      "total_isotypic_completeness_residual": 1.1188630228279524e-16,
+      "block_energy_reconstruction_residual": 7.105427357601002e-15,
+      "minimum_active_multiplicity_dimension": 3,
+      "exact_racah_block_decomposition_verified": true,
+      "finite_dense_control_only": true,
+      "status": "minimum-racah-block-and-disturbance-identity-verified"
+    },
+    {
+      "control_id": "S3-COMMUTING-ONE-DIMENSIONAL-CONTROL",
+      "n": 3,
+      "source_partitions": [
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3
+        ]
+      ],
+      "source_dimensions": [
+        2,
+        2,
+        1
+      ],
+      "physical_dimension": 4,
+      "sectors": [
+        {
+          "total_partition": [
+            3
+          ],
+          "total_irrep_dimension": 1,
+          "left_path_dimensions": [
+            [
+              [
+                3
+              ],
+              1
+            ]
+          ],
+          "right_path_dimensions": [
+            [
+              [
+                2,
+                1
+              ],
+              1
+            ]
+          ],
+          "left_total_multiplicity": 1,
+          "right_total_multiplicity": 1,
+          "dense_total_isotypic_rank": 1,
+          "physical_sector_dimension": 1,
+          "physical_dimension_fraction": 0.25,
+          "aggregate_commutator_energy": 0.0,
+          "multiplicity_normalized_commutator_energy": 0.0,
+          "noncommuting_racah_sector": false,
+          "associativity_dimension_identity_verified": true,
+          "dense_rank_formula_verified": true,
+          "status": "commuting-racah-sector"
+        },
+        {
+          "total_partition": [
+            2,
+            1
+          ],
+          "total_irrep_dimension": 2,
+          "left_path_dimensions": [
+            [
+              [
+                2,
+                1
+              ],
+              1
+            ]
+          ],
+          "right_path_dimensions": [
+            [
+              [
+                2,
+                1
+              ],
+              1
+            ]
+          ],
+          "left_total_multiplicity": 1,
+          "right_total_multiplicity": 1,
+          "dense_total_isotypic_rank": 2,
+          "physical_sector_dimension": 2,
+          "physical_dimension_fraction": 0.5,
+          "aggregate_commutator_energy": 0.0,
+          "multiplicity_normalized_commutator_energy": 0.0,
+          "noncommuting_racah_sector": false,
+          "associativity_dimension_identity_verified": true,
+          "dense_rank_formula_verified": true,
+          "status": "commuting-racah-sector"
+        },
+        {
+          "total_partition": [
+            1,
+            1,
+            1
+          ],
+          "total_irrep_dimension": 1,
+          "left_path_dimensions": [
+            [
+              [
+                1,
+                1,
+                1
+              ],
+              1
+            ]
+          ],
+          "right_path_dimensions": [
+            [
+              [
+                2,
+                1
+              ],
+              1
+            ]
+          ],
+          "left_total_multiplicity": 1,
+          "right_total_multiplicity": 1,
+          "dense_total_isotypic_rank": 1,
+          "physical_sector_dimension": 1,
+          "physical_dimension_fraction": 0.25,
+          "aggregate_commutator_energy": 0.0,
+          "multiplicity_normalized_commutator_energy": 0.0,
+          "noncommuting_racah_sector": false,
+          "associativity_dimension_identity_verified": true,
+          "dense_rank_formula_verified": true,
+          "status": "commuting-racah-sector"
+        }
+      ],
+      "aggregate_commutator": 0.0,
+      "lueders_same_left_label_return_probability": 0.9999999999999998,
+      "disturbance_identity_residual": 4.440892098500626e-16,
+      "active_racah_physical_dimension": 0,
+      "active_racah_physical_dimension_fraction": 0.0,
+      "commutator_to_active_mass_bound_slack": 0.0,
+      "maximum_total_projector_pair_pvm_commutator_residual": 0.0,
+      "maximum_global_conjugation_covariance_residual": 1.4686870114880517e-16,
+      "maximum_projector_idempotence_residual": 2.220446049250313e-16,
+      "total_isotypic_completeness_residual": 0.0,
+      "block_energy_reconstruction_residual": 0.0,
+      "minimum_active_multiplicity_dimension": 0,
+      "exact_racah_block_decomposition_verified": true,
+      "finite_dense_control_only": true,
+      "status": "minimum-racah-block-and-disturbance-identity-verified"
+    }
+  ],
+  "annealed_control": {
+    "n": 3,
+    "source_tuple_count": 27,
+    "plancherel_weight_normalization_residual": 0.0,
+    "dense_annealed_aggregate_commutator": 0.2592592592592591,
+    "exact_character_formula_aggregate_commutator": 0.2592592592592593,
+    "dense_to_character_formula_residual": 2.220446049250313e-16,
+    "dense_annealed_lueders_return_probability": 0.8703703703703701,
+    "exact_weighted_commuting_probability": 0.8703703703703703,
+    "return_probability_to_weighted_commuting_residual": 2.220446049250313e-16,
+    "dense_annealed_active_racah_dimension_fraction": 0.2222222222222222,
+    "active_mass_lower_bound_from_commutator": 0.12962962962962954,
+    "active_mass_bound_verified": true,
+    "status": "annealed-racah-mass-and-return-probability-cross-checked"
+  },
+  "theorem": {
+    "minimum_block": "M_tau^L=direct_sum_alpha K_(a,b)^alpha tensor K_(alpha,c)^tau and M_tau^R=direct_sum_beta K_(b,c)^beta tensor K_(a,beta)^tau.",
+    "left_pair_pvm_block_form": "P_alpha=I_(V_tau) tensor Pi_alpha.",
+    "right_pair_pvm_block_form": "Q_beta=I_(V_tau) tensor F_tau^* Pi_beta F_tau.",
+    "lueders_disturbance_identity": "C=D^-1 sum_(alpha,beta)||[P_alpha,Q_beta]||_F^2=2(1-p_return).",
+    "asymptotic_active_mass_transfer": "C<=2w_active and E C->2 imply E w_active->1, including after collision-free conditioning.",
+    "coherent_access": "Known coherent pair-carrier GPE label queries implement a constant-query P-Q-P disturbance test without materializing F_tau.",
+    "conjugation_invariance": "Every carrier PVM and every adaptive branch effect in its generated star algebra commutes with simultaneous conjugation.",
+    "hidden_identity_consequence": "All fixed-cycle-type hidden involutions are conjugate, so carrier-only branch distributions are identical and contain zero hidden-identity information.",
+    "minimum_racah_block_theorem_proved": true,
+    "constant_query_disturbance_compiled": true,
+    "asymptotically_full_active_racah_mass_proved": true,
+    "carrier_pvm_only_hidden_involution_decoder_possible": false,
+    "covariant_noncentral_decoder_compiled": false,
+    "status": "racah-disturbance-accessible-carrier-only-decoder-impossible"
+  },
+  "proof_obligations": [
+    {
+      "obligation": "derive_minimum_total_irrep_racah_block",
+      "resolved": true,
+      "resolution": "Schur decomposition and Kronecker associativity give equations (1)-(2), with total-irrep carrier factors acting identically."
+    },
+    {
+      "obligation": "give_operational_access_to_contextuality_moment",
+      "resolved": true,
+      "resolution": "Projector algebra gives equation (3); three coherent pair-label queries implement the corresponding L\u00fcders experiment."
+    },
+    {
+      "obligation": "prove_contextuality_has_nonvanishing_physical_block_mass",
+      "resolved": true,
+      "resolution": "C<=2w_active and the proved annealed limit C->2 force active physical dimension fraction to one."
+    },
+    {
+      "obligation": "test_carrier_only_hidden_identity_information",
+      "resolved": true,
+      "resolution": "Every adaptive branch effect generated by central carrier PVMs is conjugation-invariant and therefore identical on conjugate hidden subgroups."
+    },
+    {
+      "obligation": "construct_covariant_noncentral_hidden_involution_outcome",
+      "resolved": false,
+      "resolution": "Add an outcome register or row/orientation primitive that transforms nontrivially under conjugation, then prove hidden-conditioned signal and classical separation."
+    }
+  ],
+  "adversarial_audit": [
+    {
+      "objection": "A full explicit Racah matrix must be compiled before the gap is measurable.",
+      "resolved": true,
+      "resolution": "False. The physical left and right carrier PVMs are separately queryable, and their P-Q-P return probability is exactly the gap witness."
+    },
+    {
+      "objection": "The asymptotic gap may live on vanishing-rank exceptional sectors.",
+      "resolved": true,
+      "resolution": "False. The universal C<=2w_active inequality forces annealed active physical dimension fraction to one."
+    },
+    {
+      "objection": "Operational disturbance supplies hidden-involution information.",
+      "resolved": true,
+      "resolution": "False for carrier-only effects: their outcome distributions are constant across the conjugacy orbit of hidden involutions."
+    },
+    {
+      "objection": "The invariance theorem rules out every Racah-assisted decoder.",
+      "resolved": true,
+      "resolution": "It rules out only effects in the invariant carrier-PVM algebra. A covariant row/orientation outcome outside that algebra remains open."
+    }
+  ],
+  "headline_metrics": {
+    "minimum_total_irrep_racah_block_theorem_count": 1,
+    "constant_query_carrier_disturbance_compiler_count": 1,
+    "asymptotically_full_active_racah_mass_theorem_count": 1,
+    "carrier_pvm_conjugation_invariance_no_go_theorem_count": 1,
+    "finite_racah_block_control_count": 4,
+    "finite_active_racah_block_control_count": 3,
+    "maximum_finite_aggregate_commutator": 1.1412894375857332,
+    "minimum_active_multiplicity_dimension": 2,
+    "S3_annealed_active_racah_dimension_fraction": 0.2222222222222222,
+    "covariant_noncentral_decoder_count": 0,
+    "hidden_involution_decoder_count": 0,
+    "new_quantum_algorithm_count": 0
+  },
+  "claim_gate": {
+    "minimum_multiplicity_racah_block_identified": true,
+    "carrier_contextuality_operationally_accessible_by_pair_gpe": true,
+    "explicit_racah_matrix_required_for_disturbance_test": false,
+    "active_racah_physical_mass_tends_to_one": true,
+    "carrier_only_adaptive_effects_conjugation_invariant": true,
+    "carrier_only_protocol_can_identify_hidden_involution": false,
+    "covariant_noncentral_row_or_orientation_outcome_compiled": false,
+    "physical_hidden_conditioned_signal_proved": false,
+    "classical_separation_proved": false,
+    "speedup_claim_allowed": false,
+    "reason": "The maximal contextuality is efficiently testable and physically extensive, but the carrier-only outcome algebra is invariant across all conjugate hidden involutions."
+  },
+  "status": "racah-disturbance-accessible-carrier-only-decoder-impossible",
+  "summary": "Identified the exact total-irrep multiplicity Racah blocks, converted the asymptotic commutator into an accessible three-query disturbance experiment with asymptotically full active mass, and proved that carrier-only outcomes cannot identify the hidden involution.",
+  "falsifiers_triggered": [
+    "An explicit full Racah matrix is not required to operationally measure carrier disturbance.",
+    "The proved contextuality cannot be dismissed as a vanishing-rank rare-sector effect.",
+    "Maximal carrier-label disturbance is hidden-identity invariant and is not itself a decoder signal.",
+    "Multiplicity-space contextuality does not evade global conjugation invariance.",
+    "A viable decoder must expose a covariant noncentral row or orientation outcome and survive classical baselines."
+  ]
+}

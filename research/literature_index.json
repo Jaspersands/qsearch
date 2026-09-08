@@ -2,6 +2,29 @@
   "arxiv_metadata": [],
   "seed_papers": [
     {
+      "id": "foxman-nehoran-ding-semisimple-qft-2026",
+      "tags": [
+        "diagram-algebra-qft",
+        "large-loop-regime"
+      ],
+      "title": "Efficient Quantum Fourier Transforms For Semisimple Algebras",
+      "url": "https://arxiv.org/abs/2605.05337",
+      "why_it_matters": "A recursive transform lead, conditional on a sufficiently large loop parameter; not a small-loop multiplicity compiler.",
+      "year": 2026
+    },
+    {
+      "id": "bruinsma-grinko-ozols-symmetric-qft-2026",
+      "tags": [
+        "symmetric-qft",
+        "subgroup-chain",
+        "gate-accounting"
+      ],
+      "title": "Quantum Fourier transform for the symmetric group",
+      "url": "https://arxiv.org/abs/2608.28569",
+      "why_it_matters": "Revises symmetric-group QFT gate/depth accounting and transversal choice. Does not claim a hidden-involution decoder.",
+      "year": 2026
+    },
+    {
       "id": "shor-1994",
       "tags": [
         "period-finding",
@@ -55,6 +78,62 @@
       "url": "https://arxiv.org/abs/quant-ph/0511149",
       "why_it_matters": "Proves that nonnegligible information about the GI-relevant hidden involution requires a measurement entangled across Omega(n log n) coset states, so bounded-copy recoupling controls cannot be promoted to decoders.",
       "year": 2005
+    },
+    {
+      "id": "hayden-leung-shor-winter-locking-2003",
+      "tags": [
+        "quantum-data-locking",
+        "accessible-information",
+        "holevo-information",
+        "random-unitary",
+        "no-go"
+      ],
+      "title": "Randomizing quantum states: Constructions and applications",
+      "url": "https://arxiv.org/abs/quant-ph/0307104",
+      "why_it_matters": "Shows that large quantum/Holevo correlation can coexist with much smaller accessible information, so carrier entropy retention cannot be promoted to a decoder without an anti-locking theorem.",
+      "year": 2003
+    },
+    {
+      "id": "dupuis-florjanczyk-hayden-leung-locking-2010",
+      "tags": [
+        "quantum-data-locking",
+        "accessible-information",
+        "holevo-information",
+        "subsystem-loss",
+        "no-go"
+      ],
+      "title": "Locking classical information",
+      "url": "https://arxiv.org/abs/1011.1612",
+      "why_it_matters": "Strengthens the warning that removing a comparatively small quantum subsystem can collapse accessible classical correlation even when quantum mutual information remains large.",
+      "year": 2010
+    },
+    {
+      "id": "montanaro-state-discrimination-2019",
+      "tags": [
+        "state-discrimination",
+        "pretty-good-measurement",
+        "mixed-states",
+        "fidelity-bound",
+        "proof-tool"
+      ],
+      "title": "Pretty simple bounds on quantum state discrimination",
+      "url": "https://arxiv.org/abs/1908.08312",
+      "why_it_matters": "Provides adjacent mixed-state PGM discrimination bounds and motivates replacing Holevo-only evidence with direct success certificates for carrier-conditioned ensembles.",
+      "year": 2019
+    },
+    {
+      "id": "quek-rebentrost-pgm-polar-2021",
+      "tags": [
+        "pgm-implementation",
+        "pretty-good-measurement",
+        "quantum-polar-decomposition",
+        "state-preparation-oracle",
+        "condition-number"
+      ],
+      "title": "Fast algorithm for quantum polar decomposition, pretty-good measurements, and the Procrustes problem",
+      "url": "https://arxiv.org/abs/2106.07634",
+      "why_it_matters": "Gives a generic pure-state PGM/polar implementation benchmark with explicit state-preparation, condition-number, rank, and hypothesis-count costs. It prevents abstract PGM existence from being mistaken for a physical mixed-state branch decoder.",
+      "year": 2021
     },
     {
       "id": "beals-symmetric-qft-1997",
@@ -134,6 +213,20 @@
       "url": "https://arxiv.org/abs/2605.25995",
       "why_it_matters": "Proves that the largest S_n Plancherel atom is stretched-exponentially small, so no polynomial catalog of pre-certified source irreps can have inverse-polynomial natural weak-Fourier coverage.",
       "year": 2026
+    },
+    {
+      "id": "liebeck-shalev-diameters-finite-simple-groups-2001",
+      "tags": [
+        "symmetric-group",
+        "centralizer-bound",
+        "fixed-point-free-permutation",
+        "conjugacy-class",
+        "proof-tool"
+      ],
+      "title": "Diameters of finite simple groups: sharp bounds and applications",
+      "url": "https://doi.org/10.2307/3062101",
+      "why_it_matters": "Records the perfect-matching involution as the maximal-centralizer fixed-point-free even permutation. The carrier-tail closure strengthens this with a quantitative gap and an exact treatment of the exceptional matching-pair intersection.",
+      "year": 2001
     },
     {
       "id": "feray-sniady-character-bounds-2007",
@@ -608,6 +701,10 @@
       "galbraith-laity-shani-fourier-limitations-2016",
       "kapralov-sparse-fourier-2016"
     ],
+    "accessible-information": [
+      "hayden-leung-shor-winter-locking-2003",
+      "dupuis-florjanczyk-hayden-leung-locking-2010"
+    ],
     "adversary-bound": [
       "span-programs-adversary-2009"
     ],
@@ -650,6 +747,9 @@
     ],
     "breakthrough-template": [
       "shor-1994"
+    ],
+    "centralizer-bound": [
+      "liebeck-shalev-diameters-finite-simple-groups-2001"
     ],
     "character-ratio": [
       "feray-sniady-character-bounds-2007",
@@ -702,6 +802,12 @@
     "component-library": [
       "program-synthesis-components-2023"
     ],
+    "condition-number": [
+      "quek-rebentrost-pgm-polar-2021"
+    ],
+    "conjugacy-class": [
+      "liebeck-shalev-diameters-finite-simple-groups-2001"
+    ],
     "correctness": [
       "proof-quantum-programs-2020"
     ],
@@ -720,6 +826,9 @@
     "dequantization": [
       "panova-classical-multiplicities-2025"
     ],
+    "diagram-algebra-qft": [
+      "foxman-nehoran-ding-semisimple-qft-2026"
+    ],
     "dihedral-hsp": [
       "kuperberg-dhsp-2003",
       "regev-lattice-dhsp-2003"
@@ -736,11 +845,17 @@
     "exposition": [
       "cs-guide-qsvt-2023"
     ],
+    "fidelity-bound": [
+      "montanaro-state-discrimination-2019"
+    ],
     "finite-fields": [
       "van-dam-hallgren-shifted-character-2000",
       "ip-shift-deconvolution-2002",
       "bourgain-hidden-shifted-power-2011",
       "gowers-norm-algorithms-2025"
+    ],
+    "fixed-point-free-permutation": [
+      "liebeck-shalev-diameters-finite-simple-groups-2001"
     ],
     "formal-verification": [
       "proof-quantum-programs-2020"
@@ -748,6 +863,9 @@
     "fourier-sampling": [
       "symmetric-defies-fourier-2005",
       "code-equivalence-fourier-2011"
+    ],
+    "gate-accounting": [
+      "bruinsma-grinko-ozols-symmetric-qft-2026"
     ],
     "generalization": [
       "automated-algorithm-synthesis-2025"
@@ -809,6 +927,10 @@
     "higher-order-fourier": [
       "gowers-norm-algorithms-2025"
     ],
+    "holevo-information": [
+      "hayden-leung-shor-winter-locking-2003",
+      "dupuis-florjanczyk-hayden-leung-locking-2010"
+    ],
     "hull": [
       "bardet-otmani-saeed-trivial-hull-2019"
     ],
@@ -841,6 +963,9 @@
     "kronecker-transform": [
       "yoshida-random-dilation-2025"
     ],
+    "large-loop-regime": [
+      "foxman-nehoran-ding-semisimple-qft-2026"
+    ],
     "lattice": [
       "regev-lattice-dhsp-2003"
     ],
@@ -858,6 +983,9 @@
     ],
     "maximal-irrep-dimension": [
       "aggarwal-elboim-maximal-dimension-2026"
+    ],
+    "mixed-states": [
+      "montanaro-state-discrimination-2019"
     ],
     "multiplicative-character": [
       "van-dam-hallgren-shifted-character-2000",
@@ -877,7 +1005,9 @@
     ],
     "no-go": [
       "symmetric-defies-fourier-2005",
-      "moore-russell-multiregister-2005"
+      "moore-russell-multiregister-2005",
+      "hayden-leung-shor-winter-locking-2003",
+      "dupuis-florjanczyk-hayden-leung-locking-2010"
     ],
     "noisy-fourier": [
       "galbraith-shani-multivariate-hnp-2015"
@@ -901,11 +1031,18 @@
     "periodicity": [
       "hallgren-pell-2002"
     ],
+    "pgm-implementation": [
+      "quek-rebentrost-pgm-polar-2021"
+    ],
     "plancherel-measure": [
       "aggarwal-elboim-maximal-dimension-2026"
     ],
     "plancherel-typical": [
       "feray-sniady-character-bounds-2007"
+    ],
+    "pretty-good-measurement": [
+      "montanaro-state-discrimination-2019",
+      "quek-rebentrost-pgm-polar-2021"
     ],
     "principal-ideal": [
       "hallgren-pell-2002"
@@ -923,6 +1060,8 @@
       "proof-quantum-programs-2020"
     ],
     "proof-tool": [
+      "montanaro-state-discrimination-2019",
+      "liebeck-shalev-diameters-finite-simple-groups-2001",
       "feray-sniady-character-bounds-2007",
       "lifshitz-marmor-hypercontractive-characters-2023",
       "olesker-taylor-teyssier-thevenin-character-cutoff-2025"
@@ -945,9 +1084,16 @@
     "quantum-chemistry": [
       "near-term-ai-discovery-2026"
     ],
+    "quantum-data-locking": [
+      "hayden-leung-shor-winter-locking-2003",
+      "dupuis-florjanczyk-hayden-leung-locking-2010"
+    ],
     "quantum-fourier": [
       "beals-symmetric-qft-1997",
       "van-dam-hallgren-shifted-character-2000"
+    ],
+    "quantum-polar-decomposition": [
+      "quek-rebentrost-pgm-polar-2021"
     ],
     "quantum-programs": [
       "proof-quantum-programs-2020"
@@ -963,6 +1109,9 @@
     ],
     "random-multiplier": [
       "galbraith-shani-multivariate-hnp-2015"
+    ],
+    "random-unitary": [
+      "hayden-leung-shor-winter-locking-2003"
     ],
     "random-walk": [
       "olesker-taylor-teyssier-thevenin-character-cutoff-2025"
@@ -1028,11 +1177,23 @@
     "sparse-fourier": [
       "kapralov-sparse-fourier-2016"
     ],
+    "state-discrimination": [
+      "montanaro-state-discrimination-2019"
+    ],
     "state-generation": [
       "lindzey-rosmanis-index-erasure-2019"
     ],
     "state-isomorphism": [
       "state-isomorphism-2026"
+    ],
+    "state-preparation-oracle": [
+      "quek-rebentrost-pgm-polar-2021"
+    ],
+    "subgroup-chain": [
+      "bruinsma-grinko-ozols-symmetric-qft-2026"
+    ],
+    "subsystem-loss": [
+      "dupuis-florjanczyk-hayden-leung-locking-2010"
     ],
     "support-recovery": [
       "bardet-high-rate-alternant-2023",
@@ -1046,7 +1207,11 @@
       "lifshitz-marmor-hypercontractive-characters-2023",
       "olesker-taylor-teyssier-thevenin-character-cutoff-2025"
     ],
+    "symmetric-group": [
+      "liebeck-shalev-diameters-finite-simple-groups-2001"
+    ],
     "symmetric-qft": [
+      "bruinsma-grinko-ozols-symmetric-qft-2026",
       "beals-symmetric-qft-1997"
     ],
     "syzygy": [

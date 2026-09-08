@@ -3,6 +3,7 @@ import os
 import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 from code_equivalence_workbench import hamming_7_4_generator, permute_columns
 from experiment_runner import (
@@ -25,6 +26,7 @@ from research_registry import (
     load_experiment_results,
     load_experiments,
     load_mutation_proposals,
+    load_negative_results,
     save_experiments,
     upsert_experiment,
     validate_registry,
@@ -11746,6 +11748,177 @@ class ExperimentRunnerTests(unittest.TestCase):
         self.assertIn("coset_hidden_involution_rank_tracking_commutant_witness", record["artifacts"])
         self.assertTrue(validation["valid"], validation["issues"])
 
+    def test_coset_hidden_involution_multiplicity_twirl_projection_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-COSET-HIDDEN-INVOLUTION-MULTIPLICITY-TWIRL-PROJECTION"
+                )
+                records = load_experiment_results()
+                negatives = load_negative_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertEqual(
+            record["metrics"][
+                "strict_rank_tracking_support_growth_falsifier_count"
+            ],
+            1,
+        )
+        self.assertEqual(
+            record["metrics"]["rank_seven_support_six_full_count"],
+            8,
+        )
+        self.assertEqual(
+            record["metrics"]["multiplicity_three_support_six_full_count"],
+            1,
+        )
+        self.assertEqual(
+            record["metrics"]["nontrivial_beta_support_six_full_count"],
+            3,
+        )
+        self.assertEqual(
+            record["metrics"]["exact_signed_sector_full_twirl_validation_count"],
+            1,
+        )
+        self.assertEqual(
+            record["metrics"]["universal_support_six_generation_theorem_count"],
+            0,
+        )
+        negative_ids = {item["id"] for item in negatives}
+        self.assertIn(
+            "RANK-TRACKING-4-5-6-NOT-UNBOUNDED-SUPPORT-EVIDENCE",
+            negative_ids,
+        )
+        self.assertIn(
+            "CLASSICAL-COMMUTANT-TWIRL-PROJECTION-NOT-COHERENT-TRANSFORM",
+            negative_ids,
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_coset_hidden_involution_multiplicity_fiber_trace_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-COSET-HIDDEN-INVOLUTION-MULTIPLICITY-FIBER-TRACE"
+                )
+                records = load_experiment_results()
+                negatives = load_negative_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertEqual(
+            record["metrics"][
+                "direct_root_multiplicity_fiber_projection_theorem_count"
+            ],
+            1,
+        )
+        self.assertEqual(
+            record["metrics"][
+                "carrier_partial_trace_full_twirl_validation_count"
+            ],
+            1,
+        )
+        self.assertEqual(
+            record["metrics"][
+                "polynomial_typical_ambient_compression_theorem_count"
+            ],
+            0,
+        )
+        negative_ids = {item["id"] for item in negatives}
+        self.assertIn(
+            "MULTIPLICITY-FIBER-WIDTH-REDUCTION-NOT-POLYNOMIAL-AMBIENT-COMPRESSION",
+            negative_ids,
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_high_mass_support_scan_has_explicit_runner_dispatch(self):
+        payload = {
+            "status": "highest-mass-s14-block-support-four-numerically-full-asymptotics-open",
+            "summary": "synthetic dispatch-only high-mass scan result",
+            "headline_metrics": {
+                "support_four_full_copy_algebra_certificate_count": 1,
+                "support_four_direct_commutant_nullity": 1,
+            },
+            "falsifiers_triggered": [],
+        }
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                with patch(
+                    "experiment_runner.write_high_mass_support_scan_report",
+                    return_value=payload,
+                ):
+                    result = run_experiment(
+                        "EXP-COSET-HIDDEN-INVOLUTION-HIGH-MASS-SUPPORT-SCAN"
+                    )
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertEqual(
+            record["metrics"]["support_four_direct_commutant_nullity"],
+            1,
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_coset_hidden_involution_natural_support_six_mass_audit_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-COSET-HIDDEN-INVOLUTION-NATURAL-SUPPORT-SIX-MASS-AUDIT"
+                )
+                records = load_experiment_results()
+                negatives = load_negative_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertGreater(
+            record["metrics"]["repeated_natural_mass_probability"],
+            0.97,
+        )
+        self.assertLess(
+            record["metrics"]["audited_rank_natural_mass_probability"],
+            1e-4,
+        )
+        self.assertEqual(
+            record["metrics"]["uniform_support_six_generation_theorem_count"],
+            0,
+        )
+        negative_ids = {item["id"] for item in negatives}
+        self.assertIn(
+            "FINITE-S14-SUPPORT-SIX-CLOSURE-NEGLIGIBLE-NATURAL-MASS",
+            negative_ids,
+        )
+        self.assertIn(
+            "COPY-ALGEBRA-GENERATION-NOT-GAPPED-COHERENT-RESOLUTION",
+            negative_ids,
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
     def test_coset_hidden_involution_shared_conjugation_qsvt_lower_bound_dispatches_from_clean_registry(self):
         old_cwd = os.getcwd()
         with tempfile.TemporaryDirectory() as tmp:
@@ -12997,6 +13170,1089 @@ class ExperimentRunnerTests(unittest.TestCase):
         self.assertFalse(
             record["metrics"]["compiled_aggregate_short_metric_interface_count"]
         )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_affine_flag_aggregate_schur_query_boundary_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-AFFINE-FLAG-AGGREGATE-SCHUR-QUERY-BOUNDARY"
+                )
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertEqual(
+            record["metrics"][
+                "reversible_affine_flag_node_labeler_theorem_count"
+            ],
+            1,
+        )
+        self.assertEqual(
+            record["metrics"][
+                "nested_psd_schur_short_associativity_theorem_count"
+            ],
+            1,
+        )
+        self.assertEqual(
+            record["metrics"][
+                "addressed_local_kernel_aggregate_search_lower_bound_theorem_count"
+            ],
+            1,
+        )
+        self.assertEqual(
+            record["metrics"]["minimum_hard_family_native_retained_mass"],
+            1.0,
+        )
+        self.assertFalse(
+            record["metrics"]["compiled_structured_racah_response_oracle_count"]
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_affine_node_frame_response_boundary_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-AFFINE-NODE-FRAME-RESPONSE-BOUNDARY"
+                )
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertEqual(
+            record["metrics"]["actual_affine_node_frame_formula_theorem_count"],
+            1,
+        )
+        self.assertEqual(
+            record["metrics"][
+                "normalization_one_affine_node_frame_block_encoding_count"
+            ],
+            1,
+        )
+        self.assertEqual(
+            record["metrics"][
+                "equal_width_endpoint_scale_cancellation_theorem_count"
+            ],
+            1,
+        )
+        self.assertEqual(
+            record["metrics"][
+                "separate_qsvt_full_sibling_mass_no_go_theorem_count"
+            ],
+            1,
+        )
+        self.assertEqual(
+            record["metrics"][
+                "separate_qsvt_common_fiber_dimension_no_go_theorem_count"
+            ],
+            1,
+        )
+        self.assertEqual(
+            record["metrics"][
+                "parent_conditional_native_loss_recurrence_theorem_count"
+            ],
+            0,
+        )
+        self.assertFalse(
+            record["metrics"]["direct_joint_scale_free_naimark_compiler_count"]
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_cayley_endpoint_gauge_compiler_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-CAYLEY-ENDPOINT-GAUGE-COMPILER"
+                )
+                records = load_experiment_results()
+                negatives = load_negative_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertEqual(
+            record["metrics"]["cayley_endpoint_effect_theorem_count"],
+            1,
+        )
+        self.assertEqual(
+            record["metrics"]["recursive_child_gauge_covariance_theorem_count"],
+            1,
+        )
+        self.assertEqual(
+            record["metrics"]["root_gauge_anchor_boundary_theorem_count"],
+            1,
+        )
+        self.assertEqual(
+            record["metrics"]["conditional_cayley_qsvt_compiler_count"],
+            1,
+        )
+        self.assertEqual(
+            record["metrics"]["representation_specific_cayley_oracle_count"],
+            0,
+        )
+        self.assertGreater(
+            record["metrics"]["unanchored_root_branch_effect_gap"],
+            0.1,
+        )
+        self.assertIn(
+            "UNANCHORED-RELATIVE-GRAPH-GAUGE-NOT-POVM-INVARIANT",
+            {item["id"] for item in negatives},
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_affine_star_cayley_compiler_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-AFFINE-STAR-CAYLEY-COMPILER"
+                )
+                records = load_experiment_results()
+                negatives = load_negative_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertEqual(
+            record["metrics"][
+                "normalization_one_scalar_star_cayley_compiler_count"
+            ],
+            1,
+        )
+        self.assertEqual(
+            record["metrics"]["physical_w6_compiler_covered_channel_count"],
+            8,
+        )
+        self.assertGreater(
+            record["metrics"]["tail_markov_degree_lower_bound"],
+            100,
+        )
+        self.assertGreater(
+            record["metrics"]["merged_center_star_fit_residual"],
+            0.1,
+        )
+        self.assertIn(
+            "OPAQUE-AFFINE-STAR-GAMMA-QSVT-NOT-POLYLOG-WIDTH",
+            {item["id"] for item in negatives},
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_pair_carrier_label_contextuality_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-PAIR-CARRIER-LABEL-CONTEXTUALITY"
+                )
+                records = load_experiment_results()
+                negatives = load_negative_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertEqual(
+            record["metrics"]["coherent_local_pair_carrier_label_query_count"],
+            1,
+        )
+        self.assertEqual(
+            record["metrics"][
+                "overlapping_label_contextuality_counterexample_count"
+            ],
+            1,
+        )
+        self.assertAlmostEqual(
+            record["metrics"]["overlapping_s3_projector_commutator_norm"],
+            3**0.5 / 4,
+        )
+        self.assertEqual(
+            record["metrics"]["all_depth_global_channel_atom_labeler_count"],
+            0,
+        )
+        self.assertIn(
+            "OVERLAPPING-PAIR-GPE-LABELS-NOT-JOINTLY-CLASSICAL",
+            {item["id"] for item in negatives},
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_occupied_carrier_octahedral_boundary_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-OCCUPIED-CARRIER-OCTAHEDRAL-BOUNDARY"
+                )
+                records = load_experiment_results()
+                negatives = load_negative_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertEqual(
+            record["metrics"][
+                "all_n_octahedral_channel_formula_theorem_count"
+            ],
+            1,
+        )
+        self.assertLess(
+            record["metrics"]["occupied_support_projector_commutator_norm"],
+            1e-10,
+        )
+        self.assertAlmostEqual(
+            record["metrics"]["unit_correlation_minimum_eigenvalue"],
+            -1.0,
+        )
+        self.assertGreater(
+            record["metrics"]["physical_gram_minimum_eigenvalue"],
+            0.0,
+        )
+        self.assertEqual(
+            record["metrics"][
+                "collision_free_positive_mass_contextuality_theorem_count"
+            ],
+            0,
+        )
+        negative_ids = {item["id"] for item in negatives}
+        self.assertIn(
+            "COMMUTING-OCCUPIED-CARRIER-SUPPORTS-NOT-CLIQUE-CHANNELS",
+            negative_ids,
+        )
+        self.assertIn(
+            "REPEATED-OCTAHEDRAL-CARRIER-FAMILY-NOT-NATURAL-MASS",
+            negative_ids,
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_plancherel_carrier_contextuality_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-CARRIER-CONTEXTUALITY"
+                )
+                records = load_experiment_results()
+                negatives = load_negative_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertEqual(
+            record["metrics"][
+                "natural_carrier_contextuality_character_reduction_theorem_count"
+            ],
+            1,
+        )
+        self.assertGreater(
+            record["metrics"]["tail_contextuality_confidence_lower"],
+            1.8,
+        )
+        self.assertEqual(
+            record["metrics"]["asymptotic_constant_contextuality_theorem_count"],
+            0,
+        )
+        negative_ids = {item["id"] for item in negatives}
+        self.assertIn(
+            "NATURAL-OVERLAPPING-CARRIER-LABELS-NOT-EXACTLY-JOINT-CLASSICAL",
+            negative_ids,
+        )
+        self.assertIn(
+            "FINITE-CARRIER-CONTEXTUALITY-TREND-NOT-ASYMPTOTIC-NO-GO",
+            negative_ids,
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_plancherel_carrier_tail_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-CARRIER-NONIDENTITY-TAIL"
+                )
+                records = load_experiment_results()
+                negatives = load_negative_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertEqual(
+            record["metrics"][
+                "exact_centralizer_wreath_cycle_index_theorem_count"
+            ],
+            1,
+        )
+        self.assertEqual(
+            record["metrics"]["largest_exact_weighted_commuting_degree"],
+            20,
+        )
+        self.assertLess(
+            record["metrics"][
+                "tail_exact_nonidentity_conditional_commuting_probability"
+            ],
+            0.002,
+        )
+        self.assertEqual(
+            record["metrics"][
+                "mesoscopic_macroscopic_tail_vanishing_theorem_count"
+            ],
+            0,
+        )
+        negative_ids = {item["id"] for item in negatives}
+        self.assertIn(
+            "FINITE-LOW-SUPPORT-CARRIER-TAIL-NOT-ASYMPTOTIC-MECHANISM",
+            negative_ids,
+        )
+        self.assertIn(
+            "CLASS-UNIFORM-COMMUTATOR-BOUND-NOT-DIRECT-PLANCHEREL-TAIL-PROOF",
+            negative_ids,
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_plancherel_carrier_near_derangement_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-CARRIER-NEAR-DERANGEMENT-REDUCTION"
+                )
+                records = load_experiment_results()
+                negatives = load_negative_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertEqual(
+            record["metrics"][
+                "support_invariance_exponential_bound_theorem_count"
+            ],
+            1,
+        )
+        self.assertEqual(
+            record["metrics"]["largest_exact_near_derangement_degree"],
+            20,
+        )
+        self.assertEqual(
+            record["metrics"][
+                "logarithmic_fixed_point_reduction_theorem_count"
+            ],
+            1,
+        )
+        self.assertEqual(
+            record["metrics"][
+                "near_derangement_all_n_extremality_theorem_count"
+            ],
+            0,
+        )
+        negative_ids = {item["id"] for item in negatives}
+        self.assertIn(
+            "SUPPORT-INVARIANCE-ALONE-NOT-DERANGEMENT-COMMUTING-BOUND",
+            negative_ids,
+        )
+        self.assertIn(
+            "FINITE-PERFECT-MATCHING-EXTREMALITY-NOT-ALL-N-CARRIER-THEOREM",
+            negative_ids,
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_plancherel_carrier_asymptotic_closure_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-CARRIER-ASYMPTOTIC-CLOSURE"
+                )
+                records = load_experiment_results()
+                negatives = load_negative_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertEqual(
+            record["metrics"][
+                "fixed_point_free_centralizer_envelope_theorem_count"
+            ],
+            1,
+        )
+        self.assertEqual(
+            record["metrics"][
+                "weighted_commuting_probability_vanishing_theorem_count"
+            ],
+            1,
+        )
+        self.assertEqual(
+            record["metrics"]["asymptotic_constant_contextuality_theorem_count"],
+            1,
+        )
+        self.assertEqual(
+            record["metrics"]["coherent_multistar_racah_resolver_count"],
+            0,
+        )
+        negative_ids = {item["id"] for item in negatives}
+        self.assertIn(
+            "PERFECT-MATCHING-CENTRALIZER-PRODUCT-BOUND-NOT-VANISHING",
+            negative_ids,
+        )
+        self.assertIn(
+            "ASYMPTOTIC-CARRIER-CONTEXTUALITY-NOT-QUANTUM-ALGORITHM",
+            negative_ids,
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_plancherel_carrier_racah_access_boundary_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-CARRIER-RACAH-ACCESS-BOUNDARY"
+                )
+                records = load_experiment_results()
+                negatives = load_negative_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertEqual(
+            record["metrics"]["minimum_total_irrep_racah_block_theorem_count"],
+            1,
+        )
+        self.assertEqual(
+            record["metrics"][
+                "constant_query_carrier_disturbance_compiler_count"
+            ],
+            1,
+        )
+        self.assertEqual(
+            record["metrics"][
+                "asymptotically_full_active_racah_mass_theorem_count"
+            ],
+            1,
+        )
+        self.assertEqual(
+            record["metrics"][
+                "carrier_pvm_conjugation_invariance_no_go_theorem_count"
+            ],
+            1,
+        )
+        negative_ids = {item["id"] for item in negatives}
+        self.assertIn(
+            "FULL-RACAH-MATRIX-NOT-REQUIRED-FOR-CARRIER-DISTURBANCE",
+            negative_ids,
+        )
+        self.assertIn(
+            "CARRIER-CONTEXTUALITY-NOT-HIDDEN-INVOLUTION-IDENTITY-SIGNAL",
+            negative_ids,
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_carrier_noncentral_readout_boundary_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-CARRIER-NONCENTRAL-READOUT-BOUNDARY"
+                )
+                records = load_experiment_results()
+                negatives = load_negative_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertEqual(
+            record["metrics"][
+                "carrier_transcript_zero_information_theorem_count"
+            ],
+            1,
+        )
+        self.assertEqual(
+            record["metrics"][
+                "minimum_covariant_noncentral_readout_compiler_count"
+            ],
+            1,
+        )
+        self.assertEqual(
+            record["metrics"][
+                "finite_global_pgm_dominates_carrier_control_count"
+            ],
+            3,
+        )
+        self.assertEqual(
+            record["metrics"]["scalable_hidden_involution_decoder_count"],
+            0,
+        )
+        negative_ids = {item["id"] for item in negatives}
+        self.assertIn(
+            "CARRIER-TRANSCRIPT-CONTEXTUALITY-NOT-HIDDEN-INFORMATION",
+            negative_ids,
+        )
+        self.assertIn(
+            "DEEPER-CARRIER-ALTERNATION-NOT-DECODER-AMPLIFIER",
+            negative_ids,
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_carrier_conditioned_pgm_boundary_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-CARRIER-CONDITIONED-PGM-BOUNDARY"
+                )
+                records = load_experiment_results()
+                negatives = load_negative_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertEqual(
+            record["metrics"][
+                "exact_carrier_branch_pgm_factorization_theorem_count"
+            ],
+            1,
+        )
+        self.assertEqual(
+            record["metrics"]["finite_collective_gain_retained_control_count"],
+            1,
+        )
+        self.assertGreater(
+            record["metrics"]["carrier_dephased_holevo_retention_fraction"],
+            0.75,
+        )
+        self.assertEqual(
+            record["metrics"]["polynomial_branch_pgm_compiler_count"],
+            0,
+        )
+        negative_ids = {item["id"] for item in negatives}
+        self.assertIn(
+            "ONE-CARRIER-LABEL-NOT-PGM-MULTIPLICITY-SCALARIZATION",
+            negative_ids,
+        )
+        self.assertIn(
+            "FINITE-CARRIER-BRANCH-CONDITIONING-NOT-PGM-CIRCUIT",
+            negative_ids,
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_carrier_holevo_budget_theorem_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-CARRIER-HOLEVO-BUDGET-THEOREM"
+                )
+                records = load_experiment_results()
+                negatives = load_negative_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertEqual(
+            record["metrics"]["single_pinching_holevo_budget_theorem_count"],
+            1,
+        )
+        self.assertEqual(
+            record["metrics"][
+                "shallow_hierarchy_extensive_holevo_retention_theorem_count"
+            ],
+            1,
+        )
+        self.assertEqual(
+            record["metrics"]["accessible_information_retention_theorem_count"],
+            0,
+        )
+        negative_ids = {item["id"] for item in negatives}
+        self.assertIn(
+            "CARRIER-HOLEVO-RETENTION-NOT-ACCESSIBLE-INFORMATION",
+            negative_ids,
+        )
+        self.assertIn(
+            "GENERIC-CARRIER-HOLEVO-BUDGET-NOT-FULL-TREE-CERTIFICATE",
+            negative_ids,
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_carrier_branch_pgm_success_certificate_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-CARRIER-BRANCH-PGM-SUCCESS-CERTIFICATE"
+                )
+                records = load_experiment_results()
+                negatives = load_negative_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertEqual(
+            record["metrics"][
+                "carrier_branch_pgm_holder_certificate_theorem_count"
+            ],
+            1,
+        )
+        self.assertEqual(
+            record["metrics"][
+                "finite_certified_collective_success_control_count"
+            ],
+            1,
+        )
+        self.assertGreater(
+            record["metrics"]["natural_holder_success_lower_bound"],
+            0.25,
+        )
+        self.assertEqual(
+            record["metrics"]["all_n_collision_control_theorem_count"],
+            0,
+        )
+        self.assertEqual(
+            record["metrics"]["disjoint_pair_all_n_collision_theorem_count"],
+            1,
+        )
+        negative_ids = {item["id"] for item in negatives}
+        self.assertIn(
+            "CARRIER-BRANCH-OVERLAP-ALONE-NOT-PGM-CERTIFICATE",
+            negative_ids,
+        )
+        self.assertIn(
+            "FINITE-CARRIER-BRANCH-SUCCESS-NOT-ALL-N-DECODER",
+            negative_ids,
+        )
+        self.assertIn(
+            "CARRIER-ANGLE-WORST-SECTOR-N-MINUS-ONE-PATTERN-FALSE",
+            negative_ids,
+        )
+        self.assertIn(
+            "DISJOINT-CARRIER-COLLISION-BOUND-NOT-OVERLAPPING-HIERARCHY",
+            negative_ids,
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_disjoint_pair_branch_pgm_compiler_boundary_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-DISJOINT-PAIR-BRANCH-PGM-COMPILER-BOUNDARY"
+                )
+                records = load_experiment_results()
+                negatives = load_negative_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertEqual(
+            record["metrics"][
+                "shared_hidden_label_covariance_identity_theorem_count"
+            ],
+            1,
+        )
+        self.assertEqual(
+            record["metrics"][
+                "naive_pair_local_branch_pgm_compiler_no_go_count"
+            ],
+            1,
+        )
+        self.assertEqual(
+            record["metrics"]["covariance_aware_branch_pgm_compiler_count"],
+            0,
+        )
+        negative_ids = {item["id"] for item in negatives}
+        self.assertIn("DISJOINT-CARRIER-BRANCH-PGM-NOT-PAIR-LOCAL", negative_ids)
+        self.assertIn(
+            "SCALED-DIAGONAL-PAIR-PGM-EFFECTS-NOT-A-POVM",
+            negative_ids,
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_disjoint_pair_covariance_polar_reduction_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-DISJOINT-PAIR-COVARIANCE-POLAR-REDUCTION"
+                )
+                records = load_experiment_results()
+                negatives = load_negative_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertEqual(
+            record["metrics"]["dimensionless_covariance_frame_reduction_theorem_count"],
+            1,
+        )
+        self.assertEqual(
+            record["metrics"]["all_n_natural_rank_scaled_lcu_mean_bound_theorem_count"],
+            1,
+        )
+        self.assertEqual(
+            record["metrics"]["uniform_public_covariance_block_encoding_compiler_count"],
+            0,
+        )
+        self.assertEqual(
+            record["metrics"]["inverse_square_root_spectral_gap_theorem_count"],
+            0,
+        )
+        negative_ids = {item["id"] for item in negatives}
+        self.assertIn(
+            "PAIR-CARRIER-KRONECKER-MULTIPLICITY-NOT-BRANCH-NONFLATNESS",
+            negative_ids,
+        )
+        self.assertIn("BOUNDED-COVARIANCE-LCU-NOT-INVERSE-SQRT-GAP", negative_ids)
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_dimensionless_pgm_truncation_bridge_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-DIMENSIONLESS-PGM-TRUNCATION-BRIDGE"
+                )
+                records = load_experiment_results()
+                negatives = load_negative_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertEqual(
+            record["metrics"]["dimensionless_low_spectral_mass_theorem_count"],
+            1,
+        )
+        self.assertEqual(
+            record["metrics"][
+                "logarithmic_pair_depth_inverse_polynomial_cutoff_theorem_count"
+            ],
+            1,
+        )
+        self.assertEqual(
+            record["metrics"]["full_threshold_metric_block_encoding_compiler_count"],
+            0,
+        )
+        negative_ids = {item["id"] for item in negatives}
+        self.assertIn(
+            "MINIMUM-COVARIANCE-EIGENVALUE-NOT-PGM-SUCCESS-OBLIGATION",
+            negative_ids,
+        )
+        self.assertIn(
+            "TWO-PAIR-COVARIANCE-ACCESS-NOT-THRESHOLD-FRAME-ACCESS",
+            negative_ids,
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_local_block_metric_normalization_no_go_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-LOCAL-BLOCK-METRIC-NORMALIZATION-NO-GO"
+                )
+                records = load_experiment_results()
+                negatives = load_negative_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertEqual(
+            record["metrics"]["pair_carrier_exact_natural_marginal_theorem_count"],
+            1,
+        )
+        self.assertEqual(
+            record["metrics"][
+                "local_singleton_pair_product_normalization_no_go_count"
+            ],
+            1,
+        )
+        self.assertEqual(
+            record["metrics"]["global_shared_label_metric_access_no_go_count"],
+            0,
+        )
+        negative_ids = {item["id"] for item in negatives}
+        self.assertIn(
+            "LOCAL-SINGLETON-PAIR-LCU-NOT-FULL-THRESHOLD-METRIC-ACCESS",
+            negative_ids,
+        )
+        self.assertIn(
+            "BOUNDED-PAIR-LCU-MEAN-NOT-THRESHOLD-COMPOSABLE",
+            negative_ids,
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_scale_free_endpoint_graph_transfer_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-SCALE-FREE-ENDPOINT-GRAPH-TRANSFER-BOUNDARY"
+                )
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertEqual(
+            record["metrics"]["response_short_complementarity_theorem_count"],
+            1,
+        )
+        self.assertEqual(
+            record["metrics"]["relative_graph_cs_normal_form_theorem_count"],
+            1,
+        )
+        self.assertEqual(
+            record["metrics"]["compiled_representation_relative_transfer_oracle_count"],
+            0,
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+
+    def test_coset_hidden_involution_high_mass_support_scan_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment("EXP-COSET-HIDDEN-INVOLUTION-HIGH-MASS-SUPPORT-SCAN")
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertTrue(validation["valid"], validation["issues"])
+
+
+    def test_coset_hidden_involution_source_weighted_support_portfolio_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment("EXP-COSET-HIDDEN-INVOLUTION-SOURCE-WEIGHTED-SUPPORT-PORTFOLIO")
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertTrue(validation["valid"], validation["issues"])
+
+
+    def test_coset_hidden_involution_spectral_label_budget_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment("EXP-COSET-HIDDEN-INVOLUTION-SPECTRAL-LABEL-BUDGET")
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertTrue(validation["valid"], validation["issues"])
+
+
+    def test_self_dual_wreath_dimensionless_pgm_truncation_bridge_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment("EXP-CODE-SELF-DUAL-WREATH-DIMENSIONLESS-PGM-TRUNCATION-BRIDGE")
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertTrue(validation["valid"], validation["issues"])
+
+
+    def test_self_dual_wreath_disjoint_pair_branch_pgm_compiler_boundary_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment("EXP-CODE-SELF-DUAL-WREATH-DISJOINT-PAIR-BRANCH-PGM-COMPILER-BOUNDARY")
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertTrue(validation["valid"], validation["issues"])
+
+
+    def test_self_dual_wreath_disjoint_pair_covariance_polar_reduction_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment("EXP-CODE-SELF-DUAL-WREATH-DISJOINT-PAIR-COVARIANCE-POLAR-REDUCTION")
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertTrue(validation["valid"], validation["issues"])
+
+
+    def test_self_dual_wreath_local_block_metric_normalization_no_go_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment("EXP-CODE-SELF-DUAL-WREATH-LOCAL-BLOCK-METRIC-NORMALIZATION-NO-GO")
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertTrue(validation["valid"], validation["issues"])
+
+
+    def test_self_dual_wreath_plancherel_carrier_near_derangement_reduction_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment("EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-CARRIER-NEAR-DERANGEMENT-REDUCTION")
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertTrue(validation["valid"], validation["issues"])
+
+
+    def test_self_dual_wreath_plancherel_carrier_nonidentity_tail_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment("EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-CARRIER-NONIDENTITY-TAIL")
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertTrue(validation["valid"], validation["issues"])
+
+
+    def test_self_dual_wreath_scale_free_endpoint_graph_transfer_boundary_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment("EXP-CODE-SELF-DUAL-WREATH-SCALE-FREE-ENDPOINT-GRAPH-TRANSFER-BOUNDARY")
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
         self.assertTrue(validation["valid"], validation["issues"])
 
 

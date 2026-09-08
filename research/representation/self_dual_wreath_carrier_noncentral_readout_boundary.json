@@ -1,0 +1,678 @@
+{
+  "created_at": "2026-09-01T21:49:48.745975+00:00",
+  "theorem_contract": {
+    "input": "three independent natural mixed coset states with common h",
+    "carrier_instruments": "alternating exact left/right pair-isotypic Luders measurements",
+    "noncentral_readout": "fixed Young-basis diagonal measurement, covariantized by retained uniform public conjugation",
+    "query_model": "coset-state samples plus known representation-theoretic carrier GPE and strong-Fourier basis operations",
+    "classical_baselines": "exact transcript channel, exhaustive relative group-orbit product bases, product one-copy PGM, and global PGM"
+  },
+  "finite_controls": [
+    {
+      "control_id": "S3-TRANSPOSITIONS",
+      "n": 3,
+      "transposition_count": 1,
+      "hidden_involution_count": 3,
+      "copy_count": 3,
+      "schedules": [
+        {
+          "schedule": "NONE",
+          "carrier_measurement_depth": 0,
+          "output_count": 64,
+          "mutual_information_bits": 0.6784218956244588,
+          "bayes_success_probability": 0.625,
+          "carrier_transcript_mutual_information_bits": 0.0,
+          "carrier_transcript_bayes_success_probability": 0.3333333333333333,
+          "information_gain_over_default_product_young_bits": 0.0,
+          "bayes_gain_over_default_product_young": 0.0,
+          "information_gap_to_best_group_orbit_product_basis_bits": -0.14064715257278504,
+          "bayes_gap_to_best_group_orbit_product_basis": -0.10185185185185175,
+          "information_gap_to_global_pgm_bits": -0.4504762928297885,
+          "bayes_gap_to_global_pgm": -0.2610311323408623,
+          "probability_normalization_residual": 1.1102230246251565e-16,
+          "transcript_probability_normalization_residual": 0.0,
+          "status": "default-product-young-baseline"
+        },
+        {
+          "schedule": "L",
+          "carrier_measurement_depth": 1,
+          "output_count": 192,
+          "mutual_information_bits": 0.5283208335737184,
+          "bayes_success_probability": 0.5833333333333334,
+          "carrier_transcript_mutual_information_bits": 0.0,
+          "carrier_transcript_bayes_success_probability": 0.3333333333333333,
+          "information_gain_over_default_product_young_bits": -0.15010106205074036,
+          "bayes_gain_over_default_product_young": -0.04166666666666663,
+          "information_gap_to_best_group_orbit_product_basis_bits": -0.2907482146235254,
+          "bayes_gap_to_best_group_orbit_product_basis": -0.14351851851851838,
+          "information_gap_to_global_pgm_bits": -0.6005773548805289,
+          "bayes_gap_to_global_pgm": -0.3026977990075289,
+          "probability_normalization_residual": 1.1102230246251565e-16,
+          "transcript_probability_normalization_residual": 1.1102230246251565e-16,
+          "status": "finite-carrier-row-no-gain-over-default-young"
+        },
+        {
+          "schedule": "R",
+          "carrier_measurement_depth": 1,
+          "output_count": 192,
+          "mutual_information_bits": 0.5283208335737184,
+          "bayes_success_probability": 0.5833333333333334,
+          "carrier_transcript_mutual_information_bits": 0.0,
+          "carrier_transcript_bayes_success_probability": 0.3333333333333333,
+          "information_gain_over_default_product_young_bits": -0.15010106205074036,
+          "bayes_gain_over_default_product_young": -0.04166666666666663,
+          "information_gap_to_best_group_orbit_product_basis_bits": -0.2907482146235254,
+          "bayes_gap_to_best_group_orbit_product_basis": -0.14351851851851838,
+          "information_gap_to_global_pgm_bits": -0.6005773548805289,
+          "bayes_gap_to_global_pgm": -0.3026977990075289,
+          "probability_normalization_residual": 2.220446049250313e-16,
+          "transcript_probability_normalization_residual": 1.1102230246251565e-16,
+          "status": "finite-carrier-row-no-gain-over-default-young"
+        },
+        {
+          "schedule": "LR",
+          "carrier_measurement_depth": 2,
+          "output_count": 576,
+          "mutual_information_bits": 0.3801726854255696,
+          "bayes_success_probability": 0.5277777777777778,
+          "carrier_transcript_mutual_information_bits": 0.0,
+          "carrier_transcript_bayes_success_probability": 0.3333333333333333,
+          "information_gain_over_default_product_young_bits": -0.29824921019888917,
+          "bayes_gain_over_default_product_young": -0.09722222222222221,
+          "information_gap_to_best_group_orbit_product_basis_bits": -0.4388963627716742,
+          "bayes_gap_to_best_group_orbit_product_basis": -0.19907407407407396,
+          "information_gap_to_global_pgm_bits": -0.7487255030286777,
+          "bayes_gap_to_global_pgm": -0.3582533545630845,
+          "probability_normalization_residual": 2.220446049250313e-16,
+          "transcript_probability_normalization_residual": 2.220446049250313e-16,
+          "status": "finite-carrier-row-no-gain-over-default-young"
+        },
+        {
+          "schedule": "RL",
+          "carrier_measurement_depth": 2,
+          "output_count": 576,
+          "mutual_information_bits": 0.3801726854255687,
+          "bayes_success_probability": 0.5277777777777778,
+          "carrier_transcript_mutual_information_bits": 0.0,
+          "carrier_transcript_bayes_success_probability": 0.3333333333333333,
+          "information_gain_over_default_product_young_bits": -0.29824921019889006,
+          "bayes_gain_over_default_product_young": -0.09722222222222221,
+          "information_gap_to_best_group_orbit_product_basis_bits": -0.4388963627716751,
+          "bayes_gap_to_best_group_orbit_product_basis": -0.19907407407407396,
+          "information_gap_to_global_pgm_bits": -0.7487255030286786,
+          "bayes_gap_to_global_pgm": -0.3582533545630845,
+          "probability_normalization_residual": 1.1102230246251565e-16,
+          "transcript_probability_normalization_residual": 2.220446049250313e-16,
+          "status": "finite-carrier-row-no-gain-over-default-young"
+        },
+        {
+          "schedule": "LRL",
+          "carrier_measurement_depth": 3,
+          "output_count": 1728,
+          "mutual_information_bits": 0.3801726854255705,
+          "bayes_success_probability": 0.5277777777777779,
+          "carrier_transcript_mutual_information_bits": 0.0,
+          "carrier_transcript_bayes_success_probability": 0.3333333333333334,
+          "information_gain_over_default_product_young_bits": -0.2982492101988883,
+          "bayes_gain_over_default_product_young": -0.0972222222222221,
+          "information_gap_to_best_group_orbit_product_basis_bits": -0.4388963627716733,
+          "bayes_gap_to_best_group_orbit_product_basis": -0.19907407407407385,
+          "information_gap_to_global_pgm_bits": -0.7487255030286768,
+          "bayes_gap_to_global_pgm": -0.3582533545630844,
+          "probability_normalization_residual": 4.440892098500626e-16,
+          "transcript_probability_normalization_residual": 3.3306690738754696e-16,
+          "status": "finite-carrier-row-no-gain-over-default-young"
+        },
+        {
+          "schedule": "RLR",
+          "carrier_measurement_depth": 3,
+          "output_count": 1728,
+          "mutual_information_bits": 0.3801726854255696,
+          "bayes_success_probability": 0.5277777777777778,
+          "carrier_transcript_mutual_information_bits": 0.0,
+          "carrier_transcript_bayes_success_probability": 0.3333333333333333,
+          "information_gain_over_default_product_young_bits": -0.29824921019888917,
+          "bayes_gain_over_default_product_young": -0.09722222222222221,
+          "information_gap_to_best_group_orbit_product_basis_bits": -0.4388963627716742,
+          "bayes_gap_to_best_group_orbit_product_basis": -0.19907407407407396,
+          "information_gap_to_global_pgm_bits": -0.7487255030286777,
+          "bayes_gap_to_global_pgm": -0.3582533545630845,
+          "probability_normalization_residual": 4.440892098500626e-16,
+          "transcript_probability_normalization_residual": 3.3306690738754696e-16,
+          "status": "finite-carrier-row-no-gain-over-default-young"
+        }
+      ],
+      "product_basis_baseline": {
+        "relative_basis_setting_count": 36,
+        "best_mutual_information_bits": 0.8190690481972438,
+        "best_mutual_information_basis_pair": [
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            1,
+            2,
+            0
+          ]
+        ],
+        "best_bayes_success_probability": 0.7268518518518517,
+        "best_bayes_basis_pair": [
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            0,
+            2,
+            1
+          ]
+        ],
+        "exhaustive_over_group_orbit_bases": true,
+        "exhaustive_over_all_local_povms": false,
+        "status": "group-orbit-product-basis-exhausted-general-local-povm-open"
+      },
+      "product_one_copy_pgm_mutual_information_bits": 0.5629944345089515,
+      "product_one_copy_pgm_bayes_success_probability": 0.6872427983539094,
+      "global_pgm_mutual_information_bits": 1.1288981884542473,
+      "global_pgm_bayes_success_probability": 0.8860311323408623,
+      "best_carrier_schedule_by_information": "L",
+      "best_carrier_mutual_information_bits": 0.5283208335737184,
+      "best_carrier_schedule_by_bayes": "L",
+      "best_carrier_bayes_success_probability": 0.5833333333333334,
+      "maximum_carrier_transcript_mutual_information_residual": 0.0,
+      "carrier_readout_has_hidden_conditioned_signal": true,
+      "deeper_alternation_improves_over_depth_one": false,
+      "best_carrier_beats_global_pgm_information": false,
+      "best_carrier_beats_global_pgm_bayes": false,
+      "exact_natural_channel_control_verified": true,
+      "status": "noncentral-signal-exact-carrier-refinement-baseline-limited"
+    },
+    {
+      "control_id": "S4-TRANSPOSITIONS",
+      "n": 4,
+      "transposition_count": 1,
+      "hidden_involution_count": 6,
+      "copy_count": 3,
+      "schedules": [
+        {
+          "schedule": "NONE",
+          "carrier_measurement_depth": 0,
+          "output_count": 1000,
+          "mutual_information_bits": 0.9615199175811977,
+          "bayes_success_probability": 0.4688027464313272,
+          "carrier_transcript_mutual_information_bits": 0.0,
+          "carrier_transcript_bayes_success_probability": 0.16666666666666666,
+          "information_gain_over_default_product_young_bits": 0.0,
+          "bayes_gain_over_default_product_young": 0.0,
+          "information_gap_to_best_group_orbit_product_basis_bits": -0.09466952817221497,
+          "bayes_gap_to_best_group_orbit_product_basis": -0.060103804976851916,
+          "information_gap_to_global_pgm_bits": -0.4216291002286938,
+          "bayes_gap_to_global_pgm": -0.2731230309814156,
+          "probability_normalization_residual": 2.220446049250313e-16,
+          "transcript_probability_normalization_residual": 0.0,
+          "status": "default-product-young-baseline"
+        },
+        {
+          "schedule": "L",
+          "carrier_measurement_depth": 1,
+          "output_count": 5000,
+          "mutual_information_bits": 0.7313253724755597,
+          "bayes_success_probability": 0.41004020785108025,
+          "carrier_transcript_mutual_information_bits": -8.881784197001252e-16,
+          "carrier_transcript_bayes_success_probability": 0.1666666666666667,
+          "information_gain_over_default_product_young_bits": -0.23019454510563797,
+          "bayes_gain_over_default_product_young": -0.05876253858024694,
+          "information_gap_to_best_group_orbit_product_basis_bits": -0.32486407327785294,
+          "bayes_gap_to_best_group_orbit_product_basis": -0.11886634355709885,
+          "information_gap_to_global_pgm_bits": -0.6518236453343318,
+          "bayes_gap_to_global_pgm": -0.33188556956166254,
+          "probability_normalization_residual": 3.3306690738754696e-16,
+          "transcript_probability_normalization_residual": 3.3306690738754696e-16,
+          "status": "finite-carrier-row-no-gain-over-default-young"
+        },
+        {
+          "schedule": "R",
+          "carrier_measurement_depth": 1,
+          "output_count": 5000,
+          "mutual_information_bits": 0.7313253724755615,
+          "bayes_success_probability": 0.4100402078510803,
+          "carrier_transcript_mutual_information_bits": 0.0,
+          "carrier_transcript_bayes_success_probability": 0.1666666666666667,
+          "information_gain_over_default_product_young_bits": -0.2301945451056362,
+          "bayes_gain_over_default_product_young": -0.05876253858024688,
+          "information_gap_to_best_group_orbit_product_basis_bits": -0.32486407327785116,
+          "bayes_gap_to_best_group_orbit_product_basis": -0.1188663435570988,
+          "information_gap_to_global_pgm_bits": -0.65182364533433,
+          "bayes_gap_to_global_pgm": -0.3318855695616625,
+          "probability_normalization_residual": 4.440892098500626e-16,
+          "transcript_probability_normalization_residual": 3.3306690738754696e-16,
+          "status": "finite-carrier-row-no-gain-over-default-young"
+        },
+        {
+          "schedule": "LR",
+          "carrier_measurement_depth": 2,
+          "output_count": 25000,
+          "mutual_information_bits": 0.5192320882871986,
+          "bayes_success_probability": 0.35275055057227367,
+          "carrier_transcript_mutual_information_bits": 0.0,
+          "carrier_transcript_bayes_success_probability": 0.1666666666666667,
+          "information_gain_over_default_product_young_bits": -0.4422878292939991,
+          "bayes_gain_over_default_product_young": -0.11605219585905352,
+          "information_gap_to_best_group_orbit_product_basis_bits": -0.5369573574662141,
+          "bayes_gap_to_best_group_orbit_product_basis": -0.17615600083590544,
+          "information_gap_to_global_pgm_bits": -0.863916929522693,
+          "bayes_gap_to_global_pgm": -0.3891752268404691,
+          "probability_normalization_residual": 5.551115123125783e-16,
+          "transcript_probability_normalization_residual": 4.440892098500626e-16,
+          "status": "finite-carrier-row-no-gain-over-default-young"
+        },
+        {
+          "schedule": "RL",
+          "carrier_measurement_depth": 2,
+          "output_count": 25000,
+          "mutual_information_bits": 0.5192320882871986,
+          "bayes_success_probability": 0.35275055057227367,
+          "carrier_transcript_mutual_information_bits": 8.881784197001252e-16,
+          "carrier_transcript_bayes_success_probability": 0.16666666666666674,
+          "information_gain_over_default_product_young_bits": -0.4422878292939991,
+          "bayes_gain_over_default_product_young": -0.11605219585905352,
+          "information_gap_to_best_group_orbit_product_basis_bits": -0.5369573574662141,
+          "bayes_gap_to_best_group_orbit_product_basis": -0.17615600083590544,
+          "information_gap_to_global_pgm_bits": -0.863916929522693,
+          "bayes_gap_to_global_pgm": -0.3891752268404691,
+          "probability_normalization_residual": 6.661338147750939e-16,
+          "transcript_probability_normalization_residual": 6.661338147750939e-16,
+          "status": "finite-carrier-row-no-gain-over-default-young"
+        },
+        {
+          "schedule": "LRL",
+          "carrier_measurement_depth": 3,
+          "output_count": 125000,
+          "mutual_information_bits": 0.5083356812623432,
+          "bayes_success_probability": 0.35105679707817145,
+          "carrier_transcript_mutual_information_bits": -1.7763568394002505e-15,
+          "carrier_transcript_bayes_success_probability": 0.16666666666666674,
+          "information_gain_over_default_product_young_bits": -0.4531842363188545,
+          "bayes_gain_over_default_product_young": -0.11774594935315574,
+          "information_gap_to_best_group_orbit_product_basis_bits": -0.5478537644910695,
+          "bayes_gap_to_best_group_orbit_product_basis": -0.17784975433000766,
+          "information_gap_to_global_pgm_bits": -0.8748133365475483,
+          "bayes_gap_to_global_pgm": -0.39086898033457135,
+          "probability_normalization_residual": 7.771561172376096e-16,
+          "transcript_probability_normalization_residual": 8.881784197001252e-16,
+          "status": "finite-carrier-row-no-gain-over-default-young"
+        },
+        {
+          "schedule": "RLR",
+          "carrier_measurement_depth": 3,
+          "output_count": 125000,
+          "mutual_information_bits": 0.5083356812623432,
+          "bayes_success_probability": 0.35105679707817145,
+          "carrier_transcript_mutual_information_bits": 0.0,
+          "carrier_transcript_bayes_success_probability": 0.16666666666666674,
+          "information_gain_over_default_product_young_bits": -0.4531842363188545,
+          "bayes_gain_over_default_product_young": -0.11774594935315574,
+          "information_gap_to_best_group_orbit_product_basis_bits": -0.5478537644910695,
+          "bayes_gap_to_best_group_orbit_product_basis": -0.17784975433000766,
+          "information_gap_to_global_pgm_bits": -0.8748133365475483,
+          "bayes_gap_to_global_pgm": -0.39086898033457135,
+          "probability_normalization_residual": 8.881784197001252e-16,
+          "transcript_probability_normalization_residual": 8.881784197001252e-16,
+          "status": "finite-carrier-row-no-gain-over-default-young"
+        }
+      ],
+      "product_basis_baseline": {
+        "relative_basis_setting_count": 576,
+        "best_mutual_information_bits": 1.0561894457534127,
+        "best_mutual_information_basis_pair": [
+          [
+            0,
+            3,
+            2,
+            1
+          ],
+          [
+            1,
+            3,
+            2,
+            0
+          ]
+        ],
+        "best_bayes_success_probability": 0.5289065514081791,
+        "best_bayes_basis_pair": [
+          [
+            0,
+            2,
+            3,
+            1
+          ],
+          [
+            1,
+            3,
+            0,
+            2
+          ]
+        ],
+        "exhaustive_over_group_orbit_bases": true,
+        "exhaustive_over_all_local_povms": false,
+        "status": "group-orbit-product-basis-exhausted-general-local-povm-open"
+      },
+      "product_one_copy_pgm_mutual_information_bits": 0.6144199077977668,
+      "product_one_copy_pgm_bayes_success_probability": 0.44826052316422327,
+      "global_pgm_mutual_information_bits": 1.3831490178098915,
+      "global_pgm_bayes_success_probability": 0.7419257774127428,
+      "best_carrier_schedule_by_information": "R",
+      "best_carrier_mutual_information_bits": 0.7313253724755615,
+      "best_carrier_schedule_by_bayes": "R",
+      "best_carrier_bayes_success_probability": 0.4100402078510803,
+      "maximum_carrier_transcript_mutual_information_residual": 1.7763568394002505e-15,
+      "carrier_readout_has_hidden_conditioned_signal": true,
+      "deeper_alternation_improves_over_depth_one": false,
+      "best_carrier_beats_global_pgm_information": false,
+      "best_carrier_beats_global_pgm_bayes": false,
+      "exact_natural_channel_control_verified": true,
+      "status": "noncentral-signal-exact-carrier-refinement-baseline-limited"
+    },
+    {
+      "control_id": "S4-PERFECT-MATCHINGS",
+      "n": 4,
+      "transposition_count": 2,
+      "hidden_involution_count": 3,
+      "copy_count": 3,
+      "schedules": [
+        {
+          "schedule": "NONE",
+          "carrier_measurement_depth": 0,
+          "output_count": 1000,
+          "mutual_information_bits": 0.39771002880001305,
+          "bayes_success_probability": 0.5260416666666666,
+          "carrier_transcript_mutual_information_bits": -8.881784197001252e-16,
+          "carrier_transcript_bayes_success_probability": 0.3333333333333333,
+          "information_gain_over_default_product_young_bits": 0.0,
+          "bayes_gain_over_default_product_young": 0.0,
+          "information_gap_to_best_group_orbit_product_basis_bits": -0.041440207149237906,
+          "bayes_gap_to_best_group_orbit_product_basis": -0.03182870370370372,
+          "information_gap_to_global_pgm_bits": -0.9891321593309985,
+          "bayes_gap_to_global_pgm": -0.390625,
+          "probability_normalization_residual": 0.0,
+          "transcript_probability_normalization_residual": 0.0,
+          "status": "default-product-young-baseline"
+        },
+        {
+          "schedule": "L",
+          "carrier_measurement_depth": 1,
+          "output_count": 5000,
+          "mutual_information_bits": 0.4442504393341338,
+          "bayes_success_probability": 0.5416666666666666,
+          "carrier_transcript_mutual_information_bits": 0.0,
+          "carrier_transcript_bayes_success_probability": 0.3333333333333333,
+          "information_gain_over_default_product_young_bits": 0.046540410534120724,
+          "bayes_gain_over_default_product_young": 0.015625,
+          "information_gap_to_best_group_orbit_product_basis_bits": 0.005100203384882818,
+          "bayes_gap_to_best_group_orbit_product_basis": -0.01620370370370372,
+          "information_gap_to_global_pgm_bits": -0.9425917487968778,
+          "bayes_gap_to_global_pgm": -0.375,
+          "probability_normalization_residual": 4.440892098500626e-16,
+          "transcript_probability_normalization_residual": 3.3306690738754696e-16,
+          "status": "finite-carrier-row-gain-over-default-young"
+        },
+        {
+          "schedule": "R",
+          "carrier_measurement_depth": 1,
+          "output_count": 5000,
+          "mutual_information_bits": 0.4442504393341338,
+          "bayes_success_probability": 0.5416666666666666,
+          "carrier_transcript_mutual_information_bits": -8.881784197001252e-16,
+          "carrier_transcript_bayes_success_probability": 0.3333333333333334,
+          "information_gain_over_default_product_young_bits": 0.046540410534120724,
+          "bayes_gain_over_default_product_young": 0.015625,
+          "information_gap_to_best_group_orbit_product_basis_bits": 0.005100203384882818,
+          "bayes_gap_to_best_group_orbit_product_basis": -0.01620370370370372,
+          "information_gap_to_global_pgm_bits": -0.9425917487968778,
+          "bayes_gap_to_global_pgm": -0.375,
+          "probability_normalization_residual": 3.3306690738754696e-16,
+          "transcript_probability_normalization_residual": 4.440892098500626e-16,
+          "status": "finite-carrier-row-gain-over-default-young"
+        },
+        {
+          "schedule": "LR",
+          "carrier_measurement_depth": 2,
+          "output_count": 25000,
+          "mutual_information_bits": 0.43905900916939267,
+          "bayes_success_probability": 0.5376478909465021,
+          "carrier_transcript_mutual_information_bits": 0.0,
+          "carrier_transcript_bayes_success_probability": 0.3333333333333333,
+          "information_gain_over_default_product_young_bits": 0.04134898036937962,
+          "bayes_gain_over_default_product_young": 0.011606224279835486,
+          "information_gap_to_best_group_orbit_product_basis_bits": -9.122677985828886e-05,
+          "bayes_gap_to_best_group_orbit_product_basis": -0.020222479423868234,
+          "information_gap_to_global_pgm_bits": -0.9477831789616189,
+          "bayes_gap_to_global_pgm": -0.3790187757201645,
+          "probability_normalization_residual": 6.661338147750939e-16,
+          "transcript_probability_normalization_residual": 7.771561172376096e-16,
+          "status": "finite-carrier-row-gain-over-default-young"
+        },
+        {
+          "schedule": "RL",
+          "carrier_measurement_depth": 2,
+          "output_count": 25000,
+          "mutual_information_bits": 0.4390590091693909,
+          "bayes_success_probability": 0.537647890946502,
+          "carrier_transcript_mutual_information_bits": -8.881784197001252e-16,
+          "carrier_transcript_bayes_success_probability": 0.3333333333333333,
+          "information_gain_over_default_product_young_bits": 0.04134898036937784,
+          "bayes_gain_over_default_product_young": 0.011606224279835375,
+          "information_gap_to_best_group_orbit_product_basis_bits": -9.122677986006522e-05,
+          "bayes_gap_to_best_group_orbit_product_basis": -0.020222479423868345,
+          "information_gap_to_global_pgm_bits": -0.9477831789616207,
+          "bayes_gap_to_global_pgm": -0.3790187757201646,
+          "probability_normalization_residual": 6.661338147750939e-16,
+          "transcript_probability_normalization_residual": 7.771561172376096e-16,
+          "status": "finite-carrier-row-gain-over-default-young"
+        },
+        {
+          "schedule": "LRL",
+          "carrier_measurement_depth": 3,
+          "output_count": 125000,
+          "mutual_information_bits": 0.42444805510490546,
+          "bayes_success_probability": 0.5335987511431185,
+          "carrier_transcript_mutual_information_bits": 0.0,
+          "carrier_transcript_bayes_success_probability": 0.3333333333333335,
+          "information_gain_over_default_product_young_bits": 0.026738026304892415,
+          "bayes_gain_over_default_product_young": 0.00755708447645187,
+          "information_gap_to_best_group_orbit_product_basis_bits": -0.014702180844345492,
+          "bayes_gap_to_best_group_orbit_product_basis": -0.02427161922725185,
+          "information_gap_to_global_pgm_bits": -0.9623941330261061,
+          "bayes_gap_to_global_pgm": -0.38306791552354813,
+          "probability_normalization_residual": 1.1102230246251565e-15,
+          "transcript_probability_normalization_residual": 1.2212453270876722e-15,
+          "status": "finite-carrier-row-gain-over-default-young"
+        },
+        {
+          "schedule": "RLR",
+          "carrier_measurement_depth": 3,
+          "output_count": 125000,
+          "mutual_information_bits": 0.4244480551049019,
+          "bayes_success_probability": 0.5335987511431185,
+          "carrier_transcript_mutual_information_bits": 0.0,
+          "carrier_transcript_bayes_success_probability": 0.3333333333333334,
+          "information_gain_over_default_product_young_bits": 0.026738026304888862,
+          "bayes_gain_over_default_product_young": 0.00755708447645187,
+          "information_gap_to_best_group_orbit_product_basis_bits": -0.014702180844349044,
+          "bayes_gap_to_best_group_orbit_product_basis": -0.02427161922725185,
+          "information_gap_to_global_pgm_bits": -0.9623941330261097,
+          "bayes_gap_to_global_pgm": -0.38306791552354813,
+          "probability_normalization_residual": 1.1102230246251565e-15,
+          "transcript_probability_normalization_residual": 1.1102230246251565e-15,
+          "status": "finite-carrier-row-gain-over-default-young"
+        }
+      ],
+      "product_basis_baseline": {
+        "relative_basis_setting_count": 576,
+        "best_mutual_information_bits": 0.43915023594925096,
+        "best_mutual_information_basis_pair": [
+          [
+            0,
+            2,
+            3,
+            1
+          ],
+          [
+            0,
+            3,
+            1,
+            2
+          ]
+        ],
+        "best_bayes_success_probability": 0.5578703703703703,
+        "best_bayes_basis_pair": [
+          [
+            0,
+            2,
+            1,
+            3
+          ],
+          [
+            0,
+            3,
+            1,
+            2
+          ]
+        ],
+        "exhaustive_over_group_orbit_bases": true,
+        "exhaustive_over_all_local_povms": false,
+        "status": "group-orbit-product-basis-exhausted-general-local-povm-open"
+      },
+      "product_one_copy_pgm_mutual_information_bits": 1.3868421881310125,
+      "product_one_copy_pgm_bayes_success_probability": 0.9166666666666669,
+      "global_pgm_mutual_information_bits": 1.3868421881310116,
+      "global_pgm_bayes_success_probability": 0.9166666666666666,
+      "best_carrier_schedule_by_information": "L",
+      "best_carrier_mutual_information_bits": 0.4442504393341338,
+      "best_carrier_schedule_by_bayes": "L",
+      "best_carrier_bayes_success_probability": 0.5416666666666666,
+      "maximum_carrier_transcript_mutual_information_residual": 8.881784197001252e-16,
+      "carrier_readout_has_hidden_conditioned_signal": true,
+      "deeper_alternation_improves_over_depth_one": false,
+      "best_carrier_beats_global_pgm_information": false,
+      "best_carrier_beats_global_pgm_bayes": false,
+      "exact_natural_channel_control_verified": true,
+      "status": "noncentral-signal-exact-carrier-refinement-baseline-limited"
+    }
+  ],
+  "theorem": {
+    "natural_fourier_block": "For source tuple lambda, the naturally weighted informative block is tensor_i d_lambda_i/|S_n| [I+rho_lambda_i(h)].",
+    "carrier_transcript_invariance": "Every source-label and carrier-PVM transcript effect commutes with simultaneous conjugation, so its law is identical for all h in one conjugacy class and I(H;T)=0.",
+    "information_chain_rule": "For the final noncentral row outcome J, I(H;T,J)=I(H;J|T) because I(H;T)=0; the carrier transcript itself contributes no bits.",
+    "minimum_noncentral_effect": "A fixed Young-basis rank-one diagonal effect lies outside the carrier algebra and has hidden-conditioned probabilities.",
+    "covariantization": "Choose uniform public g, conjugate the final row basis by the diagonal representation U_g, and retain g. Carrier PVMs commute with U_g and the uniform hidden prior makes this an information-preserving covariant instrument.",
+    "finite_baseline_boundary": "Exact S_3/S_4 controls compare every alternating schedule through depth three with exhaustive group-orbit product bases and product/global PGM channels. A small default-basis gain is not robust.",
+    "scope_limit": "The finite enumerator is factorial and the product-basis baseline does not optimize all local POVMs. No all-n information bound, efficient row decoder, or classical separation is proved.",
+    "carrier_transcript_zero_information_proved": true,
+    "minimum_covariant_noncentral_readout_compiled": true,
+    "physical_hidden_conditioned_signal_exhibited": true,
+    "carrier_contextuality_implies_decoder_information": false,
+    "uniform_collective_advantage_proved": false,
+    "scalable_hidden_involution_decoder_compiled": false,
+    "theorem_verified": true,
+    "status": "minimum-noncentral-readout-compiled-carrier-gain-not-robust"
+  },
+  "proof_obligations": [
+    {
+      "obligation": "escape_carrier_conjugation_invariance",
+      "resolved": true,
+      "resolution": "The Young rank-one row effect is noncentral and exact finite channels have positive hidden-conditioned information."
+    },
+    {
+      "obligation": "localize_information_outside_carrier_transcript",
+      "resolved": true,
+      "resolution": "Carrier transcript laws are class-invariant; the chain rule places every bit in the final conditional row outcome."
+    },
+    {
+      "obligation": "prove_carrier_refinement_advantage_all_n",
+      "resolved": false,
+      "resolution": "The finite gain occurs only on one S_4 control and deeper alternation degrades it."
+    },
+    {
+      "obligation": "beat_general_separable_measurements",
+      "resolved": false,
+      "resolution": "The exhaustive baseline covers group-orbit projective bases only; arbitrary local POVMs remain a stronger baseline."
+    },
+    {
+      "obligation": "compile_scalable_identity_decoder",
+      "resolved": false,
+      "resolution": "Positive mutual information is not a polynomial outcome decoder, and the finite global PGM remains substantially stronger."
+    }
+  ],
+  "adversarial_audit": [
+    {
+      "challenge": "Large Racah disturbance itself contains the hidden label.",
+      "survives": false,
+      "response": "Discarding the final row outcome leaves exactly zero mutual information for every schedule."
+    },
+    {
+      "challenge": "More alternating carrier measurements amplify row information.",
+      "survives": false,
+      "response": "Every finite class has its best carrier protocol at depth one; depth two and three lose information."
+    },
+    {
+      "challenge": "Any gain over the default Young basis is collective advantage.",
+      "survives": false,
+      "response": "Relative local basis choices and PGM baselines must be tested; the finite global PGM dominates all carrier schedules."
+    },
+    {
+      "challenge": "The row readout is still conjugation-invariant.",
+      "survives": false,
+      "response": "Rank-one Young effects are noncentral. Public random conjugation supplies a covariant family while retaining orientation."
+    },
+    {
+      "challenge": "Finite exact enumeration is a scalable decoder.",
+      "survives": false,
+      "response": "The enumeration is factorial and establishes only a small-degree mechanism/falsifier boundary."
+    }
+  ],
+  "headline_metrics": {
+    "carrier_transcript_zero_information_theorem_count": 1,
+    "minimum_covariant_noncentral_readout_compiler_count": 1,
+    "physical_hidden_conditioned_signal_control_count": 3,
+    "finite_control_count": 3,
+    "finite_schedule_count": 21,
+    "finite_carrier_gain_over_default_young_control_count": 1,
+    "finite_carrier_gain_over_group_orbit_product_control_count": 1,
+    "finite_global_pgm_dominates_carrier_control_count": 3,
+    "deeper_alternation_gain_control_count": 0,
+    "maximum_carrier_transcript_information_residual": 1.7763568394002505e-15,
+    "maximum_best_carrier_information_bits": 0.7313253724755615,
+    "uniform_collective_advantage_theorem_count": 0,
+    "scalable_hidden_involution_decoder_count": 0,
+    "classical_separation_theorem_count": 0,
+    "new_quantum_algorithm_count": 0
+  },
+  "claim_gate": {
+    "carrier_transcript_zero_hidden_information_proved": true,
+    "minimum_covariant_noncentral_readout_compiled": true,
+    "physical_hidden_conditioned_row_signal_exhibited": true,
+    "carrier_contextuality_alone_implies_decoder_information": false,
+    "finite_carrier_gain_over_default_young_seen": true,
+    "finite_carrier_gain_robust_to_product_baselines": false,
+    "deeper_racah_alternation_amplifies_identity_information": false,
+    "all_n_collective_information_advantage_proved": false,
+    "scalable_hidden_involution_decoder_compiled": false,
+    "classical_separation_proved": false,
+    "speedup_claim_allowed": false,
+    "reason": "A minimum noncentral outcome escapes the invariance theorem, but the finite signal is baseline-limited and is degraded by additional carrier contextuality."
+  },
+  "status": "noncentral-readout-accessible-carrier-contextuality-not-decoder",
+  "summary": "Compiled and exactly audited the minimum covariant noncentral row readout after carrier measurements. Carrier transcripts contain zero hidden information; the finite row signal survives, but does not robustly beat product baselines and weakens with deeper Racah alternation.",
+  "falsifiers_triggered": [
+    "Carrier-label transcripts remain exactly hidden-identity blind even after adaptive alternation.",
+    "A fixed noncentral row outcome is sufficient to break invariance but not sufficient to obtain a useful decoder.",
+    "The small S_4 perfect-matching gain over the default Young basis is not a universal product-measurement separation.",
+    "Increasing carrier contextuality depth reduces identification information on every exact control.",
+    "Finite global PGM channels dominate every tested carrier-row schedule.",
+    "No all-n information advantage, efficient decoder, classical separation, or speedup is established."
+  ]
+}

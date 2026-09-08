@@ -1165,6 +1165,66 @@ from self_dual_wreath_positive_naimark_access_equivalence_boundary import (
 from self_dual_wreath_hierarchical_endpoint_schur_algebra_boundary import (
     write_hierarchical_endpoint_schur_algebra_boundary_report,
 )
+from self_dual_wreath_affine_flag_aggregate_schur_query_boundary import (
+    write_affine_flag_aggregate_schur_query_boundary_report,
+)
+from self_dual_wreath_affine_node_frame_response_boundary import (
+    write_affine_node_frame_response_boundary_report,
+)
+from self_dual_wreath_scale_free_endpoint_graph_transfer_boundary import (
+    write_scale_free_endpoint_graph_transfer_boundary_report,
+)
+from self_dual_wreath_cayley_endpoint_gauge_compiler import (
+    write_cayley_endpoint_gauge_compiler_report,
+)
+from self_dual_wreath_affine_star_cayley_compiler import (
+    write_affine_star_cayley_compiler_report,
+)
+from self_dual_wreath_pair_carrier_label_contextuality import (
+    write_pair_carrier_label_contextuality_report,
+)
+from self_dual_wreath_occupied_carrier_octahedral_boundary import (
+    write_occupied_carrier_octahedral_boundary_report,
+)
+from self_dual_wreath_plancherel_carrier_contextuality import (
+    write_plancherel_carrier_contextuality_report,
+)
+from self_dual_wreath_plancherel_carrier_nonidentity_tail import (
+    write_plancherel_carrier_nonidentity_tail_report,
+)
+from self_dual_wreath_plancherel_carrier_near_derangement_reduction import (
+    write_plancherel_carrier_near_derangement_reduction_report,
+)
+from self_dual_wreath_plancherel_carrier_asymptotic_closure import (
+    write_plancherel_carrier_asymptotic_closure_report,
+)
+from self_dual_wreath_plancherel_carrier_racah_access_boundary import (
+    write_plancherel_carrier_racah_access_boundary_report,
+)
+from self_dual_wreath_carrier_noncentral_readout_boundary import (
+    write_carrier_noncentral_readout_boundary_report,
+)
+from self_dual_wreath_carrier_conditioned_pgm_boundary import (
+    write_carrier_conditioned_pgm_boundary_report,
+)
+from self_dual_wreath_carrier_holevo_budget_theorem import (
+    write_carrier_holevo_budget_theorem_report,
+)
+from self_dual_wreath_carrier_branch_pgm_success_certificate import (
+    write_carrier_branch_pgm_success_certificate_report,
+)
+from self_dual_wreath_disjoint_pair_branch_pgm_compiler_boundary import (
+    write_disjoint_pair_branch_pgm_compiler_boundary_report,
+)
+from self_dual_wreath_disjoint_pair_covariance_polar_reduction import (
+    write_disjoint_pair_covariance_polar_reduction_report,
+)
+from self_dual_wreath_dimensionless_pgm_truncation_bridge import (
+    write_dimensionless_pgm_truncation_bridge_report,
+)
+from self_dual_wreath_local_block_metric_normalization_no_go import (
+    write_local_block_metric_normalization_no_go_report,
+)
 from self_dual_wreath_fixed_arity_support_sum_compiler import write_fixed_arity_support_sum_compiler_report
 from self_dual_wreath_flat_holonomy_component_no_go import write_flat_holonomy_component_no_go_report
 from self_dual_wreath_interleaved_target_margin_stability import write_target_margin_stability_report
@@ -1189,6 +1249,22 @@ from self_dual_wreath_support_projector_endpoint_gauge_boundary import write_sup
 from self_dual_wreath_transpose_edge_admission_no_go import write_transpose_edge_admission_no_go_report
 from self_dual_wreath_windowed_root_flatness_bridge import write_windowed_root_flatness_bridge_report
 from self_dual_wreath_point_parent_coherence_witness import write_point_parent_coherence_witness_report
+from coset_hidden_involution_multiplicity_twirl_projection import (
+    write_multiplicity_twirl_projection_report,
+)
+from coset_hidden_involution_multiplicity_fiber_trace import (
+    write_multiplicity_fiber_trace_report,
+)
+from coset_hidden_involution_high_mass_support_scan import (
+    write_high_mass_support_scan_report,
+)
+from coset_hidden_involution_source_weighted_support_portfolio import (
+    write_source_weighted_support_portfolio_report,
+)
+from coset_hidden_involution_spectral_label_budget import write_spectral_label_budget_report
+from coset_hidden_involution_natural_support_six_mass_audit import (
+    write_natural_support_six_mass_audit,
+)
 from self_dual_wreath_point_pgm_coarse_graining import write_point_pgm_coarse_graining_report
 from self_dual_wreath_point_stabilizer_collision_free_kernel import write_collision_free_point_kernel_report
 from self_dual_wreath_point_stabilizer_quotient import write_point_stabilizer_quotient_report
@@ -1613,6 +1689,15 @@ DCP_SUBSET_SUM_MARKER_COSET_EXPERIMENTS = {
     "EXP-CODE-SELF-DUAL-WREATH-SOURCE-ORDER-GAUGE-CANONICALIZATION",
     "EXP-CODE-SELF-DUAL-WREATH-TRACE-BIASED-ADAPTIVE-WALSH-NO-GO",
     "EXP-DHS-DCP-SUBSET-SUM-MARKER-COSET-THEOREM",
+}
+
+COSET_MULTIPLICITY_TWIRL_EXPERIMENTS = {
+    "EXP-COSET-HIDDEN-INVOLUTION-SOURCE-WEIGHTED-SUPPORT-PORTFOLIO",
+    "EXP-COSET-HIDDEN-INVOLUTION-SPECTRAL-LABEL-BUDGET",
+    "EXP-COSET-HIDDEN-INVOLUTION-MULTIPLICITY-TWIRL-PROJECTION",
+    "EXP-COSET-HIDDEN-INVOLUTION-MULTIPLICITY-FIBER-TRACE",
+    "EXP-COSET-HIDDEN-INVOLUTION-HIGH-MASS-SUPPORT-SCAN",
+    "EXP-COSET-HIDDEN-INVOLUTION-NATURAL-SUPPORT-SIX-MASS-AUDIT",
 }
 
 DCP_SUBSET_SUM_AFFINE_CVP_EXPERIMENTS = {
@@ -2454,6 +2539,26 @@ def supported_experiment_ids() -> list[str]:
         | {"EXP-CODE-SELF-DUAL-WREATH-POSITIVE-NAIMARK-ACCESS-EQUIVALENCE-BOUNDARY"}
         | {"EXP-CODE-SELF-DUAL-WREATH-RECURSIVE-POLAR-NORMALIZATION-CONSERVATION-BOUNDARY"}
         | {"EXP-CODE-SELF-DUAL-WREATH-HIERARCHICAL-ENDPOINT-SCHUR-ALGEBRA-BOUNDARY"}
+        | {"EXP-CODE-SELF-DUAL-WREATH-AFFINE-FLAG-AGGREGATE-SCHUR-QUERY-BOUNDARY"}
+        | {"EXP-CODE-SELF-DUAL-WREATH-AFFINE-NODE-FRAME-RESPONSE-BOUNDARY"}
+        | {"EXP-CODE-SELF-DUAL-WREATH-AFFINE-STAR-CAYLEY-COMPILER"}
+        | {"EXP-CODE-SELF-DUAL-WREATH-PAIR-CARRIER-LABEL-CONTEXTUALITY"}
+        | {"EXP-CODE-SELF-DUAL-WREATH-OCCUPIED-CARRIER-OCTAHEDRAL-BOUNDARY"}
+        | {"EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-CARRIER-CONTEXTUALITY"}
+        | {"EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-CARRIER-NONIDENTITY-TAIL"}
+        | {"EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-CARRIER-NEAR-DERANGEMENT-REDUCTION"}
+        | {"EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-CARRIER-ASYMPTOTIC-CLOSURE"}
+        | {"EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-CARRIER-RACAH-ACCESS-BOUNDARY"}
+        | {"EXP-CODE-SELF-DUAL-WREATH-CARRIER-NONCENTRAL-READOUT-BOUNDARY"}
+        | {"EXP-CODE-SELF-DUAL-WREATH-CARRIER-CONDITIONED-PGM-BOUNDARY"}
+        | {"EXP-CODE-SELF-DUAL-WREATH-CARRIER-HOLEVO-BUDGET-THEOREM"}
+        | {"EXP-CODE-SELF-DUAL-WREATH-CARRIER-BRANCH-PGM-SUCCESS-CERTIFICATE"}
+        | {"EXP-CODE-SELF-DUAL-WREATH-CAYLEY-ENDPOINT-GAUGE-COMPILER"}
+        | {"EXP-CODE-SELF-DUAL-WREATH-DIMENSIONLESS-PGM-TRUNCATION-BRIDGE"}
+        | {"EXP-CODE-SELF-DUAL-WREATH-DISJOINT-PAIR-BRANCH-PGM-COMPILER-BOUNDARY"}
+        | {"EXP-CODE-SELF-DUAL-WREATH-DISJOINT-PAIR-COVARIANCE-POLAR-REDUCTION"}
+        | {"EXP-CODE-SELF-DUAL-WREATH-LOCAL-BLOCK-METRIC-NORMALIZATION-NO-GO"}
+        | {"EXP-CODE-SELF-DUAL-WREATH-SCALE-FREE-ENDPOINT-GRAPH-TRANSFER-BOUNDARY"}
         | DCP_RECURSIVE_DECODER_EXPERIMENTS
         | DCP_RECURRENCE_EXPERIMENTS
         | DCP_SCHEDULE_SEARCH_EXPERIMENTS
@@ -2520,6 +2625,7 @@ def supported_experiment_ids() -> list[str]:
         | DCP_SUBSET_SUM_SHORT_RELATION_EXPERIMENTS
         | DCP_SUBSET_SUM_CARRY_RELATION_EXPERIMENTS
         | DCP_SUBSET_SUM_MARKER_COSET_EXPERIMENTS
+        | COSET_MULTIPLICITY_TWIRL_EXPERIMENTS
         | DCP_SUBSET_SUM_AFFINE_CVP_EXPERIMENTS
         | DCP_SUBSET_SUM_AFFINE_CVP_SCALING_EXPERIMENTS
         | DCP_SUBSET_SUM_AFFINE_BDD_EXPERIMENTS
@@ -2684,6 +2790,8 @@ def _latest_result_id_for_experiment(experiment_id: str) -> str:
         return f"RESULT-{experiment_id}-DCP-SUBSET-SUM-CARRY-RELATION"
     if experiment_id in DCP_SUBSET_SUM_MARKER_COSET_EXPERIMENTS:
         return f"RESULT-{experiment_id}-DCP-SUBSET-SUM-MARKER-COSET"
+    if experiment_id in COSET_MULTIPLICITY_TWIRL_EXPERIMENTS:
+        return f"RESULT-{experiment_id}"
     if experiment_id in DCP_SUBSET_SUM_AFFINE_CVP_EXPERIMENTS:
         return f"RESULT-{experiment_id}-DCP-SUBSET-SUM-AFFINE-CVP"
     if experiment_id in DCP_SUBSET_SUM_AFFINE_CVP_SCALING_EXPERIMENTS:
@@ -3661,6 +3769,11 @@ def select_next_experiment() -> NextExperimentSelection:
     "EXP-COSET-HIDDEN-INVOLUTION-ISOTYPIC-SUPPORT-NO-GO": 100,
     "EXP-COSET-HIDDEN-INVOLUTION-MATRIX-HECKE-TRANSFER-REDUCTION": 100,
     "EXP-COSET-HIDDEN-INVOLUTION-MULTIPLICITY-HARD-MASS": 100,
+    "EXP-COSET-HIDDEN-INVOLUTION-MULTIPLICITY-FIBER-TRACE": 131,
+    "EXP-COSET-HIDDEN-INVOLUTION-HIGH-MASS-SUPPORT-SCAN": 132,
+    "EXP-COSET-HIDDEN-INVOLUTION-SOURCE-WEIGHTED-SUPPORT-PORTFOLIO": 132,
+    "EXP-COSET-HIDDEN-INVOLUTION-SPECTRAL-LABEL-BUDGET": 133,
+    "EXP-COSET-HIDDEN-INVOLUTION-NATURAL-SUPPORT-SIX-MASS-AUDIT": 130,
     "EXP-COSET-HIDDEN-INVOLUTION-ORBIT-SYNTHESIS-FLATNESS": 100,
     "EXP-COSET-HIDDEN-INVOLUTION-PAIR-POLAR-HOLONOMY-NO-GO": 100,
     "EXP-COSET-HIDDEN-INVOLUTION-PAIR-POLAR-PHASE-COMPILER": 100,
@@ -12292,6 +12405,82 @@ def run_experiment(experiment_id: str) -> RunnerResult:
         "EXP-CODE-SELF-DUAL-WREATH-HIERARCHICAL-ENDPOINT-SCHUR-ALGEBRA-BOUNDARY": (
             write_hierarchical_endpoint_schur_algebra_boundary_report
         ),
+        "EXP-CODE-SELF-DUAL-WREATH-AFFINE-FLAG-AGGREGATE-SCHUR-QUERY-BOUNDARY": (
+            write_affine_flag_aggregate_schur_query_boundary_report
+        ),
+        "EXP-CODE-SELF-DUAL-WREATH-AFFINE-NODE-FRAME-RESPONSE-BOUNDARY": (
+            write_affine_node_frame_response_boundary_report
+        ),
+        "EXP-CODE-SELF-DUAL-WREATH-SCALE-FREE-ENDPOINT-GRAPH-TRANSFER-BOUNDARY": (
+            write_scale_free_endpoint_graph_transfer_boundary_report
+        ),
+        "EXP-CODE-SELF-DUAL-WREATH-CAYLEY-ENDPOINT-GAUGE-COMPILER": (
+            write_cayley_endpoint_gauge_compiler_report
+        ),
+        "EXP-CODE-SELF-DUAL-WREATH-AFFINE-STAR-CAYLEY-COMPILER": (
+            write_affine_star_cayley_compiler_report
+        ),
+        "EXP-CODE-SELF-DUAL-WREATH-PAIR-CARRIER-LABEL-CONTEXTUALITY": (
+            write_pair_carrier_label_contextuality_report
+        ),
+        "EXP-CODE-SELF-DUAL-WREATH-OCCUPIED-CARRIER-OCTAHEDRAL-BOUNDARY": (
+            write_occupied_carrier_octahedral_boundary_report
+        ),
+        "EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-CARRIER-CONTEXTUALITY": (
+            write_plancherel_carrier_contextuality_report
+        ),
+        "EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-CARRIER-NONIDENTITY-TAIL": (
+            write_plancherel_carrier_nonidentity_tail_report
+        ),
+        "EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-CARRIER-NEAR-DERANGEMENT-REDUCTION": (
+            write_plancherel_carrier_near_derangement_reduction_report
+        ),
+        "EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-CARRIER-ASYMPTOTIC-CLOSURE": (
+            write_plancherel_carrier_asymptotic_closure_report
+        ),
+        "EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-CARRIER-RACAH-ACCESS-BOUNDARY": (
+            write_plancherel_carrier_racah_access_boundary_report
+        ),
+        "EXP-CODE-SELF-DUAL-WREATH-CARRIER-NONCENTRAL-READOUT-BOUNDARY": (
+            write_carrier_noncentral_readout_boundary_report
+        ),
+        "EXP-CODE-SELF-DUAL-WREATH-CARRIER-CONDITIONED-PGM-BOUNDARY": (
+            write_carrier_conditioned_pgm_boundary_report
+        ),
+        "EXP-CODE-SELF-DUAL-WREATH-CARRIER-HOLEVO-BUDGET-THEOREM": (
+            write_carrier_holevo_budget_theorem_report
+        ),
+        "EXP-CODE-SELF-DUAL-WREATH-CARRIER-BRANCH-PGM-SUCCESS-CERTIFICATE": (
+            write_carrier_branch_pgm_success_certificate_report
+        ),
+        "EXP-CODE-SELF-DUAL-WREATH-DISJOINT-PAIR-BRANCH-PGM-COMPILER-BOUNDARY": (
+            write_disjoint_pair_branch_pgm_compiler_boundary_report
+        ),
+        "EXP-CODE-SELF-DUAL-WREATH-DISJOINT-PAIR-COVARIANCE-POLAR-REDUCTION": (
+            write_disjoint_pair_covariance_polar_reduction_report
+        ),
+        "EXP-CODE-SELF-DUAL-WREATH-DIMENSIONLESS-PGM-TRUNCATION-BRIDGE": (
+            write_dimensionless_pgm_truncation_bridge_report
+        ),
+        "EXP-CODE-SELF-DUAL-WREATH-LOCAL-BLOCK-METRIC-NORMALIZATION-NO-GO": (
+            write_local_block_metric_normalization_no_go_report
+        ),
+        "EXP-COSET-HIDDEN-INVOLUTION-MULTIPLICITY-TWIRL-PROJECTION": (
+            write_multiplicity_twirl_projection_report
+        ),
+        "EXP-COSET-HIDDEN-INVOLUTION-MULTIPLICITY-FIBER-TRACE": (
+            write_multiplicity_fiber_trace_report
+        ),
+        "EXP-COSET-HIDDEN-INVOLUTION-SOURCE-WEIGHTED-SUPPORT-PORTFOLIO": (
+            write_source_weighted_support_portfolio_report
+        ),
+        "EXP-COSET-HIDDEN-INVOLUTION-SPECTRAL-LABEL-BUDGET": write_spectral_label_budget_report,
+        "EXP-COSET-HIDDEN-INVOLUTION-HIGH-MASS-SUPPORT-SCAN": (
+            write_high_mass_support_scan_report
+        ),
+        "EXP-COSET-HIDDEN-INVOLUTION-NATURAL-SUPPORT-SIX-MASS-AUDIT": (
+            write_natural_support_six_mass_audit
+        ),
     }
     if experiment_id in boundary_writers:
         result_id = _latest_result_id_for_experiment(experiment_id)
@@ -12970,6 +13159,19 @@ def run_experiment(experiment_id: str) -> RunnerResult:
                 )
             except TypeError:
                 payload = write_rank_tracking_commutant_report()
+            runner_result = RunnerResult(
+                experiment_id, "completed", result_id, payload.get("summary", "")
+            )
+        elif (
+            experiment_id
+            == "EXP-COSET-HIDDEN-INVOLUTION-MULTIPLICITY-TWIRL-PROJECTION"
+        ):
+            payload = write_multiplicity_twirl_projection_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
             runner_result = RunnerResult(
                 experiment_id, "completed", result_id, payload.get("summary", "")
             )

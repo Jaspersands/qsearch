@@ -1,0 +1,440 @@
+{
+  "addressed_query_controls": [
+    {
+      "address_bit_count": 2,
+      "address_count": 4,
+      "addressed_kernel_query_equivalent_to_search_bit_query": true,
+      "aggregate_metric_condition_number": 1.0,
+      "approximation_error": 0.01,
+      "bounded_error_query_lower_bound": "Omega(sqrt(q))",
+      "canonical_sum_block_encoding_normalization": 4.8988833315134634,
+      "control_id": "ADDRESSED-SEARCH-Q4",
+      "endpoint_isometry_operator_gap": 0.16971411459575908,
+      "endpoint_probability_gap": 0.16666666666666663,
+      "exact_search_reduction_verified": true,
+      "marked_local_short": 1.25,
+      "maximum_aggregate_short_residual": 2.220446049250313e-16,
+      "maximum_local_kernel_norm": 1.5280800022533307,
+      "minimum_endpoint_two_sided_edge": 0.33333333333333337,
+      "minimum_local_kernel_eigenvalue": 0.22249889024662253,
+      "native_retained_mass": 1.0,
+      "no_mark_aggregate_short": 1.0,
+      "no_mark_left_endpoint_probability": 0.5,
+      "one_mark_aggregate_short": 1.9999999999999998,
+      "one_mark_left_endpoint_probability": 0.6666666666666666,
+      "rho": 0.31,
+      "robust_probability_gap_lower_bound": 0.12646666666666662,
+      "status": "constant-gap-addressed-aggregate-schur-search-reduction",
+      "unmarked_local_short": 0.25
+    },
+    {
+      "address_bit_count": 3,
+      "address_count": 8,
+      "addressed_kernel_query_equivalent_to_search_bit_query": true,
+      "aggregate_metric_condition_number": 1.0,
+      "approximation_error": 0.01,
+      "bounded_error_query_lower_bound": "Omega(sqrt(q))",
+      "canonical_sum_block_encoding_normalization": 9.197886209648125,
+      "control_id": "ADDRESSED-SEARCH-Q8",
+      "endpoint_isometry_operator_gap": 0.16971411459575908,
+      "endpoint_probability_gap": 0.16666666666666652,
+      "exact_search_reduction_verified": true,
+      "marked_local_short": 1.125,
+      "maximum_aggregate_short_residual": 2.220446049250313e-16,
+      "maximum_local_kernel_norm": 1.439672017646951,
+      "minimum_endpoint_two_sided_edge": 0.33333333333333337,
+      "minimum_local_kernel_eigenvalue": 0.11278368685697505,
+      "native_retained_mass": 1.0,
+      "no_mark_aggregate_short": 1.0000000000000002,
+      "no_mark_left_endpoint_probability": 0.5000000000000001,
+      "one_mark_aggregate_short": 2.0,
+      "one_mark_left_endpoint_probability": 0.6666666666666666,
+      "rho": 0.31,
+      "robust_probability_gap_lower_bound": 0.1264666666666665,
+      "status": "constant-gap-addressed-aggregate-schur-search-reduction",
+      "unmarked_local_short": 0.125
+    },
+    {
+      "address_bit_count": 4,
+      "address_count": 16,
+      "addressed_kernel_query_equivalent_to_search_bit_query": true,
+      "aggregate_metric_condition_number": 1.0,
+      "approximation_error": 0.01,
+      "bounded_error_query_lower_bound": "Omega(sqrt(q))",
+      "canonical_sum_block_encoding_normalization": 17.927462404700492,
+      "control_id": "ADDRESSED-SEARCH-Q16",
+      "endpoint_isometry_operator_gap": 0.16971411459575908,
+      "endpoint_probability_gap": 0.16666666666666663,
+      "exact_search_reduction_verified": true,
+      "marked_local_short": 1.0625,
+      "maximum_aggregate_short_residual": 0.0,
+      "maximum_local_kernel_norm": 1.3992820151196002,
+      "minimum_endpoint_two_sided_edge": 0.33333333333333337,
+      "minimum_local_kernel_eigenvalue": 0.05672130736127406,
+      "native_retained_mass": 1.0,
+      "no_mark_aggregate_short": 1.0,
+      "no_mark_left_endpoint_probability": 0.5,
+      "one_mark_aggregate_short": 2.0,
+      "one_mark_left_endpoint_probability": 0.6666666666666666,
+      "rho": 0.31,
+      "robust_probability_gap_lower_bound": 0.12646666666666662,
+      "status": "constant-gap-addressed-aggregate-schur-search-reduction",
+      "unmarked_local_short": 0.0625
+    },
+    {
+      "address_bit_count": 5,
+      "address_count": 32,
+      "addressed_kernel_query_equivalent_to_search_bit_query": true,
+      "aggregate_metric_condition_number": 1.0,
+      "approximation_error": 0.01,
+      "bounded_error_query_lower_bound": "Omega(sqrt(q))",
+      "canonical_sum_block_encoding_normalization": 35.4464438556533,
+      "control_id": "ADDRESSED-SEARCH-Q32",
+      "endpoint_isometry_operator_gap": 0.16971411459575883,
+      "endpoint_probability_gap": 0.1666666666666664,
+      "exact_search_reduction_verified": true,
+      "marked_local_short": 1.03125,
+      "maximum_aggregate_short_residual": 1.7763568394002505e-15,
+      "maximum_local_kernel_norm": 1.3801469665705004,
+      "minimum_endpoint_two_sided_edge": 0.33333333333333315,
+      "minimum_local_kernel_eigenvalue": 0.028437197126361433,
+      "native_retained_mass": 1.0,
+      "no_mark_aggregate_short": 1.0000000000000018,
+      "no_mark_left_endpoint_probability": 0.5000000000000004,
+      "one_mark_aggregate_short": 2.0000000000000018,
+      "one_mark_left_endpoint_probability": 0.6666666666666669,
+      "rho": 0.31,
+      "robust_probability_gap_lower_bound": 0.1264666666666664,
+      "status": "constant-gap-addressed-aggregate-schur-search-reduction",
+      "unmarked_local_short": 0.03125
+    }
+  ],
+  "adversarial_audit": [
+    {
+      "objection": "The affine node label itself needs an exponential lookup table.",
+      "resolution": "Equation (1) is an out-of-place binary linear circuit with at most k^2 CNOTs and zero leaf-table entries.",
+      "resolved": true
+    },
+    {
+      "objection": "Schur complementation is nonassociative, so child response matrices are not sufficient state.",
+      "resolution": "Positive shorted operators satisfy the nested quotient identity; both elimination orders agree with direct elimination, including a singular control.",
+      "resolved": true
+    },
+    {
+      "objection": "The query obstruction is only poor root conditioning or rare postselection.",
+      "resolution": "The endpoint metrics are scalar, the edge is at least 1/3, and no native mass is discarded.",
+      "resolved": true
+    },
+    {
+      "objection": "The canonical Theta(q) LCU normalization alone proves every possible compiler slow.",
+      "resolution": "The LCU value is only diagnostic. The independent BBBV reduction supplies the typed quantum query lower bound.",
+      "resolved": true
+    },
+    {
+      "objection": "The oracle lower bound rules out a direct representation-specific Racah circuit.",
+      "resolution": "It does not. Such a circuit may exploit identities that exclude arbitrary marked local metrics and is the surviving route.",
+      "resolved": false
+    },
+    {
+      "objection": "The marked family occurs with nonnegligible probability under the natural Plancherel source.",
+      "resolution": "No such natural realizability theorem is claimed; the family is a scoped access-model falsifier.",
+      "resolved": false
+    }
+  ],
+  "affine_label_controls": [
+    {
+      "audited_incident_pair_count": 912,
+      "binary_rank": 5,
+      "bit_count": 5,
+      "control_id": "STANDARD-FIVE-BIT-FLAG",
+      "flag_basis": [
+        1,
+        2,
+        4,
+        8,
+        16
+      ],
+      "full_tree_node_count": 63,
+      "internal_crossing_classification_verified": true,
+      "label_count": 32,
+      "leaf_table_entry_count": 0,
+      "maximum_forward_cnot_count": 5,
+      "membership_workspace_bit_count": 5,
+      "orientation_count": 32,
+      "reversible_label_bijection_verified": true,
+      "status": "table-free-reversible-affine-flag-labeler"
+    },
+    {
+      "audited_incident_pair_count": 912,
+      "binary_rank": 5,
+      "bit_count": 5,
+      "control_id": "NONSYSTEMATIC-FIVE-BIT-FLAG",
+      "flag_basis": [
+        1,
+        3,
+        6,
+        12,
+        24
+      ],
+      "full_tree_node_count": 63,
+      "internal_crossing_classification_verified": true,
+      "label_count": 32,
+      "leaf_table_entry_count": 0,
+      "maximum_forward_cnot_count": 9,
+      "membership_workspace_bit_count": 5,
+      "orientation_count": 32,
+      "reversible_label_bijection_verified": true,
+      "status": "table-free-reversible-affine-flag-labeler"
+    }
+  ],
+  "claim_gate": {
+    "addressed_aggregate_endpoint_query_lower_bound_sqrt_q": true,
+    "addressed_local_kernel_queries_compile_aggregate_short_in_polylog_q": false,
+    "affine_labels_determine_metric_amplitudes": false,
+    "all_depth_parent_compatible_native_mass_recurrence_proved": false,
+    "child_response_matrices_are_algebraically_sufficient_state": true,
+    "classical_separation_proved": false,
+    "direct_local_schur_racah_naimark_ruled_out": false,
+    "hidden_involution_decoder_proved": false,
+    "internal_crossing_edge_classifier_compiled": true,
+    "nested_psd_schur_short_associativity_proved": true,
+    "physical_pgm_circuit_proved": false,
+    "query_lower_bound_uses_bad_root_conditioning": false,
+    "query_lower_bound_uses_small_native_mass": false,
+    "reason": "Affine labels solve the combinatorial routing and Schur shorts solve the algebraic state recursion, but arbitrary addressed local metric queries still hide unstructured search. Progress now requires a representation-specific response formula or direct local Naimark transform plus an all-depth common-trim mass theorem.",
+    "reversible_affine_flag_node_labeler_compiled": true,
+    "speedup_claim_allowed": false,
+    "structured_racah_response_oracle_compiled": false
+  },
+  "created_at": "2026-08-27T05:44:54.404427+00:00",
+  "falsifiers_triggered": [
+    "Reversible affine-flag labels by themselves determine aggregate Schur-short metric amplitudes.",
+    "Exact Schur-short associativity turns addressed leaf-kernel access into a polylogarithmic-query coherent response oracle.",
+    "Constant root conditioning, a constant endpoint edge, and full retained native mass remove the addressed aggregation bottleneck."
+  ],
+  "headline_metrics": {
+    "addressed_local_kernel_aggregate_search_lower_bound_theorem_count": 1,
+    "addressed_query_control_count": 4,
+    "affine_label_control_count": 2,
+    "all_depth_native_mass_recurrence_theorem_count": 0,
+    "compiled_structured_racah_response_oracle_count": 0,
+    "finite_control_failure_count": 0,
+    "maximum_finite_address_count": 32,
+    "maximum_schur_composition_residual": 4.614210609143862e-15,
+    "minimum_hard_family_endpoint_edge": 0.33333333333333315,
+    "minimum_hard_family_native_retained_mass": 1.0,
+    "nested_psd_schur_short_associativity_theorem_count": 1,
+    "new_quantum_algorithm_count": 0,
+    "physical_pgm_circuit_count": 0,
+    "reversible_affine_flag_node_labeler_theorem_count": 1,
+    "schur_composition_control_count": 2,
+    "tail_search_query_lower_bound_log2": 32.0
+  },
+  "interface_inventory": [
+    {
+      "input_access": "k-bit orientation address and a classical invertible F_2 flag basis",
+      "interface_id": "AFFINE-FLAG-NODE-LABEL",
+      "normalization_or_query_cost": "O(k^2) CNOTs and O(k) workspace, with no leaf table",
+      "output_contract": "coherent flag coordinates, node membership, and internal/crossing edge type",
+      "status": "compiled-table-free-combinatorial-label-interface",
+      "sufficient_for_endpoint_compiler": false,
+      "supplied_by_current_stack": true
+    },
+    {
+      "input_access": "coherent child response matrices on compatible boundary coordinates",
+      "interface_id": "CHILD-RESPONSE-SCHUR-RECURSION",
+      "normalization_or_query_cost": "algebraically associative; coherent inverse/query cost still charged",
+      "output_contract": "parent response by nested positive Schur short",
+      "status": "exact-algebraic-recursion-response-oracles-assumed",
+      "sufficient_for_endpoint_compiler": true,
+      "supplied_by_current_stack": false
+    },
+    {
+      "input_access": "reversible address query for one arbitrary local PSD kernel block",
+      "interface_id": "ADDRESSED-LOCAL-KERNEL-QUERY",
+      "normalization_or_query_cost": "Omega(sqrt(q)) in the typed black-box model",
+      "output_contract": "aggregate short metric or its binary endpoint dilation",
+      "status": "polylog-query-aggregate-compiler-refuted",
+      "sufficient_for_endpoint_compiler": false,
+      "supplied_by_current_stack": true
+    },
+    {
+      "input_access": "succinct representation-specific formula or direct local Schur/Racah transform",
+      "interface_id": "STRUCTURED-RACAH-RESPONSE-ORACLE",
+      "normalization_or_query_cost": "must be polynomial in n and summable through depth",
+      "output_contract": "block encoding of each child response on one parent-compatible trim",
+      "status": "open-not-covered-by-black-box-lower-bound",
+      "sufficient_for_endpoint_compiler": true,
+      "supplied_by_current_stack": false
+    },
+    {
+      "input_access": "natural source distribution and a common propagated retained projector",
+      "interface_id": "ALL-DEPTH-NATIVE-MASS-RECURRENCE",
+      "normalization_or_query_cost": "not supplied by fixed-level endpoint laws",
+      "output_contract": "conditional loss o(1/L) per level through depth L",
+      "status": "open",
+      "sufficient_for_endpoint_compiler": true,
+      "supplied_by_current_stack": false
+    }
+  ],
+  "primary_literature": {
+    "quantum_unstructured_search_lower_bound": "https://arxiv.org/abs/quant-ph/9701001"
+  },
+  "proof_obligations": [
+    {
+      "obligation": "compile_reversible_affine_flag_node_and_crossing_labels",
+      "resolution": "Compute every flag parity into a retained output register with one CNOT per nonzero matrix entry; prefix comparison and the next flag bit classify node incidence and crossing edges.",
+      "resolved": true
+    },
+    {
+      "obligation": "prove_exact_child_to_parent_schur_short_composition",
+      "resolution": "The nested shorted-operator quotient formula is verified in positive-definite and singular PSD controls in both elimination orders.",
+      "resolved": true
+    },
+    {
+      "obligation": "decide_polylog_query_aggregation_from_addressed_local_kernels",
+      "resolution": "A promised zero-or-one marked local short changes the root endpoint probability by 1/6. BBBV therefore forces Omega(sqrt(q)) addressed queries for constant-error endpoint compilation.",
+      "resolved": true
+    },
+    {
+      "obligation": "exclude_conditioning_or_native_mass_as_the_lower_bound_source",
+      "resolution": "The hard root metrics are one-dimensional with condition number one, two-sided endpoint edge at least 1/3, and retained native mass one.",
+      "resolved": true
+    },
+    {
+      "obligation": "compile_succinct_representation_specific_racah_response_oracle",
+      "resolution": "Need an all-n identity restricting the actual local kernels beyond arbitrary addressed values, or a direct local Schur/Racah Naimark transform. The oracle counterfamily does not rule either out.",
+      "resolved": false
+    },
+    {
+      "obligation": "prove_parent_compatible_all_depth_native_mass_recurrence",
+      "resolution": "Fixed-level spectral laws do not provide o(1/L) conditional loss on one common trim through depth L.",
+      "resolved": false
+    },
+    {
+      "obligation": "compile_physical_pgm_decoder_and_classical_separation",
+      "resolution": "This pass stops at the aggregate short-metric oracle and proves no end-to-end measurement or algorithmic advantage.",
+      "resolved": false
+    }
+  ],
+  "scaling_records": [
+    {
+      "address_bit_count": 8,
+      "address_count": 256,
+      "natural_schur_racah_realizability_proved": false,
+      "polynomial_in_address_bit_count": false,
+      "reversible_label_gate_upper_bound": 64,
+      "reversible_label_workspace_upper_bound": 8,
+      "search_query_lower_bound_log2": 4.0,
+      "search_query_lower_bound_proxy": 16.0,
+      "status": "labels-polynomial-addressed-metric-aggregation-black-box-exponential"
+    },
+    {
+      "address_bit_count": 16,
+      "address_count": 65536,
+      "natural_schur_racah_realizability_proved": false,
+      "polynomial_in_address_bit_count": false,
+      "reversible_label_gate_upper_bound": 256,
+      "reversible_label_workspace_upper_bound": 16,
+      "search_query_lower_bound_log2": 8.0,
+      "search_query_lower_bound_proxy": 256.0,
+      "status": "labels-polynomial-addressed-metric-aggregation-black-box-exponential"
+    },
+    {
+      "address_bit_count": 24,
+      "address_count": 16777216,
+      "natural_schur_racah_realizability_proved": false,
+      "polynomial_in_address_bit_count": false,
+      "reversible_label_gate_upper_bound": 576,
+      "reversible_label_workspace_upper_bound": 24,
+      "search_query_lower_bound_log2": 12.0,
+      "search_query_lower_bound_proxy": 4096.0,
+      "status": "labels-polynomial-addressed-metric-aggregation-black-box-exponential"
+    },
+    {
+      "address_bit_count": 32,
+      "address_count": 4294967296,
+      "natural_schur_racah_realizability_proved": false,
+      "polynomial_in_address_bit_count": false,
+      "reversible_label_gate_upper_bound": 1024,
+      "reversible_label_workspace_upper_bound": 32,
+      "search_query_lower_bound_log2": 16.0,
+      "search_query_lower_bound_proxy": 65536.0,
+      "status": "labels-polynomial-addressed-metric-aggregation-black-box-exponential"
+    },
+    {
+      "address_bit_count": 48,
+      "address_count": 281474976710656,
+      "natural_schur_racah_realizability_proved": false,
+      "polynomial_in_address_bit_count": false,
+      "reversible_label_gate_upper_bound": 2304,
+      "reversible_label_workspace_upper_bound": 48,
+      "search_query_lower_bound_log2": 24.0,
+      "search_query_lower_bound_proxy": 16777216.0,
+      "status": "labels-polynomial-addressed-metric-aggregation-black-box-exponential"
+    },
+    {
+      "address_bit_count": 64,
+      "address_count": 18446744073709551616,
+      "natural_schur_racah_realizability_proved": false,
+      "polynomial_in_address_bit_count": false,
+      "reversible_label_gate_upper_bound": 4096,
+      "reversible_label_workspace_upper_bound": 64,
+      "search_query_lower_bound_log2": 32.0,
+      "search_query_lower_bound_proxy": 4294967296.0,
+      "status": "labels-polynomial-addressed-metric-aggregation-black-box-exponential"
+    }
+  ],
+  "schur_composition_controls": [
+    {
+      "control_id": "POSITIVE-DEFINITE-TWO-STAGE-QUOTIENT",
+      "crossing_dimension": 3,
+      "direct_short_minimum_eigenvalue": 1.1680302056960739,
+      "exact_nested_schur_short_verified": true,
+      "first_internal_dimension": 3,
+      "forward_composition_residual": 2.3546439544272385e-15,
+      "kernel_rank": 8,
+      "maximum_psd_range_inclusion_residual": 6.0379974642353385e-15,
+      "minimum_kernel_eigenvalue": 0.745219610912786,
+      "reverse_composition_residual": 1.8012526165316296e-15,
+      "second_internal_dimension": 2,
+      "singular_first_internal_block": false,
+      "status": "exact-positive-semidefinite-schur-quotient-associativity",
+      "total_dimension": 8
+    },
+    {
+      "control_id": "SINGULAR-PSD-MOORE-PENROSE-TWO-STAGE-QUOTIENT",
+      "crossing_dimension": 3,
+      "direct_short_minimum_eigenvalue": 1.241755433001065e-15,
+      "exact_nested_schur_short_verified": true,
+      "first_internal_dimension": 2,
+      "forward_composition_residual": 4.614210609143862e-15,
+      "kernel_rank": 5,
+      "maximum_psd_range_inclusion_residual": 4.6814038517490916e-15,
+      "minimum_kernel_eigenvalue": 3.690992338144995e-16,
+      "reverse_composition_residual": 1.597839254884295e-15,
+      "second_internal_dimension": 2,
+      "singular_first_internal_block": true,
+      "status": "exact-positive-semidefinite-schur-quotient-associativity",
+      "total_dimension": 7
+    }
+  ],
+  "status": "affine-label-and-schur-recursion-proved-addressed-aggregate-query-boundary",
+  "summary": "Compiled the affine-flag node/crossing labeler and proved exact nested PSD Schur-short recursion, then showed that these do not turn arbitrary addressed local kernels into a polylog-query aggregate metric oracle: a full-mass, condition-one endpoint family embeds unstructured search and needs Omega(sqrt(q)) queries.",
+  "theorem": {
+    "addressed_kernel_access_verdict": "They are not supplied by affine labels plus arbitrary addressed local-kernel queries: a constant-error aggregate endpoint compiler needs Omega(sqrt(q)) queries in this typed oracle model.",
+    "affine_label_verdict": "An invertible k-bit affine flag gives a table-free reversible node and crossing labeler using O(k^2) CNOTs and O(k) workspace.",
+    "algebraic_recursion_verdict": "Positive Schur shorts obey the nested quotient formula, including singular Moore-Penrose blocks, so exact child response matrices are algebraically sufficient to propagate a parent response.",
+    "all_depth_scope": "The lower bound already occurs at one aggregate child. No all-depth common-trim native-mass recurrence is proved or refuted for the natural source.",
+    "natural_representation_scope": "The marked metric family is an oracle counterfamily, not a proved natural Schur/Racah sector. Representation-specific formulas and a direct local Naimark transform remain open.",
+    "status": "affine-label-and-schur-recursion-proved-addressed-aggregate-query-boundary",
+    "theorem_verified": true
+  },
+  "theorem_contract": {
+    "hypothesis": "A reversible affine-flag node labeler, exact Schur-short recursion, and addressed access to every local PSD kernel suffice to compile each aggregate endpoint in poly(k) queries for q=2^k leaves.",
+    "negative_boundary": "The hypothesis is false for arbitrary addressed metric values. The promised local-kernel family embeds OR while keeping the root aggregate scalar, condition number one, endpoint edge at least 1/3, and native retained mass one, forcing Omega(sqrt(q)) queries.",
+    "normalization_and_error": "The canonical positive sum has normalization Theta(q) in the hard family. More generally, even an alternative compiler that avoids this LCU normalization cannot beat the Omega(sqrt(q)) query bound at constant operator error.",
+    "positive_boundary": "The affine labeler is table free and polynomial, and nested positive Schur shorts are exactly associative. Supplied coherent child response oracles therefore give a valid recursive algebraic interface.",
+    "scope": "This binds the typed arbitrary addressed-local-kernel interface only. It proves no lower bound for succinct representation-specific Racah formulas, direct local Naimark transforms, or arbitrary quantum circuits."
+  }
+}

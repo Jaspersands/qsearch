@@ -1,5 +1,44 @@
 [
   {
+    "abstract": "A recursive transform lead, conditional on a sufficiently large loop parameter; not a small-loop multiplicity compiler.",
+    "id": "foxman-nehoran-ding-semisimple-qft-2026",
+    "mechanism": "Approximate recursive Fourier transforms for partition, Brauer, and walled Brauer algebras.",
+    "no_go_barrier": "The stated error includes poly(dim A) times d^(-1/2); a small-loop application is not justified by the gate count alone.",
+    "open_question": "Project question: can a source-weighted quotient support a useful normalized transform outside that regime?",
+    "problem_family": "Semisimple diagram algebras with sufficiently large loop parameter d.",
+    "proof_technique": "Approximate Fourier-basis orthogonality and recursive representation-theoretic embeddings.",
+    "reduction": "Adapt a subalgebra chain with modified embeddings for nonunitary generators.",
+    "reusable_abstraction": "Record the algebra dimension, loop parameter, physical inner product, embedding access, and error floor separately.",
+    "source": "seed",
+    "tags": [
+      "diagram-algebra-qft",
+      "large-loop-regime"
+    ],
+    "title": "Efficient Quantum Fourier Transforms For Semisimple Algebras",
+    "url": "https://arxiv.org/abs/2605.05337",
+    "year": 2026
+  },
+  {
+    "abstract": "Revises symmetric-group QFT gate/depth accounting and transversal choice. Does not claim a hidden-involution decoder.",
+    "id": "bruinsma-grinko-ozols-symmetric-qft-2026",
+    "mechanism": "Separate efficient S_n QFT and Schur-dilated isotypic routing from exposed Kronecker coordinates, overlapping Racah/associator moves, state-dependent orientation polars, and outcome decoding.",
+    "no_go_barrier": "The ordinary S_n QFT is already efficient, restricted multiplicity speedups are classically matched on many families, Schur dilation preserves the physical orientation Gram spectrum, and encoded multiplicity-space isometries cannot be treated as exposed classical coordinates.",
+    "open_question": "Can the physical orientation polar be implemented directly through structured operations on the Schur-encoded companion register, or does every such implementation reintroduce the same normalization barrier before hidden-involution decoding?",
+    "problem_family": "Multi-register symmetric-group involution coset states and representation-theoretic multiplicity problems with explicit partition, dimension-ratio, and multiplicity-space promises.",
+    "proof_technique": "Subgroup-tower QFT, generalized phase estimation, commuting invariant projectors, Schur-Weyl duality, Kronecker multiplicities, F-moves, and classical combinatorial multiplicity algorithms.",
+    "reduction": "Separate inverse Schur transforms followed by a joint Schur transform coherently encode Kronecker multiplicity in a companion register, while multiplicity projectors count its dimension. Neither operation alone reduces hidden-involution recovery to the required orientation polar or decoder.",
+    "reusable_abstraction": "Kronecker/recoupling capability ledger separating QFT, dilated isotypic routing, opaque versus exposed multiplicity carriers, associators, orientation polars, decoding, and classical comparison.",
+    "source": "seed",
+    "tags": [
+      "symmetric-qft",
+      "subgroup-chain",
+      "gate-accounting"
+    ],
+    "title": "Quantum Fourier transform for the symmetric group",
+    "url": "https://arxiv.org/abs/2608.28569",
+    "year": 2026
+  },
+  {
     "abstract": "Reference model for a Shor-level algorithm: reduction plus Fourier sampling plus classical postprocessing.",
     "id": "shor-1994",
     "mechanism": "Unclassified quantum-algorithm mechanism requiring manual extraction.",
@@ -85,6 +124,94 @@
     "title": "Tight Results on Multiregister Fourier Sampling: Quantum Measurements for Graph Isomorphism Require Entanglement",
     "url": "https://arxiv.org/abs/quant-ph/0511149",
     "year": 2005
+  },
+  {
+    "abstract": "Shows that large quantum/Holevo correlation can coexist with much smaller accessible information, so carrier entropy retention cannot be promoted to a decoder without an anti-locking theorem.",
+    "id": "hayden-leung-shor-winter-locking-2003",
+    "mechanism": "Quantum data locking separates retained quantum/Holevo correlation from information obtainable by a measurement after a small key or subsystem is removed.",
+    "no_go_barrier": "Extensive Holevo information alone does not imply a high-success or efficient decoder; a source-specific anti-locking, fidelity, frame-collision, or PGM-success theorem is required.",
+    "open_question": "Does symmetric-group covariance plus carrier-commutant pinching forbid locking on the natural hidden-involution source law, or can branch PGM success collapse asymptotically?",
+    "problem_family": "Carrier-pinched multiregister hidden-involution coset-state ensembles and other covariant state-discrimination problems.",
+    "proof_technique": "Random-unitary constructions, entropy and mutual-information inequalities, accessible-information optimization, and subsystem/key-size accounting.",
+    "reduction": "Treat carrier pinching as loss of a bounded-size coherence environment; use locking as an adversarial countermodel to any inference from Holevo retention to accessible information.",
+    "reusable_abstraction": "Anti-locking gate: retained Holevo budget, direct measurement-success certificate, branch self-purity, cross-hypothesis collision, and explicit decoder access.",
+    "source": "seed",
+    "tags": [
+      "quantum-data-locking",
+      "accessible-information",
+      "holevo-information",
+      "random-unitary",
+      "no-go"
+    ],
+    "title": "Randomizing quantum states: Constructions and applications",
+    "url": "https://arxiv.org/abs/quant-ph/0307104",
+    "year": 2003
+  },
+  {
+    "abstract": "Strengthens the warning that removing a comparatively small quantum subsystem can collapse accessible classical correlation even when quantum mutual information remains large.",
+    "id": "dupuis-florjanczyk-hayden-leung-locking-2010",
+    "mechanism": "Quantum data locking separates retained quantum/Holevo correlation from information obtainable by a measurement after a small key or subsystem is removed.",
+    "no_go_barrier": "Extensive Holevo information alone does not imply a high-success or efficient decoder; a source-specific anti-locking, fidelity, frame-collision, or PGM-success theorem is required.",
+    "open_question": "Does symmetric-group covariance plus carrier-commutant pinching forbid locking on the natural hidden-involution source law, or can branch PGM success collapse asymptotically?",
+    "problem_family": "Carrier-pinched multiregister hidden-involution coset-state ensembles and other covariant state-discrimination problems.",
+    "proof_technique": "Random-unitary constructions, entropy and mutual-information inequalities, accessible-information optimization, and subsystem/key-size accounting.",
+    "reduction": "Treat carrier pinching as loss of a bounded-size coherence environment; use locking as an adversarial countermodel to any inference from Holevo retention to accessible information.",
+    "reusable_abstraction": "Anti-locking gate: retained Holevo budget, direct measurement-success certificate, branch self-purity, cross-hypothesis collision, and explicit decoder access.",
+    "source": "seed",
+    "tags": [
+      "quantum-data-locking",
+      "accessible-information",
+      "holevo-information",
+      "subsystem-loss",
+      "no-go"
+    ],
+    "title": "Locking classical information",
+    "url": "https://arxiv.org/abs/1011.1612",
+    "year": 2010
+  },
+  {
+    "abstract": "Provides adjacent mixed-state PGM discrimination bounds and motivates replacing Holevo-only evidence with direct success certificates for carrier-conditioned ensembles.",
+    "id": "montanaro-state-discrimination-2019",
+    "mechanism": "Pretty-good measurements convert quantitative mixed-state overlap, fidelity, rank, or frame-purity control into direct hypothesis-identification success bounds.",
+    "no_go_barrier": "Compression can inflate self-purity and normalized pairwise collisions; finite favorable values do not establish all-n success or circuit efficiency.",
+    "open_question": "Can natural carrier branches be proved to have bounded self-purity inflation and collision burden at the information-threshold copy count?",
+    "problem_family": "Carrier-conditioned covariant coset-state branches and compressed nonabelian HSP measurements.",
+    "proof_technique": "Cauchy--Schwarz, Holder square-root trace bounds, fidelity/overlap inequalities, frame moments, and covariant state-discrimination symmetry.",
+    "reduction": "Replace entropy-only evidence by a direct branch PGM success certificate and average it over the public carrier flag and natural source law.",
+    "reusable_abstraction": "Branch discrimination record: support rank, purity inflation, distinct collision burden, PGM success lower bound, implementation access, and classical baseline.",
+    "source": "seed",
+    "tags": [
+      "state-discrimination",
+      "pretty-good-measurement",
+      "mixed-states",
+      "fidelity-bound",
+      "proof-tool"
+    ],
+    "title": "Pretty simple bounds on quantum state discrimination",
+    "url": "https://arxiv.org/abs/1908.08312",
+    "year": 2019
+  },
+  {
+    "abstract": "Gives a generic pure-state PGM/polar implementation benchmark with explicit state-preparation, condition-number, rank, and hypothesis-count costs. It prevents abstract PGM existence from being mistaken for a physical mixed-state branch decoder.",
+    "id": "quek-rebentrost-pgm-polar-2021",
+    "mechanism": "Quantum polar decomposition implements pure-state pretty-good measurements from controlled state-preparation and prior-preparation oracles with explicit condition and rank dependence.",
+    "no_go_barrier": "The oracle model assumes coherent controlled preparation of labelled pure states and pays rank, condition, and square-root hypothesis-count costs; ordinary mixed coset samples do not supply that interface.",
+    "open_question": "Can covariance cancel hypothesis-count normalization while a representation-specific circuit implements the remaining mixed multiplicity polar from physical coset-state access?",
+    "problem_family": "Structured quantum state discrimination, including carrier-conditioned nonabelian HSP branches.",
+    "proof_technique": "Projected unitary encodings, singular-value transformation, quantum polar decomposition, and condition-number-dependent error analysis.",
+    "reduction": "Represent a pure-state synthesis matrix by a block encoding, apply a polar transform, and read the hypothesis label from the PGM isometry.",
+    "reusable_abstraction": "PGM compiler access contract: state type, labelled preparation oracle, prior oracle, block-encoding normalization, condition number, support rank, output decoder, and physical-access transfer.",
+    "source": "seed",
+    "tags": [
+      "pgm-implementation",
+      "pretty-good-measurement",
+      "quantum-polar-decomposition",
+      "state-preparation-oracle",
+      "condition-number"
+    ],
+    "title": "Fast algorithm for quantum polar decomposition, pretty-good measurements, and the Procrustes problem",
+    "url": "https://arxiv.org/abs/2106.07634",
+    "year": 2021
   },
   {
     "abstract": "Makes the S_n quantum Fourier transform a solved polynomial-time primitive; a new coset-state route must identify the additional recoupling and decoding operations rather than relabel QFT as the obstacle.",
@@ -212,6 +339,28 @@
     "title": "On the maximal dimension of an irreducible representation of the symmetric group",
     "url": "https://arxiv.org/abs/2605.25995",
     "year": 2026
+  },
+  {
+    "abstract": "Records the perfect-matching involution as the maximal-centralizer fixed-point-free even permutation. The carrier-tail closure strengthens this with a quantitative gap and an exact treatment of the exceptional matching-pair intersection.",
+    "id": "liebeck-shalev-diameters-finite-simple-groups-2001",
+    "mechanism": "Extremal symmetric-group centralizer bounds that isolate perfect-matchings as the unique fixed-point-free even-degree obstruction to generic conjugacy-class intersection estimates.",
+    "no_go_barrier": "Maximal-centralizer ordering alone is too weak, and the centralizer-product estimate grows on the perfect-matching pair; the exceptional class requires a separate exact kernel.",
+    "open_question": "Can the resulting asymptotic carrier-label incompatibility be converted into an efficient coherent Racah resolver, physical PGM, and hidden-involution decoder?",
+    "problem_family": "Character-weighted commuting kernels and multiregister carrier-label moments for symmetric-group hidden-involution coset states.",
+    "proof_technique": "Cycle-centralizer formulas, strong induction on moved degree, fixed-point factorization, falling factorial bounds, and exact hyperoctahedral intersection counting.",
+    "reduction": "Bound each class-pair commuting probability by z_alpha z_beta/n!, derive a quantitative gap away from the perfect-matching class, and count the exceptional matching intersection exactly.",
+    "reusable_abstraction": "Extremal-class kernel closure: generic centralizer envelope, quantitative second-class gap, exception set, exact exception count, and downstream physical-access obligations.",
+    "source": "seed",
+    "tags": [
+      "symmetric-group",
+      "centralizer-bound",
+      "fixed-point-free-permutation",
+      "conjugacy-class",
+      "proof-tool"
+    ],
+    "title": "Diameters of finite simple groups: sharp bounds and applications",
+    "url": "https://doi.org/10.2307/3062101",
+    "year": 2001
   },
   {
     "abstract": "Provides a uniform normalized-character bound in terms of Young diagram rows, columns, and transposition length. This is the main available route from collision-free typical partitions to quantitative wreath-frame moment contraction.",

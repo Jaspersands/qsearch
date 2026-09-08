@@ -29,6 +29,22 @@ class PaperSeed:
 
 DEFAULT_LITERATURE = [
     PaperSeed(
+        id="foxman-nehoran-ding-semisimple-qft-2026",
+        title="Efficient Quantum Fourier Transforms For Semisimple Algebras",
+        url="https://arxiv.org/abs/2605.05337",
+        year=2026,
+        tags=["diagram-algebra-qft", "large-loop-regime"],
+        why_it_matters="A recursive transform lead, conditional on a sufficiently large loop parameter; not a small-loop multiplicity compiler.",
+    ),
+    PaperSeed(
+        id="bruinsma-grinko-ozols-symmetric-qft-2026",
+        title="Quantum Fourier transform for the symmetric group",
+        url="https://arxiv.org/abs/2608.28569",
+        year=2026,
+        tags=["symmetric-qft", "subgroup-chain", "gate-accounting"],
+        why_it_matters="Revises symmetric-group QFT gate/depth accounting and transversal choice. Does not claim a hidden-involution decoder.",
+    ),
+    PaperSeed(
         id="shor-1994",
         title="Algorithms for quantum computation: discrete logarithms and factoring",
         url="https://arxiv.org/abs/quant-ph/9508027",
@@ -74,6 +90,78 @@ DEFAULT_LITERATURE = [
             "hidden involution requires a measurement entangled across "
             "Omega(n log n) coset states, so bounded-copy recoupling controls "
             "cannot be promoted to decoders."
+        ),
+    ),
+    PaperSeed(
+        id="hayden-leung-shor-winter-locking-2003",
+        title="Randomizing quantum states: Constructions and applications",
+        url="https://arxiv.org/abs/quant-ph/0307104",
+        year=2003,
+        tags=[
+            "quantum-data-locking",
+            "accessible-information",
+            "holevo-information",
+            "random-unitary",
+            "no-go",
+        ],
+        why_it_matters=(
+            "Shows that large quantum/Holevo correlation can coexist with much smaller accessible information, "
+            "so carrier entropy retention cannot be promoted to a decoder without an anti-locking theorem."
+        ),
+    ),
+    PaperSeed(
+        id="dupuis-florjanczyk-hayden-leung-locking-2010",
+        title="Locking classical information",
+        url="https://arxiv.org/abs/1011.1612",
+        year=2010,
+        tags=[
+            "quantum-data-locking",
+            "accessible-information",
+            "holevo-information",
+            "subsystem-loss",
+            "no-go",
+        ],
+        why_it_matters=(
+            "Strengthens the warning that removing a comparatively small quantum subsystem can collapse "
+            "accessible classical correlation even when quantum mutual information remains large."
+        ),
+    ),
+    PaperSeed(
+        id="montanaro-state-discrimination-2019",
+        title="Pretty simple bounds on quantum state discrimination",
+        url="https://arxiv.org/abs/1908.08312",
+        year=2019,
+        tags=[
+            "state-discrimination",
+            "pretty-good-measurement",
+            "mixed-states",
+            "fidelity-bound",
+            "proof-tool",
+        ],
+        why_it_matters=(
+            "Provides adjacent mixed-state PGM discrimination bounds and motivates replacing Holevo-only evidence "
+            "with direct success certificates for carrier-conditioned ensembles."
+        ),
+    ),
+    PaperSeed(
+        id="quek-rebentrost-pgm-polar-2021",
+        title=(
+            "Fast algorithm for quantum polar decomposition, pretty-good "
+            "measurements, and the Procrustes problem"
+        ),
+        url="https://arxiv.org/abs/2106.07634",
+        year=2021,
+        tags=[
+            "pgm-implementation",
+            "pretty-good-measurement",
+            "quantum-polar-decomposition",
+            "state-preparation-oracle",
+            "condition-number",
+        ],
+        why_it_matters=(
+            "Gives a generic pure-state PGM/polar implementation benchmark with explicit state-preparation, "
+            "condition-number, rank, and hypothesis-count costs. It prevents abstract PGM existence from being "
+            "mistaken for a physical mixed-state branch decoder."
         ),
     ),
     PaperSeed(
@@ -147,6 +235,24 @@ DEFAULT_LITERATURE = [
             "Proves that the largest S_n Plancherel atom is stretched-exponentially small, "
             "so no polynomial catalog of pre-certified source irreps can have inverse-polynomial "
             "natural weak-Fourier coverage."
+        ),
+    ),
+    PaperSeed(
+        id="liebeck-shalev-diameters-finite-simple-groups-2001",
+        title="Diameters of finite simple groups: sharp bounds and applications",
+        url="https://doi.org/10.2307/3062101",
+        year=2001,
+        tags=[
+            "symmetric-group",
+            "centralizer-bound",
+            "fixed-point-free-permutation",
+            "conjugacy-class",
+            "proof-tool",
+        ],
+        why_it_matters=(
+            "Records the perfect-matching involution as the maximal-centralizer fixed-point-free even permutation. "
+            "The carrier-tail closure strengthens this with a quantitative gap and an exact treatment of the "
+            "exceptional matching-pair intersection."
         ),
     ),
     PaperSeed(

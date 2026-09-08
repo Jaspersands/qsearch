@@ -1,0 +1,1211 @@
+{
+  "created_at": "2026-09-03T03:29:51.362624+00:00",
+  "theorem_contract": {
+    "input": "one symmetric-group irrep lambda, one repeated hyperoctahedral bipartition (alpha,beta), and bounded-support K-conjugacy orbit representatives",
+    "output": "small copy-space matrices and the generated multiplicity algebra dimension at each support cutoff",
+    "exact_identity": "Reynolds twirling equals Hilbert-Schmidt projection onto the representation commutant",
+    "non_claim": "No uniform support cutoff, coherent basis transform, natural-mass coverage, source polar, decoder, or speedup"
+  },
+  "theorem": {
+    "commutant_projection": "K-conjugation twirling is the Hilbert-Schmidt orthogonal projection onto End_K; on a multiplicity-b isotypic block this is M_b tensor I.",
+    "flip_trivial_isotypic_extraction": "Pair-flip projection followed by the pair-transposition Casimir isolates every audited (alpha,empty) repeated branch at its exact branching dimension.",
+    "signed_weight_isotypic_extraction": "Fixing one base-group sign character, resolving the positive and negative pair-permutation Casimirs, averaging transported character sectors, and projecting under its stabilizer exactly reproduces the restriction of the full K twirl.",
+    "orbit_enumeration_reduction": "One representative compression plus a small commutant projection replaces construction of every full K-conjugacy orbit matrix.",
+    "reproduced_thresholds": "The repeated m=5 and m=6 controls first generate M_2 at supports five and six, respectively.",
+    "rank_seven_falsifier": "Support at most six generates the full copy algebra on every audited m=7 branch. The multiplicity-three block closes at support five and all three nontrivial-beta controls close at support four, so the 4,5,6 sequence cannot be extrapolated as a strict rank-tracking law.",
+    "scope": "The m=7 portfolio is finite even after adding multiplicity three and nontrivial beta. It neither proves a uniform support-six theorem nor compiles the compression as a coherent source-aware transform.",
+    "hilbert_schmidt_twirl_projection_proved": true,
+    "compressed_orbit_representative_method_verified": true,
+    "multiplicity_three_block_verified": true,
+    "nontrivial_beta_blocks_verified": true,
+    "rank_five_six_thresholds_reproduced": true,
+    "strict_rank_tracking_support_growth_falsified": true,
+    "universal_support_six_generation_proved": false,
+    "unbounded_support_requirement_proved": false,
+    "coherent_commutant_transform_compiled": false,
+    "hidden_involution_decoder_compiled": false,
+    "theorem_verified": true,
+    "status": "strict-support-growth-falsified-multiplicity-three-and-signed-sectors-close-uniformity-open"
+  },
+  "exact_signed_twirl_validation": {
+    "half_degree": 4,
+    "symmetric_partition": [
+      4,
+      2,
+      2
+    ],
+    "hyperoctahedral_partition": [
+      2
+    ],
+    "negative_hyperoctahedral_partition": [
+      2
+    ],
+    "hyperoctahedral_group_order": 384,
+    "selected_character_isotypic_dimension": 2,
+    "projected_restriction_residual": 5.161017082156257e-16,
+    "validation_passed": true,
+    "status": "signed-sector-compression-matches-full-twirl"
+  },
+  "controls": [
+    {
+      "half_degree": 5,
+      "symmetric_partition": [
+        6,
+        3,
+        1
+      ],
+      "hyperoctahedral_partition": [
+        3,
+        1,
+        1
+      ],
+      "negative_hyperoctahedral_partition": [],
+      "selected_character_negative_pair_count": 0,
+      "symmetric_irrep_dimension": 315,
+      "hyperoctahedral_irrep_dimension": 6,
+      "exact_branching_multiplicity": 2,
+      "pair_flip_fixed_space_dimension": 30,
+      "expected_isotypic_dimension": 12,
+      "observed_isotypic_dimension": 12,
+      "symmetric_commutant_dimension": 3,
+      "full_copy_algebra_dimension": 4,
+      "maximum_support_audited": 5,
+      "total_hermitian_orbit_representative_count": 28,
+      "support_steps": [
+        {
+          "maximum_moved_point_support": 2,
+          "hermitian_orbit_representative_count": 3,
+          "symmetric_commutant_span_dimension": 1,
+          "generated_copy_algebra_dimension": 1,
+          "exact_copy_algebra_dimension": 4,
+          "generates_full_copy_algebra": false,
+          "status": "bounded-support-copy-algebra-proper"
+        },
+        {
+          "maximum_moved_point_support": 3,
+          "hermitian_orbit_representative_count": 5,
+          "symmetric_commutant_span_dimension": 1,
+          "generated_copy_algebra_dimension": 1,
+          "exact_copy_algebra_dimension": 4,
+          "generates_full_copy_algebra": false,
+          "status": "bounded-support-copy-algebra-proper"
+        },
+        {
+          "maximum_moved_point_support": 4,
+          "hermitian_orbit_representative_count": 15,
+          "symmetric_commutant_span_dimension": 2,
+          "generated_copy_algebra_dimension": 2,
+          "exact_copy_algebra_dimension": 4,
+          "generates_full_copy_algebra": false,
+          "status": "bounded-support-copy-algebra-proper"
+        },
+        {
+          "maximum_moved_point_support": 5,
+          "hermitian_orbit_representative_count": 28,
+          "symmetric_commutant_span_dimension": 3,
+          "generated_copy_algebra_dimension": 4,
+          "exact_copy_algebra_dimension": 4,
+          "generates_full_copy_algebra": true,
+          "status": "bounded-support-generates-full-copy-algebra"
+        }
+      ],
+      "minimum_full_copy_algebra_support": 5,
+      "first_full_support_witness": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6,
+        8,
+        9,
+        5,
+        7
+      ],
+      "first_full_support_witness_cycles": [
+        [
+          5,
+          6,
+          8
+        ],
+        [
+          7,
+          9
+        ]
+      ],
+      "maximum_pair_flip_projector_residual": 2.095784479246286e-14,
+      "maximum_isotypic_projector_residual": 3.1583340362592033e-15,
+      "maximum_symmetric_commutant_orthogonality_residual": 4.018277340736415e-16,
+      "maximum_symmetric_commutant_K_commutator_residual": 2.1480358176203325e-14,
+      "maximum_sparse_representation_action_residual": 7.956732972642006e-16,
+      "compressed_twirl_projection_verified": true,
+      "finite_control_only": true,
+      "status": "compressed-multiplicity-twirl-projection-verified"
+    },
+    {
+      "half_degree": 6,
+      "symmetric_partition": [
+        8,
+        4
+      ],
+      "hyperoctahedral_partition": [
+        4,
+        2
+      ],
+      "negative_hyperoctahedral_partition": [],
+      "selected_character_negative_pair_count": 0,
+      "symmetric_irrep_dimension": 275,
+      "hyperoctahedral_irrep_dimension": 9,
+      "exact_branching_multiplicity": 2,
+      "pair_flip_fixed_space_dimension": 40,
+      "expected_isotypic_dimension": 18,
+      "observed_isotypic_dimension": 18,
+      "symmetric_commutant_dimension": 3,
+      "full_copy_algebra_dimension": 4,
+      "maximum_support_audited": 6,
+      "total_hermitian_orbit_representative_count": 82,
+      "support_steps": [
+        {
+          "maximum_moved_point_support": 2,
+          "hermitian_orbit_representative_count": 3,
+          "symmetric_commutant_span_dimension": 1,
+          "generated_copy_algebra_dimension": 1,
+          "exact_copy_algebra_dimension": 4,
+          "generates_full_copy_algebra": false,
+          "status": "bounded-support-copy-algebra-proper"
+        },
+        {
+          "maximum_moved_point_support": 3,
+          "hermitian_orbit_representative_count": 5,
+          "symmetric_commutant_span_dimension": 1,
+          "generated_copy_algebra_dimension": 1,
+          "exact_copy_algebra_dimension": 4,
+          "generates_full_copy_algebra": false,
+          "status": "bounded-support-copy-algebra-proper"
+        },
+        {
+          "maximum_moved_point_support": 4,
+          "hermitian_orbit_representative_count": 15,
+          "symmetric_commutant_span_dimension": 2,
+          "generated_copy_algebra_dimension": 2,
+          "exact_copy_algebra_dimension": 4,
+          "generates_full_copy_algebra": false,
+          "status": "bounded-support-copy-algebra-proper"
+        },
+        {
+          "maximum_moved_point_support": 5,
+          "hermitian_orbit_representative_count": 28,
+          "symmetric_commutant_span_dimension": 2,
+          "generated_copy_algebra_dimension": 2,
+          "exact_copy_algebra_dimension": 4,
+          "generates_full_copy_algebra": false,
+          "status": "bounded-support-copy-algebra-proper"
+        },
+        {
+          "maximum_moved_point_support": 6,
+          "hermitian_orbit_representative_count": 82,
+          "symmetric_commutant_span_dimension": 3,
+          "generated_copy_algebra_dimension": 4,
+          "exact_copy_algebra_dimension": 4,
+          "generates_full_copy_algebra": true,
+          "status": "bounded-support-generates-full-copy-algebra"
+        }
+      ],
+      "minimum_full_copy_algebra_support": 6,
+      "first_full_support_witness": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6,
+        8,
+        9,
+        5,
+        10,
+        7,
+        11
+      ],
+      "first_full_support_witness_cycles": [
+        [
+          5,
+          6,
+          8
+        ],
+        [
+          7,
+          9,
+          10
+        ]
+      ],
+      "maximum_pair_flip_projector_residual": 3.7487171751275386e-14,
+      "maximum_isotypic_projector_residual": 3.454277597140517e-15,
+      "maximum_symmetric_commutant_orthogonality_residual": 2.497550013645586e-16,
+      "maximum_symmetric_commutant_K_commutator_residual": 7.210696741374768e-15,
+      "maximum_sparse_representation_action_residual": 1.5248340231414927e-15,
+      "compressed_twirl_projection_verified": true,
+      "finite_control_only": true,
+      "status": "compressed-multiplicity-twirl-projection-verified"
+    },
+    {
+      "half_degree": 7,
+      "symmetric_partition": [
+        10,
+        4
+      ],
+      "hyperoctahedral_partition": [
+        5,
+        2
+      ],
+      "negative_hyperoctahedral_partition": [],
+      "selected_character_negative_pair_count": 0,
+      "symmetric_irrep_dimension": 637,
+      "hyperoctahedral_irrep_dimension": 14,
+      "exact_branching_multiplicity": 2,
+      "pair_flip_fixed_space_dimension": 84,
+      "expected_isotypic_dimension": 28,
+      "observed_isotypic_dimension": 28,
+      "symmetric_commutant_dimension": 3,
+      "full_copy_algebra_dimension": 4,
+      "maximum_support_audited": 6,
+      "total_hermitian_orbit_representative_count": 82,
+      "support_steps": [
+        {
+          "maximum_moved_point_support": 2,
+          "hermitian_orbit_representative_count": 3,
+          "symmetric_commutant_span_dimension": 1,
+          "generated_copy_algebra_dimension": 1,
+          "exact_copy_algebra_dimension": 4,
+          "generates_full_copy_algebra": false,
+          "status": "bounded-support-copy-algebra-proper"
+        },
+        {
+          "maximum_moved_point_support": 3,
+          "hermitian_orbit_representative_count": 5,
+          "symmetric_commutant_span_dimension": 1,
+          "generated_copy_algebra_dimension": 1,
+          "exact_copy_algebra_dimension": 4,
+          "generates_full_copy_algebra": false,
+          "status": "bounded-support-copy-algebra-proper"
+        },
+        {
+          "maximum_moved_point_support": 4,
+          "hermitian_orbit_representative_count": 15,
+          "symmetric_commutant_span_dimension": 2,
+          "generated_copy_algebra_dimension": 2,
+          "exact_copy_algebra_dimension": 4,
+          "generates_full_copy_algebra": false,
+          "status": "bounded-support-copy-algebra-proper"
+        },
+        {
+          "maximum_moved_point_support": 5,
+          "hermitian_orbit_representative_count": 28,
+          "symmetric_commutant_span_dimension": 2,
+          "generated_copy_algebra_dimension": 2,
+          "exact_copy_algebra_dimension": 4,
+          "generates_full_copy_algebra": false,
+          "status": "bounded-support-copy-algebra-proper"
+        },
+        {
+          "maximum_moved_point_support": 6,
+          "hermitian_orbit_representative_count": 82,
+          "symmetric_commutant_span_dimension": 3,
+          "generated_copy_algebra_dimension": 4,
+          "exact_copy_algebra_dimension": 4,
+          "generates_full_copy_algebra": true,
+          "status": "bounded-support-generates-full-copy-algebra"
+        }
+      ],
+      "minimum_full_copy_algebra_support": 6,
+      "first_full_support_witness": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        8,
+        10,
+        11,
+        7,
+        12,
+        9,
+        13
+      ],
+      "first_full_support_witness_cycles": [
+        [
+          7,
+          8,
+          10
+        ],
+        [
+          9,
+          11,
+          12
+        ]
+      ],
+      "maximum_pair_flip_projector_residual": 7.325946246540932e-14,
+      "maximum_isotypic_projector_residual": 6.415495581936202e-15,
+      "maximum_symmetric_commutant_orthogonality_residual": 3.141047276503688e-16,
+      "maximum_symmetric_commutant_K_commutator_residual": 5.384301764829992e-13,
+      "maximum_sparse_representation_action_residual": 2.618779261128458e-15,
+      "compressed_twirl_projection_verified": true,
+      "finite_control_only": true,
+      "status": "compressed-multiplicity-twirl-projection-verified"
+    },
+    {
+      "half_degree": 7,
+      "symmetric_partition": [
+        10,
+        2,
+        2
+      ],
+      "hyperoctahedral_partition": [
+        5,
+        2
+      ],
+      "negative_hyperoctahedral_partition": [],
+      "selected_character_negative_pair_count": 0,
+      "symmetric_irrep_dimension": 1365,
+      "hyperoctahedral_irrep_dimension": 14,
+      "exact_branching_multiplicity": 2,
+      "pair_flip_fixed_space_dimension": 105,
+      "expected_isotypic_dimension": 28,
+      "observed_isotypic_dimension": 28,
+      "symmetric_commutant_dimension": 3,
+      "full_copy_algebra_dimension": 4,
+      "maximum_support_audited": 6,
+      "total_hermitian_orbit_representative_count": 82,
+      "support_steps": [
+        {
+          "maximum_moved_point_support": 2,
+          "hermitian_orbit_representative_count": 3,
+          "symmetric_commutant_span_dimension": 1,
+          "generated_copy_algebra_dimension": 1,
+          "exact_copy_algebra_dimension": 4,
+          "generates_full_copy_algebra": false,
+          "status": "bounded-support-copy-algebra-proper"
+        },
+        {
+          "maximum_moved_point_support": 3,
+          "hermitian_orbit_representative_count": 5,
+          "symmetric_commutant_span_dimension": 1,
+          "generated_copy_algebra_dimension": 1,
+          "exact_copy_algebra_dimension": 4,
+          "generates_full_copy_algebra": false,
+          "status": "bounded-support-copy-algebra-proper"
+        },
+        {
+          "maximum_moved_point_support": 4,
+          "hermitian_orbit_representative_count": 15,
+          "symmetric_commutant_span_dimension": 2,
+          "generated_copy_algebra_dimension": 2,
+          "exact_copy_algebra_dimension": 4,
+          "generates_full_copy_algebra": false,
+          "status": "bounded-support-copy-algebra-proper"
+        },
+        {
+          "maximum_moved_point_support": 5,
+          "hermitian_orbit_representative_count": 28,
+          "symmetric_commutant_span_dimension": 3,
+          "generated_copy_algebra_dimension": 4,
+          "exact_copy_algebra_dimension": 4,
+          "generates_full_copy_algebra": true,
+          "status": "bounded-support-generates-full-copy-algebra"
+        },
+        {
+          "maximum_moved_point_support": 6,
+          "hermitian_orbit_representative_count": 82,
+          "symmetric_commutant_span_dimension": 3,
+          "generated_copy_algebra_dimension": 4,
+          "exact_copy_algebra_dimension": 4,
+          "generates_full_copy_algebra": true,
+          "status": "bounded-support-generates-full-copy-algebra"
+        }
+      ],
+      "minimum_full_copy_algebra_support": 5,
+      "first_full_support_witness": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        10,
+        12,
+        13,
+        9,
+        11
+      ],
+      "first_full_support_witness_cycles": [
+        [
+          9,
+          10,
+          12
+        ],
+        [
+          11,
+          13
+        ]
+      ],
+      "maximum_pair_flip_projector_residual": 1.0965619437424854e-13,
+      "maximum_isotypic_projector_residual": 5.401658974432691e-15,
+      "maximum_symmetric_commutant_orthogonality_residual": 3.1463180910342834e-16,
+      "maximum_symmetric_commutant_K_commutator_residual": 9.495854840715395e-14,
+      "maximum_sparse_representation_action_residual": 3.3371490380781147e-15,
+      "compressed_twirl_projection_verified": true,
+      "finite_control_only": true,
+      "status": "compressed-multiplicity-twirl-projection-verified"
+    },
+    {
+      "half_degree": 7,
+      "symmetric_partition": [
+        10,
+        3,
+        1
+      ],
+      "hyperoctahedral_partition": [
+        5,
+        1,
+        1
+      ],
+      "negative_hyperoctahedral_partition": [],
+      "selected_character_negative_pair_count": 0,
+      "symmetric_irrep_dimension": 2002,
+      "hyperoctahedral_irrep_dimension": 15,
+      "exact_branching_multiplicity": 2,
+      "pair_flip_fixed_space_dimension": 175,
+      "expected_isotypic_dimension": 30,
+      "observed_isotypic_dimension": 30,
+      "symmetric_commutant_dimension": 3,
+      "full_copy_algebra_dimension": 4,
+      "maximum_support_audited": 6,
+      "total_hermitian_orbit_representative_count": 82,
+      "support_steps": [
+        {
+          "maximum_moved_point_support": 2,
+          "hermitian_orbit_representative_count": 3,
+          "symmetric_commutant_span_dimension": 1,
+          "generated_copy_algebra_dimension": 1,
+          "exact_copy_algebra_dimension": 4,
+          "generates_full_copy_algebra": false,
+          "status": "bounded-support-copy-algebra-proper"
+        },
+        {
+          "maximum_moved_point_support": 3,
+          "hermitian_orbit_representative_count": 5,
+          "symmetric_commutant_span_dimension": 1,
+          "generated_copy_algebra_dimension": 1,
+          "exact_copy_algebra_dimension": 4,
+          "generates_full_copy_algebra": false,
+          "status": "bounded-support-copy-algebra-proper"
+        },
+        {
+          "maximum_moved_point_support": 4,
+          "hermitian_orbit_representative_count": 15,
+          "symmetric_commutant_span_dimension": 2,
+          "generated_copy_algebra_dimension": 2,
+          "exact_copy_algebra_dimension": 4,
+          "generates_full_copy_algebra": false,
+          "status": "bounded-support-copy-algebra-proper"
+        },
+        {
+          "maximum_moved_point_support": 5,
+          "hermitian_orbit_representative_count": 28,
+          "symmetric_commutant_span_dimension": 3,
+          "generated_copy_algebra_dimension": 4,
+          "exact_copy_algebra_dimension": 4,
+          "generates_full_copy_algebra": true,
+          "status": "bounded-support-generates-full-copy-algebra"
+        },
+        {
+          "maximum_moved_point_support": 6,
+          "hermitian_orbit_representative_count": 82,
+          "symmetric_commutant_span_dimension": 3,
+          "generated_copy_algebra_dimension": 4,
+          "exact_copy_algebra_dimension": 4,
+          "generates_full_copy_algebra": true,
+          "status": "bounded-support-generates-full-copy-algebra"
+        }
+      ],
+      "minimum_full_copy_algebra_support": 5,
+      "first_full_support_witness": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        10,
+        12,
+        13,
+        9,
+        11
+      ],
+      "first_full_support_witness_cycles": [
+        [
+          9,
+          10,
+          12
+        ],
+        [
+          11,
+          13
+        ]
+      ],
+      "maximum_pair_flip_projector_residual": 2.479321082876359e-13,
+      "maximum_isotypic_projector_residual": 6.1078695596583645e-15,
+      "maximum_symmetric_commutant_orthogonality_residual": 2.234799219240077e-16,
+      "maximum_symmetric_commutant_K_commutator_residual": 2.0060111386789597e-14,
+      "maximum_sparse_representation_action_residual": 0.0,
+      "compressed_twirl_projection_verified": true,
+      "finite_control_only": true,
+      "status": "compressed-multiplicity-twirl-projection-verified"
+    },
+    {
+      "half_degree": 7,
+      "symmetric_partition": [
+        10,
+        3,
+        1
+      ],
+      "hyperoctahedral_partition": [
+        4,
+        2,
+        1
+      ],
+      "negative_hyperoctahedral_partition": [],
+      "selected_character_negative_pair_count": 0,
+      "symmetric_irrep_dimension": 2002,
+      "hyperoctahedral_irrep_dimension": 35,
+      "exact_branching_multiplicity": 2,
+      "pair_flip_fixed_space_dimension": 175,
+      "expected_isotypic_dimension": 70,
+      "observed_isotypic_dimension": 70,
+      "symmetric_commutant_dimension": 3,
+      "full_copy_algebra_dimension": 4,
+      "maximum_support_audited": 6,
+      "total_hermitian_orbit_representative_count": 82,
+      "support_steps": [
+        {
+          "maximum_moved_point_support": 2,
+          "hermitian_orbit_representative_count": 3,
+          "symmetric_commutant_span_dimension": 1,
+          "generated_copy_algebra_dimension": 1,
+          "exact_copy_algebra_dimension": 4,
+          "generates_full_copy_algebra": false,
+          "status": "bounded-support-copy-algebra-proper"
+        },
+        {
+          "maximum_moved_point_support": 3,
+          "hermitian_orbit_representative_count": 5,
+          "symmetric_commutant_span_dimension": 1,
+          "generated_copy_algebra_dimension": 1,
+          "exact_copy_algebra_dimension": 4,
+          "generates_full_copy_algebra": false,
+          "status": "bounded-support-copy-algebra-proper"
+        },
+        {
+          "maximum_moved_point_support": 4,
+          "hermitian_orbit_representative_count": 15,
+          "symmetric_commutant_span_dimension": 2,
+          "generated_copy_algebra_dimension": 2,
+          "exact_copy_algebra_dimension": 4,
+          "generates_full_copy_algebra": false,
+          "status": "bounded-support-copy-algebra-proper"
+        },
+        {
+          "maximum_moved_point_support": 5,
+          "hermitian_orbit_representative_count": 28,
+          "symmetric_commutant_span_dimension": 3,
+          "generated_copy_algebra_dimension": 4,
+          "exact_copy_algebra_dimension": 4,
+          "generates_full_copy_algebra": true,
+          "status": "bounded-support-generates-full-copy-algebra"
+        },
+        {
+          "maximum_moved_point_support": 6,
+          "hermitian_orbit_representative_count": 82,
+          "symmetric_commutant_span_dimension": 3,
+          "generated_copy_algebra_dimension": 4,
+          "exact_copy_algebra_dimension": 4,
+          "generates_full_copy_algebra": true,
+          "status": "bounded-support-generates-full-copy-algebra"
+        }
+      ],
+      "minimum_full_copy_algebra_support": 5,
+      "first_full_support_witness": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        10,
+        12,
+        13,
+        9,
+        11
+      ],
+      "first_full_support_witness_cycles": [
+        [
+          9,
+          10,
+          12
+        ],
+        [
+          11,
+          13
+        ]
+      ],
+      "maximum_pair_flip_projector_residual": 2.479321082876359e-13,
+      "maximum_isotypic_projector_residual": 1.3055985576719618e-14,
+      "maximum_symmetric_commutant_orthogonality_residual": 2.487924373706543e-16,
+      "maximum_symmetric_commutant_K_commutator_residual": 4.5443844463511394e-13,
+      "maximum_sparse_representation_action_residual": 0.0,
+      "compressed_twirl_projection_verified": true,
+      "finite_control_only": true,
+      "status": "compressed-multiplicity-twirl-projection-verified"
+    },
+    {
+      "half_degree": 7,
+      "symmetric_partition": [
+        9,
+        4,
+        1
+      ],
+      "hyperoctahedral_partition": [
+        4,
+        2,
+        1
+      ],
+      "negative_hyperoctahedral_partition": [],
+      "selected_character_negative_pair_count": 0,
+      "symmetric_irrep_dimension": 4368,
+      "hyperoctahedral_irrep_dimension": 35,
+      "exact_branching_multiplicity": 3,
+      "pair_flip_fixed_space_dimension": 294,
+      "expected_isotypic_dimension": 105,
+      "observed_isotypic_dimension": 105,
+      "symmetric_commutant_dimension": 6,
+      "full_copy_algebra_dimension": 9,
+      "maximum_support_audited": 6,
+      "total_hermitian_orbit_representative_count": 82,
+      "support_steps": [
+        {
+          "maximum_moved_point_support": 2,
+          "hermitian_orbit_representative_count": 3,
+          "symmetric_commutant_span_dimension": 1,
+          "generated_copy_algebra_dimension": 1,
+          "exact_copy_algebra_dimension": 9,
+          "generates_full_copy_algebra": false,
+          "status": "bounded-support-copy-algebra-proper"
+        },
+        {
+          "maximum_moved_point_support": 3,
+          "hermitian_orbit_representative_count": 5,
+          "symmetric_commutant_span_dimension": 1,
+          "generated_copy_algebra_dimension": 1,
+          "exact_copy_algebra_dimension": 9,
+          "generates_full_copy_algebra": false,
+          "status": "bounded-support-copy-algebra-proper"
+        },
+        {
+          "maximum_moved_point_support": 4,
+          "hermitian_orbit_representative_count": 15,
+          "symmetric_commutant_span_dimension": 2,
+          "generated_copy_algebra_dimension": 3,
+          "exact_copy_algebra_dimension": 9,
+          "generates_full_copy_algebra": false,
+          "status": "bounded-support-copy-algebra-proper"
+        },
+        {
+          "maximum_moved_point_support": 5,
+          "hermitian_orbit_representative_count": 28,
+          "symmetric_commutant_span_dimension": 4,
+          "generated_copy_algebra_dimension": 9,
+          "exact_copy_algebra_dimension": 9,
+          "generates_full_copy_algebra": true,
+          "status": "bounded-support-generates-full-copy-algebra"
+        },
+        {
+          "maximum_moved_point_support": 6,
+          "hermitian_orbit_representative_count": 82,
+          "symmetric_commutant_span_dimension": 6,
+          "generated_copy_algebra_dimension": 9,
+          "exact_copy_algebra_dimension": 9,
+          "generates_full_copy_algebra": true,
+          "status": "bounded-support-generates-full-copy-algebra"
+        }
+      ],
+      "minimum_full_copy_algebra_support": 5,
+      "first_full_support_witness": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        10,
+        12,
+        13,
+        9,
+        11
+      ],
+      "first_full_support_witness_cycles": [
+        [
+          9,
+          10,
+          12
+        ],
+        [
+          11,
+          13
+        ]
+      ],
+      "maximum_pair_flip_projector_residual": 3.3793145485069397e-12,
+      "maximum_isotypic_projector_residual": 1.9469469874454408e-14,
+      "maximum_symmetric_commutant_orthogonality_residual": 4.583292817925146e-16,
+      "maximum_symmetric_commutant_K_commutator_residual": 2.9189501979964737e-13,
+      "maximum_sparse_representation_action_residual": 0.0,
+      "compressed_twirl_projection_verified": true,
+      "finite_control_only": true,
+      "status": "compressed-multiplicity-twirl-projection-verified"
+    },
+    {
+      "half_degree": 7,
+      "symmetric_partition": [
+        10,
+        2,
+        2
+      ],
+      "hyperoctahedral_partition": [
+        5
+      ],
+      "negative_hyperoctahedral_partition": [
+        2
+      ],
+      "selected_character_negative_pair_count": 2,
+      "symmetric_irrep_dimension": 1365,
+      "hyperoctahedral_irrep_dimension": 21,
+      "exact_branching_multiplicity": 2,
+      "pair_flip_fixed_space_dimension": 25,
+      "expected_isotypic_dimension": 2,
+      "observed_isotypic_dimension": 2,
+      "symmetric_commutant_dimension": 3,
+      "full_copy_algebra_dimension": 4,
+      "maximum_support_audited": 6,
+      "total_hermitian_orbit_representative_count": 82,
+      "support_steps": [
+        {
+          "maximum_moved_point_support": 2,
+          "hermitian_orbit_representative_count": 3,
+          "symmetric_commutant_span_dimension": 1,
+          "generated_copy_algebra_dimension": 1,
+          "exact_copy_algebra_dimension": 4,
+          "generates_full_copy_algebra": false,
+          "status": "bounded-support-copy-algebra-proper"
+        },
+        {
+          "maximum_moved_point_support": 3,
+          "hermitian_orbit_representative_count": 5,
+          "symmetric_commutant_span_dimension": 2,
+          "generated_copy_algebra_dimension": 2,
+          "exact_copy_algebra_dimension": 4,
+          "generates_full_copy_algebra": false,
+          "status": "bounded-support-copy-algebra-proper"
+        },
+        {
+          "maximum_moved_point_support": 4,
+          "hermitian_orbit_representative_count": 15,
+          "symmetric_commutant_span_dimension": 3,
+          "generated_copy_algebra_dimension": 4,
+          "exact_copy_algebra_dimension": 4,
+          "generates_full_copy_algebra": true,
+          "status": "bounded-support-generates-full-copy-algebra"
+        },
+        {
+          "maximum_moved_point_support": 5,
+          "hermitian_orbit_representative_count": 28,
+          "symmetric_commutant_span_dimension": 3,
+          "generated_copy_algebra_dimension": 4,
+          "exact_copy_algebra_dimension": 4,
+          "generates_full_copy_algebra": true,
+          "status": "bounded-support-generates-full-copy-algebra"
+        },
+        {
+          "maximum_moved_point_support": 6,
+          "hermitian_orbit_representative_count": 82,
+          "symmetric_commutant_span_dimension": 3,
+          "generated_copy_algebra_dimension": 4,
+          "exact_copy_algebra_dimension": 4,
+          "generates_full_copy_algebra": true,
+          "status": "bounded-support-generates-full-copy-algebra"
+        }
+      ],
+      "minimum_full_copy_algebra_support": 4,
+      "first_full_support_witness": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        10,
+        9,
+        12,
+        11,
+        13
+      ],
+      "first_full_support_witness_cycles": [
+        [
+          9,
+          10
+        ],
+        [
+          11,
+          12
+        ]
+      ],
+      "maximum_pair_flip_projector_residual": 1.3769957933615374e-14,
+      "maximum_isotypic_projector_residual": 1.129115172225795e-15,
+      "maximum_symmetric_commutant_orthogonality_residual": 3.242773118236043e-16,
+      "maximum_symmetric_commutant_K_commutator_residual": 1.5700924586837751e-15,
+      "maximum_sparse_representation_action_residual": 1.6653345369377348e-16,
+      "compressed_twirl_projection_verified": true,
+      "finite_control_only": true,
+      "status": "compressed-multiplicity-twirl-projection-verified"
+    },
+    {
+      "half_degree": 7,
+      "symmetric_partition": [
+        10,
+        2,
+        2
+      ],
+      "hyperoctahedral_partition": [
+        4,
+        1
+      ],
+      "negative_hyperoctahedral_partition": [
+        2
+      ],
+      "selected_character_negative_pair_count": 2,
+      "symmetric_irrep_dimension": 1365,
+      "hyperoctahedral_irrep_dimension": 84,
+      "exact_branching_multiplicity": 2,
+      "pair_flip_fixed_space_dimension": 25,
+      "expected_isotypic_dimension": 8,
+      "observed_isotypic_dimension": 8,
+      "symmetric_commutant_dimension": 3,
+      "full_copy_algebra_dimension": 4,
+      "maximum_support_audited": 6,
+      "total_hermitian_orbit_representative_count": 82,
+      "support_steps": [
+        {
+          "maximum_moved_point_support": 2,
+          "hermitian_orbit_representative_count": 3,
+          "symmetric_commutant_span_dimension": 1,
+          "generated_copy_algebra_dimension": 1,
+          "exact_copy_algebra_dimension": 4,
+          "generates_full_copy_algebra": false,
+          "status": "bounded-support-copy-algebra-proper"
+        },
+        {
+          "maximum_moved_point_support": 3,
+          "hermitian_orbit_representative_count": 5,
+          "symmetric_commutant_span_dimension": 2,
+          "generated_copy_algebra_dimension": 2,
+          "exact_copy_algebra_dimension": 4,
+          "generates_full_copy_algebra": false,
+          "status": "bounded-support-copy-algebra-proper"
+        },
+        {
+          "maximum_moved_point_support": 4,
+          "hermitian_orbit_representative_count": 15,
+          "symmetric_commutant_span_dimension": 3,
+          "generated_copy_algebra_dimension": 4,
+          "exact_copy_algebra_dimension": 4,
+          "generates_full_copy_algebra": true,
+          "status": "bounded-support-generates-full-copy-algebra"
+        },
+        {
+          "maximum_moved_point_support": 5,
+          "hermitian_orbit_representative_count": 28,
+          "symmetric_commutant_span_dimension": 3,
+          "generated_copy_algebra_dimension": 4,
+          "exact_copy_algebra_dimension": 4,
+          "generates_full_copy_algebra": true,
+          "status": "bounded-support-generates-full-copy-algebra"
+        },
+        {
+          "maximum_moved_point_support": 6,
+          "hermitian_orbit_representative_count": 82,
+          "symmetric_commutant_span_dimension": 3,
+          "generated_copy_algebra_dimension": 4,
+          "exact_copy_algebra_dimension": 4,
+          "generates_full_copy_algebra": true,
+          "status": "bounded-support-generates-full-copy-algebra"
+        }
+      ],
+      "minimum_full_copy_algebra_support": 4,
+      "first_full_support_witness": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        10,
+        9,
+        12,
+        11,
+        13
+      ],
+      "first_full_support_witness_cycles": [
+        [
+          9,
+          10
+        ],
+        [
+          11,
+          12
+        ]
+      ],
+      "maximum_pair_flip_projector_residual": 1.3769957933615374e-14,
+      "maximum_isotypic_projector_residual": 3.1168650594275578e-15,
+      "maximum_symmetric_commutant_orthogonality_residual": 2.512941252197149e-16,
+      "maximum_symmetric_commutant_K_commutator_residual": 4.523451045375057e-15,
+      "maximum_sparse_representation_action_residual": 2.0681269407182366e-16,
+      "compressed_twirl_projection_verified": true,
+      "finite_control_only": true,
+      "status": "compressed-multiplicity-twirl-projection-verified"
+    },
+    {
+      "half_degree": 7,
+      "symmetric_partition": [
+        10,
+        3,
+        1
+      ],
+      "hyperoctahedral_partition": [
+        4,
+        1
+      ],
+      "negative_hyperoctahedral_partition": [
+        1,
+        1
+      ],
+      "selected_character_negative_pair_count": 2,
+      "symmetric_irrep_dimension": 2002,
+      "hyperoctahedral_irrep_dimension": 84,
+      "exact_branching_multiplicity": 2,
+      "pair_flip_fixed_space_dimension": 34,
+      "expected_isotypic_dimension": 8,
+      "observed_isotypic_dimension": 8,
+      "symmetric_commutant_dimension": 3,
+      "full_copy_algebra_dimension": 4,
+      "maximum_support_audited": 6,
+      "total_hermitian_orbit_representative_count": 82,
+      "support_steps": [
+        {
+          "maximum_moved_point_support": 2,
+          "hermitian_orbit_representative_count": 3,
+          "symmetric_commutant_span_dimension": 1,
+          "generated_copy_algebra_dimension": 1,
+          "exact_copy_algebra_dimension": 4,
+          "generates_full_copy_algebra": false,
+          "status": "bounded-support-copy-algebra-proper"
+        },
+        {
+          "maximum_moved_point_support": 3,
+          "hermitian_orbit_representative_count": 5,
+          "symmetric_commutant_span_dimension": 2,
+          "generated_copy_algebra_dimension": 2,
+          "exact_copy_algebra_dimension": 4,
+          "generates_full_copy_algebra": false,
+          "status": "bounded-support-copy-algebra-proper"
+        },
+        {
+          "maximum_moved_point_support": 4,
+          "hermitian_orbit_representative_count": 15,
+          "symmetric_commutant_span_dimension": 3,
+          "generated_copy_algebra_dimension": 4,
+          "exact_copy_algebra_dimension": 4,
+          "generates_full_copy_algebra": true,
+          "status": "bounded-support-generates-full-copy-algebra"
+        },
+        {
+          "maximum_moved_point_support": 5,
+          "hermitian_orbit_representative_count": 28,
+          "symmetric_commutant_span_dimension": 3,
+          "generated_copy_algebra_dimension": 4,
+          "exact_copy_algebra_dimension": 4,
+          "generates_full_copy_algebra": true,
+          "status": "bounded-support-generates-full-copy-algebra"
+        },
+        {
+          "maximum_moved_point_support": 6,
+          "hermitian_orbit_representative_count": 82,
+          "symmetric_commutant_span_dimension": 3,
+          "generated_copy_algebra_dimension": 4,
+          "exact_copy_algebra_dimension": 4,
+          "generates_full_copy_algebra": true,
+          "status": "bounded-support-generates-full-copy-algebra"
+        }
+      ],
+      "minimum_full_copy_algebra_support": 4,
+      "first_full_support_witness": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        10,
+        9,
+        12,
+        11,
+        13
+      ],
+      "first_full_support_witness_cycles": [
+        [
+          9,
+          10
+        ],
+        [
+          11,
+          12
+        ]
+      ],
+      "maximum_pair_flip_projector_residual": 3.217477671617829e-14,
+      "maximum_isotypic_projector_residual": 2.4508504962968494e-15,
+      "maximum_symmetric_commutant_orthogonality_residual": 2.2936994594365704e-16,
+      "maximum_symmetric_commutant_K_commutator_residual": 7.872000054170695e-15,
+      "maximum_sparse_representation_action_residual": 0.0,
+      "compressed_twirl_projection_verified": true,
+      "finite_control_only": true,
+      "status": "compressed-multiplicity-twirl-projection-verified"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "validate_compressed_twirl_against_exact_commutant",
+      "resolved": true,
+      "resolution": "Exact branching dimensions, projector identities, K commutators, and sparse-versus-dense representation actions all agree."
+    },
+    {
+      "obligation": "validate_signed_sector_transport_against_full_twirl",
+      "resolved": true,
+      "resolution": "The transported-character/stabilizer projection agrees with an explicit 384-element K_4 twirl to numerical tolerance."
+    },
+    {
+      "obligation": "test_strict_rank_tracking_support_growth",
+      "resolved": true,
+      "resolution": "Every audited m=7 repeated branch closes by support six rather than requiring support seven; multiplicity-three and signed sectors close even earlier in the audited controls."
+    },
+    {
+      "obligation": "prove_or_falsify_uniform_support_six_generation",
+      "resolved": false,
+      "resolution": "The scan covers selected low-dimensional and one larger multiplicity-three branch, not all blocks or the natural source law."
+    },
+    {
+      "obligation": "compile_coherent_commutant_projection_and_source_polar",
+      "resolved": false,
+      "resolution": "The diagnostic uses classical eigendecomposition and Reynolds averages; no reversible implementation or normalization theorem exists."
+    }
+  ],
+  "adversarial_audit": [
+    {
+      "challenge": "A single representative cannot determine its orbit average.",
+      "survives": false,
+      "response": "Its orthogonal projection onto End_K is exactly the K-conjugation Reynolds average."
+    },
+    {
+      "challenge": "Numerical low reach may come from a noncyclic test vector.",
+      "survives": false,
+      "response": "The audit computes the generated matrix-algebra dimension directly inside the exact multiplicity block."
+    },
+    {
+      "challenge": "The 4,5,6 finite sequence proves support must grow with m.",
+      "survives": false,
+      "response": "The m=7 continuation and the broader low-dimensional portfolio already close at support six."
+    },
+    {
+      "challenge": "Finite support-six closure proves a uniform compiler.",
+      "survives": true,
+      "response": "Other branches, natural mass, spectral gaps, coherent basis access, and source-aware normalization remain open."
+    }
+  ],
+  "headline_metrics": {
+    "hilbert_schmidt_commutant_projection_theorem_count": 1,
+    "compressed_orbit_representative_method_theorem_count": 1,
+    "exact_signed_sector_full_twirl_validation_count": 1,
+    "finite_control_count": 10,
+    "finite_control_failure_count": 0,
+    "rank_five_support_threshold": 5,
+    "rank_six_support_threshold": 6,
+    "rank_seven_control_count": 8,
+    "rank_seven_support_six_full_count": 8,
+    "multiplicity_three_control_count": 1,
+    "multiplicity_three_support_six_full_count": 1,
+    "nontrivial_beta_control_count": 3,
+    "nontrivial_beta_support_six_full_count": 3,
+    "strict_rank_tracking_support_growth_falsifier_count": 1,
+    "maximum_full_representation_dimension_avoided": 4368,
+    "maximum_multiplicity_block_dimension_used": 105,
+    "universal_support_six_generation_theorem_count": 0,
+    "unbounded_support_lower_bound_count": 0,
+    "coherent_commutant_transform_count": 0,
+    "hidden_involution_decoder_count": 0,
+    "new_quantum_algorithm_count": 0
+  },
+  "claim_gate": {
+    "hilbert_schmidt_commutant_projection_proved": true,
+    "compressed_orbit_representative_method_verified": true,
+    "exact_signed_sector_full_twirl_validation_passed": true,
+    "multiplicity_three_block_verified": true,
+    "nontrivial_beta_blocks_verified": true,
+    "rank_five_six_thresholds_reproduced": true,
+    "strict_rank_tracking_support_growth_falsified": true,
+    "all_audited_rank_seven_blocks_close_by_support_six": true,
+    "universal_support_six_generation_proved": false,
+    "unbounded_support_requirement_proved": false,
+    "coherent_commutant_transform_compiled": false,
+    "source_aware_normalized_polar_compiled": false,
+    "hidden_involution_decoder_compiled": false,
+    "classical_separation_proved": false,
+    "speedup_claim_allowed": false,
+    "reason": "Compressed finite blocks falsify strict support growth and keep support six plausible, but uniform natural-block generation, gaps, coherent access, source normalization, and decoding are all open."
+  },
+  "status": "strict-support-growth-falsified-multiplicity-three-and-signed-sectors-close-uniformity-open",
+  "summary": "Extended commutant-projected orbit diagnostics to sparse signed sectors, validated them against an exact full K_4 twirl, and found support-five M_3 and support-four nontrivial-beta closure at rank seven.",
+  "falsifiers_triggered": [
+    "The finite support threshold sequence 4,5,6 is not evidence of an unbounded-support theorem.",
+    "Full orbit-average matrices are unnecessary for classical multiplicity-block generation audits.",
+    "Support-six closure on selected S_14 blocks is not a uniform all-rank compiler theorem.",
+    "A classical commutant projection is not a coherent source-aware quantum transform."
+  ]
+}

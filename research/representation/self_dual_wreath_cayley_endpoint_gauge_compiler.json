@@ -1,0 +1,307 @@
+{
+  "created_at": "2026-08-30T23:48:50.927122+00:00",
+  "primary_literature": [
+    {
+      "title": "Quantum singular value transformation and beyond",
+      "url": "https://arxiv.org/abs/1806.01838",
+      "used_for": "conditional bounded functional calculus"
+    },
+    {
+      "title": "Fast algorithm for quantum polar decomposition and PGM",
+      "url": "https://arxiv.org/abs/2106.07634",
+      "used_for": "polar/PGM access and condition-number accounting boundary"
+    },
+    {
+      "title": "Quantum algorithms for matrix geometric means",
+      "url": "https://arxiv.org/abs/2405.00673",
+      "used_for": "comparison with block-encoded positive relative operators"
+    }
+  ],
+  "theorem_contract": {
+    "input": "Two positive child short metrics on one retained common fiber.",
+    "exact_output": "One scale-free Hermitian Cayley contraction and a branch-gauge-equivalent Naimark column.",
+    "recursive_contract": "Every output branch gauge is used as the corresponding child input-coordinate gauge.",
+    "root_contract": "The remaining root gauge is included in the physical common-fiber coordinate embedding.",
+    "compiler_premise": "Normalization-one coherent block encoding of D and retained endpoint gap delta.",
+    "excluded_claims": "No construction of the natural D oracle, all-depth mass theorem, decoder, separation, or speedup."
+  },
+  "theorem": {
+    "canonical_contraction": "D=M^-1/2(E_L-E_R)M^-1/2 is a Hermitian contraction and K_L=(I+D)/2, K_R=(I-D)/2.",
+    "branch_effect_identity": "The canonical positive-root endpoint and N_D=[sqrt(K_L);sqrt(K_R)] induce exactly the same binary effects.",
+    "branch_gauge_factorization": "C=diag(U_L,U_R)N_D for child-side unitaries U_L,U_R.",
+    "graph_transfer_relation": "In graph coordinates D_T=(I-T*T)(I+T*T)^-1 and D_T is unitarily similar to the canonical D through the graph input gauge.",
+    "scale_cancellation": "E_s -> c E_s leaves D, its binary effects, and N_D unchanged.",
+    "recursive_gauge_covariance": "Matched child-coordinate gauges telescope on every root-to-leaf path and leave all leaf POVM effects invariant.",
+    "root_anchor_boundary": "An unmatched root input gauge conjugates the POVM; it must be included in the physical root coordinate embedding.",
+    "conditional_compiler": "A normalization-one block encoding of D with endpoint gap delta conditionally gives a polynomial QSVT Naimark compiler without T polar access.",
+    "surviving_target": "Construct the actual affine-node normalized short-grading D directly from Schur/Racah structure, with root anchor and all-depth native mass.",
+    "scope": "Exact local algebra and recursive gauge theorem only; no natural all-n D oracle, physical PGM, decoder, classical separation, or speedup.",
+    "theorem_verified": true,
+    "status": "scale-free-cayley-endpoint-gauge-theorem-proved"
+  },
+  "abstract_controls": [
+    {
+      "control_id": "COMMUTING-DIAGONAL",
+      "fiber_dimension": 3,
+      "short_metric_commutator_norm": 0.0,
+      "cayley_contraction_norm": 0.263157894736842,
+      "endpoint_gap": 0.368421052631579,
+      "branch_effect_sum_residual": 0.0,
+      "canonical_endpoint_isometry_residual": 0.0,
+      "cayley_naimark_isometry_residual": 0.0,
+      "left_branch_effect_residual": 0.0,
+      "right_branch_effect_residual": 0.0,
+      "branch_gauge_reconstruction_residual": 1.1102230246251565e-16,
+      "branch_gauge_unitarity_residual": 2.220446049250313e-16,
+      "graph_cayley_similarity_residual": 2.7755575615628914e-16,
+      "graph_ratio_identity_residual": 4.440892098500626e-16,
+      "graph_to_canonical_cayley_operator_gap": 1.6653345369377348e-16,
+      "exact_cayley_endpoint_gauge_theorem_verified": true,
+      "status": "exact-scale-free-cayley-endpoint-and-branch-gauge"
+    },
+    {
+      "control_id": "NONCOMMUTING-ROTATED",
+      "fiber_dimension": 2,
+      "short_metric_commutator_norm": 0.2961140610393928,
+      "cayley_contraction_norm": 0.270716381183503,
+      "endpoint_gap": 0.36464180940824853,
+      "branch_effect_sum_residual": 4.96615082097579e-16,
+      "canonical_endpoint_isometry_residual": 3.907274460173909e-16,
+      "cayley_naimark_isometry_residual": 3.6055895407359876e-16,
+      "left_branch_effect_residual": 3.3477534113781707e-16,
+      "right_branch_effect_residual": 1.3614456334391311e-16,
+      "branch_gauge_reconstruction_residual": 4.682162044909393e-16,
+      "branch_gauge_unitarity_residual": 6.783357391793289e-16,
+      "graph_cayley_similarity_residual": 2.076099177876088e-16,
+      "graph_ratio_identity_residual": 2.220446049250313e-16,
+      "graph_to_canonical_cayley_operator_gap": 0.004863904365093212,
+      "exact_cayley_endpoint_gauge_theorem_verified": true,
+      "status": "exact-scale-free-cayley-endpoint-and-branch-gauge"
+    },
+    {
+      "control_id": "RANDOM-COMPLEX-D4",
+      "fiber_dimension": 4,
+      "short_metric_commutator_norm": 6.708525029738223,
+      "cayley_contraction_norm": 0.7663129378400224,
+      "endpoint_gap": 0.1168435310799888,
+      "branch_effect_sum_residual": 2.5915220225457815e-15,
+      "canonical_endpoint_isometry_residual": 2.5902355461166934e-15,
+      "cayley_naimark_isometry_residual": 4.101662212999249e-15,
+      "left_branch_effect_residual": 2.8227349080061185e-15,
+      "right_branch_effect_residual": 1.3392346554355321e-15,
+      "branch_gauge_reconstruction_residual": 2.948621125702213e-15,
+      "branch_gauge_unitarity_residual": 3.002882246256721e-15,
+      "graph_cayley_similarity_residual": 2.9787262343319138e-15,
+      "graph_ratio_identity_residual": 3.892499579105805e-15,
+      "graph_to_canonical_cayley_operator_gap": 0.0516629323730881,
+      "exact_cayley_endpoint_gauge_theorem_verified": true,
+      "status": "exact-scale-free-cayley-endpoint-and-branch-gauge"
+    }
+  ],
+  "physical_controls": [
+    {
+      "control_id": "S3-AFFINE-FINAL-SIBLINGS",
+      "n": 3,
+      "child_width": 4,
+      "physical_dimension": 8,
+      "common_fiber_dimension": 5,
+      "cayley_contraction_norm": 0.3333333333333348,
+      "endpoint_gap": 0.3333333333333326,
+      "relative_transfer_norm": 1.1180339887498956,
+      "maximum_exact_identity_residual": 2.3893797470582425e-15,
+      "exact_physical_cayley_reduction_verified": true,
+      "status": "physical-affine-cayley-endpoint-exact"
+    }
+  ],
+  "scale_controls": [
+    {
+      "scale_bits": 8,
+      "common_short_scale": 0.00390625,
+      "separate_absolute_inverse_resolution_proxy": 256.0,
+      "cayley_contraction_scale_residual": 0.0,
+      "cayley_naimark_projector_scale_residual": 0.0,
+      "common_scale_cancels_exactly": true,
+      "status": "common-scale-cancels-from-cayley-endpoint"
+    },
+    {
+      "scale_bits": 16,
+      "common_short_scale": 1.52587890625e-05,
+      "separate_absolute_inverse_resolution_proxy": 65536.0,
+      "cayley_contraction_scale_residual": 0.0,
+      "cayley_naimark_projector_scale_residual": 0.0,
+      "common_scale_cancels_exactly": true,
+      "status": "common-scale-cancels-from-cayley-endpoint"
+    },
+    {
+      "scale_bits": 32,
+      "common_short_scale": 2.3283064365386963e-10,
+      "separate_absolute_inverse_resolution_proxy": 4294967296.0,
+      "cayley_contraction_scale_residual": 0.0,
+      "cayley_naimark_projector_scale_residual": 0.0,
+      "common_scale_cancels_exactly": true,
+      "status": "common-scale-cancels-from-cayley-endpoint"
+    },
+    {
+      "scale_bits": 48,
+      "common_short_scale": 3.552713678800501e-15,
+      "separate_absolute_inverse_resolution_proxy": 281474976710656.0,
+      "cayley_contraction_scale_residual": 0.0,
+      "cayley_naimark_projector_scale_residual": 0.0,
+      "common_scale_cancels_exactly": true,
+      "status": "common-scale-cancels-from-cayley-endpoint"
+    }
+  ],
+  "recursive_gauge_control": {
+    "tree_depth": 3,
+    "fiber_dimension": 3,
+    "internal_node_count": 7,
+    "leaf_count": 8,
+    "maximum_path_telescope_residual": 8.892759314702857e-16,
+    "maximum_leaf_effect_residual": 1.11198787879597e-15,
+    "root_input_gauge_anchored": true,
+    "exact_recursive_child_gauge_covariance_verified": true,
+    "status": "recursive-child-gauges-telescope-exactly"
+  },
+  "root_gauge_boundary": {
+    "fiber_dimension": 3,
+    "root_input_gauge_norm": 1.0000000000000004,
+    "unanchored_root_branch_effect_gap": 0.3355112665826154,
+    "anchored_physical_endpoint_residual": 3.726139449073863e-16,
+    "internal_output_gauges_automatically_fix_root_input_gauge": false,
+    "exact_root_anchor_boundary_verified": true,
+    "status": "root-gauge-must-be-anchored-by-physical-coordinate-map"
+  },
+  "compiler_records": [
+    {
+      "endpoint_gap": 0.05,
+      "requested_error": 1e-07,
+      "qsvt_degree_upper_proxy": 3023,
+      "left_root_scalar_identity_residual": 2.220446049250313e-16,
+      "right_root_scalar_identity_residual": 2.220446049250313e-16,
+      "requires_normalization_one_cayley_block_encoding": true,
+      "requires_relative_transfer_polar": false,
+      "requires_absolute_short_metric_scale": false,
+      "requires_root_coordinate_anchor": true,
+      "representation_specific_cayley_oracle_supplied_by_current_stack": false,
+      "conditional_cayley_naimark_compiler_polynomial": true,
+      "status": "conditional-normalized-cayley-qsvt-naimark-compiler"
+    },
+    {
+      "endpoint_gap": 0.1,
+      "requested_error": 1e-07,
+      "qsvt_degree_upper_proxy": 1512,
+      "left_root_scalar_identity_residual": 2.220446049250313e-16,
+      "right_root_scalar_identity_residual": 2.220446049250313e-16,
+      "requires_normalization_one_cayley_block_encoding": true,
+      "requires_relative_transfer_polar": false,
+      "requires_absolute_short_metric_scale": false,
+      "requires_root_coordinate_anchor": true,
+      "representation_specific_cayley_oracle_supplied_by_current_stack": false,
+      "conditional_cayley_naimark_compiler_polynomial": true,
+      "status": "conditional-normalized-cayley-qsvt-naimark-compiler"
+    },
+    {
+      "endpoint_gap": 0.2,
+      "requested_error": 1e-07,
+      "qsvt_degree_upper_proxy": 756,
+      "left_root_scalar_identity_residual": 2.220446049250313e-16,
+      "right_root_scalar_identity_residual": 2.220446049250313e-16,
+      "requires_normalization_one_cayley_block_encoding": true,
+      "requires_relative_transfer_polar": false,
+      "requires_absolute_short_metric_scale": false,
+      "requires_root_coordinate_anchor": true,
+      "representation_specific_cayley_oracle_supplied_by_current_stack": false,
+      "conditional_cayley_naimark_compiler_polynomial": true,
+      "status": "conditional-normalized-cayley-qsvt-naimark-compiler"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "replace_nonhermitian_transfer_by_binary_cayley_target",
+      "resolved": true,
+      "resolution": "Equation (1) is exactly the signed binary effect and is Hermitian with norm below one."
+    },
+    {
+      "obligation": "prove_recursive_endpoint_gauge_covariance",
+      "resolved": true,
+      "resolution": "Matched node gauges telescope algebraically on every path; all leaf effects are unchanged."
+    },
+    {
+      "obligation": "remove_root_gauge_without_coordinate_anchor",
+      "resolved": false,
+      "resolution": "The adversarial root control changes a branch effect by a constant when the root gauge is omitted."
+    },
+    {
+      "obligation": "construct_representation_specific_normalized_cayley_oracle",
+      "resolved": false,
+      "resolution": "Normalized affine frame LCUs do not yet implement the normalized shorted grading."
+    },
+    {
+      "obligation": "prove_all_depth_endpoint_gap_and_native_mass_recurrence",
+      "resolved": false,
+      "resolution": "Only finite controls and the existing final-root weak-law trim are available."
+    }
+  ],
+  "adversarial_audit": [
+    {
+      "objection": "The graph Cayley matrix can be used in any parent basis.",
+      "resolved": true,
+      "resolution": "False: it is only unitarily similar to the canonical Cayley matrix, and an unanchored root similarity changes the POVM."
+    },
+    {
+      "objection": "Noncommuting short metrics invalidate the branch-root Naimark form.",
+      "resolved": true,
+      "resolution": "False: noncommutativity moves into child-side polar gauges; the branch effects remain exact functions of D."
+    },
+    {
+      "objection": "A common exponentially small short scale forces Cayley inversion cost.",
+      "resolved": true,
+      "resolution": "The exact target cancels that scale, including controls through 2^-48; access to the normalized target remains separate and open."
+    },
+    {
+      "objection": "The conditional D compiler is already a natural affine PGM circuit.",
+      "resolved": false,
+      "resolution": "No representation-specific normalized D block encoding or all-depth retained-mass recurrence is supplied."
+    }
+  ],
+  "headline_metrics": {
+    "cayley_endpoint_effect_theorem_count": 1,
+    "branch_gauge_factorization_theorem_count": 1,
+    "recursive_child_gauge_covariance_theorem_count": 1,
+    "root_gauge_anchor_boundary_theorem_count": 1,
+    "common_scale_cancellation_theorem_count": 1,
+    "conditional_cayley_qsvt_compiler_count": 1,
+    "representation_specific_cayley_oracle_count": 0,
+    "all_depth_native_mass_recurrence_count": 0,
+    "finite_control_count": 10,
+    "finite_control_failure_count": 0,
+    "physical_cayley_contraction_norm": 0.3333333333333348,
+    "physical_endpoint_gap": 0.3333333333333326,
+    "unanchored_root_branch_effect_gap": 0.3355112665826154,
+    "maximum_recursive_leaf_effect_residual": 1.11198787879597e-15,
+    "new_quantum_algorithm_count": 0
+  },
+  "claim_gate": {
+    "scale_free_canonical_cayley_contraction_proved": true,
+    "cayley_naimark_matches_canonical_binary_effects": true,
+    "recursive_child_output_gauges_telescope": true,
+    "root_input_gauge_can_be_ignored": false,
+    "root_coordinate_anchor_required": true,
+    "conditional_qsvt_endpoint_compiler_given_normalized_cayley": true,
+    "representation_specific_normalized_cayley_oracle_compiled": false,
+    "all_depth_endpoint_gap_proved": false,
+    "all_depth_parent_native_mass_recurrence_proved": false,
+    "physical_pgm_compiled": false,
+    "classical_separation_proved": false,
+    "speedup_claim_allowed": false,
+    "reason": "The preferred local target is now a scale-free Hermitian contraction with exact recursive child-gauge covariance, but the actual affine Schur/Racah oracle for that contraction and the root coordinate anchor have not been compiled."
+  },
+  "status": "cayley-endpoint-gauge-normal-form-proved-normalized-oracle-open",
+  "summary": "Replaced the non-Hermitian relative transfer as the preferred binary compiler target by the scale-free Hermitian Cayley contraction. Its QSVT Naimark column has exactly the canonical branch effects, differs only by child gauges that telescope recursively, and exposes one honest remaining boundary: a normalized affine Schur/Racah oracle plus root anchor.",
+  "falsifiers_triggered": [
+    "Recovering the polar part of T is unnecessary for the local two-outcome POVM once canonical D is available.",
+    "Internal child-coordinate gauges do not accumulate into a recursive error when propagated covariantly.",
+    "An unanchored root input gauge is not harmless and can change a branch effect by constant operator norm.",
+    "Scale cancellation in the mathematical Cayley target does not itself construct its coherent representation oracle."
+  ]
+}

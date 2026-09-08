@@ -1,0 +1,402 @@
+{
+  "created_at": "2026-08-31T00:28:06.549553+00:00",
+  "theorem_contract": {
+    "input": "One selected shared-vertex orientation triple, source/target irrep labels, and coherent tensor-block group actions.",
+    "local_output": "Coherent beta,p, parity bits, and correlation denominator while preserving every multiplicity register.",
+    "global_boundary": "Pair labels from overlapping regroupings are not assumed jointly classical; commutation or a Racah resolver must be proved.",
+    "excluded_claims": "No global channel atomizer, all-depth star classifier, matrix-Racah compiler, root anchor, PGM, decoder, or speedup."
+  },
+  "theorem": {
+    "local_label_formula": "Every shared-vertex channel is labeled by beta,p and has scalar correlation 1/(d_beta d_p).",
+    "coherent_local_circuit": "GPE on seven membership-pattern tensor blocks, five label comparisons, and reversible hook arithmetic expose the scalar without a multiplicity basis.",
+    "multiplicity_scope": "The circuit preserves opaque Kronecker multiplicity coordinates; it does not resolve or mix them.",
+    "contextuality_theorem": "Overlapping coarse S3 isotypic projectors have commutator sqrt(3)/4, so arbitrary sharp pair labels cannot all be copied nondestructively.",
+    "global_interface": "A full star compiler needs commuting occupied atoms, a coherent Racah resolver, or a label-free D construction.",
+    "surviving_target": "Test natural growing-multiplicity occupied projectors for commutation, mass-weighted contextuality, and a compact Racah resolver.",
+    "theorem_verified": true,
+    "status": "local-carrier-label-query-proved-global-contextuality-boundary"
+  },
+  "local_controls": [
+    {
+      "control_id": "W6-OPEN-STAR-CARRIER-5",
+      "n": 6,
+      "pattern_block_count": 7,
+      "coherent_gpe_call_count": 7,
+      "coherent_gpe_inverse_call_count": 7,
+      "irrep_label_comparison_count": 5,
+      "reversible_dimension_arithmetic_count": 2,
+      "channel_count": 1,
+      "total_channel_multiplicity": 5,
+      "distinct_cluster_carriers": [
+        [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "distinct_companion_carriers": [
+        [
+          3,
+          3
+        ]
+      ],
+      "distinct_correlation_denominators": [
+        5
+      ],
+      "maximum_dense_spectrum_residual": 2.7755575615628914e-16,
+      "multiplicity_coordinates_exposed": false,
+      "multiplicity_registers_preserved": true,
+      "local_carrier_label_query_polynomial": true,
+      "local_label_compiler_verified": true,
+      "status": "coherent-local-pair-carrier-label-query-certified"
+    },
+    {
+      "control_id": "W6-CLOSED-STAR-CARRIER-9",
+      "n": 6,
+      "pattern_block_count": 7,
+      "coherent_gpe_call_count": 7,
+      "coherent_gpe_inverse_call_count": 7,
+      "irrep_label_comparison_count": 5,
+      "reversible_dimension_arithmetic_count": 2,
+      "channel_count": 1,
+      "total_channel_multiplicity": 9,
+      "distinct_cluster_carriers": [
+        [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "distinct_companion_carriers": [
+        [
+          2,
+          2,
+          1,
+          1
+        ]
+      ],
+      "distinct_correlation_denominators": [
+        9
+      ],
+      "maximum_dense_spectrum_residual": 1.3877787807814457e-16,
+      "multiplicity_coordinates_exposed": false,
+      "multiplicity_registers_preserved": true,
+      "local_carrier_label_query_polynomial": true,
+      "local_label_compiler_verified": true,
+      "status": "coherent-local-pair-carrier-label-query-certified"
+    },
+    {
+      "control_id": "W6-OPEN-STAR-CARRIER-10",
+      "n": 6,
+      "pattern_block_count": 7,
+      "coherent_gpe_call_count": 7,
+      "coherent_gpe_inverse_call_count": 7,
+      "irrep_label_comparison_count": 5,
+      "reversible_dimension_arithmetic_count": 2,
+      "channel_count": 1,
+      "total_channel_multiplicity": 10,
+      "distinct_cluster_carriers": [
+        [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "distinct_companion_carriers": [
+        [
+          4,
+          1,
+          1
+        ]
+      ],
+      "distinct_correlation_denominators": [
+        10
+      ],
+      "maximum_dense_spectrum_residual": 5.828670879282072e-16,
+      "multiplicity_coordinates_exposed": false,
+      "multiplicity_registers_preserved": true,
+      "local_carrier_label_query_polynomial": true,
+      "local_label_compiler_verified": true,
+      "status": "coherent-local-pair-carrier-label-query-certified"
+    }
+  ],
+  "compatibility_controls": [
+    {
+      "control_id": "S3-OVERLAPPING-TRIVIAL-PAIR-LABELS",
+      "n": 3,
+      "source_partition": [
+        2,
+        1
+      ],
+      "target_partition": [
+        3
+      ],
+      "tensor_factor_count": 3,
+      "first_factor_subset": [
+        0,
+        1
+      ],
+      "second_factor_subset": [
+        1,
+        2
+      ],
+      "first_projector_rank": 2,
+      "second_projector_rank": 2,
+      "first_idempotence_residual": 1.1102230246251565e-16,
+      "second_idempotence_residual": 1.1102230246251565e-16,
+      "commutator_norm": 0.4330127018922193,
+      "expected_commutator_norm": 0.4330127018922193,
+      "commutator_residual": 0.0,
+      "nonzero_first_compression_eigenvalues": [
+        0.25,
+        0.25
+      ],
+      "expected_nonzero_compression_eigenvalue": 0.25,
+      "compression_spectrum_residual": 0.0,
+      "sharp_nondemolition_joint_label_exists": false,
+      "exact_compatibility_audit_verified": true,
+      "status": "overlapping-isotypic-labels-contextual"
+    },
+    {
+      "control_id": "S3-DISJOINT-TRIVIAL-PAIR-LABELS",
+      "n": 3,
+      "source_partition": [
+        2,
+        1
+      ],
+      "target_partition": [
+        3
+      ],
+      "tensor_factor_count": 4,
+      "first_factor_subset": [
+        0,
+        1
+      ],
+      "second_factor_subset": [
+        2,
+        3
+      ],
+      "first_projector_rank": 4,
+      "second_projector_rank": 4,
+      "first_idempotence_residual": 1.1102230246251565e-16,
+      "second_idempotence_residual": 1.1102230246251565e-16,
+      "commutator_norm": 0.0,
+      "expected_commutator_norm": 0.0,
+      "commutator_residual": 0.0,
+      "nonzero_first_compression_eigenvalues": [
+        1.0
+      ],
+      "expected_nonzero_compression_eigenvalue": 1.0,
+      "compression_spectrum_residual": 0.0,
+      "sharp_nondemolition_joint_label_exists": true,
+      "exact_compatibility_audit_verified": true,
+      "status": "disjoint-isotypic-labels-compatible"
+    }
+  ],
+  "scaling_records": [
+    {
+      "n": 6,
+      "information_threshold_copy_count": 10,
+      "selected_triple_pattern_block_count": 7,
+      "selected_triple_gpe_call_count": 7,
+      "controlled_young_action_factor_count_upper_bound": 147,
+      "hook_dimension_output_bit_count_upper_bound": 20,
+      "selected_local_label_query_polynomial": true,
+      "all_incident_pair_labels_can_be_persistently_copied": false,
+      "global_channel_atom_label_compiled": false,
+      "status": "local-carrier-label-query-polynomial-global-contextual-label-open"
+    },
+    {
+      "n": 8,
+      "information_threshold_copy_count": 16,
+      "selected_triple_pattern_block_count": 7,
+      "selected_triple_gpe_call_count": 7,
+      "controlled_young_action_factor_count_upper_bound": 231,
+      "hook_dimension_output_bit_count_upper_bound": 32,
+      "selected_local_label_query_polynomial": true,
+      "all_incident_pair_labels_can_be_persistently_copied": false,
+      "global_channel_atom_label_compiled": false,
+      "status": "local-carrier-label-query-polynomial-global-contextual-label-open"
+    },
+    {
+      "n": 16,
+      "information_threshold_copy_count": 45,
+      "selected_triple_pattern_block_count": 7,
+      "selected_triple_gpe_call_count": 7,
+      "controlled_young_action_factor_count_upper_bound": 637,
+      "hook_dimension_output_bit_count_upper_bound": 90,
+      "selected_local_label_query_polynomial": true,
+      "all_incident_pair_labels_can_be_persistently_copied": false,
+      "global_channel_atom_label_compiled": false,
+      "status": "local-carrier-label-query-polynomial-global-contextual-label-open"
+    },
+    {
+      "n": 32,
+      "information_threshold_copy_count": 118,
+      "selected_triple_pattern_block_count": 7,
+      "selected_triple_gpe_call_count": 7,
+      "controlled_young_action_factor_count_upper_bound": 1659,
+      "hook_dimension_output_bit_count_upper_bound": 236,
+      "selected_local_label_query_polynomial": true,
+      "all_incident_pair_labels_can_be_persistently_copied": false,
+      "global_channel_atom_label_compiled": false,
+      "status": "local-carrier-label-query-polynomial-global-contextual-label-open"
+    },
+    {
+      "n": 64,
+      "information_threshold_copy_count": 296,
+      "selected_triple_pattern_block_count": 7,
+      "selected_triple_gpe_call_count": 7,
+      "controlled_young_action_factor_count_upper_bound": 4151,
+      "hook_dimension_output_bit_count_upper_bound": 592,
+      "selected_local_label_query_polynomial": true,
+      "all_incident_pair_labels_can_be_persistently_copied": false,
+      "global_channel_atom_label_compiled": false,
+      "status": "local-carrier-label-query-polynomial-global-contextual-label-open"
+    },
+    {
+      "n": 128,
+      "information_threshold_copy_count": 717,
+      "selected_triple_pattern_block_count": 7,
+      "selected_triple_gpe_call_count": 7,
+      "controlled_young_action_factor_count_upper_bound": 10045,
+      "hook_dimension_output_bit_count_upper_bound": 1434,
+      "selected_local_label_query_polynomial": true,
+      "all_incident_pair_labels_can_be_persistently_copied": false,
+      "global_channel_atom_label_compiled": false,
+      "status": "local-carrier-label-query-polynomial-global-contextual-label-open"
+    },
+    {
+      "n": 256,
+      "information_threshold_copy_count": 1684,
+      "selected_triple_pattern_block_count": 7,
+      "selected_triple_gpe_call_count": 7,
+      "controlled_young_action_factor_count_upper_bound": 23583,
+      "hook_dimension_output_bit_count_upper_bound": 3368,
+      "selected_local_label_query_polynomial": true,
+      "all_incident_pair_labels_can_be_persistently_copied": false,
+      "global_channel_atom_label_compiled": false,
+      "status": "local-carrier-label-query-polynomial-global-contextual-label-open"
+    },
+    {
+      "n": 512,
+      "information_threshold_copy_count": 3876,
+      "selected_triple_pattern_block_count": 7,
+      "selected_triple_gpe_call_count": 7,
+      "controlled_young_action_factor_count_upper_bound": 54271,
+      "hook_dimension_output_bit_count_upper_bound": 7752,
+      "selected_local_label_query_polynomial": true,
+      "all_incident_pair_labels_can_be_persistently_copied": false,
+      "global_channel_atom_label_compiled": false,
+      "status": "local-carrier-label-query-polynomial-global-contextual-label-open"
+    }
+  ],
+  "global_interface": {
+    "required_input": "A coherent global channel atom, star center/reference edges, and one carrier correlation label preserved by every channel transport.",
+    "local_query_supplied": "For any selected shared-vertex triple, seven coherent GPE calls expose beta,p and reversible hook arithmetic computes gamma=1/(d_beta d_p).",
+    "missing_global_object": "A jointly valid channel atom label across all overlapping triple decompositions on the physically occupied natural subspace.",
+    "sufficient_commuting_route": "Prove the occupied coarse isotypic projectors commute and give a reversible Boolean atom label.",
+    "sufficient_racah_route": "Compile a structured Racah transform that coherently resolves the incompatible coupling labels and channel transports.",
+    "label_free_route": "Implement canonical D directly from a representation observable without materializing a persistent channel label.",
+    "pairwise_accumulation_route_valid": false,
+    "status": "local-label-query-solved-global-channel-label-contextuality-open"
+  },
+  "proof_obligations": [
+    {
+      "obligation": "compile_selected_triple_carrier_correlation_label",
+      "resolved": true,
+      "resolution": "Seven coherent GPE labels and parity-conditioned equality tests identify beta,p; hook arithmetic computes their dimensions."
+    },
+    {
+      "obligation": "avoid_internal_kronecker_multiplicity_basis",
+      "resolved": true,
+      "resolution": "GPE exports only irrep/carrier rows and acts identically on multiplicity registers, which remain opaque and coherent."
+    },
+    {
+      "obligation": "copy_all_overlapping_pair_labels_nondestructively",
+      "resolved": false,
+      "resolution": "The exact S3 overlapping-pair projectors have commutator sqrt(3)/4 and compression eigenvalue 1/4."
+    },
+    {
+      "obligation": "prove_physical_occupied_multistar_label_compatibility",
+      "resolved": false,
+      "resolution": "The abstract counterexample does not establish positive natural mass; physical growing-multiplicity occupied projectors must be audited."
+    },
+    {
+      "obligation": "compile_global_channel_atom_or_racah_resolver",
+      "resolved": false,
+      "resolution": "Current finite atomization is classical and no uniform coherent resolver for overlapping labels is known."
+    }
+  ],
+  "adversarial_audit": [
+    {
+      "objection": "The scalar gamma label is hidden in an unknown multiplicity basis.",
+      "resolved": true,
+      "resolution": "False locally: beta,p are ordinary GPE irrep labels and the multiplicity coordinates need not be exposed."
+    },
+    {
+      "objection": "Running every pair-label GPE coherently creates one global classical label table.",
+      "resolved": true,
+      "resolution": "False in general: overlapping sharp isotypic projectors need not commute and cannot all be copied nondestructively."
+    },
+    {
+      "objection": "All pair-label observables are incompatible.",
+      "resolved": true,
+      "resolution": "False: disjoint tensor-factor pair projectors commute exactly."
+    },
+    {
+      "objection": "The S3 contextuality control kills the natural wreath route.",
+      "resolved": false,
+      "resolution": "It kills only the universal pairwise-label accumulation strategy. The physical occupied subspace may commute or admit a structured resolver."
+    }
+  ],
+  "headline_metrics": {
+    "coherent_local_pair_carrier_label_query_count": 1,
+    "local_pair_carrier_hook_arithmetic_count": 1,
+    "finite_local_label_control_count": 3,
+    "finite_local_label_control_failure_count": 0,
+    "selected_physical_star_channel_count": 3,
+    "maximum_local_dense_spectrum_residual": 5.828670879282072e-16,
+    "overlapping_label_contextuality_counterexample_count": 1,
+    "overlapping_s3_projector_commutator_norm": 0.4330127018922193,
+    "overlapping_s3_compression_eigenvalue": 0.25,
+    "disjoint_label_compatibility_control_count": 1,
+    "all_depth_global_channel_atom_labeler_count": 0,
+    "physical_positive_mass_contextuality_theorem_count": 0,
+    "coherent_multistar_racah_resolver_count": 0,
+    "new_quantum_algorithm_count": 0
+  },
+  "claim_gate": {
+    "selected_triple_carrier_label_query_polynomial": true,
+    "selected_triple_gamma_computable_without_multiplicity_basis": true,
+    "pair_gpe_preserves_multiplicity_registers": true,
+    "overlapping_pair_labels_always_jointly_classical": false,
+    "pairwise_gpe_label_accumulation_compiles_global_channel_atom": false,
+    "physical_occupied_multistar_projectors_commute_all_depth": false,
+    "coherent_global_channel_atom_labeler_compiled": false,
+    "coherent_multistar_racah_resolver_compiled": false,
+    "label_free_natural_cayley_observable_compiled": false,
+    "physical_root_anchor_compiled": false,
+    "physical_pgm_compiled": false,
+    "classical_separation_proved": false,
+    "speedup_claim_allowed": false,
+    "reason": "The scalar carrier overlap is coherently queryable for one selected triple, but overlapping triple labels are contextual in general. A physical commuting-atom theorem, Racah resolver, or label-free D compiler is still required."
+  },
+  "status": "coherent-local-carrier-label-query-proved-global-contextuality-open",
+  "summary": "Proved a polynomial coherent query for each selected pair-core carrier label and gamma=1/(d_beta d_p), without exposing multiplicity. An exact S3 commutator sqrt(3)/4 counterexample shows why pairwise labels cannot simply be accumulated into one global channel label.",
+  "falsifiers_triggered": [
+    "The local scalar carrier overlap is not hidden by Kronecker multiplicity coordinates.",
+    "Coherent pair-label queries do not automatically define a nondemolition global label table.",
+    "Disjoint isotypic labels remain compatible; overlap and recoupling are the precise obstruction.",
+    "Abstract label contextuality is not yet a positive-natural-mass no-go for the wreath PGM route."
+  ]
+}

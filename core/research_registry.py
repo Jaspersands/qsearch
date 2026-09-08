@@ -461,12 +461,16 @@ def seed_candidate_records() -> tuple[list[CandidateRecord], list[ExperimentReco
                 "explicitly bypass strong Fourier sampling no-go barriers."
             ),
             quantum_mechanism=(
-                "Use the alpha-one addressed J_f^*J_e query oracle and direct GPE pair polars beyond the proved "
-                "uniform linear G/q assembly. Label-retaining purification has constant-success endpoint-program "
-                "flattening on the retained window. The branch-preserving covariance shortcut for Bell corrections "
-                "is now falsified by the natural endpoint variance. Compile the two exact C-dependent branch-mixing "
-                "Weyl generators directly from the purification resource without standalone whitening, or construct "
-                "a different non-tight structured transducer, followed by hidden-involution information and decoding."
+                "Use the exact normalization-one affine-node representation frame oracle Fbar_A, but do not "
+                "pseudoinvert the two normalized child frames separately: exact natural sibling moments prove that "
+                "every inverse-polynomial spectral window retains only o(1) native mass. On the common child fiber set "
+                "B_s=X^*F_s^+X and E_s=B_s^-1. The preferred binary target is now the Hermitian Cayley contraction "
+                "D=(E_L+E_R)^-1/2(E_L-E_R)(E_L+E_R)^-1/2. Its QSVT Naimark roots reproduce the exact endpoint "
+                "effects, are invariant under the common child scale, and differ from the positive-root endpoint only "
+                "by child gauges that telescope recursively. The target is a representation-specific normalization-one "
+                "Racah/Schur evaluator for D, plus an anchored physical root coordinate map, one parent-propagated "
+                "retained projection, local error O(epsilon/L), "
+                "conditional mass 1-o(1/L), hidden-involution information, and decoding."
             ),
             cost_model=(
                 "Count coset-state preparation, number of registers, tensor bond dimension, measurement synthesis, "
@@ -499,7 +503,29 @@ def seed_candidate_records() -> tuple[list[CandidateRecord], list[ExperimentReco
                 "a program state: its unique exact filter is whitening. A canonical clean Bell outcome has probability "
                 "1/D^2, and every branch-preserving correction basis has average residual squared at least Var(C)/2, "
                 "which is at least 1/64 annealed on the natural free-Jacobi endpoint. C-dependent branch mixing, "
-                "alternative structured processors, and hierarchical/direct global polar synthesis remain open."
+                "alternative structured processors, and hierarchical/direct global polar synthesis remain open. The "
+                "exact binary endpoint is the operator-valued Schur short E_s=C_s-B_s^*D_s^+B_s, and aggregate "
+                "short-metric access would suffice with width-independent normalization. But fixed arity and constant "
+                "conditioning do not force a small endpoint algebra: two well-conditioned positive generators can "
+                "generate all of M_D(C), of dimension D^2. This algebra-dimension counterfamily is not a circuit lower "
+                "bound; current addressed-pair/GPE interfaces still do not supply aggregate short-metric block "
+                "encodings or an all-depth native-mass recurrence. Affine labels and nested Schur-short associativity "
+                "solve the combinatorial and algebraic recursion, but arbitrary addressed local metric values embed "
+                "unstructured search: even a scalar condition-one, full-mass root endpoint needs Omega(sqrt(q)) "
+                "queries. This scoped oracle lower bound preserves representation-specific Racah identities and a "
+                "direct local Naimark transform. The actual affine-node frame now has the exact all-n formula "
+                "Fbar_A=(|A||S_n|)^-1 sum_(e,g)R_e(g), with a table-free normalization-one LCU from affine masks and "
+                "controlled S_n actions. For equal child widths the common scale cancels exactly from the endpoint "
+                "effect, but generic separate QSVT pseudoinversion still fails: natural final-sibling mass above every "
+                "inverse-polynomial eigenvalue of Fbar_A is o(1) and each high window has o(D) rank. On the positive-mass "
+                "final common-span event, their intersection has o(1) relative common-fiber dimension. This does not "
+                "bound parent-conditional native mass without a common-fiber density theorem. The joint endpoint has an "
+                "exact scale-free graph normal form T=sqrt(E_R)E_L^-1/2, but the current support/GPE pair-polars do not "
+                "determine T: full-support metric pairs can have identical support transports and constant-separated "
+                "endpoint graph projectors. A stronger Cayley reduction now proves that the canonical Hermitian signed "
+                "effect D suffices without recovering the polar of T, and matched child gauges telescope exactly. An "
+                "unanchored root gauge changes the POVM by constant norm, so a representation-specific normalized D "
+                "oracle, physical root anchor, native-density theorem, and direct Racah/Naimark circuit remain open."
             ),
             dequantization_check=(
                 "Check whether each separating observable is equivalent to classical color refinement, code invariants, "
@@ -688,6 +714,26 @@ def seed_candidate_records() -> tuple[list[CandidateRecord], list[ExperimentReco
                 "EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-PROGRAM-CONTRACTION-NORMALIZATION-NO-GO",
                 "EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-STATE-PREPARATION-ORACLE-QUERY-BOUNDARY",
                 "EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-ADDRESSED-WEYL-ASSEMBLY-BOUNDARY",
+                "EXP-CODE-SELF-DUAL-WREATH-RECURSIVE-POLAR-NORMALIZATION-CONSERVATION-BOUNDARY",
+                "EXP-CODE-SELF-DUAL-WREATH-AFFINE-GPE-NODELOCAL-NAIMARK-ACCESS-BOUNDARY",
+                "EXP-CODE-SELF-DUAL-WREATH-POSITIVE-NAIMARK-ACCESS-EQUIVALENCE-BOUNDARY",
+                "EXP-CODE-SELF-DUAL-WREATH-HIERARCHICAL-ENDPOINT-SCHUR-ALGEBRA-BOUNDARY",
+                "EXP-CODE-SELF-DUAL-WREATH-AFFINE-FLAG-AGGREGATE-SCHUR-QUERY-BOUNDARY",
+                "EXP-CODE-SELF-DUAL-WREATH-AFFINE-NODE-FRAME-RESPONSE-BOUNDARY",
+                "EXP-CODE-SELF-DUAL-WREATH-SCALE-FREE-ENDPOINT-GRAPH-TRANSFER-BOUNDARY",
+                "EXP-CODE-SELF-DUAL-WREATH-CAYLEY-ENDPOINT-GAUGE-COMPILER",
+                "EXP-CODE-SELF-DUAL-WREATH-AFFINE-STAR-CAYLEY-COMPILER",
+                "EXP-CODE-SELF-DUAL-WREATH-PAIR-CARRIER-LABEL-CONTEXTUALITY",
+                "EXP-CODE-SELF-DUAL-WREATH-OCCUPIED-CARRIER-OCTAHEDRAL-BOUNDARY",
+                "EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-CARRIER-CONTEXTUALITY",
+                "EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-CARRIER-NONIDENTITY-TAIL",
+                "EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-CARRIER-NEAR-DERANGEMENT-REDUCTION",
+                "EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-CARRIER-ASYMPTOTIC-CLOSURE",
+                "EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-CARRIER-RACAH-ACCESS-BOUNDARY",
+                "EXP-CODE-SELF-DUAL-WREATH-CARRIER-NONCENTRAL-READOUT-BOUNDARY",
+                "EXP-CODE-SELF-DUAL-WREATH-CARRIER-CONDITIONED-PGM-BOUNDARY",
+                "EXP-CODE-SELF-DUAL-WREATH-CARRIER-HOLEVO-BUDGET-THEOREM",
+                "EXP-CODE-SELF-DUAL-WREATH-CARRIER-BRANCH-PGM-SUCCESS-CERTIFICATE",
                 "EXP-CODE-TENSOR-MEASUREMENT",
             ],
             notes="High upside but high no-go risk; registry keeps the no-go analysis mandatory.",
@@ -21053,6 +21099,211 @@ def seed_candidate_records() -> tuple[list[CandidateRecord], list[ExperimentReco
             ],
         ),
         ExperimentRecord(
+            id="EXP-COSET-HIDDEN-INVOLUTION-MULTIPLICITY-TWIRL-PROJECTION",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Hyperoctahedral multiplicity twirl projection",
+            status="completed-strict-support-growth-falsified-uniformity-open",
+            hypothesis=(
+                "Direct commutant projection of orbit representatives can test whether bounded-support "
+                "hyperoctahedral generators truly require growing support."
+            ),
+            protocol=(
+                "Extract exact sparse signed-weight isotypic blocks, validate transported-sector projection "
+                "against a full K_4 twirl, and close generated copy algebras on multiplicity-three and "
+                "nontrivial-beta controls."
+            ),
+            positive_signal=(
+                "Uniform support-six generation with inverse-polynomial gaps and a coherent source-aware "
+                "commutant transform on natural mass."
+            ),
+            falsifiers=[
+                "finite support thresholds are extrapolated as an all-rank law",
+                "noncyclic-vector reach is used as an algebra certificate",
+                "selected finite blocks are called the natural law",
+                "classical commutant projection is called a coherent transform",
+                "finite generation is called a decoder or separation",
+            ],
+            metrics=[
+                "hilbert_schmidt_commutant_projection_theorem_count",
+                "rank_five_support_threshold",
+                "rank_six_support_threshold",
+                "rank_seven_support_six_full_count",
+                "multiplicity_three_support_six_full_count",
+                "nontrivial_beta_support_six_full_count",
+                "exact_signed_sector_full_twirl_validation_count",
+                "strict_rank_tracking_support_growth_falsifier_count",
+                "universal_support_six_generation_theorem_count",
+            ],
+            dependencies=[
+                "coset_hidden_involution_rank_tracking_commutant_witness.py",
+                "coset_hidden_involution_paired_tower_missing_label_boundary.py",
+                "hyperoctahedral branching coefficients",
+                "Reynolds commutant projection",
+            ],
+            next_actions=[
+                "scan high-natural-mass S_14 branches",
+                "derive a symbolic support-six generation or counterexample invariant",
+                "measure natural source mass of support-six generated blocks",
+                "compile coherent access only after uniformity and gaps survive",
+            ],
+        ),
+        ExperimentRecord(
+            id="EXP-COSET-HIDDEN-INVOLUTION-MULTIPLICITY-FIBER-TRACE",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Hyperoctahedral multiplicity-fiber partial trace",
+            status="completed-exact-fiber-trace-validated-ambient-scaling-open",
+            hypothesis=(
+                "One signed YJM multiplicity fiber and carrier propagation can replace full isotypic "
+                "commutant matrices in exact orbit-sum audits."
+            ),
+            protocol=(
+                "Project a root copy fiber, propagate stabilizer tableaux in a common gauge, transport "
+                "equal-weight sign characters, and compare carrier partial traces with independent twirls."
+            ),
+            positive_signal=(
+                "Exact support-six tests on high-natural-mass blocks followed by a symbolic typical-shape "
+                "contraction, normalized gap theorem, and coherent implementation."
+            ),
+            falsifiers=[
+                "the fiber trace disagrees with an explicit full group twirl",
+                "tableau propagation fails to preserve a common copy gauge",
+                "column-width reduction is confused with polynomial ambient compression",
+                "finite exact copy matrices are confused with a quantum decoder",
+            ],
+            metrics=[
+                "direct_root_multiplicity_fiber_projection_theorem_count",
+                "tableau_fiber_propagation_theorem_count",
+                "carrier_partial_trace_full_twirl_validation_count",
+                "independent_commutant_projection_validation_count",
+                "maximum_validated_branching_multiplicity",
+                "maximum_validated_full_carrier_dimension",
+                "polynomial_typical_ambient_compression_theorem_count",
+            ],
+            dependencies=[
+                "coset_hidden_involution_multiplicity_twirl_projection.py",
+                "Young-seminormal YJM spectral projectors",
+                "hyperoctahedral signed-weight decomposition",
+            ],
+            next_actions=[
+                "run the multiplicity-26 highest-mass S_14 target",
+                "stream support-four through support-six orbit representatives",
+                "certify normalized spectra of succinct separator combinations",
+                "derive a symbolic typical-shape contraction",
+            ],
+        ),
+        ExperimentRecord(
+            id="EXP-COSET-HIDDEN-INVOLUTION-SPECTRAL-LABEL-BUDGET",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Spectral label capacity under the natural branching source law",
+            status="ready",
+            hypothesis="A fixed number of normalized gapped observables completely labels typical multiplicities.",
+            protocol="Combine exact dimension sums, spectral packing, and finite-alphabet decoding bounds.",
+            positive_signal="A task-specific coarse measurement or scalable adaptive hierarchy escapes the complete-label obstruction.",
+            falsifiers=["the exact source mass of resolvable branches tends to zero", "complete labels are unnecessary for the task"],
+            metrics=["exact_rational_scaling_record_count", "scaling_records_below_one_percent"],
+            dependencies=["coset_hidden_involution_hyperoctahedral_branching_mass.py"],
+            next_actions=["audit the written derivation", "construct an adaptive coarse-label contract"],
+        ),
+        ExperimentRecord(
+            id="EXP-COSET-HIDDEN-INVOLUTION-SOURCE-WEIGHTED-SUPPORT-PORTFOLIO",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Source-ranked S_14 bounded-support portfolio",
+            status="ready",
+            hypothesis="Low-support orbit averages generate full copy algebras on source-relevant branches.",
+            protocol="Scan exact mass-ranked branches; compare separator connectivity and direct commutant nullity.",
+            positive_signal="Reproducible finite closure that suggests a symbolic generator rule, not a decoder claim.",
+            falsifiers=["an exact nonscalar commutant witness", "a basis/provenance mismatch", "numerical instability"],
+            metrics=["source_ranked_support_four_closure_count", "numerically_closed_natural_mass_probability"],
+            dependencies=["coset_hidden_involution_multiplicity_fiber_trace.py"],
+            next_actions=["independently certify the finite matrices", "derive a uniform low-support generator mechanism"],
+        ),
+        ExperimentRecord(
+            id="EXP-COSET-HIDDEN-INVOLUTION-HIGH-MASS-SUPPORT-SCAN",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Highest-natural-mass S_14 multiplicity support scan",
+            status="completed-support-four-numerical-closure-asymptotics-open",
+            hypothesis=(
+                "Bounded-support hyperoctahedral orbit sums resolve the full copy algebra on a "
+                "source-relevant high-multiplicity branch."
+            ),
+            protocol=(
+                "Contract exact multiplicity-fiber copy matrices, exhaust support three, and test a "
+                "support-four witness schedule using separator-graph and direct commutant-nullity certificates."
+            ),
+            positive_signal=(
+                "Uniform closure with inverse-polynomial normalized gaps on one-minus-o(1) natural mass, "
+                "followed by a coherent implementation and hidden-involution decoder."
+            ),
+            falsifiers=[
+                "support-four generators retain a non-scalar common commutant",
+                "the finite separator gap vanishes under certified precision",
+                "high-mass closure fails to concentrate over growing rank",
+                "the exponential ambient contraction has no coherent implementation",
+            ],
+            metrics=[
+                "target_natural_mass_probability",
+                "target_branching_multiplicity",
+                "support_three_generated_algebra_dimension",
+                "support_four_full_copy_algebra_certificate_count",
+                "support_four_separator_lcu_normalized_gap",
+                "support_four_direct_commutant_nullity",
+                "support_four_direct_commutant_smallest_nonzero_singular_value",
+                "inverse_polynomial_natural_mass_gap_theorem_count",
+            ],
+            dependencies=[
+                "coset_hidden_involution_multiplicity_fiber_trace.py",
+                "coset_hidden_involution_natural_support_six_mass_audit.py",
+                "Young-seminormal sparse representation actions",
+            ],
+            next_actions=[
+                "upgrade the finite closure with interval or exact arithmetic",
+                "scan the next ranked high-mass branches",
+                "derive a symbolic partition-algebra copy-matrix formula",
+                "test normalized separator gaps across rank and source mass",
+            ],
+        ),
+        ExperimentRecord(
+            id="EXP-COSET-HIDDEN-INVOLUTION-NATURAL-SUPPORT-SIX-MASS-AUDIT",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Natural-mass audit of support-six multiplicity controls",
+            status="completed-finite-controls-negligible-natural-mass",
+            hypothesis=(
+                "Finite support-six copy-algebra closure on selected S_14 blocks covers a representative "
+                "fraction of the exact hidden-involution source law."
+            ),
+            protocol=(
+                "Enumerate every h-even S_14-to-K_7 branching pair, apply the exact joint source law, "
+                "measure audited and feasible-window mass, and rank high-mass untested repeated blocks."
+            ),
+            positive_signal=(
+                "Support-six generation with inverse-polynomial normalized gaps on source mass 1-o(1), "
+                "plus a coherent source-aware transform."
+            ),
+            falsifiers=[
+                "selected support-six controls cover negligible exact source mass",
+                "small-ambient exhaustive windows remain source-negligible",
+                "copy-algebra generation lacks normalized spectral gaps",
+            ],
+            metrics=[
+                "exact_joint_source_normalization_theorem_count",
+                "repeated_natural_mass_probability",
+                "audited_rank_natural_mass_probability",
+                "ambient_5000_feasible_natural_mass_probability",
+                "uniform_support_six_generation_theorem_count",
+            ],
+            dependencies=[
+                "coset_hidden_involution_multiplicity_twirl_projection.py",
+                "coset_hidden_involution_hyperoctahedral_branching_mass.py",
+                "exact hyperoctahedral branching coefficients",
+            ],
+            next_actions=[
+                "attack ranked high-mass untested S_14 blocks",
+                "derive symbolic or matrix-free typical-block transfer",
+                "measure normalized joint-separator gaps",
+                "search for a support-six counterexample before a uniform theorem",
+            ],
+        ),
+        ExperimentRecord(
             id="EXP-COSET-HIDDEN-INVOLUTION-SHARED-CONJUGATION-QSVT-LOWER-BOUND",
             candidate_id="CODE-COSET-COLLECTIVE",
             title="Coset Hidden Involution Shared Conjugation Qsvt Lower Bound",
@@ -22421,6 +22672,904 @@ def seed_candidate_records() -> tuple[list[CandidateRecord], list[ExperimentReco
             ],
             next_actions=[
                 "Express the internal/crossing coordinate projections and local Racah kernels as reversible functions of affine-flag node labels, then test whether aggregate Schur shorts can be carried upward without returning to leaf-width normalization."
+            ],
+        ),
+        ExperimentRecord(
+            id="EXP-CODE-SELF-DUAL-WREATH-AFFINE-FLAG-AGGREGATE-SCHUR-QUERY-BOUNDARY",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Affine-flag aggregate Schur query boundary",
+            status="completed-positive-label-recursion-and-negative-query-theorem",
+            hypothesis=(
+                "A reversible affine-flag node labeler, exact Schur-short recursion, and addressed access to every "
+                "local PSD kernel suffice to compile each aggregate endpoint in poly(k) queries for q=2^k leaves."
+            ),
+            protocol=(
+                "Compile the affine flag parity labels and internal/crossing classifier, prove nested PSD Schur-short "
+                "associativity including singular blocks, and reduce promised unstructured search to constant-error "
+                "aggregate endpoint compilation from addressed local-kernel queries."
+            ),
+            positive_signal=(
+                "An all-n representation-specific Racah response formula or direct local Naimark circuit that excludes "
+                "arbitrary marked metric values, has polynomial normalization and query complexity, and preserves one "
+                "common parent trim with o(1/L) conditional loss."
+            ),
+            falsifiers=[
+                "Affine labels determine only combinatorial incidence, not local metric amplitudes.",
+                "Nested Schur-short associativity is an algebraic state recurrence, not a coherent response oracle.",
+                "A condition-one, full-native-mass aggregate endpoint can still encode unstructured search and require Omega(sqrt(q)) addressed queries.",
+                "The oracle lower bound does not rule out representation-specific Racah identities or a direct local Naimark transform.",
+            ],
+            metrics=[
+                "reversible_affine_flag_node_labeler_theorem_count",
+                "nested_psd_schur_short_associativity_theorem_count",
+                "addressed_local_kernel_aggregate_search_lower_bound_theorem_count",
+                "minimum_hard_family_endpoint_edge",
+                "minimum_hard_family_native_retained_mass",
+                "compiled_structured_racah_response_oracle_count",
+                "all_depth_native_mass_recurrence_theorem_count",
+                "speedup_claim_allowed",
+            ],
+            dependencies=[
+                "self_dual_wreath_affine_core_flag_theorem.py",
+                "self_dual_wreath_vertex_kernel_graded_reduction.py",
+                "self_dual_wreath_affine_gpe_nodelocal_naimark_access_boundary.py",
+                "self_dual_wreath_hierarchical_endpoint_schur_algebra_boundary.py",
+            ],
+            next_actions=[
+                "Search the actual local Schur/Racah kernels for a uniform low-description response recurrence or direct Naimark transform stronger than arbitrary addressed value access, and prove a common parent trim retains 1-o(1/L) conditional mass."
+            ],
+        ),
+        ExperimentRecord(
+            id="EXP-CODE-SELF-DUAL-WREATH-AFFINE-NODE-FRAME-RESPONSE-BOUNDARY",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Affine-node representation frame response boundary",
+            status="completed-representation-frame-and-natural-response-boundary-theorem",
+            hypothesis=(
+                "The exact affine-node representation average, block-encoded at normalization one, can be separately "
+                "pseudoinverted at polynomial resolution to give a uniform balanced-endpoint compiler on the natural "
+                "common parent fiber."
+            ),
+            protocol=(
+                "Derive the exact affine-node S_n group average, validate it against physical invariant projectors, "
+                "prove equal-width response scale cancellation, then combine the exact natural sibling mass/rank "
+                "theorem with the positive-mass final common-span theorem to test separate pseudoinversion."
+            ),
+            positive_signal=(
+                "A joint scale-free generalized-eigenvalue or direct Schur/Racah Naimark circuit that uses the "
+                "normalization-one affine frame oracle without separately resolving exponentially small normalized eigenvalues."
+            ),
+            falsifiers=[
+                "The actual affine-node frame is table-free and has a normalization-one representation LCU.",
+                "Normalized frame access is not compressed-response access; a pseudoinverse remains.",
+                "Every inverse-polynomial normalized-frame window has o(1) natural final-sibling mass.",
+                "The intersection of the two high spectral windows has o(1) relative common-fiber dimension; this does not by itself bound parent-native mass.",
+                "Equal width cancels from the abstract endpoint, so direct joint scale-free Naimark synthesis remains open.",
+            ],
+            metrics=[
+                "actual_affine_node_frame_formula_theorem_count",
+                "normalization_one_affine_node_frame_block_encoding_count",
+                "equal_width_endpoint_scale_cancellation_theorem_count",
+                "imported_natural_sibling_mass_theorem_count",
+                "imported_positive_mass_common_span_theorem_count",
+                "separate_qsvt_full_sibling_mass_no_go_theorem_count",
+                "separate_qsvt_common_fiber_dimension_no_go_theorem_count",
+                "tail_full_sibling_native_retained_mass_upper_bound",
+                "tail_common_spectral_trim_relative_dimension_upper_bound_proxy",
+                "parent_conditional_native_loss_recurrence_theorem_count",
+                "direct_joint_scale_free_naimark_compiler_count",
+                "speedup_claim_allowed",
+            ],
+            dependencies=[
+                "self_dual_wreath_orientation_fourier_reduction.py",
+                "self_dual_wreath_natural_q_scale_spectral_window_no_go.py",
+                "self_dual_wreath_final_root_natural_common_span.py",
+                "self_dual_wreath_hierarchical_cokernel_resolution.py",
+                "self_dual_wreath_affine_flag_aggregate_schur_query_boundary.py",
+            ],
+            next_actions=[
+                "Construct or obstruct a joint scale-free generalized-eigenvalue/Racah endpoint transform that never materializes either child pseudoinverse separately; charge coherent evaluation, relative spectral gap, and native mass."
+            ],
+        ),
+        ExperimentRecord(
+            id="EXP-CODE-SELF-DUAL-WREATH-SCALE-FREE-ENDPOINT-GRAPH-TRANSFER-BOUNDARY",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Scale-free endpoint graph-transfer boundary",
+            status="completed-exact-relative-graph-normal-form-access-boundary",
+            hypothesis=(
+                "The balanced affine-node endpoint can be represented as a scale-free graph/CS transform of one "
+                "relative response operator, avoiding separate resolution of exponentially small absolute child-frame scales."
+            ),
+            protocol=(
+                "Prove response/short complementarity, derive the relative graph-CS unitary, test common-scale "
+                "cancellation on noncommuting and physical affine controls, and adversarially test whether support "
+                "pair-polars determine the relative transfer."
+            ),
+            positive_signal=(
+                "A polynomial-normalized representation-specific block encoding of T=sqrt(E_R)E_L^-1/2, or a direct "
+                "Racah circuit for its graph CS unitary, with recursively compatible gauge and native mass."
+            ),
+            falsifiers=[
+                "Separate absolute child-frame pseudoinversion is not the only endpoint normal form; common scale cancels in the relative graph transfer.",
+                "Support projectors and pair polar transports do not determine the positive relative transfer or endpoint graph.",
+                "For noncommuting metrics the graph CS column and canonical positive-root endpoint differ by a nontrivial input gauge.",
+                "A conditional graph-CS compiler does not supply its required representation-specific relative-transfer block encoding.",
+            ],
+            metrics=[
+                "response_short_complementarity_theorem_count",
+                "relative_graph_cs_normal_form_theorem_count",
+                "common_scale_cancellation_theorem_count",
+                "physical_affine_graph_reduction_theorem_count",
+                "support_pair_polar_indeterminacy_theorem_count",
+                "conditional_relative_transfer_compiler_theorem_count",
+                "largest_cancelled_absolute_inverse_resolution_proxy",
+                "metric_blind_relative_transfer_gap",
+                "metric_blind_graph_projector_gap",
+                "compiled_representation_relative_transfer_oracle_count",
+                "speedup_claim_count",
+            ],
+            dependencies=[
+                "self_dual_wreath_affine_node_frame_response_boundary.py",
+                "self_dual_wreath_hierarchical_endpoint_schur_algebra_boundary.py",
+                "self_dual_wreath_positive_naimark_access_equivalence_boundary.py",
+                "self_dual_wreath_affine_gpe_nodelocal_naimark_access_boundary.py",
+            ],
+            next_actions=[
+                "Derive a representation-specific Racah/Schur block encoding of T=sqrt(E_R)E_L^-1/2, or a direct graph-CS circuit, and prove that its input gauge propagates coherently through the affine hierarchy."
+            ],
+        ),
+        ExperimentRecord(
+            id="EXP-CODE-SELF-DUAL-WREATH-CAYLEY-ENDPOINT-GAUGE-COMPILER",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Scale-free Cayley endpoint and recursive gauge compiler",
+            status="completed-exact-normal-form-access-boundary",
+            hypothesis=(
+                "The binary endpoint reduces to a normalized Hermitian Cayley contraction whose QSVT Naimark roots "
+                "match the canonical branch effects and whose child gauges telescope recursively."
+            ),
+            protocol=(
+                "Verify the exact Cayley, graph-similarity, branch-gauge, common-scale, physical affine, recursive-tree, "
+                "and root-anchor identities on commuting, noncommuting, and adversarial controls."
+            ),
+            positive_signal=(
+                "A normalization-one representation-specific block encoding of the canonical shorted grading D, "
+                "together with a physical root coordinate anchor and all-depth retained-mass recurrence."
+            ),
+            falsifiers=[
+                "The Cayley Naimark roots differ from the canonical binary endpoint effects.",
+                "Matched child coordinate gauges change a root-to-leaf POVM effect.",
+                "Common exponential short scale changes the canonical Cayley target.",
+                "An unanchored root input gauge is harmless.",
+                "The normalized affine frame LCU already supplies the normalized shorted grading.",
+            ],
+            metrics=[
+                "cayley_endpoint_effect_theorem_count",
+                "branch_gauge_factorization_theorem_count",
+                "recursive_child_gauge_covariance_theorem_count",
+                "root_gauge_anchor_boundary_theorem_count",
+                "common_scale_cancellation_theorem_count",
+                "conditional_cayley_qsvt_compiler_count",
+                "representation_specific_cayley_oracle_count",
+                "unanchored_root_branch_effect_gap",
+                "maximum_recursive_leaf_effect_residual",
+            ],
+            dependencies=[
+                "self_dual_wreath_scale_free_endpoint_graph_transfer_boundary.py",
+                "self_dual_wreath_vertex_kernel_graded_reduction.py",
+                "self_dual_wreath_cross_dependency_neutrality.py",
+                "self_dual_wreath_hierarchical_endpoint_schur_algebra_boundary.py",
+            ],
+            next_actions=[
+                "Extend the label-resolved scalar affine-star D compiler to the natural all-depth channel law or noncommuting matrix-valued Racah fibers.",
+                "Anchor the surviving root coordinate gauge in the homogeneous-space fixed-space transform.",
+                "Prove an all-depth endpoint gap and parent-native retained-mass recurrence.",
+            ],
+        ),
+        ExperimentRecord(
+            id="EXP-CODE-SELF-DUAL-WREATH-AFFINE-STAR-CAYLEY-COMPILER",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Label-resolved affine-star Cayley compiler",
+            status="completed-exact-scoped-normalized-compiler",
+            hypothesis=(
+                "The scalar affine-star channels extracted from the physical wreath frame admit a direct "
+                "normalization-one canonical-D and binary Naimark compiler once their carrier overlap is coherently labeled."
+            ),
+            protocol=(
+                "Derive the two Walsh-sector eigenvalues, construct exact signal and branch rotations, compare them "
+                "with dense graph Schur quotients, extend the algebra to one commuting operator fiber, and attack "
+                "scope with a Markov polynomial-degree bound and a merged-center graph."
+            ),
+            positive_signal=(
+                "Exact normalization-one branch effects for every scalar control and all eight currently extracted "
+                "physical W6 channels, together with a coherent all-depth carrier-label theorem."
+            ),
+            falsifiers=[
+                "The two-sector Cayley formula differs from the dense shorted grading.",
+                "The direct branch rotations change either endpoint effect.",
+                "An opaque operator overlap has a uniform polylogarithmic spectrum-only QSVT compiler.",
+                "Merged centers or noncommuting multiplicity fibers occur on positive natural mass.",
+                "The required channel and carrier labels cannot be extracted coherently at polynomial cost.",
+            ],
+            metrics=[
+                "normalization_one_scalar_star_cayley_compiler_count",
+                "direct_scalar_star_naimark_compiler_count",
+                "physical_w6_compiler_covered_channel_count",
+                "tail_markov_degree_lower_bound",
+                "merged_center_star_fit_residual",
+                "natural_all_depth_channel_classification_count",
+                "coherent_natural_carrier_labeler_count",
+                "noncommuting_matrix_racah_compiler_count",
+            ],
+            dependencies=[
+                "self_dual_wreath_global_carrier_channel_extractor.py",
+                "self_dual_wreath_affine_star_channel_gap.py",
+                "self_dual_wreath_cayley_endpoint_gauge_compiler.py",
+                "self_dual_wreath_matrix_cayley_boundary.py",
+            ],
+            next_actions=[
+                "Prove or falsify an all-depth coherent scalar-star channel decomposition on natural positive mass.",
+                "Search growing higher-multiplicity controls for merged centers and noncommuting edge fibers.",
+                "Lift the selected-triple GPE carrier-label query to a compatible global channel atom or structured Racah resolver.",
+                "Compile the root coordinate anchor and parent-native retained-mass recurrence.",
+            ],
+        ),
+        ExperimentRecord(
+            id="EXP-CODE-SELF-DUAL-WREATH-PAIR-CARRIER-LABEL-CONTEXTUALITY",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Pair-carrier label compiler and contextuality boundary",
+            status="completed-local-label-positive-global-boundary",
+            hypothesis=(
+                "The scalar overlap label needed by a selected affine-star merge is coherently available by GPE "
+                "without a multiplicity basis, but overlapping triple labels require a separate compatibility or "
+                "Racah theorem before they can define one global channel atom."
+            ),
+            protocol=(
+                "Use the exact seven membership-pattern factorization to specify the GPE label circuit and validate "
+                "carrier denominators on physical W6 stars; then construct exact overlapping and disjoint S3 "
+                "isotypic-projector controls to test nondemolition label compatibility."
+            ),
+            positive_signal=(
+                "A polynomial selected-triple gamma query plus commuting occupied natural projectors, a coherent "
+                "global Boolean atom label, or a compact structured Racah resolver on positive source mass."
+            ),
+            falsifiers=[
+                "The selected-triple scalar gamma requires explicit internal multiplicity coordinates.",
+                "Overlapping pair-label projectors commute automatically.",
+                "Running local GPE queries sequentially creates a nondemolition global classical label table.",
+                "An abstract recoupling counterexample is promoted without natural occupied mass.",
+            ],
+            metrics=[
+                "coherent_local_pair_carrier_label_query_count",
+                "maximum_local_dense_spectrum_residual",
+                "overlapping_s3_projector_commutator_norm",
+                "disjoint_label_compatibility_control_count",
+                "all_depth_global_channel_atom_labeler_count",
+                "physical_positive_mass_contextuality_theorem_count",
+                "coherent_multistar_racah_resolver_count",
+            ],
+            dependencies=[
+                "self_dual_wreath_pair_core_carrier_factorization.py",
+                "self_dual_wreath_gpe_pair_polar_transport.py",
+                "self_dual_wreath_affine_star_cayley_compiler.py",
+                "self_dual_wreath_schur_dilated_multiplicity_access.py",
+            ],
+            next_actions=[
+                "Audit physically occupied growing-multiplicity label-projector commutators and their native mass.",
+                "Prove a coherent Boolean atom label if the occupied projectors commute or block-diagonalize.",
+                "Otherwise compile a structured Racah resolver or derive canonical D without persistent channel labels.",
+                "Integrate the resulting global label with root anchoring and parent-native retained mass.",
+            ],
+        ),
+        ExperimentRecord(
+            id="EXP-CODE-SELF-DUAL-WREATH-OCCUPIED-CARRIER-OCTAHEDRAL-BOUNDARY",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Occupied carrier octahedral channel boundary",
+            status="completed-exact-repeated-family-boundary",
+            hypothesis=(
+                "Physically occupied carrier labels can commute at growing multiplicity while their global channel "
+                "graph lies outside the affine-star and positive-clique families."
+            ),
+            protocol=(
+                "Construct the stable repeated-source family, derive exact pair-core ranks and carrier overlaps, "
+                "densely short the n=5 control, extract support atoms, and audit source and trace mass separately."
+            ),
+            positive_signal=(
+                "A collision-free positive-mass occupied family with coherent atoms and a uniformly compilable "
+                "bounded channel graph."
+            ),
+            falsifiers=[
+                "Commuting occupied supports are promoted to clique or star topology.",
+                "Unit-correlation indefiniteness is confused with failure of the physical small-correlation Gram.",
+                "Growing coefficient rank is promoted without Plancherel source mass.",
+                "Repeated source labels are extrapolated to the globally distinct natural threshold event.",
+            ],
+            metrics=[
+                "all_n_octahedral_channel_formula_theorem_count",
+                "occupied_support_projector_commutator_norm",
+                "unit_correlation_minimum_eigenvalue",
+                "physical_gram_minimum_eigenvalue",
+                "tail_log2_full_control_mass",
+                "collision_free_positive_mass_contextuality_theorem_count",
+            ],
+            dependencies=[
+                "self_dual_wreath_pair_core_carrier_factorization.py",
+                "self_dual_wreath_global_carrier_channel_extractor.py",
+                "self_dual_wreath_vertex_channel_groupoid.py",
+                "self_dual_wreath_global_partition_collision.py",
+            ],
+            next_actions=[
+                "Search globally distinct typical portfolios at coefficient level.",
+                "Prove occupied support compatibility or contextuality on positive collision-free mass.",
+                "Classify bounded channel graphs before selecting the star Cayley compiler.",
+                "Keep source probability, occupied trace mass, and physical state mass separate.",
+            ],
+        ),
+        ExperimentRecord(
+            id="EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-CARRIER-CONTEXTUALITY",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Natural overlapping carrier contextuality moment",
+            status="completed-exact-character-reduction-asymptotic-gap-open",
+            hypothesis=(
+                "Overlapping full S_n carrier labels on natural membership blocks retain nonnegligible joint "
+                "contextuality and require coherent Racah resolution rather than persistent classical labels."
+            ),
+            protocol=(
+                "Reduce the Plancherel-annealed aggregate carrier-projector commutator to a character-squared "
+                "weighted commuting probability, verify it densely, enumerate n<=8, and sample through n=20."
+            ),
+            positive_signal=(
+                "An all-n bound kappa_n<=1-c, ideally kappa_n=o(1), followed by a polynomial structured Racah resolver."
+            ),
+            falsifiers=[
+                "Pairwise carrier spectra are treated as simultaneous sharp-label data.",
+                "Finite weighted-commuting samples are promoted to an asymptotic theorem.",
+                "Annealed Plancherel contextuality is confused with a fixed rare portfolio.",
+                "Label contextuality is promoted to a quantum circuit lower bound.",
+            ],
+            metrics=[
+                "natural_carrier_contextuality_character_reduction_theorem_count",
+                "tail_estimated_weighted_commuting_probability",
+                "tail_contextuality_confidence_lower",
+                "asymptotic_constant_contextuality_theorem_count",
+                "coherent_multistar_racah_resolver_count",
+            ],
+            dependencies=[
+                "self_dual_wreath_pair_carrier_label_contextuality.py",
+                "self_dual_wreath_pair_core_carrier_factorization.py",
+                "self_dual_wreath_global_partition_collision.py",
+                "Plancherel character orthogonality",
+            ],
+            next_actions=[
+                "Bound the character-squared weighted commuting probability asymptotically.",
+                "Decompose the moment by moved support and centralizer type.",
+                "Derive the corresponding multistar Racah block representation.",
+                "Compile or obstruct a normalization-one coherent Racah resolver.",
+            ],
+        ),
+        ExperimentRecord(
+            id="EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-CARRIER-NONIDENTITY-TAIL",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Plancherel carrier nonidentity commuting tail",
+            status="completed-exact-cycle-index-high-support-tail-open",
+            hypothesis=(
+                "After identity and low-support artifacts are removed, the character-squared weighted commuting "
+                "probability vanishes and yields a constant natural carrier-contextuality gap."
+            ),
+            protocol=(
+                "Construct the exact product_i C_i wr S_(m_i) centralizer cycle index, verify it against brute "
+                "centralizers, evaluate the conditional nonidentity law through n=20, stratify by moved support, "
+                "and apply maximal Plancherel atom domination."
+            ),
+            positive_signal=(
+                "A uniform vanishing bound for the exact commuting kernel when both permutations move more than n^delta points."
+            ),
+            falsifiers=[
+                "Sampled values are used where exact cycle-index values exist.",
+                "Identity contribution is confused with the conditional tail.",
+                "Finite low-support dominance is extrapolated asymptotically.",
+                "The class-uniform reciprocal bound is transferred without a comparison theorem.",
+                "Contextuality is promoted to a Racah circuit or speedup.",
+            ],
+            metrics=[
+                "exact_centralizer_wreath_cycle_index_theorem_count",
+                "tail_exact_nonidentity_conditional_commuting_probability",
+                "tail_fraction_captured_by_low_support",
+                "sublinear_support_mass_vanishing_theorem_count",
+                "mesoscopic_macroscopic_tail_vanishing_theorem_count",
+            ],
+            dependencies=[
+                "self_dual_wreath_plancherel_carrier_contextuality.py",
+                "symmetric-group centralizer wreath-product structure",
+                "character column orthogonality",
+                "Aggarwal-Elboim maximal Plancherel atom theorem",
+            ],
+            next_actions=[
+                "Bound the exact high-support commuting kernel by support and centralizer profile.",
+                "Derive asymptotics for the character-squared cycle-count law.",
+                "Search for a measure comparison tailored to the commuting kernel.",
+                "Compile a structured Racah resolver only after a natural gap theorem.",
+            ],
+        ),
+        ExperimentRecord(
+            id="EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-CARRIER-NEAR-DERANGEMENT-REDUCTION",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Plancherel carrier near-derangement reduction",
+            status="completed-logarithmic-fixed-point-kernel-open",
+            hypothesis=(
+                "Support invariance eliminates the residual character-squared commuting tail except for pairs "
+                "of near-derangement classes with logarithmically many fixed points."
+            ),
+            protocol=(
+                "Prove a uniform invariant-subset exponential bound, split support and fixed-point ranges at "
+                "n^delta and 8log(n+1), evaluate the exact residual through n=20, and derive the exact "
+                "fixed-point-free involution self-kernel."
+            ),
+            positive_signal=(
+                "An all-n class-pair bound for the logarithmic-fixed-point corner, ideally showing the "
+                "perfect-matching kernel is extremal up to a polynomial factor."
+            ),
+            falsifiers=[
+                "support invariance is applied to full support without retaining a derangement corner",
+                "centralizer-size products are treated as sharp for involutions",
+                "finite perfect-matching extremality is promoted to all n",
+                "a character-kernel theorem is promoted to a coherent Racah circuit",
+            ],
+            metrics=[
+                "support_invariance_exponential_bound_theorem_count",
+                "balanced_support_commuting_tail_elimination_theorem_count",
+                "logarithmic_fixed_point_reduction_theorem_count",
+                "perfect_matching_self_kernel_decay_theorem_count",
+                "near_derangement_all_n_extremality_theorem_count",
+                "weighted_commuting_probability_vanishing_theorem_count",
+            ],
+            dependencies=[
+                "self_dual_wreath_plancherel_carrier_nonidentity_tail.py",
+                "symmetric-group support invariance under commuting permutations",
+                "binomial modal-atom lower bound",
+                "Aggarwal-Elboim maximal Plancherel atom theorem",
+            ],
+            next_actions=[
+                "bound centralizer intersections for mixed short-cycle near-derangements",
+                "split by points outside fixed points and two-cycles and prove a factorial loss",
+                "prove or refute perfect-matching extremality up to a polynomial factor",
+                "derive a contextuality gap only after the residual tail closes",
+            ],
+        ),
+        ExperimentRecord(
+            id="EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-CARRIER-ASYMPTOTIC-CLOSURE",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Plancherel carrier asymptotic commuting-tail closure",
+            status="completed-contextuality-gap-proved-racah-resolver-open",
+            hypothesis=(
+                "A quantitative centralizer gap away from perfect matchings closes the logarithmic-fixed-point "
+                "character-squared commuting tail."
+            ),
+            protocol=(
+                "Prove fixed-point-free centralizer envelopes by induction, derive an O(1/n) nonmatching gap, "
+                "control logarithmically many fixed points, and isolate the exact perfect-matching pair kernel."
+            ),
+            positive_signal=(
+                "A rigorous kappa_n->0 theorem and natural aggregate carrier contextuality limit two, followed "
+                "by a physically compilable coherent Racah resolver."
+            ),
+            falsifiers=[
+                "the centralizer-product bound is applied to the perfect-matching pair",
+                "maximal centralizer is used without a quantitative second-class gap",
+                "fixed-point factorials are omitted",
+                "a character-moment theorem is promoted to a quantum speedup",
+            ],
+            metrics=[
+                "fixed_point_free_centralizer_envelope_theorem_count",
+                "even_nonmatching_centralizer_gap_theorem_count",
+                "logarithmic_fixed_point_uniform_kernel_theorem_count",
+                "weighted_commuting_probability_vanishing_theorem_count",
+                "asymptotic_constant_contextuality_theorem_count",
+                "coherent_multistar_racah_resolver_count",
+            ],
+            dependencies=[
+                "self_dual_wreath_plancherel_carrier_near_derangement_reduction.py",
+                "symmetric-group cycle centralizer formula",
+                "central binomial coefficient lower bound",
+                "exact perfect-matching commuting kernel",
+            ],
+            next_actions=[
+                "derive the explicit multistar Racah block carrying the proved contextuality gap",
+                "compile or lower-bound a coherent resolver for the incompatible carrier PVMs",
+                "turn the moment gap into an accessible PGM discrimination statement",
+                "attack every proposed resolver with classical simulation and dequantization baselines",
+            ],
+        ),
+        ExperimentRecord(
+            id="EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-CARRIER-RACAH-ACCESS-BOUNDARY",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Plancherel carrier Racah access and invariant-decoder boundary",
+            status="completed-disturbance-accessible-secret-invariant",
+            hypothesis=(
+                "The proved carrier contextuality occupies physical multiplicity blocks and is operationally "
+                "accessible, but carrier-label operations alone may remain invariant across hidden involutions."
+            ),
+            protocol=(
+                "Resolve total-irrep Racah path spaces, prove the P-Q-P disturbance identity and active-mass "
+                "transfer, then prove conjugation invariance for the generated carrier-PVM branch algebra."
+            ),
+            positive_signal=(
+                "A covariant noncentral row or orientation outcome that couples the asymptotically full active "
+                "Racah mass to the identity of the hidden involution."
+            ),
+            falsifiers=[
+                "an explicit full Racah matrix is treated as necessary for PVM alternation",
+                "the contextuality gap is treated as a rare-sector effect",
+                "conjugation-invariant carrier outcomes are treated as hidden-identity data",
+                "a carrier-algebra no-go is promoted to all quantum measurements",
+            ],
+            metrics=[
+                "minimum_total_irrep_racah_block_theorem_count",
+                "constant_query_carrier_disturbance_compiler_count",
+                "asymptotically_full_active_racah_mass_theorem_count",
+                "carrier_pvm_conjugation_invariance_no_go_theorem_count",
+                "covariant_noncentral_decoder_count",
+            ],
+            dependencies=[
+                "self_dual_wreath_plancherel_carrier_asymptotic_closure.py",
+                "self_dual_wreath_pair_carrier_label_contextuality.py",
+                "Kronecker associativity and total-irrep Schur decomposition",
+                "hidden-subgroup conjugation covariance",
+            ],
+            next_actions=[
+                "construct a covariant noncentral row-space outcome on active Racah blocks",
+                "compute hidden-involution-conditioned finite outcome distributions",
+                "test pair GPE plus one noncentral representation operation as a compiler",
+                "run classical tensor-network and character-sampling attacks on the same statistic",
+            ],
+        ),
+        ExperimentRecord(
+            id="EXP-CODE-SELF-DUAL-WREATH-CARRIER-NONCENTRAL-READOUT-BOUNDARY",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Carrier noncentral row-readout boundary",
+            status="completed-noncentral-signal-baseline-limited",
+            hypothesis=(
+                "A minimum covariant noncentral row effect may convert the extensive Racah carrier disturbance "
+                "into information about the identity of the hidden involution."
+            ),
+            protocol=(
+                "Compute exact natural three-copy channels for alternating pair-carrier instruments followed by "
+                "a covariantized Young row readout, then compare relative product bases and PGM baselines."
+            ),
+            positive_signal=(
+                "An all-n carrier-conditioned row channel with advantage over general separable measurements and "
+                "a polynomial identity decoder."
+            ),
+            falsifiers=[
+                "carrier transcripts themselves are assigned hidden information",
+                "a default-basis finite gain is called collective advantage",
+                "deeper carrier contextuality is assumed to amplify decoding",
+                "factorial exact enumeration is called a scalable algorithm",
+            ],
+            metrics=[
+                "carrier_transcript_zero_information_theorem_count",
+                "minimum_covariant_noncentral_readout_compiler_count",
+                "finite_carrier_gain_over_default_young_control_count",
+                "finite_global_pgm_dominates_carrier_control_count",
+                "scalable_hidden_involution_decoder_count",
+            ],
+            dependencies=[
+                "self_dual_wreath_plancherel_carrier_racah_access_boundary.py",
+                "coset_strong_fourier_information_scaling.py",
+                "coset_natural_multicopy_pgm_benchmark.py",
+            ],
+            next_actions=[
+                "replace the terminal row basis by a source-specific PGM multiplicity-row verifier",
+                "derive an all-n comparison with arbitrary separable POVMs",
+                "integrate one carrier projection into the natural frame polar without dense assembly",
+                "attack surviving statistics with tensor-network and sampling baselines",
+            ],
+        ),
+        ExperimentRecord(
+            id="EXP-CODE-SELF-DUAL-WREATH-CARRIER-CONDITIONED-PGM-BOUNDARY",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Carrier-conditioned natural PGM boundary",
+            status="completed-finite-gain-retained-row-whitening-open",
+            hypothesis=(
+                "One efficiently measurable pair-carrier label may compress the natural PGM enough for a "
+                "structured implementation while retaining collective hidden-involution information."
+            ),
+            protocol=(
+                "Factor the PGM over the hidden-independent carrier flag, audit every natural S_5 pair-source "
+                "type, and compare information, Bayes success, Holevo loss, and support conditioning."
+            ),
+            positive_signal=(
+                "An all-n carrier hierarchy retaining constant collective gain whose compressed multiplicity "
+                "inverses have a uniform polynomial coherent implementation and decoder."
+            ),
+            falsifiers=[
+                "carrier conditioning is claimed to create information",
+                "one pair label is claimed to scalarize multiplicity whitening",
+                "finite condition numbers are treated as block-encoding circuits",
+                "dense branch PGMs are called an efficient decoder",
+            ],
+            metrics=[
+                "exact_carrier_branch_pgm_factorization_theorem_count",
+                "carrier_dephased_holevo_retention_fraction",
+                "carrier_conditioned_pgm_information_retention_fraction",
+                "retained_collective_information_gain_fraction",
+                "average_condition_number_reduction_factor",
+                "polynomial_branch_pgm_compiler_count",
+            ],
+            dependencies=[
+                "self_dual_wreath_covariant_pgm_factorization.py",
+                "self_dual_wreath_plancherel_carrier_racah_access_boundary.py",
+                "coset_natural_multicopy_pgm_benchmark.py",
+            ],
+            next_actions=[
+                "derive an all-n information-retention bound for a carrier hierarchy",
+                "classify c_(nu,alpha) D_nu c_(nu,alpha) on source-specific Racah paths",
+                "search for a recursive branch polar avoiding a dense multiplicity inverse",
+                "compare branch architectures with tensor-network and arbitrary separable baselines",
+            ],
+        ),
+        ExperimentRecord(
+            id="EXP-CODE-SELF-DUAL-WREATH-CARRIER-HOLEVO-BUDGET-THEOREM",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Adaptive carrier hierarchy Holevo budget theorem",
+            status="completed-extensive-holevo-retained-access-open",
+            hypothesis=(
+                "A shallow sequence of polynomially accessible carrier measurements can simplify the natural "
+                "PGM without erasing its extensive hidden-involution correlation."
+            ),
+            protocol=(
+                "Prove a log-outcome Holevo loss bound for arbitrary pinching, bound carrier outcomes by p(n), "
+                "and combine perfect-matching PGM success with Fano at the information threshold."
+            ),
+            positive_signal=(
+                "An anti-locking theorem or explicit branch measurement extracting Omega(n log n) accessible "
+                "information after a sub-sqrt(n)log(n) carrier hierarchy."
+            ),
+            falsifiers=[
+                "Holevo retention is called accessible-information retention",
+                "PGM existence is called an efficient circuit",
+                "the theorem is extended to a full linear-depth carrier tree",
+                "carrier label count is justified only by finite trends",
+            ],
+            metrics=[
+                "single_pinching_holevo_budget_theorem_count",
+                "partition_label_sqrt_n_bound_theorem_count",
+                "threshold_extensive_input_holevo_theorem_count",
+                "shallow_hierarchy_extensive_holevo_retention_theorem_count",
+                "accessible_information_retention_theorem_count",
+            ],
+            dependencies=[
+                "self_dual_wreath_pgm_success_theorem.py",
+                "coset_perfect_matching_spherical_boundary.py",
+                "carrier PVM conjugation invariance",
+                "Fano inequality and partition generating function",
+            ],
+            next_actions=[
+                "prove or falsify anti-locking for carrier-dephased covariant coset ensembles",
+                "construct a shallow carrier hierarchy optimized for branch-polar structure",
+                "bound branch PGM success directly after pinching",
+                "compile and classically attack the surviving branch observable",
+            ],
+        ),
+        ExperimentRecord(
+            id="EXP-CODE-SELF-DUAL-WREATH-CARRIER-BRANCH-PGM-SUCCESS-CERTIFICATE",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Carrier-branch PGM accessible-success certificate",
+            status="completed-finite-success-certified-all-n-collisions-open",
+            hypothesis=(
+                "Carrier-conditioned ensembles avoid information locking when branch self-purity and "
+                "cross-hypothesis collision burdens stay bounded on natural source mass."
+            ),
+            protocol=(
+                "Derive the rank-purity Holder certificate, audit every natural S_5 pair-source branch, "
+                "and compare certified success with product and Young baselines."
+            ),
+            positive_signal=(
+                "An all-n theorem placing constant carrier probability mass on branches with "
+                "u_a+(M-1)v_a=O(1), followed by a coherent branch-PGM compiler and decoder."
+            ),
+            falsifiers=[
+                "Holevo information is substituted for PGM success",
+                "self-purity inflation is omitted",
+                "finite collision controls are extrapolated all-n",
+                "measurement existence is called an efficient implementation",
+            ],
+            metrics=[
+                "carrier_branch_pgm_holder_certificate_theorem_count",
+                "natural_holder_success_lower_bound",
+                "certified_advantage_over_product_pgm",
+                "weighted_self_purity_inflation",
+                "weighted_collision_term",
+                "all_n_collision_control_theorem_count",
+            ],
+            dependencies=[
+                "self_dual_wreath_carrier_holevo_budget_theorem.py",
+                "self_dual_wreath_carrier_conditioned_pgm_boundary.py",
+                "self_dual_wreath_pgm_success_theorem.py",
+                "mixed-state PGM Holder inequality",
+            ],
+            next_actions=[
+                "bound branch self-purity inflation by carrier rank/probability structure",
+                "derive all-n normalized cross-collision bounds on natural source mass",
+                "search shallow carrier schedules optimizing the certified denominator",
+                "compile and classically attack the best certified branch measurement",
+            ],
+        ),
+        ExperimentRecord(
+            id="EXP-CODE-SELF-DUAL-WREATH-DISJOINT-PAIR-BRANCH-PGM-COMPILER-BOUNDARY",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Disjoint pair-carrier branch-PGM compiler boundary",
+            status="completed-naive-local-compiler-falsified-global-polar-open",
+            hypothesis=(
+                "The disjoint-pair accessible-success theorem may admit a compiler obtained by composing "
+                "pair-local PGMs."
+            ),
+            protocol=(
+                "Derive the shared-label covariance identity, compare exact global and pair-local PGM "
+                "channels, and test normalization of scaled same-label product effects."
+            ),
+            positive_signal=(
+                "A covariance-aware covariant polar or alternative structured measurement with the proved "
+                "disjoint-pair success guarantee."
+            ),
+            falsifiers=[
+                "disjoint source supports are called independent hypotheses",
+                "same-label product effects are used without a completeness test",
+                "finite PGM existence is called a coherent implementation",
+                "generic state-preparation access is assumed from mixed samples",
+            ],
+            metrics=[
+                "shared_hidden_label_covariance_identity_theorem_count",
+                "naive_pair_local_branch_pgm_compiler_no_go_count",
+                "s3_natural_global_pair_local_success_gap",
+                "s4_natural_global_pair_local_success_gap",
+                "s5_standard_global_pair_local_success_gap",
+                "covariance_aware_branch_pgm_compiler_count",
+            ],
+            dependencies=[
+                "self_dual_wreath_carrier_branch_pgm_success_certificate.py",
+                "self_dual_wreath_carrier_conditioned_pgm_boundary.py",
+                "coset_natural_multicopy_pgm_benchmark.py",
+                "mixed-state PGM frame inverse square root",
+            ],
+            next_actions=[
+                "derive a Fourier block form for the shared-label covariance operator",
+                "search low-rank or sparse covariance closures on natural carrier branches",
+                "compile a controlled multiplicity polar without hypothesis enumeration",
+                "attack any resulting output channel with classical representation algorithms",
+            ],
+        ),
+        ExperimentRecord(
+            id="EXP-CODE-SELF-DUAL-WREATH-DISJOINT-PAIR-COVARIANCE-POLAR-REDUCTION",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Disjoint pair covariance-polar reduction",
+            status="completed-normalization-closed-spectral-gap-open",
+            hypothesis=(
+                "Exact pair-carrier flatness may remove explicit support-rank normalization and reduce the "
+                "shared-label branch PGM to a dimensionless covariance polar."
+            ),
+            protocol=(
+                "Prove all-n branch flatness and natural LCU normalization identities, derive the exact "
+                "two-pair covariance frame, and reproduce finite global PGM effects from its polar."
+            ),
+            positive_signal=(
+                "A compiled public block encoding, an inverse-polynomial positive spectral edge for I+K, "
+                "and an extension to information-threshold copy counts with a decodable output."
+            ),
+            falsifiers=[
+                "Kronecker multiplicity is assumed to destroy central branch flatness",
+                "carrier support rank is charged after exact cancellation",
+                "bounded expected LCU normalization is called a compiled circuit",
+                "finite positive spectra are extrapolated to an all-n gap",
+                "two-pair inversion is called a full hidden-label decoder",
+            ],
+            metrics=[
+                "all_n_pair_carrier_branch_flatness_theorem_count",
+                "dimensionless_covariance_frame_reduction_theorem_count",
+                "all_n_natural_rank_scaled_lcu_mean_bound_theorem_count",
+                "natural_two_pair_covariance_lcu_expectation_upper_bound",
+                "uniform_public_covariance_block_encoding_compiler_count",
+                "inverse_square_root_spectral_gap_theorem_count",
+            ],
+            dependencies=[
+                "self_dual_wreath_disjoint_pair_branch_pgm_compiler_boundary.py",
+                "coset_same_hidden_target_law.py",
+                "central conjugacy-class sums",
+                "coherent carrier-isotypic projection",
+            ],
+            next_actions=[
+                "compile and cost the uniform matching-class and carrier-projector access primitives",
+                "derive a lower-tail bound for the positive spectrum of I+K",
+                "extend the centered covariance expansion to threshold-copy cumulants",
+                "compile the PGM output isometry and attack its decoded statistic classically",
+            ],
+        ),
+        ExperimentRecord(
+            id="EXP-CODE-SELF-DUAL-WREATH-DIMENSIONLESS-PGM-TRUNCATION-BRIDGE",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Dimensionless PGM spectral-truncation bridge",
+            status="completed-minimum-edge-removed-full-frame-access-open",
+            hypothesis=(
+                "Rank-scaled trace normalization may preserve certified carrier-branch PGM success above a "
+                "controlled cutoff without any lower bound on the actual minimum positive frame eigenvalue."
+            ),
+            protocol=(
+                "Prove the dimensionless low-spectral-mass bound, compress ideal PGM effects to the retained "
+                "subspace, apply gentle measurement, and compose with the all-n disjoint-pair success certificate."
+            ),
+            positive_signal=(
+                "A poly-normalized block encoding of the full information-threshold metric followed by a "
+                "coherent truncated-PGM hypothesis-output isometry."
+            ),
+            falsifiers=[
+                "raw and rank-scaled frame cutoffs are conflated",
+                "two-pair access is called full-threshold access",
+                "a formal sub-POVM is called a compiled circuit",
+                "finite conditioning is extrapolated all-n",
+                "PGM existence is treated as a classical separation",
+            ],
+            metrics=[
+                "dimensionless_low_spectral_mass_theorem_count",
+                "mixed_state_truncated_pgm_robustness_theorem_count",
+                "fixed_pair_depth_constant_cutoff_theorem_count",
+                "logarithmic_pair_depth_inverse_polynomial_cutoff_theorem_count",
+                "full_threshold_metric_block_encoding_compiler_count",
+                "pgm_output_isometry_compiler_count",
+            ],
+            dependencies=[
+                "self_dual_wreath_pgm_truncation_robustness.py",
+                "self_dual_wreath_disjoint_pair_covariance_polar_reduction.py",
+                "self_dual_wreath_carrier_branch_pgm_success_certificate.py",
+                "gentle measurement lemma",
+            ],
+            next_actions=[
+                "derive a recursive block encoding of the full rank-scaled threshold metric",
+                "control higher shared-label cumulants under natural branch truncation",
+                "compile the truncated-PGM hypothesis-output isometry",
+                "attack the decoded statistic with classical representation algorithms",
+            ],
+        ),
+        ExperimentRecord(
+            id="EXP-CODE-SELF-DUAL-WREATH-LOCAL-BLOCK-METRIC-NORMALIZATION-NO-GO",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Local-block full-metric normalization no-go",
+            status="completed-local-composition-falsified-global-access-open",
+            hypothesis=(
+                "Natural character-ratio concentration may decide whether rank-scaled singleton and pair "
+                "LCUs compose into polynomial-normalization threshold-copy metric access."
+            ),
+            protocol=(
+                "Derive the exact natural pair-carrier marginal, union-bound all source and carrier labels, "
+                "and lower-bound local product normalization for every singleton/pair threshold partition."
+            ),
+            positive_signal=(
+                "A global shared-label, orbit-algebra, or nonmultiplicative metric transform with polynomial "
+                "normalization and a coherent output map."
+            ),
+            falsifiers=[
+                "within-pair dependence is treated as independence",
+                "bounded one-pair mean normalization is assumed to compose",
+                "pair regrouping is claimed to remove the per-copy normalization cost",
+                "a local-product no-go is called a general circuit lower bound",
+                "metric access is conflated with hidden-label decoding",
+            ],
+            metrics=[
+                "pair_carrier_exact_natural_marginal_theorem_count",
+                "simultaneous_source_carrier_ratio_envelope_theorem_count",
+                "local_singleton_pair_product_normalization_no_go_count",
+                "minimum_tail_local_normalization_log2_lower_bound",
+                "global_shared_label_metric_access_no_go_count",
+                "full_threshold_metric_block_encoding_compiler_count",
+            ],
+            dependencies=[
+                "coset_natural_character_ratio_concentration.py",
+                "self_dual_wreath_disjoint_pair_covariance_polar_reduction.py",
+                "symmetric-group character column orthogonality",
+                "Kronecker representation-ring dimension identities",
+            ],
+            next_actions=[
+                "derive the full shared-hidden-label twirl in orbit/commutant Fourier blocks",
+                "search a nonmultiplicative recursive metric isometry",
+                "test coherent source-block aggregation without termwise LCU normalization",
+                "compile a threshold PGM output only after global metric access exists",
             ],
         ),
     ]

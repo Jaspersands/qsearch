@@ -379,6 +379,44 @@ COSET_COMMUTANT_INFORMATION_OBSTRUCTION_PATH = Path(
 COSET_CARRIER_INFORMATION_AUDIT_PATH = Path(
     "research/representation/coset_carrier_information_audit.json"
 )
+DISJOINT_PAIR_BRANCH_PGM_COMPILER_BOUNDARY_PATH = Path(
+    "research/representation/"
+    "self_dual_wreath_disjoint_pair_branch_pgm_compiler_boundary.json"
+)
+DISJOINT_PAIR_COVARIANCE_POLAR_REDUCTION_PATH = Path(
+    "research/representation/"
+    "self_dual_wreath_disjoint_pair_covariance_polar_reduction.json"
+)
+DIMENSIONLESS_PGM_TRUNCATION_BRIDGE_PATH = Path(
+    "research/representation/"
+    "self_dual_wreath_dimensionless_pgm_truncation_bridge.json"
+)
+LOCAL_BLOCK_METRIC_NORMALIZATION_NO_GO_PATH = Path(
+    "research/representation/"
+    "self_dual_wreath_local_block_metric_normalization_no_go.json"
+)
+MULTIPLICITY_TWIRL_PROJECTION_PATH = Path(
+    "research/representation/"
+    "coset_hidden_involution_multiplicity_twirl_projection.json"
+)
+MULTIPLICITY_FIBER_TRACE_PATH = Path(
+    "research/representation/"
+    "coset_hidden_involution_multiplicity_fiber_trace.json"
+)
+HIGH_MASS_SUPPORT_SCAN_PATH = Path(
+    "research/representation/"
+    "coset_hidden_involution_high_mass_support_scan.json"
+)
+SOURCE_WEIGHTED_SUPPORT_PORTFOLIO_PATH = Path(
+    "research/representation/coset_hidden_involution_source_weighted_support_portfolio.json"
+)
+SPECTRAL_LABEL_BUDGET_PATH = Path(
+    "research/representation/coset_hidden_involution_spectral_label_budget.json"
+)
+NATURAL_SUPPORT_SIX_MASS_AUDIT_PATH = Path(
+    "research/representation/"
+    "coset_hidden_involution_natural_support_six_mass_audit.json"
+)
 COSET_NATURAL_MULTICOPY_PGM_PATH = Path(
     "research/representation/coset_natural_multicopy_pgm_benchmark.json"
 )
@@ -704,6 +742,824 @@ def _candidate_kind(candidate: dict[str, Any]) -> str:
     return "unclassified"
 
 
+def _disjoint_pair_branch_pgm_compiler_lemmas(
+    candidate_id: str,
+) -> list[LemmaRecord]:
+    try:
+        report = (
+            json.loads(DISJOINT_PAIR_BRANCH_PGM_COMPILER_BOUNDARY_PATH.read_text())
+            if DISJOINT_PAIR_BRANCH_PGM_COMPILER_BOUNDARY_PATH.exists()
+            else {}
+        )
+    except (json.JSONDecodeError, OSError):
+        report = {}
+    metrics = report.get("headline_metrics", {})
+    covariance_proved = int(
+        metrics.get("shared_hidden_label_covariance_identity_theorem_count", 0)
+        or 0
+    ) > 0
+    local_no_go_proved = int(
+        metrics.get("naive_pair_local_branch_pgm_compiler_no_go_count", 0)
+        or 0
+    ) > 0
+    global_compiler_proved = int(
+        metrics.get("covariance_aware_branch_pgm_compiler_count", 0) or 0
+    ) > 0
+    return [
+        LemmaRecord(
+            id=f"LEMMA-{candidate_id}-DISJOINT-CARRIER-SHARED-LABEL-COVARIANCE",
+            candidate_id=candidate_id,
+            statement=(
+                "Disjoint pair-carrier conditioned states tensor-factor for fixed h, but their "
+                "hypothesis average contains the exact shared-hidden-label covariance term."
+            ),
+            depends_on=["PO-MEASUREMENT", "PO-SUCCESS"],
+            status=(
+                "proved-exact-shared-label-covariance-decomposition"
+                if covariance_proved
+                else "blocked-disjoint-pair-compiler-audit-missing"
+            ),
+            falsification_test=(
+                "Expand the centered covariance exactly and verify every finite branch probability, "
+                "PGM completeness relation, and channel normalization."
+            ),
+        ),
+        LemmaRecord(
+            id=f"LEMMA-{candidate_id}-DISJOINT-CARRIER-NAIVE-LOCAL-PGM-NO-GO",
+            candidate_id=candidate_id,
+            statement=(
+                "Independent pair PGMs, or scaled same-label products of their effects, do not "
+                "implement the shared-label disjoint-carrier branch PGM."
+            ),
+            depends_on=[
+                f"LEMMA-{candidate_id}-DISJOINT-CARRIER-SHARED-LABEL-COVARIANCE",
+                "PO-MEASUREMENT",
+            ],
+            status=(
+                "proved-finite-naive-pair-local-compiler-no-go"
+                if local_no_go_proved
+                else "blocked-finite-nonfactorization-controls-missing"
+            ),
+            falsification_test=(
+                "Compare the legal all-outcome local-MAP channel with the global branch PGM and test "
+                "support-projector completeness and maximum eigenvalue of the diagonal product effects."
+            ),
+        ),
+        LemmaRecord(
+            id=f"LEMMA-{candidate_id}-DISJOINT-CARRIER-COVARIANCE-AWARE-PGM-COMPILER",
+            candidate_id=candidate_id,
+            statement=(
+                "A uniform polynomial circuit implements the covariance-aware shared-label branch "
+                "polar and decodes the hidden involution without enumerating all hypotheses."
+            ),
+            depends_on=[
+                f"LEMMA-{candidate_id}-DISJOINT-CARRIER-NAIVE-LOCAL-PGM-NO-GO",
+                "PO-COMPLEXITY",
+                "PO-MEASUREMENT",
+                "PO-SUCCESS",
+            ],
+            status=(
+                "proved-polynomial-covariance-aware-branch-pgm"
+                if global_compiler_proved
+                else "blocked-shared-label-multiplicity-polar-open"
+            ),
+            falsification_test=(
+                "Require physical mixed-state access, controlled multiplicity normalization, complete "
+                "gate/query accounting, hidden-label output, and a comparison with classical algorithms."
+            ),
+        ),
+    ]
+
+
+def _disjoint_pair_covariance_polar_lemmas(
+    candidate_id: str,
+) -> list[LemmaRecord]:
+    try:
+        report = (
+            json.loads(DISJOINT_PAIR_COVARIANCE_POLAR_REDUCTION_PATH.read_text())
+            if DISJOINT_PAIR_COVARIANCE_POLAR_REDUCTION_PATH.exists()
+            else {}
+        )
+    except (json.JSONDecodeError, OSError):
+        report = {}
+    gate = report.get("claim_gate", {})
+    try:
+        truncation_report = (
+            json.loads(DIMENSIONLESS_PGM_TRUNCATION_BRIDGE_PATH.read_text())
+            if DIMENSIONLESS_PGM_TRUNCATION_BRIDGE_PATH.exists()
+            else {}
+        )
+    except (json.JSONDecodeError, OSError):
+        truncation_report = {}
+    truncation_gate = truncation_report.get("claim_gate", {})
+    spectral_edge_bypassed = bool(
+        truncation_gate.get(
+            "mixed_state_truncated_pgm_success_retention_proved",
+            False,
+        )
+        and not truncation_gate.get(
+            "minimum_positive_spectral_edge_required",
+            True,
+        )
+    )
+    flatness = bool(gate.get("all_n_pair_carrier_branch_flatness_proved", False))
+    normalized = bool(
+        gate.get("all_n_natural_lcu_expectation_bound_proved", False)
+        and gate.get("dimensionless_covariance_frame_reduction_proved", False)
+    )
+    access = bool(
+        gate.get("uniform_public_covariance_block_encoding_compiled", False)
+    )
+    spectral = bool(gate.get("inverse_square_root_spectral_gap_proved", False))
+    threshold = bool(
+        gate.get("threshold_copy_covariance_polar_extension_proved", False)
+        and gate.get("pgm_output_isometry_compiled", False)
+        and gate.get("hidden_involution_decoder_compiled", False)
+    )
+    return [
+        LemmaRecord(
+            id=f"LEMMA-{candidate_id}-PAIR-CARRIER-ALL-N-FLATNESS",
+            candidate_id=candidate_id,
+            statement=(
+                "Every active pair-carrier branch has hidden-average state Q_alpha/[g(lambda,mu,alpha)d_alpha], "
+                "including repeated Kronecker multiplicities."
+            ),
+            depends_on=["PO-MEASUREMENT", "PO-SUCCESS"],
+            status=(
+                "proved-central-class-sum-pair-carrier-flatness"
+                if flatness
+                else "blocked-pair-carrier-flatness-proof-missing"
+            ),
+            falsification_test=(
+                "Derive the class average symbolically and test multiplicity-greater-than-one branches against "
+                "Q_alpha/r_alpha without selecting a multiplicity basis."
+            ),
+        ),
+        LemmaRecord(
+            id=f"LEMMA-{candidate_id}-PAIR-COVARIANCE-RANK-NORMALIZATION-CANCELLATION",
+            candidate_id=candidate_id,
+            statement=(
+                "For two disjoint pair branches, explicit carrier ranks cancel from the PGM polar and the "
+                "natural expected centered-covariance LCU normalization is at most 25."
+            ),
+            depends_on=[
+                f"LEMMA-{candidate_id}-PAIR-CARRIER-ALL-N-FLATNESS",
+                "PO-MEASUREMENT",
+                "PO-COMPLEXITY",
+            ],
+            status=(
+                "proved-dimensionless-covariance-polar-and-natural-normalization"
+                if normalized
+                else "blocked-covariance-polar-normalization-proof-missing"
+            ),
+            falsification_test=(
+                "Check the exact natural branch law, rank-scaled four-term LCU identity, frame identity, and "
+                "reduced PGM effects before dropping any rank or likelihood denominator."
+            ),
+        ),
+        LemmaRecord(
+            id=f"LEMMA-{candidate_id}-PAIR-COVARIANCE-PUBLIC-BLOCK-ENCODING",
+            candidate_id=candidate_id,
+            statement=(
+                "Uniform matching-class PREPARE and coherent carrier projectors compile the conditional "
+                "covariance LCU schema into a polynomial public block encoding."
+            ),
+            depends_on=[
+                f"LEMMA-{candidate_id}-PAIR-COVARIANCE-RANK-NORMALIZATION-CANCELLATION",
+                "PO-COMPLEXITY",
+                "PO-INPUT-MODEL",
+            ],
+            status=(
+                "proved-polynomial-public-covariance-block-encoding"
+                if access
+                else "blocked-coherent-carrier-projector-and-prepare-compiler-open"
+            ),
+            falsification_test=(
+                "Provide explicit reversible circuits and gate/error costs for matching-class PREPARE, controlled "
+                "Young actions, carrier projection, branch truncation, and uncomputation."
+            ),
+        ),
+        LemmaRecord(
+            id=f"LEMMA-{candidate_id}-PAIR-COVARIANCE-POSITIVE-SPECTRAL-EDGE",
+            candidate_id=candidate_id,
+            statement=(
+                "On retained natural branch mass, the minimum positive eigenvalue of I+K is inverse polynomial "
+                "at the relevant copy count."
+            ),
+            depends_on=[
+                f"LEMMA-{candidate_id}-PAIR-COVARIANCE-PUBLIC-BLOCK-ENCODING",
+                "PO-COMPLEXITY",
+                "PO-SUCCESS",
+            ],
+            status=(
+                "proved-inverse-polynomial-dimensionless-positive-edge"
+                if spectral
+                else (
+                    "superseded-not-required-dimensionless-truncation-proved"
+                    if spectral_edge_bypassed
+                    else "blocked-dimensionless-positive-spectral-edge-open"
+                )
+            ),
+            falsification_test=(
+                "Find natural branches whose smallest positive eigenvalue decays superpolynomially, or prove a "
+                "uniform moment/lower-tail bound strong enough for inverse-square-root QSVT."
+            ),
+        ),
+        LemmaRecord(
+            id=f"LEMMA-{candidate_id}-THRESHOLD-COVARIANCE-PGM-OUTPUT-DECODER",
+            candidate_id=candidate_id,
+            statement=(
+                "The covariance reduction extends to information-threshold copies and a polynomial Naimark/output "
+                "map decodes the hidden involution without hypothesis enumeration."
+            ),
+            depends_on=[
+                f"LEMMA-{candidate_id}-DIMENSIONLESS-PGM-SPECTRAL-TRUNCATION",
+                f"LEMMA-{candidate_id}-FULL-THRESHOLD-RANK-SCALED-METRIC-ACCESS",
+                "PO-MEASUREMENT",
+                "PO-SUCCESS",
+                "PO-COMPLEXITY",
+            ],
+            status=(
+                "proved-threshold-covariance-pgm-output-decoder"
+                if threshold
+                else "blocked-higher-cumulants-output-isometry-and-decoder-open"
+            ),
+            falsification_test=(
+                "Expand three and more shared-label blocks, account for higher cumulants, compile the hypothesis "
+                "output register, and compare the decoded statistic with the strongest classical baseline."
+            ),
+        ),
+    ]
+
+
+def _dimensionless_pgm_truncation_lemmas(
+    candidate_id: str,
+) -> list[LemmaRecord]:
+    try:
+        report = (
+            json.loads(DIMENSIONLESS_PGM_TRUNCATION_BRIDGE_PATH.read_text())
+            if DIMENSIONLESS_PGM_TRUNCATION_BRIDGE_PATH.exists()
+            else {}
+        )
+    except (json.JSONDecodeError, OSError):
+        report = {}
+    gate = report.get("claim_gate", {})
+    truncation = bool(
+        gate.get("dimensionless_low_spectral_mass_bound_proved", False)
+        and gate.get("mixed_state_truncated_pgm_success_retention_proved", False)
+        and not gate.get("minimum_positive_spectral_edge_required", True)
+    )
+    full_access = bool(
+        gate.get("full_threshold_metric_block_encoding_compiled", False)
+    )
+    try:
+        local_no_go_report = (
+            json.loads(LOCAL_BLOCK_METRIC_NORMALIZATION_NO_GO_PATH.read_text())
+            if LOCAL_BLOCK_METRIC_NORMALIZATION_NO_GO_PATH.exists()
+            else {}
+        )
+    except (json.JSONDecodeError, OSError):
+        local_no_go_report = {}
+    local_no_go = bool(
+        local_no_go_report.get("claim_gate", {}).get(
+            "local_singleton_pair_product_metric_access_falsified",
+            False,
+        )
+    )
+    output = bool(
+        gate.get("pgm_output_isometry_compiled", False)
+        and gate.get("hidden_involution_decoder_compiled", False)
+    )
+    return [
+        LemmaRecord(
+            id=f"LEMMA-{candidate_id}-DIMENSIONLESS-PGM-SPECTRAL-TRUNCATION",
+            candidate_id=candidate_id,
+            statement=(
+                "For G=D times the branch-average state, truncating below c^2/16 retains at least c/2 "
+                "success whenever the ideal PGM has proved success c, independent of lambda_min^+(G)."
+            ),
+            depends_on=["PO-MEASUREMENT", "PO-SUCCESS", "PO-COMPLEXITY"],
+            status=(
+                "proved-dimensionless-gentle-pgm-truncation"
+                if truncation
+                else "blocked-dimensionless-truncation-proof-missing"
+            ),
+            falsification_test=(
+                "Verify Tr(G)=D, the low-mass dimension bound, sub-POVM completeness, gentle success loss, "
+                "and the c-adaptive cutoff for mixed states."
+            ),
+        ),
+        LemmaRecord(
+            id=f"LEMMA-{candidate_id}-FULL-THRESHOLD-RANK-SCALED-METRIC-ACCESS",
+            candidate_id=candidate_id,
+            statement=(
+                "A polynomial-normalization block encoding includes every residual singleton factor and "
+                "higher shared-label cumulant in the information-threshold rank-scaled metric."
+            ),
+            depends_on=[
+                f"LEMMA-{candidate_id}-DIMENSIONLESS-PGM-SPECTRAL-TRUNCATION",
+                f"LEMMA-{candidate_id}-PAIR-COVARIANCE-PUBLIC-BLOCK-ENCODING",
+                f"LEMMA-{candidate_id}-LOCAL-BLOCK-THRESHOLD-METRIC-NORMALIZATION-NO-GO",
+                "PO-INPUT-MODEL",
+                "PO-COMPLEXITY",
+            ],
+            status=(
+                "proved-polynomial-full-threshold-rank-scaled-metric-access"
+                if full_access
+                else (
+                    "blocked-local-products-falsified-global-shared-label-access-open"
+                    if local_no_go
+                    else "blocked-residual-factors-and-higher-cumulant-access-open"
+                )
+            ),
+            falsification_test=(
+                "Write the exact threshold metric, account for all shared-label cumulants, and give a reversible "
+                "block-encoding construction whose normalization and error are polynomial."
+            ),
+        ),
+        LemmaRecord(
+            id=f"LEMMA-{candidate_id}-TRUNCATED-PGM-HYPOTHESIS-OUTPUT-DECODER",
+            candidate_id=candidate_id,
+            statement=(
+                "The truncated inverse is embedded in a polynomial Naimark isometry that writes a useful "
+                "hidden-involution hypothesis or decodable statistic without enumerating all matchings."
+            ),
+            depends_on=[
+                f"LEMMA-{candidate_id}-FULL-THRESHOLD-RANK-SCALED-METRIC-ACCESS",
+                "PO-MEASUREMENT",
+                "PO-SUCCESS",
+                "PO-COMPLEXITY",
+            ],
+            status=(
+                "proved-polynomial-truncated-pgm-output-decoder"
+                if output
+                else "blocked-truncated-pgm-output-isometry-and-decoder-open"
+            ),
+            falsification_test=(
+                "Specify PREPARE/SELECT/uncomputation, the hypothesis register, failure handling, total gate "
+                "complexity, and a classical attack on the resulting output statistic."
+            ),
+        ),
+    ]
+
+
+def _local_block_metric_normalization_no_go_lemmas(
+    candidate_id: str,
+) -> list[LemmaRecord]:
+    try:
+        report = (
+            json.loads(LOCAL_BLOCK_METRIC_NORMALIZATION_NO_GO_PATH.read_text())
+            if LOCAL_BLOCK_METRIC_NORMALIZATION_NO_GO_PATH.exists()
+            else {}
+        )
+    except (json.JSONDecodeError, OSError):
+        report = {}
+    gate = report.get("claim_gate", {})
+    marginal = bool(
+        gate.get("pair_carrier_exact_natural_marginal_proved", False)
+        and gate.get("simultaneous_source_carrier_ratio_envelope_proved", False)
+    )
+    local_no_go = bool(
+        gate.get("local_singleton_pair_product_metric_access_falsified", False)
+        and gate.get("all_local_pairing_schedules_covered", False)
+    )
+    return [
+        LemmaRecord(
+            id=f"LEMMA-{candidate_id}-PAIR-CARRIER-NATURAL-MARGINAL",
+            candidate_id=candidate_id,
+            statement=(
+                "Under the exact natural pair-carrier branch law, every carrier target has the same "
+                "d_alpha^2(1+r_alpha)/|S_n| marginal as a singleton weak-Fourier source label."
+            ),
+            depends_on=["PO-MEASUREMENT", "PO-SUCCESS"],
+            status=(
+                "proved-exact-pair-carrier-natural-marginal"
+                if marginal
+                else "blocked-pair-carrier-natural-marginal-proof-missing"
+            ),
+            falsification_test=(
+                "Sum the exact Kronecker branch law over both source labels, verify regular-dimension and "
+                "nonidentity regular-character cancellations, and compare every target probability exactly."
+            ),
+        ),
+        LemmaRecord(
+            id=f"LEMMA-{candidate_id}-LOCAL-BLOCK-THRESHOLD-METRIC-NORMALIZATION-NO-GO",
+            candidate_id=candidate_id,
+            statement=(
+                "Every independent tensor product of rank-scaled singleton and disjoint-pair LCUs has "
+                "superpolynomial normalization on overwhelming natural mass at information-threshold width."
+            ),
+            depends_on=[
+                f"LEMMA-{candidate_id}-PAIR-CARRIER-NATURAL-MARGINAL",
+                f"LEMMA-{candidate_id}-PAIR-COVARIANCE-RANK-NORMALIZATION-CANCELLATION",
+                "PO-INPUT-MODEL",
+                "PO-COMPLEXITY",
+            ],
+            status=(
+                "proved-local-singleton-pair-threshold-normalization-no-go"
+                if local_no_go
+                else "blocked-local-threshold-normalization-analysis-missing"
+            ),
+            falsification_test=(
+                "Check every singleton/pair partition s+2p=k under the simultaneous natural ratio envelope; "
+                "do not extend the conclusion to global twirls or nonmultiplicative recursions."
+            ),
+        ),
+    ]
+
+
+def _multiplicity_twirl_projection_lemmas(
+    candidate_id: str,
+) -> list[LemmaRecord]:
+    try:
+        report = (
+            json.loads(MULTIPLICITY_TWIRL_PROJECTION_PATH.read_text())
+            if MULTIPLICITY_TWIRL_PROJECTION_PATH.exists()
+            else {}
+        )
+    except (json.JSONDecodeError, OSError):
+        report = {}
+    gate = report.get("claim_gate", {})
+    projection = bool(
+        gate.get("hilbert_schmidt_commutant_projection_proved", False)
+        and gate.get("compressed_orbit_representative_method_verified", False)
+    )
+    strict_growth_falsified = bool(
+        gate.get("strict_rank_tracking_support_growth_falsified", False)
+    )
+    signed_sector_projection = bool(
+        gate.get("exact_signed_sector_full_twirl_validation_passed", False)
+        and gate.get("nontrivial_beta_blocks_verified", False)
+    )
+    multiplicity_three = bool(
+        gate.get("multiplicity_three_block_verified", False)
+    )
+    uniform = bool(gate.get("universal_support_six_generation_proved", False))
+    try:
+        mass_report = (
+            json.loads(NATURAL_SUPPORT_SIX_MASS_AUDIT_PATH.read_text())
+            if NATURAL_SUPPORT_SIX_MASS_AUDIT_PATH.exists()
+            else {}
+        )
+    except (json.JSONDecodeError, OSError):
+        mass_report = {}
+    mass_gate = mass_report.get("claim_gate", {})
+    selection_bias = bool(
+        mass_gate.get("exact_joint_source_law_normalized", False)
+        and not mass_gate.get(
+            "audited_support_six_blocks_have_nonnegligible_mass",
+            False,
+        )
+    )
+    return [
+        LemmaRecord(
+            id=f"LEMMA-{candidate_id}-MULTIPLICITY-TWIRL-PROJECTION-DIAGNOSTIC",
+            candidate_id=candidate_id,
+            statement=(
+                "K-conjugacy orbit sums can be audited by Hilbert-Schmidt projection of one representative "
+                "onto each exact repeated multiplicity commutant, without constructing full orbit matrices."
+            ),
+            depends_on=["PO-MEASUREMENT", "PO-COMPLEXITY"],
+            status=(
+                "proved-compressed-multiplicity-twirl-projection"
+                if projection
+                else "blocked-multiplicity-twirl-projection-validation-missing"
+            ),
+            falsification_test=(
+                "Check exact branching dimensions, isotypic projectors, commutant orthogonality and K "
+                "commutators, sparse representation actions, and generated algebra dimensions."
+            ),
+        ),
+        LemmaRecord(
+            id=f"LEMMA-{candidate_id}-SIGNED-WEIGHT-TWIRL-PROJECTION",
+            candidate_id=candidate_id,
+            statement=(
+                "For any hyperoctahedral bipartition, full K-twirl restriction can be computed by signed-weight "
+                "sector projection, transport over equal-weight characters, and stabilizer-commutant projection."
+            ),
+            depends_on=[
+                f"LEMMA-{candidate_id}-MULTIPLICITY-TWIRL-PROJECTION-DIAGNOSTIC",
+                "PO-MEASUREMENT",
+            ],
+            status=(
+                "proved-signed-weight-twirl-projection-finite-validation"
+                if signed_sector_projection
+                else "blocked-signed-weight-full-twirl-validation-missing"
+            ),
+            falsification_test=(
+                "Compare the transported-sector formula with explicit full K twirling and verify nontrivial-beta "
+                "branching dimensions, stabilizer commutators, and generated copy algebras."
+            ),
+        ),
+        LemmaRecord(
+            id=f"LEMMA-{candidate_id}-MULTIPLICITY-THREE-SUPPORT-FIVE-CONTROL",
+            candidate_id=candidate_id,
+            statement=(
+                "The S_14 block lambda=(9,4,1), mu=((4,2,1),empty), of branching multiplicity three has its full "
+                "M_3 copy algebra generated by hyperoctahedral orbit sums of moved-point support at most five."
+            ),
+            depends_on=[
+                f"LEMMA-{candidate_id}-MULTIPLICITY-TWIRL-PROJECTION-DIAGNOSTIC",
+            ],
+            status=(
+                "proved-finite-multiplicity-three-support-five-control"
+                if multiplicity_three
+                else "blocked-multiplicity-three-control-missing"
+            ),
+            falsification_test=(
+                "Recompute the exact branching multiplicity, 105-dimensional selected sector, and generated "
+                "matrix-algebra dimension nine under support cutoffs two through six."
+            ),
+        ),
+        LemmaRecord(
+            id=f"LEMMA-{candidate_id}-UNIFORM-SUPPORT-SIX-NATURAL-COMMUTANT",
+            candidate_id=candidate_id,
+            statement=(
+                "Support-at-most-six hyperoctahedral orbit sums generate every naturally occupied repeated "
+                "commutant block with inverse-polynomial resolving gaps and coherent source access."
+            ),
+            depends_on=[
+                f"LEMMA-{candidate_id}-MULTIPLICITY-TWIRL-PROJECTION-DIAGNOSTIC",
+                f"LEMMA-{candidate_id}-SIGNED-WEIGHT-TWIRL-PROJECTION",
+                f"LEMMA-{candidate_id}-MULTIPLICITY-THREE-SUPPORT-FIVE-CONTROL",
+                "PO-MEASUREMENT",
+                "PO-SUCCESS",
+                "PO-COMPLEXITY",
+            ],
+            status=(
+                "proved-uniform-support-six-natural-commutant-transform"
+                if uniform
+                else (
+                    "blocked-finite-controls-negligible-natural-mass-uniformity-gap-and-access-open"
+                    if selection_bias
+                    else "blocked-strict-growth-falsified-support-six-uniformity-gap-and-access-open"
+                    if strict_growth_falsified
+                    else "blocked-support-six-uniformity-open"
+                )
+            ),
+            falsification_test=(
+                "Scan all feasible repeated blocks and then prove natural-mass coverage and spectral gaps; compile "
+                "a reversible source-aware transform rather than extrapolating from finite classical diagnostics."
+            ),
+        ),
+    ]
+
+
+def _natural_support_six_mass_lemmas(candidate_id: str) -> list[LemmaRecord]:
+    try:
+        report = (
+            json.loads(NATURAL_SUPPORT_SIX_MASS_AUDIT_PATH.read_text())
+            if NATURAL_SUPPORT_SIX_MASS_AUDIT_PATH.exists()
+            else {}
+        )
+    except (json.JSONDecodeError, OSError):
+        report = {}
+    gate = report.get("claim_gate", {})
+    exact = bool(gate.get("exact_joint_source_law_normalized", False))
+    negligible = bool(
+        exact
+        and not gate.get(
+            "audited_support_six_blocks_have_nonnegligible_mass",
+            False,
+        )
+    )
+    typical = bool(
+        gate.get("uniform_support_six_generation_proved", False)
+        and gate.get("inverse_polynomial_gap_on_natural_mass_proved", False)
+    )
+    return [
+        LemmaRecord(
+            id=f"LEMMA-{candidate_id}-NATURAL-SUPPORT-SIX-MASS-CENSUS",
+            candidate_id=candidate_id,
+            statement=(
+                "The exact h-even S_14 branching law is normalized, repeated blocks carry dominant source mass, "
+                "with audited support-six coverage measured separately from any asymptotic claim."
+            ),
+            depends_on=[
+                f"LEMMA-{candidate_id}-MULTIPLICITY-TWIRL-PROJECTION-DIAGNOSTIC",
+                "PO-FAMILY",
+                "PO-SUCCESS",
+            ],
+            status=(
+                "proved-exact-finite-source-law-normalization"
+                if exact
+                else "blocked-natural-support-six-mass-census-missing"
+            ),
+            falsification_test=(
+                "Enumerate all even bipartitions, verify exact integer normalization of 2 d_lambda d_mu b/14!, "
+                "and sum the mass of only independently verified support-six controls."
+            ),
+        ),
+        LemmaRecord(
+            id=f"LEMMA-{candidate_id}-TYPICAL-SUPPORT-SIX-GAPPED-COMMUTANT",
+            candidate_id=candidate_id,
+            statement=(
+                "Support-six orbit sums generate and inverse-polynomially resolve multiplicity spaces on a "
+                "one-minus-o(1) natural source family with coherent source access."
+            ),
+            depends_on=[
+                f"LEMMA-{candidate_id}-NATURAL-SUPPORT-SIX-MASS-CENSUS",
+                f"LEMMA-{candidate_id}-UNIFORM-SUPPORT-SIX-NATURAL-COMMUTANT",
+                "PO-MEASUREMENT",
+                "PO-COMPLEXITY",
+                "PO-SUCCESS",
+            ],
+            status=(
+                "proved-typical-support-six-gapped-commutant"
+                if typical
+                else "blocked-high-mass-block-generation-gap-and-coherent-access-open"
+            ),
+            falsification_test=(
+                "Attack the ranked high-mass blocks with a support-six counterexample search, then require a "
+                "uniform symbolic generator and normalized gap theorem before any coherent compiler claim."
+            ),
+        ),
+    ]
+
+
+def _multiplicity_fiber_trace_lemmas(candidate_id: str) -> list[LemmaRecord]:
+    try:
+        report = (
+            json.loads(MULTIPLICITY_FIBER_TRACE_PATH.read_text())
+            if MULTIPLICITY_FIBER_TRACE_PATH.exists()
+            else {}
+        )
+    except (json.JSONDecodeError, OSError):
+        report = {}
+    gate = report.get("claim_gate", {})
+    exact = bool(
+        gate.get("exact_copy_fiber_trace_verified", False)
+        and gate.get("full_k_twirl_validation_passed", False)
+        and gate.get("independent_commutant_projection_validation_passed", False)
+    )
+    compressed = bool(
+        gate.get("polynomial_typical_ambient_compression_proved", False)
+    )
+    return [
+        LemmaRecord(
+            id=f"LEMMA-{candidate_id}-MULTIPLICITY-FIBER-PARTIAL-TRACE",
+            candidate_id=candidate_id,
+            statement=(
+                "A signed YJM root fiber, seminormal carrier propagation, and equal-weight transport "
+                "compute the exact copy-space partial trace without constructing a full isotypic basis."
+            ),
+            depends_on=[
+                f"LEMMA-{candidate_id}-SIGNED-WEIGHT-TWIRL-PROJECTION",
+                "PO-MEASUREMENT",
+            ],
+            status=(
+                "proved-multiplicity-fiber-partial-trace-identity"
+                if exact
+                else "blocked-multiplicity-fiber-reference-validation-missing"
+            ),
+            falsification_test=(
+                "Compare with a full K_4 Reynolds twirl and an independent nontrivial-beta S_14 "
+                "commutant projection, including fiber rank, propagation, and orthogonality residuals."
+            ),
+        ),
+        LemmaRecord(
+            id=f"LEMMA-{candidate_id}-TYPICAL-MULTIPLICITY-FIBER-COMPRESSION",
+            candidate_id=candidate_id,
+            statement=(
+                "The multiplicity-fiber trace has a uniform polynomial-time symbolic or tensor-network "
+                "implementation on one-minus-o(1) natural source mass."
+            ),
+            depends_on=[
+                f"LEMMA-{candidate_id}-MULTIPLICITY-FIBER-PARTIAL-TRACE",
+                f"LEMMA-{candidate_id}-NATURAL-SUPPORT-SIX-MASS-CENSUS",
+                "PO-COMPLEXITY",
+            ],
+            status=(
+                "proved-polynomial-typical-multiplicity-fiber-compression"
+                if compressed
+                else "blocked-exponential-ambient-specht-rows-remain"
+            ),
+            falsification_test=(
+                "Give an explicit contraction whose state size and arithmetic complexity are polynomial "
+                "for typical partitions; reducing columns while retaining dim(V_lambda) rows is insufficient."
+            ),
+        ),
+    ]
+
+
+def _high_mass_support_scan_lemmas(candidate_id: str) -> list[LemmaRecord]:
+    try:
+        report = (
+            json.loads(HIGH_MASS_SUPPORT_SCAN_PATH.read_text())
+            if HIGH_MASS_SUPPORT_SCAN_PATH.exists()
+            else {}
+        )
+    except (json.JSONDecodeError, OSError):
+        report = {}
+    gate = report.get("claim_gate", {})
+    metrics = report.get("headline_metrics", {})
+    finite_closure = bool(
+        gate.get("highest_mass_untested_s14_block_scanned", False)
+        and gate.get(
+            "support_four_full_copy_algebra_numerically_certified",
+            False,
+        )
+        and int(metrics.get("support_four_direct_commutant_nullity", 0)) == 1
+        and float(
+            metrics.get(
+                "support_four_direct_commutant_smallest_nonzero_singular_value",
+                0.0,
+            )
+        )
+        > 1e-6
+    )
+    typical = bool(
+        gate.get("one_minus_o_one_natural_mass_coverage_proved", False)
+        and gate.get("inverse_polynomial_normalized_gap_proved", False)
+    )
+    return [
+        LemmaRecord(
+            id=f"LEMMA-{candidate_id}-HIGH-MASS-S14-SUPPORT-FOUR-CLOSURE",
+            candidate_id=candidate_id,
+            statement=(
+                "On the highest-mass previously untested repeated S_14 branch, support-at-most-three "
+                "orbit sums are proper while a support-four subset has scalar common commutant."
+            ),
+            depends_on=[
+                f"LEMMA-{candidate_id}-MULTIPLICITY-FIBER-PARTIAL-TRACE",
+                f"LEMMA-{candidate_id}-NATURAL-SUPPORT-SIX-MASS-CENSUS",
+            ],
+            status=(
+                "numerically-supported-high-mass-s14-support-four-closure"
+                if finite_closure
+                else "blocked-high-mass-s14-support-scan-missing"
+            ),
+            falsification_test=(
+                "Recompute all support-three matrices and the support-four witness subset; require both a "
+                "connected separator graph and direct commutator nullity one with stable numerical margins."
+            ),
+        ),
+        LemmaRecord(
+            id=f"LEMMA-{candidate_id}-TYPICAL-LOW-SUPPORT-GAPPED-COMMUTANT",
+            candidate_id=candidate_id,
+            statement=(
+                "A bounded-support family supports a scalable adaptive coarse-label hierarchy or direct "
+                "transform on one-minus-o(1) hidden-involution source mass, with normalization accounted for."
+            ),
+            depends_on=[
+                f"LEMMA-{candidate_id}-HIGH-MASS-S14-SUPPORT-FOUR-CLOSURE",
+                f"LEMMA-{candidate_id}-TYPICAL-SUPPORT-SIX-GAPPED-COMMUTANT",
+                "PO-COMPLEXITY",
+                "PO-SUCCESS",
+            ],
+            status=(
+                "proved-typical-low-support-gapped-commutant"
+                if typical
+                else "blocked-one-finite-block-no-mass-or-gap-scaling-theorem"
+            ),
+            falsification_test=(
+                "Require source concentration and a coherent adaptive-label or direct-transform contract; "
+                "a fixed number of complete normalized spectra is obstructed by spectral packing."
+            ),
+        ),
+    ]
+
+
+def _spectral_label_budget_lemmas(candidate_id: str) -> list[LemmaRecord]:
+    try:
+        budget = json.loads(SPECTRAL_LABEL_BUDGET_PATH.read_text())
+    except (OSError, ValueError):
+        budget = {}
+    try:
+        portfolio = json.loads(SOURCE_WEIGHTED_SUPPORT_PORTFOLIO_PATH.read_text())
+    except (OSError, ValueError):
+        portfolio = {}
+    obstruction = bool(budget.get("claim_gate", {}).get(
+        "fixed_count_inverse_polynomial_complete_label_route_obstructed", False))
+    finite = bool(portfolio.get("claim_gate", {}).get("every_scanned_branch_closes_by_support_four", False))
+    return [
+        LemmaRecord(
+            id=f"LEMMA-{candidate_id}-SOURCE-WEIGHTED-S14-SUPPORT-PORTFOLIO",
+            candidate_id=candidate_id,
+            statement="A finite source-ranked portfolio has numerical support-four scalar-commutant witnesses, not an asymptotic transform.",
+            depends_on=[f"LEMMA-{candidate_id}-HIGH-MASS-S14-SUPPORT-FOUR-CLOSURE"],
+            status="numerically-supported-source-ranked-portfolio" if finite else "blocked-portfolio-evidence-missing",
+            falsification_test="Recompute gauge-bound checkpoint matrices and cross-check graph connectivity against direct nullity; require exact arithmetic for a proof.",
+        ),
+        LemmaRecord(
+            id=f"LEMMA-{candidate_id}-SPECTRAL-LABEL-CAPACITY-OBSTRUCTION",
+            candidate_id=candidate_id,
+            statement="A fixed count of bounded-norm inverse-polynomial-gap joint observables cannot completely label typical branching multiplicities under q=2*d_lambda*d_mu*b/|G|.",
+            depends_on=["PO-FAMILY", "PO-INPUT-MODEL", "PO-MEASUREMENT"],
+            status="derived-scoped-packing-obstruction-review-pending" if obstruction else "blocked-spectral-label-budget-missing",
+            falsification_test="Independently verify the source law, endpoint packing, and dimension-sum bound. Do not extend to incomplete labels, growing-depth hierarchies, or arbitrary circuits.",
+        ),
+        LemmaRecord(
+            id=f"LEMMA-{candidate_id}-ADAPTIVE-COARSE-LABEL-COMPILER",
+            candidate_id=candidate_id,
+            statement="A polynomial-depth source-aware hierarchy retains task-relevant hidden-involution information without complete single-separator spectral resolution.",
+            depends_on=[f"LEMMA-{candidate_id}-SPECTRAL-LABEL-CAPACITY-OBSTRUCTION", "PO-COMPLEXITY", "PO-SUCCESS"],
+            status="blocked-no-coherent-coarse-label-hierarchy-or-decoder",
+            falsification_test="Specify reversible projector access, per-node outcome capacity, accumulated error and surviving information; reject dense eigendecomposition disguised as a compiler.",
+        ),
+    ]
+
+
 def lemma_templates(candidate: dict[str, Any]) -> list[LemmaRecord]:
     candidate_id = candidate["id"]
     kind = _candidate_kind(candidate)
@@ -805,6 +1661,16 @@ def lemma_templates(candidate: dict[str, Any]) -> list[LemmaRecord]:
         )
         for lemma_id, statement, depends_on, falsification_test in templates
     ]
+    if candidate_id == "CODE-COSET-COLLECTIVE":
+        records.extend(_disjoint_pair_branch_pgm_compiler_lemmas(candidate_id))
+        records.extend(_disjoint_pair_covariance_polar_lemmas(candidate_id))
+        records.extend(_dimensionless_pgm_truncation_lemmas(candidate_id))
+        records.extend(_local_block_metric_normalization_no_go_lemmas(candidate_id))
+        records.extend(_multiplicity_twirl_projection_lemmas(candidate_id))
+        records.extend(_natural_support_six_mass_lemmas(candidate_id))
+        records.extend(_multiplicity_fiber_trace_lemmas(candidate_id))
+        records.extend(_high_mass_support_scan_lemmas(candidate_id))
+        records.extend(_spectral_label_budget_lemmas(candidate_id))
     if kind == "coset-state":
         try:
             covariant_frame = (

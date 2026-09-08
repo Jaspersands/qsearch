@@ -1,0 +1,605 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "The generic addressed-oracle counterfamily may not occur in representation kernels.",
+      "resolution": "This theorem no longer uses that family. Equation (1) is the exact S_n invariant-projector average and the mass no-go is under the natural Plancherel source law.",
+      "resolved": true
+    },
+    {
+      "objection": "A factorial leaf table is still hidden in the affine average.",
+      "resolution": "The node mask is computed from affine coordinates with O(k dim(U)) CNOTs; the LCU prepares coordinates rather than enumerating masks.",
+      "resolved": true
+    },
+    {
+      "objection": "Normalization one for Fbar_A immediately gives a polynomial response inverse.",
+      "resolution": "False. Natural eigenvalues carrying the native mass sit below every inverse-polynomial scale in Fbar_A at the final sibling node.",
+      "resolved": true
+    },
+    {
+      "objection": "The explicit width factor proves the balanced endpoint itself is ill-conditioned.",
+      "resolution": "False. The factor multiplies both response metrics and cancels exactly from the endpoint effect. The obstruction is the separate-inverse access architecture, not the abstract endpoint ratio.",
+      "resolved": true
+    },
+    {
+      "objection": "Independent child trims could evade the common-trim mass statement.",
+      "resolution": "Intersecting the two QSVT spectral windows gives one compatible parent projection with o(1) relative common-fiber dimension, but this does not rule out a different joint compressed-frame oracle or prove a native-mass statement.",
+      "resolved": false
+    },
+    {
+      "objection": "Small common spectral dimension proves large conditional physical loss.",
+      "resolution": "Not without a native-state density bound on the common fiber. The parent-conditional mass recurrence remains open and is not inferred from rank alone.",
+      "resolved": false
+    },
+    {
+      "objection": "Vanishing polynomial-window mass rules out direct Racah Naimark synthesis.",
+      "resolution": "It does not. A direct circuit may cancel common scale before functional calculus or implement the positive dilation without separate frame inverses.",
+      "resolved": false
+    }
+  ],
+  "affine_frame_controls": [
+    {
+      "affine_dimension": 2,
+      "affine_generators": [
+        1,
+        2
+      ],
+      "affine_mask_table_entry_count": 0,
+      "affine_offset": 0,
+      "ambient_dimension": 8,
+      "control_id": "S3-THREE-BIT-LEFT-SIBLING",
+      "exact_affine_node_representation_average_verified": true,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ]
+      ],
+      "lcu_block_encoding_normalization": 1.0,
+      "maximum_representation_formula_residual": 1.677772389870528e-17,
+      "minimum_normalized_frame_eigenvalue": 0.25,
+      "n": 3,
+      "node_width": 4,
+      "normalized_frame_maximum_eigenvalue": 0.5,
+      "normalized_frame_minimum_positive_eigenvalue": 0.25,
+      "normalized_frame_rank": 8,
+      "orientation_bit_count": 3,
+      "representation_summand_count": 24,
+      "status": "exact-affine-node-representation-average-normalization-one",
+      "target_partition": [
+        3
+      ],
+      "unnormalized_frame_lcu_normalization": 4
+    },
+    {
+      "affine_dimension": 2,
+      "affine_generators": [
+        1,
+        2
+      ],
+      "affine_mask_table_entry_count": 0,
+      "affine_offset": 4,
+      "ambient_dimension": 8,
+      "control_id": "S3-THREE-BIT-RIGHT-SIBLING",
+      "exact_affine_node_representation_average_verified": true,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ]
+      ],
+      "lcu_block_encoding_normalization": 1.0,
+      "maximum_representation_formula_residual": 2.562334593829347e-17,
+      "minimum_normalized_frame_eigenvalue": -3.637812750422802e-17,
+      "n": 3,
+      "node_width": 4,
+      "normalized_frame_maximum_eigenvalue": 0.375,
+      "normalized_frame_minimum_positive_eigenvalue": 0.12499999999999996,
+      "normalized_frame_rank": 5,
+      "orientation_bit_count": 3,
+      "representation_summand_count": 24,
+      "status": "exact-affine-node-representation-average-normalization-one",
+      "target_partition": [
+        3
+      ],
+      "unnormalized_frame_lcu_normalization": 4
+    },
+    {
+      "affine_dimension": 2,
+      "affine_generators": [
+        1,
+        2
+      ],
+      "affine_mask_table_entry_count": 0,
+      "affine_offset": 0,
+      "ambient_dimension": 36,
+      "control_id": "S4-COLLISION-FREE-FULL-AFFINE-NODE",
+      "exact_affine_node_representation_average_verified": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "lcu_block_encoding_normalization": 1.0,
+      "maximum_representation_formula_residual": 1.5498070411438462e-16,
+      "minimum_normalized_frame_eigenvalue": -8.590917157958171e-17,
+      "n": 4,
+      "node_width": 4,
+      "normalized_frame_maximum_eigenvalue": 0.37500000000000006,
+      "normalized_frame_minimum_positive_eigenvalue": 0.12499999999999994,
+      "normalized_frame_rank": 11,
+      "orientation_bit_count": 2,
+      "representation_summand_count": 96,
+      "status": "exact-affine-node-representation-average-normalization-one",
+      "target_partition": [
+        2,
+        2
+      ],
+      "unnormalized_frame_lcu_normalization": 4
+    }
+  ],
+  "circuit_records": [
+    {
+      "affine_coordinate_hadamard_count": 46,
+      "affine_dimension": 46,
+      "affine_mask_cnot_upper_bound": 2162,
+      "average_frame_block_encoding_normalization": 1.0,
+      "controlled_irrep_action_count_per_select": 48,
+      "leaf_metric_table_entries": 0,
+      "n": 16,
+      "node_width_decimal": "70368744177664",
+      "orientation_bit_count": 47,
+      "orientation_workspace_qubits": 47,
+      "permutation_count_decimal": "20922789888000",
+      "permutation_index_workspace_qubits": 45,
+      "polynomial_given_controlled_sn_action": true,
+      "response_pseudoinverse_compiled": false,
+      "status": "normalization-one-affine-frame-lcu-response-inverse-open",
+      "sum_frame_block_encoding_normalization_decimal": "70368744177664"
+    },
+    {
+      "affine_coordinate_hadamard_count": 81,
+      "affine_dimension": 81,
+      "affine_mask_cnot_upper_bound": 6642,
+      "average_frame_block_encoding_normalization": 1.0,
+      "controlled_irrep_action_count_per_select": 83,
+      "leaf_metric_table_entries": 0,
+      "n": 24,
+      "node_width_decimal": "2417851639229258349412352",
+      "orientation_bit_count": 82,
+      "orientation_workspace_qubits": 82,
+      "permutation_count_decimal": "620448401733239439360000",
+      "permutation_index_workspace_qubits": 80,
+      "polynomial_given_controlled_sn_action": true,
+      "response_pseudoinverse_compiled": false,
+      "status": "normalization-one-affine-frame-lcu-response-inverse-open",
+      "sum_frame_block_encoding_normalization_decimal": "2417851639229258349412352"
+    },
+    {
+      "affine_coordinate_hadamard_count": 119,
+      "affine_dimension": 119,
+      "affine_mask_cnot_upper_bound": 14280,
+      "average_frame_block_encoding_normalization": 1.0,
+      "controlled_irrep_action_count_per_select": 121,
+      "leaf_metric_table_entries": 0,
+      "n": 32,
+      "node_width_decimal": "664613997892457936451903530140172288",
+      "orientation_bit_count": 120,
+      "orientation_workspace_qubits": 120,
+      "permutation_count_decimal": "263130836933693530167218012160000000",
+      "permutation_index_workspace_qubits": 118,
+      "polynomial_given_controlled_sn_action": true,
+      "response_pseudoinverse_compiled": false,
+      "status": "normalization-one-affine-frame-lcu-response-inverse-open",
+      "sum_frame_block_encoding_normalization_decimal": "664613997892457936451903530140172288"
+    },
+    {
+      "affine_coordinate_hadamard_count": 161,
+      "affine_dimension": 161,
+      "affine_mask_cnot_upper_bound": 26082,
+      "average_frame_block_encoding_normalization": 1.0,
+      "controlled_irrep_action_count_per_select": 163,
+      "leaf_metric_table_entries": 0,
+      "n": 40,
+      "node_width_decimal": "2923003274661805836407369665432566039311865085952",
+      "orientation_bit_count": 162,
+      "orientation_workspace_qubits": 162,
+      "permutation_count_decimal": "815915283247897734345611269596115894272000000000",
+      "permutation_index_workspace_qubits": 160,
+      "polynomial_given_controlled_sn_action": true,
+      "response_pseudoinverse_compiled": false,
+      "status": "normalization-one-affine-frame-lcu-response-inverse-open",
+      "sum_frame_block_encoding_normalization_decimal": "2923003274661805836407369665432566039311865085952"
+    },
+    {
+      "affine_coordinate_hadamard_count": 204,
+      "affine_dimension": 204,
+      "affine_mask_cnot_upper_bound": 41820,
+      "average_frame_block_encoding_normalization": 1.0,
+      "controlled_irrep_action_count_per_select": 206,
+      "leaf_metric_table_entries": 0,
+      "n": 48,
+      "node_width_decimal": "25711008708143844408671393477458601640355247900524685364822016",
+      "orientation_bit_count": 205,
+      "orientation_workspace_qubits": 205,
+      "permutation_count_decimal": "12413915592536072670862289047373375038521486354677760000000000",
+      "permutation_index_workspace_qubits": 203,
+      "polynomial_given_controlled_sn_action": true,
+      "response_pseudoinverse_compiled": false,
+      "status": "normalization-one-affine-frame-lcu-response-inverse-open",
+      "sum_frame_block_encoding_normalization_decimal": "25711008708143844408671393477458601640355247900524685364822016"
+    }
+  ],
+  "claim_gate": {
+    "actual_affine_node_frame_block_encoding_normalization_one": true,
+    "actual_affine_node_frame_low_description_formula_proved": true,
+    "balanced_response_width_scale_cancellation_proved": true,
+    "classical_separation_proved": false,
+    "direct_local_schur_racah_naimark_ruled_out": false,
+    "hidden_involution_decoder_proved": false,
+    "joint_scale_free_generalized_eigenvalue_compiler_proved": false,
+    "normalized_frame_access_equals_response_access": false,
+    "parent_common_fiber_native_density_bound_proved": false,
+    "parent_conditional_native_loss_o_one_over_depth_proved": false,
+    "physical_pgm_circuit_proved": false,
+    "reason": "The exact aggregate representation frame is succinct and normalization one, but separately pseudoinverting its normalized child blocks reaches only vanishing full-sibling mass and vanishing relative common-fiber dimension. Parent-conditional native density is still open; the remaining high-impact route is a joint scale-free Racah/generalized-eigenvalue Naimark transform.",
+    "separate_polynomial_qsvt_response_preserves_full_sibling_native_mass": false,
+    "separate_qsvt_common_spectral_trim_has_nonvanishing_common_fiber_dimension": false,
+    "separate_qsvt_is_uniform_common_fiber_response_compiler": false,
+    "separate_qsvt_uniform_response_architecture_falsified_on_natural_final_siblings": true,
+    "speedup_claim_allowed": false,
+    "structured_racah_response_oracle_compiled": false,
+    "uniform_affine_node_frame_evaluation_polynomial_given_sn_action": true
+  },
+  "created_at": "2026-08-27T14:21:06.570545+00:00",
+  "falsifiers_triggered": [
+    "Actual affine-node representation kernels require arbitrary addressed metric aggregation.",
+    "Normalization-one access to the averaged child frame is equivalent to polynomial access to its compressed pseudoinverse response.",
+    "The common parent intersection of two inverse-polynomial QSVT spectral windows can have nonvanishing relative dimension in the natural final common fiber.",
+    "The explicit affine width factor by itself makes the abstract balanced endpoint ill-conditioned."
+  ],
+  "headline_metrics": {
+    "actual_affine_node_frame_formula_theorem_count": 1,
+    "affine_frame_control_count": 3,
+    "direct_joint_scale_free_naimark_compiler_count": 0,
+    "equal_width_endpoint_scale_cancellation_theorem_count": 1,
+    "finite_control_failure_count": 0,
+    "finite_full_sibling_mass_requirement_falsified_row_count": 3,
+    "first_finite_full_sibling_mass_no_go_n": 32,
+    "imported_natural_sibling_mass_theorem_count": 1,
+    "imported_positive_mass_common_span_theorem_count": 1,
+    "maximum_endpoint_scale_cancellation_residual": 0.0,
+    "maximum_frame_formula_residual": 1.5498070411438462e-16,
+    "new_quantum_algorithm_count": 0,
+    "normalization_one_affine_node_frame_block_encoding_count": 1,
+    "parent_conditional_native_loss_recurrence_theorem_count": 0,
+    "physical_pgm_circuit_count": 0,
+    "response_scale_control_count": 1,
+    "separate_qsvt_common_fiber_dimension_no_go_theorem_count": 1,
+    "separate_qsvt_full_sibling_mass_no_go_theorem_count": 1,
+    "tail_common_spectral_trim_relative_dimension_upper_bound_proxy": 4.4886815705630336e-30,
+    "tail_full_sibling_native_retained_mass_upper_bound": 5.966968830179406e-38
+  },
+  "natural_window_records": [
+    {
+      "asymptotic_common_spectral_trim_relative_dimension_vanishes": true,
+      "asymptotic_inverse_polynomial_window_mass_vanishes": true,
+      "common_span_event_mass_asymptotic_lower_bound": 0.1111111111111111,
+      "common_span_relative_rank_asymptotic_lower_bound": 0.1484375,
+      "common_spectral_trim_relative_dimension_upper_bound_proxy": 1.0,
+      "conditional_good_event_probability_lower_bound": 0.99609375,
+      "direct_joint_scale_free_naimark_ruled_out": false,
+      "finite_full_sibling_mass_requirement_falsified": false,
+      "globally_distinct_full_sibling_native_loss_lower_bound": 0.0,
+      "globally_distinct_full_sibling_native_retained_mass_upper_bound": 1.0,
+      "hierarchy_depth": 47,
+      "high_spectral_window_relative_rank_upper_bound_proxy": 1.0,
+      "n": 16,
+      "normalized_frame_threshold": 1.52587890625e-05,
+      "parent_common_fiber_native_density_bound_proved": false,
+      "parent_conditional_native_loss_recurrence_proved": false,
+      "polynomial_condition_number": 65536,
+      "polynomial_separate_qsvt_inverse_is_uniform_common_fiber_compiler": false,
+      "polynomial_window_degree": 4,
+      "required_per_level_loss_benchmark": 0.0004526935264825713,
+      "required_retained_mass_benchmark": 0.9995473064735174,
+      "sibling_width_decimal": "70368744177664",
+      "status": "asymptotic-response-window-rank-no-go-finite-mass-bound-vacuous"
+    },
+    {
+      "asymptotic_common_spectral_trim_relative_dimension_vanishes": true,
+      "asymptotic_inverse_polynomial_window_mass_vanishes": true,
+      "common_span_event_mass_asymptotic_lower_bound": 0.1111111111111111,
+      "common_span_relative_rank_asymptotic_lower_bound": 0.1484375,
+      "common_spectral_trim_relative_dimension_upper_bound_proxy": 1.0,
+      "conditional_good_event_probability_lower_bound": 0.9982638888888888,
+      "direct_joint_scale_free_naimark_ruled_out": false,
+      "finite_full_sibling_mass_requirement_falsified": false,
+      "globally_distinct_full_sibling_native_loss_lower_bound": 0.0,
+      "globally_distinct_full_sibling_native_retained_mass_upper_bound": 1.0,
+      "hierarchy_depth": 82,
+      "high_spectral_window_relative_rank_upper_bound_proxy": 1.0,
+      "n": 24,
+      "normalized_frame_threshold": 3.0140817901234566e-06,
+      "parent_common_fiber_native_density_bound_proved": false,
+      "parent_conditional_native_loss_recurrence_proved": false,
+      "polynomial_condition_number": 331776,
+      "polynomial_separate_qsvt_inverse_is_uniform_common_fiber_compiler": false,
+      "polynomial_window_degree": 4,
+      "required_per_level_loss_benchmark": 0.000148720999405116,
+      "required_retained_mass_benchmark": 0.9998512790005949,
+      "sibling_width_decimal": "2417851639229258349412352",
+      "status": "asymptotic-response-window-rank-no-go-finite-mass-bound-vacuous"
+    },
+    {
+      "asymptotic_common_spectral_trim_relative_dimension_vanishes": true,
+      "asymptotic_inverse_polynomial_window_mass_vanishes": true,
+      "common_span_event_mass_asymptotic_lower_bound": 0.1111111111111111,
+      "common_span_relative_rank_asymptotic_lower_bound": 0.1484375,
+      "common_spectral_trim_relative_dimension_upper_bound_proxy": 1.0,
+      "conditional_good_event_probability_lower_bound": 0.9990234375,
+      "direct_joint_scale_free_naimark_ruled_out": false,
+      "finite_full_sibling_mass_requirement_falsified": true,
+      "globally_distinct_full_sibling_native_loss_lower_bound": 0.997141935000799,
+      "globally_distinct_full_sibling_native_retained_mass_upper_bound": 0.002858064999201024,
+      "hierarchy_depth": 120,
+      "high_spectral_window_relative_rank_upper_bound_proxy": 1.0,
+      "n": 32,
+      "normalized_frame_threshold": 9.5367431640625e-07,
+      "parent_common_fiber_native_density_bound_proved": false,
+      "parent_conditional_native_loss_recurrence_proved": false,
+      "polynomial_condition_number": 1048576,
+      "polynomial_separate_qsvt_inverse_is_uniform_common_fiber_compiler": false,
+      "polynomial_window_degree": 4,
+      "required_per_level_loss_benchmark": 6.944444444444444e-05,
+      "required_retained_mass_benchmark": 0.9999305555555555,
+      "sibling_width_decimal": "664613997892457936451903530140172288",
+      "status": "finite-full-sibling-window-mass-falsified-common-fiber-dimension-asymptotic"
+    },
+    {
+      "asymptotic_common_spectral_trim_relative_dimension_vanishes": true,
+      "asymptotic_inverse_polynomial_window_mass_vanishes": true,
+      "common_span_event_mass_asymptotic_lower_bound": 0.1111111111111111,
+      "common_span_relative_rank_asymptotic_lower_bound": 0.1484375,
+      "common_spectral_trim_relative_dimension_upper_bound_proxy": 2.338364848170666e-13,
+      "conditional_good_event_probability_lower_bound": 0.999375,
+      "direct_joint_scale_free_naimark_ruled_out": false,
+      "finite_full_sibling_mass_requirement_falsified": true,
+      "globally_distinct_full_sibling_native_loss_lower_bound": 1.0,
+      "globally_distinct_full_sibling_native_retained_mass_upper_bound": 3.726475955760891e-21,
+      "hierarchy_depth": 162,
+      "high_spectral_window_relative_rank_upper_bound_proxy": 3.471010321503332e-14,
+      "n": 40,
+      "normalized_frame_threshold": 3.90625e-07,
+      "parent_common_fiber_native_density_bound_proved": false,
+      "parent_conditional_native_loss_recurrence_proved": false,
+      "polynomial_condition_number": 2560000,
+      "polynomial_separate_qsvt_inverse_is_uniform_common_fiber_compiler": false,
+      "polynomial_window_degree": 4,
+      "required_per_level_loss_benchmark": 3.8103947568968146e-05,
+      "required_retained_mass_benchmark": 0.999961896052431,
+      "sibling_width_decimal": "2923003274661805836407369665432566039311865085952",
+      "status": "finite-full-sibling-window-mass-falsified-common-fiber-dimension-asymptotic"
+    },
+    {
+      "asymptotic_common_spectral_trim_relative_dimension_vanishes": true,
+      "asymptotic_inverse_polynomial_window_mass_vanishes": true,
+      "common_span_event_mass_asymptotic_lower_bound": 0.1111111111111111,
+      "common_span_relative_rank_asymptotic_lower_bound": 0.1484375,
+      "common_spectral_trim_relative_dimension_upper_bound_proxy": 4.4886815705630336e-30,
+      "conditional_good_event_probability_lower_bound": 0.9995659722222222,
+      "direct_joint_scale_free_naimark_ruled_out": false,
+      "finite_full_sibling_mass_requirement_falsified": true,
+      "globally_distinct_full_sibling_native_loss_lower_bound": 1.0,
+      "globally_distinct_full_sibling_native_retained_mass_upper_bound": 5.966968830179406e-38,
+      "hierarchy_depth": 205,
+      "high_spectral_window_relative_rank_upper_bound_proxy": 6.662886706304503e-31,
+      "n": 48,
+      "normalized_frame_threshold": 1.8838011188271604e-07,
+      "parent_common_fiber_native_density_bound_proved": false,
+      "parent_conditional_native_loss_recurrence_proved": false,
+      "polynomial_condition_number": 5308416,
+      "polynomial_separate_qsvt_inverse_is_uniform_common_fiber_compiler": false,
+      "polynomial_window_degree": 4,
+      "required_per_level_loss_benchmark": 2.3795359904818562e-05,
+      "required_retained_mass_benchmark": 0.9999762046400952,
+      "sibling_width_decimal": "25711008708143844408671393477458601640355247900524685364822016",
+      "status": "finite-full-sibling-window-mass-falsified-common-fiber-dimension-asymptotic"
+    }
+  ],
+  "primary_literature": [
+    {
+      "paper_id": "beals-symmetric-qft-1997",
+      "scope": "Polynomial S_n Fourier/representation-action primitive; no internal Kronecker/Racah response transform is imported.",
+      "url": "https://doi.org/10.1145/258533.258548"
+    },
+    {
+      "paper_id": "gilyen-su-low-wiebe-qsvt-2018",
+      "scope": "Polynomial singular-value functional calculus used only for the scoped separate-pseudoinverse architecture.",
+      "url": "https://arxiv.org/abs/1806.01838"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "derive_actual_affine_node_representation_kernel",
+      "resolution": "Average the exact invariant-projector group sum over a reversible affine mask superposition, yielding equation (1) with no addressed metric table.",
+      "resolved": true
+    },
+    {
+      "obligation": "state_uniform_coherent_evaluation_and_normalization",
+      "resolution": "Affine and permutation PREPARE/SELECT/unprepare gives Fbar_A at normalization one using polynomial workspace under the existing controlled S_n action primitive.",
+      "resolved": true
+    },
+    {
+      "obligation": "separate_frame_access_from_response_access",
+      "resolution": "The response is a compressed pseudoinverse. Equal child widths cancel from the endpoint effect algebraically but not from a circuit that inverts each normalized frame separately.",
+      "resolved": true
+    },
+    {
+      "obligation": "verify_imported_natural_mass_and_common_span_theorems",
+      "resolution": "The live sibling-window theorem certifies inverse-polynomial mass decay, and the live final-root theorem certifies common relative rank 19/128-o(1) on source mass 1/9-o(1).",
+      "resolved": true
+    },
+    {
+      "obligation": "test_common_parent_spectral_dimension_at_polynomial_response_edge",
+      "resolution": "The high-window trace bound implies high-window rank o(D). On the positive-mass event where the final common span has rank at least (19/128-o(1))D, their common spectral intersection has o(1) relative common-fiber dimension.",
+      "resolved": true
+    },
+    {
+      "obligation": "prove_parent_conditional_native_loss_o_one_over_depth",
+      "resolution": "A dimension no-go does not bound a possibly concentrated native parent state. Need a source-weighted density bound on the common fiber or a direct joint Naimark recurrence.",
+      "resolved": false
+    },
+    {
+      "obligation": "compile_joint_scale_free_racah_endpoint_transform",
+      "resolution": "A circuit could in principle exploit the ratio before resolving either absolute normalized-frame scale. No such generalized-eigenvalue or direct Naimark transform is constructed or ruled out.",
+      "resolved": false
+    },
+    {
+      "obligation": "compile_physical_pgm_decoder_and_classical_separation",
+      "resolution": "The result constrains one response architecture and provides neither the complete polar nor an outcome decoder or advantage theorem.",
+      "resolved": false
+    }
+  ],
+  "response_controls": [
+    {
+      "child_width": 4,
+      "common_span_dimension": 5,
+      "control_id": "S3-THREE-BIT-BALANCED-ROOT",
+      "endpoint_effect_maximum_eigenvalue": 0.5555555555555557,
+      "endpoint_effect_minimum_eigenvalue": 0.33333333333333304,
+      "endpoint_effect_scale_cancellation_residual": 0.0,
+      "equal_width_scale_cancels_exactly": true,
+      "exact_response_scale_boundary_verified": true,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ]
+      ],
+      "left_frame_rank": 8,
+      "left_response_minimum_eigenvalue": 0.8333333333333329,
+      "maximum_response_width_scaling_residual": 0.0,
+      "minimum_normalized_child_frame_positive_eigenvalue": 0.12499999999999996,
+      "n": 3,
+      "physical_dimension": 8,
+      "right_frame_rank": 5,
+      "right_response_minimum_eigenvalue": 0.6666666666666665,
+      "separate_inverse_condition_number_lower_bound": 8.000000000000004,
+      "separate_normalized_frame_inverse_still_required": true,
+      "status": "equal-width-response-scale-cancels-separate-inverse-remains",
+      "target_partition": [
+        3
+      ]
+    }
+  ],
+  "status": "affine-node-frame-lcu-proved-separate-qsvt-uniform-common-fiber-falsified-native-density-open",
+  "summary": "Derived a normalization-one all-n affine-node representation frame block encoding and proved exact balanced endpoint scale cancellation, then showed that separate polynomial-resolution QSVT reaches only o(1) full-sibling mass and o(1) relative common-fiber dimension; parent-conditional native mass remains open.",
+  "theorem": {
+    "actual_frame_formula": "Fbar_A=(|A||S_n|)^-1 sum_(e in A,g in S_n) R_e(g) for every affine orientation node A.",
+    "balanced_scale_cancellation": "For equal-width children, multiplying both response metrics by |A| leaves the canonical two-outcome endpoint effect unchanged.",
+    "normalization": "The normalized average Fbar_A has LCU normalization one; the unnormalized sum F_A has the explicit width factor |A|.",
+    "parent_trim_boundary": "On the positive-mass event r>=(19/128-o(1))D, the common intersection of both polynomial QSVT windows has dimension o(r); conversion to parent-conditional native mass is open.",
+    "response_formula": "A_A=X^*F_A^+X=|A|^-1 X^*Fbar_A^+X on the common physical child span.",
+    "separate_inverse_boundary": "Separate inverse-polynomial-resolution QSVT pseudoinversion of Fbar_L and Fbar_R reaches only o(1) full-sibling native mass and o(D) spectral rank.",
+    "status": "affine-node-frame-lcu-proved-separate-qsvt-uniform-common-fiber-falsified-native-density-open",
+    "surviving_route": "A joint scale-free generalized-eigenvalue transform or direct Schur/Racah Naimark recurrence that avoids separate frame inversion remains open.",
+    "theorem_verified": true,
+    "uniform_circuit": "Uniform affine-coordinate and permutation PREPARE, reversible XOR mask evaluation, controlled S_n representation SELECT, then inverse PREPARE."
+  },
+  "theorem_contract": {
+    "access_model": "Coherent affine-coordinate preparation, uniform permutation preparation, controlled Young-basis S_n representation actions, standard LCU block encoding, and QSVT applied separately to each normalized child frame.",
+    "classical_alternative": "Direct classical construction and diagonalization of the physical frames remains exponential in their representation dimension. The theorem supplies no classical response compiler or dequantization; it only excludes the stated separate-QSVT quantum architecture.",
+    "hypothesis": "The exact affine-node representation average, block-encoded at normalization one, can be separately pseudoinverted at polynomial resolution to give a uniform balanced-endpoint compiler on the natural common parent fiber.",
+    "natural_input_relevance": "The mass/rank boundary imports the exact Plancherel sibling second moment, global-distinct conditioning, uniform target/orientation rank concentration, physical native-trace bridge, and positive-mass final common-span theorem.",
+    "negative_boundary": "The separate-pseudoinverse implementation is not a uniform common-fiber compiler: every inverse-polynomial normalized-frame window has o(1) full-sibling native mass and o(D) rank, while the common span has Theta(D) rank on positive source mass.",
+    "normalization": "Fbar_A is exposed at alpha=1; F_A=|A|Fbar_A. QSVT sees the small eigenvalues of Fbar_A even though |A| cancels from the exact two-child endpoint formula.",
+    "positive_boundary": "The actual aggregate child frame does have a table-free all-n representation formula and normalization-one block encoding, and balanced endpoint effects are algebraically independent of the common child width.",
+    "scope": "No lower bound is claimed for a joint generalized-eigenvalue circuit, direct local Schur/Racah Naimark transform, nonlinear multi-query compiler, arbitrary quantum circuit, decoder, or classical separation."
+  }
+}

@@ -11681,6 +11681,19 @@ def findings_from_negative_results(candidates: list[dict[str, Any]], negative_re
     findings: list[DequantizationFinding] = []
     anti_patterns = []
     for item in negative_results:
+        if item.get("id") == "TYPICAL-MULTIPLICITY-SINGLE-GAPPED-SEPARATOR-PACKING-OBSTRUCTION":
+            for candidate in candidates:
+                if candidate["id"] not in item.get("applies_to", []):
+                    continue
+                findings.append(DequantizationFinding(
+                    id=f"DEQ-{candidate['id']}-COMPLETE-SPECTRAL-LABEL-CAPACITY",
+                    created_at=now, target_type="candidate", target_id=candidate["id"],
+                    severity="high",
+                    claim_under_test="A fixed number of normalized inverse-polynomial-gap observables supplies complete typical multiplicity labels.",
+                    evidence=item["reason_invalid"],
+                    required_action="Use a task-relevant coarse measurement, growing-depth hierarchy, or direct transform. This obstruction is not classical dequantization or an HSP circuit lower bound.",
+                    blocks_speedup_claim=True,
+                ))
         evidence = item.get("evidence", {})
         markers = [
             str(evidence.get("problem_type", "")),

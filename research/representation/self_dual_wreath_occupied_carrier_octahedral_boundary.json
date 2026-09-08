@@ -1,0 +1,951 @@
+{
+  "created_at": "2026-09-01T03:21:26.111518+00:00",
+  "theorem_contract": {
+    "stable_family": "tau=[2,2,1^(n-4)]; sources (sign,[2,1^(n-2)]) and three copies of ([n-2,2],[n-1,1]), n>=5.",
+    "representation_identity": "[n-1,1]^tensor2=[n]+[n-1,1]+[n-2,2]+[n-2,1,1], with sign twisting by partition conjugation.",
+    "occupied_decomposition": "K_(2,2,2) tensor C^(n-1) plus K_3 tensor C^((n-1)(n-2)) on the six incident coefficient fibers.",
+    "correlation": "gamma=2/[n(n-1)(n-3)].",
+    "scale_one_boundary": "I+A(K_2,2,2) has minimum -1, while the physical I+gamma A has minimum 1-2gamma>0.",
+    "natural_scope": "The family repeats source partitions and lies outside the asymptotically full globally distinct Plancherel event."
+  },
+  "family_records": [
+    {
+      "n": 5,
+      "target_partition": [
+        2,
+        2,
+        1
+      ],
+      "source_labels": [
+        [
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            2,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            2
+          ],
+          [
+            4,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            2
+          ],
+          [
+            4,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            2
+          ],
+          [
+            4,
+            1
+          ]
+        ]
+      ],
+      "live_differences": [
+        6,
+        7,
+        10,
+        11,
+        12,
+        13
+      ],
+      "live_core_ranks": [
+        16,
+        4,
+        16,
+        4,
+        16,
+        4
+      ],
+      "nonopposite_overlap_count": 12,
+      "opposite_zero_overlap_count": 3,
+      "correlation_numerator": 1,
+      "correlation_denominator": 20,
+      "observed_correlation_denominators": [
+        20
+      ],
+      "maximum_exact_overlap_multiplicity": 16,
+      "octahedral_channel_multiplicity": 4,
+      "triangle_channel_multiplicity": 12,
+      "total_coefficient_dimension": 60,
+      "octahedral_coefficient_trace_mass": 0.4,
+      "unit_correlation_negative_dimension": 8,
+      "unit_correlation_negative_trace_mass": 0.13333333333333333,
+      "physical_gram_minimum_eigenvalue": 0.9,
+      "exact_family_formula_verified": true,
+      "status": "exact-occupied-octahedral-plus-triangle-family-verified"
+    },
+    {
+      "n": 6,
+      "target_partition": [
+        2,
+        2,
+        1,
+        1
+      ],
+      "source_labels": [
+        [
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            4,
+            2
+          ],
+          [
+            5,
+            1
+          ]
+        ],
+        [
+          [
+            4,
+            2
+          ],
+          [
+            5,
+            1
+          ]
+        ],
+        [
+          [
+            4,
+            2
+          ],
+          [
+            5,
+            1
+          ]
+        ]
+      ],
+      "live_differences": [
+        6,
+        7,
+        10,
+        11,
+        12,
+        13
+      ],
+      "live_core_ranks": [
+        25,
+        5,
+        25,
+        5,
+        25,
+        5
+      ],
+      "nonopposite_overlap_count": 12,
+      "opposite_zero_overlap_count": 3,
+      "correlation_numerator": 1,
+      "correlation_denominator": 45,
+      "observed_correlation_denominators": [
+        45
+      ],
+      "maximum_exact_overlap_multiplicity": 25,
+      "octahedral_channel_multiplicity": 5,
+      "triangle_channel_multiplicity": 20,
+      "total_coefficient_dimension": 90,
+      "octahedral_coefficient_trace_mass": 0.3333333333333333,
+      "unit_correlation_negative_dimension": 10,
+      "unit_correlation_negative_trace_mass": 0.1111111111111111,
+      "physical_gram_minimum_eigenvalue": 0.9555555555555556,
+      "exact_family_formula_verified": true,
+      "status": "exact-occupied-octahedral-plus-triangle-family-verified"
+    },
+    {
+      "n": 7,
+      "target_partition": [
+        2,
+        2,
+        1,
+        1,
+        1
+      ],
+      "source_labels": [
+        [
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            2,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            5,
+            2
+          ],
+          [
+            6,
+            1
+          ]
+        ],
+        [
+          [
+            5,
+            2
+          ],
+          [
+            6,
+            1
+          ]
+        ],
+        [
+          [
+            5,
+            2
+          ],
+          [
+            6,
+            1
+          ]
+        ]
+      ],
+      "live_differences": [
+        6,
+        7,
+        10,
+        11,
+        12,
+        13
+      ],
+      "live_core_ranks": [
+        36,
+        6,
+        36,
+        6,
+        36,
+        6
+      ],
+      "nonopposite_overlap_count": 12,
+      "opposite_zero_overlap_count": 3,
+      "correlation_numerator": 1,
+      "correlation_denominator": 84,
+      "observed_correlation_denominators": [
+        84
+      ],
+      "maximum_exact_overlap_multiplicity": 36,
+      "octahedral_channel_multiplicity": 6,
+      "triangle_channel_multiplicity": 30,
+      "total_coefficient_dimension": 126,
+      "octahedral_coefficient_trace_mass": 0.2857142857142857,
+      "unit_correlation_negative_dimension": 12,
+      "unit_correlation_negative_trace_mass": 0.09523809523809523,
+      "physical_gram_minimum_eigenvalue": 0.9761904761904762,
+      "exact_family_formula_verified": true,
+      "status": "exact-occupied-octahedral-plus-triangle-family-verified"
+    },
+    {
+      "n": 8,
+      "target_partition": [
+        2,
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "source_labels": [
+        [
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            6,
+            2
+          ],
+          [
+            7,
+            1
+          ]
+        ],
+        [
+          [
+            6,
+            2
+          ],
+          [
+            7,
+            1
+          ]
+        ],
+        [
+          [
+            6,
+            2
+          ],
+          [
+            7,
+            1
+          ]
+        ]
+      ],
+      "live_differences": [
+        6,
+        7,
+        10,
+        11,
+        12,
+        13
+      ],
+      "live_core_ranks": [
+        49,
+        7,
+        49,
+        7,
+        49,
+        7
+      ],
+      "nonopposite_overlap_count": 12,
+      "opposite_zero_overlap_count": 3,
+      "correlation_numerator": 1,
+      "correlation_denominator": 140,
+      "observed_correlation_denominators": [
+        140
+      ],
+      "maximum_exact_overlap_multiplicity": 49,
+      "octahedral_channel_multiplicity": 7,
+      "triangle_channel_multiplicity": 42,
+      "total_coefficient_dimension": 168,
+      "octahedral_coefficient_trace_mass": 0.25,
+      "unit_correlation_negative_dimension": 14,
+      "unit_correlation_negative_trace_mass": 0.08333333333333333,
+      "physical_gram_minimum_eigenvalue": 0.9857142857142858,
+      "exact_family_formula_verified": true,
+      "status": "exact-occupied-octahedral-plus-triangle-family-verified"
+    },
+    {
+      "n": 10,
+      "target_partition": [
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "source_labels": [
+        [
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            8,
+            2
+          ],
+          [
+            9,
+            1
+          ]
+        ],
+        [
+          [
+            8,
+            2
+          ],
+          [
+            9,
+            1
+          ]
+        ],
+        [
+          [
+            8,
+            2
+          ],
+          [
+            9,
+            1
+          ]
+        ]
+      ],
+      "live_differences": [
+        6,
+        7,
+        10,
+        11,
+        12,
+        13
+      ],
+      "live_core_ranks": [
+        81,
+        9,
+        81,
+        9,
+        81,
+        9
+      ],
+      "nonopposite_overlap_count": 12,
+      "opposite_zero_overlap_count": 3,
+      "correlation_numerator": 1,
+      "correlation_denominator": 315,
+      "observed_correlation_denominators": [
+        315
+      ],
+      "maximum_exact_overlap_multiplicity": 81,
+      "octahedral_channel_multiplicity": 9,
+      "triangle_channel_multiplicity": 72,
+      "total_coefficient_dimension": 270,
+      "octahedral_coefficient_trace_mass": 0.2,
+      "unit_correlation_negative_dimension": 18,
+      "unit_correlation_negative_trace_mass": 0.06666666666666667,
+      "physical_gram_minimum_eigenvalue": 0.9936507936507937,
+      "exact_family_formula_verified": true,
+      "status": "exact-occupied-octahedral-plus-triangle-family-verified"
+    },
+    {
+      "n": 12,
+      "target_partition": [
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "source_labels": [
+        [
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            10,
+            2
+          ],
+          [
+            11,
+            1
+          ]
+        ],
+        [
+          [
+            10,
+            2
+          ],
+          [
+            11,
+            1
+          ]
+        ],
+        [
+          [
+            10,
+            2
+          ],
+          [
+            11,
+            1
+          ]
+        ]
+      ],
+      "live_differences": [
+        6,
+        7,
+        10,
+        11,
+        12,
+        13
+      ],
+      "live_core_ranks": [
+        121,
+        11,
+        121,
+        11,
+        121,
+        11
+      ],
+      "nonopposite_overlap_count": 12,
+      "opposite_zero_overlap_count": 3,
+      "correlation_numerator": 1,
+      "correlation_denominator": 594,
+      "observed_correlation_denominators": [
+        594
+      ],
+      "maximum_exact_overlap_multiplicity": 121,
+      "octahedral_channel_multiplicity": 11,
+      "triangle_channel_multiplicity": 110,
+      "total_coefficient_dimension": 396,
+      "octahedral_coefficient_trace_mass": 0.16666666666666666,
+      "unit_correlation_negative_dimension": 22,
+      "unit_correlation_negative_trace_mass": 0.05555555555555555,
+      "physical_gram_minimum_eigenvalue": 0.9966329966329966,
+      "exact_family_formula_verified": true,
+      "status": "exact-occupied-octahedral-plus-triangle-family-verified"
+    },
+    {
+      "n": 16,
+      "target_partition": [
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "source_labels": [
+        [
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            14,
+            2
+          ],
+          [
+            15,
+            1
+          ]
+        ],
+        [
+          [
+            14,
+            2
+          ],
+          [
+            15,
+            1
+          ]
+        ],
+        [
+          [
+            14,
+            2
+          ],
+          [
+            15,
+            1
+          ]
+        ]
+      ],
+      "live_differences": [
+        6,
+        7,
+        10,
+        11,
+        12,
+        13
+      ],
+      "live_core_ranks": [
+        225,
+        15,
+        225,
+        15,
+        225,
+        15
+      ],
+      "nonopposite_overlap_count": 12,
+      "opposite_zero_overlap_count": 3,
+      "correlation_numerator": 1,
+      "correlation_denominator": 1560,
+      "observed_correlation_denominators": [
+        1560
+      ],
+      "maximum_exact_overlap_multiplicity": 225,
+      "octahedral_channel_multiplicity": 15,
+      "triangle_channel_multiplicity": 210,
+      "total_coefficient_dimension": 720,
+      "octahedral_coefficient_trace_mass": 0.125,
+      "unit_correlation_negative_dimension": 30,
+      "unit_correlation_negative_trace_mass": 0.041666666666666664,
+      "physical_gram_minimum_eigenvalue": 0.9987179487179487,
+      "exact_family_formula_verified": true,
+      "status": "exact-occupied-octahedral-plus-triangle-family-verified"
+    }
+  ],
+  "dense_control": {
+    "n": 5,
+    "ambient_dimension": 160000,
+    "exact_common_dimension_removed": 0,
+    "residual_edge_dimensions": [
+      16,
+      4,
+      16,
+      4,
+      16,
+      4
+    ],
+    "support_projector_commutator_norm": 1.6008727194229958e-15,
+    "occupied_support_projectors_commute": true,
+    "extracted_channel_count": 2,
+    "octahedral_channel_multiplicity": 4,
+    "triangle_channel_multiplicity": 12,
+    "maximum_link_unitarity_residual": 2.4424906541753444e-15,
+    "clique_path_composition_residual": 1.0,
+    "unit_correlation_minimum_eigenvalue": -0.9999999999999777,
+    "unit_correlation_negative_eigenvalue_count": 8,
+    "expected_unit_correlation_negative_eigenvalue_count": 8,
+    "physical_correlation": 0.05,
+    "physical_gram_minimum_eigenvalue": 0.9,
+    "physical_gram_positive": true,
+    "dense_control_verified": true,
+    "status": "occupied-labels-commute-octahedral-clique-normalization-fails"
+  },
+  "natural_mass_records": [
+    {
+      "n": 5,
+      "information_threshold_copy_count": 7,
+      "target_plancherel_mass": "5/24",
+      "exceptional_source_tuple_mass": "1/2624400",
+      "full_control_mass": "1/12597120",
+      "log2_full_control_mass": -23.586590601378,
+      "conditional_octahedral_trace_mass": 0.4,
+      "conditional_negative_normalized_trace_mass": 0.13333333333333333,
+      "repeats_source_partitions": true,
+      "excluded_by_global_distinct_typical_event": true,
+      "positive_natural_mass_proved": false,
+      "status": "repeated-source-octahedral-family-natural-mass-vanishes"
+    },
+    {
+      "n": 8,
+      "information_threshold_copy_count": 16,
+      "target_plancherel_mass": "5/504",
+      "exceptional_source_tuple_mass": "1/1183259256928233062400",
+      "full_control_mass": "1/119272533098365892689920",
+      "log2_full_control_mass": -76.658608029926,
+      "conditional_octahedral_trace_mass": 0.25,
+      "conditional_negative_normalized_trace_mass": 0.08333333333333333,
+      "repeats_source_partitions": true,
+      "excluded_by_global_distinct_typical_event": true,
+      "positive_natural_mass_proved": false,
+      "status": "repeated-source-octahedral-family-natural-mass-vanishes"
+    },
+    {
+      "n": 12,
+      "information_threshold_copy_count": 29,
+      "target_plancherel_mass": "3/492800",
+      "exceptional_source_tuple_mass": "1/32589049191463448295204117345730560000000000000000",
+      "full_control_mass": "1/5353294480517729106625529675992006656000000000000000000",
+      "log2_full_control_mass": -181.804544140273,
+      "conditional_octahedral_trace_mass": 0.16666666666666666,
+      "conditional_negative_normalized_trace_mass": 0.05555555555555555,
+      "repeats_source_partitions": true,
+      "excluded_by_global_distinct_typical_event": true,
+      "positive_natural_mass_proved": false,
+      "status": "repeated-source-octahedral-family-natural-mass-vanishes"
+    },
+    {
+      "n": 16,
+      "information_threshold_copy_count": 45,
+      "target_plancherel_mass": "13/25147584000",
+      "exceptional_source_tuple_mass": "1/707793645619981600766773533702754234546761080158390383371113526722560000000000000000",
+      "full_control_mass": "1/1369176935222670721825915526751295626509259707016450420816713891291678638080000000000000000000",
+      "log2_full_control_mass": -309.392621718947,
+      "conditional_octahedral_trace_mass": 0.125,
+      "conditional_negative_normalized_trace_mass": 0.041666666666666664,
+      "repeats_source_partitions": true,
+      "excluded_by_global_distinct_typical_event": true,
+      "positive_natural_mass_proved": false,
+      "status": "repeated-source-octahedral-family-natural-mass-vanishes"
+    },
+    {
+      "n": 24,
+      "information_threshold_copy_count": 80,
+      "target_plancherel_mass": "1/9770225524899840000",
+      "exceptional_source_tuple_mass": "1/68438336661135470374822805117799113569705246221213252785354795055069220495331526555814328106562764489872378147984093146750745208422400000000000000000000000000000000",
+      "full_control_mass": "1/668657983728314264338995759201279279060509304141765841370234045429199942452625490968020079927634078530361386482580796761059614878521422821684412416000000000000000000000000000000000000",
+      "log2_full_control_mass": -607.332181735449,
+      "conditional_octahedral_trace_mass": 0.08333333333333333,
+      "conditional_negative_normalized_trace_mass": 0.027777777777777776,
+      "repeats_source_partitions": true,
+      "excluded_by_global_distinct_typical_event": true,
+      "positive_natural_mass_proved": false,
+      "status": "repeated-source-octahedral-family-natural-mass-vanishes"
+    },
+    {
+      "n": 32,
+      "information_threshold_copy_count": 118,
+      "target_plancherel_mass": "29/35443270061111736283299840000000",
+      "exceptional_source_tuple_mass": "1/168753411010229223037503263800534827931768589142613271894811984887407880248026834851749913155363298168715895410292381865546170463173155918204974609095834503768274014614680996781973893269969966832025600000000000000000000000000000000000000000000000000000000",
+      "full_control_mass": "1/206247335178253140157685662798923339901891220001437496607746676650357379293464631917864933993896406381550552173204153165191810888389049063641519379420313252160868420305596926677123587868012227244787178491002524853784805376000000000000000000000000000000000000000000000000000000000000000",
+      "log2_full_control_mass": -944.471954427127,
+      "conditional_octahedral_trace_mass": 0.0625,
+      "conditional_negative_normalized_trace_mass": 0.020833333333333332,
+      "repeats_source_partitions": true,
+      "excluded_by_global_distinct_typical_event": true,
+      "positive_natural_mass_proved": false,
+      "status": "repeated-source-octahedral-family-natural-mass-vanishes"
+    },
+    {
+      "n": 48,
+      "information_threshold_copy_count": 203,
+      "target_plancherel_mass": "1/10642931749430789326870961117432591768279737958400000000",
+      "exceptional_source_tuple_mass": "1/932878160110073697904995878469160476527380548751016283796414663012343706834526466361097440302110504939971962099174894826451800910196344449357053001152010814614505004919674091640960719006615956505293963910733293980612229782671319518819296058499892005686594039206077803582637855233189683779893905715373808135418420720576211998794494889768519643584257730668750664476752322148927170150400000000000000000000000000000000000000000000000000000000000000000000000000",
+      "full_control_mass": "1/9928558588586082648809354759562324383278956321300359247288525128099228628744401891267062891827340598002163217422028578154916925679276338443807683768499261446505584263968992931888387228974047560663136229696058647433095915583536755061969239301026564206355038123022894683441692471530929073605202922070329076004742707089717364038861831656112627347522898823681712630522425671523348039101271483586818042592121504695798349235362316943360000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "log2_full_control_mass": -1697.494912677475,
+      "conditional_octahedral_trace_mass": 0.041666666666666664,
+      "conditional_negative_normalized_trace_mass": 0.013888888888888888,
+      "repeats_source_partitions": true,
+      "excluded_by_global_distinct_typical_event": true,
+      "positive_natural_mass_proved": false,
+      "status": "repeated-source-octahedral-family-natural-mass-vanishes"
+    },
+    {
+      "n": 64,
+      "information_threshold_copy_count": 296,
+      "target_plancherel_mass": "61/2031360978897991868971461791354403829451612387527939168141679917635993600000000000000",
+      "exceptional_source_tuple_mass": "1/305922852740381304911268345672399664965251151276374318710608967788004741322665488039521378511454750675305530202543475365442818537709410110266354801835670990707741255922571599065520771849706746863720650574143339213000337079875483027042956389353934677618164510626777927741611938054764938981570884889574201260123071450581549578374564080595201190089669786953595038901463220254050393156801380131585237411590271420471826270244177851607384971517237148552339079831201673164869909060178808964046635963244731861356904219164008218796299861005578073457082443250875130022031523840000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "full_control_mass": "1/10187536813278150523457156712368780295578417644781146792033842935357834052789391255258561505310160330322435711474868819204017987733874307366888920025237656754089813359571143326337090996810790548241104550567409275306580758478718836631348476396382504609248718116370544978363094352481834109223851079896945936193463918707318074490616994462752600565419331624586156021011130134166689845856396507849872679286564062633950120783352574765686700647866869197114631737236660658224553962089619024539774352442851991523946253488791640406879314129326463590354014445895176363654390102698798740124805866184744642916665516185712420076511093151059499024384000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "log2_full_control_mass": -2524.692157387014,
+      "conditional_octahedral_trace_mass": 0.03125,
+      "conditional_negative_normalized_trace_mass": 0.010416666666666666,
+      "repeats_source_partitions": true,
+      "excluded_by_global_distinct_typical_event": true,
+      "positive_natural_mass_proved": false,
+      "status": "repeated-source-octahedral-family-natural-mass-vanishes"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "identify_a_growing_multiplicity_physical_occupied_control",
+      "resolved": true,
+      "resolution": "The exact stable family has coefficient ranks (n-1)^2 and n-1 and channel multiplicities growing as n and n^2."
+    },
+    {
+      "obligation": "test_occupied_carrier_label_commutation",
+      "resolved": true,
+      "resolution": "The coefficient fibers split into exact octahedral and triangle support atoms; the dense physical commutator is roundoff."
+    },
+    {
+      "obligation": "derive_channel_topology_after_atomization",
+      "resolved": true,
+      "resolution": "The six-edge support is the octahedral graph K_(2,2,2), not a star or clique, plus a triangle on the larger fibers."
+    },
+    {
+      "obligation": "prove_positive_natural_mass_for_the_obstruction",
+      "resolved": false,
+      "resolution": "False for this family: it repeats source partitions and its explicit Plancherel mass vanishes; global collisions are o(1)."
+    },
+    {
+      "obligation": "settle_collision_free_typical_label_compatibility",
+      "resolved": false,
+      "resolution": "Need a coefficient-level commutator/holonomy theorem or counterexample for globally distinct typical partitions."
+    }
+  ],
+  "adversarial_audit": [
+    {
+      "objection": "Noncommuting occupied label projectors cause the failure.",
+      "resolved": true,
+      "resolution": "False here: supports commute. The failed inference is from commuting atoms to clique/star channel topology."
+    },
+    {
+      "objection": "The indefinite normalized Gram makes the physical Gram invalid.",
+      "resolved": true,
+      "resolution": "False: physical gamma is O(n^-3), and the exact minimum 1-2gamma is positive. Only unit-correlation trivialization fails."
+    },
+    {
+      "objection": "A growing-rank exact family has positive natural mass.",
+      "resolved": true,
+      "resolution": "False: rank growth and Plancherel mass are separate. The repeated stable source tuple is asymptotically negligible."
+    },
+    {
+      "objection": "This settles the collision-free natural route.",
+      "resolved": false,
+      "resolution": "It does not; global distinctness removes this family from the typical event, where compatibility and graph topology remain open."
+    }
+  ],
+  "headline_metrics": {
+    "all_n_octahedral_channel_formula_theorem_count": 1,
+    "exact_scaling_control_count": 7,
+    "exact_scaling_control_failure_count": 0,
+    "maximum_exact_control_n": 16,
+    "occupied_support_commuting_control_count": 1,
+    "occupied_support_projector_commutator_norm": 1.6008727194229958e-15,
+    "octahedral_channel_edge_count": 12,
+    "octahedral_channel_vertex_count": 6,
+    "dense_octahedral_channel_multiplicity": 4,
+    "dense_triangle_channel_multiplicity": 12,
+    "unit_correlation_minimum_eigenvalue": -0.9999999999999777,
+    "unit_correlation_negative_eigenvalue_count": 8,
+    "physical_gram_minimum_eigenvalue": 0.9,
+    "tail_conditional_octahedral_trace_mass": 0.03125,
+    "tail_log2_full_control_mass": -2524.692157387014,
+    "collision_free_positive_mass_contextuality_theorem_count": 0,
+    "coherent_collision_free_global_atom_labeler_count": 0,
+    "new_quantum_algorithm_count": 0
+  },
+  "claim_gate": {
+    "all_n_occupied_octahedral_channel_formula_proved": true,
+    "occupied_repeated_family_support_projectors_commute": true,
+    "commuting_occupied_supports_force_clique_channels": false,
+    "unit_correlation_vertex_trivialization_valid_for_family": false,
+    "physical_gram_remains_positive": true,
+    "repeated_octahedral_family_has_positive_natural_mass": false,
+    "collision_free_typical_occupied_projectors_commute_all_depth": false,
+    "coherent_collision_free_global_atom_labeler_compiled": false,
+    "coherent_multistar_racah_resolver_compiled": false,
+    "physical_root_anchor_compiled": false,
+    "physical_pgm_compiled": false,
+    "classical_separation_proved": false,
+    "speedup_claim_allowed": false,
+    "reason": "A growing physical occupied family atomizes exactly but produces an octahedral channel, refuting universal star/clique inference. Its repeated-source mass vanishes, so the collision-free typical compatibility and compiler questions remain open."
+  },
+  "status": "occupied-octahedral-channel-proved-repeated-mass-vanishes-collision-free-boundary-open",
+  "summary": "Proved an all-n growing-rank occupied K_(2,2,2) plus K_3 carrier decomposition with commuting labels but failed clique normalization; the repeated-source family has vanishing natural mass.",
+  "falsifiers_triggered": [
+    "Commuting occupied carrier supports do not force star or clique channel topology.",
+    "A unit-correlation flat-clique normalization can be indefinite even when the physical small-correlation Gram is positive.",
+    "Growing coefficient multiplicity does not imply positive Plancherel mass.",
+    "Repeated-label physical counterfamilies cannot settle the globally distinct natural threshold regime."
+  ]
+}
