@@ -42,6 +42,8 @@ class HiddenShiftBaselineRow:
     dequantization_risk: str
     verdict: str
     notes: str
+    random_sample_total_value_calls: int
+    evaluator_total_value_calls: int | None
 
 
 @dataclass(frozen=True)
@@ -79,12 +81,12 @@ def _row_verdict(audit: Any, sample_count: int) -> tuple[str, str]:
     if explicit_verdict == "low-complexity-evaluator-dequantization":
         return (
             "dequantized-by-polynomial-evaluator",
-            "A low-complexity evaluator attack recovers the shift; this family should not support a speedup claim.",
+            "A counted polynomial-time value attack recovers the known-form shift, conditional on its explicit precision/access promise.",
         )
-    if random_verdict == "dequantized-random-sample":
+    if random_verdict == "finite-random-sample-recovery-only":
         return (
-            "dequantized-by-random-samples",
-            f"Random-sample access recovers the shift with sample_count={sample_count}.",
+            "finite-random-sample-recovery-only",
+            f"Random values recover this instance at q={sample_count} per function, using exhaustive shift scoring; no efficient solver is established.",
         )
     if random_verdict == "undersampled-gap-not-evidence":
         return (
@@ -163,6 +165,8 @@ def hidden_shift_baseline_sweep(
                         dequantization_risk=audit.dequantization_risk,
                         verdict=verdict,
                         notes=notes,
+                        random_sample_total_value_calls=2 * min(sample_count, audit.family.domain_size),
+                        evaluator_total_value_calls=explicit_probe.observed_query_budget if explicit_probe else None,
                     )
                 )
 
@@ -171,7 +175,9 @@ def hidden_shift_baseline_sweep(
     if summaries and all(summary.collision_scale_survival_count for summary in summaries):
         status = "query-model-survival-needs-lower-bound"
     if any(summary.random_sample_recovery_count for summary in summaries):
-        status = "dequantized-by-sample-baselines"
+        status = "finite-sample-recoveries-not-efficient-dequantization"
+    if any(summary.low_complexity_evaluator_recovery_count for summary in summaries):
+        status = "blocked-by-polynomial-value-baselines"
 
     return {
         "id": "CLASSICAL-HS-BASELINES-LATEST",
@@ -215,10 +221,10 @@ def build_family_summaries(rows: Sequence[HiddenShiftBaselineRow]) -> list[Famil
         risk_count = sum(1 for row in family_rows if row.dequantization_risk.startswith(("critical", "high")))
         if evaluator_count:
             best_verdict = "reject-low-complexity-evaluator"
-            lesson = "Polynomial-query evaluator reconstruction is enough to demote this family."
+            lesson = "Known-form value reconstruction has counted queries and polynomial bit work; it does not apply to phase-only/state access or arbitrary unknown bent functions."
         elif random_count:
-            best_verdict = "reject-random-sample-dequantized"
-            lesson = "Random sampled access recovers the shift at tested budgets."
+            best_verdict = "finite-sampled-recovery-computational-gap-unresolved"
+            lesson = "Some finite sampled instances are recovered by exhaustive scoring. This is neither an efficient classical solver nor an asymptotic query bound."
         elif collision_survival:
             best_verdict = "survives-sampled-baselines-needs-lower-bound"
             lesson = "Survival at collision-scale sample budgets is useful only if a formal lower bound follows."
@@ -257,6 +263,9 @@ def write_hidden_shift_baselines(
         shift=shift,
         seed=seed,
     )
+    if write_registry:
+        payload["negative_results_written"] = write_negative_results_from_baselines(payload)
+        upsert_scaling_run(payload)
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(payload, indent=2, sort_keys=True))
 
@@ -272,10 +281,11 @@ def write_negative_results_from_baselines(payload: dict[str, Any]) -> int:
             NegativeResultRecord(
                 id=f"CLASSICAL-BASELINE-DEQUANTIZED-{summary['family_id'].upper()}",
                 source="classical_baseline_suite.py",
-                claim=f"{summary['family_id']} survives classical hidden-shift baselines under the tested access models.",
+                claim=f"No tested instance of {summary['family_id']} is recovered by the implemented value-access baselines.",
                 reason_invalid=(
                     f"Baseline sweep found {summary['low_complexity_evaluator_recovery_count']} low-complexity evaluator "
-                    f"recoveries and {summary['random_sample_recovery_count']} random-sample recoveries."
+                    f"recoveries and {summary['random_sample_recovery_count']} finite random-sample recoveries; "
+                    "random-sample scoring remains domain-exhaustive."
                 ),
                 lesson=summary["lesson"],
                 applies_to=["DHS-GOWERS-SIEVE", "HYP-LIT-HIDDEN-SHIFT-SIEVE", "PO-DEQUANTIZATION", "PO-FALSIFIERS"],
@@ -284,6 +294,8 @@ def write_negative_results_from_baselines(payload: dict[str, Any]) -> int:
                     "tested_n_bits": summary["tested_n_bits"],
                     "tested_sample_counts": summary["tested_sample_counts"],
                     "best_verdict": summary["best_verdict"],
+                    "finite_random_recovery_implies_polynomial_time": False,
+                    "applies_to_phase_state_access": False,
                 },
             )
         )

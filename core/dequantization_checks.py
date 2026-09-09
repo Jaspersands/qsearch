@@ -577,20 +577,23 @@ def _read_json(path: Path, fallback: Any) -> Any:
 
 
 def _budget_class(family: dict[str, Any], attack: dict[str, Any]) -> str:
-    name = str(attack.get("name", ""))
-    cost_model = str(attack.get("cost_model", "")).lower()
-    sample_count = attack.get("sample_count")
-    n_bits = int(family.get("n_bits", 0) or 0)
-    poly_threshold = max(64, n_bits**4)
-    if name == "f2_quadratic_algebraic_reconstruction" and attack.get("success"):
-        return "polynomial-query-reconstruction"
-    if "full-table" in cost_model or "truth table" in cost_model or "o(n^2)" in cost_model or "o(n log n)" in cost_model:
+    resources = attack.get("resources") or {}
+    time_class = resources.get("classical_time_class")
+    if (
+        time_class == "polynomial_in_log_domain"
+        and not resources.get("full_table_materialized", True)
+        and resources.get("base_value_queries", 0) > 0
+        and resources.get("shifted_value_queries", 0) > 0
+        and attack.get("sample_count") == resources["base_value_queries"] + resources["shifted_value_queries"]
+        and resources.get("family_promise")
+        and resources.get("precision_requirement")
+    ):
+        return "polynomial-time-value-reconstruction-under-promise"
+    if time_class == "full_table":
         return "domain-scaling-full-table"
-    if "|g|" in cost_model or "exhaustive" in cost_model:
+    if time_class == "domain_exhaustive":
         return "domain-scaling-exhaustive"
-    if sample_count is not None and int(sample_count) <= poly_threshold:
-        return "sample-limited-or-polynomial-query"
-    return "unclassified-cost"
+    return "unverified-resource-accounting"
 
 
 def build_attack_legality_matrix(hidden_shift_audit_path: Path = HIDDEN_SHIFT_AUDIT_PATH) -> dict[str, Any]:
@@ -617,6 +620,7 @@ def build_attack_legality_matrix(hidden_shift_audit_path: Path = HIDDEN_SHIFT_AU
                 "sample_count": attack.get("sample_count"),
                 "recovered_shift": attack.get("recovered_shift"),
                 "budget_class": _budget_class(family, attack),
+                "resources": attack.get("resources"),
                 "cost_model": attack.get("cost_model", ""),
                 "notes": attack.get("notes", ""),
             }
@@ -633,6 +637,7 @@ def build_attack_legality_matrix(hidden_shift_audit_path: Path = HIDDEN_SHIFT_AU
                     "legal": bool(probe.get("legal", False)),
                     "required_queries_for_constant_signal": probe.get("required_queries_for_constant_signal"),
                     "observed_query_budget": probe.get("observed_query_budget"),
+                    "query_count_unit": probe.get("query_count_unit", "unspecified"),
                     "verdict": probe.get("verdict", "missing"),
                     "notes": probe.get("notes", ""),
                 }
@@ -921,7 +926,7 @@ def findings_from_classical_baseline_sweep(path: Path = HIDDEN_SHIFT_BASELINE_PA
                 target_type="classical_baseline_sweep",
                 target_id=str(path),
                 severity="critical",
-                claim_under_test="Hidden-shift candidates survive polynomial-query evaluator baselines across sweep budgets.",
+                claim_under_test="The tested known-form hidden shifts remain hard with classical value access and the stated precision.",
                 evidence=f"Baseline sweep found {evaluator_count} low-complexity evaluator recovery row(s).",
                 required_action="Remove these families from positive evidence or prove the successful evaluator attack is illegal under the input model.",
                 blocks_speedup_claim=True,
@@ -934,10 +939,10 @@ def findings_from_classical_baseline_sweep(path: Path = HIDDEN_SHIFT_BASELINE_PA
                 created_at=now,
                 target_type="classical_baseline_sweep",
                 target_id=str(path),
-                severity="critical",
-                claim_under_test="Restricted random-sample access blocks classical recovery.",
-                evidence=f"Baseline sweep found {random_count} random-sample recovery row(s).",
-                required_action="Demote sampled-access survival claims and record the affected families as negative results.",
+                severity="medium",
+                claim_under_test="No finite sampled-value instance is recovered by implemented exhaustive scoring.",
+                evidence=f"Baseline sweep found {random_count} finite random-sample recovery row(s), with domain-exhaustive classical work.",
+                required_action="Record finite recoveries without declaring a polynomial-time algorithm or asymptotic query upper bound. Assess success over shifts and sizes.",
                 blocks_speedup_claim=True,
             )
         )
@@ -1020,60 +1025,19 @@ def findings_from_fourier_compressibility_baselines(
     if not payload:
         return []
     metrics = payload.get("headline_metrics", {})
-    evaluator_count = int(metrics.get("explicit_evaluator_sparse_recovery_count", 0) or 0)
-    random_count = int(metrics.get("random_sample_sparse_recovery_count", 0) or 0)
     full_table_count = int(metrics.get("full_table_compressible_count", 0) or 0)
     derivative_count = int(metrics.get("derivative_sparse_count", 0) or 0)
-    findings: list[DequantizationFinding] = []
-    if evaluator_count:
-        findings.append(
-            DequantizationFinding(
-                id="DEQ-FOURIER-COMPRESSIBILITY-EVALUATOR-SPARSE",
-                created_at=now,
-                target_type="fourier_compressibility_baseline",
-                target_id=str(path),
-                severity="critical",
-                claim_under_test="Hidden-shift phase families resist sparse Fourier and derivative-spectrum classical learners.",
-                evidence=(
-                    f"Fourier compressibility baseline found {evaluator_count} evaluator-sparse recovery row(s), "
-                    f"including {derivative_count} derivative-sparse row(s)."
-                ),
-                required_action=(
-                    "Remove those families from positive evidence unless the candidate proves the evaluator/sparse-Fourier "
-                    "learner is illegal under the stated access model."
-                ),
-                blocks_speedup_claim=True,
-            )
-        )
-    if random_count:
-        findings.append(
-            DequantizationFinding(
-                id="DEQ-FOURIER-COMPRESSIBILITY-SAMPLE-SPARSE",
-                created_at=now,
-                target_type="fourier_compressibility_baseline",
-                target_id=str(path),
-                severity="critical",
-                claim_under_test="Sample-limited access blocks sparse Fourier or derivative-spectrum recovery.",
-                evidence=f"Fourier compressibility baseline found {random_count} sample-budget sparse recovery row(s).",
-                required_action="Treat affected sampled-access hidden-shift evidence as dequantized and record explicit negative results.",
-                blocks_speedup_claim=True,
-            )
-        )
-    if full_table_count and not evaluator_count:
-        findings.append(
-            DequantizationFinding(
-                id="DEQ-FOURIER-COMPRESSIBILITY-FULL-TABLE",
-                created_at=now,
-                target_type="fourier_compressibility_baseline",
-                target_id=str(path),
-                severity="medium",
-                claim_under_test="Full-table spectral concentration is irrelevant to the claimed input model.",
-                evidence=f"Fourier compressibility baseline found {full_table_count} full-table-compressible row(s).",
-                required_action="Clarify the legal query model and run larger sample-complexity sweeps before interpreting survival.",
-                blocks_speedup_claim=True,
-            )
-        )
-    return findings
+    return [DequantizationFinding(
+        id="DEQ-FOURIER-CONCENTRATION-NOT-A-LEARNER",
+        created_at=now,
+        target_type="fourier_compressibility_baseline",
+        target_id=str(path),
+        severity="high",
+        claim_under_test="Full-table spectral profiles certify legal efficient shift recovery or survival against a learner.",
+        evidence=f"{full_table_count} concentrated and {derivative_count} derivative-small-support rows; this module executes no hidden-shift learner.",
+        required_action="Treat old recovery counters as unsupported. Require a charged learner, derivative-access reduction, shift identifiability, and decoder.",
+        blocks_speedup_claim=True,
+    )]
 
 
 def findings_from_character_shift_baselines(path: Path = CHARACTER_SHIFT_BASELINE_PATH) -> list[DequantizationFinding]:

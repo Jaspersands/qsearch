@@ -26,9 +26,9 @@
   },
   "execution_model": "Research generation and experiments run interactively during active Codex sessions. A GitHub workflow validates pushed snapshots, and a scheduled backup can commit only validation-passing changes; neither mechanism performs autonomous quantum-algorithm research between sessions.",
   "metrics": {
-    "blocking_findings": 1283,
+    "blocking_findings": 1282,
     "experiments": 792,
-    "negative_results": 898,
+    "negative_results": 894,
     "proof_debts": 24,
     "results": 798
   },
@@ -96,7 +96,7 @@
       "short_title": "Cosets",
       "stage": 3,
       "status": "Encoded access checked; useful measurement open",
-      "summary": "Two-QFT restriction preserves normalization and supports logical orbit averages without decoding a copy basis. Independent carrier discard loses the detection signal. The tested small-group binary gains have a classical latent-irrep explanation. No useful detector or access to the unknown centralizer is supplied.",
+      "summary": "Two-QFT restriction preserves normalization and supports logical orbit averages without decoding a copy basis. Independent carrier discard loses the detection signal. A joint quantum label front end plus classical processing reproduces the tested small-group binary gains. No useful detector or access to the unknown centralizer is supplied.",
       "title": "Nonabelian coset states",
       "tone": "active"
     }

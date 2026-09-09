@@ -111,9 +111,10 @@ def _family_records() -> dict[str, dict[str, Any]]:
         entry = families.setdefault(family_id, {"groups": set(), "n_values": set(), "artifacts": set()})
         entry["groups"].add(str(row.get("group", "unknown")))
         entry["n_values"].add(int(row.get("n_bits", 0) or 0))
-        if row.get("explicit_evaluator_sparse_recovery"):
+        learner_evidence = row.get("shift_recovery_attempted") and row.get("certified_query_bound")
+        if learner_evidence and row.get("explicit_evaluator_sparse_recovery"):
             entry["sparse_fourier_evaluator_count"] = entry.get("sparse_fourier_evaluator_count", 0) + 1
-        if row.get("random_sample_sparse_recovery"):
+        if learner_evidence and row.get("random_sample_sparse_recovery"):
             entry["sparse_fourier_sample_count"] = entry.get("sparse_fourier_sample_count", 0) + 1
         entry["artifacts"].add(str(FOURIER_PATH))
 

@@ -322,7 +322,7 @@ def build_snapshot() -> dict[str, Any]:
                 "summary": (
                     "Two-QFT restriction preserves normalization and supports logical orbit averages without "
                     "decoding a copy basis. Independent carrier discard loses the detection signal. "
-                    "The tested small-group binary gains have a classical latent-irrep explanation. "
+                    "A joint quantum label front end plus classical processing reproduces the tested small-group binary gains. "
                     "No useful detector or access to the unknown centralizer is supplied."
                 ),
                 "evidence": (

@@ -1671,7 +1671,7 @@ def _binary_carrier_instrument_lemmas(candidate_id: str) -> list[LemmaRecord]:
     checked = bool(report.get("claim_gate", {}).get("finite_complete_channel_evaluation_verified"))
     return [LemmaRecord(
         id=f"LEMMA-{candidate_id}-FINITE-BINARY-CARRIER-INSTRUMENTS", candidate_id=candidate_id,
-        statement="Complete S3/S4 binary carrier outcome laws satisfy physical mass and data-processing checks; rank-one multiplicity transitions give a classical latent-total-irrep replay, not a general dequantization theorem.",
+        statement="Complete S3/S4 binary carrier laws satisfy mass and data-processing checks; rank-one multiplicity transitions give a classical replay after a joint quantum label front end, not an end-to-end classical solver.",
         depends_on=["PO-INPUT-MODEL", "PO-MEASUREMENT", "PO-DEQUANTIZATION"],
         status="numerically-verified-finite-binary-instrument-and-latent-model" if checked else "blocked-binary-instrument-evidence-missing",
         falsification_test="Compare every null/alternative transcript and row probability, not only Bayes scores. Check joint multiplicity one; the explicit S6 multiplicity-four branch prevents generalization.",

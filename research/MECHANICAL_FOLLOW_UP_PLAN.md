@@ -1,6 +1,21 @@
 # Mechanical Follow-Up Implementation Plan (pass 2)
 
-## Current Checkpoint (2026-09-08)
+## Current Checkpoint (2026-09-10)
+
+The classical access corrections are complete; read the top of
+`research/AGENT_HANDOFF.md` and `research/CLASSICAL_VALUE_ACCESS_AUDIT.md`.
+Do not restore heuristic Fourier recovery flags or reactivate the five
+quarantined unsupported negatives. Full-table concentration is a diagnostic,
+not a learner. Exact quadratic point-query attacks require classical VALUES,
+not DHSP state access. Do not broaden their known-form/precision promises.
+
+Prioritize the remaining integration failures, with one focused regression
+per fix: character-decoder/learnability/family-triage missing scaling writes;
+the symmetric-double-evaluation expected-status mismatch (requires a scope
+review, not a string replacement); public-evaluator runner missing summary;
+DCP state-sample runner fallback artifact path instead of its actual output.
+These failures do not invalidate the new point-query formulas but prevent a
+clean full-suite claim. A module having a test file is not complete coverage.
 
 The source-ranked support portfolio and spectral-label budget are wired in.
 Do not duplicate their modules or restore the single-complete-separator gap

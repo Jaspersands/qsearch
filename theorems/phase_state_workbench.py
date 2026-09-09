@@ -11,9 +11,10 @@ from __future__ import annotations
 
 import json
 import math
-from dataclasses import asdict, dataclass, is_dataclass
+import operator
+from dataclasses import asdict, dataclass, is_dataclass, replace
 from pathlib import Path
-from typing import Any, Iterable, Sequence
+from typing import Any, Callable, Iterable, Sequence
 
 import numpy as np
 
@@ -60,6 +61,94 @@ class DerivativeProfile:
 
 
 @dataclass(frozen=True)
+class AttackResources:
+    """Query counts describe this execution; time bounds are conditional analyses."""
+
+    base_value_queries: int
+    shifted_value_queries: int
+    query_count_unit: str
+    classical_time_class: str
+    classical_time_bound: str
+    memory_bound: str
+    full_table_materialized: bool
+    access_requirement: str
+    precision_requirement: str
+    family_promise: str
+
+    @property
+    def total_value_queries(self) -> int:
+        return self.base_value_queries + self.shifted_value_queries
+
+
+@dataclass(frozen=True)
+class ExactPhaseEvaluator:
+    """A classical value oracle returning phase exponents, not quantum states."""
+
+    domain_size: int
+    phase_modulus: int
+    evaluate: Callable[[int], int]
+
+
+PhaseInput = Sequence[complex] | ExactPhaseEvaluator
+
+
+class _PhaseValueQueries:
+    def __init__(self, source: PhaseInput, domain_size: int, phase_modulus: int):
+        if isinstance(source, ExactPhaseEvaluator):
+            if (source.domain_size, source.phase_modulus) != (domain_size, phase_modulus):
+                raise ValueError("phase evaluator domain or phase modulus mismatch")
+        elif phase_modulus > 2**32:
+            raise ValueError("large phase modulus requires an ExactPhaseEvaluator; binary64 precision is not assumed")
+        self.source = source
+        self.domain_size = domain_size
+        self.phase_modulus = phase_modulus
+        self.count = 0
+
+    def query(self, index: int) -> int:
+        if not 0 <= index < self.domain_size:
+            raise ValueError("phase query outside the domain")
+        self.count += 1
+        if isinstance(self.source, ExactPhaseEvaluator):
+            value = operator.index(self.source.evaluate(index))
+            if not 0 <= value < self.phase_modulus:
+                raise ValueError("exact phase value must be a canonical residue")
+            return value
+        value = complex(self.source[index])
+        if not (math.isfinite(value.real) and math.isfinite(value.imag)):
+            raise ValueError("nonfinite phase value")
+        residue = round(math.atan2(value.imag, value.real) * self.phase_modulus / math.tau) % self.phase_modulus
+        angle = math.tau * residue / self.phase_modulus
+        root = complex(math.cos(angle), math.sin(angle))
+        tolerance = min(1e-8, math.sin(math.pi / self.phase_modulus) / 16)
+        if abs(value - root) > tolerance:
+            raise ValueError("phase value violates the root-of-unity precision contract")
+        return residue
+
+
+def _quadratic_resources(
+    f: _PhaseValueQueries, g: _PhaseValueQueries, time_bound: str, memory_bound: str, promise: str
+) -> AttackResources:
+    exact = all(isinstance(reader.source, ExactPhaseEvaluator) for reader in (f, g))
+    return AttackResources(
+        base_value_queries=f.count,
+        shifted_value_queries=g.count,
+        query_count_unit="total classical value calls to f and g; each separately charged",
+        classical_time_class="polynomial_in_log_domain",
+        classical_time_bound=time_bound,
+        memory_bound=memory_bound,
+        full_table_materialized=False,
+        access_requirement="chosen classical phase VALUES, not an uncontrolled phase oracle or DHSP states",
+        precision_requirement=(
+            "exact integer residues; each output uses ceil(log2(phase_modulus)) bits"
+            if exact else
+            "binary64 values, phase_modulus <= 2^32; error <= min(1e-8, sin(pi/p)/16); "
+            "nearest-root residual checked, but the promised error to the true value is an input assumption"
+        ),
+        family_promise=promise,
+    )
+
+
+@dataclass(frozen=True)
 class ShiftAttackResult:
     name: str
     recovered_shift: int | None
@@ -69,6 +158,7 @@ class ShiftAttackResult:
     notes: str
     legal_query_models: list[str]
     sample_count: int | None = None
+    resources: AttackResources | None = None
 
 
 @dataclass(frozen=True)
@@ -89,6 +179,7 @@ class QueryLowerBoundProbe:
     observed_query_budget: int | None
     verdict: str
     notes: str
+    query_count_unit: str = "unspecified; not an asymptotic lower bound"
 
 
 @dataclass(frozen=True)
@@ -205,6 +296,7 @@ class HiddenShiftWorkbenchResult:
     scaling_history: list[ScalingFamilyRecord]
     summary: str
     falsifiers_triggered: list[str]
+    value_query_controls: list[dict[str, Any]]
 
 
 def _is_prime(value: int) -> bool:
@@ -694,7 +786,7 @@ def correlation_shift_attack(base: Sequence[complex], shifted: Sequence[complex]
         raise ValueError("signals must have the same domain size")
     correlations = np.empty(f.size, dtype=float)
     for guess in range(f.size):
-        correlations[guess] = abs(np.vdot(np.roll(f, -guess), g))
+        correlations[guess] = float(np.real(np.vdot(np.roll(f, -guess), g)))
     best = int(np.argmax(correlations))
     ordered = np.sort(correlations)
     runner_up = float(ordered[-2]) if f.size > 1 else 0.0
@@ -752,11 +844,11 @@ def full_table_group_correlation_attack(
     correlations = np.empty(spec.domain_size, dtype=float)
     for guess in range(spec.domain_size):
         if spec.group == "F2^n":
-            correlations[guess] = abs(sum(np.conjugate(f[x ^ guess]) * g[x] for x in range(spec.domain_size)))
+            correlations[guess] = float(np.real(sum(np.conjugate(f[x ^ guess]) * g[x] for x in range(spec.domain_size))))
         else:
-            correlations[guess] = abs(
+            correlations[guess] = float(np.real(
                 sum(np.conjugate(f[shifted_index(spec, x, guess)]) * g[x] for x in range(spec.domain_size))
-            )
+            ))
     best = int(np.argmax(correlations))
     ordered = np.sort(correlations)
     runner_up = float(ordered[-2]) if spec.domain_size > 1 else 0.0
@@ -857,14 +949,14 @@ def sample_limited_correlation_attack(
     sample_count: int,
     seed: int,
 ) -> ShiftAttackResult:
-    f = np.asarray(base, dtype=complex)
-    g = np.asarray(shifted, dtype=complex)
+    if sample_count < 1:
+        raise ValueError("sample_count must be positive")
     rng = np.random.default_rng(seed)
     count = min(sample_count, spec.domain_size)
     base_xs = rng.choice(spec.domain_size, size=count, replace=False)
     shifted_xs = rng.choice(spec.domain_size, size=count, replace=False)
-    base_samples = {int(x): f[int(x)] for x in base_xs}
-    shifted_samples = {int(x): g[int(x)] for x in shifted_xs}
+    base_samples = {int(x): complex(base[int(x)]) for x in base_xs}
+    shifted_samples = {int(x): complex(shifted[int(x)]) for x in shifted_xs}
     scores = np.empty(spec.domain_size, dtype=float)
     for guess in range(spec.domain_size):
         total = 0.0 + 0.0j
@@ -874,7 +966,7 @@ def sample_limited_correlation_attack(
             if base_index in base_samples:
                 total += np.conjugate(base_samples[base_index]) * g_value
                 overlap += 1
-        scores[guess] = abs(total) / max(overlap, 1)
+        scores[guess] = float(total.real) / max(overlap, 1)
     best = int(np.argmax(scores))
     ordered = np.sort(scores)
     runner_up = float(ordered[-2]) if spec.domain_size > 1 else 0.0
@@ -885,9 +977,15 @@ def sample_limited_correlation_attack(
         success=best == int(true_shift) % spec.domain_size,
         confidence=confidence,
         cost_model=f"O(sample_count * |G|) sparse-overlap scoring with sample_count={count} random f-samples and g-samples",
-        notes="Models a random-sample adversary that cannot query arbitrary shifted locations.",
+        notes="Random values only; exhaustive shift scoring is exponential in log|G|. A finite success is not efficient dequantization.",
         legal_query_models=["random_sample"],
-        sample_count=int(count),
+        sample_count=2 * int(count),
+        resources=AttackResources(
+            int(count), int(count), "total value calls; q random samples per function",
+            "domain_exhaustive", "O(q |G| poly(log|G|)) bit work at bounded value precision",
+            "O(|G| + q) numerical entries", False, "independent random classical value samples of both functions",
+            "numerical complex values; no noise-robust recovery theorem", "no low-degree promise",
+        ),
     )
 
 
@@ -907,17 +1005,20 @@ def chosen_query_exhaustive_correlation_attack(
     allowed.
     """
 
-    f = np.asarray(base, dtype=complex)
-    g = np.asarray(shifted, dtype=complex)
     rng = np.random.default_rng(seed + 8191)
     count = min(max(1, int(query_count)), spec.domain_size)
     xs = rng.choice(spec.domain_size, size=count, replace=False)
+    shifted_samples = {int(x): complex(shifted[int(x)]) for x in xs}
+    base_cache: dict[int, complex] = {}
     scores = np.empty(spec.domain_size, dtype=float)
     for guess in range(spec.domain_size):
         total = 0.0 + 0.0j
-        for x in xs:
-            total += np.conjugate(f[shifted_index(spec, int(x), guess)]) * g[int(x)]
-        scores[guess] = abs(total) / count
+        for x, g_value in shifted_samples.items():
+            index = shifted_index(spec, x, guess)
+            if index not in base_cache:
+                base_cache[index] = complex(base[index])
+            total += np.conjugate(base_cache[index]) * g_value
+        scores[guess] = float(total.real) / count
     best = int(np.argmax(scores))
     ordered = np.sort(scores)
     runner_up = float(ordered[-2]) if spec.domain_size > 1 else 0.0
@@ -928,15 +1029,20 @@ def chosen_query_exhaustive_correlation_attack(
         success=best == int(true_shift) % spec.domain_size,
         confidence=confidence,
         cost_model=(
-            f"O(|G| * q) chosen evaluator queries with q={count}; exponential in n unless the shift space "
-            "has additional exploitable structure"
+            f"|G|+q value queries (cached) and O(|G| * q) comparisons with q={count}; exponential in log|G|"
         ),
         notes=(
             "Arbitrary evaluator access plus an exhaustive shift scan recovers many families; this is a model-separation "
             "baseline, not a polynomial-time dequantization."
         ),
         legal_query_models=["explicit_evaluator"],
-        sample_count=int(count * spec.domain_size),
+        sample_count=len(base_cache) + len(shifted_samples),
+        resources=AttackResources(
+            len(base_cache), len(shifted_samples), "total value calls; cached f calls charged once",
+            "domain_exhaustive", "O(q |G| poly(log|G|)) bit work at bounded value precision",
+            "O(|G| + q) numerical entries", True, "chosen classical values from both functions",
+            "numerical complex values; no noise-robust recovery theorem", "no low-degree promise",
+        ),
     )
 
 
@@ -947,15 +1053,13 @@ def _invert_f2_quadratic_derivative_frequency(frequency: int, n_bits: int) -> in
             shift |= 1 << (bit + 1)
         if (frequency >> (bit + 1)) & 1:
             shift |= 1 << bit
-    if n_bits % 2 and ((frequency >> (n_bits - 1)) & 1):
-        shift |= 1 << (n_bits - 1)
     return shift
 
 
 def f2_quadratic_algebraic_reconstruction_attack(
-    spec: PhaseFamilySpec, base: Sequence[complex], shifted: Sequence[complex], true_shift: int
+    spec: PhaseFamilySpec, base: PhaseInput, shifted: PhaseInput, true_shift: int
 ) -> ShiftAttackResult:
-    if spec.group != "F2^n" or "quadratic" not in spec.id or "masked" in spec.id:
+    if spec.group != "F2^n" or spec.id != "bent_quadratic_f2":
         return ShiftAttackResult(
             name="f2_quadratic_algebraic_reconstruction",
             recovered_shift=None,
@@ -965,28 +1069,43 @@ def f2_quadratic_algebraic_reconstruction_attack(
             notes="Attack skipped because the family is not an unmasked F_2 quadratic form.",
             legal_query_models=["explicit_evaluator"],
         )
-    f = np.asarray(base, dtype=complex)
-    g = np.asarray(shifted, dtype=complex)
-    derivative = np.conjugate(f) * g
-    spectrum = walsh_hadamard_complex(derivative)
-    power = np.abs(spectrum) ** 2
-    frequency = int(np.argmax(power))
+    if spec.n_bits < 1 or spec.domain_size != 1 << spec.n_bits:
+        raise ValueError("invalid canonical F2 quadratic domain")
+    f = _PhaseValueQueries(base, spec.domain_size, 2)
+    g = _PhaseValueQueries(shifted, spec.domain_size, 2)
+    positions = [0] + [1 << bit for bit in range(spec.n_bits)]
+    f_values = [f.query(x) for x in positions]
+    g_values = [g.query(x) for x in positions]
+    derivative = [a ^ b for a, b in zip(f_values, g_values)]
+    frequency = sum((value ^ derivative[0]) << bit for bit, value in enumerate(derivative[1:]))
     recovered = _invert_f2_quadratic_derivative_frequency(frequency, spec.n_bits)
-    top_mass = float(power[frequency] / max(float(power.sum()), 1e-12))
+    # The odd-dimensional radical has zero derivative frequency. Its known
+    # linear term is recovered from the absolute value sign, not a phase state.
+    if spec.n_bits % 2:
+        recovered |= (derivative[0] ^ _f2_quadratic_bit(recovered, spec.n_bits)) << (spec.n_bits - 1)
+    consistent = all(
+        a == _f2_quadratic_bit(x, spec.n_bits) and b == _f2_quadratic_bit(x ^ recovered, spec.n_bits)
+        for x, a, b in zip(positions, f_values, g_values)
+    )
+    resources = _quadratic_resources(
+        f, g, "O(n^3) conservative bit-work bound for the Python bit loops and value checks, n=log2|G|",
+        "O(n^2) bits", "known canonical Q(x)=sum x_(2j)x_(2j+1) plus the last linear bit if n is odd; g(x)=f(x+s)",
+    )
     return ShiftAttackResult(
         name="f2_quadratic_algebraic_reconstruction",
-        recovered_shift=recovered,
-        success=recovered == int(true_shift) % spec.domain_size,
-        confidence=top_mass,
-        cost_model="O(n) chosen-query derivative learning for canonical F_2 quadratic forms",
-        notes="Low-degree algebraic structure maps the hidden shift to a linear derivative frequency.",
+        recovered_shift=recovered if consistent else None,
+        success=consistent and recovered == int(true_shift) % spec.domain_size,
+        confidence=1.0 if consistent else 0.0,
+        cost_model="2(n+1) measured value queries; O(n^3) conservative bit-work bound; no Fourier transform",
+        notes="Known-form promise, not arbitrary bent functions. Confidence means queried-value consistency, not a statistical confidence level.",
         legal_query_models=["explicit_evaluator", "full_table"],
-        sample_count=2 * spec.n_bits + 2,
+        sample_count=resources.total_value_queries,
+        resources=resources,
     )
 
 
 def fp2_quadratic_algebraic_reconstruction_attack(
-    spec: PhaseFamilySpec, base: Sequence[complex], shifted: Sequence[complex], true_shift: int
+    spec: PhaseFamilySpec, base: PhaseInput, shifted: PhaseInput, true_shift: int
 ) -> ShiftAttackResult:
     if spec.group != "F_p^2" or spec.id != "fp2_quadratic_form":
         return ShiftAttackResult(
@@ -1000,6 +1119,8 @@ def fp2_quadratic_algebraic_reconstruction_attack(
         )
 
     prime = int(spec.modulus)
+    if prime < 3 or prime % 2 == 0 or spec.domain_size != prime * prime:
+        raise ValueError("invalid odd-prime F_p^2 domain (primality is a family promise)")
     coefficient_y2 = int(spec.parameters.get("quadratic_y2_coefficient", 5))
     determinant = (4 * coefficient_y2 - 1) % prime
     inverse_determinant = _mod_inverse(determinant, prime)
@@ -1014,29 +1135,39 @@ def fp2_quadratic_algebraic_reconstruction_attack(
             legal_query_models=["explicit_evaluator", "full_table"],
         )
 
-    f = np.asarray(base, dtype=complex)
-    g = np.asarray(shifted, dtype=complex)
-    derivative = np.conjugate(f) * g
-    spectrum = np.fft.fft2(derivative.reshape((prime, prime)))
-    power = np.abs(spectrum) ** 2
-    flat_frequency = int(np.argmax(power.reshape(spec.domain_size)))
-    coeff_x, coeff_y = _fp2_coords(flat_frequency, prime)
+    f = _PhaseValueQueries(base, spec.domain_size, prime)
+    g = _PhaseValueQueries(shifted, spec.domain_size, prime)
+    positions = [0, prime, 1]
+    f_values = [f.query(x) for x in positions]
+    g_values = [g.query(x) for x in positions]
+    derivative = [(b - a) % prime for a, b in zip(f_values, g_values)]
+    coeff_x, coeff_y = ((value - derivative[0]) % prime for value in derivative[1:])
     recovered_x = ((2 * coefficient_y2 * coeff_x - coeff_y) * inverse_determinant) % prime
     recovered_y = ((-coeff_x + 2 * coeff_y) * inverse_determinant) % prime
     recovered = _fp2_index(recovered_x, recovered_y, prime)
-    top_mass = float(power.reshape(spec.domain_size)[flat_frequency] / max(float(power.sum()), 1e-12))
+    def quadratic(index: int) -> int:
+        x, y = _fp2_coords(index, prime)
+        return (x * x + x * y + coefficient_y2 * y * y) % prime
+
+    consistent = all(
+        a == quadratic(x) and b == quadratic(shifted_index(spec, x, recovered))
+        for x, a, b in zip(positions, f_values, g_values)
+    )
+    resources = _quadratic_resources(
+        f, g, "poly(log p) bit work: constant-size modular linear solve with extended Euclid",
+        "O(log p) bits with exact residues",
+        "known Q(x,y)=x^2+xy+c*y^2 over an odd prime field; 4c-1 invertible; g(x)=f(x+s)",
+    )
     return ShiftAttackResult(
         name="fp2_quadratic_algebraic_reconstruction",
-        recovered_shift=recovered,
-        success=recovered == int(true_shift) % spec.domain_size,
-        confidence=top_mass,
-        cost_model=(
-            "O(poly(n)) chosen-query derivative learning for explicit low-degree F_p^2 quadratic forms; "
-            "implemented with a full transform as a finite-instance certificate"
-        ),
-        notes="The derivative of a quadratic form is a linear character whose frequency solves a 2x2 system for the shift.",
+        recovered_shift=recovered if consistent else None,
+        success=consistent and recovered == int(true_shift) % spec.domain_size,
+        confidence=1.0 if consistent else 0.0,
+        cost_model="6 measured value queries; poly(log p) classical bit work; no transform or discrete logarithm",
+        notes="Phase residues are value-oracle outputs, not values extracted from quantum states. Confidence is queried-value consistency only.",
         legal_query_models=["explicit_evaluator", "full_table"],
-        sample_count=4 * spec.n_bits + 8,
+        sample_count=resources.total_value_queries,
+        resources=resources,
     )
 
 
@@ -1065,7 +1196,50 @@ def classical_shift_attacks(
     ]
     if spec.group == "Z_p":
         attacks.insert(1, fourier_phase_shift_attack(base, shifted, true_shift))
-    return attacks
+    return [
+        replace(attack, sample_count=2 * spec.domain_size, resources=AttackResources(
+            spec.domain_size, spec.domain_size, "total values read from both full tables",
+            "full_table", "O(|G|^2 poly(log|G|)) upper bound for the implemented transform/scoring loops",
+            "O(|G|) numerical entries", True, "full classical tables for both functions",
+            "numerical complex values; no noise-robust recovery theorem", "explicit finite group and shift promise",
+        )) if attack.resources is None and attack.legal_query_models == ["full_table"] else attack
+        for attack in attacks
+    ]
+
+
+def quadratic_value_query_controls() -> list[dict[str, Any]]:
+    """Large-domain access regressions, not new candidate families or speedups."""
+
+    controls: list[dict[str, Any]] = []
+    for n_bits in (16, 63, 128, 255):
+        spec = PhaseFamilySpec("bent_quadratic_f2", "F2^n", n_bits, 1 << n_bits, 1 << n_bits, {}, "known-form value-access control")
+        shift = (1 << (n_bits - 1)) | 13
+        base = ExactPhaseEvaluator(spec.domain_size, 2, lambda x, n=n_bits: _f2_quadratic_bit(x, n))
+        shifted = ExactPhaseEvaluator(spec.domain_size, 2, lambda x, s=shift, f=base: f.evaluate(x ^ s))
+        result = f2_quadratic_algebraic_reconstruction_attack(spec, base, shifted, shift)
+        controls.append({
+            "family_id": spec.id, "domain_size": spec.domain_size, "input_size_bits": n_bits,
+            "phase_modulus": 2, "expected_total_value_calls": 2 * (n_bits + 1), "attack": asdict(result),
+        })
+    # Fixed known primes avoid making trial-division prime generation part of
+    # the claimed polynomial-time reconstruction algorithm.
+    for prime in (11, 65537, 2**31 - 1, 2**61 - 1, 2**127 - 1):
+        spec = PhaseFamilySpec("fp2_quadratic_form", "F_p^2", (prime * prime - 1).bit_length(), prime * prime, prime,
+                               {"quadratic_y2_coefficient": 5}, "known-form exact-residue access control")
+        def evaluate(index: int, p: int = prime) -> int:
+            x, y = divmod(index, p)
+            return (x * x + x * y + 5 * y * y) % p
+        shift = (prime - 2) * prime + prime - 3
+        base = ExactPhaseEvaluator(spec.domain_size, prime, evaluate)
+        shifted = ExactPhaseEvaluator(spec.domain_size, prime, lambda x, s=shift, f=base, sp=spec: f.evaluate(shifted_index(sp, x, s)))
+        result = fp2_quadratic_algebraic_reconstruction_attack(spec, base, shifted, shift)
+        controls.append({
+            "family_id": spec.id, "domain_size": spec.domain_size, "input_size_bits": spec.n_bits,
+            "phase_modulus": prime, "expected_total_value_calls": 6, "attack": asdict(result),
+        })
+    if any(not row["attack"]["success"] or row["attack"]["sample_count"] != row["expected_total_value_calls"] for row in controls):
+        raise AssertionError("bounded value-query control failed")
+    return controls
 
 
 QUERY_MODELS = ["full_table", "random_sample", "explicit_evaluator", "coherent_oracle"]
@@ -1077,14 +1251,17 @@ def build_query_model_assessments(attacks: list[ShiftAttackResult]) -> list[Quer
         legal = [attack.name for attack in attacks if model in attack.legal_query_models]
         successful = [attack.name for attack in attacks if model in attack.legal_query_models and attack.success]
         if model == "coherent_oracle":
-            notes = "No purely classical attack is legal in the coherent-oracle model without a stated measurement/sample reduction."
+            notes = (
+                "Unspecified interface: coherent VALUE oracles allow basis-input value queries, whereas phase-only "
+                "oracles and supplied states do not automatically do so. Missing access contract/baseline, not survival."
+            )
         elif successful:
             notes = f"{len(successful)} implemented classical attack(s) recover the shift under this model."
         elif legal:
             notes = "No implemented legal attack recovered the shift under this model; this is only a provisional survival signal."
         else:
             notes = "No implemented classical baseline currently covers this access model."
-        assessments.append(QueryModelAssessment(model, legal, successful, not successful, notes))
+        assessments.append(QueryModelAssessment(model, legal, successful, bool(legal) and not successful, notes))
     return assessments
 
 
@@ -1094,8 +1271,22 @@ def _constant_signal_overlap_sample_bound(domain_size: int) -> int:
     return int(math.ceil(math.sqrt(max(1, domain_size))))
 
 
-def _poly_query_threshold(n_bits: int) -> int:
-    return max(64, int(n_bits**4))
+def polynomial_value_recovery(attack: ShiftAttackResult) -> bool:
+    """Require a stated time analysis and charged queries, not a small finite q."""
+
+    resources = attack.resources
+    return bool(
+        attack.success
+        and "explicit_evaluator" in attack.legal_query_models
+        and resources is not None
+        and resources.classical_time_class == "polynomial_in_log_domain"
+        and not resources.full_table_materialized
+        and resources.base_value_queries > 0
+        and resources.shifted_value_queries > 0
+        and attack.sample_count == resources.total_value_queries
+        and resources.family_promise
+        and resources.precision_requirement
+    )
 
 
 def build_query_lower_bound_probes(
@@ -1112,17 +1303,17 @@ def build_query_lower_bound_probes(
     low_complexity_explicit_successes = [
         attack
         for attack in attacks
-        if attack.success
-        and "explicit_evaluator" in attack.legal_query_models
-        and attack.name != "chosen_query_exhaustive_correlation"
-        and (attack.sample_count is None or attack.sample_count <= _poly_query_threshold(spec.n_bits))
+        if polynomial_value_recovery(attack)
     ]
     exhaustive = next((attack for attack in attacks if attack.name == "chosen_query_exhaustive_correlation"), None)
     overlap_bound = _constant_signal_overlap_sample_bound(spec.domain_size)
 
     if random_success:
-        random_verdict = "dequantized-random-sample"
-        random_notes = "A legal random-sample baseline recovered the shift; this family cannot support the sampled-access claim."
+        random_verdict = "finite-random-sample-recovery-only"
+        random_notes = (
+            "A legal sampled-value baseline recovered this shift using exhaustive classical scoring. "
+            "Neither polynomial runtime nor an asymptotic query upper bound follows from one finite success."
+        )
     elif sample_budget < overlap_bound:
         random_verdict = "undersampled-gap-not-evidence"
         random_notes = (
@@ -1134,16 +1325,19 @@ def build_query_lower_bound_probes(
 
     if low_complexity_explicit_successes:
         explicit_verdict = "low-complexity-evaluator-dequantization"
-        explicit_required = min(attack.sample_count or _poly_query_threshold(spec.n_bits) for attack in low_complexity_explicit_successes)
-        explicit_notes = "A polynomial-sized evaluator attack recovered the shift."
+        selected = min(low_complexity_explicit_successes, key=lambda attack: attack.sample_count)
+        explicit_required = selected.sample_count
+        explicit_notes = "Counted value queries and a polynomial bit-work derivation under the stated known-form/precision promise; not a phase-state attack."
     elif exhaustive and exhaustive.success:
         explicit_verdict = "exhaustive-evaluator-recovery-only"
+        selected = exhaustive
         explicit_required = exhaustive.sample_count
         explicit_notes = (
             "Arbitrary point queries plus exhaustive scoring recover the shift, but the query count still scales with |G|."
         )
     else:
         explicit_verdict = "unresolved-evaluator-model"
+        selected = None
         explicit_required = None
         explicit_notes = "No implemented evaluator-model attack recovered the shift; add chosen-query learning and reconstruction tests."
 
@@ -1152,32 +1346,35 @@ def build_query_lower_bound_probes(
             model="full_table",
             baseline="truth-table correlation / Fourier phase regression",
             legal=True,
-            required_queries_for_constant_signal=spec.domain_size,
-            observed_query_budget=spec.domain_size,
+            required_queries_for_constant_signal=2 * spec.domain_size,
+            observed_query_budget=2 * spec.domain_size,
             verdict="dequantized-full-table" if full_table_success else "unexpected-full-table-survival",
             notes=(
                 "Full-table access is sufficient to recover nondegenerate hidden shifts and should not be counted as quantum evidence."
                 if full_table_success
                 else "Full-table baselines failed; inspect aliases or degeneracy before treating this as positive."
             ),
+            query_count_unit="total f+g values; table budget is an upper-bound baseline, not a required lower bound",
         ),
         QueryLowerBoundProbe(
             model="random_sample",
             baseline="sample-overlap correlation lower-bound probe",
             legal=True,
             required_queries_for_constant_signal=overlap_bound,
-            observed_query_budget=int(sample_budget),
+            observed_query_budget=min(int(sample_budget), spec.domain_size),
             verdict=random_verdict,
             notes=random_notes,
+            query_count_unit="samples PER function; sqrt(|G|) is this overlap heuristic, not a problem lower bound",
         ),
         QueryLowerBoundProbe(
             model="explicit_evaluator",
-            baseline="chosen-query reconstruction / exhaustive evaluator scoring",
+            baseline=selected.name if selected else "no successful resource-accounted evaluator baseline",
             legal=True,
             required_queries_for_constant_signal=explicit_required,
-            observed_query_budget=exhaustive.sample_count if exhaustive else None,
+            observed_query_budget=selected.sample_count if selected else None,
             verdict=explicit_verdict,
             notes=explicit_notes,
+            query_count_unit="total measured f+g value calls of the named baseline; recovery budget, not lower bound",
         ),
         QueryLowerBoundProbe(
             model="coherent_oracle",
@@ -1186,7 +1383,7 @@ def build_query_lower_bound_probes(
             required_queries_for_constant_signal=None,
             observed_query_budget=None,
             verdict="requires-formal-classical-lower-bound",
-            notes="Coherent-oracle survival is a hypothesis about the input model, not evidence for a speedup by itself.",
+            notes="Resolve value-oracle, controlled/uncontrolled phase-oracle, or state-sample access before asking for a lower bound; no baseline coverage is not survival.",
         ),
     ]
 
@@ -1217,13 +1414,7 @@ def audit_hidden_shift_family(
     falsifiers: list[str] = []
     if any(attack.success and "full_table" in attack.legal_query_models for attack in attacks):
         falsifiers.append("Full-table classical shift recovery succeeds; claimed advantage must rely on a stricter oracle/query model.")
-    low_complexity_explicit_success = any(
-        attack.success
-        and "explicit_evaluator" in attack.legal_query_models
-        and attack.name != "chosen_query_exhaustive_correlation"
-        and (attack.sample_count is None or attack.sample_count <= _poly_query_threshold(spec.n_bits))
-        for attack in attacks
-    )
+    low_complexity_explicit_success = any(polynomial_value_recovery(attack) for attack in attacks)
     if low_complexity_explicit_success:
         falsifiers.append("Explicit-evaluator classical attack recovers the shift; low-degree or concise structure is dequantized.")
     if any(attack.name == "chosen_query_exhaustive_correlation" and attack.success for attack in attacks):
@@ -1233,8 +1424,8 @@ def audit_hidden_shift_family(
     if alias_ratio > 0.35:
         falsifiers.append("Autocorrelation aliases are large enough to threaten hidden-shift distinguishability.")
 
-    if survives_restricted and any(attack.success and "full_table" in attack.legal_query_models for attack in attacks):
-        positive = "query-model separation probe: full-table dequantized but restricted sampled model survives implemented baselines"
+    if "random_sample" in survives_restricted and any(attack.success and "full_table" in attack.legal_query_models for attack in attacks):
+        positive = "finite sampled-baseline survival only; full-table recovery works and no query separation is established"
     elif f_profile.flatness_ratio > 0.75 and d_profile.best_support_99_percent <= max(8, n_bits):
         positive = "flat Fourier profile with structured derivatives"
     elif d_profile.best_support_99_percent <= max(8, n_bits):
@@ -1653,7 +1844,9 @@ def run_hidden_shift_workbench(
         f"from {sieve_search.sample_count} phase labels; explicit phase-state trace reaches "
         f"v2={phase_trace.best_two_adic_valuation} with {phase_trace.final_state_count} survivor states."
     )
-    return HiddenShiftWorkbenchResult(utc_now(), audits, sieve, sieve_search, phase_trace, scaling, summary, falsifiers)
+    return HiddenShiftWorkbenchResult(
+        utc_now(), audits, sieve, sieve_search, phase_trace, scaling, summary, falsifiers, quadratic_value_query_controls()
+    )
 
 
 def _json_ready(value: Any) -> Any:
@@ -1770,6 +1963,9 @@ def write_hidden_shift_workbench(
             "query_lower_bound_probe_count": sum(len(audit.query_lower_bound_probes) for audit in result.family_audits),
             "scaling_family_count": len(result.scaling_history),
             "negative_results_written": negative_results_written,
+            "table_free_value_query_control_count": len(result.value_query_controls),
+            "maximum_table_free_control_input_bits": max(row["input_size_bits"] for row in result.value_query_controls),
+            "value_queries_apply_to_dhsp_phase_states": False,
         }
         upsert_experiment_result(
             ExperimentResultRecord(
@@ -1777,7 +1973,7 @@ def write_hidden_shift_workbench(
                 experiment_id=registry_experiment_id,
                 candidate_id=registry_candidate_id,
                 created_at=result.created_at,
-                status="needs-theory" if result.falsifiers_triggered else "promising",
+                status="needs-theory",
                 summary=result.summary,
                 metrics=metrics,
                 falsifiers_triggered=result.falsifiers_triggered,

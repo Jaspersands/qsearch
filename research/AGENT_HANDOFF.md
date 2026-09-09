@@ -1,6 +1,68 @@
 # Research Agent Handoff
 
-Last updated: 2026-09-09
+Last updated: 2026-09-10
+
+## 2026-09-10 Classical Evidence Corrections
+
+Read `research/CLASSICAL_VALUE_ACCESS_AUDIT.md`. Two completed passes corrected
+actual access-model and inference failures, without introducing candidates.
+
+1. `phase_state_workbench.py`: canonical Boolean quadratic reconstruction now
+   makes exactly 2(n+1) classical value calls; F_p^2 quadratic reconstruction
+   makes six. Neither performs a full transform. Exact residue evaluators
+   support nonmaterializable domains through Boolean n=255 and p=2^127-1.
+   Odd-n Boolean recovery uses the absolute value sign; do not extend it to
+   an uncontrolled phase oracle or DHSP states. Counted resources separate
+   query count, classical bit work, memory, precision and the known-form
+   promise. Missing/small finite query counts are not polynomial-time evidence.
+   Random baselines query only sampled points but still exhaust the shift
+   domain. The cached exhaustive evaluator uses |G|+q value calls. Missing
+   coherent-model coverage no longer counts as survival. Baseline registry
+   writes and `--no-registry` behavior are tested and repaired.
+2. `fourier_compressibility_baselines.py` is now explicitly diagnostic-only.
+   It receives no shifted input and runs no learner; its previous recovery
+   claims from spectral concentration/budget heuristics were unsupported.
+   Five original negatives are retained in
+   `research/quarantine/unsupported_fourier_recovery_claims.json`, not active
+   evidence. One scoped negative records the invalid inference. Existing
+   valid low-degree attacks remain. Seed/mutation protocols and downstream
+   triage/dequantization no longer treat these profiles as learned shifts.
+
+Live artifacts: 12 hidden-shift family audits plus 9 exact value-query
+controls; a 48-row baseline sweep with 32 polynomial-value recoveries and 15
+finite random recoveries (exhaustive work); 216 Fourier diagnostic rows with
+zero attempted recoveries. Refreshed hidden-shift, baselines, Fourier runner
+and CLI, query-models, family-triage, dequantize, proofs, conjectures, mutate
+and compact progress. Validation: 8 candidates, 792 experiments, 798 results,
+894 active negatives, 1286 dequantization findings, zero issues. No new
+candidate, decoder, or speedup is claimed. Mutation preflight acceptance is
+schema acceptance only, not mathematical progress.
+
+Verification (overlapping selections, not additive totals): 119 targeted
+access/baseline tests passed (one unrelated exclusion); 90 broader coset,
+proof-pin, mutation, registry and progress tests passed; 48 Fourier/access/
+mutation tests passed (one known triage writer exclusion); 69 downstream
+checks passed (two known exclusions); both affected runner tests passed.
+Python compileall, `node --check site/progress.js` and diff checks pass.
+Full-suite attempt `pytest -q --maxfail=1`: 58 passed, then the unchanged
+character-decoder missing scaling-registry write failed at
+`tests/test_character_decoder_search.py:103` (215.80 seconds). Do not claim
+the full suite is green. The taxonomy test now checks the specific baseline
+classification instead of assuming it dominates all unrelated seed debt;
+the Fourier runner test requires diagnostic status and zero attempted recovery.
+
+Mechanical follow-up still includes missing scaling writes in learnability
+and family triage, the symmetric-double-evaluation proof-status mismatch,
+the public-evaluator runner's missing summary, and the DCP state-sample
+runner's fallback artifact path. Do not change mathematical claims to green
+these tests. `research/MECHANICAL_FOLLOW_UP_PLAN.md` gives handoff boundaries.
+
+Next substantive target remains a source-weighted growing-copy collective
+effect with an actual implementation-cost argument. Do not add another
+small-group alternating-instrument benchmark or a generic spectral diagnostic
+without a live hypothesis it can falsify. A possible whole-register weak-Schur
+rank-testing bound was considered but is not the missing internal recoupling
+operation; implementing a separate generic bound would not close this gap.
 
 ## Binary Carrier Instrument Follow-Up
 
@@ -36,6 +98,11 @@ generalization needs matrix-valued conditional states and a charged method
 for evaluating or sampling the eventual decision rule on natural source mass.
 The new evaluator rejects missing probability mass and does not promote
 optimal finite likelihood tables to scalable classical classifiers.
+
+Verification: 139 broader targeted tests passed in 88.19 seconds. After the
+latest front-end qualification, the 15 instrument/progress tests passed in
+13.95 seconds. This is not a clean full-suite result; the known failure
+below remains. Python compilation, JavaScript syntax and diff checks pass.
 
 Two scoped negatives and two proof-debt lemmas are wired in. Fixed-width
 globally invariant block instruments with only classical history have
@@ -87,8 +154,9 @@ candidate is promoted by the typed mechanism subsystem.
 A new all-suite attempt, `pytest -q --maxfail=1`, stopped after 58 passes at
 the already-known `test_character_decoder_search.py:103` scaling-registry
 write failure (196.05 seconds). Do not claim the full suite is green.
-The last GitHub checkpoint is `09a221a3`, verified on origin/main. This pass
-has not been committed yet, honoring the request for less frequent commits.
+A separate process saved this batch as `6a772ab5` on 2026-09-09; its full SHA
+was verified on origin/main. Do not make a duplicate checkpoint. The latest
+scope/wording refinements and regenerated outputs may remain uncommitted.
 
 Highest next mathematical task: an actual source-weighted collective effect,
 with its measurement compiler and classical contraction costs. Generic

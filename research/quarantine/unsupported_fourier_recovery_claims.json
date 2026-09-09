@@ -1,0 +1,182 @@
+[
+  {
+    "original_record": {
+      "applies_to": [
+        "DHS-GOWERS-SIEVE",
+        "HYP-LIT-HIDDEN-SHIFT-SIEVE",
+        "PO-DEQUANTIZATION",
+        "PO-FALSIFIERS"
+      ],
+      "claim": "bent_quadratic_f2 remains a viable hidden-shift family after sparse Fourier and derivative-spectrum attacks.",
+      "evidence": {
+        "best_verdict": "reject-sample-sparse-fourier",
+        "family_id": "bent_quadratic_f2",
+        "tested_n_bits": [
+          5,
+          6,
+          7,
+          8
+        ],
+        "tested_sample_counts": [
+          4,
+          8,
+          16,
+          32,
+          64,
+          128
+        ]
+      },
+      "id": "FOURIER-COMPRESSIBILITY-DEQUANTIZED-BENT_QUADRATIC_F2",
+      "lesson": "Sample-limited sparse Fourier or derivative learning is enough to demote this family under tested budgets.",
+      "reason_invalid": "24 evaluator-sparse row(s) and 20 sample-sparse row(s) identify a dequantization route.",
+      "source": "fourier_compressibility_baselines.py"
+    },
+    "reason": "Full-table concentration was incorrectly promoted to shift recovery without a learner or shifted input.",
+    "replacement_negative_id": "FOURIER-CONCENTRATION-DOES-NOT-CERTIFY-SHIFT-RECOVERY",
+    "retracted_at": "2026-09-09T11:59:32.090930+00:00"
+  },
+  {
+    "original_record": {
+      "applies_to": [
+        "DHS-GOWERS-SIEVE",
+        "HYP-LIT-HIDDEN-SHIFT-SIEVE",
+        "PO-DEQUANTIZATION",
+        "PO-FALSIFIERS"
+      ],
+      "claim": "fp2_quadratic_form remains a viable hidden-shift family after sparse Fourier and derivative-spectrum attacks.",
+      "evidence": {
+        "best_verdict": "reject-sample-sparse-fourier",
+        "family_id": "fp2_quadratic_form",
+        "tested_n_bits": [
+          5,
+          6,
+          7,
+          8
+        ],
+        "tested_sample_counts": [
+          4,
+          8,
+          16,
+          32,
+          64,
+          128
+        ]
+      },
+      "id": "FOURIER-COMPRESSIBILITY-DEQUANTIZED-FP2_QUADRATIC_FORM",
+      "lesson": "Sample-limited sparse Fourier or derivative learning is enough to demote this family under tested budgets.",
+      "reason_invalid": "24 evaluator-sparse row(s) and 19 sample-sparse row(s) identify a dequantization route.",
+      "source": "fourier_compressibility_baselines.py"
+    },
+    "reason": "Full-table concentration was incorrectly promoted to shift recovery without a learner or shifted input.",
+    "replacement_negative_id": "FOURIER-CONCENTRATION-DOES-NOT-CERTIFY-SHIFT-RECOVERY",
+    "retracted_at": "2026-09-09T11:59:32.090948+00:00"
+  },
+  {
+    "original_record": {
+      "applies_to": [
+        "DHS-GOWERS-SIEVE",
+        "HYP-LIT-HIDDEN-SHIFT-SIEVE",
+        "PO-DEQUANTIZATION",
+        "PO-FALSIFIERS"
+      ],
+      "claim": "masked_quadratic_f2 remains a viable hidden-shift family after sparse Fourier and derivative-spectrum attacks.",
+      "evidence": {
+        "best_verdict": "reject-sample-sparse-fourier",
+        "family_id": "masked_quadratic_f2",
+        "tested_n_bits": [
+          5,
+          6,
+          7,
+          8
+        ],
+        "tested_sample_counts": [
+          4,
+          8,
+          16,
+          32,
+          64,
+          128
+        ]
+      },
+      "id": "FOURIER-COMPRESSIBILITY-DEQUANTIZED-MASKED_QUADRATIC_F2",
+      "lesson": "Sample-limited sparse Fourier or derivative learning is enough to demote this family under tested budgets.",
+      "reason_invalid": "18 evaluator-sparse row(s) and 3 sample-sparse row(s) identify a dequantization route.",
+      "source": "fourier_compressibility_baselines.py"
+    },
+    "reason": "Full-table concentration was incorrectly promoted to shift recovery without a learner or shifted input.",
+    "replacement_negative_id": "FOURIER-CONCENTRATION-DOES-NOT-CERTIFY-SHIFT-RECOVERY",
+    "retracted_at": "2026-09-09T11:59:32.090957+00:00"
+  },
+  {
+    "original_record": {
+      "applies_to": [
+        "DHS-GOWERS-SIEVE",
+        "HYP-LIT-HIDDEN-SHIFT-SIEVE",
+        "PO-DEQUANTIZATION",
+        "PO-FALSIFIERS"
+      ],
+      "claim": "mm_majority_bent_f2 remains a viable hidden-shift family after sparse Fourier and derivative-spectrum attacks.",
+      "evidence": {
+        "best_verdict": "reject-sample-sparse-fourier",
+        "family_id": "mm_majority_bent_f2",
+        "tested_n_bits": [
+          5,
+          6,
+          7,
+          8
+        ],
+        "tested_sample_counts": [
+          4,
+          8,
+          16,
+          32,
+          64,
+          128
+        ]
+      },
+      "id": "FOURIER-COMPRESSIBILITY-DEQUANTIZED-MM_MAJORITY_BENT_F2",
+      "lesson": "Sample-limited sparse Fourier or derivative learning is enough to demote this family under tested budgets.",
+      "reason_invalid": "24 evaluator-sparse row(s) and 20 sample-sparse row(s) identify a dequantization route.",
+      "source": "fourier_compressibility_baselines.py"
+    },
+    "reason": "Full-table concentration was incorrectly promoted to shift recovery without a learner or shifted input.",
+    "replacement_negative_id": "FOURIER-CONCENTRATION-DOES-NOT-CERTIFY-SHIFT-RECOVERY",
+    "retracted_at": "2026-09-09T11:59:32.090963+00:00"
+  },
+  {
+    "original_record": {
+      "applies_to": [
+        "DHS-GOWERS-SIEVE",
+        "HYP-LIT-HIDDEN-SHIFT-SIEVE",
+        "PO-DEQUANTIZATION",
+        "PO-FALSIFIERS"
+      ],
+      "claim": "quadratic_chirp remains a viable hidden-shift family after sparse Fourier and derivative-spectrum attacks.",
+      "evidence": {
+        "best_verdict": "reject-sample-sparse-fourier",
+        "family_id": "quadratic_chirp",
+        "tested_n_bits": [
+          5,
+          6,
+          7,
+          8
+        ],
+        "tested_sample_counts": [
+          4,
+          8,
+          16,
+          32,
+          64,
+          128
+        ]
+      },
+      "id": "FOURIER-COMPRESSIBILITY-DEQUANTIZED-QUADRATIC_CHIRP",
+      "lesson": "Sample-limited sparse Fourier or derivative learning is enough to demote this family under tested budgets.",
+      "reason_invalid": "24 evaluator-sparse row(s) and 19 sample-sparse row(s) identify a dequantization route.",
+      "source": "fourier_compressibility_baselines.py"
+    },
+    "reason": "Full-table concentration was incorrectly promoted to shift recovery without a learner or shifted input.",
+    "replacement_negative_id": "FOURIER-CONCENTRATION-DOES-NOT-CERTIFY-SHIFT-RECOVERY",
+    "retracted_at": "2026-09-09T11:59:32.090969+00:00"
+  }
+]

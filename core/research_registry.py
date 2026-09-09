@@ -4897,27 +4897,26 @@ def seed_candidate_records() -> tuple[list[CandidateRecord], list[ExperimentReco
         ExperimentRecord(
             id="EXP-DHS-FOURIER-COMPRESSIBILITY",
             candidate_id="DHS-GOWERS-SIEVE",
-            title="Sparse Fourier and derivative-spectrum dequantization sweep",
+            title="Full-table Fourier and derivative-spectrum diagnostic",
             status="planned",
-            hypothesis="Viable hidden-shift phase families are not compressible by sparse Fourier or derivative-spectrum learners under legal access models.",
+            hypothesis="Full-table spectral concentration may suggest a learner, but does not itself certify one or identify the hidden shift.",
             protocol=(
                 "Generate explicit phase families across increasing group sizes; compute full-table Fourier concentration, "
-                "derivative spectra, sparse-recovery query estimates, and sample-budget legality."
+                "derivative spectra, and explicitly heuristic budget estimates. No shifted input or learner is supplied."
             ),
-            positive_signal="No polynomial-query evaluator or sample-limited sparse Fourier learner is certified while phase-state structure remains.",
+            positive_signal="Diagnostic only; neither concentrated nor broad spectra constitute positive quantum evidence.",
             falsifiers=[
-                "Base phase spectrum is poly-sparse.",
-                "A derivative spectrum is poly-sparse with polynomial sparse-recovery query estimate.",
-                "Sample budgets reach the estimated sparse-recovery threshold.",
+                "An actual legal learner and charged decoder recover shifts uniformly over the promised family.",
+                "A spectral profile or heuristic budget is incorrectly promoted to a recovery theorem.",
             ],
             metrics=[
-                "explicit_evaluator_sparse_recovery_count",
-                "random_sample_sparse_recovery_count",
+                "shift_recovery_attempt_count",
+                "certified_query_bound_count",
                 "derivative_sparse_count",
                 "spectrally_unresolved_count",
             ],
             dependencies=["fourier_compressibility_baselines.py", "phase_state_workbench.py"],
-            next_actions=["Run qsearch.py fourier-learnability.", "Turn every sparse family into a negative result."],
+            next_actions=["Run qsearch.py fourier-learnability as a diagnostic.", "Require identifiability and legal learner access before constructing a decoder."],
         ),
         ExperimentRecord(
             id="EXP-DHS-QUERY-LOWER-BOUND-PROBES",

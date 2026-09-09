@@ -3046,6 +3046,7 @@ def command_hidden_shift(args: argparse.Namespace) -> int:
     print("Hidden-shift/DHSP workbench complete")
     print("Artifact: research/phase_workbench/hidden_shift_audit.json")
     print(f"Family audits: {len(payload['family_audits'])}")
+    print(f"Table-free exact value-query controls: {len(payload['value_query_controls'])}; no phase-state access is assumed")
     print(f"Summary: {payload['summary']}")
     print(
         "Legacy idealized phase-label trace: "

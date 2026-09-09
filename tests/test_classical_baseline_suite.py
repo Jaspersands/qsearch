@@ -51,6 +51,24 @@ class ClassicalBaselineSuiteTests(unittest.TestCase):
         self.assertTrue(any(item["id"].startswith("CLASSICAL-BASELINE-DEQUANTIZED-") for item in negatives))
         self.assertTrue(any(item["target_type"] == "classical_baseline_sweep" for item in report["findings"]))
         self.assertTrue(validation["valid"])
+        evidence = next(item["evidence"] for item in negatives if item["id"].startswith("CLASSICAL-BASELINE-DEQUANTIZED-"))
+        self.assertFalse(evidence["finite_random_recovery_implies_polynomial_time"])
+        self.assertFalse(evidence["applies_to_phase_state_access"])
+
+    def test_no_registry_really_leaves_registries_unchanged(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                before_runs, before_negatives = load_scaling_runs(), load_negative_results()
+                write_hidden_shift_baselines(
+                    families=["bent_quadratic_f2"], n_values=[4], sample_counts=[4], write_registry=False,
+                )
+                self.assertEqual(before_runs, load_scaling_runs())
+                self.assertEqual(before_negatives, load_negative_results())
+            finally:
+                os.chdir(old_cwd)
 
 
 if __name__ == "__main__":

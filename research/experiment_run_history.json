@@ -17144,5 +17144,89 @@
     "run_id": "RUN-EXP-COSET-RECOUPLING-MECHANISM-SYNTHESIS-00526",
     "status": "typed-mutations-ranked-no-proof-gate-eligible-mechanism",
     "summary": "Evaluated 9 typed collective-measurement architectures, rejected 6 known-invalid shortcuts, and retained 3 proof-capability research proposals without promoting candidates."
+  },
+  {
+    "artifacts": {
+      "binary_carrier_instruments": "research/representation/coset_binary_carrier_instruments.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "experiment_id": "EXP-COSET-BINARY-CARRIER-INSTRUMENTS",
+    "falsifier_count": 4,
+    "falsifiers_triggered": [
+      "Conjugation invariance removes hidden-member information, not necessarily class-versus-trivial information.",
+      "Measuring another carrier label can irreversibly lose information; a large commutator does not certify an improved detector.",
+      "All tested L/R binary outcome laws are reproduced by classical latent-irrep dynamics after the joint quantum label front end; no legal classical replacement of that front end is supplied.",
+      "Fixed-copy invariant instruments repeated polynomially many times remain below the required asymptotic information budget."
+    ],
+    "metrics": {
+      "explicit_one_pair_classifiers_checked": 4,
+      "finite_full_source_controls_passed": 2,
+      "growing_copy_measurement_compilers": 0,
+      "schedules_evaluated": 24,
+      "source_blocks_evaluated": 152,
+      "source_blocks_with_exact_latent_irrep_model": 152
+    },
+    "recorded_at": "2026-09-09T11:30:50.103909+00:00",
+    "result_id": "RESULT-EXP-COSET-BINARY-CARRIER-INSTRUMENTS",
+    "run_id": "RUN-EXP-COSET-BINARY-CARRIER-INSTRUMENTS-00527",
+    "status": "binary-instrument-calibration-fixed-copy-route-obstructed",
+    "summary": "Complete natural-source carrier transcripts are evaluated for binary detection, separately from identification. Measurement disturbance and the uncompiled residual Helstrom gap are charged. Fixed-copy invariant block repetition cannot yield scalable advantage."
+  },
+  {
+    "artifacts": {
+      "coset_recoupling_mechanism_synthesis": "research/representation/coset_recoupling_mechanism_synthesis.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "experiment_id": "EXP-COSET-RECOUPLING-MECHANISM-SYNTHESIS",
+    "falsifier_count": 6,
+    "falsifiers_triggered": [
+      "QFT-only weak-label decoding is a known no-go route.",
+      "Multiplicity statistics are not a coherent transform or decoder.",
+      "Spectrum-rank PGM and one-tree k-copy recursion fail exact finite/all-n tests.",
+      "Exceptional commuting or restricted multiplicity families do not inherit full source-family reductions.",
+      "No surviving architecture currently satisfies every proof-critical capability.",
+      "Every architecture must also satisfy the exact class-specific Holevo/Fano copy budget; that polynomial budget is not a substitute for a measurement circuit."
+    ],
+    "metrics": {
+      "automatically_promoted_candidate_count": 0,
+      "highest_survivor_priority_score": 110,
+      "holevo_copy_budget_rule_count": 1,
+      "known_no_go_rejected_count": 6,
+      "mechanism_count": 9,
+      "minimum_missing_capability_count": 2,
+      "primitive_count": 21,
+      "proof_gate_eligible_count": 0,
+      "proposal_only_count": 3,
+      "typed_interface_valid_count": 9,
+      "undercharged_mechanism_promoted_count": 0
+    },
+    "recorded_at": "2026-09-09T11:31:00.970401+00:00",
+    "result_id": "RESULT-EXP-COSET-RECOUPLING-MECHANISM-SYNTHESIS-COSET",
+    "run_id": "RUN-EXP-COSET-RECOUPLING-MECHANISM-SYNTHESIS-00528",
+    "status": "typed-mutations-ranked-no-proof-gate-eligible-mechanism",
+    "summary": "Evaluated 9 typed collective-measurement architectures, rejected 6 known-invalid shortcuts, and retained 3 proof-capability research proposals without promoting candidates."
+  },
+  {
+    "artifacts": {
+      "fourier_compressibility_baselines": "research/classical_baselines/fourier_compressibility_baselines.json"
+    },
+    "candidate_id": "DHS-GOWERS-SIEVE",
+    "experiment_id": "EXP-DHS-FOURIER-COMPRESSIBILITY",
+    "falsifier_count": 0,
+    "falsifiers_triggered": [],
+    "metrics": {
+      "certified_query_bound_count": 0,
+      "derivative_sparse_count": 114,
+      "explicit_evaluator_sparse_recovery_count": 0,
+      "full_table_compressible_count": 114,
+      "random_sample_sparse_recovery_count": 0,
+      "shift_recovery_attempt_count": 0,
+      "spectrally_unresolved_count": 102
+    },
+    "recorded_at": "2026-09-09T11:59:32.149183+00:00",
+    "result_id": "RESULT-EXP-DHS-FOURIER-COMPRESSIBILITY-FOURIER-COMPRESSIBILITY",
+    "run_id": "RUN-EXP-DHS-FOURIER-COMPRESSIBILITY-00529",
+    "status": "diagnostic-only-no-learner-executed",
+    "summary": "Ran 216 sparse Fourier and derivative-spectrum audits over 9 families, 4 n-values, and 6 sample budgets; No shift recovery was attempted or certified."
   }
 ]

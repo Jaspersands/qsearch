@@ -54,8 +54,17 @@ its information first. This escapes that assumption, not the hard decoding
 problem. Fully coherent access and one global reference twirl remain open.
 The [binary instrument evaluator](research/BINARY_CARRIER_INSTRUMENTS.md)
 now measures actual outcome laws and disturbance. Its small-group alternating
-carrier gains are reproduced by a stronger latent-irrep classical model;
-they are calibration controls, not candidate algorithms.
+carrier gains are reproduced by a latent-irrep model after a joint quantum
+label front end; that front end has not been classically replaced. These
+are calibration controls, not candidate algorithms.
+The [classical value-access audit](research/CLASSICAL_VALUE_ACCESS_AUDIT.md)
+replaces hidden full-table quadratic reconstruction with counted point queries,
+including exact-residue controls on nonmaterializable domains. Sample-limited
+exhaustive recovery is now distinguished from polynomial-time dequantization;
+value-oracle attacks are not treated as attacks on DHSP phase states.
+The same audit retracts the Fourier diagnostic's unsupported learner claims:
+spectral concentration is not shift recovery, and superseded negatives are
+preserved in a separate quarantine archive.
 The [proof-route audit](research/PROOF_ROUTES.md) now checks scoped dependency
 contracts and pinned evidence. It catches unsupported assertions without
 pretending to check mathematical truth or cover the entire repository.

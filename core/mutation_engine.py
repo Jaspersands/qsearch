@@ -1585,24 +1585,23 @@ def experiments_from_mutation_candidate(proposal: dict[str, Any], candidate: Can
                     candidate_id=candidate.id,
                     title="Sparse Fourier and derivative-spectrum compressibility audit",
                     status="planned",
-                    hypothesis="The mutated hidden-shift family resists sparse Fourier, Goldreich-Levin-style, and derivative-spectrum learners.",
+                    hypothesis="Full-table spectral concentration suggests a learner to implement, but does not certify one or recover a shift.",
                     protocol=(
                         "Run fourier_compressibility_baselines.py across explicit phase families, sample budgets, "
-                        "and derivative shifts; record evaluator and sampled-access sparse recovery routes."
+                        "and derivative shifts; retain full-table profiles as diagnostics only."
                     ),
-                    positive_signal="No base or derivative spectrum has polynomial sparse-recovery query estimates under legal access models.",
+                    positive_signal="No positive quantum evidence is supplied by a profile without an executed, legally accessed learner and decoder.",
                     falsifiers=[
-                        "Base spectrum is poly-sparse.",
-                        "A derivative spectrum is poly-sparse and query-estimable.",
-                        "Sample budgets reach the estimated sparse-recovery threshold.",
+                        "An executed legal learner and charged decoder recover the hidden shift.",
+                        "A heuristic spectral budget is incorrectly promoted to an algorithmic result.",
                     ],
                     metrics=[
-                        "explicit_evaluator_sparse_recovery_count",
-                        "random_sample_sparse_recovery_count",
+                        "shift_recovery_attempt_count",
+                        "certified_query_bound_count",
                         "derivative_sparse_count",
                     ],
                     dependencies=["fourier_compressibility_baselines.py", "phase_state_workbench.py"],
-                    next_actions=["Run qsearch.py fourier-learnability.", "Record sparse Fourier failures as negative results."],
+                    next_actions=["Run qsearch.py fourier-learnability as a diagnostic.", "Prove shift identifiability and implement a legal learner before claiming recovery."],
                 )
             )
         elif mutation_type == "learnability-resistant-hidden-shift":

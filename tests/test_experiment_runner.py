@@ -2599,7 +2599,10 @@ class ExperimentRunnerTests(unittest.TestCase):
         self.assertEqual(result.result_id, "RESULT-EXP-DHS-FOURIER-COMPRESSIBILITY-FOURIER-COMPRESSIBILITY")
         record = next(item for item in records if item["id"] == result.result_id)
         self.assertIn("fourier_compressibility_baselines", record["artifacts"])
-        self.assertTrue(record["falsifiers_triggered"])
+        self.assertEqual(record["status"], "diagnostic-only-no-learner-executed")
+        self.assertEqual(record["metrics"]["shift_recovery_attempt_count"], 0)
+        self.assertEqual(record["metrics"]["certified_query_bound_count"], 0)
+        self.assertEqual(record["falsifiers_triggered"], [])
         self.assertTrue(validation["valid"])
 
     def test_character_shift_experiment_runs(self):

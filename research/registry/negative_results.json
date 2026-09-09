@@ -44711,10 +44711,12 @@
       "PO-DEQUANTIZATION",
       "PO-FALSIFIERS"
     ],
-    "claim": "bent_quadratic_f2 survives classical hidden-shift baselines under the tested access models.",
+    "claim": "No tested instance of bent_quadratic_f2 is recovered by the implemented value-access baselines.",
     "evidence": {
+      "applies_to_phase_state_access": false,
       "best_verdict": "reject-low-complexity-evaluator",
       "family_id": "bent_quadratic_f2",
+      "finite_random_recovery_implies_polynomial_time": false,
       "tested_n_bits": [
         5,
         6,
@@ -44725,14 +44727,12 @@
         4,
         8,
         16,
-        32,
-        64,
-        128
+        32
       ]
     },
     "id": "CLASSICAL-BASELINE-DEQUANTIZED-BENT_QUADRATIC_F2",
-    "lesson": "Polynomial-query evaluator reconstruction is enough to demote this family.",
-    "reason_invalid": "Baseline sweep found 24 low-complexity evaluator recoveries and 13 random-sample recoveries.",
+    "lesson": "Known-form value reconstruction has counted queries and polynomial bit work; it does not apply to phase-only/state access or arbitrary unknown bent functions.",
+    "reason_invalid": "Baseline sweep found 16 low-complexity evaluator recoveries and 4 finite random-sample recoveries; random-sample scoring remains domain-exhaustive.",
     "source": "classical_baseline_suite.py"
   },
   {
@@ -44742,10 +44742,12 @@
       "PO-DEQUANTIZATION",
       "PO-FALSIFIERS"
     ],
-    "claim": "fp2_quadratic_form survives classical hidden-shift baselines under the tested access models.",
+    "claim": "No tested instance of fp2_quadratic_form is recovered by the implemented value-access baselines.",
     "evidence": {
+      "applies_to_phase_state_access": false,
       "best_verdict": "reject-low-complexity-evaluator",
       "family_id": "fp2_quadratic_form",
+      "finite_random_recovery_implies_polynomial_time": false,
       "tested_n_bits": [
         5,
         6,
@@ -44756,14 +44758,12 @@
         4,
         8,
         16,
-        32,
-        64,
-        128
+        32
       ]
     },
     "id": "CLASSICAL-BASELINE-DEQUANTIZED-FP2_QUADRATIC_FORM",
-    "lesson": "Polynomial-query evaluator reconstruction is enough to demote this family.",
-    "reason_invalid": "Baseline sweep found 24 low-complexity evaluator recoveries and 15 random-sample recoveries.",
+    "lesson": "Known-form value reconstruction has counted queries and polynomial bit work; it does not apply to phase-only/state access or arbitrary unknown bent functions.",
+    "reason_invalid": "Baseline sweep found 16 low-complexity evaluator recoveries and 5 finite random-sample recoveries; random-sample scoring remains domain-exhaustive.",
     "source": "classical_baseline_suite.py"
   },
   {
@@ -44897,10 +44897,12 @@
       "PO-DEQUANTIZATION",
       "PO-FALSIFIERS"
     ],
-    "claim": "quartic_character survives classical hidden-shift baselines under the tested access models.",
+    "claim": "No tested instance of quartic_character is recovered by the implemented value-access baselines.",
     "evidence": {
-      "best_verdict": "reject-random-sample-dequantized",
+      "applies_to_phase_state_access": false,
+      "best_verdict": "finite-sampled-recovery-computational-gap-unresolved",
       "family_id": "quartic_character",
+      "finite_random_recovery_implies_polynomial_time": false,
       "tested_n_bits": [
         5,
         6,
@@ -44911,14 +44913,12 @@
         4,
         8,
         16,
-        32,
-        64,
-        128
+        32
       ]
     },
     "id": "CLASSICAL-BASELINE-DEQUANTIZED-QUARTIC_CHARACTER",
-    "lesson": "Random sampled access recovers the shift at tested budgets.",
-    "reason_invalid": "Baseline sweep found 0 low-complexity evaluator recoveries and 14 random-sample recoveries.",
+    "lesson": "Some finite sampled instances are recovered by exhaustive scoring. This is neither an efficient classical solver nor an asymptotic query bound.",
+    "reason_invalid": "Baseline sweep found 0 low-complexity evaluator recoveries and 6 finite random-sample recoveries; random-sample scoring remains domain-exhaustive.",
     "source": "classical_baseline_suite.py"
   },
   {
@@ -54926,13 +54926,13 @@
       "CODE-COSET-COLLECTIVE",
       "finite alternating-carrier binary signals"
     ],
-    "claim": "The tested S3/S4 alternating carrier instruments exhibit binary information gains unexplained by a classical outcome model.",
+    "claim": "For the tested S3/S4 binary inputs, alternating carrier outcome laws cannot be reproduced by classical postprocessing of a joint pair/total quantum label outcome.",
     "evidence": {
       "artifact": "research/representation/coset_binary_carrier_instruments.json"
     },
     "id": "FINITE-BINARY-CARRIER-ALTERNATION-LATENT-IRREP",
-    "lesson": "A dephased product-basis ablation was too weak. This finite replay does not give a uniform classical simulator: the rank-one condition already fails in S6, and transition-computation cost must be charged.",
-    "reason_invalid": "Every L/R transcript and final Young-row probability is reproduced by a hidden Markov model with latent total irrep and rank-one multiplicity transitions. Measuring the total label after one pair resolves the retained finite binary information.",
+    "lesson": "A dephased product-basis ablation was too weak. No legal classical sampler for the hypothesis-dependent initial latent distribution is supplied, so this does not replace the quantum front end. The rank-one condition already fails in S6, and transition-computation cost must be charged.",
+    "reason_invalid": "Every L/R transcript and final Young-row probability is reproduced by latent-irrep Markov dynamics after the joint pair/total quantum label measurement. Measuring that total label after one pair resolves the retained finite binary information.",
     "source": "EXP-COSET-BINARY-CARRIER-INSTRUMENTS"
   },
   {
@@ -55090,152 +55090,15 @@
       "PO-DEQUANTIZATION",
       "PO-FALSIFIERS"
     ],
-    "claim": "bent_quadratic_f2 remains a viable hidden-shift family after sparse Fourier and derivative-spectrum attacks.",
+    "claim": "A concentrated base/derivative spectrum and a heuristic sample budget certify a legal efficient hidden-shift learner.",
     "evidence": {
-      "best_verdict": "reject-sample-sparse-fourier",
-      "family_id": "bent_quadratic_f2",
-      "tested_n_bits": [
-        5,
-        6,
-        7,
-        8
-      ],
-      "tested_sample_counts": [
-        4,
-        8,
-        16,
-        32,
-        64,
-        128
-      ]
+      "artifact": "research/classical_baselines/fourier_compressibility_baselines.json",
+      "row_count": 216,
+      "shift_recovery_attempt_count": 0
     },
-    "id": "FOURIER-COMPRESSIBILITY-DEQUANTIZED-BENT_QUADRATIC_F2",
-    "lesson": "Sample-limited sparse Fourier or derivative learning is enough to demote this family under tested budgets.",
-    "reason_invalid": "24 evaluator-sparse row(s) and 20 sample-sparse row(s) identify a dequantization route.",
-    "source": "fourier_compressibility_baselines.py"
-  },
-  {
-    "applies_to": [
-      "DHS-GOWERS-SIEVE",
-      "HYP-LIT-HIDDEN-SHIFT-SIEVE",
-      "PO-DEQUANTIZATION",
-      "PO-FALSIFIERS"
-    ],
-    "claim": "fp2_quadratic_form remains a viable hidden-shift family after sparse Fourier and derivative-spectrum attacks.",
-    "evidence": {
-      "best_verdict": "reject-sample-sparse-fourier",
-      "family_id": "fp2_quadratic_form",
-      "tested_n_bits": [
-        5,
-        6,
-        7,
-        8
-      ],
-      "tested_sample_counts": [
-        4,
-        8,
-        16,
-        32,
-        64,
-        128
-      ]
-    },
-    "id": "FOURIER-COMPRESSIBILITY-DEQUANTIZED-FP2_QUADRATIC_FORM",
-    "lesson": "Sample-limited sparse Fourier or derivative learning is enough to demote this family under tested budgets.",
-    "reason_invalid": "24 evaluator-sparse row(s) and 19 sample-sparse row(s) identify a dequantization route.",
-    "source": "fourier_compressibility_baselines.py"
-  },
-  {
-    "applies_to": [
-      "DHS-GOWERS-SIEVE",
-      "HYP-LIT-HIDDEN-SHIFT-SIEVE",
-      "PO-DEQUANTIZATION",
-      "PO-FALSIFIERS"
-    ],
-    "claim": "masked_quadratic_f2 remains a viable hidden-shift family after sparse Fourier and derivative-spectrum attacks.",
-    "evidence": {
-      "best_verdict": "reject-sample-sparse-fourier",
-      "family_id": "masked_quadratic_f2",
-      "tested_n_bits": [
-        5,
-        6,
-        7,
-        8
-      ],
-      "tested_sample_counts": [
-        4,
-        8,
-        16,
-        32,
-        64,
-        128
-      ]
-    },
-    "id": "FOURIER-COMPRESSIBILITY-DEQUANTIZED-MASKED_QUADRATIC_F2",
-    "lesson": "Sample-limited sparse Fourier or derivative learning is enough to demote this family under tested budgets.",
-    "reason_invalid": "18 evaluator-sparse row(s) and 3 sample-sparse row(s) identify a dequantization route.",
-    "source": "fourier_compressibility_baselines.py"
-  },
-  {
-    "applies_to": [
-      "DHS-GOWERS-SIEVE",
-      "HYP-LIT-HIDDEN-SHIFT-SIEVE",
-      "PO-DEQUANTIZATION",
-      "PO-FALSIFIERS"
-    ],
-    "claim": "mm_majority_bent_f2 remains a viable hidden-shift family after sparse Fourier and derivative-spectrum attacks.",
-    "evidence": {
-      "best_verdict": "reject-sample-sparse-fourier",
-      "family_id": "mm_majority_bent_f2",
-      "tested_n_bits": [
-        5,
-        6,
-        7,
-        8
-      ],
-      "tested_sample_counts": [
-        4,
-        8,
-        16,
-        32,
-        64,
-        128
-      ]
-    },
-    "id": "FOURIER-COMPRESSIBILITY-DEQUANTIZED-MM_MAJORITY_BENT_F2",
-    "lesson": "Sample-limited sparse Fourier or derivative learning is enough to demote this family under tested budgets.",
-    "reason_invalid": "24 evaluator-sparse row(s) and 20 sample-sparse row(s) identify a dequantization route.",
-    "source": "fourier_compressibility_baselines.py"
-  },
-  {
-    "applies_to": [
-      "DHS-GOWERS-SIEVE",
-      "HYP-LIT-HIDDEN-SHIFT-SIEVE",
-      "PO-DEQUANTIZATION",
-      "PO-FALSIFIERS"
-    ],
-    "claim": "quadratic_chirp remains a viable hidden-shift family after sparse Fourier and derivative-spectrum attacks.",
-    "evidence": {
-      "best_verdict": "reject-sample-sparse-fourier",
-      "family_id": "quadratic_chirp",
-      "tested_n_bits": [
-        5,
-        6,
-        7,
-        8
-      ],
-      "tested_sample_counts": [
-        4,
-        8,
-        16,
-        32,
-        64,
-        128
-      ]
-    },
-    "id": "FOURIER-COMPRESSIBILITY-DEQUANTIZED-QUADRATIC_CHIRP",
-    "lesson": "Sample-limited sparse Fourier or derivative learning is enough to demote this family under tested budgets.",
-    "reason_invalid": "24 evaluator-sparse row(s) and 19 sample-sparse row(s) identify a dequantization route.",
+    "id": "FOURIER-CONCENTRATION-DOES-NOT-CERTIFY-SHIFT-RECOVERY",
+    "lesson": "Require a legal sampling reduction, an executed learner, identifiability, and a charged decoder before declaring dequantization.",
+    "reason_invalid": "This diagnostic receives no shifted input and runs no learner or shift decoder. Spectral learning also need not identify the shift.",
     "source": "fourier_compressibility_baselines.py"
   },
   {
@@ -55542,8 +55405,7 @@
         "sparse_fourier_recovery"
       ],
       "survives_restricted_query_models": [
-        "random_sample",
-        "coherent_oracle"
+        "random_sample"
       ]
     },
     "id": "HS-DEQUANTIZED-BENT_QUADRATIC_F2",
@@ -55570,8 +55432,7 @@
         "sparse_fourier_recovery"
       ],
       "survives_restricted_query_models": [
-        "random_sample",
-        "coherent_oracle"
+        "random_sample"
       ]
     },
     "id": "HS-DEQUANTIZED-FP2_QUADRATIC_FORM",

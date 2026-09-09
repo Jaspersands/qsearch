@@ -348,7 +348,7 @@ def build_recoupling_mutation_proposals(
                     "Reject if the mechanism covers only an exceptional commuting or classically tractable family.",
                     "Reject if the decoder is distinguishability or verification without hidden-involution recovery.",
                     "Reject if classical invariant or tensor-network contraction reproduces the outcome.",
-                    "Reject finite binary gains explained by the latent-total-irrep model; test its rank-one condition rather than assuming it extends to larger multiplicities.",
+                    "Compare finite alternation to a joint quantum label front end plus latent-irrep classical postprocessing; do not assume a classical sampler for the initial labels or extend the rank-one model to larger multiplicities.",
                     "Reject ideal finite likelihood tables or retained Helstrom distances presented as compiled outcome classifiers.",
                 ],
                 "linked_blockers": [

@@ -28,9 +28,9 @@
           "severity": "high"
         },
         {
-          "evidence": "Every L/R transcript and final Young-row probability is reproduced by a hidden Markov model with latent total irrep and rank-one multiplicity transitions. Measuring the total label after one pair resolves the retained finite binary information.",
+          "evidence": "Every L/R transcript and final Young-row probability is reproduced by latent-irrep Markov dynamics after the joint pair/total quantum label measurement. Measuring that total label after one pair resolves the retained finite binary information.",
           "finding_id": "DEQ-CODE-COSET-COLLECTIVE-FINITE-CARRIER-LATENT-IRREP-MODEL",
-          "required_action": "A dephased product-basis ablation was too weak. This finite replay does not give a uniform classical simulator: the rank-one condition already fails in S6, and transition-computation cost must be charged.",
+          "required_action": "A dephased product-basis ablation was too weak. No legal classical sampler for the hypothesis-dependent initial latent distribution is supplied, so this does not replace the quantum front end. The rank-one condition already fails in S6, and transition-computation cost must be charged.",
           "severity": "high"
         },
         {
@@ -3700,7 +3700,7 @@
           "severity": "medium"
         },
         {
-          "evidence": "Triggered falsifiers: Conjugation invariance removes hidden-member information, not necessarily class-versus-trivial information. | Measuring another carrier label can irreversibly lose information; a large commutator does not certify an improved detector. | All tested L/R binary outcome laws, including final Young rows, are reproduced by a latent-total-irrep classical model; the dephased ablation alone was too weak. | Fixed-copy invariant instruments repeated polynomially many times remain below the required asymptotic information budget.",
+          "evidence": "Triggered falsifiers: Conjugation invariance removes hidden-member information, not necessarily class-versus-trivial information. | Measuring another carrier label can irreversibly lose information; a large commutator does not certify an improved detector. | All tested L/R binary outcome laws are reproduced by classical latent-irrep dynamics after the joint quantum label front end; no legal classical replacement of that front end is supplied. | Fixed-copy invariant instruments repeated polynomially many times remain below the required asymptotic information budget.",
           "finding_id": "DEQ-RESULT-EXP-COSET-BINARY-CARRIER-INSTRUMENTS-FALSIFIERS",
           "required_action": "Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.",
           "severity": "medium"
@@ -4961,7 +4961,7 @@
         }
       ],
       "candidate_id": "CODE-COSET-COLLECTIVE",
-      "created_at": "2026-09-09T02:03:32.907149+00:00",
+      "created_at": "2026-09-09T12:01:45.233595+00:00",
       "id": "CONJ-CODE-COSET-COLLECTIVE",
       "next_actions": [
         "Resolve every blocking finding before promotion.",
@@ -17905,7 +17905,7 @@
           "summary": "Proved that density-one low-bit fibers contain no affine flat of dimension 8log2(q) or larger with failure 2^-Omega(q log q), uniformly over every adaptive GL(m,2) reparameterization. Any support-contained cancellation-free affine cover is exponential."
         }
       ],
-      "updated_at": "2026-09-09T02:03:32.907149+00:00"
+      "updated_at": "2026-09-09T12:01:45.233595+00:00"
     },
     {
       "assumptions": [
@@ -18354,13 +18354,13 @@
           "severity": "critical"
         },
         {
-          "evidence": "Exact sum/difference branch accounting removed 15578 output state(s) retained by the deterministic favorable-branch proxy.",
+          "evidence": "Exact sum/difference branch accounting removed 8166 output state(s) retained by the deterministic favorable-branch proxy.",
           "finding_id": "DEQ-DCP-DETERMINISTIC-BRANCH-OPTIMISM",
           "required_action": "Use state-sample-native branch and postselection accounting in every sieve exponent or scaling claim.",
           "severity": "high"
         },
         {
-          "evidence": "The workbench recorded 9 empirical full recovery or recoveries but 0 proved end-to-end failure bounds.",
+          "evidence": "The workbench recorded 3 empirical full recovery or recoveries but 0 proved end-to-end failure bounds.",
           "finding_id": "DEQ-DCP-EMPIRICAL-RECURSION-NO-UNIFORM-THEOREM",
           "required_action": "Prove a uniform per-stage endpoint probability and compose it across all log N fresh batches; do not infer the bound from seeded trials.",
           "severity": "high"
@@ -18414,7 +18414,7 @@
           "severity": "high"
         },
         {
-          "evidence": "The audit charged 368640 states in finite trials, but its claim gate records no asymptotic improvement theorem.",
+          "evidence": "The audit charged 49152 states in finite trials, but its claim gate records no asymptotic improvement theorem.",
           "finding_id": "DEQ-DCP-RECURSIVE-NO-ASYMPTOTIC-IMPROVEMENT",
           "required_action": "Derive the physical merge recurrence, optimize stage budgets, and compare sample, time, and memory exponents against named generic baselines.",
           "severity": "high"
@@ -18462,13 +18462,13 @@
           "severity": "high"
         },
         {
-          "evidence": "16 audited families were marked high dequantization risk.",
+          "evidence": "8 audited families were marked high dequantization risk.",
           "finding_id": "DEQ-RESULT-HIDDEN-SHIFT-WORKBENCH-LATEST-HIGH-RISK",
           "required_action": "Do not promote the associated candidate until the positive signal survives stricter oracle-model accounting or harder non-classically-learnable families.",
           "severity": "high"
         },
         {
-          "evidence": "The workbench wrote 4 hidden-shift family negative-result record(s).",
+          "evidence": "The workbench wrote 2 hidden-shift family negative-result record(s).",
           "finding_id": "DEQ-RESULT-HIDDEN-SHIFT-WORKBENCH-LATEST-NEGATIVE-FAMILIES",
           "required_action": "Exclude dequantized families from hypothesis promotion and mutate toward families that survive explicit baselines.",
           "severity": "high"
@@ -19218,12 +19218,6 @@
           "severity": "medium"
         },
         {
-          "evidence": "Triggered falsifiers: Sparse Fourier or derivative-spectrum learner is polynomial under evaluator access. | Sparse Fourier or derivative-spectrum learner succeeds within sampled-access budgets.",
-          "finding_id": "DEQ-RESULT-EXP-DHS-FOURIER-COMPRESSIBILITY-FOURIER-COMPRESSIBILITY-FALSIFIERS",
-          "required_action": "Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.",
-          "severity": "medium"
-        },
-        {
           "evidence": "Triggered falsifiers: Derivative spectrum is extremely sparse; the family may be classically learnable. | Full-table classical shift recovery succeeds; claimed advantage must rely on a stricter oracle/query model.",
           "finding_id": "DEQ-RESULT-EXP-DHS-GOWERS-SPECTRUM-HIDDEN-SHIFT-FALSIFIERS",
           "required_action": "Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.",
@@ -19272,7 +19266,7 @@
           "severity": "medium"
         },
         {
-          "evidence": "40 audited family instances survived current random-sample/coherent-oracle baselines while being suspect under stronger access models.",
+          "evidence": "8 audited family instances survived current random-sample/coherent-oracle baselines while being suspect under stronger access models.",
           "finding_id": "DEQ-RESULT-HIDDEN-SHIFT-WORKBENCH-LATEST-QUERY-MODEL-GAP",
           "required_action": "Promote this only after formalizing the input model, proving classical lower bounds for that model, and ruling out sample-efficient classical reconstruction.",
           "severity": "medium"
@@ -19308,15 +19302,15 @@
           "severity": "negative-result"
         },
         {
-          "evidence": "Baseline sweep found 24 low-complexity evaluator recoveries and 13 random-sample recoveries.",
+          "evidence": "Baseline sweep found 16 low-complexity evaluator recoveries and 4 finite random-sample recoveries; random-sample scoring remains domain-exhaustive.",
           "finding_id": "CLASSICAL-BASELINE-DEQUANTIZED-BENT_QUADRATIC_F2",
-          "required_action": "Polynomial-query evaluator reconstruction is enough to demote this family.",
+          "required_action": "Known-form value reconstruction has counted queries and polynomial bit work; it does not apply to phase-only/state access or arbitrary unknown bent functions.",
           "severity": "negative-result"
         },
         {
-          "evidence": "Baseline sweep found 24 low-complexity evaluator recoveries and 15 random-sample recoveries.",
+          "evidence": "Baseline sweep found 16 low-complexity evaluator recoveries and 5 finite random-sample recoveries; random-sample scoring remains domain-exhaustive.",
           "finding_id": "CLASSICAL-BASELINE-DEQUANTIZED-FP2_QUADRATIC_FORM",
-          "required_action": "Polynomial-query evaluator reconstruction is enough to demote this family.",
+          "required_action": "Known-form value reconstruction has counted queries and polynomial bit work; it does not apply to phase-only/state access or arbitrary unknown bent functions.",
           "severity": "negative-result"
         },
         {
@@ -19333,7 +19327,7 @@
         }
       ],
       "candidate_id": "DHS-GOWERS-SIEVE",
-      "created_at": "2026-09-09T02:03:32.907149+00:00",
+      "created_at": "2026-09-09T12:01:45.233595+00:00",
       "id": "CONJ-DHS-GOWERS-SIEVE",
       "next_actions": [
         "Resolve every blocking finding before promotion.",
@@ -21903,14 +21897,16 @@
         {
           "experiment_result_id": "RESULT-EXP-DHS-FOURIER-COMPRESSIBILITY-FOURIER-COMPRESSIBILITY",
           "metrics": {
+            "certified_query_bound_count": 0,
             "derivative_sparse_count": 114,
-            "explicit_evaluator_sparse_recovery_count": 114,
+            "explicit_evaluator_sparse_recovery_count": 0,
             "full_table_compressible_count": 114,
-            "random_sample_sparse_recovery_count": 81,
-            "spectrally_unresolved_count": 78
+            "random_sample_sparse_recovery_count": 0,
+            "shift_recovery_attempt_count": 0,
+            "spectrally_unresolved_count": 102
           },
-          "status": "blocked-by-spectral-compressibility",
-          "summary": "Ran 192 sparse Fourier and derivative-spectrum audits over 8 families, 4 n-values, and 6 sample budgets; 114 rows are evaluator-sparse dequantized."
+          "status": "diagnostic-only-no-learner-executed",
+          "summary": "Ran 216 sparse Fourier and derivative-spectrum audits over 9 families, 4 n-values, and 6 sample budgets; No shift recovery was attempted or certified."
         },
         {
           "experiment_result_id": "RESULT-EXP-DHS-GOWERS-SPECTRUM-HIDDEN-SHIFT",
@@ -22020,17 +22016,18 @@
         {
           "experiment_result_id": "RESULT-HIDDEN-SHIFT-WORKBENCH-LATEST",
           "metrics": {
-            "family_audit_count": 40,
-            "high_dequantization_risk_count": 16,
-            "negative_results_written": 4,
+            "family_audit_count": 12,
+            "high_dequantization_risk_count": 8,
+            "maximum_table_free_control_input_bits": 255,
+            "negative_results_written": 2,
             "phase_state_trace_best_two_adic_valuation": 7,
             "phase_state_trace_final_states": 44,
             "phase_state_trace_reached_target": true,
             "phase_state_trace_success_probability_proxy": 1.0,
             "phase_state_trace_survivor_sample_count": 12,
-            "query_lower_bound_probe_count": 160,
-            "restricted_query_survivor_count": 40,
-            "scaling_family_count": 10,
+            "query_lower_bound_probe_count": 48,
+            "restricted_query_survivor_count": 8,
+            "scaling_family_count": 3,
             "sieve_best_strategy": "aggressive_doubling",
             "sieve_best_two_adic_valuation": 7,
             "sieve_final_states": 18,
@@ -22040,13 +22037,15 @@
             "sieve_search_best_two_adic_valuation": 7,
             "sieve_strategy_count": 4,
             "sieve_target_two_adic_valuation": 6,
-            "structured_signal_count": 0
+            "structured_signal_count": 3,
+            "table_free_value_query_control_count": 9,
+            "value_queries_apply_to_dhsp_phase_states": false
           },
           "status": "needs-theory",
-          "summary": "Audited 40 explicit hidden-shift instances across 10 phase families. 0 instances show Fourier/derivative structure; 16 are critical/high dequantization risk; 40 survive at least one restricted query model. Best DHSP sieve strategy aggressive_doubling reaches v2=7 from 2048 phase labels; explicit phase-state trace reaches v2=7 with 44 survivor states."
+          "summary": "Audited 12 explicit hidden-shift instances across 3 phase families. 3 instances show Fourier/derivative structure; 8 are critical/high dequantization risk; 8 survive at least one restricted query model. Best DHSP sieve strategy aggressive_doubling reaches v2=7 from 2048 phase labels; explicit phase-state trace reaches v2=7 with 44 survivor states."
         }
       ],
-      "updated_at": "2026-09-09T02:03:32.907149+00:00"
+      "updated_at": "2026-09-09T12:01:45.233595+00:00"
     },
     {
       "assumptions": [
@@ -22079,15 +22078,15 @@
           "severity": "negative-result"
         },
         {
-          "evidence": "Baseline sweep found 24 low-complexity evaluator recoveries and 13 random-sample recoveries.",
+          "evidence": "Baseline sweep found 16 low-complexity evaluator recoveries and 4 finite random-sample recoveries; random-sample scoring remains domain-exhaustive.",
           "finding_id": "CLASSICAL-BASELINE-DEQUANTIZED-BENT_QUADRATIC_F2",
-          "required_action": "Polynomial-query evaluator reconstruction is enough to demote this family.",
+          "required_action": "Known-form value reconstruction has counted queries and polynomial bit work; it does not apply to phase-only/state access or arbitrary unknown bent functions.",
           "severity": "negative-result"
         },
         {
-          "evidence": "Baseline sweep found 24 low-complexity evaluator recoveries and 15 random-sample recoveries.",
+          "evidence": "Baseline sweep found 16 low-complexity evaluator recoveries and 5 finite random-sample recoveries; random-sample scoring remains domain-exhaustive.",
           "finding_id": "CLASSICAL-BASELINE-DEQUANTIZED-FP2_QUADRATIC_FORM",
-          "required_action": "Polynomial-query evaluator reconstruction is enough to demote this family.",
+          "required_action": "Known-form value reconstruction has counted queries and polynomial bit work; it does not apply to phase-only/state access or arbitrary unknown bent functions.",
           "severity": "negative-result"
         },
         {
@@ -22104,7 +22103,7 @@
         }
       ],
       "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
-      "created_at": "2026-09-09T02:03:32.907149+00:00",
+      "created_at": "2026-09-09T12:01:45.233595+00:00",
       "id": "CONJ-HYP-LIT-COSET-OBSERVABLES",
       "next_actions": [
         "Resolve every blocking finding before promotion.",
@@ -22144,7 +22143,7 @@
           "summary": "Audited 4 hidden-permutation graph pairs. 2 pair survives current classical and low-register tests; 1 control pair is classically distinguished; 2 CFI-style parity benchmark(s) included."
         }
       ],
-      "updated_at": "2026-09-09T02:03:32.907149+00:00"
+      "updated_at": "2026-09-09T12:01:45.233595+00:00"
     },
     {
       "assumptions": [
@@ -22209,15 +22208,15 @@
           "severity": "negative-result"
         },
         {
-          "evidence": "Baseline sweep found 24 low-complexity evaluator recoveries and 13 random-sample recoveries.",
+          "evidence": "Baseline sweep found 16 low-complexity evaluator recoveries and 4 finite random-sample recoveries; random-sample scoring remains domain-exhaustive.",
           "finding_id": "CLASSICAL-BASELINE-DEQUANTIZED-BENT_QUADRATIC_F2",
-          "required_action": "Polynomial-query evaluator reconstruction is enough to demote this family.",
+          "required_action": "Known-form value reconstruction has counted queries and polynomial bit work; it does not apply to phase-only/state access or arbitrary unknown bent functions.",
           "severity": "negative-result"
         },
         {
-          "evidence": "Baseline sweep found 24 low-complexity evaluator recoveries and 15 random-sample recoveries.",
+          "evidence": "Baseline sweep found 16 low-complexity evaluator recoveries and 5 finite random-sample recoveries; random-sample scoring remains domain-exhaustive.",
           "finding_id": "CLASSICAL-BASELINE-DEQUANTIZED-FP2_QUADRATIC_FORM",
-          "required_action": "Polynomial-query evaluator reconstruction is enough to demote this family.",
+          "required_action": "Known-form value reconstruction has counted queries and polynomial bit work; it does not apply to phase-only/state access or arbitrary unknown bent functions.",
           "severity": "negative-result"
         },
         {
@@ -22234,7 +22233,7 @@
         }
       ],
       "candidate_id": "HYP-LIT-HIDDEN-SHIFT-SIEVE",
-      "created_at": "2026-09-09T02:03:32.907149+00:00",
+      "created_at": "2026-09-09T12:01:45.233595+00:00",
       "id": "CONJ-HYP-LIT-HIDDEN-SHIFT-SIEVE",
       "next_actions": [
         "Resolve every blocking finding before promotion.",
@@ -22316,7 +22315,7 @@
           "summary": "Audited 40 explicit hidden-shift instances across 10 phase families. 0 instances show Fourier/derivative structure; 16 are critical/high dequantization risk; 40 survive at least one restricted query model. Best DHSP sieve strategy aggressive_doubling reaches v2=7 from 2048 phase labels; explicit phase-state trace reaches v2=7 with 44 survivor states."
         }
       ],
-      "updated_at": "2026-09-09T02:03:32.907149+00:00"
+      "updated_at": "2026-09-09T12:01:45.233595+00:00"
     },
     {
       "assumptions": [
@@ -22416,7 +22415,7 @@
         }
       ],
       "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
-      "created_at": "2026-09-09T02:03:32.907149+00:00",
+      "created_at": "2026-09-09T12:01:45.233595+00:00",
       "id": "CONJ-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
       "next_actions": [
         "Resolve every blocking finding before promotion.",
@@ -22500,7 +22499,7 @@
           "summary": "Audited 10 graphlet tensor observables across 5 graph pairs. 3 signal(s) collapse to small-pattern classical counts; 3 boundary pair(s) remain without graphlet-tensor signal."
         }
       ],
-      "updated_at": "2026-09-09T02:03:32.907149+00:00"
+      "updated_at": "2026-09-09T12:01:45.233595+00:00"
     },
     {
       "assumptions": [
@@ -22576,7 +22575,7 @@
         }
       ],
       "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
-      "created_at": "2026-09-09T02:03:32.907149+00:00",
+      "created_at": "2026-09-09T12:01:45.233595+00:00",
       "id": "CONJ-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
       "next_actions": [
         "Resolve every blocking finding before promotion.",
@@ -22631,7 +22630,7 @@
           "summary": "Audited 10 graphlet tensor observables across 5 graph pairs. 3 signal(s) collapse to small-pattern classical counts; 3 boundary pair(s) remain without graphlet-tensor signal."
         }
       ],
-      "updated_at": "2026-09-09T02:03:32.907149+00:00"
+      "updated_at": "2026-09-09T12:01:45.233595+00:00"
     },
     {
       "assumptions": [
@@ -22707,7 +22706,7 @@
         }
       ],
       "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
-      "created_at": "2026-09-09T02:03:32.907149+00:00",
+      "created_at": "2026-09-09T12:01:45.233595+00:00",
       "id": "CONJ-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
       "next_actions": [
         "Resolve every blocking finding before promotion.",
@@ -22761,7 +22760,7 @@
           "summary": "Audited 4 hidden-permutation graph pairs. 2 pair survives current classical and low-register tests; 1 control pair is classically distinguished; 2 CFI-style parity benchmark(s) included."
         }
       ],
-      "updated_at": "2026-09-09T02:03:32.907149+00:00"
+      "updated_at": "2026-09-09T12:01:45.233595+00:00"
     },
     {
       "assumptions": [
@@ -22825,7 +22824,7 @@
         }
       ],
       "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
-      "created_at": "2026-09-09T02:03:32.907149+00:00",
+      "created_at": "2026-09-09T12:01:45.233595+00:00",
       "id": "CONJ-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
       "next_actions": [
         "Resolve every blocking finding before promotion.",
@@ -22859,10 +22858,10 @@
           "summary": "Audited 3 code-equivalence pairs. 1 equivalent control pair(s) verified; 2 non-equivalent control pair(s) classically distinguished."
         }
       ],
-      "updated_at": "2026-09-09T02:03:32.907149+00:00"
+      "updated_at": "2026-09-09T12:01:45.233595+00:00"
     }
   ],
-  "created_at": "2026-09-09T02:03:33.133065+00:00",
+  "created_at": "2026-09-09T12:01:45.479820+00:00",
   "needs_evidence_count": 0,
   "status": "blocked"
 }

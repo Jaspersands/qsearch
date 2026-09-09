@@ -320,7 +320,7 @@ def write_binary_carrier_instrument_report(path: Path = REPORT_PATH, *, write_re
                 applies_to=[registry_candidate_id, "carrier transcript task transfer"], evidence={"artifact": str(path)}))
         if report["claim_gate"]["finite_alternation_explained_by_latent_irrep_model"]:
             upsert_negative_result(NegativeResultRecord(id="FINITE-BINARY-CARRIER-ALTERNATION-LATENT-IRREP", source=registry_experiment_id,
-                claim="The tested S3/S4 alternating carrier instruments exhibit binary information gains unexplained by a classical outcome model.",
+                claim="For the tested S3/S4 binary inputs, alternating carrier outcome laws cannot be reproduced by classical postprocessing of a joint pair/total quantum label outcome.",
                 reason_invalid="Every L/R transcript and final Young-row probability is reproduced by latent-irrep Markov dynamics after the joint pair/total quantum label measurement. Measuring that total label after one pair resolves the retained finite binary information.",
                 lesson="A dephased product-basis ablation was too weak. No legal classical sampler for the hypothesis-dependent initial latent distribution is supplied, so this does not replace the quantum front end. The rank-one condition already fails in S6, and transition-computation cost must be charged.",
                 applies_to=[registry_candidate_id, "finite alternating-carrier binary signals"], evidence={"artifact": str(path)}))

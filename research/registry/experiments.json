@@ -25346,26 +25346,25 @@
       "phase_state_workbench.py"
     ],
     "falsifiers": [
-      "Base phase spectrum is poly-sparse.",
-      "A derivative spectrum is poly-sparse with polynomial sparse-recovery query estimate.",
-      "Sample budgets reach the estimated sparse-recovery threshold."
+      "An actual legal learner and charged decoder recover shifts uniformly over the promised family.",
+      "A spectral profile or heuristic budget is incorrectly promoted to a recovery theorem."
     ],
-    "hypothesis": "Viable hidden-shift phase families are not compressible by sparse Fourier or derivative-spectrum learners under legal access models.",
+    "hypothesis": "Full-table spectral concentration may suggest a learner, but does not itself certify one or identify the hidden shift.",
     "id": "EXP-DHS-FOURIER-COMPRESSIBILITY",
     "metrics": [
-      "explicit_evaluator_sparse_recovery_count",
-      "random_sample_sparse_recovery_count",
+      "shift_recovery_attempt_count",
+      "certified_query_bound_count",
       "derivative_sparse_count",
       "spectrally_unresolved_count"
     ],
     "next_actions": [
-      "Run qsearch.py fourier-learnability.",
-      "Turn every sparse family into a negative result."
+      "Run qsearch.py fourier-learnability as a diagnostic.",
+      "Require identifiability and legal learner access before constructing a decoder."
     ],
-    "positive_signal": "No polynomial-query evaluator or sample-limited sparse Fourier learner is certified while phase-state structure remains.",
-    "protocol": "Generate explicit phase families across increasing group sizes; compute full-table Fourier concentration, derivative spectra, sparse-recovery query estimates, and sample-budget legality.",
+    "positive_signal": "Diagnostic only; neither concentrated nor broad spectra constitute positive quantum evidence.",
+    "protocol": "Generate explicit phase families across increasing group sizes; compute full-table Fourier concentration, derivative spectra, and explicitly heuristic budget estimates. No shifted input or learner is supplied.",
     "status": "planned",
-    "title": "Sparse Fourier and derivative-spectrum dequantization sweep"
+    "title": "Full-table Fourier and derivative-spectrum diagnostic"
   },
   {
     "candidate_id": "DHS-GOWERS-SIEVE",
