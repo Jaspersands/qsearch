@@ -66,8 +66,8 @@
       "target_claim": "The coset observable is not a disguised classical invariant."
     }
   ],
-  "created_at": "2026-09-08T19:57:19.127547+00:00",
-  "lemma_count": 1259,
+  "created_at": "2026-09-09T02:03:23.757673+00:00",
+  "lemma_count": 1264,
   "lemmas": [
     {
       "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -486,6 +486,67 @@
       "id": "LEMMA-CODE-COSET-COLLECTIVE-ENCODED-TARGET-EFFECT",
       "statement": "The encoded copy code supports an efficient task-relevant multi-copy effect with physical coset access and unknown-centralizer alignment fully charged.",
       "status": "blocked-no-symmetry-resolved-logical-target-measurement"
+    },
+    {
+      "candidate_id": "CODE-COSET-COLLECTIVE",
+      "depends_on": [
+        "PO-INPUT-MODEL",
+        "PO-MEASUREMENT",
+        "PO-SUCCESS"
+      ],
+      "falsification_test": "Check regular-representation orthogonality, physical prior, Pinsker constants and every discarded register. A single global twirl preserves the binary mixture; do not apply the predetermined-reference bound to adaptive schedules.",
+      "id": "LEMMA-CODE-COSET-COLLECTIVE-REFERENCE-TWIRL-INFORMATION-LOSS",
+      "statement": "Under the uniform hidden prior and an outcome-independent reference schedule, independent block twirls give T^2 <= p(m)/(2(2m-1)!!) sum_j(2^b_j-1), even before arbitrary collective postprocessing.",
+      "status": "derived-blockwise-information-bound-review-pending"
+    },
+    {
+      "candidate_id": "CODE-COSET-COLLECTIVE",
+      "depends_on": [
+        "PO-INPUT-MODEL",
+        "PO-MEASUREMENT",
+        "PO-SUCCESS"
+      ],
+      "falsification_test": "Verify null-prefix history/memory independence from h and per-h suffix contractivity. Do not assume uniform actual posteriors or cover quantum-controlled references or memory coupling before the twirl.",
+      "id": "LEMMA-CODE-COSET-COLLECTIVE-ADAPTIVE-REFERENCE-TWIRL-HYBRID",
+      "statement": "For t classically adaptive reference rounds with quantum memory, fresh-block twirling before memory coupling gives T^2 <= t*p(m)/(2(2m-1)!!) sum_j(2^b_j-1) by null-prefix hybrids.",
+      "status": "derived-adaptive-preinteraction-twirl-bound-review-pending"
+    },
+    {
+      "candidate_id": "CODE-COSET-COLLECTIVE",
+      "depends_on": [
+        "LEMMA-CODE-COSET-COLLECTIVE-REFERENCE-TWIRL-INFORMATION-LOSS",
+        "PO-COMPLEXITY",
+        "PO-SUCCESS"
+      ],
+      "falsification_test": "Specify the entire channel, including discarded environments, block size, reference schedule and memory-interaction order. Noncommuting copy operators alone are not an information guarantee.",
+      "id": "LEMMA-CODE-COSET-COLLECTIVE-CARRIER-CORRELATION-PRESERVING-EFFECT",
+      "statement": "A compiled logical effect retains enough cross-input carrier/type information to give a source-weighted detection or decoding advantage at charged cost.",
+      "status": "blocked-no-source-weighted-correlation-preserving-effect"
+    },
+    {
+      "candidate_id": "CODE-COSET-COLLECTIVE",
+      "depends_on": [
+        "PO-INPUT-MODEL",
+        "PO-MEASUREMENT",
+        "PO-DEQUANTIZATION"
+      ],
+      "falsification_test": "Compare every null/alternative transcript and row probability, not only Bayes scores. Check joint multiplicity one; the explicit S6 multiplicity-four branch prevents generalization.",
+      "id": "LEMMA-CODE-COSET-COLLECTIVE-FINITE-BINARY-CARRIER-INSTRUMENTS",
+      "statement": "Complete S3/S4 binary carrier outcome laws satisfy physical mass and data-processing checks; rank-one multiplicity transitions give a classical latent-total-irrep replay, not a general dequantization theorem.",
+      "status": "numerically-verified-finite-binary-instrument-and-latent-model"
+    },
+    {
+      "candidate_id": "CODE-COSET-COLLECTIVE",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-SUCCESS",
+        "PO-DEQUANTIZATION"
+      ],
+      "falsification_test": "Reject optimal finite likelihood tables and residual Helstrom distances as compiled readouts. Fixed-copy invariant instruments with only classical memory obey T^2 <= t(2^b-1)/(2M).",
+      "id": "LEMMA-CODE-COSET-COLLECTIVE-GROWING-COPY-BINARY-CLASSIFIER",
+      "statement": "A growing-copy measurement program has an efficiently evaluable outcome decision rule, charged disturbance, natural source coverage and a serious classical comparison.",
+      "status": "blocked-no-growing-copy-program-and-outcome-classifier"
     },
     {
       "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -15376,7 +15437,7 @@
       "candidate_id": "CODE-COSET-COLLECTIVE",
       "claim_blocked": "PO-DEQUANTIZATION",
       "debt_type": "dequantization",
-      "evidence": "The packed label capacity is polynomial, while the exact source mass of such small multiplicities vanishes superpolynomially. | It produces an implicit copy code. The logical target effect, physical access transfer and decoder remain unspecified. | All likelihoods coincide within each reference-matching orbit. There are p(m) orbits among (2m-1)!! hypotheses, so success is at most p(m)/(2m-1)!! even with arbitrarily many jointly invariant copies.",
+      "evidence": "The packed label capacity is polynomial, while the exact source mass of such small multiplicities vanishes superpolynomially. | The two tasks have different priors and alternatives. Complete S3/S4 physical channels have nonzero binary signal; the one-pair character likelihood is checked independently. | It produces an implicit copy code. The logical target effect, physical access transfer and decoder remain unspecified.",
       "id": "DEBT-CODE-COSET-COLLECTIVE-PO-DEQUANTIZATION",
       "priority_score": 100,
       "required_resolution": "Resolve dequantization findings or demote the candidate to a negative/blocked result."
@@ -15884,7 +15945,7 @@
     "candidate_id": "CODE-COSET-COLLECTIVE",
     "claim_blocked": "PO-DEQUANTIZATION",
     "debt_type": "dequantization",
-    "evidence": "The packed label capacity is polynomial, while the exact source mass of such small multiplicities vanishes superpolynomially. | It produces an implicit copy code. The logical target effect, physical access transfer and decoder remain unspecified. | All likelihoods coincide within each reference-matching orbit. There are p(m) orbits among (2m-1)!! hypotheses, so success is at most p(m)/(2m-1)!! even with arbitrarily many jointly invariant copies.",
+    "evidence": "The packed label capacity is polynomial, while the exact source mass of such small multiplicities vanishes superpolynomially. | The two tasks have different priors and alternatives. Complete S3/S4 physical channels have nonzero binary signal; the one-pair character likelihood is checked independently. | It produces an implicit copy code. The logical target effect, physical access transfer and decoder remain unspecified.",
     "id": "DEBT-CODE-COSET-COLLECTIVE-PO-DEQUANTIZATION",
     "priority_score": 100,
     "required_resolution": "Resolve dequantization findings or demote the candidate to a negative/blocked result."

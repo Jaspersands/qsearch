@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "claim_count": 10,
+  "claim_count": 13,
   "claims": [
     {
       "id": "CUBIC-LOCAL-LOSS",
@@ -188,6 +188,66 @@
       "support_rank": 0,
       "unsupported_assertion": false,
       "routes": []
+    },
+    {
+      "id": "REFERENCE-ORBIT-BLOCK-PURITY",
+      "scope": {
+        "domain": "nonidentity involutions in one reference-conjugacy orbit O of S_(2m)",
+        "input_model": "b physical coset copies of the same h, diagonally twirled within the block",
+        "conclusion": "|G|^b Tr(sigma_O,b^2)-1 = (2^b-1)/|O|",
+        "quantifier": "universal"
+      },
+      "asserted_level": "derived-review-pending",
+      "supported_level": "derived-review-pending",
+      "support_rank": 3,
+      "unsupported_assertion": false,
+      "routes": [
+        {
+          "id": "regular-orthogonality",
+          "support_rank": 3,
+          "supported_level": "derived-review-pending"
+        }
+      ]
+    },
+    {
+      "id": "PREDETERMINED-REFERENCE-TWIRL-INFORMATION",
+      "scope": {
+        "domain": "uniform fixed-point-free involutions in S_(2m)",
+        "input_model": "independent disjoint block twirls with outcome-independent known references; arbitrary later joint processing",
+        "conclusion": "squared half trace distance is at most min(1, p(m)/(2(2m-1)!!) sum_j(2^b_j-1))",
+        "quantifier": "universal"
+      },
+      "asserted_level": "derived-review-pending",
+      "supported_level": "derived-review-pending",
+      "support_rank": 3,
+      "unsupported_assertion": false,
+      "routes": [
+        {
+          "id": "entropy-additivity",
+          "support_rank": 3,
+          "supported_level": "derived-review-pending"
+        }
+      ]
+    },
+    {
+      "id": "ADAPTIVE-PREINTERACTION-REFERENCE-TWIRL",
+      "scope": {
+        "domain": "uniform fixed-point-free involutions in S_(2m)",
+        "input_model": "at most t classical adaptive reference rounds; fresh blocks twirled before quantum-memory interaction; no other h-dependent resource",
+        "conclusion": "squared half trace distance is at most min(1, t*p(m)/(2(2m-1)!!) sum_j(2^b_j-1))",
+        "quantifier": "universal"
+      },
+      "asserted_level": "derived-review-pending",
+      "supported_level": "derived-review-pending",
+      "support_rank": 3,
+      "unsupported_assertion": false,
+      "routes": [
+        {
+          "id": "null-prefix-hybrid",
+          "support_rank": 3,
+          "supported_level": "derived-review-pending"
+        }
+      ]
     }
   ],
   "issues": [

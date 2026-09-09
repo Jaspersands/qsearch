@@ -162,9 +162,18 @@ def test_committed_manifest_pins_are_checked_without_regeneration():
     root = Path(__file__).resolve().parents[1]
     manifest = json.loads((root / "research/registry/proof_routes.json").read_text())
     result = audit_proof_routes(manifest, root)
-    assert result["claim_count"] == 10
+    assert result["claim_count"] == 13
     assert result["unsupported_assertion_count"] == 0
     assert not any(row["code"] == "stale-source" for row in result["issues"])
+
+
+def test_scoped_discard_bound_cannot_supply_general_binary_impossibility(tmp_path):
+    discard = claim("discard", "classical-adaptive preinteraction twirl information bound")
+    binary = claim("binary", "binary detection impossible for arbitrary coset-state algorithms",
+                   routes=[route("bad-transfer", "discard-bound")], asserted="derived-review-pending")
+    report = audit(tmp_path, [binary], [evidence(tmp_path, discard, "discard-bound")])
+    assert report["unsupported_assertion_count"] == 1
+    assert any(row["code"] == "scope-mismatch" for row in report["issues"])
 
 
 @pytest.mark.parametrize("pointer", ("/rows/-1", "/rows/01", "/bad~2key"))

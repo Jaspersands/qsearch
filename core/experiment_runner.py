@@ -1264,6 +1264,8 @@ from coset_hidden_involution_source_weighted_support_portfolio import (
 from coset_hidden_involution_spectral_label_budget import write_spectral_label_budget_report
 from coset_hidden_involution_signed_tensor_access import write_signed_tensor_access_report
 from coset_hidden_involution_encoded_restriction import write_encoded_restriction_report
+from coset_hidden_involution_reference_twirl_information import write_reference_twirl_information_report
+from coset_binary_carrier_instruments import write_binary_carrier_instrument_report
 from coset_hidden_involution_natural_support_six_mass_audit import (
     write_natural_support_six_mass_audit,
 )
@@ -1696,6 +1698,8 @@ DCP_SUBSET_SUM_MARKER_COSET_EXPERIMENTS = {
 COSET_MULTIPLICITY_TWIRL_EXPERIMENTS = {
     "EXP-COSET-HIDDEN-INVOLUTION-SIGNED-TENSOR-ACCESS",
     "EXP-COSET-HIDDEN-INVOLUTION-ENCODED-RESTRICTION",
+    "EXP-COSET-HIDDEN-INVOLUTION-REFERENCE-TWIRL-INFORMATION",
+    "EXP-COSET-BINARY-CARRIER-INSTRUMENTS",
     "EXP-COSET-HIDDEN-INVOLUTION-SOURCE-WEIGHTED-SUPPORT-PORTFOLIO",
     "EXP-COSET-HIDDEN-INVOLUTION-SPECTRAL-LABEL-BUDGET",
     "EXP-COSET-HIDDEN-INVOLUTION-MULTIPLICITY-TWIRL-PROJECTION",
@@ -3779,6 +3783,8 @@ def select_next_experiment() -> NextExperimentSelection:
     "EXP-COSET-HIDDEN-INVOLUTION-SPECTRAL-LABEL-BUDGET": 133,
     "EXP-COSET-HIDDEN-INVOLUTION-SIGNED-TENSOR-ACCESS": 133,
     "EXP-COSET-HIDDEN-INVOLUTION-ENCODED-RESTRICTION": 134,
+    "EXP-COSET-HIDDEN-INVOLUTION-REFERENCE-TWIRL-INFORMATION": 135,
+    "EXP-COSET-BINARY-CARRIER-INSTRUMENTS": 135,
     "EXP-COSET-HIDDEN-INVOLUTION-NATURAL-SUPPORT-SIX-MASS-AUDIT": 130,
     "EXP-COSET-HIDDEN-INVOLUTION-ORBIT-SYNTHESIS-FLATNESS": 100,
     "EXP-COSET-HIDDEN-INVOLUTION-PAIR-POLAR-HOLONOMY-NO-GO": 100,
@@ -12483,6 +12489,8 @@ def run_experiment(experiment_id: str) -> RunnerResult:
         "EXP-COSET-HIDDEN-INVOLUTION-SPECTRAL-LABEL-BUDGET": write_spectral_label_budget_report,
         "EXP-COSET-HIDDEN-INVOLUTION-SIGNED-TENSOR-ACCESS": write_signed_tensor_access_report,
         "EXP-COSET-HIDDEN-INVOLUTION-ENCODED-RESTRICTION": write_encoded_restriction_report,
+        "EXP-COSET-HIDDEN-INVOLUTION-REFERENCE-TWIRL-INFORMATION": write_reference_twirl_information_report,
+        "EXP-COSET-BINARY-CARRIER-INSTRUMENTS": write_binary_carrier_instrument_report,
         "EXP-COSET-HIDDEN-INVOLUTION-HIGH-MASS-SUPPORT-SCAN": (
             write_high_mass_support_scan_report
         ),

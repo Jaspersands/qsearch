@@ -16994,5 +16994,155 @@
     "run_id": "RUN-EXP-COSET-RECOUPLING-MECHANISM-SYNTHESIS-00521",
     "status": "typed-mutations-ranked-no-proof-gate-eligible-mechanism",
     "summary": "Evaluated 8 typed collective-measurement architectures, rejected 5 known-invalid shortcuts, and retained 3 proof-capability research proposals without promoting candidates."
+  },
+  {
+    "artifacts": {
+      "reference_twirl_information": "research/representation/coset_hidden_involution_reference_twirl_information.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "experiment_id": "EXP-COSET-HIDDEN-INVOLUTION-REFERENCE-TWIRL-INFORMATION",
+    "falsifier_count": 2,
+    "falsifiers_triggered": [
+      "Noncommuting multiplicity operators do not restore carrier correlations erased independently per input.",
+      "A large chi-squared moment from rare reference-aligned orbits is not a detection lower bound."
+    ],
+    "metrics": {
+      "finite_binary_controls_passed": 10,
+      "m128_log2_single_copy_distance_upper_bound": -397.4079196039739,
+      "m128_necessary_block_size": 792,
+      "maximum_half_degree": 256,
+      "regular_basis_controls_passed": 1,
+      "scaling_records": 7,
+      "strict_finite_information_loss_controls": 5
+    },
+    "recorded_at": "2026-09-08T20:24:59.126193+00:00",
+    "result_id": "RESULT-EXP-COSET-HIDDEN-INVOLUTION-REFERENCE-TWIRL-INFORMATION",
+    "run_id": "RUN-EXP-COSET-HIDDEN-INVOLUTION-REFERENCE-TWIRL-INFORMATION-00522",
+    "status": "derived-blockwise-reference-information-loss-review-pending",
+    "summary": "Independent reference-carrier discard suppresses even binary detection: T^2 <= p(m)/(2(2m-1)!!) sum_j(2^b_j-1). A single global twirl and fully coherent carrier retention are not excluded."
+  },
+  {
+    "artifacts": {
+      "reference_twirl_information": "research/representation/coset_hidden_involution_reference_twirl_information.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "experiment_id": "EXP-COSET-HIDDEN-INVOLUTION-REFERENCE-TWIRL-INFORMATION",
+    "falsifier_count": 2,
+    "falsifiers_triggered": [
+      "Noncommuting multiplicity operators do not restore carrier correlations erased independently per input.",
+      "A large chi-squared moment from rare reference-aligned orbits is not a detection lower bound."
+    ],
+    "metrics": {
+      "coherent_reference_identity_channels_verified": 5,
+      "finite_binary_controls_passed": 10,
+      "m128_adaptive_log2_distance_upper_bound": -390.4079196039739,
+      "m128_adaptive_necessary_block_size": 778,
+      "m128_log2_single_copy_distance_upper_bound": -397.4079196039739,
+      "m128_necessary_block_size": 792,
+      "maximum_half_degree": 256,
+      "regular_basis_controls_passed": 1,
+      "scaling_records": 7,
+      "strict_finite_information_loss_controls": 5
+    },
+    "recorded_at": "2026-09-09T01:32:31.656001+00:00",
+    "result_id": "RESULT-EXP-COSET-HIDDEN-INVOLUTION-REFERENCE-TWIRL-INFORMATION",
+    "run_id": "RUN-EXP-COSET-HIDDEN-INVOLUTION-REFERENCE-TWIRL-INFORMATION-00523",
+    "status": "derived-blockwise-reference-information-loss-review-pending",
+    "summary": "Independent reference-carrier discard suppresses binary detection: T^2 <= p(m)/(2(2m-1)!!) sum_j(2^b_j-1) for predetermined references. Classical adaptation with quantum memory obeys a weaker bound multiplied by the round count, provided fresh blocks are twirled before memory interaction. A single global twirl and coherent carrier retention remain open."
+  },
+  {
+    "artifacts": {
+      "coset_recoupling_mechanism_synthesis": "research/representation/coset_recoupling_mechanism_synthesis.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "experiment_id": "EXP-COSET-RECOUPLING-MECHANISM-SYNTHESIS",
+    "falsifier_count": 6,
+    "falsifiers_triggered": [
+      "QFT-only weak-label decoding is a known no-go route.",
+      "Multiplicity statistics are not a coherent transform or decoder.",
+      "Spectrum-rank PGM and one-tree k-copy recursion fail exact finite/all-n tests.",
+      "Exceptional commuting or restricted multiplicity families do not inherit full source-family reductions.",
+      "No surviving architecture currently satisfies every proof-critical capability.",
+      "Every architecture must also satisfy the exact class-specific Holevo/Fano copy budget; that polynomial budget is not a substitute for a measurement circuit."
+    ],
+    "metrics": {
+      "automatically_promoted_candidate_count": 0,
+      "highest_survivor_priority_score": 110,
+      "holevo_copy_budget_rule_count": 1,
+      "known_no_go_rejected_count": 6,
+      "mechanism_count": 9,
+      "minimum_missing_capability_count": 2,
+      "primitive_count": 21,
+      "proof_gate_eligible_count": 0,
+      "proposal_only_count": 3,
+      "typed_interface_valid_count": 9,
+      "undercharged_mechanism_promoted_count": 0
+    },
+    "recorded_at": "2026-09-09T01:32:41.875583+00:00",
+    "result_id": "RESULT-EXP-COSET-RECOUPLING-MECHANISM-SYNTHESIS-COSET",
+    "run_id": "RUN-EXP-COSET-RECOUPLING-MECHANISM-SYNTHESIS-00524",
+    "status": "typed-mutations-ranked-no-proof-gate-eligible-mechanism",
+    "summary": "Evaluated 9 typed collective-measurement architectures, rejected 6 known-invalid shortcuts, and retained 3 proof-capability research proposals without promoting candidates."
+  },
+  {
+    "artifacts": {
+      "binary_carrier_instruments": "research/representation/coset_binary_carrier_instruments.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "experiment_id": "EXP-COSET-BINARY-CARRIER-INSTRUMENTS",
+    "falsifier_count": 4,
+    "falsifiers_triggered": [
+      "Conjugation invariance removes hidden-member information, not necessarily class-versus-trivial information.",
+      "Measuring another carrier label can irreversibly lose information; a large commutator does not certify an improved detector.",
+      "All tested L/R binary outcome laws, including final Young rows, are reproduced by a latent-total-irrep classical model; the dephased ablation alone was too weak.",
+      "Fixed-copy invariant instruments repeated polynomially many times remain below the required asymptotic information budget."
+    ],
+    "metrics": {
+      "explicit_one_pair_classifiers_checked": 4,
+      "finite_full_source_controls_passed": 2,
+      "growing_copy_measurement_compilers": 0,
+      "schedules_evaluated": 24,
+      "source_blocks_evaluated": 152,
+      "source_blocks_with_exact_latent_irrep_model": 152
+    },
+    "recorded_at": "2026-09-09T02:00:21.110697+00:00",
+    "result_id": "RESULT-EXP-COSET-BINARY-CARRIER-INSTRUMENTS",
+    "run_id": "RUN-EXP-COSET-BINARY-CARRIER-INSTRUMENTS-00525",
+    "status": "binary-instrument-calibration-fixed-copy-route-obstructed",
+    "summary": "Complete natural-source carrier transcripts are evaluated for binary detection, separately from identification. Measurement disturbance and the uncompiled residual Helstrom gap are charged. Fixed-copy invariant block repetition cannot yield scalable advantage."
+  },
+  {
+    "artifacts": {
+      "coset_recoupling_mechanism_synthesis": "research/representation/coset_recoupling_mechanism_synthesis.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "experiment_id": "EXP-COSET-RECOUPLING-MECHANISM-SYNTHESIS",
+    "falsifier_count": 6,
+    "falsifiers_triggered": [
+      "QFT-only weak-label decoding is a known no-go route.",
+      "Multiplicity statistics are not a coherent transform or decoder.",
+      "Spectrum-rank PGM and one-tree k-copy recursion fail exact finite/all-n tests.",
+      "Exceptional commuting or restricted multiplicity families do not inherit full source-family reductions.",
+      "No surviving architecture currently satisfies every proof-critical capability.",
+      "Every architecture must also satisfy the exact class-specific Holevo/Fano copy budget; that polynomial budget is not a substitute for a measurement circuit."
+    ],
+    "metrics": {
+      "automatically_promoted_candidate_count": 0,
+      "highest_survivor_priority_score": 110,
+      "holevo_copy_budget_rule_count": 1,
+      "known_no_go_rejected_count": 6,
+      "mechanism_count": 9,
+      "minimum_missing_capability_count": 2,
+      "primitive_count": 21,
+      "proof_gate_eligible_count": 0,
+      "proposal_only_count": 3,
+      "typed_interface_valid_count": 9,
+      "undercharged_mechanism_promoted_count": 0
+    },
+    "recorded_at": "2026-09-09T02:03:04.327290+00:00",
+    "result_id": "RESULT-EXP-COSET-RECOUPLING-MECHANISM-SYNTHESIS-COSET",
+    "run_id": "RUN-EXP-COSET-RECOUPLING-MECHANISM-SYNTHESIS-00526",
+    "status": "typed-mutations-ranked-no-proof-gate-eligible-mechanism",
+    "summary": "Evaluated 9 typed collective-measurement architectures, rejected 6 known-invalid shortcuts, and retained 3 proof-capability research proposals without promoting candidates."
   }
 ]

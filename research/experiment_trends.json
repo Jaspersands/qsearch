@@ -1,8 +1,8 @@
 {
-  "created_at": "2026-09-08T11:56:13.789163+00:00",
+  "created_at": "2026-09-09T02:03:04.338051+00:00",
   "history_artifact": "research/experiment_run_history.json",
-  "history_count": 521,
-  "trend_count": 397,
+  "history_count": 526,
+  "trend_count": 399,
   "trends": [
     {
       "blocking_run_count": 2,
@@ -18869,6 +18869,71 @@
     },
     {
       "blocking_run_count": 1,
+      "experiment_id": "EXP-COSET-BINARY-CARRIER-INSTRUMENTS",
+      "falsifier_count_sequence": [
+        4
+      ],
+      "interpretation": "Repeated runs continue to trigger falsifiers; this is proof debt, not progress.",
+      "latest_result_id": "RESULT-EXP-COSET-BINARY-CARRIER-INSTRUMENTS",
+      "latest_status": "binary-instrument-calibration-fixed-copy-route-obstructed",
+      "latest_summary": "Complete natural-source carrier transcripts are evaluated for binary detection, separately from identification. Measurement disturbance and the uncompiled residual Helstrom gap are charged. Fixed-copy invariant block repetition cannot yield scalable advantage.",
+      "numeric_metric_trends": {
+        "explicit_one_pair_classifiers_checked": {
+          "delta": 0.0,
+          "first": 4.0,
+          "latest": 4.0,
+          "max": 4.0,
+          "min": 4.0,
+          "observations": 1
+        },
+        "finite_full_source_controls_passed": {
+          "delta": 0.0,
+          "first": 2.0,
+          "latest": 2.0,
+          "max": 2.0,
+          "min": 2.0,
+          "observations": 1
+        },
+        "growing_copy_measurement_compilers": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "schedules_evaluated": {
+          "delta": 0.0,
+          "first": 24.0,
+          "latest": 24.0,
+          "max": 24.0,
+          "min": 24.0,
+          "observations": 1
+        },
+        "source_blocks_evaluated": {
+          "delta": 0.0,
+          "first": 152.0,
+          "latest": 152.0,
+          "max": 152.0,
+          "min": 152.0,
+          "observations": 1
+        },
+        "source_blocks_with_exact_latent_irrep_model": {
+          "delta": 0.0,
+          "first": 152.0,
+          "latest": 152.0,
+          "max": 152.0,
+          "min": 152.0,
+          "observations": 1
+        }
+      },
+      "run_count": 1,
+      "status_sequence": [
+        "binary-instrument-calibration-fixed-copy-route-obstructed"
+      ]
+    },
+    {
+      "blocking_run_count": 1,
       "experiment_id": "EXP-COSET-CARRIER-INFORMATION-AUDIT",
       "falsifier_count_sequence": [
         4
@@ -25169,6 +25234,105 @@
       ]
     },
     {
+      "blocking_run_count": 2,
+      "experiment_id": "EXP-COSET-HIDDEN-INVOLUTION-REFERENCE-TWIRL-INFORMATION",
+      "falsifier_count_sequence": [
+        2,
+        2
+      ],
+      "interpretation": "Repeated runs continue to trigger falsifiers; this is proof debt, not progress.",
+      "latest_result_id": "RESULT-EXP-COSET-HIDDEN-INVOLUTION-REFERENCE-TWIRL-INFORMATION",
+      "latest_status": "derived-blockwise-reference-information-loss-review-pending",
+      "latest_summary": "Independent reference-carrier discard suppresses binary detection: T^2 <= p(m)/(2(2m-1)!!) sum_j(2^b_j-1) for predetermined references. Classical adaptation with quantum memory obeys a weaker bound multiplied by the round count, provided fresh blocks are twirled before memory interaction. A single global twirl and coherent carrier retention remain open.",
+      "numeric_metric_trends": {
+        "coherent_reference_identity_channels_verified": {
+          "delta": 0.0,
+          "first": 5.0,
+          "latest": 5.0,
+          "max": 5.0,
+          "min": 5.0,
+          "observations": 1
+        },
+        "finite_binary_controls_passed": {
+          "delta": 0.0,
+          "first": 10.0,
+          "latest": 10.0,
+          "max": 10.0,
+          "min": 10.0,
+          "observations": 2
+        },
+        "m128_adaptive_log2_distance_upper_bound": {
+          "delta": 0.0,
+          "first": -390.4079196039739,
+          "latest": -390.4079196039739,
+          "max": -390.4079196039739,
+          "min": -390.4079196039739,
+          "observations": 1
+        },
+        "m128_adaptive_necessary_block_size": {
+          "delta": 0.0,
+          "first": 778.0,
+          "latest": 778.0,
+          "max": 778.0,
+          "min": 778.0,
+          "observations": 1
+        },
+        "m128_log2_single_copy_distance_upper_bound": {
+          "delta": 0.0,
+          "first": -397.4079196039739,
+          "latest": -397.4079196039739,
+          "max": -397.4079196039739,
+          "min": -397.4079196039739,
+          "observations": 2
+        },
+        "m128_necessary_block_size": {
+          "delta": 0.0,
+          "first": 792.0,
+          "latest": 792.0,
+          "max": 792.0,
+          "min": 792.0,
+          "observations": 2
+        },
+        "maximum_half_degree": {
+          "delta": 0.0,
+          "first": 256.0,
+          "latest": 256.0,
+          "max": 256.0,
+          "min": 256.0,
+          "observations": 2
+        },
+        "regular_basis_controls_passed": {
+          "delta": 0.0,
+          "first": 1.0,
+          "latest": 1.0,
+          "max": 1.0,
+          "min": 1.0,
+          "observations": 2
+        },
+        "scaling_records": {
+          "delta": 0.0,
+          "first": 7.0,
+          "latest": 7.0,
+          "max": 7.0,
+          "min": 7.0,
+          "observations": 2
+        },
+        "strict_finite_information_loss_controls": {
+          "delta": 0.0,
+          "first": 5.0,
+          "latest": 5.0,
+          "max": 5.0,
+          "min": 5.0,
+          "observations": 2
+        }
+      },
+      "run_count": 2,
+      "status_sequence": [
+        "derived-blockwise-reference-information-loss-review-pending",
+        "derived-blockwise-reference-information-loss-review-pending"
+      ]
+    },
+    {
       "blocking_run_count": 1,
       "experiment_id": "EXP-COSET-HIDDEN-INVOLUTION-REGULAR-ORBIT-ROW-REDUCTION",
       "falsifier_count_sequence": [
@@ -28768,16 +28932,18 @@
       ]
     },
     {
-      "blocking_run_count": 2,
+      "blocking_run_count": 4,
       "experiment_id": "EXP-COSET-RECOUPLING-MECHANISM-SYNTHESIS",
       "falsifier_count_sequence": [
         5,
+        6,
+        6,
         6
       ],
       "interpretation": "Repeated runs continue to trigger falsifiers; this is proof debt, not progress.",
       "latest_result_id": "RESULT-EXP-COSET-RECOUPLING-MECHANISM-SYNTHESIS-COSET",
       "latest_status": "typed-mutations-ranked-no-proof-gate-eligible-mechanism",
-      "latest_summary": "Evaluated 8 typed collective-measurement architectures, rejected 5 known-invalid shortcuts, and retained 3 proof-capability research proposals without promoting candidates.",
+      "latest_summary": "Evaluated 9 typed collective-measurement architectures, rejected 6 known-invalid shortcuts, and retained 3 proof-capability research proposals without promoting candidates.",
       "numeric_metric_trends": {
         "automatically_promoted_candidate_count": {
           "delta": 0.0,
@@ -28785,7 +28951,7 @@
           "latest": 0.0,
           "max": 0.0,
           "min": 0.0,
-          "observations": 2
+          "observations": 4
         },
         "highest_survivor_priority_score": {
           "delta": 10.0,
@@ -28793,7 +28959,7 @@
           "latest": 110.0,
           "max": 110.0,
           "min": 100.0,
-          "observations": 2
+          "observations": 4
         },
         "holevo_copy_budget_rule_count": {
           "delta": 0.0,
@@ -28801,23 +28967,23 @@
           "latest": 1.0,
           "max": 1.0,
           "min": 1.0,
-          "observations": 1
+          "observations": 3
         },
         "known_no_go_rejected_count": {
-          "delta": 1.0,
+          "delta": 2.0,
           "first": 4.0,
-          "latest": 5.0,
-          "max": 5.0,
+          "latest": 6.0,
+          "max": 6.0,
           "min": 4.0,
-          "observations": 2
+          "observations": 4
         },
         "mechanism_count": {
-          "delta": 2.0,
+          "delta": 3.0,
           "first": 6.0,
-          "latest": 8.0,
-          "max": 8.0,
+          "latest": 9.0,
+          "max": 9.0,
           "min": 6.0,
-          "observations": 2
+          "observations": 4
         },
         "minimum_missing_capability_count": {
           "delta": 0.0,
@@ -28825,15 +28991,15 @@
           "latest": 2.0,
           "max": 2.0,
           "min": 2.0,
-          "observations": 2
+          "observations": 4
         },
         "primitive_count": {
-          "delta": 4.0,
+          "delta": 6.0,
           "first": 15.0,
-          "latest": 19.0,
-          "max": 19.0,
+          "latest": 21.0,
+          "max": 21.0,
           "min": 15.0,
-          "observations": 2
+          "observations": 4
         },
         "proof_gate_eligible_count": {
           "delta": 0.0,
@@ -28841,7 +29007,7 @@
           "latest": 0.0,
           "max": 0.0,
           "min": 0.0,
-          "observations": 2
+          "observations": 4
         },
         "proposal_only_count": {
           "delta": 1.0,
@@ -28849,15 +29015,15 @@
           "latest": 3.0,
           "max": 3.0,
           "min": 2.0,
-          "observations": 2
+          "observations": 4
         },
         "typed_interface_valid_count": {
-          "delta": 2.0,
+          "delta": 3.0,
           "first": 6.0,
-          "latest": 8.0,
-          "max": 8.0,
+          "latest": 9.0,
+          "max": 9.0,
           "min": 6.0,
-          "observations": 2
+          "observations": 4
         },
         "undercharged_mechanism_promoted_count": {
           "delta": 0.0,
@@ -28865,11 +29031,13 @@
           "latest": 0.0,
           "max": 0.0,
           "min": 0.0,
-          "observations": 1
+          "observations": 3
         }
       },
-      "run_count": 2,
+      "run_count": 4,
       "status_sequence": [
+        "typed-mutations-ranked-no-proof-gate-eligible-mechanism",
+        "typed-mutations-ranked-no-proof-gate-eligible-mechanism",
         "typed-mutations-ranked-no-proof-gate-eligible-mechanism",
         "typed-mutations-ranked-no-proof-gate-eligible-mechanism"
       ]

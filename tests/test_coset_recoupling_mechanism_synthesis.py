@@ -40,6 +40,7 @@ class RecouplingMechanismSynthesisTests(unittest.TestCase):
             "MECH-PAIR-TREE-RANK-PGM",
             "MECH-RESTRICTED-COMMUTING-CLASS",
             "MECH-JM-LABEL-MULTIPLICITY-RECOUPLING",
+            "MECH-INDEPENDENT-MULTIPLICITY-ONLY-DECODER",
         ):
             self.assertEqual(evaluations[mechanism_id].decision, "rejected")
             self.assertTrue(evaluations[mechanism_id].known_no_go_violations)
@@ -78,7 +79,7 @@ class RecouplingMechanismSynthesisTests(unittest.TestCase):
 
     def test_report_promotes_no_undefined_architecture(self):
         report = build_recoupling_mechanism_synthesis_report()
-        self.assertEqual(report.headline_metrics["known_no_go_rejected_count"], 5)
+        self.assertEqual(report.headline_metrics["known_no_go_rejected_count"], 6)
         self.assertEqual(report.headline_metrics["proposal_only_count"], 3)
         self.assertEqual(report.headline_metrics["proof_gate_eligible_count"], 0)
         self.assertEqual(report.headline_metrics["automatically_promoted_candidate_count"], 0)

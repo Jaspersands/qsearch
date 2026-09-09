@@ -42881,6 +42881,20 @@
   {
     "applies_to": [
       "CODE-COSET-COLLECTIVE",
+      "carrier transcript task transfer"
+    ],
+    "claim": "An invariant carrier transcript with no information about which class member is hidden cannot detect the class against the trivial subgroup.",
+    "evidence": {
+      "artifact": "research/representation/coset_binary_carrier_instruments.json"
+    },
+    "id": "CARRIER-INVARIANCE-NOT-A-BINARY-NO-GO",
+    "lesson": "Evaluate the actual null/alternative distributions, retain all source weights, and separately account for copy scaling and classifier implementation.",
+    "reason_invalid": "The two tasks have different priors and alternatives. Complete S3/S4 physical channels have nonzero binary signal; the one-pair character likelihood is checked independently.",
+    "source": "EXP-COSET-BINARY-CARRIER-INSTRUMENTS"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
       "carrier contextuality",
       "adaptive carrier-label protocols"
     ],
@@ -54910,6 +54924,20 @@
   {
     "applies_to": [
       "CODE-COSET-COLLECTIVE",
+      "finite alternating-carrier binary signals"
+    ],
+    "claim": "The tested S3/S4 alternating carrier instruments exhibit binary information gains unexplained by a classical outcome model.",
+    "evidence": {
+      "artifact": "research/representation/coset_binary_carrier_instruments.json"
+    },
+    "id": "FINITE-BINARY-CARRIER-ALTERNATION-LATENT-IRREP",
+    "lesson": "A dephased product-basis ablation was too weak. This finite replay does not give a uniform classical simulator: the rank-one condition already fails in S6, and transition-computation cost must be charged.",
+    "reason_invalid": "Every L/R transcript and final Young-row probability is reproduced by a hidden Markov model with latent total irrep and rank-one multiplicity transitions. Measuring the total label after one pair resolves the retained finite binary information.",
+    "source": "EXP-COSET-BINARY-CARRIER-INSTRUMENTS"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
       "PGM condition number",
       "carrier hierarchy"
     ],
@@ -55604,6 +55632,31 @@
     "lesson": "Do not treat algebraic/Fourier structure as quantum advantage until it survives query-model-specific classical baselines.",
     "reason_invalid": "Implemented full-table or explicit-evaluator classical attacks recover the shift; successful attacks: chosen_query_exhaustive_correlation, full_table_cyclic_correlation, full_table_fourier_phase_regression, sparse_fourier_recovery",
     "source": "phase_state_workbench.py"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "independent reference-carrier discard"
+    ],
+    "claim": "After independent reference-type dephasing and carrier discard, polynomially many single-copy multiplicity registers permit constant-advantage binary detection.",
+    "evidence": {
+      "artifact": "research/representation/coset_hidden_involution_reference_twirl_information.json",
+      "scope": {
+        "adaptive_extension": "classical outcome-adaptive references, bounded rounds/block sizes, arbitrary quantum memory; fresh blocks twirled BEFORE memory interaction",
+        "channel": "independent diagonal K_j twirl per disjoint block; K_j known conjugates of C2 wr S_m",
+        "equivalent_single_copy_discard": "dephase reference irrep type AND discard its carrier, retaining multiplicity state",
+        "not_equivalent": "carrier tracing alone with padded registers and retained intertype coherence",
+        "null": "trivial-subgroup state I/|S_(2m)| in each input",
+        "postprocessing": "arbitrary joint quantum channel/POVM after the twirls",
+        "prior": "uniform fixed-point-free involution; the same h in every sample",
+        "reference_schedule": "fixed in advance or randomized independently of input and outcomes",
+        "trace_distance_convention": "half trace norm; equal-prior success = 1/2 + T/2"
+      }
+    },
+    "id": "INDEPENDENT-REFERENCE-CARRIER-DISCARD-ERASES-BINARY-INFORMATION",
+    "lesson": "Retain charged cross-input carrier correlations. Predetermined references and classical adaptation with fresh-block twirling before memory coupling obey separate bounds. Quantum-controlled references and pre-twirl memory interaction remain outside scope. This is not a general HSP lower bound or classical dequantization.",
+    "reason_invalid": "Independent reference-carrier discard suppresses binary detection: T^2 <= p(m)/(2(2m-1)!!) sum_j(2^b_j-1) for predetermined references. Classical adaptation with quantum memory obeys a weaker bound multiplied by the round count, provided fresh blocks are twirled before memory interaction. A single global twirl and coherent carrier retention remain open.",
+    "source": "EXP-COSET-HIDDEN-INVOLUTION-REFERENCE-TWIRL-INFORMATION"
   },
   {
     "applies_to": [
@@ -67238,6 +67291,20 @@
     "lesson": "Bounded-degree carry ANF reconstruction without auxiliary variables is impossible even after dense affine changes of variables.",
     "reason_invalid": "Dense linear transformations preserve algebraic degree and odd label concentration forces linear degree with exponentially many monomials.",
     "source": "EXP-DHS-DCP-CARRY-AFFINE-DEGREE-INVARIANCE"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "MECH-INDEPENDENT-MULTIPLICITY-ONLY-DECODER"
+    ],
+    "claim": "Collective decoding after independent reference-carrier discard",
+    "evidence": {
+      "artifact": "research/representation/coset_recoupling_mechanism_synthesis.json"
+    },
+    "id": "NEG-MECH-INDEPENDENT-MULTIPLICITY-ONLY-DECODER",
+    "lesson": "Reject this specified architecture, not different access models or independently justified routes.",
+    "reason_invalid": "Independent reference-carrier discard gives T^2 <= k*p(m)/(2(2m-1)!!) for binary detection under the uniform source, even with arbitrary collective postprocessing. Fully coherent carrier retention and a single global twirl are not covered.",
+    "source": "EXP-COSET-RECOUPLING-MECHANISM-SYNTHESIS"
   },
   {
     "applies_to": [

@@ -16,15 +16,33 @@
           "severity": "high"
         },
         {
+          "evidence": "The two tasks have different priors and alternatives. Complete S3/S4 physical channels have nonzero binary signal; the one-pair character likelihood is checked independently.",
+          "finding_id": "DEQ-CODE-COSET-COLLECTIVE-CARRIER-BINARY-TASK-SCOPE",
+          "required_action": "Evaluate the actual null/alternative distributions, retain all source weights, and separately account for copy scaling and classifier implementation. This is an access or symmetry boundary, not classical dequantization.",
+          "severity": "high"
+        },
+        {
           "evidence": "It produces an implicit copy code. The logical target effect, physical access transfer and decoder remain unspecified.",
           "finding_id": "DEQ-CODE-COSET-COLLECTIVE-ENCODED-COPY-TARGET-EFFECT",
           "required_action": "Use encoded logical access where possible, but charge target-effect construction and unknown-centralizer dependence separately. This is an access or symmetry boundary, not classical dequantization.",
           "severity": "high"
         },
         {
+          "evidence": "Every L/R transcript and final Young-row probability is reproduced by a hidden Markov model with latent total irrep and rank-one multiplicity transitions. Measuring the total label after one pair resolves the retained finite binary information.",
+          "finding_id": "DEQ-CODE-COSET-COLLECTIVE-FINITE-CARRIER-LATENT-IRREP-MODEL",
+          "required_action": "A dephased product-basis ablation was too weak. This finite replay does not give a uniform classical simulator: the rank-one condition already fails in S6, and transition-computation cost must be charged.",
+          "severity": "high"
+        },
+        {
           "evidence": "All likelihoods coincide within each reference-matching orbit. There are p(m) orbits among (2m-1)!! hypotheses, so success is at most p(m)/(2m-1)!! even with arbitrarily many jointly invariant copies.",
           "finding_id": "DEQ-CODE-COSET-COLLECTIVE-FIXED-REFERENCE-IDENTIFICATION",
           "required_action": "This does not obstruct binary class detection, carrier-sensitive or other symmetry-breaking effects, or protocols with different references. Aligned h-even source mass is not a fixed-reference input law. This is an access or symmetry boundary, not classical dequantization.",
+          "severity": "high"
+        },
+        {
+          "evidence": "Independent reference-carrier discard suppresses binary detection: T^2 <= p(m)/(2(2m-1)!!) sum_j(2^b_j-1) for predetermined references. Classical adaptation with quantum memory obeys a weaker bound multiplied by the round count, provided fresh blocks are twirled before memory interaction. A single global twirl and coherent carrier retention remain open.",
+          "finding_id": "DEQ-CODE-COSET-COLLECTIVE-REFERENCE-TWIRL-INFORMATION-LOSS",
+          "required_action": "Retain charged cross-input carrier correlations. Predetermined references and classical adaptation with fresh-block twirling before memory coupling obey separate bounds. Quantum-controlled references and pre-twirl memory interaction remain outside scope. This is not a general HSP lower bound or classical dequantization. This is an access or symmetry boundary, not classical dequantization.",
           "severity": "high"
         },
         {
@@ -3682,6 +3700,12 @@
           "severity": "medium"
         },
         {
+          "evidence": "Triggered falsifiers: Conjugation invariance removes hidden-member information, not necessarily class-versus-trivial information. | Measuring another carrier label can irreversibly lose information; a large commutator does not certify an improved detector. | All tested L/R binary outcome laws, including final Young rows, are reproduced by a latent-total-irrep classical model; the dephased ablation alone was too weak. | Fixed-copy invariant instruments repeated polynomially many times remain below the required asymptotic information budget.",
+          "finding_id": "DEQ-RESULT-EXP-COSET-BINARY-CARRIER-INSTRUMENTS-FALSIFIERS",
+          "required_action": "Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.",
+          "severity": "medium"
+        },
+        {
           "evidence": "Triggered falsifiers: Spectral separation is not an information objective: the gap-optimized rule is not information-optimal. | Commutant separator outcomes alone have zero hidden-element information, exactly as the covariance theorem predicts. | Adding multiplicity labels to target tableaux gives finite signal but does not beat separate strong Fourier outcomes. | Finite mutual information does not supply scaling, a polynomial decoder, or a quantum-classical separation.",
           "finding_id": "DEQ-RESULT-EXP-COSET-CARRIER-INFORMATION-AUDIT-COSET-FALSIFIERS",
           "required_action": "Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.",
@@ -4162,6 +4186,12 @@
           "severity": "medium"
         },
         {
+          "evidence": "Triggered falsifiers: Noncommuting multiplicity operators do not restore carrier correlations erased independently per input. | A large chi-squared moment from rare reference-aligned orbits is not a detection lower bound.",
+          "finding_id": "DEQ-RESULT-EXP-COSET-HIDDEN-INVOLUTION-REFERENCE-TWIRL-INFORMATION-FALSIFIERS",
+          "required_action": "Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.",
+          "severity": "medium"
+        },
+        {
           "evidence": "Triggered falsifiers: Generated weak-invariant collisions are separated by stronger classical code invariants.",
           "finding_id": "DEQ-RESULT-EXP-COSET-HIDDEN-INVOLUTION-REGULAR-ORBIT-ROW-REDUCTION-CODE-FAMILY-SEARCH-FALSIFIERS",
           "required_action": "Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.",
@@ -4438,7 +4468,7 @@
           "severity": "medium"
         },
         {
-          "evidence": "Triggered falsifiers: QFT-only weak-label decoding is a known no-go route. | Multiplicity statistics are not a coherent transform or decoder. | Spectrum-rank PGM and one-tree k-copy recursion fail exact finite/all-n tests. | Exceptional commuting or restricted multiplicity families do not inherit full source-family reductions. | No surviving architecture currently satisfies every proof-critical capability.",
+          "evidence": "Triggered falsifiers: QFT-only weak-label decoding is a known no-go route. | Multiplicity statistics are not a coherent transform or decoder. | Spectrum-rank PGM and one-tree k-copy recursion fail exact finite/all-n tests. | Exceptional commuting or restricted multiplicity families do not inherit full source-family reductions. | No surviving architecture currently satisfies every proof-critical capability. | Every architecture must also satisfy the exact class-specific Holevo/Fano copy budget; that polynomial budget is not a substitute for a measurement circuit.",
           "finding_id": "DEQ-RESULT-EXP-COSET-RECOUPLING-MECHANISM-SYNTHESIS-COSET-FALSIFIERS",
           "required_action": "Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.",
           "severity": "medium"
@@ -4931,7 +4961,7 @@
         }
       ],
       "candidate_id": "CODE-COSET-COLLECTIVE",
-      "created_at": "2026-09-08T11:51:08.550602+00:00",
+      "created_at": "2026-09-09T02:03:32.907149+00:00",
       "id": "CONJ-CODE-COSET-COLLECTIVE",
       "next_actions": [
         "Resolve every blocking finding before promotion.",
@@ -13823,6 +13853,19 @@
           "summary": "Audited 6 code pair row(s) with coordinate tuple profiles through t=3; 5 were rejected and 0 survived only as proof debt. Searched 3 tuple-profile collision budget(s), finding 12 collision(s)."
         },
         {
+          "experiment_result_id": "RESULT-EXP-COSET-BINARY-CARRIER-INSTRUMENTS",
+          "metrics": {
+            "explicit_one_pair_classifiers_checked": 4,
+            "finite_full_source_controls_passed": 2,
+            "growing_copy_measurement_compilers": 0,
+            "schedules_evaluated": 24,
+            "source_blocks_evaluated": 152,
+            "source_blocks_with_exact_latent_irrep_model": 152
+          },
+          "status": "binary-instrument-calibration-fixed-copy-route-obstructed",
+          "summary": "Complete natural-source carrier transcripts are evaluated for binary detection, separately from identification. Measurement disturbance and the uncompiled residual Helstrom gap are charged. Fixed-copy invariant block repetition cannot yield scalable advantage."
+        },
+        {
           "experiment_result_id": "RESULT-EXP-COSET-CARRIER-INFORMATION-AUDIT-COSET",
           "metrics": {
             "all_n_information_advantage_theorem_count": 0,
@@ -15156,6 +15199,23 @@
           "summary": "Proved exact standard and carry-sliced marker-coset radius equivalences. Marker normalization is easy; short marker-one extraction remains exactly the binary subset-sum search problem."
         },
         {
+          "experiment_result_id": "RESULT-EXP-COSET-HIDDEN-INVOLUTION-REFERENCE-TWIRL-INFORMATION",
+          "metrics": {
+            "coherent_reference_identity_channels_verified": 5,
+            "finite_binary_controls_passed": 10,
+            "m128_adaptive_log2_distance_upper_bound": -390.4079196039739,
+            "m128_adaptive_necessary_block_size": 778,
+            "m128_log2_single_copy_distance_upper_bound": -397.4079196039739,
+            "m128_necessary_block_size": 792,
+            "maximum_half_degree": 256,
+            "regular_basis_controls_passed": 1,
+            "scaling_records": 7,
+            "strict_finite_information_loss_controls": 5
+          },
+          "status": "derived-blockwise-reference-information-loss-review-pending",
+          "summary": "Independent reference-carrier discard suppresses binary detection: T^2 <= p(m)/(2(2m-1)!!) sum_j(2^b_j-1) for predetermined references. Classical adaptation with quantum memory obeys a weaker bound multiplied by the round count, provided fresh blocks are twirled before memory interaction. A single global twirl and coherent carrier retention remain open."
+        },
+        {
           "experiment_result_id": "RESULT-EXP-COSET-HIDDEN-INVOLUTION-REGULAR-ORBIT-ROW-REDUCTION-CODE-FAMILY-SEARCH",
           "metrics": {
             "bounded_exact_rejection_count": 0,
@@ -16143,17 +16203,19 @@
           "experiment_result_id": "RESULT-EXP-COSET-RECOUPLING-MECHANISM-SYNTHESIS-COSET",
           "metrics": {
             "automatically_promoted_candidate_count": 0,
-            "highest_survivor_priority_score": 100,
-            "known_no_go_rejected_count": 4,
-            "mechanism_count": 6,
+            "highest_survivor_priority_score": 110,
+            "holevo_copy_budget_rule_count": 1,
+            "known_no_go_rejected_count": 6,
+            "mechanism_count": 9,
             "minimum_missing_capability_count": 2,
-            "primitive_count": 15,
+            "primitive_count": 21,
             "proof_gate_eligible_count": 0,
-            "proposal_only_count": 2,
-            "typed_interface_valid_count": 6
+            "proposal_only_count": 3,
+            "typed_interface_valid_count": 9,
+            "undercharged_mechanism_promoted_count": 0
           },
           "status": "typed-mutations-ranked-no-proof-gate-eligible-mechanism",
-          "summary": "Evaluated 6 typed collective-measurement architectures, rejected 4 known-invalid shortcuts, and retained 2 proof-capability research proposals without promoting candidates."
+          "summary": "Evaluated 9 typed collective-measurement architectures, rejected 6 known-invalid shortcuts, and retained 3 proof-capability research proposals without promoting candidates."
         },
         {
           "experiment_result_id": "RESULT-EXP-COSET-RECOUPLING-MECHANISM-SYNTHESIS-LATEST",
@@ -17843,7 +17905,7 @@
           "summary": "Proved that density-one low-bit fibers contain no affine flat of dimension 8log2(q) or larger with failure 2^-Omega(q log q), uniformly over every adaptive GL(m,2) reparameterization. Any support-contained cancellation-free affine cover is exponential."
         }
       ],
-      "updated_at": "2026-09-08T11:51:08.550602+00:00"
+      "updated_at": "2026-09-09T02:03:32.907149+00:00"
     },
     {
       "assumptions": [
@@ -19271,7 +19333,7 @@
         }
       ],
       "candidate_id": "DHS-GOWERS-SIEVE",
-      "created_at": "2026-09-08T11:51:08.550602+00:00",
+      "created_at": "2026-09-09T02:03:32.907149+00:00",
       "id": "CONJ-DHS-GOWERS-SIEVE",
       "next_actions": [
         "Resolve every blocking finding before promotion.",
@@ -21984,7 +22046,7 @@
           "summary": "Audited 40 explicit hidden-shift instances across 10 phase families. 0 instances show Fourier/derivative structure; 16 are critical/high dequantization risk; 40 survive at least one restricted query model. Best DHSP sieve strategy aggressive_doubling reaches v2=7 from 2048 phase labels; explicit phase-state trace reaches v2=7 with 44 survivor states."
         }
       ],
-      "updated_at": "2026-09-08T11:51:08.550602+00:00"
+      "updated_at": "2026-09-09T02:03:32.907149+00:00"
     },
     {
       "assumptions": [
@@ -22042,7 +22104,7 @@
         }
       ],
       "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
-      "created_at": "2026-09-08T11:51:08.550602+00:00",
+      "created_at": "2026-09-09T02:03:32.907149+00:00",
       "id": "CONJ-HYP-LIT-COSET-OBSERVABLES",
       "next_actions": [
         "Resolve every blocking finding before promotion.",
@@ -22082,7 +22144,7 @@
           "summary": "Audited 4 hidden-permutation graph pairs. 2 pair survives current classical and low-register tests; 1 control pair is classically distinguished; 2 CFI-style parity benchmark(s) included."
         }
       ],
-      "updated_at": "2026-09-08T11:51:08.550602+00:00"
+      "updated_at": "2026-09-09T02:03:32.907149+00:00"
     },
     {
       "assumptions": [
@@ -22172,7 +22234,7 @@
         }
       ],
       "candidate_id": "HYP-LIT-HIDDEN-SHIFT-SIEVE",
-      "created_at": "2026-09-08T11:51:08.550602+00:00",
+      "created_at": "2026-09-09T02:03:32.907149+00:00",
       "id": "CONJ-HYP-LIT-HIDDEN-SHIFT-SIEVE",
       "next_actions": [
         "Resolve every blocking finding before promotion.",
@@ -22254,7 +22316,7 @@
           "summary": "Audited 40 explicit hidden-shift instances across 10 phase families. 0 instances show Fourier/derivative structure; 16 are critical/high dequantization risk; 40 survive at least one restricted query model. Best DHSP sieve strategy aggressive_doubling reaches v2=7 from 2048 phase labels; explicit phase-state trace reaches v2=7 with 44 survivor states."
         }
       ],
-      "updated_at": "2026-09-08T11:51:08.550602+00:00"
+      "updated_at": "2026-09-09T02:03:32.907149+00:00"
     },
     {
       "assumptions": [
@@ -22354,7 +22416,7 @@
         }
       ],
       "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
-      "created_at": "2026-09-08T11:51:08.550602+00:00",
+      "created_at": "2026-09-09T02:03:32.907149+00:00",
       "id": "CONJ-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
       "next_actions": [
         "Resolve every blocking finding before promotion.",
@@ -22438,7 +22500,7 @@
           "summary": "Audited 10 graphlet tensor observables across 5 graph pairs. 3 signal(s) collapse to small-pattern classical counts; 3 boundary pair(s) remain without graphlet-tensor signal."
         }
       ],
-      "updated_at": "2026-09-08T11:51:08.550602+00:00"
+      "updated_at": "2026-09-09T02:03:32.907149+00:00"
     },
     {
       "assumptions": [
@@ -22514,7 +22576,7 @@
         }
       ],
       "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
-      "created_at": "2026-09-08T11:51:08.550602+00:00",
+      "created_at": "2026-09-09T02:03:32.907149+00:00",
       "id": "CONJ-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
       "next_actions": [
         "Resolve every blocking finding before promotion.",
@@ -22569,7 +22631,7 @@
           "summary": "Audited 10 graphlet tensor observables across 5 graph pairs. 3 signal(s) collapse to small-pattern classical counts; 3 boundary pair(s) remain without graphlet-tensor signal."
         }
       ],
-      "updated_at": "2026-09-08T11:51:08.550602+00:00"
+      "updated_at": "2026-09-09T02:03:32.907149+00:00"
     },
     {
       "assumptions": [
@@ -22645,7 +22707,7 @@
         }
       ],
       "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
-      "created_at": "2026-09-08T11:51:08.550602+00:00",
+      "created_at": "2026-09-09T02:03:32.907149+00:00",
       "id": "CONJ-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
       "next_actions": [
         "Resolve every blocking finding before promotion.",
@@ -22699,7 +22761,7 @@
           "summary": "Audited 4 hidden-permutation graph pairs. 2 pair survives current classical and low-register tests; 1 control pair is classically distinguished; 2 CFI-style parity benchmark(s) included."
         }
       ],
-      "updated_at": "2026-09-08T11:51:08.550602+00:00"
+      "updated_at": "2026-09-09T02:03:32.907149+00:00"
     },
     {
       "assumptions": [
@@ -22763,7 +22825,7 @@
         }
       ],
       "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
-      "created_at": "2026-09-08T11:51:08.550602+00:00",
+      "created_at": "2026-09-09T02:03:32.907149+00:00",
       "id": "CONJ-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
       "next_actions": [
         "Resolve every blocking finding before promotion.",
@@ -22797,10 +22859,10 @@
           "summary": "Audited 3 code-equivalence pairs. 1 equivalent control pair(s) verified; 2 non-equivalent control pair(s) classically distinguished."
         }
       ],
-      "updated_at": "2026-09-08T11:51:08.550602+00:00"
+      "updated_at": "2026-09-09T02:03:32.907149+00:00"
     }
   ],
-  "created_at": "2026-09-08T11:51:08.787016+00:00",
+  "created_at": "2026-09-09T02:03:33.133065+00:00",
   "needs_evidence_count": 0,
   "status": "blocked"
 }

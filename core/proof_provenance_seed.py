@@ -72,6 +72,22 @@ def build_initial_proof_routes(root: Path = Path(".")) -> dict:
           "efficient binary detection is impossible")
     claim("HIDDEN-INVOLUTION-DECODER", "full reduction-backed hidden-involution family", "physical coset-state samples",
           "a polynomial-time hidden-involution decoder with bounded error exists")
+    twirl_doc = "research/REFERENCE_TWIRL_INFORMATION.md"
+    twirl_source = "theorems/coset_hidden_involution_reference_twirl_information.py"
+    purity = claim("REFERENCE-ORBIT-BLOCK-PURITY", "nonidentity involutions in one reference-conjugacy orbit O of S_(2m)",
+                   "b physical coset copies of the same h, diagonally twirled within the block",
+                   "|G|^b Tr(sigma_O,b^2)-1 = (2^b-1)/|O|", level="derived-review-pending")
+    fixed = claim("PREDETERMINED-REFERENCE-TWIRL-INFORMATION", "uniform fixed-point-free involutions in S_(2m)",
+                  "independent disjoint block twirls with outcome-independent known references; arbitrary later joint processing",
+                  "squared half trace distance is at most min(1, p(m)/(2(2m-1)!!) sum_j(2^b_j-1))", level="derived-review-pending")
+    adaptive = claim("ADAPTIVE-PREINTERACTION-REFERENCE-TWIRL", "uniform fixed-point-free involutions in S_(2m)",
+                     "at most t classical adaptive reference rounds; fresh blocks twirled before quantum-memory interaction; no other h-dependent resource",
+                     "squared half trace distance is at most min(1, t*p(m)/(2(2m-1)!!) sum_j(2^b_j-1))", level="derived-review-pending")
+    for node, name, premises in ((purity, "regular-orthogonality", ()),
+                                 (fixed, "entropy-additivity", (purity["id"],)),
+                                 (adaptive, "null-prefix-hybrid", (purity["id"],))):
+        route(node, name, attest(node, twirl_doc, "derivation"), *premises)
+        node["routes"][0]["conclusion_evidence"].append(attest(node, twirl_source, "source"))
     return {"schema_version": 1, "scope": "Curated review-pending route attestations, not formal proofs or exhaustive repository coverage.",
             "claims": claims, "evidence": evidence}
 

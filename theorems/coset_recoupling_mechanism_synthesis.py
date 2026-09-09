@@ -95,6 +95,10 @@ PRIMITIVES = {
                       "Conditional two-QFT carrier extraction for a known reference subgroup; primitive/basis contract remains review-pending, not unknown alignment."),
         PrimitiveSpec("SYMMETRY_BREAKING_LOGICAL_FRAME", "encoded_reference_registers", "measurement_outcome", "CAP-SYMMETRY-BREAKING-LOGICAL-EFFECT", False,
                       "Construct a source-aware collective effect, retaining carrier or reference correlations needed to break fixed-K invariance."),
+        PrimitiveSpec("DISCARD_PER_INPUT_REFERENCE_CARRIERS", "encoded_reference_registers", "independent_multiplicity_codes", "CAP-REFERENCE-CARRIER-DISCARD", True,
+                      "Independently dephase each reference type and discard its carrier; known references fixed independently of input and outcomes."),
+        PrimitiveSpec("MULTIPLICITY_ONLY_COLLECTIVE_FRAME", "independent_multiplicity_codes", "measurement_outcome", "CAP-MULTIPLICITY-ONLY-COLLECTIVE-EFFECT", False,
+                      "Apply an arbitrary collective effect to the remaining independently twirled multiplicity codes."),
         PrimitiveSpec("WEAK_LABEL_MEASUREMENT", "fourier_registers_k", "irrep_labels", "CAP-WEAK-IRREP-PROJECTION", True, "Measure only irrep labels."),
         PrimitiveSpec("PROJECTOR_MULTIPLICITY_STATS", "fourier_registers_k", "multiplicity_statistics", "CAP-KRONECKER-SHARP-BQP", True, "Estimate invariant-space or multiplicity statistics."),
         PrimitiveSpec(
@@ -212,8 +216,18 @@ TEMPLATES = (
             "Construct the actual logical effect with source-aware normalization and error, without complete fixed-count spectral labels.",
             "Derive its outcome law and polynomial hidden-involution decoder, then attack it with legal classical invariants and tensor contractions.",
             "Binary detection is a separate task and requires its own reduction; it must not be passed off as identification.",
+            "Specify every carrier/type discard and its block size: independent block twirls obey T^2 <= p(m)/(2(2m-1)!!) sum_j(2^b_j-1). Predetermined reference changes do not evade this bound.",
+            "Classical outcome-adaptive references still obey a round-count-weakened bound when fresh inputs are twirled before memory coupling. Charge any coherent reference control or pre-twirl memory interaction explicitly.",
         ),
         110,
+    ),
+    MechanismTemplate(
+        "MECH-INDEPENDENT-MULTIPLICITY-ONLY-DECODER",
+        "Collective decoding after independent reference-carrier discard",
+        ("PREPARE_COSET_K", "SN_QFT_K", "ENCODED_REFERENCE_RESTRICTION",
+         "DISCARD_PER_INPUT_REFERENCE_CARRIERS", "MULTIPLICITY_ONLY_COLLECTIVE_FRAME", "OUTCOME_DECODER", "CLASSICAL_VERIFY"),
+        "full reduction-backed symmetric involution family", "k=poly(n)", (),
+        ("Preserve the uniform source and distinguish type dephasing plus carrier discard from coherent restriction.",), 20,
     ),
     MechanismTemplate(
         "MECH-FULL-RECOUPLING-TRANSITION-DECODER",
@@ -266,6 +280,9 @@ def evaluate_template(template: MechanismTemplate) -> MechanismEvaluation:
     violations = list(template.known_no_go_violations)
     if "KRONECKER_MULTIPLICITY_BASIS" in template.stages:
         violations.append("Spectral packing obstructs this fixed-count, bounded-norm, inverse-polynomial-gap complete-label primitive on the full source family. Direct transforms and growing-depth hierarchies are different primitives.")
+    if ("DISCARD_PER_INPUT_REFERENCE_CARRIERS" in template.stages and full_coverage
+            and template.target_register_scaling == "k=poly(n)"):
+        violations.append("Independent reference-carrier discard gives T^2 <= k*p(m)/(2(2m-1)!!) for binary detection under the uniform source, even with arbitrary collective postprocessing. Fully coherent carrier retention and a single global twirl are not covered.")
     if issues or violations:
         decision = "rejected"
         rationale = "Known no-go or typed-interface failure invalidates the architecture."
@@ -330,7 +347,9 @@ def build_recoupling_mutation_proposals(
                     "Reject if any missing capability is replaced by an undefined circuit box.",
                     "Reject if the mechanism covers only an exceptional commuting or classically tractable family.",
                     "Reject if the decoder is distinguishability or verification without hidden-involution recovery.",
-                    "Reject if classical invariant or tensor-network contraction reproduces the outcome."
+                    "Reject if classical invariant or tensor-network contraction reproduces the outcome.",
+                    "Reject finite binary gains explained by the latent-total-irrep model; test its rank-one condition rather than assuming it extends to larger multiplicities.",
+                    "Reject ideal finite likelihood tables or retained Helstrom distances presented as compiled outcome classifiers.",
                 ],
                 "linked_blockers": [
                     "DEQ-COSET-SOLVED-QFT-COUNTING-NOT-RECOUPLING-DECODER",

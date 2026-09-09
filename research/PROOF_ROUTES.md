@@ -49,9 +49,13 @@ added later; the current whole-file policy is intentionally transparent.
 
 ## Initial Coverage
 
-Ten curated contracts cover the systematic local-proof gap, independent
+Thirteen curated contracts cover the systematic local-proof gap, independent
 global suffix/surface argument, conditional encoded restriction, and the
-fixed-reference identification bound. Four claims remain unresolved: uniform
+fixed-reference identification bound, plus reference-orbit block purity and
+separately scoped predetermined/adaptive discard-information bounds.
+The adaptive route uses the conditional orbit purity, not an invalid transfer
+from an averaged mixture bound to a posterior-conditioned bound.
+Four claims remain unresolved: uniform
 cubic local loss, the local systematic argument, impossibility of efficient
 binary detection, and existence of a hidden-involution decoder. Unresolved
 binary impossibility means no no-go is established, not that a decoder exists.

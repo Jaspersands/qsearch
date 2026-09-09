@@ -11685,6 +11685,8 @@ def findings_from_negative_results(candidates: list[dict[str, Any]], negative_re
             "SYSTEMATIC-LOCAL-CUBIC-LOSS-PROOF-GAP": "SYSTEMATIC-LOCAL-PROOF-GAP",
             "ENCODED-CARRIER-EXTRACTION-NOT-EXPLICIT-COPY-INDEX-OR-DECODER": "ENCODED-COPY-TARGET-EFFECT",
             "FIXED-REFERENCE-INVARIANT-IDENTIFICATION-ORBIT-BOUND": "FIXED-REFERENCE-IDENTIFICATION",
+            "INDEPENDENT-REFERENCE-CARRIER-DISCARD-ERASES-BINARY-INFORMATION": "REFERENCE-TWIRL-INFORMATION-LOSS",
+            "CARRIER-INVARIANCE-NOT-A-BINARY-NO-GO": "CARRIER-BINARY-TASK-SCOPE",
         }
         if item.get("id") in access_boundaries:
             for candidate in candidates:
@@ -11717,6 +11719,15 @@ def findings_from_negative_results(candidates: list[dict[str, Any]], negative_re
                         "Use a task-relevant coarse measurement, growing-depth hierarchy, or direct transform. This obstruction is not classical dequantization or an HSP circuit lower bound."),
                     blocks_speedup_claim=True,
                 ))
+        if item.get("id") == "FINITE-BINARY-CARRIER-ALTERNATION-LATENT-IRREP":
+            for candidate in candidates:
+                if candidate["id"] in item.get("applies_to", []):
+                    findings.append(DequantizationFinding(
+                        id=f"DEQ-{candidate['id']}-FINITE-CARRIER-LATENT-IRREP-MODEL",
+                        created_at=now, target_type="candidate", target_id=candidate["id"], severity="high",
+                        claim_under_test=item["claim"], evidence=item["reason_invalid"],
+                        required_action=item["lesson"], blocks_speedup_claim=True,
+                    ))
         evidence = item.get("evidence", {})
         markers = [
             str(evidence.get("problem_type", "")),

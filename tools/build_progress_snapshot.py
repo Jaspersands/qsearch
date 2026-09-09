@@ -200,6 +200,8 @@ def build_snapshot() -> dict[str, Any]:
     )
 
     encoded = read_json(RESEARCH / "representation/coset_hidden_involution_encoded_restriction.json", {})
+    reference_information = read_json(RESEARCH / "representation/coset_hidden_involution_reference_twirl_information.json", {})
+    binary_instruments = read_json(RESEARCH / "representation/coset_binary_carrier_instruments.json", {})
     blocking = sum(bool(item.get("blocks_speedup_claim", False)) for item in findings)
     updated = latest_artifact_date(
         experiments,
@@ -268,8 +270,8 @@ def build_snapshot() -> dict[str, Any]:
             "The current target is a useful measurement, not complete labels for every multiplicity. "
             "Spectral packing obstructs fixed-count normalized complete labels with inverse-polynomial gaps. "
             "Two QFTs instead extract a known subgroup carrier with an implicit copy code. Fixed-reference "
-            "invariant identification is limited; binary detection and symmetry-breaking protocols remain "
-            "separate open targets. Numerical checks are not formal proofs."
+            "invariant identification is limited. Independent carrier discard also loses binary information; "
+            "coherent retention does not itself supply a useful effect. Numerical checks are not formal proofs."
         ),
         "metrics": {
             "experiments": len(experiments),
@@ -319,12 +321,14 @@ def build_snapshot() -> dict[str, Any]:
                 "stage": 3,
                 "summary": (
                     "Two-QFT restriction preserves normalization and supports logical orbit averages without "
-                    "decoding a copy basis. It does not grant the unknown centralizer or a target measurement."
+                    "decoding a copy basis. Independent carrier discard loses the detection signal. "
+                    "The tested small-group binary gains have a classical latent-irrep explanation. "
+                    "No useful detector or access to the unknown centralizer is supplied."
                 ),
                 "evidence": (
                     f"Finite isometries: {metric(encoded, 'finite_isometry_controls_passed', 0)}. "
-                    f"Repeated copy blocks: {metric(encoded, 'repeated_copy_blocks_verified', 0)}. "
-                    f"Noncommuting encoded blocks: {metric(encoded, 'noncommuting_encoded_copy_blocks', 0)}. "
+                    f"Information-loss controls: {metric(reference_information, 'finite_binary_controls_passed', 0)}. "
+                    f"Finite instrument schedules: {metric(binary_instruments, 'schedules_evaluated', 0)}. "
                     "No scalable QFT gate implementation or decoder is supplied."
                 ),
                 "next": "Construct a task-relevant logical effect; test information, normalization, and classical simulability.",

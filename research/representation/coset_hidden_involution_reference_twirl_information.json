@@ -1,0 +1,624 @@
+{
+  "created_at": "2026-09-09T01:32:31.604983+00:00",
+  "status": "derived-blockwise-reference-information-loss-review-pending",
+  "summary": "Independent reference-carrier discard suppresses binary detection: T^2 <= p(m)/(2(2m-1)!!) sum_j(2^b_j-1) for predetermined references. Classical adaptation with quantum memory obeys a weaker bound multiplied by the round count, provided fresh blocks are twirled before memory interaction. A single global twirl and coherent carrier retention remain open.",
+  "derivation_document": "research/REFERENCE_TWIRL_INFORMATION.md",
+  "literature": [
+    "https://cs.uwaterloo.ca/~watrous/TQI/TQI.5.pdf",
+    "https://arxiv.org/abs/2102.04576",
+    "https://arxiv.org/abs/quant-ph/0511148",
+    "https://arxiv.org/abs/quant-ph/0511149"
+  ],
+  "scope": {
+    "prior": "uniform fixed-point-free involution; the same h in every sample",
+    "null": "trivial-subgroup state I/|S_(2m)| in each input",
+    "channel": "independent diagonal K_j twirl per disjoint block; K_j known conjugates of C2 wr S_m",
+    "reference_schedule": "fixed in advance or randomized independently of input and outcomes",
+    "adaptive_extension": "classical outcome-adaptive references, bounded rounds/block sizes, arbitrary quantum memory; fresh blocks twirled BEFORE memory interaction",
+    "postprocessing": "arbitrary joint quantum channel/POVM after the twirls",
+    "equivalent_single_copy_discard": "dephase reference irrep type AND discard its carrier, retaining multiplicity state",
+    "not_equivalent": "carrier tracing alone with padded registers and retained intertype coherence",
+    "trace_distance_convention": "half trace norm; equal-prior success = 1/2 + T/2"
+  },
+  "finite_controls": [
+    {
+      "half_degree": 2,
+      "block_sizes": [
+        1
+      ],
+      "copies": 1,
+      "raw_binary_trace_distance": 0.25,
+      "twirled_binary_trace_distance": 0.25,
+      "trace_distance_squared_upper_bound": "1/3",
+      "raw_trace": 1.0,
+      "twirled_trace": 1.0,
+      "scaled_minimum_eigenvalue": 0.0,
+      "chi_squared": 0.3333333333333333,
+      "exact_chi_squared": "1/3",
+      "single_global_block_invariance_residual": 1.5809582800891824e-16,
+      "physical_finite_controls_verified": true
+    },
+    {
+      "half_degree": 2,
+      "block_sizes": [
+        1,
+        1
+      ],
+      "copies": 2,
+      "raw_binary_trace_distance": 0.37500000000000006,
+      "twirled_binary_trace_distance": 0.33333333333333337,
+      "trace_distance_squared_upper_bound": "2/3",
+      "raw_trace": 1.0000000000000002,
+      "twirled_trace": 1.0000000000000002,
+      "scaled_minimum_eigenvalue": -4.440892098500626e-16,
+      "chi_squared": 0.8888888888888891,
+      "exact_chi_squared": "8/9",
+      "single_global_block_invariance_residual": null,
+      "physical_finite_controls_verified": true
+    },
+    {
+      "half_degree": 2,
+      "block_sizes": [
+        2
+      ],
+      "copies": 2,
+      "raw_binary_trace_distance": 0.37500000000000006,
+      "twirled_binary_trace_distance": 0.375,
+      "trace_distance_squared_upper_bound": "1",
+      "raw_trace": 1.0000000000000002,
+      "twirled_trace": 1.0000000000000002,
+      "scaled_minimum_eigenvalue": -1.1102230246251565e-15,
+      "chi_squared": 1.0,
+      "exact_chi_squared": "1",
+      "single_global_block_invariance_residual": 4.471625282496328e-16,
+      "physical_finite_controls_verified": true
+    },
+    {
+      "half_degree": 2,
+      "block_sizes": [
+        1,
+        1,
+        1
+      ],
+      "copies": 3,
+      "raw_binary_trace_distance": 0.6562499999999994,
+      "twirled_binary_trace_distance": 0.5104166666666662,
+      "trace_distance_squared_upper_bound": "1",
+      "raw_trace": 1.0000000000000007,
+      "twirled_trace": 1.0000000000000007,
+      "scaled_minimum_eigenvalue": -1.5543122344752192e-15,
+      "chi_squared": 1.8333333333333333,
+      "exact_chi_squared": "11/6",
+      "single_global_block_invariance_residual": null,
+      "physical_finite_controls_verified": true
+    },
+    {
+      "half_degree": 2,
+      "block_sizes": [
+        2,
+        1
+      ],
+      "copies": 3,
+      "raw_binary_trace_distance": 0.6562499999999994,
+      "twirled_binary_trace_distance": 0.5624999999999999,
+      "trace_distance_squared_upper_bound": "1",
+      "raw_trace": 1.0000000000000007,
+      "twirled_trace": 1.0000000000000007,
+      "scaled_minimum_eigenvalue": -1.5543122344752192e-15,
+      "chi_squared": 2.0,
+      "exact_chi_squared": "2",
+      "single_global_block_invariance_residual": null,
+      "physical_finite_controls_verified": true
+    },
+    {
+      "half_degree": 2,
+      "block_sizes": [
+        3
+      ],
+      "copies": 3,
+      "raw_binary_trace_distance": 0.6562499999999994,
+      "twirled_binary_trace_distance": 0.6562499999999994,
+      "trace_distance_squared_upper_bound": "1",
+      "raw_trace": 1.0000000000000007,
+      "twirled_trace": 1.0000000000000007,
+      "scaled_minimum_eigenvalue": -1.7763568394002505e-15,
+      "chi_squared": 2.3333333333333326,
+      "exact_chi_squared": "7/3",
+      "single_global_block_invariance_residual": 1.2647666240713459e-15,
+      "physical_finite_controls_verified": true
+    },
+    {
+      "half_degree": 2,
+      "block_sizes": [
+        2,
+        2
+      ],
+      "copies": 4,
+      "raw_binary_trace_distance": 0.8203125000000013,
+      "twirled_binary_trace_distance": 0.7500000000000036,
+      "trace_distance_squared_upper_bound": "1",
+      "raw_trace": 1.0000000000000047,
+      "twirled_trace": 1.0000000000000047,
+      "scaled_minimum_eigenvalue": -3.1086244689504383e-15,
+      "chi_squared": 3.9999999999999862,
+      "exact_chi_squared": "4",
+      "single_global_block_invariance_residual": null,
+      "physical_finite_controls_verified": true
+    },
+    {
+      "half_degree": 3,
+      "block_sizes": [
+        1
+      ],
+      "copies": 1,
+      "raw_binary_trace_distance": 0.09444444444444444,
+      "twirled_binary_trace_distance": 0.09444444444444443,
+      "trace_distance_squared_upper_bound": "1/10",
+      "raw_trace": 1.0000000000000002,
+      "twirled_trace": 1.0000000000000002,
+      "scaled_minimum_eigenvalue": 0.0,
+      "chi_squared": 0.06666666666666665,
+      "exact_chi_squared": "1/15",
+      "single_global_block_invariance_residual": 7.045418270465744e-16,
+      "physical_finite_controls_verified": true
+    },
+    {
+      "half_degree": 3,
+      "block_sizes": [
+        1,
+        1
+      ],
+      "copies": 2,
+      "raw_binary_trace_distance": 0.17652777777777773,
+      "twirled_binary_trace_distance": 0.15074421296296292,
+      "trace_distance_squared_upper_bound": "1/5",
+      "raw_trace": 0.9999999999999999,
+      "twirled_trace": 1.0,
+      "scaled_minimum_eigenvalue": 0.0,
+      "chi_squared": 0.14666666666666675,
+      "exact_chi_squared": "11/75",
+      "single_global_block_invariance_residual": null,
+      "physical_finite_controls_verified": true
+    },
+    {
+      "half_degree": 3,
+      "block_sizes": [
+        2
+      ],
+      "copies": 2,
+      "raw_binary_trace_distance": 0.17652777777777773,
+      "twirled_binary_trace_distance": 0.17652777777777773,
+      "trace_distance_squared_upper_bound": "3/10",
+      "raw_trace": 0.9999999999999999,
+      "twirled_trace": 1.0,
+      "scaled_minimum_eigenvalue": -1.3322676295501878e-15,
+      "chi_squared": 0.2,
+      "exact_chi_squared": "1/5",
+      "single_global_block_invariance_residual": 3.3006509223171136e-15,
+      "physical_finite_controls_verified": true
+    }
+  ],
+  "regular_basis_control": {
+    "orbit_controls": [
+      {
+        "orbit_type": [
+          1,
+          1
+        ],
+        "orbit_size": 1,
+        "block_size": 1,
+        "chi_squared": 0.9999999999999996,
+        "exact_chi_squared": "1",
+        "relative_entropy_nats": 0.6931471805599454,
+        "trace_distance": 0.5,
+        "verified": true
+      },
+      {
+        "orbit_type": [
+          1,
+          1
+        ],
+        "orbit_size": 1,
+        "block_size": 2,
+        "chi_squared": 3.0,
+        "exact_chi_squared": "3",
+        "relative_entropy_nats": 1.3862943611198904,
+        "trace_distance": 0.7499999999999999,
+        "verified": true
+      },
+      {
+        "orbit_type": [
+          2
+        ],
+        "orbit_size": 2,
+        "block_size": 1,
+        "chi_squared": 0.4999999999999998,
+        "exact_chi_squared": "1/2",
+        "relative_entropy_nats": 0.3465735902799725,
+        "trace_distance": 0.2500000000000001,
+        "verified": true
+      },
+      {
+        "orbit_type": [
+          2
+        ],
+        "orbit_size": 2,
+        "block_size": 2,
+        "chi_squared": 1.4999999999999973,
+        "exact_chi_squared": "3/2",
+        "relative_entropy_nats": 0.8664339756999313,
+        "trace_distance": 0.5625,
+        "verified": true
+      }
+    ],
+    "regular_binary_trace_distance": 0.33333333333333337,
+    "fourier_binary_trace_distance": 0.33333333333333337,
+    "independent_regular_controls_verified": true
+  },
+  "orbit_controls": [
+    {
+      "half_degree": 1,
+      "enumerated_orbits": 1,
+      "orbit_formula_verified": true
+    },
+    {
+      "half_degree": 2,
+      "enumerated_orbits": 2,
+      "orbit_formula_verified": true
+    },
+    {
+      "half_degree": 3,
+      "enumerated_orbits": 3,
+      "orbit_formula_verified": true
+    },
+    {
+      "half_degree": 4,
+      "enumerated_orbits": 5,
+      "orbit_formula_verified": true
+    }
+  ],
+  "adaptive_reference_controls": [
+    {
+      "half_degree": 2,
+      "paths": [
+        {
+          "outcomes": [
+            false,
+            false
+          ],
+          "second_reference_index": 1,
+          "hidden_probability": "1/12",
+          "null_probability": "1/4"
+        },
+        {
+          "outcomes": [
+            false,
+            true
+          ],
+          "second_reference_index": 1,
+          "hidden_probability": "1/4",
+          "null_probability": "1/4"
+        },
+        {
+          "outcomes": [
+            true,
+            false
+          ],
+          "second_reference_index": 0,
+          "hidden_probability": "1/6",
+          "null_probability": "1/4"
+        },
+        {
+          "outcomes": [
+            true,
+            true
+          ],
+          "second_reference_index": 0,
+          "hidden_probability": "1/2",
+          "null_probability": "1/4"
+        }
+      ],
+      "transcript_trace_distance": "1/4",
+      "adaptive_trace_distance_squared_upper_bound": "1",
+      "prior_reciprocal_orbit_mean": "2/3",
+      "posterior_reciprocal_orbit_mean_after_positive": "3/4",
+      "exact_transcript_control_verified": true
+    },
+    {
+      "half_degree": 3,
+      "paths": [
+        {
+          "outcomes": [
+            false,
+            false
+          ],
+          "second_reference_index": 1,
+          "hidden_probability": "13/60",
+          "null_probability": "1/4"
+        },
+        {
+          "outcomes": [
+            false,
+            true
+          ],
+          "second_reference_index": 1,
+          "hidden_probability": "1/4",
+          "null_probability": "1/4"
+        },
+        {
+          "outcomes": [
+            true,
+            false
+          ],
+          "second_reference_index": 0,
+          "hidden_probability": "7/30",
+          "null_probability": "1/4"
+        },
+        {
+          "outcomes": [
+            true,
+            true
+          ],
+          "second_reference_index": 0,
+          "hidden_probability": "3/10",
+          "null_probability": "1/4"
+        }
+      ],
+      "transcript_trace_distance": "1/20",
+      "adaptive_trace_distance_squared_upper_bound": "2/5",
+      "prior_reciprocal_orbit_mean": "1/5",
+      "posterior_reciprocal_orbit_mean_after_positive": "1/4",
+      "exact_transcript_control_verified": true
+    },
+    {
+      "half_degree": 4,
+      "paths": [
+        {
+          "outcomes": [
+            false,
+            false
+          ],
+          "second_reference_index": 1,
+          "hidden_probability": "103/420",
+          "null_probability": "1/4"
+        },
+        {
+          "outcomes": [
+            false,
+            true
+          ],
+          "second_reference_index": 1,
+          "hidden_probability": "1/4",
+          "null_probability": "1/4"
+        },
+        {
+          "outcomes": [
+            true,
+            false
+          ],
+          "second_reference_index": 0,
+          "hidden_probability": "26/105",
+          "null_probability": "1/4"
+        },
+        {
+          "outcomes": [
+            true,
+            true
+          ],
+          "second_reference_index": 0,
+          "hidden_probability": "9/35",
+          "null_probability": "1/4"
+        }
+      ],
+      "transcript_trace_distance": "1/140",
+      "adaptive_trace_distance_squared_upper_bound": "2/21",
+      "prior_reciprocal_orbit_mean": "1/21",
+      "posterior_reciprocal_orbit_mean_after_positive": "3/53",
+      "exact_transcript_control_verified": true
+    }
+  ],
+  "coherent_reference_erasure_countercontrols": [
+    {
+      "partition": [
+        4
+      ],
+      "input_dimension": 1,
+      "reference_dimension": 24,
+      "isometry_residual": 2.220446049250313e-16,
+      "fourier_bell_factorization_residual": 2.611968262854389e-16,
+      "all_matrix_unit_recovery_residual": 4.440892098500626e-16,
+      "erased_carrier_input_independence_residual": 3.3306690738754696e-16,
+      "matrix_units_checked": 1,
+      "finite_identity_channel_recovery_verified": true,
+      "preinteraction_twirl_assumption_satisfied": false,
+      "input_hidden_information_already_transferred_to_reference": true,
+      "hidden_involution_decoder_supplied": false
+    },
+    {
+      "partition": [
+        3,
+        1
+      ],
+      "input_dimension": 3,
+      "reference_dimension": 24,
+      "isometry_residual": 2.6422520788909847e-17,
+      "fourier_bell_factorization_residual": 5.476966483923116e-16,
+      "all_matrix_unit_recovery_residual": 4.443922744584104e-16,
+      "erased_carrier_input_independence_residual": 3.0504509333750073e-16,
+      "matrix_units_checked": 9,
+      "finite_identity_channel_recovery_verified": true,
+      "preinteraction_twirl_assumption_satisfied": false,
+      "input_hidden_information_already_transferred_to_reference": true,
+      "hidden_involution_decoder_supplied": false
+    },
+    {
+      "partition": [
+        2,
+        2
+      ],
+      "input_dimension": 2,
+      "reference_dimension": 24,
+      "isometry_residual": 3.1401849173675503e-16,
+      "fourier_bell_factorization_residual": 3.8057703452590984e-16,
+      "all_matrix_unit_recovery_residual": 2.2221679030845573e-16,
+      "erased_carrier_input_independence_residual": 2.482534153247273e-16,
+      "matrix_units_checked": 4,
+      "finite_identity_channel_recovery_verified": true,
+      "preinteraction_twirl_assumption_satisfied": false,
+      "input_hidden_information_already_transferred_to_reference": true,
+      "hidden_involution_decoder_supplied": false
+    },
+    {
+      "partition": [
+        2,
+        1,
+        1
+      ],
+      "input_dimension": 3,
+      "reference_dimension": 24,
+      "isometry_residual": 2.8185920280518337e-17,
+      "fourier_bell_factorization_residual": 5.476966483923117e-16,
+      "all_matrix_unit_recovery_residual": 2.241304633133012e-16,
+      "erased_carrier_input_independence_residual": 3.0504509333750073e-16,
+      "matrix_units_checked": 9,
+      "finite_identity_channel_recovery_verified": true,
+      "preinteraction_twirl_assumption_satisfied": false,
+      "input_hidden_information_already_transferred_to_reference": true,
+      "hidden_involution_decoder_supplied": false
+    },
+    {
+      "partition": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "input_dimension": 1,
+      "reference_dimension": 24,
+      "isometry_residual": 2.220446049250313e-16,
+      "fourier_bell_factorization_residual": 2.611968262854389e-16,
+      "all_matrix_unit_recovery_residual": 4.440892098500626e-16,
+      "erased_carrier_input_independence_residual": 3.3306690738754696e-16,
+      "matrix_units_checked": 1,
+      "finite_identity_channel_recovery_verified": true,
+      "preinteraction_twirl_assumption_satisfied": false,
+      "input_hidden_information_already_transferred_to_reference": true,
+      "hidden_involution_decoder_supplied": false
+    }
+  ],
+  "scaling": [
+    {
+      "half_degree": 4,
+      "independent_single_copy_blocks": 16,
+      "trace_distance_squared_upper_bound": "8/21",
+      "log2_trace_distance_upper_bound": -0.6961587113893803,
+      "necessary_equal_block_size_for_distance_one_third": 1,
+      "adaptive_trace_distance_squared_upper_bound": "1",
+      "log2_adaptive_trace_distance_upper_bound": 0.0,
+      "adaptive_necessary_equal_block_size_for_distance_one_third": 1
+    },
+    {
+      "half_degree": 8,
+      "independent_single_copy_blocks": 64,
+      "trace_distance_squared_upper_bound": "64/184275",
+      "log2_trace_distance_upper_bound": -5.745750416429022,
+      "necessary_equal_block_size_for_distance_one_third": 9,
+      "adaptive_trace_distance_squared_upper_bound": "4096/184275",
+      "log2_adaptive_trace_distance_upper_bound": -2.745750416429022,
+      "adaptive_necessary_equal_block_size_for_distance_one_third": 3
+    },
+    {
+      "half_degree": 16,
+      "independent_single_copy_blocks": 256,
+      "trace_distance_squared_upper_bound": "128/830730666504375",
+      "log2_trace_distance_upper_bound": -21.280687070530814,
+      "necessary_equal_block_size_for_distance_one_third": 40,
+      "adaptive_trace_distance_squared_upper_bound": "32768/830730666504375",
+      "log2_adaptive_trace_distance_upper_bound": -17.280687070530814,
+      "adaptive_necessary_equal_block_size_for_distance_one_third": 32
+    },
+    {
+      "half_degree": 32,
+      "independent_single_copy_blocks": 1024,
+      "trace_distance_squared_upper_bound": "512/13447787194343201528605150907973518203125",
+      "log2_trace_distance_upper_bound": -62.152246297655495,
+      "necessary_equal_block_size_for_distance_one_third": 122,
+      "adaptive_trace_distance_squared_upper_bound": "524288/13447787194343201528605150907973518203125",
+      "log2_adaptive_trace_distance_upper_bound": -57.152246297655495,
+      "adaptive_necessary_equal_block_size_for_distance_one_third": 112
+    },
+    {
+      "half_degree": 64,
+      "independent_single_copy_blocks": 4096,
+      "trace_distance_squared_upper_bound": "913408/42189311251223636616102982264345971921216984318903665829565358731027803079446412181596267402496337890625",
+      "log2_trace_distance_upper_bound": -162.2172857044741,
+      "necessary_equal_block_size_for_distance_one_third": 322,
+      "adaptive_trace_distance_squared_upper_bound": "3741319168/42189311251223636616102982264345971921216984318903665829565358731027803079446412181596267402496337890625",
+      "log2_adaptive_trace_distance_upper_bound": -156.2172857044741,
+      "adaptive_necessary_equal_block_size_for_distance_one_third": 310
+    },
+    {
+      "half_degree": 128,
+      "independent_single_copy_blocks": 16384,
+      "trace_distance_squared_upper_bound": "7624392704/1398343562875971791972627035461820917855846357474064684689734778403919418043041574247592245236602748034416555474464491846419931912129355959920191069144704645836073060600572156247288351374057185455794388899092485989778726219370114617049694061279296875",
+      "log2_trace_distance_upper_bound": -397.4079196039739,
+      "necessary_equal_block_size_for_distance_one_third": 792,
+      "adaptive_trace_distance_squared_upper_bound": "124918050062336/1398343562875971791972627035461820917855846357474064684689734778403919418043041574247592245236602748034416555474464491846419931912129355959920191069144704645836073060600572156247288351374057185455794388899092485989778726219370114617049694061279296875",
+      "log2_adaptive_trace_distance_upper_bound": -390.4079196039739,
+      "adaptive_necessary_equal_block_size_for_distance_one_third": 778
+    },
+    {
+      "half_degree": 256,
+      "independent_single_copy_blocks": 65536,
+      "trace_distance_squared_upper_bound": "11984881807221784576/3500797212601527945311188835604928985415461740919889354217764505357080396360998406091483003218728672644801916594739009357155247126876144691627054309744293857306604216733039930699855997627887399287546140236510911240627231189363279060378822843253015624610686680717952316550304464107615617448906048015587655768996105864260381049947531455557236610503889279665463833908304000148209455548787453670820143341389949801647285492388673498450158812613113366545959409498745510743189457819498892822692489318667853345863669937005801349364861955770908047967139575806783113876008428633213043212890625",
+      "log2_trace_distance_upper_bound": -935.8959926173369,
+      "necessary_equal_block_size_for_distance_one_third": 1869,
+      "adaptive_trace_distance_squared_upper_bound": "785441214118086873972736/3500797212601527945311188835604928985415461740919889354217764505357080396360998406091483003218728672644801916594739009357155247126876144691627054309744293857306604216733039930699855997627887399287546140236510911240627231189363279060378822843253015624610686680717952316550304464107615617448906048015587655768996105864260381049947531455557236610503889279665463833908304000148209455548787453670820143341389949801647285492388673498450158812613113366545959409498745510743189457819498892822692489318667853345863669937005801349364861955770908047967139575806783113876008428633213043212890625",
+      "log2_adaptive_trace_distance_upper_bound": -927.8959926173369,
+      "adaptive_necessary_equal_block_size_for_distance_one_third": 1853
+    }
+  ],
+  "rare_orbit_countercontrol": {
+    "half_degree": 8,
+    "single_copy_blocks": 64,
+    "exact_mixture_chi_squared": "20617182151241034652645057391707994674603785533809585484210113396372658875258669815606815370548980443907780824799234951904348678028767935710297383075950156736884918320658190418080119986432791570830086856572854251476283025163416986325275416626646582423313866433072247509369022629022970799477671385341646541458866743541149306049265819275023657446025242480994388810809248709754561214304921040566724827639563912155783287/4592274031031860089158313247551091054470302279865168669445265495107965638707982843536059291423111400930441258345532196177204469060573605022097612767712278344695685576752508756512293197082323116925462193057739167165530066445871451753470913872436782769913207721333221005438156199385917298906313782163155634566568548992663639783749703073543277772800000000000000000000000000000000000000000000000000000000000000000",
+    "trace_distance_squared_upper_bound": "64/184275",
+    "large_chi_squared_is_not_a_detection_lower_bound": true
+  },
+  "headline_metrics": {
+    "finite_binary_controls_passed": 10,
+    "regular_basis_controls_passed": 1,
+    "scaling_records": 7,
+    "maximum_half_degree": 256,
+    "m128_log2_single_copy_distance_upper_bound": -397.4079196039739,
+    "m128_necessary_block_size": 792,
+    "m128_adaptive_log2_distance_upper_bound": -390.4079196039739,
+    "m128_adaptive_necessary_block_size": 778,
+    "coherent_reference_identity_channels_verified": 5,
+    "strict_finite_information_loss_controls": 5
+  },
+  "claim_gate": {
+    "finite_controls_verified": true,
+    "scoped_blockwise_information_bound_derived": true,
+    "independent_single_copy_discard_obstructed": true,
+    "general_binary_detection_ruled_out": false,
+    "single_global_twirl_ruled_out": false,
+    "coherent_encoded_access_ruled_out": false,
+    "classically_adaptive_preinteraction_twirl_bound_derived": true,
+    "coherent_preinteraction_encoding_escape_finite_verified": true,
+    "coherent_transport_supplies_detector": false,
+    "quantum_controlled_reference_bound_derived": false,
+    "new_general_entanglement_lower_bound_claimed": false,
+    "machine_checked_proof": false,
+    "speedup_claim_allowed": false
+  },
+  "falsifiers_triggered": [
+    "Noncommuting multiplicity operators do not restore carrier correlations erased independently per input.",
+    "A large chi-squared moment from rare reference-aligned orbits is not a detection lower bound."
+  ],
+  "next_experiments": [
+    "Compile a source-weighted collective effect retaining correlations across at least the necessary block scale.",
+    "Analyze quantum-controlled references or memory coupling before the destructive twirl; ordinary classical adaptation alone does not escape.",
+    "Audit data processing whenever a candidate drops carriers, intertype coherence, or a block environment."
+  ]
+}

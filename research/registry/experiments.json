@@ -15254,6 +15254,33 @@
   {
     "candidate_id": "CODE-COSET-COLLECTIVE",
     "dependencies": [
+      "physical Fourier convention",
+      "pair-carrier isotypic projectors"
+    ],
+    "falsifiers": [
+      "physical source mass is lost",
+      "an ideal residual readout is assumed",
+      "classifier or copy cost is omitted"
+    ],
+    "hypothesis": "Carrier outcome laws reveal binary information distinct from hidden-member identification.",
+    "id": "EXP-COSET-BINARY-CARRIER-INSTRUMENTS",
+    "metrics": [
+      "finite_full_source_controls_passed",
+      "schedules_evaluated",
+      "explicit_one_pair_classifiers_checked"
+    ],
+    "next_actions": [
+      "compile a growing-copy outcome decision rule",
+      "test the complete channel against stronger classical baselines"
+    ],
+    "positive_signal": "A growing-copy program and explicit outcome decision rule, not finite calibration performance.",
+    "protocol": "Reuse pair-carrier projectors; compare complete physical null/alternative laws, disturbance, retained information and a dephased ablation.",
+    "status": "ready",
+    "title": "Source-weighted binary carrier instruments"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
       "coset_carrier_information_audit.py",
       "coset_commutant_information_obstruction.py",
       "coset_typical_parity_complete_separator.py",
@@ -17515,6 +17542,34 @@
     "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
     "status": "planned",
     "title": "Coset Hidden Involution Rank Tracking Commutant Witness"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "physical coset-state normalization",
+      "reference matching orbit sizes",
+      "quantum Pinsker inequality"
+    ],
+    "falsifiers": [
+      "source-averaged trace distance vanishes",
+      "discarded coherence is assumed accessible",
+      "a rare-orbit moment is mistaken for success"
+    ],
+    "hypothesis": "Multiplicity-only registers retain polynomial-copy binary detection information.",
+    "id": "EXP-COSET-HIDDEN-INVOLUTION-REFERENCE-TWIRL-INFORMATION",
+    "metrics": [
+      "finite_binary_controls_passed",
+      "regular_basis_controls_passed",
+      "m128_necessary_block_size"
+    ],
+    "next_actions": [
+      "audit actual measurement channels",
+      "retain correlations across sufficiently large blocks"
+    ],
+    "positive_signal": "A charged collective effect retaining the necessary cross-input carrier correlations.",
+    "protocol": "Derive orbit purity and blockwise entropy bounds, then check physical Fourier and regular-basis states.",
+    "status": "ready",
+    "title": "Reference-carrier discard and binary information"
   },
   {
     "candidate_id": "CODE-COSET-COLLECTIVE",

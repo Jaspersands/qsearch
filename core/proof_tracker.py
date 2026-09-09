@@ -1635,6 +1635,55 @@ def _systematic_local_proof_gap_lemmas(candidate_id: str) -> list[LemmaRecord]:
     )]
 
 
+def _reference_twirl_information_lemmas(candidate_id: str) -> list[LemmaRecord]:
+    try:
+        report = json.loads(Path("research/representation/coset_hidden_involution_reference_twirl_information.json").read_text())
+    except (OSError, ValueError):
+        report = {}
+    gate = report.get("claim_gate", {})
+    checked = bool(gate.get("finite_controls_verified") and gate.get("scoped_blockwise_information_bound_derived"))
+    return [LemmaRecord(
+        id=f"LEMMA-{candidate_id}-REFERENCE-TWIRL-INFORMATION-LOSS", candidate_id=candidate_id,
+        statement="Under the uniform hidden prior and an outcome-independent reference schedule, independent block twirls give T^2 <= p(m)/(2(2m-1)!!) sum_j(2^b_j-1), even before arbitrary collective postprocessing.",
+        depends_on=["PO-INPUT-MODEL", "PO-MEASUREMENT", "PO-SUCCESS"],
+        status="derived-blockwise-information-bound-review-pending" if checked else "blocked-reference-information-evidence-missing",
+        falsification_test="Check regular-representation orthogonality, physical prior, Pinsker constants and every discarded register. A single global twirl preserves the binary mixture; do not apply the predetermined-reference bound to adaptive schedules.",
+    ), LemmaRecord(
+        id=f"LEMMA-{candidate_id}-ADAPTIVE-REFERENCE-TWIRL-HYBRID", candidate_id=candidate_id,
+        statement="For t classically adaptive reference rounds with quantum memory, fresh-block twirling before memory coupling gives T^2 <= t*p(m)/(2(2m-1)!!) sum_j(2^b_j-1) by null-prefix hybrids.",
+        depends_on=["PO-INPUT-MODEL", "PO-MEASUREMENT", "PO-SUCCESS"],
+        status="derived-adaptive-preinteraction-twirl-bound-review-pending" if checked and gate.get("classically_adaptive_preinteraction_twirl_bound_derived") else "blocked-adaptive-reference-evidence-missing",
+        falsification_test="Verify null-prefix history/memory independence from h and per-h suffix contractivity. Do not assume uniform actual posteriors or cover quantum-controlled references or memory coupling before the twirl.",
+    ), LemmaRecord(
+        id=f"LEMMA-{candidate_id}-CARRIER-CORRELATION-PRESERVING-EFFECT", candidate_id=candidate_id,
+        statement="A compiled logical effect retains enough cross-input carrier/type information to give a source-weighted detection or decoding advantage at charged cost.",
+        depends_on=[f"LEMMA-{candidate_id}-REFERENCE-TWIRL-INFORMATION-LOSS", "PO-COMPLEXITY", "PO-SUCCESS"],
+        status="blocked-no-source-weighted-correlation-preserving-effect",
+        falsification_test="Specify the entire channel, including discarded environments, block size, reference schedule and memory-interaction order. Noncommuting copy operators alone are not an information guarantee.",
+    )]
+
+
+def _binary_carrier_instrument_lemmas(candidate_id: str) -> list[LemmaRecord]:
+    try:
+        report = json.loads(Path("research/representation/coset_binary_carrier_instruments.json").read_text())
+    except (OSError, ValueError):
+        report = {}
+    checked = bool(report.get("claim_gate", {}).get("finite_complete_channel_evaluation_verified"))
+    return [LemmaRecord(
+        id=f"LEMMA-{candidate_id}-FINITE-BINARY-CARRIER-INSTRUMENTS", candidate_id=candidate_id,
+        statement="Complete S3/S4 binary carrier outcome laws satisfy physical mass and data-processing checks; rank-one multiplicity transitions give a classical latent-total-irrep replay, not a general dequantization theorem.",
+        depends_on=["PO-INPUT-MODEL", "PO-MEASUREMENT", "PO-DEQUANTIZATION"],
+        status="numerically-verified-finite-binary-instrument-and-latent-model" if checked else "blocked-binary-instrument-evidence-missing",
+        falsification_test="Compare every null/alternative transcript and row probability, not only Bayes scores. Check joint multiplicity one; the explicit S6 multiplicity-four branch prevents generalization.",
+    ), LemmaRecord(
+        id=f"LEMMA-{candidate_id}-GROWING-COPY-BINARY-CLASSIFIER", candidate_id=candidate_id,
+        statement="A growing-copy measurement program has an efficiently evaluable outcome decision rule, charged disturbance, natural source coverage and a serious classical comparison.",
+        depends_on=["PO-MEASUREMENT", "PO-COMPLEXITY", "PO-SUCCESS", "PO-DEQUANTIZATION"],
+        status="blocked-no-growing-copy-program-and-outcome-classifier",
+        falsification_test="Reject optimal finite likelihood tables and residual Helstrom distances as compiled readouts. Fixed-copy invariant instruments with only classical memory obey T^2 <= t(2^b-1)/(2M).",
+    )]
+
+
 def lemma_templates(candidate: dict[str, Any]) -> list[LemmaRecord]:
     candidate_id = candidate["id"]
     kind = _candidate_kind(candidate)
@@ -1748,6 +1797,8 @@ def lemma_templates(candidate: dict[str, Any]) -> list[LemmaRecord]:
         records.extend(_spectral_label_budget_lemmas(candidate_id))
         records.extend(_signed_tensor_access_lemmas(candidate_id))
         records.extend(_encoded_restriction_lemmas(candidate_id))
+        records.extend(_reference_twirl_information_lemmas(candidate_id))
+        records.extend(_binary_carrier_instrument_lemmas(candidate_id))
         records.extend(_systematic_local_proof_gap_lemmas(candidate_id))
     if kind == "coset-state":
         try:

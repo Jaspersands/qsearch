@@ -44,6 +44,18 @@ The [encoded restriction workbench](research/ENCODED_RESTRICTION.md) now checks
 normalized two-QFT carrier extraction, noncommuting logical orbit averages,
 and physical coset-register conventions. Its reference-orbit audit bounds
 fixed-reference invariant **identification**, not binary class detection.
+The [reference-discard audit](research/REFERENCE_TWIRL_INFORMATION.md) separately
+bounds binary information after independent carrier/type discard. A joint
+measurement on the remaining copy codes cannot recover the erased signal;
+classical adaptive references still obey a weaker bound when fresh inputs
+are twirled before memory interaction. A constructive coherent-reference
+countercheck recovers the original input after carrier erasure by moving
+its information first. This escapes that assumption, not the hard decoding
+problem. Fully coherent access and one global reference twirl remain open.
+The [binary instrument evaluator](research/BINARY_CARRIER_INSTRUMENTS.md)
+now measures actual outcome laws and disturbance. Its small-group alternating
+carrier gains are reproduced by a stronger latent-irrep classical model;
+they are calibration controls, not candidate algorithms.
 The [proof-route audit](research/PROOF_ROUTES.md) now checks scoped dependency
 contracts and pinned evidence. It catches unsupported assertions without
 pretending to check mathematical truth or cover the entire repository.
@@ -79,14 +91,14 @@ The repository automatically publishes interactive research telemetry and databa
 | **Frontier Map** | Machine-readable topological map of active research frontiers and kill criteria | [frontier.html](https://jaspersands.github.io/qsearch/frontier.html) |
 | **Negative Results** | Searchable database of 807 retained no-go theorems and dequantization findings | [negative-results.html](https://jaspersands.github.io/qsearch/negative-results.html) |
 | **Proof Debt** | Live ledger of 24 open proof obligations, 1,184 lemmas, and reduction edges | [proof-debt.html](https://jaspersands.github.io/qsearch/proof-debt.html) |
-| **Repository Map** | Interactive codebase architecture explorer and 788-module taxonomy | [repomap.html](https://jaspersands.github.io/qsearch/repomap.html) |
+| **Repository Map** | Interactive codebase architecture explorer and 792-module taxonomy | [repomap.html](https://jaspersands.github.io/qsearch/repomap.html) |
 
 ---
 
 ## Repository Architecture & Codebase Layout
 
 ### Why is the Root Directory Structured with Flat Modules?
-Q-Search contains **788 scientific verification modules**. The codebase organizes modules into domain-specific packages (`core/` and `theorems/`):
+Q-Search contains **792 scientific verification modules**. The codebase organizes modules into domain-specific packages (`core/` and `theorems/`):
 
 ```text
 quantum-algorithm-search/
@@ -97,7 +109,7 @@ quantum-algorithm-search/
 │   ├── dequantization_checks.py   # Automated classical attack matrix scanner
 │   └── mutation_engine.py         # Automated hypothesis mutation generator
 │
-├── theorems/                      # 788 Scientific Theorem Verification modules
+├── theorems/                      # 792 Scientific Theorem Verification modules
 │   ├── dcp_*.py                   # Dihedral Coset Problem (DHSP) & state-native sieves
 │   ├── coset_*.py, cfi_*.py       # Non-abelian coset observables & S_n representation theory
 │   ├── self_dual_wreath_*.py      # Self-dual wreath product representations & polar audits
@@ -123,7 +135,7 @@ quantum-algorithm-search/
 
 **Benefits of this Architecture:**
 1. **Uncluttered Root**: Only `qsearch.py` and configuration files reside at root.
-2. **Zero Packaging Friction**: All 788 workflows execute seamlessly via `python3 qsearch.py <command>`.
+2. **Zero Packaging Friction**: All 792 workflows execute seamlessly via `python3 qsearch.py <command>`.
 3. **Clean Separation of Concerns**: Core platform orchestration (`core/`) is cleanly separated from domain theorem proofs (`theorems/`).
 
 ---
@@ -211,7 +223,7 @@ python3 -m pytest tests/test_experiment_runner.py
 
 ## Categorized CLI Command Reference
 
-All 788 research workflows are accessible via `python3 qsearch.py <subcommand>`.
+All 792 research workflows are accessible via `python3 qsearch.py <subcommand>`.
 
 ### Core Operating System Commands
 ```bash
@@ -286,6 +298,8 @@ python3 qsearch.py coset-hidden-involution-source-weighted-support-portfolio
 python3 qsearch.py coset-hidden-involution-spectral-label-budget
 python3 qsearch.py coset-hidden-involution-signed-tensor-access
 python3 qsearch.py coset-hidden-involution-encoded-restriction
+python3 qsearch.py coset-hidden-involution-reference-twirl-information
+python3 qsearch.py coset-binary-carrier-instruments
 python3 qsearch.py proof-routes
 python3 qsearch.py run EXP-COSET-HIDDEN-INVOLUTION-SPECTRAL-LABEL-BUDGET
 python3 qsearch.py coset-hidden-involution-natural-support-six-mass-audit

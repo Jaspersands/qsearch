@@ -1,6 +1,104 @@
 # Research Agent Handoff
 
-Last updated: 2026-09-08
+Last updated: 2026-09-09
+
+## Binary Carrier Instrument Follow-Up
+
+`coset-binary-carrier-instruments` and
+`run EXP-COSET-BINARY-CARRIER-INSTRUMENTS` evaluate actual binary outcome laws
+using the existing physical Fourier and carrier projectors. See
+`research/BINARY_CARRIER_INSTRUMENTS.md`. All 152 S3/S4 source triples are
+included, with no postselection or renormalization. Twenty-four schedules
+separate carrier transcripts, final Young-row readout, uncompiled retained
+Helstrom information, disturbance, and a product-dephased Markov ablation.
+Four one-pair character-likelihood decision rules are checked directly.
+
+The apparent alternating L/R binary gain was killed by a stronger baseline:
+a latent-total-irrep HMM reproduces every transcript AND final row probability
+under both hypotheses, not merely their aggregate Bayes scores. All tested
+joint pair/total multiplicities are one. `LT` resolves the entire information
+remaining after the first L measurement. In S4 the raw distance is 21/32,
+the post-L distance is 59/96, and 1/24 is irreversibly lost at that first step.
+Do not spend another pass extending small-group alternating schedules.
+
+Important qualification: the HMM needs the hypothesis-dependent initial
+(total irrep, first pair) distribution, supplied operationally by the joint
+quantum label measurement. It is a quantum front end plus classical
+postprocessing equivalence, NOT an end-to-end classical solver for the
+unknown hypothesis. No legal classical sampler for that initial distribution
+is provided. Never promote a generative model given the answer into an attack.
+
+This is not a uniform classical simulator. Exact S6 witness:
+`g((4,2),(4,2),(4,2))=2`, giving joint multiplicity four on a triple path.
+Its natural source-triple mass is only 27/8000; its target-branch mass has
+NOT been evaluated. Nontrivial multiplicity is not a positive signal. A
+generalization needs matrix-valued conditional states and a charged method
+for evaluating or sampling the eventual decision rule on natural source mass.
+The new evaluator rejects missing probability mass and does not promote
+optimal finite likelihood tables to scalable classical classifiers.
+
+Two scoped negatives and two proof-debt lemmas are wired in. Fixed-width
+globally invariant block instruments with only classical history have
+`T^2 <= t(2^b-1)/(2M)`; this condition does not cover final noninvariant rows
+or retained quantum memory. The full-suite baseline failure remains the
+character-decoder missing scaling-registry write recorded below.
+
+## 2026-09-09 Reference-Discard Pass
+
+New subsystem: `coset-hidden-involution-reference-twirl-information`, also
+`run EXP-COSET-HIDDEN-INVOLUTION-REFERENCE-TWIRL-INFORMATION`.
+Read `research/REFERENCE_TWIRL_INFORMATION.md` before proposing another
+encoded-copy architecture. For uniform shared-h physical coset inputs,
+independent block twirls obey
+`T^2 <= p(m)/(2M) sum_j(2^b_j-1)`, with M=(2m-1)!! and T HALF trace norm.
+For t classical-adaptive reference rounds with arbitrary quantum memory,
+a null-prefix hybrid adds a factor t, PROVIDED each fresh block is twirled
+before memory interaction. Actual posterior orbit means are not uniform.
+Do not extend to quantum-controlled references or pre-twirl memory coupling.
+
+At m=128, t=m^2, necessary equal block sizes for T>=1/3 are 792
+(predetermined) and 778 (adaptive). Neither is sufficient. One global twirl
+preserves the binary mixture exactly. Five S4 coherent-reference encodings
+recover every input matrix unit after carrier erasure, explicitly escaping
+the preinteraction assumption. This transports the original hard state; it
+is not a detector. Do not start a new track merely for reversible re-encoding.
+
+Finite evidence: ten physical binary controls, an independent regular-basis
+S4 calculation, exact orbit sizes through m=4, three adaptive transcript
+checks, and five full-channel coherent recovery checks. A rare-orbit control
+has huge chi-squared divergence but tiny trace distance upper bound. The
+mutation engine rejects independent multiplicity-only decoding and keeps
+coherent target-effect proposals unpromoted.
+
+Proof routes now have thirteen curated claims. New purity, predetermined,
+and adaptive contracts pin the new derivation/source separately. Older pins
+were not refreshed. The adaptive route depends on conditional orbit purity,
+not an invalid conversion of averaged trace distance to conditional distance.
+All remain review-pending, with no general binary no-go or speedup claim.
+
+Final verification for this pass: 126 broader targeted tests passed in
+77.31 seconds, including all 36 workbench tests and the committed proof pins.
+Python compilation, JavaScript syntax and diff whitespace checks passed.
+Live experiment runs, `proof-routes`, `proofs`, `dequantize`, `conjectures`,
+`mutate`, the compact progress snapshot and `validate` were refreshed.
+Registry validation has zero issues: 791 experiments, 797 results, 896
+negatives, 1284 dequantization findings and 13 proof-route claims. No new
+candidate is promoted by the typed mechanism subsystem.
+A new all-suite attempt, `pytest -q --maxfail=1`, stopped after 58 passes at
+the already-known `test_character_decoder_search.py:103` scaling-registry
+write failure (196.05 seconds). Do not claim the full suite is green.
+The last GitHub checkpoint is `09a221a3`, verified on origin/main. This pass
+has not been committed yet, honoring the request for less frequent commits.
+
+Highest next mathematical task: an actual source-weighted collective effect,
+with its measurement compiler and classical contraction costs. Generic
+single-operator QSVT on the normalized shared-conjugation average already
+has a scoped square-root-of-M obstruction. Avoid reopening it by renaming
+the encoding, erasing a carrier, or assuming a complete gapped spectrum.
+Inspection also confirms that existing subset-carrier and Schur-dilation
+modules already cover noncommuting subset sums and encoded global isotypic
+routing. Do not implement those again under a new name. No Lean/lake toolchain
+is currently installed; proof provenance is still not formal verification.
 
 2026-09-09 follow-up: the typed mutation engine now rejects the fixed-count
 complete gapped separator primitive and proposes encoded reference access

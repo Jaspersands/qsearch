@@ -194,6 +194,73 @@
       },
       "asserted_level": "unresolved",
       "routes": []
+    },
+    {
+      "id": "REFERENCE-ORBIT-BLOCK-PURITY",
+      "scope": {
+        "domain": "nonidentity involutions in one reference-conjugacy orbit O of S_(2m)",
+        "input_model": "b physical coset copies of the same h, diagonally twirled within the block",
+        "conclusion": "|G|^b Tr(sigma_O,b^2)-1 = (2^b-1)/|O|",
+        "quantifier": "universal"
+      },
+      "asserted_level": "derived-review-pending",
+      "routes": [
+        {
+          "id": "regular-orthogonality",
+          "conclusion_evidence": [
+            "E-REFERENCE-ORBIT-BLOCK-PURITY-derivation",
+            "E-REFERENCE-ORBIT-BLOCK-PURITY-source"
+          ],
+          "premises": [],
+          "diagnostics": []
+        }
+      ]
+    },
+    {
+      "id": "PREDETERMINED-REFERENCE-TWIRL-INFORMATION",
+      "scope": {
+        "domain": "uniform fixed-point-free involutions in S_(2m)",
+        "input_model": "independent disjoint block twirls with outcome-independent known references; arbitrary later joint processing",
+        "conclusion": "squared half trace distance is at most min(1, p(m)/(2(2m-1)!!) sum_j(2^b_j-1))",
+        "quantifier": "universal"
+      },
+      "asserted_level": "derived-review-pending",
+      "routes": [
+        {
+          "id": "entropy-additivity",
+          "conclusion_evidence": [
+            "E-PREDETERMINED-REFERENCE-TWIRL-INFORMATION-derivation",
+            "E-PREDETERMINED-REFERENCE-TWIRL-INFORMATION-source"
+          ],
+          "premises": [
+            "REFERENCE-ORBIT-BLOCK-PURITY"
+          ],
+          "diagnostics": []
+        }
+      ]
+    },
+    {
+      "id": "ADAPTIVE-PREINTERACTION-REFERENCE-TWIRL",
+      "scope": {
+        "domain": "uniform fixed-point-free involutions in S_(2m)",
+        "input_model": "at most t classical adaptive reference rounds; fresh blocks twirled before quantum-memory interaction; no other h-dependent resource",
+        "conclusion": "squared half trace distance is at most min(1, t*p(m)/(2(2m-1)!!) sum_j(2^b_j-1))",
+        "quantifier": "universal"
+      },
+      "asserted_level": "derived-review-pending",
+      "routes": [
+        {
+          "id": "null-prefix-hybrid",
+          "conclusion_evidence": [
+            "E-ADAPTIVE-PREINTERACTION-REFERENCE-TWIRL-derivation",
+            "E-ADAPTIVE-PREINTERACTION-REFERENCE-TWIRL-source"
+          ],
+          "premises": [
+            "REFERENCE-ORBIT-BLOCK-PURITY"
+          ],
+          "diagnostics": []
+        }
+      ]
     }
   ],
   "evidence": [
@@ -341,6 +408,90 @@
         "domain": "uniform fixed-point-free involutions in S_(2m)",
         "input_model": "any copy count; complete final POVM invariant under one known reference K",
         "conclusion": "average exact identification success is at most p(m)/(2m-1)!!",
+        "quantifier": "universal"
+      },
+      "level": "derived-review-pending",
+      "predicates": []
+    },
+    {
+      "id": "E-REFERENCE-ORBIT-BLOCK-PURITY-derivation",
+      "path": "research/REFERENCE_TWIRL_INFORMATION.md",
+      "sha256": "c40c7e88a529f8556d243bcc91dbac263b24c9d72b2b4e32ceae7eae4e23df45",
+      "claim_id": "REFERENCE-ORBIT-BLOCK-PURITY",
+      "scope": {
+        "domain": "nonidentity involutions in one reference-conjugacy orbit O of S_(2m)",
+        "input_model": "b physical coset copies of the same h, diagonally twirled within the block",
+        "conclusion": "|G|^b Tr(sigma_O,b^2)-1 = (2^b-1)/|O|",
+        "quantifier": "universal"
+      },
+      "level": "derived-review-pending",
+      "predicates": []
+    },
+    {
+      "id": "E-REFERENCE-ORBIT-BLOCK-PURITY-source",
+      "path": "theorems/coset_hidden_involution_reference_twirl_information.py",
+      "sha256": "ace516cd8c53dd02a5dbd1ee6ea728936769a8c4a3129d107c2160a02a6dceff",
+      "claim_id": "REFERENCE-ORBIT-BLOCK-PURITY",
+      "scope": {
+        "domain": "nonidentity involutions in one reference-conjugacy orbit O of S_(2m)",
+        "input_model": "b physical coset copies of the same h, diagonally twirled within the block",
+        "conclusion": "|G|^b Tr(sigma_O,b^2)-1 = (2^b-1)/|O|",
+        "quantifier": "universal"
+      },
+      "level": "derived-review-pending",
+      "predicates": []
+    },
+    {
+      "id": "E-PREDETERMINED-REFERENCE-TWIRL-INFORMATION-derivation",
+      "path": "research/REFERENCE_TWIRL_INFORMATION.md",
+      "sha256": "c40c7e88a529f8556d243bcc91dbac263b24c9d72b2b4e32ceae7eae4e23df45",
+      "claim_id": "PREDETERMINED-REFERENCE-TWIRL-INFORMATION",
+      "scope": {
+        "domain": "uniform fixed-point-free involutions in S_(2m)",
+        "input_model": "independent disjoint block twirls with outcome-independent known references; arbitrary later joint processing",
+        "conclusion": "squared half trace distance is at most min(1, p(m)/(2(2m-1)!!) sum_j(2^b_j-1))",
+        "quantifier": "universal"
+      },
+      "level": "derived-review-pending",
+      "predicates": []
+    },
+    {
+      "id": "E-PREDETERMINED-REFERENCE-TWIRL-INFORMATION-source",
+      "path": "theorems/coset_hidden_involution_reference_twirl_information.py",
+      "sha256": "ace516cd8c53dd02a5dbd1ee6ea728936769a8c4a3129d107c2160a02a6dceff",
+      "claim_id": "PREDETERMINED-REFERENCE-TWIRL-INFORMATION",
+      "scope": {
+        "domain": "uniform fixed-point-free involutions in S_(2m)",
+        "input_model": "independent disjoint block twirls with outcome-independent known references; arbitrary later joint processing",
+        "conclusion": "squared half trace distance is at most min(1, p(m)/(2(2m-1)!!) sum_j(2^b_j-1))",
+        "quantifier": "universal"
+      },
+      "level": "derived-review-pending",
+      "predicates": []
+    },
+    {
+      "id": "E-ADAPTIVE-PREINTERACTION-REFERENCE-TWIRL-derivation",
+      "path": "research/REFERENCE_TWIRL_INFORMATION.md",
+      "sha256": "c40c7e88a529f8556d243bcc91dbac263b24c9d72b2b4e32ceae7eae4e23df45",
+      "claim_id": "ADAPTIVE-PREINTERACTION-REFERENCE-TWIRL",
+      "scope": {
+        "domain": "uniform fixed-point-free involutions in S_(2m)",
+        "input_model": "at most t classical adaptive reference rounds; fresh blocks twirled before quantum-memory interaction; no other h-dependent resource",
+        "conclusion": "squared half trace distance is at most min(1, t*p(m)/(2(2m-1)!!) sum_j(2^b_j-1))",
+        "quantifier": "universal"
+      },
+      "level": "derived-review-pending",
+      "predicates": []
+    },
+    {
+      "id": "E-ADAPTIVE-PREINTERACTION-REFERENCE-TWIRL-source",
+      "path": "theorems/coset_hidden_involution_reference_twirl_information.py",
+      "sha256": "ace516cd8c53dd02a5dbd1ee6ea728936769a8c4a3129d107c2160a02a6dceff",
+      "claim_id": "ADAPTIVE-PREINTERACTION-REFERENCE-TWIRL",
+      "scope": {
+        "domain": "uniform fixed-point-free involutions in S_(2m)",
+        "input_model": "at most t classical adaptive reference rounds; fresh blocks twirled before quantum-memory interaction; no other h-dependent resource",
+        "conclusion": "squared half trace distance is at most min(1, t*p(m)/(2(2m-1)!!) sum_j(2^b_j-1))",
         "quantifier": "universal"
       },
       "level": "derived-review-pending",
