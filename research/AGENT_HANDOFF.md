@@ -2,6 +2,187 @@
 
 Last updated: 2026-09-10
 
+## Latest Pass: Adaptive Whole-Execution Catalogue Cover
+
+The catalogue question below is now resolved within explicit assumptions.
+`research/SOURCE_CONDITIONED_PALETTE.md#adaptive-catalogue-cover` derives
+T<=sum_j delta_j. Each comparison follows the actual adaptive program but
+aborts BEFORE an operation outside its fixed palette. Completed transcripts
+are assigned to exactly one covering palette; success sectors are never
+renormalized. This handles initial source labels AND later classical quantum
+measurement outcomes, without assuming uniform actual hidden posteriors.
+
+Every ENTIRE execution and final readout must fit one predeclared palette.
+A step-only cover, post-hoc catalogue or unobserved coherent selector is not
+covered. Cardinality is not runtime: polynomial code can describe exponentially
+many possible subsets. A polynomial catalogue with uniformly bounded cell
+counts is still asymptotically obstructed, including retained small cells.
+This is a review-pending extension, not a new algorithm or novelty claim.
+
+Persistent controls compare all 3368 natural S3/S4 adaptive branch laws over
+152 source triples, including abort outcomes. S4 has unequal branch selection
+probabilities under the two hypotheses. Scalar controls refute using the
+maximum/average instead of a sum and normalizing away rare-event mass.
+Exact two-palette scaling gives T<=2^-601 at S1024; S128 is vacuous. The
+existing binary runner, negative registry, dequantization mapping, proof
+tracker and mutation obligations are wired to this extension.
+
+Verification: 104 targeted tests passed in 57.26 seconds. The earlier focused
+run passed 54 in 14.49 seconds. Compilation, JS syntax and diff checks pass.
+The known character-decoder scaling-write failure was reconfirmed directly
+in 3.69 seconds. The preceding full-suite attempt stopped at that same failure
+after 58 passes; do not claim a new complete or green full-suite run.
+The live binary and synthesis runs, dequantize, proofs, conjectures, mutate,
+progress snapshot, validate and proof-routes refresh are complete. Registry
+validation has zero issues: 8 candidates, 792 experiments, 799 results,
+898 negatives and 1291 dequantization findings (1287 blocking). Proof debt
+has 1269 lemmas; the binary proposal remains unpromoted. The 13 curated
+proof-route contracts have no unsupported assertions and four unresolved
+claims; they do not independently certify the new mathematics. The completed
+fixed-palette, source-conditioned and adaptive-cover passes form one checkpoint
+batch; read git history for the authoritative checkpoint identifier.
+
+Next high-thinking target: an ACTUAL coherent clean-isotypic phase query over
+all subset masks, retaining the initial source labels in the main test.
+Do not keep extending barrier catalogues without a concrete proposed program.
+Let U_S=sum_g a_g R_g^S with the SAME unitary group-algebra element for every
+mask, e.g. an efficiently evaluated irrep-label phase via clean GPE. A coherent
+mask SELECT has polynomial controlled-action cost despite 2^k possible masks.
+Evaluate its exact source-weighted selector-state kernel and an implemented
+readout, separately from an uncompiled optimal Helstrom table.
+
+A tentative UNCONDITIONED regression identity to verify, NOT admitted
+evidence: for distinct nonempty masks S,T and fixed h,
+Tr(rho_h^k U_T^dagger U_S)=|sum_(g in {e,h}) a_g|^2, while diagonals equal 1.
+The group moments force both coefficient indices into H even for nested masks.
+For a uniform selector over r nonempty masks and discarded physical inputs,
+its state would be c_h J/r+(1-c_h)I/r. Its null/class distance would then be
+(1-1/r)|E_h c_h-c_0|<=sqrt(3/M), using the two-copy observable bound.
+Check regular conventions, complex phases, overlaps, all hidden members and
+empty-mask terms. CRUCIALLY this shortcut does not retain source-label side
+information; do not apply it to the main source-conditioned experiment.
+Joint retained-input readouts and mask-dependent phase laws are also excluded.
+Existing addressed-cross-map work concerns different branch metrics, not
+this selector kernel. Inspect before extending, and keep every signal suspect.
+
+For the main test, derive and verify the CONDITIONAL Gram kernel directly:
+sum_(u,v) conj(a_u) a_v times the product of f_lambda_i(u^-1,h) on T\S,
+f_lambda_i(v,h) on S\T, and f_lambda_i(u^-1 v,h) on S intersect T. Include
+selector amplitudes, p^k or pi^k source weights, and the same h across all
+factors. Compare with direct controlled unitaries, not another copy of the
+moment formula. A sign-character phase must map zero characters to a unit
+phase too; numpy.sign(0)=0 would make the claimed query nonunitary. Classical
+tables calculated with a supplied h are calibration, not a legal solver.
+
+## Earlier Pass: Retained Source Labels and Unbalanced Cells
+
+`research/SOURCE_CONDITIONED_PALETTE.md` is now a complete scoped derivation,
+with a review-pending negative and lemma in the EXISTING binary workbench.
+No new candidate, generic framework, formal proof or novelty claim was added.
+The uniform involution prior and standard mixed coset-state input remain
+essential. All classical source labels are retained; the palette must be
+chosen BEFORE observing them, and quantum operations remain in its cellwise
+diagonal group algebra. The formula charges the source prior and conditional
+cell-lift errors, not merely the distance of the source-averaged state.
+
+The finite verifier checks 701 positive-weight S3/S4 lifts including the
+null and every hidden member, 75 zero-mass alternative tuples, and 166 source
+representations with missing-irrep POVM extensions. All moments, Parseval,
+positivity, probability and normalization residuals are below 5e-15.
+The old right-regular helper is an anti-action on column vectors; the new
+verifier explicitly inverts its argument and checks every group product.
+S4's normal V4 gives exact conditional distance >=1/2 at every cell width,
+although the averaged state equals rho_h. Do not generalize universal mixing.
+
+The stronger extension retains small cells as FULL raw quantum inputs and
+lifts only large cells. If r raw inputs are retained and l cells lifted,
+the reference information term uses r+l copies, NOT one per small cell.
+Taking threshold 2n excludes ANY fixed-cell size profile asymptotically at
+polynomial raw copy budget. Exact dyadic scaling has no float underflow:
+S1024 with two balanced subsets gives T<=2^-602; three subsets at S4096
+remain vacuous under these conservative constants. Unbalanced two-small-cell
+controls also remain obstructed. Their bounds do not extend to arbitrary
+source-selected palettes, growing palettes or uncharged outside-algebra access.
+
+Final targeted verification: 98 passed in 62.74 seconds; separate
+focused run 48 passed in 13.97 seconds. Full-suite attempt: 58 passed then
+the same character-decoder scaling-write failure at line 103 (212.02 seconds).
+Python compilation, JS syntax and diff checks pass. The two live binary/
+synthesis experiments completed. Dequantization has 1290 findings, 1286
+blocking; proof debt has 1268 lemmas. Do not claim the full suite is green.
+Final refresh also completed conjectures, mutate, compact progress, validate
+and proof-routes. Validation has zero issues: 8 candidates, 792 experiments,
+799 results and 897 negatives. Candidate changes are timestamps only. The
+new binary mechanism remains proposal-only. Thirteen curated proof-route
+contracts have zero unsupported assertions and four unresolved claims; they
+do not independently certify this new derivation. No commit was made.
+
+Next mathematical decision: characterize an actual measurement program that
+escapes the fixed-cell restriction AND has a useful, charged output rule.
+A finite catalogue is not automatically an escape; the later aborting-cover
+argument above now resolves that question under whole-execution coverage.
+Arbitrary source-dependent subsets still require a different argument. Do not reopen the
+published combine-and-consume sieve as a positive direction, or equate algebra
+generation/commutator size with an efficient detector. Mechanical failures
+remain in `research/MECHANICAL_FOLLOW_UP_PLAN.md` for the lower-thinking handoff.
+
+## Previous Pass: Measurement Contracts and a Specific Route Test
+
+Checkpoint `54130188` already contains the clean GPE, exact two-quotient
+character arithmetic and task-correct binary mutation work. Another actor
+created that checkpoint; do not duplicate it. The subsequent fixed-palette
+pass may remain uncommitted. The user wants infrequent commits and no
+infrastructure expansion without a concrete mathematical target.
+
+Read `research/BINARY_CARRIER_INSTRUMENTS.md`. Clean GPE label copy followed
+by full uncomputation gives the intended Luders instrument. Discarding
+reference rows is a different channel; on all physical S3/S4 triples it
+leaves only first-pair transcript information. In S4 it loses an additional
+37/192 trace distance. This is not a general compiler obstruction. Exact
+fixed-point-free character arithmetic now uses two-quotients rather than
+domino recursion, with exhaustive checks through n=20 and nonenumerative
+label scoring through n=4096. The one-pair validator also no longer enumerates
+every partition merely to validate a supplied label.
+
+The binary report now acknowledges the already-known support-rank lower
+bound T>=max(0,1-M/2^k). Information at logarithmic copy count is not open;
+implementing a useful growing-copy measurement remains open. Mutation search
+now has separate identification/binary terminal types and copy bounds. Four
+typed proposals remain unpromoted, including the new binary route. Generic
+dequantization/proof advice no longer incorrectly requires identification
+for a binary detection proposal.
+
+The first precise attempted route has been tested: a fixed palette of subsets
+gives at most one effective coset sample per nonzero incidence signature,
+for all operations/readouts in the cellwise diagonal group algebra. The
+explicit regular-coordinate compression is checked against the null and
+every hidden member, not favorable source blocks. With c cells, arbitrary
+repetitions still obey T^2 <= (2^c-1)/(4M). Three subsets expose at most seven
+cells even with 842 raw S256 inputs. This is NOT classical dequantization.
+Individual source labels refine to singletons; unlisted subsets, coherent
+addressing over a larger palette or outside-algebra readouts invalidate the
+small-palette contract. One scoped negative and one review-pending lemma are
+added to the existing binary workbench, not a new generic theorem module.
+
+Latest targeted verification: 121 tests passed in 60.75 seconds. The separate
+14 synthesis/mutation tests also passed. Full-suite attempt: 58 passed then
+the unchanged character-decoder scaling-write failure at test line 103,
+212.82 seconds. Do not claim the full suite is green. Python compilation,
+site JavaScript syntax and diff checks pass. Live binary and synthesis
+experiments completed; dequantization has 1289 findings, 1285 blocking.
+
+The source-conditioned derivation was tentative at this checkpoint. Its
+507 alternative-only scratch lifts and S4 countercontrol have since been
+persisted and extended as described in the latest pass above. The new result
+is review-pending evidence, not independently verified mathematics.
+
+Final live refresh: 8 candidates unchanged, 792 experiments, 799 results,
+896 negatives, 19 mutations, 1289 dequantization findings, zero validation
+issues. Thirteen curated proof-route contracts still have zero unsupported
+assertions and four unresolved claims; they do not certify all mathematics.
+Final post-refresh focused run: 45 tests passed in 19.56 seconds. No commit
+was made by this pass; preserve the user's infrequent-checkpoint preference.
+
 ## 2026-09-10 Classical Evidence Corrections
 
 Read `research/CLASSICAL_VALUE_ACCESS_AUDIT.md`. Two completed passes corrected

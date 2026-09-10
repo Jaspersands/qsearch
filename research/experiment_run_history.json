@@ -17392,5 +17392,218 @@
     "run_id": "RUN-EXP-COSET-RECOUPLING-MECHANISM-SYNTHESIS-00534",
     "status": "typed-mutations-ranked-no-proof-gate-eligible-mechanism",
     "summary": "Evaluated 10 typed collective-measurement architectures, rejected 6 known-invalid shortcuts, and retained 4 proof-capability research proposals without promoting candidates."
+  },
+  {
+    "artifacts": {
+      "coset_recoupling_mechanism_synthesis": "research/representation/coset_recoupling_mechanism_synthesis.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "experiment_id": "EXP-COSET-RECOUPLING-MECHANISM-SYNTHESIS",
+    "falsifier_count": 6,
+    "falsifiers_triggered": [
+      "QFT-only weak-label decoding is a known no-go route.",
+      "Multiplicity statistics are not a coherent transform or decoder.",
+      "Spectrum-rank PGM and one-tree k-copy recursion fail exact finite/all-n tests.",
+      "Exceptional commuting or restricted multiplicity families do not inherit full source-family reductions.",
+      "No surviving architecture currently satisfies every proof-critical capability.",
+      "Every architecture must satisfy its task-specific copy bound: Holevo/Fano for identification, class-mixture chi-square for binary detection. Known logarithmic-copy information does not supply a circuit."
+    ],
+    "metrics": {
+      "automatically_promoted_candidate_count": 0,
+      "binary_detection_proposal_count": 1,
+      "highest_survivor_priority_score": 110,
+      "known_no_go_rejected_count": 6,
+      "mechanism_count": 10,
+      "minimum_missing_capability_count": 2,
+      "primitive_count": 25,
+      "proof_gate_eligible_count": 0,
+      "proposal_only_count": 4,
+      "task_specific_copy_budget_rule_count": 2,
+      "typed_interface_valid_count": 10,
+      "undercharged_mechanism_promoted_count": 0
+    },
+    "recorded_at": "2026-09-10T04:54:01.938269+00:00",
+    "result_id": "RESULT-EXP-COSET-RECOUPLING-MECHANISM-SYNTHESIS-COSET",
+    "run_id": "RUN-EXP-COSET-RECOUPLING-MECHANISM-SYNTHESIS-00535",
+    "status": "typed-mutations-ranked-no-proof-gate-eligible-mechanism",
+    "summary": "Evaluated 10 typed collective-measurement architectures, rejected 6 known-invalid shortcuts, and retained 4 proof-capability research proposals without promoting candidates."
+  },
+  {
+    "artifacts": {
+      "binary_carrier_instruments": "research/representation/coset_binary_carrier_instruments.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "experiment_id": "EXP-COSET-BINARY-CARRIER-INSTRUMENTS",
+    "falsifier_count": 6,
+    "falsifiers_triggered": [
+      "Conjugation invariance removes hidden-member information, not necessarily class-versus-trivial information.",
+      "Measuring another carrier label can irreversibly lose information; a large commutator does not certify an improved detector.",
+      "All tested L/R binary outcome laws are reproduced by classical latent-irrep dynamics after the joint quantum label front end; no legal classical replacement of that front end is supplied.",
+      "Discarding the GPE reference rows has the same first-label probabilities but is a pair-local twirl, not the assumed Luders instrument; it erases all remaining three-input binary information conditional on that label.",
+      "A fixed subset palette with c incidence cells provides at most c effective coset samples, regardless of raw copies or repetitions within that algebra. Individual source labels or unlisted subset access must refine the cells.",
+      "Fixed-copy invariant instruments repeated polynomially many times remain below the required asymptotic information budget."
+    ],
+    "metrics": {
+      "clean_gpe_cleanup_controls_passed": 2,
+      "explicit_one_pair_classifiers_checked": 4,
+      "finite_full_source_controls_passed": 2,
+      "growing_copy_measurement_compilers": 0,
+      "polynomial_label_arithmetic_controls": 4,
+      "regular_cell_compression_controls_passed": 3,
+      "schedules_evaluated": 24,
+      "source_blocks_evaluated": 152,
+      "source_blocks_with_clean_gpe_contract": 152,
+      "source_blocks_with_exact_latent_irrep_model": 152
+    },
+    "recorded_at": "2026-09-10T04:54:05.475652+00:00",
+    "result_id": "RESULT-EXP-COSET-BINARY-CARRIER-INSTRUMENTS",
+    "run_id": "RUN-EXP-COSET-BINARY-CARRIER-INSTRUMENTS-00536",
+    "status": "binary-instrument-calibration-fixed-copy-route-obstructed",
+    "summary": "Complete natural-source binary channels distinguish clean isotypic labels from discarded GPE reference rows. Clean compute-copy-uncompute has a uniform primitive reduction; discarding rows loses shared-hidden information. Fixed-copy repetition and the growing-copy classifier remain blocked."
+  },
+  {
+    "artifacts": {
+      "binary_carrier_instruments": "research/representation/coset_binary_carrier_instruments.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "experiment_id": "EXP-COSET-BINARY-CARRIER-INSTRUMENTS",
+    "falsifier_count": 7,
+    "falsifiers_triggered": [
+      "Conjugation invariance removes hidden-member information, not necessarily class-versus-trivial information.",
+      "Measuring another carrier label can irreversibly lose information; a large commutator does not certify an improved detector.",
+      "All tested L/R binary outcome laws are reproduced by classical latent-irrep dynamics after the joint quantum label front end; no legal classical replacement of that front end is supplied.",
+      "Discarding the GPE reference rows has the same first-label probabilities but is a pair-local twirl, not the assumed Luders instrument; it erases all remaining three-input binary information conditional on that label.",
+      "A fixed subset palette with c incidence cells provides at most c effective coset samples, regardless of raw copies or repetitions within that algebra. Individual source labels or unlisted subset access must refine the cells.",
+      "Retaining all classical source labels does not rescue fixed preselected palettes with sufficiently large cells: the separate approximate bound charges source priors and conditional lifting errors. S4 persistent modes falsify universal cell mixing; source-selected cells invalidate the iid estimate.",
+      "Fixed-copy invariant instruments repeated polynomially many times remain below the required asymptotic information budget."
+    ],
+    "metrics": {
+      "clean_gpe_cleanup_controls_passed": 2,
+      "explicit_one_pair_classifiers_checked": 4,
+      "finite_full_source_controls_passed": 2,
+      "growing_copy_measurement_compilers": 0,
+      "incomplete_support_povm_extensions_checked": 166,
+      "polynomial_label_arithmetic_controls": 4,
+      "regular_cell_compression_controls_passed": 3,
+      "schedules_evaluated": 24,
+      "source_blocks_evaluated": 152,
+      "source_blocks_with_clean_gpe_contract": 152,
+      "source_blocks_with_exact_latent_irrep_model": 152,
+      "source_conditioned_lifts_checked": 701
+    },
+    "recorded_at": "2026-09-10T11:33:14.288567+00:00",
+    "result_id": "RESULT-EXP-COSET-BINARY-CARRIER-INSTRUMENTS",
+    "run_id": "RUN-EXP-COSET-BINARY-CARRIER-INSTRUMENTS-00537",
+    "status": "binary-instrument-calibration-fixed-copy-route-obstructed",
+    "summary": "Complete natural-source binary channels distinguish clean isotypic labels from discarded GPE reference rows. Clean compute-copy-uncompute has a uniform primitive reduction; discarding rows loses shared-hidden information. Fixed-copy repetition and the growing-copy classifier remain blocked."
+  },
+  {
+    "artifacts": {
+      "coset_recoupling_mechanism_synthesis": "research/representation/coset_recoupling_mechanism_synthesis.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "experiment_id": "EXP-COSET-RECOUPLING-MECHANISM-SYNTHESIS",
+    "falsifier_count": 6,
+    "falsifiers_triggered": [
+      "QFT-only weak-label decoding is a known no-go route.",
+      "Multiplicity statistics are not a coherent transform or decoder.",
+      "Spectrum-rank PGM and one-tree k-copy recursion fail exact finite/all-n tests.",
+      "Exceptional commuting or restricted multiplicity families do not inherit full source-family reductions.",
+      "No surviving architecture currently satisfies every proof-critical capability.",
+      "Every architecture must satisfy its task-specific copy bound: Holevo/Fano for identification, class-mixture chi-square for binary detection. Known logarithmic-copy information does not supply a circuit."
+    ],
+    "metrics": {
+      "automatically_promoted_candidate_count": 0,
+      "binary_detection_proposal_count": 1,
+      "highest_survivor_priority_score": 110,
+      "known_no_go_rejected_count": 6,
+      "mechanism_count": 10,
+      "minimum_missing_capability_count": 2,
+      "primitive_count": 25,
+      "proof_gate_eligible_count": 0,
+      "proposal_only_count": 4,
+      "task_specific_copy_budget_rule_count": 2,
+      "typed_interface_valid_count": 10,
+      "undercharged_mechanism_promoted_count": 0
+    },
+    "recorded_at": "2026-09-10T11:35:06.587810+00:00",
+    "result_id": "RESULT-EXP-COSET-RECOUPLING-MECHANISM-SYNTHESIS-COSET",
+    "run_id": "RUN-EXP-COSET-RECOUPLING-MECHANISM-SYNTHESIS-00538",
+    "status": "typed-mutations-ranked-no-proof-gate-eligible-mechanism",
+    "summary": "Evaluated 10 typed collective-measurement architectures, rejected 6 known-invalid shortcuts, and retained 4 proof-capability research proposals without promoting candidates."
+  },
+  {
+    "artifacts": {
+      "binary_carrier_instruments": "research/representation/coset_binary_carrier_instruments.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "experiment_id": "EXP-COSET-BINARY-CARRIER-INSTRUMENTS",
+    "falsifier_count": 8,
+    "falsifiers_triggered": [
+      "Conjugation invariance removes hidden-member information, not necessarily class-versus-trivial information.",
+      "Measuring another carrier label can irreversibly lose information; a large commutator does not certify an improved detector.",
+      "All tested L/R binary outcome laws are reproduced by classical latent-irrep dynamics after the joint quantum label front end; no legal classical replacement of that front end is supplied.",
+      "Discarding the GPE reference rows has the same first-label probabilities but is a pair-local twirl, not the assumed Luders instrument; it erases all remaining three-input binary information conditional on that label.",
+      "A fixed subset palette with c incidence cells provides at most c effective coset samples, regardless of raw copies or repetitions within that algebra. Individual source labels or unlisted subset access must refine the cells.",
+      "Retaining all classical source labels does not rescue fixed preselected palettes with sufficiently large cells: the separate approximate bound charges source priors and conditional lifting errors. S4 persistent modes falsify universal cell mixing; source-selected cells invalidate the iid estimate.",
+      "Classical adaptive selection from a small predetermined whole-execution catalogue pays the sum of complete aborting-comparison bounds, without conditioning away failure mass. This is not a runtime bound for succinct exponentially large catalogues or coherent selectors.",
+      "Fixed-copy invariant instruments repeated polynomially many times remain below the required asymptotic information budget."
+    ],
+    "metrics": {
+      "adaptive_catalogue_source_blocks_checked": 152,
+      "adaptive_catalogue_transcript_branches_checked": 3368,
+      "clean_gpe_cleanup_controls_passed": 2,
+      "explicit_one_pair_classifiers_checked": 4,
+      "finite_full_source_controls_passed": 2,
+      "growing_copy_measurement_compilers": 0,
+      "incomplete_support_povm_extensions_checked": 166,
+      "polynomial_label_arithmetic_controls": 4,
+      "regular_cell_compression_controls_passed": 3,
+      "schedules_evaluated": 24,
+      "source_blocks_evaluated": 152,
+      "source_blocks_with_clean_gpe_contract": 152,
+      "source_blocks_with_exact_latent_irrep_model": 152,
+      "source_conditioned_lifts_checked": 701
+    },
+    "recorded_at": "2026-09-10T11:56:31.444729+00:00",
+    "result_id": "RESULT-EXP-COSET-BINARY-CARRIER-INSTRUMENTS",
+    "run_id": "RUN-EXP-COSET-BINARY-CARRIER-INSTRUMENTS-00539",
+    "status": "binary-instrument-calibration-fixed-copy-route-obstructed",
+    "summary": "Complete natural-source binary channels distinguish clean isotypic labels from discarded GPE reference rows. Clean compute-copy-uncompute has a uniform primitive reduction; discarding rows loses shared-hidden information. Fixed-copy repetition and the growing-copy classifier remain blocked."
+  },
+  {
+    "artifacts": {
+      "coset_recoupling_mechanism_synthesis": "research/representation/coset_recoupling_mechanism_synthesis.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "experiment_id": "EXP-COSET-RECOUPLING-MECHANISM-SYNTHESIS",
+    "falsifier_count": 6,
+    "falsifiers_triggered": [
+      "QFT-only weak-label decoding is a known no-go route.",
+      "Multiplicity statistics are not a coherent transform or decoder.",
+      "Spectrum-rank PGM and one-tree k-copy recursion fail exact finite/all-n tests.",
+      "Exceptional commuting or restricted multiplicity families do not inherit full source-family reductions.",
+      "No surviving architecture currently satisfies every proof-critical capability.",
+      "Every architecture must satisfy its task-specific copy bound: Holevo/Fano for identification, class-mixture chi-square for binary detection. Known logarithmic-copy information does not supply a circuit."
+    ],
+    "metrics": {
+      "automatically_promoted_candidate_count": 0,
+      "binary_detection_proposal_count": 1,
+      "highest_survivor_priority_score": 110,
+      "known_no_go_rejected_count": 6,
+      "mechanism_count": 10,
+      "minimum_missing_capability_count": 2,
+      "primitive_count": 25,
+      "proof_gate_eligible_count": 0,
+      "proposal_only_count": 4,
+      "task_specific_copy_budget_rule_count": 2,
+      "typed_interface_valid_count": 10,
+      "undercharged_mechanism_promoted_count": 0
+    },
+    "recorded_at": "2026-09-10T11:57:46.982263+00:00",
+    "result_id": "RESULT-EXP-COSET-RECOUPLING-MECHANISM-SYNTHESIS-COSET",
+    "run_id": "RUN-EXP-COSET-RECOUPLING-MECHANISM-SYNTHESIS-00540",
+    "status": "typed-mutations-ranked-no-proof-gate-eligible-mechanism",
+    "summary": "Evaluated 10 typed collective-measurement architectures, rejected 6 known-invalid shortcuts, and retained 4 proof-capability research proposals without promoting candidates."
   }
 ]

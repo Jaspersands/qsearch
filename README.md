@@ -67,6 +67,18 @@ degree 4096 without tableau enumeration. Typed mutation search distinguishes
 binary detection from hidden-element identification and retains one explicitly
 incomplete growing-copy binary proposal. Known logarithmic-copy information
 bounds are no longer listed as unresolved compiler requirements.
+The first growing-copy route tested has a precise limitation: a fixed subset
+palette exposes only one effective coset sample per membership-pattern cell.
+This rules out amplifying raw copy counts with a fixed small palette. A
+[separate source-conditioned bound](research/SOURCE_CONDITIONED_PALETTE.md)
+also limits fixed preselected cell profiles when all classical source labels
+are kept, by retaining small cells as fully charged quantum inputs.
+It explicitly tests persistent conditional modes and missing-irrep measurement
+extensions. Classical adaptation among a small predetermined whole-execution
+catalogue is also bounded without normalizing selected successes. Succinct
+exponential catalogues, coherent selectors and growing palettes remain outside
+the useful bound; the derivation is review-pending, not an algorithm or a
+novelty claim.
 The [classical value-access audit](research/CLASSICAL_VALUE_ACCESS_AUDIT.md)
 replaces hidden full-table quadratic reconstruction with counted point queries,
 including exact-residue controls on nonmaterializable domains. Sample-limited

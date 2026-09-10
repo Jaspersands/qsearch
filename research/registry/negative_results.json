@@ -2,6 +2,22 @@
   {
     "applies_to": [
       "CODE-COSET-COLLECTIVE",
+      "classically adaptive finite-catalogue subset programs"
+    ],
+    "claim": "Classical source/transcript adaptation among polynomially many predeclared bounded-cell palettes automatically evades the fixed-palette information obstruction.",
+    "evidence": {
+      "artifact": "research/representation/coset_binary_carrier_instruments.json",
+      "derivation": "research/SOURCE_CONDITIONED_PALETTE.md",
+      "status": "derived-review-pending"
+    },
+    "id": "ADAPTIVE-PALETTE-CATALOGUE-NOT-FREE-ESCAPE",
+    "lesson": "Every whole execution and final readout must fit one listed palette; stepwise coverage is insufficient. Keep abort mass, assign overlapping covers once, and never replace actual posteriors by a uniform prior. Coherent selectors and succinct exponential catalogues remain uncovered; catalogue cardinality is not selector runtime. The derivation is review-pending with novelty unestablished.",
+    "reason_invalid": "Aborting each comparison before its first outside operation reproduces disjoint unnormalized success sectors. Complete output distance is at most the sum of the fixed-palette bounds. Uniformly bounded cell counts and polynomial catalogue/copy counts remain obstructed asymptotically. The S1024 two-palette control gives T <= 2^-601.",
+    "source": "EXP-COSET-BINARY-CARRIER-INSTRUMENTS"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
       "PO-MECHANISM",
       "PO-COMPLEXITY",
       "PO-NOGO"
@@ -55100,6 +55116,21 @@
   },
   {
     "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "fixed-palette coherent subset programs"
+    ],
+    "claim": "Polynomially many raw coset copies and arbitrarily repeated operations on a fixed small subset palette suffice for constant binary advantage, without any other source-label or readout access.",
+    "evidence": {
+      "artifact": "research/representation/coset_binary_carrier_instruments.json",
+      "derivation": "research/BINARY_CARRIER_INSTRUMENTS.md"
+    },
+    "id": "FIXED-SUBSET-PALETTE-COPY-COMPRESSION",
+    "lesson": "Count every accessed subset and every final readout. Individual source labels refine cells to singletons; coherent unlisted subsets require a larger palette. This does not rule out growing palettes, ordinary source-conditioned algorithms, or general quantum measurements, and is not classical dequantization.",
+    "reason_invalid": "Copies with identical nonzero membership signatures compress exactly to one coset state per cell for the entire allowed algebra. With c cells, T^2 <= (2^c-1)/(4M). For S256 and a three-subset palette, even 842 raw inputs provide at most seven effective samples.",
+    "source": "EXP-COSET-BINARY-CARRIER-INSTRUMENTS"
+  },
+  {
+    "applies_to": [
       "DHS-GOWERS-SIEVE",
       "HYP-LIT-HIDDEN-SHIFT-SIEVE",
       "PO-DEQUANTIZATION",
@@ -83815,6 +83846,22 @@
     "lesson": "Apply primal/dual Schur powers and local puncture/shortening filtrations before measurement design.",
     "reason_invalid": "A polynomial-time permutation-invariant Schur filtration separates the pair; it cannot support a hard code-equivalence coset row.",
     "source": "code_schur_filtration.py"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "source-conditioned fixed-palette subset programs"
+    ],
+    "claim": "At polynomial raw copy budget, retaining all classical source labels suffices to rescue a fixed preselected subset palette with a bounded number of incidence cells.",
+    "evidence": {
+      "artifact": "research/representation/coset_binary_carrier_instruments.json",
+      "derivation": "research/SOURCE_CONDITIONED_PALETTE.md",
+      "status": "derived-review-pending"
+    },
+    "id": "SOURCE-LABELS-DO-NOT-RESCUE-FIXED-LARGE-CELLS",
+    "lesson": "Use the source-conditioned formula, not exact copy compression, when labels are retained. Retain small cells as full quantum inputs and charge their raw copies; this handles arbitrary fixed-cell size profiles asymptotically. Source-dependent regrouping, growing palettes and uncharged outside-algebra readouts remain uncovered; a vacuous finite bound is not survival evidence. S4 has exact persistent conditional modes. This result has not been independently reviewed or established as novel.",
+    "reason_invalid": "The review-pending bound compares source-conditioned cell lifts with coset states using character second moments, includes the full source-prior cost, and extends source-controlled POVMs through missing irreps. For S1024 with two balanced preselected subsets and the stated information-sufficient copy budget, exact outward rounding gives T <= 2^-602.",
+    "source": "EXP-COSET-BINARY-CARRIER-INSTRUMENTS"
   },
   {
     "applies_to": [

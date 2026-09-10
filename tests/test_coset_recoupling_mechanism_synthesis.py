@@ -144,6 +144,7 @@ class RecouplingMechanismSynthesisTests(unittest.TestCase):
             if item["id"] == "DEQ-COSET-TYPED-RECOUPLING-SHORTCUTS-REJECTED"
         )
         self.assertTrue(finding["blocks_speedup_claim"])
+        self.assertIn("binary detection needs", finding["required_action"])
         lemmas = {item["id"]: item for item in proofs["proof_debt"]["lemmas"]}
         self.assertEqual(
             lemmas["LEMMA-CODE-COSET-COLLECTIVE-COSET-TYPED-RECOUPLING-MECHANISM"]["status"],

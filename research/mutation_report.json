@@ -1,9 +1,9 @@
 {
   "accepted_preflight_count": 4,
-  "created_at": "2026-09-09T20:43:41.903594+00:00",
+  "created_at": "2026-09-10T12:05:16.999032+00:00",
   "interface_repair_proposal_count": 4,
-  "not_generated_preflight_count": 14,
-  "preflight_count": 18,
+  "not_generated_preflight_count": 15,
+  "preflight_count": 19,
   "proof_gate_preflights": [
     {
       "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
@@ -147,6 +147,16 @@
         }
       ],
       "proof_gate_status": "not-generated",
+      "proposal_id": "MUTATE-CODE-COSET-COLLECTIVE-CLEAN-SUBSET-BINARY-DETECTION"
+    },
+    {
+      "candidate_id": null,
+      "issues": [
+        {
+          "message": "Proposal is not specific enough to produce a proof-gated candidate."
+        }
+      ],
+      "proof_gate_status": "not-generated",
       "proposal_id": "MUTATE-CODE-COSET-COLLECTIVE-ENCODED-REFERENCE-SYMMETRY-BREAKING"
     },
     {
@@ -170,20 +180,24 @@
       "proposal_id": "MUTATE-CODE-COSET-COLLECTIVE-TENSOR-ASSOCIATOR-DECODER"
     }
   ],
-  "proposal_count": 18,
-  "proposal_only_count": 13,
+  "proposal_count": 19,
+  "proposal_only_count": 14,
   "proposals": [
     {
-      "created_at": "2026-09-09T20:43:41.731777+00:00",
+      "created_at": "2026-09-10T12:05:16.820423+00:00",
       "id": "MUTATE-CODE-COSET-COLLECTIVE-WL-HARD-COSET",
       "linked_blockers": [
+        "DEQ-CODE-COSET-COLLECTIVE-ADAPTIVE-PALETTE-CATALOGUE-COVER",
         "DEQ-CODE-COSET-COLLECTIVE-BRANCHING-COMPLETE-SPECTRAL-LABEL-CAPACITY",
         "DEQ-CODE-COSET-COLLECTIVE-CARRIER-BINARY-TASK-SCOPE",
+        "DEQ-CODE-COSET-COLLECTIVE-CLEAN-GPE-INSTRUMENT-CONTRACT",
         "DEQ-CODE-COSET-COLLECTIVE-ENCODED-COPY-TARGET-EFFECT",
         "DEQ-CODE-COSET-COLLECTIVE-FINITE-CARRIER-LATENT-IRREP-MODEL",
+        "DEQ-CODE-COSET-COLLECTIVE-FIXED-PALETTE-EFFECTIVE-COPIES",
         "DEQ-CODE-COSET-COLLECTIVE-FIXED-REFERENCE-IDENTIFICATION",
         "DEQ-CODE-COSET-COLLECTIVE-REFERENCE-TWIRL-INFORMATION-LOSS",
         "DEQ-CODE-COSET-COLLECTIVE-SIGNED-TENSOR-ACCESS-COMPLETE-SPECTRAL-LABEL-CAPACITY",
+        "DEQ-CODE-COSET-COLLECTIVE-SOURCE-CONDITIONED-PALETTE-BOUND",
         "DEQ-CODE-COSET-COLLECTIVE-SYSTEMATIC-LOCAL-PROOF-GAP",
         "DEQ-CODE-COSET-COLLECTIVE-TENSOR-COMPLETE-SPECTRAL-LABEL-CAPACITY",
         "DEQ-RESULT-CODE-AFFINE-GEOMETRY-SEARCH-LATEST-NEGATIVE-FAMILIES",
@@ -813,6 +827,7 @@
         "DEQ-RESULT-EXP-COSET-GM-SWITCHING-SEARCH-COSET-FALSIFIERS",
         "DEQ-RESULT-EXP-COSET-GROWING-WIDTH-ARCHITECTURE-COSET-FALSIFIERS",
         "DEQ-RESULT-EXP-COSET-HIDDEN-INVOLUTION-ALL-COPY-TARGET-LCU-NO-GO-DCP-SUBSET-SUM-MARKER-COSET-FALSIFIERS",
+        "DEQ-RESULT-EXP-COSET-HIDDEN-INVOLUTION-BINARY-DECISION-REDUCTION-COSET-FALSIFIERS",
         "DEQ-RESULT-EXP-COSET-HIDDEN-INVOLUTION-BINARY-DECISION-REDUCTION-LATEST-FALSIFIERS",
         "DEQ-RESULT-EXP-COSET-HIDDEN-INVOLUTION-BINARY-IDENTIFICATION-SELF-REDUCTION-CODE-FAMILY-SEARCH-FALSIFIERS",
         "DEQ-RESULT-EXP-COSET-HIDDEN-INVOLUTION-BOUNDED-SUPPORT-COMMUTANT-GENERATION-DCP-SUBSET-SUM-MARKER-COSET-FALSIFIERS",
@@ -996,11 +1011,11 @@
         "DEQ-RESULT-EXP-DHS-DCP-ADAPTIVE-LAYOUT-UNIFORM-ENTANGLEMENT-NO-GO-LATEST-FALSIFIERS",
         "DEQ-RESULT-EXP-DHS-DCP-CNOT-LINEAR-SPLIT-ENTANGLEMENT-NO-GO-LATEST-FALSIFIERS",
         "DEQ-RESULT-EXP-DHS-DCP-LINEAR-REPARAMETERIZATION-AFFINE-FLAT-NO-GO-LATEST-FALSIFIERS",
+        "ADAPTIVE-PALETTE-CATALOGUE-NOT-FREE-ESCAPE",
         "AFFINE-FLAG-ADDRESSED-LOCAL-KERNELS-NO-POLYLOG-AGGREGATE-SCHUR-COMPILER",
         "AFFINE-GEOMETRY-CODE-SEARCH-AG2_F2_K3",
         "AFFINE-GEOMETRY-CODE-SEARCH-AG2_F3_K6",
         "AFFINE-NODE-NORMALIZED-FRAME-QSVT-NO-NATURAL-RESPONSE",
-        "ASYMPTOTIC-CARRIER-CONTEXTUALITY-NOT-QUANTUM-ALGORITHM",
         "REDUCTION-ROUTE-CODE-COSET-COLLECTIVE-BLOCKED"
       ],
       "mutation_type": "wl-hard-coset-observable",
@@ -1033,7 +1048,7 @@
       "status": "proposal"
     },
     {
-      "created_at": "2026-09-09T20:43:41.736405+00:00",
+      "created_at": "2026-09-10T12:05:16.824782+00:00",
       "formalization_status": "proposal-only-unformalized",
       "id": "MUTATE-DHS-GOWERS-SIEVE-DCP-RECURSIVE-DECODER-CERTIFICATE",
       "linked_blockers": [
@@ -1307,7 +1322,7 @@
       "theorem_contract_id": "THM-REGEV-USVP-TO-DCP-2003"
     },
     {
-      "created_at": "2026-09-09T20:43:41.738897+00:00",
+      "created_at": "2026-09-10T12:05:16.827544+00:00",
       "formalization_status": "proposal-only-unformalized",
       "id": "MUTATE-DHS-GOWERS-SIEVE-DCP-BAD-REGISTER-ROBUST-ARCHITECTURE",
       "linked_blockers": [
@@ -1579,7 +1594,7 @@
       "theorem_contract_id": "THM-REGEV-USVP-TO-DCP-2003"
     },
     {
-      "created_at": "2026-09-09T20:43:41.761893+00:00",
+      "created_at": "2026-09-10T12:05:16.851800+00:00",
       "formalization_status": "proposal-only-unformalized",
       "id": "MUTATE-DHS-GOWERS-SIEVE-DCP-RANDOM-LABEL-POLYNOMIAL-DECODER",
       "linked_blockers": [
@@ -1929,7 +1944,7 @@
       "theorem_contract_id": "THM-REGEV-USVP-TO-DCP-2003"
     },
     {
-      "created_at": "2026-09-09T20:43:41.764339+00:00",
+      "created_at": "2026-09-10T12:05:16.854477+00:00",
       "id": "MUTATE-HYP-LIT-COSET-OBSERVABLES-WL-HARD-COSET",
       "linked_blockers": [
         "DEQ-RESULT-EXP-HYP-COSET-NOGO-MAP-COSET-NEGATIVE-FAMILIES",
@@ -1971,7 +1986,7 @@
       "status": "proposal"
     },
     {
-      "created_at": "2026-09-09T20:43:41.767995+00:00",
+      "created_at": "2026-09-10T12:05:16.858121+00:00",
       "formalization_status": "proposal-only-unformalized",
       "id": "MUTATE-HYP-LIT-HIDDEN-SHIFT-SIEVE-DCP-RECURSIVE-DECODER-CERTIFICATE",
       "linked_blockers": [
@@ -2023,7 +2038,7 @@
       "theorem_contract_id": "THM-REGEV-USVP-TO-DCP-2003"
     },
     {
-      "created_at": "2026-09-09T20:43:41.770408+00:00",
+      "created_at": "2026-09-10T12:05:16.860561+00:00",
       "formalization_status": "proposal-only-unformalized",
       "id": "MUTATE-HYP-LIT-HIDDEN-SHIFT-SIEVE-DCP-BAD-REGISTER-ROBUST-ARCHITECTURE",
       "linked_blockers": [
@@ -2073,7 +2088,7 @@
       "theorem_contract_id": "THM-REGEV-USVP-TO-DCP-2003"
     },
     {
-      "created_at": "2026-09-09T20:43:41.783878+00:00",
+      "created_at": "2026-09-10T12:05:16.873815+00:00",
       "formalization_status": "proposal-only-unformalized",
       "id": "MUTATE-HYP-LIT-HIDDEN-SHIFT-SIEVE-DCP-RANDOM-LABEL-POLYNOMIAL-DECODER",
       "linked_blockers": [
@@ -2201,7 +2216,7 @@
       "theorem_contract_id": "THM-REGEV-USVP-TO-DCP-2003"
     },
     {
-      "created_at": "2026-09-09T20:43:41.791806+00:00",
+      "created_at": "2026-09-10T12:05:16.882110+00:00",
       "id": "MUTATE-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
       "linked_blockers": [
         "DEQ-CODE-CANONICALIZATION-REJECTIONS",
@@ -2253,7 +2268,7 @@
       "status": "proposal"
     },
     {
-      "created_at": "2026-09-09T20:43:41.791806+00:00",
+      "created_at": "2026-09-10T12:05:16.882110+00:00",
       "id": "MUTATE-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
       "linked_blockers": [
         "DEQ-CFI-PARITY-SOLVER-PROMISED-GADGET",
@@ -2296,7 +2311,7 @@
       "status": "proposal"
     },
     {
-      "created_at": "2026-09-09T20:43:41.791806+00:00",
+      "created_at": "2026-09-10T12:05:16.882110+00:00",
       "id": "MUTATE-CODE-COSET-COLLECTIVE-TRIAGE-ESCAPE",
       "linked_blockers": [
         "DEQ-COSET-FRONTIER-TRIAGE-REJECTIONS",
@@ -2336,7 +2351,7 @@
       "status": "proposal"
     },
     {
-      "created_at": "2026-09-09T20:43:41.798123+00:00",
+      "created_at": "2026-09-10T12:05:16.888765+00:00",
       "failed_interface_axes": [
         "full-family-coverage",
         "parameter-map",
@@ -2388,7 +2403,7 @@
       ]
     },
     {
-      "created_at": "2026-09-09T20:43:41.798123+00:00",
+      "created_at": "2026-09-10T12:05:16.888765+00:00",
       "failed_interface_axes": [
         "bad-register-robustness",
         "full-family-coverage",
@@ -2443,7 +2458,7 @@
       ]
     },
     {
-      "created_at": "2026-09-09T20:43:41.798123+00:00",
+      "created_at": "2026-09-10T12:05:16.888765+00:00",
       "failed_interface_axes": [
         "full-family-coverage",
         "parameter-map",
@@ -2505,7 +2520,7 @@
       ]
     },
     {
-      "created_at": "2026-09-09T20:43:41.798123+00:00",
+      "created_at": "2026-09-10T12:05:16.888765+00:00",
       "failed_interface_axes": [
         "bad-register-robustness",
         "full-family-coverage",
@@ -2560,7 +2575,66 @@
       ]
     },
     {
-      "created_at": "2026-09-09T20:43:41.798224+00:00",
+      "copy_budget_kind": "binary-class-mixture-chi-square",
+      "created_at": "2026-09-10T12:05:16.888884+00:00",
+      "formalization_status": "typed-architecture-proof-capabilities-missing",
+      "id": "MUTATE-CODE-COSET-COLLECTIVE-CLEAN-SUBSET-BINARY-DETECTION",
+      "linked_blockers": [
+        "DEQ-CODE-COSET-COLLECTIVE-CLEAN-GPE-INSTRUMENT-CONTRACT",
+        "DEQ-CODE-COSET-COLLECTIVE-FINITE-CARRIER-LATENT-IRREP-MODEL",
+        "DEQ-CODE-COSET-COLLECTIVE-CARRIER-BINARY-TASK-SCOPE"
+      ],
+      "minimum_copy_budget_rule": "For equal-prior Bayes advantage epsilon: k >= ceil(log2(1+16 epsilon^2 |C|)). The known support-rank bound T >= max(0,1-|C|/2^k) establishes information availability, not an efficient measurement.",
+      "mutation_type": "typed-recoupling-mechanism",
+      "new_hypothesis": "Growing-copy binary detection through clean subset labels",
+      "priority_score": 110,
+      "proof_debts_targeted": [
+        "CAP-BINARY-PROMISE-PRESERVING-REDUCTION",
+        "CAP-GROWING-COPY-BINARY-OUTCOME-CLASSIFIER",
+        "CAP-SOURCE-WEIGHTED-GROWING-COPY-BINARY-EFFECT"
+      ],
+      "proof_gate_eligible": false,
+      "proof_obligations_to_resolve": [
+        "Supply a uniform polynomial-length coherent or adaptive subset program; do not enumerate all 2^k subsets or complete multiplicity bases.",
+        "Prove constant source-weighted null-versus-class trace distance for its actual outcome law, not only an optimal residual measurement.",
+        "Use clean GPE compute-copy-uncompute with charged error; discarding Fourier rows changes the instrument even when label probabilities agree.",
+        "Construct a growing-copy outcome classifier. The exact polynomial two-copy score is only a calibration and its signal vanishes asymptotically.",
+        "Prove a promise-preserving natural binary reduction and preparation cost; no hidden-element recovery is inferred from detection.",
+        "Compare with legal classical graph/code algorithms, actual-source tensor contractions and known measured-sieve models. Leaving a sieve definition is not advantage.",
+        "Falsify fixed-copy repetition and any use of the hypothesis-dependent latent initial distribution as a free classical sampler.",
+        "Count subset-incidence cells, not just raw copies: a fixed palette has at most 2^q-1 effective samples unless source-label or other access refines it. Do not apply that bound after retaining unaccounted individual source labels.",
+        "Retained classical source labels need the separate source-conditioned bound: compress large cells and charge small cells as full raw quantum inputs. Fixed preselected cell profiles remain obstructed asymptotically. Specify source-dependent regrouping and every outside-algebra readout; a vacuous bound is not a positive signal.",
+        "Classical adaptation within a small predetermined whole-execution catalogue pays a sum of aborting-comparison bounds. Do not normalize selected successes, use a step-only cover or infer runtime from catalogue size. Specify the actual selector and final readout beyond this restriction."
+      ],
+      "rationale": "The architecture targets the right interface but names unimplemented proof-critical primitives.",
+      "rejection_filters": [
+        "Reject if any missing capability is replaced by an undefined circuit box.",
+        "Reject if the mechanism covers only an exceptional commuting or classically tractable family.",
+        "Reject any transfer from binary detection to hidden-element identification without a separate reduction; a valid binary goal does not require hidden-element output.",
+        "Reject if classical invariant or tensor-network contraction reproduces the outcome.",
+        "Compare finite alternation to a joint quantum label front end plus latent-irrep classical postprocessing; do not assume a classical sampler for the initial labels or extend the rank-one model to larger multiplicities.",
+        "Reject ideal finite likelihood tables or retained Helstrom distances presented as compiled outcome classifiers."
+      ],
+      "required_modules": [
+        "CAP-BINARY-PROMISE-PRESERVING-REDUCTION",
+        "CAP-GROWING-COPY-BINARY-OUTCOME-CLASSIFIER",
+        "CAP-SOURCE-WEIGHTED-GROWING-COPY-BINARY-EFFECT"
+      ],
+      "source_candidate_id": "CODE-COSET-COLLECTIVE",
+      "status": "proposal",
+      "task_kind": "binary-detection",
+      "typed_stages": [
+        "PREPARE_COSET_K",
+        "SN_QFT_K",
+        "CLEAN_SUBSET_LABEL_ACCESS",
+        "GROWING_COPY_BINARY_EFFECT",
+        "BINARY_OUTCOME_CLASSIFIER",
+        "NATURAL_BINARY_DECISION_TRANSFER"
+      ]
+    },
+    {
+      "copy_budget_kind": "identification-holevo-fano",
+      "created_at": "2026-09-10T12:05:16.888889+00:00",
       "formalization_status": "typed-architecture-proof-capabilities-missing",
       "id": "MUTATE-CODE-COSET-COLLECTIVE-ENCODED-REFERENCE-SYMMETRY-BREAKING",
       "linked_blockers": [
@@ -2568,6 +2642,7 @@
         "DEQ-COSET-K3-SINGLE-RECOUPLING-BASIS-OBSTRUCTED",
         "DEQ-COSET-EXPLICIT-TWO-COPY-TRANSITIONS-FACTORIAL"
       ],
+      "minimum_copy_budget_rule": "k >= ceil([log2|C|-h2(epsilon)-epsilon*log2(|C|-1)]/chi_1), with chi_1 from the exact involution character formula",
       "mutation_type": "typed-recoupling-mechanism",
       "new_hypothesis": "Encoded subgroup access with a symmetry-breaking collective effect",
       "priority_score": 110,
@@ -2602,6 +2677,7 @@
       ],
       "source_candidate_id": "CODE-COSET-COLLECTIVE",
       "status": "proposal",
+      "task_kind": "identification",
       "typed_stages": [
         "PREPARE_COSET_K",
         "SN_QFT_K",
@@ -2612,7 +2688,8 @@
       ]
     },
     {
-      "created_at": "2026-09-09T20:43:41.798228+00:00",
+      "copy_budget_kind": "identification-holevo-fano",
+      "created_at": "2026-09-10T12:05:16.888892+00:00",
       "formalization_status": "typed-architecture-proof-capabilities-missing",
       "id": "MUTATE-CODE-COSET-COLLECTIVE-FULL-RECOUPLING-TRANSITION-DECODER",
       "linked_blockers": [
@@ -2620,6 +2697,7 @@
         "DEQ-COSET-K3-SINGLE-RECOUPLING-BASIS-OBSTRUCTED",
         "DEQ-COSET-EXPLICIT-TWO-COPY-TRANSITIONS-FACTORIAL"
       ],
+      "minimum_copy_budget_rule": "k >= ceil([log2|C|-h2(epsilon)-epsilon*log2(|C|-1)]/chi_1), with chi_1 from the exact involution character formula",
       "mutation_type": "typed-recoupling-mechanism",
       "new_hypothesis": "Full coherent recoupling, transition filter, and decoder",
       "priority_score": 100,
@@ -2653,6 +2731,7 @@
       ],
       "source_candidate_id": "CODE-COSET-COLLECTIVE",
       "status": "proposal",
+      "task_kind": "identification",
       "typed_stages": [
         "PREPARE_COSET_K",
         "SN_QFT_K",
@@ -2664,7 +2743,8 @@
       ]
     },
     {
-      "created_at": "2026-09-09T20:43:41.798230+00:00",
+      "copy_budget_kind": "identification-holevo-fano",
+      "created_at": "2026-09-10T12:05:16.888894+00:00",
       "formalization_status": "typed-architecture-proof-capabilities-missing",
       "id": "MUTATE-CODE-COSET-COLLECTIVE-TENSOR-ASSOCIATOR-DECODER",
       "linked_blockers": [
@@ -2672,6 +2752,7 @@
         "DEQ-COSET-K3-SINGLE-RECOUPLING-BASIS-OBSTRUCTED",
         "DEQ-COSET-EXPLICIT-TWO-COPY-TRANSITIONS-FACTORIAL"
       ],
+      "minimum_copy_budget_rule": "k >= ceil([log2|C|-h2(epsilon)-epsilon*log2(|C|-1)]/chi_1), with chi_1 from the exact involution character formula",
       "mutation_type": "typed-recoupling-mechanism",
       "new_hypothesis": "Implicit tensor-network associator and compressed decoder",
       "priority_score": 72,
@@ -2700,6 +2781,7 @@
       ],
       "source_candidate_id": "CODE-COSET-COLLECTIVE",
       "status": "proposal",
+      "task_kind": "identification",
       "typed_stages": [
         "PREPARE_COSET_K",
         "SN_QFT_K",

@@ -1,415 +1,19 @@
 [
   {
-    "created_at": "2026-09-09T20:43:41.791806+00:00",
-    "id": "MUTATE-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
-    "linked_blockers": [
-      "DEQ-CODE-CANONICALIZATION-REJECTIONS",
-      "DEQ-CODE-STRUCTURAL-INVARIANT-REJECTIONS",
-      "DEQ-CODE-INFORMATION-SET-CANONICALIZATION-REJECTIONS",
-      "DEQ-CODE-TUPLE-PROFILE-DEQUANTIZED",
-      "DEQ-CODE-FAMILY-SEARCH-CLASSICAL-REJECTION",
-      "code-equivalence-invariant-collapse"
-    ],
-    "mutation_type": "canonicalization-resistant-code-equivalence",
-    "new_hypothesis": "Search structured code-equivalence families whose generator matrices have deliberately balanced coordinate and coordinate-tuple profiles, large automorphism-aware profile buckets, and algebraic construction metadata, then require survival against tuple-profile baselines and profile-pruned canonical forms before any coset observable is considered. Require either a proved growing-hull family that survives the shortening reduction or an explicit statement that the target is GI itself.",
-    "proof_debts_targeted": [
-      "DEBT-CODE-COSET-COLLECTIVE-PO-DEQUANTIZATION",
-      "DEBT-CODE-COSET-COLLECTIVE-PO-REDUCTION",
-      "DEBT-CODE-COSET-COLLECTIVE-PO-FALSIFIERS"
-    ],
-    "proof_obligations_to_resolve": [
-      "Generated rows survive support splitting, dual/hull, puncturing, shortening, information-set canonicalization, coordinate profile partitions, higher-order tuple profiles, and exact profile-pruned canonical forms.",
-      "Rows have an asymptotic algebraic family description, not random tiny collisions.",
-      "Classical code-equivalence canonicalization and automorphism baselines are legal and fail at tested scales.",
-      "The exact family has a proved growing-hull law or the proposal is classified as a weighted-GI route rather than independent code hardness.",
-      "Any collective coset observable is not a restatement of support splitting, weight enumerators, or canonical labels."
-    ],
-    "rationale": "Current code-equivalence rows collapse under support-splitting, higher-order tuple profiles, or profile-pruned canonicalization. Latest structural invariants rejected 5 row(s), information-set canonicalization rejected 5 row(s), profile canonicalization rejected 5 row(s), and tuple-profile checks rejected or trivialized 17 row/collision(s), so new search must target algebraic families with balanced coordinate-tuple profiles and unresolved canonicalization only as proof debt. The hull audit finitely resolved 10 trivial-hull pair set(s) through weighted GI, so small-hull rows cannot be recycled as code-native evidence.",
-    "rejection_filters": [
-      "Reject if coordinate refinement profiles differ.",
-      "Reject if support splitting, dual/hull, puncturing, or shortening profiles differ.",
-      "Reject independent code-native claims when the hull is trivial or source-linked shortening leaves bounded hull parameter.",
-      "Reject if information-set canonical signatures differ.",
-      "Reject if 2- or 3-coordinate tuple profiles differ.",
-      "Reject if tuple-profile collisions are equivalent controls.",
-      "Reject if exact profile-pruned canonical forms differ under the assignment cap.",
-      "Reject if hardness appears only because canonicalization exceeded a tiny artificial cap.",
-      "Reject if the proposed observable matches a known code invariant, graphlet/tensor shadow, or individualized rooted tensor shadow."
-    ],
-    "required_modules": [
-      "profile-pruned canonicalization baseline",
-      "structural invariant baseline for support splitting, dual/hull, puncturing, and shortening profiles",
-      "information-set canonicalization baseline",
-      "higher-order coordinate tuple-profile baseline",
-      "support-splitting and dual/hull invariant suite",
-      "hull-projector and hull-parameterized shortening audit",
-      "algebraic/quasi-cyclic code-family generator",
-      "automorphism-aware exact small-instance certificate",
-      "tensor-observable classical-shadow audit",
-      "individualized rooted tensor shadow audit"
-    ],
-    "source_candidate_id": "CODE-COSET-COLLECTIVE",
-    "status": "proposal"
-  },
-  {
-    "created_at": "2026-09-09T20:43:41.791806+00:00",
-    "id": "MUTATE-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
-    "linked_blockers": [
-      "DEQ-CFI-PARITY-SOLVER-PROMISED-GADGET",
-      "DEQ-CFI-STRUCTURAL-DECODER-PROMISED-GADGET",
-      "DEQ-CFI-IRREGULAR-STRUCTURAL-DECODER-PROMISED-GADGET",
-      "DEQ-CFI-BIPARTITE-STRUCTURAL-DECODER-PROMISED-GADGET",
-      "coset-classical-invariant-collapse"
-    ],
-    "mutation_type": "cfi-promise-escape-coset",
-    "new_hypothesis": "Replace promised CFI rows with graph/coset families where structural gadget reconstruction is not available from the public adjacency matrix, and require an explicit argument that every CFI decoder is illegal or fails before interpreting any collective observable signal.",
-    "proof_debts_targeted": [
-      "DEBT-CODE-COSET-COLLECTIVE-PO-DEQUANTIZATION",
-      "DEBT-CODE-COSET-COLLECTIVE-PO-REDUCTION",
-      "DEBT-CODE-COSET-COLLECTIVE-PO-FALSIFIERS"
-    ],
-    "proof_obligations_to_resolve": [
-      "Input model states whether CFI gadget decomposition is public, reconstructible, or hidden.",
-      "Complete, regular, degree-separated irregular, and bipartition-based structural CFI parity decoders fail or are illegal for the generated family.",
-      "Observable exceeds WL/spectrum/walk/tensor classical shadows.",
-      "Observable exceeds individualized rooted tensor shadows."
-    ],
-    "rationale": "Complete, regular, degree-separated irregular, and bipartition structural CFI decoders recovered 16 row(s). Future CFI/coset work must either make the gadget promise unavailable by a natural input model, or move beyond CFI-style gadgets whose bipartition, degree classes, and edge-copy signatures expose the twist parity.",
-    "rejection_filters": [
-      "Reject if complete, regular, degree-separated irregular, or bipartition-based structural CFI decoders recover the twist.",
-      "Reject if hidden gadget structure is achieved by artificial random relabeling without an input-model reason.",
-      "Reject if higher-k WL or graphlet/tensor baselines separate the row.",
-      "Reject if individualized rooted tensor signatures separate the row."
-    ],
-    "required_modules": [
-      "structural CFI recognizer/decoder suite",
-      "CFI-promise-removal input-model ledger",
-      "degree-separated irregular CFI decoder",
-      "bipartition-based CFI decoder",
-      "CFI-like graph product or code-derived graph generator",
-      "higher-k WL scaling baseline",
-      "collective observable classical-shadow checker",
-      "individualized rooted tensor shadow checker"
-    ],
-    "source_candidate_id": "CODE-COSET-COLLECTIVE",
-    "status": "proposal"
-  },
-  {
-    "copy_budget_kind": "binary-class-mixture-chi-square",
-    "created_at": "2026-09-10T01:57:01.981199+00:00",
-    "formalization_status": "typed-architecture-proof-capabilities-missing",
-    "id": "MUTATE-CODE-COSET-COLLECTIVE-CLEAN-SUBSET-BINARY-DETECTION",
-    "linked_blockers": [
-      "DEQ-CODE-COSET-COLLECTIVE-CLEAN-GPE-INSTRUMENT-CONTRACT",
-      "DEQ-CODE-COSET-COLLECTIVE-FINITE-CARRIER-LATENT-IRREP-MODEL",
-      "DEQ-CODE-COSET-COLLECTIVE-CARRIER-BINARY-TASK-SCOPE"
-    ],
-    "minimum_copy_budget_rule": "For equal-prior Bayes advantage epsilon: k >= ceil(log2(1+16 epsilon^2 |C|)). The known support-rank bound T >= max(0,1-|C|/2^k) establishes information availability, not an efficient measurement.",
-    "mutation_type": "typed-recoupling-mechanism",
-    "new_hypothesis": "Growing-copy binary detection through clean subset labels",
-    "priority_score": 110,
-    "proof_debts_targeted": [
-      "CAP-BINARY-PROMISE-PRESERVING-REDUCTION",
-      "CAP-GROWING-COPY-BINARY-OUTCOME-CLASSIFIER",
-      "CAP-SOURCE-WEIGHTED-GROWING-COPY-BINARY-EFFECT"
-    ],
-    "proof_gate_eligible": false,
-    "proof_obligations_to_resolve": [
-      "Supply a uniform polynomial-length coherent or adaptive subset program; do not enumerate all 2^k subsets or complete multiplicity bases.",
-      "Prove constant source-weighted null-versus-class trace distance for its actual outcome law, not only an optimal residual measurement.",
-      "Use clean GPE compute-copy-uncompute with charged error; discarding Fourier rows changes the instrument even when label probabilities agree.",
-      "Construct a growing-copy outcome classifier. The exact polynomial two-copy score is only a calibration and its signal vanishes asymptotically.",
-      "Prove a promise-preserving natural binary reduction and preparation cost; no hidden-element recovery is inferred from detection.",
-      "Compare with legal classical graph/code algorithms, actual-source tensor contractions and known measured-sieve models. Leaving a sieve definition is not advantage.",
-      "Falsify fixed-copy repetition and any use of the hypothesis-dependent latent initial distribution as a free classical sampler."
-    ],
-    "rationale": "The architecture targets the right interface but names unimplemented proof-critical primitives.",
-    "rejection_filters": [
-      "Reject if any missing capability is replaced by an undefined circuit box.",
-      "Reject if the mechanism covers only an exceptional commuting or classically tractable family.",
-      "Reject any transfer from binary detection to hidden-element identification without a separate reduction; a valid binary goal does not require hidden-element output.",
-      "Reject if classical invariant or tensor-network contraction reproduces the outcome.",
-      "Compare finite alternation to a joint quantum label front end plus latent-irrep classical postprocessing; do not assume a classical sampler for the initial labels or extend the rank-one model to larger multiplicities.",
-      "Reject ideal finite likelihood tables or retained Helstrom distances presented as compiled outcome classifiers."
-    ],
-    "required_modules": [
-      "CAP-BINARY-PROMISE-PRESERVING-REDUCTION",
-      "CAP-GROWING-COPY-BINARY-OUTCOME-CLASSIFIER",
-      "CAP-SOURCE-WEIGHTED-GROWING-COPY-BINARY-EFFECT"
-    ],
-    "source_candidate_id": "CODE-COSET-COLLECTIVE",
-    "status": "proposal",
-    "task_kind": "binary-detection",
-    "typed_stages": [
-      "PREPARE_COSET_K",
-      "SN_QFT_K",
-      "CLEAN_SUBSET_LABEL_ACCESS",
-      "GROWING_COPY_BINARY_EFFECT",
-      "BINARY_OUTCOME_CLASSIFIER",
-      "NATURAL_BINARY_DECISION_TRANSFER"
-    ]
-  },
-  {
-    "copy_budget_kind": "identification-holevo-fano",
-    "created_at": "2026-09-10T01:57:01.981215+00:00",
-    "formalization_status": "typed-architecture-proof-capabilities-missing",
-    "id": "MUTATE-CODE-COSET-COLLECTIVE-ENCODED-REFERENCE-SYMMETRY-BREAKING",
-    "linked_blockers": [
-      "DEQ-COSET-SOLVED-QFT-COUNTING-NOT-RECOUPLING-DECODER",
-      "DEQ-COSET-K3-SINGLE-RECOUPLING-BASIS-OBSTRUCTED",
-      "DEQ-COSET-EXPLICIT-TWO-COPY-TRANSITIONS-FACTORIAL"
-    ],
-    "minimum_copy_budget_rule": "k >= ceil([log2|C|-h2(epsilon)-epsilon*log2(|C|-1)]/chi_1), with chi_1 from the exact involution character formula",
-    "mutation_type": "typed-recoupling-mechanism",
-    "new_hypothesis": "Encoded subgroup access with a symmetry-breaking collective effect",
-    "priority_score": 110,
-    "proof_debts_targeted": [
-      "CAP-ENCODED-K-CARRIER-RESTRICTION",
-      "CAP-HIDDEN-INVOLUTION-OUTCOME-DECODER",
-      "CAP-SYMMETRY-BREAKING-LOGICAL-EFFECT"
-    ],
-    "proof_gate_eligible": false,
-    "proof_obligations_to_resolve": [
-      "Verify the normalized two-QFT and physical-column contract, including primitive precision and workspace.",
-      "Specify how the final effect breaks fixed-reference invariance; never grant the unknown centralizer or aligned h-even source law.",
-      "Construct the actual logical effect with source-aware normalization and error, without complete fixed-count spectral labels.",
-      "Derive its outcome law and polynomial hidden-involution decoder, then attack it with legal classical invariants and tensor contractions.",
-      "Binary detection is a separate task and requires its own reduction; it must not be passed off as identification.",
-      "Specify every carrier/type discard and its block size: independent block twirls obey T^2 <= p(m)/(2(2m-1)!!) sum_j(2^b_j-1). Predetermined reference changes do not evade this bound.",
-      "Classical outcome-adaptive references still obey a round-count-weakened bound when fresh inputs are twirled before memory coupling. Charge any coherent reference control or pre-twirl memory interaction explicitly."
-    ],
-    "rationale": "The architecture targets the right interface but names unimplemented proof-critical primitives.",
-    "rejection_filters": [
-      "Reject if any missing capability is replaced by an undefined circuit box.",
-      "Reject if the mechanism covers only an exceptional commuting or classically tractable family.",
-      "Reject if the decoder is distinguishability or verification without hidden-involution recovery.",
-      "Reject if classical invariant or tensor-network contraction reproduces the outcome.",
-      "Compare finite alternation to a joint quantum label front end plus latent-irrep classical postprocessing; do not assume a classical sampler for the initial labels or extend the rank-one model to larger multiplicities.",
-      "Reject ideal finite likelihood tables or retained Helstrom distances presented as compiled outcome classifiers."
-    ],
-    "required_modules": [
-      "CAP-ENCODED-K-CARRIER-RESTRICTION",
-      "CAP-HIDDEN-INVOLUTION-OUTCOME-DECODER",
-      "CAP-SYMMETRY-BREAKING-LOGICAL-EFFECT"
-    ],
-    "source_candidate_id": "CODE-COSET-COLLECTIVE",
-    "status": "proposal",
-    "task_kind": "identification",
-    "typed_stages": [
-      "PREPARE_COSET_K",
-      "SN_QFT_K",
-      "ENCODED_REFERENCE_RESTRICTION",
-      "SYMMETRY_BREAKING_LOGICAL_FRAME",
-      "OUTCOME_DECODER",
-      "CLASSICAL_VERIFY"
-    ]
-  },
-  {
-    "copy_budget_kind": "identification-holevo-fano",
-    "created_at": "2026-09-10T01:57:01.981217+00:00",
-    "formalization_status": "typed-architecture-proof-capabilities-missing",
-    "id": "MUTATE-CODE-COSET-COLLECTIVE-FULL-RECOUPLING-TRANSITION-DECODER",
-    "linked_blockers": [
-      "DEQ-COSET-SOLVED-QFT-COUNTING-NOT-RECOUPLING-DECODER",
-      "DEQ-COSET-K3-SINGLE-RECOUPLING-BASIS-OBSTRUCTED",
-      "DEQ-COSET-EXPLICIT-TWO-COPY-TRANSITIONS-FACTORIAL"
-    ],
-    "minimum_copy_budget_rule": "k >= ceil([log2|C|-h2(epsilon)-epsilon*log2(|C|-1)]/chi_1), with chi_1 from the exact involution character formula",
-    "mutation_type": "typed-recoupling-mechanism",
-    "new_hypothesis": "Full coherent recoupling, transition filter, and decoder",
-    "priority_score": 100,
-    "proof_debts_targeted": [
-      "CAP-HIDDEN-INVOLUTION-OUTCOME-DECODER",
-      "CAP-INTERNAL-SN-KRONECKER-TRANSFORM",
-      "CAP-KCOPY-RACAH-ASSOCIATOR",
-      "CAP-STATE-TRANSITION-FILTER"
-    ],
-    "proof_gate_eligible": false,
-    "proof_obligations_to_resolve": [
-      "Prove a uniform internal S_n Kronecker transform with multiplicity basis and precision bounds.",
-      "Prove a polynomial Racah/associator network for all overlapping subset terms at growing k.",
-      "Block-encode state-dependent transition weights and control inverse-frame conditioning.",
-      "Decode the hidden involution and beat all legal graph/code baselines on a natural family."
-    ],
-    "rationale": "The architecture targets the right interface but names unimplemented proof-critical primitives.",
-    "rejection_filters": [
-      "Reject if any missing capability is replaced by an undefined circuit box.",
-      "Reject if the mechanism covers only an exceptional commuting or classically tractable family.",
-      "Reject if the decoder is distinguishability or verification without hidden-involution recovery.",
-      "Reject if classical invariant or tensor-network contraction reproduces the outcome.",
-      "Compare finite alternation to a joint quantum label front end plus latent-irrep classical postprocessing; do not assume a classical sampler for the initial labels or extend the rank-one model to larger multiplicities.",
-      "Reject ideal finite likelihood tables or retained Helstrom distances presented as compiled outcome classifiers."
-    ],
-    "required_modules": [
-      "CAP-HIDDEN-INVOLUTION-OUTCOME-DECODER",
-      "CAP-INTERNAL-SN-KRONECKER-TRANSFORM",
-      "CAP-KCOPY-RACAH-ASSOCIATOR",
-      "CAP-STATE-TRANSITION-FILTER"
-    ],
-    "source_candidate_id": "CODE-COSET-COLLECTIVE",
-    "status": "proposal",
-    "task_kind": "identification",
-    "typed_stages": [
-      "PREPARE_COSET_K",
-      "SN_QFT_K",
-      "INTERNAL_KRONECKER_TRANSFORM",
-      "RACAH_ASSOCIATOR_NETWORK",
-      "TRANSITION_FRAME_FILTER",
-      "OUTCOME_DECODER",
-      "CLASSICAL_VERIFY"
-    ]
-  },
-  {
-    "created_at": "2026-09-09T20:43:41.798123+00:00",
-    "failed_interface_axes": [
-      "full-family-coverage",
-      "parameter-map",
-      "success-and-decoder",
-      "uniform-instance-construction"
-    ],
-    "formalization_status": "proposal-only-unformalized",
-    "id": "MUTATE-CODE-COSET-COLLECTIVE-FULL-SOURCE-FAMILY-LIFT",
-    "linked_blockers": [
-      "AUDIT-ROUTE-CODE-COSET-COLLECTIVE-CODE-EQUIVALENCE-VIA-SYMMETRIC-HSP:full-family-coverage",
-      "AUDIT-ROUTE-CODE-COSET-COLLECTIVE-CODE-EQUIVALENCE-VIA-SYMMETRIC-HSP:parameter-map",
-      "AUDIT-ROUTE-CODE-COSET-COLLECTIVE-CODE-EQUIVALENCE-VIA-SYMMETRIC-HSP:success-and-decoder",
-      "AUDIT-ROUTE-CODE-COSET-COLLECTIVE-CODE-EQUIVALENCE-VIA-SYMMETRIC-HSP:uniform-instance-construction"
-    ],
-    "mutation_type": "full-source-family-lift",
-    "new_hypothesis": "Extend the mechanism and decoder to every source instance covered by the linked theorem contracts, or explicitly classify the restricted family as a testbed with no inherited source-problem speedup claim.",
-    "proof_debts_targeted": [
-      "AUDIT-ROUTE-CODE-COSET-COLLECTIVE-CODE-EQUIVALENCE-VIA-SYMMETRIC-HSP:full-family-coverage",
-      "AUDIT-ROUTE-CODE-COSET-COLLECTIVE-CODE-EQUIVALENCE-VIA-SYMMETRIC-HSP:parameter-map",
-      "AUDIT-ROUTE-CODE-COSET-COLLECTIVE-CODE-EQUIVALENCE-VIA-SYMMETRIC-HSP:success-and-decoder",
-      "AUDIT-ROUTE-CODE-COSET-COLLECTIVE-CODE-EQUIVALENCE-VIA-SYMMETRIC-HSP:uniform-instance-construction"
-    ],
-    "proof_gate_eligible": false,
-    "proof_obligations_to_resolve": [
-      "Cover every graph or code instance in each linked theorem contract.",
-      "Prove uniform source-to-state preparation, parameter preservation, and decoder composition.",
-      "Search automatically for valid source instances outside the claimed measurement family."
-    ],
-    "rationale": "The candidate studies selected graph or code families, but its upstream theorem contracts cover the full graph-isomorphism or code-equivalence promise. Restricted-family observables do not compose with those reductions.",
-    "rejection_filters": [
-      "Reject a claimed lift if a valid source instance is outside the measurement or decoder domain.",
-      "Reject if CFI, algebraic-code, cospectral, or other selected families are substituted for the full promise.",
-      "Reject if success is distinguishability without a composable source-problem decoder."
-    ],
-    "required_modules": [
-      "exact reduction contract audit",
-      "source-family counterexample generator",
-      "route-level property tests",
-      "uniform full-family proof artifact"
-    ],
-    "route_ids": [
-      "ROUTE-CODE-COSET-COLLECTIVE-CODE-EQUIVALENCE-VIA-SYMMETRIC-HSP"
-    ],
-    "source_candidate_id": "CODE-COSET-COLLECTIVE",
-    "status": "proposal",
-    "theorem_contract_id": "CONSTRUCTION-CODE-EQUIVALENCE-TO-NONABELIAN-HSP",
-    "theorem_contract_ids": [
-      "CONSTRUCTION-CODE-EQUIVALENCE-TO-NONABELIAN-HSP"
-    ]
-  },
-  {
-    "copy_budget_kind": "identification-holevo-fano",
-    "created_at": "2026-09-10T01:57:01.981225+00:00",
-    "formalization_status": "typed-architecture-proof-capabilities-missing",
-    "id": "MUTATE-CODE-COSET-COLLECTIVE-TENSOR-ASSOCIATOR-DECODER",
-    "linked_blockers": [
-      "DEQ-COSET-SOLVED-QFT-COUNTING-NOT-RECOUPLING-DECODER",
-      "DEQ-COSET-K3-SINGLE-RECOUPLING-BASIS-OBSTRUCTED",
-      "DEQ-COSET-EXPLICIT-TWO-COPY-TRANSITIONS-FACTORIAL"
-    ],
-    "minimum_copy_budget_rule": "k >= ceil([log2|C|-h2(epsilon)-epsilon*log2(|C|-1)]/chi_1), with chi_1 from the exact involution character formula",
-    "mutation_type": "typed-recoupling-mechanism",
-    "new_hypothesis": "Implicit tensor-network associator and compressed decoder",
-    "priority_score": 72,
-    "proof_debts_targeted": [
-      "CAP-HIDDEN-INVOLUTION-OUTCOME-DECODER",
-      "CAP-TENSOR-ASSOCIATOR"
-    ],
-    "proof_gate_eligible": false,
-    "proof_obligations_to_resolve": [
-      "Prove polynomial bond dimension and contraction/circuit cost at inverse-polynomial error.",
-      "Show the tensor network is not a classical invariant shadow or efficiently contractible dequantization.",
-      "Prove robust hidden-involution decoding from its compressed outcome."
-    ],
-    "rationale": "The architecture targets the right interface but names unimplemented proof-critical primitives.",
-    "rejection_filters": [
-      "Reject if any missing capability is replaced by an undefined circuit box.",
-      "Reject if the mechanism covers only an exceptional commuting or classically tractable family.",
-      "Reject if the decoder is distinguishability or verification without hidden-involution recovery.",
-      "Reject if classical invariant or tensor-network contraction reproduces the outcome.",
-      "Compare finite alternation to a joint quantum label front end plus latent-irrep classical postprocessing; do not assume a classical sampler for the initial labels or extend the rank-one model to larger multiplicities.",
-      "Reject ideal finite likelihood tables or retained Helstrom distances presented as compiled outcome classifiers."
-    ],
-    "required_modules": [
-      "CAP-HIDDEN-INVOLUTION-OUTCOME-DECODER",
-      "CAP-TENSOR-ASSOCIATOR"
-    ],
-    "source_candidate_id": "CODE-COSET-COLLECTIVE",
-    "status": "proposal",
-    "task_kind": "identification",
-    "typed_stages": [
-      "PREPARE_COSET_K",
-      "SN_QFT_K",
-      "TENSOR_NETWORK_ASSOCIATOR",
-      "OUTCOME_DECODER",
-      "CLASSICAL_VERIFY"
-    ]
-  },
-  {
-    "created_at": "2026-09-09T20:43:41.791806+00:00",
-    "id": "MUTATE-CODE-COSET-COLLECTIVE-TRIAGE-ESCAPE",
-    "linked_blockers": [
-      "DEQ-COSET-FRONTIER-TRIAGE-REJECTIONS",
-      "coset-classical-invariant-collapse"
-    ],
-    "mutation_type": "coset-frontier-triage-escape",
-    "new_hypothesis": "Search for natural graph/coset or code-derived families that first pass the aggregate triage gate: no WL, graphlet, individualization, rooted tensor, structural CFI, or canonicalization rejection at the row level before any quantum measurement is designed.",
-    "proof_debts_targeted": [
-      "DEBT-CODE-COSET-COLLECTIVE-PO-DEQUANTIZATION",
-      "DEBT-CODE-COSET-COLLECTIVE-PO-REDUCTION",
-      "DEBT-CODE-COSET-COLLECTIVE-PO-FALSIFIERS"
-    ],
-    "proof_obligations_to_resolve": [
-      "Generated row family has an asymptotic natural construction, not relabeled copies of decoded CFI gadgets.",
-      "Rows pass the aggregate coset frontier triage gate before measurement design begins.",
-      "Any reduction from code/graph family to nonabelian HSP preserves hardness assumptions and input-model legality.",
-      "Surviving rows have explicit lower-bound or dequantization obligations attached before positive claims."
-    ],
-    "rationale": "Coset frontier triage rejected 18 current graph/coset row(s) and found no survivor rows. More collective-observable search on these rows is wasted effort.",
-    "rejection_filters": [
-      "Reject if coset_frontier_triage.py classifies every generated row as rejected.",
-      "Reject if Godsil-McKay switched rows collapse under WL, graphlet, individualization, or rooted tensor baselines.",
-      "Reject if survival only reflects skipped tuple caps without an implicit classical baseline.",
-      "Reject if the construction hides a public gadget decomposition by random relabeling.",
-      "Reject if no literature-linked reduction or natural problem family is attached."
-    ],
-    "required_modules": [
-      "natural graph/coset family generator",
-      "Godsil-McKay switching search as a cospectral baseline generator",
-      "coset frontier triage gate",
-      "structural CFI recognizer/decoder suite",
-      "individualized rooted tensor shadow checker",
-      "code-to-graph reduction ledger",
-      "measurement-design queue fed only by triage survivors"
-    ],
-    "source_candidate_id": "CODE-COSET-COLLECTIVE",
-    "status": "proposal"
-  },
-  {
-    "created_at": "2026-09-09T20:43:41.731777+00:00",
+    "created_at": "2026-09-10T12:05:16.820423+00:00",
     "id": "MUTATE-CODE-COSET-COLLECTIVE-WL-HARD-COSET",
     "linked_blockers": [
+      "DEQ-CODE-COSET-COLLECTIVE-ADAPTIVE-PALETTE-CATALOGUE-COVER",
       "DEQ-CODE-COSET-COLLECTIVE-BRANCHING-COMPLETE-SPECTRAL-LABEL-CAPACITY",
       "DEQ-CODE-COSET-COLLECTIVE-CARRIER-BINARY-TASK-SCOPE",
+      "DEQ-CODE-COSET-COLLECTIVE-CLEAN-GPE-INSTRUMENT-CONTRACT",
       "DEQ-CODE-COSET-COLLECTIVE-ENCODED-COPY-TARGET-EFFECT",
       "DEQ-CODE-COSET-COLLECTIVE-FINITE-CARRIER-LATENT-IRREP-MODEL",
+      "DEQ-CODE-COSET-COLLECTIVE-FIXED-PALETTE-EFFECTIVE-COPIES",
       "DEQ-CODE-COSET-COLLECTIVE-FIXED-REFERENCE-IDENTIFICATION",
       "DEQ-CODE-COSET-COLLECTIVE-REFERENCE-TWIRL-INFORMATION-LOSS",
       "DEQ-CODE-COSET-COLLECTIVE-SIGNED-TENSOR-ACCESS-COMPLETE-SPECTRAL-LABEL-CAPACITY",
+      "DEQ-CODE-COSET-COLLECTIVE-SOURCE-CONDITIONED-PALETTE-BOUND",
       "DEQ-CODE-COSET-COLLECTIVE-SYSTEMATIC-LOCAL-PROOF-GAP",
       "DEQ-CODE-COSET-COLLECTIVE-TENSOR-COMPLETE-SPECTRAL-LABEL-CAPACITY",
       "DEQ-RESULT-CODE-AFFINE-GEOMETRY-SEARCH-LATEST-NEGATIVE-FAMILIES",
@@ -1039,6 +643,7 @@
       "DEQ-RESULT-EXP-COSET-GM-SWITCHING-SEARCH-COSET-FALSIFIERS",
       "DEQ-RESULT-EXP-COSET-GROWING-WIDTH-ARCHITECTURE-COSET-FALSIFIERS",
       "DEQ-RESULT-EXP-COSET-HIDDEN-INVOLUTION-ALL-COPY-TARGET-LCU-NO-GO-DCP-SUBSET-SUM-MARKER-COSET-FALSIFIERS",
+      "DEQ-RESULT-EXP-COSET-HIDDEN-INVOLUTION-BINARY-DECISION-REDUCTION-COSET-FALSIFIERS",
       "DEQ-RESULT-EXP-COSET-HIDDEN-INVOLUTION-BINARY-DECISION-REDUCTION-LATEST-FALSIFIERS",
       "DEQ-RESULT-EXP-COSET-HIDDEN-INVOLUTION-BINARY-IDENTIFICATION-SELF-REDUCTION-CODE-FAMILY-SEARCH-FALSIFIERS",
       "DEQ-RESULT-EXP-COSET-HIDDEN-INVOLUTION-BOUNDED-SUPPORT-COMMUTANT-GENERATION-DCP-SUBSET-SUM-MARKER-COSET-FALSIFIERS",
@@ -1222,11 +827,11 @@
       "DEQ-RESULT-EXP-DHS-DCP-ADAPTIVE-LAYOUT-UNIFORM-ENTANGLEMENT-NO-GO-LATEST-FALSIFIERS",
       "DEQ-RESULT-EXP-DHS-DCP-CNOT-LINEAR-SPLIT-ENTANGLEMENT-NO-GO-LATEST-FALSIFIERS",
       "DEQ-RESULT-EXP-DHS-DCP-LINEAR-REPARAMETERIZATION-AFFINE-FLAT-NO-GO-LATEST-FALSIFIERS",
+      "ADAPTIVE-PALETTE-CATALOGUE-NOT-FREE-ESCAPE",
       "AFFINE-FLAG-ADDRESSED-LOCAL-KERNELS-NO-POLYLOG-AGGREGATE-SCHUR-COMPILER",
       "AFFINE-GEOMETRY-CODE-SEARCH-AG2_F2_K3",
       "AFFINE-GEOMETRY-CODE-SEARCH-AG2_F3_K6",
       "AFFINE-NODE-NORMALIZED-FRAME-QSVT-NO-NATURAL-RESPONSE",
-      "ASYMPTOTIC-CARRIER-CONTEXTUALITY-NOT-QUANTUM-ALGORITHM",
       "REDUCTION-ROUTE-CODE-COSET-COLLECTIVE-BLOCKED"
     ],
     "mutation_type": "wl-hard-coset-observable",
@@ -1259,7 +864,281 @@
     "status": "proposal"
   },
   {
-    "created_at": "2026-09-09T20:43:41.738897+00:00",
+    "created_at": "2026-09-10T12:05:16.824782+00:00",
+    "formalization_status": "proposal-only-unformalized",
+    "id": "MUTATE-DHS-GOWERS-SIEVE-DCP-RECURSIVE-DECODER-CERTIFICATE",
+    "linked_blockers": [
+      "DEQ-DCP-ADAPTIVE-VALUATION-LAYOUT-CLOSED-ADDITIVE-LAYOUT-OPEN",
+      "DEQ-DCP-ALL-FIXED-SOURCE-MOMENT-ORDERS",
+      "DEQ-DCP-ALL-TARGET-CENSUS-STILL-NEEDS-RANDOM-LABEL-LAW",
+      "DEQ-DCP-BOOLEAN-COSET-SEPARATION-NOT-A-DECODER",
+      "DEQ-DCP-BOUNDED-LOCALITY-COLLECTIVE-WITNESS-NO-GO",
+      "DEQ-DCP-CARRY-SELECTED-HIGH-QUOTIENT-IS-GENERIC",
+      "DEQ-DCP-CARRY-SLICED-LLL-FINITE-WITHOUT-COVERAGE",
+      "DEQ-DCP-CLEAN-PGM-INFORMATION-NOT-IMPLEMENTATION",
+      "DEQ-DCP-CLIFFORD-ONE-BAD-WORST-CASE-SIGNAL-PROOF-MISSING",
+      "DEQ-DCP-CLIFFORD-OUTPUT-SIGNAL-LACKS-EFFICIENT-ROBUST-DECODER",
+      "DEQ-DCP-COHERENT-ERASURE-INVERSION-REDUCTION",
+      "DEQ-DCP-COMPUTED-SUM-QFT-ZERO-INFORMATION",
+      "DEQ-DCP-EXACT-LOW-BOND-FIBER-PREPARATION-OBSTRUCTED",
+      "DEQ-DCP-EXACT-RESIDUE-TENSOR-EXPONENTIAL-BOND",
+      "DEQ-DCP-EXPLICIT-PARTIAL-RELATION-DICTIONARY-HAS-EXPONENTIAL-SOURCE-LOSS",
+      "DEQ-DCP-F1-GLOBAL-PGM-INFORMATION-NOT-CIRCUIT",
+      "DEQ-DCP-FIBER-ERASURE-ACCESS-BOUNDARY",
+      "DEQ-DCP-FINITE-FIBER-GRAPH-NEEDS-GAP-AND-STATE-PREPARATION-THEOREMS",
+      "DEQ-DCP-FINITE-MARKER-DEVIATIONS-NOT-A-GENERAL-LOWER-BOUND",
+      "DEQ-DCP-FIXED-MOMENT-CONDITIONED-FIBER-TAIL",
+      "DEQ-DCP-FULL-DOMAIN-CARRY-ANF-GROWTH",
+      "DEQ-DCP-FULL-LABEL-ADAPTIVE-SPARSE-CHARACTERS",
+      "DEQ-DCP-HADAMARD-SUBCRITICAL-RATIO-AVERAGE-CASE-NO-GO",
+      "DEQ-DCP-HASHED-HADAMARD-FIBER-ERASURE",
+      "DEQ-DCP-IID-BIASED-LINEAR-MARGIN-PARSEVAL-NOGO",
+      "DEQ-DCP-IID-DISJOINT-MULTIRECORD-PARSEVAL-NOGO",
+      "DEQ-DCP-IID-EXPLICIT-OVERLAPPING-USTATISTIC-NOGO",
+      "DEQ-DCP-IID-LINEAR-HASH-PARSEVAL-NOGO",
+      "DEQ-DCP-IID-RANK-ONE-IMPLICIT-CONTRACTION-NOGO",
+      "DEQ-DCP-IID-TESTED-LOW-RANK-CONTRACTION-SCALING",
+      "DEQ-DCP-KNOWN-SUBSET-SUM-FRONTIERS-EXPONENTIAL",
+      "DEQ-DCP-LOW-BIT-PRECONDITIONER-PRESERVES-RESIDUAL-DENSITY",
+      "DEQ-DCP-LOW-FIBER-LOW-ORDER-SIGNAL-OBSTRUCTION",
+      "DEQ-DCP-LOW-ONLY-SPARSE-SIGNED-L2-OBSTRUCTION",
+      "DEQ-DCP-MARKER-AWARE-FIXED-DEPTH-LIST-ATTACK",
+      "DEQ-DCP-MARKER-LOG-COORDINATE-POLYNOMIAL-LIST",
+      "DEQ-DCP-MARKER-POLYNOMIAL-CHART-UNION-ATTACK",
+      "DEQ-DCP-MARKER-TARGET-ADAPTIVE-POLYNOMIAL-BEAM",
+      "DEQ-DCP-NAMED-DECODER-FRONTIER-UNBEATEN",
+      "DEQ-DCP-NEAR-LOG-GROWING-MOMENT-CHAIN-OBSTRUCTION",
+      "DEQ-DCP-ODD-UNIT-ORBIT-SUCCESS-COLLAPSE-NO-EASY-MEASURE",
+      "DEQ-DCP-OPERATOR-NORM-ERASURE-PERTURBATION",
+      "DEQ-DCP-PGM-GENERIC-QSVT-SPECTRAL-SPACING",
+      "DEQ-DCP-PGM-GRAM-BLOCK-ENCODING-NORMALIZATION",
+      "DEQ-DCP-PLANTED-TARGET-REPRESENTATION-SIZE-BIAS",
+      "DEQ-DCP-POLYNOMIAL-EXPLICIT-SUBSET-CANDIDATE-COVERAGE",
+      "DEQ-DCP-PUBLIC-LOW-TRACE-REFERENCE-PROJECTION",
+      "DEQ-DCP-QUENCHED-POISSON-DIRECT-QSVT-TRANSFER",
+      "DEQ-DCP-QW-SOURCE-CERTIFIED-RESOURCE-AND-OUTPUT-GAP",
+      "DEQ-DCP-RANDOM-DESIGN-SAMPLE-TIME-GAP",
+      "DEQ-DCP-RANDOM-FOURIER-INFORMATION-NOT-COMPUTATION",
+      "DEQ-DCP-REGEV-F1-BAD-REGISTER-ROBUSTNESS-MISSING",
+      "DEQ-DCP-SAMPLED-SMITH-SPECTRUM-RARE-EVENT-BLINDNESS",
+      "DEQ-DCP-SIGNED-PERMUTATION-TRANSPORT-COLLAPSES-TO-PIVOT",
+      "DEQ-DCP-SIGNED-SELF-REDUCTION-ISOMETRIC-ODD-UNIT-COVERAGE-OPEN",
+      "DEQ-DCP-SOURCE-AVERAGE-FIXED-SIXTH-SMITH-TRANSFER",
+      "DEQ-DCP-SPARSE-FFT-STRUCTURED-QUERY-TRANSFER",
+      "DEQ-DCP-STATE-ONLY-CONTAMINATION-WITNESS-COMPUTATIONAL-BARRIER",
+      "DEQ-DCP-SUB-HALF-LOG-GROWING-MOMENT-ORDER",
+      "DEQ-DCP-SUBSET-SUM-AFFINE-BABAI-NO-COVERAGE",
+      "DEQ-DCP-SUBSET-SUM-AFFINE-BDD-CELLS-NO-SOURCE-LAW",
+      "DEQ-DCP-SUBSET-SUM-AFFINE-CVP-SCALING-NO-THEOREM",
+      "DEQ-DCP-SUBSET-SUM-CARRY-SLICED-RELATION-COVERAGE",
+      "DEQ-DCP-SUBSET-SUM-EMBEDDING-VOLUME-ONLY-GAP",
+      "DEQ-DCP-SUBSET-SUM-MARKER-FILTER-IS-NOT-DECODER",
+      "DEQ-DCP-SUBSET-SUM-STANDARD-EMBEDDING-SHORT-RELATIONS",
+      "DEQ-DCP-TARGET-GARBAGE-ERASURE-COHERENCE",
+      "DEQ-DCP-TARGET-INDEXED-LOCAL-MAPS-FAIL-ENTROPY-BOUND",
+      "DEQ-DCP-TESTED-LLL-DENSITY-ONE-TAIL-COLLAPSE",
+      "DEQ-DCP-TOTAL-AFFINE-TRANSPORT-IS-NOT-A-SEPARATE-SOLVER-STEP",
+      "DEQ-DCP-TOTAL-GLOBAL-TRANSPORT-CLOSED-TARGET-PARTIAL-MAP-OPEN",
+      "DEQ-DCP-TWO-ADIC-FINITE-INTERPOLATION-NOT-SOLVER",
+      "DEQ-DCP-TWO-ADIC-LOCAL-TRANSPORT-STOPS-BEFORE-LINEAR-DEPTH",
+      "DEQ-DCP-DETERMINISTIC-BRANCH-OPTIMISM",
+      "DEQ-DCP-EMPIRICAL-RECURSION-NO-UNIFORM-THEOREM",
+      "DEQ-DCP-FINITE-FIT-NO-STOCHASTIC-RECURRENCE",
+      "DEQ-DCP-HELDOUT-SCHEDULE-NO-UNIFORM-PROOF",
+      "DEQ-DCP-LIKELIHOOD-BRANCH-BOUND-EXPONENTIAL",
+      "DEQ-DCP-LOW-BIT-BDD-LEAVES-LINEAR-RESIDUAL-ENTROPY",
+      "DEQ-DCP-LOW-BIT-CONDITIONING-DOES-NOT-CONCENTRATE-HIGH-QUOTIENT",
+      "DEQ-DCP-QTT-FINITE-DENSE-CONTRACTION",
+      "DEQ-DCP-RAW-PAIR-MULTISCALE-ALIASING-SAMPLE-BARRIER",
+      "DEQ-DCP-RECURRENCE-NO-NAMED-BASELINE-IMPROVEMENT",
+      "DEQ-DCP-RECURSIVE-NO-ASYMPTOTIC-IMPROVEMENT",
+      "DEQ-DCP-SCHEDULE-SELECTION-OVERFIT",
+      "DEQ-DCP-SFT-HNP-HARDNESS-TRANSFER-INVALID",
+      "DEQ-DCP-UNIFORM-BLOCK-CONSTANT-NO-CLASS-CHANGE",
+      "DEQ-RESULT-EXP-DHS-GOWERS-SPECTRUM-HIDDEN-SHIFT-HIGH-RISK",
+      "DEQ-RESULT-EXP-DHS-PHASE-SIEVE-HIDDEN-SHIFT-HIGH-RISK",
+      "DEQ-RESULT-EXP-DHS-PHASE-SIEVE-HIDDEN-SHIFT-NEGATIVE-FAMILIES",
+      "DEQ-RESULT-EXP-DHS-QUERY-LOWER-BOUND-PROBES-QUERY-LOWER-BOUNDS-NEGATIVE-FAMILIES",
+      "DEQ-RESULT-HIDDEN-SHIFT-WORKBENCH-LATEST-HIGH-RISK",
+      "DEQ-RESULT-HIDDEN-SHIFT-WORKBENCH-LATEST-NEGATIVE-FAMILIES",
+      "DEQ-RESULT-EXP-DHS-CHARACTER-COMPLEXITY-PREPROCESSING-CHARACTER-COMPLEXITY-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-CHARACTER-DECODER-SEARCH-CHARACTER-DECODER-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-CHARACTER-LOWER-BOUND-CHARACTER-LOWER-BOUND-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-CHARACTER-MOMENT-OBSTRUCTION-CHARACTER-MOMENTS-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-CHARACTER-QUERY-INFORMATION-CHARACTER-QUERY-INFORMATION-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-CHARACTER-SHIFT-BASELINE-CHARACTER-SHIFT-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-ADAPTIVE-LAYOUT-AUDIT-DCP-ADAPTIVE-LAYOUT-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-ADAPTIVE-LAYOUT-AUDIT-LATEST-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-AFFINE-TRANSPORT-DCP-AFFINE-TRANSPORT-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-APPROXIMATE-ERASURE-COHERENCE-REDUCTION-DCP-ERASURE-COHERENCE-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-APPROXIMATE-ERASURE-COHERENCE-REDUCTION-LATEST-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-AVERAGE-SUBSET-SUM-BRIDGE-DCP-SUBSET-SUM-BRIDGE-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-BAD-REGISTER-ROBUSTNESS-DCP-BAD-REGISTERS-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-BOOLEAN-COSET-SEPARATION-DCP-BOOLEAN-COSET-SEPARATION-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-BOOLEAN-COSET-SEPARATION-LATEST-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-CARRY-AFFINE-DEGREE-INVARIANCE-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-CARRY-HIGH-PART-NOGO-CARRY-HIGH-PART-NOGO-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-CARRY-HIGH-PART-NOGO-DCP-CARRY-HIGH-PART-NOGO-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-CLIFFORD-CONTAMINATION-DCP-CLIFFORD-CONTAMINATION-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-CLIFFORD-WITNESS-SEARCH-DCP-CLIFFORD-WITNESS-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-COHERENT-FIBER-ERASURE-BOUNDARY-DCP-FIBER-ERASURE-BOUNDARY-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-COHERENT-FIBER-ERASURE-BOUNDARY-LATEST-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-COHERENT-MATCHING-INTERFACE-DCP-COHERENT-MATCHING-INTERFACE-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-COLLECTIVE-WITNESS-SEARCH-DCP-COLLECTIVE-WITNESS-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-CONTAMINATED-PGM-AUDIT-DCP-CONTAMINATED-PGM-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-CONTAMINATION-WITNESS-DCP-CONTAMINATION-WITNESS-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-COVARIANT-PGM-AUDIT-DCP-COVARIANT-PGM-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-DECODER-FRONTIER-DCP-DECODER-FRONTIER-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-ERASURE-PERTURBATION-REDUCTION-DCP-ERASURE-PERTURBATION-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-ERASURE-PERTURBATION-REDUCTION-LATEST-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-FIBER-BALANCE-OBSTRUCTION-DCP-FIBER-BALANCE-OBSTRUCTION-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-FIBER-ENTANGLEMENT-DCP-FIBER-ENTANGLEMENT-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-FIBER-ENTANGLEMENT-LATEST-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-FIBER-TRANSPORT-GRAPH-DCP-FIBER-TRANSPORT-GRAPH-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-GLOBAL-ERASURE-INVERSION-REDUCTION-DCP-ERASURE-INVERSION-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-GLOBAL-ERASURE-INVERSION-REDUCTION-LATEST-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-HADAMARD-SCALING-DCP-HADAMARD-SCALING-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-HASHED-FIBER-MEASUREMENT-AUDIT-DCP-HASHED-FIBER-MEASUREMENT-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-IID-BIASED-LINEAR-MARGIN-DCP-BIASED-LINEAR-MARGIN-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-IID-FACTORIZED-CONTRACTION-DCP-FACTORIZED-CONTRACTION-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-IID-LINEAR-HASH-ESTIMATOR-DCP-IID-LINEAR-HASH-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-IID-LOW-RANK-CONTRACTION-DCP-LOW-RANK-CONTRACTION-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-IID-MULTIRECORD-HIERARCHY-DCP-MULTIRECORD-HIERARCHY-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-IID-USTATISTIC-VARIANCE-DCP-USTATISTIC-VARIANCE-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-LIKELIHOOD-BRANCH-BOUND-DCP-LIKELIHOOD-BRANCH-BOUND-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-MARKER-ALL-TARGET-COVERAGE-DCP-MARKER-ALL-TARGET-COVERAGE-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-MARKER-ALL-TARGET-COVERAGE-LATEST-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-MARKER-AWARE-LIST-DECODER-DCP-MARKER-AWARE-LIST-DECODER-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-MARKER-AWARE-LIST-DECODER-LATEST-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-MARKER-CHART-UNION-DECODER-LATEST-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-MARKER-DEVIATION-GEOMETRY-DCP-MARKER-DEVIATION-GEOMETRY-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-MARKER-DEVIATION-GEOMETRY-LATEST-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-MARKER-TARGET-ADAPTIVE-BEAM-TARGET-ADAPTIVE-BEAM-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-MARKER-VULNERABLE-COORDINATE-DECODER-DCP-MARKER-VULNERABLE-COORDINATES-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-MARKER-VULNERABLE-COORDINATE-DECODER-LATEST-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-MULTISCALE-ALIASING-DCP-MULTISCALE-ALIASING-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-ODD-UNIT-ORBIT-GEOMETRY-DCP-ODD-UNIT-ORBIT-GEOMETRY-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-PARTIAL-RELATION-COVERAGE-DCP-PARTIAL-RELATION-COVERAGE-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-PGM-GRAM-BLOCK-ENCODING-DCP-PGM-GRAM-BLOCK-ENCODING-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-PGM-GRAM-BLOCK-ENCODING-LATEST-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-PGM-QSVT-DEGREE-OBSTRUCTION-DCP-PGM-QSVT-DEGREE-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-PGM-QSVT-DEGREE-OBSTRUCTION-LATEST-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-QUANTUM-RELATION-FIDELITY-DCP-QUANTUM-RELATION-FIDELITY-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-QUANTUM-WALK-SOURCE-AUDIT-DCP-QW-SOURCE-AUDIT-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-RANDOM-DESIGN-DECODER-DCP-RANDOM-DESIGN-DECODER-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-RANDOM-FOURIER-BRIDGE-DCP-RANDOM-FOURIER-BRIDGE-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-RECURRENCE-SCALING-DCP-RECURRENCE-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-RECURSIVE-DECODER-DCP-RECURSIVE-DECODER-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-REFERENCE-PROJECTION-AUDIT-DCP-REFERENCE-PROJECTION-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-SAMPLE-NATIVE-SIEVE-DCP-SAMPLE-NATIVE-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-SCHEDULE-SEARCH-DCP-SCHEDULE-SEARCH-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-SIGNED-PERMUTATION-TRANSPORT-DCP-SIGNED-PERMUTATION-TRANSPORT-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-SPARSE-FOURIER-TRANSFER-AUDIT-DCP-SPARSE-FOURIER-TRANSFER-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-ADAPTIVE-SPARSE-CHARACTER-OBSTRUCTION-DCP-SUBSET-SUM-SPARSE-CHARACTERS-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-ADAPTIVE-SPARSE-CHARACTER-OBSTRUCTION-SPARSE-CHARACTER-OBSTRUCTION-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-AFFINE-BDD-GEOMETRY-AFFINE-BDD-GEOMETRY-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-AFFINE-BDD-GEOMETRY-DCP-SUBSET-SUM-AFFINE-BDD-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-AFFINE-CVP-BASELINE-AFFINE-CVP-BASELINE-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-AFFINE-CVP-BASELINE-DCP-SUBSET-SUM-AFFINE-CVP-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-AFFINE-CVP-SCALING-AFFINE-CVP-SCALING-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-AFFINE-CVP-SCALING-DCP-SUBSET-SUM-AFFINE-CVP-SCALING-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-ALL-FIXED-MOMENT-THEOREM-ALL-FIXED-MOMENT-THEOREM-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-ALL-FIXED-MOMENT-THEOREM-DCP-SUBSET-SUM-FIXED-MOMENT-THEOREM-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-CARRY-ANF-DCP-SUBSET-SUM-CARRY-ANF-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-CARRY-RELATION-THEOREM-CARRY-RELATION-THEOREM-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-CARRY-RELATION-THEOREM-DCP-SUBSET-SUM-CARRY-RELATION-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-CARRY-SLICE-LATTICE-DCP-SUBSET-SUM-CARRY-SLICE-LATTICE-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-CONDITIONED-FIXED-MOMENT-TAIL-CONDITIONED-FIXED-MOMENT-TAIL-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-CONDITIONED-FIXED-MOMENT-TAIL-DCP-SUBSET-SUM-CONDITIONED-TAIL-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-CONDITIONED-QUOTIENT-DCP-SUBSET-SUM-CONDITIONED-QUOTIENT-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-EMBEDDING-VOLUME-THEOREM-DCP-SUBSET-SUM-EMBEDDING-VOLUME-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-EMBEDDING-VOLUME-THEOREM-EMBEDDING-VOLUME-THEOREM-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-FOURTH-MOMENT-OBSTRUCTION-DCP-SUBSET-SUM-FOURTH-MOMENT-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-GROWING-ORDER-CHAIN-THEOREM-DCP-SUBSET-SUM-GROWING-ORDER-CHAIN-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-GROWING-ORDER-CHAIN-THEOREM-LATEST-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-GROWING-ORDER-MOMENT-THEOREM-DCP-SUBSET-SUM-GROWING-ORDER-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-GROWING-ORDER-MOMENT-THEOREM-GROWING-ORDER-MOMENT-THEOREM-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-LATTICE-SEARCH-DCP-SUBSET-SUM-LATTICE-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-LOW-BIT-BDD-DCP-SUBSET-SUM-LOW-BIT-BDD-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-MARKER-COSET-THEOREM-DCP-SUBSET-SUM-MARKER-COSET-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-MARKER-COSET-THEOREM-MARKER-COSET-THEOREM-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-MEASUREMENT-AUDIT-DCP-SUBSET-SUM-MEASUREMENT-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-PRECONDITIONED-GEOMETRY-DCP-SUBSET-SUM-PRECONDITIONED-GEOMETRY-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-QTT-DENSE-CONTRACTION-DCP-SUBSET-SUM-QTT-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-QTT-DENSE-CONTRACTION-QTT-DENSE-CONTRACTION-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-QUENCHED-OCCUPANCY-THEOREM-DCP-QUENCHED-OCCUPANCY-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-QUENCHED-OCCUPANCY-THEOREM-LATEST-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-RANDOM-SELF-REDUCTION-DCP-SUBSET-SUM-RANDOM-SELF-REDUCTION-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-RESOURCE-FRONTIER-DCP-SUBSET-SUM-RESOURCE-FRONTIER-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-SHORT-RELATION-THEOREM-DCP-SUBSET-SUM-SHORT-RELATION-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-SHORT-RELATION-THEOREM-SHORT-RELATION-THEOREM-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-SIGNED-L2-OBSTRUCTION-DCP-SUBSET-SUM-SIGNED-L2-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-SIGNED-L2-OBSTRUCTION-SIGNED-L2-OBSTRUCTION-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-SMITH-MOMENT-SPECTRUM-SMITH-MOMENT-SPECTRUM-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-SMITH-TRANSFER-ORDER-SIX-DCP-SUBSET-SUM-SMITH-TRANSFER-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-SMITH-TRANSFER-ORDER-SIX-SMITH-TRANSFER-ORDER-SIX-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-SOLVER-SYNTHESIS-DCP-SUBSET-SUM-SOLVER-SYNTHESIS-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-TARGET-DISTRIBUTION-DCP-SUBSET-SUM-TARGET-DISTRIBUTION-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-TWO-ADIC-SEARCH-DCP-SUBSET-SUM-TWO-ADIC-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-SYMMETRIC-RELATION-LIFT-DCP-SYMMETRIC-RELATION-LIFT-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-TARGET-INDEXED-LOCALITY-DCP-TARGET-INDEXED-LOCALITY-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-TARGET-INDEXED-LOCALITY-LATEST-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-TWO-ADIC-FIBER-TRANSPORT-DCP-TWO-ADIC-FIBER-TRANSPORT-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-DCP-UNIFORM-SCHEDULE-FAMILY-DCP-UNIFORM-SCHEDULE-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-GOWERS-SPECTRUM-HIDDEN-SHIFT-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-PHASE-NATURALNESS-PHASE-NATURALNESS-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-PHASE-SIEVE-DCP-SAMPLE-NATIVE-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-PHASE-SIEVE-HIDDEN-SHIFT-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-PHASE-SIEVE-HIDDEN-SHIFT-QUERY-MODEL-GAP",
+      "DEQ-RESULT-EXP-DHS-QUERY-LOWER-BOUND-PROBES-QUERY-LOWER-BOUNDS-FALSIFIERS",
+      "DEQ-RESULT-EXP-DHS-TRACE-FUNCTION-SEARCH-TRACE-FUNCTION-SEARCH-FALSIFIERS",
+      "DEQ-RESULT-HIDDEN-SHIFT-WORKBENCH-LATEST-FALSIFIERS",
+      "DEQ-RESULT-HIDDEN-SHIFT-WORKBENCH-LATEST-QUERY-MODEL-GAP",
+      "DEQ-DCP-QUANTUM-RELATION-SOLVER-NEEDS-PAIRED-WORKSPACE-OVERLAP",
+      "DEQ-DCP-QUANTUM-RELATION-WORKSPACE-FIDELITY",
+      "DEQ-DCP-SYMMETRIC-RELATION-LIFT-SEPARATES-INTERFACE-FROM-SOLVER",
+      "CHARACTER-QUERY-ADVANTAGE-KILLED-LEGENDRE_SYMBOL",
+      "CHARACTER-QUERY-ADVANTAGE-KILLED-QUARTIC_CHARACTER",
+      "CLASSICAL-BASELINE-DEQUANTIZED-BENT_QUADRATIC_F2",
+      "CLASSICAL-BASELINE-DEQUANTIZED-FP2_QUADRATIC_FORM",
+      "CLASSICAL-BASELINE-DEQUANTIZED-KLOOSTERMAN_TRACE",
+      "REDUCTION-ROUTE-DHS-GOWERS-SIEVE-BLOCKED"
+    ],
+    "mutation_type": "dcp-recursive-decoder-certificate",
+    "new_hypothesis": "After recovering each low bit, apply the exact known phase correction to fresh independent DCP states, reduce the modulus, and recurse; charge independent sample batches and prove bounded total failure and lattice composition.",
+    "proof_debts_targeted": [
+      "DEBT-DHS-GOWERS-SIEVE-PO-DEQUANTIZATION",
+      "DEBT-DHS-GOWERS-SIEVE-PO-REDUCTION",
+      "DEBT-DHS-GOWERS-SIEVE-PO-FALSIFIERS"
+    ],
+    "proof_gate_eligible": false,
+    "proof_obligations_to_resolve": [
+      "Prove the low-bit phase correction and modulus-reduction identity for every k and hidden reflection.",
+      "Recover every reflection bit using only fresh independent state batches.",
+      "Bound total samples and failure probability across all recursive stages.",
+      "Compose the full recovered reflection with the exact lattice parameter map and decoder.",
+      "Prove robustness to arbitrary bad basis-state registers at per-register rate 1/log N."
+    ],
+    "rationale": "The candidate uses the correct independent-state interface and the executable recursive audit recorded 3 empirical full recovery or recoveries; the recurrence audit ran 960 finite scaling trials. The missing result is now a uniform endpoint-yield, total-failure, resource-recurrence, and lattice-composition theorem, not another finite decoder trace.",
+    "rejection_filters": [
+      "Reject if hidden-shift verification or phase correction queries an unavailable evaluator.",
+      "Reject if states consumed at one stage are silently reused at another.",
+      "Reject if small-modulus decoding is asserted without an explicit constant-size measurement.",
+      "Reject if empirical full recovery lacks a uniform asymptotic success proof."
+    ],
+    "required_modules": [
+      "symbolic adaptive bucket-occupancy recurrence certificate",
+      "stage-budget and total-failure theorem certificate",
+      "Kuperberg/Regev resource frontier comparator",
+      "adversarial f=1 bad-register robustness certificate",
+      "end-to-end lattice decoder composition audit"
+    ],
+    "source_candidate_id": "DHS-GOWERS-SIEVE",
+    "status": "proposal",
+    "theorem_contract_id": "THM-REGEV-USVP-TO-DCP-2003"
+  },
+  {
+    "created_at": "2026-09-10T12:05:16.827544+00:00",
     "formalization_status": "proposal-only-unformalized",
     "id": "MUTATE-DHS-GOWERS-SIEVE-DCP-BAD-REGISTER-ROBUST-ARCHITECTURE",
     "linked_blockers": [
@@ -1531,7 +1410,7 @@
     "theorem_contract_id": "THM-REGEV-USVP-TO-DCP-2003"
   },
   {
-    "created_at": "2026-09-09T20:43:41.761893+00:00",
+    "created_at": "2026-09-10T12:05:16.851800+00:00",
     "formalization_status": "proposal-only-unformalized",
     "id": "MUTATE-DHS-GOWERS-SIEVE-DCP-RANDOM-LABEL-POLYNOMIAL-DECODER",
     "linked_blockers": [
@@ -1881,398 +1760,7 @@
     "theorem_contract_id": "THM-REGEV-USVP-TO-DCP-2003"
   },
   {
-    "created_at": "2026-09-09T20:43:41.736405+00:00",
-    "formalization_status": "proposal-only-unformalized",
-    "id": "MUTATE-DHS-GOWERS-SIEVE-DCP-RECURSIVE-DECODER-CERTIFICATE",
-    "linked_blockers": [
-      "DEQ-DCP-ADAPTIVE-VALUATION-LAYOUT-CLOSED-ADDITIVE-LAYOUT-OPEN",
-      "DEQ-DCP-ALL-FIXED-SOURCE-MOMENT-ORDERS",
-      "DEQ-DCP-ALL-TARGET-CENSUS-STILL-NEEDS-RANDOM-LABEL-LAW",
-      "DEQ-DCP-BOOLEAN-COSET-SEPARATION-NOT-A-DECODER",
-      "DEQ-DCP-BOUNDED-LOCALITY-COLLECTIVE-WITNESS-NO-GO",
-      "DEQ-DCP-CARRY-SELECTED-HIGH-QUOTIENT-IS-GENERIC",
-      "DEQ-DCP-CARRY-SLICED-LLL-FINITE-WITHOUT-COVERAGE",
-      "DEQ-DCP-CLEAN-PGM-INFORMATION-NOT-IMPLEMENTATION",
-      "DEQ-DCP-CLIFFORD-ONE-BAD-WORST-CASE-SIGNAL-PROOF-MISSING",
-      "DEQ-DCP-CLIFFORD-OUTPUT-SIGNAL-LACKS-EFFICIENT-ROBUST-DECODER",
-      "DEQ-DCP-COHERENT-ERASURE-INVERSION-REDUCTION",
-      "DEQ-DCP-COMPUTED-SUM-QFT-ZERO-INFORMATION",
-      "DEQ-DCP-EXACT-LOW-BOND-FIBER-PREPARATION-OBSTRUCTED",
-      "DEQ-DCP-EXACT-RESIDUE-TENSOR-EXPONENTIAL-BOND",
-      "DEQ-DCP-EXPLICIT-PARTIAL-RELATION-DICTIONARY-HAS-EXPONENTIAL-SOURCE-LOSS",
-      "DEQ-DCP-F1-GLOBAL-PGM-INFORMATION-NOT-CIRCUIT",
-      "DEQ-DCP-FIBER-ERASURE-ACCESS-BOUNDARY",
-      "DEQ-DCP-FINITE-FIBER-GRAPH-NEEDS-GAP-AND-STATE-PREPARATION-THEOREMS",
-      "DEQ-DCP-FINITE-MARKER-DEVIATIONS-NOT-A-GENERAL-LOWER-BOUND",
-      "DEQ-DCP-FIXED-MOMENT-CONDITIONED-FIBER-TAIL",
-      "DEQ-DCP-FULL-DOMAIN-CARRY-ANF-GROWTH",
-      "DEQ-DCP-FULL-LABEL-ADAPTIVE-SPARSE-CHARACTERS",
-      "DEQ-DCP-HADAMARD-SUBCRITICAL-RATIO-AVERAGE-CASE-NO-GO",
-      "DEQ-DCP-HASHED-HADAMARD-FIBER-ERASURE",
-      "DEQ-DCP-IID-BIASED-LINEAR-MARGIN-PARSEVAL-NOGO",
-      "DEQ-DCP-IID-DISJOINT-MULTIRECORD-PARSEVAL-NOGO",
-      "DEQ-DCP-IID-EXPLICIT-OVERLAPPING-USTATISTIC-NOGO",
-      "DEQ-DCP-IID-LINEAR-HASH-PARSEVAL-NOGO",
-      "DEQ-DCP-IID-RANK-ONE-IMPLICIT-CONTRACTION-NOGO",
-      "DEQ-DCP-IID-TESTED-LOW-RANK-CONTRACTION-SCALING",
-      "DEQ-DCP-KNOWN-SUBSET-SUM-FRONTIERS-EXPONENTIAL",
-      "DEQ-DCP-LOW-BIT-PRECONDITIONER-PRESERVES-RESIDUAL-DENSITY",
-      "DEQ-DCP-LOW-FIBER-LOW-ORDER-SIGNAL-OBSTRUCTION",
-      "DEQ-DCP-LOW-ONLY-SPARSE-SIGNED-L2-OBSTRUCTION",
-      "DEQ-DCP-MARKER-AWARE-FIXED-DEPTH-LIST-ATTACK",
-      "DEQ-DCP-MARKER-LOG-COORDINATE-POLYNOMIAL-LIST",
-      "DEQ-DCP-MARKER-POLYNOMIAL-CHART-UNION-ATTACK",
-      "DEQ-DCP-MARKER-TARGET-ADAPTIVE-POLYNOMIAL-BEAM",
-      "DEQ-DCP-NAMED-DECODER-FRONTIER-UNBEATEN",
-      "DEQ-DCP-NEAR-LOG-GROWING-MOMENT-CHAIN-OBSTRUCTION",
-      "DEQ-DCP-ODD-UNIT-ORBIT-SUCCESS-COLLAPSE-NO-EASY-MEASURE",
-      "DEQ-DCP-OPERATOR-NORM-ERASURE-PERTURBATION",
-      "DEQ-DCP-PGM-GENERIC-QSVT-SPECTRAL-SPACING",
-      "DEQ-DCP-PGM-GRAM-BLOCK-ENCODING-NORMALIZATION",
-      "DEQ-DCP-PLANTED-TARGET-REPRESENTATION-SIZE-BIAS",
-      "DEQ-DCP-POLYNOMIAL-EXPLICIT-SUBSET-CANDIDATE-COVERAGE",
-      "DEQ-DCP-PUBLIC-LOW-TRACE-REFERENCE-PROJECTION",
-      "DEQ-DCP-QUENCHED-POISSON-DIRECT-QSVT-TRANSFER",
-      "DEQ-DCP-QW-SOURCE-CERTIFIED-RESOURCE-AND-OUTPUT-GAP",
-      "DEQ-DCP-RANDOM-DESIGN-SAMPLE-TIME-GAP",
-      "DEQ-DCP-RANDOM-FOURIER-INFORMATION-NOT-COMPUTATION",
-      "DEQ-DCP-REGEV-F1-BAD-REGISTER-ROBUSTNESS-MISSING",
-      "DEQ-DCP-SAMPLED-SMITH-SPECTRUM-RARE-EVENT-BLINDNESS",
-      "DEQ-DCP-SIGNED-PERMUTATION-TRANSPORT-COLLAPSES-TO-PIVOT",
-      "DEQ-DCP-SIGNED-SELF-REDUCTION-ISOMETRIC-ODD-UNIT-COVERAGE-OPEN",
-      "DEQ-DCP-SOURCE-AVERAGE-FIXED-SIXTH-SMITH-TRANSFER",
-      "DEQ-DCP-SPARSE-FFT-STRUCTURED-QUERY-TRANSFER",
-      "DEQ-DCP-STATE-ONLY-CONTAMINATION-WITNESS-COMPUTATIONAL-BARRIER",
-      "DEQ-DCP-SUB-HALF-LOG-GROWING-MOMENT-ORDER",
-      "DEQ-DCP-SUBSET-SUM-AFFINE-BABAI-NO-COVERAGE",
-      "DEQ-DCP-SUBSET-SUM-AFFINE-BDD-CELLS-NO-SOURCE-LAW",
-      "DEQ-DCP-SUBSET-SUM-AFFINE-CVP-SCALING-NO-THEOREM",
-      "DEQ-DCP-SUBSET-SUM-CARRY-SLICED-RELATION-COVERAGE",
-      "DEQ-DCP-SUBSET-SUM-EMBEDDING-VOLUME-ONLY-GAP",
-      "DEQ-DCP-SUBSET-SUM-MARKER-FILTER-IS-NOT-DECODER",
-      "DEQ-DCP-SUBSET-SUM-STANDARD-EMBEDDING-SHORT-RELATIONS",
-      "DEQ-DCP-TARGET-GARBAGE-ERASURE-COHERENCE",
-      "DEQ-DCP-TARGET-INDEXED-LOCAL-MAPS-FAIL-ENTROPY-BOUND",
-      "DEQ-DCP-TESTED-LLL-DENSITY-ONE-TAIL-COLLAPSE",
-      "DEQ-DCP-TOTAL-AFFINE-TRANSPORT-IS-NOT-A-SEPARATE-SOLVER-STEP",
-      "DEQ-DCP-TOTAL-GLOBAL-TRANSPORT-CLOSED-TARGET-PARTIAL-MAP-OPEN",
-      "DEQ-DCP-TWO-ADIC-FINITE-INTERPOLATION-NOT-SOLVER",
-      "DEQ-DCP-TWO-ADIC-LOCAL-TRANSPORT-STOPS-BEFORE-LINEAR-DEPTH",
-      "DEQ-DCP-DETERMINISTIC-BRANCH-OPTIMISM",
-      "DEQ-DCP-EMPIRICAL-RECURSION-NO-UNIFORM-THEOREM",
-      "DEQ-DCP-FINITE-FIT-NO-STOCHASTIC-RECURRENCE",
-      "DEQ-DCP-HELDOUT-SCHEDULE-NO-UNIFORM-PROOF",
-      "DEQ-DCP-LIKELIHOOD-BRANCH-BOUND-EXPONENTIAL",
-      "DEQ-DCP-LOW-BIT-BDD-LEAVES-LINEAR-RESIDUAL-ENTROPY",
-      "DEQ-DCP-LOW-BIT-CONDITIONING-DOES-NOT-CONCENTRATE-HIGH-QUOTIENT",
-      "DEQ-DCP-QTT-FINITE-DENSE-CONTRACTION",
-      "DEQ-DCP-RAW-PAIR-MULTISCALE-ALIASING-SAMPLE-BARRIER",
-      "DEQ-DCP-RECURRENCE-NO-NAMED-BASELINE-IMPROVEMENT",
-      "DEQ-DCP-RECURSIVE-NO-ASYMPTOTIC-IMPROVEMENT",
-      "DEQ-DCP-SCHEDULE-SELECTION-OVERFIT",
-      "DEQ-DCP-SFT-HNP-HARDNESS-TRANSFER-INVALID",
-      "DEQ-DCP-UNIFORM-BLOCK-CONSTANT-NO-CLASS-CHANGE",
-      "DEQ-RESULT-EXP-DHS-GOWERS-SPECTRUM-HIDDEN-SHIFT-HIGH-RISK",
-      "DEQ-RESULT-EXP-DHS-PHASE-SIEVE-HIDDEN-SHIFT-HIGH-RISK",
-      "DEQ-RESULT-EXP-DHS-PHASE-SIEVE-HIDDEN-SHIFT-NEGATIVE-FAMILIES",
-      "DEQ-RESULT-EXP-DHS-QUERY-LOWER-BOUND-PROBES-QUERY-LOWER-BOUNDS-NEGATIVE-FAMILIES",
-      "DEQ-RESULT-HIDDEN-SHIFT-WORKBENCH-LATEST-HIGH-RISK",
-      "DEQ-RESULT-HIDDEN-SHIFT-WORKBENCH-LATEST-NEGATIVE-FAMILIES",
-      "DEQ-RESULT-EXP-DHS-CHARACTER-COMPLEXITY-PREPROCESSING-CHARACTER-COMPLEXITY-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-CHARACTER-DECODER-SEARCH-CHARACTER-DECODER-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-CHARACTER-LOWER-BOUND-CHARACTER-LOWER-BOUND-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-CHARACTER-MOMENT-OBSTRUCTION-CHARACTER-MOMENTS-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-CHARACTER-QUERY-INFORMATION-CHARACTER-QUERY-INFORMATION-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-CHARACTER-SHIFT-BASELINE-CHARACTER-SHIFT-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-ADAPTIVE-LAYOUT-AUDIT-DCP-ADAPTIVE-LAYOUT-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-ADAPTIVE-LAYOUT-AUDIT-LATEST-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-AFFINE-TRANSPORT-DCP-AFFINE-TRANSPORT-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-APPROXIMATE-ERASURE-COHERENCE-REDUCTION-DCP-ERASURE-COHERENCE-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-APPROXIMATE-ERASURE-COHERENCE-REDUCTION-LATEST-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-AVERAGE-SUBSET-SUM-BRIDGE-DCP-SUBSET-SUM-BRIDGE-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-BAD-REGISTER-ROBUSTNESS-DCP-BAD-REGISTERS-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-BOOLEAN-COSET-SEPARATION-DCP-BOOLEAN-COSET-SEPARATION-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-BOOLEAN-COSET-SEPARATION-LATEST-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-CARRY-AFFINE-DEGREE-INVARIANCE-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-CARRY-HIGH-PART-NOGO-CARRY-HIGH-PART-NOGO-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-CARRY-HIGH-PART-NOGO-DCP-CARRY-HIGH-PART-NOGO-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-CLIFFORD-CONTAMINATION-DCP-CLIFFORD-CONTAMINATION-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-CLIFFORD-WITNESS-SEARCH-DCP-CLIFFORD-WITNESS-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-COHERENT-FIBER-ERASURE-BOUNDARY-DCP-FIBER-ERASURE-BOUNDARY-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-COHERENT-FIBER-ERASURE-BOUNDARY-LATEST-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-COHERENT-MATCHING-INTERFACE-DCP-COHERENT-MATCHING-INTERFACE-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-COLLECTIVE-WITNESS-SEARCH-DCP-COLLECTIVE-WITNESS-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-CONTAMINATED-PGM-AUDIT-DCP-CONTAMINATED-PGM-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-CONTAMINATION-WITNESS-DCP-CONTAMINATION-WITNESS-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-COVARIANT-PGM-AUDIT-DCP-COVARIANT-PGM-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-DECODER-FRONTIER-DCP-DECODER-FRONTIER-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-ERASURE-PERTURBATION-REDUCTION-DCP-ERASURE-PERTURBATION-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-ERASURE-PERTURBATION-REDUCTION-LATEST-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-FIBER-BALANCE-OBSTRUCTION-DCP-FIBER-BALANCE-OBSTRUCTION-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-FIBER-ENTANGLEMENT-DCP-FIBER-ENTANGLEMENT-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-FIBER-ENTANGLEMENT-LATEST-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-FIBER-TRANSPORT-GRAPH-DCP-FIBER-TRANSPORT-GRAPH-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-GLOBAL-ERASURE-INVERSION-REDUCTION-DCP-ERASURE-INVERSION-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-GLOBAL-ERASURE-INVERSION-REDUCTION-LATEST-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-HADAMARD-SCALING-DCP-HADAMARD-SCALING-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-HASHED-FIBER-MEASUREMENT-AUDIT-DCP-HASHED-FIBER-MEASUREMENT-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-IID-BIASED-LINEAR-MARGIN-DCP-BIASED-LINEAR-MARGIN-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-IID-FACTORIZED-CONTRACTION-DCP-FACTORIZED-CONTRACTION-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-IID-LINEAR-HASH-ESTIMATOR-DCP-IID-LINEAR-HASH-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-IID-LOW-RANK-CONTRACTION-DCP-LOW-RANK-CONTRACTION-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-IID-MULTIRECORD-HIERARCHY-DCP-MULTIRECORD-HIERARCHY-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-IID-USTATISTIC-VARIANCE-DCP-USTATISTIC-VARIANCE-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-LIKELIHOOD-BRANCH-BOUND-DCP-LIKELIHOOD-BRANCH-BOUND-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-MARKER-ALL-TARGET-COVERAGE-DCP-MARKER-ALL-TARGET-COVERAGE-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-MARKER-ALL-TARGET-COVERAGE-LATEST-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-MARKER-AWARE-LIST-DECODER-DCP-MARKER-AWARE-LIST-DECODER-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-MARKER-AWARE-LIST-DECODER-LATEST-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-MARKER-CHART-UNION-DECODER-LATEST-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-MARKER-DEVIATION-GEOMETRY-DCP-MARKER-DEVIATION-GEOMETRY-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-MARKER-DEVIATION-GEOMETRY-LATEST-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-MARKER-TARGET-ADAPTIVE-BEAM-TARGET-ADAPTIVE-BEAM-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-MARKER-VULNERABLE-COORDINATE-DECODER-DCP-MARKER-VULNERABLE-COORDINATES-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-MARKER-VULNERABLE-COORDINATE-DECODER-LATEST-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-MULTISCALE-ALIASING-DCP-MULTISCALE-ALIASING-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-ODD-UNIT-ORBIT-GEOMETRY-DCP-ODD-UNIT-ORBIT-GEOMETRY-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-PARTIAL-RELATION-COVERAGE-DCP-PARTIAL-RELATION-COVERAGE-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-PGM-GRAM-BLOCK-ENCODING-DCP-PGM-GRAM-BLOCK-ENCODING-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-PGM-GRAM-BLOCK-ENCODING-LATEST-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-PGM-QSVT-DEGREE-OBSTRUCTION-DCP-PGM-QSVT-DEGREE-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-PGM-QSVT-DEGREE-OBSTRUCTION-LATEST-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-QUANTUM-RELATION-FIDELITY-DCP-QUANTUM-RELATION-FIDELITY-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-QUANTUM-WALK-SOURCE-AUDIT-DCP-QW-SOURCE-AUDIT-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-RANDOM-DESIGN-DECODER-DCP-RANDOM-DESIGN-DECODER-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-RANDOM-FOURIER-BRIDGE-DCP-RANDOM-FOURIER-BRIDGE-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-RECURRENCE-SCALING-DCP-RECURRENCE-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-RECURSIVE-DECODER-DCP-RECURSIVE-DECODER-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-REFERENCE-PROJECTION-AUDIT-DCP-REFERENCE-PROJECTION-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-SAMPLE-NATIVE-SIEVE-DCP-SAMPLE-NATIVE-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-SCHEDULE-SEARCH-DCP-SCHEDULE-SEARCH-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-SIGNED-PERMUTATION-TRANSPORT-DCP-SIGNED-PERMUTATION-TRANSPORT-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-SPARSE-FOURIER-TRANSFER-AUDIT-DCP-SPARSE-FOURIER-TRANSFER-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-ADAPTIVE-SPARSE-CHARACTER-OBSTRUCTION-DCP-SUBSET-SUM-SPARSE-CHARACTERS-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-ADAPTIVE-SPARSE-CHARACTER-OBSTRUCTION-SPARSE-CHARACTER-OBSTRUCTION-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-AFFINE-BDD-GEOMETRY-AFFINE-BDD-GEOMETRY-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-AFFINE-BDD-GEOMETRY-DCP-SUBSET-SUM-AFFINE-BDD-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-AFFINE-CVP-BASELINE-AFFINE-CVP-BASELINE-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-AFFINE-CVP-BASELINE-DCP-SUBSET-SUM-AFFINE-CVP-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-AFFINE-CVP-SCALING-AFFINE-CVP-SCALING-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-AFFINE-CVP-SCALING-DCP-SUBSET-SUM-AFFINE-CVP-SCALING-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-ALL-FIXED-MOMENT-THEOREM-ALL-FIXED-MOMENT-THEOREM-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-ALL-FIXED-MOMENT-THEOREM-DCP-SUBSET-SUM-FIXED-MOMENT-THEOREM-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-CARRY-ANF-DCP-SUBSET-SUM-CARRY-ANF-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-CARRY-RELATION-THEOREM-CARRY-RELATION-THEOREM-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-CARRY-RELATION-THEOREM-DCP-SUBSET-SUM-CARRY-RELATION-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-CARRY-SLICE-LATTICE-DCP-SUBSET-SUM-CARRY-SLICE-LATTICE-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-CONDITIONED-FIXED-MOMENT-TAIL-CONDITIONED-FIXED-MOMENT-TAIL-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-CONDITIONED-FIXED-MOMENT-TAIL-DCP-SUBSET-SUM-CONDITIONED-TAIL-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-CONDITIONED-QUOTIENT-DCP-SUBSET-SUM-CONDITIONED-QUOTIENT-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-EMBEDDING-VOLUME-THEOREM-DCP-SUBSET-SUM-EMBEDDING-VOLUME-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-EMBEDDING-VOLUME-THEOREM-EMBEDDING-VOLUME-THEOREM-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-FOURTH-MOMENT-OBSTRUCTION-DCP-SUBSET-SUM-FOURTH-MOMENT-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-GROWING-ORDER-CHAIN-THEOREM-DCP-SUBSET-SUM-GROWING-ORDER-CHAIN-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-GROWING-ORDER-CHAIN-THEOREM-LATEST-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-GROWING-ORDER-MOMENT-THEOREM-DCP-SUBSET-SUM-GROWING-ORDER-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-GROWING-ORDER-MOMENT-THEOREM-GROWING-ORDER-MOMENT-THEOREM-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-LATTICE-SEARCH-DCP-SUBSET-SUM-LATTICE-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-LOW-BIT-BDD-DCP-SUBSET-SUM-LOW-BIT-BDD-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-MARKER-COSET-THEOREM-DCP-SUBSET-SUM-MARKER-COSET-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-MARKER-COSET-THEOREM-MARKER-COSET-THEOREM-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-MEASUREMENT-AUDIT-DCP-SUBSET-SUM-MEASUREMENT-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-PRECONDITIONED-GEOMETRY-DCP-SUBSET-SUM-PRECONDITIONED-GEOMETRY-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-QTT-DENSE-CONTRACTION-DCP-SUBSET-SUM-QTT-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-QTT-DENSE-CONTRACTION-QTT-DENSE-CONTRACTION-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-QUENCHED-OCCUPANCY-THEOREM-DCP-QUENCHED-OCCUPANCY-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-QUENCHED-OCCUPANCY-THEOREM-LATEST-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-RANDOM-SELF-REDUCTION-DCP-SUBSET-SUM-RANDOM-SELF-REDUCTION-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-RESOURCE-FRONTIER-DCP-SUBSET-SUM-RESOURCE-FRONTIER-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-SHORT-RELATION-THEOREM-DCP-SUBSET-SUM-SHORT-RELATION-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-SHORT-RELATION-THEOREM-SHORT-RELATION-THEOREM-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-SIGNED-L2-OBSTRUCTION-DCP-SUBSET-SUM-SIGNED-L2-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-SIGNED-L2-OBSTRUCTION-SIGNED-L2-OBSTRUCTION-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-SMITH-MOMENT-SPECTRUM-SMITH-MOMENT-SPECTRUM-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-SMITH-TRANSFER-ORDER-SIX-DCP-SUBSET-SUM-SMITH-TRANSFER-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-SMITH-TRANSFER-ORDER-SIX-SMITH-TRANSFER-ORDER-SIX-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-SOLVER-SYNTHESIS-DCP-SUBSET-SUM-SOLVER-SYNTHESIS-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-TARGET-DISTRIBUTION-DCP-SUBSET-SUM-TARGET-DISTRIBUTION-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-SUBSET-SUM-TWO-ADIC-SEARCH-DCP-SUBSET-SUM-TWO-ADIC-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-SYMMETRIC-RELATION-LIFT-DCP-SYMMETRIC-RELATION-LIFT-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-TARGET-INDEXED-LOCALITY-DCP-TARGET-INDEXED-LOCALITY-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-TARGET-INDEXED-LOCALITY-LATEST-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-TWO-ADIC-FIBER-TRANSPORT-DCP-TWO-ADIC-FIBER-TRANSPORT-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-DCP-UNIFORM-SCHEDULE-FAMILY-DCP-UNIFORM-SCHEDULE-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-GOWERS-SPECTRUM-HIDDEN-SHIFT-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-PHASE-NATURALNESS-PHASE-NATURALNESS-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-PHASE-SIEVE-DCP-SAMPLE-NATIVE-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-PHASE-SIEVE-HIDDEN-SHIFT-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-PHASE-SIEVE-HIDDEN-SHIFT-QUERY-MODEL-GAP",
-      "DEQ-RESULT-EXP-DHS-QUERY-LOWER-BOUND-PROBES-QUERY-LOWER-BOUNDS-FALSIFIERS",
-      "DEQ-RESULT-EXP-DHS-TRACE-FUNCTION-SEARCH-TRACE-FUNCTION-SEARCH-FALSIFIERS",
-      "DEQ-RESULT-HIDDEN-SHIFT-WORKBENCH-LATEST-FALSIFIERS",
-      "DEQ-RESULT-HIDDEN-SHIFT-WORKBENCH-LATEST-QUERY-MODEL-GAP",
-      "DEQ-DCP-QUANTUM-RELATION-SOLVER-NEEDS-PAIRED-WORKSPACE-OVERLAP",
-      "DEQ-DCP-QUANTUM-RELATION-WORKSPACE-FIDELITY",
-      "DEQ-DCP-SYMMETRIC-RELATION-LIFT-SEPARATES-INTERFACE-FROM-SOLVER",
-      "CHARACTER-QUERY-ADVANTAGE-KILLED-LEGENDRE_SYMBOL",
-      "CHARACTER-QUERY-ADVANTAGE-KILLED-QUARTIC_CHARACTER",
-      "CLASSICAL-BASELINE-DEQUANTIZED-BENT_QUADRATIC_F2",
-      "CLASSICAL-BASELINE-DEQUANTIZED-FP2_QUADRATIC_FORM",
-      "CLASSICAL-BASELINE-DEQUANTIZED-KLOOSTERMAN_TRACE",
-      "REDUCTION-ROUTE-DHS-GOWERS-SIEVE-BLOCKED"
-    ],
-    "mutation_type": "dcp-recursive-decoder-certificate",
-    "new_hypothesis": "After recovering each low bit, apply the exact known phase correction to fresh independent DCP states, reduce the modulus, and recurse; charge independent sample batches and prove bounded total failure and lattice composition.",
-    "proof_debts_targeted": [
-      "DEBT-DHS-GOWERS-SIEVE-PO-DEQUANTIZATION",
-      "DEBT-DHS-GOWERS-SIEVE-PO-REDUCTION",
-      "DEBT-DHS-GOWERS-SIEVE-PO-FALSIFIERS"
-    ],
-    "proof_gate_eligible": false,
-    "proof_obligations_to_resolve": [
-      "Prove the low-bit phase correction and modulus-reduction identity for every k and hidden reflection.",
-      "Recover every reflection bit using only fresh independent state batches.",
-      "Bound total samples and failure probability across all recursive stages.",
-      "Compose the full recovered reflection with the exact lattice parameter map and decoder.",
-      "Prove robustness to arbitrary bad basis-state registers at per-register rate 1/log N."
-    ],
-    "rationale": "The candidate uses the correct independent-state interface and the executable recursive audit recorded 3 empirical full recovery or recoveries; the recurrence audit ran 960 finite scaling trials. The missing result is now a uniform endpoint-yield, total-failure, resource-recurrence, and lattice-composition theorem, not another finite decoder trace.",
-    "rejection_filters": [
-      "Reject if hidden-shift verification or phase correction queries an unavailable evaluator.",
-      "Reject if states consumed at one stage are silently reused at another.",
-      "Reject if small-modulus decoding is asserted without an explicit constant-size measurement.",
-      "Reject if empirical full recovery lacks a uniform asymptotic success proof."
-    ],
-    "required_modules": [
-      "symbolic adaptive bucket-occupancy recurrence certificate",
-      "stage-budget and total-failure theorem certificate",
-      "Kuperberg/Regev resource frontier comparator",
-      "adversarial f=1 bad-register robustness certificate",
-      "end-to-end lattice decoder composition audit"
-    ],
-    "source_candidate_id": "DHS-GOWERS-SIEVE",
-    "status": "proposal",
-    "theorem_contract_id": "THM-REGEV-USVP-TO-DCP-2003"
-  },
-  {
-    "created_at": "2026-09-09T20:43:41.798123+00:00",
-    "failed_interface_axes": [
-      "bad-register-robustness",
-      "full-family-coverage",
-      "parameter-map",
-      "success-and-decoder",
-      "uniform-instance-construction"
-    ],
-    "formalization_status": "proposal-only-unformalized",
-    "id": "MUTATE-DHS-GOWERS-SIEVE-GENERIC-DHSP-FAMILY-CERTIFICATE",
-    "linked_blockers": [
-      "AUDIT-ROUTE-DHS-GOWERS-SIEVE-USVP-VIA-DHSP:bad-register-robustness",
-      "AUDIT-ROUTE-DHS-GOWERS-SIEVE-USVP-VIA-DHSP:full-family-coverage",
-      "AUDIT-ROUTE-DHS-GOWERS-SIEVE-USVP-VIA-DHSP:parameter-map",
-      "AUDIT-ROUTE-DHS-GOWERS-SIEVE-USVP-VIA-DHSP:success-and-decoder",
-      "AUDIT-ROUTE-DHS-GOWERS-SIEVE-USVP-VIA-DHSP:uniform-instance-construction"
-    ],
-    "mutation_type": "generic-dhsp-family-certificate",
-    "new_hypothesis": "Attach a machine-checkable totality and composition certificate for every D_N state instance in the Regev contract; treat any uncovered instance as a counterexample, not as a restricted-family exception.",
-    "proof_debts_targeted": [
-      "AUDIT-ROUTE-DHS-GOWERS-SIEVE-USVP-VIA-DHSP:bad-register-robustness",
-      "AUDIT-ROUTE-DHS-GOWERS-SIEVE-USVP-VIA-DHSP:full-family-coverage",
-      "AUDIT-ROUTE-DHS-GOWERS-SIEVE-USVP-VIA-DHSP:parameter-map",
-      "AUDIT-ROUTE-DHS-GOWERS-SIEVE-USVP-VIA-DHSP:success-and-decoder",
-      "AUDIT-ROUTE-DHS-GOWERS-SIEVE-USVP-VIA-DHSP:uniform-instance-construction"
-    ],
-    "proof_gate_eligible": false,
-    "proof_obligations_to_resolve": [
-      "Prove every valid DCP sample stream is accepted by the mechanism without advice.",
-      "Prove all decoder stages terminate with bounded error across the full D_N promise.",
-      "Compose sample, precision, time, memory, and success bounds with the lattice reduction."
-    ],
-    "rationale": "The candidate now states the full DCP input scope and passes the state-access axis, but no formal certificate proves that its mechanism, parameter map, and decoder are total on that scope.",
-    "rejection_filters": [
-      "Reject if property tests find one valid DCP instance outside the mechanism or decoder domain.",
-      "Reject if full-family scope is asserted only in prose without a uniform construction proof.",
-      "Reject if a parity endpoint is substituted for the complete decoder."
-    ],
-    "required_modules": [
-      "DCP full-family property generator",
-      "state-interface composition checker",
-      "route-level counterexample search",
-      "uniform decoder and parameter-map proof artifact"
-    ],
-    "route_ids": [
-      "ROUTE-DHS-GOWERS-SIEVE-USVP-VIA-DHSP"
-    ],
-    "source_candidate_id": "DHS-GOWERS-SIEVE",
-    "status": "proposal",
-    "theorem_contract_id": "THM-REGEV-USVP-TO-DCP-2003",
-    "theorem_contract_ids": [
-      "THM-REGEV-USVP-TO-DCP-2003"
-    ]
-  },
-  {
-    "created_at": "2026-09-09T20:43:41.798123+00:00",
-    "failed_interface_axes": [
-      "full-family-coverage",
-      "parameter-map",
-      "success-and-decoder",
-      "uniform-instance-construction"
-    ],
-    "formalization_status": "proposal-only-unformalized",
-    "id": "MUTATE-HYP-LIT-COSET-OBSERVABLES-FULL-SOURCE-FAMILY-LIFT",
-    "linked_blockers": [
-      "AUDIT-ROUTE-HYP-LIT-COSET-OBSERVABLES-CODE-EQUIVALENCE-VIA-SYMMETRIC-HSP:full-family-coverage",
-      "AUDIT-ROUTE-HYP-LIT-COSET-OBSERVABLES-CODE-EQUIVALENCE-VIA-SYMMETRIC-HSP:parameter-map",
-      "AUDIT-ROUTE-HYP-LIT-COSET-OBSERVABLES-CODE-EQUIVALENCE-VIA-SYMMETRIC-HSP:success-and-decoder",
-      "AUDIT-ROUTE-HYP-LIT-COSET-OBSERVABLES-CODE-EQUIVALENCE-VIA-SYMMETRIC-HSP:uniform-instance-construction",
-      "AUDIT-ROUTE-HYP-LIT-COSET-OBSERVABLES-GRAPH-ISOMORPHISM-VIA-SYMMETRIC-HSP:full-family-coverage",
-      "AUDIT-ROUTE-HYP-LIT-COSET-OBSERVABLES-GRAPH-ISOMORPHISM-VIA-SYMMETRIC-HSP:parameter-map",
-      "AUDIT-ROUTE-HYP-LIT-COSET-OBSERVABLES-GRAPH-ISOMORPHISM-VIA-SYMMETRIC-HSP:success-and-decoder",
-      "AUDIT-ROUTE-HYP-LIT-COSET-OBSERVABLES-GRAPH-ISOMORPHISM-VIA-SYMMETRIC-HSP:uniform-instance-construction"
-    ],
-    "mutation_type": "full-source-family-lift",
-    "new_hypothesis": "Extend the mechanism and decoder to every source instance covered by the linked theorem contracts, or explicitly classify the restricted family as a testbed with no inherited source-problem speedup claim.",
-    "proof_debts_targeted": [
-      "AUDIT-ROUTE-HYP-LIT-COSET-OBSERVABLES-CODE-EQUIVALENCE-VIA-SYMMETRIC-HSP:full-family-coverage",
-      "AUDIT-ROUTE-HYP-LIT-COSET-OBSERVABLES-CODE-EQUIVALENCE-VIA-SYMMETRIC-HSP:parameter-map",
-      "AUDIT-ROUTE-HYP-LIT-COSET-OBSERVABLES-CODE-EQUIVALENCE-VIA-SYMMETRIC-HSP:success-and-decoder",
-      "AUDIT-ROUTE-HYP-LIT-COSET-OBSERVABLES-CODE-EQUIVALENCE-VIA-SYMMETRIC-HSP:uniform-instance-construction",
-      "AUDIT-ROUTE-HYP-LIT-COSET-OBSERVABLES-GRAPH-ISOMORPHISM-VIA-SYMMETRIC-HSP:full-family-coverage",
-      "AUDIT-ROUTE-HYP-LIT-COSET-OBSERVABLES-GRAPH-ISOMORPHISM-VIA-SYMMETRIC-HSP:parameter-map",
-      "AUDIT-ROUTE-HYP-LIT-COSET-OBSERVABLES-GRAPH-ISOMORPHISM-VIA-SYMMETRIC-HSP:success-and-decoder",
-      "AUDIT-ROUTE-HYP-LIT-COSET-OBSERVABLES-GRAPH-ISOMORPHISM-VIA-SYMMETRIC-HSP:uniform-instance-construction"
-    ],
-    "proof_gate_eligible": false,
-    "proof_obligations_to_resolve": [
-      "Cover every graph or code instance in each linked theorem contract.",
-      "Prove uniform source-to-state preparation, parameter preservation, and decoder composition.",
-      "Search automatically for valid source instances outside the claimed measurement family."
-    ],
-    "rationale": "The candidate studies selected graph or code families, but its upstream theorem contracts cover the full graph-isomorphism or code-equivalence promise. Restricted-family observables do not compose with those reductions.",
-    "rejection_filters": [
-      "Reject a claimed lift if a valid source instance is outside the measurement or decoder domain.",
-      "Reject if CFI, algebraic-code, cospectral, or other selected families are substituted for the full promise.",
-      "Reject if success is distinguishability without a composable source-problem decoder."
-    ],
-    "required_modules": [
-      "exact reduction contract audit",
-      "source-family counterexample generator",
-      "route-level property tests",
-      "uniform full-family proof artifact"
-    ],
-    "route_ids": [
-      "ROUTE-HYP-LIT-COSET-OBSERVABLES-CODE-EQUIVALENCE-VIA-SYMMETRIC-HSP",
-      "ROUTE-HYP-LIT-COSET-OBSERVABLES-GRAPH-ISOMORPHISM-VIA-SYMMETRIC-HSP"
-    ],
-    "source_candidate_id": "HYP-LIT-COSET-OBSERVABLES",
-    "status": "proposal",
-    "theorem_contract_id": "CONSTRUCTION-CODE-EQUIVALENCE-TO-NONABELIAN-HSP",
-    "theorem_contract_ids": [
-      "CONSTRUCTION-CODE-EQUIVALENCE-TO-NONABELIAN-HSP",
-      "CONSTRUCTION-GI-TO-HIDDEN-INVOLUTION-HSP"
-    ]
-  },
-  {
-    "created_at": "2026-09-09T20:43:41.764339+00:00",
+    "created_at": "2026-09-10T12:05:16.854477+00:00",
     "id": "MUTATE-HYP-LIT-COSET-OBSERVABLES-WL-HARD-COSET",
     "linked_blockers": [
       "DEQ-RESULT-EXP-HYP-COSET-NOGO-MAP-COSET-NEGATIVE-FAMILIES",
@@ -2314,7 +1802,59 @@
     "status": "proposal"
   },
   {
-    "created_at": "2026-09-09T20:43:41.770408+00:00",
+    "created_at": "2026-09-10T12:05:16.858121+00:00",
+    "formalization_status": "proposal-only-unformalized",
+    "id": "MUTATE-HYP-LIT-HIDDEN-SHIFT-SIEVE-DCP-RECURSIVE-DECODER-CERTIFICATE",
+    "linked_blockers": [
+      "DEQ-RESULT-EXP-HYP-HS-LIT-SPECTRUM-HIDDEN-SHIFT-HIGH-RISK",
+      "DEQ-RESULT-EXP-HYP-HS-SIEVE-HIDDEN-SHIFT-HIGH-RISK",
+      "DEQ-RESULT-EXP-HYP-HS-SIEVE-HIDDEN-SHIFT-NEGATIVE-FAMILIES",
+      "DEQ-RESULT-EXP-HYP-HS-LIT-SPECTRUM-HIDDEN-SHIFT-FALSIFIERS",
+      "DEQ-RESULT-EXP-HYP-HS-SIEVE-DCP-SAMPLE-NATIVE-FALSIFIERS",
+      "DEQ-RESULT-EXP-HYP-HS-SIEVE-HIDDEN-SHIFT-FALSIFIERS",
+      "DEQ-RESULT-EXP-HYP-HS-SIEVE-HIDDEN-SHIFT-QUERY-MODEL-GAP",
+      "CHARACTER-QUERY-ADVANTAGE-KILLED-LEGENDRE_SYMBOL",
+      "CHARACTER-QUERY-ADVANTAGE-KILLED-QUARTIC_CHARACTER",
+      "CLASSICAL-BASELINE-DEQUANTIZED-BENT_QUADRATIC_F2",
+      "CLASSICAL-BASELINE-DEQUANTIZED-FP2_QUADRATIC_FORM",
+      "CLASSICAL-BASELINE-DEQUANTIZED-KLOOSTERMAN_TRACE",
+      "REDUCTION-ROUTE-HYP-LIT-HIDDEN-SHIFT-SIEVE-BLOCKED"
+    ],
+    "mutation_type": "dcp-recursive-decoder-certificate",
+    "new_hypothesis": "After recovering each low bit, apply the exact known phase correction to fresh independent DCP states, reduce the modulus, and recurse; charge independent sample batches and prove bounded total failure and lattice composition.",
+    "proof_debts_targeted": [
+      "DEBT-HYP-LIT-HIDDEN-SHIFT-SIEVE-PO-DEQUANTIZATION",
+      "DEBT-HYP-LIT-HIDDEN-SHIFT-SIEVE-PO-REDUCTION",
+      "DEBT-HYP-LIT-HIDDEN-SHIFT-SIEVE-PO-FALSIFIERS"
+    ],
+    "proof_gate_eligible": false,
+    "proof_obligations_to_resolve": [
+      "Prove the low-bit phase correction and modulus-reduction identity for every k and hidden reflection.",
+      "Recover every reflection bit using only fresh independent state batches.",
+      "Bound total samples and failure probability across all recursive stages.",
+      "Compose the full recovered reflection with the exact lattice parameter map and decoder.",
+      "Prove robustness to arbitrary bad basis-state registers at per-register rate 1/log N."
+    ],
+    "rationale": "The candidate uses the correct independent-state interface and the executable recursive audit recorded 3 empirical full recovery or recoveries; the recurrence audit ran 960 finite scaling trials. The missing result is now a uniform endpoint-yield, total-failure, resource-recurrence, and lattice-composition theorem, not another finite decoder trace.",
+    "rejection_filters": [
+      "Reject if hidden-shift verification or phase correction queries an unavailable evaluator.",
+      "Reject if states consumed at one stage are silently reused at another.",
+      "Reject if small-modulus decoding is asserted without an explicit constant-size measurement.",
+      "Reject if empirical full recovery lacks a uniform asymptotic success proof."
+    ],
+    "required_modules": [
+      "symbolic adaptive bucket-occupancy recurrence certificate",
+      "stage-budget and total-failure theorem certificate",
+      "Kuperberg/Regev resource frontier comparator",
+      "adversarial f=1 bad-register robustness certificate",
+      "end-to-end lattice decoder composition audit"
+    ],
+    "source_candidate_id": "HYP-LIT-HIDDEN-SHIFT-SIEVE",
+    "status": "proposal",
+    "theorem_contract_id": "THM-REGEV-USVP-TO-DCP-2003"
+  },
+  {
+    "created_at": "2026-09-10T12:05:16.860561+00:00",
     "formalization_status": "proposal-only-unformalized",
     "id": "MUTATE-HYP-LIT-HIDDEN-SHIFT-SIEVE-DCP-BAD-REGISTER-ROBUST-ARCHITECTURE",
     "linked_blockers": [
@@ -2364,7 +1904,7 @@
     "theorem_contract_id": "THM-REGEV-USVP-TO-DCP-2003"
   },
   {
-    "created_at": "2026-09-09T20:43:41.783878+00:00",
+    "created_at": "2026-09-10T12:05:16.873815+00:00",
     "formalization_status": "proposal-only-unformalized",
     "id": "MUTATE-HYP-LIT-HIDDEN-SHIFT-SIEVE-DCP-RANDOM-LABEL-POLYNOMIAL-DECODER",
     "linked_blockers": [
@@ -2492,59 +2032,311 @@
     "theorem_contract_id": "THM-REGEV-USVP-TO-DCP-2003"
   },
   {
-    "created_at": "2026-09-09T20:43:41.767995+00:00",
-    "formalization_status": "proposal-only-unformalized",
-    "id": "MUTATE-HYP-LIT-HIDDEN-SHIFT-SIEVE-DCP-RECURSIVE-DECODER-CERTIFICATE",
+    "created_at": "2026-09-10T12:05:16.882110+00:00",
+    "id": "MUTATE-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
     "linked_blockers": [
-      "DEQ-RESULT-EXP-HYP-HS-LIT-SPECTRUM-HIDDEN-SHIFT-HIGH-RISK",
-      "DEQ-RESULT-EXP-HYP-HS-SIEVE-HIDDEN-SHIFT-HIGH-RISK",
-      "DEQ-RESULT-EXP-HYP-HS-SIEVE-HIDDEN-SHIFT-NEGATIVE-FAMILIES",
-      "DEQ-RESULT-EXP-HYP-HS-LIT-SPECTRUM-HIDDEN-SHIFT-FALSIFIERS",
-      "DEQ-RESULT-EXP-HYP-HS-SIEVE-DCP-SAMPLE-NATIVE-FALSIFIERS",
-      "DEQ-RESULT-EXP-HYP-HS-SIEVE-HIDDEN-SHIFT-FALSIFIERS",
-      "DEQ-RESULT-EXP-HYP-HS-SIEVE-HIDDEN-SHIFT-QUERY-MODEL-GAP",
-      "CHARACTER-QUERY-ADVANTAGE-KILLED-LEGENDRE_SYMBOL",
-      "CHARACTER-QUERY-ADVANTAGE-KILLED-QUARTIC_CHARACTER",
-      "CLASSICAL-BASELINE-DEQUANTIZED-BENT_QUADRATIC_F2",
-      "CLASSICAL-BASELINE-DEQUANTIZED-FP2_QUADRATIC_FORM",
-      "CLASSICAL-BASELINE-DEQUANTIZED-KLOOSTERMAN_TRACE",
-      "REDUCTION-ROUTE-HYP-LIT-HIDDEN-SHIFT-SIEVE-BLOCKED"
+      "DEQ-CODE-CANONICALIZATION-REJECTIONS",
+      "DEQ-CODE-STRUCTURAL-INVARIANT-REJECTIONS",
+      "DEQ-CODE-INFORMATION-SET-CANONICALIZATION-REJECTIONS",
+      "DEQ-CODE-TUPLE-PROFILE-DEQUANTIZED",
+      "DEQ-CODE-FAMILY-SEARCH-CLASSICAL-REJECTION",
+      "code-equivalence-invariant-collapse"
     ],
-    "mutation_type": "dcp-recursive-decoder-certificate",
-    "new_hypothesis": "After recovering each low bit, apply the exact known phase correction to fresh independent DCP states, reduce the modulus, and recurse; charge independent sample batches and prove bounded total failure and lattice composition.",
+    "mutation_type": "canonicalization-resistant-code-equivalence",
+    "new_hypothesis": "Search structured code-equivalence families whose generator matrices have deliberately balanced coordinate and coordinate-tuple profiles, large automorphism-aware profile buckets, and algebraic construction metadata, then require survival against tuple-profile baselines and profile-pruned canonical forms before any coset observable is considered. Require either a proved growing-hull family that survives the shortening reduction or an explicit statement that the target is GI itself.",
     "proof_debts_targeted": [
-      "DEBT-HYP-LIT-HIDDEN-SHIFT-SIEVE-PO-DEQUANTIZATION",
-      "DEBT-HYP-LIT-HIDDEN-SHIFT-SIEVE-PO-REDUCTION",
-      "DEBT-HYP-LIT-HIDDEN-SHIFT-SIEVE-PO-FALSIFIERS"
+      "DEBT-CODE-COSET-COLLECTIVE-PO-DEQUANTIZATION",
+      "DEBT-CODE-COSET-COLLECTIVE-PO-REDUCTION",
+      "DEBT-CODE-COSET-COLLECTIVE-PO-FALSIFIERS"
+    ],
+    "proof_obligations_to_resolve": [
+      "Generated rows survive support splitting, dual/hull, puncturing, shortening, information-set canonicalization, coordinate profile partitions, higher-order tuple profiles, and exact profile-pruned canonical forms.",
+      "Rows have an asymptotic algebraic family description, not random tiny collisions.",
+      "Classical code-equivalence canonicalization and automorphism baselines are legal and fail at tested scales.",
+      "The exact family has a proved growing-hull law or the proposal is classified as a weighted-GI route rather than independent code hardness.",
+      "Any collective coset observable is not a restatement of support splitting, weight enumerators, or canonical labels."
+    ],
+    "rationale": "Current code-equivalence rows collapse under support-splitting, higher-order tuple profiles, or profile-pruned canonicalization. Latest structural invariants rejected 5 row(s), information-set canonicalization rejected 5 row(s), profile canonicalization rejected 5 row(s), and tuple-profile checks rejected or trivialized 17 row/collision(s), so new search must target algebraic families with balanced coordinate-tuple profiles and unresolved canonicalization only as proof debt. The hull audit finitely resolved 10 trivial-hull pair set(s) through weighted GI, so small-hull rows cannot be recycled as code-native evidence.",
+    "rejection_filters": [
+      "Reject if coordinate refinement profiles differ.",
+      "Reject if support splitting, dual/hull, puncturing, or shortening profiles differ.",
+      "Reject independent code-native claims when the hull is trivial or source-linked shortening leaves bounded hull parameter.",
+      "Reject if information-set canonical signatures differ.",
+      "Reject if 2- or 3-coordinate tuple profiles differ.",
+      "Reject if tuple-profile collisions are equivalent controls.",
+      "Reject if exact profile-pruned canonical forms differ under the assignment cap.",
+      "Reject if hardness appears only because canonicalization exceeded a tiny artificial cap.",
+      "Reject if the proposed observable matches a known code invariant, graphlet/tensor shadow, or individualized rooted tensor shadow."
+    ],
+    "required_modules": [
+      "profile-pruned canonicalization baseline",
+      "structural invariant baseline for support splitting, dual/hull, puncturing, and shortening profiles",
+      "information-set canonicalization baseline",
+      "higher-order coordinate tuple-profile baseline",
+      "support-splitting and dual/hull invariant suite",
+      "hull-projector and hull-parameterized shortening audit",
+      "algebraic/quasi-cyclic code-family generator",
+      "automorphism-aware exact small-instance certificate",
+      "tensor-observable classical-shadow audit",
+      "individualized rooted tensor shadow audit"
+    ],
+    "source_candidate_id": "CODE-COSET-COLLECTIVE",
+    "status": "proposal"
+  },
+  {
+    "created_at": "2026-09-10T12:05:16.882110+00:00",
+    "id": "MUTATE-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
+    "linked_blockers": [
+      "DEQ-CFI-PARITY-SOLVER-PROMISED-GADGET",
+      "DEQ-CFI-STRUCTURAL-DECODER-PROMISED-GADGET",
+      "DEQ-CFI-IRREGULAR-STRUCTURAL-DECODER-PROMISED-GADGET",
+      "DEQ-CFI-BIPARTITE-STRUCTURAL-DECODER-PROMISED-GADGET",
+      "coset-classical-invariant-collapse"
+    ],
+    "mutation_type": "cfi-promise-escape-coset",
+    "new_hypothesis": "Replace promised CFI rows with graph/coset families where structural gadget reconstruction is not available from the public adjacency matrix, and require an explicit argument that every CFI decoder is illegal or fails before interpreting any collective observable signal.",
+    "proof_debts_targeted": [
+      "DEBT-CODE-COSET-COLLECTIVE-PO-DEQUANTIZATION",
+      "DEBT-CODE-COSET-COLLECTIVE-PO-REDUCTION",
+      "DEBT-CODE-COSET-COLLECTIVE-PO-FALSIFIERS"
+    ],
+    "proof_obligations_to_resolve": [
+      "Input model states whether CFI gadget decomposition is public, reconstructible, or hidden.",
+      "Complete, regular, degree-separated irregular, and bipartition-based structural CFI parity decoders fail or are illegal for the generated family.",
+      "Observable exceeds WL/spectrum/walk/tensor classical shadows.",
+      "Observable exceeds individualized rooted tensor shadows."
+    ],
+    "rationale": "Complete, regular, degree-separated irregular, and bipartition structural CFI decoders recovered 16 row(s). Future CFI/coset work must either make the gadget promise unavailable by a natural input model, or move beyond CFI-style gadgets whose bipartition, degree classes, and edge-copy signatures expose the twist parity.",
+    "rejection_filters": [
+      "Reject if complete, regular, degree-separated irregular, or bipartition-based structural CFI decoders recover the twist.",
+      "Reject if hidden gadget structure is achieved by artificial random relabeling without an input-model reason.",
+      "Reject if higher-k WL or graphlet/tensor baselines separate the row.",
+      "Reject if individualized rooted tensor signatures separate the row."
+    ],
+    "required_modules": [
+      "structural CFI recognizer/decoder suite",
+      "CFI-promise-removal input-model ledger",
+      "degree-separated irregular CFI decoder",
+      "bipartition-based CFI decoder",
+      "CFI-like graph product or code-derived graph generator",
+      "higher-k WL scaling baseline",
+      "collective observable classical-shadow checker",
+      "individualized rooted tensor shadow checker"
+    ],
+    "source_candidate_id": "CODE-COSET-COLLECTIVE",
+    "status": "proposal"
+  },
+  {
+    "created_at": "2026-09-10T12:05:16.882110+00:00",
+    "id": "MUTATE-CODE-COSET-COLLECTIVE-TRIAGE-ESCAPE",
+    "linked_blockers": [
+      "DEQ-COSET-FRONTIER-TRIAGE-REJECTIONS",
+      "coset-classical-invariant-collapse"
+    ],
+    "mutation_type": "coset-frontier-triage-escape",
+    "new_hypothesis": "Search for natural graph/coset or code-derived families that first pass the aggregate triage gate: no WL, graphlet, individualization, rooted tensor, structural CFI, or canonicalization rejection at the row level before any quantum measurement is designed.",
+    "proof_debts_targeted": [
+      "DEBT-CODE-COSET-COLLECTIVE-PO-DEQUANTIZATION",
+      "DEBT-CODE-COSET-COLLECTIVE-PO-REDUCTION",
+      "DEBT-CODE-COSET-COLLECTIVE-PO-FALSIFIERS"
+    ],
+    "proof_obligations_to_resolve": [
+      "Generated row family has an asymptotic natural construction, not relabeled copies of decoded CFI gadgets.",
+      "Rows pass the aggregate coset frontier triage gate before measurement design begins.",
+      "Any reduction from code/graph family to nonabelian HSP preserves hardness assumptions and input-model legality.",
+      "Surviving rows have explicit lower-bound or dequantization obligations attached before positive claims."
+    ],
+    "rationale": "Coset frontier triage rejected 18 current graph/coset row(s) and found no survivor rows. More collective-observable search on these rows is wasted effort.",
+    "rejection_filters": [
+      "Reject if coset_frontier_triage.py classifies every generated row as rejected.",
+      "Reject if Godsil-McKay switched rows collapse under WL, graphlet, individualization, or rooted tensor baselines.",
+      "Reject if survival only reflects skipped tuple caps without an implicit classical baseline.",
+      "Reject if the construction hides a public gadget decomposition by random relabeling.",
+      "Reject if no literature-linked reduction or natural problem family is attached."
+    ],
+    "required_modules": [
+      "natural graph/coset family generator",
+      "Godsil-McKay switching search as a cospectral baseline generator",
+      "coset frontier triage gate",
+      "structural CFI recognizer/decoder suite",
+      "individualized rooted tensor shadow checker",
+      "code-to-graph reduction ledger",
+      "measurement-design queue fed only by triage survivors"
+    ],
+    "source_candidate_id": "CODE-COSET-COLLECTIVE",
+    "status": "proposal"
+  },
+  {
+    "created_at": "2026-09-10T12:05:16.888765+00:00",
+    "failed_interface_axes": [
+      "full-family-coverage",
+      "parameter-map",
+      "success-and-decoder",
+      "uniform-instance-construction"
+    ],
+    "formalization_status": "proposal-only-unformalized",
+    "id": "MUTATE-CODE-COSET-COLLECTIVE-FULL-SOURCE-FAMILY-LIFT",
+    "linked_blockers": [
+      "AUDIT-ROUTE-CODE-COSET-COLLECTIVE-CODE-EQUIVALENCE-VIA-SYMMETRIC-HSP:full-family-coverage",
+      "AUDIT-ROUTE-CODE-COSET-COLLECTIVE-CODE-EQUIVALENCE-VIA-SYMMETRIC-HSP:parameter-map",
+      "AUDIT-ROUTE-CODE-COSET-COLLECTIVE-CODE-EQUIVALENCE-VIA-SYMMETRIC-HSP:success-and-decoder",
+      "AUDIT-ROUTE-CODE-COSET-COLLECTIVE-CODE-EQUIVALENCE-VIA-SYMMETRIC-HSP:uniform-instance-construction"
+    ],
+    "mutation_type": "full-source-family-lift",
+    "new_hypothesis": "Extend the mechanism and decoder to every source instance covered by the linked theorem contracts, or explicitly classify the restricted family as a testbed with no inherited source-problem speedup claim.",
+    "proof_debts_targeted": [
+      "AUDIT-ROUTE-CODE-COSET-COLLECTIVE-CODE-EQUIVALENCE-VIA-SYMMETRIC-HSP:full-family-coverage",
+      "AUDIT-ROUTE-CODE-COSET-COLLECTIVE-CODE-EQUIVALENCE-VIA-SYMMETRIC-HSP:parameter-map",
+      "AUDIT-ROUTE-CODE-COSET-COLLECTIVE-CODE-EQUIVALENCE-VIA-SYMMETRIC-HSP:success-and-decoder",
+      "AUDIT-ROUTE-CODE-COSET-COLLECTIVE-CODE-EQUIVALENCE-VIA-SYMMETRIC-HSP:uniform-instance-construction"
     ],
     "proof_gate_eligible": false,
     "proof_obligations_to_resolve": [
-      "Prove the low-bit phase correction and modulus-reduction identity for every k and hidden reflection.",
-      "Recover every reflection bit using only fresh independent state batches.",
-      "Bound total samples and failure probability across all recursive stages.",
-      "Compose the full recovered reflection with the exact lattice parameter map and decoder.",
-      "Prove robustness to arbitrary bad basis-state registers at per-register rate 1/log N."
+      "Cover every graph or code instance in each linked theorem contract.",
+      "Prove uniform source-to-state preparation, parameter preservation, and decoder composition.",
+      "Search automatically for valid source instances outside the claimed measurement family."
     ],
-    "rationale": "The candidate uses the correct independent-state interface and the executable recursive audit recorded 3 empirical full recovery or recoveries; the recurrence audit ran 960 finite scaling trials. The missing result is now a uniform endpoint-yield, total-failure, resource-recurrence, and lattice-composition theorem, not another finite decoder trace.",
+    "rationale": "The candidate studies selected graph or code families, but its upstream theorem contracts cover the full graph-isomorphism or code-equivalence promise. Restricted-family observables do not compose with those reductions.",
     "rejection_filters": [
-      "Reject if hidden-shift verification or phase correction queries an unavailable evaluator.",
-      "Reject if states consumed at one stage are silently reused at another.",
-      "Reject if small-modulus decoding is asserted without an explicit constant-size measurement.",
-      "Reject if empirical full recovery lacks a uniform asymptotic success proof."
+      "Reject a claimed lift if a valid source instance is outside the measurement or decoder domain.",
+      "Reject if CFI, algebraic-code, cospectral, or other selected families are substituted for the full promise.",
+      "Reject if success is distinguishability without a composable source-problem decoder."
     ],
     "required_modules": [
-      "symbolic adaptive bucket-occupancy recurrence certificate",
-      "stage-budget and total-failure theorem certificate",
-      "Kuperberg/Regev resource frontier comparator",
-      "adversarial f=1 bad-register robustness certificate",
-      "end-to-end lattice decoder composition audit"
+      "exact reduction contract audit",
+      "source-family counterexample generator",
+      "route-level property tests",
+      "uniform full-family proof artifact"
     ],
-    "source_candidate_id": "HYP-LIT-HIDDEN-SHIFT-SIEVE",
+    "route_ids": [
+      "ROUTE-CODE-COSET-COLLECTIVE-CODE-EQUIVALENCE-VIA-SYMMETRIC-HSP"
+    ],
+    "source_candidate_id": "CODE-COSET-COLLECTIVE",
     "status": "proposal",
-    "theorem_contract_id": "THM-REGEV-USVP-TO-DCP-2003"
+    "theorem_contract_id": "CONSTRUCTION-CODE-EQUIVALENCE-TO-NONABELIAN-HSP",
+    "theorem_contract_ids": [
+      "CONSTRUCTION-CODE-EQUIVALENCE-TO-NONABELIAN-HSP"
+    ]
   },
   {
-    "created_at": "2026-09-09T20:43:41.798123+00:00",
+    "created_at": "2026-09-10T12:05:16.888765+00:00",
+    "failed_interface_axes": [
+      "bad-register-robustness",
+      "full-family-coverage",
+      "parameter-map",
+      "success-and-decoder",
+      "uniform-instance-construction"
+    ],
+    "formalization_status": "proposal-only-unformalized",
+    "id": "MUTATE-DHS-GOWERS-SIEVE-GENERIC-DHSP-FAMILY-CERTIFICATE",
+    "linked_blockers": [
+      "AUDIT-ROUTE-DHS-GOWERS-SIEVE-USVP-VIA-DHSP:bad-register-robustness",
+      "AUDIT-ROUTE-DHS-GOWERS-SIEVE-USVP-VIA-DHSP:full-family-coverage",
+      "AUDIT-ROUTE-DHS-GOWERS-SIEVE-USVP-VIA-DHSP:parameter-map",
+      "AUDIT-ROUTE-DHS-GOWERS-SIEVE-USVP-VIA-DHSP:success-and-decoder",
+      "AUDIT-ROUTE-DHS-GOWERS-SIEVE-USVP-VIA-DHSP:uniform-instance-construction"
+    ],
+    "mutation_type": "generic-dhsp-family-certificate",
+    "new_hypothesis": "Attach a machine-checkable totality and composition certificate for every D_N state instance in the Regev contract; treat any uncovered instance as a counterexample, not as a restricted-family exception.",
+    "proof_debts_targeted": [
+      "AUDIT-ROUTE-DHS-GOWERS-SIEVE-USVP-VIA-DHSP:bad-register-robustness",
+      "AUDIT-ROUTE-DHS-GOWERS-SIEVE-USVP-VIA-DHSP:full-family-coverage",
+      "AUDIT-ROUTE-DHS-GOWERS-SIEVE-USVP-VIA-DHSP:parameter-map",
+      "AUDIT-ROUTE-DHS-GOWERS-SIEVE-USVP-VIA-DHSP:success-and-decoder",
+      "AUDIT-ROUTE-DHS-GOWERS-SIEVE-USVP-VIA-DHSP:uniform-instance-construction"
+    ],
+    "proof_gate_eligible": false,
+    "proof_obligations_to_resolve": [
+      "Prove every valid DCP sample stream is accepted by the mechanism without advice.",
+      "Prove all decoder stages terminate with bounded error across the full D_N promise.",
+      "Compose sample, precision, time, memory, and success bounds with the lattice reduction."
+    ],
+    "rationale": "The candidate now states the full DCP input scope and passes the state-access axis, but no formal certificate proves that its mechanism, parameter map, and decoder are total on that scope.",
+    "rejection_filters": [
+      "Reject if property tests find one valid DCP instance outside the mechanism or decoder domain.",
+      "Reject if full-family scope is asserted only in prose without a uniform construction proof.",
+      "Reject if a parity endpoint is substituted for the complete decoder."
+    ],
+    "required_modules": [
+      "DCP full-family property generator",
+      "state-interface composition checker",
+      "route-level counterexample search",
+      "uniform decoder and parameter-map proof artifact"
+    ],
+    "route_ids": [
+      "ROUTE-DHS-GOWERS-SIEVE-USVP-VIA-DHSP"
+    ],
+    "source_candidate_id": "DHS-GOWERS-SIEVE",
+    "status": "proposal",
+    "theorem_contract_id": "THM-REGEV-USVP-TO-DCP-2003",
+    "theorem_contract_ids": [
+      "THM-REGEV-USVP-TO-DCP-2003"
+    ]
+  },
+  {
+    "created_at": "2026-09-10T12:05:16.888765+00:00",
+    "failed_interface_axes": [
+      "full-family-coverage",
+      "parameter-map",
+      "success-and-decoder",
+      "uniform-instance-construction"
+    ],
+    "formalization_status": "proposal-only-unformalized",
+    "id": "MUTATE-HYP-LIT-COSET-OBSERVABLES-FULL-SOURCE-FAMILY-LIFT",
+    "linked_blockers": [
+      "AUDIT-ROUTE-HYP-LIT-COSET-OBSERVABLES-CODE-EQUIVALENCE-VIA-SYMMETRIC-HSP:full-family-coverage",
+      "AUDIT-ROUTE-HYP-LIT-COSET-OBSERVABLES-CODE-EQUIVALENCE-VIA-SYMMETRIC-HSP:parameter-map",
+      "AUDIT-ROUTE-HYP-LIT-COSET-OBSERVABLES-CODE-EQUIVALENCE-VIA-SYMMETRIC-HSP:success-and-decoder",
+      "AUDIT-ROUTE-HYP-LIT-COSET-OBSERVABLES-CODE-EQUIVALENCE-VIA-SYMMETRIC-HSP:uniform-instance-construction",
+      "AUDIT-ROUTE-HYP-LIT-COSET-OBSERVABLES-GRAPH-ISOMORPHISM-VIA-SYMMETRIC-HSP:full-family-coverage",
+      "AUDIT-ROUTE-HYP-LIT-COSET-OBSERVABLES-GRAPH-ISOMORPHISM-VIA-SYMMETRIC-HSP:parameter-map",
+      "AUDIT-ROUTE-HYP-LIT-COSET-OBSERVABLES-GRAPH-ISOMORPHISM-VIA-SYMMETRIC-HSP:success-and-decoder",
+      "AUDIT-ROUTE-HYP-LIT-COSET-OBSERVABLES-GRAPH-ISOMORPHISM-VIA-SYMMETRIC-HSP:uniform-instance-construction"
+    ],
+    "mutation_type": "full-source-family-lift",
+    "new_hypothesis": "Extend the mechanism and decoder to every source instance covered by the linked theorem contracts, or explicitly classify the restricted family as a testbed with no inherited source-problem speedup claim.",
+    "proof_debts_targeted": [
+      "AUDIT-ROUTE-HYP-LIT-COSET-OBSERVABLES-CODE-EQUIVALENCE-VIA-SYMMETRIC-HSP:full-family-coverage",
+      "AUDIT-ROUTE-HYP-LIT-COSET-OBSERVABLES-CODE-EQUIVALENCE-VIA-SYMMETRIC-HSP:parameter-map",
+      "AUDIT-ROUTE-HYP-LIT-COSET-OBSERVABLES-CODE-EQUIVALENCE-VIA-SYMMETRIC-HSP:success-and-decoder",
+      "AUDIT-ROUTE-HYP-LIT-COSET-OBSERVABLES-CODE-EQUIVALENCE-VIA-SYMMETRIC-HSP:uniform-instance-construction",
+      "AUDIT-ROUTE-HYP-LIT-COSET-OBSERVABLES-GRAPH-ISOMORPHISM-VIA-SYMMETRIC-HSP:full-family-coverage",
+      "AUDIT-ROUTE-HYP-LIT-COSET-OBSERVABLES-GRAPH-ISOMORPHISM-VIA-SYMMETRIC-HSP:parameter-map",
+      "AUDIT-ROUTE-HYP-LIT-COSET-OBSERVABLES-GRAPH-ISOMORPHISM-VIA-SYMMETRIC-HSP:success-and-decoder",
+      "AUDIT-ROUTE-HYP-LIT-COSET-OBSERVABLES-GRAPH-ISOMORPHISM-VIA-SYMMETRIC-HSP:uniform-instance-construction"
+    ],
+    "proof_gate_eligible": false,
+    "proof_obligations_to_resolve": [
+      "Cover every graph or code instance in each linked theorem contract.",
+      "Prove uniform source-to-state preparation, parameter preservation, and decoder composition.",
+      "Search automatically for valid source instances outside the claimed measurement family."
+    ],
+    "rationale": "The candidate studies selected graph or code families, but its upstream theorem contracts cover the full graph-isomorphism or code-equivalence promise. Restricted-family observables do not compose with those reductions.",
+    "rejection_filters": [
+      "Reject a claimed lift if a valid source instance is outside the measurement or decoder domain.",
+      "Reject if CFI, algebraic-code, cospectral, or other selected families are substituted for the full promise.",
+      "Reject if success is distinguishability without a composable source-problem decoder."
+    ],
+    "required_modules": [
+      "exact reduction contract audit",
+      "source-family counterexample generator",
+      "route-level property tests",
+      "uniform full-family proof artifact"
+    ],
+    "route_ids": [
+      "ROUTE-HYP-LIT-COSET-OBSERVABLES-CODE-EQUIVALENCE-VIA-SYMMETRIC-HSP",
+      "ROUTE-HYP-LIT-COSET-OBSERVABLES-GRAPH-ISOMORPHISM-VIA-SYMMETRIC-HSP"
+    ],
+    "source_candidate_id": "HYP-LIT-COSET-OBSERVABLES",
+    "status": "proposal",
+    "theorem_contract_id": "CONSTRUCTION-CODE-EQUIVALENCE-TO-NONABELIAN-HSP",
+    "theorem_contract_ids": [
+      "CONSTRUCTION-CODE-EQUIVALENCE-TO-NONABELIAN-HSP",
+      "CONSTRUCTION-GI-TO-HIDDEN-INVOLUTION-HSP"
+    ]
+  },
+  {
+    "created_at": "2026-09-10T12:05:16.888765+00:00",
     "failed_interface_axes": [
       "bad-register-robustness",
       "full-family-coverage",
@@ -2596,6 +2388,222 @@
     "theorem_contract_id": "THM-REGEV-USVP-TO-DCP-2003",
     "theorem_contract_ids": [
       "THM-REGEV-USVP-TO-DCP-2003"
+    ]
+  },
+  {
+    "copy_budget_kind": "binary-class-mixture-chi-square",
+    "created_at": "2026-09-10T12:05:16.888884+00:00",
+    "formalization_status": "typed-architecture-proof-capabilities-missing",
+    "id": "MUTATE-CODE-COSET-COLLECTIVE-CLEAN-SUBSET-BINARY-DETECTION",
+    "linked_blockers": [
+      "DEQ-CODE-COSET-COLLECTIVE-CLEAN-GPE-INSTRUMENT-CONTRACT",
+      "DEQ-CODE-COSET-COLLECTIVE-FINITE-CARRIER-LATENT-IRREP-MODEL",
+      "DEQ-CODE-COSET-COLLECTIVE-CARRIER-BINARY-TASK-SCOPE"
+    ],
+    "minimum_copy_budget_rule": "For equal-prior Bayes advantage epsilon: k >= ceil(log2(1+16 epsilon^2 |C|)). The known support-rank bound T >= max(0,1-|C|/2^k) establishes information availability, not an efficient measurement.",
+    "mutation_type": "typed-recoupling-mechanism",
+    "new_hypothesis": "Growing-copy binary detection through clean subset labels",
+    "priority_score": 110,
+    "proof_debts_targeted": [
+      "CAP-BINARY-PROMISE-PRESERVING-REDUCTION",
+      "CAP-GROWING-COPY-BINARY-OUTCOME-CLASSIFIER",
+      "CAP-SOURCE-WEIGHTED-GROWING-COPY-BINARY-EFFECT"
+    ],
+    "proof_gate_eligible": false,
+    "proof_obligations_to_resolve": [
+      "Supply a uniform polynomial-length coherent or adaptive subset program; do not enumerate all 2^k subsets or complete multiplicity bases.",
+      "Prove constant source-weighted null-versus-class trace distance for its actual outcome law, not only an optimal residual measurement.",
+      "Use clean GPE compute-copy-uncompute with charged error; discarding Fourier rows changes the instrument even when label probabilities agree.",
+      "Construct a growing-copy outcome classifier. The exact polynomial two-copy score is only a calibration and its signal vanishes asymptotically.",
+      "Prove a promise-preserving natural binary reduction and preparation cost; no hidden-element recovery is inferred from detection.",
+      "Compare with legal classical graph/code algorithms, actual-source tensor contractions and known measured-sieve models. Leaving a sieve definition is not advantage.",
+      "Falsify fixed-copy repetition and any use of the hypothesis-dependent latent initial distribution as a free classical sampler.",
+      "Count subset-incidence cells, not just raw copies: a fixed palette has at most 2^q-1 effective samples unless source-label or other access refines it. Do not apply that bound after retaining unaccounted individual source labels.",
+      "Retained classical source labels need the separate source-conditioned bound: compress large cells and charge small cells as full raw quantum inputs. Fixed preselected cell profiles remain obstructed asymptotically. Specify source-dependent regrouping and every outside-algebra readout; a vacuous bound is not a positive signal.",
+      "Classical adaptation within a small predetermined whole-execution catalogue pays a sum of aborting-comparison bounds. Do not normalize selected successes, use a step-only cover or infer runtime from catalogue size. Specify the actual selector and final readout beyond this restriction."
+    ],
+    "rationale": "The architecture targets the right interface but names unimplemented proof-critical primitives.",
+    "rejection_filters": [
+      "Reject if any missing capability is replaced by an undefined circuit box.",
+      "Reject if the mechanism covers only an exceptional commuting or classically tractable family.",
+      "Reject any transfer from binary detection to hidden-element identification without a separate reduction; a valid binary goal does not require hidden-element output.",
+      "Reject if classical invariant or tensor-network contraction reproduces the outcome.",
+      "Compare finite alternation to a joint quantum label front end plus latent-irrep classical postprocessing; do not assume a classical sampler for the initial labels or extend the rank-one model to larger multiplicities.",
+      "Reject ideal finite likelihood tables or retained Helstrom distances presented as compiled outcome classifiers."
+    ],
+    "required_modules": [
+      "CAP-BINARY-PROMISE-PRESERVING-REDUCTION",
+      "CAP-GROWING-COPY-BINARY-OUTCOME-CLASSIFIER",
+      "CAP-SOURCE-WEIGHTED-GROWING-COPY-BINARY-EFFECT"
+    ],
+    "source_candidate_id": "CODE-COSET-COLLECTIVE",
+    "status": "proposal",
+    "task_kind": "binary-detection",
+    "typed_stages": [
+      "PREPARE_COSET_K",
+      "SN_QFT_K",
+      "CLEAN_SUBSET_LABEL_ACCESS",
+      "GROWING_COPY_BINARY_EFFECT",
+      "BINARY_OUTCOME_CLASSIFIER",
+      "NATURAL_BINARY_DECISION_TRANSFER"
+    ]
+  },
+  {
+    "copy_budget_kind": "identification-holevo-fano",
+    "created_at": "2026-09-10T12:05:16.888889+00:00",
+    "formalization_status": "typed-architecture-proof-capabilities-missing",
+    "id": "MUTATE-CODE-COSET-COLLECTIVE-ENCODED-REFERENCE-SYMMETRY-BREAKING",
+    "linked_blockers": [
+      "DEQ-COSET-SOLVED-QFT-COUNTING-NOT-RECOUPLING-DECODER",
+      "DEQ-COSET-K3-SINGLE-RECOUPLING-BASIS-OBSTRUCTED",
+      "DEQ-COSET-EXPLICIT-TWO-COPY-TRANSITIONS-FACTORIAL"
+    ],
+    "minimum_copy_budget_rule": "k >= ceil([log2|C|-h2(epsilon)-epsilon*log2(|C|-1)]/chi_1), with chi_1 from the exact involution character formula",
+    "mutation_type": "typed-recoupling-mechanism",
+    "new_hypothesis": "Encoded subgroup access with a symmetry-breaking collective effect",
+    "priority_score": 110,
+    "proof_debts_targeted": [
+      "CAP-ENCODED-K-CARRIER-RESTRICTION",
+      "CAP-HIDDEN-INVOLUTION-OUTCOME-DECODER",
+      "CAP-SYMMETRY-BREAKING-LOGICAL-EFFECT"
+    ],
+    "proof_gate_eligible": false,
+    "proof_obligations_to_resolve": [
+      "Verify the normalized two-QFT and physical-column contract, including primitive precision and workspace.",
+      "Specify how the final effect breaks fixed-reference invariance; never grant the unknown centralizer or aligned h-even source law.",
+      "Construct the actual logical effect with source-aware normalization and error, without complete fixed-count spectral labels.",
+      "Derive its outcome law and polynomial hidden-involution decoder, then attack it with legal classical invariants and tensor contractions.",
+      "Binary detection is a separate task and requires its own reduction; it must not be passed off as identification.",
+      "Specify every carrier/type discard and its block size: independent block twirls obey T^2 <= p(m)/(2(2m-1)!!) sum_j(2^b_j-1). Predetermined reference changes do not evade this bound.",
+      "Classical outcome-adaptive references still obey a round-count-weakened bound when fresh inputs are twirled before memory coupling. Charge any coherent reference control or pre-twirl memory interaction explicitly."
+    ],
+    "rationale": "The architecture targets the right interface but names unimplemented proof-critical primitives.",
+    "rejection_filters": [
+      "Reject if any missing capability is replaced by an undefined circuit box.",
+      "Reject if the mechanism covers only an exceptional commuting or classically tractable family.",
+      "Reject if the decoder is distinguishability or verification without hidden-involution recovery.",
+      "Reject if classical invariant or tensor-network contraction reproduces the outcome.",
+      "Compare finite alternation to a joint quantum label front end plus latent-irrep classical postprocessing; do not assume a classical sampler for the initial labels or extend the rank-one model to larger multiplicities.",
+      "Reject ideal finite likelihood tables or retained Helstrom distances presented as compiled outcome classifiers."
+    ],
+    "required_modules": [
+      "CAP-ENCODED-K-CARRIER-RESTRICTION",
+      "CAP-HIDDEN-INVOLUTION-OUTCOME-DECODER",
+      "CAP-SYMMETRY-BREAKING-LOGICAL-EFFECT"
+    ],
+    "source_candidate_id": "CODE-COSET-COLLECTIVE",
+    "status": "proposal",
+    "task_kind": "identification",
+    "typed_stages": [
+      "PREPARE_COSET_K",
+      "SN_QFT_K",
+      "ENCODED_REFERENCE_RESTRICTION",
+      "SYMMETRY_BREAKING_LOGICAL_FRAME",
+      "OUTCOME_DECODER",
+      "CLASSICAL_VERIFY"
+    ]
+  },
+  {
+    "copy_budget_kind": "identification-holevo-fano",
+    "created_at": "2026-09-10T12:05:16.888892+00:00",
+    "formalization_status": "typed-architecture-proof-capabilities-missing",
+    "id": "MUTATE-CODE-COSET-COLLECTIVE-FULL-RECOUPLING-TRANSITION-DECODER",
+    "linked_blockers": [
+      "DEQ-COSET-SOLVED-QFT-COUNTING-NOT-RECOUPLING-DECODER",
+      "DEQ-COSET-K3-SINGLE-RECOUPLING-BASIS-OBSTRUCTED",
+      "DEQ-COSET-EXPLICIT-TWO-COPY-TRANSITIONS-FACTORIAL"
+    ],
+    "minimum_copy_budget_rule": "k >= ceil([log2|C|-h2(epsilon)-epsilon*log2(|C|-1)]/chi_1), with chi_1 from the exact involution character formula",
+    "mutation_type": "typed-recoupling-mechanism",
+    "new_hypothesis": "Full coherent recoupling, transition filter, and decoder",
+    "priority_score": 100,
+    "proof_debts_targeted": [
+      "CAP-HIDDEN-INVOLUTION-OUTCOME-DECODER",
+      "CAP-INTERNAL-SN-KRONECKER-TRANSFORM",
+      "CAP-KCOPY-RACAH-ASSOCIATOR",
+      "CAP-STATE-TRANSITION-FILTER"
+    ],
+    "proof_gate_eligible": false,
+    "proof_obligations_to_resolve": [
+      "Prove a uniform internal S_n Kronecker transform with multiplicity basis and precision bounds.",
+      "Prove a polynomial Racah/associator network for all overlapping subset terms at growing k.",
+      "Block-encode state-dependent transition weights and control inverse-frame conditioning.",
+      "Decode the hidden involution and beat all legal graph/code baselines on a natural family."
+    ],
+    "rationale": "The architecture targets the right interface but names unimplemented proof-critical primitives.",
+    "rejection_filters": [
+      "Reject if any missing capability is replaced by an undefined circuit box.",
+      "Reject if the mechanism covers only an exceptional commuting or classically tractable family.",
+      "Reject if the decoder is distinguishability or verification without hidden-involution recovery.",
+      "Reject if classical invariant or tensor-network contraction reproduces the outcome.",
+      "Compare finite alternation to a joint quantum label front end plus latent-irrep classical postprocessing; do not assume a classical sampler for the initial labels or extend the rank-one model to larger multiplicities.",
+      "Reject ideal finite likelihood tables or retained Helstrom distances presented as compiled outcome classifiers."
+    ],
+    "required_modules": [
+      "CAP-HIDDEN-INVOLUTION-OUTCOME-DECODER",
+      "CAP-INTERNAL-SN-KRONECKER-TRANSFORM",
+      "CAP-KCOPY-RACAH-ASSOCIATOR",
+      "CAP-STATE-TRANSITION-FILTER"
+    ],
+    "source_candidate_id": "CODE-COSET-COLLECTIVE",
+    "status": "proposal",
+    "task_kind": "identification",
+    "typed_stages": [
+      "PREPARE_COSET_K",
+      "SN_QFT_K",
+      "INTERNAL_KRONECKER_TRANSFORM",
+      "RACAH_ASSOCIATOR_NETWORK",
+      "TRANSITION_FRAME_FILTER",
+      "OUTCOME_DECODER",
+      "CLASSICAL_VERIFY"
+    ]
+  },
+  {
+    "copy_budget_kind": "identification-holevo-fano",
+    "created_at": "2026-09-10T12:05:16.888894+00:00",
+    "formalization_status": "typed-architecture-proof-capabilities-missing",
+    "id": "MUTATE-CODE-COSET-COLLECTIVE-TENSOR-ASSOCIATOR-DECODER",
+    "linked_blockers": [
+      "DEQ-COSET-SOLVED-QFT-COUNTING-NOT-RECOUPLING-DECODER",
+      "DEQ-COSET-K3-SINGLE-RECOUPLING-BASIS-OBSTRUCTED",
+      "DEQ-COSET-EXPLICIT-TWO-COPY-TRANSITIONS-FACTORIAL"
+    ],
+    "minimum_copy_budget_rule": "k >= ceil([log2|C|-h2(epsilon)-epsilon*log2(|C|-1)]/chi_1), with chi_1 from the exact involution character formula",
+    "mutation_type": "typed-recoupling-mechanism",
+    "new_hypothesis": "Implicit tensor-network associator and compressed decoder",
+    "priority_score": 72,
+    "proof_debts_targeted": [
+      "CAP-HIDDEN-INVOLUTION-OUTCOME-DECODER",
+      "CAP-TENSOR-ASSOCIATOR"
+    ],
+    "proof_gate_eligible": false,
+    "proof_obligations_to_resolve": [
+      "Prove polynomial bond dimension and contraction/circuit cost at inverse-polynomial error.",
+      "Show the tensor network is not a classical invariant shadow or efficiently contractible dequantization.",
+      "Prove robust hidden-involution decoding from its compressed outcome."
+    ],
+    "rationale": "The architecture targets the right interface but names unimplemented proof-critical primitives.",
+    "rejection_filters": [
+      "Reject if any missing capability is replaced by an undefined circuit box.",
+      "Reject if the mechanism covers only an exceptional commuting or classically tractable family.",
+      "Reject if the decoder is distinguishability or verification without hidden-involution recovery.",
+      "Reject if classical invariant or tensor-network contraction reproduces the outcome.",
+      "Compare finite alternation to a joint quantum label front end plus latent-irrep classical postprocessing; do not assume a classical sampler for the initial labels or extend the rank-one model to larger multiplicities.",
+      "Reject ideal finite likelihood tables or retained Helstrom distances presented as compiled outcome classifiers."
+    ],
+    "required_modules": [
+      "CAP-HIDDEN-INVOLUTION-OUTCOME-DECODER",
+      "CAP-TENSOR-ASSOCIATOR"
+    ],
+    "source_candidate_id": "CODE-COSET-COLLECTIVE",
+    "status": "proposal",
+    "task_kind": "identification",
+    "typed_stages": [
+      "PREPARE_COSET_K",
+      "SN_QFT_K",
+      "TENSOR_NETWORK_ASSOCIATOR",
+      "OUTCOME_DECODER",
+      "CLASSICAL_VERIFY"
     ]
   }
 ]

@@ -2,8 +2,8 @@
   "blocking_status_count": 24,
   "candidate_count": 8,
   "counterexample_search_count": 8,
-  "created_at": "2026-09-10T01:53:59.717052+00:00",
-  "lemma_count": 1266,
+  "created_at": "2026-09-10T12:02:08.603399+00:00",
+  "lemma_count": 1269,
   "needs_evidence_count": 0,
   "proof_debt": {
     "counterexample_search_count": 8,
@@ -73,8 +73,8 @@
         "target_claim": "The coset observable is not a disguised classical invariant."
       }
     ],
-    "created_at": "2026-09-10T01:53:59.710089+00:00",
-    "lemma_count": 1266,
+    "created_at": "2026-09-10T12:02:08.596762+00:00",
+    "lemma_count": 1269,
     "lemmas": [
       {
         "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -578,6 +578,42 @@
         "id": "LEMMA-CODE-COSET-COLLECTIVE-FIXED-POINT-FREE-LABEL-ARITHMETIC",
         "statement": "Given actual two-copy source and target labels for cycle type 2^m, exact two-quotient/hook arithmetic evaluates their Helstrom sign in polynomial bit complexity; no tableau paths or joint label law are enumerated.",
         "status": "implemented-known-polynomial-two-copy-label-score"
+      },
+      {
+        "candidate_id": "CODE-COSET-COLLECTIVE",
+        "depends_on": [
+          "PO-INPUT-MODEL",
+          "PO-MEASUREMENT",
+          "PO-SUCCESS"
+        ],
+        "falsification_test": "Check the explicit regular-coordinate intertwiner and null/every-hidden active marginals. Individual source labels split cells; unlisted/coherently addressed subsets and outside-algebra readouts require a new partition or invalidate the bound. This is not a general circuit or classical lower bound.",
+        "id": "LEMMA-CODE-COSET-COLLECTIVE-FIXED-PALETTE-COPY-COMPRESSION",
+        "statement": "For a fixed subset palette, all instruments and readouts in its cellwise diagonal group algebra have exactly the output laws of c coset copies, one per nonzero incidence cell; uniform binary class detection obeys T^2 <= (2^c-1)/(4M).",
+        "status": "derived-fixed-palette-compression-review-pending"
+      },
+      {
+        "candidate_id": "CODE-COSET-COLLECTIVE",
+        "depends_on": [
+          "PO-INPUT-MODEL",
+          "PO-MEASUREMENT",
+          "PO-SUCCESS"
+        ],
+        "falsification_test": "Check source-weighted moments, regular-action convention, positive complete quotient-POVM extensions independent of h, and same-h cell hybrids. Retained small cells cost their full raw copies; their source labels are not independent samples. S4 has nondecaying conditional modes; source-selected palettes invalidate iid averaging. No efficient lift, general circuit no-go, or novelty is certified.",
+        "id": "LEMMA-CODE-COSET-COLLECTIVE-SOURCE-CONDITIONED-PALETTE-BOUND",
+        "statement": "With all classical source labels retained and a palette fixed before observing them, charge r retained raw inputs and l compressed cells: output distance is at most the (r+l)-copy class bound plus k/(2 sqrt(M)) and summed large-cell lifting errors. For S_n a fixed number of arbitrarily sized cells has vanishing distance at polynomial raw copy budget.",
+        "status": "derived-source-conditioned-palette-bound-review-pending"
+      },
+      {
+        "candidate_id": "CODE-COSET-COLLECTIVE",
+        "depends_on": [
+          "LEMMA-CODE-COSET-COLLECTIVE-SOURCE-CONDITIONED-PALETTE-BOUND",
+          "PO-MEASUREMENT",
+          "PO-SUCCESS"
+        ],
+        "falsification_test": "Reconstruct each successful transcript under both hypotheses; abort before the first outside action and retain failure mass. Assign overlapping covers once. A stepwise cover, post-hoc catalogue or coherent selector is insufficient. Catalogue cardinality is not a runtime lower bound; no novelty is certified.",
+        "id": "LEMMA-CODE-COSET-COLLECTIVE-ADAPTIVE-PALETTE-CATALOGUE-COVER",
+        "statement": "If each whole classically controlled execution fits a member of a predetermined palette catalogue, abort-before-outside comparison channels give T <= sum_j delta_j without normalizing successful sectors; polynomial catalogues of bounded-cell palettes retain the asymptotic obstruction.",
+        "status": "derived-adaptive-catalogue-cover-review-pending"
       },
       {
         "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -2524,9 +2560,9 @@
           "PO-SUCCESS",
           "PO-NO-GO"
         ],
-        "falsification_test": "Type-check every stage, reject known Fourier/counting/rank shortcuts, and require explicit uniform circuit and decoder proofs for every remaining capability.",
+        "falsification_test": "Type-check every stage, reject known Fourier/counting/rank shortcuts, and require explicit uniform circuit and output-rule proofs for every remaining capability. Distinguish binary detection from identification and use the matching copy bound and natural reduction.",
         "id": "LEMMA-CODE-COSET-COLLECTIVE-COSET-TYPED-RECOUPLING-MECHANISM",
-        "statement": "A full-source-family collective mechanism has a valid typed state chain, violates no known no-go theorem, and supplies uniform polynomial implementations for every recoupling/filter/decoder stage.",
+        "statement": "A full-source-family collective mechanism has a valid typed state chain, violates no known no-go theorem applicable to its stated task, and supplies uniform polynomial implementations for each required effect, classifier and reduction stage.",
         "status": "blocked-no-typed-proof-complete-mechanism"
       },
       {
@@ -5834,9 +5870,9 @@
           "PO-SUCCESS",
           "PO-NO-GO"
         ],
-        "falsification_test": "Type-check every stage, reject known Fourier/counting/rank shortcuts, and require explicit uniform circuit and decoder proofs for every remaining capability.",
+        "falsification_test": "Type-check every stage, reject known Fourier/counting/rank shortcuts, and require explicit uniform circuit and output-rule proofs for every remaining capability. Distinguish binary detection from identification and use the matching copy bound and natural reduction.",
         "id": "LEMMA-HYP-LIT-COSET-OBSERVABLES-COSET-TYPED-RECOUPLING-MECHANISM",
-        "statement": "A full-source-family collective mechanism has a valid typed state chain, violates no known no-go theorem, and supplies uniform polynomial implementations for every recoupling/filter/decoder stage.",
+        "statement": "A full-source-family collective mechanism has a valid typed state chain, violates no known no-go theorem applicable to its stated task, and supplies uniform polynomial implementations for each required effect, classifier and reduction stage.",
         "status": "blocked-no-typed-proof-complete-mechanism"
       },
       {
@@ -9144,9 +9180,9 @@
           "PO-SUCCESS",
           "PO-NO-GO"
         ],
-        "falsification_test": "Type-check every stage, reject known Fourier/counting/rank shortcuts, and require explicit uniform circuit and decoder proofs for every remaining capability.",
+        "falsification_test": "Type-check every stage, reject known Fourier/counting/rank shortcuts, and require explicit uniform circuit and output-rule proofs for every remaining capability. Distinguish binary detection from identification and use the matching copy bound and natural reduction.",
         "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-COSET-TYPED-RECOUPLING-MECHANISM",
-        "statement": "A full-source-family collective mechanism has a valid typed state chain, violates no known no-go theorem, and supplies uniform polynomial implementations for every recoupling/filter/decoder stage.",
+        "statement": "A full-source-family collective mechanism has a valid typed state chain, violates no known no-go theorem applicable to its stated task, and supplies uniform polynomial implementations for each required effect, classifier and reduction stage.",
         "status": "blocked-no-typed-proof-complete-mechanism"
       },
       {
@@ -11215,9 +11251,9 @@
           "PO-SUCCESS",
           "PO-NO-GO"
         ],
-        "falsification_test": "Type-check every stage, reject known Fourier/counting/rank shortcuts, and require explicit uniform circuit and decoder proofs for every remaining capability.",
+        "falsification_test": "Type-check every stage, reject known Fourier/counting/rank shortcuts, and require explicit uniform circuit and output-rule proofs for every remaining capability. Distinguish binary detection from identification and use the matching copy bound and natural reduction.",
         "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-COSET-TYPED-RECOUPLING-MECHANISM",
-        "statement": "A full-source-family collective mechanism has a valid typed state chain, violates no known no-go theorem, and supplies uniform polynomial implementations for every recoupling/filter/decoder stage.",
+        "statement": "A full-source-family collective mechanism has a valid typed state chain, violates no known no-go theorem applicable to its stated task, and supplies uniform polynomial implementations for each required effect, classifier and reduction stage.",
         "status": "blocked-no-typed-proof-complete-mechanism"
       },
       {
@@ -13286,9 +13322,9 @@
           "PO-SUCCESS",
           "PO-NO-GO"
         ],
-        "falsification_test": "Type-check every stage, reject known Fourier/counting/rank shortcuts, and require explicit uniform circuit and decoder proofs for every remaining capability.",
+        "falsification_test": "Type-check every stage, reject known Fourier/counting/rank shortcuts, and require explicit uniform circuit and output-rule proofs for every remaining capability. Distinguish binary detection from identification and use the matching copy bound and natural reduction.",
         "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-COSET-TYPED-RECOUPLING-MECHANISM",
-        "statement": "A full-source-family collective mechanism has a valid typed state chain, violates no known no-go theorem, and supplies uniform polynomial implementations for every recoupling/filter/decoder stage.",
+        "statement": "A full-source-family collective mechanism has a valid typed state chain, violates no known no-go theorem applicable to its stated task, and supplies uniform polynomial implementations for each required effect, classifier and reduction stage.",
         "status": "blocked-no-typed-proof-complete-mechanism"
       },
       {
@@ -15357,9 +15393,9 @@
           "PO-SUCCESS",
           "PO-NO-GO"
         ],
-        "falsification_test": "Type-check every stage, reject known Fourier/counting/rank shortcuts, and require explicit uniform circuit and decoder proofs for every remaining capability.",
+        "falsification_test": "Type-check every stage, reject known Fourier/counting/rank shortcuts, and require explicit uniform circuit and output-rule proofs for every remaining capability. Distinguish binary detection from identification and use the matching copy bound and natural reduction.",
         "id": "LEMMA-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-COSET-TYPED-RECOUPLING-MECHANISM",
-        "statement": "A full-source-family collective mechanism has a valid typed state chain, violates no known no-go theorem, and supplies uniform polynomial implementations for every recoupling/filter/decoder stage.",
+        "statement": "A full-source-family collective mechanism has a valid typed state chain, violates no known no-go theorem applicable to its stated task, and supplies uniform polynomial implementations for each required effect, classifier and reduction stage.",
         "status": "blocked-no-typed-proof-complete-mechanism"
       },
       {
@@ -15468,7 +15504,7 @@
         "candidate_id": "CODE-COSET-COLLECTIVE",
         "claim_blocked": "PO-DEQUANTIZATION",
         "debt_type": "dequantization",
-        "evidence": "The packed label capacity is polynomial, while the exact source mass of such small multiplicities vanishes superpolynomially. | The two tasks have different priors and alternatives. Complete S3/S4 physical channels have nonzero binary signal; the one-pair character likelihood is checked independently. | Fourier Kraus sums give a group twirl within each label, not P rho P. All physical S3/S4 source triples retain only first-pair transcript information after pair-reference discard; in S4 this loses an additional 37/192 trace distance relative to clean L.",
+        "evidence": "Aborting each comparison before its first outside operation reproduces disjoint unnormalized success sectors. Complete output distance is at most the sum of the fixed-palette bounds. Uniformly bounded cell counts and polynomial catalogue/copy counts remain obstructed asymptotically. The S1024 two-palette control gives T <= 2^-601. | The packed label capacity is polynomial, while the exact source mass of such small multiplicities vanishes superpolynomially. | The two tasks have different priors and alternatives. Complete S3/S4 physical channels have nonzero binary signal; the one-pair character likelihood is checked independently.",
         "id": "DEBT-CODE-COSET-COLLECTIVE-PO-DEQUANTIZATION",
         "priority_score": 100,
         "required_resolution": "Resolve dequantization findings or demote the candidate to a negative/blocked result."
@@ -15976,7 +16012,7 @@
       "candidate_id": "CODE-COSET-COLLECTIVE",
       "claim_blocked": "PO-DEQUANTIZATION",
       "debt_type": "dequantization",
-      "evidence": "The packed label capacity is polynomial, while the exact source mass of such small multiplicities vanishes superpolynomially. | The two tasks have different priors and alternatives. Complete S3/S4 physical channels have nonzero binary signal; the one-pair character likelihood is checked independently. | Fourier Kraus sums give a group twirl within each label, not P rho P. All physical S3/S4 source triples retain only first-pair transcript information after pair-reference discard; in S4 this loses an additional 37/192 trace distance relative to clean L.",
+      "evidence": "Aborting each comparison before its first outside operation reproduces disjoint unnormalized success sectors. Complete output distance is at most the sum of the fixed-palette bounds. Uniformly bounded cell counts and polynomial catalogue/copy counts remain obstructed asymptotically. The S1024 two-palette control gives T <= 2^-601. | The packed label capacity is polynomial, while the exact source mass of such small multiplicities vanishes superpolynomially. | The two tasks have different priors and alternatives. Complete S3/S4 physical channels have nonzero binary signal; the one-pair character likelihood is checked independently.",
       "id": "DEBT-CODE-COSET-COLLECTIVE-PO-DEQUANTIZATION",
       "priority_score": 100,
       "required_resolution": "Resolve dequantization findings or demote the candidate to a negative/blocked result."
@@ -16348,7 +16384,7 @@
     },
     {
       "candidate_id": "CODE-COSET-COLLECTIVE",
-      "evidence": "The packed label capacity is polynomial, while the exact source mass of such small multiplicities vanishes superpolynomially. | The two tasks have different priors and alternatives. Complete S3/S4 physical channels have nonzero binary signal; the one-pair character likelihood is checked independently. | Fourier Kraus sums give a group twirl within each label, not P rho P. All physical S3/S4 source triples retain only first-pair transcript information after pair-reference discard; in S4 this loses an additional 37/192 trace distance relative to clean L.",
+      "evidence": "Aborting each comparison before its first outside operation reproduces disjoint unnormalized success sectors. Complete output distance is at most the sum of the fixed-palette bounds. Uniformly bounded cell counts and polynomial catalogue/copy counts remain obstructed asymptotically. The S1024 two-palette control gives T <= 2^-601. | The packed label capacity is polynomial, while the exact source mass of such small multiplicities vanishes superpolynomially. | The two tasks have different priors and alternatives. Complete S3/S4 physical channels have nonzero binary signal; the one-pair character likelihood is checked independently.",
       "field": "dequantization_check",
       "next_action": "Resolve dequantization findings or demote the candidate to a negative/blocked result.",
       "obligation_id": "PO-DEQUANTIZATION",

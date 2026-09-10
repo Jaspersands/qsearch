@@ -1693,6 +1693,24 @@ def _binary_carrier_instrument_lemmas(candidate_id: str) -> list[LemmaRecord]:
         depends_on=["PO-MEASUREMENT", "PO-COMPLEXITY", "PO-CLASSICAL-BASELINE"],
         status="implemented-known-polynomial-two-copy-label-score" if checked and report.get("claim_gate", {}).get("exact_fixed_point_free_two_copy_score_available") else "blocked-polynomial-label-score-evidence-missing",
         falsification_test="Compare with independent Murnaghan-Nakayama recursion and all physical S4 two-copy blocks. Cheap label scoring does not provide a classical sampler, typical source coverage, or constant-copy asymptotic advantage.",
+    ), LemmaRecord(
+        id=f"LEMMA-{candidate_id}-FIXED-PALETTE-COPY-COMPRESSION", candidate_id=candidate_id,
+        statement="For a fixed subset palette, all instruments and readouts in its cellwise diagonal group algebra have exactly the output laws of c coset copies, one per nonzero incidence cell; uniform binary class detection obeys T^2 <= (2^c-1)/(4M).",
+        depends_on=["PO-INPUT-MODEL", "PO-MEASUREMENT", "PO-SUCCESS"],
+        status="derived-fixed-palette-compression-review-pending" if checked and report.get("claim_gate", {}).get("fixed_palette_coset_copy_compression_derived") else "blocked-fixed-palette-compression-evidence-missing",
+        falsification_test="Check the explicit regular-coordinate intertwiner and null/every-hidden active marginals. Individual source labels split cells; unlisted/coherently addressed subsets and outside-algebra readouts require a new partition or invalidate the bound. This is not a general circuit or classical lower bound.",
+    ), LemmaRecord(
+        id=f"LEMMA-{candidate_id}-SOURCE-CONDITIONED-PALETTE-BOUND", candidate_id=candidate_id,
+        statement="With all classical source labels retained and a palette fixed before observing them, charge r retained raw inputs and l compressed cells: output distance is at most the (r+l)-copy class bound plus k/(2 sqrt(M)) and summed large-cell lifting errors. For S_n a fixed number of arbitrarily sized cells has vanishing distance at polynomial raw copy budget.",
+        depends_on=["PO-INPUT-MODEL", "PO-MEASUREMENT", "PO-SUCCESS"],
+        status="derived-source-conditioned-palette-bound-review-pending" if checked and report.get("claim_gate", {}).get("finite_source_conditioned_lifts_verified") and report.get("claim_gate", {}).get("source_conditioned_palette_bound_derived") else "blocked-source-conditioned-palette-evidence-missing",
+        falsification_test="Check source-weighted moments, regular-action convention, positive complete quotient-POVM extensions independent of h, and same-h cell hybrids. Retained small cells cost their full raw copies; their source labels are not independent samples. S4 has nondecaying conditional modes; source-selected palettes invalidate iid averaging. No efficient lift, general circuit no-go, or novelty is certified.",
+    ), LemmaRecord(
+        id=f"LEMMA-{candidate_id}-ADAPTIVE-PALETTE-CATALOGUE-COVER", candidate_id=candidate_id,
+        statement="If each whole classically controlled execution fits a member of a predetermined palette catalogue, abort-before-outside comparison channels give T <= sum_j delta_j without normalizing successful sectors; polynomial catalogues of bounded-cell palettes retain the asymptotic obstruction.",
+        depends_on=[f"LEMMA-{candidate_id}-SOURCE-CONDITIONED-PALETTE-BOUND", "PO-MEASUREMENT", "PO-SUCCESS"],
+        status="derived-adaptive-catalogue-cover-review-pending" if checked and report.get("claim_gate", {}).get("finite_adaptive_catalogue_cover_verified") and report.get("claim_gate", {}).get("separate_adaptive_catalogue_cover_bound_derived") else "blocked-adaptive-catalogue-cover-evidence-missing",
+        falsification_test="Reconstruct each successful transcript under both hypotheses; abort before the first outside action and retain failure mass. Assign overlapping covers once. A stepwise cover, post-hoc catalogue or coherent selector is insufficient. Catalogue cardinality is not a runtime lower bound; no novelty is certified.",
     )]
 
 
@@ -8216,7 +8234,8 @@ def lemma_templates(candidate: dict[str, Any]) -> list[LemmaRecord]:
                     candidate_id=candidate_id,
                     statement=(
                         "A full-source-family collective mechanism has a valid typed state chain, violates no known "
-                        "no-go theorem, and supplies uniform polynomial implementations for every recoupling/filter/decoder stage."
+                        "no-go theorem applicable to its stated task, and supplies uniform polynomial implementations "
+                        "for each required effect, classifier and reduction stage."
                     ),
                     depends_on=["PO-MEASUREMENT", "PO-COMPLEXITY", "PO-SUCCESS", "PO-NO-GO"],
                     status=(
@@ -8226,7 +8245,8 @@ def lemma_templates(candidate: dict[str, Any]) -> list[LemmaRecord]:
                     ),
                     falsification_test=(
                         "Type-check every stage, reject known Fourier/counting/rank shortcuts, and require explicit "
-                        "uniform circuit and decoder proofs for every remaining capability."
+                        "uniform circuit and output-rule proofs for every remaining capability. Distinguish binary "
+                        "detection from identification and use the matching copy bound and natural reduction."
                     ),
                 ),
                 LemmaRecord(

@@ -8392,8 +8392,10 @@ def findings_from_coset_recoupling_mechanism_synthesis(
                 f"{metrics.get('proof_gate_eligible_count', 0)}."
             ),
             required_action=(
-                "Close every typed capability debt in a full-source-family architecture, including coherent internal "
-                "recoupling, transition filtering, hidden-involution decoding, and classical comparison."
+                "Close the capabilities required by the stated task and full source family. Identification needs "
+                "a hidden-element decoder; binary detection needs a growing-copy effect, an explicit binary "
+                "outcome classifier and a promise-preserving natural reduction. Do not require a multiplicity "
+                "basis merely to formulate binary detection. Both need charged access and serious classical comparison."
             ),
             blocks_speedup_claim=int(metrics.get("proof_gate_eligible_count", 0) or 0) == 0,
         )
@@ -11652,6 +11654,9 @@ def findings_from_negative_results(candidates: list[dict[str, Any]], negative_re
             "INDEPENDENT-REFERENCE-CARRIER-DISCARD-ERASES-BINARY-INFORMATION": "REFERENCE-TWIRL-INFORMATION-LOSS",
             "CARRIER-INVARIANCE-NOT-A-BINARY-NO-GO": "CARRIER-BINARY-TASK-SCOPE",
             "DISCARDED-GPE-REFERENCE-NOT-LUDERS-INSTRUMENT": "CLEAN-GPE-INSTRUMENT-CONTRACT",
+            "FIXED-SUBSET-PALETTE-COPY-COMPRESSION": "FIXED-PALETTE-EFFECTIVE-COPIES",
+            "SOURCE-LABELS-DO-NOT-RESCUE-FIXED-LARGE-CELLS": "SOURCE-CONDITIONED-PALETTE-BOUND",
+            "ADAPTIVE-PALETTE-CATALOGUE-NOT-FREE-ESCAPE": "ADAPTIVE-PALETTE-CATALOGUE-COVER",
         }
         if item.get("id") in access_boundaries:
             for candidate in candidates:
