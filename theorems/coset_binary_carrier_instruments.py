@@ -17,6 +17,9 @@ from pathlib import Path
 
 import numpy as np
 
+from isotypic_instruments import finite_isotypic_instrument, isotypic_label_resource_contract
+from involution_character_arithmetic import label_arithmetic_scaling_controls
+
 from coset_three_copy_recoupling_obstruction import involutions
 from coset_hidden_involution_reference_twirl_information import matching_count
 from representation_obstruction import hook_length_dimension, integer_partitions
@@ -101,6 +104,95 @@ def _total_projectors(sources: tuple, representations: dict) -> tuple[np.ndarray
         projector *= hook_length_dimension(target) / math.factorial(n)
         result.append((projector + projector.conj().T) / 2)
     return tuple(result)
+
+
+@lru_cache(maxsize=34)
+def _pair_gpe_instrument(left: tuple[int, ...], right: tuple[int, ...]):
+    n = sum(left)
+    if n not in (3, 4) or sum(right) != n:
+        raise ValueError("dense GPE controls are restricted to compatible S3/S4 pairs")
+    representations = {lam: dict(permutation_representation_matrices(lam)) for lam in integer_partitions(n)}
+    group = tuple(representations[left])
+    return finite_isotypic_instrument(
+        [np.kron(representations[left][g], representations[right][g]) for g in group],
+        {lam: [table[g] for g in group] for lam, table in representations.items()},
+    )
+
+
+@lru_cache(maxsize=2)
+def evaluate_pair_gpe_cleanup(n: int, transposition_count: int) -> dict:
+    """All physical source triples, comparing clean labels to discarded GPE rows.
+
+    Pair-local group twirling destroys the shared-h correlation across that
+    partition. This is not the global diagonal twirl, which preserves the
+    binary class mixture. No favorable source block is postselected.
+    """
+    if (n, transposition_count) not in ((3, 1), (4, 2)):
+        raise ValueError("cleanup controls use the physical S3/S4 classes")
+    partitions, hidden = integer_partitions(n), involutions(n, transposition_count)
+    representations = {lam: dict(permutation_representation_matrices(lam)) for lam in partitions}
+    p0, p1, follow0, follow1 = [], [], [], []
+    clean_distance = discarded_distance = 0.0
+    residuals = dict.fromkeys(("clean_workspace", "legacy_projector", "first_label_probability",
+                              "conditional_binary_proportionality", "discard_equals_pair_twirl",
+                              "global_conjugation_preserves_binary_state"), 0.0)
+    for sources in itertools.product(partitions, repeat=3):
+        dimensions = [hook_length_dimension(lam) for lam in sources]
+        dimension = math.prod(dimensions)
+        null = dimension / math.factorial(n)**3 * np.eye(dimension)
+        alternative = sum(_natural_informative_block(sources, h, representations) for h in hidden) / len(hidden)
+        instrument = _pair_gpe_instrument(*sources[:2])
+        residuals["clean_workspace"] = max(residuals["clean_workspace"], max(instrument.residuals.values()))
+        left = _triple_isotypic_projectors(sources, "left")
+        right = _triple_isotypic_projectors(sources, "right")
+        spectator = np.eye(dimensions[2])
+        discarded_alternative = np.zeros_like(alternative, dtype=complex)
+        for index, label in enumerate(instrument.labels):
+            projector = np.kron(instrument.projectors[label], spectator)
+            residuals["legacy_projector"] = max(residuals["legacy_projector"], float(np.linalg.norm(projector - left[index])))
+            clean0, clean1 = projector @ null @ projector, projector @ alternative @ projector
+            zero, one = np.zeros_like(null, dtype=complex), np.zeros_like(alternative, dtype=complex)
+            for kraus in instrument.fourier_kraus[label]:
+                lifted = np.kron(kraus, spectator)
+                zero += lifted @ null @ lifted.conj().T
+                one += lifted @ alternative @ lifted.conj().T
+            discarded_alternative += one
+            clean_distance += _half_trace_norm(clean1 - clean0)
+            discarded_distance += _half_trace_norm(one - zero)
+            p0.append(float(np.trace(zero).real))
+            p1.append(float(np.trace(one).real))
+            residuals["first_label_probability"] = max(residuals["first_label_probability"],
+                abs(p0[-1] - float(np.trace(clean0).real)), abs(p1[-1] - float(np.trace(clean1).real)))
+            ratio = float(one_pair_likelihood_ratio(sources, label, transposition_count, "L"))
+            residuals["conditional_binary_proportionality"] = max(residuals["conditional_binary_proportionality"],
+                float(np.linalg.norm(one - ratio * zero)))
+            for following in right:
+                follow0.append(float(np.trace(following @ zero).real))
+                follow1.append(float(np.trace(following @ one).real))
+        twirled = np.zeros_like(alternative, dtype=complex)
+        for g in representations[sources[0]]:
+            pair = np.kron(representations[sources[0]][g], representations[sources[1]][g])
+            local = np.kron(pair, spectator)
+            twirled += local @ alternative @ local.conj().T / math.factorial(n)
+            global_action = np.kron(pair, representations[sources[2]][g])
+            residuals["global_conjugation_preserves_binary_state"] = max(
+                residuals["global_conjugation_preserves_binary_state"],
+                float(np.linalg.norm(global_action @ alternative @ global_action.conj().T - alternative)))
+        residuals["discard_equals_pair_twirl"] = max(residuals["discard_equals_pair_twirl"],
+            float(np.linalg.norm(discarded_alternative - twirled)))
+    first, follow = binary_outcome_statistics(p0, p1), binary_outcome_statistics(follow0, follow1)
+    verified = (max(residuals.values()) < 1e-8
+                and abs(discarded_distance - first["total_variation"]) < 1e-8
+                and abs(follow["total_variation"] - first["total_variation"]) < 1e-8
+                and discarded_distance <= clean_distance + 1e-8)
+    return {"n": n, "source_blocks_evaluated": len(partitions)**3, "residuals": residuals,
+            "clean_first_pair_retained_trace_distance": clean_distance,
+            "discarded_reference_retained_trace_distance": discarded_distance,
+            "extra_loss_from_discarded_reference": clean_distance - discarded_distance,
+            "first_pair_transcript": first, "discard_then_clean_right_transcript": follow,
+            "finite_complete_source_cleanup_verified": bool(verified),
+            "hypothesis_independent_state_after_first_label": residuals["conditional_binary_proportionality"] < 1e-8,
+            "global_twirl_is_the_same_channel_as_pair_twirl": False}
 
 
 def _rank_one_carrier_hmm(sources: tuple, projectors: dict, null: np.ndarray,
@@ -250,17 +342,23 @@ def evaluate_binary_carrier_instruments(n: int = 4, transposition_count: int = 2
 def build_binary_carrier_instrument_report() -> dict:
     from symmetric_character import kronecker_coefficient
     controls = [evaluate_binary_carrier_instruments(3, 1), evaluate_binary_carrier_instruments(4, 2)]
+    cleanup = [evaluate_pair_gpe_cleanup(3, 1), evaluate_pair_gpe_cleanup(4, 2)]
+    arithmetic = label_arithmetic_scaling_controls()
     scaling = [{"half_degree": m, "block_size": 3, "classical_history_blocks": m**2,
                 "trace_distance_squared_upper_bound": str(invariant_block_transcript_distance_squared_bound(m, 3, m**2))}
                for m in (4, 8, 16, 32, 64, 128)]
-    verified = all(row["finite_full_source_instrument_checks_verified"] for row in controls)
+    verified = (all(row["finite_full_source_instrument_checks_verified"] for row in controls)
+                and all(row["finite_complete_source_cleanup_verified"] for row in cleanup))
     witness_shape = (4, 2)
     coefficient = kronecker_coefficient(witness_shape, witness_shape, witness_shape)
     d = hook_length_dimension(witness_shape)
     source_mass = Fraction(d * (d + character_on_involution(witness_shape, 3)), math.factorial(6))**3
     return {"created_at": utc_now(), "status": ("binary-instrument-calibration-fixed-copy-route-obstructed" if verified else "blocked-instrument-control-failure"),
-        "summary": "Complete natural-source carrier transcripts are evaluated for binary detection, separately from identification. Measurement disturbance and the uncompiled residual Helstrom gap are charged. Fixed-copy invariant block repetition cannot yield scalable advantage.",
+        "summary": "Complete natural-source binary channels distinguish clean isotypic labels from discarded GPE reference rows. Clean compute-copy-uncompute has a uniform primitive reduction; discarding rows loses shared-hidden information. Fixed-copy repetition and the growing-copy classifier remain blocked.",
         "derivation_document": "research/BINARY_CARRIER_INSTRUMENTS.md", "controls": controls, "scaling": scaling,
+        "gpe_cleanup_controls": cleanup,
+        "fixed_point_free_label_arithmetic_controls": arithmetic,
+        "clean_isotypic_label_access": isotypic_label_resource_contract(128, 128**2, 128, 1e-6),
         "classical_model_nonextension_witness": {"n": 6, "source_partitions": [list(witness_shape)] * 3,
             "pair_partition": list(witness_shape), "total_partition": list(witness_shape),
             "pair_kronecker_coefficient": coefficient, "joint_multiplicity": coefficient**2,
@@ -271,6 +369,9 @@ def build_binary_carrier_instrument_report() -> dict:
             "explicit_one_pair_classifiers_checked": sum(item["one_pair_character_likelihood_residual"] is not None for row in controls for item in row["schedules"]),
             "source_blocks_evaluated": sum(row["source_blocks_evaluated"] for row in controls),
             "source_blocks_with_exact_latent_irrep_model": sum(row["latent_total_irrep_hmm_source_blocks"] for row in controls),
+            "source_blocks_with_clean_gpe_contract": sum(row["source_blocks_evaluated"] for row in cleanup),
+            "clean_gpe_cleanup_controls_passed": sum(row["finite_complete_source_cleanup_verified"] for row in cleanup),
+            "polynomial_label_arithmetic_controls": len(arithmetic),
             "growing_copy_measurement_compilers": 0},
         "claim_gate": {"finite_complete_channel_evaluation_verified": verified,
             "invariant_transcript_implies_zero_binary_signal": False,
@@ -278,12 +379,18 @@ def build_binary_carrier_instrument_report() -> dict:
             "residual_helstrom_measurement_compiled": False, "general_classical_separation_proved": False,
             "legal_classical_sampler_for_initial_latent_distribution_supplied": False,
             "latent_model_replaces_quantum_frontend": False,
+            "clean_isotypic_label_uniform_primitive_reduction_available": True,
+            "exact_fixed_point_free_two_copy_score_available": True,
+            "finite_clean_gpe_controls_verified": all(row["finite_complete_source_cleanup_verified"] for row in cleanup),
+            "discarded_gpe_reference_implements_luders_in_general": False,
+            "gate_level_sn_qft_backend_supplied": False,
             "finite_alternation_explained_by_latent_irrep_model": all(row["latent_total_irrep_hmm_source_blocks"] == row["source_blocks_evaluated"]
                                                                    and row["full_outcome_law_hmm_replay_residual"] < 1e-8 for row in controls),
             "fixed_copy_calibrations_are_candidate_algorithms": False, "speedup_claim_allowed": False},
         "falsifiers_triggered": ["Conjugation invariance removes hidden-member information, not necessarily class-versus-trivial information.",
             "Measuring another carrier label can irreversibly lose information; a large commutator does not certify an improved detector.",
             "All tested L/R binary outcome laws are reproduced by classical latent-irrep dynamics after the joint quantum label front end; no legal classical replacement of that front end is supplied.",
+            "Discarding the GPE reference rows has the same first-label probabilities but is a pair-local twirl, not the assumed Luders instrument; it erases all remaining three-input binary information conditional on that label.",
             "Fixed-copy invariant instruments repeated polynomially many times remain below the required asymptotic information budget."],
         "next_experiments": ["Supply a growing-copy collective program AND an efficiently evaluable outcome decision rule.",
             "Compare its full source-weighted channel against stronger product-basis and tensor-contraction baselines.",
@@ -303,9 +410,9 @@ def write_binary_carrier_instrument_report(path: Path = REPORT_PATH, *, write_re
         upsert_experiment(ExperimentRecord(id=registry_experiment_id, candidate_id=registry_candidate_id,
             title="Source-weighted binary carrier instruments", status=report["status"],
             hypothesis="Known carrier instruments expose useful binary information without assuming an ideal residual measurement.",
-            protocol="Evaluate physical null/shared-hidden laws, actual readouts, retained quantum states, a dephased ablation and an exact one-pair classifier.",
+            protocol="Evaluate physical null/shared-hidden laws, actual readouts, retained states, latent-irrep replay, clean GPE compute-copy-uncompute and adversarial reference discard. Charge QFT/action calls separately from classifier cost.",
             positive_signal="A growing-copy program with a compiled outcome classifier, not finite Bayes-table performance.",
-            falsifiers=["outcome mass is missing", "disturbance destroys the needed signal", "classifier cost is omitted", "fixed-copy repetition fails the information bound"],
+            falsifiers=["outcome mass is missing", "disturbance destroys the needed signal", "GPE workspace is discarded instead of uncomputed", "classifier cost is omitted", "fixed-copy repetition fails the information bound"],
             metrics=list(report["headline_metrics"]), dependencies=["physical three-copy Fourier blocks", "existing pair-carrier projectors"],
             next_actions=report["next_experiments"]))
         upsert_experiment_result(ExperimentResultRecord(id=registry_result_id or f"RESULT-{registry_experiment_id}",
@@ -324,4 +431,10 @@ def write_binary_carrier_instrument_report(path: Path = REPORT_PATH, *, write_re
                 reason_invalid="Every L/R transcript and final Young-row probability is reproduced by latent-irrep Markov dynamics after the joint pair/total quantum label measurement. Measuring that total label after one pair resolves the retained finite binary information.",
                 lesson="A dephased product-basis ablation was too weak. No legal classical sampler for the hypothesis-dependent initial latent distribution is supplied, so this does not replace the quantum front end. The rank-one condition already fails in S6, and transition-computation cost must be charged.",
                 applies_to=[registry_candidate_id, "finite alternating-carrier binary signals"], evidence={"artifact": str(path)}))
+        if report["claim_gate"]["finite_clean_gpe_controls_verified"]:
+            upsert_negative_result(NegativeResultRecord(id="DISCARDED-GPE-REFERENCE-NOT-LUDERS-INSTRUMENT", source=registry_experiment_id,
+                claim="Copying an isotypic label and discarding the GPE reference rows implements the clean projective instrument used by subsequent carrier measurements.",
+                reason_invalid="Fourier Kraus sums give a group twirl within each label, not P rho P. All physical S3/S4 source triples retain only first-pair transcript information after pair-reference discard; in S4 this loses an additional 37/192 trace distance relative to clean L.",
+                lesson="Copy only the irrep label, then invert the entire GPE computation to clean its workspace. Charge supplied QFT and controlled-action access. A global diagonal twirl preserves the binary mixture; this pair-local failure is neither an arbitrary compiler no-go nor classical dequantization.",
+                applies_to=[registry_candidate_id, "isotypic instrument implementation"], evidence={"artifact": str(path), "derivation": report["derivation_document"]}))
     return report

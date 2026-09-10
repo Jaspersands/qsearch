@@ -26,11 +26,11 @@
   },
   "execution_model": "Research generation and experiments run interactively during active Codex sessions. A GitHub workflow validates pushed snapshots, and a scheduled backup can commit only validation-passing changes; neither mechanism performs autonomous quantum-algorithm research between sessions.",
   "metrics": {
-    "blocking_findings": 1282,
+    "blocking_findings": 1284,
     "experiments": 792,
-    "negative_results": 894,
+    "negative_results": 895,
     "proof_debts": 24,
-    "results": 798
+    "results": 799
   },
   "milestones": [
     {
@@ -91,17 +91,17 @@
       "tone": "blocked"
     },
     {
-      "evidence": "Finite isometries: 5. Information-loss controls: 10. Finite instrument schedules: 24. No scalable QFT gate implementation or decoder is supplied.",
+      "evidence": "Finite isometries: 5. Information-loss controls: 10. Finite instrument schedules: 24. Clean-workspace controls: 2. No scalable QFT gate implementation or decoder is supplied.",
       "next": "Construct a task-relevant logical effect; test information, normalization, and classical simulability.",
       "short_title": "Cosets",
       "stage": 3,
       "status": "Encoded access checked; useful measurement open",
-      "summary": "Two-QFT restriction preserves normalization and supports logical orbit averages without decoding a copy basis. Independent carrier discard loses the detection signal. A joint quantum label front end plus classical processing reproduces the tested small-group binary gains. No useful detector or access to the unknown centralizer is supplied.",
+      "summary": "Two-QFT restriction preserves normalization and supports logical orbit averages without decoding a copy basis. Independent carrier discard loses the detection signal. A joint quantum label front end plus classical processing reproduces the tested small-group binary gains. Clean subset labels and exact two-copy scoring are available; the growing-copy binary measurement remains missing. No useful detector or access to the unknown centralizer is supplied.",
       "title": "Nonabelian coset states",
       "tone": "active"
     }
   ],
-  "updated_at": "2026-09-09",
+  "updated_at": "2026-09-10",
   "verdict": {
     "detail": "Encoded subgroup access passes finite checks. No target measurement or decoder is supplied; speedup claims remain blocked.",
     "title": "No breakthrough yet"

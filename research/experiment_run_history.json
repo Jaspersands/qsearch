@@ -17228,5 +17228,169 @@
     "run_id": "RUN-EXP-DHS-FOURIER-COMPRESSIBILITY-00529",
     "status": "diagnostic-only-no-learner-executed",
     "summary": "Ran 216 sparse Fourier and derivative-spectrum audits over 9 families, 4 n-values, and 6 sample budgets; No shift recovery was attempted or certified."
+  },
+  {
+    "artifacts": {
+      "binary_carrier_instruments": "research/representation/coset_binary_carrier_instruments.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "experiment_id": "EXP-COSET-BINARY-CARRIER-INSTRUMENTS",
+    "falsifier_count": 5,
+    "falsifiers_triggered": [
+      "Conjugation invariance removes hidden-member information, not necessarily class-versus-trivial information.",
+      "Measuring another carrier label can irreversibly lose information; a large commutator does not certify an improved detector.",
+      "All tested L/R binary outcome laws are reproduced by classical latent-irrep dynamics after the joint quantum label front end; no legal classical replacement of that front end is supplied.",
+      "Discarding the GPE reference rows has the same first-label probabilities but is a pair-local twirl, not the assumed Luders instrument; it erases all remaining three-input binary information conditional on that label.",
+      "Fixed-copy invariant instruments repeated polynomially many times remain below the required asymptotic information budget."
+    ],
+    "metrics": {
+      "clean_gpe_cleanup_controls_passed": 2,
+      "explicit_one_pair_classifiers_checked": 4,
+      "finite_full_source_controls_passed": 2,
+      "growing_copy_measurement_compilers": 0,
+      "schedules_evaluated": 24,
+      "source_blocks_evaluated": 152,
+      "source_blocks_with_clean_gpe_contract": 152,
+      "source_blocks_with_exact_latent_irrep_model": 152
+    },
+    "recorded_at": "2026-09-09T21:20:15.139120+00:00",
+    "result_id": "RESULT-EXP-COSET-BINARY-CARRIER-INSTRUMENTS",
+    "run_id": "RUN-EXP-COSET-BINARY-CARRIER-INSTRUMENTS-00530",
+    "status": "binary-instrument-calibration-fixed-copy-route-obstructed",
+    "summary": "Complete natural-source binary channels distinguish clean isotypic labels from discarded GPE reference rows. Clean compute-copy-uncompute has a uniform primitive reduction; discarding rows loses shared-hidden information. Fixed-copy repetition and the growing-copy classifier remain blocked."
+  },
+  {
+    "artifacts": {
+      "coset_hidden_involution_binary_decision_reduction": "research/EXP-COSET-HIDDEN-INVOLUTION-BINARY-DECISION-REDUCTION.json",
+      "exp_coset_hidden_involution_binary_decision_reduction": "research/EXP-COSET-HIDDEN-INVOLUTION-BINARY-DECISION-REDUCTION.json",
+      "hidden_involution_binary_decision_reduction": "research/EXP-COSET-HIDDEN-INVOLUTION-BINARY-DECISION-REDUCTION.json",
+      "report": "research/EXP-COSET-HIDDEN-INVOLUTION-BINARY-DECISION-REDUCTION.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "experiment_id": "EXP-COSET-HIDDEN-INVOLUTION-BINARY-DECISION-REDUCTION",
+    "falsifier_count": 4,
+    "falsifiers_triggered": [
+      "Constant-copy invariant measurements cannot retain constant fixed-point-free decision advantage.",
+      "Pairwise overlap decay alone does not prove threshold distinguishability.",
+      "Zero individual-label information does not imply zero binary class-detection information.",
+      "Two-copy target-label optimality is not a scalable hidden-involution algorithm."
+    ],
+    "metrics": {
+      "exact_chi_square_control_count": 5,
+      "finite_control_count": 5,
+      "finite_validation_failure_count": 0,
+      "new_quantum_algorithm_count": 0,
+      "one_copy_helstrom_label_control_count": 2,
+      "scalable_block_sign_compiler_count": 0,
+      "scaling_record_count": 5,
+      "strict_entangled_target_gain_control_count": 2,
+      "threshold_trace_distance_lower_bound_count": 1,
+      "two_copy_helstrom_target_control_count": 2
+    },
+    "recorded_at": "2026-09-10T01:46:32.073896+00:00",
+    "result_id": "RESULT-EXP-COSET-HIDDEN-INVOLUTION-BINARY-DECISION-REDUCTION-COSET",
+    "run_id": "RUN-EXP-COSET-HIDDEN-INVOLUTION-BINARY-DECISION-REDUCTION-00531",
+    "status": "binary-decision-copy-threshold-and-two-copy-normal-form-proved",
+    "summary": "Re-derived the published logarithmic sample threshold with an exact class-mixture chi-square identity and added exact one- and two-copy Helstrom normal forms. The new value is compiler diagnostics, not a new sample-complexity result."
+  },
+  {
+    "artifacts": {
+      "binary_carrier_instruments": "research/representation/coset_binary_carrier_instruments.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "experiment_id": "EXP-COSET-BINARY-CARRIER-INSTRUMENTS",
+    "falsifier_count": 5,
+    "falsifiers_triggered": [
+      "Conjugation invariance removes hidden-member information, not necessarily class-versus-trivial information.",
+      "Measuring another carrier label can irreversibly lose information; a large commutator does not certify an improved detector.",
+      "All tested L/R binary outcome laws are reproduced by classical latent-irrep dynamics after the joint quantum label front end; no legal classical replacement of that front end is supplied.",
+      "Discarding the GPE reference rows has the same first-label probabilities but is a pair-local twirl, not the assumed Luders instrument; it erases all remaining three-input binary information conditional on that label.",
+      "Fixed-copy invariant instruments repeated polynomially many times remain below the required asymptotic information budget."
+    ],
+    "metrics": {
+      "clean_gpe_cleanup_controls_passed": 2,
+      "explicit_one_pair_classifiers_checked": 4,
+      "finite_full_source_controls_passed": 2,
+      "growing_copy_measurement_compilers": 0,
+      "polynomial_label_arithmetic_controls": 4,
+      "schedules_evaluated": 24,
+      "source_blocks_evaluated": 152,
+      "source_blocks_with_clean_gpe_contract": 152,
+      "source_blocks_with_exact_latent_irrep_model": 152
+    },
+    "recorded_at": "2026-09-10T01:52:16.439411+00:00",
+    "result_id": "RESULT-EXP-COSET-BINARY-CARRIER-INSTRUMENTS",
+    "run_id": "RUN-EXP-COSET-BINARY-CARRIER-INSTRUMENTS-00532",
+    "status": "binary-instrument-calibration-fixed-copy-route-obstructed",
+    "summary": "Complete natural-source binary channels distinguish clean isotypic labels from discarded GPE reference rows. Clean compute-copy-uncompute has a uniform primitive reduction; discarding rows loses shared-hidden information. Fixed-copy repetition and the growing-copy classifier remain blocked."
+  },
+  {
+    "artifacts": {
+      "coset_hidden_involution_binary_decision_reduction": "research/EXP-COSET-HIDDEN-INVOLUTION-BINARY-DECISION-REDUCTION.json",
+      "exp_coset_hidden_involution_binary_decision_reduction": "research/EXP-COSET-HIDDEN-INVOLUTION-BINARY-DECISION-REDUCTION.json",
+      "hidden_involution_binary_decision_reduction": "research/EXP-COSET-HIDDEN-INVOLUTION-BINARY-DECISION-REDUCTION.json",
+      "report": "research/EXP-COSET-HIDDEN-INVOLUTION-BINARY-DECISION-REDUCTION.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "experiment_id": "EXP-COSET-HIDDEN-INVOLUTION-BINARY-DECISION-REDUCTION",
+    "falsifier_count": 4,
+    "falsifiers_triggered": [
+      "Constant-copy invariant measurements cannot retain constant fixed-point-free decision advantage.",
+      "Pairwise overlap decay alone does not prove threshold distinguishability.",
+      "Zero individual-label information does not imply zero binary class-detection information.",
+      "Two-copy target-label optimality is not a scalable hidden-involution algorithm."
+    ],
+    "metrics": {
+      "exact_chi_square_control_count": 5,
+      "finite_control_count": 5,
+      "finite_validation_failure_count": 0,
+      "new_quantum_algorithm_count": 0,
+      "one_copy_helstrom_label_control_count": 2,
+      "scalable_block_sign_compiler_count": 0,
+      "scaling_record_count": 5,
+      "strict_entangled_target_gain_control_count": 2,
+      "threshold_trace_distance_lower_bound_count": 1,
+      "two_copy_helstrom_target_control_count": 2
+    },
+    "recorded_at": "2026-09-10T01:52:22.634236+00:00",
+    "result_id": "RESULT-EXP-COSET-HIDDEN-INVOLUTION-BINARY-DECISION-REDUCTION-COSET",
+    "run_id": "RUN-EXP-COSET-HIDDEN-INVOLUTION-BINARY-DECISION-REDUCTION-00533",
+    "status": "binary-decision-copy-threshold-and-two-copy-normal-form-proved",
+    "summary": "Re-derived the published logarithmic sample threshold with an exact class-mixture chi-square identity and added exact one- and two-copy Helstrom normal forms. The new value is compiler diagnostics, not a new sample-complexity result."
+  },
+  {
+    "artifacts": {
+      "coset_recoupling_mechanism_synthesis": "research/representation/coset_recoupling_mechanism_synthesis.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "experiment_id": "EXP-COSET-RECOUPLING-MECHANISM-SYNTHESIS",
+    "falsifier_count": 6,
+    "falsifiers_triggered": [
+      "QFT-only weak-label decoding is a known no-go route.",
+      "Multiplicity statistics are not a coherent transform or decoder.",
+      "Spectrum-rank PGM and one-tree k-copy recursion fail exact finite/all-n tests.",
+      "Exceptional commuting or restricted multiplicity families do not inherit full source-family reductions.",
+      "No surviving architecture currently satisfies every proof-critical capability.",
+      "Every architecture must satisfy its task-specific copy bound: Holevo/Fano for identification, class-mixture chi-square for binary detection. Known logarithmic-copy information does not supply a circuit."
+    ],
+    "metrics": {
+      "automatically_promoted_candidate_count": 0,
+      "binary_detection_proposal_count": 1,
+      "highest_survivor_priority_score": 110,
+      "known_no_go_rejected_count": 6,
+      "mechanism_count": 10,
+      "minimum_missing_capability_count": 2,
+      "primitive_count": 25,
+      "proof_gate_eligible_count": 0,
+      "proposal_only_count": 4,
+      "task_specific_copy_budget_rule_count": 2,
+      "typed_interface_valid_count": 10,
+      "undercharged_mechanism_promoted_count": 0
+    },
+    "recorded_at": "2026-09-10T01:57:02.106935+00:00",
+    "result_id": "RESULT-EXP-COSET-RECOUPLING-MECHANISM-SYNTHESIS-COSET",
+    "run_id": "RUN-EXP-COSET-RECOUPLING-MECHANISM-SYNTHESIS-00534",
+    "status": "typed-mutations-ranked-no-proof-gate-eligible-mechanism",
+    "summary": "Evaluated 10 typed collective-measurement architectures, rejected 6 known-invalid shortcuts, and retained 4 proof-capability research proposals without promoting candidates."
   }
 ]

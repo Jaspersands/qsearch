@@ -1,6 +1,7 @@
 import os
 import tempfile
 import unittest
+from dataclasses import replace
 from pathlib import Path
 
 from coset_recoupling_mechanism_synthesis import (
@@ -29,8 +30,29 @@ class RecouplingMechanismSynthesisTests(unittest.TestCase):
         for template in TEMPLATES:
             evaluation = evaluate_template(template)
             self.assertTrue(evaluation.typed_interfaces_valid, evaluation.interface_issues)
-            self.assertTrue(evaluation.holevo_copy_budget_obligation_attached)
-            self.assertIn("chi_1", evaluation.minimum_copy_budget_rule)
+            self.assertTrue(evaluation.task_copy_budget_obligation_attached)
+            if template.task_kind == "identification":
+                self.assertIn("chi_1", evaluation.minimum_copy_budget_rule)
+            else:
+                self.assertIn("16 epsilon^2", evaluation.minimum_copy_budget_rule)
+                self.assertNotIn("chi_1", evaluation.minimum_copy_budget_rule)
+
+    def test_binary_target_is_not_silently_treated_as_identification(self):
+        template = next(row for row in TEMPLATES if row.task_kind == "binary-detection")
+        result = evaluate_template(template)
+        self.assertEqual(result.decision, "proposal-only-missing-proof-capabilities")
+        self.assertIn("CAP-BINARY-PROMISE-PRESERVING-REDUCTION", result.missing_capabilities)
+        self.assertIn("CAP-GROWING-COPY-BINARY-OUTCOME-CLASSIFIER", result.missing_capabilities)
+        self.assertNotIn("CAP-HIDDEN-INVOLUTION-OUTCOME-DECODER", result.missing_capabilities)
+        mismatched = evaluate_template(replace(template, task_kind="identification"))
+        self.assertEqual(mismatched.decision, "rejected")
+        self.assertFalse(mismatched.typed_interfaces_valid)
+        with self.assertRaises(ValueError):
+            evaluate_template(replace(template, task_kind="untyped"))
+        proposal = next(row for row in build_recoupling_mutation_proposals() if row["task_kind"] == "binary-detection")
+        self.assertFalse(proposal["proof_gate_eligible"])
+        self.assertIn("does not require hidden-element output", " ".join(proposal["rejection_filters"]))
+        self.assertNotIn("without hidden-involution recovery", " ".join(proposal["rejection_filters"]))
 
     def test_known_shortcuts_are_rejected(self):
         evaluations = {template.id: evaluate_template(template) for template in TEMPLATES}
@@ -68,7 +90,7 @@ class RecouplingMechanismSynthesisTests(unittest.TestCase):
 
     def test_mutation_proposals_are_explicitly_not_gate_eligible(self):
         proposals = build_recoupling_mutation_proposals()
-        self.assertEqual(len(proposals), 3)
+        self.assertEqual(len(proposals), 4)
         self.assertFalse(any("JM-LABEL-MULTIPLICITY-RECOUPLING" in item["id"] for item in proposals))
         encoded = next(item for item in proposals if "ENCODED-REFERENCE" in item["id"])
         self.assertIn("unknown centralizer", " ".join(encoded["proof_obligations_to_resolve"]))
@@ -80,11 +102,13 @@ class RecouplingMechanismSynthesisTests(unittest.TestCase):
     def test_report_promotes_no_undefined_architecture(self):
         report = build_recoupling_mechanism_synthesis_report()
         self.assertEqual(report.headline_metrics["known_no_go_rejected_count"], 6)
-        self.assertEqual(report.headline_metrics["proposal_only_count"], 3)
+        self.assertEqual(report.headline_metrics["proposal_only_count"], 4)
+        self.assertEqual(report.headline_metrics["binary_detection_proposal_count"], 1)
+        self.assertEqual(report.headline_metrics["task_specific_copy_budget_rule_count"], 2)
         self.assertEqual(report.headline_metrics["proof_gate_eligible_count"], 0)
         self.assertEqual(report.headline_metrics["automatically_promoted_candidate_count"], 0)
         self.assertEqual(report.headline_metrics["undercharged_mechanism_promoted_count"], 0)
-        self.assertTrue(report.claim_gate["exact_holevo_copy_budget_attached"])
+        self.assertTrue(report.claim_gate["task_correct_copy_budget_attached"])
         self.assertFalse(report.claim_gate["undefined_circuit_boxes_promoted"])
         self.assertFalse(report.claim_gate["speedup_claim_allowed"])
 
@@ -113,7 +137,7 @@ class RecouplingMechanismSynthesisTests(unittest.TestCase):
         )
         negative_ids = {item["id"] for item in negatives}
         self.assertIn("NEG-MECH-PAIR-TREE-RANK-PGM", negative_ids)
-        self.assertEqual(len([item for item in mutations if item["mutation_type"] == "typed-recoupling-mechanism"]), 3)
+        self.assertEqual(len([item for item in mutations if item["mutation_type"] == "typed-recoupling-mechanism"]), 4)
         finding = next(
             item
             for item in dequantization["findings"]
@@ -146,7 +170,7 @@ class RecouplingMechanismSynthesisTests(unittest.TestCase):
         self.assertEqual(runner_result.status, "completed")
         self.assertIn("EXP-COSET-RECOUPLING-MECHANISM-SYNTHESIS", supported_experiment_ids())
         typed = [item for item in proposals if item["mutation_type"] == "typed-recoupling-mechanism"]
-        self.assertEqual(len(typed), 3)
+        self.assertEqual(len(typed), 4)
         self.assertTrue(all(item["proof_gate_eligible"] is False for item in typed))
         self.assertTrue(validation["valid"], validation["issues"])
 

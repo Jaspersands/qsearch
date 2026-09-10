@@ -7,6 +7,7 @@ from coset_binary_carrier_instruments import (
     DEFAULT_EXPERIMENT_ID, SCHEDULES, _rank_one_carrier_hmm, _total_projectors,
     binary_outcome_statistics, build_binary_carrier_instrument_report,
     evaluate_binary_carrier_instruments, invariant_block_transcript_distance_squared_bound,
+    evaluate_pair_gpe_cleanup,
     one_pair_likelihood_ratio, write_binary_carrier_instrument_report,
 )
 
@@ -60,6 +61,24 @@ def test_full_outcome_laws_not_only_aggregate_scores_have_a_classical_latent_mod
     assert not rows["LRL"]["dephased_ablation_is_a_general_classical_lower_bound"]
 
 
+@pytest.mark.parametrize("n,t", ((3, 1), (4, 2)))
+def test_clean_gpe_matches_luders_but_discarding_workspace_erases_correlations(n, t):
+    cleanup = evaluate_pair_gpe_cleanup(n, t)
+    controls = evaluate_binary_carrier_instruments(n, t)
+    left = next(row for row in controls["schedules"] if row["schedule"] == "L")
+    assert cleanup["finite_complete_source_cleanup_verified"]
+    assert cleanup["source_blocks_evaluated"] == controls["source_blocks_evaluated"]
+    assert max(cleanup["residuals"].values()) < 1e-10
+    assert cleanup["clean_first_pair_retained_trace_distance"] == pytest.approx(left["retained_quantum_trace_distance"])
+    assert cleanup["discarded_reference_retained_trace_distance"] == pytest.approx(left["transcript"]["total_variation"])
+    assert cleanup["discard_then_clean_right_transcript"]["total_variation"] == pytest.approx(left["transcript"]["total_variation"])
+    assert cleanup["extra_loss_from_discarded_reference"] > 0
+    assert cleanup["hypothesis_independent_state_after_first_label"]
+    assert not cleanup["global_twirl_is_the_same_channel_as_pair_twirl"]
+    if n == 4:
+        assert cleanup["extra_loss_from_discarded_reference"] == pytest.approx(37 / 192)
+
+
 def test_latent_scalar_model_refuses_higher_multiplicity_branches():
     from representation_obstruction import integer_partitions
     from self_dual_wreath_physical_frame_blocks import permutation_representation_matrices
@@ -79,6 +98,7 @@ def test_fixed_copy_repetition_does_not_become_an_algorithm():
     assert invariant_block_transcript_distance_squared_bound(8, 3, 0) == 0
     report = build_binary_carrier_instrument_report()
     assert report["headline_metrics"]["source_blocks_with_exact_latent_irrep_model"] == 152
+    assert report["headline_metrics"]["polynomial_label_arithmetic_controls"] == 4
     witness = report["classical_model_nonextension_witness"]
     assert witness["joint_multiplicity"] == 4
     assert witness["pair_kronecker_coefficient"] == 2
@@ -115,6 +135,7 @@ def test_clean_registry_runner_and_negative_baseline_artifacts(tmp_path, monkeyp
     negatives = {row["id"] for row in load_negative_results()}
     assert "CARRIER-INVARIANCE-NOT-A-BINARY-NO-GO" in negatives
     assert "FINITE-BINARY-CARRIER-ALTERNATION-LATENT-IRREP" in negatives
+    assert "DISCARDED-GPE-REFERENCE-NOT-LUDERS-INSTRUMENT" in negatives
     from dequantization_checks import findings_from_negative_results
     from proof_tracker import _binary_carrier_instrument_lemmas
     findings = findings_from_negative_results([{"id": "CODE-COSET-COLLECTIVE"}], load_negative_results())
@@ -122,7 +143,19 @@ def test_clean_registry_runner_and_negative_baseline_artifacts(tmp_path, monkeyp
     assert "rank-one condition already fails in S6" in finding.required_action
     assert "does not replace the quantum front end" in finding.required_action
     assert "spectral" not in finding.id.lower()
+    cleanup = next(row for row in findings if row.id.endswith("CLEAN-GPE-INSTRUMENT-CONTRACT"))
+    assert "global diagonal twirl preserves" in cleanup.required_action
+    assert "not classical dequantization" in cleanup.required_action
     lemmas = _binary_carrier_instrument_lemmas("CODE-COSET-COLLECTIVE")
     assert lemmas[0].status.startswith("numerically-verified-finite-")
     assert lemmas[1].status.startswith("blocked-")
+    assert lemmas[2].status == "derived-clean-gpe-primitive-reduction-review-pending"
+    assert "neither a multiplicity basis nor a growing-copy classifier" in lemmas[2].falsification_test
+    assert lemmas[3].status == "implemented-known-polynomial-two-copy-label-score"
     assert validate_registry()["valid"]
+
+
+def test_missing_cleanup_artifact_does_not_resolve_the_instrument_obligation(tmp_path, monkeypatch):
+    from proof_tracker import _binary_carrier_instrument_lemmas
+    monkeypatch.chdir(tmp_path)
+    assert _binary_carrier_instrument_lemmas("CODE-COSET-COLLECTIVE")[2].status.startswith("blocked-")

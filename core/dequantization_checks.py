@@ -11651,6 +11651,7 @@ def findings_from_negative_results(candidates: list[dict[str, Any]], negative_re
             "FIXED-REFERENCE-INVARIANT-IDENTIFICATION-ORBIT-BOUND": "FIXED-REFERENCE-IDENTIFICATION",
             "INDEPENDENT-REFERENCE-CARRIER-DISCARD-ERASES-BINARY-INFORMATION": "REFERENCE-TWIRL-INFORMATION-LOSS",
             "CARRIER-INVARIANCE-NOT-A-BINARY-NO-GO": "CARRIER-BINARY-TASK-SCOPE",
+            "DISCARDED-GPE-REFERENCE-NOT-LUDERS-INSTRUMENT": "CLEAN-GPE-INSTRUMENT-CONTRACT",
         }
         if item.get("id") in access_boundaries:
             for candidate in candidates:

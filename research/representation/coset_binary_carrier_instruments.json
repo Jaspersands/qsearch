@@ -1,7 +1,7 @@
 {
-  "created_at": "2026-09-09T11:30:50.033243+00:00",
+  "created_at": "2026-09-10T01:52:16.300813+00:00",
   "status": "binary-instrument-calibration-fixed-copy-route-obstructed",
-  "summary": "Complete natural-source carrier transcripts are evaluated for binary detection, separately from identification. Measurement disturbance and the uncompiled residual Helstrom gap are charged. Fixed-copy invariant block repetition cannot yield scalable advantage.",
+  "summary": "Complete natural-source binary channels distinguish clean isotypic labels from discarded GPE reference rows. Clean compute-copy-uncompute has a uniform primitive reduction; discarding rows loses shared-hidden information. Fixed-copy repetition and the growing-copy classifier remain blocked.",
   "derivation_document": "research/BINARY_CARRIER_INSTRUMENTS.md",
   "controls": [
     {
@@ -869,6 +869,178 @@
       "trace_distance_squared_upper_bound": "8192/933893736635024018210290198683430398710868817313036057274930012719760468478745622801070535211588263865842485263303071340287597384172105587518127606893070602754805936901096404350867577524816763143691252586179624571745077867936469404958188533782958984375"
     }
   ],
+  "gpe_cleanup_controls": [
+    {
+      "n": 3,
+      "source_blocks_evaluated": 27,
+      "residuals": {
+        "clean_workspace": 4.440892098500626e-16,
+        "legacy_projector": 6.280369834735101e-16,
+        "first_label_probability": 2.7755575615628914e-17,
+        "conditional_binary_proportionality": 2.1942709178604383e-17,
+        "discard_equals_pair_twirl": 4.757456154970324e-17,
+        "global_conjugation_preserves_binary_state": 5.5388457437092816e-17
+      },
+      "clean_first_pair_retained_trace_distance": 0.587962962962963,
+      "discarded_reference_retained_trace_distance": 0.5138888888888888,
+      "extra_loss_from_discarded_reference": 0.07407407407407418,
+      "first_pair_transcript": {
+        "total_variation": 0.5138888888888891,
+        "equal_prior_bayes_success": 0.7569444444444445,
+        "normalization_residual": 2.220446049250313e-16,
+        "output_count": 81,
+        "optimal_likelihood_table_is_a_compiled_classifier": false
+      },
+      "discard_then_clean_right_transcript": {
+        "total_variation": 0.5138888888888891,
+        "equal_prior_bayes_success": 0.7569444444444445,
+        "normalization_residual": 0.0,
+        "output_count": 243,
+        "optimal_likelihood_table_is_a_compiled_classifier": false
+      },
+      "finite_complete_source_cleanup_verified": true,
+      "hypothesis_independent_state_after_first_label": true,
+      "global_twirl_is_the_same_channel_as_pair_twirl": false
+    },
+    {
+      "n": 4,
+      "source_blocks_evaluated": 125,
+      "residuals": {
+        "clean_workspace": 1.5217048028374185e-15,
+        "legacy_projector": 2.1486206364838123e-15,
+        "first_label_probability": 1.734723475976807e-17,
+        "conditional_binary_proportionality": 1.3010426069826053e-18,
+        "discard_equals_pair_twirl": 5.054885955060704e-18,
+        "global_conjugation_preserves_binary_state": 9.813077866773595e-18
+      },
+      "clean_first_pair_retained_trace_distance": 0.6145833333333324,
+      "discarded_reference_retained_trace_distance": 0.4218749999999996,
+      "extra_loss_from_discarded_reference": 0.19270833333333276,
+      "first_pair_transcript": {
+        "total_variation": 0.421875,
+        "equal_prior_bayes_success": 0.7109375,
+        "normalization_residual": 0.0,
+        "output_count": 625,
+        "optimal_likelihood_table_is_a_compiled_classifier": false
+      },
+      "discard_then_clean_right_transcript": {
+        "total_variation": 0.421875,
+        "equal_prior_bayes_success": 0.7109375,
+        "normalization_residual": 0.0,
+        "output_count": 3125,
+        "optimal_likelihood_table_is_a_compiled_classifier": false
+      },
+      "finite_complete_source_cleanup_verified": true,
+      "hypothesis_independent_state_after_first_label": true,
+      "global_twirl_is_the_same_channel_as_pair_twirl": false
+    }
+  ],
+  "fixed_point_free_label_arithmetic_controls": [
+    {
+      "degree": 128,
+      "source_partition": [
+        64,
+        64
+      ],
+      "target_partition": [
+        128
+      ],
+      "dimension_bits": 119,
+      "character_bits": 61,
+      "score_numerator_bits": 98,
+      "score_denominator_bits": 98,
+      "accept_hidden_class": true,
+      "absolute_ratio_at_most_one": true,
+      "tableau_paths_enumerated": 0,
+      "enumerated_all_partitions": false,
+      "natural_source_coverage_claimed": false
+    },
+    {
+      "degree": 512,
+      "source_partition": [
+        256,
+        256
+      ],
+      "target_partition": [
+        512
+      ],
+      "dimension_bits": 500,
+      "character_bits": 252,
+      "score_numerator_bits": 399,
+      "score_denominator_bits": 399,
+      "accept_hidden_class": true,
+      "absolute_ratio_at_most_one": true,
+      "tableau_paths_enumerated": 0,
+      "enumerated_all_partitions": false,
+      "natural_source_coverage_claimed": false
+    },
+    {
+      "degree": 2048,
+      "source_partition": [
+        1024,
+        1024
+      ],
+      "target_partition": [
+        2048
+      ],
+      "dimension_bits": 2033,
+      "character_bits": 1019,
+      "score_numerator_bits": 1646,
+      "score_denominator_bits": 1646,
+      "accept_hidden_class": true,
+      "absolute_ratio_at_most_one": true,
+      "tableau_paths_enumerated": 0,
+      "enumerated_all_partitions": false,
+      "natural_source_coverage_claimed": false
+    },
+    {
+      "degree": 4096,
+      "source_partition": [
+        2048,
+        2048
+      ],
+      "target_partition": [
+        4096
+      ],
+      "dimension_bits": 4079,
+      "character_bits": 2043,
+      "score_numerator_bits": 3343,
+      "score_denominator_bits": 3343,
+      "accept_hidden_class": true,
+      "absolute_ratio_at_most_one": true,
+      "tableau_paths_enumerated": 0,
+      "enumerated_all_partitions": false,
+      "natural_source_coverage_claimed": false
+    }
+  ],
+  "clean_isotypic_label_access": {
+    "program": [
+      "PREPARE_UNIFORM_SN",
+      "CONTROLLED_SUBSET_GROUP_ACTION",
+      "SN_QFT",
+      "COPY_IRREP_LABEL_ONLY",
+      "SN_QFT_INVERSE",
+      "CONTROLLED_SUBSET_GROUP_ACTION_INVERSE",
+      "UNPREPARE_UNIFORM_SN"
+    ],
+    "degree": 128,
+    "subset_copy_count": 16384,
+    "label_queries": 128,
+    "group_qft_or_inverse_calls": 256,
+    "uniform_preparation_or_inverse_calls": 256,
+    "controlled_single_copy_group_action_or_inverse_calls": 4194304,
+    "reference_register_qubits": 717,
+    "partition_label_register_bits_upper_bound": 1024,
+    "composed_channel_diamond_distance_upper_bound": 0.000512,
+    "postselection_required": false,
+    "inverse_is_adjoint_of_same_approximate_circuit": true,
+    "clean_workspace_required": true,
+    "multiplicity_basis_transform_supplied": false,
+    "gate_level_sn_qft_backend_supplied_here": false,
+    "uniform_reduction_to_known_primitives": true,
+    "controlled_representation_access_must_be_charged": true,
+    "scope": "S_n physical regular registers or efficient supplied irrep actions; subset may grow polynomially. No hard multiplicity transform is granted."
+  },
   "classical_model_nonextension_witness": {
     "n": 6,
     "source_partitions": [
@@ -905,6 +1077,9 @@
     "explicit_one_pair_classifiers_checked": 4,
     "source_blocks_evaluated": 152,
     "source_blocks_with_exact_latent_irrep_model": 152,
+    "source_blocks_with_clean_gpe_contract": 152,
+    "clean_gpe_cleanup_controls_passed": 2,
+    "polynomial_label_arithmetic_controls": 4,
     "growing_copy_measurement_compilers": 0
   },
   "claim_gate": {
@@ -915,6 +1090,11 @@
     "general_classical_separation_proved": false,
     "legal_classical_sampler_for_initial_latent_distribution_supplied": false,
     "latent_model_replaces_quantum_frontend": false,
+    "clean_isotypic_label_uniform_primitive_reduction_available": true,
+    "exact_fixed_point_free_two_copy_score_available": true,
+    "finite_clean_gpe_controls_verified": true,
+    "discarded_gpe_reference_implements_luders_in_general": false,
+    "gate_level_sn_qft_backend_supplied": false,
     "finite_alternation_explained_by_latent_irrep_model": true,
     "fixed_copy_calibrations_are_candidate_algorithms": false,
     "speedup_claim_allowed": false
@@ -923,6 +1103,7 @@
     "Conjugation invariance removes hidden-member information, not necessarily class-versus-trivial information.",
     "Measuring another carrier label can irreversibly lose information; a large commutator does not certify an improved detector.",
     "All tested L/R binary outcome laws are reproduced by classical latent-irrep dynamics after the joint quantum label front end; no legal classical replacement of that front end is supplied.",
+    "Discarding the GPE reference rows has the same first-label probabilities but is a pair-local twirl, not the assumed Luders instrument; it erases all remaining three-input binary information conditional on that label.",
     "Fixed-copy invariant instruments repeated polynomially many times remain below the required asymptotic information budget."
   ],
   "next_experiments": [

@@ -66,8 +66,8 @@
       "target_claim": "The coset observable is not a disguised classical invariant."
     }
   ],
-  "created_at": "2026-09-09T12:01:34.841403+00:00",
-  "lemma_count": 1264,
+  "created_at": "2026-09-10T01:53:59.710089+00:00",
+  "lemma_count": 1266,
   "lemmas": [
     {
       "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -547,6 +547,30 @@
       "id": "LEMMA-CODE-COSET-COLLECTIVE-GROWING-COPY-BINARY-CLASSIFIER",
       "statement": "A growing-copy measurement program has an efficiently evaluable outcome decision rule, charged disturbance, natural source coverage and a serious classical comparison.",
       "status": "blocked-no-growing-copy-program-and-outcome-classifier"
+    },
+    {
+      "candidate_id": "CODE-COSET-COLLECTIVE",
+      "depends_on": [
+        "PO-INPUT-MODEL",
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY"
+      ],
+      "falsification_test": "Check Pi_lambda V = V P_lambda on every input including entangled extensions, then invert all workspace operations. Discarded reference rows instead twirl carriers; label probabilities alone cannot validate the instrument. This supplies neither a multiplicity basis nor a growing-copy classifier.",
+      "id": "LEMMA-CODE-COSET-COLLECTIVE-CLEAN-ISOTYPIC-INSTRUMENT",
+      "statement": "Given supplied group QFT, uniform group preparation and controlled subset actions, compute-copy-label-uncompute implements P_lambda rho P_lambda with clean workspace; q uses have diamond error at most min(2,4q delta) for forward-unitary operator error delta.",
+      "status": "derived-clean-gpe-primitive-reduction-review-pending"
+    },
+    {
+      "candidate_id": "CODE-COSET-COLLECTIVE",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-CLASSICAL-BASELINE"
+      ],
+      "falsification_test": "Compare with independent Murnaghan-Nakayama recursion and all physical S4 two-copy blocks. Cheap label scoring does not provide a classical sampler, typical source coverage, or constant-copy asymptotic advantage.",
+      "id": "LEMMA-CODE-COSET-COLLECTIVE-FIXED-POINT-FREE-LABEL-ARITHMETIC",
+      "statement": "Given actual two-copy source and target labels for cycle type 2^m, exact two-quotient/hook arithmetic evaluates their Helstrom sign in polynomial bit complexity; no tableau paths or joint label law are enumerated.",
+      "status": "implemented-known-polynomial-two-copy-label-score"
     },
     {
       "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -15437,7 +15461,7 @@
       "candidate_id": "CODE-COSET-COLLECTIVE",
       "claim_blocked": "PO-DEQUANTIZATION",
       "debt_type": "dequantization",
-      "evidence": "The packed label capacity is polynomial, while the exact source mass of such small multiplicities vanishes superpolynomially. | The two tasks have different priors and alternatives. Complete S3/S4 physical channels have nonzero binary signal; the one-pair character likelihood is checked independently. | It produces an implicit copy code. The logical target effect, physical access transfer and decoder remain unspecified.",
+      "evidence": "The packed label capacity is polynomial, while the exact source mass of such small multiplicities vanishes superpolynomially. | The two tasks have different priors and alternatives. Complete S3/S4 physical channels have nonzero binary signal; the one-pair character likelihood is checked independently. | Fourier Kraus sums give a group twirl within each label, not P rho P. All physical S3/S4 source triples retain only first-pair transcript information after pair-reference discard; in S4 this loses an additional 37/192 trace distance relative to clean L.",
       "id": "DEBT-CODE-COSET-COLLECTIVE-PO-DEQUANTIZATION",
       "priority_score": 100,
       "required_resolution": "Resolve dequantization findings or demote the candidate to a negative/blocked result."
@@ -15945,7 +15969,7 @@
     "candidate_id": "CODE-COSET-COLLECTIVE",
     "claim_blocked": "PO-DEQUANTIZATION",
     "debt_type": "dequantization",
-    "evidence": "The packed label capacity is polynomial, while the exact source mass of such small multiplicities vanishes superpolynomially. | The two tasks have different priors and alternatives. Complete S3/S4 physical channels have nonzero binary signal; the one-pair character likelihood is checked independently. | It produces an implicit copy code. The logical target effect, physical access transfer and decoder remain unspecified.",
+    "evidence": "The packed label capacity is polynomial, while the exact source mass of such small multiplicities vanishes superpolynomially. | The two tasks have different priors and alternatives. Complete S3/S4 physical channels have nonzero binary signal; the one-pair character likelihood is checked independently. | Fourier Kraus sums give a group twirl within each label, not P rho P. All physical S3/S4 source triples retain only first-pair transcript information after pair-reference discard; in S4 this loses an additional 37/192 trace distance relative to clean L.",
     "id": "DEBT-CODE-COSET-COLLECTIVE-PO-DEQUANTIZATION",
     "priority_score": 100,
     "required_resolution": "Resolve dequantization findings or demote the candidate to a negative/blocked result."

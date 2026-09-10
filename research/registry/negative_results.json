@@ -54865,6 +54865,21 @@
   {
     "applies_to": [
       "CODE-COSET-COLLECTIVE",
+      "isotypic instrument implementation"
+    ],
+    "claim": "Copying an isotypic label and discarding the GPE reference rows implements the clean projective instrument used by subsequent carrier measurements.",
+    "evidence": {
+      "artifact": "research/representation/coset_binary_carrier_instruments.json",
+      "derivation": "research/BINARY_CARRIER_INSTRUMENTS.md"
+    },
+    "id": "DISCARDED-GPE-REFERENCE-NOT-LUDERS-INSTRUMENT",
+    "lesson": "Copy only the irrep label, then invert the entire GPE computation to clean its workspace. Charge supplied QFT and controlled-action access. A global diagonal twirl preserves the binary mixture; this pair-local failure is neither an arbitrary compiler no-go nor classical dequantization.",
+    "reason_invalid": "Fourier Kraus sums give a group twirl within each label, not P rho P. All physical S3/S4 source triples retain only first-pair transcript information after pair-reference discard; in S4 this loses an additional 37/192 trace distance relative to clean L.",
+    "source": "EXP-COSET-BINARY-CARRIER-INSTRUMENTS"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
       "disjoint pair carriers",
       "branch PGM compiler"
     ],

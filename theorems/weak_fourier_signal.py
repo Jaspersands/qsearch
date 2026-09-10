@@ -21,6 +21,7 @@ from pathlib import Path
 from typing import Any
 
 from representation_obstruction import hook_length_dimension, integer_partitions
+from involution_character_arithmetic import fixed_point_free_character
 from research_registry import ExperimentResultRecord, NegativeResultRecord, upsert_experiment_result, upsert_negative_result, utc_now
 
 
@@ -102,6 +103,8 @@ def character_on_involution(partition: tuple[int, ...], transposition_count: int
         return 0
     if transposition_count == 0:
         return hook_length_dimension(partition)
+    if 2 * transposition_count == sum(partition):
+        return fixed_point_free_character(partition)
     total = 0
     for reduced, height in removable_dominoes(partition):
         sign = -1 if height == 2 else 1

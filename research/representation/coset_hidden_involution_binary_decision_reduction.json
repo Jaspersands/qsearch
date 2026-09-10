@@ -6,12 +6,12 @@
       "resolved": true
     },
     {
-      "answer": "False. It fixes the second moment and an upper bound only; a matching trace-norm lower bound needs higher-moment or spectral control.",
+      "answer": "False as an efficient-measurement claim. The support-rank argument already establishes threshold distinguishability, but says nothing about the time to implement its support projector.",
       "challenge": "Pairwise coset-state overlap already proves an efficient binary measurement near log2 |C| copies.",
       "resolved": true
     },
     {
-      "answer": "False. Its trace distance is at most sqrt(3/|C|)/2 and the uniform Kronecker target transform is not compiled here.",
+      "answer": "False. Its trace distance is at most sqrt(3/|C|)/2. Clean target-label GPE is available given known primitives, but this does not supply a useful growing-copy measurement or its classifier.",
       "challenge": "The two-copy target-label formula gives a scalable algorithm.",
       "resolved": true
     },
@@ -29,21 +29,24 @@
   "claim_gate": {
     "binary_detection_requires_hidden_involution_identification": false,
     "classical_superpolynomial_separation_proved": false,
+    "clean_two_copy_label_uniform_primitive_reduction_available": true,
     "constant_copy_fixed_point_free_binary_signal_possible": false,
     "exact_binary_chi_square_identity_proved": true,
+    "exact_fixed_point_free_two_copy_score_available": true,
+    "gate_level_sn_qft_backend_supplied": false,
     "graph_isomorphism_algorithm_constructed": false,
     "graph_isomorphism_lower_bound_proved": false,
+    "kronecker_multiplicity_basis_transform_supplied": false,
     "one_copy_weak_fourier_is_binary_helstrom_optimal": true,
     "polynomial_higher_copy_block_sign_compiler_constructed": false,
-    "polynomial_two_copy_kronecker_measurement_constructed": false,
     "published_equal_prime_order_sample_theorem_rederived": true,
-    "reason": "Binary decision is a genuine escape from individual-label polar obligations, but constant-copy signal vanishes and neither threshold distinguishability nor its efficient measurement is known.",
+    "reason": "Binary decision is a genuine escape from individual-label polar obligations, but constant-copy signal vanishes and neither a useful growing-copy measurement nor its efficient outcome classifier is supplied. Threshold distinguishability is known from the support-rank bound.",
     "sample_complexity_result_new_to_literature": false,
     "speedup_claim_allowed": false,
-    "threshold_trace_distance_lower_bound_proved": false,
+    "threshold_trace_distance_lower_bound_proved": true,
     "two_copy_target_label_is_binary_helstrom_optimal": true
   },
-  "created_at": "2026-08-11T16:07:17.006687+00:00",
+  "created_at": "2026-09-10T01:52:22.577806+00:00",
   "falsifiers_triggered": [
     "Constant-copy invariant measurements cannot retain constant fixed-point-free decision advantage.",
     "Pairwise overlap decay alone does not prove threshold distinguishability.",
@@ -181,7 +184,7 @@
     "scalable_block_sign_compiler_count": 0,
     "scaling_record_count": 5,
     "strict_entangled_target_gain_control_count": 2,
-    "threshold_trace_distance_lower_bound_count": 0,
+    "threshold_trace_distance_lower_bound_count": 1,
     "two_copy_helstrom_target_control_count": 2
   },
   "primary_literature": [
@@ -195,8 +198,8 @@
   "proof_obligations": [
     {
       "id": "PO-COSET-BINARY-THRESHOLD-LOWER",
-      "resolved": false,
-      "statement": "Lower-bound class-mixture trace distance at k=Theta(log |C|), for example by controlling the fourth normalized trace moment of the centered likelihood operator."
+      "resolved": true,
+      "statement": "Resolved by the published support-span test: T>=max(0,1-M/2^k). The union of candidate supports has rank at most M(|G|/2)^k. This proves information availability, not an efficient measurement."
     },
     {
       "id": "PO-COSET-BINARY-BLOCK-SIGN-COMPILER",
@@ -204,9 +207,14 @@
       "statement": "Compile the higher-copy invariant Helstrom block sign in polynomial size without enumerating C or diagonalizing exponential multiplicity spaces."
     },
     {
-      "id": "PO-COSET-TWO-COPY-KRONECKER-MEASUREMENT",
-      "resolved": false,
-      "statement": "Give a uniform polynomial S_n diagonal-target measurement; the exact scalar decision rule alone is not a circuit."
+      "id": "PO-COSET-TWO-COPY-CLEAN-LABEL-REDUCTION",
+      "resolved": true,
+      "statement": "Clean GPE reduces the diagonal target-label instrument to supplied QFT and controlled group actions, without a multiplicity transform. The primitive/error contract is explicit; no gate-level QFT backend is supplied here."
+    },
+    {
+      "id": "PO-COSET-FIXED-POINT-FREE-TWO-COPY-SCORE",
+      "resolved": true,
+      "statement": "Exact two-quotient and hook-length arithmetic evaluates sign(r_lambda+r_mu+r_nu) in polynomial bit complexity given legal source/target labels. This neither samples those labels classically nor supplies a higher-copy score."
     },
     {
       "id": "PO-COSET-BINARY-INPUT-MODEL-TRANSFER",
@@ -224,12 +232,14 @@
       "constant_copy_signal_can_remain_constant": false,
       "copy_lower_bound_over_log2_class_size": 0.7446853092941416,
       "information_theoretic_copy_lower_bound": 5,
+      "information_theoretic_sufficient_copy_count": 8,
       "log2_matching_count": 6.714245517666122,
       "matching_count": 105,
       "n": 8,
       "one_copy_trace_distance_upper_bound": 0.048795003647426664,
       "polynomial_measurement_compiler_known": false,
-      "status": "constant-copy-decision-signal-ruled-out-threshold-open",
+      "status": "logarithmic-copy-information-established-measurement-compiler-open",
+      "support_rank_trace_distance_lower_bound": 0.58984375,
       "target_bayes_advantage": 0.1,
       "two_copy_trace_distance_upper_bound": 0.08451542547285165
     },
@@ -237,12 +247,14 @@
       "constant_copy_signal_can_remain_constant": false,
       "copy_lower_bound_over_log2_class_size": 0.9068808772109759,
       "information_theoretic_copy_lower_bound": 19,
+      "information_theoretic_sufficient_copy_count": 22,
       "log2_matching_count": 20.950932451495344,
       "matching_count": 2027025,
       "n": 16,
       "one_copy_trace_distance_upper_bound": 0.0003511886340227855,
       "polynomial_measurement_compiler_known": false,
-      "status": "constant-copy-decision-signal-ruled-out-threshold-open",
+      "status": "logarithmic-copy-information-established-measurement-compiler-open",
+      "support_rank_trace_distance_lower_bound": 0.5167195796966553,
       "target_bayes_advantage": 0.1,
       "two_copy_trace_distance_upper_bound": 0.0006082765571681767
     },
@@ -250,12 +262,14 @@
       "constant_copy_signal_can_remain_constant": false,
       "copy_lower_bound_over_log2_class_size": 0.9579691358226936,
       "information_theoretic_copy_lower_bound": 55,
+      "information_theoretic_sufficient_copy_count": 58,
       "log2_matching_count": 57.41312318247768,
       "matching_count": 191898783962510625,
       "n": 32,
       "one_copy_trace_distance_upper_bound": 1.1413895525035823e-09,
       "polynomial_measurement_compiler_known": false,
-      "status": "constant-copy-decision-signal-ruled-out-threshold-open",
+      "status": "logarithmic-copy-information-established-measurement-compiler-open",
+      "support_rank_trace_distance_lower_bound": 0.3342173488976624,
       "target_bayes_advantage": 0.1,
       "two_copy_trace_distance_upper_bound": 1.9769446961645093e-09
     },
@@ -263,12 +277,14 @@
       "constant_copy_signal_can_remain_constant": false,
       "copy_lower_bound_over_log2_class_size": 0.9840644411542272,
       "information_theoretic_copy_lower_bound": 144,
+      "information_theoretic_sufficient_copy_count": 147,
       "log2_matching_count": 146.33188028936374,
       "matching_count": 112275575285571389562324404930670903477890625,
       "n": 64,
       "one_copy_trace_distance_upper_bound": 4.718754246801185e-23,
       "polynomial_measurement_compiler_known": false,
-      "status": "constant-copy-decision-signal-ruled-out-threshold-open",
+      "status": "logarithmic-copy-information-established-measurement-compiler-open",
+      "support_rank_trace_distance_lower_bound": 0.3706736350845737,
       "target_bayes_advantage": 0.1,
       "two_copy_trace_distance_upper_bound": 8.17312210389106e-23
     },
@@ -276,12 +292,14 @@
       "constant_copy_signal_can_remain_constant": false,
       "copy_lower_bound_over_log2_class_size": 0.9939169526989288,
       "information_theoretic_copy_lower_bound": 354,
+      "information_theoretic_sufficient_copy_count": 357,
       "log2_matching_count": 356.16657814189784,
       "matching_count": 164749260436028300985882145742271020352352323765318815064452725844663571025238239569133424206748199462890625,
       "n": 128,
       "one_copy_trace_distance_upper_bound": 1.2318512469980919e-54,
       "polynomial_measurement_compiler_known": false,
-      "status": "constant-copy-decision-signal-ruled-out-threshold-open",
+      "status": "logarithmic-copy-information-established-measurement-compiler-open",
+      "support_rank_trace_distance_lower_bound": 0.4388034123138782,
       "target_bayes_advantage": 0.1,
       "two_copy_trace_distance_upper_bound": 2.1336289471677736e-54
     }
@@ -301,7 +319,8 @@
     "symmetrization_identity": "Conjugation-averaging any binary effect preserves null acceptance and class-average alternative acceptance and makes alternative acceptance identical for every h in C.",
     "symmetrized_worst_case_binary_test_proved": true,
     "theorem_verified": true,
-    "threshold_trace_distance_lower_bound_proved": false,
+    "threshold_trace_distance_lower_bound_proved": true,
+    "trace_distance_lower_bound": "D(rho_C^k,rho_0^k)>=max(0,1-|C|/2^k) by the published support-rank test; no efficient support measurement is supplied.",
     "trace_distance_upper_bound": "D(rho_C^k,rho_0^k)<=sqrt((2^k-1)/|C|)/2.",
     "two_copy_helstrom_normal_form": "After source labels lambda,mu and diagonal coupling to nu, the optimal sign is sign(r_lambda+r_mu+r_nu).",
     "two_copy_target_label_helstrom_optimal": true
@@ -309,7 +328,115 @@
   "theorem_contract": {
     "access_model": "k independent standard mixed coset states; null H={e}, alternative H={e,h} with h uniform in one nonidentity involution conjugacy class.",
     "binary_output": "Decide trivial versus promised class; do not identify h.",
-    "non_claim": "No threshold trace-distance lower bound, scalable block-sign circuit, GI reduction, classical separation, or speedup.",
+    "clean_label_instrument_derivation": "research/BINARY_CARRIER_INSTRUMENTS.md",
+    "clean_two_copy_label_access": {
+      "clean_workspace_required": true,
+      "composed_channel_diamond_distance_upper_bound": 0.0,
+      "controlled_representation_access_must_be_charged": true,
+      "controlled_single_copy_group_action_or_inverse_calls": 4,
+      "degree": 128,
+      "gate_level_sn_qft_backend_supplied_here": false,
+      "group_qft_or_inverse_calls": 2,
+      "inverse_is_adjoint_of_same_approximate_circuit": true,
+      "label_queries": 1,
+      "multiplicity_basis_transform_supplied": false,
+      "partition_label_register_bits_upper_bound": 1024,
+      "postselection_required": false,
+      "program": [
+        "PREPARE_UNIFORM_SN",
+        "CONTROLLED_SUBSET_GROUP_ACTION",
+        "SN_QFT",
+        "COPY_IRREP_LABEL_ONLY",
+        "SN_QFT_INVERSE",
+        "CONTROLLED_SUBSET_GROUP_ACTION_INVERSE",
+        "UNPREPARE_UNIFORM_SN"
+      ],
+      "reference_register_qubits": 717,
+      "scope": "S_n physical regular registers or efficient supplied irrep actions; subset may grow polynomially. No hard multiplicity transform is granted.",
+      "subset_copy_count": 2,
+      "uniform_preparation_or_inverse_calls": 2,
+      "uniform_reduction_to_known_primitives": true
+    },
+    "fixed_point_free_label_arithmetic_controls": [
+      {
+        "absolute_ratio_at_most_one": true,
+        "accept_hidden_class": true,
+        "character_bits": 61,
+        "degree": 128,
+        "dimension_bits": 119,
+        "enumerated_all_partitions": false,
+        "natural_source_coverage_claimed": false,
+        "score_denominator_bits": 98,
+        "score_numerator_bits": 98,
+        "source_partition": [
+          64,
+          64
+        ],
+        "tableau_paths_enumerated": 0,
+        "target_partition": [
+          128
+        ]
+      },
+      {
+        "absolute_ratio_at_most_one": true,
+        "accept_hidden_class": true,
+        "character_bits": 252,
+        "degree": 512,
+        "dimension_bits": 500,
+        "enumerated_all_partitions": false,
+        "natural_source_coverage_claimed": false,
+        "score_denominator_bits": 399,
+        "score_numerator_bits": 399,
+        "source_partition": [
+          256,
+          256
+        ],
+        "tableau_paths_enumerated": 0,
+        "target_partition": [
+          512
+        ]
+      },
+      {
+        "absolute_ratio_at_most_one": true,
+        "accept_hidden_class": true,
+        "character_bits": 1019,
+        "degree": 2048,
+        "dimension_bits": 2033,
+        "enumerated_all_partitions": false,
+        "natural_source_coverage_claimed": false,
+        "score_denominator_bits": 1646,
+        "score_numerator_bits": 1646,
+        "source_partition": [
+          1024,
+          1024
+        ],
+        "tableau_paths_enumerated": 0,
+        "target_partition": [
+          2048
+        ]
+      },
+      {
+        "absolute_ratio_at_most_one": true,
+        "accept_hidden_class": true,
+        "character_bits": 2043,
+        "degree": 4096,
+        "dimension_bits": 4079,
+        "enumerated_all_partitions": false,
+        "natural_source_coverage_claimed": false,
+        "score_denominator_bits": 3343,
+        "score_numerator_bits": 3343,
+        "source_partition": [
+          2048,
+          2048
+        ],
+        "tableau_paths_enumerated": 0,
+        "target_partition": [
+          4096
+        ]
+      }
+    ],
+    "known_information_bound": "research/representation/coset_hidden_involution_support_span_reduction.json",
+    "non_claim": "The support-rank bound is prior art, not a new information theorem. No scalable growing-copy block-sign circuit, GI reduction, classical separation, or speedup.",
     "worst_case_scope": "Conjugation symmetrization converts uniform-prior performance to identical performance on every h in the class, but does not cover arbitrary non-coset-state oracle access."
   }
 }

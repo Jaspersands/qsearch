@@ -51,19 +51,22 @@ class MechanismTemplate:
     known_no_go_violations: tuple[str, ...]
     additional_proof_obligations: tuple[str, ...]
     upside_score: int
+    task_kind: str = "identification"
 
 
 @dataclass(frozen=True)
 class MechanismEvaluation:
     id: str
     title: str
+    task_kind: str
     stages: tuple[str, ...]
     typed_interfaces_valid: bool
     interface_issues: list[str]
     missing_capabilities: list[str]
     known_no_go_violations: list[str]
     additional_proof_obligations: list[str]
-    holevo_copy_budget_obligation_attached: bool
+    task_copy_budget_obligation_attached: bool
+    copy_budget_kind: str
     minimum_copy_budget_rule: str
     full_source_family_coverage: bool
     proof_gate_eligible: bool
@@ -91,6 +94,14 @@ PRIMITIVES = {
     for item in (
         PrimitiveSpec("PREPARE_COSET_K", "start", "coset_state_k", "CAP-COSET-PREPARATION", True, "Prepare k independent coset states."),
         PrimitiveSpec("SN_QFT_K", "coset_state_k", "fourier_registers_k", "CAP-SN-QFT", True, "Apply the solved S_n QFT registerwise."),
+        PrimitiveSpec("CLEAN_SUBSET_LABEL_ACCESS", "fourier_registers_k", "fourier_registers_k", "CAP-CLEAN-SUBSET-ISOTYPIC-ACCESS", True,
+                      "Clean compute-copy-uncompute label access on supplied subsets; conditional on charged QFT and controlled actions. No multiplicity basis or hidden alignment is supplied."),
+        PrimitiveSpec("GROWING_COPY_BINARY_EFFECT", "fourier_registers_k", "binary_measurement_outcome", "CAP-SOURCE-WEIGHTED-GROWING-COPY-BINARY-EFFECT", False,
+                      "Specify a uniform growing-copy collective program with natural source-weighted detection advantage and no destructive uncharged workspace discard."),
+        PrimitiveSpec("BINARY_OUTCOME_CLASSIFIER", "binary_measurement_outcome", "binary_decision", "CAP-GROWING-COPY-BINARY-OUTCOME-CLASSIFIER", False,
+                      "Compute a decision from measured outcomes at polynomial cost; two-copy character scores and ideal Helstrom tables do not supply this."),
+        PrimitiveSpec("NATURAL_BINARY_DECISION_TRANSFER", "binary_decision", "verified_binary_solution", "CAP-BINARY-PROMISE-PRESERVING-REDUCTION", False,
+                      "Justify the complete decision reduction for a natural input, including its automorphism promise, preparation costs and legal classical baseline."),
         PrimitiveSpec("ENCODED_REFERENCE_RESTRICTION", "fourier_registers_k", "encoded_reference_registers", "CAP-ENCODED-K-CARRIER-RESTRICTION", False,
                       "Conditional two-QFT carrier extraction for a known reference subgroup; primitive/basis contract remains review-pending, not unknown alignment."),
         PrimitiveSpec("SYMMETRY_BREAKING_LOGICAL_FRAME", "encoded_reference_registers", "measurement_outcome", "CAP-SYMMETRY-BREAKING-LOGICAL-EFFECT", False,
@@ -133,6 +144,24 @@ PRIMITIVES = {
 
 
 TEMPLATES = (
+    MechanismTemplate(
+        "MECH-CLEAN-SUBSET-BINARY-DETECTION",
+        "Growing-copy binary detection through clean subset labels",
+        ("PREPARE_COSET_K", "SN_QFT_K", "CLEAN_SUBSET_LABEL_ACCESS",
+         "GROWING_COPY_BINARY_EFFECT", "BINARY_OUTCOME_CLASSIFIER", "NATURAL_BINARY_DECISION_TRANSFER"),
+        "full fixed-point-free involution class in the standard mixed coset-state model; natural-problem transfer unproved",
+        "k=Theta(log |C|), polynomial in n", (),
+        (
+            "Supply a uniform polynomial-length coherent or adaptive subset program; do not enumerate all 2^k subsets or complete multiplicity bases.",
+            "Prove constant source-weighted null-versus-class trace distance for its actual outcome law, not only an optimal residual measurement.",
+            "Use clean GPE compute-copy-uncompute with charged error; discarding Fourier rows changes the instrument even when label probabilities agree.",
+            "Construct a growing-copy outcome classifier. The exact polynomial two-copy score is only a calibration and its signal vanishes asymptotically.",
+            "Prove a promise-preserving natural binary reduction and preparation cost; no hidden-element recovery is inferred from detection.",
+            "Compare with legal classical graph/code algorithms, actual-source tensor contractions and known measured-sieve models. Leaving a sieve definition is not advantage.",
+            "Falsify fixed-copy repetition and any use of the hypothesis-dependent latent initial distribution as a free classical sampler.",
+        ),
+        110, task_kind="binary-detection",
+    ),
     MechanismTemplate(
         "MECH-QFT-WEAK-LABELS",
         "Registerwise QFT and weak label decoding",
@@ -262,6 +291,8 @@ TEMPLATES = (
 
 
 def evaluate_template(template: MechanismTemplate) -> MechanismEvaluation:
+    if template.task_kind not in {"identification", "binary-detection"}:
+        raise ValueError("task_kind must be identification or binary-detection")
     issues: list[str] = []
     current_type = "start"
     missing: list[str] = []
@@ -274,8 +305,9 @@ def evaluate_template(template: MechanismTemplate) -> MechanismEvaluation:
         current_type = primitive.output_type
         if not primitive.available_with_uniform_proof:
             missing.append(primitive.capability_id)
-    if current_type != "verified_solution":
-        issues.append(f"mechanism terminates at {current_type}, not verified_solution")
+    terminal = "verified_solution" if template.task_kind == "identification" else "verified_binary_solution"
+    if current_type != terminal:
+        issues.append(f"mechanism terminates at {current_type}, not {terminal}")
     full_coverage = "full" in template.source_family_scope and "restricted" not in template.source_family_scope
     violations = list(template.known_no_go_violations)
     if "KRONECKER_MULTIPLICITY_BASIS" in template.stages:
@@ -300,16 +332,21 @@ def evaluate_template(template: MechanismTemplate) -> MechanismEvaluation:
     return MechanismEvaluation(
         id=template.id,
         title=template.title,
+        task_kind=template.task_kind,
         stages=template.stages,
         typed_interfaces_valid=not issues,
         interface_issues=issues,
         missing_capabilities=sorted(set(missing)),
         known_no_go_violations=violations,
         additional_proof_obligations=list(template.additional_proof_obligations),
-        holevo_copy_budget_obligation_attached=True,
+        task_copy_budget_obligation_attached=True,
+        copy_budget_kind="identification-holevo-fano" if template.task_kind == "identification" else "binary-class-mixture-chi-square",
         minimum_copy_budget_rule=(
             "k >= ceil([log2|C|-h2(epsilon)-epsilon*log2(|C|-1)]/chi_1), "
             "with chi_1 from the exact involution character formula"
+            if template.task_kind == "identification" else
+            "For equal-prior Bayes advantage epsilon: k >= ceil(log2(1+16 epsilon^2 |C|)). "
+            "The known support-rank bound T >= max(0,1-|C|/2^k) establishes information availability, not an efficient measurement."
         ),
         full_source_family_coverage=full_coverage,
         proof_gate_eligible=proof_gate_eligible,
@@ -340,22 +377,31 @@ def build_recoupling_mutation_proposals(
                 "mutation_type": "typed-recoupling-mechanism",
                 "rationale": evaluation.rationale,
                 "new_hypothesis": evaluation.title,
+                "task_kind": evaluation.task_kind,
+                "copy_budget_kind": evaluation.copy_budget_kind,
+                "minimum_copy_budget_rule": evaluation.minimum_copy_budget_rule,
                 "typed_stages": list(evaluation.stages),
                 "required_modules": evaluation.missing_capabilities,
                 "proof_obligations_to_resolve": evaluation.additional_proof_obligations,
                 "rejection_filters": [
                     "Reject if any missing capability is replaced by an undefined circuit box.",
                     "Reject if the mechanism covers only an exceptional commuting or classically tractable family.",
-                    "Reject if the decoder is distinguishability or verification without hidden-involution recovery.",
+                    ("Reject if the decoder is distinguishability or verification without hidden-involution recovery."
+                     if evaluation.task_kind == "identification" else
+                     "Reject any transfer from binary detection to hidden-element identification without a separate reduction; a valid binary goal does not require hidden-element output."),
                     "Reject if classical invariant or tensor-network contraction reproduces the outcome.",
                     "Compare finite alternation to a joint quantum label front end plus latent-irrep classical postprocessing; do not assume a classical sampler for the initial labels or extend the rank-one model to larger multiplicities.",
                     "Reject ideal finite likelihood tables or retained Helstrom distances presented as compiled outcome classifiers.",
                 ],
-                "linked_blockers": [
+                "linked_blockers": ([
                     "DEQ-COSET-SOLVED-QFT-COUNTING-NOT-RECOUPLING-DECODER",
                     "DEQ-COSET-K3-SINGLE-RECOUPLING-BASIS-OBSTRUCTED",
                     "DEQ-COSET-EXPLICIT-TWO-COPY-TRANSITIONS-FACTORIAL",
-                ],
+                ] if evaluation.task_kind == "identification" else [
+                    "DEQ-CODE-COSET-COLLECTIVE-CLEAN-GPE-INSTRUMENT-CONTRACT",
+                    "DEQ-CODE-COSET-COLLECTIVE-FINITE-CARRIER-LATENT-IRREP-MODEL",
+                    "DEQ-CODE-COSET-COLLECTIVE-CARRIER-BINARY-TASK-SCOPE",
+                ]),
                 "proof_debts_targeted": evaluation.missing_capabilities,
                 "priority_score": evaluation.priority_score,
             }
@@ -378,7 +424,8 @@ def build_recoupling_mechanism_synthesis_report() -> RecouplingMechanismSynthesi
         "proposal_only_count": sum(item.decision.startswith("proposal-only") for item in evaluations),
         "proof_gate_eligible_count": sum(item.proof_gate_eligible for item in evaluations),
         "automatically_promoted_candidate_count": 0,
-        "holevo_copy_budget_rule_count": 1,
+        "task_specific_copy_budget_rule_count": len({item.copy_budget_kind for item in evaluations}),
+        "binary_detection_proposal_count": sum(item.task_kind == "binary-detection" and item.decision.startswith("proposal-only") for item in evaluations),
         "undercharged_mechanism_promoted_count": 0,
         "highest_survivor_priority_score": max((item.priority_score for item in survivors), default=0),
         "minimum_missing_capability_count": min(
@@ -394,16 +441,16 @@ def build_recoupling_mechanism_synthesis_report() -> RecouplingMechanismSynthesi
         headline_metrics=metrics,
         claim_gate={
             "known_invalid_architectures_rejected": True,
-            "exact_holevo_copy_budget_attached": all(
-                item.holevo_copy_budget_obligation_attached for item in evaluations
+            "task_correct_copy_budget_attached": all(
+                item.task_copy_budget_obligation_attached for item in evaluations
             ),
             "undercharged_mechanism_promoted": False,
             "undefined_circuit_boxes_promoted": False,
             "proof_gate_eligible_mechanism_exists": metrics["proof_gate_eligible_count"] > 0,
             "speedup_claim_allowed": False,
             "reason": (
-                "The only surviving architectures explicitly require unproved internal recoupling, transition/filter, "
-                "and decoder capabilities; known shortcuts are rejected."
+                "Surviving architectures still need useful collective effects, outcome rules and natural reductions. "
+                "Binary detection is kept separate from identification; known access primitives are not algorithms."
             ),
         },
         status="typed-mutations-ranked-no-proof-gate-eligible-mechanism",
@@ -419,8 +466,8 @@ def build_recoupling_mechanism_synthesis_report() -> RecouplingMechanismSynthesi
             "Exceptional commuting or restricted multiplicity families do not inherit full source-family reductions.",
             "No surviving architecture currently satisfies every proof-critical capability."
             ,
-            "Every architecture must also satisfy the exact class-specific Holevo/Fano copy budget; that polynomial "
-            "budget is not a substitute for a measurement circuit."
+            "Every architecture must satisfy its task-specific copy bound: Holevo/Fano for identification, "
+            "class-mixture chi-square for binary detection. Known logarithmic-copy information does not supply a circuit."
         ],
     )
 

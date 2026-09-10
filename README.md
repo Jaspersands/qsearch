@@ -57,6 +57,16 @@ now measures actual outcome laws and disturbance. Its small-group alternating
 carrier gains are reproduced by a latent-irrep model after a joint quantum
 label front end; that front end has not been classically replaced. These
 are calibration controls, not candidate algorithms.
+Its [instrument implementation audit](research/BINARY_CARRIER_INSTRUMENTS.md#clean-label-access-is-not-reference-discard)
+now checks clean GPE compute-copy-uncompute. Discarding the Fourier workspace
+can preserve label probabilities while destroying the needed quantum state.
+The clean label primitive is available conditionally on charged QFT/group-action
+access; the growing-copy decision rule remains missing.
+Exact fixed-point-free character arithmetic now scores supplied labels through
+degree 4096 without tableau enumeration. Typed mutation search distinguishes
+binary detection from hidden-element identification and retains one explicitly
+incomplete growing-copy binary proposal. Known logarithmic-copy information
+bounds are no longer listed as unresolved compiler requirements.
 The [classical value-access audit](research/CLASSICAL_VALUE_ACCESS_AUDIT.md)
 replaces hidden full-table quadratic reconstruction with counted point queries,
 including exact-residue controls on nonmaterializable domains. Sample-limited

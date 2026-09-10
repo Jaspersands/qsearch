@@ -15260,6 +15260,7 @@
     "falsifiers": [
       "physical source mass is lost",
       "an ideal residual readout is assumed",
+      "GPE workspace discard changes the instrument",
       "classifier or copy cost is omitted"
     ],
     "hypothesis": "Carrier outcome laws reveal binary information distinct from hidden-member identification.",
@@ -15267,14 +15268,15 @@
     "metrics": [
       "finite_full_source_controls_passed",
       "schedules_evaluated",
-      "explicit_one_pair_classifiers_checked"
+      "explicit_one_pair_classifiers_checked",
+      "clean_gpe_cleanup_controls_passed"
     ],
     "next_actions": [
       "compile a growing-copy outcome decision rule",
       "test the complete channel against stronger classical baselines"
     ],
     "positive_signal": "A growing-copy program and explicit outcome decision rule, not finite calibration performance.",
-    "protocol": "Reuse pair-carrier projectors; compare complete physical null/alternative laws, disturbance, retained information and a dephased ablation.",
+    "protocol": "Compare complete physical null/alternative laws, disturbance, latent-irrep replay and clean compute-copy-uncompute against discarded GPE workspace; charge primitive access and classifier costs separately.",
     "status": "ready",
     "title": "Source-weighted binary carrier instruments"
   },

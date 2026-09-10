@@ -38,17 +38,20 @@ Helstrom-optimal.  For two copies, in the coupled column sector
 Thus source irrep labels followed by the diagonal target-irrep label attain
 the full two-copy Helstrom trace distance.  No Kronecker multiplicity basis,
 physical-row orientation, or hidden-element output is needed for this binary
-test.  Efficiently compiling the target measurement for scalable ``S_n`` is
-still open, and for ``k>=3`` overlapping subset class sums generally act on
+test. Clean GPE compute-copy-uncompute reduces this label measurement to
+supplied efficient QFT and controlled group-action primitives. It is not a
+Kronecker multiplicity-basis transform. For ``k>=3`` overlapping subset sums act on
 recoupling multiplicity spaces rather than one scalar target label.
 
 The report deliberately does not claim a graph-isomorphism algorithm.  It
 only covers the standard mixed coset-state access model, a uniform conjugacy
 class prior (or its symmetrized worst-case binary test), and finite exact
-controls.  A major algorithm would still need a matching lower bound on the
-trace distance near (4), a polynomial implementation of the resulting block
-sign measurement, a reduction preserving the promised input model, and a
-serious classical comparison.
+controls. The published support-rank test already gives
+``D(rho_C^k,rho_0^k)>=max(0,1-M/2^k)``: alternative support is accepted with
+certainty and has null mass at most M/2^k. Thus information at logarithmic
+copy count is NOT an open obstacle. A major algorithm still needs a polynomial
+implementation of a useful growing-copy measurement, a reduction preserving
+the promised input model, and a serious classical comparison.
 """
 
 from __future__ import annotations
@@ -64,6 +67,8 @@ from typing import Any
 
 import numpy as np
 
+from isotypic_instruments import isotypic_label_resource_contract
+from involution_character_arithmetic import label_arithmetic_scaling_controls
 from representation_obstruction import hook_length_dimension, integer_partitions
 from research_registry import utc_now
 from symmetric_character import kronecker_coefficient
@@ -116,6 +121,8 @@ class FixedPointFreeDecisionScalingRecord:
     log2_matching_count: float
     target_bayes_advantage: float
     information_theoretic_copy_lower_bound: int
+    information_theoretic_sufficient_copy_count: int | None
+    support_rank_trace_distance_lower_bound: float | None
     copy_lower_bound_over_log2_class_size: float
     one_copy_trace_distance_upper_bound: float
     two_copy_trace_distance_upper_bound: float
@@ -129,6 +136,7 @@ class HiddenInvolutionBinaryDecisionTheorem:
     centered_orthogonality_identity: str
     chi_square_identity: str
     trace_distance_upper_bound: str
+    trace_distance_lower_bound: str
     symmetrization_identity: str
     one_copy_helstrom_normal_form: str
     two_copy_helstrom_normal_form: str
@@ -292,6 +300,25 @@ def chi_square_trace_distance_upper_bound(
     return 0.5 * math.sqrt(
         float(exact_class_mixture_chi_square(conjugacy_class_size, copies))
     )
+
+
+def support_rank_trace_distance_lower_bound(conjugacy_class_size: int, copies: int) -> Fraction:
+    """Published support-span test: perfect completeness and null mass <=M/2^k."""
+    if (type(conjugacy_class_size) is not int or conjugacy_class_size < 1
+            or type(copies) is not int or copies < 0):
+        raise ValueError("positive integer class size and nonnegative integer copy count required")
+    return max(Fraction(0), 1 - Fraction(conjugacy_class_size, 1 << copies))
+
+
+def support_rank_sufficient_copies(conjugacy_class_size: int, null_false_positive: float | Fraction) -> int:
+    """Exact integer inversion avoids log2 rounding at enormous class sizes."""
+    if type(conjugacy_class_size) is not int or conjugacy_class_size < 1:
+        raise ValueError("conjugacy_class_size must be a positive integer")
+    if not 0 < null_false_positive < 1:
+        raise ValueError("null_false_positive must lie in (0,1)")
+    threshold = Fraction(conjugacy_class_size) / Fraction(null_false_positive)
+    ceiling = (threshold.numerator + threshold.denominator - 1) // threshold.denominator
+    return (ceiling - 1).bit_length()
 
 
 def minimum_copies_for_bayes_advantage(
@@ -586,12 +613,16 @@ def fixed_point_free_decision_scaling_record(
     lower_bound = minimum_copies_for_bayes_advantage(
         matching_count, target_bayes_advantage
     )
+    null_error = 1 - 2 * Fraction(target_bayes_advantage)
+    sufficient = support_rank_sufficient_copies(matching_count, null_error) if null_error > 0 else None
     return FixedPointFreeDecisionScalingRecord(
         n=n,
         matching_count=matching_count,
         log2_matching_count=log_class,
         target_bayes_advantage=target_bayes_advantage,
         information_theoretic_copy_lower_bound=lower_bound,
+        information_theoretic_sufficient_copy_count=sufficient,
+        support_rank_trace_distance_lower_bound=(float(support_rank_trace_distance_lower_bound(matching_count, sufficient)) if sufficient is not None else None),
         copy_lower_bound_over_log2_class_size=lower_bound / log_class,
         one_copy_trace_distance_upper_bound=(0.5 / math.sqrt(matching_count)),
         two_copy_trace_distance_upper_bound=(
@@ -599,7 +630,7 @@ def fixed_point_free_decision_scaling_record(
         ),
         constant_copy_signal_can_remain_constant=False,
         polynomial_measurement_compiler_known=False,
-        status="constant-copy-decision-signal-ruled-out-threshold-open",
+        status="logarithmic-copy-information-established-measurement-compiler-open",
     )
 
 
@@ -646,6 +677,7 @@ def build_hidden_involution_binary_decision_report(
         trace_distance_upper_bound=(
             "D(rho_C^k,rho_0^k)<=sqrt((2^k-1)/|C|)/2."
         ),
+        trace_distance_lower_bound="D(rho_C^k,rho_0^k)>=max(0,1-|C|/2^k) by the published support-rank test; no efficient support measurement is supplied.",
         symmetrization_identity=(
             "Conjugation-averaging any binary effect preserves null acceptance "
             "and class-average alternative acceptance and makes alternative "
@@ -669,7 +701,7 @@ def build_hidden_involution_binary_decision_report(
         symmetrized_worst_case_binary_test_proved=True,
         one_copy_weak_fourier_helstrom_optimal=one_copy_verified,
         two_copy_target_label_helstrom_optimal=two_copy_verified,
-        threshold_trace_distance_lower_bound_proved=False,
+        threshold_trace_distance_lower_bound_proved=True,
         scalable_block_sign_compiler_constructed=False,
         theorem_verified=verified and one_copy_verified and two_copy_verified,
         status=(
@@ -703,7 +735,7 @@ def build_hidden_involution_binary_decision_report(
             for row in controls
         ),
         "scaling_record_count": len(scaling),
-        "threshold_trace_distance_lower_bound_count": 0,
+        "threshold_trace_distance_lower_bound_count": 1,
         "scalable_block_sign_compiler_count": 0,
         "new_quantum_algorithm_count": 0,
     }
@@ -736,9 +768,13 @@ def build_hidden_involution_binary_decision_report(
                 "Decide trivial versus promised class; do not identify h."
             ),
             "non_claim": (
-                "No threshold trace-distance lower bound, scalable block-sign "
-                "circuit, GI reduction, classical separation, or speedup."
+                "The support-rank bound is prior art, not a new information theorem. "
+                "No scalable growing-copy block-sign circuit, GI reduction, classical separation, or speedup."
             ),
+            "known_information_bound": "research/representation/coset_hidden_involution_support_span_reduction.json",
+            "clean_label_instrument_derivation": "research/BINARY_CARRIER_INSTRUMENTS.md",
+            "clean_two_copy_label_access": isotypic_label_resource_contract(128, 2),
+            "fixed_point_free_label_arithmetic_controls": label_arithmetic_scaling_controls(),
         },
         finite_controls=controls,
         scaling_records=scaling,
@@ -747,11 +783,11 @@ def build_hidden_involution_binary_decision_report(
             {
                 "id": "PO-COSET-BINARY-THRESHOLD-LOWER",
                 "statement": (
-                    "Lower-bound class-mixture trace distance at k=Theta(log |C|), "
-                    "for example by controlling the fourth normalized trace moment "
-                    "of the centered likelihood operator."
+                    "Resolved by the published support-span test: T>=max(0,1-M/2^k). "
+                    "The union of candidate supports has rank at most M(|G|/2)^k. "
+                    "This proves information availability, not an efficient measurement."
                 ),
-                "resolved": False,
+                "resolved": True,
             },
             {
                 "id": "PO-COSET-BINARY-BLOCK-SIGN-COMPILER",
@@ -763,12 +799,22 @@ def build_hidden_involution_binary_decision_report(
                 "resolved": False,
             },
             {
-                "id": "PO-COSET-TWO-COPY-KRONECKER-MEASUREMENT",
+                "id": "PO-COSET-TWO-COPY-CLEAN-LABEL-REDUCTION",
                 "statement": (
-                    "Give a uniform polynomial S_n diagonal-target measurement; "
-                    "the exact scalar decision rule alone is not a circuit."
+                    "Clean GPE reduces the diagonal target-label instrument to supplied "
+                    "QFT and controlled group actions, without a multiplicity transform. "
+                    "The primitive/error contract is explicit; no gate-level QFT backend is supplied here."
                 ),
-                "resolved": False,
+                "resolved": True,
+            },
+            {
+                "id": "PO-COSET-FIXED-POINT-FREE-TWO-COPY-SCORE",
+                "statement": (
+                    "Exact two-quotient and hook-length arithmetic evaluates sign(r_lambda+r_mu+r_nu) "
+                    "in polynomial bit complexity given legal source/target labels. This neither "
+                    "samples those labels classically nor supplies a higher-copy score."
+                ),
+                "resolved": True,
             },
             {
                 "id": "PO-COSET-BINARY-INPUT-MODEL-TRANSFER",
@@ -807,9 +853,9 @@ def build_hidden_involution_binary_decision_report(
                     "binary measurement near log2 |C| copies."
                 ),
                 "answer": (
-                    "False. It fixes the second moment and an upper bound only; a "
-                    "matching trace-norm lower bound needs higher-moment or spectral "
-                    "control."
+                    "False as an efficient-measurement claim. The support-rank argument "
+                    "already establishes threshold distinguishability, but says nothing "
+                    "about the time to implement its support projector."
                 ),
                 "resolved": True,
             },
@@ -818,8 +864,9 @@ def build_hidden_involution_binary_decision_report(
                     "The two-copy target-label formula gives a scalable algorithm."
                 ),
                 "answer": (
-                    "False. Its trace distance is at most sqrt(3/|C|)/2 and the "
-                    "uniform Kronecker target transform is not compiled here."
+                    "False. Its trace distance is at most sqrt(3/|C|)/2. Clean target-label "
+                    "GPE is available given known primitives, but this does not supply "
+                    "a useful growing-copy measurement or its classifier."
                 ),
                 "resolved": True,
             },
@@ -852,9 +899,12 @@ def build_hidden_involution_binary_decision_report(
             "one_copy_weak_fourier_is_binary_helstrom_optimal": one_copy_verified,
             "two_copy_target_label_is_binary_helstrom_optimal": two_copy_verified,
             "binary_detection_requires_hidden_involution_identification": False,
-            "threshold_trace_distance_lower_bound_proved": False,
+            "threshold_trace_distance_lower_bound_proved": True,
             "polynomial_higher_copy_block_sign_compiler_constructed": False,
-            "polynomial_two_copy_kronecker_measurement_constructed": False,
+            "clean_two_copy_label_uniform_primitive_reduction_available": True,
+            "exact_fixed_point_free_two_copy_score_available": True,
+            "gate_level_sn_qft_backend_supplied": False,
+            "kronecker_multiplicity_basis_transform_supplied": False,
             "graph_isomorphism_algorithm_constructed": False,
             "graph_isomorphism_lower_bound_proved": False,
             "classical_superpolynomial_separation_proved": False,
@@ -864,7 +914,8 @@ def build_hidden_involution_binary_decision_report(
             "reason": (
                 "Binary decision is a genuine escape from individual-label polar "
                 "obligations, but constant-copy signal vanishes and neither "
-                "threshold distinguishability nor its efficient measurement is known."
+                "a useful growing-copy measurement nor its efficient outcome classifier is supplied. "
+                "Threshold distinguishability is known from the support-rank bound."
             ),
         },
         status=theorem.status,

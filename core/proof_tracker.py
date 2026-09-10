@@ -1681,6 +1681,18 @@ def _binary_carrier_instrument_lemmas(candidate_id: str) -> list[LemmaRecord]:
         depends_on=["PO-MEASUREMENT", "PO-COMPLEXITY", "PO-SUCCESS", "PO-DEQUANTIZATION"],
         status="blocked-no-growing-copy-program-and-outcome-classifier",
         falsification_test="Reject optimal finite likelihood tables and residual Helstrom distances as compiled readouts. Fixed-copy invariant instruments with only classical memory obey T^2 <= t(2^b-1)/(2M).",
+    ), LemmaRecord(
+        id=f"LEMMA-{candidate_id}-CLEAN-ISOTYPIC-INSTRUMENT", candidate_id=candidate_id,
+        statement="Given supplied group QFT, uniform group preparation and controlled subset actions, compute-copy-label-uncompute implements P_lambda rho P_lambda with clean workspace; q uses have diamond error at most min(2,4q delta) for forward-unitary operator error delta.",
+        depends_on=["PO-INPUT-MODEL", "PO-MEASUREMENT", "PO-COMPLEXITY"],
+        status="derived-clean-gpe-primitive-reduction-review-pending" if checked and report.get("claim_gate", {}).get("finite_clean_gpe_controls_verified") else "blocked-clean-gpe-instrument-evidence-missing",
+        falsification_test="Check Pi_lambda V = V P_lambda on every input including entangled extensions, then invert all workspace operations. Discarded reference rows instead twirl carriers; label probabilities alone cannot validate the instrument. This supplies neither a multiplicity basis nor a growing-copy classifier.",
+    ), LemmaRecord(
+        id=f"LEMMA-{candidate_id}-FIXED-POINT-FREE-LABEL-ARITHMETIC", candidate_id=candidate_id,
+        statement="Given actual two-copy source and target labels for cycle type 2^m, exact two-quotient/hook arithmetic evaluates their Helstrom sign in polynomial bit complexity; no tableau paths or joint label law are enumerated.",
+        depends_on=["PO-MEASUREMENT", "PO-COMPLEXITY", "PO-CLASSICAL-BASELINE"],
+        status="implemented-known-polynomial-two-copy-label-score" if checked and report.get("claim_gate", {}).get("exact_fixed_point_free_two_copy_score_available") else "blocked-polynomial-label-score-evidence-missing",
+        falsification_test="Compare with independent Murnaghan-Nakayama recursion and all physical S4 two-copy blocks. Cheap label scoring does not provide a classical sampler, typical source coverage, or constant-copy asymptotic advantage.",
     )]
 
 

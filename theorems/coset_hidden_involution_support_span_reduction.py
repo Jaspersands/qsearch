@@ -60,6 +60,7 @@ from coset_hidden_involution_binary_decision_reduction import (
     dense_hidden_coset_state,
     involution_class_size,
     involution_conjugacy_class,
+    support_rank_sufficient_copies,
 )
 from coset_hidden_involution_threshold_compiler_boundary import (
     average_projector_from_dense_alternative,
@@ -153,13 +154,7 @@ def support_span_sufficient_copies(
     conjugacy_class_size: int,
     null_false_positive: float,
 ) -> int:
-    if conjugacy_class_size < 1:
-        raise ValueError("conjugacy_class_size must be positive")
-    if not 0.0 < null_false_positive < 1.0:
-        raise ValueError("null_false_positive must lie in (0,1)")
-    return math.ceil(
-        math.log2(conjugacy_class_size / null_false_positive)
-    )
+    return support_rank_sufficient_copies(conjugacy_class_size, null_false_positive)
 
 
 def support_projector(

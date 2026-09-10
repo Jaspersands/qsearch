@@ -1,4 +1,5 @@
 import math
+from fractions import Fraction
 
 import numpy as np
 import pytest
@@ -16,6 +17,8 @@ from coset_hidden_involution_binary_decision_reduction import (
     minimum_copies_for_bayes_advantage,
     one_copy_label_helstrom_trace_distance,
     product_weak_fourier_trace_distance,
+    support_rank_trace_distance_lower_bound,
+    support_rank_sufficient_copies,
     two_copy_target_label_helstrom_trace_distance,
     write_hidden_involution_binary_decision_report,
 )
@@ -46,6 +49,7 @@ def test_dense_controls_verify_exact_chi_square_identity(
         <= row.chi_square_trace_distance_upper_bound + 1e-10
     )
     assert row.average_conjugation_invariance_residual < 1e-9
+    assert float(support_rank_trace_distance_lower_bound(row.conjugacy_class_size, copies)) <= row.helstrom_trace_distance + 1e-10
     assert row.helstrom_conjugation_invariance_residual < 1e-8
 
 
@@ -97,6 +101,8 @@ def test_fixed_point_free_scaling_blocks_constant_copy_but_not_polynomial_copies
     assert large.information_theoretic_copy_lower_bound > 1
     assert not large.constant_copy_signal_can_remain_constant
     assert not large.polynomial_measurement_compiler_known
+    assert large.information_theoretic_sufficient_copy_count >= large.information_theoretic_copy_lower_bound
+    assert large.support_rank_trace_distance_lower_bound >= 2 * large.target_bayes_advantage
     assert 0.8 < large.copy_lower_bound_over_log2_class_size < 1.1
 
 
@@ -109,11 +115,16 @@ def test_report_preserves_threshold_compiler_and_gi_claim_gates(tmp_path):
     assert report.theorem.exact_chi_square_proved
     assert report.theorem.one_copy_weak_fourier_helstrom_optimal
     assert report.theorem.two_copy_target_label_helstrom_optimal
-    assert not report.theorem.threshold_trace_distance_lower_bound_proved
+    assert report.theorem.threshold_trace_distance_lower_bound_proved
     assert not report.theorem.scalable_block_sign_compiler_constructed
     assert not report.claim_gate["graph_isomorphism_algorithm_constructed"]
     assert not report.claim_gate["sample_complexity_result_new_to_literature"]
     assert not report.claim_gate["speedup_claim_allowed"]
+    assert report.claim_gate["clean_two_copy_label_uniform_primitive_reduction_available"]
+    assert not report.claim_gate["kronecker_multiplicity_basis_transform_supplied"]
+    obligations = {row["id"]: row for row in report.proof_obligations}
+    assert obligations["PO-COSET-BINARY-THRESHOLD-LOWER"]["resolved"]
+    assert not obligations["PO-COSET-BINARY-BLOCK-SIGN-COMPILER"]["resolved"]
 
     payload = write_hidden_involution_binary_decision_report(
         tmp_path / "binary.json",
@@ -123,3 +134,15 @@ def test_report_preserves_threshold_compiler_and_gi_claim_gates(tmp_path):
     assert payload["status"] == (
         "binary-decision-copy-threshold-and-two-copy-normal-form-proved"
     )
+
+
+def test_support_rank_bound_is_exact_beyond_float_integer_precision():
+    count = (1 << 1000) + 1
+    copies = support_rank_sufficient_copies(count, Fraction(1, 4))
+    assert copies == 1003
+    assert support_rank_trace_distance_lower_bound(count, copies) >= Fraction(3, 4)
+    assert support_rank_trace_distance_lower_bound(count, copies - 1) < Fraction(3, 4)
+    assert support_rank_trace_distance_lower_bound(3, 0) == 0
+    for size, width in ((True, 3), (3, -1), (3, 1.5)):
+        with pytest.raises(ValueError):
+            support_rank_trace_distance_lower_bound(size, width)

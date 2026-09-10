@@ -323,12 +323,14 @@ def build_snapshot() -> dict[str, Any]:
                     "Two-QFT restriction preserves normalization and supports logical orbit averages without "
                     "decoding a copy basis. Independent carrier discard loses the detection signal. "
                     "A joint quantum label front end plus classical processing reproduces the tested small-group binary gains. "
+                    "Clean subset labels and exact two-copy scoring are available; the growing-copy binary measurement remains missing. "
                     "No useful detector or access to the unknown centralizer is supplied."
                 ),
                 "evidence": (
                     f"Finite isometries: {metric(encoded, 'finite_isometry_controls_passed', 0)}. "
                     f"Information-loss controls: {metric(reference_information, 'finite_binary_controls_passed', 0)}. "
                     f"Finite instrument schedules: {metric(binary_instruments, 'schedules_evaluated', 0)}. "
+                    f"Clean-workspace controls: {metric(binary_instruments, 'clean_gpe_cleanup_controls_passed', 0)}. "
                     "No scalable QFT gate implementation or decoder is supplied."
                 ),
                 "next": "Construct a task-relevant logical effect; test information, normalization, and classical simulability.",
