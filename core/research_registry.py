@@ -23655,8 +23655,10 @@ def initialize_seed_registry(overwrite: bool = False) -> None:
         for experiment in experiments:
             upsert_experiment(experiment)
     else:
+        existing_experiment_ids = {record.get("id") for record in load_experiments()}
         for experiment in experiments:
-            upsert_experiment(experiment)
+            if experiment.id not in existing_experiment_ids:
+                upsert_experiment(experiment)
     if not EXPERIMENT_RESULTS_PATH.exists():
         save_experiment_results([])
     if not DEQUANTIZATION_CHECKS_PATH.exists():

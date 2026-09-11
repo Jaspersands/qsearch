@@ -1679,7 +1679,11 @@ def _binary_carrier_instrument_lemmas(candidate_id: str) -> list[LemmaRecord]:
         id=f"LEMMA-{candidate_id}-GROWING-COPY-BINARY-CLASSIFIER", candidate_id=candidate_id,
         statement="A growing-copy measurement program has an efficiently evaluable outcome decision rule, charged disturbance, natural source coverage and a serious classical comparison.",
         depends_on=["PO-MEASUREMENT", "PO-COMPLEXITY", "PO-SUCCESS", "PO-DEQUANTIZATION"],
-        status="blocked-no-growing-copy-program-and-outcome-classifier",
+        status=("blocked-terminal-rules-supplied-scalable-advantage-missing"
+                if checked and report.get("claim_gate", {}).get("coherent_terminal_controls_verified")
+                else "blocked-coherent-program-supplied-scaling-and-classifier-missing"
+                if checked and report.get("claim_gate", {}).get("finite_coherent_subset_phase_query_verified")
+                else "blocked-no-growing-copy-program-and-outcome-classifier"),
         falsification_test="Reject optimal finite likelihood tables and residual Helstrom distances as compiled readouts. Fixed-copy invariant instruments with only classical memory obey T^2 <= t(2^b-1)/(2M).",
     ), LemmaRecord(
         id=f"LEMMA-{candidate_id}-CLEAN-ISOTYPIC-INSTRUMENT", candidate_id=candidate_id,
@@ -1711,6 +1715,36 @@ def _binary_carrier_instrument_lemmas(candidate_id: str) -> list[LemmaRecord]:
         depends_on=[f"LEMMA-{candidate_id}-SOURCE-CONDITIONED-PALETTE-BOUND", "PO-MEASUREMENT", "PO-SUCCESS"],
         status="derived-adaptive-catalogue-cover-review-pending" if checked and report.get("claim_gate", {}).get("finite_adaptive_catalogue_cover_verified") and report.get("claim_gate", {}).get("separate_adaptive_catalogue_cover_bound_derived") else "blocked-adaptive-catalogue-cover-evidence-missing",
         falsification_test="Reconstruct each successful transcript under both hypotheses; abort before the first outside action and retain failure mass. Assign overlapping covers once. A stepwise cover, post-hoc catalogue or coherent selector is insufficient. Catalogue cardinality is not a runtime lower bound; no novelty is certified.",
+    ), LemmaRecord(
+        id=f"LEMMA-{candidate_id}-COHERENT-SUBSET-PHASE-QUERY", candidate_id=candidate_id,
+        statement="A common isotypic phase can be addressed coherently by k mask bits using 2k controlled group actions. On the physical-register route, retaining all initial source labels costs 2k source QFT/inverse calls plus two reference QFT/inverse calls; exact character sign avoids generic spectral-gap resolution.",
+        depends_on=[f"LEMMA-{candidate_id}-CLEAN-ISOTYPIC-INSTRUMENT", f"LEMMA-{candidate_id}-FIXED-POINT-FREE-LABEL-ARITHMETIC", "PO-COMPLEXITY"],
+        status="derived-coherent-phase-primitive-reduction-review-pending" if checked and report.get("claim_gate", {}).get("finite_coherent_subset_phase_query_verified") else "blocked-coherent-phase-query-evidence-missing",
+        falsification_test="Check full compute-phase-uncompute with clean workspace, unit phases including zero characters, and direct source-weighted conditional kernels for the same h. A character-sign predicate is not the sign of the full many-copy likelihood or an output classifier; gate-level QFT and reversible arithmetic are not supplied.",
+    ), LemmaRecord(
+        id=f"LEMMA-{candidate_id}-UNLABELED-COHERENT-SELECTOR-BOUND", candidate_id=candidate_id,
+        statement="After one common phase query and discarding physical inputs AND source labels, a uniform nonempty-mask selector has T^2<=min(1,3/M); including the empty mask gives T^2<=min(1,5/M), independently of mask count.",
+        depends_on=["PO-INPUT-MODEL", "PO-MEASUREMENT", "PO-SUCCESS"],
+        status="derived-unlabeled-selector-bound-review-pending" if checked and report.get("claim_gate", {}).get("finite_coherent_subset_phase_query_verified") and report.get("claim_gate", {}).get("unlabeled_selector_information_bound_derived") else "blocked-unlabeled-selector-bound-evidence-missing",
+        falsification_test="Check complex coefficients, nested/overlapping masks, empty-mask cross terms and normalized same-hidden inputs. Retained source labels invalidate this scope: the joint distance can exceed the sum of marginal distances. No general multiple-query, source-retained or novelty claim follows.",
+    ), LemmaRecord(
+        id=f"LEMMA-{candidate_id}-FIXED-SELECTOR-MARGINAL-BOUND", candidate_id=candidate_id,
+        statement="For one uniform subset query, all classical source labels and d fixed selector bits have distance bounded by the binomial small-background tail plus the source-conditioned bound for d raw inputs and one large cell; the raw-copy bound handles small k. For d=O(log n), polynomial k gives vanishing signal.",
+        depends_on=[f"LEMMA-{candidate_id}-SOURCE-CONDITIONED-PALETTE-BOUND", "PO-INPUT-MODEL", "PO-MEASUREMENT", "PO-SUCCESS"],
+        status="derived-fixed-selector-marginal-bound-review-pending" if checked and report.get("claim_gate", {}).get("finite_coherent_subset_phase_query_verified") and report.get("claim_gate", {}).get("fixed_selector_marginal_bound_derived") else "blocked-fixed-selector-marginal-evidence-missing",
+        falsification_test="Check direct partial traces against input-independent background-mask mixtures with collapsed conditional moments. Keep all rare-background mass. Fixed observed positions, physical discard and no joint processing of traced mask bits are essential. Do not transfer marginal bounds to arbitrary thresholds or full-bit classifiers.",
+    ), LemmaRecord(
+        id=f"LEMMA-{candidate_id}-COHERENT-PARITY-FOURIER-NORM-BOUND", candidate_id=candidate_id,
+        statement="One fixed Walsh parity and all source labels have the law of an input-independent randomized two-subset Hadamard test. At most three cells give a uniform source-conditioned vanishing bound at polynomial k; a bounded sum of source-supremum Fourier coefficients transfers this to terminal decisions, including source-corrected all-zero rules.",
+        depends_on=[f"LEMMA-{candidate_id}-SOURCE-CONDITIONED-PALETTE-BOUND", "PO-MEASUREMENT", "PO-SUCCESS"],
+        status="derived-coherent-parity-fourier-norm-bound-review-pending" if checked and report.get("claim_gate", {}).get("coherent_terminal_controls_verified") and report.get("claim_gate", {}).get("random_two_subset_parity_reduction_derived") else "blocked-coherent-parity-bound-evidence-missing",
+        falsification_test="Match every conditional parity law against actual Hadamard products, including complex phases and the same h. Source-selected supports and joint parity vectors are not covered. Charge Fourier coefficient norm, not degree or evaluation time: majority has exponential norm despite linear-time evaluation. No general classifier lower bound or classical quantum-front-end replacement follows.",
+    ), LemmaRecord(
+        id=f"LEMMA-{candidate_id}-S6-SOURCE-SELECTED-PARITY-ALL-COPIES", candidate_id=candidate_id,
+        statement="At S6, corrected parity selected by negative source character loses to one pair for every k>=2, under either accepting orientation. An exact character-moment spectrum certifies k=2,...,37 directly and a decreasing l1/radius tail certifies every k>=38.",
+        depends_on=[f"LEMMA-{candidate_id}-COHERENT-SUBSET-PHASE-QUERY", f"LEMMA-{candidate_id}-FIXED-POINT-FREE-LABEL-ARITHMETIC", "PO-SUCCESS"],
+        status="exact-finite-degree-all-copy-certificate-review-pending" if checked and report.get("claim_gate", {}).get("source_selected_parity_exact_contraction_verified") and report.get("claim_gate", {}).get("s6_corrected_negative_parity_all_copy_failure_certified") else "blocked-source-selected-parity-certificate-missing",
+        falsification_test="Match actual source-selected decisions against independently matrix-derived finite histograms; check exact spectra for every hidden member and the shared-h product. Audit the finite prefix and tail inequalities without floats. Fixed S6 is not growing degree, signed weights are not a classical sampler, and arbitrary source-based postprocessing is not covered.",
     )]
 
 

@@ -231,6 +231,20 @@ class IsotypicInstrument:
     group_order: int
     dimension: int
 
+    def phase_unitary(self, phases: Mapping[Hashable, complex]) -> np.ndarray:
+        """W^dagger D_phase W on clean workspace, not an irrep measurement.
+
+        Every occupied or unoccupied irrep needs a unit phase. In particular,
+        assigning phase zero to a vanishing character is not a unitary query.
+        """
+        if set(phases) != set(self.labels):
+            raise ValueError("one phase for every irrep label is required")
+        values = np.asarray([phases[label] for label in self.labels], dtype=complex)
+        if not np.isfinite(values).all() or np.max(np.abs(np.abs(values) - 1)) > 1e-10:
+            raise ValueError("finite unit-modulus irrep phases required")
+        return sum((value * self.projectors[label] for label, value in zip(self.labels, values)),
+                   np.zeros((self.dimension, self.dimension), dtype=complex))
+
     def clean_label(self, label: Hashable, matrix: np.ndarray) -> np.ndarray:
         projector = self.projectors[label]
         return projector @ matrix @ projector.conj().T
@@ -344,3 +358,175 @@ def isotypic_label_resource_contract(
         "controlled_representation_access_must_be_charged": True,
         "scope": "S_n physical regular registers or efficient supplied irrep actions; subset may grow polynomially. No hard multiplicity transform is granted.",
     }
+
+
+def coherent_subset_phase_resource_contract(degree: int, copy_count: int, *,
+        source_qft_operator_error: float = 0.0, phase_gpe_operator_error: float = 0.0) -> dict:
+    """Physical regular-register implementation with ALL source labels retained.
+
+    Each source uses QFT, copy/measure label, inverse QFT before known group
+    multiplication. The coherent mask query then uses W^dagger D_sign W.
+    Exact fixed-point-free character SIGN is reversible classical arithmetic,
+    not a generic QSVT sign approximation through a tiny spectral gap.
+    """
+    if type(degree) is not int or degree < 2 or degree % 2:
+        raise ValueError("even symmetric-group degree required")
+    base = isotypic_label_resource_contract(degree, copy_count)
+    if any(not math.isfinite(error) or error < 0 for error in (source_qft_operator_error, phase_gpe_operator_error)):
+        raise ValueError("finite nonnegative implementation errors required")
+    return {
+        "degree": degree, "coset_samples_required": copy_count,
+        "program": ["SOURCE_QFT_COPY_LABEL_INVERSE_QFT", "HADAMARD_ALL_MASK_QUBITS",
+            "COHERENT_MASK_CONTROLLED_GPE", "EXACT_NEGATIVE_CHARACTER_PHASE_ZERO_MAPS_TO_PLUS_ONE",
+            "INVERSE_COHERENT_MASK_CONTROLLED_GPE", "DISCARD_PHYSICAL_INPUTS",
+            "HADAMARD_MASK_READOUT_RETAIN_SOURCE_LABELS"],
+        "source_qft_or_inverse_calls": 2 * copy_count,
+        "phase_query_group_qft_or_inverse_calls": 2,
+        "total_group_qft_or_inverse_calls": 2 * copy_count + 2,
+        "mask_register_qubits": copy_count, "addressed_mask_count": "2^k (including empty mask)",
+        "controlled_single_copy_group_action_or_inverse_calls": 2 * copy_count,
+        "reference_register_qubits": base["reference_register_qubits"],
+        "exact_character_arithmetic_and_uncomputation_calls": 2,
+        "terminal_classical_character_evaluations_upper_bound": copy_count,
+        "terminal_parity_or_threshold_bit_work": "O(k), in addition to exact character arithmetic",
+        "composed_channel_diamond_distance_upper_bound": min(2.0,
+            4 * copy_count * source_qft_operator_error + 4 * phase_gpe_operator_error),
+        "source_labels_retained": True, "spectral_gap_resolution_required": False,
+        "uses_exact_irrep_labels_not_generic_class_sum_block_encoding": True,
+        "uniform_reduction_to_known_primitives": True,
+        "gate_level_qft_or_reversible_arithmetic_backend_supplied": False,
+        "phase_predicate_is_a_binary_hypothesis_classifier": False,
+        "polynomial_terminal_rules_supplied": True,
+        "terminal_rule_with_scalable_signal_supplied": False, "scalable_signal_proved": False,
+        "coset_preparation_and_natural_reduction_must_be_charged": True,
+        "scope": "One common isotypic sign phase coherently addressed by k mask bits on S_n fixed-point-free coset inputs. All 2^k masks cost 2k controlled group actions, not 2^k calls. Initial source-label extraction costs 2k additional group QFTs on the physical-register route. This supplies a measurement family, not the sign of the full noncommuting many-copy likelihood operator or a useful classifier.",
+    }
+
+
+def unlabeled_coherent_selector_information_contract(class_size: int, *, source_labels_discarded: bool,
+        physical_inputs_discarded: bool, one_common_phase_element: bool, include_empty_mask: bool) -> dict:
+    """One uniform mask query ONLY; never apply to the retained-source experiment."""
+    if type(class_size) is not int or class_size < 1:
+        raise ValueError("positive integer class size required")
+    flags = (source_labels_discarded, physical_inputs_discarded, one_common_phase_element, include_empty_mask)
+    if any(type(flag) is not bool for flag in flags):
+        raise ValueError("explicit boolean selector assumptions required")
+    applicable = source_labels_discarded and physical_inputs_discarded and one_common_phase_element
+    numerator = 5 if include_empty_mask else 3
+    return {"applicable": applicable, "source_labels_discarded": source_labels_discarded,
+        "physical_inputs_discarded": physical_inputs_discarded,
+        "one_common_phase_element": one_common_phase_element, "include_empty_mask": include_empty_mask,
+        "trace_distance_squared_bound_formula": f"min(1,{numerator}/M)" if applicable else None,
+        "trace_distance_upper_bound_power_of_two": _sqrt_ratio_dyadic_exponent(numerator, class_size) if applicable else None,
+        "covers_retained_source_labels": False, "is_classical_dequantization": False,
+        "proof_status": "derived-unlabeled-selector-kernel-review-pending", "novelty_established": False,
+        "scope": "Uniform coherent superposition over all nonempty masks, or all masks including empty. One fixed group-algebra unitary is applied on the chosen subset, after which ONLY the selector remains. Source-dependent phases, retained source labels, retained physical inputs, or multiple queries are not covered.",
+    }
+
+
+def low_order_coherent_selector_information_contract(degree: int, copy_count: int, observed_bits: int, *,
+        one_uniform_subset_query: bool, output_is_fixed_mask_marginal: bool,
+        physical_inputs_discarded: bool) -> dict:
+    """All source labels retained, but only fixed d mask qubits observed.
+
+    Tracing the other masks produces an INPUT-INDEPENDENT uniform mixture
+    over background subsets. Each branch uses d singleton cells and one
+    background cell. Charge its rare-small-cell tail, never postselect it.
+    """
+    if type(degree) is not int or degree < 8 or degree % 2:
+        raise ValueError("even symmetric-group degree >=8 required")
+    if (type(copy_count) is not int or type(observed_bits) is not int
+            or not 1 <= observed_bits < copy_count):
+        raise ValueError("positive fixed observed bits fewer than input copies required")
+    flags = (one_uniform_subset_query, output_is_fixed_mask_marginal, physical_inputs_discarded)
+    if any(type(flag) is not bool for flag in flags):
+        raise ValueError("explicit boolean marginal assumptions required")
+    applicable = all(flags)
+    background_bits, threshold = copy_count - observed_bits, 2 * degree
+    class_size = math.factorial(degree) // (2**(degree // 2) * math.factorial(degree // 2))
+    raw_exponent = (0 if copy_count >= (4 * class_size).bit_length()
+                    else _sqrt_ratio_dyadic_exponent((1 << copy_count) - 1, 4 * class_size))
+    tail_exponent = large_exponent = 0
+    large = None
+    if applicable and background_bits >= threshold:
+        term, tail_numerator = 1, 0
+        for j in range(threshold):
+            tail_numerator += term
+            term = term * (background_bits - j) // (j + 1)
+        tail_exponent = _sqrt_ratio_dyadic_exponent(tail_numerator**2, 1 << (2 * background_bits))
+        palette = (tuple(range(observed_bits, observed_bits + threshold)),) + tuple((i,) for i in range(observed_bits))
+        large = source_conditioned_palette_information_contract(degree, copy_count, palette,
+            palette_fixed_before_source_labels=True, operations_and_readout_in_cell_algebra=True,
+            retain_cells_below=threshold)
+        large_exponent = large["trace_distance_upper_bound_power_of_two"]
+    return {"degree": degree, "copy_count": copy_count, "observed_mask_bits": observed_bits,
+        "all_source_labels_retained": True, "applicable": applicable,
+        "background_cell_threshold": threshold,
+        "rare_background_probability_upper_bound_power_of_two": tail_exponent if applicable else None,
+        "large_background_bound": large,
+        "raw_input_trace_distance_upper_bound_power_of_two": raw_exponent,
+        "trace_distance_upper_bound_power_of_two": min(raw_exponent, max(tail_exponent, large_exponent) + 1) if applicable else None,
+        "aggregation": "Minimum of the raw-copy information bound and Pr[Binomial(k-d,1/2)<2n] + delta(d raw inputs, one cell of width 2n, all k source labels)",
+        "background_selection_is_input_independent": True,
+        "postselection_normalization_used": False,
+        "covers_arbitrary_full_selector_classifier": False,
+        "covers_threshold_of_low_degree_score": False,
+        "proof_status": "derived-fixed-selector-marginal-bound-review-pending",
+        "novelty_established": False, "is_classical_dequantization": False,
+        "scope": "One uniform full-mask subset group-algebra query on standard mixed S_n fixed-point-free coset inputs. All classical source labels remain, but only d mask positions fixed BEFORE the input are retained. Other mask qubits are traced without joint processing, and physical inputs are discarded. The bound does not cover source-selected positions, multiple queries, full-bit thresholding, or joint selector processing before the trace.",
+    }
+
+
+def coherent_parity_information_contract(degree: int, copy_count: int, parity_size: int, *,
+        one_uniform_subset_query: bool, parity_positions_fixed_before_input: bool,
+        physical_inputs_discarded: bool) -> dict:
+    """Any fixed Walsh parity reduces to an input-independent two-subset test.
+
+    All source labels remain. A random S and T=S xor B create at most three
+    incidence cells (two for full parity). Uniform worst-profile cell bounds
+    require no factor equal to the number of possible random subsets.
+    """
+    if type(degree) is not int or degree < 8 or degree % 2:
+        raise ValueError("even symmetric-group degree >=8 required")
+    if (type(copy_count) is not int or copy_count < 1 or type(parity_size) is not int
+            or not 0 <= parity_size <= copy_count):
+        raise ValueError("positive copy count and parity size in [0,k] required")
+    flags = (one_uniform_subset_query, parity_positions_fixed_before_input, physical_inputs_discarded)
+    if any(type(flag) is not bool for flag in flags):
+        raise ValueError("explicit boolean parity assumptions required")
+    applicable = all(flags)
+    order = math.factorial(degree)
+    class_size = order // (2**(degree // 2) * math.factorial(degree // 2))
+    cells = 0 if parity_size == 0 else (2 if parity_size == copy_count else 3)
+    threshold = (4 * degree + 2) // 3
+    effective = cells * (threshold - 1)
+    terms = [{"term": "all_source_labels", "multiplicity": 1,
+              "upper_bound_power_of_two": _sqrt_ratio_dyadic_exponent(copy_count**2, 4 * class_size)}]
+    if cells:
+        terms.extend([
+            {"term": "worst_profile_effective_copies", "multiplicity": 1,
+             "upper_bound_power_of_two": _sqrt_ratio_dyadic_exponent((1 << effective) - 1, 4 * class_size)},
+            {"term": "null_large_cell_error", "multiplicity": cells,
+             "upper_bound_power_of_two": _sqrt_ratio_dyadic_exponent(order - 1, 4 * degree**threshold)},
+            {"term": "alternative_large_cell_error", "multiplicity": cells,
+             "upper_bound_power_of_two": _sqrt_ratio_dyadic_exponent((order - 2) * 9**threshold, 4 * degree**threshold)},
+        ])
+    term_count = sum(row["multiplicity"] for row in terms)
+    exponent = min(0, max(row["upper_bound_power_of_two"] for row in terms) + (term_count - 1).bit_length())
+    raw_exponent = (0 if copy_count >= (4 * class_size).bit_length()
+                    else _sqrt_ratio_dyadic_exponent((1 << copy_count) - 1, 4 * class_size))
+    return {"degree": degree, "copy_count": copy_count, "parity_size": parity_size,
+        "all_source_labels_retained": True, "applicable": applicable,
+        "random_test_subset_count": 0 if cells == 0 else 2, "maximum_incidence_cells": cells,
+        "cell_retention_threshold": threshold, "worst_profile_effective_copy_bound": effective,
+        "bound_components": terms, "raw_copy_bound_power_of_two": raw_exponent,
+        "trace_distance_upper_bound_power_of_two": min(exponent, raw_exponent) if applicable else None,
+        "random_subset_selection_is_input_independent": True,
+        "exponential_catalogue_factor_charged": False,
+        "full_parity_is_covered": parity_size == copy_count,
+        "arbitrary_threshold_is_covered": False, "classical_quantum_frontend_replacement": False,
+        "fourier_transfer_requires_sum_of_source_supremum_coefficients": True,
+        "bounded_norm_separately_for_each_source_is_sufficient": False,
+        "proof_status": "derived-random-two-subset-parity-bound-review-pending",
+        "novelty_established": False,
+        "scope": "One uniform full-mask subset query; all classical source labels and one parity on positions fixed BEFORE the input. Reproduce that parity by a Hadamard test of U_(S xor B)^dagger U_S for input-independent uniform S. Source-based output-bit flips are allowed; source-selected parity positions, joint parity vectors, arbitrary full-output decisions and multiple queries are not covered."}

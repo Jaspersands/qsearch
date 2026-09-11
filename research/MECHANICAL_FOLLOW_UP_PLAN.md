@@ -2,6 +2,14 @@
 
 ## Current Checkpoint (2026-09-10)
 
+2026-09-11 update: normal seed bootstrap now PRESERVES existing experiment
+protocols, statuses and metrics; only missing experiment IDs are inserted.
+Do not restore blanket seed upserts. The character-decoder scaling-write
+failure below remains. Also fix generated-candidate creation provenance:
+re-running `mutate` must preserve created_at for an existing candidate ID
+while updating updated_at; test an idempotent rerun and explicit new ID.
+This is bookkeeping, not permission to promote a blocked candidate.
+
 The classical access corrections are complete; read the top of
 `research/AGENT_HANDOFF.md` and `research/CLASSICAL_VALUE_ACCESS_AUDIT.md`.
 Do not restore heuristic Fourier recovery flags or reactivate the five

@@ -79,6 +79,26 @@ catalogue is also bounded without normalizing selected successes. Succinct
 exponential catalogues, coherent selectors and growing palettes remain outside
 the useful bound; the derivation is review-pending, not an algorithm or a
 novelty claim.
+The [coherent subset-phase query](research/COHERENT_SUBSET_PHASE_QUERY.md)
+now specifies an actual measurement family with polynomial primitive counts.
+Independent source-conditioned kernels verify its finite readouts. The S4
+signal beats one pair but loses to pair-plus-total; no scalable classifier
+is established. A separate discarded-label bound does not apply to the
+retained-source experiment, whose label/selector correlations matter.
+Exact Walsh contractions now test larger copy counts, with disjoint-pair
+baselines; S4's remaining gain uses a commuting V4-supported phase. A separate
+review-pending bound limits fixed low-order selector marginals even with all
+source labels, but leaves collective full-output classification open.
+The [terminal readout analysis](research/COHERENT_TERMINAL_READOUTS.md) now
+implements explicit parity/threshold rules. Fixed parities reduce to random
+two-subset tests; a source-uniform Fourier-envelope bound also limits the
+corrected all-zero rule despite its finite success. Source-aware majority
+remains outside that argument, not an established algorithmic advantage.
+The [source-selected parity test](research/SOURCE_SELECTED_PARITY.md) now
+goes beyond that scope with exact character contractions through S6. Its
+corrected negative-character rule loses to even one pair for every copy
+count k>=2 at S6, certified by an exact finite prefix and a decreasing tail.
+This is a scoped negative result, not a growing-degree no-go or a speedup.
 The [classical value-access audit](research/CLASSICAL_VALUE_ACCESS_AUDIT.md)
 replaces hidden full-table quadratic reconstruction with counted point queries,
 including exact-residue controls on nonmaterializable domains. Sample-limited

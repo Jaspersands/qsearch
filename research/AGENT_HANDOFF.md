@@ -1,8 +1,269 @@
 # Research Agent Handoff
 
-Last updated: 2026-09-10
+Last updated: 2026-09-11
 
-## Latest Pass: Adaptive Whole-Execution Catalogue Cover
+## Latest Pass: Source-Selected Parity and an All-Copy S6 Falsifier
+
+Read `research/SOURCE_SELECTED_PARITY.md`. The previous NEXT-work suggestion
+to try source-selected parity is now implemented and tested. The executable
+terminal rule selects negative, positive, zero, or all character labels,
+with a declared correction/complement. Empty selected parity is even and
+rejects under the declared odd-parity acceptance rule. No orientation is
+silently fitted. The actual hidden h is not supplied: its promised cycle
+type determines the character predicate from the measured source label.
+
+The new exact evaluator sums local source/bit factors BEFORE taking the
+k-th power, retaining one shared hidden member across all copies. It groups
+integer group-pair moments into a signed spectrum. This removes exponential
+dependence on the number of output strings, not factorial dependence on n.
+There are no S6 tensor-product matrices, no positive classical sampler, and
+no end-to-end classical replacement. The declared degree controls are S3,
+S4 and S6; 12 selection/correction controls cover 96 copy-sweep points.
+
+The substantive finding is a fixed-degree certificate: at S6, corrected
+negative-character-selected parity loses to even ONE pair for EVERY k>=2,
+including under the opposite accepting orientation. The pair gap is exactly
+1271/7200. Check k=2,...,37 exactly. For k>=38 use
+
+    |gap(k)| <= [(62864/405)(139/180)^k + (48668/675)(13/15)^k]/2.
+
+The bound is already smaller than the pair gap at 38 and decreases. The
+largest checked prefix gap is below 0.036; k=128 has signed gap approximately
+-1.220725e-9, versus 0.846834 for the pair-event-count baseline. Pair-event
+count is only a coarsening of the full pair likelihood. Neither baseline
+is a legal classical replacement of the quantum pair-label front end.
+
+Independent matrix-derived histogram laws check all 96 S3/S4 hypothesis,
+copy, selection and correction cases, with maximum residual 4.45e-16.
+Exact spectra agree on every hidden member (21 checks across S3/S4/S6).
+Regression tests show that averaging h BEFORE the product changes the law.
+Additional tests compare the actual executable rule on every S4 k=3
+histogram, check the unbounded-copy tail, and reject invalid access/control
+parameters. This is not independent mathematical review or a novelty claim.
+
+The existing binary runner, mutation obligations, negative registry and
+proof tracker include one new finite-degree falsifier and one review-pending
+lemma. No experiment ID or candidate is added. Source-aware thresholds and
+arbitrary use of the joint source/parity output remain outside this result;
+do NOT turn it into a growing-degree no-go theorem.
+
+Also fixed a research-record integrity defect: normal registry initialization
+now inserts missing seed experiments but preserves existing protocol,
+status and metric definitions. Previously each subsequent CLI command reset
+them to seed defaults. Explicit overwrite=True still resets the seed registry;
+the owning experiment writer explicitly updates its definition. Candidate
+seed refresh behavior is unchanged. Preservation/idempotence tests pass.
+
+Verification: 170 targeted tests passed in 63.15 seconds; 23 focused
+source-selection tests passed in 1.46 seconds. Compilation of all core,
+theorem and test Python modules plus qsearch.py, JS syntax and diff checks
+pass. The full-suite attempt stopped at the known character-decoder missing
+scaling-registry write, after 58 passes in 202.18 seconds. This is NOT a
+complete or green full-suite result. The same failure was also reconfirmed
+directly in 4.00 seconds, independent of this mathematical pass.
+
+Live binary and synthesis runs, dequantize, proofs, conjectures, mutate,
+progress snapshot, validate and proof-routes all completed. Registry issues:
+zero. There are 8 candidates, 792 experiments, 799 results, 905 negatives,
+1298 dequantization findings (1294 blocking), and 1274 proof-debt lemmas.
+All eight conjectures remain blocked. The four accepted mutation preflights
+are existing records, not newly discovered algorithms. The 13 curated
+proof-route contracts have zero unsupported assertions and four unresolved
+claims; they do not certify this mathematics. The complete binary experiment
+record hash is unchanged across the downstream refresh, verifying the
+bootstrap-preservation fix on the live registry as well as in tests.
+
+The coherent subset-query, collective terminal, and source-selected parity
+passes form one checkpoint batch with their generated artifacts. Use git
+history for the authoritative checkpoint identifier. Keep the overall goal
+active; these are scoped falsifications, not achievement of the objective.
+
+Next highest-thinking pass: implement the SOURCE-CORRECTED HAMMING-WEIGHT
+generating function at the end of the derivation document. Test actual
+declared majority/all-zero/threshold rules at S6 against pair baselines.
+Verify every local coefficient and full small-group output law independently
+before using the new contraction. Do not present post-hoc optimum threshold
+or orientation as a declared algorithm. A growing-degree argument, not a
+larger fixed-group copy plot, remains the central missing evidence.
+
+Mechanical follow-up remains in `research/MECHANICAL_FOLLOW_UP_PLAN.md`:
+the known character-decoder missing scaling-registry write is not fixed by
+the experiment-bootstrap correction. Mutation refresh also resets created_at
+on existing generated candidates; preserve their creation provenance in a
+separate scoped fix. Counts of records, passed tests and repeated negative
+results are not a measure of proximity to a Shor-level discovery.
+
+## Previous Pass: Collective Terminal Rules and Parity Transfer
+
+Read `research/COHERENT_TERMINAL_READOUTS.md`. Explicit polynomial-time
+parity and threshold rules now consume actual fixed-point-free source labels
+and Walsh bits. Optional source phase correction and complement are declared
+parameters, not fitted by the evaluator. Seventy-two fixed-rule controls
+record SIGNED acceptance gaps separately from ideal joint-source Bayes tables.
+The source-corrected all-zero rule reaches the full S4 k=8 Walsh gap 0.919075;
+corrected majority is below chance with its declared orientation and remains
+weak even if complemented. S3 k=12 all-zero loses to disjoint pairs.
+
+The main mathematical advance is a reviewed-by-tests, NOT independently
+reviewed, reduction: every fixed Walsh parity B has the COMPLETE conditional
+law of an input-independent random-S Hadamard test of U_(S xor B)^dagger U_S.
+It keeps every original source label. Each execution uses at most three
+incidence cells (two for full parity). Uniform worst-profile bounds based on
+the earlier source-conditioned lemma vanish at polynomial k, with no factor
+for the number of random subsets. Exact controls check 4959 conditional
+parity laws and 39672 Hadamard branches, including complex phases and all h.
+
+For a decision f_lambda(y)=sum_B c_B(lambda) chi_B(y), the transfer cost is
+SUM_B SUP_lambda |c_B(lambda)|. A small norm separately for each source is
+INSUFFICIENT: source-selected parity supports give a counterexample. Bit
+flips determined by the source preserve each coefficient magnitude, so the
+corrected all-zero rule has envelope <3 and is also asymptotically obstructed.
+At S1024 k=17528, all fixed parities obey a conservative uniform T<=2^-141;
+the declared all-zero acceptance gap is <=2^-139. Full parity separately
+has T<=2^-278. Small-degree bounds can be vacuous without indicating survival.
+
+Do not overextend this to all cheap classifiers. Exact Krawtchouk spectra and
+an independent balanced-slice formula show odd-majority norm >=2^((k-1)/2)/k,
+although evaluation is linear time. Paturi's linear approximate-degree result
+is checked from the primary paper. Raw/source-blind thresholds were ALREADY
+excluded by the unlabeled selector bound; the nontrivial open case uses
+source information. Source-aware majority and source-selected parity remain
+outside the new argument, not established positive mechanisms.
+
+Implementation lives in the existing binary workbench, core instrument and
+label-arithmetic modules. Two scoped negatives and one review-pending lemma
+are wired through the runner, dequantization, proof tracker and existing
+typed mutation. The resource contract now charges up to k terminal character
+evaluations and distinguishes supplied polynomial terminal rules from a rule
+with scalable success. No candidate is promoted and no novelty is claimed.
+
+Verification: 147 targeted tests passed in 65.91 seconds. The full-suite
+attempt again reached the known character-decoder scaling-write failure
+after 58 passes (204.51 seconds); it is NOT a green full-suite result. Python
+compilation, JS syntax and diff checks pass. Live binary and synthesis runs,
+dequantize, proofs, conjectures, mutate, progress, validate and proof-routes
+are complete. Zero registry issues: 8 candidates, 792 experiments, 799 results,
+904 negatives and 1297 dequantization findings (1293 blocking). Proof debt
+has 1273 lemmas. All eight conjectures remain blocked. The 13 curated
+proof-route contracts have no unsupported assertions and four unresolved
+claims; they do not independently certify the new mathematics.
+
+Next highest-thinking experiment: SOURCE-SELECTED parity is the cheapest
+specific untested exception, rather than another fixed Fourier feature.
+For example choose B(lambda)={i:chi_lambda_i(h)<0} and read parity of the
+corrected bits only on B(lambda). Its per-source norm is one but its common
+Fourier envelope need not be small. Define and test the actual rule first;
+do not claim success merely because the previous proof does not apply.
+Try to falsify it with source-filtered ensemble bounds (condition on the
+label predicate, charge its probability, retain rare-category raw copies),
+not the unconditioned Plancherel moment bound. A S4 signal can still be the
+V4 exception. Useful nonabelian controls likely require n>=6 using character
+word/conjugacy contractions instead of dense physical tensor states. Keep
+same-h source correlations, natural weights and a charged output classifier.
+Source-corrected Hamming thresholds remain a second concrete option.
+
+## Previous Pass: Coherent Subset-Phase Readout
+
+Read `research/COHERENT_SUBSET_PHASE_QUERY.md` first. The earlier NEXT-work
+notes below are historical. The coherent program, conditional kernels,
+factorized Walsh outcome evaluator and low-order marginal analysis are now
+implemented in the EXISTING binary workbench, not another framework.
+
+The primary measurement applies one common negative-character reflection
+coherently over all 2^k subset masks, retains ALL source labels, and discards
+physical inputs only after clean phase uncomputation. Zero characters map
+to +1. On physical registers, initial source extraction costs 2k group QFT/
+inverse calls; the phase query adds two. Controlled group actions cost 2k,
+not 2^k. Exact irrep arithmetic avoids generic spectral-gap resolution but
+does not implement the sign of the full noncommuting likelihood operator.
+No gate-level QFT backend or growing-degree outcome classifier is supplied.
+
+Seven S3/S4 controls check direct physical unitaries against independent
+conditional kernels, complex phases, all source weights, every hidden member
+and zero-alternative-mass sectors. Full-mask Walsh contraction is also checked
+against EVERY grouped direct probability, not just total variation. Histogram
+sufficiency compresses (source label, output bit) permutations only; it is a
+signed |G|^2 contraction, NOT a legal classical sampler or polynomial S_n
+classifier. Copy sweeps reach S3 k=12 and S4 k=8 without physical matrices.
+
+Concrete falsifications and limits:
+- S3 k=12 Walsh T=0.949747 loses to disjoint-pair T=0.960600.
+- S4 k=3 Walsh T=33/64 beats one pair, but even its optimal retained selector
+  T=0.593220 loses to pair-plus-total T=59/96 (two label queries).
+- S4 k=8 Walsh T=0.919075 beats disjoint-pair T=3471/4096. HOWEVER, exact
+  character arithmetic gives its phase support V4: a_e=-1/2, a_h=1/2 on the
+  three perfect matchings. All overlapping subset phase actions commute.
+  This finite gain is not evidence of a noncommuting scalable mechanism.
+- Nonempty-mask S4 joint source/selector T=0.605655 exceeds the SUM of its
+  marginal distances 0.558036. Never replace the cq state by product marginals.
+- Discarding both source labels and physical inputs gives a closed selector
+  kernel, T^2<=3/M for nonempty masks, <=5/M including empty. This does not
+  cover the retained-label main experiment.
+- A SEPARATE review-pending argument retains ALL labels but only d fixed
+  mask qubits. Tracing the other masks gives an input-independent binomial
+  background mixture. Each branch has d raw singleton cells plus one large
+  cell. Apply the earlier source-conditioned bound, keep the rare-small-cell
+  tail, and take the minimum with the raw-copy bound. At S1024 k=17528 d=11,
+  exact outward rounding gives T<=2^-2174. For d=O(log n), polynomial k this
+  is asymptotically negligible. Direct partial traces match independently
+  collapsed background-moment kernels on every finite physical source.
+- This does NOT bound arbitrary full-bit classification or thresholding a
+  low-degree score. An equal-low-marginal probability countercontrol has a
+  different majority probability; keep that scope regression.
+
+Core `independent_pair_label_likelihood` now scores actual disjoint pair
+labels with exact polynomial-bit fixed-point-free character arithmetic.
+Complete pair laws are constant over hidden class members, so ratios multiply
+despite shared h. Do not use this for overlapping sequential measurements or
+claim classical sampling of the quantum front end. Its finite law enumeration
+matches the existing complete three-copy L control exactly.
+
+Four scoped negatives and three review-pending lemmas are wired through the
+binary runner, dequantization mapping and proof tracker. The existing typed
+binary mutation gets the new falsifiers but remains unpromoted. No speedup,
+novel theorem or independent mathematical verification is claimed. There were
+two implementation defects caught and fixed: mixed real/complex kernel
+accumulation and bool/int collisions bypassing validation through lru_cache.
+
+Final substantive verification: 126 targeted tests passed in 67.29 seconds,
+including the exact-support audit. The earlier 126-test run took 62.18 seconds.
+The final metadata correction keeps the even-degree fixed-point-free scoring
+interface off the S3 partial-involution baseline. The full-suite attempt again
+stopped at the KNOWN character-decoder scaling-write failure, after 58 passes
+in 199.36 seconds. Do not claim the full suite is green. Compilation, JS
+syntax and diff checks pass. Keep the mechanical failure in its existing
+Antigravity handoff rather than expanding this mathematical pass.
+Live binary and synthesis runs, dequantize, proofs, conjectures, mutate,
+progress snapshot, validate and proof-routes completed. Validation has zero
+issues: 8 candidates, 792 experiments, 799 results, 902 negatives and 1295
+dequantization findings (1291 blocking). Proof debt has 1272 lemmas. All eight
+conjectures remain blocked. The four accepted mutation preflights concern
+existing candidates, not promotion of this coherent proposal. The 13 curated
+proof-route contracts have zero unsupported assertions and four unresolved
+claims; they do not independently certify these new mathematical arguments.
+
+Next high-thinking target: an ACTUAL efficient collective terminal rule for
+the full Walsh output, not another low-order feature catalogue. A concrete
+starting point is full parity or a Hamming-weight threshold conditioned on
+cheap source-label summaries. Full parity is NOT a low-degree marginal:
+
+    O_parity = sum_(u,v) conjugate(a_u) a_v
+                 tensor_i [(R_(u^-1)+R_v)/2].
+
+Derive/verify its source-weighted outcome contraction and compare against
+known disjoint pairs before judging finite gains. The conditional Hamming-
+weight generating function is the product of B_(lambda,0)+z B_(lambda,1)
+inside the same (u,v) contraction. Do NOT call an enumerated |G|^2 sum a cheap
+classifier. Seek a genuine growing-degree bound or computable terminal rule.
+The S4 V4 exception and retained-label correlations must survive every
+simplification. A polynomial-length circuit describing exponentially many
+masks is already available; mask cardinality alone is not the remaining issue.
+
+Checkpoint policy: `fe767ab3` was pushed before the coherent pass. The
+coherent, terminal and source-selected passes form the next single batch;
+use git history for its identifier. The user explicitly wants fewer commits.
+
+## Previous Pass: Adaptive Whole-Execution Catalogue Cover
 
 The catalogue question below is now resolved within explicit assumptions.
 `research/SOURCE_CONDITIONED_PALETTE.md#adaptive-catalogue-cover` derives

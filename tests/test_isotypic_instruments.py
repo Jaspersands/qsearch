@@ -10,6 +10,9 @@ from isotypic_instruments import (
     regular_algebra_state_lift, source_conditioned_palette_information_contract,
     _sqrt_ratio_dyadic_exponent,
     adaptive_palette_catalogue_information_contract,
+    coherent_subset_phase_resource_contract, unlabeled_coherent_selector_information_contract,
+    low_order_coherent_selector_information_contract,
+    coherent_parity_information_contract,
 )
 from representation_obstruction import integer_partitions
 from self_dual_wreath_physical_frame_blocks import permutation_representation_matrices
@@ -37,6 +40,8 @@ def test_full_compute_measure_uncompute_unitary_has_no_dirty_workspace():
     append_zero = np.kron(origin[:, None], np.eye(dimension))
     assert np.linalg.norm(compute.conj().T @ compute - np.eye(order * dimension)) < 1e-12
     offset = 0
+    phases = {label: np.exp(0.7j * index) for index, label in enumerate(irreps)}
+    phase_diagonal = []
     for label, table in irreps.items():
         width = len(table[0])**2
         mask = np.zeros(order)
@@ -47,7 +52,122 @@ def test_full_compute_measure_uncompute_unitary_has_no_dirty_workspace():
         # Operator equality checks every matrix unit and entangled extension,
         # not merely a few diagonal input states.
         offset += width
+        phase_diagonal.extend([phases[label]] * width)
+    recovered_phase = compute.conj().T @ np.kron(np.diag(phase_diagonal), np.eye(dimension)) @ compute @ append_zero
+    phase = instrument.phase_unitary(phases)
+    assert np.linalg.norm(recovered_phase - append_zero @ phase) < 1e-12
+    assert np.linalg.norm(phase.conj().T @ phase - np.eye(dimension)) < 1e-12
     assert max(instrument.residuals.values()) < 1e-12
+
+
+@pytest.mark.parametrize("bad", [0, 0.5, float("nan"), float("inf")])
+def test_isotypic_phases_cannot_silently_be_nonunitary(bad):
+    actions, irreps = symmetric_pair_data()
+    instrument = finite_isotypic_instrument(actions, irreps)
+    with pytest.raises(ValueError):
+        instrument.phase_unitary({label: bad for label in irreps})
+    with pytest.raises(ValueError):
+        instrument.phase_unitary({})
+
+
+def test_coherent_mask_resource_count_charges_source_extraction_not_all_mask_addresses():
+    contract = coherent_subset_phase_resource_contract(128, 1000,
+        source_qft_operator_error=1e-8, phase_gpe_operator_error=1e-6)
+    assert contract["total_group_qft_or_inverse_calls"] == 2002
+    assert contract["controlled_single_copy_group_action_or_inverse_calls"] == 2000
+    assert contract["exact_character_arithmetic_and_uncomputation_calls"] == 2
+    assert contract["composed_channel_diamond_distance_upper_bound"] == pytest.approx(0.000044)
+    assert not contract["spectral_gap_resolution_required"]
+    assert contract["polynomial_terminal_rules_supplied"]
+    assert contract["terminal_classical_character_evaluations_upper_bound"] == 1000
+    assert not contract["terminal_rule_with_scalable_signal_supplied"]
+    assert not contract["gate_level_qft_or_reversible_arithmetic_backend_supplied"]
+    for degree, copies in ((3, 2), (True, 2), (4, 0), (4, True)):
+        with pytest.raises(ValueError):
+            coherent_subset_phase_resource_contract(degree, copies)
+    with pytest.raises(ValueError):
+        coherent_subset_phase_resource_contract(4, 2, phase_gpe_operator_error=float("nan"))
+
+
+def test_unlabeled_selector_bound_refuses_source_labels_and_other_protocols():
+    flags = dict(source_labels_discarded=True, physical_inputs_discarded=True,
+                 one_common_phase_element=True, include_empty_mask=False)
+    for empty, numerator in ((False, 3), (True, 5)):
+        row = unlabeled_coherent_selector_information_contract(2**20000,
+            **dict(flags, include_empty_mask=empty))
+        assert row["applicable"]
+        assert row["trace_distance_squared_bound_formula"] == f"min(1,{numerator}/M)"
+        assert row["trace_distance_upper_bound_power_of_two"] < -9990
+        assert not row["covers_retained_source_labels"]
+    for key in ("source_labels_discarded", "physical_inputs_discarded", "one_common_phase_element"):
+        row = unlabeled_coherent_selector_information_contract(100, **dict(flags, **{key: False}))
+        assert not row["applicable"]
+        assert row["trace_distance_upper_bound_power_of_two"] is None
+        with pytest.raises(ValueError):
+            unlabeled_coherent_selector_information_contract(100, **dict(flags, **{key: "false"}))
+
+
+def test_fixed_marginal_bound_retains_sources_and_charges_binomial_tail():
+    flags = dict(one_uniform_subset_query=True, output_is_fixed_mask_marginal=True, physical_inputs_discarded=True)
+    row = low_order_coherent_selector_information_contract(64, 588, 7, **flags)
+    assert row["all_source_labels_retained"]
+    assert row["trace_distance_upper_bound_power_of_two"] == -31
+    base = row["large_background_bound"]
+    assert base["effective_coset_copy_count"] == 8
+    assert base["retained_cell_widths"] == [1] * 7
+    assert base["compressed_cell_widths"] == [128]
+    assert base["source_labels_retained"] == 588
+    exact_tail = Fraction(sum(math.comb(581, j) for j in range(128)), 2**581)
+    rounded_tail = Fraction(2)**row["rare_background_probability_upper_bound_power_of_two"]
+    assert exact_tail <= rounded_tail < 2 * exact_tail
+    small = low_order_coherent_selector_information_contract(64, 3, 1, **flags)
+    assert small["large_background_bound"] is None
+    assert small["trace_distance_upper_bound_power_of_two"] < -70
+    assert not row["covers_threshold_of_low_degree_score"]
+    for flag in flags:
+        blocked = low_order_coherent_selector_information_contract(64, 588, 7, **dict(flags, **{flag: False}))
+        assert not blocked["applicable"]
+        assert blocked["trace_distance_upper_bound_power_of_two"] is None
+    for n, k, d in ((7, 20, 1), (64, True, 1), (64, 3, True), (64, 3, 3), (64, 3, 0)):
+        with pytest.raises(ValueError):
+            low_order_coherent_selector_information_contract(n, k, d, **flags)
+
+
+def test_equal_low_order_marginals_do_not_bound_thresholds_of_linear_scores():
+    # Probability-law countercontrol, not a candidate oracle problem.
+    even = np.array([0.25 if y.bit_count() % 2 == 0 else 0 for y in range(8)])
+    odd = 0.25 - even
+    for ignored_bit in range(3):
+        for y in range(8):
+            assert even[y] + even[y ^ (1 << ignored_bit)] == odd[y] + odd[y ^ (1 << ignored_bit)]
+    majority = [y for y in range(8) if y.bit_count() >= 2]
+    assert abs(even[majority].sum() - odd[majority].sum()) == 0.5
+
+
+def test_all_parity_degrees_use_at_most_three_random_incidence_cells():
+    flags = dict(one_uniform_subset_query=True, parity_positions_fixed_before_input=True, physical_inputs_discarded=True)
+    for size, cells in ((0, 0), (1, 3), (8764, 3), (17528, 2)):
+        row = coherent_parity_information_contract(1024, 17528, size, **flags)
+        assert row["maximum_incidence_cells"] == cells
+        assert row["trace_distance_upper_bound_power_of_two"] < -100
+        assert row["all_source_labels_retained"]
+        assert not row["exponential_catalogue_factor_charged"]
+        assert not row["arbitrary_threshold_is_covered"]
+        assert not row["bounded_norm_separately_for_each_source_is_sufficient"]
+    for flag in flags:
+        row = coherent_parity_information_contract(1024, 17528, 1, **dict(flags, **{flag: False}))
+        assert not row["applicable"]
+        assert row["trace_distance_upper_bound_power_of_two"] is None
+    for n, k, d in ((3, 2, 1), (64, True, 0), (64, 3, True), (64, 3, 4)):
+        with pytest.raises(ValueError):
+            coherent_parity_information_contract(n, k, d, **flags)
+
+
+def test_source_selected_parities_can_have_small_fiber_norm_and_large_envelope():
+    # Rows are source labels, columns are distinct fixed parity supports.
+    coefficients = np.eye(16)
+    assert np.max(np.abs(coefficients).sum(axis=1)) == 1
+    assert np.max(np.abs(coefficients), axis=0).sum() == 16
 
 
 def test_discarded_reference_channel_equals_group_twirl_on_every_matrix_unit():

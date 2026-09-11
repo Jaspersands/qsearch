@@ -21,6 +21,9 @@ from isotypic_instruments import (
     finite_isotypic_instrument, isotypic_label_resource_contract, fixed_palette_information_contract,
     regular_algebra_state_lift, source_conditioned_palette_information_contract,
     adaptive_palette_catalogue_information_contract,
+    coherent_subset_phase_resource_contract, unlabeled_coherent_selector_information_contract,
+    low_order_coherent_selector_information_contract,
+    coherent_parity_information_contract,
 )
 from involution_character_arithmetic import label_arithmetic_scaling_controls
 
@@ -412,6 +415,733 @@ def adaptive_palette_catalogue_scaling_controls() -> list[dict]:
     return rows
 
 
+COHERENT_PHASE_RULES = ("negative_character_reflection", "zero_character_reflection", "character_ratio_rotation")
+
+
+def _coherent_phase_values(partitions: tuple, transposition_count: int, rule: str) -> dict:
+    if rule not in COHERENT_PHASE_RULES:
+        raise ValueError("unknown uniform character phase rule")
+    result = {}
+    for label in partitions:
+        character = character_on_involution(label, transposition_count)
+        if rule == "negative_character_reflection":
+            result[label] = -1 if character < 0 else 1
+        elif rule == "zero_character_reflection":
+            result[label] = -1 if character == 0 else 1
+        else:
+            result[label] = np.exp(1.3j * character / hook_length_dimension(label))
+    return result
+
+
+@lru_cache(maxsize=6)
+def _exact_reflection_support_audit(n: int, transposition_count: int, rule: str) -> dict:
+    from symmetric_character import symmetric_character
+    from coset_hidden_involution_multiplicity_support_obstruction import permutation_cycle_type
+    from coset_hidden_involution_binary_decision_reduction import symmetric_group, compose_permutations
+    if rule == "character_ratio_rotation":
+        return {"exact_support_audit_available": False, "support_is_commuting": None,
+                "noncommuting_advantage_implied": False}
+    group, partitions = symmetric_group(n), integer_partitions(n)
+    phases = _coherent_phase_values(partitions, transposition_count, rule)
+    coefficients = {g: Fraction(sum(hook_length_dimension(lam) * phases[lam] *
+        symmetric_character(lam, permutation_cycle_type(g)) for lam in partitions), len(group)) for g in group}
+    support = {g for g, value in coefficients.items() if value}
+    commuting = all(compose_permutations(g, h) == compose_permutations(h, g) for g in support for h in support)
+    closed = tuple(range(n)) in support and all(compose_permutations(g, h) in support for g in support for h in support)
+    return {"exact_support_audit_available": True, "support_size": len(support),
+        "support_is_commuting": commuting, "support_is_subgroup": closed,
+        "all_overlapping_subset_phase_actions_commute": True if commuting else None,
+        "exact_coefficients": [{"permutation": list(g), "coefficient": str(value)} for g, value in coefficients.items() if value],
+        "noncommuting_advantage_implied": False, "quantum_frontend_classically_replaced": False}
+
+
+def _conditional_selector_kernel(coefficients: np.ndarray, moments: np.ndarray, masks: tuple[int, ...],
+        inverse_indices: np.ndarray, inverse_product_indices: np.ndarray) -> np.ndarray:
+    """Exact finite formula for Tr(sigma U_T^dagger U_S), before mask amplitudes.
+
+    moments[i,g] is conditional on the SAME hidden h for all input factors.
+    This does not replace a conditioned source by its Plancherel average.
+    """
+    kernel = np.empty((len(masks), len(masks)), dtype=complex)
+    outer = np.outer(coefficients.conjugate(), coefficients).astype(complex)
+    for si, s in enumerate(masks):
+        for ti, t in enumerate(masks):
+            term = outer.copy()
+            for i, values in enumerate(moments):
+                left, right = bool(s & (1 << i)), bool(t & (1 << i))
+                if left and right:
+                    term *= values[inverse_product_indices]
+                elif left:
+                    term *= values[None, :]
+                elif right:
+                    term *= values[inverse_indices, None]
+            kernel[si, ti] = term.sum()
+    return kernel
+
+
+def _unconditioned_selector_kernel(masks: tuple[int, ...], mean: complex, empty_phase: complex) -> np.ndarray:
+    kernel = np.full((len(masks), len(masks)), abs(mean)**2, dtype=complex)
+    for si, s in enumerate(masks):
+        for ti, t in enumerate(masks):
+            if s == t:
+                kernel[si, ti] = 1
+            elif s == 0:
+                kernel[si, ti] = empty_phase * mean.conjugate()
+            elif t == 0:
+                kernel[si, ti] = mean * empty_phase.conjugate()
+    return kernel
+
+
+@lru_cache(maxsize=16, typed=True)
+def _coherent_walsh_histogram_law(n: int, transposition_count: int, copy_count: int,
+        phase_rule: str) -> tuple:
+    """Contract actual full-mask Walsh probabilities, without physical matrices.
+
+    Joint (source label, output bit) histograms are sufficient by copy
+    exchangeability. The |G|^2 signed contraction is a finite diagnostic,
+    NOT a positive latent-variable sampler or an efficient S_n classifier.
+    """
+    from coset_hidden_involution_binary_decision_reduction import (
+        symmetric_group, inverse_permutation, compose_permutations,
+    )
+    if (type(n) is not int or type(transposition_count) is not int
+            or (n, transposition_count) not in ((3, 1), (4, 2)) or type(copy_count) is not int
+            or not 1 <= copy_count <= (12 if n == 3 else 8)):
+        raise ValueError("histogram controls require declared bounded S3/S4 copy ranges")
+    partitions, group = integer_partitions(n), symmetric_group(n)
+    order, index = len(group), {g: i for i, g in enumerate(group)}
+    hidden = involutions(n, transposition_count)
+    phases = _coherent_phase_values(partitions, transposition_count, phase_rule)
+    reps = {lam: dict(permutation_representation_matrices(lam)) for lam in partitions}
+    characters = {lam: np.array([np.trace(reps[lam][g]) for g in group]) for lam in partitions}
+    coefficients = sum(hook_length_dimension(lam) * phases[lam] * characters[lam].conjugate() / order for lam in partitions)
+    outer = np.outer(coefficients.conjugate(), coefficients).reshape(-1)
+    inverses = np.array([index[inverse_permutation(g)] for g in group])
+    products = np.array([[index[compose_permutations(inverse_permutation(u), v)] for v in group] for u in group])
+    factors = []
+    for h in (None, *hidden):
+        translated = None if h is None else np.array([index[compose_permutations(h, g)] for g in group])
+        local = []
+        for lam in partitions:
+            d = hook_length_dimension(lam)
+            values = characters[lam] if h is None else characters[lam] + characters[lam][translated]
+            for bit in range(2):
+                local.append((d / (4 * order) * (values[0] + (-1)**bit *
+                    (values[inverses, None] + values[None, :]) + values[products])).reshape(-1))
+        factors.append(local)
+    factors = np.asarray(factors)
+    powers = np.array([factors**exponent for exponent in range(copy_count + 1)])
+    histograms, laws = [], [[], []]
+    imaginary_error = hidden_member_error = 0.0
+    category_count = 2 * len(partitions)
+    for categories in itertools.combinations_with_replacement(range(category_count), copy_count):
+        histogram = tuple(categories.count(i) for i in range(category_count))
+        multiplicity = math.factorial(copy_count) // math.prod(math.factorial(value) for value in histogram)
+        contraction = np.ones((len(hidden) + 1, order**2), dtype=complex)
+        for i, exponent in enumerate(histogram):
+            if exponent:
+                contraction *= powers[exponent, :, i, :]
+        values = multiplicity * (contraction @ outer)
+        imaginary_error = max(imaginary_error, float(np.max(np.abs(values.imag))))
+        hidden_member_error = max(hidden_member_error, float(np.max(np.abs(values[1:] - values[1]))))
+        histograms.append(histogram)
+        laws[0].append(float(values[0].real))
+        laws[1].append(float(np.mean(values[1:].real)))
+    statistics = binary_outcome_statistics(*laws)
+    return (tuple(histograms), np.asarray(laws[0]), np.asarray(laws[1]),
+            {"imaginary_probability": imaginary_error, "class_member_outcome_invariance": hidden_member_error,
+             "normalization": statistics["normalization_residual"]})
+
+
+@lru_cache(maxsize=3, typed=True)
+def _independent_label_factor_laws(n: int, transposition_count: int) -> tuple:
+    from symmetric_character import kronecker_coefficient
+    if (type(n) is not int or type(transposition_count) is not int
+            or (n, transposition_count) not in ((3, 1), (4, 2), (6, 3))):
+        raise ValueError("factor-law controls require declared S3/S4/S6 inputs")
+    partitions = integer_partitions(n)
+    single, pair = {}, {}
+    for lam in partitions:
+        d = hook_length_dimension(lam)
+        ratio = 1 + Fraction(character_on_involution(lam, transposition_count), d)
+        single[ratio] = single.get(ratio, Fraction()) + Fraction(d**2, math.factorial(n))
+    for labels in itertools.product(partitions, repeat=3):
+        multiplicity = kronecker_coefficient(*labels)
+        if not multiplicity:
+            continue
+        dimensions = [hook_length_dimension(lam) for lam in labels]
+        ratio = 1 + sum(Fraction(character_on_involution(lam, transposition_count), d) for lam, d in zip(labels, dimensions))
+        if ratio < 0:
+            raise ValueError("physical pair law has a negative likelihood")
+        pair[ratio] = pair.get(ratio, Fraction()) + Fraction(math.prod(dimensions) * multiplicity, math.factorial(n)**2)
+    return single, pair
+
+
+def independent_pair_copy_baseline(n: int, transposition_count: int, copy_count: int) -> dict:
+    """Exact finite law of a known disjoint-pair quantum front end and score."""
+    if (type(n) is not int or type(transposition_count) is not int
+            or (n, transposition_count) not in ((3, 1), (4, 2)) or type(copy_count) is not int
+            or not 1 <= copy_count <= 12):
+        raise ValueError("pair controls require bounded S3/S4 inputs")
+    single, pair = _independent_label_factor_laws(n, transposition_count)
+    law = {Fraction(1): Fraction(1)}
+    for factor_law in [pair] * (copy_count // 2) + [single] * (copy_count % 2):
+        updated = {}
+        for left, p_left in law.items():
+            for right, p_right in factor_law.items():
+                ratio = left * right
+                updated[ratio] = updated.get(ratio, Fraction()) + p_left * p_right
+        law = updated
+    if sum(law.values()) != 1 or sum(ratio * weight for ratio, weight in law.items()) != 1:
+        raise ValueError("disjoint-pair likelihood law lost mass")
+    distance = sum(abs(ratio - 1) * weight for ratio, weight in law.items()) / 2
+    return {"copy_count": copy_count, "exact_total_variation": str(distance), "total_variation": float(distance),
+        "additional_clean_pair_label_queries": copy_count // 2,
+        "shared_hidden_class_invariant_law": True,
+        "fixed_point_free_terminal_score": "involution_character_arithmetic.independent_pair_label_likelihood" if 2 * transposition_count == n else None,
+        "fixed_point_free_terminal_scoring_polynomial": 2 * transposition_count == n,
+        "law_enumeration_is_polynomial_in_degree": False, "quantum_frontend_classically_replaced": False}
+
+
+def coherent_walsh_copy_scaling_controls() -> list[dict]:
+    rows = []
+    for n, t, copies in ((3, 1, (1, 2, 3, 4, 8, 12)), (4, 2, (1, 2, 3, 4, 6, 8))):
+        for k in copies:
+            histograms, null, alternative, residuals = _coherent_walsh_histogram_law(n, t, k, "negative_character_reflection")
+            source_laws = [{}, {}]
+            for histogram, p0, p1 in zip(histograms, null, alternative):
+                source = tuple(histogram[i] + histogram[i + 1] for i in range(0, len(histogram), 2))
+                for law, probability in zip(source_laws, (p0, p1)):
+                    law[source] = law.get(source, 0.0) + probability
+            source_statistics = binary_outcome_statistics(list(source_laws[0].values()), list(source_laws[1].values()))
+            statistics = binary_outcome_statistics(null, alternative)
+            baseline = independent_pair_copy_baseline(n, t, k)
+            rows.append({"degree": n, "copy_count": k, "phase_rule": "negative_character_reflection",
+                "include_empty_mask": True, "source_labels_retained": True,
+                "walsh_readout": statistics, "source_only_readout": source_statistics,
+                "gain_over_source_only": statistics["total_variation"] - source_statistics["total_variation"],
+                "independent_pair_baseline": baseline,
+                "gain_over_independent_pair_baseline": statistics["total_variation"] - baseline["total_variation"],
+                "histogram_count": len(histograms), "ordered_outcome_count": (2 * len(integer_partitions(n)))**k,
+                "group_pair_terms_per_histogram_per_hidden_member": math.factorial(n)**2,
+                "residuals": residuals, "finite_outcome_contraction_verified": max(residuals.values()) < 1e-9,
+                "is_growing_degree_scaling": False, "is_polynomial_sn_classifier": False,
+                "is_legal_classical_coset_solver": False, "speedup_claim_allowed": False})
+    return rows
+
+
+@lru_cache(maxsize=32, typed=True)
+def symmetric_boolean_fourier_profile(copy_count: int, rule: str, threshold: int | None = None) -> dict:
+    """Exact Walsh spectrum by Hamming weight; O(k^2) integer recurrence.
+
+    Fast evaluation of a threshold does not imply a small Fourier l1 norm.
+    f=+1 means accept; the entire table is an audit, not the terminal rule.
+    """
+    if type(copy_count) is not int or not 1 <= copy_count <= 256 or rule not in ("parity", "threshold"):
+        raise ValueError("bounded positive copy count and parity/threshold rule required")
+    if rule == "parity" and threshold is not None:
+        raise ValueError("parity does not take a threshold")
+    k = copy_count
+    if rule == "threshold":
+        threshold = k // 2 + 1 if threshold is None else threshold
+        if type(threshold) is not int or not 1 <= threshold <= k:
+            raise ValueError("threshold must lie in [1,k]")
+    f = [1 if (w % 2 if rule == "parity" else w >= threshold) else -1 for w in range(k + 1)]
+    numerators = []
+    for d in range(k + 1):
+        values = [1, k - 2 * d]
+        for w in range(1, k):
+            numerator = (k - 2 * d) * values[-1] - (k - w + 1) * values[-2]
+            if numerator % (w + 1):
+                raise ArithmeticError("nonintegral Krawtchouk recurrence")
+            values.append(numerator // (w + 1))
+        numerators.append(sum(sign * coefficient for sign, coefficient in zip(f, values)))
+    norm = Fraction(sum(math.comb(k, d) * abs(value) for d, value in enumerate(numerators)), 1 << k)
+    return {"copy_count": k, "rule": rule, "threshold": threshold,
+        "coefficient_numerators_by_degree": numerators, "common_denominator_power_of_two": k,
+        "exact_fourier_l1_norm": str(norm),
+        "largest_nonzero_degree": max(d for d, value in enumerate(numerators) if value),
+        "majority_fourier_l1_lower_bound_power_of_two": ((k - 1) // 2 - (k - 1).bit_length()
+            if k % 2 and rule == "threshold" and threshold == k // 2 + 1 else None),
+        "audit_is_terminal_evaluation": False, "small_arithmetic_cost_implies_small_fourier_norm": False}
+
+
+def coherent_terminal_rule_controls(n: int, transposition_count: int, copy_count: int) -> dict:
+    histograms, null, alternative, residuals = _coherent_walsh_histogram_law(n, transposition_count, copy_count, "negative_character_reflection")
+    partitions = integer_partitions(n)
+    negative = [character_on_involution(lam, transposition_count) < 0 for lam in partitions]
+    weight_laws = {corrected: [{}, {}] for corrected in (False, True)}
+    for histogram, p0, p1 in zip(histograms, null, alternative):
+        sources = tuple(histogram[2 * i] + histogram[2 * i + 1] for i in range(len(partitions)))
+        for corrected, laws in weight_laws.items():
+            weight = sum(histogram[2 * i + (0 if corrected and negative[i] else 1)] for i in range(len(partitions)))
+            for law, probability in zip(laws, (p0, p1)):
+                key = (sources, weight)
+                law[key] = law.get(key, 0.0) + probability
+    baseline = independent_pair_copy_baseline(n, transposition_count, copy_count)
+    rows, joint_weights = [], []
+    for corrected, laws in weight_laws.items():
+        joint_weights.append({"phase_corrected": corrected,
+            "source_and_weight_readout": binary_outcome_statistics(list(laws[0].values()), list(laws[1].values()))})
+        for name, rule, threshold, complement in (("odd_parity", "parity", None, False),
+                ("all_zero", "threshold", 1, True), ("strict_majority", "threshold", copy_count // 2 + 1, False)):
+            accepted, joint = [0.0, 0.0], [{}, {}]
+            for b, law in enumerate(laws):
+                for (source, weight), probability in law.items():
+                    accept = bool(weight % 2) if rule == "parity" else weight >= threshold
+                    accept = accept != complement
+                    accepted[b] += probability * accept
+                    key = (source, accept)
+                    joint[b][key] = joint[b].get(key, 0.0) + probability
+            gap = accepted[1] - accepted[0]
+            rows.append({"rule": name, "phase_corrected": corrected, "threshold": threshold, "complement": complement,
+                "null_acceptance_probability": accepted[0], "alternative_acceptance_probability": accepted[1],
+                "signed_acceptance_gap": gap, "equal_prior_success": (1 + gap) / 2,
+                "gap_minus_known_disjoint_pair_gap": gap - baseline["total_variation"],
+                "joint_source_and_rule_output": binary_outcome_statistics(list(joint[0].values()), list(joint[1].values())),
+                "exact_fourier_l1_norm": symmetric_boolean_fourier_profile(copy_count, rule, threshold)["exact_fourier_l1_norm"],
+                "fixed_point_free_terminal_implementation": "involution_character_arithmetic.coherent_walsh_terminal_decision" if 2 * transposition_count == n else None,
+                "fitted_orientation_used": False, "finite_bayes_table_used_by_terminal_rule": False})
+    return {"degree": n, "copy_count": copy_count, "phase_rule": "negative_character_reflection",
+        "rules": rows, "joint_weight_controls": joint_weights, "independent_pair_baseline": baseline,
+        "residuals": residuals, "growing_degree_signal_established": False, "speedup_claim_allowed": False}
+
+
+def coherent_parity_scaling_controls() -> list[dict]:
+    rows = []
+    for n in (128, 1024, 4096):
+        k = 4 * (matching_count(n // 2) - 1).bit_length()
+        for d in (0, 1, k // 2, k):
+            row = coherent_parity_information_contract(n, k, d, one_uniform_subset_query=True,
+                parity_positions_fixed_before_input=True, physical_inputs_discarded=True)
+            if d == 1:
+                row["source_corrected_all_zero_absolute_gap_upper_bound_power_of_two"] = min(0, row["trace_distance_upper_bound_power_of_two"] + 2)
+            rows.append(row)
+    return rows
+
+
+@lru_cache(maxsize=3, typed=True)
+def _source_parity_group_data(n: int, transposition_count: int) -> tuple:
+    """Integer class-character data only; no dense representation matrices."""
+    from symmetric_character import symmetric_character
+    from coset_hidden_involution_multiplicity_support_obstruction import permutation_cycle_type
+    from coset_hidden_involution_binary_decision_reduction import symmetric_group, inverse_permutation, compose_permutations
+    if (type(n) is not int or type(transposition_count) is not int
+            or (n, transposition_count) not in ((3, 1), (4, 2), (6, 3))):
+        raise ValueError("exact source-parity contractions require declared S3/S4/S6 controls")
+    group, partitions = symmetric_group(n), integer_partitions(n)
+    index = {g: i for i, g in enumerate(group)}
+    characters = np.array([[symmetric_character(lam, permutation_cycle_type(g)) for g in group]
+                           for lam in partitions], dtype=np.int64)
+    dimensions = np.array([hook_length_dimension(lam) for lam in partitions], dtype=np.int64)
+    hidden = involutions(n, transposition_count)
+    translated = tuple(np.array([index[compose_permutations(h, g)] for g in group]) for h in hidden)
+    signs = np.array([character_on_involution(lam, transposition_count) for lam in partitions])
+    coefficients = (dimensions * np.where(signs < 0, -1, 1)) @ characters
+    inverse = np.array([index[inverse_permutation(g)] for g in group])
+    products = np.array([[index[compose_permutations(inverse_permutation(u), v)] for v in group] for u in group])
+    if int(coefficients @ coefficients) != len(group)**2 or int(coefficients.sum()) != len(group):
+        raise ArithmeticError("negative-character phase failed exact normalization")
+    return group, partitions, characters, dimensions, signs, coefficients, inverse, products, translated
+
+
+def _source_parity_local_moment(data: tuple, selection: str, corrected: bool, hidden_index: int | None) -> np.ndarray:
+    group, _, characters, dimensions, signs, _, inverse, products, translated = data
+    if selection not in ("all", "negative", "positive", "zero") or type(corrected) is not bool:
+        raise ValueError("declared character selection and boolean phase correction required")
+    if hidden_index is not None and (type(hidden_index) is not int or not 0 <= hidden_index < len(translated)):
+        raise ValueError("hidden-member index outside the supplied class")
+    selected = {"all": np.ones(len(signs), dtype=bool), "negative": signs < 0,
+                "positive": signs > 0, "zero": signs == 0}[selection]
+    values = characters if hidden_index is None else characters + characters[:, translated[hidden_index]]
+    unselected_moment = (dimensions * ~selected) @ values
+    selected_moment = (dimensions * selected * np.where(corrected & (signs < 0), -1, 1)) @ values
+    numerator = (unselected_moment[0] + unselected_moment[products]
+                 + selected_moment[inverse, None] + selected_moment[None, :])
+    if np.any(np.abs(numerator) > 2 * len(group)):
+        raise ArithmeticError("one-copy parity contraction exceeded its unit bound")
+    return numerator
+
+
+@lru_cache(maxsize=24, typed=True)
+def source_selected_parity_moment_certificate(n: int, transposition_count: int,
+        selection: str = "negative", phase_corrected: bool = True) -> dict:
+    """Exact signed moment spectrum for an actual source-local terminal rule.
+
+    Sum source labels BEFORE taking the k-th power, but never sum hidden h
+    before that power. Simultaneous conjugation proves class invariance of
+    the full contraction. Signed group-pair weights are not sampler weights.
+    """
+    data = _source_parity_group_data(n, transposition_count)
+    group, _, _, _, _, coefficients, _, _, _ = data
+    order = len(group)
+    weights = np.outer(coefficients, coefficients).reshape(-1)
+    spectra = []
+    for hidden_index in (None, 0):
+        moment = _source_parity_local_moment(data, selection, phase_corrected, hidden_index).reshape(-1)
+        values, inverse = np.unique(moment, return_inverse=True)
+        totals = np.zeros(len(values), dtype=np.int64)
+        np.add.at(totals, inverse, weights)
+        spectra.append([{"moment_numerator": int(value), "weight_numerator": int(weight)}
+                        for value, weight in zip(values, totals) if weight])
+    return {"degree": n, "transposition_count": transposition_count, "selection": selection,
+        "phase_corrected": phase_corrected, "moment_denominator": 2 * order,
+        "weight_denominator": order**2, "null_spectrum": spectra[0], "alternative_spectrum": spectra[1],
+        "group_pairs_enumerated": order**2, "shared_hidden_member": True,
+        "class_invariance_justification": "Conjugate u and v together with h; character predicates and phase coefficients are class functions.",
+        "negative_weights_present": any(row["weight_numerator"] < 0 for spectrum in spectra for row in spectrum),
+        "is_positive_classical_sampler": False, "is_polynomial_in_group_degree": False,
+        "is_asymptotic_advantage_certificate": False}
+
+
+def _parity_spectrum_mean(certificate: dict, hypothesis: str, copies: int) -> Fraction:
+    return Fraction(sum(row["weight_numerator"] * row["moment_numerator"]**copies
+                        for row in certificate[hypothesis + "_spectrum"]),
+                    certificate["weight_denominator"] * certificate["moment_denominator"]**copies)
+
+
+def _pair_event_count_baseline(n: int, transposition_count: int, copies: int) -> tuple:
+    """Threshold each pair's exact likelihood, then optimally score its count."""
+    _, pair = _independent_label_factor_laws(n, transposition_count)
+    p0 = sum((mass for ratio, mass in pair.items() if ratio > 1), Fraction())
+    p1 = sum((ratio * mass for ratio, mass in pair.items() if ratio > 1), Fraction())
+    m = copies // 2
+    distance = sum(abs(math.comb(m, j) * (p1**j * (1 - p1)**(m - j)
+                   - p0**j * (1 - p0)**(m - j))) for j in range(m + 1)) / 2
+    return distance, {"pair_count": m, "ignored_unpaired_copies": copies % 2,
+        "single_pair_null_acceptance": str(p0), "single_pair_alternative_acceptance": str(p1),
+        "total_variation": float(distance), "is_full_pair_likelihood_optimum": False,
+        "pair_event_score": "accept iff 1+r_lambda+r_mu+r_nu > 1",
+        "quantum_frontend_classically_replaced": False,
+        "degree_dependent_count_threshold_calibration_charged": True}
+
+
+def source_selected_parity_controls(n: int, transposition_count: int, copies: tuple[int, ...],
+        selection: str = "negative", phase_corrected: bool = True) -> dict:
+    if not copies or any(type(k) is not int or not 1 <= k <= 1024 for k in copies):
+        raise ValueError("nonempty copy sweep of integer sizes in [1,1024] required")
+    certificate = source_selected_parity_moment_certificate(n, transposition_count, selection, phase_corrected)
+    rows = []
+    for k in copies:
+        means = [_parity_spectrum_mean(certificate, hypothesis, k) for hypothesis in ("null", "alternative")]
+        if any(abs(value) > 1 for value in means):
+            raise ArithmeticError("exact source-parity law has invalid probability")
+        accepted = [(1 - value) / 2 for value in means]
+        gap = accepted[1] - accepted[0]
+        baseline_distance, baseline = _pair_event_count_baseline(n, transposition_count, k)
+        rows.append({"copy_count": k, "null_acceptance_probability": float(accepted[0]),
+            "alternative_acceptance_probability": float(accepted[1]), "signed_acceptance_gap": float(gap),
+            "equal_prior_success": float((1 + gap) / 2),
+            "absolute_gap_upper_bound_over_both_orientations": float(abs(gap)),
+            "fitted_orientation_used": False, "independent_pair_event_count_baseline": baseline,
+            "loses_to_pair_count_even_after_orientation_flip": abs(gap) < baseline_distance,
+            "rational_gap_numerator_bits": abs(gap.numerator).bit_length(),
+            "rational_gap_denominator_bits": gap.denominator.bit_length()})
+    return {"degree": n, "selection": selection, "phase_corrected": phase_corrected,
+        "acceptance_rule": "odd parity of the selected corrected bits; empty selection rejects",
+        "fixed_point_free_terminal_implementation": "involution_character_arithmetic.coherent_walsh_terminal_decision" if n == 2 * transposition_count else None,
+        "moment_certificate": certificate, "copy_sweep": rows,
+        "retains_source_information_in_selection": selection != "all",
+        "fixed_parity_information_bound_applies": selection == "all",
+        "source_and_parity_joint_bayes_table_computed": False,
+        "speedup_claim_allowed": False}
+
+
+def source_selected_parity_all_copy_obstruction() -> dict:
+    """A fixed-S6 statement for EVERY k>=2, not a growing-degree theorem."""
+    certificate = source_selected_parity_moment_certificate(6, 3, "negative", True)
+    envelopes = []
+    for hypothesis in ("null", "alternative"):
+        spectrum = certificate[hypothesis + "_spectrum"]
+        radius = max(abs(Fraction(row["moment_numerator"], certificate["moment_denominator"])) for row in spectrum)
+        norm = sum(abs(Fraction(row["weight_numerator"], certificate["weight_denominator"])) for row in spectrum)
+        envelopes.append((norm, radius))
+    baseline, _ = _pair_event_count_baseline(6, 3, 2)
+    cutoff = next((k for k in range(2, 1025)
+        if all(radius < 1 for _, radius in envelopes) and sum(norm * radius**k for norm, radius in envelopes) / 2 < baseline), None)
+    prefix = [] if cutoff is None else [abs((_parity_spectrum_mean(certificate, "null", k)
+               - _parity_spectrum_mean(certificate, "alternative", k)) / 2) for k in range(2, cutoff)]
+    verified = cutoff is not None and all(gap < baseline for gap in prefix)
+    return {"degree": 6, "selection": "negative", "phase_corrected": True,
+        "all_copy_counts_from_two_covered": verified, "tail_starts_at_copy_count": cutoff,
+        "exact_one_pair_baseline_gap": str(baseline),
+        "exact_finite_prefix_maximum_absolute_gap": str(max(prefix, default=Fraction())),
+        "finite_prefix_copy_counts_checked": len(prefix),
+        "null_and_alternative_envelopes": [{"exact_weight_l1_norm": str(norm), "exact_radius": str(radius)} for norm, radius in envelopes],
+        "exact_tail_start_gap_upper_bound": str(sum(norm * radius**cutoff for norm, radius in envelopes) / 2) if cutoff else None,
+        "proof": "Exact prefix; for every k beyond cutoff, |gap| <= (L0*r0^k + L1*r1^k)/2 < the one-pair gap. Each radius is below one, so the tail bound decreases. The baseline may discard every input except its first pair.",
+        "covers_either_accepting_orientation": True, "covers_arbitrary_source_based_postprocessing": False,
+        "is_growing_degree_obstruction": False, "novelty_established": False,
+        "proof_status": "exact-finite-degree-all-copy-certificate-review-pending" if verified else "blocked-certificate-inequality-failure"}
+
+
+def audit_source_selected_parity_contraction() -> dict:
+    laws_checked, exact_class_checks, residual = 0, 0, 0.0
+    for n, t in ((3, 1), (4, 2)):
+        partitions = integer_partitions(n)
+        for k in (1, 2, 3):
+            histograms, null, alternative, _ = _coherent_walsh_histogram_law(n, t, k, "negative_character_reflection")
+            signs = [character_on_involution(lam, t) for lam in partitions]
+            for selection in ("all", "negative", "positive", "zero"):
+                selected = [selection == "all" or (selection == "negative" and s < 0)
+                            or (selection == "positive" and s > 0) or (selection == "zero" and s == 0) for s in signs]
+                for corrected in (False, True):
+                    parity = [(-1)**sum(hist[2 * i + (0 if corrected and signs[i] < 0 else 1)]
+                              for i, keep in enumerate(selected) if keep) for hist in histograms]
+                    certificate = source_selected_parity_moment_certificate(n, t, selection, corrected)
+                    for hypothesis, probabilities in (("null", null), ("alternative", alternative)):
+                        residual = max(residual, abs(float(_parity_spectrum_mean(certificate, hypothesis, k)) - float(np.dot(parity, probabilities))))
+                        laws_checked += 1
+    for n, t in ((3, 1), (4, 2), (6, 3)):
+        data = _source_parity_group_data(n, t)
+        weights = np.outer(data[5], data[5]).reshape(-1)
+        reference = source_selected_parity_moment_certificate(n, t)["alternative_spectrum"]
+        for h in range(len(data[8])):
+            values, inverse = np.unique(_source_parity_local_moment(data, "negative", True, h).reshape(-1), return_inverse=True)
+            totals = np.zeros(len(values), dtype=np.int64)
+            np.add.at(totals, inverse, weights)
+            actual = [{"moment_numerator": int(value), "weight_numerator": int(weight)} for value, weight in zip(values, totals) if weight]
+            if actual != reference:
+                raise ArithmeticError("class-member moment spectra differ")
+            exact_class_checks += 1
+    return {"independent_histogram_probability_laws_checked": laws_checked,
+        "maximum_histogram_law_residual": residual,
+        "exact_all_hidden_member_spectra_checked": exact_class_checks,
+        "integer_characters_compared_with_matrix_based_histograms": True,
+        "no_dense_s6_tensor_states_constructed": True,
+        "verified": residual < 1e-10, "formal_proof_verification": False}
+
+
+@lru_cache(maxsize=14, typed=True)
+def evaluate_coherent_subset_phase_query(n: int = 4, transposition_count: int = 2, copy_count: int = 3,
+        phase_rule: str = "negative_character_reflection", include_empty_mask: bool = False) -> dict:
+    """One explicit coherent phase query, keeping every initial source label.
+
+    Direct controlled irrep unitaries and a separate character-moment kernel
+    must agree. Only mask readouts are performed after discarding physical
+    inputs; finite Helstrom tables are not called polynomial classifiers.
+    """
+    from coset_hidden_involution_binary_decision_reduction import (
+        symmetric_group, inverse_permutation, compose_permutations,
+    )
+    if (type(n) is not int or type(transposition_count) is not int
+            or (n, transposition_count) not in ((3, 1), (4, 2)) or type(copy_count) is not int
+            or not 1 <= copy_count <= (4 if n == 3 else 3) or type(include_empty_mask) is not bool):
+        raise ValueError("coherent controls require bounded S3/S4 physical inputs and an explicit mask convention")
+    partitions, group = integer_partitions(n), symmetric_group(n)
+    order, index = len(group), {g: i for i, g in enumerate(group)}
+    hidden = involutions(n, transposition_count)
+    reps = {lam: dict(permutation_representation_matrices(lam)) for lam in partitions}
+    phases = _coherent_phase_values(partitions, transposition_count, phase_rule)
+    characters = {lam: np.array([np.trace(reps[lam][g]) for g in group]) for lam in partitions}
+    coefficients = sum(hook_length_dimension(lam) * phases[lam] * characters[lam].conjugate() / order for lam in partitions)
+    inverse_indices = np.array([index[inverse_permutation(g)] for g in group])
+    products = np.array([[index[compose_permutations(inverse_permutation(u), v)] for v in group] for u in group])
+    masks = tuple(range(0 if include_empty_mask else 1, 2**copy_count))
+    count = len(masks)
+    walsh = np.array([[(-1)**((s & y).bit_count()) / math.sqrt(2**copy_count) for s in masks]
+                      for y in range(2**copy_count)])
+    residuals = dict.fromkeys(("unitary_query", "conditional_kernel", "state_positivity", "source_mass",
+        "unconditioned_kernel", "mask_diagonal", "data_processing", "phase_unit_modulus",
+        "coefficient_parseval", "unlabeled_closed_form"), 0.0)
+    residuals["phase_unit_modulus"] = max(abs(abs(z) - 1) for z in phases.values())
+    residuals["coefficient_parseval"] = abs(float(np.vdot(coefficients, coefficients).real) - 1)
+    summed = [np.zeros((count, count), dtype=complex) for _ in range(2)]
+    walsh_laws, plus_laws, source_laws = [[], []], [[], []], [[], []]
+    walsh_histograms = [{}, {}]
+    source_indices = {lam: i for i, lam in enumerate(partitions)}
+    raw_distance = retained_distance = 0.0
+    marginal_distances = {d: 0.0 for d in range(1, min(2, copy_count - 1) + 1)} if include_empty_mask else {}
+    decorrelation_distances = [0.0, 0.0]
+    source_counterexample = None
+    maximum_conditioning_error = 0.0
+    kernels_checked = source_blocks = zero_weight_blocks = 0
+    parity_laws_checked = parity_random_branches_checked = 0
+    unconditioned_null = _unconditioned_selector_kernel(masks, complex(coefficients[0]), complex(sum(coefficients))) / count
+    unconditioned_alt = sum(_unconditioned_selector_kernel(masks, complex(coefficients[0] + coefficients[index[h]]),
+        complex(sum(coefficients))) for h in hidden) / (len(hidden) * count)
+    for sources in itertools.product(partitions, repeat=copy_count):
+        dimensions = [hook_length_dimension(lam) for lam in sources]
+        dimension = math.prod(dimensions)
+        operators = []
+        for s in masks:
+            operator = np.zeros((dimension, dimension), dtype=complex)
+            for coefficient, g in zip(coefficients, group):
+                action = np.ones((1, 1), dtype=complex)
+                for i, lam in enumerate(sources):
+                    action = np.kron(action, reps[lam][g] if s & (1 << i) else np.eye(dimensions[i]))
+                operator += coefficient * action
+            residuals["unitary_query"] = max(residuals["unitary_query"], float(np.linalg.norm(operator.conj().T @ operator - np.eye(dimension))))
+            operators.append(operator)
+        operators = np.asarray(operators)
+        physical_blocks = [np.zeros((dimension, dimension), dtype=complex) for _ in range(2)]
+        selector_blocks = [np.zeros((count, count), dtype=complex) for _ in range(2)]
+        for h in (None, *hidden):
+            denominators = [d if h is None else d + character_on_involution(lam, transposition_count)
+                            for lam, d in zip(sources, dimensions)]
+            weight = math.prod(d * denominator / order for d, denominator in zip(dimensions, denominators))
+            if weight == 0:
+                zero_weight_blocks += 1
+                continue
+            physical = np.ones((1, 1), dtype=complex)
+            moments = []
+            for lam, d, denominator in zip(sources, dimensions, denominators):
+                single = (np.eye(d) if h is None else np.eye(d) + reps[lam][h]) / denominator
+                physical = np.kron(physical, single)
+                moments.append(characters[lam] / d if h is None else np.array([
+                    (characters[lam][index[g]] + characters[lam][index[compose_permutations(h, g)]]) / denominator for g in group]))
+            transformed = np.einsum("sij,jk->sik", operators, physical)
+            direct = np.einsum("sij,tij->st", transformed, operators.conjugate()) / count
+            formula = _conditional_selector_kernel(coefficients, np.asarray(moments), masks, inverse_indices, products) / count
+            residuals["conditional_kernel"] = max(residuals["conditional_kernel"], float(np.linalg.norm(direct - formula)))
+            if include_empty_mask:
+                walsh_probabilities = np.diag(walsh @ direct @ walsh.T).real
+                for parity_mask in sorted({1, min(3, count - 1), count - 1}):
+                    coherent_mean = sum((-1)**((y & parity_mask).bit_count()) * value for y, value in enumerate(walsh_probabilities))
+                    randomized_mean = 0j
+                    for s in masks:
+                        product = operators[s ^ parity_mask].conj().T @ operators[s]
+                        value = np.trace(physical @ product)
+                        randomized_mean += value / count
+                        residuals["hadamard_probability_range"] = max(residuals.get("hadamard_probability_range", 0.0), abs(float(value.real)) - 1)
+                        parity_random_branches_checked += 1
+                    residuals["random_two_subset_parity_law"] = max(residuals.get("random_two_subset_parity_law", 0.0),
+                        abs(complex(coherent_mean) - randomized_mean))
+                    parity_laws_checked += 1
+            for d in marginal_distances:
+                active, background = 2**d, 2**(copy_count - d)
+                marginal = np.einsum("babc->ac", direct.reshape(background, active, background, active))
+                mixture = np.zeros((active, active), dtype=complex)
+                for background_mask in range(background):
+                    cell_moment = np.ones(order, dtype=complex)
+                    for i in range(copy_count - d):
+                        if background_mask & (1 << i):
+                            cell_moment *= moments[d + i]
+                    collapsed = np.asarray(moments[:d] + [cell_moment])
+                    mixture += _conditional_selector_kernel(coefficients, collapsed,
+                        tuple(active | a for a in range(active)), inverse_indices, products) / count
+                residuals["fixed_marginal_background_mixture"] = max(residuals.get("fixed_marginal_background_mixture", 0.0),
+                    float(np.linalg.norm(marginal - mixture)))
+            residuals["state_positivity"] = max(residuals["state_positivity"], -float(np.linalg.eigvalsh(direct).min()))
+            residuals["mask_diagonal"] = max(residuals["mask_diagonal"], float(np.max(np.abs(np.diag(direct) - 1 / count))))
+            hypothesis, prior = (0, 1) if h is None else (1, 1 / len(hidden))
+            physical_blocks[hypothesis] += weight * prior * physical
+            selector_blocks[hypothesis] += weight * prior * direct
+            kernels_checked += 1
+            prediction = unconditioned_null if h is None else _unconditioned_selector_kernel(masks,
+                complex(coefficients[0] + coefficients[index[h]]), complex(sum(coefficients))) / count
+            error = float(np.linalg.norm(direct - prediction))
+            if error > max(maximum_conditioning_error, 1e-10):
+                maximum_conditioning_error = error
+                source_counterexample = {"source_partitions": [list(lam) for lam in sources],
+                    "hypothesis": "null" if h is None else "alternative", "physical_source_weight": weight,
+                    "conditional_vs_unconditioned_kernel_norm": error}
+        raw_distance += _half_trace_norm(physical_blocks[1] - physical_blocks[0])
+        retained_distance += _half_trace_norm(selector_blocks[1] - selector_blocks[0])
+        for d in marginal_distances:
+            active, background = 2**d, 2**(copy_count - d)
+            difference = selector_blocks[1] - selector_blocks[0]
+            marginal = np.einsum("babc->ac", difference.reshape(background, active, background, active))
+            marginal_distances[d] += _half_trace_norm(marginal)
+        for b, state in enumerate(selector_blocks):
+            mass = float(np.trace(physical_blocks[b]).real)
+            residuals["source_mass"] = max(residuals["source_mass"], abs(float(np.trace(state).real) - mass))
+            source_laws[b].append(mass)
+            walsh_values = np.diag(walsh @ state @ walsh.T).real.tolist()
+            walsh_laws[b].extend(walsh_values)
+            if include_empty_mask:
+                for y, probability in enumerate(walsh_values):
+                    key = [0] * (2 * len(partitions))
+                    for i, lam in enumerate(sources):
+                        key[2 * source_indices[lam] + ((y >> i) & 1)] += 1
+                    histogram = tuple(key)
+                    walsh_histograms[b][histogram] = walsh_histograms[b].get(histogram, 0.0) + probability
+            plus = float(state.sum().real / count)
+            plus_laws[b].extend((plus, mass - plus))
+            summed[b] += state
+            decorrelation_distances[b] += _half_trace_norm(state - mass * (unconditioned_null if b == 0 else unconditioned_alt))
+        source_blocks += 1
+    sources_only = binary_outcome_statistics(*source_laws)
+    walsh_statistics, plus_statistics = binary_outcome_statistics(*walsh_laws), binary_outcome_statistics(*plus_laws)
+    if include_empty_mask:
+        histograms, null, alternative, contraction_residuals = _coherent_walsh_histogram_law(n, transposition_count, copy_count, phase_rule)
+        residuals["walsh_histogram_contraction"] = max(abs(law[key] - probability)
+            for law, values in zip(walsh_histograms, (null, alternative)) for key, probability in zip(histograms, values))
+        residuals["histogram_sufficiency"] = abs(binary_outcome_statistics(null, alternative)["total_variation"] - walsh_statistics["total_variation"])
+        residuals["contraction_probability_law"] = max(contraction_residuals.values())
+    unlabeled_distance = _half_trace_norm(summed[1] - summed[0])
+    means = [coefficients[0] + coefficients[index[h]] for h in hidden]
+    delta_mean = sum(means) / len(hidden) - coefficients[0]
+    delta_square = sum(abs(mean)**2 for mean in means) / len(hidden) - abs(coefficients[0])**2
+    if include_empty_mask:
+        nonempty = count - 1
+        closed_distance = (math.sqrt((nonempty - 1)**2 * delta_square**2 + 4 * nonempty * abs(delta_mean)**2)
+                           + (nonempty - 1) * abs(delta_square)) / (2 * count)
+    else:
+        closed_distance = (1 - 1 / count) * abs(delta_square)
+    residuals["unlabeled_closed_form"] = abs(unlabeled_distance - closed_distance)
+    residuals["unconditioned_kernel"] = max(float(np.linalg.norm(summed[0] - unconditioned_null)),
+                                           float(np.linalg.norm(summed[1] - unconditioned_alt)))
+    residuals["data_processing"] = max(0, sources_only["total_variation"] - retained_distance,
+        walsh_statistics["total_variation"] - retained_distance, plus_statistics["total_variation"] - retained_distance,
+        retained_distance - raw_distance, unlabeled_distance - retained_distance)
+    for distance in marginal_distances.values():
+        residuals["data_processing"] = max(residuals["data_processing"],
+            sources_only["total_variation"] - distance, distance - retained_distance)
+    pair_baseline = None
+    if copy_count == 3:
+        baseline = evaluate_binary_carrier_instruments(n, transposition_count)
+        pair = next(row for row in baseline["schedules"] if row["schedule"] == "L")
+        pair_total = next(row for row in baseline["schedules"] if row["schedule"] == "LT")
+        pair_baseline = {"one_pair_explicit_character_classifier_distance": pair["one_pair_character_classifier_distance"],
+            "pair_total_finite_outcome_distance": pair_total["transcript"]["total_variation"],
+            "pair_total_uses_two_label_queries": True,
+            "pair_total_is_scalable_classifier": False,
+            "coherent_walsh_gain_over_one_pair_in_this_control": walsh_statistics["total_variation"] - pair["one_pair_character_classifier_distance"],
+            "coherent_retained_gain_over_pair_total_in_this_control": retained_distance - pair_total["transcript"]["total_variation"]}
+    return {"degree": n, "transposition_count": transposition_count, "copy_count": copy_count,
+        "phase_rule": phase_rule, "include_empty_mask": include_empty_mask, "coherent_masks": count,
+        "source_blocks_evaluated": source_blocks, "conditional_kernels_checked": kernels_checked,
+        "conditional_parity_laws_checked": parity_laws_checked,
+        "random_hadamard_branches_checked": parity_random_branches_checked,
+        "zero_weight_alternative_blocks_omitted": zero_weight_blocks,
+        "physical_input_trace_distance": raw_distance, "source_only_readout": sources_only,
+        "selector_and_source_label_trace_distance": retained_distance,
+        "selector_without_source_labels_trace_distance": unlabeled_distance,
+        "unlabeled_selector_closed_form_distance": closed_distance,
+        "walsh_readout_with_source_labels": walsh_statistics,
+        "uniform_selector_test_with_source_labels": plus_statistics,
+        "dephased_selector_trace_distance": sources_only["total_variation"],
+        "source_conditioning_counterexample": source_counterexample,
+        "source_selector_decorrelation_distances": {"null": decorrelation_distances[0], "alternative": decorrelation_distances[1]},
+        "fixed_mask_marginal_with_all_source_labels_distances": {str(d): distance for d, distance in marginal_distances.items()},
+        "existing_carrier_baselines": pair_baseline,
+        "exact_reflection_support_audit": _exact_reflection_support_audit(n, transposition_count, phase_rule),
+        "residuals": residuals, "finite_coherent_query_verified": max(residuals.values()) < 1e-9,
+        "source_labels_retained_in_main_evaluation": True, "postselection_used": False,
+        "finite_helstrom_table_is_compiled_classifier": False,
+        "source_only_quantum_frontend_is_classical_solver": False,
+        "growing_copy_advantage_established": False, "speedup_claim_allowed": False}
+
+
+def unlabeled_selector_scaling_controls() -> list[dict]:
+    rows = []
+    for degree in (64, 128, 512, 1024, 4096):
+        for include_empty in (False, True):
+            row = unlabeled_coherent_selector_information_contract(matching_count(degree // 2),
+                source_labels_discarded=True, physical_inputs_discarded=True,
+                one_common_phase_element=True, include_empty_mask=include_empty)
+            row["degree"] = degree
+            rows.append(row)
+    return rows
+
+
+def fixed_selector_marginal_scaling_controls() -> list[dict]:
+    return [low_order_coherent_selector_information_contract(n, 4 * (matching_count(n // 2) - 1).bit_length(), d,
+        one_uniform_subset_query=True, output_is_fixed_mask_marginal=True, physical_inputs_discarded=True)
+        for n in (64, 128, 1024) for d in (1, n.bit_length())]
+
+
 def _total_projectors(sources: tuple, representations: dict) -> tuple[np.ndarray, ...]:
     n = sum(sources[0])
     dimension = math.prod(hook_length_dimension(lam) for lam in sources)
@@ -669,19 +1399,34 @@ def build_binary_carrier_instrument_report() -> dict:
     conditioned_verified = all(row["finite_source_conditioned_lifts_verified"] for row in conditioned)
     catalogue = [audit_adaptive_palette_abort_cover(3, 1), audit_adaptive_palette_abort_cover(4, 2)]
     catalogue_verified = all(row["finite_adaptive_cover_verified"] for row in catalogue)
+    coherent = [evaluate_coherent_subset_phase_query(n, t, 3, rule, True)
+                for n, t in ((3, 1), (4, 2)) for rule in COHERENT_PHASE_RULES]
+    coherent.append(evaluate_coherent_subset_phase_query(4, 2, 3, "negative_character_reflection", False))
+    coherent_verified = all(row["finite_coherent_query_verified"] for row in coherent)
+    coherent_scaling = coherent_walsh_copy_scaling_controls()
+    coherent_verified = coherent_verified and all(row["finite_outcome_contraction_verified"] for row in coherent_scaling)
+    terminal = [coherent_terminal_rule_controls(row["degree"], 1 if row["degree"] == 3 else 2, row["copy_count"])
+                for row in coherent_scaling]
+    terminal_verified = all(max(row["residuals"].values()) < 1e-9 for row in terminal)
+    selected_parity_audit = audit_source_selected_parity_contraction()
+    selected_parity_obstruction = source_selected_parity_all_copy_obstruction()
+    selected_parity = [source_selected_parity_controls(n, t, (1, 2, 4, 8, 16, 32, 64, 128), selection, corrected)
+        for n, t in ((3, 1), (4, 2), (6, 3))
+        for selection, corrected in (("negative", False), ("negative", True), ("positive", False), ("zero", False))]
     scaling = [{"half_degree": m, "block_size": 3, "classical_history_blocks": m**2,
                 "trace_distance_squared_upper_bound": str(invariant_block_transcript_distance_squared_bound(m, 3, m**2))}
                for m in (4, 8, 16, 32, 64, 128)]
     verified = (all(row["finite_full_source_instrument_checks_verified"] for row in controls)
                 and all(row["finite_complete_source_cleanup_verified"] for row in cleanup)
                 and all(row["regular_cell_compression_verified"] for row in compression)
-                and conditioned_verified and catalogue_verified)
+                and conditioned_verified and catalogue_verified and coherent_verified and terminal_verified
+                and selected_parity_audit["verified"] and selected_parity_obstruction["all_copy_counts_from_two_covered"])
     witness_shape = (4, 2)
     coefficient = kronecker_coefficient(witness_shape, witness_shape, witness_shape)
     d = hook_length_dimension(witness_shape)
     source_mass = Fraction(d * (d + character_on_involution(witness_shape, 3)), math.factorial(6))**3
     return {"created_at": utc_now(), "status": ("binary-instrument-calibration-fixed-copy-route-obstructed" if verified else "blocked-instrument-control-failure"),
-        "summary": "Complete natural-source binary channels distinguish clean isotypic labels from discarded GPE reference rows. Clean compute-copy-uncompute has a uniform primitive reduction; discarding rows loses shared-hidden information. Fixed-copy repetition and the growing-copy classifier remain blocked.",
+        "summary": "Source-selected parity now has an exact character-moment evaluator beyond S4. At S6 the corrected negative-character selection loses to even one pair for every k>=2, certified by an exact prefix and a decreasing moment tail. This is a fixed-degree negative result, not a growing-degree theorem or classical replacement. Earlier fixed-parity bounds remain scoped; source-aware collective thresholds are unresolved.",
         "derivation_document": "research/BINARY_CARRIER_INSTRUMENTS.md", "controls": controls, "scaling": scaling,
         "gpe_cleanup_controls": cleanup,
         "fixed_point_free_label_arithmetic_controls": arithmetic,
@@ -693,6 +1438,25 @@ def build_binary_carrier_instrument_report() -> dict:
         "source_conditioned_unbalanced_palette_controls": source_conditioned_unbalanced_palette_controls(),
         "adaptive_palette_catalogue_controls": catalogue,
         "adaptive_palette_catalogue_scaling_controls": adaptive_palette_catalogue_scaling_controls(),
+        "coherent_subset_phase_derivation": "research/COHERENT_SUBSET_PHASE_QUERY.md",
+        "coherent_subset_phase_controls": coherent,
+        "coherent_walsh_fixed_group_copy_scaling": coherent_scaling,
+        "coherent_terminal_rule_controls": terminal,
+        "coherent_terminal_readout_derivation": "research/COHERENT_TERMINAL_READOUTS.md",
+        "source_selected_parity_derivation": "research/SOURCE_SELECTED_PARITY.md",
+        "source_selected_parity_controls": selected_parity,
+        "source_selected_parity_contraction_audit": selected_parity_audit,
+        "source_selected_parity_all_copy_obstruction": selected_parity_obstruction,
+        "coherent_parity_scaling_controls": coherent_parity_scaling_controls(),
+        "symmetric_terminal_fourier_norm_controls": [
+            {key: value for key, value in symmetric_boolean_fourier_profile(k, rule, threshold).items()
+             if key != "coefficient_numerators_by_degree"}
+            for k in (3, 7, 15, 31, 63, 127)
+            for rule, threshold in (("parity", None), ("threshold", 1), ("threshold", k // 2 + 1))],
+        "coherent_subset_phase_resources": coherent_subset_phase_resource_contract(128, 1000,
+            source_qft_operator_error=1e-8, phase_gpe_operator_error=1e-6),
+        "unlabeled_coherent_selector_scaling_controls": unlabeled_selector_scaling_controls(),
+        "fixed_selector_marginal_scaling_controls": fixed_selector_marginal_scaling_controls(),
         "clean_isotypic_label_access": isotypic_label_resource_contract(128, 128**2, 128, 1e-6),
         "classical_model_nonextension_witness": {"n": 6, "source_partitions": [list(witness_shape)] * 3,
             "pair_partition": list(witness_shape), "total_partition": list(witness_shape),
@@ -712,6 +1476,16 @@ def build_binary_carrier_instrument_report() -> dict:
             "incomplete_support_povm_extensions_checked": sum(row["incomplete_support_povm_extensions_checked"] for row in conditioned),
             "adaptive_catalogue_source_blocks_checked": sum(row["source_blocks_evaluated"] for row in catalogue),
             "adaptive_catalogue_transcript_branches_checked": sum(row["classical_transcript_branches"] for row in catalogue),
+            "coherent_subset_phase_controls_passed": sum(row["finite_coherent_query_verified"] for row in coherent),
+            "source_conditioned_selector_kernels_checked": sum(row["conditional_kernels_checked"] for row in coherent),
+            "coherent_measurement_uniform_primitive_reductions": 1,
+            "coherent_walsh_fixed_group_scaling_controls": len(coherent_scaling),
+            "declared_terminal_rules_evaluated": sum(len(row["rules"]) for row in terminal),
+            "source_conditioned_parity_laws_checked": sum(row["conditional_parity_laws_checked"] for row in coherent),
+            "random_hadamard_branches_checked": sum(row["random_hadamard_branches_checked"] for row in coherent),
+            "source_selected_parity_copy_controls": sum(len(row["copy_sweep"]) for row in selected_parity),
+            "source_selected_parity_independent_laws_checked": selected_parity_audit["independent_histogram_probability_laws_checked"],
+            "source_selected_parity_exact_hidden_spectra_checked": selected_parity_audit["exact_all_hidden_member_spectra_checked"],
             "growing_copy_measurement_compilers": 0},
         "claim_gate": {"finite_complete_channel_evaluation_verified": verified,
             "invariant_transcript_implies_zero_binary_signal": False,
@@ -732,6 +1506,20 @@ def build_binary_carrier_instrument_report() -> dict:
             "finite_adaptive_catalogue_cover_verified": catalogue_verified,
             "catalogue_bound_is_a_selector_runtime_lower_bound": False,
             "catalogue_bound_covers_coherent_support_selection": False,
+            "finite_coherent_subset_phase_query_verified": coherent_verified,
+            "coherent_phase_uniform_primitive_reduction_available": True,
+            "coherent_selector_polynomial_terminal_rules_supplied": True,
+            "coherent_terminal_controls_verified": terminal_verified,
+            "coherent_selector_classifier_with_scalable_advantage_supplied": False,
+            "random_two_subset_parity_reduction_derived": True,
+            "parity_bound_covers_arbitrary_polynomial_time_readout": False,
+            "source_selected_parity_exact_contraction_verified": selected_parity_audit["verified"],
+            "s6_corrected_negative_parity_all_copy_failure_certified": selected_parity_obstruction["all_copy_counts_from_two_covered"],
+            "source_selected_parity_growing_degree_obstruction_proved": False,
+            "unlabeled_selector_information_bound_derived": True,
+            "unlabeled_selector_bound_covers_retained_source_labels": False,
+            "fixed_selector_marginal_bound_derived": True,
+            "fixed_marginal_bound_covers_arbitrary_full_readout": False,
             "finite_clean_gpe_controls_verified": all(row["finite_complete_source_cleanup_verified"] for row in cleanup),
             "discarded_gpe_reference_implements_luders_in_general": False,
             "gate_level_sn_qft_backend_supplied": False,
@@ -745,8 +1533,15 @@ def build_binary_carrier_instrument_report() -> dict:
             "A fixed subset palette with c incidence cells provides at most c effective coset samples, regardless of raw copies or repetitions within that algebra. Individual source labels or unlisted subset access must refine the cells.",
             "Retaining all classical source labels does not rescue fixed preselected palettes with sufficiently large cells: the separate approximate bound charges source priors and conditional lifting errors. S4 persistent modes falsify universal cell mixing; source-selected cells invalidate the iid estimate.",
             "Classical adaptive selection from a small predetermined whole-execution catalogue pays the sum of complete aborting-comparison bounds, without conditioning away failure mass. This is not a runtime bound for succinct exponentially large catalogues or coherent selectors.",
+            "Source-label and selector marginals do not determine their joint binary information; S4 negative-character controls falsify the product-of-marginals shortcut.",
+            "One common phase over uniformly coherent masks cannot amplify unlabeled selector information with mask count after discarding both physical inputs and source labels. This bound does not cover retained labels.",
+            "Even with all source labels, retaining only fixed low-order selector marginals loses growing-degree signal under the uniform one-query contract. This does not bound a threshold of a low-degree score or an arbitrary full-bit classifier.",
+            "S4's negative-character reflection has exact group-algebra support only on V4; even overlapping subset phase actions commute. Its finite copy gain is not evidence of a useful noncommuting mechanism.",
+            "A fixed parity of ANY degree has the outcome law of a random two-subset Hadamard test, retaining all source labels. Input-independent randomization pays an average, not exponential catalogue size. Its bounded-Fourier-norm corollary rules out scalable all-zero success despite the finite S4 gain.",
+            "Linear-time majority evaluation does not imply small Fourier norm: the exact odd-majority norm is at least 2^((k-1)/2)/k. The parity-transfer bound does not rule out arbitrary efficient thresholds.",
+            "The source-corrected negative-character-selected parity loses at S6 for every k>=2 to a single pair, even if its accepting orientation is reversed. Exact moment envelopes certify the unbounded-copy tail; do not infer a growing-degree or arbitrary source-conditioned-readout theorem.",
             "Fixed-copy invariant instruments repeated polynomially many times remain below the required asymptotic information budget."],
-        "next_experiments": ["Supply a growing-copy collective program AND an efficiently evaluable outcome decision rule.",
+        "next_experiments": ["Use label-summed character generating functions to test actual source-corrected Hamming thresholds beyond S4, against exact pair baselines. Source-selected parity is no longer an untested positive example; its corrected negative-character version has an all-copy S6 failure certificate, not an all-degree obstruction.",
             "Compare its full source-weighted channel against stronger product-basis and tensor-contraction baselines.",
             "Use the current schedules only as regression controls, not as evidence of a new scalable algorithm."],
     }
@@ -764,7 +1559,7 @@ def write_binary_carrier_instrument_report(path: Path = REPORT_PATH, *, write_re
         upsert_experiment(ExperimentRecord(id=registry_experiment_id, candidate_id=registry_candidate_id,
             title="Source-weighted binary carrier instruments", status=report["status"],
             hypothesis="Known carrier instruments expose useful binary information without assuming an ideal residual measurement.",
-            protocol="Evaluate physical null/shared-hidden laws, actual readouts, retained states, latent-irrep replay, clean GPE and adversarial reference discard. Test source-conditioned regular lifts, quotient-POVM extensions, persistent modes and exact dyadic palette bounds. Charge QFT/action calls separately from classifier cost.",
+            protocol="Evaluate physical null/shared-hidden laws, actual readouts, retained states, latent-irrep replay, clean GPE and adversarial reference discard. Test source-conditioned regular lifts, quotient-POVM extensions and palette bounds. Evaluate coherent subset phases with direct unitaries and independent conditional kernels. Contract source-selected parity using exact character moments through S6; certify the corrected negative-selection all-copy failure against one pair. Charge QFT/action calls separately from classifier cost.",
             positive_signal="A growing-copy program with a compiled outcome classifier, not finite Bayes-table performance.",
             falsifiers=["outcome mass is missing", "disturbance destroys the needed signal", "GPE workspace is discarded instead of uncomputed", "classifier cost is omitted", "fixed-copy repetition fails the information bound"],
             metrics=list(report["headline_metrics"]), dependencies=["physical three-copy Fourier blocks", "existing pair-carrier projectors"],
@@ -811,4 +1606,48 @@ def write_binary_carrier_instrument_report(path: Path = REPORT_PATH, *, write_re
                 lesson="Every whole execution and final readout must fit one listed palette; stepwise coverage is insufficient. Keep abort mass, assign overlapping covers once, and never replace actual posteriors by a uniform prior. Coherent selectors and succinct exponential catalogues remain uncovered; catalogue cardinality is not selector runtime. The derivation is review-pending with novelty unestablished.",
                 applies_to=[registry_candidate_id, "classically adaptive finite-catalogue subset programs"],
                 evidence={"artifact": str(path), "derivation": report["source_conditioned_palette_derivation"], "status": "derived-review-pending"}))
+        if report["claim_gate"]["finite_coherent_subset_phase_query_verified"]:
+            if report["claim_gate"]["source_selected_parity_exact_contraction_verified"] and report["claim_gate"]["s6_corrected_negative_parity_all_copy_failure_certified"]:
+                upsert_negative_result(NegativeResultRecord(id="S6-SOURCE-SELECTED-PARITY-ALL-COPY-FAILURE", source=registry_experiment_id,
+                    claim="Taking the source-corrected parity only on negative-character labels beats a one-pair detector at S6 for some k>=2.",
+                    reason_invalid="Exact class-character moment contraction gives null radius 139/180 and alternative radius 13/15. The absolute gap is below 1271/7200 for k=2,...,37 by exact arithmetic; its l1-weighted tail is below the same one-pair gap for every k>=38 and decreases thereafter. Reversing the declared accepting orientation cannot rescue the rule.",
+                    lesson="Cut this specified readout as a successful S6 calibration. This is a fixed-degree all-copy certificate, not an all-degree obstruction, not a bound on joint source/parity Bayes tables, and not a classical replacement of the pair quantum front end. Source selection genuinely escapes the fixed-parity theorem but does not guarantee useful signal. Independent review and novelty checks remain outstanding.",
+                    applies_to=[registry_candidate_id, "source-selected negative-character corrected parity"],
+                    evidence={"artifact": str(path), "derivation": report["source_selected_parity_derivation"], "status": "exact-finite-degree-review-pending"}))
+            upsert_negative_result(NegativeResultRecord(id="COHERENT-PARITY-AND-BOUNDED-FOURIER-NORM-READOUTS", source=registry_experiment_id,
+                claim="A full or partial Walsh parity, or a decision with a polynomial source-uniform Fourier coefficient envelope such as the source-phase-corrected all-zero test, evades the source-conditioned palette obstruction for one uniform subset query.",
+                reason_invalid="Its complete source-conditioned parity law equals a Hadamard test of U_(S xor B)^dagger U_S for input-independent uniform S, using at most three incidence cells. A uniform worst-cell-profile bound vanishes at polynomial copy count. Fourier expansion transfers it with the coefficient l1 norm, which is below three for all-zero decisions even after source-dependent bit flips. S1024 k=17528 gives absolute all-zero acceptance gap <=2^-139.",
+                lesson="Keep the same hidden h and all source mass. This is a randomized quantum front end, not classical dequantization. Averages require input-independent random S; source-selected parity positions or simultaneous joint parities are not covered. Transfer requires sum_B sup_source |coefficient_B|, not merely a small norm separately for each source. Large-Fourier-norm thresholds remain open. The derivation depends on the earlier source-conditioned bound and is review-pending, without a novelty claim.",
+                applies_to=[registry_candidate_id, "coherent parity and bounded-Fourier-norm terminal rules"],
+                evidence={"artifact": str(path), "derivation": report["coherent_terminal_readout_derivation"], "status": "derived-review-pending"}))
+            upsert_negative_result(NegativeResultRecord(id="POLYNOMIAL-READOUT-TIME-NOT-SMALL-FOURIER-NORM", source=registry_experiment_id,
+                claim="Because parity-transfer bounds handle polynomial Fourier l1 norm, they rule out every polynomial-time classifier of the Walsh output.",
+                reason_invalid="Strict majority is evaluated by a linear-time count but its exact odd-k Fourier norm is at least 2^((k-1)/2)/k. An independent binomial formula checks the Krawtchouk recurrence; at k=127 the norm exceeds 2^60. Fourier degree, norm and classical evaluation time are different resources.",
+                lesson="Charge the actual Fourier coefficient norm or prove a separate distribution-specific approximation argument. Do not transfer low-marginal, low-degree or bounded-norm obstructions to a threshold merely because its arithmetic is cheap. Escaping this bound is not evidence of quantum advantage.",
+                applies_to=[registry_candidate_id, "efficient-terminal-rule bound transfers"],
+                evidence={"artifact": str(path), "derivation": report["coherent_terminal_readout_derivation"]}))
+            upsert_negative_result(NegativeResultRecord(id="S4-COHERENT-SIGN-PHASE-HAS-ABELIAN-SUPPORT", source=registry_experiment_id,
+                claim="The S4 negative-character coherent subset-phase gain over disjoint pairs is evidence that noncommuting subset actions produce a useful nonabelian algorithmic mechanism.",
+                reason_invalid="Independent exact character arithmetic gives coefficient -1/2 at the identity, +1/2 at each of the three perfect matchings and zero elsewhere. These four elements form V4, so all overlapping subset phase actions commute. The operator is (3 C_S-I)/2 for the single-subset class average.",
+                lesson="Keep this finite control for normalization and source-correlation checks, not as evidence of a scalable noncommuting advantage. No growing-degree support classification or legal classical replacement of the quantum front end is inferred.",
+                applies_to=[registry_candidate_id, "small-group coherent phase signals"],
+                evidence={"artifact": str(path), "derivation": report["coherent_subset_phase_derivation"]}))
+            upsert_negative_result(NegativeResultRecord(id="FIXED-SELECTOR-MARGINAL-NOT-SCALABLE-READOUT", source=registry_experiment_id,
+                claim="With all source labels retained, reading only O(log n) fixed mask bits of the one-uniform-subset-query output suffices for nonnegligible binary signal at polynomial copy budget.",
+                reason_invalid="Tracing the other mask qubits gives an input-independent binomial mixture of background subsets. Each branch has d raw singleton inputs and one background cell; the source-conditioned cell bound plus the unnormalized small-background tail applies. S1024 at k=17528,d=11 has T <= 2^-2174 with exact outward rounding. The raw-copy bound covers the small-k regime.",
+                lesson="The marginal positions must be fixed before the input; physical inputs and unobserved masks are discarded without joint selector processing. This does not rule out full-bit decisions, thresholding a low-degree score, multiple queries or source-selected positions. The extension is review-pending, depends on the source-conditioned lifting argument and establishes no novelty.",
+                applies_to=[registry_candidate_id, "fixed low-order coherent-selector readouts"],
+                evidence={"artifact": str(path), "derivation": report["coherent_subset_phase_derivation"], "status": "derived-review-pending"}))
+            upsert_negative_result(NegativeResultRecord(id="UNLABELED-COHERENT-MASK-COUNT-NOT-INFORMATION-AMPLIFICATION", source=registry_experiment_id,
+                claim="For one common group-algebra phase query, uniform coherent mask count alone amplifies binary information after all physical inputs and source labels are discarded.",
+                reason_invalid="The unlabeled selector kernel has unit diagonal and one common nonempty off-diagonal value. Its squared trace distance is at most min(1,3/M), or min(1,5/M) including the empty mask, independent of mask count. Direct conditional matrices summed over every natural source verify the closed form in S3/S4.",
+                lesson="This review-pending derivation excludes retained source labels, retained physical inputs, mask-dependent phases and multiple queries. It is not a general coherent-measurement obstruction and establishes no novelty.",
+                applies_to=[registry_candidate_id, "unlabeled one-query coherent subset programs"],
+                evidence={"artifact": str(path), "derivation": report["coherent_subset_phase_derivation"], "status": "derived-review-pending"}))
+            upsert_negative_result(NegativeResultRecord(id="SOURCE-SELECTOR-MARGINALS-NOT-JOINT-INFORMATION", source=registry_experiment_id,
+                claim="The retained-source coherent selector can be assessed by replacing each joint hypothesis state with the product of its source-label and selector marginals.",
+                reason_invalid="The S4 nonempty-mask negative-character control has joint distance 0.605655 while the sum of marginal distances is only 0.558036. Its conditional kernels differ from the unconditioned kernel on positive-mass sources. The product-state shortcut loses hypothesis-relevant correlations.",
+                lesson="Keep the complete classical-quantum source blocks and the same hidden member in every input factor. These finite countercontrols do not establish a growing-degree signal; the full-mask Walsh readout still loses to the existing pair-plus-total finite baseline.",
+                applies_to=[registry_candidate_id, "coherent selector source-conditioning shortcuts"],
+                evidence={"artifact": str(path), "derivation": report["coherent_subset_phase_derivation"]}))
     return report

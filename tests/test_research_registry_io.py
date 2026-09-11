@@ -41,7 +41,7 @@ class ResearchRegistryIOTests(unittest.TestCase):
             finally:
                 thread.join()
 
-    def test_non_overwrite_initialization_refreshes_seed_definitions(self):
+    def test_non_overwrite_refreshes_candidates_but_preserves_experiment_records(self):
         old_cwd = os.getcwd()
         with tempfile.TemporaryDirectory() as tmp:
             try:
@@ -54,7 +54,9 @@ class ResearchRegistryIOTests(unittest.TestCase):
                 save_candidates(candidates)
                 experiments = load_experiments()
                 phase = next(item for item in experiments if item["id"] == "EXP-DHS-PHASE-SIEVE")
-                phase["protocol"] = "stale deterministic subtraction"
+                phase["protocol"] = "reviewed current experiment protocol"
+                phase["status"] = "blocked-after-falsifier"
+                phase["metrics"] = ["new-structural-measurement"]
                 save_experiments(experiments)
 
                 initialize_seed_registry(overwrite=False)
@@ -65,7 +67,28 @@ class ResearchRegistryIOTests(unittest.TestCase):
 
         self.assertEqual(refreshed_hidden["title"], "State-sample-native generic DCP sieve and decoder")
         self.assertIn("EXP-LOCAL-EXTRA", refreshed_hidden["experiment_ids"])
-        self.assertIn("dcp_sample_workbench.py", refreshed_phase["protocol"])
+        self.assertEqual(refreshed_phase["protocol"], "reviewed current experiment protocol")
+        self.assertEqual(refreshed_phase["status"], "blocked-after-falsifier")
+        self.assertEqual(refreshed_phase["metrics"], ["new-structural-measurement"])
+
+    def test_missing_seed_experiment_is_inserted_without_rewriting_existing_records(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                experiments = load_experiments()
+                removed = experiments.pop()
+                experiments[0]["protocol"] = "preserved local research record"
+                save_experiments(experiments)
+                initialize_seed_registry(overwrite=False)
+                restored = {record["id"]: record for record in load_experiments()}
+                initialize_seed_registry(overwrite=False)
+                self.assertEqual(restored, {record["id"]: record for record in load_experiments()})
+                self.assertEqual(restored[removed["id"]], removed)
+                self.assertEqual(restored[experiments[0]["id"]]["protocol"], "preserved local research record")
+            finally:
+                os.chdir(old_cwd)
 
 
 if __name__ == "__main__":

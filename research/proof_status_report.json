@@ -2,8 +2,8 @@
   "blocking_status_count": 24,
   "candidate_count": 8,
   "counterexample_search_count": 8,
-  "created_at": "2026-09-10T12:02:08.603399+00:00",
-  "lemma_count": 1269,
+  "created_at": "2026-09-11T09:58:46.239478+00:00",
+  "lemma_count": 1274,
   "needs_evidence_count": 0,
   "proof_debt": {
     "counterexample_search_count": 8,
@@ -73,8 +73,8 @@
         "target_claim": "The coset observable is not a disguised classical invariant."
       }
     ],
-    "created_at": "2026-09-10T12:02:08.596762+00:00",
-    "lemma_count": 1269,
+    "created_at": "2026-09-11T09:58:46.235258+00:00",
+    "lemma_count": 1274,
     "lemmas": [
       {
         "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -553,7 +553,7 @@
         "falsification_test": "Reject optimal finite likelihood tables and residual Helstrom distances as compiled readouts. Fixed-copy invariant instruments with only classical memory obey T^2 <= t(2^b-1)/(2M).",
         "id": "LEMMA-CODE-COSET-COLLECTIVE-GROWING-COPY-BINARY-CLASSIFIER",
         "statement": "A growing-copy measurement program has an efficiently evaluable outcome decision rule, charged disturbance, natural source coverage and a serious classical comparison.",
-        "status": "blocked-no-growing-copy-program-and-outcome-classifier"
+        "status": "blocked-terminal-rules-supplied-scalable-advantage-missing"
       },
       {
         "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -614,6 +614,67 @@
         "id": "LEMMA-CODE-COSET-COLLECTIVE-ADAPTIVE-PALETTE-CATALOGUE-COVER",
         "statement": "If each whole classically controlled execution fits a member of a predetermined palette catalogue, abort-before-outside comparison channels give T <= sum_j delta_j without normalizing successful sectors; polynomial catalogues of bounded-cell palettes retain the asymptotic obstruction.",
         "status": "derived-adaptive-catalogue-cover-review-pending"
+      },
+      {
+        "candidate_id": "CODE-COSET-COLLECTIVE",
+        "depends_on": [
+          "LEMMA-CODE-COSET-COLLECTIVE-CLEAN-ISOTYPIC-INSTRUMENT",
+          "LEMMA-CODE-COSET-COLLECTIVE-FIXED-POINT-FREE-LABEL-ARITHMETIC",
+          "PO-COMPLEXITY"
+        ],
+        "falsification_test": "Check full compute-phase-uncompute with clean workspace, unit phases including zero characters, and direct source-weighted conditional kernels for the same h. A character-sign predicate is not the sign of the full many-copy likelihood or an output classifier; gate-level QFT and reversible arithmetic are not supplied.",
+        "id": "LEMMA-CODE-COSET-COLLECTIVE-COHERENT-SUBSET-PHASE-QUERY",
+        "statement": "A common isotypic phase can be addressed coherently by k mask bits using 2k controlled group actions. On the physical-register route, retaining all initial source labels costs 2k source QFT/inverse calls plus two reference QFT/inverse calls; exact character sign avoids generic spectral-gap resolution.",
+        "status": "derived-coherent-phase-primitive-reduction-review-pending"
+      },
+      {
+        "candidate_id": "CODE-COSET-COLLECTIVE",
+        "depends_on": [
+          "PO-INPUT-MODEL",
+          "PO-MEASUREMENT",
+          "PO-SUCCESS"
+        ],
+        "falsification_test": "Check complex coefficients, nested/overlapping masks, empty-mask cross terms and normalized same-hidden inputs. Retained source labels invalidate this scope: the joint distance can exceed the sum of marginal distances. No general multiple-query, source-retained or novelty claim follows.",
+        "id": "LEMMA-CODE-COSET-COLLECTIVE-UNLABELED-COHERENT-SELECTOR-BOUND",
+        "statement": "After one common phase query and discarding physical inputs AND source labels, a uniform nonempty-mask selector has T^2<=min(1,3/M); including the empty mask gives T^2<=min(1,5/M), independently of mask count.",
+        "status": "derived-unlabeled-selector-bound-review-pending"
+      },
+      {
+        "candidate_id": "CODE-COSET-COLLECTIVE",
+        "depends_on": [
+          "LEMMA-CODE-COSET-COLLECTIVE-SOURCE-CONDITIONED-PALETTE-BOUND",
+          "PO-INPUT-MODEL",
+          "PO-MEASUREMENT",
+          "PO-SUCCESS"
+        ],
+        "falsification_test": "Check direct partial traces against input-independent background-mask mixtures with collapsed conditional moments. Keep all rare-background mass. Fixed observed positions, physical discard and no joint processing of traced mask bits are essential. Do not transfer marginal bounds to arbitrary thresholds or full-bit classifiers.",
+        "id": "LEMMA-CODE-COSET-COLLECTIVE-FIXED-SELECTOR-MARGINAL-BOUND",
+        "statement": "For one uniform subset query, all classical source labels and d fixed selector bits have distance bounded by the binomial small-background tail plus the source-conditioned bound for d raw inputs and one large cell; the raw-copy bound handles small k. For d=O(log n), polynomial k gives vanishing signal.",
+        "status": "derived-fixed-selector-marginal-bound-review-pending"
+      },
+      {
+        "candidate_id": "CODE-COSET-COLLECTIVE",
+        "depends_on": [
+          "LEMMA-CODE-COSET-COLLECTIVE-SOURCE-CONDITIONED-PALETTE-BOUND",
+          "PO-MEASUREMENT",
+          "PO-SUCCESS"
+        ],
+        "falsification_test": "Match every conditional parity law against actual Hadamard products, including complex phases and the same h. Source-selected supports and joint parity vectors are not covered. Charge Fourier coefficient norm, not degree or evaluation time: majority has exponential norm despite linear-time evaluation. No general classifier lower bound or classical quantum-front-end replacement follows.",
+        "id": "LEMMA-CODE-COSET-COLLECTIVE-COHERENT-PARITY-FOURIER-NORM-BOUND",
+        "statement": "One fixed Walsh parity and all source labels have the law of an input-independent randomized two-subset Hadamard test. At most three cells give a uniform source-conditioned vanishing bound at polynomial k; a bounded sum of source-supremum Fourier coefficients transfers this to terminal decisions, including source-corrected all-zero rules.",
+        "status": "derived-coherent-parity-fourier-norm-bound-review-pending"
+      },
+      {
+        "candidate_id": "CODE-COSET-COLLECTIVE",
+        "depends_on": [
+          "LEMMA-CODE-COSET-COLLECTIVE-COHERENT-SUBSET-PHASE-QUERY",
+          "LEMMA-CODE-COSET-COLLECTIVE-FIXED-POINT-FREE-LABEL-ARITHMETIC",
+          "PO-SUCCESS"
+        ],
+        "falsification_test": "Match actual source-selected decisions against independently matrix-derived finite histograms; check exact spectra for every hidden member and the shared-h product. Audit the finite prefix and tail inequalities without floats. Fixed S6 is not growing degree, signed weights are not a classical sampler, and arbitrary source-based postprocessing is not covered.",
+        "id": "LEMMA-CODE-COSET-COLLECTIVE-S6-SOURCE-SELECTED-PARITY-ALL-COPIES",
+        "statement": "At S6, corrected parity selected by negative source character loses to one pair for every k>=2, under either accepting orientation. An exact character-moment spectrum certifies k=2,...,37 directly and a decreasing l1/radius tail certifies every k>=38.",
+        "status": "exact-finite-degree-all-copy-certificate-review-pending"
       },
       {
         "candidate_id": "CODE-COSET-COLLECTIVE",

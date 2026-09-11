@@ -27060,7 +27060,7 @@ def build_parser() -> argparse.ArgumentParser:
     reference_information.add_argument("--no-registry", action="store_true")
     reference_information.set_defaults(func=command_coset_hidden_involution_reference_twirl_information)
     binary_instruments = subparsers.add_parser("coset-binary-carrier-instruments",
-        help="Evaluate physical binary outcome laws, measurement disturbance and classifier obligations.")
+        help="Evaluate binary carrier and coherent readouts, including exact source-selected parity and its S6 all-copy falsifier.")
     binary_instruments.add_argument("--no-registry", action="store_true")
     binary_instruments.set_defaults(func=command_coset_binary_carrier_instruments)
     parser_coset_hidden_involution_natural_support_six_mass_audit = subparsers.add_parser(

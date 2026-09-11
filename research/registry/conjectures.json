@@ -30,6 +30,12 @@
         "severity": "high"
       },
       {
+        "evidence": "Its complete source-conditioned parity law equals a Hadamard test of U_(S xor B)^dagger U_S for input-independent uniform S, using at most three incidence cells. A uniform worst-cell-profile bound vanishes at polynomial copy count. Fourier expansion transfers it with the coefficient l1 norm, which is below three for all-zero decisions even after source-dependent bit flips. S1024 k=17528 gives absolute all-zero acceptance gap <=2^-139.",
+        "finding_id": "DEQ-CODE-COSET-COLLECTIVE-COHERENT-PARITY-FOURIER-NORM-BOUND",
+        "required_action": "Keep the same hidden h and all source mass. This is a randomized quantum front end, not classical dequantization. Averages require input-independent random S; source-selected parity positions or simultaneous joint parities are not covered. Transfer requires sum_B sup_source |coefficient_B|, not merely a small norm separately for each source. Large-Fourier-norm thresholds remain open. The derivation depends on the earlier source-conditioned bound and is review-pending, without a novelty claim. This is an access or symmetry boundary, not classical dequantization.",
+        "severity": "high"
+      },
+      {
         "evidence": "It produces an implicit copy code. The logical target effect, physical access transfer and decoder remain unspecified.",
         "finding_id": "DEQ-CODE-COSET-COLLECTIVE-ENCODED-COPY-TARGET-EFFECT",
         "required_action": "Use encoded logical access where possible, but charge target-effect construction and unknown-centralizer dependence separately. This is an access or symmetry boundary, not classical dequantization.",
@@ -54,6 +60,12 @@
         "severity": "high"
       },
       {
+        "evidence": "Tracing the other mask qubits gives an input-independent binomial mixture of background subsets. Each branch has d raw singleton inputs and one background cell; the source-conditioned cell bound plus the unnormalized small-background tail applies. S1024 at k=17528,d=11 has T <= 2^-2174 with exact outward rounding. The raw-copy bound covers the small-k regime.",
+        "finding_id": "DEQ-CODE-COSET-COLLECTIVE-FIXED-SELECTOR-MARGINAL-BOUND",
+        "required_action": "The marginal positions must be fixed before the input; physical inputs and unobserved masks are discarded without joint selector processing. This does not rule out full-bit decisions, thresholding a low-degree score, multiple queries or source-selected positions. The extension is review-pending, depends on the source-conditioned lifting argument and establishes no novelty. This is an access or symmetry boundary, not classical dequantization.",
+        "severity": "high"
+      },
+      {
         "evidence": "Independent reference-carrier discard suppresses binary detection: T^2 <= p(m)/(2(2m-1)!!) sum_j(2^b_j-1) for predetermined references. Classical adaptation with quantum memory obeys a weaker bound multiplied by the round count, provided fresh blocks are twirled before memory interaction. A single global twirl and coherent carrier retention remain open.",
         "finding_id": "DEQ-CODE-COSET-COLLECTIVE-REFERENCE-TWIRL-INFORMATION-LOSS",
         "required_action": "Retain charged cross-input carrier correlations. Predetermined references and classical adaptation with fresh-block twirling before memory coupling obey separate bounds. Quantum-controlled references and pre-twirl memory interaction remain outside scope. This is not a general HSP lower bound or classical dequantization. This is an access or symmetry boundary, not classical dequantization.",
@@ -66,9 +78,27 @@
         "severity": "high"
       },
       {
+        "evidence": "Independent exact character arithmetic gives coefficient -1/2 at the identity, +1/2 at each of the three perfect matchings and zero elsewhere. These four elements form V4, so all overlapping subset phase actions commute. The operator is (3 C_S-I)/2 for the single-subset class average.",
+        "finding_id": "DEQ-CODE-COSET-COLLECTIVE-SMALL-GROUP-PHASE-SUPPORT-BASELINE",
+        "required_action": "Keep this finite control for normalization and source-correlation checks, not as evidence of a scalable noncommuting advantage. No growing-degree support classification or legal classical replacement of the quantum front end is inferred. This is an access or symmetry boundary, not classical dequantization.",
+        "severity": "high"
+      },
+      {
         "evidence": "The review-pending bound compares source-conditioned cell lifts with coset states using character second moments, includes the full source-prior cost, and extends source-controlled POVMs through missing irreps. For S1024 with two balanced preselected subsets and the stated information-sufficient copy budget, exact outward rounding gives T <= 2^-602.",
         "finding_id": "DEQ-CODE-COSET-COLLECTIVE-SOURCE-CONDITIONED-PALETTE-BOUND",
         "required_action": "Use the source-conditioned formula, not exact copy compression, when labels are retained. Retain small cells as full quantum inputs and charge their raw copies; this handles arbitrary fixed-cell size profiles asymptotically. Source-dependent regrouping, growing palettes and uncharged outside-algebra readouts remain uncovered; a vacuous finite bound is not survival evidence. S4 has exact persistent conditional modes. This result has not been independently reviewed or established as novel. This is an access or symmetry boundary, not classical dequantization.",
+        "severity": "high"
+      },
+      {
+        "evidence": "Exact class-character moment contraction gives null radius 139/180 and alternative radius 13/15. The absolute gap is below 1271/7200 for k=2,...,37 by exact arithmetic; its l1-weighted tail is below the same one-pair gap for every k>=38 and decreases thereafter. Reversing the declared accepting orientation cannot rescue the rule.",
+        "finding_id": "DEQ-CODE-COSET-COLLECTIVE-SOURCE-SELECTED-PARITY-FINITE-BASELINE",
+        "required_action": "Cut this specified readout as a successful S6 calibration. This is a fixed-degree all-copy certificate, not an all-degree obstruction, not a bound on joint source/parity Bayes tables, and not a classical replacement of the pair quantum front end. Source selection genuinely escapes the fixed-parity theorem but does not guarantee useful signal. Independent review and novelty checks remain outstanding. This is an access or symmetry boundary, not classical dequantization.",
+        "severity": "high"
+      },
+      {
+        "evidence": "The S4 nonempty-mask negative-character control has joint distance 0.605655 while the sum of marginal distances is only 0.558036. Its conditional kernels differ from the unconditioned kernel on positive-mass sources. The product-state shortcut loses hypothesis-relevant correlations.",
+        "finding_id": "DEQ-CODE-COSET-COLLECTIVE-SOURCE-SELECTOR-CORRELATION-CONTRACT",
+        "required_action": "Keep the complete classical-quantum source blocks and the same hidden member in every input factor. These finite countercontrols do not establish a growing-degree signal; the full-mask Walsh readout still loses to the existing pair-plus-total finite baseline. This is an access or symmetry boundary, not classical dequantization.",
         "severity": "high"
       },
       {
@@ -81,6 +111,18 @@
         "evidence": "Under the unpostselected k-register order-two coset source, low-multiplicity branch mass is at most 2^k*L*I_n^(k+1)/(n!)^k, which vanishes for polynomial L and fixed k>=2.",
         "finding_id": "DEQ-CODE-COSET-COLLECTIVE-TENSOR-COMPLETE-SPECTRAL-LABEL-CAPACITY",
         "required_action": "Use a task-relevant coarse measurement, growing-depth hierarchy, or direct transform. This obstruction is not classical dequantization or an HSP circuit lower bound.",
+        "severity": "high"
+      },
+      {
+        "evidence": "Strict majority is evaluated by a linear-time count but its exact odd-k Fourier norm is at least 2^((k-1)/2)/k. An independent binomial formula checks the Krawtchouk recurrence; at k=127 the norm exceeds 2^60. Fourier degree, norm and classical evaluation time are different resources.",
+        "finding_id": "DEQ-CODE-COSET-COLLECTIVE-TERMINAL-FOURIER-NORM-VERSUS-TIME",
+        "required_action": "Charge the actual Fourier coefficient norm or prove a separate distribution-specific approximation argument. Do not transfer low-marginal, low-degree or bounded-norm obstructions to a threshold merely because its arithmetic is cheap. Escaping this bound is not evidence of quantum advantage. This is an access or symmetry boundary, not classical dequantization.",
+        "severity": "high"
+      },
+      {
+        "evidence": "The unlabeled selector kernel has unit diagonal and one common nonempty off-diagonal value. Its squared trace distance is at most min(1,3/M), or min(1,5/M) including the empty mask, independent of mask count. Direct conditional matrices summed over every natural source verify the closed form in S3/S4.",
+        "finding_id": "DEQ-CODE-COSET-COLLECTIVE-UNLABELED-COHERENT-SELECTOR-BOUND",
+        "required_action": "This review-pending derivation excludes retained source labels, retained physical inputs, mask-dependent phases and multiple queries. It is not a general coherent-measurement obstruction and establishes no novelty. This is an access or symmetry boundary, not classical dequantization.",
         "severity": "high"
       },
       {
@@ -3720,7 +3762,7 @@
         "severity": "medium"
       },
       {
-        "evidence": "Triggered falsifiers: Conjugation invariance removes hidden-member information, not necessarily class-versus-trivial information. | Measuring another carrier label can irreversibly lose information; a large commutator does not certify an improved detector. | All tested L/R binary outcome laws are reproduced by classical latent-irrep dynamics after the joint quantum label front end; no legal classical replacement of that front end is supplied. | Discarding the GPE reference rows has the same first-label probabilities but is a pair-local twirl, not the assumed Luders instrument; it erases all remaining three-input binary information conditional on that label. | A fixed subset palette with c incidence cells provides at most c effective coset samples, regardless of raw copies or repetitions within that algebra. Individual source labels or unlisted subset access must refine the cells. | Retaining all classical source labels does not rescue fixed preselected palettes with sufficiently large cells: the separate approximate bound charges source priors and conditional lifting errors. S4 persistent modes falsify universal cell mixing; source-selected cells invalidate the iid estimate. | Classical adaptive selection from a small predetermined whole-execution catalogue pays the sum of complete aborting-comparison bounds, without conditioning away failure mass. This is not a runtime bound for succinct exponentially large catalogues or coherent selectors. | Fixed-copy invariant instruments repeated polynomially many times remain below the required asymptotic information budget.",
+        "evidence": "Triggered falsifiers: Conjugation invariance removes hidden-member information, not necessarily class-versus-trivial information. | Measuring another carrier label can irreversibly lose information; a large commutator does not certify an improved detector. | All tested L/R binary outcome laws are reproduced by classical latent-irrep dynamics after the joint quantum label front end; no legal classical replacement of that front end is supplied. | Discarding the GPE reference rows has the same first-label probabilities but is a pair-local twirl, not the assumed Luders instrument; it erases all remaining three-input binary information conditional on that label. | A fixed subset palette with c incidence cells provides at most c effective coset samples, regardless of raw copies or repetitions within that algebra. Individual source labels or unlisted subset access must refine the cells. | Retaining all classical source labels does not rescue fixed preselected palettes with sufficiently large cells: the separate approximate bound charges source priors and conditional lifting errors. S4 persistent modes falsify universal cell mixing; source-selected cells invalidate the iid estimate. | Classical adaptive selection from a small predetermined whole-execution catalogue pays the sum of complete aborting-comparison bounds, without conditioning away failure mass. This is not a runtime bound for succinct exponentially large catalogues or coherent selectors. | Source-label and selector marginals do not determine their joint binary information; S4 negative-character controls falsify the product-of-marginals shortcut. | One common phase over uniformly coherent masks cannot amplify unlabeled selector information with mask count after discarding both physical inputs and source labels. This bound does not cover retained labels. | Even with all source labels, retaining only fixed low-order selector marginals loses growing-degree signal under the uniform one-query contract. This does not bound a threshold of a low-degree score or an arbitrary full-bit classifier. | S4's negative-character reflection has exact group-algebra support only on V4; even overlapping subset phase actions commute. Its finite copy gain is not evidence of a useful noncommuting mechanism. | A fixed parity of ANY degree has the outcome law of a random two-subset Hadamard test, retaining all source labels. Input-independent randomization pays an average, not exponential catalogue size. Its bounded-Fourier-norm corollary rules out scalable all-zero success despite the finite S4 gain. | Linear-time majority evaluation does not imply small Fourier norm: the exact odd-majority norm is at least 2^((k-1)/2)/k. The parity-transfer bound does not rule out arbitrary efficient thresholds. | The source-corrected negative-character-selected parity loses at S6 for every k>=2 to a single pair, even if its accepting orientation is reversed. Exact moment envelopes certify the unbounded-copy tail; do not infer a growing-degree or arbitrary source-conditioned-readout theorem. | Fixed-copy invariant instruments repeated polynomially many times remain below the required asymptotic information budget.",
         "finding_id": "DEQ-RESULT-EXP-COSET-BINARY-CARRIER-INSTRUMENTS-FALSIFIERS",
         "required_action": "Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.",
         "severity": "medium"
@@ -4987,7 +5029,7 @@
       }
     ],
     "candidate_id": "CODE-COSET-COLLECTIVE",
-    "created_at": "2026-09-10T12:03:54.299408+00:00",
+    "created_at": "2026-09-11T09:58:48.909444+00:00",
     "id": "CONJ-CODE-COSET-COLLECTIVE",
     "next_actions": [
       "Resolve every blocking finding before promotion.",
@@ -13884,20 +13926,30 @@
           "adaptive_catalogue_source_blocks_checked": 152,
           "adaptive_catalogue_transcript_branches_checked": 3368,
           "clean_gpe_cleanup_controls_passed": 2,
+          "coherent_measurement_uniform_primitive_reductions": 1,
+          "coherent_subset_phase_controls_passed": 7,
+          "coherent_walsh_fixed_group_scaling_controls": 12,
+          "declared_terminal_rules_evaluated": 72,
           "explicit_one_pair_classifiers_checked": 4,
           "finite_full_source_controls_passed": 2,
           "growing_copy_measurement_compilers": 0,
           "incomplete_support_povm_extensions_checked": 166,
           "polynomial_label_arithmetic_controls": 4,
+          "random_hadamard_branches_checked": 39672,
           "regular_cell_compression_controls_passed": 3,
           "schedules_evaluated": 24,
           "source_blocks_evaluated": 152,
           "source_blocks_with_clean_gpe_contract": 152,
           "source_blocks_with_exact_latent_irrep_model": 152,
-          "source_conditioned_lifts_checked": 701
+          "source_conditioned_lifts_checked": 701,
+          "source_conditioned_parity_laws_checked": 4959,
+          "source_conditioned_selector_kernels_checked": 2153,
+          "source_selected_parity_copy_controls": 96,
+          "source_selected_parity_exact_hidden_spectra_checked": 21,
+          "source_selected_parity_independent_laws_checked": 96
         },
         "status": "binary-instrument-calibration-fixed-copy-route-obstructed",
-        "summary": "Complete natural-source binary channels distinguish clean isotypic labels from discarded GPE reference rows. Clean compute-copy-uncompute has a uniform primitive reduction; discarding rows loses shared-hidden information. Fixed-copy repetition and the growing-copy classifier remain blocked."
+        "summary": "Source-selected parity now has an exact character-moment evaluator beyond S4. At S6 the corrected negative-character selection loses to even one pair for every k>=2, certified by an exact prefix and a decreasing moment tail. This is a fixed-degree negative result, not a growing-degree theorem or classical replacement. Earlier fixed-parity bounds remain scoped; source-aware collective thresholds are unresolved."
       },
       {
         "experiment_result_id": "RESULT-EXP-COSET-CARRIER-INFORMATION-AUDIT-COSET",
@@ -17957,7 +18009,7 @@
         "summary": "Proved that density-one low-bit fibers contain no affine flat of dimension 8log2(q) or larger with failure 2^-Omega(q log q), uniformly over every adaptive GL(m,2) reparameterization. Any support-contained cancellation-free affine cover is exponential."
       }
     ],
-    "updated_at": "2026-09-10T12:03:54.299408+00:00"
+    "updated_at": "2026-09-11T09:58:48.909444+00:00"
   },
   {
     "assumptions": [
@@ -19379,7 +19431,7 @@
       }
     ],
     "candidate_id": "DHS-GOWERS-SIEVE",
-    "created_at": "2026-09-10T12:03:54.299408+00:00",
+    "created_at": "2026-09-11T09:58:48.909444+00:00",
     "id": "CONJ-DHS-GOWERS-SIEVE",
     "next_actions": [
       "Resolve every blocking finding before promotion.",
@@ -22097,7 +22149,7 @@
         "summary": "Audited 12 explicit hidden-shift instances across 3 phase families. 3 instances show Fourier/derivative structure; 8 are critical/high dequantization risk; 8 survive at least one restricted query model. Best DHSP sieve strategy aggressive_doubling reaches v2=7 from 2048 phase labels; explicit phase-state trace reaches v2=7 with 44 survivor states."
       }
     ],
-    "updated_at": "2026-09-10T12:03:54.299408+00:00"
+    "updated_at": "2026-09-11T09:58:48.909444+00:00"
   },
   {
     "assumptions": [
@@ -22155,7 +22207,7 @@
       }
     ],
     "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
-    "created_at": "2026-09-10T12:03:54.299408+00:00",
+    "created_at": "2026-09-11T09:58:48.909444+00:00",
     "id": "CONJ-HYP-LIT-COSET-OBSERVABLES",
     "next_actions": [
       "Resolve every blocking finding before promotion.",
@@ -22195,7 +22247,7 @@
         "summary": "Audited 4 hidden-permutation graph pairs. 2 pair survives current classical and low-register tests; 1 control pair is classically distinguished; 2 CFI-style parity benchmark(s) included."
       }
     ],
-    "updated_at": "2026-09-10T12:03:54.299408+00:00"
+    "updated_at": "2026-09-11T09:58:48.909444+00:00"
   },
   {
     "assumptions": [
@@ -22285,7 +22337,7 @@
       }
     ],
     "candidate_id": "HYP-LIT-HIDDEN-SHIFT-SIEVE",
-    "created_at": "2026-09-10T12:03:54.299408+00:00",
+    "created_at": "2026-09-11T09:58:48.909444+00:00",
     "id": "CONJ-HYP-LIT-HIDDEN-SHIFT-SIEVE",
     "next_actions": [
       "Resolve every blocking finding before promotion.",
@@ -22367,7 +22419,7 @@
         "summary": "Audited 40 explicit hidden-shift instances across 10 phase families. 0 instances show Fourier/derivative structure; 16 are critical/high dequantization risk; 40 survive at least one restricted query model. Best DHSP sieve strategy aggressive_doubling reaches v2=7 from 2048 phase labels; explicit phase-state trace reaches v2=7 with 44 survivor states."
       }
     ],
-    "updated_at": "2026-09-10T12:03:54.299408+00:00"
+    "updated_at": "2026-09-11T09:58:48.909444+00:00"
   },
   {
     "assumptions": [
@@ -22467,7 +22519,7 @@
       }
     ],
     "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
-    "created_at": "2026-09-10T12:03:54.299408+00:00",
+    "created_at": "2026-09-11T09:58:48.909444+00:00",
     "id": "CONJ-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
     "next_actions": [
       "Resolve every blocking finding before promotion.",
@@ -22551,7 +22603,7 @@
         "summary": "Audited 10 graphlet tensor observables across 5 graph pairs. 3 signal(s) collapse to small-pattern classical counts; 3 boundary pair(s) remain without graphlet-tensor signal."
       }
     ],
-    "updated_at": "2026-09-10T12:03:54.299408+00:00"
+    "updated_at": "2026-09-11T09:58:48.909444+00:00"
   },
   {
     "assumptions": [
@@ -22627,7 +22679,7 @@
       }
     ],
     "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
-    "created_at": "2026-09-10T12:03:54.299408+00:00",
+    "created_at": "2026-09-11T09:58:48.909444+00:00",
     "id": "CONJ-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
     "next_actions": [
       "Resolve every blocking finding before promotion.",
@@ -22682,7 +22734,7 @@
         "summary": "Audited 10 graphlet tensor observables across 5 graph pairs. 3 signal(s) collapse to small-pattern classical counts; 3 boundary pair(s) remain without graphlet-tensor signal."
       }
     ],
-    "updated_at": "2026-09-10T12:03:54.299408+00:00"
+    "updated_at": "2026-09-11T09:58:48.909444+00:00"
   },
   {
     "assumptions": [
@@ -22758,7 +22810,7 @@
       }
     ],
     "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
-    "created_at": "2026-09-10T12:03:54.299408+00:00",
+    "created_at": "2026-09-11T09:58:48.909444+00:00",
     "id": "CONJ-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
     "next_actions": [
       "Resolve every blocking finding before promotion.",
@@ -22812,7 +22864,7 @@
         "summary": "Audited 4 hidden-permutation graph pairs. 2 pair survives current classical and low-register tests; 1 control pair is classically distinguished; 2 CFI-style parity benchmark(s) included."
       }
     ],
-    "updated_at": "2026-09-10T12:03:54.299408+00:00"
+    "updated_at": "2026-09-11T09:58:48.909444+00:00"
   },
   {
     "assumptions": [
@@ -22876,7 +22928,7 @@
       }
     ],
     "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
-    "created_at": "2026-09-10T12:03:54.299408+00:00",
+    "created_at": "2026-09-11T09:58:48.909444+00:00",
     "id": "CONJ-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
     "next_actions": [
       "Resolve every blocking finding before promotion.",
@@ -22910,6 +22962,6 @@
         "summary": "Audited 3 code-equivalence pairs. 1 equivalent control pair(s) verified; 2 non-equivalent control pair(s) classically distinguished."
       }
     ],
-    "updated_at": "2026-09-10T12:03:54.299408+00:00"
+    "updated_at": "2026-09-11T09:58:48.909444+00:00"
   }
 ]

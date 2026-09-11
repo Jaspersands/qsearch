@@ -1,4 +1,5 @@
 from fractions import Fraction
+import math
 
 import numpy as np
 import pytest
@@ -12,6 +13,11 @@ from coset_binary_carrier_instruments import (
     audit_source_conditioned_cell_lifts, source_conditioned_palette_scaling_controls,
     source_conditioned_unbalanced_palette_controls,
     audit_adaptive_palette_abort_cover, adaptive_palette_catalogue_scaling_controls,
+    COHERENT_PHASE_RULES, _coherent_phase_values, evaluate_coherent_subset_phase_query,
+    unlabeled_selector_scaling_controls,
+    _coherent_walsh_histogram_law, coherent_walsh_copy_scaling_controls, independent_pair_copy_baseline,
+    fixed_selector_marginal_scaling_controls,
+    symmetric_boolean_fourier_profile, coherent_terminal_rule_controls, coherent_parity_scaling_controls,
     one_pair_likelihood_ratio, write_binary_carrier_instrument_report,
 )
 
@@ -127,7 +133,7 @@ def test_bad_protocols_are_rejected():
 
 
 def test_clean_registry_runner_and_negative_baseline_artifacts(tmp_path, monkeypatch):
-    from research_registry import initialize_seed_registry, load_negative_results, load_experiment_results, validate_registry
+    from research_registry import initialize_seed_registry, load_negative_results, load_experiment_results, load_experiments, validate_registry
     from experiment_runner import run_experiment, supported_experiment_ids
     monkeypatch.chdir(tmp_path)
     write_binary_carrier_instrument_report(write_registry=False)
@@ -135,6 +141,10 @@ def test_clean_registry_runner_and_negative_baseline_artifacts(tmp_path, monkeyp
     initialize_seed_registry(overwrite=True)
     assert DEFAULT_EXPERIMENT_ID in supported_experiment_ids()
     assert run_experiment(DEFAULT_EXPERIMENT_ID).status == "completed"
+    recorded = next(row for row in load_experiments() if row["id"] == DEFAULT_EXPERIMENT_ID)
+    assert "declared_terminal_rules_evaluated" in recorded["metrics"]
+    initialize_seed_registry(overwrite=False)
+    assert next(row for row in load_experiments() if row["id"] == DEFAULT_EXPERIMENT_ID) == recorded
     assert any(row["experiment_id"] == DEFAULT_EXPERIMENT_ID for row in load_experiment_results())
     negatives = {row["id"] for row in load_negative_results()}
     assert "CARRIER-INVARIANCE-NOT-A-BINARY-NO-GO" in negatives
@@ -143,6 +153,13 @@ def test_clean_registry_runner_and_negative_baseline_artifacts(tmp_path, monkeyp
     assert "FIXED-SUBSET-PALETTE-COPY-COMPRESSION" in negatives
     assert "SOURCE-LABELS-DO-NOT-RESCUE-FIXED-LARGE-CELLS" in negatives
     assert "ADAPTIVE-PALETTE-CATALOGUE-NOT-FREE-ESCAPE" in negatives
+    assert "UNLABELED-COHERENT-MASK-COUNT-NOT-INFORMATION-AMPLIFICATION" in negatives
+    assert "SOURCE-SELECTOR-MARGINALS-NOT-JOINT-INFORMATION" in negatives
+    assert "FIXED-SELECTOR-MARGINAL-NOT-SCALABLE-READOUT" in negatives
+    assert "S4-COHERENT-SIGN-PHASE-HAS-ABELIAN-SUPPORT" in negatives
+    assert "COHERENT-PARITY-AND-BOUNDED-FOURIER-NORM-READOUTS" in negatives
+    assert "POLYNOMIAL-READOUT-TIME-NOT-SMALL-FOURIER-NORM" in negatives
+    assert "S6-SOURCE-SELECTED-PARITY-ALL-COPY-FAILURE" in negatives
     from dequantization_checks import findings_from_negative_results
     from proof_tracker import _binary_carrier_instrument_lemmas
     findings = findings_from_negative_results([{"id": "CODE-COSET-COLLECTIVE"}], load_negative_results())
@@ -171,6 +188,17 @@ def test_clean_registry_runner_and_negative_baseline_artifacts(tmp_path, monkeyp
     cover = next(row for row in findings if row.id.endswith("ADAPTIVE-PALETTE-CATALOGUE-COVER"))
     assert "stepwise coverage is insufficient" in cover.required_action
     assert "not classical dequantization" in cover.required_action
+    assert lemmas[7].status == "derived-coherent-phase-primitive-reduction-review-pending"
+    assert lemmas[8].status == "derived-unlabeled-selector-bound-review-pending"
+    assert lemmas[9].status == "derived-fixed-selector-marginal-bound-review-pending"
+    assert lemmas[1].status == "blocked-terminal-rules-supplied-scalable-advantage-missing"
+    assert lemmas[10].status == "derived-coherent-parity-fourier-norm-bound-review-pending"
+    assert lemmas[11].status == "exact-finite-degree-all-copy-certificate-review-pending"
+    selected = next(row for row in findings if row.id.endswith("SOURCE-SELECTED-PARITY-FINITE-BASELINE"))
+    assert "fixed-degree all-copy certificate" in selected.required_action
+    assert "not classical dequantization" in selected.required_action
+    unlabeled = next(row for row in findings if row.id.endswith("UNLABELED-COHERENT-SELECTOR-BOUND"))
+    assert "excludes retained source labels" in unlabeled.required_action
     assert validate_registry()["valid"]
 
 
@@ -180,6 +208,264 @@ def test_missing_cleanup_artifact_does_not_resolve_the_instrument_obligation(tmp
     assert _binary_carrier_instrument_lemmas("CODE-COSET-COLLECTIVE")[2].status.startswith("blocked-")
     assert _binary_carrier_instrument_lemmas("CODE-COSET-COLLECTIVE")[5].status.startswith("blocked-")
     assert _binary_carrier_instrument_lemmas("CODE-COSET-COLLECTIVE")[6].status.startswith("blocked-")
+    assert _binary_carrier_instrument_lemmas("CODE-COSET-COLLECTIVE")[7].status.startswith("blocked-")
+    assert _binary_carrier_instrument_lemmas("CODE-COSET-COLLECTIVE")[11].status.startswith("blocked-")
+    assert _binary_carrier_instrument_lemmas("CODE-COSET-COLLECTIVE")[8].status.startswith("blocked-")
+    assert _binary_carrier_instrument_lemmas("CODE-COSET-COLLECTIVE")[9].status.startswith("blocked-")
+    assert _binary_carrier_instrument_lemmas("CODE-COSET-COLLECTIVE")[10].status.startswith("blocked-")
+
+
+@pytest.mark.parametrize("n,t", ((3, 1), (4, 2)))
+@pytest.mark.parametrize("rule", COHERENT_PHASE_RULES)
+def test_coherent_phase_query_matches_independent_conditional_kernels(n, t, rule):
+    row = evaluate_coherent_subset_phase_query(n, t, 3, rule, True)
+    assert row["finite_coherent_query_verified"]
+    assert max(row["residuals"].values()) < 1e-12
+    assert row["source_blocks_evaluated"] == (27 if n == 3 else 125)
+    assert row["conditional_kernels_checked"] == (51 if n == 3 else 500)
+    assert row["zero_weight_alternative_blocks_omitted"] == (57 if n == 3 else 0)
+    assert row["selector_without_source_labels_trace_distance"] == pytest.approx(
+        row["unlabeled_selector_closed_form_distance"], abs=1e-12)
+    assert not row["postselection_used"]
+    assert not row["finite_helstrom_table_is_compiled_classifier"]
+    assert not row["growing_copy_advantage_established"]
+    assert not row["speedup_claim_allowed"]
+    assert row["residuals"]["fixed_marginal_background_mixture"] < 1e-12
+    assert row["residuals"]["random_two_subset_parity_law"] < 1e-12
+    assert row["conditional_parity_laws_checked"] == 3 * row["conditional_kernels_checked"]
+    assert row["random_hadamard_branches_checked"] == 8 * row["conditional_parity_laws_checked"]
+    assert set(row["fixed_mask_marginal_with_all_source_labels_distances"]) == {"1", "2"}
+
+
+def test_source_selector_correlations_cannot_be_replaced_by_product_marginals():
+    row = evaluate_coherent_subset_phase_query(4, 2, 3, "negative_character_reflection", False)
+    marginal_sum = row["source_only_readout"]["total_variation"] + row["selector_without_source_labels_trace_distance"]
+    assert row["selector_and_source_label_trace_distance"] > marginal_sum + 0.04
+    assert row["source_conditioning_counterexample"]["physical_source_weight"] > 0
+    assert row["source_selector_decorrelation_distances"]["alternative"] > 0.8
+    assert row["selector_without_source_labels_trace_distance"] == pytest.approx(3 / 14)
+
+
+def test_coherent_signal_must_face_existing_pair_total_readout():
+    row = evaluate_coherent_subset_phase_query(4, 2, 3, "negative_character_reflection", True)
+    assert row["walsh_readout_with_source_labels"]["total_variation"] == pytest.approx(33 / 64)
+    baseline = row["existing_carrier_baselines"]
+    assert baseline["coherent_walsh_gain_over_one_pair_in_this_control"] == pytest.approx(3 / 32)
+    assert baseline["coherent_retained_gain_over_pair_total_in_this_control"] < -0.02
+    assert baseline["pair_total_uses_two_label_queries"]
+    assert not baseline["pair_total_is_scalable_classifier"]
+    support = row["exact_reflection_support_audit"]
+    assert support["exact_support_audit_available"]
+    assert support["support_is_subgroup"] and support["support_is_commuting"]
+    assert support["all_overlapping_subset_phase_actions_commute"]
+    assert sorted(item["coefficient"] for item in support["exact_coefficients"]) == ["-1/2", "1/2", "1/2", "1/2"]
+    nonabelian = evaluate_coherent_subset_phase_query(3, 1, 3, "negative_character_reflection", True)
+    assert not nonabelian["exact_reflection_support_audit"]["support_is_commuting"]
+
+
+def test_zero_character_is_a_unit_phase_and_identity_control_is_identified():
+    phases = _coherent_phase_values(((3,), (2, 1), (1, 1, 1)), 1, "negative_character_reflection")
+    assert phases[(2, 1)] == 1
+    assert phases[(1, 1, 1)] == -1
+    row = evaluate_coherent_subset_phase_query(4, 2, 3, "zero_character_reflection", True)
+    assert row["source_conditioning_counterexample"] is None
+    assert row["selector_and_source_label_trace_distance"] == pytest.approx(row["source_only_readout"]["total_variation"])
+    assert row["selector_without_source_labels_trace_distance"] < 1e-12
+    for args in ((6, 3), (4, 2, True), (4, 2, 4), (3, 1, 3, "unknown"),
+                 (3, 1, 3, "negative_character_reflection", "false")):
+        with pytest.raises(ValueError):
+            evaluate_coherent_subset_phase_query(*args)
+
+
+def test_unlabeled_selector_mask_count_does_not_amplify_information():
+    rows = unlabeled_selector_scaling_controls()
+    assert len(rows) == 10
+    assert all(row["applicable"] and not row["covers_retained_source_labels"] for row in rows)
+    assert all(row["trace_distance_upper_bound_power_of_two"] < -50 for row in rows)
+
+
+def test_walsh_copy_scaling_is_not_growing_degree_evidence_or_a_classical_solver():
+    rows = coherent_walsh_copy_scaling_controls()
+    assert len(rows) == 12
+    assert all(row["finite_outcome_contraction_verified"] for row in rows)
+    assert all(not row["is_growing_degree_scaling"] and not row["is_polynomial_sn_classifier"] for row in rows)
+    s4 = next(row for row in rows if row["degree"] == 4 and row["copy_count"] == 8)
+    assert s4["ordered_outcome_count"] == 100000000
+    assert s4["histogram_count"] == 24310
+    assert s4["walsh_readout"]["total_variation"] == pytest.approx(0.9190750122070312)
+    assert s4["independent_pair_baseline"]["exact_total_variation"] == "3471/4096"
+    assert not s4["independent_pair_baseline"]["quantum_frontend_classically_replaced"]
+    s3 = next(row for row in rows if row["degree"] == 3 and row["copy_count"] == 12)
+    assert s3["gain_over_independent_pair_baseline"] < -0.01
+
+
+def test_pair_product_baseline_matches_existing_complete_three_copy_readout():
+    for n, t in ((3, 1), (4, 2)):
+        direct = evaluate_binary_carrier_instruments(n, t)
+        pair = next(row for row in direct["schedules"] if row["schedule"] == "L")
+        assert independent_pair_copy_baseline(n, t, 3)["total_variation"] == pytest.approx(pair["transcript"]["total_variation"])
+        assert independent_pair_copy_baseline(n, t, 3)["fixed_point_free_terminal_scoring_polynomial"] == (n == 4)
+    for n, t, copies in ((6, 3, 2), (4, 2, 9), (4, 2, True), (3, True, 3)):
+        with pytest.raises(ValueError):
+            _coherent_walsh_histogram_law(n, t, copies, "negative_character_reflection")
+
+
+def test_low_order_fixed_selector_readouts_have_growing_degree_bounds():
+    rows = fixed_selector_marginal_scaling_controls()
+    assert len(rows) == 6
+    assert all(row["all_source_labels_retained"] and row["applicable"] for row in rows)
+    assert all(not row["covers_arbitrary_full_selector_classifier"] for row in rows)
+    large = next(row for row in rows if row["degree"] == 1024 and row["observed_mask_bits"] == 11)
+    assert large["trace_distance_upper_bound_power_of_two"] == -2174
+
+
+@pytest.mark.parametrize("k", (1, 2, 3, 7, 16))
+def test_krawtchouk_spectrum_reconstructs_every_hamming_weight(k):
+    for rule, threshold in (("parity", None), ("threshold", 1), ("threshold", k // 2 + 1)):
+        profile = symmetric_boolean_fourier_profile(k, rule, threshold)
+        for w in range(k + 1):
+            value = sum(Fraction(numerator, 2**k) * sum((-1)**j * math.comb(w, j) * math.comb(k - w, d - j)
+                for j in range(max(0, d - (k - w)), min(d, w) + 1))
+                for d, numerator in enumerate(profile["coefficient_numerators_by_degree"]))
+            assert value == (1 if (w % 2 if rule == "parity" else w >= threshold) else -1)
+        if rule == "parity":
+            assert profile["exact_fourier_l1_norm"] == "1"
+        if threshold == 1:
+            assert Fraction(profile["exact_fourier_l1_norm"]) == 3 - Fraction(4, 2**k)
+
+
+def test_majority_fourier_norm_is_not_bounded_by_its_linear_evaluation_cost():
+    for k in (3, 7, 15, 31, 63, 127):
+        m = (k - 1) // 2
+        row = symmetric_boolean_fourier_profile(k, "threshold")
+        for j in range(m + 1):
+            expected = Fraction(math.comb(2 * m, m) * math.comb(m, j), 4**m * math.comb(2 * m, 2 * j))
+            assert Fraction(abs(row["coefficient_numerators_by_degree"][2 * j + 1]), 2**k) == expected
+        assert Fraction(row["exact_fourier_l1_norm"]) >= Fraction(2)**row["majority_fourier_l1_lower_bound_power_of_two"]
+    assert Fraction(row["exact_fourier_l1_norm"]) > 2**60
+
+
+def test_declared_terminal_rules_do_not_silently_fit_accepting_orientation():
+    row = coherent_terminal_rule_controls(4, 2, 8)
+    all_zero = next(item for item in row["rules"] if item["rule"] == "all_zero" and item["phase_corrected"])
+    assert all_zero["signed_acceptance_gap"] == pytest.approx(0.9190750122070312)
+    assert all_zero["signed_acceptance_gap"] == pytest.approx(all_zero["joint_source_and_rule_output"]["total_variation"])
+    majority = next(item for item in row["rules"] if item["rule"] == "strict_majority" and item["phase_corrected"])
+    assert majority["equal_prior_success"] < 0.5
+    assert not majority["fitted_orientation_used"]
+    assert Fraction(all_zero["exact_fourier_l1_norm"]) < 3
+    assert not row["growing_degree_signal_established"]
+    bound = next(item for item in coherent_parity_scaling_controls() if item["degree"] == 1024 and item["parity_size"] == 1)
+    assert bound["source_corrected_all_zero_absolute_gap_upper_bound_power_of_two"] == -139
+
+
+def test_histogram_rule_laws_match_the_executable_terminal_decisions():
+    from involution_character_arithmetic import coherent_walsh_terminal_decision
+    from representation_obstruction import integer_partitions
+    partitions = integer_partitions(4)
+    histograms, null, alternative, _ = _coherent_walsh_histogram_law(4, 2, 2, "negative_character_reflection")
+    report = coherent_terminal_rule_controls(4, 2, 2)
+    for rule in report["rules"]:
+        accepts = []
+        for histogram in histograms:
+            sources, bits = [], []
+            for i, count in enumerate(histogram):
+                sources.extend([partitions[i // 2]] * count)
+                bits.extend([i % 2] * count)
+            result = coherent_walsh_terminal_decision(tuple(sources), tuple(bits),
+                "parity" if rule["rule"] == "odd_parity" else "threshold",
+                phase_corrected=rule["phase_corrected"], threshold=rule["threshold"], complement=rule["complement"])
+            accepts.append(result["accept_hidden_class"])
+        assert np.dot(null, accepts) == pytest.approx(rule["null_acceptance_probability"])
+        assert np.dot(alternative, accepts) == pytest.approx(rule["alternative_acceptance_probability"])
+
+
+@pytest.mark.parametrize("selection", ("all", "negative", "positive", "zero"))
+@pytest.mark.parametrize("corrected", (False, True))
+def test_exact_source_selected_moments_match_executable_rule_on_every_histogram(selection, corrected):
+    from coset_binary_carrier_instruments import source_selected_parity_controls
+    from involution_character_arithmetic import coherent_walsh_terminal_decision
+    from representation_obstruction import integer_partitions
+    partitions = integer_partitions(4)
+    histograms, null, alternative, _ = _coherent_walsh_histogram_law(4, 2, 3, "negative_character_reflection")
+    decisions = []
+    for histogram in histograms:
+        sources = tuple(label for i, label in enumerate(partitions) for bit in (0, 1) for _ in range(histogram[2 * i + bit]))
+        bits = tuple(bit for i in range(len(partitions)) for bit in (0, 1) for _ in range(histogram[2 * i + bit]))
+        decisions.append(coherent_walsh_terminal_decision(sources, bits, "parity",
+            parity_selection=selection, phase_corrected=corrected)["accept_hidden_class"])
+    row = source_selected_parity_controls(4, 2, (3,), selection, corrected)["copy_sweep"][0]
+    assert row["null_acceptance_probability"] == pytest.approx(np.dot(null, decisions))
+    assert row["alternative_acceptance_probability"] == pytest.approx(np.dot(alternative, decisions))
+
+
+def test_source_selected_contraction_keeps_exact_class_covariance_beyond_s4():
+    from coset_binary_carrier_instruments import audit_source_selected_parity_contraction
+    audit = audit_source_selected_parity_contraction()
+    assert audit["verified"] and audit["maximum_histogram_law_residual"] < 1e-12
+    assert audit["independent_histogram_probability_laws_checked"] == 96
+    assert audit["exact_all_hidden_member_spectra_checked"] == 21
+    assert not audit["formal_proof_verification"]
+
+
+def test_s6_source_selected_parity_failure_covers_every_copy_count_not_just_a_sweep():
+    from coset_binary_carrier_instruments import source_selected_parity_all_copy_obstruction, source_selected_parity_controls
+    certificate = source_selected_parity_all_copy_obstruction()
+    assert certificate["all_copy_counts_from_two_covered"]
+    assert certificate["tail_starts_at_copy_count"] == 38
+    assert certificate["finite_prefix_copy_counts_checked"] == 36
+    baseline = Fraction(certificate["exact_one_pair_baseline_gap"])
+    assert baseline == Fraction(1271, 7200)
+    assert Fraction(certificate["exact_finite_prefix_maximum_absolute_gap"]) < baseline
+    assert Fraction(certificate["exact_tail_start_gap_upper_bound"]) < baseline
+    norms = [Fraction(row["exact_weight_l1_norm"]) for row in certificate["null_and_alternative_envelopes"]]
+    radii = [Fraction(row["exact_radius"]) for row in certificate["null_and_alternative_envelopes"]]
+    assert radii == [Fraction(139, 180), Fraction(13, 15)]
+    for k in (38, 39, 128, 2048):
+        assert sum(norm * radius**k for norm, radius in zip(norms, radii)) / 2 < baseline
+    assert not certificate["is_growing_degree_obstruction"]
+    assert not certificate["covers_arbitrary_source_based_postprocessing"]
+    result = source_selected_parity_controls(6, 3, (1, 2, 8, 128))
+    assert result["copy_sweep"][1]["signed_acceptance_gap"] == -1 / 64
+    assert result["copy_sweep"][-1]["signed_acceptance_gap"] == pytest.approx(-1.2207252482083908e-9)
+    assert result["copy_sweep"][-1]["loses_to_pair_count_even_after_orientation_flip"]
+    assert result["moment_certificate"]["negative_weights_present"]
+    assert not result["moment_certificate"]["is_positive_classical_sampler"]
+
+
+def test_averaging_the_hidden_member_before_the_product_changes_the_experiment():
+    from coset_binary_carrier_instruments import _source_parity_group_data, _source_parity_local_moment, source_selected_parity_moment_certificate, _parity_spectrum_mean
+    data = _source_parity_group_data(4, 2)
+    order, hidden_count = len(data[0]), len(data[8])
+    weighted = np.outer(data[5], data[5]).reshape(-1)
+    averaged_numerators = sum(_source_parity_local_moment(data, "negative", True, h) for h in range(hidden_count)).reshape(-1)
+    independent_h_mean = Fraction(sum(int(w) * int(value)**3 for w, value in zip(weighted, averaged_numerators)),
+                                  order**2 * (2 * order * hidden_count)**3)
+    actual = _parity_spectrum_mean(source_selected_parity_moment_certificate(4, 2), "alternative", 3)
+    assert independent_h_mean != actual
+
+
+def test_pair_event_count_is_only_a_coarsening_of_the_full_pair_likelihood_baseline():
+    from coset_binary_carrier_instruments import _pair_event_count_baseline
+    for n, t in ((3, 1), (4, 2)):
+        for k in (2, 3, 4, 8):
+            distance, report = _pair_event_count_baseline(n, t, k)
+            full = independent_pair_copy_baseline(n, t, k)
+            assert distance <= Fraction(full["exact_total_variation"])
+            assert not report["is_full_pair_likelihood_optimum"]
+            assert not report["quantum_frontend_classically_replaced"]
+
+
+@pytest.mark.parametrize("n,t,copies,selection,corrected", [
+    (True, 1, (2,), "negative", True), (6, True, (2,), "negative", True),
+    (8, 4, (2,), "negative", True), (6, 3, (), "negative", True),
+    (6, 3, (True,), "negative", True), (6, 3, (0,), "negative", True),
+    (6, 3, (1025,), "negative", True), (6, 3, (2,), "fitted", True), (6, 3, (2,), "negative", 1),
+])
+def test_source_selected_certificate_rejects_undeclared_or_unbounded_controls(n, t, copies, selection, corrected):
+    from coset_binary_carrier_instruments import source_selected_parity_controls
+    with pytest.raises(ValueError):
+        source_selected_parity_controls(n, t, copies, selection, corrected)
 
 
 @pytest.mark.parametrize("spec", ((3, 1, 2), (3, 1, 3), (4, 2, 2)))

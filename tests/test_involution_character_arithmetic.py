@@ -1,4 +1,5 @@
 from functools import lru_cache
+from fractions import Fraction
 
 import numpy as np
 import pytest
@@ -6,6 +7,8 @@ import pytest
 from involution_character_arithmetic import (
     fixed_point_free_character, fixed_point_free_character_certificate,
     label_arithmetic_scaling_controls, two_copy_label_decision,
+    independent_pair_label_likelihood,
+    coherent_walsh_terminal_decision,
 )
 from representation_obstruction import conjugate_partition, hook_length_dimension, integer_partitions
 from weak_fourier_signal import character_on_involution, removable_dominoes
@@ -36,6 +39,64 @@ def test_nonempty_two_core_is_not_accidentally_promoted_to_signal():
     assert not certificate.two_core_empty
     assert certificate.character == 0
     assert certificate.quotient == ((), ())
+
+
+def test_independent_pair_likelihood_scores_disjoint_observed_labels_exactly():
+    certain = ((4,), (4,), (4,))
+    assert independent_pair_label_likelihood((certain, certain), ((3, 1),)) == Fraction(32, 3)
+    zero = ((3, 1), (3, 1), (3, 1))
+    assert independent_pair_label_likelihood((certain, zero)) == 0
+    assert independent_pair_label_likelihood((), ((3, 1),)) == Fraction(2, 3)
+    assert independent_pair_label_likelihood((((4096,),) * 3,)) == 4
+    for pairs, unused in (((), ()), ((certain, ((2,),) * 3), ()), ((certain,), ((2,),)),
+                          ((((4,), (4,)),), ()), ((((1,) * 6,) * 3,), ())):
+        with pytest.raises(ValueError):
+            independent_pair_label_likelihood(pairs, unused)
+
+
+def test_walsh_terminal_rules_are_explicit_and_zero_characters_do_not_flip():
+    source, bits = ((3, 1), (4,)), (1, 0)
+    raw = coherent_walsh_terminal_decision(source, bits, "parity")
+    corrected = coherent_walsh_terminal_decision(source, bits, "threshold",
+        threshold=1, phase_corrected=True, complement=True)
+    assert raw["accept_hidden_class"]
+    assert corrected["observed_weight"] == 0 and corrected["accept_hidden_class"]
+    assert not coherent_walsh_terminal_decision(source, bits, "threshold")["accept_hidden_class"]
+    zero = coherent_walsh_terminal_decision(((3, 2, 1),), (0,), "threshold",
+        threshold=1, phase_corrected=True, complement=True)
+    assert zero["observed_weight"] == 0
+    large = coherent_walsh_terminal_decision(((4096,),) * 3, (1, 0, 1), "threshold", phase_corrected=True)
+    assert large["accept_hidden_class"] and large["polynomial_terminal_arithmetic"]
+    assert not large["scalable_success_established"]
+
+
+def test_source_selected_parity_uses_observed_labels_and_handles_empty_selection():
+    source, bits = ((3, 1), (4,)), (0, 1)
+    raw = coherent_walsh_terminal_decision(source, bits, "parity", parity_selection="negative")
+    corrected = coherent_walsh_terminal_decision(source, bits, "parity", parity_selection="negative", phase_corrected=True)
+    assert raw["selected_copy_count"] == 1 and not raw["accept_hidden_class"]
+    assert corrected["accept_hidden_class"] and not corrected["parity_positions_fixed_before_source_labels"]
+    empty = coherent_walsh_terminal_decision(((4096,),), (1,), "parity", parity_selection="negative")
+    assert empty["selected_copy_count"] == 0 and not empty["accept_hidden_class"]
+    zero = coherent_walsh_terminal_decision(((3, 2, 1), (6,)), (1, 0), "parity", parity_selection="zero", phase_corrected=True)
+    assert zero["selected_copy_count"] == 1 and zero["accept_hidden_class"]
+    for rule, selection in (("threshold", "negative"), ("parity", "fitted")):
+        with pytest.raises(ValueError):
+            coherent_walsh_terminal_decision(source, bits, rule, parity_selection=selection)
+
+
+@pytest.mark.parametrize("source,bits,rule,kwargs", [
+    ((), (), "parity", {}), (((4,),), (True,), "parity", {}),
+    (((4,),), (2,), "parity", {}), (((4,), (2,)), (1, 0), "parity", {}),
+    (((3,),), (1,), "parity", {}), (((4,),), (1,), "bad", {}),
+    (((4,),), (1,), "parity", {"threshold": 1}),
+    (((4,),), (1,), "threshold", {"threshold": True}),
+    (((4,),), (1,), "threshold", {"threshold": 0}),
+    (((4,),), (1,), "threshold", {"complement": "false"}),
+])
+def test_invalid_terminal_records_are_rejected(source, bits, rule, kwargs):
+    with pytest.raises(ValueError):
+        coherent_walsh_terminal_decision(source, bits, rule, **kwargs)
 
 
 def test_uniform_formula_does_not_call_the_recursive_path(monkeypatch):

@@ -15254,30 +15254,52 @@
   {
     "candidate_id": "CODE-COSET-COLLECTIVE",
     "dependencies": [
-      "physical Fourier convention",
-      "pair-carrier isotypic projectors"
+      "physical three-copy Fourier blocks",
+      "existing pair-carrier projectors"
     ],
     "falsifiers": [
-      "physical source mass is lost",
-      "an ideal residual readout is assumed",
-      "GPE workspace discard changes the instrument",
-      "classifier or copy cost is omitted"
+      "outcome mass is missing",
+      "disturbance destroys the needed signal",
+      "GPE workspace is discarded instead of uncomputed",
+      "classifier cost is omitted",
+      "fixed-copy repetition fails the information bound"
     ],
-    "hypothesis": "Carrier outcome laws reveal binary information distinct from hidden-member identification.",
+    "hypothesis": "Known carrier instruments expose useful binary information without assuming an ideal residual measurement.",
     "id": "EXP-COSET-BINARY-CARRIER-INSTRUMENTS",
     "metrics": [
       "finite_full_source_controls_passed",
       "schedules_evaluated",
       "explicit_one_pair_classifiers_checked",
-      "clean_gpe_cleanup_controls_passed"
+      "source_blocks_evaluated",
+      "source_blocks_with_exact_latent_irrep_model",
+      "source_blocks_with_clean_gpe_contract",
+      "clean_gpe_cleanup_controls_passed",
+      "polynomial_label_arithmetic_controls",
+      "regular_cell_compression_controls_passed",
+      "source_conditioned_lifts_checked",
+      "incomplete_support_povm_extensions_checked",
+      "adaptive_catalogue_source_blocks_checked",
+      "adaptive_catalogue_transcript_branches_checked",
+      "coherent_subset_phase_controls_passed",
+      "source_conditioned_selector_kernels_checked",
+      "coherent_measurement_uniform_primitive_reductions",
+      "coherent_walsh_fixed_group_scaling_controls",
+      "declared_terminal_rules_evaluated",
+      "source_conditioned_parity_laws_checked",
+      "random_hadamard_branches_checked",
+      "source_selected_parity_copy_controls",
+      "source_selected_parity_independent_laws_checked",
+      "source_selected_parity_exact_hidden_spectra_checked",
+      "growing_copy_measurement_compilers"
     ],
     "next_actions": [
-      "compile a growing-copy outcome decision rule",
-      "test the complete channel against stronger classical baselines"
+      "Use label-summed character generating functions to test actual source-corrected Hamming thresholds beyond S4, against exact pair baselines. Source-selected parity is no longer an untested positive example; its corrected negative-character version has an all-copy S6 failure certificate, not an all-degree obstruction.",
+      "Compare its full source-weighted channel against stronger product-basis and tensor-contraction baselines.",
+      "Use the current schedules only as regression controls, not as evidence of a new scalable algorithm."
     ],
-    "positive_signal": "A growing-copy program and explicit outcome decision rule, not finite calibration performance.",
-    "protocol": "Compare complete physical null/alternative laws, disturbance, latent-irrep replay and clean compute-copy-uncompute against discarded GPE workspace; charge primitive access and classifier costs separately.",
-    "status": "ready",
+    "positive_signal": "A growing-copy program with a compiled outcome classifier, not finite Bayes-table performance.",
+    "protocol": "Evaluate physical null/shared-hidden laws, actual readouts, retained states, latent-irrep replay, clean GPE and adversarial reference discard. Test source-conditioned regular lifts, quotient-POVM extensions and palette bounds. Evaluate coherent subset phases with direct unitaries and independent conditional kernels. Contract source-selected parity using exact character moments through S6; certify the corrected negative-selection all-copy failure against one pair. Charge QFT/action calls separately from classifier cost.",
+    "status": "binary-instrument-calibration-fixed-copy-route-obstructed",
     "title": "Source-weighted binary carrier instruments"
   },
   {

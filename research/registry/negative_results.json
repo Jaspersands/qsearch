@@ -48066,6 +48066,22 @@
   {
     "applies_to": [
       "CODE-COSET-COLLECTIVE",
+      "coherent parity and bounded-Fourier-norm terminal rules"
+    ],
+    "claim": "A full or partial Walsh parity, or a decision with a polynomial source-uniform Fourier coefficient envelope such as the source-phase-corrected all-zero test, evades the source-conditioned palette obstruction for one uniform subset query.",
+    "evidence": {
+      "artifact": "research/representation/coset_binary_carrier_instruments.json",
+      "derivation": "research/COHERENT_TERMINAL_READOUTS.md",
+      "status": "derived-review-pending"
+    },
+    "id": "COHERENT-PARITY-AND-BOUNDED-FOURIER-NORM-READOUTS",
+    "lesson": "Keep the same hidden h and all source mass. This is a randomized quantum front end, not classical dequantization. Averages require input-independent random S; source-selected parity positions or simultaneous joint parities are not covered. Transfer requires sum_B sup_source |coefficient_B|, not merely a small norm separately for each source. Large-Fourier-norm thresholds remain open. The derivation depends on the earlier source-conditioned bound and is review-pending, without a novelty claim.",
+    "reason_invalid": "Its complete source-conditioned parity law equals a Hadamard test of U_(S xor B)^dagger U_S for input-independent uniform S, using at most three incidence cells. A uniform worst-cell-profile bound vanishes at polynomial copy count. Fourier expansion transfers it with the coefficient l1 norm, which is below three for all-zero decisions even after source-dependent bit flips. S1024 k=17528 gives absolute all-zero acceptance gap <=2^-139.",
+    "source": "EXP-COSET-BINARY-CARRIER-INSTRUMENTS"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
       "global carrier-channel atomization",
       "affine-star Cayley compilation"
     ],
@@ -55113,6 +55129,22 @@
     "lesson": "This does not obstruct binary class detection, carrier-sensitive or other symmetry-breaking effects, or protocols with different references. Aligned h-even source mass is not a fixed-reference input law.",
     "reason_invalid": "All likelihoods coincide within each reference-matching orbit. There are p(m) orbits among (2m-1)!! hypotheses, so success is at most p(m)/(2m-1)!! even with arbitrarily many jointly invariant copies.",
     "source": "EXP-COSET-HIDDEN-INVOLUTION-ENCODED-RESTRICTION"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "fixed low-order coherent-selector readouts"
+    ],
+    "claim": "With all source labels retained, reading only O(log n) fixed mask bits of the one-uniform-subset-query output suffices for nonnegligible binary signal at polynomial copy budget.",
+    "evidence": {
+      "artifact": "research/representation/coset_binary_carrier_instruments.json",
+      "derivation": "research/COHERENT_SUBSET_PHASE_QUERY.md",
+      "status": "derived-review-pending"
+    },
+    "id": "FIXED-SELECTOR-MARGINAL-NOT-SCALABLE-READOUT",
+    "lesson": "The marginal positions must be fixed before the input; physical inputs and unobserved masks are discarded without joint selector processing. This does not rule out full-bit decisions, thresholding a low-degree score, multiple queries or source-selected positions. The extension is review-pending, depends on the source-conditioned lifting argument and establishes no novelty.",
+    "reason_invalid": "Tracing the other mask qubits gives an input-independent binomial mixture of background subsets. Each branch has d raw singleton inputs and one background cell; the source-conditioned cell bound plus the unnormalized small-background tail applies. S1024 at k=17528,d=11 has T <= 2^-2174 with exact outward rounding. The raw-copy bound covers the small-k regime.",
+    "source": "EXP-COSET-BINARY-CARRIER-INSTRUMENTS"
   },
   {
     "applies_to": [
@@ -71606,6 +71638,21 @@
   {
     "applies_to": [
       "CODE-COSET-COLLECTIVE",
+      "efficient-terminal-rule bound transfers"
+    ],
+    "claim": "Because parity-transfer bounds handle polynomial Fourier l1 norm, they rule out every polynomial-time classifier of the Walsh output.",
+    "evidence": {
+      "artifact": "research/representation/coset_binary_carrier_instruments.json",
+      "derivation": "research/COHERENT_TERMINAL_READOUTS.md"
+    },
+    "id": "POLYNOMIAL-READOUT-TIME-NOT-SMALL-FOURIER-NORM",
+    "lesson": "Charge the actual Fourier coefficient norm or prove a separate distribution-specific approximation argument. Do not transfer low-marginal, low-degree or bounded-norm obstructions to a threshold merely because its arithmetic is cheap. Escaping this bound is not evidence of quantum advantage.",
+    "reason_invalid": "Strict majority is evaluated by a linear-time count but its exact odd-k Fourier norm is at least 2^((k-1)/2)/k. An independent binomial formula checks the Krawtchouk recurrence; at k=127 the norm exceeds 2^60. Fourier degree, norm and classical evaluation time are different resources.",
+    "source": "EXP-COSET-BINARY-CARRIER-INSTRUMENTS"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
       "PO-DEQUANTIZATION",
       "PO-FALSIFIERS"
     ],
@@ -83297,6 +83344,37 @@
   {
     "applies_to": [
       "CODE-COSET-COLLECTIVE",
+      "small-group coherent phase signals"
+    ],
+    "claim": "The S4 negative-character coherent subset-phase gain over disjoint pairs is evidence that noncommuting subset actions produce a useful nonabelian algorithmic mechanism.",
+    "evidence": {
+      "artifact": "research/representation/coset_binary_carrier_instruments.json",
+      "derivation": "research/COHERENT_SUBSET_PHASE_QUERY.md"
+    },
+    "id": "S4-COHERENT-SIGN-PHASE-HAS-ABELIAN-SUPPORT",
+    "lesson": "Keep this finite control for normalization and source-correlation checks, not as evidence of a scalable noncommuting advantage. No growing-degree support classification or legal classical replacement of the quantum front end is inferred.",
+    "reason_invalid": "Independent exact character arithmetic gives coefficient -1/2 at the identity, +1/2 at each of the three perfect matchings and zero elsewhere. These four elements form V4, so all overlapping subset phase actions commute. The operator is (3 C_S-I)/2 for the single-subset class average.",
+    "source": "EXP-COSET-BINARY-CARRIER-INSTRUMENTS"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "source-selected negative-character corrected parity"
+    ],
+    "claim": "Taking the source-corrected parity only on negative-character labels beats a one-pair detector at S6 for some k>=2.",
+    "evidence": {
+      "artifact": "research/representation/coset_binary_carrier_instruments.json",
+      "derivation": "research/SOURCE_SELECTED_PARITY.md",
+      "status": "exact-finite-degree-review-pending"
+    },
+    "id": "S6-SOURCE-SELECTED-PARITY-ALL-COPY-FAILURE",
+    "lesson": "Cut this specified readout as a successful S6 calibration. This is a fixed-degree all-copy certificate, not an all-degree obstruction, not a bound on joint source/parity Bayes tables, and not a classical replacement of the pair quantum front end. Source selection genuinely escapes the fixed-parity theorem but does not guarantee useful signal. Independent review and novelty checks remain outstanding.",
+    "reason_invalid": "Exact class-character moment contraction gives null radius 139/180 and alternative radius 13/15. The absolute gap is below 1271/7200 for k=2,...,37 by exact arithmetic; its l1-weighted tail is below the same one-pair gap for every k>=38 and decreases thereafter. Reversing the declared accepting orientation cannot rescue the rule.",
+    "source": "EXP-COSET-BINARY-CARRIER-INSTRUMENTS"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
       "tensor-product PGM effects",
       "shared-label discrimination"
     ],
@@ -83880,6 +83958,21 @@
   {
     "applies_to": [
       "CODE-COSET-COLLECTIVE",
+      "coherent selector source-conditioning shortcuts"
+    ],
+    "claim": "The retained-source coherent selector can be assessed by replacing each joint hypothesis state with the product of its source-label and selector marginals.",
+    "evidence": {
+      "artifact": "research/representation/coset_binary_carrier_instruments.json",
+      "derivation": "research/COHERENT_SUBSET_PHASE_QUERY.md"
+    },
+    "id": "SOURCE-SELECTOR-MARGINALS-NOT-JOINT-INFORMATION",
+    "lesson": "Keep the complete classical-quantum source blocks and the same hidden member in every input factor. These finite countercontrols do not establish a growing-degree signal; the full-mask Walsh readout still loses to the existing pair-plus-total finite baseline.",
+    "reason_invalid": "The S4 nonempty-mask negative-character control has joint distance 0.605655 while the sum of marginal distances is only 0.558036. Its conditional kernels differ from the unconditioned kernel on positive-mass sources. The product-state shortcut loses hypothesis-relevant correlations.",
+    "source": "EXP-COSET-BINARY-CARRIER-INSTRUMENTS"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
       "weighted commuting asymptotics",
       "near-derangement carrier classes"
     ],
@@ -84165,6 +84258,22 @@
     "lesson": "Internal child gauges telescope when propagated covariantly, but the surviving root gauge must be included in the physical common-fiber coordinate embedding.",
     "reason_invalid": "A three-dimensional noncommuting control changes a root branch effect by constant operator norm when that gauge is omitted.",
     "source": "EXP-CODE-SELF-DUAL-WREATH-CAYLEY-ENDPOINT-GAUGE-COMPILER"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "unlabeled one-query coherent subset programs"
+    ],
+    "claim": "For one common group-algebra phase query, uniform coherent mask count alone amplifies binary information after all physical inputs and source labels are discarded.",
+    "evidence": {
+      "artifact": "research/representation/coset_binary_carrier_instruments.json",
+      "derivation": "research/COHERENT_SUBSET_PHASE_QUERY.md",
+      "status": "derived-review-pending"
+    },
+    "id": "UNLABELED-COHERENT-MASK-COUNT-NOT-INFORMATION-AMPLIFICATION",
+    "lesson": "This review-pending derivation excludes retained source labels, retained physical inputs, mask-dependent phases and multiple queries. It is not a general coherent-measurement obstruction and establishes no novelty.",
+    "reason_invalid": "The unlabeled selector kernel has unit diagonal and one common nonempty off-diagonal value. Its squared trace distance is at most min(1,3/M), or min(1,5/M) including the empty mask, independent of mask count. Direct conditional matrices summed over every natural source verify the closed form in S3/S4.",
+    "source": "EXP-COSET-BINARY-CARRIER-INSTRUMENTS"
   },
   {
     "applies_to": [
