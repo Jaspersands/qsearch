@@ -13986,7 +13986,7 @@
       "binary_carrier_instruments": "research/representation/coset_binary_carrier_instruments.json"
     },
     "candidate_id": "CODE-COSET-COLLECTIVE",
-    "created_at": "2026-09-11T09:56:27.234880+00:00",
+    "created_at": "2026-09-12T08:59:25.452794+00:00",
     "experiment_id": "EXP-COSET-BINARY-CARRIER-INSTRUMENTS",
     "falsifiers_triggered": [
       "Conjugation invariance removes hidden-member information, not necessarily class-versus-trivial information.",
@@ -14003,6 +14003,7 @@
       "A fixed parity of ANY degree has the outcome law of a random two-subset Hadamard test, retaining all source labels. Input-independent randomization pays an average, not exponential catalogue size. Its bounded-Fourier-norm corollary rules out scalable all-zero success despite the finite S4 gain.",
       "Linear-time majority evaluation does not imply small Fourier norm: the exact odd-majority norm is at least 2^((k-1)/2)/k. The parity-transfer bound does not rule out arbitrary efficient thresholds.",
       "The source-corrected negative-character-selected parity loses at S6 for every k>=2 to a single pair, even if its accepting orientation is reversed. Exact moment envelopes certify the unbounded-copy tail; do not infer a growing-degree or arbitrary source-conditioned-readout theorem.",
+      "A common real central reflection, matching source-phase bit correction, and subsequent source discard give an exchangeable full output. In the large-copy regime a positive-mixture/central-overlap bound limits ALL corrected-bit classifiers, including majority, independently of Fourier norm. S1024 k=17528 gives T<=2^-2174. The intermediate copy window and later use of source labels are not covered.",
       "Fixed-copy invariant instruments repeated polynomially many times remain below the required asymptotic information budget."
     ],
     "id": "RESULT-EXP-COSET-BINARY-CARRIER-INSTRUMENTS",
@@ -14013,6 +14014,10 @@
       "coherent_measurement_uniform_primitive_reductions": 1,
       "coherent_subset_phase_controls_passed": 7,
       "coherent_walsh_fixed_group_scaling_controls": 12,
+      "complex_source_histogram_laws_checked": 72,
+      "corrected_weight_copy_controls": 24,
+      "corrected_weight_exact_mixture_laws_checked": 48,
+      "corrected_weight_matrix_laws_checked": 24,
       "declared_terminal_rules_evaluated": 72,
       "explicit_one_pair_classifiers_checked": 4,
       "finite_full_source_controls_passed": 2,
@@ -14021,19 +14026,25 @@
       "polynomial_label_arithmetic_controls": 4,
       "random_hadamard_branches_checked": 39672,
       "regular_cell_compression_controls_passed": 3,
+      "s8_intermediate_copy_points": 6,
+      "s8_streamed_group_pairs": 7338240,
       "schedules_evaluated": 24,
       "source_blocks_evaluated": 152,
       "source_blocks_with_clean_gpe_contract": 152,
       "source_blocks_with_exact_latent_irrep_model": 152,
+      "source_category_exact_mixtures_checked": 40,
+      "source_category_matrix_laws_checked": 36,
       "source_conditioned_lifts_checked": 701,
       "source_conditioned_parity_laws_checked": 4959,
       "source_conditioned_selector_kernels_checked": 2153,
+      "source_count_weight_copy_controls": 24,
       "source_selected_parity_copy_controls": 96,
       "source_selected_parity_exact_hidden_spectra_checked": 21,
-      "source_selected_parity_independent_laws_checked": 96
+      "source_selected_parity_independent_laws_checked": 96,
+      "streamed_source_orbit_controls_verified": 2
     },
     "status": "binary-instrument-calibration-fixed-copy-route-obstructed",
-    "summary": "Source-selected parity now has an exact character-moment evaluator beyond S4. At S6 the corrected negative-character selection loses to even one pair for every k>=2, certified by an exact prefix and a decreasing moment tail. This is a fixed-degree negative result, not a growing-degree theorem or classical replacement. Earlier fixed-parity bounds remain scoped; source-aware collective thresholds are unresolved."
+    "summary": "An exact streamed centralizer-orbit contraction now reaches S8 without a full group-pair matrix. Its ideal sign-category/Walsh table loses to coarse pair-event counts throughout the tested 7..16-copy window; source counts already explain most signal. The raw inputs retain far more distinguishability. This is a finite, specified-readout failure, not a growing-degree or all-source no-go. A separate review-pending large-copy bound covers all source irreps and fixed complex central phases; the general intermediate window remains unresolved."
   },
   {
     "artifacts": {
@@ -17938,7 +17949,40 @@
       "coset_recoupling_mechanism_synthesis": "research/representation/coset_recoupling_mechanism_synthesis.json"
     },
     "candidate_id": "CODE-COSET-COLLECTIVE",
-    "created_at": "2026-09-11T09:57:11.193880+00:00",
+    "created_at": "2026-09-13T02:11:25.674297+00:00",
+    "experiment_id": "EXP-COSET-RECOUPLING-MECHANISM-SYNTHESIS",
+    "falsifiers_triggered": [
+      "QFT-only weak-label decoding is a known no-go route.",
+      "Multiplicity statistics are not a coherent transform or decoder.",
+      "Spectrum-rank PGM and one-tree k-copy recursion fail exact finite/all-n tests.",
+      "Exceptional commuting or restricted multiplicity families do not inherit full source-family reductions.",
+      "No surviving architecture currently satisfies every proof-critical capability.",
+      "Every architecture must satisfy its task-specific copy bound: Holevo/Fano for identification, class-mixture chi-square for binary detection. Known logarithmic-copy information does not supply a circuit."
+    ],
+    "id": "RESULT-EXP-COSET-RECOUPLING-MECHANISM-SYNTHESIS",
+    "metrics": {
+      "automatically_promoted_candidate_count": 0,
+      "binary_detection_proposal_count": 1,
+      "highest_survivor_priority_score": 110,
+      "known_no_go_rejected_count": 6,
+      "mechanism_count": 10,
+      "minimum_missing_capability_count": 2,
+      "primitive_count": 25,
+      "proof_gate_eligible_count": 0,
+      "proposal_only_count": 4,
+      "task_specific_copy_budget_rule_count": 2,
+      "typed_interface_valid_count": 10,
+      "undercharged_mechanism_promoted_count": 0
+    },
+    "status": "typed-mutations-ranked-no-proof-gate-eligible-mechanism",
+    "summary": "Evaluated 10 typed collective-measurement architectures, rejected 6 known-invalid shortcuts, and retained 4 proof-capability research proposals without promoting candidates."
+  },
+  {
+    "artifacts": {
+      "coset_recoupling_mechanism_synthesis": "research/representation/coset_recoupling_mechanism_synthesis.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-09-11T10:21:08.153693+00:00",
     "experiment_id": "EXP-COSET-RECOUPLING-MECHANISM-SYNTHESIS",
     "falsifiers_triggered": [
       "QFT-only weak-label decoding is a known no-go route.",

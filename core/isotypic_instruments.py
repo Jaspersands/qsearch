@@ -105,6 +105,113 @@ def _sqrt_ratio_dyadic_exponent(numerator: int, denominator: int) -> int | None:
     return min(0, (exponent + 1) // 2)
 
 
+def corrected_walsh_output_information_contract(degree: int, copy_count: int, *,
+        one_uniform_subset_query: bool, real_central_reflection: bool,
+        phase_rule_fixed_before_source_labels: bool,
+        matching_source_phase_correction: bool, source_labels_discarded_after_correction: bool,
+        physical_inputs_discarded: bool) -> dict:
+    """Full corrected output, not all retained-source decisions; review pending.
+
+    The binomial-mixture comparison uses central amplitude overlap. Its
+    off-coset remainder is small at large k, not throughout the copy window.
+    """
+    if type(degree) is not int or degree < 16 or degree % 2 or type(copy_count) is not int or copy_count < 1:
+        raise ValueError("even S_n degree at least 16 and positive integer copy count required")
+    flags = (one_uniform_subset_query, real_central_reflection, phase_rule_fixed_before_source_labels, matching_source_phase_correction,
+             source_labels_discarded_after_correction, physical_inputs_discarded)
+    if any(type(flag) is not bool for flag in flags):
+        raise ValueError("all corrected-output assumptions must be explicit booleans")
+    applicable = all(flags)
+    order = math.factorial(degree)
+    class_size = math.prod(range(1, degree, 2))
+    root = math.isqrt(degree)
+    exponents = [
+        _sqrt_ratio_dyadic_exponent(9 * copy_count**2, 4 * class_size),
+        min(0, (order - 1).bit_length() - copy_count),
+        _sqrt_ratio_dyadic_exponent(16 * order * (root + 2)**(2 * copy_count), (2 * root)**(2 * copy_count)),
+    ]
+    mixture_exponent = min(0, max(exponents) + 2)
+    raw_exponent = (0 if copy_count >= (4 * class_size).bit_length() else
+                    _sqrt_ratio_dyadic_exponent((1 << copy_count) - 1, 4 * class_size))
+    exponent = min(mixture_exponent, raw_exponent) if applicable else None
+    return {"degree": degree, "copy_count": copy_count, "applicable": applicable,
+        "all_source_labels_retained_after_correction": not source_labels_discarded_after_correction,
+        "phase_rule_fixed_before_source_labels": phase_rule_fixed_before_source_labels,
+        "covers_entire_corrected_bit_string": applicable, "covers_arbitrary_corrected_weight_classifier": applicable,
+        "covers_source_selected_parity": False, "covers_arbitrary_retained_source_readout": False,
+        "minimum_nonidentity_class_size_used": degree,
+        "off_coset_exception_radius_upper_bound": str(Fraction(root + 2, 2 * root)),
+        "component_upper_bound_powers_of_two": dict(zip(("mixture_overlap", "bulk_remainder", "exceptional_remainder"), exponents)),
+        "mixture_comparison_upper_bound_power_of_two": mixture_exponent if applicable else None,
+        "raw_copy_upper_bound_power_of_two": raw_exponent if applicable else None,
+        "trace_distance_upper_bound_power_of_two": exponent,
+        "bound_is_vacuous": exponent == 0 if applicable else None,
+        "all_polynomial_copy_counts_ruled_out": False,
+        "copy_count_means_participating_mask_positions": True,
+        "is_lower_bound_for_all_algorithms_with_larger_copy_budgets": False,
+        "formula": "T <= min(1, raw_copy_bound, 3k/(2 sqrt(M)) + |G|*2^-k + 4 sqrt(|G|)*(1/2+1/sqrt(n))^k)",
+        "scope": "One uniform full-mask query with a common real central reflection chosen BEFORE source labels; correct each output bit by that source irrep's phase, then discard source labels and physical inputs. The corrected output is exchangeable, so its full-string distance equals its Hamming-weight distance. Large-copy and small-raw-copy bounds need not meet in the intermediate window.",
+        "proof_status": "derived-corrected-output-mixture-bound-review-pending",
+        "novelty_established": False, "positive_mixture_is_efficient_classical_sampler": False,
+        "is_classical_dequantization": False}
+
+
+def coarse_source_walsh_information_contract(degree: int, copy_count: int, category_count: int | None, *,
+        one_uniform_full_mask_query: bool, common_central_unitary: bool,
+        phase_and_common_partition_fixed_before_sources: bool,
+        walsh_readout_up_to_category_known_bit_flips: bool,
+        only_categories_and_walsh_bits_retained: bool, physical_inputs_discarded: bool) -> dict:
+    """Full paired transcript, even all irreps and complex phases; review pending.
+
+    None retains all irreps and uses p(n) <= 2**(n-1), not an irrep enumeration.
+    Column orthogonality removes category count from the off-coset radius.
+    This is an assumption contract, not a verifier for an arbitrary circuit.
+    """
+    if (type(degree) is not int or degree < 8 or degree % 2 or type(copy_count) is not int or copy_count < 1
+            or (category_count is not None and (type(category_count) is not int or category_count < 1))):
+        raise ValueError("even S_n degree >=8, positive integer copies, and positive category count or None required")
+    flags = (one_uniform_full_mask_query, common_central_unitary, phase_and_common_partition_fixed_before_sources,
+             walsh_readout_up_to_category_known_bit_flips, only_categories_and_walsh_bits_retained, physical_inputs_discarded)
+    if any(type(flag) is not bool for flag in flags):
+        raise ValueError("explicit boolean coarse-source access assumptions required")
+    applicable = all(flags)
+    order, class_size = math.factorial(degree), math.prod(range(1, degree, 2))
+    category_bound = (1 << (degree - 1)) if category_count is None else category_count
+    minimum_class_size = degree * (degree - 1) // 2
+    root_l = math.isqrt(minimum_class_size)
+    radius = min(Fraction(1), Fraction(root_l + 6, 2 * root_l))
+    mixture_exponent = _sqrt_ratio_dyadic_exponent(4 * copy_count**2 * category_bound, class_size)
+    remainder_exponent = _sqrt_ratio_dyadic_exponent(order**2 * radius.numerator**(2 * copy_count),
+                                                     radius.denominator**(2 * copy_count))
+    combined = min(0, max(mixture_exponent, remainder_exponent) + 1)
+    raw = (0 if copy_count >= (4 * class_size).bit_length() else
+           _sqrt_ratio_dyadic_exponent((1 << copy_count) - 1, 4 * class_size))
+    bound = min(raw, combined) if applicable else None
+    return {"degree": degree, "copy_count": copy_count, "retained_category_count": category_count,
+        "category_count_upper_bound": str(category_bound),
+        "all_irrep_labels_retained": category_count is None,
+        "all_irrep_count_bound": "p(n) <= 2^(n-1)" if category_count is None else None,
+        "minimum_nonidentity_class_size_used": minimum_class_size, "applicable": applicable,
+        "off_coset_radius_upper_bound": str(radius),
+        "off_coset_radius_independent_of_category_count": True,
+        "mixture_upper_bound_power_of_two": mixture_exponent if applicable else None,
+        "remainder_upper_bound_power_of_two": remainder_exponent if applicable else None,
+        "raw_copy_upper_bound_power_of_two": raw if applicable else None,
+        "trace_distance_upper_bound_power_of_two": bound, "bound_is_vacuous": bound == 0 if applicable else None,
+        "retains_all_category_and_walsh_bit_pairs": applicable,
+        "covers_category_selected_parity_and_count_decisions": applicable,
+        "covers_arbitrary_complex_central_phases": applicable,
+        "covers_arbitrary_classical_full_source_walsh_decisions": applicable and category_count is None,
+        "covers_unrecorded_irrep_information": False, "covers_input_adaptive_partitions": False,
+        "covers_multiple_queries_or_final_coherent_povm": False,
+        "all_copy_counts_obstructed": False, "copy_count_is_available_resource_budget": False,
+        "category_count_is_computational_runtime": False, "positive_mixture_is_efficient_classical_sampler": False,
+        "formula": "T <= min(1, raw_copy_bound, 2k*sqrt(r/M) + |G|*min(1,1/2+3/sqrt(L))^k), L=n(n-1)/2",
+        "scope": "One uniform full-mask query with a common central UNITARY (complex phases allowed) and common irrep partition fixed BEFORE sources. Keep every paired category label and raw Walsh bit, with optional category-known classical bit flips, and discard physical inputs. All irreps are covered using r<=2^(n-1); phase need not be constant within a raw-readout category. The intermediate participating-copy window remains open. No claim about arbitrary coherent final measurements, input-adaptive phases, or algorithms that ignore extra available copies.",
+        "proof_status": "derived-full-source-walsh-bound-review-pending",
+        "novelty_established": False, "is_classical_dequantization": False}
+
+
 def source_conditioned_palette_information_contract(
     degree: int, copy_count: int, subsets: Sequence[Sequence[int]], *,
     palette_fixed_before_source_labels: bool, operations_and_readout_in_cell_algebra: bool,

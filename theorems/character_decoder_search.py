@@ -639,4 +639,6 @@ def write_character_decoder_search_report(
     )
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(payload, indent=2, sort_keys=True))
+    if write_registry:
+        upsert_scaling_run(payload)
     return payload

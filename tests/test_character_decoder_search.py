@@ -2,6 +2,7 @@ import os
 import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 from character_decoder_search import (
     build_character_decoder_search_report,
@@ -17,6 +18,17 @@ from research_registry import initialize_seed_registry, load_scaling_runs, valid
 
 
 class CharacterDecoderSearchTests(unittest.TestCase):
+    def test_registry_opt_out_does_not_write_a_scaling_record(self):
+        payload = {"id": "CHARACTER-DECODER-SEARCH-LATEST"}
+        with tempfile.TemporaryDirectory() as tmp:
+            with patch("character_decoder_search.build_character_decoder_search_report", return_value=payload), patch("character_decoder_search.upsert_scaling_run") as upsert:
+                path = Path(tmp) / "report.json"
+                self.assertEqual(write_character_decoder_search_report(path, write_registry=False), payload)
+                self.assertTrue(path.exists())
+                upsert.assert_not_called()
+                write_character_decoder_search_report(path, write_registry=True)
+                upsert.assert_called_once_with(payload)
+
     def test_pairwise_difference_probe_is_shift_invariant_for_characters(self):
         probe = pairwise_difference_invariance_probe("legendre_symbol", n_bits=6, shift=7)
 

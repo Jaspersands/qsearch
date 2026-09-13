@@ -1,7 +1,7 @@
 {
-  "created_at": "2026-09-11T09:57:11.376316+00:00",
+  "created_at": "2026-09-12T08:01:39.350563+00:00",
   "history_artifact": "research/experiment_run_history.json",
-  "history_count": 549,
+  "history_count": 553,
   "trend_count": 400,
   "trends": [
     {
@@ -18868,7 +18868,7 @@
       ]
     },
     {
-      "blocking_run_count": 13,
+      "blocking_run_count": 16,
       "experiment_id": "EXP-COSET-BINARY-CARRIER-INSTRUMENTS",
       "falsifier_count_sequence": [
         4,
@@ -18883,12 +18883,15 @@
         11,
         12,
         14,
-        15
+        15,
+        16,
+        16,
+        16
       ],
       "interpretation": "Repeated runs continue to trigger falsifiers; this is proof debt, not progress.",
       "latest_result_id": "RESULT-EXP-COSET-BINARY-CARRIER-INSTRUMENTS",
       "latest_status": "binary-instrument-calibration-fixed-copy-route-obstructed",
-      "latest_summary": "Source-selected parity now has an exact character-moment evaluator beyond S4. At S6 the corrected negative-character selection loses to even one pair for every k>=2, certified by an exact prefix and a decreasing moment tail. This is a fixed-degree negative result, not a growing-degree theorem or classical replacement. Earlier fixed-parity bounds remain scoped; source-aware collective thresholds are unresolved.",
+      "latest_summary": "The full source-phase-corrected Walsh output now has an exact Hamming-weight law and a review-pending large-copy bound via positive binomial mixtures and central-amplitude overlap. At S6 its ideal weight table and declared thresholds lose to pair-event counts in the tested sweep. The bound covers every corrected-bit classifier after discarding source labels, not further source-based processing; an intermediate copy window remains unresolved.",
       "numeric_metric_trends": {
         "adaptive_catalogue_source_blocks_checked": {
           "delta": 0.0,
@@ -18896,7 +18899,7 @@
           "latest": 152.0,
           "max": 152.0,
           "min": 152.0,
-          "observations": 7
+          "observations": 10
         },
         "adaptive_catalogue_transcript_branches_checked": {
           "delta": 0.0,
@@ -18904,7 +18907,7 @@
           "latest": 3368.0,
           "max": 3368.0,
           "min": 3368.0,
-          "observations": 7
+          "observations": 10
         },
         "clean_gpe_cleanup_controls_passed": {
           "delta": 0.0,
@@ -18912,7 +18915,7 @@
           "latest": 2.0,
           "max": 2.0,
           "min": 2.0,
-          "observations": 11
+          "observations": 14
         },
         "coherent_measurement_uniform_primitive_reductions": {
           "delta": 0.0,
@@ -18920,7 +18923,7 @@
           "latest": 1.0,
           "max": 1.0,
           "min": 1.0,
-          "observations": 6
+          "observations": 9
         },
         "coherent_subset_phase_controls_passed": {
           "delta": 0.0,
@@ -18928,7 +18931,7 @@
           "latest": 7.0,
           "max": 7.0,
           "min": 7.0,
-          "observations": 6
+          "observations": 9
         },
         "coherent_walsh_fixed_group_scaling_controls": {
           "delta": 0.0,
@@ -18936,7 +18939,31 @@
           "latest": 12.0,
           "max": 12.0,
           "min": 12.0,
-          "observations": 5
+          "observations": 8
+        },
+        "corrected_weight_copy_controls": {
+          "delta": 0.0,
+          "first": 24.0,
+          "latest": 24.0,
+          "max": 24.0,
+          "min": 24.0,
+          "observations": 3
+        },
+        "corrected_weight_exact_mixture_laws_checked": {
+          "delta": 0.0,
+          "first": 48.0,
+          "latest": 48.0,
+          "max": 48.0,
+          "min": 48.0,
+          "observations": 3
+        },
+        "corrected_weight_matrix_laws_checked": {
+          "delta": 0.0,
+          "first": 24.0,
+          "latest": 24.0,
+          "max": 24.0,
+          "min": 24.0,
+          "observations": 3
         },
         "declared_terminal_rules_evaluated": {
           "delta": 0.0,
@@ -18944,7 +18971,7 @@
           "latest": 72.0,
           "max": 72.0,
           "min": 72.0,
-          "observations": 2
+          "observations": 5
         },
         "explicit_one_pair_classifiers_checked": {
           "delta": 0.0,
@@ -18952,7 +18979,7 @@
           "latest": 4.0,
           "max": 4.0,
           "min": 4.0,
-          "observations": 13
+          "observations": 16
         },
         "finite_full_source_controls_passed": {
           "delta": 0.0,
@@ -18960,7 +18987,7 @@
           "latest": 2.0,
           "max": 2.0,
           "min": 2.0,
-          "observations": 13
+          "observations": 16
         },
         "growing_copy_measurement_compilers": {
           "delta": 0.0,
@@ -18968,7 +18995,7 @@
           "latest": 0.0,
           "max": 0.0,
           "min": 0.0,
-          "observations": 13
+          "observations": 16
         },
         "incomplete_support_povm_extensions_checked": {
           "delta": 0.0,
@@ -18976,7 +19003,7 @@
           "latest": 166.0,
           "max": 166.0,
           "min": 166.0,
-          "observations": 8
+          "observations": 11
         },
         "polynomial_label_arithmetic_controls": {
           "delta": 0.0,
@@ -18984,7 +19011,7 @@
           "latest": 4.0,
           "max": 4.0,
           "min": 4.0,
-          "observations": 10
+          "observations": 13
         },
         "random_hadamard_branches_checked": {
           "delta": 0.0,
@@ -18992,7 +19019,7 @@
           "latest": 39672.0,
           "max": 39672.0,
           "min": 39672.0,
-          "observations": 2
+          "observations": 5
         },
         "regular_cell_compression_controls_passed": {
           "delta": 0.0,
@@ -19000,7 +19027,7 @@
           "latest": 3.0,
           "max": 3.0,
           "min": 3.0,
-          "observations": 9
+          "observations": 12
         },
         "schedules_evaluated": {
           "delta": 0.0,
@@ -19008,7 +19035,7 @@
           "latest": 24.0,
           "max": 24.0,
           "min": 24.0,
-          "observations": 13
+          "observations": 16
         },
         "source_blocks_evaluated": {
           "delta": 0.0,
@@ -19016,7 +19043,7 @@
           "latest": 152.0,
           "max": 152.0,
           "min": 152.0,
-          "observations": 13
+          "observations": 16
         },
         "source_blocks_with_clean_gpe_contract": {
           "delta": 0.0,
@@ -19024,7 +19051,7 @@
           "latest": 152.0,
           "max": 152.0,
           "min": 152.0,
-          "observations": 11
+          "observations": 14
         },
         "source_blocks_with_exact_latent_irrep_model": {
           "delta": 0.0,
@@ -19032,7 +19059,7 @@
           "latest": 152.0,
           "max": 152.0,
           "min": 152.0,
-          "observations": 13
+          "observations": 16
         },
         "source_conditioned_lifts_checked": {
           "delta": 0.0,
@@ -19040,7 +19067,7 @@
           "latest": 701.0,
           "max": 701.0,
           "min": 701.0,
-          "observations": 8
+          "observations": 11
         },
         "source_conditioned_parity_laws_checked": {
           "delta": 0.0,
@@ -19048,7 +19075,7 @@
           "latest": 4959.0,
           "max": 4959.0,
           "min": 4959.0,
-          "observations": 2
+          "observations": 5
         },
         "source_conditioned_selector_kernels_checked": {
           "delta": 0.0,
@@ -19056,7 +19083,7 @@
           "latest": 2153.0,
           "max": 2153.0,
           "min": 2153.0,
-          "observations": 6
+          "observations": 9
         },
         "source_selected_parity_copy_controls": {
           "delta": 0.0,
@@ -19064,7 +19091,7 @@
           "latest": 96.0,
           "max": 96.0,
           "min": 96.0,
-          "observations": 1
+          "observations": 4
         },
         "source_selected_parity_exact_hidden_spectra_checked": {
           "delta": 0.0,
@@ -19072,7 +19099,7 @@
           "latest": 21.0,
           "max": 21.0,
           "min": 21.0,
-          "observations": 1
+          "observations": 4
         },
         "source_selected_parity_independent_laws_checked": {
           "delta": 0.0,
@@ -19080,11 +19107,14 @@
           "latest": 96.0,
           "max": 96.0,
           "min": 96.0,
-          "observations": 1
+          "observations": 4
         }
       },
-      "run_count": 13,
+      "run_count": 16,
       "status_sequence": [
+        "binary-instrument-calibration-fixed-copy-route-obstructed",
+        "binary-instrument-calibration-fixed-copy-route-obstructed",
+        "binary-instrument-calibration-fixed-copy-route-obstructed",
         "binary-instrument-calibration-fixed-copy-route-obstructed",
         "binary-instrument-calibration-fixed-copy-route-obstructed",
         "binary-instrument-calibration-fixed-copy-route-obstructed",
@@ -29199,10 +29229,11 @@
       ]
     },
     {
-      "blocking_run_count": 12,
+      "blocking_run_count": 13,
       "experiment_id": "EXP-COSET-RECOUPLING-MECHANISM-SYNTHESIS",
       "falsifier_count_sequence": [
         5,
+        6,
         6,
         6,
         6,
@@ -29226,7 +29257,7 @@
           "latest": 0.0,
           "max": 0.0,
           "min": 0.0,
-          "observations": 12
+          "observations": 13
         },
         "binary_detection_proposal_count": {
           "delta": 0.0,
@@ -29234,7 +29265,7 @@
           "latest": 1.0,
           "max": 1.0,
           "min": 1.0,
-          "observations": 7
+          "observations": 8
         },
         "highest_survivor_priority_score": {
           "delta": 10.0,
@@ -29242,7 +29273,7 @@
           "latest": 110.0,
           "max": 110.0,
           "min": 100.0,
-          "observations": 12
+          "observations": 13
         },
         "holevo_copy_budget_rule_count": {
           "delta": 0.0,
@@ -29258,7 +29289,7 @@
           "latest": 6.0,
           "max": 6.0,
           "min": 4.0,
-          "observations": 12
+          "observations": 13
         },
         "mechanism_count": {
           "delta": 4.0,
@@ -29266,7 +29297,7 @@
           "latest": 10.0,
           "max": 10.0,
           "min": 6.0,
-          "observations": 12
+          "observations": 13
         },
         "minimum_missing_capability_count": {
           "delta": 0.0,
@@ -29274,7 +29305,7 @@
           "latest": 2.0,
           "max": 2.0,
           "min": 2.0,
-          "observations": 12
+          "observations": 13
         },
         "primitive_count": {
           "delta": 10.0,
@@ -29282,7 +29313,7 @@
           "latest": 25.0,
           "max": 25.0,
           "min": 15.0,
-          "observations": 12
+          "observations": 13
         },
         "proof_gate_eligible_count": {
           "delta": 0.0,
@@ -29290,7 +29321,7 @@
           "latest": 0.0,
           "max": 0.0,
           "min": 0.0,
-          "observations": 12
+          "observations": 13
         },
         "proposal_only_count": {
           "delta": 2.0,
@@ -29298,7 +29329,7 @@
           "latest": 4.0,
           "max": 4.0,
           "min": 2.0,
-          "observations": 12
+          "observations": 13
         },
         "task_specific_copy_budget_rule_count": {
           "delta": 0.0,
@@ -29306,7 +29337,7 @@
           "latest": 2.0,
           "max": 2.0,
           "min": 2.0,
-          "observations": 7
+          "observations": 8
         },
         "typed_interface_valid_count": {
           "delta": 4.0,
@@ -29314,7 +29345,7 @@
           "latest": 10.0,
           "max": 10.0,
           "min": 6.0,
-          "observations": 12
+          "observations": 13
         },
         "undercharged_mechanism_promoted_count": {
           "delta": 0.0,
@@ -29322,11 +29353,12 @@
           "latest": 0.0,
           "max": 0.0,
           "min": 0.0,
-          "observations": 11
+          "observations": 12
         }
       },
-      "run_count": 12,
+      "run_count": 13,
       "status_sequence": [
+        "typed-mutations-ranked-no-proof-gate-eligible-mechanism",
         "typed-mutations-ranked-no-proof-gate-eligible-mechanism",
         "typed-mutations-ranked-no-proof-gate-eligible-mechanism",
         "typed-mutations-ranked-no-proof-gate-eligible-mechanism",

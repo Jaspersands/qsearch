@@ -160,6 +160,9 @@ def test_clean_registry_runner_and_negative_baseline_artifacts(tmp_path, monkeyp
     assert "COHERENT-PARITY-AND-BOUNDED-FOURIER-NORM-READOUTS" in negatives
     assert "POLYNOMIAL-READOUT-TIME-NOT-SMALL-FOURIER-NORM" in negatives
     assert "S6-SOURCE-SELECTED-PARITY-ALL-COPY-FAILURE" in negatives
+    assert "CORRECTED-WALSH-OUTPUT-LARGE-COPY-MIXTURE-BOUND" in negatives
+    assert "FULL-SOURCE-WALSH-LARGE-COPY-MIXTURE-BOUND" in negatives
+    assert "S8-SIGN-CATEGORY-WALSH-INTERMEDIATE-PAIR-FAILURE" in negatives
     from dequantization_checks import findings_from_negative_results
     from proof_tracker import _binary_carrier_instrument_lemmas
     findings = findings_from_negative_results([{"id": "CODE-COSET-COLLECTIVE"}], load_negative_results())
@@ -194,9 +197,20 @@ def test_clean_registry_runner_and_negative_baseline_artifacts(tmp_path, monkeyp
     assert lemmas[1].status == "blocked-terminal-rules-supplied-scalable-advantage-missing"
     assert lemmas[10].status == "derived-coherent-parity-fourier-norm-bound-review-pending"
     assert lemmas[11].status == "exact-finite-degree-all-copy-certificate-review-pending"
+    assert lemmas[12].status == "derived-corrected-output-mixture-bound-review-pending"
+    assert lemmas[13].status == "derived-full-source-walsh-bound-review-pending"
+    assert lemmas[14].status == "exact-s8-finite-window-failure-review-pending"
+    intermediate = next(row for row in findings if row.id.endswith("S8-SIGN-CATEGORY-INTERMEDIATE-FAILURE"))
+    assert "does NOT test every retained irrep label" in intermediate.required_action
+    retained = next(row for row in findings if row.id.endswith("FULL-SOURCE-WALSH-MIXTURE-BOUND"))
+    assert "intermediate copy window is NOT closed" in retained.required_action
+    assert "Complex phases are allowed" in retained.required_action
     selected = next(row for row in findings if row.id.endswith("SOURCE-SELECTED-PARITY-FINITE-BASELINE"))
     assert "fixed-degree all-copy certificate" in selected.required_action
     assert "not classical dequantization" in selected.required_action
+    corrected = next(row for row in findings if row.id.endswith("CORRECTED-WALSH-OUTPUT-MIXTURE-BOUND"))
+    assert "do NOT close the intermediate window" in corrected.required_action
+    assert "requires discarding source labels" in corrected.required_action
     unlabeled = next(row for row in findings if row.id.endswith("UNLABELED-COHERENT-SELECTOR-BOUND"))
     assert "excludes retained source labels" in unlabeled.required_action
     assert validate_registry()["valid"]
@@ -210,6 +224,7 @@ def test_missing_cleanup_artifact_does_not_resolve_the_instrument_obligation(tmp
     assert _binary_carrier_instrument_lemmas("CODE-COSET-COLLECTIVE")[6].status.startswith("blocked-")
     assert _binary_carrier_instrument_lemmas("CODE-COSET-COLLECTIVE")[7].status.startswith("blocked-")
     assert _binary_carrier_instrument_lemmas("CODE-COSET-COLLECTIVE")[11].status.startswith("blocked-")
+    assert _binary_carrier_instrument_lemmas("CODE-COSET-COLLECTIVE")[12].status.startswith("blocked-")
     assert _binary_carrier_instrument_lemmas("CODE-COSET-COLLECTIVE")[8].status.startswith("blocked-")
     assert _binary_carrier_instrument_lemmas("CODE-COSET-COLLECTIVE")[9].status.startswith("blocked-")
     assert _binary_carrier_instrument_lemmas("CODE-COSET-COLLECTIVE")[10].status.startswith("blocked-")
@@ -443,6 +458,107 @@ def test_averaging_the_hidden_member_before_the_product_changes_the_experiment()
                                   order**2 * (2 * order * hidden_count)**3)
     actual = _parity_spectrum_mean(source_selected_parity_moment_certificate(4, 2), "alternative", 3)
     assert independent_h_mean != actual
+
+
+def test_corrected_weight_formula_matches_matrix_histograms_and_exact_coset_mixtures():
+    import json
+    from coset_binary_carrier_instruments import audit_corrected_weight_contraction
+    audit = audit_corrected_weight_contraction()
+    assert audit["verified"]
+    assert audit["independent_matrix_histogram_laws_checked"] == 24
+    assert audit["maximum_histogram_residual"] < 1e-12
+    assert audit["exact_diagonal_mixture_laws_checked"] == 48
+    assert audit["exact_all_hidden_member_kernel_covariances_checked"] == 42
+    assert not audit["arbitrary_complex_phases_covered"]
+    assert json.loads(json.dumps(audit))["verified"] is True
+
+
+def test_s6_corrected_weight_optimal_table_and_declared_thresholds_lose_to_pairs():
+    from coset_binary_carrier_instruments import corrected_weight_controls
+    control = corrected_weight_controls(6, 3, (2, 4, 8, 16, 32, 64, 128))
+    for row in control["copy_sweep"]:
+        assert not row["full_weight_bayes_beats_pair_event_count"]
+        assert not row["bayes_table_is_compiled_classifier"]
+        assert not row["exploratory_threshold_is_declared_algorithm"]
+        assert all(not rule["absolute_gap_beats_pair_event_count"] for rule in row["declared_rules"])
+    last = control["copy_sweep"][-1]
+    assert last["full_corrected_weight_total_variation"] == pytest.approx(0.26548916173826664)
+    assert last["declared_rules"][1]["signed_acceptance_gap"] == pytest.approx(0.007046078171967876)
+    assert last["mixture_distances_from_full_laws"][0] < 6e-38
+    assert control["does_not_retain_joint_source_and_corrected_bits"]
+
+
+@pytest.mark.parametrize("rule", ("negative_character_reflection", "zero_character_reflection"))
+def test_positive_binomial_mixture_is_an_approximation_not_a_free_exact_sampler(rule):
+    from coset_binary_carrier_instruments import corrected_weight_laws, corrected_weight_character_certificate
+    certificate = corrected_weight_character_certificate(6, 3, rule)
+    full, mixtures, errors = corrected_weight_laws(6, 3, 1, rule)
+    assert full[0] == full[1] == (Fraction(1), Fraction())
+    assert full != mixtures
+    for p, q, error in zip(full, mixtures, errors):
+        assert sum(p) == sum(q) == 1 and min(p) >= 0 and min(q) >= 0
+        assert 0 < sum(abs(x - y) for x, y in zip(p, q)) / 2 <= error
+    assert certificate["class_overlap_bound_verified"]
+    assert Fraction(certificate["exact_amplitude_overlap"]) <= Fraction(1, 15)
+    assert not certificate["positive_mixture_is_full_law"]
+    assert not certificate["classical_quantum_frontend_replacement"]
+
+
+def test_every_real_central_s3_s4_reflection_satisfies_the_mixture_identities():
+    import itertools
+    from coset_binary_carrier_instruments import _source_parity_group_data, _corrected_weight_kernel, _integer_pair_spectrum, _exact_binomial_spectrum_law
+    checked = 0
+    for n, t in ((3, 1), (4, 2)):
+        data = _source_parity_group_data(n, t)
+        order = len(data[0])
+        for phases in itertools.product((-1, 1), repeat=len(data[1])):
+            coefficients = (data[3] * np.array(phases, dtype=np.int64)) @ data[2]
+            assert int(coefficients @ coefficients) == order**2
+            shifted = coefficients[data[8][0]]
+            overlap = Fraction(sum(int(a)**2 * int(b)**2 for a, b in zip(coefficients, shifted)), order**4)
+            assert overlap <= Fraction(1, len(data[8]))
+            assert int(coefficients @ shifted) == 0
+            for h in (None, 0):
+                alpha, beta, diagonal, amplitudes = _corrected_weight_kernel(data, coefficients, h)
+                radius = (np.abs(alpha) + np.abs(beta))[~diagonal]
+                assert np.all(2 * radius**2 <= (4 * order)**2)
+                spectrum = _integer_pair_spectrum(alpha, beta, np.outer(coefficients, coefficients))
+                law = _exact_binomial_spectrum_law(spectrum, 3, 4 * order, order**2)
+                assert min(law) >= 0 and sum(law) == 1
+                assert int(amplitudes @ amplitudes) == (1 if h is None else 2) * order**2
+            checked += 1
+    assert checked == 40
+
+
+def test_s6_noncentral_unitary_refutes_a_pointwise_class_overlap_bound_without_centrality():
+    from coset_binary_carrier_instruments import _source_parity_group_data
+    from coset_hidden_involution_binary_decision_reduction import compose_permutations
+    data = _source_parity_group_data(6, 3)
+    group, h = data[0], data[0][data[8][0][0]]
+    # A real unitary supported on a Klein four subgroup, not a central S6 phase.
+    e = tuple(range(6))
+    g = (1, 0, 2, 3, 4, 5)
+    assert compose_permutations(g, h) == compose_permutations(h, g)
+    coefficients = {e: Fraction(1, 2), g: Fraction(1, 2), h: Fraction(1, 2), compose_permutations(g, h): Fraction(-1, 2)}
+    convolution = {}
+    for u, a in coefficients.items():
+        for v, b in coefficients.items():
+            product = compose_permutations(u, v)
+            convolution[product] = convolution.get(product, Fraction()) + a * b
+    assert convolution[e] == 1 and all(value == 0 for key, value in convolution.items() if key != e)
+    overlap = sum(a*a * coefficients.get(compose_permutations(h, u), Fraction())**2 for u, a in coefficients.items())
+    assert overlap == Fraction(1, 4) > Fraction(1, len(data[8]))
+    # The averaged overlap can still obey a class-mass bound; this refutes only its pointwise form.
+
+
+@pytest.mark.parametrize("n,t,k,rule", [(10, 5, 2, "negative_character_reflection"),
+    (8, 4, 2, "zero_character_reflection"),
+    (6, 3, True, "negative_character_reflection"), (6, 3, 0, "negative_character_reflection"),
+    (6, 3, 257, "negative_character_reflection"), (6, 3, 2, "character_ratio_rotation")])
+def test_corrected_weight_law_rejects_undeclared_controls(n, t, k, rule):
+    from coset_binary_carrier_instruments import corrected_weight_laws
+    with pytest.raises(ValueError):
+        corrected_weight_laws(n, t, k, rule)
 
 
 def test_pair_event_count_is_only_a_coarsening_of_the_full_pair_likelihood_baseline():

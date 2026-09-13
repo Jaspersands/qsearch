@@ -1,8 +1,332 @@
 # Research Agent Handoff
 
-Last updated: 2026-09-11
+Last updated: 2026-09-13
 
-## Latest Pass: Source-Selected Parity and an All-Copy S6 Falsifier
+## Latest Pass: Exact Streamed S8 Intermediate-Window Probe
+
+Read `research/SOURCE_ORBIT_CONTRACTION.md`. The streamed C(h)-conjugation
+contraction is implemented in `theorems/coset_source_orbit_contraction.py`
+and integrated into the EXISTING binary CLI, report, experiment and proofs.
+It supports S4/S6/S8 with the negative-character reflection and phase-sign
+categories. At S8 it uses 182 first-endpoint orbits and 7338240 streamed
+weighted pairs, representing 1625702400 full pairs. There is NO D-by-D
+product-index allocation; rows have D=40320 indices. Permutation products
+use independently tested Lehmer ranks. The evaluator remains factorial in n.
+
+Every signed categorical spectrum, positive mixture, absolute remainder and
+source prior matches FULL S4/S6 enumeration EXACTLY. Independently formed
+scalar corrected-weight spectra and overlaps also match. The S8 scalar
+kernel is checked against category sums, and every law checks its source
+and weight marginals. Character row orthogonality, class sizes and independent
+two-quotient character predicates are checked. Signed int64 accumulations
+are bounded by D^3; later probability powers/overlaps use Python integers.
+
+Actual negative: at S8 k=7,8,10,12,14,16 the IDEAL paired sign-category/Walsh
+table loses to even coarse disjoint-pair counts. At 16: table T=.119520,
+source count only .115334, joint (m,w) .115518, pair count .150255. Raw
+coset-state T is at least 1-105/65536=.998398 by the known support-rank test,
+whose POVM is NOT implemented. Exact information-loss lower bounds are
+recorded. Scalar features of the same transcript cannot fix these controls.
+This does NOT test all source irrep labels, other phases, every copy count
+or growing-degree success. The general intermediate window remains open.
+
+Full pair-likelihood finite controls now include S8 through four copies;
+larger counts are explicitly null. At k=4 full pairs give .093224 versus
+.059287 for the ideal sign/bit table. No expensive stronger baseline is
+needed where the cheap pair count already wins. Both retain their quantum
+measurement front end; neither is classical HSP dequantization.
+
+New scoped negative: `S8-SIGN-CATEGORY-WALSH-INTERMEDIATE-PAIR-FAILURE`.
+New proof lemma index 14: `LEMMA-{candidate}-S8-SIGN-CATEGORY-INTERMEDIATE-FAILURE`,
+status `exact-s8-finite-window-failure-review-pending`. CLI help, README,
+mutation obligations, report metrics and registry artifacts are updated.
+
+Verification: 188 targeted tests passed in 90.47 seconds. A stale test that
+required rejecting S8 was changed to reject S10 and the unsupported S8
+zero-character reflection; S8 probability/marginal/weight tests are explicit.
+Python compilation, JS syntax and diff checks passed. Full-suite attempt:
+65 passed, then the SAME character-moment scaling-write failure at
+`tests/test_character_moment_obstruction.py:73` after 210.86 seconds. Not a
+green full suite. The character-decoder missing write was fixed in the
+preceding pass; do not name it as the current failure.
+
+Live binary, synthesis, dequantize, proofs, conjectures, mutate, progress,
+validate and proof-routes all completed. Registry: 8 candidates, 792
+experiments, 800 results, 908 negatives, 1302 dequantization findings (1298
+blocking), 1277 lemmas, zero validation issues. All eight conjectures remain
+blocked. The 13 curated proof-route contracts report zero unsupported and
+four unresolved claims; they do not independently verify the new mathematics.
+No candidate promotion. All required processes finished.
+
+NEXT HIGHEST-THINKING PASS: test a bound on the COMPLETE classical-source /
+QUANTUM-selector state, BEFORE Walsh. This could cover arbitrary final
+selector POVMs and input-independent fixed-weight mask filters at large k.
+The following is an UNVERIFIED derivation, NOT in the current claim gate:
+
+    K_jeta(u,v) = (1/2) [[q_jeta, p_jeta(u^-1)],
+                        [p_jeta(v), p_jeta(u^-1 v)]].
+    Omega_eta = sum_(u,v) conjugate(a_u)*a_v tensor_i K_(j_i,eta)(u,v),
+    with a classical direct sum over source tuples.
+
+On the coset diagonal u^-1 v in H_eta, K is
+(q_jeta I + p_jeta(g) X)/2. The same positive mixtures apply, now as quantum
+states; all comparison states commute in the common source/Walsh basis, so
+the existing mixture bound 2k sqrt(r/M) should transfer unchanged.
+
+For u,v BOTH outside H_eta, entrywise trace-norm triangle inequality gives
+sum_j ||K_j||_1 <= 1/2+3/sqrt(L), using the same column envelope. Always
+sum_j ||K_j(u,v)||_1<=1 by Gram-factor Hilbert-Schmidt Cauchy-Schwarz.
+BUT if one endpoint is in H_eta, the radius is NOT the old Walsh value 1/2:
+K_j is rank one with norm sqrt(q_j^2+p_j(v)^2)/sqrt(2), bounded in sum by
+1/sqrt(2)+sqrt(2)/sqrt(L). The absolute endpoint weight costs only O(sqrt(D)).
+A candidate total bound is therefore
+
+    T <= 2k sqrt(r/M)
+         + D min(1,1/2+3/sqrt(L))^k
+         + 4 sqrt(D) min(1,1/sqrt(2)+sqrt(2)/sqrt(L))^k.
+
+Check every constant and complex conjugation convention BEFORE registering
+it. It should still vanish for polynomial k>=(1+epsilon)log2(D), while
+leaving the intermediate window open. Source records must be CLASSICAL;
+coherently retaining physical source registers is outside this proposal.
+
+One exploratory direct local-SVD check WAS run at every S3/S4/S6 group pair,
+retaining all irreps, and all summed kernel trace norms were <=1. S6
+exceptional minima/maxima were .709390/.729549 (null), .711541/.736699 (alt),
+so reusing the Walsh endpoint radius would demonstrably be false. S4 alt
+can attain 1; clipping the finite bound is necessary. These local tests do
+not establish the full quantum-state theorem.
+
+Verification route: build unnormalized source-tuple selector blocks from
+the local K tensors, retaining one shared h; compare against the existing
+`_conditional_selector_kernel` and the physically computed
+`selector_and_source_label_trace_distance` in `evaluate_coherent_subset_phase_query`.
+For tensor assembly use little-endian mask positions: prepend each new
+2-by-2 factor (einsum p ab,p cd -> p c a d b), then reshape. Source-label
+multisets may be used only with exact multiplicities and selector-qubit
+permutation covariance. Check positive diagonal quantum mixtures, signed
+remainders, Walsh dephasing and physical full-source distances, including
+complex phases and zero source mass. No fitted optimal POVM is a compiler.
+
+Fixed-weight masks must be challenged BEFORE building another demo: a
+projector onto selector weight m commutes with the controlled query. Its
+success probability on the uniform input is p=C(k,m)/2^k, independent of
+the hypothesis and each natural source tuple. Thus the normalized filtered
+state has distance <=T_uniform/p if the QUANTUM bound is proved. Central
+weights have p>=1/(k+1), only a polynomial factor. This is an information
+comparison, not a requirement to prepare Dicke states by physical
+postselection. More generally a fixed pure mask alpha is a diagonal filter
+of the uniform state with p=1/(2^k max_s |alpha_s|^2). Do not apply the OLD
+Walsh-only bound to these filters: projecting before Walsh is not classical
+postprocessing of the measured Walsh transcript.
+
+Checkpoint policy: combine the corrected-output, full-source and streamed
+S8 passes into one Git checkpoint. Verify HEAD against origin before calling
+it saved; use Git for the authoritative hash. Do not commit once per report.
+Keep the overall goal active.
+
+## Previous Pass: Full Source/Walsh Transcript and Complex Central Phases
+
+Read `research/SOURCE_CATEGORY_WALSH.md`. The unfinished source-category
+subsystem is now integrated, tested and live in the EXISTING binary
+workbench. Exact paired category/bit laws retain all natural source mass;
+joint negative-source count m and corrected weight w is a further coarsening,
+not a sufficient replacement for every paired histogram. Actual w=m, w<m,
+w>m rules are executable through `coherent_source_count_decision`.
+
+The stronger derived bound, review pending and not established as novel, is
+
+    T <= min(1, raw_copy_bound,
+             2k sqrt(r/M) + D min(1,1/2+3/sqrt(L))^k),
+    D=n!, M=(n-1)!!, L=n(n-1)/2, even n>=8.
+
+IMPORTANT: column orthogonality bounds sum_j |p_j(g)| by 1/sqrt(class(g)),
+independent of category count. The preliminary sqrt(r/L) remainder radius
+was unnecessarily weak and has been replaced. ALL irrep labels are covered
+using r=p(n)<=2^(n-1). At S1024 k=17528 this gives T<=2^-1663, and at S4096
+k=86488, T<=2^-8745, with exact outward integer dyadic rounding.
+
+This also covers COMPLEX central unitary phases. For RAW Walsh readout,
+phase need not be constant within a retained category. The common unitary
+and common irrep partition must be fixed before sources. One uniform FULL
+mask query includes the empty mask, all physical inputs are discarded, and
+only the complete paired source/Walsh transcript is retained. Arbitrary
+classical decisions on that transcript are covered. Matching category-known
+bit flips preserve distance. Source-adaptive phases, multiple queries,
+nonuniform masks and coherent final measurements are NOT covered. The
+intermediate participating-copy window remains OPEN. k is not an available
+copy-budget lower bound; an algorithm can ignore extra copies.
+
+Proof: the coset diagonal is a positive categorical product mixture weighted
+by |a_g|^2 under the null and |a_g+a_hg|^2/2 under the alternative. Central
+mixed overlap sum_g |a_g|^2 p_j(hg)^2 <= q_j/M, product-TV Lipschitz and
+unitary cross cancellation give mixture separation <=2k sum_j sqrt(q_j/M).
+The complete paired kernel has off-coset l1 radius <=min(1,1/2+3/sqrt(L));
+column orthogonality removes r from that radius. The signed remainder is
+charged by D*rho^k. Neither positive comparison mixture is an efficient
+classical sampler or the exact small-k output. The proof does not use the
+older conditioned-cell mixing lemma. Independent mathematical review and
+novelty review remain outstanding.
+
+Finite S6 paired-category distances at k=2,4,8 are .142396,.203076,.283812.
+These sometimes beat COARSE pair-event counts, so do not record an all-rule
+finite failure. The newly extended FULL disjoint-pair likelihood baseline
+gives .176528,.257217,.365879 and wins at all three points. Source-count-only
+distances .136944,.162830,.237168 explain much of the gain. Actual count
+rules have no established growing-degree advantage. The full pair law is
+now supported through S6 k<=8; missing larger-copy comparisons are null.
+The quantum pair front end is not replaced classically.
+
+Verification: 169 targeted research tests passed in 49.74 seconds; all 18
+new focused tests passed in 4.18 seconds. Audits include 36 independent
+matrix histogram laws, 40 exact coset-diagonal categorical mixtures, 72 raw
+histogram/mixture laws including complex phases, 750 all-irrep column
+envelopes and 1512 minimum-class-size checks. Maximum matrix discrepancy
+was 4.44e-16. Python syntax, JS syntax and diff checks passed.
+
+The repeatedly blocking character-decoder scaling-write omission is NOW
+FIXED: write_registry is honored, including an opt-out regression. All
+eight character-decoder tests passed in 3.70 seconds and its live default
+workflow completed 128 attempts, zero polynomial-style successes. A new
+full-suite attempt passed 65 tests, then failed after 216.35 seconds at
+`tests/test_character_moment_obstruction.py:73`, the analogous missing
+scaling-record write. Do not report a green full suite or keep naming the
+old character-decoder failure as current. Mechanical repairs remain lower
+priority than the unresolved mathematical window.
+
+The binary report, experiment metrics, one scoped negative
+`FULL-SOURCE-WALSH-LARGE-COPY-MIXTURE-BOUND`, proof lemma index 13
+`LEMMA-{candidate}-FULL-SOURCE-WALSH-MIXTURE-BOUND`, dequantization mapping,
+mechanism mutation obligations, CLI help and README are updated. All bound
+statuses remain derived/review-pending. No new candidate is promoted.
+
+Final live binary, synthesis, decoder, dequantization, proof, conjecture,
+mutation, progress, registry-validation and proof-route workflows completed.
+Registry validation has zero issues: 8 candidates, 792 experiments, 800
+results, 907 negatives, 1301 dequantization findings (1297 blocking), 1276
+lemmas and 14 scaling records. All eight conjectures remain blocked. The
+13 curated proof-route contracts have zero unsupported assertions and four
+unresolved claims; they do not independently certify the new theorem. The
+live decoder artifact exactly matches its scaling record. No required
+process remains running.
+
+NEXT: implement a STREAMED C(h)-conjugation orbit contraction to probe the
+intermediate window at S8, first matching exact S6 spectra. Feasibility
+was actually checked: orbit counts are 8,34,182 for S4,S6,S8; representative-u
+times all-v costs 192,24480,7338240 pairs versus full 576,518400,1625702400.
+Generate C(h) conjugation orbits by within-pair swaps and adjacent-pair
+interchanges, not enumeration of the centralizer. Simultaneous conjugation
+preserves all central coefficients and h. Weight each representative by
+its orbit size. Avoid constructing the full D-by-D product-index matrix at
+S8. Character coefficients depend only on cycle type; cache them by class.
+For the negative-character reflection, category projector numerators are
+(D*delta_e +/- A_g)/2. Stream a representative row of exact integer factors,
+group its categorical spectrum and accumulate signed orbit weights. Check
+exact equality of spectra and marginals against the existing S6 evaluator
+BEFORE using S8. This finite verifier is still exponential in degree.
+
+No commit per report. HEAD remains pushed checkpoint `190cbe9d`; both the
+preceding corrected-output pass and this pass are uncommitted for the next
+substantial batch. Keep the overall goal active.
+
+## Previous Pass: Full Corrected Output and a Large-Copy Mixture Bound
+
+Read `research/CORRECTED_WALSH_WEIGHT.md`. The source-corrected Hamming-weight
+generating function is now implemented and verified in the EXISTING binary
+workbench. It evaluates the complete exact weight law through S6, not only
+one parity or a fitted threshold. Source labels are used for the matching
+phase correction, then discarded. The full corrected bit law is exchangeable,
+so its total variation equals the Hamming-weight law's distance. This does
+NOT claim sufficiency for the joint law with the original source labels.
+
+Main derived result, review pending and not established as novel:
+
+    T <= min(1, raw_copy_bound,
+        3k/(2 sqrt(M)) + D*2^-k
+        +4 sqrt(D)(1/2+1/sqrt(n))^k),
+    D=n!, M=(n-1)!!, even n>=16.
+
+The phase must be a COMMON REAL CENTRAL REFLECTION fixed BEFORE observing
+source labels; its exact singleton phase determines the output-bit correction.
+One uniform full-mask query includes the empty mask. Discard all source
+records and physical inputs afterward. An explicit pre-source-choice flag
+was added during the scope audit: choosing an otherwise central reflection
+after seeing the source tuple would invalidate the factorized law.
+
+This argument does NOT invoke the earlier conditioned-cell mixing lemma.
+The coset-diagonal terms give positive binomial mixtures, with biases a_g
+under the null and a_g+a_(hg) under the alternative. Unitarity cancels
+sum_g a_g*a_(hg). Centrality and normalization give
+sum_g a_g^2*a_(hg)^2 <= 1/M. A binomial Lipschitz bound then gives mixture
+distance <=3k/(2 sqrt(M)). The signed off-coset remainder is charged, not
+dropped. A bulk/exceptional split gives the other two terms. At S1024,
+k=17528 the outward-rounded bound is 2^-2174 for ANY corrected-bit classifier,
+including majority or an ideal weight table, regardless of Fourier norm.
+
+It is not an all-copy or arbitrary-source-readout no-go. For fixed epsilon>0
+and polynomial k, k>=(1+epsilon)log2(D) is obstructed; small k is separately
+handled by the raw-copy bound. The intermediate window roughly log2(M) to
+log2(D) remains unresolved. The live S1024 bounds at k=4382 and 8764 are
+vacuous. Do not call an inverse-polynomial upper bound a polynomial-time
+algorithm obstruction without charging amplification.
+
+Finite result: at S6 the optimal corrected-weight table loses to the
+pair-event-count baseline at every tested k=2,4,8,16,32,64,128. At k=128 its
+distance is 0.265489, versus 0.846834 for pairs; declared majority's signed
+gap is 0.007046. Exploratory best thresholds are explicitly labeled post-hoc
+and are not compiled algorithms. The positive mixtures are NOT exact small-k
+laws or efficient classical samplers. Forty-eight exact diagonal-mixture
+laws, 42 exact all-hidden-member kernel covariance checks, and 24 independent
+matrix-derived histogram laws cover two reflections through S6. Tests also
+check all 40 real central S3/S4 phase assignments and a noncentral unitary
+counterexample to an improperly pointwise class-overlap claim.
+
+Verification: 183 targeted tests passed in 78.60 seconds; 13 focused tests
+passed in 3.20 seconds. The final pre-source assumption flag also passed
+its two scope/rounding tests; the final participating-copy-budget guard rerun
+passed both in 0.29 seconds. An earlier broad run caught a
+NumPy boolean in the JSON report; scalar conversion was fixed and serialization
+is now a regression. The full-suite attempt stopped at the SAME known
+character-decoder missing scaling-registry write after 58 passes in 201.95
+seconds. It is NOT a complete or green full-suite result. All core, theorem
+and test Python files compile; JS syntax and diff checks pass.
+An additional exhaustive character-class check covers all 1240 nonidentity
+cycle types at degrees 16,18,20 and agrees with the elementary L=n proof.
+
+Live workflows have 8 candidates, 792 experiments, 799 results, 906 negatives,
+1299 dequantization findings (1295 blocking), and 1275 proof-debt lemmas.
+All eight conjectures remain blocked; no new candidate is promoted. The 13
+curated proof-route contracts have zero unsupported assertions and four
+unresolved claims, not independent mathematical certification. Final binary,
+dequantization, proof, conjecture, mutation, progress, validation and proof-route
+refreshes are complete. The saved artifacts explicitly contain the pre-source
+phase-choice and participating-copy guards, the S1024 bound, the updated
+experiment metrics and the scoped negative. No required process remains live.
+
+Next highest-thinking experiment: retain the NUMBER of negative source labels
+m alongside corrected Hamming weight w. The local generating polynomial is
+F_plus(z)+x F_minus(z), with F_category(z) obtained by summing the existing
+source-weighted corrected-bit factors ONLY over that source category. The
+joint law is [x^m z^w] sum_(u,v) a_u*a_v [F_plus(z)+x F_minus(z)]^k.
+Keep the same h, all source mass and signed factors. Its source-count marginal
+must match the independent binomial negative-label law, and its w marginal
+must reproduce the new corrected-weight law. Compare ACTUAL declared
+source-count-dependent decisions, not just a polynomial-size optimal table
+whose entries still cost a factorial group sum. No signal is yet shown.
+
+Alternative high-thinking avenue: the intermediate copy window needs degree
+scaling beyond S6. Enumerate u only up to conjugation by C(h), weighting each
+orbit size, while summing all v; all kernel factors and central coefficients
+are invariant under simultaneous C(h) conjugation. Generate centralizer
+orbits from generators, not all centralizer elements. Verify against the
+full S6 contraction before using this to reach S8. Neither reduction makes
+the evaluator polynomial in n or supplies a quantum advantage.
+
+Checkpoint policy: `190cbe9d` was pushed as one combined batch before this
+pass. Leave the current corrected-output work for the next substantial
+checkpoint; do not commit once per report. Keep the overall goal active.
+
+## Previous Pass: Source-Selected Parity and an All-Copy S6 Falsifier
 
 Read `research/SOURCE_SELECTED_PARITY.md`. The previous NEXT-work suggestion
 to try source-selected parity is now implemented and tested. The executable

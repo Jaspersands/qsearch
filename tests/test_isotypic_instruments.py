@@ -170,6 +170,55 @@ def test_source_selected_parities_can_have_small_fiber_norm_and_large_envelope()
     assert np.max(np.abs(coefficients), axis=0).sum() == 16
 
 
+def test_corrected_full_output_bound_covers_thresholds_but_not_retained_sources_or_all_copy_counts():
+    from isotypic_instruments import corrected_walsh_output_information_contract
+    flags = dict(one_uniform_subset_query=True, real_central_reflection=True,
+        phase_rule_fixed_before_source_labels=True,
+        matching_source_phase_correction=True, source_labels_discarded_after_correction=True,
+        physical_inputs_discarded=True)
+    large = corrected_walsh_output_information_contract(1024, 17528, **flags)
+    assert large["trace_distance_upper_bound_power_of_two"] == -2174
+    assert large["covers_entire_corrected_bit_string"] and large["covers_arbitrary_corrected_weight_classifier"]
+    assert not large["covers_arbitrary_retained_source_readout"]
+    assert not large["covers_source_selected_parity"]
+    assert not large["all_polynomial_copy_counts_ruled_out"]
+    assert large["copy_count_means_participating_mask_positions"]
+    assert not large["is_lower_bound_for_all_algorithms_with_larger_copy_budgets"]
+    assert not large["is_classical_dequantization"]
+    small = corrected_walsh_output_information_contract(1024, 2191, **flags)
+    middle = corrected_walsh_output_information_contract(1024, 8764, **flags)
+    assert small["trace_distance_upper_bound_power_of_two"] == -1096
+    assert middle["bound_is_vacuous"]
+    for flag in flags:
+        blocked = corrected_walsh_output_information_contract(128, 1428, **dict(flags, **{flag: False}))
+        assert not blocked["applicable"] and blocked["trace_distance_upper_bound_power_of_two"] is None
+        with pytest.raises(ValueError):
+            corrected_walsh_output_information_contract(128, 1428, **dict(flags, **{flag: "true"}))
+    for n, k in ((True, 1), (15, 3), (17, 3), (16, True), (16, 0)):
+        with pytest.raises(ValueError):
+            corrected_walsh_output_information_contract(n, k, **flags)
+
+
+def test_corrected_output_dyadic_components_are_rounded_outward():
+    from isotypic_instruments import corrected_walsh_output_information_contract
+    flags = dict(one_uniform_subset_query=True, real_central_reflection=True,
+        phase_rule_fixed_before_source_labels=True,
+        matching_source_phase_correction=True, source_labels_discarded_after_correction=True,
+        physical_inputs_discarded=True)
+    for n, k in ((16, 64), (64, 588), (128, 1428)):
+        row = corrected_walsh_output_information_contract(n, k, **flags)
+        powers = row["component_upper_bound_powers_of_two"]
+        order, class_size = math.factorial(n), math.prod(range(1, n, 2))
+        root = math.isqrt(n)
+        if powers["mixture_overlap"] < 0:
+            assert Fraction(9*k*k, 4*class_size) <= Fraction(2)**(2*powers["mixture_overlap"])
+        if powers["bulk_remainder"] < 0:
+            assert Fraction(order, 2**k) <= Fraction(2)**powers["bulk_remainder"]
+        if powers["exceptional_remainder"] < 0:
+            squared = 16 * order * Fraction(root + 2, 2*root)**(2*k)
+            assert squared <= Fraction(2)**(2*powers["exceptional_remainder"])
+
+
 def test_discarded_reference_channel_equals_group_twirl_on_every_matrix_unit():
     actions, irreps = symmetric_pair_data()
     instrument = finite_isotypic_instrument(actions, irreps)

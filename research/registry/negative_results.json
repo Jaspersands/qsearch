@@ -48112,6 +48112,22 @@
   {
     "applies_to": [
       "CODE-COSET-COLLECTIVE",
+      "source-corrected Walsh full-output classifiers"
+    ],
+    "claim": "A common real central phase reflection followed by its matching source-bit correction and source discard has a useful full-output classifier at the tested large-copy scaling, even though parity and bounded-Fourier-envelope readouts fail.",
+    "evidence": {
+      "artifact": "research/representation/coset_binary_carrier_instruments.json",
+      "derivation": "research/CORRECTED_WALSH_WEIGHT.md",
+      "status": "derived-review-pending"
+    },
+    "id": "CORRECTED-WALSH-OUTPUT-LARGE-COPY-MIXTURE-BOUND",
+    "lesson": "This includes majority and arbitrary classifiers of the corrected bits, but requires discarding source labels after matching phase correction, discarded physical inputs, one uniform full-mask query and a common real central reflection chosen before observing sources. Raw-copy and large-copy bounds do NOT close the intermediate window. A positive comparison mixture is not the exact small-k law or an efficiently sampled classical replacement. The derivation is review-pending and novelty is not established.",
+    "reason_invalid": "The complete corrected output is exchangeable. Its coset-diagonal part is a positive binomial mixture; central squared-amplitude overlap is at most 1/M and bounds mixture separation by 3k/(2 sqrt(M)). A bulk/exceptional off-coset split adds |G|*2^-k + 4 sqrt(|G|)*(1/2+1/sqrt(n))^k. At S1024 k=17528 the outward-rounded total bound is 2^-2174. Exact finite Hamming laws and diagonal-mixture identities are independently checked.",
+    "source": "EXP-COSET-BINARY-CARRIER-INSTRUMENTS"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
       "HYP-LIT-COSET-OBSERVABLES",
       "PO-DEQUANTIZATION",
       "PO-FALSIFIERS"
@@ -55193,6 +55209,22 @@
     "lesson": "Separate access to noncommuting PVMs from a coordinate-level basis-transition compiler.",
     "reason_invalid": "Known coherent left and right carrier-PVM queries implement the exact P-Q-P return experiment with a constant number of calls.",
     "source": "EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-CARRIER-RACAH-ACCESS-BOUNDARY"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "one-query full-source Walsh transcripts"
+    ],
+    "claim": "Keeping all source irrep labels or using complex central phases automatically rescues a one-query uniform-mask Walsh measurement at large participating-copy count.",
+    "evidence": {
+      "artifact": "research/representation/coset_binary_carrier_instruments.json",
+      "derivation": "research/SOURCE_CATEGORY_WALSH.md",
+      "status": "derived-review-pending"
+    },
+    "id": "FULL-SOURCE-WALSH-LARGE-COPY-MIXTURE-BOUND",
+    "lesson": "This review-pending statement covers arbitrary classical decisions on the COMPLETE paired source/Walsh transcript, not only counts or corrected bits. It requires one uniform full-mask query, a common central unitary and partition chosen before inputs, Walsh readout and physical discard. Complex phases are allowed. The intermediate copy window is NOT closed; extra available copies can be ignored. Multiple queries, input-adaptive phases and final coherent POVMs remain outside scope. Finite ideal tables sometimes beat coarse pair counts; compare full pair likelihoods and do not call tables compiled classifiers. Independent review and novelty checks remain outstanding.",
+    "reason_invalid": "A common central unitary fixed before sources gives positive coset-diagonal categorical mixtures. Mixed central overlap bounds their distance by 2k sqrt(r/M). Character column orthogonality bounds the off-coset radius by min(1,1/2+3/sqrt(L)), INDEPENDENT of category count, with L=n(n-1)/2 for even n>=8. Thus T <= 2k sqrt(r/M)+|G| radius^k. Even retaining all irreps, using r<=2^(n-1), gives T<=2^-1663 at S1024 k=17528.",
+    "source": "EXP-COSET-BINARY-CARRIER-INSTRUMENTS"
   },
   {
     "applies_to": [
@@ -83370,6 +83402,22 @@
     "id": "S6-SOURCE-SELECTED-PARITY-ALL-COPY-FAILURE",
     "lesson": "Cut this specified readout as a successful S6 calibration. This is a fixed-degree all-copy certificate, not an all-degree obstruction, not a bound on joint source/parity Bayes tables, and not a classical replacement of the pair quantum front end. Source selection genuinely escapes the fixed-parity theorem but does not guarantee useful signal. Independent review and novelty checks remain outstanding.",
     "reason_invalid": "Exact class-character moment contraction gives null radius 139/180 and alternative radius 13/15. The absolute gap is below 1271/7200 for k=2,...,37 by exact arithmetic; its l1-weighted tail is below the same one-pair gap for every k>=38 and decreases thereafter. Reversing the declared accepting orientation cannot rescue the rule.",
+    "source": "EXP-COSET-BINARY-CARRIER-INSTRUMENTS"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "S8 negative-character sign-category Walsh readout"
+    ],
+    "claim": "The negative-character reflection with retained sign categories and corrected Walsh bits outperforms disjoint-pair readouts in the tested S8 intermediate copy window.",
+    "evidence": {
+      "artifact": "research/representation/coset_binary_carrier_instruments.json",
+      "derivation": "research/SOURCE_ORBIT_CONTRACTION.md",
+      "status": "exact-finite-degree-review-pending"
+    },
+    "id": "S8-SIGN-CATEGORY-WALSH-INTERMEDIATE-PAIR-FAILURE",
+    "lesson": "Deprioritize this specified sign-category readout: at k=16 source count alone already has distance 0.115334. This does NOT test every retained irrep label, another central phase, or every copy count at growing degree. The orbit evaluator remains factorial in degree, signed spectra are not a classical sampler, and the raw support-rank POVM is not an implemented classifier. Pair measurements retain their quantum front end. The general intermediate window remains open.",
+    "reason_invalid": "Exact C(h)-conjugation orbits reduce 1625702400 pairs to 7338240 streamed weighted pairs. Every signed categorical and scalar spectrum and remainder matches full S4/S6 enumeration. At S8 k=7,8,10,12,14,16, even the ideal paired-category histogram loses to coarse pair-event counts. At k=16 its distance is 0.119520 versus 0.150255 for pairs, while raw coset-state distance is at least 1-105/65536.",
     "source": "EXP-COSET-BINARY-CARRIER-INSTRUMENTS"
   },
   {

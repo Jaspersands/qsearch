@@ -154,7 +154,9 @@ example. It really does fall outside the earlier fixed-position bound,
 but that logical gap is not a performance result. Keep its exact certificate
 as a falsifier and as a check on future changes to the measurement.
 
-The next discriminating experiment is a source-corrected Hamming threshold
+The following next-work proposal is now implemented and extended in
+[Corrected Walsh Weight](CORRECTED_WALSH_WEIGHT.md); read that result before
+repeating these experiments. The proposed experiment was a source-corrected Hamming threshold
 at S6, using label-summed generating functions and the same natural weights.
 For that rule the local generating function has coefficients
 
@@ -164,8 +166,8 @@ For that rule the local generating function has coefficients
 where J_0(g)=1[g=e], J_h(g)=1[g=e or g=h], a_0(g)=a_g and
 a_h(g)=a_g+a_(hg). The proposed weight law is the coefficient of z^j in
 sum_(u,v) conjugate(a_u)a_v (alpha_h+z beta_h)^k. This NEXT-work formula
-needs independent verification before use; it is not implemented by the
-parity certificate. Compare declared thresholds against pair detectors,
+was not implemented by the parity certificate itself. The newer weight
+workbench verifies it independently. Compare declared thresholds against pair detectors,
 not only against the weak one-label baseline, and do not fit a favorable
 orientation or threshold without labeling it exploratory.
 

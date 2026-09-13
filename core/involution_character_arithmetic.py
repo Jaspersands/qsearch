@@ -167,6 +167,21 @@ def coherent_walsh_terminal_decision(source_labels: tuple, outcomes: tuple, rule
         "scalable_success_established": False}
 
 
+def coherent_source_count_decision(source_labels: tuple, outcomes: tuple, relation: str, *, complement: bool = False) -> dict:
+    """Compare actual corrected weight with negative-source count, without fitting."""
+    if relation not in ("equal", "less", "greater") or type(complement) is not bool:
+        raise ValueError("declared count relation and boolean complement required")
+    summary = coherent_walsh_terminal_decision(source_labels, outcomes, "parity", phase_corrected=True)
+    negative_count = sum(fixed_point_free_character_certificate(label).character < 0 for label in source_labels)
+    weight = summary["observed_weight"]
+    decision = {"equal": weight == negative_count, "less": weight < negative_count, "greater": weight > negative_count}[relation]
+    return {"degree": summary["degree"], "copy_count": len(outcomes), "negative_source_count": negative_count,
+        "corrected_weight": weight, "relation": relation, "complement": complement,
+        "accept_hidden_class": decision != complement, "uses_source_information_after_correction": True,
+        "polynomial_terminal_arithmetic": True, "uses_fitted_table": False,
+        "quantum_frontend_classically_replaced": False, "scalable_success_established": False}
+
+
 def label_arithmetic_scaling_controls() -> list[dict]:
     controls = []
     for degree in (128, 512, 2048, 4096):

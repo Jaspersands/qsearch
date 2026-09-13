@@ -24,6 +24,8 @@ from isotypic_instruments import (
     coherent_subset_phase_resource_contract, unlabeled_coherent_selector_information_contract,
     low_order_coherent_selector_information_contract,
     coherent_parity_information_contract,
+    corrected_walsh_output_information_contract,
+    coarse_source_walsh_information_contract,
 )
 from involution_character_arithmetic import label_arithmetic_scaling_controls
 
@@ -553,12 +555,12 @@ def _coherent_walsh_histogram_law(n: int, transposition_count: int, copy_count: 
              "normalization": statistics["normalization_residual"]})
 
 
-@lru_cache(maxsize=3, typed=True)
+@lru_cache(maxsize=4, typed=True)
 def _independent_label_factor_laws(n: int, transposition_count: int) -> tuple:
     from symmetric_character import kronecker_coefficient
     if (type(n) is not int or type(transposition_count) is not int
-            or (n, transposition_count) not in ((3, 1), (4, 2), (6, 3))):
-        raise ValueError("factor-law controls require declared S3/S4/S6 inputs")
+            or (n, transposition_count) not in ((3, 1), (4, 2), (6, 3), (8, 4))):
+        raise ValueError("factor-law controls require declared S3/S4/S6/S8 inputs")
     partitions = integer_partitions(n)
     single, pair = {}, {}
     for lam in partitions:
@@ -580,9 +582,9 @@ def _independent_label_factor_laws(n: int, transposition_count: int) -> tuple:
 def independent_pair_copy_baseline(n: int, transposition_count: int, copy_count: int) -> dict:
     """Exact finite law of a known disjoint-pair quantum front end and score."""
     if (type(n) is not int or type(transposition_count) is not int
-            or (n, transposition_count) not in ((3, 1), (4, 2)) or type(copy_count) is not int
-            or not 1 <= copy_count <= 12):
-        raise ValueError("pair controls require bounded S3/S4 inputs")
+            or (n, transposition_count) not in ((3, 1), (4, 2), (6, 3), (8, 4)) or type(copy_count) is not int
+            or not 1 <= copy_count <= ({6: 8, 8: 4}.get(n, 12))):
+        raise ValueError("pair controls require bounded S3/S4/S6/S8 inputs")
     single, pair = _independent_label_factor_laws(n, transposition_count)
     law = {Fraction(1): Fraction(1)}
     for factor_law in [pair] * (copy_count // 2) + [single] * (copy_count % 2):
@@ -910,6 +912,548 @@ def audit_source_selected_parity_contraction() -> dict:
         "integer_characters_compared_with_matrix_based_histograms": True,
         "no_dense_s6_tensor_states_constructed": True,
         "verified": residual < 1e-10, "formal_proof_verification": False}
+
+
+def _corrected_weight_kernel(data: tuple, coefficients: np.ndarray, hidden_index: int | None) -> tuple:
+    order, inverse, products = len(data[0]), data[6], data[7]
+    indicator = np.zeros(order, dtype=np.int64)
+    indicator[0] = 1
+    amplitudes = coefficients.copy()
+    if hidden_index is not None:
+        translated = data[8][hidden_index]
+        indicator[translated[0]] = 1
+        amplitudes += coefficients[translated]
+    scalar = order * (1 + indicator[products])
+    bias = amplitudes[inverse, None] + amplitudes[None, :]
+    return scalar + bias, scalar - bias, indicator[products].astype(bool), amplitudes
+
+
+def _integer_pair_spectrum(left: np.ndarray, right: np.ndarray, weights: np.ndarray) -> list[dict]:
+    pairs, inverse = np.unique(np.column_stack((left.reshape(-1), right.reshape(-1))), axis=0, return_inverse=True)
+    totals = np.zeros(len(pairs), dtype=np.int64)
+    np.add.at(totals, inverse, weights.reshape(-1))
+    return [{"alpha": int(a), "beta": int(b), "weight": int(w)} for (a, b), w in zip(pairs, totals) if w]
+
+
+@lru_cache(maxsize=6, typed=True)
+def corrected_weight_character_certificate(n: int, transposition_count: int,
+        phase_rule: str = "negative_character_reflection") -> dict:
+    if type(n) is int and type(transposition_count) is int and (n, transposition_count) == (8, 4):
+        if phase_rule != "negative_character_reflection":
+            raise ValueError("S8 streamed controls require the negative-character reflection")
+        from coset_source_orbit_contraction import source_orbit_character_data
+        return source_orbit_character_data(n)[5]
+    data = _source_parity_group_data(n, transposition_count)
+    if phase_rule not in ("negative_character_reflection", "zero_character_reflection"):
+        raise ValueError("corrected-weight controls require a real declared reflection")
+    phases = _coherent_phase_values(data[1], transposition_count, phase_rule)
+    coefficients = (data[3] * np.array([phases[lam] for lam in data[1]], dtype=np.int64)) @ data[2]
+    order = len(data[0])
+    weights = np.outer(coefficients, coefficients)
+    laws = []
+    for hidden_index in (None, 0):
+        alpha, beta, diagonal, amplitudes = _corrected_weight_kernel(data, coefficients, hidden_index)
+        subgroup_order = 1 if hidden_index is None else 2
+        if int(amplitudes @ amplitudes) != subgroup_order * order**2 or np.any(np.abs(amplitudes) > order):
+            raise ArithmeticError("coset-diagonal amplitude mixture is not normalized")
+        values, inverse = np.unique((np.abs(alpha) + np.abs(beta))[~diagonal], return_inverse=True)
+        tail_weights = np.zeros(len(values), dtype=np.int64)
+        np.add.at(tail_weights, inverse, np.abs(weights[~diagonal]))
+        if any(2 * int(value)**2 > (4 * order)**2 for value, weight in zip(values, tail_weights) if weight):
+            raise ArithmeticError("off-coset kernel exceeded the Bessel radius bound")
+        laws.append({"full_spectrum": _integer_pair_spectrum(alpha, beta, weights),
+            "mixture_spectrum": _integer_pair_spectrum(order + amplitudes, order - amplitudes, amplitudes**2),
+            "mixture_weight_denominator": subgroup_order * order**2,
+            "remainder_spectrum": [{"radius_numerator": int(v), "absolute_weight": int(w)} for v, w in zip(values, tail_weights) if w],
+            "negative_local_factor_count": int(np.count_nonzero((alpha < 0) | (beta < 0))),
+            "signed_group_pair_weights_present": bool(np.any(weights < 0))})
+    h_translate = data[8][0]
+    squared = coefficients**2
+    overlaps = squared[data[7]] @ squared
+    q_numerator = int(overlaps[h_translate[0]])
+    if int(overlaps.sum()) != order**4 or len(data[8]) * q_numerator > order**4:
+        raise ArithmeticError("central squared-amplitude overlap exceeded class mass")
+    overlap = Fraction(q_numerator, order**4)
+    cubic = Fraction(sum(int(a)**2 * abs(int(b)) for a, b in zip(coefficients, coefficients[h_translate])), order**3)
+    if cubic**2 > overlap or int(coefficients @ coefficients[h_translate]) != 0:
+        raise ArithmeticError("overlap Cauchy-Schwarz or unitary cross cancellation failed")
+    return {"degree": n, "transposition_count": transposition_count, "phase_rule": phase_rule,
+        "group_order": order, "kernel_denominator": 4 * order, "weight_denominator": order**2,
+        "null": laws[0], "alternative": laws[1], "exact_amplitude_overlap": str(overlap),
+        "exact_cubic_overlap": str(cubic), "hidden_class_size": len(data[8]),
+        "class_overlap_bound_verified": True, "same_hidden_member_in_every_copy": True,
+        "positive_mixture_is_full_law": False, "group_pairs_enumerated": order**2,
+        "is_polynomial_in_group_degree": False, "classical_quantum_frontend_replacement": False}
+
+
+def _exact_binomial_spectrum_law(spectrum: list[dict], copies: int, kernel_denominator: int, weight_denominator: int) -> tuple[Fraction, ...]:
+    numerators = [0] * (copies + 1)
+    for row in spectrum:
+        ap = [row["alpha"]**j for j in range(copies + 1)]
+        bp = [row["beta"]**j for j in range(copies + 1)]
+        for j in range(copies + 1):
+            numerators[j] += row["weight"] * ap[copies - j] * bp[j]
+    denominator = weight_denominator * kernel_denominator**copies
+    law = tuple(Fraction(math.comb(copies, j) * value, denominator) for j, value in enumerate(numerators))
+    if min(law) < 0 or sum(law) != 1:
+        raise ArithmeticError("exact corrected-weight law lost positivity or mass")
+    return law
+
+
+@lru_cache(maxsize=64, typed=True)
+def corrected_weight_laws(n: int, transposition_count: int, copies: int,
+        phase_rule: str = "negative_character_reflection") -> tuple:
+    if type(copies) is not int or not 1 <= copies <= 256:
+        raise ValueError("corrected-weight controls require integer copies in [1,256]")
+    certificate = corrected_weight_character_certificate(n, transposition_count, phase_rule)
+    full, mixtures, errors = [], [], []
+    for hypothesis in ("null", "alternative"):
+        row = certificate[hypothesis]
+        full.append(_exact_binomial_spectrum_law(row["full_spectrum"], copies,
+            certificate["kernel_denominator"], certificate["weight_denominator"]))
+        mixtures.append(_exact_binomial_spectrum_law(row["mixture_spectrum"], copies,
+            2 * certificate["group_order"], row["mixture_weight_denominator"]))
+        errors.append(Fraction(sum(item["absolute_weight"] * item["radius_numerator"]**copies
+                                  for item in row["remainder_spectrum"]),
+                               2 * certificate["weight_denominator"] * certificate["kernel_denominator"]**copies))
+        if sum(abs(p - q) for p, q in zip(full[-1], mixtures[-1])) / 2 > errors[-1]:
+            raise ArithmeticError("positive-mixture approximation exceeded its exact tail bound")
+    mixture_distance = sum(abs(p - q) for p, q in zip(*mixtures)) / 2
+    if mixture_distance > Fraction(3 * copies, 2) * Fraction(certificate["exact_cubic_overlap"]):
+        raise ArithmeticError("mixture separation exceeded central-amplitude overlap bound")
+    return tuple(full), tuple(mixtures), tuple(errors)
+
+
+def corrected_weight_controls(n: int, transposition_count: int, copies: tuple[int, ...]) -> dict:
+    if not copies:
+        raise ValueError("nonempty corrected-weight copy sweep required")
+    certificate = corrected_weight_character_certificate(n, transposition_count)
+    rows = []
+    for k in copies:
+        full, mixture, errors = corrected_weight_laws(n, transposition_count, k)
+        distance = sum(abs(p - q) for p, q in zip(*full)) / 2
+        pair_distance, pair = _pair_event_count_baseline(n, transposition_count, k)
+        rules = []
+        for name, threshold, complement in (("all_zero", 1, True), ("strict_majority", k // 2 + 1, False)):
+            accepted = [sum(law[:threshold] if complement else law[threshold:]) for law in full]
+            gap = accepted[1] - accepted[0]
+            rules.append({"rule": name, "threshold": threshold, "complement": complement,
+                "null_acceptance_probability": float(accepted[0]), "alternative_acceptance_probability": float(accepted[1]),
+                "signed_acceptance_gap": float(gap), "equal_prior_success": float((1 + gap) / 2),
+                "fitted_threshold_or_orientation_used": False, "absolute_gap_beats_pair_event_count": abs(gap) > pair_distance})
+        thresholds = [sum(full[1][j:], Fraction()) - sum(full[0][j:], Fraction()) for j in range(1, k + 1)]
+        best = max(range(len(thresholds)), key=lambda i: abs(thresholds[i]))
+        rows.append({"copy_count": k, "full_corrected_weight_total_variation": float(distance),
+            "null_weight_law": [float(value) for value in full[0]], "alternative_weight_law": [float(value) for value in full[1]],
+            "declared_rules": rules, "pair_event_count_baseline": pair,
+            "full_weight_bayes_beats_pair_event_count": distance > pair_distance,
+            "bayes_table_is_compiled_classifier": False,
+            "exploratory_best_threshold": best + 1, "exploratory_threshold_absolute_gap": float(abs(thresholds[best])),
+            "exploratory_threshold_is_declared_algorithm": False,
+            "mixture_distances_from_full_laws": [float(sum(abs(p - q) for p, q in zip(a, b)) / 2) for a, b in zip(full, mixture)],
+            "mixture_error_upper_bounds": [float(min(1, error)) for error in errors],
+            "exact_law_checks_passed": True, "speedup_claim_allowed": False})
+    return {"degree": n, "phase_rule": "negative_character_reflection", "copy_sweep": rows,
+        "source_labels_used_only_for_phase_correction": True, "hamming_weight_is_sufficient_for_corrected_bits": True,
+        "does_not_retain_joint_source_and_corrected_bits": True,
+        "moment_certificate": certificate, "is_growing_degree_advantage": False}
+
+
+def corrected_output_scaling_controls() -> list[dict]:
+    rows = []
+    for n in (128, 1024, 4096):
+        log_class = (matching_count(n // 2) - 1).bit_length()
+        for k in (log_class // 2, log_class, 2 * log_class, 4 * log_class):
+            rows.append(corrected_walsh_output_information_contract(n, k,
+                one_uniform_subset_query=True, real_central_reflection=True, matching_source_phase_correction=True,
+                phase_rule_fixed_before_source_labels=True,
+                source_labels_discarded_after_correction=True, physical_inputs_discarded=True))
+    return rows
+
+
+def audit_corrected_weight_contraction() -> dict:
+    from coset_hidden_involution_binary_decision_reduction import compose_permutations, inverse_permutation
+    checked_laws = diagonal_checks = covariance_checks = 0
+    residual = 0.0
+    for n, t in ((3, 1), (4, 2)):
+        for rule in ("negative_character_reflection", "zero_character_reflection"):
+            phases = _coherent_phase_values(integer_partitions(n), t, rule)
+            for k in (1, 2, 3):
+                histograms, p0, p1, _ = _coherent_walsh_histogram_law(n, t, k, rule)
+                reference = [[0.0] * (k + 1) for _ in range(2)]
+                for histogram, v0, v1 in zip(histograms, p0, p1):
+                    weight = sum(histogram[2 * i + (0 if phases[lam] < 0 else 1)] for i, lam in enumerate(phases))
+                    reference[0][weight] += v0
+                    reference[1][weight] += v1
+                full, _, _ = corrected_weight_laws(n, t, k, rule)
+                for actual, expected in zip(full, reference):
+                    residual = max(residual, max(abs(float(a) - float(b)) for a, b in zip(actual, expected)))
+                    checked_laws += 1
+    for n, t in ((3, 1), (4, 2), (6, 3)):
+        data = _source_parity_group_data(n, t)
+        group, partitions = data[0], data[1]
+        order, index = len(group), {g: i for i, g in enumerate(group)}
+        h0 = group[data[8][0][0]]
+        for rule in ("negative_character_reflection", "zero_character_reflection"):
+            phases = _coherent_phase_values(partitions, t, rule)
+            coefficients = (data[3] * np.array([phases[lam] for lam in partitions], dtype=np.int64)) @ data[2]
+            reference = _corrected_weight_kernel(data, coefficients, 0)
+            for j, translated in enumerate(data[8]):
+                h = group[translated[0]]
+                conjugator = next(g for g in group if compose_permutations(compose_permutations(g, h0), inverse_permutation(g)) == h)
+                permutation = np.array([index[compose_permutations(compose_permutations(conjugator, g), inverse_permutation(conjugator))] for g in group])
+                current = _corrected_weight_kernel(data, coefficients, j)
+                if any(not np.array_equal(current[a][np.ix_(permutation, permutation)], reference[a]) for a in (0, 1, 2)):
+                    raise ArithmeticError("corrected-weight kernel broke hidden-class covariance")
+                covariance_checks += 1
+            for hidden_index, hypothesis in ((None, "null"), (0, "alternative")):
+                alpha, beta, diagonal, _ = _corrected_weight_kernel(data, coefficients, hidden_index)
+                spectrum = _integer_pair_spectrum(alpha[diagonal], beta[diagonal], np.outer(coefficients, coefficients)[diagonal])
+                certificate = corrected_weight_character_certificate(n, t, rule)
+                for k in (1, 2, 4, 8):
+                    actual = _exact_binomial_spectrum_law(spectrum, k, 4 * order, order**2)
+                    row = certificate[hypothesis]
+                    mixture = _exact_binomial_spectrum_law(row["mixture_spectrum"], k, 2 * order, row["mixture_weight_denominator"])
+                    if actual != mixture:
+                        raise ArithmeticError("coset-diagonal contraction is not the claimed positive mixture")
+                    diagonal_checks += 1
+    return {"independent_matrix_histogram_laws_checked": checked_laws, "maximum_histogram_residual": residual,
+        "exact_diagonal_mixture_laws_checked": diagonal_checks, "exact_all_hidden_member_kernel_covariances_checked": covariance_checks,
+        "two_real_reflections_checked": True, "verified": residual < 1e-10,
+        "formal_proof_verification": False, "arbitrary_complex_phases_covered": False}
+
+
+def _source_category_projectors(data: tuple, rule: str) -> tuple:
+    if rule not in ("phase_sign", "character_sign", "irrep"):
+        raise ValueError("declared source category rule required")
+    assignment = tuple((int(s < 0) if rule == "phase_sign" else int(np.sign(s)))
+                       if rule != "irrep" else i for i, s in enumerate(data[4]))
+    categories = tuple(sorted(set(assignment)))
+    projectors = np.array([(data[3] * np.array([j == c for j in assignment])) @ data[2] for c in categories])
+    phases = []
+    for c in categories:
+        values = {(-1 if s < 0 else 1) for s, j in zip(data[4], assignment) if j == c}
+        if len(values) != 1:
+            raise ValueError("partition must refine the reflection phase")
+        phases.append(values.pop())
+    order = len(data[0])
+    if not np.array_equal(projectors @ projectors.T, np.diag(order * projectors[:, 0])):
+        raise ArithmeticError("central source categories are not orthogonal projectors")
+    return assignment, categories, projectors, tuple(phases)
+
+
+def _coarse_source_factors(data: tuple, projectors: np.ndarray, phases: tuple, hidden_index: int | None) -> np.ndarray:
+    values = projectors if hidden_index is None else projectors + projectors[:, data[8][hidden_index]]
+    result = []
+    for p, phase in zip(values, phases):
+        base = p[0] + p[data[7]]
+        bias = phase * (p[data[6], None] + p[None, :])
+        result.extend((base + bias, base - bias))
+    return np.asarray(result, dtype=np.int64)
+
+
+def _integer_multinomial_spectrum(factors: np.ndarray, weights: np.ndarray) -> tuple:
+    values, inverse = np.unique(factors.reshape(len(factors), -1).T, axis=0, return_inverse=True)
+    totals = np.zeros(len(values), dtype=np.int64)
+    np.add.at(totals, inverse, weights.reshape(-1))
+    return tuple((tuple(int(x) for x in row), int(weight)) for row, weight in zip(values, totals) if weight)
+
+
+@lru_cache(maxsize=9, typed=True)
+def _coarse_source_character_data(n: int, transposition_count: int, rule: str = "phase_sign") -> tuple:
+    if type(n) is int and type(transposition_count) is int and (n, transposition_count) == (8, 4):
+        if rule != "phase_sign":
+            raise ValueError("S8 streamed controls currently retain phase-sign categories")
+        from coset_source_orbit_contraction import source_orbit_character_data
+        return source_orbit_character_data(n)[:5]
+    data = _source_parity_group_data(n, transposition_count)
+    assignment, categories, projectors, phases = _source_category_projectors(data, rule)
+    order, coefficients = len(data[0]), data[5]
+    full, mixtures, tails, priors = [], [], [], []
+    for hidden_index in (None, 0):
+        factors = _coarse_source_factors(data, projectors, phases, hidden_index)
+        translated = None if hidden_index is None else data[8][hidden_index]
+        values = projectors if translated is None else projectors + projectors[:, translated]
+        amplitudes = coefficients if translated is None else coefficients + coefficients[translated]
+        indicator = np.zeros(order, dtype=bool)
+        indicator[0] = True
+        if translated is not None:
+            indicator[translated[0]] = True
+        diagonal = indicator[data[7]]
+        full.append(_integer_multinomial_spectrum(factors, np.outer(coefficients, coefficients)))
+        diagonal_factors = np.array([values[j, 0] + (-1)**bit * phases[j] * values[j]
+            for j in range(len(categories)) for bit in (0, 1)])
+        if np.any(diagonal_factors < 0) or np.any(np.sum(diagonal_factors, axis=0) != 2 * order):
+            raise ArithmeticError("source-preserving mixture has invalid categorical probabilities")
+        mixtures.append(_integer_multinomial_spectrum(diagonal_factors, amplitudes**2))
+        radius, inverse = np.unique(np.abs(factors[:, ~diagonal]).sum(axis=0), return_inverse=True)
+        weights = np.zeros(len(radius), dtype=np.int64)
+        np.add.at(weights, inverse, np.abs(np.outer(coefficients, coefficients)[~diagonal]))
+        if any(value > 4 * order for value, weight in zip(radius, weights) if weight):
+            raise ArithmeticError("complete categorical kernel exceeded its unit radius")
+        tails.append(tuple((int(v), int(w)) for v, w in zip(radius, weights) if w))
+        priors.append(tuple(Fraction(int(value), order) for value in values[:, 0]))
+    h = data[8][0]
+    overlaps = []
+    for p in projectors:
+        cross = sum(int(a)**2 * int(b)**2 for a, b in zip(coefficients, p[h]))
+        q = Fraction(int(p[0]), order)
+        if len(data[8]) * cross > int(p[0]) * order**3:
+            raise ArithmeticError("mixed central amplitude/projector overlap exceeded class mass")
+        overlaps.append({"null_category_mass": str(q), "exact_mixed_overlap": str(Fraction(cross, order**4))})
+    metadata = {"degree": n, "rule": rule, "category_labels": list(categories), "category_phases": list(phases),
+        "group_order": order, "hidden_class_size": len(data[8]),
+        "category_assignment_by_partition": list(assignment), "null_category_masses": [str(x) for x in priors[0]],
+        "alternative_category_masses": [str(x) for x in priors[1]], "mixed_overlap_certificates": overlaps,
+        "full_signed_spectrum_sizes": [len(x) for x in full], "positive_mixture_spectrum_sizes": [len(x) for x in mixtures],
+        "enumerated_group_pairs": order**2, "is_polynomial_in_degree": False,
+        "positive_mixture_is_exact_full_law": False, "classical_quantum_frontend_replacement": False}
+    return metadata, tuple(full), tuple(mixtures), tuple(tails), tuple(priors)
+
+
+def _multinomial_law(spectrum: tuple, copies: int, outcomes: int, kernel_denominator: int, weight_denominator: int) -> dict:
+    powers = [(tuple(tuple(value**j for j in range(copies + 1)) for value in factors), weight) for factors, weight in spectrum]
+    denominator = weight_denominator * kernel_denominator**copies
+    result = {}
+    for labels in itertools.combinations_with_replacement(range(outcomes), copies):
+        counts = tuple(labels.count(i) for i in range(outcomes))
+        occupied = [(i, count) for i, count in enumerate(counts) if count]
+        numerator = sum(weight * math.prod(values[i][count] for i, count in occupied) for values, weight in powers)
+        multiplicity = math.factorial(copies) // math.prod(math.factorial(count) for count in counts)
+        result[counts] = Fraction(multiplicity * numerator, denominator)
+    if min(result.values()) < 0 or sum(result.values()) != 1:
+        raise ArithmeticError("exact coarse-source law lost positivity or natural mass")
+    return result
+
+
+@lru_cache(maxsize=24, typed=True)
+def coarse_source_joint_laws(n: int, transposition_count: int, copies: int, rule: str = "phase_sign") -> tuple:
+    if type(copies) is not int or not 1 <= copies <= (16 if rule == "phase_sign" else 4):
+        raise ValueError("coarse-source controls allow copies 1..16 for phase sign, 1..4 otherwise")
+    metadata, spectra, mixture_spectra, tails, priors = _coarse_source_character_data(n, transposition_count, rule)
+    order, outcomes = metadata["group_order"], 2 * len(metadata["category_labels"])
+    full, mixtures, errors = [], [], []
+    for b in (0, 1):
+        full.append(_multinomial_law(spectra[b], copies, outcomes, 4 * order, order**2))
+        mixtures.append(_multinomial_law(mixture_spectra[b], copies, outcomes, 2 * order, (b + 1) * order**2))
+        error = Fraction(sum(weight * radius**copies for radius, weight in tails[b]), 2 * order**2 * (4 * order)**copies)
+        errors.append(error)
+        if sum(abs(full[b][key] - mixtures[b][key]) for key in full[b]) / 2 > error:
+            raise ArithmeticError("source-retained positive-mixture approximation exceeded its tail")
+        category_marginal, weight_marginal = {}, [Fraction()] * (copies + 1)
+        for histogram, probability in full[b].items():
+            cats = tuple(histogram[2*j] + histogram[2*j+1] for j in range(outcomes // 2))
+            category_marginal[cats] = category_marginal.get(cats, Fraction()) + probability
+            weight_marginal[sum(histogram[1::2])] += probability
+        for cats, actual in category_marginal.items():
+            expected = math.factorial(copies) * math.prod(p**c / math.factorial(c) for p, c in zip(priors[b], cats))
+            if actual != expected:
+                raise ArithmeticError("retained category marginal disagrees with independent source law")
+        if tuple(weight_marginal) != corrected_weight_laws(n, transposition_count, copies)[0][b]:
+            raise ArithmeticError("discarding coarse sources does not reproduce corrected weight")
+    return tuple(full), tuple(mixtures), tuple(errors)
+
+
+def source_count_weight_controls(n: int, transposition_count: int, copies: tuple[int, ...]) -> dict:
+    metadata = _coarse_source_character_data(n, transposition_count)[0]
+    rows = []
+    for k in copies:
+        full, mixtures, errors = coarse_source_joint_laws(n, transposition_count, k)
+        joint = [{}, {}]
+        for b in (0, 1):
+            for histogram, mass in full[b].items():
+                negative = sum(histogram[2*j] + histogram[2*j+1] for j, label in enumerate(metadata["category_labels"]) if label == 1)
+                key = (negative, sum(histogram[1::2]))
+                joint[b][key] = joint[b].get(key, Fraction()) + mass
+        paired_distance = sum(abs(full[1][key] - full[0][key]) for key in full[0]) / 2
+        joint_distance = sum(abs(joint[1][key] - joint[0][key]) for key in joint[0]) / 2
+        weight_distance = sum(abs(a-b) for a,b in zip(*corrected_weight_laws(n, transposition_count, k)[0])) / 2
+        pair_distance, pair = _pair_event_count_baseline(n, transposition_count, k)
+        full_pair = independent_pair_copy_baseline(n, transposition_count, k) if k <= {6: 8, 8: 4}.get(n, 12) else None
+        priors = _coarse_source_character_data(n, transposition_count)[4]
+        negative_index = metadata["category_labels"].index(1)
+        p0, p1 = (p[negative_index] for p in priors)
+        source_distance = sum(math.comb(k, m) * abs(p1**m * (1-p1)**(k-m) - p0**m * (1-p0)**(k-m)) for m in range(k+1)) / 2
+        rules = []
+        for relation in ("equal", "less", "greater"):
+            accepted = [sum((value for (m,w), value in law.items() if {"equal": w==m, "less": w<m, "greater": w>m}[relation]), Fraction()) for law in joint]
+            gap = accepted[1] - accepted[0]
+            rules.append({"relation": relation, "complement": False, "signed_acceptance_gap": float(gap),
+                "null_acceptance_probability": float(accepted[0]), "alternative_acceptance_probability": float(accepted[1]),
+                "equal_prior_success": float((1+gap)/2), "fitted_rule": False,
+                "absolute_gap_beats_pair_event_count": abs(gap) > pair_distance})
+        rows.append({"copy_count": k, "complete_paired_category_bit_distance": float(paired_distance),
+            "source_count_and_weight_distance": float(joint_distance), "weight_only_distance": float(weight_distance),
+            "source_count_only_distance": float(source_distance),
+            "gain_over_source_count_only": float(joint_distance-source_distance),
+            "gain_over_discarding_source_counts": float(joint_distance-weight_distance), "declared_rules": rules,
+            "pair_event_count_baseline": pair, "joint_table_beats_pair_event_count": joint_distance > pair_distance,
+            "complete_paired_table_beats_pair_event_count": paired_distance > pair_distance,
+            "full_pair_likelihood_baseline": full_pair,
+            "complete_paired_table_beats_full_pair_likelihood": (paired_distance > Fraction(full_pair["exact_total_variation"])) if full_pair else None,
+            "ideal_table_is_compiled_classifier": False, "exact_marginals_verified": True,
+            "multinomial_histogram_count": len(full[0]), "joint_count_outcome_count": len(joint[0]),
+            "mixture_error_upper_bounds": [float(min(1,x)) for x in errors], "speedup_claim_allowed": False})
+    return {"degree": n, "category_rule": "phase_sign", "copy_sweep": rows, "character_certificate": metadata,
+        "source_counts_retained_after_correction": True, "is_growing_degree_advantage": False}
+
+
+def coarse_source_scaling_controls() -> list[dict]:
+    rows = []
+    for n in (128, 1024, 4096):
+        k = 4 * (matching_count(n//2)-1).bit_length()
+        for r in (2, n, None):
+            rows.append(coarse_source_walsh_information_contract(n,k,r,
+                one_uniform_full_mask_query=True, common_central_unitary=True,
+                phase_and_common_partition_fixed_before_sources=True, walsh_readout_up_to_category_known_bit_flips=True,
+                only_categories_and_walsh_bits_retained=True, physical_inputs_discarded=True))
+    return rows
+
+
+@lru_cache(maxsize=1)
+def audit_coarse_source_contraction() -> dict:
+    """Check independent matrix characters, exact mixtures and column bounds."""
+    from symmetric_character import conjugacy_class_size
+    from coset_hidden_involution_multiplicity_support_obstruction import permutation_cycle_type
+    matrix_checks = diagonal_checks = column_checks = class_checks = 0
+    residual = 0.0
+    for n, t in ((3, 1), (4, 2), (6, 3)):
+        data = _source_parity_group_data(n, t)
+        order = len(data[0])
+        # The all-irrep bound dominates EVERY coarsening by triangle inequality.
+        irrep_projectors = data[3][:, None] * data[2]
+        for g, column in zip(data[0], irrep_projectors.T):
+            size = conjugacy_class_size(permutation_cycle_type(g))
+            if sum(abs(int(x)) for x in column)**2 * size > order**2:
+                raise ArithmeticError("central projector column envelope failed")
+            column_checks += 1
+        for rule in (("phase_sign", "character_sign", "irrep") if n < 6 else ("phase_sign",)):
+            assignment, categories, projectors, phases = _source_category_projectors(data, rule)
+            metadata = _coarse_source_character_data(n, t, rule)[0]
+            for k in ((1, 2, 3) if n < 6 else (2, 4)):
+                full, mixtures, _ = coarse_source_joint_laws(n, t, k, rule)
+                if n < 6:
+                    histograms, p0, p1, _ = _coherent_walsh_histogram_law(n, t, k, "negative_character_reflection")
+                    references = [{key: 0.0 for key in full[0]} for _ in (0, 1)]
+                    for histogram, a, b in zip(histograms, p0, p1):
+                        counts = [0] * (2 * len(categories))
+                        for j, category in enumerate(assignment):
+                            position = categories.index(category)
+                            for bit in (0, 1):
+                                counts[2*position + (bit ^ int(phases[position] < 0))] += histogram[2*j+bit]
+                        for reference, value in zip(references, (a, b)):
+                            reference[tuple(counts)] += value
+                    for actual, expected in zip(full, references):
+                        residual = max(residual, max(abs(float(value)-expected[key]) for key, value in actual.items()))
+                        matrix_checks += 1
+                for b, h in enumerate((None, 0)):
+                    factors = _coarse_source_factors(data, projectors, phases, h)
+                    indicator = np.zeros(order, dtype=bool)
+                    indicator[0] = True
+                    if h is not None:
+                        indicator[data[8][h][0]] = True
+                    diagonal = indicator[data[7]]
+                    spectrum = _integer_multinomial_spectrum(factors[:, diagonal], np.outer(data[5], data[5])[diagonal])
+                    actual = _multinomial_law(spectrum, k, 2*len(categories), 4*order, order**2)
+                    if actual != mixtures[b]:
+                        raise ArithmeticError("categorical coset diagonal is not its positive mixture")
+                    diagonal_checks += 1
+            if metadata["is_polynomial_in_degree"]:
+                raise ArithmeticError("finite group contraction mislabeled as scalable")
+    for n in range(8, 21, 2):
+        for cycle_type in integer_partitions(n):
+            if cycle_type != (1,)*n:
+                if conjugacy_class_size(cycle_type) < n*(n-1)//2:
+                    raise ArithmeticError("minimum nonidentity class bound failed")
+                class_checks += 1
+    return {"independent_matrix_histogram_laws_checked": matrix_checks,
+        "exact_coset_diagonal_mixtures_checked": diagonal_checks,
+        "all_irrep_column_envelopes_checked": column_checks,
+        "minimum_class_size_checks": class_checks, "maximum_matrix_residual": float(residual),
+        "verified": bool(residual < 1e-10), "formal_proof_verification": False}
+
+
+@lru_cache(maxsize=1)
+def audit_complex_source_mixtures() -> dict:
+    """Independent floating checks for complex phases; NOT a formal proof."""
+    maximum_residual = 0.0
+    histogram_checks = mixture_checks = overlap_checks = radius_checks = 0
+    for n, t in ((3, 1), (4, 2)):
+        data = _source_parity_group_data(n, t)
+        order = len(data[0])
+        for rule in ("phase_sign", "irrep"):
+            assignment, categories, projectors, _ = _source_category_projectors(data, rule)
+            for phase_rule in COHERENT_PHASE_RULES:
+                phase_values = _coherent_phase_values(data[1], t, phase_rule)
+                coefficients = (data[3] * np.array([phase_values[lam] for lam in data[1]])) @ data[2] / order
+                outer = np.outer(coefficients.conjugate(), coefficients)
+                h = data[8][0]
+                maximum_residual = max(maximum_residual, abs(float(np.vdot(coefficients, coefficients).real)-1),
+                                       abs(np.vdot(coefficients, coefficients[h])))
+                for p in projectors / order:
+                    overlap = float(np.dot(np.abs(coefficients)**2, p[h]**2))
+                    if overlap > p[0]/len(data[8]) + 1e-12:
+                        raise ArithmeticError("complex mixed projector overlap exceeded class bound")
+                    overlap_checks += 1
+                for k in (1, 2, 3):
+                    histograms, p0, p1, _ = _coherent_walsh_histogram_law(n, t, k, phase_rule)
+                    references = [{}, {}]
+                    for histogram, a, b in zip(histograms, p0, p1):
+                        counts = [0] * (2*len(categories))
+                        for j, category in enumerate(assignment):
+                            position = categories.index(category)
+                            for bit in (0, 1):
+                                counts[2*position+bit] += histogram[2*j+bit]
+                        for reference, value in zip(references, (a, b)):
+                            key = tuple(counts)
+                            reference[key] = reference.get(key, 0.0) + value
+                    laws, positive = [], []
+                    for b, hidden_index in enumerate((None, 0)):
+                        values = projectors if hidden_index is None else projectors + projectors[:, h]
+                        factors = _coarse_source_factors(data, projectors, (1,)*len(categories), hidden_index) / (4*order)
+                        diagonal = data[7] == 0
+                        if hidden_index is not None:
+                            diagonal |= data[7] == h[0]
+                        radius = np.abs(factors[:, ~diagonal]).sum(axis=0)
+                        if np.max(radius) > 1+1e-12:
+                            raise ArithmeticError("complex raw categorical kernel exceeded unit radius")
+                        radius_checks += 1
+                        local = np.array([values[j, 0] + (-1)**bit * values[j]
+                                          for j in range(len(categories)) for bit in (0, 1)]) / (2*order)
+                        amplitudes = coefficients if hidden_index is None else coefficients + coefficients[h]
+                        weights = np.abs(amplitudes)**2 / (b+1)
+                        if np.min(local) < -1e-12 or np.max(np.abs(local.sum(axis=0)-1)) > 1e-12 or abs(weights.sum()-1) > 1e-12:
+                            raise ArithmeticError("complex diagonal mixture is not positive and normalized")
+                        law, mixture = {}, {}
+                        for counts, expected in references[b].items():
+                            multiplicity = math.factorial(k) // math.prod(math.factorial(c) for c in counts)
+                            product, local_product = np.ones_like(outer), np.ones(order)
+                            for j, count in enumerate(counts):
+                                if count:
+                                    product *= factors[j]**count
+                                    local_product *= local[j]**count
+                            actual = multiplicity*np.sum(outer*product)
+                            diagonal_value = multiplicity*np.sum((outer*product)[diagonal])
+                            mixture[counts] = float(multiplicity*np.dot(weights, local_product))
+                            law[counts] = float(actual.real)
+                            maximum_residual = max(maximum_residual, abs(actual-expected), abs(diagonal_value-mixture[counts]))
+                        tail = .5*np.sum(np.abs(outer[~diagonal])*radius**k)
+                        if sum(abs(law[key]-mixture[key]) for key in law)/2 > tail+1e-12:
+                            raise ArithmeticError("complex full transcript exceeds signed remainder bound")
+                        laws.append(law)
+                        positive.append(mixture)
+                        histogram_checks += 1
+                        mixture_checks += 1
+                    mixture_distance = sum(abs(positive[1][key]-positive[0][key]) for key in positive[0])/2
+                    bound = 2*k*sum(math.sqrt(float(p[0])/order) for p in projectors)/math.sqrt(len(data[8]))
+                    if mixture_distance > bound+1e-12:
+                        raise ArithmeticError("complex categorical mixture separation bound failed")
+    return {"independent_raw_source_histogram_laws_checked": histogram_checks,
+        "complex_phase_rules_included": True, "phase_need_not_be_constant_in_raw_category": True,
+        "coset_diagonal_positive_mixtures_checked": mixture_checks, "mixed_overlap_checks": overlap_checks,
+        "complete_kernel_unit_radius_checks": radius_checks,
+        "maximum_residual": float(maximum_residual), "verified": bool(maximum_residual < 1e-10),
+        "arbitrary_phase_theorem_formally_verified": False, "novelty_established": False}
 
 
 @lru_cache(maxsize=14, typed=True)
@@ -1413,6 +1957,14 @@ def build_binary_carrier_instrument_report() -> dict:
     selected_parity = [source_selected_parity_controls(n, t, (1, 2, 4, 8, 16, 32, 64, 128), selection, corrected)
         for n, t in ((3, 1), (4, 2), (6, 3))
         for selection, corrected in (("negative", False), ("negative", True), ("positive", False), ("zero", False))]
+    weight_audit = audit_corrected_weight_contraction()
+    weight_controls = [corrected_weight_controls(n, t, (1, 2, 4, 8, 16, 32, 64, 128)) for n, t in ((3, 1), (4, 2), (6, 3))]
+    source_audit, complex_audit = audit_coarse_source_contraction(), audit_complex_source_mixtures()
+    from coset_source_orbit_contraction import audit_streamed_source_orbits, intermediate_copy_information_controls
+    orbit_audit = audit_streamed_source_orbits()
+    source_controls = [source_count_weight_controls(n, t, (1, 2, 4, 8, 16)) for n, t in ((3, 1), (4, 2), (6, 3))]
+    source_controls.append(source_count_weight_controls(8, 4, (1, 2, 4, 7, 8, 10, 12, 14, 16)))
+    intermediate_controls = intermediate_copy_information_controls()
     scaling = [{"half_degree": m, "block_size": 3, "classical_history_blocks": m**2,
                 "trace_distance_squared_upper_bound": str(invariant_block_transcript_distance_squared_bound(m, 3, m**2))}
                for m in (4, 8, 16, 32, 64, 128)]
@@ -1420,13 +1972,15 @@ def build_binary_carrier_instrument_report() -> dict:
                 and all(row["finite_complete_source_cleanup_verified"] for row in cleanup)
                 and all(row["regular_cell_compression_verified"] for row in compression)
                 and conditioned_verified and catalogue_verified and coherent_verified and terminal_verified
-                and selected_parity_audit["verified"] and selected_parity_obstruction["all_copy_counts_from_two_covered"])
+                and selected_parity_audit["verified"] and selected_parity_obstruction["all_copy_counts_from_two_covered"]
+                and weight_audit["verified"] and source_audit["verified"] and complex_audit["verified"]
+                and orbit_audit["verified"])
     witness_shape = (4, 2)
     coefficient = kronecker_coefficient(witness_shape, witness_shape, witness_shape)
     d = hook_length_dimension(witness_shape)
     source_mass = Fraction(d * (d + character_on_involution(witness_shape, 3)), math.factorial(6))**3
     return {"created_at": utc_now(), "status": ("binary-instrument-calibration-fixed-copy-route-obstructed" if verified else "blocked-instrument-control-failure"),
-        "summary": "Source-selected parity now has an exact character-moment evaluator beyond S4. At S6 the corrected negative-character selection loses to even one pair for every k>=2, certified by an exact prefix and a decreasing moment tail. This is a fixed-degree negative result, not a growing-degree theorem or classical replacement. Earlier fixed-parity bounds remain scoped; source-aware collective thresholds are unresolved.",
+        "summary": "An exact streamed centralizer-orbit contraction now reaches S8 without a full group-pair matrix. Its ideal sign-category/Walsh table loses to coarse pair-event counts throughout the tested 7..16-copy window; source counts already explain most signal. The raw inputs retain far more distinguishability. This is a finite, specified-readout failure, not a growing-degree or all-source no-go. A separate review-pending large-copy bound covers all source irreps and fixed complex central phases; the general intermediate window remains unresolved.",
         "derivation_document": "research/BINARY_CARRIER_INSTRUMENTS.md", "controls": controls, "scaling": scaling,
         "gpe_cleanup_controls": cleanup,
         "fixed_point_free_label_arithmetic_controls": arithmetic,
@@ -1447,6 +2001,18 @@ def build_binary_carrier_instrument_report() -> dict:
         "source_selected_parity_controls": selected_parity,
         "source_selected_parity_contraction_audit": selected_parity_audit,
         "source_selected_parity_all_copy_obstruction": selected_parity_obstruction,
+        "corrected_weight_derivation": "research/CORRECTED_WALSH_WEIGHT.md",
+        "corrected_weight_controls": weight_controls,
+        "corrected_weight_contraction_audit": weight_audit,
+        "corrected_output_scaling_controls": corrected_output_scaling_controls(),
+        "source_category_walsh_derivation": "research/SOURCE_CATEGORY_WALSH.md",
+        "source_count_weight_controls": source_controls,
+        "source_category_contraction_audit": source_audit,
+        "complex_source_mixture_audit": complex_audit,
+        "full_source_walsh_scaling_controls": coarse_source_scaling_controls(),
+        "source_orbit_derivation": "research/SOURCE_ORBIT_CONTRACTION.md",
+        "streamed_source_orbit_audit": orbit_audit,
+        "intermediate_copy_information_controls": intermediate_controls,
         "coherent_parity_scaling_controls": coherent_parity_scaling_controls(),
         "symmetric_terminal_fourier_norm_controls": [
             {key: value for key, value in symmetric_boolean_fourier_profile(k, rule, threshold).items()
@@ -1486,6 +2052,16 @@ def build_binary_carrier_instrument_report() -> dict:
             "source_selected_parity_copy_controls": sum(len(row["copy_sweep"]) for row in selected_parity),
             "source_selected_parity_independent_laws_checked": selected_parity_audit["independent_histogram_probability_laws_checked"],
             "source_selected_parity_exact_hidden_spectra_checked": selected_parity_audit["exact_all_hidden_member_spectra_checked"],
+            "corrected_weight_copy_controls": sum(len(row["copy_sweep"]) for row in weight_controls),
+            "corrected_weight_matrix_laws_checked": weight_audit["independent_matrix_histogram_laws_checked"],
+            "corrected_weight_exact_mixture_laws_checked": weight_audit["exact_diagonal_mixture_laws_checked"],
+            "source_count_weight_copy_controls": sum(len(row["copy_sweep"]) for row in source_controls),
+            "source_category_exact_mixtures_checked": source_audit["exact_coset_diagonal_mixtures_checked"],
+            "source_category_matrix_laws_checked": source_audit["independent_matrix_histogram_laws_checked"],
+            "complex_source_histogram_laws_checked": complex_audit["independent_raw_source_histogram_laws_checked"],
+            "streamed_source_orbit_controls_verified": len(orbit_audit["controls"]),
+            "s8_streamed_group_pairs": source_controls[-1]["character_certificate"]["enumerated_group_pairs"],
+            "s8_intermediate_copy_points": len(intermediate_controls),
             "growing_copy_measurement_compilers": 0},
         "claim_gate": {"finite_complete_channel_evaluation_verified": verified,
             "invariant_transcript_implies_zero_binary_signal": False,
@@ -1516,6 +2092,17 @@ def build_binary_carrier_instrument_report() -> dict:
             "source_selected_parity_exact_contraction_verified": selected_parity_audit["verified"],
             "s6_corrected_negative_parity_all_copy_failure_certified": selected_parity_obstruction["all_copy_counts_from_two_covered"],
             "source_selected_parity_growing_degree_obstruction_proved": False,
+            "corrected_weight_contraction_verified": weight_audit["verified"],
+            "corrected_full_output_large_copy_bound_derived": True,
+            "corrected_output_bound_covers_retained_sources_or_every_copy_count": False,
+            "source_category_contraction_verified": source_audit["verified"],
+            "complex_source_mixtures_verified": complex_audit["verified"],
+            "full_source_walsh_large_copy_bound_derived": True,
+            "full_source_walsh_bound_formally_verified": False,
+            "full_source_walsh_bound_covers_all_copy_counts": False,
+            "streamed_source_orbit_spectra_verified": orbit_audit["verified"],
+            "s8_sign_category_table_loses_to_pairs_in_tested_window": all(row["ideal_paired_table_loses_to_pair_count"] for row in intermediate_controls),
+            "s8_finite_probe_closes_general_intermediate_window": False,
             "unlabeled_selector_information_bound_derived": True,
             "unlabeled_selector_bound_covers_retained_source_labels": False,
             "fixed_selector_marginal_bound_derived": True,
@@ -1540,8 +2127,9 @@ def build_binary_carrier_instrument_report() -> dict:
             "A fixed parity of ANY degree has the outcome law of a random two-subset Hadamard test, retaining all source labels. Input-independent randomization pays an average, not exponential catalogue size. Its bounded-Fourier-norm corollary rules out scalable all-zero success despite the finite S4 gain.",
             "Linear-time majority evaluation does not imply small Fourier norm: the exact odd-majority norm is at least 2^((k-1)/2)/k. The parity-transfer bound does not rule out arbitrary efficient thresholds.",
             "The source-corrected negative-character-selected parity loses at S6 for every k>=2 to a single pair, even if its accepting orientation is reversed. Exact moment envelopes certify the unbounded-copy tail; do not infer a growing-degree or arbitrary source-conditioned-readout theorem.",
+            "A common real central reflection, matching source-phase bit correction, and subsequent source discard give an exchangeable full output. In the large-copy regime a positive-mixture/central-overlap bound limits ALL corrected-bit classifiers, including majority, independently of Fourier norm. S1024 k=17528 gives T<=2^-2174. The intermediate copy window and later use of source labels are not covered.",
             "Fixed-copy invariant instruments repeated polynomially many times remain below the required asymptotic information budget."],
-        "next_experiments": ["Use label-summed character generating functions to test actual source-corrected Hamming thresholds beyond S4, against exact pair baselines. Source-selected parity is no longer an untested positive example; its corrected negative-character version has an all-copy S6 failure certificate, not an all-degree obstruction.",
+        "next_experiments": ["Test the joint law of a retained source-sign count and corrected Hamming weight, or tighten the unresolved intermediate-copy window. Do not retry source-discarded corrected majority at the already obstructed large-copy budget; additional source processing needs its own natural-weight and classical-baseline audit.",
             "Compare its full source-weighted channel against stronger product-basis and tensor-contraction baselines.",
             "Use the current schedules only as regression controls, not as evidence of a new scalable algorithm."],
     }
@@ -1559,7 +2147,7 @@ def write_binary_carrier_instrument_report(path: Path = REPORT_PATH, *, write_re
         upsert_experiment(ExperimentRecord(id=registry_experiment_id, candidate_id=registry_candidate_id,
             title="Source-weighted binary carrier instruments", status=report["status"],
             hypothesis="Known carrier instruments expose useful binary information without assuming an ideal residual measurement.",
-            protocol="Evaluate physical null/shared-hidden laws, actual readouts, retained states, latent-irrep replay, clean GPE and adversarial reference discard. Test source-conditioned regular lifts, quotient-POVM extensions and palette bounds. Evaluate coherent subset phases with direct unitaries and independent conditional kernels. Contract source-selected parity using exact character moments through S6; certify the corrected negative-selection all-copy failure against one pair. Charge QFT/action calls separately from classifier cost.",
+            protocol="Evaluate physical shared-hidden laws, actual readouts, latent-irrep replay, clean GPE, source-conditioned lifts and palette bounds. Contract source-selected parity and full source-corrected Hamming laws through S6 using exact characters. Check the positive coset-diagonal mixture, signed off-coset remainder and central-overlap large-copy bound against matrix histograms and pair baselines. Charge QFT/action calls separately from classifier cost.",
             positive_signal="A growing-copy program with a compiled outcome classifier, not finite Bayes-table performance.",
             falsifiers=["outcome mass is missing", "disturbance destroys the needed signal", "GPE workspace is discarded instead of uncomputed", "classifier cost is omitted", "fixed-copy repetition fails the information bound"],
             metrics=list(report["headline_metrics"]), dependencies=["physical three-copy Fourier blocks", "existing pair-carrier projectors"],
@@ -1607,6 +2195,27 @@ def write_binary_carrier_instrument_report(path: Path = REPORT_PATH, *, write_re
                 applies_to=[registry_candidate_id, "classically adaptive finite-catalogue subset programs"],
                 evidence={"artifact": str(path), "derivation": report["source_conditioned_palette_derivation"], "status": "derived-review-pending"}))
         if report["claim_gate"]["finite_coherent_subset_phase_query_verified"]:
+            if report["claim_gate"]["streamed_source_orbit_spectra_verified"] and report["claim_gate"]["s8_sign_category_table_loses_to_pairs_in_tested_window"]:
+                upsert_negative_result(NegativeResultRecord(id="S8-SIGN-CATEGORY-WALSH-INTERMEDIATE-PAIR-FAILURE", source=registry_experiment_id,
+                    claim="The negative-character reflection with retained sign categories and corrected Walsh bits outperforms disjoint-pair readouts in the tested S8 intermediate copy window.",
+                    reason_invalid="Exact C(h)-conjugation orbits reduce 1625702400 pairs to 7338240 streamed weighted pairs. Every signed categorical and scalar spectrum and remainder matches full S4/S6 enumeration. At S8 k=7,8,10,12,14,16, even the ideal paired-category histogram loses to coarse pair-event counts. At k=16 its distance is 0.119520 versus 0.150255 for pairs, while raw coset-state distance is at least 1-105/65536.",
+                    lesson="Deprioritize this specified sign-category readout: at k=16 source count alone already has distance 0.115334. This does NOT test every retained irrep label, another central phase, or every copy count at growing degree. The orbit evaluator remains factorial in degree, signed spectra are not a classical sampler, and the raw support-rank POVM is not an implemented classifier. Pair measurements retain their quantum front end. The general intermediate window remains open.",
+                    applies_to=[registry_candidate_id, "S8 negative-character sign-category Walsh readout"],
+                    evidence={"artifact": str(path), "derivation": report["source_orbit_derivation"], "status": "exact-finite-degree-review-pending"}))
+            if report["claim_gate"]["source_category_contraction_verified"] and report["claim_gate"]["complex_source_mixtures_verified"]:
+                upsert_negative_result(NegativeResultRecord(id="FULL-SOURCE-WALSH-LARGE-COPY-MIXTURE-BOUND", source=registry_experiment_id,
+                    claim="Keeping all source irrep labels or using complex central phases automatically rescues a one-query uniform-mask Walsh measurement at large participating-copy count.",
+                    reason_invalid="A common central unitary fixed before sources gives positive coset-diagonal categorical mixtures. Mixed central overlap bounds their distance by 2k sqrt(r/M). Character column orthogonality bounds the off-coset radius by min(1,1/2+3/sqrt(L)), INDEPENDENT of category count, with L=n(n-1)/2 for even n>=8. Thus T <= 2k sqrt(r/M)+|G| radius^k. Even retaining all irreps, using r<=2^(n-1), gives T<=2^-1663 at S1024 k=17528.",
+                    lesson="This review-pending statement covers arbitrary classical decisions on the COMPLETE paired source/Walsh transcript, not only counts or corrected bits. It requires one uniform full-mask query, a common central unitary and partition chosen before inputs, Walsh readout and physical discard. Complex phases are allowed. The intermediate copy window is NOT closed; extra available copies can be ignored. Multiple queries, input-adaptive phases and final coherent POVMs remain outside scope. Finite ideal tables sometimes beat coarse pair counts; compare full pair likelihoods and do not call tables compiled classifiers. Independent review and novelty checks remain outstanding.",
+                    applies_to=[registry_candidate_id, "one-query full-source Walsh transcripts"],
+                    evidence={"artifact": str(path), "derivation": report["source_category_walsh_derivation"], "status": "derived-review-pending"}))
+            if report["claim_gate"]["corrected_weight_contraction_verified"]:
+                upsert_negative_result(NegativeResultRecord(id="CORRECTED-WALSH-OUTPUT-LARGE-COPY-MIXTURE-BOUND", source=registry_experiment_id,
+                    claim="A common real central phase reflection followed by its matching source-bit correction and source discard has a useful full-output classifier at the tested large-copy scaling, even though parity and bounded-Fourier-envelope readouts fail.",
+                    reason_invalid="The complete corrected output is exchangeable. Its coset-diagonal part is a positive binomial mixture; central squared-amplitude overlap is at most 1/M and bounds mixture separation by 3k/(2 sqrt(M)). A bulk/exceptional off-coset split adds |G|*2^-k + 4 sqrt(|G|)*(1/2+1/sqrt(n))^k. At S1024 k=17528 the outward-rounded total bound is 2^-2174. Exact finite Hamming laws and diagonal-mixture identities are independently checked.",
+                    lesson="This includes majority and arbitrary classifiers of the corrected bits, but requires discarding source labels after matching phase correction, discarded physical inputs, one uniform full-mask query and a common real central reflection chosen before observing sources. Raw-copy and large-copy bounds do NOT close the intermediate window. A positive comparison mixture is not the exact small-k law or an efficiently sampled classical replacement. The derivation is review-pending and novelty is not established.",
+                    applies_to=[registry_candidate_id, "source-corrected Walsh full-output classifiers"],
+                    evidence={"artifact": str(path), "derivation": report["corrected_weight_derivation"], "status": "derived-review-pending"}))
             if report["claim_gate"]["source_selected_parity_exact_contraction_verified"] and report["claim_gate"]["s6_corrected_negative_parity_all_copy_failure_certified"]:
                 upsert_negative_result(NegativeResultRecord(id="S6-SOURCE-SELECTED-PARITY-ALL-COPY-FAILURE", source=registry_experiment_id,
                     claim="Taking the source-corrected parity only on negative-character labels beats a one-pair detector at S6 for some k>=2.",

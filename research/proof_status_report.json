@@ -2,8 +2,8 @@
   "blocking_status_count": 24,
   "candidate_count": 8,
   "counterexample_search_count": 8,
-  "created_at": "2026-09-11T09:58:46.239478+00:00",
-  "lemma_count": 1274,
+  "created_at": "2026-09-13T02:11:32.741814+00:00",
+  "lemma_count": 1277,
   "needs_evidence_count": 0,
   "proof_debt": {
     "counterexample_search_count": 8,
@@ -73,8 +73,8 @@
         "target_claim": "The coset observable is not a disguised classical invariant."
       }
     ],
-    "created_at": "2026-09-11T09:58:46.235258+00:00",
-    "lemma_count": 1274,
+    "created_at": "2026-09-13T02:11:32.737502+00:00",
+    "lemma_count": 1277,
     "lemmas": [
       {
         "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -675,6 +675,44 @@
         "id": "LEMMA-CODE-COSET-COLLECTIVE-S6-SOURCE-SELECTED-PARITY-ALL-COPIES",
         "statement": "At S6, corrected parity selected by negative source character loses to one pair for every k>=2, under either accepting orientation. An exact character-moment spectrum certifies k=2,...,37 directly and a decreasing l1/radius tail certifies every k>=38.",
         "status": "exact-finite-degree-all-copy-certificate-review-pending"
+      },
+      {
+        "candidate_id": "CODE-COSET-COLLECTIVE",
+        "depends_on": [
+          "LEMMA-CODE-COSET-COLLECTIVE-COHERENT-SUBSET-PHASE-QUERY",
+          "PO-INPUT-MODEL",
+          "PO-SUCCESS"
+        ],
+        "falsification_test": "Verify every finite weight probability, coset-diagonal positive mixture, signed remainder and shared-h covariance. Use central squared-amplitude overlap and unitary cross cancellation; do not replace the small-k law with the mixture or drop its error. Discarding sources after correction is essential; neither all copy counts nor arbitrary complex phases are certified. No classical sampler or novelty follows.",
+        "id": "LEMMA-CODE-COSET-COLLECTIVE-CORRECTED-WALSH-OUTPUT-MIXTURE-BOUND",
+        "statement": "For a common real central reflection fixed before source labels and matching source-phase correction, discarding sources and physical inputs gives an exchangeable full Walsh output. Its distance is at most 3k/(2 sqrt(M)) plus bulk and exceptional off-coset remainder bounds, vanishing in the stated large-copy regime. The intermediate window and further source-based readouts are not covered.",
+        "status": "derived-corrected-output-mixture-bound-review-pending"
+      },
+      {
+        "candidate_id": "CODE-COSET-COLLECTIVE",
+        "depends_on": [
+          "LEMMA-CODE-COSET-COLLECTIVE-COHERENT-SUBSET-PHASE-QUERY",
+          "PO-INPUT-MODEL",
+          "PO-MEASUREMENT",
+          "PO-SUCCESS"
+        ],
+        "falsification_test": "Check full paired categorical laws, natural source marginals, complex coset-diagonal mixtures, mixed projector overlaps and the category-count-INDEPENDENT column envelope. Never discard signed remainder mass or condition on rare sources. Test source-count rules against source-only and full pair baselines. All source labels are covered but multiple queries, nonuniform masks, source-adaptive phases, final coherent readouts and every participating-copy count are not. No efficient classical sampler, formal verification or novelty is supplied.",
+        "id": "LEMMA-CODE-COSET-COLLECTIVE-FULL-SOURCE-WALSH-MIXTURE-BOUND",
+        "statement": "For one uniform full-mask query with a common central unitary and irrep partition fixed before sources, retaining the complete paired source/Walsh transcript and discarding physical inputs gives T <= 2k sqrt(r/M)+|G| min(1,1/2+3/sqrt(L))^k, L=n(n-1)/2. Complex phases and all irrep labels, using r<=2^(n-1), are covered in the stated large participating-copy regime; the intermediate window is unresolved.",
+        "status": "derived-full-source-walsh-bound-review-pending"
+      },
+      {
+        "candidate_id": "CODE-COSET-COLLECTIVE",
+        "depends_on": [
+          "LEMMA-CODE-COSET-COLLECTIVE-COHERENT-SUBSET-PHASE-QUERY",
+          "PO-INPUT-MODEL",
+          "PO-MEASUREMENT",
+          "PO-SUCCESS"
+        ],
+        "falsification_test": "Require equality of all signed spectra against full S4/S6 sums, exact orbit multiplicities and shared-h conjugation. Independently check scalar weight marginals and character predicates. Full S_n conjugacy of only one endpoint is invalid. The S8 experiment retains sign categories, not every irrep label; no growing-degree/all-copy theorem or efficient support-rank classifier follows.",
+        "id": "LEMMA-CODE-COSET-COLLECTIVE-S8-SIGN-CATEGORY-INTERMEDIATE-FAILURE",
+        "statement": "Exact simultaneous C(h)-conjugation orbits preserve the complete sign-category/Walsh spectrum, including signed mass and remainder. At S8 and tested k=7,8,10,12,14,16, the ideal negative-character sign-category readout loses to coarse disjoint-pair counts even though the raw coset-state support-rank comparison has substantially more information.",
+        "status": "exact-s8-finite-window-failure-review-pending"
       },
       {
         "candidate_id": "CODE-COSET-COLLECTIVE",

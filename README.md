@@ -99,6 +99,18 @@ goes beyond that scope with exact character contractions through S6. Its
 corrected negative-character rule loses to even one pair for every copy
 count k>=2 at S6, certified by an exact finite prefix and a decreasing tail.
 This is a scoped negative result, not a growing-degree no-go or a speedup.
+The [full-source Walsh analysis](research/SOURCE_CATEGORY_WALSH.md) extends
+the [corrected-output bound](research/CORRECTED_WALSH_WEIGHT.md): all source
+irrep labels and complex central phases are now covered in the large
+participating-copy regime, review pending. Exact joint laws expose source
+information previously discarded and compare it with full pair likelihoods.
+The intermediate copy window and multi-query measurements remain unresolved;
+no scalable advantage, classical sampler or novelty claim is established.
+The [streamed S8 orbit probe](research/SOURCE_ORBIT_CONTRACTION.md) now tests
+the intermediate copy regime without a full group-pair matrix. Its ideal
+sign-category/Walsh table loses to pair-count readouts at every tested point,
+despite substantial information in the raw coset states. This eliminates
+a specified finite readout, not the general intermediate regime.
 The [classical value-access audit](research/CLASSICAL_VALUE_ACCESS_AUDIT.md)
 replaces hidden full-table quadratic reconstruction with counted point queries,
 including exact-residue controls on nonmaterializable domains. Sample-limited
