@@ -42,7 +42,7 @@ from research_registry import (
 )
 
 
-PROJECT_ROOT = Path(__file__).resolve().parent
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
 REGEV_SOURCE_PATH = (
     PROJECT_ROOT / "research/literature_cache/cs_0304005_source/quantum_average.tex"
 )

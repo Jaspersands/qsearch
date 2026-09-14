@@ -163,6 +163,9 @@ def test_clean_registry_runner_and_negative_baseline_artifacts(tmp_path, monkeyp
     assert "CORRECTED-WALSH-OUTPUT-LARGE-COPY-MIXTURE-BOUND" in negatives
     assert "FULL-SOURCE-WALSH-LARGE-COPY-MIXTURE-BOUND" in negatives
     assert "S8-SIGN-CATEGORY-WALSH-INTERMEDIATE-PAIR-FAILURE" in negatives
+    assert "FULL-SOURCE-QUANTUM-SELECTOR-LARGE-COPY-BOUND" in negatives
+    assert "UNMEASURED-IRREP-LABEL-NOT-A-COHERENT-ESCAPE" in negatives
+    assert "HIGH-OCCUPATION-MASK-FIDELITY-OBSTRUCTION" in negatives
     from dequantization_checks import findings_from_negative_results
     from proof_tracker import _binary_carrier_instrument_lemmas
     findings = findings_from_negative_results([{"id": "CODE-COSET-COLLECTIVE"}], load_negative_results())
@@ -200,6 +203,22 @@ def test_clean_registry_runner_and_negative_baseline_artifacts(tmp_path, monkeyp
     assert lemmas[12].status == "derived-corrected-output-mixture-bound-review-pending"
     assert lemmas[13].status == "derived-full-source-walsh-bound-review-pending"
     assert lemmas[14].status == "exact-s8-finite-window-failure-review-pending"
+    assert lemmas[15].status == "derived-source-selector-quantum-bound-review-pending"
+    assert lemmas[16].status == "derived-mask-tail-fidelity-bound-review-pending"
+    tail = next(row for row in findings if row.id.endswith("MASK-TAIL-FIDELITY-BOUND"))
+    assert "Source-selected masks falsify" in tail.required_action
+    assert "not a novel result by certification" in tail.required_action
+    assert "WITHOUT a uniform-overlap penalty" in lemmas[16].statement
+    quantum = next(row for row in findings if row.id.endswith("SOURCE-SELECTOR-QUANTUM-MIXTURE-BOUND"))
+    assert "Source records are CLASSICAL" in quantum.required_action
+    assert "intermediate window is closed ASYMPTOTICALLY" in quantum.required_action
+    assert "not for every finite degree or arbitrary mask state" in quantum.required_action
+    assert "Never substitute one representative" in quantum.required_action
+    assert "raw-copy bound" in quantum.required_action
+    assert "common group-algebra unitary" in lemmas[15].statement
+    assert "decision distance" in lemmas[15].statement
+    assert "every polynomial copy budget" in lemmas[15].statement
+    assert "BOTH endpoint orientations" in lemmas[15].falsification_test
     intermediate = next(row for row in findings if row.id.endswith("S8-SIGN-CATEGORY-INTERMEDIATE-FAILURE"))
     assert "does NOT test every retained irrep label" in intermediate.required_action
     retained = next(row for row in findings if row.id.endswith("FULL-SOURCE-WALSH-MIXTURE-BOUND"))

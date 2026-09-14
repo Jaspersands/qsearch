@@ -55213,6 +55213,22 @@
   {
     "applies_to": [
       "CODE-COSET-COLLECTIVE",
+      "full-source quantum selector readouts"
+    ],
+    "claim": "Tuning the participating copy count, final selector POVM, common noncentral group-algebra unitary, or central-weight mask rescues the one-query physical-discard architecture at polynomial resources.",
+    "evidence": {
+      "artifact": "research/representation/coset_binary_carrier_instruments.json",
+      "derivation": "research/TYPICAL_MASK_OBSTRUCTION.md",
+      "status": "derived-review-pending"
+    },
+    "id": "FULL-SOURCE-QUANTUM-SELECTOR-LARGE-COPY-BOUND",
+    "lesson": "Source records are CLASSICAL, all physical inputs are discarded, and the common unitary, source partition and participating count are fixed before inputs. A shared hidden involution is uniform on its class. Never substitute one representative for a noncentral operation, average h before products, or cap E_h T with the raw-copy bound; it caps only the decision distance. The former intermediate window is closed ASYMPTOTICALLY for uniform masks and polynomial-overlap fixed filters, not for every finite degree or arbitrary mask state. At S1024 the conservative all-budget certificate is still vacuous. Seek genuinely changed physical retention, source-adaptive operations, multiple queries, or a fully charged mask outside this scope. This is a derived/review-pending information obstruction, not independently reviewed, novel by certification, or a classical sampler.",
+    "reason_invalid": "For a uniform mask, discarding weights below floor(k/4) costs at most 2^(1-k/16) across both hypotheses. Its TWO-SIDED projection kills tensor remainder terms with too few nonzero-selector factors. Bulk and endpoint tails are at most D(6/sqrt(L))^floor(k/4) and 4sqrt(D)2^(k/2)(2/sqrt(L))^floor(k/4). Add 2k sqrt(r/M) for the class-averaged positive mixtures. Splitting at 5n and using the raw-copy prefix bound obstructs every polynomial budget asymptotically. The finite S4096 interval certificate gives T<=2^-571 for every pre-input k<=4096^2, including central-weight masks with budget-wide p>=1/(4096^2+1).",
+    "source": "EXP-COSET-BINARY-CARRIER-INSTRUMENTS"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
       "one-query full-source Walsh transcripts"
     ],
     "claim": "Keeping all source irrep labels or using complex central phases automatically rescues a one-query uniform-mask Walsh measurement at large participating-copy count.",
@@ -55481,6 +55497,22 @@
     "lesson": "Bounded graphlet/homomorphism tensor contractions are classical invariants, not quantum speedup evidence.",
     "reason_invalid": "The tensor observable is exactly a classical shadow: induced four-vertex graphlet count invariant.",
     "source": "graphlet_tensor_observables.py"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "high-occupation low-uniform-overlap masks"
+    ],
+    "claim": "An exponentially small overlap with the uniform selector alone rescues the one-common-query physical-discard architecture, even when essentially all mask mass has weight at least 3n.",
+    "evidence": {
+      "artifact": "research/representation/coset_binary_carrier_instruments.json",
+      "derivation": "research/MASK_TAIL_FIDELITY_OBSTRUCTION.md",
+      "status": "derived-review-pending"
+    },
+    "id": "HIGH-OCCUPATION-MASK-FIDELITY-OBSTRUCTION",
+    "lesson": "The mask must be fixed independently of both the shared hidden involution AND source records. Source-selected masks falsify the Jensen step; high mean weight without a lower-tail bound is insufficient. Low-occupation masks, retained physical data, source adaptation and multiple queries remain unresolved. This is a derived/review-pending restricted information obstruction, not a novel result by certification, independent proof, or classical sampler.",
+    "reason_invalid": "The positive arbitrary-mask comparison is a preparation-channel image of the commuting Walsh law and pays NO uniform-overlap penalty. Environmental root fidelity and source-weighted Jensen bound the bulk remainder by D min(1,12/sqrt(L))^(t/2) and the endpoints by 4sqrt(D) min(1,2/sqrt(L))^(t/2). Add 2sqrt(pi) for the mass below t and 2k sqrt(r/M) for the averaged comparison. At polynomial k, t>=3n and superpolynomially small pi, the distance is negligible asymptotically. At S4096 k=n^2, t=3n, pi=0 the conditional integer certificate is 2^-5373.",
+    "source": "EXP-COSET-BINARY-CARRIER-INSTRUMENTS"
   },
   {
     "applies_to": [
@@ -84321,6 +84353,22 @@
     "id": "UNLABELED-COHERENT-MASK-COUNT-NOT-INFORMATION-AMPLIFICATION",
     "lesson": "This review-pending derivation excludes retained source labels, retained physical inputs, mask-dependent phases and multiple queries. It is not a general coherent-measurement obstruction and establishes no novelty.",
     "reason_invalid": "The unlabeled selector kernel has unit diagonal and one common nonempty off-diagonal value. Its squared trace distance is at most min(1,3/M), or min(1,5/M) including the empty mask, independent of mask count. Direct conditional matrices summed over every natural source verify the closed form in S3/S4.",
+    "source": "EXP-COSET-BINARY-CARRIER-INSTRUMENTS"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "unmeasured source-label copy mutations"
+    ],
+    "claim": "Omitting measurement of a coherently copied source irrep label creates a new resource outside the classical-source quantum-selector obstruction, without changing the input or physical operations.",
+    "evidence": {
+      "artifact": "research/representation/coset_binary_carrier_instruments.json",
+      "derivation": "research/SOURCE_SELECTOR_QUANTUM_BOUND.md",
+      "status": "standard-input-dephasing-identity-checked"
+    },
+    "id": "UNMEASURED-IRREP-LABEL-NOT-A-COHERENT-ESCAPE",
+    "lesson": "A merely unmeasured label copy is not coherent physical-source retention. Specify an operation or input that actually changes these blocks, or retain nontrivial physical carrier information, and charge the changed access model. This standard dephasing identity does not exclude genuine retained quantum data or source-adaptive physical operations. Do not promote a mutation solely because an assumption flag was renamed.",
+    "reason_invalid": "Standard mixed coset inputs commute with central irrep projectors. The clean label-copy isometry sum_j |j> P_j therefore produces an already block-diagonal label record. Every common subset group-algebra query commutes with the same source projectors. S3/S4 controls check every hidden member, central-projector commutators and exact label-copy dephasing; a nonstandard cross-irrep pure input changes by trace distance 1/2 and is explicitly outside the input model.",
     "source": "EXP-COSET-BINARY-CARRIER-INSTRUMENTS"
   },
   {

@@ -82,6 +82,12 @@
           "severity": "high"
         },
         {
+          "evidence": "The positive arbitrary-mask comparison is a preparation-channel image of the commuting Walsh law and pays NO uniform-overlap penalty. Environmental root fidelity and source-weighted Jensen bound the bulk remainder by D min(1,12/sqrt(L))^(t/2) and the endpoints by 4sqrt(D) min(1,2/sqrt(L))^(t/2). Add 2sqrt(pi) for the mass below t and 2k sqrt(r/M) for the averaged comparison. At polynomial k, t>=3n and superpolynomially small pi, the distance is negligible asymptotically. At S4096 k=n^2, t=3n, pi=0 the conditional integer certificate is 2^-5373.",
+          "finding_id": "DEQ-CODE-COSET-COLLECTIVE-MASK-TAIL-FIDELITY-BOUND",
+          "required_action": "The mask must be fixed independently of both the shared hidden involution AND source records. Source-selected masks falsify the Jensen step; high mean weight without a lower-tail bound is insufficient. Low-occupation masks, retained physical data, source adaptation and multiple queries remain unresolved. This is a derived/review-pending restricted information obstruction, not a novel result by certification, independent proof, or classical sampler. This is an access or symmetry boundary, not classical dequantization.",
+          "severity": "high"
+        },
+        {
           "evidence": "Independent reference-carrier discard suppresses binary detection: T^2 <= p(m)/(2(2m-1)!!) sum_j(2^b_j-1) for predetermined references. Classical adaptation with quantum memory obeys a weaker bound multiplied by the round count, provided fresh blocks are twirled before memory interaction. A single global twirl and coherent carrier retention remain open.",
           "finding_id": "DEQ-CODE-COSET-COLLECTIVE-REFERENCE-TWIRL-INFORMATION-LOSS",
           "required_action": "Retain charged cross-input carrier correlations. Predetermined references and classical adaptation with fresh-block twirling before memory coupling obey separate bounds. Quantum-controlled references and pre-twirl memory interaction remain outside scope. This is not a general HSP lower bound or classical dequantization. This is an access or symmetry boundary, not classical dequantization.",
@@ -124,6 +130,12 @@
           "severity": "high"
         },
         {
+          "evidence": "For a uniform mask, discarding weights below floor(k/4) costs at most 2^(1-k/16) across both hypotheses. Its TWO-SIDED projection kills tensor remainder terms with too few nonzero-selector factors. Bulk and endpoint tails are at most D(6/sqrt(L))^floor(k/4) and 4sqrt(D)2^(k/2)(2/sqrt(L))^floor(k/4). Add 2k sqrt(r/M) for the class-averaged positive mixtures. Splitting at 5n and using the raw-copy prefix bound obstructs every polynomial budget asymptotically. The finite S4096 interval certificate gives T<=2^-571 for every pre-input k<=4096^2, including central-weight masks with budget-wide p>=1/(4096^2+1).",
+          "finding_id": "DEQ-CODE-COSET-COLLECTIVE-SOURCE-SELECTOR-QUANTUM-MIXTURE-BOUND",
+          "required_action": "Source records are CLASSICAL, all physical inputs are discarded, and the common unitary, source partition and participating count are fixed before inputs. A shared hidden involution is uniform on its class. Never substitute one representative for a noncentral operation, average h before products, or cap E_h T with the raw-copy bound; it caps only the decision distance. The former intermediate window is closed ASYMPTOTICALLY for uniform masks and polynomial-overlap fixed filters, not for every finite degree or arbitrary mask state. At S1024 the conservative all-budget certificate is still vacuous. Seek genuinely changed physical retention, source-adaptive operations, multiple queries, or a fully charged mask outside this scope. This is a derived/review-pending information obstruction, not independently reviewed, novel by certification, or a classical sampler. This is an access or symmetry boundary, not classical dequantization.",
+          "severity": "high"
+        },
+        {
           "evidence": "Four width-(2,3) colorings land in the dependency's unresolved cubic-overlap class. The report previously asserted a universal theorem regardless.",
           "finding_id": "DEQ-CODE-COSET-COLLECTIVE-SYSTEMATIC-LOCAL-PROOF-GAP",
           "required_action": "Do not conflate a local proof gap with a refutation of the separate global suffix/surface BABA theorem; replay the retained examples against both arguments. This is an access or symmetry boundary, not classical dequantization.",
@@ -145,6 +157,12 @@
           "evidence": "The unlabeled selector kernel has unit diagonal and one common nonempty off-diagonal value. Its squared trace distance is at most min(1,3/M), or min(1,5/M) including the empty mask, independent of mask count. Direct conditional matrices summed over every natural source verify the closed form in S3/S4.",
           "finding_id": "DEQ-CODE-COSET-COLLECTIVE-UNLABELED-COHERENT-SELECTOR-BOUND",
           "required_action": "This review-pending derivation excludes retained source labels, retained physical inputs, mask-dependent phases and multiple queries. It is not a general coherent-measurement obstruction and establishes no novelty. This is an access or symmetry boundary, not classical dequantization.",
+          "severity": "high"
+        },
+        {
+          "evidence": "Standard mixed coset inputs commute with central irrep projectors. The clean label-copy isometry sum_j |j> P_j therefore produces an already block-diagonal label record. Every common subset group-algebra query commutes with the same source projectors. S3/S4 controls check every hidden member, central-projector commutators and exact label-copy dephasing; a nonstandard cross-irrep pure input changes by trace distance 1/2 and is explicitly outside the input model.",
+          "finding_id": "DEQ-CODE-COSET-COLLECTIVE-UNMEASURED-IRREP-LABEL-IDENTITY",
+          "required_action": "A merely unmeasured label copy is not coherent physical-source retention. Specify an operation or input that actually changes these blocks, or retain nontrivial physical carrier information, and charge the changed access model. This standard dephasing identity does not exclude genuine retained quantum data or source-adaptive physical operations. Do not promote a mutation solely because an assumption flag was renamed. This is an access or symmetry boundary, not classical dequantization.",
           "severity": "high"
         },
         {
@@ -5057,7 +5075,7 @@
         }
       ],
       "candidate_id": "CODE-COSET-COLLECTIVE",
-      "created_at": "2026-09-13T02:11:35.552432+00:00",
+      "created_at": "2026-09-14T05:36:33.088835+00:00",
       "id": "CONJ-CODE-COSET-COLLECTIVE",
       "next_actions": [
         "Resolve every blocking finding before promotion.",
@@ -13953,6 +13971,7 @@
           "metrics": {
             "adaptive_catalogue_source_blocks_checked": 152,
             "adaptive_catalogue_transcript_branches_checked": 3368,
+            "arbitrary_mask_physical_controls_verified": 6,
             "clean_gpe_cleanup_controls_passed": 2,
             "coherent_measurement_uniform_primitive_reductions": 1,
             "coherent_subset_phase_controls_passed": 7,
@@ -13962,10 +13981,15 @@
             "corrected_weight_exact_mixture_laws_checked": 48,
             "corrected_weight_matrix_laws_checked": 24,
             "declared_terminal_rules_evaluated": 72,
+            "environment_fidelity_controls_verified": 12,
+            "environment_fidelity_tail_thresholds_checked": 48,
             "explicit_one_pair_classifiers_checked": 4,
             "finite_full_source_controls_passed": 2,
             "growing_copy_measurement_compilers": 0,
             "incomplete_support_povm_extensions_checked": 166,
+            "noncentral_group_algebra_controls_verified": 20,
+            "noncentral_hidden_members_evaluated": 60,
+            "polynomial_copy_budget_interval_bounds_evaluated": 12,
             "polynomial_label_arithmetic_controls": 4,
             "random_hadamard_branches_checked": 39672,
             "regular_cell_compression_controls_passed": 3,
@@ -13981,13 +14005,18 @@
             "source_conditioned_parity_laws_checked": 4959,
             "source_conditioned_selector_kernels_checked": 2153,
             "source_count_weight_copy_controls": 24,
+            "source_label_copy_input_controls_verified": 8,
             "source_selected_parity_copy_controls": 96,
             "source_selected_parity_exact_hidden_spectra_checked": 21,
             "source_selected_parity_independent_laws_checked": 96,
-            "streamed_source_orbit_controls_verified": 2
+            "source_selector_quantum_controls_verified": 21,
+            "source_selector_quantum_fixed_weight_controls": 69,
+            "source_selector_quantum_source_multisets_checked": 267,
+            "streamed_source_orbit_controls_verified": 2,
+            "typical_mask_projected_remainders_checked": 144
           },
           "status": "binary-instrument-calibration-fixed-copy-route-obstructed",
-          "summary": "An exact streamed centralizer-orbit contraction now reaches S8 without a full group-pair matrix. Its ideal sign-category/Walsh table loses to coarse pair-event counts throughout the tested 7..16-copy window; source counts already explain most signal. The raw inputs retain far more distinguishability. This is a finite, specified-readout failure, not a growing-degree or all-source no-go. A separate review-pending large-copy bound covers all source irreps and fixed complex central phases; the general intermediate window remains unresolved."
+          "summary": "A typical-mask refinement now obstructs the one-common-group-algebra-query, uniform-mask, physical-discard architecture at EVERY polynomial copy budget asymptotically, subject to review. It retains all classical source labels and the full quantum selector and permits noncentral unitaries and arbitrary final POVMs. Removing low-weight masks with charged gentle error sharpens the quantum remainder; an interval certificate covers all pre-input participating counts, including ignored copies. At S4096 every k<=4096^2 has decision T<=2^-571. Central-weight masks have a charged polynomial-overlap transfer. Arbitrary mask states, retained physical data, source-adaptive operations and multiple queries remain outside scope. No novelty, formal proof or classical sampler is established."
         },
         {
           "experiment_result_id": "RESULT-EXP-COSET-CARRIER-INFORMATION-AUDIT-COSET",
@@ -18066,7 +18095,7 @@
           "summary": "Proved that density-one low-bit fibers contain no affine flat of dimension 8log2(q) or larger with failure 2^-Omega(q log q), uniformly over every adaptive GL(m,2) reparameterization. Any support-contained cancellation-free affine cover is exponential."
         }
       ],
-      "updated_at": "2026-09-13T02:11:35.552432+00:00"
+      "updated_at": "2026-09-14T05:36:33.088835+00:00"
     },
     {
       "assumptions": [
@@ -19488,7 +19517,7 @@
         }
       ],
       "candidate_id": "DHS-GOWERS-SIEVE",
-      "created_at": "2026-09-13T02:11:35.552432+00:00",
+      "created_at": "2026-09-14T05:36:33.088835+00:00",
       "id": "CONJ-DHS-GOWERS-SIEVE",
       "next_actions": [
         "Resolve every blocking finding before promotion.",
@@ -22206,7 +22235,7 @@
           "summary": "Audited 12 explicit hidden-shift instances across 3 phase families. 3 instances show Fourier/derivative structure; 8 are critical/high dequantization risk; 8 survive at least one restricted query model. Best DHSP sieve strategy aggressive_doubling reaches v2=7 from 2048 phase labels; explicit phase-state trace reaches v2=7 with 44 survivor states."
         }
       ],
-      "updated_at": "2026-09-13T02:11:35.552432+00:00"
+      "updated_at": "2026-09-14T05:36:33.088835+00:00"
     },
     {
       "assumptions": [
@@ -22264,7 +22293,7 @@
         }
       ],
       "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
-      "created_at": "2026-09-13T02:11:35.552432+00:00",
+      "created_at": "2026-09-14T05:36:33.088835+00:00",
       "id": "CONJ-HYP-LIT-COSET-OBSERVABLES",
       "next_actions": [
         "Resolve every blocking finding before promotion.",
@@ -22304,7 +22333,7 @@
           "summary": "Audited 4 hidden-permutation graph pairs. 2 pair survives current classical and low-register tests; 1 control pair is classically distinguished; 2 CFI-style parity benchmark(s) included."
         }
       ],
-      "updated_at": "2026-09-13T02:11:35.552432+00:00"
+      "updated_at": "2026-09-14T05:36:33.088835+00:00"
     },
     {
       "assumptions": [
@@ -22394,7 +22423,7 @@
         }
       ],
       "candidate_id": "HYP-LIT-HIDDEN-SHIFT-SIEVE",
-      "created_at": "2026-09-13T02:11:35.552432+00:00",
+      "created_at": "2026-09-14T05:36:33.088835+00:00",
       "id": "CONJ-HYP-LIT-HIDDEN-SHIFT-SIEVE",
       "next_actions": [
         "Resolve every blocking finding before promotion.",
@@ -22476,7 +22505,7 @@
           "summary": "Audited 40 explicit hidden-shift instances across 10 phase families. 0 instances show Fourier/derivative structure; 16 are critical/high dequantization risk; 40 survive at least one restricted query model. Best DHSP sieve strategy aggressive_doubling reaches v2=7 from 2048 phase labels; explicit phase-state trace reaches v2=7 with 44 survivor states."
         }
       ],
-      "updated_at": "2026-09-13T02:11:35.552432+00:00"
+      "updated_at": "2026-09-14T05:36:33.088835+00:00"
     },
     {
       "assumptions": [
@@ -22576,7 +22605,7 @@
         }
       ],
       "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
-      "created_at": "2026-09-13T02:11:35.552432+00:00",
+      "created_at": "2026-09-14T05:36:33.088835+00:00",
       "id": "CONJ-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
       "next_actions": [
         "Resolve every blocking finding before promotion.",
@@ -22660,7 +22689,7 @@
           "summary": "Audited 10 graphlet tensor observables across 5 graph pairs. 3 signal(s) collapse to small-pattern classical counts; 3 boundary pair(s) remain without graphlet-tensor signal."
         }
       ],
-      "updated_at": "2026-09-13T02:11:35.552432+00:00"
+      "updated_at": "2026-09-14T05:36:33.088835+00:00"
     },
     {
       "assumptions": [
@@ -22736,7 +22765,7 @@
         }
       ],
       "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
-      "created_at": "2026-09-13T02:11:35.552432+00:00",
+      "created_at": "2026-09-14T05:36:33.088835+00:00",
       "id": "CONJ-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
       "next_actions": [
         "Resolve every blocking finding before promotion.",
@@ -22791,7 +22820,7 @@
           "summary": "Audited 10 graphlet tensor observables across 5 graph pairs. 3 signal(s) collapse to small-pattern classical counts; 3 boundary pair(s) remain without graphlet-tensor signal."
         }
       ],
-      "updated_at": "2026-09-13T02:11:35.552432+00:00"
+      "updated_at": "2026-09-14T05:36:33.088835+00:00"
     },
     {
       "assumptions": [
@@ -22867,7 +22896,7 @@
         }
       ],
       "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
-      "created_at": "2026-09-13T02:11:35.552432+00:00",
+      "created_at": "2026-09-14T05:36:33.088835+00:00",
       "id": "CONJ-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
       "next_actions": [
         "Resolve every blocking finding before promotion.",
@@ -22921,7 +22950,7 @@
           "summary": "Audited 4 hidden-permutation graph pairs. 2 pair survives current classical and low-register tests; 1 control pair is classically distinguished; 2 CFI-style parity benchmark(s) included."
         }
       ],
-      "updated_at": "2026-09-13T02:11:35.552432+00:00"
+      "updated_at": "2026-09-14T05:36:33.088835+00:00"
     },
     {
       "assumptions": [
@@ -22985,7 +23014,7 @@
         }
       ],
       "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
-      "created_at": "2026-09-13T02:11:35.552432+00:00",
+      "created_at": "2026-09-14T05:36:33.088835+00:00",
       "id": "CONJ-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
       "next_actions": [
         "Resolve every blocking finding before promotion.",
@@ -23019,10 +23048,10 @@
           "summary": "Audited 3 code-equivalence pairs. 1 equivalent control pair(s) verified; 2 non-equivalent control pair(s) classically distinguished."
         }
       ],
-      "updated_at": "2026-09-13T02:11:35.552432+00:00"
+      "updated_at": "2026-09-14T05:36:33.088835+00:00"
     }
   ],
-  "created_at": "2026-09-13T02:11:35.833136+00:00",
+  "created_at": "2026-09-14T05:36:33.392682+00:00",
   "needs_evidence_count": 0,
   "status": "blocked"
 }

@@ -212,6 +212,200 @@ def coarse_source_walsh_information_contract(degree: int, copy_count: int, categ
         "novelty_established": False, "is_classical_dequantization": False}
 
 
+def _typical_mask_component_exponents(order: int, class_size: int, categories: int, root: int,
+                                     copies: int, mixture_copy_budget: int | None = None) -> dict | None:
+    if root <= 8:
+        return None
+    t = copies//4
+    budget = copies if mixture_copy_budget is None else mixture_copy_budget
+    return {
+        "mixture": _sqrt_ratio_dyadic_exponent(4*budget**2*categories, class_size),
+        "discarded_mask": min(0, 1-copies//16),
+        "bulk_remainder": _sqrt_ratio_dyadic_exponent(order**2*6**(2*t), root**(2*t)),
+        # k <= 4t+3 removes endpoint oscillations, giving a monotone envelope.
+        "endpoint_remainder": _sqrt_ratio_dyadic_exponent(128*order*8**(2*t), root**(2*t)),
+    }
+
+
+def source_selector_quantum_information_contract(degree: int, copy_count: int, category_count: int | None, *,
+        one_common_subset_query: bool, common_group_algebra_unitary: bool,
+        unitary_and_partition_fixed_before_inputs: bool, hidden_prior_uniform_on_involution_class: bool,
+        no_hidden_correlated_preprocessing_or_side_information: bool,
+        source_records_classical: bool,
+        only_source_records_and_selector_qubits_retained: bool, physical_inputs_discarded: bool,
+        mask_filter_diagonal_and_fixed_before_input: bool, mask_filter_is_a_contraction: bool,
+        hypothesis_independent_filter_success_lower_bound: Fraction = Fraction(1)) -> dict:
+    """Before ANY selector POVM, including charged mask filters; review pending.
+
+    Source records are classical, not coherent physical source registers.
+    Bounds are assumptions/contracts, not arbitrary-program verification.
+    """
+    if (type(degree) is not int or degree < 8 or degree % 2 or type(copy_count) is not int or copy_count < 1
+            or (category_count is not None and (type(category_count) is not int or category_count < 1))):
+        raise ValueError("even S_n degree >=8, positive integer copies, and positive category count or None required")
+    flags = (one_common_subset_query, common_group_algebra_unitary, unitary_and_partition_fixed_before_inputs,
+             hidden_prior_uniform_on_involution_class,
+             no_hidden_correlated_preprocessing_or_side_information,
+             source_records_classical, only_source_records_and_selector_qubits_retained,
+             physical_inputs_discarded, mask_filter_diagonal_and_fixed_before_input, mask_filter_is_a_contraction)
+    if any(type(flag) is not bool for flag in flags):
+        raise ValueError("explicit boolean source/selector assumptions required")
+    p = hypothesis_independent_filter_success_lower_bound
+    if type(p) not in (int, Fraction) or not 0 < p <= 1:
+        raise ValueError("exact rational filter-success lower bound in (0,1] required")
+    p = Fraction(p)
+    applicable = all(flags)
+    order, class_size = math.factorial(degree), math.prod(range(1, degree, 2))
+    r = 1 << (degree-1) if category_count is None else category_count
+    minimum_class = degree*(degree-1)//2
+    root = math.isqrt(minimum_class)
+    bulk = min(Fraction(1), Fraction(root+6, 2*root))
+    endpoint_squared = min(Fraction(1), Fraction((root+2)**2, 2*root**2))
+    components = {
+        "mixture": _sqrt_ratio_dyadic_exponent(4*copy_count**2*r, class_size),
+        "bulk_remainder": _sqrt_ratio_dyadic_exponent(order**2*bulk.numerator**(2*copy_count), bulk.denominator**(2*copy_count)),
+        "endpoint_remainder": _sqrt_ratio_dyadic_exponent(16*order*endpoint_squared.numerator**copy_count,
+                                                         endpoint_squared.denominator**copy_count),
+    }
+    unpruned = min(0, max(components.values())+2)
+    typical = _typical_mask_component_exponents(order, class_size, r, root, copy_count)
+    typical_bound = min(0, max(typical.values())+2) if typical is not None else None
+    uniform = unpruned if typical_bound is None else min(unpruned, typical_bound)
+    filtered = _sqrt_ratio_dyadic_exponent(p.denominator**2, p.numerator**2*(1 << (-2*uniform)))
+    raw = (0 if copy_count >= (4*class_size).bit_length() else
+           _sqrt_ratio_dyadic_exponent((1 << copy_count)-1, 4*class_size))
+    bound = min(raw, filtered) if applicable else None
+    return {"degree": degree, "copy_count": copy_count, "retained_category_count": category_count,
+        "all_irrep_labels_retained": category_count is None, "category_count_upper_bound": str(r),
+        "applicable": applicable, "source_records_classical": source_records_classical,
+        "minimum_nonidentity_class_size_used": minimum_class,
+        "bulk_trace_norm_radius_upper_bound": str(bulk),
+        "endpoint_trace_norm_radius_squared_upper_bound": str(endpoint_squared),
+        "uniform_component_upper_bound_powers_of_two": components,
+        "unpruned_uniform_upper_bound_power_of_two": unpruned if applicable else None,
+        "typical_mask_component_upper_bound_powers_of_two": typical if applicable else None,
+        "typical_mask_uniform_upper_bound_power_of_two": typical_bound if applicable else None,
+        "typical_mask_minimum_retained_weight": copy_count//4,
+        "uniform_quantum_upper_bound_power_of_two": uniform if applicable else None,
+        "filter_success_lower_bound": str(p), "filter_information_penalty_charged": str(1/p),
+        "filtered_quantum_upper_bound_power_of_two": filtered if applicable else None,
+        "raw_copy_upper_bound_power_of_two": raw if applicable else None,
+        "trace_distance_upper_bound_power_of_two": bound, "bound_is_vacuous": bound == 0 if applicable else None,
+        "covers_arbitrary_final_selector_povm": applicable,
+        "covers_complex_common_central_phases": applicable,
+        "covers_noncentral_common_group_algebra_unitaries": applicable,
+        "bounded_quantity": "T(Omega_0, E_h Omega_h), one shared h drawn uniformly from the involution class",
+        "pointwise_hidden_bound_for_noncentral_unitary": False,
+        "raw_copy_bound_applies_to_average_individual_distance": False,
+        "polynomial_budget_obstruction_derived_asymptotically": applicable,
+        "all_copy_budget_certificate_requires_separate_interval_bound": True,
+        "covers_coherent_source_or_retained_physical_registers": False,
+        "covers_source_adaptive_phase_or_multiple_queries": False,
+        "all_copy_counts_obstructed": False, "copy_count_is_available_resource_budget": False,
+        "comparison_filter_is_required_physical_preparation": False,
+        "formula": "T <= min(1, raw_copy_bound, unpruned_quantum_bound/p, typical_mask_quantum_bound/p)",
+        "scope": "Standard mixed coset inputs alone, without hidden-correlated side information. One shared unknown involution is uniform on its class and averaged AFTER tensor products. One common group-algebra UNITARY, not necessarily central, and source partition are fixed before inputs; retain CLASSICAL source records and the ENTIRE quantum selector, discard physical inputs. The mixture/remainder bounds control E_h T(Omega_0,Omega_h), but their minimum with the raw-copy bound controls only T(Omega_0,E_h Omega_h). The typical-mask refinement removes weights below floor(k/4) with a charged gentle-projection error. Uniform masks and inverse-polynomial-overlap diagonal filters are obstructed for every polynomial copy budget asymptotically, not for every n or exponential budget. A separate interval certificate covers variable participation. No physical retention, source-adaptive unitary, multiple queries or arbitrary mask state is covered.",
+        "proof_status": "derived-source-selector-quantum-bound-review-pending",
+        "assumption_contract_not_arbitrary_program_verifier": True,
+        "novelty_established": False, "is_classical_dequantization": False}
+
+
+def source_selector_polynomial_budget_contract(degree: int, max_copy_count: int, category_count: int | None, *,
+        filter_success_lower_bound_uniform_over_copy_counts: Fraction = Fraction(1), **assumptions) -> dict:
+    """Bound EVERY participating count <= a budget, without sweeping that budget."""
+    if type(max_copy_count) is not int or max_copy_count < 1:
+        raise ValueError("positive integer copy budget required")
+    if type(degree) is not int or degree < 16 or degree % 2:
+        raise ValueError("even degree >=16 required for the monotone typical-mask envelope")
+    pivot = min(max_copy_count, 5*degree)
+    check = source_selector_quantum_information_contract(degree, pivot, category_count,
+        hypothesis_independent_filter_success_lower_bound=filter_success_lower_bound_uniform_over_copy_counts, **assumptions)
+    applicable = check["applicable"]
+    raw = check["raw_copy_upper_bound_power_of_two"]
+    terms = None
+    uniform = filtered = None
+    p = Fraction(check["filter_success_lower_bound"])
+    if max_copy_count > pivot:
+        order, class_size = math.factorial(degree), math.prod(range(1, degree, 2))
+        root = math.isqrt(degree*(degree-1)//2)
+        r = int(check["category_count_upper_bound"])
+        terms = _typical_mask_component_exponents(order, class_size, r, root, pivot+1, max_copy_count)
+        uniform = min(0, max(terms.values())+2)
+        filtered = _sqrt_ratio_dyadic_exponent(p.denominator**2, p.numerator**2*(1 << (-2*uniform)))
+    bound = (raw if filtered is None else max(raw, filtered)) if applicable else None
+    return {"degree": degree, "maximum_available_copy_budget": max_copy_count,
+        "retained_category_count": category_count, "category_count_upper_bound": check["category_count_upper_bound"],
+        "raw_copy_prefix_end": pivot, "typical_mask_suffix_start": pivot+1 if max_copy_count > pivot else None,
+        "applicable": applicable, "all_participating_counts_through_budget_covered": applicable,
+        "raw_prefix_upper_bound_power_of_two": raw,
+        "suffix_component_upper_bound_powers_of_two": terms if applicable else None,
+        "uniform_suffix_upper_bound_power_of_two": uniform if applicable else None,
+        "filtered_suffix_upper_bound_power_of_two": filtered if applicable else None,
+        "trace_distance_upper_bound_power_of_two": bound, "bound_is_vacuous": bound == 0 if applicable else None,
+        "filter_success_lower_bound_uniform_over_copy_counts": str(p),
+        "bounded_quantity": check["bounded_quantity"],
+        "polynomial_budget_and_inverse_filter_overlap_required_for_asymptotic_claim": True,
+        "covers_exponential_copy_budgets_asymptotically": False, "covers_arbitrary_masks": False,
+        "scope": check["scope"], "proof_status": "derived-typical-mask-budget-obstruction-review-pending",
+        "formal_proof_verification": False, "novelty_established": False, "is_classical_dequantization": False}
+
+
+def source_selector_mask_tail_information_contract(degree: int, copy_count: int, category_count: int | None,
+        minimum_mask_weight: int, *, mask_lower_tail_probability_upper_bound: Fraction,
+        one_common_subset_query: bool, common_group_algebra_unitary: bool,
+        unitary_and_partition_fixed_before_inputs: bool, hidden_prior_uniform_on_involution_class: bool,
+        no_hidden_correlated_preprocessing_or_side_information: bool, source_records_classical: bool,
+        only_source_records_and_selector_qubits_retained: bool, physical_inputs_discarded: bool,
+        mask_fixed_before_inputs_and_source_records: bool) -> dict:
+    """Conditional arbitrary-mask tail bound, not a verifier of a supplied program/mask."""
+    if type(degree) is not int or degree < 8 or degree % 2:
+        raise ValueError("even symmetric-group degree >=8 required")
+    if type(copy_count) is not int or copy_count < 1:
+        raise ValueError("positive integer copy count required")
+    if type(minimum_mask_weight) is not int or not 0 <= minimum_mask_weight <= copy_count:
+        raise ValueError("mask weight threshold must be an integer between zero and copy count")
+    if category_count is not None and (type(category_count) is not int or category_count < 1):
+        raise ValueError("positive integer category count or None required")
+    pi = mask_lower_tail_probability_upper_bound
+    if type(pi) not in (int, Fraction) or not 0 <= pi <= 1:
+        raise ValueError("exact rational mask lower-tail probability bound in [0,1] required")
+    flags = (one_common_subset_query, common_group_algebra_unitary,
+        unitary_and_partition_fixed_before_inputs, hidden_prior_uniform_on_involution_class,
+        no_hidden_correlated_preprocessing_or_side_information, source_records_classical,
+        only_source_records_and_selector_qubits_retained, physical_inputs_discarded,
+        mask_fixed_before_inputs_and_source_records)
+    if any(type(flag) is not bool for flag in flags):
+        raise ValueError("all architecture assumptions must be explicit booleans")
+    applicable, pi = all(flags), Fraction(pi)
+    d, m = math.factorial(degree), math.prod(range(1, degree, 2))
+    r = 2**(degree-1) if category_count is None else category_count
+    root = math.isqrt(degree*(degree-1)//2)
+    bulk, endpoint = min(Fraction(1), Fraction(12, root)), min(Fraction(1), Fraction(2, root))
+    squares = {"mixture": Fraction(4*copy_count**2*r, m), "discarded_mask": 4*pi,
+        "bulk_remainder": d*d*bulk**minimum_mask_weight,
+        "endpoint_remainder": 16*d*endpoint**minimum_mask_weight}
+    terms = {key: _sqrt_ratio_dyadic_exponent(value.numerator, value.denominator) for key, value in squares.items()}
+    comparison = min(0, max(value for value in terms.values() if value is not None)+2)
+    raw = (0 if copy_count >= (4*m).bit_length() else
+        _sqrt_ratio_dyadic_exponent((1 << copy_count)-1, 4*m))
+    bound = min(raw, comparison) if applicable else None
+    return {"degree": degree, "copy_count": copy_count, "minimum_mask_weight": minimum_mask_weight,
+        "category_count_upper_bound": str(r), "mask_lower_tail_probability_upper_bound": str(pi),
+        "applicable": applicable, "component_upper_bound_powers_of_two": terms if applicable else None,
+        "bulk_environment_failure_probability_upper_bound": str(bulk),
+        "endpoint_environment_failure_probability_upper_bound": str(endpoint),
+        "comparison_upper_bound_power_of_two": comparison if applicable else None,
+        "raw_copy_upper_bound_power_of_two": raw if applicable else None,
+        "trace_distance_upper_bound_power_of_two": bound, "bound_is_vacuous": bound == 0 if applicable else None,
+        "bounded_quantity": "T(Omega_0, E_h Omega_h), one shared hidden h averaged AFTER products",
+        "uniform_mask_overlap_penalty_required": False, "all_arbitrary_masks_obstructed": False,
+        "source_dependent_masks_covered": False, "mask_tail_bound_supplied_not_independently_verified": True,
+        "formula": "T <= min(1, raw_copy_bound, 2k sqrt(r/M)+2sqrt(pi)+D min(1,12/sqrt(L))^(t/2)+4sqrt(D) min(1,2/sqrt(L))^(t/2))",
+        "scope": "One fixed common group-algebra query; standard mixed inputs, a shared uniform hidden involution, classical source records and full physical discard. The normalized pure mask is fixed independently of hidden inputs AND source records. pi bounds its mass on weights <t. The positive comparison is a channel image of the commuting Walsh mixture, not the exact output. Arbitrary low-occupation masks, source adaptation, retained physical data and multiple queries are NOT ruled out.",
+        "proof_status": "derived-mask-tail-fidelity-bound-review-pending", "formal_proof_verification": False,
+        "independent_review": False, "novelty_established": False, "is_classical_dequantization": False}
+
+
 def source_conditioned_palette_information_contract(
     degree: int, copy_count: int, subsets: Sequence[Sequence[int]], *,
     palette_fixed_before_source_labels: bool, operations_and_readout_in_cell_algebra: bool,

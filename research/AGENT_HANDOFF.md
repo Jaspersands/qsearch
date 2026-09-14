@@ -1,8 +1,325 @@
 # Research Agent Handoff
 
-Last updated: 2026-09-13
+Last updated: 2026-09-14
 
-## Latest Pass: Exact Streamed S8 Intermediate-Window Probe
+## Latest Pass: Arbitrary-Mask Tail Fidelity
+
+Read `research/MASK_TAIL_FIDELITY_OBSTRUCTION.md` first. The two UNVERIFIED
+ideas in the preceding handoff are now derived and tested, with restricted
+scope and review-pending status. This is not an independently verified or
+novel-by-certification theorem, quantum algorithm, or classical sampler.
+
+For any normalized pure mask alpha fixed independently of the shared hidden
+involution AND source records, the positive coset-diagonal comparison is a
+CPTP preparation-channel image of the commuting source/Walsh law:
+(J,z) -> |J><J| tensor Z^z|alpha><alpha|Z^z. This transfers the comparison
+bound 2k sqrt(r/M) WITHOUT dividing by uniform overlap. It does not alone
+bound the actual channel: the signed remainder remains essential.
+
+For a fixed off-coset pair, the cross partial-trace norm equals environmental
+ROOT fidelity. A local detection orthogonal to span{psi_e,psi_v} gives
+failure a_j<=min(1,2(|<e,u>|+|<e,v>|+|<v,u>|)). Weighted by natural source
+probabilities, A<=min(1,12/sqrt(L)); the endpoint uses min(1,2/sqrt(L)).
+Source-weighted Jensen is legal only for a source-INDEPENDENT mask.
+For mass pi below weight t, the derived bound is
+
+    E_h T <= 2k sqrt(r/M)+2sqrt(pi)
+        + D min(1,12/sqrt(L))^(t/2)
+        + 4sqrt(D) min(1,2/sqrt(L))^(t/2).
+
+Only the class decision distance may additionally use the raw-copy cap.
+At polynomial k, t>=3n and superpolynomially small pi, this is negligible.
+The old uniform-mask theorem is sharper there and remains valid. Low-weight
+masks, source adaptation, physical retention and multiple queries are NOT
+obstructed by this extension. Exponentially small uniform overlap alone
+does not escape anymore. No t-copy reduction follows from a weight-t mask
+that coherently addresses many subsets of a larger input collection.
+
+Numerical conditional integer bounds: n=1024 k=n^2 t=3n pi=0 gives -311;
+n=4096 gives -5373; n=4096 pi<=2^-4096 gives -2045. These are dyadic
+exponents, not simulations at those degrees. t=0 remains vacuous.
+
+Implementation: `source_selector_mask_tail_information_contract` in
+`core/isotypic_instruments.py`, `theorems/coset_mask_tail_fidelity.py`,
+`tests/test_coset_mask_tail_fidelity.py`. Existing binary CLI/report now
+includes 12 environment controls, 48 thresholds and six independent S3
+regular-basis arbitrary-mask controls, using dense noncentral unitaries,
+all hidden members and ORDERED source tuples. Rare sources, complex masks,
+singular Gram matrices and both endpoint orientations are retained.
+
+Two important countercontrols: weight-zero mass 3/10 leaves cross norm
+3/10 even if A=0; a source-selected single-active-site mask at k=3 gives
+average cross norm 7/8 > sqrt(1/2). Mean weight and source-adaptive Jensen
+shortcuts are false. An attempted S3 scalar-distance counterexample to
+unpermuted source-multiset compression did NOT separate; it is documented
+as unsuccessful, not claimed as a falsification. New controls enumerate all
+ordered tuples regardless. No hidden mask symmetry is assumed.
+
+Added negative `HIGH-OCCUPATION-MASK-FIDELITY-OBSTRUCTION`, lemma index16
+`LEMMA-{candidate}-MASK-TAIL-FIDELITY-BOUND`, the dequantization mapping and
+mutation obligation. Old typical-mask evidence does not resolve this new
+lemma. The source-selector note's filter inequality previously wrote an
+individual-h distance using the CLASS decision T_uniform; it now explicitly
+separates the two quantities. The implementation already distinguished them.
+
+Verification completed: the broad seven-file run passed 251 tests in
+224.17 seconds and failed only an assertion expecting the OLD low-overlap
+mutation wording. After updating that assertion to preserve the new scoped
+obligation, all 32 follow-up tests passed in 4.48 seconds. These runs overlap.
+Python compilation, site JS syntax and diff checks passed. A fresh full-suite
+attempt again stopped at `tests/test_character_moment_obstruction.py:73`:
+65 passed, one failed, 223.41 seconds. The writer still omits the scaling
+registry update; the full suite is NOT green. This and the separate
+symmetric-lift experiment-result writer are routine Gemini/Antigravity work.
+
+Live binary report, `coset-recoupling-synthesize`, dequantize, proofs,
+conjectures, mutate, progress snapshot, validate and proof-routes completed.
+Use the exact synthesis CLI name, not `coset-recoupling-mechanism-synthesis`
+(that invalid command was attempted once, rejected, then corrected).
+Registry: eight candidates, 792 experiments, 800 results, 911 negatives,
+1305 dequantization findings (1301 blocking), 1279 lemmas, 104 proof statuses
+(24 blocking), eight blocked conjectures, 19 mutation proposals. Zero
+validation issues; 13 curated proof routes have zero unsupported assertions
+and four unresolved claims. No algorithm candidate or speedup promotion.
+Inspect Git for the saved checkpoint; the quantum-selector, typical-mask and
+mask-tail passes are grouped in one infrequent save rather than per-artifact
+commits. All experiments and verification processes finished before saving.
+
+NEXT HIGH-THINKING PRIORITY: independently re-audit the fidelity proof and
+prior-art scope, then investigate a concrete low-occupation selector family
+or a genuinely retained-physical/multi-query architecture. Do not retune
+uniform/high-weight masks or inflate experiment/candidate counts. The naive
+low-degree raw-input bound charges sum_(d<=2t) C(K,d)/M; it is not a useful
+all-mask obstruction by assertion. Better compression needs an actual proof.
+No independent reviewer or formal proof system has certified these results.
+
+NEXT-PASS DERIVATION TO TEST (not yet in a claim gate): the fixed common-query
+channel is a source-record-valued Schur multiplier on the selector input.
+Mask phases are diagonal output unitaries, so its optimal decision distance
+depends only on p_s=|alpha_s|^2. For p=sum_l w_l p_l, the diagonal instrument
+D_l(s)=sqrt(w_l p_l(s)/p(s)) sends the p-output to the flagged mixture of
+p_l-outputs. Trace-norm contractivity therefore suggests concavity of the
+decision-distance functional f(p). Simultaneously permuting input positions,
+selector bits and source records leaves f invariant. Averaging p over those
+permutations then gives a radial distribution p_s=w_|s|/C(k,|s|) with f at
+least as large. This could reduce ALL fixed-mask optimization from 2^k
+amplitudes to k+1 weight probabilities, without a bound on final POVM cost.
+It is NOT dephasing between weights: coherent weight-sector superpositions
+must remain. Zero-probability coordinates need a TP extension of the
+instrument. Source-dependent masks require a different conditional symmetry.
+Two hundred random Hermitian Schur-functional concavity probes had no
+violation beyond 4.5e-16; these are scratch checks, not an HSP verification.
+Next implement physical-channel covariance/phase/concavity controls and a
+standalone proof before asserting this reduction. Then investigate the
+remaining low-occupation weight distributions rather than arbitrary circuits.
+
+## Previous Pass: Noncentral Extension and Typical-Mask Polynomial-Budget Obstruction
+
+Read `research/TYPICAL_MASK_OBSTRUCTION.md` FIRST, then
+`research/SOURCE_SELECTOR_QUANTUM_BOUND.md`. The earlier intermediate-window
+recommendations below are historical. A new derived argument obstructs the
+entire UNIFORM-MASK, one-common-group-algebra-query, physical-discard
+architecture at EVERY polynomial copy budget asymptotically. This remains
+review-pending: no independent/formal proof or novelty determination.
+
+The common unitary need NOT be central. For one shared unknown involution h,
+E_h sum_g |a_g|^2 p_j(hg)^2<=q_j/M replaces the old pointwise central-overlap
+argument. Use RIGHT coefficient translation a_(gh). The operational decision
+distance is T(Omega_0,E_h Omega_h), NOT E_h T(Omega_0,Omega_h); the raw-copy
+bound caps only the former. U, the partition and the mask must be independent
+of h and any prior hidden-correlated oracle transcript, not merely chosen
+before preparing fresh coset states. The contract explicitly requires this.
+
+The typical-mask insight: the dominant off-coset local kernel pins selector
+bits to zero. P_t retains weights >=t=floor(k/4). In the expansion K=B+E,
+terms with fewer than t E factors vanish after TWO-SIDED projection. Bulk
+source-summed norms are b=1/2, epsilon<=3/sqrt(L); endpoint norms are
+b=1/sqrt(2), epsilon<=sqrt(2)/sqrt(L), with two different orientations.
+The tensor tail is at most sum_(d>=t) C(k,d)b^(k-d)epsilon^d. Actual output
+mask diagonals are uniform, so the two-state gentle cost is 2sqrt(pi), with
+pi<=2^(-k/8). No physical postselection or success renormalization is used.
+
+    E_h T(Omega_0,Omega_h) <= 2k sqrt(r/M)+2^(1-k/16)
+        + D(6/sqrt(L))^t
+        + 4sqrt(D)2^(k/2)(2/sqrt(L))^t.
+
+For every k<=5n use the raw-copy prefix bound. Above 5n use the typical
+remainder at the first suffix count, but charge the mixture at budget K.
+With b=floor(sqrt(L)), the endpoint envelope is
+4sqrt(8D)(8/b)^floor(k/4), eliminating residue-class oscillations. This
+proves a uniform bound for every pre-input participating count <=K without
+sweeping K. Source-selected subsamples are NOT covered. For polynomial K
+and inverse-polynomial mask overlap p, the result is superpolynomially small.
+The raw prefix is NOT divided by p. The suffix uses a lower bound on p
+UNIFORM OVER THE ENTIRE COPY BUDGET.
+
+Numerical conditional certificates: at S4096 every k<=4096^2 has T<=2^-571,
+including the central-weight mask family. At S8192 every k<=8192^2 has
+T<=2^-2557 for uniform masks and <=2^-2530 for central weights. S1024 k=8764
+improves from vacuous to <=2^-544, but its conservative ALL-budget certificate
+remains vacuous. These are integer bound evaluations, NOT simulations at
+those degrees. Arbitrary mask states, physical retention, source adaptation,
+multiple queries and exponential budgets are outside the stated conclusion.
+
+Implementation stays in `core/isotypic_instruments.py` and
+`theorems/coset_source_selector_quantum.py`, through the EXISTING binary CLI.
+New API: `source_selector_polynomial_budget_contract`. Its filter argument is
+`filter_success_lower_bound_uniform_over_copy_counts`, not the fixed-k name.
+The fixed-k contract now requires `common_group_algebra_unitary`,
+`unitary_and_partition_fixed_before_inputs`,
+`hidden_prior_uniform_on_involution_class`, and
+`no_hidden_correlated_preprocessing_or_side_information`.
+Outward rounding is exact. Do not evaluate enormous remainder powers at K:
+the interval routine evaluates them at 5n+1 and charges only the mixture at K.
+
+Twenty noncentral physical controls evaluate all hidden members at S3/S4.
+A fixed reference involution gives individual distances (.75,0,0) but a
+class decision distance .25 at S4 k=2. Incorrect independent h per copy
+gives 7/36 instead. Ordered noncommuting rotations also distinguish T of the
+average from average T. There are 144 projected-remainder checks, explicit
+zero-pinning/one-sided-failure tests, and 12 polynomial-budget evaluations.
+Old central controls (21), source multisets (267) and weight sectors (69)
+remain. The copied-irrep-label identity is still valid and not a new resource.
+
+The existing negative `FULL-SOURCE-QUANTUM-SELECTOR-LARGE-COPY-BOUND` and lemma
+index 15 were strengthened, not duplicated. The lemma stays
+`derived-source-selector-quantum-bound-review-pending` and requires new
+noncentral AND typical-mask evidence. Stale central-only artifacts do not
+resolve it. Obsolete mutation advice to try a different final rule, retain
+source labels, or tune the intermediate copy count was removed. The broad
+clean-subset template is NOT rejected wholesale: it permits adaptive or
+multi-query programs outside this theorem, which still need actual compilers.
+
+Verification: 166 integration tests passed in 90.54 seconds; a final
+downstream/focused run passed 129 in 131.19 seconds; all 74 focused tests
+passed after the final no-hidden-preprocessing guard. These runs overlap.
+Python compilation, JS syntax and diff checks passed. Full-suite attempt:
+65 passed then the known missing character-moment scaling write at
+`tests/test_character_moment_obstruction.py:73` (211.36 seconds).
+The full suite is NOT green. The separate symmetric-lift writer omission
+remains maintenance work; its cached-source root fix is included in this
+combined set of changes and must not be reverted.
+
+Live binary, synthesis, dequantize, proofs, conjectures, mutate and progress
+were refreshed. The registry remains at 8 candidates, 792 experiments,
+800 results, 910 negatives, 1304 dequantization findings (1300 blocking),
+1278 lemmas and eight blocked conjectures. No candidate or speedup promotion.
+Validation completed with zero issues; all 13 proof-route contracts have
+zero unsupported assertions and four unresolved claims. These are contract
+checks, not mathematical verification. Inspect Git for the authoritative
+saved checkpoint; these related passes form ONE checkpoint, not one per report.
+
+NEXT: first audit the new theorem's support argument, source-summed tensor
+norms, unnormalized gentle constant and interval quantifiers. Independent
+review and novelty work remain necessary. A mathematical next avenue is a
+properly specified arbitrary-mask or retained-physical-register architecture,
+not changing a flag or resurrecting the uniform one-query program.
+
+HISTORICAL NEXT-PASS IDEA, since implemented above: for arbitrary fixed pure
+mask alpha, the POSITIVE comparison Q_alpha appears to be a channel image of
+the commuting Walsh mixture: map (j,z) to |j><j| tensor
+Z^z|alpha><alpha|Z^z. This would retain the 2k sqrt(r/M) comparison bound
+without a 1/p penalty. It does NOT yet control the actual signed remainder.
+For that remainder, try the purification identity between cross partial-trace
+norm and environmental fidelity. Unambiguous discrimination of the three
+local purification vectors for {e,u,v}, followed by source-weighted Jensen,
+may bound high-mask-weight bulk kernels by min(1,12/sqrt(L))^(t/2) and
+endpoints by min(1,2/sqrt(L))^(t/2), without an exponential mask-normalization
+factor. Test all claims before registration. Low-weight masks are not
+automatically only 2t samples: the naive truncated input bound charges
+sum_(d<=2t) C(K,d), which may be huge. Do not claim an arbitrary-mask theorem
+from the high-weight proposal alone.
+
+## Previous Pass: Full Source / Quantum Selector Bound
+
+The preceding next-pass proposal is now implemented, tested, documented and
+live. Read `research/SOURCE_SELECTOR_QUANTUM_BOUND.md`, including the result
+readiness and prior-art sections. New finite verifier:
+`theorems/coset_source_selector_quantum.py`; new strict, exact outward bound:
+`source_selector_quantum_information_contract` in `core/isotypic_instruments.py`.
+No new candidate or experiment IDs were needed.
+
+For standard mixed S_n fixed-point-free involution inputs, a common central
+unitary and source partition fixed BEFORE INPUTS, one common uniform subset
+query, and all physical inputs discarded, the derived bound is
+
+    T <= min(1, raw_copy_bound,
+        2k sqrt(r/M) + D rho_bulk^k + 4 sqrt(D) rho_endpoint^k),
+    rho_bulk=min(1,1/2+3/sqrt(L)),
+    rho_endpoint=min(1,(1+2/sqrt(L))/sqrt(2)),
+    D=n!, M=(n-1)!!, L=C(n,2), even n>=8.
+
+This retains EVERY classical source label and the complete QUANTUM selector,
+so it covers arbitrary final selector POVMs. Comparison quantum mixtures
+commute in the common source/Walsh basis; the actual states need not commute.
+The endpoint trace-norm radius is NOT the old measured-Walsh value 1/2.
+At S1024 k=17528 full-source T<=2^-1662; central fixed-weight masks have
+T<=2^-1647 via the charged filter comparison. The raw-copy bound is NOT
+divided by filter success: the normalized mask can be prepared directly.
+At k=8764 the bound is vacuous. No all-k no-go or natural graph/code
+reduction, efficient POVM compiler, classical sampler or speedup is supplied.
+
+Controls: 21 phase/degree/copy combinations, 267 source multisets, 69
+fixed-weight sectors. Independent physical controls include complex phases,
+zero source masses, nontrivial masks, positivity and comparison remainders.
+The source-label audit checks eight standard inputs and 138 projector/action
+commutators at S3/S4. A copied irrep label is ALREADY classical for these
+mixed inputs; omitting its measurement is not a coherent-resource escape.
+A nonstandard cross-irrep pure input changes under dephasing by T=1/2,
+confirming that the input assumption matters. Nontrivial physical carrier
+retention and altered input-access models remain separate possibilities.
+
+New scoped negatives: `FULL-SOURCE-QUANTUM-SELECTOR-LARGE-COPY-BOUND` and
+`UNMEASURED-IRREP-LABEL-NOT-A-COHERENT-ESCAPE`. Proof lemma index 15:
+`LEMMA-{candidate}-SOURCE-SELECTOR-QUANTUM-MIXTURE-BOUND`, status
+`derived-source-selector-quantum-bound-review-pending`. Binary reports,
+dequantization, proof debt, mutation obligations, CLI help and README use
+the result. No mathematical novelty or independent/formal review is claimed.
+
+Final fresh regression: 186 tests passed in 214.51 seconds, covering quantum
+selectors, binary instruments, mechanism synthesis, the symmetric-lift proof
+status, dequantization, mutation, proof provenance and registry IO. Earlier
+broader research regression: 221 passed before adding the label-copy audit;
+34 focused tests passed after that audit. These are separate runs, NOT
+additive independent coverage. Python compilation, JS syntax and diff checks
+passed. Full-suite attempt in this pass stopped after 65 passed at
+`tests/test_character_moment_obstruction.py:73`, a missing scaling write.
+Another scoped run found the missing experiment-result write at
+`tests/test_dcp_symmetric_relation_lift.py:117`. The full suite is NOT green.
+
+One necessary downstream fix: `theorems/dcp_symmetric_relation_lift.py` now
+uses `.parents[1]` for PROJECT_ROOT. Its old path silently missed the cached
+Regev source. The live artifact now verifies all four source sites, and the
+previously failing proof-tracker regression passes WITHOUT relaxing a gate.
+
+Live binary and symmetric-lift artifacts are refreshed. Final synthesis,
+dequantize, proofs, conjectures, mutate, progress, validate and proof-routes
+completed. Registry: 8 candidates, 792 experiments, 800 results, 910 negatives,
+1304 dequantization findings (1300 blocking), 1278 lemmas, zero validation
+issues. All eight conjectures remain blocked. Thirteen curated proof-route
+contracts have zero unsupported assertions and four unresolved claims;
+this is NOT independent proof checking. All required processes finished.
+
+HISTORICAL NEXT PRIORITY, superseded by the typical-mask pass above: turn one substantive derived claim into a
+standalone, adversarially reviewed result, not more metrics or registry IDs.
+The new note compares the actual scopes of HRS Theorem 2/Corollary 3 and
+MRS Section 3, rechecked on 2026-09-13. This is NOT a novelty certificate.
+Check for a prior-art implication and audit the central-unitary mixed-overlap
+proof and physical access contract. A genuine new operation must preserve
+useful physical carrier data, use multiple queries, change actual phases
+adaptively, or address the unresolved intermediate window. Merely copying
+an irrep label without measuring it does not qualify. Do not extrapolate
+the S8 sign-category failure to every phase or quantum measurement.
+
+Antigravity/Gemini maintenance: fix the two writer omissions above in their
+own modules, with isolated-root write/no-write tests. Do not weaken proof
+gates, relabel mathematical debt as proved, or rerun every expensive research
+workflow just to repair IO. Independent mathematical review is not routine
+maintenance. Latest saved checkpoint is `97289ad82d5985bc6065e58d1461997914029772`
+(pushed before this pass). This pass is intentionally UNCOMMITTED for the
+next substantial checkpoint. Keep the overall goal active.
+
+## Previous Pass: Exact Streamed S8 Intermediate-Window Probe
 
 Read `research/SOURCE_ORBIT_CONTRACTION.md`. The streamed C(h)-conjugation
 contraction is implemented in `theorems/coset_source_orbit_contraction.py`
@@ -58,7 +375,7 @@ blocked. The 13 curated proof-route contracts report zero unsupported and
 four unresolved claims; they do not independently verify the new mathematics.
 No candidate promotion. All required processes finished.
 
-NEXT HIGHEST-THINKING PASS: test a bound on the COMPLETE classical-source /
+HISTORICAL NEXT-PASS PLAN, now completed above: test a bound on the COMPLETE classical-source /
 QUANTUM-selector state, BEFORE Walsh. This could cover arbitrary final
 selector POVMs and input-independent fixed-weight mask filters at large k.
 The following is an UNVERIFIED derivation, NOT in the current claim gate:
@@ -120,10 +437,9 @@ of the uniform state with p=1/(2^k max_s |alpha_s|^2). Do not apply the OLD
 Walsh-only bound to these filters: projecting before Walsh is not classical
 postprocessing of the measured Walsh transcript.
 
-Checkpoint policy: combine the corrected-output, full-source and streamed
-S8 passes into one Git checkpoint. Verify HEAD against origin before calling
-it saved; use Git for the authoritative hash. Do not commit once per report.
-Keep the overall goal active.
+The corrected-output, full-source and streamed S8 passes were combined in
+checkpoint `97289ad82d5985bc6065e58d1461997914029772`, verified against origin
+after pushing. Do not commit once per report. Keep the overall goal active.
 
 ## Previous Pass: Full Source/Walsh Transcript and Complex Central Phases
 

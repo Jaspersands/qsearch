@@ -53,6 +53,12 @@ class RecouplingMechanismSynthesisTests(unittest.TestCase):
         self.assertFalse(proposal["proof_gate_eligible"])
         self.assertIn("does not require hidden-element output", " ".join(proposal["rejection_filters"]))
         self.assertNotIn("without hidden-involution recovery", " ".join(proposal["rejection_filters"]))
+        obligations = " ".join(result.additional_proof_obligations)
+        self.assertIn("EVERY polynomial copy budget", obligations)
+        self.assertIn("derived/review-pending", obligations)
+        self.assertIn("Exponentially small uniform overlap ALONE is insufficient", obligations)
+        self.assertIn("Low-occupation masks remain unresolved", obligations)
+        self.assertNotIn("Target the unresolved intermediate", obligations)
 
     def test_known_shortcuts_are_rejected(self):
         evaluations = {template.id: evaluate_template(template) for template in TEMPLATES}

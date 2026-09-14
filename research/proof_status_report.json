@@ -2,8 +2,8 @@
   "blocking_status_count": 24,
   "candidate_count": 8,
   "counterexample_search_count": 8,
-  "created_at": "2026-09-13T02:11:32.741814+00:00",
-  "lemma_count": 1277,
+  "created_at": "2026-09-14T05:36:30.155508+00:00",
+  "lemma_count": 1279,
   "needs_evidence_count": 0,
   "proof_debt": {
     "counterexample_search_count": 8,
@@ -73,8 +73,8 @@
         "target_claim": "The coset observable is not a disguised classical invariant."
       }
     ],
-    "created_at": "2026-09-13T02:11:32.737502+00:00",
-    "lemma_count": 1277,
+    "created_at": "2026-09-14T05:36:30.150822+00:00",
+    "lemma_count": 1279,
     "lemmas": [
       {
         "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -713,6 +713,31 @@
         "id": "LEMMA-CODE-COSET-COLLECTIVE-S8-SIGN-CATEGORY-INTERMEDIATE-FAILURE",
         "statement": "Exact simultaneous C(h)-conjugation orbits preserve the complete sign-category/Walsh spectrum, including signed mass and remainder. At S8 and tested k=7,8,10,12,14,16, the ideal negative-character sign-category readout loses to coarse disjoint-pair counts even though the raw coset-state support-rank comparison has substantially more information.",
         "status": "exact-s8-finite-window-failure-review-pending"
+      },
+      {
+        "candidate_id": "CODE-COSET-COLLECTIVE",
+        "depends_on": [
+          "PO-INPUT-MODEL",
+          "PO-MEASUREMENT",
+          "PO-SUCCESS"
+        ],
+        "falsification_test": "Check all shared-hidden regular-basis channels and RIGHT coefficient translations. The class average cannot be replaced by one representative or interchanged with the trace norm. Verify BOTH endpoint orientations: a one-sided typical projection does not always kill the dominant tensor factors. Keep the unnormalized gentle cost, sum all natural source masses, and validate monotone remainder envelopes across all four k residues. Charge a filter lower bound uniform over copy counts; do not extrapolate the finite S1024 certificate, which remains vacuous. A raw-prefix and typical-suffix interval, not a sweep or a fixed k, must support the polynomial-budget claim. No independent review, novelty, arbitrary-mask theorem or classical sampler is supplied.",
+        "id": "LEMMA-CODE-COSET-COLLECTIVE-SOURCE-SELECTOR-QUANTUM-MIXTURE-BOUND",
+        "statement": "One fixed common group-algebra unitary, a uniform mask, classical source records and physical discard are obstructed at every polynomial copy budget asymptotically. For t=floor(k/4), a two-sided typical-mask projection gives E_h T(Omega_0,Omega_h)<=2k sqrt(r/M)+2^(1-k/16)+D(6/sqrt(L))^t+4sqrt(D)2^(k/2)(2/sqrt(L))^t. The decision distance T(Omega_0,E_h Omega_h), but not the average individual distance, is also capped by the raw-copy bound. A raw prefix through 5n and a monotone typical-mask suffix cover every pre-input participating count through K. At S4096 every k<=4096^2 has T<=2^-571, including central-weight masks with charged budget-wide polynomial overlap. Arbitrary masks, source-adaptive operations and physical retention are not covered.",
+        "status": "derived-source-selector-quantum-bound-review-pending"
+      },
+      {
+        "candidate_id": "CODE-COSET-COLLECTIVE",
+        "depends_on": [
+          "LEMMA-CODE-COSET-COLLECTIVE-SOURCE-SELECTOR-QUANTUM-MIXTURE-BOUND",
+          "PO-INPUT-MODEL",
+          "PO-MEASUREMENT",
+          "PO-SUCCESS"
+        ],
+        "falsification_test": "Verify the preparation-channel identity against the full regular-basis physical output without dropping its remainder. Check root rather than squared fidelity, singular local Gram matrices, zero/rare sources, both endpoints, ordered source tuples and subnormalized retained masks. A source-selected mask exceeds the fixed-mask Jensen bound, and weight-zero mass invalidates a mean-weight-only claim. The environment/purification measurement is a mathematical comparison, not available algorithmic access. Require independent proof and novelty review; never infer a t-copy reduction from masks of weight t across many positions.",
+        "id": "LEMMA-CODE-COSET-COLLECTIVE-MASK-TAIL-FIDELITY-BOUND",
+        "statement": "For the same shared-hidden standard coset inputs, one fixed common group-algebra query, classical source records and physical discard, an arbitrary fixed pure mask with mass <=pi below weight t gives E_h T<=2k sqrt(r/M)+2sqrt(pi)+D min(1,12/sqrt(L))^(t/2)+4sqrt(D) min(1,2/sqrt(L))^(t/2). The positive comparison is a channel image of the commuting Walsh law. Cross-partial-trace norms equal environmental root fidelities; source-weighted Jensen controls the remainder WITHOUT a uniform-overlap penalty. At polynomial k, t>=3n and negligible lower-tail mass this is asymptotically negligible. It does NOT obstruct arbitrary low-occupation masks or source-selected masks.",
+        "status": "derived-mask-tail-fidelity-bound-review-pending"
       },
       {
         "candidate_id": "CODE-COSET-COLLECTIVE",

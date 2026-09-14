@@ -13986,7 +13986,7 @@
       "binary_carrier_instruments": "research/representation/coset_binary_carrier_instruments.json"
     },
     "candidate_id": "CODE-COSET-COLLECTIVE",
-    "created_at": "2026-09-12T08:59:25.452794+00:00",
+    "created_at": "2026-09-14T05:36:16.310494+00:00",
     "experiment_id": "EXP-COSET-BINARY-CARRIER-INSTRUMENTS",
     "falsifiers_triggered": [
       "Conjugation invariance removes hidden-member information, not necessarily class-versus-trivial information.",
@@ -14010,6 +14010,7 @@
     "metrics": {
       "adaptive_catalogue_source_blocks_checked": 152,
       "adaptive_catalogue_transcript_branches_checked": 3368,
+      "arbitrary_mask_physical_controls_verified": 6,
       "clean_gpe_cleanup_controls_passed": 2,
       "coherent_measurement_uniform_primitive_reductions": 1,
       "coherent_subset_phase_controls_passed": 7,
@@ -14019,10 +14020,15 @@
       "corrected_weight_exact_mixture_laws_checked": 48,
       "corrected_weight_matrix_laws_checked": 24,
       "declared_terminal_rules_evaluated": 72,
+      "environment_fidelity_controls_verified": 12,
+      "environment_fidelity_tail_thresholds_checked": 48,
       "explicit_one_pair_classifiers_checked": 4,
       "finite_full_source_controls_passed": 2,
       "growing_copy_measurement_compilers": 0,
       "incomplete_support_povm_extensions_checked": 166,
+      "noncentral_group_algebra_controls_verified": 20,
+      "noncentral_hidden_members_evaluated": 60,
+      "polynomial_copy_budget_interval_bounds_evaluated": 12,
       "polynomial_label_arithmetic_controls": 4,
       "random_hadamard_branches_checked": 39672,
       "regular_cell_compression_controls_passed": 3,
@@ -14038,13 +14044,18 @@
       "source_conditioned_parity_laws_checked": 4959,
       "source_conditioned_selector_kernels_checked": 2153,
       "source_count_weight_copy_controls": 24,
+      "source_label_copy_input_controls_verified": 8,
       "source_selected_parity_copy_controls": 96,
       "source_selected_parity_exact_hidden_spectra_checked": 21,
       "source_selected_parity_independent_laws_checked": 96,
-      "streamed_source_orbit_controls_verified": 2
+      "source_selector_quantum_controls_verified": 21,
+      "source_selector_quantum_fixed_weight_controls": 69,
+      "source_selector_quantum_source_multisets_checked": 267,
+      "streamed_source_orbit_controls_verified": 2,
+      "typical_mask_projected_remainders_checked": 144
     },
     "status": "binary-instrument-calibration-fixed-copy-route-obstructed",
-    "summary": "An exact streamed centralizer-orbit contraction now reaches S8 without a full group-pair matrix. Its ideal sign-category/Walsh table loses to coarse pair-event counts throughout the tested 7..16-copy window; source counts already explain most signal. The raw inputs retain far more distinguishability. This is a finite, specified-readout failure, not a growing-degree or all-source no-go. A separate review-pending large-copy bound covers all source irreps and fixed complex central phases; the general intermediate window remains unresolved."
+    "summary": "A typical-mask refinement now obstructs the one-common-group-algebra-query, uniform-mask, physical-discard architecture at EVERY polynomial copy budget asymptotically, subject to review. It retains all classical source labels and the full quantum selector and permits noncentral unitaries and arbitrary final POVMs. Removing low-weight masks with charged gentle error sharpens the quantum remainder; an interval certificate covers all pre-input participating counts, including ignored copies. At S4096 every k<=4096^2 has decision T<=2^-571. Central-weight masks have a charged polynomial-overlap transfer. Arbitrary mask states, retained physical data, source-adaptive operations and multiple queries remain outside scope. No novelty, formal proof or classical sampler is established."
   },
   {
     "artifacts": {
@@ -17949,7 +17960,7 @@
       "coset_recoupling_mechanism_synthesis": "research/representation/coset_recoupling_mechanism_synthesis.json"
     },
     "candidate_id": "CODE-COSET-COLLECTIVE",
-    "created_at": "2026-09-13T02:11:25.674297+00:00",
+    "created_at": "2026-09-14T05:36:23.310892+00:00",
     "experiment_id": "EXP-COSET-RECOUPLING-MECHANISM-SYNTHESIS",
     "falsifiers_triggered": [
       "QFT-only weak-label decoding is a known no-go route.",

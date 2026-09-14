@@ -111,6 +111,19 @@ the intermediate copy regime without a full group-pair matrix. Its ideal
 sign-category/Walsh table loses to pair-count readouts at every tested point,
 despite substantial information in the raw coset states. This eliminates
 a specified finite readout, not the general intermediate regime.
+The [quantum-selector extension](research/SOURCE_SELECTOR_QUANTUM_BOUND.md)
+now bounds the state before any final selector measurement, with classical
+source labels retained and fixed-weight mask probabilities charged. It extends
+to noncentral common group-algebra unitaries, provided one shared unknown
+involution is averaged over its class AFTER tensor products. The
+[typical-mask refinement](research/TYPICAL_MASK_OBSTRUCTION.md) now gives a
+review-pending obstruction for EVERY polynomial copy budget under this
+architecture, including central-weight masks with charged overlap.
+The [environmental-fidelity extension](research/MASK_TAIL_FIDELITY_OBSTRUCTION.md)
+also obstructs masks with negligible mass below weight 3n at polynomial copy
+counts, without any uniform-overlap penalty. Low-occupation masks, retained
+physical data, source-adaptive operations and multiple queries remain
+unresolved; all these derived bounds await independent and novelty review.
 The [classical value-access audit](research/CLASSICAL_VALUE_ACCESS_AUDIT.md)
 replaces hidden full-table quadratic reconstruction with counted point queries,
 including exact-residue controls on nonmaterializable domains. Sample-limited

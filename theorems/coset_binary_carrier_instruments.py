@@ -1965,6 +1965,24 @@ def build_binary_carrier_instrument_report() -> dict:
     source_controls = [source_count_weight_controls(n, t, (1, 2, 4, 8, 16)) for n, t in ((3, 1), (4, 2), (6, 3))]
     source_controls.append(source_count_weight_controls(8, 4, (1, 2, 4, 7, 8, 10, 12, 14, 16)))
     intermediate_controls = intermediate_copy_information_controls()
+    from coset_source_selector_quantum import (source_selector_quantum_mixture_control,
+        source_selector_quantum_scaling_controls, audit_unmeasured_source_labels, noncentral_group_algebra_control,
+        source_selector_polynomial_budget_controls)
+    quantum_selector = [source_selector_quantum_mixture_control(n, t, k, phase)
+        for n, t in ((3, 1), (4, 2)) for k in range(1, 5 if n == 3 else 4) for phase in COHERENT_PHASE_RULES]
+    quantum_selector_verified = all(row["verified"] for row in quantum_selector)
+    source_label_audit = audit_unmeasured_source_labels()
+    noncentral_controls = [noncentral_group_algebra_control(n, k, rule, retain)
+        for n, k in ((3, 1), (3, 2), (3, 3), (4, 1), (4, 2))
+        for rule in ("pointed_involution", "ordered_rotations") for retain in (False, True)]
+    noncentral_verified = all(row["verified"] for row in noncentral_controls)
+    typical_verified = all(control["verified"] for row in noncentral_controls for control in row["typical_mask_projection_controls"])
+    budget_controls = source_selector_polynomial_budget_controls()
+    from coset_mask_tail_fidelity import audit_environment_fidelity, arbitrary_mask_physical_control, mask_tail_scaling_controls
+    mask_fidelity = audit_environment_fidelity()
+    arbitrary_masks = [arbitrary_mask_physical_control(k, rule) for k in (2, 3)
+        for rule in ("high_asymmetric", "complex_full", "low_high_superposition")]
+    mask_tail_verified = mask_fidelity["verified"] and all(row["verified"] for row in arbitrary_masks)
     scaling = [{"half_degree": m, "block_size": 3, "classical_history_blocks": m**2,
                 "trace_distance_squared_upper_bound": str(invariant_block_transcript_distance_squared_bound(m, 3, m**2))}
                for m in (4, 8, 16, 32, 64, 128)]
@@ -1974,13 +1992,14 @@ def build_binary_carrier_instrument_report() -> dict:
                 and conditioned_verified and catalogue_verified and coherent_verified and terminal_verified
                 and selected_parity_audit["verified"] and selected_parity_obstruction["all_copy_counts_from_two_covered"]
                 and weight_audit["verified"] and source_audit["verified"] and complex_audit["verified"]
-                and orbit_audit["verified"])
+                and orbit_audit["verified"] and quantum_selector_verified and source_label_audit["verified"]
+                and noncentral_verified and typical_verified and mask_tail_verified)
     witness_shape = (4, 2)
     coefficient = kronecker_coefficient(witness_shape, witness_shape, witness_shape)
     d = hook_length_dimension(witness_shape)
     source_mass = Fraction(d * (d + character_on_involution(witness_shape, 3)), math.factorial(6))**3
     return {"created_at": utc_now(), "status": ("binary-instrument-calibration-fixed-copy-route-obstructed" if verified else "blocked-instrument-control-failure"),
-        "summary": "An exact streamed centralizer-orbit contraction now reaches S8 without a full group-pair matrix. Its ideal sign-category/Walsh table loses to coarse pair-event counts throughout the tested 7..16-copy window; source counts already explain most signal. The raw inputs retain far more distinguishability. This is a finite, specified-readout failure, not a growing-degree or all-source no-go. A separate review-pending large-copy bound covers all source irreps and fixed complex central phases; the general intermediate window remains unresolved.",
+        "summary": "A typical-mask refinement now obstructs the one-common-group-algebra-query, uniform-mask, physical-discard architecture at EVERY polynomial copy budget asymptotically, subject to review. It retains all classical source labels and the full quantum selector and permits noncentral unitaries and arbitrary final POVMs. Removing low-weight masks with charged gentle error sharpens the quantum remainder; an interval certificate covers all pre-input participating counts, including ignored copies. At S4096 every k<=4096^2 has decision T<=2^-571. Central-weight masks have a charged polynomial-overlap transfer. Arbitrary mask states, retained physical data, source-adaptive operations and multiple queries remain outside scope. No novelty, formal proof or classical sampler is established.",
         "derivation_document": "research/BINARY_CARRIER_INSTRUMENTS.md", "controls": controls, "scaling": scaling,
         "gpe_cleanup_controls": cleanup,
         "fixed_point_free_label_arithmetic_controls": arithmetic,
@@ -2013,6 +2032,18 @@ def build_binary_carrier_instrument_report() -> dict:
         "source_orbit_derivation": "research/SOURCE_ORBIT_CONTRACTION.md",
         "streamed_source_orbit_audit": orbit_audit,
         "intermediate_copy_information_controls": intermediate_controls,
+        "source_selector_quantum_derivation": "research/SOURCE_SELECTOR_QUANTUM_BOUND.md",
+        "source_selector_quantum_controls": quantum_selector,
+        "source_selector_quantum_scaling_controls": source_selector_quantum_scaling_controls(),
+        "unmeasured_source_label_audit": source_label_audit,
+        "noncentral_group_algebra_controls": noncentral_controls,
+        "typical_mask_derivation": "research/TYPICAL_MASK_OBSTRUCTION.md",
+        "polynomial_copy_budget_controls": budget_controls,
+        "mask_tail_fidelity_derivation": "research/MASK_TAIL_FIDELITY_OBSTRUCTION.md",
+        "mask_tail_research_update": "High-occupation arbitrary masks no longer need a uniform-overlap charge: an environmental root-fidelity bound obstructs masks with negligible mass below weight 3n at polynomial k, subject to review. Low-occupation masks remain unresolved; source-selected masks invalidate the Jensen step. No speedup, independent proof or novelty is established.",
+        "environment_fidelity_audit": mask_fidelity,
+        "arbitrary_mask_physical_controls": arbitrary_masks,
+        "mask_tail_scaling_controls": mask_tail_scaling_controls(),
         "coherent_parity_scaling_controls": coherent_parity_scaling_controls(),
         "symmetric_terminal_fourier_norm_controls": [
             {key: value for key, value in symmetric_boolean_fourier_profile(k, rule, threshold).items()
@@ -2062,6 +2093,18 @@ def build_binary_carrier_instrument_report() -> dict:
             "streamed_source_orbit_controls_verified": len(orbit_audit["controls"]),
             "s8_streamed_group_pairs": source_controls[-1]["character_certificate"]["enumerated_group_pairs"],
             "s8_intermediate_copy_points": len(intermediate_controls),
+            "source_selector_quantum_controls_verified": len(quantum_selector),
+            "source_selector_quantum_source_multisets_checked": sum(row["source_multisets_evaluated"] for row in quantum_selector),
+            "source_selector_quantum_fixed_weight_controls": sum(len(row["fixed_weight_filter_controls"]) for row in quantum_selector),
+            "source_label_copy_input_controls_verified": sum(row["standard_coset_inputs_checked"] for row in source_label_audit["controls"]),
+            "noncentral_group_algebra_controls_verified": len(noncentral_controls),
+            "noncentral_hidden_members_evaluated": sum(row["hidden_members_evaluated"] for row in noncentral_controls),
+            "typical_mask_projected_remainders_checked": sum(len(control["projected_remainder_distances"])
+                for row in noncentral_controls for control in row["typical_mask_projection_controls"]),
+            "polynomial_copy_budget_interval_bounds_evaluated": len(budget_controls),
+            "environment_fidelity_controls_verified": len(mask_fidelity["controls"]),
+            "environment_fidelity_tail_thresholds_checked": sum(len(row["tails"]) for row in mask_fidelity["controls"]),
+            "arbitrary_mask_physical_controls_verified": len(arbitrary_masks),
             "growing_copy_measurement_compilers": 0},
         "claim_gate": {"finite_complete_channel_evaluation_verified": verified,
             "invariant_transcript_implies_zero_binary_signal": False,
@@ -2103,6 +2146,26 @@ def build_binary_carrier_instrument_report() -> dict:
             "streamed_source_orbit_spectra_verified": orbit_audit["verified"],
             "s8_sign_category_table_loses_to_pairs_in_tested_window": all(row["ideal_paired_table_loses_to_pair_count"] for row in intermediate_controls),
             "s8_finite_probe_closes_general_intermediate_window": False,
+            "source_selector_quantum_mixtures_verified": quantum_selector_verified,
+            "source_selector_quantum_large_copy_bound_derived": True,
+            "source_selector_quantum_bound_formally_verified": False,
+            "source_selector_quantum_bound_covers_retained_physical_inputs": False,
+            "unpruned_source_selector_bound_closes_intermediate_window": False,
+            "typical_mask_projection_controls_verified": typical_verified,
+            "uniform_mask_polynomial_budget_obstruction_derived": True,
+            "typical_mask_bound_covers_arbitrary_mask_states": False,
+            "typical_mask_bound_is_independently_reviewed": False,
+            "source_weighted_environment_fidelity_verified": mask_fidelity["verified"],
+            "arbitrary_mask_positive_comparison_channel_verified": all(row["verified"] for row in arbitrary_masks),
+            "mask_tail_fidelity_bound_derived": True,
+            "mask_tail_bound_obstructs_all_arbitrary_masks": False,
+            "mask_tail_bound_independently_reviewed": False,
+            "standard_source_label_dephasing_irrelevance_verified": source_label_audit["verified"],
+            "unmeasured_irrep_label_copy_alone_is_an_escape": False,
+            "noncentral_group_algebra_controls_verified": noncentral_verified,
+            "class_averaged_noncentral_extension_derived": True,
+            "noncentral_extension_is_pointwise_in_hidden_member": False,
+            "raw_copy_bound_controls_average_individual_distance": False,
             "unlabeled_selector_information_bound_derived": True,
             "unlabeled_selector_bound_covers_retained_source_labels": False,
             "fixed_selector_marginal_bound_derived": True,
@@ -2195,6 +2258,27 @@ def write_binary_carrier_instrument_report(path: Path = REPORT_PATH, *, write_re
                 applies_to=[registry_candidate_id, "classically adaptive finite-catalogue subset programs"],
                 evidence={"artifact": str(path), "derivation": report["source_conditioned_palette_derivation"], "status": "derived-review-pending"}))
         if report["claim_gate"]["finite_coherent_subset_phase_query_verified"]:
+            if report["claim_gate"]["standard_source_label_dephasing_irrelevance_verified"]:
+                upsert_negative_result(NegativeResultRecord(id="UNMEASURED-IRREP-LABEL-NOT-A-COHERENT-ESCAPE", source=registry_experiment_id,
+                    claim="Omitting measurement of a coherently copied source irrep label creates a new resource outside the classical-source quantum-selector obstruction, without changing the input or physical operations.",
+                    reason_invalid="Standard mixed coset inputs commute with central irrep projectors. The clean label-copy isometry sum_j |j> P_j therefore produces an already block-diagonal label record. Every common subset group-algebra query commutes with the same source projectors. S3/S4 controls check every hidden member, central-projector commutators and exact label-copy dephasing; a nonstandard cross-irrep pure input changes by trace distance 1/2 and is explicitly outside the input model.",
+                    lesson="A merely unmeasured label copy is not coherent physical-source retention. Specify an operation or input that actually changes these blocks, or retain nontrivial physical carrier information, and charge the changed access model. This standard dephasing identity does not exclude genuine retained quantum data or source-adaptive physical operations. Do not promote a mutation solely because an assumption flag was renamed.",
+                    applies_to=[registry_candidate_id, "unmeasured source-label copy mutations"],
+                    evidence={"artifact": str(path), "derivation": report["source_selector_quantum_derivation"], "status": "standard-input-dephasing-identity-checked"}))
+            if report["claim_gate"]["source_selector_quantum_mixtures_verified"] and report["claim_gate"]["noncentral_group_algebra_controls_verified"]:
+                upsert_negative_result(NegativeResultRecord(id="FULL-SOURCE-QUANTUM-SELECTOR-LARGE-COPY-BOUND", source=registry_experiment_id,
+                    claim="Tuning the participating copy count, final selector POVM, common noncentral group-algebra unitary, or central-weight mask rescues the one-query physical-discard architecture at polynomial resources.",
+                    reason_invalid="For a uniform mask, discarding weights below floor(k/4) costs at most 2^(1-k/16) across both hypotheses. Its TWO-SIDED projection kills tensor remainder terms with too few nonzero-selector factors. Bulk and endpoint tails are at most D(6/sqrt(L))^floor(k/4) and 4sqrt(D)2^(k/2)(2/sqrt(L))^floor(k/4). Add 2k sqrt(r/M) for the class-averaged positive mixtures. Splitting at 5n and using the raw-copy prefix bound obstructs every polynomial budget asymptotically. The finite S4096 interval certificate gives T<=2^-571 for every pre-input k<=4096^2, including central-weight masks with budget-wide p>=1/(4096^2+1).",
+                    lesson="Source records are CLASSICAL, all physical inputs are discarded, and the common unitary, source partition and participating count are fixed before inputs. A shared hidden involution is uniform on its class. Never substitute one representative for a noncentral operation, average h before products, or cap E_h T with the raw-copy bound; it caps only the decision distance. The former intermediate window is closed ASYMPTOTICALLY for uniform masks and polynomial-overlap fixed filters, not for every finite degree or arbitrary mask state. At S1024 the conservative all-budget certificate is still vacuous. Seek genuinely changed physical retention, source-adaptive operations, multiple queries, or a fully charged mask outside this scope. This is a derived/review-pending information obstruction, not independently reviewed, novel by certification, or a classical sampler.",
+                    applies_to=[registry_candidate_id, "full-source quantum selector readouts"],
+                    evidence={"artifact": str(path), "derivation": report["typical_mask_derivation"], "status": "derived-review-pending"}))
+            if report["claim_gate"]["source_weighted_environment_fidelity_verified"] and report["claim_gate"]["arbitrary_mask_positive_comparison_channel_verified"]:
+                upsert_negative_result(NegativeResultRecord(id="HIGH-OCCUPATION-MASK-FIDELITY-OBSTRUCTION", source=registry_experiment_id,
+                    claim="An exponentially small overlap with the uniform selector alone rescues the one-common-query physical-discard architecture, even when essentially all mask mass has weight at least 3n.",
+                    reason_invalid="The positive arbitrary-mask comparison is a preparation-channel image of the commuting Walsh law and pays NO uniform-overlap penalty. Environmental root fidelity and source-weighted Jensen bound the bulk remainder by D min(1,12/sqrt(L))^(t/2) and the endpoints by 4sqrt(D) min(1,2/sqrt(L))^(t/2). Add 2sqrt(pi) for the mass below t and 2k sqrt(r/M) for the averaged comparison. At polynomial k, t>=3n and superpolynomially small pi, the distance is negligible asymptotically. At S4096 k=n^2, t=3n, pi=0 the conditional integer certificate is 2^-5373.",
+                    lesson="The mask must be fixed independently of both the shared hidden involution AND source records. Source-selected masks falsify the Jensen step; high mean weight without a lower-tail bound is insufficient. Low-occupation masks, retained physical data, source adaptation and multiple queries remain unresolved. This is a derived/review-pending restricted information obstruction, not a novel result by certification, independent proof, or classical sampler.",
+                    applies_to=[registry_candidate_id, "high-occupation low-uniform-overlap masks"],
+                    evidence={"artifact": str(path), "derivation": report["mask_tail_fidelity_derivation"], "status": "derived-review-pending"}))
             if report["claim_gate"]["streamed_source_orbit_spectra_verified"] and report["claim_gate"]["s8_sign_category_table_loses_to_pairs_in_tested_window"]:
                 upsert_negative_result(NegativeResultRecord(id="S8-SIGN-CATEGORY-WALSH-INTERMEDIATE-PAIR-FAILURE", source=registry_experiment_id,
                     claim="The negative-character reflection with retained sign categories and corrected Walsh bits outperforms disjoint-pair readouts in the tested S8 intermediate copy window.",

@@ -19602,6 +19602,7 @@ def command_coset_binary_carrier_instruments(args: argparse.Namespace) -> int:
     initialize_seed_registry(overwrite=False)
     payload = write_binary_carrier_instrument_report(write_registry=not args.no_registry)
     print(payload["summary"])
+    print(payload["mask_tail_research_update"])
     print(json.dumps(payload["headline_metrics"], indent=2))
     return 0 if validate_registry()["valid"] and payload["claim_gate"]["finite_complete_channel_evaluation_verified"] else 1
 
@@ -27060,7 +27061,7 @@ def build_parser() -> argparse.ArgumentParser:
     reference_information.add_argument("--no-registry", action="store_true")
     reference_information.set_defaults(func=command_coset_hidden_involution_reference_twirl_information)
     binary_instruments = subparsers.add_parser("coset-binary-carrier-instruments",
-        help="Evaluate streamed S8 source/Walsh laws, pair baselines, and scoped full-source information bounds.")
+        help="Audit noncentral selectors, polynomial-budget obstructions, and arbitrary-mask environmental fidelity bounds.")
     binary_instruments.add_argument("--no-registry", action="store_true")
     binary_instruments.set_defaults(func=command_coset_binary_carrier_instruments)
     parser_coset_hidden_involution_natural_support_six_mass_audit = subparsers.add_parser(
