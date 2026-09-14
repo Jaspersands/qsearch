@@ -58,6 +58,8 @@ class RecouplingMechanismSynthesisTests(unittest.TestCase):
         self.assertIn("derived/review-pending", obligations)
         self.assertIn("Exponentially small uniform overlap ALONE is insufficient", obligations)
         self.assertIn("Low-occupation masks remain unresolved", obligations)
+        self.assertIn("Preserve COHERENCE between weights", obligations)
+        self.assertIn("not restrict to a single weight", obligations)
         self.assertNotIn("Target the unresolved intermediate", obligations)
 
     def test_known_shortcuts_are_rejected(self):

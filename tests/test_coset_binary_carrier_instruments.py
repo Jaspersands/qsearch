@@ -166,6 +166,9 @@ def test_clean_registry_runner_and_negative_baseline_artifacts(tmp_path, monkeyp
     assert "FULL-SOURCE-QUANTUM-SELECTOR-LARGE-COPY-BOUND" in negatives
     assert "UNMEASURED-IRREP-LABEL-NOT-A-COHERENT-ESCAPE" in negatives
     assert "HIGH-OCCUPATION-MASK-FIDELITY-OBSTRUCTION" in negatives
+    assert "FIXED-MASK-PHASE-ASYMMETRY-NOT-EXTRA-INFORMATION" in negatives
+    assert "VACUUM-COHERENCE-NOT-ASYMPTOTIC-RESCUE" in negatives
+    assert "LOW-OCCUPATION-SUPPORT-DIMENSION-OBSTRUCTION" in negatives
     from dequantization_checks import findings_from_negative_results
     from proof_tracker import _binary_carrier_instrument_lemmas
     findings = findings_from_negative_results([{"id": "CODE-COSET-COLLECTIVE"}], load_negative_results())
@@ -209,6 +212,17 @@ def test_clean_registry_runner_and_negative_baseline_artifacts(tmp_path, monkeyp
     assert "Source-selected masks falsify" in tail.required_action
     assert "not a novel result by certification" in tail.required_action
     assert "WITHOUT a uniform-overlap penalty" in lemmas[16].statement
+    assert lemmas[17].status == "derived-selector-mask-symmetry-review-pending"
+    symmetry = next(row for row in findings if row.id.endswith("SELECTOR-MASK-SYMMETRY-REDUCTION"))
+    assert "not an all-mask no-go" in symmetry.required_action
+    assert "cross-weight coherence" in lemmas[17].statement
+    assert lemmas[18].status == "derived-vacuum-coherence-bound-review-pending"
+    vacuum = next(row for row in findings if row.id.endswith("VACUUM-COHERENCE-GAIN-BOUND"))
+    assert "NOT a bound on total trace distance" in vacuum.required_action
+    assert "nonempty low-weight" in lemmas[18].statement
+    assert lemmas[19].status == "derived-low-occupation-support-bound-review-pending"
+    low_support = next(row for row in findings if row.id.endswith("LOW-OCCUPATION-SUPPORT-BOUND"))
+    assert "do NOT bound their mutual coherence" in low_support.required_action
     quantum = next(row for row in findings if row.id.endswith("SOURCE-SELECTOR-QUANTUM-MIXTURE-BOUND"))
     assert "Source records are CLASSICAL" in quantum.required_action
     assert "intermediate window is closed ASYMPTOTICALLY" in quantum.required_action

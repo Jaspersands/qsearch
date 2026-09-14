@@ -13986,7 +13986,7 @@
       "binary_carrier_instruments": "research/representation/coset_binary_carrier_instruments.json"
     },
     "candidate_id": "CODE-COSET-COLLECTIVE",
-    "created_at": "2026-09-14T05:36:16.310494+00:00",
+    "created_at": "2026-09-14T11:14:51.384425+00:00",
     "experiment_id": "EXP-COSET-BINARY-CARRIER-INSTRUMENTS",
     "falsifiers_triggered": [
       "Conjugation invariance removes hidden-member information, not necessarily class-versus-trivial information.",
@@ -14026,20 +14026,25 @@
       "finite_full_source_controls_passed": 2,
       "growing_copy_measurement_compilers": 0,
       "incomplete_support_povm_extensions_checked": 166,
+      "low_occupation_full_mask_probes_verified": 20,
+      "low_occupation_matrix_entries_verified": 96,
       "noncentral_group_algebra_controls_verified": 20,
       "noncentral_hidden_members_evaluated": 60,
       "polynomial_copy_budget_interval_bounds_evaluated": 12,
       "polynomial_label_arithmetic_controls": 4,
+      "radial_mask_search_calibrations": 2,
       "random_hadamard_branches_checked": 39672,
       "regular_cell_compression_controls_passed": 3,
       "s8_intermediate_copy_points": 6,
       "s8_streamed_group_pairs": 7338240,
       "schedules_evaluated": 24,
+      "selector_mask_symmetry_probes_verified": 26,
       "source_blocks_evaluated": 152,
       "source_blocks_with_clean_gpe_contract": 152,
       "source_blocks_with_exact_latent_irrep_model": 152,
       "source_category_exact_mixtures_checked": 40,
       "source_category_matrix_laws_checked": 36,
+      "source_character_square_controls_verified": 9,
       "source_conditioned_lifts_checked": 701,
       "source_conditioned_parity_laws_checked": 4959,
       "source_conditioned_selector_kernels_checked": 2153,
@@ -14052,7 +14057,9 @@
       "source_selector_quantum_fixed_weight_controls": 69,
       "source_selector_quantum_source_multisets_checked": 267,
       "streamed_source_orbit_controls_verified": 2,
-      "typical_mask_projected_remainders_checked": 144
+      "typical_mask_projected_remainders_checked": 144,
+      "vacuum_coherence_probes_verified": 20,
+      "vacuum_coherence_rows_verified": 10
     },
     "status": "binary-instrument-calibration-fixed-copy-route-obstructed",
     "summary": "A typical-mask refinement now obstructs the one-common-group-algebra-query, uniform-mask, physical-discard architecture at EVERY polynomial copy budget asymptotically, subject to review. It retains all classical source labels and the full quantum selector and permits noncentral unitaries and arbitrary final POVMs. Removing low-weight masks with charged gentle error sharpens the quantum remainder; an interval certificate covers all pre-input participating counts, including ignored copies. At S4096 every k<=4096^2 has decision T<=2^-571. Central-weight masks have a charged polynomial-overlap transfer. Arbitrary mask states, retained physical data, source-adaptive operations and multiple queries remain outside scope. No novelty, formal proof or classical sampler is established."
@@ -17960,7 +17967,7 @@
       "coset_recoupling_mechanism_synthesis": "research/representation/coset_recoupling_mechanism_synthesis.json"
     },
     "candidate_id": "CODE-COSET-COLLECTIVE",
-    "created_at": "2026-09-14T05:36:23.310892+00:00",
+    "created_at": "2026-09-14T11:15:53.518344+00:00",
     "experiment_id": "EXP-COSET-RECOUPLING-MECHANISM-SYNTHESIS",
     "falsifiers_triggered": [
       "QFT-only weak-label decoding is a known no-go route.",
@@ -24601,7 +24608,7 @@
       "dcp_symmetric_relation_lift": "research/reductions/dcp_symmetric_relation_lift.json"
     },
     "candidate_id": "DHS-GOWERS-SIEVE",
-    "created_at": "2026-07-15T06:52:18.969088+00:00",
+    "created_at": "2026-09-14T06:03:43.158132+00:00",
     "experiment_id": "EXP-DHS-DCP-SYMMETRIC-RELATION-LIFT",
     "falsifiers_triggered": [
       "Determinism is not necessary when both matched endpoint solvers are evaluated in a fixed order.",

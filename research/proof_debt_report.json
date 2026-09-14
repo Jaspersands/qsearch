@@ -66,8 +66,8 @@
       "target_claim": "The coset observable is not a disguised classical invariant."
     }
   ],
-  "created_at": "2026-09-14T05:36:30.150822+00:00",
-  "lemma_count": 1279,
+  "created_at": "2026-09-14T11:16:00.379738+00:00",
+  "lemma_count": 1282,
   "lemmas": [
     {
       "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -731,6 +731,42 @@
       "id": "LEMMA-CODE-COSET-COLLECTIVE-MASK-TAIL-FIDELITY-BOUND",
       "statement": "For the same shared-hidden standard coset inputs, one fixed common group-algebra query, classical source records and physical discard, an arbitrary fixed pure mask with mass <=pi below weight t gives E_h T<=2k sqrt(r/M)+2sqrt(pi)+D min(1,12/sqrt(L))^(t/2)+4sqrt(D) min(1,2/sqrt(L))^(t/2). The positive comparison is a channel image of the commuting Walsh law. Cross-partial-trace norms equal environmental root fidelities; source-weighted Jensen controls the remainder WITHOUT a uniform-overlap penalty. At polynomial k, t>=3n and negligible lower-tail mass this is asymptotically negligible. It does NOT obstruct arbitrary low-occupation masks or source-selected masks.",
       "status": "derived-mask-tail-fidelity-bound-review-pending"
+    },
+    {
+      "candidate_id": "CODE-COSET-COLLECTIVE",
+      "depends_on": [
+        "PO-INPUT-MODEL",
+        "PO-MEASUREMENT",
+        "PO-SUCCESS"
+      ],
+      "falsification_test": "Derive the physical Schur matrices from regular-basis effects and retain every shared hidden member after tensor products. Check simultaneous permutations of source records and selector indices, phase invariance, Kraus completeness on zero-probability coordinates and the concavity direction. Ordinary density-matrix averaging or dephasing across weights is invalid. Noncovariant channels falsify radial dominance; coherent weights can beat every fixed weight. Source-adaptive masks and efficient restricted final measurements are outside scope. Require independent proof and novelty review; optimizer convergence is not a theorem.",
+      "id": "LEMMA-CODE-COSET-COLLECTIVE-SELECTOR-MASK-SYMMETRY-REDUCTION",
+      "statement": "For a source-record-valued Schur selector channel jointly covariant under source/selector copy permutations, every fixed pure mask is information-dominated by the positive radial pure mask with the same Hamming-weight probabilities. A complete diagonal instrument proves concavity in mask probabilities, and phases are common output unitaries. The optimization has k+1 weight probabilities but retains cross-weight coherence, all natural source masses and the unrestricted final joint measurement. No efficient objective evaluation, global numerical certificate or all-mask obstruction follows.",
+      "status": "derived-selector-mask-symmetry-review-pending"
+    },
+    {
+      "candidate_id": "CODE-COSET-COLLECTIVE",
+      "depends_on": [
+        "PO-INPUT-MODEL",
+        "PO-MEASUREMENT",
+        "PO-SUCCESS"
+      ],
+      "falsification_test": "Check exact source-weighted character-square sums including coarse and merged partitions. Reconstruct the physical (S,empty) column with the correct conjugate empty phase, class-average the shared hidden member only after tensor products, and bound all four coefficient terms. Keep source-only information and natural source masses. Check positive finite vacuum gains and zero gain with nonzero source distance. Verify integer geometric-envelope rounding and coverage of every nonempty weight without sweeping the copy budget. Source adaptation and nonempty/nonempty coherence are outside scope. Independent proof and novelty review remain required.",
+      "id": "LEMMA-CODE-COSET-COLLECTIVE-VACUUM-COHERENCE-GAIN-BOUND",
+      "statement": "For one fixed common group-algebra query on standard mixed coset inputs with a shared uniform fixed-point-free involution, fixed irrep-coarsened classical sources, fixed source-independent mask and physical discard, coherence with the empty subset adds negligible class-decision information at polynomial copy budgets. Source-weighted character squares give v<=1/M, compressed-input chi-square bounds vacuum row weights <=n, and coefficient decay bounds weights >=n+1. Weighted-source Jensen bounds the gain over vacuum/nonempty pinching by sqrt(w0(1-w0))*max(B_low,B_high). This does not bound total information or coherences between nonempty low-weight states.",
+      "status": "derived-vacuum-coherence-bound-review-pending"
+    },
+    {
+      "candidate_id": "CODE-COSET-COLLECTIVE",
+      "depends_on": [
+        "PO-INPUT-MODEL",
+        "PO-MEASUREMENT",
+        "PO-SUCCESS"
+      ],
+      "falsification_test": "Check every physical (S,T) entry with the shared hidden member averaged after products, then the entire rank-charged mask. Counterexamples must prevent dropping sqrt(N), substituting the radial parameter count K+1 for output rank, or inferring a cross-sector bound from separate sector failures. Use exact support counts and outward integer rounding; nontrivial source mass cannot be discarded. Source-adaptive masks and low/high coherences remain outside scope. A compressed entry is not a full 2t-copy channel simulation. Independent proof and novelty review remain required.",
+      "id": "LEMMA-CODE-COSET-COLLECTIVE-LOW-OCCUPATION-SUPPORT-BOUND",
+      "statement": "For a fixed pure selector mask with support size <=N and maximum subset weight t in the one-common-query physical-discard architecture, each matrix entry has active union <=min(K,2t). Compressed-input chi-square, source-weighted Hilbert-Schmidt norm and selector rank <=N give the FULL mask decision distance T<=sqrt(N*(K+2^min(K,2t)-1)/(M-K))/2 for K<M. With N<=sum_(i<=t) binomial(K,i), K=n^2 and t=n/4 this is negligible asymptotically. It includes all intra-support coherences but not arbitrary low/high cross-sector mixtures.",
+      "status": "derived-low-occupation-support-bound-review-pending"
     },
     {
       "candidate_id": "CODE-COSET-COLLECTIVE",

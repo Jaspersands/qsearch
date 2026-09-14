@@ -1,5 +1,5 @@
 {
-  "created_at": "2026-09-14T05:36:16.310494+00:00",
+  "created_at": "2026-09-14T11:14:51.384425+00:00",
   "status": "binary-instrument-calibration-fixed-copy-route-obstructed",
   "summary": "A typical-mask refinement now obstructs the one-common-group-algebra-query, uniform-mask, physical-discard architecture at EVERY polynomial copy budget asymptotically, subject to review. It retains all classical source labels and the full quantum selector and permits noncentral unitaries and arbitrary final POVMs. Removing low-weight masks with charged gentle error sharpens the quantum remainder; an interval certificate covers all pre-input participating counts, including ignored copies. At S4096 every k<=4096^2 has decision T<=2^-571. Central-weight masks have a charged polynomial-overlap transfer. Arbitrary mask states, retained physical data, source-adaptive operations and multiple queries remain outside scope. No novelty, formal proof or classical sampler is established.",
   "derivation_document": "research/BINARY_CARRIER_INSTRUMENTS.md",
@@ -24188,10 +24188,10 @@
       "source_multiset_compression_used": false,
       "residuals": {
         "regular_unitary": 1.3884508234074626e-15,
+        "every_mask_unitary": 5.995204332975845e-15,
         "physical_channel": 1.0324666437585359e-15,
         "comparison_preparation_channel": 6.882322771707558e-17,
         "natural_mass": 1.1131642822828002e-16,
-        "every_mask_unitary": 5.995204332975845e-15,
         "positivity": 1.493541502433309e-18
       },
       "verified": true,
@@ -24225,10 +24225,10 @@
       "source_multiset_compression_used": false,
       "residuals": {
         "regular_unitary": 1.3884508234074626e-15,
+        "every_mask_unitary": 5.995204332975845e-15,
         "physical_channel": 8.611045718408394e-16,
         "comparison_preparation_channel": 5.012081737098236e-17,
         "natural_mass": 6.388234517799227e-18,
-        "every_mask_unitary": 5.995204332975845e-15,
         "positivity": 6.0150730595657566e-18
       },
       "verified": true,
@@ -24262,10 +24262,10 @@
       "source_multiset_compression_used": false,
       "residuals": {
         "regular_unitary": 1.3884508234074626e-15,
+        "every_mask_unitary": 5.995204332975845e-15,
         "physical_channel": 2.2305873779242857e-16,
         "comparison_preparation_channel": 6.509259464525837e-17,
         "natural_mass": 1.1102230246251565e-16,
-        "every_mask_unitary": 5.995204332975845e-15,
         "positivity": 5.551115123125784e-17
       },
       "verified": true,
@@ -24299,10 +24299,10 @@
       "source_multiset_compression_used": false,
       "residuals": {
         "regular_unitary": 1.3884508234074626e-15,
+        "every_mask_unitary": 1.4685191519513597e-14,
         "physical_channel": 5.871810105878605e-16,
         "comparison_preparation_channel": 5.5146804424354653e-17,
         "natural_mass": 2.775579343450445e-16,
-        "every_mask_unitary": 1.4685191519513597e-14,
         "positivity": 1.3560644286478836e-16
       },
       "verified": true,
@@ -24336,10 +24336,10 @@
       "source_multiset_compression_used": false,
       "residuals": {
         "regular_unitary": 1.3884508234074626e-15,
+        "every_mask_unitary": 1.4685191519513597e-14,
         "physical_channel": 5.145856405700958e-16,
         "comparison_preparation_channel": 5.1497159493729426e-17,
         "natural_mass": 2.7755689501671767e-16,
-        "every_mask_unitary": 1.4685191519513597e-14,
         "positivity": 1.4250178860648394e-16
       },
       "verified": true,
@@ -24373,10 +24373,10 @@
       "source_multiset_compression_used": false,
       "residuals": {
         "regular_unitary": 1.3884508234074626e-15,
+        "every_mask_unitary": 1.4685191519513597e-14,
         "physical_channel": 2.1970377686540665e-16,
         "comparison_preparation_channel": 6.283435673255384e-17,
         "natural_mass": 2.7755575615628914e-16,
-        "every_mask_unitary": 1.4685191519513597e-14,
         "positivity": 2.7755575615628926e-17
       },
       "verified": true,
@@ -24578,6 +24578,1425 @@
       "is_classical_dequantization": false
     }
   ],
+  "selector_mask_symmetry_derivation": "research/SELECTOR_MASK_SYMMETRY.md",
+  "selector_mask_symmetry_audit": {
+    "controls": [
+      {
+        "copy_count": 2,
+        "source_tuple_count": 9,
+        "hidden_members_checked": 3,
+        "permutations_checked": 2,
+        "joint_permutation_covariance_residual": 1.1105808383854761e-16,
+        "probes": [
+          {
+            "input_distance": 0.30555555555555547,
+            "radial_distance": 0.33435664983022906,
+            "radial_gain": 0.02880109427467359,
+            "weight_probabilities": [
+              0.0,
+              1.0,
+              0.0
+            ],
+            "phase_distance_residual": 0.0,
+            "concavity_gap": 0.0028655403107838984,
+            "instrument_residual": 2.7755575615628914e-17
+          },
+          {
+            "input_distance": 0.33930130015943355,
+            "radial_distance": 0.3396623044751954,
+            "radial_gain": 0.0003610043157618592,
+            "weight_probabilities": [
+              0.06753090937595385,
+              0.3609545418829322,
+              0.5715145487411138
+            ],
+            "phase_distance_residual": 5.551115123125783e-17,
+            "concavity_gap": 0.001821221812546625,
+            "instrument_residual": 2.7755575615628914e-17
+          },
+          {
+            "input_distance": 0.34654255243681953,
+            "radial_distance": 0.34810319853790705,
+            "radial_gain": 0.001560646101087526,
+            "weight_probabilities": [
+              0.1778155982215129,
+              0.5276176044798715,
+              0.2945667972986156
+            ],
+            "phase_distance_residual": 5.551115123125783e-17,
+            "concavity_gap": 0.0007465110616238779,
+            "instrument_residual": 2.7755575615628914e-17
+          },
+          {
+            "input_distance": 0.34731690019443984,
+            "radial_distance": 0.3477617466576966,
+            "radial_gain": 0.000444846463256765,
+            "weight_probabilities": [
+              0.21630691476501313,
+              0.5655382594203037,
+              0.21815482581468312
+            ],
+            "phase_distance_residual": 0.0,
+            "concavity_gap": 0.00036834519096373697,
+            "instrument_residual": 2.7755575615628914e-17
+          },
+          {
+            "input_distance": 0.33936262599146244,
+            "radial_distance": 0.34343897247058486,
+            "radial_gain": 0.004076346479122417,
+            "weight_probabilities": [
+              0.09371358726312368,
+              0.5337113148117134,
+              0.3725750979251628
+            ],
+            "phase_distance_residual": 0.0,
+            "concavity_gap": 0.005999534850233024,
+            "instrument_residual": 2.7755575615628914e-17
+          },
+          {
+            "input_distance": 0.34959755815705745,
+            "radial_distance": 0.34960496511216776,
+            "radial_gain": 7.406955110311753e-06,
+            "weight_probabilities": [
+              0.2503366108879343,
+              0.5044081519009114,
+              0.24525523721115422
+            ],
+            "phase_distance_residual": 5.551115123125783e-17,
+            "concavity_gap": 0.0007829495248950491,
+            "instrument_residual": 2.7755575615628914e-17
+          },
+          {
+            "input_distance": 0.3330253674979222,
+            "radial_distance": 0.34287330533491733,
+            "radial_gain": 0.009847937836995113,
+            "weight_probabilities": [
+              0.14417577308328333,
+              0.7251206121599488,
+              0.13070361475676773
+            ],
+            "phase_distance_residual": 0.0,
+            "concavity_gap": 0.00026438636205355914,
+            "instrument_residual": 5.551115123125783e-17
+          },
+          {
+            "input_distance": 0.35680853562191034,
+            "radial_distance": 0.3568086929054802,
+            "radial_gain": 1.5728356983490954e-07,
+            "weight_probabilities": [
+              0.6539199339203986,
+              0.08637689106667645,
+              0.25970317501292495
+            ],
+            "phase_distance_residual": 0.0,
+            "concavity_gap": 0.00017264718443044114,
+            "instrument_residual": 1.3877787807814457e-17
+          },
+          {
+            "input_distance": 0.3505948235320004,
+            "radial_distance": 0.35063672134885854,
+            "radial_gain": 4.189781685814964e-05,
+            "weight_probabilities": [
+              0.48173088172497064,
+              0.3321653903979618,
+              0.18610372787706747
+            ],
+            "phase_distance_residual": 0.0,
+            "concavity_gap": 0.002630102335054285,
+            "instrument_residual": 5.551115123125783e-17
+          },
+          {
+            "input_distance": 0.3266571429976296,
+            "radial_distance": 0.3377575471908437,
+            "radial_gain": 0.01110040419321412,
+            "weight_probabilities": [
+              0.04264853454805787,
+              0.5744621358789319,
+              0.38288932957301025
+            ],
+            "phase_distance_residual": 0.0,
+            "concavity_gap": 0.0006571422237509061,
+            "instrument_residual": 2.220446049250313e-16
+          },
+          {
+            "input_distance": 0.35295226097407284,
+            "radial_distance": 0.35308195536055154,
+            "radial_gain": 0.0001296943864786959,
+            "weight_probabilities": [
+              0.32247710076679853,
+              0.3870143976949274,
+              0.290508501538274
+            ],
+            "phase_distance_residual": 5.551115123125783e-17,
+            "concavity_gap": 0.0005510594178817496,
+            "instrument_residual": 1.1102230246251565e-16
+          },
+          {
+            "input_distance": 0.327752915872238,
+            "radial_distance": 0.33893682656760515,
+            "radial_gain": 0.011183910695367172,
+            "weight_probabilities": [
+              0.18344562326421723,
+              0.76784314819076,
+              0.0487112285450227
+            ],
+            "phase_distance_residual": 5.551115123125783e-17,
+            "concavity_gap": 0.010850388936042954,
+            "instrument_residual": 1.3877787807814457e-17
+          },
+          {
+            "input_distance": 0.34941544854288076,
+            "radial_distance": 0.3532780333206158,
+            "radial_gain": 0.0038625847777350453,
+            "weight_probabilities": [
+              0.27703918996966986,
+              0.3753323517883031,
+              0.3476284582420272
+            ],
+            "phase_distance_residual": 0.0,
+            "concavity_gap": 0.0016647303524714996,
+            "instrument_residual": 2.220446049250313e-16
+          }
+        ],
+        "verified": true
+      },
+      {
+        "copy_count": 3,
+        "source_tuple_count": 27,
+        "hidden_members_checked": 3,
+        "permutations_checked": 6,
+        "joint_permutation_covariance_residual": 3.3306891124378585e-16,
+        "probes": [
+          {
+            "input_distance": 0.4212962962962958,
+            "radial_distance": 0.44689726898489557,
+            "radial_gain": 0.025600972688599788,
+            "weight_probabilities": [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            "phase_distance_residual": 0.0,
+            "concavity_gap": 0.006731714953593149,
+            "instrument_residual": 1.3877787807814457e-17
+          },
+          {
+            "input_distance": 0.4587397117568919,
+            "radial_distance": 0.4617651715099162,
+            "radial_gain": 0.0030254597530243177,
+            "weight_probabilities": [
+              0.24178544559683868,
+              0.2198337065010082,
+              0.3990564194927198,
+              0.13932442840943324
+            ],
+            "phase_distance_residual": 5.551115123125783e-17,
+            "concavity_gap": 0.006530140550798702,
+            "instrument_residual": 2.7755575615628914e-17
+          },
+          {
+            "input_distance": 0.45247842397827986,
+            "radial_distance": 0.4562230260434237,
+            "radial_gain": 0.0037446020651438205,
+            "weight_probabilities": [
+              0.08062504638092333,
+              0.34848806235298996,
+              0.5560267139521147,
+              0.014860177313971943
+            ],
+            "phase_distance_residual": 0.0,
+            "concavity_gap": 0.003796164949895986,
+            "instrument_residual": 2.220446049250313e-16
+          },
+          {
+            "input_distance": 0.450199047815953,
+            "radial_distance": 0.45286674564635876,
+            "radial_gain": 0.0026676978304057686,
+            "weight_probabilities": [
+              0.03738865657090427,
+              0.28494642817794624,
+              0.6571387928263807,
+              0.020526122424768884
+            ],
+            "phase_distance_residual": 1.1102230246251565e-16,
+            "concavity_gap": 0.001878162026335617,
+            "instrument_residual": 6.938893903907228e-18
+          },
+          {
+            "input_distance": 0.4550424959081588,
+            "radial_distance": 0.4574169970644987,
+            "radial_gain": 0.002374501156339859,
+            "weight_probabilities": [
+              0.1519702590953133,
+              0.4774428854094974,
+              0.2513590242663654,
+              0.11922783122882392
+            ],
+            "phase_distance_residual": 0.0,
+            "concavity_gap": 0.005060188821777667,
+            "instrument_residual": 2.220446049250313e-16
+          },
+          {
+            "input_distance": 0.45121442813993123,
+            "radial_distance": 0.45266765171828294,
+            "radial_gain": 0.0014532235783517033,
+            "weight_probabilities": [
+              0.04666919042482008,
+              0.6123727963716405,
+              0.11216136958238271,
+              0.22879664362115673
+            ],
+            "phase_distance_residual": 0.0,
+            "concavity_gap": 0.0029068827951709286,
+            "instrument_residual": 2.220446049250313e-16
+          },
+          {
+            "input_distance": 0.4593681630246771,
+            "radial_distance": 0.4618798672932736,
+            "radial_gain": 0.0025117042685965374,
+            "weight_probabilities": [
+              0.35725255644179676,
+              0.2546094158388107,
+              0.3242482069103644,
+              0.063889820809028
+            ],
+            "phase_distance_residual": 1.1102230246251565e-16,
+            "concavity_gap": 0.00557718832999643,
+            "instrument_residual": 2.220446049250313e-16
+          },
+          {
+            "input_distance": 0.4500444598850475,
+            "radial_distance": 0.45585720088278,
+            "radial_gain": 0.005812740997732491,
+            "weight_probabilities": [
+              0.06930294990948486,
+              0.25769778951561845,
+              0.6539280716813878,
+              0.019071188893508912
+            ],
+            "phase_distance_residual": 1.1102230246251565e-16,
+            "concavity_gap": 0.003480298516060909,
+            "instrument_residual": 2.220446049250313e-16
+          },
+          {
+            "input_distance": 0.4566785504188199,
+            "radial_distance": 0.4599884334638986,
+            "radial_gain": 0.003309883045078732,
+            "weight_probabilities": [
+              0.1529906740302757,
+              0.30585767515072987,
+              0.4673549490692662,
+              0.07379670174972817
+            ],
+            "phase_distance_residual": 5.551115123125783e-17,
+            "concavity_gap": 0.002851166153009843,
+            "instrument_residual": 1.1102230246251565e-16
+          },
+          {
+            "input_distance": 0.44936689256602225,
+            "radial_distance": 0.4528668871142193,
+            "radial_gain": 0.0034999945481970496,
+            "weight_probabilities": [
+              0.0511181788215795,
+              0.6425105102956186,
+              0.2763546552440557,
+              0.03001665563874618
+            ],
+            "phase_distance_residual": 0.0,
+            "concavity_gap": 0.002411823503459032,
+            "instrument_residual": 1.1102230246251565e-16
+          },
+          {
+            "input_distance": 0.44835392925421325,
+            "radial_distance": 0.45454243574212183,
+            "radial_gain": 0.006188506487908585,
+            "weight_probabilities": [
+              0.05914353565602311,
+              0.3352652901485378,
+              0.3854677215074592,
+              0.22012345268797984
+            ],
+            "phase_distance_residual": 0.0,
+            "concavity_gap": 0.0044169664341431325,
+            "instrument_residual": 2.220446049250313e-16
+          },
+          {
+            "input_distance": 0.45301743988122445,
+            "radial_distance": 0.4571142164325255,
+            "radial_gain": 0.004096776551301029,
+            "weight_probabilities": [
+              0.08777728748860518,
+              0.3142406157619618,
+              0.5511465073630174,
+              0.046835589386415716
+            ],
+            "phase_distance_residual": 0.0,
+            "concavity_gap": 0.0045072891843045415,
+            "instrument_residual": 2.220446049250313e-16
+          },
+          {
+            "input_distance": 0.4543797993695098,
+            "radial_distance": 0.4565613627693882,
+            "radial_gain": 0.0021815633998784056,
+            "weight_probabilities": [
+              0.12717910794897966,
+              0.22644890988575217,
+              0.34594295858999463,
+              0.30042902357527357
+            ],
+            "phase_distance_residual": 0.0,
+            "concavity_gap": 0.004707331235557999,
+            "instrument_residual": 1.1102230246251565e-16
+          }
+        ],
+        "verified": true
+      }
+    ],
+    "verified": true,
+    "source_adaptive_masks_covered": false,
+    "uniform_mask_is_asserted_optimal": false,
+    "cross_weight_coherence_discarded": false,
+    "formal_proof_verification": false,
+    "novelty_established": false
+  },
+  "selector_mask_symmetry_contract": {
+    "copy_count": 1024,
+    "applicable": true,
+    "canonical_weight_probability_count": 1025,
+    "mask_phases_irrelevant_to_optimal_decision": true,
+    "radial_pure_mask_dominates_every_fixed_mask": true,
+    "objective_concave_in_mask_probabilities": true,
+    "cross_weight_coherence_must_be_retained": true,
+    "uniform_mask_is_always_optimal": false,
+    "single_fixed_weight_is_always_optimal": false,
+    "source_adaptive_masks_covered": false,
+    "efficient_objective_evaluation_supplied": false,
+    "efficient_final_measurement_supplied": false,
+    "all_arbitrary_masks_obstructed": false,
+    "formula": "max_alpha T = max_(w in simplex(k+1)) T(alpha_s=sqrt(w_|s|/C(k,|s|)))",
+    "scope": "Both hypotheses define source-record-valued Schur channels, jointly covariant under copy permutations of selector and source records. The input mask is independent of those records. Natural source masses and the unrestricted final quantum decision are retained. Radialize PROBABILITIES, then prepare their PURE square-root amplitudes; do not dephase the selector or discard source records.",
+    "assumption_contract_not_arbitrary_program_verifier": true,
+    "proof_status": "derived-selector-mask-symmetry-review-pending",
+    "independent_review": false,
+    "formal_proof_verification": false,
+    "novelty_established": false,
+    "is_classical_dequantization": false
+  },
+  "radial_mask_finite_searches": [
+    {
+      "degree": 3,
+      "copy_count": 2,
+      "source_only_distance": 0.3055555555555554,
+      "source_only_baseline_requires_quantum_frontend": true,
+      "uniform_mask_distance": 0.3497417962205376,
+      "best_single_weight_distance": 0.33435664983022906,
+      "best_observed_radial_distance": 0.36468101005474074,
+      "best_observed_weight_probabilities": [
+        0.5000000542728288,
+        5.8778665528586016e-15,
+        0.49999994572716544
+      ],
+      "optimizer_starts": 4,
+      "optimizer_reports_converged": 4,
+      "global_optimality_certified": false,
+      "growing_degree_advantage_established": false,
+      "efficient_final_measurement_supplied": false,
+      "speedup_claim_allowed": false
+    },
+    {
+      "degree": 3,
+      "copy_count": 3,
+      "source_only_distance": 0.4212962962962958,
+      "source_only_baseline_requires_quantum_frontend": true,
+      "uniform_mask_distance": 0.45816632185019357,
+      "best_single_weight_distance": 0.44689726898489557,
+      "best_observed_radial_distance": 0.4681692459588988,
+      "best_observed_weight_probabilities": [
+        0.40542167754710046,
+        0.0,
+        0.5945783224528995,
+        0.0
+      ],
+      "optimizer_starts": 5,
+      "optimizer_reports_converged": 5,
+      "global_optimality_certified": false,
+      "growing_degree_advantage_established": false,
+      "efficient_final_measurement_supplied": false,
+      "speedup_claim_allowed": false
+    }
+  ],
+  "selector_mask_symmetry_research_update": "A diagonal-instrument concavity argument reduces fixed-mask information optimization to k+1 Hamming-weight probabilities. Retain coherent superpositions between weight sectors; uniform and single-weight masks need not be best. This is a derived/review-pending parameter reduction, not an efficient objective oracle, final measurement compiler or all-mask obstruction. Source-adaptive masks remain outside its scope.",
+  "vacuum_coherence_derivation": "research/VACUUM_COHERENCE_BOUND.md",
+  "source_character_square_audit": {
+    "controls": [
+      {
+        "degree": 3,
+        "partition_rule": "full_irreps",
+        "categories": 3,
+        "group_elements_checked": 6,
+        "class_size": 3,
+        "source_chi_square": "1/3",
+        "source_chi_square_upper_bound": "1/3",
+        "category_count_penalty_required": false,
+        "verified": true
+      },
+      {
+        "degree": 3,
+        "partition_rule": "character_sign_coarsening",
+        "categories": 2,
+        "group_elements_checked": 6,
+        "class_size": 3,
+        "source_chi_square": "1/5",
+        "source_chi_square_upper_bound": "1/3",
+        "category_count_penalty_required": false,
+        "verified": true
+      },
+      {
+        "degree": 3,
+        "partition_rule": "all_irreps_merged",
+        "categories": 1,
+        "group_elements_checked": 6,
+        "class_size": 3,
+        "source_chi_square": "0",
+        "source_chi_square_upper_bound": "1/3",
+        "category_count_penalty_required": false,
+        "verified": true
+      },
+      {
+        "degree": 4,
+        "partition_rule": "full_irreps",
+        "categories": 5,
+        "group_elements_checked": 24,
+        "class_size": 3,
+        "source_chi_square": "1/3",
+        "source_chi_square_upper_bound": "1/3",
+        "category_count_penalty_required": false,
+        "verified": true
+      },
+      {
+        "degree": 4,
+        "partition_rule": "character_sign_coarsening",
+        "categories": 2,
+        "group_elements_checked": 24,
+        "class_size": 3,
+        "source_chi_square": "1/3",
+        "source_chi_square_upper_bound": "1/3",
+        "category_count_penalty_required": false,
+        "verified": true
+      },
+      {
+        "degree": 4,
+        "partition_rule": "all_irreps_merged",
+        "categories": 1,
+        "group_elements_checked": 24,
+        "class_size": 3,
+        "source_chi_square": "0",
+        "source_chi_square_upper_bound": "1/3",
+        "category_count_penalty_required": false,
+        "verified": true
+      },
+      {
+        "degree": 6,
+        "partition_rule": "full_irreps",
+        "categories": 11,
+        "group_elements_checked": 720,
+        "class_size": 15,
+        "source_chi_square": "1/15",
+        "source_chi_square_upper_bound": "1/15",
+        "category_count_penalty_required": false,
+        "verified": true
+      },
+      {
+        "degree": 6,
+        "partition_rule": "character_sign_coarsening",
+        "categories": 2,
+        "group_elements_checked": 720,
+        "class_size": 15,
+        "source_chi_square": "289/7076",
+        "source_chi_square_upper_bound": "1/15",
+        "category_count_penalty_required": false,
+        "verified": true
+      },
+      {
+        "degree": 6,
+        "partition_rule": "all_irreps_merged",
+        "categories": 1,
+        "group_elements_checked": 720,
+        "class_size": 15,
+        "source_chi_square": "0",
+        "source_chi_square_upper_bound": "1/15",
+        "category_count_penalty_required": false,
+        "verified": true
+      }
+    ],
+    "verified": true,
+    "exact_arithmetic": true
+  },
+  "vacuum_coherence_audit": {
+    "controls": [
+      {
+        "degree": 3,
+        "copy_count": 2,
+        "source_tuple_count": 9,
+        "hidden_members_checked": 3,
+        "character_reconstruction_residual": 3.1401849173675503e-16,
+        "class_invariant_source_mass_residual": 0.0,
+        "source_chi_square": 0.3333333333333333,
+        "source_only_distance": 0.3055555555555555,
+        "rows": [
+          {
+            "subset": 1,
+            "subset_weight": 1,
+            "weighted_row_squared_norm": 0.5580512774325405,
+            "compressed_input_chi_square_upper_bound": 0.7777777777777777,
+            "coefficient_component_norms": {
+              "source_mass": 0.19053112056873991,
+              "hidden_endpoint": 0.23650181799674297,
+              "alternative_off_subgroup": 0.7751005753054319,
+              "null_off_identity": 0.5423526161355382
+            },
+            "coefficient_component_upper_bounds": {
+              "source_mass": 0.8819171036881968,
+              "hidden_endpoint": 0.769800358919501,
+              "alternative_off_subgroup": 4.000000000000001,
+              "null_off_identity": 1.7320508075688772
+            }
+          },
+          {
+            "subset": 2,
+            "subset_weight": 1,
+            "weighted_row_squared_norm": 0.5580512774325405,
+            "compressed_input_chi_square_upper_bound": 0.7777777777777777,
+            "coefficient_component_norms": {
+              "source_mass": 0.19053112056873991,
+              "hidden_endpoint": 0.23650181799674297,
+              "alternative_off_subgroup": 0.7751005753054319,
+              "null_off_identity": 0.5423526161355383
+            },
+            "coefficient_component_upper_bounds": {
+              "source_mass": 0.8819171036881968,
+              "hidden_endpoint": 0.769800358919501,
+              "alternative_off_subgroup": 4.000000000000001,
+              "null_off_identity": 1.7320508075688772
+            }
+          },
+          {
+            "subset": 3,
+            "subset_weight": 2,
+            "weighted_row_squared_norm": 0.36978715141492324,
+            "compressed_input_chi_square_upper_bound": 1.0,
+            "coefficient_component_norms": {
+              "source_mass": 0.19053112056873991,
+              "hidden_endpoint": 0.23650181799674297,
+              "alternative_off_subgroup": 0.6127708084180065,
+              "null_off_identity": 0.36241135874958785
+            },
+            "coefficient_component_upper_bounds": {
+              "source_mass": 0.8819171036881968,
+              "hidden_endpoint": 0.769800358919501,
+              "alternative_off_subgroup": 4.898979485566356,
+              "null_off_identity": 1.224744871391589
+            }
+          }
+        ],
+        "probes": [
+          {
+            "vacuum_probability": 0.0,
+            "total_distance": 0.30555555555555547,
+            "vacuum_dephased_distance": 0.30555555555555547,
+            "nonempty_distance": 0.30555555555555547,
+            "vacuum_coherence_gain": 0.0,
+            "cross_block_half_trace_norm": 0.0,
+            "source_weighted_jensen_upper_bound": 0.0
+          },
+          {
+            "vacuum_probability": 0.0,
+            "total_distance": 0.3259481490337036,
+            "vacuum_dephased_distance": 0.3259481490337036,
+            "nonempty_distance": 0.3259481490337036,
+            "vacuum_coherence_gain": 0.0,
+            "cross_block_half_trace_norm": 0.0,
+            "source_weighted_jensen_upper_bound": 0.0
+          },
+          {
+            "vacuum_probability": 0.1,
+            "total_distance": 0.3410308282550669,
+            "vacuum_dephased_distance": 0.30555555555555547,
+            "nonempty_distance": 0.30555555555555547,
+            "vacuum_coherence_gain": 0.03547527269951145,
+            "cross_block_half_trace_norm": 0.09960530278295239,
+            "source_weighted_jensen_upper_bound": 0.18243038022035446
+          },
+          {
+            "vacuum_probability": 0.1,
+            "total_distance": 0.3395190321901349,
+            "vacuum_dephased_distance": 0.3124308792603656,
+            "nonempty_distance": 0.3131948041164556,
+            "vacuum_coherence_gain": 0.027088152929769294,
+            "cross_block_half_trace_norm": 0.1267576443858559,
+            "source_weighted_jensen_upper_bound": 0.19553595616229674
+          },
+          {
+            "vacuum_probability": 0.5,
+            "total_distance": 0.36468101005474124,
+            "vacuum_dephased_distance": 0.30555555555555547,
+            "nonempty_distance": 0.30555555555555547,
+            "vacuum_coherence_gain": 0.05912545449918577,
+            "cross_block_half_trace_norm": 0.1660088379715873,
+            "source_weighted_jensen_upper_bound": 0.30405063370059077
+          },
+          {
+            "vacuum_probability": 0.5,
+            "total_distance": 0.3525500289292957,
+            "vacuum_dephased_distance": 0.31284057115494623,
+            "nonempty_distance": 0.3201255867543369,
+            "vacuum_coherence_gain": 0.03970945777434948,
+            "cross_block_half_trace_norm": 0.2343487235271568,
+            "source_weighted_jensen_upper_bound": 0.3421516547293574
+          },
+          {
+            "vacuum_probability": 0.9,
+            "total_distance": 0.34103082825506686,
+            "vacuum_dephased_distance": 0.3055555555555555,
+            "nonempty_distance": 0.30555555555555547,
+            "vacuum_coherence_gain": 0.03547527269951134,
+            "cross_block_half_trace_norm": 0.09960530278295238,
+            "source_weighted_jensen_upper_bound": 0.18243038022035443
+          },
+          {
+            "vacuum_probability": 0.9,
+            "total_distance": 0.32845220467030095,
+            "vacuum_dephased_distance": 0.3074428624256936,
+            "nonempty_distance": 0.32442862425693614,
+            "vacuum_coherence_gain": 0.021009342244607376,
+            "cross_block_half_trace_norm": 0.14625125756479268,
+            "source_weighted_jensen_upper_bound": 0.21019533184032319
+          },
+          {
+            "vacuum_probability": 1.0,
+            "total_distance": 0.3055555555555554,
+            "vacuum_dephased_distance": 0.3055555555555555,
+            "nonempty_distance": 0.30555555555555547,
+            "vacuum_coherence_gain": -1.1102230246251565e-16,
+            "cross_block_half_trace_norm": 0.0,
+            "source_weighted_jensen_upper_bound": 0.0
+          },
+          {
+            "vacuum_probability": 1.0,
+            "total_distance": 0.3055555555555554,
+            "vacuum_dephased_distance": 0.3055555555555555,
+            "nonempty_distance": 0.3258991796641204,
+            "vacuum_coherence_gain": -1.1102230246251565e-16,
+            "cross_block_half_trace_norm": 0.0,
+            "source_weighted_jensen_upper_bound": 0.0
+          }
+        ],
+        "verified": true
+      },
+      {
+        "degree": 3,
+        "copy_count": 3,
+        "source_tuple_count": 27,
+        "hidden_members_checked": 3,
+        "character_reconstruction_residual": 3.053145990838886e-16,
+        "class_invariant_source_mass_residual": 0.0,
+        "source_chi_square": 0.3333333333333333,
+        "source_only_distance": 0.4212962962962963,
+        "rows": [
+          {
+            "subset": 1,
+            "subset_weight": 1,
+            "weighted_row_squared_norm": 0.8576752028981505,
+            "compressed_input_chi_square_upper_bound": 1.3703703703703702,
+            "coefficient_component_norms": {
+              "source_mass": 0.2529048374098776,
+              "hidden_endpoint": 0.2730887765685109,
+              "alternative_off_subgroup": 0.8950090516032497,
+              "null_off_identity": 0.5423526161355382
+            },
+            "coefficient_component_upper_bounds": {
+              "source_mass": 1.1706281947614152,
+              "hidden_endpoint": 0.8888888888888888,
+              "alternative_off_subgroup": 4.618802153517007,
+              "null_off_identity": 1.7320508075688772
+            }
+          },
+          {
+            "subset": 2,
+            "subset_weight": 1,
+            "weighted_row_squared_norm": 0.8576752028981505,
+            "compressed_input_chi_square_upper_bound": 1.3703703703703702,
+            "coefficient_component_norms": {
+              "source_mass": 0.2529048374098776,
+              "hidden_endpoint": 0.2730887765685109,
+              "alternative_off_subgroup": 0.8950090516032497,
+              "null_off_identity": 0.5423526161355381
+            },
+            "coefficient_component_upper_bounds": {
+              "source_mass": 1.1706281947614152,
+              "hidden_endpoint": 0.8888888888888888,
+              "alternative_off_subgroup": 4.618802153517007,
+              "null_off_identity": 1.7320508075688772
+            }
+          },
+          {
+            "subset": 3,
+            "subset_weight": 2,
+            "weighted_row_squared_norm": 0.5511103424608782,
+            "compressed_input_chi_square_upper_bound": 1.6666666666666665,
+            "coefficient_component_norms": {
+              "source_mass": 0.2529048374098776,
+              "hidden_endpoint": 0.2730887765685109,
+              "alternative_off_subgroup": 0.7075667823833612,
+              "null_off_identity": 0.36241135874958785
+            },
+            "coefficient_component_upper_bounds": {
+              "source_mass": 1.1706281947614152,
+              "hidden_endpoint": 0.8888888888888888,
+              "alternative_off_subgroup": 5.656854249492381,
+              "null_off_identity": 1.224744871391589
+            }
+          },
+          {
+            "subset": 4,
+            "subset_weight": 1,
+            "weighted_row_squared_norm": 0.8576752028981506,
+            "compressed_input_chi_square_upper_bound": 1.3703703703703702,
+            "coefficient_component_norms": {
+              "source_mass": 0.2529048374098776,
+              "hidden_endpoint": 0.2730887765685109,
+              "alternative_off_subgroup": 0.8950090516032497,
+              "null_off_identity": 0.5423526161355382
+            },
+            "coefficient_component_upper_bounds": {
+              "source_mass": 1.1706281947614152,
+              "hidden_endpoint": 0.8888888888888888,
+              "alternative_off_subgroup": 4.618802153517007,
+              "null_off_identity": 1.7320508075688772
+            }
+          },
+          {
+            "subset": 5,
+            "subset_weight": 2,
+            "weighted_row_squared_norm": 0.5511103424608783,
+            "compressed_input_chi_square_upper_bound": 1.6666666666666665,
+            "coefficient_component_norms": {
+              "source_mass": 0.2529048374098776,
+              "hidden_endpoint": 0.2730887765685109,
+              "alternative_off_subgroup": 0.7075667823833612,
+              "null_off_identity": 0.3624113587495878
+            },
+            "coefficient_component_upper_bounds": {
+              "source_mass": 1.1706281947614152,
+              "hidden_endpoint": 0.8888888888888888,
+              "alternative_off_subgroup": 5.656854249492381,
+              "null_off_identity": 1.224744871391589
+            }
+          },
+          {
+            "subset": 6,
+            "subset_weight": 2,
+            "weighted_row_squared_norm": 0.5511103424608782,
+            "compressed_input_chi_square_upper_bound": 1.6666666666666665,
+            "coefficient_component_norms": {
+              "source_mass": 0.2529048374098776,
+              "hidden_endpoint": 0.2730887765685109,
+              "alternative_off_subgroup": 0.7075667823833612,
+              "null_off_identity": 0.36241135874958785
+            },
+            "coefficient_component_upper_bounds": {
+              "source_mass": 1.1706281947614152,
+              "hidden_endpoint": 0.8888888888888888,
+              "alternative_off_subgroup": 5.656854249492381,
+              "null_off_identity": 1.224744871391589
+            }
+          },
+          {
+            "subset": 7,
+            "subset_weight": 3,
+            "weighted_row_squared_norm": 0.392994769457915,
+            "compressed_input_chi_square_upper_bound": 2.3333333333333335,
+            "coefficient_component_norms": {
+              "source_mass": 0.2529048374098776,
+              "hidden_endpoint": 0.2730887765685109,
+              "alternative_off_subgroup": 0.5593806572520311,
+              "null_off_identity": 0.24581958307010104
+            },
+            "coefficient_component_upper_bounds": {
+              "source_mass": 1.1706281947614152,
+              "hidden_endpoint": 0.8888888888888888,
+              "alternative_off_subgroup": 6.928203230275509,
+              "null_off_identity": 0.8660254037844386
+            }
+          }
+        ],
+        "probes": [
+          {
+            "vacuum_probability": 0.0,
+            "total_distance": 0.4212962962962958,
+            "vacuum_dephased_distance": 0.4212962962962958,
+            "nonempty_distance": 0.4212962962962958,
+            "vacuum_coherence_gain": 0.0,
+            "cross_block_half_trace_norm": 0.0,
+            "source_weighted_jensen_upper_bound": 0.0
+          },
+          {
+            "vacuum_probability": 0.0,
+            "total_distance": 0.44420890295490806,
+            "vacuum_dephased_distance": 0.44420890295490806,
+            "nonempty_distance": 0.44420890295490806,
+            "vacuum_coherence_gain": 0.0,
+            "cross_block_half_trace_norm": 0.0,
+            "source_weighted_jensen_upper_bound": 0.0
+          },
+          {
+            "vacuum_probability": 0.1,
+            "total_distance": 0.43312138719613297,
+            "vacuum_dephased_distance": 0.42129629629629584,
+            "nonempty_distance": 0.4212962962962958,
+            "vacuum_coherence_gain": 0.011825090899837132,
+            "cross_block_half_trace_norm": 0.10918717518918561,
+            "source_weighted_jensen_upper_bound": 0.1880678846885144
+          },
+          {
+            "vacuum_probability": 0.1,
+            "total_distance": 0.4507045232732095,
+            "vacuum_dephased_distance": 0.44064689630582654,
+            "nonempty_distance": 0.44279696297355214,
+            "vacuum_coherence_gain": 0.010057626967382938,
+            "cross_block_half_trace_norm": 0.16850570422311667,
+            "source_weighted_jensen_upper_bound": 0.257825494650752
+          },
+          {
+            "vacuum_probability": 0.5,
+            "total_distance": 0.4410047811293577,
+            "vacuum_dephased_distance": 0.42129629629629606,
+            "nonempty_distance": 0.4212962962962958,
+            "vacuum_coherence_gain": 0.019708484833061646,
+            "cross_block_half_trace_norm": 0.1819786253153093,
+            "source_weighted_jensen_upper_bound": 0.31344647448085733
+          },
+          {
+            "vacuum_probability": 0.5,
+            "total_distance": 0.45256461146301896,
+            "vacuum_dephased_distance": 0.4343733467660183,
+            "nonempty_distance": 0.4474503972357403,
+            "vacuum_coherence_gain": 0.018191264697000664,
+            "cross_block_half_trace_norm": 0.27736782238117086,
+            "source_weighted_jensen_upper_bound": 0.4141626800960665
+          },
+          {
+            "vacuum_probability": 0.9,
+            "total_distance": 0.4331213871961329,
+            "vacuum_dephased_distance": 0.4212962962962962,
+            "nonempty_distance": 0.4212962962962958,
+            "vacuum_coherence_gain": 0.011825090899836688,
+            "cross_block_half_trace_norm": 0.10918717518918558,
+            "source_weighted_jensen_upper_bound": 0.1880678846885144
+          },
+          {
+            "vacuum_probability": 0.9,
+            "total_distance": 0.44056757324197204,
+            "vacuum_dephased_distance": 0.423457631374917,
+            "nonempty_distance": 0.4429096470825036,
+            "vacuum_coherence_gain": 0.017109941867055056,
+            "cross_block_half_trace_norm": 0.15684082768592447,
+            "source_weighted_jensen_upper_bound": 0.24057976953246651
+          },
+          {
+            "vacuum_probability": 1.0,
+            "total_distance": 0.4212962962962958,
+            "vacuum_dephased_distance": 0.4212962962962963,
+            "nonempty_distance": 0.4212962962962958,
+            "vacuum_coherence_gain": -4.996003610813204e-16,
+            "cross_block_half_trace_norm": 0.0,
+            "source_weighted_jensen_upper_bound": 0.0
+          },
+          {
+            "vacuum_probability": 1.0,
+            "total_distance": 0.4212962962962958,
+            "vacuum_dephased_distance": 0.4212962962962963,
+            "nonempty_distance": 0.44147969150471217,
+            "vacuum_coherence_gain": -4.996003610813204e-16,
+            "cross_block_half_trace_norm": 0.0,
+            "source_weighted_jensen_upper_bound": 0.0
+          }
+        ],
+        "verified": true
+      }
+    ],
+    "verified": true,
+    "formal_proof_verification": false,
+    "independent_review": false,
+    "novelty_established": false,
+    "nonempty_mask_information_obstructed": false,
+    "speedup_claim_allowed": false
+  },
+  "vacuum_coherence_scaling_controls": [
+    {
+      "degree": 16,
+      "copy_count": 256,
+      "applicable": true,
+      "vacuum_probability": null,
+      "uniform_over_vacuum_probability": true,
+      "category_count_penalty_required": false,
+      "source_chi_square_bound": "1/M",
+      "source_product_chi_square_envelope": "K/(M-K) when K<M",
+      "geometric_envelope_available": true,
+      "low_weight_prefix_end": 16,
+      "high_weight_suffix_start": 17,
+      "low_weight_gain_upper_bound_power_of_two": -3,
+      "high_weight_gain_component_upper_bound_powers_of_two": {
+        "source_mass": -7,
+        "hidden_endpoint": -11,
+        "alternative_off_subgroup": -20,
+        "null_off_identity": -37
+      },
+      "source_only_trace_distance_upper_bound_power_of_two": -7,
+      "vacuum_coherence_gain_upper_bound_power_of_two": -3,
+      "gain_is_exactly_zero": false,
+      "gain_bound_is_vacuous": false,
+      "bounded_quantity": "T(Omega_0,E_h Omega_h) minus its vacuum/nonempty-PINCHED distance",
+      "formula": "0 <= gain <= sqrt(w0(1-w0))*max(B_low,B_high)",
+      "nonempty_mask_information_obstructed": false,
+      "total_trace_distance_bounded_by_gain": false,
+      "all_arbitrary_masks_obstructed": false,
+      "source_adaptive_masks_covered": false,
+      "polynomial_copy_budget_required_for_asymptotic_negligibility": true,
+      "low_row_compression_is_full_mask_channel_simulation": false,
+      "scope": "Standard mixed coset inputs with one shared uniform fixed-point-free involution in S_n. One common fixed group-algebra unitary, fixed irrep-coarsened classical source records, fixed source-independent pure mask, physical discard and arbitrary final selector/source POVM. Only coherence with the EMPTY subset is removed with a negligible asymptotic penalty at polynomial copy budgets. Coherences between nonempty low-weight sectors are not controlled.",
+      "proof_status": "derived-vacuum-coherence-bound-review-pending",
+      "assumption_contract_not_arbitrary_program_verifier": true,
+      "formal_proof_verification": false,
+      "independent_review": false,
+      "novelty_established": false,
+      "is_classical_dequantization": false
+    },
+    {
+      "degree": 128,
+      "copy_count": 16384,
+      "applicable": true,
+      "vacuum_probability": null,
+      "uniform_over_vacuum_probability": true,
+      "category_count_penalty_required": false,
+      "source_chi_square_bound": "1/M",
+      "source_product_chi_square_envelope": "K/(M-K) when K<M",
+      "geometric_envelope_available": true,
+      "low_weight_prefix_end": 128,
+      "high_weight_suffix_start": 129,
+      "low_weight_gain_upper_bound_power_of_two": -115,
+      "high_weight_gain_component_upper_bound_powers_of_two": {
+        "source_mass": -172,
+        "hidden_endpoint": -179,
+        "alternative_off_subgroup": -351,
+        "null_off_identity": -480
+      },
+      "source_only_trace_distance_upper_bound_power_of_two": -172,
+      "vacuum_coherence_gain_upper_bound_power_of_two": -115,
+      "gain_is_exactly_zero": false,
+      "gain_bound_is_vacuous": false,
+      "bounded_quantity": "T(Omega_0,E_h Omega_h) minus its vacuum/nonempty-PINCHED distance",
+      "formula": "0 <= gain <= sqrt(w0(1-w0))*max(B_low,B_high)",
+      "nonempty_mask_information_obstructed": false,
+      "total_trace_distance_bounded_by_gain": false,
+      "all_arbitrary_masks_obstructed": false,
+      "source_adaptive_masks_covered": false,
+      "polynomial_copy_budget_required_for_asymptotic_negligibility": true,
+      "low_row_compression_is_full_mask_channel_simulation": false,
+      "scope": "Standard mixed coset inputs with one shared uniform fixed-point-free involution in S_n. One common fixed group-algebra unitary, fixed irrep-coarsened classical source records, fixed source-independent pure mask, physical discard and arbitrary final selector/source POVM. Only coherence with the EMPTY subset is removed with a negligible asymptotic penalty at polynomial copy budgets. Coherences between nonempty low-weight sectors are not controlled.",
+      "proof_status": "derived-vacuum-coherence-bound-review-pending",
+      "assumption_contract_not_arbitrary_program_verifier": true,
+      "formal_proof_verification": false,
+      "independent_review": false,
+      "novelty_established": false,
+      "is_classical_dequantization": false
+    },
+    {
+      "degree": 1024,
+      "copy_count": 1048576,
+      "applicable": true,
+      "vacuum_probability": null,
+      "uniform_over_vacuum_probability": true,
+      "category_count_penalty_required": false,
+      "source_chi_square_bound": "1/M",
+      "source_product_chi_square_envelope": "K/(M-K) when K<M",
+      "geometric_envelope_available": true,
+      "low_weight_prefix_end": 1024,
+      "high_weight_suffix_start": 1025,
+      "low_weight_gain_upper_bound_power_of_two": -1679,
+      "high_weight_gain_component_upper_bound_powers_of_two": {
+        "source_mass": -2181,
+        "hidden_endpoint": -2191,
+        "alternative_off_subgroup": -4328,
+        "null_off_identity": -5353
+      },
+      "source_only_trace_distance_upper_bound_power_of_two": -2181,
+      "vacuum_coherence_gain_upper_bound_power_of_two": -1679,
+      "gain_is_exactly_zero": false,
+      "gain_bound_is_vacuous": false,
+      "bounded_quantity": "T(Omega_0,E_h Omega_h) minus its vacuum/nonempty-PINCHED distance",
+      "formula": "0 <= gain <= sqrt(w0(1-w0))*max(B_low,B_high)",
+      "nonempty_mask_information_obstructed": false,
+      "total_trace_distance_bounded_by_gain": false,
+      "all_arbitrary_masks_obstructed": false,
+      "source_adaptive_masks_covered": false,
+      "polynomial_copy_budget_required_for_asymptotic_negligibility": true,
+      "low_row_compression_is_full_mask_channel_simulation": false,
+      "scope": "Standard mixed coset inputs with one shared uniform fixed-point-free involution in S_n. One common fixed group-algebra unitary, fixed irrep-coarsened classical source records, fixed source-independent pure mask, physical discard and arbitrary final selector/source POVM. Only coherence with the EMPTY subset is removed with a negligible asymptotic penalty at polynomial copy budgets. Coherences between nonempty low-weight sectors are not controlled.",
+      "proof_status": "derived-vacuum-coherence-bound-review-pending",
+      "assumption_contract_not_arbitrary_program_verifier": true,
+      "formal_proof_verification": false,
+      "independent_review": false,
+      "novelty_established": false,
+      "is_classical_dequantization": false
+    },
+    {
+      "degree": 4096,
+      "copy_count": 16777216,
+      "applicable": true,
+      "vacuum_probability": null,
+      "uniform_over_vacuum_probability": true,
+      "category_count_penalty_required": false,
+      "source_chi_square_bound": "1/M",
+      "source_product_chi_square_envelope": "K/(M-K) when K<M",
+      "geometric_envelope_available": true,
+      "low_weight_prefix_end": 4096,
+      "high_weight_suffix_start": 4097,
+      "low_weight_gain_upper_bound_power_of_two": -8763,
+      "high_weight_gain_component_upper_bound_powers_of_two": {
+        "source_mass": -10799,
+        "hidden_endpoint": -10811,
+        "alternative_off_subgroup": -21393,
+        "null_off_identity": -25490
+      },
+      "source_only_trace_distance_upper_bound_power_of_two": -10799,
+      "vacuum_coherence_gain_upper_bound_power_of_two": -8763,
+      "gain_is_exactly_zero": false,
+      "gain_bound_is_vacuous": false,
+      "bounded_quantity": "T(Omega_0,E_h Omega_h) minus its vacuum/nonempty-PINCHED distance",
+      "formula": "0 <= gain <= sqrt(w0(1-w0))*max(B_low,B_high)",
+      "nonempty_mask_information_obstructed": false,
+      "total_trace_distance_bounded_by_gain": false,
+      "all_arbitrary_masks_obstructed": false,
+      "source_adaptive_masks_covered": false,
+      "polynomial_copy_budget_required_for_asymptotic_negligibility": true,
+      "low_row_compression_is_full_mask_channel_simulation": false,
+      "scope": "Standard mixed coset inputs with one shared uniform fixed-point-free involution in S_n. One common fixed group-algebra unitary, fixed irrep-coarsened classical source records, fixed source-independent pure mask, physical discard and arbitrary final selector/source POVM. Only coherence with the EMPTY subset is removed with a negligible asymptotic penalty at polynomial copy budgets. Coherences between nonempty low-weight sectors are not controlled.",
+      "proof_status": "derived-vacuum-coherence-bound-review-pending",
+      "assumption_contract_not_arbitrary_program_verifier": true,
+      "formal_proof_verification": false,
+      "independent_review": false,
+      "novelty_established": false,
+      "is_classical_dequantization": false
+    }
+  ],
+  "vacuum_coherence_research_update": "Coherence with the empty subset adds only negligible class-decision information at polynomial copy budgets in the fixed one-query physical-discard architecture, subject to proof review. Source-weighted character squares eliminate a category penalty; low-row compression and high-weight coefficient decay cover every nonempty weight. At S1024 K=n^2 the GAIN is <=2^-1679, not the total distance. Nonempty low-weight masks and their mutual coherences remain unresolved; no all-mask no-go, independent review, novelty or speedup is established.",
+  "low_occupation_derivation": "research/LOW_OCCUPATION_SELECTOR_BOUND.md",
+  "low_occupation_support_audit": {
+    "controls": [
+      {
+        "degree": 3,
+        "copy_count": 2,
+        "source_tuple_count": 9,
+        "hidden_members_checked": 3,
+        "matrix_entries_checked": 16,
+        "largest_entry_bound_excess": 0.0,
+        "probes": [
+          {
+            "maximum_mask_weight": 0,
+            "support_size": 1,
+            "total_distance": 0.3055555555555554,
+            "source_weighted_frobenius_squared": 0.7777777777777776,
+            "rank_charged_trace_distance_upper_bound": 0.4409585518440984,
+            "largest_active_union_chi_square_bound": 0.7777777777777777
+          },
+          {
+            "maximum_mask_weight": 0,
+            "support_size": 1,
+            "total_distance": 0.3055555555555554,
+            "source_weighted_frobenius_squared": 0.7777777777777776,
+            "rank_charged_trace_distance_upper_bound": 0.4409585518440984,
+            "largest_active_union_chi_square_bound": 0.7777777777777777
+          },
+          {
+            "maximum_mask_weight": 1,
+            "support_size": 3,
+            "total_distance": 0.3247562850720045,
+            "source_weighted_frobenius_squared": 0.5841243390892932,
+            "rank_charged_trace_distance_upper_bound": 0.6618861339512786,
+            "largest_active_union_chi_square_bound": 1.0
+          },
+          {
+            "maximum_mask_weight": 1,
+            "support_size": 3,
+            "total_distance": 0.3189607113536282,
+            "source_weighted_frobenius_squared": 0.6212709594542065,
+            "rank_charged_trace_distance_upper_bound": 0.6826076615382037,
+            "largest_active_union_chi_square_bound": 1.0
+          },
+          {
+            "maximum_mask_weight": 2,
+            "support_size": 4,
+            "total_distance": 0.3497417962205376,
+            "source_weighted_frobenius_squared": 0.541670034644833,
+            "rank_charged_trace_distance_upper_bound": 0.735982360281028,
+            "largest_active_union_chi_square_bound": 1.0
+          },
+          {
+            "maximum_mask_weight": 2,
+            "support_size": 4,
+            "total_distance": 0.33365442756511643,
+            "source_weighted_frobenius_squared": 0.5624119919289814,
+            "rank_charged_trace_distance_upper_bound": 0.7499413256575352,
+            "largest_active_union_chi_square_bound": 1.0
+          }
+        ],
+        "verified": true
+      },
+      {
+        "degree": 3,
+        "copy_count": 3,
+        "source_tuple_count": 27,
+        "hidden_members_checked": 3,
+        "matrix_entries_checked": 64,
+        "largest_entry_bound_excess": -6.661338147750939e-16,
+        "probes": [
+          {
+            "maximum_mask_weight": 0,
+            "support_size": 1,
+            "total_distance": 0.4212962962962958,
+            "source_weighted_frobenius_squared": 1.3703703703703691,
+            "rank_charged_trace_distance_upper_bound": 0.5853140973807075,
+            "largest_active_union_chi_square_bound": 1.3703703703703698
+          },
+          {
+            "maximum_mask_weight": 0,
+            "support_size": 1,
+            "total_distance": 0.4212962962962958,
+            "source_weighted_frobenius_squared": 1.3703703703703691,
+            "rank_charged_trace_distance_upper_bound": 0.5853140973807075,
+            "largest_active_union_chi_square_bound": 1.3703703703703698
+          },
+          {
+            "maximum_mask_weight": 1,
+            "support_size": 4,
+            "total_distance": 0.44049702581274586,
+            "source_weighted_frobenius_squared": 0.8517975013511141,
+            "rank_charged_trace_distance_upper_bound": 0.9229287628799495,
+            "largest_active_union_chi_square_bound": 1.6666666666666665
+          },
+          {
+            "maximum_mask_weight": 1,
+            "support_size": 4,
+            "total_distance": 0.4335161476341898,
+            "source_weighted_frobenius_squared": 0.984001757429015,
+            "rank_charged_trace_distance_upper_bound": 0.9919686272403049,
+            "largest_active_union_chi_square_bound": 1.6666666666666665
+          },
+          {
+            "maximum_mask_weight": 2,
+            "support_size": 7,
+            "total_distance": 0.4580794692757023,
+            "source_weighted_frobenius_squared": 0.72701751563038,
+            "rank_charged_trace_distance_upper_bound": 1.1279541889426028,
+            "largest_active_union_chi_square_bound": 2.3333333333333335
+          },
+          {
+            "maximum_mask_weight": 2,
+            "support_size": 7,
+            "total_distance": 0.45321654283876084,
+            "source_weighted_frobenius_squared": 0.8407451639316925,
+            "rank_charged_trace_distance_upper_bound": 1.2129732218315712,
+            "largest_active_union_chi_square_bound": 2.3333333333333335
+          },
+          {
+            "maximum_mask_weight": 3,
+            "support_size": 8,
+            "total_distance": 0.45816632185019357,
+            "source_weighted_frobenius_squared": 0.7161744955983542,
+            "rank_charged_trace_distance_upper_bound": 1.1968078338633603,
+            "largest_active_union_chi_square_bound": 2.3333333333333335
+          },
+          {
+            "maximum_mask_weight": 3,
+            "support_size": 8,
+            "total_distance": 0.4538531221393908,
+            "source_weighted_frobenius_squared": 0.7590231053524437,
+            "rank_charged_trace_distance_upper_bound": 1.2320901796154726,
+            "largest_active_union_chi_square_bound": 2.3333333333333335
+          }
+        ],
+        "verified": true
+      },
+      {
+        "degree": 4,
+        "copy_count": 2,
+        "source_tuple_count": 25,
+        "hidden_members_checked": 3,
+        "matrix_entries_checked": 16,
+        "largest_entry_bound_excess": -4.440892098500626e-16,
+        "probes": [
+          {
+            "maximum_mask_weight": 0,
+            "support_size": 1,
+            "total_distance": 0.3124999999999997,
+            "source_weighted_frobenius_squared": 0.777777777777777,
+            "rank_charged_trace_distance_upper_bound": 0.4409585518440982,
+            "largest_active_union_chi_square_bound": 0.7777777777777777
+          },
+          {
+            "maximum_mask_weight": 0,
+            "support_size": 1,
+            "total_distance": 0.31249999999999967,
+            "source_weighted_frobenius_squared": 0.7777777777777768,
+            "rank_charged_trace_distance_upper_bound": 0.44095855184409816,
+            "largest_active_union_chi_square_bound": 0.7777777777777777
+          },
+          {
+            "maximum_mask_weight": 1,
+            "support_size": 3,
+            "total_distance": 0.3124999999999998,
+            "source_weighted_frobenius_squared": 0.3941884897985143,
+            "rank_charged_trace_distance_upper_bound": 0.543729130495034,
+            "largest_active_union_chi_square_bound": 1.0
+          },
+          {
+            "maximum_mask_weight": 1,
+            "support_size": 3,
+            "total_distance": 0.3124999999999997,
+            "source_weighted_frobenius_squared": 0.64051888971133,
+            "rank_charged_trace_distance_upper_bound": 0.693101123418147,
+            "largest_active_union_chi_square_bound": 1.0
+          },
+          {
+            "maximum_mask_weight": 2,
+            "support_size": 4,
+            "total_distance": 0.3124999999999998,
+            "source_weighted_frobenius_squared": 0.3329249926685428,
+            "rank_charged_trace_distance_upper_bound": 0.576996527431962,
+            "largest_active_union_chi_square_bound": 1.0
+          },
+          {
+            "maximum_mask_weight": 2,
+            "support_size": 4,
+            "total_distance": 0.3124999999999997,
+            "source_weighted_frobenius_squared": 0.3332367035281754,
+            "rank_charged_trace_distance_upper_bound": 0.5772665792579503,
+            "largest_active_union_chi_square_bound": 1.0
+          }
+        ],
+        "verified": true
+      }
+    ],
+    "verified": true,
+    "formal_proof_verification": false,
+    "independent_review": false,
+    "novelty_established": false,
+    "low_high_intersector_coherence_obstructed": false
+  },
+  "low_occupation_scaling_controls": [
+    {
+      "degree": 128,
+      "copy_count": 16384,
+      "maximum_mask_weight": 32,
+      "maximum_pair_union_size": 64,
+      "applicable": true,
+      "geometric_envelope_available": true,
+      "support_bound_supplied": false,
+      "support_rank_upper_bound_bit_length": 331,
+      "support_rank_evaluated_exactly": true,
+      "support_rank_formula": "sum_(i=0)^t binomial(K,i)",
+      "support_dimension_upper_bound_power_of_two": 0,
+      "raw_copy_upper_bound_power_of_two": 0,
+      "trace_distance_upper_bound_power_of_two": 0,
+      "bound_is_vacuous": true,
+      "formula": "T <= min(1, raw_copy_bound, sqrt(N*(K+2^min(K,2t)-1)/(M-K))/2) for K<M",
+      "bounded_quantity": "T(Omega_0,E_h Omega_h) of the ENTIRE mask supported at weights <=t",
+      "selector_rank_factor_charged": true,
+      "union_subset_count_used_as_selector_rank": false,
+      "source_only_baseline_included": true,
+      "category_count_penalty_required": false,
+      "mask_support_and_weight_independently_verified": false,
+      "full_channel_reduced_to_twice_weight_copies": false,
+      "all_arbitrary_masks_obstructed": false,
+      "low_high_intersector_coherence_obstructed": false,
+      "asymptotic_condition": "N*(K+2^min(K,2t)-1)/M is superpolynomially small, with polynomial K",
+      "scope": "Fixed source-independent normalized pure mask, one common group-algebra query, standard mixed inputs with one shared uniform fixed-point-free involution, irrep-coarsened classical source records and physical discard. Each matrix entry is bounded using its active UNION, then the trace norm pays the actual selector support rank N. This is not a 2t-copy simulation and does not control arbitrary coherent mixtures with weights above t.",
+      "proof_status": "derived-low-occupation-support-bound-review-pending",
+      "formal_proof_verification": false,
+      "independent_review": false,
+      "novelty_established": false,
+      "is_classical_dequantization": false
+    },
+    {
+      "degree": 1024,
+      "copy_count": 1048576,
+      "maximum_mask_weight": 256,
+      "maximum_pair_union_size": 512,
+      "applicable": true,
+      "geometric_envelope_available": true,
+      "support_bound_supplied": false,
+      "support_rank_upper_bound_bit_length": 3436,
+      "support_rank_evaluated_exactly": true,
+      "support_rank_formula": "sum_(i=0)^t binomial(K,i)",
+      "support_dimension_upper_bound_power_of_two": -217,
+      "raw_copy_upper_bound_power_of_two": 0,
+      "trace_distance_upper_bound_power_of_two": -217,
+      "bound_is_vacuous": false,
+      "formula": "T <= min(1, raw_copy_bound, sqrt(N*(K+2^min(K,2t)-1)/(M-K))/2) for K<M",
+      "bounded_quantity": "T(Omega_0,E_h Omega_h) of the ENTIRE mask supported at weights <=t",
+      "selector_rank_factor_charged": true,
+      "union_subset_count_used_as_selector_rank": false,
+      "source_only_baseline_included": true,
+      "category_count_penalty_required": false,
+      "mask_support_and_weight_independently_verified": false,
+      "full_channel_reduced_to_twice_weight_copies": false,
+      "all_arbitrary_masks_obstructed": false,
+      "low_high_intersector_coherence_obstructed": false,
+      "asymptotic_condition": "N*(K+2^min(K,2t)-1)/M is superpolynomially small, with polynomial K",
+      "scope": "Fixed source-independent normalized pure mask, one common group-algebra query, standard mixed inputs with one shared uniform fixed-point-free involution, irrep-coarsened classical source records and physical discard. Each matrix entry is bounded using its active UNION, then the trace norm pays the actual selector support rank N. This is not a 2t-copy simulation and does not control arbitrary coherent mixtures with weights above t.",
+      "proof_status": "derived-low-occupation-support-bound-review-pending",
+      "formal_proof_verification": false,
+      "independent_review": false,
+      "novelty_established": false,
+      "is_classical_dequantization": false
+    },
+    {
+      "degree": 4096,
+      "copy_count": 16777216,
+      "maximum_mask_weight": 1024,
+      "maximum_pair_union_size": 2048,
+      "applicable": true,
+      "geometric_envelope_available": true,
+      "support_bound_supplied": false,
+      "support_rank_upper_bound_bit_length": 15807,
+      "support_rank_evaluated_exactly": true,
+      "support_rank_formula": "sum_(i=0)^t binomial(K,i)",
+      "support_dimension_upper_bound_power_of_two": -1884,
+      "raw_copy_upper_bound_power_of_two": 0,
+      "trace_distance_upper_bound_power_of_two": -1884,
+      "bound_is_vacuous": false,
+      "formula": "T <= min(1, raw_copy_bound, sqrt(N*(K+2^min(K,2t)-1)/(M-K))/2) for K<M",
+      "bounded_quantity": "T(Omega_0,E_h Omega_h) of the ENTIRE mask supported at weights <=t",
+      "selector_rank_factor_charged": true,
+      "union_subset_count_used_as_selector_rank": false,
+      "source_only_baseline_included": true,
+      "category_count_penalty_required": false,
+      "mask_support_and_weight_independently_verified": false,
+      "full_channel_reduced_to_twice_weight_copies": false,
+      "all_arbitrary_masks_obstructed": false,
+      "low_high_intersector_coherence_obstructed": false,
+      "asymptotic_condition": "N*(K+2^min(K,2t)-1)/M is superpolynomially small, with polynomial K",
+      "scope": "Fixed source-independent normalized pure mask, one common group-algebra query, standard mixed inputs with one shared uniform fixed-point-free involution, irrep-coarsened classical source records and physical discard. Each matrix entry is bounded using its active UNION, then the trace norm pays the actual selector support rank N. This is not a 2t-copy simulation and does not control arbitrary coherent mixtures with weights above t.",
+      "proof_status": "derived-low-occupation-support-bound-review-pending",
+      "formal_proof_verification": false,
+      "independent_review": false,
+      "novelty_established": false,
+      "is_classical_dequantization": false
+    }
+  ],
+  "low_occupation_research_update": "An active-union chi-square bound followed by a selector-rank charge now bounds the ENTIRE low-weight mask. At K=n^2, all fixed masks supported at weights <=n/4 have T<=2^-217 for S1024 and <=2^-1884 for S4096. The general criterion charges N=sum_(i<=t) binomial(K,i), not merely K+1 radial parameters. Coherent mixtures with higher sectors remain unresolved even if each sector separately fails. Derived/review-pending only; no all-mask no-go, novelty or speedup claim.",
   "coherent_parity_scaling_controls": [
     {
       "degree": 128,
@@ -26078,6 +27497,13 @@
     "environment_fidelity_controls_verified": 12,
     "environment_fidelity_tail_thresholds_checked": 48,
     "arbitrary_mask_physical_controls_verified": 6,
+    "selector_mask_symmetry_probes_verified": 26,
+    "radial_mask_search_calibrations": 2,
+    "source_character_square_controls_verified": 9,
+    "vacuum_coherence_rows_verified": 10,
+    "vacuum_coherence_probes_verified": 20,
+    "low_occupation_matrix_entries_verified": 96,
+    "low_occupation_full_mask_probes_verified": 20,
     "growing_copy_measurement_compilers": 0
   },
   "claim_gate": {
@@ -26136,6 +27562,21 @@
     "mask_tail_fidelity_bound_derived": true,
     "mask_tail_bound_obstructs_all_arbitrary_masks": false,
     "mask_tail_bound_independently_reviewed": false,
+    "selector_schur_covariance_controls_verified": true,
+    "selector_mask_diagonal_instrument_verified": true,
+    "selector_mask_radial_reduction_derived": true,
+    "radial_mask_reduction_is_classical_dequantization": false,
+    "radial_mask_search_global_optimality_certified": false,
+    "source_character_square_bound_verified": true,
+    "vacuum_coherence_physical_controls_verified": true,
+    "vacuum_coherence_gain_bound_derived": true,
+    "vacuum_coherence_gain_bounds_total_information": false,
+    "vacuum_coherence_bound_independently_reviewed": false,
+    "all_nonempty_low_weight_masks_obstructed": false,
+    "low_occupation_union_controls_verified": true,
+    "low_occupation_support_bound_derived": true,
+    "low_occupation_rank_factor_removed": false,
+    "low_high_intersector_coherence_obstructed": false,
     "standard_source_label_dephasing_irrelevance_verified": true,
     "unmeasured_irrep_label_copy_alone_is_an_escape": false,
     "noncentral_group_algebra_controls_verified": true,

@@ -406,6 +406,189 @@ def source_selector_mask_tail_information_contract(degree: int, copy_count: int,
         "independent_review": False, "novelty_established": False, "is_classical_dequantization": False}
 
 
+def source_selector_vacuum_coherence_contract(degree: int, copy_count: int, *,
+        one_common_subset_query: bool, common_group_algebra_unitary: bool,
+        unitary_and_partition_fixed_before_inputs: bool, hidden_prior_uniform_on_involution_class: bool,
+        no_hidden_correlated_preprocessing_or_side_information: bool, source_records_classical: bool,
+        source_partition_is_irrep_coarsening: bool, only_source_records_and_selector_qubits_retained: bool,
+        physical_inputs_discarded: bool, mask_fixed_before_inputs_and_source_records: bool,
+        vacuum_probability: Fraction | None = None) -> dict:
+    """Bound extra class-decision information from vacuum coherence, NOT total T."""
+    if type(degree) is not int or degree < 8 or degree % 2 or type(copy_count) is not int or copy_count < 1:
+        raise ValueError("even symmetric-group degree >=8 and positive integer copies required")
+    if vacuum_probability is not None and (type(vacuum_probability) not in (int, Fraction)
+            or not 0 <= vacuum_probability <= 1):
+        raise ValueError("vacuum probability must be exact rational in [0,1] or None")
+    flags = (one_common_subset_query, common_group_algebra_unitary, unitary_and_partition_fixed_before_inputs,
+        hidden_prior_uniform_on_involution_class, no_hidden_correlated_preprocessing_or_side_information,
+        source_records_classical, source_partition_is_irrep_coarsening,
+        only_source_records_and_selector_qubits_retained, physical_inputs_discarded,
+        mask_fixed_before_inputs_and_source_records)
+    if any(type(flag) is not bool for flag in flags):
+        raise ValueError("explicit boolean architecture assumptions required")
+    applicable = all(flags)
+    factor = Fraction(1, 4) if vacuum_probability is None else vacuum_probability*(1-vacuum_probability)
+    d, m, k = math.factorial(degree), math.prod(range(1, degree, 2)), copy_count
+    minimum_class = degree*(degree-1)//2
+    pivot = min(k, degree)
+    low = high = source = 0
+    high_terms = None
+    # Geometric envelope avoids an integer power depending on the copy budget.
+    envelope_available = k < m
+    if envelope_available:
+        excess = Fraction(k, m-k)
+        envelope = 1+excess
+        low_square = factor*(excess+envelope*Fraction(2**pivot-1, m))
+        low = _sqrt_ratio_dyadic_exponent(low_square.numerator, low_square.denominator)
+        source_square = excess/4
+        source = _sqrt_ratio_dyadic_exponent(source_square.numerator, source_square.denominator)
+        if k > pivot:
+            squares = {"source_mass": factor*excess, "hidden_endpoint": factor*envelope/m,
+                "alternative_off_subgroup": factor*d*envelope*Fraction(4, minimum_class)**(pivot+1),
+                "null_off_identity": factor*d*Fraction(1, minimum_class)**(pivot+1)}
+            high_terms = {name: _sqrt_ratio_dyadic_exponent(value.numerator, value.denominator)
+                          for name, value in squares.items()}
+            live = [value for value in high_terms.values() if value is not None]
+            high = min(0, max(live)+2) if live else None
+        else:
+            high = None
+    live = [value for value in (low, high) if value is not None]
+    bound = (max(live) if live else None) if factor else None
+    return {"degree": degree, "copy_count": k, "applicable": applicable,
+        "vacuum_probability": str(vacuum_probability) if vacuum_probability is not None else None,
+        "uniform_over_vacuum_probability": vacuum_probability is None,
+        "category_count_penalty_required": False, "source_chi_square_bound": "1/M",
+        "source_product_chi_square_envelope": "K/(M-K) when K<M",
+        "geometric_envelope_available": envelope_available,
+        "low_weight_prefix_end": pivot, "high_weight_suffix_start": pivot+1 if k > pivot else None,
+        "low_weight_gain_upper_bound_power_of_two": low if applicable and factor else None,
+        "high_weight_gain_component_upper_bound_powers_of_two": high_terms if applicable else None,
+        "source_only_trace_distance_upper_bound_power_of_two": source if applicable else None,
+        "vacuum_coherence_gain_upper_bound_power_of_two": bound if applicable else None,
+        "gain_is_exactly_zero": applicable and not bool(factor),
+        "gain_bound_is_vacuous": bound == 0 if applicable else None,
+        "bounded_quantity": "T(Omega_0,E_h Omega_h) minus its vacuum/nonempty-PINCHED distance",
+        "formula": "0 <= gain <= sqrt(w0(1-w0))*max(B_low,B_high)",
+        "nonempty_mask_information_obstructed": False, "total_trace_distance_bounded_by_gain": False,
+        "all_arbitrary_masks_obstructed": False, "source_adaptive_masks_covered": False,
+        "polynomial_copy_budget_required_for_asymptotic_negligibility": True,
+        "low_row_compression_is_full_mask_channel_simulation": False,
+        "scope": "Standard mixed coset inputs with one shared uniform fixed-point-free involution in S_n. One common fixed group-algebra unitary, fixed irrep-coarsened classical source records, fixed source-independent pure mask, physical discard and arbitrary final selector/source POVM. Only coherence with the EMPTY subset is removed with a negligible asymptotic penalty at polynomial copy budgets. Coherences between nonempty low-weight sectors are not controlled.",
+        "proof_status": "derived-vacuum-coherence-bound-review-pending",
+        "assumption_contract_not_arbitrary_program_verifier": True, "formal_proof_verification": False,
+        "independent_review": False, "novelty_established": False, "is_classical_dequantization": False}
+
+
+def source_selector_low_occupation_contract(degree: int, copy_count: int, maximum_mask_weight: int, *,
+        one_common_subset_query: bool, common_group_algebra_unitary: bool,
+        unitary_and_partition_fixed_before_inputs: bool, hidden_prior_uniform_on_involution_class: bool,
+        no_hidden_correlated_preprocessing_or_side_information: bool, source_records_classical: bool,
+        source_partition_is_irrep_coarsening: bool, only_source_records_and_selector_qubits_retained: bool,
+        physical_inputs_discarded: bool, mask_fixed_before_inputs_and_source_records: bool,
+        declared_mask_weight_and_support_bounds_hold: bool, mask_support_size_upper_bound: int | None = None) -> dict:
+    """Full low-weight mask bound with its selector rank charged, review pending."""
+    if type(degree) is not int or degree < 8 or degree % 2 or type(copy_count) is not int or copy_count < 1:
+        raise ValueError("even symmetric-group degree >=8 and positive integer copies required")
+    if type(maximum_mask_weight) is not int or not 0 <= maximum_mask_weight <= copy_count:
+        raise ValueError("maximum mask weight must be an integer in [0,copy_count]")
+    if mask_support_size_upper_bound is not None and (type(mask_support_size_upper_bound) is not int
+            or mask_support_size_upper_bound < 1):
+        raise ValueError("positive integer mask-support upper bound or None required")
+    flags = (one_common_subset_query, common_group_algebra_unitary, unitary_and_partition_fixed_before_inputs,
+        hidden_prior_uniform_on_involution_class, no_hidden_correlated_preprocessing_or_side_information,
+        source_records_classical, source_partition_is_irrep_coarsening,
+        only_source_records_and_selector_qubits_retained, physical_inputs_discarded,
+        mask_fixed_before_inputs_and_source_records, declared_mask_weight_and_support_bounds_hold)
+    if any(type(flag) is not bool for flag in flags):
+        raise ValueError("explicit boolean architecture and support assumptions required")
+    applicable, k, t = all(flags), copy_count, maximum_mask_weight
+    m, union = math.prod(range(1, degree, 2)), min(k, 2*t)
+    rank = None
+    support_bound = 0
+    envelope_available = k < m
+    # A large union already makes this particular bound vacuous, regardless of rank.
+    if envelope_available and union < (4*m).bit_length():
+        rank = mask_support_size_upper_bound
+        if rank is None:
+            term = rank = 1
+            for i in range(1, t+1):
+                term = term*(k-i+1)//i
+                rank += term
+        support_bound = _sqrt_ratio_dyadic_exponent(rank*(k+(1 << union)-1), 4*(m-k))
+    raw = (0 if k >= (4*m).bit_length() else _sqrt_ratio_dyadic_exponent((1 << k)-1, 4*m))
+    bound = min(raw, support_bound) if applicable else None
+    return {"degree": degree, "copy_count": k, "maximum_mask_weight": t,
+        "maximum_pair_union_size": union, "applicable": applicable,
+        "geometric_envelope_available": envelope_available,
+        "support_bound_supplied": mask_support_size_upper_bound is not None,
+        "support_rank_upper_bound_bit_length": rank.bit_length() if rank is not None else None,
+        "support_rank_evaluated_exactly": rank is not None,
+        "support_rank_formula": "supplied upper bound" if mask_support_size_upper_bound is not None else "sum_(i=0)^t binomial(K,i)",
+        "support_dimension_upper_bound_power_of_two": support_bound if applicable else None,
+        "raw_copy_upper_bound_power_of_two": raw if applicable else None,
+        "trace_distance_upper_bound_power_of_two": bound, "bound_is_vacuous": bound == 0 if applicable else None,
+        "formula": "T <= min(1, raw_copy_bound, sqrt(N*(K+2^min(K,2t)-1)/(M-K))/2) for K<M",
+        "bounded_quantity": "T(Omega_0,E_h Omega_h) of the ENTIRE mask supported at weights <=t",
+        "selector_rank_factor_charged": True, "union_subset_count_used_as_selector_rank": False,
+        "source_only_baseline_included": True, "category_count_penalty_required": False,
+        "mask_support_and_weight_independently_verified": False,
+        "full_channel_reduced_to_twice_weight_copies": False,
+        "all_arbitrary_masks_obstructed": False, "low_high_intersector_coherence_obstructed": False,
+        "asymptotic_condition": "N*(K+2^min(K,2t)-1)/M is superpolynomially small, with polynomial K",
+        "scope": "Fixed source-independent normalized pure mask, one common group-algebra query, standard mixed inputs with one shared uniform fixed-point-free involution, irrep-coarsened classical source records and physical discard. Each matrix entry is bounded using its active UNION, then the trace norm pays the actual selector support rank N. This is not a 2t-copy simulation and does not control arbitrary coherent mixtures with weights above t.",
+        "proof_status": "derived-low-occupation-support-bound-review-pending",
+        "formal_proof_verification": False, "independent_review": False, "novelty_established": False,
+        "is_classical_dequantization": False}
+
+
+def selector_mask_symmetry_contract(copy_count: int, *, source_labelled_schur_channel: bool,
+        joint_source_and_selector_permutation_covariance: bool, mask_fixed_before_source_records: bool,
+        natural_source_masses_retained: bool, unrestricted_final_measurement: bool) -> dict:
+    """Scope contract for a derived radial-mask optimization reduction."""
+    if type(copy_count) is not int or copy_count < 1:
+        raise ValueError("positive integer copy count required")
+    flags = (source_labelled_schur_channel, joint_source_and_selector_permutation_covariance,
+        mask_fixed_before_source_records, natural_source_masses_retained, unrestricted_final_measurement)
+    if any(type(flag) is not bool for flag in flags):
+        raise ValueError("symmetry assumptions must be explicit booleans")
+    applicable = all(flags)
+    return {"copy_count": copy_count, "applicable": applicable,
+        "canonical_weight_probability_count": copy_count+1 if applicable else None,
+        "mask_phases_irrelevant_to_optimal_decision": applicable,
+        "radial_pure_mask_dominates_every_fixed_mask": applicable,
+        "objective_concave_in_mask_probabilities": applicable,
+        "cross_weight_coherence_must_be_retained": True,
+        "uniform_mask_is_always_optimal": False, "single_fixed_weight_is_always_optimal": False,
+        "source_adaptive_masks_covered": False, "efficient_objective_evaluation_supplied": False,
+        "efficient_final_measurement_supplied": False, "all_arbitrary_masks_obstructed": False,
+        "formula": "max_alpha T = max_(w in simplex(k+1)) T(alpha_s=sqrt(w_|s|/C(k,|s|)))",
+        "scope": "Both hypotheses define source-record-valued Schur channels, jointly covariant under copy permutations of selector and source records. The input mask is independent of those records. Natural source masses and the unrestricted final quantum decision are retained. Radialize PROBABILITIES, then prepare their PURE square-root amplitudes; do not dephase the selector or discard source records.",
+        "assumption_contract_not_arbitrary_program_verifier": True,
+        "proof_status": "derived-selector-mask-symmetry-review-pending", "independent_review": False,
+        "formal_proof_verification": False, "novelty_established": False, "is_classical_dequantization": False}
+
+
+def radial_mask_specification(weight_probabilities: Sequence[Fraction]) -> dict:
+    """Exact normalized state description with O(k) data, not a circuit compiler."""
+    weights = tuple(weight_probabilities)
+    if (len(weights) < 2 or any(type(value) not in (int, Fraction) or value < 0 for value in weights)
+            or sum(weights) != 1):
+        raise ValueError("at least two nonnegative exact rational weight probabilities summing to one required")
+    weights = tuple(map(Fraction, weights))
+    cumulative = Fraction(0)
+    tails = []
+    for value in weights:
+        tails.append(str(cumulative))
+        cumulative += value
+    return {"copy_count": len(weights)-1, "weight_probabilities": list(map(str, weights)),
+        "lower_tail_probability_by_threshold": tails,
+        "minimum_occupied_weight": next(i for i, value in enumerate(weights) if value),
+        "per_string_probability": "w_m/binomial(k,m), m=HammingWeight(s)",
+        "amplitude": "positive square root of per-string probability",
+        "pure_coherent_superposition_over_weight_sectors": True,
+        "normalized_exactly": True, "compiled_preparation_supplied": False}
+
+
 def source_conditioned_palette_information_contract(
     degree: int, copy_count: int, subsets: Sequence[Sequence[int]], *,
     palette_fixed_before_source_labels: bool, operations_and_readout_in_cell_algebra: bool,

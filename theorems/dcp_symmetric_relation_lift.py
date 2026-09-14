@@ -488,4 +488,25 @@ def write_symmetric_relation_lift_audit(
     payload = asdict(run_symmetric_relation_lift_audit())
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
+    if write_registry:
+        metrics = payload["headline_metrics"]
+        upsert_experiment_result(ExperimentResultRecord(
+            id=registry_result_id or f"RESULT-{registry_experiment_id}-DCP-SYMMETRIC-RELATION-LIFT",
+            experiment_id=registry_experiment_id, candidate_id=registry_candidate_id,
+            created_at=payload["created_at"], status=payload["status"], summary=payload["summary"],
+            metrics=metrics, falsifiers_triggered=payload["falsifiers_triggered"],
+            artifacts={"dcp_symmetric_relation_lift": str(path)}))
+        if payload["claim_gate"]["general_purified_relation_solver_interface_proved"]:
+            upsert_negative_result(NegativeResultRecord(
+                id="NEG-DCP-ARBITRARY-RELATION-INCOMPATIBLE-WITH-MATCHING", source=str(path),
+                claim="A nondeterministic quantum relation solver cannot compose with Regev's matching routine because endpoint garbage must differ.",
+                reason_invalid="Fixed-order purified evaluation on both endpoints gives both orientations the same amplitude product and ordered conditional garbage.",
+                lesson="Use symmetric double evaluation and a measured unordered witness-pair label; do not assume a direct one-call substitution.",
+                applies_to=[registry_candidate_id, registry_experiment_id], evidence=metrics))
+        upsert_negative_result(NegativeResultRecord(
+            id="NEG-DCP-RELATION-LIFT-AS-SOLVER-CONSTRUCTION", source=str(path),
+            claim="Proving a quantum relation interface constructs a polynomial density-one subset-sum solver.",
+            reason_invalid="The lift consumes a purified relation solver; the current concrete 0.2182 QRAQM walk remains exponential.",
+            lesson="Keep interface sufficiency and solver construction as separate proof obligations.",
+            applies_to=[registry_candidate_id, registry_experiment_id], evidence=metrics))
     return payload

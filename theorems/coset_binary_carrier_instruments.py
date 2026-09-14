@@ -1983,6 +1983,14 @@ def build_binary_carrier_instrument_report() -> dict:
     arbitrary_masks = [arbitrary_mask_physical_control(k, rule) for k in (2, 3)
         for rule in ("high_asymmetric", "complex_full", "low_high_superposition")]
     mask_tail_verified = mask_fidelity["verified"] and all(row["verified"] for row in arbitrary_masks)
+    from coset_mask_symmetry import (audit_selector_mask_symmetry, search_finite_radial_masks,
+        audit_low_occupation_support, low_occupation_scaling_controls)
+    from isotypic_instruments import selector_mask_symmetry_contract
+    mask_symmetry = audit_selector_mask_symmetry()
+    from coset_vacuum_coherence import audit_source_character_squares, audit_vacuum_coherence, vacuum_coherence_scaling_controls
+    source_squares = audit_source_character_squares()
+    vacuum = audit_vacuum_coherence()
+    low_occupation = audit_low_occupation_support()
     scaling = [{"half_degree": m, "block_size": 3, "classical_history_blocks": m**2,
                 "trace_distance_squared_upper_bound": str(invariant_block_transcript_distance_squared_bound(m, 3, m**2))}
                for m in (4, 8, 16, 32, 64, 128)]
@@ -1993,7 +2001,8 @@ def build_binary_carrier_instrument_report() -> dict:
                 and selected_parity_audit["verified"] and selected_parity_obstruction["all_copy_counts_from_two_covered"]
                 and weight_audit["verified"] and source_audit["verified"] and complex_audit["verified"]
                 and orbit_audit["verified"] and quantum_selector_verified and source_label_audit["verified"]
-                and noncentral_verified and typical_verified and mask_tail_verified)
+                and noncentral_verified and typical_verified and mask_tail_verified and mask_symmetry["verified"]
+                and source_squares["verified"] and vacuum["verified"] and low_occupation["verified"])
     witness_shape = (4, 2)
     coefficient = kronecker_coefficient(witness_shape, witness_shape, witness_shape)
     d = hook_length_dimension(witness_shape)
@@ -2044,6 +2053,23 @@ def build_binary_carrier_instrument_report() -> dict:
         "environment_fidelity_audit": mask_fidelity,
         "arbitrary_mask_physical_controls": arbitrary_masks,
         "mask_tail_scaling_controls": mask_tail_scaling_controls(),
+        "selector_mask_symmetry_derivation": "research/SELECTOR_MASK_SYMMETRY.md",
+        "selector_mask_symmetry_audit": mask_symmetry,
+        "selector_mask_symmetry_contract": selector_mask_symmetry_contract(1024,
+            source_labelled_schur_channel=True, joint_source_and_selector_permutation_covariance=True,
+            mask_fixed_before_source_records=True, natural_source_masses_retained=True,
+            unrestricted_final_measurement=True),
+        "radial_mask_finite_searches": [search_finite_radial_masks(k) for k in (2, 3)],
+        "selector_mask_symmetry_research_update": "A diagonal-instrument concavity argument reduces fixed-mask information optimization to k+1 Hamming-weight probabilities. Retain coherent superpositions between weight sectors; uniform and single-weight masks need not be best. This is a derived/review-pending parameter reduction, not an efficient objective oracle, final measurement compiler or all-mask obstruction. Source-adaptive masks remain outside its scope.",
+        "vacuum_coherence_derivation": "research/VACUUM_COHERENCE_BOUND.md",
+        "source_character_square_audit": source_squares,
+        "vacuum_coherence_audit": vacuum,
+        "vacuum_coherence_scaling_controls": vacuum_coherence_scaling_controls(),
+        "vacuum_coherence_research_update": "Coherence with the empty subset adds only negligible class-decision information at polynomial copy budgets in the fixed one-query physical-discard architecture, subject to proof review. Source-weighted character squares eliminate a category penalty; low-row compression and high-weight coefficient decay cover every nonempty weight. At S1024 K=n^2 the GAIN is <=2^-1679, not the total distance. Nonempty low-weight masks and their mutual coherences remain unresolved; no all-mask no-go, independent review, novelty or speedup is established.",
+        "low_occupation_derivation": "research/LOW_OCCUPATION_SELECTOR_BOUND.md",
+        "low_occupation_support_audit": low_occupation,
+        "low_occupation_scaling_controls": low_occupation_scaling_controls(),
+        "low_occupation_research_update": "An active-union chi-square bound followed by a selector-rank charge now bounds the ENTIRE low-weight mask. At K=n^2, all fixed masks supported at weights <=n/4 have T<=2^-217 for S1024 and <=2^-1884 for S4096. The general criterion charges N=sum_(i<=t) binomial(K,i), not merely K+1 radial parameters. Coherent mixtures with higher sectors remain unresolved even if each sector separately fails. Derived/review-pending only; no all-mask no-go, novelty or speedup claim.",
         "coherent_parity_scaling_controls": coherent_parity_scaling_controls(),
         "symmetric_terminal_fourier_norm_controls": [
             {key: value for key, value in symmetric_boolean_fourier_profile(k, rule, threshold).items()
@@ -2105,6 +2131,13 @@ def build_binary_carrier_instrument_report() -> dict:
             "environment_fidelity_controls_verified": len(mask_fidelity["controls"]),
             "environment_fidelity_tail_thresholds_checked": sum(len(row["tails"]) for row in mask_fidelity["controls"]),
             "arbitrary_mask_physical_controls_verified": len(arbitrary_masks),
+            "selector_mask_symmetry_probes_verified": sum(len(row["probes"]) for row in mask_symmetry["controls"]),
+            "radial_mask_search_calibrations": 2,
+            "source_character_square_controls_verified": len(source_squares["controls"]),
+            "vacuum_coherence_rows_verified": sum(len(row["rows"]) for row in vacuum["controls"]),
+            "vacuum_coherence_probes_verified": sum(len(row["probes"]) for row in vacuum["controls"]),
+            "low_occupation_matrix_entries_verified": sum(row["matrix_entries_checked"] for row in low_occupation["controls"]),
+            "low_occupation_full_mask_probes_verified": sum(len(row["probes"]) for row in low_occupation["controls"]),
             "growing_copy_measurement_compilers": 0},
         "claim_gate": {"finite_complete_channel_evaluation_verified": verified,
             "invariant_transcript_implies_zero_binary_signal": False,
@@ -2160,6 +2193,21 @@ def build_binary_carrier_instrument_report() -> dict:
             "mask_tail_fidelity_bound_derived": True,
             "mask_tail_bound_obstructs_all_arbitrary_masks": False,
             "mask_tail_bound_independently_reviewed": False,
+            "selector_schur_covariance_controls_verified": mask_symmetry["verified"],
+            "selector_mask_diagonal_instrument_verified": mask_symmetry["verified"],
+            "selector_mask_radial_reduction_derived": True,
+            "radial_mask_reduction_is_classical_dequantization": False,
+            "radial_mask_search_global_optimality_certified": False,
+            "source_character_square_bound_verified": source_squares["verified"],
+            "vacuum_coherence_physical_controls_verified": vacuum["verified"],
+            "vacuum_coherence_gain_bound_derived": True,
+            "vacuum_coherence_gain_bounds_total_information": False,
+            "vacuum_coherence_bound_independently_reviewed": False,
+            "all_nonempty_low_weight_masks_obstructed": False,
+            "low_occupation_union_controls_verified": low_occupation["verified"],
+            "low_occupation_support_bound_derived": True,
+            "low_occupation_rank_factor_removed": False,
+            "low_high_intersector_coherence_obstructed": False,
             "standard_source_label_dephasing_irrelevance_verified": source_label_audit["verified"],
             "unmeasured_irrep_label_copy_alone_is_an_escape": False,
             "noncentral_group_algebra_controls_verified": noncentral_verified,
@@ -2272,6 +2320,27 @@ def write_binary_carrier_instrument_report(path: Path = REPORT_PATH, *, write_re
                     lesson="Source records are CLASSICAL, all physical inputs are discarded, and the common unitary, source partition and participating count are fixed before inputs. A shared hidden involution is uniform on its class. Never substitute one representative for a noncentral operation, average h before products, or cap E_h T with the raw-copy bound; it caps only the decision distance. The former intermediate window is closed ASYMPTOTICALLY for uniform masks and polynomial-overlap fixed filters, not for every finite degree or arbitrary mask state. At S1024 the conservative all-budget certificate is still vacuous. Seek genuinely changed physical retention, source-adaptive operations, multiple queries, or a fully charged mask outside this scope. This is a derived/review-pending information obstruction, not independently reviewed, novel by certification, or a classical sampler.",
                     applies_to=[registry_candidate_id, "full-source quantum selector readouts"],
                     evidence={"artifact": str(path), "derivation": report["typical_mask_derivation"], "status": "derived-review-pending"}))
+            if report["claim_gate"]["selector_schur_covariance_controls_verified"] and report["claim_gate"]["selector_mask_diagonal_instrument_verified"]:
+                upsert_negative_result(NegativeResultRecord(id="FIXED-MASK-PHASE-ASYMMETRY-NOT-EXTRA-INFORMATION", source=registry_experiment_id,
+                    claim="For a fixed common subset query and unrestricted final source/selector measurement, complex mask phases or position-asymmetric probabilities yield information unattainable by every radial pure mask.",
+                    reason_invalid="The actual source-record-valued selector channel is a Schur multiplier. Mask phases conjugate both outputs by the same diagonal unitary. A complete diagonal instrument proves concavity of decision distance in mask probabilities. Joint copy-permutation covariance, including ordered source records, then makes the pure radial mask with the same weight distribution dominate every fixed mask. Only k+1 weight probabilities remain; cross-weight coherence is preserved.",
+                    lesson="This is a derived/review-pending INFORMATION search reduction, not an all-mask no-go, efficient final measurement or classical sampler. Do not replace a pure radial state by a mixture of fixed weights: coherent weights outperform every single weight in finite controls. A restricted efficient readout, source-adaptive mask or position-dependent query needs a separate argument. Natural source masses and the shared hidden member must remain. The finite optimizer supplies feasible witnesses, not global certificates or growing-degree speedups.",
+                    applies_to=[registry_candidate_id, "fixed-mask phase and positional-asymmetry mutations"],
+                    evidence={"artifact": str(path), "derivation": report["selector_mask_symmetry_derivation"], "status": "derived-review-pending"}))
+            if report["claim_gate"]["source_character_square_bound_verified"] and report["claim_gate"]["vacuum_coherence_physical_controls_verified"] and report["claim_gate"]["vacuum_coherence_gain_bound_derived"]:
+                upsert_negative_result(NegativeResultRecord(id="VACUUM-COHERENCE-NOT-ASYMPTOTIC-RESCUE", source=registry_experiment_id,
+                    claim="Adding constant empty-subset amplitude to a fixed mask supplies non-negligible extra class-decision information asymptotically at polynomial resources in the one-common-query physical-discard architecture.",
+                    reason_invalid="Source-weighted character column orthogonality gives single-source chi-square <=1/M without a category-count penalty. A compressed-input bound controls vacuum row weights <=n; a four-term group-algebra coefficient bound controls every weight >=n+1. The weighted-source Euclidean row norm bounds only the information gained from vacuum/nonempty coherence. At S1024 K=n^2 this gain is <=2^-1679 uniformly over the vacuum probability and nonempty pure mask.",
+                    lesson="Do not promote the finite S3 vacuum-superposition improvement as a scalable escape. This derived/review-pending bound is NOT a bound on total trace distance: the nonempty mask and quantum-front-end source baseline remain. Combining vacuum with an already obstructed high-occupation mask cannot rescue it, but coherences between nonempty low-weight sectors, source-adaptive masks, physical retention and multiple queries are unresolved. The low-row compression is not a simulation of the whole mask channel. Independent proof and novelty review remain required.",
+                    applies_to=[registry_candidate_id, "empty-subset coherent mask mutations"],
+                    evidence={"artifact": str(path), "derivation": report["vacuum_coherence_derivation"], "status": "derived-review-pending"}))
+            if report["claim_gate"]["source_character_square_bound_verified"] and report["claim_gate"]["low_occupation_union_controls_verified"] and report["claim_gate"]["low_occupation_support_bound_derived"]:
+                upsert_negative_result(NegativeResultRecord(id="LOW-OCCUPATION-SUPPORT-DIMENSION-OBSTRUCTION", source=registry_experiment_id,
+                    claim="At K=n^2, an arbitrary fixed pure mask supported only on subsets of weight <=n/4 supplies non-negligible class-decision information asymptotically in the one-common-query physical-discard architecture.",
+                    reason_invalid="Each (S,T) coefficient depends on at most |S union T|<=2t physical copies and the remaining classical irrep source records. Its source-weighted squared norm is bounded by compressed-input chi-square. Converting the complete mask matrix to trace norm pays its support rank N, yielding T<=sqrt(N*(K+2^min(K,2t)-1)/(M-K))/2. With N<=sum_(i<=t) binomial(K,i), the K=n^2,t=n/4 bounds are 2^-217 at S1024 and 2^-1884 at S4096. This includes all intra-support coherences, not only individual subset measurements.",
+                    lesson="The gain from radial parameter reduction does not shrink the physical selector rank to K+1. Keep the N factor; entrywise smallness alone is insufficient. This is a derived/review-pending conditional support obstruction, NOT an all-mask no-go or a 2t-copy simulation. Separate bounds on low and high sectors do NOT bound their mutual coherence. Masks with larger low-weight support, coherent cross-sector mixtures, source adaptation, retained physical inputs and multiple queries remain unresolved. Independent proof and novelty review are required.",
+                    applies_to=[registry_candidate_id, "low-occupation fixed selector masks"],
+                    evidence={"artifact": str(path), "derivation": report["low_occupation_derivation"], "status": "derived-review-pending"}))
             if report["claim_gate"]["source_weighted_environment_fidelity_verified"] and report["claim_gate"]["arbitrary_mask_positive_comparison_channel_verified"]:
                 upsert_negative_result(NegativeResultRecord(id="HIGH-OCCUPATION-MASK-FIDELITY-OBSTRUCTION", source=registry_experiment_id,
                     claim="An exponentially small overlap with the uniform selector alone rescues the one-common-query physical-discard architecture, even when essentially all mask mass has weight at least 3n.",

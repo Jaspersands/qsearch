@@ -109,14 +109,13 @@ def audit_environment_fidelity():
         "is_quantum_algorithm_experiment": False}
 
 
-@lru_cache(maxsize=6)
-def arbitrary_mask_physical_control(copies, rule):
-    """Independent S3 regular-basis channel; enumerate ORDERED source tuples."""
+@lru_cache(maxsize=3, typed=True)
+def _regular_selector_model(copies, degree=3):
+    """Shared regular-basis effects, not a reduced character-kernel calculation."""
     from coset_binary_carrier_instruments import _source_parity_group_data
-    if type(copies) is not int or copies not in (2, 3):
-        raise ValueError("physical mask controls require two or three copies")
-    alpha = _mask(copies, rule)
-    data = _source_parity_group_data(3, 1)
+    if type(copies) is not int or type(degree) is not int or (degree, copies) not in ((3, 2), (3, 3), (4, 2)):
+        raise ValueError("physical mask controls require S3 with two/three copies or S4 with two copies")
+    data = _source_parity_group_data(degree, 1 if degree == 3 else 2)
     d, product = len(data[0]), data[7]
     actions = np.eye(d)[product]
     p = data[3][:, None]*data[2]/d
@@ -126,7 +125,6 @@ def arbitrary_mask_physical_control(copies, rule):
     spectrum, vectors = np.linalg.eigh((hamiltonian+hamiltonian.conj().T)/2)
     unitary = (vectors*np.exp(.73j*spectrum)) @ vectors.conj().T
     coefficients = unitary[:, 0]
-    outer = np.outer(coefficients.conjugate(), coefficients).reshape(-1)
     size = 2**copies
     queries = []
     for s in range(size):
@@ -138,18 +136,29 @@ def arbitrary_mask_physical_control(copies, rule):
             query += coefficients[g]*term
         queries.append(query)
     effects = np.array([[other.conj().T @ query for other in queries] for query in queries])
+    residuals = {"regular_unitary": float(np.linalg.norm(unitary.conj().T @ unitary-np.eye(d))),
+        "every_mask_unitary": max(float(np.linalg.norm(q.conj().T @ q-np.eye(d**copies))) for q in queries)}
+    return data, actions, projectors, coefficients, effects, residuals
+
+
+@lru_cache(maxsize=6)
+def arbitrary_mask_physical_control(copies, rule):
+    """Independent S3 regular-basis channel; enumerate ORDERED source tuples."""
+    data, actions, projectors, coefficients, effects, model_residuals = _regular_selector_model(copies)
+    alpha = _mask(copies, rule)
+    d, product, size = len(actions), data[7], 2**copies
+    outer = np.outer(coefficients.conjugate(), coefficients).reshape(-1)
     walsh = np.array([[(-1)**((s & z).bit_count()) for z in range(size)] for s in range(size)])/math.sqrt(size)
     preparations = np.array([alpha*np.array([(-1)**((s & z).bit_count()) for s in range(size)]) for z in range(size)])
-    residuals = {"regular_unitary": float(np.linalg.norm(unitary.conj().T @ unitary-np.eye(d))),
+    residuals = {**model_residuals,
         "physical_channel": 0.0, "comparison_preparation_channel": 0.0, "natural_mass": 0.0,
-        "every_mask_unitary": max(float(np.linalg.norm(q.conj().T @ q-np.eye(d**copies))) for q in queries),
         "positivity": 0.0}
     mixture_distances = np.zeros(3)
     walsh_distances = np.zeros(3)
     actual_distances = np.zeros(3)
     decision = wrong_multiset_decision = 0.0
     hidden = tuple(indices[0] for indices in data[8])
-    for sources in itertools.product(range(len(p)), repeat=copies):
+    for sources in itertools.product(range(len(projectors)), repeat=copies):
         actual, mixtures, laws = [], [], []
         for h in (None, *hidden):
             rho = np.eye(d)/d if h is None else (np.eye(d)+actions[h])/d
@@ -197,7 +206,7 @@ def arbitrary_mask_physical_control(copies, rule):
     if max(residuals.values()) > 1e-8 or np.any(mixture_distances > walsh_distances+1e-9):
         raise ArithmeticError("arbitrary-mask physical channel or comparison contraction failed")
     return {"degree": 3, "copy_count": copies, "mask": rule,
-        "ordered_source_tuples_evaluated": len(p)**copies, "hidden_members_evaluated": len(hidden),
+        "ordered_source_tuples_evaluated": len(projectors)**copies, "hidden_members_evaluated": len(hidden),
         "physical_decision_trace_distance": decision, "individual_trace_distances": actual_distances.tolist(),
         "unjustified_unpermuted_source_multiset_estimate": wrong_multiset_decision,
         "positive_comparison_trace_distances": mixture_distances.tolist(),

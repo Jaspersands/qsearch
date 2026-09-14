@@ -124,6 +124,20 @@ also obstructs masks with negligible mass below weight 3n at polynomial copy
 counts, without any uniform-overlap penalty. Low-occupation masks, retained
 physical data, source-adaptive operations and multiple queries remain
 unresolved; all these derived bounds await independent and novelty review.
+The [mask-symmetry reduction](research/SELECTOR_MASK_SYMMETRY.md) narrows fixed-mask
+information optimization to k+1 Hamming-weight probabilities while preserving
+cross-weight coherence. It does not make the objective or final measurement
+efficient, and its finite optimization controls are not algorithm candidates.
+The [vacuum-coherence bound](research/VACUUM_COHERENCE_BOUND.md) further bounds
+only the extra information from superposing the empty subset. At polynomial
+copy budgets that gain is negligible under the stated architecture; mutual
+coherences between nonempty low-weight masks remain unresolved. This is a
+review-pending derivation, not a total-information bound or novelty claim.
+The [low-occupation support bound](research/LOW_OCCUPATION_SELECTOR_BOUND.md)
+bounds entire masks below a growing weight threshold after charging their
+physical support dimension. For K=n^2, support at weights <=n/4 is obstructed
+asymptotically. Coherent mixtures of low and high sectors remain unresolved;
+separate sector bounds cannot be combined by silently discarding coherence.
 The [classical value-access audit](research/CLASSICAL_VALUE_ACCESS_AUDIT.md)
 replaces hidden full-table quadratic reconstruction with counted point queries,
 including exact-residue controls on nonmaterializable domains. Sample-limited

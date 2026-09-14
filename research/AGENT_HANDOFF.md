@@ -1,8 +1,191 @@
 # Research Agent Handoff
 
-Last updated: 2026-09-14
+Last updated: 2026-09-15
 
-## Latest Pass: Arbitrary-Mask Tail Fidelity
+## Latest Completed Pass: Full Low-Occupation Selector Support
+
+Read `research/LOW_OCCUPATION_SELECTOR_BOUND.md` first, then
+`research/VACUUM_COHERENCE_BOUND.md` and `research/SELECTOR_MASK_SYMMETRY.md`.
+These are scoped DERIVED/REVIEW-PENDING arguments, not independently
+verified, established as novel, or quantum algorithms. Treat them as one
+developing architecture analysis, not several separate breakthroughs.
+
+The whole low-weight mask, including intra-support coherence, now has
+
+    T <= min(1, raw_copy_bound,
+        sqrt(N*(K+2^min(K,2t)-1)/(M-K))/2), K<M,
+    N <= sum_(i=0)^t binomial(K,i).
+
+Each (S,T) entry compresses to its active UNION plus inactive classical
+sources. Weighted Hilbert-Schmidt Cauchy and rank<=N then bound the full
+output. This is NOT a 2t-copy channel simulation. At K=n^2,t=n/4, total-T
+dyadic bounds are 0 (vacuous), -217, -1884 for n128,1024,4096. More generally
+t=c*n at K=n^a, a>1, is obstructed by this bound when c*(a-1)<1/2.
+
+Physical checks now cover S3 K2,3 AND fixed-point-free S4 K2: 96 matrix
+entries and 20 full-mask probes, all ordered sources and hidden members.
+Three countercontrols are essential: dropping sqrt(N) is false; four radial
+parameters can produce an actual rank-eight physical output; two nonempty
+weight sectors can be uninformative separately and informative coherently.
+Thus low/high cross-sector coherence remains UNRESOLVED by the gated bounds.
+
+New `source_selector_low_occupation_contract` lives in
+`core/isotypic_instruments.py`; controls share
+`theorems/coset_mask_symmetry.py`; tests are in
+`tests/test_coset_low_occupation.py`. The private physical model also accepts
+S4 K2 and rejects undeclared models. Existing binary CLI, negative database,
+proof lemma index19 and mutation obligations include
+`LOW-OCCUPATION-SUPPORT-DIMENSION-OBSTRUCTION`. Independent review and novelty
+flags remain false, as do all-mask and cross-sector obstruction gates.
+
+Verification: final four-file focused run 101 passed in 6.22s; final
+ELEVEN-file selector/proof/mutation/writer regression 324 passed in 244.84s.
+These overlap; do not add their counts. Persistent reports are
+`.pytest_cache/low-occupation-last.xml` and
+`.pytest_cache/selector-research-last.xml`. Python compilation, JS syntax,
+diff checks and all relevant live workflows passed. The fresh full-suite
+fail-fast result remains 69 passed/one failed at
+`tests/test_character_query_information.py:61`, with persistent XML as below.
+Do not claim the entire repository suite is green or that later tests ran.
+The same writer test was rechecked alone after the final research changes:
+one failure in 4.00s, recorded in `.pytest_cache/known-writer-failure.xml`.
+
+Live binary, recoupling synthesis, dequantize, proofs, conjectures, mutate,
+progress snapshot, validate and proof-routes all exited0. Latest registry:
+8 candidates, 792 experiments, 800 results, 914 negatives, 1308 dequantization
+findings (1304 blocking), 1282 lemmas, 104 proof statuses (24 blocking),
+eight blocked conjectures, 19 mutations, 14 scaling runs. Validation issues[];
+13 route contracts, zero unsupported assertions, four unresolved. No speedup
+or algorithm candidate promotion. No background search service was started.
+
+Save policy: group the radial/vacuum/low-occupation passes and the two tested
+writer repairs into ONE checkpoint. Inspect Git for actual saved/pushed SHA;
+fccfa6d0 is the preceding checkpoint, not necessarily the current HEAD.
+
+NEXT HIGH-THINKING PASS: try to kill nonempty low/high intersector coherence.
+The following derivation is SCRATCH-TESTED, NOT IMPLEMENTED OR IN A GATE.
+Let low support have weights <=t and rank N_L, high support weights >=s>t.
+For A_J(S,T), split the HIGH-side coefficient index g' into e, h, and the
+rest. Up to the empty-query phase, the e endpoint is conj(a_e) times the
+low empty-subset column; the h endpoint is E_h conj(a_h)*L_h,J(S), where
+L_h,J(S)=Tr(U_S sigma_h,J). Since R(h)rho_h=rho_h, the endpoint simplification
+also holds on overlapping positions. Its source-weighted norm is <=sqrt(E/M).
+The two off-endpoint terms pay D rather than sqrt(D), and every high-only
+position (at least s-t) contributes character-square decay. This suggests
+
+    B_cross = sqrt((K+2^t-1)/(M-K)) + sqrt(Ebar/M)
+       + D sqrt(Ebar)*(4/L)^((s-t)/2) + D*(1/L)^((s-t)/2),
+    cross-block contribution <= sqrt(N_L*w_low*w_high)*B_cross.
+
+The rectangular block has rank <=N_L, NOT N_high. With t=n/4,s=3n,K=n^2,
+all terms look negligible. Integer scratch gain envelopes (using
+w_low*w_high<=1/4) give -343 at n1024 and -2394 at n4096. Actual S3 K2,3
+and S4 K2 checks covered 5/22/5 ordered pairs with |T|>|S|: all four weighted
+component bounds held; sum residuals were <=4.2e-17. These checks currently
+use physical blocks and endpoint subtraction, NOT an independently rebuilt
+off-endpoint double character kernel. Require that independent expansion,
+a standalone proof, exact bounds, countercontrols and tests before gating.
+
+If correct, combine the low/high diagonal bounds with this actual cross
+bound; negligible mass pi on t<weight<s costs at most 2sqrt(pi) by gentle
+projection. This could localize any nonnegligible fixed-mask signal to an
+intermediate occupation band. It is NOT yet an all-mask theorem, efficient
+POVM, or novelty claim. Do not skip the high-side g' orientation, overlap
+identity, natural-source denominators, class average or sqrt(N_L) charge.
+The middle band would remain unresolved. Compare its difficulty with a
+concrete retained-physical missing-harmonic span primitive before extending
+this architecture indefinitely.
+
+NEXT ROUTINE GEMINI/ANTIGRAVITY TASK: repair the confirmed
+`write_character_query_information_report` persistence defect. Honor
+`write_registry`, restore its scaling record using the existing registry API,
+test disabled writes/idempotence, run its tests and then a fresh full suite
+with persistent output. Cached historical failures are not a current
+inventory. The two writer defects in the following section are ALREADY fixed.
+
+## Previous Completed Pass: Empty-Subset Coherence
+
+Read `research/VACUUM_COHERENCE_BOUND.md` and
+`research/SELECTOR_MASK_SYMMETRY.md` first. Both are derived/review-pending,
+not independently verified, formally certified or established as novel.
+The prior handoff's radial-mask idea is now implemented and tested.
+
+The radial Schur-channel reduction replaces fixed-mask amplitudes by K+1
+weight probabilities, preserving PURE cross-weight coherence. Its finite
+S3 optimizer favors some masks containing the empty subset, but those are
+calibrations, not scalable algorithms or globally certified optima.
+
+The new vacuum bound controls ONLY the extra class-decision distance from
+coherence with the empty subset. Full source-weighted character squares
+give v<=1/M, WITHOUT the tentative category-count penalty r. Low-row
+compressed chi-square and high-weight coefficient bounds cover every
+nonempty weight at polynomial total K. With Ebar=M/(M-K), L=n(n-1)/2:
+
+    B_low^2=Ebar-1+Ebar*(2^min(K,n)-1)/M,
+    B_high=sqrt(Ebar-1)+sqrt(Ebar/M)
+       +sqrt(D Ebar)*(4/L)^((n+1)/2)+sqrt(D)*(1/L)^((n+1)/2).
+    0<=gain<=sqrt(w0(1-w0))*max(B_low,B_high).
+
+Use the high suffix only if K>n. The source-only baseline remains, as does
+(1-w0)*T(nonempty mask); the GAIN bound is not a bound on total T. At
+K=n^2 the uniform-over-w0 dyadic gain exponents at n16,128,1024,4096 are
+-3,-115,-1679,-8763. These are conditional integer evaluations, not large
+matrix simulations. All proof/negative gates retain restricted scope.
+
+Nine exact character controls cover S3/S4/S6 and three category partitions.
+Actual dense noncentral S3 controls at K2,3 retain all ordered sources and
+hidden members, verify ten columns against their group-algebra expansion,
+all four coefficient bounds, and twenty pinching/Jensen probes. Positive
+finite gains and zero gain with nonzero total source distance are retained
+as countercontrols against stronger invalid claims. No classical sampler.
+
+Relevant tests: 71 passed in 4.06s for new vacuum+symmetry+fidelity tests;
+the broader TEN-file selector/proof/mutation/writer run passed 294 tests
+in 232.94s. These runs overlap. Python compilation, JS syntax and diff
+checks passed. The fresh full-suite FAIL-FAST run has a persistent report
+at `.pytest_cache/full-suite-last.xml`: 69 passed, one failed, 216.76s,
+at `tests/test_character_query_information.py:61`. Its writer ignores
+`write_registry` and never upserts the scaling run. The whole suite is NOT
+green. Historical cache entries are not a fresh full-suite failure inventory.
+
+Two earlier writer defects ARE FIXED: character_moment_obstruction now
+upserts scaling runs; dcp_symmetric_relation_lift now restores its existing
+result and two negative records, honoring custom IDs and disabled writes.
+`tests/test_research_writer_persistence.py` checks idempotence and isolation.
+Their 18-test focused run passed before this pass and persistence tests are
+included in the 294-test run. Do not requeue those repaired defects.
+
+Live binary report, recoupling synthesis, dequantize, proofs, conjectures,
+mutate, progress snapshot, validate and proof-routes all completed exit0.
+Registry: 8 candidates, 792 experiments, 800 results, 913 negatives;
+1307 dequantization findings (1303 blocking), 1281 lemmas, 104 proof statuses
+(24 blocking), eight blocked conjectures, 19 mutations, 14 scaling runs.
+Zero validation issues; 13 route contracts, zero unsupported assertions,
+four unresolved. These checks do not certify mathematical truth or novelty.
+
+Saved checkpoint remains fccfa6d0 (already pushed). Radial symmetry, writer
+repairs and vacuum coherence are uncommitted intentionally: user requested
+much less frequent commits. Preserve all worktree changes. No background
+search service was started. Do not assume an old process or tool handle is
+still alive; inspect its authoritative status before waiting or restarting.
+
+NEXT DEEP PASS (derivation scratch-tested, not yet gated here): for a pure
+mask supported on N strings of weight <=t, every (S,T) coefficient acts
+on their union, of size <=u=min(K,2t). The same compressed-input argument
+bounds its source-weighted squared norm by
+chi <= [1+(2^u-1)/M]*(1+v)^(K-u)-1.
+Weighted Hilbert-Schmidt plus rank<=N then suggests
+T<=sqrt(N*[Ebar-1+Ebar*(2^u-1)/M])/2 for the ENTIRE low-weight mask.
+Use N<=sum_(i<=t) binom(K,i), NOT the number of union subsets of size2t.
+Every physical S3 K2,3 matrix entry satisfied its individual union bound
+in scratch checks. At K=n^2,t=n/4, integer scratch exponents are -217
+for n1024 and -1884 for n4096; n128 remains vacuous. Needs a standalone
+proof, a countercontrol for dropping the rank factor, tests and registry
+integration. Separate low/high sector bounds do NOT control their mutual
+coherence. Keep the unresolved gap honest rather than asserting all-mask
+failure. Independent proof and prior-art review remain important.
+
+## Previous Pass: Arbitrary-Mask Tail Fidelity
 
 Read `research/MASK_TAIL_FIDELITY_OBSTRUCTION.md` first. The two UNVERIFIED
 ideas in the preceding handoff are now derived and tested, with restricted

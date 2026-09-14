@@ -78,6 +78,12 @@
         "severity": "high"
       },
       {
+        "evidence": "Each (S,T) coefficient depends on at most |S union T|<=2t physical copies and the remaining classical irrep source records. Its source-weighted squared norm is bounded by compressed-input chi-square. Converting the complete mask matrix to trace norm pays its support rank N, yielding T<=sqrt(N*(K+2^min(K,2t)-1)/(M-K))/2. With N<=sum_(i<=t) binomial(K,i), the K=n^2,t=n/4 bounds are 2^-217 at S1024 and 2^-1884 at S4096. This includes all intra-support coherences, not only individual subset measurements.",
+        "finding_id": "DEQ-CODE-COSET-COLLECTIVE-LOW-OCCUPATION-SUPPORT-BOUND",
+        "required_action": "The gain from radial parameter reduction does not shrink the physical selector rank to K+1. Keep the N factor; entrywise smallness alone is insufficient. This is a derived/review-pending conditional support obstruction, NOT an all-mask no-go or a 2t-copy simulation. Separate bounds on low and high sectors do NOT bound their mutual coherence. Masks with larger low-weight support, coherent cross-sector mixtures, source adaptation, retained physical inputs and multiple queries remain unresolved. Independent proof and novelty review are required. This is an access or symmetry boundary, not classical dequantization.",
+        "severity": "high"
+      },
+      {
         "evidence": "The positive arbitrary-mask comparison is a preparation-channel image of the commuting Walsh law and pays NO uniform-overlap penalty. Environmental root fidelity and source-weighted Jensen bound the bulk remainder by D min(1,12/sqrt(L))^(t/2) and the endpoints by 4sqrt(D) min(1,2/sqrt(L))^(t/2). Add 2sqrt(pi) for the mass below t and 2k sqrt(r/M) for the averaged comparison. At polynomial k, t>=3n and superpolynomially small pi, the distance is negligible asymptotically. At S4096 k=n^2, t=3n, pi=0 the conditional integer certificate is 2^-5373.",
         "finding_id": "DEQ-CODE-COSET-COLLECTIVE-MASK-TAIL-FIDELITY-BOUND",
         "required_action": "The mask must be fixed independently of both the shared hidden involution AND source records. Source-selected masks falsify the Jensen step; high mean weight without a lower-tail bound is insufficient. Low-occupation masks, retained physical data, source adaptation and multiple queries remain unresolved. This is a derived/review-pending restricted information obstruction, not a novel result by certification, independent proof, or classical sampler. This is an access or symmetry boundary, not classical dequantization.",
@@ -93,6 +99,12 @@
         "evidence": "Exact C(h)-conjugation orbits reduce 1625702400 pairs to 7338240 streamed weighted pairs. Every signed categorical and scalar spectrum and remainder matches full S4/S6 enumeration. At S8 k=7,8,10,12,14,16, even the ideal paired-category histogram loses to coarse pair-event counts. At k=16 its distance is 0.119520 versus 0.150255 for pairs, while raw coset-state distance is at least 1-105/65536.",
         "finding_id": "DEQ-CODE-COSET-COLLECTIVE-S8-SIGN-CATEGORY-INTERMEDIATE-FAILURE",
         "required_action": "Deprioritize this specified sign-category readout: at k=16 source count alone already has distance 0.115334. This does NOT test every retained irrep label, another central phase, or every copy count at growing degree. The orbit evaluator remains factorial in degree, signed spectra are not a classical sampler, and the raw support-rank POVM is not an implemented classifier. Pair measurements retain their quantum front end. The general intermediate window remains open. This is an access or symmetry boundary, not classical dequantization.",
+        "severity": "high"
+      },
+      {
+        "evidence": "The actual source-record-valued selector channel is a Schur multiplier. Mask phases conjugate both outputs by the same diagonal unitary. A complete diagonal instrument proves concavity of decision distance in mask probabilities. Joint copy-permutation covariance, including ordered source records, then makes the pure radial mask with the same weight distribution dominate every fixed mask. Only k+1 weight probabilities remain; cross-weight coherence is preserved.",
+        "finding_id": "DEQ-CODE-COSET-COLLECTIVE-SELECTOR-MASK-SYMMETRY-REDUCTION",
+        "required_action": "This is a derived/review-pending INFORMATION search reduction, not an all-mask no-go, efficient final measurement or classical sampler. Do not replace a pure radial state by a mixture of fixed weights: coherent weights outperform every single weight in finite controls. A restricted efficient readout, source-adaptive mask or position-dependent query needs a separate argument. Natural source masses and the shared hidden member must remain. The finite optimizer supplies feasible witnesses, not global certificates or growing-degree speedups. This is an access or symmetry boundary, not classical dequantization.",
         "severity": "high"
       },
       {
@@ -159,6 +171,12 @@
         "evidence": "Standard mixed coset inputs commute with central irrep projectors. The clean label-copy isometry sum_j |j> P_j therefore produces an already block-diagonal label record. Every common subset group-algebra query commutes with the same source projectors. S3/S4 controls check every hidden member, central-projector commutators and exact label-copy dephasing; a nonstandard cross-irrep pure input changes by trace distance 1/2 and is explicitly outside the input model.",
         "finding_id": "DEQ-CODE-COSET-COLLECTIVE-UNMEASURED-IRREP-LABEL-IDENTITY",
         "required_action": "A merely unmeasured label copy is not coherent physical-source retention. Specify an operation or input that actually changes these blocks, or retain nontrivial physical carrier information, and charge the changed access model. This standard dephasing identity does not exclude genuine retained quantum data or source-adaptive physical operations. Do not promote a mutation solely because an assumption flag was renamed. This is an access or symmetry boundary, not classical dequantization.",
+        "severity": "high"
+      },
+      {
+        "evidence": "Source-weighted character column orthogonality gives single-source chi-square <=1/M without a category-count penalty. A compressed-input bound controls vacuum row weights <=n; a four-term group-algebra coefficient bound controls every weight >=n+1. The weighted-source Euclidean row norm bounds only the information gained from vacuum/nonempty coherence. At S1024 K=n^2 this gain is <=2^-1679 uniformly over the vacuum probability and nonempty pure mask.",
+        "finding_id": "DEQ-CODE-COSET-COLLECTIVE-VACUUM-COHERENCE-GAIN-BOUND",
+        "required_action": "Do not promote the finite S3 vacuum-superposition improvement as a scalable escape. This derived/review-pending bound is NOT a bound on total trace distance: the nonempty mask and quantum-front-end source baseline remain. Combining vacuum with an already obstructed high-occupation mask cannot rescue it, but coherences between nonempty low-weight sectors, source-adaptive masks, physical retention and multiple queries are unresolved. The low-row compression is not a simulation of the whole mask channel. Independent proof and novelty review remain required. This is an access or symmetry boundary, not classical dequantization.",
         "severity": "high"
       },
       {
@@ -5071,7 +5089,7 @@
       }
     ],
     "candidate_id": "CODE-COSET-COLLECTIVE",
-    "created_at": "2026-09-14T05:36:33.088835+00:00",
+    "created_at": "2026-09-14T11:16:03.375483+00:00",
     "id": "CONJ-CODE-COSET-COLLECTIVE",
     "next_actions": [
       "Resolve every blocking finding before promotion.",
@@ -13983,20 +14001,25 @@
           "finite_full_source_controls_passed": 2,
           "growing_copy_measurement_compilers": 0,
           "incomplete_support_povm_extensions_checked": 166,
+          "low_occupation_full_mask_probes_verified": 20,
+          "low_occupation_matrix_entries_verified": 96,
           "noncentral_group_algebra_controls_verified": 20,
           "noncentral_hidden_members_evaluated": 60,
           "polynomial_copy_budget_interval_bounds_evaluated": 12,
           "polynomial_label_arithmetic_controls": 4,
+          "radial_mask_search_calibrations": 2,
           "random_hadamard_branches_checked": 39672,
           "regular_cell_compression_controls_passed": 3,
           "s8_intermediate_copy_points": 6,
           "s8_streamed_group_pairs": 7338240,
           "schedules_evaluated": 24,
+          "selector_mask_symmetry_probes_verified": 26,
           "source_blocks_evaluated": 152,
           "source_blocks_with_clean_gpe_contract": 152,
           "source_blocks_with_exact_latent_irrep_model": 152,
           "source_category_exact_mixtures_checked": 40,
           "source_category_matrix_laws_checked": 36,
+          "source_character_square_controls_verified": 9,
           "source_conditioned_lifts_checked": 701,
           "source_conditioned_parity_laws_checked": 4959,
           "source_conditioned_selector_kernels_checked": 2153,
@@ -14009,7 +14032,9 @@
           "source_selector_quantum_fixed_weight_controls": 69,
           "source_selector_quantum_source_multisets_checked": 267,
           "streamed_source_orbit_controls_verified": 2,
-          "typical_mask_projected_remainders_checked": 144
+          "typical_mask_projected_remainders_checked": 144,
+          "vacuum_coherence_probes_verified": 20,
+          "vacuum_coherence_rows_verified": 10
         },
         "status": "binary-instrument-calibration-fixed-copy-route-obstructed",
         "summary": "A typical-mask refinement now obstructs the one-common-group-algebra-query, uniform-mask, physical-discard architecture at EVERY polynomial copy budget asymptotically, subject to review. It retains all classical source labels and the full quantum selector and permits noncentral unitaries and arbitrary final POVMs. Removing low-weight masks with charged gentle error sharpens the quantum remainder; an interval certificate covers all pre-input participating counts, including ignored copies. At S4096 every k<=4096^2 has decision T<=2^-571. Central-weight masks have a charged polynomial-overlap transfer. Arbitrary mask states, retained physical data, source-adaptive operations and multiple queries remain outside scope. No novelty, formal proof or classical sampler is established."
@@ -18091,7 +18116,7 @@
         "summary": "Proved that density-one low-bit fibers contain no affine flat of dimension 8log2(q) or larger with failure 2^-Omega(q log q), uniformly over every adaptive GL(m,2) reparameterization. Any support-contained cancellation-free affine cover is exponential."
       }
     ],
-    "updated_at": "2026-09-14T05:36:33.088835+00:00"
+    "updated_at": "2026-09-14T11:16:03.375483+00:00"
   },
   {
     "assumptions": [
@@ -19513,7 +19538,7 @@
       }
     ],
     "candidate_id": "DHS-GOWERS-SIEVE",
-    "created_at": "2026-09-14T05:36:33.088835+00:00",
+    "created_at": "2026-09-14T11:16:03.375483+00:00",
     "id": "CONJ-DHS-GOWERS-SIEVE",
     "next_actions": [
       "Resolve every blocking finding before promotion.",
@@ -22231,7 +22256,7 @@
         "summary": "Audited 12 explicit hidden-shift instances across 3 phase families. 3 instances show Fourier/derivative structure; 8 are critical/high dequantization risk; 8 survive at least one restricted query model. Best DHSP sieve strategy aggressive_doubling reaches v2=7 from 2048 phase labels; explicit phase-state trace reaches v2=7 with 44 survivor states."
       }
     ],
-    "updated_at": "2026-09-14T05:36:33.088835+00:00"
+    "updated_at": "2026-09-14T11:16:03.375483+00:00"
   },
   {
     "assumptions": [
@@ -22289,7 +22314,7 @@
       }
     ],
     "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
-    "created_at": "2026-09-14T05:36:33.088835+00:00",
+    "created_at": "2026-09-14T11:16:03.375483+00:00",
     "id": "CONJ-HYP-LIT-COSET-OBSERVABLES",
     "next_actions": [
       "Resolve every blocking finding before promotion.",
@@ -22329,7 +22354,7 @@
         "summary": "Audited 4 hidden-permutation graph pairs. 2 pair survives current classical and low-register tests; 1 control pair is classically distinguished; 2 CFI-style parity benchmark(s) included."
       }
     ],
-    "updated_at": "2026-09-14T05:36:33.088835+00:00"
+    "updated_at": "2026-09-14T11:16:03.375483+00:00"
   },
   {
     "assumptions": [
@@ -22419,7 +22444,7 @@
       }
     ],
     "candidate_id": "HYP-LIT-HIDDEN-SHIFT-SIEVE",
-    "created_at": "2026-09-14T05:36:33.088835+00:00",
+    "created_at": "2026-09-14T11:16:03.375483+00:00",
     "id": "CONJ-HYP-LIT-HIDDEN-SHIFT-SIEVE",
     "next_actions": [
       "Resolve every blocking finding before promotion.",
@@ -22501,7 +22526,7 @@
         "summary": "Audited 40 explicit hidden-shift instances across 10 phase families. 0 instances show Fourier/derivative structure; 16 are critical/high dequantization risk; 40 survive at least one restricted query model. Best DHSP sieve strategy aggressive_doubling reaches v2=7 from 2048 phase labels; explicit phase-state trace reaches v2=7 with 44 survivor states."
       }
     ],
-    "updated_at": "2026-09-14T05:36:33.088835+00:00"
+    "updated_at": "2026-09-14T11:16:03.375483+00:00"
   },
   {
     "assumptions": [
@@ -22601,7 +22626,7 @@
       }
     ],
     "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
-    "created_at": "2026-09-14T05:36:33.088835+00:00",
+    "created_at": "2026-09-14T11:16:03.375483+00:00",
     "id": "CONJ-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
     "next_actions": [
       "Resolve every blocking finding before promotion.",
@@ -22685,7 +22710,7 @@
         "summary": "Audited 10 graphlet tensor observables across 5 graph pairs. 3 signal(s) collapse to small-pattern classical counts; 3 boundary pair(s) remain without graphlet-tensor signal."
       }
     ],
-    "updated_at": "2026-09-14T05:36:33.088835+00:00"
+    "updated_at": "2026-09-14T11:16:03.375483+00:00"
   },
   {
     "assumptions": [
@@ -22761,7 +22786,7 @@
       }
     ],
     "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
-    "created_at": "2026-09-14T05:36:33.088835+00:00",
+    "created_at": "2026-09-14T11:16:03.375483+00:00",
     "id": "CONJ-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
     "next_actions": [
       "Resolve every blocking finding before promotion.",
@@ -22816,7 +22841,7 @@
         "summary": "Audited 10 graphlet tensor observables across 5 graph pairs. 3 signal(s) collapse to small-pattern classical counts; 3 boundary pair(s) remain without graphlet-tensor signal."
       }
     ],
-    "updated_at": "2026-09-14T05:36:33.088835+00:00"
+    "updated_at": "2026-09-14T11:16:03.375483+00:00"
   },
   {
     "assumptions": [
@@ -22892,7 +22917,7 @@
       }
     ],
     "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
-    "created_at": "2026-09-14T05:36:33.088835+00:00",
+    "created_at": "2026-09-14T11:16:03.375483+00:00",
     "id": "CONJ-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
     "next_actions": [
       "Resolve every blocking finding before promotion.",
@@ -22946,7 +22971,7 @@
         "summary": "Audited 4 hidden-permutation graph pairs. 2 pair survives current classical and low-register tests; 1 control pair is classically distinguished; 2 CFI-style parity benchmark(s) included."
       }
     ],
-    "updated_at": "2026-09-14T05:36:33.088835+00:00"
+    "updated_at": "2026-09-14T11:16:03.375483+00:00"
   },
   {
     "assumptions": [
@@ -23010,7 +23035,7 @@
       }
     ],
     "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
-    "created_at": "2026-09-14T05:36:33.088835+00:00",
+    "created_at": "2026-09-14T11:16:03.375483+00:00",
     "id": "CONJ-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
     "next_actions": [
       "Resolve every blocking finding before promotion.",
@@ -23044,6 +23069,6 @@
         "summary": "Audited 3 code-equivalence pairs. 1 equivalent control pair(s) verified; 2 non-equivalent control pair(s) classically distinguished."
       }
     ],
-    "updated_at": "2026-09-14T05:36:33.088835+00:00"
+    "updated_at": "2026-09-14T11:16:03.375483+00:00"
   }
 ]
