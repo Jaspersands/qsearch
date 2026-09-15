@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Interactive database of 807 retained negative results, no-go theorems, and dequantization findings for the Q-Search quantum algorithm search program.">
+    <meta name="description" content="Interactive database of 914 retained negative results, no-go theorems, and dequantization findings for the Q-Search quantum algorithm search program.">
     <title>Q-Search | Negative Results Explorer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,17 +33,17 @@
                 <p class="eyebrow">Negative-Result First Methodology</p>
                 <h1 id="page-title">Negative Results</h1>
                 <p class="hero-lede">
-                    A permanent catalog of 807 verified negative results, no-go theorems, and dequantization attacks. Every failed hypothesis and structural barrier is indexed to prevent cyclical research dead-ends.
+                    A permanent catalog of 914 verified negative results, no-go theorems, and dequantization attacks. Every failed hypothesis and structural barrier is indexed to prevent cyclical research dead-ends.
                 </p>
                 <div class="hero-actions">
                     <a class="primary-action" href="index.html">← Back to live progress</a>
-                    <a class="secondary-action" href="research/registry/negative_results.json" download="negative_results.json">Download raw JSON (807 records)</a>
+                    <a class="secondary-action" href="research/registry/negative_results.json" download="negative_results.json">Download raw JSON (914 records)</a>
                 </div>
             </div>
             <div class="verdict-block" aria-label="Negative results summary">
                 <p class="eyebrow">Registry Memory</p>
-                <strong id="verdict-title">807 Retained Records</strong>
-                <p id="verdict-detail">Negative results are first-class scientific assets. Over 1,200 classical attack findings ensure zero toy benchmarks are mistaken for speedups.</p>
+                <strong id="verdict-title">914 Retained Records</strong>
+                <p id="verdict-detail">Negative results are first-class scientific assets. Over 1,300 classical attack findings ensure zero toy benchmarks are mistaken for speedups.</p>
                 <div class="updated-row">
                     <span class="status-dot" aria-hidden="true"></span>
                     <span>100% Machine-Verifiable</span>
@@ -52,8 +52,8 @@
         </section>
 
         <section class="metric-strip" aria-label="Negative results metrics">
-            <div><strong id="metric-neg-count">807</strong><span>negative results</span></div>
-            <div><strong>1,211</strong><span>attack findings</span></div>
+            <div><strong id="metric-neg-count">914</strong><span>negative results</span></div>
+            <div><strong>1,304</strong><span>attack findings</span></div>
             <div><strong>0</strong><span>erased dead-ends</span></div>
             <div><strong>100%</strong><span>reproducible</span></div>
             <div><strong>0</strong><span>toy claims promoted</span></div>
@@ -67,9 +67,9 @@
             </div>
 
             <div class="explorer-controls">
-                <input type="text" id="neg-search" class="search-input" placeholder="Search 807 records by claim, lesson, reason, or module source..." oninput="filterNegatives()">
+                <input type="text" id="neg-search" class="search-input" placeholder="Search 914 records by claim, lesson, reason, or module source..." oninput="filterNegatives()">
                 <div class="filter-btn-group">
-                    <button class="filter-btn active" onclick="setCandidateFilter('all', this)">All (807)</button>
+                    <button class="filter-btn active" id="filter-btn-all" onclick="setCandidateFilter('all', this)">All (914)</button>
                     <button class="filter-btn" onclick="setCandidateFilter('DHS-GOWERS-SIEVE', this)">DHS-GOWERS-SIEVE</button>
                     <button class="filter-btn" onclick="setCandidateFilter('CODE-COSET-COLLECTIVE', this)">CODE-COSET-COLLECTIVE</button>
                     <button class="filter-btn" onclick="setCandidateFilter('PO-DEQUANTIZATION', this)">Dequantization</button>
@@ -84,7 +84,7 @@
             <div id="neg-card-container">
                 <!-- Dynamically populated via JavaScript -->
                 <div style="text-align: center; padding: 40px; color: var(--muted); font-family: var(--mono);">
-                    Loading 807 negative-result records from registry...
+                    Loading 914 negative-result records from registry...
                 </div>
             </div>
 
@@ -130,6 +130,9 @@
             .then(data => {
                 allNegatives = data || [];
                 document.getElementById('metric-neg-count').textContent = allNegatives.length;
+                document.getElementById('verdict-title').textContent = `${allNegatives.length} Retained Records`;
+                const allBtn = document.getElementById('filter-btn-all');
+                if (allBtn) allBtn.textContent = `All (${allNegatives.length})`;
                 filteredNegatives = allNegatives;
                 renderPage();
             })

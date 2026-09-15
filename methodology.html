@@ -52,10 +52,10 @@
         </section>
 
         <section class="metric-strip" aria-label="Methodology overview metrics">
-            <div><strong>659</strong><span>experiments specified</span></div>
-            <div><strong>663</strong><span>results recorded</span></div>
-            <div><strong>1,142</strong><span>blocking dequantizations</span></div>
-            <div><strong>806</strong><span>negative results retained</span></div>
+            <div><strong id="metric-experiments">792</strong><span>experiments specified</span></div>
+            <div><strong id="metric-results">800</strong><span>results recorded</span></div>
+            <div><strong id="metric-blockers">1,304</strong><span>blocking dequantizations</span></div>
+            <div><strong id="metric-negatives">914</strong><span>negative results retained</span></div>
             <div><strong>0</strong><span>toy benchmarks promoted</span></div>
         </section>
 
@@ -247,12 +247,12 @@
             <ol class="next-list">
                 <li>
                     <strong>Run Dequantization Audit</strong>
-                    <span>Executes all 1,146 classical attack rows against candidate registries:</span>
+                    <span>Executes all 1,304 classical attack rows against candidate registries:</span>
                     <div class="formula" style="margin: 12px 0 0; padding: 14px; text-align: left; font-size: 0.85rem;"><code>python3 qsearch.py dequantize</code></div>
                 </li>
                 <li>
                     <strong>Validate Full Registry</strong>
-                    <span>Verifies consistency across all 659 experiments, results, and proof edges:</span>
+                    <span>Verifies consistency across all 792 experiments, results, and proof edges:</span>
                     <div class="formula" style="margin: 12px 0 0; padding: 14px; text-align: left; font-size: 0.85rem;"><code>python3 qsearch.py validate</code></div>
                 </li>
                 <li>
@@ -291,5 +291,20 @@
         <span>Q-Search research methodology</span>
         <span>No breakthrough claim is made without a proof-complete complexity separation.</span>
     </footer>
+
+    <script>
+        fetch('research/progress_snapshot.json?v=' + Date.now())
+            .then(res => res.json())
+            .then(data => {
+                if (data && data.metrics) {
+                    const m = data.metrics;
+                    if (document.getElementById('metric-experiments')) document.getElementById('metric-experiments').textContent = m.experiments;
+                    if (document.getElementById('metric-results')) document.getElementById('metric-results').textContent = m.results;
+                    if (document.getElementById('metric-blockers')) document.getElementById('metric-blockers').textContent = Number(m.blocking_findings).toLocaleString();
+                    if (document.getElementById('metric-negatives')) document.getElementById('metric-negatives').textContent = Number(m.negative_results).toLocaleString();
+                }
+            })
+            .catch(err => console.error('Snapshot fetch error:', err));
+    </script>
 </body>
 </html>

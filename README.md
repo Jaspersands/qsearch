@@ -3,7 +3,7 @@
 [![Validate research snapshot](https://github.com/Jaspersands/qsearch/actions/workflows/validate.yml/badge.svg)](https://github.com/Jaspersands/qsearch/actions/workflows/validate.yml)
 [![Pages build and deployment](https://github.com/Jaspersands/qsearch/actions/workflows/pages-build-deployment/badge.svg)](https://jaspersands.github.io/qsearch/)
 [![Registry Valid](https://img.shields.io/badge/Registry-100%25%20Valid-176c4a)](https://jaspersands.github.io/qsearch/)
-[![Negative Results](https://img.shields.io/badge/Negative%20Results-807%20Retained-a43d2b)](https://jaspersands.github.io/qsearch/negative-results.html)
+[![Negative Results](https://img.shields.io/badge/Negative%20Results-914%20Retained-a43d2b)](https://jaspersands.github.io/qsearch/negative-results.html)
 
 **Q-Search** is an automated, proof-gated research platform designed to investigate structural quantum algorithms for hard classical computational problems.
 
@@ -179,7 +179,7 @@ The repository automatically publishes interactive research telemetry and databa
 | **Progress Overview** | Real-time candidate pipeline, falsifier telemetry, and validation status | [index.html](https://jaspersands.github.io/qsearch/) |
 | **Methodology** | Formal research principles, no-go mechanisms, and claim-gating philosophy | [methodology.html](https://jaspersands.github.io/qsearch/methodology.html) |
 | **Frontier Map** | Machine-readable topological map of active research frontiers and kill criteria | [frontier.html](https://jaspersands.github.io/qsearch/frontier.html) |
-| **Negative Results** | Searchable database of 807 retained no-go theorems and dequantization findings | [negative-results.html](https://jaspersands.github.io/qsearch/negative-results.html) |
+| **Negative Results** | Searchable database of 914 retained no-go theorems and dequantization findings | [negative-results.html](https://jaspersands.github.io/qsearch/negative-results.html) |
 | **Proof Debt** | Live ledger of 24 open proof obligations, 1,184 lemmas, and reduction edges | [proof-debt.html](https://jaspersands.github.io/qsearch/proof-debt.html) |
 | **Repository Map** | Interactive codebase architecture explorer and 792-module taxonomy | [repomap.html](https://jaspersands.github.io/qsearch/repomap.html) |
 
@@ -265,7 +265,7 @@ graph TD
     D -->|Survives Classical Attack| F[Proof Gate & Lemma Obligations]
     F -->|Proof Debts Open| G[Active Candidate / Frontier]
     F -->|Proof Complete & Asymptotic Separation| H[Speedup Claim Gate Passed]
-    E --> I[807 Retained No-Go Theorems]
+    E --> I[914 Retained No-Go Theorems]
 ```
 
 ---

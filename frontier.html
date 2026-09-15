@@ -54,8 +54,8 @@
         <section class="metric-strip" aria-label="Frontier topology metrics">
             <div><strong>5</strong><span>active frontiers</span></div>
             <div><strong>158</strong><span>max priority score</span></div>
-            <div><strong>1,142</strong><span>blocking findings</span></div>
-            <div><strong>806</strong><span>negative results</span></div>
+            <div><strong id="metric-blockers">1,304</strong><span>blocking findings</span></div>
+            <div><strong id="metric-negatives">914</strong><span>negative results</span></div>
             <div><strong>0</strong><span>proof debt waivers</span></div>
         </section>
 
@@ -250,6 +250,17 @@
             .catch(err => {
                 document.getElementById('raw-json-code').textContent = '// Error loading research/frontier_map.json: ' + err;
             });
+
+        fetch('research/progress_snapshot.json?v=' + Date.now())
+            .then(res => res.json())
+            .then(data => {
+                if (data && data.metrics) {
+                    const m = data.metrics;
+                    if (document.getElementById('metric-blockers')) document.getElementById('metric-blockers').textContent = Number(m.blocking_findings).toLocaleString();
+                    if (document.getElementById('metric-negatives')) document.getElementById('metric-negatives').textContent = Number(m.negative_results).toLocaleString();
+                }
+            })
+            .catch(err => console.error('Snapshot fetch error:', err));
 
         function copyJson() {
             const text = document.getElementById('raw-json-code').textContent;

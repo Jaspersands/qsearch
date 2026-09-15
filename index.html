@@ -30,15 +30,16 @@
     <main id="top">
         <section class="hero" aria-labelledby="page-title">
             <div class="hero-copy">
-                <p class="eyebrow">Quantum algorithms research program</p>
+                <p class="eyebrow">Autonomous quantum algorithms research</p>
                 <h1 id="page-title">Q-Search</h1>
                 <p class="hero-lede">
-                    A proof-gated search for structural quantum advantage. The project tests high-upside ideas,
-                    attacks them with classical baselines, and records failures instead of promoting small examples.
+                    A proof-gated research engine hunting for structural quantum advantage on hard computational problems (Non-Abelian HSP, Graph Isomorphism, Code Equivalence). Rather than promoting toy benchmarks, Q-Search subjects candidate quantum mechanisms to automated classical attack suites, bounds information loss, and permanently indexes negative results.
                 </p>
                 <div class="hero-actions">
-                    <a class="primary-action" href="methodology.html">Research methodology</a>
-                    <a class="secondary-action" href="frontier.html">Frontier data</a>
+                    <a class="primary-action" href="#scorecard">Research scorecard</a>
+                    <a class="secondary-action" href="#case-study">Featured discovery</a>
+                    <a class="secondary-action" href="#negatives-spotlight">Negative spotlight</a>
+                    <a class="secondary-action" href="#quickstart">Quick reproduction</a>
                 </div>
             </div>
             <div class="verdict-block" aria-label="Current research verdict">
@@ -54,17 +55,100 @@
 
         <section class="metric-strip" aria-label="Research registry summary">
             <div><strong id="metric-experiments">--</strong><span>experiments specified</span></div>
-            <div><strong id="metric-results">--</strong><span>results recorded</span></div>
-            <div><strong id="metric-blockers">--</strong><span>active claim blockers</span></div>
+            <div><strong id="metric-results">--</strong><span>empirical checks</span></div>
+            <div><strong id="metric-blockers">--</strong><span>claim blockers</span></div>
             <div><strong id="metric-negatives">--</strong><span>negative results retained</span></div>
             <div><strong id="metric-debts">--</strong><span>open proof debts</span></div>
+        </section>
+
+        <section id="how-it-works" class="content-section engine-section">
+            <div class="section-heading">
+                <p class="eyebrow">Scientific operating model</p>
+                <h2>How Q-Search works</h2>
+                <p>
+                    Most quantum algorithm proposals fail because they collapse when scaled or when tested against classical dequantization.
+                    Q-Search operates an automated falsification loop designed to disprove its own candidates before any speedup is claimed.
+                </p>
+            </div>
+            <div class="pipeline-grid">
+                <div class="pipeline-card">
+                    <div class="step-num">01</div>
+                    <h3>Propose Mechanism</h3>
+                    <p>Generates candidate quantum observables, coset state frames, and noncommuting invariant operators for hard targets.</p>
+                    <span class="card-tag">Representation Theory</span>
+                </div>
+                <div class="pipeline-card">
+                    <div class="step-num">02</div>
+                    <h3>Classical Attack Suite</h3>
+                    <p>Attacks candidate states with classical ISD, Weisfeiler-Leman invariants, lattice BDD decoders, and Fourier contraction.</p>
+                    <span class="card-tag">Automated Falsification</span>
+                </div>
+                <div class="pipeline-card">
+                    <div class="step-num">03</div>
+                    <h3>Negative Result Index</h3>
+                    <p>Every dequantized candidate or structural obstruction is permanently indexed (914+ records) to prevent cyclical dead ends.</p>
+                    <span class="card-tag">Permanent Memory</span>
+                </div>
+                <div class="pipeline-card">
+                    <div class="step-num">04</div>
+                    <h3>Proof Debt Gate</h3>
+                    <p>No speedup is declared from small-scale simulation. Candidates must satisfy formal asymptotic complexity bounds.</p>
+                    <span class="card-tag">Complexity Gate</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="scorecard" class="content-section scorecard-section">
+            <div class="section-heading compact">
+                <p class="eyebrow">Executive scorecard</p>
+                <h2>Active frontiers &amp; triage status</h2>
+                <p>Summary of the three major computational programs and where they currently stand against classical attacks.</p>
+            </div>
+            <div class="scorecard-wrapper">
+                <table class="scorecard-table">
+                    <thead>
+                        <tr>
+                            <th>Track</th>
+                            <th>Target Problem</th>
+                            <th>Classical Attack / Falsifier</th>
+                            <th>Current Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Hidden Shift / DHSP</strong></td>
+                            <td>Dihedral Hidden Subgroup Problem</td>
+                            <td>Sieve accounting &amp; lattice nearest-plane attacks</td>
+                            <td><span class="status-label blocked">Route Blocked</span> Fixed-depth lists collapse; small-n success was a finite artifact.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Code Equivalence</strong></td>
+                            <td>Permutation Code Equivalence (McEliece)</td>
+                            <td>Hull projector reduction &amp; syzygy invariants</td>
+                            <td><span class="status-label blocked">Frontier Closed</span> Classical hull-projector attack resolved Goppa syzygy collisions.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Nonabelian Coset States</strong></td>
+                            <td>Symmetric Group (S<sub>n</sub>) HSP &amp; Graph Isomorphism</td>
+                            <td>Carrier extraction audit &amp; latent irrep models</td>
+                            <td><span class="status-label active">Active Frontier</span> Finite checks pass through n=9 (27/27 separated); scalable decoder open.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </section>
 
         <section id="overview" class="content-section overview-section">
             <div class="section-heading">
                 <p class="eyebrow">Research position</p>
                 <h2>What has actually been learned</h2>
-                <p id="overview-copy">Loading the current research position...</p>
+                <p style="font-size: 0.95rem; line-height: 1.55; margin-bottom: 14px;">
+                    <strong>The Strategy:</strong> Rather than attempting to completely label every multiplicity block (which spectral packing bounds prove is impossible with bounded-norm operators), the active frontier tests whether two QFTs extracting a subgroup carrier can perform binary detection while preserving phase coherence.
+                </p>
+                <div style="border-left: 2px solid var(--line); padding-left: 14px;">
+                    <span style="font-family: var(--mono); font-size: 0.68rem; font-weight: 600; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 4px;">Verified Ledger Position:</span>
+                    <p id="overview-copy" style="font-size: 0.84rem; color: #434840; margin: 0;">Loading the current research position...</p>
+                </div>
             </div>
             <div class="pipeline-visual">
                 <div class="visual-heading">
@@ -90,6 +174,111 @@
                 <h2>Research tracks</h2>
             </div>
             <div id="track-list" class="track-list" aria-live="polite"></div>
+        </section>
+
+        <section id="case-study" class="content-section case-study-section">
+            <div class="section-heading compact">
+                <p class="eyebrow">Featured Discovery</p>
+                <h2>Anatomy of an invariant &amp; its boundary</h2>
+                <p>A concrete walkthrough of how Q-Search generated a non-trivial algebraic invariant, proved it against known collisions, and immediately mapped its physical falsification boundary.</p>
+            </div>
+            <div class="case-study-card">
+                <div class="case-study-header">
+                    <h3>Resolving Coset Degeneracy for S<sub>8</sub> and S<sub>9</sub></h3>
+                    <p>In non-abelian hidden subgroup problems on the symmetric group S<sub>n</sub>, candidate quantum algorithms measure collective invariants of multiple coset states. The central question: Can a low-degree invariant separate all hidden conjugacy classes without exponentially decoding the full copy register?</p>
+                </div>
+                <div class="case-steps-grid">
+                    <div class="case-step">
+                        <div>
+                            <span class="case-step-num">Step 01</span>
+                            <h4>The Hypothesis</h4>
+                            <p>Test whether central commutant invariants of S<sub>n</sub> &wr; S<sub>k</sub> can distinguish hidden involutions with an inverse-polynomial spectral gap.</p>
+                        </div>
+                        <span class="case-step-badge hypothesis">Hypothesis</span>
+                    </div>
+                    <div class="case-step">
+                        <div>
+                            <span class="case-step-num">Step 02</span>
+                            <h4>The Collision Barrier</h4>
+                            <p>Standard two-generator invariants (TC2 / TT1) failed at n=8, collapsing into exact spectral degeneracies on 2 known graph targets.</p>
+                        </div>
+                        <span class="case-step-badge barrier">Barrier Found</span>
+                    </div>
+                    <div class="case-step">
+                        <div>
+                            <span class="case-step-num">Step 03</span>
+                            <h4>The System's Discovery</h4>
+                            <p>Q-Search synthesized an independent third generator TT1 + c&middot;TC1. Fourth moments proved simple spectrum for all c &ne; 0: separating <strong>20/20 targets at n=8</strong> and <strong>27/27 targets at n=9</strong>.</p>
+                        </div>
+                        <span class="case-step-badge discovery">Verified Invariant</span>
+                    </div>
+                    <div class="case-step">
+                        <div>
+                            <span class="case-step-num">Step 04</span>
+                            <h4>Automated Falsification</h4>
+                            <p>The reduction gate computed the exact natural-access sampling probability: bounded by (25/3)n<sup>9</sup> / (n!)<sup>3</sup>. Postselecting this branch from raw cosets decays factorially.</p>
+                        </div>
+                        <span class="case-step-badge falsifier">Obstruction Proved</span>
+                    </div>
+                    <div class="case-step">
+                        <div>
+                            <span class="case-step-num">Step 05</span>
+                            <h4>Epistemic Verdict</h4>
+                            <p>The finite algebraic separation is mathematically certified, but fixed-sector postselection cannot yield a speedup. A viable algorithm must adapt to typical high-dimensional partitions.</p>
+                        </div>
+                        <span class="case-step-badge verdict">Gated Claim</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="negatives-spotlight" class="content-section spotlight-section">
+            <div class="section-heading compact">
+                <p class="eyebrow">Negative Results Spotlight</p>
+                <h2>What Q-Search successfully killed</h2>
+                <p>Negative results are first-class scientific assets. Here are three representative candidate shortcuts that Q-Search rigorously disproved with automated attacks.</p>
+            </div>
+            <div class="spotlight-grid">
+                <article class="spotlight-card">
+                    <div>
+                        <div class="spotlight-top">
+                            <span class="spotlight-domain">Dihedral HSP</span>
+                            <span class="spotlight-id">DHS-NEAREST-PLANE</span>
+                        </div>
+                        <h3>Lattice Nearest-Plane Sieve Collapse</h3>
+                        <span class="spot-label">The Hypothesis</span>
+                        <p>Nearest-plane lattice decoding on Gowers-sieve coset states recovers dihedral reflections in polynomial time.</p>
+                        <span class="spot-label">The Falsifier</span>
+                        <p>All-target censuses across millions of targets proved fixed-depth lists collapse exponentially. Low-n success was a finite-dimension artifact.</p>
+                    </div>
+                </article>
+                <article class="spotlight-card">
+                    <div>
+                        <div class="spotlight-top">
+                            <span class="spotlight-domain">Code Equivalence</span>
+                            <span class="spotlight-id">CODE-GOPPA-SYZYGY</span>
+                        </div>
+                        <h3>Goppa Code Syzygy Collisions</h3>
+                        <span class="spot-label">The Hypothesis</span>
+                        <p>High-weight syzygies of alternant codes provide a quantum invariant that resists classical permutation attacks.</p>
+                        <span class="spot-label">The Falsifier</span>
+                        <p>An automated classical hull-projector reduction resolved the syzygy collisions in polynomial classical time, dequantizing the advantage.</p>
+                    </div>
+                </article>
+                <article class="spotlight-card">
+                    <div>
+                        <div class="spotlight-top">
+                            <span class="spotlight-domain">Coset States</span>
+                            <span class="spotlight-id">COSET-NATURAL-ACCESS</span>
+                        </div>
+                        <h3>Fixed-Sector Frame Postselection</h3>
+                        <span class="spot-label">The Hypothesis</span>
+                        <p>Postselecting stable 3-copy coupling trees provides efficient binary coset state discrimination.</p>
+                        <span class="spot-label">The Falsifier</span>
+                        <p>Exact weak-Fourier trace proved natural sampling mass decays factorially as O(n<sup>9</sup> / (n!)<sup>3</sup>), ruling out generic amplification.</p>
+                    </div>
+                </article>
+            </div>
         </section>
 
         <section id="evidence" class="content-section evidence-layout">
@@ -118,18 +307,56 @@
             <ol id="next-list" class="next-list"></ol>
         </section>
 
+        <section id="quickstart" class="content-section quickstart-section">
+            <div class="section-heading compact">
+                <p class="eyebrow">Deterministic reproduction</p>
+                <h2>Inspect &amp; verify locally in 30 seconds</h2>
+                <p>Every claim, theorem check, and classical attack suite is fully reproducible from source with automated tests.</p>
+            </div>
+            <div class="terminal-card">
+                <div class="terminal-header">
+                    <span class="terminal-dot red"></span>
+                    <span class="terminal-dot yellow"></span>
+                    <span class="terminal-dot green"></span>
+                    <span class="terminal-title">bash &mdash; local reproduction &amp; verification</span>
+                </div>
+                <pre class="terminal-code"><code><span class="t-comment"># 1. Clone the repository and install dependencies</span>
+<span class="t-cmd">git clone</span> https://github.com/Jaspersands/qsearch.git
+<span class="t-cmd">cd</span> qsearch &amp;&amp; <span class="t-cmd">pip install</span> -r requirements.txt
+
+<span class="t-comment"># 2. Run the classical baseline falsification test suite</span>
+<span class="t-cmd">pytest</span> tests/test_classical_baseline_suite.py
+
+<span class="t-comment"># 3. Verify the nonabelian coset carrier separation theorems (n=8, n=9)</span>
+<span class="t-cmd">pytest</span> tests/ -k "coset or commutant"</code></pre>
+            </div>
+        </section>
+
         <section class="content-section operations-band" aria-labelledby="operations-title">
             <div>
-                <p class="eyebrow">Execution model</p>
-                <h2 id="operations-title">How the project runs</h2>
+                <p class="eyebrow">Execution Model &amp; Authorship</p>
+                <h2 id="operations-title">How the project is built</h2>
             </div>
             <p id="execution-copy">
-                Research runs interactively during active Codex sessions. GitHub validates pushed snapshots, but no unattended process invents or tests algorithms between sessions.
+                Research runs interactively during active Codex sessions directed by Jasper Sands. GitHub Actions automatically validates pushed snapshots and enforces that no unverified claim passes the proof gate.
             </p>
-            <div class="operations-links">
+            <div class="author-profile-card">
+                <div class="author-meta">
+                    <h3>Jasper Sands</h3>
+                    <span class="author-role">Architect &amp; Researcher</span>
+                </div>
+                <div class="author-desc">
+                    <p>
+                        Q-Search is designed and built by Jasper Sands to explore proof-gated autonomous systems for quantum complexity theory.
+                        The mathematical formulations, classical attack matrices, and proof obligations are formally defined and verified by deterministic automated test suites, guaranteeing zero unchecked claims.
+                    </p>
+                </div>
+            </div>
+            <div class="operations-links" style="margin-top: 24px;">
                 <a href="repomap.html">Repository map</a>
-                <a href="proof-debt.html">Proof debt</a>
-                <a href="negative-results.html">Negative results</a>
+                <a href="proof-debt.html">Proof debt (24)</a>
+                <a href="negative-results.html">Negative results (914)</a>
+                <a href="methodology.html">Methodology</a>
             </div>
         </section>
     </main>

@@ -42,17 +42,66 @@ function renderTracks(tracks) {
     `).join("");
 }
 
+const milestoneMetadata = {
+    "The stable coupling-tree interface is complete": {
+        takeaway: "Constructed a polynomial-time coordinate mapping across all 25 encoded labels on both coupling trees.",
+        category: "Interface",
+        badgeClass: "active-badge"
+    },
+    "The stable three-copy frame is filterable": {
+        takeaway: "Proved a genuine spectral gap exists between involution families using a 3-copy quantum frame, bounded by an inverse polynomial.",
+        category: "Spectral Gap",
+        badgeClass: "gap-badge"
+    },
+    "Natural access kills the fixed stable branch": {
+        takeaway: "Disproved natural-access sampling: postselection probability decays factorially, ruling out fixed-branch algorithms.",
+        category: "Obstruction",
+        badgeClass: "neg-badge"
+    },
+    "Every fixed bounded-tail route is cut": {
+        takeaway: "Proved that bounded-tail Fourier mass vanishes factorially, mandating uniform adaptation to high-dimensional partitions.",
+        category: "Obstruction",
+        badgeClass: "neg-badge"
+    },
+    "An independent third generator repairs the known finite collisions": {
+        takeaway: "Coupling an independent third generator breaks all known spectral degeneracies at n=8 (20/20 targets) and n=9 (27/27 targets).",
+        category: "Active Invariant",
+        badgeClass: "active-badge"
+    }
+};
+
 function renderMilestones(milestones) {
     const container = document.getElementById("milestone-list");
-    container.innerHTML = milestones.map((item, index) => `
-        <article class="milestone">
-            <span class="milestone-index">${String(index + 1).padStart(2, "0")}</span>
-            <div>
-                <h3>${escapeHtml(item.title)}</h3>
-                <p>${escapeHtml(item.detail)}</p>
-            </div>
-        </article>
-    `).join("");
+    container.innerHTML = milestones.map((item, index) => {
+        const meta = milestoneMetadata[item.title];
+        if (meta) {
+            return `
+                <article class="milestone">
+                    <span class="milestone-index">${String(index + 1).padStart(2, "0")}</span>
+                    <div class="milestone-body">
+                        <div class="milestone-top">
+                            <h3>${escapeHtml(item.title)}</h3>
+                            <span class="milestone-badge ${meta.badgeClass}">${escapeHtml(meta.category)}</span>
+                        </div>
+                        <p class="milestone-impact"><strong>Takeaway:</strong> ${escapeHtml(meta.takeaway)}</p>
+                        <details class="milestone-formal">
+                            <summary>Formal Mathematical Proof &amp; Bounds</summary>
+                            <p>${escapeHtml(item.detail)}</p>
+                        </details>
+                    </div>
+                </article>
+            `;
+        }
+        return `
+            <article class="milestone">
+                <span class="milestone-index">${String(index + 1).padStart(2, "0")}</span>
+                <div class="milestone-body">
+                    <h3>${escapeHtml(item.title)}</h3>
+                    <p class="milestone-impact">${escapeHtml(item.detail)}</p>
+                </div>
+            </article>
+        `;
+    }).join("");
 }
 
 function renderConjecture(conjecture) {
