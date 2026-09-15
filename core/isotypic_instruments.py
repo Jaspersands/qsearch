@@ -541,6 +541,91 @@ def source_selector_low_occupation_contract(degree: int, copy_count: int, maximu
         "is_classical_dequantization": False}
 
 
+def source_selector_occupation_band_contract(degree: int, copy_count: int, low_maximum_weight: int,
+        high_minimum_weight: int, *, middle_mass_upper_bound: Fraction,
+        one_common_subset_query: bool, common_group_algebra_unitary: bool,
+        unitary_and_partition_fixed_before_inputs: bool, hidden_prior_uniform_on_involution_class: bool,
+        no_hidden_correlated_preprocessing_or_side_information: bool, source_records_classical: bool,
+        source_partition_is_irrep_coarsening: bool, only_source_records_and_selector_qubits_retained: bool,
+        physical_inputs_discarded: bool, mask_fixed_before_inputs_and_source_records: bool) -> dict:
+    """Combine actual cross-sector, low-support and high-tail bounds; review pending."""
+    t, s, k, pi = low_maximum_weight, high_minimum_weight, copy_count, middle_mass_upper_bound
+    if type(s) is not int or type(t) is not int or type(k) is not int or not 0 <= t < s <= k:
+        raise ValueError("integer thresholds 0<=low<high<=copy_count required")
+    if type(pi) not in (int, Fraction) or not 0 <= pi <= 1:
+        raise ValueError("exact rational middle-mass upper bound in [0,1] required")
+    assumptions = dict(one_common_subset_query=one_common_subset_query,
+        common_group_algebra_unitary=common_group_algebra_unitary,
+        unitary_and_partition_fixed_before_inputs=unitary_and_partition_fixed_before_inputs,
+        hidden_prior_uniform_on_involution_class=hidden_prior_uniform_on_involution_class,
+        no_hidden_correlated_preprocessing_or_side_information=no_hidden_correlated_preprocessing_or_side_information,
+        source_records_classical=source_records_classical, source_partition_is_irrep_coarsening=source_partition_is_irrep_coarsening,
+        only_source_records_and_selector_qubits_retained=only_source_records_and_selector_qubits_retained,
+        physical_inputs_discarded=physical_inputs_discarded,
+        mask_fixed_before_inputs_and_source_records=mask_fixed_before_inputs_and_source_records)
+    # The low comparison is a normalized PROJECTED mask, not the original input.
+    low = source_selector_low_occupation_contract(degree, k, t,
+        declared_mask_weight_and_support_bounds_hold=True, **assumptions)
+    applicable = low["applicable"]
+    pi = Fraction(0) if s == t+1 else Fraction(pi)
+    raw = low["raw_copy_upper_bound_power_of_two"]
+    high = cross = diagonal = None
+    terms = None
+    gain = 4*pi
+    gentle = _sqrt_ratio_dyadic_exponent(gain.numerator, gain.denominator)
+    combined = 0
+    high_threshold = min(s, 3*degree)
+    exclusive_threshold = min(s-t, 4*degree)
+    evaluated = applicable and low["trace_distance_upper_bound_power_of_two"] < 0 and low["geometric_envelope_available"]
+    if evaluated:
+        m, d, l = math.prod(range(1, degree, 2)), math.factorial(degree), degree*(degree-1)//2
+        rank = term = 1
+        for i in range(1, t+1):
+            term = term*(k-i+1)//i
+            rank += term
+        envelope = Fraction(m, m-k)
+        squares = {"low_column": Fraction(rank*(k+(1 << t)-1), 4*(m-k)),
+            "hidden_endpoint": Fraction(rank, 4)*envelope/m,
+            "alternative_off_endpoint": Fraction(rank*d*d, 4)*envelope*Fraction(4, l)**exclusive_threshold,
+            "null_off_endpoint": Fraction(rank*d*d, 4)*Fraction(1, l)**exclusive_threshold}
+        terms = {name: _sqrt_ratio_dyadic_exponent(value.numerator, value.denominator)
+                 for name, value in squares.items()}
+
+        def sum_bound(exponents):
+            value = sum((Fraction(2)**x for x in exponents if x is not None), Fraction(0))
+            return _sqrt_ratio_dyadic_exponent(value.numerator**2, value.denominator**2)
+
+        cross = sum_bound(terms.values())
+        tail_assumptions = {name: value for name, value in assumptions.items() if name != "source_partition_is_irrep_coarsening"}
+        high = source_selector_mask_tail_information_contract(degree, k, None, high_threshold,
+            mask_lower_tail_probability_upper_bound=0, **tail_assumptions)["trace_distance_upper_bound_power_of_two"]
+        diagonal = max(low["trace_distance_upper_bound_power_of_two"], high)
+        combined = sum_bound((diagonal, cross, gentle))
+    bound = min(raw, combined) if applicable else None
+    return {"degree": degree, "copy_count": k, "low_maximum_weight": t, "high_minimum_weight": s,
+        "middle_mass_upper_bound": str(middle_mass_upper_bound), "middle_interval_empty": s == t+1,
+        "effective_middle_mass_upper_bound": str(pi), "applicable": applicable,
+        "numerical_composite_envelope_evaluated": evaluated,
+        "low_sector_upper_bound_power_of_two": low["trace_distance_upper_bound_power_of_two"],
+        "high_sector_upper_bound_power_of_two": high, "pinched_sector_upper_bound_power_of_two": diagonal,
+        "cross_component_upper_bound_powers_of_two": terms,
+        "cross_sector_contribution_upper_bound_power_of_two": cross,
+        "gentle_middle_removal_upper_bound_power_of_two": gentle if applicable else None,
+        "raw_copy_upper_bound_power_of_two": raw,
+        "trace_distance_upper_bound_power_of_two": bound, "bound_is_vacuous": bound == 0 if applicable else None,
+        "high_tail_threshold_used": high_threshold, "high_only_decay_threshold_used": exclusive_threshold,
+        "bounded_quantity": "Class-decision T of the whole fixed mask with the supplied middle-mass bound",
+        "formula": "T <= min(1, raw, max(T_low,T_high)+sqrt(N_low)*B_cross/2+2sqrt(pi))",
+        "low_high_coherence_explicitly_charged": True, "shared_positions_counted_as_high_only": False,
+        "selector_rank_factor_charged": True, "source_adaptive_masks_covered": False,
+        "middle_mass_bound_independently_verified": False, "all_arbitrary_masks_obstructed": False,
+        "intermediate_weight_band_obstructed": False,
+        "scope": "One fixed common group-algebra query on standard mixed coset inputs with one shared uniform fixed-point-free involution, irrep-coarsened classical sources and physical discard. The fixed source-independent mask has mass <=pi strictly between weights t and s. The actual low/high cross block pays sqrt(N_low) and decays on HIGH-ONLY sites, not overlaps. At K=n^2,t=n/4,s=3n, negligible middle mass is obstructed asymptotically. This does not exclude masks carrying nonnegligible intermediate-band mass or changed physical/query access.",
+        "proof_status": "derived-occupation-band-bound-review-pending",
+        "assumption_contract_not_arbitrary_program_verifier": True, "formal_proof_verification": False,
+        "independent_review": False, "novelty_established": False, "is_classical_dequantization": False}
+
+
 def selector_mask_symmetry_contract(copy_count: int, *, source_labelled_schur_channel: bool,
         joint_source_and_selector_permutation_covariance: bool, mask_fixed_before_source_records: bool,
         natural_source_masses_retained: bool, unrestricted_final_measurement: bool) -> dict:
