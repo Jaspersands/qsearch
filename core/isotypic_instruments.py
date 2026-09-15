@@ -626,6 +626,52 @@ def source_selector_occupation_band_contract(degree: int, copy_count: int, low_m
         "independent_review": False, "novelty_established": False, "is_classical_dequantization": False}
 
 
+def source_selector_coefficient_mass_contract(degree: int, copy_count: int, coefficient_l1_squared_upper_bound: Fraction, *,
+        one_common_subset_query: bool, common_group_algebra_unitary: bool,
+        unitary_and_partition_fixed_before_inputs: bool, hidden_prior_uniform_on_involution_class: bool,
+        no_hidden_correlated_preprocessing_or_side_information: bool, source_records_classical: bool,
+        source_partition_is_irrep_coarsening: bool, only_source_records_and_selector_qubits_retained: bool,
+        physical_inputs_discarded: bool, mask_fixed_before_inputs_and_source_records: bool,
+        declared_coefficient_mass_bound_holds: bool) -> dict:
+    """All fixed masks, but only queries with a supplied coefficient-mass bound."""
+    from sympy.functions.combinatorial.numbers import partition
+    if type(degree) is not int or degree < 8 or degree % 2 or type(copy_count) is not int or copy_count < 1:
+        raise ValueError("even degree >=8 and positive integer copies required")
+    b = coefficient_l1_squared_upper_bound
+    if type(b) not in (int, Fraction) or b < 1:
+        raise ValueError("exact rational coefficient squared-l1 upper bound >=1 required")
+    flags = (one_common_subset_query, common_group_algebra_unitary, unitary_and_partition_fixed_before_inputs,
+        hidden_prior_uniform_on_involution_class, no_hidden_correlated_preprocessing_or_side_information,
+        source_records_classical, source_partition_is_irrep_coarsening,
+        only_source_records_and_selector_qubits_retained, physical_inputs_discarded,
+        mask_fixed_before_inputs_and_source_records, declared_coefficient_mass_bound_holds)
+    if any(type(flag) is not bool for flag in flags):
+        raise ValueError("explicit boolean architecture and coefficient assumptions required")
+    b = min(Fraction(b), Fraction(math.factorial(degree)))
+    classes, hidden_class = int(partition(degree)), math.prod(range(1, degree, 2))
+    squared = 4*copy_count**2*b*b*Fraction(classes, hidden_class)
+    bound = _sqrt_ratio_dyadic_exponent(squared.numerator, squared.denominator) if all(flags) else None
+    def exact_ratio(value):
+        value = Fraction(value)
+        if max(value.numerator.bit_length(), value.denominator.bit_length()) < 12000:
+            return str(value)
+        return {"numerator_hex": hex(value.numerator), "denominator_hex": hex(value.denominator)}
+    return {"degree": degree, "copy_count": copy_count,
+        "coefficient_l1_squared_upper_bound": exact_ratio(coefficient_l1_squared_upper_bound),
+        "effective_coefficient_l1_squared_upper_bound": exact_ratio(b), "conjugacy_class_count": classes,
+        "applicable": all(flags), "average_individual_trace_distance_upper_bound_power_of_two": bound,
+        "class_decision_trace_distance_upper_bound_power_of_two": bound,
+        "bound_is_vacuous": bound == 0 if all(flags) else None,
+        "formula": "E_h T <= min(1, 2*K*(sum_g |a_g|)^2*sqrt(p(n)/M)); T_class <= E_h T",
+        "covers_all_fixed_selector_masks": all(flags), "reference_ancilla_extension_in_derivation": True,
+        "covers_all_common_group_algebra_queries_nontrivially": False,
+        "source_adaptive_masks_covered": False, "raw_copy_cap_applied_to_average_individual_distance": False,
+        "coefficient_bound_independently_verified": False, "is_classical_dequantization": False,
+        "coefficient_mass_is_a_general_gate_lower_bound": False,
+        "proof_status": "derived-coefficient-mass-channel-bound-review-pending",
+        "formal_proof_verification": False, "independent_review": False, "novelty_established": False}
+
+
 def selector_mask_symmetry_contract(copy_count: int, *, source_labelled_schur_channel: bool,
         joint_source_and_selector_permutation_covariance: bool, mask_fixed_before_source_records: bool,
         natural_source_masses_retained: bool, unrestricted_final_measurement: bool) -> dict:

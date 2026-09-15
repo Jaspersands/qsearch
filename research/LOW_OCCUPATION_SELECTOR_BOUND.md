@@ -9,6 +9,12 @@ for a mask supported on sufficiently small subsets. Unlike the vacuum
 bound, the quantity here is total class-decision trace distance. Its price
 is the selector support dimension; that price cannot be dropped.
 
+Follow-up: [occupation-band localization](OCCUPATION_BAND_LOCALIZATION.md)
+now separately bounds the actual cross block for sufficiently separated
+low/high sectors. The warning below against combining their diagonal bounds
+alone remains valid. Intermediate-band mass and middle/outside coherence
+remain unresolved.
+
 ## Statement
 
 Use exactly the fixed one-common-group-algebra-query architecture of the

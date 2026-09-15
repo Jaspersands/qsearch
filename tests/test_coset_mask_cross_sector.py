@@ -146,4 +146,9 @@ def test_separate_low_high_bounds_do_not_resolve_the_new_cross_sector_lemma(tmp_
         assert _binary_carrier_instrument_lemmas("CODE-COSET-COLLECTIVE")[20].status == "blocked-occupation-band-evidence-missing"
         gate[required] = True
     path.write_text(json.dumps({"claim_gate": gate}))
-    assert _binary_carrier_instrument_lemmas("CODE-COSET-COLLECTIVE")[20].status == "derived-occupation-band-bound-review-pending"
+    lemmas = _binary_carrier_instrument_lemmas("CODE-COSET-COLLECTIVE")
+    assert len({lemma.id for lemma in lemmas}) == len(lemmas)
+    assert lemmas[20].status == "derived-occupation-band-bound-review-pending"
+    for required in gate:
+        path.write_text(json.dumps({"claim_gate": dict(gate, **{required: False})}))
+        assert _binary_carrier_instrument_lemmas("CODE-COSET-COLLECTIVE")[20].status == "blocked-occupation-band-evidence-missing"

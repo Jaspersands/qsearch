@@ -109,12 +109,12 @@ def audit_environment_fidelity():
         "is_quantum_algorithm_experiment": False}
 
 
-@lru_cache(maxsize=3, typed=True)
-def _regular_selector_model(copies, degree=3):
-    """Shared regular-basis effects, not a reduced character-kernel calculation."""
+@lru_cache(maxsize=2, typed=True)
+def regular_selector_query_control(degree=3):
+    """One-register calibration query, independent of the selector copy count."""
     from coset_binary_carrier_instruments import _source_parity_group_data
-    if type(copies) is not int or type(degree) is not int or (degree, copies) not in ((3, 2), (3, 3), (4, 2)):
-        raise ValueError("physical mask controls require S3 with two/three copies or S4 with two copies")
+    if type(degree) is not int or degree not in (3, 4):
+        raise ValueError("regular query controls require S3 or S4")
     data = _source_parity_group_data(degree, 1 if degree == 3 else 2)
     d, product = len(data[0]), data[7]
     actions = np.eye(d)[product]
@@ -125,6 +125,19 @@ def _regular_selector_model(copies, degree=3):
     spectrum, vectors = np.linalg.eigh((hamiltonian+hamiltonian.conj().T)/2)
     unitary = (vectors*np.exp(.73j*spectrum)) @ vectors.conj().T
     coefficients = unitary[:, 0]
+    residual = float(np.linalg.norm(unitary.conj().T @ unitary-np.eye(d)))
+    for array in (actions, projectors, coefficients):
+        array.setflags(write=False)
+    return data, actions, projectors, coefficients, residual
+
+
+@lru_cache(maxsize=3, typed=True)
+def _regular_selector_model(copies, degree=3):
+    """Shared regular-basis effects, not a reduced character-kernel calculation."""
+    if type(copies) is not int or type(degree) is not int or (degree, copies) not in ((3, 2), (3, 3), (4, 2)):
+        raise ValueError("physical mask controls require S3 with two/three copies or S4 with two copies")
+    data, actions, projectors, coefficients, residual = regular_selector_query_control(degree)
+    d = len(actions)
     size = 2**copies
     queries = []
     for s in range(size):
@@ -136,7 +149,7 @@ def _regular_selector_model(copies, degree=3):
             query += coefficients[g]*term
         queries.append(query)
     effects = np.array([[other.conj().T @ query for other in queries] for query in queries])
-    residuals = {"regular_unitary": float(np.linalg.norm(unitary.conj().T @ unitary-np.eye(d))),
+    residuals = {"regular_unitary": residual,
         "every_mask_unitary": max(float(np.linalg.norm(q.conj().T @ q-np.eye(d**copies))) for q in queries)}
     return data, actions, projectors, coefficients, effects, residuals
 

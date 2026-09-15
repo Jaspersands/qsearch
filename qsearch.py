@@ -19606,6 +19606,9 @@ def command_coset_binary_carrier_instruments(args: argparse.Namespace) -> int:
     print(payload["selector_mask_symmetry_research_update"])
     print(payload["vacuum_coherence_research_update"])
     print(payload["low_occupation_research_update"])
+    print(payload["occupation_band_research_update"])
+    print(payload["selector_schur_research_update"])
+    print(payload["selector_coefficient_mass_research_update"])
     print(json.dumps(payload["headline_metrics"], indent=2))
     return 0 if validate_registry()["valid"] and payload["claim_gate"]["finite_complete_channel_evaluation_verified"] else 1
 

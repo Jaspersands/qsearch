@@ -55245,6 +55245,22 @@
   {
     "applies_to": [
       "CODE-COSET-COLLECTIVE",
+      "source-stabilizer selector measurement compilation"
+    ],
+    "claim": "Radializing a fixed selector mask guarantees polynomial-size output matrices or an efficient final measurement through copy-permutation symmetry alone, with all irrep source labels retained at growing degree.",
+    "evidence": {
+      "artifact": "research/representation/coset_binary_carrier_instruments.json",
+      "derivation": "research/SOURCE_RESOLVED_SELECTOR_SCHUR.md",
+      "status": "derived-review-pending"
+    },
+    "id": "FULL-SOURCE-SELECTOR-SCHUR-NOT-POLYNOMIAL-COMPRESSION",
+    "lesson": "This defeats a symmetry-only small-matrix argument, NOT all efficient measurements or the intermediate occupation band. Matrix dimension is not a circuit lower bound. Source erasure strictly loses information in physical controls; charge it rather than equating small-category experiments with the full-source optimum. Keep cross-weight coherence, every spin multiplicity and the shared-hidden average after products. Find additional operator structure or a concrete retained-physical primitive; do not extrapolate fixed-S3 improvements. Standard Schur-Weyl theory is not a novel algorithm or an internal Specht recoupling compiler.",
+    "reason_invalid": "The exact source-stabilizer Schur decomposition retains all spin sectors and both spin/source multiplicities. Its total matrix entries are binomial(K+4r-1,4r-1), polynomial in K only at fixed category count r, before factorial group-pair contraction and precision costs. Under full irrep sources p=d^2/n! and q=d(d+chi(h))/n!, the q law is iid across copies and bounded by 2p. Existing maximal-dimension estimates imply vanishing source collisions at polynomial K under both hypotheses. All-distinct sources leave a trivial stabilizer and a 2^K block in this reduction.",
+    "source": "EXP-COSET-BINARY-CARRIER-INSTRUMENTS"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
       "one-query full-source Walsh transcripts"
     ],
     "claim": "Keeping all source irrep labels or using complex central phases automatically rescues a one-query uniform-mask Walsh measurement at large participating-copy count.",
@@ -56906,6 +56922,22 @@
     "lesson": "Stop extending local block products; search for a global shared-label or commutant-algebra transform.",
     "reason_invalid": "On overwhelming natural mass, every local partition has normalization at least 2^(k/2), which is superpolynomial at k=ceil(log2((n-1)!!)).",
     "source": "EXP-CODE-SELF-DUAL-WREATH-LOCAL-BLOCK-METRIC-NORMALIZATION-NO-GO"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "low coefficient-mass common-query fixed masks"
+    ],
+    "claim": "At polynomial copy count, a polynomial-support common query, a sufficiently short typed involutory-rotation word, or a single polynomial-dimensional irrep reflection rescues the physical-discard architecture by choosing a better fixed selector mask or final POVM.",
+    "evidence": {
+      "artifact": "research/representation/coset_binary_carrier_instruments.json",
+      "derivation": "research/SELECTOR_COEFFICIENT_MASS_BOUND.md",
+      "status": "derived-review-pending"
+    },
+    "id": "LOW-COEFFICIENT-MASS-ALL-MASK-OBSTRUCTION",
+    "lesson": "This is a derived/review-pending QUERY-MASS restriction, not an all-query no-go or classical sampler. Generic dense coefficient mass leaves the bound vacuous, and large mass is not a general gate lower bound. Require a canonical coefficient certificate, charge every source mass, keep the shared hidden member until after tensoring, and distinguish average individual distance from class-decision distance. Source adaptation, retained physical data, larger-mass queries and multiple-query architectures need separate arguments. Independent proof and novelty review remain required; a vacuous bound is not positive evidence.",
+    "reason_invalid": "For each group-pair coefficient the single-bit source-labelled cross map factors through two isometries and has diamond norm at most one. Shifted character squares average to at most p(n)/M. Tensor telescoping and the squared coefficient-l1 charge give E_h T<=2 K (sum_g |a_g|)^2 sqrt(p(n)/M) for ALL fixed selector states, including independent reference extensions and every weight band. Support S gives squared coefficient mass <=S. A product of q involutory group rotations gives <=2^q and is obstructed for q<=(1/4-epsilon)n log2 n. A target-irrep reflection has coefficient-l1 norm <=1+2d_lambda; the dense sign reflection has exact norm 3-4/|G|. At S1024,K=n^2 the rounded distance bound is 2^-2097 for S<=n^2 and 2^-2113 for the sign reflection.",
+    "source": "EXP-COSET-BINARY-CARRIER-INSTRUMENTS"
   },
   {
     "applies_to": [
@@ -84036,6 +84068,22 @@
     "lesson": "Apply primal/dual Schur powers and local puncture/shortening filtrations before measurement design.",
     "reason_invalid": "A polynomial-time permutation-invariant Schur filtration separates the pair; it cannot support a hard code-equivalence coset row.",
     "source": "code_schur_filtration.py"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "separated low/high coherent selector masks"
+    ],
+    "claim": "At K=n^2, coherence between weights <=n/4 and >=3n rescues a fixed one-common-query physical-discard mask that has only superpolynomially small mass in the intervening band.",
+    "evidence": {
+      "artifact": "research/representation/coset_binary_carrier_instruments.json",
+      "derivation": "research/OCCUPATION_BAND_LOCALIZATION.md",
+      "status": "derived-review-pending"
+    },
+    "id": "SEPARATED-LOW-HIGH-COHERENCE-NOT-ASYMPTOTIC-ESCAPE",
+    "lesson": "This derived/review-pending result establishes necessary intermediate-band mass, not a working algorithm or an all-mask no-go. Do not project to the middle band alone: coherence between middle and outside sectors may carry information. Do not factor E_h conj(a_h)L_h into independent averages or replace the physical rank by radial parameter count. The intermediate band, source-adaptive operations, physical retention and multiple queries remain unresolved; independent proof and novelty review remain required.",
+    "reason_invalid": "An independent double-character expansion splits the HIGH-side coefficient into e, h and off-endpoint terms. The e term is a low vacuum column, the h term keeps the correlated class average, and off-endpoint decay occurs on T minus S only. The rectangular cross block pays sqrt(N_low), not the high-sector dimension. Adding the actual cross bound to the low/high diagonal bounds and a 2sqrt(pi) middle-removal cost gives T<=2^-216 at S1024 and <=2^-1883 at S4096 for zero middle mass. Exact S6 countercontrols show why shared sites cannot be charged as decaying.",
+    "source": "EXP-COSET-BINARY-CARRIER-INSTRUMENTS"
   },
   {
     "applies_to": [

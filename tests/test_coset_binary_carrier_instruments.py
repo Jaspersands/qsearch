@@ -169,6 +169,7 @@ def test_clean_registry_runner_and_negative_baseline_artifacts(tmp_path, monkeyp
     assert "FIXED-MASK-PHASE-ASYMMETRY-NOT-EXTRA-INFORMATION" in negatives
     assert "VACUUM-COHERENCE-NOT-ASYMPTOTIC-RESCUE" in negatives
     assert "LOW-OCCUPATION-SUPPORT-DIMENSION-OBSTRUCTION" in negatives
+    assert "SEPARATED-LOW-HIGH-COHERENCE-NOT-ASYMPTOTIC-ESCAPE" in negatives
     from dequantization_checks import findings_from_negative_results
     from proof_tracker import _binary_carrier_instrument_lemmas
     findings = findings_from_negative_results([{"id": "CODE-COSET-COLLECTIVE"}], load_negative_results())
@@ -223,6 +224,16 @@ def test_clean_registry_runner_and_negative_baseline_artifacts(tmp_path, monkeyp
     assert lemmas[19].status == "derived-low-occupation-support-bound-review-pending"
     low_support = next(row for row in findings if row.id.endswith("LOW-OCCUPATION-SUPPORT-BOUND"))
     assert "do NOT bound their mutual coherence" in low_support.required_action
+    assert lemmas[20].status == "derived-occupation-band-bound-review-pending"
+    band = next(row for row in findings if row.id.endswith("OCCUPATION-BAND-LOCALIZATION"))
+    assert "Do not project to the middle band alone" in band.required_action
+    assert lemmas[21].status == "derived-source-resolved-selector-schur-boundary-review-pending"
+    schur = next(row for row in findings if row.id.endswith("SOURCE-RESOLVED-SELECTOR-SCHUR-BOUNDARY"))
+    assert "Matrix dimension is not a circuit lower bound" in schur.required_action
+    assert lemmas[22].status == "derived-selector-coefficient-mass-bound-review-pending"
+    mass = next(row for row in findings if row.id.endswith("SELECTOR-COEFFICIENT-MASS-BOUND"))
+    assert "not an all-query no-go" in mass.required_action
+    assert "average individual distance" in mass.required_action
     quantum = next(row for row in findings if row.id.endswith("SOURCE-SELECTOR-QUANTUM-MIXTURE-BOUND"))
     assert "Source records are CLASSICAL" in quantum.required_action
     assert "intermediate window is closed ASYMPTOTICALLY" in quantum.required_action

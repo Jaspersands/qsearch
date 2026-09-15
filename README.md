@@ -136,8 +136,22 @@ review-pending derivation, not a total-information bound or novelty claim.
 The [low-occupation support bound](research/LOW_OCCUPATION_SELECTOR_BOUND.md)
 bounds entire masks below a growing weight threshold after charging their
 physical support dimension. For K=n^2, support at weights <=n/4 is obstructed
-asymptotically. Coherent mixtures of low and high sectors remain unresolved;
-separate sector bounds cannot be combined by silently discarding coherence.
+asymptotically. Separate sector bounds cannot be combined by discarding coherence.
+The [occupation-band localization](research/OCCUPATION_BAND_LOCALIZATION.md)
+now charges the actual cross block for sufficiently separated low/high sectors.
+At K=n^2 it makes nonnegligible mass between weights n/4 and 3n necessary
+for a signal. The middle band and coherence with outside sectors remain
+unresolved; this is not a sufficient condition or a working algorithm.
+The [source-resolved spin-block audit](research/SOURCE_RESOLVED_SELECTOR_SCHUR.md)
+preserves those coherences in an exact representation, but exposes its cost:
+full irrep source labels are asymptotically distinct, leaving exponentially
+large blocks under this symmetry alone. Coarsening sources can lose signal;
+the reduction does not compile the remaining measurement.
+The [coefficient-mass channel bound](research/SELECTOR_COEFFICIENT_MASS_BOUND.md)
+covers every fixed mask for sufficiently small group-algebra coefficient mass.
+Polynomial-support queries and single low-dimensional irrep reflections
+cannot escape through the intermediate band. Larger-mass compiled queries
+and changed physical access remain unresolved.
 The [classical value-access audit](research/CLASSICAL_VALUE_ACCESS_AUDIT.md)
 replaces hidden full-table quadratic reconstruction with counted point queries,
 including exact-residue controls on nonmaterializable domains. Sample-limited

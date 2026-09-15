@@ -66,8 +66,8 @@
       "target_claim": "The coset observable is not a disguised classical invariant."
     }
   ],
-  "created_at": "2026-09-14T11:16:00.379738+00:00",
-  "lemma_count": 1282,
+  "created_at": "2026-09-15T11:50:59.744286+00:00",
+  "lemma_count": 1285,
   "lemmas": [
     {
       "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -767,6 +767,46 @@
       "id": "LEMMA-CODE-COSET-COLLECTIVE-LOW-OCCUPATION-SUPPORT-BOUND",
       "statement": "For a fixed pure selector mask with support size <=N and maximum subset weight t in the one-common-query physical-discard architecture, each matrix entry has active union <=min(K,2t). Compressed-input chi-square, source-weighted Hilbert-Schmidt norm and selector rank <=N give the FULL mask decision distance T<=sqrt(N*(K+2^min(K,2t)-1)/(M-K))/2 for K<M. With N<=sum_(i<=t) binomial(K,i), K=n^2 and t=n/4 this is negligible asymptotically. It includes all intra-support coherences but not arbitrary low/high cross-sector mixtures.",
       "status": "derived-low-occupation-support-bound-review-pending"
+    },
+    {
+      "candidate_id": "CODE-COSET-COLLECTIVE",
+      "depends_on": [
+        "LEMMA-CODE-COSET-COLLECTIVE-LOW-OCCUPATION-SUPPORT-BOUND",
+        "LEMMA-CODE-COSET-COLLECTIVE-MASK-TAIL-FIDELITY-BOUND",
+        "PO-INPUT-MODEL",
+        "PO-MEASUREMENT",
+        "PO-SUCCESS"
+      ],
+      "falsification_test": "Verify all four weighted cross-coefficient terms against double-character expansions on ordered pairs with |T|>|S|. Check high-side endpoint identities with hidden members averaged only after products, never factor the correlated average. In the S6 counterexample with shared g'=g=v, verify exclusive decay without charging overlap. Keep all source masses, the rectangular sqrt(N_L) rank charge and gentle middle cost, and verify outward integer rounding in composite envelopes. Separate sector bounds alone are insufficient. Necessary middle mass does not justify projecting away outside-sector coherence. Masks carrying nonnegligible intermediate-band mass, source adaptation, physical retention and multiple queries are not ruled out. Independent proof and novelty review remain required.",
+      "id": "LEMMA-CODE-COSET-COLLECTIVE-OCCUPATION-BAND-LOCALIZATION",
+      "statement": "For one fixed common group-algebra query on standard mixed coset inputs with a shared uniform fixed-point-free involution, irrep-coarsened classical sources, fixed source-independent mask and physical discard, masks with mass <=pi strictly between weights t and s have decision distance T <= min(1, raw, max(T_low, T_high) + sqrt(N_L)*B_cross/2 + 2*sqrt(pi)). For K=n^2, t=n/4, s=3n, negligible middle mass is obstructed asymptotically. The actual low/high cross block pays sqrt(N_L) and decays on high-only positions, not overlaps. This does not bound intermediate-band masks or changed physical/query access.",
+      "status": "derived-occupation-band-bound-review-pending"
+    },
+    {
+      "candidate_id": "CODE-COSET-COLLECTIVE",
+      "depends_on": [
+        "LEMMA-CODE-COSET-COLLECTIVE-SELECTOR-MASK-SYMMETRY-REDUCTION",
+        "PO-INPUT-MODEL",
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY"
+      ],
+      "falsification_test": "Compare complete physical spectra for every source histogram and hidden member, including lower spins and repeated multiplicities. Verify normalized Dicke/singlet tensor actions for singular nonnormal kernels. Check source-orbit counting, total weight coherence and no source renormalization. Establish iid q from conjugacy invariance, q<=2p and exact source collision laws; do not infer a finite crossover from unspecified asymptotic constants. Source erasure is not lossless. Global covariance moves source blocks; it does not stabilize an all-distinct ordered tuple. Additional within-block structure and alternative measurements remain open; standard Schur transforms do not supply the missing classifier.",
+      "id": "LEMMA-CODE-COSET-COLLECTIVE-SOURCE-RESOLVED-SELECTOR-SCHUR-BOUNDARY",
+      "statement": "A fixed radial source-selector channel decomposes under the stabilizer of its classical source tuple into determinant-twisted symmetric powers of local 2x2 kernels. Keep spin multiplicities, source-orbit multiplicities and coherent total weights. Total matrix entries are binomial(K+4r-1,4r-1), polynomial in copies only at fixed category count, excluding group contraction and precision. For full S_n irrep sources, q<=2p and maximal-dimension bounds make polynomially many source labels asymptotically all distinct under both hypotheses; the stabilizer reduction leaves a 2^K block. This is not a circuit lower bound or an intermediate-band obstruction.",
+      "status": "derived-source-resolved-selector-schur-boundary-review-pending"
+    },
+    {
+      "candidate_id": "CODE-COSET-COLLECTIVE",
+      "depends_on": [
+        "PO-INPUT-MODEL",
+        "PO-QUANTUM-MECHANISM",
+        "PO-COMPLEXITY",
+        "PO-MEASUREMENT"
+      ],
+      "falsification_test": "Reconstruct cross kernels from physical purifications and source projectors, proving rather than inferring norm-one cross-isometry factorizations. Check arbitrary reference-ancilla operators, exact group-shift character squares, shared-h tensor products and telescoping. Keep the squared coefficient-l1 factor and actual canonical word coefficients; l2 normalization does not make l1 one. Distinguish T_class from E_h T and never apply the raw-copy cap to the latter. Coefficient certificates and typed word length do not bound arbitrary circuit complexity. Source-adaptive preparation and large coefficient mass remain outside a useful bound. Require independent proof and novelty review.",
+      "id": "LEMMA-CODE-COSET-COLLECTIVE-SELECTOR-COEFFICIENT-MASS-BOUND",
+      "statement": "In the fixed common-query physical-discard architecture, source-labelled cross maps have diamond norm <=1. Shifted character-square averaging over the shared hidden involution, tensor telescoping and coefficient triangle give E_h T<=2 K (sum_g |a_g|)^2 sqrt(p(n)/M) uniformly over ALL fixed selector states and independent reference extensions. Polynomial-support queries and q<=(1/4-epsilon)n log2 n typed involutory-rotation products are obstructed asymptotically. This excludes their intermediate masks too, but generic dense queries give a vacuous bound. Coefficient mass is not a general circuit lower bound.",
+      "status": "derived-selector-coefficient-mass-bound-review-pending"
     },
     {
       "candidate_id": "CODE-COSET-COLLECTIVE",

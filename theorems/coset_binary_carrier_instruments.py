@@ -1991,6 +1991,12 @@ def build_binary_carrier_instrument_report() -> dict:
     source_squares = audit_source_character_squares()
     vacuum = audit_vacuum_coherence()
     low_occupation = audit_low_occupation_support()
+    from coset_mask_cross_sector import audit_cross_sector_coherence, occupation_band_scaling_controls
+    cross_sector = audit_cross_sector_coherence()
+    from coset_selector_schur import audit_source_resolved_selector_schur
+    selector_schur = audit_source_resolved_selector_schur()
+    from coset_selector_coefficient_mass import audit_coefficient_mass_channel_bound
+    coefficient_mass = audit_coefficient_mass_channel_bound()
     scaling = [{"half_degree": m, "block_size": 3, "classical_history_blocks": m**2,
                 "trace_distance_squared_upper_bound": str(invariant_block_transcript_distance_squared_bound(m, 3, m**2))}
                for m in (4, 8, 16, 32, 64, 128)]
@@ -2002,7 +2008,8 @@ def build_binary_carrier_instrument_report() -> dict:
                 and weight_audit["verified"] and source_audit["verified"] and complex_audit["verified"]
                 and orbit_audit["verified"] and quantum_selector_verified and source_label_audit["verified"]
                 and noncentral_verified and typical_verified and mask_tail_verified and mask_symmetry["verified"]
-                and source_squares["verified"] and vacuum["verified"] and low_occupation["verified"])
+                and source_squares["verified"] and vacuum["verified"] and low_occupation["verified"]
+                and cross_sector["verified"] and selector_schur["verified"] and coefficient_mass["verified"])
     witness_shape = (4, 2)
     coefficient = kronecker_coefficient(witness_shape, witness_shape, witness_shape)
     d = hook_length_dimension(witness_shape)
@@ -2070,6 +2077,16 @@ def build_binary_carrier_instrument_report() -> dict:
         "low_occupation_support_audit": low_occupation,
         "low_occupation_scaling_controls": low_occupation_scaling_controls(),
         "low_occupation_research_update": "An active-union chi-square bound followed by a selector-rank charge now bounds the ENTIRE low-weight mask. At K=n^2, all fixed masks supported at weights <=n/4 have T<=2^-217 for S1024 and <=2^-1884 for S4096. The general criterion charges N=sum_(i<=t) binomial(K,i), not merely K+1 radial parameters. Coherent mixtures with higher sectors remain unresolved even if each sector separately fails. Derived/review-pending only; no all-mask no-go, novelty or speedup claim.",
+        "occupation_band_derivation": "research/OCCUPATION_BAND_LOCALIZATION.md",
+        "selector_schur_derivation": "research/SOURCE_RESOLVED_SELECTOR_SCHUR.md",
+        "source_resolved_selector_schur": selector_schur,
+        "selector_schur_research_update": selector_schur["research_update"],
+        "selector_coefficient_mass_derivation": "research/SELECTOR_COEFFICIENT_MASS_BOUND.md",
+        "selector_coefficient_mass_audit": coefficient_mass,
+        "selector_coefficient_mass_research_update": coefficient_mass["research_update"],
+        "cross_sector_coherence_audit": cross_sector,
+        "occupation_band_scaling_controls": occupation_band_scaling_controls(),
+        "occupation_band_research_update": "A separately derived physical cross-block bound now controls coherent mixtures of sufficiently separated low/high sectors, charging sqrt(N_low) and decay only on high-exclusive positions. At K=n^2, masks with negligible mass between weights n/4 and 3n are obstructed asymptotically. With zero middle mass, total T<=2^-216 at S1024 and <=2^-1883 at S4096. This makes middle-band mass necessary, not sufficient, and does not justify projecting away coherence with outside sectors. The intermediate band, changed access, novelty and independent proof remain open.",
         "coherent_parity_scaling_controls": coherent_parity_scaling_controls(),
         "symmetric_terminal_fourier_norm_controls": [
             {key: value for key, value in symmetric_boolean_fourier_profile(k, rule, threshold).items()
@@ -2138,6 +2155,17 @@ def build_binary_carrier_instrument_report() -> dict:
             "vacuum_coherence_probes_verified": sum(len(row["probes"]) for row in vacuum["controls"]),
             "low_occupation_matrix_entries_verified": sum(row["matrix_entries_checked"] for row in low_occupation["controls"]),
             "low_occupation_full_mask_probes_verified": sum(len(row["probes"]) for row in low_occupation["controls"]),
+            "cross_sector_double_character_pairs_verified": sum(len(row["rows"]) for row in cross_sector["controls"]),
+            "cross_sector_full_mask_probes_verified": sum(len(row["probes"]) for row in cross_sector["controls"]),
+            "exact_overlap_decay_counterexamples": len(cross_sector["overlap_counterexample"]["controls"]),
+            "selector_schur_full_spectral_controls": len(selector_schur["controls"]),
+            "selector_schur_source_collision_controls": len(selector_schur["source_collision_controls"]),
+            "selector_schur_extended_copy_controls": len(selector_schur["extended_copy_controls"]),
+            "selector_coefficient_cross_channel_pairs": sum(row["group_pairs_checked"] for row in coefficient_mass["cross_channel_controls"]),
+            "selector_coefficient_ancilla_probes": sum(row["ancilla_operator_probes"] for row in coefficient_mass["cross_channel_controls"]),
+            "selector_coefficient_exact_character_shifts": sum(row["shifts_checked"] for row in coefficient_mass["shifted_character_square_controls"]),
+            "selector_coefficient_typed_word_controls": len(coefficient_mass["word_controls"]),
+            "selector_coefficient_irrep_reflection_controls": len(coefficient_mass["single_irrep_reflection_controls"]),
             "growing_copy_measurement_compilers": 0},
         "claim_gate": {"finite_complete_channel_evaluation_verified": verified,
             "invariant_transcript_implies_zero_binary_signal": False,
@@ -2208,6 +2236,20 @@ def build_binary_carrier_instrument_report() -> dict:
             "low_occupation_support_bound_derived": True,
             "low_occupation_rank_factor_removed": False,
             "low_high_intersector_coherence_obstructed": False,
+            "cross_sector_double_character_controls_verified": cross_sector["verified"],
+            "cross_sector_high_side_endpoint_verified": cross_sector["verified"],
+            "occupation_band_localization_derived": True,
+            "occupation_band_bound_independently_reviewed": False,
+            "source_resolved_selector_schur_spectra_verified": selector_schur["verified"],
+            "full_source_selector_collision_free_boundary_derived": selector_schur["full_source_collision_free_asymptotic_derived"],
+            "source_resolved_schur_compiles_growing_degree_measurement": False,
+            "selector_cross_channel_isometry_controls_verified": all(row["verified"] for row in coefficient_mass["cross_channel_controls"]),
+            "selector_coefficient_tensor_hybrid_controls_verified": all(row["verified"] for row in coefficient_mass["tensor_controls"]),
+            "selector_shifted_character_square_average_verified": all(row["verified"] for row in coefficient_mass["shifted_character_square_controls"]),
+            "selector_coefficient_mass_all_fixed_masks_bound_derived": coefficient_mass["all_fixed_mask_coefficient_mass_bound_derived"],
+            "selector_coefficient_bound_obstructs_generic_dense_queries": False,
+            "intermediate_weight_band_obstructed": False,
+            "projecting_to_middle_band_preserves_all_information": False,
             "standard_source_label_dephasing_irrelevance_verified": source_label_audit["verified"],
             "unmeasured_irrep_label_copy_alone_is_an_escape": False,
             "noncentral_group_algebra_controls_verified": noncentral_verified,
@@ -2341,6 +2383,27 @@ def write_binary_carrier_instrument_report(path: Path = REPORT_PATH, *, write_re
                     lesson="The gain from radial parameter reduction does not shrink the physical selector rank to K+1. Keep the N factor; entrywise smallness alone is insufficient. This is a derived/review-pending conditional support obstruction, NOT an all-mask no-go or a 2t-copy simulation. Separate bounds on low and high sectors do NOT bound their mutual coherence. Masks with larger low-weight support, coherent cross-sector mixtures, source adaptation, retained physical inputs and multiple queries remain unresolved. Independent proof and novelty review are required.",
                     applies_to=[registry_candidate_id, "low-occupation fixed selector masks"],
                     evidence={"artifact": str(path), "derivation": report["low_occupation_derivation"], "status": "derived-review-pending"}))
+            if report["claim_gate"]["cross_sector_double_character_controls_verified"] and report["claim_gate"]["cross_sector_high_side_endpoint_verified"] and report["claim_gate"]["occupation_band_localization_derived"]:
+                upsert_negative_result(NegativeResultRecord(id="SEPARATED-LOW-HIGH-COHERENCE-NOT-ASYMPTOTIC-ESCAPE", source=registry_experiment_id,
+                    claim="At K=n^2, coherence between weights <=n/4 and >=3n rescues a fixed one-common-query physical-discard mask that has only superpolynomially small mass in the intervening band.",
+                    reason_invalid="An independent double-character expansion splits the HIGH-side coefficient into e, h and off-endpoint terms. The e term is a low vacuum column, the h term keeps the correlated class average, and off-endpoint decay occurs on T minus S only. The rectangular cross block pays sqrt(N_low), not the high-sector dimension. Adding the actual cross bound to the low/high diagonal bounds and a 2sqrt(pi) middle-removal cost gives T<=2^-216 at S1024 and <=2^-1883 at S4096 for zero middle mass. Exact S6 countercontrols show why shared sites cannot be charged as decaying.",
+                    lesson="This derived/review-pending result establishes necessary intermediate-band mass, not a working algorithm or an all-mask no-go. Do not project to the middle band alone: coherence between middle and outside sectors may carry information. Do not factor E_h conj(a_h)L_h into independent averages or replace the physical rank by radial parameter count. The intermediate band, source-adaptive operations, physical retention and multiple queries remain unresolved; independent proof and novelty review remain required.",
+                    applies_to=[registry_candidate_id, "separated low/high coherent selector masks"],
+                    evidence={"artifact": str(path), "derivation": report["occupation_band_derivation"], "status": "derived-review-pending"}))
+            if report["claim_gate"]["source_resolved_selector_schur_spectra_verified"] and report["claim_gate"]["full_source_selector_collision_free_boundary_derived"]:
+                upsert_negative_result(NegativeResultRecord(id="FULL-SOURCE-SELECTOR-SCHUR-NOT-POLYNOMIAL-COMPRESSION", source=registry_experiment_id,
+                    claim="Radializing a fixed selector mask guarantees polynomial-size output matrices or an efficient final measurement through copy-permutation symmetry alone, with all irrep source labels retained at growing degree.",
+                    reason_invalid="The exact source-stabilizer Schur decomposition retains all spin sectors and both spin/source multiplicities. Its total matrix entries are binomial(K+4r-1,4r-1), polynomial in K only at fixed category count r, before factorial group-pair contraction and precision costs. Under full irrep sources p=d^2/n! and q=d(d+chi(h))/n!, the q law is iid across copies and bounded by 2p. Existing maximal-dimension estimates imply vanishing source collisions at polynomial K under both hypotheses. All-distinct sources leave a trivial stabilizer and a 2^K block in this reduction.",
+                    lesson="This defeats a symmetry-only small-matrix argument, NOT all efficient measurements or the intermediate occupation band. Matrix dimension is not a circuit lower bound. Source erasure strictly loses information in physical controls; charge it rather than equating small-category experiments with the full-source optimum. Keep cross-weight coherence, every spin multiplicity and the shared-hidden average after products. Find additional operator structure or a concrete retained-physical primitive; do not extrapolate fixed-S3 improvements. Standard Schur-Weyl theory is not a novel algorithm or an internal Specht recoupling compiler.",
+                    applies_to=[registry_candidate_id, "source-stabilizer selector measurement compilation"],
+                    evidence={"artifact": str(path), "derivation": report["selector_schur_derivation"], "status": "derived-review-pending"}))
+            if all(report["claim_gate"][key] for key in ("source_character_square_bound_verified", "selector_cross_channel_isometry_controls_verified", "selector_coefficient_tensor_hybrid_controls_verified", "selector_shifted_character_square_average_verified", "selector_coefficient_mass_all_fixed_masks_bound_derived")):
+                upsert_negative_result(NegativeResultRecord(id="LOW-COEFFICIENT-MASS-ALL-MASK-OBSTRUCTION", source=registry_experiment_id,
+                    claim="At polynomial copy count, a polynomial-support common query, a sufficiently short typed involutory-rotation word, or a single polynomial-dimensional irrep reflection rescues the physical-discard architecture by choosing a better fixed selector mask or final POVM.",
+                    reason_invalid="For each group-pair coefficient the single-bit source-labelled cross map factors through two isometries and has diamond norm at most one. Shifted character squares average to at most p(n)/M. Tensor telescoping and the squared coefficient-l1 charge give E_h T<=2 K (sum_g |a_g|)^2 sqrt(p(n)/M) for ALL fixed selector states, including independent reference extensions and every weight band. Support S gives squared coefficient mass <=S. A product of q involutory group rotations gives <=2^q and is obstructed for q<=(1/4-epsilon)n log2 n. A target-irrep reflection has coefficient-l1 norm <=1+2d_lambda; the dense sign reflection has exact norm 3-4/|G|. At S1024,K=n^2 the rounded distance bound is 2^-2097 for S<=n^2 and 2^-2113 for the sign reflection.",
+                    lesson="This is a derived/review-pending QUERY-MASS restriction, not an all-query no-go or classical sampler. Generic dense coefficient mass leaves the bound vacuous, and large mass is not a general gate lower bound. Require a canonical coefficient certificate, charge every source mass, keep the shared hidden member until after tensoring, and distinguish average individual distance from class-decision distance. Source adaptation, retained physical data, larger-mass queries and multiple-query architectures need separate arguments. Independent proof and novelty review remain required; a vacuous bound is not positive evidence.",
+                    applies_to=[registry_candidate_id, "low coefficient-mass common-query fixed masks"],
+                    evidence={"artifact": str(path), "derivation": report["selector_coefficient_mass_derivation"], "status": "derived-review-pending"}))
             if report["claim_gate"]["source_weighted_environment_fidelity_verified"] and report["claim_gate"]["arbitrary_mask_positive_comparison_channel_verified"]:
                 upsert_negative_result(NegativeResultRecord(id="HIGH-OCCUPATION-MASK-FIDELITY-OBSTRUCTION", source=registry_experiment_id,
                     claim="An exponentially small overlap with the uniform selector alone rescues the one-common-query physical-discard architecture, even when essentially all mask mass has weight at least 3n.",

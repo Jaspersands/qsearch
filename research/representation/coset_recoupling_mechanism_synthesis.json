@@ -8,7 +8,7 @@
     "undefined_circuit_boxes_promoted": false,
     "undercharged_mechanism_promoted": false
   },
-  "created_at": "2026-09-14T11:15:53.518344+00:00",
+  "created_at": "2026-09-15T11:50:53.732547+00:00",
   "evaluations": [
     {
       "additional_proof_obligations": [
@@ -27,6 +27,9 @@
         "For fixed source-independent masks and unrestricted final information, the Schur/copy-symmetry reduction replaces arbitrary amplitudes by k+1 radial weight probabilities. Preserve COHERENCE between weights; do not restrict to a single weight or call this an efficient objective oracle. Phase decoration and positional asymmetry alone cannot improve on every radial pure mask. Source-adaptive masks and restricted compiled readouts need separate arguments.",
         "Adding empty-subset amplitude is not an asymptotic rescue at polynomial copies: a derived vacuum-coherence bound makes only that EXTRA gain negligible. Retain the nonempty mask's information and source-only quantum baseline; do not turn the gain bound into an all-mask no-go. Coherences between nonempty low-weight sectors remain a genuine unresolved obligation.",
         "The full low-occupation support bound now charges N*(K+2^min(K,2t)-1)/(M-K). At K=n^2, masks supported at weights <=n/4 are obstructed asymptotically, including their mutual coherences. The N-dimensional physical output is not reduced to K+1 by radial parameter symmetry. Larger supports and low/high intersector coherence need separate bounds; two individually uninformative sectors can be informative in superposition.",
+        "The independently expanded separated-sector cross bound now requires nonnegligible mass between weights n/4 and 3n at K=n^2. Count HIGH-ONLY positions, preserve E_h conj(a_h)L_h as a correlated average, and charge sqrt(N_low). Necessary middle mass does not make middle states informative or justify removing middle/outside coherence. Seek an actual intermediate-band mechanism or changed physical access; do not repeat a low/high mixture already covered by this derived/review-pending localization.",
+        "Source-stabilizer spin blocks preserve radial weight coherence, but their matrix-entry count binomial(K+4r-1,4r-1) is polynomial only for fixed category count r, before factorial group contraction. Full source labels are asymptotically all distinct under both hypotheses at polynomial K, leaving a 2^K block under this symmetry. Source erasure can lose signal; charge it. Find additional operator structure or a retained-physical primitive rather than calling radialization a measurement compiler. This dimensional boundary is not a general circuit lower bound.",
+        "Before optimizing any fixed mask, certify the common query's canonical squared coefficient-l1 mass B: the all-mask channel bound is E_h T<=2 K B sqrt(p(n)/M). Polynomial support, single polynomial-dimensional irrep reflections and q<=(1/4-epsilon)n log2 n involutory-rotation words fail across every weight band. The sign reflection is dense but has coefficient-l1 norm below three. Seek genuinely larger coefficient mass or changed physical access, with a compiled operation and cost argument; merely making this bound vacuous is not progress. Large coefficient mass is not a lower bound on arbitrary gate complexity, and E_h T is not the class-decision distance.",
         "Keep one shared hidden involution and the full natural source mass. Noncentral queries require averaging every hidden member, not choosing a favorable representative. The raw-copy cap controls trace distance of the averaged hypothesis, not average individual trace distance. Pre-input participation and source-adaptive selection are different contracts.",
         "The finite S6/S8 sign-category and pair comparisons remain calibrations, not algorithmic candidates or a substitute for growing-degree bounds. Compare new physical laws with the complete available pair-likelihood baseline, legal graph/code algorithms, and actual-source tensor contractions.",
         "Skipping measurement of a coherently COPIED irrep label is not a changed resource: standard mixed coset inputs and the allowed group-algebra queries are block diagonal in those labels. Exhibit actual physical carrier retention, block-changing access or a genuinely different physical operation; a renamed classical/coherent assumption flag is not a blocker-removing mutation."
@@ -392,7 +395,7 @@
   "mutation_proposals": [
     {
       "copy_budget_kind": "binary-class-mixture-chi-square",
-      "created_at": "2026-09-14T11:15:53.518308+00:00",
+      "created_at": "2026-09-15T11:50:53.732520+00:00",
       "formalization_status": "typed-architecture-proof-capabilities-missing",
       "id": "MUTATE-CODE-COSET-COLLECTIVE-CLEAN-SUBSET-BINARY-DETECTION",
       "linked_blockers": [
@@ -426,6 +429,9 @@
         "For fixed source-independent masks and unrestricted final information, the Schur/copy-symmetry reduction replaces arbitrary amplitudes by k+1 radial weight probabilities. Preserve COHERENCE between weights; do not restrict to a single weight or call this an efficient objective oracle. Phase decoration and positional asymmetry alone cannot improve on every radial pure mask. Source-adaptive masks and restricted compiled readouts need separate arguments.",
         "Adding empty-subset amplitude is not an asymptotic rescue at polynomial copies: a derived vacuum-coherence bound makes only that EXTRA gain negligible. Retain the nonempty mask's information and source-only quantum baseline; do not turn the gain bound into an all-mask no-go. Coherences between nonempty low-weight sectors remain a genuine unresolved obligation.",
         "The full low-occupation support bound now charges N*(K+2^min(K,2t)-1)/(M-K). At K=n^2, masks supported at weights <=n/4 are obstructed asymptotically, including their mutual coherences. The N-dimensional physical output is not reduced to K+1 by radial parameter symmetry. Larger supports and low/high intersector coherence need separate bounds; two individually uninformative sectors can be informative in superposition.",
+        "The independently expanded separated-sector cross bound now requires nonnegligible mass between weights n/4 and 3n at K=n^2. Count HIGH-ONLY positions, preserve E_h conj(a_h)L_h as a correlated average, and charge sqrt(N_low). Necessary middle mass does not make middle states informative or justify removing middle/outside coherence. Seek an actual intermediate-band mechanism or changed physical access; do not repeat a low/high mixture already covered by this derived/review-pending localization.",
+        "Source-stabilizer spin blocks preserve radial weight coherence, but their matrix-entry count binomial(K+4r-1,4r-1) is polynomial only for fixed category count r, before factorial group contraction. Full source labels are asymptotically all distinct under both hypotheses at polynomial K, leaving a 2^K block under this symmetry. Source erasure can lose signal; charge it. Find additional operator structure or a retained-physical primitive rather than calling radialization a measurement compiler. This dimensional boundary is not a general circuit lower bound.",
+        "Before optimizing any fixed mask, certify the common query's canonical squared coefficient-l1 mass B: the all-mask channel bound is E_h T<=2 K B sqrt(p(n)/M). Polynomial support, single polynomial-dimensional irrep reflections and q<=(1/4-epsilon)n log2 n involutory-rotation words fail across every weight band. The sign reflection is dense but has coefficient-l1 norm below three. Seek genuinely larger coefficient mass or changed physical access, with a compiled operation and cost argument; merely making this bound vacuous is not progress. Large coefficient mass is not a lower bound on arbitrary gate complexity, and E_h T is not the class-decision distance.",
         "Keep one shared hidden involution and the full natural source mass. Noncentral queries require averaging every hidden member, not choosing a favorable representative. The raw-copy cap controls trace distance of the averaged hypothesis, not average individual trace distance. Pre-input participation and source-adaptive selection are different contracts.",
         "The finite S6/S8 sign-category and pair comparisons remain calibrations, not algorithmic candidates or a substitute for growing-degree bounds. Compare new physical laws with the complete available pair-likelihood baseline, legal graph/code algorithms, and actual-source tensor contractions.",
         "Skipping measurement of a coherently COPIED irrep label is not a changed resource: standard mixed coset inputs and the allowed group-algebra queries are block diagonal in those labels. Exhibit actual physical carrier retention, block-changing access or a genuinely different physical operation; a renamed classical/coherent assumption flag is not a blocker-removing mutation."
@@ -458,7 +464,7 @@
     },
     {
       "copy_budget_kind": "identification-holevo-fano",
-      "created_at": "2026-09-14T11:15:53.518320+00:00",
+      "created_at": "2026-09-15T11:50:53.732529+00:00",
       "formalization_status": "typed-architecture-proof-capabilities-missing",
       "id": "MUTATE-CODE-COSET-COLLECTIVE-ENCODED-REFERENCE-SYMMETRY-BREAKING",
       "linked_blockers": [
@@ -513,7 +519,7 @@
     },
     {
       "copy_budget_kind": "identification-holevo-fano",
-      "created_at": "2026-09-14T11:15:53.518323+00:00",
+      "created_at": "2026-09-15T11:50:53.732532+00:00",
       "formalization_status": "typed-architecture-proof-capabilities-missing",
       "id": "MUTATE-CODE-COSET-COLLECTIVE-FULL-RECOUPLING-TRANSITION-DECODER",
       "linked_blockers": [
@@ -568,7 +574,7 @@
     },
     {
       "copy_budget_kind": "identification-holevo-fano",
-      "created_at": "2026-09-14T11:15:53.518327+00:00",
+      "created_at": "2026-09-15T11:50:53.732534+00:00",
       "formalization_status": "typed-architecture-proof-capabilities-missing",
       "id": "MUTATE-CODE-COSET-COLLECTIVE-TENSOR-ASSOCIATOR-DECODER",
       "linked_blockers": [

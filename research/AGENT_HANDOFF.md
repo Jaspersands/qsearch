@@ -2,7 +2,234 @@
 
 Last updated: 2026-09-15
 
-## Latest Completed Pass: Full Low-Occupation Selector Support
+## Latest Completed Pass: All-Mask Coefficient-Mass Channel Bound
+
+Read `research/SELECTOR_COEFFICIENT_MASS_BOUND.md`. The former scratch lead
+is implemented, checked and gated as DERIVED/REVIEW-PENDING. No independent
+review, formal proof, established novelty or quantum algorithm is claimed.
+
+For one fixed common group-algebra query U=sum_g a_g R(g), let A=sum_g|a_g|.
+The source-labelled single-selector cross maps factor through two isometries,
+so their diamond norms are <=1 despite not generally being positive maps.
+Source-weighted character orthogonality and injectivity of h->hx give
+E_h sum_j|p_j(hx)|<=sqrt(p(n)/M), with p(n) the number of GROUP classes.
+A four-entry local difference bound, tensor telescoping and coefficient
+triangle prove the scoped bound
+
+    E_h ||Phi_h-Phi_0||_diamond <=4 K A^2 sqrt(p(n)/M),
+    E_h T <=min(1,2 K A^2 sqrt(p(n)/M)),     T_class <= E_h T.
+
+This covers ALL fixed masks and independent reference extensions. It needs
+the existing standard mixed coset inputs, one shared uniform hidden member,
+fixed irrep-coarsened classical sources, fixed coefficients/mask and physical
+discard. No raw-copy cap is applied to E_h T. Generic dense-query mass gives
+a vacuous bound; this is NOT an all-query no-go or a classical sampler.
+
+Concrete corollaries: support <=S gives A^2<=S; q involutory group rotations
+give A^2<=2^q and fail for q<=(1/4-epsilon)n log2 n at polynomial K. This is
+a typed-word restriction, not a general gate lower bound. A single target
+irrep reflection has A<=1+2d_lambda. The sign reflection is DENSE but has
+EXACT A=3-4/|G|<3. At n1024,K=n^2, rounded E_h T bounds are 2^-2097 for
+S<=n^2, 2^-1093 for n rotations, 2^-837 for (n log2 n)/8 rotations, and
+2^-2113 for the sign reflection. These are bound evaluations, not simulations.
+Sign is a missing harmonic for fixed-point-free S_n only when n/2 is odd;
+the coefficient bound is valid irrespective of missing-harmonic status.
+
+Implementation: `theorems/coset_selector_coefficient_mass.py` and
+`source_selector_coefficient_mass_contract` in `core/isotypic_instruments.py`.
+Exact large rational certificates use hexadecimal numerator/denominator
+records if needed, without disabling Python integer conversion safeguards.
+Checks: 612 S3/S4 group-pair cross kernels from actual purifications;
+192 non-Hermitian reference-ancilla operator probes; 61 K2/K3 physical source
+tuples; 750 exact S3/S4/S6 shifted character averages; ten Gaussian-integer
+query-word controls; nineteen exact target-irrep reflection spectra.
+
+Integrated into the existing binary CLI/report, proof lemma index22,
+negative `LOW-COEFFICIENT-MASS-ALL-MASK-OBSTRUCTION`, dequantization boundaries,
+recoupling mutation obligations and README. The intermediate-band gate stays
+FALSE for arbitrary common queries. Candidate creation/promotion remains
+blocked, not relaxed because the new representation or bound is implemented.
+
+Verification: first focused run 113 passed in 3.77s. Fourteen-file broad
+selector/proof/mutation/writer regression 439 passed in 221.06s. AFTER adding
+the irrep-reflection corollary, final three-file run 116 passed in 3.62s.
+Counts overlap; do not add them. Persistent XML:
+`.pytest_cache/coefficient-mass-first.xml`,
+`.pytest_cache/coefficient-mass-regression.xml`,
+`.pytest_cache/coefficient-mass-final.xml`.
+Final Python compilation, JS syntax and diff checks passed. All nine live
+workflows passed: binary, recoupling synthesis, dequantize, proofs, conjectures,
+mutate, progress snapshot, validate, proof-routes. The full repository suite
+was NOT rerun and is NOT green: the confirmed character-query writer defect
+remains the routine Gemini task below. Historical cached failures are not
+a current full-suite inventory.
+
+Latest registry: 917 negatives, 1311 dequantization findings/1307 blocking,
+1285 lemmas; 8 candidates, 792 experiments, 800 results, 104 proof statuses/24
+blocking, 8 blocked conjectures, 19 mutations, 14 scaling records. Validation
+issues[]; 13 route contracts, 0 unsupported assertions, 4 unresolved. No
+background search service or new automation was started. Save the completed
+occupation integration, source-Schur and coefficient-mass passes in ONE
+checkpoint; inspect Git for the actual committed/pushed SHA.
+
+NEXT HIGH-THINKING TARGET: a concrete retained-physical missing-harmonic span
+measurement, with its normalization cost charged. Moore/Russell's subset
+projectors have rank fraction d_eta^2/|G| under the raw null input and annihilate
+the alternative when eta is genuinely missing. Their collective span has
+large information at K~log|G|, but access to one projector does not compile
+the span. A normalized average of one-dimensional subset projectors has
+mean eigenvalue 1/|G|; do not grant generic spectral amplification for free.
+First compare `coset_pgm_average_frame_block_encoding.py` and
+`coset_covariant_projector_subpovm.py` to avoid duplicating an existing
+normalization obstruction on a different frame. No retained-physical span
+compiler was implemented in this pass. Its actual operator structure, or a
+larger-coefficient-mass compiled query surviving all earlier bounds, is the
+next constructive issue. Consolidate these arguments for independent proof
+and novelty review rather than indefinitely growing the negative catalogue.
+
+## Previous Completed Pass: Source-Resolved Selector Schur Audit
+
+Read `research/SOURCE_RESOLVED_SELECTOR_SCHUR.md`. The exact representation
+specializes STANDARD qubit Schur-Weyl theory; no novelty or efficient
+growing-degree measurement is claimed. `theorems/coset_selector_schur.py`
+keeps all source histograms, spin sectors, both multiplicities and weight
+coherence. The local block is det(B)^ell Sym^(c-2ell)(B), in a NORMALIZED
+Dicke basis. Total entries per hypothesis are binomial(K+4r-1,4r-1), not K+1.
+
+The proposed symmetry-only polynomial-readout route fails its cost audit.
+At polynomial K, full irrep source labels are asymptotically all distinct
+under BOTH hypotheses: p=d^2/n!, q=d(d+chi(h))/n!, q<=2p, and the existing
+maximal-Plancherel-atom bound controls collisions. The source stabilizer
+is then trivial and this reduction leaves a 2^K block. This is NOT a circuit
+lower bound, all-mask obstruction, or license to erase source labels.
+Coarsening loses signal in the actual physical controls. Existing global
+collision routines are reused, without importing the different wreath model.
+
+Independent regular-basis S3 K2,3 and S4 K2 checks compare every source
+histogram and hidden member's full spectrum, restoring multiplicities.
+Additional S3 K4,6 controls avoid D^K physical matrices. Dicke/singlet tests
+cover singular and nonnormal kernels. Omitting lower spins, multiplicities,
+weight coherence or source labels changes the answer. Factorized the existing
+single-register query calibration out of `_regular_selector_model` so the
+new evaluator never constructs physical-copy tensors to obtain coefficients.
+
+Integrated into the existing binary CLI/report, proof lemma index21,
+dequantization boundary and recoupling mutation obligations. New negative:
+`FULL-SOURCE-SELECTOR-SCHUR-NOT-POLYNOMIAL-COMPRESSION`. Gates distinguish
+this dimensional limitation from a lower bound on arbitrary circuits.
+
+Verification: final four-file focused run 133 passed in 7.22s; thirteen-file
+selector/proof/mutation/writer regression 412 passed in 240.50s, INCLUDING
+the final gate and cache-validation tests. Counts overlap. XML files:
+`.pytest_cache/selector-schur-focused.xml`, `.pytest_cache/selector-schur-regression.xml`.
+Python compilation, JS syntax, diff checks and all nine relevant live
+workflows passed. Full suite NOT rerun: the previously reproduced
+character-query writer failure is still outstanding; see maintenance below.
+Latest registry: 916 negatives, 1310 dequantization findings (1306 blocking),
+1284 lemmas. Other counts unchanged: 8 candidates, 792 experiments, 800 results,
+104 proof statuses/24 blocking, 8 blocked conjectures, 19 mutations, 14 scaling
+records; validate issues[], 13 route contracts/0 unsupported/4 unresolved.
+No candidate promoted or speedup. No new commit in this pass.
+
+HISTORICAL SCRATCH LEAD, now implemented and superseded by the pass above:
+coefficient-mass bound for ALL fixed masks. Define L1=sum_g |a_g| for the canonical common-query
+group-algebra coefficients. For one pair (g',g), the source-labelled cross
+channel Psi_eta is induced by two isometries and has diamond norm <=1.
+Its single-copy difference is a sum of four selector matrix-entry maps,
+with coefficients p_j(hx). Character-square Cauchy gives
+sum_j |p_j(hx)| <=1/sqrt(class_size(hx)). Since h->hx is injective,
+E_h[1/class_size(hx)] <= number_of_conjugacy_classes(G)/|C|.
+Tensor telescoping then suggests
+
+    E_h ||Phi_h-Phi_0||_diamond <=4 K L1^2 sqrt(p(n)/M),
+    E_h T <=2 K L1^2 sqrt(p(n)/M).
+
+Here M=(n-1)!! and p(n) is the number of S_n irreps, NOT a source category
+count. This would obstruct polynomial-support queries for every fixed mask,
+including the intermediate band. A product of q involutory group rotations
+has L1^2<=2^q; q<=(1/4-epsilon)n log2 n is then asymptotically obstructed.
+Check the cross-isometry norm, source masses, tensor-product orientation and
+ancilla extension independently before claiming it. Large coefficient mass
+does not imply large circuit complexity; dense compiled queries remain open.
+This is a promising proof lead, not a result yet, and it does not use the
+source-collision asymptotic. Do not confuse its E_h T bound with the smaller
+class-decision distance or apply the raw-copy cap to E_h T.
+
+## Previous Completed Pass: Occupation-Band Localization
+
+Read `research/OCCUPATION_BAND_LOCALIZATION.md`, then the low-support,
+mask-tail and radial-reduction notes. This is a DERIVED/REVIEW-PENDING
+architecture restriction, not an independently verified or established-novel
+theorem, an efficient measurement, or a quantum algorithmic speedup.
+
+The formerly scratch-tested low/high cross-block argument is implemented.
+For low weights <=t, high weights >=s>t, low support dimension N_L and
+middle mass <=pi, the whole class-decision distance satisfies the scoped bound
+
+    T <= min(1, raw, max(T_low,T_high) + sqrt(N_L)*B_cross/2 + 2sqrt(pi)),
+    B_cross = sqrt((K+2^t-1)/(M-K)) + sqrt(Ebar/M)
+        + D*sqrt(Ebar)*(4/L)^((s-t)/2) + D*(1/L)^((s-t)/2).
+
+All established architecture assumptions remain: shared uniform hidden
+fixed-point-free involution, standard mixed coset inputs, one fixed common
+group-algebra query, classical irrep-coarsened sources, fixed source-independent
+mask, and physical discard. Decay is charged ONLY on high-exclusive positions.
+The hidden endpoint retains E_h[conj(a_h)*L_h], not factored averages.
+The rectangular block pays sqrt(N_L); radial parameter count is not rank.
+
+At K=n^2,t=n/4,s=3n and zero middle mass, outward integer whole-distance
+bounds are 2^-216 for n1024 and 2^-1883 for n4096. Cross contributions are
+2^-344 and 2^-2395. These are conditional bound evaluations, not large-degree
+physical simulations. Nonnegligible middle mass is NECESSARY, not sufficient.
+Do NOT project to the middle alone: middle/outside coherence remains open.
+
+The independent double-character expansion checks 32 ordered cross pairs
+against physical S3 K2,3 and S4 K2 channels, retaining all sources and hidden
+members. There are 48 full-mask probes and 14 exact S6 countercontrols against
+charging overlapping positions as exclusive decay. The overlap and correlated
+average falsifiers remain in `tests/test_coset_mask_cross_sector.py`.
+
+Integration: existing binary-instrument CLI/report, negative
+`SEPARATED-LOW-HIGH-COHERENCE-NOT-ASYMPTOTIC-ESCAPE`, proof lemma index20,
+dequantization access boundaries and recoupling mutation obligations. Merged
+an overlapping saved proof-tracker addition instead of registering the lemma
+twice. Tests require unique IDs and block the lemma when ANY required evidence
+gate is false, including both diagonal sector bounds.
+
+Verification: five-file focused run 132 passed in 7.63s; twelve-file broad
+selector/proof/mutation/writer regression 355 passed in 237.12s. The final
+cross-sector test rerun AFTER the duplicate merge passed 31 tests in 3.42s.
+Counts overlap; do not add them. XML: `.pytest_cache/cross-sector-last.xml`,
+`.pytest_cache/selector-research-last.xml`, `.pytest_cache/cross-sector-final.xml`.
+The full suite is NOT green: the previously reproduced character-query
+scaling-writer failure remains unresolved, as detailed below. The whole suite
+was not rerun in this pass; neither later tests nor historical cache failures
+are a freshly verified full-suite inventory.
+
+Live binary report, recoupling synthesis, dequantize, proofs, conjectures,
+mutate, progress snapshot, validate and proof-routes all exited0. Registry:
+8 candidates, 792 experiments, 800 results, 915 negatives, 1309 dequantization
+findings (1305 blocking), 1283 lemmas, 104 proof statuses (24 blocking),
+eight blocked conjectures, 19 mutations and 14 scaling records. Validation
+issues[]; 13 route contracts, zero unsupported assertions, four unresolved.
+No algorithm promotion or speedup; no background search service was started.
+
+NEXT HIGH-THINKING TARGET: analyze the intermediate band's actual operator
+structure using the radial reduction while retaining middle/outside coherence.
+Seek either a scalable measurement with explicitly charged implementation and
+success costs, or a genuinely broader obstruction. Compare this with one
+concrete retained-physical missing-harmonic span primitive. Do not indefinitely
+extend narrow bounds, optimize tiny masks, or generate bookkeeping instead of
+addressing the measurement bottleneck. Consolidate the strongest argument for
+independent proof and prior-art review; computational checks do not establish
+novelty. A failed scalable construction should trigger a documented pivot.
+
+Save policy: d6a63b89 was pushed as a bundled research checkpoint. Subsequent
+saved commits include 5168cedc (cross-sector math) and 5f43be68 (website work).
+Preserve those changes. This pass completes the registry integration; do not
+create another immediate small commit. Inspect Git for current remote state.
+
+## Previous Completed Pass: Full Low-Occupation Selector Support
 
 Read `research/LOW_OCCUPATION_SELECTOR_BOUND.md` first, then
 `research/VACUUM_COHERENCE_BOUND.md` and `research/SELECTOR_MASK_SYMMETRY.md`.
@@ -58,12 +285,12 @@ eight blocked conjectures, 19 mutations, 14 scaling runs. Validation issues[];
 13 route contracts, zero unsupported assertions, four unresolved. No speedup
 or algorithm candidate promotion. No background search service was started.
 
-Save policy: group the radial/vacuum/low-occupation passes and the two tested
-writer repairs into ONE checkpoint. Inspect Git for actual saved/pushed SHA;
-fccfa6d0 is the preceding checkpoint, not necessarily the current HEAD.
+Historical save policy: the radial/vacuum/low-occupation passes and the two
+tested writer repairs were grouped into the pushed d6a63b89 checkpoint.
 
-NEXT HIGH-THINKING PASS: try to kill nonempty low/high intersector coherence.
-The following derivation is SCRATCH-TESTED, NOT IMPLEMENTED OR IN A GATE.
+HISTORICAL SCRATCH PROPOSAL, NOW SUPERSEDED: the cross-sector pass above
+implements, independently expands and gates the following former proposal.
+The remaining text in this historical subsection describes its PREVIOUS state.
 Let low support have weights <=t and rank N_L, high support weights >=s>t.
 For A_J(S,T), split the HIGH-side coefficient index g' into e, h, and the
 rest. Up to the empty-query phase, the e endpoint is conj(a_e) times the
