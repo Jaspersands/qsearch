@@ -1,8 +1,8 @@
 {
-  "created_at": "2026-09-12T08:01:39.350563+00:00",
+  "created_at": "2026-09-15T20:35:40.524465+00:00",
   "history_artifact": "research/experiment_run_history.json",
-  "history_count": 553,
-  "trend_count": 400,
+  "history_count": 557,
+  "trend_count": 401,
   "trends": [
     {
       "blocking_run_count": 2,
@@ -28307,6 +28307,141 @@
       "run_count": 1,
       "status_sequence": [
         "diagonal-label-transform-isolated-multiplicity-space-open"
+      ]
+    },
+    {
+      "blocking_run_count": 4,
+      "experiment_id": "EXP-COSET-MISSING-HARMONIC-DETECTOR",
+      "falsifier_count_sequence": [
+        4,
+        4,
+        4,
+        4
+      ],
+      "interpretation": "Repeated runs continue to trigger falsifiers; this is proof debt, not progress.",
+      "latest_result_id": "RESULT-EXP-COSET-MISSING-HARMONIC-DETECTOR-COSET",
+      "latest_status": "derived-review-pending-gap-free-detector-generic-cost-uncompetitive",
+      "latest_summary": "Retained-data missing-sign detector has constant bias without a minimum positive gap, but costs sqrt(n!) selected reflections. This is a costed benchmark, not a speedup.",
+      "numeric_metric_trends": {
+        "constant_bias_scaling_count": {
+          "delta": 0.0,
+          "first": 9.0,
+          "latest": 9.0,
+          "max": 9.0,
+          "min": 9.0,
+          "observations": 4
+        },
+        "finite_control_count": {
+          "delta": 0.0,
+          "first": 4.0,
+          "latest": 4.0,
+          "max": 4.0,
+          "min": 4.0,
+          "observations": 4
+        },
+        "finite_control_failure_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 4
+        },
+        "new_algorithm_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 4
+        },
+        "pairwise_trace_control_count": {
+          "delta": 0.0,
+          "first": 27.0,
+          "latest": 27.0,
+          "max": 27.0,
+          "min": 27.0,
+          "observations": 4
+        },
+        "physical_projector_control_count": {
+          "delta": 0.0,
+          "first": 14.0,
+          "latest": 14.0,
+          "max": 14.0,
+          "min": 14.0,
+          "observations": 4
+        },
+        "polynomial_time_compiler_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 4
+        },
+        "scaling_record_count": {
+          "delta": 0.0,
+          "first": 9.0,
+          "latest": 9.0,
+          "max": 9.0,
+          "min": 9.0,
+          "observations": 4
+        },
+        "selector_only_query_control_count": {
+          "delta": 0.0,
+          "first": 4.0,
+          "latest": 4.0,
+          "max": 4.0,
+          "min": 4.0,
+          "observations": 2
+        },
+        "selector_only_query_control_failure_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 2
+        },
+        "source_adaptive_channel_control_count": {
+          "delta": 0.0,
+          "first": 3.0,
+          "latest": 3.0,
+          "max": 3.0,
+          "min": 3.0,
+          "observations": 1
+        },
+        "source_adaptive_exact_sector_count": {
+          "delta": 0.0,
+          "first": 1502.0,
+          "latest": 1502.0,
+          "max": 1502.0,
+          "min": 1502.0,
+          "observations": 1
+        },
+        "source_adaptive_regular_sector_count": {
+          "delta": 0.0,
+          "first": 102.0,
+          "latest": 102.0,
+          "max": 102.0,
+          "min": 102.0,
+          "observations": 1
+        },
+        "source_adaptive_scaling_count": {
+          "delta": 0.0,
+          "first": 9.0,
+          "latest": 9.0,
+          "max": 9.0,
+          "min": 9.0,
+          "observations": 1
+        }
+      },
+      "run_count": 4,
+      "status_sequence": [
+        "derived-review-pending-gap-free-detector-generic-cost-uncompetitive",
+        "derived-review-pending-gap-free-detector-generic-cost-uncompetitive",
+        "derived-review-pending-gap-free-detector-generic-cost-uncompetitive",
+        "derived-review-pending-gap-free-detector-generic-cost-uncompetitive"
       ]
     },
     {

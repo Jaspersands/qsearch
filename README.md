@@ -152,6 +152,18 @@ covers every fixed mask for sufficiently small group-algebra coefficient mass.
 Polynomial-support queries and single low-dimensional irrep reflections
 cannot escape through the intermediate band. Larger-mass compiled queries
 and changed physical access remain unresolved.
+The [retained-data missing-harmonic detector](research/MISSING_HARMONIC_DETECTOR.md)
+implements a costed measurement benchmark without a minimum-positive-gap
+assumption. Its generic sqrt(n!) amplification is uncompetitive, not a
+speedup. A scoped query-hybrid bound also rules out fixing it merely by
+changing ancilla schedules while retaining the same missing-sign queries;
+other data operations and implemented data readouts remain open.
+The [source-adaptive extension](research/MISSING_SIGN_SOURCE_ADAPTATION.md)
+also charges choosing subsets from full irrep labels, including the nonzero
+information already in those labels. Other target sectors and noncentral
+carrier operations remain outside these bounds.
+Run `python qsearch.py coset-missing-harmonic` or
+`python qsearch.py run EXP-COSET-MISSING-HARMONIC-DETECTOR`.
 The [classical value-access audit](research/CLASSICAL_VALUE_ACCESS_AUDIT.md)
 replaces hidden full-table quadratic reconstruction with counted point queries,
 including exact-residue controls on nonmaterializable domains. Sample-limited

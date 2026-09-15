@@ -1663,6 +1663,43 @@ def _reference_twirl_information_lemmas(candidate_id: str) -> list[LemmaRecord]:
     )]
 
 
+def _missing_harmonic_detector_lemmas(candidate_id: str) -> list[LemmaRecord]:
+    try:
+        report = json.loads(Path("research/representation/coset_missing_harmonic_detector.json").read_text())
+    except (OSError, ValueError):
+        report = {}
+    gate = report.get("claim_gate", {})
+    checked = all(gate.get(key) is True for key in (
+        "finite_physical_controls_verified", "gap_free_constant_bias_derivation_checked",
+        "costed_retained_data_schema_available",
+    ))
+    return [LemmaRecord(
+        id=f"LEMMA-{candidate_id}-MISSING-SIGN-GAP-FREE-DETECTOR", candidate_id=candidate_id,
+        statement="For an odd-transposition hidden involution, retained-data subset-sign projections and a randomized two-reflection walk give raw-null acceptance >=1/64 at 2^K-1>=n!, zero ideal acceptance for every hidden member, and O(sqrt(n!)) selected-projector calls without a least-positive-gap premise.",
+        depends_on=["PO-INPUT-MODEL", "PO-MEASUREMENT", "PO-SUCCESS", "PO-COMPLEXITY"],
+        status="derived-gap-free-detector-review-pending" if checked else "blocked-missing-sign-detector-evidence-missing",
+        falsification_test="Check raw-null pair traces, Paley-Zygmund, the randomized response including eigenvalues near one, reversible pivot coordinates, retained-data reflections and accumulated synthesis error. This is not an exact range projector or an efficient algorithm.",
+    ), LemmaRecord(
+        id=f"LEMMA-{candidate_id}-MISSING-SIGN-SELECTOR-QUERY-HYBRID", candidate_id=candidate_id,
+        statement="For q controlled missing-sign phase queries with independent ancillas, ancilla-only interleavings and terminal readout, T(output_null,output_h)<=2q/sqrt(n!) for arbitrary K; one-sided null acceptance <=4q^2/n!.",
+        depends_on=["PO-INPUT-MODEL", "PO-MEASUREMENT", "PO-COMPLEXITY"],
+        status="derived-selector-only-query-hybrid-review-pending" if checked and gate.get("selector_only_query_hybrid_controls_verified") is True and gate.get("selector_only_query_hybrid_bound_derived") is True else "blocked-selector-query-hybrid-evidence-missing",
+        falsification_test="Telescope identity-query prefixes, not actual post-query states. Keep every selected projector at raw-null rank 1/n!, and alternative support in their common kernel. The free terminal DATA span measurement explicitly violates a q=0 extension; arbitrary data operations, source-adaptive preparation and free postselection are excluded.",
+    ), LemmaRecord(
+        id=f"LEMMA-{candidate_id}-MISSING-SIGN-STRUCTURED-COMPILER", candidate_id=candidate_id,
+        statement="A retained-data missing-harmonic detector bypasses the sqrt(n!) normalized-walk cost and beats the appropriate classical or coherent-oracle baseline at charged precision and space.",
+        depends_on=["PO-COMPLEXITY", "PO-DEQUANTIZATION", f"LEMMA-{candidate_id}-MISSING-SIGN-GAP-FREE-DETECTOR"],
+        status="blocked-no-competitive-retained-data-compiler",
+        falsification_test="For the stated mixed schedule, acceptance <=(2T^2+1)/(3n!). Do not transfer this to arbitrary circuits, grant hiding-function access to a coset-only algorithm, or ignore quasipolynomial classical GI on explicit graph inputs.",
+    ), LemmaRecord(
+        id=f"LEMMA-{candidate_id}-MISSING-SIGN-SOURCE-ADAPTIVE-HYBRID", candidate_id=candidate_id,
+        statement="With full central source labels and only subsequent missing-sign phases, source-conditioned ancillary control and source/ancilla output, T<=K/(2sqrt(M))+2q sqrt(K p(n)/n!). The conditional marked fraction obeys r_S<=1/d_j^2; E_Planch max_S r_S<=K p(n)/n!.",
+        depends_on=["PO-INPUT-MODEL", "PO-MEASUREMENT", "PO-COMPLEXITY", "PO-SUCCESS"],
+        status="derived-source-adaptive-missing-sign-hybrid-review-pending" if checked and all(gate.get(key) is True for key in ("source_adaptive_rank_and_prior_controls_verified", "source_adaptive_channel_controls_verified", "source_adaptive_query_bound_derived")) else "blocked-source-adaptive-missing-sign-evidence-missing",
+        falsification_test="Check Frobenius reciprocity with the sign twist, physical source ranks and BOTH source priors. Identity-query prefixes remain source-conditioned maximally mixed under null, not globally independent of the ancilla. The q=0 weak-label TV is nonzero. Other carrier operations, different target sectors and free data POVMs are excluded.",
+    )]
+
+
 def _binary_carrier_instrument_lemmas(candidate_id: str) -> list[LemmaRecord]:
     try:
         report = json.loads(Path("research/representation/coset_binary_carrier_instruments.json").read_text())
@@ -1929,6 +1966,7 @@ def lemma_templates(candidate: dict[str, Any]) -> list[LemmaRecord]:
         records.extend(_encoded_restriction_lemmas(candidate_id))
         records.extend(_reference_twirl_information_lemmas(candidate_id))
         records.extend(_binary_carrier_instrument_lemmas(candidate_id))
+        records.extend(_missing_harmonic_detector_lemmas(candidate_id))
         records.extend(_systematic_local_proof_gap_lemmas(candidate_id))
     if kind == "coset-state":
         try:

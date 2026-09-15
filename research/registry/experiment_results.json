@@ -17482,6 +17482,39 @@
   },
   {
     "artifacts": {
+      "report": "research/representation/coset_missing_harmonic_detector.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-09-15T20:35:40.447360+00:00",
+    "experiment_id": "EXP-COSET-MISSING-HARMONIC-DETECTOR",
+    "falsifiers_triggered": [
+      "A least-positive frame gap is not necessary for this constant-bias detector.",
+      "Polynomially many iterations of this normalized walk cannot give constant raw-null acceptance asymptotically.",
+      "Coherent hiding-function matching search is asymptotically cheaper; it is unavailable from coset samples alone.",
+      "Explicit graph inputs have a quasipolynomial classical baseline; generic sqrt(n!) amplification is not competitive."
+    ],
+    "id": "RESULT-EXP-COSET-MISSING-HARMONIC-DETECTOR-COSET",
+    "metrics": {
+      "constant_bias_scaling_count": 9,
+      "finite_control_count": 4,
+      "finite_control_failure_count": 0,
+      "new_algorithm_count": 0,
+      "pairwise_trace_control_count": 27,
+      "physical_projector_control_count": 14,
+      "polynomial_time_compiler_count": 0,
+      "scaling_record_count": 9,
+      "selector_only_query_control_count": 4,
+      "selector_only_query_control_failure_count": 0,
+      "source_adaptive_channel_control_count": 3,
+      "source_adaptive_exact_sector_count": 1502,
+      "source_adaptive_regular_sector_count": 102,
+      "source_adaptive_scaling_count": 9
+    },
+    "status": "derived-review-pending-gap-free-detector-generic-cost-uncompetitive",
+    "summary": "Retained-data missing-sign detector has constant bias without a minimum positive gap, but costs sqrt(n!) selected reflections. This is a costed benchmark, not a speedup."
+  },
+  {
+    "artifacts": {
       "coset_multiplicity_commutant_search": "research/representation/coset_multiplicity_commutant_search.json"
     },
     "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -17978,7 +18011,7 @@
       "coset_recoupling_mechanism_synthesis": "research/representation/coset_recoupling_mechanism_synthesis.json"
     },
     "candidate_id": "CODE-COSET-COLLECTIVE",
-    "created_at": "2026-09-15T11:50:53.732547+00:00",
+    "created_at": "2026-09-15T20:35:43.242346+00:00",
     "experiment_id": "EXP-COSET-RECOUPLING-MECHANISM-SYNTHESIS",
     "falsifiers_triggered": [
       "QFT-only weak-label decoding is a known no-go route.",

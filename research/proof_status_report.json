@@ -2,8 +2,8 @@
   "blocking_status_count": 24,
   "candidate_count": 8,
   "counterexample_search_count": 8,
-  "created_at": "2026-09-15T11:50:59.748302+00:00",
-  "lemma_count": 1285,
+  "created_at": "2026-09-15T20:35:49.346875+00:00",
+  "lemma_count": 1289,
   "needs_evidence_count": 0,
   "proof_debt": {
     "counterexample_search_count": 8,
@@ -73,8 +73,8 @@
         "target_claim": "The coset observable is not a disguised classical invariant."
       }
     ],
-    "created_at": "2026-09-15T11:50:59.744286+00:00",
-    "lemma_count": 1285,
+    "created_at": "2026-09-15T20:35:49.342562+00:00",
+    "lemma_count": 1289,
     "lemmas": [
       {
         "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -814,6 +814,56 @@
         "id": "LEMMA-CODE-COSET-COLLECTIVE-SELECTOR-COEFFICIENT-MASS-BOUND",
         "statement": "In the fixed common-query physical-discard architecture, source-labelled cross maps have diamond norm <=1. Shifted character-square averaging over the shared hidden involution, tensor telescoping and coefficient triangle give E_h T<=2 K (sum_g |a_g|)^2 sqrt(p(n)/M) uniformly over ALL fixed selector states and independent reference extensions. Polynomial-support queries and q<=(1/4-epsilon)n log2 n typed involutory-rotation products are obstructed asymptotically. This excludes their intermediate masks too, but generic dense queries give a vacuous bound. Coefficient mass is not a general circuit lower bound.",
         "status": "derived-selector-coefficient-mass-bound-review-pending"
+      },
+      {
+        "candidate_id": "CODE-COSET-COLLECTIVE",
+        "depends_on": [
+          "PO-INPUT-MODEL",
+          "PO-MEASUREMENT",
+          "PO-SUCCESS",
+          "PO-COMPLEXITY"
+        ],
+        "falsification_test": "Check raw-null pair traces, Paley-Zygmund, the randomized response including eigenvalues near one, reversible pivot coordinates, retained-data reflections and accumulated synthesis error. This is not an exact range projector or an efficient algorithm.",
+        "id": "LEMMA-CODE-COSET-COLLECTIVE-MISSING-SIGN-GAP-FREE-DETECTOR",
+        "statement": "For an odd-transposition hidden involution, retained-data subset-sign projections and a randomized two-reflection walk give raw-null acceptance >=1/64 at 2^K-1>=n!, zero ideal acceptance for every hidden member, and O(sqrt(n!)) selected-projector calls without a least-positive-gap premise.",
+        "status": "derived-gap-free-detector-review-pending"
+      },
+      {
+        "candidate_id": "CODE-COSET-COLLECTIVE",
+        "depends_on": [
+          "PO-INPUT-MODEL",
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY"
+        ],
+        "falsification_test": "Telescope identity-query prefixes, not actual post-query states. Keep every selected projector at raw-null rank 1/n!, and alternative support in their common kernel. The free terminal DATA span measurement explicitly violates a q=0 extension; arbitrary data operations, source-adaptive preparation and free postselection are excluded.",
+        "id": "LEMMA-CODE-COSET-COLLECTIVE-MISSING-SIGN-SELECTOR-QUERY-HYBRID",
+        "statement": "For q controlled missing-sign phase queries with independent ancillas, ancilla-only interleavings and terminal readout, T(output_null,output_h)<=2q/sqrt(n!) for arbitrary K; one-sided null acceptance <=4q^2/n!.",
+        "status": "derived-selector-only-query-hybrid-review-pending"
+      },
+      {
+        "candidate_id": "CODE-COSET-COLLECTIVE",
+        "depends_on": [
+          "PO-COMPLEXITY",
+          "PO-DEQUANTIZATION",
+          "LEMMA-CODE-COSET-COLLECTIVE-MISSING-SIGN-GAP-FREE-DETECTOR"
+        ],
+        "falsification_test": "For the stated mixed schedule, acceptance <=(2T^2+1)/(3n!). Do not transfer this to arbitrary circuits, grant hiding-function access to a coset-only algorithm, or ignore quasipolynomial classical GI on explicit graph inputs.",
+        "id": "LEMMA-CODE-COSET-COLLECTIVE-MISSING-SIGN-STRUCTURED-COMPILER",
+        "statement": "A retained-data missing-harmonic detector bypasses the sqrt(n!) normalized-walk cost and beats the appropriate classical or coherent-oracle baseline at charged precision and space.",
+        "status": "blocked-no-competitive-retained-data-compiler"
+      },
+      {
+        "candidate_id": "CODE-COSET-COLLECTIVE",
+        "depends_on": [
+          "PO-INPUT-MODEL",
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-SUCCESS"
+        ],
+        "falsification_test": "Check Frobenius reciprocity with the sign twist, physical source ranks and BOTH source priors. Identity-query prefixes remain source-conditioned maximally mixed under null, not globally independent of the ancilla. The q=0 weak-label TV is nonzero. Other carrier operations, different target sectors and free data POVMs are excluded.",
+        "id": "LEMMA-CODE-COSET-COLLECTIVE-MISSING-SIGN-SOURCE-ADAPTIVE-HYBRID",
+        "statement": "With full central source labels and only subsequent missing-sign phases, source-conditioned ancillary control and source/ancilla output, T<=K/(2sqrt(M))+2q sqrt(K p(n)/n!). The conditional marked fraction obeys r_S<=1/d_j^2; E_Planch max_S r_S<=K p(n)/n!.",
+        "status": "derived-source-adaptive-missing-sign-hybrid-review-pending"
       },
       {
         "candidate_id": "CODE-COSET-COLLECTIVE",

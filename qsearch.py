@@ -850,6 +850,7 @@ from coset_hidden_involution_multiplicity_support_obstruction import write_multi
 from coset_hidden_involution_orbit_hull_twirl_reduction import write_hidden_involution_orbit_hull_report
 from coset_hidden_involution_query_separation_boundary import write_hidden_involution_query_separation_report
 from coset_hidden_involution_support_span_reduction import write_hidden_involution_support_span_report
+from coset_missing_harmonic_detector import write_missing_harmonic_report
 from coset_hidden_involution_threshold_compiler_boundary import write_hidden_involution_threshold_compiler_report
 from coset_hyperoctahedral_branching_polar_boundary import write_coset_hyperoctahedral_branching_polar_report
 from coset_kronecker_marginal_conservation import write_kronecker_marginal_conservation_report
@@ -19598,6 +19599,16 @@ def command_coset_hidden_involution_reference_twirl_information(args: argparse.N
     return 0 if validate_registry()["valid"] else 1
 
 
+def command_coset_missing_harmonic_detector(args: argparse.Namespace) -> int:
+    if not args.no_registry:
+        initialize_seed_registry(overwrite=False)
+    payload = write_missing_harmonic_report(write_registry=not args.no_registry)
+    print(payload["summary"])
+    print(payload["source_adaptive_research_update"])
+    print(json.dumps(payload["headline_metrics"], indent=2))
+    return 0 if payload["claim_gate"]["finite_physical_controls_verified"] else 1
+
+
 def command_coset_binary_carrier_instruments(args: argparse.Namespace) -> int:
     initialize_seed_registry(overwrite=False)
     payload = write_binary_carrier_instrument_report(write_registry=not args.no_registry)
@@ -27070,6 +27081,11 @@ def build_parser() -> argparse.ArgumentParser:
         help="Audit noncentral selectors, radial masks, and scoped tail/vacuum-coherence information bounds.")
     binary_instruments.add_argument("--no-registry", action="store_true")
     binary_instruments.set_defaults(func=command_coset_binary_carrier_instruments)
+    missing_harmonic = subparsers.add_parser(
+        "coset-missing-harmonic", help="Audit the retained-data missing-sign detector and its amplification cost."
+    )
+    missing_harmonic.add_argument("--no-registry", action="store_true")
+    missing_harmonic.set_defaults(func=command_coset_missing_harmonic_detector)
     parser_coset_hidden_involution_natural_support_six_mass_audit = subparsers.add_parser(
         "coset-hidden-involution-natural-support-six-mass-audit",
         help="Measure exact natural-source coverage of finite support-six multiplicity controls and rank untested high-mass blocks.",

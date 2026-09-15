@@ -56972,6 +56972,114 @@
   },
   {
     "applies_to": [
+      "CODE-COSET-COLLECTIVE"
+    ],
+    "claim": "Constant-bias missing-harmonic detection becomes efficient once the minimum positive gap obligation is removed.",
+    "evidence": {
+      "metrics": {
+        "constant_bias_scaling_count": 9,
+        "finite_control_count": 4,
+        "finite_control_failure_count": 0,
+        "new_algorithm_count": 0,
+        "pairwise_trace_control_count": 27,
+        "physical_projector_control_count": 14,
+        "polynomial_time_compiler_count": 0,
+        "scaling_record_count": 9,
+        "selector_only_query_control_count": 4,
+        "selector_only_query_control_failure_count": 0,
+        "source_adaptive_channel_control_count": 3,
+        "source_adaptive_exact_sector_count": 1502,
+        "source_adaptive_regular_sector_count": 102,
+        "source_adaptive_scaling_count": 9
+      },
+      "review_status": "derived-review-pending"
+    },
+    "id": "MISSING-SIGN-GENERIC-AMPLIFICATION-COST",
+    "lesson": "Separate exact support from constant bias and absolute normalization from a spectral gap. This only obstructs the stated schedule, not arbitrary retained-data circuits.",
+    "reason_invalid": "The costed two-reflection detector removes that obligation but still uses sqrt(n!) selected projections; its polynomial-iteration acceptance is at most (2T^2+1)/(3n!).",
+    "source": "research/representation/coset_missing_harmonic_detector.json"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE"
+    ],
+    "claim": "Changing ancilla schedules or adding coherent selector memory yields a short missing-sign detector without other data operations.",
+    "evidence": {
+      "metrics": {
+        "constant_bias_scaling_count": 9,
+        "finite_control_count": 4,
+        "finite_control_failure_count": 0,
+        "new_algorithm_count": 0,
+        "pairwise_trace_control_count": 27,
+        "physical_projector_control_count": 14,
+        "polynomial_time_compiler_count": 0,
+        "scaling_record_count": 9,
+        "selector_only_query_control_count": 4,
+        "selector_only_query_control_failure_count": 0,
+        "source_adaptive_channel_control_count": 3,
+        "source_adaptive_exact_sector_count": 1502,
+        "source_adaptive_regular_sector_count": 102,
+        "source_adaptive_scaling_count": 9
+      },
+      "review_status": "derived-review-pending",
+      "scope": [
+        "raw_regular_null",
+        "shared_hidden_missing_sign",
+        "independent_initial_ancillas",
+        "ancilla_only_interleavings",
+        "selected_sign_phase_only_data_coupling",
+        "ancilla_only_terminal_readout",
+        "all_query_uses_charged",
+        "no_free_postselection"
+      ]
+    },
+    "id": "MISSING-SIGN-SELECTOR-ONLY-QUERY-BOUND",
+    "lesson": "A faster retained-data compiler must leave this restricted access architecture. Data-dependent preprocessing, nonmissing-sector operations and terminal data measurements are excluded, not lower-bounded; each needs an explicit charged implementation.",
+    "reason_invalid": "With only selected missing-sign phase calls as data coupling and ancilla-only readout, the raw-null identity-prefix hybrid gives output T<=2q/sqrt(n!) for arbitrary K. One-sided acceptance is <=4q^2/n!.",
+    "source": "research/representation/coset_missing_harmonic_detector.json"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE"
+    ],
+    "claim": "At polynomial copy count, choosing missing-sign subset phase queries from full observed source labels gives a polynomial-query detector with no other carrier operations.",
+    "evidence": {
+      "metrics": {
+        "constant_bias_scaling_count": 9,
+        "finite_control_count": 4,
+        "finite_control_failure_count": 0,
+        "new_algorithm_count": 0,
+        "pairwise_trace_control_count": 27,
+        "physical_projector_control_count": 14,
+        "polynomial_time_compiler_count": 0,
+        "scaling_record_count": 9,
+        "selector_only_query_control_count": 4,
+        "selector_only_query_control_failure_count": 0,
+        "source_adaptive_channel_control_count": 3,
+        "source_adaptive_exact_sector_count": 1502,
+        "source_adaptive_regular_sector_count": 102,
+        "source_adaptive_scaling_count": 9
+      },
+      "review_status": "derived-review-pending",
+      "scope": [
+        "standard_mixed_coset_inputs",
+        "shared_hidden_odd_involution_class",
+        "full_central_irrep_source_labels",
+        "initial_ancillas_depend_only_on_source_labels",
+        "source_conditioned_ancilla_only_interleavings",
+        "selected_sign_phase_only_further_data_coupling",
+        "source_and_ancilla_only_terminal_readout",
+        "all_query_uses_charged",
+        "no_free_postselection"
+      ]
+    },
+    "id": "MISSING-SIGN-SOURCE-ADAPTIVE-QUERY-BOUND",
+    "lesson": "Source information is not zero at q=0. This extends only central-source/ancilla-controlled missing-sign queries and source/ancilla readout; noncentral carrier operations, different target sectors and implemented data POVMs remain outside the bound.",
+    "reason_invalid": "The Plancherel mean of the best conditional sign-sector rank fraction is at most K p(n)/n!. Including weak-source information gives output T<=K/(2sqrt(M))+2q sqrt(K p(n)/n!), negligible at polynomial K,q for fixed-point-free n=2 mod 4.",
+    "source": "research/representation/coset_missing_harmonic_detector.json"
+  },
+  {
+    "applies_to": [
       "CODE-COSET-COLLECTIVE",
       "multiplicity-fiber trace",
       "typical hyperoctahedral branches"

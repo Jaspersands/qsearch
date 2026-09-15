@@ -18662,6 +18662,34 @@
   {
     "candidate_id": "CODE-COSET-COLLECTIVE",
     "dependencies": [
+      "theorems/coset_missing_harmonic_detector.py",
+      "research/MISSING_HARMONIC_DETECTOR.md"
+    ],
+    "falsifiers": [
+      "Even transposition count invalidates the missing-sign premise.",
+      "Moment bounds fail on raw null or any hidden member leaks into the accepting subspace.",
+      "A proposed efficient detector hides factorial amplification or changes the input access model."
+    ],
+    "hypothesis": "Known subset-span moments permit constant-bias detection without a minimum positive gap, but normalized generic amplification remains uncompetitive.",
+    "id": "EXP-COSET-MISSING-HARMONIC-DETECTOR",
+    "metrics": [
+      "finite_control_count",
+      "finite_control_failure_count",
+      "physical_projector_control_count",
+      "constant_bias_scaling_count",
+      "polynomial_time_compiler_count"
+    ],
+    "next_actions": [
+      "Compile a structured retained-data detector below the normalized-walk cost, then compare legal classical and coherent-oracle baselines."
+    ],
+    "positive_signal": "A costed physical detector and an explicit remaining structured-compiler obligation, not a speedup.",
+    "protocol": "Compare relative-coordinate projectors and two-reflection dynamics with raw regular operators; derive exact moments and scaling costs without enumerating growing groups.",
+    "status": "planned",
+    "title": "Retained-data missing-sign detector with charged amplification"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
       "coset_multiplicity_commutant_search.py",
       "coset_jucys_murphy_label_transform.py",
       "symmetric_character.py",

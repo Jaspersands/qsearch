@@ -1,8 +1,176 @@
 # Research Agent Handoff
 
-Last updated: 2026-09-15
+Last updated: 2026-09-16
 
-## Latest Completed Pass: All-Mask Coefficient-Mass Channel Bound
+## Latest Completed Pass: Source-Adaptive Missing-Sign Queries
+
+The source-adaptive lead below is now IMPLEMENTED, tested and integrated.
+Read `research/MISSING_SIGN_SOURCE_ADAPTATION.md`,
+`theorems/coset_missing_sign_source_adaptation.py` and its dedicated test file.
+All mathematical claims remain DERIVED/REVIEW-PENDING. No independent review,
+formal verification, novelty, classical sampler or quantum speedup is claimed.
+
+For each source tuple lambda and nonempty S, Frobenius reciprocity gives
+r_S=mult_sign(tensor lambda_i)/prod d_i <=1/d_j^2 for every j in S. Thus
+E_Planch max_S r_S<=K p(n)/n! with NO union over exponentially many subsets
+and no unknown character-ratio constant. Full-source-conditioned null-prefix
+hybrids cost <=2q sqrt(K p(n)/n!). The alternative source prior differs from
+the null by <=K/(2sqrt(M)), which MUST be retained even at q=0. Together:
+
+    T(outputs)<=min(1,K/(2sqrt(M))+2q sqrt(K p(n)/n!)).
+
+Scope: standard mixed inputs, one shared odd-transposition hidden class,
+full CENTRAL source labels, subsequent source-conditioned ancillary control,
+only selected missing-sign phase calls as further carrier interactions, and
+source/ancilla-only output. Free postselection, different target sectors,
+noncentral carrier operations and implemented carrier POVMs are excluded.
+The bound vanishes at polynomial K,q for fixed-point-free n=2 mod 4; it is
+not asserted negligible for arbitrary small classes or exponential K.
+
+Controls: 1502 exact source/subset ranks; 102 independent regular conditional
+rank comparisons; 39 per-hidden regular source-prior checks; physical adaptive
+programs on all 61 source tuples across S3 K2/q0, S3 K3/q2, S4 K2/q1, for EVERY
+hidden transposition. The first query adversarially chooses the best subset
+for each source; later ancillary unitaries are complex and source-dependent.
+S3K2/q0 output T=11/36, explicitly falsifying omission of the weak-source term.
+S4K2/q1 output information exceeds weak labels by 1/144, a finite diagnostic,
+NOT a compiled ancilla Helstrom readout or scalable algorithm. Classical
+postprocessing of weak labels still includes a quantum weak-label front end.
+
+Exact scaling contracts use hexadecimal rational certificates and outward
+dyadic caps. K=q=n^2, n18/34/66/130/258/514/1026 gives T caps
+2^-4/-21/-64/-168/-408/-954/-2176; n6,n10 vacuous. Large n4098 JSON/precision
+controls are tested without decimal-conversion-limit changes or float underflow.
+Three new source-adaptive gates, proof lemma index3 in the missing-harmonic
+lemma helper, negative MISSING-SIGN-SOURCE-ADAPTIVE-QUERY-BOUND, dequantization
+mapping, mutation obligations and README are connected to the SAME existing
+`coset-missing-harmonic` CLI/EXP-COSET-MISSING-HARMONIC-DETECTOR report.
+
+Final verification: 86 focused passed in9.50s BEFORE final extra validation
+checks; TEN-file regression first163 passed141.90s, then FINAL163 passed142.93s
+after exact census type checks, a tighter measured hybrid check and baseline
+fields. Counts overlap. XML `.pytest_cache/missing-sign-source-first.xml`,
+`.pytest_cache/missing-sign-source-regression.xml`,
+`.pytest_cache/missing-sign-source-regression-final.xml`.
+Python compile, JS syntax and diff checks passed. All ten live workflows
+passed: new CLI, runner, recoupling synth, dequantize, proofs, conjectures,
+mutate, progress snapshot, validate, proof-routes. 8 candidates,793 experiments,
+801 results,920 negatives,1315 dequant findings/1311 blocking,1289 lemmas,
+104 proof statuses/24 blocking. Validation issues[]; 13 proof-route contracts,
+0 unsupported,4 unresolved. No candidate promoted. Full suite NOT rerun this
+extension: the preceding fresh full-suite attempt (69pass/1known writer fail)
+is below, and that writer is unchanged. Do NOT claim full-suite green.
+
+Save this and the preceding two retained-data passes as ONE substantial
+checkpoint, not separate small commits; inspect Git for the actual SHA and
+push state. No background service or automation was started.
+
+NEXT HIGH-IMPACT WORK: inspect the existing coherent carrier-program and
+clean-isotypic primitive code before adding anything. The constructive target
+must now use a specifically costed NONMISSING-sector operation, a noncentral
+carrier action, or an actual final data compiler. A scalable family of
+coherent overlapping nonmissing-sector queries is a plausible next interface;
+keep all physical data across queries, supply an actual readout, and derive
+growing-n falsifiers. Do not restart tiny-circuit optimization or treat a
+finite optimal Helstrom readout as compiled. Existing one-common-query mask
+bounds and the source-adaptive sign bounds must stay distinct. Re-read MRS
+Section3 before proposing measured combine-and-discard trees: that restricted
+model is already ruled out. Leaving its model is necessary, not a speedup.
+Independent review/novelty comparison of the consolidated bounds is also
+high-value; registry counts are not research impact.
+
+## Previous Completed Passes: Retained-Data Detector And Query Hybrid
+
+Read `research/MISSING_HARMONIC_DETECTOR.md` and
+`theorems/coset_missing_harmonic_detector.py`. Two substantive passes are
+implemented and live, but UNCOMMITTED at this checkpoint. Last pushed commit
+remains `1c3ba494` (inspect current Git before relying on that). Bundle later
+work rather than creating frequent tiny commits. The active goal stays open.
+
+1. Costed retained-physical missing-sign detector. Known Moore/Russell subset
+   projectors have raw-null mean delta=1/n! and uniform-frame second moment
+   delta^2[1+(n!-1)/(2^K-1)]. Paley-Zygmund and a mixed direct/randomized
+   two-reflection test give null acceptance >=1/64 at 2^K-1>=n!, with zero
+   ideal acceptance for EVERY hidden odd-transposition involution. No minimum
+   positive gap is required. T=ceil(sqrt(n!)) selected projections is still
+   uncompetitive. This is a costed schema/benchmark, not a fault-tolerant gate
+   export, exact range projector, novel algorithm, or speedup. Physical data
+   is reused, not re-prepared per iteration. Selected projections are compiled
+   at the schema level by reversible x_i x_p^-1 coordinates and a signed
+   uniform pivot state, without a Kronecker recoupling basis.
+
+2. Selector-only query hybrid. With independent initial ancillas, only
+   controlled missing-sign phase calls as data coupling, ancilla-only
+   interleavings AND terminal output, q calls give T<=2q/sqrt(n!) for arbitrary
+   K. One-sided accept probability <=4q^2/n!. Identity-query prefixes, NOT
+   actual post-query states, have uniform raw data. Every alternative remains
+   in the common kernel. Coherent control, ancilla memory and deferred
+   classical adaptivity are covered. Arbitrary data readout, data-dependent
+   source initialization, other data operations and free postselection are
+   excluded. A free final data-span measurement explicitly violates a q=0
+   extension; the finite test preserves that counterexample. Declared-scope
+   flags must be literal True; the contract is not an arbitrary program checker.
+
+Controls: fourteen physical subset projectors, 27 pairwise trace identities,
+four full physical detector controls (S3 K1/2/3, S4 transpositions K2), four
+complex ancillary-program/query controls, nine exact fixed-point-free scaling
+rows n=6,10,18,34,66,130,258,514,1026. Missing sign requires odd transposition
+count; fixed-point-free n must be 2 mod 4. S4 double transpositions are an
+explicit invalid-premise control, not a missing-harmonic case.
+
+CLI `python qsearch.py coset-missing-harmonic`, runner
+`python qsearch.py run EXP-COSET-MISSING-HARMONIC-DETECTOR`.
+Both write the SAME result key `RESULT-EXP-COSET-MISSING-HARMONIC-DETECTOR-COSET`.
+One accidentally generated LATEST duplicate was removed through the registry
+API; no unrelated records were removed. New experiment, two negative records,
+three scoped proof lemmas, dequantization mappings, mutation obligations and
+README are wired. No candidate promoted; all derivations REVIEW-PENDING.
+
+Verification: initial detector regression 106 passed in 142.12s. Final
+query-bound focused suite 50 passed in 7.49s; final NINE-file regression
+127 passed in 141.67s, including integration, proof/dequant gates, baseline
+modules, mutation, provenance and writer persistence. Counts overlap.
+XML: `.pytest_cache/missing-harmonic-regression-final.xml`,
+`.pytest_cache/missing-sign-query-first.xml`,
+`.pytest_cache/missing-sign-query-regression.xml`.
+An earlier test-only import typo was fixed before the final runs.
+
+Fresh full-suite fail-fast attempt: 69 passed, ONE known failure in 215.10s,
+`.pytest_cache/full-suite-missing-harmonic.xml`.
+`tests/test_character_query_information.py:61` still finds the character-query
+writer's scaling record missing. No full-suite green claim; remaining tests
+were not reached. This is the existing routine Gemini maintenance task below.
+Python compilation, JS syntax and diff checks passed. Ten live workflows
+all passed: new CLI, new runner, recoupling synthesis, dequantize, proofs,
+conjectures, mutate, progress snapshot, validate, proof-routes.
+Current live counts: 8 candidates, 793 experiments, 801 results, 919 negatives,
+1314 dequant findings/1310 blocking, 1288 lemmas, 104 proof statuses/24 blocking,
+8 blocked conjectures, 19 mutations. Validation issues[]; 13 proof-route
+contracts, zero unsupported assertions, four unresolved. No speedup.
+
+NEXT HIGH-THINKING LEAD: the final section of MISSING_HARMONIC_DETECTOR.md
+records a possible source-adaptive extension, NOT YET IMPLEMENTED/GATED.
+For full central irrep sources, sign-sector conditional rank r_S<=1/d_j^2
+for every j in S by Frobenius reciprocity and dimension counting. Thus
+E_Planch max_S r_S <=K p(n)/n!. Candidate adaptive hybrid:
+
+    T <= K/(2 sqrt(M)) + 2q sqrt(K p(n)/n!).
+
+The first term charges the differing weak-source laws; do not drop it at q=0.
+Exact exploratory character checks passed 1502 source/subset cases:
+S3K3 (189), S4K2 (75), S4K3 (875), S6K2 (363). These were shell calculations,
+not a persistent test module or independent proof. The table-helper S4 class
+was double-transposition only to obtain group character data; that does NOT
+make sign missing. Verify actual source-adaptive physical channels under an
+odd-transposition class, both source priors and all hidden members before
+integrating the proposed extension. This may close the next obvious escape
+without needing Roichman constants. It would still leave other carrier
+operations and implemented data readouts open, not prove a general no-go.
+
+No background service/automation was started. At finalization, inspect live
+process handles and Git status; do not infer current liveness from this note.
+
+## Previous Completed Pass: All-Mask Coefficient-Mass Channel Bound
 
 Read `research/SELECTOR_COEFFICIENT_MASS_BOUND.md`. The former scratch lead
 is implemented, checked and gated as DERIVED/REVIEW-PENDING. No independent
