@@ -1,5 +1,33 @@
 # Mechanical Follow-Up Implementation Plan (pass 2)
 
+## Current Handoff (2026-09-17)
+
+Read the TOP of `research/AGENT_HANDOFF.md` and
+`research/DCP_PHYSICAL_WITNESS_REDUCTION.md` before touching claim text.
+The arbitrary-measurement inverse need not prepare UNIFORM subset-sum fibers.
+Preserve its rational counterexample and nonuniform witness scope. The primary
+wrapper now uses two decoder/inverse calls WITHOUT amplification, with success
+at least pbar^2 averaged over labels and the specified target law. Its optional
+normalized variant has a separate cost/success contract. Do not merge them,
+turn a weak average guarantee into per-target success, or import uniform-fiber
+entanglement exclusions through the repaired reduction. No speedup is allowed.
+
+All echo/transfer/DCP CLI, runner and registry wiring is now done. Do not repeat
+it. The exact S6 transfer certificate is fixed-degree and ONE round only.
+Read-only replay checks both witnesses and all58prefix moments. No UI redesign
+is needed. Mathematical follow-ups and new literature review belong to the
+high-reasoning model, not schema maintenance.
+
+First routine task remains the character-query writer's missing scaling write:
+`python -m pytest -q tests/test_character_query_information.py`. The fresh
+full-suite attempt stopped at69passes/that1failure; the rest was NOT tested.
+Fix persistence with the existing registry API, respect write_registry=False
+and custom IDs, add focused tests, then continue the full suite to expose the
+next actual failure. Do not repeatedly rerun the same stopped prefix or change
+mathematical assertions just to make tests pass. Preserve the seed bootstrap's
+existing-protocol protection. After repairs, refresh dequantize/proofs/
+conjectures/mutate/snapshot/validate and make rare bundled checkpoints.
+
 ## Current Checkpoint (2026-09-10)
 
 2026-09-11 update: normal seed bootstrap now PRESERVES existing experiment

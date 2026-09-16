@@ -851,6 +851,8 @@ from coset_hidden_involution_orbit_hull_twirl_reduction import write_hidden_invo
 from coset_hidden_involution_query_separation_boundary import write_hidden_involution_query_separation_report
 from coset_hidden_involution_support_span_reduction import write_hidden_involution_support_span_report
 from coset_missing_harmonic_detector import write_missing_harmonic_report
+from coset_overlap_echo import write_overlap_echo_report
+from coset_overlap_transfer import replay_transfer_report, write_transfer_report
 from coset_hidden_involution_threshold_compiler_boundary import write_hidden_involution_threshold_compiler_report
 from coset_hyperoctahedral_branching_polar_boundary import write_coset_hyperoctahedral_branching_polar_report
 from coset_kronecker_marginal_conservation import write_kronecker_marginal_conservation_report
@@ -14681,10 +14683,12 @@ def command_dcp_adaptive_layout_uniform_entanglement_no_go(args: argparse.Namesp
 
 def command_dcp_arbitrary_measurement_witness_reduction(args: argparse.Namespace) -> int:
     report = write_arbitrary_measurement_witness_reduction_report()
-    print(f"Analysis complete: {args.command}")
+    print(report["summary"])
     print(f"Status: {report.get('status')}")
-    print(f"Registry valid: {validate_registry()['valid']}")
-    return 0
+    print(json.dumps(report["headline_metrics"], indent=2))
+    valid = validate_registry()["valid"]
+    print(f"Registry valid: {valid}")
+    return 0 if valid and report["claim_gate"]["unamplified_label_average_success_transfer_derived"] is True else 1
 
 def command_dcp_canonical_pgm_erasure_equivalence(args: argparse.Namespace) -> int:
     report = write_canonical_pgm_erasure_equivalence()
@@ -19597,6 +19601,28 @@ def command_coset_hidden_involution_reference_twirl_information(args: argparse.N
     print(payload["summary"])
     print(json.dumps(payload["headline_metrics"], indent=2))
     return 0 if validate_registry()["valid"] else 1
+
+
+def command_coset_overlap_transfer(args: argparse.Namespace) -> int:
+    if args.replay:
+        result = replay_transfer_report()
+        print(json.dumps(result, indent=2))
+        return 0 if result["valid"] else 1
+    if not args.no_registry:
+        initialize_seed_registry(overwrite=False)
+    payload = write_transfer_report(write_registry=not args.no_registry)
+    print(payload["summary"])
+    print(json.dumps(payload["headline_metrics"], indent=2))
+    return 0 if payload["claim_gate"]["exact_transfer_controls_verified"] else 1
+
+
+def command_coset_overlap_echo(args: argparse.Namespace) -> int:
+    if not args.no_registry:
+        initialize_seed_registry(overwrite=False)
+    payload = write_overlap_echo_report(write_registry=not args.no_registry)
+    print(payload["summary"])
+    print(json.dumps(payload["headline_metrics"], indent=2))
+    return 0 if payload["claim_gate"]["finite_controls_verified"] else 1
 
 
 def command_coset_missing_harmonic_detector(args: argparse.Namespace) -> int:
@@ -27081,6 +27107,17 @@ def build_parser() -> argparse.ArgumentParser:
         help="Audit noncentral selectors, radial masks, and scoped tail/vacuum-coherence information bounds.")
     binary_instruments.add_argument("--no-registry", action="store_true")
     binary_instruments.set_defaults(func=command_coset_binary_carrier_instruments)
+    overlap_transfer = subparsers.add_parser(
+        "coset-overlap-transfer", help="Evaluate exact long-path echo transfer and scoped all-copy decay certificates."
+    )
+    overlap_transfer.add_argument("--no-registry", action="store_true")
+    overlap_transfer.add_argument("--replay", action="store_true", help="Read-only exact replay of saved S6 decay witnesses.")
+    overlap_transfer.set_defaults(func=command_coset_overlap_transfer)
+    overlap_echo = subparsers.add_parser(
+        "coset-overlap-echo", help="Evaluate costed coherent nonmissing-sector echoes and actual X-readout laws."
+    )
+    overlap_echo.add_argument("--no-registry", action="store_true")
+    overlap_echo.set_defaults(func=command_coset_overlap_echo)
     missing_harmonic = subparsers.add_parser(
         "coset-missing-harmonic", help="Audit the retained-data missing-sign detector and its amplification cost."
     )

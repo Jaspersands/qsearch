@@ -31,40 +31,44 @@ extracts the contraction
     K|phi> = sum_d |d><eta_d|phi>,
     |eta_d> = M_d^*|g_d> = E_d|psi_d>/sqrt(p).           (1)
 
-Covariance gives ``|eta_d>=U_d|eta_0>``.  Write
+Covariance gives ``|eta_d>=U_d|eta_0>`` in the FULL assignment space.
+Let P_s project onto all computational assignments of residue s, and write
 
-    |eta_0> = sum_(s in S) beta_s|F_s>.
+    |eta_s> = P_s|eta_0>.
 
 The cyclic QFT diagonalizes (1) exactly:
 
-    QFT_N K|F_s> = sqrt(N) beta_s^* |s>.                 (2)
+    QFT_N K = sqrt(N) sum_s |s><eta_s|.                  (2)
 
-Therefore the accessible inverse block prepares ``|F_s>`` with heralded
-probability ``q_s=N|beta_s|^2``.  No coefficient or phase learning is needed.
+Therefore the accessible inverse block prepares eta_s/||eta_s|| with heralded
+probability q_s=N||eta_s||^2. This is a valid witness state but NEED NOT be the
+uniform fiber |F_s>. Compressing a POVM to the input span does not supply an
+efficient inverse of that compression. The physical counterexample below
+retracts the earlier uniform-fiber assertion for arbitrary measurements.
+No coefficient, multiplicity table, or phase learning is needed by the wrapper.
 Moreover,
 
-    p = |<eta_0|psi_0>|^2 <= sum_s |beta_s|^2,
+    p = |<eta_0|psi_0>|^2 <= sum_s ||eta_s||^2,
 
 so for a target uniform on the legal support ``S`` of size ``L``,
 
     E_(s uniform S) q_s
-      = (N/L) sum_s |beta_s|^2 >= (N/L)p >= p.           (3)
+      = (N/L) sum_s ||eta_s||^2 >= (N/L)p >= p.           (3)
 
-For the planted law ``pi_s=c_s/2^m`` one also has, exactly,
+For the planted law pi_s=c_s/2^m, a DIFFERENT Cauchy--Schwarz inequality gives
 
-    E_(s planted) q_s
-      >= (L/2^m) E_(s uniform S) q_s
-      >= (L/2^m) p.                                     (4)
+    p <= (sum_s sqrt(pi_s)||eta_s||)^2
+      <= L sum_s pi_s ||eta_s||^2,
+    E_(s planted) q_s >= (N/L)p >= p.                    (4)
 
-At density one ``m=n`` the quenched support law gives
-``L/2^m -> 1-exp(-1)``, so the same circuit inverts planted random subset-sum
-instances with only a constant loss in average success.  The planted witness
-is hidden from the solver; any returned witness is verified.
+This holds for EVERY fixed public label tuple and density, with no occupancy
+theorem or typical-label assumption. It improves the old L/2^m loss.
+The planted witness is hidden from the solver; any returned witness is verified.
 
-On a successful inverse branch, measuring ``|F_s>`` returns a Boolean modular
+On a successful inverse branch, measuring the fiber-supported state returns a Boolean modular
 subset-sum witness, which is classically verified.  Thus every accessible
-exact DCP measurement with inverse-polynomial average decoding success yields
-an average uniform-legal density-one subset-sum witness procedure with at
+exact DCP measurement with inverse-polynomial fixed-label decoding success yields
+an average uniform-legal AND planted subset-sum witness procedure with at
 least the same one-shot average success.  This includes higher-rank,
 non-PGM, and initially noncovariant measurements.
 
@@ -74,6 +78,26 @@ defines exact effects to which the theorem applies.  Standard phase/QFT
 wrapper synthesis is robust by a polynomial hybrid bound.  A genuinely noisy
 or inaccessible external channel with no retained purification, and
 per-target bounded-error amplification, remain outside the theorem.
+See research/DCP_PHYSICAL_WITNESS_REDUCTION.md for the corrected proof, the
+remaining label-average/implementation obligations, and literature scope.
+These are review-pending derivations, not a new decoder or a hardness proof.
+
+The primary repaired wrapper below does NOT normalize the matching garbage.
+Compute the accessible decoder, copy its computational outcome d, uncompute
+the decoder, and apply the inverse public known-shift preparation controlled
+by d. The all-zero workspace block is
+
+    K_0 = sum_d |d><psi_d|E_d,
+    (QFT K_0)^dagger |s> = sqrt(N) P_s E_0|psi_0>.
+
+Two decoder/dilation calls suffice (one forward, one inverse), with no
+amplification, success estimation, fiber table, or free postselection.
+Writing zeta_s=P_s E_0 psi_0, q_s=N||zeta_s||^2, the same inequalities give
+both target averages >=(N/L)p^2>=p^2, including p=0. Averaging over ANY
+distribution of public labels gives E q >= E p^2 >= (E p)^2. Thus an
+inverse-polynomial LABEL-AVERAGED decoding success suffices without identifying
+good label tuples. Normalized matching-garbage analysis above is an optional
+stronger-success construction, not an assumption of this unamplified route.
 """
 
 from __future__ import annotations
@@ -81,6 +105,7 @@ from __future__ import annotations
 import json
 import math
 from dataclasses import asdict, dataclass
+from fractions import Fraction
 from pathlib import Path
 from typing import Any, Sequence
 
@@ -90,7 +115,10 @@ from dcp_canonical_pgm_erasure_equivalence import qft_matrix
 from dcp_pgm_garbage_bootstrap_reduction import (
     public_phase_state_in_fiber_basis,
 )
-from research_registry import utc_now
+from research_registry import (
+    ExperimentResultRecord, NegativeResultRecord, upsert_experiment_result,
+    upsert_negative_result, utc_now,
+)
 
 
 REPORT_PATH = Path(
@@ -152,7 +180,7 @@ class ArbitraryMeasurementScalingRecord:
     log2_inverse_sufficient_per_call_error: float
     polynomial_bootstrap: bool
     one_shot_uniform_legal_witness_success_lower_bound: float
-    typical_legal_fraction_lower_bound: float
+    occupancy_assumption_used: bool
     one_shot_planted_inversion_success_lower_bound: float
     robust_average_witness_success_lower_bound: float
     robust_planted_inversion_success_lower_bound: float
@@ -192,6 +220,9 @@ class DCPArbitraryMeasurementWitnessReductionReport:
     created_at: str
     theorem_contract: dict[str, Any]
     finite_controls: list[ArbitraryMeasurementControl]
+    physical_controls: list[dict[str, Any]]
+    uniform_fiber_counterexample: dict[str, Any]
+    unamplified_reduction: dict[str, Any]
     scaling_records: list[ArbitraryMeasurementScalingRecord]
     theorem: ArbitraryMeasurementWitnessTheorem
     proof_obligations: list[dict[str, bool | str]]
@@ -459,6 +490,7 @@ def audit_arbitrary_measurement_reduction(
         0.0,
         support_to_assignments * average_target - planted_average,
     )
+    direct_planted_residual = max(0.0, modulus*success/dimension-planted_average)
     pgm_seed = np.ones((dimension, dimension), dtype=complex) / modulus
     seed_rank = int(np.linalg.matrix_rank(seed, tol=100 * tolerance))
     distance_from_pgm = float(np.linalg.norm(seed - pgm_seed, ord=2))
@@ -476,6 +508,8 @@ def audit_arbitrary_measurement_reduction(
         and inverse_residual <= 100 * tolerance
         and decoding_to_mass_residual <= 100 * tolerance
         and average_dominance_residual <= 100 * tolerance
+        and planted_transfer_residual <= 100 * tolerance
+        and direct_planted_residual <= 100 * tolerance
         and float(np.max(target_probabilities)) <= 1 + 100 * tolerance
     )
     return ArbitraryMeasurementControl(
@@ -531,6 +565,177 @@ def audit_arbitrary_measurement_reduction(
     )
 
 
+def audit_physical_measurement_reduction(
+    labels: Sequence[int], modulus: int, *,
+    original_effects: Sequence[np.ndarray] | None = None,
+    covariant_seed: np.ndarray | None = None,
+) -> dict[str, Any]:
+    """Finite full-assignment-space control, not a uniform circuit compiler.
+
+    Repeated residues are separate basis states. This prevents compression
+    to the ensemble span from silently assuming a free fiber-state isometry.
+    """
+    if (type(modulus) is not int or not 2 <= modulus <= 32
+            or not labels or len(labels) > 7
+            or any(type(a) is not int or not 0 <= a < modulus for a in labels)):
+        raise ValueError("finite physical control requires 1..7 canonical labels and 2<=N<=32")
+    if (original_effects is None) == (covariant_seed is None):
+        raise ValueError("provide exactly one physical measurement")
+    dimension = 1 << len(labels)
+    residues = np.array([sum(a*((b >> j) & 1) for j, a in enumerate(labels)) % modulus
+                         for b in range(dimension)])
+    counts = np.bincount(residues, minlength=modulus)
+    support = np.flatnonzero(counts)
+    actions = [np.diag(np.exp(2j*np.pi*d*residues/modulus)) for d in range(modulus)]
+    psi0 = np.ones(dimension, dtype=complex) / math.sqrt(dimension)
+    states = [u @ psi0 for u in actions]
+    identity = np.eye(dimension)
+
+    def validate_effects(effects):
+        if (len(effects) != modulus or any(e.shape != identity.shape or not np.isfinite(e).all()
+                                          for e in effects)):
+            raise ValueError("one finite physical effect of assignment-space dimension per output required")
+        if (np.linalg.norm(sum(effects)-identity) > 1e-8
+                or any(np.linalg.norm(e-e.conj().T) > 1e-8 or np.linalg.eigvalsh(e)[0] < -1e-8
+                       for e in effects)):
+            raise ValueError("physical effects must be Hermitian positive and complete")
+
+    if original_effects is not None:
+        original = tuple(np.asarray(e, dtype=complex) for e in original_effects)
+        validate_effects(original)
+        seed = sum(u.conj().T @ e @ u for u, e in zip(actions, original)) / modulus
+        source_success = sum(np.vdot(s, e @ s).real for s, e in zip(states, original)) / modulus
+    else:
+        seed = np.asarray(covariant_seed, dtype=complex)
+        if seed.shape != identity.shape:
+            raise ValueError("physical seed has the wrong assignment-space dimension")
+        source_success = np.vdot(psi0, seed @ psi0).real
+    effects = tuple(u @ seed @ u.conj().T for u in actions)
+    validate_effects(effects)
+    success = float(np.vdot(psi0, seed @ psi0).real)
+    if success < -1e-10:
+        raise ValueError("physical decoding success cannot be negative")
+    success = max(0.0, success)
+    roots = [_psd_square_root(e) for e in effects]
+    dilation = np.vstack(roots)
+    garbage = [root @ state for root, state in zip(roots, states)]
+    cleaned = np.vstack([g.conj() @ root for g, root in zip(garbage, roots)])
+    eta = seed @ psi0
+    transformed = qft_matrix(modulus) @ cleaned
+    expected = np.zeros((modulus, dimension), dtype=complex)
+    expected[residues, np.arange(dimension)] = math.sqrt(modulus) * eta.conj()
+    inverse = transformed.conj().T
+    target_probabilities = np.sum(np.abs(inverse)**2, axis=0)
+    predicted = modulus * np.bincount(residues, weights=np.abs(eta)**2, minlength=modulus)
+    fiber_basis = np.array([(residues == s)/math.sqrt(counts[s]) for s in support]).T
+    compressed_eta = fiber_basis @ (fiber_basis.conj().T @ eta)
+    leakage = float(np.linalg.norm(eta-compressed_eta)**2)
+    uniform_legal = float(np.mean(target_probabilities[support]))
+    planted = float(counts @ target_probabilities / dimension)
+    uniform_all = float(np.mean(target_probabilities))
+    strengthened_bound = modulus * success**2 / len(support)
+    residuals = {
+        "physical_dilation_isometry": float(np.linalg.norm(dilation.conj().T @ dilation-identity)),
+        "unnormalized_matching_branch_norm": max(abs(np.vdot(g, g).real-success) for g in garbage),
+        "symmetrization_success": abs(float(source_success)-success),
+        "covariant_success_spread": max(abs(np.vdot(s, e @ s).real-success) for s, e in zip(states, effects)),
+        "physical_fourier_filter": float(np.linalg.norm(transformed-expected)),
+        "inverse_fiber_support": float(np.linalg.norm(inverse * (residues[:, None] != np.arange(modulus)))),
+        "heralding_probability": float(np.max(np.abs(target_probabilities-predicted))),
+        "contraction": max(0.0, float(np.linalg.eigvalsh(cleaned.conj().T @ cleaned)[-1])-1),
+        "uniform_legal_success_bound": max(0.0, strengthened_bound-uniform_legal),
+        "planted_success_bound": max(0.0, strengthened_bound-planted),
+        "uniform_all_residues_success_bound": max(0.0, success**2-uniform_all),
+    }
+    return {
+        "labels": list(labels), "modulus": modulus, "assignment_dimension": dimension,
+        "support_size": len(support), "multiplicities": counts.tolist(),
+        "source_measurement_kind": "noncovariant-physical-povm" if original_effects is not None else "covariant-physical-povm",
+        "source_decoding_success": float(source_success), "uniform_span_leakage_squared": leakage,
+        "normalized_uniform_span_leakage_squared": leakage/success if success > 1e-12 else None,
+        "target_preparation_probabilities": target_probabilities.tolist(),
+        "uniform_legal_witness_success": uniform_legal, "planted_witness_success": planted,
+        "uniform_all_residues_witness_success": uniform_all,
+        "both_target_laws_lower_bound": strengthened_bound,
+        "occupancy_assumption_used": False, "inverse_uniform_fiber_preparation_implied": False,
+        "wrapper": "unamplified compute-copy-uncompute; two symmetrized decoder/inverse calls",
+        "success_probability_estimation_required": False,
+        "postselection_success_charged": True,
+        "postselected_basis_probabilities": {
+            str(int(s)): (np.abs(inverse[:, s])**2/target_probabilities[s]).tolist()
+            for s in support if target_probabilities[s] > 1e-12},
+        "residuals": residuals, "verified": max(residuals.values()) < 1e-8,
+        "finite_exponential_evaluator_not_solver": True,
+    }
+
+
+def physical_uniform_fiber_counterexample() -> dict[str, Any]:
+    """An exact rational N=2, labels=(1,1) POVM refutes uniform preparation."""
+    f1 = np.array([0, 1, 1, 0], dtype=float)
+    g0 = np.array([1, 0, 0, -1], dtype=float)
+    seed = np.eye(4)/2 + (np.outer(g0, f1)+np.outer(f1, g0))/4
+    control = audit_physical_measurement_reduction((1, 1), 2, covariant_seed=seed)
+    control["exact_rational_construction"] = {
+        "seed_denominator": 4, "seed_numerators": (4*seed).astype(int).tolist(),
+        "decoding_success": "1/2", "inverse_heralding_probabilities": ["1/2", "1/4"],
+        "uniform_span_leakage_squared": "1/8", "normalized_uniform_span_leakage_squared": "1/4",
+        "target_zero_witness_law": {"00": "1", "11": "0"},
+        "claimed_uniform_witness_law": {"00": "1/2", "11": "1/2"},
+    }
+    control["uniform_fiber_inference_refuted"] = bool(control["verified"] and
+        abs(control["uniform_span_leakage_squared"]-.125) < 1e-10 and
+        abs(control["postselected_basis_probabilities"]["0"][0]-1) < 1e-10)
+    return control
+
+
+def label_average_success_bound(successes: Sequence[Fraction], weights: Sequence[Fraction]) -> dict:
+    """Exact Jensen certificate; input probabilities are premises, not measured truths."""
+    if (not successes or len(successes) != len(weights)
+            or any(type(p) is not Fraction or not 0 <= p <= 1 for p in successes)
+            or any(type(w) is not Fraction or w < 0 for w in weights) or sum(weights) != 1):
+        raise ValueError("exact probability successes and normalized exact weights required")
+    mean = sum(w*p for w, p in zip(weights, successes))
+    second = sum(w*p*p for w, p in zip(weights, successes))
+    variance = sum(w*(p-mean)**2 for w, p in zip(weights, successes))
+    if second-mean*mean != variance:
+        raise AssertionError("exact second-moment identity failed")
+    return {"mean_decoder_success": str(mean), "mean_squared_success": str(second),
+        "label_averaged_witness_lower_bound": str(mean*mean), "variance": str(variance),
+        "jensen_verified": second >= mean*mean, "per_label_positive_success_required": False}
+
+
+def unamplified_reduction_contract() -> dict[str, Any]:
+    return {
+        "construction": ["coherently symmetrize the supplied state-only decoder",
+            "compute the decoder dilation", "copy its computational outcome d into a retained register",
+            "uncompute the decoder dilation", "unprepare the public known-shift state psi_d controlled by d",
+            "the zero-workspace block is K0=sum_d |d><psi_d|E_d",
+            "invert that block after inverse QFT on the supplied target; herald and verify the witness"],
+        "inverse_block_identity": "(QFT K0)^dagger |s>=sqrt(N)P_s E_0 psi_0",
+        "heralding_probability": "q_s=N||P_s E_0 psi_0||^2, including zero-success branches",
+        "fixed_label_bound": "both E_uniform-legal q and E_planted q >=(N/L)p^2>=p^2",
+        "uniform_all_residues_bound": "E_uniform-Z_N q=sum_s||zeta_s||^2>=p^2; illegal targets have q=0",
+        "joint_legal_conditioning": "For uniform residue targets, conditioning the whole label/target law on legality divides success by Z=E_labels L/N<=1, so success is still >=pbar^2; do not conflate the changed label marginal with the original one",
+        "label_average_bound": "E_labels,target q >= E_labels p^2 >= (E_labels p)^2 for ANY public-label law",
+        "decoder_or_inverse_calls_per_attempt": 2,
+        "qft_or_inverse_calls_per_attempt": 1,
+        "controlled_known_shift_preparation_or_inverse_calls_per_attempt": 1,
+        "coherent_outcome_copy_or_inverse_calls_per_attempt": 1,
+        "amplitude_amplification_required": False, "success_estimation_required": False,
+        "fiber_counts_or_fiber_preparation_required": False, "free_postselection": False,
+        "good_labels_identified_or_postselected": False,
+        "precision": "a whole-wrapper operator-norm error <=pbar^2/8 changes success by <=pbar^2/4; at least 3pbar^2/4 remains",
+        "circuit_access": "supplied efficient reversible state-only decoder with all workspace retained; no additional unknown-input oracle calls",
+        "growing_label_count": "m and log(N) polynomial; known-shift preparation and coherent cyclic twirl use public arithmetic only",
+        "excluded": ["external inaccessible environment", "unavailable inverse or controlled known-state preparation",
+                     "per-target guarantee", "uniform witness sampling", "new decoder", "quantum hardness proof"],
+        "heterogeneous_success_control": label_average_success_bound(
+            (Fraction(0), Fraction(1, 16), Fraction(1, 2), Fraction(1)),
+            (Fraction(1, 2), Fraction(1, 4), Fraction(1, 8), Fraction(1, 8))),
+        "review_status": "derived-review-pending", "novelty_established": False,
+    }
+
+
 def arbitrary_measurement_scaling_record(
     n_bits: int,
     decoding_success_power: int,
@@ -539,14 +744,13 @@ def arbitrary_measurement_scaling_record(
     if n_bits < 2 or decoding_success_power < 0 or target_precision_power < 1:
         raise ValueError("invalid scaling parameters")
     success = n_bits ** (-decoding_success_power)
-    precision = n_bits ** (-target_precision_power)
+    precision = min(n_bits ** (-target_precision_power), success / 128.0)
     queries = math.ceil(
         16.0 * success**-0.5 * math.log(2.0 / precision)
     )
     wrapper_calls = 4 * queries + 16
     per_call_error = success / (64.0 * (wrapper_calls + 1))
     robust_success = 3.0 * success / 4.0
-    typical_legal_fraction_lower_bound = 0.25
     polynomial = queries <= n_bits ** (
         math.ceil(decoding_success_power / 2) + target_precision_power + 3
     )
@@ -562,16 +766,10 @@ def arbitrary_measurement_scaling_record(
         log2_inverse_sufficient_per_call_error=-math.log2(per_call_error),
         polynomial_bootstrap=polynomial,
         one_shot_uniform_legal_witness_success_lower_bound=success,
-        typical_legal_fraction_lower_bound=(
-            typical_legal_fraction_lower_bound
-        ),
-        one_shot_planted_inversion_success_lower_bound=(
-            typical_legal_fraction_lower_bound * success
-        ),
+        occupancy_assumption_used=False,
+        one_shot_planted_inversion_success_lower_bound=success,
         robust_average_witness_success_lower_bound=robust_success,
-        robust_planted_inversion_success_lower_bound=(
-            typical_legal_fraction_lower_bound * robust_success
-        ),
+        robust_planted_inversion_success_lower_bound=robust_success,
         actual_circuit_povm_semantics_exact=True,
         inverse_polynomial_wrapper_precision_sufficient=(
             per_call_error >= n_bits ** (
@@ -603,28 +801,27 @@ def arbitrary_measurement_witness_theorem(
             "eta_d=M_d^*g_d=E_d psi_d/sqrt(p), so K=sum_d |d><eta_d|"
         ),
         fourier_diagonal_filter=(
-            "if eta_0=sum_s beta_s F_s then QFT K F_s=sqrt(N)beta_s^*|s>"
+            "eta_s=P_s eta_0 in the full assignment space; QFT K=sqrt(N)sum_s |s><eta_s|"
         ),
         target_preparation_probability=(
-            "K^dagger QFT^dagger|s> heralds |F_s> with q_s=N|beta_s|^2"
+            "K^dagger QFT^dagger|s> heralds eta_s/||eta_s|| with q_s=N||eta_s||^2; uniformity is NOT implied"
         ),
         average_success_transfer=(
-            "p=|<eta_0|psi_0>|^2<=sum_s|beta_s|^2, hence "
-            "E_uniform-legal q_s=(N/L)sum_s|beta_s|^2>=p"
+            "p=|<eta_0|psi_0>|^2<=sum_s||eta_s||^2, hence "
+            "E_uniform-legal q_s=(N/L)sum_s||eta_s||^2>=(N/L)p>=p"
         ),
         planted_average_success_transfer=(
-            "E_planted q_s=sum_s(c_s/2^m)q_s >= "
-            "(L/2^m)E_uniform-legal q_s >= (L/2^m)p; at density one "
-            "L/2^m tends to 1-exp(-1)"
+            "p<=L sum_s pi_s||eta_s||^2 gives E_planted q_s>=(N/L)p>=p "
+            "for every fixed public label tuple and density, without occupancy assumptions"
         ),
         witness_consequence=(
             "measure a successful inverse-prepared fiber and verify its Boolean witness"
         ),
         scope_limit=(
-            "Every accessible reversible standard-circuit measurement is "
-            "reduced using its actual exact POVM, even if it only approximates "
-            "a named ideal measurement. Genuinely noisy/inaccessible channels "
-            "and per-target bounded-error amplification remain open."
+            "An accessible reversible measurement with a known inverse-polynomial "
+            "fixed-label success lower bound is reduced using its actual POVM. "
+            "No uniform-fiber preparation, arbitrary label-average bootstrap, "
+            "inaccessible noisy-channel inversion, or per-target guarantee follows."
         ),
         arbitrary_effect_rank=True,
         initially_noncovariant_measurements=True,
@@ -685,10 +882,18 @@ def run_arbitrary_measurement_witness_reduction(
         for power in (0, 2, 4, 8)
     ]
     theorem = arbitrary_measurement_witness_theorem()
+    unamplified = unamplified_reduction_contract()
+    physical = [audit_physical_measurement_reduction(labels, modulus,
+        original_effects=random_exact_povm(modulus, 1 << len(labels), seed=5900+i))
+        for i, (modulus, labels) in enumerate(((2, (1, 1)), (8, (1, 2, 3, 0)),
+                                             (8, (0, 0, 0, 0, 0, 0)), (5, (1, 4, 2))))]
+    counterexample = physical_uniform_fiber_counterexample()
     failures = sum(
         not row.exact_arbitrary_measurement_reduction_verified
         for row in controls
     )
+    failures += sum(not row["verified"] for row in physical)
+    failures += int(not counterexample["uniform_fiber_inference_refuted"])
     verified = bool(
         failures == 0
         and all(row.higher_rank_effect_verified for row in controls)
@@ -699,7 +904,7 @@ def run_arbitrary_measurement_witness_reduction(
     return DCPArbitraryMeasurementWitnessReductionReport(
         created_at=utc_now(),
         theorem_contract={
-            "ensemble": "public-label cyclic DCP phase states on normalized legal fibers",
+            "ensemble": "public-label cyclic DCP phase states in the full Boolean assignment space",
             "input_measurement": "arbitrary exact accessible standard-circuit POVM",
             "symmetrization": theorem.coherent_symmetrization,
             "cleaned_subanalysis": theorem.cleaned_subanalysis,
@@ -708,8 +913,19 @@ def run_arbitrary_measurement_witness_reduction(
             "planted_transfer": theorem.planted_average_success_transfer,
             "consequence": theorem.witness_consequence,
             "scope": theorem.scope_limit,
+            "derivation_document": "research/DCP_PHYSICAL_WITNESS_REDUCTION.md",
+            "evidence_level": "derived-review-pending; finite controls are not a proof checker",
+            "fixed_label_success_promise": "known positive inverse-polynomial lower bound, uniform over symmetrized hidden shifts",
+            "primary_wrapper": "UNAMPLIFIED; only label-averaged inverse-polynomial success needed, with squared success loss",
+            "fixed_label_success_promise_scope": "optional normalized matching-garbage variant only",
+            "theorem_and_scaling_records_scope": "optional normalized matching-garbage variant; unamplified_reduction is the primary constant-call construction",
+            "uniform_fiber_inference": "retracted for arbitrary physical POVMs; valid only under an additional preserved-span condition",
+            "occupancy_assumption_used": False,
         },
         finite_controls=controls,
+        physical_controls=physical,
+        uniform_fiber_counterexample=counterexample,
+        unamplified_reduction=unamplified,
         scaling_records=scaling,
         theorem=theorem,
         proof_obligations=[
@@ -730,11 +946,11 @@ def run_arbitrary_measurement_witness_reduction(
                 ),
             },
             {
-                "obligation": "convert_cleaned_subanalysis_to_target_fiber_preparation",
+                "obligation": "convert_cleaned_subanalysis_to_fiber_supported_witness",
                 "resolved": verified,
                 "resolution": (
-                    "Cyclic covariance diagonalizes K by QFT; its inverse "
-                    "heralds the exact normalized target fiber."
+                    "Cyclic covariance separates full residue eigenspaces. The inverse "
+                    "heralds P_s eta_0/||P_s eta_0||, not necessarily the uniform fiber."
                 ),
             },
             {
@@ -746,13 +962,11 @@ def run_arbitrary_measurement_witness_reduction(
                 ),
             },
             {
-                "obligation": "transfer_uniform_legal_success_to_planted_inversion",
+                "obligation": "transfer_decoder_success_directly_to_planted_inversion",
                 "resolved": verified,
                 "resolution": (
-                    "Because every legal multiplicity is at least one, planted "
-                    "average success is at least L/2^m times uniform-legal "
-                    "average success. The density-one support law makes this "
-                    "a constant factor on typical sources."
+                    "Weighted Cauchy--Schwarz gives E_planted q_s>=(N/L)p>=p "
+                    "for every label tuple, without a density-one or occupancy assumption."
                 ),
             },
             {
@@ -763,6 +977,16 @@ def run_arbitrary_measurement_witness_reduction(
                     "hybrid over O(p^-1/2 log(1/epsilon)) wrapper calls preserves "
                     "at least 3p/4 success at inverse-polynomial gate precision."
                 ),
+            },
+            {
+                "obligation": "prepare_uniform_fiber_from_arbitrary_physical_effects",
+                "resolved": False,
+                "resolution": "REFUTED in general: the exact two-qubit counterexample leaves the uniform-fiber span. Only witness support is guaranteed.",
+            },
+            {
+                "obligation": "transfer_only_label_averaged_success_without_bootstrap",
+                "resolved": verified,
+                "resolution": "The unamplified compute-copy-uncompute wrapper works at every p including zero and gives q-average>=p^2. Jensen yields label-average witness success>=pbar^2 without estimating p or selecting labels.",
             },
             {
                 "obligation": "reduce_inaccessible_noisy_or_external_channels",
@@ -804,9 +1028,8 @@ def run_arbitrary_measurement_witness_reduction(
                 "objection": "Uniform-legal targets are not the standard planted inversion law.",
                 "resolved": True,
                 "resolution": (
-                    "The exact likelihood ratio gives planted success at least "
-                    "L/2^m times uniform-legal success. Per-target success is "
-                    "still neither needed nor claimed."
+                    "A direct weighted Cauchy--Schwarz inequality gives planted "
+                    "success at least (N/L)p, without transferring through uniform-legal targets."
                 ),
             },
             {
@@ -818,11 +1041,16 @@ def run_arbitrary_measurement_witness_reduction(
                 ),
             },
             {
+                "objection": "All input states lie in the uniform-fiber span, so the physical inverse stays there.",
+                "resolved": False,
+                "resolution": "False. Full-space effects can leak from that span. The counterexample gives target-zero witness 00 with probability one instead of a uniform 00/11 superposition. The repaired proof needs only fiber support.",
+            },
+            {
                 "objection": "This proves no efficient DCP measurement exists.",
                 "resolved": False,
                 "resolution": (
                     "No. It proves that such a measurement would constitute an "
-                    "average density-one subset-sum witness breakthrough."
+                    "average subset-sum witness procedure under a fixed-label success promise, not a hardness theorem or a new algorithm."
                 ),
             },
             {
@@ -842,6 +1070,10 @@ def run_arbitrary_measurement_witness_reduction(
             "uniform_legal_average_success_transfer_theorem_count": int(verified),
             "planted_average_inversion_transfer_theorem_count": int(verified),
             "finite_control_count": len(controls),
+            "full_physical_space_control_count": len(physical)+1,
+            "uniform_fiber_inference_counterexample_count": int(counterexample["uniform_fiber_inference_refuted"]),
+            "occupancy_free_planted_transfer_derived": int(verified),
+            "unamplified_label_average_transfer_derived": int(verified),
             "finite_control_failure_count": failures,
             "higher_rank_control_count": sum(
                 row.higher_rank_effect_verified for row in controls
@@ -882,6 +1114,13 @@ def run_arbitrary_measurement_witness_reduction(
             "new_quantum_algorithm_count": 0,
         },
         claim_gate={
+            "physical_residue_fiber_witness_reduction_derived": verified,
+            "arbitrary_measurement_implies_uniform_fiber_preparation": False,
+            "occupancy_free_planted_success_transfer_derived": verified,
+            "label_average_only_bootstrap_proved": False,
+            "unamplified_label_average_success_transfer_derived": verified,
+            "independently_reviewed": False,
+            "novelty_established": False,
             "accessible_exact_non_pgm_measurement_shortcut_open": False,
             "accessible_exact_higher_rank_measurement_shortcut_open": False,
             "accessible_exact_noncovariant_measurement_shortcut_open": False,
@@ -895,35 +1134,32 @@ def run_arbitrary_measurement_witness_reduction(
             "polynomial_average_subset_sum_witness_solver_constructed": False,
             "speedup_claim_allowed": False,
             "reason": (
-                "Every useful exact standard-circuit DCP measurement reduces "
-                "to an average uniform-legal normalized-fiber witness procedure, "
-                "and hence to planted random subset-sum inversion with a "
-                "constant density-one support loss, "
-                "regardless of rank, PGM structure, initial covariance, or "
-                "which ideal POVM the actual circuit approximates. Only an "
-                "inaccessible noisy channel and per-target amplification remain."
+                "For an accessible state-only decoder/inverse, unamplified compute-copy-uncompute "
+                "prepares a witness-supported state, not a uniform fiber. Both target laws have "
+                "success >=(N/L)p^2, and label-averaged success is >=pbar^2 without estimating p. "
+                "The optional normalized variant gives (N/L)p with bootstrap cost. No new solver, "
+                "hardness claim, independent review, or per-target guarantee is supplied."
             ),
         },
         status=(
-            "all-standard-circuit-measurements-reduced-inaccessible-channel-open"
+            "physical-witness-reduction-derived-review-pending"
             if verified
             else "arbitrary-measurement-reduction-certificate-failure"
         ),
         summary=(
-            "Extended the DCP solver-equivalence boundary from the PGM and "
-            "rank-one phase measurements to every accessible exact measurement. "
-            "Coherent symmetrization, matching-garbage cleanup, and a Fourier "
-            "diagonal filter transfer decoding success to average normalized-"
-            "fiber witness preparation without assuming PGM structure or ideal-"
-            "measurement alignment."
+            "Repaired the arbitrary-measurement reduction in the full assignment space: "
+            "a physical inverse need not prepare a uniform fiber, but supports valid target "
+            "witnesses. An unamplified compute-copy-uncompute wrapper gives planted and "
+            "uniform-legal success >=pbar^2 over any public-label law, with two decoder/inverse "
+            "calls and no success estimation or occupancy assumption. Review pending."
         ),
         falsifiers_triggered=[
-            "Higher-rank effects do not provide an exact-measurement shortcut around normalized-fiber witness preparation.",
+            "The earlier inference from arbitrary physical effects to UNIFORM fiber preparation is false; its full-space counterexample is retained.",
             "Initial noncovariance is removable without average-success loss by an accessible coherent symmetrization.",
             "The cleaned correct branch need not be a full POVM; its Fourier-diagonal inverse already suffices on average.",
-            "Uniform-legal average success transfers to the planted inversion law with exact factor L/2^m, so per-target amplification is unnecessary for the average-case hardness consequence.",
+            "Planted witness success is bounded directly by (N/L)p for every label tuple; an occupancy theorem is unnecessary for this step.",
             "Approximation to a named ideal POVM is not a loophole because the executed circuit has exact effects.",
-            "The surviving measurement loophole is genuinely inaccessible noisy dynamics, not a standard circuit architecture.",
+            "The repaired reduction is not an entanglement lower bound for uniform-fiber preparation and must not inherit those exclusions.",
         ],
     )
 
@@ -938,13 +1174,26 @@ def write_arbitrary_measurement_witness_reduction_report(
     registry_result_id: str = "",
     **kwargs: Any,
 ) -> dict[str, Any]:
-    path = path
-    output_path = path
-    for _k in ("write_registry", "registry_experiment_id", "registry_candidate_id", "registry_result_id"):
-        kwargs.pop(_k, None)
+    if kwargs:
+        raise TypeError(f"unexpected report arguments: {sorted(kwargs)}")
     payload = asdict(run_arbitrary_measurement_witness_reduction())
+    payload["artifacts"] = {"report": str(path), "derivation": "research/DCP_PHYSICAL_WITNESS_REDUCTION.md"}
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n")
+    if write_registry:
+        upsert_experiment_result(ExperimentResultRecord(
+            id=registry_result_id or f"RESULT-{registry_experiment_id}-COSET",
+            experiment_id=registry_experiment_id, candidate_id=registry_candidate_id,
+            created_at=payload["created_at"], status=payload["status"],
+            summary=payload["summary"], metrics=payload["headline_metrics"],
+            falsifiers_triggered=payload["falsifiers_triggered"], artifacts=payload["artifacts"]))
+        if payload["uniform_fiber_counterexample"]["uniform_fiber_inference_refuted"] is True:
+            upsert_negative_result(NegativeResultRecord(
+                id="DCP-ARBITRARY-PHYSICAL-UNIFORM-FIBER-INFERENCE", source=str(path),
+                claim="The accessible inverse of an arbitrary useful physical DCP measurement prepares a uniform subset-sum fiber.",
+                reason_invalid="The N=2, labels=(1,1) rational POVM has success 1/2. Its unamplified inverse has uniform-span leakage squared 1/8 (1/4 after matching-branch normalization) and target-zero conditional output 00 with certainty instead of the uniform 00/11 state.",
+                lesson="Full-space Fourier inversion guarantees fiber SUPPORTED witnesses, not uniform sampling. The witness reduction survives; uniform-fiber entanglement exclusions cannot be transferred through it.",
+                applies_to=[registry_candidate_id], evidence={"artifact": str(path), "scope": "correction of a proof inference, not a DCP no-go", "review_status": "derived-review-pending"}))
     return payload
 
 

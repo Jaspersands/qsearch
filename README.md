@@ -164,6 +164,27 @@ information already in those labels. Other target sectors and noncentral
 carrier operations remain outside these bounds.
 Run `python qsearch.py coset-missing-harmonic` or
 `python qsearch.py run EXP-COSET-MISSING-HARMONIC-DETECTOR`.
+The [coherent overlap echo](research/COHERENT_OVERLAP_ECHO.md) now tests an
+explicit retained-data sequence on nonmissing sectors, with a fixed X readout
+and charged growing-copy resource schema. Exact S6 noncommuting controls lose
+to the pair-plus-single baseline; growing-degree bias remains unproved.
+Run `python qsearch.py coset-overlap-echo` or
+`python qsearch.py run EXP-COSET-COHERENT-OVERLAP-ECHO`.
+The [exact spatial transfer](research/COHERENT_OVERLAP_TRANSFER.md) evaluates
+long one-round paths and certifies the fixed-S6 readout fails at **every** copy
+count: even one pair measurement beats its global maximum. Growing degree
+and multiple temporal rounds are not covered. Run
+`python qsearch.py coset-overlap-transfer`; use `--replay` for exact saved-witness
+and finite-prefix verification.
+The [physical DCP witness audit](research/DCP_PHYSICAL_WITNESS_REDUCTION.md)
+retracts the assumption that reversing an arbitrary measurement prepares a
+uniform subset-sum fiber. A full-space counterexample preserves valid witness
+support but not uniformity. The repaired unamplified compute-copy-uncompute
+reduction gives average witness success at least the square of the decoder's
+label-averaged success, without estimating that success or assuming typical
+fiber occupancy. This is a review-pending reduction, not a new decoder or a
+hardness theorem. Uniform-fiber entanglement exclusions must not be imported
+through it. Run `python qsearch.py dcp-arbitrary-measurement-witness-reduction`.
 The [classical value-access audit](research/CLASSICAL_VALUE_ACCESS_AUDIT.md)
 replaces hidden full-table quadratic reconstruction with counted point queries,
 including exact-residue controls on nonmaterializable domains. Sample-limited

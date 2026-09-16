@@ -1700,6 +1700,85 @@ def _missing_harmonic_detector_lemmas(candidate_id: str) -> list[LemmaRecord]:
     )]
 
 
+def _overlap_echo_lemmas(candidate_id: str) -> list[LemmaRecord]:
+    try:
+        report = json.loads(Path("research/representation/coset_overlap_echo.json").read_text())
+    except (OSError, ValueError):
+        report = {}
+    gate = report.get("claim_gate", {})
+    checked = all(gate.get(key) is True for key in (
+        "finite_controls_verified", "nonmissing_noncommuting_control_verified",
+        "fixed_readout_and_resource_schema_supplied"))
+    return [LemmaRecord(
+        id=f"LEMMA-{candidate_id}-COHERENT-OVERLAP-ECHO-CONTROLS", candidate_id=candidate_id,
+        statement="A retained-data odd/even-bond echo of negative-character phases has the implemented X-readout probability (1-Re Tr[W rho])/2; finite exact group-word and physical controls agree, including a nonmissing noncommuting S6 case.",
+        depends_on=["PO-INPUT-MODEL", "PO-MEASUREMENT", "PO-COMPLEXITY"],
+        status="verified-finite-echo-controls-scaling-unresolved" if checked else "blocked-overlap-echo-evidence-missing",
+        falsification_test="Check chronological order, shared h before tensoring, all source weights and actual Hadamard Kraus operators. S4 fixed-point-free echo is identity. S6 three-copy output loses to pair-plus-single. No speedup or independent proof review follows.",
+    ), LemmaRecord(
+        id=f"LEMMA-{candidate_id}-COHERENT-OVERLAP-ECHO-SCALING", candidate_id=candidate_id,
+        statement="For K=n^2 and r=n, the fixed minus-means-null echo decision has inverse-polynomial bias with charged approximation, repetitions and natural input preparation, and improves on legal classical baselines.",
+        depends_on=["PO-SUCCESS", "PO-COMPLEXITY", "PO-DEQUANTIZATION", "PO-INPUT-MODEL"],
+        status="blocked-growing-echo-bias-and-natural-reduction-unproved",
+        falsification_test="Derive the actual output law at growing n, not an optimal final measurement or fixed-n extrapolation. Polynomial query counts alone do not bound repetitions; nonmissing sectors alone do not establish novelty or evade every known restriction.",
+    )]
+
+
+def _overlap_transfer_lemmas(candidate_id: str) -> list[LemmaRecord]:
+    try:
+        report = json.loads(Path("research/representation/coset_overlap_transfer.json").read_text())
+    except (OSError, ValueError):
+        report = {}
+    gate = report.get("claim_gate", {})
+    checked = gate.get("exact_transfer_controls_verified") is True
+    decay = checked and all(gate.get(key) is True for key in (
+        "s6_one_round_all_copy_decay_certified", "s6_simple_tv_bound_three_times_three_quarters_power"))
+    dominance = decay and gate.get("s6_all_copy_one_pair_dominance_certified") is True
+    return [LemmaRecord(
+        id=f"LEMMA-{candidate_id}-OVERLAP-ORBIT-TRANSFER", candidate_id=candidate_id,
+        statement="One-round path-echo moments admit a two-group-element spatial boundary and a simultaneous-conjugation orbit quotient, with centralizer-only symmetry for fixed h. Exact modular reconstruction preserves signed weights and terminal orbit multiplicities.",
+        depends_on=["PO-INPUT-MODEL", "PO-MEASUREMENT", "PO-COMPLEXITY"],
+        status="derived-exact-spatial-transfer-review-pending" if checked else "blocked-spatial-transfer-evidence-missing",
+        falsification_test="Compare unquotiented Python integers, physical nonmissing S4 four-copy matrices and independent three-copy formulas; verify arithmetic bounds, held-out residues and orbit sizes. Factorial-in-degree evaluation is not classical dequantization.",
+    ), LemmaRecord(
+        id=f"LEMMA-{candidate_id}-S6-ONE-ROUND-ECHO-DECAY", candidate_id=candidate_id,
+        statement="For S6 fixed-point-free involutions and ONE negative-character path-echo round, the specified X-output TV is <=min(1,3*(3/4)^floor((K-2)/2)) for every K>=3, from exact positive-vector inequalities for both physical hypotheses.",
+        depends_on=["PO-SUCCESS", "PO-MEASUREMENT", f"LEMMA-{candidate_id}-OVERLAP-ORBIT-TRANSFER"],
+        status="derived-s6-one-round-all-copy-decay-review-pending" if decay else "blocked-s6-all-copy-decay-evidence-missing",
+        falsification_test="Replay saved integer witnesses, rates, parity-dependent prefactors and kernel fingerprints. Do not replace inequalities with fitted eigenvalues, or transfer the bound to n growing, multiple temporal rounds, other phases or another readout.",
+    ), LemmaRecord(
+        id=f"LEMMA-{candidate_id}-S6-ONE-ROUND-ECHO-PAIR-DOMINANCE", candidate_id=candidate_id,
+        statement="For the same fixed-S6 one-round family, the global maximum over every K>=3 is TV=16843/303750 at K=3, below one pair's TV=1271/7200. Extra copy preparation cannot make this readout beat that quantum baseline.",
+        depends_on=["PO-SUCCESS", "PO-MEASUREMENT", f"LEMMA-{candidate_id}-S6-ONE-ROUND-ECHO-DECAY"],
+        status="derived-s6-all-copy-pair-dominance-review-pending" if dominance else "blocked-s6-prefix-tail-dominance-evidence-missing",
+        falsification_test="Exactly replay EVERY K=3..31, not just selected points, and both parity tail caps at K=32,33; later caps decrease by 3/4 every two copies. The pair baseline retains a quantum front end. Fixed-degree dominance does not prove a growing-degree no-go.",
+    )]
+
+
+def _dcp_physical_witness_lemmas(candidate_id: str) -> list[LemmaRecord]:
+    try:
+        report = json.loads(Path("research/reductions/dcp_arbitrary_measurement_witness_reduction.json").read_text())
+    except (OSError, ValueError):
+        report = {}
+    gate = report.get("claim_gate", {})
+    counterexample = report.get("uniform_fiber_counterexample", {}).get("uniform_fiber_inference_refuted") is True
+    checked = all(gate.get(key) is True for key in (
+        "physical_residue_fiber_witness_reduction_derived", "unamplified_label_average_success_transfer_derived"))
+    return [LemmaRecord(
+        id=f"LEMMA-{candidate_id}-DCP-ARBITRARY-UNIFORM-FIBER-INFERENCE", candidate_id=candidate_id,
+        statement="An arbitrary physical DCP measurement need not preserve the uniform-fiber input span; its inverse may prepare a nonuniform but valid witness state. Uniform-fiber entanglement exclusions cannot be imported through this inference.",
+        depends_on=["PO-INPUT-MODEL", "PO-MEASUREMENT"],
+        status="derived-physical-counterexample-review-pending" if counterexample else "blocked-physical-counterexample-missing",
+        falsification_test="Replay the exact N=2, labels=(1,1) rational POVM. Check full-space positivity/completeness and target-zero output 00 rather than a uniform 00/11 state; a compressed fiber-basis test cannot detect this error.",
+    ), LemmaRecord(
+        id=f"LEMMA-{candidate_id}-DCP-UNAMPLIFIED-WITNESS-REDUCTION", candidate_id=candidate_id,
+        statement="For an accessible reversible state-only DCP decoder, compute-copy-uncompute gives K0=sum_d |d><psi_d|E_d. Its inverse Fourier block prepares residue-supported witnesses with both target-law averages >=(N/L)p^2. Across any public-label law, success >=pbar^2; no success estimation or occupancy theorem is required.",
+        depends_on=["PO-INPUT-MODEL", "PO-MEASUREMENT", "PO-SUCCESS", "PO-COMPLEXITY"],
+        status="derived-unamplified-average-witness-reduction-review-pending" if checked and counterexample else "blocked-physical-witness-evidence-missing",
+        falsification_test="Check the actual unitary copy/uncompute block, all workspace flags, zero-success labels, complex noncovariant effects, residue degeneracies and BOTH Cauchy--Schwarz inequalities. Charge two decoder/inverse calls and all heralding failures. No new decoder, uniform sampling, per-target guarantee, inaccessible-channel inversion or hardness theorem follows.",
+    )]
+
+
 def _binary_carrier_instrument_lemmas(candidate_id: str) -> list[LemmaRecord]:
     try:
         report = json.loads(Path("research/representation/coset_binary_carrier_instruments.json").read_text())
@@ -1967,6 +2046,9 @@ def lemma_templates(candidate: dict[str, Any]) -> list[LemmaRecord]:
         records.extend(_reference_twirl_information_lemmas(candidate_id))
         records.extend(_binary_carrier_instrument_lemmas(candidate_id))
         records.extend(_missing_harmonic_detector_lemmas(candidate_id))
+        records.extend(_overlap_echo_lemmas(candidate_id))
+        records.extend(_overlap_transfer_lemmas(candidate_id))
+        records.extend(_dcp_physical_witness_lemmas(candidate_id))
         records.extend(_systematic_local_proof_gap_lemmas(candidate_id))
     if kind == "coset-state":
         try:

@@ -18339,5 +18339,150 @@
     "run_id": "RUN-EXP-COSET-MISSING-HARMONIC-DETECTOR-00557",
     "status": "derived-review-pending-gap-free-detector-generic-cost-uncompetitive",
     "summary": "Retained-data missing-sign detector has constant bias without a minimum positive gap, but costs sqrt(n!) selected reflections. This is a costed benchmark, not a speedup."
+  },
+  {
+    "artifacts": {
+      "report": "research/representation/coset_overlap_echo.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "experiment_id": "EXP-COSET-COHERENT-OVERLAP-ECHO",
+    "falsifier_count": 2,
+    "falsifiers_triggered": [
+      "S4 fixed-point-free negative-character queries have commuting support, so the echo is exactly identity.",
+      "The three-copy S6 echo fails to beat the pair-plus-single quantum measurement baseline."
+    ],
+    "metrics": {
+      "exact_control_count": 5,
+      "finite_baseline_wins": 0,
+      "finite_control_failure_count": 0,
+      "growing_degree_signal_theorem_count": 0,
+      "hidden_member_exact_control_count": 42,
+      "physical_control_count": 5,
+      "scaling_contract_count": 9,
+      "speedup_count": 0
+    },
+    "recorded_at": "2026-09-16T02:36:12.562730+00:00",
+    "result_id": "RESULT-EXP-COSET-COHERENT-OVERLAP-ECHO-COSET",
+    "run_id": "RUN-EXP-COSET-COHERENT-OVERLAP-ECHO-00558",
+    "status": "costed-coherent-program-scaling-unresolved",
+    "summary": "A retained-data overlapping nonmissing-sector echo now has a fixed X readout and charged primitive costs. Exact three-copy controls and growing-copy resource contracts do not establish a scalable advantage."
+  },
+  {
+    "artifacts": {
+      "report": "research/representation/coset_overlap_transfer.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "experiment_id": "EXP-COSET-OVERLAP-SPATIAL-TRANSFER",
+    "falsifier_count": 1,
+    "falsifiers_triggered": [
+      "At fixed S6, increasing copies in the one-round negative-character echo drives both readout laws to a fair coin exponentially; it cannot amplify this signal."
+    ],
+    "metrics": {
+      "degree_control_count": 3,
+      "exact_output_law_count": 52,
+      "finite_control_failure_count": 0,
+      "finite_echo_wins_over_pair_event": 0,
+      "growing_degree_speedup_count": 0,
+      "s6_all_copy_decay_certificate_count": 2
+    },
+    "recorded_at": "2026-09-16T21:54:04.471390+00:00",
+    "result_id": "RESULT-EXP-COSET-OVERLAP-SPATIAL-TRANSFER-COSET",
+    "run_id": "RUN-EXP-COSET-OVERLAP-SPATIAL-TRANSFER-00559",
+    "status": "derived-s6-one-round-all-copy-decay-review-pending",
+    "summary": "An exact conjugation-orbit transfer evaluates long one-round echoes without full quantum-state matrices. Integer certificates bound the S6 one-round output TV by 3*(3/4)^floor((K-2)/2), capped at one; growing degree and repeated temporal rounds remain unresolved."
+  },
+  {
+    "artifacts": {
+      "derivation": "research/DCP_PHYSICAL_WITNESS_REDUCTION.md",
+      "report": "research/reductions/dcp_arbitrary_measurement_witness_reduction.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "experiment_id": "EXP-DHS-DCP-ARBITRARY-MEASUREMENT-WITNESS-REDUCTION",
+    "falsifier_count": 6,
+    "falsifiers_triggered": [
+      "The earlier inference from arbitrary physical effects to UNIFORM fiber preparation is false; its full-space counterexample is retained.",
+      "Initial noncovariance is removable without average-success loss by an accessible coherent symmetrization.",
+      "The cleaned correct branch need not be a full POVM; its Fourier-diagonal inverse already suffices on average.",
+      "Planted witness success is bounded directly by (N/L)p for every label tuple; an occupancy theorem is unnecessary for this step.",
+      "Approximation to a named ideal POVM is not a loophole because the executed circuit has exact effects.",
+      "The repaired reduction is not an entanglement lower bound for uniform-fiber preparation and must not inherit those exclusions."
+    ],
+    "metrics": {
+      "arbitrary_exact_measurement_to_witness_theorem_count": 1,
+      "finite_control_count": 4,
+      "finite_control_failure_count": 0,
+      "full_physical_space_control_count": 5,
+      "higher_rank_control_count": 4,
+      "higher_rank_correct_branch_extraction_theorem_count": 1,
+      "inaccessible_noisy_channel_reduction_count": 0,
+      "initially_noncovariant_control_count": 2,
+      "maximum_qft_diagonal_filter_residual": 1.99316115984366e-15,
+      "maximum_symmetrized_success_spread": 2.220446049250313e-16,
+      "minimum_average_witness_to_decoder_success_ratio": 1.3724771792459882,
+      "minimum_planted_to_scaled_legal_transfer_ratio": 1.8292208338140783,
+      "new_quantum_algorithm_count": 0,
+      "noncovariant_symmetrization_theorem_count": 1,
+      "occupancy_free_planted_transfer_derived": 1,
+      "per_target_bounded_error_witness_solver_count": 0,
+      "planted_average_inversion_transfer_theorem_count": 1,
+      "polynomial_scaling_row_count": 28,
+      "robust_wrapper_scaling_row_count": 28,
+      "standard_circuit_approximation_semantics_closure_count": 1,
+      "unamplified_label_average_transfer_derived": 1,
+      "uniform_fiber_inference_counterexample_count": 1,
+      "uniform_legal_average_success_transfer_theorem_count": 1
+    },
+    "recorded_at": "2026-09-16T21:54:22.444042+00:00",
+    "result_id": "RESULT-EXP-DHS-DCP-ARBITRARY-MEASUREMENT-WITNESS-REDUCTION-COSET",
+    "run_id": "RUN-EXP-DHS-DCP-ARBITRARY-MEASUREMENT-WITNESS-REDUCTION-00560",
+    "status": "physical-witness-reduction-derived-review-pending",
+    "summary": "Repaired the arbitrary-measurement reduction in the full assignment space: a physical inverse need not prepare a uniform fiber, but supports valid target witnesses. An unamplified compute-copy-uncompute wrapper gives planted and uniform-legal success >=pbar^2 over any public-label law, with two decoder/inverse calls and no success estimation or occupancy assumption. Review pending."
+  },
+  {
+    "artifacts": {
+      "derivation": "research/DCP_PHYSICAL_WITNESS_REDUCTION.md",
+      "report": "research/reductions/dcp_arbitrary_measurement_witness_reduction.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "experiment_id": "EXP-DHS-DCP-ARBITRARY-MEASUREMENT-WITNESS-REDUCTION",
+    "falsifier_count": 6,
+    "falsifiers_triggered": [
+      "The earlier inference from arbitrary physical effects to UNIFORM fiber preparation is false; its full-space counterexample is retained.",
+      "Initial noncovariance is removable without average-success loss by an accessible coherent symmetrization.",
+      "The cleaned correct branch need not be a full POVM; its Fourier-diagonal inverse already suffices on average.",
+      "Planted witness success is bounded directly by (N/L)p for every label tuple; an occupancy theorem is unnecessary for this step.",
+      "Approximation to a named ideal POVM is not a loophole because the executed circuit has exact effects.",
+      "The repaired reduction is not an entanglement lower bound for uniform-fiber preparation and must not inherit those exclusions."
+    ],
+    "metrics": {
+      "arbitrary_exact_measurement_to_witness_theorem_count": 1,
+      "finite_control_count": 4,
+      "finite_control_failure_count": 0,
+      "full_physical_space_control_count": 5,
+      "higher_rank_control_count": 4,
+      "higher_rank_correct_branch_extraction_theorem_count": 1,
+      "inaccessible_noisy_channel_reduction_count": 0,
+      "initially_noncovariant_control_count": 2,
+      "maximum_qft_diagonal_filter_residual": 1.99316115984366e-15,
+      "maximum_symmetrized_success_spread": 2.220446049250313e-16,
+      "minimum_average_witness_to_decoder_success_ratio": 1.3724771792459882,
+      "minimum_planted_to_scaled_legal_transfer_ratio": 1.8292208338140783,
+      "new_quantum_algorithm_count": 0,
+      "noncovariant_symmetrization_theorem_count": 1,
+      "occupancy_free_planted_transfer_derived": 1,
+      "per_target_bounded_error_witness_solver_count": 0,
+      "planted_average_inversion_transfer_theorem_count": 1,
+      "polynomial_scaling_row_count": 28,
+      "robust_wrapper_scaling_row_count": 28,
+      "standard_circuit_approximation_semantics_closure_count": 1,
+      "unamplified_label_average_transfer_derived": 1,
+      "uniform_fiber_inference_counterexample_count": 1,
+      "uniform_legal_average_success_transfer_theorem_count": 1
+    },
+    "recorded_at": "2026-09-16T22:00:18.872338+00:00",
+    "result_id": "RESULT-EXP-DHS-DCP-ARBITRARY-MEASUREMENT-WITNESS-REDUCTION-COSET",
+    "run_id": "RUN-EXP-DHS-DCP-ARBITRARY-MEASUREMENT-WITNESS-REDUCTION-00561",
+    "status": "physical-witness-reduction-derived-review-pending",
+    "summary": "Repaired the arbitrary-measurement reduction in the full assignment space: a physical inverse need not prepare a uniform fiber, but supports valid target witnesses. An unamplified compute-copy-uncompute wrapper gives planted and uniform-legal success >=pbar^2 over any public-label law, with two decoder/inverse calls and no success estimation or occupancy assumption. Review pending."
   }
 ]

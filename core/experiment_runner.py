@@ -969,6 +969,8 @@ from coset_hidden_involution_orbit_hull_twirl_reduction import write_hidden_invo
 from coset_hidden_involution_query_separation_boundary import write_hidden_involution_query_separation_report
 from coset_hidden_involution_support_span_reduction import write_hidden_involution_support_span_report
 from coset_missing_harmonic_detector import write_missing_harmonic_report
+from coset_overlap_echo import write_overlap_echo_report
+from coset_overlap_transfer import write_transfer_report
 from coset_hidden_involution_threshold_compiler_boundary import write_hidden_involution_threshold_compiler_report
 from coset_hyperoctahedral_branching_polar_boundary import write_coset_hyperoctahedral_branching_polar_report
 from coset_kronecker_marginal_conservation import write_kronecker_marginal_conservation_report
@@ -2017,6 +2019,8 @@ COSET_EXPERIMENTS = {
         "EXP-COSET-HIDDEN-INVOLUTION-QUERY-SEPARATION-BOUNDARY",
         "EXP-COSET-HIDDEN-INVOLUTION-SUPPORT-SPAN-REDUCTION",
         "EXP-COSET-MISSING-HARMONIC-DETECTOR",
+        "EXP-COSET-COHERENT-OVERLAP-ECHO",
+        "EXP-COSET-OVERLAP-SPATIAL-TRANSFER",
         "EXP-COSET-HIDDEN-INVOLUTION-THRESHOLD-COMPILER-BOUNDARY",
         "EXP-COSET-HYPEROCTAHEDRAL-BRANCHING-POLAR-BOUNDARY",
         "EXP-COSET-KRONECKER-MARGINAL-CONSERVATION",
@@ -9979,6 +9983,26 @@ def run_experiment(experiment_id: str) -> RunnerResult:
                 registry_experiment_id=experiment_id,
                 registry_candidate_id=experiment["candidate_id"],
                 registry_result_id=result_id,
+            )
+        elif experiment_id == "EXP-COSET-OVERLAP-SPATIAL-TRANSFER":
+            payload = write_transfer_report(
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+            runner_result = RunnerResult(
+                experiment_id, "completed" if payload["claim_gate"]["exact_transfer_controls_verified"] else "failed-controls",
+                result_id, payload["summary"],
+            )
+        elif experiment_id == "EXP-COSET-COHERENT-OVERLAP-ECHO":
+            payload = write_overlap_echo_report(
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+            runner_result = RunnerResult(
+                experiment_id, "completed" if payload["claim_gate"]["finite_controls_verified"] else "failed-controls",
+                result_id, payload["summary"],
             )
         elif experiment_id == "EXP-COSET-MISSING-HARMONIC-DETECTOR":
             payload = write_missing_harmonic_report(

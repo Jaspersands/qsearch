@@ -66,8 +66,8 @@
       "target_claim": "The coset observable is not a disguised classical invariant."
     }
   ],
-  "created_at": "2026-09-15T20:35:49.342562+00:00",
-  "lemma_count": 1289,
+  "created_at": "2026-09-16T22:00:24.636629+00:00",
+  "lemma_count": 1296,
   "lemmas": [
     {
       "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -857,6 +857,91 @@
       "id": "LEMMA-CODE-COSET-COLLECTIVE-MISSING-SIGN-SOURCE-ADAPTIVE-HYBRID",
       "statement": "With full central source labels and only subsequent missing-sign phases, source-conditioned ancillary control and source/ancilla output, T<=K/(2sqrt(M))+2q sqrt(K p(n)/n!). The conditional marked fraction obeys r_S<=1/d_j^2; E_Planch max_S r_S<=K p(n)/n!.",
       "status": "derived-source-adaptive-missing-sign-hybrid-review-pending"
+    },
+    {
+      "candidate_id": "CODE-COSET-COLLECTIVE",
+      "depends_on": [
+        "PO-INPUT-MODEL",
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY"
+      ],
+      "falsification_test": "Check chronological order, shared h before tensoring, all source weights and actual Hadamard Kraus operators. S4 fixed-point-free echo is identity. S6 three-copy output loses to pair-plus-single. No speedup or independent proof review follows.",
+      "id": "LEMMA-CODE-COSET-COLLECTIVE-COHERENT-OVERLAP-ECHO-CONTROLS",
+      "statement": "A retained-data odd/even-bond echo of negative-character phases has the implemented X-readout probability (1-Re Tr[W rho])/2; finite exact group-word and physical controls agree, including a nonmissing noncommuting S6 case.",
+      "status": "verified-finite-echo-controls-scaling-unresolved"
+    },
+    {
+      "candidate_id": "CODE-COSET-COLLECTIVE",
+      "depends_on": [
+        "PO-SUCCESS",
+        "PO-COMPLEXITY",
+        "PO-DEQUANTIZATION",
+        "PO-INPUT-MODEL"
+      ],
+      "falsification_test": "Derive the actual output law at growing n, not an optimal final measurement or fixed-n extrapolation. Polynomial query counts alone do not bound repetitions; nonmissing sectors alone do not establish novelty or evade every known restriction.",
+      "id": "LEMMA-CODE-COSET-COLLECTIVE-COHERENT-OVERLAP-ECHO-SCALING",
+      "statement": "For K=n^2 and r=n, the fixed minus-means-null echo decision has inverse-polynomial bias with charged approximation, repetitions and natural input preparation, and improves on legal classical baselines.",
+      "status": "blocked-growing-echo-bias-and-natural-reduction-unproved"
+    },
+    {
+      "candidate_id": "CODE-COSET-COLLECTIVE",
+      "depends_on": [
+        "PO-INPUT-MODEL",
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY"
+      ],
+      "falsification_test": "Compare unquotiented Python integers, physical nonmissing S4 four-copy matrices and independent three-copy formulas; verify arithmetic bounds, held-out residues and orbit sizes. Factorial-in-degree evaluation is not classical dequantization.",
+      "id": "LEMMA-CODE-COSET-COLLECTIVE-OVERLAP-ORBIT-TRANSFER",
+      "statement": "One-round path-echo moments admit a two-group-element spatial boundary and a simultaneous-conjugation orbit quotient, with centralizer-only symmetry for fixed h. Exact modular reconstruction preserves signed weights and terminal orbit multiplicities.",
+      "status": "derived-exact-spatial-transfer-review-pending"
+    },
+    {
+      "candidate_id": "CODE-COSET-COLLECTIVE",
+      "depends_on": [
+        "PO-SUCCESS",
+        "PO-MEASUREMENT",
+        "LEMMA-CODE-COSET-COLLECTIVE-OVERLAP-ORBIT-TRANSFER"
+      ],
+      "falsification_test": "Replay saved integer witnesses, rates, parity-dependent prefactors and kernel fingerprints. Do not replace inequalities with fitted eigenvalues, or transfer the bound to n growing, multiple temporal rounds, other phases or another readout.",
+      "id": "LEMMA-CODE-COSET-COLLECTIVE-S6-ONE-ROUND-ECHO-DECAY",
+      "statement": "For S6 fixed-point-free involutions and ONE negative-character path-echo round, the specified X-output TV is <=min(1,3*(3/4)^floor((K-2)/2)) for every K>=3, from exact positive-vector inequalities for both physical hypotheses.",
+      "status": "derived-s6-one-round-all-copy-decay-review-pending"
+    },
+    {
+      "candidate_id": "CODE-COSET-COLLECTIVE",
+      "depends_on": [
+        "PO-SUCCESS",
+        "PO-MEASUREMENT",
+        "LEMMA-CODE-COSET-COLLECTIVE-S6-ONE-ROUND-ECHO-DECAY"
+      ],
+      "falsification_test": "Exactly replay EVERY K=3..31, not just selected points, and both parity tail caps at K=32,33; later caps decrease by 3/4 every two copies. The pair baseline retains a quantum front end. Fixed-degree dominance does not prove a growing-degree no-go.",
+      "id": "LEMMA-CODE-COSET-COLLECTIVE-S6-ONE-ROUND-ECHO-PAIR-DOMINANCE",
+      "statement": "For the same fixed-S6 one-round family, the global maximum over every K>=3 is TV=16843/303750 at K=3, below one pair's TV=1271/7200. Extra copy preparation cannot make this readout beat that quantum baseline.",
+      "status": "derived-s6-all-copy-pair-dominance-review-pending"
+    },
+    {
+      "candidate_id": "CODE-COSET-COLLECTIVE",
+      "depends_on": [
+        "PO-INPUT-MODEL",
+        "PO-MEASUREMENT"
+      ],
+      "falsification_test": "Replay the exact N=2, labels=(1,1) rational POVM. Check full-space positivity/completeness and target-zero output 00 rather than a uniform 00/11 state; a compressed fiber-basis test cannot detect this error.",
+      "id": "LEMMA-CODE-COSET-COLLECTIVE-DCP-ARBITRARY-UNIFORM-FIBER-INFERENCE",
+      "statement": "An arbitrary physical DCP measurement need not preserve the uniform-fiber input span; its inverse may prepare a nonuniform but valid witness state. Uniform-fiber entanglement exclusions cannot be imported through this inference.",
+      "status": "derived-physical-counterexample-review-pending"
+    },
+    {
+      "candidate_id": "CODE-COSET-COLLECTIVE",
+      "depends_on": [
+        "PO-INPUT-MODEL",
+        "PO-MEASUREMENT",
+        "PO-SUCCESS",
+        "PO-COMPLEXITY"
+      ],
+      "falsification_test": "Check the actual unitary copy/uncompute block, all workspace flags, zero-success labels, complex noncovariant effects, residue degeneracies and BOTH Cauchy--Schwarz inequalities. Charge two decoder/inverse calls and all heralding failures. No new decoder, uniform sampling, per-target guarantee, inaccessible-channel inversion or hardness theorem follows.",
+      "id": "LEMMA-CODE-COSET-COLLECTIVE-DCP-UNAMPLIFIED-WITNESS-REDUCTION",
+      "statement": "For an accessible reversible state-only DCP decoder, compute-copy-uncompute gives K0=sum_d |d><psi_d|E_d. Its inverse Fourier block prepares residue-supported witnesses with both target-law averages >=(N/L)p^2. Across any public-label law, success >=pbar^2; no success estimation or occupancy theorem is required.",
+      "status": "derived-unamplified-average-witness-reduction-review-pending"
     },
     {
       "candidate_id": "CODE-COSET-COLLECTIVE",

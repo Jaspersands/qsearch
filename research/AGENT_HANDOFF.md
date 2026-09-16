@@ -1,6 +1,185 @@
 # Research Agent Handoff
 
-Last updated: 2026-09-16
+Last updated: 2026-09-17
+
+## Latest Completed Pass: Physical DCP Witness Reduction Repair
+
+Read `research/DCP_PHYSICAL_WITNESS_REDUCTION.md`, the existing
+`theorems/dcp_arbitrary_measurement_witness_reduction.py`, and its tests.
+This and the TWO echo passes are being saved as one substantial checkpoint.
+Inspect Git for actual SHA/push state; previous saved SHA was `47a3a18d`.
+No background research service was started. The overall goal stays active.
+
+REAL PROOF ERROR: ensemble inputs lie in the uniform subset-sum fiber span,
+but arbitrary physical POVMs need not preserve it. Inverting the compressed
+POVM was not an available primitive. Uniform fiber preparation is retracted.
+An exact N=2, labels=(1,1) POVM has p=1/2 and inverse target-zero conditional
+output always00, not the uniform00/11 state. Uniform-span leakage squared is
+1/8 unamplified,1/4 normalized. The full rational matrices and eigenvalues
+are in the derivation/artifact. This is a proof counterexample, not a toy
+oracle candidate, DCP no-go or new decoder.
+
+REPAIR: coherently twirl an accessible state-only decoder, compute it, copy
+its computational outcome d, uncompute it, and unprepare PUBLIC psi_d
+controlled by d. Its zero-workspace block is K0=sum_d |d><psi_d|E_d.
+With zeta_s=P_s E0 psi0 in the FULL assignment space,
+(QFT K0)^dagger|s>=sqrt(N)zeta_s; q_s=N||zeta_s||^2 includes all failures.
+The output is a valid fiber-supported witness, NOT necessarily uniform.
+Exactly TWO decoder/inverse calls, one QFT/inverse and one controlled public
+state preparation/inverse per attempt. No amplification, success estimation,
+fiber counts, free postselection or selection of good labels.
+
+Cauchy--Schwarz gives both uniform-legal and planted target averages
+>=(N/L)p^2>=p^2. Uniform ALL-residue targets also have success>=p^2; illegal
+targets fail. Jensen across ANY public-label law gives success>=pbar^2,
+including zero-success labels. Joint legal conditioning of uniform-residue
+challenges divides by Z=E L/N<=1; do not silently replace its label marginal.
+These are weak average guarantees, NOT per-target bounded error. Whole-wrapper
+operator error<=pbar^2/8 preserves>=3pbar^2/4. The optional normalized variant
+gives (N/L)p at its separately charged bootstrap cost; its older scaling rows
+are NOT the cost of the two-call construction.
+
+An original decoder may mix quantum labels: initialize their known classical
+values as retained workspace and charge the inverse flag. A complete32D
+unitary control checks coherent twirling, actual label mixing and all flags.
+No extra unknown oracle, inaccessible environment or unavailable inverse is
+granted. Independent review, formal verification, novelty and speedup remain
+FALSE. Existing CLI/runner share one COSET result ID. The writer now honors
+write_registry/custom IDs. Correction negative, dequant map and two scoped
+proof lemmas are live. The affected seed/live protocol was corrected while
+preserving status. Existing CODE-COSET-COLLECTIVE ownership was not migrated.
+
+Verification: TEN-file regression158passed183.84s; final four-file41passed6.61s,
+including rational counterexample, zero success, complete physical unitaries,
+label mixing and all-residue target law. Counts overlap. XML
+`.pytest_cache/dcp-physical-witness-regression.xml` and
+`.pytest_cache/dcp-physical-witness-final.xml`. Python compilation, JS syntax,
+diff checks passed. Initial12 and final9 live workflows all exited0.
+Registry valid/issues[],8 candidates,795 experiments,804 results,923 negatives,
+1321 dequant findings/1317blocking,1296 lemmas,104 proof statuses/24blocking,
+8blocked conjectures,19mutations.13 proof-route contracts,0unsupported,
+4unresolved; those contract checks are not mathematical proof checks.
+
+FRESH full-suite fail-fast:69passed/1failed211.57s,
+`.pytest_cache/full-suite-physical-witness.xml`. Same unchanged failure at
+`tests/test_character_query_information.py:61`: missing scaling persistence.
+Remaining full-suite tests were NOT reached. This routine repair stays queued
+for Gemini; repeatedly running the same stopped prefix is not new coverage.
+
+NEXT: independently challenge the two-call reduction and compare its scope
+with known DCP/subset-sum reductions. Audit any downstream exclusion importing
+UNIFORM fiber complexity through the arbitrary-measurement assertion. The
+targeted scan found the per-target stratum example and explicitly uniform
+PGM/tensor routes still valid in their own scopes; it was not a repository-wide
+proof audit. Select a constructive nonuniform witness route rather than
+accumulating more narrow exclusions.
+
+New primary literature lead, NOT YET fully audited:
+https://arxiv.org/abs/2608.16598 (Guo/Yang,2026-08-17). Its abstract identifies
+measurement-dependent partition selection as a missing premise in Simon's
+DCP proposal. Targeted repo search found no reference to this ID/authors.
+Read the actual paper and original proposal, and compare existing marker/
+adaptive-layout work before importing a claim or adding duplicate experiments.
+
+## Completed Pass: Exact One-Round Spatial Transfer
+
+Read `research/COHERENT_OVERLAP_TRANSFER.md` and its module. A two-group-element
+boundary uses full conjugation under null and ONLY the fixed h centralizer
+under the alternative. Terminal orbit sizes, signed weights and integer-safe
+modular arithmetic are retained. CRT uses an absolute algebraic bound and
+held-out primes, not floating cancellation.
+
+At fixed S6/t3, two positive integer vectors certify a two-step absolute-map
+contraction3/4 by8023 exact inequalities, with parity prefactors<3. Hence
+TV<=min(1,3*(3/4)^floor((K-2)/2)) for ALLK>=3. Exact K3..31 and both parity
+tails show global maximum16843/303750 only atK3; one pair's1271/7200 is larger.
+K36 TV~8.03834e-8;K64~2.35652e-13. No growing-degree or r=n conclusion.
+The pair baseline has a QUANTUM front end, not classical dequantization.
+
+CLI `coset-overlap-transfer`, runner EXP-COSET-OVERLAP-SPATIAL-TRANSFER and
+read-only `coset-overlap-transfer --replay` are live. Replay rebuilds kernels,
+integer witnesses/prefactors and all58prefix moments, not every point aboveK31.
+52live exact output laws,0failures; three proof records and a scoped negative.
+Recovered terminal nine-file regression212passed188.12s; subsequent regression
+above includes transfer/echo tests. All claims remain review-pending.
+The local-return/light-cone lead was triaged but not promoted: locality alone
+supplies no positive gap for BOTH hypotheses at growing degree/depth. Do not
+create a theorem module that merely renames that missing estimate. The pivot
+to the physical DCP proof audit found an actual error instead.
+
+## Latest Completed Pass: Coherent Overlapping Nonmissing-Sector Echo
+
+IMPLEMENTED and live; UNCOMMITTED to bundle with later substantive work.
+The previous saved/pushed checkpoint is `47a3a18d`; verify Git rather than
+relying on older uncommitted-checkpoint statements below. No background
+research service was started. The overall goal remains active.
+
+Read `research/COHERENT_OVERLAP_ECHO.md`, `core/coherent_overlap_programs.py`,
+`theorems/coset_overlap_echo.py`, and `tests/test_coset_overlap_echo.py`.
+The new interface retains physical data through odd/even overlapping pair
+layers A,B,A^dagger,B^dagger, repeated r times, with a single controlled-word
+X readout. It uses negative-character sectors, NOT only missing sign. The
+fixed decision is minus -> NULL. No optimal uncompiled measurement is used.
+For K=n^2,r=n, q=2r(K-1), QFT count 2q, single-copy action count 4q, with
+charged precision and K preparations per trial. This is a resource schema
+reduced to existing clean GPE/QFT/arithmetic primitives, not a gate export or
+a proved useful polynomial-time classifier. Growing-n bias remains UNPROVED.
+
+Exact three-copy endpoint elimination reduces four group variables to D^2
+assignments; every hidden member is checked and reflection convolution is
+validated with integer arithmetic. Five cases S3/t1,S4/t1,S4/t2,S5/t2,S6/t3
+cover 42 hidden members. Five independent source-weighted matrix controls
+and one raw regular control check actual Hadamard Kraus probabilities, source
+mass, chronological order, clean-GPE phase compatibility and shared h.
+For one round p_minus=Tr([A,B]^dagger[A,B] rho)/4. This is standard echo/OTOC
+interferometry, not a new primitive; Knill/Laflamme and Swingle et al. are linked.
+
+NEGATIVE: S4 fixed-point-free coefficient support commutes, so its echo is
+identity. S6 uses four nonmissing negative-character sectors and noncommuting
+support, but TV=16843/303750 (~0.05545) loses to pair-plus-single TV
+38684413/186624000 (~0.20728), both using three copies and eight QFT/inverse
+calls under the existing schemas. That baseline has a QUANTUM front end,
+not an end-to-end classical sampler. S3,K4 echo repetition decreases TV from
+4/27 to 2/27. No finite baseline wins. Known raw-copy information caps are
+stored exactly for both K=3 and K=n^2 as n grows: more rounds on the same
+three copies cannot evade their information limit. A vacuous growing-K cap
+is not evidence of advantage. No independent review, novelty or speedup.
+
+CLI `python qsearch.py coset-overlap-echo`, runner
+`python qsearch.py run EXP-COSET-COHERENT-OVERLAP-ECHO` share result
+`RESULT-EXP-COSET-COHERENT-OVERLAP-ECHO-COSET`. One negative
+`COHERENT-OVERLAP-ECHO-FINITE-CALIBRATION-LIMITS`, a dequantization boundary,
+two proof-tracker records (finite controls / BLOCKED scaling), mutation
+obligation, seed experiment and README are integrated. No candidate promoted.
+
+Verification: focused33 passed7.98s before final raw-cap test/extra checks;
+first eight-file regression183 passed145.66s; FINAL eight-file regression
+184 passed145.94s. Counts overlap. XML `.pytest_cache/overlap-echo-focused.xml`,
+`.pytest_cache/overlap-echo-regression.xml`,
+`.pytest_cache/overlap-echo-regression-final.xml`. Python compilation, JS
+syntax and diff checks passed. All ten live workflows passed: new CLI,
+runner, recoupling synth, dequantize, proofs, conjectures, mutate, snapshot,
+validate, proof-routes. Latest validation:8 candidates,794 experiments,
+802 results,921 negatives,1317 dequant findings/1313 blocking,1291 lemmas,
+104 proof statuses/24 blocking. Registry issues[];13 routes,0 unsupported,
+4 unresolved. Full-suite fail-fast FRESH69passed/1failed212.27s:
+`.pytest_cache/full-suite-overlap-echo.xml`. Same unchanged failure at
+`tests/test_character_query_information.py:61`: its writer ignores
+write_registry and does not upsert CHARACTER-QUERY-INFORMATION-LATEST.
+Remaining full-suite tests were NOT reached. Do not claim full-suite green.
+This routine writer repair remains suitable for Gemini/Antigravity.
+
+NEXT HIGH-THINKING TASK: derive the transfer-network or analytic expression
+for the ACTUAL growing path word. A one-round bond has two group variables;
+each site contributes its chronological word indicator in {e,h} (or {e}
+under null). A horizontal contraction must charge its boundary size and
+signed-weight precision; factorial group enumeration or polynomial-in-K
+cost at fixed n is not a polynomial-in-n algorithm or a classical solver.
+Investigate whether both moments decay to zero, erasing the one-bit bias.
+Do not assume Haar randomness/mixing for these deterministic character gates.
+Test a substantive scaling argument before tuning more finite schedules.
+If this does not yield a mechanism or useful broad obstruction, re-audit the
+DHSP track rather than multiplying nearby finite echo variants.
 
 ## Latest Completed Pass: Source-Adaptive Missing-Sign Queries
 
