@@ -5,26 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Interactive database of 914 retained negative results, no-go theorems, and dequantization findings for the Q-Search quantum algorithm search program.">
     <title>Q-Search | Negative Results Explorer</title>
+    <!-- Academic Typography: Newsreader + Inter + IBM Plex Mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="site/styles.css">
 </head>
 <body>
+    <!-- Archival Publication Banner -->
+    <aside class="pub-banner" aria-label="Journal publication details">
+        <div class="pub-banner-left">
+            <span class="pub-tag"><span class="pub-tag-dot" aria-hidden="true"></span> Autonomous Science Monograph</span>
+            <span>Vol. 2026.09 &bull; Computational Complexity</span>
+            <span>ISSN 2026-QSRCH</span>
+        </div>
+        <div class="pub-banner-right">
+            <span>Negative Results Registry</span>
+            <a class="pub-link" href="index.html">&larr; Return to Monograph</a>
+        </div>
+    </aside>
+
+    <!-- Main Site Header -->
     <header class="site-header">
         <a class="brand" href="index.html" aria-label="Q-Search home">
-            <span class="brand-mark" aria-hidden="true">Q</span>
-            <span>Q-Search</span>
+            <span class="brand-symbol" aria-hidden="true">&fnof;</span>
+            <div class="brand-text">
+                <span class="brand-title">Q-Search</span>
+                <span class="brand-subtitle">Quantum Complexity Laboratory</span>
+            </div>
         </a>
         <nav aria-label="Main site navigation">
-            <a href="index.html">Progress</a>
+            <a href="index.html">Monograph</a>
             <a href="methodology.html">Methodology</a>
             <a href="frontier.html">Frontier Map</a>
-            <a href="negative-results.html" class="active">Negative Results</a>
-            <a href="proof-debt.html">Proof Debt</a>
+            <a href="negative-results.html" class="active">Negative Results <span class="nav-count">(914)</span></a>
+            <a href="proof-debt.html">Proof Debt <span class="nav-count">(24)</span></a>
             <a href="repomap.html">Repo Map</a>
         </nav>
-        <a class="github-link" href="https://github.com/Jaspersands/qsearch" target="_blank" rel="noreferrer">GitHub</a>
+        <div class="header-actions">
+            <a class="github-link" href="https://github.com/Jaspersands/qsearch" target="_blank" rel="noreferrer">GitHub &rarr;</a>
+        </div>
     </header>
 
     <main id="top">
