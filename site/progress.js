@@ -17,13 +17,14 @@ function setText(id, value) {
 function renderMetrics(metrics) {
     setText("metric-experiments", metrics.experiments);
     setText("metric-results", metrics.results);
-    setText("metric-blockers", metrics.blocking_findings);
-    setText("metric-negatives", metrics.negative_results);
+    setText("metric-blockers", Number(metrics.blocking_findings).toLocaleString());
+    setText("metric-negatives", Number(metrics.negative_results).toLocaleString());
     setText("metric-debts", metrics.proof_debts);
 }
 
 function renderTracks(tracks) {
     const container = document.getElementById("track-list");
+    if (!container) return;
     container.innerHTML = tracks.map((track) => `
         <article class="track-row">
             <div class="track-title">
@@ -32,10 +33,10 @@ function renderTracks(tracks) {
             </div>
             <div class="track-summary">
                 <p>${escapeHtml(track.summary)}</p>
-                <p><strong>Evidence:</strong> ${escapeHtml(track.evidence)}</p>
+                <p><strong>Empirical Evidence:</strong> ${escapeHtml(track.evidence)}</p>
             </div>
             <div class="track-next">
-                <strong>Next proof target</strong>
+                <strong>Next Proof Target</strong>
                 ${escapeHtml(track.next)}
             </div>
         </article>
@@ -44,27 +45,27 @@ function renderTracks(tracks) {
 
 const milestoneMetadata = {
     "The stable coupling-tree interface is complete": {
-        takeaway: "Constructed a polynomial-time coordinate mapping across all 25 encoded labels on both coupling trees.",
-        category: "Interface",
+        takeaway: "Constructed an exact polynomial-time coordinate mapping for all 25 encoded labels across both coupling trees.",
+        category: "Algebraic Interface",
         badgeClass: "active-badge"
     },
     "The stable three-copy frame is filterable": {
-        takeaway: "Proved a genuine spectral gap exists between involution families using a 3-copy quantum frame, bounded by an inverse polynomial.",
+        takeaway: "Proved an exact inverse-polynomial spectral gap between involution families using a 3-copy quantum frame: $\\lambda_{\\min}(F) \\ge \\frac{71}{825}n^{-5}$.",
         category: "Spectral Gap",
         badgeClass: "gap-badge"
     },
     "Natural access kills the fixed stable branch": {
-        takeaway: "Disproved natural-access sampling: postselection probability decays factorially, ruling out fixed-branch algorithms.",
-        category: "Obstruction",
+        takeaway: "Disproved natural-access state preparation: weak-Fourier sampling mass decays factorially as $\\frac{25}{3}\\frac{n^9}{(n!)^3}$, ruling out generic amplification.",
+        category: "No-Go Theorem",
         badgeClass: "neg-badge"
     },
     "Every fixed bounded-tail route is cut": {
-        takeaway: "Proved that bounded-tail Fourier mass vanishes factorially, mandating uniform adaptation to high-dimensional partitions.",
+        takeaway: "Proved that bounded-tail Fourier mass vanishes factorially, mandating uniform adaptation across typical high-dimensional partitions.",
         category: "Obstruction",
         badgeClass: "neg-badge"
     },
     "An independent third generator repairs the known finite collisions": {
-        takeaway: "Coupling an independent third generator breaks all known spectral degeneracies at n=8 (20/20 targets) and n=9 (27/27 targets).",
+        takeaway: "Coupling an independent third generator $T_{T1} + c T_{C1}$ breaks all known spectral degeneracies at $n=8$ ($20/20$ targets) and $n=9$ ($27/27$ targets).",
         category: "Active Invariant",
         badgeClass: "active-badge"
     }
@@ -72,6 +73,7 @@ const milestoneMetadata = {
 
 function renderMilestones(milestones) {
     const container = document.getElementById("milestone-list");
+    if (!container) return;
     container.innerHTML = milestones.map((item, index) => {
         const meta = milestoneMetadata[item.title];
         if (meta) {
@@ -83,7 +85,7 @@ function renderMilestones(milestones) {
                             <h3>${escapeHtml(item.title)}</h3>
                             <span class="milestone-badge ${meta.badgeClass}">${escapeHtml(meta.category)}</span>
                         </div>
-                        <p class="milestone-impact"><strong>Takeaway:</strong> ${escapeHtml(meta.takeaway)}</p>
+                        <p class="milestone-impact"><strong>Takeaway:</strong> ${meta.takeaway}</p>
                         <details class="milestone-formal">
                             <summary>Formal Mathematical Proof &amp; Bounds</summary>
                             <p>${escapeHtml(item.detail)}</p>
@@ -107,6 +109,7 @@ function renderMilestones(milestones) {
 function renderConjecture(conjecture) {
     setText("conjecture-summary", conjecture.summary);
     const facts = document.getElementById("conjecture-facts");
+    if (!facts) return;
     facts.innerHTML = conjecture.facts.map((fact) => `
         <div><dt>${escapeHtml(fact.label)}</dt><dd>${escapeHtml(fact.value)}</dd></div>
     `).join("");
@@ -114,6 +117,7 @@ function renderConjecture(conjecture) {
 
 function renderNext(actions) {
     const container = document.getElementById("next-list");
+    if (!container) return;
     container.innerHTML = actions.map((action) => `
         <li><strong>${escapeHtml(action.title)}</strong><p>${escapeHtml(action.detail)}</p></li>
     `).join("");
@@ -121,6 +125,7 @@ function renderNext(actions) {
 
 function drawProgressMap(tracks) {
     const canvas = document.getElementById("signal-canvas");
+    if (!canvas) return;
     const rect = canvas.getBoundingClientRect();
     const ratio = window.devicePixelRatio || 1;
     canvas.width = Math.max(1, Math.round(rect.width * ratio));
@@ -130,52 +135,56 @@ function drawProgressMap(tracks) {
 
     const width = rect.width;
     const height = rect.height;
-    const left = width < 520 ? 78 : 116;
-    const right = 20;
-    const top = 40;
-    const rowGap = (height - 70) / Math.max(1, tracks.length);
+    const left = width < 520 ? 84 : 124;
+    const right = 24;
+    const top = 36;
+    const rowGap = (height - 64) / Math.max(1, tracks.length);
     const stageGap = (width - left - right) / 4;
 
     ctx.clearRect(0, 0, width, height);
-    ctx.font = width < 520 ? "500 10px Inter" : "600 12px Inter";
+    ctx.font = width < 520 ? "500 10px Newsreader, serif" : "600 12px Newsreader, serif";
     ctx.textBaseline = "middle";
 
     tracks.forEach((track, row) => {
         const y = top + rowGap * row + rowGap / 2;
-        ctx.fillStyle = "#454a43";
+        ctx.fillStyle = "#151817";
         const label = width < 520 ? track.short_title : track.title;
         ctx.fillText(label, 0, y);
 
-        ctx.strokeStyle = "#d8ddd4";
+        // Baseline track
+        ctx.strokeStyle = "#E5E4DC";
         ctx.lineWidth = 2;
         ctx.beginPath();
         ctx.moveTo(left, y);
         ctx.lineTo(width - right, y);
         ctx.stroke();
 
+        // Surviving section
         const activeEnd = left + stageGap * track.stage;
-        ctx.strokeStyle = "#176c4a";
-        ctx.lineWidth = 4;
+        ctx.strokeStyle = "#0E5B37";
+        ctx.lineWidth = 3.5;
         ctx.beginPath();
         ctx.moveTo(left, y);
         ctx.lineTo(activeEnd, y);
         ctx.stroke();
 
+        // Stage nodes
         for (let stage = 0; stage < 5; stage += 1) {
             const x = left + stageGap * stage;
             ctx.beginPath();
             ctx.arc(x, y, stage <= track.stage ? 5 : 4, 0, Math.PI * 2);
-            ctx.fillStyle = stage <= track.stage ? "#176c4a" : "#ffffff";
+            ctx.fillStyle = stage <= track.stage ? "#0E5B37" : "#FFFFFF";
             ctx.fill();
-            ctx.strokeStyle = stage <= track.stage ? "#176c4a" : "#aeb5ac";
+            ctx.strokeStyle = stage <= track.stage ? "#0E5B37" : "#B5B4AA";
             ctx.lineWidth = 2;
             ctx.stroke();
         }
 
+        // Blocked indicator
         if (track.stage < 4) {
             const blockedX = left + stageGap * (track.stage + 1);
-            ctx.strokeStyle = "#a43d2b";
-            ctx.lineWidth = 3;
+            ctx.strokeStyle = "#9E2A2B";
+            ctx.lineWidth = 2.5;
             ctx.beginPath();
             ctx.moveTo(blockedX - 5, y - 5);
             ctx.lineTo(blockedX + 5, y + 5);
@@ -186,6 +195,22 @@ function drawProgressMap(tracks) {
     });
 }
 
+function triggerKaTeX() {
+    if (window.renderMathInElement) {
+        try {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ],
+                throwOnError: false
+            });
+        } catch (e) {
+            console.warn("KaTeX rendering warning:", e);
+        }
+    }
+}
+
 async function main() {
     try {
         const response = await fetch(`${snapshotPath}?v=${Date.now()}`);
@@ -193,7 +218,7 @@ async function main() {
         const snapshot = await response.json();
         setText("verdict-title", snapshot.verdict.title);
         setText("verdict-detail", snapshot.verdict.detail);
-        setText("last-updated", `Research snapshot ${snapshot.updated_at}`);
+        setText("last-updated", `Certified snapshot ${snapshot.updated_at}`);
         setText("overview-copy", snapshot.overview);
         setText("execution-copy", snapshot.execution_model);
         renderMetrics(snapshot.metrics);
@@ -203,6 +228,7 @@ async function main() {
         renderNext(snapshot.next_actions);
         drawProgressMap(snapshot.tracks);
         window.addEventListener("resize", () => drawProgressMap(snapshot.tracks));
+        triggerKaTeX();
     } catch (error) {
         console.error(error);
         setText("verdict-title", "Progress snapshot unavailable");
@@ -210,4 +236,8 @@ async function main() {
     }
 }
 
-document.addEventListener("DOMContentLoaded", main);
+document.addEventListener("DOMContentLoaded", () => {
+    main();
+    // Re-trigger KaTeX if auto-render loaded asynchronously
+    setTimeout(triggerKaTeX, 500);
+});
