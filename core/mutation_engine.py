@@ -1181,6 +1181,13 @@ def build_mutation_proposals() -> list[dict[str, Any]]:
     return proposals
 
 
+def _candidate_created_at(candidate_id: str, default: str) -> str:
+    existing = next((c for c in load_candidates() if c.get("id") == candidate_id), None)
+    if existing and existing.get("created_at"):
+        return str(existing["created_at"])
+    return default
+
+
 def candidate_from_mutation_proposal(proposal: dict[str, Any]) -> CandidateRecord | None:
     now = utc_now()
     source_candidate = proposal.get("source_candidate_id", "UNKNOWN")
@@ -1190,11 +1197,12 @@ def candidate_from_mutation_proposal(proposal: dict[str, Any]) -> CandidateRecor
             _experiment_id(source_candidate, "QUERY-MODEL"),
             _experiment_id(source_candidate, "PHASE-SIEVE"),
         ]
+        cand_id = f"MUT-CAND-{source_candidate}-QUERY-MODEL-HARDENED"
         return CandidateRecord(
-            id=f"MUT-CAND-{source_candidate}-QUERY-MODEL-HARDENED",
+            id=cand_id,
             title="Query-model-hardened hidden-shift phase-state candidate",
             status="mutated-hypothesis",
-            created_at=now,
+            created_at=_candidate_created_at(cand_id, now),
             updated_at=now,
             literature_ids=["kuperberg-dhsp-2003", "regev-lattice-dhsp-2003", "roetteler-hidden-shift-gowers-2009"],
             ontology_node_ids=["hidden-shift", "dihedral-hsp", "unique-svp", "gowers-structure"],
@@ -1263,11 +1271,12 @@ def candidate_from_mutation_proposal(proposal: dict[str, Any]) -> CandidateRecor
             _experiment_id(source_candidate, "FOURIER-COMPRESSIBILITY"),
             _experiment_id(source_candidate, "CLASSICAL-BASELINES"),
         ]
+        cand_id = f"MUT-CAND-{source_candidate}-LEARNABILITY-RESISTANT"
         return CandidateRecord(
-            id=f"MUT-CAND-{source_candidate}-LEARNABILITY-RESISTANT",
+            id=cand_id,
             title="Learnability-resistant hidden-shift family search candidate",
             status="mutated-hypothesis",
-            created_at=now,
+            created_at=_candidate_created_at(cand_id, now),
             updated_at=now,
             literature_ids=[
                 "kuperberg-dhsp-2003",
@@ -1339,11 +1348,12 @@ def candidate_from_mutation_proposal(proposal: dict[str, Any]) -> CandidateRecor
             _experiment_id(source_candidate, "COSET-WL"),
             _experiment_id(source_candidate, "CODE-EQUIV"),
         ]
+        cand_id = f"MUT-CAND-{source_candidate}-CFI-WL-HARD-COSET"
         return CandidateRecord(
-            id=f"MUT-CAND-{source_candidate}-CFI-WL-HARD-COSET",
+            id=cand_id,
             title="CFI/WL-hard collective coset-state observable candidate",
             status="mutated-hypothesis",
-            created_at=now,
+            created_at=_candidate_created_at(cand_id, now),
             updated_at=now,
             literature_ids=["hsp-survey-2010", "symmetric-defies-fourier-2005"],
             ontology_node_ids=["nonabelian-hsp", "symmetric-hsp", "graph-isomorphism", "code-equivalence"],
@@ -1411,11 +1421,12 @@ def candidate_from_mutation_proposal(proposal: dict[str, Any]) -> CandidateRecor
             _experiment_id(source_candidate, "CODE-FAMILY-SEARCH"),
             _experiment_id(source_candidate, "TENSOR-OBSERVABLES"),
         ]
+        cand_id = f"MUT-CAND-{source_candidate}-CANONICALIZATION-RESISTANT-CODES"
         return CandidateRecord(
-            id=f"MUT-CAND-{source_candidate}-CANONICALIZATION-RESISTANT-CODES",
+            id=cand_id,
             title="Canonicalization-resistant code-equivalence coset candidate",
             status="mutated-hypothesis",
-            created_at=now,
+            created_at=_candidate_created_at(cand_id, now),
             updated_at=now,
             literature_ids=["hsp-survey-2010", "symmetric-defies-fourier-2005", "program-synthesis-components-2023"],
             ontology_node_ids=["nonabelian-hsp", "symmetric-hsp", "code-equivalence"],
@@ -1484,11 +1495,12 @@ def candidate_from_mutation_proposal(proposal: dict[str, Any]) -> CandidateRecor
             _experiment_id(source_candidate, "CFI-PROMISE-COSET-WL"),
             _experiment_id(source_candidate, "CFI-PROMISE-TENSOR-OBSERVABLES"),
         ]
+        cand_id = f"MUT-CAND-{source_candidate}-CFI-PROMISE-ESCAPE"
         return CandidateRecord(
-            id=f"MUT-CAND-{source_candidate}-CFI-PROMISE-ESCAPE",
+            id=cand_id,
             title="CFI promise-escape collective coset candidate",
             status="mutated-hypothesis",
-            created_at=now,
+            created_at=_candidate_created_at(cand_id, now),
             updated_at=now,
             literature_ids=["hsp-survey-2010", "symmetric-defies-fourier-2005"],
             ontology_node_ids=["nonabelian-hsp", "symmetric-hsp", "graph-isomorphism"],

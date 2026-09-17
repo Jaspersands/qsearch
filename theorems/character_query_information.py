@@ -189,6 +189,7 @@ def build_character_query_information_report(
     families: Sequence[str] | None = None,
     n_values: Sequence[int] | None = None,
     failure_probability: float = 0.01,
+    run_id: str | None = None,
 ) -> dict[str, Any]:
     active_families = list(families) if families is not None else ["legendre_symbol", "quartic_character"]
     active_n = list(n_values) if n_values is not None else [5, 6, 7, 8]
@@ -200,7 +201,7 @@ def build_character_query_information_report(
     summaries = build_family_summaries(rows)
     killed = sum(1 for row in rows if row.query_status == "no-superlog-query-lower-bound")
     return {
-        "id": "CHARACTER-QUERY-INFORMATION-LATEST",
+        "id": run_id or "CHARACTER-QUERY-INFORMATION-LATEST",
         "created_at": utc_now(),
         "kind": "multiplicative-character-query-information-ceiling",
         "families": active_families,
@@ -230,12 +231,16 @@ def write_character_query_information_report(
     n_values: Sequence[int] | None = None,
     failure_probability: float = 0.01,
     write_registry: bool = True,
+    run_id: str | None = None,
 ) -> dict[str, Any]:
     payload = build_character_query_information_report(
         families=families,
         n_values=n_values,
         failure_probability=failure_probability,
+        run_id=run_id,
     )
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(payload, indent=2, sort_keys=True))
+    if write_registry:
+        upsert_scaling_run(payload)
     return payload

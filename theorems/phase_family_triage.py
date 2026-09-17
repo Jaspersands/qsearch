@@ -327,7 +327,7 @@ def _record_for_family(family_id: str, entry: dict[str, Any]) -> PhaseFamilyTria
     )
 
 
-def build_phase_family_triage() -> dict[str, Any]:
+def build_phase_family_triage(run_id: str | None = None) -> dict[str, Any]:
     families = _family_records()
     records = [_record_for_family(family_id, entry) for family_id, entry in sorted(families.items())]
     rejected = [record for record in records if record.status.startswith("rejected")]
@@ -335,7 +335,7 @@ def build_phase_family_triage() -> dict[str, Any]:
     decoding_time_only = [record for record in records if record.status == "decoding-time-only-query-route-killed"]
     unresolved = [record for record in records if record.status == "unresolved-under-current-baselines"]
     return {
-        "id": "PHASE-FAMILY-TRIAGE-LATEST",
+        "id": run_id or "PHASE-FAMILY-TRIAGE-LATEST",
         "created_at": utc_now(),
         "kind": "hidden-shift-phase-family-triage",
         "status": "no-positive-phase-family-evidence",
@@ -360,8 +360,11 @@ def build_phase_family_triage() -> dict[str, Any]:
 def write_phase_family_triage(
     output_path: Path = TRIAGE_PATH,
     write_registry: bool = True,
+    run_id: str | None = None,
 ) -> dict[str, Any]:
-    payload = build_phase_family_triage()
+    payload = build_phase_family_triage(run_id=run_id)
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(payload, indent=2, sort_keys=True))
+    if write_registry:
+        upsert_scaling_run(payload)
     return payload

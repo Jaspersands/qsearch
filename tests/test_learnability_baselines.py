@@ -87,6 +87,30 @@ class LearnabilityBaselineTests(unittest.TestCase):
         self.assertTrue(any(item["target_type"] == "learnability_baseline" for item in report["findings"]))
         self.assertTrue(validation["valid"])
 
+    def test_write_report_respects_write_registry_false_and_custom_id(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                path = Path("custom_learnability.json")
+                custom_id = "CUSTOM-LEARNABILITY-RUN"
+                payload = write_learnability_report(
+                    output_path=path,
+                    families=["quadratic_chirp"],
+                    n_values=[5],
+                    samples=32,
+                    seed=4,
+                    write_registry=False,
+                    run_id=custom_id,
+                )
+                scaling_runs = load_scaling_runs()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(payload["id"], custom_id)
+        self.assertFalse(any(item["id"] == custom_id for item in scaling_runs))
+
 
 if __name__ == "__main__":
     unittest.main()

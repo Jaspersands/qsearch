@@ -62,6 +62,24 @@ class CharacterQueryInformationTests(unittest.TestCase):
         self.assertTrue(any(item["target_type"] == "character_query_information" for item in deq["findings"]))
         self.assertTrue(validation["valid"])
 
+    def test_write_report_respects_write_registry_false_and_custom_id(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                payload = write_character_query_information_report(
+                    n_values=[6],
+                    write_registry=False,
+                    run_id="CUSTOM-QUERY-INFO-RUN",
+                )
+                scaling_runs = load_scaling_runs()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(payload["id"], "CUSTOM-QUERY-INFO-RUN")
+        self.assertFalse(any(item["id"] == "CUSTOM-QUERY-INFO-RUN" for item in scaling_runs))
+
 
 if __name__ == "__main__":
     unittest.main()

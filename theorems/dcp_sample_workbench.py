@@ -619,6 +619,63 @@ def write_dcp_sample_workbench(
 ) -> dict:
     report = run_dcp_sample_workbench(n_values=n_values, sample_count=sample_count, seed=seed)
     payload = asdict(report)
+    payload["artifacts"] = {
+        "dcp_sample_native_sieve": str(path),
+        "report": str(path),
+    }
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
+    if write_registry:
+        upsert_negative_result(
+            NegativeResultRecord(
+                id="NEG-DCP-DETERMINISTIC-FAVORABLE-BRANCH",
+                source=str(path),
+                claim="A deterministic favorable-branch analysis captures the true yield of DCP sieve merges.",
+                reason_invalid=(
+                    f"The physical CNOT combine produces sum and difference labels with probability 1/2. "
+                    f"The live audit found an optimism gap of {payload['headline_metrics']['postselection_optimism_gap']} outputs."
+                ),
+                lesson="Charge measurement branches and postselection in every phase-state sample exponent.",
+                applies_to=[
+                    registry_candidate_id,
+                    "HYP-LIT-HIDDEN-SHIFT-SIEVE",
+                    registry_experiment_id,
+                ],
+                evidence=payload.get("headline_metrics", {}),
+            )
+        )
+        upsert_negative_result(
+            NegativeResultRecord(
+                id="NEG-DCP-PARITY-ENDPOINT-NOT-FULL-DECODER",
+                source=str(path),
+                claim="A high-valuation N/2 phase label constitutes recovery of the hidden reflection.",
+                reason_invalid="The corresponding Hadamard measurement reveals only s mod 2; all remaining bits and reduction composition remain unproved.",
+                lesson="Track decoded congruence bits and the complete recursive decoder separately from target valuation.",
+                applies_to=[
+                    registry_candidate_id,
+                    "HYP-LIT-HIDDEN-SHIFT-SIEVE",
+                    registry_experiment_id,
+                ],
+                evidence={
+                    "full_hidden_reflection_decode_count": payload["headline_metrics"]["full_hidden_reflection_decode_count"],
+                    "parity_endpoint_trial_count": payload["headline_metrics"]["parity_endpoint_trial_count"],
+                },
+            )
+        )
+        upsert_experiment_result(
+            ExperimentResultRecord(
+                id=registry_result_id or f"RESULT-{registry_experiment_id}-LATEST",
+                experiment_id=registry_experiment_id,
+                candidate_id=registry_candidate_id,
+                created_at=payload.get("created_at", utc_now()),
+                status=payload.get("status", "completed"),
+                summary=payload.get("summary", ""),
+                metrics=payload.get("headline_metrics", {}),
+                falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                artifacts={
+                    "dcp_sample_native_sieve": str(path),
+                    "report": str(path),
+                },
+            )
+        )
     return payload

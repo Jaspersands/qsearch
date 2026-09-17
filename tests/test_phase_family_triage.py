@@ -127,6 +127,26 @@ class PhaseFamilyTriageTests(unittest.TestCase):
         self.assertGreater(record["character_log_query_ceiling_count"], 0)
         self.assertEqual(triage["headline_metrics"]["decoding_time_only_family_count"], 1)
 
+    def test_write_triage_respects_write_registry_false_and_custom_id(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                path = Path("custom_triage.json")
+                custom_id = "CUSTOM-TRIAGE-RUN"
+                payload = write_phase_family_triage(
+                    output_path=path,
+                    write_registry=False,
+                    run_id=custom_id,
+                )
+                scaling_runs = load_scaling_runs()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(payload["id"], custom_id)
+        self.assertFalse(any(item["id"] == custom_id for item in scaling_runs))
+
 
 if __name__ == "__main__":
     unittest.main()

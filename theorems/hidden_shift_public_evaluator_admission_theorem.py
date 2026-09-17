@@ -918,6 +918,9 @@ def run_public_evaluator_admission_theorem(
     )
 
 
+run_public_evaluator_admission = run_public_evaluator_admission_theorem
+
+
 def write_public_evaluator_admission_report(
     path: Path = REPORT_PATH,
     write_registry: bool = True,
@@ -931,8 +934,12 @@ def write_public_evaluator_admission_report(
     output_path = path
     for _k in ("write_registry", "registry_experiment_id", "registry_candidate_id", "registry_result_id"):
         kwargs.pop(_k, None)
-    if "run_public_evaluator_admission" in globals():
-        report = run_public_evaluator_admission(**kwargs)
+    run_fn = (
+        globals().get("run_public_evaluator_admission_theorem")
+        or globals().get("run_public_evaluator_admission")
+    )
+    if run_fn is not None:
+        report = run_fn(**kwargs)
         payload = asdict(report) if hasattr(report, "__dataclass_fields__") else (dict(report) if isinstance(report, dict) else report)
     else:
         report = {}

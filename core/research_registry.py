@@ -241,6 +241,11 @@ def upsert_candidate(record: CandidateRecord) -> None:
         raise ValueError(f"Candidate rejected by proof gate: {rendered}")
 
     records = load_candidates()
+    existing = next((item for item in records if item.get("id") == record.id), None)
+    if existing:
+        if existing.get("created_at"):
+            payload["created_at"] = existing["created_at"]
+        payload["updated_at"] = utc_now()
     kept = [item for item in records if item.get("id") != record.id]
     kept.append(payload)
     kept.sort(key=lambda item: item["id"])

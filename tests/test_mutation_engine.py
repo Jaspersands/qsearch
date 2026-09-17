@@ -13,7 +13,7 @@ from conjecture_tracker import write_conjecture_report
 from dequantization_checks import write_dequantization_report
 from experiment_runner import run_experiment
 from mutation_engine import build_mutation_proposals, write_mutation_report
-from research_registry import initialize_seed_registry, load_candidates, load_experiments, load_mutation_proposals, validate_registry
+from research_registry import CandidateRecord, initialize_seed_registry, load_candidates, load_experiments, load_mutation_proposals, upsert_candidate, validate_registry
 
 
 class MutationEngineTests(unittest.TestCase):
@@ -293,6 +293,41 @@ class MutationEngineTests(unittest.TestCase):
             ),
             4,
         )
+
+    def test_upsert_candidate_preserves_created_at_on_idempotent_update(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                base = load_candidates()[0]
+                candidate_id = "MUT-CAND-EXPLICIT-PROVENANCE-TEST"
+                first_created = "2026-01-01T00:00:00+00:00"
+                kwargs = {k: v for k, v in base.items() if k not in ("id", "created_at", "updated_at")}
+                rec1 = CandidateRecord(
+                    id=candidate_id,
+                    created_at=first_created,
+                    updated_at=first_created,
+                    **kwargs,
+                )
+                upsert_candidate(rec1)
+                stored1 = next(item for item in load_candidates() if item["id"] == candidate_id)
+                self.assertEqual(stored1["created_at"], first_created)
+
+                # Re-upsert with a new created_at timestamp
+                second_time = "2026-09-17T12:00:00+00:00"
+                rec2 = CandidateRecord(
+                    id=candidate_id,
+                    created_at=second_time,
+                    updated_at=second_time,
+                    **kwargs,
+                )
+                upsert_candidate(rec2)
+                stored2 = next(item for item in load_candidates() if item["id"] == candidate_id)
+                self.assertEqual(stored2["created_at"], first_created)
+                self.assertNotEqual(stored2["created_at"], second_time)
+            finally:
+                os.chdir(old_cwd)
 
 
 if __name__ == "__main__":

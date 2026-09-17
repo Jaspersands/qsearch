@@ -271,6 +271,7 @@ def build_learnability_report(
     n_values: Sequence[int] | None = None,
     samples: int = 128,
     seed: int = 0,
+    run_id: str | None = None,
 ) -> dict[str, Any]:
     active_families = list(families) if families is not None else [
         "quadratic_chirp",
@@ -292,7 +293,7 @@ def build_learnability_report(
     summaries = build_family_summaries(records)
     dequantized_count = sum(1 for record in records if record.verdict.startswith("dequantized"))
     return {
-        "id": "LEARNABILITY-BASELINES-LATEST",
+        "id": run_id or "LEARNABILITY-BASELINES-LATEST",
         "created_at": utc_now(),
         "kind": "hidden-shift-learnability-baselines",
         "status": "blocked-by-low-degree-learnability" if dequantized_count else "needs-stronger-learnability-tests",
@@ -347,10 +348,14 @@ def write_learnability_report(
     samples: int = 128,
     seed: int = 0,
     write_registry: bool = True,
+    run_id: str | None = None,
 ) -> dict[str, Any]:
-    payload = build_learnability_report(families=families, n_values=n_values, samples=samples, seed=seed)
+    payload = build_learnability_report(families=families, n_values=n_values, samples=samples, seed=seed, run_id=run_id)
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(payload, indent=2, sort_keys=True))
+    if write_registry:
+        upsert_scaling_run(payload)
+        write_negative_results_from_learnability(payload)
     return payload
 
 
