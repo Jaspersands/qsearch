@@ -63,14 +63,16 @@
         <span class="rail-label">Sections:</span>
         <a class="rail-link" href="#top">&sect;1 Abstract</a>
         <a class="rail-link" href="#how-it-works">&sect;2 Protocol</a>
-        <a class="rail-link" href="#workbench">&sect;3 Research Workbench</a>
-        <a class="rail-link" href="#matrix">&sect;4 Falsification Matrix</a>
-        <a class="rail-link" href="#pipeline">&sect;5 Progress Pipeline</a>
-        <a class="rail-link" href="#case-study">&sect;6 Commutant Geometry</a>
-        <a class="rail-link" href="#negatives-spotlight">&sect;7 Negative Registry</a>
-        <a class="rail-link" href="#evidence">&sect;8 Certified Evidence</a>
-        <a class="rail-link" href="#quickstart">&sect;9 Verification Console</a>
-        <a class="rail-link" href="#citation">&sect;10 Citation</a>
+        <a class="rail-link" href="#workbench">&sect;3 Workbench</a>
+        <a class="rail-link" href="#matrix">&sect;4 Matrix</a>
+        <a class="rail-link" href="#falsifier-sandbox">&sect;5 Falsifier Arena</a>
+        <a class="rail-link" href="#pipeline">&sect;6 Pipeline</a>
+        <a class="rail-link" href="#case-study">&sect;7 Commutant</a>
+        <a class="rail-link" href="#spectral-sandbox">&sect;8 Spectral Sandbox</a>
+        <a class="rail-link" href="#negatives-spotlight">&sect;9 Negative Registry</a>
+        <a class="rail-link" href="#evidence">&sect;10 Evidence</a>
+        <a class="rail-link" href="#quickstart">&sect;11 Verification</a>
+        <a class="rail-link" href="#citation">&sect;12 Citation</a>
     </nav>
 
     <main id="top">
@@ -114,8 +116,8 @@
 
                 <div class="hero-actions">
                     <a class="primary-action" href="#workbench">Interactive Workbench &darr;</a>
-                    <a class="secondary-action" href="#matrix">Falsification Matrix</a>
-                    <a class="secondary-action" href="#case-study">Commutant Exhibit</a>
+                    <a class="secondary-action" href="#falsifier-sandbox">Falsifier Arena</a>
+                    <a class="secondary-action" href="#spectral-sandbox">Spectral Sandbox</a>
                     <a class="secondary-action" href="#quickstart">Verification Console</a>
                 </div>
             </div>
@@ -124,7 +126,7 @@
             <div class="ledger-plate" aria-label="Current research verdict and ledger credentials">
                 <div>
                     <div class="seal-header">
-                        <div class="seal-badge">
+                        <div class="seal-badge" data-hologram="true">
                             <span class="seal-dot" aria-hidden="true"></span>
                             <span>Proof Gate Active</span>
                         </div>
@@ -320,8 +322,92 @@
             </div>
         </section>
 
-        <!-- Section 5: Vector Pipeline & Progress Map -->
-        <section id="pipeline" class="content-section alt-bg">
+        <!-- Section 5: The Falsifier: Interactive Attack Sandbox -->
+        <section id="falsifier-sandbox" class="content-section alt-bg">
+            <div class="section-heading compact">
+                <p class="eyebrow rust">Interactive Complexity Simulator &bull; Falsification Arena</p>
+                <h2>The Falsifier: attack a quantum candidate</h2>
+                <p>Can a candidate quantum speedup survive automated classical dequantization? Pick a candidate, configure problem scaling $n$, deploy an attack algorithm, and observe the epistemic barrier in action.</p>
+            </div>
+
+            <div class="falsifier-plate">
+                <!-- Step 1: Candidate Picker Grid -->
+                <div class="candidate-picker-grid" id="candidate-picker-grid">
+                    <div class="candidate-pick-card selected" onclick="selectFalsifierCandidate('coset_fixed', this)">
+                        <span class="card-tag" style="margin-bottom:8px;">Symmetric Group HSP</span>
+                        <div class="cand-title">Fixed-Sector Coset Frame ($S_n$)</div>
+                        <div class="cand-desc">Postselecting stable-sector 3-copy coupling trees to extract binary hidden coset signals.</div>
+                    </div>
+                    <div class="candidate-pick-card" onclick="selectFalsifierCandidate('goppa_syzygy', this)">
+                        <span class="card-tag" style="margin-bottom:8px;">Linear Code Equiv</span>
+                        <div class="cand-title">Goppa Syzygy Invariants</div>
+                        <div class="cand-desc">High-weight alternant syzygy collective observables aimed at McEliece cryptosystems.</div>
+                    </div>
+                    <div class="candidate-pick-card" onclick="selectFalsifierCandidate('dhs_sieve', this)">
+                        <span class="card-tag" style="margin-bottom:8px;">Dihedral HSP ($D_N$)</span>
+                        <div class="cand-title">Lattice Nearest-Plane Sieve</div>
+                        <div class="cand-desc">Nearest-plane lattice decoding on Gowers-sieve coset states for hidden reflection recovery.</div>
+                    </div>
+                    <div class="candidate-pick-card" onclick="selectFalsifierCandidate('commutant_synth', this)">
+                        <span class="card-tag" style="margin-bottom:8px;">Active Commutant</span>
+                        <div class="cand-title">Synthesized $T_{T1} + c T_{C1}$</div>
+                        <div class="cand-desc">Independent third generator invariant breaking spectral degeneracies across nonabelian targets.</div>
+                    </div>
+                </div>
+
+                <!-- Step 2: Controls Bar -->
+                <div class="falsifier-controls-bar">
+                    <div class="slider-group">
+                        <div class="slider-label-bar">
+                            <span>Problem Scale ($n$)</span>
+                            <span id="falsifier-n-display" style="color:var(--green);">n = 8</span>
+                        </div>
+                        <input type="range" class="academic-slider" id="falsifier-n-slider" min="4" max="16" value="8" oninput="updateFalsifierN(this.value)">
+                    </div>
+
+                    <div class="attack-selector-wrap">
+                        <label class="attack-selector-label" for="attack-select">Classical Attack Baseline</label>
+                        <select id="attack-select" class="attack-select-dropdown">
+                            <option value="fourier">Weak-Fourier Trace Audit</option>
+                            <option value="hull">Hull Projector Reduction</option>
+                            <option value="lattice">Lattice Nearest-Plane Sieve</option>
+                            <option value="wl">Weisfeiler-Leman Invariant Audit</option>
+                        </select>
+                    </div>
+
+                    <button class="launch-attack-btn" id="launch-falsifier-btn" onclick="runFalsifierAttack()">
+                        <span>&zap; Launch Classical Attack</span>
+                    </button>
+                </div>
+
+                <!-- Step 3: Attack Execution Arena & Diagnostic Drawer -->
+                <div class="falsifier-arena">
+                    <div class="falsifier-log-drawer" id="falsifier-log-drawer" aria-live="polite">
+                        <span class="log-line cyan">[SYSTEM] Falsification suite initialized.</span>
+                        <span class="log-line">[SYSTEM] Ready to attack candidate: Fixed-Sector Coset Frame at scale n=8.</span>
+                        <span class="log-line">[READY] Click "Launch Classical Attack" to begin dequantization check...</span>
+                    </div>
+
+                    <div class="falsifier-verdict-plate" id="falsifier-verdict-card">
+                        <div>
+                            <div class="verdict-badge-lg" id="falsifier-verdict-badge">
+                                <span>Awaiting Simulation</span>
+                            </div>
+                            <h4 id="falsifier-verdict-title" style="font-family:var(--serif); font-size:1.3rem; margin-bottom:8px;">Ready for attack</h4>
+                            <p class="verdict-math-proof" id="falsifier-verdict-desc">
+                                Select a candidate quantum algorithm and deploy an automated classical attack suite to evaluate whether the claimed advantage collapses into polynomial time or an asymptotic no-go boundary.
+                            </p>
+                        </div>
+                        <div style="font-family:var(--mono); font-size:0.72rem; color:var(--muted-light); border-top:1px solid var(--line); padding-top:8px;">
+                            Protocol APG-v4 &bull; Deterministic Benchmark
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: Vector Pipeline & Progress Map -->
+        <section id="pipeline" class="content-section">
             <div class="pipeline-visual-plate">
                 <div class="pipeline-header">
                     <div>
@@ -468,6 +554,61 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Interactive Explorable Physics Sandbox: Theorem 1 in Action -->
+                <div class="spectral-sandbox-plate" id="spectral-sandbox">
+                    <div class="sandbox-header-row">
+                        <div>
+                            <p class="eyebrow" style="margin-bottom:6px;">Explorable Complexity Sandbox &bull; Theorem 1 in Action</p>
+                            <h3 style="font-family:var(--serif); font-size:1.5rem; margin-bottom:4px;">Spectral Splitting: Drag $c$ to Break Degeneracy</h3>
+                            <p style="font-size:0.90rem; color:var(--muted); max-width:640px; margin:0;">
+                                For $S_8$, standard 2-generator invariants collapse into exact eigenvalue collisions on two targets. Drag the coupling slider $c$ for $T = T_{T1} + c T_{C1}$ to observe the eigenvalues repelling and breaking degeneracy in real time.
+                            </p>
+                        </div>
+                        <div class="sandbox-status-badges">
+                            <div class="sandbox-badge separated" id="collision-badge">
+                                <span class="seal-dot" style="width:6px; height:6px;"></span>
+                                <span id="collision-status-text">0 / 20 Collisions (Separated)</span>
+                            </div>
+                            <div class="sandbox-badge">
+                                <span>Spectral Gap &Delta;&lambda;: </span>
+                                <strong id="gap-val-text" style="color:var(--ink); margin-left:4px;">0.142</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sandbox-controls-row">
+                        <div class="slider-group">
+                            <div class="slider-label-bar">
+                                <span>Coupling Parameter ($c$)</span>
+                                <span id="c-slider-val" style="color:var(--green); font-family:var(--mono); font-size:0.9rem;">c = 1.00</span>
+                            </div>
+                            <input type="range" class="academic-slider" id="c-slider" min="-2.0" max="2.0" step="0.05" value="1.0" oninput="updateSpectralSandbox(parseFloat(this.value))">
+                        </div>
+
+                        <div style="display:flex; flex-direction:column; gap:6px;">
+                            <span style="font-family:var(--mono); font-size:0.68rem; font-weight:600; text-transform:uppercase; color:var(--muted-light);">Preset States</span>
+                            <div class="preset-btn-group">
+                                <button class="preset-btn" onclick="setCPreset(0.0)">c = 0.00 (Collision!)</button>
+                                <button class="preset-btn" onclick="setCPreset(0.4)">c = +0.40</button>
+                                <button class="preset-btn active" id="preset-c-1" onclick="setCPreset(1.0)">c = +1.00 (Standard)</button>
+                                <button class="preset-btn" onclick="setCPreset(-1.5)">c = -1.50</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Live Energy Levels Visualization -->
+                    <div class="spectrum-visual-container">
+                        <div style="display:flex; justify-content:space-between; font-family:var(--mono); font-size:0.72rem; color:var(--muted-light); margin-bottom:10px;">
+                            <span>&larr; Target 01 (Multiplicity 1)</span>
+                            <span style="color:var(--ink); font-weight:600;">Eigenvalue Spectrum &lambda;(c) across 20 Targets in S_8</span>
+                            <span>Target 20 (Multiplicity 17) &rarr;</span>
+                        </div>
+                        <svg class="spectrum-svg" id="spectrum-svg" viewBox="0 0 800 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Interactive eigenvalue energy spectrum for S_8 targets">
+                            <!-- Populated dynamically by progress.js -->
+                        </svg>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -571,7 +712,10 @@
                         <button class="term-tab-btn" onclick="switchTermTab('coset', this)">3. Commutant Proofs (n=8, 9)</button>
                         <button class="term-tab-btn" onclick="switchTermTab('negatives', this)">4. Negative Registry Census</button>
                     </div>
-                    <button class="terminal-copy-action" id="copy-term-btn" onclick="copyActiveTermCommand()">Copy Command</button>
+                    <div style="display: flex; gap: 8px; align-items: center;">
+                        <button class="terminal-run-action" id="term-run-btn" onclick="runSimulatedPytest()">&#9654; Run in Browser</button>
+                        <button class="terminal-copy-action" id="copy-term-btn" onclick="copyActiveTermCommand()">Copy Command</button>
+                    </div>
                 </div>
                 <div class="terminal-body">
                     <pre><code id="terminal-code-display"><span class="t-comment"># 1. Fast smoke check of classical dequantization baselines</span>
