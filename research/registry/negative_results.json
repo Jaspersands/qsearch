@@ -54948,6 +54948,21 @@
   },
   {
     "applies_to": [
+      "DHS-GOWERS-SIEVE"
+    ],
+    "claim": "Polynomial source coverage and a succinct affine seed make the implemented isolated-edge pairing finder polynomial time.",
+    "evidence": {
+      "artifact": "research/reductions/dcp_coherent_matching_interface.json",
+      "review_status": "derived-review-pending",
+      "speedup_claim_allowed": false
+    },
+    "id": "DCP-AFFINE-MARKED-PAIRING-ENUMERATION-COST",
+    "lesson": "Replace support enumeration with an actual structured reversible unique-neighbor solver. Polynomial workspace, a generic square-root search estimate, and finite coverage do not establish a speedup or a general search lower bound.",
+    "reason_invalid": "The clean streamed XOR evaluator visits every radius-r support twice. At the first radius with D=sum C(m,w)>=2^n, six XOR calls cost 12D>=12*2^n predicate evaluations, before arithmetic costs.",
+    "source": "research/reductions/dcp_coherent_matching_interface.json"
+  },
+  {
+    "applies_to": [
       "CODE-COSET-COLLECTIVE"
     ],
     "claim": "The accessible inverse of an arbitrary useful physical DCP measurement prepares a uniform subset-sum fiber.",
@@ -54960,6 +54975,21 @@
     "lesson": "Full-space Fourier inversion guarantees fiber SUPPORTED witnesses, not uniform sampling. The witness reduction survives; uniform-fiber entanglement exclusions cannot be transferred through it.",
     "reason_invalid": "The N=2, labels=(1,1) rational POVM has success 1/2. Its unamplified inverse has uniform-span leakage squared 1/8 (1/4 after matching-branch normalization) and target-zero conditional output 00 with certainty instead of the uniform 00/11 state.",
     "source": "research/reductions/dcp_arbitrary_measurement_witness_reduction.json"
+  },
+  {
+    "applies_to": [
+      "DHS-GOWERS-SIEVE"
+    ],
+    "claim": "A balanced meet-in-the-middle partner finder or increasing raw support multiplicity removes the exponential DCP bottleneck.",
+    "evidence": {
+      "artifact": "research/reductions/dcp_coherent_matching_interface.json",
+      "review_status": "derived-review-pending",
+      "speedup_claim_allowed": false
+    },
+    "id": "DCP-BALANCED-PAIRING-EXPONENTIAL-STORAGE",
+    "lesson": "Beat the charged time-space tradeoff or change the pairing/readout architecture. This is a classical baseline for partner search, not a classical DCP decoder or a general quantum lower bound; list-free arithmetic methods remain open.",
+    "reason_invalid": "The implemented fixed sorting network materializes two capped length-L lists with L=ceil(sqrt(2^n)), plus comparison bits and scan histories. Its time and coherent storage are exponential despite constant average coverage with m=2n. After unrestricted affine isolation, the expected marked degree is D/(N*2^ell) in (1/8,1/4] for D>=N, so raw density cannot be reused without charging syndrome constraints.",
+    "source": "research/reductions/dcp_coherent_matching_interface.json"
   },
   {
     "applies_to": [

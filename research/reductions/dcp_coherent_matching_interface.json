@@ -4,8 +4,10 @@
     "derivation": "research/DCP_PAIRING_PROGRAMS.md"
   },
   "claim_gate": {
+    "affine_marked_coverage_controls_passed": true,
     "arbitrary_quantum_relation_solver_bridge_proved": false,
     "arbitrary_quantum_solvers_excluded": false,
+    "balanced_mitm_controls_passed": true,
     "conditional_pairing_construction_derived": true,
     "formal_verification": false,
     "independently_reviewed": false,
@@ -20,7 +22,7 @@
     "speedup_claim_allowed": false,
     "workspace_overlap_required": true
   },
-  "created_at": "2026-09-22T11:44:46.531152+00:00",
+  "created_at": "2026-09-22T20:04:30.684260+00:00",
   "deterministic_use_sites": [
     {
       "failure_if_removed": "Different witnesses survive as orthogonal which-path labels instead of a two-point phase pair.",
@@ -55,12 +57,19 @@
     "Proving an interface theorem does not construct the required polynomial subset-sum solver.",
     "A one-witness-per-residue proposal can have valid-output fraction one but reciprocal mass at most N/2^m; input-dependent matchings are not subject to that cap.",
     "Short adaptive moves have average mass at most sum_{j<=r} C(m,j)/N. Constant product-dephasing noise suppresses every declared pairing readout at polynomial m; this is not a general DCP no-go.",
-    "Retaining old labels/gauge coins or postlabel corruption invalidates the gauge contract. Correlated prelabel faults require their joint survival law, not the independent eta^weight formula."
+    "Retaining old labels/gauge coins or postlabel corruption invalidates the gauge contract. Correlated prelabel faults require their joint survival law, not the independent eta^weight formula.",
+    "Polynomial affine-marked coverage does not remove the 12*sum_{w<=r} C(m,w) support-predicate calls of its six-XOR enumeration implementation.",
+    "Capped balanced-support joining stores L=ceil(sqrt(2^n)) records per list. Isolation increases syndrome constraints with raw multiplicity; the conditioned expected neighbor count remains at most 1/4, not a free dense-instance regime."
   ],
   "headline_metrics": {
+    "affine_marked_program_control_count": 3,
+    "affine_marked_source_control_count": 3,
+    "balanced_mitm_program_control_count": 3,
+    "balanced_mitm_source_control_count": 3,
     "clean_mutual_xor_oracle_call_count": 6,
     "correlated_noise_control_count": 3,
     "efficient_pairing_finder_count": 0,
+    "explicit_exponential_pairing_finder_count": 2,
     "maximum_polynomial_success_exponent": 15,
     "minimum_certified_routine_success_probability": 2.087208213499279e-39,
     "noise_mass_envelope_count": 14,
@@ -100,6 +109,1768 @@
     }
   ],
   "pairing_programs": {
+    "affine_marked_program": {
+      "contract": {
+        "finite_program_executed": true,
+        "full_decoder_implemented": false,
+        "hash_independence": "Three-wise independent affine maps over F_2; NOT four-wise independent and NOT conditioned full rank.",
+        "independently_reviewed": false,
+        "input_law": "Independent uniform labels and shared uniform affine seed, including singular matrices and empty marked sets; no conditioning on success.",
+        "mass_lower": "theta^2*lambda*(1-2*theta*(lambda-1/N)), lambda=sum_{1<=w<=r} C(m,w)/N, theta=2^-ceil(log2(max(1,4lambda)))",
+        "novelty_established": false,
+        "polynomial_time_finder_constructed": false,
+        "resource": "Stream every support twice per XOR evaluator. Six calls cost 12*sum C(m,w) predicate evaluations; polynomial workspace does not remove exponential time.",
+        "speedup_claim_allowed": false,
+        "unresolved_task": "Replace enumeration by a uniform reversible unique-neighbor algorithm on signed modular subset sums with a binary syndrome and radius constraint.",
+        "witness": "Marked vertices with a unique marked half-period neighbor; reciprocal filtering selects isolated edges."
+      },
+      "control_failures": 0,
+      "controls": [
+        {
+          "checks": {
+            "coverage_bound": true,
+            "first_moment": true,
+            "second_moment": true
+          },
+          "degree_second_moment": {
+            "denominator": 8,
+            "numerator": 5
+          },
+          "hash_seed_count": 8,
+          "mass_lower": {
+            "denominator": 32,
+            "numerator": 3
+          },
+          "mean_degree": {
+            "denominator": 2,
+            "numerator": 1
+          },
+          "n": 2,
+          "observed_mass": {
+            "denominator": 64,
+            "numerator": 7
+          },
+          "radius": 1,
+          "source_assignments": 64,
+          "width": 2
+        },
+        {
+          "checks": {
+            "coverage_bound": true,
+            "first_moment": true,
+            "second_moment": true
+          },
+          "degree_second_moment": {
+            "denominator": 8,
+            "numerator": 9
+          },
+          "hash_seed_count": 64,
+          "mass_lower": {
+            "denominator": 256,
+            "numerator": 9
+          },
+          "mean_degree": {
+            "denominator": 4,
+            "numerator": 3
+          },
+          "n": 2,
+          "observed_mass": {
+            "denominator": 512,
+            "numerator": 21
+          },
+          "radius": 2,
+          "source_assignments": 64,
+          "width": 2
+        },
+        {
+          "checks": {
+            "coverage_bound": true,
+            "first_moment": true,
+            "second_moment": true
+          },
+          "degree_second_moment": {
+            "denominator": 32,
+            "numerator": 15
+          },
+          "hash_seed_count": 16,
+          "mass_lower": {
+            "denominator": 128,
+            "numerator": 9
+          },
+          "mean_degree": {
+            "denominator": 8,
+            "numerator": 3
+          },
+          "n": 3,
+          "observed_mass": {
+            "denominator": 8192,
+            "numerator": 675
+          },
+          "radius": 1,
+          "source_assignments": 4096,
+          "width": 3
+        }
+      ],
+      "program_controls": [
+        {
+          "accepted_source_mass": {
+            "denominator": 2,
+            "numerator": 1
+          },
+          "failures": 0,
+          "hash_offset": 0,
+          "hash_rows": [
+            0,
+            0,
+            0
+          ],
+          "labels": [
+            1,
+            3,
+            0
+          ],
+          "n": 2,
+          "proposal_table": [
+            null,
+            2,
+            1,
+            null,
+            null,
+            6,
+            5,
+            null
+          ],
+          "radius": 2,
+          "selected_calibration_not_natural_coverage_estimate": true,
+          "support_predicate_evaluations": 96
+        },
+        {
+          "accepted_source_mass": {
+            "denominator": 2,
+            "numerator": 1
+          },
+          "failures": 0,
+          "hash_offset": 0,
+          "hash_rows": [
+            2
+          ],
+          "labels": [
+            4,
+            1,
+            2
+          ],
+          "n": 3,
+          "proposal_table": [
+            1,
+            0,
+            null,
+            null,
+            5,
+            4,
+            null,
+            null
+          ],
+          "radius": 1,
+          "selected_calibration_not_natural_coverage_estimate": true,
+          "support_predicate_evaluations": 48
+        },
+        {
+          "accepted_source_mass": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "failures": 0,
+          "hash_offset": 0,
+          "hash_rows": [
+            1,
+            2
+          ],
+          "labels": [
+            1,
+            2,
+            5
+          ],
+          "n": 3,
+          "proposal_table": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "radius": 2,
+          "selected_calibration_not_natural_coverage_estimate": true,
+          "support_predicate_evaluations": 96
+        }
+      ],
+      "scaling": [
+        {
+          "counter_bits": 12,
+          "degree_second_moment": {
+            "denominator": 2048,
+            "numerator": 151775
+          },
+          "full_assignment_table_required": false,
+          "generic_quantum_search_log2_domain_sqrt": 5.511183906514227,
+          "hash_bits": 6,
+          "independent_fault_signal_lower": {
+            "denominator": 17179869184,
+            "numerator": 19469905
+          },
+          "joint_fault_signal_lower": {
+            "denominator": 1073741824,
+            "numerator": 1192035
+          },
+          "log2_six_xor_predicate_calls": 14.60733031374961,
+          "log2_source_mass_lower": -9.3999673352067,
+          "mark_probability": {
+            "denominator": 64,
+            "numerator": 1
+          },
+          "mean_degree": {
+            "denominator": 8,
+            "numerator": 65
+          },
+          "n": 8,
+          "one_xor_support_predicate_calls": 4160,
+          "polynomial_time_claimed": false,
+          "post_mark_expected_degree": {
+            "denominator": 512,
+            "numerator": 65
+          },
+          "public_seed_bits": 390,
+          "quantum_search_implemented": false,
+          "radius": 2,
+          "six_xor_support_predicate_calls": 24960,
+          "source_mass_lower": {
+            "denominator": 268435456,
+            "numerator": 397345
+          },
+          "supports": 2080,
+          "syndrome_domain_over_supports": {
+            "denominator": 65,
+            "numerator": 512
+          },
+          "syndrome_target_domain_size": 16384,
+          "unit_mean_degree_reached": true,
+          "width": 64
+        },
+        {
+          "counter_bits": 22,
+          "degree_second_moment": {
+            "denominator": 33554432,
+            "numerator": 62525043497
+          },
+          "full_assignment_table_required": false,
+          "generic_quantum_search_log2_domain_sqrt": 10.707573781988406,
+          "hash_bits": 8,
+          "independent_fault_signal_lower": {
+            "denominator": 1152921504606846976,
+            "numerator": 412332661589625
+          },
+          "joint_fault_signal_lower": {
+            "denominator": 4503599627370496,
+            "numerator": 1588244326123
+          },
+          "log2_six_xor_predicate_calls": 25.00011006469797,
+          "log2_source_mass_lower": -11.169869714258546,
+          "mark_probability": {
+            "denominator": 256,
+            "numerator": 1
+          },
+          "mean_degree": {
+            "denominator": 512,
+            "numerator": 21847
+          },
+          "n": 16,
+          "one_xor_support_predicate_calls": 5592832,
+          "polynomial_time_claimed": false,
+          "post_mark_expected_degree": {
+            "denominator": 131072,
+            "numerator": 21847
+          },
+          "public_seed_bits": 2056,
+          "quantum_search_implemented": false,
+          "radius": 3,
+          "six_xor_support_predicate_calls": 33556992,
+          "source_mass_lower": {
+            "denominator": 281474976710656,
+            "numerator": 122172640471
+          },
+          "supports": 2796416,
+          "syndrome_domain_over_supports": {
+            "denominator": 21847,
+            "numerator": 131072
+          },
+          "syndrome_target_domain_size": 16777216,
+          "unit_mean_degree_reached": true,
+          "width": 256
+        },
+        {
+          "counter_bits": 36,
+          "degree_second_moment": {
+            "denominator": 72057594037927936,
+            "numerator": 8933851699557665875
+          },
+          "full_assignment_table_required": false,
+          "generic_quantum_search_log2_domain_sqrt": 17.706116081537314,
+          "hash_bits": 6,
+          "independent_fault_signal_lower": {
+            "denominator": 9903520314283042199192993792,
+            "numerator": 15128334383821882886247725
+          },
+          "joint_fault_signal_lower": {
+            "denominator": 75557863725914323419136,
+            "numerator": 114668037528928070075
+          },
+          "log2_six_xor_predicate_calls": 38.99719466379578,
+          "log2_source_mass_lower": -9.17132971250794,
+          "mark_probability": {
+            "denominator": 64,
+            "numerator": 1
+          },
+          "mean_degree": {
+            "denominator": 16777216,
+            "numerator": 178609325
+          },
+          "n": 32,
+          "one_xor_support_predicate_calls": 91447974400,
+          "polynomial_time_claimed": false,
+          "post_mark_expected_degree": {
+            "denominator": 1073741824,
+            "numerator": 178609325
+          },
+          "public_seed_bits": 6150,
+          "quantum_search_implemented": false,
+          "radius": 4,
+          "six_xor_support_predicate_calls": 548687846400,
+          "source_mass_lower": {
+            "denominator": 9444732965739290427392,
+            "numerator": 16381148218418295725
+          },
+          "supports": 45723987200,
+          "syndrome_domain_over_supports": {
+            "denominator": 178609325,
+            "numerator": 1073741824
+          },
+          "syndrome_target_domain_size": 274877906944,
+          "unit_mean_degree_reached": true,
+          "width": 1024
+        },
+        {
+          "counter_bits": 72,
+          "degree_second_moment": {
+            "denominator": 332306998946228968225951765070086144,
+            "numerator": 14354884933033620108057629125332271461529
+          },
+          "full_assignment_table_required": false,
+          "generic_quantum_search_log2_domain_sqrt": 35.84793105265279,
+          "hash_bits": 10,
+          "independent_fault_signal_lower": {
+            "denominator": 784637716923335095479473677900958302012794430558004314112,
+            "numerator": 82684210251501834230149766337244577850274464161478873
+          },
+          "joint_fault_signal_lower": {
+            "denominator": 11417981541647679048466287755595961091061972992,
+            "numerator": 1196502449763828006976902890041800521484783
+          },
+          "log2_six_xor_predicate_calls": 75.28082460602674,
+          "log2_source_mass_lower": -13.05308667818835,
+          "mark_probability": {
+            "denominator": 1024,
+            "numerator": 1
+          },
+          "mean_degree": {
+            "denominator": 18014398509481984,
+            "numerator": 3735124669023145831
+          },
+          "n": 64,
+          "one_xor_support_predicate_calls": 7649535322159402661888,
+          "polynomial_time_claimed": false,
+          "post_mark_expected_degree": {
+            "denominator": 18446744073709551616,
+            "numerator": 3735124669023145831
+          },
+          "public_seed_bits": 40970,
+          "quantum_search_implemented": false,
+          "radius": 7,
+          "six_xor_support_predicate_calls": 45897211932956415971328,
+          "source_mass_lower": {
+            "denominator": 178405961588244985132285746181186892047843328,
+            "numerator": 20991271048488210648717594562136851254119
+          },
+          "supports": 3824767661079701330944,
+          "syndrome_domain_over_supports": {
+            "denominator": 3735124669023145831,
+            "numerator": 18446744073709551616
+          },
+          "syndrome_target_domain_size": 18889465931478580854784,
+          "unit_mean_degree_reached": true,
+          "width": 4096
+        },
+        {
+          "counter_bits": 129,
+          "degree_second_moment": {
+            "denominator": 56539106072908298546665520023773392506479484700019806659891398441363832832,
+            "numerator": 253751114673020647145704854906579887712077732346446109436771450908980510087
+          },
+          "full_assignment_table_required": false,
+          "generic_quantum_search_log2_domain_sqrt": 64.37281633226128,
+          "hash_bits": 3,
+          "independent_fault_signal_lower": {
+            "denominator": 2187250724783011924372502227117621365353169430893212436425770606409952999199375923223513177023053824,
+            "numerator": 30531715169400705894786863929168072706791777792691332211798814285814200600324625447925386977302279
+          },
+          "joint_fault_signal_lower": {
+            "denominator": 1852673427797059126777135760139006525652319754650249024631321344126610074238976,
+            "numerator": 25768915026886208234331039489428994823607356841687582336258233041906489336141
+          },
+          "log2_six_xor_predicate_calls": 132.3305951652437,
+          "log2_source_mass_lower": -6.038197712827696,
+          "mark_probability": {
+            "denominator": 8,
+            "numerator": 1
+          },
+          "mean_degree": {
+            "denominator": 166153499473114484112975882535043072,
+            "numerator": 278591133560019738714003295611521657
+          },
+          "n": 128,
+          "one_xor_support_predicate_calls": 1141109283061840849772557498824792707072,
+          "polynomial_time_claimed": false,
+          "post_mark_expected_degree": {
+            "denominator": 1329227995784915872903807060280344576,
+            "numerator": 278591133560019738714003295611521657
+          },
+          "public_seed_bits": 49155,
+          "quantum_search_implemented": false,
+          "radius": 11,
+          "six_xor_support_predicate_calls": 6846655698371045098635344992948756242432,
+          "source_mass_lower": {
+            "denominator": 14474011154664524427946373126085988481658748083205070504932198000989141204992,
+            "numerator": 220247136981933403712231106747256366013738092663996430224429342238517002873
+          },
+          "supports": 570554641530920424886278749412396353536,
+          "syndrome_domain_over_supports": {
+            "denominator": 278591133560019738714003295611521657,
+            "numerator": 1329227995784915872903807060280344576
+          },
+          "syndrome_target_domain_size": 2722258935367507707706996859454145691648,
+          "unit_mean_degree_reached": true,
+          "width": 16384
+        },
+        {
+          "counter_bits": 259,
+          "degree_second_moment": {
+            "denominator": 3273390607896141870013189696827599152216642046043064789483291368096133796404674554883270092325904157150886684127560071009217256545885393053328527589376,
+            "numerator": 211967670860982365518928227459759834213783426894506649127099460742882010454799614465826995574152756894848579189517066214009297692972628275273887853227119
+          },
+          "full_assignment_table_required": false,
+          "generic_quantum_search_log2_domain_sqrt": 129.45943675494715,
+          "hash_bits": 5,
+          "independent_fault_signal_lower": {
+            "denominator": 78382132970517478991165606422426233672355708521949855379734648809861125861064803929830588940942115354940041435601982738271645192059633193360683542052684438972998018132574030730004068581526319939960438784,
+            "numerator": 282280536929745349202801092098277991486104126276211047153097105273476726214017918840774208218114013450628121080532529121310061970159316429847185791644252318097787236071815834191233209555149078369140625
+          },
+          "joint_fault_signal_lower": {
+            "denominator": 3432398830065304857490950399540696608634717650071652704697231729592771591698828026061279820330727277488648155695740429018560993999858321906287014145557528576,
+            "numerator": 12323365736807075494052386650565840035738913466577447322704489640337219945406825964805565027789065277188716918974377691039586373042268768479202688073876075
+          },
+          "log2_six_xor_predicate_calls": 262.50383601061543,
+          "log2_source_mass_lower": -8.004320100428004,
+          "mark_probability": {
+            "denominator": 32,
+            "numerator": 1
+          },
+          "mean_degree": {
+            "denominator": 28269553036454149273332760011886696253239742350009903329945699220681916416,
+            "numerator": 213790017111195229891664532127691351851227667142223436988957023206207873937
+          },
+          "n": 256,
+          "one_xor_support_predicate_calls": 1751367820174911323272515847190047554365257049229094395813535934105254903291904,
+          "polynomial_time_claimed": false,
+          "post_mark_expected_degree": {
+            "denominator": 904625697166532776746648320380374280103671755200316906558262375061821325312,
+            "numerator": 213790017111195229891664532127691351851227667142223436988957023206207873937
+          },
+          "public_seed_bits": 327685,
+          "quantum_search_implemented": false,
+          "radius": 20,
+          "six_xor_support_predicate_calls": 10508206921049467939635095083140285326191542295374566374881215604631529419751424,
+          "source_mass_lower": {
+            "denominator": 53631231719770388398296099992823384509917463282369573510894245774887056120294187907207497192667613710760127432745944203415015531247786279785734596024336384,
+            "numerator": 208870605708594499899192994077387119249812092653855039367872705768427456701810609572975678437102801308283337609735215102365870729529979126766147255489425
+          },
+          "supports": 875683910087455661636257923595023777182628524614547197906767967052627451645952,
+          "syndrome_domain_over_supports": {
+            "denominator": 213790017111195229891664532127691351851227667142223436988957023206207873937,
+            "numerator": 904625697166532776746648320380374280103671755200316906558262375061821325312
+          },
+          "syndrome_target_domain_size": 3705346855594118253554271520278013051304639509300498049262642688253220148477952,
+          "unit_mean_degree_reached": true,
+          "width": 65536
+        },
+        {
+          "counter_bits": 523,
+          "degree_second_moment": {
+            "denominator": 21944496275174754733023745004748837080297570543729328280448007953824789527038691788660702798145451174453138901351488446979832735450978591612896414872982681198457994802840025058142360791167736098566050165049439180766375815715632675961171034001565824849041810386302038359368560295224574744242597208206082048,
+            "numerator": 60154571108859862192655035562471037602325315440570274858312702799175535921852387491930924294389961473297206160522507035994182802271396145478158918600347454309077252397938615547240844497943683326990720411781525638628091582842122668140301407867126407385735013022236694544004670955927870546432920664289154801253867
+          },
+          "full_assignment_table_required": false,
+          "generic_quantum_search_log2_domain_sqrt": 261.3463781038291,
+          "hash_bits": 13,
+          "independent_fault_signal_lower": {
+            "denominator": 105548971949608307443588036296367203254059584032774329845203984560564479969258189763919670581468053074758138779319760489913503819934763363667208214498339374290165229191705513549744335027916149889525674260072714139306001435182057412770314119526171293246207784625468039851898267238212799548643604060387374899152465377657956747092389796124437006656196665228148726434307021935613434399988615954138174140973009422153416704,
+            "numerator": 1443039886011356119379102581421916984054871441782642417970625749455545654226681613078873581842451338583779815117921601811682380315331506417071898870807286651028496584458252560054440891703686742965936711926533238640364356428357619587457151266432635867034150814038186818873929493245469816613693378348185313017402972515938201416848098758137527359084902226022854867317880603790212293087067435242229572081561962336235
+          },
+          "joint_fault_signal_lower": {
+            "denominator": 3088413288990945714607167766096760666649729152895234960279866913260350640380788374205938472006792060778611417607373228628384532735989280347702230834056678923362997806954442769843550227998248540363155634742320939156524772391123850992097524347673943425610505012700786888921103128284156837954503288400970554554866145951744,
+            "numerator": 42111299163124852685986872224680526320364379738672685003933092250376078032076545105311746630614621973297741480892380492353309519658607044348308164382307980024028316607868585132745690518203355476699699386196209319567603959231336048803903161632929222243664544517974235728211184010982991619205134777451688876198960375
+          },
+          "log2_six_xor_predicate_calls": 526.2777187083794,
+          "log2_source_mass_lower": -16.05408261912612,
+          "mark_probability": {
+            "denominator": 8192,
+            "numerator": 1
+          },
+          "mean_degree": {
+            "denominator": 1636695303948070935006594848413799576108321023021532394741645684048066898202337277441635046162952078575443342063780035504608628272942696526664263794688,
+            "numerator": 2708994923268159750565429666324953800420952680844894485454152022267198945669223868135597562432554754715729975878834405865959879161681631294197682634252821
+          },
+          "n": 512,
+          "one_xor_support_predicate_calls": 44384172822825529353263999653068043066096888722962751249680826732825787525844563855533630462894977101262519924798822905707886660184991847124134832279598219264,
+          "polynomial_time_claimed": false,
+          "post_mark_expected_degree": {
+            "denominator": 13407807929942597099574024998205846127479365820592393377723561443721764030073546976801874298166903427690031858186486050853753882811946569946433649006084096,
+            "numerator": 2708994923268159750565429666324953800420952680844894485454152022267198945669223868135597562432554754715729975878834405865959879161681631294197682634252821
+          },
+          "public_seed_bits": 3407885,
+          "quantum_search_implemented": false,
+          "radius": 37,
+          "six_xor_support_predicate_calls": 266305036936953176119583997918408258396581332337776507498084960396954725155067383133201782777369862607575119548792937434247319961109951082744808993677589315584,
+          "source_mass_lower": {
+            "denominator": 6032057205060440848842124543157735677050252251748505781796615064961622344493727293370973578138265743708225425014400837164813540499979063179105919597766951022193355091707896034850684039059079180396788349106095584290087446076413771468940477241550670753145517602931224392424029547429993824129889235158145614364972941312,
+            "numerator": 88655366659210216181024994157222160674451325765626705271438088948160164278055884432235256064451835733258403117668169457585914778228646409154332977646964168471638561279723337121569874775164958898315156602518335409616008335223865365902954024490377309986662198985208917322549861075753666566747652163056187107787285
+          },
+          "supports": 22192086411412764676631999826534021533048444361481375624840413366412893762922281927766815231447488550631259962399411452853943330092495923562067416139799109632,
+          "syndrome_domain_over_supports": {
+            "denominator": 2708994923268159750565429666324953800420952680844894485454152022267198945669223868135597562432554754715729975878834405865959879161681631294197682634252821,
+            "numerator": 13407807929942597099574024998205846127479365820592393377723561443721764030073546976801874298166903427690031858186486050853753882811946569946433649006084096
+          },
+          "syndrome_target_domain_size": 109836762562089755439710412785302291476310964802292886550311415346968690934362496833960954250583272879636740982263693728593951807995466301001184452657840914432,
+          "unit_mean_degree_reached": true,
+          "width": 262144
+        }
+      ],
+      "status": "derived-polynomial-coverage-exponential-finder-review-pending"
+    },
+    "balanced_mitm_program": {
+      "contract": {
+        "charged_resources": "L=ceil(sqrt(2^n)) list entries per block by default; time and coherent storage remain exponential.",
+        "classical_baseline_only_for_partner_subproblem": true,
+        "classical_dcp_solver_constructed": false,
+        "coherent_ram_assumed": false,
+        "coverage": "Same three-wise thinning/moment bound with D=L^2. Default L=ceil(sqrt(2^n)) once available gives source mass >=1/128 for n>=2, with no input/seed conditioning.",
+        "density_after_isolation": "Conditioned on a source being marked, H is still uniform. Expected neighbor count is D/(N*2^ell)=lambda*theta in (1/8,1/4] for lambda>=1. Increasing raw support multiplicity also increases syndrome constraints; no dense-instance shortcut is supplied.",
+        "finite_program_executed": true,
+        "gate_export_implemented": false,
+        "independently_reviewed": false,
+        "linear_sample_noise_bound": "For m=2n,n>=6, minimal k<=ceil(n/4)<=n/3. Under the stated prelabel classical-fault marginal <=1/n, source-averaged signed signal >=1/384. No arbitrary quantum noise, independent-batch promise, or full-secret decoder is supplied.",
+        "novelty_established": false,
+        "reversibility": "Fixed sorting addresses, saved comparison bits, full prefix histories, output XOR, inverse scan/sort/record generation.",
+        "source_law": "Independent uniform labels and unrestricted independent uniform affine seed.",
+        "speedup_claim_allowed": false,
+        "support_family": "Cartesian product of first L lexicographic weight-k supports in each equal block; neither the whole radius ball nor necessarily full block lists."
+      },
+      "control_failures": 0,
+      "controls": [
+        {
+          "checks": {
+            "coverage": true,
+            "first_moment": true,
+            "post_mark_density": true,
+            "second_moment": true
+          },
+          "conditional_marked_degree": {
+            "denominator": 4,
+            "numerator": 1
+          },
+          "list_length": 1,
+          "n": 2,
+          "observed_mass": {
+            "denominator": 4,
+            "numerator": 1
+          },
+          "source_label_seed_assignments": 64,
+          "source_mass_lower": {
+            "denominator": 4,
+            "numerator": 1
+          },
+          "weight": 1,
+          "width": 2
+        },
+        {
+          "checks": {
+            "coverage": true,
+            "first_moment": true,
+            "post_mark_density": true,
+            "second_moment": true
+          },
+          "conditional_marked_degree": {
+            "denominator": 4,
+            "numerator": 1
+          },
+          "list_length": 2,
+          "n": 3,
+          "observed_mass": {
+            "denominator": 2048,
+            "numerator": 189
+          },
+          "source_label_seed_assignments": 2097152,
+          "source_mass_lower": {
+            "denominator": 64,
+            "numerator": 5
+          },
+          "weight": 1,
+          "width": 4
+        },
+        {
+          "checks": {
+            "coverage": true,
+            "first_moment": true,
+            "post_mark_density": true,
+            "second_moment": true
+          },
+          "conditional_marked_degree": {
+            "denominator": 4,
+            "numerator": 1
+          },
+          "list_length": 1,
+          "n": 2,
+          "observed_mass": {
+            "denominator": 4,
+            "numerator": 1
+          },
+          "source_label_seed_assignments": 4096,
+          "source_mass_lower": {
+            "denominator": 4,
+            "numerator": 1
+          },
+          "weight": 1,
+          "width": 4
+        }
+      ],
+      "literature": [
+        {
+          "role": "Prior reversible sorting networks; comparison history is retained and uncomputed, not free erasure.",
+          "url": "https://arxiv.org/abs/1207.2307"
+        },
+        {
+          "role": "Prior DCP time/query/memory tradeoffs; linear samples and exponential time are not a new efficiency result.",
+          "url": "https://arxiv.org/abs/2206.14408"
+        }
+      ],
+      "program_controls": [
+        {
+          "accepted_source_mass": {
+            "denominator": 2,
+            "numerator": 1
+          },
+          "failures": 0,
+          "labels": [
+            1,
+            0,
+            1,
+            0
+          ],
+          "list_length": 2,
+          "maximum_physical_residual": 0.0,
+          "n": 2,
+          "physical_checks": {
+            "accept_full_space_permutation": true,
+            "accepted_isometry_exact": true,
+            "accepted_workspace_exactly_clean": true,
+            "ordering_full_space_permutation": true
+          },
+          "proposal_table": [
+            5,
+            null,
+            7,
+            null,
+            null,
+            0,
+            null,
+            2,
+            13,
+            null,
+            15,
+            null,
+            null,
+            8,
+            null,
+            10
+          ],
+          "selected_calibration_not_natural_coverage_estimate": true,
+          "weight": 1
+        },
+        {
+          "accepted_source_mass": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "failures": 0,
+          "labels": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "list_length": 2,
+          "maximum_physical_residual": 0.0,
+          "n": 2,
+          "physical_checks": {
+            "accept_full_space_permutation": true,
+            "accepted_isometry_exact": true,
+            "accepted_workspace_exactly_clean": true,
+            "ordering_full_space_permutation": true
+          },
+          "proposal_table": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "selected_calibration_not_natural_coverage_estimate": true,
+          "weight": 1
+        },
+        {
+          "accepted_source_mass": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "failures": 0,
+          "labels": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "list_length": 2,
+          "maximum_physical_residual": 0.0,
+          "n": 3,
+          "physical_checks": {
+            "accept_full_space_permutation": true,
+            "accepted_isometry_exact": true,
+            "accepted_workspace_exactly_clean": true,
+            "ordering_full_space_permutation": true
+          },
+          "proposal_table": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "selected_calibration_not_natural_coverage_estimate": true,
+          "weight": 1
+        }
+      ],
+      "scaling": [
+        {
+          "analytical_counts_not_large_instance_execution": true,
+          "available_block_supports": 28,
+          "coherent_ram_assumed": false,
+          "counter_bits": 9,
+          "degree_second_moment": {
+            "denominator": 256,
+            "numerator": 511
+          },
+          "each_list_length": 16,
+          "full_assignment_table_required": false,
+          "full_block_lists_used": false,
+          "gate_export_implemented": false,
+          "half_width": 8,
+          "hash_bits": 2,
+          "independent_fault_signal_lower": {
+            "denominator": 33554432,
+            "numerator": 617057
+          },
+          "joint_fault_signal_lower": {
+            "denominator": 16384,
+            "numerator": 257
+          },
+          "log2_list_length": 4.0,
+          "log2_persistent_workspace_bits": 11.967946705812707,
+          "log2_six_xor_comparators": 11.491853096329674,
+          "log2_source_mass_lower": -4.994375450806121,
+          "mark_probability": {
+            "denominator": 4,
+            "numerator": 1
+          },
+          "mean_degree": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "n": 8,
+          "one_xor_comparators": 480,
+          "one_xor_record_evaluations": 64,
+          "one_xor_scan_steps": 64,
+          "padded_records": 32,
+          "per_block_weight": 2,
+          "persistent_workspace_bits": 4006,
+          "polynomial_time_claimed": false,
+          "post_mark_expected_degree": {
+            "denominator": 4,
+            "numerator": 1
+          },
+          "public_seed_bits": 34,
+          "radius": 4,
+          "record_bits": 29,
+          "sample_regime": "linear-samples",
+          "scan_state_bits": 86,
+          "six_xor_comparators": 2880,
+          "source_mass_lower": {
+            "denominator": 8192,
+            "numerator": 257
+          },
+          "space_form": "O(L*poly(n,m)) basis-wire bits; coherent when input is a superposition",
+          "supports": 256,
+          "syndrome_domain_over_supports": {
+            "denominator": 1,
+            "numerator": 4
+          },
+          "syndrome_target_domain_size": 1024,
+          "time_form": "O(L*log(L)^2*poly(n,m)), L<=C(m/2,k); default L=ceil(sqrt(2^n)) when available",
+          "unit_mean_degree_reached": true,
+          "width": 16,
+          "workspace_excludes_reusable_polynomial_arithmetic_scratch": true
+        },
+        {
+          "analytical_counts_not_large_instance_execution": true,
+          "available_block_supports": 32,
+          "coherent_ram_assumed": false,
+          "counter_bits": 9,
+          "degree_second_moment": {
+            "denominator": 256,
+            "numerator": 511
+          },
+          "each_list_length": 16,
+          "full_assignment_table_required": false,
+          "full_block_lists_used": false,
+          "gate_export_implemented": false,
+          "half_width": 32,
+          "hash_bits": 2,
+          "independent_fault_signal_lower": {
+            "denominator": 524288,
+            "numerator": 12593
+          },
+          "joint_fault_signal_lower": {
+            "denominator": 32768,
+            "numerator": 771
+          },
+          "log2_list_length": 4.0,
+          "log2_persistent_workspace_bits": 13.329516067206534,
+          "log2_six_xor_comparators": 11.491853096329674,
+          "log2_source_mass_lower": -4.994375450806121,
+          "mark_probability": {
+            "denominator": 4,
+            "numerator": 1
+          },
+          "mean_degree": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "n": 8,
+          "one_xor_comparators": 480,
+          "one_xor_record_evaluations": 64,
+          "one_xor_scan_steps": 64,
+          "padded_records": 32,
+          "per_block_weight": 1,
+          "persistent_workspace_bits": 10294,
+          "polynomial_time_claimed": false,
+          "post_mark_expected_degree": {
+            "denominator": 4,
+            "numerator": 1
+          },
+          "public_seed_bits": 130,
+          "radius": 2,
+          "record_bits": 77,
+          "sample_regime": "quadratic-samples",
+          "scan_state_bits": 230,
+          "six_xor_comparators": 2880,
+          "source_mass_lower": {
+            "denominator": 8192,
+            "numerator": 257
+          },
+          "space_form": "O(L*poly(n,m)) basis-wire bits; coherent when input is a superposition",
+          "supports": 256,
+          "syndrome_domain_over_supports": {
+            "denominator": 1,
+            "numerator": 4
+          },
+          "syndrome_target_domain_size": 1024,
+          "time_form": "O(L*log(L)^2*poly(n,m)), L<=C(m/2,k); default L=ceil(sqrt(2^n)) when available",
+          "unit_mean_degree_reached": true,
+          "width": 64,
+          "workspace_excludes_reusable_polynomial_arithmetic_scratch": true
+        },
+        {
+          "analytical_counts_not_large_instance_execution": true,
+          "available_block_supports": 560,
+          "coherent_ram_assumed": false,
+          "counter_bits": 17,
+          "degree_second_moment": {
+            "denominator": 65536,
+            "numerator": 131071
+          },
+          "each_list_length": 256,
+          "full_assignment_table_required": false,
+          "full_block_lists_used": false,
+          "gate_export_implemented": false,
+          "half_width": 16,
+          "hash_bits": 2,
+          "independent_fault_signal_lower": {
+            "denominator": 35184372088832,
+            "numerator": 746507390625
+          },
+          "joint_fault_signal_lower": {
+            "denominator": 16777216,
+            "numerator": 327685
+          },
+          "log2_list_length": 8.0,
+          "log2_persistent_workspace_bits": 16.917814927830847,
+          "log2_six_xor_comparators": 17.07681559705083,
+          "log2_source_mass_lower": -4.9999779863886396,
+          "mark_probability": {
+            "denominator": 4,
+            "numerator": 1
+          },
+          "mean_degree": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "n": 16,
+          "one_xor_comparators": 23040,
+          "one_xor_record_evaluations": 1024,
+          "one_xor_scan_steps": 1024,
+          "padded_records": 512,
+          "per_block_weight": 3,
+          "persistent_workspace_bits": 123814,
+          "polynomial_time_claimed": false,
+          "post_mark_expected_degree": {
+            "denominator": 4,
+            "numerator": 1
+          },
+          "public_seed_bits": 66,
+          "radius": 6,
+          "record_bits": 53,
+          "sample_regime": "linear-samples",
+          "scan_state_bits": 166,
+          "six_xor_comparators": 138240,
+          "source_mass_lower": {
+            "denominator": 2097152,
+            "numerator": 65537
+          },
+          "space_form": "O(L*poly(n,m)) basis-wire bits; coherent when input is a superposition",
+          "supports": 65536,
+          "syndrome_domain_over_supports": {
+            "denominator": 1,
+            "numerator": 4
+          },
+          "syndrome_target_domain_size": 262144,
+          "time_form": "O(L*log(L)^2*poly(n,m)), L<=C(m/2,k); default L=ceil(sqrt(2^n)) when available",
+          "unit_mean_degree_reached": true,
+          "width": 32,
+          "workspace_excludes_reusable_polynomial_arithmetic_scratch": true
+        },
+        {
+          "analytical_counts_not_large_instance_execution": true,
+          "available_block_supports": 8128,
+          "coherent_ram_assumed": false,
+          "counter_bits": 17,
+          "degree_second_moment": {
+            "denominator": 65536,
+            "numerator": 131071
+          },
+          "each_list_length": 256,
+          "full_assignment_table_required": false,
+          "full_block_lists_used": false,
+          "gate_export_implemented": false,
+          "half_width": 128,
+          "hash_bits": 2,
+          "independent_fault_signal_lower": {
+            "denominator": 137438953472,
+            "numerator": 3317810625
+          },
+          "joint_fault_signal_lower": {
+            "denominator": 8388608,
+            "numerator": 196611
+          },
+          "log2_list_length": 8.0,
+          "log2_persistent_workspace_bits": 19.153725193802586,
+          "log2_six_xor_comparators": 17.07681559705083,
+          "log2_source_mass_lower": -4.9999779863886396,
+          "mark_probability": {
+            "denominator": 4,
+            "numerator": 1
+          },
+          "mean_degree": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "n": 16,
+          "one_xor_comparators": 23040,
+          "one_xor_record_evaluations": 1024,
+          "one_xor_scan_steps": 1024,
+          "padded_records": 512,
+          "per_block_weight": 2,
+          "persistent_workspace_bits": 583238,
+          "polynomial_time_claimed": false,
+          "post_mark_expected_degree": {
+            "denominator": 4,
+            "numerator": 1
+          },
+          "public_seed_bits": 514,
+          "radius": 4,
+          "record_bits": 277,
+          "sample_regime": "quadratic-samples",
+          "scan_state_bits": 838,
+          "six_xor_comparators": 138240,
+          "source_mass_lower": {
+            "denominator": 2097152,
+            "numerator": 65537
+          },
+          "space_form": "O(L*poly(n,m)) basis-wire bits; coherent when input is a superposition",
+          "supports": 65536,
+          "syndrome_domain_over_supports": {
+            "denominator": 1,
+            "numerator": 4
+          },
+          "syndrome_target_domain_size": 262144,
+          "time_form": "O(L*log(L)^2*poly(n,m)), L<=C(m/2,k); default L=ceil(sqrt(2^n)) when available",
+          "unit_mean_degree_reached": true,
+          "width": 256,
+          "workspace_excludes_reusable_polynomial_arithmetic_scratch": true
+        },
+        {
+          "analytical_counts_not_large_instance_execution": true,
+          "available_block_supports": 201376,
+          "coherent_ram_assumed": false,
+          "counter_bits": 33,
+          "degree_second_moment": {
+            "denominator": 4294967296,
+            "numerator": 8589934591
+          },
+          "each_list_length": 65536,
+          "full_assignment_table_required": false,
+          "full_block_lists_used": false,
+          "gate_export_implemented": false,
+          "half_width": 32,
+          "hash_bits": 2,
+          "independent_fault_signal_lower": {
+            "denominator": 154742504910672534362390528,
+            "numerator": 3520276688278671161864897
+          },
+          "joint_fault_signal_lower": {
+            "denominator": 2199023255552,
+            "numerator": 47244640267
+          },
+          "log2_list_length": 16.0,
+          "log2_persistent_workspace_bits": 25.975855094594998,
+          "log2_six_xor_comparators": 26.84235034341381,
+          "log2_source_mass_lower": -4.999999999664098,
+          "mark_probability": {
+            "denominator": 4,
+            "numerator": 1
+          },
+          "mean_degree": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "n": 32,
+          "one_xor_comparators": 20054016,
+          "one_xor_record_evaluations": 262144,
+          "one_xor_scan_steps": 262144,
+          "padded_records": 131072,
+          "per_block_weight": 5,
+          "persistent_workspace_bits": 65995078,
+          "polynomial_time_claimed": false,
+          "post_mark_expected_degree": {
+            "denominator": 4,
+            "numerator": 1
+          },
+          "public_seed_bits": 130,
+          "radius": 10,
+          "record_bits": 101,
+          "sample_regime": "linear-samples",
+          "scan_state_bits": 326,
+          "six_xor_comparators": 120324096,
+          "source_mass_lower": {
+            "denominator": 137438953472,
+            "numerator": 4294967297
+          },
+          "space_form": "O(L*poly(n,m)) basis-wire bits; coherent when input is a superposition",
+          "supports": 4294967296,
+          "syndrome_domain_over_supports": {
+            "denominator": 1,
+            "numerator": 4
+          },
+          "syndrome_target_domain_size": 17179869184,
+          "time_form": "O(L*log(L)^2*poly(n,m)), L<=C(m/2,k); default L=ceil(sqrt(2^n)) when available",
+          "unit_mean_degree_reached": true,
+          "width": 64,
+          "workspace_excludes_reusable_polynomial_arithmetic_scratch": true
+        },
+        {
+          "analytical_counts_not_large_instance_execution": true,
+          "available_block_supports": 130816,
+          "coherent_ram_assumed": false,
+          "counter_bits": 33,
+          "degree_second_moment": {
+            "denominator": 4294967296,
+            "numerator": 8589934591
+          },
+          "each_list_length": 65536,
+          "full_assignment_table_required": false,
+          "full_block_lists_used": false,
+          "gate_export_implemented": false,
+          "half_width": 512,
+          "hash_bits": 2,
+          "independent_fault_signal_lower": {
+            "denominator": 144115188075855872,
+            "numerator": 3966492493092737
+          },
+          "joint_fault_signal_lower": {
+            "denominator": 1099511627776,
+            "numerator": 30064771079
+          },
+          "log2_list_length": 16.0,
+          "log2_persistent_workspace_bits": 29.0846504465091,
+          "log2_six_xor_comparators": 26.84235034341381,
+          "log2_source_mass_lower": -4.999999999664098,
+          "mark_probability": {
+            "denominator": 4,
+            "numerator": 1
+          },
+          "mean_degree": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "n": 32,
+          "one_xor_comparators": 20054016,
+          "one_xor_record_evaluations": 262144,
+          "one_xor_scan_steps": 262144,
+          "padded_records": 131072,
+          "per_block_weight": 2,
+          "persistent_workspace_bits": 569314438,
+          "polynomial_time_claimed": false,
+          "post_mark_expected_degree": {
+            "denominator": 4,
+            "numerator": 1
+          },
+          "public_seed_bits": 2050,
+          "radius": 4,
+          "record_bits": 1061,
+          "sample_regime": "quadratic-samples",
+          "scan_state_bits": 3206,
+          "six_xor_comparators": 120324096,
+          "source_mass_lower": {
+            "denominator": 137438953472,
+            "numerator": 4294967297
+          },
+          "space_form": "O(L*poly(n,m)) basis-wire bits; coherent when input is a superposition",
+          "supports": 4294967296,
+          "syndrome_domain_over_supports": {
+            "denominator": 1,
+            "numerator": 4
+          },
+          "syndrome_target_domain_size": 17179869184,
+          "time_form": "O(L*log(L)^2*poly(n,m)), L<=C(m/2,k); default L=ceil(sqrt(2^n)) when available",
+          "unit_mean_degree_reached": true,
+          "width": 1024,
+          "workspace_excludes_reusable_polynomial_arithmetic_scratch": true
+        },
+        {
+          "analytical_counts_not_large_instance_execution": true,
+          "available_block_supports": 4426165368,
+          "coherent_ram_assumed": false,
+          "counter_bits": 65,
+          "degree_second_moment": {
+            "denominator": 18446744073709551616,
+            "numerator": 36893488147419103231
+          },
+          "each_list_length": 4294967296,
+          "full_assignment_table_required": false,
+          "full_block_lists_used": false,
+          "gate_export_implemented": false,
+          "half_width": 64,
+          "hash_bits": 2,
+          "independent_fault_signal_lower": {
+            "denominator": 46768052394588893382517914646921056628989841375232,
+            "numerator": 1135974319974082037798480350009282274955205508097
+          },
+          "joint_fault_signal_lower": {
+            "denominator": 2361183241434822606848,
+            "numerator": 55340232221128654851
+          },
+          "log2_list_length": 32.0,
+          "log2_persistent_workspace_bits": 43.13378440927648,
+          "log2_six_xor_comparators": 44.71681946132995,
+          "log2_source_mass_lower": -5.0,
+          "mark_probability": {
+            "denominator": 4,
+            "numerator": 1
+          },
+          "mean_degree": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "n": 64,
+          "one_xor_comparators": 4818953306112,
+          "one_xor_record_evaluations": 17179869184,
+          "one_xor_scan_steps": 17179869184,
+          "padded_records": 8589934592,
+          "per_block_weight": 8,
+          "persistent_workspace_bits": 9650791514758,
+          "polynomial_time_claimed": false,
+          "post_mark_expected_degree": {
+            "denominator": 4,
+            "numerator": 1
+          },
+          "public_seed_bits": 258,
+          "radius": 16,
+          "record_bits": 197,
+          "sample_regime": "linear-samples",
+          "scan_state_bits": 646,
+          "six_xor_comparators": 28913719836672,
+          "source_mass_lower": {
+            "denominator": 590295810358705651712,
+            "numerator": 18446744073709551617
+          },
+          "space_form": "O(L*poly(n,m)) basis-wire bits; coherent when input is a superposition",
+          "supports": 18446744073709551616,
+          "syndrome_domain_over_supports": {
+            "denominator": 1,
+            "numerator": 4
+          },
+          "syndrome_target_domain_size": 73786976294838206464,
+          "time_form": "O(L*log(L)^2*poly(n,m)), L<=C(m/2,k); default L=ceil(sqrt(2^n)) when available",
+          "unit_mean_degree_reached": true,
+          "width": 128,
+          "workspace_excludes_reusable_polynomial_arithmetic_scratch": true
+        },
+        {
+          "analytical_counts_not_large_instance_execution": true,
+          "available_block_supports": 730862190080,
+          "coherent_ram_assumed": false,
+          "counter_bits": 65,
+          "degree_second_moment": {
+            "denominator": 18446744073709551616,
+            "numerator": 36893488147419103231
+          },
+          "each_list_length": 4294967296,
+          "full_assignment_table_required": false,
+          "full_block_lists_used": false,
+          "gate_export_implemented": false,
+          "half_width": 2048,
+          "hash_bits": 2,
+          "independent_fault_signal_lower": {
+            "denominator": 166153499473114484112975882535043072,
+            "numerator": 4577666169006662696309749218131457
+          },
+          "joint_fault_signal_lower": {
+            "denominator": 4722366482869645213696,
+            "numerator": 129127208515966861319
+          },
+          "log2_list_length": 32.0,
+          "log2_persistent_workspace_bits": 47.05286518561952,
+          "log2_six_xor_comparators": 44.71681946132995,
+          "log2_source_mass_lower": -5.0,
+          "mark_probability": {
+            "denominator": 4,
+            "numerator": 1
+          },
+          "mean_degree": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "n": 64,
+          "one_xor_comparators": 4818953306112,
+          "one_xor_record_evaluations": 17179869184,
+          "one_xor_scan_steps": 17179869184,
+          "padded_records": 8589934592,
+          "per_block_weight": 4,
+          "persistent_workspace_bits": 145990233370886,
+          "polynomial_time_claimed": false,
+          "post_mark_expected_degree": {
+            "denominator": 4,
+            "numerator": 1
+          },
+          "public_seed_bits": 8194,
+          "radius": 8,
+          "record_bits": 4165,
+          "sample_regime": "quadratic-samples",
+          "scan_state_bits": 12550,
+          "six_xor_comparators": 28913719836672,
+          "source_mass_lower": {
+            "denominator": 590295810358705651712,
+            "numerator": 18446744073709551617
+          },
+          "space_form": "O(L*poly(n,m)) basis-wire bits; coherent when input is a superposition",
+          "supports": 18446744073709551616,
+          "syndrome_domain_over_supports": {
+            "denominator": 1,
+            "numerator": 4
+          },
+          "syndrome_target_domain_size": 73786976294838206464,
+          "time_form": "O(L*log(L)^2*poly(n,m)), L<=C(m/2,k); default L=ceil(sqrt(2^n)) when available",
+          "unit_mean_degree_reached": true,
+          "width": 4096,
+          "workspace_excludes_reusable_polynomial_arithmetic_scratch": true
+        },
+        {
+          "analytical_counts_not_large_instance_execution": true,
+          "available_block_supports": 93343021201262177400,
+          "coherent_ram_assumed": false,
+          "counter_bits": 129,
+          "degree_second_moment": {
+            "denominator": 340282366920938463463374607431768211456,
+            "numerator": 680564733841876926926749214863536422911
+          },
+          "each_list_length": 18446744073709551616,
+          "full_assignment_table_required": false,
+          "full_block_lists_used": false,
+          "gate_export_implemented": false,
+          "half_width": 128,
+          "hash_bits": 2,
+          "independent_fault_signal_lower": {
+            "denominator": 293567822846729153486185074598667128421960318613539983838411371441526128139326055432962374798096087878991872,
+            "numerator": 7137703699954907980748718091667945462698641170479325610932966390983995608449636973806066642336554612944897
+          },
+          "joint_fault_signal_lower": {
+            "denominator": 43556142965880123323311949751266331066368,
+            "numerator": 1020847100762815390390123822295304634371
+          },
+          "log2_list_length": 64.0,
+          "log2_persistent_workspace_bits": 76.4239037658366,
+          "log2_six_xor_comparators": 78.65172443310806,
+          "log2_source_mass_lower": -5.0,
+          "mark_probability": {
+            "denominator": 4,
+            "numerator": 1
+          },
+          "mean_degree": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "n": 128,
+          "one_xor_comparators": 79136532076213976432640,
+          "one_xor_record_evaluations": 73786976294838206464,
+          "one_xor_scan_steps": 73786976294838206464,
+          "padded_records": 36893488147419103232,
+          "per_block_weight": 16,
+          "persistent_workspace_bits": 101364858685033986131206,
+          "polynomial_time_claimed": false,
+          "post_mark_expected_degree": {
+            "denominator": 4,
+            "numerator": 1
+          },
+          "public_seed_bits": 514,
+          "radius": 32,
+          "record_bits": 389,
+          "sample_regime": "linear-samples",
+          "scan_state_bits": 1286,
+          "six_xor_comparators": 474819192457283858595840,
+          "source_mass_lower": {
+            "denominator": 10889035741470030830827987437816582766592,
+            "numerator": 340282366920938463463374607431768211457
+          },
+          "space_form": "O(L*poly(n,m)) basis-wire bits; coherent when input is a superposition",
+          "supports": 340282366920938463463374607431768211456,
+          "syndrome_domain_over_supports": {
+            "denominator": 1,
+            "numerator": 4
+          },
+          "syndrome_target_domain_size": 1361129467683753853853498429727072845824,
+          "time_form": "O(L*log(L)^2*poly(n,m)), L<=C(m/2,k); default L=ceil(sqrt(2^n)) when available",
+          "unit_mean_degree_reached": true,
+          "width": 256,
+          "workspace_excludes_reusable_polynomial_arithmetic_scratch": true
+        },
+        {
+          "analytical_counts_not_large_instance_execution": true,
+          "available_block_supports": 418997826755191197696,
+          "coherent_ram_assumed": false,
+          "counter_bits": 129,
+          "degree_second_moment": {
+            "denominator": 340282366920938463463374607431768211456,
+            "numerator": 680564733841876926926749214863536422911
+          },
+          "each_list_length": 18446744073709551616,
+          "full_assignment_table_required": false,
+          "full_block_lists_used": false,
+          "gate_export_implemented": false,
+          "half_width": 8192,
+          "hash_bits": 2,
+          "independent_fault_signal_lower": {
+            "denominator": 210624583337114373395836055367340864637790190801098222508621955072,
+            "numerator": 5990790003850000576997119433230099067346043060126324849994922497
+          },
+          "joint_fault_signal_lower": {
+            "denominator": 348449143727040986586495598010130648530944,
+            "numerator": 9868188640707215440437863615521278132253
+          },
+          "log2_list_length": 64.0,
+          "log2_persistent_workspace_bits": 81.03745043361167,
+          "log2_six_xor_comparators": 78.65172443310806,
+          "log2_source_mass_lower": -5.0,
+          "mark_probability": {
+            "denominator": 4,
+            "numerator": 1
+          },
+          "mean_degree": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "n": 128,
+          "one_xor_comparators": 79136532076213976432640,
+          "one_xor_record_evaluations": 73786976294838206464,
+          "one_xor_scan_steps": 73786976294838206464,
+          "padded_records": 36893488147419103232,
+          "per_block_weight": 6,
+          "persistent_workspace_bits": 2481437566051335173882374,
+          "polynomial_time_claimed": false,
+          "post_mark_expected_degree": {
+            "denominator": 4,
+            "numerator": 1
+          },
+          "public_seed_bits": 32770,
+          "radius": 12,
+          "record_bits": 16517,
+          "sample_regime": "quadratic-samples",
+          "scan_state_bits": 49670,
+          "six_xor_comparators": 474819192457283858595840,
+          "source_mass_lower": {
+            "denominator": 10889035741470030830827987437816582766592,
+            "numerator": 340282366920938463463374607431768211457
+          },
+          "space_form": "O(L*poly(n,m)) basis-wire bits; coherent when input is a superposition",
+          "supports": 340282366920938463463374607431768211456,
+          "syndrome_domain_over_supports": {
+            "denominator": 1,
+            "numerator": 4
+          },
+          "syndrome_target_domain_size": 1361129467683753853853498429727072845824,
+          "time_form": "O(L*log(L)^2*poly(n,m)), L<=C(m/2,k); default L=ceil(sqrt(2^n)) when available",
+          "unit_mean_degree_reached": true,
+          "width": 16384,
+          "workspace_excludes_reusable_polynomial_arithmetic_scratch": true
+        },
+        {
+          "analytical_counts_not_large_instance_execution": true,
+          "available_block_supports": 1136256386961591164073024908354848325760,
+          "coherent_ram_assumed": false,
+          "counter_bits": 257,
+          "degree_second_moment": {
+            "denominator": 115792089237316195423570985008687907853269984665640564039457584007913129639936,
+            "numerator": 231584178474632390847141970017375815706539969331281128078915168015826259279871
+          },
+          "each_list_length": 340282366920938463463374607431768211456,
+          "full_assignment_table_required": false,
+          "full_block_lists_used": false,
+          "gate_export_implemented": false,
+          "half_width": 256,
+          "hash_bits": 2,
+          "independent_fault_signal_lower": {
+            "denominator": 11567161174868858867503549817670155728287145622944061541103214308813593929159469055614459580396462067592797657080971249983993023962637889321478361450442531251940540790713205229865500968930113649556510144425306236378050199552,
+            "numerator": 285818092186996432416834874305742799564242880332844969696679425908999824344302338479141056435946902830483184009481572368906533156655983504739377960598020655544955793103063200239919751377559720140197896398603916168212890625
+          },
+          "joint_fault_signal_lower": {
+            "denominator": 237142198758023568227473377297792835283496928595231875152809132048206089502588928,
+            "numerator": 5673812372628493575754978265425707484810229248616387637933421616387743352356913
+          },
+          "log2_list_length": 128.0,
+          "log2_persistent_workspace_bits": 141.87872151038903,
+          "log2_six_xor_comparators": 144.61855756917288,
+          "log2_source_mass_lower": -5.0,
+          "mark_probability": {
+            "denominator": 4,
+            "numerator": 1
+          },
+          "mean_degree": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "n": 256,
+          "one_xor_comparators": 5706535293264138032280792166630752906117120,
+          "one_xor_record_evaluations": 1361129467683753853853498429727072845824,
+          "one_xor_scan_steps": 1361129467683753853853498429727072845824,
+          "padded_records": 680564733841876926926749214863536422912,
+          "per_block_weight": 30,
+          "persistent_workspace_bits": 5125673292930096075148811711744724569164294,
+          "polynomial_time_claimed": false,
+          "post_mark_expected_degree": {
+            "denominator": 4,
+            "numerator": 1
+          },
+          "public_seed_bits": 1026,
+          "radius": 60,
+          "record_bits": 773,
+          "sample_regime": "linear-samples",
+          "scan_state_bits": 2566,
+          "six_xor_comparators": 34239211759584828193684752999784517436702720,
+          "source_mass_lower": {
+            "denominator": 3705346855594118253554271520278013051304639509300498049262642688253220148477952,
+            "numerator": 115792089237316195423570985008687907853269984665640564039457584007913129639937
+          },
+          "space_form": "O(L*poly(n,m)) basis-wire bits; coherent when input is a superposition",
+          "supports": 115792089237316195423570985008687907853269984665640564039457584007913129639936,
+          "syndrome_domain_over_supports": {
+            "denominator": 1,
+            "numerator": 4
+          },
+          "syndrome_target_domain_size": 463168356949264781694283940034751631413079938662562256157830336031652518559744,
+          "time_form": "O(L*log(L)^2*poly(n,m)), L<=C(m/2,k); default L=ceil(sqrt(2^n)) when available",
+          "unit_mean_degree_reached": true,
+          "width": 512,
+          "workspace_excludes_reusable_polynomial_arithmetic_scratch": true
+        },
+        {
+          "analytical_counts_not_large_instance_execution": true,
+          "available_block_supports": 392771390629847989661226568524103467008,
+          "coherent_ram_assumed": false,
+          "counter_bits": 257,
+          "degree_second_moment": {
+            "denominator": 115792089237316195423570985008687907853269984665640564039457584007913129639936,
+            "numerator": 231584178474632390847141970017375815706539969331281128078915168015826259279871
+          },
+          "each_list_length": 340282366920938463463374607431768211456,
+          "full_assignment_table_required": false,
+          "full_block_lists_used": false,
+          "gate_export_implemented": false,
+          "half_width": 32768,
+          "hash_bits": 2,
+          "independent_fault_signal_lower": {
+            "denominator": 5415370496329716522614090203404460358274291162843391748379842930887932241807862544999950011922147613471467208908991351228465152,
+            "numerator": 156488525569405492805949674082765698498072006521211740743796007257770077441544961609624700770294179598812427705478668212890625
+          },
+          "joint_fault_signal_lower": {
+            "denominator": 237142198758023568227473377297792835283496928595231875152809132048206089502588928,
+            "numerator": 6831733265001655529990688115512586563342929095272793278327997456466874648756283
+          },
+          "log2_list_length": 128.0,
+          "log2_persistent_workspace_bits": 147.0298668418183,
+          "log2_six_xor_comparators": 144.61855756917288,
+          "log2_source_mass_lower": -5.0,
+          "mark_probability": {
+            "denominator": 4,
+            "numerator": 1
+          },
+          "mean_degree": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "n": 256,
+          "one_xor_comparators": 5706535293264138032280792166630752906117120,
+          "one_xor_record_evaluations": 1361129467683753853853498429727072845824,
+          "one_xor_scan_steps": 1361129467683753853853498429727072845824,
+          "padded_records": 680564733841876926926749214863536422912,
+          "per_block_weight": 10,
+          "persistent_workspace_bits": 182137838306266917261088575500891094023078918,
+          "polynomial_time_claimed": false,
+          "post_mark_expected_degree": {
+            "denominator": 4,
+            "numerator": 1
+          },
+          "public_seed_bits": 131074,
+          "radius": 20,
+          "record_bits": 65797,
+          "sample_regime": "quadratic-samples",
+          "scan_state_bits": 197638,
+          "six_xor_comparators": 34239211759584828193684752999784517436702720,
+          "source_mass_lower": {
+            "denominator": 3705346855594118253554271520278013051304639509300498049262642688253220148477952,
+            "numerator": 115792089237316195423570985008687907853269984665640564039457584007913129639937
+          },
+          "space_form": "O(L*poly(n,m)) basis-wire bits; coherent when input is a superposition",
+          "supports": 115792089237316195423570985008687907853269984665640564039457584007913129639936,
+          "syndrome_domain_over_supports": {
+            "denominator": 1,
+            "numerator": 4
+          },
+          "syndrome_target_domain_size": 463168356949264781694283940034751631413079938662562256157830336031652518559744,
+          "time_form": "O(L*log(L)^2*poly(n,m)), L<=C(m/2,k); default L=ceil(sqrt(2^n)) when available",
+          "unit_mean_degree_reached": true,
+          "width": 65536,
+          "workspace_excludes_reusable_polynomial_arithmetic_scratch": true
+        },
+        {
+          "analytical_counts_not_large_instance_execution": true,
+          "available_block_supports": 203567905602597387720910180340366510523959685195968158743010819974368508844800,
+          "coherent_ram_assumed": false,
+          "counter_bits": 513,
+          "degree_second_moment": {
+            "denominator": 13407807929942597099574024998205846127479365820592393377723561443721764030073546976801874298166903427690031858186486050853753882811946569946433649006084096,
+            "numerator": 26815615859885194199148049996411692254958731641184786755447122887443528060147093953603748596333806855380063716372972101707507765623893139892867298012168191
+          },
+          "each_list_length": 115792089237316195423570985008687907853269984665640564039457584007913129639936,
+          "full_assignment_table_required": false,
+          "full_block_lists_used": false,
+          "gate_export_implemented": false,
+          "half_width": 512,
+          "hash_bits": 2,
+          "independent_fault_signal_lower": {
+            "denominator": 80876664427876757363295499209047855976349154865852759611549523640412522708664532254233167943628303723900814513655949456270003895870620871058026781068497821469577657041773665654055922820307545478564735751706546265750886224969541533305682670814163637244977585085956616811072084895608872851658415272853921177903360388885476479784961100344205792145654202301131083532338780513241862974009226865416284936163647763150296383759152392333769558071275112973650259954481900344573952,
+            "numerator": 2014569226377714096443700403599817772944023957390664544541478783914787909054258301815898207807734544721897318731575173148498244434909777314525404575407756227564088905015554226112280053794918823198807422554505563353382191646995779276370411232129527425397613604297397350772354500254655113793595302988277575805372567141482852791864777351889121690572582380074484218974139574950844366336548905869700611949968847503224242339596507174093772267784014963973590904390617237231617
+          },
+          "joint_fault_signal_lower": {
+            "denominator": 54918381281044877719855206392651145738155482401146443275155707673484345467181248416980477125291636439818370491131846864296975903997733150500592226328920457216,
+            "numerator": 1327372985064317112857828474822378766620457216238646944394632582928454638977281150703385555518523439341313153960462119034521634398382710424696931251602325603
+          },
+          "log2_list_length": 256.0,
+          "log2_persistent_workspace_bits": 271.5045397052821,
+          "log2_six_xor_comparators": 274.6018143053383,
+          "log2_source_mass_lower": -5.0,
+          "mark_probability": {
+            "denominator": 4,
+            "numerator": 1
+          },
+          "mean_degree": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "n": 512,
+          "one_xor_comparators": 7677710268969487653755297731986060418118919603239963239200274565228687973905596416,
+          "one_xor_record_evaluations": 463168356949264781694283940034751631413079938662562256157830336031652518559744,
+          "one_xor_scan_steps": 463168356949264781694283940034751631413079938662562256157830336031652518559744,
+          "padded_records": 231584178474632390847141970017375815706539969331281128078915168015826259279872,
+          "per_block_weight": 58,
+          "persistent_workspace_bits": 5382826852375117976655544380098874772374961777151632900502264707775857657571709958,
+          "polynomial_time_claimed": false,
+          "post_mark_expected_degree": {
+            "denominator": 4,
+            "numerator": 1
+          },
+          "public_seed_bits": 2050,
+          "radius": 116,
+          "record_bits": 1541,
+          "sample_regime": "linear-samples",
+          "scan_state_bits": 5126,
+          "six_xor_comparators": 46066261613816925922531786391916362508713517619439779435201647391372127843433578496,
+          "source_mass_lower": {
+            "denominator": 429049853758163107186368799942587076079339706258956588087153966199096448962353503257659977541340909686081019461967553627320124249982290238285876768194691072,
+            "numerator": 13407807929942597099574024998205846127479365820592393377723561443721764030073546976801874298166903427690031858186486050853753882811946569946433649006084097
+          },
+          "space_form": "O(L*poly(n,m)) basis-wire bits; coherent when input is a superposition",
+          "supports": 13407807929942597099574024998205846127479365820592393377723561443721764030073546976801874298166903427690031858186486050853753882811946569946433649006084096,
+          "syndrome_domain_over_supports": {
+            "denominator": 1,
+            "numerator": 4
+          },
+          "syndrome_target_domain_size": 53631231719770388398296099992823384509917463282369573510894245774887056120294187907207497192667613710760127432745944203415015531247786279785734596024336384,
+          "time_form": "O(L*log(L)^2*poly(n,m)), L<=C(m/2,k); default L=ceil(sqrt(2^n)) when available",
+          "unit_mean_degree_reached": true,
+          "width": 1024,
+          "workspace_excludes_reusable_polynomial_arithmetic_scratch": true
+        },
+        {
+          "analytical_counts_not_large_instance_execution": true,
+          "available_block_supports": 140290208127025513879137759881296723102643719488845675813566674462318110073815040,
+          "coherent_ram_assumed": false,
+          "counter_bits": 513,
+          "degree_second_moment": {
+            "denominator": 13407807929942597099574024998205846127479365820592393377723561443721764030073546976801874298166903427690031858186486050853753882811946569946433649006084096,
+            "numerator": 26815615859885194199148049996411692254958731641184786755447122887443528060147093953603748596333806855380063716372972101707507765623893139892867298012168191
+          },
+          "each_list_length": 115792089237316195423570985008687907853269984665640564039457584007913129639936,
+          "full_assignment_table_required": false,
+          "full_block_lists_used": false,
+          "gate_export_implemented": false,
+          "half_width": 131072,
+          "hash_bits": 2,
+          "independent_fault_signal_lower": {
+            "denominator": 3843848616348006517745232740100739512991620911897345810779084488070467360061046634469074021673129666994459657822569196861021537621146748550021867984199631441940340184366542119596353715143242451107829641173966144591017133590878523965063482310266674005030207488,
+            "numerator": 111519800818644420483964700009428967765161562985821965321971016600542750510273344897763947745440656525537735224270484303342201622546596260952079161742116296056317355554187549327569579173316933704121234749603661929083956610621384833981582175598259901778605057
+          },
+          "joint_fault_signal_lower": {
+            "denominator": 109836762562089755439710412785302291476310964802292886550311415346968690934362496833960954250583272879636740982263693728593951807995466301001184452657840914432,
+            "numerator": 3177650479396395512599043924574785532212609699480397230520484062162058075127430633502044208665556112362537550390197194052339670226431337077304774814441930989
+          },
+          "log2_list_length": 256.0,
+          "log2_persistent_workspace_bits": 277.02610666127003,
+          "log2_six_xor_comparators": 274.6018143053383,
+          "log2_source_mass_lower": -5.0,
+          "mark_probability": {
+            "denominator": 4,
+            "numerator": 1
+          },
+          "mean_degree": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "n": 512,
+          "one_xor_comparators": 7677710268969487653755297731986060418118919603239963239200274565228687973905596416,
+          "one_xor_record_evaluations": 463168356949264781694283940034751631413079938662562256157830336031652518559744,
+          "one_xor_scan_steps": 463168356949264781694283940034751631413079938662562256157830336031652518559744,
+          "padded_records": 231584178474632390847141970017375815706539969331281128078915168015826259279872,
+          "per_block_weight": 19,
+          "persistent_workspace_bits": 247267869585559157568678389223847566761541828944288145556367579396946068950213199878,
+          "polynomial_time_claimed": false,
+          "post_mark_expected_degree": {
+            "denominator": 4,
+            "numerator": 1
+          },
+          "public_seed_bits": 524290,
+          "radius": 38,
+          "record_bits": 262661,
+          "sample_regime": "quadratic-samples",
+          "scan_state_bits": 788486,
+          "six_xor_comparators": 46066261613816925922531786391916362508713517619439779435201647391372127843433578496,
+          "source_mass_lower": {
+            "denominator": 429049853758163107186368799942587076079339706258956588087153966199096448962353503257659977541340909686081019461967553627320124249982290238285876768194691072,
+            "numerator": 13407807929942597099574024998205846127479365820592393377723561443721764030073546976801874298166903427690031858186486050853753882811946569946433649006084097
+          },
+          "space_form": "O(L*poly(n,m)) basis-wire bits; coherent when input is a superposition",
+          "supports": 13407807929942597099574024998205846127479365820592393377723561443721764030073546976801874298166903427690031858186486050853753882811946569946433649006084096,
+          "syndrome_domain_over_supports": {
+            "denominator": 1,
+            "numerator": 4
+          },
+          "syndrome_target_domain_size": 53631231719770388398296099992823384509917463282369573510894245774887056120294187907207497192667613710760127432745944203415015531247786279785734596024336384,
+          "time_form": "O(L*log(L)^2*poly(n,m)), L<=C(m/2,k); default L=ceil(sqrt(2^n)) when available",
+          "unit_mean_degree_reached": true,
+          "width": 262144,
+          "workspace_excludes_reusable_polynomial_arithmetic_scratch": true
+        }
+      ],
+      "status": "derived-balanced-mitm-exponential-time-space-review-pending"
+    },
     "canonical_density_controls": [
       {
         "canonical_mass_upper_bound": 1,
@@ -2632,7 +4403,7 @@
     "seeded_extension": "R(A,t;r) is deterministic for each explicit target-independent seed r; a shared coherent seed register turns the source proof into a direct sum of deterministic routines"
   },
   "status": "derived-pairing-readouts-review-pending-no-efficient-finder",
-  "summary": "Certified 12/12 seeded-randomized interface rows and extracted 4 deterministic source use sites. Checked 9 mutual and 2 permutation controls; failures=0. Noise-weighted mass, not witness rate, is the constructive target; no efficient pairing finder or new decoder.",
+  "summary": "Certified 12/12 seeded-randomized interface rows and extracted 4 deterministic source use sites. Checked 9 mutual and 2 permutation controls; failures=0. Noise-weighted mass, not witness rate, is the constructive target; Affine-marked coverage is derived for streamed and capped balanced-support finders. The latter has constant average coverage, including a scoped constant noise signal at m=2n, and a fixed-network meet-in-the-middle implementation but exponential time AND coherent storage; no efficient pairing finder or new decoder.",
   "workspace_visibility_cases": [
     {
       "case_id": "shared-target-independent-seed",

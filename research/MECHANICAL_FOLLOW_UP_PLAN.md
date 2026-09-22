@@ -1,5 +1,23 @@
 # Mechanical Follow-Up Implementation Plan (pass 2)
 
+## Current Handoff (2026-09-23)
+
+The streamed affine-marked and capped balanced-support finders are BOTH wired
+into the existing coherent-matching CLI/runner/report. Do not duplicate their
+wiring. Read the TOP of AGENT_HANDOFF.md and final DCP_PAIRING_PROGRAMS.md
+section before touching status text. The capped finder has derived constant
+average coverage and a linear-sample scoped noise guarantee, but still needs
+exponential coherent time/storage. It is not a quantum speedup, classical DCP
+decoder, gate export or independently reviewed theorem. The same result ID
+and existing experiment status are preserved. Full-rank hash conditioning,
+free comparison-history erasure and deduplicating witness buckets are invalid.
+
+High-reasoning work should now target computation, not another coverage bound.
+Routine work remains the unchanged registry-writer failures listed below,
+followed by a full-suite run beyond the old stopping point. The new nine-file
+research regression passes159tests; that is NOT the full repository suite. Keep
+commits infrequent and preserve mathematical assertions during writer repairs.
+
 ## Current Handoff (2026-09-22)
 
 The pairing-program pass is now wired into the EXISTING coherent-matching
@@ -39,9 +57,9 @@ The character-query scaling persistence failure below remains independently
 unresolved. Fix these once, then run the full suite beyond its old stopping
 point. Do not report a green suite from focused tests or registry validation.
 
-Latest digest live workflows all pass, with32physical controls and10analytic
-scaling caps; no candidate promoted. Keep commits infrequent. The new pass is
-uncommitted; the last pushed checkpoint is `683e957d`.
+Those digest live workflows passed, with32physical controls and10analytic
+scaling caps; no candidate was promoted. The digest/pairing work was later
+saved as `d0924931`; see the top handoff and Git for newer checkpoint state.
 
 ## Current Handoff (2026-09-17)
 

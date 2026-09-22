@@ -15,6 +15,9 @@ from typing import Sequence
 import numpy as np
 from scipy.optimize import linear_sum_assignment
 
+from dcp_affine_marked_pairing import build_marked_pairing_audit
+from dcp_balanced_pairing import build_balanced_pairing_audit
+
 
 def _instance(labels: Sequence[int], modulus: int, max_width: int = 16) -> tuple[int, ...]:
     if type(modulus) is not int or not 2 <= modulus <= 1 << 30 or modulus & (modulus-1):
@@ -406,13 +409,25 @@ def build_pairing_controls() -> dict:
                               "achievability_claimed": False})
     gauge = gauge_control()
     correlated = correlated_noise_controls()
+    marked_program = build_marked_pairing_audit()
+    balanced_program = build_balanced_pairing_audit()
+    for row in balanced_program["program_controls"]:
+        physical = evaluate_mutual_program(row["labels"], 1 << row["n"], row["proposal_table"])
+        row["physical_checks"] = physical["physical_checks"]
+        row["maximum_physical_residual"] = physical["maximum_residual"]
+        balanced_program["control_failures"] += int(
+            not all(physical["physical_checks"].values()) or physical["maximum_residual"] > 1e-10)
     failures = sum(not all(row["physical_checks"].values()) or row["maximum_residual"] > 1e-10 for row in controls)
     failures += sum(row["maximum_residual"] > 1e-10 or row["isometry_residual"] > 1e-10 for row in permutation_controls)
     failures += int(gauge["maximum_good_state_residual"] > 1e-10 or gauge["maximum_prelabel_bad_bit_residual"] > 1e-10)
     failures += sum(row["maximum_residual"] > 1e-10 or row["marginal_union_lower"] > row["weighted_signal"]+1e-12 for row in correlated)
+    failures += marked_program["control_failures"]
+    failures += balanced_program["control_failures"]
     return {"mutual_controls": controls, "permutation_controls": permutation_controls,
             "gauge_control": gauge, "canonical_density_controls": canonical_rows,
             "correlated_noise_controls": correlated,
+            "affine_marked_program": marked_program,
+            "balanced_mitm_program": balanced_program,
             "exponential_reference_matchings": references,
             "scaling": scaling, "noise_mass_envelopes": envelopes, "control_failures": failures,
             "contract": {

@@ -5167,7 +5167,7 @@
       }
     ],
     "candidate_id": "CODE-COSET-COLLECTIVE",
-    "created_at": "2026-09-22T11:44:55.011802+00:00",
+    "created_at": "2026-09-22T20:04:40.381606+00:00",
     "id": "CONJ-CODE-COSET-COLLECTIVE",
     "next_actions": [
       "Resolve every blocking finding before promotion.",
@@ -18284,7 +18284,7 @@
         "summary": "Proved that density-one low-bit fibers contain no affine flat of dimension 8log2(q) or larger with failure 2^-Omega(q log q), uniformly over every adaptive GL(m,2) reparameterization. Any support-contained cancellation-free affine cover is exponential."
       }
     ],
-    "updated_at": "2026-09-22T11:44:55.011802+00:00"
+    "updated_at": "2026-09-22T20:04:40.381606+00:00"
   },
   {
     "assumptions": [
@@ -18817,6 +18817,18 @@
         "severity": "high"
       },
       {
+        "evidence": "The clean streamed XOR evaluator visits every radius-r support twice. At the first radius with D=sum C(m,w)>=2^n, six XOR calls cost 12D>=12*2^n predicate evaluations, before arithmetic costs.",
+        "finding_id": "DEQ-DHS-GOWERS-SIEVE-DCP-AFFINE-MARKED-ENUMERATION-COST",
+        "required_action": "Replace support enumeration with an actual structured reversible unique-neighbor solver. Polynomial workspace, a generic square-root search estimate, and finite coverage do not establish a speedup or a general search lower bound. This is an access or symmetry boundary, not classical dequantization.",
+        "severity": "high"
+      },
+      {
+        "evidence": "The implemented fixed sorting network materializes two capped length-L lists with L=ceil(sqrt(2^n)), plus comparison bits and scan histories. Its time and coherent storage are exponential despite constant average coverage with m=2n. After unrestricted affine isolation, the expected marked degree is D/(N*2^ell) in (1/8,1/4] for D>=N, so raw density cannot be reused without charging syndrome constraints.",
+        "finding_id": "DEQ-DHS-GOWERS-SIEVE-DCP-BALANCED-MITM-RESOURCE-CONTRACT",
+        "required_action": "Beat the charged time-space tradeoff or change the pairing/readout architecture. This is a classical baseline for partner search, not a classical DCP decoder or a general quantum lower bound; list-free arithmetic methods remain open. This is an access or symmetry boundary, not classical dequantization.",
+        "severity": "high"
+      },
+      {
         "evidence": "The prior-work GRZ trace-distance bound m*sqrt(K/N) vanishes; the physical prefix and all Born weights are retained in controls.",
         "finding_id": "DEQ-DHS-GOWERS-SIEVE-DCP-FIXED-DIGEST-ACCESS-BOUNDARY",
         "required_action": "Require actual full-label sensitivity or a justified escape from this prefix/digest scope. Joint summaries need slice profiles, not global alphabet shortcuts. This is an access or symmetry boundary, not classical dequantization.",
@@ -19003,7 +19015,7 @@
         "severity": "medium"
       },
       {
-        "evidence": "Triggered falsifiers: The fixed-seed source extension requires target-independent explicit coins shared coherently across both endpoints; this is not a restriction on all other constructions. | Freshly measured or target-dependent randomness does not by itself define the fixed answered set used in that proof. | Multiple valid witnesses are insufficient without an actual coherent pairing/cleanup construction; the separate symmetric lift is an allowed route. | Orthogonal paired workspaces make every endpoint X/Y phase statistic exactly independent of qd/N. | Proving an interface theorem does not construct the required polynomial subset-sum solver. | A one-witness-per-residue proposal can have valid-output fraction one but reciprocal mass at most N/2^m; input-dependent matchings are not subject to that cap. | Short adaptive moves have average mass at most sum_{j<=r} C(m,j)/N. Constant product-dephasing noise suppresses every declared pairing readout at polynomial m; this is not a general DCP no-go. | Retaining old labels/gauge coins or postlabel corruption invalidates the gauge contract. Correlated prelabel faults require their joint survival law, not the independent eta^weight formula.",
+        "evidence": "Triggered falsifiers: The fixed-seed source extension requires target-independent explicit coins shared coherently across both endpoints; this is not a restriction on all other constructions. | Freshly measured or target-dependent randomness does not by itself define the fixed answered set used in that proof. | Multiple valid witnesses are insufficient without an actual coherent pairing/cleanup construction; the separate symmetric lift is an allowed route. | Orthogonal paired workspaces make every endpoint X/Y phase statistic exactly independent of qd/N. | Proving an interface theorem does not construct the required polynomial subset-sum solver. | A one-witness-per-residue proposal can have valid-output fraction one but reciprocal mass at most N/2^m; input-dependent matchings are not subject to that cap. | Short adaptive moves have average mass at most sum_{j<=r} C(m,j)/N. Constant product-dephasing noise suppresses every declared pairing readout at polynomial m; this is not a general DCP no-go. | Retaining old labels/gauge coins or postlabel corruption invalidates the gauge contract. Correlated prelabel faults require their joint survival law, not the independent eta^weight formula. | Polynomial affine-marked coverage does not remove the 12*sum_{w<=r} C(m,w) support-predicate calls of its six-XOR enumeration implementation. | Capped balanced-support joining stores L=ceil(sqrt(2^n)) records per list. Isolation increases syndrome constraints with raw multiplicity; the conditioned expected neighbor count remains at most 1/4, not a free dense-instance regime.",
         "finding_id": "DEQ-RESULT-EXP-DHS-DCP-COHERENT-MATCHING-INTERFACE-DCP-COHERENT-MATCHING-INTERFACE-FALSIFIERS",
         "required_action": "Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.",
         "severity": "medium"
@@ -19730,7 +19742,7 @@
       }
     ],
     "candidate_id": "DHS-GOWERS-SIEVE",
-    "created_at": "2026-09-22T11:44:55.011802+00:00",
+    "created_at": "2026-09-22T20:04:40.381606+00:00",
     "id": "CONJ-DHS-GOWERS-SIEVE",
     "next_actions": [
       "Resolve every blocking finding before promotion.",
@@ -20146,9 +20158,14 @@
       {
         "experiment_result_id": "RESULT-EXP-DHS-DCP-COHERENT-MATCHING-INTERFACE-DCP-COHERENT-MATCHING-INTERFACE",
         "metrics": {
+          "affine_marked_program_control_count": 3,
+          "affine_marked_source_control_count": 3,
+          "balanced_mitm_program_control_count": 3,
+          "balanced_mitm_source_control_count": 3,
           "clean_mutual_xor_oracle_call_count": 6,
           "correlated_noise_control_count": 3,
           "efficient_pairing_finder_count": 0,
+          "explicit_exponential_pairing_finder_count": 2,
           "maximum_polynomial_success_exponent": 15,
           "minimum_certified_routine_success_probability": 2.087208213499279e-39,
           "noise_mass_envelope_count": 14,
@@ -20166,7 +20183,7 @@
           "zero_visibility_counterexample_count": 1
         },
         "status": "derived-pairing-readouts-review-pending-no-efficient-finder",
-        "summary": "Certified 12/12 seeded-randomized interface rows and extracted 4 deterministic source use sites. Checked 9 mutual and 2 permutation controls; failures=0. Noise-weighted mass, not witness rate, is the constructive target; no efficient pairing finder or new decoder."
+        "summary": "Certified 12/12 seeded-randomized interface rows and extracted 4 deterministic source use sites. Checked 9 mutual and 2 permutation controls; failures=0. Noise-weighted mass, not witness rate, is the constructive target; Affine-marked coverage is derived for streamed and capped balanced-support finders. The latter has constant average coverage, including a scoped constant noise signal at m=2n, and a fixed-network meet-in-the-middle implementation but exponential time AND coherent storage; no efficient pairing finder or new decoder."
       },
       {
         "experiment_result_id": "RESULT-EXP-DHS-DCP-COLLECTIVE-WITNESS-SEARCH-DCP-COLLECTIVE-WITNESS",
@@ -22466,7 +22483,7 @@
         "summary": "Audited 12 explicit hidden-shift instances across 3 phase families. 3 instances show Fourier/derivative structure; 8 are critical/high dequantization risk; 8 survive at least one restricted query model. Best DHSP sieve strategy aggressive_doubling reaches v2=7 from 2048 phase labels; explicit phase-state trace reaches v2=7 with 44 survivor states."
       }
     ],
-    "updated_at": "2026-09-22T11:44:55.011802+00:00"
+    "updated_at": "2026-09-22T20:04:40.381606+00:00"
   },
   {
     "assumptions": [
@@ -22524,7 +22541,7 @@
       }
     ],
     "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
-    "created_at": "2026-09-22T11:44:55.011802+00:00",
+    "created_at": "2026-09-22T20:04:40.381606+00:00",
     "id": "CONJ-HYP-LIT-COSET-OBSERVABLES",
     "next_actions": [
       "Resolve every blocking finding before promotion.",
@@ -22564,7 +22581,7 @@
         "summary": "Audited 4 hidden-permutation graph pairs. 2 pair survives current classical and low-register tests; 1 control pair is classically distinguished; 2 CFI-style parity benchmark(s) included."
       }
     ],
-    "updated_at": "2026-09-22T11:44:55.011802+00:00"
+    "updated_at": "2026-09-22T20:04:40.381606+00:00"
   },
   {
     "assumptions": [
@@ -22654,7 +22671,7 @@
       }
     ],
     "candidate_id": "HYP-LIT-HIDDEN-SHIFT-SIEVE",
-    "created_at": "2026-09-22T11:44:55.011802+00:00",
+    "created_at": "2026-09-22T20:04:40.381606+00:00",
     "id": "CONJ-HYP-LIT-HIDDEN-SHIFT-SIEVE",
     "next_actions": [
       "Resolve every blocking finding before promotion.",
@@ -22736,7 +22753,7 @@
         "summary": "Audited 40 explicit hidden-shift instances across 10 phase families. 0 instances show Fourier/derivative structure; 16 are critical/high dequantization risk; 40 survive at least one restricted query model. Best DHSP sieve strategy aggressive_doubling reaches v2=7 from 2048 phase labels; explicit phase-state trace reaches v2=7 with 44 survivor states."
       }
     ],
-    "updated_at": "2026-09-22T11:44:55.011802+00:00"
+    "updated_at": "2026-09-22T20:04:40.381606+00:00"
   },
   {
     "assumptions": [
@@ -22836,7 +22853,7 @@
       }
     ],
     "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
-    "created_at": "2026-09-22T11:44:55.011802+00:00",
+    "created_at": "2026-09-22T20:04:40.381606+00:00",
     "id": "CONJ-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
     "next_actions": [
       "Resolve every blocking finding before promotion.",
@@ -22920,7 +22937,7 @@
         "summary": "Audited 10 graphlet tensor observables across 5 graph pairs. 3 signal(s) collapse to small-pattern classical counts; 3 boundary pair(s) remain without graphlet-tensor signal."
       }
     ],
-    "updated_at": "2026-09-22T11:44:55.011802+00:00"
+    "updated_at": "2026-09-22T20:04:40.381606+00:00"
   },
   {
     "assumptions": [
@@ -22996,7 +23013,7 @@
       }
     ],
     "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
-    "created_at": "2026-09-22T11:44:55.011802+00:00",
+    "created_at": "2026-09-22T20:04:40.381606+00:00",
     "id": "CONJ-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
     "next_actions": [
       "Resolve every blocking finding before promotion.",
@@ -23051,7 +23068,7 @@
         "summary": "Audited 10 graphlet tensor observables across 5 graph pairs. 3 signal(s) collapse to small-pattern classical counts; 3 boundary pair(s) remain without graphlet-tensor signal."
       }
     ],
-    "updated_at": "2026-09-22T11:44:55.011802+00:00"
+    "updated_at": "2026-09-22T20:04:40.381606+00:00"
   },
   {
     "assumptions": [
@@ -23127,7 +23144,7 @@
       }
     ],
     "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
-    "created_at": "2026-09-22T11:44:55.011802+00:00",
+    "created_at": "2026-09-22T20:04:40.381606+00:00",
     "id": "CONJ-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
     "next_actions": [
       "Resolve every blocking finding before promotion.",
@@ -23181,7 +23198,7 @@
         "summary": "Audited 4 hidden-permutation graph pairs. 2 pair survives current classical and low-register tests; 1 control pair is classically distinguished; 2 CFI-style parity benchmark(s) included."
       }
     ],
-    "updated_at": "2026-09-22T11:44:55.011802+00:00"
+    "updated_at": "2026-09-22T20:04:40.381606+00:00"
   },
   {
     "assumptions": [
@@ -23245,7 +23262,7 @@
       }
     ],
     "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
-    "created_at": "2026-09-22T11:44:55.011802+00:00",
+    "created_at": "2026-09-22T20:04:40.381606+00:00",
     "id": "CONJ-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
     "next_actions": [
       "Resolve every blocking finding before promotion.",
@@ -23279,6 +23296,6 @@
         "summary": "Audited 3 code-equivalence pairs. 1 equivalent control pair(s) verified; 2 non-equivalent control pair(s) classically distinguished."
       }
     ],
-    "updated_at": "2026-09-22T11:44:55.011802+00:00"
+    "updated_at": "2026-09-22T20:04:40.381606+00:00"
   }
 ]

@@ -4146,6 +4146,10 @@ def seed_candidate_records() -> tuple[list[CandidateRecord], list[ExperimentReco
                 "for target-independent explicit shared seeds; replay six-call clean reciprocal pair maps and flagged "
                 "permutations; independently check prelabel-fault gauge mixtures; compare canonical, rank and noise-weighted "
                 "exponential matching references; compute exact natural-label Hamming-mass relaxations. "
+                "Execute the affine-marked streamed finder, exhaust small natural source/seed laws, and expose its "
+                "exponential support count despite derived polynomial coverage. "
+                "Compare a balanced-support meet-in-the-middle finder using reversible sorting with charged "
+                "coherent storage, duplicate multiplicities and post-isolation density; verify independent graph controls. "
                 "Keep the separate symmetric double-evaluation quantum relation lift outside the single-call obstruction."
             ),
             positive_signal=(
@@ -4176,17 +4180,24 @@ def seed_candidate_records() -> tuple[list[CandidateRecord], list[ExperimentReco
                 "correlated_noise_control_count",
                 "noise_mass_envelope_count",
                 "efficient_pairing_finder_count",
+                "explicit_exponential_pairing_finder_count",
+                "affine_marked_source_control_count",
+                "affine_marked_program_control_count",
+                "balanced_mitm_source_control_count",
+                "balanced_mitm_program_control_count",
             ],
             dependencies=[
                 "dcp_coherent_matching_interface.py",
                 "core/dcp_pairing_programs.py",
+                "core/dcp_affine_marked_pairing.py",
+                "core/dcp_balanced_pairing.py",
                 "research/DCP_PAIRING_PROGRAMS.md",
                 "dcp_subset_sum_bridge.py",
                 "research/literature_cache/cs_0304005_source/quantum_average.tex",
             ],
             next_actions=[
                 "Reclassify explicit-coin randomized subset-sum algorithms as interface-compatible.",
-                "Construct an actual uniform efficient full-label-sensitive pairing with inverse-polynomial weighted source mass.",
+                "Beat the balanced-support finder's exponential time/coherent-space frontier with an actual structured clean solver, or change the readout. Isolation restores sparse syndrome-constrained search; raw multiplicity is not a free dense-instance shortcut.",
                 "Charge per-label preprocessing, inverse access, failures and repetition against existing sieve/subset-sum tradeoffs.",
                 "Keep solver construction and interface compatibility as separate proof obligations.",
             ],

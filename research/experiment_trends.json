@@ -1,7 +1,7 @@
 {
-  "created_at": "2026-09-22T11:44:46.658034+00:00",
+  "created_at": "2026-09-22T20:04:30.874818+00:00",
   "history_artifact": "research/experiment_run_history.json",
-  "history_count": 564,
+  "history_count": 567,
   "trend_count": 405,
   "trends": [
     {
@@ -35503,25 +35503,60 @@
       ]
     },
     {
-      "blocking_run_count": 3,
+      "blocking_run_count": 6,
       "experiment_id": "EXP-DHS-DCP-COHERENT-MATCHING-INTERFACE",
       "falsifier_count_sequence": [
         5,
         8,
-        8
+        8,
+        9,
+        10,
+        10
       ],
       "interpretation": "Repeated runs continue to trigger falsifiers; this is proof debt, not progress.",
       "latest_result_id": "RESULT-EXP-DHS-DCP-COHERENT-MATCHING-INTERFACE-DCP-COHERENT-MATCHING-INTERFACE",
       "latest_status": "derived-pairing-readouts-review-pending-no-efficient-finder",
-      "latest_summary": "Certified 12/12 seeded-randomized interface rows and extracted 4 deterministic source use sites. Checked 9 mutual and 2 permutation controls; failures=0. Noise-weighted mass, not witness rate, is the constructive target; no efficient pairing finder or new decoder.",
+      "latest_summary": "Certified 12/12 seeded-randomized interface rows and extracted 4 deterministic source use sites. Checked 9 mutual and 2 permutation controls; failures=0. Noise-weighted mass, not witness rate, is the constructive target; Affine-marked coverage is derived for streamed and capped balanced-support finders. The latter has constant average coverage, including a scoped constant noise signal at m=2n, and a fixed-network meet-in-the-middle implementation but exponential time AND coherent storage; no efficient pairing finder or new decoder.",
       "numeric_metric_trends": {
+        "affine_marked_program_control_count": {
+          "delta": 0.0,
+          "first": 3.0,
+          "latest": 3.0,
+          "max": 3.0,
+          "min": 3.0,
+          "observations": 3
+        },
+        "affine_marked_source_control_count": {
+          "delta": 0.0,
+          "first": 3.0,
+          "latest": 3.0,
+          "max": 3.0,
+          "min": 3.0,
+          "observations": 3
+        },
+        "balanced_mitm_program_control_count": {
+          "delta": 0.0,
+          "first": 3.0,
+          "latest": 3.0,
+          "max": 3.0,
+          "min": 3.0,
+          "observations": 2
+        },
+        "balanced_mitm_source_control_count": {
+          "delta": 0.0,
+          "first": 3.0,
+          "latest": 3.0,
+          "max": 3.0,
+          "min": 3.0,
+          "observations": 2
+        },
         "clean_mutual_xor_oracle_call_count": {
           "delta": 0.0,
           "first": 6.0,
           "latest": 6.0,
           "max": 6.0,
           "min": 6.0,
-          "observations": 2
+          "observations": 5
         },
         "correlated_noise_control_count": {
           "delta": 0.0,
@@ -35529,7 +35564,7 @@
           "latest": 3.0,
           "max": 3.0,
           "min": 3.0,
-          "observations": 2
+          "observations": 5
         },
         "efficient_pairing_finder_count": {
           "delta": 0.0,
@@ -35537,7 +35572,15 @@
           "latest": 0.0,
           "max": 0.0,
           "min": 0.0,
-          "observations": 2
+          "observations": 5
+        },
+        "explicit_exponential_pairing_finder_count": {
+          "delta": 1.0,
+          "first": 1.0,
+          "latest": 2.0,
+          "max": 2.0,
+          "min": 1.0,
+          "observations": 3
         },
         "maximum_polynomial_success_exponent": {
           "delta": 0.0,
@@ -35545,7 +35588,7 @@
           "latest": 15.0,
           "max": 15.0,
           "min": 15.0,
-          "observations": 3
+          "observations": 6
         },
         "minimum_certified_routine_success_probability": {
           "delta": 0.0,
@@ -35553,7 +35596,7 @@
           "latest": 2.087208213499279e-39,
           "max": 2.087208213499279e-39,
           "min": 2.087208213499279e-39,
-          "observations": 3
+          "observations": 6
         },
         "noise_mass_envelope_count": {
           "delta": 0.0,
@@ -35561,7 +35604,7 @@
           "latest": 14.0,
           "max": 14.0,
           "min": 14.0,
-          "observations": 2
+          "observations": 5
         },
         "physical_pairing_control_count": {
           "delta": 0.0,
@@ -35569,7 +35612,7 @@
           "latest": 9.0,
           "max": 9.0,
           "min": 9.0,
-          "observations": 2
+          "observations": 5
         },
         "physical_pairing_failure_count": {
           "delta": 0.0,
@@ -35577,7 +35620,7 @@
           "latest": 0.0,
           "max": 0.0,
           "min": 0.0,
-          "observations": 2
+          "observations": 5
         },
         "physical_permutation_control_count": {
           "delta": 0.0,
@@ -35585,7 +35628,7 @@
           "latest": 2.0,
           "max": 2.0,
           "min": 2.0,
-          "observations": 2
+          "observations": 5
         },
         "primary_source_deterministic_use_site_count": {
           "delta": 0.0,
@@ -35593,7 +35636,7 @@
           "latest": 4.0,
           "max": 4.0,
           "min": 4.0,
-          "observations": 3
+          "observations": 6
         },
         "proved_arbitrary_quantum_relation_solver_bridge_count": {
           "delta": 0.0,
@@ -35601,7 +35644,7 @@
           "latest": 0.0,
           "max": 0.0,
           "min": 0.0,
-          "observations": 3
+          "observations": 6
         },
         "proved_polynomial_dcp_decoder_count": {
           "delta": 0.0,
@@ -35609,7 +35652,7 @@
           "latest": 0.0,
           "max": 0.0,
           "min": 0.0,
-          "observations": 3
+          "observations": 6
         },
         "proved_polynomial_partial_subset_sum_solver_count": {
           "delta": 0.0,
@@ -35617,7 +35660,7 @@
           "latest": 0.0,
           "max": 0.0,
           "min": 0.0,
-          "observations": 3
+          "observations": 6
         },
         "proved_seeded_randomized_solver_bridge_count": {
           "delta": 0.0,
@@ -35625,7 +35668,7 @@
           "latest": 12.0,
           "max": 12.0,
           "min": 12.0,
-          "observations": 3
+          "observations": 6
         },
         "seeded_bridge_certificate_count": {
           "delta": 0.0,
@@ -35633,7 +35676,7 @@
           "latest": 12.0,
           "max": 12.0,
           "min": 12.0,
-          "observations": 3
+          "observations": 6
         },
         "source_contract_satisfying_solver_count": {
           "delta": 0.0,
@@ -35641,7 +35684,7 @@
           "latest": 0.0,
           "max": 0.0,
           "min": 0.0,
-          "observations": 3
+          "observations": 6
         },
         "workspace_visibility_case_count": {
           "delta": 0.0,
@@ -35649,7 +35692,7 @@
           "latest": 3.0,
           "max": 3.0,
           "min": 3.0,
-          "observations": 3
+          "observations": 6
         },
         "zero_visibility_counterexample_count": {
           "delta": 0.0,
@@ -35657,12 +35700,15 @@
           "latest": 1.0,
           "max": 1.0,
           "min": 1.0,
-          "observations": 3
+          "observations": 6
         }
       },
-      "run_count": 3,
+      "run_count": 6,
       "status_sequence": [
         "seeded-randomized-interface-proved-general-quantum-interface-blocked",
+        "derived-pairing-readouts-review-pending-no-efficient-finder",
+        "derived-pairing-readouts-review-pending-no-efficient-finder",
+        "derived-pairing-readouts-review-pending-no-efficient-finder",
         "derived-pairing-readouts-review-pending-no-efficient-finder",
         "derived-pairing-readouts-review-pending-no-efficient-finder"
       ]

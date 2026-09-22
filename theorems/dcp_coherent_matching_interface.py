@@ -242,6 +242,11 @@ def run_coherent_matching_interface_audit(
         "correlated_noise_control_count": len(pairing["correlated_noise_controls"]),
         "clean_mutual_xor_oracle_call_count": 6,
         "efficient_pairing_finder_count": 0,
+        "explicit_exponential_pairing_finder_count": 2,
+        "affine_marked_source_control_count": len(pairing["affine_marked_program"]["controls"]),
+        "affine_marked_program_control_count": len(pairing["affine_marked_program"]["program_controls"]),
+        "balanced_mitm_source_control_count": len(pairing["balanced_mitm_program"]["controls"]),
+        "balanced_mitm_program_control_count": len(pairing["balanced_mitm_program"]["program_controls"]),
     }
     return DCPCoherentMatchingInterfaceReport(
         created_at=utc_now(),
@@ -304,6 +309,8 @@ def run_coherent_matching_interface_audit(
             "workspace_overlap_required": True,
             "pairing_finite_controls_passed": pairing["control_failures"] == 0,
             "conditional_pairing_construction_derived": True,
+            "affine_marked_coverage_controls_passed": pairing["affine_marked_program"]["control_failures"] == 0,
+            "balanced_mitm_controls_passed": pairing["balanced_mitm_program"]["control_failures"] == 0,
             "noise_gauge_and_mass_bound_review_pending": True,
             "arbitrary_quantum_solvers_excluded": False,
             "independently_reviewed": False,
@@ -324,6 +331,9 @@ def run_coherent_matching_interface_audit(
             f"Certified {proved_seeded}/{len(certificates)} seeded-randomized interface rows and extracted "
             f"{len(use_sites)} deterministic source use sites. Checked 9 mutual and 2 permutation controls; "
             f"failures={pairing['control_failures']}. Noise-weighted mass, not witness rate, is the constructive target; "
+            "Affine-marked coverage is derived for streamed and capped balanced-support finders. The latter has constant "
+            "average coverage, including a scoped constant noise signal at m=2n, and a "
+            "fixed-network meet-in-the-middle implementation but exponential time AND coherent storage; "
             "no efficient pairing finder or new decoder."
         ),
         falsifiers_triggered=[
@@ -335,6 +345,8 @@ def run_coherent_matching_interface_audit(
             "A one-witness-per-residue proposal can have valid-output fraction one but reciprocal mass at most N/2^m; input-dependent matchings are not subject to that cap.",
             "Short adaptive moves have average mass at most sum_{j<=r} C(m,j)/N. Constant product-dephasing noise suppresses every declared pairing readout at polynomial m; this is not a general DCP no-go.",
             "Retaining old labels/gauge coins or postlabel corruption invalidates the gauge contract. Correlated prelabel faults require their joint survival law, not the independent eta^weight formula.",
+            "Polynomial affine-marked coverage does not remove the 12*sum_{w<=r} C(m,w) support-predicate calls of its six-XOR enumeration implementation.",
+            "Capped balanced-support joining stores L=ceil(sqrt(2^n)) records per list. Isolation increases syndrome constraints with raw multiplicity; the conditioned expected neighbor count remains at most 1/4, not a free dense-instance regime.",
         ],
     )
 
@@ -380,6 +392,16 @@ def write_coherent_matching_interface_audit(
                 "Short moves or high-density tables automatically give polynomial signal for noisy half-period pairing readouts.",
                 "For natural independent uniform labels, average distance-w edge mass is <=C(m,w)/N and total mass <=1. Under independent product dephasing the weighted relaxation is superpolynomially small at fixed eta<1 and polynomial m; correlated faults are not covered by this conclusion.",
                 "Use noise-weighted source-average coverage with charged computation. The inverse-n fault regime remains open; this is not an arbitrary-measurement lower bound or classical dequantization.",
+            ), (
+                "DCP-AFFINE-MARKED-PAIRING-ENUMERATION-COST",
+                "Polynomial source coverage and a succinct affine seed make the implemented isolated-edge pairing finder polynomial time.",
+                "The clean streamed XOR evaluator visits every radius-r support twice. At the first radius with D=sum C(m,w)>=2^n, six XOR calls cost 12D>=12*2^n predicate evaluations, before arithmetic costs.",
+                "Replace support enumeration with an actual structured reversible unique-neighbor solver. Polynomial workspace, a generic square-root search estimate, and finite coverage do not establish a speedup or a general search lower bound.",
+            ), (
+                "DCP-BALANCED-PAIRING-EXPONENTIAL-STORAGE",
+                "A balanced meet-in-the-middle partner finder or increasing raw support multiplicity removes the exponential DCP bottleneck.",
+                "The implemented fixed sorting network materializes two capped length-L lists with L=ceil(sqrt(2^n)), plus comparison bits and scan histories. Its time and coherent storage are exponential despite constant average coverage with m=2n. After unrestricted affine isolation, the expected marked degree is D/(N*2^ell) in (1/8,1/4] for D>=N, so raw density cannot be reused without charging syndrome constraints.",
+                "Beat the charged time-space tradeoff or change the pairing/readout architecture. This is a classical baseline for partner search, not a classical DCP decoder or a general quantum lower bound; list-free arithmetic methods remain open.",
             )]
             for identifier, claim, reason, lesson in negatives:
                 upsert_negative_result(NegativeResultRecord(

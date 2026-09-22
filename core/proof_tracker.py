@@ -1764,7 +1764,7 @@ def _dcp_pairing_program_lemmas(candidate_id: str) -> list[LemmaRecord]:
     checked = (gate.get("pairing_finite_controls_passed") is True
                and gate.get("conditional_pairing_construction_derived") is True)
     status = "derived-pairing-interface-review-pending" if checked else "blocked-pairing-controls-missing"
-    return [LemmaRecord(
+    records = [LemmaRecord(
         id=f"LEMMA-{candidate_id}-DCP-CLEAN-PAIRING-PROGRAMS", candidate_id=candidate_id,
         statement="A valid reciprocal half-period proposal compiles into a clean heralded parity readout with six XOR-evaluator calls. A supplied clean permutation need not be reciprocal: its flagged Hadamard test has bias equal to signed valid edge mass. These are sufficient conditional interfaces, not efficient pairing finders.",
         depends_on=["PO-MEASUREMENT", "PO-SUCCESS", "PO-COMPLEXITY"], status=status,
@@ -1780,6 +1780,23 @@ def _dcp_pairing_program_lemmas(candidate_id: str) -> list[LemmaRecord]:
         depends_on=["PO-INPUT-MODEL", "PO-SUCCESS", "PO-NO-GO"], status=status,
         falsification_test="Check the signed-mask uniformity argument, exact small all-permutation controls and independent linear-program solution. Bounds are not achievable algorithms, do not cover arbitrary DCP measurements, and do not permit free selection of favorable labels or heralded normalization.",
     )]
+    marked_checked = checked and gate.get("affine_marked_coverage_controls_passed") is True
+    records.append(LemmaRecord(
+        id=f"LEMMA-{candidate_id}-DCP-AFFINE-MARKED-PAIRING-COVERAGE", candidate_id=candidate_id,
+        statement="On the radius-r half-period graph, unrestricted affine vertex marking with density theta and reciprocal unique-neighbor selection has expected source mass >=theta^2*lambda*(1-2theta*(lambda-1/N)), lambda=sum C(m,w)/N. When a unit-mean-degree radius exists, the minimal one gives polynomial coverage for polynomial m, but the implemented clean finder takes exponential enumeration time.",
+        depends_on=["PO-INPUT-MODEL", "PO-SUCCESS", "PO-COMPLEXITY", "PO-MEASUREMENT"],
+        status="derived-affine-marked-coverage-exponential-finder-review-pending" if marked_checked else "blocked-affine-marked-program-evidence-missing",
+        falsification_test="Check three-wise affine independence without conditioning full rank; exact first/second source degree moments; all oriented edges and source/seed failures; streamed reversible count/image uncomputation; and 12D predicate cost. The syndrome-constrained unique-neighbor solver is not supplied in polynomial time. No generic quantum lower bound or new DCP speedup follows.",
+    ))
+    balanced_checked = checked and gate.get("balanced_mitm_controls_passed") is True
+    records.append(LemmaRecord(
+        id=f"LEMMA-{candidate_id}-DCP-BALANCED-MITM-PAIRING", candidate_id=candidate_id,
+        statement="For the Cartesian product of two capped weight-k support lists, the affine-isolation bound holds with D=L^2. Choosing L=ceil(sqrt(2^n)) gives average coverage >=1/128; m=2n,n>=6 suffices for prelabel classical-fault-marginal <=1/n signed signal >=1/384. A fixed sorting-network join supplies a clean XOR proposal without QRAM, but time and coherent storage are O(sqrt(D)*poly(n,m)), still exponential. Conditioned marked degree is D/(N*2^ell), not raw density.",
+        depends_on=["PO-INPUT-MODEL", "PO-SUCCESS", "PO-COMPLEXITY", "PO-MEASUREMENT"],
+        status="derived-balanced-mitm-exponential-resources-review-pending" if balanced_checked else "blocked-balanced-mitm-evidence-missing",
+        falsification_test="Exhaust natural-label/hash moments and conditioned marked degree; independently enumerate balanced edges; retain duplicate multiplicities, comparator flags and every scan prefix; check full output-register permutations and physical parity readout. Do not substitute the radius-ball graph or treat classical storage as classical while its contents depend on a superposed assignment. No gate export or speedup is claimed.",
+    ))
+    return records
 
 
 def _dcp_label_digest_lemmas(candidate_id: str) -> list[LemmaRecord]:

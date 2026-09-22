@@ -110,6 +110,10 @@ class MutationEngineTests(unittest.TestCase):
         self.assertTrue(any("natural-label-averaged noise-weighted" in item
                             and "exponential fiber tables are only references" in item
                             for item in random_decoder_proposal["rejection_filters"]))
+        self.assertTrue(any("Affine-marked isolated edges" in item
+                            and "time and coherent storage are exponential" in item
+                            and "increasing raw density" in item
+                            for item in random_decoder_proposal["rejection_filters"]))
         self.assertIn(
             "odd-unit orbit sampler and reduced-basis feature extractor",
             random_decoder_proposal["required_modules"],

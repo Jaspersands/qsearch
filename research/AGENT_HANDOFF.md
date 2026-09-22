@@ -1,14 +1,99 @@
 # Research Agent Handoff
 
-Last updated: 2026-09-22
+Last updated: 2026-09-23
 
-## Latest Completed Research Pass: Constructive DCP Pairing Programs
+## Latest Completed Research Pass: Capped Balanced Partner Search
+
+Read the final section of `research/DCP_PAIRING_PROGRAMS.md` and
+`core/dcp_balanced_pairing.py`. This extends the SAME coherent-matching
+CLI/runner/report. No candidate or experiment was added. It follows the
+affine-marked streaming finder in `core/dcp_affine_marked_pairing.py`, also
+completed since checkpoint `d0924931`. Bundle these related passes into one
+infrequent research checkpoint; inspect Git for the actual save/push state.
+
+SUBSTANTIVE OUTCOME: use the Cartesian product of two FIXED lexicographic
+prefix lists of weight-k supports. Each list has L=ceil(sqrt(2^n)) supports
+when available; k is the first with C(m/2,k)>=L. The prior moment/thinning
+proof applies to any fixed distinct nonempty support family, so D=L^2 gives
+CONSTANT source-average coverage >=1/128 for n>=2 (not per-label/seed success).
+For even n the stronger bound is (1+1/N)/32. Full binomial lists unnecessarily
+overshoot the degree; the default now caps them rather than paying that loss.
+This is neither the full radius ball nor necessarily the full weight-k shell.
+
+LINEAR SAMPLES SUFFICE under the stated model: m=2n,n>=6 implies minimal
+k<=ceil(n/4)<=n/3, using monotonicity of x log(n/x) and C(n,k)>=(n/k)^k.
+With prelabel classical fault marginals <=1/n, width2k retains >=1/3 of
+clean signal. Thus average signed parity signal >=1/384, even with within-
+batch classical correlations. NOT arbitrary quantum noise; original labels/
+gauge coins must be discarded. Independent fresh batches or conditional
+guarantees are still required. No full-secret decoder or novelty is claimed.
+
+ACTUAL ALGORITHM: key left supports by (signed sum,Hs), right supports by
+(N/2-signed sum,Hs). Run a fixed-address bitonic sorting network, retaining
+swap bits. A sequential equal-key scan retains all prefix states, full pair
+counts and pair-mask XORs; it does NOT deduplicate colliding keys. Copy the
+unique valid output, then uncompute prefixes, sort history and records.
+The Python basis-wire evaluator runs this schedule; no gate exporter exists.
+The records depend on the superposed input, so storage is COHERENT, not free
+classical RAM. No QRAM is assumed. Output-register permutation, duplicate,
+padding, source-mark, independent graph and physical-readout controls pass.
+
+RESOURCE FAILURE: L=ceil(2^(n/2)) remains exponential. For padded length P,
+q=log2(P), one XOR call charges 2C comparators with C=P*q*(q+1)/4, 4L record
+evaluations and 2P scan steps. Retained record/prefix/comparator storage is
+explicitly counted, excluding reusable polynomial arithmetic scratch and
+caller input/output. At n=256,m=512 the analytic six-call comparator count
+has log2 about144.62 and retained work-bit count log2 about141.88. These are
+analytic counts, NOT executed large circuits. No DCP speedup is established.
+
+DENSITY CHECK: conditioned on a source being marked, H stays uniform because
+the offset is uniform. Expected marked degree is D/(N*2^ell)=lambda*theta,
+in (1/8,1/4] when D>=N. Enlarging raw lists and then re-isolating increases
+syndrome constraints. Do not apply a dense-instance birthday theorem to the
+raw multiplicity while ignoring those constraints. This is not a general
+hardness theorem and does not exclude different proposals/permutation readouts.
+
+SOURCES: Beals et al. arXiv:1207.2307 pp4,6-8 for PRIOR reversible sorting;
+Remaud et al. arXiv:2206.14408 for PRIOR DCP time/query tradeoffs. Linear
+samples plus exponential time is not a new efficiency result. All local
+mathematics remains DERIVED / REVIEW PENDING, not independent/formal review.
+
+VERIFIED: nine-file regression159passed67.55s,
+`.pytest_cache/dcp-balanced-regression.xml`; earlier four-file85passed16.76s.
+Final cleanup/integration regression39passed15.26s,
+`.pytest_cache/dcp-balanced-cleanup.xml`, after making prefix/history zeroing
+explicit before releasing simulated work wires. Counts overlap.
+The first new test run had44passes/1failure because a six-input diagnostic
+was sent to the existing four-input full-workspace compiler. It was corrected
+by separately testing that larger join against the independent graph, while
+keeping physical compiler controls within their documented finite domain.
+Python compilation, JS syntax and diff checks passed. All nine live workflows
+exited0: matching CLI, runner, dequantize, proofs, conjectures, mutate, snapshot,
+validate, proof-routes. Registry issues[]:8candidates,796experiments,805results,
+928negatives,1327deq/1323blocking,1302lemmas,104proofstatuses/24blocking,
+8blockedconjectures,19mutations. Proof-route13contracts,0unsupported,4unresolved.
+No speedup gate was enabled. The full repository suite was NOT rerun; known
+unrelated writer failures remain in MECHANICAL_FOLLOW_UP_PLAN.md for Gemini.
+
+NEXT HIGH-REASONING TARGET: a list-free or otherwise competitive STRUCTURED
+partner solver, or a different readout. Constant source coverage and a
+linear-sample scoped noise guarantee are already supplied here; do not make
+another existence interface the next deliverable. Compare all time/space/
+sample costs with known algorithms in the same parameterization. A measured
+witness is not a clean quantum oracle. Preserve the symmetric relation-lift
+exception and do not impose global uniqueness decision on every proposal.
+Independent review of the concise derivation is useful, but not a blocker
+to further mathematical work. The overall goal remains active.
+
+## Previous Research Pass: Constructive DCP Pairing Programs
 
 Read `research/DCP_PAIRING_PROGRAMS.md` and `core/dcp_pairing_programs.py`.
 This extends the EXISTING coherent-matching subsystem/experiment, rather than
-adding another candidate. The digest pass below is also complete. These are
-being bundled into a substantial checkpoint; inspect Git for actual SHA/push
-state. The last checkpoint before this bundle was `683e957d`.
+adding another candidate. The digest pass below is also complete. Both were
+saved and pushed as `d0924931`. Intervening website commits through `1f5d158d`
+were preserved; `683e957d` was the earlier mathematical-research checkpoint,
+not the immediate Git parent. This post-push handoff correction can wait for
+the next substantial commit. No processes remained running at this checkpoint.
 
 CONSTRUCTIVE, CONDITIONAL: a deterministic public proposal F accepts b when
 F(F(b))=b and f(F(b))-f(b)=N/2. Four XOR-F calls compute/clean the accept flag;
@@ -91,7 +176,8 @@ the current conditional constructions remains valuable; none has occurred.
 Read `research/DCP_LABEL_DIGEST_AUDIT.md` and
 `theorems/dcp_label_digest_audit.py`. This pass is bundled with the later
 pairing-program pass above; inspect Git for the current save/push state.
-The checkpoint BEFORE that bundle was `683e957d`.
+The earlier mathematical-research checkpoint was `683e957d`; intervening
+website-only commits were retained, as recorded above.
 The overall goal remains active; no background research service was started.
 
 The older lead about repairing Simon's adaptive-partition premise is superseded

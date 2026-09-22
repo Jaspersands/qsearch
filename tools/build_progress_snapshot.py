@@ -287,11 +287,13 @@ def build_snapshot() -> dict[str, Any]:
             {
                 "title": "Hidden shift / DHSP",
                 "short_title": "DHSP",
-                "status": "Conditional readouts checked; finder missing" if pairing_checked else "Pairing controls not run or failing",
+                "status": "Pairing implemented; efficient finder missing" if pairing_checked else "Pairing controls not run or failing",
                 "tone": "blocked",
                 "stage": 2,
                 "summary": (
                     "Reciprocal pairings and clean permutations have explicit conditional parity readouts. "
+                    "A capped balanced-support finder has derived constant average coverage, but its sorting-network "
+                    "join still uses exponential time and coherent storage. "
                     "The noise analysis distinguishes independent from correlated faults. No efficient high-coverage "
                     "pairing finder, polynomial decoder or new speedup has been demonstrated."
                 ),
@@ -299,6 +301,7 @@ def build_snapshot() -> dict[str, Any]:
                     f"Physical pair/permutation controls: {metric(pairing, 'physical_pairing_control_count')}/"
                     f"{metric(pairing, 'physical_permutation_control_count')}. "
                     f"Correlated-fault controls: {metric(pairing, 'correlated_noise_control_count')}. "
+                    f"Explicit exponential finders: {metric(pairing, 'explicit_exponential_pairing_finder_count')}. "
                     "Finite optimized matchings are exponential references; derivations remain review-pending."
                 ),
                 "next": "Construct an efficient full-label-sensitive pairing with useful natural-input coverage and charged noise, inverse and preprocessing costs.",

@@ -26,9 +26,9 @@
   },
   "execution_model": "Research generation and experiments run interactively during active Codex sessions. A GitHub workflow validates pushed snapshots, and a scheduled backup can commit only validation-passing changes; neither mechanism performs autonomous quantum-algorithm research between sessions.",
   "metrics": {
-    "blocking_findings": 1321,
+    "blocking_findings": 1323,
     "experiments": 796,
-    "negative_results": 926,
+    "negative_results": 928,
     "proof_debts": 24,
     "results": 805
   },
@@ -71,12 +71,12 @@
   "overview": "DCP pairing controls now separate a conditional parity readout from the missing efficient finder. The current target is a useful measurement, not complete labels for every multiplicity. Spectral packing obstructs fixed-count normalized complete labels with inverse-polynomial gaps. Two QFTs instead extract a known subgroup carrier with an implicit copy code. Fixed-reference invariant identification is limited. Independent carrier discard also loses binary information; coherent retention does not itself supply a useful effect. Numerical checks are not formal proofs.",
   "tracks": [
     {
-      "evidence": "Physical pair/permutation controls: 9/2. Correlated-fault controls: 3. Finite optimized matchings are exponential references; derivations remain review-pending.",
+      "evidence": "Physical pair/permutation controls: 9/2. Correlated-fault controls: 3. Explicit exponential finders: 2. Finite optimized matchings are exponential references; derivations remain review-pending.",
       "next": "Construct an efficient full-label-sensitive pairing with useful natural-input coverage and charged noise, inverse and preprocessing costs.",
       "short_title": "DHSP",
       "stage": 2,
-      "status": "Conditional readouts checked; finder missing",
-      "summary": "Reciprocal pairings and clean permutations have explicit conditional parity readouts. The noise analysis distinguishes independent from correlated faults. No efficient high-coverage pairing finder, polynomial decoder or new speedup has been demonstrated.",
+      "status": "Pairing implemented; efficient finder missing",
+      "summary": "Reciprocal pairings and clean permutations have explicit conditional parity readouts. A capped balanced-support finder has derived constant average coverage, but its sorting-network join still uses exponential time and coherent storage. The noise analysis distinguishes independent from correlated faults. No efficient high-coverage pairing finder, polynomial decoder or new speedup has been demonstrated.",
       "title": "Hidden shift / DHSP",
       "tone": "blocked"
     },

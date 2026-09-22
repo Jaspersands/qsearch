@@ -2,8 +2,8 @@
   "blocking_status_count": 24,
   "candidate_count": 8,
   "counterexample_search_count": 8,
-  "created_at": "2026-09-22T11:44:52.469970+00:00",
-  "lemma_count": 1300,
+  "created_at": "2026-09-22T20:04:37.393389+00:00",
+  "lemma_count": 1302,
   "needs_evidence_count": 0,
   "proof_debt": {
     "counterexample_search_count": 8,
@@ -73,8 +73,8 @@
         "target_claim": "The coset observable is not a disguised classical invariant."
       }
     ],
-    "created_at": "2026-09-22T11:44:52.465740+00:00",
-    "lemma_count": 1300,
+    "created_at": "2026-09-22T20:04:37.389179+00:00",
+    "lemma_count": 1302,
     "lemmas": [
       {
         "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -3138,6 +3138,32 @@
         "id": "LEMMA-DHS-GOWERS-SIEVE-DCP-PAIRING-COVERAGE-NOISE-BOUND",
         "statement": "On independent uniform labels, even input-adaptive pairings have expected distance-w valid edge mass <=C(m,w)/2^n and total mass <=1. The decreasing-weight exact relaxation bounds these readouts and is superpolynomially small for constant dephasing and polynomial m; inverse-n noise remains open.",
         "status": "derived-pairing-interface-review-pending"
+      },
+      {
+        "candidate_id": "DHS-GOWERS-SIEVE",
+        "depends_on": [
+          "PO-INPUT-MODEL",
+          "PO-SUCCESS",
+          "PO-COMPLEXITY",
+          "PO-MEASUREMENT"
+        ],
+        "falsification_test": "Check three-wise affine independence without conditioning full rank; exact first/second source degree moments; all oriented edges and source/seed failures; streamed reversible count/image uncomputation; and 12D predicate cost. The syndrome-constrained unique-neighbor solver is not supplied in polynomial time. No generic quantum lower bound or new DCP speedup follows.",
+        "id": "LEMMA-DHS-GOWERS-SIEVE-DCP-AFFINE-MARKED-PAIRING-COVERAGE",
+        "statement": "On the radius-r half-period graph, unrestricted affine vertex marking with density theta and reciprocal unique-neighbor selection has expected source mass >=theta^2*lambda*(1-2theta*(lambda-1/N)), lambda=sum C(m,w)/N. When a unit-mean-degree radius exists, the minimal one gives polynomial coverage for polynomial m, but the implemented clean finder takes exponential enumeration time.",
+        "status": "derived-affine-marked-coverage-exponential-finder-review-pending"
+      },
+      {
+        "candidate_id": "DHS-GOWERS-SIEVE",
+        "depends_on": [
+          "PO-INPUT-MODEL",
+          "PO-SUCCESS",
+          "PO-COMPLEXITY",
+          "PO-MEASUREMENT"
+        ],
+        "falsification_test": "Exhaust natural-label/hash moments and conditioned marked degree; independently enumerate balanced edges; retain duplicate multiplicities, comparator flags and every scan prefix; check full output-register permutations and physical parity readout. Do not substitute the radius-ball graph or treat classical storage as classical while its contents depend on a superposed assignment. No gate export or speedup is claimed.",
+        "id": "LEMMA-DHS-GOWERS-SIEVE-DCP-BALANCED-MITM-PAIRING",
+        "statement": "For the Cartesian product of two capped weight-k support lists, the affine-isolation bound holds with D=L^2. Choosing L=ceil(sqrt(2^n)) gives average coverage >=1/128; m=2n,n>=6 suffices for prelabel classical-fault-marginal <=1/n signed signal >=1/384. A fixed sorting-network join supplies a clean XOR proposal without QRAM, but time and coherent storage are O(sqrt(D)*poly(n,m)), still exponential. Conditioned marked degree is D/(N*2^ell), not raw density.",
+        "status": "derived-balanced-mitm-exponential-resources-review-pending"
       },
       {
         "candidate_id": "DHS-GOWERS-SIEVE",
