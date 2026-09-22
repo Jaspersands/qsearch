@@ -10,6 +10,7 @@ from typing import Sequence
 
 import numpy as np
 
+from dcp_pairing_programs import build_pairing_controls
 from research_registry import (
     ExperimentResultRecord,
     NegativeResultRecord,
@@ -75,6 +76,7 @@ class DCPCoherentMatchingInterfaceReport:
     seeded_bridge_certificates: list[SeededBridgeCertificate]
     workspace_visibility_cases: list[WorkspaceVisibilityCase]
     interface_classes: list[dict[str, str | bool]]
+    pairing_programs: dict
     headline_metrics: dict[str, int | float]
     claim_gate: dict[str, bool | str]
     status: str
@@ -204,6 +206,8 @@ def run_coherent_matching_interface_audit(
     legal_coverage_exponents: Sequence[int] = (1, 2, 3),
     register_offset: int = 4,
 ) -> DCPCoherentMatchingInterfaceReport:
+    if not n_values or not legal_coverage_exponents:
+        raise ValueError("nonempty size and coverage sweeps are required")
     certificates = [
         seeded_bridge_certificate(n_bits, exponent, register_offset)
         for n_bits in n_values
@@ -211,6 +215,7 @@ def run_coherent_matching_interface_audit(
     ]
     use_sites = _deterministic_use_sites()
     workspace_cases = _workspace_cases()
+    pairing = build_pairing_controls()
     proved_seeded = sum(item.conditional_seeded_randomized_bridge_proved for item in certificates)
     metrics: dict[str, int | float] = {
         "primary_source_deterministic_use_site_count": len(use_sites),
@@ -230,6 +235,13 @@ def run_coherent_matching_interface_audit(
         "proved_polynomial_partial_subset_sum_solver_count": 0,
         "proved_polynomial_dcp_decoder_count": 0,
         "source_contract_satisfying_solver_count": 0,
+        "physical_pairing_control_count": len(pairing["mutual_controls"]),
+        "physical_permutation_control_count": len(pairing["permutation_controls"]),
+        "physical_pairing_failure_count": pairing["control_failures"],
+        "noise_mass_envelope_count": len(pairing["noise_mass_envelopes"]),
+        "correlated_noise_control_count": len(pairing["correlated_noise_controls"]),
+        "clean_mutual_xor_oracle_call_count": 6,
+        "efficient_pairing_finder_count": 0,
     }
     return DCPCoherentMatchingInterfaceReport(
         created_at=utc_now(),
@@ -247,9 +259,11 @@ def run_coherent_matching_interface_audit(
                 "averaging yield a fixed matching with Omega(p^5) intersection probability"
             ),
             "quantum_obstruction": (
-                "a general relation solver needs a target-independent seeded decomposition or an explicit inverse-polynomial "
-                "paired-workspace overlap and balanced-amplitude theorem"
+                "The naive single-evaluation relation interface can lose interference in orthogonal workspace. "
+                "This is not a general obstruction: dcp_symmetric_relation_lift supplies a separate conditional double-evaluation route."
             ),
+            "pairing_scope": "Six-call mutual proposals and flagged clean permutations, with all failures charged; finite tables are exponential references, not efficient solvers.",
+            "noise_scope": pairing["contract"]["noise_scope"],
         },
         deterministic_use_sites=use_sites,
         seeded_bridge_certificates=certificates,
@@ -277,37 +291,50 @@ def run_coherent_matching_interface_audit(
                 "interface_id": "arbitrary-quantum-relation-solver",
                 "bridge_proved": False,
                 "condition": (
-                    "requires canonical coherent witness selection or balanced paired workspaces with inverse-polynomial overlap"
+                    "Not established by this single-evaluation audit; see the separately derived symmetric double-evaluation lift."
                 ),
             },
         ],
+        pairing_programs=pairing,
         headline_metrics=metrics,
         claim_gate={
             "primary_source_deterministic_use_sites_extracted": True,
             "seeded_randomized_partial_solver_bridge_proved": proved_seeded == len(certificates),
             "arbitrary_quantum_relation_solver_bridge_proved": False,
             "workspace_overlap_required": True,
+            "pairing_finite_controls_passed": pairing["control_failures"] == 0,
+            "conditional_pairing_construction_derived": True,
+            "noise_gauge_and_mass_bound_review_pending": True,
+            "arbitrary_quantum_solvers_excluded": False,
+            "independently_reviewed": False,
+            "formal_verification": False,
+            "novelty_established": False,
             "partial_subset_sum_solver_constructed": False,
             "polynomial_dcp_decoder_constructed": False,
             "speedup_claim_allowed": False,
             "reason": (
                 "The theorem interface is extended to target-independent shared-seed randomized solvers, but no such "
-                "polynomial subset-sum solver is constructed. Arbitrary quantum relation solvers remain blocked by "
-                "canonicalization, amplitude balance, and paired-workspace overlap."
+                "polynomial subset-sum solver or efficient high-coverage pairing is constructed. Six-call and flagged-permutation "
+                "controls test conditional readouts, not a decoder; the separate symmetric relation lift is not excluded."
             ),
         },
-        status="seeded-randomized-interface-proved-general-quantum-interface-blocked",
+        status=("derived-pairing-readouts-review-pending-no-efficient-finder"
+                if pairing["control_failures"] == 0 else "failed-physical-pairing-controls"),
         summary=(
             f"Certified {proved_seeded}/{len(certificates)} seeded-randomized interface rows and extracted "
-            f"{len(use_sites)} deterministic source use sites. General quantum relation bridges=0; zero-visibility "
-            f"workspace counterexamples={metrics['zero_visibility_counterexample_count']}."
+            f"{len(use_sites)} deterministic source use sites. Checked 9 mutual and 2 permutation controls; "
+            f"failures={pairing['control_failures']}. Noise-weighted mass, not witness rate, is the constructive target; "
+            "no efficient pairing finder or new decoder."
         ),
         falsifiers_triggered=[
-            "Classical randomness is acceptable only when represented by target-independent explicit coins shared coherently across both endpoints.",
-            "Freshly measured or target-dependent randomness does not define the fixed answered set required by the matching lemma.",
-            "Multiple valid witnesses do not help unless the circuit canonically couples paired endpoints and erases witness garbage.",
+            "The fixed-seed source extension requires target-independent explicit coins shared coherently across both endpoints; this is not a restriction on all other constructions.",
+            "Freshly measured or target-dependent randomness does not by itself define the fixed answered set used in that proof.",
+            "Multiple valid witnesses are insufficient without an actual coherent pairing/cleanup construction; the separate symmetric lift is an allowed route.",
             "Orthogonal paired workspaces make every endpoint X/Y phase statistic exactly independent of qd/N.",
             "Proving an interface theorem does not construct the required polynomial subset-sum solver.",
+            "A one-witness-per-residue proposal can have valid-output fraction one but reciprocal mass at most N/2^m; input-dependent matchings are not subject to that cap.",
+            "Short adaptive moves have average mass at most sum_{j<=r} C(m,j)/N. Constant product-dephasing noise suppresses every declared pairing readout at polynomial m; this is not a general DCP no-go.",
+            "Retaining old labels/gauge coins or postlabel corruption invalidates the gauge contract. Correlated prelabel faults require their joint survival law, not the independent eta^weight formula.",
         ],
     )
 
@@ -326,6 +353,38 @@ def write_coherent_matching_interface_audit(
         n_values, legal_coverage_exponents, register_offset
     )
     payload = asdict(report)
+    payload["artifacts"] = {"dcp_coherent_matching_interface": str(path),
+                            "derivation": "research/DCP_PAIRING_PROGRAMS.md"}
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(payload, indent=2, sort_keys=True))
+    path.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n")
+    if write_registry:
+        upsert_experiment_result(ExperimentResultRecord(
+            id=registry_result_id or f"RESULT-{registry_experiment_id}-DCP-COHERENT-MATCHING-INTERFACE",
+            experiment_id=registry_experiment_id, candidate_id=registry_candidate_id,
+            created_at=payload["created_at"], status=payload["status"], summary=payload["summary"],
+            metrics=payload["headline_metrics"], falsifiers_triggered=payload["falsifiers_triggered"],
+            artifacts=payload["artifacts"]))
+        if payload["claim_gate"]["pairing_finite_controls_passed"] is True:
+            negatives = [(
+                "NEG-DCP-ARBITRARY-QUANTUM-RELATION-SOLVER-WITHOUT-WORKSPACE-OVERLAP",
+                "A naive single-evaluation quantum relation routine preserves endpoint interference despite orthogonal retained workspace.",
+                "Tracing orthogonal endpoint tags removes the off-diagonal phase term; the separate symmetric double-evaluation lift is NOT ruled out.",
+                "Supply actual coherent cleanup or use the symmetric lift. Do not broaden this negative to arbitrary quantum relation solvers.",
+            ), (
+                "DCP-CANONICAL-WITNESS-RATE-NOT-PAIRING-MASS",
+                "A successful canonical witness oracle automatically supplies high-coverage reciprocal pairing at high density.",
+                "With at most one canonical witness per residue, at most N assignments can be reciprocal; heralded mass is at most N/2^m even at witness rate one.",
+                "Measure reciprocal or flagged edge mass, not witness rate; input-dependent full matchings escape this cap but the finite reference tables are exponential.",
+            ), (
+                "DCP-LOCAL-PAIRING-COVERAGE-NOISE-TRADEOFF",
+                "Short moves or high-density tables automatically give polynomial signal for noisy half-period pairing readouts.",
+                "For natural independent uniform labels, average distance-w edge mass is <=C(m,w)/N and total mass <=1. Under independent product dephasing the weighted relaxation is superpolynomially small at fixed eta<1 and polynomial m; correlated faults are not covered by this conclusion.",
+                "Use noise-weighted source-average coverage with charged computation. The inverse-n fault regime remains open; this is not an arbitrary-measurement lower bound or classical dequantization.",
+            )]
+            for identifier, claim, reason, lesson in negatives:
+                upsert_negative_result(NegativeResultRecord(
+                    id=identifier, source=str(path), claim=claim, reason_invalid=reason,
+                    lesson=lesson, applies_to=[registry_candidate_id],
+                    evidence={"artifact": str(path), "review_status": "derived-review-pending",
+                              "speedup_claim_allowed": False}))
     return payload

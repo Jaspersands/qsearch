@@ -29,6 +29,14 @@ class PaperSeed:
 
 DEFAULT_LITERATURE = [
     PaperSeed(
+        id="gupte-ragavan-zhandry-dcp-digest-2026",
+        title="The ePrint:2026/1591 Quantum Algorithm Does Not Solve DCP",
+        url="https://eprint.iacr.org/2026/1693",
+        year=2026,
+        tags=["dcp-label-digest", "dihedral-coset", "no-go", "dephasing-hybrid"],
+        why_it_matters="A scoped information-loss theorem after low-subset-sum measurement; prevents treating a lossy label summary or an older proof-gap repair as a DCP decoder.",
+    ),
+    PaperSeed(
         id="bruinsma-posta-stokvis-grinko-ozols-qft-toolbox-2026",
         title="Quantum Fourier transform toolbox",
         url="https://arxiv.org/abs/2608.28573",

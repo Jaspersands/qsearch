@@ -2,8 +2,8 @@
   "blocking_status_count": 24,
   "candidate_count": 8,
   "counterexample_search_count": 8,
-  "created_at": "2026-09-17T03:29:30.535617+00:00",
-  "lemma_count": 1296,
+  "created_at": "2026-09-22T11:44:52.469970+00:00",
+  "lemma_count": 1300,
   "needs_evidence_count": 0,
   "proof_debt": {
     "counterexample_search_count": 8,
@@ -73,8 +73,8 @@
         "target_claim": "The coset observable is not a disguised classical invariant."
       }
     ],
-    "created_at": "2026-09-17T03:29:30.528605+00:00",
-    "lemma_count": 1296,
+    "created_at": "2026-09-22T11:44:52.465740+00:00",
+    "lemma_count": 1300,
     "lemmas": [
       {
         "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -3090,6 +3090,54 @@
         "id": "LEMMA-DHS-GOWERS-SIEVE-DCP-NAMED-RESOURCE-FRONTIER",
         "statement": "The exact-f=1 full decoder strictly improves a named legal Kuperberg/Regev sample, time, or memory frontier.",
         "status": "blocked-unproved"
+      },
+      {
+        "candidate_id": "DHS-GOWERS-SIEVE",
+        "depends_on": [
+          "PO-INPUT-MODEL",
+          "PO-MEASUREMENT",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Check full physical cq states with Born weighting, each coordinate cap and independent complex phase preparation. Low-sum-dependent summaries need the separate (a,z) Cauchy--Schwarz proof. Other measurement records, nonuniform labels, extra label workspace and different prefixes are not covered. No general DCP no-go follows.",
+        "id": "LEMMA-DHS-GOWERS-SIEVE-DCP-JOINT-DIGEST-SLICES",
+        "statement": "After low-subset-sum measurement, fixed joint summary H has a conditional-fiber trace-distance bound. Even H(y,z) depending on that measured low sum obeys m*sqrt(K/N) when every coordinate slice at fixed other labels,z has <=K outcomes. Both extensions are review-pending; the fixed coordinatewise theorem is GRZ prior work.",
+        "status": "derived-joint-slice-extension-review-pending"
+      },
+      {
+        "candidate_id": "DHS-GOWERS-SIEVE",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-SUCCESS",
+          "PO-COMPLEXITY"
+        ],
+        "falsification_test": "Replay complete basis permutations, all workspace flags, all secrets and a nonreciprocal four-cycle. Charge source probability, F preprocessing and clean P/inverse access; do not infer an efficient inverse from a forward truth table. Canonical witness rate can be one with only N/2^m reciprocal coverage.",
+        "id": "LEMMA-DHS-GOWERS-SIEVE-DCP-CLEAN-PAIRING-PROGRAMS",
+        "statement": "A valid reciprocal half-period proposal compiles into a clean heralded parity readout with six XOR-evaluator calls. A supplied clean permutation need not be reciprocal: its flagged Hadamard test has bias equal to signed valid edge mass. These are sufficient conditional interfaces, not efficient pairing finders.",
+        "status": "derived-pairing-interface-review-pending"
+      },
+      {
+        "candidate_id": "DHS-GOWERS-SIEVE",
+        "depends_on": [
+          "PO-INPUT-MODEL",
+          "PO-MEASUREMENT",
+          "PO-SUCCESS"
+        ],
+        "falsification_test": "Compare explicit fault/coin mixtures, including arbitrary prelabel bad bits, all-or-none and exactly-one faults. Program selection uses only updated labels; postlabel adversarial bits have a counterexample. Correlations can improve or worsen the product estimate; no arbitrary quantum channel or independent-batch guarantee is granted.",
+        "id": "LEMMA-DHS-GOWERS-SIEVE-DCP-PAIRING-NOISE-GAUGE",
+        "statement": "Random X flips with label-sign updates turn prelabel classical basis-fault mixtures into support-survival attenuation after old labels and coins are discarded. Independent faults give eta^Hamming; arbitrary within-batch classical correlations with marginal <=epsilon give width-r signal >=max(0,1-r*epsilon) times coverage.",
+        "status": "derived-pairing-interface-review-pending"
+      },
+      {
+        "candidate_id": "DHS-GOWERS-SIEVE",
+        "depends_on": [
+          "PO-INPUT-MODEL",
+          "PO-SUCCESS",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Check the signed-mask uniformity argument, exact small all-permutation controls and independent linear-program solution. Bounds are not achievable algorithms, do not cover arbitrary DCP measurements, and do not permit free selection of favorable labels or heralded normalization.",
+        "id": "LEMMA-DHS-GOWERS-SIEVE-DCP-PAIRING-COVERAGE-NOISE-BOUND",
+        "statement": "On independent uniform labels, even input-adaptive pairings have expected distance-w valid edge mass <=C(m,w)/2^n and total mass <=1. The decreasing-weight exact relaxation bounds these readouts and is superpolynomially small for constant dephasing and polynomial m; inverse-n noise remains open.",
+        "status": "derived-pairing-interface-review-pending"
       },
       {
         "candidate_id": "DHS-GOWERS-SIEVE",

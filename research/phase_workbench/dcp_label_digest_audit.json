@@ -1,0 +1,2061 @@
+{
+  "artifacts": {
+    "derivation": "research/DCP_LABEL_DIGEST_AUDIT.md",
+    "report": "research/phase_workbench/dcp_label_digest_audit.json"
+  },
+  "claim_gate": {
+    "arbitrary_measurement_adaptive_digest_covered": false,
+    "efficient_decoder_implemented": false,
+    "finite_controls_passed": true,
+    "formal_verification": false,
+    "general_dcp_no_go": false,
+    "joint_digest_bits_can_be_divided_among_coordinates": false,
+    "joint_slice_derivation_review_pending": true,
+    "low_sum_conditioned_digest_covered": true,
+    "novelty_established": false,
+    "speedup_claim_allowed": false
+  },
+  "controls": [
+    {
+      "checks": {
+        "coordinate_bounds_hold_numerically": true,
+        "fully_dephased_secrets_exactly_equal": true,
+        "parity_bound_holds_numerically": true,
+        "source_mass_exact": true
+      },
+      "classical_blocks": 2,
+      "conditioned_on_measured_low_sum": false,
+      "digest_outcomes": 1,
+      "fiber_profile": {
+        "bound_arithmetic": "outward dyadic square roots of exact integer fiber counts",
+        "coordinate_beta_upper": [
+          {
+            "denominator": 2,
+            "numerator": 1
+          },
+          {
+            "denominator": 2,
+            "numerator": 1
+          }
+        ],
+        "fiber_size_histograms": [
+          {
+            "4": 4
+          },
+          {
+            "4": 4
+          }
+        ],
+        "maximum_slice_image_sizes": [
+          1,
+          1
+        ],
+        "trace_distance_upper": {
+          "denominator": 1,
+          "numerator": 1
+        }
+      },
+      "interpretation": "Exact source counts; floating trace norms. Optimal finite discrimination is not an implemented decoder.",
+      "label_tuples": 16,
+      "n": 2,
+      "name": "discard-all",
+      "normalization_denominator": 64,
+      "optimal_equal_prior_success": 0.7064234773582496,
+      "parity_trace_distance": 0.41284695471649935,
+      "samples": 2,
+      "single_coordinate_dephasing_distances": [
+        0.1767766952966369,
+        0.17677669529663692
+      ],
+      "z_born_mass_numerators": {
+        "0": 40,
+        "1": 24
+      }
+    },
+    {
+      "checks": {
+        "coordinate_bounds_hold_numerically": true,
+        "fully_dephased_secrets_exactly_equal": true,
+        "parity_bound_holds_numerically": true,
+        "source_mass_exact": true
+      },
+      "classical_blocks": 8,
+      "conditioned_on_measured_low_sum": false,
+      "digest_outcomes": 4,
+      "fiber_profile": {
+        "bound_arithmetic": "outward dyadic square roots of exact integer fiber counts",
+        "coordinate_beta_upper": [
+          {
+            "denominator": 158456325028528675187087900672,
+            "numerator": 112045541949572279837463876455
+          },
+          {
+            "denominator": 158456325028528675187087900672,
+            "numerator": 112045541949572279837463876455
+          }
+        ],
+        "fiber_size_histograms": [
+          {
+            "2": 8
+          },
+          {
+            "2": 8
+          }
+        ],
+        "maximum_slice_image_sizes": [
+          2,
+          2
+        ],
+        "trace_distance_upper": {
+          "denominator": 1,
+          "numerator": 1
+        }
+      },
+      "interpretation": "Exact source counts; floating trace norms. Optimal finite discrimination is not an implemented decoder.",
+      "label_tuples": 16,
+      "n": 2,
+      "name": "coordinate-top-bit",
+      "normalization_denominator": 64,
+      "optimal_equal_prior_success": 0.7337703125829258,
+      "parity_trace_distance": 0.46754062516585165,
+      "samples": 2,
+      "single_coordinate_dephasing_distances": [
+        0.3000050930493662,
+        0.3000050930493662
+      ],
+      "z_born_mass_numerators": {
+        "0": 40,
+        "1": 24
+      }
+    },
+    {
+      "checks": {
+        "coordinate_bounds_hold_numerically": true,
+        "fully_dephased_secrets_exactly_equal": true,
+        "parity_bound_holds_numerically": true,
+        "source_mass_exact": true
+      },
+      "classical_blocks": 4,
+      "conditioned_on_measured_low_sum": false,
+      "digest_outcomes": 2,
+      "fiber_profile": {
+        "bound_arithmetic": "outward dyadic square roots of exact integer fiber counts",
+        "coordinate_beta_upper": [
+          {
+            "denominator": 158456325028528675187087900672,
+            "numerator": 112045541949572279837463876455
+          },
+          {
+            "denominator": 158456325028528675187087900672,
+            "numerator": 112045541949572279837463876455
+          }
+        ],
+        "fiber_size_histograms": [
+          {
+            "2": 8
+          },
+          {
+            "2": 8
+          }
+        ],
+        "maximum_slice_image_sizes": [
+          2,
+          2
+        ],
+        "trace_distance_upper": {
+          "denominator": 1,
+          "numerator": 1
+        }
+      },
+      "interpretation": "Exact source counts; floating trace norms. Optimal finite discrimination is not an implemented decoder.",
+      "label_tuples": 16,
+      "n": 2,
+      "name": "joint-sum-top-bit",
+      "normalization_denominator": 64,
+      "optimal_equal_prior_success": 0.7110108508252654,
+      "parity_trace_distance": 0.42202170165053077,
+      "samples": 2,
+      "single_coordinate_dephasing_distances": [
+        0.27900635094610965,
+        0.2790063509461097
+      ],
+      "z_born_mass_numerators": {
+        "0": 40,
+        "1": 24
+      }
+    },
+    {
+      "checks": {
+        "coordinate_bounds_hold_numerically": true,
+        "fully_dephased_secrets_exactly_equal": true,
+        "parity_bound_holds_numerically": true,
+        "source_mass_exact": true
+      },
+      "classical_blocks": 8,
+      "conditioned_on_measured_low_sum": false,
+      "digest_outcomes": 4,
+      "fiber_profile": {
+        "bound_arithmetic": "outward dyadic square roots of exact integer fiber counts",
+        "coordinate_beta_upper": [
+          {
+            "denominator": 1,
+            "numerator": 1
+          },
+          {
+            "denominator": 1,
+            "numerator": 1
+          }
+        ],
+        "fiber_size_histograms": [
+          {
+            "1": 16
+          },
+          {
+            "1": 16
+          }
+        ],
+        "maximum_slice_image_sizes": [
+          4,
+          4
+        ],
+        "trace_distance_upper": {
+          "denominator": 1,
+          "numerator": 1
+        }
+      },
+      "interpretation": "Exact source counts; floating trace norms. Optimal finite discrimination is not an implemented decoder.",
+      "label_tuples": 16,
+      "n": 2,
+      "name": "joint-full-sum",
+      "normalization_denominator": 64,
+      "optimal_equal_prior_success": 0.7446383476483185,
+      "parity_trace_distance": 0.48927669529663687,
+      "samples": 2,
+      "single_coordinate_dephasing_distances": [
+        0.33838834764831843,
+        0.33838834764831843
+      ],
+      "z_born_mass_numerators": {
+        "0": 40,
+        "1": 24
+      }
+    },
+    {
+      "checks": {
+        "coordinate_bounds_hold_numerically": true,
+        "fully_dephased_secrets_exactly_equal": true,
+        "parity_bound_holds_numerically": true,
+        "source_mass_exact": true
+      },
+      "classical_blocks": 28,
+      "conditioned_on_measured_low_sum": false,
+      "digest_outcomes": 16,
+      "fiber_profile": {
+        "bound_arithmetic": "outward dyadic square roots of exact integer fiber counts",
+        "coordinate_beta_upper": [
+          {
+            "denominator": 1,
+            "numerator": 1
+          },
+          {
+            "denominator": 1,
+            "numerator": 1
+          }
+        ],
+        "fiber_size_histograms": [
+          {
+            "1": 16
+          },
+          {
+            "1": 16
+          }
+        ],
+        "maximum_slice_image_sizes": [
+          4,
+          4
+        ],
+        "trace_distance_upper": {
+          "denominator": 1,
+          "numerator": 1
+        }
+      },
+      "interpretation": "Exact source counts; floating trace norms. Optimal finite discrimination is not an implemented decoder.",
+      "label_tuples": 16,
+      "n": 2,
+      "name": "full-labels",
+      "normalization_denominator": 64,
+      "optimal_equal_prior_success": 0.78125,
+      "parity_trace_distance": 0.5625,
+      "samples": 2,
+      "single_coordinate_dephasing_distances": [
+        0.375,
+        0.375
+      ],
+      "z_born_mass_numerators": {
+        "0": 40,
+        "1": 24
+      }
+    },
+    {
+      "checks": {
+        "coordinate_bounds_hold_numerically": true,
+        "fully_dephased_secrets_exactly_equal": true,
+        "parity_bound_holds_numerically": true,
+        "source_mass_exact": true
+      },
+      "classical_blocks": 7,
+      "conditioned_on_measured_low_sum": false,
+      "digest_outcomes": 4,
+      "fiber_profile": {
+        "bound_arithmetic": "outward dyadic square roots of exact integer fiber counts",
+        "coordinate_beta_upper": [
+          {
+            "denominator": 316912650057057350374175801344,
+            "numerator": 216455365379294135196029562225
+          },
+          {
+            "denominator": 316912650057057350374175801344,
+            "numerator": 216455365379294135196029562225
+          }
+        ],
+        "fiber_size_histograms": [
+          {
+            "1": 4,
+            "3": 4
+          },
+          {
+            "1": 4,
+            "3": 4
+          }
+        ],
+        "maximum_slice_image_sizes": [
+          2,
+          2
+        ],
+        "trace_distance_upper": {
+          "denominator": 1,
+          "numerator": 1
+        }
+      },
+      "interpretation": "Exact source counts; floating trace norms. Optimal finite discrimination is not an implemented decoder.",
+      "label_tuples": 16,
+      "n": 2,
+      "name": "rare-coordinate-flag",
+      "normalization_denominator": 64,
+      "optimal_equal_prior_success": 0.7100907922868567,
+      "parity_trace_distance": 0.42018158457371324,
+      "samples": 2,
+      "single_coordinate_dephasing_distances": [
+        0.29190435443529084,
+        0.29190435443529084
+      ],
+      "z_born_mass_numerators": {
+        "0": 40,
+        "1": 24
+      }
+    },
+    {
+      "checks": {
+        "coordinate_bounds_hold_numerically": true,
+        "fully_dephased_secrets_exactly_equal": true,
+        "parity_bound_holds_numerically": true,
+        "source_mass_exact": true
+      },
+      "classical_blocks": 4,
+      "conditioned_on_measured_low_sum": true,
+      "digest_outcomes": 2,
+      "fiber_profile": {
+        "bound_arithmetic": "outward roots of low-sum-weighted conditional image sizes",
+        "coordinate_beta_upper": [
+          {
+            "denominator": 19807040628566084398385987584,
+            "numerator": 14005692743696534979682984557
+          },
+          {
+            "denominator": 79228162514264337593543950336,
+            "numerator": 44065612055847232555060708621
+          }
+        ],
+        "maximum_slice_image_sizes": [
+          2,
+          2
+        ],
+        "trace_distance_upper": {
+          "denominator": 1,
+          "numerator": 1
+        }
+      },
+      "interpretation": "Exact source counts; floating trace norms. Optimal finite discrimination is not an implemented decoder.",
+      "label_tuples": 16,
+      "n": 2,
+      "name": "low-sum-dependent-joint-bit",
+      "normalization_denominator": 64,
+      "optimal_equal_prior_success": 0.7110108508252654,
+      "parity_trace_distance": 0.42202170165053077,
+      "samples": 2,
+      "single_coordinate_dephasing_distances": [
+        0.2790063509461097,
+        0.22513083633026434
+      ],
+      "z_born_mass_numerators": {
+        "0": 40,
+        "1": 24
+      }
+    },
+    {
+      "checks": {
+        "coordinate_bounds_hold_numerically": true,
+        "fully_dephased_secrets_exactly_equal": true,
+        "parity_bound_holds_numerically": true,
+        "source_mass_exact": true
+      },
+      "classical_blocks": 8,
+      "conditioned_on_measured_low_sum": true,
+      "digest_outcomes": 4,
+      "fiber_profile": {
+        "bound_arithmetic": "outward roots of low-sum-weighted conditional image sizes",
+        "coordinate_beta_upper": [
+          {
+            "denominator": 19807040628566084398385987584,
+            "numerator": 14005692743696534979682984557
+          },
+          {
+            "denominator": 19807040628566084398385987584,
+            "numerator": 14005692743696534979682984557
+          }
+        ],
+        "maximum_slice_image_sizes": [
+          2,
+          2
+        ],
+        "trace_distance_upper": {
+          "denominator": 1,
+          "numerator": 1
+        }
+      },
+      "interpretation": "Exact source counts; floating trace norms. Optimal finite discrimination is not an implemented decoder.",
+      "label_tuples": 16,
+      "n": 2,
+      "name": "low-sum-dependent-coordinate-bits",
+      "normalization_denominator": 64,
+      "optimal_equal_prior_success": 0.7337703125829258,
+      "parity_trace_distance": 0.46754062516585165,
+      "samples": 2,
+      "single_coordinate_dephasing_distances": [
+        0.3000050930493662,
+        0.3000050930493662
+      ],
+      "z_born_mass_numerators": {
+        "0": 40,
+        "1": 24
+      }
+    },
+    {
+      "checks": {
+        "coordinate_bounds_hold_numerically": true,
+        "fully_dephased_secrets_exactly_equal": true,
+        "parity_bound_holds_numerically": true,
+        "source_mass_exact": true
+      },
+      "classical_blocks": 4,
+      "conditioned_on_measured_low_sum": false,
+      "digest_outcomes": 1,
+      "fiber_profile": {
+        "bound_arithmetic": "outward dyadic square roots of exact integer fiber counts",
+        "coordinate_beta_upper": [
+          {
+            "denominator": 316912650057057350374175801344,
+            "numerator": 112045541949572279837463876455
+          },
+          {
+            "denominator": 316912650057057350374175801344,
+            "numerator": 112045541949572279837463876455
+          }
+        ],
+        "fiber_size_histograms": [
+          {
+            "8": 8
+          },
+          {
+            "8": 8
+          }
+        ],
+        "maximum_slice_image_sizes": [
+          1,
+          1
+        ],
+        "trace_distance_upper": {
+          "denominator": 158456325028528675187087900672,
+          "numerator": 112045541949572279837463876455
+        }
+      },
+      "interpretation": "Exact source counts; floating trace norms. Optimal finite discrimination is not an implemented decoder.",
+      "label_tuples": 64,
+      "n": 3,
+      "name": "discard-all",
+      "normalization_denominator": 256,
+      "optimal_equal_prior_success": 0.609375,
+      "parity_trace_distance": 0.21875,
+      "samples": 2,
+      "single_coordinate_dephasing_distances": [
+        0.09661468040433785,
+        0.09661468040433786
+      ],
+      "z_born_mass_numerators": {
+        "0": 112,
+        "1": 48,
+        "2": 48,
+        "3": 48
+      }
+    },
+    {
+      "checks": {
+        "coordinate_bounds_hold_numerically": true,
+        "fully_dephased_secrets_exactly_equal": true,
+        "parity_bound_holds_numerically": true,
+        "source_mass_exact": true
+      },
+      "classical_blocks": 16,
+      "conditioned_on_measured_low_sum": false,
+      "digest_outcomes": 4,
+      "fiber_profile": {
+        "bound_arithmetic": "outward dyadic square roots of exact integer fiber counts",
+        "coordinate_beta_upper": [
+          {
+            "denominator": 2,
+            "numerator": 1
+          },
+          {
+            "denominator": 2,
+            "numerator": 1
+          }
+        ],
+        "fiber_size_histograms": [
+          {
+            "4": 16
+          },
+          {
+            "4": 16
+          }
+        ],
+        "maximum_slice_image_sizes": [
+          2,
+          2
+        ],
+        "trace_distance_upper": {
+          "denominator": 1,
+          "numerator": 1
+        }
+      },
+      "interpretation": "Exact source counts; floating trace norms. Optimal finite discrimination is not an implemented decoder.",
+      "label_tuples": 64,
+      "n": 3,
+      "name": "coordinate-top-bit",
+      "normalization_denominator": 256,
+      "optimal_equal_prior_success": 0.628528306796994,
+      "parity_trace_distance": 0.2570566135939881,
+      "samples": 2,
+      "single_coordinate_dephasing_distances": [
+        0.16310614234102996,
+        0.16310614234102996
+      ],
+      "z_born_mass_numerators": {
+        "0": 112,
+        "1": 48,
+        "2": 48,
+        "3": 48
+      }
+    },
+    {
+      "checks": {
+        "coordinate_bounds_hold_numerically": true,
+        "fully_dephased_secrets_exactly_equal": true,
+        "parity_bound_holds_numerically": true,
+        "source_mass_exact": true
+      },
+      "classical_blocks": 8,
+      "conditioned_on_measured_low_sum": false,
+      "digest_outcomes": 2,
+      "fiber_profile": {
+        "bound_arithmetic": "outward dyadic square roots of exact integer fiber counts",
+        "coordinate_beta_upper": [
+          {
+            "denominator": 2,
+            "numerator": 1
+          },
+          {
+            "denominator": 2,
+            "numerator": 1
+          }
+        ],
+        "fiber_size_histograms": [
+          {
+            "4": 16
+          },
+          {
+            "4": 16
+          }
+        ],
+        "maximum_slice_image_sizes": [
+          2,
+          2
+        ],
+        "trace_distance_upper": {
+          "denominator": 1,
+          "numerator": 1
+        }
+      },
+      "interpretation": "Exact source counts; floating trace norms. Optimal finite discrimination is not an implemented decoder.",
+      "label_tuples": 64,
+      "n": 3,
+      "name": "joint-sum-top-bit",
+      "normalization_denominator": 256,
+      "optimal_equal_prior_success": 0.6141391381864743,
+      "parity_trace_distance": 0.2282782763729486,
+      "samples": 2,
+      "single_coordinate_dephasing_distances": [
+        0.14957833432635023,
+        0.14957833432635026
+      ],
+      "z_born_mass_numerators": {
+        "0": 112,
+        "1": 48,
+        "2": 48,
+        "3": 48
+      }
+    },
+    {
+      "checks": {
+        "coordinate_bounds_hold_numerically": true,
+        "fully_dephased_secrets_exactly_equal": true,
+        "parity_bound_holds_numerically": true,
+        "source_mass_exact": true
+      },
+      "classical_blocks": 32,
+      "conditioned_on_measured_low_sum": false,
+      "digest_outcomes": 8,
+      "fiber_profile": {
+        "bound_arithmetic": "outward dyadic square roots of exact integer fiber counts",
+        "coordinate_beta_upper": [
+          {
+            "denominator": 1,
+            "numerator": 1
+          },
+          {
+            "denominator": 1,
+            "numerator": 1
+          }
+        ],
+        "fiber_size_histograms": [
+          {
+            "1": 64
+          },
+          {
+            "1": 64
+          }
+        ],
+        "maximum_slice_image_sizes": [
+          8,
+          8
+        ],
+        "trace_distance_upper": {
+          "denominator": 1,
+          "numerator": 1
+        }
+      },
+      "interpretation": "Exact source counts; floating trace norms. Optimal finite discrimination is not an implemented decoder.",
+      "label_tuples": 64,
+      "n": 3,
+      "name": "joint-full-sum",
+      "normalization_denominator": 256,
+      "optimal_equal_prior_success": 0.6366037607362389,
+      "parity_trace_distance": 0.27320752147247773,
+      "samples": 2,
+      "single_coordinate_dephasing_distances": [
+        0.19129126073623887,
+        0.19129126073623887
+      ],
+      "z_born_mass_numerators": {
+        "0": 112,
+        "1": 48,
+        "2": 48,
+        "3": 48
+      }
+    },
+    {
+      "checks": {
+        "coordinate_bounds_hold_numerically": true,
+        "fully_dephased_secrets_exactly_equal": true,
+        "parity_bound_holds_numerically": true,
+        "source_mass_exact": true
+      },
+      "classical_blocks": 172,
+      "conditioned_on_measured_low_sum": false,
+      "digest_outcomes": 64,
+      "fiber_profile": {
+        "bound_arithmetic": "outward dyadic square roots of exact integer fiber counts",
+        "coordinate_beta_upper": [
+          {
+            "denominator": 1,
+            "numerator": 1
+          },
+          {
+            "denominator": 1,
+            "numerator": 1
+          }
+        ],
+        "fiber_size_histograms": [
+          {
+            "1": 64
+          },
+          {
+            "1": 64
+          }
+        ],
+        "maximum_slice_image_sizes": [
+          8,
+          8
+        ],
+        "trace_distance_upper": {
+          "denominator": 1,
+          "numerator": 1
+        }
+      },
+      "interpretation": "Exact source counts; floating trace norms. Optimal finite discrimination is not an implemented decoder.",
+      "label_tuples": 64,
+      "n": 3,
+      "name": "full-labels",
+      "normalization_denominator": 256,
+      "optimal_equal_prior_success": 0.6640625,
+      "parity_trace_distance": 0.328125,
+      "samples": 2,
+      "single_coordinate_dephasing_distances": [
+        0.21875,
+        0.21875
+      ],
+      "z_born_mass_numerators": {
+        "0": 112,
+        "1": 48,
+        "2": 48,
+        "3": 48
+      }
+    },
+    {
+      "checks": {
+        "coordinate_bounds_hold_numerically": true,
+        "fully_dephased_secrets_exactly_equal": true,
+        "parity_bound_holds_numerically": true,
+        "source_mass_exact": true
+      },
+      "classical_blocks": 13,
+      "conditioned_on_measured_low_sum": false,
+      "digest_outcomes": 4,
+      "fiber_profile": {
+        "bound_arithmetic": "outward dyadic square roots of exact integer fiber counts",
+        "coordinate_beta_upper": [
+          {
+            "denominator": 19807040628566084398385987584,
+            "numerator": 9026443042488051836980117297
+          },
+          {
+            "denominator": 19807040628566084398385987584,
+            "numerator": 9026443042488051836980117297
+          }
+        ],
+        "fiber_size_histograms": [
+          {
+            "1": 8,
+            "7": 8
+          },
+          {
+            "1": 8,
+            "7": 8
+          }
+        ],
+        "maximum_slice_image_sizes": [
+          2,
+          2
+        ],
+        "trace_distance_upper": {
+          "denominator": 9903520314283042199192993792,
+          "numerator": 9026443042488051836980117297
+        }
+      },
+      "interpretation": "Exact source counts; floating trace norms. Optimal finite discrimination is not an implemented decoder.",
+      "label_tuples": 64,
+      "n": 3,
+      "name": "rare-coordinate-flag",
+      "normalization_denominator": 256,
+      "optimal_equal_prior_success": 0.6108129956611151,
+      "parity_trace_distance": 0.22162599132223032,
+      "samples": 2,
+      "single_coordinate_dephasing_distances": [
+        0.15654816727244084,
+        0.15654816727244084
+      ],
+      "z_born_mass_numerators": {
+        "0": 112,
+        "1": 48,
+        "2": 48,
+        "3": 48
+      }
+    },
+    {
+      "checks": {
+        "coordinate_bounds_hold_numerically": true,
+        "fully_dephased_secrets_exactly_equal": true,
+        "parity_bound_holds_numerically": true,
+        "source_mass_exact": true
+      },
+      "classical_blocks": 8,
+      "conditioned_on_measured_low_sum": true,
+      "digest_outcomes": 2,
+      "fiber_profile": {
+        "bound_arithmetic": "outward roots of low-sum-weighted conditional image sizes",
+        "coordinate_beta_upper": [
+          {
+            "denominator": 2,
+            "numerator": 1
+          },
+          {
+            "denominator": 316912650057057350374175801344,
+            "numerator": 130931787636165418161230178033
+          }
+        ],
+        "maximum_slice_image_sizes": [
+          2,
+          2
+        ],
+        "trace_distance_upper": {
+          "denominator": 316912650057057350374175801344,
+          "numerator": 289388112664694093348318078705
+        }
+      },
+      "interpretation": "Exact source counts; floating trace norms. Optimal finite discrimination is not an implemented decoder.",
+      "label_tuples": 64,
+      "n": 3,
+      "name": "low-sum-dependent-joint-bit",
+      "normalization_denominator": 256,
+      "optimal_equal_prior_success": 0.618396183528497,
+      "parity_trace_distance": 0.23679236705699402,
+      "samples": 2,
+      "single_coordinate_dephasing_distances": [
+        0.14957833432635026,
+        0.12920890618061928
+      ],
+      "z_born_mass_numerators": {
+        "0": 112,
+        "1": 48,
+        "2": 48,
+        "3": 48
+      }
+    },
+    {
+      "checks": {
+        "coordinate_bounds_hold_numerically": true,
+        "fully_dephased_secrets_exactly_equal": true,
+        "parity_bound_holds_numerically": true,
+        "source_mass_exact": true
+      },
+      "classical_blocks": 16,
+      "conditioned_on_measured_low_sum": true,
+      "digest_outcomes": 4,
+      "fiber_profile": {
+        "bound_arithmetic": "outward roots of low-sum-weighted conditional image sizes",
+        "coordinate_beta_upper": [
+          {
+            "denominator": 2,
+            "numerator": 1
+          },
+          {
+            "denominator": 2,
+            "numerator": 1
+          }
+        ],
+        "maximum_slice_image_sizes": [
+          2,
+          2
+        ],
+        "trace_distance_upper": {
+          "denominator": 1,
+          "numerator": 1
+        }
+      },
+      "interpretation": "Exact source counts; floating trace norms. Optimal finite discrimination is not an implemented decoder.",
+      "label_tuples": 64,
+      "n": 3,
+      "name": "low-sum-dependent-coordinate-bits",
+      "normalization_denominator": 256,
+      "optimal_equal_prior_success": 0.628528306796994,
+      "parity_trace_distance": 0.2570566135939881,
+      "samples": 2,
+      "single_coordinate_dephasing_distances": [
+        0.16310614234102996,
+        0.16310614234102996
+      ],
+      "z_born_mass_numerators": {
+        "0": 112,
+        "1": 48,
+        "2": 48,
+        "3": 48
+      }
+    },
+    {
+      "checks": {
+        "coordinate_bounds_hold_numerically": true,
+        "fully_dephased_secrets_exactly_equal": true,
+        "parity_bound_holds_numerically": true,
+        "source_mass_exact": true
+      },
+      "classical_blocks": 4,
+      "conditioned_on_measured_low_sum": false,
+      "digest_outcomes": 1,
+      "fiber_profile": {
+        "bound_arithmetic": "outward dyadic square roots of exact integer fiber counts",
+        "coordinate_beta_upper": [
+          {
+            "denominator": 316912650057057350374175801344,
+            "numerator": 112045541949572279837463876455
+          },
+          {
+            "denominator": 316912650057057350374175801344,
+            "numerator": 112045541949572279837463876455
+          },
+          {
+            "denominator": 316912650057057350374175801344,
+            "numerator": 112045541949572279837463876455
+          }
+        ],
+        "fiber_size_histograms": [
+          {
+            "8": 64
+          },
+          {
+            "8": 64
+          },
+          {
+            "8": 64
+          }
+        ],
+        "maximum_slice_image_sizes": [
+          1,
+          1,
+          1
+        ],
+        "trace_distance_upper": {
+          "denominator": 1,
+          "numerator": 1
+        }
+      },
+      "interpretation": "Exact source counts; floating trace norms. Optimal finite discrimination is not an implemented decoder.",
+      "label_tuples": 512,
+      "n": 3,
+      "name": "discard-all",
+      "normalization_denominator": 4096,
+      "optimal_equal_prior_success": 0.625,
+      "parity_trace_distance": 0.25000000000000006,
+      "samples": 3,
+      "single_coordinate_dephasing_distances": [
+        0.08681431410786135,
+        0.08681431410786133,
+        0.08681431410786133
+      ],
+      "z_born_mass_numerators": {
+        "0": 1408,
+        "1": 896,
+        "2": 896,
+        "3": 896
+      }
+    },
+    {
+      "checks": {
+        "coordinate_bounds_hold_numerically": true,
+        "fully_dephased_secrets_exactly_equal": true,
+        "parity_bound_holds_numerically": true,
+        "source_mass_exact": true
+      },
+      "classical_blocks": 32,
+      "conditioned_on_measured_low_sum": false,
+      "digest_outcomes": 8,
+      "fiber_profile": {
+        "bound_arithmetic": "outward dyadic square roots of exact integer fiber counts",
+        "coordinate_beta_upper": [
+          {
+            "denominator": 2,
+            "numerator": 1
+          },
+          {
+            "denominator": 2,
+            "numerator": 1
+          },
+          {
+            "denominator": 2,
+            "numerator": 1
+          }
+        ],
+        "fiber_size_histograms": [
+          {
+            "4": 128
+          },
+          {
+            "4": 128
+          },
+          {
+            "4": 128
+          }
+        ],
+        "maximum_slice_image_sizes": [
+          2,
+          2,
+          2
+        ],
+        "trace_distance_upper": {
+          "denominator": 1,
+          "numerator": 1
+        }
+      },
+      "interpretation": "Exact source counts; floating trace norms. Optimal finite discrimination is not an implemented decoder.",
+      "label_tuples": 512,
+      "n": 3,
+      "name": "coordinate-top-bit",
+      "normalization_denominator": 4096,
+      "optimal_equal_prior_success": 0.6748081265275883,
+      "parity_trace_distance": 0.34961625305517646,
+      "samples": 3,
+      "single_coordinate_dephasing_distances": [
+        0.17740582362245919,
+        0.17740582362245916,
+        0.17740582362245916
+      ],
+      "z_born_mass_numerators": {
+        "0": 1408,
+        "1": 896,
+        "2": 896,
+        "3": 896
+      }
+    },
+    {
+      "checks": {
+        "coordinate_bounds_hold_numerically": true,
+        "fully_dephased_secrets_exactly_equal": true,
+        "parity_bound_holds_numerically": true,
+        "source_mass_exact": true
+      },
+      "classical_blocks": 8,
+      "conditioned_on_measured_low_sum": false,
+      "digest_outcomes": 2,
+      "fiber_profile": {
+        "bound_arithmetic": "outward dyadic square roots of exact integer fiber counts",
+        "coordinate_beta_upper": [
+          {
+            "denominator": 2,
+            "numerator": 1
+          },
+          {
+            "denominator": 2,
+            "numerator": 1
+          },
+          {
+            "denominator": 2,
+            "numerator": 1
+          }
+        ],
+        "fiber_size_histograms": [
+          {
+            "4": 128
+          },
+          {
+            "4": 128
+          },
+          {
+            "4": 128
+          }
+        ],
+        "maximum_slice_image_sizes": [
+          2,
+          2,
+          2
+        ],
+        "trace_distance_upper": {
+          "denominator": 1,
+          "numerator": 1
+        }
+      },
+      "interpretation": "Exact source counts; floating trace norms. Optimal finite discrimination is not an implemented decoder.",
+      "label_tuples": 512,
+      "n": 3,
+      "name": "joint-sum-top-bit",
+      "normalization_denominator": 4096,
+      "optimal_equal_prior_success": 0.6262308002254636,
+      "parity_trace_distance": 0.2524616004509272,
+      "samples": 3,
+      "single_coordinate_dephasing_distances": [
+        0.14393635388259846,
+        0.14393635388259848,
+        0.14393635388259846
+      ],
+      "z_born_mass_numerators": {
+        "0": 1408,
+        "1": 896,
+        "2": 896,
+        "3": 896
+      }
+    },
+    {
+      "checks": {
+        "coordinate_bounds_hold_numerically": true,
+        "fully_dephased_secrets_exactly_equal": true,
+        "parity_bound_holds_numerically": true,
+        "source_mass_exact": true
+      },
+      "classical_blocks": 32,
+      "conditioned_on_measured_low_sum": false,
+      "digest_outcomes": 8,
+      "fiber_profile": {
+        "bound_arithmetic": "outward dyadic square roots of exact integer fiber counts",
+        "coordinate_beta_upper": [
+          {
+            "denominator": 1,
+            "numerator": 1
+          },
+          {
+            "denominator": 1,
+            "numerator": 1
+          },
+          {
+            "denominator": 1,
+            "numerator": 1
+          }
+        ],
+        "fiber_size_histograms": [
+          {
+            "1": 512
+          },
+          {
+            "1": 512
+          },
+          {
+            "1": 512
+          }
+        ],
+        "maximum_slice_image_sizes": [
+          8,
+          8,
+          8
+        ],
+        "trace_distance_upper": {
+          "denominator": 1,
+          "numerator": 1
+        }
+      },
+      "interpretation": "Exact source counts; floating trace norms. Optimal finite discrimination is not an implemented decoder.",
+      "label_tuples": 512,
+      "n": 3,
+      "name": "joint-full-sum",
+      "normalization_denominator": 4096,
+      "optimal_equal_prior_success": 0.669921875,
+      "parity_trace_distance": 0.33984375000000006,
+      "samples": 3,
+      "single_coordinate_dephasing_distances": [
+        0.21875,
+        0.21875,
+        0.21875000000000003
+      ],
+      "z_born_mass_numerators": {
+        "0": 1408,
+        "1": 896,
+        "2": 896,
+        "3": 896
+      }
+    },
+    {
+      "checks": {
+        "coordinate_bounds_hold_numerically": true,
+        "fully_dephased_secrets_exactly_equal": true,
+        "parity_bound_holds_numerically": true,
+        "source_mass_exact": true
+      },
+      "classical_blocks": 1720,
+      "conditioned_on_measured_low_sum": false,
+      "digest_outcomes": 512,
+      "fiber_profile": {
+        "bound_arithmetic": "outward dyadic square roots of exact integer fiber counts",
+        "coordinate_beta_upper": [
+          {
+            "denominator": 1,
+            "numerator": 1
+          },
+          {
+            "denominator": 1,
+            "numerator": 1
+          },
+          {
+            "denominator": 1,
+            "numerator": 1
+          }
+        ],
+        "fiber_size_histograms": [
+          {
+            "1": 512
+          },
+          {
+            "1": 512
+          },
+          {
+            "1": 512
+          }
+        ],
+        "maximum_slice_image_sizes": [
+          8,
+          8,
+          8
+        ],
+        "trace_distance_upper": {
+          "denominator": 1,
+          "numerator": 1
+        }
+      },
+      "interpretation": "Exact source counts; floating trace norms. Optimal finite discrimination is not an implemented decoder.",
+      "label_tuples": 512,
+      "n": 3,
+      "name": "full-labels",
+      "normalization_denominator": 4096,
+      "optimal_equal_prior_success": 0.7928411413351854,
+      "parity_trace_distance": 0.5856822826703707,
+      "samples": 3,
+      "single_coordinate_dephasing_distances": [
+        0.33325667382415924,
+        0.33325667382415924,
+        0.33325667382415924
+      ],
+      "z_born_mass_numerators": {
+        "0": 1408,
+        "1": 896,
+        "2": 896,
+        "3": 896
+      }
+    },
+    {
+      "checks": {
+        "coordinate_bounds_hold_numerically": true,
+        "fully_dephased_secrets_exactly_equal": true,
+        "parity_bound_holds_numerically": true,
+        "source_mass_exact": true
+      },
+      "classical_blocks": 29,
+      "conditioned_on_measured_low_sum": false,
+      "digest_outcomes": 8,
+      "fiber_profile": {
+        "bound_arithmetic": "outward dyadic square roots of exact integer fiber counts",
+        "coordinate_beta_upper": [
+          {
+            "denominator": 19807040628566084398385987584,
+            "numerator": 9026443042488051836980117297
+          },
+          {
+            "denominator": 19807040628566084398385987584,
+            "numerator": 9026443042488051836980117297
+          },
+          {
+            "denominator": 19807040628566084398385987584,
+            "numerator": 9026443042488051836980117297
+          }
+        ],
+        "fiber_size_histograms": [
+          {
+            "1": 64,
+            "7": 64
+          },
+          {
+            "1": 64,
+            "7": 64
+          },
+          {
+            "1": 64,
+            "7": 64
+          }
+        ],
+        "maximum_slice_image_sizes": [
+          2,
+          2,
+          2
+        ],
+        "trace_distance_upper": {
+          "denominator": 1,
+          "numerator": 1
+        }
+      },
+      "interpretation": "Exact source counts; floating trace norms. Optimal finite discrimination is not an implemented decoder.",
+      "label_tuples": 512,
+      "n": 3,
+      "name": "rare-coordinate-flag",
+      "normalization_denominator": 4096,
+      "optimal_equal_prior_success": 0.6294690392354949,
+      "parity_trace_distance": 0.2589380784709899,
+      "samples": 3,
+      "single_coordinate_dephasing_distances": [
+        0.17110639981964637,
+        0.17110639981964637,
+        0.17110639981964643
+      ],
+      "z_born_mass_numerators": {
+        "0": 1408,
+        "1": 896,
+        "2": 896,
+        "3": 896
+      }
+    },
+    {
+      "checks": {
+        "coordinate_bounds_hold_numerically": true,
+        "fully_dephased_secrets_exactly_equal": true,
+        "parity_bound_holds_numerically": true,
+        "source_mass_exact": true
+      },
+      "classical_blocks": 8,
+      "conditioned_on_measured_low_sum": true,
+      "digest_outcomes": 2,
+      "fiber_profile": {
+        "bound_arithmetic": "outward roots of low-sum-weighted conditional image sizes",
+        "coordinate_beta_upper": [
+          {
+            "denominator": 2,
+            "numerator": 1
+          },
+          {
+            "denominator": 1267650600228229401496703205376,
+            "numerator": 559106071567727696805077608983
+          },
+          {
+            "denominator": 39614081257132168796771975168,
+            "numerator": 14005692743696534979682984557
+          }
+        ],
+        "maximum_slice_image_sizes": [
+          2,
+          2,
+          1
+        ],
+        "trace_distance_upper": {
+          "denominator": 1,
+          "numerator": 1
+        }
+      },
+      "interpretation": "Exact source counts; floating trace norms. Optimal finite discrimination is not an implemented decoder.",
+      "label_tuples": 512,
+      "n": 3,
+      "name": "low-sum-dependent-joint-bit",
+      "normalization_denominator": 4096,
+      "optimal_equal_prior_success": 0.6311527778838035,
+      "parity_trace_distance": 0.26230555576760717,
+      "samples": 3,
+      "single_coordinate_dephasing_distances": [
+        0.12789240651407535,
+        0.10965100237013567,
+        0.08956329386826371
+      ],
+      "z_born_mass_numerators": {
+        "0": 1408,
+        "1": 896,
+        "2": 896,
+        "3": 896
+      }
+    },
+    {
+      "checks": {
+        "coordinate_bounds_hold_numerically": true,
+        "fully_dephased_secrets_exactly_equal": true,
+        "parity_bound_holds_numerically": true,
+        "source_mass_exact": true
+      },
+      "classical_blocks": 32,
+      "conditioned_on_measured_low_sum": true,
+      "digest_outcomes": 8,
+      "fiber_profile": {
+        "bound_arithmetic": "outward roots of low-sum-weighted conditional image sizes",
+        "coordinate_beta_upper": [
+          {
+            "denominator": 2,
+            "numerator": 1
+          },
+          {
+            "denominator": 2,
+            "numerator": 1
+          },
+          {
+            "denominator": 2,
+            "numerator": 1
+          }
+        ],
+        "maximum_slice_image_sizes": [
+          2,
+          2,
+          2
+        ],
+        "trace_distance_upper": {
+          "denominator": 1,
+          "numerator": 1
+        }
+      },
+      "interpretation": "Exact source counts; floating trace norms. Optimal finite discrimination is not an implemented decoder.",
+      "label_tuples": 512,
+      "n": 3,
+      "name": "low-sum-dependent-coordinate-bits",
+      "normalization_denominator": 4096,
+      "optimal_equal_prior_success": 0.6655398624201838,
+      "parity_trace_distance": 0.3310797248403675,
+      "samples": 3,
+      "single_coordinate_dephasing_distances": [
+        0.1703701763266161,
+        0.1703701763266161,
+        0.17037017632661608
+      ],
+      "z_born_mass_numerators": {
+        "0": 1408,
+        "1": 896,
+        "2": 896,
+        "3": 896
+      }
+    },
+    {
+      "checks": {
+        "coordinate_bounds_hold_numerically": true,
+        "fully_dephased_secrets_exactly_equal": true,
+        "parity_bound_holds_numerically": true,
+        "source_mass_exact": true
+      },
+      "classical_blocks": 8,
+      "conditioned_on_measured_low_sum": false,
+      "digest_outcomes": 1,
+      "fiber_profile": {
+        "bound_arithmetic": "outward dyadic square roots of exact integer fiber counts",
+        "coordinate_beta_upper": [
+          {
+            "denominator": 4,
+            "numerator": 1
+          },
+          {
+            "denominator": 4,
+            "numerator": 1
+          }
+        ],
+        "fiber_size_histograms": [
+          {
+            "16": 16
+          },
+          {
+            "16": 16
+          }
+        ],
+        "maximum_slice_image_sizes": [
+          1,
+          1
+        ],
+        "trace_distance_upper": {
+          "denominator": 2,
+          "numerator": 1
+        }
+      },
+      "interpretation": "Exact source counts; floating trace norms. Optimal finite discrimination is not an implemented decoder.",
+      "label_tuples": 256,
+      "n": 4,
+      "name": "discard-all",
+      "normalization_denominator": 1024,
+      "optimal_equal_prior_success": 0.5564305546668942,
+      "parity_trace_distance": 0.1128611093337883,
+      "samples": 2,
+      "single_coordinate_dephasing_distances": [
+        0.050706783868790385,
+        0.05070678386879039
+      ],
+      "z_born_mass_numerators": {
+        "0": 352,
+        "1": 96,
+        "2": 96,
+        "3": 96,
+        "4": 96,
+        "5": 96,
+        "6": 96,
+        "7": 96
+      }
+    },
+    {
+      "checks": {
+        "coordinate_bounds_hold_numerically": true,
+        "fully_dephased_secrets_exactly_equal": true,
+        "parity_bound_holds_numerically": true,
+        "source_mass_exact": true
+      },
+      "classical_blocks": 32,
+      "conditioned_on_measured_low_sum": false,
+      "digest_outcomes": 4,
+      "fiber_profile": {
+        "bound_arithmetic": "outward dyadic square roots of exact integer fiber counts",
+        "coordinate_beta_upper": [
+          {
+            "denominator": 316912650057057350374175801344,
+            "numerator": 112045541949572279837463876455
+          },
+          {
+            "denominator": 316912650057057350374175801344,
+            "numerator": 112045541949572279837463876455
+          }
+        ],
+        "fiber_size_histograms": [
+          {
+            "8": 32
+          },
+          {
+            "8": 32
+          }
+        ],
+        "maximum_slice_image_sizes": [
+          2,
+          2
+        ],
+        "trace_distance_upper": {
+          "denominator": 158456325028528675187087900672,
+          "numerator": 112045541949572279837463876455
+        }
+      },
+      "interpretation": "Exact source counts; floating trace norms. Optimal finite discrimination is not an implemented decoder.",
+      "label_tuples": 256,
+      "n": 4,
+      "name": "coordinate-top-bit",
+      "normalization_denominator": 1024,
+      "optimal_equal_prior_success": 0.5671856390375017,
+      "parity_trace_distance": 0.13437127807500351,
+      "samples": 2,
+      "single_coordinate_dephasing_distances": [
+        0.08493031175823774,
+        0.08493031175823774
+      ],
+      "z_born_mass_numerators": {
+        "0": 352,
+        "1": 96,
+        "2": 96,
+        "3": 96,
+        "4": 96,
+        "5": 96,
+        "6": 96,
+        "7": 96
+      }
+    },
+    {
+      "checks": {
+        "coordinate_bounds_hold_numerically": true,
+        "fully_dephased_secrets_exactly_equal": true,
+        "parity_bound_holds_numerically": true,
+        "source_mass_exact": true
+      },
+      "classical_blocks": 16,
+      "conditioned_on_measured_low_sum": false,
+      "digest_outcomes": 2,
+      "fiber_profile": {
+        "bound_arithmetic": "outward dyadic square roots of exact integer fiber counts",
+        "coordinate_beta_upper": [
+          {
+            "denominator": 316912650057057350374175801344,
+            "numerator": 112045541949572279837463876455
+          },
+          {
+            "denominator": 316912650057057350374175801344,
+            "numerator": 112045541949572279837463876455
+          }
+        ],
+        "fiber_size_histograms": [
+          {
+            "8": 32
+          },
+          {
+            "8": 32
+          }
+        ],
+        "maximum_slice_image_sizes": [
+          2,
+          2
+        ],
+        "trace_distance_upper": {
+          "denominator": 158456325028528675187087900672,
+          "numerator": 112045541949572279837463876455
+        }
+      },
+      "interpretation": "Exact source counts; floating trace norms. Optimal finite discrimination is not an implemented decoder.",
+      "label_tuples": 256,
+      "n": 4,
+      "name": "joint-sum-top-bit",
+      "normalization_denominator": 1024,
+      "optimal_equal_prior_success": 0.5596659379038,
+      "parity_trace_distance": 0.11933187580759999,
+      "samples": 2,
+      "single_coordinate_dephasing_distances": [
+        0.07772787348806279,
+        0.07772787348806277
+      ],
+      "z_born_mass_numerators": {
+        "0": 352,
+        "1": 96,
+        "2": 96,
+        "3": 96,
+        "4": 96,
+        "5": 96,
+        "6": 96,
+        "7": 96
+      }
+    },
+    {
+      "checks": {
+        "coordinate_bounds_hold_numerically": true,
+        "fully_dephased_secrets_exactly_equal": true,
+        "parity_bound_holds_numerically": true,
+        "source_mass_exact": true
+      },
+      "classical_blocks": 128,
+      "conditioned_on_measured_low_sum": false,
+      "digest_outcomes": 16,
+      "fiber_profile": {
+        "bound_arithmetic": "outward dyadic square roots of exact integer fiber counts",
+        "coordinate_beta_upper": [
+          {
+            "denominator": 1,
+            "numerator": 1
+          },
+          {
+            "denominator": 1,
+            "numerator": 1
+          }
+        ],
+        "fiber_size_histograms": [
+          {
+            "1": 256
+          },
+          {
+            "1": 256
+          }
+        ],
+        "maximum_slice_image_sizes": [
+          16,
+          16
+        ],
+        "trace_distance_upper": {
+          "denominator": 1,
+          "numerator": 1
+        }
+      },
+      "interpretation": "Exact source counts; floating trace norms. Optimal finite discrimination is not an implemented decoder.",
+      "label_tuples": 256,
+      "n": 4,
+      "name": "joint-full-sum",
+      "normalization_denominator": 1024,
+      "optimal_equal_prior_success": 0.5718730270961393,
+      "parity_trace_distance": 0.14374605419227865,
+      "samples": 2,
+      "single_coordinate_dephasing_distances": [
+        0.10116990209613932,
+        0.10116990209613932
+      ],
+      "z_born_mass_numerators": {
+        "0": 352,
+        "1": 96,
+        "2": 96,
+        "3": 96,
+        "4": 96,
+        "5": 96,
+        "6": 96,
+        "7": 96
+      }
+    },
+    {
+      "checks": {
+        "coordinate_bounds_hold_numerically": true,
+        "fully_dephased_secrets_exactly_equal": true,
+        "parity_bound_holds_numerically": true,
+        "source_mass_exact": true
+      },
+      "classical_blocks": 844,
+      "conditioned_on_measured_low_sum": false,
+      "digest_outcomes": 256,
+      "fiber_profile": {
+        "bound_arithmetic": "outward dyadic square roots of exact integer fiber counts",
+        "coordinate_beta_upper": [
+          {
+            "denominator": 1,
+            "numerator": 1
+          },
+          {
+            "denominator": 1,
+            "numerator": 1
+          }
+        ],
+        "fiber_size_histograms": [
+          {
+            "1": 256
+          },
+          {
+            "1": 256
+          }
+        ],
+        "maximum_slice_image_sizes": [
+          16,
+          16
+        ],
+        "trace_distance_upper": {
+          "denominator": 1,
+          "numerator": 1
+        }
+      },
+      "interpretation": "Exact source counts; floating trace norms. Optimal finite discrimination is not an implemented decoder.",
+      "label_tuples": 256,
+      "n": 4,
+      "name": "full-labels",
+      "normalization_denominator": 1024,
+      "optimal_equal_prior_success": 0.587890625,
+      "parity_trace_distance": 0.17578125,
+      "samples": 2,
+      "single_coordinate_dephasing_distances": [
+        0.1171875,
+        0.1171875
+      ],
+      "z_born_mass_numerators": {
+        "0": 352,
+        "1": 96,
+        "2": 96,
+        "3": 96,
+        "4": 96,
+        "5": 96,
+        "6": 96,
+        "7": 96
+      }
+    },
+    {
+      "checks": {
+        "coordinate_bounds_hold_numerically": true,
+        "fully_dephased_secrets_exactly_equal": true,
+        "parity_bound_holds_numerically": true,
+        "source_mass_exact": true
+      },
+      "classical_blocks": 25,
+      "conditioned_on_measured_low_sum": false,
+      "digest_outcomes": 4,
+      "fiber_profile": {
+        "bound_arithmetic": "outward dyadic square roots of exact integer fiber counts",
+        "coordinate_beta_upper": [
+          {
+            "denominator": 79228162514264337593543950336,
+            "numerator": 24129844780164053951390420769
+          },
+          {
+            "denominator": 79228162514264337593543950336,
+            "numerator": 24129844780164053951390420769
+          }
+        ],
+        "fiber_size_histograms": [
+          {
+            "1": 16,
+            "15": 16
+          },
+          {
+            "1": 16,
+            "15": 16
+          }
+        ],
+        "maximum_slice_image_sizes": [
+          2,
+          2
+        ],
+        "trace_distance_upper": {
+          "denominator": 39614081257132168796771975168,
+          "numerator": 24129844780164053951390420769
+        }
+      },
+      "interpretation": "Exact source counts; floating trace norms. Optimal finite discrimination is not an implemented decoder.",
+      "label_tuples": 256,
+      "n": 4,
+      "name": "rare-coordinate-flag",
+      "normalization_denominator": 1024,
+      "optimal_equal_prior_success": 0.5568575093145939,
+      "parity_trace_distance": 0.1137150186291877,
+      "samples": 2,
+      "single_coordinate_dephasing_distances": [
+        0.08093219275453382,
+        0.08093219275453382
+      ],
+      "z_born_mass_numerators": {
+        "0": 352,
+        "1": 96,
+        "2": 96,
+        "3": 96,
+        "4": 96,
+        "5": 96,
+        "6": 96,
+        "7": 96
+      }
+    },
+    {
+      "checks": {
+        "coordinate_bounds_hold_numerically": true,
+        "fully_dephased_secrets_exactly_equal": true,
+        "parity_bound_holds_numerically": true,
+        "source_mass_exact": true
+      },
+      "classical_blocks": 16,
+      "conditioned_on_measured_low_sum": true,
+      "digest_outcomes": 2,
+      "fiber_profile": {
+        "bound_arithmetic": "outward roots of low-sum-weighted conditional image sizes",
+        "coordinate_beta_upper": [
+          {
+            "denominator": 39614081257132168796771975168,
+            "numerator": 14005692743696534979682984557
+          },
+          {
+            "denominator": 633825300114114700748351602688,
+            "numerator": 189617040619534121495109034843
+          }
+        ],
+        "maximum_slice_image_sizes": [
+          2,
+          2
+        ],
+        "trace_distance_upper": {
+          "denominator": 633825300114114700748351602688,
+          "numerator": 413708124518678681170036787755
+        }
+      },
+      "interpretation": "Exact source counts; floating trace norms. Optimal finite discrimination is not an implemented decoder.",
+      "label_tuples": 256,
+      "n": 4,
+      "name": "low-sum-dependent-joint-bit",
+      "normalization_denominator": 1024,
+      "optimal_equal_prior_success": 0.562858721910317,
+      "parity_trace_distance": 0.12571744382063407,
+      "samples": 2,
+      "single_coordinate_dephasing_distances": [
+        0.07772787348806277,
+        0.06617411299144298
+      ],
+      "z_born_mass_numerators": {
+        "0": 352,
+        "1": 96,
+        "2": 96,
+        "3": 96,
+        "4": 96,
+        "5": 96,
+        "6": 96,
+        "7": 96
+      }
+    },
+    {
+      "checks": {
+        "coordinate_bounds_hold_numerically": true,
+        "fully_dephased_secrets_exactly_equal": true,
+        "parity_bound_holds_numerically": true,
+        "source_mass_exact": true
+      },
+      "classical_blocks": 32,
+      "conditioned_on_measured_low_sum": true,
+      "digest_outcomes": 4,
+      "fiber_profile": {
+        "bound_arithmetic": "outward roots of low-sum-weighted conditional image sizes",
+        "coordinate_beta_upper": [
+          {
+            "denominator": 39614081257132168796771975168,
+            "numerator": 14005692743696534979682984557
+          },
+          {
+            "denominator": 39614081257132168796771975168,
+            "numerator": 14005692743696534979682984557
+          }
+        ],
+        "maximum_slice_image_sizes": [
+          2,
+          2
+        ],
+        "trace_distance_upper": {
+          "denominator": 19807040628566084398385987584,
+          "numerator": 14005692743696534979682984557
+        }
+      },
+      "interpretation": "Exact source counts; floating trace norms. Optimal finite discrimination is not an implemented decoder.",
+      "label_tuples": 256,
+      "n": 4,
+      "name": "low-sum-dependent-coordinate-bits",
+      "normalization_denominator": 1024,
+      "optimal_equal_prior_success": 0.5671856390375017,
+      "parity_trace_distance": 0.13437127807500351,
+      "samples": 2,
+      "single_coordinate_dephasing_distances": [
+        0.08493031175823774,
+        0.08493031175823774
+      ],
+      "z_born_mass_numerators": {
+        "0": 352,
+        "1": 96,
+        "2": 96,
+        "3": 96,
+        "4": 96,
+        "5": 96,
+        "6": 96,
+        "7": 96
+      }
+    }
+  ],
+  "created_at": "2026-09-22T05:47:57.985136+00:00",
+  "declared_scope": {
+    "all_born_branches_and_failures_charged": true,
+    "digest_rule_fixed_before_labels_and_measurements": true,
+    "independent_uniform_fourier_labels": true,
+    "no_other_label_dependent_workspace_or_access": true,
+    "standard_low_subset_sum_bits_measured": true
+  },
+  "falsifiers_triggered": [
+    "A polynomial sample budget with a fixed coordinate digest losing a linear number of bits has vanishing parity information after this prefix.",
+    "A vacuous bound for a full joint sum or retained full labels is not positive evidence for an efficient decoder."
+  ],
+  "headline_metrics": {
+    "analytic_scaling_count": 10,
+    "finite_control_count": 32,
+    "finite_control_failure_count": 0,
+    "new_quantum_algorithm_count": 0
+  },
+  "joint_slice_formula": "T(rho_0,rho_1) <= min(1,sum_i E_{y_-i} sum_a sqrt(|{t:H(y_-i,t)=a}|)/N)",
+  "low_sum_conditioned_formula": "T <= sum_i E_u sqrt(sum_z A_u(z)*K_i(u,z)/(2^(m-1)*N)); A counts low sums with b_i=0",
+  "next_experiments": [
+    "Test a supplied full-label-sensitive uncomputation circuit against a compressed implementation with charged trace-distance error; merely storing labels does not escape a factorization.",
+    "Dependence on the measured low sum alone is not an escape: use the separately derived conditional-range bound. Other measurement-dependent summaries need their own physical analysis.",
+    "Develop an actual constructive coherent matching procedure; use witness-only, not uniform-fiber, requirements where justified."
+  ],
+  "scaling": [
+    {
+      "family": "top-third",
+      "log2_tv_upper": -0.5,
+      "n": 32,
+      "retained_bits_each": 11,
+      "samples": 1024,
+      "tv_upper": {
+        "denominator": 77371252455336267181195264,
+        "numerator": 54709737280064589764386659
+      },
+      "vacuous": false
+    },
+    {
+      "family": "lose-two-log-bits",
+      "log2_tv_upper": 0.0,
+      "n": 32,
+      "retained_bits_each": 22,
+      "samples": 1024,
+      "tv_upper": {
+        "denominator": 1,
+        "numerator": 1
+      },
+      "vacuous": true
+    },
+    {
+      "family": "top-third",
+      "log2_tv_upper": -9.0,
+      "n": 64,
+      "retained_bits_each": 22,
+      "samples": 4096,
+      "tv_upper": {
+        "denominator": 512,
+        "numerator": 1
+      },
+      "vacuous": false
+    },
+    {
+      "family": "lose-two-log-bits",
+      "log2_tv_upper": 0.0,
+      "n": 64,
+      "retained_bits_each": 52,
+      "samples": 4096,
+      "tv_upper": {
+        "denominator": 1,
+        "numerator": 1
+      },
+      "vacuous": true
+    },
+    {
+      "family": "top-third",
+      "log2_tv_upper": -28.5,
+      "n": 128,
+      "retained_bits_each": 43,
+      "samples": 16384,
+      "tv_upper": {
+        "denominator": 5575186299632655785383929568162090376495104,
+        "numerator": 14686033274414337862856065214698795
+      },
+      "vacuous": false
+    },
+    {
+      "family": "lose-two-log-bits",
+      "log2_tv_upper": 0.0,
+      "n": 128,
+      "retained_bits_each": 114,
+      "samples": 16384,
+      "tv_upper": {
+        "denominator": 1,
+        "numerator": 1
+      },
+      "vacuous": true
+    },
+    {
+      "family": "top-third",
+      "log2_tv_upper": -69.0,
+      "n": 256,
+      "retained_bits_each": 86,
+      "samples": 65536,
+      "tv_upper": {
+        "denominator": 590295810358705651712,
+        "numerator": 1
+      },
+      "vacuous": false
+    },
+    {
+      "family": "lose-two-log-bits",
+      "log2_tv_upper": 0.0,
+      "n": 256,
+      "retained_bits_each": 240,
+      "samples": 65536,
+      "tv_upper": {
+        "denominator": 1,
+        "numerator": 1
+      },
+      "vacuous": true
+    },
+    {
+      "family": "top-third",
+      "log2_tv_upper": -152.5,
+      "n": 512,
+      "retained_bits_each": 171,
+      "samples": 262144,
+      "tv_upper": {
+        "denominator": 219673525124179510879420825570604582952621929604585773100622830693937381868724993667921908501166545759273481964527387457187903615990932602002368905315681828864,
+        "numerator": 27208423607250879603838054280026999940381803975187946729250097998972175794162870073172160917186436622496053010679
+      },
+      "vacuous": false
+    },
+    {
+      "family": "lose-two-log-bits",
+      "log2_tv_upper": 0.0,
+      "n": 512,
+      "retained_bits_each": 494,
+      "samples": 262144,
+      "tv_upper": {
+        "denominator": 1,
+        "numerator": 1
+      },
+      "vacuous": true
+    }
+  ],
+  "source": {
+    "inspected_lean_commit": "6de8c1dbffec10b4b44b2cae3aeadeb1cf0cfc83",
+    "lean_replayed_locally": false,
+    "lean_url": "https://github.com/sragavan99/lean-ePrint-2026-1591-refutation",
+    "literature_id": "gupte-ragavan-zhandry-dcp-digest-2026",
+    "pdf_sha256": "66757d5e7ac99b4d30a4d6e7926185c370bcbcc7362fc0ae2f85caa65410c50d",
+    "scope": "Coordinatewise theorem is prior work. The joint-slice derivation here is not covered by the inspected Lean theorem.",
+    "url": "https://eprint.iacr.org/2026/1693"
+  },
+  "status": "derived-joint-slice-bound-review-pending",
+  "summary": "Audited physical DCP label digests and a conditional-slice extension of GRZ; no decoder, novelty or general DCP no-go claimed."
+}

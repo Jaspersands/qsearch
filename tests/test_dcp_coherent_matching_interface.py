@@ -1,4 +1,5 @@
 import os
+import json
 import tempfile
 import unittest
 from pathlib import Path
@@ -9,7 +10,7 @@ from dcp_coherent_matching_interface import (
     seeded_bridge_certificate,
     write_coherent_matching_interface_audit,
 )
-from research_registry import initialize_seed_registry, load_negative_results
+from research_registry import initialize_seed_registry, load_negative_results, load_experiment_results
 
 
 class DCPCoherentMatchingInterfaceTests(unittest.TestCase):
@@ -27,7 +28,7 @@ class DCPCoherentMatchingInterfaceTests(unittest.TestCase):
         self.assertLess(ratio, 2 ** (small.polynomial_success_exponent + 3))
         self.assertEqual(small.polynomial_success_exponent, 10)
 
-    def test_report_proves_shared_seed_interface_but_blocks_general_quantum_relation(self):
+    def test_report_keeps_conditional_interfaces_separate_from_solver_construction(self):
         report = run_coherent_matching_interface_audit(
             n_values=[16, 32], legal_coverage_exponents=[1, 2]
         )
@@ -36,6 +37,12 @@ class DCPCoherentMatchingInterfaceTests(unittest.TestCase):
         self.assertGreater(report.headline_metrics["zero_visibility_counterexample_count"], 0)
         self.assertTrue(report.claim_gate["seeded_randomized_partial_solver_bridge_proved"])
         self.assertFalse(report.claim_gate["speedup_claim_allowed"])
+        self.assertFalse(report.claim_gate["arbitrary_quantum_solvers_excluded"])
+        self.assertTrue(report.claim_gate["pairing_finite_controls_passed"])
+        self.assertEqual(report.headline_metrics["physical_pairing_control_count"], 9)
+        self.assertEqual(report.headline_metrics["physical_permutation_control_count"], 2)
+        self.assertEqual(report.headline_metrics["noise_mass_envelope_count"], 14)
+        self.assertIn("double-evaluation", report.source_contract["quantum_obstruction"])
 
     def test_writer_records_general_quantum_interface_negative(self):
         old_cwd = os.getcwd()
@@ -65,3 +72,83 @@ class DCPCoherentMatchingInterfaceTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+def test_no_registry_option_writes_only_requested_artifact(tmp_path, monkeypatch):
+    monkeypatch.chdir(tmp_path)
+    path = tmp_path/"audit.json"
+    payload = write_coherent_matching_interface_audit(path=path, write_registry=False,
+                                                     n_values=[16], legal_coverage_exponents=[1])
+    assert path.exists()
+    assert not (tmp_path/"research/registry").exists()
+    assert json.loads(path.read_text())["pairing_programs"]["control_failures"] == 0
+    assert payload["artifacts"]["dcp_coherent_matching_interface"] == str(path)
+
+
+def test_writer_honors_custom_ids_and_updates_instead_of_duplicating(tmp_path, monkeypatch):
+    monkeypatch.chdir(tmp_path)
+    for _ in range(2):
+        write_coherent_matching_interface_audit(n_values=[16], legal_coverage_exponents=[1],
+            registry_experiment_id="EXP-CUSTOM", registry_candidate_id="CUSTOM", registry_result_id="CUSTOM-RESULT")
+    results = load_experiment_results()
+    assert len(results) == 1
+    assert results[0]["id"] == "CUSTOM-RESULT"
+    assert results[0]["experiment_id"] == "EXP-CUSTOM"
+    assert results[0]["candidate_id"] == "CUSTOM"
+    negatives = load_negative_results()
+    assert len(negatives) == 3
+    assert all(item["applies_to"] == ["CUSTOM"] for item in negatives)
+
+
+def test_runner_and_direct_writer_share_one_fresh_result(tmp_path, monkeypatch):
+    from experiment_runner import run_experiment
+    from research_registry import validate_registry
+    monkeypatch.chdir(tmp_path)
+    initialize_seed_registry()
+    write_coherent_matching_interface_audit(n_values=[16], legal_coverage_exponents=[1])
+    run = run_experiment("EXP-DHS-DCP-COHERENT-MATCHING-INTERFACE")
+    results = [r for r in load_experiment_results() if r["experiment_id"] == run.experiment_id]
+    assert len(results) == 1
+    assert results[0]["id"] == run.result_id
+    assert results[0]["metrics"]["physical_pairing_failure_count"] == 0
+    assert results[0]["metrics"]["seeded_bridge_certificate_count"] == 12
+    assert validate_registry()["valid"]
+
+
+def test_failed_controls_do_not_record_mathematical_negatives(tmp_path, monkeypatch):
+    import dcp_coherent_matching_interface as audit
+    real = audit.build_pairing_controls
+    def failed():
+        report = real()
+        report["control_failures"] = 1
+        return report
+    monkeypatch.chdir(tmp_path)
+    monkeypatch.setattr(audit, "build_pairing_controls", failed)
+    payload = audit.write_coherent_matching_interface_audit(n_values=[16], legal_coverage_exponents=[1])
+    assert payload["status"] == "failed-physical-pairing-controls"
+    assert payload["claim_gate"]["pairing_finite_controls_passed"] is False
+    assert not load_negative_results()
+
+
+def test_pairing_proof_records_require_literal_verified_gates(tmp_path, monkeypatch):
+    from proof_tracker import _dcp_pairing_program_lemmas
+    monkeypatch.chdir(tmp_path)
+    records = _dcp_pairing_program_lemmas("DHS-GOWERS-SIEVE")
+    assert len(records) == 3
+    assert all(item.status.startswith("blocked") for item in records)
+    payload = write_coherent_matching_interface_audit(write_registry=False,
+                                                     n_values=[16], legal_coverage_exponents=[1])
+    assert all("review-pending" in item.status for item in _dcp_pairing_program_lemmas("DHS-GOWERS-SIEVE"))
+    payload["claim_gate"]["pairing_finite_controls_passed"] = "false"
+    Path("research/reductions/dcp_coherent_matching_interface.json").write_text(json.dumps(payload))
+    assert all(item.status.startswith("blocked") for item in _dcp_pairing_program_lemmas("DHS-GOWERS-SIEVE"))
+
+
+def test_new_scope_negatives_are_not_reported_as_classical_algorithms(tmp_path, monkeypatch):
+    from dequantization_checks import findings_from_negative_results
+    monkeypatch.chdir(tmp_path)
+    write_coherent_matching_interface_audit(n_values=[16], legal_coverage_exponents=[1])
+    findings = findings_from_negative_results([{"id": "DHS-GOWERS-SIEVE"}], load_negative_results())
+    pairing = [item for item in findings if item.id.endswith(("DCP-RECIPROCAL-COVERAGE-CONTRACT", "DCP-PAIRING-NOISE-COVERAGE-CONTRACT"))]
+    assert len(pairing) == 2
+    assert all("not classical dequantization" in item.required_action for item in pairing)

@@ -19,6 +19,14 @@ from research_registry import (
 
 
 class LiteraturePipelineTests(unittest.TestCase):
+    def test_dcp_digest_record_is_a_scoped_prior_work_barrier(self):
+        records = {record.id: record for record in extract_literature_records(refresh_arxiv=False)}
+        record = records["gupte-ragavan-zhandry-dcp-digest-2026"]
+        self.assertEqual(record.url, "https://eprint.iacr.org/2026/1693")
+        self.assertIn("m*sqrt(K/N)", record.no_go_barrier)
+        self.assertIn("Not a general DCP", record.no_go_barrier)
+        self.assertIn("measurement-dependent", record.no_go_barrier)
+
     def test_wreath_qft_toolbox_is_not_extracted_as_an_hsp_decoder(self):
         records = {record.id: record for record in extract_literature_records(refresh_arxiv=False)}
         record = records["bruinsma-posta-stokvis-grinko-ozols-qft-toolbox-2026"]

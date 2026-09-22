@@ -4135,26 +4135,31 @@ def seed_candidate_records() -> tuple[list[CandidateRecord], list[ExperimentReco
         ExperimentRecord(
             id="EXP-DHS-DCP-COHERENT-MATCHING-INTERFACE",
             candidate_id="DHS-GOWERS-SIEVE",
-            title="Coherent partial-solver matching-interface theorem audit",
+            title="Coherent DCP pairing programs, workspace and noise-weighted coverage",
             status="planned",
             hypothesis=(
-                "Regev's deterministic matching routine extends to randomized or quantum subset-sum partial solvers "
-                "when their randomness and witness workspaces preserve paired-endpoint coherence."
+                "Explicit mutual proposals or clean permutations extract parity if their source-average noise-weighted "
+                "half-period edge mass is inverse polynomial and all preparation, evaluation and inverse costs are polynomial."
             ),
             protocol=(
                 "Extract every deterministic use from the primary LaTeX source; derive an averaging and matching bound "
-                "for target-independent explicit shared seeds; compute exact paired-workspace interference visibility; "
-                "and separate seeded randomized solvers from arbitrary quantum relation solvers."
+                "for target-independent explicit shared seeds; replay six-call clean reciprocal pair maps and flagged "
+                "permutations; independently check prelabel-fault gauge mixtures; compare canonical, rank and noise-weighted "
+                "exponential matching references; compute exact natural-label Hamming-mass relaxations. "
+                "Keep the separate symmetric double-evaluation quantum relation lift outside the single-call obstruction."
             ),
             positive_signal=(
-                "A source-linked theorem proves inverse-polynomial DCP routine success for an expanded solver interface "
-                "with polynomial resources, balanced paired amplitudes, and reversible workspace erasure."
+                "An explicit uniform polynomial-time pairing program has inverse-polynomial natural-label-averaged "
+                "noise-weighted edge mass, with charged preprocessing, inverse access, workspace erasure and repetitions."
             ),
             falsifiers=[
                 "Solver coins are measured, target-dependent, or not shared across matched endpoints.",
                 "Different witnesses leave orthogonal which-path workspaces.",
                 "Paired amplitudes are unbalanced or have no inverse-polynomial overlap theorem.",
                 "An interface theorem is presented as if it constructed a subset-sum solver.",
+                "High witness rate is substituted for reciprocal or flagged source coverage.",
+                "Finite exponential fiber tables or a forward-only classical function are treated as an efficient clean permutation.",
+                "The gauge-conditioned noise law is used despite retained original labels, postlabel corruption or correlated faults.",
             ],
             metrics=[
                 "primary_source_deterministic_use_site_count",
@@ -4165,15 +4170,24 @@ def seed_candidate_records() -> tuple[list[CandidateRecord], list[ExperimentReco
                 "proved_arbitrary_quantum_relation_solver_bridge_count",
                 "proved_polynomial_partial_subset_sum_solver_count",
                 "source_contract_satisfying_solver_count",
+                "physical_pairing_control_count",
+                "physical_permutation_control_count",
+                "physical_pairing_failure_count",
+                "correlated_noise_control_count",
+                "noise_mass_envelope_count",
+                "efficient_pairing_finder_count",
             ],
             dependencies=[
                 "dcp_coherent_matching_interface.py",
+                "core/dcp_pairing_programs.py",
+                "research/DCP_PAIRING_PROGRAMS.md",
                 "dcp_subset_sum_bridge.py",
                 "research/literature_cache/cs_0304005_source/quantum_average.tex",
             ],
             next_actions=[
                 "Reclassify explicit-coin randomized subset-sum algorithms as interface-compatible.",
-                "For quantum walks, derive a target-independent seed decomposition or paired-workspace fidelity bound.",
+                "Construct an actual uniform efficient full-label-sensitive pairing with inverse-polynomial weighted source mass.",
+                "Charge per-label preprocessing, inverse access, failures and repetition against existing sieve/subset-sum tradeoffs.",
                 "Keep solver construction and interface compatibility as separate proof obligations.",
             ],
         ),
@@ -12007,6 +12021,19 @@ def seed_candidate_records() -> tuple[list[CandidateRecord], list[ExperimentReco
             next_actions=[
                 "Run qsearch.py dcp-adaptive-layout-uniform-entanglement-no-go.",
             ],
+        ),
+        ExperimentRecord(
+            id="EXP-DHS-DCP-LABEL-DIGEST-AUDIT",
+            candidate_id="DHS-GOWERS-SIEVE",
+            title="Physical DCP label information and joint-digest slice audit",
+            status="planned",
+            hypothesis="Fixed summaries that discard enough Fourier-label information cannot preserve parity after the standard low-subset-sum measurement; joint summaries require conditional-slice accounting.",
+            protocol="Construct integer-count Born-weighted cq states; compare actual trace distances with the GRZ coordinate bound and a review-pending joint-slice extension. Run analytic, not fitted, scaling caps.",
+            positive_signal="A scope-correct information bound or a falsifier of the derivation. A vacuous cap is not a decoder.",
+            falsifiers=["A physical control exceeds a coordinate dephasing cap.", "Branch normalization or surviving label workspace violates the declared access model.", "A low-sum-dependent summary uses the wrong fiber formula, or another measurement record changes the source law outside the conditional-range proof."],
+            metrics=["finite_control_count", "finite_control_failure_count", "analytic_scaling_count", "new_quantum_algorithm_count"],
+            dependencies=["dcp_label_digest_audit.py", "gupte-ragavan-zhandry-dcp-digest-2026"],
+            next_actions=["Construct a label-sensitive uncomputation mechanism outside the proved digest factorization; charge all resources."],
         ),
         ExperimentRecord(
             id="EXP-DHS-DCP-ARBITRARY-MEASUREMENT-WITNESS-REDUCTION",

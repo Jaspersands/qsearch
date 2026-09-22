@@ -54,6 +54,8 @@ def build_snapshot() -> dict[str, Any]:
     findings = read_json(registry / "dequantization_checks.json", [])
     negatives = read_json(registry / "negative_results.json", [])
     proof_debt = read_json(RESEARCH / "proof_debt_report.json", {})
+    pairing = read_json(RESEARCH / "reductions/dcp_coherent_matching_interface.json", {})
+    pairing_checked = pairing.get("claim_gate", {}).get("pairing_finite_controls_passed") is True
     marker = read_json(RESEARCH / "classical_baselines/dcp_marker_all_target_coverage.json", {})
     code_frontier = read_json(RESEARCH / "code_equivalence/code_frontier_triage.json", {})
     jm = read_json(RESEARCH / "representation/coset_jucys_murphy_label_transform.json", {})
@@ -267,6 +269,7 @@ def build_snapshot() -> dict[str, Any]:
             "detail": "Encoded subgroup access passes finite checks. No target measurement or decoder is supplied; speedup claims remain blocked.",
         },
         "overview": (
+            "DCP pairing controls now separate a conditional parity readout from the missing efficient finder. "
             "The current target is a useful measurement, not complete labels for every multiplicity. "
             "Spectral packing obstructs fixed-count normalized complete labels with inverse-polynomial gaps. "
             "Two QFTs instead extract a known subgroup carrier with an implicit copy code. Fixed-reference "
@@ -284,18 +287,21 @@ def build_snapshot() -> dict[str, Any]:
             {
                 "title": "Hidden shift / DHSP",
                 "short_title": "DHSP",
-                "status": "Current decoder route blocked",
+                "status": "Conditional readouts checked; finder missing" if pairing_checked else "Pairing controls not run or failing",
                 "tone": "blocked",
                 "stage": 2,
                 "summary": (
-                    "Exact source models, sieve accounting, lattice attacks, and marker-aware decoders were implemented. "
-                    "Fixed-depth nearest-plane lists eventually collapse, so small-n decoder success is not evidence of a polynomial algorithm."
+                    "Reciprocal pairings and clean permutations have explicit conditional parity readouts. "
+                    "The noise analysis distinguishes independent from correlated faults. No efficient high-coverage "
+                    "pairing finder, polynomial decoder or new speedup has been demonstrated."
                 ),
                 "evidence": (
-                    f"The all-target census evaluated {metric(marker, 'legal_target_count', 'millions of')} legal targets; "
-                    "the remaining question is a source-conditioned reduced-basis theorem, not another target sweep."
+                    f"Physical pair/permutation controls: {metric(pairing, 'physical_pairing_control_count')}/"
+                    f"{metric(pairing, 'physical_permutation_control_count')}. "
+                    f"Correlated-fault controls: {metric(pairing, 'correlated_noise_control_count')}. "
+                    "Finite optimized matchings are exponential references; derivations remain review-pending."
                 ),
-                "next": "Prove a random-label LLL geometry law or abandon nearest-plane branching.",
+                "next": "Construct an efficient full-label-sensitive pairing with useful natural-input coverage and charged noise, inverse and preprocessing costs.",
             },
             {
                 "title": "Code equivalence",

@@ -24,6 +24,8 @@ class ProgressSnapshotTests(unittest.TestCase):
         self.assertIn("interactively", snapshot["execution_model"])
         self.assertIn("Spectral packing", snapshot["overview"])
         self.assertIn("unknown centralizer", snapshot["tracks"][2]["summary"])
+        self.assertIn("No efficient high-coverage", snapshot["tracks"][0]["summary"])
+        self.assertIn("exponential references", snapshot["tracks"][0]["evidence"])
         self.assertIn("logical target effect", snapshot["next_actions"][0]["title"])
         self.assertLessEqual(len(snapshot["active_conjecture"]["facts"]), 6)
         self.assertNotIn("Attack the all-n separator", str(snapshot))
@@ -31,3 +33,12 @@ class ProgressSnapshotTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+def test_missing_pairing_artifact_does_not_claim_controls_checked(monkeypatch):
+    import tools.build_progress_snapshot as snapshot
+    real_read = snapshot.read_json
+    def without_pairing(path, fallback):
+        return {} if path.name == "dcp_coherent_matching_interface.json" else real_read(path, fallback)
+    monkeypatch.setattr(snapshot, "read_json", without_pairing)
+    assert "not run or failing" in snapshot.build_snapshot()["tracks"][0]["status"]

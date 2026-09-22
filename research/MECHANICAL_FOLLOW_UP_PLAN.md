@@ -1,5 +1,48 @@
 # Mechanical Follow-Up Implementation Plan (pass 2)
 
+## Current Handoff (2026-09-22)
+
+The pairing-program pass is now wired into the EXISTING coherent-matching
+CLI/runner/report. Read `research/DCP_PAIRING_PROGRAMS.md` and the TOP handoff
+entry first. Do not repeat that wiring or turn the conditional compiler/noise
+lemmas into a polynomial decoder. Preserve the distinction between independent
+eta^width noise and correlated prelabel support-survival probabilities. Keep
+the symmetric double-evaluation quantum-relation exception in mutation filters.
+
+Two more unchanged writer failures were confirmed by a fresh eight-file run
+(112passed/2failed; `.pytest_cache/dcp-pairing-regression.xml`):
+- `tests/test_dcp_quantum_relation_fidelity.py:95`: artifact written but no
+  experiment result. Writer: `theorems/dcp_quantum_relation_fidelity.py:429`.
+- `tests/test_dcp_affine_transport.py:81`: same missing result/negative writes.
+  Writer: `theorems/dcp_affine_transport.py:406`.
+Both writers currently return immediately after path.write_text. Repair with
+the existing registry API and runner result IDs; honor custom IDs/no-registry,
+check idempotence and do NOT alter mathematical assertions to make tests pass.
+The existing coherent-matching writer was fixed and has those controls now.
+The corrected mutation regression passes in the final50 integration tests.
+Do not report a full-suite pass; the earlier failures below also remain.
+
+The DCP digest audit is implemented and wired; do not duplicate it. Read the
+top of `research/AGENT_HANDOFF.md` and `research/DCP_LABEL_DIGEST_AUDIT.md`.
+In particular, the conditional-range proof covers dependence on measured
+low sum z, but not arbitrary later measurement records. Do not revert this
+scope refinement or broaden it into a general DCP no-go. The GRZ theorem is
+prior work; local extensions remain review-pending. No Lean replay occurred.
+
+NEW confirmed routine failure: `tests/test_dcp_decoder_frontier.py:114`.
+`write_decoder_frontier` in `theorems/dcp_decoder_frontier.py` accepts registry
+options but only writes its artifact. Add the missing upsert with the existing
+registry API, honor write_registry=False and custom IDs, test direct/runner
+idempotence, and preserve the mathematical content. This was the sole failure
+in a fresh seven-file run with96passes; it is not caused by the digest audit.
+The character-query scaling persistence failure below remains independently
+unresolved. Fix these once, then run the full suite beyond its old stopping
+point. Do not report a green suite from focused tests or registry validation.
+
+Latest digest live workflows all pass, with32physical controls and10analytic
+scaling caps; no candidate promoted. Keep commits infrequent. The new pass is
+uncommitted; the last pushed checkpoint is `683e957d`.
+
 ## Current Handoff (2026-09-17)
 
 Read the TOP of `research/AGENT_HANDOFF.md` and

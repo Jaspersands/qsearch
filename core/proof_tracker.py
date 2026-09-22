@@ -1755,6 +1755,48 @@ def _overlap_transfer_lemmas(candidate_id: str) -> list[LemmaRecord]:
     )]
 
 
+def _dcp_pairing_program_lemmas(candidate_id: str) -> list[LemmaRecord]:
+    try:
+        report = json.loads(DCP_COHERENT_MATCHING_INTERFACE_PATH.read_text())
+    except (OSError, ValueError):
+        report = {}
+    gate = report.get("claim_gate", {})
+    checked = (gate.get("pairing_finite_controls_passed") is True
+               and gate.get("conditional_pairing_construction_derived") is True)
+    status = "derived-pairing-interface-review-pending" if checked else "blocked-pairing-controls-missing"
+    return [LemmaRecord(
+        id=f"LEMMA-{candidate_id}-DCP-CLEAN-PAIRING-PROGRAMS", candidate_id=candidate_id,
+        statement="A valid reciprocal half-period proposal compiles into a clean heralded parity readout with six XOR-evaluator calls. A supplied clean permutation need not be reciprocal: its flagged Hadamard test has bias equal to signed valid edge mass. These are sufficient conditional interfaces, not efficient pairing finders.",
+        depends_on=["PO-MEASUREMENT", "PO-SUCCESS", "PO-COMPLEXITY"], status=status,
+        falsification_test="Replay complete basis permutations, all workspace flags, all secrets and a nonreciprocal four-cycle. Charge source probability, F preprocessing and clean P/inverse access; do not infer an efficient inverse from a forward truth table. Canonical witness rate can be one with only N/2^m reciprocal coverage.",
+    ), LemmaRecord(
+        id=f"LEMMA-{candidate_id}-DCP-PAIRING-NOISE-GAUGE", candidate_id=candidate_id,
+        statement="Random X flips with label-sign updates turn prelabel classical basis-fault mixtures into support-survival attenuation after old labels and coins are discarded. Independent faults give eta^Hamming; arbitrary within-batch classical correlations with marginal <=epsilon give width-r signal >=max(0,1-r*epsilon) times coverage.",
+        depends_on=["PO-INPUT-MODEL", "PO-MEASUREMENT", "PO-SUCCESS"], status=status,
+        falsification_test="Compare explicit fault/coin mixtures, including arbitrary prelabel bad bits, all-or-none and exactly-one faults. Program selection uses only updated labels; postlabel adversarial bits have a counterexample. Correlations can improve or worsen the product estimate; no arbitrary quantum channel or independent-batch guarantee is granted.",
+    ), LemmaRecord(
+        id=f"LEMMA-{candidate_id}-DCP-PAIRING-COVERAGE-NOISE-BOUND", candidate_id=candidate_id,
+        statement="On independent uniform labels, even input-adaptive pairings have expected distance-w valid edge mass <=C(m,w)/2^n and total mass <=1. The decreasing-weight exact relaxation bounds these readouts and is superpolynomially small for constant dephasing and polynomial m; inverse-n noise remains open.",
+        depends_on=["PO-INPUT-MODEL", "PO-SUCCESS", "PO-NO-GO"], status=status,
+        falsification_test="Check the signed-mask uniformity argument, exact small all-permutation controls and independent linear-program solution. Bounds are not achievable algorithms, do not cover arbitrary DCP measurements, and do not permit free selection of favorable labels or heralded normalization.",
+    )]
+
+
+def _dcp_label_digest_lemmas(candidate_id: str) -> list[LemmaRecord]:
+    try:
+        report = json.loads(Path("research/phase_workbench/dcp_label_digest_audit.json").read_text())
+    except (OSError, ValueError):
+        report = {}
+    checked = report.get("claim_gate", {}).get("finite_controls_passed") is True
+    return [LemmaRecord(
+        id=f"LEMMA-{candidate_id}-DCP-JOINT-DIGEST-SLICES", candidate_id=candidate_id,
+        statement="After low-subset-sum measurement, fixed joint summary H has a conditional-fiber trace-distance bound. Even H(y,z) depending on that measured low sum obeys m*sqrt(K/N) when every coordinate slice at fixed other labels,z has <=K outcomes. Both extensions are review-pending; the fixed coordinatewise theorem is GRZ prior work.",
+        depends_on=["PO-INPUT-MODEL", "PO-MEASUREMENT", "PO-NO-GO"],
+        status="derived-joint-slice-extension-review-pending" if checked else "blocked-digest-controls-missing",
+        falsification_test="Check full physical cq states with Born weighting, each coordinate cap and independent complex phase preparation. Low-sum-dependent summaries need the separate (a,z) Cauchy--Schwarz proof. Other measurement records, nonuniform labels, extra label workspace and different prefixes are not covered. No general DCP no-go follows.",
+    )]
+
+
 def _dcp_physical_witness_lemmas(candidate_id: str) -> list[LemmaRecord]:
     try:
         report = json.loads(Path("research/reductions/dcp_arbitrary_measurement_witness_reduction.json").read_text())
@@ -2031,6 +2073,9 @@ def lemma_templates(candidate: dict[str, Any]) -> list[LemmaRecord]:
         )
         for lemma_id, statement, depends_on, falsification_test in templates
     ]
+    if candidate_id == "DHS-GOWERS-SIEVE":
+        records.extend(_dcp_label_digest_lemmas(candidate_id))
+        records.extend(_dcp_pairing_program_lemmas(candidate_id))
     if candidate_id == "CODE-COSET-COLLECTIVE":
         records.extend(_disjoint_pair_branch_pgm_compiler_lemmas(candidate_id))
         records.extend(_disjoint_pair_covariance_polar_lemmas(candidate_id))

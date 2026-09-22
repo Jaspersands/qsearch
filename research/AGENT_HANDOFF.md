@@ -1,6 +1,164 @@
 # Research Agent Handoff
 
-Last updated: 2026-09-17
+Last updated: 2026-09-22
+
+## Latest Completed Research Pass: Constructive DCP Pairing Programs
+
+Read `research/DCP_PAIRING_PROGRAMS.md` and `core/dcp_pairing_programs.py`.
+This extends the EXISTING coherent-matching subsystem/experiment, rather than
+adding another candidate. The digest pass below is also complete. These are
+being bundled into a substantial checkpoint; inspect Git for actual SHA/push
+state. The last checkpoint before this bundle was `683e957d`.
+
+CONSTRUCTIVE, CONDITIONAL: a deterministic public proposal F accepts b when
+F(F(b))=b and f(F(b))-f(b)=N/2. Four XOR-F calls compute/clean the accept flag;
+two more order the endpoints and clear workspace. A Hadamard reads parity
+on the accepted clean input. Source mass is |D|/2^m, with failures charged.
+An efficient clean permutation P/inverse instead gives a flagged Hadamard
+test with parity bias equal to valid edge mass. Long cycles are allowed; a
+four-cycle countercontrol prevents incorrectly imposing mutuality on every
+readout. Forward evaluation alone does NOT grant an efficient clean inverse.
+All 625 partial maps on four inputs have complete-permutation cleanup checks.
+Finite truth tables and optimal assignment matrices are exponential controls,
+not efficient programs; no gate exporter or polynomial finder is supplied.
+
+NOISE REFINEMENT: random X flips plus label-sign changes, followed by disposal
+of old labels/coins BEFORE program selection, preserve good phase states and
+mix pre-Fourier bad basis bits. Independent faults give eta^Hamming attenuation.
+The more general classical joint prelabel mask law gives Pr[J misses b xor c].
+Marginal failure<=epsilon implies width-r signal >=max(0,1-r*epsilon)*coverage,
+even for within-batch correlated masks. Thus r<=n/2 retains at least half the
+coverage at epsilon<=1/n. This is NOT arbitrary quantum-noise robustness or
+permission to assume independent batches. All-or-none and exactly-one faults
+show that correlation can improve OR worsen the independent formula. Postlabel
+adversarial bits also have an explicit counterexample. Check these scopes.
+
+COVERAGE: canonical one-witness-per-residue proposals have reciprocal mass
+<=N/2^m even at valid witness rate one. Input-dependent matchings escape this
+cap, but the implemented rank/assignment references are exponential. On natural
+uniform labels, expected distance-w valid mass <=C(m,w)/2^n, even for unbounded
+input/label-adaptive selectors. The exact rational weighted-capacity relaxation
+is independently checked by an LP and exhaustive small optimal permutations.
+At constant INDEPENDENT dephasing, polynomial m gives superpolynomially small
+signal for these readouts only. Correlated all-or-none faults refute extending
+this conclusion to arbitrary mask laws. Inverse-n noise remains open. Default
+m=n^2,n=4096 envelope is 2^-97.108 at eta=.75 but about2^-.0824 at eta=1-1/n;
+the latter is only an upper bound, not constructive evidence.
+
+WIRED: `dcp-coherent-matching`, existing runner
+`EXP-DHS-DCP-COHERENT-MATCHING-INTERFACE`, report in `research/reductions/`.
+The writer previously ignored registry options; it now upserts the SAME direct/
+runner result ID, respects no-registry/custom IDs and preserves scoped negatives.
+Nine reciprocal/two permutation/three correlated controls,14envelope rows,
+zero failures. Three review-pending lemmas, two new negatives, seed/live protocol,
+mutation scope and compact DHSP progress text updated. The single-call workspace
+negative no longer falsely excludes the separate symmetric double-evaluation
+lift. No novelty, independent review, formal verification or speedup is claimed.
+
+Verification: final four-file50passed37.52s,
+`.pytest_cache/dcp-pairing-final-integration.xml`; earlier focused40passed10.84s.
+Broader eight-file run112passed/2failed45.49s (before correlated additions),
+`.pytest_cache/dcp-pairing-regression.xml`: UNCHANGED quantum-relation-fidelity
+and affine-transport writers omit registry upserts. The four tracking files
+had79passed/1failed211.60s, `.pytest_cache/dcp-pairing-tracking.xml`; that failure
+was a mutation assertion enforcing the obsolete arbitrary-solver exclusion.
+It was corrected to test the valid symmetric-lift exception and residual
+obligations; the ENTIRE mutation file passes in the final50. Counts overlap.
+Full suite is NOT green; older character-query/decoder-frontier writer failures
+also remain. Routine repair instructions are in MECHANICAL_FOLLOW_UP_PLAN.md.
+Python compilation (core, theorems, tests, CLI and snapshot builder), JS syntax
+and diff checks passed. All nine FINAL live workflows exited0: matching CLI,
+runner, deq, proofs, conjectures, mutate, snapshot builder, validate, proof-routes.
+Snapshot uses `python tools/build_progress_snapshot.py`, NOT a qsearch snapshot
+subcommand; an initial mistaken invocation was corrected. Registry valid,
+issues[]:8candidates,796experiments,805results,926negatives,1325deq/1321blocking,
+1300lemmas,104proofstatuses/24blocking,8blocked conjectures,19mutations.
+Proof-route audit:13contracts,0unsupported,4unresolved; this is not proof review.
+The progress page's DHSP track now reads the pairing artifact. No background
+research service was started and the overarching goal remains active.
+
+NEXT HIGH-REASONING TASK: construct or falsify a uniform efficient pairing
+finder in the useful intermediate Hamming-width range, with natural-input
+coverage. Do NOT merely invent another interface theorem. Existing fixed/local
+dictionary and canonical-witness shortcuts fail. Input-adaptive matching remains
+open, but searching or ranking all fiber witnesses is not a free oracle. Compare
+any actual program against known sieve/subset-sum time-query tradeoffs and
+investigate novelty before interpreting a positive result. External review of
+the current conditional constructions remains valuable; none has occurred.
+
+## Latest Completed Research Pass: DCP Label-Digest Information Audit
+
+Read `research/DCP_LABEL_DIGEST_AUDIT.md` and
+`theorems/dcp_label_digest_audit.py`. This pass is bundled with the later
+pairing-program pass above; inspect Git for the current save/push state.
+The checkpoint BEFORE that bundle was `683e957d`.
+The overall goal remains active; no background research service was started.
+
+The older lead about repairing Simon's adaptive-partition premise is superseded
+as the NEXT target by Gupte/Ragavan/Zhandry ePrint2026/1693 (revisedSep1).
+Its whole ten-page PDF was read, and the main-theorem Lean source inspected
+at the SHA recorded in the new derivation/report. Lean was NOT replayed.
+The prior-work coordinatewise theorem gives parity TV<=m*sqrt(K/N) after the
+standard measured low-subset-sum prefix with K-valued fixed label digests.
+The paper's algorithm-specific reconstruction is not independently implemented
+here; do not claim a new refutation or transfer this to arbitrary DCP circuits.
+
+DERIVED EXTENSION, review pending: for any fixed JOINT H(y), reveal other
+labels u and use conditional fibers c_(i,u,a). Then TV<=sum_i beta_i, where
+beta_i=E_u sum_a sqrt(c_(i,u,a))/N. Full joint sum H=sum y modN has beta_i=1
+despite only n total output bits: dividing its bit budget among coordinates
+would be a false argument. A vacuous cap is not a positive algorithm signal.
+
+CRITIQUE REFINEMENT: dependence on the measured low sum z alone is NOT an
+automatic escape. For H(y,z), let A_u(z) count b_i=0 assignments with that
+low sum and K_i(u,z) be the conditional image size as y_i varies. A separate
+Cauchy--Schwarz over(a,z) gives gamma_i=E_u sqrt(sum_z A_u(z)K_i(u,z)/
+(2^(m-1)N)); TV<=sum_i gamma_i. Uniform K again gives m*sqrt(K/N).
+The older per-a fiber identity cannot be reused for this case. Other later
+measurement records, extra label-dependent quantum workspace, changed prefixes
+and selected/nonuniform labels remain outside the statement. No novelty,
+formal verification, independent review, decoder or speedup is claimed.
+
+IMPLEMENTED: complete integer-count cq blocks retaining b,h,H,z, no uniform
+branch sampling or free postselection; numerical trace norms; exact source
+normalization and FULL b-dephasing equality; outward rational bounds;
+32 finite controls and10 analytic scaling rows. Independent complex phase
+preparation checks both fixed and z-dependent summaries, and an exact rational
+one-sample spectrum checks normalization. Tests also cover random joint maps,
+per-coordinate bounds, uneven fibers, complete-table requirements and access
+scope. Finite exhaustive enumeration is not a scalable classical baseline.
+
+CLI `dcp-label-digest-audit` and runner `EXP-DHS-DCP-LABEL-DIGEST-AUDIT` use one
+DHS-GOWERS-SIEVE result. Literature seed/structured record, scoped negative,
+dequant boundary, proof lemma, mutation obligation, README and snapshot updated.
+The first live CLI exposed missing seed bootstrap; fixed and regression-tested.
+Nine final workflows (CLI, runner, deq, proofs, conjectures, mutate, snapshot,
+validate, proof-routes) all exited0. Registry valid/issues[]:8 candidates,
+796experiments,805results,924negatives,1323deq findings/1319blocking,
+1297lemmas,104proof statuses/24blocking,8blocked conjectures,19mutations.
+Proof-route audit:13contracts,0unsupported,4unresolved; not mathematical checks.
+
+Verification: final four-file66passed15.85s, XML
+`.pytest_cache/dcp-label-digest-final.xml`; dequant/mutation35passed126.75s,
+`.pytest_cache/dcp-label-digest-integration.xml`; proof provenance/tracker
+45passed97.90s, `.pytest_cache/dcp-label-digest-proof-tracking.xml`.
+These final groups have disjoint test files (146 tests). Python compilation,
+JS syntax and diff checks passed. An excluded-prefix control shows why the
+bound cannot be transferred before low-sum measurement. Earlier seven-file
+regression96passed/1failed151.96s:
+UNCHANGED `test_dcp_decoder_frontier.py:114` fails because its writer accepts
+registry arguments but never upserts. That module/test were not edited.
+The old character-query persistence failure also remains; full suite is NOT
+green and its previously stopped remainder has not been run. Do not repeatedly
+rerun those same prefixes as new evidence; routine repairs belong to Gemini.
+
+NEXT: use the new boundary to demand an actual full-label-sensitive coherent
+matching/uncomputation operation, rather than another stable high-bit summary.
+Joint full sums escape this particular bound but show weak finite information;
+do not promote them without a natural-input, growing-size argument. Any new
+candidate must supply a circuit and charged source-average success beyond the
+generic sieve baseline. Audit downstream uniform-fiber exclusions as described
+in the physical witness pass below; that dependency audit is still incomplete.
 
 ## Latest Completed Pass: Physical DCP Witness Reduction Repair
 

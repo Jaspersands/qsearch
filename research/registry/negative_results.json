@@ -54963,6 +54963,58 @@
   },
   {
     "applies_to": [
+      "DHS-GOWERS-SIEVE"
+    ],
+    "claim": "A successful canonical witness oracle automatically supplies high-coverage reciprocal pairing at high density.",
+    "evidence": {
+      "artifact": "research/reductions/dcp_coherent_matching_interface.json",
+      "review_status": "derived-review-pending",
+      "speedup_claim_allowed": false
+    },
+    "id": "DCP-CANONICAL-WITNESS-RATE-NOT-PAIRING-MASS",
+    "lesson": "Measure reciprocal or flagged edge mass, not witness rate; input-dependent full matchings escape this cap but the finite reference tables are exponential.",
+    "reason_invalid": "With at most one canonical witness per residue, at most N assignments can be reciprocal; heralded mass is at most N/2^m even at witness rate one.",
+    "source": "research/reductions/dcp_coherent_matching_interface.json"
+  },
+  {
+    "applies_to": [
+      "DHS-GOWERS-SIEVE"
+    ],
+    "claim": "After the standard low-subset-sum measurement, polynomially many DCP samples still reveal parity when each public label is used only through a fixed digest discarding a linear number of bits.",
+    "evidence": {
+      "artifact": "research/phase_workbench/dcp_label_digest_audit.json",
+      "literature_id": "gupte-ragavan-zhandry-dcp-digest-2026",
+      "review_status": "prior-work-bound-with-review-pending-extension",
+      "scope": [
+        "independent_uniform_fourier_labels",
+        "standard_low_subset_sum_bits_measured",
+        "digest_rule_fixed_before_labels_and_measurements",
+        "no_other_label_dependent_workspace_or_access",
+        "all_born_branches_and_failures_charged"
+      ]
+    },
+    "id": "DCP-FIXED-DIGEST-INFORMATION-LOSS",
+    "lesson": "Require actual full-label sensitivity or a justified escape from this prefix/digest scope. Joint summaries need slice profiles, not global alphabet shortcuts.",
+    "reason_invalid": "The prior-work GRZ trace-distance bound m*sqrt(K/N) vanishes; the physical prefix and all Born weights are retained in controls.",
+    "source": "research/phase_workbench/dcp_label_digest_audit.json"
+  },
+  {
+    "applies_to": [
+      "DHS-GOWERS-SIEVE"
+    ],
+    "claim": "Short moves or high-density tables automatically give polynomial signal for noisy half-period pairing readouts.",
+    "evidence": {
+      "artifact": "research/reductions/dcp_coherent_matching_interface.json",
+      "review_status": "derived-review-pending",
+      "speedup_claim_allowed": false
+    },
+    "id": "DCP-LOCAL-PAIRING-COVERAGE-NOISE-TRADEOFF",
+    "lesson": "Use noise-weighted source-average coverage with charged computation. The inverse-n fault regime remains open; this is not an arbitrary-measurement lower bound or classical dequantization.",
+    "reason_invalid": "For natural independent uniform labels, average distance-w edge mass is <=C(m,w)/N and total mass <=1. Under independent product dephasing the weighted relaxation is superpolynomially small at fixed eta<1 and polynomial m; correlated faults are not covered by this conclusion.",
+    "source": "research/reductions/dcp_coherent_matching_interface.json"
+  },
+  {
+    "applies_to": [
       "CODE-COSET-COLLECTIVE",
       "Racah disturbance",
       "carrier-row decoder search"
@@ -64958,18 +65010,17 @@
   },
   {
     "applies_to": [
-      "DHS-GOWERS-SIEVE",
-      "EXP-DHS-DCP-COHERENT-MATCHING-INTERFACE"
+      "DHS-GOWERS-SIEVE"
     ],
-    "claim": "Any quantum algorithm that outputs a superposition of subset-sum witnesses can replace the deterministic solver in Regev's matching routine.",
+    "claim": "A naive single-evaluation quantum relation routine preserves endpoint interference despite orthogonal retained workspace.",
     "evidence": {
-      "proved_arbitrary_quantum_relation_solver_bridge_count": 0,
-      "proved_seeded_randomized_solver_bridge_count": 12,
-      "zero_visibility_counterexample_count": 1
+      "artifact": "research/reductions/dcp_coherent_matching_interface.json",
+      "review_status": "derived-review-pending",
+      "speedup_claim_allowed": false
     },
     "id": "NEG-DCP-ARBITRARY-QUANTUM-RELATION-SOLVER-WITHOUT-WORKSPACE-OVERLAP",
-    "lesson": "Randomized classical solvers with explicit target-independent shared coins are now interface-compatible. For genuinely quantum solvers, prove balanced paired amplitudes, workspace overlap, and reversible erasure.",
-    "reason_invalid": "Target-dependent witness amplitudes or orthogonal garbage can erase paired-endpoint interference. The source proof needs canonical selection, a shared-seed decomposition, or an explicit overlap theorem.",
+    "lesson": "Supply actual coherent cleanup or use the symmetric lift. Do not broaden this negative to arbitrary quantum relation solvers.",
+    "reason_invalid": "Tracing orthogonal endpoint tags removes the off-diagonal phase term; the separate symmetric double-evaluation lift is NOT ruled out.",
     "source": "research/reductions/dcp_coherent_matching_interface.json"
   },
   {

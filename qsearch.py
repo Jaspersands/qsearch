@@ -867,6 +867,7 @@ from coset_source_weighted_frame_inversion_tradeoff import write_coset_source_we
 from coset_whitening_rank_sandwich_no_go import write_coset_whitening_rank_sandwich_report
 from dcp_adaptive_layout_uniform_entanglement_no_go import write_dcp_adaptive_layout_uniform_entanglement_report
 from dcp_arbitrary_measurement_witness_reduction import write_arbitrary_measurement_witness_reduction_report
+from dcp_label_digest_audit import write_digest_audit_report
 from dcp_canonical_pgm_erasure_equivalence import write_canonical_pgm_erasure_equivalence
 from dcp_covariant_rank_one_measurement_reduction import write_covariant_rank_one_measurement_reduction_report
 from dcp_four_block_ksum_noncollapse import write_four_block_ksum_noncollapse
@@ -5706,13 +5707,18 @@ def command_dcp_coherent_matching(args: argparse.Namespace) -> int:
     )
     print(f"Zero-visibility counterexamples: {metrics['zero_visibility_counterexample_count']}")
     print(
-        "Arbitrary quantum relation bridges: "
+        "Arbitrary quantum relation bridges in this single-evaluation audit only: "
         f"{metrics['proved_arbitrary_quantum_relation_solver_bridge_count']}"
     )
+    print(f"Physical pairing/permutation controls: {metrics['physical_pairing_control_count']}/{metrics['physical_permutation_control_count']}")
+    print(f"Physical failures: {metrics['physical_pairing_failure_count']}")
+    print(f"Exact noise-envelope rows: {metrics['noise_mass_envelope_count']}")
+    print(f"Correlated-fault controls: {metrics['correlated_noise_control_count']}")
+    print(f"Efficient high-coverage pairing finders: {metrics['efficient_pairing_finder_count']}")
     print(f"Partial subset-sum solvers: {metrics['proved_polynomial_partial_subset_sum_solver_count']}")
     print(f"Speedup claim allowed: {payload['claim_gate']['speedup_claim_allowed']}")
     print(f"Registry valid: {validation['valid']}")
-    if validation["issues"]:
+    if validation["issues"] or metrics["physical_pairing_failure_count"]:
         print(json.dumps(validation["issues"], indent=2))
         return 1
     return 0
@@ -14681,6 +14687,16 @@ def command_dcp_adaptive_layout_uniform_entanglement_no_go(args: argparse.Namesp
     print(f"Registry valid: {validate_registry()['valid']}")
     return 0
 
+def command_dcp_label_digest_audit(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    report = write_digest_audit_report()
+    print(report["summary"])
+    print(json.dumps(report["headline_metrics"], indent=2))
+    valid = validate_registry()["valid"]
+    print(f"Registry valid: {valid}")
+    return 0 if valid and report["claim_gate"]["finite_controls_passed"] is True else 1
+
+
 def command_dcp_arbitrary_measurement_witness_reduction(args: argparse.Namespace) -> int:
     report = write_arbitrary_measurement_witness_reduction_report()
     print(report["summary"])
@@ -21222,7 +21238,7 @@ def build_parser() -> argparse.ArgumentParser:
 
     dcp_coherent_matching = subparsers.add_parser(
         "dcp-coherent-matching",
-        help="Prove shared-seed randomized matching compatibility and audit quantum workspace coherence.",
+        help="Audit conditional clean pairing readouts, source coverage, workspace and noise; no efficient finder supplied.",
     )
     dcp_coherent_matching.add_argument("--n-values", default="16,32,64,128")
     dcp_coherent_matching.add_argument("--coverage-exponents", default="1,2,3")
@@ -25222,6 +25238,12 @@ def build_parser() -> argparse.ArgumentParser:
         help="Exp Dhs Dcp Adaptive Layout Uniform Entanglement No Go",
     )
     dcp_adaptive_layout_uniform_entanglement_no_go.set_defaults(func=command_dcp_adaptive_layout_uniform_entanglement_no_go)
+
+    dcp_label_digest_audit = subparsers.add_parser(
+        "dcp-label-digest-audit",
+        help="Check physical DCP label loss, joint-slice bounds and analytic scaling",
+    )
+    dcp_label_digest_audit.set_defaults(func=command_dcp_label_digest_audit)
 
     dcp_arbitrary_measurement_witness_reduction = subparsers.add_parser(
         "dcp-arbitrary-measurement-witness-reduction",

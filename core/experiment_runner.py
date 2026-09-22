@@ -1077,6 +1077,7 @@ from self_dual_wreath_tetrahedral_chi_square_tail_no_go import write_tetrahedral
 from self_dual_wreath_tetrahedral_collision_growth_scale import write_tetrahedral_collision_growth_scale_report
 from self_dual_wreath_tetrahedral_dimension_trim import write_tetrahedral_dimension_trim_report
 from dcp_arbitrary_measurement_witness_reduction import write_arbitrary_measurement_witness_reduction_report
+from dcp_label_digest_audit import write_digest_audit_report
 from dcp_canonical_pgm_erasure_equivalence import write_canonical_pgm_erasure_equivalence
 from dcp_covariant_rank_one_measurement_reduction import write_covariant_rank_one_measurement_reduction_report
 from dcp_four_block_ksum_noncollapse import write_four_block_ksum_noncollapse
@@ -2035,6 +2036,7 @@ COSET_EXPERIMENTS = {
         "EXP-COSET-WHITENING-RANK-SANDWICH-NO-GO",
         "EXP-DHS-DCP-ADAPTIVE-LAYOUT-UNIFORM-ENTANGLEMENT-NO-GO",
         "EXP-DHS-DCP-ARBITRARY-MEASUREMENT-WITNESS-REDUCTION",
+        "EXP-DHS-DCP-LABEL-DIGEST-AUDIT",
         "EXP-DHS-DCP-CANONICAL-PGM-ERASURE-EQUIVALENCE",
         "EXP-DHS-DCP-COVARIANT-RANK-ONE-MEASUREMENT-REDUCTION",
         "EXP-DHS-DCP-FOUR-BLOCK-KSUM-NONCOLLAPSE",
@@ -3896,6 +3898,7 @@ def select_next_experiment() -> NextExperimentSelection:
         "EXP-COSET-WHITENING-RANK-SANDWICH-NO-GO": 100,
         "EXP-DHS-DCP-ADAPTIVE-LAYOUT-UNIFORM-ENTANGLEMENT-NO-GO": 100,
         "EXP-DHS-DCP-ARBITRARY-MEASUREMENT-WITNESS-REDUCTION": 100,
+        "EXP-DHS-DCP-LABEL-DIGEST-AUDIT": 110,
         "EXP-DHS-DCP-CANONICAL-PGM-ERASURE-EQUIVALENCE": 100,
         "EXP-DHS-DCP-COVARIANT-RANK-ONE-MEASUREMENT-REDUCTION": 100,
         "EXP-DHS-DCP-FOUR-BLOCK-KSUM-NONCOLLAPSE": 100,
@@ -10149,6 +10152,13 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             == "EXP-DHS-DCP-ADAPTIVE-LAYOUT-UNIFORM-ENTANGLEMENT-NO-GO"
         ):
             payload = write_dcp_adaptive_layout_uniform_entanglement_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif experiment_id == "EXP-DHS-DCP-LABEL-DIGEST-AUDIT":
+            payload = write_digest_audit_report(
                 write_registry=True,
                 registry_experiment_id=experiment_id,
                 registry_candidate_id=experiment["candidate_id"],

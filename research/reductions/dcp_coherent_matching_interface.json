@@ -1,15 +1,26 @@
 {
+  "artifacts": {
+    "dcp_coherent_matching_interface": "research/reductions/dcp_coherent_matching_interface.json",
+    "derivation": "research/DCP_PAIRING_PROGRAMS.md"
+  },
   "claim_gate": {
     "arbitrary_quantum_relation_solver_bridge_proved": false,
+    "arbitrary_quantum_solvers_excluded": false,
+    "conditional_pairing_construction_derived": true,
+    "formal_verification": false,
+    "independently_reviewed": false,
+    "noise_gauge_and_mass_bound_review_pending": true,
+    "novelty_established": false,
+    "pairing_finite_controls_passed": true,
     "partial_subset_sum_solver_constructed": false,
     "polynomial_dcp_decoder_constructed": false,
     "primary_source_deterministic_use_sites_extracted": true,
-    "reason": "The theorem interface is extended to target-independent shared-seed randomized solvers, but no such polynomial subset-sum solver is constructed. Arbitrary quantum relation solvers remain blocked by canonicalization, amplitude balance, and paired-workspace overlap.",
+    "reason": "The theorem interface is extended to target-independent shared-seed randomized solvers, but no such polynomial subset-sum solver or efficient high-coverage pairing is constructed. Six-call and flagged-permutation controls test conditional readouts, not a decoder; the separate symmetric relation lift is not excluded.",
     "seeded_randomized_partial_solver_bridge_proved": true,
     "speedup_claim_allowed": false,
     "workspace_overlap_required": true
   },
-  "created_at": "2026-08-06T06:40:11.131613+00:00",
+  "created_at": "2026-09-22T11:44:46.531152+00:00",
   "deterministic_use_sites": [
     {
       "failure_if_removed": "Different witnesses survive as orthogonal which-path labels instead of a two-point phase pair.",
@@ -37,15 +48,25 @@
     }
   ],
   "falsifiers_triggered": [
-    "Classical randomness is acceptable only when represented by target-independent explicit coins shared coherently across both endpoints.",
-    "Freshly measured or target-dependent randomness does not define the fixed answered set required by the matching lemma.",
-    "Multiple valid witnesses do not help unless the circuit canonically couples paired endpoints and erases witness garbage.",
+    "The fixed-seed source extension requires target-independent explicit coins shared coherently across both endpoints; this is not a restriction on all other constructions.",
+    "Freshly measured or target-dependent randomness does not by itself define the fixed answered set used in that proof.",
+    "Multiple valid witnesses are insufficient without an actual coherent pairing/cleanup construction; the separate symmetric lift is an allowed route.",
     "Orthogonal paired workspaces make every endpoint X/Y phase statistic exactly independent of qd/N.",
-    "Proving an interface theorem does not construct the required polynomial subset-sum solver."
+    "Proving an interface theorem does not construct the required polynomial subset-sum solver.",
+    "A one-witness-per-residue proposal can have valid-output fraction one but reciprocal mass at most N/2^m; input-dependent matchings are not subject to that cap.",
+    "Short adaptive moves have average mass at most sum_{j<=r} C(m,j)/N. Constant product-dephasing noise suppresses every declared pairing readout at polynomial m; this is not a general DCP no-go.",
+    "Retaining old labels/gauge coins or postlabel corruption invalidates the gauge contract. Correlated prelabel faults require their joint survival law, not the independent eta^weight formula."
   ],
   "headline_metrics": {
+    "clean_mutual_xor_oracle_call_count": 6,
+    "correlated_noise_control_count": 3,
+    "efficient_pairing_finder_count": 0,
     "maximum_polynomial_success_exponent": 15,
     "minimum_certified_routine_success_probability": 2.087208213499279e-39,
+    "noise_mass_envelope_count": 14,
+    "physical_pairing_control_count": 9,
+    "physical_pairing_failure_count": 0,
+    "physical_permutation_control_count": 2,
     "primary_source_deterministic_use_site_count": 4,
     "proved_arbitrary_quantum_relation_solver_bridge_count": 0,
     "proved_polynomial_dcp_decoder_count": 0,
@@ -74,10 +95,2291 @@
     },
     {
       "bridge_proved": false,
-      "condition": "requires canonical coherent witness selection or balanced paired workspaces with inverse-polynomial overlap",
+      "condition": "Not established by this single-evaluation audit; see the separately derived symmetric double-evaluation lift.",
       "interface_id": "arbitrary-quantum-relation-solver"
     }
   ],
+  "pairing_programs": {
+    "canonical_density_controls": [
+      {
+        "canonical_mass_upper_bound": 1,
+        "efficient_candidate": false,
+        "mean_heralded_mass": 0.515625,
+        "mean_valid_proposal_fraction": 0.671875,
+        "n": 4,
+        "reference_preprocessing_assignments": 16,
+        "samples": 4,
+        "trials": 8
+      },
+      {
+        "canonical_mass_upper_bound": 0.25,
+        "efficient_candidate": false,
+        "mean_heralded_mass": 0.21875,
+        "mean_valid_proposal_fraction": 0.89453125,
+        "n": 4,
+        "reference_preprocessing_assignments": 64,
+        "samples": 6,
+        "trials": 8
+      },
+      {
+        "canonical_mass_upper_bound": 0.0625,
+        "efficient_candidate": false,
+        "mean_heralded_mass": 0.0625,
+        "mean_valid_proposal_fraction": 1.0,
+        "n": 4,
+        "reference_preprocessing_assignments": 256,
+        "samples": 8,
+        "trials": 8
+      },
+      {
+        "canonical_mass_upper_bound": 0.015625,
+        "efficient_candidate": false,
+        "mean_heralded_mass": 0.015625,
+        "mean_valid_proposal_fraction": 1.0,
+        "n": 4,
+        "reference_preprocessing_assignments": 1024,
+        "samples": 10,
+        "trials": 8
+      },
+      {
+        "canonical_mass_upper_bound": 0.00390625,
+        "efficient_candidate": false,
+        "mean_heralded_mass": 0.00390625,
+        "mean_valid_proposal_fraction": 1.0,
+        "n": 4,
+        "reference_preprocessing_assignments": 4096,
+        "samples": 12,
+        "trials": 8
+      }
+    ],
+    "contract": {
+      "constant_noise_limit": "For m=poly(n) and fixed eta<1 the envelope is superpolynomially small; eta=1-1/n is not excluded. A vacuous upper bound is not constructive evidence.",
+      "correlated_noise_lower_bound": "With per-coordinate fault marginal <=epsilon, moves of width <=r have signal >=max(0,1-r*epsilon) times source coverage. Fresh batches for estimation must have the required independence or conditional guarantees.",
+      "gate_export_implemented": false,
+      "gauge": "Apply independent random X flips and negate corresponding labels; discard old labels and flip coins before choosing a program from updated labels and fresh independent randomness only.",
+      "independently_reviewed": false,
+      "local_mass_bound": "E_y accepted mass at Hamming distance <=r is <=sum_{j=1}^r C(m,j)/2^n, even for label/input-adaptive proposals.",
+      "mutual_clean_xor_oracle_calls": 6,
+      "mutual_success": "|{b:F(F(b))=b and f(F(b))-f(b)=N/2}|/2^m",
+      "noise_mass_envelope": "Maximize sum_w eta^w p_w subject to 0<=p_w<=C(m,w)/2^n and sum_w p_w<=1. This bounds only the declared pair/permutation readouts, not arbitrary DCP algorithms.",
+      "noise_scope": "Pre-Fourier classical mask mixtures give survival Pr(fault mask misses b xor c); independent faults give eta^weight. Postlabel corruption or general quantum channels are not covered.",
+      "novelty_established": false,
+      "permutation_access": "Supplied efficient clean controlled P and P inverse, not just forward classical evaluation.",
+      "permutation_signal": "2^-m sum_{b:delta f=N/2} eta^Hamming(b,P(b))",
+      "polynomial_decoder_constructed": false,
+      "scaling_requirement": "An efficient program must achieve inverse-polynomial NATURAL LABEL-AVERAGED weighted edge mass."
+    },
+    "control_failures": 0,
+    "correlated_noise_controls": [
+      {
+        "fault_law": {
+          "0": {
+            "denominator": 4,
+            "numerator": 3
+          },
+          "3": {
+            "denominator": 4,
+            "numerator": 1
+          }
+        },
+        "incorrect_independent_model_signal": 0.28125,
+        "marginal_union_lower": 0.25,
+        "maximum_residual": 0.0,
+        "name": "all-or-none-faults",
+        "weighted_signal": 0.375
+      },
+      {
+        "fault_law": {
+          "1": {
+            "denominator": 2,
+            "numerator": 1
+          },
+          "2": {
+            "denominator": 2,
+            "numerator": 1
+          }
+        },
+        "incorrect_independent_model_signal": 0.125,
+        "marginal_union_lower": 0.0,
+        "maximum_residual": 0.0,
+        "name": "exactly-one-fault",
+        "weighted_signal": 0.0
+      },
+      {
+        "fault_law": {
+          "0": {
+            "denominator": 8,
+            "numerator": 7
+          },
+          "1": {
+            "denominator": 16,
+            "numerator": 1
+          },
+          "2": {
+            "denominator": 16,
+            "numerator": 1
+          }
+        },
+        "incorrect_independent_model_signal": 0.439453125,
+        "marginal_union_lower": 0.4375,
+        "maximum_residual": 0.0,
+        "name": "rare-disjoint-faults",
+        "weighted_signal": 0.4375
+      }
+    ],
+    "exponential_reference_matchings": [
+      {
+        "canonical": {
+          "hamming_histogram": {
+            "1": 16
+          },
+          "mass": 0.25,
+          "noise_weighted_mass": 0.1875
+        },
+        "efficient_candidate": false,
+        "eta": 0.75,
+        "labels": [
+          3,
+          2,
+          8,
+          10,
+          4,
+          6
+        ],
+        "modulus": 16,
+        "noise-weighted-assignment": {
+          "hamming_histogram": {
+            "1": 64
+          },
+          "mass": 1.0,
+          "noise_weighted_mass": 0.75
+        },
+        "noise_assignment_cost_matrix_entries": 128,
+        "rank-paired": {
+          "hamming_histogram": {
+            "1": 64
+          },
+          "mass": 1.0,
+          "noise_weighted_mass": 0.75
+        },
+        "reference_preprocessing_assignments": 64
+      },
+      {
+        "canonical": {
+          "hamming_histogram": {
+            "1": 16
+          },
+          "mass": 0.0625,
+          "noise_weighted_mass": 0.046875
+        },
+        "efficient_candidate": false,
+        "eta": 0.75,
+        "labels": [
+          6,
+          8,
+          10,
+          4,
+          11,
+          14,
+          3,
+          9
+        ],
+        "modulus": 16,
+        "noise-weighted-assignment": {
+          "hamming_histogram": {
+            "1": 256
+          },
+          "mass": 1.0,
+          "noise_weighted_mass": 0.75
+        },
+        "noise_assignment_cost_matrix_entries": 2048,
+        "rank-paired": {
+          "hamming_histogram": {
+            "1": 256
+          },
+          "mass": 1.0,
+          "noise_weighted_mass": 0.75
+        },
+        "reference_preprocessing_assignments": 256
+      },
+      {
+        "canonical": {
+          "hamming_histogram": {
+            "2": 10,
+            "3": 4,
+            "4": 2
+          },
+          "mass": 0.015625,
+          "noise_weighted_mass": 0.00775909423828125
+        },
+        "efficient_candidate": false,
+        "eta": 0.75,
+        "labels": [
+          3,
+          12,
+          6,
+          2,
+          5,
+          9,
+          13,
+          15,
+          12,
+          1
+        ],
+        "modulus": 16,
+        "noise-weighted-assignment": {
+          "hamming_histogram": {
+            "2": 960,
+            "4": 48
+          },
+          "mass": 0.984375,
+          "noise_weighted_mass": 0.54217529296875
+        },
+        "noise_assignment_cost_matrix_entries": 32752,
+        "rank-paired": {
+          "hamming_histogram": {
+            "2": 228,
+            "3": 276,
+            "4": 226,
+            "5": 140,
+            "6": 94,
+            "7": 28,
+            "8": 16
+          },
+          "mass": 0.984375,
+          "noise_weighted_mass": 0.3627805709838867
+        },
+        "reference_preprocessing_assignments": 1024
+      }
+    ],
+    "gauge_control": {
+      "maximum_good_state_residual": 1.1018648905114063e-15,
+      "maximum_prelabel_bad_bit_residual": 0.0,
+      "modulus": 8,
+      "postlabel_adversarial_bit_counterexample_gap": 0.5,
+      "scope": "Bad basis bits and fault status fixed before uniform Fourier labels; independent faults give product dephasing. Correlated faults require their joint law."
+    },
+    "mutual_controls": [
+      {
+        "clean_xor_oracle_calls": 6,
+        "labels": [
+          1,
+          3
+        ],
+        "lookup_table_is_efficient_implementation": false,
+        "maximum_residual": 0.0,
+        "modulus": 4,
+        "name": "complement",
+        "physical_checks": {
+          "accept_full_space_permutation": true,
+          "accepted_isometry_exact": true,
+          "accepted_workspace_exactly_clean": true,
+          "ordering_full_space_permutation": true
+        },
+        "profile": {
+          "accepted_assignments": [
+            1,
+            2
+          ],
+          "accepted_hamming_histogram": {
+            "2": 2
+          },
+          "assignment_count": 4,
+          "heralded_success_fraction": 0.5,
+          "mutual_assignment_count": 2,
+          "pairs": [
+            [
+              1,
+              2
+            ]
+          ],
+          "valid_proposal_count": 2,
+          "valid_proposal_fraction": 0.5
+        },
+        "rows": [
+          {
+            "accepted_mass": 0.5,
+            "eta": 1.0,
+            "secret": 0,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.5,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.5,
+            "eta": 1.0,
+            "secret": 1,
+            "signal_residual": 0.0,
+            "signed_output_bias": -0.5,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.5,
+            "eta": 1.0,
+            "secret": 2,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.5,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.5,
+            "eta": 1.0,
+            "secret": 3,
+            "signal_residual": 0.0,
+            "signed_output_bias": -0.5,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.5,
+            "eta": 0.75,
+            "secret": 0,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.28125,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.5,
+            "eta": 0.75,
+            "secret": 1,
+            "signal_residual": 0.0,
+            "signed_output_bias": -0.28125,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.5,
+            "eta": 0.75,
+            "secret": 2,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.28125,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.5,
+            "eta": 0.75,
+            "secret": 3,
+            "signal_residual": 0.0,
+            "signed_output_bias": -0.28125,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.5,
+            "eta": 0.0,
+            "secret": 0,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.0,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.5,
+            "eta": 0.0,
+            "secret": 1,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.0,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.5,
+            "eta": 0.0,
+            "secret": 2,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.0,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.5,
+            "eta": 0.0,
+            "secret": 3,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.0,
+            "success_residual": 0.0
+          }
+        ]
+      },
+      {
+        "clean_xor_oracle_calls": 6,
+        "labels": [
+          1,
+          3
+        ],
+        "lookup_table_is_efficient_implementation": false,
+        "maximum_residual": 0.0,
+        "modulus": 4,
+        "name": "canonical-oracle-control",
+        "physical_checks": {
+          "accept_full_space_permutation": true,
+          "accepted_isometry_exact": true,
+          "accepted_workspace_exactly_clean": true,
+          "ordering_full_space_permutation": true
+        },
+        "profile": {
+          "accepted_assignments": [
+            1,
+            2
+          ],
+          "accepted_hamming_histogram": {
+            "2": 2
+          },
+          "assignment_count": 4,
+          "heralded_success_fraction": 0.5,
+          "mutual_assignment_count": 2,
+          "pairs": [
+            [
+              1,
+              2
+            ]
+          ],
+          "valid_proposal_count": 2,
+          "valid_proposal_fraction": 0.5
+        },
+        "rows": [
+          {
+            "accepted_mass": 0.5,
+            "eta": 1.0,
+            "secret": 0,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.5,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.5,
+            "eta": 1.0,
+            "secret": 1,
+            "signal_residual": 0.0,
+            "signed_output_bias": -0.5,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.5,
+            "eta": 1.0,
+            "secret": 2,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.5,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.5,
+            "eta": 1.0,
+            "secret": 3,
+            "signal_residual": 0.0,
+            "signed_output_bias": -0.5,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.5,
+            "eta": 0.75,
+            "secret": 0,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.28125,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.5,
+            "eta": 0.75,
+            "secret": 1,
+            "signal_residual": 0.0,
+            "signed_output_bias": -0.28125,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.5,
+            "eta": 0.75,
+            "secret": 2,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.28125,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.5,
+            "eta": 0.75,
+            "secret": 3,
+            "signal_residual": 0.0,
+            "signed_output_bias": -0.28125,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.5,
+            "eta": 0.0,
+            "secret": 0,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.0,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.5,
+            "eta": 0.0,
+            "secret": 1,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.0,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.5,
+            "eta": 0.0,
+            "secret": 2,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.0,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.5,
+            "eta": 0.0,
+            "secret": 3,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.0,
+            "success_residual": 0.0
+          }
+        ]
+      },
+      {
+        "clean_xor_oracle_calls": 6,
+        "labels": [
+          1,
+          3
+        ],
+        "lookup_table_is_efficient_implementation": false,
+        "maximum_residual": 0.0,
+        "modulus": 4,
+        "name": "cyclic-increment",
+        "physical_checks": {
+          "accept_full_space_permutation": true,
+          "accepted_isometry_exact": true,
+          "accepted_workspace_exactly_clean": true,
+          "ordering_full_space_permutation": true
+        },
+        "profile": {
+          "accepted_assignments": [],
+          "accepted_hamming_histogram": {},
+          "assignment_count": 4,
+          "heralded_success_fraction": 0.0,
+          "mutual_assignment_count": 0,
+          "pairs": [],
+          "valid_proposal_count": 1,
+          "valid_proposal_fraction": 0.25
+        },
+        "rows": [
+          {
+            "accepted_mass": 0.0,
+            "eta": 1.0,
+            "secret": 0,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.0,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.0,
+            "eta": 1.0,
+            "secret": 1,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.0,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.0,
+            "eta": 1.0,
+            "secret": 2,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.0,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.0,
+            "eta": 1.0,
+            "secret": 3,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.0,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.0,
+            "eta": 0.75,
+            "secret": 0,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.0,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.0,
+            "eta": 0.75,
+            "secret": 1,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.0,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.0,
+            "eta": 0.75,
+            "secret": 2,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.0,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.0,
+            "eta": 0.75,
+            "secret": 3,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.0,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.0,
+            "eta": 0.0,
+            "secret": 0,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.0,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.0,
+            "eta": 0.0,
+            "secret": 1,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.0,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.0,
+            "eta": 0.0,
+            "secret": 2,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.0,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.0,
+            "eta": 0.0,
+            "secret": 3,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.0,
+            "success_residual": 0.0
+          }
+        ]
+      },
+      {
+        "clean_xor_oracle_calls": 6,
+        "labels": [
+          2,
+          0
+        ],
+        "lookup_table_is_efficient_implementation": false,
+        "maximum_residual": 0.0,
+        "modulus": 4,
+        "name": "complement",
+        "physical_checks": {
+          "accept_full_space_permutation": true,
+          "accepted_isometry_exact": true,
+          "accepted_workspace_exactly_clean": true,
+          "ordering_full_space_permutation": true
+        },
+        "profile": {
+          "accepted_assignments": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "accepted_hamming_histogram": {
+            "2": 4
+          },
+          "assignment_count": 4,
+          "heralded_success_fraction": 1.0,
+          "mutual_assignment_count": 4,
+          "pairs": [
+            [
+              0,
+              3
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "valid_proposal_count": 4,
+          "valid_proposal_fraction": 1.0
+        },
+        "rows": [
+          {
+            "accepted_mass": 1.0,
+            "eta": 1.0,
+            "secret": 0,
+            "signal_residual": 0.0,
+            "signed_output_bias": 1.0,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 1.0,
+            "eta": 1.0,
+            "secret": 1,
+            "signal_residual": 0.0,
+            "signed_output_bias": -1.0,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 1.0,
+            "eta": 1.0,
+            "secret": 2,
+            "signal_residual": 0.0,
+            "signed_output_bias": 1.0,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 1.0,
+            "eta": 1.0,
+            "secret": 3,
+            "signal_residual": 0.0,
+            "signed_output_bias": -1.0,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 1.0,
+            "eta": 0.75,
+            "secret": 0,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.5625,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 1.0,
+            "eta": 0.75,
+            "secret": 1,
+            "signal_residual": 0.0,
+            "signed_output_bias": -0.5625,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 1.0,
+            "eta": 0.75,
+            "secret": 2,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.5625,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 1.0,
+            "eta": 0.75,
+            "secret": 3,
+            "signal_residual": 0.0,
+            "signed_output_bias": -0.5625,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 1.0,
+            "eta": 0.0,
+            "secret": 0,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.0,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 1.0,
+            "eta": 0.0,
+            "secret": 1,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.0,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 1.0,
+            "eta": 0.0,
+            "secret": 2,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.0,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 1.0,
+            "eta": 0.0,
+            "secret": 3,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.0,
+            "success_residual": 0.0
+          }
+        ]
+      },
+      {
+        "clean_xor_oracle_calls": 6,
+        "labels": [
+          2,
+          0
+        ],
+        "lookup_table_is_efficient_implementation": false,
+        "maximum_residual": 0.0,
+        "modulus": 4,
+        "name": "canonical-oracle-control",
+        "physical_checks": {
+          "accept_full_space_permutation": true,
+          "accepted_isometry_exact": true,
+          "accepted_workspace_exactly_clean": true,
+          "ordering_full_space_permutation": true
+        },
+        "profile": {
+          "accepted_assignments": [
+            0,
+            1
+          ],
+          "accepted_hamming_histogram": {
+            "1": 2
+          },
+          "assignment_count": 4,
+          "heralded_success_fraction": 0.5,
+          "mutual_assignment_count": 2,
+          "pairs": [
+            [
+              0,
+              1
+            ]
+          ],
+          "valid_proposal_count": 4,
+          "valid_proposal_fraction": 1.0
+        },
+        "rows": [
+          {
+            "accepted_mass": 0.5,
+            "eta": 1.0,
+            "secret": 0,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.5,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.5,
+            "eta": 1.0,
+            "secret": 1,
+            "signal_residual": 0.0,
+            "signed_output_bias": -0.5,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.5,
+            "eta": 1.0,
+            "secret": 2,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.5,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.5,
+            "eta": 1.0,
+            "secret": 3,
+            "signal_residual": 0.0,
+            "signed_output_bias": -0.5,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.5,
+            "eta": 0.75,
+            "secret": 0,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.375,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.5,
+            "eta": 0.75,
+            "secret": 1,
+            "signal_residual": 0.0,
+            "signed_output_bias": -0.375,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.5,
+            "eta": 0.75,
+            "secret": 2,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.375,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.5,
+            "eta": 0.75,
+            "secret": 3,
+            "signal_residual": 0.0,
+            "signed_output_bias": -0.375,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.5,
+            "eta": 0.0,
+            "secret": 0,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.0,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.5,
+            "eta": 0.0,
+            "secret": 1,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.0,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.5,
+            "eta": 0.0,
+            "secret": 2,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.0,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.5,
+            "eta": 0.0,
+            "secret": 3,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.0,
+            "success_residual": 0.0
+          }
+        ]
+      },
+      {
+        "clean_xor_oracle_calls": 6,
+        "labels": [
+          2,
+          0
+        ],
+        "lookup_table_is_efficient_implementation": false,
+        "maximum_residual": 0.0,
+        "modulus": 4,
+        "name": "cyclic-increment",
+        "physical_checks": {
+          "accept_full_space_permutation": true,
+          "accepted_isometry_exact": true,
+          "accepted_workspace_exactly_clean": true,
+          "ordering_full_space_permutation": true
+        },
+        "profile": {
+          "accepted_assignments": [],
+          "accepted_hamming_histogram": {},
+          "assignment_count": 4,
+          "heralded_success_fraction": 0.0,
+          "mutual_assignment_count": 0,
+          "pairs": [],
+          "valid_proposal_count": 4,
+          "valid_proposal_fraction": 1.0
+        },
+        "rows": [
+          {
+            "accepted_mass": 0.0,
+            "eta": 1.0,
+            "secret": 0,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.0,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.0,
+            "eta": 1.0,
+            "secret": 1,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.0,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.0,
+            "eta": 1.0,
+            "secret": 2,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.0,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.0,
+            "eta": 1.0,
+            "secret": 3,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.0,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.0,
+            "eta": 0.75,
+            "secret": 0,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.0,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.0,
+            "eta": 0.75,
+            "secret": 1,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.0,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.0,
+            "eta": 0.75,
+            "secret": 2,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.0,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.0,
+            "eta": 0.75,
+            "secret": 3,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.0,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.0,
+            "eta": 0.0,
+            "secret": 0,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.0,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.0,
+            "eta": 0.0,
+            "secret": 1,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.0,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.0,
+            "eta": 0.0,
+            "secret": 2,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.0,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.0,
+            "eta": 0.0,
+            "secret": 3,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.0,
+            "success_residual": 0.0
+          }
+        ]
+      },
+      {
+        "clean_xor_oracle_calls": 6,
+        "labels": [
+          1,
+          2,
+          5
+        ],
+        "lookup_table_is_efficient_implementation": false,
+        "maximum_residual": 0.0,
+        "modulus": 8,
+        "name": "complement",
+        "physical_checks": {
+          "accept_full_space_permutation": true,
+          "accepted_isometry_exact": true,
+          "accepted_workspace_exactly_clean": true,
+          "ordering_full_space_permutation": true
+        },
+        "profile": {
+          "accepted_assignments": [
+            2,
+            5
+          ],
+          "accepted_hamming_histogram": {
+            "3": 2
+          },
+          "assignment_count": 8,
+          "heralded_success_fraction": 0.25,
+          "mutual_assignment_count": 2,
+          "pairs": [
+            [
+              2,
+              5
+            ]
+          ],
+          "valid_proposal_count": 2,
+          "valid_proposal_fraction": 0.25
+        },
+        "rows": [
+          {
+            "accepted_mass": 0.25,
+            "eta": 1.0,
+            "secret": 0,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.25,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.25,
+            "eta": 1.0,
+            "secret": 1,
+            "signal_residual": 0.0,
+            "signed_output_bias": -0.25,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.25,
+            "eta": 1.0,
+            "secret": 2,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.25,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.25,
+            "eta": 1.0,
+            "secret": 3,
+            "signal_residual": 0.0,
+            "signed_output_bias": -0.25,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.25,
+            "eta": 1.0,
+            "secret": 4,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.25,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.25,
+            "eta": 1.0,
+            "secret": 5,
+            "signal_residual": 0.0,
+            "signed_output_bias": -0.25,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.25,
+            "eta": 1.0,
+            "secret": 6,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.25,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.25,
+            "eta": 1.0,
+            "secret": 7,
+            "signal_residual": 0.0,
+            "signed_output_bias": -0.25,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.25,
+            "eta": 0.75,
+            "secret": 0,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.10546875,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.25,
+            "eta": 0.75,
+            "secret": 1,
+            "signal_residual": 0.0,
+            "signed_output_bias": -0.10546875,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.25,
+            "eta": 0.75,
+            "secret": 2,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.10546875,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.25,
+            "eta": 0.75,
+            "secret": 3,
+            "signal_residual": 0.0,
+            "signed_output_bias": -0.10546875,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.25,
+            "eta": 0.75,
+            "secret": 4,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.10546875,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.25,
+            "eta": 0.75,
+            "secret": 5,
+            "signal_residual": 0.0,
+            "signed_output_bias": -0.10546875,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.25,
+            "eta": 0.75,
+            "secret": 6,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.10546875,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.25,
+            "eta": 0.75,
+            "secret": 7,
+            "signal_residual": 0.0,
+            "signed_output_bias": -0.10546875,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.25,
+            "eta": 0.0,
+            "secret": 0,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.0,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.25,
+            "eta": 0.0,
+            "secret": 1,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.0,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.25,
+            "eta": 0.0,
+            "secret": 2,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.0,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.25,
+            "eta": 0.0,
+            "secret": 3,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.0,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.25,
+            "eta": 0.0,
+            "secret": 4,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.0,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.25,
+            "eta": 0.0,
+            "secret": 5,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.0,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.25,
+            "eta": 0.0,
+            "secret": 6,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.0,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.25,
+            "eta": 0.0,
+            "secret": 7,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.0,
+            "success_residual": 0.0
+          }
+        ]
+      },
+      {
+        "clean_xor_oracle_calls": 6,
+        "labels": [
+          1,
+          2,
+          5
+        ],
+        "lookup_table_is_efficient_implementation": false,
+        "maximum_residual": 0.0,
+        "modulus": 8,
+        "name": "canonical-oracle-control",
+        "physical_checks": {
+          "accept_full_space_permutation": true,
+          "accepted_isometry_exact": true,
+          "accepted_workspace_exactly_clean": true,
+          "ordering_full_space_permutation": true
+        },
+        "profile": {
+          "accepted_assignments": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "accepted_hamming_histogram": {
+            "2": 4,
+            "3": 2
+          },
+          "assignment_count": 8,
+          "heralded_success_fraction": 0.75,
+          "mutual_assignment_count": 6,
+          "pairs": [
+            [
+              1,
+              4
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              3,
+              6
+            ]
+          ],
+          "valid_proposal_count": 6,
+          "valid_proposal_fraction": 0.75
+        },
+        "rows": [
+          {
+            "accepted_mass": 0.75,
+            "eta": 1.0,
+            "secret": 0,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.75,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.75,
+            "eta": 1.0,
+            "secret": 1,
+            "signal_residual": 0.0,
+            "signed_output_bias": -0.75,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.75,
+            "eta": 1.0,
+            "secret": 2,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.75,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.75,
+            "eta": 1.0,
+            "secret": 3,
+            "signal_residual": 0.0,
+            "signed_output_bias": -0.75,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.75,
+            "eta": 1.0,
+            "secret": 4,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.75,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.75,
+            "eta": 1.0,
+            "secret": 5,
+            "signal_residual": 0.0,
+            "signed_output_bias": -0.75,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.75,
+            "eta": 1.0,
+            "secret": 6,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.75,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.75,
+            "eta": 1.0,
+            "secret": 7,
+            "signal_residual": 0.0,
+            "signed_output_bias": -0.75,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.75,
+            "eta": 0.75,
+            "secret": 0,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.38671875,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.75,
+            "eta": 0.75,
+            "secret": 1,
+            "signal_residual": 0.0,
+            "signed_output_bias": -0.38671875,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.75,
+            "eta": 0.75,
+            "secret": 2,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.38671875,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.75,
+            "eta": 0.75,
+            "secret": 3,
+            "signal_residual": 0.0,
+            "signed_output_bias": -0.38671875,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.75,
+            "eta": 0.75,
+            "secret": 4,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.38671875,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.75,
+            "eta": 0.75,
+            "secret": 5,
+            "signal_residual": 0.0,
+            "signed_output_bias": -0.38671875,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.75,
+            "eta": 0.75,
+            "secret": 6,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.38671875,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.75,
+            "eta": 0.75,
+            "secret": 7,
+            "signal_residual": 0.0,
+            "signed_output_bias": -0.38671875,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.75,
+            "eta": 0.0,
+            "secret": 0,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.0,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.75,
+            "eta": 0.0,
+            "secret": 1,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.0,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.75,
+            "eta": 0.0,
+            "secret": 2,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.0,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.75,
+            "eta": 0.0,
+            "secret": 3,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.0,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.75,
+            "eta": 0.0,
+            "secret": 4,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.0,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.75,
+            "eta": 0.0,
+            "secret": 5,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.0,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.75,
+            "eta": 0.0,
+            "secret": 6,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.0,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.75,
+            "eta": 0.0,
+            "secret": 7,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.0,
+            "success_residual": 0.0
+          }
+        ]
+      },
+      {
+        "clean_xor_oracle_calls": 6,
+        "labels": [
+          1,
+          2,
+          5
+        ],
+        "lookup_table_is_efficient_implementation": false,
+        "maximum_residual": 0.0,
+        "modulus": 8,
+        "name": "cyclic-increment",
+        "physical_checks": {
+          "accept_full_space_permutation": true,
+          "accepted_isometry_exact": true,
+          "accepted_workspace_exactly_clean": true,
+          "ordering_full_space_permutation": true
+        },
+        "profile": {
+          "accepted_assignments": [],
+          "accepted_hamming_histogram": {},
+          "assignment_count": 8,
+          "heralded_success_fraction": 0.0,
+          "mutual_assignment_count": 0,
+          "pairs": [],
+          "valid_proposal_count": 0,
+          "valid_proposal_fraction": 0.0
+        },
+        "rows": [
+          {
+            "accepted_mass": 0.0,
+            "eta": 1.0,
+            "secret": 0,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.0,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.0,
+            "eta": 1.0,
+            "secret": 1,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.0,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.0,
+            "eta": 1.0,
+            "secret": 2,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.0,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.0,
+            "eta": 1.0,
+            "secret": 3,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.0,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.0,
+            "eta": 1.0,
+            "secret": 4,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.0,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.0,
+            "eta": 1.0,
+            "secret": 5,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.0,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.0,
+            "eta": 1.0,
+            "secret": 6,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.0,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.0,
+            "eta": 1.0,
+            "secret": 7,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.0,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.0,
+            "eta": 0.75,
+            "secret": 0,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.0,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.0,
+            "eta": 0.75,
+            "secret": 1,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.0,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.0,
+            "eta": 0.75,
+            "secret": 2,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.0,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.0,
+            "eta": 0.75,
+            "secret": 3,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.0,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.0,
+            "eta": 0.75,
+            "secret": 4,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.0,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.0,
+            "eta": 0.75,
+            "secret": 5,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.0,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.0,
+            "eta": 0.75,
+            "secret": 6,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.0,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.0,
+            "eta": 0.75,
+            "secret": 7,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.0,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.0,
+            "eta": 0.0,
+            "secret": 0,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.0,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.0,
+            "eta": 0.0,
+            "secret": 1,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.0,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.0,
+            "eta": 0.0,
+            "secret": 2,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.0,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.0,
+            "eta": 0.0,
+            "secret": 3,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.0,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.0,
+            "eta": 0.0,
+            "secret": 4,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.0,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.0,
+            "eta": 0.0,
+            "secret": 5,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.0,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.0,
+            "eta": 0.0,
+            "secret": 6,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.0,
+            "success_residual": 0.0
+          },
+          {
+            "accepted_mass": 0.0,
+            "eta": 0.0,
+            "secret": 7,
+            "signal_residual": 0.0,
+            "signed_output_bias": 0.0,
+            "success_residual": 0.0
+          }
+        ]
+      }
+    ],
+    "noise_mass_envelopes": [
+      {
+        "achievability_claimed": false,
+        "capacity_saturating_weight": 7,
+        "eta": {
+          "denominator": 4,
+          "numerator": 3
+        },
+        "log2_weighted_mass_upper": -2.743710051213597,
+        "n": 64,
+        "noise_model": "constant-quarter-fault",
+        "samples": 4096,
+        "weighted_mass_upper": {
+          "denominator": 295147905179352825856,
+          "numerator": 44065700698961742447
+        }
+      },
+      {
+        "achievability_claimed": false,
+        "capacity_saturating_weight": 7,
+        "eta": {
+          "denominator": 64,
+          "numerator": 63
+        },
+        "log2_weighted_mass_upper": -0.15092694640884474,
+        "n": 64,
+        "noise_model": "inverse-n-fault",
+        "samples": 4096,
+        "weighted_mass_upper": {
+          "denominator": 79228162514264337593543950336,
+          "numerator": 71358554779818259706756034507
+        }
+      },
+      {
+        "achievability_claimed": false,
+        "capacity_saturating_weight": 11,
+        "eta": {
+          "denominator": 4,
+          "numerator": 3
+        },
+        "log2_weighted_mass_upper": -4.564870497962403,
+        "n": 128,
+        "noise_model": "constant-quarter-fault",
+        "samples": 16384,
+        "weighted_mass_upper": {
+          "denominator": 696898287454081973172991196020261297061888,
+          "numerator": 29444653710703154986748869781212702207701
+        }
+      },
+      {
+        "achievability_claimed": false,
+        "capacity_saturating_weight": 11,
+        "eta": {
+          "denominator": 128,
+          "numerator": 127
+        },
+        "log2_weighted_mass_upper": -0.12445564269356169,
+        "n": 128,
+        "noise_model": "inverse-n-fault",
+        "samples": 16384,
+        "weighted_mass_upper": {
+          "denominator": 25108406941546723055343157692830665664409421777856138051584,
+          "numerator": 23033199925239088835267961497034899631812833920862255283681
+        }
+      },
+      {
+        "achievability_claimed": false,
+        "capacity_saturating_weight": 20,
+        "eta": {
+          "denominator": 4,
+          "numerator": 3
+        },
+        "log2_weighted_mass_upper": -8.29963980923742,
+        "n": 256,
+        "noise_model": "constant-quarter-fault",
+        "samples": 65536,
+        "weighted_mass_upper": {
+          "denominator": 31082702275611665134711390509176302506278509424834232340028998555822468563283335970816,
+          "numerator": 98645716769388461993647374107571180330798814489701338105020549986534809486714749995
+        }
+      },
+      {
+        "achievability_claimed": false,
+        "capacity_saturating_weight": 20,
+        "eta": {
+          "denominator": 256,
+          "numerator": 255
+        },
+        "log2_weighted_mass_upper": -0.11291819820576166,
+        "n": 256,
+        "noise_model": "inverse-n-fault",
+        "samples": 65536,
+        "weighted_mass_upper": {
+          "denominator": 41315998049390537434494706752048189989275292685267576205290549704650361952269459114074325652482205302974450751563959894016,
+          "numerator": 38205552414392426551829512829677687821772517795979681207765628795950102774045899352854922937143624530568690025437640842555
+        }
+      },
+      {
+        "achievability_claimed": false,
+        "capacity_saturating_weight": 37,
+        "eta": {
+          "denominator": 4,
+          "numerator": 3
+        },
+        "log2_weighted_mass_upper": -15.248168700359884,
+        "n": 512,
+        "noise_model": "constant-quarter-fault",
+        "samples": 262144,
+        "weighted_mass_upper": {
+          "denominator": 30916300184138066757562815127455898754391418637651479989257882011612153138316483396289550132655380623699708928252017417418920629288343901245943269387736645989575846518587392,
+          "numerator": 794385590305183855680254270107160758639491941128474651969149308599564151708876683830002624093994546956769425235112675599806718462942740597854059310108379266912728702033
+        }
+      },
+      {
+        "achievability_claimed": false,
+        "capacity_saturating_weight": 37,
+        "eta": {
+          "denominator": 512,
+          "numerator": 511
+        },
+        "log2_weighted_mass_upper": -0.10369961499111469,
+        "n": 512,
+        "noise_model": "inverse-n-fault",
+        "samples": 262144,
+        "weighted_mass_upper": {
+          "denominator": 28638903918474961204418783933674838490721739172170652529441449702311064005352904159345284265824628375429359509218999720074396860757073376700445026041564579620512874307979212102266801261478978776245040008231745247475930553606737583615358787106474295296,
+          "numerator": 26652607136825299834464669579760231338690434379356947898392425488950219790149730096395756206793302353881387410465276826748838576250293583269856542836804753571619614038132164555751245863184549772383489391014275167541384587570975882540103284390885821045
+        }
+      },
+      {
+        "achievability_claimed": false,
+        "capacity_saturating_weight": 67,
+        "eta": {
+          "denominator": 4,
+          "numerator": 3
+        },
+        "log2_weighted_mass_upper": -27.807400193946478,
+        "n": 1024,
+        "noise_model": "constant-quarter-fault",
+        "samples": 1048576,
+        "weighted_mass_upper": {
+          "denominator": 238954404268933865125126537965647370348186772435315621289825771761405069515984212194479937258429577313733767604974644713064293001386859963477865690977385256586189347544846179894960090613343571873484581297429015320656710070604819135113469266235546964237890007694823296373534385169983015617629084799101278271338071223315759934627648900036785340416,
+          "numerator": 1017310389355822488473276525254952249782941336229240024986803178228166474268368950060773098867291627237211439271506518208160547638898131505587753350381212638548677311776016393372256213285259502224728069376316679016956096893032090173457497711548926714680134890575114633221947247057304767061557875409728639479935448599269728840117172083265
+        }
+      },
+      {
+        "achievability_claimed": false,
+        "capacity_saturating_weight": 67,
+        "eta": {
+          "denominator": 1024,
+          "numerator": 1023
+        },
+        "log2_weighted_mass_upper": -0.09444087785550437,
+        "n": 1024,
+        "noise_model": "inverse-n-fault",
+        "samples": 1048576,
+        "weighted_mass_upper": {
+          "denominator": 53751763281617910977034964721174741663008655940159144344713614863023080529278140407534961311242814229395876005424258737427374269437649287838907097277355371953699677593812086481959272740614049029887514406997074265172418391397657360248197162683969074191332475296524902658098222332595908741751391477587362636344728828453617536494627356792601450307397806688631445746074774556850081722840606116959452930981773324385740577251592339045231114992186734509188416434115341010544191353505352737718761080737479237042176,
+          "numerator": 50345792140823032185207867136653167538753460122458621487231149499911577470591446264979833458066895195393817787750780156140770545750562159323588914755722451478828990499692716048478648917401931354077963392243228490459777110452020098060393744501650396376065200651206168984407834273446126544527232058007078429314039751448879786090489638441701019218856324006940219924662768653820182427853413255604825763428306647031392392314469048900282008439726076838556609263553504763761887376063023091664701754165706634450925
+        }
+      },
+      {
+        "achievability_claimed": false,
+        "capacity_saturating_weight": 125,
+        "eta": {
+          "denominator": 4,
+          "numerator": 3
+        },
+        "log2_weighted_mass_upper": -51.87808938228318,
+        "n": 2048,
+        "noise_model": "constant-quarter-fault",
+        "samples": 4194304,
+        "weighted_mass_upper": {
+          "denominator": 892175114367516859142303412804203619772417264825719802223982439926809371585640946738225090538007978052306491862248633404791517411387358729581806994922294142130508386707876249956452615894624821597749738080140558656857620623509688216189756504989733521939173996257965291755192057958343073925006136859234663404369500649166018343664209832100315257773212744291003404451850250448153659210854347147929625990501138824961441476953710587363333425689662381755241213573327724380480237141473663803772958451620829428157870773124995936357458255259189848823921922773427892559798550013909834279517592122447606787074762069332988805902104118095937386510777295860881850208373634019280343528266344836265672704,
+          "numerator": 215570378072806500113066712753124552677348230017766393901702743302391889179715191973133528332362707199557195689213373725095889587395292516972535926703628162493548979250404256797511213631693519288146271259799998489727725178443856220364525678387489688746228149439273499418567124167485298540659854893850714369685678490679564842796395778842159348820219446167678407798785153922220500231352066503418671572102551979855078802570243077205880265098986076249136019196267559721428036357388536796938180994190704865988931524935476113425535950090436453737557924155229432457520413579398154923872290409430539671477009527339940164350581541287915995924117758842917946292051432882106437632891
+        }
+      },
+      {
+        "achievability_claimed": false,
+        "capacity_saturating_weight": 125,
+        "eta": {
+          "denominator": 2048,
+          "numerator": 2047
+        },
+        "log2_weighted_mass_upper": -0.08807427879673924,
+        "n": 2048,
+        "noise_model": "inverse-n-fault",
+        "samples": 4194304,
+        "weighted_mass_upper": {
+          "denominator": 406626077570453510115831729689612521015480440322414627047889911432156673284667209275460712505915369221592709087684313206208032247998402297523757673676869636652090356228554695749169947805478301261124602165343031358066270037677692180847140508912427117740216669088076435879968240113510737838664586698526307681271260943757119438473777851656092901996624660967749642223657970710935571681415007909478003952705015169214286066279822185677272911178921297823758946145926474207422073211527242544784957277430256420127439350030939593979674331517278922005761787784707621676381018689005956765223165487324091518487686894135316952843010022334052890095468217947765650819055286611442667786550099722826377622091919768129114673648853534330283967879100597883499161618628377967738843005385066139067297152973403022227931810136464735799867734903818219327664392090285039566336405558533989098600350231185451356741398313490607464216962757593099903379228283783212299885894859590474809651086817399181678505112867377675294410965352247253744372451214127792128,
+          "numerator": 382544733516005664031876266489287201729719562246571619514087102303333772514038695031133439770102936714694051782340828058191503140476807759715033759396363611974693685520824680689217855155134824142893139025264969440464871071226087402631350832812135744480119198119967397465255578682812786522738474762558375451390707712605454861679692479316719230037052114248995688041216652213211606652282283335383630820292472916914170939708922133483429038141690706561888100345415568670436401335791616072070499824503165292721478152403907017249973957881138335088903209943199130406781097515078673978828030485133088243187927966443953842275110895751233134028955603096279125933017070659054812461672417846002242978444588686874680005057270655078559967838996185681960025933156057147885079566155779010419486420809439203596519347895240876696537558426067682032075942273004630174506847546720103201298346813494117692495204693769955269169390424940931683515683682796726439722673016036903466542579056876939016488017117138704945397028634482201393531667286084258503
+        }
+      },
+      {
+        "achievability_claimed": false,
+        "capacity_saturating_weight": 234,
+        "eta": {
+          "denominator": 4,
+          "numerator": 3
+        },
+        "log2_weighted_mass_upper": -97.10795121093633,
+        "n": 4096,
+        "noise_model": "constant-quarter-fault",
+        "samples": 16777216,
+        "weighted_mass_upper": {
+          "denominator": 6072818257878813076320507971467457091653067844917383332017457310533071858298066966472572601205525904327546181984967011524239526055782509555764559689193922869961767796827592046241067336045415139509745424645653423860035418794915041614719208582033456123283116719087268917876410500962569813681797596610752419619151899604237405126366352134830756386605789378164301439212960044766004785542172459053025603033530467588284185783831326504662806901298567659686983597785346465497127695568384872126419067437422327144606312823521621913323028220120846529249989000327236917100784481695551136574841765473315781755866429651437315055895417722282638740537883372799330727601132813221178518520300915082064919266205830744122287067724024329411604335649490760791444386620163568481801015738302112171863445805987170702184774436618247511513964447170498138722065017896821575241021786497883819634802555901262620839806268531379810412148138226050022466659786716347638053025319570893242699090534675458580243640205253321204662075430957278384228341257356646055190970025583673577164508055902847384205252952163119038792064102452103142365341308539398750946702356656682578223023108169700250626023686514398949481153591697298397819678213567164980425243302401977769358946944645789765383300397341105566184474618192728495034008714165830956868365080945590336020361723341455502572236926771365250173243908872185315328,
+          "numerator": 35561834146020011779008634495566238086292619635136235952787431097613794333340022599296613023669236409868971502702801343449400794804848078895821738463540803371608483842428873222056143613312940463433099346160451287716502574949521549125529963054191990852112664226905276668292872105790040710834378342925839006374764391409632818657741246098823647615293573575333781450282392125002146878922164720610458155090012408715801741467966406118626744247111103462954805059778786043644760079339385982510725963479168047715945621918643691823321407632063479647171976860189200158943312262542528368590478691558162931273432563974698767151232295650564331257107527586782705341023807236015143082044011559285096620283106312846759499973728806840442744587680403641880293743010091708968008483888224462698244537489564673635745751964300062876170521000375145228725470337745878127773111975463549552089506866746227896289192452023400346242326979173944418585539588907364552005311916226317140523208682801241542449971169907091510145635094547581236922923946757529476583399605975812655982723819047440141070030643175205535109763504367094175847712129480974752099457170378979488217408207801663188538327352884394454658080103478080307888487745428481148852458632484511616731839154686794842643895513947434349644632812044851616643159897856854018411698491611067438746503708585423923167147513
+        }
+      },
+      {
+        "achievability_claimed": false,
+        "capacity_saturating_weight": 234,
+        "eta": {
+          "denominator": 4096,
+          "numerator": 4095
+        },
+        "log2_weighted_mass_upper": -0.08242169320874382,
+        "n": 4096,
+        "noise_model": "inverse-n-fault",
+        "samples": 16777216,
+        "weighted_mass_upper": {
+          "denominator": 1561637171222732779163297717698947646997051692675582104212396034067699091703701009216440196970953526476054131999845081861184337286694742654014472032562123618369860132876220941537798999436898787213425599711493236805181722101488472450503181509714242551563297360967397106265750508616960927543735203184280408137114720594742321655815455550256136881114715048862087007880315314526812441796974239982964031327515422161758114227125201500978849722114111766701904718886806737559416566689722425185209169713518053733637723431053555731219921446453214064975138411972439209446704597753887882028108035657850359840366554169815944284030969002706642852568494942574541179803226096355819855072968947826488842093437593308375286433550445652171000450220471554671689711804365517051477889316442359725411346942650976361924945837525865137924696736582992093441800727359535635147054272336551157570364210750301787422535731687209851454602495796692256186167319165843273838000600472318815504672004156132907781350080690672298616509605778016088789630070309595057497598617391586777063984876198525478479442947382431415791686898069275943632977560102070639494033670123237140860343383720187021921431864471670433001847554315940450830297512732812961395647259021585545877404984940666017823109977013819066066832534738655518562519819214600092720747906615990962142738020524895281002226747479398842060326908972334977966712960240690555357289423236952299778983362370713093580751175659731843207617884701746209092128073387828717963147432573441386007761058401776192310810037134981564430571468387302427916643727763495395406838252374429625210162035303953007451816053386084455719457046848617422979964496770668993761100476519740790037543195480278980465056199037096200185072445727203578763863517370975583200781226068522539957680102187007677232305311126005145939123232906906128021191908254566707506378173049226827796087979655458386190279266167278285161205023327963626128969824554894143980051199109022381661100245397639553416230590807563097553558774809624169580244735027818489794485851884632453275372305257594817463073067057437137174528,
+          "numerator": 1474920920924573762359452330759291702103294796018437257525094566844952163956203171108713448643262625351586781057323043737275232937654138645301491052912285621230474325545884520959823122681387440407359640866707989768942087352247637057144681754989718243424090498840280562745844181598142426673470179372048882612424602620343834236607116270295597618127674238763020375503121303280975080074458690679903878048373948611203971679690792901674738598610445939332808859501654343004581309001871832027164563871016713820802787183092452852661397563296985036059060509877750147544109972814642068029276814686145913395850227759024293839831106789139561940963541935276680292450717906787351781229033945199892737864323467828934324221939459093121546767656715874529172084467956867446267567225046354617649746540878239144336823383401370202674961148147060328625136549242931982508069905834619313763967660058200748750697139726489042785930706891521945895164419016119327392104535668473679028002815794762256190703739740983566137395112464276756364922139050713348933795624324604941690539451083324505506695346528299723468500581616602064112192334756812338500213468869771569544941554181069208982824997678209607269096695365712390219431740353647196239482218786501859938366916597379528821207305160450038260228487721638238602145374267390080739275510360710836117653753256995917396838374512523058045045328194933648895675741398678664180641237264679812652717268709125831523687316625369238029808130712631598731651472145210043649088020421502441436748313631614460624874162111833175041918784309573189468233835410789911013939675465012942606543376616162041542496969339033336475955846572469246282586666410829908570268184606047697007197607930295260085549331827379638707597491516118120913380329272454674204865489980866750254717275149531543299532023352519699615383942657369118152976498022826423573574192625752815631420232058150705625200887798876595595147416620774300918558380407000961267974155252955716202555914853611493010193928776434892266902180403592701584750653206574248945912922394069751091912131344037207432560014865609854562385
+        }
+      }
+    ],
+    "permutation_controls": [
+      {
+        "full_decoder_constructed": false,
+        "isometry_residual": 2.220446049250313e-16,
+        "maximum_residual": 2.220446049250313e-16,
+        "mutuality_required": false,
+        "requires_efficient_clean_permutation_and_inverse": true,
+        "rows": [
+          {
+            "eta": 1.0,
+            "residual": 2.220446049250313e-16,
+            "secret": 0,
+            "signal": 0.9999999999999998
+          },
+          {
+            "eta": 1.0,
+            "residual": 2.220446049250313e-16,
+            "secret": 1,
+            "signal": -0.9999999999999998
+          },
+          {
+            "eta": 1.0,
+            "residual": 2.220446049250313e-16,
+            "secret": 2,
+            "signal": 0.9999999999999998
+          },
+          {
+            "eta": 1.0,
+            "residual": 2.220446049250313e-16,
+            "secret": 3,
+            "signal": -0.9999999999999998
+          },
+          {
+            "eta": 0.75,
+            "residual": 1.1102230246251565e-16,
+            "secret": 0,
+            "signal": 0.6562499999999999
+          },
+          {
+            "eta": 0.75,
+            "residual": 1.1102230246251565e-16,
+            "secret": 1,
+            "signal": -0.6562499999999999
+          },
+          {
+            "eta": 0.75,
+            "residual": 1.1102230246251565e-16,
+            "secret": 2,
+            "signal": 0.6562499999999999
+          },
+          {
+            "eta": 0.75,
+            "residual": 1.1102230246251565e-16,
+            "secret": 3,
+            "signal": -0.6562499999999999
+          },
+          {
+            "eta": 0.0,
+            "residual": 0.0,
+            "secret": 0,
+            "signal": 0.0
+          },
+          {
+            "eta": 0.0,
+            "residual": 0.0,
+            "secret": 1,
+            "signal": 0.0
+          },
+          {
+            "eta": 0.0,
+            "residual": 0.0,
+            "secret": 2,
+            "signal": 0.0
+          },
+          {
+            "eta": 0.0,
+            "residual": 0.0,
+            "secret": 3,
+            "signal": 0.0
+          }
+        ],
+        "valid_edge_fraction": 1.0,
+        "valid_hamming_histogram": {
+          "1": 2,
+          "2": 2
+        }
+      },
+      {
+        "full_decoder_constructed": false,
+        "isometry_residual": 2.220446049250313e-16,
+        "maximum_residual": 0.0,
+        "mutuality_required": false,
+        "requires_efficient_clean_permutation_and_inverse": true,
+        "rows": [
+          {
+            "eta": 1.0,
+            "residual": 0.0,
+            "secret": 0,
+            "signal": 0.0
+          },
+          {
+            "eta": 1.0,
+            "residual": 0.0,
+            "secret": 1,
+            "signal": 0.0
+          },
+          {
+            "eta": 1.0,
+            "residual": 0.0,
+            "secret": 2,
+            "signal": 0.0
+          },
+          {
+            "eta": 1.0,
+            "residual": 0.0,
+            "secret": 3,
+            "signal": 0.0
+          },
+          {
+            "eta": 1.0,
+            "residual": 0.0,
+            "secret": 4,
+            "signal": 0.0
+          },
+          {
+            "eta": 1.0,
+            "residual": 0.0,
+            "secret": 5,
+            "signal": 0.0
+          },
+          {
+            "eta": 1.0,
+            "residual": 0.0,
+            "secret": 6,
+            "signal": 0.0
+          },
+          {
+            "eta": 1.0,
+            "residual": 0.0,
+            "secret": 7,
+            "signal": 0.0
+          },
+          {
+            "eta": 0.75,
+            "residual": 0.0,
+            "secret": 0,
+            "signal": 0.0
+          },
+          {
+            "eta": 0.75,
+            "residual": 0.0,
+            "secret": 1,
+            "signal": 0.0
+          },
+          {
+            "eta": 0.75,
+            "residual": 0.0,
+            "secret": 2,
+            "signal": 0.0
+          },
+          {
+            "eta": 0.75,
+            "residual": 0.0,
+            "secret": 3,
+            "signal": 0.0
+          },
+          {
+            "eta": 0.75,
+            "residual": 0.0,
+            "secret": 4,
+            "signal": 0.0
+          },
+          {
+            "eta": 0.75,
+            "residual": 0.0,
+            "secret": 5,
+            "signal": 0.0
+          },
+          {
+            "eta": 0.75,
+            "residual": 0.0,
+            "secret": 6,
+            "signal": 0.0
+          },
+          {
+            "eta": 0.75,
+            "residual": 0.0,
+            "secret": 7,
+            "signal": 0.0
+          },
+          {
+            "eta": 0.0,
+            "residual": 0.0,
+            "secret": 0,
+            "signal": 0.0
+          },
+          {
+            "eta": 0.0,
+            "residual": 0.0,
+            "secret": 1,
+            "signal": 0.0
+          },
+          {
+            "eta": 0.0,
+            "residual": 0.0,
+            "secret": 2,
+            "signal": 0.0
+          },
+          {
+            "eta": 0.0,
+            "residual": 0.0,
+            "secret": 3,
+            "signal": 0.0
+          },
+          {
+            "eta": 0.0,
+            "residual": 0.0,
+            "secret": 4,
+            "signal": 0.0
+          },
+          {
+            "eta": 0.0,
+            "residual": 0.0,
+            "secret": 5,
+            "signal": 0.0
+          },
+          {
+            "eta": 0.0,
+            "residual": 0.0,
+            "secret": 6,
+            "signal": 0.0
+          },
+          {
+            "eta": 0.0,
+            "residual": 0.0,
+            "secret": 7,
+            "signal": 0.0
+          }
+        ],
+        "valid_edge_fraction": 0.0,
+        "valid_hamming_histogram": {}
+      }
+    ],
+    "scaling": [
+      {
+        "all_good_batch_log2_probability": -93.06143334434213,
+        "conditional_visibility_is_not_source_coverage": true,
+        "log2_mean_local_mass_upper": -1.4950218299554479,
+        "mean_local_mass_upper": {
+          "denominator": 18014398509481984,
+          "numerator": 6391066711836811
+        },
+        "n": 64,
+        "radius": 6,
+        "radius_noise_visibility": 0.9098367039259756,
+        "samples": 4096
+      },
+      {
+        "all_good_batch_log2_probability": -185.39009192483465,
+        "conditional_visibility_is_not_source_coverage": true,
+        "log2_mean_local_mass_upper": -42.3004407146867,
+        "mean_local_mass_upper": {
+          "denominator": 83076749736557242056487941267521536,
+          "numerator": 15338327698456773033831
+        },
+        "n": 128,
+        "radius": 7,
+        "radius_noise_visibility": 0.9465776787562827,
+        "samples": 16384
+      },
+      {
+        "all_good_batch_log2_probability": -370.0531620178862,
+        "conditional_visibility_is_not_source_coverage": true,
+        "log2_mean_local_mass_upper": -143.29964829061203,
+        "mean_local_mass_upper": {
+          "denominator": 14134776518227074636666380005943348126619871175004951664972849610340958208,
+          "numerator": 1029903283559392508395212029645
+        },
+        "n": 256,
+        "radius": 8,
+        "radius_noise_visibility": 0.9691739244809553,
+        "samples": 65536
+      },
+      {
+        "all_good_batch_log2_probability": -739.3821490881921,
+        "conditional_visibility_is_not_source_coverage": true,
+        "log2_mean_local_mass_upper": -368.4692816128084,
+        "mean_local_mass_upper": {
+          "denominator": 409173825987017733751648712103449894027080255755383098685411421012016724550584319360408761540738019643860835515945008876152157068235674131666065948672,
+          "numerator": 491588368856358507877822498488314622101
+        },
+        "n": 512,
+        "radius": 9,
+        "radius_noise_visibility": 0.9825585800827572,
+        "samples": 262144
+      }
+    ]
+  },
   "seeded_bridge_certificates": [
     {
       "all_good_register_probability": 0.2750587898883363,
@@ -323,12 +2625,14 @@
   "source_contract": {
     "coverage_extension": "average seeded coverage p gives at least p/(2-p) dense (A,r) pairs; the source matching family and averaging yield a fixed matching with Omega(p^5) intersection probability",
     "deterministic_role": "S(A,t) defines one partial function whose paired endpoints erase to the same beta workspace",
+    "noise_scope": "Pre-Fourier classical mask mixtures give survival Pr(fault mask misses b xor c); independent faults give eta^weight. Postlabel corruption or general quantum channels are not covered.",
+    "pairing_scope": "Six-call mutual proposals and flagged clean permutations, with all failures charged; finite tables are exponential references, not efficient solvers.",
     "primary_source": "cs/0304005 quantum_average.tex lines 737-745 and 878-994",
-    "quantum_obstruction": "a general relation solver needs a target-independent seeded decomposition or an explicit inverse-polynomial paired-workspace overlap and balanced-amplitude theorem",
+    "quantum_obstruction": "The naive single-evaluation relation interface can lose interference in orthogonal workspace. This is not a general obstruction: dcp_symmetric_relation_lift supplies a separate conditional double-evaluation route.",
     "seeded_extension": "R(A,t;r) is deterministic for each explicit target-independent seed r; a shared coherent seed register turns the source proof into a direct sum of deterministic routines"
   },
-  "status": "seeded-randomized-interface-proved-general-quantum-interface-blocked",
-  "summary": "Certified 12/12 seeded-randomized interface rows and extracted 4 deterministic source use sites. General quantum relation bridges=0; zero-visibility workspace counterexamples=1.",
+  "status": "derived-pairing-readouts-review-pending-no-efficient-finder",
+  "summary": "Certified 12/12 seeded-randomized interface rows and extracted 4 deterministic source use sites. Checked 9 mutual and 2 permutation controls; failures=0. Noise-weighted mass, not witness rate, is the constructive target; no efficient pairing finder or new decoder.",
   "workspace_visibility_cases": [
     {
       "case_id": "shared-target-independent-seed",

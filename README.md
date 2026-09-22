@@ -30,6 +30,21 @@ The central question driving Q-Search is: **Can genuine polynomial or super-poly
 
 ### Current Research Decision
 
+The [DCP pairing-program audit](research/DCP_PAIRING_PROGRAMS.md) now supplies
+explicit conditional parity readouts, clean-workspace controls and an exact
+coverage/noise tradeoff. Run `python qsearch.py dcp-coherent-matching`.
+The missing object is an efficient high-coverage pairing finder, not another
+ideal measurement table. Canonical witness rate is not source coverage;
+finite optimized matchings remain exponential references. No decoder or
+speedup is claimed; the derivations await independent review.
+
+The [DCP label-information audit](research/DCP_LABEL_DIGEST_AUDIT.md) now checks
+the physical scope of the recent GRZ digest obstruction and a review-pending
+joint-summary extension. Run `python qsearch.py dcp-label-digest-audit`.
+Stable high-bit summaries after low-subset-sum measurement are not a viable
+decoder route at polynomial sample counts. Full-label-sensitive operations
+and different prefixes remain outside that conclusion; no speedup is claimed.
+
 The latest audit rules out one specific target: a single bounded-norm,
 inverse-polynomial-gap operator cannot completely label typical hidden-involution
 multiplicity blocks. The same packing bound applies to any fixed number of

@@ -18484,5 +18484,117 @@
     "run_id": "RUN-EXP-DHS-DCP-ARBITRARY-MEASUREMENT-WITNESS-REDUCTION-00561",
     "status": "physical-witness-reduction-derived-review-pending",
     "summary": "Repaired the arbitrary-measurement reduction in the full assignment space: a physical inverse need not prepare a uniform fiber, but supports valid target witnesses. An unamplified compute-copy-uncompute wrapper gives planted and uniform-legal success >=pbar^2 over any public-label law, with two decoder/inverse calls and no success estimation or occupancy assumption. Review pending."
+  },
+  {
+    "artifacts": {
+      "derivation": "research/DCP_LABEL_DIGEST_AUDIT.md",
+      "report": "research/phase_workbench/dcp_label_digest_audit.json"
+    },
+    "candidate_id": "DHS-GOWERS-SIEVE",
+    "experiment_id": "EXP-DHS-DCP-LABEL-DIGEST-AUDIT",
+    "falsifier_count": 2,
+    "falsifiers_triggered": [
+      "A polynomial sample budget with a fixed coordinate digest losing a linear number of bits has vanishing parity information after this prefix.",
+      "A vacuous bound for a full joint sum or retained full labels is not positive evidence for an efficient decoder."
+    ],
+    "metrics": {
+      "analytic_scaling_count": 10,
+      "finite_control_count": 32,
+      "finite_control_failure_count": 0,
+      "new_quantum_algorithm_count": 0
+    },
+    "recorded_at": "2026-09-22T05:40:43.909077+00:00",
+    "result_id": "RESULT-EXP-DHS-DCP-LABEL-DIGEST-AUDIT-COSET",
+    "run_id": "RUN-EXP-DHS-DCP-LABEL-DIGEST-AUDIT-00562",
+    "status": "derived-joint-slice-bound-review-pending",
+    "summary": "Audited physical DCP label digests and a conditional-slice extension of GRZ; no decoder, novelty or general DCP no-go claimed."
+  },
+  {
+    "artifacts": {
+      "dcp_coherent_matching_interface": "research/reductions/dcp_coherent_matching_interface.json",
+      "derivation": "research/DCP_PAIRING_PROGRAMS.md"
+    },
+    "candidate_id": "DHS-GOWERS-SIEVE",
+    "experiment_id": "EXP-DHS-DCP-COHERENT-MATCHING-INTERFACE",
+    "falsifier_count": 8,
+    "falsifiers_triggered": [
+      "The fixed-seed source extension requires target-independent explicit coins shared coherently across both endpoints; this is not a restriction on all other constructions.",
+      "Freshly measured or target-dependent randomness does not by itself define the fixed answered set used in that proof.",
+      "Multiple valid witnesses are insufficient without an actual coherent pairing/cleanup construction; the separate symmetric lift is an allowed route.",
+      "Orthogonal paired workspaces make every endpoint X/Y phase statistic exactly independent of qd/N.",
+      "Proving an interface theorem does not construct the required polynomial subset-sum solver.",
+      "A one-witness-per-residue proposal can have valid-output fraction one but reciprocal mass at most N/2^m; input-dependent matchings are not subject to that cap.",
+      "Short adaptive moves have average mass at most sum_{j<=r} C(m,j)/N. Constant product-dephasing noise suppresses every declared pairing readout at polynomial m; this is not a general DCP no-go.",
+      "Retaining old labels/gauge coins or postlabel corruption invalidates the gauge contract. Correlated prelabel faults require their joint survival law, not the independent eta^weight formula."
+    ],
+    "metrics": {
+      "clean_mutual_xor_oracle_call_count": 6,
+      "correlated_noise_control_count": 3,
+      "efficient_pairing_finder_count": 0,
+      "maximum_polynomial_success_exponent": 15,
+      "minimum_certified_routine_success_probability": 2.087208213499279e-39,
+      "noise_mass_envelope_count": 14,
+      "physical_pairing_control_count": 9,
+      "physical_pairing_failure_count": 0,
+      "physical_permutation_control_count": 2,
+      "primary_source_deterministic_use_site_count": 4,
+      "proved_arbitrary_quantum_relation_solver_bridge_count": 0,
+      "proved_polynomial_dcp_decoder_count": 0,
+      "proved_polynomial_partial_subset_sum_solver_count": 0,
+      "proved_seeded_randomized_solver_bridge_count": 12,
+      "seeded_bridge_certificate_count": 12,
+      "source_contract_satisfying_solver_count": 0,
+      "workspace_visibility_case_count": 3,
+      "zero_visibility_counterexample_count": 1
+    },
+    "recorded_at": "2026-09-22T11:39:00.702682+00:00",
+    "result_id": "RESULT-EXP-DHS-DCP-COHERENT-MATCHING-INTERFACE-DCP-COHERENT-MATCHING-INTERFACE",
+    "run_id": "RUN-EXP-DHS-DCP-COHERENT-MATCHING-INTERFACE-00563",
+    "status": "derived-pairing-readouts-review-pending-no-efficient-finder",
+    "summary": "Certified 12/12 seeded-randomized interface rows and extracted 4 deterministic source use sites. Checked 9 mutual and 2 permutation controls; failures=0. Noise-weighted mass, not witness rate, is the constructive target; no efficient pairing finder or new decoder."
+  },
+  {
+    "artifacts": {
+      "dcp_coherent_matching_interface": "research/reductions/dcp_coherent_matching_interface.json",
+      "derivation": "research/DCP_PAIRING_PROGRAMS.md"
+    },
+    "candidate_id": "DHS-GOWERS-SIEVE",
+    "experiment_id": "EXP-DHS-DCP-COHERENT-MATCHING-INTERFACE",
+    "falsifier_count": 8,
+    "falsifiers_triggered": [
+      "The fixed-seed source extension requires target-independent explicit coins shared coherently across both endpoints; this is not a restriction on all other constructions.",
+      "Freshly measured or target-dependent randomness does not by itself define the fixed answered set used in that proof.",
+      "Multiple valid witnesses are insufficient without an actual coherent pairing/cleanup construction; the separate symmetric lift is an allowed route.",
+      "Orthogonal paired workspaces make every endpoint X/Y phase statistic exactly independent of qd/N.",
+      "Proving an interface theorem does not construct the required polynomial subset-sum solver.",
+      "A one-witness-per-residue proposal can have valid-output fraction one but reciprocal mass at most N/2^m; input-dependent matchings are not subject to that cap.",
+      "Short adaptive moves have average mass at most sum_{j<=r} C(m,j)/N. Constant product-dephasing noise suppresses every declared pairing readout at polynomial m; this is not a general DCP no-go.",
+      "Retaining old labels/gauge coins or postlabel corruption invalidates the gauge contract. Correlated prelabel faults require their joint survival law, not the independent eta^weight formula."
+    ],
+    "metrics": {
+      "clean_mutual_xor_oracle_call_count": 6,
+      "correlated_noise_control_count": 3,
+      "efficient_pairing_finder_count": 0,
+      "maximum_polynomial_success_exponent": 15,
+      "minimum_certified_routine_success_probability": 2.087208213499279e-39,
+      "noise_mass_envelope_count": 14,
+      "physical_pairing_control_count": 9,
+      "physical_pairing_failure_count": 0,
+      "physical_permutation_control_count": 2,
+      "primary_source_deterministic_use_site_count": 4,
+      "proved_arbitrary_quantum_relation_solver_bridge_count": 0,
+      "proved_polynomial_dcp_decoder_count": 0,
+      "proved_polynomial_partial_subset_sum_solver_count": 0,
+      "proved_seeded_randomized_solver_bridge_count": 12,
+      "seeded_bridge_certificate_count": 12,
+      "source_contract_satisfying_solver_count": 0,
+      "workspace_visibility_case_count": 3,
+      "zero_visibility_counterexample_count": 1
+    },
+    "recorded_at": "2026-09-22T11:44:46.647857+00:00",
+    "result_id": "RESULT-EXP-DHS-DCP-COHERENT-MATCHING-INTERFACE-DCP-COHERENT-MATCHING-INTERFACE",
+    "run_id": "RUN-EXP-DHS-DCP-COHERENT-MATCHING-INTERFACE-00564",
+    "status": "derived-pairing-readouts-review-pending-no-efficient-finder",
+    "summary": "Certified 12/12 seeded-randomized interface rows and extracted 4 deterministic source use sites. Checked 9 mutual and 2 permutation controls; failures=0. Noise-weighted mass, not witness rate, is the constructive target; no efficient pairing finder or new decoder."
   }
 ]

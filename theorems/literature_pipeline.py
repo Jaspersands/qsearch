@@ -62,6 +62,18 @@ class HypothesisFactoryResult:
 
 MECHANISM_RULES: list[tuple[set[str], dict[str, str]]] = [
     (
+        {"dcp-label-digest"},
+        {
+            "mechanism": "Bound surviving DCP parity information after Fourier-label compression.",
+            "problem_family": "Uniform independent DCP phase samples after measuring low subset-sum bits.",
+            "reduction": "Replace subsequent label use by a fixed coordinatewise digest, with any reconstruction error charged.",
+            "no_go_barrier": "Output trace distance is at most m*sqrt(K/N) for K-valued coordinate digests. Not a general DCP no-go or a theorem for measurement-dependent summaries.",
+            "proof_technique": "Reveal other labels, factor off-diagonal blocks, then use a dephasing hybrid.",
+            "open_question": "Project question: what implementable full-label-sensitive operation escapes this factorization and retains useful parity information?",
+            "reusable_abstraction": "Track the exact physical prefix, retained label information, branch probabilities and channel approximation error.",
+        },
+    ),
+    (
         {"wreath-qft-toolbox", "mackey-qft"},
         {
             "mechanism": "Group QFT circuit constructions from Mackey theory and Clifford theory.",
