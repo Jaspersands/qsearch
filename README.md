@@ -33,13 +33,13 @@ The central question driving Q-Search is: **Can genuine polynomial or super-poly
 The [DCP pairing-program audit](research/DCP_PAIRING_PROGRAMS.md) now supplies
 explicit conditional parity readouts, clean-workspace controls and an exact
 coverage/noise tradeoff. Run `python qsearch.py dcp-coherent-matching`.
-Affine-marked support scanning has a derived coverage bound but exponential
-runtime. A capped balanced-support finder now attains a derived constant
-average coverage and a scoped noise guarantee with linear phase samples.
-Its reversible sorting-network join still needs exponential time AND coherent
-storage. The missing object is an efficient partner-search algorithm, not
-another ideal measurement table. No decoder or speedup is claimed; the
-derivations await independent review.
+The [direct coherent-edge readout](research/DCP_COHERENT_EDGE_READOUT.md) now
+avoids exponential lists, unique partners and vertex isolation. A shared
+geometric Grover schedule has a derived positive interference kernel and
+constant average signal under the stated noise model, with polynomial
+workspace and linear-size phase-state batches. Time remains exponential. The sorted
+join is retained as a classical partner-search baseline. No efficient decoder
+or new speedup is claimed; the derivations await independent review.
 
 The [DCP label-information audit](research/DCP_LABEL_DIGEST_AUDIT.md) now checks
 the physical scope of the recent GRZ digest obstruction and a review-pending

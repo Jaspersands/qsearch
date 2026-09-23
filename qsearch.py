@@ -5718,6 +5718,8 @@ def command_dcp_coherent_matching(args: argparse.Namespace) -> int:
     print(f"Explicit exponential-time pairing finders: {metrics['explicit_exponential_pairing_finder_count']}")
     print(f"Balanced MITM source/program controls: {metrics['balanced_mitm_source_control_count']}/{metrics['balanced_mitm_program_control_count']}")
     print("Balanced MITM: fixed sorting network; exponential time and coherent storage, no QRAM assumed.")
+    print(f"List-free coherent edge readouts: {metrics['list_free_edge_sampler_count']}; physical controls: {metrics['coherent_edge_physical_control_count']}")
+    print("Shared geometric Grover time: polynomial workspace, no unique partner or vertex isolation; still exponential time.")
     print(f"Partial subset-sum solvers: {metrics['proved_polynomial_partial_subset_sum_solver_count']}")
     print(f"Speedup claim allowed: {payload['claim_gate']['speedup_claim_allowed']}")
     print(f"Registry valid: {validation['valid']}")

@@ -66,8 +66,8 @@
       "target_claim": "The coset observable is not a disguised classical invariant."
     }
   ],
-  "created_at": "2026-09-22T20:04:37.389179+00:00",
-  "lemma_count": 1302,
+  "created_at": "2026-09-23T04:10:13.628716+00:00",
+  "lemma_count": 1303,
   "lemmas": [
     {
       "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -3157,6 +3157,19 @@
       "id": "LEMMA-DHS-GOWERS-SIEVE-DCP-BALANCED-MITM-PAIRING",
       "statement": "For the Cartesian product of two capped weight-k support lists, the affine-isolation bound holds with D=L^2. Choosing L=ceil(sqrt(2^n)) gives average coverage >=1/128; m=2n,n>=6 suffices for prelabel classical-fault-marginal <=1/n signed signal >=1/384. A fixed sorting-network join supplies a clean XOR proposal without QRAM, but time and coherent storage are O(sqrt(D)*poly(n,m)), still exponential. Conditioned marked degree is D/(N*2^ell), not raw density.",
       "status": "derived-balanced-mitm-exponential-resources-review-pending"
+    },
+    {
+      "candidate_id": "DHS-GOWERS-SIEVE",
+      "depends_on": [
+        "PO-INPUT-MODEL",
+        "PO-SUCCESS",
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY"
+      ],
+      "falsification_test": "Compare full oracle/reflection evolution and postselected density matrices with the exact rational kernel; check the fixed-time negative-signal DCP example, all small natural-label degree moments, clipped geometric tails with no renormalization, and procedural support unranking. Reflect only the public support register, not the unknown DCP state. No generic quantum-noise, independent-batch, gate-export, novelty or polynomial-time guarantee follows.",
+      "id": "LEMMA-DHS-GOWERS-SIEVE-DCP-GEOMETRIC-COHERENT-EDGE-READOUT",
+      "statement": "A shared geometric Grover time gives an entrywise-positive degree-interference kernel. Retaining the coherent support index permits direct orientation readout without a unique partner or affine vertex isolation. Unmarked degree moments give signed signal >=1/25350-2^-tail_bits for m=2n,n>=6 and the stated prelabel fault marginals <=1/n. The explicit readout is list-free and polynomial-space, but exponential-time.",
+      "status": "derived-list-free-edge-readout-exponential-time-review-pending"
     },
     {
       "candidate_id": "DHS-GOWERS-SIEVE",

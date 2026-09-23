@@ -417,8 +417,37 @@ def write_affine_transport_audit(
             n_values=n_values, register_offset=register_offset
         )
     )
+    payload["artifacts"] = {
+        "dcp_affine_transport": str(path),
+        "report": str(path),
+    }
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
+    if write_registry:
+        upsert_negative_result(
+            NegativeResultRecord(
+                id="NEG-DCP-AFFINE-TRANSPORT-AS-EASIER-INTERMEDIARY",
+                source=str(path),
+                claim="Constructing a total GF(2)-affine next-bit transport is an easier intermediate objective that can precede solving the target subset-sum relation.",
+                reason_invalid="For every valid transport T(x)=Px xor b, T(0)=b and S_A(b)=2^k modulo 2^(k+1); evaluating the transport at zero already returns the target witness.",
+                lesson="Treat affine synthesis as a direct relation-solver architecture and compare it against direct classical search on b. Do not count the transport and witness construction as separate progress.",
+                applies_to=[registry_candidate_id, registry_experiment_id],
+                evidence=payload.get("headline_metrics", {}),
+            )
+        )
+        upsert_experiment_result(
+            ExperimentResultRecord(
+                id=registry_result_id or f"RESULT-{registry_experiment_id}-LATEST",
+                experiment_id=registry_experiment_id,
+                candidate_id=registry_candidate_id,
+                created_at=payload.get("created_at", utc_now()),
+                status=payload.get("status", "completed"),
+                summary=payload.get("summary", ""),
+                metrics=payload.get("headline_metrics", {}),
+                falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                artifacts={"dcp_affine_transport": str(path), "report": str(path)},
+            )
+        )
     return payload
 
 

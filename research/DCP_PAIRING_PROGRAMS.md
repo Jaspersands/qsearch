@@ -493,3 +493,15 @@ Do not spend another pass improving the coverage bound alone: constant source
 coverage with linear samples is now supplied under the stated model. The
 exponential coherent computation is the unresolved problem. None of these
 elementary constructions has received independent or novelty review.
+
+## Update: Direct List-Free Edge Readout
+
+The list-free target now has an explicit EXPONENTIAL-TIME baseline in
+`core/dcp_coherent_edge_sampling.py`. It does not compute a unique partner.
+A retained support index and shared geometric Grover time give a positive
+endpoint-interference kernel, with constant natural-source signal under the
+stated model, without affine isolation or degree classification. Workspace
+is polynomial; the exponential time cost remains. See the self-contained
+[construction, counterexample and proof](DCP_COHERENT_EDGE_READOUT.md).
+The existing CLI/runner/report includes it. Do not treat the sorted join's
+exponential storage as a lower bound for this different architecture.

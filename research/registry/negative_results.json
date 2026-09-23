@@ -55032,6 +55032,21 @@
     "applies_to": [
       "DHS-GOWERS-SIEVE"
     ],
+    "claim": "Removing the exponential partner lists makes the shared-geometric edge readout a polynomial-time DCP algorithm.",
+    "evidence": {
+      "artifact": "research/reductions/dcp_coherent_matching_interface.json",
+      "review_status": "derived-review-pending",
+      "speedup_claim_allowed": false
+    },
+    "id": "DCP-LIST-FREE-EDGE-READOUT-EXPONENTIAL-TIME",
+    "lesson": "Exploit the arithmetic to replace the exponential Grover evolution, or change the measurement architecture. Do not impose exponential storage or deterministic-partner requirements on this direct readout. The generic search cost is not a lower bound against structured DCP algorithms.",
+    "reason_invalid": "The explicit support-index Grover readout uses polynomial workspace and needs no unique-neighbor oracle, vertex isolation or unknown-state reflection. Its public geometric schedule nevertheless has mean 2^ceil(log2(P)/2)-1 iterations on P>=2^n padded supports; heralding, cutoff aborts and predicate computation are charged.",
+    "source": "research/reductions/dcp_coherent_matching_interface.json"
+  },
+  {
+    "applies_to": [
+      "DHS-GOWERS-SIEVE"
+    ],
     "claim": "Short moves or high-density tables automatically give polynomial signal for noisy half-period pairing readouts.",
     "evidence": {
       "artifact": "research/reductions/dcp_coherent_matching_interface.json",

@@ -1,5 +1,22 @@
 # Mechanical Follow-Up Implementation Plan (pass 2)
 
+## Latest Handoff (2026-09-23, Direct Edge Readout)
+
+Read the TOP of AGENT_HANDOFF.md and DCP_COHERENT_EDGE_READOUT.md. The direct
+support-index readout is wired into the EXISTING matching CLI/runner/report.
+Do not repeat that wiring. It requires neither unique partners nor affine
+vertex isolation. It has polynomial workspace but exponential Grover time;
+the old sorted-join storage cost is architecture-specific. All claims remain
+review-pending and speedup gates stay false. Preserve the shared public-time
+law, exact positive kernel and charged cutoff aborts when repairing metadata.
+
+Independent work is modifying the three writer modules listed below and
+running a full-suite test. Preserve that work and check its actual result;
+do not blindly redo the historical fixes or repeat an active full-suite run.
+This research pass ran181targeted regression tests successfully, not the
+entire suite. Current research changes are uncommitted after checkpoint
+90bee9d3; keep commits infrequent and avoid staging unrelated work.
+
 ## Current Handoff (2026-09-23)
 
 The streamed affine-marked and capped balanced-support finders are BOTH wired

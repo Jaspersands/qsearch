@@ -1796,6 +1796,14 @@ def _dcp_pairing_program_lemmas(candidate_id: str) -> list[LemmaRecord]:
         status="derived-balanced-mitm-exponential-resources-review-pending" if balanced_checked else "blocked-balanced-mitm-evidence-missing",
         falsification_test="Exhaust natural-label/hash moments and conditioned marked degree; independently enumerate balanced edges; retain duplicate multiplicities, comparator flags and every scan prefix; check full output-register permutations and physical parity readout. Do not substitute the radius-ball graph or treat classical storage as classical while its contents depend on a superposed assignment. No gate export or speedup is claimed.",
     ))
+    edge_checked = checked and gate.get("coherent_edge_controls_passed") is True
+    records.append(LemmaRecord(
+        id=f"LEMMA-{candidate_id}-DCP-GEOMETRIC-COHERENT-EDGE-READOUT", candidate_id=candidate_id,
+        statement="A shared geometric Grover time gives an entrywise-positive degree-interference kernel. Retaining the coherent support index permits direct orientation readout without a unique partner or affine vertex isolation. Unmarked degree moments give signed signal >=1/25350-2^-tail_bits for m=2n,n>=6 and the stated prelabel fault marginals <=1/n. The explicit readout is list-free and polynomial-space, but exponential-time.",
+        depends_on=["PO-INPUT-MODEL", "PO-SUCCESS", "PO-MEASUREMENT", "PO-COMPLEXITY"],
+        status="derived-list-free-edge-readout-exponential-time-review-pending" if edge_checked else "blocked-coherent-edge-evidence-missing",
+        falsification_test="Compare full oracle/reflection evolution and postselected density matrices with the exact rational kernel; check the fixed-time negative-signal DCP example, all small natural-label degree moments, clipped geometric tails with no renormalization, and procedural support unranking. Reflect only the public support register, not the unknown DCP state. No generic quantum-noise, independent-batch, gate-export, novelty or polynomial-time guarantee follows.",
+    ))
     return records
 
 

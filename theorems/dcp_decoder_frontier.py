@@ -905,6 +905,24 @@ def write_decoder_frontier(
 ) -> dict:
     report = build_decoder_frontier()
     payload = asdict(report)
+    payload["artifacts"] = {
+        "dcp_decoder_frontier": str(path),
+        "report": str(path),
+    }
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
+    if write_registry:
+        upsert_experiment_result(
+            ExperimentResultRecord(
+                id=registry_result_id or f"RESULT-{registry_experiment_id}-LATEST",
+                experiment_id=registry_experiment_id,
+                candidate_id=registry_candidate_id,
+                created_at=payload.get("created_at", utc_now()),
+                status=payload.get("status", "completed"),
+                summary=payload.get("summary", ""),
+                metrics=payload.get("headline_metrics", {}),
+                falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                artifacts={"dcp_decoder_frontier": str(path), "report": str(path)},
+            )
+        )
     return payload

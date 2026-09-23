@@ -46,6 +46,8 @@ class DCPCoherentMatchingInterfaceTests(unittest.TestCase):
         self.assertEqual(report.headline_metrics["affine_marked_program_control_count"], 3)
         self.assertEqual(report.headline_metrics["balanced_mitm_program_control_count"], 3)
         self.assertTrue(report.claim_gate["balanced_mitm_controls_passed"])
+        self.assertTrue(report.claim_gate["coherent_edge_controls_passed"])
+        self.assertEqual(report.headline_metrics["coherent_edge_physical_control_count"], 96)
         self.assertIn("double-evaluation", report.source_contract["quantum_obstruction"])
 
     def test_writer_records_general_quantum_interface_negative(self):
@@ -100,7 +102,7 @@ def test_writer_honors_custom_ids_and_updates_instead_of_duplicating(tmp_path, m
     assert results[0]["experiment_id"] == "EXP-CUSTOM"
     assert results[0]["candidate_id"] == "CUSTOM"
     negatives = load_negative_results()
-    assert len(negatives) == 5
+    assert len(negatives) == 6
     assert all(item["applies_to"] == ["CUSTOM"] for item in negatives)
 
 
@@ -138,7 +140,7 @@ def test_pairing_proof_records_require_literal_verified_gates(tmp_path, monkeypa
     from proof_tracker import _dcp_pairing_program_lemmas
     monkeypatch.chdir(tmp_path)
     records = _dcp_pairing_program_lemmas("DHS-GOWERS-SIEVE")
-    assert len(records) == 5
+    assert len(records) == 6
     assert all(item.status.startswith("blocked") for item in records)
     payload = write_coherent_matching_interface_audit(write_registry=False,
                                                      n_values=[16], legal_coverage_exponents=[1])
@@ -152,6 +154,10 @@ def test_pairing_proof_records_require_literal_verified_gates(tmp_path, monkeypa
     payload["claim_gate"]["balanced_mitm_controls_passed"] = "false"
     Path("research/reductions/dcp_coherent_matching_interface.json").write_text(json.dumps(payload))
     assert _dcp_pairing_program_lemmas("DHS-GOWERS-SIEVE")[4].status.startswith("blocked")
+    assert "review-pending" in _dcp_pairing_program_lemmas("DHS-GOWERS-SIEVE")[5].status
+    payload["claim_gate"]["coherent_edge_controls_passed"] = "false"
+    Path("research/reductions/dcp_coherent_matching_interface.json").write_text(json.dumps(payload))
+    assert _dcp_pairing_program_lemmas("DHS-GOWERS-SIEVE")[5].status.startswith("blocked")
     payload["claim_gate"]["pairing_finite_controls_passed"] = "false"
     Path("research/reductions/dcp_coherent_matching_interface.json").write_text(json.dumps(payload))
     assert all(item.status.startswith("blocked") for item in _dcp_pairing_program_lemmas("DHS-GOWERS-SIEVE"))
@@ -171,3 +177,6 @@ def test_new_scope_negatives_are_not_reported_as_classical_algorithms(tmp_path, 
     balanced = next(item for item in findings if item.id.endswith("DCP-BALANCED-MITM-RESOURCE-CONTRACT"))
     assert "coherent storage" in balanced.evidence
     assert "not classical dequantization" in balanced.required_action
+    edge = next(item for item in findings if item.id.endswith("DCP-LIST-FREE-EDGE-TIME-CONTRACT"))
+    assert "polynomial workspace" in edge.evidence
+    assert "not a lower bound" in edge.required_action

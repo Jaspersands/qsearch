@@ -56,6 +56,7 @@ def build_snapshot() -> dict[str, Any]:
     proof_debt = read_json(RESEARCH / "proof_debt_report.json", {})
     pairing = read_json(RESEARCH / "reductions/dcp_coherent_matching_interface.json", {})
     pairing_checked = pairing.get("claim_gate", {}).get("pairing_finite_controls_passed") is True
+    edge_checked = pairing_checked and pairing.get("claim_gate", {}).get("coherent_edge_controls_passed") is True
     marker = read_json(RESEARCH / "classical_baselines/dcp_marker_all_target_coverage.json", {})
     code_frontier = read_json(RESEARCH / "code_equivalence/code_frontier_triage.json", {})
     jm = read_json(RESEARCH / "representation/coset_jucys_murphy_label_transform.json", {})
@@ -266,7 +267,8 @@ def build_snapshot() -> dict[str, Any]:
         "updated_at": updated,
         "verdict": {
             "title": "No breakthrough yet",
-            "detail": "Encoded subgroup access passes finite checks. No target measurement or decoder is supplied; speedup claims remain blocked.",
+            "detail": ("A DCP parity readout is list-free but exponential-time. Useful nonabelian measurements and efficient decoding remain unresolved; no speedup is claimed."
+                       if edge_checked else "Encoded subgroup access passes finite checks. No efficient target measurement or decoder is supplied; speedup claims remain blocked."),
         },
         "overview": (
             "DCP pairing controls now separate a conditional parity readout from the missing efficient finder. "
@@ -287,13 +289,15 @@ def build_snapshot() -> dict[str, Any]:
             {
                 "title": "Hidden shift / DHSP",
                 "short_title": "DHSP",
-                "status": "Pairing implemented; efficient finder missing" if pairing_checked else "Pairing controls not run or failing",
+                "status": ("List-free readout checked; time remains exponential" if edge_checked
+                           else "Pairing implemented; efficient finder missing" if pairing_checked
+                           else "Pairing controls not run or failing"),
                 "tone": "blocked",
                 "stage": 2,
                 "summary": (
-                    "Reciprocal pairings and clean permutations have explicit conditional parity readouts. "
-                    "A capped balanced-support finder has derived constant average coverage, but its sorting-network "
-                    "join still uses exponential time and coherent storage. "
+                    "A direct coherent-edge readout avoids exponential lists and unique partners. "
+                    "Shared geometric Grover times have a derived positive interference kernel, but search time "
+                    "remains exponential even with polynomial workspace. "
                     "The noise analysis distinguishes independent from correlated faults. No efficient high-coverage "
                     "pairing finder, polynomial decoder or new speedup has been demonstrated."
                 ),
@@ -302,9 +306,10 @@ def build_snapshot() -> dict[str, Any]:
                     f"{metric(pairing, 'physical_permutation_control_count')}. "
                     f"Correlated-fault controls: {metric(pairing, 'correlated_noise_control_count')}. "
                     f"Explicit exponential finders: {metric(pairing, 'explicit_exponential_pairing_finder_count')}. "
+                    f"Direct edge controls: {metric(pairing, 'coherent_edge_physical_control_count')}. "
                     "Finite optimized matchings are exponential references; derivations remain review-pending."
                 ),
-                "next": "Construct an efficient full-label-sensitive pairing with useful natural-input coverage and charged noise, inverse and preprocessing costs.",
+                "next": "Exploit arithmetic structure to replace exponentially long Grover evolution, or find a different collective measurement. Space alone is no longer the blocker.",
             },
             {
                 "title": "Code equivalence",

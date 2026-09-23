@@ -17,6 +17,7 @@ from scipy.optimize import linear_sum_assignment
 
 from dcp_affine_marked_pairing import build_marked_pairing_audit
 from dcp_balanced_pairing import build_balanced_pairing_audit
+from dcp_coherent_edge_sampling import build_coherent_edge_audit
 
 
 def _instance(labels: Sequence[int], modulus: int, max_width: int = 16) -> tuple[int, ...]:
@@ -411,6 +412,7 @@ def build_pairing_controls() -> dict:
     correlated = correlated_noise_controls()
     marked_program = build_marked_pairing_audit()
     balanced_program = build_balanced_pairing_audit()
+    edge_sampler = build_coherent_edge_audit()
     for row in balanced_program["program_controls"]:
         physical = evaluate_mutual_program(row["labels"], 1 << row["n"], row["proposal_table"])
         row["physical_checks"] = physical["physical_checks"]
@@ -423,11 +425,13 @@ def build_pairing_controls() -> dict:
     failures += sum(row["maximum_residual"] > 1e-10 or row["marginal_union_lower"] > row["weighted_signal"]+1e-12 for row in correlated)
     failures += marked_program["control_failures"]
     failures += balanced_program["control_failures"]
+    failures += edge_sampler["control_failures"]
     return {"mutual_controls": controls, "permutation_controls": permutation_controls,
             "gauge_control": gauge, "canonical_density_controls": canonical_rows,
             "correlated_noise_controls": correlated,
             "affine_marked_program": marked_program,
             "balanced_mitm_program": balanced_program,
+            "coherent_edge_sampler": edge_sampler,
             "exponential_reference_matchings": references,
             "scaling": scaling, "noise_mass_envelopes": envelopes, "control_failures": failures,
             "contract": {

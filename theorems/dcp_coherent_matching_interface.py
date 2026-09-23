@@ -247,6 +247,8 @@ def run_coherent_matching_interface_audit(
         "affine_marked_program_control_count": len(pairing["affine_marked_program"]["program_controls"]),
         "balanced_mitm_source_control_count": len(pairing["balanced_mitm_program"]["controls"]),
         "balanced_mitm_program_control_count": len(pairing["balanced_mitm_program"]["program_controls"]),
+        "list_free_edge_sampler_count": 1,
+        "coherent_edge_physical_control_count": len(pairing["coherent_edge_sampler"]["physical_controls"]),
     }
     return DCPCoherentMatchingInterfaceReport(
         created_at=utc_now(),
@@ -268,6 +270,7 @@ def run_coherent_matching_interface_audit(
                 "This is not a general obstruction: dcp_symmetric_relation_lift supplies a separate conditional double-evaluation route."
             ),
             "pairing_scope": "Six-call mutual proposals and flagged clean permutations, with all failures charged; finite tables are exponential references, not efficient solvers.",
+            "coherent_edge_scope": "The separate support-index readout uses shared geometric Grover times and no unique-partner oracle; polynomial workspace does not remove exponential time.",
             "noise_scope": pairing["contract"]["noise_scope"],
         },
         deterministic_use_sites=use_sites,
@@ -311,6 +314,7 @@ def run_coherent_matching_interface_audit(
             "conditional_pairing_construction_derived": True,
             "affine_marked_coverage_controls_passed": pairing["affine_marked_program"]["control_failures"] == 0,
             "balanced_mitm_controls_passed": pairing["balanced_mitm_program"]["control_failures"] == 0,
+            "coherent_edge_controls_passed": pairing["coherent_edge_sampler"]["control_failures"] == 0,
             "noise_gauge_and_mass_bound_review_pending": True,
             "arbitrary_quantum_solvers_excluded": False,
             "independently_reviewed": False,
@@ -334,7 +338,8 @@ def run_coherent_matching_interface_audit(
             "Affine-marked coverage is derived for streamed and capped balanced-support finders. The latter has constant "
             "average coverage, including a scoped constant noise signal at m=2n, and a "
             "fixed-network meet-in-the-middle implementation but exponential time AND coherent storage; "
-            "no efficient pairing finder or new decoder."
+            "A separate shared-geometric Grover edge readout avoids lists, unique partners and vertex isolation "
+            "with polynomial workspace, but still exponential time. No efficient pairing finder or new decoder."
         ),
         falsifiers_triggered=[
             "The fixed-seed source extension requires target-independent explicit coins shared coherently across both endpoints; this is not a restriction on all other constructions.",
@@ -347,6 +352,7 @@ def run_coherent_matching_interface_audit(
             "Retaining old labels/gauge coins or postlabel corruption invalidates the gauge contract. Correlated prelabel faults require their joint survival law, not the independent eta^weight formula.",
             "Polynomial affine-marked coverage does not remove the 12*sum_{w<=r} C(m,w) support-predicate calls of its six-XOR enumeration implementation.",
             "Capped balanced-support joining stores L=ceil(sqrt(2^n)) records per list. Isolation increases syndrome constraints with raw multiplicity; the conditioned expected neighbor count remains at most 1/4, not a free dense-instance regime.",
+            "A fixed Grover time can reverse endpoint interference when degrees differ. Shared geometric times give a positive averaged kernel, but the implemented list-free readout still takes O(2^(n/2)*poly(n)) time; polynomial space is not polynomial time.",
         ],
     )
 
@@ -366,7 +372,8 @@ def write_coherent_matching_interface_audit(
     )
     payload = asdict(report)
     payload["artifacts"] = {"dcp_coherent_matching_interface": str(path),
-                            "derivation": "research/DCP_PAIRING_PROGRAMS.md"}
+                            "derivation": "research/DCP_PAIRING_PROGRAMS.md",
+                            "coherent_edge_derivation": "research/DCP_COHERENT_EDGE_READOUT.md"}
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n")
     if write_registry:
@@ -402,6 +409,11 @@ def write_coherent_matching_interface_audit(
                 "A balanced meet-in-the-middle partner finder or increasing raw support multiplicity removes the exponential DCP bottleneck.",
                 "The implemented fixed sorting network materializes two capped length-L lists with L=ceil(sqrt(2^n)), plus comparison bits and scan histories. Its time and coherent storage are exponential despite constant average coverage with m=2n. After unrestricted affine isolation, the expected marked degree is D/(N*2^ell) in (1/8,1/4] for D>=N, so raw density cannot be reused without charging syndrome constraints.",
                 "Beat the charged time-space tradeoff or change the pairing/readout architecture. This is a classical baseline for partner search, not a classical DCP decoder or a general quantum lower bound; list-free arithmetic methods remain open.",
+            ), (
+                "DCP-LIST-FREE-EDGE-READOUT-EXPONENTIAL-TIME",
+                "Removing the exponential partner lists makes the shared-geometric edge readout a polynomial-time DCP algorithm.",
+                "The explicit support-index Grover readout uses polynomial workspace and needs no unique-neighbor oracle, vertex isolation or unknown-state reflection. Its public geometric schedule nevertheless has mean 2^ceil(log2(P)/2)-1 iterations on P>=2^n padded supports; heralding, cutoff aborts and predicate computation are charged.",
+                "Exploit the arithmetic to replace the exponential Grover evolution, or change the measurement architecture. Do not impose exponential storage or deterministic-partner requirements on this direct readout. The generic search cost is not a lower bound against structured DCP algorithms.",
             )]
             for identifier, claim, reason, lesson in negatives:
                 upsert_negative_result(NegativeResultRecord(

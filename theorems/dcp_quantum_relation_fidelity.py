@@ -434,6 +434,41 @@ def write_quantum_relation_fidelity_audit(
     registry_result_id: str | None = None,
 ) -> dict:
     payload = asdict(run_quantum_relation_fidelity_audit())
+    payload["artifacts"] = {
+        "dcp_quantum_relation_fidelity": str(path),
+        "report": str(path),
+    }
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
+    if write_registry:
+        upsert_negative_result(
+            NegativeResultRecord(
+                id="NEG-DCP-QUANTUM-RELATION-SUCCESS-WITHOUT-FIDELITY",
+                source=str(path),
+                claim="A quantum relation solver's witness success probability is enough for Regev's matching composition.",
+                reason_invalid="Paired endpoint interference also depends on amplitude balance and the inner product of retained witness/history workspaces.",
+                lesson="Extract exact endpoint amplitudes and retained workspace states from a concrete solver; prove shared histories or reversible canonical cleanup before claiming composition.",
+                applies_to=[
+                    registry_candidate_id,
+                    registry_experiment_id,
+                ],
+                evidence=payload.get("headline_metrics", {}),
+            )
+        )
+        upsert_experiment_result(
+            ExperimentResultRecord(
+                id=registry_result_id or f"RESULT-{registry_experiment_id}-LATEST",
+                experiment_id=registry_experiment_id,
+                candidate_id=registry_candidate_id,
+                created_at=payload.get("created_at", utc_now()),
+                status=payload.get("status", "completed"),
+                summary=payload.get("summary", ""),
+                metrics=payload.get("headline_metrics", {}),
+                falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                artifacts={
+                    "dcp_quantum_relation_fidelity": str(path),
+                    "report": str(path),
+                },
+            )
+        )
     return payload

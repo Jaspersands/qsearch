@@ -2,7 +2,88 @@
 
 Last updated: 2026-09-23
 
-## Latest Completed Research Pass: Capped Balanced Partner Search
+## Latest Completed Research Pass: Direct Coherent Edge Readout
+
+Read `research/DCP_COHERENT_EDGE_READOUT.md` and
+`core/dcp_coherent_edge_sampling.py`. The previous capped-list pass below
+was committed and pushed as `90bee9d3`. THIS pass is not yet committed;
+keep checkpoints infrequent. It extends the SAME matching CLI/runner/report
+under `pairing_programs.coherent_edge_sampler`, with no new candidate or
+experiment. There are independent writer repairs and a separately launched
+full-suite process in the worktree; do not overwrite or commit them blindly.
+
+CONSTRUCTIVE CHANGE: no unique-partner function, degree oracle, affine vertex
+isolation, explicit list or unknown-input reflection is needed. Unrank a
+capped support procedurally, prepare a uniform padded support index, run a
+PUBLIC SHARED geometric number of Grover steps conditioned on source b,
+herald a valid half-period edge and map to common representative/support
+(r,j) plus endpoint orientation e. Measure X on e. Common support labels can
+be measured after search; endpoint-specific records cannot be silently erased.
+Grover iterates clean predicate arithmetic; no history grows with their count.
+This is an actual finite-state-executed quantum readout construction, not a
+new efficient deterministic-partner oracle or a gate-export implementation.
+
+MATHEMATICS: g_t(q)=sin((2t+1)theta_q)/sqrt(q), theta_q=asin(sqrt(q/P)).
+Signed bias is the oriented-edge sum of w(S)*g_t(q_b)*g_t(q_c)/2^m, NOT a
+sum of search-success probabilities. On actual N=4 labels(0,1,1,1), t=2
+gives bias -1/4: degree1/degree2 endpoints interfere with opposite signs.
+Set p=2^-ceil(log2(P)/2), rho=1-p. Shared weights p*rho^t give
+K(q,r)=[F(theta_q-theta_r)-F(theta_q+theta_r)]/(2sqrt(qr)), with
+F(x)=p^2 cos(x)/(p^2+4rho sin^2(x)). F decreases on[0,pi], hence K>=0.
+An exact RATIONAL kernel avoids floating cancellation; see the derivation.
+Fixed-time or endpoint-dependent-time success claims cannot replace this.
+
+NO VERTEX ISOLATION: unmarked degree moments are E q=lambda and
+E q^2=lambda^2+lambda(1-1/N), lambda=L^2/N in[1,2). Oriented edge mass
+with both degrees<=8 is at least lambda-2 E q^2/8>=1/2 on average.
+We do NOT compute or postselect this condition. Positivity lets us ignore
+all other edges in the lower bound. For P>=16, K(q,r)>=1/65^2 on degrees
+1..8. With m=2n,n>=6, the prelabel classical-fault marginal <=1/n gives
+support survival>=1/3, so infinite-schedule signed bias>=1/25350.
+
+FINITE TIME: abort at T=tail_bits*2^ceil(log2(P)/2), with no renormalization.
+Tail probability <=2^-tail_bits; bounded physical outcomes lose at most this
+much bias. Default tail_bits16 leaves a positive constant bound. Mean
+reversible predicate calls <=2^(ceil(log2(P)/2)+1)-1; worst <=2T-1.
+The public coin sampler also takes charged O(sqrt(P)) expected time. P=N
+or2N here, so time is STILL O(2^(n/2)*poly(n)); workspace is polynomial.
+There is no asymptotic speedup or novelty claim. Dense small-state diagnostic
+arrays are not the scalable quantum storage requirement. Noise scope excludes
+arbitrary quantum corruption; fresh-batch and full-secret accounting remain.
+
+VERIFICATION: initial new module20passed; full integration initially had
+80passes/7failures from a NumPy boolean in JSON, fixed at the source with a
+serialization regression. Follow-up32passed15.87s. Ten-file research
+regression181passed65.90s, `.pytest_cache/dcp-coherent-edge-regression.xml`.
+Final new-module/writer/progress integration35passed15.69s,
+`.pytest_cache/dcp-coherent-edge-final.xml`; these counts overlap.
+Python compilation, JS syntax and diff checks passed. The artifact includes
+96physical density-matrix controls,24correlated-noise controls,3geometric
+readout controls, exact kernels and an exhaustive small natural-label moment
+control. Seven analytic scaling rows are NOT executed large quantum circuits.
+
+All nine live workflows exited0: matching CLI, runner, dequantize, proofs,
+conjectures, mutate, snapshot, validate, proof-routes. Registry issues[]:
+8candidates,796experiments,805results,929negatives,1328deq/1324blocking,
+1303lemmas,104proofstatuses/24blocking,8blockedconjectures,19mutations.
+Proof-route13contracts,0unsupported,4unresolved. No speedup gate enabled.
+The independent full-suite process was PID45206 at the last check; inspect
+the live process rather than treating this record as proof it is running.
+Its outcome is NOT certified by this pass. The three separately modified
+writer modules are affine_transport, decoder_frontier and
+quantum_relation_fidelity; their work and other existing artifacts were kept.
+
+NEXT HIGH-REASONING TARGET: exploit the explicit modular arithmetic to replace
+exponentially long Grover evolution, or change the collective measurement.
+Do not reconstruct partner lists, require uniqueness/degree counting, or cite
+the sorted join's exponential storage as a universal obstruction. Generic
+search lower bounds prevent a BLACK-BOX shortcut, not every source-aware
+arithmetic algorithm. Known two-dimensional Grover spectra also do not grant
+free powers: the implementation must be supplied and charged. The new kernel
+deserves independent/novelty review; it is not a reason to pause other work.
+The overarching research goal remains active.
+
+## Previous Research Pass: Capped Balanced Partner Search
 
 Read the final section of `research/DCP_PAIRING_PROGRAMS.md` and
 `core/dcp_balanced_pairing.py`. This extends the SAME coherent-matching

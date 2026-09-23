@@ -1,6 +1,6 @@
 {
   "accepted_preflight_count": 4,
-  "created_at": "2026-09-22T20:04:43.883011+00:00",
+  "created_at": "2026-09-23T04:10:20.290673+00:00",
   "interface_repair_proposal_count": 4,
   "not_generated_preflight_count": 15,
   "preflight_count": 19,
@@ -184,7 +184,7 @@
   "proposal_only_count": 14,
   "proposals": [
     {
-      "created_at": "2026-09-22T20:04:43.637638+00:00",
+      "created_at": "2026-09-23T04:10:20.053820+00:00",
       "id": "MUTATE-CODE-COSET-COLLECTIVE-WL-HARD-COSET",
       "linked_blockers": [
         "DEQ-CODE-COSET-COLLECTIVE-ADAPTIVE-PALETTE-CATALOGUE-COVER",
@@ -1078,7 +1078,7 @@
       "status": "proposal"
     },
     {
-      "created_at": "2026-09-22T20:04:43.642379+00:00",
+      "created_at": "2026-09-23T04:10:20.059547+00:00",
       "formalization_status": "proposal-only-unformalized",
       "id": "MUTATE-DHS-GOWERS-SIEVE-DCP-RECURSIVE-DECODER-CERTIFICATE",
       "linked_blockers": [
@@ -1172,6 +1172,7 @@
         "DEQ-DHS-GOWERS-SIEVE-DCP-AFFINE-MARKED-ENUMERATION-COST",
         "DEQ-DHS-GOWERS-SIEVE-DCP-BALANCED-MITM-RESOURCE-CONTRACT",
         "DEQ-DHS-GOWERS-SIEVE-DCP-FIXED-DIGEST-ACCESS-BOUNDARY",
+        "DEQ-DHS-GOWERS-SIEVE-DCP-LIST-FREE-EDGE-TIME-CONTRACT",
         "DEQ-DHS-GOWERS-SIEVE-DCP-PAIRING-NOISE-COVERAGE-CONTRACT",
         "DEQ-DHS-GOWERS-SIEVE-DCP-RECIPROCAL-COVERAGE-CONTRACT",
         "DEQ-RESULT-EXP-DHS-GOWERS-SPECTRUM-HIDDEN-SHIFT-HIGH-RISK",
@@ -1358,7 +1359,7 @@
       "theorem_contract_id": "THM-REGEV-USVP-TO-DCP-2003"
     },
     {
-      "created_at": "2026-09-22T20:04:43.707971+00:00",
+      "created_at": "2026-09-23T04:10:20.121244+00:00",
       "formalization_status": "proposal-only-unformalized",
       "id": "MUTATE-DHS-GOWERS-SIEVE-DCP-BAD-REGISTER-ROBUST-ARCHITECTURE",
       "linked_blockers": [
@@ -1452,6 +1453,7 @@
         "DEQ-DHS-GOWERS-SIEVE-DCP-AFFINE-MARKED-ENUMERATION-COST",
         "DEQ-DHS-GOWERS-SIEVE-DCP-BALANCED-MITM-RESOURCE-CONTRACT",
         "DEQ-DHS-GOWERS-SIEVE-DCP-FIXED-DIGEST-ACCESS-BOUNDARY",
+        "DEQ-DHS-GOWERS-SIEVE-DCP-LIST-FREE-EDGE-TIME-CONTRACT",
         "DEQ-DHS-GOWERS-SIEVE-DCP-PAIRING-NOISE-COVERAGE-CONTRACT",
         "DEQ-DHS-GOWERS-SIEVE-DCP-RECIPROCAL-COVERAGE-CONTRACT",
         "DEQ-RESULT-EXP-DHS-GOWERS-SPECTRUM-HIDDEN-SHIFT-HIGH-RISK",
@@ -1636,7 +1638,7 @@
       "theorem_contract_id": "THM-REGEV-USVP-TO-DCP-2003"
     },
     {
-      "created_at": "2026-09-22T20:04:43.723753+00:00",
+      "created_at": "2026-09-23T04:10:20.139291+00:00",
       "formalization_status": "proposal-only-unformalized",
       "id": "MUTATE-DHS-GOWERS-SIEVE-DCP-RANDOM-LABEL-POLYNOMIAL-DECODER",
       "linked_blockers": [
@@ -1730,6 +1732,7 @@
         "DEQ-DHS-GOWERS-SIEVE-DCP-AFFINE-MARKED-ENUMERATION-COST",
         "DEQ-DHS-GOWERS-SIEVE-DCP-BALANCED-MITM-RESOURCE-CONTRACT",
         "DEQ-DHS-GOWERS-SIEVE-DCP-FIXED-DIGEST-ACCESS-BOUNDARY",
+        "DEQ-DHS-GOWERS-SIEVE-DCP-LIST-FREE-EDGE-TIME-CONTRACT",
         "DEQ-DHS-GOWERS-SIEVE-DCP-PAIRING-NOISE-COVERAGE-CONTRACT",
         "DEQ-DHS-GOWERS-SIEVE-DCP-RECIPROCAL-COVERAGE-CONTRACT",
         "DEQ-RESULT-EXP-DHS-GOWERS-SPECTRUM-HIDDEN-SHIFT-HIGH-RISK",
@@ -1918,7 +1921,7 @@
         "Reject new f=1 signal-only witnesses for global m=Theta(n) blocks; information robustness is already proved and the missing object is the circuit.",
         "For the measured low-subset-sum prefix, audit retained label information against GRZ and the review-pending joint-slice extension. Dependence on measured low sum z alone is not an escape: check conditional range sizes with the separate proof. Other measurements or extra label-sensitive quantum workspace need their own argument.",
         "For explicit pairings, prove inverse-polynomial natural-label-averaged noise-weighted half-period edge mass, not canonical witness rate. Supply efficient F or clean P and inverse; exponential fiber tables are only references. The prelabel-fault gauge must discard old labels and coins before program selection. Short-move coverage and constant-noise bounds apply only to the specified readouts.",
-        "Affine-marked isolated edges now have review-pending polynomial source coverage. A balanced-support meet-in-the-middle finder is implemented with a fixed reversible sorting network, but its time and coherent storage are exponential. Beat this charged frontier using structure, not another existence argument. Conditional isolation degree D/(N*2^ell) remains in (1/8,1/4] at D>=N; increasing raw density also increases syndrome constraints. A valid clean proposal need not decide uniqueness on every input, but must retain useful reciprocal coverage.",
+        "Affine-marked isolated edges and capped balanced supports have derived coverage bounds. The sorting-network finder's time and coherent storage are exponential, but a separate shared-geometric Grover edge readout is now list-free and polynomial-space: it needs neither unique partners nor vertex isolation. Its time remains exponential. Target faster structured evolution, not another coverage interface. For the isolated architecture only, increasing raw density also increases syndrome constraints. Do not impose deterministic-partner or exponential-list requirements on the direct coherent-edge route.",
         "Reject low-weight, contiguous, random, or other polynomial explicit subset candidate lists covered by the uniform-target coverage bound.",
         "Reject full-fiber PGM requirements when Regev's weaker partial deterministic subset-sum interface is sufficient.",
         "Reject retuning scales, LLL delta, or fixed centered embeddings when the change supplies no tail mechanism or coverage theorem.",
@@ -1995,7 +1998,7 @@
       "theorem_contract_id": "THM-REGEV-USVP-TO-DCP-2003"
     },
     {
-      "created_at": "2026-09-22T20:04:43.726824+00:00",
+      "created_at": "2026-09-23T04:10:20.142619+00:00",
       "id": "MUTATE-HYP-LIT-COSET-OBSERVABLES-WL-HARD-COSET",
       "linked_blockers": [
         "DEQ-RESULT-EXP-HYP-COSET-NOGO-MAP-COSET-NEGATIVE-FAMILIES",
@@ -2037,7 +2040,7 @@
       "status": "proposal"
     },
     {
-      "created_at": "2026-09-22T20:04:43.730770+00:00",
+      "created_at": "2026-09-23T04:10:20.146490+00:00",
       "formalization_status": "proposal-only-unformalized",
       "id": "MUTATE-HYP-LIT-HIDDEN-SHIFT-SIEVE-DCP-RECURSIVE-DECODER-CERTIFICATE",
       "linked_blockers": [
@@ -2089,7 +2092,7 @@
       "theorem_contract_id": "THM-REGEV-USVP-TO-DCP-2003"
     },
     {
-      "created_at": "2026-09-22T20:04:43.733415+00:00",
+      "created_at": "2026-09-23T04:10:20.148837+00:00",
       "formalization_status": "proposal-only-unformalized",
       "id": "MUTATE-HYP-LIT-HIDDEN-SHIFT-SIEVE-DCP-BAD-REGISTER-ROBUST-ARCHITECTURE",
       "linked_blockers": [
@@ -2139,7 +2142,7 @@
       "theorem_contract_id": "THM-REGEV-USVP-TO-DCP-2003"
     },
     {
-      "created_at": "2026-09-22T20:04:43.748371+00:00",
+      "created_at": "2026-09-23T04:10:20.163393+00:00",
       "formalization_status": "proposal-only-unformalized",
       "id": "MUTATE-HYP-LIT-HIDDEN-SHIFT-SIEVE-DCP-RANDOM-LABEL-POLYNOMIAL-DECODER",
       "linked_blockers": [
@@ -2193,7 +2196,7 @@
         "Reject new f=1 signal-only witnesses for global m=Theta(n) blocks; information robustness is already proved and the missing object is the circuit.",
         "For the measured low-subset-sum prefix, audit retained label information against GRZ and the review-pending joint-slice extension. Dependence on measured low sum z alone is not an escape: check conditional range sizes with the separate proof. Other measurements or extra label-sensitive quantum workspace need their own argument.",
         "For explicit pairings, prove inverse-polynomial natural-label-averaged noise-weighted half-period edge mass, not canonical witness rate. Supply efficient F or clean P and inverse; exponential fiber tables are only references. The prelabel-fault gauge must discard old labels and coins before program selection. Short-move coverage and constant-noise bounds apply only to the specified readouts.",
-        "Affine-marked isolated edges now have review-pending polynomial source coverage. A balanced-support meet-in-the-middle finder is implemented with a fixed reversible sorting network, but its time and coherent storage are exponential. Beat this charged frontier using structure, not another existence argument. Conditional isolation degree D/(N*2^ell) remains in (1/8,1/4] at D>=N; increasing raw density also increases syndrome constraints. A valid clean proposal need not decide uniqueness on every input, but must retain useful reciprocal coverage.",
+        "Affine-marked isolated edges and capped balanced supports have derived coverage bounds. The sorting-network finder's time and coherent storage are exponential, but a separate shared-geometric Grover edge readout is now list-free and polynomial-space: it needs neither unique partners nor vertex isolation. Its time remains exponential. Target faster structured evolution, not another coverage interface. For the isolated architecture only, increasing raw density also increases syndrome constraints. Do not impose deterministic-partner or exponential-list requirements on the direct coherent-edge route.",
         "Reject low-weight, contiguous, random, or other polynomial explicit subset candidate lists covered by the uniform-target coverage bound.",
         "Reject full-fiber PGM requirements when Regev's weaker partial deterministic subset-sum interface is sufficient.",
         "Reject retuning scales, LLL delta, or fixed centered embeddings when the change supplies no tail mechanism or coverage theorem.",
@@ -2270,7 +2273,7 @@
       "theorem_contract_id": "THM-REGEV-USVP-TO-DCP-2003"
     },
     {
-      "created_at": "2026-09-22T20:04:43.755274+00:00",
+      "created_at": "2026-09-23T04:10:20.171243+00:00",
       "id": "MUTATE-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
       "linked_blockers": [
         "DEQ-CODE-CANONICALIZATION-REJECTIONS",
@@ -2322,7 +2325,7 @@
       "status": "proposal"
     },
     {
-      "created_at": "2026-09-22T20:04:43.755274+00:00",
+      "created_at": "2026-09-23T04:10:20.171243+00:00",
       "id": "MUTATE-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
       "linked_blockers": [
         "DEQ-CFI-PARITY-SOLVER-PROMISED-GADGET",
@@ -2365,7 +2368,7 @@
       "status": "proposal"
     },
     {
-      "created_at": "2026-09-22T20:04:43.755274+00:00",
+      "created_at": "2026-09-23T04:10:20.171243+00:00",
       "id": "MUTATE-CODE-COSET-COLLECTIVE-TRIAGE-ESCAPE",
       "linked_blockers": [
         "DEQ-COSET-FRONTIER-TRIAGE-REJECTIONS",
@@ -2405,7 +2408,7 @@
       "status": "proposal"
     },
     {
-      "created_at": "2026-09-22T20:04:43.763208+00:00",
+      "created_at": "2026-09-23T04:10:20.178326+00:00",
       "failed_interface_axes": [
         "full-family-coverage",
         "parameter-map",
@@ -2457,7 +2460,7 @@
       ]
     },
     {
-      "created_at": "2026-09-22T20:04:43.763208+00:00",
+      "created_at": "2026-09-23T04:10:20.178326+00:00",
       "failed_interface_axes": [
         "bad-register-robustness",
         "full-family-coverage",
@@ -2512,7 +2515,7 @@
       ]
     },
     {
-      "created_at": "2026-09-22T20:04:43.763208+00:00",
+      "created_at": "2026-09-23T04:10:20.178326+00:00",
       "failed_interface_axes": [
         "full-family-coverage",
         "parameter-map",
@@ -2574,7 +2577,7 @@
       ]
     },
     {
-      "created_at": "2026-09-22T20:04:43.763208+00:00",
+      "created_at": "2026-09-23T04:10:20.178326+00:00",
       "failed_interface_axes": [
         "bad-register-robustness",
         "full-family-coverage",
@@ -2630,7 +2633,7 @@
     },
     {
       "copy_budget_kind": "binary-class-mixture-chi-square",
-      "created_at": "2026-09-22T20:04:43.763327+00:00",
+      "created_at": "2026-09-23T04:10:20.178453+00:00",
       "formalization_status": "typed-architecture-proof-capabilities-missing",
       "id": "MUTATE-CODE-COSET-COLLECTIVE-CLEAN-SUBSET-BINARY-DETECTION",
       "linked_blockers": [
@@ -2704,7 +2707,7 @@
     },
     {
       "copy_budget_kind": "identification-holevo-fano",
-      "created_at": "2026-09-22T20:04:43.763332+00:00",
+      "created_at": "2026-09-23T04:10:20.178458+00:00",
       "formalization_status": "typed-architecture-proof-capabilities-missing",
       "id": "MUTATE-CODE-COSET-COLLECTIVE-ENCODED-REFERENCE-SYMMETRY-BREAKING",
       "linked_blockers": [
@@ -2759,7 +2762,7 @@
     },
     {
       "copy_budget_kind": "identification-holevo-fano",
-      "created_at": "2026-09-22T20:04:43.763335+00:00",
+      "created_at": "2026-09-23T04:10:20.178461+00:00",
       "formalization_status": "typed-architecture-proof-capabilities-missing",
       "id": "MUTATE-CODE-COSET-COLLECTIVE-FULL-RECOUPLING-TRANSITION-DECODER",
       "linked_blockers": [
@@ -2814,7 +2817,7 @@
     },
     {
       "copy_budget_kind": "identification-holevo-fano",
-      "created_at": "2026-09-22T20:04:43.763337+00:00",
+      "created_at": "2026-09-23T04:10:20.178464+00:00",
       "formalization_status": "typed-architecture-proof-capabilities-missing",
       "id": "MUTATE-CODE-COSET-COLLECTIVE-TENSOR-ASSOCIATOR-DECODER",
       "linked_blockers": [

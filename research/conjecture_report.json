@@ -5171,7 +5171,7 @@
         }
       ],
       "candidate_id": "CODE-COSET-COLLECTIVE",
-      "created_at": "2026-09-22T20:04:40.381606+00:00",
+      "created_at": "2026-09-23T04:10:16.653268+00:00",
       "id": "CONJ-CODE-COSET-COLLECTIVE",
       "next_actions": [
         "Resolve every blocking finding before promotion.",
@@ -18288,7 +18288,7 @@
           "summary": "Proved that density-one low-bit fibers contain no affine flat of dimension 8log2(q) or larger with failure 2^-Omega(q log q), uniformly over every adaptive GL(m,2) reparameterization. Any support-contained cancellation-free affine cover is exponential."
         }
       ],
-      "updated_at": "2026-09-22T20:04:40.381606+00:00"
+      "updated_at": "2026-09-23T04:10:16.653268+00:00"
     },
     {
       "assumptions": [
@@ -18839,6 +18839,12 @@
           "severity": "high"
         },
         {
+          "evidence": "The explicit support-index Grover readout uses polynomial workspace and needs no unique-neighbor oracle, vertex isolation or unknown-state reflection. Its public geometric schedule nevertheless has mean 2^ceil(log2(P)/2)-1 iterations on P>=2^n padded supports; heralding, cutoff aborts and predicate computation are charged.",
+          "finding_id": "DEQ-DHS-GOWERS-SIEVE-DCP-LIST-FREE-EDGE-TIME-CONTRACT",
+          "required_action": "Exploit the arithmetic to replace the exponential Grover evolution, or change the measurement architecture. Do not impose exponential storage or deterministic-partner requirements on this direct readout. The generic search cost is not a lower bound against structured DCP algorithms. This is an access or symmetry boundary, not classical dequantization.",
+          "severity": "high"
+        },
+        {
           "evidence": "For natural independent uniform labels, average distance-w edge mass is <=C(m,w)/N and total mass <=1. Under independent product dephasing the weighted relaxation is superpolynomially small at fixed eta<1 and polynomial m; correlated faults are not covered by this conclusion.",
           "finding_id": "DEQ-DHS-GOWERS-SIEVE-DCP-PAIRING-NOISE-COVERAGE-CONTRACT",
           "required_action": "Use noise-weighted source-average coverage with charged computation. The inverse-n fault regime remains open; this is not an arbitrary-measurement lower bound or classical dequantization. This is an access or symmetry boundary, not classical dequantization.",
@@ -19019,7 +19025,7 @@
           "severity": "medium"
         },
         {
-          "evidence": "Triggered falsifiers: The fixed-seed source extension requires target-independent explicit coins shared coherently across both endpoints; this is not a restriction on all other constructions. | Freshly measured or target-dependent randomness does not by itself define the fixed answered set used in that proof. | Multiple valid witnesses are insufficient without an actual coherent pairing/cleanup construction; the separate symmetric lift is an allowed route. | Orthogonal paired workspaces make every endpoint X/Y phase statistic exactly independent of qd/N. | Proving an interface theorem does not construct the required polynomial subset-sum solver. | A one-witness-per-residue proposal can have valid-output fraction one but reciprocal mass at most N/2^m; input-dependent matchings are not subject to that cap. | Short adaptive moves have average mass at most sum_{j<=r} C(m,j)/N. Constant product-dephasing noise suppresses every declared pairing readout at polynomial m; this is not a general DCP no-go. | Retaining old labels/gauge coins or postlabel corruption invalidates the gauge contract. Correlated prelabel faults require their joint survival law, not the independent eta^weight formula. | Polynomial affine-marked coverage does not remove the 12*sum_{w<=r} C(m,w) support-predicate calls of its six-XOR enumeration implementation. | Capped balanced-support joining stores L=ceil(sqrt(2^n)) records per list. Isolation increases syndrome constraints with raw multiplicity; the conditioned expected neighbor count remains at most 1/4, not a free dense-instance regime.",
+          "evidence": "Triggered falsifiers: The fixed-seed source extension requires target-independent explicit coins shared coherently across both endpoints; this is not a restriction on all other constructions. | Freshly measured or target-dependent randomness does not by itself define the fixed answered set used in that proof. | Multiple valid witnesses are insufficient without an actual coherent pairing/cleanup construction; the separate symmetric lift is an allowed route. | Orthogonal paired workspaces make every endpoint X/Y phase statistic exactly independent of qd/N. | Proving an interface theorem does not construct the required polynomial subset-sum solver. | A one-witness-per-residue proposal can have valid-output fraction one but reciprocal mass at most N/2^m; input-dependent matchings are not subject to that cap. | Short adaptive moves have average mass at most sum_{j<=r} C(m,j)/N. Constant product-dephasing noise suppresses every declared pairing readout at polynomial m; this is not a general DCP no-go. | Retaining old labels/gauge coins or postlabel corruption invalidates the gauge contract. Correlated prelabel faults require their joint survival law, not the independent eta^weight formula. | Polynomial affine-marked coverage does not remove the 12*sum_{w<=r} C(m,w) support-predicate calls of its six-XOR enumeration implementation. | Capped balanced-support joining stores L=ceil(sqrt(2^n)) records per list. Isolation increases syndrome constraints with raw multiplicity; the conditioned expected neighbor count remains at most 1/4, not a free dense-instance regime. | A fixed Grover time can reverse endpoint interference when degrees differ. Shared geometric times give a positive averaged kernel, but the implemented list-free readout still takes O(2^(n/2)*poly(n)) time; polynomial space is not polynomial time.",
           "finding_id": "DEQ-RESULT-EXP-DHS-DCP-COHERENT-MATCHING-INTERFACE-DCP-COHERENT-MATCHING-INTERFACE-FALSIFIERS",
           "required_action": "Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.",
           "severity": "medium"
@@ -19746,7 +19752,7 @@
         }
       ],
       "candidate_id": "DHS-GOWERS-SIEVE",
-      "created_at": "2026-09-22T20:04:40.381606+00:00",
+      "created_at": "2026-09-23T04:10:16.653268+00:00",
       "id": "CONJ-DHS-GOWERS-SIEVE",
       "next_actions": [
         "Resolve every blocking finding before promotion.",
@@ -20167,9 +20173,11 @@
             "balanced_mitm_program_control_count": 3,
             "balanced_mitm_source_control_count": 3,
             "clean_mutual_xor_oracle_call_count": 6,
+            "coherent_edge_physical_control_count": 96,
             "correlated_noise_control_count": 3,
             "efficient_pairing_finder_count": 0,
             "explicit_exponential_pairing_finder_count": 2,
+            "list_free_edge_sampler_count": 1,
             "maximum_polynomial_success_exponent": 15,
             "minimum_certified_routine_success_probability": 2.087208213499279e-39,
             "noise_mass_envelope_count": 14,
@@ -20187,7 +20195,7 @@
             "zero_visibility_counterexample_count": 1
           },
           "status": "derived-pairing-readouts-review-pending-no-efficient-finder",
-          "summary": "Certified 12/12 seeded-randomized interface rows and extracted 4 deterministic source use sites. Checked 9 mutual and 2 permutation controls; failures=0. Noise-weighted mass, not witness rate, is the constructive target; Affine-marked coverage is derived for streamed and capped balanced-support finders. The latter has constant average coverage, including a scoped constant noise signal at m=2n, and a fixed-network meet-in-the-middle implementation but exponential time AND coherent storage; no efficient pairing finder or new decoder."
+          "summary": "Certified 12/12 seeded-randomized interface rows and extracted 4 deterministic source use sites. Checked 9 mutual and 2 permutation controls; failures=0. Noise-weighted mass, not witness rate, is the constructive target; Affine-marked coverage is derived for streamed and capped balanced-support finders. The latter has constant average coverage, including a scoped constant noise signal at m=2n, and a fixed-network meet-in-the-middle implementation but exponential time AND coherent storage; A separate shared-geometric Grover edge readout avoids lists, unique partners and vertex isolation with polynomial workspace, but still exponential time. No efficient pairing finder or new decoder."
         },
         {
           "experiment_result_id": "RESULT-EXP-DHS-DCP-COLLECTIVE-WITNESS-SEARCH-DCP-COLLECTIVE-WITNESS",
@@ -22487,7 +22495,7 @@
           "summary": "Audited 12 explicit hidden-shift instances across 3 phase families. 3 instances show Fourier/derivative structure; 8 are critical/high dequantization risk; 8 survive at least one restricted query model. Best DHSP sieve strategy aggressive_doubling reaches v2=7 from 2048 phase labels; explicit phase-state trace reaches v2=7 with 44 survivor states."
         }
       ],
-      "updated_at": "2026-09-22T20:04:40.381606+00:00"
+      "updated_at": "2026-09-23T04:10:16.653268+00:00"
     },
     {
       "assumptions": [
@@ -22545,7 +22553,7 @@
         }
       ],
       "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
-      "created_at": "2026-09-22T20:04:40.381606+00:00",
+      "created_at": "2026-09-23T04:10:16.653268+00:00",
       "id": "CONJ-HYP-LIT-COSET-OBSERVABLES",
       "next_actions": [
         "Resolve every blocking finding before promotion.",
@@ -22585,7 +22593,7 @@
           "summary": "Audited 4 hidden-permutation graph pairs. 2 pair survives current classical and low-register tests; 1 control pair is classically distinguished; 2 CFI-style parity benchmark(s) included."
         }
       ],
-      "updated_at": "2026-09-22T20:04:40.381606+00:00"
+      "updated_at": "2026-09-23T04:10:16.653268+00:00"
     },
     {
       "assumptions": [
@@ -22675,7 +22683,7 @@
         }
       ],
       "candidate_id": "HYP-LIT-HIDDEN-SHIFT-SIEVE",
-      "created_at": "2026-09-22T20:04:40.381606+00:00",
+      "created_at": "2026-09-23T04:10:16.653268+00:00",
       "id": "CONJ-HYP-LIT-HIDDEN-SHIFT-SIEVE",
       "next_actions": [
         "Resolve every blocking finding before promotion.",
@@ -22757,7 +22765,7 @@
           "summary": "Audited 40 explicit hidden-shift instances across 10 phase families. 0 instances show Fourier/derivative structure; 16 are critical/high dequantization risk; 40 survive at least one restricted query model. Best DHSP sieve strategy aggressive_doubling reaches v2=7 from 2048 phase labels; explicit phase-state trace reaches v2=7 with 44 survivor states."
         }
       ],
-      "updated_at": "2026-09-22T20:04:40.381606+00:00"
+      "updated_at": "2026-09-23T04:10:16.653268+00:00"
     },
     {
       "assumptions": [
@@ -22857,7 +22865,7 @@
         }
       ],
       "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
-      "created_at": "2026-09-22T20:04:40.381606+00:00",
+      "created_at": "2026-09-23T04:10:16.653268+00:00",
       "id": "CONJ-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
       "next_actions": [
         "Resolve every blocking finding before promotion.",
@@ -22941,7 +22949,7 @@
           "summary": "Audited 10 graphlet tensor observables across 5 graph pairs. 3 signal(s) collapse to small-pattern classical counts; 3 boundary pair(s) remain without graphlet-tensor signal."
         }
       ],
-      "updated_at": "2026-09-22T20:04:40.381606+00:00"
+      "updated_at": "2026-09-23T04:10:16.653268+00:00"
     },
     {
       "assumptions": [
@@ -23017,7 +23025,7 @@
         }
       ],
       "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
-      "created_at": "2026-09-22T20:04:40.381606+00:00",
+      "created_at": "2026-09-23T04:10:16.653268+00:00",
       "id": "CONJ-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
       "next_actions": [
         "Resolve every blocking finding before promotion.",
@@ -23072,7 +23080,7 @@
           "summary": "Audited 10 graphlet tensor observables across 5 graph pairs. 3 signal(s) collapse to small-pattern classical counts; 3 boundary pair(s) remain without graphlet-tensor signal."
         }
       ],
-      "updated_at": "2026-09-22T20:04:40.381606+00:00"
+      "updated_at": "2026-09-23T04:10:16.653268+00:00"
     },
     {
       "assumptions": [
@@ -23148,7 +23156,7 @@
         }
       ],
       "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
-      "created_at": "2026-09-22T20:04:40.381606+00:00",
+      "created_at": "2026-09-23T04:10:16.653268+00:00",
       "id": "CONJ-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
       "next_actions": [
         "Resolve every blocking finding before promotion.",
@@ -23202,7 +23210,7 @@
           "summary": "Audited 4 hidden-permutation graph pairs. 2 pair survives current classical and low-register tests; 1 control pair is classically distinguished; 2 CFI-style parity benchmark(s) included."
         }
       ],
-      "updated_at": "2026-09-22T20:04:40.381606+00:00"
+      "updated_at": "2026-09-23T04:10:16.653268+00:00"
     },
     {
       "assumptions": [
@@ -23266,7 +23274,7 @@
         }
       ],
       "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
-      "created_at": "2026-09-22T20:04:40.381606+00:00",
+      "created_at": "2026-09-23T04:10:16.653268+00:00",
       "id": "CONJ-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
       "next_actions": [
         "Resolve every blocking finding before promotion.",
@@ -23300,10 +23308,10 @@
           "summary": "Audited 3 code-equivalence pairs. 1 equivalent control pair(s) verified; 2 non-equivalent control pair(s) classically distinguished."
         }
       ],
-      "updated_at": "2026-09-22T20:04:40.381606+00:00"
+      "updated_at": "2026-09-23T04:10:16.653268+00:00"
     }
   ],
-  "created_at": "2026-09-22T20:04:40.692703+00:00",
+  "created_at": "2026-09-23T04:10:16.976458+00:00",
   "needs_evidence_count": 0,
   "status": "blocked"
 }

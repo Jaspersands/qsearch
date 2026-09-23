@@ -4150,6 +4150,8 @@ def seed_candidate_records() -> tuple[list[CandidateRecord], list[ExperimentReco
                 "exponential support count despite derived polynomial coverage. "
                 "Compare a balanced-support meet-in-the-middle finder using reversible sorting with charged "
                 "coherent storage, duplicate multiplicities and post-isolation density; verify independent graph controls. "
+                "Execute the list-free shared-geometric Grover edge readout; compare full quantum evolution with its "
+                "exact positive kernel, unmarked degree moments and bounded cutoff. Charge time despite polynomial space. "
                 "Keep the separate symmetric double-evaluation quantum relation lift outside the single-call obstruction."
             ),
             positive_signal=(
@@ -4185,19 +4187,23 @@ def seed_candidate_records() -> tuple[list[CandidateRecord], list[ExperimentReco
                 "affine_marked_program_control_count",
                 "balanced_mitm_source_control_count",
                 "balanced_mitm_program_control_count",
+                "list_free_edge_sampler_count",
+                "coherent_edge_physical_control_count",
             ],
             dependencies=[
                 "dcp_coherent_matching_interface.py",
                 "core/dcp_pairing_programs.py",
                 "core/dcp_affine_marked_pairing.py",
                 "core/dcp_balanced_pairing.py",
+                "core/dcp_coherent_edge_sampling.py",
+                "research/DCP_COHERENT_EDGE_READOUT.md",
                 "research/DCP_PAIRING_PROGRAMS.md",
                 "dcp_subset_sum_bridge.py",
                 "research/literature_cache/cs_0304005_source/quantum_average.tex",
             ],
             next_actions=[
                 "Reclassify explicit-coin randomized subset-sum algorithms as interface-compatible.",
-                "Beat the balanced-support finder's exponential time/coherent-space frontier with an actual structured clean solver, or change the readout. Isolation restores sparse syndrome-constrained search; raw multiplicity is not a free dense-instance shortcut.",
+                "Replace the list-free coherent-edge readout's exponential Grover evolution using actual arithmetic structure, or change the readout. Unique partners, vertex isolation and exponential lists are no longer necessary for this route; constant signal does not remove the time cost.",
                 "Charge per-label preprocessing, inverse access, failures and repetition against existing sieve/subset-sum tradeoffs.",
                 "Keep solver construction and interface compatibility as separate proof obligations.",
             ],

@@ -1,5 +1,6 @@
 {
   "artifacts": {
+    "coherent_edge_derivation": "research/DCP_COHERENT_EDGE_READOUT.md",
     "dcp_coherent_matching_interface": "research/reductions/dcp_coherent_matching_interface.json",
     "derivation": "research/DCP_PAIRING_PROGRAMS.md"
   },
@@ -8,6 +9,7 @@
     "arbitrary_quantum_relation_solver_bridge_proved": false,
     "arbitrary_quantum_solvers_excluded": false,
     "balanced_mitm_controls_passed": true,
+    "coherent_edge_controls_passed": true,
     "conditional_pairing_construction_derived": true,
     "formal_verification": false,
     "independently_reviewed": false,
@@ -22,7 +24,7 @@
     "speedup_claim_allowed": false,
     "workspace_overlap_required": true
   },
-  "created_at": "2026-09-22T20:04:30.684260+00:00",
+  "created_at": "2026-09-23T02:48:55.619640+00:00",
   "deterministic_use_sites": [
     {
       "failure_if_removed": "Different witnesses survive as orthogonal which-path labels instead of a two-point phase pair.",
@@ -59,7 +61,8 @@
     "Short adaptive moves have average mass at most sum_{j<=r} C(m,j)/N. Constant product-dephasing noise suppresses every declared pairing readout at polynomial m; this is not a general DCP no-go.",
     "Retaining old labels/gauge coins or postlabel corruption invalidates the gauge contract. Correlated prelabel faults require their joint survival law, not the independent eta^weight formula.",
     "Polynomial affine-marked coverage does not remove the 12*sum_{w<=r} C(m,w) support-predicate calls of its six-XOR enumeration implementation.",
-    "Capped balanced-support joining stores L=ceil(sqrt(2^n)) records per list. Isolation increases syndrome constraints with raw multiplicity; the conditioned expected neighbor count remains at most 1/4, not a free dense-instance regime."
+    "Capped balanced-support joining stores L=ceil(sqrt(2^n)) records per list. Isolation increases syndrome constraints with raw multiplicity; the conditioned expected neighbor count remains at most 1/4, not a free dense-instance regime.",
+    "A fixed Grover time can reverse endpoint interference when degrees differ. Shared geometric times give a positive averaged kernel, but the implemented list-free readout still takes O(2^(n/2)*poly(n)) time; polynomial space is not polynomial time."
   ],
   "headline_metrics": {
     "affine_marked_program_control_count": 3,
@@ -67,9 +70,11 @@
     "balanced_mitm_program_control_count": 3,
     "balanced_mitm_source_control_count": 3,
     "clean_mutual_xor_oracle_call_count": 6,
+    "coherent_edge_physical_control_count": 96,
     "correlated_noise_control_count": 3,
     "efficient_pairing_finder_count": 0,
     "explicit_exponential_pairing_finder_count": 2,
+    "list_free_edge_sampler_count": 1,
     "maximum_polynomial_success_exponent": 15,
     "minimum_certified_routine_success_probability": 2.087208213499279e-39,
     "noise_mass_envelope_count": 14,
@@ -1923,6 +1928,2134 @@
         "trials": 8
       }
     ],
+    "coherent_edge_sampler": {
+      "contract": {
+        "algorithm": "Prepare uniform padded support index, shared public geometric Grover time, herald valid edge, canonicalize with the retained coherent support index, and measure orientation X. Abort tails count as zero.",
+        "independently_reviewed": false,
+        "kernel": "K(d,e)=[f(theta_d-theta_e)-f(theta_d+theta_e)]/(2sqrt(de)), f(x)=(1-rho)^2 cos(x)/((1-rho)^2+4rho sin(x)^2); f decreases on [0,pi], so K>=0.",
+        "no_quantum_counting_or_unique_partner_needed": true,
+        "noise_scope": "Nonnegative support-survival coherences from the existing prelabel classical-mask gauge, not arbitrary quantum noise or independent-batch guarantees.",
+        "novelty_established": false,
+        "polynomial_time_claimed": false,
+        "quantum_gate_export_implemented": false,
+        "resources": "Per parity-readout attempt: O(2^(n/2)*poly(n,log(1/tail))) time and polynomial coherent workspace. Dense small-state arrays are diagnostics, not required quantum storage. Fresh-batch repetition and full-secret recovery need separate accounting.",
+        "signal": "Source-averaged signed signal >=1/25350-2^-tail_bits for m=2n,n>=6 under the declared prelabel classical-fault marginals <=1/n. Constant positive for tail_bits>=16. Uses degree moments and kernel positivity, not a low-degree classifier or isolated-edge oracle.",
+        "source_law": "Independent uniform labels, capped balanced support family, NO affine vertex filter; common independent public iteration count.",
+        "speedup_claim_allowed": false,
+        "unknown_input_state_reflection_used": false
+      },
+      "control_failures": 0,
+      "correlated_noise_controls": [
+        {
+          "conditional_normalization_used": false,
+          "eta": 1.0,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.25,
+          "iterations": 0,
+          "observed_signal": 0.1875,
+          "predicted_signal": 0.18749999999999997,
+          "secret": 0,
+          "signal_residual": 2.7755575615628914e-17,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 1.0,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.25,
+          "iterations": 0,
+          "observed_signal": -0.1875,
+          "predicted_signal": -0.18749999999999997,
+          "secret": 1,
+          "signal_residual": 2.7755575615628914e-17,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 1.0,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.25,
+          "iterations": 0,
+          "observed_signal": 0.1875,
+          "predicted_signal": 0.18749999999999997,
+          "secret": 2,
+          "signal_residual": 2.7755575615628914e-17,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 1.0,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.25,
+          "iterations": 0,
+          "observed_signal": -0.1875,
+          "predicted_signal": -0.18749999999999997,
+          "secret": 3,
+          "signal_residual": 2.7755575615628914e-17,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 1.0,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.25,
+          "iterations": 2,
+          "observed_signal": -0.1875,
+          "predicted_signal": -0.18750000000000014,
+          "secret": 0,
+          "signal_residual": 1.3877787807814457e-16,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 1.0,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.25,
+          "iterations": 2,
+          "observed_signal": 0.1875,
+          "predicted_signal": 0.18750000000000014,
+          "secret": 1,
+          "signal_residual": 1.3877787807814457e-16,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 1.0,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.25,
+          "iterations": 2,
+          "observed_signal": -0.1875,
+          "predicted_signal": -0.18750000000000014,
+          "secret": 2,
+          "signal_residual": 1.3877787807814457e-16,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 1.0,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.25,
+          "iterations": 2,
+          "observed_signal": 0.1875,
+          "predicted_signal": 0.18750000000000014,
+          "secret": 3,
+          "signal_residual": 1.3877787807814457e-16,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 1.0,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.25,
+          "iterations": 3,
+          "observed_signal": 0.1875,
+          "predicted_signal": 0.18749999999999983,
+          "secret": 0,
+          "signal_residual": 1.6653345369377348e-16,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 1.0,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.25,
+          "iterations": 3,
+          "observed_signal": -0.1875,
+          "predicted_signal": -0.18749999999999983,
+          "secret": 1,
+          "signal_residual": 1.6653345369377348e-16,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 1.0,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.25,
+          "iterations": 3,
+          "observed_signal": 0.1875,
+          "predicted_signal": 0.18749999999999983,
+          "secret": 2,
+          "signal_residual": 1.6653345369377348e-16,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 1.0,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.25,
+          "iterations": 3,
+          "observed_signal": -0.1875,
+          "predicted_signal": -0.18749999999999983,
+          "secret": 3,
+          "signal_residual": 1.6653345369377348e-16,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 1.0,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.25,
+          "iterations": 0,
+          "observed_signal": 0.125,
+          "predicted_signal": 0.12499999999999999,
+          "secret": 0,
+          "signal_residual": 1.3877787807814457e-17,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 1.0,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.25,
+          "iterations": 0,
+          "observed_signal": -0.125,
+          "predicted_signal": -0.12499999999999999,
+          "secret": 1,
+          "signal_residual": 1.3877787807814457e-17,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 1.0,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.25,
+          "iterations": 0,
+          "observed_signal": 0.125,
+          "predicted_signal": 0.12499999999999999,
+          "secret": 2,
+          "signal_residual": 1.3877787807814457e-17,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 1.0,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.25,
+          "iterations": 0,
+          "observed_signal": -0.125,
+          "predicted_signal": -0.12499999999999999,
+          "secret": 3,
+          "signal_residual": 1.3877787807814457e-17,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 1.0,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.25,
+          "iterations": 2,
+          "observed_signal": -0.125,
+          "predicted_signal": -0.12500000000000006,
+          "secret": 0,
+          "signal_residual": 5.551115123125783e-17,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 1.0,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.25,
+          "iterations": 2,
+          "observed_signal": 0.125,
+          "predicted_signal": 0.12500000000000006,
+          "secret": 1,
+          "signal_residual": 5.551115123125783e-17,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 1.0,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.25,
+          "iterations": 2,
+          "observed_signal": -0.125,
+          "predicted_signal": -0.12500000000000006,
+          "secret": 2,
+          "signal_residual": 5.551115123125783e-17,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 1.0,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.25,
+          "iterations": 2,
+          "observed_signal": 0.125,
+          "predicted_signal": 0.12500000000000006,
+          "secret": 3,
+          "signal_residual": 5.551115123125783e-17,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 1.0,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.25,
+          "iterations": 3,
+          "observed_signal": 0.125,
+          "predicted_signal": 0.12499999999999982,
+          "secret": 0,
+          "signal_residual": 1.8041124150158794e-16,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 1.0,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.25,
+          "iterations": 3,
+          "observed_signal": -0.125,
+          "predicted_signal": -0.12499999999999982,
+          "secret": 1,
+          "signal_residual": 1.8041124150158794e-16,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 1.0,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.25,
+          "iterations": 3,
+          "observed_signal": 0.125,
+          "predicted_signal": 0.12499999999999982,
+          "secret": 2,
+          "signal_residual": 1.8041124150158794e-16,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 1.0,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.25,
+          "iterations": 3,
+          "observed_signal": -0.125,
+          "predicted_signal": -0.12499999999999982,
+          "secret": 3,
+          "signal_residual": 1.8041124150158794e-16,
+          "success_residual": 0.0
+        }
+      ],
+      "fixed_time_sign_counterexample": {
+        "conditional_normalization_used": false,
+        "eta": 1.0,
+        "grover_row_norm_residual": 0.0,
+        "heralded_probability": 0.25,
+        "iterations": 2,
+        "observed_signal": -0.25,
+        "predicted_signal": -0.2500000000000001,
+        "secret": 0,
+        "signal_residual": 1.1102230246251565e-16,
+        "success_residual": 0.0
+      },
+      "geometric_controls": [
+        {
+          "actual_abort_probability": 2.3283064365386963e-10,
+          "checks": {
+            "abort_bound": true,
+            "kernel_signal_nonnegative": true,
+            "tail_error_bounded": true
+          },
+          "infinite_geometric_signal": {
+            "denominator": 52,
+            "numerator": 11
+          },
+          "selected_calibration_not_natural_source_estimate": true,
+          "tail_error": 3.582009688862797e-11,
+          "truncated_signal": 0.21153846150264144
+        },
+        {
+          "actual_abort_probability": 2.3283064365386963e-10,
+          "checks": {
+            "abort_bound": true,
+            "kernel_signal_nonnegative": true,
+            "tail_error_bounded": true
+          },
+          "infinite_geometric_signal": {
+            "denominator": 10,
+            "numerator": 3
+          },
+          "selected_calibration_not_natural_source_estimate": true,
+          "tail_error": 6.984918199393064e-11,
+          "truncated_signal": 0.2999999999301508
+        },
+        {
+          "actual_abort_probability": 2.3283064365386963e-10,
+          "checks": {
+            "abort_bound": true,
+            "kernel_signal_nonnegative": true,
+            "tail_error_bounded": true
+          },
+          "infinite_geometric_signal": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "selected_calibration_not_natural_source_estimate": true,
+          "tail_error": 0.0,
+          "truncated_signal": 0.0
+        }
+      ],
+      "kernel_controls": [
+        {
+          "minimum_entry": {
+            "denominator": 10,
+            "numerator": 1
+          },
+          "padded_supports": 2,
+          "singleton_kernel": {
+            "denominator": 2,
+            "numerator": 1
+          }
+        },
+        {
+          "minimum_entry": {
+            "denominator": 28,
+            "numerator": 1
+          },
+          "padded_supports": 4,
+          "singleton_kernel": {
+            "denominator": 28,
+            "numerator": 13
+          }
+        },
+        {
+          "minimum_entry": {
+            "denominator": 344,
+            "numerator": 1
+          },
+          "padded_supports": 8,
+          "singleton_kernel": {
+            "denominator": 176,
+            "numerator": 85
+          }
+        },
+        {
+          "minimum_entry": {
+            "denominator": 736,
+            "numerator": 1
+          },
+          "padded_supports": 16,
+          "singleton_kernel": {
+            "denominator": 28,
+            "numerator": 13
+          }
+        },
+        {
+          "minimum_entry": {
+            "denominator": 6976,
+            "numerator": 1
+          },
+          "padded_supports": 32,
+          "singleton_kernel": {
+            "denominator": 60,
+            "numerator": 29
+          }
+        }
+      ],
+      "literature": [
+        {
+          "role": "Prior Grover multi-solution amplitudes and randomized search. The shared-geometric interference argument is locally derived, not attributed novelty.",
+          "url": "https://arxiv.org/abs/quant-ph/9605034"
+        }
+      ],
+      "natural_degree_control": {
+        "bounded_degree_edge_mass": {
+          "denominator": 32,
+          "numerator": 29
+        },
+        "checks": {
+          "edge_mass_bound": true,
+          "first_moment": true,
+          "second_moment": true
+        },
+        "degree_cap": 2,
+        "mean_degree": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "n": 2,
+        "second_moment": {
+          "denominator": 4,
+          "numerator": 7
+        },
+        "source_assignments": 4096,
+        "width": 4
+      },
+      "physical_controls": [
+        {
+          "conditional_normalization_used": false,
+          "eta": 1.0,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.25,
+          "iterations": 0,
+          "observed_signal": 0.25,
+          "predicted_signal": 0.24999999999999997,
+          "secret": 0,
+          "signal_residual": 2.7755575615628914e-17,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 0.75,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.25,
+          "iterations": 0,
+          "observed_signal": 0.140625,
+          "predicted_signal": 0.14062499999999997,
+          "secret": 0,
+          "signal_residual": 2.7755575615628914e-17,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 1.0,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.25,
+          "iterations": 0,
+          "observed_signal": -0.25,
+          "predicted_signal": -0.24999999999999997,
+          "secret": 1,
+          "signal_residual": 2.7755575615628914e-17,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 0.75,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.25,
+          "iterations": 0,
+          "observed_signal": -0.140625,
+          "predicted_signal": -0.14062499999999997,
+          "secret": 1,
+          "signal_residual": 2.7755575615628914e-17,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 1.0,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.25,
+          "iterations": 0,
+          "observed_signal": 0.25,
+          "predicted_signal": 0.24999999999999997,
+          "secret": 2,
+          "signal_residual": 2.7755575615628914e-17,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 0.75,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.25,
+          "iterations": 0,
+          "observed_signal": 0.140625,
+          "predicted_signal": 0.14062499999999997,
+          "secret": 2,
+          "signal_residual": 2.7755575615628914e-17,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 1.0,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.25,
+          "iterations": 0,
+          "observed_signal": -0.25,
+          "predicted_signal": -0.24999999999999997,
+          "secret": 3,
+          "signal_residual": 2.7755575615628914e-17,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 0.75,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.25,
+          "iterations": 0,
+          "observed_signal": -0.140625,
+          "predicted_signal": -0.14062499999999997,
+          "secret": 3,
+          "signal_residual": 2.7755575615628914e-17,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 1.0,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.625,
+          "iterations": 1,
+          "observed_signal": 0.5,
+          "predicted_signal": 0.49999999999999994,
+          "secret": 0,
+          "signal_residual": 5.551115123125783e-17,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 0.75,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.625,
+          "iterations": 1,
+          "observed_signal": 0.28125,
+          "predicted_signal": 0.28124999999999994,
+          "secret": 0,
+          "signal_residual": 5.551115123125783e-17,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 1.0,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.625,
+          "iterations": 1,
+          "observed_signal": -0.5,
+          "predicted_signal": -0.49999999999999994,
+          "secret": 1,
+          "signal_residual": 5.551115123125783e-17,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 0.75,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.625,
+          "iterations": 1,
+          "observed_signal": -0.28125,
+          "predicted_signal": -0.28124999999999994,
+          "secret": 1,
+          "signal_residual": 5.551115123125783e-17,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 1.0,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.625,
+          "iterations": 1,
+          "observed_signal": 0.5,
+          "predicted_signal": 0.49999999999999994,
+          "secret": 2,
+          "signal_residual": 5.551115123125783e-17,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 0.75,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.625,
+          "iterations": 1,
+          "observed_signal": 0.28125,
+          "predicted_signal": 0.28124999999999994,
+          "secret": 2,
+          "signal_residual": 5.551115123125783e-17,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 1.0,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.625,
+          "iterations": 1,
+          "observed_signal": -0.5,
+          "predicted_signal": -0.49999999999999994,
+          "secret": 3,
+          "signal_residual": 5.551115123125783e-17,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 0.75,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.625,
+          "iterations": 1,
+          "observed_signal": -0.28125,
+          "predicted_signal": -0.28124999999999994,
+          "secret": 3,
+          "signal_residual": 5.551115123125783e-17,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 1.0,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.25,
+          "iterations": 2,
+          "observed_signal": -0.25,
+          "predicted_signal": -0.2500000000000001,
+          "secret": 0,
+          "signal_residual": 1.1102230246251565e-16,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 0.75,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.25,
+          "iterations": 2,
+          "observed_signal": -0.140625,
+          "predicted_signal": -0.14062500000000006,
+          "secret": 0,
+          "signal_residual": 5.551115123125783e-17,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 1.0,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.25,
+          "iterations": 2,
+          "observed_signal": 0.25,
+          "predicted_signal": 0.2500000000000001,
+          "secret": 1,
+          "signal_residual": 1.1102230246251565e-16,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 0.75,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.25,
+          "iterations": 2,
+          "observed_signal": 0.140625,
+          "predicted_signal": 0.14062500000000006,
+          "secret": 1,
+          "signal_residual": 5.551115123125783e-17,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 1.0,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.25,
+          "iterations": 2,
+          "observed_signal": -0.25,
+          "predicted_signal": -0.2500000000000001,
+          "secret": 2,
+          "signal_residual": 1.1102230246251565e-16,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 0.75,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.25,
+          "iterations": 2,
+          "observed_signal": -0.140625,
+          "predicted_signal": -0.14062500000000006,
+          "secret": 2,
+          "signal_residual": 5.551115123125783e-17,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 1.0,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.25,
+          "iterations": 2,
+          "observed_signal": 0.25,
+          "predicted_signal": 0.2500000000000001,
+          "secret": 3,
+          "signal_residual": 1.1102230246251565e-16,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 0.75,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.25,
+          "iterations": 2,
+          "observed_signal": 0.140625,
+          "predicted_signal": 0.14062500000000006,
+          "secret": 3,
+          "signal_residual": 5.551115123125783e-17,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 1.0,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.25,
+          "iterations": 3,
+          "observed_signal": 0.25,
+          "predicted_signal": 0.24999999999999964,
+          "secret": 0,
+          "signal_residual": 3.608224830031759e-16,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 0.75,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.25,
+          "iterations": 3,
+          "observed_signal": 0.140625,
+          "predicted_signal": 0.1406249999999998,
+          "secret": 0,
+          "signal_residual": 1.942890293094024e-16,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 1.0,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.25,
+          "iterations": 3,
+          "observed_signal": -0.25,
+          "predicted_signal": -0.24999999999999964,
+          "secret": 1,
+          "signal_residual": 3.608224830031759e-16,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 0.75,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.25,
+          "iterations": 3,
+          "observed_signal": -0.140625,
+          "predicted_signal": -0.1406249999999998,
+          "secret": 1,
+          "signal_residual": 1.942890293094024e-16,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 1.0,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.25,
+          "iterations": 3,
+          "observed_signal": 0.25,
+          "predicted_signal": 0.24999999999999964,
+          "secret": 2,
+          "signal_residual": 3.608224830031759e-16,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 0.75,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.25,
+          "iterations": 3,
+          "observed_signal": 0.140625,
+          "predicted_signal": 0.1406249999999998,
+          "secret": 2,
+          "signal_residual": 1.942890293094024e-16,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 1.0,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.25,
+          "iterations": 3,
+          "observed_signal": -0.25,
+          "predicted_signal": -0.24999999999999964,
+          "secret": 3,
+          "signal_residual": 3.608224830031759e-16,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 0.75,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.25,
+          "iterations": 3,
+          "observed_signal": -0.140625,
+          "predicted_signal": -0.1406249999999998,
+          "secret": 3,
+          "signal_residual": 1.942890293094024e-16,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 1.0,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.5,
+          "iterations": 0,
+          "observed_signal": 0.5,
+          "predicted_signal": 0.5,
+          "secret": 0,
+          "signal_residual": 0.0,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 0.75,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.5,
+          "iterations": 0,
+          "observed_signal": 0.28125,
+          "predicted_signal": 0.28125,
+          "secret": 0,
+          "signal_residual": 0.0,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 1.0,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.5,
+          "iterations": 0,
+          "observed_signal": -0.5,
+          "predicted_signal": -0.5,
+          "secret": 1,
+          "signal_residual": 0.0,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 0.75,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.5,
+          "iterations": 0,
+          "observed_signal": -0.28125,
+          "predicted_signal": -0.28125,
+          "secret": 1,
+          "signal_residual": 0.0,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 1.0,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.5,
+          "iterations": 0,
+          "observed_signal": 0.5,
+          "predicted_signal": 0.5,
+          "secret": 2,
+          "signal_residual": 0.0,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 0.75,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.5,
+          "iterations": 0,
+          "observed_signal": 0.28125,
+          "predicted_signal": 0.28125,
+          "secret": 2,
+          "signal_residual": 0.0,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 1.0,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.5,
+          "iterations": 0,
+          "observed_signal": -0.5,
+          "predicted_signal": -0.5,
+          "secret": 3,
+          "signal_residual": 0.0,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 0.75,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.5,
+          "iterations": 0,
+          "observed_signal": -0.28125,
+          "predicted_signal": -0.28125,
+          "secret": 3,
+          "signal_residual": 0.0,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 1.0,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.5,
+          "iterations": 1,
+          "observed_signal": 0.0,
+          "predicted_signal": -1.1102230246251565e-16,
+          "secret": 0,
+          "signal_residual": 1.1102230246251565e-16,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 0.75,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.5,
+          "iterations": 1,
+          "observed_signal": 0.0,
+          "predicted_signal": -5.551115123125783e-17,
+          "secret": 0,
+          "signal_residual": 5.551115123125783e-17,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 1.0,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.5,
+          "iterations": 1,
+          "observed_signal": 0.0,
+          "predicted_signal": 1.1102230246251565e-16,
+          "secret": 1,
+          "signal_residual": 1.1102230246251565e-16,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 0.75,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.5,
+          "iterations": 1,
+          "observed_signal": 0.0,
+          "predicted_signal": 5.551115123125783e-17,
+          "secret": 1,
+          "signal_residual": 5.551115123125783e-17,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 1.0,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.5,
+          "iterations": 1,
+          "observed_signal": 0.0,
+          "predicted_signal": -1.1102230246251565e-16,
+          "secret": 2,
+          "signal_residual": 1.1102230246251565e-16,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 0.75,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.5,
+          "iterations": 1,
+          "observed_signal": 0.0,
+          "predicted_signal": -5.551115123125783e-17,
+          "secret": 2,
+          "signal_residual": 5.551115123125783e-17,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 1.0,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.5,
+          "iterations": 1,
+          "observed_signal": 0.0,
+          "predicted_signal": 1.1102230246251565e-16,
+          "secret": 3,
+          "signal_residual": 1.1102230246251565e-16,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 0.75,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.5,
+          "iterations": 1,
+          "observed_signal": 0.0,
+          "predicted_signal": 5.551115123125783e-17,
+          "secret": 3,
+          "signal_residual": 5.551115123125783e-17,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 1.0,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.5,
+          "iterations": 2,
+          "observed_signal": 0.0,
+          "predicted_signal": 6.245004513516506e-17,
+          "secret": 0,
+          "signal_residual": 6.245004513516506e-17,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 0.75,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.5,
+          "iterations": 2,
+          "observed_signal": 0.0,
+          "predicted_signal": 3.122502256758253e-17,
+          "secret": 0,
+          "signal_residual": 3.122502256758253e-17,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 1.0,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.5,
+          "iterations": 2,
+          "observed_signal": 0.0,
+          "predicted_signal": -6.245004513516506e-17,
+          "secret": 1,
+          "signal_residual": 6.245004513516506e-17,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 0.75,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.5,
+          "iterations": 2,
+          "observed_signal": 0.0,
+          "predicted_signal": -3.122502256758253e-17,
+          "secret": 1,
+          "signal_residual": 3.122502256758253e-17,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 1.0,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.5,
+          "iterations": 2,
+          "observed_signal": 0.0,
+          "predicted_signal": 6.245004513516506e-17,
+          "secret": 2,
+          "signal_residual": 6.245004513516506e-17,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 0.75,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.5,
+          "iterations": 2,
+          "observed_signal": 0.0,
+          "predicted_signal": 3.122502256758253e-17,
+          "secret": 2,
+          "signal_residual": 3.122502256758253e-17,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 1.0,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.5,
+          "iterations": 2,
+          "observed_signal": 0.0,
+          "predicted_signal": -6.245004513516506e-17,
+          "secret": 3,
+          "signal_residual": 6.245004513516506e-17,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 0.75,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.5,
+          "iterations": 2,
+          "observed_signal": 0.0,
+          "predicted_signal": -3.122502256758253e-17,
+          "secret": 3,
+          "signal_residual": 3.122502256758253e-17,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 1.0,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.5,
+          "iterations": 3,
+          "observed_signal": 0.5,
+          "predicted_signal": 0.4999999999999997,
+          "secret": 0,
+          "signal_residual": 2.7755575615628914e-16,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 0.75,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.5,
+          "iterations": 3,
+          "observed_signal": 0.28125,
+          "predicted_signal": 0.2812499999999999,
+          "secret": 0,
+          "signal_residual": 1.1102230246251565e-16,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 1.0,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.5,
+          "iterations": 3,
+          "observed_signal": -0.5,
+          "predicted_signal": -0.4999999999999997,
+          "secret": 1,
+          "signal_residual": 2.7755575615628914e-16,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 0.75,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.5,
+          "iterations": 3,
+          "observed_signal": -0.28125,
+          "predicted_signal": -0.2812499999999999,
+          "secret": 1,
+          "signal_residual": 1.1102230246251565e-16,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 1.0,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.5,
+          "iterations": 3,
+          "observed_signal": 0.5,
+          "predicted_signal": 0.4999999999999997,
+          "secret": 2,
+          "signal_residual": 2.7755575615628914e-16,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 0.75,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.5,
+          "iterations": 3,
+          "observed_signal": 0.28125,
+          "predicted_signal": 0.2812499999999999,
+          "secret": 2,
+          "signal_residual": 1.1102230246251565e-16,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 1.0,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.5,
+          "iterations": 3,
+          "observed_signal": -0.5,
+          "predicted_signal": -0.4999999999999997,
+          "secret": 3,
+          "signal_residual": 2.7755575615628914e-16,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 0.75,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.5,
+          "iterations": 3,
+          "observed_signal": -0.28125,
+          "predicted_signal": -0.2812499999999999,
+          "secret": 3,
+          "signal_residual": 1.1102230246251565e-16,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 1.0,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.0,
+          "iterations": 0,
+          "observed_signal": 0.0,
+          "predicted_signal": 0.0,
+          "secret": 0,
+          "signal_residual": 0.0,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 0.75,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.0,
+          "iterations": 0,
+          "observed_signal": 0.0,
+          "predicted_signal": 0.0,
+          "secret": 0,
+          "signal_residual": 0.0,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 1.0,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.0,
+          "iterations": 0,
+          "observed_signal": 0.0,
+          "predicted_signal": -0.0,
+          "secret": 1,
+          "signal_residual": 0.0,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 0.75,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.0,
+          "iterations": 0,
+          "observed_signal": 0.0,
+          "predicted_signal": -0.0,
+          "secret": 1,
+          "signal_residual": 0.0,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 1.0,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.0,
+          "iterations": 0,
+          "observed_signal": 0.0,
+          "predicted_signal": 0.0,
+          "secret": 2,
+          "signal_residual": 0.0,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 0.75,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.0,
+          "iterations": 0,
+          "observed_signal": 0.0,
+          "predicted_signal": 0.0,
+          "secret": 2,
+          "signal_residual": 0.0,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 1.0,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.0,
+          "iterations": 0,
+          "observed_signal": 0.0,
+          "predicted_signal": -0.0,
+          "secret": 3,
+          "signal_residual": 0.0,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 0.75,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.0,
+          "iterations": 0,
+          "observed_signal": 0.0,
+          "predicted_signal": -0.0,
+          "secret": 3,
+          "signal_residual": 0.0,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 1.0,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.0,
+          "iterations": 1,
+          "observed_signal": 0.0,
+          "predicted_signal": 0.0,
+          "secret": 0,
+          "signal_residual": 0.0,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 0.75,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.0,
+          "iterations": 1,
+          "observed_signal": 0.0,
+          "predicted_signal": 0.0,
+          "secret": 0,
+          "signal_residual": 0.0,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 1.0,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.0,
+          "iterations": 1,
+          "observed_signal": 0.0,
+          "predicted_signal": -0.0,
+          "secret": 1,
+          "signal_residual": 0.0,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 0.75,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.0,
+          "iterations": 1,
+          "observed_signal": 0.0,
+          "predicted_signal": -0.0,
+          "secret": 1,
+          "signal_residual": 0.0,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 1.0,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.0,
+          "iterations": 1,
+          "observed_signal": 0.0,
+          "predicted_signal": 0.0,
+          "secret": 2,
+          "signal_residual": 0.0,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 0.75,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.0,
+          "iterations": 1,
+          "observed_signal": 0.0,
+          "predicted_signal": 0.0,
+          "secret": 2,
+          "signal_residual": 0.0,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 1.0,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.0,
+          "iterations": 1,
+          "observed_signal": 0.0,
+          "predicted_signal": -0.0,
+          "secret": 3,
+          "signal_residual": 0.0,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 0.75,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.0,
+          "iterations": 1,
+          "observed_signal": 0.0,
+          "predicted_signal": -0.0,
+          "secret": 3,
+          "signal_residual": 0.0,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 1.0,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.0,
+          "iterations": 2,
+          "observed_signal": 0.0,
+          "predicted_signal": 0.0,
+          "secret": 0,
+          "signal_residual": 0.0,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 0.75,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.0,
+          "iterations": 2,
+          "observed_signal": 0.0,
+          "predicted_signal": 0.0,
+          "secret": 0,
+          "signal_residual": 0.0,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 1.0,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.0,
+          "iterations": 2,
+          "observed_signal": 0.0,
+          "predicted_signal": -0.0,
+          "secret": 1,
+          "signal_residual": 0.0,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 0.75,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.0,
+          "iterations": 2,
+          "observed_signal": 0.0,
+          "predicted_signal": -0.0,
+          "secret": 1,
+          "signal_residual": 0.0,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 1.0,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.0,
+          "iterations": 2,
+          "observed_signal": 0.0,
+          "predicted_signal": 0.0,
+          "secret": 2,
+          "signal_residual": 0.0,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 0.75,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.0,
+          "iterations": 2,
+          "observed_signal": 0.0,
+          "predicted_signal": 0.0,
+          "secret": 2,
+          "signal_residual": 0.0,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 1.0,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.0,
+          "iterations": 2,
+          "observed_signal": 0.0,
+          "predicted_signal": -0.0,
+          "secret": 3,
+          "signal_residual": 0.0,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 0.75,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.0,
+          "iterations": 2,
+          "observed_signal": 0.0,
+          "predicted_signal": -0.0,
+          "secret": 3,
+          "signal_residual": 0.0,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 1.0,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.0,
+          "iterations": 3,
+          "observed_signal": 0.0,
+          "predicted_signal": 0.0,
+          "secret": 0,
+          "signal_residual": 0.0,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 0.75,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.0,
+          "iterations": 3,
+          "observed_signal": 0.0,
+          "predicted_signal": 0.0,
+          "secret": 0,
+          "signal_residual": 0.0,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 1.0,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.0,
+          "iterations": 3,
+          "observed_signal": 0.0,
+          "predicted_signal": -0.0,
+          "secret": 1,
+          "signal_residual": 0.0,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 0.75,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.0,
+          "iterations": 3,
+          "observed_signal": 0.0,
+          "predicted_signal": -0.0,
+          "secret": 1,
+          "signal_residual": 0.0,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 1.0,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.0,
+          "iterations": 3,
+          "observed_signal": 0.0,
+          "predicted_signal": 0.0,
+          "secret": 2,
+          "signal_residual": 0.0,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 0.75,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.0,
+          "iterations": 3,
+          "observed_signal": 0.0,
+          "predicted_signal": 0.0,
+          "secret": 2,
+          "signal_residual": 0.0,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 1.0,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.0,
+          "iterations": 3,
+          "observed_signal": 0.0,
+          "predicted_signal": -0.0,
+          "secret": 3,
+          "signal_residual": 0.0,
+          "success_residual": 0.0
+        },
+        {
+          "conditional_normalization_used": false,
+          "eta": 0.75,
+          "grover_row_norm_residual": 0.0,
+          "heralded_probability": 0.0,
+          "iterations": 3,
+          "observed_signal": 0.0,
+          "predicted_signal": -0.0,
+          "secret": 3,
+          "signal_residual": 0.0,
+          "success_residual": 0.0
+        }
+      ],
+      "scaling": [
+        {
+          "analytical_count_not_large_instance_execution": true,
+          "bounded_degree_kernel_lower": {
+            "denominator": 4225,
+            "numerator": 1
+          },
+          "bounded_degree_oriented_mass_lower": {
+            "denominator": 1024,
+            "numerator": 513
+          },
+          "clean_signal_lower": {
+            "denominator": 276889600,
+            "numerator": 28607
+          },
+          "coherent_ram_assumed": false,
+          "coin_bits": 4,
+          "cutoff": 256,
+          "degree_cap_for_analysis_only": 8,
+          "explicit_list_required": false,
+          "gate_export_implemented": false,
+          "index_bits": 8,
+          "list_length": 16,
+          "log2_mean_predicate_calls_upper": 4.954196310386875,
+          "maximum_reversible_predicate_calls": 511,
+          "mean_degree": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "mean_iterations_untruncated": {
+            "denominator": 1,
+            "numerator": 15
+          },
+          "mean_reversible_predicate_calls_upper": 31,
+          "n": 8,
+          "padded_supports": 256,
+          "polynomial_time_claimed": false,
+          "prelabel_fault_signal_lower": {
+            "denominator": 276889600,
+            "numerator": 12191
+          },
+          "quantum_counting_required": false,
+          "randomization_shared_across_entire_source": true,
+          "rho": {
+            "denominator": 16,
+            "numerator": 15
+          },
+          "second_degree_moment": {
+            "denominator": 256,
+            "numerator": 511
+          },
+          "singleton_kernel": {
+            "denominator": 8162,
+            "numerator": 3827
+          },
+          "stop_probability": {
+            "denominator": 16,
+            "numerator": 1
+          },
+          "support_survival_lower": {
+            "denominator": 2,
+            "numerator": 1
+          },
+          "supports": 256,
+          "tail_probability_upper": {
+            "denominator": 65536,
+            "numerator": 1
+          },
+          "uniform_support_reflection_not_unknown_state_reflection": true,
+          "unique_neighbor_oracle_required": false,
+          "vertex_marking_used": false,
+          "weight": 2,
+          "width": 16,
+          "workspace_bound": "poly(m,n,log(1/tail)); index, mask, modular arithmetic, unranking and orientation registers; no list/history over Grover iterations"
+        },
+        {
+          "analytical_count_not_large_instance_execution": true,
+          "bounded_degree_kernel_lower": {
+            "denominator": 4225,
+            "numerator": 1
+          },
+          "bounded_degree_oriented_mass_lower": {
+            "denominator": 262144,
+            "numerator": 131073
+          },
+          "clean_signal_lower": {
+            "denominator": 1107558400,
+            "numerator": 114173
+          },
+          "coherent_ram_assumed": false,
+          "coin_bits": 8,
+          "cutoff": 4096,
+          "degree_cap_for_analysis_only": 8,
+          "explicit_list_required": false,
+          "gate_export_implemented": false,
+          "index_bits": 16,
+          "list_length": 256,
+          "log2_mean_predicate_calls_upper": 8.997179480937621,
+          "maximum_reversible_predicate_calls": 8191,
+          "mean_degree": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "mean_iterations_untruncated": {
+            "denominator": 1,
+            "numerator": 255
+          },
+          "mean_reversible_predicate_calls_upper": 511,
+          "n": 16,
+          "padded_supports": 65536,
+          "polynomial_time_claimed": false,
+          "prelabel_fault_signal_lower": {
+            "denominator": 1772093440,
+            "numerator": 104033
+          },
+          "quantum_counting_required": false,
+          "randomization_shared_across_entire_source": true,
+          "rho": {
+            "denominator": 256,
+            "numerator": 255
+          },
+          "second_degree_moment": {
+            "denominator": 65536,
+            "numerator": 131071
+          },
+          "singleton_kernel": {
+            "denominator": 5074286,
+            "numerator": 2387351
+          },
+          "stop_probability": {
+            "denominator": 256,
+            "numerator": 1
+          },
+          "support_survival_lower": {
+            "denominator": 8,
+            "numerator": 5
+          },
+          "supports": 65536,
+          "tail_probability_upper": {
+            "denominator": 65536,
+            "numerator": 1
+          },
+          "uniform_support_reflection_not_unknown_state_reflection": true,
+          "unique_neighbor_oracle_required": false,
+          "vertex_marking_used": false,
+          "weight": 3,
+          "width": 32,
+          "workspace_bound": "poly(m,n,log(1/tail)); index, mask, modular arithmetic, unranking and orientation registers; no list/history over Grover iterations"
+        },
+        {
+          "analytical_count_not_large_instance_execution": true,
+          "bounded_degree_kernel_lower": {
+            "denominator": 4225,
+            "numerator": 1
+          },
+          "bounded_degree_oriented_mass_lower": {
+            "denominator": 17179869184,
+            "numerator": 8589934593
+          },
+          "clean_signal_lower": {
+            "denominator": 72584947302400,
+            "numerator": 7482376193
+          },
+          "coherent_ram_assumed": false,
+          "coin_bits": 16,
+          "cutoff": 1048576,
+          "degree_cap_for_analysis_only": 8,
+          "explicit_list_required": false,
+          "gate_export_implemented": false,
+          "index_bits": 32,
+          "list_length": 65536,
+          "log2_mean_predicate_calls_upper": 16.999988993068357,
+          "maximum_reversible_predicate_calls": 2097151,
+          "mean_degree": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "mean_iterations_untruncated": {
+            "denominator": 1,
+            "numerator": 65535
+          },
+          "mean_reversible_predicate_calls_upper": 131071,
+          "n": 32,
+          "padded_supports": 4294967296,
+          "polynomial_time_claimed": false,
+          "prelabel_fault_signal_lower": {
+            "denominator": 1161359156838400,
+            "numerator": 76768346123
+          },
+          "quantum_counting_required": false,
+          "randomization_shared_across_entire_source": true,
+          "rho": {
+            "denominator": 65536,
+            "numerator": 65535
+          },
+          "second_degree_moment": {
+            "denominator": 4294967296,
+            "numerator": 8589934591
+          },
+          "singleton_kernel": {
+            "denominator": 598125735444482,
+            "numerator": 281470681686017
+          },
+          "stop_probability": {
+            "denominator": 65536,
+            "numerator": 1
+          },
+          "support_survival_lower": {
+            "denominator": 16,
+            "numerator": 11
+          },
+          "supports": 4294967296,
+          "tail_probability_upper": {
+            "denominator": 65536,
+            "numerator": 1
+          },
+          "uniform_support_reflection_not_unknown_state_reflection": true,
+          "unique_neighbor_oracle_required": false,
+          "vertex_marking_used": false,
+          "weight": 5,
+          "width": 64,
+          "workspace_bound": "poly(m,n,log(1/tail)); index, mask, modular arithmetic, unranking and orientation registers; no list/history over Grover iterations"
+        },
+        {
+          "analytical_count_not_large_instance_execution": true,
+          "bounded_degree_kernel_lower": {
+            "denominator": 4225,
+            "numerator": 1
+          },
+          "bounded_degree_oriented_mass_lower": {
+            "denominator": 73786976294838206464,
+            "numerator": 36893488147419103233
+          },
+          "clean_signal_lower": {
+            "denominator": 311749974845691422310400,
+            "numerator": 32136561041009016833
+          },
+          "coherent_ram_assumed": false,
+          "coin_bits": 32,
+          "cutoff": 68719476736,
+          "degree_cap_for_analysis_only": 8,
+          "explicit_list_required": false,
+          "gate_export_implemented": false,
+          "index_bits": 64,
+          "list_length": 4294967296,
+          "log2_mean_predicate_calls_upper": 32.99999999983205,
+          "maximum_reversible_predicate_calls": 137438953471,
+          "mean_degree": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "mean_iterations_untruncated": {
+            "denominator": 1,
+            "numerator": 4294967295
+          },
+          "mean_reversible_predicate_calls_upper": 8589934591,
+          "n": 64,
+          "padded_supports": 18446744073709551616,
+          "polynomial_time_claimed": false,
+          "prelabel_fault_signal_lower": {
+            "denominator": 1246999899382765689241600,
+            "numerator": 91652756016616964099
+          },
+          "quantum_counting_required": false,
+          "randomization_shared_across_entire_source": true,
+          "rho": {
+            "denominator": 4294967296,
+            "numerator": 4294967295
+          },
+          "second_degree_moment": {
+            "denominator": 18446744073709551616,
+            "numerator": 36893488147419103231
+          },
+          "singleton_kernel": {
+            "denominator": 3435915210324861821025956258,
+            "numerator": 1616901275424848847266863313
+          },
+          "stop_probability": {
+            "denominator": 4294967296,
+            "numerator": 1
+          },
+          "support_survival_lower": {
+            "denominator": 4,
+            "numerator": 3
+          },
+          "supports": 18446744073709551616,
+          "tail_probability_upper": {
+            "denominator": 65536,
+            "numerator": 1
+          },
+          "uniform_support_reflection_not_unknown_state_reflection": true,
+          "unique_neighbor_oracle_required": false,
+          "vertex_marking_used": false,
+          "weight": 8,
+          "width": 128,
+          "workspace_bound": "poly(m,n,log(1/tail)); index, mask, modular arithmetic, unranking and orientation registers; no list/history over Grover iterations"
+        },
+        {
+          "analytical_count_not_large_instance_execution": true,
+          "bounded_degree_kernel_lower": {
+            "denominator": 4225,
+            "numerator": 1
+          },
+          "bounded_degree_oriented_mass_lower": {
+            "denominator": 1361129467683753853853498429727072845824,
+            "numerator": 680564733841876926926749214863536422913
+          },
+          "clean_signal_lower": {
+            "denominator": 5750772000963860032531030865596882773606400,
+            "numerator": 592814916932638340004583826899716800513
+          },
+          "coherent_ram_assumed": false,
+          "coin_bits": 64,
+          "cutoff": 295147905179352825856,
+          "degree_cap_for_analysis_only": 8,
+          "explicit_list_required": false,
+          "gate_export_implemented": false,
+          "index_bits": 128,
+          "list_length": 18446744073709551616,
+          "log2_mean_predicate_calls_upper": 65.0,
+          "maximum_reversible_predicate_calls": 590295810358705651711,
+          "mean_degree": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "mean_iterations_untruncated": {
+            "denominator": 1,
+            "numerator": 18446744073709551615
+          },
+          "mean_reversible_predicate_calls_upper": 36893488147419103231,
+          "n": 128,
+          "padded_supports": 340282366920938463463374607431768211456,
+          "polynomial_time_claimed": false,
+          "prelabel_fault_signal_lower": {
+            "denominator": 23003088003855440130124123462387531094425600,
+            "numerator": 1690694933888676433091586092735330779139
+          },
+          "quantum_counting_required": false,
+          "randomization_shared_across_entire_source": true,
+          "rho": {
+            "denominator": 18446744073709551616,
+            "numerator": 18446744073709551615
+          },
+          "second_degree_moment": {
+            "denominator": 340282366920938463463374607431768211456,
+            "numerator": 680564733841876926926749214863536422911
+          },
+          "singleton_kernel": {
+            "denominator": 13338841187696696622470487790474414207253862616475117813762,
+            "numerator": 6277101735386680763495507056286727952622839935967770443777
+          },
+          "stop_probability": {
+            "denominator": 18446744073709551616,
+            "numerator": 1
+          },
+          "support_survival_lower": {
+            "denominator": 4,
+            "numerator": 3
+          },
+          "supports": 340282366920938463463374607431768211456,
+          "tail_probability_upper": {
+            "denominator": 65536,
+            "numerator": 1
+          },
+          "uniform_support_reflection_not_unknown_state_reflection": true,
+          "unique_neighbor_oracle_required": false,
+          "vertex_marking_used": false,
+          "weight": 16,
+          "width": 256,
+          "workspace_bound": "poly(m,n,log(1/tail)); index, mask, modular arithmetic, unranking and orientation registers; no list/history over Grover iterations"
+        },
+        {
+          "analytical_count_not_large_instance_execution": true,
+          "bounded_degree_kernel_lower": {
+            "denominator": 4225,
+            "numerator": 1
+          },
+          "bounded_degree_oriented_mass_lower": {
+            "denominator": 463168356949264781694283940034751631413079938662562256157830336031652518559744,
+            "numerator": 231584178474632390847141970017375815706539969331281128078915168015826259279873
+          },
+          "clean_signal_lower": {
+            "denominator": 1956886308110643702658349646646825642720262740849325532266833169733731890914918400,
+            "numerator": 201724463079877695677184242254820492789055491474083167686660023213980985065473
+          },
+          "coherent_ram_assumed": false,
+          "coin_bits": 128,
+          "cutoff": 5444517870735015415413993718908291383296,
+          "degree_cap_for_analysis_only": 8,
+          "explicit_list_required": false,
+          "gate_export_implemented": false,
+          "index_bits": 256,
+          "list_length": 340282366920938463463374607431768211456,
+          "log2_mean_predicate_calls_upper": 129.0,
+          "maximum_reversible_predicate_calls": 10889035741470030830827987437816582766591,
+          "mean_degree": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "mean_iterations_untruncated": {
+            "denominator": 1,
+            "numerator": 340282366920938463463374607431768211455
+          },
+          "mean_reversible_predicate_calls_upper": 680564733841876926926749214863536422911,
+          "n": 256,
+          "padded_supports": 115792089237316195423570985008687907853269984665640564039457584007913129639936,
+          "polynomial_time_claimed": false,
+          "prelabel_fault_signal_lower": {
+            "denominator": 125240723719081196970134377385396841134096815414356834065077322862958841018554777600,
+            "numerator": 9436602959992686660632661954047874302901451914372105810762513965457389154992177
+          },
+          "quantum_counting_required": false,
+          "randomization_shared_across_entire_source": true,
+          "rho": {
+            "denominator": 340282366920938463463374607431768211456,
+            "numerator": 340282366920938463463374607431768211455
+          },
+          "second_degree_moment": {
+            "denominator": 115792089237316195423570985008687907853269984665640564039457584007913129639936,
+            "numerator": 231584178474632390847141970017375815706539969331281128078915168015826259279871
+          },
+          "singleton_kernel": {
+            "denominator": 11961323309619752618013280030400739905080408824466348825506140216286397564103478859312884683803514831354770669099886,
+            "numerator": 5628858028056354173182720014306230543566278168746875781789246059891004837663377554239652838527132514859601723354551
+          },
+          "stop_probability": {
+            "denominator": 340282366920938463463374607431768211456,
+            "numerator": 1
+          },
+          "support_survival_lower": {
+            "denominator": 64,
+            "numerator": 49
+          },
+          "supports": 115792089237316195423570985008687907853269984665640564039457584007913129639936,
+          "tail_probability_upper": {
+            "denominator": 65536,
+            "numerator": 1
+          },
+          "uniform_support_reflection_not_unknown_state_reflection": true,
+          "unique_neighbor_oracle_required": false,
+          "vertex_marking_used": false,
+          "weight": 30,
+          "width": 512,
+          "workspace_bound": "poly(m,n,log(1/tail)); index, mask, modular arithmetic, unranking and orientation registers; no list/history over Grover iterations"
+        },
+        {
+          "analytical_count_not_large_instance_execution": true,
+          "bounded_degree_kernel_lower": {
+            "denominator": 4225,
+            "numerator": 1
+          },
+          "bounded_degree_oriented_mass_lower": {
+            "denominator": 53631231719770388398296099992823384509917463282369573510894245774887056120294187907207497192667613710760127432745944203415015531247786279785734596024336384,
+            "numerator": 26815615859885194199148049996411692254958731641184786755447122887443528060147093953603748596333806855380063716372972101707507765623893139892867298012168193
+          },
+          "clean_signal_lower": {
+            "denominator": 226591954016029890982801022469678799554401282368011448083528188398897812108242943907951675639020667927961538403351614259428440619521897032094728668202821222400,
+            "numerator": 23358097030294894348946618379137540650429903480051799571555396379891986737694656455008294561314570589389439656263236776704022038397301693480289040745889793
+          },
+          "coherent_ram_assumed": false,
+          "coin_bits": 256,
+          "cutoff": 1852673427797059126777135760139006525652319754650249024631321344126610074238976,
+          "degree_cap_for_analysis_only": 8,
+          "explicit_list_required": false,
+          "gate_export_implemented": false,
+          "index_bits": 512,
+          "list_length": 115792089237316195423570985008687907853269984665640564039457584007913129639936,
+          "log2_mean_predicate_calls_upper": 257.0,
+          "maximum_reversible_predicate_calls": 3705346855594118253554271520278013051304639509300498049262642688253220148477951,
+          "mean_degree": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "mean_iterations_untruncated": {
+            "denominator": 1,
+            "numerator": 115792089237316195423570985008687907853269984665640564039457584007913129639935
+          },
+          "mean_reversible_predicate_calls_upper": 231584178474632390847141970017375815706539969331281128078915168015826259279871,
+          "n": 512,
+          "padded_supports": 13407807929942597099574024998205846127479365820592393377723561443721764030073546976801874298166903427690031858186486050853753882811946569946433649006084096,
+          "polynomial_time_claimed": false,
+          "prelabel_fault_signal_lower": {
+            "denominator": 29003770114051826045798530876118886342963364143105465354691608115058919949855096820217814481794645494779076915629006625206840399298802820108125269529961116467200,
+            "numerator": 2212183559941075844889873702633666127861224427852271529251124172890311988680650301586552994554584636635826428226878116468597095711761715708583845573121015907
+          },
+          "quantum_counting_required": false,
+          "randomization_shared_across_entire_source": true,
+          "rho": {
+            "denominator": 115792089237316195423570985008687907853269984665640564039457584007913129639936,
+            "numerator": 115792089237316195423570985008687907853269984665640564039457584007913129639935
+          },
+          "second_degree_moment": {
+            "denominator": 13407807929942597099574024998205846127479365820592393377723561443721764030073546976801874298166903427690031858186486050853753882811946569946433649006084096,
+            "numerator": 26815615859885194199148049996411692254958731641184786755447122887443528060147093953603748596333806855380063716372972101707507765623893139892867298012168191
+          },
+          "singleton_kernel": {
+            "denominator": 3299100946139006487191581412982817929920882786372980298670485580805358274458524067837256733566674617594790016039148571831473422806988533458931666931402362595271684600815581395296963650874958016612007034239895524040586416440087674882,
+            "numerator": 1552518092300708935148979488462502555256886017116696611139052038026050952686363478522948466231546903925489524851003593840350987650737090830000565511011107490909575019071012006497963371171492587163172662875410987655560406280821538817
+          },
+          "stop_probability": {
+            "denominator": 115792089237316195423570985008687907853269984665640564039457584007913129639936,
+            "numerator": 1
+          },
+          "support_survival_lower": {
+            "denominator": 128,
+            "numerator": 99
+          },
+          "supports": 13407807929942597099574024998205846127479365820592393377723561443721764030073546976801874298166903427690031858186486050853753882811946569946433649006084096,
+          "tail_probability_upper": {
+            "denominator": 65536,
+            "numerator": 1
+          },
+          "uniform_support_reflection_not_unknown_state_reflection": true,
+          "unique_neighbor_oracle_required": false,
+          "vertex_marking_used": false,
+          "weight": 58,
+          "width": 1024,
+          "workspace_bound": "poly(m,n,log(1/tail)); index, mask, modular arithmetic, unranking and orientation registers; no list/history over Grover iterations"
+        }
+      ],
+      "status": "derived-list-free-edge-readout-exponential-time-review-pending"
+    },
     "contract": {
       "constant_noise_limit": "For m=poly(n) and fixed eta<1 the envelope is superpolynomially small; eta=1-1/n is not excluded. A vacuous upper bound is not constructive evidence.",
       "correlated_noise_lower_bound": "With per-coordinate fault marginal <=epsilon, moves of width <=r have signal >=max(0,1-r*epsilon) times source coverage. Fresh batches for estimation must have the required independence or conditional guarantees.",
@@ -4394,6 +6527,7 @@
     }
   ],
   "source_contract": {
+    "coherent_edge_scope": "The separate support-index readout uses shared geometric Grover times and no unique-partner oracle; polynomial workspace does not remove exponential time.",
     "coverage_extension": "average seeded coverage p gives at least p/(2-p) dense (A,r) pairs; the source matching family and averaging yield a fixed matching with Omega(p^5) intersection probability",
     "deterministic_role": "S(A,t) defines one partial function whose paired endpoints erase to the same beta workspace",
     "noise_scope": "Pre-Fourier classical mask mixtures give survival Pr(fault mask misses b xor c); independent faults give eta^weight. Postlabel corruption or general quantum channels are not covered.",
@@ -4403,7 +6537,7 @@
     "seeded_extension": "R(A,t;r) is deterministic for each explicit target-independent seed r; a shared coherent seed register turns the source proof into a direct sum of deterministic routines"
   },
   "status": "derived-pairing-readouts-review-pending-no-efficient-finder",
-  "summary": "Certified 12/12 seeded-randomized interface rows and extracted 4 deterministic source use sites. Checked 9 mutual and 2 permutation controls; failures=0. Noise-weighted mass, not witness rate, is the constructive target; Affine-marked coverage is derived for streamed and capped balanced-support finders. The latter has constant average coverage, including a scoped constant noise signal at m=2n, and a fixed-network meet-in-the-middle implementation but exponential time AND coherent storage; no efficient pairing finder or new decoder.",
+  "summary": "Certified 12/12 seeded-randomized interface rows and extracted 4 deterministic source use sites. Checked 9 mutual and 2 permutation controls; failures=0. Noise-weighted mass, not witness rate, is the constructive target; Affine-marked coverage is derived for streamed and capped balanced-support finders. The latter has constant average coverage, including a scoped constant noise signal at m=2n, and a fixed-network meet-in-the-middle implementation but exponential time AND coherent storage; A separate shared-geometric Grover edge readout avoids lists, unique partners and vertex isolation with polynomial workspace, but still exponential time. No efficient pairing finder or new decoder.",
   "workspace_visibility_cases": [
     {
       "case_id": "shared-target-independent-seed",
