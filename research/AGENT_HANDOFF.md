@@ -1,6 +1,154 @@
 # Research Agent Handoff
 
-Last updated: 2026-09-23
+Last updated: 2026-09-24
+
+## Latest Theory Pass: Thermal Arithmetic Tested, Local Mixing Obstructed
+
+Read `research/DCP_THERMAL_ARITHMETIC_AUDIT.md`. LOCAL DERIVATION / REVIEW
+PENDING. This pass tested an actual two-witness search proposal: sample the
+Gibbs law of the Hamming weight of the modular residual bits. It did NOT
+produce a scalable sampler, implementation or candidate promotion. The three
+accumulated theory notes are included in one bundled checkpoint; Git records
+the actual commit and remote backup status.
+
+POSITIVE TARGET: at inverse temperature log r, two independent ideal Gibbs
+draws give distinct valid witnesses with source-average probability at least
+1/18496 on the exact underfull uniform-label/uniform-target distribution.
+The residual energy is polynomially computable with polynomial precision.
+Neither fact makes the Gibbs distribution efficiently preparable.
+
+SCOPED NEGATIVE: exact pairwise energy moments force useful fixed temperatures
+to be at least log r-O(log log r). A joint assignment/residual distance bound
+then isolates every solution from bounded-radius low-energy neighbors except
+on exponentially small natural-source mass. Stationary flow makes local
+escape exp(-Omega(r log r)); reversible Gibbs chains inherit a small spectral
+gap. The square-root-gap quantum guarantee is still not polynomial. A separate
+variance calculation gives an ACTUAL slow-escape bound when evolving the
+Gibbs-parent Hamiltonian from a known witness.
+
+DO NOT OVERCLAIM: small gaps do not imply arithmetic hardness or rule out
+all annealing paths. An equal-label subset-sum control is trivially solvable
+and has a polynomial direct Gibbs sampler, yet an even smaller local gap.
+Global-reset and high-temperature countercontrols distinguish nonlocal access
+from useful solution weight. Cold-start/state-specific evolution, auxiliary
+paths, nonlocal drivers and different collective measurements remain open.
+
+Exhausted 66064 natural instances for exact partition and pairwise moments;
+nine joint-distance identities passed. Seven independent spectral controls,
+28 matrix-exponential tests, and all scope countercontrols passed. The note
+lists inputs, values, exact proofs and five Gemini integration tasks. Next
+main-model work must specify a nonlocal arithmetic operation/direct sampler
+or a different measurement, not another local-cooling constant sweep.
+
+FOLLOW-UP: Section 10 tests nonlocal restart proposals. Uniform independence
+Metropolis has EXACT gap Z/2^m, still exponentially small on useful natural
+instances. More generally, a reversible chain dominated by K fixed proposal
+distributions gives qbar(b)>=gap*pi(b)/K. With local updates added, the same
+witness bound holds with gap replaced by max(0,gap-2*tau), where tau is the
+proved local barrier mass. Thus a polynomial-gap/poly-dictionary certificate
+already supplies a streaming direct-proposal two-witness solver. Classically
+samplable proposals yield a CLASSICAL arithmetic baseline; quantum-only
+proposals remain quantum. This does NOT dequantize the DCP phase source.
+
+Thirty-five exact-spectrum controls, fourteen dictionary chains, fourteen
+hybrids, seven missing-support and fourteen wrong-Hastings countercontrols
+passed. Sixteen streaming identities were exhaustively checked, and a
+469/512-mean-gap example with ZERO pair coverage prevents multiplying
+unrelated source averages. Full-table positive controls are not supplied
+samplers. State-dependent nonlocal arithmetic outside polynomial fixed
+proposal collections and nongap-based quantum methods remain unexcluded.
+
+## Latest Theory Pass: Measured Fibers And An Ordinary Two-Witness Contract
+
+Read `research/DCP_MEASURED_FIBER_COLLIMATION.md`. LOCAL DERIVATION / REVIEW
+PENDING. This is explicitly a refinement of Regev's already published
+measured-fiber collimation, NOT a novel algorithm. No production code, bulk
+workflow, registry promotion or commit was made; Gemini owns implementation.
+
+ACCESS CORRECTION: after measuring a common low-sum syndrome, run an ordinary
+classical/quantum two-witness finder in SEPARATE workspace. Its measurements
+do not reveal the unknown retained assignment. A verified distinct pair gives
+a cheap pair-subspace projection and clean one-qubit compression. Uniform
+witness sampling, coherent solver calls and reciprocal mass are unnecessary
+for THIS architecture. Source-controlled solver histories remain different.
+
+SOURCE CONTRACT: measure r low bits using m=r-1 phase inputs. Two-element
+fibers have natural Born mass >=1/4 by exact factorial moments. No count
+oracle is needed. A pointwise ordinary subset-sum solver, followed by the
+first-differing-bit self-reduction, gives merge success >=1/9. More generally,
+if an ordinary TWO-witness algorithm succeeds with probability beta on
+independent UNIFORM low labels AND targets, physical merge success is EXACTLY
+4*beta, including empty/singleton targets and all failures. This cancellation
+does not equate the two target laws or their average runtimes; the note gives
+a charged truncation for average-runtime solvers. Average ONE-witness success
+alone does not pass this interface; singleton-only and canonical-repeat
+counterexamples are retained.
+
+NOISE CLARIFICATION: for a ONE-SHOT parity route, r=n-1 and m=n-2. Under the
+existing prelabel classical-fault model, the random X/sign gauge and marginal
+fault probability <=1/n give unconditional signed parity signal >=4*beta/n,
+even with within-batch classical fault correlations. Independent batches or
+proved conditional drift are still required for concentration. This needs
+only polynomially small bias, not purified output, and does NOT rescue the
+older recursive visibility loss or settle the full lattice-source promise.
+
+Checked 4164 complete low-label tuples, 66064 target-law cases, 26497
+distinct-witness self-reductions, 656 full-state pair branches across all
+176 secret-instance cases, and 136 separate physical fault/gauge controls.
+All passed; detailed exact fractions, scope countercontrols and six Gemini
+tasks are in the note. These are bounded references, not scalable solvers.
+
+The ordinary arithmetic bottleneck remains unsolved. Known Grover and QRAQM
+subset-sum baselines are exponential and do not beat known DCP sieves merely
+by being wrapped here. Prioritize an actual target-conditioned two-witness
+algorithm or a different collective measurement, not another interface
+wrapper or unnecessary coherent-sampler implementation.
+
+## Latest Theory Pass: All-Outcome Phase Correction And Classical Extraction
+
+Read `research/DCP_WALSH_FEEDFORWARD.md`. LOCAL DERIVATION / REVIEW PENDING.
+No production code, CLI/registry wiring, bulk workflows, candidate promotion,
+or new commit was made. The preceding bundled checkpoint is `55cc68f6`.
+
+CONSTRUCTIVE ALTERNATIVE: compute the full subset sum, Hadamard-measure the
+input bits, retain EVERY outcome e, phase-correct the remaining sum register,
+then inverse-QFT. Exact signed-fiber correction has natural decoding success
+>=lambda/B, with an explicit exact fourth-moment B. At m=n+O(log n), lambda
+growing polynomially, this lower bound tends to 1/3. No amplitude normalization
+or exponentially rare accepted mask is necessary. The correction itself is
+NOT efficiently supplied. Without correction, the entire joint law equals a
+public random phase offset followed by local X measurements.
+
+ADVERSARIAL REVISION: ANY uniformly CLASSICALLY evaluable +/- phase correction
+with label-average decoding success >=p_* yields a classical average subset-sum
+witness solver with success >=p_*^2/(8*lambda), via chosen-query Goldreich-Levin.
+Its cost is polynomial in lambda/p_*, m,n and the correction evaluator cost.
+The proof uses pair products of corrections, so arbitrary branch-global signs
+do not evade it. Independent target challenges, all failures and the density
+factor are retained. It does not cover quantum-only access or imply polynomial
+cost at exponentially large lambda; it is not a DCP hardness theorem.
+
+Polynomial fixed correction dictionaries/common hash partitions cannot help:
+success <=K/N or R/N respectively. Arbitrary e-dependent partitions escape
+those particular caps. For e-linear corrections, a two-evaluation CLASSICAL
+witness procedure has EXACTLY the same average success as the quantum decoder.
+
+Exact signed fourth moments passed all 858 label tuples in six small ensembles.
+Twenty full-state all-secret controls matched the success/witness identities;
+maximum physical residual 7.78e-16. Twenty-one cheap-class controls, 208 exact
+GL prefix identities and sixty sign-perturbation controls passed. These use
+exponential reference tables, NOT an executed GL membership learner or a
+scalable decoder. Six precise Gemini tasks are in section 7.
+
+Section 8 adds a CHARGED quantum-only correction: coherently estimate positive
+and negative fiber counts, phase by their difference, then uncompute. A physical
+small-response mass bound gives constant decoding success with O(2^(m/2))
+arithmetic queries for fixed error parameters and polynomial workspace. It
+uses only fresh known uniform registers, not unknown-state reflections, but
+is still exponential and worse than known subexponential sieves. Its resource
+upper bound is not a lower bound for all sign computation. The main-model
+priority remains a concrete better arithmetic construction or a genuinely
+different quantum operation, not more sign-table fitting.
 
 ## Latest Theory Pass: Natural Purification Exists, Access Is Still Hard
 

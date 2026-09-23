@@ -9,6 +9,14 @@ implementation/integration and routine workflows specified at the end.
 `core/dcp_recursive_edge_sieve.py` is the earlier fixed-time draft, not an
 implementation of the stronger coherent-schedule construction below.
 
+Scope correction (2026-09-24): `research/DCP_MEASURED_FIBER_COLLIMATION.md`
+describes the established alternative of measuring a COMMON low-sum syndrome
+before invoking an ordinary two-witness finder in separate workspace. It does
+not need the source-controlled coherent preparers or reciprocal mass used
+here. Keep those obligations scoped to THIS construction. The alternative's
+one-shot noisy parity bound is not a repair of the recursive noise failure
+below, and neither route supplies fast near-density-one arithmetic.
+
 ## Research Decision
 
 The direct parity readout can be made into an exactly composable IDEAL phase
