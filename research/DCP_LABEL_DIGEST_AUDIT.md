@@ -82,6 +82,135 @@ H(y)=sum_i y_i mod N has N singleton fibers on EVERY slice. Its beta_i=1,
 even though it records only n bits total. The present bound is vacuous there.
 That is not evidence that this summary enables useful decoding.
 
+## Exact Complete-Joint-Sum Case (2026-09-23)
+
+NEW LOCAL DERIVATION / REVIEW PENDING. The general slice bound above remains
+vacuous for H(y)=sum_i y_i mod N; do not change its formula or its regression
+test to disguise that limitation. A different, exact physical calculation
+settles this specific digest. It does NOT settle arbitrary joint summaries.
+
+Use precisely the earlier prefix and source law, retaining only
+
+    S=sum_i y_i mod N, z, and the quantum registers b,h.
+
+No other label-sensitive workspace or later label access is available. Let
+M=2^m, q=M-2, v=M-4, with m>=2 and N=2^n. The parity trace distance is
+
+    T = 2/(M*N^3) * [sqrt(v^2+2*N^2*q)
+                     +(2*N-4)*sqrt(v^2+N^2*q)
+                     +(N^2-3*N+3)*v + N^2 + q*N^2/2].      (J1)
+
+In particular, for EVERY batch size,
+
+    T <= min(1, 4/N).                                      (J2)
+
+For m=1, S is the full single label and T=1/N directly. For N=2 the formula
+gives T=1-1/M; (J2) is then only the trivial cap. The useful claim concerns
+growing n. Even an optimal inefficient measurement has equal-prior success
+at most 1/2+2/N after this digest/prefix. Independently repeating this exact
+lossy experiment polynomially many times cannot restore constant advantage:
+the trace distance of a product of R repetitions is at most R*T.
+
+### Count The Physical Off-Diagonal Block
+
+For fixed (S=s,z), let C_(s,z)[b,c] count label tuples satisfying
+
+    sum_i y_i=s,    b dot y=z,    c dot y=z+N/2    (mod N).
+
+These are the h=0 to h=1 entries. Their physical normalization is M*N^m;
+the parity distance is 2*sum_(s,z)||C_(s,z)||_1/(M*N^m), not a uniform
+average of normalized branches.
+
+If the column patterns (b_i,c_i) contain at least three of the four Boolean
+pairs, the three equations have a unit 3-by-3 minor. Their solution count is
+N^(m-3), for every right-hand side. The remaining cases are exactly equal
+rows, complementary rows, or a constant row. Equal rows cannot satisfy the
+two distinct frequency values. Nonconstant complementary rows have count
+N^(m-2) precisely when s=2z+N/2 mod N, and otherwise zero.
+
+Remove b=0 and b=1^m from the core, leaving q indices. Let P exchange each
+nonconstant bit string with its complement, J be the all-ones matrix, and
+I_D the indicator of s=2z+N/2 mod N. Set a=N^(m-3). The core is
+
+    a * [J - I + (N*I_D-1)*P].
+
+Its uniform-vector eigenvalue is a*(q-2+N*I_D). On the uniform-orthogonal
+P=+1 subspace the eigenvalue is a*(N*I_D-2), with multiplicity q/2-1;
+on P=-1 it is -a*N*I_D, with multiplicity q/2.
+
+All boundary couplings touch only the uniform core vector. In row/column
+order (0,1^m,uniform core), the remaining small block, divided by a, is
+
+    [ 0, N^2*[z=0,s=N/2], N*sqrt(q)*[z=0]       ]
+    [ 0, 0,                 N*sqrt(q)*[s=z]       ]
+    [ 0, N*sqrt(q)*[s=z+N/2], q-2+N*I_D          ].
+
+Brackets denote indicators. The zero first column reflects the impossibility
+of a zero bit string having h=1. This boundary is not negligible at small m.
+For m=2 the generic three-pattern case is absent; the same expression works
+algebraically with a=1/N because J-I-P is zero. Actual counts remain integers.
+
+For N>=4, the trace norms, divided by a, fall into six cases:
+
+| Branch | Multiplicity | Norm / a |
+|---|---|---|
+| z=0, s=0 | 1 | sqrt(v^2+2*N^2*q)+v |
+| z=0, s=N/2 | 1 | N^2+q*N |
+| z=0, other s | N-2 | sqrt(v^2+N^2*q)+v |
+| z>0, s=2z+N/2 mod N | N/2-1 | q*N |
+| z>0, s=z or s=z+N/2 | 2*(N/2-1) | sqrt(v^2+N^2*q)+v |
+| z>0, all other s | (N/2-1)*(N-3) | 2*v |
+
+Adding the table gives (J1). For N=2 only the z=0 cases are needed and give
+the stated separate simplification. Bounding each square root by the sum
+of its nonnegative components gives
+
+    T <= [3*M-8+4*sqrt(M-2)]/(M*N) < 4/N,
+
+where 4*sqrt(M-2)<=M+2 follows by completing a square. This proves (J2)
+without extrapolating finite data. No lower bound on arbitrary DCP circuits
+or on measurements retaining the original labels follows.
+
+### Focused Verification And Interpretation
+
+The existing physical-observation counter was used as an independent
+enumerator, without changing production code or running its pipeline. Every
+off-diagonal count matrix matched the above rank/case formula exactly.
+Summed singular values then matched (J1) within 1e-12:
+
+| n | m | Exact-count numerical T |
+|---|---|---|
+| 2 | 2 | .489276695296637 |
+| 3 | 3 | .339843750000000 |
+| 4 | 3 | .184731558212827 |
+| 2 | 5 | .621066735070988 |
+| 3 | 4 | .356198332987874 |
+
+The n=3,m=3 closed form simplifies to 87/256. Twenty additional evaluations
+of (J1) at n=4,8,16,32 and m=2,4,8,16,32 checked arithmetic consistency with
+(J2); these were analytic formula evaluations, NOT large source simulations.
+
+Four additional physical boundary controls give T=3/4 and 7/8 at N=2 with
+m=2 and 3, and T=1/4 and 1/8 for m=1 at N=4 and 8. A separate complete
+enumeration of the 4096 label tuples at n=3,m=4, RETAINING ALL LABELS,
+gives optimal parity distance .7894538335103001, greater than 4/N=.5.
+This deliberately violates the checksum-only premise and confirms that the
+specialized upper bound cannot be transferred to full-label measurements.
+
+This calculation closes the complete-checksum example that the slice proof
+could not address. Its reason is not an illicit division of the n retained
+bits among coordinates. The conditional fiber sizes of that old proof still
+equal one, so every old beta_i remains one. A compact joint digest can evade
+one bound without actually preserving useful information.
+
+Gemini follow-up: add this exact specialized certificate to the existing
+digest report, with its own evidence/status fields. Keep the slice cap and
+the specialized cap separate. Reproduce the integer off-diagonal blocks,
+boundary cases, Born normalization, m=1/N=2 controls and the full-label
+countercontrol. Use outward-rounded roots for certified numerical caps.
+Do not add a new candidate or broadly reject other joint digests, adaptive
+summaries, retained workspace, or algorithms with a different physical prefix.
+
 ## Refinement: Dependence On The Measured Low Sum
 
 Trying to falsify the extension exposed an overly cautious proposed scope

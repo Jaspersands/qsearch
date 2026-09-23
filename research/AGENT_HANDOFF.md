@@ -2,6 +2,198 @@
 
 Last updated: 2026-09-23
 
+## Latest Theory Pass: Natural Purification Exists, Access Is Still Hard
+
+Read section 11 of `research/DCP_NOISE_SECTOR_PURIFICATION.md`. LOCAL
+DERIVATION / REVIEW PENDING, not a new efficient algorithm. The previous
+small positive filter now has a natural-source counterpart with charged
+acceptance. For lambda=2^m/N, fixed nonzero target delta, and ANY prelabel
+classical Z-error law with clean mass p0, a jointly normalized uniform-fiber
+instrument has acceptance >=p0/8 and infidelity <=xi except on label mass
+at most 32/lambda+8/(3*lambda*p0*xi). The guarantee is all-secret on good
+labels. It is not uniform over arbitrary label-adaptive target/noise choices.
+
+For independent p<=1/(2n), m=n+ceil(log2(64*n^(c+q))) gives acceptance
+>=1/32 and infidelity <=n^-c with label failure <=n^-q, for large enough n.
+This is an INFORMATION-THEORETIC construction. Full-fiber aggregation and
+good-sector access are not supplied efficiently. Its straightforward sum/
+Hadamard block has singular scale 1/sqrt(N), so generic bounded-polynomial
+normalization still costs Omega(sqrt(N)), despite good conditioning.
+
+REVISED DIRECTION: a more elaborate low-degree error-response Gram route
+was derived and checked, then deprioritized because the uniform filter gives
+a stronger sample bound in this noise regime. Do not build a large feature
+solver merely because its natural Gram matrices are well conditioned.
+Noise rate Theta(1/log n) is outside the useful constant-p0 conclusion.
+
+Exact all-error moment enumeration and a complete 64-label-tuple physical
+instrument check passed. A label-dependent secret-alias error defeats an
+overbroad extension, as it must. No production code, bulk workflow, candidate
+or proof promotion was made. The accumulated theory notes form one bundled
+checkpoint; Git records its actual commit/push status. Gemini has the precise
+scoped follow-up in section 11; main-model priority is normalized coherent
+arithmetic access.
+
+## Latest Theory Pass: Exact Joint-Checksum Information Loss
+
+Read the new "Exact Complete-Joint-Sum Case" section in
+`research/DCP_LABEL_DIGEST_AUDIT.md`. LOCAL DERIVATION / REVIEW PENDING.
+The complete joint checksum S=sum labels mod N made the earlier conditional-
+slice cap vacuous. A separate exact cq-state calculation now gives a closed
+formula and parity trace distance <=4/N, UNIFORMLY in batch size, after the
+standard low-subset-sum prefix when S is the ONLY retained label information.
+This does not follow by dividing a global bit budget among coordinates.
+
+The proof counts modular systems with a unit minor, isolates equal/complement
+and constant Boolean rows, and diagonalizes a complement-symmetric core plus
+a 3-by-3 boundary block. Every integer off-diagonal entry and the final trace
+norm matched independent physical enumeration in five small cases. Twenty
+larger formula evaluations are analytic controls, not large simulations.
+Four further physical boundary cases passed. Retaining ALL labels at n=3,
+m=4 gives distance .78945, exceeding the checksum-only cap .5; this positive
+countercontrol prevents a false full-label extension. The purification
+filter's which-sector measurement countercontrol also gave fidelity 1/2.
+The old slice formula and its vacuous-cap regression must remain unchanged;
+Gemini should add a separate specialized certificate in the SAME digest flow.
+
+No CLI/registry integration, bulk tests or new candidate was produced. The
+attempt to revisit Simon's adaptive-independence gap was dropped upon checking
+the newer GRZ obstruction already recorded here. Do not resurrect that stale
+lead. Other joint digests, full-label-sensitive operations and changed prefixes
+remain open; this is not a general label-compression or DCP lower bound.
+
+## Latest Theory Pass: Purification Benchmark And Positive Filter
+
+Read `research/DCP_NOISE_SECTOR_PURIFICATION.md`. LOCAL DERIVATION /
+REVIEW PENDING. No production code, bulk workflows, registry promotion or
+commit by this pass. Six implementation tasks for Gemini close the note.
+
+For an arbitrary noisy DCP orbit rho_d=D_d Q D_d^dagger, the optimal
+Born-weighted conditional fidelity to a delta phase qubit is (1+mu)/2,
+where mu is the largest whitened cross-frequency-sector operator norm.
+This is a finite cyclic specialization of established probabilistic-map
+theory, not a novel physical principle. The unrestricted physical optimum
+does not supply useful acceptance or an efficient implementation.
+
+When full subset sums are injective and input dephasing is independent,
+mu=nu^w_min(delta). Thus arbitrary postselection cannot repair the sparse
+batch's phase noise. Derived an explicit natural-label exceptional bound
+for ALL output labels divisible by 2^r. It does not cover selected pools,
+dense spectra or correlated noise.
+
+POSITIVE RESULT: full-frequency degeneracy permits genuine purification.
+An exact five-input, N=8, delta=1 filter has clean acceptance 2/15 and
+conditional error (3/2)*p^2+O(p^3), cancelling every singleton Z error.
+It preserves an unknown phase of order eight, not just parity. Rational
+moment constraints and all-secret physical checks agree. The initial 0/1
+sector pair failed; the 3/4 pair works. No natural-instance scaling follows.
+Measuring which full sector occurred would DESTROY the desired phase.
+
+Eight small cases matched the sector optimum to an independently constructed
+full Choi generalized-eigenvalue benchmark. Dense/repeated-label and
+correlated-noise controls deliberately defeat overbroad sparse no-go claims.
+Next theory priority remains the clean arithmetic/measurement bottleneck;
+do not spend main-model usage turning this into routine noise-curve sweeps.
+
+## Latest Theory Pass: Product-Output Bound And Correlated Blocks
+
+Read `research/DCP_MULTI_OUTPUT_FREQUENCY_BOUND.md`. LOCAL DERIVATION /
+REVIEW PENDING, not a novelty claim or DCP lower bound. This pass did no
+CLI/registry plumbing or bulk workflows; Gemini has seven concrete tasks
+at the end of the note. Only short research-critical mathematical checks ran.
+
+NEW SCOPE-SENSITIVE RESULT: for ANY quantum instrument on a natural,
+pre-grouped m=2r phase-state batch, producing nine nonzero product phase
+qubits whose labels are divisible by 2^r with joint infidelity <=1/1024 has
+acceptance <=2*epsilon when n>=6r. Here epsilon is exponentially small in r;
+the exact formula is in the note. Proof: a Fourier support bound for dense
+Kraus operators; generic full-modulus subset sums force complete output
+cubes to use disjoint signed supports; a natural-label union bound.
+Do NOT apply this to adaptively regrouped input pools or correlated outputs.
+The physical spectral-containment principle has established prior art.
+
+POSITIVE COUNTERCONTROL: measuring low label bits retains a correlated
+implicit phase block with average Holevo quantity >=m-r on a full-modulus
+collision-free source. Independent visibility nu reduces this lower bound
+by at most m*h2((1-nu)/2). Inverse-n dephasing therefore does not destroy
+all retained information even though the prior product recursion loses its
+signal. Holevo quantity is NOT efficiently accessible/recovered information.
+Index erasure, recursive manipulation and readout remain unresolved.
+
+Also derived the finite exact-conversion LP as an UNRESTRICTED physical
+benchmark, not an efficient converter. Checked positive/counterexample
+branches, six dense Kraus maps, five finite LPs, Boolean coordinate census,
+an exact small relation census and clean/noisy conditional entropy controls.
+No new production module, registered theorem, proof-gate promotion, full
+suite, commit or push was performed by this theory pass.
+
+## Latest Theory Pass: Recursive Symmetrization And Noise Falsifier
+
+Read `research/DCP_RECURSIVE_EDGE_SYMMETRIZATION.md`. This pass writes the
+mathematical derivation and Gemini implementation contract, NOT CLI/registry
+wiring or bulk test execution. The prior direct-edge work and the fixed-time
+recursive draft are now in checkpoint `1253264b` (created by separate work).
+The historical uncommitted status below is no longer current. The recursive
+draft still has no dedicated test file or completed integration at this check.
+
+NEW LOCAL DERIVATION: coherently swap two clean support preparations between
+endpoints, herald matching indices, measure the control in X and correct
+orientation by Z on the '-' outcome. BOTH outcomes yield exact ideal phase
+states. Independent geometric schedules, pointwise search success >=2/5 and
+edge-weighted Jensen give natural merge success >=8/225; clipped tails at
+10*2^ceil(log2(P)/2) retain >1/32. These are review-pending proofs, not new
+asymptotic claims. The draft's fixed-time 2^-17 path is a different algorithm;
+do not replace its bound without implementing the new control/feedforward.
+
+IMPORTANT EXTENSION: clean output scratch is NOT universally required.
+Keep both purified solver workspaces and order them by the canonical endpoint
+before the control measurement. The same proof works term by term even for
+orthogonal histories; all history computation/storage is charged. Inaccessible
+input dephasing is not solver workspace. Marginal witness success is also
+insufficient: a downward-only valid-support selector succeeds with probability
+at least 1/4 on the natural source but has zero reciprocal mass. Exact small
+enumeration gives 99/256 valid mass and zero reciprocal mass. Do not replace
+the needed reciprocal-mass bound with a witness-success benchmark.
+
+Clean recursive composition reaches the KNOWN Regev asymptotic class with
+charged subexponential total samples. Independent input visibility instead
+becomes eta^(product of support weights). Even inverse-n input dephasing
+therefore kills clean-optimal recursion asymptotically. Polynomial final
+visibility requires at most O(log n) levels, hence a block Omega(n/log n).
+This scoped falsifier does not exclude arbitrary noisy DCP algorithms,
+algebraic fast implementations, adaptive schedules or larger retained states.
+
+Focused executed quantum checks exposed the unequal-time purity failure and
+verified its coherent-swap/feedforward repair on one actual DCP graph. Exact
+geometric diagonal checks covered all degrees for P=2..128 powers of two.
+No bulk suite, registry refresh, speedup promotion or commit was performed by
+this theory pass. Gemini's eight implementation/verification tasks are at the
+end of the note. Main-model effort should now target the arithmetic bottleneck
+or a genuinely different retained-information measurement.
+
+## Current Role Split And Unvalidated Draft (2026-09-23)
+
+USER OVERRIDE: the main GPT model handles theorizing, mathematical derivations,
+adversarial proof review, research decisions and research-critical checks.
+The user's separate Gemini handles wiring and running workflows. Do not spend
+main-model usage on CLI/registry plumbing, bulk test runs, UI updates or routine
+artifact refreshes. Supply precise mathematical contracts and handoff tasks.
+
+NEW UNVALIDATED DRAFT: `core/dcp_recursive_edge_sieve.py` was created before
+this clarification. It has NOT been run, tested, wired, or independently
+reviewed. No new result artifact or accepted theorem follows from its presence.
+It attempts a concrete symmetric double-endpoint support preparation: herald
+the second support index equals the first, producing amplitude g(q_b)g(q_c)
+at BOTH orientations. Target zero modulo 2^r rather than the final half-period.
+The proposed clean-source recursion relies on uniform unused high labels,
+constant NATURAL-average merge success, fresh batches and charged retries.
+Its claimed asymptotic class matches Regev's known polynomial-space sieve;
+it is NOT a proposed novel speedup. Independent dephasing would accumulate
+as eta^(product of support weights), so clean-state composition does not
+establish the earlier inverse-n-noise promise. Mathematical validation must
+precede promotion; Gemini may implement specified checks and later integration.
+No new tests or live workflows were launched in this interrupted draft pass.
+
 ## Latest Completed Research Pass: Direct Coherent Edge Readout
 
 Read `research/DCP_COHERENT_EDGE_READOUT.md` and
