@@ -1,6 +1,410 @@
 # Research Agent Handoff
 
-Last updated: 2026-09-24
+Last updated: 2026-09-25
+
+## Latest Upstream Pass: Mixing And Carry Repair
+
+Read `research/STRUCTURED_EDCP_UPSTREAM_MIXING_AUDIT.md`. LOCAL DERIVATION /
+REVIEW PENDING. The forward source now has a concrete scoped replacement
+argument through both classical mixing and the quantum grid; no decoder,
+independent proof review, worst-case hardness audit or reverse-equivalence
+repair is supplied.
+
+Two exact source-proof corrections: a surjective column over
+F5[X]/(X^2+1) need not contain a unit entry; and Lemma 46's displayed carry
+bound fails for n=B=1, d=64, q=257 (actual centered carry 32, bound <=26.5).
+An all-size family has carry d/2. This does NOT refute the entire paper or
+its forward theorem. Disjoint fixed anchor blocks repair the minor argument;
+the direct error lift v=u-X*k, where b'=A'*s+u-q*k, replaces Phi carries.
+
+The finite regularity certificate is
+delta_amp <= p_badminor^floor(m/n) + M*floor(m/n)*beta,
+with explicit beta from the primary LPR ideal Gaussian sum. It covers the
+JOINT law (original A, amplified A') and includes the M-row hybrid cost.
+Do not replace the common-factor failure term with exp(-Omega(d)), or claim
+uniformity after revealing the mixing coins. The evaluated secret prior is
+exact when the original secret is consistently centered modulo q.
+
+Canonical mixing width r_mix equals coefficient width r_mix/sqrt(d).
+Exact discrete subgaussian bounds give mixed-error coefficient budget
+O(r_e*r_mix*sqrt(m*log(2Md/delta))), without independent amplified errors.
+The carry contribution is floor((h*secret_l1+mixed_error+h)/q). This gives
+B_out=O(d^2*sqrt(log d)) in the previously examined regime, instead of the
+earlier coarse O(d^4*log d). All three d=64,256,1024 integer margin reports
+now pass with this NEW budget, with clean-weight bounds >=0.9797681,
+0.999995952,0.999999999330. These are analytic bounds, not executed sources
+or quantum speedups; the earlier old-budget failures remain correctly logged.
+
+Checks: exact ring counterexamples, 1,800 carry lifts, six embedding matrices,
+656 normalized-matrix references, eleven joint-amplification cases exhausting
+22,507 original matrices, 54 Gaussian/norm MGFs and 18 conditional mixed-error
+MGFs. Another 360 complete classical transformations verified 1,620 amplified
+rows and 540 wrapped-secret round trips. Small-width vacuous bounds were
+retained. Shared-error dependence was
+detected rather than silently removed. No production wiring, full-suite run,
+candidate promotion or new commit. Gemini's implementation contract is in
+the note, including exact integer budgets and literature-linked corrections.
+
+NEXT MAIN-MODEL WORK: red-team the revised source against prior-aware classical
+decoding at its improved allowed widths, then attack genuine joint conditioning
+or source-specific basis construction. Independent review of the forward
+derivation, the reverse reduction and precise hardness implications remains
+explicitly outstanding.
+
+## Latest Source Pass: Joint Clean Component And Verifiable Outputs
+
+Read `research/STRUCTURED_EDCP_JOINT_SOURCE_CONTRACT.md`. LOCAL DERIVATION /
+REVIEW PENDING. This repairs the LAST quantum stage of the Wen--Zheng source
+construction under explicit premises. FOLLOW-UP: the newer upstream note above
+now supplies a scoped local repair of that link, including counterexamples to
+two intermediate claims. It is not an independent verification of the source
+paper or its reverse reduction.
+
+CORRECTION TO OUR EARLIER AUDIT: epsilon-close PURE marginals on a common
+success event imply joint product distance <=sqrt(sum epsilon_i). Independence
+is not an additional assumption there. The issue is establishing a common
+event and its probability, not an inherent marginal-to-joint impossibility.
+
+For Q=q^d+1, odd q, the small-Phi premise B<(q-1)/2 supplies an actual
+integer coefficient lift. The one exceptional residue Q/2 shows why that
+premise cannot be omitted. Negacyclic multiplication gives the uniform error
+bound E0=d*R*B*(q^d-1)/(q-1). A composite-modulus random-code union bound
+includes kernels and has a factorization-free exponential-in-row-count bound.
+A finite integer-offset grid needs no unknown shortest-vector length.
+
+Conditional on a good classical instance, the resulting L-block phase source
+is p0*Sigma_s^(tensor L)+(1-p0)*tau, with explicit UNHERALDED clean weight
+p0=(1-2*C_grid*E0/Q)^(M*L), plus charged preparation/truncation error.
+This is not whole-state negligible trace distance. The clean labels are
+independent uniform even with a shared input error. Width conventions are
+explicit. In the d=1024,q=nextprime(d^12),n=1,L=288 analytic reference,
+the stronger margin certificate passes with clean weight >=0.993667;
+smaller reference points do not pass that certificate. This is not a simulation
+or verification of the complete reduction.
+
+A public residual test against the original (A,b) uniquely verifies secrets
+on the separated instance. Gemini should let the profile-list decoder use
+this ONLY with that source side information, never as a standalone EDCP oracle.
+List truth coverage then suffices; likelihood ranking is unnecessary.
+
+Controls checked 27,204 balanced residues, 14,962 exhaustive matrix/radius
+instances, 3,996 divisor-bound cases, 606,960 grid records, 227,610 exact offset
+comparisons, 2,700 uncomputation identities, 1,000 correlated-center phase
+checks, 12 pure-marginal controls and 25,290 verifier candidates. Noninjective
+and exceptional-lift controls failed as intended. No production wiring,
+full-suite run, candidate promotion or new commit. Gemini owns the checker
+and integration specification in the note.
+
+NEXT MAIN-MODEL WORK: audit Lemma 28's Gaussian mixing, error lift/norm bounds,
+matrix uniformity and actual joint secret/matrix/error distribution before
+claiming a lattice consequence. Then return to cross-block conditioning or
+source-specific basis construction against the stronger classical baselines.
+
+## Latest Decoder Pass: Full-Profile Classical List Decoding
+
+Read `research/STRUCTURED_EDCP_PROFILE_LIST_DECODER.md`. LOCAL DERIVATION /
+REVIEW PENDING. This closes the intermediate-profile gap left below, without
+assuming independent rotated integer noise or free coherent fiber sampling.
+
+For a fixed public kernel basis, dual Klein randomized decoding has correct-
+point probability p(e) satisfying E[p(e)^(-1/2)]<=J, where
+J=prod_i theta(g_i/s_G). A list of (J/delta)^2*ln(1/epsilon) draws contains
+the true secret except on noise/sampling probability delta+epsilon.
+Continuous Gaussian analysis sharpens the moment to sqrt(J). Adding charged
+uniform classical jitter transfers that result to the integer noise with TV
+cost <=2D*s_G/Q, reducing the sufficient list length to
+J*delta^(-2)*ln(1/epsilon). Finite-bit jitter is handled through decoder
+output-kernel sensitivity, NOT raw continuous/discrete TV equivalence.
+
+J=H*theta(1/s_G)^D; the factor is bounded when s_G^2>=ln(4D)/pi. Polynomial
+quantum universal-envelope rejection profile H thus also permits polynomial
+classical POST-READOUT list decoding. Marginal likelihood selection loses at
+most the coverage error relative to full ML. It does not invent missing
+information or classically simulate the source. New blocks can be appended
+without new lattice reduction, preserving H exactly and adding unit
+Gram--Schmidt directions. Source and basis-construction costs remain charged.
+
+132,396 finite noise-point controls across 12 profiles, seven continuous-
+moment quadratures, six jitter-density checks and eight exact augmentation
+checks passed. Bounded actual list-decoder workflows distinguished truth
+coverage from correct selection. In a matched eight-instance control,
+appending blocks improved list-ML/full-ML correctness 5/8 -> 7/8 -> 8/8,
+with 8/8 list coverage throughout; this is NOT scaling evidence.
+No production integration, full-suite run, candidate promotion or new commit.
+Gemini owns the specified sampler/checker/registry work. Main-model target is
+now genuine cross-block conditioning or a source-specific basis algorithm,
+tested against this stronger classical baseline.
+
+## Latest Joint-Decoder Pass: Klein Sampling And Its Classical Dual
+
+Read `research/STRUCTURED_EDCP_KLEIN_DUALITY_AUDIT.md`. LOCAL DERIVATION /
+REVIEW PENDING. This tests a concrete joint-fiber route, not generic BPQM
+wiring. Probability width s_G=sigma/sqrt(2) must remain explicit.
+
+For an explicit full kernel basis K with Gram--Schmidt lengths g_i, reversed
+dual-basis Babai decodes the local Fourier data with ideal discrete-Gaussian
+failure <=2*sum_i exp(-pi*(s_G/g_i)^2), plus charged physical-noise/source
+errors. The proof uses an exact discrete subgaussian MGF, not continuous
+noise substitution. The usual smooth regime for coherent Klein preparation
+therefore also gives a classical POST-READOUT decoder. This does NOT
+classically simulate the original quantum source or make basis finding free.
+
+The native kernel basis has first d Gram--Schmidt lengths near q and all
+others exactly one. Its universal-envelope rejection factor
+H=Q*prod_(i<=d) theta(s_G/g_i)/theta(s_G)^d is independent of L. Average
+amplification repetition proxy is sqrt(H*P_opt); source mass of fibers with
+proxy <=T is at most (1+chi2)*T^2/H. At q=d^2,sigma=sqrt(d), the factor
+is exponential. This is a scoped resource audit, not a general DGS lower bound.
+
+Omitting rejection is not a repair: native-order Klein samples the remaining
+blocks independently of the requested residue. Its weighted fiber fidelity
+is <=(1+chi2_rest)*P_one. When L-1 blocks are already informative and P_one
+is exponentially small, even weighted approximation fails. A genuine
+conditional sampler must change that remaining-block marginal.
+
+Eight exact basis/dual checks, 288 bounded ideal-noise decoder trials,
+72 MGF references, 360 fast-fiber-mass checks, two full conditional-law
+references and ten multi-block convolution checks passed. The deliberately
+unreversed-dual control failed as intended. No production integration,
+full-suite run, candidate promotion or new commit. Gemini owns the checker
+and matched-baseline implementation specified in the note.
+
+Next mathematics: condition the remaining blocks on the modular target;
+also examine partially good basis profiles against classical selective
+enumeration. Preserve the prior-aware CVP baseline as a separate competitor.
+
+## Latest Theory Pass: Single-Block Long-Interval Transfer Obstructed
+
+Read `research/STRUCTURED_EDCP_INTERVAL_TRANSFER_AUDIT.md`. LOCAL DERIVATION /
+REVIEW PENDING. Do not substitute support cardinality for interval length in
+the efficient Childs--van Dam algorithm: native digit constraints are not
+fixed-dimensional convex integer programming.
+
+For Q=q^d+1, B=2R+1 and 4R<=q-1, coefficient evaluation is injective on the
+doubled box. Freiman's dimension lemma bounds the intersection of EVERY
+length-M unit-step interval with the native support by an O(d)-arithmetic
+integer certificate U. For polynomial q,R and M of order Q^epsilon,
+alpha=U/M tends to zero. This is stronger than the elementary maximum
+supported progression length B, which alone did not settle approximation.
+
+If eta is input probability outside that support, any secret-independent
+single-block converter, averaged over the full phase orbit, obeys
+p_success <= eta/(sqrt(F)-sqrt(alpha))^2 when its successful squared fidelity
+F>alpha. Twirling and a refined Kraus-mode norm bound cover arbitrary
+converters, mixed outputs, all heralded unit multipliers, and discarded
+records. A Gaussian tail charge makes constant-fidelity long-interval
+conversion superpolynomially unlikely in the stated growing regime.
+
+1,199,424 interval checks, 511 exact rank/sumset subset checks, 10 LPs with
+primal/dual certificates and 1,496 Kraus/phase checks, and 192 approximate
+instruments passed their bounded references. Three growing analytic reports
+retained nonzero Gaussian tails. Another 24 dense noncovariant instruments
+verified preservation of average success/fidelity under twirling and the
+character-mode outside-mass charge. These are NOT full-suite results or an
+independent proof review. No production integration, candidate promotion or
+new commit. Gemini's checker specification is in the note.
+
+This does NOT rule out joint blocks, a narrow source-secret prior, smaller
+phase orbits, or a different decoding target. Main-model effort stays on
+genuine joint operations and prior-aware decoding. Next audit: whether
+group-covariant quantum message passing supplies compact implementable joint
+messages, rather than just exponential tables and abstract isometries.
+
+FOLLOW-UP COMPLETED: section 10 audits Mandal--Pfister's equality-node
+Householder construction and Piveteau--Renes's actual small-alphabet/trellis
+efficiency conditions. Native equality compression is precisely coherent
+preparation/erasure of sqrt(p1(u)*p2(w-u)/r(w)), not a solved new subroutine.
+The constructive acceptance criterion is weighted coherent error
+Delta^2=sum_w r(w)*||U_w*zeta_w-|0>||^2. For frequency-preserving controlled
+erasure this bounds output error for EVERY phase and any prior; otherwise
+only the uniform-phase Parseval identity is supplied. Rare fibers need not
+receive unnecessarily strong worst-case precision. Twelve small native
+merges passed 344 phase and 344 controlled-error checks, plus 12 general
+Parseval controls. Main-model target: a compact joint conditional-fiber
+operation with a real source and charged errors, not generic BPQM wiring.
+
+## Latest Decoder Pass: Prior-Aware Classical CVP Baseline
+
+Read `research/STRUCTURED_EDCP_PRIOR_CVP_BASELINE.md`. LOCAL DERIVATION /
+REVIEW PENDING. This pass specifies and bounded-tests an actual classical
+decoder after local Fourier readout, not another information-only certificate.
+
+For Gaussian amplitude width sigma, the true Fourier law differs from a
+wrapped integer Gaussian of probability width Q/(sqrt(2)*sigma) by at most
+rho/(1+rho), rho=2*exp(-pi*sigma^2/2)/(1-exp(-3*pi*sigma^2/2)) per coordinate.
+The proof retains and bounds positive interference terms instead of silently
+dropping them. Balanced secret coefficients matter: unsigned reduction modulo
+q changes the evaluated secret. The source-prior tail is explicitly charged.
+
+With r=n*d secret coefficients and m=L*d measured coordinates, the joint
+Gaussian posterior has weighted column lattice [w*I,0; F,Q*I],
+F_((l,i),(j,k))=a_(l,j)*q^(i+k) mod Q, w=r_e/r_s. Dimension is d(n+L),
+determinant w^(nd)*Q^(Ld). Joint-lift MAP is CVP; a concrete counterexample
+shows it need not equal marginal-secret MAP. Rational weight rounding also
+has a prior-distribution charge. The normalized volume proxy cancels Q;
+increasing the modulus alone does not certify easier decoding.
+
+The existing exact LLL/Babai helper ran on 48 bounded native-noise references.
+At q=17,d=4 it recovered 3/8,7/8,8/8 secrets for L=1,2,3. At q=5,d=8 it
+recovered 4/8 at each L; extra dimension offset information gains. These are
+NOT scaling results. All lattice membership/determinant/residual identities
+passed, with 32 additional vector-module checks and 30 noise-law checks.
+Dense noise tables were bounded REFERENCES, not claimed scalable samplers.
+
+Gemini owns `structured_edcp_prior_cvp.py`, rational-weight integration,
+scalable sampling, matched-source comparisons and registry/CLI wiring.
+Main model must attack an actual source-specific integer decoding operation
+or a cheaper coherent measurement; neither generic CVP access nor favorable
+lattice geometry can be assumed free. No new commit or full-suite run.
+
+## Follow-Up: Local Fourier Readout Also Has Enough Information
+
+Read `research/STRUCTURED_EDCP_LOCAL_READOUT_BASELINE.md`. LOCAL DERIVATION /
+REVIEW PENDING. This is the stronger adversarial baseline for the information
+result below, not a new efficient algorithm or a dequantized source.
+
+For periodized Gaussian amplitudes, local Fourier amplitudes are positive.
+Their classical Bhattacharyya overlap equals the pure-state overlap exactly.
+A classical maximum-likelihood union bound then has exact averaged divisor
+terms sum J_n(t)*beta_t^L, where beta_t is the ONE-evaluation probability of
+zero modulo t, not the TWO-evaluation collision C_t. A charged Gaussian-tail
+argument makes a constant number of locally measured blocks sufficient at
+q=d^(a+o(1)), width=d^(b+o(1)), 0<b<1, a>b+1/2. Binary-rank selection
+and digit parity remain necessary, with parity exponent d rather than 2d.
+
+This removes the claim that the information certificate by itself motivates
+entangling readout. The real target is efficient decoding: compare classical
+inference on Y_(l,i)=q^i*<a_l,s>+E_(l,i) mod Q against coherent processing.
+Classical exhaustive likelihood is exponential and is NOT supplied as a
+scalable solver. Neither is a classical sampler for the original quantum
+source. The reduction's narrower secret prior remains especially relevant.
+
+153 complete small label tuples passed the local-versus-collective references,
+overlap identity and error bounds. A sign countercontrol correctly violated
+the overlap equality. Six growing-parameter analytic reports passed the
+explicit tail criterion. Main model stays on theory; Gemini owns integration.
+
+## Latest Theory Pass: Enough Information Does Not Supply The Decoder
+
+Read `research/STRUCTURED_EDCP_INFORMATION_THRESHOLD.md`. LOCAL DERIVATION /
+REVIEW PENDING. The new result separates native structured-EDCP information
+from implementation. No code integration, candidate promotion, or speedup claim.
+
+For Q=q^d+1, independent uniform vector labels and independent digit blocks,
+the exact mean chi-square fiber imbalance is sum_(t|Q,t>1) J_n(t)*C_t^L.
+Composite-divisor entropy is essential; the prime-only formula fails an exact
+control. For power-of-two d, R<=d and 2R<=q-1, an all-odd-divisor bound gives
+constant-block sufficient information when Gaussian width and q grow as
+different fixed powers of d. The proof needs no factorization of large Q.
+
+Odd q requires a public binary-rank acceptance test, probability
+prod_(i=0)^(n-1)(1-2^(i-L)), plus a digit-parity-bias term. Both have exact
+countercontrols. A fixed L gives a chosen inverse-polynomial failure exponent,
+not negligible error at every exponent or success for every label matrix.
+
+REVISED PRIORITY: the uniform-secret converse P_opt<=kappa^(dL)/Q^n rules
+out TWO-block recovery in the growing Gaussian regimes here, even without
+truncation. Use an information-sufficient constant L for a decoder target;
+keep two-block fibers as structural prototypes, not presumed solutions.
+This converse does NOT exclude exploiting the reduction's narrower secret
+prior. The sufficient covariant measurement works equally for every secret.
+
+A local exponent audit finds the DISPLAYED source-theorem inequalities
+compatible with q between d^12 and 2*d^12, width Theta(sqrt(d)), constant n,L,
+and specified polynomial parameters, asymptotically. This is not a verified
+reduction or a standard cryptographic parameter set. The paper's Definition
+22 uses sqrt(D_r), whereas equation (26) uses rho_r: track the sqrt(2) width
+difference explicitly. LATER CORRECTION: pure marginals on a common success
+event DO imply joint closeness with a square-root bound. The joint-source
+note above now supplies a scoped last-stage repair; the upstream reduction
+and independent review remain open.
+
+16400 complete small label matrices passed the exact collision identity and
+rank checks; 210 Gaussian divisor checks covered 108 parameter points. Three
+exact broken-premise controls invalidated the corresponding collision bound.
+Analytic large-d reports are bound evaluations, not simulated decoders.
+Gemini owns checker/registry integration and bulk testing. Main-model work
+must now attack the joint measurement, prior-adapted decoding, or its genuine
+classical baseline, not add another information-only wrapper.
+
+## Latest Theory Pass: Native Structured-EDCP Gaussian Fibers
+
+Read `research/STRUCTURED_EDCP_GAUSSIAN_FIBERS.md`. LOCAL DERIVATION / REVIEW
+PENDING. This is a constructive measurement specification, not a new
+successful hidden-secret algorithm. No code integration or candidate promotion.
+
+For Q=q^d+1 the coefficient-evaluation kernel has basis B=qI-S, where S is
+the signed cyclic shift. Exact carry coordinates turn ONE known Gaussian
+block's fibers into a bounded nearest-neighbor chain. A positive dynamic
+program gives coherent conditional amplitudes using O(d(2K+1)^3) arithmetic
+operations, K=ceil((R+q-1)/(q-1)), plus charged precision. No Q-sized table,
+QRAM, secret oracle or generic subset-sum sampler is supplied for free.
+
+Unpreparing the known fibers and inverse-QFT gives the OPTIMAL uniform-phase
+one-block readout. It can still have exponentially small success; the note
+proves the finite-box bound and charges Gaussian truncation and circuit error.
+The next research target is TWO independent blocks with a natural random
+multiplier. Their exact Gaussian fiber contains a dense negacyclic
+multiplication matrix. Its Fourier diagonalization does not make the integer
+lattice independent. Easy signed-rotation label alignments are exponentially
+rare under the natural source, and had lower information in finite controls.
+
+3280 exact carry inversions, 1456 full fiber comparisons, 24 phase reference
+checks and 396 multiplication identities passed. Two-block references
+exhausted 372 unit multipliers across three finite parameter points. These
+are bounded references, not a compiled scalable quantum circuit or an
+asymptotic information theorem. Gemini implementation tasks are explicit.
+Independent backward-message checks also reproduced all 3280 conditional
+amplitudes, including nonempty fiber mass as small as 3.78e-14; the other
+588 residue fibers were correctly empty. No rare-fiber postselection is
+hidden in the mathematical preparation specification.
+
+Also read section 10 of `research/EDCP_CORRELATED_CENTER_AUDIT.md`: matching
+only the public lattice syndrome still has exponentially small clean-collision
+mass for independent source preparations. A Vandermonde-span argument rules
+out a universal exact center-blind pure-state cleanup filter, not all
+approximate/source-dependent measurements. The shared-center positive
+control survives. Do not mistake these scoped failures for LWE hardness.
+
+## Latest Theory Pass: EDCP Center Cancellation Needs A Real Paired Source
+
+Read `research/EDCP_CORRELATED_CENTER_AUDIT.md`. LOCAL DERIVATION / REVIEW
+PENDING. This pass audits three primary papers missing from the current
+scalar-DCP focus. It does not claim a new algorithm or promote any candidate.
+Keep the main model on theory and source-contract scrutiny; Gemini owns
+implementation, CLI/registry wiring, and bulk testing.
+
+CONSTRUCTIVE CONTRACT: two Gaussian phase states with the SAME unknown center
+and independent public labels can cancel the nuisance on EVERY integer-sum
+measurement outcome. The output center becomes public, width shrinks by
+sqrt(2), and the secret frequency becomes the difference of the two labels.
+A charged known-amplitude filter then supplies a clean phase qubit. An
+efficient matched-pair factory could connect an abundant unknown-center
+source to the published quasi-polynomial vector-label EDCP algorithm.
+No such factory is supplied.
+
+RED TEAM: independent centers retain the same variance-to-width ratio.
+Replaying a full measurement record costs exponentially in vector dimension.
+A simple sum-only source shares a nuisance by also constraining the Fourier
+labels to be equal, so the cancellation removes the useful phase. Retaining
+separate readout garbage is not coherent erasure. These are scoped failures,
+not a universal no-go for correlated factories.
+
+The naive adjacent-bin/noisy-sieve route has exact discarded-record visibility
+recurrence F_n(V)=((1+V)^(n+1)-1)/(2^(n+1)-1). Initial loss Theta(1/n)
+becomes exponentially bad after two merges. The note also preserves the
+known larger-digit carry counterexample and the unknown cross term introduced
+by physically applying a quadratic chirp to a translated amplitude.
+
+STRUCTURED BRANCH: coefficient-register EDCP gives geometric labels
+a,q*a,... modulo f(q), not independent labels modulo q. Preserve this
+structure for a genuine collective-operation proposal; do not discard it and
+claim a module-LWE algorithm. Full reduction parameter auditing remains open.
+
+165 Gaussian product cases, 72 phase controls, exhaustive low-rank kernel
+counts, all 4096 modulus-4 vector-label matrices, 160 density-matrix branches,
+and scope countercontrols passed. Details and five Gemini tasks are in the
+note. No production code, bulk tests, registry promotion, or new commit.
 
 ## Latest Theory Pass: Thermal Arithmetic Tested, Local Mixing Obstructed
 

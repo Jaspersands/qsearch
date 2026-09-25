@@ -5167,7 +5167,7 @@
       }
     ],
     "candidate_id": "CODE-COSET-COLLECTIVE",
-    "created_at": "2026-09-23T04:10:16.653268+00:00",
+    "created_at": "2026-09-25T03:49:37.020272+00:00",
     "id": "CONJ-CODE-COSET-COLLECTIVE",
     "next_actions": [
       "Resolve every blocking finding before promotion.",
@@ -18284,7 +18284,7 @@
         "summary": "Proved that density-one low-bit fibers contain no affine flat of dimension 8log2(q) or larger with failure 2^-Omega(q log q), uniformly over every adaptive GL(m,2) reparameterization. Any support-contained cancellation-free affine cover is exponential."
       }
     ],
-    "updated_at": "2026-09-23T04:10:16.653268+00:00"
+    "updated_at": "2026-09-25T03:49:37.020272+00:00"
   },
   {
     "assumptions": [
@@ -19027,6 +19027,18 @@
         "severity": "medium"
       },
       {
+        "evidence": "Triggered falsifiers: FALSIFIER-EDCP-LEMMA46-DIMENSION-INDEPENDENT-BOUND | FALSIFIER-EDCP-SURJECTIVE-UNIT-MINOR-INFERENCE | FALSIFIER-EDCP-REVEALED-MIXING-COINS-INDEPENDENCE | FALSIFIER-EDCP-AMPLIFIED-ERROR-INDEPENDENCE",
+        "finding_id": "DEQ-RESULT-EXP-DHS-DCP-COHERENT-MATCHING-INTERFACE-LATEST-FALSIFIERS",
+        "required_action": "Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.",
+        "severity": "medium"
+      },
+      {
+        "evidence": "Triggered falsifiers: FALSIFIER-EDCP-LEMMA46-DIMENSION-INDEPENDENT-BOUND | FALSIFIER-EDCP-SURJECTIVE-UNIT-MINOR-INFERENCE | FALSIFIER-EDCP-REVEALED-MIXING-COINS-INDEPENDENCE | FALSIFIER-EDCP-AMPLIFIED-ERROR-INDEPENDENCE",
+        "finding_id": "DEQ-RESULT-EXP-DHS-DCP-COHERENT-MATCHING-INTERFACE-UPSTREAM-MIXING-FALSIFIERS",
+        "required_action": "Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.",
+        "severity": "medium"
+      },
+      {
         "evidence": "Triggered falsifiers: A bounded-support X/Y correlator has zero hidden-reflection-averaged signal unless its public labels satisfy a signed modular relation. | With polynomially many random labels, the union bound eventually makes logarithmic-locality signed-relation witnesses negligible; small-n rows where the bound is vacuous are not counted as certificates. | Finite low-weight relations are postselected rare label events, not a uniform asymptotic DCP algorithm. | No polynomial-time robust measurement or full-reflection decoder is produced by relation enumeration.",
         "finding_id": "DEQ-RESULT-EXP-DHS-DCP-COLLECTIVE-WITNESS-SEARCH-DCP-COLLECTIVE-WITNESS-FALSIFIERS",
         "required_action": "Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.",
@@ -19748,7 +19760,7 @@
       }
     ],
     "candidate_id": "DHS-GOWERS-SIEVE",
-    "created_at": "2026-09-23T04:10:16.653268+00:00",
+    "created_at": "2026-09-25T03:49:37.020272+00:00",
     "id": "CONJ-DHS-GOWERS-SIEVE",
     "next_actions": [
       "Resolve every blocking finding before promotion.",
@@ -20192,6 +20204,22 @@
         },
         "status": "derived-pairing-readouts-review-pending-no-efficient-finder",
         "summary": "Certified 12/12 seeded-randomized interface rows and extracted 4 deterministic source use sites. Checked 9 mutual and 2 permutation controls; failures=0. Noise-weighted mass, not witness rate, is the constructive target; Affine-marked coverage is derived for streamed and capped balanced-support finders. The latter has constant average coverage, including a scoped constant noise signal at m=2n, and a fixed-network meet-in-the-middle implementation but exponential time AND coherent storage; A separate shared-geometric Grover edge readout avoids lists, unique partners and vertex isolation with polynomial workspace, but still exponential time. No efficient pairing finder or new decoder."
+      },
+      {
+        "experiment_result_id": "RESULT-EXP-DHS-DCP-COHERENT-MATCHING-INTERFACE-LATEST",
+        "metrics": {
+          "analytic_all_clean_weight_bounds_pass": true,
+          "analytic_scaling_table_points": 3,
+          "exact_carry_lift_trials_passed": 10,
+          "lemma46_counterexample_norm_d128": 64,
+          "lemma46_counterexample_norm_d64": 32,
+          "max_canonical_embedding_residual": 1.565630917589724e-13,
+          "mixed_error_covariance_positive": true,
+          "surjective_counterexample_span_size": 25,
+          "surjective_counterexample_verified": true
+        },
+        "status": "forward-mixing-repaired-reverse-unaudited",
+        "summary": "Exact negacyclic carry lifts repair the forward P-MLWE to Structured EDCP reduction. Counterexamples refute Lemma 46 dimension-independent carry bound and surjective unit minor inference. Reverse reduction and worst-case lattice hardness remain explicitly uncertified; speedup claims blocked."
       },
       {
         "experiment_result_id": "RESULT-EXP-DHS-DCP-COLLECTIVE-WITNESS-SEARCH-DCP-COLLECTIVE-WITNESS",
@@ -22448,6 +22476,22 @@
         "summary": "Ran 240 hidden-shift query/time lower-bound probes over 10 families, 4 n-values, 6 sample budgets, and 5 trial(s). 132 random-sample row(s), 36 chosen-query row(s), and 228 pairwise-agreement row(s) rule out superlog query lower-bound evidence without a decoding lower bound."
       },
       {
+        "experiment_result_id": "RESULT-EXP-DHS-DCP-COHERENT-MATCHING-INTERFACE-UPSTREAM-MIXING",
+        "metrics": {
+          "analytic_all_clean_weight_bounds_pass": true,
+          "analytic_scaling_table_points": 3,
+          "exact_carry_lift_trials_passed": 10,
+          "lemma46_counterexample_norm_d128": 64,
+          "lemma46_counterexample_norm_d64": 32,
+          "max_canonical_embedding_residual": 1.565630917589724e-13,
+          "mixed_error_covariance_positive": true,
+          "surjective_counterexample_span_size": 25,
+          "surjective_counterexample_verified": true
+        },
+        "status": "forward-mixing-repaired-reverse-unaudited",
+        "summary": "Exact negacyclic carry lifts repair the forward P-MLWE to Structured EDCP reduction. Counterexamples refute Lemma 46 dimension-independent carry bound and surjective unit minor inference. Reverse reduction and worst-case lattice hardness remain explicitly uncertified; speedup claims blocked."
+      },
+      {
         "experiment_result_id": "RESULT-EXP-DHS-TRACE-FUNCTION-SEARCH-TRACE-FUNCTION-SEARCH",
         "metrics": {
           "low_degree_rejected_count": 0,
@@ -22491,7 +22535,7 @@
         "summary": "Audited 12 explicit hidden-shift instances across 3 phase families. 3 instances show Fourier/derivative structure; 8 are critical/high dequantization risk; 8 survive at least one restricted query model. Best DHSP sieve strategy aggressive_doubling reaches v2=7 from 2048 phase labels; explicit phase-state trace reaches v2=7 with 44 survivor states."
       }
     ],
-    "updated_at": "2026-09-23T04:10:16.653268+00:00"
+    "updated_at": "2026-09-25T03:49:37.020272+00:00"
   },
   {
     "assumptions": [
@@ -22549,7 +22593,7 @@
       }
     ],
     "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
-    "created_at": "2026-09-23T04:10:16.653268+00:00",
+    "created_at": "2026-09-25T03:49:37.020272+00:00",
     "id": "CONJ-HYP-LIT-COSET-OBSERVABLES",
     "next_actions": [
       "Resolve every blocking finding before promotion.",
@@ -22589,7 +22633,7 @@
         "summary": "Audited 4 hidden-permutation graph pairs. 2 pair survives current classical and low-register tests; 1 control pair is classically distinguished; 2 CFI-style parity benchmark(s) included."
       }
     ],
-    "updated_at": "2026-09-23T04:10:16.653268+00:00"
+    "updated_at": "2026-09-25T03:49:37.020272+00:00"
   },
   {
     "assumptions": [
@@ -22679,7 +22723,7 @@
       }
     ],
     "candidate_id": "HYP-LIT-HIDDEN-SHIFT-SIEVE",
-    "created_at": "2026-09-23T04:10:16.653268+00:00",
+    "created_at": "2026-09-25T03:49:37.020272+00:00",
     "id": "CONJ-HYP-LIT-HIDDEN-SHIFT-SIEVE",
     "next_actions": [
       "Resolve every blocking finding before promotion.",
@@ -22761,7 +22805,7 @@
         "summary": "Audited 40 explicit hidden-shift instances across 10 phase families. 0 instances show Fourier/derivative structure; 16 are critical/high dequantization risk; 40 survive at least one restricted query model. Best DHSP sieve strategy aggressive_doubling reaches v2=7 from 2048 phase labels; explicit phase-state trace reaches v2=7 with 44 survivor states."
       }
     ],
-    "updated_at": "2026-09-23T04:10:16.653268+00:00"
+    "updated_at": "2026-09-25T03:49:37.020272+00:00"
   },
   {
     "assumptions": [
@@ -22861,7 +22905,7 @@
       }
     ],
     "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
-    "created_at": "2026-09-23T04:10:16.653268+00:00",
+    "created_at": "2026-09-25T03:49:37.020272+00:00",
     "id": "CONJ-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
     "next_actions": [
       "Resolve every blocking finding before promotion.",
@@ -22945,7 +22989,7 @@
         "summary": "Audited 10 graphlet tensor observables across 5 graph pairs. 3 signal(s) collapse to small-pattern classical counts; 3 boundary pair(s) remain without graphlet-tensor signal."
       }
     ],
-    "updated_at": "2026-09-23T04:10:16.653268+00:00"
+    "updated_at": "2026-09-25T03:49:37.020272+00:00"
   },
   {
     "assumptions": [
@@ -23021,7 +23065,7 @@
       }
     ],
     "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
-    "created_at": "2026-09-23T04:10:16.653268+00:00",
+    "created_at": "2026-09-25T03:49:37.020272+00:00",
     "id": "CONJ-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
     "next_actions": [
       "Resolve every blocking finding before promotion.",
@@ -23076,7 +23120,7 @@
         "summary": "Audited 10 graphlet tensor observables across 5 graph pairs. 3 signal(s) collapse to small-pattern classical counts; 3 boundary pair(s) remain without graphlet-tensor signal."
       }
     ],
-    "updated_at": "2026-09-23T04:10:16.653268+00:00"
+    "updated_at": "2026-09-25T03:49:37.020272+00:00"
   },
   {
     "assumptions": [
@@ -23152,7 +23196,7 @@
       }
     ],
     "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
-    "created_at": "2026-09-23T04:10:16.653268+00:00",
+    "created_at": "2026-09-25T03:49:37.020272+00:00",
     "id": "CONJ-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
     "next_actions": [
       "Resolve every blocking finding before promotion.",
@@ -23206,7 +23250,7 @@
         "summary": "Audited 4 hidden-permutation graph pairs. 2 pair survives current classical and low-register tests; 1 control pair is classically distinguished; 2 CFI-style parity benchmark(s) included."
       }
     ],
-    "updated_at": "2026-09-23T04:10:16.653268+00:00"
+    "updated_at": "2026-09-25T03:49:37.020272+00:00"
   },
   {
     "assumptions": [
@@ -23270,7 +23314,7 @@
       }
     ],
     "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
-    "created_at": "2026-09-23T04:10:16.653268+00:00",
+    "created_at": "2026-09-25T03:49:37.020272+00:00",
     "id": "CONJ-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
     "next_actions": [
       "Resolve every blocking finding before promotion.",
@@ -23304,6 +23348,6 @@
         "summary": "Audited 3 code-equivalence pairs. 1 equivalent control pair(s) verified; 2 non-equivalent control pair(s) classically distinguished."
       }
     ],
-    "updated_at": "2026-09-23T04:10:16.653268+00:00"
+    "updated_at": "2026-09-25T03:49:37.020272+00:00"
   }
 ]

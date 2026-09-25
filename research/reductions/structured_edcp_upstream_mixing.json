@@ -1,0 +1,193 @@
+{
+  "analytic_scaling_table": [
+    {
+      "B_out": 355689673,
+      "K0": 256,
+      "M": 3195,
+      "U0": 355689417,
+      "clean_weight_lower_bound": 0.979768104365626,
+      "d": 64,
+      "grid_ratio": 0.04087872659221281,
+      "log10_delta_amp_upper": -99.3398985691138,
+      "log10_delta_err_upper": -27.794846587390275,
+      "m": 5,
+      "passes_half_margin_certificate": true,
+      "q": 4722366482869645213711,
+      "r_mix": 3780224
+    },
+    {
+      "B_out": 13854652906,
+      "K0": 2048,
+      "M": 17035,
+      "U0": 13854650858,
+      "clean_weight_lower_bound": 0.9999959519144933,
+      "d": 256,
+      "grid_ratio": 8.096421597899189e-06,
+      "log10_delta_amp_upper": -158.94383771058207,
+      "log10_delta_err_upper": -111.17938736723247,
+      "m": 6,
+      "passes_half_margin_certificate": true,
+      "q": 79228162514264337593543950397,
+      "r_mix": 36591616
+    },
+    {
+      "B_out": 480919424497,
+      "K0": 16384,
+      "M": 85174,
+      "U0": 480919408113,
+      "clean_weight_lower_bound": 1.0,
+      "d": 1024,
+      "grid_ratio": 1.3400924967036444e-09,
+      "log10_delta_amp_upper": -25872.324007336527,
+      "log10_delta_err_upper": -444.71754946892986,
+      "m": 7,
+      "passes_half_margin_certificate": true,
+      "q": 1329227995784915872903807060280345027,
+      "r_mix": 303337472
+    }
+  ],
+  "artifacts": {
+    "report": "research/reductions/structured_edcp_upstream_mixing.json",
+    "structured_edcp_upstream_mixing": "research/reductions/structured_edcp_upstream_mixing.json"
+  },
+  "claim_gate": {
+    "amplified_errors_independent_refuted": true,
+    "forward_carry_and_mixing_reduction_certified": true,
+    "lemma46_dimension_independent_carry_refuted": true,
+    "revealed_mixing_coins_pseudorandom_refuted": true,
+    "reverse_reduction_audited": false,
+    "speedup_claim_allowed": false,
+    "surjective_matrix_invertible_minor_refuted": true,
+    "worst_case_lattice_hardness_established": false
+  },
+  "corrections": [
+    {
+      "actual_behavior": "Centered carry infinity norm equals d/2 (32 at d=64, 64 at d=128), strictly exceeding 26.5.",
+      "claimed_statement": "Dimension-independent carry infinity-norm bound <= 26.5 when n=B=1.",
+      "correction_id": "CORR-EDCP-LEMMA46-CARRY-BOUND",
+      "counterexample_parameters": {
+        "family": "a(X)=h*U(X), s(X)=U(X)",
+        "norm": "d/2"
+      },
+      "impact_on_hardness_claims": "Invalidates importing Lemma 46 uncritically; forward path repaired via direct error lift.",
+      "repaired_form": "Exact negacyclic carry lift v_i = u_i - X*k_i mod (X^d+1) with explicit d dependence.",
+      "target_source": "Wen and Zheng (2026), Lemma 46"
+    },
+    {
+      "actual_behavior": "u+v=1 ensures surjectivity, but both entries are zero divisors; no 1x1 unit minor exists.",
+      "claimed_statement": "Surjective module map over quotient ring R_q contains an invertible n x n minor.",
+      "correction_id": "CORR-EDCP-SURJECTIVE-UNIT-MINOR",
+      "counterexample_parameters": {
+        "ring": "F5[X]/(X^2+1)",
+        "u": [
+          3,
+          4
+        ],
+        "v": [
+          3,
+          1
+        ]
+      },
+      "impact_on_hardness_claims": "Preserves forward regularity bound by summing over independent candidate blocks.",
+      "repaired_form": "Disjoint fixed anchor block decomposition in LPR regularity proof device.",
+      "target_source": "Wen and Zheng (2026), Corollary 6 proof"
+    },
+    {
+      "actual_behavior": "Conditioned on A and W, W*A is deterministic; TV distance is 1 - q^(-d*M*n).",
+      "claimed_statement": "Amplified matrix W*A mod q is pseudo-random even if mixing coins W are revealed.",
+      "correction_id": "CORR-EDCP-REVEALED-MIXING-COINS",
+      "counterexample_parameters": {
+        "access_model": "revealed_coins"
+      },
+      "impact_on_hardness_claims": "Rules out exposing W to downstream solvers or verifying oracles.",
+      "repaired_form": "Treat mixing coins W as discarded private reduction randomness only.",
+      "target_source": "Standard side-information assumptions in lattice reductions"
+    },
+    {
+      "actual_behavior": "Shared input error e creates positive covariance (2.833250).",
+      "claimed_statement": "Gaussian mixing produces independent amplified LWE error rows.",
+      "correction_id": "CORR-EDCP-AMPLIFIED-ERROR-CORRELATION",
+      "counterexample_parameters": {
+        "formula": "Cov((W1*e)^2, (W2*e)^2) > 0"
+      },
+      "impact_on_hardness_claims": "Prevents applying independent-error LWE decoders to the amplified instance.",
+      "repaired_form": "Account for dependent errors via joint union bounds and matrix separation.",
+      "target_source": "Independent-error LWE assumptions post-mixing"
+    }
+  ],
+  "falsifiers_triggered": [
+    "FALSIFIER-EDCP-LEMMA46-DIMENSION-INDEPENDENT-BOUND",
+    "FALSIFIER-EDCP-SURJECTIVE-UNIT-MINOR-INFERENCE",
+    "FALSIFIER-EDCP-REVEALED-MIXING-COINS-INDEPENDENCE",
+    "FALSIFIER-EDCP-AMPLIFIED-ERROR-INDEPENDENCE"
+  ],
+  "finite_controls": {
+    "isometry": {
+      "2": 1.224646799147353e-16,
+      "4": 7.566123142710142e-16,
+      "8": 6.68780462323031e-15,
+      "16": 2.234044142961677e-14,
+      "32": 4.6652938859550116e-14,
+      "64": 1.565630917589724e-13
+    },
+    "lemma46_d128": {
+      "actual_carry_infinity_norm": 64,
+      "d": 128,
+      "lemma_46_displayed_bound": 26.5,
+      "q": 521,
+      "theoretical_d_over_2": 64,
+      "violates_lemma_46": true
+    },
+    "lemma46_d64": {
+      "actual_carry_infinity_norm": 32,
+      "d": 64,
+      "lemma_46_displayed_bound": 26.5,
+      "q": 257,
+      "theoretical_d_over_2": 32,
+      "violates_lemma_46": true
+    },
+    "mixed_error_covariance": {
+      "is_positive": true,
+      "sample_covariance_squared_errors": 2.833249511846904,
+      "samples": 5000
+    },
+    "surjective_control": {
+      "is_surjective": true,
+      "span_size": 25,
+      "surjective_without_unit_minor": true,
+      "u": [
+        3,
+        4
+      ],
+      "u_is_idempotent": true,
+      "u_is_unit": false,
+      "u_mul_v": [
+        0,
+        0
+      ],
+      "u_plus_v": [
+        1,
+        0
+      ],
+      "v": [
+        3,
+        1
+      ],
+      "v_is_idempotent": true,
+      "v_is_unit": false
+    }
+  },
+  "headline_metrics": {
+    "analytic_all_clean_weight_bounds_pass": true,
+    "analytic_scaling_table_points": 3,
+    "exact_carry_lift_trials_passed": 10,
+    "lemma46_counterexample_norm_d128": 64,
+    "lemma46_counterexample_norm_d64": 32,
+    "max_canonical_embedding_residual": 1.565630917589724e-13,
+    "mixed_error_covariance_positive": true,
+    "surjective_counterexample_span_size": 25,
+    "surjective_counterexample_verified": true
+  },
+  "status": "forward-mixing-repaired-reverse-unaudited",
+  "summary": "Exact negacyclic carry lifts repair the forward P-MLWE to Structured EDCP reduction. Counterexamples refute Lemma 46 dimension-independent carry bound and surjective unit minor inference. Reverse reduction and worst-case lattice hardness remain explicitly uncertified; speedup claims blocked."
+}

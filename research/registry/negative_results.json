@@ -67609,6 +67609,94 @@
   {
     "applies_to": [
       "DHS-GOWERS-SIEVE",
+      "EXP-DHS-DCP-COHERENT-MATCHING-INTERFACE"
+    ],
+    "claim": "Gaussian mixing produces independent amplified LWE error rows.",
+    "evidence": {
+      "analytic_all_clean_weight_bounds_pass": true,
+      "analytic_scaling_table_points": 3,
+      "exact_carry_lift_trials_passed": 10,
+      "lemma46_counterexample_norm_d128": 64,
+      "lemma46_counterexample_norm_d64": 32,
+      "max_canonical_embedding_residual": 1.565630917589724e-13,
+      "mixed_error_covariance_positive": true,
+      "surjective_counterexample_span_size": 25,
+      "surjective_counterexample_verified": true
+    },
+    "id": "NEG-EDCP-AMPLIFIED-ERRORS-INDEPENDENT",
+    "lesson": "Account for correlated mixed errors using joint union bounds and matrix separation, rather than assuming standard independent-error LWE.",
+    "reason_invalid": "Amplified errors share the original error vector e via u_i = W_i * e. For independent W_1, W_2, Cov((W_1*e)^2, (W_2*e)^2) = Var(e^2) * E(W_1^2) * E(W_2^2) > 0.",
+    "source": "research/reductions/structured_edcp_upstream_mixing.json"
+  },
+  {
+    "applies_to": [
+      "DHS-GOWERS-SIEVE",
+      "EXP-DHS-DCP-COHERENT-MATCHING-INTERFACE"
+    ],
+    "claim": "Lemma 46 in Wen-Zheng provides a dimension-independent infinity-norm carry bound of at most 26.5 when n=B=1.",
+    "evidence": {
+      "analytic_all_clean_weight_bounds_pass": true,
+      "analytic_scaling_table_points": 3,
+      "exact_carry_lift_trials_passed": 10,
+      "lemma46_counterexample_norm_d128": 64,
+      "lemma46_counterexample_norm_d64": 32,
+      "max_canonical_embedding_residual": 1.565630917589724e-13,
+      "mixed_error_covariance_positive": true,
+      "surjective_counterexample_span_size": 25,
+      "surjective_counterexample_verified": true
+    },
+    "id": "NEG-EDCP-LEMMA46-DIMENSION-INDEPENDENT-CARRY",
+    "lesson": "Retain explicit polynomial ring degree d in all carry and error budgets; do not omit dimension dependence.",
+    "reason_invalid": "For all power-of-two d >= 64, odd prime q > d, a(X)=h*U(X) and s(X)=U(X) give a centered carry difference with infinity norm exactly d/2. For d=64 this is 32 > 26.5; for d=128 it is 64 > 26.5.",
+    "source": "research/reductions/structured_edcp_upstream_mixing.json"
+  },
+  {
+    "applies_to": [
+      "DHS-GOWERS-SIEVE",
+      "EXP-DHS-DCP-COHERENT-MATCHING-INTERFACE"
+    ],
+    "claim": "The amplified matrix W*A mod q remains pseudo-random even if the mixing coins W are revealed as extra side information.",
+    "evidence": {
+      "analytic_all_clean_weight_bounds_pass": true,
+      "analytic_scaling_table_points": 3,
+      "exact_carry_lift_trials_passed": 10,
+      "lemma46_counterexample_norm_d128": 64,
+      "lemma46_counterexample_norm_d64": 32,
+      "max_canonical_embedding_residual": 1.565630917589724e-13,
+      "mixed_error_covariance_positive": true,
+      "surjective_counterexample_span_size": 25,
+      "surjective_counterexample_verified": true
+    },
+    "id": "NEG-EDCP-REVEALED-MIXING-COINS-PSEUDORANDOM",
+    "lesson": "Treat mixing coins W as discarded private reduction randomness only; do not assume pseudo-randomness in access models with revealed coins.",
+    "reason_invalid": "Conditioned on A and W, W*A is completely deterministic. Revealing W gives total variation distance 1 - q^(-d*M*n) from uniform.",
+    "source": "research/reductions/structured_edcp_upstream_mixing.json"
+  },
+  {
+    "applies_to": [
+      "DHS-GOWERS-SIEVE",
+      "EXP-DHS-DCP-COHERENT-MATCHING-INTERFACE"
+    ],
+    "claim": "Surjectivity of a module map over a quotient ring implies the existence of an invertible n x n minor.",
+    "evidence": {
+      "analytic_all_clean_weight_bounds_pass": true,
+      "analytic_scaling_table_points": 3,
+      "exact_carry_lift_trials_passed": 10,
+      "lemma46_counterexample_norm_d128": 64,
+      "lemma46_counterexample_norm_d64": 32,
+      "max_canonical_embedding_residual": 1.565630917589724e-13,
+      "mixed_error_covariance_positive": true,
+      "surjective_counterexample_span_size": 25,
+      "surjective_counterexample_verified": true
+    },
+    "id": "NEG-EDCP-SURJECTIVE-NO-UNIT-MINOR",
+    "lesson": "Do not condition on an unverified unit minor over non-field quotient rings; use disjoint fixed anchor blocks in the proof.",
+    "reason_invalid": "In F_5[X]/(X^2+1), u=3+4X and v=3+X satisfy u+v=1, u^2=u, v^2=v, u*v=0. The map (x,y)->xu+yv is surjective but neither entry is a unit (both are zero divisors), so no 1x1 invertible minor exists.",
+    "source": "research/reductions/structured_edcp_upstream_mixing.json"
+  },
+  {
+    "applies_to": [
+      "DHS-GOWERS-SIEVE",
       "EXP-DHS-DCP-CARRY-AFFINE-DEGREE-INVARIANCE",
       "PO-MEASUREMENT"
     ],
