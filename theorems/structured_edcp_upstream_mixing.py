@@ -37,6 +37,7 @@ if str(_ROOT) not in sys.path:
     sys.path.insert(0, str(_ROOT))
 
 import numpy as np
+import mpmath
 
 from research_registry import (
     ExperimentResultRecord,
@@ -49,6 +50,46 @@ from research_registry import (
 STRUCTURED_EDCP_UPSTREAM_MIXING_PATH = Path("research/reductions/structured_edcp_upstream_mixing.json")
 DEFAULT_EXPERIMENT_ID = "EXP-DHS-DCP-COHERENT-MATCHING-INTERFACE"
 DEFAULT_CANDIDATE_ID = "DHS-GOWERS-SIEVE"
+
+# Exact certified prime modulus values q = nextprime(d^12) for analytic reference dimensions
+CERTIFIED_PRIMES = {
+    64: 4722366482869645213711,
+    256: 79228162514264337593543950397,
+    1024: 1329227995784915872903807060280345027,
+}
+
+
+def get_certified_prime(d: int) -> int:
+    """Obtain certified prime q = nextprime(d^12)."""
+    try:
+        import sympy
+        return int(sympy.nextprime(d ** 12))
+    except ImportError:
+        if d in CERTIFIED_PRIMES:
+            return CERTIFIED_PRIMES[d]
+        raise ValueError(f"Exact certified prime for d={d} requires sympy or registered entry")
+
+
+def integer_nthroot(y: int, n: int) -> int:
+    """Exact integer floor(y**(1/n)) using integer Newton-Raphson method."""
+    if y < 0:
+        raise ValueError("y must be non-negative")
+    if y == 0:
+        return 0
+    if n == 1:
+        return y
+    x = int(math.isqrt(y)) if n == 2 else int(2 ** math.ceil(y.bit_length() / n))
+    while True:
+        x_pow = x ** (n - 1)
+        x_next = ((n - 1) * x + y // x_pow) // n
+        if x_next >= x:
+            break
+        x = x_next
+    while (x + 1) ** n <= y:
+        x += 1
+    while x ** n > y:
+        x -= 1
+    return x
 
 
 @dataclass(frozen=True)
@@ -86,7 +127,9 @@ class JointRegularityCertificate:
     beta: float
     bad_minor_prob_upper: float
     delta_amp_upper: float
+    log10_delta_amp_upper: float
     delta_eval_upper: float
+    log10_delta_eval_upper: float
     is_vacuous: bool
 
 
@@ -260,7 +303,10 @@ def surjective_no_unit_minor_counterexample() -> dict[str, Any]:
 def lemma_46_carry_counterexample(d: int, q: int) -> dict[str, Any]:
     """Compute the exact carry for a(X)=h*U(X) and s(X)=U(X) in Z[X]/(X^d+1).
 
-    Shows ||c||_infty == d/2, violating Lemma 46's displayed bound of <= 26.5 when d >= 64.
+    Directly constructs a and s, evaluates their negacyclic product modulo (X^d+1),
+    computes the centered reduction b mod q, and extracts the quotient carry polynomial k.
+    Shows ||k||_infty == d/2, violating Lemma 46's displayed bound of <= 26.5 when d >= 64,
+    while correctly exhibiting ||k||_infty <= 26.5 for d <= 32 (non-refuting baseline).
     """
     if d % 2 != 0 or d < 2:
         raise ValueError("d must be an even integer >= 2")
@@ -268,8 +314,12 @@ def lemma_46_carry_counterexample(d: int, q: int) -> dict[str, Any]:
         raise ValueError("q must be an odd prime > d")
 
     h = (q - 1) // 2
-    c = [j - d // 2 for j in range(d)]
-    norm_inf = max(abs(x) for x in c)
+    a = [h] * d
+    s = [1] * d
+    p = negacyclic_mul(a, s)
+    b = [center_mod(x, q) for x in p]
+    k = [(p[i] - b[i]) // q for i in range(d)]
+    norm_inf = max(abs(x) for x in k)
 
     lemma_46_bound = 26.5
     violates_bound = norm_inf > lemma_46_bound
@@ -281,6 +331,8 @@ def lemma_46_carry_counterexample(d: int, q: int) -> dict[str, Any]:
         "theoretical_d_over_2": d // 2,
         "lemma_46_displayed_bound": lemma_46_bound,
         "violates_lemma_46": violates_bound,
+        "formula_match": norm_inf == d // 2,
+        "carry_polynomial": k,
     }
 
 
@@ -288,40 +340,87 @@ def lemma_46_carry_counterexample(d: int, q: int) -> dict[str, Any]:
 # 3. Regularity Bounds & Error Budgets
 # -----------------------------------------------------------------------------
 
-def compute_lpr_beta(d: int, q: int, m: int, n: int, r_mix: float) -> float:
-    """Compute LPR regularity factor beta from equation (4)."""
-    a0 = (1.0 + 2.0 ** (-2 * d)) ** m
-    term1 = (a0 - 1.0) * ((1.0 + (1.0 / q) ** (m - n)) ** d)
-    ratio = d / r_mix
-    log_term2 = (
-        math.log(a0)
-        + (d * m) * math.log(ratio)
-        + (d * n) * math.log(q)
-        + d * math.log(1.0 + (1.0 / q) ** n)
+def compute_lpr_beta(d: int, q: int, m: int, n: int, r_mix: float) -> tuple[float, float]:
+    """Compute LPR regularity factor beta from equation (4) using high-precision arithmetic.
+
+    Returns (beta_float, log10_beta_float).
+    """
+    mpmath.mp.dps = 100
+    mp_d = mpmath.mpf(d)
+    mp_q = mpmath.mpf(q)
+    mp_m = mpmath.mpf(m)
+    mp_n = mpmath.mpf(n)
+    mp_rmix = mpmath.mpf(r_mix)
+
+    a0 = (1 + mpmath.power(2, -2 * mp_d)) ** mp_m
+    a0_minus_1 = mpmath.expm1(mp_m * mpmath.log1p(mpmath.power(2, -2 * mp_d)))
+
+    term1 = a0_minus_1 * ((1 + mpmath.power(mp_q, -(mp_m - mp_n))) ** mp_d)
+    term2 = (
+        a0
+        * mpmath.power(mp_d / mp_rmix, mp_d * mp_m)
+        * mpmath.power(mp_q, mp_d * mp_n)
+        * ((1 + mpmath.power(mp_q, -mp_n)) ** mp_d)
     )
-    if log_term2 > 700:
-        return float("inf")
-    term2 = math.exp(log_term2)
-    return term1 + term2
+    beta = term1 + term2
+
+    log10_beta = float(mpmath.log10(beta))
+    beta_float = float(beta) if log10_beta < 300 else float("inf")
+    return beta_float, log10_beta
 
 
 def compute_joint_regularity(
     d: int, q: int, m: int, n: int, M: int, r_mix: float
 ) -> JointRegularityCertificate:
-    """Compute certificate for delta_amp and delta_eval."""
+    """Compute certificate for delta_amp and delta_eval with exact directional bounds."""
+    mpmath.mp.dps = 100
+    mp_d = mpmath.mpf(d)
+    mp_q = mpmath.mpf(q)
+    mp_m = mpmath.mpf(m)
+    mp_M = mpmath.mpf(M)
+    mp_n = mpmath.mpf(n)
     t = m // n
-    p_badminor = min(1.0, (n * d) / q)
-    beta = compute_lpr_beta(d, q, m, n, r_mix)
-    is_vacuous = beta >= 1.0 or math.isinf(beta)
+    mp_t = mpmath.mpf(t)
+    mp_rmix = mpmath.mpf(r_mix)
+
+    p_badminor_mp = min(mpmath.mpf(1), (mp_n * mp_d) / mp_q)
+    p_badminor = float(p_badminor_mp)
+
+    a0 = (1 + mpmath.power(2, -2 * mp_d)) ** mp_m
+    a0_minus_1 = mpmath.expm1(mp_m * mpmath.log1p(mpmath.power(2, -2 * mp_d)))
+
+    term1 = a0_minus_1 * ((1 + mpmath.power(mp_q, -(mp_m - mp_n))) ** mp_d)
+    term2 = (
+        a0
+        * mpmath.power(mp_d / mp_rmix, mp_d * mp_m)
+        * mpmath.power(mp_q, mp_d * mp_n)
+        * ((1 + mpmath.power(mp_q, -mp_n)) ** mp_d)
+    )
+    beta = term1 + term2
+
+    is_vacuous = bool(beta >= 1.0 or mpmath.isinf(beta))
 
     if is_vacuous:
-        delta_amp = 1.0
+        delta_amp_upper = 1.0
+        log10_delta_amp = 0.0
     else:
-        delta_amp = min(1.0, (p_badminor ** t) + M * t * beta)
+        delta_amp = min(mpmath.mpf(1), mpmath.power(p_badminor_mp, mp_t) + mp_M * mp_t * beta)
+        delta_amp_upper = float(delta_amp)
+        log10_delta_amp = float(mpmath.log10(delta_amp))
 
-    log_Q = d * math.log10(q)
-    log_eval = math.log10(M * n) - log_Q
-    delta_eval = 10.0 ** log_eval if log_eval < 0 else 1.0
+    # Evaluation TV distance: delta_eval <= M * n / (q^d + 1)
+    Q = mpmath.power(mp_q, mp_d) + 1
+    delta_eval_mp = (mp_M * mp_n) / Q
+    log10_delta_eval = float(mpmath.log10(delta_eval_mp))
+
+    # Safe outward-rounded float64 upper bound:
+    # Since delta_eval > 0 strictly, never return 0.0.
+    if log10_delta_eval < math.log10(sys.float_info.min):
+        delta_eval_upper = sys.float_info.min
+    else:
+        delta_eval_upper = float(delta_eval_mp)
+
+    beta_float = float(beta) if beta < 1e300 else float("inf")
 
     return JointRegularityCertificate(
         ring_degree=d,
@@ -330,18 +429,21 @@ def compute_joint_regularity(
         module_rank=n,
         amplified_rows=M,
         mixing_width=r_mix,
-        beta=beta,
+        beta=beta_float,
         bad_minor_prob_upper=p_badminor,
-        delta_amp_upper=delta_amp,
-        delta_eval_upper=delta_eval,
+        delta_amp_upper=delta_amp_upper,
+        log10_delta_amp_upper=log10_delta_amp,
+        delta_eval_upper=delta_eval_upper,
+        log10_delta_eval_upper=log10_delta_eval,
         is_vacuous=is_vacuous,
     )
 
 
 def compute_gaussian_error_budget(
     d: int, q: int, m: int, n: int, M: int, r_mix: float, r_e: float, r_s: float
-) -> tuple[int, int, int, float]:
-    """Compute U0, K0, B_out, and total error failure probability delta_err."""
+) -> tuple[int, int, int, float, float]:
+    """Compute U0, K0, B_out, total error failure probability delta_err, and log10_delta_err."""
+    mpmath.mp.dps = 100
     T = d + math.ceil(math.log2(2 * M * d))
     target = int(math.ceil((r_e ** 2) * (r_mix ** 2) * m * T))
     U0 = math.isqrt((target + 2) // 3)
@@ -353,13 +455,23 @@ def compute_gaussian_error_budget(
     K0 = (h * S0 + U0 + h) // q
     B_out = U0 + K0
 
-    c0 = (math.pi - math.log(2)) / 2.0
-    log_e = -c0 * m * d
-    log_s = -c0 * n * d
-    log_mix = -float(d)
-    delta_err = math.exp(log_e) + math.exp(log_s) + math.exp(log_mix)
+    mp_d = mpmath.mpf(d)
+    mp_m = mpmath.mpf(m)
+    mp_n = mpmath.mpf(n)
 
-    return U0, K0, B_out, delta_err
+    c0 = (mpmath.pi - mpmath.log(2)) / 2
+    t1 = mpmath.exp(-c0 * mp_m * mp_d)
+    t2 = mpmath.exp(-c0 * mp_n * mp_d)
+    t3 = mpmath.exp(-mp_d)
+    delta_err_mp = t1 + t2 + t3
+    log10_delta_err = float(mpmath.log10(delta_err_mp))
+
+    if log10_delta_err < math.log10(sys.float_info.min):
+        delta_err = sys.float_info.min
+    else:
+        delta_err = float(delta_err_mp)
+
+    return U0, K0, B_out, delta_err, log10_delta_err
 
 
 # -----------------------------------------------------------------------------
@@ -408,27 +520,12 @@ def check_mixed_error_covariance(samples: int = 5000, seed: int = 20260925) -> d
 # -----------------------------------------------------------------------------
 
 def build_analytic_scaling_table() -> list[dict[str, Any]]:
-    """Reproduce Section 8 analytic reference table for d in {64, 256, 1024}."""
-    try:
-        import sympy
-        has_sympy = True
-    except ImportError:
-        has_sympy = False
-
+    """Reproduce Section 8 analytic reference table for d in {64, 256, 1024} using certified parameters."""
+    mpmath.mp.dps = 100
     rows: list[dict[str, Any]] = []
 
-    primes = {
-        64: 4722366482869645213696 + 1,
-        256: 79228162514264337593543950336 + 1,
-        1024: 1329227995784915872903807060280344576 + 1,
-    }
-
     for d in (64, 256, 1024):
-        if has_sympy:
-            q = int(sympy.nextprime(d ** 12))
-        else:
-            q = primes[d]
-
+        q = get_certified_prime(d)
         m = math.ceil(math.log(d))
         M = math.ceil(d * math.log(q))
         n = 1
@@ -436,27 +533,32 @@ def build_analytic_scaling_table() -> list[dict[str, Any]]:
         r_e = math.isqrt(d)
         r_s = math.isqrt(d)
 
-        if has_sympy:
-            base = int(sympy.integer_nthroot(q ** (d + 2), d * m)[0])
-        else:
-            base = int(math.floor((float(q) ** (d + 2)) ** (1.0 / (d * m))))
+        base = integer_nthroot(q ** (d + 2), d * m)
         r_mix = 2 * d * (base + 1)
 
-        T = d + math.ceil(math.log2(2 * M * d))
-        U0, K0, B_out, delta_err = compute_gaussian_error_budget(
-            d=d, q=q, m=m, n=n, M=M, r_mix=r_mix, r_e=r_e, r_s=r_s
+        reg_cert = compute_joint_regularity(
+            d=d, q=q, m=m, n=n, M=M, r_mix=float(r_mix)
+        )
+        U0, K0, B_out, delta_err, log10_delta_err = compute_gaussian_error_budget(
+            d=d, q=q, m=m, n=n, M=M, r_mix=float(r_mix), r_e=float(r_e), r_s=float(r_s)
         )
 
         R_phase = d
         a = 3
-        term = 24.0 * a * d * R_phase * B_out / (q - 1.0)
-        grid_ratio = 2.0 * term * M * L
-        clean_weight_bound = max(0.0, (1.0 - term) ** (M * L))
 
-        c0 = (math.pi - math.log(2)) / 2.0
-        log10_err = math.log10(math.exp(-c0 * m * d) + math.exp(-c0 * n * d) + math.exp(-d)) if d <= 256 else -d * math.log10(math.e)
-        p_badminor = float(n * d) / float(q)
-        log10_amp = math.log10(p_badminor) * m if d <= 256 else -float(d * 12 - math.log2(d)) * m * math.log10(2)
+        # Exact integer check of half-margin condition: 48 * a * M * L * E0 <= Q
+        E0_int = d * R_phase * B_out * (q ** d - 1) // (q - 1)
+        Q_int = q ** d + 1
+        passes_half_margin = bool(48 * a * M * L * E0_int <= Q_int)
+
+        # High-precision clean weight: p0 = (1 - loss_per_row)**(M * L)
+        # loss_per_row = 24 * a * E0 / Q
+        mp_E0 = mpmath.mpf(E0_int)
+        mp_Q = mpmath.power(mpmath.mpf(q), d) + 1
+        loss_per_row = (24 * a * mp_E0) / mp_Q
+        p0 = (1 - loss_per_row) ** (M * L)
+        clean_weight_bound = float(p0)
+        grid_ratio = float(2 * loss_per_row * M * L)
 
         rows.append({
             "d": d,
@@ -469,9 +571,10 @@ def build_analytic_scaling_table() -> list[dict[str, Any]]:
             "B_out": B_out,
             "grid_ratio": grid_ratio,
             "clean_weight_lower_bound": clean_weight_bound,
-            "log10_delta_amp_upper": log10_amp,
-            "log10_delta_err_upper": log10_err,
-            "passes_half_margin_certificate": clean_weight_bound >= 0.5,
+            "log10_delta_amp_upper": reg_cert.log10_delta_amp_upper,
+            "log10_delta_err_upper": log10_delta_err,
+            "log10_delta_eval_upper": reg_cert.log10_delta_eval_upper,
+            "passes_half_margin_certificate": passes_half_margin,
         })
 
     return rows
@@ -484,6 +587,7 @@ def build_analytic_scaling_table() -> list[dict[str, Any]]:
 def build_structured_edcp_upstream_mixing_report() -> UpstreamMixingReport:
     """Build comprehensive report on upstream mixing, carry bounds, and corrections."""
     surjective_ctrl = surjective_no_unit_minor_counterexample()
+    lemma46_ctrl_32 = lemma_46_carry_counterexample(32, 257)  # Below-threshold baseline
     lemma46_ctrl_64 = lemma_46_carry_counterexample(64, 257)
     lemma46_ctrl_128 = lemma_46_carry_counterexample(128, 521)
     isometry_ctrl = check_canonical_embedding_isometry()
@@ -542,8 +646,8 @@ def build_structured_edcp_upstream_mixing_report() -> UpstreamMixingReport:
                 claimed_statement="Amplified matrix W*A mod q is pseudo-random even if mixing coins W are revealed.",
                 counterexample_parameters={"access_model": "revealed_coins"},
                 actual_behavior="Conditioned on A and W, W*A is deterministic; TV distance is 1 - q^(-d*M*n).",
-                repaired_form="Treat mixing coins W as discarded private reduction randomness only.",
-                impact_on_hardness_claims="Rules out exposing W to downstream solvers or verifying oracles.",
+                repaired_form="Treat mixing coins W as discarded private reduction randomness only; downstream steps must rely on matrix marginal bounds or fresh randomness.",
+                impact_on_hardness_claims="Rules out assuming conditional pseudo-randomness of W*A given W; does not prohibit downstream algorithms using fresh independent selectors or marginal bounds.",
             )
         ),
         asdict(
@@ -560,8 +664,11 @@ def build_structured_edcp_upstream_mixing_report() -> UpstreamMixingReport:
     ]
 
     headline_metrics = {
+        "lemma46_counterexample_norm_d32": lemma46_ctrl_32["actual_carry_infinity_norm"],
         "lemma46_counterexample_norm_d64": lemma46_ctrl_64["actual_carry_infinity_norm"],
         "lemma46_counterexample_norm_d128": lemma46_ctrl_128["actual_carry_infinity_norm"],
+        "lemma46_below_threshold_d32_passes": not lemma46_ctrl_32["violates_lemma_46"],
+        "lemma46_d64_violates_bound": lemma46_ctrl_64["violates_lemma_46"],
         "surjective_counterexample_span_size": surjective_ctrl["span_size"],
         "surjective_counterexample_verified": surjective_ctrl["surjective_without_unit_minor"],
         "exact_carry_lift_trials_passed": carry_lift_identities_passed,
@@ -569,6 +676,10 @@ def build_structured_edcp_upstream_mixing_report() -> UpstreamMixingReport:
         "mixed_error_covariance_positive": cov_ctrl["is_positive"],
         "analytic_scaling_table_points": len(analytic_table),
         "analytic_all_clean_weight_bounds_pass": all(r["passes_half_margin_certificate"] for r in analytic_table),
+        "analytic_d1024_clean_weight_loss_positive": (1.0 - analytic_table[2]["clean_weight_lower_bound"] > 0),
+        "analytic_d64_log10_delta_amp": analytic_table[0]["log10_delta_amp_upper"],
+        "analytic_d256_log10_delta_amp": analytic_table[1]["log10_delta_amp_upper"],
+        "analytic_d1024_log10_delta_amp": analytic_table[2]["log10_delta_amp_upper"],
     }
 
     claim_gate = {
@@ -576,7 +687,9 @@ def build_structured_edcp_upstream_mixing_report() -> UpstreamMixingReport:
         "lemma46_dimension_independent_carry_refuted": True,
         "revealed_mixing_coins_pseudorandom_refuted": True,
         "amplified_errors_independent_refuted": True,
-        "forward_carry_and_mixing_reduction_certified": True,
+        "forward_carry_lift_identities_verified": True,
+        "local_mixing_regularity_bounds_computed": True,
+        "forward_carry_and_mixing_reduction_certified": False,
         "reverse_reduction_audited": False,
         "worst_case_lattice_hardness_established": False,
         "speedup_claim_allowed": False,
@@ -591,16 +704,17 @@ def build_structured_edcp_upstream_mixing_report() -> UpstreamMixingReport:
             "FALSIFIER-EDCP-REVEALED-MIXING-COINS-INDEPENDENCE",
             "FALSIFIER-EDCP-AMPLIFIED-ERROR-INDEPENDENCE",
         ],
-        status="forward-mixing-repaired-reverse-unaudited",
+        status="forward-mixing-bounds-computed-proof-review-pending",
         summary=(
-            "Exact negacyclic carry lifts repair the forward P-MLWE to Structured EDCP reduction. "
+            "Exact negacyclic carry lifts and local regularity bounds are verified across finite and analytic reference points. "
             "Counterexamples refute Lemma 46 dimension-independent carry bound and surjective unit minor inference. "
-            "Reverse reduction and worst-case lattice hardness remain explicitly uncertified; speedup claims blocked."
+            "Forward reduction remains uncertified pending independent proof review; reverse reduction and worst-case lattice hardness remain explicitly unaudited; speedup claims strictly blocked."
         ),
         corrections=corrections,
         analytic_scaling_table=analytic_table,
         finite_controls={
             "surjective_control": surjective_ctrl,
+            "lemma46_d32": lemma46_ctrl_32,
             "lemma46_d64": lemma46_ctrl_64,
             "lemma46_d128": lemma46_ctrl_128,
             "isometry": isometry_ctrl,
@@ -652,7 +766,7 @@ def write_structured_edcp_upstream_mixing_report(
                 source=str(output_path),
                 claim="The amplified matrix W*A mod q remains pseudo-random even if the mixing coins W are revealed as extra side information.",
                 reason_invalid="Conditioned on A and W, W*A is completely deterministic. Revealing W gives total variation distance 1 - q^(-d*M*n) from uniform.",
-                lesson="Treat mixing coins W as discarded private reduction randomness only; do not assume pseudo-randomness in access models with revealed coins.",
+                lesson="Treat mixing coins W as discarded private reduction randomness when asserting uniformity; do not assume conditional pseudo-randomness of W*A given W. Downstream steps may still utilize matrix marginal distributions or independent fresh randomness.",
                 applies_to=[registry_candidate_id, registry_experiment_id],
                 evidence=payload.get("headline_metrics", {}),
             ),

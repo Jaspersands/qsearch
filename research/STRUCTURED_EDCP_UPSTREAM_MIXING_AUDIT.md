@@ -5,6 +5,13 @@ Status: LOCAL DERIVATION / REVIEW PENDING. This is a scoped replacement argument
 for the forward source construction, not independent peer review, a novelty
 claim, a production implementation, or an algorithm solving lattice problems.
 
+FOLLOW-UP (2026-09-26): `STRUCTURED_EDCP_DIRECT_PHASE_SOURCE.md` bypasses the
+FINAL quantum grid using fresh classical phase tags and quantum Gaussian
+preparation. `STRUCTURED_EDCP_PHASE_SOURCE_MOMENTS.md` refines that direct
+route for this exact source prior. These do not remove this note's upstream
+regularity obligations or validate the outstanding production certificate.
+Section 7 below remains the older, separately scoped grid construction.
+
 ## 1. Outcome And Scope
 
 The preceding joint-source note starts with an integer instance whose matrix
@@ -440,6 +447,14 @@ composition need independent mathematical review. No empirical check above
 certifies a growing-size quantum algorithm.
 
 ## 10. Handoff And Next Research Decision
+
+IMPLEMENTATION REVIEW (2026-09-25): the subsequently landed module and JSON
+do not correctly evaluate several numerical bounds. Read
+`STRUCTURED_EDCP_UPSTREAM_NUMERICAL_REVIEW.md` before trusting their
+certification flag. The theory's positive terms, bound directions and review
+status are not superseded by that implementation. The next theory pass,
+`STRUCTURED_EDCP_CLASSICAL_READOUT_SIMULATION.md`, also gives a stronger
+source-specific classical comparator for local Fourier measurements.
 
 GEMINI, after reviewing the derivation:
 

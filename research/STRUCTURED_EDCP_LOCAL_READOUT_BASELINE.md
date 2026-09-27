@@ -8,6 +8,12 @@ decoding also suffice with a constant number of blocks in a scoped growing
 Gaussian regime. The classical search is not shown to be efficient. This
 does not classically simulate the original quantum source or prove a speedup.
 
+FOLLOW-UP: `STRUCTURED_EDCP_CLASSICAL_READOUT_SIMULATION.md` approximates
+this specified local measurement classically from the retained integer
+source (A,b), with explicit hashing, noise and source losses. It does not
+simulate the quantum states or arbitrary joint measurements. Its access
+premises are essential; standalone EDCP is not thereby dequantized.
+
 The research consequence is substantive: an information certificate alone
 cannot justify a collective-measurement advantage for this family. Any proposed
 joint-fiber algorithm must be compared with decoding the classical data below.

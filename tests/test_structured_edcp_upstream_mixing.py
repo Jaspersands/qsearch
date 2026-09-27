@@ -101,6 +101,9 @@ class StructuredEDCPUpstreamMixingTests(unittest.TestCase):
         cert_good = compute_joint_regularity(d, q, m, n, M, r_mix=1000000.0)
         self.assertFalse(cert_good.is_vacuous)
         self.assertLess(cert_good.delta_amp_upper, 1.0)
+        # Evaluation discrepancy is strictly positive (never 0.0)
+        self.assertGreater(cert_good.delta_eval_upper, 0.0)
+        self.assertLess(cert_good.log10_delta_eval_upper, 0.0)
 
     def test_mixed_error_covariance_positive(self):
         cov_info = check_mixed_error_covariance(samples=2000, seed=42)
@@ -119,6 +122,9 @@ class StructuredEDCPUpstreamMixingTests(unittest.TestCase):
         self.assertEqual(row64["B_out"], 355689673)
         self.assertAlmostEqual(row64["grid_ratio"], 0.04087873, places=6)
         self.assertAlmostEqual(row64["clean_weight_lower_bound"], 0.9797681, places=6)
+        self.assertAlmostEqual(row64["log10_delta_amp_upper"], -33.6294, places=3)
+        self.assertAlmostEqual(row64["log10_delta_err_upper"], -27.7948, places=3)
+        self.assertAlmostEqual(row64["log10_delta_eval_upper"], -1383.64, places=1)
         self.assertTrue(row64["passes_half_margin_certificate"])
 
         # Check d=256
@@ -127,6 +133,10 @@ class StructuredEDCPUpstreamMixingTests(unittest.TestCase):
         self.assertEqual(row256["M"], 17035)
         self.assertEqual(row256["U0"], 13854650858)
         self.assertEqual(row256["B_out"], 13854652906)
+        self.assertAlmostEqual(row256["clean_weight_lower_bound"], 0.999995952, places=8)
+        self.assertAlmostEqual(row256["log10_delta_amp_upper"], -148.3397, places=3)
+        self.assertAlmostEqual(row256["log10_delta_err_upper"], -111.1794, places=3)
+        self.assertAlmostEqual(row256["log10_delta_eval_upper"], -7393.88, places=1)
         self.assertTrue(row256["passes_half_margin_certificate"])
 
         # Check d=1024
@@ -135,6 +145,13 @@ class StructuredEDCPUpstreamMixingTests(unittest.TestCase):
         self.assertEqual(row1024["M"], 85174)
         self.assertEqual(row1024["U0"], 480919408113)
         self.assertEqual(row1024["B_out"], 480919424497)
+        # Non-unit clean weight lower bound: strictly < 1.0 and strictly > 0.5
+        self.assertLess(row1024["clean_weight_lower_bound"], 1.0)
+        self.assertGreater(row1024["clean_weight_lower_bound"], 0.999999999)
+        self.assertAlmostEqual(row1024["clean_weight_lower_bound"], 0.999999999330, places=11)
+        self.assertAlmostEqual(row1024["log10_delta_amp_upper"], -231.7931, places=3)
+        self.assertAlmostEqual(row1024["log10_delta_err_upper"], -444.7175, places=3)
+        self.assertAlmostEqual(row1024["log10_delta_eval_upper"], -36985.64, places=1)
         self.assertTrue(row1024["passes_half_margin_certificate"])
 
     def test_claim_gate_and_no_speedup(self):
@@ -146,7 +163,23 @@ class StructuredEDCPUpstreamMixingTests(unittest.TestCase):
         self.assertTrue(report.claim_gate["lemma46_dimension_independent_carry_refuted"])
         self.assertTrue(report.claim_gate["revealed_mixing_coins_pseudorandom_refuted"])
         self.assertTrue(report.claim_gate["amplified_errors_independent_refuted"])
-        self.assertTrue(report.claim_gate["forward_carry_and_mixing_reduction_certified"])
+        self.assertTrue(report.claim_gate["forward_carry_lift_identities_verified"])
+        self.assertTrue(report.claim_gate["local_mixing_regularity_bounds_computed"])
+        # Proof certification is NOT claimed based on finite arithmetic tests alone
+        self.assertFalse(report.claim_gate["forward_carry_and_mixing_reduction_certified"])
+
+    def test_integer_nthroot_and_certified_primes(self):
+        from structured_edcp_upstream_mixing import integer_nthroot, get_certified_prime
+        # Known integer powers
+        self.assertEqual(integer_nthroot(1000, 3), 10)
+        self.assertEqual(integer_nthroot(1001, 3), 10)
+        self.assertEqual(integer_nthroot(999, 3), 9)
+        self.assertEqual(integer_nthroot(2 ** 128, 4), 2 ** 32)
+        # Certified primes
+        for d in (64, 256, 1024):
+            q = get_certified_prime(d)
+            self.assertGreater(q, d ** 12)
+            self.assertEqual(q % 2, 1)
 
     def test_writer_registers_negatives_and_experiment_result(self):
         old_cwd = os.getcwd()

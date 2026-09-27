@@ -1,6 +1,390 @@
 # Research Agent Handoff
 
-Last updated: 2026-09-25
+Last updated: 2026-09-27
+
+## Latest Theory Pass: Source-Hardness Bridge
+
+Read `research/STRUCTURED_EDCP_SOURCE_HARDNESS_AUDIT.md`. LOCAL DERIVATION /
+REVIEW PENDING. The current r_e=r_s=sqrt(d) coefficient source pulls back to
+dual canonical width 1, not d; it does not meet the checked spherical RLWE
+hardness theorem. This is not a classical attack. PRS Corollary 7.3 removes
+the older modulus-splitting requirement but retains a growing noise threshold.
+
+Two explicit alternate contracts connect to the published theorem: spherical
+noise plus randomized Gaussian rounding, and the original hidden elliptical
+shape mixture plus a new correlation-tolerant moment bound. The latter must
+sample its shape once per instance, not per row, and never reveal it to the
+decoder. A unit anchor supplies a short secret; a fresh withheld sample turns
+recovery into distinguishing with all losses charged. No reverse EDCP theorem
+is assumed. Both source lanes retain asymptotic two-block information; finite
+sufficient references are 4,3,3 blocks at d=64,256,1024. The former d=64,L=3
+certificate cannot be transferred to these noisier sources.
+
+Checks: 170,368 exact normal-form cases, 5,120 correlated moment cases, sixteen
+rounding laws, 45 uniform residues, 24 covariance/72 MGF checks, four embedding
+checks and fifteen growing analytic references. No decoder, production wiring,
+routine full-suite run, commit or proof-status promotion. Gemini has the source
+contracts and negative controls; upstream numerical repair remains necessary.
+Main-model work returns to a concrete quantum cross-block operation, with
+independent review of this hardness bridge still outstanding.
+
+## Latest Constructive Audit: The Whole Kernel Is A Known Principal Ideal
+
+FOLLOW-UP: Section 9 now proves that ANY extension unit multiplying the
+natural B-first ideal basis retains first-block volume >=Q and the exponential
+universal-envelope lower bound. Other block orders/general basis operations
+remain open. 450 bounded unit-power/order profiles gave no improvement over
+their same-order controls; ordinary classical LLL did improve them. Exact
+checks include 75 first-block identities and eighteen inherited-unit prefix
+identities. Do not implement a B-first unit-search pipeline on this evidence.
+
+Section 8 of `research/STRUCTURED_EDCP_MODULE_GLUING_AUDIT.md` constructs
+O=Z[Y]/((q-Y^L)^d+1), J=Y*O. For odd q and power-of-two d, the polynomial
+is Eisenstein at 2. The label-dependent basis 1,Y+a_1,...,Y^(L-1)+a_(L-1)
+identifies the ENTIRE native kernel with J, not a finite-index approximation.
+LOCAL DERIVATION / REVIEW PENDING; no novelty claim. The generator Y is
+already known and within (1+1/q)^(1/L) of canonical shortest, but may be
+arbitrarily worse than a short vector in the INPUT coefficient metric.
+
+The exact pullback metric retains the original label shear. Positive
+diagonal embedding twists cannot generally restore it: a necessary first-
+label condition has probability <=(2*floor((q+1)^(1/L))+1)^d/Q. Replacing
+the native Gaussian by the convenient canonical one is not a repair: its
+phase sits in only one block, losing the multi-block information gain.
+The expanded Biasse--Song S-unit paper was checked; its quantum primitive
+does not supply this metric optimizer or conditional sampler automatically.
+
+Checks: 18 exact field/order/kernel encodings, 90 metric identities, nine
+wrong-metric counterfamilies, 120 twist controls, twelve exhaustive label
+counts, twelve full finite source Gram comparisons, six analytic references.
+Gemini has an explicit metric/source-change contract, not an instruction to
+build another PIP wrapper. Next main-model target: a genuinely quantum
+label-metric basis/conditional operation in this fixed field, or a different
+coherent cross-block construction. No routine wiring/test pass or commit.
+
+## Latest Filter Pass: Optimized Rejection Still Needs Cross-Block Mixing
+
+Section 9 of `research/STRUCTURED_EDCP_KLEIN_DUALITY_AUDIT.md` now tests
+special filters beyond the universal envelope. LOCAL DERIVATION / REVIEW
+PENDING. If the proposal's rest marginal is the unconditional Gaussian and
+the effective successful instrument preserves its coefficient labels, then
+success times output rest mass cannot exceed that prior. A likelihood-set
+argument gives A*(1-eta_u-sqrt(epsilon_F))<=r(u)/tau. Gaussian radial tails
+and full-source chi-square control turn this into a typical-source bound;
+the other L-1 blocks need not themselves be informative.
+
+For 0.99 squared fidelity at the three-block widths, log10 base-filter
+acceptance is <=-828.536,-3830.118,-17276.009 outside source/label exception
+mass about 1.055%,1.00002%,1.000001%, conditional on the information event.
+These are analytic references, not universal circuit lower bounds. The
+ordinary amplification proxy is still exponential. Crucially, ADDITIVE
+proposal leakage can dominate these tiny acceptances; require multiplicative
+rest-marginal domination or explicitly retain leakage. Source-law error is
+not the same thing as proposal-construction precision.
+
+Checks: 3,420 capped-likelihood filters, 684 complex controlled instruments,
+108 source-weighted identities, twelve Gaussian radial sums, three growing
+references and a rest-mixing countercontrol. Gemini should extend the existing
+Klein checker. No wiring/full-suite run/commit. Main-model next target is an
+actual coherent cross-block transformation or quantum basis construction;
+better scalar filtering of the same proposal is not enough under this scope.
+
+## Latest Follow-Up: Fiber-Adaptive Basis Extraction
+
+Section 10 of `research/STRUCTURED_EDCP_PROFILE_LIST_DECODER.md` now covers
+a concrete escape from the earlier fixed-basis comparison. LOCAL DERIVATION /
+REVIEW PENDING. Artificial fiber frequencies are classically sampleable from
+public Gaussian coefficients. If a budgeted classical K(u) builder has
+universal-envelope repetition proxy T<=T_0 on source mass alpha, then density
+trimming extracts a noise-independent basis with
+H<=2*(1+chi2)*T_0^2/alpha with probability at least alpha/2. No evaluation of
+the actual fiber normalizer is needed in the extractor. The exact finite/full
+Gaussian conversion is J=H*(W/s_G)^(d*L); retain the ambient theta factor.
+
+Average-label information bounds give average-source extraction, NOT a
+per-fixed-instance amplification guarantee. The explicit concentrated-source
+countercontrol shows why the density premise matters. Special center-specific
+envelopes, actual noise-dependent bases and coherent basis interference remain
+outside scope. A quantum algorithm OUTPUTTING a classical good basis remains
+a viable target; the proof does not dequantize it, and suggests it need not
+also implement coherent variable-time fiber preparation.
+
+Checks: 108 native adaptive-basis controls, 300 independent probability
+controls and one nonflat countercontrol. No production wiring/full suite.
+Gemini should extend the existing profile checker with this contract, not
+create a separate search pipeline. Main-model priority: an explicit genuinely
+quantum basis/weighted-gluing operation or a special-envelope constructor,
+with no oracle assumed for the very operation being sought.
+
+## Latest Theory Pass: Orthogonal Ideals Do Not Supply The Decoder
+
+Read `research/STRUCTURED_EDCP_MODULE_GLUING_AUDIT.md`. LOCAL DERIVATION /
+REVIEW PENDING. A C=1 balanced free module has orthogonal K-Gram-Schmidt
+lines whose integral intersections miss index p^(d*(L-1)). This directly
+contradicts equation (70) of arXiv:2604.22900v2 and its stated diagonal-only
+modulus-independent bound; the critique is scoped to that inference, not
+all module algorithms or cryptographic security. It needs independent review.
+
+Our native kernel similarly contains D_0=(q-X)^L with index Q^(L-1).
+Its one-block ideal generator is already known. Solving principal ideals
+does not recover the cross-line Gaussian weights. For a final output
+supported on at most J D_0-cosets per frequency, adaptive coset choices are
+allowed, but source-weighted squared fidelity is <=J*Q/Z_R^(d*L) when
+2R<=q-1. A full-Gaussian theta bound removes that truncation premise.
+At the three-block source widths, log10 bounds for J=1 are about -199.009,
+-2966.043,-20812.661. This is NOT an unrestricted circuit lower bound:
+efficient coherent circuits can have exponentially large support.
+
+Checks: 27 exact balanced counterlattices, 115 enumerated quotient members,
+18 exact native kernels, 36 adaptive finite-support controls, an excluded-
+premise countercontrol, nine Gaussian-coset sums and three growing analytic
+references. No production wiring, routine full suite or commit. Gemini has
+the index/saturation and fidelity contract in the note. The main-model
+target remains a genuinely quantum weighted-gluing/conditional operation,
+not a PIP wrapper or another ordinary linear correction.
+
+## Latest Decoder Pass: Global Shear Exposes Integer Aliases
+
+Read `research/STRUCTURED_EDCP_SHEAR_ALIAS_DECODER.md`. LOCAL DERIVATION /
+REVIEW PENDING. The exact native shear U=[I,T;0,I] concentrates the phase
+into one block. Fourier-measuring the rest, applying ANY classically chosen
+linear phase correction g(theta), and Fourier-reading the remaining block
+has exactly the law of local Fourier readout p followed by
+theta=p_rest-T^T*p_1, output=p_1-g(theta). Nonlinear classical choices of g
+do not evade this. All classical computation costs and Born failures remain.
+
+Completing the correlated Gaussian square leaves an explicit integer-alias
+theta sum, not a free wide Gaussian. The matched classical problem has
+G=I+T^T*T, B=I+T*T^T and alias posterior proportional to
+exp(-2*pi*sigma^2*(theta+m)^T*G^(-1)*(theta+m)). Least squares only gives the
+conditional correction AFTER the alias is known. Fixed principal aliases
+can have tiny mass; a projected-Gaussian public determinant bound quantifies
+this, but does not constrain adaptive alias decoding or coherent processing.
+
+Checks: 24 full complex circuit-law comparisons (maximum L1 6.62e-16),
+16 secret-free outcome controls, 30 exact matrix identities, 36 complex
+Poisson identities, 15 scalar Gaussian bounds and three public-matrix
+analytic references. No quantum decoder or production wiring. The next
+theory pass must specify a coherent alias/non-Fourier operation or a genuine
+quantum solver for the classical-input integer inference problem, not another
+linear Gaussian correction wrapper. Gemini has the exact baseline contract.
+
+## Latest Follow-Up: Three-Block Information Certificate
+
+Read `research/STRUCTURED_EDCP_IDEAL_COLLISION_CORE.md`. LOCAL DERIVATION /
+REVIEW PENDING. For every t|Q the evaluation-kernel coefficient dual has
+lambda_1>=t^(-1/d). Standard Gaussian smoothing then bounds collisions by
+alpha*max(1/t,beta), with beta=(sqrt(d)/s_G)^d and
+alpha=(1+2^(-2d))*zeta^(-2d). The FULL-vector truncation exponent matters.
+An Euler-product bound uses every odd prime p|Q being 1 mod 2d; it does not
+treat all integers as possible divisors or assume Q square-free.
+
+This improves the moment source's sufficient finite count to THREE blocks
+at d=64,256,1024, with conditional ideal chi-square bounds approximately
+2.79e-4,1.74e-5,1.09e-6. The old 12,9,8 table below remains a looser valid
+certificate. Two blocks suffice asymptotically, including shrinking source
+error, but the finite two-block certificates are explicitly VACUOUS.
+No decoder has been supplied. Native-profile and generic polar costs remain.
+
+Checks: 306 exact dual-norm controls, 25 Gaussian divisor controls, 306 exact
+Euler-sum controls, a non-power-of-two counterexample, and six analytic
+reports. Next main-model target is the naturally labeled TWO-/THREE-block
+coherent conditional arithmetic problem, not further source-only optimization.
+Gemini integration contract and the still-prioritized upstream numerical
+repair are recorded below. No commit or routine production test pass.
+
+## Latest Pass: Direct Phase Source And Wider Information Regime
+
+Read `research/STRUCTURED_EDCP_DIRECT_PHASE_SOURCE.md`,
+`research/STRUCTURED_EDCP_WIDE_PHASE_INFORMATION.md` and
+`research/STRUCTURED_EDCP_PHASE_SOURCE_MOMENTS.md`.
+LOCAL DERIVATION / REVIEW PENDING. Fresh small linear combinations of retained
+(A,b) give known noisy tags t=u*b and labels a=u*A. Gaussian coefficient
+preparation followed by those tags approximates the WHOLE cq phase ensemble.
+Its joint error is delta_A+delta_lift+L*delta_hash plus
+sqrt(pi)*sigma*B*S_q/Q*sqrt(v_K*L*d*M) and implementation error. Discard the
+fresh selectors/tags before applying the ideal-source contract. This is
+quantum preparation from classical data, NOT classical simulation of arbitrary
+measurements, arbitrary phase-oracle access or a decoder.
+
+For the precise upstream Gaussian/short-secret PRIOR, a second-moment
+refinement replaces the worst-case lift cap and its failure event: rotation
+energy is <=Q^2/(q-1)^2 times coefficient energy; exact carry moments give
+C_mom=sqrt(U2)+sqrt(P2)/q+sqrt(d)/2. The phase error is bounded by
+sqrt(pi)*sigma*C_mom/(q-1)*sqrt(v_K*L*M), averaged over that source. Do not
+apply it to arbitrary fixed secrets or remove delta_lift from the older
+bounded-lift contract. The SAME refinement improves the classical readout.
+
+This bypasses the final grid p0/separation requirement, not upstream mixing,
+hardness or reverse-reduction obligations. It allows wider states. A new
+all-divisor Gaussian collision bound works without the old R<=d premise;
+an explicit modulo-5 counterexample shows why that premise cannot be dropped
+silently. At phase budget 0.001 the distributional reference has sufficient
+information with L=12,9,8 for d=64,256,1024. No efficient measurement is supplied;
+native-basis H remains exponential. Recompute old walk/core barriers at these
+widths instead of carrying over their small-width numerical conclusions.
+
+Checks: 96 joint phase controls, 24 full cq density comparisons, 125-selector
+energy reference, 16 wide collision ensembles / 32 divisor checks / 37 sum
+checks, 600 exact rotation/norm controls and 85,120 exhaustive source-moment
+cases. Phase-oracle and centered-chirp countercontrols block two invalid
+algorithm transfers. Six growing width/information references were computed.
+No production wiring, routine full suite, candidate promotion or commit.
+
+Gemini priority remains the upstream numerical repair below, then implement
+separate direct-phase and moment contracts with the full error ledgers and
+matched classical baseline. Main-model priority is now a global arithmetic
+conditional map or prior-specific decoder for the wider source, not another
+generic sampler wrapper or source-only parameter optimization.
+
+## Latest Pass: Off-Fiber Annealing And Polar Normalization
+
+Read `research/STRUCTURED_EDCP_OFF_FIBER_ANNEALING_AUDIT.md` and
+`research/STRUCTURED_EDCP_POLAR_NORMALIZATION_AUDIT.md`.
+LOCAL DERIVATION / REVIEW PENDING. These inspect the two obvious escapes from
+the preceding local-walk result instead of assuming that off-fiber access or
+QSVT alone supplies the missing operation.
+
+For a soft residual weight w, the normalized positive state's exact-fiber
+fidelity is r(u)/Z_u, with mean >=1/sum(w). Its SOURCE-WEIGHTED coefficient
+tail is <=eta*sum(w). After normalizing a unit first label, cheap first-block
+moves remain, so a correct proof uses cells indexed by the other blocks.
+An approximate-difference norm bound excludes sparse transitions between
+low-residual cells. Any reversible chain with that stationary soft Gaussian
+law then has gap <=8*(gamma_tail+alpha_W/tau), outside an explicit exception
+set. This permits off-fiber moves and is not limited to Metropolis proposals.
+The exponential gap conclusion holds even at fixed, small preparation error.
+It is NOT a general quantum Hamiltonian or state-preparation lower bound.
+
+The explicit source encoding A_(u,c)=sqrt(mu(c))*1[f(c)=u] is available at
+normalization one through ordinary source preparation and frequency arithmetic.
+Its singular values are sqrt(r(u)), not sqrt(Q*r(u)). Generic odd QSVT of
+degree m has successful output weight <=pi^2*m^2*(1+chi2(r))/(4Q).
+A near-unit condition-number RATIO does not remove that absolute scale.
+Diagonal filters retain their success cost, and the rank-one adiabatic path
+has a sqrt(r) invariant-sector gap, not that full-space gap at its degenerate
+endpoint. A flag-success counterexample had 0.8125 success but only 0.23184
+conditional coherent fidelity due to signs.
+
+Checks: four exact approximate-difference ensembles, 5,742 independent label
+controls, 72 soft probability identities, twelve 6,561-state cut/flow controls,
+eight native encodings, 40 polynomial bounds, 120 phase maps, 30 spectra and
+three growing reports per audit. No production wiring/full-suite run or commit.
+Next main-model work must supply a genuinely new arithmetic/nonstationary map,
+or a prior-specific measurement, not another generic sampler wrapper.
+Gemini's upstream numerical repair below remains the first integration task.
+
+## Latest Dynamics Pass: Native Local Walks Are Obstructed
+
+Read `research/STRUCTURED_EDCP_LOCAL_MOVE_OBSTRUCTION.md`.
+LOCAL DERIVATION / REVIEW PENDING. For power-of-two d, a nonzero coefficient
+difference Delta has gcd(Q,E(Delta)) dividing its NONZERO integer negacyclic
+norm, bounded by ||Delta||_2^d. This gives a factorization-free union bound
+excluding ALL <=b-block exact-fiber moves in [-R,R]^(d*L), simultaneously.
+The finite-box walk is frozen on the resulting label event, not merely slow.
+
+For the full Gaussian, no within-box edges imply a stationary-tail bottleneck.
+On source-weighted diffuse fibers, any reversible chain with that move support
+has gap <=8*sqrt(eta), except on explicit label/tail/large-atom events.
+At the default d=64,256,1024 source, even two-block moves have bad-label
+log10 probability bounds -881.3993,-4850.1785,-24655.5439. Gap log10 upper
+bounds are -84.6833,-346.3425,-1393.8825. These are ideal formula evaluations,
+not executed Markov chains at those dimensions. The non-power-of-two d=3
+countercontrol breaks the norm premise as intended.
+
+Checks: 270 exact multiplication/norm matrices, four exhaustive difference-
+congruence ensembles, 5,742 independently enumerated second-label controls,
+12 reversible flow/gap checks, and three analytic reports. No production
+wiring/full-suite run. This does NOT exclude general quantum algorithms,
+global arithmetic circuits or preparation that leaves the fiber temporarily.
+
+Next main-model target: explicit nonlocal or controlled off-fiber conditional
+preparation. Do not implement generic one-/two-block Gibbs moves expecting a
+gap-based quantum speedup. Gemini should add the scoped checker after fixing
+the upstream numerical certificate below; routine integration remains theirs.
+
+## Latest Joint-Fiber Pass: Conditional-Core Barriers
+
+Read `research/STRUCTURED_EDCP_CONDITIONAL_CORE_BARRIERS.md`.
+LOCAL DERIVATION / REVIEW PENDING. For a block partition with frequency laws
+p and v, the exact fiber Schmidt weights are p(x)*v(u-x)/(p*v)(u).
+Rank-chi preparation has source-weighted fidelity
+F<=sqrt(chi*c2(p)*(1+chi2(v))). A unit-labeled native Gaussian block has
+c2(p)=c_digit^d, forcing exponential bond dimension across this physical
+cut for constant fidelity. This is NOT a quantum circuit lower bound.
+
+Any proposal leaving the other side's frequency marginal independent of u,
+even with an optimized marginal, has F<=P_S+sqrt(chi2(v)*P_S), where
+P_S=(sum sqrt(p))^2/Q. The optimized finite reference is an explicit spectral
+norm. This rules out repairing only a small insufficient core after choosing
+the other blocks target-independently, not iterative target-dependent walks.
+
+There is a constructive exception: GIVEN an informative conditional core
+with law v, append other blocks from their prior and coherently request the
+core at the residual target. Its weighted fidelity is >=1/(1+chi2(v)).
+This does NOT solve the core. Approximate core errors must be reweighted by
+v*p*reverse(p), not reused unchanged from their old v-weighted guarantee.
+
+At the default d=64,256,1024 source, necessary log10 bond dimensions for mean
+fidelity >=0.9 are approximately 57.7062,308.1632,1541.1821, under the stated
+unit-first-label condition and ideal finite source. Native single-block repair
+with arbitrary target-independent rest marginal has exponentially small
+fidelity. Positive controls explicitly show that high-rank states can still
+have efficient arithmetic quantum preparations, and that appending blocks to
+a uniform-frequency conditional core is exact.
+
+Checks: 80 optimized marginal references, 240 direct Schmidt spectra, 320
+top-rank checks, 80 core extensions, 96 spectral perturbations, 384 collision
+rank bounds and three analytic reports. No production wiring/full-suite run.
+Next theory: explicit target-dependent conditional-core dynamics or arithmetic
+circuits, including connectivity/conductance of proposed carry moves.
+Gemini's upstream certificate correction below remains higher priority than
+integrating these new diagnostics.
+
+## Latest Theory Pass: Classical Simulation Of Local Readout
+
+Read `research/STRUCTURED_EDCP_CLASSICAL_READOUT_SIMULATION.md`.
+LOCAL DERIVATION / REVIEW PENDING. With the retained integer source (A,b),
+small random linear combinations plus Gaussian flooding approximate the CLEAN
+local Fourier-readout law without the secret or its error lifts. This does
+NOT simulate phase states, coherent joint measurements or standalone EDCP.
+
+The zero-mean selector U=Uniform{-K/2,...,K/2-1}+Bernoulli(1/2) has variance
+(K^2+2)/12 and collision probability c=(2K-1)/(2K^2). For power-of-two d,
+Q=q^d+1, even power-of-two K<=2d, odd q, exact mean label chi-square is
+(Q^n-2^n)*c^M+(2^n-1)*2^(-M). Signed binary selectors have a parity defect;
+unsupported selector ranges and insufficient entropy must not pass.
+
+An exact translated-discrete-Gaussian KL identity gives flooding loss
+<=B*S_q*sigma/Q*sqrt(pi*Var(U)*d*L*M), even with arbitrarily correlated
+source errors. Source data must precede the fresh selectors. For the current
+n=1,L=288,K=4 default source, this term is about 1.00e-8,2.15e-13,3.98e-18
+at d=64,256,1024. These are NOT total errors: hashing, source regularity,
+lift failures, physical noise, unheralded contamination and precision remain
+separate charges. Total simulation loss must be below the claimed success.
+
+Consequently, the previous polynomial-profile classical decoder is a FULLY
+classical source-specific comparator when its basis is classically obtainable
+and all error/conditioning costs fit. Good-basis computation is not supplied.
+Native envelope H remains exponential even at the maximum certified widths.
+Next main-model target: a genuinely coherent joint conditional operation or
+quantum-specific basis construction, not another local-readout wrapper.
+
+Checks: six EXACT hashing ensembles, 22,725 matrix seeds, 1,044,669 weighted
+selector images; 60 exact selector-energy identities; 25 Gaussian KL references;
+48 full output-law comparisons over 445,824 entries; three analytic parameter
+reports. No production wiring, full-suite run or candidate promotion.
+
+GEMINI PRIORITY: first repair the existing upstream numerical certificate.
+`research/STRUCTURED_EDCP_UPSTREAM_NUMERICAL_REVIEW.md` identifies dropped
+positive regularity terms, underflow-to-zero upper bounds, a false unit clean
+weight, an incorrect scaling exponent, unsupported fallback primes, circular
+carry checking and an overstrong revealed-coins claim. The hardcoded
+`forward_carry_and_mixing_reduction_certified` flag is NOT supported. Correct
+log10 delta_amp references are -33.6294,-148.3397,-231.7931, not the generated
+-99.3399,-158.9438,-25872.3240. Then implement the new sampler/checker using
+the precise source-access and error contracts in the theory note. GPT remains
+responsible for mathematics and focused falsification, not routine integration.
 
 ## Latest Upstream Pass: Mixing And Carry Repair
 

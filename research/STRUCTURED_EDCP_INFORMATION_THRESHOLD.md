@@ -2,6 +2,11 @@
 
 Date: 2026-09-24. LOCAL DERIVATION / REVIEW PENDING.
 
+FOLLOW-UP (2026-09-26): `STRUCTURED_EDCP_WIDE_PHASE_INFORMATION.md` supplies a
+different all-divisor certificate for R>d. The R<=d hypothesis of this note's
+small-divisor injectivity proof must NOT be silently dropped when using the
+new direct-phase source. The new note includes a concrete counterexample.
+
 This note proves a scoped sufficient-information bound for the ideal native
 coefficient-state ensemble. It does NOT provide an efficient joint measurement,
 verify an entire lattice reduction, establish novelty, or claim a speedup.

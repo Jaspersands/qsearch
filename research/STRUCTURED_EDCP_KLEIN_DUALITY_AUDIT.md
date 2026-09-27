@@ -9,6 +9,12 @@ for the obvious native basis. It is not a general lattice-sampling lower bound,
 an efficient basis-finding algorithm, a verified source reduction, or a novelty
 claim. No production integration or candidate promotion is included.
 
+FOLLOW-UP (2026-09-27): section 9 treats optimized filters, not just the
+universal rejection envelope. A filter preserving the untouched blocks'
+coefficient labels cannot cheaply repair their unconditional marginal on
+most informative source fibers. Its scope and preparation-leakage limitation
+are explicit; arbitrary coherent cross-block mixing remains open.
+
 ## 1. Decision
 
 There are three distinct cases, not one solved Gaussian-sampling subroutine.
@@ -362,6 +368,14 @@ controls checked the source-weighted fast-fiber bound (12).
 
 ## 8. Red Team And Next Tasks
 
+FOLLOW-UP: `STRUCTURED_EDCP_CONDITIONAL_CORE_BARRIERS.md` extends section 6
+to ANY target-independent rest-frequency marginal, even an optimized one,
+and derives a separate tensor-cut rank obstruction. It also gives a positive
+extension lemma once an informative conditional core is genuinely available.
+`STRUCTURED_EDCP_CLASSICAL_READOUT_SIMULATION.md` supplies a classical
+approximation to the specified local readout from retained (A,b); the older
+post-readout-only qualification below no longer applies to that access model.
+
 FOLLOW-UP: `STRUCTURED_EDCP_PROFILE_LIST_DECODER.md` now supplies a
 full-profile randomized classical list decoder, not merely a proposed
 selective-enumeration heuristic. With the documented width/noise/numerical
@@ -378,6 +392,8 @@ few poor basis directions alone as evidence of a superpolynomial advantage.
   and (15) only when their actual hypotheses apply.
 * The rejection envelope may be loose. A source-specific sharper envelope,
   different proposal, walk or measurement is not excluded by (11)--(14).
+  Section 9 now constrains sharper filters when the proposal's rest marginal
+  is unchanged and the successful map does not mix its coefficient labels.
 * The measured data remain quantum-generated. None of these arguments
   supplies a classical sampler for the original source or proves its
   original computational problem classically easy.
@@ -402,3 +418,171 @@ SPECIFIED native-basis samplers, not for all structured EDCP algorithms.
 Main model stays on the residual mathematical target: conditioning across
 blocks, improving the basis profile with a real source, and identifying
 whether any proposed coherent benefit survives the matched classical decoder.
+
+## 9. Optimized Filtering Does Not Repair The Native Rest Marginal
+
+This extension is LOCAL DERIVATION / REVIEW PENDING. It applies to a broader
+class of filters than section 5, but not to arbitrary conditional-state
+algorithms. It does NOT require the other L-1 blocks to be informative on
+their own, unlike the particular convolution bound in section 6.
+
+### Contract And A Pointwise Bound
+
+Let mu_1 and mu_rest be the first-block and remaining-block product Gaussian
+probability laws. They may both be full or consistently coordinate-truncated.
+Use W=theta(s_G) or W=Z_R as their scalar normalizer. For the two frequency
+maps f_1 and f_rest, let
+
+    p(x)=Pr[f_1(C_1)=x],
+    v(x)=Pr[f_rest(C_rest)=x],
+    r=p*v.
+
+The target fiber's rest marginal is EXACTLY
+
+    P_u(z)=mu_rest(z)*p(u-f_rest(z))/r(u).                   (16)
+
+Only r(u)>0 matters. Unlike basis normalization, this identity does not
+require unit labels. Suppose a proposal has the unconditional rest marginal
+mu_rest, and its successful instrument is block diagonal in the rest's
+coefficient labels z. It may depend on u,z, act arbitrarily on the first
+block and ancillas, and contain measurements or postselection. It cannot
+move amplitude between different z labels in its effective successful map.
+
+If A_u is success probability and rho_u the normalized output, then
+
+    A_u*Pr_(rho_u)[z] <= mu_rest(z).                        (17)
+
+This follows for each z from trace-nonincreasingness of that controlled
+block. Internal first-block coherence is allowed. The ideal native Klein
+proposal satisfies the marginal premise. An untruncated native proposal
+followed by a target-box restriction also obeys the required domination on
+the finite target support.
+
+For a threshold tau>0 define
+
+    S_tau={x:p(x)>=tau},
+    S_u={z in target support : u-f_rest(z) in S_tau},
+    eta_u=P_u(S_u complement).
+
+Then
+
+    mu_rest(S_u) <= r(u)/tau,
+    E_(u~r) eta_u = p(S_tau complement).                   (18)
+
+Both statements follow by expanding (16); no independent-residual or
+uniform-frequency approximation is made. If the squared target fidelity
+F_u=<phi_u|rho_u|phi_u> is at least 1-epsilon_F, trace distance gives
+Pr_(rho_u)(S_u)>=1-eta_u-sqrt(epsilon_F). Combining with (17)-(18),
+
+    A_u*max(0,1-eta_u-sqrt(epsilon_F)) <= r(u)/tau.          (19)
+
+Thus even a filter optimized with full knowledge of the target law must
+respect this bound. It is not an artifact of the Klein envelope being loose.
+Postselection success and conditional fidelity have not been conflated.
+
+### Gaussian Likelihood Mass And Source Weight
+
+For Z=pi*||C_1||^2/s_G^2 and 0<=beta<1, Poisson summation gives
+
+    E exp(beta*Z) <= (1-beta)^(-d/2).
+
+Indeed the scalar MGF is theta(s_G/sqrt(1-beta))/theta(s_G), and its Poisson
+form is at most (1-beta)^(-1/2). Conditioning each digit on [-R,R] only
+decreases this increasing moment. For t>d/2, Chernoff therefore yields
+
+    Pr[Z>t] <= epsilon_rad(t),
+    epsilon_rad(t)=exp(-t+d/2+(d/2)*log(2*t/d)).             (20)
+
+Every c_1 with Z<=t has probability >=exp(-t)/W^d. Its evaluation residue
+has at least that mass, even when evaluation is not injective. Set
+
+    tau=exp(-t)/W^d.
+
+Equations (18)-(20) imply E_r eta_u<=epsilon_rad(t). Also
+E_r[Q*r(u)]=1+chi2(r). For any 0<eta_0<1 and kappa>0, except on source
+mass at most
+
+    epsilon_rad(t)/eta_0 + (1+chi2(r))/kappa,
+
+every branch with F_u>=1-epsilon_F satisfies
+
+    A_u <= kappa*exp(t)*W^d /
+             [Q*(1-eta_0-sqrt(epsilon_F))],                 (21)
+
+provided the denominator is positive. Cap probability bounds at one.
+No condition on chi2(v) is needed. If only E_labels chi2(r) is bounded,
+the same calculation gives a JOINT source/label exception bound, conditional
+on the specified label event; it is not a per-label certificate.
+
+This bound permits an efficient constructor that genuinely changes the
+rest marginal. Amplitude amplification itself can mix the rest register;
+(21) bounds the base filter's success, and hence its USUAL A^(-1/2)
+amplification proxy, not the runtime of every structured circuit using it.
+
+### Reference At The Current Three-Block Widths
+
+Use the moment-source widths in `STRUCTURED_EDCP_IDEAL_COLLISION_CORE.md`,
+t=d, eta_0=0.1, epsilon_F=0.01, kappa=100 and R=ceil(sigma*sqrt(d)).
+For a conservative analytic bound use W<=theta(s_G) in (21). The information
+references are conditional on the binary-rank event; its probability and
+the full physical-source ledger remain separate.
+
+| d | log10 upper A_u on the good event | log10 lower usual A_u^(-1/2) proxy | upper exception reference |
+|---:|---:|---:|---:|
+| 64 | -828.536070376 | 414.268035188 | 0.010546722 |
+| 256 | -3830.11817814 | 1915.05908907 | 0.010000175 |
+| 1024 | -17276.0091241 | 8638.00456205 | 0.010000011 |
+
+These 140-digit formula references use conservative rounded chi-square
+inputs 0.000280,0.0000175,0.00000110. They are not interval certificates,
+executed rejection samplers or quantum resource estimates for all algorithms.
+The radial exception uses epsilon_rad(d)=(2/e)^(d/2). In particular the
+claim here is about 0.99 squared fidelity on most source fibers, not exact
+preparation on an adversarial worst-case residue.
+
+### Preparation Error Must Not Hide The Acceptance Scale
+
+A polynomially small ADDITIVE approximation error cannot automatically be
+ignored beside an exponentially small acceptance bound. More generally, if
+the actual proposal/instrument only guarantees rest marginal domination
+by c_dom*mu_rest plus additive leakage ell_u on the relevant event, then
+the right side of (19) becomes
+
+    c_dom*r(u)/tau + ell_u.                                (22)
+
+An ell_u of 0.001 destroys the displayed exponential upper bound. A
+multiplicative marginal guarantee, or sufficiently small charged leakage,
+is needed to transfer that scale to an implementation. The Gaussian
+constructor can in principle be specified to much higher precision; do not
+assume its proof merely from a generic TV tolerance. Physical source error
+in the frequency law and proposal-preparation error are distinct quantities.
+
+### Checks And A Deliberate Escape Control
+
+Targeted references actually run on 2026-09-27:
+
+- 3,420 positive capped-likelihood filter controls with Q=3,5,11 checked
+  (19), including exact-target and approximate-target filters. Another 684
+  full complex controlled two-dimensional contractions checked marginal
+  domination and fidelity. Gaussian structure was not needed for these
+  algebraic controls. NumPy seed 20260927.
+- 108 source-weighted tail identities verified (18) independently by
+  summing all frequencies. Twelve discrete Gaussian radial convolutions at
+  d=2,4,8 and s_G=0.3,0.8,1.4,3 respected (20). Their digit sums were cut
+  at ceil(8*s_G), so these are finite numerical references.
+- The three growing-width analytic rows above were evaluated, retaining
+  the positive radial tails and conservative information inputs.
+- Outside the contract, take p=(0.99,0.01), v=(0.01,0.99), u=0. A
+  two-dimensional Householder transformation sends sqrt(v) to the normalized
+  target rest amplitudes (1,1)/sqrt(2) with probability and fidelity one.
+  At tau=0.5, misapplying (19) would say 0.5<=0.0396. This transformation
+  MIXES rest labels, so the countercontrol confirms the exclusion is real.
+  It is an explicit small algebraic control, not a scalable constructor.
+
+Gemini should extend the existing Klein checker with the effective successful
+map's rest-label support, c_dom/leakage, tau/t, radial tail, density exception,
+success and squared fidelity. Do not report the exponential acceptance scale
+when additive leakage dominates it. Keep cross-block mixing, informative
+conditional-core proposals and genuinely quantum basis construction open.
+The next theory pass must construct such an operation, not merely choose a
+more elaborate scalar rejection envelope for the same unconditional proposal.

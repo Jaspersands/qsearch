@@ -8,6 +8,18 @@ or a novelty claim. It closes a specific gap in the preceding Klein audit:
 the case where the WHOLE rejection profile is manageable but deterministic
 Babai's largest-direction bound is not useful.
 
+FOLLOW-UP: `STRUCTURED_EDCP_CLASSICAL_READOUT_SIMULATION.md` supplies a
+source-specific classical approximation to the local readout itself, when
+the retained integer (A,b) is available and its error budget fits. Thus the
+POST-READOUT limitation below is superseded for that access model, not for
+standalone quantum-state access. Good-basis construction remains charged.
+
+FOLLOW-UP (2026-09-27): section 10 extends the comparison to certain
+FIBER-DEPENDENT basis builders. Synthetic frequencies, drawn without seeing
+the noisy readout, can expose a useful basis when a universal-envelope
+proposal is cheap on sufficient source mass. This does not cover arbitrary
+center-specific proposals or noise-dependent reduction. Review pending.
+
 ## 1. Result And Scope
 
 Given the same noise-independent public kernel basis used by a Gaussian-fiber
@@ -356,3 +368,170 @@ source coverage remain explicit. Do not globally label EDCP dequantized.
 Main-model next target: the remaining-block conditional proposal or a
 source-specific basis construction. This list decoder is the stronger
 classical competitor those proposals must now survive.
+
+## 10. Extracting A Basis From A Fiber-Adaptive Constructor
+
+### The New Question
+
+The fixed-basis argument above does not directly cover a builder that chooses
+K(u) separately for every requested frequency u. Nevertheless u is drawn
+from a distribution that can be sampled CLASSICALLY from the public labels:
+draw fresh independent Gaussian coefficients c and compute f(c) mod Q.
+This does not measure a physical phase state or reveal a secret.
+
+This gives a constructive extraction argument, not a prohibition on basis
+research. A classical adaptive builder with polynomial universal-envelope
+cost yields a usable noise-independent basis. A quantum algorithm that
+outputs a classical good basis may still be valuable; its quantum advantage
+would lie in basis construction, not in a necessary coherent fiber wrapper.
+
+### Explicit Contract And Identities
+
+Allow either the full product Gaussian or its coordinate truncation [-R,R].
+Write W=theta(s_G) or W=Z_R, respectively, and define
+
+    Z_u=sum_(c in support, f(c)=u) exp(-pi*||c||^2/s_G^2),
+    r(u)=Z_u/W^D,
+    C_(K)=product_i theta(s_G/g_i(K)),
+    H(u)=Q*C_(K(u))/W^D,
+    T(u)=sqrt(C_(K(u))/Z_u)=sqrt(H(u)/(Q*r(u))).              (10)
+
+The proposal is the actual UNIVERSAL-ENVELOPE corrected Klein sampler;
+in the finite case also reject coefficients outside the box. Its success
+probability is Z_u/C_K. T is its ideal amplification repetition proxy, not
+a lower bound on the runtime of all Gaussian-state algorithms. Do not
+substitute a different center-dependent acceptance law into (10).
+
+The builder receives public labels, width, artificial u and fresh coins,
+and returns an explicit basis of the SAME full kernel. It must have a
+charged runtime/bit-length budget and no access to the observed Fourier
+sample, its unknown noise, the secret, or secret-correlated retained data
+such as b. Validate membership and determinant, not merely independence.
+Failures/timeouts are not valid cheap branches. Let alpha>0 be the source
+probability, including builder coins, of valid budgeted branches with
+T(u)<=T_0. This is a mathematical premise, not an assumed performance result
+for a builder we have yet to discover.
+
+For a fixed public label batch, put delta=chi2(r). Exactly,
+
+    E_(u~r)[Q*r(u)]=1+delta,
+    Pr_(u~r)[Q*r(u)>kappa] <= (1+delta)/kappa.               (11)
+
+On a cheap branch outside this high-density event,
+
+    H(u)=T(u)^2*Q*r(u) <= T_0^2*kappa.
+
+Choose kappa=2*(1+delta)/alpha and H_*=2*(1+delta)*T_0^2/alpha.
+Then drawing one artificial u and running the builder produces a valid
+basis with H<=H_* with probability at least alpha/2. More generally any
+certified density-tail function tau(kappa) gives success >=alpha-tau(kappa).
+No assumption that all frequencies are equally likely is used.
+
+The actual extraction algorithm needs NO Z_u, r(u), T(u) or Q-sized table:
+
+1. Sample independent public Gaussian coefficients; compute artificial u.
+2. Run the budgeted builder K(u); reject invalid or timed-out outputs.
+3. Compute a sound upper bound on its explicit Gram--Schmidt theta profile.
+4. Retain a basis that passes the declared H threshold; otherwise repeat.
+
+For fixed labels satisfying the premises, t independent attempts fail with
+probability at most (1-alpha/2)^t. Thus t>=2*ln(1/epsilon)/alpha suffices.
+Approximate frequency sampling with per-attempt TV error eta adds at most
+t*eta. Basis construction, exact full-kernel checks and profile arithmetic
+are charged. Theta evaluation should switch using Poisson summation instead
+of enumerating an exponentially wide interval. A certified profile upper
+bound <=2H can use threshold 2H_*, giving the same extraction probability
+and at most a factor two in the returned profile; do not use unchecked
+floating comparisons at the acceptance boundary.
+
+If E_r T<=T_bar on valid budgeted branches of total probability one, Markov
+gives alpha>=1/2 with T_0=2*T_bar. A convenient looser certificate is
+
+    H_* = 16*(1+delta)*T_bar^2,
+    one-attempt extraction probability >=1/4.              (12)
+
+Do not condition away failing branches when asserting this average.
+
+### The Classical Decoder Cost
+
+Once extracted, this basis is independent of the actual readout noise.
+Poisson summation gives the exact identity, including the finite-source case,
+
+    J(K)=product_i theta(g_i/s_G)
+        =H(K)*(W/s_G)^D.                                   (13)
+
+For the full Gaussian the last factor is theta(1/s_G)^D; truncation can only
+decrease it. Retain it explicitly. In the current wide-source regime it is
+bounded, but for narrow widths it need not be polynomial.
+
+Sections 3-5 now apply conditionally on the selected basis. For instance,
+J<=J_* gives an exact-discrete list length
+
+    ceil((J_*/delta_noise)^2*ln(1/epsilon_noise)),
+
+or the sharper linear-in-J_* length with the charged jitter construction.
+Thus polynomial T_0, inverse alpha, density control, ambient theta factor
+and CLASSICAL builder cost give a polynomial classical list procedure after
+the matched local readout. The retained-input sampler supplies that readout
+only with its full source/physical-noise error ledger. Finite coefficient
+truncation adds the appropriate state/readout error, not an unproved exact
+Gaussian-noise identity.
+
+As before, truth-in-list is not necessarily unique recovery. Use the valid
+retained-input residual verifier when its separation promise holds, or keep
+the full-ML comparison and its information limitations. An explicit quantum
+routine outputting a classical basis can instead be used as charged quantum
+preprocessing followed by this decoder; the extraction argument does not
+dequantize that routine or prove it exists.
+
+### Average Labels Are Not A Per-Instance Guarantee
+
+Our latest information bound controls E_labels chi2(r_labels), conditional
+on a public source event, not each individual label set. With delta replaced
+by that average and alpha also a JOINT cheap-branch probability, (11) and
+the one-attempt >=alpha/2 conclusion still hold over labels and artificial
+frequencies. This is an average-source extraction result.
+
+Repeated attempts at ONE fixed label set cannot then be claimed to amplify
+success to 1-epsilon. Some label sets may never produce a good basis. A
+per-label tail/cheap-mass certificate, an explicitly charged typical-label
+event, or genuinely fresh independent label batches is needed for such a
+claim. Fresh source blocks must fit their TOTAL source-error budget.
+
+### Attempts To Break The Argument
+
+Without density control the inference fails: for the one-dimensional kernel
+Q*Z with Q=1009,s_G=0.2,R=2, almost all frequency mass is at zero. That fiber
+has T essentially one while H is essentially 1009. Here chi2 is essentially
+1008, so (11) correctly prevents calling H constant as Q grows.
+
+Other exclusions are equally material: coherent interference between basis
+branches, a special rejection envelope with no bound by the displayed H,
+bases selected from the noisy observation, uncharged quantum basis search,
+exponentially large basis outputs, and hidden implementation/precision costs.
+None is ruled out by this extension. The cost statement is conditional;
+there is still no efficient natural-label basis builder supplied here.
+
+Checks actually run on 2026-09-27:
+
+- 108 native adaptive-basis controls at q=3,d=2,L=2, labels [1,a] with
+  a=1,3,7,9; probability widths 0.8,1.4,2; three nonlinear u-dependent
+  selection rules and three cheap-cost thresholds. Coordinate radii were
+  2,3,4 respectively. Bases included native,
+  exact LLL-reduced and unimodularly modified variants. Exhaustive finite
+  source sums checked (10)-(13) and the extraction mass. Smallest observed
+  accepted mass was 0.5863; this is a bounded algebraic control, not a
+  growing-dimension decoder result.
+- 300 independent probability-only controls used Q=3,7,31,127 and skewed
+  source/profile laws, checking both threshold and mean-cost versions.
+- The concentrated-source control above verifies why flatness/density
+  accounting cannot be omitted. Gaussian theta evaluations in these checks
+  used finite seven-width sums, not certified infinite-series arithmetic.
+
+Gemini: extend the existing profile checker, not a new circuit-search lane.
+Record builder access, runtime/bit budget, full-kernel validation, frequency
+law, per-instance versus averaged delta/alpha, H/J conversion and all errors.
+Use synthetic frequencies BEFORE observing y; never pass the true noise to
+the builder. Keep the quantum-basis and special-envelope cases explicitly
+open. Main-model work should target those actual missing operations rather
+than treating fiber dependence alone as a quantum advantage.

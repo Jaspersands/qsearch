@@ -8,6 +8,13 @@ LWE attack, a verified reduction, or a novelty claim. The construction is
 derived below; bounded references check its identities but do not constitute
 a gate implementation or an independent proof review.
 
+FOLLOW-UP (2026-09-27): the new direct source admits wider coefficients.
+`STRUCTURED_EDCP_IDEAL_COLLISION_CORE.md` gives a three-block finite
+information certificate and a two-block asymptotic one in that NEW regime.
+The older small-width warnings below remain scoped to their parameters.
+`STRUCTURED_EDCP_SHEAR_ALIAS_DECODER.md` analyzes global arithmetic phase
+concentration and the still-missing coherent alias operation.
+
 ## 1. Research Decision
 
 Keep the coefficient registers of structured EDCP. Their one-block fibers
