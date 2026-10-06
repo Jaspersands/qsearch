@@ -1,0 +1,30 @@
+{
+  "audit_date": "2026-10-06",
+  "primary_sources": [
+    {
+      "url": "https://arxiv.org/html/1107.2189v2",
+      "title": "Hidden Symmetry Subgroup Problems",
+      "inspected": ["Introduction and input definitions", "Section5.3 Theorem5 and beginning of proof"],
+      "baseline": "Constant-degree multivariate graph-oracle problems have polynomial reductions to univariate instances; the2007 fixed-variable result is not a complete literature baseline.",
+      "transfer_gate": "The multivariate restriction queries require graph-oracle access not automatically supplied by varying native phase packets."
+    },
+    {
+      "url": "https://arxiv.org/html/1503.09016v2",
+      "title": "Solving systems of diagonal polynomial equations over finite fields",
+      "inspected": ["Theorems3 and5, Corollaries6 and8", "Section2 quadratic/cubic algorithm setup", "Section5 proof sketch and general psi_Y input"],
+      "baseline": "Known univariate phases can have different matrices Y with shared unknown parameters; identical-function copies are not a universal requirement.",
+      "transfer_gate": "The illustrated proof separates constant p before assuming p>d; copying its displayed failure bound to p3 with growing rank is invalid. Its diagonal solver is not a general mixed-Schur-subspace solver. No complete proof audit claimed."
+    }
+  ],
+  "local_derivations": [
+    "Native level3 third derivative as a low-label weighted triple Schur product",
+    "Polynomial-size exact component reconstruction without dense phase tables",
+    "Automatic vanishing diagonal polarization and necessary mixed-term admission",
+    "Costed all-outcome disjoint-block physical instrument with limited retention and top-digit loss",
+    "Native high-digit quadratic affine source, weighted Schur-square rank, charged fixed-frame cross filtering and conditional diagonal entropy"
+  ],
+  "novelty_search_exhaustive": false,
+  "independent_human_review": false,
+  "paper_refuted": false,
+  "new_algorithm_claimed": false
+}

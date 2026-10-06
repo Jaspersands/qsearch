@@ -1,0 +1,1567 @@
+{
+  "status": "LOCAL_DERIVATION_REVIEW_PENDING",
+  "actual_selected_packet_subcodes": [
+    {
+      "status": "EXACT_SELECTED_SCHUR_PRODUCT_AND_STABILIZER_DECOMPOSITION",
+      "parity_rows_hex": [
+        "0x15",
+        "0x1a"
+      ],
+      "physical_directions_hex": [
+        "0x5",
+        "0xa"
+      ],
+      "physical_width": 5,
+      "pivot_dimension": 2,
+      "product_space_basis_hex": [
+        "0x5",
+        "0xa",
+        "0x10"
+      ],
+      "product_space_dimension": 3,
+      "extension_rank": 1,
+      "active_unit_augmented_subcode_dimension": 3,
+      "product_stabilizer_component_count": 3,
+      "kneser_dimension_slack": 1,
+      "components": [
+        {
+          "physical_component_mask_hex": "0x5",
+          "dual_projection_rank": 1,
+          "product_projection_rank": 1,
+          "nonzero_signatures_in_component": 1
+        },
+        {
+          "physical_component_mask_hex": "0xa",
+          "dual_projection_rank": 1,
+          "product_projection_rank": 1,
+          "nonzero_signatures_in_component": 1
+        },
+        {
+          "physical_component_mask_hex": "0x10",
+          "dual_projection_rank": 1,
+          "product_projection_rank": 1,
+          "nonzero_signatures_in_component": 1
+        }
+      ],
+      "signature_gate_at_actual_extension_rank": {
+        "status": "ALL_PHYSICAL_KERNEL_SUBSPACES_LOW_VARIATION_SIGNATURE_GATE",
+        "dimension": 2,
+        "physical_width": 5,
+        "pivot_dimension": 2,
+        "extension_rank_budget": 1,
+        "zero_binary_columns": 0,
+        "distinct_nonzero_binary_column_signatures": 3,
+        "all_one_physical_vector_in_kernel": false,
+        "active_projection_dimension_lower_bound": 2,
+        "unit_augmented_subcode_dimension_lower_bound": 3,
+        "required_product_stabilizer_component_count_lower_bound": 2,
+        "nonzero_signature_capacity_upper_bound_decimal": "3",
+        "every_t_dimensional_physical_kernel_subspace_with_extension_rank_at_most_r_excluded": false,
+        "higher_label_adaptive_subspace_selection_evades_this_gate": false,
+        "isotropic_chart_or_pivot_basis_selection_needed_by_gate": false,
+        "excludes_any_nonsingular_pencil_at_larger_variation_rank": false,
+        "background_adaptive_pivots_general_decoders_or_other_phase_sources_excluded": false,
+        "kneser_theorem_source": {
+          "url": "https://arxiv.org/pdf/1501.06419",
+          "theorem": "3.3",
+          "decomposition": "Lemma2.7 and Lemma2.10",
+          "binary_field_assumptions_checked": true
+        },
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      "product_stabilizer_is_a_quantum_clifford_stabilizer": false,
+      "nonsingular_pencil_inverse_or_decoder_implemented": false,
+      "candidate_record_accepted": false,
+      "speedup_claim_allowed": false
+    },
+    {
+      "status": "EXACT_SELECTED_SCHUR_PRODUCT_AND_STABILIZER_DECOMPOSITION",
+      "parity_rows_hex": [
+        "0x146e798f1",
+        "0x2acdde4f2"
+      ],
+      "physical_directions_hex": [
+        "0x4",
+        "0x8"
+      ],
+      "physical_width": 34,
+      "pivot_dimension": 2,
+      "product_space_basis_hex": [
+        "0x146e798f1",
+        "0x2acdde4f2"
+      ],
+      "product_space_dimension": 2,
+      "extension_rank": 0,
+      "active_unit_augmented_subcode_dimension": 1,
+      "product_stabilizer_component_count": 1,
+      "kneser_dimension_slack": 0,
+      "components": [
+        {
+          "physical_component_mask_hex": "0x3eefffcf3",
+          "dual_projection_rank": 2,
+          "product_projection_rank": 2,
+          "nonzero_signatures_in_component": 3
+        }
+      ],
+      "signature_gate_at_actual_extension_rank": {
+        "status": "ALL_PHYSICAL_KERNEL_SUBSPACES_LOW_VARIATION_SIGNATURE_GATE",
+        "dimension": 2,
+        "physical_width": 34,
+        "pivot_dimension": 2,
+        "extension_rank_budget": 0,
+        "zero_binary_columns": 6,
+        "distinct_nonzero_binary_column_signatures": 3,
+        "all_one_physical_vector_in_kernel": true,
+        "active_projection_dimension_lower_bound": 0,
+        "unit_augmented_subcode_dimension_lower_bound": 1,
+        "required_product_stabilizer_component_count_lower_bound": 1,
+        "nonzero_signature_capacity_upper_bound_decimal": "3",
+        "every_t_dimensional_physical_kernel_subspace_with_extension_rank_at_most_r_excluded": false,
+        "higher_label_adaptive_subspace_selection_evades_this_gate": false,
+        "isotropic_chart_or_pivot_basis_selection_needed_by_gate": false,
+        "excludes_any_nonsingular_pencil_at_larger_variation_rank": false,
+        "background_adaptive_pivots_general_decoders_or_other_phase_sources_excluded": false,
+        "kneser_theorem_source": {
+          "url": "https://arxiv.org/pdf/1501.06419",
+          "theorem": "3.3",
+          "decomposition": "Lemma2.7 and Lemma2.10",
+          "binary_field_assumptions_checked": true
+        },
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      "product_stabilizer_is_a_quantum_clifford_stabilizer": false,
+      "nonsingular_pencil_inverse_or_decoder_implemented": false,
+      "candidate_record_accepted": false,
+      "speedup_claim_allowed": false
+    },
+    {
+      "status": "EXACT_SELECTED_SCHUR_PRODUCT_AND_STABILIZER_DECOMPOSITION",
+      "parity_rows_hex": [
+        "0x53926ce4a8b559",
+        "0x72781e8eec23a",
+        "0x486d7113740c8c"
+      ],
+      "physical_directions_hex": [
+        "0xf",
+        "0x70",
+        "0x580"
+      ],
+      "physical_width": 55,
+      "pivot_dimension": 3,
+      "product_space_basis_hex": [
+        "0x3",
+        "0x5",
+        "0x9",
+        "0x30",
+        "0x50",
+        "0x180",
+        "0x480",
+        "0x72781e8eec200",
+        "0x1bff1df7dcb800",
+        "0x486d7113740800"
+      ],
+      "product_space_dimension": 10,
+      "extension_rank": 7,
+      "active_unit_augmented_subcode_dimension": 4,
+      "product_stabilizer_component_count": 4,
+      "kneser_dimension_slack": 7,
+      "components": [
+        {
+          "physical_component_mask_hex": "0xf",
+          "dual_projection_rank": 3,
+          "product_projection_rank": 3,
+          "nonzero_signatures_in_component": 4
+        },
+        {
+          "physical_component_mask_hex": "0x70",
+          "dual_projection_rank": 2,
+          "product_projection_rank": 2,
+          "nonzero_signatures_in_component": 3
+        },
+        {
+          "physical_component_mask_hex": "0x580",
+          "dual_projection_rank": 2,
+          "product_projection_rank": 2,
+          "nonzero_signatures_in_component": 3
+        },
+        {
+          "physical_component_mask_hex": "0x5ffffdfffefa00",
+          "dual_projection_rank": 3,
+          "product_projection_rank": 3,
+          "nonzero_signatures_in_component": 7
+        }
+      ],
+      "signature_gate_at_actual_extension_rank": {
+        "status": "ALL_PHYSICAL_KERNEL_SUBSPACES_LOW_VARIATION_SIGNATURE_GATE",
+        "dimension": 3,
+        "physical_width": 55,
+        "pivot_dimension": 3,
+        "extension_rank_budget": 7,
+        "zero_binary_columns": 3,
+        "distinct_nonzero_binary_column_signatures": 7,
+        "all_one_physical_vector_in_kernel": false,
+        "active_projection_dimension_lower_bound": 0,
+        "unit_augmented_subcode_dimension_lower_bound": 1,
+        "required_product_stabilizer_component_count_lower_bound": 1,
+        "nonzero_signature_capacity_upper_bound_decimal": "7",
+        "every_t_dimensional_physical_kernel_subspace_with_extension_rank_at_most_r_excluded": false,
+        "higher_label_adaptive_subspace_selection_evades_this_gate": false,
+        "isotropic_chart_or_pivot_basis_selection_needed_by_gate": false,
+        "excludes_any_nonsingular_pencil_at_larger_variation_rank": false,
+        "background_adaptive_pivots_general_decoders_or_other_phase_sources_excluded": false,
+        "kneser_theorem_source": {
+          "url": "https://arxiv.org/pdf/1501.06419",
+          "theorem": "3.3",
+          "decomposition": "Lemma2.7 and Lemma2.10",
+          "binary_field_assumptions_checked": true
+        },
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      "product_stabilizer_is_a_quantum_clifford_stabilizer": false,
+      "nonsingular_pencil_inverse_or_decoder_implemented": false,
+      "candidate_record_accepted": false,
+      "speedup_claim_allowed": false
+    },
+    {
+      "status": "EXACT_SELECTED_SCHUR_PRODUCT_AND_STABILIZER_DECOMPOSITION",
+      "parity_rows_hex": [
+        "0xf2832afd6c312cc15c7b1",
+        "0x6f4640a82f684b9c96852",
+        "0x3dd298d8b97c068053514",
+        "0x735fb9a7cd4a481242438"
+      ],
+      "physical_directions_hex": [
+        "0x1f",
+        "0x280",
+        "0x840",
+        "0x1420"
+      ],
+      "physical_width": 84,
+      "pivot_dimension": 4,
+      "product_space_basis_hex": [
+        "0x3",
+        "0x5",
+        "0x9",
+        "0x11",
+        "0x280",
+        "0x420",
+        "0x840",
+        "0x1020",
+        "0x1c19f90fe222038ed4000",
+        "0x21cb61d75b5e050e86100",
+        "0x4e8d217f74364e9210100",
+        "0x81dc935aa17b64d31e100"
+      ],
+      "product_space_dimension": 12,
+      "extension_rank": 8,
+      "active_unit_augmented_subcode_dimension": 5,
+      "product_stabilizer_component_count": 5,
+      "kneser_dimension_slack": 8,
+      "components": [
+        {
+          "physical_component_mask_hex": "0x1f",
+          "dual_projection_rank": 4,
+          "product_projection_rank": 4,
+          "nonzero_signatures_in_component": 5
+        },
+        {
+          "physical_component_mask_hex": "0x1420",
+          "dual_projection_rank": 2,
+          "product_projection_rank": 2,
+          "nonzero_signatures_in_component": 3
+        },
+        {
+          "physical_component_mask_hex": "0x840",
+          "dual_projection_rank": 1,
+          "product_projection_rank": 1,
+          "nonzero_signatures_in_component": 1
+        },
+        {
+          "physical_component_mask_hex": "0x280",
+          "dual_projection_rank": 1,
+          "product_projection_rank": 1,
+          "nonzero_signatures_in_component": 1
+        },
+        {
+          "physical_component_mask_hex": "0xffdffbffff7f6fdfde100",
+          "dual_projection_rank": 4,
+          "product_projection_rank": 4,
+          "nonzero_signatures_in_component": 15
+        }
+      ],
+      "signature_gate_at_actual_extension_rank": {
+        "status": "ALL_PHYSICAL_KERNEL_SUBSPACES_LOW_VARIATION_SIGNATURE_GATE",
+        "dimension": 4,
+        "physical_width": 84,
+        "pivot_dimension": 4,
+        "extension_rank_budget": 8,
+        "zero_binary_columns": 7,
+        "distinct_nonzero_binary_column_signatures": 15,
+        "all_one_physical_vector_in_kernel": false,
+        "active_projection_dimension_lower_bound": 0,
+        "unit_augmented_subcode_dimension_lower_bound": 1,
+        "required_product_stabilizer_component_count_lower_bound": 1,
+        "nonzero_signature_capacity_upper_bound_decimal": "15",
+        "every_t_dimensional_physical_kernel_subspace_with_extension_rank_at_most_r_excluded": false,
+        "higher_label_adaptive_subspace_selection_evades_this_gate": false,
+        "isotropic_chart_or_pivot_basis_selection_needed_by_gate": false,
+        "excludes_any_nonsingular_pencil_at_larger_variation_rank": false,
+        "background_adaptive_pivots_general_decoders_or_other_phase_sources_excluded": false,
+        "kneser_theorem_source": {
+          "url": "https://arxiv.org/pdf/1501.06419",
+          "theorem": "3.3",
+          "decomposition": "Lemma2.7 and Lemma2.10",
+          "binary_field_assumptions_checked": true
+        },
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      "product_stabilizer_is_a_quantum_clifford_stabilizer": false,
+      "nonsingular_pencil_inverse_or_decoder_implemented": false,
+      "candidate_record_accepted": false,
+      "speedup_claim_allowed": false
+    }
+  ],
+  "structured_rank_one_positive_controls": [
+    {
+      "status": "EXACT_SELECTED_SCHUR_PRODUCT_AND_STABILIZER_DECOMPOSITION",
+      "parity_rows_hex": [
+        "0x15",
+        "0x1a"
+      ],
+      "physical_directions_hex": [
+        "0x5",
+        "0xa"
+      ],
+      "physical_width": 5,
+      "pivot_dimension": 2,
+      "product_space_basis_hex": [
+        "0x5",
+        "0xa",
+        "0x10"
+      ],
+      "product_space_dimension": 3,
+      "extension_rank": 1,
+      "active_unit_augmented_subcode_dimension": 3,
+      "product_stabilizer_component_count": 3,
+      "kneser_dimension_slack": 1,
+      "components": [
+        {
+          "physical_component_mask_hex": "0x5",
+          "dual_projection_rank": 1,
+          "product_projection_rank": 1,
+          "nonzero_signatures_in_component": 1
+        },
+        {
+          "physical_component_mask_hex": "0xa",
+          "dual_projection_rank": 1,
+          "product_projection_rank": 1,
+          "nonzero_signatures_in_component": 1
+        },
+        {
+          "physical_component_mask_hex": "0x10",
+          "dual_projection_rank": 1,
+          "product_projection_rank": 1,
+          "nonzero_signatures_in_component": 1
+        }
+      ],
+      "signature_gate_at_actual_extension_rank": {
+        "status": "ALL_PHYSICAL_KERNEL_SUBSPACES_LOW_VARIATION_SIGNATURE_GATE",
+        "dimension": 2,
+        "physical_width": 5,
+        "pivot_dimension": 2,
+        "extension_rank_budget": 1,
+        "zero_binary_columns": 0,
+        "distinct_nonzero_binary_column_signatures": 3,
+        "all_one_physical_vector_in_kernel": false,
+        "active_projection_dimension_lower_bound": 2,
+        "unit_augmented_subcode_dimension_lower_bound": 3,
+        "required_product_stabilizer_component_count_lower_bound": 2,
+        "nonzero_signature_capacity_upper_bound_decimal": "3",
+        "every_t_dimensional_physical_kernel_subspace_with_extension_rank_at_most_r_excluded": false,
+        "higher_label_adaptive_subspace_selection_evades_this_gate": false,
+        "isotropic_chart_or_pivot_basis_selection_needed_by_gate": false,
+        "excludes_any_nonsingular_pencil_at_larger_variation_rank": false,
+        "background_adaptive_pivots_general_decoders_or_other_phase_sources_excluded": false,
+        "kneser_theorem_source": {
+          "url": "https://arxiv.org/pdf/1501.06419",
+          "theorem": "3.3",
+          "decomposition": "Lemma2.7 and Lemma2.10",
+          "binary_field_assumptions_checked": true
+        },
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      "product_stabilizer_is_a_quantum_clifford_stabilizer": false,
+      "nonsingular_pencil_inverse_or_decoder_implemented": false,
+      "candidate_record_accepted": false,
+      "speedup_claim_allowed": false,
+      "literal_systematic_tail_signature_source_probability": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x40"
+      }
+    },
+    {
+      "status": "EXACT_SELECTED_SCHUR_PRODUCT_AND_STABILIZER_DECOMPOSITION",
+      "parity_rows_hex": [
+        "0x111",
+        "0x122",
+        "0x144",
+        "0x188"
+      ],
+      "physical_directions_hex": [
+        "0x11",
+        "0x22",
+        "0x44",
+        "0x88"
+      ],
+      "physical_width": 9,
+      "pivot_dimension": 4,
+      "product_space_basis_hex": [
+        "0x11",
+        "0x22",
+        "0x44",
+        "0x88",
+        "0x100"
+      ],
+      "product_space_dimension": 5,
+      "extension_rank": 1,
+      "active_unit_augmented_subcode_dimension": 5,
+      "product_stabilizer_component_count": 5,
+      "kneser_dimension_slack": 1,
+      "components": [
+        {
+          "physical_component_mask_hex": "0x11",
+          "dual_projection_rank": 1,
+          "product_projection_rank": 1,
+          "nonzero_signatures_in_component": 1
+        },
+        {
+          "physical_component_mask_hex": "0x22",
+          "dual_projection_rank": 1,
+          "product_projection_rank": 1,
+          "nonzero_signatures_in_component": 1
+        },
+        {
+          "physical_component_mask_hex": "0x44",
+          "dual_projection_rank": 1,
+          "product_projection_rank": 1,
+          "nonzero_signatures_in_component": 1
+        },
+        {
+          "physical_component_mask_hex": "0x88",
+          "dual_projection_rank": 1,
+          "product_projection_rank": 1,
+          "nonzero_signatures_in_component": 1
+        },
+        {
+          "physical_component_mask_hex": "0x100",
+          "dual_projection_rank": 1,
+          "product_projection_rank": 1,
+          "nonzero_signatures_in_component": 1
+        }
+      ],
+      "signature_gate_at_actual_extension_rank": {
+        "status": "ALL_PHYSICAL_KERNEL_SUBSPACES_LOW_VARIATION_SIGNATURE_GATE",
+        "dimension": 4,
+        "physical_width": 9,
+        "pivot_dimension": 4,
+        "extension_rank_budget": 1,
+        "zero_binary_columns": 0,
+        "distinct_nonzero_binary_column_signatures": 5,
+        "all_one_physical_vector_in_kernel": false,
+        "active_projection_dimension_lower_bound": 4,
+        "unit_augmented_subcode_dimension_lower_bound": 5,
+        "required_product_stabilizer_component_count_lower_bound": 4,
+        "nonzero_signature_capacity_upper_bound_decimal": "6",
+        "every_t_dimensional_physical_kernel_subspace_with_extension_rank_at_most_r_excluded": false,
+        "higher_label_adaptive_subspace_selection_evades_this_gate": false,
+        "isotropic_chart_or_pivot_basis_selection_needed_by_gate": false,
+        "excludes_any_nonsingular_pencil_at_larger_variation_rank": false,
+        "background_adaptive_pivots_general_decoders_or_other_phase_sources_excluded": false,
+        "kneser_theorem_source": {
+          "url": "https://arxiv.org/pdf/1501.06419",
+          "theorem": "3.3",
+          "decomposition": "Lemma2.7 and Lemma2.10",
+          "binary_field_assumptions_checked": true
+        },
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      "product_stabilizer_is_a_quantum_clifford_stabilizer": false,
+      "nonsingular_pencil_inverse_or_decoder_implemented": false,
+      "candidate_record_accepted": false,
+      "speedup_claim_allowed": false,
+      "literal_systematic_tail_signature_source_probability": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x100000"
+      }
+    },
+    {
+      "status": "EXACT_SELECTED_SCHUR_PRODUCT_AND_STABILIZER_DECOMPOSITION",
+      "parity_rows_hex": [
+        "0x10101",
+        "0x10202",
+        "0x10404",
+        "0x10808",
+        "0x11010",
+        "0x12020",
+        "0x14040",
+        "0x18080"
+      ],
+      "physical_directions_hex": [
+        "0x101",
+        "0x202",
+        "0x404",
+        "0x808",
+        "0x1010",
+        "0x2020",
+        "0x4040",
+        "0x8080"
+      ],
+      "physical_width": 17,
+      "pivot_dimension": 8,
+      "product_space_basis_hex": [
+        "0x101",
+        "0x202",
+        "0x404",
+        "0x808",
+        "0x1010",
+        "0x2020",
+        "0x4040",
+        "0x8080",
+        "0x10000"
+      ],
+      "product_space_dimension": 9,
+      "extension_rank": 1,
+      "active_unit_augmented_subcode_dimension": 9,
+      "product_stabilizer_component_count": 9,
+      "kneser_dimension_slack": 1,
+      "components": [
+        {
+          "physical_component_mask_hex": "0x101",
+          "dual_projection_rank": 1,
+          "product_projection_rank": 1,
+          "nonzero_signatures_in_component": 1
+        },
+        {
+          "physical_component_mask_hex": "0x202",
+          "dual_projection_rank": 1,
+          "product_projection_rank": 1,
+          "nonzero_signatures_in_component": 1
+        },
+        {
+          "physical_component_mask_hex": "0x404",
+          "dual_projection_rank": 1,
+          "product_projection_rank": 1,
+          "nonzero_signatures_in_component": 1
+        },
+        {
+          "physical_component_mask_hex": "0x808",
+          "dual_projection_rank": 1,
+          "product_projection_rank": 1,
+          "nonzero_signatures_in_component": 1
+        },
+        {
+          "physical_component_mask_hex": "0x1010",
+          "dual_projection_rank": 1,
+          "product_projection_rank": 1,
+          "nonzero_signatures_in_component": 1
+        },
+        {
+          "physical_component_mask_hex": "0x2020",
+          "dual_projection_rank": 1,
+          "product_projection_rank": 1,
+          "nonzero_signatures_in_component": 1
+        },
+        {
+          "physical_component_mask_hex": "0x4040",
+          "dual_projection_rank": 1,
+          "product_projection_rank": 1,
+          "nonzero_signatures_in_component": 1
+        },
+        {
+          "physical_component_mask_hex": "0x8080",
+          "dual_projection_rank": 1,
+          "product_projection_rank": 1,
+          "nonzero_signatures_in_component": 1
+        },
+        {
+          "physical_component_mask_hex": "0x10000",
+          "dual_projection_rank": 1,
+          "product_projection_rank": 1,
+          "nonzero_signatures_in_component": 1
+        }
+      ],
+      "signature_gate_at_actual_extension_rank": {
+        "status": "ALL_PHYSICAL_KERNEL_SUBSPACES_LOW_VARIATION_SIGNATURE_GATE",
+        "dimension": 8,
+        "physical_width": 17,
+        "pivot_dimension": 8,
+        "extension_rank_budget": 1,
+        "zero_binary_columns": 0,
+        "distinct_nonzero_binary_column_signatures": 9,
+        "all_one_physical_vector_in_kernel": false,
+        "active_projection_dimension_lower_bound": 8,
+        "unit_augmented_subcode_dimension_lower_bound": 9,
+        "required_product_stabilizer_component_count_lower_bound": 8,
+        "nonzero_signature_capacity_upper_bound_decimal": "10",
+        "every_t_dimensional_physical_kernel_subspace_with_extension_rank_at_most_r_excluded": false,
+        "higher_label_adaptive_subspace_selection_evades_this_gate": false,
+        "isotropic_chart_or_pivot_basis_selection_needed_by_gate": false,
+        "excludes_any_nonsingular_pencil_at_larger_variation_rank": false,
+        "background_adaptive_pivots_general_decoders_or_other_phase_sources_excluded": false,
+        "kneser_theorem_source": {
+          "url": "https://arxiv.org/pdf/1501.06419",
+          "theorem": "3.3",
+          "decomposition": "Lemma2.7 and Lemma2.10",
+          "binary_field_assumptions_checked": true
+        },
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      "product_stabilizer_is_a_quantum_clifford_stabilizer": false,
+      "nonsingular_pencil_inverse_or_decoder_implemented": false,
+      "candidate_record_accepted": false,
+      "speedup_claim_allowed": false,
+      "literal_systematic_tail_signature_source_probability": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x1000000000000000000"
+      }
+    }
+  ],
+  "identity_pencil_middle_source_controls": [
+    {
+      "status": "POSITIVE_IDENTITY_PENCIL_MIDDLE_SOURCE_CONTROL_NOT_NATIVE_LOW_FAMILY",
+      "dimension": 2,
+      "variation_space": "span{I_n}; two background matrices M0 and M0+I_n",
+      "uniform_constant_matrix_all_background_invertibility_probability": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x8"
+      },
+      "conditional_fixed_point_free_probability_inside_GL_n": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x3"
+      },
+      "uniform_constant_matrix_acceptance_lower_bound_for_n_at_least_two": {
+        "sign": 1,
+        "numerator_hex": "0x9",
+        "denominator_hex": "0x70"
+      },
+      "constant_matrix_native_law_requires_W_selected_before_middle_labels": true,
+      "middle_label_acceptance_is_exponentially_small": false,
+      "structured_binary_low_signature_is_a_nonrare_native_family": false,
+      "general_pencil_or_higher_carry_decoder_implemented": false,
+      "candidate_record_accepted": false,
+      "speedup_claim_allowed": false
+    },
+    {
+      "status": "POSITIVE_IDENTITY_PENCIL_MIDDLE_SOURCE_CONTROL_NOT_NATIVE_LOW_FAMILY",
+      "dimension": 3,
+      "variation_space": "span{I_n}; two background matrices M0 and M0+I_n",
+      "uniform_constant_matrix_all_background_invertibility_probability": {
+        "sign": 1,
+        "numerator_hex": "0x3",
+        "denominator_hex": "0x20"
+      },
+      "conditional_fixed_point_free_probability_inside_GL_n": {
+        "sign": 1,
+        "numerator_hex": "0x2",
+        "denominator_hex": "0x7"
+      },
+      "uniform_constant_matrix_acceptance_lower_bound_for_n_at_least_two": {
+        "sign": 1,
+        "numerator_hex": "0x9",
+        "denominator_hex": "0x70"
+      },
+      "constant_matrix_native_law_requires_W_selected_before_middle_labels": true,
+      "middle_label_acceptance_is_exponentially_small": false,
+      "structured_binary_low_signature_is_a_nonrare_native_family": false,
+      "general_pencil_or_higher_carry_decoder_implemented": false,
+      "candidate_record_accepted": false,
+      "speedup_claim_allowed": false
+    },
+    {
+      "status": "POSITIVE_IDENTITY_PENCIL_MIDDLE_SOURCE_CONTROL_NOT_NATIVE_LOW_FAMILY",
+      "dimension": 4,
+      "variation_space": "span{I_n}; two background matrices M0 and M0+I_n",
+      "uniform_constant_matrix_all_background_invertibility_probability": {
+        "sign": 1,
+        "numerator_hex": "0x5b",
+        "denominator_hex": "0x400"
+      },
+      "conditional_fixed_point_free_probability_inside_GL_n": {
+        "sign": 1,
+        "numerator_hex": "0xd",
+        "denominator_hex": "0x2d"
+      },
+      "uniform_constant_matrix_acceptance_lower_bound_for_n_at_least_two": {
+        "sign": 1,
+        "numerator_hex": "0x9",
+        "denominator_hex": "0x70"
+      },
+      "constant_matrix_native_law_requires_W_selected_before_middle_labels": true,
+      "middle_label_acceptance_is_exponentially_small": false,
+      "structured_binary_low_signature_is_a_nonrare_native_family": false,
+      "general_pencil_or_higher_carry_decoder_implemented": false,
+      "candidate_record_accepted": false,
+      "speedup_claim_allowed": false
+    },
+    {
+      "status": "POSITIVE_IDENTITY_PENCIL_MIDDLE_SOURCE_CONTROL_NOT_NATIVE_LOW_FAMILY",
+      "dimension": 8,
+      "variation_space": "span{I_n}; two background matrices M0 and M0+I_n",
+      "uniform_constant_matrix_all_background_invertibility_probability": {
+        "sign": 1,
+        "numerator_hex": "0x156f0397f",
+        "denominator_hex": "0x1000000000"
+      },
+      "conditional_fixed_point_free_probability_inside_GL_n": {
+        "sign": 1,
+        "numerator_hex": "0x2b34701",
+        "denominator_hex": "0x959b7e5"
+      },
+      "uniform_constant_matrix_acceptance_lower_bound_for_n_at_least_two": {
+        "sign": 1,
+        "numerator_hex": "0x9",
+        "denominator_hex": "0x70"
+      },
+      "constant_matrix_native_law_requires_W_selected_before_middle_labels": true,
+      "middle_label_acceptance_is_exponentially_small": false,
+      "structured_binary_low_signature_is_a_nonrare_native_family": false,
+      "general_pencil_or_higher_carry_decoder_implemented": false,
+      "candidate_record_accepted": false,
+      "speedup_claim_allowed": false
+    },
+    {
+      "status": "POSITIVE_IDENTITY_PENCIL_MIDDLE_SOURCE_CONTROL_NOT_NATIVE_LOW_FAMILY",
+      "dimension": 16,
+      "variation_space": "span{I_n}; two background matrices M0 and M0+I_n",
+      "uniform_constant_matrix_all_background_invertibility_probability": {
+        "sign": 1,
+        "numerator_hex": "0x1559b111fdf6def76b4ca66de3b7e13387",
+        "denominator_hex": "0x10000000000000000000000000000000000"
+      },
+      "conditional_fixed_point_free_probability_inside_GL_n": {
+        "sign": 1,
+        "numerator_hex": "0x4c7211163b1be34cf8024ea55677",
+        "denominator_hex": "0x108b62eb60cfeba80b8a7c5a082cb"
+      },
+      "uniform_constant_matrix_acceptance_lower_bound_for_n_at_least_two": {
+        "sign": 1,
+        "numerator_hex": "0x9",
+        "denominator_hex": "0x70"
+      },
+      "constant_matrix_native_law_requires_W_selected_before_middle_labels": true,
+      "middle_label_acceptance_is_exponentially_small": false,
+      "structured_binary_low_signature_is_a_nonrare_native_family": false,
+      "general_pencil_or_higher_carry_decoder_implemented": false,
+      "candidate_record_accepted": false,
+      "speedup_claim_allowed": false
+    },
+    {
+      "status": "POSITIVE_IDENTITY_PENCIL_MIDDLE_SOURCE_CONTROL_NOT_NATIVE_LOW_FAMILY",
+      "dimension": 32,
+      "variation_space": "span{I_n}; two background matrices M0 and M0+I_n",
+      "uniform_constant_matrix_all_background_invertibility_probability": {
+        "sign": 1,
+        "numerator_hex": "0x15599bb8695c6165533fab788ea30ce6df22e47d56b948b8861b5e180e8231108cfdf4412a8983a18c994f70b73aebf684f36a51a5b8c45f428b8d3e38c41eeb3397",
+        "denominator_hex": "0x1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "conditional_fixed_point_free_probability_inside_GL_n": {
+        "sign": 1,
+        "numerator_hex": "0x2ab33771281f31acf6bdba4b0ac18e63d3c8e5c255045cf5b63f761b89834e582d028532af1811a87762c2325d3b5c51c45d8d46d42ca34c2d706114cc69",
+        "denominator_hex": "0x93dc088179945a830baba67b90f09033d3b14e246807ecf9985248a514ab354b4e4ebeae72c5169a8818c48b5996ed69f41f65e71d04445729f07bc08f65"
+      },
+      "uniform_constant_matrix_acceptance_lower_bound_for_n_at_least_two": {
+        "sign": 1,
+        "numerator_hex": "0x9",
+        "denominator_hex": "0x70"
+      },
+      "constant_matrix_native_law_requires_W_selected_before_middle_labels": true,
+      "middle_label_acceptance_is_exponentially_small": false,
+      "structured_binary_low_signature_is_a_nonrare_native_family": false,
+      "general_pencil_or_higher_carry_decoder_implemented": false,
+      "candidate_record_accepted": false,
+      "speedup_claim_allowed": false
+    }
+  ],
+  "native_source_scaling_bounds": [
+    {
+      "status": "NATIVE_ALL_SUBCODE_LOW_VARIATION_EXISTENCE_PROBABILITY_UPPER_BOUND",
+      "dimension": 8,
+      "iid_uniform_binary_tail_columns": 272,
+      "original_packet_states": 280,
+      "extension_rank_budget": 1,
+      "conditional_source": "binary identity prefix plus IID uniform tail; justified by low-only native row transport",
+      "required_product_component_count_if_no_zero_columns_and_odd_row_parity": 8,
+      "nonzero_signature_capacity_if_no_zero_columns_and_odd_row_parity_decimal": "10",
+      "zero_column_or_all_even_row_parity_union_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x1"
+      },
+      "expected_equal_signature_pair_count": {
+        "sign": 1,
+        "numerator_hex": "0x130f",
+        "denominator_hex": "0x20"
+      },
+      "distinct_signature_deficit_if_capacity_below_packet_width": 270,
+      "collision_markov_signature_event_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x130f",
+        "denominator_hex": "0x21c0"
+      },
+      "signature_cover_dyadic_exponent_before_conservative_rounding": 1072,
+      "signature_cover_event_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x100"
+      },
+      "signature_event_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x100"
+      },
+      "parity_free_subspace_envelope": {
+        "parity_free_signature_capacity_decimal": "13",
+        "required_component_count_lower_bound": 7,
+        "ordered_subspace_envelope_count_binary_exponent_upper_bound": 85,
+        "tail_coverage_decay_binary_exponent_lower_bound": 1088,
+        "tail_coverage_bound": "capacity/2^n <= 2^(-n+ceil_log2(capacity))",
+        "envelope_probability_dyadic_exponent_before_rounding": 1003,
+        "all_one_kernel_vector_exception_needed": false,
+        "every_required_signature_space_counted_not_each_signature_individually": true
+      },
+      "parity_free_envelope_probability_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x100"
+      },
+      "zero_column_or_parity_free_low_variation_family_probability_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x1"
+      },
+      "final_bound_is_minimum_of_two_valid_source_arguments": true,
+      "exists_any_n_dimensional_kernel_subcode_with_extension_rank_at_most_r_probability_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x1"
+      },
+      "subcode_search_may_use_all_public_higher_labels": true,
+      "independence_of_exceptional_events_assumed": false,
+      "all_code_subspaces_enumerated": false,
+      "general_nonsingular_pencils_or_full_quantum_algorithms_excluded": false,
+      "candidate_record_accepted": false,
+      "speedup_claim_allowed": false
+    },
+    {
+      "status": "NATIVE_ALL_SUBCODE_LOW_VARIATION_EXISTENCE_PROBABILITY_UPPER_BOUND",
+      "dimension": 16,
+      "iid_uniform_binary_tail_columns": 1040,
+      "original_packet_states": 1056,
+      "extension_rank_budget": 1,
+      "conditional_source": "binary identity prefix plus IID uniform tail; justified by low-only native row transport",
+      "required_product_component_count_if_no_zero_columns_and_odd_row_parity": 16,
+      "nonzero_signature_capacity_if_no_zero_columns_and_odd_row_parity_decimal": "18",
+      "zero_column_or_all_even_row_parity_union_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x411",
+        "denominator_hex": "0x10000"
+      },
+      "expected_equal_signature_pair_count": {
+        "sign": 1,
+        "numerator_hex": "0x10fef",
+        "denominator_hex": "0x2000"
+      },
+      "distinct_signature_deficit_if_capacity_below_packet_width": 1038,
+      "collision_markov_signature_event_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x5aa5",
+        "denominator_hex": "0x2b4000"
+      },
+      "signature_cover_dyadic_exponent_before_conservative_rounding": 11408,
+      "signature_cover_event_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x10000"
+      },
+      "signature_event_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x10000"
+      },
+      "parity_free_subspace_envelope": {
+        "parity_free_signature_capacity_decimal": "21",
+        "required_component_count_lower_bound": 15,
+        "ordered_subspace_envelope_count_binary_exponent_upper_bound": 294,
+        "tail_coverage_decay_binary_exponent_lower_bound": 11440,
+        "tail_coverage_bound": "capacity/2^n <= 2^(-n+ceil_log2(capacity))",
+        "envelope_probability_dyadic_exponent_before_rounding": 11146,
+        "all_one_kernel_vector_exception_needed": false,
+        "every_required_signature_space_counted_not_each_signature_individually": true
+      },
+      "parity_free_envelope_probability_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x10000"
+      },
+      "zero_column_or_parity_free_low_variation_family_probability_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x411",
+        "denominator_hex": "0x10000"
+      },
+      "final_bound_is_minimum_of_two_valid_source_arguments": true,
+      "exists_any_n_dimensional_kernel_subcode_with_extension_rank_at_most_r_probability_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x411",
+        "denominator_hex": "0x10000"
+      },
+      "subcode_search_may_use_all_public_higher_labels": true,
+      "independence_of_exceptional_events_assumed": false,
+      "all_code_subspaces_enumerated": false,
+      "general_nonsingular_pencils_or_full_quantum_algorithms_excluded": false,
+      "candidate_record_accepted": false,
+      "speedup_claim_allowed": false
+    },
+    {
+      "status": "NATIVE_ALL_SUBCODE_LOW_VARIATION_EXISTENCE_PROBABILITY_UPPER_BOUND",
+      "dimension": 24,
+      "iid_uniform_binary_tail_columns": 2320,
+      "original_packet_states": 2344,
+      "extension_rank_budget": 1,
+      "conditional_source": "binary identity prefix plus IID uniform tail; justified by low-only native row transport",
+      "required_product_component_count_if_no_zero_columns_and_odd_row_parity": 24,
+      "nonzero_signature_capacity_if_no_zero_columns_and_odd_row_parity_decimal": "26",
+      "zero_column_or_all_even_row_parity_union_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x911",
+        "denominator_hex": "0x1000000"
+      },
+      "expected_equal_signature_pair_count": {
+        "sign": 1,
+        "numerator_hex": "0x53caf",
+        "denominator_hex": "0x200000"
+      },
+      "distinct_signature_deficit_if_capacity_below_packet_width": 2318,
+      "collision_markov_signature_event_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x53caf",
+        "denominator_hex": "0x121c00000"
+      },
+      "signature_cover_dyadic_exponent_before_conservative_rounding": 44032,
+      "signature_cover_event_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x1000000"
+      },
+      "signature_event_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x1000000"
+      },
+      "parity_free_subspace_envelope": {
+        "parity_free_signature_capacity_decimal": "29",
+        "required_component_count_lower_bound": 23,
+        "ordered_subspace_envelope_count_binary_exponent_upper_bound": 630,
+        "tail_coverage_decay_binary_exponent_lower_bound": 44080,
+        "tail_coverage_bound": "capacity/2^n <= 2^(-n+ceil_log2(capacity))",
+        "envelope_probability_dyadic_exponent_before_rounding": 43450,
+        "all_one_kernel_vector_exception_needed": false,
+        "every_required_signature_space_counted_not_each_signature_individually": true
+      },
+      "parity_free_envelope_probability_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x1000000"
+      },
+      "zero_column_or_parity_free_low_variation_family_probability_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x911",
+        "denominator_hex": "0x1000000"
+      },
+      "final_bound_is_minimum_of_two_valid_source_arguments": true,
+      "exists_any_n_dimensional_kernel_subcode_with_extension_rank_at_most_r_probability_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x911",
+        "denominator_hex": "0x1000000"
+      },
+      "subcode_search_may_use_all_public_higher_labels": true,
+      "independence_of_exceptional_events_assumed": false,
+      "all_code_subspaces_enumerated": false,
+      "general_nonsingular_pencils_or_full_quantum_algorithms_excluded": false,
+      "candidate_record_accepted": false,
+      "speedup_claim_allowed": false
+    },
+    {
+      "status": "NATIVE_ALL_SUBCODE_LOW_VARIATION_EXISTENCE_PROBABILITY_UPPER_BOUND",
+      "dimension": 32,
+      "iid_uniform_binary_tail_columns": 4112,
+      "original_packet_states": 4144,
+      "extension_rank_budget": 1,
+      "conditional_source": "binary identity prefix plus IID uniform tail; justified by low-only native row transport",
+      "required_product_component_count_if_no_zero_columns_and_odd_row_parity": 32,
+      "nonzero_signature_capacity_if_no_zero_columns_and_odd_row_parity_decimal": "34",
+      "zero_column_or_all_even_row_parity_union_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1011",
+        "denominator_hex": "0x100000000"
+      },
+      "expected_equal_signature_pair_count": {
+        "sign": 1,
+        "numerator_hex": "0x105f4f",
+        "denominator_hex": "0x20000000"
+      },
+      "distinct_signature_deficit_if_capacity_below_packet_width": 4110,
+      "collision_markov_signature_event_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x34643",
+        "denominator_hex": "0x66c0000000"
+      },
+      "signature_cover_dyadic_exponent_before_conservative_rounding": 106848,
+      "signature_cover_event_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x100000000"
+      },
+      "signature_event_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x100000000"
+      },
+      "parity_free_subspace_envelope": {
+        "parity_free_signature_capacity_decimal": "37",
+        "required_component_count_lower_bound": 31,
+        "ordered_subspace_envelope_count_binary_exponent_upper_bound": 1095,
+        "tail_coverage_decay_binary_exponent_lower_bound": 106912,
+        "tail_coverage_bound": "capacity/2^n <= 2^(-n+ceil_log2(capacity))",
+        "envelope_probability_dyadic_exponent_before_rounding": 105817,
+        "all_one_kernel_vector_exception_needed": false,
+        "every_required_signature_space_counted_not_each_signature_individually": true
+      },
+      "parity_free_envelope_probability_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x100000000"
+      },
+      "zero_column_or_parity_free_low_variation_family_probability_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1011",
+        "denominator_hex": "0x100000000"
+      },
+      "final_bound_is_minimum_of_two_valid_source_arguments": true,
+      "exists_any_n_dimensional_kernel_subcode_with_extension_rank_at_most_r_probability_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1011",
+        "denominator_hex": "0x100000000"
+      },
+      "subcode_search_may_use_all_public_higher_labels": true,
+      "independence_of_exceptional_events_assumed": false,
+      "all_code_subspaces_enumerated": false,
+      "general_nonsingular_pencils_or_full_quantum_algorithms_excluded": false,
+      "candidate_record_accepted": false,
+      "speedup_claim_allowed": false
+    },
+    {
+      "status": "NATIVE_ALL_SUBCODE_LOW_VARIATION_EXISTENCE_PROBABILITY_UPPER_BOUND",
+      "dimension": 32,
+      "iid_uniform_binary_tail_columns": 4112,
+      "original_packet_states": 4144,
+      "extension_rank_budget": 5,
+      "conditional_source": "binary identity prefix plus IID uniform tail; justified by low-only native row transport",
+      "required_product_component_count_if_no_zero_columns_and_odd_row_parity": 28,
+      "nonzero_signature_capacity_if_no_zero_columns_and_odd_row_parity_decimal": "1050",
+      "zero_column_or_all_even_row_parity_union_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1011",
+        "denominator_hex": "0x100000000"
+      },
+      "expected_equal_signature_pair_count": {
+        "sign": 1,
+        "numerator_hex": "0x105f4f",
+        "denominator_hex": "0x20000000"
+      },
+      "distinct_signature_deficit_if_capacity_below_packet_width": 3094,
+      "collision_markov_signature_event_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x105f4f",
+        "denominator_hex": "0x182c0000000"
+      },
+      "signature_cover_dyadic_exponent_before_conservative_rounding": 53776,
+      "signature_cover_event_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x100000000"
+      },
+      "signature_event_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x100000000"
+      },
+      "parity_free_subspace_envelope": {
+        "parity_free_signature_capacity_decimal": "2073",
+        "required_component_count_lower_bound": 27,
+        "ordered_subspace_envelope_count_binary_exponent_upper_bound": 1227,
+        "tail_coverage_decay_binary_exponent_lower_bound": 82240,
+        "tail_coverage_bound": "capacity/2^n <= 2^(-n+ceil_log2(capacity))",
+        "envelope_probability_dyadic_exponent_before_rounding": 81013,
+        "all_one_kernel_vector_exception_needed": false,
+        "every_required_signature_space_counted_not_each_signature_individually": true
+      },
+      "parity_free_envelope_probability_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x100000000"
+      },
+      "zero_column_or_parity_free_low_variation_family_probability_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1011",
+        "denominator_hex": "0x100000000"
+      },
+      "final_bound_is_minimum_of_two_valid_source_arguments": true,
+      "exists_any_n_dimensional_kernel_subcode_with_extension_rank_at_most_r_probability_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1011",
+        "denominator_hex": "0x100000000"
+      },
+      "subcode_search_may_use_all_public_higher_labels": true,
+      "independence_of_exceptional_events_assumed": false,
+      "all_code_subspaces_enumerated": false,
+      "general_nonsingular_pencils_or_full_quantum_algorithms_excluded": false,
+      "candidate_record_accepted": false,
+      "speedup_claim_allowed": false
+    },
+    {
+      "status": "NATIVE_ALL_SUBCODE_LOW_VARIATION_EXISTENCE_PROBABILITY_UPPER_BOUND",
+      "dimension": 32,
+      "iid_uniform_binary_tail_columns": 4112,
+      "original_packet_states": 4144,
+      "extension_rank_budget": 6,
+      "conditional_source": "binary identity prefix plus IID uniform tail; justified by low-only native row transport",
+      "required_product_component_count_if_no_zero_columns_and_odd_row_parity": 27,
+      "nonzero_signature_capacity_if_no_zero_columns_and_odd_row_parity_decimal": "4121",
+      "zero_column_or_all_even_row_parity_union_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1011",
+        "denominator_hex": "0x100000000"
+      },
+      "expected_equal_signature_pair_count": {
+        "sign": 1,
+        "numerator_hex": "0x105f4f",
+        "denominator_hex": "0x20000000"
+      },
+      "distinct_signature_deficit_if_capacity_below_packet_width": 23,
+      "collision_markov_signature_event_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x105f4f",
+        "denominator_hex": "0x2e0000000"
+      },
+      "signature_cover_dyadic_exponent_before_conservative_rounding": -52720,
+      "signature_cover_event_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x1"
+      },
+      "signature_event_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x105f4f",
+        "denominator_hex": "0x2e0000000"
+      },
+      "parity_free_subspace_envelope": {
+        "parity_free_signature_capacity_decimal": "8216",
+        "required_component_count_lower_bound": 26,
+        "ordered_subspace_envelope_count_binary_exponent_upper_bound": 1260,
+        "tail_coverage_decay_binary_exponent_lower_bound": 74016,
+        "tail_coverage_bound": "capacity/2^n <= 2^(-n+ceil_log2(capacity))",
+        "envelope_probability_dyadic_exponent_before_rounding": 72756,
+        "all_one_kernel_vector_exception_needed": false,
+        "every_required_signature_space_counted_not_each_signature_individually": true
+      },
+      "parity_free_envelope_probability_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x100000000"
+      },
+      "zero_column_or_parity_free_low_variation_family_probability_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1011",
+        "denominator_hex": "0x100000000"
+      },
+      "final_bound_is_minimum_of_two_valid_source_arguments": true,
+      "exists_any_n_dimensional_kernel_subcode_with_extension_rank_at_most_r_probability_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1011",
+        "denominator_hex": "0x100000000"
+      },
+      "subcode_search_may_use_all_public_higher_labels": true,
+      "independence_of_exceptional_events_assumed": false,
+      "all_code_subspaces_enumerated": false,
+      "general_nonsingular_pencils_or_full_quantum_algorithms_excluded": false,
+      "candidate_record_accepted": false,
+      "speedup_claim_allowed": false
+    },
+    {
+      "status": "NATIVE_ALL_SUBCODE_LOW_VARIATION_EXISTENCE_PROBABILITY_UPPER_BOUND",
+      "dimension": 32,
+      "iid_uniform_binary_tail_columns": 4112,
+      "original_packet_states": 4144,
+      "extension_rank_budget": 15,
+      "conditional_source": "binary identity prefix plus IID uniform tail; justified by low-only native row transport",
+      "required_product_component_count_if_no_zero_columns_and_odd_row_parity": 18,
+      "nonzero_signature_capacity_if_no_zero_columns_and_odd_row_parity_decimal": "1073741840",
+      "zero_column_or_all_even_row_parity_union_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1011",
+        "denominator_hex": "0x100000000"
+      },
+      "expected_equal_signature_pair_count": {
+        "sign": 1,
+        "numerator_hex": "0x105f4f",
+        "denominator_hex": "0x20000000"
+      },
+      "distinct_signature_deficit_if_capacity_below_packet_width": 0,
+      "collision_markov_signature_event_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x1"
+      },
+      "signature_cover_dyadic_exponent_before_conservative_rounding": -34359733744,
+      "signature_cover_event_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x1"
+      },
+      "signature_event_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x1"
+      },
+      "parity_free_subspace_envelope": {
+        "parity_free_signature_capacity_decimal": "2147483663",
+        "required_component_count_lower_bound": 17,
+        "ordered_subspace_envelope_count_binary_exponent_upper_bound": 1557,
+        "tail_coverage_decay_binary_exponent_lower_bound": 1644,
+        "tail_coverage_bound": "capacity/2^n <= 3/4; (3/4)^5 < 1/4",
+        "envelope_probability_dyadic_exponent_before_rounding": 87,
+        "all_one_kernel_vector_exception_needed": false,
+        "every_required_signature_space_counted_not_each_signature_individually": true
+      },
+      "parity_free_envelope_probability_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x100000000"
+      },
+      "zero_column_or_parity_free_low_variation_family_probability_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1011",
+        "denominator_hex": "0x100000000"
+      },
+      "final_bound_is_minimum_of_two_valid_source_arguments": true,
+      "exists_any_n_dimensional_kernel_subcode_with_extension_rank_at_most_r_probability_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1011",
+        "denominator_hex": "0x100000000"
+      },
+      "subcode_search_may_use_all_public_higher_labels": true,
+      "independence_of_exceptional_events_assumed": false,
+      "all_code_subspaces_enumerated": false,
+      "general_nonsingular_pencils_or_full_quantum_algorithms_excluded": false,
+      "candidate_record_accepted": false,
+      "speedup_claim_allowed": false
+    },
+    {
+      "status": "NATIVE_ALL_SUBCODE_LOW_VARIATION_EXISTENCE_PROBABILITY_UPPER_BOUND",
+      "dimension": 64,
+      "iid_uniform_binary_tail_columns": 16400,
+      "original_packet_states": 16464,
+      "extension_rank_budget": 7,
+      "conditional_source": "binary identity prefix plus IID uniform tail; justified by low-only native row transport",
+      "required_product_component_count_if_no_zero_columns_and_odd_row_parity": 58,
+      "nonzero_signature_capacity_if_no_zero_columns_and_odd_row_parity_decimal": "16440",
+      "zero_column_or_all_even_row_parity_union_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x4011",
+        "denominator_hex": "0x10000000000000000"
+      },
+      "expected_equal_signature_pair_count": {
+        "sign": 1,
+        "numerator_hex": "0x1027c8f",
+        "denominator_hex": "0x2000000000000000"
+      },
+      "distinct_signature_deficit_if_capacity_below_packet_width": 24,
+      "collision_markov_signature_event_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x562985",
+        "denominator_hex": "0x10000000000000000"
+      },
+      "signature_cover_dyadic_exponent_before_conservative_rounding": -244464,
+      "signature_cover_event_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x1"
+      },
+      "signature_event_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x562985",
+        "denominator_hex": "0x10000000000000000"
+      },
+      "parity_free_subspace_envelope": {
+        "parity_free_signature_capacity_decimal": "32823",
+        "required_component_count_lower_bound": 57,
+        "ordered_subspace_envelope_count_binary_exponent_upper_bound": 4622,
+        "tail_coverage_decay_binary_exponent_lower_bound": 787200,
+        "tail_coverage_bound": "capacity/2^n <= 2^(-n+ceil_log2(capacity))",
+        "envelope_probability_dyadic_exponent_before_rounding": 782578,
+        "all_one_kernel_vector_exception_needed": false,
+        "every_required_signature_space_counted_not_each_signature_individually": true
+      },
+      "parity_free_envelope_probability_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x10000000000000000"
+      },
+      "zero_column_or_parity_free_low_variation_family_probability_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x4011",
+        "denominator_hex": "0x10000000000000000"
+      },
+      "final_bound_is_minimum_of_two_valid_source_arguments": true,
+      "exists_any_n_dimensional_kernel_subcode_with_extension_rank_at_most_r_probability_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x4011",
+        "denominator_hex": "0x10000000000000000"
+      },
+      "subcode_search_may_use_all_public_higher_labels": true,
+      "independence_of_exceptional_events_assumed": false,
+      "all_code_subspaces_enumerated": false,
+      "general_nonsingular_pencils_or_full_quantum_algorithms_excluded": false,
+      "candidate_record_accepted": false,
+      "speedup_claim_allowed": false
+    },
+    {
+      "status": "NATIVE_ALL_SUBCODE_LOW_VARIATION_EXISTENCE_PROBABILITY_UPPER_BOUND",
+      "dimension": 64,
+      "iid_uniform_binary_tail_columns": 16400,
+      "original_packet_states": 16464,
+      "extension_rank_budget": 31,
+      "conditional_source": "binary identity prefix plus IID uniform tail; justified by low-only native row transport",
+      "required_product_component_count_if_no_zero_columns_and_odd_row_parity": 34,
+      "nonzero_signature_capacity_if_no_zero_columns_and_odd_row_parity_decimal": "4611686018427387936",
+      "zero_column_or_all_even_row_parity_union_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x4011",
+        "denominator_hex": "0x10000000000000000"
+      },
+      "expected_equal_signature_pair_count": {
+        "sign": 1,
+        "numerator_hex": "0x1027c8f",
+        "denominator_hex": "0x2000000000000000"
+      },
+      "distinct_signature_deficit_if_capacity_below_packet_width": 0,
+      "collision_markov_signature_event_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x1"
+      },
+      "signature_cover_dyadic_exponent_before_conservative_rounding": -295147905179352807408,
+      "signature_cover_event_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x1"
+      },
+      "signature_event_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x1"
+      },
+      "parity_free_subspace_envelope": {
+        "parity_free_signature_capacity_decimal": "9223372036854775839",
+        "required_component_count_lower_bound": 33,
+        "ordered_subspace_envelope_count_binary_exponent_upper_bound": 6182,
+        "tail_coverage_decay_binary_exponent_lower_bound": 6560,
+        "tail_coverage_bound": "capacity/2^n <= 3/4; (3/4)^5 < 1/4",
+        "envelope_probability_dyadic_exponent_before_rounding": 378,
+        "all_one_kernel_vector_exception_needed": false,
+        "every_required_signature_space_counted_not_each_signature_individually": true
+      },
+      "parity_free_envelope_probability_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x10000000000000000"
+      },
+      "zero_column_or_parity_free_low_variation_family_probability_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x4011",
+        "denominator_hex": "0x10000000000000000"
+      },
+      "final_bound_is_minimum_of_two_valid_source_arguments": true,
+      "exists_any_n_dimensional_kernel_subcode_with_extension_rank_at_most_r_probability_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x4011",
+        "denominator_hex": "0x10000000000000000"
+      },
+      "subcode_search_may_use_all_public_higher_labels": true,
+      "independence_of_exceptional_events_assumed": false,
+      "all_code_subspaces_enumerated": false,
+      "general_nonsingular_pencils_or_full_quantum_algorithms_excluded": false,
+      "candidate_record_accepted": false,
+      "speedup_claim_allowed": false
+    }
+  ],
+  "adaptive_pool_bounds": [
+    {
+      "status": "ADAPTIVE_POOL_REGROUPING_LOW_VARIATION_PROBABILITY_UPPER_BOUND",
+      "dimension": 32,
+      "packet_states": 4144,
+      "iid_original_pool_states": 1048576,
+      "extension_rank_budget": 4,
+      "ordered_packet_menu_count_binary_exponent_upper_bound": 82880,
+      "envelope_mass_exponent_after_charging_all_ordered_packet_menus": 6390,
+      "any_zero_binary_label_in_entire_pool_probability_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x1000"
+      },
+      "any_full_rank_selected_packet_low_variation_family_probability_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x100000000"
+      },
+      "existence_probability_upper_bound_including_global_zero_label_exception": {
+        "sign": 1,
+        "numerator_hex": "0x100001",
+        "denominator_hex": "0x100000000"
+      },
+      "arbitrary_public_label_adaptive_grouping_permitted": true,
+      "rows_may_be_normalized_from_selected_invertible_binary_prefix": true,
+      "zero_label_exception_is_charged_once_on_entire_pool_not_once_per_menu": true,
+      "selected_packet_uses_distinct_original_registers": true,
+      "same_label_copies_or_non_native_phase_sources_granted": false,
+      "rank_deficient_output_or_variable_packet_size_protocols_covered": false,
+      "candidate_record_accepted": false,
+      "speedup_claim_allowed": false
+    },
+    {
+      "status": "ADAPTIVE_POOL_REGROUPING_LOW_VARIATION_PROBABILITY_UPPER_BOUND",
+      "dimension": 32,
+      "packet_states": 4144,
+      "iid_original_pool_states": 1048576,
+      "extension_rank_budget": 15,
+      "ordered_packet_menu_count_binary_exponent_upper_bound": 82880,
+      "envelope_mass_exponent_after_charging_all_ordered_packet_menus": -82793,
+      "any_zero_binary_label_in_entire_pool_probability_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x1000"
+      },
+      "any_full_rank_selected_packet_low_variation_family_probability_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x1"
+      },
+      "existence_probability_upper_bound_including_global_zero_label_exception": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x1"
+      },
+      "arbitrary_public_label_adaptive_grouping_permitted": true,
+      "rows_may_be_normalized_from_selected_invertible_binary_prefix": true,
+      "zero_label_exception_is_charged_once_on_entire_pool_not_once_per_menu": true,
+      "selected_packet_uses_distinct_original_registers": true,
+      "same_label_copies_or_non_native_phase_sources_granted": false,
+      "rank_deficient_output_or_variable_packet_size_protocols_covered": false,
+      "candidate_record_accepted": false,
+      "speedup_claim_allowed": false
+    },
+    {
+      "status": "ADAPTIVE_POOL_REGROUPING_LOW_VARIATION_PROBABILITY_UPPER_BOUND",
+      "dimension": 64,
+      "packet_states": 16464,
+      "iid_original_pool_states": 16777216,
+      "extension_rank_budget": 16,
+      "ordered_packet_menu_count_binary_exponent_upper_bound": 395136,
+      "envelope_mass_exponent_after_charging_all_ordered_packet_menus": 91657,
+      "any_zero_binary_label_in_entire_pool_probability_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x10000000000"
+      },
+      "any_full_rank_selected_packet_low_variation_family_probability_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x10000000000000000"
+      },
+      "existence_probability_upper_bound_including_global_zero_label_exception": {
+        "sign": 1,
+        "numerator_hex": "0x1000001",
+        "denominator_hex": "0x10000000000000000"
+      },
+      "arbitrary_public_label_adaptive_grouping_permitted": true,
+      "rows_may_be_normalized_from_selected_invertible_binary_prefix": true,
+      "zero_label_exception_is_charged_once_on_entire_pool_not_once_per_menu": true,
+      "selected_packet_uses_distinct_original_registers": true,
+      "same_label_copies_or_non_native_phase_sources_granted": false,
+      "rank_deficient_output_or_variable_packet_size_protocols_covered": false,
+      "candidate_record_accepted": false,
+      "speedup_claim_allowed": false
+    },
+    {
+      "status": "ADAPTIVE_POOL_REGROUPING_LOW_VARIATION_PROBABILITY_UPPER_BOUND",
+      "dimension": 128,
+      "packet_states": 65680,
+      "iid_original_pool_states": 268435456,
+      "extension_rank_budget": 32,
+      "ordered_packet_menu_count_binary_exponent_upper_bound": 1839040,
+      "envelope_mass_exponent_after_charging_all_ordered_packet_menus": 2204536,
+      "any_zero_binary_label_in_entire_pool_probability_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x10000000000000000000000000"
+      },
+      "any_full_rank_selected_packet_low_variation_family_probability_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x100000000000000000000000000000000"
+      },
+      "existence_probability_upper_bound_including_global_zero_label_exception": {
+        "sign": 1,
+        "numerator_hex": "0x10000001",
+        "denominator_hex": "0x100000000000000000000000000000000"
+      },
+      "arbitrary_public_label_adaptive_grouping_permitted": true,
+      "rows_may_be_normalized_from_selected_invertible_binary_prefix": true,
+      "zero_label_exception_is_charged_once_on_entire_pool_not_once_per_menu": true,
+      "selected_packet_uses_distinct_original_registers": true,
+      "same_label_copies_or_non_native_phase_sources_granted": false,
+      "rank_deficient_output_or_variable_packet_size_protocols_covered": false,
+      "candidate_record_accepted": false,
+      "speedup_claim_allowed": false
+    }
+  ],
+  "claim_gate": {
+    "low_variation_gate_covers_every_physical_kernel_subspace": true,
+    "zero_columns_and_all_one_kernel_exceptions_charged": true,
+    "rank_one_native_family_cannot_be_promoted_from_small_positive_control": true,
+    "all_larger_correlated_pencils_or_background_adaptive_pivots_excluded": false,
+    "new_quantum_decoder_or_speedup": false,
+    "independent_theorem_review": false,
+    "candidate_record_accepted": false,
+    "novelty_claim": false,
+    "speedup_claim_allowed": false
+  },
+  "dependency_sha256": {
+    "theorems/dcp_native_schur_expansion.py": "811431e4fd51d3ca884307d4a51fd50318aa1ea57d933f3b5f0f9fd6e4be3616",
+    "theorems/dcp_pivot_span_obstructions.py": "175ba883a0c114044785574beeb466a4ddcb1d2e110d4eb37131d5ea7d4e1a94",
+    "theorems/dcp_systematic_source_transport.py": "1678b797a2e49554c0bad99befc91b9dd50810e69f3e501e43fe498513434574",
+    "research/phase_workbench/dcp_pivot_span_obstructions.json": "ee74eb67ba26a179265621627f25abe6eceac7bf06eeabc63115e08edfe36473"
+  }
+}

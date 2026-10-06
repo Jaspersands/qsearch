@@ -1,0 +1,3432 @@
+{
+  "status": "SCOPED_QSVT_COMPARISON_ENCODING_FALSIFIER_REVIEW_PENDING",
+  "physical_controls": [
+    {
+      "labels": [
+        [
+          2,
+          1
+        ]
+      ],
+      "modulus": 4,
+      "fiber_counts": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "raw_herald_exact": {
+        "numerator_hex": "1",
+        "denominator_hex": "4"
+      },
+      "raw_correct_exact": {
+        "numerator_hex": "1",
+        "denominator_hex": "4"
+      },
+      "raw_conditional_correct_exact": {
+        "numerator_hex": "1",
+        "denominator_hex": "1"
+      },
+      "supported_singular_value_condition_number_squared": {
+        "numerator_hex": "1",
+        "denominator_hex": "1"
+      },
+      "ideal_PGM_success": 1.0,
+      "physical_controls": [
+        {
+          "degree": 1,
+          "physical_reflection_rounds": 0,
+          "spectral_correct_unconditional": 0.24999999999999994,
+          "spectral_herald": 0.24999999999999994,
+          "optimal_classical_label_guess_uniform_secret_unconditional": 0.25,
+          "heralded_output_probabilities_by_secret": [
+            [
+              0.25,
+              1.2976312763469536e-33,
+              9.373498641636607e-34,
+              3.42508022096256e-33
+            ],
+            [
+              1.2976312763469536e-33,
+              0.25,
+              7.4379315387310685e-34,
+              9.373498641636613e-34
+            ],
+            [
+              9.373498641636607e-34,
+              7.4379315387310685e-34,
+              0.25,
+              7.3031767981585735e-34
+            ],
+            [
+              3.42508022096256e-33,
+              9.373498641636613e-34,
+              7.3031767981585735e-34,
+              0.25
+            ]
+          ],
+          "every_secret_physical_probabilities": [
+            {
+              "secret": [
+                0
+              ],
+              "herald": 0.25,
+              "correct_unconditional": 0.25,
+              "failed_herald": 0.75,
+              "total_physical_norm": 1.0
+            },
+            {
+              "secret": [
+                1
+              ],
+              "herald": 0.25,
+              "correct_unconditional": 0.25,
+              "failed_herald": 0.75,
+              "total_physical_norm": 1.0
+            },
+            {
+              "secret": [
+                2
+              ],
+              "herald": 0.25,
+              "correct_unconditional": 0.25,
+              "failed_herald": 0.75,
+              "total_physical_norm": 1.0
+            },
+            {
+              "secret": [
+                3
+              ],
+              "herald": 0.25,
+              "correct_unconditional": 0.25,
+              "failed_herald": 0.75,
+              "total_physical_norm": 1.0
+            }
+          ]
+        },
+        {
+          "degree": 3,
+          "physical_reflection_rounds": 1,
+          "spectral_correct_unconditional": 1.0,
+          "spectral_herald": 1.0,
+          "optimal_classical_label_guess_uniform_secret_unconditional": 1.0,
+          "heralded_output_probabilities_by_secret": [
+            [
+              1.0,
+              1.2181679618018942e-34,
+              5.559062676522441e-35,
+              1.4213389427489172e-33
+            ],
+            [
+              4.38005875263776e-34,
+              1.0,
+              7.735684621728405e-34,
+              2.3093059981507772e-33
+            ],
+            [
+              1.1618292815421583e-33,
+              5.4652382880539585e-34,
+              1.0,
+              5.611293773321853e-34
+            ],
+            [
+              1.5698585059309528e-33,
+              5.364059738153827e-35,
+              6.75428023255101e-34,
+              1.0
+            ]
+          ],
+          "every_secret_physical_probabilities": [
+            {
+              "secret": [
+                0
+              ],
+              "herald": 1.0,
+              "correct_unconditional": 1.0,
+              "failed_herald": 0.0,
+              "total_physical_norm": 1.0
+            },
+            {
+              "secret": [
+                1
+              ],
+              "herald": 1.0,
+              "correct_unconditional": 1.0,
+              "failed_herald": 0.0,
+              "total_physical_norm": 1.0
+            },
+            {
+              "secret": [
+                2
+              ],
+              "herald": 1.0,
+              "correct_unconditional": 1.0,
+              "failed_herald": 0.0,
+              "total_physical_norm": 1.0
+            },
+            {
+              "secret": [
+                3
+              ],
+              "herald": 1.0,
+              "correct_unconditional": 1.0,
+              "failed_herald": 0.0,
+              "total_physical_norm": 1.0
+            }
+          ]
+        },
+        {
+          "degree": 5,
+          "physical_reflection_rounds": 2,
+          "spectral_correct_unconditional": 0.25000000000000033,
+          "spectral_herald": 0.25000000000000033,
+          "optimal_classical_label_guess_uniform_secret_unconditional": 0.25,
+          "heralded_output_probabilities_by_secret": [
+            [
+              0.25,
+              3.909268058201938e-33,
+              1.1208727936359018e-32,
+              8.807226416443737e-33
+            ],
+            [
+              1.3634193348050258e-33,
+              0.25,
+              1.0207294075493115e-33,
+              1.828352118822079e-33
+            ],
+            [
+              1.788897817015401e-33,
+              1.0692263621325524e-33,
+              0.25,
+              1.734162909681305e-33
+            ],
+            [
+              9.0246304671164e-33,
+              5.905131162275844e-33,
+              4.6451264345010105e-33,
+              0.25
+            ]
+          ],
+          "every_secret_physical_probabilities": [
+            {
+              "secret": [
+                0
+              ],
+              "herald": 0.25,
+              "correct_unconditional": 0.25,
+              "failed_herald": 0.75,
+              "total_physical_norm": 1.0
+            },
+            {
+              "secret": [
+                1
+              ],
+              "herald": 0.25,
+              "correct_unconditional": 0.25,
+              "failed_herald": 0.75,
+              "total_physical_norm": 1.0
+            },
+            {
+              "secret": [
+                2
+              ],
+              "herald": 0.25,
+              "correct_unconditional": 0.25,
+              "failed_herald": 0.75,
+              "total_physical_norm": 1.0
+            },
+            {
+              "secret": [
+                3
+              ],
+              "herald": 0.25,
+              "correct_unconditional": 0.25,
+              "failed_herald": 0.75,
+              "total_physical_norm": 1.0
+            }
+          ]
+        },
+        {
+          "degree": 7,
+          "physical_reflection_rounds": 3,
+          "spectral_correct_unconditional": 0.24999999999999978,
+          "spectral_herald": 0.24999999999999978,
+          "optimal_classical_label_guess_uniform_secret_unconditional": 0.25,
+          "heralded_output_probabilities_by_secret": [
+            [
+              0.25,
+              1.2088257319451161e-32,
+              8.495246864975572e-33,
+              2.7375471356406474e-32
+            ],
+            [
+              2.2838062051897714e-33,
+              0.25,
+              5.765034613183038e-33,
+              6.933347799794048e-33
+            ],
+            [
+              1.5703254358063088e-32,
+              3.5026524239154014e-33,
+              0.25,
+              4.2520085849034995e-33
+            ],
+            [
+              4.393084053791293e-32,
+              1.4018520559292614e-32,
+              1.0795890974841626e-32,
+              0.25
+            ]
+          ],
+          "every_secret_physical_probabilities": [
+            {
+              "secret": [
+                0
+              ],
+              "herald": 0.25,
+              "correct_unconditional": 0.25,
+              "failed_herald": 0.75,
+              "total_physical_norm": 1.0
+            },
+            {
+              "secret": [
+                1
+              ],
+              "herald": 0.25,
+              "correct_unconditional": 0.25,
+              "failed_herald": 0.75,
+              "total_physical_norm": 1.0
+            },
+            {
+              "secret": [
+                2
+              ],
+              "herald": 0.25,
+              "correct_unconditional": 0.25,
+              "failed_herald": 0.75,
+              "total_physical_norm": 1.0
+            },
+            {
+              "secret": [
+                3
+              ],
+              "herald": 0.25,
+              "correct_unconditional": 0.25,
+              "failed_herald": 0.75,
+              "total_physical_norm": 1.0
+            }
+          ]
+        }
+      ],
+      "bounded_unitary_and_fiber_materialization_is_exponential_calibration": true,
+      "known_public_unitary_inverse_used": true,
+      "unknown_input_preparation_inverse_used": false,
+      "efficient_native_decoder_implemented": false
+    },
+    {
+      "labels": [
+        [
+          0,
+          0
+        ]
+      ],
+      "modulus": 4,
+      "fiber_counts": [
+        4,
+        0,
+        0,
+        0
+      ],
+      "raw_herald_exact": {
+        "numerator_hex": "1",
+        "denominator_hex": "1"
+      },
+      "raw_correct_exact": {
+        "numerator_hex": "1",
+        "denominator_hex": "4"
+      },
+      "raw_conditional_correct_exact": {
+        "numerator_hex": "1",
+        "denominator_hex": "4"
+      },
+      "supported_singular_value_condition_number_squared": {
+        "numerator_hex": "1",
+        "denominator_hex": "1"
+      },
+      "ideal_PGM_success": 0.25,
+      "physical_controls": [
+        {
+          "degree": 1,
+          "physical_reflection_rounds": 0,
+          "spectral_correct_unconditional": 0.25,
+          "spectral_herald": 1.0,
+          "optimal_classical_label_guess_uniform_secret_unconditional": 0.25,
+          "heralded_output_probabilities_by_secret": [
+            [
+              0.25,
+              0.25,
+              0.25,
+              0.25
+            ],
+            [
+              0.25,
+              0.25,
+              0.25,
+              0.25
+            ],
+            [
+              0.25,
+              0.25,
+              0.25,
+              0.25
+            ],
+            [
+              0.25,
+              0.25,
+              0.25,
+              0.25
+            ]
+          ],
+          "every_secret_physical_probabilities": [
+            {
+              "secret": [
+                0
+              ],
+              "herald": 1.0,
+              "correct_unconditional": 0.25,
+              "failed_herald": 0.0,
+              "total_physical_norm": 1.0
+            },
+            {
+              "secret": [
+                1
+              ],
+              "herald": 1.0,
+              "correct_unconditional": 0.25,
+              "failed_herald": 0.0,
+              "total_physical_norm": 1.0
+            },
+            {
+              "secret": [
+                2
+              ],
+              "herald": 1.0,
+              "correct_unconditional": 0.25,
+              "failed_herald": 0.0,
+              "total_physical_norm": 1.0
+            },
+            {
+              "secret": [
+                3
+              ],
+              "herald": 1.0,
+              "correct_unconditional": 0.25,
+              "failed_herald": 0.0,
+              "total_physical_norm": 1.0
+            }
+          ]
+        },
+        {
+          "degree": 3,
+          "physical_reflection_rounds": 1,
+          "spectral_correct_unconditional": 0.25,
+          "spectral_herald": 1.0,
+          "optimal_classical_label_guess_uniform_secret_unconditional": 0.25,
+          "heralded_output_probabilities_by_secret": [
+            [
+              0.25,
+              0.25,
+              0.25,
+              0.25
+            ],
+            [
+              0.25,
+              0.25,
+              0.25,
+              0.25
+            ],
+            [
+              0.25,
+              0.25,
+              0.25,
+              0.25
+            ],
+            [
+              0.25,
+              0.25,
+              0.25,
+              0.25
+            ]
+          ],
+          "every_secret_physical_probabilities": [
+            {
+              "secret": [
+                0
+              ],
+              "herald": 1.0,
+              "correct_unconditional": 0.25,
+              "failed_herald": 0.0,
+              "total_physical_norm": 1.0
+            },
+            {
+              "secret": [
+                1
+              ],
+              "herald": 1.0,
+              "correct_unconditional": 0.25,
+              "failed_herald": 0.0,
+              "total_physical_norm": 1.0
+            },
+            {
+              "secret": [
+                2
+              ],
+              "herald": 1.0,
+              "correct_unconditional": 0.25,
+              "failed_herald": 0.0,
+              "total_physical_norm": 1.0
+            },
+            {
+              "secret": [
+                3
+              ],
+              "herald": 1.0,
+              "correct_unconditional": 0.25,
+              "failed_herald": 0.0,
+              "total_physical_norm": 1.0
+            }
+          ]
+        },
+        {
+          "degree": 5,
+          "physical_reflection_rounds": 2,
+          "spectral_correct_unconditional": 0.25,
+          "spectral_herald": 1.0,
+          "optimal_classical_label_guess_uniform_secret_unconditional": 0.25,
+          "heralded_output_probabilities_by_secret": [
+            [
+              0.25,
+              0.25,
+              0.25,
+              0.25
+            ],
+            [
+              0.25,
+              0.25,
+              0.25,
+              0.25
+            ],
+            [
+              0.25,
+              0.25,
+              0.25,
+              0.25
+            ],
+            [
+              0.25,
+              0.25,
+              0.25,
+              0.25
+            ]
+          ],
+          "every_secret_physical_probabilities": [
+            {
+              "secret": [
+                0
+              ],
+              "herald": 1.0,
+              "correct_unconditional": 0.25,
+              "failed_herald": 0.0,
+              "total_physical_norm": 1.0
+            },
+            {
+              "secret": [
+                1
+              ],
+              "herald": 1.0,
+              "correct_unconditional": 0.25,
+              "failed_herald": 0.0,
+              "total_physical_norm": 1.0
+            },
+            {
+              "secret": [
+                2
+              ],
+              "herald": 1.0,
+              "correct_unconditional": 0.25,
+              "failed_herald": 0.0,
+              "total_physical_norm": 1.0
+            },
+            {
+              "secret": [
+                3
+              ],
+              "herald": 1.0,
+              "correct_unconditional": 0.25,
+              "failed_herald": 0.0,
+              "total_physical_norm": 1.0
+            }
+          ]
+        },
+        {
+          "degree": 7,
+          "physical_reflection_rounds": 3,
+          "spectral_correct_unconditional": 0.25,
+          "spectral_herald": 1.0,
+          "optimal_classical_label_guess_uniform_secret_unconditional": 0.25,
+          "heralded_output_probabilities_by_secret": [
+            [
+              0.25,
+              0.25,
+              0.25,
+              0.25
+            ],
+            [
+              0.25,
+              0.25,
+              0.25,
+              0.25
+            ],
+            [
+              0.25,
+              0.25,
+              0.25,
+              0.25
+            ],
+            [
+              0.25,
+              0.25,
+              0.25,
+              0.25
+            ]
+          ],
+          "every_secret_physical_probabilities": [
+            {
+              "secret": [
+                0
+              ],
+              "herald": 1.0,
+              "correct_unconditional": 0.25,
+              "failed_herald": 0.0,
+              "total_physical_norm": 1.0
+            },
+            {
+              "secret": [
+                1
+              ],
+              "herald": 1.0,
+              "correct_unconditional": 0.25,
+              "failed_herald": 0.0,
+              "total_physical_norm": 1.0
+            },
+            {
+              "secret": [
+                2
+              ],
+              "herald": 1.0,
+              "correct_unconditional": 0.25,
+              "failed_herald": 0.0,
+              "total_physical_norm": 1.0
+            },
+            {
+              "secret": [
+                3
+              ],
+              "herald": 1.0,
+              "correct_unconditional": 0.25,
+              "failed_herald": 0.0,
+              "total_physical_norm": 1.0
+            }
+          ]
+        }
+      ],
+      "bounded_unitary_and_fiber_materialization_is_exponential_calibration": true,
+      "known_public_unitary_inverse_used": true,
+      "unknown_input_preparation_inverse_used": false,
+      "efficient_native_decoder_implemented": false
+    },
+    {
+      "labels": [
+        [
+          1,
+          3,
+          7
+        ]
+      ],
+      "modulus": 8,
+      "fiber_counts": [
+        2,
+        1,
+        1,
+        2,
+        1,
+        0,
+        0,
+        1
+      ],
+      "raw_herald_exact": {
+        "numerator_hex": "3",
+        "denominator_hex": "10"
+      },
+      "raw_correct_exact": {
+        "numerator_hex": "1",
+        "denominator_hex": "8"
+      },
+      "raw_conditional_correct_exact": {
+        "numerator_hex": "2",
+        "denominator_hex": "3"
+      },
+      "supported_singular_value_condition_number_squared": {
+        "numerator_hex": "2",
+        "denominator_hex": "1"
+      },
+      "ideal_PGM_success": 0.7285533905932737,
+      "physical_controls": [
+        {
+          "degree": 1,
+          "physical_reflection_rounds": 0,
+          "spectral_correct_unconditional": 0.125,
+          "spectral_herald": 0.1875,
+          "optimal_classical_label_guess_uniform_secret_unconditional": 0.12499999999999994,
+          "heralded_output_probabilities_by_secret": [
+            [
+              0.12499999999999994,
+              0.01333677172801989,
+              0.015624999999999993,
+              0.0022882282719800975,
+              1.8746997283273203e-33,
+              0.002288228271980095,
+              0.015624999999999993,
+              0.013336771728019933
+            ],
+            [
+              0.013336771728019895,
+              0.1249999999999999,
+              0.013336771728019895,
+              0.01562499999999999,
+              0.002288228271980095,
+              2.5482460576673625e-32,
+              0.0022882282719800928,
+              0.015625000000000014
+            ],
+            [
+              0.015624999999999993,
+              0.013336771728019895,
+              0.12499999999999994,
+              0.013336771728019902,
+              0.01562499999999999,
+              0.0022882282719800975,
+              1.2395201831320206e-33,
+              0.002288228271980104
+            ],
+            [
+              0.0022882282719800975,
+              0.01562499999999999,
+              0.013336771728019902,
+              0.12499999999999997,
+              0.013336771728019883,
+              0.015624999999999955,
+              0.002288228271980097,
+              1.6478738086663287e-32
+            ],
+            [
+              1.8746997283273213e-33,
+              0.002288228271980096,
+              0.01562499999999999,
+              0.01333677172801989,
+              0.12499999999999994,
+              0.013336771728019902,
+              0.015625000000000007,
+              0.0022882282719800897
+            ],
+            [
+              0.002288228271980094,
+              2.4375050858650954e-32,
+              0.0022882282719800984,
+              0.015624999999999955,
+              0.013336771728019906,
+              0.12499999999999997,
+              0.013336771728019902,
+              0.015624999999999993
+            ],
+            [
+              0.015624999999999993,
+              0.0022882282719800923,
+              1.2395201831320206e-33,
+              0.0022882282719800975,
+              0.015625000000000007,
+              0.013336771728019902,
+              0.12499999999999994,
+              0.013336771728019845
+            ],
+            [
+              0.013336771728019933,
+              0.015625000000000014,
+              0.002288228271980104,
+              1.561206961168903e-32,
+              0.002288228271980091,
+              0.015625000000000007,
+              0.013336771728019841,
+              0.12499999999999994
+            ]
+          ],
+          "every_secret_physical_probabilities": [
+            {
+              "secret": [
+                0
+              ],
+              "herald": 0.18749999999999994,
+              "correct_unconditional": 0.12499999999999994,
+              "failed_herald": 0.8125,
+              "total_physical_norm": 0.9999999999999996
+            },
+            {
+              "secret": [
+                1
+              ],
+              "herald": 0.1874999999999999,
+              "correct_unconditional": 0.1249999999999999,
+              "failed_herald": 0.8125000000000001,
+              "total_physical_norm": 0.9999999999999996
+            },
+            {
+              "secret": [
+                2
+              ],
+              "herald": 0.18749999999999992,
+              "correct_unconditional": 0.12499999999999994,
+              "failed_herald": 0.8125000000000001,
+              "total_physical_norm": 0.9999999999999996
+            },
+            {
+              "secret": [
+                3
+              ],
+              "herald": 0.1874999999999999,
+              "correct_unconditional": 0.12499999999999997,
+              "failed_herald": 0.8125000000000001,
+              "total_physical_norm": 0.9999999999999996
+            },
+            {
+              "secret": [
+                4
+              ],
+              "herald": 0.18749999999999992,
+              "correct_unconditional": 0.12499999999999994,
+              "failed_herald": 0.8125000000000001,
+              "total_physical_norm": 0.9999999999999996
+            },
+            {
+              "secret": [
+                5
+              ],
+              "herald": 0.18749999999999994,
+              "correct_unconditional": 0.12499999999999997,
+              "failed_herald": 0.8125,
+              "total_physical_norm": 0.9999999999999997
+            },
+            {
+              "secret": [
+                6
+              ],
+              "herald": 0.1874999999999999,
+              "correct_unconditional": 0.12499999999999994,
+              "failed_herald": 0.8125000000000001,
+              "total_physical_norm": 0.9999999999999997
+            },
+            {
+              "secret": [
+                7
+              ],
+              "herald": 0.18749999999999994,
+              "correct_unconditional": 0.12499999999999994,
+              "failed_herald": 0.8125,
+              "total_physical_norm": 0.9999999999999996
+            }
+          ]
+        },
+        {
+          "degree": 3,
+          "physical_reflection_rounds": 1,
+          "spectral_correct_unconditional": 0.6328125,
+          "spectral_herald": 0.8906250000000002,
+          "optimal_classical_label_guess_uniform_secret_unconditional": 0.6328124999999991,
+          "heralded_output_probabilities_by_secret": [
+            [
+              0.6328124999999989,
+              0.06496768743611438,
+              0.0624999999999999,
+              0.0014385625638855591,
+              1.0089854998978588e-32,
+              0.001438562563885554,
+              0.0624999999999999,
+              0.06496768743611449
+            ],
+            [
+              0.06496768743611435,
+              0.6328124999999989,
+              0.06496768743611432,
+              0.062499999999999944,
+              0.001438562563885555,
+              5.828854615702066e-32,
+              0.0014385625638855544,
+              0.06250000000000003
+            ],
+            [
+              0.06249999999999992,
+              0.06496768743611432,
+              0.6328124999999991,
+              0.0649676874361144,
+              0.06249999999999992,
+              0.0014385625638855576,
+              1.215280278861364e-32,
+              0.0014385625638855676
+            ],
+            [
+              0.0014385625638855613,
+              0.06249999999999992,
+              0.0649676874361144,
+              0.6328124999999992,
+              0.0649676874361143,
+              0.06249999999999978,
+              0.0014385625638855591,
+              5.486696431199411e-32
+            ],
+            [
+              5.161078476946303e-33,
+              0.0014385625638855554,
+              0.0624999999999999,
+              0.0649676874361143,
+              0.6328124999999992,
+              0.06496768743611438,
+              0.06249999999999997,
+              0.001438562563885547
+            ],
+            [
+              0.001438562563885557,
+              5.541323977864287e-32,
+              0.0014385625638855606,
+              0.06249999999999985,
+              0.06496768743611438,
+              0.6328124999999992,
+              0.0649676874361144,
+              0.062499999999999944
+            ],
+            [
+              0.0624999999999999,
+              0.0014385625638855554,
+              7.210658969197532e-33,
+              0.0014385625638855617,
+              0.06249999999999997,
+              0.0649676874361144,
+              0.6328124999999992,
+              0.0649676874361141
+            ],
+            [
+              0.06496768743611452,
+              0.0625,
+              0.0014385625638855676,
+              8.034198567643534e-32,
+              0.001438562563885547,
+              0.062499999999999944,
+              0.06496768743611415,
+              0.6328124999999992
+            ]
+          ],
+          "every_secret_physical_probabilities": [
+            {
+              "secret": [
+                0
+              ],
+              "herald": 0.8906249999999987,
+              "correct_unconditional": 0.6328124999999989,
+              "failed_herald": 0.10937500000000133,
+              "total_physical_norm": 0.9999999999999986
+            },
+            {
+              "secret": [
+                1
+              ],
+              "herald": 0.8906249999999987,
+              "correct_unconditional": 0.6328124999999989,
+              "failed_herald": 0.10937500000000133,
+              "total_physical_norm": 0.9999999999999986
+            },
+            {
+              "secret": [
+                2
+              ],
+              "herald": 0.8906249999999988,
+              "correct_unconditional": 0.6328124999999991,
+              "failed_herald": 0.10937500000000122,
+              "total_physical_norm": 0.9999999999999988
+            },
+            {
+              "secret": [
+                3
+              ],
+              "herald": 0.8906249999999988,
+              "correct_unconditional": 0.6328124999999992,
+              "failed_herald": 0.10937500000000122,
+              "total_physical_norm": 0.9999999999999987
+            },
+            {
+              "secret": [
+                4
+              ],
+              "herald": 0.8906249999999989,
+              "correct_unconditional": 0.6328124999999992,
+              "failed_herald": 0.10937500000000111,
+              "total_physical_norm": 0.9999999999999989
+            },
+            {
+              "secret": [
+                5
+              ],
+              "herald": 0.8906249999999989,
+              "correct_unconditional": 0.6328124999999992,
+              "failed_herald": 0.10937500000000111,
+              "total_physical_norm": 0.9999999999999989
+            },
+            {
+              "secret": [
+                6
+              ],
+              "herald": 0.8906249999999988,
+              "correct_unconditional": 0.6328124999999992,
+              "failed_herald": 0.10937500000000122,
+              "total_physical_norm": 0.9999999999999987
+            },
+            {
+              "secret": [
+                7
+              ],
+              "herald": 0.890624999999999,
+              "correct_unconditional": 0.6328124999999992,
+              "failed_herald": 0.109375000000001,
+              "total_physical_norm": 0.9999999999999989
+            }
+          ]
+        },
+        {
+          "degree": 5,
+          "physical_reflection_rounds": 2,
+          "spectral_correct_unconditional": 0.4394531250000002,
+          "spectral_herald": 0.5976562500000002,
+          "optimal_classical_label_guess_uniform_secret_unconditional": 0.43945312499999906,
+          "heralded_output_probabilities_by_secret": [
+            [
+              0.4394531249999987,
+              0.03967942185902862,
+              0.01562499999999998,
+              0.023797140640971333,
+              6.94067895018245e-33,
+              0.023797140640971357,
+              0.015624999999999965,
+              0.03967942185902854
+            ],
+            [
+              0.03967942185902857,
+              0.43945312499999883,
+              0.03967942185902851,
+              0.015624999999999976,
+              0.023797140640971368,
+              2.6601907356848692e-33,
+              0.023797140640971326,
+              0.015624999999999969
+            ],
+            [
+              0.015624999999999976,
+              0.03967942185902849,
+              0.43945312499999883,
+              0.03967942185902852,
+              0.015624999999999965,
+              0.023797140640971357,
+              3.969765728755236e-32,
+              0.023797140640971333
+            ],
+            [
+              0.023797140640971326,
+              0.015624999999999976,
+              0.03967942185902855,
+              0.43945312499999917,
+              0.039679421859028466,
+              0.015624999999999965,
+              0.02379714064097134,
+              1.144799842333616e-32
+            ],
+            [
+              2.315209592341422e-33,
+              0.023797140640971375,
+              0.015624999999999955,
+              0.039679421859028466,
+              0.43945312499999917,
+              0.03967942185902853,
+              0.01562499999999999,
+              0.023797140640971368
+            ],
+            [
+              0.02379714064097134,
+              1.692711865184094e-34,
+              0.02379714064097135,
+              0.015624999999999976,
+              0.03967942185902852,
+              0.43945312499999917,
+              0.03967942185902853,
+              0.015624999999999951
+            ],
+            [
+              0.015624999999999944,
+              0.02379714064097129,
+              2.1291762944625635e-32,
+              0.023797140640971316,
+              0.015625000000000007,
+              0.03967942185902855,
+              0.4394531249999993,
+              0.03967942185902849
+            ],
+            [
+              0.03967942185902854,
+              0.015624999999999969,
+              0.02379714064097135,
+              2.07586659982332e-32,
+              0.023797140640971357,
+              0.015624999999999944,
+              0.03967942185902854,
+              0.43945312499999917
+            ]
+          ],
+          "every_secret_physical_probabilities": [
+            {
+              "secret": [
+                0
+              ],
+              "herald": 0.5976562499999986,
+              "correct_unconditional": 0.4394531249999987,
+              "failed_herald": 0.40234375000000144,
+              "total_physical_norm": 0.9999999999999976
+            },
+            {
+              "secret": [
+                1
+              ],
+              "herald": 0.5976562499999986,
+              "correct_unconditional": 0.43945312499999883,
+              "failed_herald": 0.40234375000000144,
+              "total_physical_norm": 0.9999999999999978
+            },
+            {
+              "secret": [
+                2
+              ],
+              "herald": 0.5976562499999984,
+              "correct_unconditional": 0.43945312499999883,
+              "failed_herald": 0.40234375000000155,
+              "total_physical_norm": 0.9999999999999978
+            },
+            {
+              "secret": [
+                3
+              ],
+              "herald": 0.5976562499999988,
+              "correct_unconditional": 0.43945312499999917,
+              "failed_herald": 0.4023437500000012,
+              "total_physical_norm": 0.9999999999999978
+            },
+            {
+              "secret": [
+                4
+              ],
+              "herald": 0.5976562499999988,
+              "correct_unconditional": 0.43945312499999917,
+              "failed_herald": 0.4023437500000012,
+              "total_physical_norm": 0.999999999999998
+            },
+            {
+              "secret": [
+                5
+              ],
+              "herald": 0.5976562499999988,
+              "correct_unconditional": 0.43945312499999917,
+              "failed_herald": 0.4023437500000012,
+              "total_physical_norm": 0.9999999999999981
+            },
+            {
+              "secret": [
+                6
+              ],
+              "herald": 0.5976562499999989,
+              "correct_unconditional": 0.4394531249999993,
+              "failed_herald": 0.4023437500000011,
+              "total_physical_norm": 0.9999999999999979
+            },
+            {
+              "secret": [
+                7
+              ],
+              "herald": 0.5976562499999989,
+              "correct_unconditional": 0.43945312499999917,
+              "failed_herald": 0.4023437500000011,
+              "total_physical_norm": 0.999999999999998
+            }
+          ]
+        },
+        {
+          "degree": 7,
+          "physical_reflection_rounds": 3,
+          "spectral_correct_unconditional": 0.012207031250000017,
+          "spectral_herald": 0.2900390624999999,
+          "optimal_classical_label_guess_uniform_secret_unconditional": 0.1231893475324714,
+          "heralded_output_probabilities_by_secret": [
+            [
+              0.012207031249999915,
+              0.00010166809252827937,
+              0.015624999999999917,
+              0.12318934753247136,
+              6.200216459844526e-32,
+              0.12318934753247136,
+              0.015624999999999944,
+              0.00010166809252826636
+            ],
+            [
+              0.0001016680925282779,
+              0.012207031249999927,
+              0.00010166809252827324,
+              0.015624999999999941,
+              0.1231893475324714,
+              2.3893568372554145e-31,
+              0.12318934753247124,
+              0.01562500000000002
+            ],
+            [
+              0.015624999999999944,
+              0.0001016680925282737,
+              0.012207031249999948,
+              0.00010166809252827087,
+              0.015624999999999955,
+              0.12318934753247143,
+              4.4431459249228687e-32,
+              0.12318934753247143
+            ],
+            [
+              0.12318934753247136,
+              0.015624999999999965,
+              0.00010166809252827034,
+              0.012207031249999983,
+              0.00010166809252827206,
+              0.015624999999999858,
+              0.12318934753247132,
+              4.6041762733007357e-32
+            ],
+            [
+              4.442954872096756e-32,
+              0.12318934753247143,
+              0.015624999999999951,
+              0.00010166809252827174,
+              0.012207031249999964,
+              0.00010166809252827167,
+              0.015624999999999955,
+              0.12318934753247136
+            ],
+            [
+              0.12318934753247136,
+              1.6336700753264726e-31,
+              0.12318934753247152,
+              0.015624999999999872,
+              0.00010166809252827058,
+              0.01220703124999997,
+              0.00010166809252826815,
+              0.01562499999999999
+            ],
+            [
+              0.015624999999999965,
+              0.12318934753247109,
+              3.994493591851025e-32,
+              0.12318934753247136,
+              0.015624999999999934,
+              0.00010166809252826947,
+              0.012207031250000019,
+              0.00010166809252828461
+            ],
+            [
+              0.00010166809252826572,
+              0.01562500000000002,
+              0.12318934753247147,
+              5.789826895314128e-32,
+              0.12318934753247128,
+              0.015624999999999993,
+              0.00010166809252828731,
+              0.012207031249999983
+            ]
+          ],
+          "every_secret_physical_probabilities": [
+            {
+              "secret": [
+                0
+              ],
+              "herald": 0.2900390624999991,
+              "correct_unconditional": 0.012207031249999915,
+              "failed_herald": 0.7099609375000009,
+              "total_physical_norm": 0.9999999999999968
+            },
+            {
+              "secret": [
+                1
+              ],
+              "herald": 0.2900390624999991,
+              "correct_unconditional": 0.012207031249999927,
+              "failed_herald": 0.7099609375000009,
+              "total_physical_norm": 0.9999999999999969
+            },
+            {
+              "secret": [
+                2
+              ],
+              "herald": 0.2900390624999992,
+              "correct_unconditional": 0.012207031249999948,
+              "failed_herald": 0.7099609375000008,
+              "total_physical_norm": 0.9999999999999969
+            },
+            {
+              "secret": [
+                3
+              ],
+              "herald": 0.290039062499999,
+              "correct_unconditional": 0.012207031249999983,
+              "failed_herald": 0.709960937500001,
+              "total_physical_norm": 0.9999999999999969
+            },
+            {
+              "secret": [
+                4
+              ],
+              "herald": 0.2900390624999992,
+              "correct_unconditional": 0.012207031249999964,
+              "failed_herald": 0.7099609375000008,
+              "total_physical_norm": 0.9999999999999972
+            },
+            {
+              "secret": [
+                5
+              ],
+              "herald": 0.2900390624999993,
+              "correct_unconditional": 0.01220703124999997,
+              "failed_herald": 0.7099609375000007,
+              "total_physical_norm": 0.9999999999999974
+            },
+            {
+              "secret": [
+                6
+              ],
+              "herald": 0.29003906249999895,
+              "correct_unconditional": 0.012207031250000019,
+              "failed_herald": 0.7099609375000011,
+              "total_physical_norm": 0.9999999999999969
+            },
+            {
+              "secret": [
+                7
+              ],
+              "herald": 0.2900390624999993,
+              "correct_unconditional": 0.012207031249999983,
+              "failed_herald": 0.7099609375000007,
+              "total_physical_norm": 0.9999999999999972
+            }
+          ]
+        }
+      ],
+      "bounded_unitary_and_fiber_materialization_is_exponential_calibration": true,
+      "known_public_unitary_inverse_used": true,
+      "unknown_input_preparation_inverse_used": false,
+      "efficient_native_decoder_implemented": false
+    },
+    {
+      "labels": [
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "modulus": 4,
+      "fiber_counts": [
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "raw_herald_exact": {
+        "numerator_hex": "1",
+        "denominator_hex": "4"
+      },
+      "raw_correct_exact": {
+        "numerator_hex": "1",
+        "denominator_hex": "10"
+      },
+      "raw_conditional_correct_exact": {
+        "numerator_hex": "1",
+        "denominator_hex": "4"
+      },
+      "supported_singular_value_condition_number_squared": {
+        "numerator_hex": "1",
+        "denominator_hex": "1"
+      },
+      "ideal_PGM_success": 0.25,
+      "physical_controls": [
+        {
+          "degree": 1,
+          "physical_reflection_rounds": 0,
+          "spectral_correct_unconditional": 0.062499999999999986,
+          "spectral_herald": 0.24999999999999994,
+          "optimal_classical_label_guess_uniform_secret_unconditional": 0.0625,
+          "heralded_output_probabilities_by_secret": [
+            [
+              0.0625,
+              3.244078190867384e-34,
+              2.3433746604091517e-34,
+              8.5627005524064e-34,
+              0.03125000000000001,
+              0.015624999999999997,
+              2.5117736094895244e-34,
+              0.01562499999999999,
+              2.3433746604091525e-34,
+              0.03125000000000001,
+              0.0,
+              0.031249999999999965,
+              0.031249999999999993,
+              0.015625000000000007,
+              1.0673261511990975e-34,
+              0.015625
+            ],
+            [
+              3.244078190867384e-34,
+              0.0625,
+              3.244078190867384e-34,
+              2.3433746604091534e-34,
+              0.015625,
+              0.03125000000000001,
+              0.015624999999999997,
+              2.5117736094895244e-34,
+              0.03125000000000001,
+              2.3433746604091534e-34,
+              0.03125000000000001,
+              1.2325951644078307e-32,
+              0.015625,
+              0.031249999999999993,
+              0.015625000000000007,
+              1.0673261511990975e-34
+            ],
+            [
+              2.3433746604091517e-34,
+              3.244078190867384e-34,
+              0.0625,
+              3.244078190867385e-34,
+              1.0673261511990969e-34,
+              0.015625,
+              0.03125000000000001,
+              0.015624999999999997,
+              9.495567745759799e-66,
+              0.03125000000000001,
+              2.3433746604091525e-34,
+              0.031250000000000035,
+              2.5117736094895244e-34,
+              0.015625,
+              0.031249999999999993,
+              0.015625000000000007
+            ],
+            [
+              8.5627005524064e-34,
+              2.3433746604091534e-34,
+              3.244078190867385e-34,
+              0.0625,
+              0.015625,
+              1.0673261511990975e-34,
+              0.015625,
+              0.03125000000000001,
+              0.031249999999999993,
+              9.495567745759799e-66,
+              0.03125000000000001,
+              1.5959366793736447e-32,
+              0.015624999999999993,
+              2.5117736094895244e-34,
+              0.015625,
+              0.031249999999999993
+            ],
+            [
+              0.03125000000000001,
+              0.015625,
+              1.0673261511990969e-34,
+              0.015625,
+              0.0625,
+              3.244078190867384e-34,
+              2.3433746604091517e-34,
+              8.5627005524064e-34,
+              0.03125000000000001,
+              0.015624999999999997,
+              2.5117736094895244e-34,
+              0.015624999999999962,
+              2.3433746604091517e-34,
+              0.03125000000000001,
+              0.0,
+              0.031249999999999986
+            ],
+            [
+              0.015624999999999997,
+              0.03125000000000001,
+              0.015625,
+              1.0673261511990975e-34,
+              3.244078190867384e-34,
+              0.0625,
+              3.244078190867384e-34,
+              2.3433746604091525e-34,
+              0.015625,
+              0.03125000000000001,
+              0.015624999999999997,
+              1.4276667846835873e-32,
+              0.03125000000000001,
+              2.3433746604091525e-34,
+              0.03125000000000001,
+              3.7982270983039195e-65
+            ],
+            [
+              2.5117736094895244e-34,
+              0.015624999999999997,
+              0.03125000000000001,
+              0.015625,
+              2.3433746604091517e-34,
+              3.244078190867384e-34,
+              0.0625,
+              3.244078190867385e-34,
+              1.0673261511990967e-34,
+              0.015625,
+              0.03125000000000001,
+              0.015624999999999997,
+              9.495567745759799e-66,
+              0.03125000000000001,
+              2.3433746604091525e-34,
+              0.03125000000000001
+            ],
+            [
+              0.01562499999999999,
+              2.5117736094895244e-34,
+              0.015624999999999997,
+              0.03125000000000001,
+              8.5627005524064e-34,
+              2.3433746604091525e-34,
+              3.244078190867385e-34,
+              0.0625,
+              0.015625,
+              1.0673261511990975e-34,
+              0.015625,
+              0.031250000000000035,
+              0.031249999999999993,
+              3.7982270983039195e-65,
+              0.03125000000000001,
+              2.3433746604091517e-34
+            ],
+            [
+              2.3433746604091525e-34,
+              0.03125000000000001,
+              9.495567745759799e-66,
+              0.031249999999999993,
+              0.03125000000000001,
+              0.015625,
+              1.0673261511990967e-34,
+              0.015625,
+              0.0625,
+              3.244078190867384e-34,
+              2.3433746604091534e-34,
+              1.7748658576438133e-32,
+              0.03125000000000001,
+              0.015624999999999997,
+              2.5117736094895244e-34,
+              0.01562499999999999
+            ],
+            [
+              0.03125000000000001,
+              2.3433746604091534e-34,
+              0.03125000000000001,
+              9.495567745759799e-66,
+              0.015624999999999997,
+              0.03125000000000001,
+              0.015625,
+              1.0673261511990975e-34,
+              3.244078190867384e-34,
+              0.0625,
+              3.244078190867384e-34,
+              1.5959366793736447e-32,
+              0.015625,
+              0.03125000000000001,
+              0.015624999999999997,
+              2.5117736094895236e-34
+            ],
+            [
+              0.0,
+              0.03125000000000001,
+              2.3433746604091525e-34,
+              0.03125000000000001,
+              2.5117736094895244e-34,
+              0.015624999999999997,
+              0.03125000000000001,
+              0.015625,
+              2.3433746604091534e-34,
+              3.244078190867384e-34,
+              0.0625,
+              1.5199667725877963e-32,
+              1.0673261511990975e-34,
+              0.015625,
+              0.03125000000000001,
+              0.015624999999999997
+            ],
+            [
+              0.031249999999999965,
+              1.2325951644078307e-32,
+              0.031250000000000035,
+              1.5959366793736447e-32,
+              0.015624999999999962,
+              1.4276667846835873e-32,
+              0.015624999999999997,
+              0.031250000000000035,
+              1.7748658576438133e-32,
+              1.5959366793736447e-32,
+              1.5199667725877963e-32,
+              0.0625,
+              0.015625,
+              1.4132223101006827e-32,
+              0.015625000000000028,
+              0.031249999999999976
+            ],
+            [
+              0.031249999999999993,
+              0.015625,
+              2.5117736094895244e-34,
+              0.015624999999999993,
+              2.3433746604091517e-34,
+              0.03125000000000001,
+              9.495567745759799e-66,
+              0.031249999999999993,
+              0.03125000000000001,
+              0.015625,
+              1.0673261511990975e-34,
+              0.015625,
+              0.0625,
+              3.244078190867384e-34,
+              2.3433746604091534e-34,
+              8.5627005524064e-34
+            ],
+            [
+              0.015625000000000007,
+              0.031249999999999993,
+              0.015625,
+              2.5117736094895244e-34,
+              0.03125000000000001,
+              2.3433746604091525e-34,
+              0.03125000000000001,
+              3.7982270983039195e-65,
+              0.015624999999999997,
+              0.03125000000000001,
+              0.015625,
+              1.4132223101006827e-32,
+              3.244078190867384e-34,
+              0.0625,
+              3.244078190867385e-34,
+              2.3433746604091517e-34
+            ],
+            [
+              1.0673261511990975e-34,
+              0.015625000000000007,
+              0.031249999999999993,
+              0.015625,
+              0.0,
+              0.03125000000000001,
+              2.3433746604091525e-34,
+              0.03125000000000001,
+              2.5117736094895244e-34,
+              0.015624999999999997,
+              0.03125000000000001,
+              0.015625000000000028,
+              2.3433746604091534e-34,
+              3.244078190867385e-34,
+              0.0625,
+              3.244078190867383e-34
+            ],
+            [
+              0.015625,
+              1.0673261511990975e-34,
+              0.015625000000000007,
+              0.031249999999999993,
+              0.031249999999999986,
+              3.7982270983039195e-65,
+              0.03125000000000001,
+              2.3433746604091517e-34,
+              0.01562499999999999,
+              2.5117736094895236e-34,
+              0.015624999999999997,
+              0.031249999999999976,
+              8.5627005524064e-34,
+              2.3433746604091517e-34,
+              3.244078190867383e-34,
+              0.0625
+            ]
+          ],
+          "every_secret_physical_probabilities": [
+            {
+              "secret": [
+                0,
+                0
+              ],
+              "herald": 0.24999999999999994,
+              "correct_unconditional": 0.0625,
+              "failed_herald": 0.75,
+              "total_physical_norm": 1.0
+            },
+            {
+              "secret": [
+                0,
+                1
+              ],
+              "herald": 0.25,
+              "correct_unconditional": 0.0625,
+              "failed_herald": 0.75,
+              "total_physical_norm": 1.0
+            },
+            {
+              "secret": [
+                0,
+                2
+              ],
+              "herald": 0.25,
+              "correct_unconditional": 0.0625,
+              "failed_herald": 0.75,
+              "total_physical_norm": 1.0
+            },
+            {
+              "secret": [
+                0,
+                3
+              ],
+              "herald": 0.25,
+              "correct_unconditional": 0.0625,
+              "failed_herald": 0.75,
+              "total_physical_norm": 1.0
+            },
+            {
+              "secret": [
+                1,
+                0
+              ],
+              "herald": 0.24999999999999994,
+              "correct_unconditional": 0.0625,
+              "failed_herald": 0.75,
+              "total_physical_norm": 1.0
+            },
+            {
+              "secret": [
+                1,
+                1
+              ],
+              "herald": 0.25,
+              "correct_unconditional": 0.0625,
+              "failed_herald": 0.75,
+              "total_physical_norm": 1.0
+            },
+            {
+              "secret": [
+                1,
+                2
+              ],
+              "herald": 0.25,
+              "correct_unconditional": 0.0625,
+              "failed_herald": 0.75,
+              "total_physical_norm": 1.0
+            },
+            {
+              "secret": [
+                1,
+                3
+              ],
+              "herald": 0.25,
+              "correct_unconditional": 0.0625,
+              "failed_herald": 0.75,
+              "total_physical_norm": 1.0
+            },
+            {
+              "secret": [
+                2,
+                0
+              ],
+              "herald": 0.25,
+              "correct_unconditional": 0.0625,
+              "failed_herald": 0.75,
+              "total_physical_norm": 1.0
+            },
+            {
+              "secret": [
+                2,
+                1
+              ],
+              "herald": 0.25,
+              "correct_unconditional": 0.0625,
+              "failed_herald": 0.75,
+              "total_physical_norm": 1.0
+            },
+            {
+              "secret": [
+                2,
+                2
+              ],
+              "herald": 0.25,
+              "correct_unconditional": 0.0625,
+              "failed_herald": 0.75,
+              "total_physical_norm": 1.0
+            },
+            {
+              "secret": [
+                2,
+                3
+              ],
+              "herald": 0.25,
+              "correct_unconditional": 0.0625,
+              "failed_herald": 0.75,
+              "total_physical_norm": 1.0
+            },
+            {
+              "secret": [
+                3,
+                0
+              ],
+              "herald": 0.25,
+              "correct_unconditional": 0.0625,
+              "failed_herald": 0.75,
+              "total_physical_norm": 1.0
+            },
+            {
+              "secret": [
+                3,
+                1
+              ],
+              "herald": 0.25,
+              "correct_unconditional": 0.0625,
+              "failed_herald": 0.75,
+              "total_physical_norm": 1.0
+            },
+            {
+              "secret": [
+                3,
+                2
+              ],
+              "herald": 0.25,
+              "correct_unconditional": 0.0625,
+              "failed_herald": 0.75,
+              "total_physical_norm": 1.0
+            },
+            {
+              "secret": [
+                3,
+                3
+              ],
+              "herald": 0.24999999999999994,
+              "correct_unconditional": 0.0625,
+              "failed_herald": 0.75,
+              "total_physical_norm": 1.0
+            }
+          ]
+        },
+        {
+          "degree": 3,
+          "physical_reflection_rounds": 1,
+          "spectral_correct_unconditional": 0.25,
+          "spectral_herald": 1.0,
+          "optimal_classical_label_guess_uniform_secret_unconditional": 0.25,
+          "heralded_output_probabilities_by_secret": [
+            [
+              0.25,
+              1.1334929741126396e-33,
+              1.3680417586824407e-33,
+              3.269169616781927e-33,
+              0.12500000000000003,
+              0.0625,
+              1.7153515595885443e-34,
+              0.06249999999999996,
+              1.4083362718331664e-33,
+              0.12500000000000003,
+              3.6863502841786963e-35,
+              0.12499999999999986,
+              0.12499999999999997,
+              0.0625,
+              3.578016724806912e-33,
+              0.06250000000000006
+            ],
+            [
+              5.972908117673215e-34,
+              0.25,
+              1.3944143396849931e-33,
+              9.892076777222755e-34,
+              0.0625,
+              0.12499999999999997,
+              0.06249999999999997,
+              1.4963572888227386e-33,
+              0.12499999999999997,
+              7.267846472264039e-34,
+              0.12499999999999997,
+              4.3775832802588266e-32,
+              0.0625,
+              0.12499999999999997,
+              0.0625,
+              1.7232747183054754e-34
+            ],
+            [
+              4.641196205919249e-34,
+              1.0532463258928272e-33,
+              0.25,
+              1.0508688815728189e-33,
+              9.399037133114045e-34,
+              0.0625,
+              0.12499999999999997,
+              0.06249999999999997,
+              2.2169220473548656e-33,
+              0.12500000000000003,
+              1.5453192689800332e-33,
+              0.12500000000000008,
+              5.206029380921747e-34,
+              0.06249999999999997,
+              0.12499999999999994,
+              0.0625
+            ],
+            [
+              3.613766744158406e-33,
+              2.092073198833507e-34,
+              2.751572340716304e-33,
+              0.25,
+              0.0625,
+              1.0833355937178208e-34,
+              0.06249999999999997,
+              0.12499999999999997,
+              0.12499999999999997,
+              6.371644182681415e-34,
+              0.12500000000000003,
+              5.567964617765847e-32,
+              0.06249999999999996,
+              4.905138191682311e-36,
+              0.062499999999999986,
+              0.12499999999999997
+            ],
+            [
+              0.12500000000000003,
+              0.062499999999999986,
+              7.523163845262638e-35,
+              0.0625,
+              0.25,
+              1.351336384782513e-33,
+              9.4143699771899e-34,
+              9.751929322245565e-34,
+              0.12500000000000003,
+              0.0625,
+              5.763603829232999e-34,
+              0.062499999999999875,
+              5.936946786326917e-36,
+              0.12499999999999997,
+              3.1832636876710726e-34,
+              0.12499999999999994
+            ],
+            [
+              0.06249999999999997,
+              0.12500000000000003,
+              0.062499999999999986,
+              2.010110550906334e-33,
+              4.723892742853671e-34,
+              0.25,
+              7.241604735465927e-34,
+              4.600698365490368e-34,
+              0.0625,
+              0.12499999999999997,
+              0.06249999999999997,
+              4.2915135838916193e-32,
+              0.12500000000000003,
+              1.1201990965596073e-33,
+              0.12499999999999997,
+              5.183459889385961e-34
+            ],
+            [
+              2.1967638428166905e-34,
+              0.062499999999999986,
+              0.12499999999999997,
+              0.0625,
+              2.292404533117701e-34,
+              2.3058096755727694e-33,
+              0.25,
+              4.426114890910368e-34,
+              1.811571370495834e-33,
+              0.0625,
+              0.12500000000000003,
+              0.06249999999999997,
+              8.249609014818454e-34,
+              0.12499999999999997,
+              1.8246069805530945e-33,
+              0.12499999999999997
+            ],
+            [
+              0.062499999999999944,
+              6.71845207931919e-34,
+              0.06249999999999997,
+              0.12499999999999997,
+              1.0836795968875759e-33,
+              7.292338890510743e-34,
+              2.5116885461725493e-33,
+              0.25,
+              0.062499999999999986,
+              1.023150282955717e-34,
+              0.06249999999999997,
+              0.12500000000000006,
+              0.12499999999999997,
+              1.0833355937178208e-34,
+              0.12499999999999994,
+              7.82409039907314e-34
+            ],
+            [
+              3.783801548188521e-33,
+              0.12499999999999997,
+              1.0024187267812354e-33,
+              0.12499999999999997,
+              0.12500000000000003,
+              0.0625,
+              6.018531076210125e-35,
+              0.0625,
+              0.25,
+              1.090698711036295e-34,
+              4.549655575854071e-34,
+              6.625585335073341e-32,
+              0.12499999999999997,
+              0.0625,
+              8.496791363774671e-34,
+              0.0625
+            ],
+            [
+              0.12499999999999997,
+              7.993361585591553e-35,
+              0.12499999999999994,
+              4.651196047333627e-34,
+              0.0625,
+              0.12500000000000003,
+              0.0625,
+              2.8606830521611197e-34,
+              1.0520933621245603e-34,
+              0.25,
+              1.8109597279271062e-34,
+              3.814168083319807e-32,
+              0.0625,
+              0.12499999999999997,
+              0.06249999999999997,
+              4.009846329524989e-34
+            ],
+            [
+              4.371428391837923e-34,
+              0.12499999999999997,
+              3.234255156852441e-33,
+              0.12499999999999997,
+              1.956022599768286e-34,
+              0.06249999999999997,
+              0.12500000000000003,
+              0.0625,
+              1.087168584420185e-34,
+              3.904740710159972e-34,
+              0.25,
+              4.994381675489599e-32,
+              5.239758662627491e-34,
+              0.0625,
+              0.12499999999999997,
+              0.0625
+            ],
+            [
+              0.12499999999999986,
+              4.2005929138352523e-32,
+              0.12500000000000008,
+              5.665119724620089e-32,
+              0.06249999999999986,
+              3.7473125706557074e-32,
+              0.062499999999999986,
+              0.12500000000000014,
+              6.510612492566336e-32,
+              5.527548917564088e-32,
+              4.6840122070015687e-32,
+              0.25,
+              0.0625,
+              4.153087369138788e-32,
+              0.06250000000000011,
+              0.1249999999999999
+            ],
+            [
+              0.12499999999999997,
+              0.062499999999999986,
+              2.2225306789867158e-33,
+              0.06249999999999997,
+              4.876890962691507e-34,
+              0.12500000000000003,
+              1.3109113000370157e-34,
+              0.12499999999999994,
+              0.12500000000000003,
+              0.0625,
+              5.115751414778596e-34,
+              0.0625,
+              0.25,
+              4.732372419567251e-34,
+              1.383079379160972e-33,
+              3.073825349802303e-33
+            ],
+            [
+              0.0625,
+              0.12499999999999994,
+              0.06249999999999997,
+              4.8750101717301865e-34,
+              0.12500000000000003,
+              1.531716158895473e-33,
+              0.12499999999999997,
+              5.567141245494349e-34,
+              0.0625,
+              0.12500000000000003,
+              0.0625,
+              3.996470702012852e-32,
+              2.07333918333486e-33,
+              0.25,
+              2.8975712576555032e-33,
+              2.0931891493174625e-34
+            ],
+            [
+              7.681620483753485e-34,
+              0.0625,
+              0.12499999999999994,
+              0.062499999999999986,
+              7.346839692639297e-34,
+              0.12499999999999997,
+              3.273751767040071e-33,
+              0.12499999999999997,
+              1.9056174020050267e-33,
+              0.062499999999999986,
+              0.12499999999999997,
+              0.06250000000000011,
+              6.198569870393873e-34,
+              4.4148028696025496e-33,
+              0.25,
+              1.8072174389982476e-33
+            ],
+            [
+              0.06250000000000003,
+              3.490748024201864e-33,
+              0.06250000000000003,
+              0.12499999999999997,
+              0.12499999999999994,
+              2.4502944644020422e-33,
+              0.12500000000000003,
+              4.641792092527048e-34,
+              0.06249999999999997,
+              5.167534493491176e-35,
+              0.062499999999999986,
+              0.12499999999999986,
+              3.231857820329072e-33,
+              7.99923320785969e-34,
+              2.04993341068182e-34,
+              0.25
+            ]
+          ],
+          "every_secret_physical_probabilities": [
+            {
+              "secret": [
+                0,
+                0
+              ],
+              "herald": 0.9999999999999999,
+              "correct_unconditional": 0.25,
+              "failed_herald": 1.1102230246251565e-16,
+              "total_physical_norm": 1.0
+            },
+            {
+              "secret": [
+                0,
+                1
+              ],
+              "herald": 0.9999999999999999,
+              "correct_unconditional": 0.25,
+              "failed_herald": 1.1102230246251565e-16,
+              "total_physical_norm": 1.0
+            },
+            {
+              "secret": [
+                0,
+                2
+              ],
+              "herald": 1.0,
+              "correct_unconditional": 0.25,
+              "failed_herald": 0.0,
+              "total_physical_norm": 1.0
+            },
+            {
+              "secret": [
+                0,
+                3
+              ],
+              "herald": 0.9999999999999998,
+              "correct_unconditional": 0.25,
+              "failed_herald": 2.220446049250313e-16,
+              "total_physical_norm": 0.9999999999999999
+            },
+            {
+              "secret": [
+                1,
+                0
+              ],
+              "herald": 0.9999999999999999,
+              "correct_unconditional": 0.25,
+              "failed_herald": 1.1102230246251565e-16,
+              "total_physical_norm": 1.0
+            },
+            {
+              "secret": [
+                1,
+                1
+              ],
+              "herald": 1.0,
+              "correct_unconditional": 0.25,
+              "failed_herald": 0.0,
+              "total_physical_norm": 1.0
+            },
+            {
+              "secret": [
+                1,
+                2
+              ],
+              "herald": 1.0,
+              "correct_unconditional": 0.25,
+              "failed_herald": 0.0,
+              "total_physical_norm": 1.0
+            },
+            {
+              "secret": [
+                1,
+                3
+              ],
+              "herald": 0.9999999999999998,
+              "correct_unconditional": 0.25,
+              "failed_herald": 2.220446049250313e-16,
+              "total_physical_norm": 0.9999999999999999
+            },
+            {
+              "secret": [
+                2,
+                0
+              ],
+              "herald": 1.0,
+              "correct_unconditional": 0.25,
+              "failed_herald": 0.0,
+              "total_physical_norm": 1.0
+            },
+            {
+              "secret": [
+                2,
+                1
+              ],
+              "herald": 1.0,
+              "correct_unconditional": 0.25,
+              "failed_herald": 0.0,
+              "total_physical_norm": 1.0
+            },
+            {
+              "secret": [
+                2,
+                2
+              ],
+              "herald": 1.0,
+              "correct_unconditional": 0.25,
+              "failed_herald": 0.0,
+              "total_physical_norm": 1.0
+            },
+            {
+              "secret": [
+                2,
+                3
+              ],
+              "herald": 1.0,
+              "correct_unconditional": 0.25,
+              "failed_herald": 0.0,
+              "total_physical_norm": 0.9999999999999999
+            },
+            {
+              "secret": [
+                3,
+                0
+              ],
+              "herald": 1.0,
+              "correct_unconditional": 0.25,
+              "failed_herald": 0.0,
+              "total_physical_norm": 0.9999999999999999
+            },
+            {
+              "secret": [
+                3,
+                1
+              ],
+              "herald": 1.0,
+              "correct_unconditional": 0.25,
+              "failed_herald": 0.0,
+              "total_physical_norm": 0.9999999999999999
+            },
+            {
+              "secret": [
+                3,
+                2
+              ],
+              "herald": 1.0,
+              "correct_unconditional": 0.25,
+              "failed_herald": 0.0,
+              "total_physical_norm": 1.0
+            },
+            {
+              "secret": [
+                3,
+                3
+              ],
+              "herald": 0.9999999999999998,
+              "correct_unconditional": 0.25,
+              "failed_herald": 2.220446049250313e-16,
+              "total_physical_norm": 0.9999999999999998
+            }
+          ]
+        },
+        {
+          "degree": 5,
+          "physical_reflection_rounds": 2,
+          "spectral_correct_unconditional": 0.06250000000000008,
+          "spectral_herald": 0.25000000000000033,
+          "optimal_classical_label_guess_uniform_secret_unconditional": 0.0625,
+          "heralded_output_probabilities_by_secret": [
+            [
+              0.06250000000000003,
+              3.106933982497321e-33,
+              8.211688773896892e-34,
+              4.960315498376765e-33,
+              0.03125000000000002,
+              0.015625000000000007,
+              9.513189810508531e-34,
+              0.015624999999999986,
+              1.0607771266551168e-32,
+              0.031250000000000035,
+              1.5046327690525282e-33,
+              0.03125000000000001,
+              0.031250000000000014,
+              0.015625000000000014,
+              1.4505584643941784e-33,
+              0.015625000000000056
+            ],
+            [
+              1.9354543873647734e-33,
+              0.0625,
+              2.2056007491410957e-33,
+              5.353042097136478e-34,
+              0.01562499999999999,
+              0.031249999999999986,
+              0.015624999999999983,
+              8.492082374563115e-34,
+              0.03125000000000001,
+              1.2944728005015854e-33,
+              0.031249999999999976,
+              2.1666711874356407e-33,
+              0.015624999999999993,
+              0.03125000000000001,
+              0.015624999999999993,
+              8.792190431170944e-34
+            ],
+            [
+              1.3221823086486611e-33,
+              1.8534580580154963e-33,
+              0.06249999999999996,
+              2.8872955303296975e-33,
+              1.6314098347887114e-33,
+              0.015624999999999993,
+              0.031249999999999993,
+              0.01562499999999998,
+              2.9490802273429552e-33,
+              0.031249999999999976,
+              4.7243009621678214e-33,
+              0.031249999999999986,
+              1.1344931078656058e-33,
+              0.01562499999999998,
+              0.031249999999999955,
+              0.015624999999999986
+            ],
+            [
+              3.097216649754146e-33,
+              2.0737578916164392e-33,
+              4.515835162138989e-33,
+              0.0625,
+              0.015625000000000007,
+              3.7538916786048847e-34,
+              0.015624999999999993,
+              0.031249999999999986,
+              0.031249999999999993,
+              3.4907480242018646e-34,
+              0.03125000000000001,
+              3.249412344018936e-33,
+              0.01562499999999998,
+              2.305912664104888e-33,
+              0.015624999999999997,
+              0.03125000000000002
+            ],
+            [
+              0.03125000000000001,
+              0.01562499999999999,
+              3.0174801412865058e-33,
+              0.015624999999999997,
+              0.06250000000000003,
+              6.560959478000166e-34,
+              1.3218522364109446e-33,
+              2.7584257095461456e-33,
+              0.03125000000000001,
+              0.015625,
+              7.595839297886962e-34,
+              0.015624999999999993,
+              1.3061811516612366e-33,
+              0.031249999999999986,
+              4.935195482492289e-34,
+              0.03125000000000001
+            ],
+            [
+              0.015624999999999986,
+              0.031249999999999993,
+              0.01562499999999998,
+              1.851585630324996e-33,
+              1.714762652164524e-33,
+              0.06249999999999997,
+              4.3888256157621305e-33,
+              4.567724206490682e-33,
+              0.015625,
+              0.031249999999999986,
+              0.015624999999999986,
+              2.4487987665699435e-33,
+              0.03125000000000001,
+              4.829689382955234e-34,
+              0.031249999999999965,
+              1.1675950287847616e-33
+            ],
+            [
+              5.5671412454943545e-34,
+              0.015624999999999986,
+              0.031249999999999986,
+              0.015625000000000014,
+              2.5531563345628597e-33,
+              5.733899536724916e-33,
+              0.062499999999999986,
+              4.249511726014684e-34,
+              5.9733920931385355e-33,
+              0.015624999999999986,
+              0.031249999999999993,
+              0.015624999999999986,
+              4.333342374871281e-34,
+              0.031249999999999976,
+              3.321138224565279e-33,
+              0.031249999999999993
+            ],
+            [
+              0.01562499999999998,
+              4.2515560658553246e-33,
+              0.015624999999999983,
+              0.031249999999999986,
+              2.928048702573316e-34,
+              2.7959736039217205e-33,
+              3.9972496338446766e-33,
+              0.0625,
+              0.01562499999999999,
+              2.474062745899094e-33,
+              0.01562499999999998,
+              0.031249999999999986,
+              0.03125000000000001,
+              2.4074124304840452e-34,
+              0.031249999999999965,
+              1.5776812113727551e-35
+            ],
+            [
+              5.440752092893942e-33,
+              0.031249999999999986,
+              1.63704045272915e-33,
+              0.03125000000000001,
+              0.031250000000000014,
+              0.015624999999999997,
+              1.7041746945536638e-33,
+              0.015625,
+              0.0625,
+              7.954448800262878e-34,
+              2.027843380443168e-34,
+              7.814003344589534e-33,
+              0.031249999999999993,
+              0.015625000000000007,
+              2.1083858848738966e-33,
+              0.015625000000000014
+            ],
+            [
+              0.031249999999999993,
+              2.3433746604091517e-34,
+              0.031249999999999965,
+              8.185202263645756e-34,
+              0.015625000000000014,
+              0.031249999999999993,
+              0.015624999999999993,
+              5.723817945266216e-33,
+              2.5657501210526643e-35,
+              0.0625,
+              8.998547375604315e-36,
+              7.4717616409682816e-34,
+              0.015625000000000007,
+              0.031249999999999976,
+              0.01562499999999999,
+              9.93889747765108e-34
+            ],
+            [
+              4.8148248609680905e-34,
+              0.031249999999999986,
+              3.599853678165893e-33,
+              0.031249999999999986,
+              7.703719777548943e-34,
+              0.015624999999999983,
+              0.03125000000000001,
+              0.015624999999999986,
+              5.092126814731835e-35,
+              8.070932644466467e-35,
+              0.0625,
+              2.375542361272417e-33,
+              8.492081089570246e-35,
+              0.015625,
+              0.031249999999999993,
+              0.015625000000000014
+            ],
+            [
+              0.031249999999999993,
+              2.0342635037590203e-33,
+              0.031249999999999993,
+              3.57628432016342e-33,
+              0.015624999999999983,
+              4.056274103472484e-33,
+              0.015624999999999997,
+              0.03125000000000002,
+              7.71263438377842e-33,
+              1.2067964157018728e-33,
+              1.5345197815176968e-33,
+              0.0625,
+              0.015625,
+              2.6823054246775112e-33,
+              0.015625000000000007,
+              0.03125000000000001
+            ],
+            [
+              0.031249999999999993,
+              0.015624999999999986,
+              5.948823389600852e-33,
+              0.01562499999999998,
+              3.002601905377036e-33,
+              0.03125000000000001,
+              3.851859888774471e-34,
+              0.031249999999999986,
+              0.031249999999999993,
+              0.015625000000000014,
+              2.2526073838491805e-33,
+              0.015625000000000007,
+              0.0625,
+              1.2504198025628686e-33,
+              1.5318970782226348e-33,
+              1.9029499764605832e-33
+            ],
+            [
+              0.015624999999999993,
+              0.031249999999999986,
+              0.015624999999999972,
+              1.2063571900610128e-33,
+              0.031250000000000035,
+              1.6729929331100337e-33,
+              0.031249999999999986,
+              2.7925984193614923e-33,
+              0.015625,
+              0.031249999999999986,
+              0.015624999999999993,
+              1.546246463817442e-33,
+              1.0808619922697523e-33,
+              0.0625,
+              2.057792142197582e-33,
+              3.8789016178271805e-34
+            ],
+            [
+              8.787055371266762e-34,
+              0.015624999999999993,
+              0.031249999999999965,
+              0.015624999999999983,
+              4.81482486096809e-35,
+              0.031249999999999965,
+              1.1762935493189174e-32,
+              0.031249999999999944,
+              6.945384861946469e-33,
+              0.015624999999999986,
+              0.031249999999999976,
+              0.015625000000000014,
+              2.515881463592824e-33,
+              4.2328572320020454e-33,
+              0.06249999999999996,
+              4.9159172930872726e-33
+            ],
+            [
+              0.015625000000000014,
+              1.3522979436801831e-32,
+              0.015625000000000014,
+              0.03125000000000001,
+              0.031250000000000014,
+              8.389832320236898e-33,
+              0.031249999999999993,
+              1.0506241473890856e-33,
+              0.015625,
+              6.868980675852357e-33,
+              0.015625,
+              0.031249999999999986,
+              3.198107179489589e-33,
+              1.2324956454394904e-33,
+              1.1145466252146023e-33,
+              0.06250000000000003
+            ]
+          ],
+          "every_secret_physical_probabilities": [
+            {
+              "secret": [
+                0,
+                0
+              ],
+              "herald": 0.25000000000000017,
+              "correct_unconditional": 0.06250000000000003,
+              "failed_herald": 0.7499999999999998,
+              "total_physical_norm": 1.0
+            },
+            {
+              "secret": [
+                0,
+                1
+              ],
+              "herald": 0.24999999999999992,
+              "correct_unconditional": 0.0625,
+              "failed_herald": 0.7500000000000001,
+              "total_physical_norm": 0.9999999999999999
+            },
+            {
+              "secret": [
+                0,
+                2
+              ],
+              "herald": 0.2499999999999998,
+              "correct_unconditional": 0.06249999999999996,
+              "failed_herald": 0.7500000000000002,
+              "total_physical_norm": 0.9999999999999999
+            },
+            {
+              "secret": [
+                0,
+                3
+              ],
+              "herald": 0.24999999999999997,
+              "correct_unconditional": 0.0625,
+              "failed_herald": 0.75,
+              "total_physical_norm": 1.0
+            },
+            {
+              "secret": [
+                1,
+                0
+              ],
+              "herald": 0.25,
+              "correct_unconditional": 0.06250000000000003,
+              "failed_herald": 0.75,
+              "total_physical_norm": 0.9999999999999998
+            },
+            {
+              "secret": [
+                1,
+                1
+              ],
+              "herald": 0.2499999999999999,
+              "correct_unconditional": 0.06249999999999997,
+              "failed_herald": 0.7500000000000001,
+              "total_physical_norm": 0.9999999999999997
+            },
+            {
+              "secret": [
+                1,
+                2
+              ],
+              "herald": 0.2499999999999999,
+              "correct_unconditional": 0.062499999999999986,
+              "failed_herald": 0.7500000000000001,
+              "total_physical_norm": 1.0
+            },
+            {
+              "secret": [
+                1,
+                3
+              ],
+              "herald": 0.2499999999999999,
+              "correct_unconditional": 0.0625,
+              "failed_herald": 0.7500000000000001,
+              "total_physical_norm": 0.9999999999999998
+            },
+            {
+              "secret": [
+                2,
+                0
+              ],
+              "herald": 0.25,
+              "correct_unconditional": 0.0625,
+              "failed_herald": 0.75,
+              "total_physical_norm": 1.0
+            },
+            {
+              "secret": [
+                2,
+                1
+              ],
+              "herald": 0.24999999999999994,
+              "correct_unconditional": 0.0625,
+              "failed_herald": 0.75,
+              "total_physical_norm": 0.9999999999999998
+            },
+            {
+              "secret": [
+                2,
+                2
+              ],
+              "herald": 0.24999999999999994,
+              "correct_unconditional": 0.0625,
+              "failed_herald": 0.75,
+              "total_physical_norm": 0.9999999999999999
+            },
+            {
+              "secret": [
+                2,
+                3
+              ],
+              "herald": 0.25,
+              "correct_unconditional": 0.0625,
+              "failed_herald": 0.75,
+              "total_physical_norm": 0.9999999999999999
+            },
+            {
+              "secret": [
+                3,
+                0
+              ],
+              "herald": 0.24999999999999994,
+              "correct_unconditional": 0.0625,
+              "failed_herald": 0.75,
+              "total_physical_norm": 1.0
+            },
+            {
+              "secret": [
+                3,
+                1
+              ],
+              "herald": 0.24999999999999994,
+              "correct_unconditional": 0.0625,
+              "failed_herald": 0.75,
+              "total_physical_norm": 0.9999999999999999
+            },
+            {
+              "secret": [
+                3,
+                2
+              ],
+              "herald": 0.24999999999999978,
+              "correct_unconditional": 0.06249999999999996,
+              "failed_herald": 0.7500000000000002,
+              "total_physical_norm": 0.9999999999999999
+            },
+            {
+              "secret": [
+                3,
+                3
+              ],
+              "herald": 0.25000000000000006,
+              "correct_unconditional": 0.06250000000000003,
+              "failed_herald": 0.75,
+              "total_physical_norm": 1.0
+            }
+          ]
+        },
+        {
+          "degree": 7,
+          "physical_reflection_rounds": 3,
+          "spectral_correct_unconditional": 0.062499999999999944,
+          "spectral_herald": 0.24999999999999978,
+          "optimal_classical_label_guess_uniform_secret_unconditional": 0.06249999999999998,
+          "heralded_output_probabilities_by_secret": [
+            [
+              0.06249999999999993,
+              4.6844630963456e-33,
+              2.284537712004907e-33,
+              9.164812725854634e-34,
+              0.031249999999999965,
+              0.015624999999999986,
+              2.1796297895333253e-34,
+              0.01562499999999999,
+              1.6010498946665062e-32,
+              0.031249999999999955,
+              1.2325871037168423e-33,
+              0.031249999999999906,
+              0.031249999999999965,
+              0.015624999999999983,
+              3.3364879124891917e-34,
+              0.015624999999999951
+            ],
+            [
+              7.341373795630227e-33,
+              0.06249999999999997,
+              1.759081465594003e-33,
+              2.3467428858110717e-33,
+              0.015625000000000014,
+              0.03125000000000001,
+              0.015625000000000007,
+              2.3527055621322714e-33,
+              0.031249999999999993,
+              5.64710499420888e-34,
+              0.031250000000000014,
+              4.2416923674631803e-32,
+              0.015625000000000007,
+              0.031249999999999976,
+              0.015625000000000007,
+              3.270108538915824e-33
+            ],
+            [
+              3.9492882369348636e-33,
+              2.5496259615398175e-33,
+              0.06250000000000003,
+              5.545193447473954e-33,
+              2.675130871563507e-33,
+              0.015625000000000007,
+              0.03125000000000001,
+              0.015625000000000014,
+              4.845733808566855e-34,
+              0.03125000000000001,
+              2.712237385499742e-33,
+              0.031250000000000056,
+              9.016003428648206e-34,
+              0.015625000000000014,
+              0.031250000000000014,
+              0.015625000000000014
+            ],
+            [
+              8.44160152253256e-34,
+              4.965827260087078e-33,
+              2.003490507056362e-33,
+              0.0625,
+              0.015624999999999993,
+              1.74691142720148e-34,
+              0.015625,
+              0.031250000000000035,
+              0.031249999999999993,
+              3.4055964877073146e-34,
+              0.031249999999999993,
+              5.022923397510981e-32,
+              0.015625000000000014,
+              1.6564142455216694e-33,
+              0.015625,
+              0.031249999999999965
+            ],
+            [
+              0.031249999999999986,
+              0.015625,
+              4.817724339505186e-33,
+              0.015624999999999993,
+              0.062499999999999944,
+              2.7263525235825985e-34,
+              2.8296657622071123e-33,
+              8.332629242358616e-33,
+              0.031249999999999986,
+              0.01562499999999999,
+              2.2813485683026714e-33,
+              0.015624999999999927,
+              3.2130564562622705e-33,
+              0.03125000000000001,
+              4.554372785283443e-34,
+              0.031249999999999955
+            ],
+            [
+              0.015625,
+              0.031250000000000014,
+              0.015625000000000014,
+              2.4234844066905783e-33,
+              2.4693641156667375e-33,
+              0.0625,
+              2.708168995243368e-33,
+              1.2087046188578864e-32,
+              0.015625,
+              0.031249999999999993,
+              0.015625000000000007,
+              3.927042979459439e-32,
+              0.031249999999999986,
+              5.611064946349686e-34,
+              0.031250000000000014,
+              9.392882437895172e-34
+            ],
+            [
+              1.956927113782046e-33,
+              0.015625000000000007,
+              0.031250000000000035,
+              0.015624999999999983,
+              5.869300477028292e-33,
+              2.7818839486689405e-33,
+              0.062499999999999986,
+              1.7082490852185306e-35,
+              1.1613191537687899e-32,
+              0.01562500000000002,
+              0.031249999999999993,
+              0.015625000000000014,
+              1.1275396965822043e-33,
+              0.031250000000000014,
+              2.373435131056799e-33,
+              0.031249999999999986
+            ],
+            [
+              0.015624999999999983,
+              7.335619793550528e-33,
+              0.015625,
+              0.03125000000000001,
+              4.448855832415408e-33,
+              5.118361730650834e-33,
+              3.0733488098729337e-33,
+              0.062499999999999986,
+              0.015625000000000007,
+              4.2729984342214735e-33,
+              0.01562500000000002,
+              0.03125000000000006,
+              0.031249999999999965,
+              6.148368896138054e-34,
+              0.031250000000000035,
+              9.26274596870045e-34
+            ],
+            [
+              1.83807967827146e-33,
+              0.031249999999999993,
+              2.0939766211853566e-33,
+              0.031249999999999993,
+              0.031249999999999986,
+              0.015624999999999997,
+              3.156101393680071e-33,
+              0.015624999999999997,
+              0.062499999999999986,
+              1.5799336542527194e-33,
+              4.959593360163372e-35,
+              5.042905860224471e-32,
+              0.03125000000000001,
+              0.015624999999999986,
+              1.5924825094560465e-33,
+              0.015624999999999976
+            ],
+            [
+              0.031249999999999986,
+              3.875235514178053e-34,
+              0.031250000000000035,
+              9.46010280705922e-34,
+              0.015624999999999976,
+              0.031249999999999993,
+              0.015625000000000007,
+              1.245776390689609e-32,
+              8.072480810959246e-34,
+              0.06249999999999997,
+              5.033508705286922e-35,
+              6.202069971766189e-32,
+              0.015624999999999986,
+              0.03125000000000001,
+              0.015625000000000014,
+              4.606937795651601e-33
+            ],
+            [
+              1.5925944295817702e-33,
+              0.031250000000000014,
+              5.743402455925728e-34,
+              0.031250000000000035,
+              3.0825927712035714e-33,
+              0.015625000000000007,
+              0.031249999999999993,
+              0.015625000000000014,
+              5.642092356481266e-34,
+              1.7569798404609373e-33,
+              0.062499999999999986,
+              3.996799922431581e-32,
+              7.710872913661008e-34,
+              0.015625,
+              0.03125000000000001,
+              0.015624999999999983
+            ],
+            [
+              0.031249999999999927,
+              3.762044922979716e-32,
+              0.03125000000000006,
+              4.671877093510391e-32,
+              0.01562499999999993,
+              5.742851564121038e-32,
+              0.015624999999999993,
+              0.03125000000000002,
+              4.817172192347434e-32,
+              6.949938125683153e-32,
+              4.7234557526159505e-32,
+              0.06249999999999997,
+              0.015625,
+              3.9379435643405916e-32,
+              0.01562500000000005,
+              0.031249999999999927
+            ],
+            [
+              0.031249999999999986,
+              0.015625000000000014,
+              5.4767632853777166e-33,
+              0.015625000000000007,
+              7.565942719919931e-33,
+              0.031249999999999976,
+              3.928510477234169e-34,
+              0.031249999999999986,
+              0.031249999999999986,
+              0.015624999999999983,
+              3.1358952079579184e-33,
+              0.015624999999999993,
+              0.06249999999999997,
+              1.2481527993494226e-33,
+              7.755250497266335e-34,
+              1.1929269387112713e-33
+            ],
+            [
+              0.015625000000000014,
+              0.031249999999999993,
+              0.01562500000000002,
+              3.452136027288553e-33,
+              0.031249999999999965,
+              1.928542198238535e-34,
+              0.03125000000000002,
+              4.656380373933448e-33,
+              0.015624999999999993,
+              0.03125000000000001,
+              0.015624999999999997,
+              3.5346077000304563e-32,
+              8.748755867112115e-34,
+              0.062499999999999986,
+              1.2313521567577755e-33,
+              1.6103540296845245e-33
+            ],
+            [
+              4.204190588068784e-33,
+              0.015625000000000014,
+              0.031250000000000035,
+              0.015625000000000014,
+              5.194065312378255e-34,
+              0.031250000000000014,
+              5.6708388280760344e-33,
+              0.031250000000000056,
+              2.359542198934283e-33,
+              0.015625000000000007,
+              0.031250000000000014,
+              0.015625000000000056,
+              1.9260076848494365e-34,
+              9.79728412840138e-34,
+              0.06250000000000003,
+              7.38326789195956e-33
+            ],
+            [
+              0.015624999999999986,
+              5.464694458242612e-33,
+              0.015625,
+              0.031249999999999986,
+              0.031249999999999965,
+              6.122616934539307e-33,
+              0.03125000000000001,
+              5.027928755760457e-34,
+              0.015624999999999972,
+              1.6490898892422258e-32,
+              0.01562499999999999,
+              0.031249999999999944,
+              3.1150696785962307e-34,
+              6.1283618622637486e-33,
+              7.738810133842313e-33,
+              0.062499999999999944
+            ]
+          ],
+          "every_secret_physical_probabilities": [
+            {
+              "secret": [
+                0,
+                0
+              ],
+              "herald": 0.24999999999999964,
+              "correct_unconditional": 0.06249999999999993,
+              "failed_herald": 0.7500000000000003,
+              "total_physical_norm": 0.9999999999999999
+            },
+            {
+              "secret": [
+                0,
+                1
+              ],
+              "herald": 0.25,
+              "correct_unconditional": 0.06249999999999997,
+              "failed_herald": 0.75,
+              "total_physical_norm": 0.9999999999999998
+            },
+            {
+              "secret": [
+                0,
+                2
+              ],
+              "herald": 0.25000000000000017,
+              "correct_unconditional": 0.06250000000000003,
+              "failed_herald": 0.7499999999999998,
+              "total_physical_norm": 0.9999999999999998
+            },
+            {
+              "secret": [
+                0,
+                3
+              ],
+              "herald": 0.25,
+              "correct_unconditional": 0.0625,
+              "failed_herald": 0.75,
+              "total_physical_norm": 1.0
+            },
+            {
+              "secret": [
+                1,
+                0
+              ],
+              "herald": 0.24999999999999978,
+              "correct_unconditional": 0.062499999999999944,
+              "failed_herald": 0.7500000000000002,
+              "total_physical_norm": 0.9999999999999998
+            },
+            {
+              "secret": [
+                1,
+                1
+              ],
+              "herald": 0.25,
+              "correct_unconditional": 0.0625,
+              "failed_herald": 0.75,
+              "total_physical_norm": 1.0
+            },
+            {
+              "secret": [
+                1,
+                2
+              ],
+              "herald": 0.25000000000000006,
+              "correct_unconditional": 0.062499999999999986,
+              "failed_herald": 0.75,
+              "total_physical_norm": 1.0
+            },
+            {
+              "secret": [
+                1,
+                3
+              ],
+              "herald": 0.2500000000000001,
+              "correct_unconditional": 0.062499999999999986,
+              "failed_herald": 0.7499999999999999,
+              "total_physical_norm": 1.0
+            },
+            {
+              "secret": [
+                2,
+                0
+              ],
+              "herald": 0.24999999999999992,
+              "correct_unconditional": 0.062499999999999986,
+              "failed_herald": 0.7500000000000001,
+              "total_physical_norm": 1.0
+            },
+            {
+              "secret": [
+                2,
+                1
+              ],
+              "herald": 0.24999999999999997,
+              "correct_unconditional": 0.06249999999999997,
+              "failed_herald": 0.75,
+              "total_physical_norm": 1.0
+            },
+            {
+              "secret": [
+                2,
+                2
+              ],
+              "herald": 0.25000000000000006,
+              "correct_unconditional": 0.062499999999999986,
+              "failed_herald": 0.75,
+              "total_physical_norm": 1.0
+            },
+            {
+              "secret": [
+                2,
+                3
+              ],
+              "herald": 0.2499999999999999,
+              "correct_unconditional": 0.06249999999999997,
+              "failed_herald": 0.7500000000000001,
+              "total_physical_norm": 0.9999999999999999
+            },
+            {
+              "secret": [
+                3,
+                0
+              ],
+              "herald": 0.2499999999999999,
+              "correct_unconditional": 0.06249999999999997,
+              "failed_herald": 0.7500000000000001,
+              "total_physical_norm": 0.9999999999999999
+            },
+            {
+              "secret": [
+                3,
+                1
+              ],
+              "herald": 0.24999999999999997,
+              "correct_unconditional": 0.062499999999999986,
+              "failed_herald": 0.75,
+              "total_physical_norm": 1.0
+            },
+            {
+              "secret": [
+                3,
+                2
+              ],
+              "herald": 0.2500000000000002,
+              "correct_unconditional": 0.06250000000000003,
+              "failed_herald": 0.7499999999999998,
+              "total_physical_norm": 1.0
+            },
+            {
+              "secret": [
+                3,
+                3
+              ],
+              "herald": 0.24999999999999978,
+              "correct_unconditional": 0.062499999999999944,
+              "failed_herald": 0.7500000000000002,
+              "total_physical_norm": 1.0
+            }
+          ]
+        }
+      ],
+      "bounded_unitary_and_fiber_materialization_is_exponential_calibration": true,
+      "known_public_unitary_inverse_used": true,
+      "unknown_input_preparation_inverse_used": false,
+      "efficient_native_decoder_implemented": false
+    }
+  ],
+  "complete_native_sources": [
+    {
+      "n": 1,
+      "q": 4,
+      "m": 2,
+      "complete_native_matrices": 16,
+      "exact_mean_raw_herald": {
+        "numerator_hex": "7",
+        "denominator_hex": "10"
+      },
+      "exact_pooled_conditional_correct": {
+        "numerator_hex": "4",
+        "denominator_hex": "7"
+      },
+      "unconditional_correct": {
+        "numerator_hex": "1",
+        "denominator_hex": "4"
+      }
+    },
+    {
+      "n": 1,
+      "q": 8,
+      "m": 3,
+      "complete_native_matrices": 512,
+      "exact_mean_raw_herald": {
+        "numerator_hex": "f",
+        "denominator_hex": "40"
+      },
+      "exact_pooled_conditional_correct": {
+        "numerator_hex": "8",
+        "denominator_hex": "f"
+      },
+      "unconditional_correct": {
+        "numerator_hex": "1",
+        "denominator_hex": "8"
+      }
+    },
+    {
+      "n": 2,
+      "q": 4,
+      "m": 2,
+      "complete_native_matrices": 256,
+      "exact_mean_raw_herald": {
+        "numerator_hex": "13",
+        "denominator_hex": "40"
+      },
+      "exact_pooled_conditional_correct": {
+        "numerator_hex": "4",
+        "denominator_hex": "13"
+      },
+      "unconditional_correct": {
+        "numerator_hex": "1",
+        "denominator_hex": "10"
+      }
+    }
+  ],
+  "native_growing_ledgers": [
+    {
+      "status": "SCOPED_PROJECTED_ENCODING_NORMALIZATION_GATE_REVIEW_PENDING",
+      "dimension": 8,
+      "modulus_bits": 33,
+      "phase_qubits": 280,
+      "degree": 295936,
+      "density_surplus": 16,
+      "raw_comparison_unconditional_correct_probability": {
+        "numerator_hex": "1",
+        "denominator_hex": "1000000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "native_mean_raw_herald_probability": {
+        "numerator_hex": "10000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+        "denominator_hex": "10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "native_pooled_correct_probability_given_raw_herald": {
+        "numerator_hex": "10000000000000000000000000000000000000000000000000000000000000000000000",
+        "denominator_hex": "10000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+      },
+      "odd_bounded_polynomial_correct_probability_upper_bound": {
+        "numerator_hex": "65f45",
+        "denominator_hex": "20000000000000000000000000000000000000000000000000000000000000"
+      },
+      "conservative_correct_probability_dyadic_exponent": 226,
+      "target_success": {
+        "numerator_hex": "1",
+        "denominator_hex": "2"
+      },
+      "minimum_degree_necessary_for_target_success": "727c9716ffb764d594a519c0252be9ae7",
+      "polynomial_may_depend_on_all_public_labels": true,
+      "all_scalar_or_vector_branches_require_joint_norm_bound_on_minus_one_to_one": true,
+      "claimed_success_is_unconditional_not_herald_normalized": true,
+      "also_bounds_arbitrary_classical_guess_from_label_and_branch_for_uniform_secret": true,
+      "requires_same_fiber_character_singular_vectors_and_standard_secret_output": true,
+      "arbitrary_interleaved_algorithms_or_other_encodings_ruled_out": false,
+      "independent_review": false,
+      "candidate_record_accepted": false,
+      "novelty_claim": false,
+      "speedup_claim_allowed": false
+    },
+    {
+      "status": "SCOPED_PROJECTED_ENCODING_NORMALIZATION_GATE_REVIEW_PENDING",
+      "dimension": 16,
+      "modulus_bits": 65,
+      "phase_qubits": 1056,
+      "degree": 4393216,
+      "density_surplus": 16,
+      "raw_comparison_unconditional_correct_probability": {
+        "numerator_hex": "1",
+        "denominator_hex": "100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "native_mean_raw_herald_probability": {
+        "numerator_hex": "10000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+        "denominator_hex": "100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "native_pooled_correct_probability_given_raw_herald": {
+        "numerator_hex": "1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "denominator_hex": "10000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+      },
+      "odd_bounded_polynomial_correct_probability_upper_bound": {
+        "numerator_hex": "57c48f95",
+        "denominator_hex": "20000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "conservative_correct_probability_dyadic_exponent": 994,
+      "target_success": {
+        "numerator_hex": "1",
+        "denominator_hex": "2"
+      },
+      "minimum_degree_necessary_for_target_success": "727c9716ffb764d594a519c0252be9ae6d00dc9194a760ed9691c407204d6c3ba95cc6ad54ba97cc67b601be24c700ff9a3692d0768013344d88eb0e6c7af27c61",
+      "polynomial_may_depend_on_all_public_labels": true,
+      "all_scalar_or_vector_branches_require_joint_norm_bound_on_minus_one_to_one": true,
+      "claimed_success_is_unconditional_not_herald_normalized": true,
+      "also_bounds_arbitrary_classical_guess_from_label_and_branch_for_uniform_secret": true,
+      "requires_same_fiber_character_singular_vectors_and_standard_secret_output": true,
+      "arbitrary_interleaved_algorithms_or_other_encodings_ruled_out": false,
+      "independent_review": false,
+      "candidate_record_accepted": false,
+      "novelty_claim": false,
+      "speedup_claim_allowed": false
+    },
+    {
+      "status": "SCOPED_PROJECTED_ENCODING_NORMALIZATION_GATE_REVIEW_PENDING",
+      "dimension": 32,
+      "modulus_bits": 129,
+      "phase_qubits": 4144,
+      "degree": 68425984,
+      "density_surplus": 16,
+      "raw_comparison_unconditional_correct_probability": {
+        "numerator_hex": "1",
+        "denominator_hex": "1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "native_mean_raw_herald_probability": {
+        "numerator_hex": "10000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+        "denominator_hex": "10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "native_pooled_correct_probability_given_raw_herald": {
+        "numerator_hex": "10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "denominator_hex": "10000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+      },
+      "odd_bounded_polynomial_correct_probability_upper_bound": {
+        "numerator_hex": "532bcb9435",
+        "denominator_hex": "200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "conservative_correct_probability_dyadic_exponent": 4074,
+      "target_success": {
+        "numerator_hex": "1",
+        "denominator_hex": "2"
+      },
+      "minimum_degree_necessary_for_target_success": "727c9716ffb764d594a519c0252be9ae6d00dc9194a760ed9691c407204d6c3ba95cc6ad54ba97cc67b601be24c700ff9a3692d0768013344d88eb0e6c7af27c602abcac3c6fcfcc3567d892ccb2324f5b87a8ba4ee2d5cdeabed1eb98ccb18d5a927b16b9b7b47a4b2fb1ca056ec9721c71b77b2bb2344265e8696025b78f8f294aa4a0c7ddb8adcfdf4ec7adf6db0fb1e3a2838e76c3c8a7c9a5e00aea568fb973b9ce70c05ddb349e1545717879fb502493dd2c8e8210d254d250516ca4121e86ec71410beaa74111a905d5c2c1dcf5c906e8c8c89cd10b9debb1729e9012ec9a014044c4a19aec2d2da269e68d77a4d845fa5e585fe4fa6e1f8602c5677fe324",
+      "polynomial_may_depend_on_all_public_labels": true,
+      "all_scalar_or_vector_branches_require_joint_norm_bound_on_minus_one_to_one": true,
+      "claimed_success_is_unconditional_not_herald_normalized": true,
+      "also_bounds_arbitrary_classical_guess_from_label_and_branch_for_uniform_secret": true,
+      "requires_same_fiber_character_singular_vectors_and_standard_secret_output": true,
+      "arbitrary_interleaved_algorithms_or_other_encodings_ruled_out": false,
+      "independent_review": false,
+      "candidate_record_accepted": false,
+      "novelty_claim": false,
+      "speedup_claim_allowed": false
+    }
+  ],
+  "easy_binary_family_countercontrol": {
+    "labels": "identity matrix over F_2",
+    "secret_decoder": "Hadamard on each supplied qubit",
+    "direct_correct_probability": 1,
+    "comparison_singular_condition_number": 1,
+    "comparison_singular_values": "2^(-n/2)",
+    "general_hidden_subgroup_hardness_inferred": false
+  },
+  "claim_gate": {
+    "independent_review": false,
+    "novelty_claim": false,
+    "candidate_record_accepted": false,
+    "speedup_claim_allowed": false,
+    "all_QSVT_or_collective_decoders_ruled_out": false
+  },
+  "dependency_sha256": {
+    "theorems/dcp_pgm_projected_encoding.py": "115d508c597537d19088dab6dda9d21e52e442e9d37545f41290d3dffbe9a52d",
+    "theorems/dcp_adaptive_product_readout_bound.py": "c10417caade2f0dfb0a83ac8e0dffae94cc6c4246c427cfb405729912ec88f30",
+    "theorems/dcp_terminal_affine_fibers.py": "eabeb22f435ebe0aedbfc79d2c2f6072ff1f5cf251d833b90dfca88d0bd6e5ef"
+  }
+}

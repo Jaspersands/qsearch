@@ -1,0 +1,59 @@
+{
+  "hypothesis_id": "HYP-DHSP-DOMAIN-CODOMAIN-INTERFERENCE-ESCAPE",
+  "status": "DIMENSION_FREE_INSTRUMENT_SCREEN_LOCAL_DERIVATION_REVIEW_PENDING",
+  "candidate_record_accepted": false,
+  "note": "research/DHSP_CODOMAIN_SAMPLE_SIMULATION.md",
+  "report": "research/classical_baselines/dhsp_codomain_sample_simulation.json",
+  "parent_contract": "research/hypotheses/dhsp_codomain_instrument_contract.json",
+  "outside_screen_followup_contract": "research/hypotheses/dhsp_domain_collision_walk_contract.json",
+  "literature_audit": "research/literature_audits/dhsp_codomain_instrument_sources.json",
+  "ontology_nodes": ["dihedral-hsp", "full-function-oracle-access", "codomain-instrument-simulation", "adaptive-quantum-memory", "classical-query-quantum-processing"],
+  "screened_architecture": {
+    "each_call": "Fresh uniform index-two subgroup domain, compute f, known codomain-controlled isometry on arbitrary incoming quantum memory, uncompute f, binary uniform-domain projection, discard domain in every branch.",
+    "retained": ["all flags", "full-dimensional encoder outputs and all ancillas", "incoming quantum memory and entangled reference"],
+    "subgroup_selection": "Classically adaptive, no finite encoder-menu or Hilbert-dimension restriction.",
+    "simulation": "m fresh classical label samples per call, multiplicity-preserving quantum sample-table preparation; one fixed underlying oracle for the entire protocol.",
+    "overhead": "Tm classical function evaluations, explicit O(m*(label_bits+log m)) known multiplexed lookup per call, original controlled-encoder circuit and uniform-index/precision costs.",
+    "not_a_claim": "The known downstream quantum computation is not simulated by a classical computer."
+  },
+  "mathematical_interfaces": {
+    "variance_channel": "V(rho)=E(rho)-M rho M^dagger is CP and trace-nonincreasing, also with an entangled reference.",
+    "empirical_channel_error": "Expected empirical-minus-true channel has tagged blocks +/-V(rho)/m; reference-assisted trace error <=1/m regardless of memory dimension.",
+    "joint_simulation": "Conditional on the fixed oracle, adaptive T-call error <=T/m per hidden hypothesis; no nuisance resampling.",
+    "label_information_gate": "For fixed uniform random output permutation and label-only correct-half/wrong-full samplers, Q adaptive label samples have distance<=Q(Q-1)/(2N).",
+    "scoped_source_screen": "Original parity distance<=2T/m+(Tm)(Tm-1)/(2N), capped1; initial memory must be secret-independent and no other oracle resources supplied.",
+    "postselection_boundary": "Complete-output simulation does not preserve rare conditional pure-image outputs; full-label accepted overlap m/(m+M-1) can be tiny."
+  },
+  "outside_screen": [
+    "retained domains or detailed failed-domain outcomes",
+    "known operations controlled jointly by domain and codomain",
+    "coherent subgroup choices or nonuniform domain probes",
+    "other interleaved full-oracle algorithms",
+    "structured natural codomain/source promises or secret-correlated side states for the information gate"
+  ],
+  "proof_obligations": {
+    "PO-INDEPENDENT-REVIEW": "Review CP variance, reference-assisted channel error, both-hypothesis hybrid and adaptive fixed-subset coupling. Tests do not certify proofs.",
+    "PO-ACCESS": "Specify exactly which domain registers survive, which operations depend on domain indices, and which subgroup/oracle controls are coherent. Demonstrate why an outside-screen primitive changes the source channel.",
+    "PO-NATURAL-REDUCTION": "Connect an outside-screen input or meaningful label semantics to a consequential problem with charged parameter, input-generation and error losses.",
+    "PO-CLASSICAL-COMPUTATION": "Classical-query quantum-processing simulation is not a classical runtime attack. Compare actual classical decoding and known quantum processing under the same natural data promise.",
+    "PO-COST": "Charge empirical query counts, classical table storage, reversible loading, controlled encoder implementation and precision. An analytically exponential sample list is not free algorithm advice.",
+    "PO-CONTROLLED-PHASE": "Known controlled W_y implementations must preserve specified relative phases and cannot hide extra unknown-oracle calls. Standalone black-box CPTP maps do not define those controlled phases.",
+    "PO-POSTSELECTION": "Certify conditional error relative to the true herald mass, rather than transferring an unconditional trace bound through rare acceptance.",
+    "PO-CFIP": "Obtain exact CFIP full text and access assumptions before naming it as a costed algorithmic primitive."
+  },
+  "experiments_with_falsifiers": [
+    {"experiment": "Exact empirical-channel variance and full-input norm checks.", "falsifier": "A permitted input/reference exceeds1/m error, a noncommuting operator breaks CP variance, or sample values are deduplicated."},
+    {"experiment": "Adaptive entangled-memory experiment with shared hidden subset.", "falsifier": "Full flag/memory output exceedsT/m per-hypothesis error or the simulator resamples the underlying oracle."},
+    {"experiment": "Cost a domain-dependent or coherent-domain primitive outside the screened template.", "falsifier": "It reduces to the same label-only channel, grants an inverse/image oracle, or has no natural reduction and matched baseline."},
+    {"experiment": "Investigate genuine natural label structure.", "falsifier": "Its advantage is known classical reconstruction, free advice, uncharged conditional erasure or a changed unmotivated source promise."}
+  ],
+  "gemini_integration": [
+    "Expose a separate sample-simulation audit linked to the parent codomain workflow; keep full-oracle, label-only-sampler and coset-state access models distinct.",
+    "Register scoped negatives for the binary-erasure architecture, invalid Choi-to-diamond inference and rare-herald accuracy transfer, not a universal DHSP hardness claim.",
+    "Retain the chosen two-query countercontrol, shared/resampled joint-state difference, exact rational ledgers and charged simulator sample counts.",
+    "Run full production validation and repair the previously documented writer failures. Do not promote a candidate or claim independent theorem review."
+  ],
+  "independent_review": false,
+  "novelty_claim": false,
+  "speedup_claim_allowed": false
+}

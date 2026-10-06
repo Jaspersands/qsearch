@@ -1,0 +1,1160 @@
+{
+  "status": "LOCAL_DERIVATION_REVIEW_PENDING",
+  "parity_inverse_controls": [
+    {
+      "cube_dimension": 1,
+      "parity_matrix_size": 1,
+      "integer_inverse_numerator_entries_are_plus_or_minus_one": true,
+      "inverse_denominator": 1,
+      "checked_product_entries": 1
+    },
+    {
+      "cube_dimension": 2,
+      "parity_matrix_size": 3,
+      "integer_inverse_numerator_entries_are_plus_or_minus_one": true,
+      "inverse_denominator": 2,
+      "checked_product_entries": 9
+    },
+    {
+      "cube_dimension": 3,
+      "parity_matrix_size": 7,
+      "integer_inverse_numerator_entries_are_plus_or_minus_one": true,
+      "inverse_denominator": 4,
+      "checked_product_entries": 49
+    },
+    {
+      "cube_dimension": 4,
+      "parity_matrix_size": 15,
+      "integer_inverse_numerator_entries_are_plus_or_minus_one": true,
+      "inverse_denominator": 8,
+      "checked_product_entries": 225
+    },
+    {
+      "cube_dimension": 5,
+      "parity_matrix_size": 31,
+      "integer_inverse_numerator_entries_are_plus_or_minus_one": true,
+      "inverse_denominator": 16,
+      "checked_product_entries": 961
+    }
+  ],
+  "complete_pattern_sum_controls": [
+    {
+      "cube_dimension": 2,
+      "modulus_bits": 3,
+      "all_nonzero_patterns_present": true,
+      "complete_pattern_sum_tables": 512,
+      "flat_tables": 2,
+      "exact_full_pattern_flatness_probability": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x100"
+      },
+      "divisibility_necessary_probability_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x40"
+      }
+    },
+    {
+      "cube_dimension": 3,
+      "modulus_bits": 2,
+      "all_nonzero_patterns_present": true,
+      "complete_pattern_sum_tables": 16384,
+      "flat_tables": 32,
+      "exact_full_pattern_flatness_probability": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x200"
+      },
+      "divisibility_necessary_probability_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x1"
+      }
+    }
+  ],
+  "cube_source_and_compression_scaling": [
+    {
+      "dimension": 16,
+      "physical_width": 1300,
+      "full_modulus_bits": 65,
+      "terminal_tail_bits": 260,
+      "tested_cube_dimensions": 31,
+      "best_deterministic_design_gate": {
+        "source": {
+          "status": "NATIVE_AFFINE_CUBE_INCIDENT_POINT_MASS_SOURCE_UPPER_BOUND",
+          "dimension": 16,
+          "physical_width": 1300,
+          "tested_modulus_bits": 65,
+          "cube_dimension": 3,
+          "parity_kernel_uniform_points_and_invertible_binary_prefix_conditioned": true,
+          "pattern_sum_divisibility_bits": 63,
+          "log2_cube_dimension_plus_one_upper_bound_numerator": 64,
+          "log2_cube_dimension_plus_one_upper_bound_denominator": 32,
+          "per_pattern_assignment_entropy_bits_upper_bound": 867,
+          "per_pattern_probability_gap_bits": 138,
+          "cube_basis_multiplicity_lower_bound": "2^(9-2)",
+          "source_mean_incident_point_mass_upper_bound_dyadic_exponent": 402,
+          "source_mean_incident_point_mass_upper_bound": "2^-402",
+          "conditioning_factor_upper_bound": "2^18",
+          "nonempty_pattern_groups_and_independent_modular_sums_required": true,
+          "all_patterns_or_cube_vertices_enumerated_by_scaling_ledger": false,
+          "all_high_label_adaptive_cube_choices_within_packet_covered": true,
+          "global_cube_absence_or_this_packet_classification_proved": false,
+          "nonlinear_blocks_interblock_mixing_or_unknown_trash_excluded": false,
+          "independent_theorem_review": false,
+          "candidate_record_accepted": false,
+          "novelty_claim": false,
+          "speedup_claim_allowed": false
+        },
+        "compression": {
+          "status": "HIGHER_CUBE_PHYSICAL_AFFINE_CLEAN_TAIL_COMPRESSION_GATE",
+          "cube_dimension": 3,
+          "physical_tail_bits": 260,
+          "effective_target_projector_rank": 1,
+          "cap_density": {
+            "tail_bits": 260,
+            "cube_dimension": 3,
+            "cube_free_fiber_density_upper_bound_dyadic_exponent": 63,
+            "cube_free_fiber_density_upper_bound": "2^-63",
+            "cube_dimension_fits_inside_tail": true,
+            "exponential_cube_vertex_or_cap_enumeration_used": false
+          },
+          "rank_adjusted_nonincident_probability_dyadic_exponent": 63,
+          "source_exception_probability_dyadic_exponent": 402,
+          "uniform_secret_source_mean_acceptance_upper_bound": "min(1,2^-63+2^-402)",
+          "conservative_single_dyadic_exponent": 62,
+          "uniform_secret_source_mean_acceptance_proved_below_two_thirds": true,
+          "blocks_are_physical_binary_affine_equal_size_and_public_label_selected": true,
+          "clean_workspace_or_entire_effective_projector_rank_charged": true,
+          "secret_dependent_discarded_trash_or_interblock_mixing_covered": false,
+          "secret_informative_prior_measurements_covered": false,
+          "mean_is_a_fixed_secret_or_instance_guarantee": false,
+          "full_quantum_decoder_ruled_out": false,
+          "candidate_record_accepted": false,
+          "independent_theorem_review": false,
+          "speedup_claim_allowed": false
+        }
+      },
+      "choosing_minimum_of_valid_bounds_assumes_independence": false,
+      "menu_search_is_a_quantum_algorithm_candidate": false
+    },
+    {
+      "dimension": 16,
+      "physical_width": 2080,
+      "full_modulus_bits": 65,
+      "terminal_tail_bits": 1040,
+      "tested_cube_dimensions": 31,
+      "best_deterministic_design_gate": {
+        "source": {
+          "status": "NATIVE_AFFINE_CUBE_INCIDENT_POINT_MASS_SOURCE_UPPER_BOUND",
+          "dimension": 16,
+          "physical_width": 2080,
+          "tested_modulus_bits": 65,
+          "cube_dimension": 7,
+          "parity_kernel_uniform_points_and_invertible_binary_prefix_conditioned": true,
+          "pattern_sum_divisibility_bits": 59,
+          "log2_cube_dimension_plus_one_upper_bound_numerator": 96,
+          "log2_cube_dimension_plus_one_upper_bound_denominator": 32,
+          "per_pattern_assignment_entropy_bits_upper_bound": 892,
+          "per_pattern_probability_gap_bits": 45,
+          "cube_basis_multiplicity_lower_bound": "2^(49-2)",
+          "source_mean_incident_point_mass_upper_bound_dyadic_exponent": 343,
+          "source_mean_incident_point_mass_upper_bound": "2^-343",
+          "conditioning_factor_upper_bound": "2^18",
+          "nonempty_pattern_groups_and_independent_modular_sums_required": true,
+          "all_patterns_or_cube_vertices_enumerated_by_scaling_ledger": false,
+          "all_high_label_adaptive_cube_choices_within_packet_covered": true,
+          "global_cube_absence_or_this_packet_classification_proved": false,
+          "nonlinear_blocks_interblock_mixing_or_unknown_trash_excluded": false,
+          "independent_theorem_review": false,
+          "candidate_record_accepted": false,
+          "novelty_claim": false,
+          "speedup_claim_allowed": false
+        },
+        "compression": {
+          "status": "HIGHER_CUBE_PHYSICAL_AFFINE_CLEAN_TAIL_COMPRESSION_GATE",
+          "cube_dimension": 7,
+          "physical_tail_bits": 1040,
+          "effective_target_projector_rank": 1,
+          "cap_density": {
+            "tail_bits": 1040,
+            "cube_dimension": 7,
+            "cube_free_fiber_density_upper_bound_dyadic_exponent": 15,
+            "cube_free_fiber_density_upper_bound": "2^-15",
+            "cube_dimension_fits_inside_tail": true,
+            "exponential_cube_vertex_or_cap_enumeration_used": false
+          },
+          "rank_adjusted_nonincident_probability_dyadic_exponent": 15,
+          "source_exception_probability_dyadic_exponent": 343,
+          "uniform_secret_source_mean_acceptance_upper_bound": "min(1,2^-15+2^-343)",
+          "conservative_single_dyadic_exponent": 14,
+          "uniform_secret_source_mean_acceptance_proved_below_two_thirds": true,
+          "blocks_are_physical_binary_affine_equal_size_and_public_label_selected": true,
+          "clean_workspace_or_entire_effective_projector_rank_charged": true,
+          "secret_dependent_discarded_trash_or_interblock_mixing_covered": false,
+          "secret_informative_prior_measurements_covered": false,
+          "mean_is_a_fixed_secret_or_instance_guarantee": false,
+          "full_quantum_decoder_ruled_out": false,
+          "candidate_record_accepted": false,
+          "independent_theorem_review": false,
+          "speedup_claim_allowed": false
+        }
+      },
+      "choosing_minimum_of_valid_bounds_assumes_independence": false,
+      "menu_search_is_a_quantum_algorithm_candidate": false
+    },
+    {
+      "dimension": 32,
+      "physical_width": 8256,
+      "full_modulus_bits": 129,
+      "terminal_tail_bits": 4128,
+      "tested_cube_dimensions": 31,
+      "best_deterministic_design_gate": {
+        "source": {
+          "status": "NATIVE_AFFINE_CUBE_INCIDENT_POINT_MASS_SOURCE_UPPER_BOUND",
+          "dimension": 32,
+          "physical_width": 8256,
+          "tested_modulus_bits": 129,
+          "cube_dimension": 6,
+          "parity_kernel_uniform_points_and_invertible_binary_prefix_conditioned": true,
+          "pattern_sum_divisibility_bits": 124,
+          "log2_cube_dimension_plus_one_upper_bound_numerator": 90,
+          "log2_cube_dimension_plus_one_upper_bound_denominator": 32,
+          "per_pattern_assignment_entropy_bits_upper_bound": 3870,
+          "per_pattern_probability_gap_bits": 92,
+          "cube_basis_multiplicity_lower_bound": "2^(36-2)",
+          "source_mean_incident_point_mass_upper_bound_dyadic_exponent": 551,
+          "source_mean_incident_point_mass_upper_bound": "2^-551",
+          "conditioning_factor_upper_bound": "2^34",
+          "nonempty_pattern_groups_and_independent_modular_sums_required": true,
+          "all_patterns_or_cube_vertices_enumerated_by_scaling_ledger": false,
+          "all_high_label_adaptive_cube_choices_within_packet_covered": true,
+          "global_cube_absence_or_this_packet_classification_proved": false,
+          "nonlinear_blocks_interblock_mixing_or_unknown_trash_excluded": false,
+          "independent_theorem_review": false,
+          "candidate_record_accepted": false,
+          "novelty_claim": false,
+          "speedup_claim_allowed": false
+        },
+        "compression": {
+          "status": "HIGHER_CUBE_PHYSICAL_AFFINE_CLEAN_TAIL_COMPRESSION_GATE",
+          "cube_dimension": 6,
+          "physical_tail_bits": 4128,
+          "effective_target_projector_rank": 1,
+          "cap_density": {
+            "tail_bits": 4128,
+            "cube_dimension": 6,
+            "cube_free_fiber_density_upper_bound_dyadic_exponent": 127,
+            "cube_free_fiber_density_upper_bound": "2^-127",
+            "cube_dimension_fits_inside_tail": true,
+            "exponential_cube_vertex_or_cap_enumeration_used": false
+          },
+          "rank_adjusted_nonincident_probability_dyadic_exponent": 127,
+          "source_exception_probability_dyadic_exponent": 551,
+          "uniform_secret_source_mean_acceptance_upper_bound": "min(1,2^-127+2^-551)",
+          "conservative_single_dyadic_exponent": 126,
+          "uniform_secret_source_mean_acceptance_proved_below_two_thirds": true,
+          "blocks_are_physical_binary_affine_equal_size_and_public_label_selected": true,
+          "clean_workspace_or_entire_effective_projector_rank_charged": true,
+          "secret_dependent_discarded_trash_or_interblock_mixing_covered": false,
+          "secret_informative_prior_measurements_covered": false,
+          "mean_is_a_fixed_secret_or_instance_guarantee": false,
+          "full_quantum_decoder_ruled_out": false,
+          "candidate_record_accepted": false,
+          "independent_theorem_review": false,
+          "speedup_claim_allowed": false
+        }
+      },
+      "choosing_minimum_of_valid_bounds_assumes_independence": false,
+      "menu_search_is_a_quantum_algorithm_candidate": false
+    },
+    {
+      "dimension": 64,
+      "physical_width": 32896,
+      "full_modulus_bits": 257,
+      "terminal_tail_bits": 16448,
+      "tested_cube_dimensions": 31,
+      "best_deterministic_design_gate": {
+        "source": {
+          "status": "NATIVE_AFFINE_CUBE_INCIDENT_POINT_MASS_SOURCE_UPPER_BOUND",
+          "dimension": 64,
+          "physical_width": 32896,
+          "tested_modulus_bits": 257,
+          "cube_dimension": 6,
+          "parity_kernel_uniform_points_and_invertible_binary_prefix_conditioned": true,
+          "pattern_sum_divisibility_bits": 252,
+          "log2_cube_dimension_plus_one_upper_bound_numerator": 90,
+          "log2_cube_dimension_plus_one_upper_bound_denominator": 32,
+          "per_pattern_assignment_entropy_bits_upper_bound": 15420,
+          "per_pattern_probability_gap_bits": 702,
+          "cube_basis_multiplicity_lower_bound": "2^(36-2)",
+          "source_mean_incident_point_mass_upper_bound_dyadic_exponent": 4179,
+          "source_mean_incident_point_mass_upper_bound": "2^-4179",
+          "conditioning_factor_upper_bound": "2^66",
+          "nonempty_pattern_groups_and_independent_modular_sums_required": true,
+          "all_patterns_or_cube_vertices_enumerated_by_scaling_ledger": false,
+          "all_high_label_adaptive_cube_choices_within_packet_covered": true,
+          "global_cube_absence_or_this_packet_classification_proved": false,
+          "nonlinear_blocks_interblock_mixing_or_unknown_trash_excluded": false,
+          "independent_theorem_review": false,
+          "candidate_record_accepted": false,
+          "novelty_claim": false,
+          "speedup_claim_allowed": false
+        },
+        "compression": {
+          "status": "HIGHER_CUBE_PHYSICAL_AFFINE_CLEAN_TAIL_COMPRESSION_GATE",
+          "cube_dimension": 6,
+          "physical_tail_bits": 16448,
+          "effective_target_projector_rank": 1,
+          "cap_density": {
+            "tail_bits": 16448,
+            "cube_dimension": 6,
+            "cube_free_fiber_density_upper_bound_dyadic_exponent": 512,
+            "cube_free_fiber_density_upper_bound": "2^-512",
+            "cube_dimension_fits_inside_tail": true,
+            "exponential_cube_vertex_or_cap_enumeration_used": false
+          },
+          "rank_adjusted_nonincident_probability_dyadic_exponent": 512,
+          "source_exception_probability_dyadic_exponent": 4179,
+          "uniform_secret_source_mean_acceptance_upper_bound": "min(1,2^-512+2^-4179)",
+          "conservative_single_dyadic_exponent": 511,
+          "uniform_secret_source_mean_acceptance_proved_below_two_thirds": true,
+          "blocks_are_physical_binary_affine_equal_size_and_public_label_selected": true,
+          "clean_workspace_or_entire_effective_projector_rank_charged": true,
+          "secret_dependent_discarded_trash_or_interblock_mixing_covered": false,
+          "secret_informative_prior_measurements_covered": false,
+          "mean_is_a_fixed_secret_or_instance_guarantee": false,
+          "full_quantum_decoder_ruled_out": false,
+          "candidate_record_accepted": false,
+          "independent_theorem_review": false,
+          "speedup_claim_allowed": false
+        }
+      },
+      "choosing_minimum_of_valid_bounds_assumes_independence": false,
+      "menu_search_is_a_quantum_algorithm_candidate": false
+    },
+    {
+      "dimension": 32,
+      "physical_width": 12384,
+      "full_modulus_bits": 129,
+      "terminal_tail_bits": 8256,
+      "tested_cube_dimensions": 31,
+      "best_deterministic_design_gate": {
+        "source": {
+          "status": "NATIVE_AFFINE_CUBE_INCIDENT_POINT_MASS_SOURCE_UPPER_BOUND",
+          "dimension": 32,
+          "physical_width": 12384,
+          "tested_modulus_bits": 129,
+          "cube_dimension": 13,
+          "parity_kernel_uniform_points_and_invertible_binary_prefix_conditioned": true,
+          "pattern_sum_divisibility_bits": 117,
+          "log2_cube_dimension_plus_one_upper_bound_numerator": 122,
+          "log2_cube_dimension_plus_one_upper_bound_denominator": 32,
+          "per_pattern_assignment_entropy_bits_upper_bound": 3632,
+          "per_pattern_probability_gap_bits": 99,
+          "cube_basis_multiplicity_lower_bound": "2^(169-2)",
+          "source_mean_incident_point_mass_upper_bound_dyadic_exponent": 1419,
+          "source_mean_incident_point_mass_upper_bound": "2^-1419",
+          "conditioning_factor_upper_bound": "2^34",
+          "nonempty_pattern_groups_and_independent_modular_sums_required": true,
+          "all_patterns_or_cube_vertices_enumerated_by_scaling_ledger": false,
+          "all_high_label_adaptive_cube_choices_within_packet_covered": true,
+          "global_cube_absence_or_this_packet_classification_proved": false,
+          "nonlinear_blocks_interblock_mixing_or_unknown_trash_excluded": false,
+          "independent_theorem_review": false,
+          "candidate_record_accepted": false,
+          "novelty_claim": false,
+          "speedup_claim_allowed": false
+        },
+        "compression": {
+          "status": "HIGHER_CUBE_PHYSICAL_AFFINE_CLEAN_TAIL_COMPRESSION_GATE",
+          "cube_dimension": 13,
+          "physical_tail_bits": 8256,
+          "effective_target_projector_rank": 1,
+          "cap_density": {
+            "tail_bits": 8256,
+            "cube_dimension": 13,
+            "cube_free_fiber_density_upper_bound_dyadic_exponent": 1,
+            "cube_free_fiber_density_upper_bound": "2^-1",
+            "cube_dimension_fits_inside_tail": true,
+            "exponential_cube_vertex_or_cap_enumeration_used": false
+          },
+          "rank_adjusted_nonincident_probability_dyadic_exponent": 1,
+          "source_exception_probability_dyadic_exponent": 1419,
+          "uniform_secret_source_mean_acceptance_upper_bound": "min(1,2^-1+2^-1419)",
+          "conservative_single_dyadic_exponent": 0,
+          "uniform_secret_source_mean_acceptance_proved_below_two_thirds": true,
+          "blocks_are_physical_binary_affine_equal_size_and_public_label_selected": true,
+          "clean_workspace_or_entire_effective_projector_rank_charged": true,
+          "secret_dependent_discarded_trash_or_interblock_mixing_covered": false,
+          "secret_informative_prior_measurements_covered": false,
+          "mean_is_a_fixed_secret_or_instance_guarantee": false,
+          "full_quantum_decoder_ruled_out": false,
+          "candidate_record_accepted": false,
+          "independent_theorem_review": false,
+          "speedup_claim_allowed": false
+        }
+      },
+      "choosing_minimum_of_valid_bounds_assumes_independence": false,
+      "menu_search_is_a_quantum_algorithm_candidate": false
+    },
+    {
+      "dimension": 64,
+      "physical_width": 49344,
+      "full_modulus_bits": 257,
+      "terminal_tail_bits": 32896,
+      "tested_cube_dimensions": 31,
+      "best_deterministic_design_gate": {
+        "source": {
+          "status": "NATIVE_AFFINE_CUBE_INCIDENT_POINT_MASS_SOURCE_UPPER_BOUND",
+          "dimension": 64,
+          "physical_width": 49344,
+          "tested_modulus_bits": 257,
+          "cube_dimension": 12,
+          "parity_kernel_uniform_points_and_invertible_binary_prefix_conditioned": true,
+          "pattern_sum_divisibility_bits": 246,
+          "log2_cube_dimension_plus_one_upper_bound_numerator": 119,
+          "log2_cube_dimension_plus_one_upper_bound_denominator": 32,
+          "per_pattern_assignment_entropy_bits_upper_bound": 15292,
+          "per_pattern_probability_gap_bits": 440,
+          "cube_basis_multiplicity_lower_bound": "2^(144-2)",
+          "source_mean_incident_point_mass_upper_bound_dyadic_exponent": 5355,
+          "source_mean_incident_point_mass_upper_bound": "2^-5355",
+          "conditioning_factor_upper_bound": "2^66",
+          "nonempty_pattern_groups_and_independent_modular_sums_required": true,
+          "all_patterns_or_cube_vertices_enumerated_by_scaling_ledger": false,
+          "all_high_label_adaptive_cube_choices_within_packet_covered": true,
+          "global_cube_absence_or_this_packet_classification_proved": false,
+          "nonlinear_blocks_interblock_mixing_or_unknown_trash_excluded": false,
+          "independent_theorem_review": false,
+          "candidate_record_accepted": false,
+          "novelty_claim": false,
+          "speedup_claim_allowed": false
+        },
+        "compression": {
+          "status": "HIGHER_CUBE_PHYSICAL_AFFINE_CLEAN_TAIL_COMPRESSION_GATE",
+          "cube_dimension": 12,
+          "physical_tail_bits": 32896,
+          "effective_target_projector_rank": 1,
+          "cap_density": {
+            "tail_bits": 32896,
+            "cube_dimension": 12,
+            "cube_free_fiber_density_upper_bound_dyadic_exponent": 15,
+            "cube_free_fiber_density_upper_bound": "2^-15",
+            "cube_dimension_fits_inside_tail": true,
+            "exponential_cube_vertex_or_cap_enumeration_used": false
+          },
+          "rank_adjusted_nonincident_probability_dyadic_exponent": 15,
+          "source_exception_probability_dyadic_exponent": 5355,
+          "uniform_secret_source_mean_acceptance_upper_bound": "min(1,2^-15+2^-5355)",
+          "conservative_single_dyadic_exponent": 14,
+          "uniform_secret_source_mean_acceptance_proved_below_two_thirds": true,
+          "blocks_are_physical_binary_affine_equal_size_and_public_label_selected": true,
+          "clean_workspace_or_entire_effective_projector_rank_charged": true,
+          "secret_dependent_discarded_trash_or_interblock_mixing_covered": false,
+          "secret_informative_prior_measurements_covered": false,
+          "mean_is_a_fixed_secret_or_instance_guarantee": false,
+          "full_quantum_decoder_ruled_out": false,
+          "candidate_record_accepted": false,
+          "independent_theorem_review": false,
+          "speedup_claim_allowed": false
+        }
+      },
+      "choosing_minimum_of_valid_bounds_assumes_independence": false,
+      "menu_search_is_a_quantum_algorithm_candidate": false
+    },
+    {
+      "dimension": 64,
+      "physical_width": 65792,
+      "full_modulus_bits": 257,
+      "terminal_tail_bits": 49344,
+      "tested_cube_dimensions": 31,
+      "best_deterministic_design_gate": {
+        "source": {
+          "status": "NATIVE_AFFINE_CUBE_INCIDENT_POINT_MASS_SOURCE_UPPER_BOUND",
+          "dimension": 64,
+          "physical_width": 65792,
+          "tested_modulus_bits": 257,
+          "cube_dimension": 32,
+          "parity_kernel_uniform_points_and_invertible_binary_prefix_conditioned": true,
+          "pattern_sum_divisibility_bits": 226,
+          "log2_cube_dimension_plus_one_upper_bound_numerator": 162,
+          "log2_cube_dimension_plus_one_upper_bound_denominator": 32,
+          "per_pattern_assignment_entropy_bits_upper_bound": 10409,
+          "per_pattern_probability_gap_bits": 4023,
+          "cube_basis_multiplicity_lower_bound": "2^(1024-2)",
+          "source_mean_incident_point_mass_upper_bound_dyadic_exponent": 129691,
+          "source_mean_incident_point_mass_upper_bound": "2^-129691",
+          "conditioning_factor_upper_bound": "2^66",
+          "nonempty_pattern_groups_and_independent_modular_sums_required": true,
+          "all_patterns_or_cube_vertices_enumerated_by_scaling_ledger": false,
+          "all_high_label_adaptive_cube_choices_within_packet_covered": true,
+          "global_cube_absence_or_this_packet_classification_proved": false,
+          "nonlinear_blocks_interblock_mixing_or_unknown_trash_excluded": false,
+          "independent_theorem_review": false,
+          "candidate_record_accepted": false,
+          "novelty_claim": false,
+          "speedup_claim_allowed": false
+        },
+        "compression": {
+          "status": "HIGHER_CUBE_PHYSICAL_AFFINE_CLEAN_TAIL_COMPRESSION_GATE",
+          "cube_dimension": 32,
+          "physical_tail_bits": 49344,
+          "effective_target_projector_rank": 1,
+          "cap_density": {
+            "tail_bits": 49344,
+            "cube_dimension": 32,
+            "cube_free_fiber_density_upper_bound_dyadic_exponent": 0,
+            "cube_free_fiber_density_upper_bound": "2^-0",
+            "cube_dimension_fits_inside_tail": true,
+            "exponential_cube_vertex_or_cap_enumeration_used": false
+          },
+          "rank_adjusted_nonincident_probability_dyadic_exponent": 0,
+          "source_exception_probability_dyadic_exponent": 129691,
+          "uniform_secret_source_mean_acceptance_upper_bound": "min(1,2^-0+2^-129691)",
+          "conservative_single_dyadic_exponent": 0,
+          "uniform_secret_source_mean_acceptance_proved_below_two_thirds": false,
+          "blocks_are_physical_binary_affine_equal_size_and_public_label_selected": true,
+          "clean_workspace_or_entire_effective_projector_rank_charged": true,
+          "secret_dependent_discarded_trash_or_interblock_mixing_covered": false,
+          "secret_informative_prior_measurements_covered": false,
+          "mean_is_a_fixed_secret_or_instance_guarantee": false,
+          "full_quantum_decoder_ruled_out": false,
+          "candidate_record_accepted": false,
+          "independent_theorem_review": false,
+          "speedup_claim_allowed": false
+        }
+      },
+      "choosing_minimum_of_valid_bounds_assumes_independence": false,
+      "menu_search_is_a_quantum_algorithm_candidate": false
+    },
+    {
+      "dimension": 1024,
+      "physical_width": 16781312,
+      "full_modulus_bits": 4097,
+      "terminal_tail_bits": 12585984,
+      "tested_cube_dimensions": 31,
+      "best_deterministic_design_gate": {
+        "source": {
+          "status": "NATIVE_AFFINE_CUBE_INCIDENT_POINT_MASS_SOURCE_UPPER_BOUND",
+          "dimension": 1024,
+          "physical_width": 16781312,
+          "tested_modulus_bits": 4097,
+          "cube_dimension": 17,
+          "parity_kernel_uniform_points_and_invertible_binary_prefix_conditioned": true,
+          "pattern_sum_divisibility_bits": 4081,
+          "log2_cube_dimension_plus_one_upper_bound_numerator": 134,
+          "log2_cube_dimension_plus_one_upper_bound_denominator": 32,
+          "per_pattern_assignment_entropy_bits_upper_bound": 4133632,
+          "per_pattern_probability_gap_bits": 45295,
+          "cube_basis_multiplicity_lower_bound": "2^(289-2)",
+          "source_mean_incident_point_mass_upper_bound_dyadic_exponent": 769275,
+          "source_mean_incident_point_mass_upper_bound": "2^-769275",
+          "conditioning_factor_upper_bound": "2^1026",
+          "nonempty_pattern_groups_and_independent_modular_sums_required": true,
+          "all_patterns_or_cube_vertices_enumerated_by_scaling_ledger": false,
+          "all_high_label_adaptive_cube_choices_within_packet_covered": true,
+          "global_cube_absence_or_this_packet_classification_proved": false,
+          "nonlinear_blocks_interblock_mixing_or_unknown_trash_excluded": false,
+          "independent_theorem_review": false,
+          "candidate_record_accepted": false,
+          "novelty_claim": false,
+          "speedup_claim_allowed": false
+        },
+        "compression": {
+          "status": "HIGHER_CUBE_PHYSICAL_AFFINE_CLEAN_TAIL_COMPRESSION_GATE",
+          "cube_dimension": 17,
+          "physical_tail_bits": 12585984,
+          "effective_target_projector_rank": 1,
+          "cap_density": {
+            "tail_bits": 12585984,
+            "cube_dimension": 17,
+            "cube_free_fiber_density_upper_bound_dyadic_exponent": 191,
+            "cube_free_fiber_density_upper_bound": "2^-191",
+            "cube_dimension_fits_inside_tail": true,
+            "exponential_cube_vertex_or_cap_enumeration_used": false
+          },
+          "rank_adjusted_nonincident_probability_dyadic_exponent": 191,
+          "source_exception_probability_dyadic_exponent": 769275,
+          "uniform_secret_source_mean_acceptance_upper_bound": "min(1,2^-191+2^-769275)",
+          "conservative_single_dyadic_exponent": 190,
+          "uniform_secret_source_mean_acceptance_proved_below_two_thirds": true,
+          "blocks_are_physical_binary_affine_equal_size_and_public_label_selected": true,
+          "clean_workspace_or_entire_effective_projector_rank_charged": true,
+          "secret_dependent_discarded_trash_or_interblock_mixing_covered": false,
+          "secret_informative_prior_measurements_covered": false,
+          "mean_is_a_fixed_secret_or_instance_guarantee": false,
+          "full_quantum_decoder_ruled_out": false,
+          "candidate_record_accepted": false,
+          "independent_theorem_review": false,
+          "speedup_claim_allowed": false
+        }
+      },
+      "choosing_minimum_of_valid_bounds_assumes_independence": false,
+      "menu_search_is_a_quantum_algorithm_candidate": false
+    }
+  ],
+  "dense_half_width_source_scaling": [
+    {
+      "status": "NATIVE_DENSE_PHYSICAL_AFFINE_TAIL_QUADRATIC_RANK_SOURCE_GATE",
+      "dimension": 8,
+      "physical_width": 792,
+      "full_modulus_bits": 33,
+      "terminal_physical_tail_bits": 528,
+      "allowed_zero_binary_columns": 132,
+      "on_good_sources_scalar_carry_bias_exponent_lower_bound": 9,
+      "native_tail_zero_column_count_mean": {
+        "sign": 1,
+        "numerator_hex": "0x31",
+        "denominator_hex": "0x10"
+      },
+      "probability_zero_column_budget_exceeded_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x7",
+        "denominator_hex": "0x130"
+      },
+      "uniform_secret_source_mean_rank_one_clean_acceptance_upper_bound": "min(1,1/2+2^-10+zero_budget_probability)",
+      "conservatively_rounded_acceptance_bound_for_two_thirds_comparison": {
+        "sign": 1,
+        "numerator_hex": "0x27d3",
+        "denominator_hex": "0x4c00"
+      },
+      "uniform_secret_source_mean_acceptance_proved_below_two_thirds": true,
+      "tail_binary_labels_independent_of_accepted_prefix": true,
+      "prefix_conditioning_probability_reused_as_independence_assumption": false,
+      "some_zero_columns_are_allowed_not_exponentially_filtered_away": true,
+      "zero_tail_count_bound_is_markov_not_seed_estimation": true,
+      "rank_two_targets_unknown_trash_or_general_decoder_ruled_out": false,
+      "candidate_record_accepted": false,
+      "independent_theorem_review": false,
+      "novelty_claim": false,
+      "speedup_claim_allowed": false
+    },
+    {
+      "status": "NATIVE_DENSE_PHYSICAL_AFFINE_TAIL_QUADRATIC_RANK_SOURCE_GATE",
+      "dimension": 16,
+      "physical_width": 3120,
+      "full_modulus_bits": 65,
+      "terminal_physical_tail_bits": 2080,
+      "allowed_zero_binary_columns": 520,
+      "on_good_sources_scalar_carry_bias_exponent_lower_bound": 17,
+      "native_tail_zero_column_count_mean": {
+        "sign": 1,
+        "numerator_hex": "0x61",
+        "denominator_hex": "0x800"
+      },
+      "probability_zero_column_budget_exceeded_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x61",
+        "denominator_hex": "0x104800"
+      },
+      "uniform_secret_source_mean_rank_one_clean_acceptance_upper_bound": "min(1,1/2+2^-18+zero_budget_probability)",
+      "conservatively_rounded_acceptance_bound_for_two_thirds_comparison": {
+        "sign": 1,
+        "numerator_hex": "0x4123289",
+        "denominator_hex": "0x8240000"
+      },
+      "uniform_secret_source_mean_acceptance_proved_below_two_thirds": true,
+      "tail_binary_labels_independent_of_accepted_prefix": true,
+      "prefix_conditioning_probability_reused_as_independence_assumption": false,
+      "some_zero_columns_are_allowed_not_exponentially_filtered_away": true,
+      "zero_tail_count_bound_is_markov_not_seed_estimation": true,
+      "rank_two_targets_unknown_trash_or_general_decoder_ruled_out": false,
+      "candidate_record_accepted": false,
+      "independent_theorem_review": false,
+      "novelty_claim": false,
+      "speedup_claim_allowed": false
+    },
+    {
+      "status": "NATIVE_DENSE_PHYSICAL_AFFINE_TAIL_QUADRATIC_RANK_SOURCE_GATE",
+      "dimension": 32,
+      "physical_width": 12384,
+      "full_modulus_bits": 129,
+      "terminal_physical_tail_bits": 8256,
+      "allowed_zero_binary_columns": 2064,
+      "on_good_sources_scalar_carry_bias_exponent_lower_bound": 33,
+      "native_tail_zero_column_count_mean": {
+        "sign": 1,
+        "numerator_hex": "0xc1",
+        "denominator_hex": "0x4000000"
+      },
+      "probability_zero_column_budget_exceeded_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0xc1",
+        "denominator_hex": "0x2044000000"
+      },
+      "uniform_secret_source_mean_rank_one_clean_acceptance_upper_bound": "min(1,1/2+2^-34+zero_budget_probability)",
+      "conservatively_rounded_acceptance_bound_for_two_thirds_comparison": {
+        "sign": 1,
+        "numerator_hex": "0x10220000c911",
+        "denominator_hex": "0x204400000000"
+      },
+      "uniform_secret_source_mean_acceptance_proved_below_two_thirds": true,
+      "tail_binary_labels_independent_of_accepted_prefix": true,
+      "prefix_conditioning_probability_reused_as_independence_assumption": false,
+      "some_zero_columns_are_allowed_not_exponentially_filtered_away": true,
+      "zero_tail_count_bound_is_markov_not_seed_estimation": true,
+      "rank_two_targets_unknown_trash_or_general_decoder_ruled_out": false,
+      "candidate_record_accepted": false,
+      "independent_theorem_review": false,
+      "novelty_claim": false,
+      "speedup_claim_allowed": false
+    },
+    {
+      "status": "NATIVE_DENSE_PHYSICAL_AFFINE_TAIL_QUADRATIC_RANK_SOURCE_GATE",
+      "dimension": 64,
+      "physical_width": 49344,
+      "full_modulus_bits": 257,
+      "terminal_physical_tail_bits": 32896,
+      "allowed_zero_binary_columns": 8224,
+      "on_good_sources_scalar_carry_bias_exponent_lower_bound": 65,
+      "native_tail_zero_column_count_mean": {
+        "sign": 1,
+        "numerator_hex": "0x181",
+        "denominator_hex": "0x200000000000000"
+      },
+      "probability_zero_column_budget_exceeded_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0xb",
+        "denominator_hex": "0x1d600000000000000"
+      },
+      "uniform_secret_source_mean_rank_one_clean_acceptance_upper_bound": "min(1,1/2+2^-66+zero_budget_probability)",
+      "conservatively_rounded_acceptance_bound_for_two_thirds_comparison": {
+        "sign": 1,
+        "numerator_hex": "0x75800000000000066b",
+        "denominator_hex": "0xeb0000000000000000"
+      },
+      "uniform_secret_source_mean_acceptance_proved_below_two_thirds": true,
+      "tail_binary_labels_independent_of_accepted_prefix": true,
+      "prefix_conditioning_probability_reused_as_independence_assumption": false,
+      "some_zero_columns_are_allowed_not_exponentially_filtered_away": true,
+      "zero_tail_count_bound_is_markov_not_seed_estimation": true,
+      "rank_two_targets_unknown_trash_or_general_decoder_ruled_out": false,
+      "candidate_record_accepted": false,
+      "independent_theorem_review": false,
+      "novelty_claim": false,
+      "speedup_claim_allowed": false
+    },
+    {
+      "status": "NATIVE_DENSE_PHYSICAL_AFFINE_TAIL_QUADRATIC_RANK_SOURCE_GATE",
+      "dimension": 64,
+      "physical_width": 65792,
+      "full_modulus_bits": 257,
+      "terminal_physical_tail_bits": 49344,
+      "allowed_zero_binary_columns": 16448,
+      "on_good_sources_scalar_carry_bias_exponent_lower_bound": 129,
+      "native_tail_zero_column_count_mean": {
+        "sign": 1,
+        "numerator_hex": "0x403",
+        "denominator_hex": "0x400000000000000"
+      },
+      "probability_zero_column_budget_exceeded_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x403",
+        "denominator_hex": "0x1010400000000000000"
+      },
+      "uniform_secret_source_mean_rank_one_clean_acceptance_upper_bound": "min(1,1/2+2^-130+zero_budget_probability)",
+      "conservatively_rounded_acceptance_bound_for_two_thirds_comparison": {
+        "sign": 1,
+        "numerator_hex": "0x20208000000000014101",
+        "denominator_hex": "0x40410000000000000000"
+      },
+      "uniform_secret_source_mean_acceptance_proved_below_two_thirds": true,
+      "tail_binary_labels_independent_of_accepted_prefix": true,
+      "prefix_conditioning_probability_reused_as_independence_assumption": false,
+      "some_zero_columns_are_allowed_not_exponentially_filtered_away": true,
+      "zero_tail_count_bound_is_markov_not_seed_estimation": true,
+      "rank_two_targets_unknown_trash_or_general_decoder_ruled_out": false,
+      "candidate_record_accepted": false,
+      "independent_theorem_review": false,
+      "novelty_claim": false,
+      "speedup_claim_allowed": false
+    },
+    {
+      "status": "NATIVE_DENSE_PHYSICAL_AFFINE_TAIL_QUADRATIC_RANK_SOURCE_GATE",
+      "dimension": 64,
+      "physical_width": 1052672,
+      "full_modulus_bits": 257,
+      "terminal_physical_tail_bits": 1036224,
+      "allowed_zero_binary_columns": 509888,
+      "on_good_sources_scalar_carry_bias_exponent_lower_bound": 3984,
+      "native_tail_zero_column_count_mean": {
+        "sign": 1,
+        "numerator_hex": "0x403f",
+        "denominator_hex": "0x400000000000000"
+      },
+      "probability_zero_column_budget_exceeded_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x403f",
+        "denominator_hex": "0x1f1f0400000000000000"
+      },
+      "uniform_secret_source_mean_rank_one_clean_acceptance_upper_bound": "min(1,1/2+2^-3985+zero_budget_probability)",
+      "conservatively_rounded_acceptance_bound_for_two_thirds_comparison": {
+        "sign": 1,
+        "numerator_hex": "0x3e3e0800000000017d781",
+        "denominator_hex": "0x7c7c10000000000000000"
+      },
+      "uniform_secret_source_mean_acceptance_proved_below_two_thirds": true,
+      "tail_binary_labels_independent_of_accepted_prefix": true,
+      "prefix_conditioning_probability_reused_as_independence_assumption": false,
+      "some_zero_columns_are_allowed_not_exponentially_filtered_away": true,
+      "zero_tail_count_bound_is_markov_not_seed_estimation": true,
+      "rank_two_targets_unknown_trash_or_general_decoder_ruled_out": false,
+      "candidate_record_accepted": false,
+      "independent_theorem_review": false,
+      "novelty_claim": false,
+      "speedup_claim_allowed": false
+    }
+  ],
+  "actual_packet_selected_polar_controls": [
+    {
+      "parity_rows_hex": [
+        "0x146e798f1",
+        "0x2acdde4f2"
+      ],
+      "physical_width": 34,
+      "physical_directions_hex": [
+        "0x4",
+        "0x8"
+      ],
+      "actual_scalar_polar_matrices_hex": [
+        [
+          "0x0",
+          "0x0"
+        ],
+        [
+          "0x0",
+          "0x0"
+        ]
+      ],
+      "actual_scalar_polar_ranks": [
+        0,
+        0
+      ],
+      "all_block_gate": {
+        "status": "PER_INSTANCE_ALL_PHYSICAL_AFFINE_PARITY_BLOCK_QUADRATIC_RANK_GATE",
+        "parity_rows_hex": [
+          "0x146e798f1",
+          "0x2acdde4f2"
+        ],
+        "dimension": 2,
+        "physical_width": 34,
+        "physical_affine_tail_bits": 2,
+        "zero_binary_columns": 6,
+        "maximum_common_isotropic_physical_dimension_upper_bound": 20,
+        "generic_diagonal_restriction_rank_lower_bound": 0,
+        "some_actual_scalar_carry_polar_rank_lower_bound": 0,
+        "scalar_carry_bias_exponent_lower_bound": 0,
+        "uniform_secret_rank_one_clean_tail_acceptance_upper_bound": "1/2+2^-1",
+        "all_tail_dimensional_physical_affine_full_modulus_fibers_excluded": false,
+        "modulus_divisible_by_four_and_parity_coset_required": true,
+        "generic_field_extension_is_only_a_rank_proof_not_a_physical_oracle": true,
+        "all_higher_label_adaptive_physical_affine_blocks_covered": true,
+        "some_output_row_can_depend_on_block_but_not_unknown_secret": true,
+        "rank_two_clean_targets_or_unknown_trash_decoders_excluded": false,
+        "nonlinear_physical_charts_or_interblock_mixing_excluded": false,
+        "per_instance_gate_is_a_per_secret_success_bound": false,
+        "secret_informative_prior_measurements_covered": false,
+        "candidate_record_accepted": false,
+        "independent_theorem_review": false,
+        "novelty_claim": false,
+        "speedup_claim_allowed": false
+      }
+    },
+    {
+      "parity_rows_hex": [
+        "0x53926ce4a8b559",
+        "0x72781e8eec23a",
+        "0x486d7113740c8c"
+      ],
+      "physical_width": 55,
+      "physical_directions_hex": [
+        "0xf",
+        "0x70",
+        "0x580"
+      ],
+      "actual_scalar_polar_matrices_hex": [
+        [
+          "0x0",
+          "0x0",
+          "0x0"
+        ],
+        [
+          "0x0",
+          "0x0",
+          "0x0"
+        ],
+        [
+          "0x0",
+          "0x0",
+          "0x0"
+        ]
+      ],
+      "actual_scalar_polar_ranks": [
+        0,
+        0,
+        0
+      ],
+      "all_block_gate": {
+        "status": "PER_INSTANCE_ALL_PHYSICAL_AFFINE_PARITY_BLOCK_QUADRATIC_RANK_GATE",
+        "parity_rows_hex": [
+          "0x53926ce4a8b559",
+          "0x72781e8eec23a",
+          "0x486d7113740c8c"
+        ],
+        "dimension": 3,
+        "physical_width": 55,
+        "physical_affine_tail_bits": 3,
+        "zero_binary_columns": 3,
+        "maximum_common_isotropic_physical_dimension_upper_bound": 29,
+        "generic_diagonal_restriction_rank_lower_bound": 0,
+        "some_actual_scalar_carry_polar_rank_lower_bound": 0,
+        "scalar_carry_bias_exponent_lower_bound": 0,
+        "uniform_secret_rank_one_clean_tail_acceptance_upper_bound": "1/2+2^-1",
+        "all_tail_dimensional_physical_affine_full_modulus_fibers_excluded": false,
+        "modulus_divisible_by_four_and_parity_coset_required": true,
+        "generic_field_extension_is_only_a_rank_proof_not_a_physical_oracle": true,
+        "all_higher_label_adaptive_physical_affine_blocks_covered": true,
+        "some_output_row_can_depend_on_block_but_not_unknown_secret": true,
+        "rank_two_clean_targets_or_unknown_trash_decoders_excluded": false,
+        "nonlinear_physical_charts_or_interblock_mixing_excluded": false,
+        "per_instance_gate_is_a_per_secret_success_bound": false,
+        "secret_informative_prior_measurements_covered": false,
+        "candidate_record_accepted": false,
+        "independent_theorem_review": false,
+        "novelty_claim": false,
+        "speedup_claim_allowed": false
+      }
+    },
+    {
+      "parity_rows_hex": [
+        "0xf2832afd6c312cc15c7b1",
+        "0x6f4640a82f684b9c96852",
+        "0x3dd298d8b97c068053514",
+        "0x735fb9a7cd4a481242438"
+      ],
+      "physical_width": 84,
+      "physical_directions_hex": [
+        "0x1f",
+        "0x280",
+        "0x840",
+        "0x1420"
+      ],
+      "actual_scalar_polar_matrices_hex": [
+        [
+          "0x0",
+          "0x0",
+          "0x0",
+          "0x0"
+        ],
+        [
+          "0x0",
+          "0x0",
+          "0x0",
+          "0x0"
+        ],
+        [
+          "0x0",
+          "0x0",
+          "0x0",
+          "0x0"
+        ],
+        [
+          "0x0",
+          "0x0",
+          "0x0",
+          "0x0"
+        ]
+      ],
+      "actual_scalar_polar_ranks": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "all_block_gate": {
+        "status": "PER_INSTANCE_ALL_PHYSICAL_AFFINE_PARITY_BLOCK_QUADRATIC_RANK_GATE",
+        "parity_rows_hex": [
+          "0xf2832afd6c312cc15c7b1",
+          "0x6f4640a82f684b9c96852",
+          "0x3dd298d8b97c068053514",
+          "0x735fb9a7cd4a481242438"
+        ],
+        "dimension": 4,
+        "physical_width": 84,
+        "physical_affine_tail_bits": 4,
+        "zero_binary_columns": 7,
+        "maximum_common_isotropic_physical_dimension_upper_bound": 45,
+        "generic_diagonal_restriction_rank_lower_bound": 0,
+        "some_actual_scalar_carry_polar_rank_lower_bound": 0,
+        "scalar_carry_bias_exponent_lower_bound": 0,
+        "uniform_secret_rank_one_clean_tail_acceptance_upper_bound": "1/2+2^-1",
+        "all_tail_dimensional_physical_affine_full_modulus_fibers_excluded": false,
+        "modulus_divisible_by_four_and_parity_coset_required": true,
+        "generic_field_extension_is_only_a_rank_proof_not_a_physical_oracle": true,
+        "all_higher_label_adaptive_physical_affine_blocks_covered": true,
+        "some_output_row_can_depend_on_block_but_not_unknown_secret": true,
+        "rank_two_clean_targets_or_unknown_trash_decoders_excluded": false,
+        "nonlinear_physical_charts_or_interblock_mixing_excluded": false,
+        "per_instance_gate_is_a_per_secret_success_bound": false,
+        "secret_informative_prior_measurements_covered": false,
+        "candidate_record_accepted": false,
+        "independent_theorem_review": false,
+        "novelty_claim": false,
+        "speedup_claim_allowed": false
+      }
+    }
+  ],
+  "phase_separation_countercontrol": {
+    "status": "CALIBRATION_COUNTERCONTROL_NOT_NATIVE_SCALABLE_ALGORITHM",
+    "labels": [
+      [
+        1,
+        1,
+        2,
+        4,
+        2,
+        4
+      ]
+    ],
+    "modulus": 8,
+    "logical_permutation": [
+      0,
+      2,
+      4,
+      6,
+      1,
+      3,
+      5,
+      7,
+      8,
+      10,
+      12,
+      14,
+      9,
+      11,
+      13,
+      15,
+      16,
+      18,
+      20,
+      22,
+      17,
+      19,
+      21,
+      23,
+      24,
+      26,
+      28,
+      30,
+      25,
+      27,
+      29,
+      31
+    ],
+    "junk_offsets": [
+      0,
+      1,
+      1,
+      2,
+      2,
+      3,
+      3,
+      0
+    ],
+    "phase_identity": "F(P(t,j))=t+c(j) mod4; QFT(t) decodes, junk need not be flattened",
+    "exact_QFT_success_for_every_secret": {
+      "sign": 1,
+      "numerator_hex": "0x1",
+      "denominator_hex": "0x1"
+    },
+    "uniform_secret_mean_flat_junk_projection_probability": {
+      "sign": 1,
+      "numerator_hex": "0x1",
+      "denominator_hex": "0x4"
+    },
+    "independent_uniform_target_two_call_witness_baseline": {
+      "status": "EXACT_TWO_CALL_ARITHMETIC_BASELINE_NOT_CLASSICAL_DCP_SIMULATION",
+      "uniform_secret_mean_QFT_decoder_success": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x1"
+      },
+      "independent_uniform_target_witness_success": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x1"
+      },
+      "forward_transport_evaluator_calls_per_classical_trial": 2,
+      "recipe": "sample_junk_and_t0_compute_c=F(P(t0,j))-t0_return_P(challenge-c,j)_only_if_verified",
+      "public_transport_access_required": "classical_uniform_chosen_input_evaluator_for_classical_baseline_or_quantum_evaluator_for_quantum_baseline",
+      "arbitrary_public_monomial_phases_can_only_lower_quantum_mean_relative_to_baseline": true,
+      "whole_DCP_input_experiment_classically_simulated": false,
+      "classical_evaluator_provided_by_reference_enumeration_is_polynomial": false,
+      "general_branch_mixing_quantum_decoders_covered": false,
+      "independent_theorem_review": false,
+      "speedup_claim_allowed": false
+    },
+    "verified_challenge_reference_junk_trials": 128,
+    "literal_label_table_conditional_native_prefix_probability": {
+      "sign": 1,
+      "numerator_hex": "0x1",
+      "denominator_hex": "0x20000"
+    },
+    "clean_fixed_junk_is_necessary_for_a_DCP_decoder": false,
+    "source_prevalence_or_growing_dimension_decoder_proved": false,
+    "candidate_record_accepted": false,
+    "speedup_claim_allowed": false
+  },
+  "charged_cube_packet_menu_controls": [
+    {
+      "status": "CHARGED_PACKET_SELECTION_POINT_MASS_UPPER_BOUND",
+      "menu_model": "COMPLETED_NATIVE_PACKET_MENU",
+      "packet_choices": 1048576,
+      "original_pool_states": null,
+      "menu_log2_upper_bound": 20,
+      "selected_packet_source_mean_incident_point_mass_upper_bound_dyadic_exponent": 531,
+      "selected_packet_source_mean_incident_point_mass_upper_bound": "2^-531",
+      "selection_independence_assumed": false,
+      "within_packet_chart_choices_already_charged_by_global_incident_set": true,
+      "vacuous_is_not_a_negative_result": false,
+      "same_label_copies_or_chosen_phase_sources_granted": false,
+      "candidate_record_accepted": false,
+      "speedup_claim_allowed": false
+    },
+    {
+      "status": "CHARGED_PACKET_SELECTION_POINT_MASS_UPPER_BOUND",
+      "menu_model": "ALL_ORDERED_DISTINCT_REGISTER_PACKETS_FROM_ORIGINAL_IID_POOL",
+      "packet_choices": 1,
+      "original_pool_states": 1048576,
+      "menu_log2_upper_bound": 165120,
+      "selected_packet_source_mean_incident_point_mass_upper_bound_dyadic_exponent": 0,
+      "selected_packet_source_mean_incident_point_mass_upper_bound": "2^-0",
+      "selection_independence_assumed": false,
+      "within_packet_chart_choices_already_charged_by_global_incident_set": true,
+      "vacuous_is_not_a_negative_result": true,
+      "same_label_copies_or_chosen_phase_sources_granted": false,
+      "candidate_record_accepted": false,
+      "speedup_claim_allowed": false
+    }
+  ],
+  "claim_gate": {
+    "constant_density_escape_is_not_established_by_vacuous_two_plane_bound": true,
+    "clean_physical_affine_tail_architecture_only": true,
+    "nonlinear_blocks_interblock_mixing_unknown_trash_still_open": true,
+    "rank_two_clean_targets_not_excluded_by_half_width_gate": true,
+    "clean_fixed_junk_is_required_by_general_decoder": false,
+    "independent_theorem_review": false,
+    "candidate_record_accepted": false,
+    "new_decoder_or_speedup": false,
+    "novelty_claim": false
+  },
+  "dependency_sha256": {
+    "theorems/dcp_affine_cube_hierarchy.py": "d1ff62eae95021f61fd7bf9a2267dca76f7599db21c6a1cc45b5a11fd0da9b87",
+    "theorems/dcp_terminal_affine_fibers.py": "eabeb22f435ebe0aedbfc79d2c2f6072ff1f5cf251d833b90dfca88d0bd6e5ef",
+    "theorems/dcp_pivot_span_obstructions.py": "175ba883a0c114044785574beeb466a4ddcb1d2e110d4eb37131d5ea7d4e1a94",
+    "theorems/dcp_dense_phase_transport.py": "0a82763c85a7a68cdb9feb04bf0f46a3649e4548f70ab992480174a6a2684656",
+    "research/phase_workbench/dcp_pivot_span_obstructions.json": "ee74eb67ba26a179265621627f25abe6eceac7bf06eeabc63115e08edfe36473"
+  }
+}

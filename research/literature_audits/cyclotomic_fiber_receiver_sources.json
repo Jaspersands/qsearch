@@ -1,0 +1,36 @@
+{
+  "audit_date": "2026-10-06",
+  "primary_sources": [
+    {
+      "url": "https://arxiv.org/html/2609.34996v1",
+      "title": "Cyclotomic Cosets: Hidden Subgroup and Quantum Sieving Algorithm for Prime-Power Moduli",
+      "inspected": ["Native trace pairing and integer-secret PSP source", "Section5.2 Proposition5 and proof"],
+      "use": "Known DCP/CCP equivalence, same integer secret and charged conversion probabilities.",
+      "scope_limit": "Paper uses prefix-word coset projection. Local one-hot realization is post-Fourier phase-coordinate conformance, not a literal replay of that circuit. General ring secrets are not granted."
+    },
+    {
+      "url": "https://arxiv.org/html/quant-ph/0501044v2",
+      "title": "Optimal measurements for the dihedral hidden subgroup problem",
+      "inspected": ["Introduction", "Section8 and Theorem5, measurement/subset-sum relationship"],
+      "use": "Distinguish known optimal measurement and source information from efficient implementation.",
+      "scope_limit": "Restricted measurement converse does not establish a universal lower bound against implicit, transversal or non-PGM receivers."
+    },
+    {
+      "url": "https://arxiv.org/html/quant-ph/0703195v3",
+      "title": "Efficient Quantum Algorithm for Hidden Quadratic and Cubic Polynomial Function Graphs",
+      "inspected": ["Abstract and introduction", "Definition0", "Section5 univariate restriction", "Sections6-7 summaries"],
+      "use": "The stated efficient finite-field univariate quadratic/cubic cases do not automatically transfer to a growing modular native-fiber decoder.",
+      "scope_limit": "No complete proof or cubic-appendix audit; no impossibility of a future adaptation asserted."
+    }
+  ],
+  "local_derivations": [
+    "Trace-dual unimodular native frequency coordinates with explicit integer-secret scope",
+    "Known post-Fourier one-hot conversion conformance and complete source costs",
+    "Public exact suffix-rank receiver replay on original even-level full-secret samples",
+    "IID native collision moment, information lower bound and expected explicit-DP support lower bound"
+  ],
+  "novelty_search_exhaustive": false,
+  "independent_human_review": false,
+  "paper_refuted": false,
+  "new_algorithm_claimed": false
+}

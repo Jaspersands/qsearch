@@ -1,0 +1,32 @@
+{
+  "hypothesis_id": "HYP-NATIVE-TERNARY-UNSATURATED-SCHUR-CONSTRUCTION",
+  "status": "HIGHER_ADMISSION_AND_STABLE_DISJOINT_GATE_VERIFIED_CONSTRUCTION_AND_DECODER_MISSING",
+  "candidate_record_accepted": false,
+  "note": "research/TERNARY_SCHUR_CLOSURE.md",
+  "report": "research/phase_workbench/ternary_schur_closure.json",
+  "source_audit": "research/literature_audits/ternary_schur_closure_sources.json",
+  "local_application": {
+    "compact_gate": "Exact A*W^(star L)=0 admission checks every mixed top tensor term using polynomial-size iterated spans and explicit native failure witnesses.",
+    "saturation": "Odd powers saturate the disjoint signed projective-block span, certainly by2k-1 and often earlier. The general stable coding structure and regularity bound are known.",
+    "refinement": "Saturated admission implies an explicit disjoint-support kernel refinement containing the original frame; no source sampler or decoder follows.",
+    "reference_source_law": "For a fixed frame independent of uniform A, conditional admission given AW=0 costs3^(-n*(power_rank-k)). This formula is disabled for adaptive frames.",
+    "positive_escape": "Unsaturated source-adapted low-Schur-growth spaces, shorter native disjoint dependencies and useful entangled packets remain open."
+  },
+  "proof_obligations_for_next_candidate": {
+    "PO-CONSTRUCTION": "Efficiently find the proposed frames under the actual IID native source, not a planted low-label pattern or unjustified fixed-frame probability estimate.",
+    "PO-POWER": "Certify the required whole mixed higher-Schur gate, report saturation and supply exact failure witnesses when rejected.",
+    "PO-RETENTION": "Show a total throughput improvement over the explicit disjoint kernel refinement and known source-recursive baselines.",
+    "PO-VISIBILITY": "Preserve informative phase order and recover all original secret digits; top-degree admission alone is not enough.",
+    "PO-SOURCE": "Charge intermediate acquisition, adaptive selection, all physical outcomes, correlations, source consumption and any filtering.",
+    "PO-DECODER": "Supply a full decoder under actual state access and compare known varying-matrix phase algorithms, quantum sieves and legal classical inference.",
+    "PO-REVIEW": "Independent mathematical review and novelty audit before a CandidateRecord is accepted."
+  },
+  "falsifiers": [
+    "A compact span basis contains a nonzero weighted native mixed derivative.",
+    "The frame saturates and its claimed overlap gain disappears under the explicit disjoint refinement.",
+    "Low-Schur-growth structure is planted or only available through expensive source conditioning.",
+    "A fixed independent-frame probability is applied after adaptively choosing the native frame.",
+    "Admitted outputs lose target phase order, coefficient rank or growing-depth throughput."
+  ],
+  "next_experiment": "Find or rule out efficiently constructible unsaturated native weighted-Schur frames with informative growing-depth outputs; compare against disjoint dependencies and an implicit full-source receiver."
+}

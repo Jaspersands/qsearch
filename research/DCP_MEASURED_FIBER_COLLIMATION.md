@@ -4,6 +4,13 @@ Status: LOCAL DERIVATION / REVIEW PENDING, 2026-09-24. No independent review,
 formal verification, novelty, implemented fast solver, or speedup is claimed.
 This is a theory specification and a handoff, not a production subsystem.
 
+SOURCE-SPECIFIC FOLLOW-UP (2026-09-29):
+`KNOWN_PHASE_SIEVE_DEQUANTIZATION.md` gives a classical comparator if this
+measured-witness interface uses the project's ACTUAL known classical phase
+tags and a classical witness finder. It handles weighted acceptance without
+a fiber counter. The unknown-DCP source assumed below does NOT supply those
+known phases and is not declared classically simulable by that result.
+
 ## 1. Research Decision And Prior Art
 
 Do not universally require a coherent witness sampler, uniform fiber state,

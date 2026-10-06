@@ -1,0 +1,65 @@
+{
+  "status": "CURATED_PRIMARY_SOURCE_AUDIT_NOT_ACCEPTED_CANDIDATE",
+  "checked_on": "2026-10-05",
+  "records": [
+    {
+      "id": "ARXIV-2609.40321-v1",
+      "url": "https://arxiv.org/html/2609.40321v1",
+      "submitted_on": "2026-09-30",
+      "publication_status": "PREPRINT_V1_NOT_INDEPENDENTLY_REVIEWED_HERE",
+      "evidence_read": "Theorems1.3 and1.7; Section1.3; quotient-decoder construction and Section3 source framework.",
+      "mechanism": "Classical binary-error decoding inside quantum filtering.",
+      "problem_family": "IID ternary Boolean zero sums; fixed-prime pointwise binary-error learning.",
+      "reduction": "Theorem1.3 quantum tradeoff via Theorem1.7 decoder.",
+      "no_go_barrier": "Native two-power alphabet, Fourier support and density transfers absent; growing-modulus constants unproved.",
+      "proof_technique": "Low-degree quotient-algebra closure, not unverified semi-regularity.",
+      "open_question": "Collective source transform compatible with growing two-power moduli.",
+      "reusable_abstraction": "Separate decoder guarantee, Fourier envelope and physical source.",
+      "classical_constant_0_1022_formal_algorithm_proof_provided": false,
+      "classical_constant_evidence": "Section1.3 explicitly omits complete description and formal proof.",
+      "proved_exponential_classical_separation": false,
+      "native_growing_modulus_DCP_solver": false,
+      "our_work_or_novelty": false,
+      "implemented_classical_component": "research/classical_baselines/ternary_quotient_decoder.json",
+      "component_scope": "Ternary Section4.2 quotient primitive only; not complete published sample-time algorithm or growing-modulus DCP conversion.",
+      "finite_quantum_reduction_audit": "research/reductions/ternary_decoder_filter.json",
+      "finite_quantum_audit_scope": "Exponential bounded statevector and decoder-table execution of known Section3 reduction; not scalable reversible compilation or new separation."
+    },
+    {
+      "id": "ARXIV-2108.11015-v2",
+      "url": "https://arxiv.org/abs/2108.11015",
+      "mechanism": "Quantum filtering from coherent decoding and Fourier structure.",
+      "problem_family": "Specified average-case lattice problem variants and extended coset sources.",
+      "reduction": "Decoder-to-filter framework; source envelope must be independently checked.",
+      "no_go_barrier": "Parameter-qualified algorithms are not standard hard-parameter lattice solvers.",
+      "proof_technique": "Known coherent computation and Fourier filtering.",
+      "open_question": "Structured correlated-error decoder usable on native Boolean-envelope source.",
+      "reusable_abstraction": "Track error law and witness envelope separately.",
+      "evidence_read": "Author abstract and HTML source framework; not complete independent proof audit.",
+      "native_binary_error_conversion_granted": false
+    },
+    {
+      "id": "ECCC-TR10-066-REV1",
+      "url": "https://eccc.weizmann.ac.il/report/2010/066/",
+      "mechanism": "Classical algebraic linearization of structured error constraints.",
+      "problem_family": "Structured-noise learning and bounded-error equations.",
+      "reduction": "Polynomial constraints to enlarged linear systems.",
+      "no_go_barrier": "Input-specific rank and sample guarantees remain essential.",
+      "proof_technique": "Annihilator polynomials and feature linearization.",
+      "open_question": "Source-correct ring and quantum conversion guarantees.",
+      "reusable_abstraction": "Treat small-error algebraic recovery as a classical baseline, not quantum advantage.",
+      "evidence_read": "Primary ECCC revision page/abstract; author PDF endpoint unavailable in web reader.",
+      "ring_specific_Hensel_theorem_independently_verified_from_this_source": false
+    }
+  ],
+  "associated_local_artifacts": [
+    "research/classical_baselines/ternary_quotient_decoder.json",
+    "research/reductions/ternary_decoder_filter.json",
+    "research/classical_baselines/native_binary_error_hensel.json",
+    "research/reductions/dcp_binary_error_source_bridge.json",
+    "research/reductions/dcp_fourier_noise_decoder_bound.json"
+  ],
+  "candidate_record_accepted": false,
+  "speedup_claim_allowed": false,
+  "novelty_claim": false
+}

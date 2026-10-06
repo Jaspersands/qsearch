@@ -1,0 +1,734 @@
+{
+  "status": "LOCAL_DERIVATION_REVIEW_PENDING",
+  "basis_contamination_commutators": [
+    {
+      "basis_contamination_probability": {
+        "sign": 0,
+        "numerator_hex": "0x0",
+        "denominator_hex": "0x1"
+      },
+      "bad_basis_bit": 0,
+      "commutator_frobenius_squared": {
+        "sign": 0,
+        "numerator_hex": "0x0",
+        "denominator_hex": "0x1"
+      },
+      "X_twirl_is_legal_degradation_to_flip_rate": {
+        "sign": 0,
+        "numerator_hex": "0x0",
+        "denominator_hex": "0x1"
+      },
+      "X_twirl_is_lossless": true,
+      "full_basis_contamination_has_not_been_dequantized": true
+    },
+    {
+      "basis_contamination_probability": {
+        "sign": 0,
+        "numerator_hex": "0x0",
+        "denominator_hex": "0x1"
+      },
+      "bad_basis_bit": 1,
+      "commutator_frobenius_squared": {
+        "sign": 0,
+        "numerator_hex": "0x0",
+        "denominator_hex": "0x1"
+      },
+      "X_twirl_is_legal_degradation_to_flip_rate": {
+        "sign": 0,
+        "numerator_hex": "0x0",
+        "denominator_hex": "0x1"
+      },
+      "X_twirl_is_lossless": true,
+      "full_basis_contamination_has_not_been_dequantized": true
+    },
+    {
+      "basis_contamination_probability": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x80"
+      },
+      "bad_basis_bit": 0,
+      "commutator_frobenius_squared": {
+        "sign": 1,
+        "numerator_hex": "0x3f01",
+        "denominator_hex": "0x8000000"
+      },
+      "X_twirl_is_legal_degradation_to_flip_rate": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x100"
+      },
+      "X_twirl_is_lossless": false,
+      "full_basis_contamination_has_not_been_dequantized": true
+    },
+    {
+      "basis_contamination_probability": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x80"
+      },
+      "bad_basis_bit": 1,
+      "commutator_frobenius_squared": {
+        "sign": 1,
+        "numerator_hex": "0x3f01",
+        "denominator_hex": "0x8000000"
+      },
+      "X_twirl_is_legal_degradation_to_flip_rate": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x100"
+      },
+      "X_twirl_is_lossless": false,
+      "full_basis_contamination_has_not_been_dequantized": true
+    },
+    {
+      "basis_contamination_probability": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x8"
+      },
+      "bad_basis_bit": 0,
+      "commutator_frobenius_squared": {
+        "sign": 1,
+        "numerator_hex": "0x31",
+        "denominator_hex": "0x800"
+      },
+      "X_twirl_is_legal_degradation_to_flip_rate": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x10"
+      },
+      "X_twirl_is_lossless": false,
+      "full_basis_contamination_has_not_been_dequantized": true
+    },
+    {
+      "basis_contamination_probability": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x8"
+      },
+      "bad_basis_bit": 1,
+      "commutator_frobenius_squared": {
+        "sign": 1,
+        "numerator_hex": "0x31",
+        "denominator_hex": "0x800"
+      },
+      "X_twirl_is_legal_degradation_to_flip_rate": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x10"
+      },
+      "X_twirl_is_lossless": false,
+      "full_basis_contamination_has_not_been_dequantized": true
+    },
+    {
+      "basis_contamination_probability": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x2"
+      },
+      "bad_basis_bit": 0,
+      "commutator_frobenius_squared": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x8"
+      },
+      "X_twirl_is_legal_degradation_to_flip_rate": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x4"
+      },
+      "X_twirl_is_lossless": false,
+      "full_basis_contamination_has_not_been_dequantized": true
+    },
+    {
+      "basis_contamination_probability": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x2"
+      },
+      "bad_basis_bit": 1,
+      "commutator_frobenius_squared": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x8"
+      },
+      "X_twirl_is_legal_degradation_to_flip_rate": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x4"
+      },
+      "X_twirl_is_lossless": false,
+      "full_basis_contamination_has_not_been_dequantized": true
+    }
+  ],
+  "noise_transfer_gates": [
+    {
+      "status": "CONDITIONAL_PROMISE_GATE_NOT_PROVEN_SOURCE_REDUCTION",
+      "model": "iid_physical_Z",
+      "requested_capability": "native_iid_phase_moment",
+      "transfer_obligations_satisfied_as_declared": true,
+      "issues": [],
+      "declarations_programmatically_proven": false,
+      "candidate_record_accepted": false,
+      "speedup_claim_allowed": false
+    },
+    {
+      "status": "CONDITIONAL_PROMISE_GATE_NOT_PROVEN_SOURCE_REDUCTION",
+      "model": "iid_physical_Z",
+      "requested_capability": "lossless_binary_classicalization",
+      "transfer_obligations_satisfied_as_declared": true,
+      "issues": [],
+      "declarations_programmatically_proven": false,
+      "candidate_record_accepted": false,
+      "speedup_claim_allowed": false
+    },
+    {
+      "status": "CONDITIONAL_PROMISE_GATE_NOT_PROVEN_SOURCE_REDUCTION",
+      "model": "iid_physical_Z",
+      "requested_capability": "iid_lpn_completion",
+      "transfer_obligations_satisfied_as_declared": true,
+      "issues": [],
+      "declarations_programmatically_proven": false,
+      "candidate_record_accepted": false,
+      "speedup_claim_allowed": false
+    },
+    {
+      "status": "CONDITIONAL_PROMISE_GATE_NOT_PROVEN_SOURCE_REDUCTION",
+      "model": "classical_correlated_Z",
+      "requested_capability": "native_iid_phase_moment",
+      "transfer_obligations_satisfied_as_declared": false,
+      "issues": [
+        "native weighted moment requires IID physical Z phase errors, not basis-state failures or correlated masks"
+      ],
+      "declarations_programmatically_proven": false,
+      "candidate_record_accepted": false,
+      "speedup_claim_allowed": false
+    },
+    {
+      "status": "CONDITIONAL_PROMISE_GATE_NOT_PROVEN_SOURCE_REDUCTION",
+      "model": "classical_correlated_Z",
+      "requested_capability": "lossless_binary_classicalization",
+      "transfer_obligations_satisfied_as_declared": true,
+      "issues": [],
+      "declarations_programmatically_proven": false,
+      "candidate_record_accepted": false,
+      "speedup_claim_allowed": false
+    },
+    {
+      "status": "CONDITIONAL_PROMISE_GATE_NOT_PROVEN_SOURCE_REDUCTION",
+      "model": "classical_correlated_Z",
+      "requested_capability": "iid_lpn_completion",
+      "transfer_obligations_satisfied_as_declared": false,
+      "issues": [
+        "IID LPN labels cannot be inferred from correlated register corruption"
+      ],
+      "declarations_programmatically_proven": false,
+      "candidate_record_accepted": false,
+      "speedup_claim_allowed": false
+    },
+    {
+      "status": "CONDITIONAL_PROMISE_GATE_NOT_PROVEN_SOURCE_REDUCTION",
+      "model": "arbitrary_basis_contamination",
+      "requested_capability": "native_iid_phase_moment",
+      "transfer_obligations_satisfied_as_declared": false,
+      "issues": [
+        "native weighted moment requires IID physical Z phase errors, not basis-state failures or correlated masks"
+      ],
+      "declarations_programmatically_proven": false,
+      "candidate_record_accepted": false,
+      "speedup_claim_allowed": false
+    },
+    {
+      "status": "CONDITIONAL_PROMISE_GATE_NOT_PROVEN_SOURCE_REDUCTION",
+      "model": "arbitrary_basis_contamination",
+      "requested_capability": "lossless_binary_classicalization",
+      "transfer_obligations_satisfied_as_declared": false,
+      "issues": [
+        "arbitrary basis contamination need not commute; X-basis measurement is not lossless"
+      ],
+      "declarations_programmatically_proven": false,
+      "candidate_record_accepted": false,
+      "speedup_claim_allowed": false
+    },
+    {
+      "status": "CONDITIONAL_PROMISE_GATE_NOT_PROVEN_SOURCE_REDUCTION",
+      "model": "arbitrary_basis_contamination",
+      "requested_capability": "iid_lpn_completion",
+      "transfer_obligations_satisfied_as_declared": false,
+      "issues": [
+        "arbitrary basis contamination need not commute; X-basis measurement is not lossless"
+      ],
+      "declarations_programmatically_proven": false,
+      "candidate_record_accepted": false,
+      "speedup_claim_allowed": false
+    }
+  ],
+  "binary_experiment_classicalization": {
+    "status": "LOCAL_DERIVATION_REVIEW_PENDING",
+    "dimension": 128,
+    "physical_phase_flip_probability": {
+      "sign": 1,
+      "numerator_hex": "0x1",
+      "denominator_hex": "0x20"
+    },
+    "requires_correct_known_lower_residue_and_fresh_original_phase_states": true,
+    "classical_sample_law": "a_uniform_F2n_y_equals_a_dot_high_bit_secret_xor_Bernoulli_e",
+    "measure_H_then_Z_is_lossless_for_declared_binary_experiment": true,
+    "reverse_channel": "given_classical_a_y_prepare_H_ket_y_and_preserve_a",
+    "coherent_label_or_example_oracle_granted": false,
+    "quantum_computation_on_classical_lpn_data_ruled_out": false,
+    "classical_polynomial_time_lpn_decoder_provided": false,
+    "arbitrary_basis_contamination_covered": false,
+    "incorrect_residue_or_nonphase_channels_covered": false,
+    "independent_theorem_review": false,
+    "speedup_claim_allowed": false
+  },
+  "known_public_basis_bias_filters": [
+    {
+      "status": "PUBLIC_BIAS_HERALDED_SAMPLE_CONVERSION_NOT_LOSSLESS_ONE_COPY",
+      "basis_contamination_probability": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x80"
+      },
+      "public_bad_basis_bit": 0,
+      "success_filter": "attenuate_the_bad_basis_amplitude_by_sqrt((1-gamma)/(1+gamma))",
+      "attenuation_squared": {
+        "sign": 1,
+        "numerator_hex": "0x7f",
+        "denominator_hex": "0x81"
+      },
+      "success_probability": {
+        "sign": 1,
+        "numerator_hex": "0x7f",
+        "denominator_hex": "0x80"
+      },
+      "conditional_binary_contrast_squared": {
+        "sign": 1,
+        "numerator_hex": "0x7f",
+        "denominator_hex": "0x81"
+      },
+      "conditional_lpn_flip_rate_expression": "(1-sqrt((1-gamma)/(1+gamma)))/2",
+      "reverse_from_unerased_lpn_sample": "prepare_sqrt((1+gamma)/2)_ket_bad_plus_sign_y_sqrt((1-gamma)/2)_ket_other",
+      "reverse_preparation_sign_depends_on_classical_y_not_secret": true,
+      "failure_branch_has_no_binary_secret_information": true,
+      "expected_native_inputs_per_output": {
+        "sign": 1,
+        "numerator_hex": "0x80",
+        "denominator_hex": "0x7f"
+      },
+      "uniform_source_preserved_requires_constant_gamma_and_public_bad_bit": true,
+      "arbitrary_hidden_or_label_dependent_basis_bias_covered": false,
+      "known_correct_residue_required": true,
+      "one_copy_lossless_equivalence_claim": false,
+      "physical_filter_backend_or_precision_verified": false,
+      "classical_lpn_solver_or_unknown_residue_decoder_provided": false,
+      "speedup_claim_allowed": false
+    },
+    {
+      "status": "PUBLIC_BIAS_HERALDED_SAMPLE_CONVERSION_NOT_LOSSLESS_ONE_COPY",
+      "basis_contamination_probability": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x80"
+      },
+      "public_bad_basis_bit": 1,
+      "success_filter": "attenuate_the_bad_basis_amplitude_by_sqrt((1-gamma)/(1+gamma))",
+      "attenuation_squared": {
+        "sign": 1,
+        "numerator_hex": "0x7f",
+        "denominator_hex": "0x81"
+      },
+      "success_probability": {
+        "sign": 1,
+        "numerator_hex": "0x7f",
+        "denominator_hex": "0x80"
+      },
+      "conditional_binary_contrast_squared": {
+        "sign": 1,
+        "numerator_hex": "0x7f",
+        "denominator_hex": "0x81"
+      },
+      "conditional_lpn_flip_rate_expression": "(1-sqrt((1-gamma)/(1+gamma)))/2",
+      "reverse_from_unerased_lpn_sample": "prepare_sqrt((1+gamma)/2)_ket_bad_plus_sign_y_sqrt((1-gamma)/2)_ket_other",
+      "reverse_preparation_sign_depends_on_classical_y_not_secret": true,
+      "failure_branch_has_no_binary_secret_information": true,
+      "expected_native_inputs_per_output": {
+        "sign": 1,
+        "numerator_hex": "0x80",
+        "denominator_hex": "0x7f"
+      },
+      "uniform_source_preserved_requires_constant_gamma_and_public_bad_bit": true,
+      "arbitrary_hidden_or_label_dependent_basis_bias_covered": false,
+      "known_correct_residue_required": true,
+      "one_copy_lossless_equivalence_claim": false,
+      "physical_filter_backend_or_precision_verified": false,
+      "classical_lpn_solver_or_unknown_residue_decoder_provided": false,
+      "speedup_claim_allowed": false
+    },
+    {
+      "status": "PUBLIC_BIAS_HERALDED_SAMPLE_CONVERSION_NOT_LOSSLESS_ONE_COPY",
+      "basis_contamination_probability": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x8"
+      },
+      "public_bad_basis_bit": 0,
+      "success_filter": "attenuate_the_bad_basis_amplitude_by_sqrt((1-gamma)/(1+gamma))",
+      "attenuation_squared": {
+        "sign": 1,
+        "numerator_hex": "0x7",
+        "denominator_hex": "0x9"
+      },
+      "success_probability": {
+        "sign": 1,
+        "numerator_hex": "0x7",
+        "denominator_hex": "0x8"
+      },
+      "conditional_binary_contrast_squared": {
+        "sign": 1,
+        "numerator_hex": "0x7",
+        "denominator_hex": "0x9"
+      },
+      "conditional_lpn_flip_rate_expression": "(1-sqrt((1-gamma)/(1+gamma)))/2",
+      "reverse_from_unerased_lpn_sample": "prepare_sqrt((1+gamma)/2)_ket_bad_plus_sign_y_sqrt((1-gamma)/2)_ket_other",
+      "reverse_preparation_sign_depends_on_classical_y_not_secret": true,
+      "failure_branch_has_no_binary_secret_information": true,
+      "expected_native_inputs_per_output": {
+        "sign": 1,
+        "numerator_hex": "0x8",
+        "denominator_hex": "0x7"
+      },
+      "uniform_source_preserved_requires_constant_gamma_and_public_bad_bit": true,
+      "arbitrary_hidden_or_label_dependent_basis_bias_covered": false,
+      "known_correct_residue_required": true,
+      "one_copy_lossless_equivalence_claim": false,
+      "physical_filter_backend_or_precision_verified": false,
+      "classical_lpn_solver_or_unknown_residue_decoder_provided": false,
+      "speedup_claim_allowed": false
+    },
+    {
+      "status": "PUBLIC_BIAS_HERALDED_SAMPLE_CONVERSION_NOT_LOSSLESS_ONE_COPY",
+      "basis_contamination_probability": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x8"
+      },
+      "public_bad_basis_bit": 1,
+      "success_filter": "attenuate_the_bad_basis_amplitude_by_sqrt((1-gamma)/(1+gamma))",
+      "attenuation_squared": {
+        "sign": 1,
+        "numerator_hex": "0x7",
+        "denominator_hex": "0x9"
+      },
+      "success_probability": {
+        "sign": 1,
+        "numerator_hex": "0x7",
+        "denominator_hex": "0x8"
+      },
+      "conditional_binary_contrast_squared": {
+        "sign": 1,
+        "numerator_hex": "0x7",
+        "denominator_hex": "0x9"
+      },
+      "conditional_lpn_flip_rate_expression": "(1-sqrt((1-gamma)/(1+gamma)))/2",
+      "reverse_from_unerased_lpn_sample": "prepare_sqrt((1+gamma)/2)_ket_bad_plus_sign_y_sqrt((1-gamma)/2)_ket_other",
+      "reverse_preparation_sign_depends_on_classical_y_not_secret": true,
+      "failure_branch_has_no_binary_secret_information": true,
+      "expected_native_inputs_per_output": {
+        "sign": 1,
+        "numerator_hex": "0x8",
+        "denominator_hex": "0x7"
+      },
+      "uniform_source_preserved_requires_constant_gamma_and_public_bad_bit": true,
+      "arbitrary_hidden_or_label_dependent_basis_bias_covered": false,
+      "known_correct_residue_required": true,
+      "one_copy_lossless_equivalence_claim": false,
+      "physical_filter_backend_or_precision_verified": false,
+      "classical_lpn_solver_or_unknown_residue_decoder_provided": false,
+      "speedup_claim_allowed": false
+    }
+  ],
+  "low_noise_completion_scaling": [
+    {
+      "status": "LOCAL_DERIVATION_REVIEW_PENDING",
+      "dimension": 8,
+      "fresh_original_phase_states_per_trial": 48,
+      "effective_parity_flip_probability": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x40"
+      },
+      "random_binary_rank_failure_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0xff",
+        "denominator_hex": "0x1000000000000"
+      },
+      "iid_label_independent_clean_block_probability": {
+        "sign": 1,
+        "numerator_hex": "0x7836415f419b0912d5459e3c0c5c625d73b739176cd5133e69abfd7c6d39344b06067401",
+        "denominator_hex": "0x1000000000000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "iid_clean_block_correct_completion_success_lower_bound": {
+        "sign": 1,
+        "numerator_hex": "0x7836415f41234b07b76344ce0299f204d5e6e91171becfbc8b56953e420df1f98715a805e944ff927301",
+        "denominator_hex": "0x1000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "marginal_flip_bound_only_correct_completion_success_lower_bound": {
+        "sign": 1,
+        "numerator_hex": "0x3fffffffff01",
+        "denominator_hex": "0x1000000000000"
+      },
+      "marginal_bound_does_not_require_noise_label_independence": true,
+      "uniform_native_label_rank_law_still_required": true,
+      "requires_known_correct_lower_residue": true,
+      "classical_solver": "binary_elimination_then_fresh_full_candidate_verification",
+      "wrong_or_inconsistent_blocks_not_accepted_without_verification": true,
+      "noisy_constant_rate_polynomial_decoder_claim": false,
+      "speedup_claim_allowed": false
+    },
+    {
+      "status": "LOCAL_DERIVATION_REVIEW_PENDING",
+      "dimension": 16,
+      "fresh_original_phase_states_per_trial": 56,
+      "effective_parity_flip_probability": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x100"
+      },
+      "random_binary_rank_failure_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0xffff",
+        "denominator_hex": "0x100000000000000"
+      },
+      "iid_label_independent_clean_block_probability": {
+        "sign": 1,
+        "numerator_hex": "0xcd9d1a52c5fc450df8c7f8ad45ad9142e89b534edb4f5641c8a0c8957913610a0de3643fa24889d1d5772f3ad15aa422db90724dbe03c801",
+        "denominator_hex": "0x10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "iid_clean_block_correct_completion_success_lower_bound": {
+        "sign": 1,
+        "numerator_hex": "0xcd9d1a52c52ea8c1431c4f2e33f9d743034e530345f7fdd71518c81a86a1020a1932e657ab9bb07b79392653480efec917ee527af5cc5a6a42b449f602c801",
+        "denominator_hex": "0x1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "marginal_flip_bound_only_correct_completion_success_lower_bound": {
+        "sign": 1,
+        "numerator_hex": "0xc7ffffffff0001",
+        "denominator_hex": "0x100000000000000"
+      },
+      "marginal_bound_does_not_require_noise_label_independence": true,
+      "uniform_native_label_rank_law_still_required": true,
+      "requires_known_correct_lower_residue": true,
+      "classical_solver": "binary_elimination_then_fresh_full_candidate_verification",
+      "wrong_or_inconsistent_blocks_not_accepted_without_verification": true,
+      "noisy_constant_rate_polynomial_decoder_claim": false,
+      "speedup_claim_allowed": false
+    },
+    {
+      "status": "LOCAL_DERIVATION_REVIEW_PENDING",
+      "dimension": 32,
+      "fresh_original_phase_states_per_trial": 72,
+      "effective_parity_flip_probability": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x400"
+      },
+      "random_binary_rank_failure_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0xffffffff",
+        "denominator_hex": "0x1000000000000000000"
+      },
+      "iid_label_independent_clean_block_probability": {
+        "sign": 1,
+        "numerator_hex": "0xee9c2b9dea05d0c10c5aac42d3fc4736560b165bc4822f76e4b01cb5b9e29c4548a0783b942af9aae68633f674e01b21f91ca2812b5f72d095a3c7888587529629394cc929f4041e33b3ceda89c1bf364aedd5d27bc29fbee001",
+        "denominator_hex": "0x1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "iid_clean_block_correct_completion_success_lower_bound": {
+        "sign": 1,
+        "numerator_hex": "0xee9c2b9de91734956f5f429db0d9f25ad44374c0d10020a7bf41a59c9ec26e5809cb45bc049c3bcef03aa975058dbfe7ad8e4899ffdb3649367184b8361d0e417149693e1c50522400b3142334b7ff6b8e97c7e2200173a843d02b36139bc19fbee001",
+        "denominator_hex": "0x1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "marginal_flip_bound_only_correct_completion_success_lower_bound": {
+        "sign": 1,
+        "numerator_hex": "0xedffffffff00000001",
+        "denominator_hex": "0x1000000000000000000"
+      },
+      "marginal_bound_does_not_require_noise_label_independence": true,
+      "uniform_native_label_rank_law_still_required": true,
+      "requires_known_correct_lower_residue": true,
+      "classical_solver": "binary_elimination_then_fresh_full_candidate_verification",
+      "wrong_or_inconsistent_blocks_not_accepted_without_verification": true,
+      "noisy_constant_rate_polynomial_decoder_claim": false,
+      "speedup_claim_allowed": false
+    },
+    {
+      "status": "LOCAL_DERIVATION_REVIEW_PENDING",
+      "dimension": 64,
+      "fresh_original_phase_states_per_trial": 104,
+      "effective_parity_flip_probability": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x1000"
+      },
+      "random_binary_rank_failure_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0xffffffffffffffff",
+        "denominator_hex": "0x100000000000000000000000000"
+      },
+      "iid_label_independent_clean_block_probability": {
+        "sign": 1,
+        "numerator_hex": "0xf994bfd05214590061fca241bde57348b9aa880f5660a761bfa8f615bd1f6b09652d998f9f7a46010c29c05c7632772b537aa799eec868eb802ff77f0b7590eac2cf78a5ba4b6f7c910789dfd9b20a068060781b2b80ba50b4794a9def92cdf32948a42337c9c56cf7588c64f5c7586881f21cba5ec0770131054c7cb9e132c44b25c5b690ef8e780d72682990b570a49e90187ca9418a94ebf98001",
+        "denominator_hex": "0x1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "iid_clean_block_correct_completion_success_lower_bound": {
+        "sign": 1,
+        "numerator_hex": "0xf994bfd0511ac44091aa8de8be7d0b66483eb6f50e08f97bf2107ae1a4196c9b5ec6dacbf7d4c15d924765817e8b7b0486a3ef68c481180442b7618d4b48db9addb2cb7dbb08cffb6a58b40147e3d1f546411180a191616279277beda55eb520a684920f9554f6137210556d7bf9488040341f276335dd70db9c535e21321f9488caa4facdd56dfed39b59cddcf324022b90529a7cb06ce498e0f3e70fb296987ba9418a94ebf98001",
+        "denominator_hex": "0x100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "marginal_flip_bound_only_correct_completion_success_lower_bound": {
+        "sign": 1,
+        "numerator_hex": "0xf97fffffff0000000000000001",
+        "denominator_hex": "0x100000000000000000000000000"
+      },
+      "marginal_bound_does_not_require_noise_label_independence": true,
+      "uniform_native_label_rank_law_still_required": true,
+      "requires_known_correct_lower_residue": true,
+      "classical_solver": "binary_elimination_then_fresh_full_candidate_verification",
+      "wrong_or_inconsistent_blocks_not_accepted_without_verification": true,
+      "noisy_constant_rate_polynomial_decoder_claim": false,
+      "speedup_claim_allowed": false
+    },
+    {
+      "status": "LOCAL_DERIVATION_REVIEW_PENDING",
+      "dimension": 128,
+      "fresh_original_phase_states_per_trial": 168,
+      "effective_parity_flip_probability": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x4000"
+      },
+      "random_binary_rank_failure_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0xffffffffffffffffffffffffffffffff",
+        "denominator_hex": "0x1000000000000000000000000000000000000000000"
+      },
+      "iid_label_independent_clean_block_probability": {
+        "sign": 1,
+        "numerator_hex": "0xfd6369cbe197e3c78120b029d5c115e9a9ecb48c8feeaf82f992126fb679c90abc60d67f0c7d690df90b0ee7434a0c05d638b8826fd38b17a3cb3af973fd7e42f0db33eab7c6123515aea94bb7122b5f4be6997578a2356b484efb9d8e4246d326fd7d40861f5843e8d8d7d942280e5ec45561121173a2b775080b0c96d371623e52ceff17648d2f1d538f268619647671c8c6c17e1b7ffcfd86e7dc78ce3e10a1a2b566e2735ee41ad26ecc92078ebe0030dc4a4b1e1a7978467b7a659a06bdb2fb173875c2defceb0e4936d2662021aad5c101dca00cacf393857c8015f480102e0d606604a30a76d64853cf5197e0e0c1bcd25435c378e6ea449b2eeb32d618ea96a0eadf244d9a7500b107c4ba8857cd9af3e00bfe7d2994787c3291ae9fa36cbfd60001",
+        "denominator_hex": "0x1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "iid_clean_block_correct_completion_success_lower_bound": {
+        "sign": 1,
+        "numerator_hex": "0xfd6369cbe09a805db53f18460e3ff5398016f376a742263838e3bba3fb0157a876801dcbeb6af4ec068e802db84a93095eabe83f74b9b335a067e4d76a52be16deaa80787aab6fb9ad66b6c499a047f0f9a384c85c472a05bd8e1f7a580fa680d5264d25124441601dcb5ab66987848288a17b4a85d64ad3a37cb6c22347422f0afe239c13ea8fc1304d9e3c0e7118f257d980ce69e80a053b2030e9aaee0ab7ebb0008d484384f5756e16edaaea43371017a2f99dbf8c5294ddd0bed03c92b1052784c0761014c1fce3a4724ef35853ee68f4e878a832032a2ca84ed00d6f43ca805d8c079f4abe184ce3bd71ce551e0972812ef3652fc974fc137ac07b1ed9d18afd05f5a6fb73cbde575033112fcc41f4c16c2dcd1b78d69f4ba203028f27d841f2e1e8b560db1de00afe7d2994787c3291ae9fa36cbfd60001",
+        "denominator_hex": "0x1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "marginal_flip_bound_only_correct_completion_success_lower_bound": {
+        "sign": 1,
+        "numerator_hex": "0xfd5fffffff00000000000000000000000000000001",
+        "denominator_hex": "0x1000000000000000000000000000000000000000000"
+      },
+      "marginal_bound_does_not_require_noise_label_independence": true,
+      "uniform_native_label_rank_law_still_required": true,
+      "requires_known_correct_lower_residue": true,
+      "classical_solver": "binary_elimination_then_fresh_full_candidate_verification",
+      "wrong_or_inconsistent_blocks_not_accepted_without_verification": true,
+      "noisy_constant_rate_polynomial_decoder_claim": false,
+      "speedup_claim_allowed": false
+    }
+  ],
+  "constant_noise_completion_control": {
+    "status": "LOCAL_DERIVATION_REVIEW_PENDING",
+    "dimension": 128,
+    "fresh_original_phase_states_per_trial": 168,
+    "effective_parity_flip_probability": {
+      "sign": 1,
+      "numerator_hex": "0x1",
+      "denominator_hex": "0x8"
+    },
+    "random_binary_rank_failure_upper_bound": {
+      "sign": 1,
+      "numerator_hex": "0xffffffffffffffffffffffffffffffff",
+      "denominator_hex": "0x1000000000000000000000000000000000000000000"
+    },
+    "iid_label_independent_clean_block_probability": {
+      "sign": 1,
+      "numerator_hex": "0xc6dcc7fb81009e474ae06d1d6bee082ceb001bb5ee41e1aab8f3e83c9fea3084dea1bdb783d409c4e2482751922b9214395ba1558a67e40dbf5dc1",
+      "denominator_hex": "0x1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+    },
+    "iid_clean_block_correct_completion_success_lower_bound": {
+      "sign": 1,
+      "numerator_hex": "0xc6dcc7fb8039c17f4f5f6c7f24a327bfcd942dadc21dbe56fe86a6f93c7c1d09bf6dc18f2be06822e0b2952978023dd524695ff3fb0d2a2a21572d25b722ea6651922b9214395ba1558a67e40dbf5dc1",
+      "denominator_hex": "0x1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+    },
+    "marginal_flip_bound_only_correct_completion_success_lower_bound": {
+      "sign": 0,
+      "numerator_hex": "0x0",
+      "denominator_hex": "0x1"
+    },
+    "marginal_bound_does_not_require_noise_label_independence": true,
+    "uniform_native_label_rank_law_still_required": true,
+    "requires_known_correct_lower_residue": true,
+    "classical_solver": "binary_elimination_then_fresh_full_candidate_verification",
+    "wrong_or_inconsistent_blocks_not_accepted_without_verification": true,
+    "noisy_constant_rate_polynomial_decoder_claim": false,
+    "speedup_claim_allowed": false
+  },
+  "robust_full_candidate_verifier": {
+    "status": "LOCAL_DERIVATION_REVIEW_PENDING",
+    "fresh_original_phase_states_consumed": 256,
+    "per_trial_conditional_arbitrary_bad_probability_bound": {
+      "sign": 1,
+      "numerator_hex": "0x1",
+      "denominator_hex": "0x10"
+    },
+    "projection_zero_votes_required": 192,
+    "correct_full_candidate_per_trial_acceptance_lower_bound": {
+      "sign": 1,
+      "numerator_hex": "0xf",
+      "denominator_hex": "0x10"
+    },
+    "incorrect_full_candidate_per_trial_acceptance_upper_bound": {
+      "sign": 1,
+      "numerator_hex": "0x9",
+      "denominator_hex": "0x10"
+    },
+    "false_rejection_probability_upper_bound": {
+      "sign": 1,
+      "numerator_hex": "0xc94e30bb358ba0d1ae13ad7cb91fd5763227856d88b62e6f1c1f6899a6b2b9dc63c9002be01aef811bb40e76592fd808d724319d3b16be2aa0c85631fbbfaf18a82b8b9f1d32cdd8230678d8e957494189d8a420b2bde8ec0d6fe2a211aa2d2fc0884491c0a476b30995ec34f34c29e916e1b5f3b020ab",
+      "denominator_hex": "0x10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+    },
+    "false_acceptance_probability_upper_bound": {
+      "sign": 1,
+      "numerator_hex": "0x191919040964654c9450bb2107e4f77c7b8bd19ed95fca32940abcbfa959fd41064f775f8b470a291e7819aa46ed2a96cf55c383697114d57b0fedf533c10bc651382e7111848bc48f9616ccd502be3fbb042c147ff23a025e738fd14a2f56857ed9f5736c32c4355431a2446077c696689f5baab0bb2cd284551b755",
+      "denominator_hex": "0x10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+    },
+    "candidate_committed_before_verification_source_labels": true,
+    "fresh_native_labels_uniform_conditioned_on_past_required": true,
+    "bad_state_can_depend_on_secret_label_and_history": true,
+    "conditional_bad_probability_bound_not_just_unconditional_marginals_required": true,
+    "conditional_bad_bound_required_for_each_fixed_secret_and_history": true,
+    "bad_states_can_be_arbitrary_not_only_Z_flips": true,
+    "known_public_candidate_phase_correction_not_unknown_inverse": true,
+    "ideal_gates_measurement_precision_and_noise_not_charged_here": true,
+    "lower_residue_alone_is_not_a_full_candidate": true,
+    "conditional_source_promise_programmatically_verified": false,
+    "decoder_provided": false,
+    "speedup_claim_allowed": false
+  },
+  "claim_gate": {
+    "iid_phase_noise_and_regev_basis_failure_are_distinct": true,
+    "known_correct_residue_phase_noise_is_a_classical_lpn_experiment": true,
+    "arbitrary_basis_noise_losslessly_classicalized": false,
+    "quantum_lpn_example_oracle_available": false,
+    "low_noise_clean_blocks_cover_all_lpn_parameters": false,
+    "native_reduction_conditional_failure_promise_verified": false,
+    "unknown_residue_decoder": false,
+    "independent_theorem_review": false,
+    "speedup_claim_allowed": false
+  },
+  "dependency_sha256": {
+    "theorems/dcp_noisy_completion.py": "3521ca2c747333f329ecd24e55026734135e60f679213f7692db6b16d051fba7",
+    "theorems/dcp_bell_inference_kernel.py": "80a386759b43dacbcd7ed078c649e3004df51a704fc7747d01907dbc89b22a64"
+  }
+}

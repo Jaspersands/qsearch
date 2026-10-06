@@ -1,0 +1,50 @@
+{
+  "status": "PRIMARY_APPLICABILITY_AUDIT_LOCAL_APPLICATION_REVIEW_PENDING",
+  "checked_on": "2026-10-05",
+  "records": [
+    {
+      "id": "ARXIV-2106.07634",
+      "title": "Fast algorithm for quantum polar decomposition, pretty-good measurements, and the Procrustes problem",
+      "url": "https://arxiv.org/html/2106.07634",
+      "evidence_read": "Lemma1, Algorithm2, Theorem3 and its proof, including subnormalization.",
+      "mechanism": "Polar transformation from state-preparation block encodings.",
+      "problem_family": "Pure-state PGM and polar decomposition.",
+      "reduction": "Preparation access does not eliminate spectral scale.",
+      "no_go_barrier": "Runtime explicitly depends on inverse smallest singular value and ensemble size.",
+      "proof_technique": "Block encoding and singular-value transformation.",
+      "open_question": "An independently costed native normalization escape.",
+      "reusable_abstraction": "Track actual projected operator, not just its condition-number ratio.",
+      "scope": "Local different-projector circuit is not identified with the paper's ordinary block; no improvement claim."
+    },
+    {
+      "id": "ARXIV-2006.16924",
+      "title": "Quantum algorithm for Petz recovery channels and pretty good measurements",
+      "url": "https://arxiv.org/html/2006.16924",
+      "evidence_read": "PGM section, Eq21 and state-access requirements.",
+      "mechanism": "Petz recovery specialized to state discrimination.",
+      "problem_family": "Quantum recovery and PGM.",
+      "reduction": "Runtime depends on ensemble access and spectral parameters.",
+      "no_go_barrier": "A compact purification is not a free inverse density operator.",
+      "proof_technique": "QSVT and oblivious amplification.",
+      "open_question": "Native source-specific implementation.",
+      "reusable_abstraction": "Charge preparation, inverse scale and output environment."
+    },
+    {
+      "id": "KALMYKOV-NAGY-TOTIK-2016-BERNSTEIN",
+      "title": "Bernstein- and Markov-type inequalities for rational functions",
+      "url": "https://www.math.u-szeged.hu/pot/Rational.pdf",
+      "evidence_read": "Page2 Eq1.1 recalling the standard polynomial Bernstein derivative inequality; rational extensions not applied.",
+      "mechanism": "Bounded polynomial slope grows at most linearly with degree away from endpoints.",
+      "problem_family": "Approximation theory.",
+      "reduction": "Integrate from zero for odd scalar/vector spectral polynomials.",
+      "no_go_barrier": "Local application only; arbitrary rational algorithms not bounded by this polynomial degree statement.",
+      "proof_technique": "Bernstein inequality and norm projections.",
+      "open_question": "A costed representation outside the scoped polynomial filter.",
+      "reusable_abstraction": "Do not confuse endpoint Markov bounds with interior Bernstein bounds."
+    }
+  ],
+  "independent_review": false,
+  "candidate_record_accepted": false,
+  "novelty_claim": false,
+  "speedup_claim_allowed": false
+}

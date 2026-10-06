@@ -1,0 +1,5246 @@
+{
+  "status": "NATIVE_DCP_PROJECTIVE_CODE_TARGET_AND_SIGNAL_AUDIT_LOCAL_REVIEW_PENDING",
+  "physical_controls": [
+    {
+      "code_name": "bell-one",
+      "modulus": 32,
+      "secret_calibration": 1,
+      "native_labels": [
+        19,
+        9
+      ],
+      "certificate": {
+        "logical_rows": 1,
+        "consumed_native_phase_qubits": 2,
+        "full_output_bits": 2,
+        "code_rows": [
+          [
+            1,
+            1
+          ]
+        ],
+        "systematic_column_order": [
+          0,
+          1
+        ],
+        "systematic_tail": [
+          [
+            1
+          ]
+        ],
+        "tail_rank": 1,
+        "tail_gram_equals_identity": true,
+        "basis_rows_doubly_even": false,
+        "shortened_code_terms": [
+          {
+            "codeword_hex": "0x0",
+            "weight": 0,
+            "shortened_dimension": 0,
+            "exact_contribution": {
+              "numerator": "1",
+              "denominator": "1"
+            }
+          },
+          {
+            "codeword_hex": "0x3",
+            "weight": 2,
+            "shortened_dimension": 1,
+            "exact_contribution": {
+              "numerator": "1",
+              "denominator": "2"
+            }
+          }
+        ],
+        "source_averaged_full_collision_kernel": {
+          "numerator": "3",
+          "denominator": "2"
+        },
+        "source_averaged_centered_chi_squared": {
+          "numerator": "1",
+          "denominator": "2"
+        },
+        "matched_logical_row_bell_kernel": {
+          "numerator": "3",
+          "denominator": "2"
+        },
+        "matched_bell_native_qubits": 2,
+        "matched_output_bit_individual_X_kernel": {
+          "numerator": "9",
+          "denominator": "4"
+        },
+        "individual_X_native_qubits": 2,
+        "individual_X_candidate_likelihood_cost": "O(h) scalar cosine factors; this is NOT an efficient secret search",
+        "individual_X_baseline_is_full_classical_phase_state_simulator": false,
+        "bell_source_signal_upper_satisfied": true,
+        "hypothesis_source": "secret order>=4; independent uniform labels; code fixed before these labels",
+        "label_adaptive_code_moment_covered": false,
+        "unmeasured_logical_qubits": 0,
+        "retained_register_source_quantum_collision": {
+          "numerator": "3",
+          "denominator": "2"
+        },
+        "untouched_native_source_quantum_collision": "4",
+        "retained_quantum_register_algorithms_covered_by_bell_ceiling": false,
+        "full_transcript_or_classical_time_dominance_proved": false,
+        "raw_sample_algorithms_excluded": false,
+        "higher_moment_or_noise_advantage_excluded": false
+      },
+      "native_pauli_signature": [
+        "identity-only",
+        "identity-only"
+      ],
+      "full_output_probabilities": [
+        0.42677669529663687,
+        0.15432914190872762,
+        0.07322330470336316,
+        0.3456708580912724
+      ],
+      "full_pauli_expectations": [
+        1.0,
+        0.0,
+        0.16221167441072887,
+        0.5448951067758184
+      ],
+      "maximum_probability_identity_error": 0.0,
+      "joint_state_norm": 1.0,
+      "output_norm": 1.0,
+      "source_qubits_consumed": 2,
+      "postselection_or_cloning_used": false,
+      "native_full_oracle_queries_if_states_generated_by_standard_bridge": 2,
+      "known_two_qubit_clifford_gate_count_upper": 4,
+      "known_control_register_hadamard_count": 4,
+      "identical_state_copy_promise_used": false,
+      "paper_same_state_stabilizer_output_claim": false,
+      "current_labels_chosen_to_fit_code": false,
+      "actual_joint_clifford_measurement_on_independent_native_registers": true
+    },
+    {
+      "code_name": "bell-one",
+      "modulus": 32,
+      "secret_calibration": 3,
+      "native_labels": [
+        19,
+        9
+      ],
+      "certificate": {
+        "logical_rows": 1,
+        "consumed_native_phase_qubits": 2,
+        "full_output_bits": 2,
+        "code_rows": [
+          [
+            1,
+            1
+          ]
+        ],
+        "systematic_column_order": [
+          0,
+          1
+        ],
+        "systematic_tail": [
+          [
+            1
+          ]
+        ],
+        "tail_rank": 1,
+        "tail_gram_equals_identity": true,
+        "basis_rows_doubly_even": false,
+        "shortened_code_terms": [
+          {
+            "codeword_hex": "0x0",
+            "weight": 0,
+            "shortened_dimension": 0,
+            "exact_contribution": {
+              "numerator": "1",
+              "denominator": "1"
+            }
+          },
+          {
+            "codeword_hex": "0x3",
+            "weight": 2,
+            "shortened_dimension": 1,
+            "exact_contribution": {
+              "numerator": "1",
+              "denominator": "2"
+            }
+          }
+        ],
+        "source_averaged_full_collision_kernel": {
+          "numerator": "3",
+          "denominator": "2"
+        },
+        "source_averaged_centered_chi_squared": {
+          "numerator": "1",
+          "denominator": "2"
+        },
+        "matched_logical_row_bell_kernel": {
+          "numerator": "3",
+          "denominator": "2"
+        },
+        "matched_bell_native_qubits": 2,
+        "matched_output_bit_individual_X_kernel": {
+          "numerator": "9",
+          "denominator": "4"
+        },
+        "individual_X_native_qubits": 2,
+        "individual_X_candidate_likelihood_cost": "O(h) scalar cosine factors; this is NOT an efficient secret search",
+        "individual_X_baseline_is_full_classical_phase_state_simulator": false,
+        "bell_source_signal_upper_satisfied": true,
+        "hypothesis_source": "secret order>=4; independent uniform labels; code fixed before these labels",
+        "label_adaptive_code_moment_covered": false,
+        "unmeasured_logical_qubits": 0,
+        "retained_register_source_quantum_collision": {
+          "numerator": "3",
+          "denominator": "2"
+        },
+        "untouched_native_source_quantum_collision": "4",
+        "retained_quantum_register_algorithms_covered_by_bell_ceiling": false,
+        "full_transcript_or_classical_time_dominance_proved": false,
+        "raw_sample_algorithms_excluded": false,
+        "higher_moment_or_noise_advantage_excluded": false
+      },
+      "native_pauli_signature": [
+        "identity-only",
+        "identity-only"
+      ],
+      "full_output_probabilities": [
+        0.07322330470336308,
+        0.4809698831278216,
+        0.426776695296637,
+        0.019030116872178267
+      ],
+      "full_pauli_expectations": [
+        1.0,
+        0.0,
+        0.10838637566236956,
+        -0.8154931568489173
+      ],
+      "maximum_probability_identity_error": 1.6653345369377348e-16,
+      "joint_state_norm": 1.0,
+      "output_norm": 0.9999999999999999,
+      "source_qubits_consumed": 2,
+      "postselection_or_cloning_used": false,
+      "native_full_oracle_queries_if_states_generated_by_standard_bridge": 2,
+      "known_two_qubit_clifford_gate_count_upper": 4,
+      "known_control_register_hadamard_count": 4,
+      "identical_state_copy_promise_used": false,
+      "paper_same_state_stabilizer_output_claim": false,
+      "current_labels_chosen_to_fit_code": false,
+      "actual_joint_clifford_measurement_on_independent_native_registers": true
+    },
+    {
+      "code_name": "bell-two",
+      "modulus": 32,
+      "secret_calibration": 1,
+      "native_labels": [
+        19,
+        9,
+        15,
+        6
+      ],
+      "certificate": {
+        "logical_rows": 2,
+        "consumed_native_phase_qubits": 4,
+        "full_output_bits": 4,
+        "code_rows": [
+          [
+            1,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            1
+          ]
+        ],
+        "systematic_column_order": [
+          0,
+          2,
+          1,
+          3
+        ],
+        "systematic_tail": [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "tail_rank": 2,
+        "tail_gram_equals_identity": true,
+        "basis_rows_doubly_even": false,
+        "shortened_code_terms": [
+          {
+            "codeword_hex": "0x0",
+            "weight": 0,
+            "shortened_dimension": 0,
+            "exact_contribution": {
+              "numerator": "1",
+              "denominator": "1"
+            }
+          },
+          {
+            "codeword_hex": "0x3",
+            "weight": 2,
+            "shortened_dimension": 1,
+            "exact_contribution": {
+              "numerator": "1",
+              "denominator": "2"
+            }
+          },
+          {
+            "codeword_hex": "0xc",
+            "weight": 2,
+            "shortened_dimension": 1,
+            "exact_contribution": {
+              "numerator": "1",
+              "denominator": "2"
+            }
+          },
+          {
+            "codeword_hex": "0xf",
+            "weight": 4,
+            "shortened_dimension": 2,
+            "exact_contribution": {
+              "numerator": "1",
+              "denominator": "4"
+            }
+          }
+        ],
+        "source_averaged_full_collision_kernel": {
+          "numerator": "9",
+          "denominator": "4"
+        },
+        "source_averaged_centered_chi_squared": {
+          "numerator": "5",
+          "denominator": "4"
+        },
+        "matched_logical_row_bell_kernel": {
+          "numerator": "9",
+          "denominator": "4"
+        },
+        "matched_bell_native_qubits": 4,
+        "matched_output_bit_individual_X_kernel": {
+          "numerator": "81",
+          "denominator": "16"
+        },
+        "individual_X_native_qubits": 4,
+        "individual_X_candidate_likelihood_cost": "O(h) scalar cosine factors; this is NOT an efficient secret search",
+        "individual_X_baseline_is_full_classical_phase_state_simulator": false,
+        "bell_source_signal_upper_satisfied": true,
+        "hypothesis_source": "secret order>=4; independent uniform labels; code fixed before these labels",
+        "label_adaptive_code_moment_covered": false,
+        "unmeasured_logical_qubits": 0,
+        "retained_register_source_quantum_collision": {
+          "numerator": "9",
+          "denominator": "4"
+        },
+        "untouched_native_source_quantum_collision": "16",
+        "retained_quantum_register_algorithms_covered_by_bell_ceiling": false,
+        "full_transcript_or_classical_time_dominance_proved": false,
+        "raw_sample_algorithms_excluded": false,
+        "higher_moment_or_noise_advantage_excluded": false
+      },
+      "native_pauli_signature": [
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only"
+      ],
+      "full_output_probabilities": [
+        0.04741806681083714,
+        0.017147116144195118,
+        0.08587917309555922,
+        0.031055254979320268,
+        0.008135654061712587,
+        0.038406604728354596,
+        0.01473453665242474,
+        0.06955845476866365,
+        0.16597028083748125,
+        0.06001745481016863,
+        0.12750917455275917,
+        0.04610931597504349,
+        0.028475998289968975,
+        0.13442882431728165,
+        0.02187711569925682,
+        0.10327697427697255
+      ],
+      "full_pauli_expectations": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.16221167441072887,
+        0.5448951067758184,
+        0.0,
+        0.0,
+        -0.3753302775178653,
+        0.0,
+        -0.1802399555017373,
+        0.0,
+        -0.060882952773216474,
+        -0.2045156316442948,
+        -0.029237024977652067,
+        -0.0982118697983879
+      ],
+      "maximum_probability_identity_error": 8.326672684688674e-17,
+      "joint_state_norm": 1.0,
+      "output_norm": 0.9999999999999998,
+      "source_qubits_consumed": 4,
+      "postselection_or_cloning_used": false,
+      "native_full_oracle_queries_if_states_generated_by_standard_bridge": 4,
+      "known_two_qubit_clifford_gate_count_upper": 8,
+      "known_control_register_hadamard_count": 8,
+      "identical_state_copy_promise_used": false,
+      "paper_same_state_stabilizer_output_claim": false,
+      "current_labels_chosen_to_fit_code": false,
+      "actual_joint_clifford_measurement_on_independent_native_registers": true
+    },
+    {
+      "code_name": "bell-two",
+      "modulus": 32,
+      "secret_calibration": 3,
+      "native_labels": [
+        19,
+        9,
+        15,
+        6
+      ],
+      "certificate": {
+        "logical_rows": 2,
+        "consumed_native_phase_qubits": 4,
+        "full_output_bits": 4,
+        "code_rows": [
+          [
+            1,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            1
+          ]
+        ],
+        "systematic_column_order": [
+          0,
+          2,
+          1,
+          3
+        ],
+        "systematic_tail": [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "tail_rank": 2,
+        "tail_gram_equals_identity": true,
+        "basis_rows_doubly_even": false,
+        "shortened_code_terms": [
+          {
+            "codeword_hex": "0x0",
+            "weight": 0,
+            "shortened_dimension": 0,
+            "exact_contribution": {
+              "numerator": "1",
+              "denominator": "1"
+            }
+          },
+          {
+            "codeword_hex": "0x3",
+            "weight": 2,
+            "shortened_dimension": 1,
+            "exact_contribution": {
+              "numerator": "1",
+              "denominator": "2"
+            }
+          },
+          {
+            "codeword_hex": "0xc",
+            "weight": 2,
+            "shortened_dimension": 1,
+            "exact_contribution": {
+              "numerator": "1",
+              "denominator": "2"
+            }
+          },
+          {
+            "codeword_hex": "0xf",
+            "weight": 4,
+            "shortened_dimension": 2,
+            "exact_contribution": {
+              "numerator": "1",
+              "denominator": "4"
+            }
+          }
+        ],
+        "source_averaged_full_collision_kernel": {
+          "numerator": "9",
+          "denominator": "4"
+        },
+        "source_averaged_centered_chi_squared": {
+          "numerator": "5",
+          "denominator": "4"
+        },
+        "matched_logical_row_bell_kernel": {
+          "numerator": "9",
+          "denominator": "4"
+        },
+        "matched_bell_native_qubits": 4,
+        "matched_output_bit_individual_X_kernel": {
+          "numerator": "81",
+          "denominator": "16"
+        },
+        "individual_X_native_qubits": 4,
+        "individual_X_candidate_likelihood_cost": "O(h) scalar cosine factors; this is NOT an efficient secret search",
+        "individual_X_baseline_is_full_classical_phase_state_simulator": false,
+        "bell_source_signal_upper_satisfied": true,
+        "hypothesis_source": "secret order>=4; independent uniform labels; code fixed before these labels",
+        "label_adaptive_code_moment_covered": false,
+        "unmeasured_logical_qubits": 0,
+        "retained_register_source_quantum_collision": {
+          "numerator": "9",
+          "denominator": "4"
+        },
+        "untouched_native_source_quantum_collision": "16",
+        "retained_quantum_register_algorithms_covered_by_bell_ceiling": false,
+        "full_transcript_or_classical_time_dominance_proved": false,
+        "raw_sample_algorithms_excluded": false,
+        "higher_moment_or_noise_advantage_excluded": false
+      },
+      "native_pauli_signature": [
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only"
+      ],
+      "full_output_probabilities": [
+        0.03625991103472558,
+        0.23817451620421273,
+        0.028475998289968982,
+        0.18704560829313904,
+        0.21133824901567824,
+        0.00942364384619099,
+        0.16597028083748125,
+        0.007400670834311178,
+        0.00035174131695598536,
+        0.0023104253596980236,
+        0.008135654061712586,
+        0.05343933327077174,
+        0.0020500986326402165,
+        9.141458989816473e-05,
+        0.047418066810837135,
+        0.002114387601777986
+      ],
+      "full_pauli_expectations": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.10838637566236956,
+        -0.8154931568489173,
+        0.0,
+        0.0,
+        0.7681777567114165,
+        0.0,
+        0.21260752369181404,
+        0.0,
+        0.08326000291439992,
+        -0.6264437038417127,
+        0.02304375893150709,
+        -0.1733799806652684
+      ],
+      "maximum_probability_identity_error": 1.1102230246251565e-16,
+      "joint_state_norm": 1.0,
+      "output_norm": 0.9999999999999998,
+      "source_qubits_consumed": 4,
+      "postselection_or_cloning_used": false,
+      "native_full_oracle_queries_if_states_generated_by_standard_bridge": 4,
+      "known_two_qubit_clifford_gate_count_upper": 8,
+      "known_control_register_hadamard_count": 8,
+      "identical_state_copy_promise_used": false,
+      "paper_same_state_stabilizer_output_claim": false,
+      "current_labels_chosen_to_fit_code": false,
+      "actual_joint_clifford_measurement_on_independent_native_registers": true
+    },
+    {
+      "code_name": "bell-three",
+      "modulus": 32,
+      "secret_calibration": 1,
+      "native_labels": [
+        19,
+        9,
+        15,
+        6,
+        9,
+        18
+      ],
+      "certificate": {
+        "logical_rows": 3,
+        "consumed_native_phase_qubits": 6,
+        "full_output_bits": 6,
+        "code_rows": [
+          [
+            1,
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1
+          ]
+        ],
+        "systematic_column_order": [
+          0,
+          2,
+          4,
+          1,
+          3,
+          5
+        ],
+        "systematic_tail": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        "tail_rank": 3,
+        "tail_gram_equals_identity": true,
+        "basis_rows_doubly_even": false,
+        "shortened_code_terms": [
+          {
+            "codeword_hex": "0x0",
+            "weight": 0,
+            "shortened_dimension": 0,
+            "exact_contribution": {
+              "numerator": "1",
+              "denominator": "1"
+            }
+          },
+          {
+            "codeword_hex": "0x3",
+            "weight": 2,
+            "shortened_dimension": 1,
+            "exact_contribution": {
+              "numerator": "1",
+              "denominator": "2"
+            }
+          },
+          {
+            "codeword_hex": "0xc",
+            "weight": 2,
+            "shortened_dimension": 1,
+            "exact_contribution": {
+              "numerator": "1",
+              "denominator": "2"
+            }
+          },
+          {
+            "codeword_hex": "0xf",
+            "weight": 4,
+            "shortened_dimension": 2,
+            "exact_contribution": {
+              "numerator": "1",
+              "denominator": "4"
+            }
+          },
+          {
+            "codeword_hex": "0x30",
+            "weight": 2,
+            "shortened_dimension": 1,
+            "exact_contribution": {
+              "numerator": "1",
+              "denominator": "2"
+            }
+          },
+          {
+            "codeword_hex": "0x33",
+            "weight": 4,
+            "shortened_dimension": 2,
+            "exact_contribution": {
+              "numerator": "1",
+              "denominator": "4"
+            }
+          },
+          {
+            "codeword_hex": "0x3c",
+            "weight": 4,
+            "shortened_dimension": 2,
+            "exact_contribution": {
+              "numerator": "1",
+              "denominator": "4"
+            }
+          },
+          {
+            "codeword_hex": "0x3f",
+            "weight": 6,
+            "shortened_dimension": 3,
+            "exact_contribution": {
+              "numerator": "1",
+              "denominator": "8"
+            }
+          }
+        ],
+        "source_averaged_full_collision_kernel": {
+          "numerator": "27",
+          "denominator": "8"
+        },
+        "source_averaged_centered_chi_squared": {
+          "numerator": "19",
+          "denominator": "8"
+        },
+        "matched_logical_row_bell_kernel": {
+          "numerator": "27",
+          "denominator": "8"
+        },
+        "matched_bell_native_qubits": 6,
+        "matched_output_bit_individual_X_kernel": {
+          "numerator": "729",
+          "denominator": "64"
+        },
+        "individual_X_native_qubits": 6,
+        "individual_X_candidate_likelihood_cost": "O(h) scalar cosine factors; this is NOT an efficient secret search",
+        "individual_X_baseline_is_full_classical_phase_state_simulator": false,
+        "bell_source_signal_upper_satisfied": true,
+        "hypothesis_source": "secret order>=4; independent uniform labels; code fixed before these labels",
+        "label_adaptive_code_moment_covered": false,
+        "unmeasured_logical_qubits": 0,
+        "retained_register_source_quantum_collision": {
+          "numerator": "27",
+          "denominator": "8"
+        },
+        "untouched_native_source_quantum_collision": "64",
+        "retained_quantum_register_algorithms_covered_by_bell_ceiling": false,
+        "full_transcript_or_classical_time_dominance_proved": false,
+        "raw_sample_algorithms_excluded": false,
+        "higher_moment_or_noise_advantage_excluded": false
+      },
+      "native_pauli_signature": [
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only"
+      ],
+      "full_output_probabilities": [
+        0.018440533309568234,
+        0.0066683858640099476,
+        0.03339777132594745,
+        0.0120771575561661,
+        0.009541815221832152,
+        0.003450469933494041,
+        0.017281244390466934,
+        0.006249168821277925,
+        0.0031638953211362802,
+        0.014936042766694567,
+        0.005730151653462053,
+        0.02705076542324341,
+        0.0016371166727503139,
+        0.007728461961088436,
+        0.002964992788036187,
+        0.01399706835722519,
+        0.06454460710917237,
+        0.023340341541074363,
+        0.04958736909279321,
+        0.01793156984891822,
+        0.03339777132594744,
+        0.01207715755616611,
+        0.025658342157312677,
+        0.00927845866838221,
+        0.011074103823848207,
+        0.05227836939194624,
+        0.008507847491522426,
+        0.04016364673539741,
+        0.005730151653462045,
+        0.027050765423243417,
+        0.004402275538176176,
+        0.020782159027106638,
+        0.005268500095850327,
+        0.0019051722080876158,
+        0.009541815221832155,
+        0.0034504699334940393,
+        0.014167218183586409,
+        0.005123088138603528,
+        0.025658342157312677,
+        0.00927845866838221,
+        0.0009039317097200136,
+        0.0042672595974827116,
+        0.0016371166727503121,
+        0.007728461961088432,
+        0.002430710358105975,
+        0.011474840403088864,
+        0.004402275538176175,
+        0.020782159027106638,
+        0.01844053330956824,
+        0.006668385864009947,
+        0.014167218183586405,
+        0.005123088138603522,
+        0.049587369092793224,
+        0.01793156984891822,
+        0.03809624511906692,
+        0.013776199319139528,
+        0.0031638953211362807,
+        0.01493604276669457,
+        0.0024307103581059767,
+        0.011474840403088863,
+        0.008507847491522433,
+        0.04016364673539739,
+        0.006536282311452238,
+        0.030856328111379634
+      ],
+      "full_pauli_expectations": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.16221167441072887,
+        0.5448951067758184,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.3753302775178653,
+        0.0,
+        -0.1802399555017373,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.060882952773216474,
+        -0.2045156316442948,
+        -0.029237024977652067,
+        -0.0982118697983879,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.18023995550173694,
+        0.0,
+        0.0,
+        0.0,
+        0.37533027751786513,
+        0.0,
+        0.0,
+        0.0,
+        0.029237024977652012,
+        0.0982118697983877,
+        0.0,
+        0.0,
+        0.06088295277321645,
+        0.2045156316442947,
+        0.0,
+        0.0,
+        -0.06764951251827461,
+        0.0,
+        -0.03248644155926817,
+        0.0,
+        -0.14087281722163772,
+        0.0,
+        -0.06764951251827472,
+        0.0,
+        -0.010973540698658888,
+        -0.03686188834697732,
+        -0.00526968008097518,
+        -0.017701703042203816,
+        -0.022851215560478415,
+        -0.07676090878179465,
+        -0.010973540698658905,
+        -0.03686188834697737
+      ],
+      "maximum_probability_identity_error": 5.551115123125783e-17,
+      "joint_state_norm": 1.0,
+      "output_norm": 1.0,
+      "source_qubits_consumed": 6,
+      "postselection_or_cloning_used": false,
+      "native_full_oracle_queries_if_states_generated_by_standard_bridge": 6,
+      "known_two_qubit_clifford_gate_count_upper": 12,
+      "known_control_register_hadamard_count": 12,
+      "identical_state_copy_promise_used": false,
+      "paper_same_state_stabilizer_output_claim": false,
+      "current_labels_chosen_to_fit_code": false,
+      "actual_joint_clifford_measurement_on_independent_native_registers": true
+    },
+    {
+      "code_name": "bell-three",
+      "modulus": 32,
+      "secret_calibration": 3,
+      "native_labels": [
+        19,
+        9,
+        15,
+        6,
+        9,
+        18
+      ],
+      "certificate": {
+        "logical_rows": 3,
+        "consumed_native_phase_qubits": 6,
+        "full_output_bits": 6,
+        "code_rows": [
+          [
+            1,
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1
+          ]
+        ],
+        "systematic_column_order": [
+          0,
+          2,
+          4,
+          1,
+          3,
+          5
+        ],
+        "systematic_tail": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        "tail_rank": 3,
+        "tail_gram_equals_identity": true,
+        "basis_rows_doubly_even": false,
+        "shortened_code_terms": [
+          {
+            "codeword_hex": "0x0",
+            "weight": 0,
+            "shortened_dimension": 0,
+            "exact_contribution": {
+              "numerator": "1",
+              "denominator": "1"
+            }
+          },
+          {
+            "codeword_hex": "0x3",
+            "weight": 2,
+            "shortened_dimension": 1,
+            "exact_contribution": {
+              "numerator": "1",
+              "denominator": "2"
+            }
+          },
+          {
+            "codeword_hex": "0xc",
+            "weight": 2,
+            "shortened_dimension": 1,
+            "exact_contribution": {
+              "numerator": "1",
+              "denominator": "2"
+            }
+          },
+          {
+            "codeword_hex": "0xf",
+            "weight": 4,
+            "shortened_dimension": 2,
+            "exact_contribution": {
+              "numerator": "1",
+              "denominator": "4"
+            }
+          },
+          {
+            "codeword_hex": "0x30",
+            "weight": 2,
+            "shortened_dimension": 1,
+            "exact_contribution": {
+              "numerator": "1",
+              "denominator": "2"
+            }
+          },
+          {
+            "codeword_hex": "0x33",
+            "weight": 4,
+            "shortened_dimension": 2,
+            "exact_contribution": {
+              "numerator": "1",
+              "denominator": "4"
+            }
+          },
+          {
+            "codeword_hex": "0x3c",
+            "weight": 4,
+            "shortened_dimension": 2,
+            "exact_contribution": {
+              "numerator": "1",
+              "denominator": "4"
+            }
+          },
+          {
+            "codeword_hex": "0x3f",
+            "weight": 6,
+            "shortened_dimension": 3,
+            "exact_contribution": {
+              "numerator": "1",
+              "denominator": "8"
+            }
+          }
+        ],
+        "source_averaged_full_collision_kernel": {
+          "numerator": "27",
+          "denominator": "8"
+        },
+        "source_averaged_centered_chi_squared": {
+          "numerator": "19",
+          "denominator": "8"
+        },
+        "matched_logical_row_bell_kernel": {
+          "numerator": "27",
+          "denominator": "8"
+        },
+        "matched_bell_native_qubits": 6,
+        "matched_output_bit_individual_X_kernel": {
+          "numerator": "729",
+          "denominator": "64"
+        },
+        "individual_X_native_qubits": 6,
+        "individual_X_candidate_likelihood_cost": "O(h) scalar cosine factors; this is NOT an efficient secret search",
+        "individual_X_baseline_is_full_classical_phase_state_simulator": false,
+        "bell_source_signal_upper_satisfied": true,
+        "hypothesis_source": "secret order>=4; independent uniform labels; code fixed before these labels",
+        "label_adaptive_code_moment_covered": false,
+        "unmeasured_logical_qubits": 0,
+        "retained_register_source_quantum_collision": {
+          "numerator": "27",
+          "denominator": "8"
+        },
+        "untouched_native_source_quantum_collision": "64",
+        "retained_quantum_register_algorithms_covered_by_bell_ceiling": false,
+        "full_transcript_or_classical_time_dominance_proved": false,
+        "raw_sample_algorithms_excluded": false,
+        "higher_moment_or_noise_advantage_excluded": false
+      },
+      "native_pauli_signature": [
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only"
+      ],
+      "full_output_probabilities": [
+        0.0001741810057840159,
+        0.00114411413599005,
+        0.00013678958059495938,
+        0.0008985072287899627,
+        0.014101209564389525,
+        0.09262429691777962,
+        0.011074103823848207,
+        0.07274064511946295,
+        0.0010152012987271275,
+        4.526816852109576e-05,
+        0.0007972681019223242,
+        3.555045372731952e-05,
+        0.08218787231681837,
+        0.0036647849634282633,
+        0.06454460710917233,
+        0.0028780658135577003,
+        1.6896526939768769e-06,
+        1.1098543858965703e-05,
+        3.9081077883032117e-05,
+        0.0002567054510590474,
+        0.00013678958059495997,
+        0.0008985072287899648,
+        0.003163895321136277,
+        0.020782159027106645,
+        9.848017592975719e-06,
+        4.3912642798667395e-07,
+        0.00022778121439777938,
+        1.015684122176275e-05,
+        0.0007972681019223222,
+        3.555045372731954e-05,
+        0.018440533309568245,
+        0.000822269603597884,
+        0.01795577451157876,
+        0.11794314396611644,
+        0.014101209564389518,
+        0.0926242969177796,
+        0.004028745952973261,
+        0.026462961184326814,
+        0.003163895321136278,
+        0.02078215902710663,
+        0.10465392320911197,
+        0.004666553754574398,
+        0.08218787231681837,
+        0.003664784963428264,
+        0.023481252191020784,
+        0.0010470369596672312,
+        0.01844053330956824,
+        0.0008222696035978837,
+        0.00017418100578401588,
+        0.0011441141359900481,
+        0.004028745952973261,
+        0.026462961184326797,
+        3.9081077883031845e-05,
+        0.0002567054510590484,
+        0.0009039317097200121,
+        0.005937507608279229,
+        0.0010152012987271293,
+        4.52681685210956e-05,
+        0.023481252191020766,
+        0.0010470369596672301,
+        0.00022778121439777867,
+        1.015684122176279e-05,
+        0.00526850009585033,
+        0.00023492419729110873
+      ],
+      "full_pauli_expectations": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.10838637566236956,
+        -0.8154931568489173,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.7681777567114165,
+        0.0,
+        0.21260752369181404,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.08326000291439992,
+        -0.6264437038417127,
+        0.02304375893150709,
+        -0.1733799806652684,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.2126075236918143,
+        0.0,
+        0.0,
+        0.0,
+        -0.7681777567114163,
+        0.0,
+        0.0,
+        0.0,
+        -0.02304375893150712,
+        0.1733799806652686,
+        0.0,
+        0.0,
+        -0.0832600029143999,
+        0.6264437038417126,
+        0.0,
+        0.0,
+        -0.16332037060954724,
+        0.0,
+        -0.04520195913036532,
+        0.0,
+        -0.590097065906184,
+        0.0,
+        -0.16332037060954702,
+        0.0,
+        -0.017701703042203806,
+        0.13318664460611482,
+        -0.0048992765229788505,
+        0.03686188834697736,
+        -0.06395848226256971,
+        0.48122011912311774,
+        -0.01770170304220378,
+        0.13318664460611462
+      ],
+      "maximum_probability_identity_error": 9.71445146547012e-17,
+      "joint_state_norm": 1.0,
+      "output_norm": 1.0000000000000004,
+      "source_qubits_consumed": 6,
+      "postselection_or_cloning_used": false,
+      "native_full_oracle_queries_if_states_generated_by_standard_bridge": 6,
+      "known_two_qubit_clifford_gate_count_upper": 12,
+      "known_control_register_hadamard_count": 12,
+      "identical_state_copy_promise_used": false,
+      "paper_same_state_stabilizer_output_claim": false,
+      "current_labels_chosen_to_fit_code": false,
+      "actual_joint_clifford_measurement_on_independent_native_registers": true
+    },
+    {
+      "code_name": "quartic-one",
+      "modulus": 32,
+      "secret_calibration": 1,
+      "native_labels": [
+        19,
+        9,
+        15,
+        6
+      ],
+      "certificate": {
+        "logical_rows": 1,
+        "consumed_native_phase_qubits": 4,
+        "full_output_bits": 2,
+        "code_rows": [
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "systematic_column_order": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "systematic_tail": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "tail_rank": 1,
+        "tail_gram_equals_identity": true,
+        "basis_rows_doubly_even": true,
+        "shortened_code_terms": [
+          {
+            "codeword_hex": "0x0",
+            "weight": 0,
+            "shortened_dimension": 0,
+            "exact_contribution": {
+              "numerator": "1",
+              "denominator": "1"
+            }
+          },
+          {
+            "codeword_hex": "0xf",
+            "weight": 4,
+            "shortened_dimension": 1,
+            "exact_contribution": {
+              "numerator": "1",
+              "denominator": "8"
+            }
+          }
+        ],
+        "source_averaged_full_collision_kernel": {
+          "numerator": "9",
+          "denominator": "8"
+        },
+        "source_averaged_centered_chi_squared": {
+          "numerator": "1",
+          "denominator": "8"
+        },
+        "matched_logical_row_bell_kernel": {
+          "numerator": "3",
+          "denominator": "2"
+        },
+        "matched_bell_native_qubits": 2,
+        "matched_output_bit_individual_X_kernel": {
+          "numerator": "9",
+          "denominator": "4"
+        },
+        "individual_X_native_qubits": 2,
+        "individual_X_candidate_likelihood_cost": "O(h) scalar cosine factors; this is NOT an efficient secret search",
+        "individual_X_baseline_is_full_classical_phase_state_simulator": false,
+        "bell_source_signal_upper_satisfied": true,
+        "hypothesis_source": "secret order>=4; independent uniform labels; code fixed before these labels",
+        "label_adaptive_code_moment_covered": false,
+        "unmeasured_logical_qubits": 2,
+        "retained_register_source_quantum_collision": {
+          "numerator": "9",
+          "denominator": "2"
+        },
+        "untouched_native_source_quantum_collision": "16",
+        "retained_quantum_register_algorithms_covered_by_bell_ceiling": false,
+        "full_transcript_or_classical_time_dominance_proved": false,
+        "raw_sample_algorithms_excluded": false,
+        "higher_moment_or_noise_advantage_excluded": false
+      },
+      "native_pauli_signature": [
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only"
+      ],
+      "full_output_probabilities": [
+        0.21022629435709894,
+        0.25933222925629285,
+        0.28977370564290106,
+        0.24066777074370715
+      ],
+      "full_pauli_expectations": [
+        1.0,
+        0.0,
+        -0.060882952773216474,
+        -0.0982118697983879
+      ],
+      "maximum_probability_identity_error": 2.7755575615628914e-17,
+      "joint_state_norm": 1.0,
+      "output_norm": 1.0,
+      "source_qubits_consumed": 4,
+      "postselection_or_cloning_used": false,
+      "native_full_oracle_queries_if_states_generated_by_standard_bridge": 4,
+      "known_two_qubit_clifford_gate_count_upper": 8,
+      "known_control_register_hadamard_count": 4,
+      "identical_state_copy_promise_used": false,
+      "paper_same_state_stabilizer_output_claim": false,
+      "current_labels_chosen_to_fit_code": false,
+      "actual_joint_clifford_measurement_on_independent_native_registers": true
+    },
+    {
+      "code_name": "quartic-one",
+      "modulus": 32,
+      "secret_calibration": 3,
+      "native_labels": [
+        19,
+        9,
+        15,
+        6
+      ],
+      "certificate": {
+        "logical_rows": 1,
+        "consumed_native_phase_qubits": 4,
+        "full_output_bits": 2,
+        "code_rows": [
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "systematic_column_order": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "systematic_tail": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "tail_rank": 1,
+        "tail_gram_equals_identity": true,
+        "basis_rows_doubly_even": true,
+        "shortened_code_terms": [
+          {
+            "codeword_hex": "0x0",
+            "weight": 0,
+            "shortened_dimension": 0,
+            "exact_contribution": {
+              "numerator": "1",
+              "denominator": "1"
+            }
+          },
+          {
+            "codeword_hex": "0xf",
+            "weight": 4,
+            "shortened_dimension": 1,
+            "exact_contribution": {
+              "numerator": "1",
+              "denominator": "8"
+            }
+          }
+        ],
+        "source_averaged_full_collision_kernel": {
+          "numerator": "9",
+          "denominator": "8"
+        },
+        "source_averaged_centered_chi_squared": {
+          "numerator": "1",
+          "denominator": "8"
+        },
+        "matched_logical_row_bell_kernel": {
+          "numerator": "3",
+          "denominator": "2"
+        },
+        "matched_bell_native_qubits": 2,
+        "matched_output_bit_individual_X_kernel": {
+          "numerator": "9",
+          "denominator": "4"
+        },
+        "individual_X_native_qubits": 2,
+        "individual_X_candidate_likelihood_cost": "O(h) scalar cosine factors; this is NOT an efficient secret search",
+        "individual_X_baseline_is_full_classical_phase_state_simulator": false,
+        "bell_source_signal_upper_satisfied": true,
+        "hypothesis_source": "secret order>=4; independent uniform labels; code fixed before these labels",
+        "label_adaptive_code_moment_covered": false,
+        "unmeasured_logical_qubits": 2,
+        "retained_register_source_quantum_collision": {
+          "numerator": "9",
+          "denominator": "2"
+        },
+        "untouched_native_source_quantum_collision": "16",
+        "retained_quantum_register_algorithms_covered_by_bell_ceiling": false,
+        "full_transcript_or_classical_time_dominance_proved": false,
+        "raw_sample_algorithms_excluded": false,
+        "higher_moment_or_noise_advantage_excluded": false
+      },
+      "native_pauli_signature": [
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only"
+      ],
+      "full_output_probabilities": [
+        0.22747000556228286,
+        0.31415999589491705,
+        0.27252999443771714,
+        0.18584000410508295
+      ],
+      "full_pauli_expectations": [
+        1.0,
+        0.0,
+        0.08326000291439992,
+        -0.1733799806652684
+      ],
+      "maximum_probability_identity_error": 5.551115123125783e-17,
+      "joint_state_norm": 1.0,
+      "output_norm": 1.0,
+      "source_qubits_consumed": 4,
+      "postselection_or_cloning_used": false,
+      "native_full_oracle_queries_if_states_generated_by_standard_bridge": 4,
+      "known_two_qubit_clifford_gate_count_upper": 8,
+      "known_control_register_hadamard_count": 4,
+      "identical_state_copy_promise_used": false,
+      "paper_same_state_stabilizer_output_claim": false,
+      "current_labels_chosen_to_fit_code": false,
+      "actual_joint_clifford_measurement_on_independent_native_registers": true
+    },
+    {
+      "code_name": "quartic-two",
+      "modulus": 32,
+      "secret_calibration": 1,
+      "native_labels": [
+        19,
+        9,
+        15,
+        6,
+        9,
+        18,
+        5,
+        30
+      ],
+      "certificate": {
+        "logical_rows": 2,
+        "consumed_native_phase_qubits": 8,
+        "full_output_bits": 4,
+        "code_rows": [
+          [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "systematic_column_order": [
+          0,
+          4,
+          1,
+          2,
+          3,
+          5,
+          6,
+          7
+        ],
+        "systematic_tail": [
+          [
+            1,
+            1,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1
+          ]
+        ],
+        "tail_rank": 2,
+        "tail_gram_equals_identity": true,
+        "basis_rows_doubly_even": true,
+        "shortened_code_terms": [
+          {
+            "codeword_hex": "0x0",
+            "weight": 0,
+            "shortened_dimension": 0,
+            "exact_contribution": {
+              "numerator": "1",
+              "denominator": "1"
+            }
+          },
+          {
+            "codeword_hex": "0xf",
+            "weight": 4,
+            "shortened_dimension": 1,
+            "exact_contribution": {
+              "numerator": "1",
+              "denominator": "8"
+            }
+          },
+          {
+            "codeword_hex": "0xf0",
+            "weight": 4,
+            "shortened_dimension": 1,
+            "exact_contribution": {
+              "numerator": "1",
+              "denominator": "8"
+            }
+          },
+          {
+            "codeword_hex": "0xff",
+            "weight": 8,
+            "shortened_dimension": 2,
+            "exact_contribution": {
+              "numerator": "1",
+              "denominator": "64"
+            }
+          }
+        ],
+        "source_averaged_full_collision_kernel": {
+          "numerator": "81",
+          "denominator": "64"
+        },
+        "source_averaged_centered_chi_squared": {
+          "numerator": "17",
+          "denominator": "64"
+        },
+        "matched_logical_row_bell_kernel": {
+          "numerator": "9",
+          "denominator": "4"
+        },
+        "matched_bell_native_qubits": 4,
+        "matched_output_bit_individual_X_kernel": {
+          "numerator": "81",
+          "denominator": "16"
+        },
+        "individual_X_native_qubits": 4,
+        "individual_X_candidate_likelihood_cost": "O(h) scalar cosine factors; this is NOT an efficient secret search",
+        "individual_X_baseline_is_full_classical_phase_state_simulator": false,
+        "bell_source_signal_upper_satisfied": true,
+        "hypothesis_source": "secret order>=4; independent uniform labels; code fixed before these labels",
+        "label_adaptive_code_moment_covered": false,
+        "unmeasured_logical_qubits": 4,
+        "retained_register_source_quantum_collision": {
+          "numerator": "81",
+          "denominator": "4"
+        },
+        "untouched_native_source_quantum_collision": "256",
+        "retained_quantum_register_algorithms_covered_by_bell_ceiling": false,
+        "full_transcript_or_classical_time_dominance_proved": false,
+        "raw_sample_algorithms_excluded": false,
+        "higher_moment_or_noise_advantage_excluded": false
+      },
+      "native_pauli_signature": [
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only"
+      ],
+      "full_output_probabilities": [
+        0.06369540151098313,
+        0.07857376032685662,
+        0.051142136951958295,
+        0.06308822797472347,
+        0.08779706927097225,
+        0.07291871045509879,
+        0.0704937818762692,
+        0.058547690853504065,
+        0.04141774566756633,
+        0.05109235430128979,
+        0.053971010226591135,
+        0.06657788665342293,
+        0.057089783550478244,
+        0.04741517491675475,
+        0.07439307094518127,
+        0.061786194518349505
+      ],
+      "full_pauli_expectations": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.060882952773216474,
+        -0.0982118697983879,
+        0.0,
+        0.0,
+        0.09251355844073184,
+        0.0,
+        0.11942620781491166,
+        0.0,
+        -0.005632498609429278,
+        -0.009085929556166704,
+        -0.0072710201702796025,
+        -0.011729071172433322
+      ],
+      "maximum_probability_identity_error": 6.938893903907228e-17,
+      "joint_state_norm": 1.0,
+      "output_norm": 0.9999999999999996,
+      "source_qubits_consumed": 8,
+      "postselection_or_cloning_used": false,
+      "native_full_oracle_queries_if_states_generated_by_standard_bridge": 8,
+      "known_two_qubit_clifford_gate_count_upper": 16,
+      "known_control_register_hadamard_count": 8,
+      "identical_state_copy_promise_used": false,
+      "paper_same_state_stabilizer_output_claim": false,
+      "current_labels_chosen_to_fit_code": false,
+      "actual_joint_clifford_measurement_on_independent_native_registers": true
+    },
+    {
+      "code_name": "quartic-two",
+      "modulus": 32,
+      "secret_calibration": 3,
+      "native_labels": [
+        19,
+        9,
+        15,
+        6,
+        9,
+        18,
+        5,
+        30
+      ],
+      "certificate": {
+        "logical_rows": 2,
+        "consumed_native_phase_qubits": 8,
+        "full_output_bits": 4,
+        "code_rows": [
+          [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "systematic_column_order": [
+          0,
+          4,
+          1,
+          2,
+          3,
+          5,
+          6,
+          7
+        ],
+        "systematic_tail": [
+          [
+            1,
+            1,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1
+          ]
+        ],
+        "tail_rank": 2,
+        "tail_gram_equals_identity": true,
+        "basis_rows_doubly_even": true,
+        "shortened_code_terms": [
+          {
+            "codeword_hex": "0x0",
+            "weight": 0,
+            "shortened_dimension": 0,
+            "exact_contribution": {
+              "numerator": "1",
+              "denominator": "1"
+            }
+          },
+          {
+            "codeword_hex": "0xf",
+            "weight": 4,
+            "shortened_dimension": 1,
+            "exact_contribution": {
+              "numerator": "1",
+              "denominator": "8"
+            }
+          },
+          {
+            "codeword_hex": "0xf0",
+            "weight": 4,
+            "shortened_dimension": 1,
+            "exact_contribution": {
+              "numerator": "1",
+              "denominator": "8"
+            }
+          },
+          {
+            "codeword_hex": "0xff",
+            "weight": 8,
+            "shortened_dimension": 2,
+            "exact_contribution": {
+              "numerator": "1",
+              "denominator": "64"
+            }
+          }
+        ],
+        "source_averaged_full_collision_kernel": {
+          "numerator": "81",
+          "denominator": "64"
+        },
+        "source_averaged_centered_chi_squared": {
+          "numerator": "17",
+          "denominator": "64"
+        },
+        "matched_logical_row_bell_kernel": {
+          "numerator": "9",
+          "denominator": "4"
+        },
+        "matched_bell_native_qubits": 4,
+        "matched_output_bit_individual_X_kernel": {
+          "numerator": "81",
+          "denominator": "16"
+        },
+        "individual_X_native_qubits": 4,
+        "individual_X_candidate_likelihood_cost": "O(h) scalar cosine factors; this is NOT an efficient secret search",
+        "individual_X_baseline_is_full_classical_phase_state_simulator": false,
+        "bell_source_signal_upper_satisfied": true,
+        "hypothesis_source": "secret order>=4; independent uniform labels; code fixed before these labels",
+        "label_adaptive_code_moment_covered": false,
+        "unmeasured_logical_qubits": 4,
+        "retained_register_source_quantum_collision": {
+          "numerator": "81",
+          "denominator": "4"
+        },
+        "untouched_native_source_quantum_collision": "256",
+        "retained_quantum_register_algorithms_covered_by_bell_ceiling": false,
+        "full_transcript_or_classical_time_dominance_proved": false,
+        "raw_sample_algorithms_excluded": false,
+        "higher_moment_or_noise_advantage_excluded": false
+      },
+      "native_pauli_signature": [
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only"
+      ],
+      "full_output_probabilities": [
+        0.0535317513540131,
+        0.07393297742290561,
+        0.06927908182736586,
+        0.09568169662056633,
+        0.06413596316880502,
+        0.04373473709991248,
+        0.08300271386722466,
+        0.056600099074024204,
+        0.06020325142712833,
+        0.08314702052455292,
+        0.044455920953775555,
+        0.061398301326892196,
+        0.07212903405005355,
+        0.04918526495262897,
+        0.053262283351633875,
+        0.03631990297851724
+      ],
+      "full_pauli_expectations": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.08326000291439992,
+        -0.1733799806652684,
+        0.0,
+        0.0,
+        0.07979804086963481,
+        0.0,
+        -0.13845632468709002,
+        0.0,
+        0.0066439851153691975,
+        -0.013835382783103584,
+        -0.011527873996964217,
+        0.024005554897231794
+      ],
+      "maximum_probability_identity_error": 4.163336342344337e-17,
+      "joint_state_norm": 1.0,
+      "output_norm": 1.0,
+      "source_qubits_consumed": 8,
+      "postselection_or_cloning_used": false,
+      "native_full_oracle_queries_if_states_generated_by_standard_bridge": 8,
+      "known_two_qubit_clifford_gate_count_upper": 16,
+      "known_control_register_hadamard_count": 8,
+      "identical_state_copy_promise_used": false,
+      "paper_same_state_stabilizer_output_claim": false,
+      "current_labels_chosen_to_fit_code": false,
+      "actual_joint_clifford_measurement_on_independent_native_registers": true
+    },
+    {
+      "code_name": "extended-hamming-eight",
+      "modulus": 32,
+      "secret_calibration": 1,
+      "native_labels": [
+        19,
+        9,
+        15,
+        6,
+        9,
+        18,
+        5,
+        30
+      ],
+      "certificate": {
+        "logical_rows": 4,
+        "consumed_native_phase_qubits": 8,
+        "full_output_bits": 8,
+        "code_rows": [
+          [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            1,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "systematic_column_order": [
+          0,
+          1,
+          2,
+          4,
+          3,
+          5,
+          6,
+          7
+        ],
+        "systematic_tail": [
+          [
+            1,
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1,
+            1
+          ],
+          [
+            0,
+            1,
+            1,
+            1
+          ]
+        ],
+        "tail_rank": 4,
+        "tail_gram_equals_identity": true,
+        "basis_rows_doubly_even": true,
+        "shortened_code_terms": [
+          {
+            "codeword_hex": "0x0",
+            "weight": 0,
+            "shortened_dimension": 0,
+            "exact_contribution": {
+              "numerator": "1",
+              "denominator": "1"
+            }
+          },
+          {
+            "codeword_hex": "0xf",
+            "weight": 4,
+            "shortened_dimension": 1,
+            "exact_contribution": {
+              "numerator": "1",
+              "denominator": "8"
+            }
+          },
+          {
+            "codeword_hex": "0x33",
+            "weight": 4,
+            "shortened_dimension": 1,
+            "exact_contribution": {
+              "numerator": "1",
+              "denominator": "8"
+            }
+          },
+          {
+            "codeword_hex": "0x3c",
+            "weight": 4,
+            "shortened_dimension": 1,
+            "exact_contribution": {
+              "numerator": "1",
+              "denominator": "8"
+            }
+          },
+          {
+            "codeword_hex": "0x55",
+            "weight": 4,
+            "shortened_dimension": 1,
+            "exact_contribution": {
+              "numerator": "1",
+              "denominator": "8"
+            }
+          },
+          {
+            "codeword_hex": "0x5a",
+            "weight": 4,
+            "shortened_dimension": 1,
+            "exact_contribution": {
+              "numerator": "1",
+              "denominator": "8"
+            }
+          },
+          {
+            "codeword_hex": "0x66",
+            "weight": 4,
+            "shortened_dimension": 1,
+            "exact_contribution": {
+              "numerator": "1",
+              "denominator": "8"
+            }
+          },
+          {
+            "codeword_hex": "0x69",
+            "weight": 4,
+            "shortened_dimension": 1,
+            "exact_contribution": {
+              "numerator": "1",
+              "denominator": "8"
+            }
+          },
+          {
+            "codeword_hex": "0xff",
+            "weight": 8,
+            "shortened_dimension": 4,
+            "exact_contribution": {
+              "numerator": "1",
+              "denominator": "16"
+            }
+          },
+          {
+            "codeword_hex": "0xf0",
+            "weight": 4,
+            "shortened_dimension": 1,
+            "exact_contribution": {
+              "numerator": "1",
+              "denominator": "8"
+            }
+          },
+          {
+            "codeword_hex": "0xcc",
+            "weight": 4,
+            "shortened_dimension": 1,
+            "exact_contribution": {
+              "numerator": "1",
+              "denominator": "8"
+            }
+          },
+          {
+            "codeword_hex": "0xc3",
+            "weight": 4,
+            "shortened_dimension": 1,
+            "exact_contribution": {
+              "numerator": "1",
+              "denominator": "8"
+            }
+          },
+          {
+            "codeword_hex": "0xaa",
+            "weight": 4,
+            "shortened_dimension": 1,
+            "exact_contribution": {
+              "numerator": "1",
+              "denominator": "8"
+            }
+          },
+          {
+            "codeword_hex": "0xa5",
+            "weight": 4,
+            "shortened_dimension": 1,
+            "exact_contribution": {
+              "numerator": "1",
+              "denominator": "8"
+            }
+          },
+          {
+            "codeword_hex": "0x99",
+            "weight": 4,
+            "shortened_dimension": 1,
+            "exact_contribution": {
+              "numerator": "1",
+              "denominator": "8"
+            }
+          },
+          {
+            "codeword_hex": "0x96",
+            "weight": 4,
+            "shortened_dimension": 1,
+            "exact_contribution": {
+              "numerator": "1",
+              "denominator": "8"
+            }
+          }
+        ],
+        "source_averaged_full_collision_kernel": {
+          "numerator": "45",
+          "denominator": "16"
+        },
+        "source_averaged_centered_chi_squared": {
+          "numerator": "29",
+          "denominator": "16"
+        },
+        "matched_logical_row_bell_kernel": {
+          "numerator": "81",
+          "denominator": "16"
+        },
+        "matched_bell_native_qubits": 8,
+        "matched_output_bit_individual_X_kernel": {
+          "numerator": "6561",
+          "denominator": "256"
+        },
+        "individual_X_native_qubits": 8,
+        "individual_X_candidate_likelihood_cost": "O(h) scalar cosine factors; this is NOT an efficient secret search",
+        "individual_X_baseline_is_full_classical_phase_state_simulator": false,
+        "bell_source_signal_upper_satisfied": true,
+        "hypothesis_source": "secret order>=4; independent uniform labels; code fixed before these labels",
+        "label_adaptive_code_moment_covered": false,
+        "unmeasured_logical_qubits": 0,
+        "retained_register_source_quantum_collision": {
+          "numerator": "45",
+          "denominator": "16"
+        },
+        "untouched_native_source_quantum_collision": "256",
+        "retained_quantum_register_algorithms_covered_by_bell_ceiling": false,
+        "full_transcript_or_classical_time_dominance_proved": false,
+        "raw_sample_algorithms_excluded": false,
+        "higher_moment_or_noise_advantage_excluded": false
+      },
+      "native_pauli_signature": [
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only"
+      ],
+      "full_output_probabilities": [
+        0.0033599531117561874,
+        0.0004227968556534046,
+        0.00040718488183242175,
+        9.268621937086287e-06,
+        8.625379309570253e-05,
+        0.0015667493202108473,
+        6.243956120178327e-07,
+        0.0017034080004300666,
+        0.0002489970444929317,
+        3.464435377154605e-05,
+        0.00030884283716698985,
+        0.0001929333025010918,
+        2.4557034603881164e-05,
+        0.007338689531883481,
+        0.0001333031262763139,
+        7.338698108578246e-06,
+        3.5801498344220706e-06,
+        0.011777623141382452,
+        0.00013260097180131132,
+        0.008282305855775489,
+        0.009457567482519809,
+        0.0001938889545940474,
+        0.009594226162739005,
+        0.00010825955711036334,
+        9.757770480559234e-05,
+        0.008184517017266192,
+        6.534876094126361e-05,
+        0.008434880702534116,
+        0.015341110491799162,
+        2.0589398495475755e-05,
+        0.008009759658024283,
+        0.00012933549016790963,
+        0.00010732989326674039,
+        0.0002519626890546108,
+        0.004594658588790308,
+        0.0011149532770043259,
+        0.000322233557716667,
+        0.0020250171625347184,
+        0.0006994951194595017,
+        0.002179990646574646,
+        0.0006973529864140911,
+        0.0003909255591543158,
+        0.0007953373837142791,
+        0.000771502585586768,
+        0.0001854793007999636,
+        5.951487263222622e-05,
+        0.0009072313485486776,
+        0.008221363845828288,
+        0.0020896747112872653,
+        0.010781928650944649,
+        0.003495214354920177,
+        0.014726708290785007,
+        0.012172764052895316,
+        0.0026867974472666424,
+        0.012327737536935212,
+        0.0030640590090094838,
+        0.002710787638239999,
+        0.01088980168723897,
+        0.0029008467720785724,
+        0.011178303977133024,
+        0.010318864560599562,
+        0.0024384403927431865,
+        0.0184807135337956,
+        0.0031601924404919043,
+        0.0005007182787299212,
+        0.010291248673973012,
+        0.0010365530319165653,
+        0.010506822449179335,
+        0.01270591661618866,
+        0.0014587254919579506,
+        0.009131684235594573,
+        0.0009662821632545102,
+        0.0011031942125581287,
+        0.016356814318719375,
+        0.000875606329507109,
+        0.008879647402814895,
+        0.0089307878566054,
+        0.0007769475570023425,
+        0.009326967624002879,
+        0.0010810525878614616,
+        0.0011354365183523334,
+        0.00018179285855451504,
+        0.0018935593492418823,
+        0.00017507855605795425,
+        0.0006129482044652205,
+        0.004076956327885328,
+        0.00012050487576177863,
+        0.0005027239472912341,
+        0.007683152219951748,
+        0.0003021187355296954,
+        1.5467411453392786e-05,
+        0.0002650487450725529,
+        4.2773067116361045e-05,
+        0.0001902247706952951,
+        0.00034687809797548315,
+        0.0005864045380928033,
+        0.002111253760265207,
+        0.012124072233211184,
+        0.0031099794726783692,
+        0.012357960812238217,
+        0.010827849114613559,
+        0.002662447042273486,
+        0.014693713659466798,
+        0.0034465225352360764,
+        0.0026386721956685307,
+        0.010452195376382444,
+        0.0030240902686938026,
+        0.018468228267448934,
+        0.010753699515440874,
+        0.0025077844792994386,
+        0.011188017887464478,
+        0.00303417758786146,
+        0.0011991591744178116,
+        2.32274369170857e-05,
+        0.0019755968091280697,
+        0.00047940409364704515,
+        4.7568851608033904e-05,
+        0.00042978792313748957,
+        0.0008316443445706248,
+        0.004295652467990735,
+        9.432374442100051e-06,
+        6.849581546738477e-05,
+        0.007834947372914703,
+        0.0006444317810865243,
+        4.509086240738934e-06,
+        0.00024403552635806123,
+        0.0005309021948027657,
+        0.0006783538983817008,
+        0.009742864514383876,
+        0.0011737751450702862,
+        0.008956514979270941,
+        0.0008378999291021331,
+        0.0012510981780166192,
+        0.016460016473713555,
+        0.0007987791178489016,
+        0.008567600488098528,
+        0.012853820581647137,
+        0.0015619276469521412,
+        0.00905485702393637,
+        0.000654235248538125,
+        0.0013127949365084378,
+        0.01068807626204093,
+        0.0006661003871846051,
+        0.010263669790420035,
+        0.0009229950170521514,
+        0.0006551976509205117,
+        4.457074540079512e-05,
+        0.0004113971714907471,
+        0.007899201477567522,
+        0.0004734661826811598,
+        6.785491952457987e-06,
+        2.1147122513443434e-05,
+        0.0008289974620809845,
+        0.004248303775036789,
+        0.00011182295626084289,
+        0.00025882232473212554,
+        0.0020156584682881284,
+        0.0006467657387797306,
+        0.0015912519966672029,
+        7.118945589748019e-08,
+        0.008839244760484461,
+        0.0001780806546324746,
+        0.008091033829997646,
+        6.449351636722755e-05,
+        6.004474839211954e-05,
+        0.007828866118641748,
+        0.0002207316443006851,
+        0.015429649939997628,
+        0.00824922166733714,
+        3.911778453276826e-05,
+        0.01189035503507367,
+        0.0004079442077847839,
+        0.00019679900530882147,
+        0.0097943684085442,
+        1.2995415211506375e-05,
+        0.009388276740744012,
+        0.0006600861139149693,
+        0.00048436348432172023,
+        3.949919966520122e-06,
+        0.00027870160951808494,
+        8.367097963057735e-07,
+        1.5198340357291188e-05,
+        0.007601620531152204,
+        0.00017588523626585709,
+        3.8973186962239575e-05,
+        0.00037649044802739746,
+        0.0005983175028081314,
+        0.003827105923170066,
+        0.001854736202092038,
+        0.00026355539488074345,
+        0.0014486445342918228,
+        7.975180478342952e-05,
+        0.0010739454859705233,
+        0.007972828913539568,
+        1.6227513247744814e-07,
+        1.4978329373714382e-06,
+        0.0006342128035395477,
+        0.0003751583023538604,
+        0.0004693274190969059,
+        0.00011819818137283271,
+        0.0004714695521423164,
+        0.001907263268793168,
+        0.0001611089775419319,
+        0.001628672879301815,
+        0.004409341563122825,
+        0.0010569362373094695,
+        0.00027404403068858555,
+        3.427756765879604e-06,
+        0.021815277443356405,
+        0.006079507280342146,
+        0.013301397307071035,
+        0.005548273125187303,
+        0.005907571964042808,
+        0.013949809466039046,
+        0.005650611843061781,
+        0.013784924081596445,
+        0.015267561741757021,
+        0.005959181403366963,
+        0.015179489244859533,
+        0.005458302936172705,
+        0.006477747101391663,
+        0.017836541023229138,
+        0.005424238620848076,
+        0.013701243490794865,
+        0.000542976989780427,
+        1.7634919021152505e-06,
+        8.219973501866299e-05,
+        0.007523632218270895,
+        0.0003906779830745264,
+        3.954874535045187e-05,
+        0.0002639312032580146,
+        4.876702072329435e-06,
+        1.555855437710095e-05,
+        0.0016736403487308494,
+        0.0001680889390032368,
+        0.0014133647630602065,
+        0.0004648275822472045,
+        0.00019421130832449757,
+        0.003769626975260297,
+        0.00041722164944693965,
+        0.00839550407714727,
+        9.983083958033174e-05,
+        0.015374823747832816,
+        0.00018160264050177326,
+        0.0001232544624676831,
+        0.008257566701002363,
+        8.858241918956094e-05,
+        0.008130819921185866,
+        0.009585230877122989,
+        5.456246103003246e-05,
+        0.009515473184046212,
+        1.6574953062292908e-05,
+        0.00016631422783497862,
+        0.008443319097781782,
+        0.0003893245689574187,
+        0.01174811849079489
+      ],
+      "full_pauli_expectations": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.060882952773216474,
+        -0.0982118697983879,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.029237024977652012,
+        0.0,
+        0.2045156316442947,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.06764951251827461,
+        0.0,
+        0.0,
+        -0.06764951251827472,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.08838834764831843,
+        0.0,
+        0.0,
+        0.0,
+        -0.08838834764831854,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.008091892047519278,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.7389407317337642,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.09821186979838777,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.060882952773216564,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.16332037060954716,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.16332037060954696,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.005632498609429278,
+        -0.009085929556166704,
+        -0.03939983673864039,
+        -0.005632498609429287,
+        -0.005632498609429285,
+        -0.5143522206548768,
+        -0.003491667020870833,
+        -0.005632498609429271,
+        -0.011729071172433322,
+        -0.0072710201702796025,
+        -0.0016767576349837295,
+        -0.011729071172433304,
+        -0.011729071172433301,
+        -0.00012844112344749786,
+        -0.01892046884016768,
+        -0.011729071172433337,
+        0.09251355844073184,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.11942620781491166,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.1926495125182746,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.057350487481725575,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.08326000291439993,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.17337998066526863,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.06372444738801987,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.13269929220875581,
+        0.0,
+        0.0,
+        0.0,
+        -0.6960669490340057,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.015872817221637782,
+        0.0,
+        0.0,
+        0.05735048748172537,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.19264951251827486,
+        0.0,
+        -0.03448742241036784,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.07181633943553942
+      ],
+      "maximum_probability_identity_error": 3.2959746043559335e-17,
+      "joint_state_norm": 1.0,
+      "output_norm": 1.0000000000000009,
+      "source_qubits_consumed": 8,
+      "postselection_or_cloning_used": false,
+      "native_full_oracle_queries_if_states_generated_by_standard_bridge": 8,
+      "known_two_qubit_clifford_gate_count_upper": 40,
+      "known_control_register_hadamard_count": 16,
+      "identical_state_copy_promise_used": false,
+      "paper_same_state_stabilizer_output_claim": false,
+      "current_labels_chosen_to_fit_code": false,
+      "actual_joint_clifford_measurement_on_independent_native_registers": true
+    },
+    {
+      "code_name": "extended-hamming-eight",
+      "modulus": 32,
+      "secret_calibration": 3,
+      "native_labels": [
+        19,
+        9,
+        15,
+        6,
+        9,
+        18,
+        5,
+        30
+      ],
+      "certificate": {
+        "logical_rows": 4,
+        "consumed_native_phase_qubits": 8,
+        "full_output_bits": 8,
+        "code_rows": [
+          [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            1,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "systematic_column_order": [
+          0,
+          1,
+          2,
+          4,
+          3,
+          5,
+          6,
+          7
+        ],
+        "systematic_tail": [
+          [
+            1,
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1,
+            1
+          ],
+          [
+            0,
+            1,
+            1,
+            1
+          ]
+        ],
+        "tail_rank": 4,
+        "tail_gram_equals_identity": true,
+        "basis_rows_doubly_even": true,
+        "shortened_code_terms": [
+          {
+            "codeword_hex": "0x0",
+            "weight": 0,
+            "shortened_dimension": 0,
+            "exact_contribution": {
+              "numerator": "1",
+              "denominator": "1"
+            }
+          },
+          {
+            "codeword_hex": "0xf",
+            "weight": 4,
+            "shortened_dimension": 1,
+            "exact_contribution": {
+              "numerator": "1",
+              "denominator": "8"
+            }
+          },
+          {
+            "codeword_hex": "0x33",
+            "weight": 4,
+            "shortened_dimension": 1,
+            "exact_contribution": {
+              "numerator": "1",
+              "denominator": "8"
+            }
+          },
+          {
+            "codeword_hex": "0x3c",
+            "weight": 4,
+            "shortened_dimension": 1,
+            "exact_contribution": {
+              "numerator": "1",
+              "denominator": "8"
+            }
+          },
+          {
+            "codeword_hex": "0x55",
+            "weight": 4,
+            "shortened_dimension": 1,
+            "exact_contribution": {
+              "numerator": "1",
+              "denominator": "8"
+            }
+          },
+          {
+            "codeword_hex": "0x5a",
+            "weight": 4,
+            "shortened_dimension": 1,
+            "exact_contribution": {
+              "numerator": "1",
+              "denominator": "8"
+            }
+          },
+          {
+            "codeword_hex": "0x66",
+            "weight": 4,
+            "shortened_dimension": 1,
+            "exact_contribution": {
+              "numerator": "1",
+              "denominator": "8"
+            }
+          },
+          {
+            "codeword_hex": "0x69",
+            "weight": 4,
+            "shortened_dimension": 1,
+            "exact_contribution": {
+              "numerator": "1",
+              "denominator": "8"
+            }
+          },
+          {
+            "codeword_hex": "0xff",
+            "weight": 8,
+            "shortened_dimension": 4,
+            "exact_contribution": {
+              "numerator": "1",
+              "denominator": "16"
+            }
+          },
+          {
+            "codeword_hex": "0xf0",
+            "weight": 4,
+            "shortened_dimension": 1,
+            "exact_contribution": {
+              "numerator": "1",
+              "denominator": "8"
+            }
+          },
+          {
+            "codeword_hex": "0xcc",
+            "weight": 4,
+            "shortened_dimension": 1,
+            "exact_contribution": {
+              "numerator": "1",
+              "denominator": "8"
+            }
+          },
+          {
+            "codeword_hex": "0xc3",
+            "weight": 4,
+            "shortened_dimension": 1,
+            "exact_contribution": {
+              "numerator": "1",
+              "denominator": "8"
+            }
+          },
+          {
+            "codeword_hex": "0xaa",
+            "weight": 4,
+            "shortened_dimension": 1,
+            "exact_contribution": {
+              "numerator": "1",
+              "denominator": "8"
+            }
+          },
+          {
+            "codeword_hex": "0xa5",
+            "weight": 4,
+            "shortened_dimension": 1,
+            "exact_contribution": {
+              "numerator": "1",
+              "denominator": "8"
+            }
+          },
+          {
+            "codeword_hex": "0x99",
+            "weight": 4,
+            "shortened_dimension": 1,
+            "exact_contribution": {
+              "numerator": "1",
+              "denominator": "8"
+            }
+          },
+          {
+            "codeword_hex": "0x96",
+            "weight": 4,
+            "shortened_dimension": 1,
+            "exact_contribution": {
+              "numerator": "1",
+              "denominator": "8"
+            }
+          }
+        ],
+        "source_averaged_full_collision_kernel": {
+          "numerator": "45",
+          "denominator": "16"
+        },
+        "source_averaged_centered_chi_squared": {
+          "numerator": "29",
+          "denominator": "16"
+        },
+        "matched_logical_row_bell_kernel": {
+          "numerator": "81",
+          "denominator": "16"
+        },
+        "matched_bell_native_qubits": 8,
+        "matched_output_bit_individual_X_kernel": {
+          "numerator": "6561",
+          "denominator": "256"
+        },
+        "individual_X_native_qubits": 8,
+        "individual_X_candidate_likelihood_cost": "O(h) scalar cosine factors; this is NOT an efficient secret search",
+        "individual_X_baseline_is_full_classical_phase_state_simulator": false,
+        "bell_source_signal_upper_satisfied": true,
+        "hypothesis_source": "secret order>=4; independent uniform labels; code fixed before these labels",
+        "label_adaptive_code_moment_covered": false,
+        "unmeasured_logical_qubits": 0,
+        "retained_register_source_quantum_collision": {
+          "numerator": "45",
+          "denominator": "16"
+        },
+        "untouched_native_source_quantum_collision": "256",
+        "retained_quantum_register_algorithms_covered_by_bell_ceiling": false,
+        "full_transcript_or_classical_time_dominance_proved": false,
+        "raw_sample_algorithms_excluded": false,
+        "higher_moment_or_noise_advantage_excluded": false
+      },
+      "native_pauli_signature": [
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only"
+      ],
+      "full_output_probabilities": [
+        0.0011849505054222988,
+        0.014128106820807139,
+        0.0001680889390032365,
+        0.0026189467109022065,
+        0.0037696269752603008,
+        0.00046482758224720294,
+        0.0016050937399334046,
+        5.3365362300997554e-05,
+        0.00590069168266312,
+        0.00010968320898765876,
+        0.002101697642320652,
+        4.2793409722131296e-07,
+        0.0023588891412219177,
+        0.00925815784698034,
+        0.0003033143117517488,
+        0.0024597976867771834,
+        0.012628067212840674,
+        0.0011750730096993138,
+        0.00016110897754193323,
+        0.0011160095686740263,
+        0.0005375482620325453,
+        0.002186989191785476,
+        0.00012608604208633938,
+        2.2455956458578677e-05,
+        7.209441705411789e-05,
+        0.004428363370907167,
+        0.0005053881978468869,
+        8.68202748815066e-05,
+        0.007478500182599336,
+        0.002628629701913415,
+        0.00068014002239621,
+        0.0005730548724432367,
+        0.005789549419732331,
+        0.00728260906623752,
+        0.00951547318404623,
+        0.02341642762482488,
+        0.007578585383751822,
+        0.0060268570061194175,
+        0.01174811849079487,
+        0.008443319097781806,
+        0.007767859933514056,
+        0.00620913928097383,
+        0.014186512550822764,
+        0.007852955021464068,
+        0.005509525722770268,
+        0.007666009097795701,
+        0.011104660889556405,
+        0.01800392959531484,
+        3.468811665987465e-06,
+        5.712774043025463e-07,
+        0.01517948924485954,
+        0.004684293167111971,
+        0.0003204770392997259,
+        0.00021684695367196275,
+        0.002736939130962098,
+        0.00438638006071501,
+        0.0003924498424352393,
+        0.0005164309751530691,
+        0.0025788146386086864,
+        0.006392534536778537,
+        0.00010725078680969333,
+        1.6563685671882784e-07,
+        0.010445171284328782,
+        0.005595300803642858,
+        0.002108529553288654,
+        0.00037649044802739453,
+        0.0002960274810510908,
+        0.0012748575165643025,
+        0.0014486445342918287,
+        0.012819040561924872,
+        7.975180478342965e-05,
+        5.116353678343084e-08,
+        0.0027611973209820083,
+        0.007918397154292958,
+        0.00024567161133696763,
+        0.00011753705823176686,
+        0.004100980109800893,
+        5.204050857287845e-05,
+        0.0007619369496333177,
+        0.0009452851695405172,
+        0.0010261025575320276,
+        0.0042483037750367944,
+        0.0009666715006751563,
+        0.003393599828193008,
+        0.015041412959181289,
+        0.0020156584682881227,
+        0.002222423560793252,
+        0.0006467657387797333,
+        0.010030460079830593,
+        0.003438520726697201,
+        0.0027721490394525634,
+        0.0003804459613689462,
+        0.00042203456166303336,
+        0.0065203723879635285,
+        0.0013152792226306725,
+        0.0031813292277959367,
+        1.808587441333826e-05,
+        3.9117784532768745e-05,
+        0.004539650144545718,
+        0.0037654091646782475,
+        0.00015384136123500723,
+        7.414071998836082e-05,
+        0.003527733962459572,
+        0.014898129990092619,
+        1.2431815163515197e-05,
+        0.00042684631774152063,
+        0.005147616101774777,
+        0.00976226687940252,
+        6.874627328498843e-05,
+        0.00025209449319219137,
+        0.006947349770768536,
+        0.0028984101695405176,
+        9.27974448280663e-05,
+        0.0015619276469521414,
+        0.0028612906995797572,
+        0.0070412900424783025,
+        0.0017005806680354984,
+        0.00012492284602197418,
+        0.016524569938139697,
+        0.0034988154472465217,
+        0.0019429767940697664,
+        9.382277166936401e-05,
+        0.011820946411413989,
+        0.004686458002597436,
+        2.615609707301152e-05,
+        0.0018922061022382702,
+        0.0026724717734213444,
+        0.008770809599721829,
+        0.009487444696466767,
+        0.0036687249265807695,
+        0.003024090268693793,
+        0.00047986019454923824,
+        0.0060842563059161575,
+        0.012786505130768377,
+        0.0012564013719299225,
+        0.0032158648660492086,
+        0.004771703519225973,
+        0.017687148538400272,
+        0.0010904815653763758,
+        0.003098378971354221,
+        0.007494994139954534,
+        0.003993174866035294,
+        0.002558180800111574,
+        0.0008094325415730156,
+        0.0031066729361448634,
+        0.007435230593787373,
+        0.0008756063295071105,
+        1.4078040620605637e-05,
+        0.010651692852580668,
+        0.005604802490988583,
+        0.0010810525878614634,
+        0.0007769475570023409,
+        0.015662645731931372,
+        0.004181940232579504,
+        0.0005313271092021582,
+        0.0010432673344131281,
+        0.0037107409320138595,
+        0.005163161980860646,
+        0.0005269986075515875,
+        0.0002263486410176814,
+        0.004080655143036545,
+        0.00249422319428576,
+        0.00783494737291471,
+        0.0010584294776349104,
+        0.001960935083183331,
+        0.003920398577302616,
+        0.0047837901454534084,
+        0.011486038970305621,
+        0.002102344629254814,
+        0.0035676929795494666,
+        0.003163908006138195,
+        0.01662190208099575,
+        0.004029994744164894,
+        0.0022812464856263393,
+        0.00542724774669188,
+        0.001925428472772636,
+        0.0004934630027104595,
+        0.0005897328392177339,
+        1.546741145339267e-05,
+        0.00338622694370211,
+        0.0003468780979754819,
+        4.277306711636055e-05,
+        0.007912518490978519,
+        0.002865628129386438,
+        0.00010448197194120638,
+        7.387314146897048e-05,
+        0.012616142017704213,
+        0.0016779855740355356,
+        0.0005601043504655138,
+        0.00025945438393160477,
+        0.0002042863376118159,
+        0.0016567073864585914,
+        0.005760313150138568,
+        0.010889801687238963,
+        0.0005804270530629977,
+        9.33213403667282e-06,
+        0.007238710089848036,
+        0.00299275060771386,
+        0.0011273868251643708,
+        0.0011137151641654327,
+        0.005107645382445211,
+        0.0033478949809733942,
+        0.0006307829227771248,
+        0.0011666525923692004,
+        0.004586374514338951,
+        0.015759750661065816,
+        0.0004452016803144885,
+        0.00016848115816169286,
+        0.014804167666610059,
+        0.008184517017266186,
+        0.0048814962388015765,
+        0.002046832794796829,
+        0.005334356299333133,
+        0.011235674244727456,
+        0.0034553208557847113,
+        0.005124350980043829,
+        0.005799810144311559,
+        0.00899430006560579,
+        0.003076018700024176,
+        0.005059986661620891,
+        0.019953734696851452,
+        0.006730960325052082,
+        0.004362465193947284,
+        0.0025897874910276305,
+        4.222352786863246e-06,
+        0.00039092555915431674,
+        0.0024750462519676055,
+        0.006646736663674235,
+        0.00019915096179890724,
+        0.00018547930079996282,
+        0.0043054743547663935,
+        5.9514872632226854e-05,
+        9.87641203668638e-06,
+        3.1970259455646707e-06,
+        0.001867080294738547,
+        0.0006498789489499447,
+        0.00028424604974892497,
+        7.525527596131593e-06,
+        0.0008858585464574155,
+        0.01205923469318428,
+        0.0019115096723825095,
+        3.4644353771545996e-05,
+        0.009125118902296184,
+        0.0015476701275585108,
+        0.00013330312627631515,
+        0.0018023332505354259,
+        7.338698108578264e-06,
+        0.005908656643502917,
+        6.133032314079915e-05,
+        0.0015027492290543233,
+        0.0001654631904619746,
+        0.003902502167439391,
+        0.0018077276972387993,
+        3.5049994319129456e-05,
+        0.013859436862826972,
+        0.0006366624910276214
+      ],
+      "full_pauli_expectations": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.08326000291439992,
+        -0.1733799806652684,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.02304375893150712,
+        0.0,
+        0.6264437038417126,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.16332037060954724,
+        0.0,
+        0.0,
+        -0.16332037060954702,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0883883476483184,
+        0.0,
+        0.0,
+        0.0,
+        0.0883883476483186,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.2796837425111751,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.051614075118835596,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.1733799806652686,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.08326000291440008,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.06764951251827474,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.0676495125182747,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0066439851153691975,
+        -0.013835382783103584,
+        -0.18061648085766005,
+        0.006643985115369189,
+        0.006643985115369214,
+        -0.00122611040511012,
+        -0.0031905541686317812,
+        0.006643985115369196,
+        0.024005554897231794,
+        -0.011527873996964217,
+        -0.0008830453824924141,
+        0.024005554897231832,
+        0.024005554897231742,
+        -0.13008008802360815,
+        -0.049988980281686336,
+        0.02400555489723181,
+        0.07979804086963481,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.13845632468709002,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.28832037060954735,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.038320370609547114,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.040680688456512785,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.1469844503024201,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.07516811086688077,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.2715918504636561,
+        0.0,
+        0.0,
+        0.0,
+        0.023755349723639116,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.46509706590618366,
+        0.0,
+        0.0,
+        -0.03832037060954707,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.288320370609547,
+        0.0,
+        -0.09821186979838771,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.3548518533780563
+      ],
+      "maximum_probability_identity_error": 6.591949208711867e-17,
+      "joint_state_norm": 1.0,
+      "output_norm": 1.0000000000000009,
+      "source_qubits_consumed": 8,
+      "postselection_or_cloning_used": false,
+      "native_full_oracle_queries_if_states_generated_by_standard_bridge": 8,
+      "known_two_qubit_clifford_gate_count_upper": 40,
+      "known_control_register_hadamard_count": 16,
+      "identical_state_copy_promise_used": false,
+      "paper_same_state_stabilizer_output_claim": false,
+      "current_labels_chosen_to_fit_code": false,
+      "actual_joint_clifford_measurement_on_independent_native_registers": true
+    }
+  ],
+  "odd_secret_signature_controls": [
+    {
+      "secret_calibration": 1,
+      "all_public_label_signature": [
+        "X",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "ZX",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "X",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "ZX",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only"
+      ]
+    },
+    {
+      "secret_calibration": 3,
+      "all_public_label_signature": [
+        "X",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "ZX",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "X",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "ZX",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only"
+      ]
+    },
+    {
+      "secret_calibration": 5,
+      "all_public_label_signature": [
+        "X",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "ZX",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "X",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "ZX",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only"
+      ]
+    },
+    {
+      "secret_calibration": 7,
+      "all_public_label_signature": [
+        "X",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "ZX",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "X",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "ZX",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only"
+      ]
+    },
+    {
+      "secret_calibration": 9,
+      "all_public_label_signature": [
+        "X",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "ZX",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "X",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "ZX",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only"
+      ]
+    },
+    {
+      "secret_calibration": 11,
+      "all_public_label_signature": [
+        "X",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "ZX",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "X",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "ZX",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only"
+      ]
+    },
+    {
+      "secret_calibration": 13,
+      "all_public_label_signature": [
+        "X",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "ZX",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "X",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "ZX",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only"
+      ]
+    },
+    {
+      "secret_calibration": 15,
+      "all_public_label_signature": [
+        "X",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "ZX",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "X",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "ZX",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only"
+      ]
+    },
+    {
+      "secret_calibration": 17,
+      "all_public_label_signature": [
+        "X",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "ZX",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "X",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "ZX",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only"
+      ]
+    },
+    {
+      "secret_calibration": 19,
+      "all_public_label_signature": [
+        "X",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "ZX",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "X",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "ZX",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only"
+      ]
+    },
+    {
+      "secret_calibration": 21,
+      "all_public_label_signature": [
+        "X",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "ZX",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "X",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "ZX",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only"
+      ]
+    },
+    {
+      "secret_calibration": 23,
+      "all_public_label_signature": [
+        "X",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "ZX",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "X",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "ZX",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only"
+      ]
+    },
+    {
+      "secret_calibration": 25,
+      "all_public_label_signature": [
+        "X",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "ZX",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "X",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "ZX",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only"
+      ]
+    },
+    {
+      "secret_calibration": 27,
+      "all_public_label_signature": [
+        "X",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "ZX",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "X",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "ZX",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only"
+      ]
+    },
+    {
+      "secret_calibration": 29,
+      "all_public_label_signature": [
+        "X",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "ZX",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "X",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "ZX",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only"
+      ]
+    },
+    {
+      "secret_calibration": 31,
+      "all_public_label_signature": [
+        "X",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "ZX",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "X",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "ZX",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only",
+        "identity-only"
+      ]
+    }
+  ],
+  "retained_quantum_register_countercontrols": [
+    {
+      "code_rows": [
+        [
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1
+        ]
+      ],
+      "modulus": 32,
+      "first_secret_calibration": 1,
+      "second_secret_calibration": 31,
+      "native_labels": [
+        1,
+        5,
+        7,
+        11
+      ],
+      "classical_full_output_total_variation": 1.0213184464813452e-16,
+      "classical_and_retained_quantum_output_trace_distance": 2.4281789700468967e-16,
+      "original_native_input_trace_distance": 0.9982544816916219,
+      "unnormalized_branch_trace_distance_terms": [
+        7.57292666618367e-18,
+        3.524304457020098e-18,
+        2.6520938380254907e-17,
+        3.460490397227306e-17,
+        2.5129658251021553e-18,
+        8.966646774636212e-19,
+        1.2614721439760927e-17,
+        7.884212453150279e-18,
+        3.3883145000789806e-17,
+        5.3112830567790196e-17,
+        9.464033277657099e-18,
+        7.959202116427952e-18,
+        2.5048190966511994e-17,
+        1.1244812919931814e-17,
+        1.8503462010924214e-18,
+        4.123698083279686e-18
+      ],
+      "instrument_output_purity": 0.13867187500000006,
+      "actual_remaining_encoded_qubits": 0,
+      "all_ones_in_code": true,
+      "all_classical_branches_retained": true,
+      "conditional_normalization_used": false,
+      "polynomial_time_full_shift_decoder_supplied": false
+    },
+    {
+      "code_rows": [
+        [
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "modulus": 32,
+      "first_secret_calibration": 1,
+      "second_secret_calibration": 31,
+      "native_labels": [
+        1,
+        5,
+        7,
+        11
+      ],
+      "classical_full_output_total_variation": 0.0,
+      "classical_and_retained_quantum_output_trace_distance": 1.9847027694598865e-16,
+      "original_native_input_trace_distance": 0.9982544816916219,
+      "unnormalized_branch_trace_distance_terms": [
+        7.165479506887848e-17,
+        4.1729179291068197e-17,
+        3.271839777285618e-17,
+        5.236790481318579e-17
+      ],
+      "instrument_output_purity": 0.25524666308792043,
+      "actual_remaining_encoded_qubits": 2,
+      "all_ones_in_code": true,
+      "all_classical_branches_retained": true,
+      "conditional_normalization_used": false,
+      "polynomial_time_full_shift_decoder_supplied": false
+    },
+    {
+      "code_rows": [
+        [
+          1,
+          1,
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "modulus": 32,
+      "first_secret_calibration": 1,
+      "second_secret_calibration": 31,
+      "native_labels": [
+        19,
+        9,
+        15,
+        6,
+        9,
+        18
+      ],
+      "classical_full_output_total_variation": 7.28583859910259e-17,
+      "classical_and_retained_quantum_output_trace_distance": 0.8970007861233724,
+      "original_native_input_trace_distance": 0.9999397888895786,
+      "unnormalized_branch_trace_distance_terms": [
+        0.057963753604253626,
+        0.04535434913326619,
+        0.041569468874395735,
+        0.07923451637947247,
+        0.047026383168461514,
+        0.0566156604067273,
+        0.07923451637947249,
+        0.041569468874395735,
+        0.04305400060739514,
+        0.07905233129444296,
+        0.05686976794477357,
+        0.0456711559751309,
+        0.0800233391685896,
+        0.041221150392690684,
+        0.0456711559751309,
+        0.05686976794477358
+      ],
+      "instrument_output_purity": 0.06657416660075063,
+      "actual_remaining_encoded_qubits": 2,
+      "all_ones_in_code": false,
+      "all_classical_branches_retained": true,
+      "conditional_normalization_used": false,
+      "polynomial_time_full_shift_decoder_supplied": false,
+      "unfiltered_label_seed": 43011
+    },
+    {
+      "code_rows": [
+        [
+          1,
+          1,
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "modulus": 32,
+      "first_secret_calibration": 1,
+      "second_secret_calibration": 31,
+      "native_labels": [
+        21,
+        11,
+        9,
+        14,
+        31,
+        2
+      ],
+      "classical_full_output_total_variation": 8.326672684688674e-17,
+      "classical_and_retained_quantum_output_trace_distance": 0.36777323228358466,
+      "original_native_input_trace_distance": 0.9987285983777267,
+      "unnormalized_branch_trace_distance_terms": [
+        0.022368757288254805,
+        0.014394211284087917,
+        0.007478606235256962,
+        0.043856932716231714,
+        0.018829371218691195,
+        0.018788544398663246,
+        0.041205266905870966,
+        0.016777546832419773,
+        0.014555623907726797,
+        0.04130930591168186,
+        0.01855868170155654,
+        0.020595269137890067,
+        0.043055901533996785,
+        0.008032078519466525,
+        0.014092855791858257,
+        0.023874278899931278
+      ],
+      "instrument_output_purity": 0.07367321041118084,
+      "actual_remaining_encoded_qubits": 2,
+      "all_ones_in_code": false,
+      "all_classical_branches_retained": true,
+      "conditional_normalization_used": false,
+      "polynomial_time_full_shift_decoder_supplied": false,
+      "unfiltered_label_seed": 43012
+    },
+    {
+      "code_rows": [
+        [
+          1,
+          1,
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "modulus": 32,
+      "first_secret_calibration": 1,
+      "second_secret_calibration": 31,
+      "native_labels": [
+        0,
+        18,
+        17,
+        22,
+        28,
+        7
+      ],
+      "classical_full_output_total_variation": 9.71445146547012e-17,
+      "classical_and_retained_quantum_output_trace_distance": 0.35068093980913423,
+      "original_native_input_trace_distance": 0.9988552306155382,
+      "unnormalized_branch_trace_distance_terms": [
+        0.018456336810934938,
+        0.01845633681093493,
+        0.02532734717113338,
+        0.02532734717113338,
+        0.018456336810934934,
+        0.018456336810934938,
+        0.0253273471711334,
+        0.025327347171133392,
+        0.025033275903808234,
+        0.02503327590380821,
+        0.01885327506640703,
+        0.01885327506640702,
+        0.025033275903808216,
+        0.02503327590380821,
+        0.018853275066407008,
+        0.018853275066407008
+      ],
+      "instrument_output_purity": 0.07217446985858936,
+      "actual_remaining_encoded_qubits": 2,
+      "all_ones_in_code": false,
+      "all_classical_branches_retained": true,
+      "conditional_normalization_used": false,
+      "polynomial_time_full_shift_decoder_supplied": false,
+      "unfiltered_label_seed": 43013
+    },
+    {
+      "code_rows": [
+        [
+          1,
+          1,
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "modulus": 32,
+      "first_secret_calibration": 1,
+      "second_secret_calibration": 31,
+      "native_labels": [
+        16,
+        2,
+        10,
+        21,
+        26,
+        25
+      ],
+      "classical_full_output_total_variation": 1.218643241873707e-16,
+      "classical_and_retained_quantum_output_trace_distance": 0.35930323324717345,
+      "original_native_input_trace_distance": 0.999892469397947,
+      "unnormalized_branch_trace_distance_terms": [
+        0.0033616437160448737,
+        0.003361643716044871,
+        0.04036511253476799,
+        0.040365112534767954,
+        0.0033616437160448693,
+        0.00336164371604487,
+        0.04036511253476795,
+        0.040365112534767954,
+        0.040050726840397975,
+        0.04005072684039798,
+        0.00604832522058255,
+        0.00604832522058255,
+        0.04005072684039801,
+        0.04005072684039796,
+        0.006048325220582547,
+        0.00604832522058255
+      ],
+      "instrument_output_purity": 0.0955063099099554,
+      "actual_remaining_encoded_qubits": 2,
+      "all_ones_in_code": false,
+      "all_classical_branches_retained": true,
+      "conditional_normalization_used": false,
+      "polynomial_time_full_shift_decoder_supplied": false,
+      "unfiltered_label_seed": 43014
+    },
+    {
+      "code_rows": [
+        [
+          1,
+          1,
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "modulus": 32,
+      "first_secret_calibration": 1,
+      "second_secret_calibration": 31,
+      "native_labels": [
+        18,
+        25,
+        30,
+        14,
+        27,
+        3
+      ],
+      "classical_full_output_total_variation": 6.245004513516506e-17,
+      "classical_and_retained_quantum_output_trace_distance": 0.4153720929209123,
+      "original_native_input_trace_distance": 0.9974715543433228,
+      "unnormalized_branch_trace_distance_terms": [
+        0.02105083779264902,
+        0.045986897722258384,
+        0.01879219141459226,
+        0.023465928865893798,
+        0.045776031623833494,
+        0.021505521678482218,
+        0.020457806905969447,
+        0.022028944874867052,
+        0.008063071697601955,
+        0.01223675697769528,
+        0.027042024789841933,
+        0.050156817665452665,
+        0.01141877972639483,
+        0.009184923303540333,
+        0.0488219049627133,
+        0.02938365291912634
+      ],
+      "instrument_output_purity": 0.07648271612189539,
+      "actual_remaining_encoded_qubits": 2,
+      "all_ones_in_code": false,
+      "all_classical_branches_retained": true,
+      "conditional_normalization_used": false,
+      "polynomial_time_full_shift_decoder_supplied": false,
+      "unfiltered_label_seed": 43015
+    },
+    {
+      "code_rows": [
+        [
+          1,
+          1,
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "modulus": 32,
+      "first_secret_calibration": 1,
+      "second_secret_calibration": 31,
+      "native_labels": [
+        24,
+        13,
+        3,
+        14,
+        6,
+        7
+      ],
+      "classical_full_output_total_variation": 7.45931094670027e-17,
+      "classical_and_retained_quantum_output_trace_distance": 0.5698963082976463,
+      "original_native_input_trace_distance": 1.0,
+      "unnormalized_branch_trace_distance_terms": [
+        0.025336323418587978,
+        0.08701960811998483,
+        0.020045710052366363,
+        0.01314140671091214,
+        0.08701960811998495,
+        0.025336323418587978,
+        0.013141406710912133,
+        0.02004571005236638,
+        0.016807193615202873,
+        0.0073039602995211735,
+        0.02759126707231683,
+        0.08770268485993091,
+        0.00730396029952118,
+        0.016807193615202866,
+        0.0877026848599309,
+        0.027591267072316836
+      ],
+      "instrument_output_purity": 0.0817364992253972,
+      "actual_remaining_encoded_qubits": 2,
+      "all_ones_in_code": false,
+      "all_classical_branches_retained": true,
+      "conditional_normalization_used": false,
+      "polynomial_time_full_shift_decoder_supplied": false,
+      "unfiltered_label_seed": 43016
+    },
+    {
+      "code_rows": [
+        [
+          1,
+          1,
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "modulus": 32,
+      "first_secret_calibration": 1,
+      "second_secret_calibration": 31,
+      "native_labels": [
+        4,
+        14,
+        0,
+        16,
+        21,
+        24
+      ],
+      "classical_full_output_total_variation": 2.949029909160572e-17,
+      "classical_and_retained_quantum_output_trace_distance": 3.2493403268824726e-16,
+      "original_native_input_trace_distance": 1.0,
+      "unnormalized_branch_trace_distance_terms": [
+        2.4457706667133575e-17,
+        3.0150660145192603e-17,
+        3.015066014519257e-17,
+        2.4457706667133568e-17,
+        7.915854462872489e-18,
+        2.263139354060766e-17,
+        2.263139354060765e-17,
+        7.915854462872486e-18,
+        2.2037943202726656e-17,
+        2.882583149183149e-17,
+        2.8825831491831477e-17,
+        2.2037943202726647e-17,
+        1.8413145193435995e-17,
+        8.034481640323208e-18,
+        8.034481640323204e-18,
+        1.841314519343599e-17
+      ],
+      "instrument_output_purity": 0.09233743877717598,
+      "actual_remaining_encoded_qubits": 2,
+      "all_ones_in_code": false,
+      "all_classical_branches_retained": true,
+      "conditional_normalization_used": false,
+      "polynomial_time_full_shift_decoder_supplied": false,
+      "unfiltered_label_seed": 43017
+    },
+    {
+      "code_rows": [
+        [
+          1,
+          1,
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "modulus": 32,
+      "first_secret_calibration": 1,
+      "second_secret_calibration": 31,
+      "native_labels": [
+        19,
+        2,
+        20,
+        6,
+        10,
+        14
+      ],
+      "classical_full_output_total_variation": 1.0408340855860843e-16,
+      "classical_and_retained_quantum_output_trace_distance": 0.5322016775393943,
+      "original_native_input_trace_distance": 0.9972957900454227,
+      "unnormalized_branch_trace_distance_terms": [
+        0.03537142992169528,
+        0.013147824718057062,
+        0.06479125839530364,
+        0.016097139478613888,
+        0.025897734147568977,
+        0.027446506436047423,
+        0.020927497215591388,
+        0.06339609549595601,
+        0.06695759045241728,
+        0.015018140873417282,
+        0.031076137146672032,
+        0.014367972679431655,
+        0.026895573882243447,
+        0.0631307498769992,
+        0.01962857303095492,
+        0.028051453788424847
+      ],
+      "instrument_output_purity": 0.07527577363309804,
+      "actual_remaining_encoded_qubits": 2,
+      "all_ones_in_code": false,
+      "all_classical_branches_retained": true,
+      "conditional_normalization_used": false,
+      "polynomial_time_full_shift_decoder_supplied": false,
+      "unfiltered_label_seed": 43018
+    }
+  ],
+  "overlapping_native_logical_branch_controls": [
+    {
+      "modulus": 32,
+      "secret_calibration": 1,
+      "native_labels": [
+        19,
+        9,
+        15,
+        6,
+        9,
+        18
+      ],
+      "branch": "all four measured commuting generator bits zero",
+      "unnormalized_logical_amplitudes": [
+        [
+          -0.07349222515120996,
+          -0.0734922251512099
+        ],
+        [
+          -2.949029909160572e-17,
+          -0.10393370153781818
+        ],
+        [
+          0.1361464570082,
+          0.004109830950674931
+        ],
+        [
+          -0.09336399365026837,
+          0.09917617231977358
+        ]
+      ],
+      "zero_branch_probability": 0.05870992556336209,
+      "full_formula_error": 1.1775693440128312e-16,
+      "logical_basis_order": [
+        "p0,a0",
+        "p0,a1",
+        "p1,a0",
+        "p1,a1"
+      ],
+      "known_clifford_decoding_exists": true,
+      "native_source_qubits": 6,
+      "retained_logical_qubits": 2,
+      "nonlinear_angle_compiler_is_new_algorithm_claim": false,
+      "all_other_measurement_branches_retained_in_parent_countercontrol": true,
+      "conditional_success_without_branch_cost_claim": false
+    },
+    {
+      "modulus": 32,
+      "secret_calibration": 1,
+      "native_labels": [
+        21,
+        11,
+        9,
+        14,
+        31,
+        2
+      ],
+      "branch": "all four measured commuting generator bits zero",
+      "unnormalized_logical_amplitudes": [
+        [
+          0.11160593489919385,
+          -0.11160593489919388
+        ],
+        [
+          0.11160593489919385,
+          -0.11160593489919388
+        ],
+        [
+          0.10299875957677145,
+          -0.06277227580981612
+        ],
+        [
+          0.06277227580981606,
+          -0.10299875957677146
+        ]
+      ],
+      "zero_branch_probability": 0.07892174498828677,
+      "full_formula_error": 1.8875832159447664e-16,
+      "logical_basis_order": [
+        "p0,a0",
+        "p0,a1",
+        "p1,a0",
+        "p1,a1"
+      ],
+      "known_clifford_decoding_exists": true,
+      "native_source_qubits": 6,
+      "retained_logical_qubits": 2,
+      "nonlinear_angle_compiler_is_new_algorithm_claim": false,
+      "all_other_measurement_branches_retained_in_parent_countercontrol": true,
+      "conditional_success_without_branch_cost_claim": false
+    },
+    {
+      "modulus": 32,
+      "secret_calibration": 1,
+      "native_labels": [
+        0,
+        18,
+        17,
+        22,
+        28,
+        7
+      ],
+      "branch": "all four measured commuting generator bits zero",
+      "unnormalized_logical_amplitudes": [
+        [
+          0.01605229103946478,
+          -0.05552346001215555
+        ],
+        [
+          0.05061169893712087,
+          0.027910331241949703
+        ],
+        [
+          -0.057742470781955435,
+          -0.0864177145228181
+        ],
+        [
+          0.02027645930134111,
+          0.10193664460611465
+        ]
+      ],
+      "zero_branch_probability": 0.028285489949378764,
+      "full_formula_error": 1.0408340855860843e-16,
+      "logical_basis_order": [
+        "p0,a0",
+        "p0,a1",
+        "p1,a0",
+        "p1,a1"
+      ],
+      "known_clifford_decoding_exists": true,
+      "native_source_qubits": 6,
+      "retained_logical_qubits": 2,
+      "nonlinear_angle_compiler_is_new_algorithm_claim": false,
+      "all_other_measurement_branches_retained_in_parent_countercontrol": true,
+      "conditional_success_without_branch_cost_claim": false
+    },
+    {
+      "modulus": 32,
+      "secret_calibration": 1,
+      "native_labels": [
+        16,
+        2,
+        10,
+        21,
+        26,
+        25
+      ],
+      "branch": "all four measured commuting generator bits zero",
+      "unnormalized_logical_amplitudes": [
+        [
+          -0.02181841124343219,
+          0.01585599112008295
+        ],
+        [
+          -0.004216067701503399,
+          -0.026639825388392054
+        ],
+        [
+          -0.029250056220889088,
+          0.010826186092222252
+        ],
+        [
+          -0.013027643503680596,
+          -0.028338182704076315
+        ]
+      ],
+      "zero_branch_probability": 0.0034004552356325553,
+      "full_formula_error": 5.551115123125783e-17,
+      "logical_basis_order": [
+        "p0,a0",
+        "p0,a1",
+        "p1,a0",
+        "p1,a1"
+      ],
+      "known_clifford_decoding_exists": true,
+      "native_source_qubits": 6,
+      "retained_logical_qubits": 2,
+      "nonlinear_angle_compiler_is_new_algorithm_claim": false,
+      "all_other_measurement_branches_retained_in_parent_countercontrol": true,
+      "conditional_success_without_branch_cost_claim": false
+    },
+    {
+      "modulus": 32,
+      "secret_calibration": 1,
+      "native_labels": [
+        18,
+        25,
+        30,
+        14,
+        27,
+        3
+      ],
+      "branch": "all four measured commuting generator bits zero",
+      "unnormalized_logical_amplitudes": [
+        [
+          0.014195995225165844,
+          0.05774247078195543
+        ],
+        [
+          -0.05589798216965408,
+          0.02027645930134108
+        ],
+        [
+          -0.09890389650995751,
+          -0.05286523407349689
+        ],
+        [
+          0.09890389650995748,
+          0.05286523407349691
+        ]
+      ],
+      "zero_branch_probability": 0.032224865861871815,
+      "full_formula_error": 1.208344172447806e-16,
+      "logical_basis_order": [
+        "p0,a0",
+        "p0,a1",
+        "p1,a0",
+        "p1,a1"
+      ],
+      "known_clifford_decoding_exists": true,
+      "native_source_qubits": 6,
+      "retained_logical_qubits": 2,
+      "nonlinear_angle_compiler_is_new_algorithm_claim": false,
+      "all_other_measurement_branches_retained_in_parent_countercontrol": true,
+      "conditional_success_without_branch_cost_claim": false
+    },
+    {
+      "modulus": 32,
+      "secret_calibration": 1,
+      "native_labels": [
+        24,
+        13,
+        3,
+        14,
+        6,
+        7
+      ],
+      "branch": "all four measured commuting generator bits zero",
+      "unnormalized_logical_amplitudes": [
+        [
+          0.03858228547718182,
+          -0.10557789982759166
+        ],
+        [
+          -0.026575940461476766,
+          0.10921998477035133
+        ],
+        [
+          0.04737305321693348,
+          0.03428713208784004
+        ],
+        [
+          0.05843816415548668,
+          -0.002189650209460735
+        ]
+      ],
+      "zero_branch_probability": 0.03211019856510227,
+      "full_formula_error": 8.777083671441753e-17,
+      "logical_basis_order": [
+        "p0,a0",
+        "p0,a1",
+        "p1,a0",
+        "p1,a1"
+      ],
+      "known_clifford_decoding_exists": true,
+      "native_source_qubits": 6,
+      "retained_logical_qubits": 2,
+      "nonlinear_angle_compiler_is_new_algorithm_claim": false,
+      "all_other_measurement_branches_retained_in_parent_countercontrol": true,
+      "conditional_success_without_branch_cost_claim": false
+    },
+    {
+      "modulus": 32,
+      "secret_calibration": 1,
+      "native_labels": [
+        4,
+        14,
+        0,
+        16,
+        21,
+        24
+      ],
+      "branch": "all four measured commuting generator bits zero",
+      "unnormalized_logical_amplitudes": [
+        [
+          0.23350840157606637,
+          -0.022998570166915075
+        ],
+        [
+          -0.23350840157606637,
+          0.02299857016691508
+        ],
+        [
+          0.06005016494424213,
+          -0.0059144250171875995
+        ],
+        [
+          -0.06005016494424218,
+          0.005914425017187625
+        ]
+      ],
+      "zero_branch_probability": 0.11739222113889322,
+      "full_formula_error": 4.718958039861916e-17,
+      "logical_basis_order": [
+        "p0,a0",
+        "p0,a1",
+        "p1,a0",
+        "p1,a1"
+      ],
+      "known_clifford_decoding_exists": true,
+      "native_source_qubits": 6,
+      "retained_logical_qubits": 2,
+      "nonlinear_angle_compiler_is_new_algorithm_claim": false,
+      "all_other_measurement_branches_retained_in_parent_countercontrol": true,
+      "conditional_success_without_branch_cost_claim": false
+    },
+    {
+      "modulus": 32,
+      "secret_calibration": 1,
+      "native_labels": [
+        19,
+        2,
+        20,
+        6,
+        10,
+        14
+      ],
+      "branch": "all four measured commuting generator bits zero",
+      "unnormalized_logical_amplitudes": [
+        [
+          -0.10850840157606642,
+          0.02299857016691507
+        ],
+        [
+          0.0013877200851009975,
+          -0.11091024152566259
+        ],
+        [
+          0.055825996682365785,
+          -0.07498618198713934
+        ],
+        [
+          -0.0626542318569901,
+          0.06938239420053502
+        ]
+      ],
+      "zero_branch_probability": 0.042084953673806616,
+      "full_formula_error": 1.0951987626211291e-16,
+      "logical_basis_order": [
+        "p0,a0",
+        "p0,a1",
+        "p1,a0",
+        "p1,a1"
+      ],
+      "known_clifford_decoding_exists": true,
+      "native_source_qubits": 6,
+      "retained_logical_qubits": 2,
+      "nonlinear_angle_compiler_is_new_algorithm_claim": false,
+      "all_other_measurement_branches_retained_in_parent_countercontrol": true,
+      "conditional_success_without_branch_cost_claim": false
+    }
+  ],
+  "scaling_ledgers": [
+    {
+      "modulus_bits": 8,
+      "sq_gate": {
+        "modulus": "256",
+        "order_at_least_four_negation_orbits": "127",
+        "logical_rows": 4,
+        "bounded_expectation_queries": 64,
+        "absolute_tolerance": {
+          "numerator": "1",
+          "denominator": "8"
+        },
+        "matched_bell_centered_norm_upper": {
+          "numerator": "65",
+          "denominator": "16"
+        },
+        "uniform_orbit_identification_success_upper": {
+          "numerator": "1",
+          "denominator": "1"
+        },
+        "raw_sample_or_multirecord_inference_covered": false,
+        "source_label_adaptive_measurement_covered": false,
+        "bound_may_be_vacuous_for_growing_logical_rows": true,
+        "classical_computational_hardness_claim": false
+      },
+      "doubly_even_quartic_block_kernel": {
+        "numerator": "6561",
+        "denominator": "4096"
+      },
+      "native_scalar_commutator_label_fraction": {
+        "numerator": "1",
+        "denominator": "64"
+      },
+      "odd_secret_single_state_worst_gap_upper": {
+        "numerator": "5",
+        "denominator": "16384"
+      },
+      "worst_gap_not_a_typical_packet_claim": true
+    },
+    {
+      "modulus_bits": 16,
+      "sq_gate": {
+        "modulus": "65536",
+        "order_at_least_four_negation_orbits": "32767",
+        "logical_rows": 4,
+        "bounded_expectation_queries": 256,
+        "absolute_tolerance": {
+          "numerator": "1",
+          "denominator": "16"
+        },
+        "matched_bell_centered_norm_upper": {
+          "numerator": "65",
+          "denominator": "16"
+        },
+        "uniform_orbit_identification_success_upper": {
+          "numerator": "1",
+          "denominator": "1"
+        },
+        "raw_sample_or_multirecord_inference_covered": false,
+        "source_label_adaptive_measurement_covered": false,
+        "bound_may_be_vacuous_for_growing_logical_rows": true,
+        "classical_computational_hardness_claim": false
+      },
+      "doubly_even_quartic_block_kernel": {
+        "numerator": "6561",
+        "denominator": "4096"
+      },
+      "native_scalar_commutator_label_fraction": {
+        "numerator": "1",
+        "denominator": "16384"
+      },
+      "odd_secret_single_state_worst_gap_upper": {
+        "numerator": "5",
+        "denominator": "1073741824"
+      },
+      "worst_gap_not_a_typical_packet_claim": true
+    },
+    {
+      "modulus_bits": 32,
+      "sq_gate": {
+        "modulus": "4294967296",
+        "order_at_least_four_negation_orbits": "2147483647",
+        "logical_rows": 4,
+        "bounded_expectation_queries": 1024,
+        "absolute_tolerance": {
+          "numerator": "1",
+          "denominator": "32"
+        },
+        "matched_bell_centered_norm_upper": {
+          "numerator": "65",
+          "denominator": "16"
+        },
+        "uniform_orbit_identification_success_upper": {
+          "numerator": "4259841",
+          "denominator": "2147483647"
+        },
+        "raw_sample_or_multirecord_inference_covered": false,
+        "source_label_adaptive_measurement_covered": false,
+        "bound_may_be_vacuous_for_growing_logical_rows": true,
+        "classical_computational_hardness_claim": false
+      },
+      "doubly_even_quartic_block_kernel": {
+        "numerator": "6561",
+        "denominator": "4096"
+      },
+      "native_scalar_commutator_label_fraction": {
+        "numerator": "1",
+        "denominator": "1073741824"
+      },
+      "odd_secret_single_state_worst_gap_upper": {
+        "numerator": "5",
+        "denominator": "4611686018427387904"
+      },
+      "worst_gap_not_a_typical_packet_claim": true
+    },
+    {
+      "modulus_bits": 64,
+      "sq_gate": {
+        "modulus": "18446744073709551616",
+        "order_at_least_four_negation_orbits": "9223372036854775807",
+        "logical_rows": 4,
+        "bounded_expectation_queries": 4096,
+        "absolute_tolerance": {
+          "numerator": "1",
+          "denominator": "64"
+        },
+        "matched_bell_centered_norm_upper": {
+          "numerator": "65",
+          "denominator": "16"
+        },
+        "uniform_orbit_identification_success_upper": {
+          "numerator": "68157441",
+          "denominator": "9223372036854775807"
+        },
+        "raw_sample_or_multirecord_inference_covered": false,
+        "source_label_adaptive_measurement_covered": false,
+        "bound_may_be_vacuous_for_growing_logical_rows": true,
+        "classical_computational_hardness_claim": false
+      },
+      "doubly_even_quartic_block_kernel": {
+        "numerator": "6561",
+        "denominator": "4096"
+      },
+      "native_scalar_commutator_label_fraction": {
+        "numerator": "1",
+        "denominator": "4611686018427387904"
+      },
+      "odd_secret_single_state_worst_gap_upper": {
+        "numerator": "5",
+        "denominator": "85070591730234615865843651857942052864"
+      },
+      "worst_gap_not_a_typical_packet_claim": true
+    },
+    {
+      "modulus_bits": 128,
+      "sq_gate": {
+        "modulus": "340282366920938463463374607431768211456",
+        "order_at_least_four_negation_orbits": "170141183460469231731687303715884105727",
+        "logical_rows": 4,
+        "bounded_expectation_queries": 16384,
+        "absolute_tolerance": {
+          "numerator": "1",
+          "denominator": "128"
+        },
+        "matched_bell_centered_norm_upper": {
+          "numerator": "65",
+          "denominator": "16"
+        },
+        "uniform_orbit_identification_success_upper": {
+          "numerator": "1090519041",
+          "denominator": "170141183460469231731687303715884105727"
+        },
+        "raw_sample_or_multirecord_inference_covered": false,
+        "source_label_adaptive_measurement_covered": false,
+        "bound_may_be_vacuous_for_growing_logical_rows": true,
+        "classical_computational_hardness_claim": false
+      },
+      "doubly_even_quartic_block_kernel": {
+        "numerator": "6561",
+        "denominator": "4096"
+      },
+      "native_scalar_commutator_label_fraction": {
+        "numerator": "1",
+        "denominator": "85070591730234615865843651857942052864"
+      },
+      "odd_secret_single_state_worst_gap_upper": {
+        "numerator": "5",
+        "denominator": "28948022309329048855892746252171976963317496166410141009864396001978282409984"
+      },
+      "worst_gap_not_a_typical_packet_claim": true
+    }
+  ],
+  "same_stabilizer_does_not_imply_same_raw_measurement_distribution": true,
+  "claim_gate": {
+    "candidate_accepted": false,
+    "novel_algorithm": false,
+    "full_classical_dequantization": false,
+    "all_label_adaptive_code_search_excluded": false,
+    "all_raw_sample_decoders_excluded": false,
+    "retained_quantum_register_decoders_excluded": false,
+    "generic_DCP_no_go": false,
+    "independent_theorem_review": false
+  }
+}

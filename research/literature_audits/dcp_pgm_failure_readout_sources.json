@@ -1,0 +1,37 @@
+{
+  "status": "PRIMARY_FORMALISM_AUDIT_LOCAL_NATIVE_APPLICATION_REVIEW_PENDING",
+  "checked_on": "2026-10-05",
+  "records": [
+    {
+      "id": "ARXIV-1806.01838",
+      "title": "Quantum singular value transformation and beyond: exponential improvements for quantum matrix arithmetics",
+      "url": "https://arxiv.org/html/1806.01838",
+      "evidence_read": "Section2 projected-unitary notation and controlled-projector gates; Section3.2 qubitization formalism.",
+      "mechanism": "Known unitary and projector controls produce structured spectral transformations.",
+      "problem_family": "Projected-unitary singular value processing.",
+      "reduction": "Our input/output projector algebra uses this formalism; its native all-record theorem is local.",
+      "no_go_barrier": "A formalism does not supply a better normalized native decoder.",
+      "proof_technique": "Invariant subspaces and controlled projectors.",
+      "open_question": "Costed native outside-class readout.",
+      "reusable_abstraction": "Declare terminal measurement as well as successful spectral block.",
+      "rendering_scope": "Rendered page markedv1; no new version or general optimality claim used."
+    },
+    {
+      "id": "ARXIV-quant-ph-9701001-v1",
+      "title": "Strengths and Weaknesses of Quantum Computing",
+      "url": "https://arxiv.org/html/quant-ph/9701001v1",
+      "evidence_read": "Theorem3.3 proof, including reference-prefix step errors and unitary suffix telescoping.",
+      "mechanism": "Small amplitude at changed oracle actions limits whole-state displacement.",
+      "problem_family": "Quantum query perturbation.",
+      "reduction": "Only the hybrid proof pattern is used locally for explicit P/Q controls.",
+      "no_go_barrier": "Its random-oracle lower bounds are not native DHSP hardness theorems.",
+      "proof_technique": "Unitary hybrid and Euclidean step-error sums.",
+      "open_question": "A native measurement mechanism with a large relevant signal, not tiny projector access.",
+      "reusable_abstraction": "Track reference-prefix amplitudes, not just global operator norms."
+    }
+  ],
+  "independent_review": false,
+  "candidate_record_accepted": false,
+  "novelty_claim": false,
+  "speedup_claim_allowed": false
+}

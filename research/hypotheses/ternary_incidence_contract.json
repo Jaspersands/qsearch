@@ -1,0 +1,36 @@
+{
+  "hypothesis_id": "HYP-NATIVE-DEPTH-SENSITIVE-INCIDENCE-RECEIVER",
+  "status": "FINAL_FIELD_BASELINE_VERIFIED_HIGHER_ROOT_SUPPORT_ONLY_ROUTE_OBSTRUCTED_REVIEW_PENDING",
+  "candidate_record_accepted": false,
+  "note": "research/TERNARY_INCIDENCE_DECODER.md",
+  "report": "research/phase_workbench/ternary_incidence_decoder.json",
+  "source_audit": "research/literature_audits/ternary_incidence_sources.json",
+  "source_law": "One nonzero low-defined native odd-level kernel line gives two independent uniform full residual frequency vectors; n+1 odd input states suffice, every syndrome/complement outcome retained.",
+  "decoder_scope": "Actual residual modulus3 only; exact cubic incidence constraints and rank D-1 certificate recover the field secret, not the parent high digit.",
+  "negative_result_scope": "Single-qutrit quadratic F3 MUB support-zero elimination at growing R; true e1 and trial e2 have independent phase pairs. Trial excluded per measurement with probability2/R^2. This is not a likelihood-processing or arbitrary-receiver bound.",
+  "literature_links": ["arXiv:1503.09016v2", "arXiv:2609.34996v1", "arXiv:2208.07851v2"],
+  "falsifiers": [
+    "Native affine branch relative frequencies fail lower even-level trace-pairing equality.",
+    "A low-defined line produces a non-unimodular selected-coordinate high-lift map.",
+    "The complete feasible field-constraint support fails rank D-1.",
+    "A lawful fresh IID field source violates the rank-escape argument.",
+    "Any higher-root proposal applies the cubic field constraint to a mere low-digit shadow; the recorded L5 native counterexample falsifies that transfer."
+  ],
+  "not_supplied": [
+    "Original-to-intermediate odd-source cost",
+    "Complete high-digit recursion and final parent-secret recovery",
+    "Full-depth polynomial decoder",
+    "Arbitrary ring-secret or high-adaptive source-law transfer",
+    "General classical or quantum lower bound",
+    "Novelty or improvement over published sieves"
+  ],
+  "proof_obligations_before_candidate_acceptance": {
+    "PO-ACCESS": "Give a real growing-depth likelihood or collective measurement using only supplied unknown states and public known unitaries; no free unknown preparation or inverse.",
+    "PO-SOURCE": "Charge original sample acquisition, conditioning, fresh independence and all stages.",
+    "PO-DECODER": "Prove complete secret recovery and finite-confidence guarantees at actual root modulus, not a field shadow.",
+    "PO-COST": "Prove implicit receiver runtime/memory and recursive source throughput polynomial in the input encoding or a genuine asymptotic improvement.",
+    "PO-BASELINES": "Compare published native sieves and legal classical likelihood/postprocessing attacks, including nonzero Born probabilities.",
+    "PO-REVIEW": "Independent mathematical review of the source, incidence span/escape and exclusion arguments."
+  },
+  "next_priority": "Implicit likelihood-sensitive or collective receiver at growing roots, or a source transfer improvement that closes the even/odd recursion cost. Do not add more fixed-field benchmark candidates."
+}

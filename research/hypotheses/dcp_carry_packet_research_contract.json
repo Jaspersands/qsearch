@@ -1,0 +1,160 @@
+{
+  "hypothesis_id": "HYP-DCP-HIGH-THROUGHPUT-CARRY-PACKETS",
+  "status": "MECHANISM_INTERFACES_ONLY_NOT_ACCEPTED_ALGORITHM_CANDIDATE",
+  "candidate_record_accepted": false,
+  "objective": "Study outcome-adaptive source-preserving extraction or decode the correlated packet directly. Fixed-direction all-outcome constant-fraction extraction at native m=3n and q>=8 is locally excluded, pending theorem review.",
+  "problem_family": "Generalized DCP over (Z_(2^t))^n, with growing n and t; q=poly(n) is a benchmark, while the Regev lattice coordinate regime q=2^(4n+1) requires uniform polynomial runtime in n and log q plus a separately verified source/precision composition.",
+  "dense_transport_followup_contract": "research/hypotheses/dcp_dense_transport_research_contract.json",
+  "adaptive_readout_resource_diagnostic": "research/hypotheses/dcp_adaptive_readout_research_contract.json",
+  "input_access": {
+    "allowed": ["independent supplied unknown coset/phase states", "known IID uniform public labels", "public reversible arithmetic and Clifford transformations", "known public candidate-dependent phase rotations with explicit precision cost"],
+    "not_granted": ["hidden-phase evaluator", "same-label copy factory", "unknown state-preparation inverse", "chosen labels", "free conditional-source sampling", "exponential advice or QRAM"]
+  },
+  "literature_ids": ["ARXIV-2609.34996-v1", "ARXIV-1707.04012", "ARXIV-2610.02031", "ARXIV-1312.0022-v3", "ARXIV-1209.2426", "ARXIV-2609.08203-v1", "ARXIV-quant-ph-0304125", "ARXIV-2609.10974", "ARXIV-2208.07851", "ARXIV-1608.02198", "ARXIV-1610.01808"],
+  "ontology_nodes": ["hidden-shift", "dihedral-hsp", "unique-svp", "nonabelian-hsp", "code-equivalence"],
+  "requested_ontology_extensions": ["prime-power-phase-states", "binary-code-componentwise-products", "collective-state-readout"],
+  "implemented_interfaces": [
+    "public parity-chart CNOT compiler preserving all syndrome outcomes",
+    "compact vector-valued carry evaluator, not an unknown-phase oracle",
+    "q=4 matching-quadratic Bell equations",
+    "q=4 partial common-radical Bell equations",
+    "single-packet public code-conductor readout gate",
+    "q=4 greedy common-isotropic product extraction",
+    "uniform lower-label theorem under low-label-only selection",
+    "physical Z-mask to correlated logical equation-error propagation",
+    "q>=8 fixed-direction all-outcome conductor necessity and native constant-output cap",
+    "q=8 exact fixed-subspace complement-postselection rank ledger",
+    "q=8 native acceptance and conditional source entropy/intersection certificate",
+    "q>=8 native source penalty for low-defined overlap and finite-menu selection",
+    "weighted divisibility consistency counterexample beyond pair/triple parity",
+    "exact compact q=4/q=8 unmatched-packet Bell parity derivative tensors and rational quadratic Gauss evaluator",
+    "exact full correlated q=4 Bell outcome likelihood for a supplied trial secret, without secret enumeration",
+    "q=8 native middle-label Parseval bound for fixed nonzero-secret-parity marginals",
+    "q=8 one-parity-per-fresh-pair tail-unit dictionary source/transcript information gate with public high-bit and classical-history selection",
+    "q>=8 exact full-Bell high-label averaged fourth moment via disjoint physical directions and selected-row ranks",
+    "native systematic-source full-output collision mean with constant-probability public source filter charged",
+    "real Bell secret-negation ambiguity gate, not a general measurement no-go",
+    "fresh native full-candidate and packet-residue verification with explicit independent input budgets",
+    "one reusable ancilla public known-residue correction plan with scalable integer masks and angle numerators",
+    "known correct residue to lost original high-bit equations and native binary rank-failure budget",
+    "exact cross-secret full-Bell source kernel separating negation orbits and handling effective-order-two quadratic exceptions",
+    "bounded-expectation statistical-query inference certificate, explicitly excluding raw-sample algorithms",
+    "joint-source noisy full-output chi-squared and native-attempt information certificates for a declared independent logical-output channel",
+    "detector-only repetition countercontrol showing the logical-noise threshold is not a fault-tolerance obstruction",
+    "fixed-low-chart order-two uniform-law alias outside negation, with full-rank derivation and bounded physical controls",
+    "original physical Z-mask Fourier transport for independent nonuniform rates and explicit sparse joint correlated laws",
+    "native systematic IID physical-phase weighted source moments and charged fixed-pair transcript information bounds, not a native reduction error theorem",
+    "shared correlated physical-error cancellation countercontrol invalidating inference from marginal rates alone",
+    "noisy correct-residue packet-verifier acceptance ledger replacing ideal completeness",
+    "known correct residue phase-noise binary experiment with an exact classical sample reverse channel, without a coherent example oracle",
+    "public constant basis-bias heralded filter with symbolic reverse sample conversion and charged failure, not general Regev contamination",
+    "low-noise clean-block classical completion bounds with IID and marginal-only variants",
+    "fresh full-candidate robust binomial verification under conditional arbitrary-bad-state budgets, not unconditional marginal promises",
+    "existing prelabel X/sign gauge linked to physical-phase source moments, with discarded-label/coin and fault-lineage obligations",
+    "exact native systematic Bell source moment for explicit correlated basis-fault laws via fault-union pairs, without exponential logical-mask enumeration",
+    "all-or-none prelabel fault counterexample to transferring IID uniformization from register marginals",
+    "conditional two-point coordinate-QFT failure ledger and marginal-only known-residue clean-block completion at gamma=(n log2 q)^(-f)",
+    "consumed native phase-program instrument for compact public Boolean functions, keeping all random signed-label outcomes without unknown inverses",
+    "nonlinear many-to-one carry-phase pullback source interface with charged public evaluator/workspace and no same-function oracle reuse",
+    "public sign-orbit invariant higher-label selector source law, not IID uniform conditional higher labels",
+    "q>=8 fixed-function source-universal product criterion requiring every physical Boolean function to be a constant or single literal"
+  ],
+  "classical_and_known_quantum_baselines": [
+    "Gaussian zero-sum selection with n-sized state consumption per binary level",
+    "public code conductor and direct-sum component calculation",
+    "greedy simultaneous-isotropic construction giving d>=ceil((m-r)/(n+1))",
+    "existing Kuperberg/Regev and prime-power sieve resource comparisons, in their actual access models",
+    "secret-independent uniform measured-output baseline under the certified fixed noisy Bell transcript model only",
+    "known-residue low-noise binary elimination with clean-block rank and fresh verification budgets",
+    "known-residue commuting phase-noise experiment as classical LPN data, not a generic efficient LPN solver",
+    "basis-bias X twirling or public-bias heralded filtering as explicitly scoped sample degradations/conversions"
+  ],
+  "proof_obligations": {
+    "PO-FAMILY": "Use growing vector dimensions/moduli, not a fixed q=4 benchmark as the claimed breakthrough.",
+    "PO-INPUT-MODEL": "Preserve unknown sample-only access and account for each quantum register exactly once.",
+    "PO-CLASSICAL-BASELINE": "Compare end-to-end sample/gate/space cost with named sieves and legal public-code attacks.",
+    "PO-REDUCTION": "Give a natural-problem parameter map, including the number and approximation quality of supplied states; no automatic standard-LWE claim.",
+    "PO-MECHANISM": "Construct an outcome-adaptive high-throughput transformation or a non-product decoder. Fixed-direction all-outcome native m=3n extraction is closed by a local conductor/distance derivation, not by a general quantum no-go.",
+    "PO-STATE-PREP": "The first parity chart is provided. Higher charts, alignment, unknown state copies and inverses are not free.",
+    "PO-NATURAL-ACCESS": "Prove selection lineage and posterior source law. At q=8 low-bit-only extraction has native acceptance 2^(-n dim E) when consistent and joint output entropy n(2d-dim(U intersect E)) conditional on B and the selected basis; conditional fresh IID labels require zero intersection. Mixtures over different low labels/bases are not classified here. General low-defined overlapping menus pay the stated (q/4)^n source penalty, with menu/attempt factors. Arbitrary higher-bit or outcome-adaptive synthesis requires a new theorem.",
+    "PO-MEASUREMENT": "Return independent verified secret equations or a complete decoder; do not count retained entangled qubits as output equations. Joint Bell likelihoods are not products of parity marginals. A parity selector must precede v or account for the full selection law. Charge chosen XOR outcomes and all source attempts. The local tail-unit one-bit transcript bound does not cover full v or quantum memory.",
+    "PO-SUCCESS-PROOF": "Prove source coverage, equation rank and bounded-error full-secret recovery, including the actual contamination promise. The first parity chart loses the highest original secret bit per coordinate; distinguish packet residue from full original secret. Uncorrected real Bell readout is invariant under residue negation. Proposed residue verification requires fresh independent higher-label packets and a candidate committed before their labels; full-candidate verification and lost-bit completion require fresh original phase states. None of these ideal certificates proves noisy completeness or discovers a candidate.",
+    "PO-COMPLEXITY": "Polynomial construction in n and log q, precision and storage, with product loss and original-state consumption composed through every level of the actual target. The t=Theta(log n) benchmark is not the natural lattice coordinate regime t=Theta(n).",
+    "PO-NOISE-LINEAGE": "Prove the ACTUAL natural-reduction noise promise through every chart and source selection. Independent original Z errors produce correlated K-transpose logical masks; arbitrary Regev basis failures are not IID phase flips and can bias chart outcomes. Source averaging needs explicit higher-label/secret independence. Marginal error rates do not establish independence or conditional-history budgets. Constant-noise uniformization does not close vanishing-noise or other-measurement protocols.",
+    "PO-NOISY-COMPLETION": "Known-residue classicalization requires correct lower residue and fresh ORIGINAL states. Phase-only errors yield commuting classical samples, not a coherent quantum-example oracle or generic polynomial LPN decoder. Low-noise clean-block baselines require the native label rank law. Public-bias filtering requires public constant contamination and a known bad basis bit, with failures charged; it is not lossless one-copy equivalence. Full-candidate robust verification requires a candidate committed before fresh labels and bad-probability bounds for each fixed secret/history. Account for correction/filter gate precision. No verifier discovers the unknown residue.",
+    "PO-PRELABEL-GAUGE": "The existing X/sign gauge legally transfers prelabel classical mixtures of good/basis registers to a fault-avoidance phase channel only when uniform Fourier labels are independent of fault data and old labels/coins are discarded before selection. IID basis failures then have phase-flip rate gamma/2; correlations do not become IID. Exact sparse-law source moments use conceptual independent draws of the entire joint fault law, not extra physical copies. The two-point q=2M coordinate-QFT map supplies conditional gamma=(n log2 q)^(-f) completion accounting, not a verified natural-lattice M/state-supply/precision map. Do not introduce a constant-rate LPN blocker from this vanishing-noise promise.",
+    "PO-CONSUMED-PHASE-PROGRAMS": "Each unknown program is consumed once; random signed labels, all branches, public Boolean compute/uncompute and fresh target/workspace are charged. A pullback does not supply an inverse of the random phase map, repeated queries, doubled-label resources or packet clones. Low-label-only selectors preserve conditional native higher labels. Full sign-orbit selectors also have a valid updated source, but its conditional columns are uniform sign-orbit elements, not uniform higher bits; derive new moments instead of importing fixed-low-chart averaging. Other high-label selectors are legal circuits needing their joint pushforward law. For fixed functions across all higher tables at q>=8, source-universal phase products require single literals/constants; nonlinear or multi-variable parity functions do not guarantee independent output equations. Nonproduct or higher-selected inference remains open.",
+    "PO-NOGO": "Respect the direct-Hadamard conductor gate and the q>=8 fixed-direction all-complement-outcome throughput cap, including its uniform pure-product trace-error extension below sin(pi/8). Outcome-adaptive extraction, average-error protocols, correlated decoding and general measurements remain open. The source-orthogonal SQ bound covers bounded single-record expectation queries at the declared tolerance, not raw-sample or multi-record learning. Logical-output-noise uniformization covers the fixed fresh-pair protocol, not detector repetition, native correlated phase errors, label-adaptive matching or arbitrary quantum measurements.",
+    "PO-DEQUANTIZATION": "Known-secret stabilizer simulation and per-trial likelihood scoring are calibration, not unknown-secret classical decoders. Test legal baselines on identical sources. Existing same-state stabilizer/polynomial phase learners require a copy source or source-preserving alignment theorem; varying native packets do not grant either. Fixed q=4/8 likelihood mechanisms require growing-modulus extension before any breakthrough claim.",
+    "PO-FALSIFIERS": "Preregister the maximal-yield/source-law tests below and retain negative outcomes without candidate promotion. Full-output collision is not mutual information or identification success, and a high source mean is not typical-instance evidence. Charge the exponential rank-sum mask enumeration and do not extrapolate it into an efficient decoder. Source-centered orbit orthogonality gives positive L2 separation only when its diagonal norm is nonzero; effective-order-two residues can have additional uniform-law aliases on fixed charts. Do not interpret SQ or noise-model failure as general hardness."
+  },
+  "experiments_with_falsifiers": [
+    {
+      "experiment": "Review the higher-carry conductor/distance obstruction, then analyze outcome-adaptive retained subspaces or direct correlated readout.",
+      "falsifier": "A source theorem bounds every constructible or every possible U at o(m), excluding constant-fraction product throughput within that declared class.",
+      "important_scope": "A stalled greedy constructor is not a maximum-dimension proof. The local cap covers fixed directions and every complement outcome at q>=8 only."
+    },
+    {
+      "experiment": "Construct higher-level weighted-intersection divisibility conditions with an explicit symbolic carry ledger.",
+      "falsifier": "Cubic/higher phases remain, construction is exponential, or output independence relies on label bits consumed during selection."
+    },
+    {
+      "experiment": "Audit selection lineage and use the native source certificate rather than favorable fixed-high-label postselection examples; retain intentionally nonuniform sources only with an explicit decoder interface.",
+      "falsifier": "Native average success is exponentially small, output labels have untracked permanent constraints, or a high-bit-selected subspace is certified using a low-bit-only source theorem."
+    },
+    {
+      "experiment": "Derive a source-linked aligned or multi-packet Bell primitive with actual quantum-register consumption.",
+      "falsifier": "Compatibility is obtained only by chosen/repeated labels, exponential source rejection, or treating distinct packets as copies of one stabilizer state."
+    },
+    {
+      "experiment": "Audit whether source-aware CSS/transversal-code measurements can process native unknown random phase weights without a secret-dependent correction or fixed-level-only rate guarantee.",
+      "falsifier": "The transfer assumes chosen identical rotations, a known correction depending on s, free unknown-gate injection, or rate constants collapsing as the hierarchy level grows."
+    },
+    {
+      "experiment": "Compose phase-error propagation and candidate verification under the exact reduction noise model.",
+      "falsifier": "Correlated equation errors defeat polynomial decoding or the reduction provides fewer usable states than the algorithm consumes."
+    },
+    {
+      "experiment": "Decode full correlated Bell outcomes from varying native public phase tensors, beginning with a source-aware quadratic matrix-pencil formulation at q=4 and extending to cubic/growing-degree carry phases.",
+      "falsifier": "Inference requires enumerating trial secrets, imports a same-state copy learner without alignment, multiplies dependent marginals, or never extends past a fixed easy modulus."
+    },
+    {
+      "experiment": "Review the native middle-bit Parseval and tail-unit transcript derivations before optimizing parity selection; only pursue synthesis or collective readout outside their declared scope.",
+      "falsifier": "The proposed protocol retains only one tail-unit dictionary parity per fresh pair with polynomial source budget, or a claimed escape uses secret-correlated side information not supplied by the reduction.",
+      "important_scope": "The local obstruction allows public high-bit and classical-history dictionary selection but excludes full v, arbitrary parity synthesis, coherent memory and reused packets."
+    },
+    {
+      "experiment": "Use the full-output source moment identity to formulate a candidate-secret comparison or constructible sufficient statistic, and test source-tail concentration rather than interpreting mean collision as secret information.",
+      "falsifier": "The signal is dominated by rare labels or spikes, candidate laws coincide, inference requires exhaustive secrets/masks, or apparent full recovery ignores negation and the highest original bit lost by the chart."
+    },
+    {
+      "experiment": "Complete a hypothetical residue decoder with independently supplied native packet verification, known-candidate phase correction and original-state high-bit equations; compose ideal and actual noise/precision budgets.",
+      "falsifier": "Candidates depend on verification label high bits, training states are recycled, required fresh original states are not supplied, or incorrect residue/noise is silently treated as exact binary equations."
+    },
+    {
+      "experiment": "Develop a raw-sample symbolic or collective source-preserving inference primitive beyond generic bounded expected-loss learning; compare different residue laws before interpreting any estimator signal.",
+      "falsifier": "The proposed decoder only makes polynomially many bounded single-record statistical queries at inverse-polynomial tolerance in the scoped orthogonal family, requires exhaustive secret likelihoods, or relies on an effective-order-two fixed-chart alias."
+    },
+    {
+      "experiment": "Derive the actual reduction error channel through public charts and Bell readout, then test joint-source attenuation and protected measurement strategies.",
+      "falsifier": "Correlated K-transpose physical phase masks are replaced by an unjustified IID logical channel, detector-only repetition is ignored, source pairing depends on label bits outside the theorem, or required error protection assumes an unavailable input encoding."
+    },
+    {
+      "experiment": "Complete a constructive residue decoder using the actual input noise promise, comparing known-residue low-noise elimination, scoped public-bias filtering and fresh robust full-candidate verification.",
+      "falsifier": "The decoder imports a coherent example oracle, maps Regev basis failures to phase flips without a source proof, assumes a public bad basis bit, ignores heralded input consumption, or amplifies only an unconditional marginal failure bound.",
+      "important_scope": "Completion and verification are conditional interfaces, not a full unknown-residue algorithm. The current natural-problem noise and conditional-source reductions remain unproved."
+    },
+    {
+      "experiment": "Use the actual two-point input's prelabel gauge and fault-union source moments to compose a constructive growing-modulus front-end with known-residue completion.",
+      "falsifier": "The proposed transfer retains original labels/coins, assumes postlabel fault bits are prelabel, replaces correlated fault law by IID marginals, grants duplicated program states or asserts the lattice parameter map from the conditional q=2M ledger alone."
+    },
+    {
+      "experiment": "Construct a polynomial public nonlinear phase pullback or sign-orbit invariant selector with an efficient growing-modulus unknown-residue collective inference primitive.",
+      "falsifier": "The pullback hides subset-sum inversion or exponential ANF/preprocessing, requires favorable program signs without charging them, reuses consumed labels as an oracle, grants packet copies, treats nonlinear outputs as source-universal independent phase qubits, or applies IID higher-label moments after sign-orbit selection.",
+      "important_scope": "The consumed-program instrument is known prior art; a structural decoding mechanism and legal classical/known-quantum comparisons are still required."
+    }
+  ],
+  "independent_review": false,
+  "novelty_claim": false,
+  "speedup_claim_allowed": false
+}

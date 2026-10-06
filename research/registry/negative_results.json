@@ -67831,6 +67831,21 @@
   },
   {
     "applies_to": [
+      "DHS-GOWERS-SIEVE",
+      "EXP-DHS-DCP-COHERENT-MATCHING-INTERFACE"
+    ],
+    "claim": "Total isotropy of the F3 curvature form across active sites compiles the native source into independent full-root product states.",
+    "evidence": {
+      "exact_nonzero_mixed_defect_falsifies_product_for_secret1": true,
+      "zero_pointer_exact_first_logical_purity": "19/27"
+    },
+    "id": "NEG-NATIVE-TOTAL-ISOTROPY-DOES-NOT-COMPILE-IID-PRODUCTS",
+    "lesson": "Curvature cancellation alone does not yield independent native product outputs. Do not infer full-root product state compilation or independent IID children from total isotropy without accounting for mixed phase defects.",
+    "reason_invalid": "While totally isotropic subspaces ensure low phase affine on every measured complement, full-root states retain nonzero mixed phase defects and entanglement; calibration first logical purity is 19/27 < 1 on the zero pointer branch, falsifying product state compilation.",
+    "source": "/Users/jaspersands/Desktop/quantum algorithm search/research/phase_workbench/ternary_curvature_frontier.json"
+  },
+  {
+    "applies_to": [
       "MUT-CAND-DHS-GOWERS-SIEVE-LEARNABILITY-RESISTANT",
       "ROUTE-MUT-CAND-DHS-GOWERS-SIEVE-LEARNABILITY-RESISTANT-USVP-VIA-DHSP"
     ],

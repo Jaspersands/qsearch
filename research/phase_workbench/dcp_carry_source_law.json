@@ -1,0 +1,517 @@
+{
+  "status": "LOCAL_DERIVATION_REVIEW_PENDING",
+  "source_controls": [
+    {
+      "low_labels_fixed_for_source_identity_control_only": true,
+      "certificate": {
+        "status": "LOCAL_DERIVATION_REVIEW_PENDING",
+        "dimension": 1,
+        "input_qubits": 4,
+        "retained_product_outputs_if_accepted": 2,
+        "modulus": 8,
+        "selection_model_required": "low-bits-and-initial-syndrome-only",
+        "selection_lineage_programmatically_verified": false,
+        "unknown_secret_or_gate_oracle_used": false,
+        "background_is_physical_not_logical": true,
+        "native_average_not_fixed_high_labels": true,
+        "source_conditioning": "B, selected directions, initial syndrome, acceptance",
+        "unconditional_mixture_over_low_labels_or_changed_bases_classified": false,
+        "free_postselection": false,
+        "speedup_claim_allowed": false,
+        "acceptance_possible": true,
+        "overlap_span_dimension": 0,
+        "retained_overlap_intersection_dimension": 0,
+        "native_acceptance_probability": {
+          "numerator_hex": "0x1",
+          "denominator_binary_exponent": 0
+        },
+        "inverse_acceptance_batch_exponent": 0,
+        "conditional_output_entropy_bits": 4,
+        "conditional_output_min_entropy_bits": 4,
+        "full_iid_output_entropy_bits": 4,
+        "conditional_output_labels_jointly_iid_uniform_mod_four": true,
+        "conditional_top_output_bits_jointly_uniform": true,
+        "conditional_low_output_constraints": [],
+        "law_independent_of_complement_outcome": true,
+        "overlap_basis_physical_masks": [],
+        "middle_bit_constraint_targets_by_component": [
+          []
+        ],
+        "not_a_claim_that_entropy_deficit_makes_decoding_hard": true
+      },
+      "higher_bit_tables_exhausted_per_component": 256,
+      "accepted_middle_bit_tables_per_component": [
+        16
+      ],
+      "observed_output_support_per_component": [
+        16
+      ],
+      "joint_law_uses_proved_component_factorization_not_full_tensor_enumeration": true
+    },
+    {
+      "low_labels_fixed_for_source_identity_control_only": true,
+      "certificate": {
+        "status": "LOCAL_DERIVATION_REVIEW_PENDING",
+        "dimension": 1,
+        "input_qubits": 6,
+        "retained_product_outputs_if_accepted": 2,
+        "modulus": 8,
+        "selection_model_required": "low-bits-and-initial-syndrome-only",
+        "selection_lineage_programmatically_verified": false,
+        "unknown_secret_or_gate_oracle_used": false,
+        "background_is_physical_not_logical": true,
+        "native_average_not_fixed_high_labels": true,
+        "source_conditioning": "B, selected directions, initial syndrome, acceptance",
+        "unconditional_mixture_over_low_labels_or_changed_bases_classified": false,
+        "free_postselection": false,
+        "speedup_claim_allowed": false,
+        "acceptance_possible": true,
+        "overlap_span_dimension": 1,
+        "retained_overlap_intersection_dimension": 0,
+        "native_acceptance_probability": {
+          "numerator_hex": "0x1",
+          "denominator_binary_exponent": 1
+        },
+        "inverse_acceptance_batch_exponent": 1,
+        "conditional_output_entropy_bits": 4,
+        "conditional_output_min_entropy_bits": 4,
+        "full_iid_output_entropy_bits": 4,
+        "conditional_output_labels_jointly_iid_uniform_mod_four": true,
+        "conditional_top_output_bits_jointly_uniform": true,
+        "conditional_low_output_constraints": [],
+        "law_independent_of_complement_outcome": true,
+        "overlap_basis_physical_masks": [
+          3
+        ],
+        "middle_bit_constraint_targets_by_component": [
+          [
+            1
+          ]
+        ],
+        "not_a_claim_that_entropy_deficit_makes_decoding_hard": true
+      },
+      "higher_bit_tables_exhausted_per_component": 4096,
+      "accepted_middle_bit_tables_per_component": [
+        32
+      ],
+      "observed_output_support_per_component": [
+        16
+      ],
+      "joint_law_uses_proved_component_factorization_not_full_tensor_enumeration": true
+    },
+    {
+      "low_labels_fixed_for_source_identity_control_only": true,
+      "certificate": {
+        "status": "LOCAL_DERIVATION_REVIEW_PENDING",
+        "dimension": 1,
+        "input_qubits": 4,
+        "retained_product_outputs_if_accepted": 2,
+        "modulus": 8,
+        "selection_model_required": "low-bits-and-initial-syndrome-only",
+        "selection_lineage_programmatically_verified": false,
+        "unknown_secret_or_gate_oracle_used": false,
+        "background_is_physical_not_logical": true,
+        "native_average_not_fixed_high_labels": true,
+        "source_conditioning": "B, selected directions, initial syndrome, acceptance",
+        "unconditional_mixture_over_low_labels_or_changed_bases_classified": false,
+        "free_postselection": false,
+        "speedup_claim_allowed": false,
+        "acceptance_possible": true,
+        "overlap_span_dimension": 1,
+        "retained_overlap_intersection_dimension": 1,
+        "native_acceptance_probability": {
+          "numerator_hex": "0x1",
+          "denominator_binary_exponent": 1
+        },
+        "inverse_acceptance_batch_exponent": 1,
+        "conditional_output_entropy_bits": 3,
+        "conditional_output_min_entropy_bits": 3,
+        "full_iid_output_entropy_bits": 4,
+        "conditional_output_labels_jointly_iid_uniform_mod_four": false,
+        "conditional_top_output_bits_jointly_uniform": true,
+        "conditional_low_output_constraints": [
+          {
+            "output_low_bit_parity_mask": 1,
+            "target_by_component": [
+              0
+            ]
+          }
+        ],
+        "law_independent_of_complement_outcome": true,
+        "overlap_basis_physical_masks": [
+          3
+        ],
+        "middle_bit_constraint_targets_by_component": [
+          [
+            1
+          ]
+        ],
+        "not_a_claim_that_entropy_deficit_makes_decoding_hard": true
+      },
+      "higher_bit_tables_exhausted_per_component": 256,
+      "accepted_middle_bit_tables_per_component": [
+        8
+      ],
+      "observed_output_support_per_component": [
+        8
+      ],
+      "joint_law_uses_proved_component_factorization_not_full_tensor_enumeration": true
+    },
+    {
+      "low_labels_fixed_for_source_identity_control_only": true,
+      "certificate": {
+        "status": "LOCAL_DERIVATION_REVIEW_PENDING",
+        "dimension": 2,
+        "input_qubits": 6,
+        "retained_product_outputs_if_accepted": 2,
+        "modulus": 8,
+        "selection_model_required": "low-bits-and-initial-syndrome-only",
+        "selection_lineage_programmatically_verified": false,
+        "unknown_secret_or_gate_oracle_used": false,
+        "background_is_physical_not_logical": true,
+        "native_average_not_fixed_high_labels": true,
+        "source_conditioning": "B, selected directions, initial syndrome, acceptance",
+        "unconditional_mixture_over_low_labels_or_changed_bases_classified": false,
+        "free_postselection": false,
+        "speedup_claim_allowed": false,
+        "acceptance_possible": true,
+        "overlap_span_dimension": 1,
+        "retained_overlap_intersection_dimension": 0,
+        "native_acceptance_probability": {
+          "numerator_hex": "0x1",
+          "denominator_binary_exponent": 2
+        },
+        "inverse_acceptance_batch_exponent": 2,
+        "conditional_output_entropy_bits": 8,
+        "conditional_output_min_entropy_bits": 8,
+        "full_iid_output_entropy_bits": 8,
+        "conditional_output_labels_jointly_iid_uniform_mod_four": true,
+        "conditional_top_output_bits_jointly_uniform": true,
+        "conditional_low_output_constraints": [],
+        "law_independent_of_complement_outcome": true,
+        "overlap_basis_physical_masks": [
+          3
+        ],
+        "middle_bit_constraint_targets_by_component": [
+          [
+            1
+          ],
+          [
+            0
+          ]
+        ],
+        "not_a_claim_that_entropy_deficit_makes_decoding_hard": true
+      },
+      "higher_bit_tables_exhausted_per_component": 4096,
+      "accepted_middle_bit_tables_per_component": [
+        32,
+        32
+      ],
+      "observed_output_support_per_component": [
+        16,
+        16
+      ],
+      "joint_law_uses_proved_component_factorization_not_full_tensor_enumeration": true
+    },
+    {
+      "low_labels_fixed_for_source_identity_control_only": true,
+      "certificate": {
+        "status": "LOCAL_DERIVATION_REVIEW_PENDING",
+        "dimension": 2,
+        "input_qubits": 4,
+        "retained_product_outputs_if_accepted": 2,
+        "modulus": 8,
+        "selection_model_required": "low-bits-and-initial-syndrome-only",
+        "selection_lineage_programmatically_verified": false,
+        "unknown_secret_or_gate_oracle_used": false,
+        "background_is_physical_not_logical": true,
+        "native_average_not_fixed_high_labels": true,
+        "source_conditioning": "B, selected directions, initial syndrome, acceptance",
+        "unconditional_mixture_over_low_labels_or_changed_bases_classified": false,
+        "free_postselection": false,
+        "speedup_claim_allowed": false,
+        "acceptance_possible": true,
+        "overlap_span_dimension": 1,
+        "retained_overlap_intersection_dimension": 1,
+        "native_acceptance_probability": {
+          "numerator_hex": "0x1",
+          "denominator_binary_exponent": 2
+        },
+        "inverse_acceptance_batch_exponent": 2,
+        "conditional_output_entropy_bits": 6,
+        "conditional_output_min_entropy_bits": 6,
+        "full_iid_output_entropy_bits": 8,
+        "conditional_output_labels_jointly_iid_uniform_mod_four": false,
+        "conditional_top_output_bits_jointly_uniform": true,
+        "conditional_low_output_constraints": [
+          {
+            "output_low_bit_parity_mask": 1,
+            "target_by_component": [
+              0,
+              0
+            ]
+          }
+        ],
+        "law_independent_of_complement_outcome": true,
+        "overlap_basis_physical_masks": [
+          3
+        ],
+        "middle_bit_constraint_targets_by_component": [
+          [
+            1
+          ],
+          [
+            1
+          ]
+        ],
+        "not_a_claim_that_entropy_deficit_makes_decoding_hard": true
+      },
+      "higher_bit_tables_exhausted_per_component": 256,
+      "accepted_middle_bit_tables_per_component": [
+        8,
+        8
+      ],
+      "observed_output_support_per_component": [
+        8,
+        8
+      ],
+      "joint_law_uses_proved_component_factorization_not_full_tensor_enumeration": true
+    }
+  ],
+  "physical_background_invariance_checks": 176,
+  "quadratic_variety_inconsistency_control": {
+    "physical_coordinates": 36,
+    "retained_direction_count": 6,
+    "all_degree_one_two_three_parity_checks_pass": true,
+    "special_pair_overlap_weights": [
+      6,
+      6,
+      6
+    ],
+    "special_pair_xor_is_zero": true,
+    "middle_constraint_target_xor": 1,
+    "certificate": {
+      "status": "LOCAL_DERIVATION_REVIEW_PENDING",
+      "dimension": 1,
+      "input_qubits": 36,
+      "retained_product_outputs_if_accepted": 6,
+      "modulus": 8,
+      "selection_model_required": "low-bits-and-initial-syndrome-only",
+      "selection_lineage_programmatically_verified": false,
+      "unknown_secret_or_gate_oracle_used": false,
+      "background_is_physical_not_logical": true,
+      "native_average_not_fixed_high_labels": true,
+      "source_conditioning": "B, selected directions, initial syndrome, acceptance",
+      "unconditional_mixture_over_low_labels_or_changed_bases_classified": false,
+      "free_postselection": false,
+      "speedup_claim_allowed": false,
+      "acceptance_possible": false,
+      "reason": "inconsistent middle-label constraints",
+      "native_acceptance_probability": {
+        "numerator_hex": "0x0",
+        "denominator_binary_exponent": 0
+      },
+      "overlap_span_dimension": 14
+    },
+    "bounded_identity_counterexample_not_algorithm_candidate": true
+  },
+  "overlapping_menu_bounds": [
+    {
+      "dimension": 16,
+      "modulus": 8,
+      "single_option_native_acceptance_probability_upper_bound": {
+        "numerator_hex": "0x1",
+        "denominator_binary_exponent": 16
+      },
+      "low_label_defined_overlapping_options": 256,
+      "supplied_packet_attempts": 256,
+      "native_probability_any_accepted_overlapping_packet_upper_bound": {
+        "numerator_hex": "0x1",
+        "denominator_binary_exponent": 0
+      },
+      "selection_can_use_middle_and_top_public_label_bits": true,
+      "selection_before_complement_measurement": true,
+      "low_defined_menu_membership_programmatically_verified": false,
+      "all_options_must_have_nonzero_overlap": true,
+      "one_high_bit_synthesized_option_is_not_a_low_defined_menu": true,
+      "outcome_adaptive_retained_subspaces_covered": false,
+      "arbitrary_polynomial_subspace_synthesis_covered": false,
+      "partial_secret_side_information_covered": false,
+      "bound_vacuous": true
+    },
+    {
+      "dimension": 32,
+      "modulus": 8,
+      "single_option_native_acceptance_probability_upper_bound": {
+        "numerator_hex": "0x1",
+        "denominator_binary_exponent": 32
+      },
+      "low_label_defined_overlapping_options": 1024,
+      "supplied_packet_attempts": 1024,
+      "native_probability_any_accepted_overlapping_packet_upper_bound": {
+        "numerator_hex": "0x1",
+        "denominator_binary_exponent": 12
+      },
+      "selection_can_use_middle_and_top_public_label_bits": true,
+      "selection_before_complement_measurement": true,
+      "low_defined_menu_membership_programmatically_verified": false,
+      "all_options_must_have_nonzero_overlap": true,
+      "one_high_bit_synthesized_option_is_not_a_low_defined_menu": true,
+      "outcome_adaptive_retained_subspaces_covered": false,
+      "arbitrary_polynomial_subspace_synthesis_covered": false,
+      "partial_secret_side_information_covered": false,
+      "bound_vacuous": false
+    },
+    {
+      "dimension": 64,
+      "modulus": 8,
+      "single_option_native_acceptance_probability_upper_bound": {
+        "numerator_hex": "0x1",
+        "denominator_binary_exponent": 64
+      },
+      "low_label_defined_overlapping_options": 4096,
+      "supplied_packet_attempts": 4096,
+      "native_probability_any_accepted_overlapping_packet_upper_bound": {
+        "numerator_hex": "0x1",
+        "denominator_binary_exponent": 40
+      },
+      "selection_can_use_middle_and_top_public_label_bits": true,
+      "selection_before_complement_measurement": true,
+      "low_defined_menu_membership_programmatically_verified": false,
+      "all_options_must_have_nonzero_overlap": true,
+      "one_high_bit_synthesized_option_is_not_a_low_defined_menu": true,
+      "outcome_adaptive_retained_subspaces_covered": false,
+      "arbitrary_polynomial_subspace_synthesis_covered": false,
+      "partial_secret_side_information_covered": false,
+      "bound_vacuous": false
+    },
+    {
+      "dimension": 128,
+      "modulus": 8,
+      "single_option_native_acceptance_probability_upper_bound": {
+        "numerator_hex": "0x1",
+        "denominator_binary_exponent": 128
+      },
+      "low_label_defined_overlapping_options": 16384,
+      "supplied_packet_attempts": 16384,
+      "native_probability_any_accepted_overlapping_packet_upper_bound": {
+        "numerator_hex": "0x1",
+        "denominator_binary_exponent": 100
+      },
+      "selection_can_use_middle_and_top_public_label_bits": true,
+      "selection_before_complement_measurement": true,
+      "low_defined_menu_membership_programmatically_verified": false,
+      "all_options_must_have_nonzero_overlap": true,
+      "one_high_bit_synthesized_option_is_not_a_low_defined_menu": true,
+      "outcome_adaptive_retained_subspaces_covered": false,
+      "arbitrary_polynomial_subspace_synthesis_covered": false,
+      "partial_secret_side_information_covered": false,
+      "bound_vacuous": false
+    }
+  ],
+  "growing_modulus_menu_bounds": [
+    {
+      "dimension": 16,
+      "modulus": 16,
+      "single_option_native_acceptance_probability_upper_bound": {
+        "numerator_hex": "0x1",
+        "denominator_binary_exponent": 32
+      },
+      "low_label_defined_overlapping_options": 256,
+      "supplied_packet_attempts": 256,
+      "native_probability_any_accepted_overlapping_packet_upper_bound": {
+        "numerator_hex": "0x1",
+        "denominator_binary_exponent": 16
+      },
+      "selection_can_use_middle_and_top_public_label_bits": true,
+      "selection_before_complement_measurement": true,
+      "low_defined_menu_membership_programmatically_verified": false,
+      "all_options_must_have_nonzero_overlap": true,
+      "one_high_bit_synthesized_option_is_not_a_low_defined_menu": true,
+      "outcome_adaptive_retained_subspaces_covered": false,
+      "arbitrary_polynomial_subspace_synthesis_covered": false,
+      "partial_secret_side_information_covered": false,
+      "bound_vacuous": false
+    },
+    {
+      "dimension": 32,
+      "modulus": 32,
+      "single_option_native_acceptance_probability_upper_bound": {
+        "numerator_hex": "0x1",
+        "denominator_binary_exponent": 96
+      },
+      "low_label_defined_overlapping_options": 1024,
+      "supplied_packet_attempts": 1024,
+      "native_probability_any_accepted_overlapping_packet_upper_bound": {
+        "numerator_hex": "0x1",
+        "denominator_binary_exponent": 76
+      },
+      "selection_can_use_middle_and_top_public_label_bits": true,
+      "selection_before_complement_measurement": true,
+      "low_defined_menu_membership_programmatically_verified": false,
+      "all_options_must_have_nonzero_overlap": true,
+      "one_high_bit_synthesized_option_is_not_a_low_defined_menu": true,
+      "outcome_adaptive_retained_subspaces_covered": false,
+      "arbitrary_polynomial_subspace_synthesis_covered": false,
+      "partial_secret_side_information_covered": false,
+      "bound_vacuous": false
+    },
+    {
+      "dimension": 64,
+      "modulus": 64,
+      "single_option_native_acceptance_probability_upper_bound": {
+        "numerator_hex": "0x1",
+        "denominator_binary_exponent": 256
+      },
+      "low_label_defined_overlapping_options": 4096,
+      "supplied_packet_attempts": 4096,
+      "native_probability_any_accepted_overlapping_packet_upper_bound": {
+        "numerator_hex": "0x1",
+        "denominator_binary_exponent": 232
+      },
+      "selection_can_use_middle_and_top_public_label_bits": true,
+      "selection_before_complement_measurement": true,
+      "low_defined_menu_membership_programmatically_verified": false,
+      "all_options_must_have_nonzero_overlap": true,
+      "one_high_bit_synthesized_option_is_not_a_low_defined_menu": true,
+      "outcome_adaptive_retained_subspaces_covered": false,
+      "arbitrary_polynomial_subspace_synthesis_covered": false,
+      "partial_secret_side_information_covered": false,
+      "bound_vacuous": false
+    },
+    {
+      "dimension": 128,
+      "modulus": 128,
+      "single_option_native_acceptance_probability_upper_bound": {
+        "numerator_hex": "0x1",
+        "denominator_binary_exponent": 640
+      },
+      "low_label_defined_overlapping_options": 16384,
+      "supplied_packet_attempts": 16384,
+      "native_probability_any_accepted_overlapping_packet_upper_bound": {
+        "numerator_hex": "0x1",
+        "denominator_binary_exponent": 612
+      },
+      "selection_can_use_middle_and_top_public_label_bits": true,
+      "selection_before_complement_measurement": true,
+      "low_defined_menu_membership_programmatically_verified": false,
+      "all_options_must_have_nonzero_overlap": true,
+      "one_high_bit_synthesized_option_is_not_a_low_defined_menu": true,
+      "outcome_adaptive_retained_subspaces_covered": false,
+      "arbitrary_polynomial_subspace_synthesis_covered": false,
+      "partial_secret_side_information_covered": false,
+      "bound_vacuous": false
+    }
+  ],
+  "claim_gate": {
+    "source_selection_lineage_verified_for_external_candidates": false,
+    "general_outcome_adaptive_no_go": false,
+    "independent_theorem_review": false,
+    "new_decoder": false,
+    "speedup_claim_allowed": false
+  },
+  "dependency_sha256": {
+    "theorems/dcp_carry_source_law.py": "a297e5d1327337cf9fd02d1e3c6e77235ebd2758e14ce6455c224394fec6bc2c",
+    "theorems/dcp_carry_packets.py": "c3d345cc0d123a86e29c976959471d645945e767f6d0ee1bc6bd79149a0322c6"
+  }
+}

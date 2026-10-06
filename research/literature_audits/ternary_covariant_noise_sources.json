@@ -1,0 +1,34 @@
+{
+  "verified_date": "2026-10-06",
+  "status": "PRIMARY_ACCESS_AND_SOURCE_COMPARATORS_INSPECTED_LOCAL_APPLICATION_REVIEW_PENDING",
+  "records": [
+    {
+      "id": "arXiv:1710.08223",
+      "title": "Learning With Errors and Extrapolated Dihedral Cosets",
+      "authors": ["Zvika Brakerski", "Elena Kirshanova", "Damien Stehle", "Weiqiang Wen"],
+      "url": "https://arxiv.org/abs/1710.08223",
+      "primary_full_text_inspected": "https://www.iacr.org/archive/pkc2018/10770194/10770194.pdf",
+      "sections_inspected": ["Section4 and Theorem4, pages22-23"],
+      "supported_claim": "Known Fourier readout of Gaussian EDCP gives Gaussian-noisy modular linear samples under the stated parameters.",
+      "transfer_gate": "A three-point native envelope has paired q-wide non-Gaussian noise; neither a Gaussian LWE hardness equivalence nor an efficient decoder follows automatically."
+    },
+    {
+      "id": "AKAVIA-2008-DETERMINISTIC-LOCAL-SFT",
+      "title": "Finding Significant Fourier Transform Coefficients Deterministically and Locally",
+      "author": "Adi Akavia",
+      "url": "https://people.csail.mit.edu/akavia/FQSFT.pdf",
+      "sections_inspected": ["Section3 Algorithm5 structured difference query sets", "Section4 Theorem15 function-oracle access"],
+      "supported_claim": "Efficient significant-Fourier recovery uses specified function-evaluation access and structured query sets.",
+      "transfer_gate": "Native IID noisy examples do not give those chosen evaluations. A sparse conditional expectation and successful chosen-label calibration are not native dequantization."
+    }
+  ],
+  "local_results_not_attributed_as_published": [
+    "Explicit native onehot root-QFT gate recipe and exact paired noise law",
+    "Complete scalar attack classification with mandatory joint-information countercontrol",
+    "All-residue classical Gaussian collimation with rational phase tags and charged ancestor trees",
+    "Chosen-access radix estimator and exact random-label rejection cost",
+    "Native IID paired-character held-out verifier and probability gate"
+  ],
+  "novelty_claim": false,
+  "independent_mathematical_review_complete": false
+}

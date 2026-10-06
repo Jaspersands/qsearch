@@ -1,0 +1,33 @@
+{
+  "hypothesis_id": "HYP-CYCLOTOMIC-GALOIS-GAUSSIAN-THROUGHPUT",
+  "status": "ODD_LEVEL_PRIMITIVE_VERIFIED_LOCALLY_THROUGHPUT_BLOCKED_REVIEW_PENDING",
+  "candidate_record_accepted": false,
+  "note": "research/CYCLOTOMIC_RESCALING_GATE.md",
+  "report": "research/phase_workbench/cyclotomic_rescaling_gate.json",
+  "source_audit": "research/literature_audits/cyclotomic_rescaling_sources.json",
+  "source": "Existing IID CCP/PSP samples with integer-embedded secret. No new oracle problem.",
+  "local_results": {
+    "exact_transport": "T_(a,L)(y)=(pi/sigma_(a^-1)(pi))^L*sigma_(a^-1)(y). Lowest residue multiplier is a^L, not a.",
+    "Gaussian_admission": "Nonzero Gaussian weights available iff gcd(L,p-1)=1. Physical compiler implemented for p3, exact field-matrix controls for p3/5/7.",
+    "source": "Low-residue-only selection, invertible transported high parts and independent differences give uniform children on disjoint batches.",
+    "even_level": "At p3 even levels all six single-qudit basis permutations have low coefficient1. Counterexample labels1,1 cannot implement formal dependence2,1 by these operations.",
+    "throughput": "One-output-per-batch upper consumption ledger (n+1)^(t-1)*S(n,3)^t is still quasi-polynomial when t=Theta(log n); even Gaussian stages alone prevent a polynomial ledger.",
+    "scope": "Not a novelty claim, full secret decoder, standard LWE attack, generic merge lower bound or optimal sample lower bound. First RREF free-column failure is not exhaustive kernel rejection."
+  },
+  "proof_obligations_for_next_candidate": {
+    "PO-SOURCE": "Prove the native source law and any conditioning, including correlations among multiple surviving registers.",
+    "PO-SECRET": "Specify integer embedding versus general ring secrets; retain the full target, not merely its modp digit.",
+    "PO-LEGALITY": "Give a public physical compiler without unknown state preparation, inverse, cloning or free coherent oracle access.",
+    "PO-THROUGHPUT": "Bound cumulative consumption across L=Theta(log n) levels, final decoding, confidence and digit recursion. A one-output Gaussian primitive is insufficient.",
+    "PO-CLASSICAL": "Compare the same access/conditioning model with strongest classical reconstruction and known quantum sieves.",
+    "PO-REVIEW": "Obtain independent mathematical review and check literature novelty before accepting a new algorithm claim."
+  },
+  "falsifiers": [
+    "Exact phase transport fails for an allowed integer secret or canonical quotient lift.",
+    "Child label is nonuniform after conditioning one measured outcome or selection uses higher label digits.",
+    "The proposed output rate ignores correlations, failed outcomes or exponentially rare source filtering.",
+    "Total input consumption remains exp(Theta(log^2 n)) despite a locally efficient merge.",
+    "A classical algorithm with matching source access or an existing sieve achieves the same claimed asymptotic bound."
+  ],
+  "next_experiment": "Derive the complete native residual state under a multi-output compiler and prove its usable output rate before simulating a scaling advantage."
+}

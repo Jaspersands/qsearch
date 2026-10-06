@@ -1,0 +1,38 @@
+{
+  "hypothesis_id": "HYP-NATIVE-LEAST-TRIT-ORDINARY-PAIR-FINDER",
+  "status": "PHYSICAL_RECEIVER_AND_CONDITIONAL_TRANSFER_IMPLEMENTED_POLYNOMIAL_PAIR_FINDER_MISSING_REVIEW_PENDING",
+  "candidate_record_accepted": false,
+  "note": "research/TERNARY_PAIR_COLLIMATION.md",
+  "report": "research/phase_workbench/ternary_pair_collimation.json",
+  "literature": ["https://arxiv.org/abs/quant-ph/0406151", "https://arxiv.org/abs/1112.3333"],
+  "original_source": "M=n*r-2 fresh even-native qutrits, independently uniform paired vector frequencies at original modulus3^r; common UNKNOWN secret.",
+  "solver_input": "Deeply immutable nuisance-group labels: target component reduced moduloq/3, all other components full modq; independent uniform targets for coverage benchmarks.",
+  "implemented_receiver": "Known reversible syndrome evaluation, retained source word register, ordinary low-input MITM pair computation in separate workspace, coherent two-endpoint projector, full-basis reversible compression, inverse F3 trit measurement, random guess on all failures.",
+  "source_average_transfer_for_each_fixed_unknown_secret": "Informative acceptance4*beta; raw least-trit success1/3+4*beta/3 under stripped-input pair selection.",
+  "implemented_reference_cost": "Exponential3^floor(M/2)+3^ceil(M/2) half-table assignments; at most two retained words per left residue. Budget aborts never return partial certified pairs.",
+  "proof_obligations_before_candidate_acceptance": {
+    "PO-REVIEW": "Independent review of simplex unit-minor moment proof, high-trit independence, ordinary workspace factorization and all-failure transfer.",
+    "PO-PAIR-FINDER": "Prove polynomial capped runtime and inverse-polynomial two-witness coverage on the actual uniform-target nuisance distribution, including empty and singleton targets.",
+    "PO-POLICY": "Selection must use only stripped labels and solver randomness; high-target frequency trits may verify delta after selection, not silently choose a favorable replacement.",
+    "PO-AVERAGE-CASE": "Do not transfer average single-witness guarantees to two-witness or adaptive first-difference subinstances without a proof.",
+    "PO-RUNTIME": "Physical syndrome law is size-biased; prove a uniform-runtime cap or the occupancy-weighted average, and charge source retention and aborts.",
+    "PO-SOURCE": "Charge all M original native inputs per attempt;8M/3 expected binary inputs only when independent original vector phase access is actually available.",
+    "PO-ONEHOT": "Preserve ternary digit choice0,1,2; two unrestricted Boolean selections per register are a different problem.",
+    "PO-HARDWARE": "Compile controlled modular additions, equality projector, qutrit permutation and inverse F3 with aggregate error bounds.",
+    "PO-NATURAL-REDUCTION": "Cyclic DHSP supplies scalar phase access; vector-secret lattice/HSP implications need explicit independent reductions.",
+    "PO-FULL-SECRET": "Use and charge the existing conditional bootstrap only after the weak learner guarantee is actually established."
+  },
+  "falsifiers": [
+    "Original full-root Born amplitudes disagree with the claimed trit phase or non-target coordinates do not cancel.",
+    "A projector measures which endpoint or discards a secret-dependent anchor before it is global in a measured branch.",
+    "A planted/size-biased target or only successful runtime is reported as uniform-target coverage.",
+    "High-trit-dependent endpoint selection is treated as the stripped-input4*beta theorem.",
+    "Singleton-only coverage, identical solver outputs, or budget-exhausted partial lists count as pairs.",
+    "Exponential MITM, q27 controls or a constant-factor known sieve improvement is promoted to a Shor-level algorithm.",
+    "A known classical phase-tag source replaces the UNKNOWN native phase states."
+  ],
+  "polynomial_pair_finder": false,
+  "new_full_depth_quantum_algorithm": false,
+  "novelty_claim": false,
+  "routine_wiring_owner": "Gemini or Antigravity"
+}

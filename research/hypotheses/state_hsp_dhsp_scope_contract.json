@@ -1,0 +1,29 @@
+{
+  "hypothesis_id": "HYP-STATE-HSP-DHSP-TRANSFER-SCREEN",
+  "status": "DIRECT_THEOREM_TRANSFER_BLOCKED_LOCAL_SCOPE_REVIEW_PENDING",
+  "candidate_record_accepted": false,
+  "note": "research/STATE_HSP_DHSP_SCOPE.md",
+  "report": "research/reductions/state_hsp_dhsp_scope.json",
+  "literature_audit": "research/literature_audits/state_hsp_dhsp_scope_sources.json",
+  "target": "Existing full-function reflection DHSP, not sparse Singer membership or a new toy problem.",
+  "blocked_recipes": ["Treat normal-core output as full reflection recovery", "Treat index-two rotation subgroup as small Baer/center index", "Apply abelian preparation-inverse theorem directly to nonabelian ambient group", "Forget that ordinary abelianization preserves at most parity"],
+  "retained_capabilities": ["charged coherent full graph preparation and inverse", "public right-regular action", "gap-one StateHSP encoding", "hidden phase information in quantum irrep blocks"],
+  "proof_obligations_for_a_replacement": {
+    "PO-TARGET-PRESERVATION": "Supply a reduction whose efficiently learnable symmetry contains distinguishable full-shift data, with a proved decoder.",
+    "PO-ACTION": "Give a usable known controlled representation; a claimed projective abelian action must be specified and its cocycle certified.",
+    "PO-SOURCE": "Show how the source state, inverse and required copies are physically produced with paid full-oracle queries.",
+    "PO-GAP": "Bound non-symmetry overlaps on the actual source law, including conditioning and physical error.",
+    "PO-THEOREM-SCOPE": "Check abelianity, normality, center/Baer index, subgroup QFT and actual theorem output separately.",
+    "PO-REVIEW": "Local dihedral/core/information identities remain independently unreviewed."
+  },
+  "falsifiable_experiments": [
+    {"experiment": "Every bounded reflection shift: graph overlap and exact core.", "falsifier": "Core is nontrivial or graph symmetry differs from H_s for N>=3."},
+    {"experiment": "All bounded subgroups: center/Baer index.", "falsifier": "An element outside center normalizes every subgroup."},
+    {"experiment": "Exact weak-label distributions and physical character check.", "falsifier": "Odd-order shift information or even-order information beyond rare parity."},
+    {"experiment": "Future nonlinear/linearisation reduction admission.", "falsifier": "Learned symmetry is target-independent, state preparation assumes s, or arithmetic/QFT/inverse costs are omitted."}
+  ],
+  "gemini_integration": "Record failed direct transfers with theorem premises; do not refute the literature or exclude retained irrep blocks. Full CLI and registry validation delegated.",
+  "independent_theorem_review": false,
+  "novelty_claim": false,
+  "general_state_hsp_impossibility": false
+}

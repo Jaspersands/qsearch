@@ -1,0 +1,2948 @@
+{
+  "status": "GALOIS_RESIDUE_POWER_GATE_AND_LEGAL_GAUSSIAN_LEVELS_LOCAL_REVIEW_PENDING",
+  "arithmetic_charts": [
+    {
+      "level": 1,
+      "column_HNF_diagonal_cross_diagonal": [
+        3,
+        2,
+        1
+      ],
+      "trace_pairing_power_basis_row": [
+        {
+          "numerator": "2",
+          "denominator": "3"
+        },
+        {
+          "numerator": "-1",
+          "denominator": "3"
+        }
+      ],
+      "ring_cardinality": "3"
+    },
+    {
+      "level": 2,
+      "column_HNF_diagonal_cross_diagonal": [
+        3,
+        0,
+        3
+      ],
+      "trace_pairing_power_basis_row": [
+        {
+          "numerator": "-1",
+          "denominator": "3"
+        },
+        {
+          "numerator": "1",
+          "denominator": "3"
+        }
+      ],
+      "ring_cardinality": "9"
+    },
+    {
+      "level": 3,
+      "column_HNF_diagonal_cross_diagonal": [
+        9,
+        6,
+        3
+      ],
+      "trace_pairing_power_basis_row": [
+        {
+          "numerator": "1",
+          "denominator": "9"
+        },
+        {
+          "numerator": "-2",
+          "denominator": "9"
+        }
+      ],
+      "ring_cardinality": "27"
+    },
+    {
+      "level": 4,
+      "column_HNF_diagonal_cross_diagonal": [
+        9,
+        0,
+        9
+      ],
+      "trace_pairing_power_basis_row": [
+        {
+          "numerator": "0",
+          "denominator": "1"
+        },
+        {
+          "numerator": "1",
+          "denominator": "9"
+        }
+      ],
+      "ring_cardinality": "81"
+    },
+    {
+      "level": 5,
+      "column_HNF_diagonal_cross_diagonal": [
+        27,
+        18,
+        9
+      ],
+      "trace_pairing_power_basis_row": [
+        {
+          "numerator": "-1",
+          "denominator": "27"
+        },
+        {
+          "numerator": "-1",
+          "denominator": "27"
+        }
+      ],
+      "ring_cardinality": "243"
+    },
+    {
+      "level": 6,
+      "column_HNF_diagonal_cross_diagonal": [
+        27,
+        0,
+        27
+      ],
+      "trace_pairing_power_basis_row": [
+        {
+          "numerator": "1",
+          "denominator": "27"
+        },
+        {
+          "numerator": "0",
+          "denominator": "1"
+        }
+      ],
+      "ring_cardinality": "729"
+    }
+  ],
+  "physical_gaussian_merge_controls": [
+    {
+      "parent_level": 3,
+      "prime": 3,
+      "native_input_labels": [
+        [
+          [
+            3,
+            0
+          ],
+          [
+            7,
+            0
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            0
+          ],
+          [
+            6,
+            1
+          ]
+        ]
+      ],
+      "integer_secret_calibration": [
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "plan": {
+        "low_label_rank": 1,
+        "input_batch_size": 3,
+        "vector_dimension": 2,
+        "full_kernel_weights": [
+          1,
+          1,
+          0
+        ],
+        "selected_input_indices": [
+          0,
+          1
+        ],
+        "qudit_input_multipliers": [
+          1,
+          1
+        ],
+        "selected_native_qudits": 2,
+        "unused_native_qudits": 1,
+        "kernel_choice": "first free RREF column; not an exhaustive even-level admissible-kernel search",
+        "selection_uses_current_higher_label_digits": false,
+        "unknown_phase_preparation_or_inverse_used": false
+      },
+      "all_branches": [
+        {
+          "difference_outcomes": [
+            0
+          ],
+          "child_label": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ]
+          ],
+          "branch_probability": 0.3333333333333333,
+          "unnormalized_qudit_amplitudes": [
+            [
+              0.3333333333333333,
+              0.0
+            ],
+            [
+              -0.16666666666666688,
+              -0.28867513459481275
+            ],
+            [
+              -0.16666666666666663,
+              0.28867513459481287
+            ]
+          ],
+          "maximum_full_phase_identity_error": 8.326672684688674e-17
+        },
+        {
+          "difference_outcomes": [
+            1
+          ],
+          "child_label": [
+            [
+              2,
+              2
+            ],
+            [
+              2,
+              1
+            ]
+          ],
+          "branch_probability": 0.33333333333333326,
+          "unnormalized_qudit_amplitudes": [
+            [
+              0.05788272588897665,
+              -0.32826925100406934
+            ],
+            [
+              0.2553481477063261,
+              0.21426253656217964
+            ],
+            [
+              0.25534814770632597,
+              0.21426253656217975
+            ]
+          ],
+          "maximum_full_phase_identity_error": 2.1677797545656835e-16
+        },
+        {
+          "difference_outcomes": [
+            2
+          ],
+          "child_label": [
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "branch_probability": 0.3333333333333333,
+          "unnormalized_qudit_amplitudes": [
+            [
+              0.057882725888976805,
+              0.32826925100406934
+            ],
+            [
+              0.2553481477063259,
+              -0.21426253656217986
+            ],
+            [
+              0.2553481477063259,
+              -0.21426253656217983
+            ]
+          ],
+          "maximum_full_phase_identity_error": 8.326672684688674e-17
+        }
+      ],
+      "full_output_norm": 1.0,
+      "known_qudit_permutation_count": 2,
+      "known_SUM_difference_count": 1,
+      "postselection_or_cloning_used": false,
+      "same_secret_scope_is_integer_embedding": true,
+      "unfiltered_label_seed": 45011
+    },
+    {
+      "parent_level": 3,
+      "prime": 3,
+      "native_input_labels": [
+        [
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          [
+            4,
+            2
+          ],
+          [
+            7,
+            0
+          ]
+        ],
+        [
+          [
+            8,
+            2
+          ],
+          [
+            3,
+            0
+          ]
+        ]
+      ],
+      "integer_secret_calibration": [
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "plan": {
+        "low_label_rank": 2,
+        "input_batch_size": 3,
+        "vector_dimension": 2,
+        "full_kernel_weights": [
+          1,
+          0,
+          1
+        ],
+        "selected_input_indices": [
+          0,
+          2
+        ],
+        "qudit_input_multipliers": [
+          1,
+          1
+        ],
+        "selected_native_qudits": 2,
+        "unused_native_qudits": 1,
+        "kernel_choice": "first free RREF column; not an exhaustive even-level admissible-kernel search",
+        "selection_uses_current_higher_label_digits": false,
+        "unknown_phase_preparation_or_inverse_used": false
+      },
+      "all_branches": [
+        {
+          "difference_outcomes": [
+            0
+          ],
+          "child_label": [
+            [
+              2,
+              2
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "branch_probability": 0.33333333333333326,
+          "unnormalized_qudit_amplitudes": [
+            [
+              0.3333333333333333,
+              0.0
+            ],
+            [
+              0.33333333333333326,
+              -1.3213739775954122e-16
+            ],
+            [
+              -0.16666666666666663,
+              0.28867513459481287
+            ]
+          ],
+          "maximum_full_phase_identity_error": 1.4332403775250956e-16
+        },
+        {
+          "difference_outcomes": [
+            1
+          ],
+          "child_label": [
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "branch_probability": 0.3333333333333332,
+          "unnormalized_qudit_amplitudes": [
+            [
+              0.25534814770632597,
+              0.21426253656217975
+            ],
+            [
+              0.2553481477063261,
+              0.21426253656217964
+            ],
+            [
+              0.25534814770632597,
+              0.21426253656217975
+            ]
+          ],
+          "maximum_full_phase_identity_error": 1.5700924586837752e-16
+        },
+        {
+          "difference_outcomes": [
+            2
+          ],
+          "child_label": [
+            [
+              2,
+              1
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "branch_probability": 0.33333333333333326,
+          "unnormalized_qudit_amplitudes": [
+            [
+              0.057882725888976805,
+              0.32826925100406934
+            ],
+            [
+              0.2553481477063259,
+              -0.21426253656217986
+            ],
+            [
+              0.05788272588897676,
+              0.3282692510040693
+            ]
+          ],
+          "maximum_full_phase_identity_error": 6.938893903907228e-17
+        }
+      ],
+      "full_output_norm": 0.9999999999999998,
+      "known_qudit_permutation_count": 2,
+      "known_SUM_difference_count": 1,
+      "postselection_or_cloning_used": false,
+      "same_secret_scope_is_integer_embedding": true,
+      "unfiltered_label_seed": 45012
+    },
+    {
+      "parent_level": 3,
+      "prime": 3,
+      "native_input_labels": [
+        [
+          [
+            7,
+            2
+          ],
+          [
+            5,
+            2
+          ]
+        ],
+        [
+          [
+            7,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            8,
+            0
+          ],
+          [
+            4,
+            2
+          ]
+        ]
+      ],
+      "integer_secret_calibration": [
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "plan": {
+        "low_label_rank": 2,
+        "input_batch_size": 3,
+        "vector_dimension": 2,
+        "full_kernel_weights": [
+          1,
+          1,
+          1
+        ],
+        "selected_input_indices": [
+          0,
+          1,
+          2
+        ],
+        "qudit_input_multipliers": [
+          1,
+          1,
+          1
+        ],
+        "selected_native_qudits": 3,
+        "unused_native_qudits": 0,
+        "kernel_choice": "first free RREF column; not an exhaustive even-level admissible-kernel search",
+        "selection_uses_current_higher_label_digits": false,
+        "unknown_phase_preparation_or_inverse_used": false
+      },
+      "all_branches": [
+        {
+          "difference_outcomes": [
+            0,
+            0
+          ],
+          "child_label": [
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "branch_probability": 0.11111111111111113,
+          "unnormalized_qudit_amplitudes": [
+            [
+              0.19245008972987526,
+              0.0
+            ],
+            [
+              0.19245008972987526,
+              -1.0382404189953241e-16
+            ],
+            [
+              0.19245008972987526,
+              -1.6405041711916011e-16
+            ]
+          ],
+          "maximum_full_phase_identity_error": 1.6405041711916011e-16
+        },
+        {
+          "difference_outcomes": [
+            0,
+            1
+          ],
+          "child_label": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              0
+            ]
+          ],
+          "branch_probability": 0.11111111111111113,
+          "unnormalized_qudit_amplitudes": [
+            [
+              0.14742532181531962,
+              -0.12370453316142659
+            ],
+            [
+              0.1474253218153196,
+              -0.12370453316142661
+            ],
+            [
+              0.03341860737343016,
+              0.18952634043387626
+            ]
+          ],
+          "maximum_full_phase_identity_error": 3.925231146709438e-17
+        },
+        {
+          "difference_outcomes": [
+            0,
+            2
+          ],
+          "child_label": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              2
+            ]
+          ],
+          "branch_probability": 0.11111111111111113,
+          "unnormalized_qudit_amplitudes": [
+            [
+              0.03341860737342999,
+              -0.18952634043387628
+            ],
+            [
+              0.14742532181531967,
+              0.1237045331614265
+            ],
+            [
+              0.14742532181531975,
+              0.12370453316142639
+            ]
+          ],
+          "maximum_full_phase_identity_error": 7.850462293418876e-17
+        },
+        {
+          "difference_outcomes": [
+            1,
+            0
+          ],
+          "child_label": [
+            [
+              2,
+              1
+            ],
+            [
+              2,
+              2
+            ]
+          ],
+          "branch_probability": 0.11111111111111113,
+          "unnormalized_qudit_amplitudes": [
+            [
+              -0.18084392918874972,
+              -0.06582180727244973
+            ],
+            [
+              0.03341860737343022,
+              0.18952634043387626
+            ],
+            [
+              0.03341860737343016,
+              0.18952634043387626
+            ]
+          ],
+          "maximum_full_phase_identity_error": 3.469446951953614e-17
+        },
+        {
+          "difference_outcomes": [
+            1,
+            1
+          ],
+          "child_label": [
+            [
+              1,
+              1
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "branch_probability": 0.1111111111111111,
+          "unnormalized_qudit_amplitudes": [
+            [
+              -0.18084392918874967,
+              0.06582180727244984
+            ],
+            [
+              0.14742532181531975,
+              0.1237045331614264
+            ],
+            [
+              -0.1808439291887497,
+              0.06582180727244977
+            ]
+          ],
+          "maximum_full_phase_identity_error": 7.473417450352271e-17
+        },
+        {
+          "difference_outcomes": [
+            1,
+            2
+          ],
+          "child_label": [
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              0
+            ]
+          ],
+          "branch_probability": 0.11111111111111113,
+          "unnormalized_qudit_amplitudes": [
+            [
+              -0.09622504486493755,
+              0.1666666666666667
+            ],
+            [
+              -0.09622504486493755,
+              0.1666666666666667
+            ],
+            [
+              -0.09622504486493753,
+              0.1666666666666667
+            ]
+          ],
+          "maximum_full_phase_identity_error": 7.473417450352271e-17
+        },
+        {
+          "difference_outcomes": [
+            2,
+            0
+          ],
+          "child_label": [
+            [
+              2,
+              2
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "branch_probability": 0.1111111111111111,
+          "unnormalized_qudit_amplitudes": [
+            [
+              0.03341860737342999,
+              -0.18952634043387628
+            ],
+            [
+              -0.18084392918874967,
+              0.06582180727244984
+            ],
+            [
+              0.03341860737342996,
+              -0.18952634043387628
+            ]
+          ],
+          "maximum_full_phase_identity_error": 7.473417450352271e-17
+        },
+        {
+          "difference_outcomes": [
+            2,
+            1
+          ],
+          "child_label": [
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              1
+            ]
+          ],
+          "branch_probability": 0.1111111111111111,
+          "unnormalized_qudit_amplitudes": [
+            [
+              -0.09622504486493776,
+              -0.1666666666666666
+            ],
+            [
+              -0.09622504486493755,
+              0.1666666666666667
+            ],
+            [
+              0.19245008972987526,
+              -4.1035162293473533e-17
+            ]
+          ],
+          "maximum_full_phase_identity_error": 8.886119947416683e-17
+        },
+        {
+          "difference_outcomes": [
+            2,
+            2
+          ],
+          "child_label": [
+            [
+              1,
+              1
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "branch_probability": 0.1111111111111111,
+          "unnormalized_qudit_amplitudes": [
+            [
+              -0.18084392918874975,
+              -0.0658218072724496
+            ],
+            [
+              -0.18084392918874972,
+              -0.06582180727244973
+            ],
+            [
+              0.1474253218153196,
+              -0.12370453316142661
+            ]
+          ],
+          "maximum_full_phase_identity_error": 1.279468816630226e-16
+        }
+      ],
+      "full_output_norm": 1.0000000000000007,
+      "known_qudit_permutation_count": 3,
+      "known_SUM_difference_count": 2,
+      "postselection_or_cloning_used": false,
+      "same_secret_scope_is_integer_embedding": true,
+      "unfiltered_label_seed": 45013
+    },
+    {
+      "parent_level": 3,
+      "prime": 3,
+      "native_input_labels": [
+        [
+          [
+            4,
+            2
+          ],
+          [
+            7,
+            0
+          ]
+        ],
+        [
+          [
+            6,
+            2
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        [
+          [
+            4,
+            1
+          ],
+          [
+            7,
+            0
+          ]
+        ]
+      ],
+      "integer_secret_calibration": [
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "plan": {
+        "low_label_rank": 2,
+        "input_batch_size": 3,
+        "vector_dimension": 2,
+        "full_kernel_weights": [
+          0,
+          2,
+          1
+        ],
+        "selected_input_indices": [
+          1,
+          2
+        ],
+        "qudit_input_multipliers": [
+          2,
+          1
+        ],
+        "selected_native_qudits": 2,
+        "unused_native_qudits": 1,
+        "kernel_choice": "first free RREF column; not an exhaustive even-level admissible-kernel search",
+        "selection_uses_current_higher_label_digits": false,
+        "unknown_phase_preparation_or_inverse_used": false
+      },
+      "all_branches": [
+        {
+          "difference_outcomes": [
+            0
+          ],
+          "child_label": [
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              1
+            ]
+          ],
+          "branch_probability": 0.3333333333333333,
+          "unnormalized_qudit_amplitudes": [
+            [
+              0.3333333333333333,
+              0.0
+            ],
+            [
+              -0.16666666666666688,
+              -0.28867513459481275
+            ],
+            [
+              -0.16666666666666652,
+              0.2886751345948129
+            ]
+          ],
+          "maximum_full_phase_identity_error": 1.0007415106216804e-16
+        },
+        {
+          "difference_outcomes": [
+            1
+          ],
+          "child_label": [
+            [
+              2,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "branch_probability": 0.33333333333333337,
+          "unnormalized_qudit_amplitudes": [
+            [
+              0.05788272588897665,
+              -0.32826925100406934
+            ],
+            [
+              0.05788272588897653,
+              -0.3282692510040694
+            ],
+            [
+              -0.3132308735953028,
+              0.11400671444188962
+            ]
+          ],
+          "maximum_full_phase_identity_error": 2.482534153247273e-16
+        },
+        {
+          "difference_outcomes": [
+            2
+          ],
+          "child_label": [
+            [
+              1,
+              0
+            ],
+            [
+              0,
+              2
+            ]
+          ],
+          "branch_probability": 0.33333333333333337,
+          "unnormalized_qudit_amplitudes": [
+            [
+              0.2553481477063259,
+              -0.21426253656217986
+            ],
+            [
+              0.2553481477063259,
+              -0.21426253656217986
+            ],
+            [
+              0.05788272588897695,
+              0.32826925100406934
+            ]
+          ],
+          "maximum_full_phase_identity_error": 5.594315114139762e-17
+        }
+      ],
+      "full_output_norm": 1.0000000000000002,
+      "known_qudit_permutation_count": 2,
+      "known_SUM_difference_count": 1,
+      "postselection_or_cloning_used": false,
+      "same_secret_scope_is_integer_embedding": true,
+      "unfiltered_label_seed": 45014
+    },
+    {
+      "parent_level": 5,
+      "prime": 3,
+      "native_input_labels": [
+        [
+          [
+            18,
+            3
+          ],
+          [
+            0,
+            7
+          ]
+        ],
+        [
+          [
+            6,
+            2
+          ],
+          [
+            25,
+            4
+          ]
+        ],
+        [
+          [
+            3,
+            4
+          ],
+          [
+            6,
+            0
+          ]
+        ]
+      ],
+      "integer_secret_calibration": [
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "plan": {
+        "low_label_rank": 2,
+        "input_batch_size": 3,
+        "vector_dimension": 2,
+        "full_kernel_weights": [
+          1,
+          1,
+          1
+        ],
+        "selected_input_indices": [
+          0,
+          1,
+          2
+        ],
+        "qudit_input_multipliers": [
+          1,
+          1,
+          1
+        ],
+        "selected_native_qudits": 3,
+        "unused_native_qudits": 0,
+        "kernel_choice": "first free RREF column; not an exhaustive even-level admissible-kernel search",
+        "selection_uses_current_higher_label_digits": false,
+        "unknown_phase_preparation_or_inverse_used": false
+      },
+      "all_branches": [
+        {
+          "difference_outcomes": [
+            0,
+            0
+          ],
+          "child_label": [
+            [
+              3,
+              6
+            ],
+            [
+              1,
+              4
+            ]
+          ],
+          "branch_probability": 0.11111111111111113,
+          "unnormalized_qudit_amplitudes": [
+            [
+              0.19245008972987526,
+              0.0
+            ],
+            [
+              -0.18084392918874978,
+              -0.06582180727244961
+            ],
+            [
+              -0.18084392918874972,
+              -0.06582180727244967
+            ]
+          ],
+          "maximum_full_phase_identity_error": 1.2412670766236366e-16
+        },
+        {
+          "difference_outcomes": [
+            0,
+            1
+          ],
+          "child_label": [
+            [
+              6,
+              1
+            ],
+            [
+              7,
+              4
+            ]
+          ],
+          "branch_probability": 0.1111111111111111,
+          "unnormalized_qudit_amplitudes": [
+            [
+              -0.055195307870067566,
+              0.18436516760539529
+            ],
+            [
+              -0.05519530787006752,
+              0.1843651676053953
+            ],
+            [
+              -0.19114881107059087,
+              -0.0223420917404032
+            ]
+          ],
+          "maximum_full_phase_identity_error": 5.594315114139762e-17
+        },
+        {
+          "difference_outcomes": [
+            0,
+            2
+          ],
+          "child_label": [
+            [
+              2,
+              0
+            ],
+            [
+              7,
+              1
+            ]
+          ],
+          "branch_probability": 0.1111111111111111,
+          "unnormalized_qudit_amplitudes": [
+            [
+              0.18726257265428195,
+              0.04438204501751592
+            ],
+            [
+              -0.011189977541149221,
+              0.1921244946373721
+            ],
+            [
+              0.07622558651442361,
+              -0.1767107721605255
+            ]
+          ],
+          "maximum_full_phase_identity_error": 8.285007358124453e-17
+        },
+        {
+          "difference_outcomes": [
+            1,
+            0
+          ],
+          "child_label": [
+            [
+              0,
+              8
+            ],
+            [
+              8,
+              8
+            ]
+          ],
+          "branch_probability": 0.1111111111111111,
+          "unnormalized_qudit_amplitudes": [
+            [
+              -0.18084392918874972,
+              -0.06582180727244973
+            ],
+            [
+              0.033418607373430206,
+              0.18952634043387623
+            ],
+            [
+              -0.09622504486493758,
+              0.16666666666666669
+            ]
+          ],
+          "maximum_full_phase_identity_error": 3.925231146709438e-17
+        },
+        {
+          "difference_outcomes": [
+            1,
+            1
+          ],
+          "child_label": [
+            [
+              3,
+              3
+            ],
+            [
+              5,
+              8
+            ]
+          ],
+          "branch_probability": 0.1111111111111111,
+          "unnormalized_qudit_amplitudes": [
+            [
+              0.11492322455616708,
+              -0.15436868042012225
+            ],
+            [
+              0.18726257265428192,
+              -0.04438204501751601
+            ],
+            [
+              -0.055195307870067566,
+              0.18436516760539529
+            ]
+          ],
+          "maximum_full_phase_identity_error": 6.834017936133213e-17
+        },
+        {
+          "difference_outcomes": [
+            1,
+            2
+          ],
+          "child_label": [
+            [
+              8,
+              2
+            ],
+            [
+              5,
+              5
+            ]
+          ],
+          "branch_probability": 0.11111111111111108,
+          "unnormalized_qudit_amplitudes": [
+            [
+              -0.16078970427463674,
+              -0.10575305213709865
+            ],
+            [
+              0.171979681815786,
+              -0.08637144250027348
+            ],
+            [
+              -0.16078970427463676,
+              -0.10575305213709858
+            ]
+          ],
+          "maximum_full_phase_identity_error": 7.473417450352271e-17
+        },
+        {
+          "difference_outcomes": [
+            2,
+            0
+          ],
+          "child_label": [
+            [
+              7,
+              3
+            ],
+            [
+              4,
+              2
+            ]
+          ],
+          "branch_probability": 0.1111111111111111,
+          "unnormalized_qudit_amplitudes": [
+            [
+              0.03341860737343008,
+              0.18952634043387626
+            ],
+            [
+              0.19245008972987526,
+              -1.28836369729375e-16
+            ],
+            [
+              0.1474253218153196,
+              -0.1237045331614266
+            ]
+          ],
+          "maximum_full_phase_identity_error": 4.8648839831664723e-17
+        },
+        {
+          "difference_outcomes": [
+            2,
+            1
+          ],
+          "child_label": [
+            [
+              1,
+              7
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "branch_probability": 0.1111111111111111,
+          "unnormalized_qudit_amplitudes": [
+            [
+              -0.19114881107059087,
+              -0.022342091740403188
+            ],
+            [
+              -0.0111899775411494,
+              -0.19212449463737208
+            ],
+            [
+              0.11492322455616709,
+              -0.15436868042012225
+            ]
+          ],
+          "maximum_full_phase_identity_error": 5.204170427930421e-17
+        },
+        {
+          "difference_outcomes": [
+            2,
+            2
+          ],
+          "child_label": [
+            [
+              6,
+              6
+            ],
+            [
+              1,
+              8
+            ]
+          ],
+          "branch_probability": 0.1111111111111111,
+          "unnormalized_qudit_amplitudes": [
+            [
+              -0.01118997754114929,
+              0.19212449463737208
+            ],
+            [
+              -0.05519530787006769,
+              -0.18436516760539526
+            ],
+            [
+              0.11492322455616724,
+              0.15436868042012214
+            ]
+          ],
+          "maximum_full_phase_identity_error": 4.163336342344337e-17
+        }
+      ],
+      "full_output_norm": 0.9999999999999998,
+      "known_qudit_permutation_count": 3,
+      "known_SUM_difference_count": 2,
+      "postselection_or_cloning_used": false,
+      "same_secret_scope_is_integer_embedding": true,
+      "unfiltered_label_seed": 45011
+    },
+    {
+      "parent_level": 5,
+      "prime": 3,
+      "native_input_labels": [
+        [
+          [
+            0,
+            1
+          ],
+          [
+            22,
+            4
+          ]
+        ],
+        [
+          [
+            17,
+            7
+          ],
+          [
+            7,
+            8
+          ]
+        ],
+        [
+          [
+            20,
+            3
+          ],
+          [
+            1,
+            0
+          ]
+        ]
+      ],
+      "integer_secret_calibration": [
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "plan": {
+        "low_label_rank": 1,
+        "input_batch_size": 3,
+        "vector_dimension": 2,
+        "full_kernel_weights": [
+          0,
+          1,
+          0
+        ],
+        "selected_input_indices": [
+          1
+        ],
+        "qudit_input_multipliers": [
+          1
+        ],
+        "selected_native_qudits": 1,
+        "unused_native_qudits": 2,
+        "kernel_choice": "first free RREF column; not an exhaustive even-level admissible-kernel search",
+        "selection_uses_current_higher_label_digits": false,
+        "unknown_phase_preparation_or_inverse_used": false
+      },
+      "all_branches": [
+        {
+          "difference_outcomes": [],
+          "child_label": [
+            [
+              0,
+              1
+            ],
+            [
+              7,
+              4
+            ]
+          ],
+          "branch_probability": 1.0,
+          "unnormalized_qudit_amplitudes": [
+            [
+              0.5773502691896257,
+              0.0
+            ],
+            [
+              0.5773502691896257,
+              0.0
+            ],
+            [
+              -0.5425317875662491,
+              -0.19746542181734916
+            ]
+          ],
+          "maximum_full_phase_identity_error": 0.0
+        }
+      ],
+      "full_output_norm": 1.0,
+      "known_qudit_permutation_count": 1,
+      "known_SUM_difference_count": 0,
+      "postselection_or_cloning_used": false,
+      "same_secret_scope_is_integer_embedding": true,
+      "unfiltered_label_seed": 45012
+    },
+    {
+      "parent_level": 5,
+      "prime": 3,
+      "native_input_labels": [
+        [
+          [
+            14,
+            5
+          ],
+          [
+            22,
+            7
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            15,
+            8
+          ]
+        ],
+        [
+          [
+            6,
+            4
+          ],
+          [
+            18,
+            2
+          ]
+        ]
+      ],
+      "integer_secret_calibration": [
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "plan": {
+        "low_label_rank": 2,
+        "input_batch_size": 3,
+        "vector_dimension": 2,
+        "full_kernel_weights": [
+          2,
+          0,
+          1
+        ],
+        "selected_input_indices": [
+          0,
+          2
+        ],
+        "qudit_input_multipliers": [
+          2,
+          1
+        ],
+        "selected_native_qudits": 2,
+        "unused_native_qudits": 1,
+        "kernel_choice": "first free RREF column; not an exhaustive even-level admissible-kernel search",
+        "selection_uses_current_higher_label_digits": false,
+        "unknown_phase_preparation_or_inverse_used": false
+      },
+      "all_branches": [
+        {
+          "difference_outcomes": [
+            0
+          ],
+          "child_label": [
+            [
+              0,
+              7
+            ],
+            [
+              6,
+              8
+            ]
+          ],
+          "branch_probability": 0.33333333333333337,
+          "unnormalized_qudit_amplitudes": [
+            [
+              0.3333333333333333,
+              0.0
+            ],
+            [
+              -0.31323087359530283,
+              -0.11400671444188946
+            ],
+            [
+              -0.16666666666666663,
+              0.2886751345948129
+            ]
+          ],
+          "maximum_full_phase_identity_error": 1.0007415106216804e-16
+        },
+        {
+          "difference_outcomes": [
+            1
+          ],
+          "child_label": [
+            [
+              6,
+              2
+            ],
+            [
+              6,
+              1
+            ]
+          ],
+          "branch_probability": 0.3333333333333333,
+          "unnormalized_qudit_amplitudes": [
+            [
+              0.19905286390092874,
+              0.2673743975850146
+            ],
+            [
+              -0.27849593713764553,
+              -0.18316965935693524
+            ],
+            [
+              0.19905286390092874,
+              0.2673743975850146
+            ]
+          ],
+          "maximum_full_phase_identity_error": 5.551115123125783e-17
+        },
+        {
+          "difference_outcomes": [
+            2
+          ],
+          "child_label": [
+            [
+              2,
+              4
+            ],
+            [
+              4,
+              8
+            ]
+          ],
+          "branch_probability": 0.3333333333333334,
+          "unnormalized_qudit_amplitudes": [
+            [
+              0.13202658867971895,
+              0.306072035626758
+            ],
+            [
+              -0.2784959371376454,
+              0.1831696593569354
+            ],
+            [
+              -0.09560107757036336,
+              0.31932983743849636
+            ]
+          ],
+          "maximum_full_phase_identity_error": 6.206335383118183e-17
+        }
+      ],
+      "full_output_norm": 1.0000000000000002,
+      "known_qudit_permutation_count": 2,
+      "known_SUM_difference_count": 1,
+      "postselection_or_cloning_used": false,
+      "same_secret_scope_is_integer_embedding": true,
+      "unfiltered_label_seed": 45013
+    },
+    {
+      "parent_level": 5,
+      "prime": 3,
+      "native_input_labels": [
+        [
+          [
+            26,
+            4
+          ],
+          [
+            23,
+            7
+          ]
+        ],
+        [
+          [
+            5,
+            6
+          ],
+          [
+            22,
+            1
+          ]
+        ],
+        [
+          [
+            6,
+            4
+          ],
+          [
+            11,
+            7
+          ]
+        ]
+      ],
+      "integer_secret_calibration": [
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "plan": {
+        "low_label_rank": 2,
+        "input_batch_size": 3,
+        "vector_dimension": 2,
+        "full_kernel_weights": [
+          1,
+          0,
+          0
+        ],
+        "selected_input_indices": [
+          0
+        ],
+        "qudit_input_multipliers": [
+          1
+        ],
+        "selected_native_qudits": 1,
+        "unused_native_qudits": 2,
+        "kernel_choice": "first free RREF column; not an exhaustive even-level admissible-kernel search",
+        "selection_uses_current_higher_label_digits": false,
+        "unknown_phase_preparation_or_inverse_used": false
+      },
+      "all_branches": [
+        {
+          "difference_outcomes": [],
+          "child_label": [
+            [
+              2,
+              8
+            ],
+            [
+              5,
+              8
+            ]
+          ],
+          "branch_probability": 1.0,
+          "unnormalized_qudit_amplitudes": [
+            [
+              0.5773502691896257,
+              0.0
+            ],
+            [
+              -0.28867513459481314,
+              -0.49999999999999983
+            ],
+            [
+              -0.28867513459481275,
+              0.5
+            ]
+          ],
+          "maximum_full_phase_identity_error": 0.0
+        }
+      ],
+      "full_output_norm": 1.0,
+      "known_qudit_permutation_count": 1,
+      "known_SUM_difference_count": 0,
+      "postselection_or_cloning_used": false,
+      "same_secret_scope_is_integer_embedding": true,
+      "unfiltered_label_seed": 45014
+    }
+  ],
+  "conditioned_exact_source_control": {
+    "parent_level": 3,
+    "conditioned_low_labels": [
+      1,
+      1
+    ],
+    "kernel_weights": [
+      2,
+      1
+    ],
+    "exact_parent_pairs": 81,
+    "all_uniform_difference_outcomes": 3,
+    "child_label_counts": [
+      {
+        "label": [
+          0,
+          0
+        ],
+        "count": 27
+      },
+      {
+        "label": [
+          0,
+          1
+        ],
+        "count": 27
+      },
+      {
+        "label": [
+          0,
+          2
+        ],
+        "count": 27
+      },
+      {
+        "label": [
+          1,
+          0
+        ],
+        "count": 27
+      },
+      {
+        "label": [
+          1,
+          1
+        ],
+        "count": 27
+      },
+      {
+        "label": [
+          1,
+          2
+        ],
+        "count": 27
+      },
+      {
+        "label": [
+          2,
+          0
+        ],
+        "count": 27
+      },
+      {
+        "label": [
+          2,
+          1
+        ],
+        "count": 27
+      },
+      {
+        "label": [
+          2,
+          2
+        ],
+        "count": 27
+      }
+    ],
+    "counts_conditioned_on_each_difference_outcome": [
+      {
+        "difference_outcome": 0,
+        "child_label_counts": [
+          {
+            "label": [
+              0,
+              0
+            ],
+            "count": 9
+          },
+          {
+            "label": [
+              0,
+              1
+            ],
+            "count": 9
+          },
+          {
+            "label": [
+              0,
+              2
+            ],
+            "count": 9
+          },
+          {
+            "label": [
+              1,
+              0
+            ],
+            "count": 9
+          },
+          {
+            "label": [
+              1,
+              1
+            ],
+            "count": 9
+          },
+          {
+            "label": [
+              1,
+              2
+            ],
+            "count": 9
+          },
+          {
+            "label": [
+              2,
+              0
+            ],
+            "count": 9
+          },
+          {
+            "label": [
+              2,
+              1
+            ],
+            "count": 9
+          },
+          {
+            "label": [
+              2,
+              2
+            ],
+            "count": 9
+          }
+        ]
+      },
+      {
+        "difference_outcome": 1,
+        "child_label_counts": [
+          {
+            "label": [
+              0,
+              0
+            ],
+            "count": 9
+          },
+          {
+            "label": [
+              0,
+              1
+            ],
+            "count": 9
+          },
+          {
+            "label": [
+              0,
+              2
+            ],
+            "count": 9
+          },
+          {
+            "label": [
+              1,
+              0
+            ],
+            "count": 9
+          },
+          {
+            "label": [
+              1,
+              1
+            ],
+            "count": 9
+          },
+          {
+            "label": [
+              1,
+              2
+            ],
+            "count": 9
+          },
+          {
+            "label": [
+              2,
+              0
+            ],
+            "count": 9
+          },
+          {
+            "label": [
+              2,
+              1
+            ],
+            "count": 9
+          },
+          {
+            "label": [
+              2,
+              2
+            ],
+            "count": 9
+          }
+        ]
+      },
+      {
+        "difference_outcome": 2,
+        "child_label_counts": [
+          {
+            "label": [
+              0,
+              0
+            ],
+            "count": 9
+          },
+          {
+            "label": [
+              0,
+              1
+            ],
+            "count": 9
+          },
+          {
+            "label": [
+              0,
+              2
+            ],
+            "count": 9
+          },
+          {
+            "label": [
+              1,
+              0
+            ],
+            "count": 9
+          },
+          {
+            "label": [
+              1,
+              1
+            ],
+            "count": 9
+          },
+          {
+            "label": [
+              1,
+              2
+            ],
+            "count": 9
+          },
+          {
+            "label": [
+              2,
+              0
+            ],
+            "count": 9
+          },
+          {
+            "label": [
+              2,
+              1
+            ],
+            "count": 9
+          },
+          {
+            "label": [
+              2,
+              2
+            ],
+            "count": 9
+          }
+        ]
+      }
+    ],
+    "every_child_label_has_equal_count": true,
+    "every_child_label_uniform_for_each_fixed_difference_outcome": true,
+    "selection_after_reading_higher_digits_covered": false
+  },
+  "even_level_countercontrol": {
+    "level": 2,
+    "two_input_labels": [
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    "formal_Gaussian_weights": [
+      2,
+      1
+    ],
+    "transformed_first_label": [
+      2,
+      2
+    ],
+    "actual_transformed_label_sum_residue": 2,
+    "same_as_formal_weighted_zero_sum": false,
+    "native_phase_level_reduction_available": false
+  },
+  "all_ternary_index_permutation_even_level_controls": [
+    {
+      "level": 2,
+      "native_input_label": [
+        1,
+        0
+      ],
+      "old_index_as_function_of_new": [
+        0,
+        1,
+        2
+      ],
+      "affine_multiplier": 1,
+      "affine_offset": 0,
+      "transformed_label": [
+        1,
+        0
+      ],
+      "transformed_low_residue": 1,
+      "secret_dependent_global_phase_retained": true,
+      "scope": "all six qutrit basis permutations, not arbitrary unitaries or joint instruments"
+    },
+    {
+      "level": 2,
+      "native_input_label": [
+        1,
+        0
+      ],
+      "old_index_as_function_of_new": [
+        1,
+        2,
+        0
+      ],
+      "affine_multiplier": 1,
+      "affine_offset": 1,
+      "transformed_label": [
+        0,
+        1
+      ],
+      "transformed_low_residue": 1,
+      "secret_dependent_global_phase_retained": true,
+      "scope": "all six qutrit basis permutations, not arbitrary unitaries or joint instruments"
+    },
+    {
+      "level": 2,
+      "native_input_label": [
+        1,
+        0
+      ],
+      "old_index_as_function_of_new": [
+        2,
+        0,
+        1
+      ],
+      "affine_multiplier": 1,
+      "affine_offset": 2,
+      "transformed_label": [
+        2,
+        2
+      ],
+      "transformed_low_residue": 1,
+      "secret_dependent_global_phase_retained": true,
+      "scope": "all six qutrit basis permutations, not arbitrary unitaries or joint instruments"
+    },
+    {
+      "level": 2,
+      "native_input_label": [
+        1,
+        0
+      ],
+      "old_index_as_function_of_new": [
+        0,
+        2,
+        1
+      ],
+      "affine_multiplier": 2,
+      "affine_offset": 0,
+      "transformed_label": [
+        2,
+        2
+      ],
+      "transformed_low_residue": 1,
+      "secret_dependent_global_phase_retained": true,
+      "scope": "all six qutrit basis permutations, not arbitrary unitaries or joint instruments"
+    },
+    {
+      "level": 2,
+      "native_input_label": [
+        1,
+        0
+      ],
+      "old_index_as_function_of_new": [
+        1,
+        0,
+        2
+      ],
+      "affine_multiplier": 2,
+      "affine_offset": 1,
+      "transformed_label": [
+        0,
+        1
+      ],
+      "transformed_low_residue": 1,
+      "secret_dependent_global_phase_retained": true,
+      "scope": "all six qutrit basis permutations, not arbitrary unitaries or joint instruments"
+    },
+    {
+      "level": 2,
+      "native_input_label": [
+        1,
+        0
+      ],
+      "old_index_as_function_of_new": [
+        2,
+        1,
+        0
+      ],
+      "affine_multiplier": 2,
+      "affine_offset": 2,
+      "transformed_label": [
+        1,
+        0
+      ],
+      "transformed_low_residue": 1,
+      "secret_dependent_global_phase_retained": true,
+      "scope": "all six qutrit basis permutations, not arbitrary unitaries or joint instruments"
+    }
+  ],
+  "level_power_classifications": [
+    {
+      "prime": 2,
+      "level": 1,
+      "native_rescaling_residue_multipliers": [
+        1
+      ],
+      "power_subgroup_size": 1,
+      "arbitrary_nonzero_Gaussian_coefficients_available": true,
+      "all_multipliers_are_one_at_full_ramification_levels": true,
+      "scope": "integer-embedded secret, native input-index multiplication, conjugate trace-dual label transport",
+      "general_prime_physical_compiler_implemented": false,
+      "all_quantum_encodings_or_merges_excluded": false
+    },
+    {
+      "prime": 2,
+      "level": 2,
+      "native_rescaling_residue_multipliers": [
+        1
+      ],
+      "power_subgroup_size": 1,
+      "arbitrary_nonzero_Gaussian_coefficients_available": true,
+      "all_multipliers_are_one_at_full_ramification_levels": true,
+      "scope": "integer-embedded secret, native input-index multiplication, conjugate trace-dual label transport",
+      "general_prime_physical_compiler_implemented": false,
+      "all_quantum_encodings_or_merges_excluded": false
+    },
+    {
+      "prime": 2,
+      "level": 3,
+      "native_rescaling_residue_multipliers": [
+        1
+      ],
+      "power_subgroup_size": 1,
+      "arbitrary_nonzero_Gaussian_coefficients_available": true,
+      "all_multipliers_are_one_at_full_ramification_levels": true,
+      "scope": "integer-embedded secret, native input-index multiplication, conjugate trace-dual label transport",
+      "general_prime_physical_compiler_implemented": false,
+      "all_quantum_encodings_or_merges_excluded": false
+    },
+    {
+      "prime": 2,
+      "level": 4,
+      "native_rescaling_residue_multipliers": [
+        1
+      ],
+      "power_subgroup_size": 1,
+      "arbitrary_nonzero_Gaussian_coefficients_available": true,
+      "all_multipliers_are_one_at_full_ramification_levels": true,
+      "scope": "integer-embedded secret, native input-index multiplication, conjugate trace-dual label transport",
+      "general_prime_physical_compiler_implemented": false,
+      "all_quantum_encodings_or_merges_excluded": false
+    },
+    {
+      "prime": 2,
+      "level": 5,
+      "native_rescaling_residue_multipliers": [
+        1
+      ],
+      "power_subgroup_size": 1,
+      "arbitrary_nonzero_Gaussian_coefficients_available": true,
+      "all_multipliers_are_one_at_full_ramification_levels": true,
+      "scope": "integer-embedded secret, native input-index multiplication, conjugate trace-dual label transport",
+      "general_prime_physical_compiler_implemented": false,
+      "all_quantum_encodings_or_merges_excluded": false
+    },
+    {
+      "prime": 2,
+      "level": 6,
+      "native_rescaling_residue_multipliers": [
+        1
+      ],
+      "power_subgroup_size": 1,
+      "arbitrary_nonzero_Gaussian_coefficients_available": true,
+      "all_multipliers_are_one_at_full_ramification_levels": true,
+      "scope": "integer-embedded secret, native input-index multiplication, conjugate trace-dual label transport",
+      "general_prime_physical_compiler_implemented": false,
+      "all_quantum_encodings_or_merges_excluded": false
+    },
+    {
+      "prime": 2,
+      "level": 7,
+      "native_rescaling_residue_multipliers": [
+        1
+      ],
+      "power_subgroup_size": 1,
+      "arbitrary_nonzero_Gaussian_coefficients_available": true,
+      "all_multipliers_are_one_at_full_ramification_levels": true,
+      "scope": "integer-embedded secret, native input-index multiplication, conjugate trace-dual label transport",
+      "general_prime_physical_compiler_implemented": false,
+      "all_quantum_encodings_or_merges_excluded": false
+    },
+    {
+      "prime": 2,
+      "level": 8,
+      "native_rescaling_residue_multipliers": [
+        1
+      ],
+      "power_subgroup_size": 1,
+      "arbitrary_nonzero_Gaussian_coefficients_available": true,
+      "all_multipliers_are_one_at_full_ramification_levels": true,
+      "scope": "integer-embedded secret, native input-index multiplication, conjugate trace-dual label transport",
+      "general_prime_physical_compiler_implemented": false,
+      "all_quantum_encodings_or_merges_excluded": false
+    },
+    {
+      "prime": 2,
+      "level": 9,
+      "native_rescaling_residue_multipliers": [
+        1
+      ],
+      "power_subgroup_size": 1,
+      "arbitrary_nonzero_Gaussian_coefficients_available": true,
+      "all_multipliers_are_one_at_full_ramification_levels": true,
+      "scope": "integer-embedded secret, native input-index multiplication, conjugate trace-dual label transport",
+      "general_prime_physical_compiler_implemented": false,
+      "all_quantum_encodings_or_merges_excluded": false
+    },
+    {
+      "prime": 2,
+      "level": 10,
+      "native_rescaling_residue_multipliers": [
+        1
+      ],
+      "power_subgroup_size": 1,
+      "arbitrary_nonzero_Gaussian_coefficients_available": true,
+      "all_multipliers_are_one_at_full_ramification_levels": true,
+      "scope": "integer-embedded secret, native input-index multiplication, conjugate trace-dual label transport",
+      "general_prime_physical_compiler_implemented": false,
+      "all_quantum_encodings_or_merges_excluded": false
+    },
+    {
+      "prime": 2,
+      "level": 11,
+      "native_rescaling_residue_multipliers": [
+        1
+      ],
+      "power_subgroup_size": 1,
+      "arbitrary_nonzero_Gaussian_coefficients_available": true,
+      "all_multipliers_are_one_at_full_ramification_levels": true,
+      "scope": "integer-embedded secret, native input-index multiplication, conjugate trace-dual label transport",
+      "general_prime_physical_compiler_implemented": false,
+      "all_quantum_encodings_or_merges_excluded": false
+    },
+    {
+      "prime": 2,
+      "level": 12,
+      "native_rescaling_residue_multipliers": [
+        1
+      ],
+      "power_subgroup_size": 1,
+      "arbitrary_nonzero_Gaussian_coefficients_available": true,
+      "all_multipliers_are_one_at_full_ramification_levels": true,
+      "scope": "integer-embedded secret, native input-index multiplication, conjugate trace-dual label transport",
+      "general_prime_physical_compiler_implemented": false,
+      "all_quantum_encodings_or_merges_excluded": false
+    },
+    {
+      "prime": 3,
+      "level": 1,
+      "native_rescaling_residue_multipliers": [
+        1,
+        2
+      ],
+      "power_subgroup_size": 2,
+      "arbitrary_nonzero_Gaussian_coefficients_available": true,
+      "all_multipliers_are_one_at_full_ramification_levels": false,
+      "scope": "integer-embedded secret, native input-index multiplication, conjugate trace-dual label transport",
+      "general_prime_physical_compiler_implemented": true,
+      "all_quantum_encodings_or_merges_excluded": false
+    },
+    {
+      "prime": 3,
+      "level": 2,
+      "native_rescaling_residue_multipliers": [
+        1
+      ],
+      "power_subgroup_size": 1,
+      "arbitrary_nonzero_Gaussian_coefficients_available": false,
+      "all_multipliers_are_one_at_full_ramification_levels": true,
+      "scope": "integer-embedded secret, native input-index multiplication, conjugate trace-dual label transport",
+      "general_prime_physical_compiler_implemented": true,
+      "all_quantum_encodings_or_merges_excluded": false
+    },
+    {
+      "prime": 3,
+      "level": 3,
+      "native_rescaling_residue_multipliers": [
+        1,
+        2
+      ],
+      "power_subgroup_size": 2,
+      "arbitrary_nonzero_Gaussian_coefficients_available": true,
+      "all_multipliers_are_one_at_full_ramification_levels": false,
+      "scope": "integer-embedded secret, native input-index multiplication, conjugate trace-dual label transport",
+      "general_prime_physical_compiler_implemented": true,
+      "all_quantum_encodings_or_merges_excluded": false
+    },
+    {
+      "prime": 3,
+      "level": 4,
+      "native_rescaling_residue_multipliers": [
+        1
+      ],
+      "power_subgroup_size": 1,
+      "arbitrary_nonzero_Gaussian_coefficients_available": false,
+      "all_multipliers_are_one_at_full_ramification_levels": true,
+      "scope": "integer-embedded secret, native input-index multiplication, conjugate trace-dual label transport",
+      "general_prime_physical_compiler_implemented": true,
+      "all_quantum_encodings_or_merges_excluded": false
+    },
+    {
+      "prime": 3,
+      "level": 5,
+      "native_rescaling_residue_multipliers": [
+        1,
+        2
+      ],
+      "power_subgroup_size": 2,
+      "arbitrary_nonzero_Gaussian_coefficients_available": true,
+      "all_multipliers_are_one_at_full_ramification_levels": false,
+      "scope": "integer-embedded secret, native input-index multiplication, conjugate trace-dual label transport",
+      "general_prime_physical_compiler_implemented": true,
+      "all_quantum_encodings_or_merges_excluded": false
+    },
+    {
+      "prime": 3,
+      "level": 6,
+      "native_rescaling_residue_multipliers": [
+        1
+      ],
+      "power_subgroup_size": 1,
+      "arbitrary_nonzero_Gaussian_coefficients_available": false,
+      "all_multipliers_are_one_at_full_ramification_levels": true,
+      "scope": "integer-embedded secret, native input-index multiplication, conjugate trace-dual label transport",
+      "general_prime_physical_compiler_implemented": true,
+      "all_quantum_encodings_or_merges_excluded": false
+    },
+    {
+      "prime": 3,
+      "level": 7,
+      "native_rescaling_residue_multipliers": [
+        1,
+        2
+      ],
+      "power_subgroup_size": 2,
+      "arbitrary_nonzero_Gaussian_coefficients_available": true,
+      "all_multipliers_are_one_at_full_ramification_levels": false,
+      "scope": "integer-embedded secret, native input-index multiplication, conjugate trace-dual label transport",
+      "general_prime_physical_compiler_implemented": true,
+      "all_quantum_encodings_or_merges_excluded": false
+    },
+    {
+      "prime": 3,
+      "level": 8,
+      "native_rescaling_residue_multipliers": [
+        1
+      ],
+      "power_subgroup_size": 1,
+      "arbitrary_nonzero_Gaussian_coefficients_available": false,
+      "all_multipliers_are_one_at_full_ramification_levels": true,
+      "scope": "integer-embedded secret, native input-index multiplication, conjugate trace-dual label transport",
+      "general_prime_physical_compiler_implemented": true,
+      "all_quantum_encodings_or_merges_excluded": false
+    },
+    {
+      "prime": 3,
+      "level": 9,
+      "native_rescaling_residue_multipliers": [
+        1,
+        2
+      ],
+      "power_subgroup_size": 2,
+      "arbitrary_nonzero_Gaussian_coefficients_available": true,
+      "all_multipliers_are_one_at_full_ramification_levels": false,
+      "scope": "integer-embedded secret, native input-index multiplication, conjugate trace-dual label transport",
+      "general_prime_physical_compiler_implemented": true,
+      "all_quantum_encodings_or_merges_excluded": false
+    },
+    {
+      "prime": 3,
+      "level": 10,
+      "native_rescaling_residue_multipliers": [
+        1
+      ],
+      "power_subgroup_size": 1,
+      "arbitrary_nonzero_Gaussian_coefficients_available": false,
+      "all_multipliers_are_one_at_full_ramification_levels": true,
+      "scope": "integer-embedded secret, native input-index multiplication, conjugate trace-dual label transport",
+      "general_prime_physical_compiler_implemented": true,
+      "all_quantum_encodings_or_merges_excluded": false
+    },
+    {
+      "prime": 3,
+      "level": 11,
+      "native_rescaling_residue_multipliers": [
+        1,
+        2
+      ],
+      "power_subgroup_size": 2,
+      "arbitrary_nonzero_Gaussian_coefficients_available": true,
+      "all_multipliers_are_one_at_full_ramification_levels": false,
+      "scope": "integer-embedded secret, native input-index multiplication, conjugate trace-dual label transport",
+      "general_prime_physical_compiler_implemented": true,
+      "all_quantum_encodings_or_merges_excluded": false
+    },
+    {
+      "prime": 3,
+      "level": 12,
+      "native_rescaling_residue_multipliers": [
+        1
+      ],
+      "power_subgroup_size": 1,
+      "arbitrary_nonzero_Gaussian_coefficients_available": false,
+      "all_multipliers_are_one_at_full_ramification_levels": true,
+      "scope": "integer-embedded secret, native input-index multiplication, conjugate trace-dual label transport",
+      "general_prime_physical_compiler_implemented": true,
+      "all_quantum_encodings_or_merges_excluded": false
+    },
+    {
+      "prime": 5,
+      "level": 1,
+      "native_rescaling_residue_multipliers": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "power_subgroup_size": 4,
+      "arbitrary_nonzero_Gaussian_coefficients_available": true,
+      "all_multipliers_are_one_at_full_ramification_levels": false,
+      "scope": "integer-embedded secret, native input-index multiplication, conjugate trace-dual label transport",
+      "general_prime_physical_compiler_implemented": false,
+      "all_quantum_encodings_or_merges_excluded": false
+    },
+    {
+      "prime": 5,
+      "level": 2,
+      "native_rescaling_residue_multipliers": [
+        1,
+        4
+      ],
+      "power_subgroup_size": 2,
+      "arbitrary_nonzero_Gaussian_coefficients_available": false,
+      "all_multipliers_are_one_at_full_ramification_levels": false,
+      "scope": "integer-embedded secret, native input-index multiplication, conjugate trace-dual label transport",
+      "general_prime_physical_compiler_implemented": false,
+      "all_quantum_encodings_or_merges_excluded": false
+    },
+    {
+      "prime": 5,
+      "level": 3,
+      "native_rescaling_residue_multipliers": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "power_subgroup_size": 4,
+      "arbitrary_nonzero_Gaussian_coefficients_available": true,
+      "all_multipliers_are_one_at_full_ramification_levels": false,
+      "scope": "integer-embedded secret, native input-index multiplication, conjugate trace-dual label transport",
+      "general_prime_physical_compiler_implemented": false,
+      "all_quantum_encodings_or_merges_excluded": false
+    },
+    {
+      "prime": 5,
+      "level": 4,
+      "native_rescaling_residue_multipliers": [
+        1
+      ],
+      "power_subgroup_size": 1,
+      "arbitrary_nonzero_Gaussian_coefficients_available": false,
+      "all_multipliers_are_one_at_full_ramification_levels": true,
+      "scope": "integer-embedded secret, native input-index multiplication, conjugate trace-dual label transport",
+      "general_prime_physical_compiler_implemented": false,
+      "all_quantum_encodings_or_merges_excluded": false
+    },
+    {
+      "prime": 5,
+      "level": 5,
+      "native_rescaling_residue_multipliers": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "power_subgroup_size": 4,
+      "arbitrary_nonzero_Gaussian_coefficients_available": true,
+      "all_multipliers_are_one_at_full_ramification_levels": false,
+      "scope": "integer-embedded secret, native input-index multiplication, conjugate trace-dual label transport",
+      "general_prime_physical_compiler_implemented": false,
+      "all_quantum_encodings_or_merges_excluded": false
+    },
+    {
+      "prime": 5,
+      "level": 6,
+      "native_rescaling_residue_multipliers": [
+        1,
+        4
+      ],
+      "power_subgroup_size": 2,
+      "arbitrary_nonzero_Gaussian_coefficients_available": false,
+      "all_multipliers_are_one_at_full_ramification_levels": false,
+      "scope": "integer-embedded secret, native input-index multiplication, conjugate trace-dual label transport",
+      "general_prime_physical_compiler_implemented": false,
+      "all_quantum_encodings_or_merges_excluded": false
+    },
+    {
+      "prime": 5,
+      "level": 7,
+      "native_rescaling_residue_multipliers": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "power_subgroup_size": 4,
+      "arbitrary_nonzero_Gaussian_coefficients_available": true,
+      "all_multipliers_are_one_at_full_ramification_levels": false,
+      "scope": "integer-embedded secret, native input-index multiplication, conjugate trace-dual label transport",
+      "general_prime_physical_compiler_implemented": false,
+      "all_quantum_encodings_or_merges_excluded": false
+    },
+    {
+      "prime": 5,
+      "level": 8,
+      "native_rescaling_residue_multipliers": [
+        1
+      ],
+      "power_subgroup_size": 1,
+      "arbitrary_nonzero_Gaussian_coefficients_available": false,
+      "all_multipliers_are_one_at_full_ramification_levels": true,
+      "scope": "integer-embedded secret, native input-index multiplication, conjugate trace-dual label transport",
+      "general_prime_physical_compiler_implemented": false,
+      "all_quantum_encodings_or_merges_excluded": false
+    },
+    {
+      "prime": 5,
+      "level": 9,
+      "native_rescaling_residue_multipliers": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "power_subgroup_size": 4,
+      "arbitrary_nonzero_Gaussian_coefficients_available": true,
+      "all_multipliers_are_one_at_full_ramification_levels": false,
+      "scope": "integer-embedded secret, native input-index multiplication, conjugate trace-dual label transport",
+      "general_prime_physical_compiler_implemented": false,
+      "all_quantum_encodings_or_merges_excluded": false
+    },
+    {
+      "prime": 5,
+      "level": 10,
+      "native_rescaling_residue_multipliers": [
+        1,
+        4
+      ],
+      "power_subgroup_size": 2,
+      "arbitrary_nonzero_Gaussian_coefficients_available": false,
+      "all_multipliers_are_one_at_full_ramification_levels": false,
+      "scope": "integer-embedded secret, native input-index multiplication, conjugate trace-dual label transport",
+      "general_prime_physical_compiler_implemented": false,
+      "all_quantum_encodings_or_merges_excluded": false
+    },
+    {
+      "prime": 5,
+      "level": 11,
+      "native_rescaling_residue_multipliers": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "power_subgroup_size": 4,
+      "arbitrary_nonzero_Gaussian_coefficients_available": true,
+      "all_multipliers_are_one_at_full_ramification_levels": false,
+      "scope": "integer-embedded secret, native input-index multiplication, conjugate trace-dual label transport",
+      "general_prime_physical_compiler_implemented": false,
+      "all_quantum_encodings_or_merges_excluded": false
+    },
+    {
+      "prime": 5,
+      "level": 12,
+      "native_rescaling_residue_multipliers": [
+        1
+      ],
+      "power_subgroup_size": 1,
+      "arbitrary_nonzero_Gaussian_coefficients_available": false,
+      "all_multipliers_are_one_at_full_ramification_levels": true,
+      "scope": "integer-embedded secret, native input-index multiplication, conjugate trace-dual label transport",
+      "general_prime_physical_compiler_implemented": false,
+      "all_quantum_encodings_or_merges_excluded": false
+    },
+    {
+      "prime": 7,
+      "level": 1,
+      "native_rescaling_residue_multipliers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "power_subgroup_size": 6,
+      "arbitrary_nonzero_Gaussian_coefficients_available": true,
+      "all_multipliers_are_one_at_full_ramification_levels": false,
+      "scope": "integer-embedded secret, native input-index multiplication, conjugate trace-dual label transport",
+      "general_prime_physical_compiler_implemented": false,
+      "all_quantum_encodings_or_merges_excluded": false
+    },
+    {
+      "prime": 7,
+      "level": 2,
+      "native_rescaling_residue_multipliers": [
+        1,
+        2,
+        4
+      ],
+      "power_subgroup_size": 3,
+      "arbitrary_nonzero_Gaussian_coefficients_available": false,
+      "all_multipliers_are_one_at_full_ramification_levels": false,
+      "scope": "integer-embedded secret, native input-index multiplication, conjugate trace-dual label transport",
+      "general_prime_physical_compiler_implemented": false,
+      "all_quantum_encodings_or_merges_excluded": false
+    },
+    {
+      "prime": 7,
+      "level": 3,
+      "native_rescaling_residue_multipliers": [
+        1,
+        6
+      ],
+      "power_subgroup_size": 2,
+      "arbitrary_nonzero_Gaussian_coefficients_available": false,
+      "all_multipliers_are_one_at_full_ramification_levels": false,
+      "scope": "integer-embedded secret, native input-index multiplication, conjugate trace-dual label transport",
+      "general_prime_physical_compiler_implemented": false,
+      "all_quantum_encodings_or_merges_excluded": false
+    },
+    {
+      "prime": 7,
+      "level": 4,
+      "native_rescaling_residue_multipliers": [
+        1,
+        2,
+        4
+      ],
+      "power_subgroup_size": 3,
+      "arbitrary_nonzero_Gaussian_coefficients_available": false,
+      "all_multipliers_are_one_at_full_ramification_levels": false,
+      "scope": "integer-embedded secret, native input-index multiplication, conjugate trace-dual label transport",
+      "general_prime_physical_compiler_implemented": false,
+      "all_quantum_encodings_or_merges_excluded": false
+    },
+    {
+      "prime": 7,
+      "level": 5,
+      "native_rescaling_residue_multipliers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "power_subgroup_size": 6,
+      "arbitrary_nonzero_Gaussian_coefficients_available": true,
+      "all_multipliers_are_one_at_full_ramification_levels": false,
+      "scope": "integer-embedded secret, native input-index multiplication, conjugate trace-dual label transport",
+      "general_prime_physical_compiler_implemented": false,
+      "all_quantum_encodings_or_merges_excluded": false
+    },
+    {
+      "prime": 7,
+      "level": 6,
+      "native_rescaling_residue_multipliers": [
+        1
+      ],
+      "power_subgroup_size": 1,
+      "arbitrary_nonzero_Gaussian_coefficients_available": false,
+      "all_multipliers_are_one_at_full_ramification_levels": true,
+      "scope": "integer-embedded secret, native input-index multiplication, conjugate trace-dual label transport",
+      "general_prime_physical_compiler_implemented": false,
+      "all_quantum_encodings_or_merges_excluded": false
+    },
+    {
+      "prime": 7,
+      "level": 7,
+      "native_rescaling_residue_multipliers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "power_subgroup_size": 6,
+      "arbitrary_nonzero_Gaussian_coefficients_available": true,
+      "all_multipliers_are_one_at_full_ramification_levels": false,
+      "scope": "integer-embedded secret, native input-index multiplication, conjugate trace-dual label transport",
+      "general_prime_physical_compiler_implemented": false,
+      "all_quantum_encodings_or_merges_excluded": false
+    },
+    {
+      "prime": 7,
+      "level": 8,
+      "native_rescaling_residue_multipliers": [
+        1,
+        2,
+        4
+      ],
+      "power_subgroup_size": 3,
+      "arbitrary_nonzero_Gaussian_coefficients_available": false,
+      "all_multipliers_are_one_at_full_ramification_levels": false,
+      "scope": "integer-embedded secret, native input-index multiplication, conjugate trace-dual label transport",
+      "general_prime_physical_compiler_implemented": false,
+      "all_quantum_encodings_or_merges_excluded": false
+    },
+    {
+      "prime": 7,
+      "level": 9,
+      "native_rescaling_residue_multipliers": [
+        1,
+        6
+      ],
+      "power_subgroup_size": 2,
+      "arbitrary_nonzero_Gaussian_coefficients_available": false,
+      "all_multipliers_are_one_at_full_ramification_levels": false,
+      "scope": "integer-embedded secret, native input-index multiplication, conjugate trace-dual label transport",
+      "general_prime_physical_compiler_implemented": false,
+      "all_quantum_encodings_or_merges_excluded": false
+    },
+    {
+      "prime": 7,
+      "level": 10,
+      "native_rescaling_residue_multipliers": [
+        1,
+        2,
+        4
+      ],
+      "power_subgroup_size": 3,
+      "arbitrary_nonzero_Gaussian_coefficients_available": false,
+      "all_multipliers_are_one_at_full_ramification_levels": false,
+      "scope": "integer-embedded secret, native input-index multiplication, conjugate trace-dual label transport",
+      "general_prime_physical_compiler_implemented": false,
+      "all_quantum_encodings_or_merges_excluded": false
+    },
+    {
+      "prime": 7,
+      "level": 11,
+      "native_rescaling_residue_multipliers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "power_subgroup_size": 6,
+      "arbitrary_nonzero_Gaussian_coefficients_available": true,
+      "all_multipliers_are_one_at_full_ramification_levels": false,
+      "scope": "integer-embedded secret, native input-index multiplication, conjugate trace-dual label transport",
+      "general_prime_physical_compiler_implemented": false,
+      "all_quantum_encodings_or_merges_excluded": false
+    },
+    {
+      "prime": 7,
+      "level": 12,
+      "native_rescaling_residue_multipliers": [
+        1
+      ],
+      "power_subgroup_size": 1,
+      "arbitrary_nonzero_Gaussian_coefficients_available": false,
+      "all_multipliers_are_one_at_full_ramification_levels": true,
+      "scope": "integer-embedded secret, native input-index multiplication, conjugate trace-dual label transport",
+      "general_prime_physical_compiler_implemented": false,
+      "all_quantum_encodings_or_merges_excluded": false
+    }
+  ],
+  "ternary_scaling_ledgers": [
+    {
+      "modulus_log3": 1,
+      "initial_level": 2,
+      "Gaussian_surjective_stages": 0,
+      "remaining_subset_zero_sum_stages": 1,
+      "batch_factor_expression": "(n+1)^(t-1)*S(n,3)^t; final decoding and recursion additional",
+      "bound_scope": "conservative one-output-per-batch consumption upper ledger, not optimal sample lower bound",
+      "Gaussian_only_batch_factor_expression": "(n+1)^(t-1)",
+      "constant_cost_even_levels_alone_make_this_ledger_polynomial": false,
+      "asymptotic_scope": "growing t=Theta(log n), not fixed modulus; this is construction accounting, not a computational lower bound",
+      "quasi_polynomial_bottleneck_removed": false
+    },
+    {
+      "modulus_log3": 2,
+      "initial_level": 4,
+      "Gaussian_surjective_stages": 1,
+      "remaining_subset_zero_sum_stages": 2,
+      "batch_factor_expression": "(n+1)^(t-1)*S(n,3)^t; final decoding and recursion additional",
+      "bound_scope": "conservative one-output-per-batch consumption upper ledger, not optimal sample lower bound",
+      "Gaussian_only_batch_factor_expression": "(n+1)^(t-1)",
+      "constant_cost_even_levels_alone_make_this_ledger_polynomial": false,
+      "asymptotic_scope": "growing t=Theta(log n), not fixed modulus; this is construction accounting, not a computational lower bound",
+      "quasi_polynomial_bottleneck_removed": false
+    },
+    {
+      "modulus_log3": 4,
+      "initial_level": 8,
+      "Gaussian_surjective_stages": 3,
+      "remaining_subset_zero_sum_stages": 4,
+      "batch_factor_expression": "(n+1)^(t-1)*S(n,3)^t; final decoding and recursion additional",
+      "bound_scope": "conservative one-output-per-batch consumption upper ledger, not optimal sample lower bound",
+      "Gaussian_only_batch_factor_expression": "(n+1)^(t-1)",
+      "constant_cost_even_levels_alone_make_this_ledger_polynomial": false,
+      "asymptotic_scope": "growing t=Theta(log n), not fixed modulus; this is construction accounting, not a computational lower bound",
+      "quasi_polynomial_bottleneck_removed": false
+    },
+    {
+      "modulus_log3": 8,
+      "initial_level": 16,
+      "Gaussian_surjective_stages": 7,
+      "remaining_subset_zero_sum_stages": 8,
+      "batch_factor_expression": "(n+1)^(t-1)*S(n,3)^t; final decoding and recursion additional",
+      "bound_scope": "conservative one-output-per-batch consumption upper ledger, not optimal sample lower bound",
+      "Gaussian_only_batch_factor_expression": "(n+1)^(t-1)",
+      "constant_cost_even_levels_alone_make_this_ledger_polynomial": false,
+      "asymptotic_scope": "growing t=Theta(log n), not fixed modulus; this is construction accounting, not a computational lower bound",
+      "quasi_polynomial_bottleneck_removed": false
+    },
+    {
+      "modulus_log3": 16,
+      "initial_level": 32,
+      "Gaussian_surjective_stages": 15,
+      "remaining_subset_zero_sum_stages": 16,
+      "batch_factor_expression": "(n+1)^(t-1)*S(n,3)^t; final decoding and recursion additional",
+      "bound_scope": "conservative one-output-per-batch consumption upper ledger, not optimal sample lower bound",
+      "Gaussian_only_batch_factor_expression": "(n+1)^(t-1)",
+      "constant_cost_even_levels_alone_make_this_ledger_polynomial": false,
+      "asymptotic_scope": "growing t=Theta(log n), not fixed modulus; this is construction accounting, not a computational lower bound",
+      "quasi_polynomial_bottleneck_removed": false
+    },
+    {
+      "modulus_log3": 32,
+      "initial_level": 64,
+      "Gaussian_surjective_stages": 31,
+      "remaining_subset_zero_sum_stages": 32,
+      "batch_factor_expression": "(n+1)^(t-1)*S(n,3)^t; final decoding and recursion additional",
+      "bound_scope": "conservative one-output-per-batch consumption upper ledger, not optimal sample lower bound",
+      "Gaussian_only_batch_factor_expression": "(n+1)^(t-1)",
+      "constant_cost_even_levels_alone_make_this_ledger_polynomial": false,
+      "asymptotic_scope": "growing t=Theta(log n), not fixed modulus; this is construction accounting, not a computational lower bound",
+      "quasi_polynomial_bottleneck_removed": false
+    }
+  ],
+  "claim_gate": {
+    "new_algorithm": false,
+    "candidate_accepted": false,
+    "Shor_level_improvement": false,
+    "standard_LWE_attack": false,
+    "general_ring_secret_Galois_transform_preserves_same_secret": false,
+    "arbitrary_even_level_coefficient_compiler": false,
+    "independent_theorem_review": false
+  }
+}

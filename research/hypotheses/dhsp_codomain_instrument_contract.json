@@ -1,0 +1,52 @@
+{
+  "hypothesis_id": "HYP-DHSP-COSTED-CODOMAIN-PRIMITIVE",
+  "status": "PHYSICAL_INSTRUMENT_AUDIT_LOCAL_DERIVATION_REVIEW_PENDING",
+  "candidate_record_accepted": false,
+  "note": "research/DHSP_CODOMAIN_INSTRUMENT.md",
+  "report": "research/classical_baselines/dhsp_codomain_instrument.json",
+  "dimension_free_followup": "research/hypotheses/dhsp_codomain_sample_simulation_contract.json",
+  "literature_ids": ["ARXIV-2202.09697-WITHDRAWN", "LINDZEY-ROSMANIS-QIC-2022", "KU-YOUNG-2023-DEFENSE-ABSTRACT-ONLY"],
+  "ontology_nodes": ["dihedral-hsp", "full-function-oracle-access", "codomain-state-generation", "shared-nuisance-collective-readout"],
+  "input_access": {
+    "supplied": "Full evaluation oracle f_s(b,x)=pi(x-b*s), with one fixed unknown output permutation shared by all probes.",
+    "charged": ["two evaluations per repaired probe", "hash/encoder computation and all ancillas", "uniform subgroup state preparation and binary projector", "all postprocessing and precision costs"],
+    "not_granted": ["inverse-function oracle", "chosen output factory", "image membership advice", "pure image preparation by partial trace", "independent permutation per repeated probe"]
+  },
+  "falsified_shortcuts": [
+    "Discarding domain and function yields a pure hash-image state.",
+    "Legal uniform-domain postselection restores the withdrawn square-root histogram.",
+    "An inverse-polynomial herald rate alone supplies a subgroup distinguishing signal.",
+    "Shared-oracle quantum tensor states may be replaced by independently averaged one-copy states.",
+    "Polynomial output qubits license a polynomial Hilbert-dimension compression bound.",
+    "Large-range generic index erasure implies hardness for every surjective or natural HSP oracle."
+  ],
+  "retained_positive_scope": {
+    "physical_repair": "A legal two-query histogram-amplitude instrument exists, with all hash failure outputs retained.",
+    "collective_correlation": "At N8, a fixed two-copy quantum event separates by11/70, exceeding the invalid twice-averaged-one-copy bound1/7; no scalable algorithm claim.",
+    "outside_screen": ["retained domain or detailed failed-domain outputs", "coherent subgroup/domain queries", "structured natural codomain promises for the information gate", "other full-oracle algorithms"],
+    "formerly_open_full_dimension": "The linked dimension-free follow-up covers codomain-only encoders, including incoming quantum memory, inside the same binary domain-erasure instrument; not arbitrary other full-dimensional oracle algorithms."
+  },
+  "proof_obligations": {
+    "PO-PHYSICAL": "Derive the actual CPTP channel; state every retained register and every failure; never substitute pure states for reduced mixtures.",
+    "PO-COST": "Provide an implemented primitive with evaluation, state preparation, ancilla dimension, gate complexity and precision charged.",
+    "PO-SOURCE": "Derive joint source laws conditional on the fixed hidden oracle; do not resample shared nuisance variables or use inappropriate codomain recoding.",
+    "PO-REVIEW": "Independently review the conditional adaptive hybrid and matrix variance proof. Numerical checks and source links are not independent proof review.",
+    "PO-CLASSICAL": "Compare exact collision-output records and stronger natural/chosen-query baselines under identical access; retained coherent outputs need separate analysis.",
+    "PO-REDUCTION": "Connect an outside-screen primitive to a consequential natural family with a costed reduction; a named CFIP primitive or a black-box toy separation is insufficient.",
+    "PO-LITERATURE": "Obtain the full 2023 dissertation and exact CFIP definition before asserting the conditional reduction or its complexity. Preserve index-erasure range and error premises."
+  },
+  "experiments_with_falsifiers": [
+    {"experiment": "Physical partial trace and repaired full-instrument tests.", "falsifier": "Reduced matrices, acceptance amplitudes, failure blocks or normalization disagree with literal oracle circuits."},
+    {"experiment": "Shared versus fresh-resampled nuisance two-copy regression.", "falsifier": "The known11/70 event disappears, depends on hidden advice, or shared and resampled states are silently equated."},
+    {"experiment": "Propose a natural or full-dimensional outside-screen encoder with explicit circuit cost.", "falsifier": "Its signal uses ignored ancillas, free index erasure, uncharged oracle queries, nonnatural promises or a classical collision/reconstruction advantage."}
+  ],
+  "gemini_integration": [
+    "Add a dedicated read-only codomain audit workflow to qsearch.py; do not replace phase/coset input interfaces.",
+    "Register negative results with DECLARED instrument/source scope, and preserve the exact collective counterexample as a boundary control.",
+    "Index the withdrawn paper, range-qualified index-erasure theorem and ABSTRACT-ONLY conditional CFIP lead without promoting a hypothesis to an accepted candidate.",
+    "Run full production tests/validation and repair the two previously documented writer omissions. No UI cosmetic pass needed."
+  ],
+  "independent_review": false,
+  "novelty_claim": false,
+  "speedup_claim_allowed": false
+}

@@ -1,0 +1,41 @@
+{
+  "id": "NATIVE-RLWE-PRIMAL-BABAI-FINITE-FALSIFIER",
+  "status": "LOCAL_DERIVATION_REVIEW_PENDING",
+  "record_kind": "classical_baseline_contract_not_candidate",
+  "mathematical_note": "research/NATIVE_RLWE_PRIMAL_BABAI_CERTIFICATE.md",
+  "input": "one original normal-form record b=C_a*s+e mod q",
+  "public_label_access": "unconditional uniform native ring label; no unit or quality rejection",
+  "basis_selection": "a and public randomness only, never b, secret, errors or hidden shape",
+  "source_models": ["prs_spherical_rounded", "prs_elliptical_rounded"],
+  "source_scope": "exact discrete reference; original source transfer still separately owed",
+  "classical_operation": "public LLL construction, exact profile verification and rational nearest plane",
+  "fixed_labels_completed": [
+    "research/certificates/native_rlwe_primal_babai_d64_seed290960.json",
+    "research/certificates/native_rlwe_primal_babai_d64_seed290961.json"
+  ],
+  "spherical_certificate": "union of exact GS-direction centered-Gaussian tails",
+  "elliptical_certificate": "minimum of paid shape event and unconditional shared-latent Chernoff alternatives",
+  "held_out_record_used_for_tuning": false,
+  "held_out_verification_completed": false,
+  "source_distribution_draws_completed": false,
+  "independent_review": false,
+  "asymptotic_classical_attack": false,
+  "typical_label_success_established": false,
+  "speedup_claim_allowed": false,
+  "pruning_scope": "do not promote these certified fixed-label d64 successes as quantum-advantage evidence",
+  "not_pruned": ["larger dimensions", "other moduli and error laws", "all Ring-LWE", "all quantum decoding"],
+  "falsifiers": [
+    "basis transform, membership or exact volume fails",
+    "source conditional independence or latent law does not match audit",
+    "label/basis is secret-dependent or fitted using b",
+    "source transfer losses erase the claimed reference advantage",
+    "unfiltered larger-label sweep or source draws invalidate an extrapolation"
+  ],
+  "gemini_next": [
+    "integrate fixed-label classical result records without quantum candidate promotion",
+    "implement genuine source-law and original held-out experiments with charged approximations",
+    "sweep all labels and report failures and complete preprocessing cost",
+    "test d256 and d1024 and stronger classical baselines before a hardness claim",
+    "run production tests and validate; retain existing writer failures until repaired"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "audit_id": "AUDIT-SINGER-KNOWN-SHOR-ACCESS-CLOSURE",
+  "status": "PRIMARY_REFERENCES_AND_LOCAL_COMPOSITION_REVIEW_PENDING",
+  "sources": [
+    {
+      "id": "SHOR-1995",
+      "url": "https://arxiv.org/abs/quant-ph/9508027",
+      "inspection": "Official abstract/metadata revisited; known polynomial quantum discrete-log ingredient. No actual coherent compiler implemented or full-paper proof audit here.",
+      "use": "Known public-field coordinate logarithm and final residual logarithm; cannot classify their composition as a new breakthrough."
+    },
+    {
+      "id": "ROETTELER-2016-DIFFERENCE-SETS",
+      "url": "https://arxiv.org/html/1608.02005v1",
+      "inspection": "Primary HTML reread; prior pass inspected Singer/Gauss-sum interface in PDF. Known source lead, not claimed source of the local Grover/Fourier closure proof.",
+      "use": "Specific public-field Singer source and existing quantum-mechanism comparison. No general lattice/DHSP reduction inferred."
+    }
+  ],
+  "local_derivations_not_attributed_as_paper_theorems": [
+    "Clean zero-input/XOR coordinate phase construction using paid known DLog",
+    "Complete unheralded amplified hyperplane Fourier output law",
+    "Exact randomized sqrt(q) schedule with constant mean recovery",
+    "Matching to the previous sparse membership lower bound under identical secret-input assumptions",
+    "Coherent known-arithmetic norm/error and compute/uncompute accounting"
+  ],
+  "not_claimed": ["novel algorithm", "priority verification", "independent theorem review", "implemented uniform Shor circuit", "arbitrary prime-power embedding implementation", "polynomial runtime for unrestricted growing q", "full-function DHSP lower bound"]
+}

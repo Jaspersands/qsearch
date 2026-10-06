@@ -1,0 +1,46 @@
+{
+  "hypothesis_id": "HYP-NATIVE-COVARIANT-PAIRED-NOISE-DECODER",
+  "status": "IMPLEMENTED_RECEIVER_AND_VERIFIER_NATIVE_RANDOM_LABEL_SEARCH_OPEN_REVIEW_PENDING",
+  "candidate_record_accepted": false,
+  "note": "research/TERNARY_COVARIANT_NOISE.md",
+  "report": "research/classical_baselines/ternary_covariant_noise.json",
+  "original_source": "IID native even-level qutrit phases with two uniform full-ring frequency vectors, shared modular secret and charged fresh samples.",
+  "constructive_primitive": "Fixed onehot embedding and explicit quadratic-size two-register root QFT recipe produce paired noisy modular linear equations; all outcomes are retained.",
+  "exact_noise_support": "Characteristic support Delta={0,+/-(1,0),+/-(0,1),+/-(1,-1)}; coefficients1 or1/3; pairs independent across fresh qutrits but not within each pair.",
+  "implemented_components": [
+    "Exact scalar linear-attack signal classification and joint rectangular compression characteristic",
+    "Invertible uniform-marginal countercontrol preserving joint information",
+    "Classical Gaussian collimation with exact residue phase tags and independent ancestor tracking",
+    "Costed exact BKW collision and original-record bias ledgers",
+    "Native IID held-out candidate verifier without all-secret enumeration",
+    "Polynomial-sample unique score separation theorem with explicitly exponential reference search",
+    "Actual polynomial radix decoder that explicitly requires chosen native frequencies"
+  ],
+  "negative_evidence": [
+    "Every proper quotient of the paired noise is uniform; field-shadow Hensel starting equations are invalid.",
+    "Generic scalar modular elimination is exactly uniform unless all nonzero weight pairs share a unit-scaled root direction.",
+    "Measured Gaussian collimation multiplies first-character amplitudes; it is not pure quantum phase-state sieving.",
+    "The live27-input classical collimation branch has bias1/6561 and zero final frequency, hence no secret signal.",
+    "Rejection-compiling the implemented exact radix schedule from native random labels costs q^n expected input samples per selected label."
+  ],
+  "proof_obligations_before_candidate_acceptance": {
+    "PO-REVIEW": "Independent mathematical review of the paired channel, scalar classification, tagged collimation and estimator probability arguments.",
+    "PO-CIRCUIT": "Charge hardware embedding, controlled-root precision and aggregate readout error; bounded replay is not a full hardware compiler.",
+    "PO-SEARCH": "Generate a polynomial shortlist from native random-label records, or supply a polynomial coherent/source-valid compiler for informative frequencies.",
+    "PO-SOURCE": "Keep the actual correlated paired noise, all outcome tags, full modulus and fresh ancestor independence. No Gaussian, binary-error or field-shadow substitution.",
+    "PO-COST": "Charge exact/approximate label acquisition, quantum copies, collisions, failures, repetitions and all sampled ancestors.",
+    "PO-VALIDATION": "Candidate proposals must be independent of held-out labels and outcomes; adaptive reuse is not covered by the verifier bound.",
+    "PO-BASELINES": "Compare joint raw-sample classical inference and known complete sieves. Uniform scalar marginals are not a general dequantization/no-go result."
+  },
+  "falsifiers": [
+    "Explicit native gate replay disagrees with original-ring Born probabilities.",
+    "Paired errors are treated as independent or three derived equations as three fresh samples.",
+    "Proper-quotient outcomes falsely constrain a secret digit.",
+    "A scalar no-go is extrapolated to the invertible joint countercontrol.",
+    "Collimation omits phase tags, repeats ancestors or retains unit visibility after noisy convolution.",
+    "A decoder uses chosen labels, planted truth, exhaustive ML, or training data as an uncharged held-out certificate."
+  ],
+  "native_random_label_polynomial_recovery": false,
+  "general_classical_or_quantum_no_go": false,
+  "routine_wiring_owner": "Gemini or Antigravity"
+}

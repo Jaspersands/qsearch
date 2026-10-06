@@ -1,0 +1,1224 @@
+{
+  "adversarial_index_repair_control": {
+    "data_generator_bound": 7,
+    "data_generator_count": 4,
+    "exact_original_lattice_preserved": true,
+    "final_saturation_index": 1,
+    "initial_saturation_index": 2,
+    "rank": 4,
+    "same_span_index_drop_factors": [
+      2
+    ],
+    "same_span_repair_indices": [
+      3
+    ],
+    "selected_data_indices": [
+      0,
+      1,
+      2,
+      3
+    ]
+  },
+  "claim_gate": {
+    "all_conditioned_target_events_excluded": false,
+    "all_signed_observables_excluded": false,
+    "catalogue_enumeration_is_polynomial": false,
+    "formal_proof": false,
+    "independent_theorem_review": false,
+    "max_occupancy_law_proved": false,
+    "novelty_claim": false,
+    "quantum_algorithm": false,
+    "selected_label_distribution_preserved_by_joint_legal_conditioning": false,
+    "witness_complexity_lower_bound": false
+  },
+  "definitions": {
+    "B_k": "sum_{r=2}^{min(k,m+1)} H_r 2^(k*g_r+r*c) rho_r^m",
+    "D_k": "number of ordered distinct solutions with GF(2)-rank([tuple columns,1])<k",
+    "H_r": "floor(sqrt(r^r))",
+    "g_r": "r-1+floor(log2 H_r)",
+    "rho_r": "1/2 for r=k, otherwise 3/4"
+  },
+  "dependency_sha256": {
+    "theorems/dcp_subset_sum_cube_section_gap_theorem.py": "d03b6647d21ed60ad62d172ec8b704bf10ef607bed63bf213043d3704d00e16d",
+    "theorems/dcp_subset_sum_smith_transfer.py": "95342e7f60b62d95838dc745f901e65e49bc1935e6298440a9768a8f1bdef0f6"
+  },
+  "derived_bounds": {
+    "fixed_offset_consequence": "k=o(sqrt(n/log n))",
+    "joint_uniform_legal_target_tail": "Pr[D_k>=tau|C>0]<=(1+2^-c)*B_k/tau",
+    "nonnegative_factorial_excess": "0<=E[(C)_k]-(2^m)_k/2^(n*k)<=E[D_k]<=B_k",
+    "per_label_uniform_legal_target_tail": "Pr_per_label_legal[D_k>=tau]^2<=(1+2^-c)*B_k/tau",
+    "planted_target_tail": "Pr_planted[D_k>=tau]<=(k*B_k+B_(k+1))/(2^c*tau)",
+    "uniform_target_tail": "Pr[D_k>=tau]<=B_k/tau",
+    "vanishing_condition": "k^2 log k + k|c| = o(n)"
+  },
+  "exact_fraction_encoding": "numerators and denominators are decimal strings; do not parse through floats",
+  "exact_source_moment_controls": [
+    {
+      "control_passed": true,
+      "exact_catalogue_bound": {
+        "denominator": "1",
+        "numerator": "16"
+      },
+      "exact_factorial_moment": {
+        "denominator": "2",
+        "numerator": "1"
+      },
+      "independent_map_baseline": {
+        "denominator": "2",
+        "numerator": "1"
+      },
+      "joint_target_count": 4,
+      "label_tuple_count": 2,
+      "moment_order": 2,
+      "n_bits": 1,
+      "nonnegative_excess": {
+        "denominator": "1",
+        "numerator": "0"
+      },
+      "register_offset": 0
+    },
+    {
+      "control_passed": true,
+      "exact_catalogue_bound": {
+        "denominator": "1",
+        "numerator": "96"
+      },
+      "exact_factorial_moment": {
+        "denominator": "1",
+        "numerator": "0"
+      },
+      "independent_map_baseline": {
+        "denominator": "1",
+        "numerator": "0"
+      },
+      "joint_target_count": 4,
+      "label_tuple_count": 2,
+      "moment_order": 3,
+      "n_bits": 1,
+      "nonnegative_excess": {
+        "denominator": "1",
+        "numerator": "0"
+      },
+      "register_offset": 0
+    },
+    {
+      "control_passed": true,
+      "exact_catalogue_bound": {
+        "denominator": "1",
+        "numerator": "384"
+      },
+      "exact_factorial_moment": {
+        "denominator": "1",
+        "numerator": "0"
+      },
+      "independent_map_baseline": {
+        "denominator": "1",
+        "numerator": "0"
+      },
+      "joint_target_count": 4,
+      "label_tuple_count": 2,
+      "moment_order": 4,
+      "n_bits": 1,
+      "nonnegative_excess": {
+        "denominator": "1",
+        "numerator": "0"
+      },
+      "register_offset": 0
+    },
+    {
+      "control_passed": true,
+      "exact_catalogue_bound": {
+        "denominator": "1",
+        "numerator": "1536"
+      },
+      "exact_factorial_moment": {
+        "denominator": "1",
+        "numerator": "0"
+      },
+      "independent_map_baseline": {
+        "denominator": "1",
+        "numerator": "0"
+      },
+      "joint_target_count": 4,
+      "label_tuple_count": 2,
+      "moment_order": 5,
+      "n_bits": 1,
+      "nonnegative_excess": {
+        "denominator": "1",
+        "numerator": "0"
+      },
+      "register_offset": 0
+    },
+    {
+      "control_passed": true,
+      "exact_catalogue_bound": {
+        "denominator": "1",
+        "numerator": "6144"
+      },
+      "exact_factorial_moment": {
+        "denominator": "1",
+        "numerator": "0"
+      },
+      "independent_map_baseline": {
+        "denominator": "1",
+        "numerator": "0"
+      },
+      "joint_target_count": 4,
+      "label_tuple_count": 2,
+      "moment_order": 6,
+      "n_bits": 1,
+      "nonnegative_excess": {
+        "denominator": "1",
+        "numerator": "0"
+      },
+      "register_offset": 0
+    },
+    {
+      "control_passed": true,
+      "exact_catalogue_bound": {
+        "denominator": "1",
+        "numerator": "32"
+      },
+      "exact_factorial_moment": {
+        "denominator": "1",
+        "numerator": "3"
+      },
+      "independent_map_baseline": {
+        "denominator": "1",
+        "numerator": "3"
+      },
+      "joint_target_count": 8,
+      "label_tuple_count": 4,
+      "moment_order": 2,
+      "n_bits": 1,
+      "nonnegative_excess": {
+        "denominator": "1",
+        "numerator": "0"
+      },
+      "register_offset": 1
+    },
+    {
+      "control_passed": true,
+      "exact_catalogue_bound": {
+        "denominator": "1",
+        "numerator": "41248"
+      },
+      "exact_factorial_moment": {
+        "denominator": "1",
+        "numerator": "3"
+      },
+      "independent_map_baseline": {
+        "denominator": "1",
+        "numerator": "3"
+      },
+      "joint_target_count": 8,
+      "label_tuple_count": 4,
+      "moment_order": 3,
+      "n_bits": 1,
+      "nonnegative_excess": {
+        "denominator": "1",
+        "numerator": "0"
+      },
+      "register_offset": 1
+    },
+    {
+      "control_passed": true,
+      "exact_catalogue_bound": {
+        "denominator": "1",
+        "numerator": "1475712"
+      },
+      "exact_factorial_moment": {
+        "denominator": "1",
+        "numerator": "3"
+      },
+      "independent_map_baseline": {
+        "denominator": "2",
+        "numerator": "3"
+      },
+      "joint_target_count": 8,
+      "label_tuple_count": 4,
+      "moment_order": 4,
+      "n_bits": 1,
+      "nonnegative_excess": {
+        "denominator": "2",
+        "numerator": "3"
+      },
+      "register_offset": 1
+    },
+    {
+      "control_passed": true,
+      "exact_catalogue_bound": {
+        "denominator": "1",
+        "numerator": "23597568"
+      },
+      "exact_factorial_moment": {
+        "denominator": "1",
+        "numerator": "0"
+      },
+      "independent_map_baseline": {
+        "denominator": "1",
+        "numerator": "0"
+      },
+      "joint_target_count": 8,
+      "label_tuple_count": 4,
+      "moment_order": 5,
+      "n_bits": 1,
+      "nonnegative_excess": {
+        "denominator": "1",
+        "numerator": "0"
+      },
+      "register_offset": 1
+    },
+    {
+      "control_passed": true,
+      "exact_catalogue_bound": {
+        "denominator": "1",
+        "numerator": "377505792"
+      },
+      "exact_factorial_moment": {
+        "denominator": "1",
+        "numerator": "0"
+      },
+      "independent_map_baseline": {
+        "denominator": "1",
+        "numerator": "0"
+      },
+      "joint_target_count": 8,
+      "label_tuple_count": 4,
+      "moment_order": 6,
+      "n_bits": 1,
+      "nonnegative_excess": {
+        "denominator": "1",
+        "numerator": "0"
+      },
+      "register_offset": 1
+    },
+    {
+      "control_passed": true,
+      "exact_catalogue_bound": {
+        "denominator": "1",
+        "numerator": "4"
+      },
+      "exact_factorial_moment": {
+        "denominator": "8",
+        "numerator": "1"
+      },
+      "independent_map_baseline": {
+        "denominator": "8",
+        "numerator": "1"
+      },
+      "joint_target_count": 16,
+      "label_tuple_count": 4,
+      "moment_order": 2,
+      "n_bits": 2,
+      "nonnegative_excess": {
+        "denominator": "1",
+        "numerator": "0"
+      },
+      "register_offset": -1
+    },
+    {
+      "control_passed": true,
+      "exact_catalogue_bound": {
+        "denominator": "1",
+        "numerator": "24"
+      },
+      "exact_factorial_moment": {
+        "denominator": "1",
+        "numerator": "0"
+      },
+      "independent_map_baseline": {
+        "denominator": "1",
+        "numerator": "0"
+      },
+      "joint_target_count": 16,
+      "label_tuple_count": 4,
+      "moment_order": 3,
+      "n_bits": 2,
+      "nonnegative_excess": {
+        "denominator": "1",
+        "numerator": "0"
+      },
+      "register_offset": -1
+    },
+    {
+      "control_passed": true,
+      "exact_catalogue_bound": {
+        "denominator": "1",
+        "numerator": "96"
+      },
+      "exact_factorial_moment": {
+        "denominator": "1",
+        "numerator": "0"
+      },
+      "independent_map_baseline": {
+        "denominator": "1",
+        "numerator": "0"
+      },
+      "joint_target_count": 16,
+      "label_tuple_count": 4,
+      "moment_order": 4,
+      "n_bits": 2,
+      "nonnegative_excess": {
+        "denominator": "1",
+        "numerator": "0"
+      },
+      "register_offset": -1
+    },
+    {
+      "control_passed": true,
+      "exact_catalogue_bound": {
+        "denominator": "1",
+        "numerator": "384"
+      },
+      "exact_factorial_moment": {
+        "denominator": "1",
+        "numerator": "0"
+      },
+      "independent_map_baseline": {
+        "denominator": "1",
+        "numerator": "0"
+      },
+      "joint_target_count": 16,
+      "label_tuple_count": 4,
+      "moment_order": 5,
+      "n_bits": 2,
+      "nonnegative_excess": {
+        "denominator": "1",
+        "numerator": "0"
+      },
+      "register_offset": -1
+    },
+    {
+      "control_passed": true,
+      "exact_catalogue_bound": {
+        "denominator": "1",
+        "numerator": "1536"
+      },
+      "exact_factorial_moment": {
+        "denominator": "1",
+        "numerator": "0"
+      },
+      "independent_map_baseline": {
+        "denominator": "1",
+        "numerator": "0"
+      },
+      "joint_target_count": 16,
+      "label_tuple_count": 4,
+      "moment_order": 6,
+      "n_bits": 2,
+      "nonnegative_excess": {
+        "denominator": "1",
+        "numerator": "0"
+      },
+      "register_offset": -1
+    },
+    {
+      "control_passed": true,
+      "exact_catalogue_bound": {
+        "denominator": "1",
+        "numerator": "8"
+      },
+      "exact_factorial_moment": {
+        "denominator": "4",
+        "numerator": "3"
+      },
+      "independent_map_baseline": {
+        "denominator": "4",
+        "numerator": "3"
+      },
+      "joint_target_count": 64,
+      "label_tuple_count": 16,
+      "moment_order": 2,
+      "n_bits": 2,
+      "nonnegative_excess": {
+        "denominator": "1",
+        "numerator": "0"
+      },
+      "register_offset": 0
+    },
+    {
+      "control_passed": true,
+      "exact_catalogue_bound": {
+        "denominator": "1",
+        "numerator": "5192"
+      },
+      "exact_factorial_moment": {
+        "denominator": "8",
+        "numerator": "3"
+      },
+      "independent_map_baseline": {
+        "denominator": "8",
+        "numerator": "3"
+      },
+      "joint_target_count": 64,
+      "label_tuple_count": 16,
+      "moment_order": 3,
+      "n_bits": 2,
+      "nonnegative_excess": {
+        "denominator": "1",
+        "numerator": "0"
+      },
+      "register_offset": 0
+    },
+    {
+      "control_passed": true,
+      "exact_catalogue_bound": {
+        "denominator": "1",
+        "numerator": "184608"
+      },
+      "exact_factorial_moment": {
+        "denominator": "8",
+        "numerator": "3"
+      },
+      "independent_map_baseline": {
+        "denominator": "32",
+        "numerator": "3"
+      },
+      "joint_target_count": 64,
+      "label_tuple_count": 16,
+      "moment_order": 4,
+      "n_bits": 2,
+      "nonnegative_excess": {
+        "denominator": "32",
+        "numerator": "9"
+      },
+      "register_offset": 0
+    },
+    {
+      "control_passed": true,
+      "exact_catalogue_bound": {
+        "denominator": "1",
+        "numerator": "2950272"
+      },
+      "exact_factorial_moment": {
+        "denominator": "1",
+        "numerator": "0"
+      },
+      "independent_map_baseline": {
+        "denominator": "1",
+        "numerator": "0"
+      },
+      "joint_target_count": 64,
+      "label_tuple_count": 16,
+      "moment_order": 5,
+      "n_bits": 2,
+      "nonnegative_excess": {
+        "denominator": "1",
+        "numerator": "0"
+      },
+      "register_offset": 0
+    },
+    {
+      "control_passed": true,
+      "exact_catalogue_bound": {
+        "denominator": "1",
+        "numerator": "47190528"
+      },
+      "exact_factorial_moment": {
+        "denominator": "1",
+        "numerator": "0"
+      },
+      "independent_map_baseline": {
+        "denominator": "1",
+        "numerator": "0"
+      },
+      "joint_target_count": 64,
+      "label_tuple_count": 16,
+      "moment_order": 6,
+      "n_bits": 2,
+      "nonnegative_excess": {
+        "denominator": "1",
+        "numerator": "0"
+      },
+      "register_offset": 0
+    },
+    {
+      "control_passed": true,
+      "exact_catalogue_bound": {
+        "denominator": "1",
+        "numerator": "16"
+      },
+      "exact_factorial_moment": {
+        "denominator": "2",
+        "numerator": "7"
+      },
+      "independent_map_baseline": {
+        "denominator": "2",
+        "numerator": "7"
+      },
+      "joint_target_count": 256,
+      "label_tuple_count": 64,
+      "moment_order": 2,
+      "n_bits": 2,
+      "nonnegative_excess": {
+        "denominator": "1",
+        "numerator": "0"
+      },
+      "register_offset": 1
+    },
+    {
+      "control_passed": true,
+      "exact_catalogue_bound": {
+        "denominator": "1",
+        "numerator": "20696"
+      },
+      "exact_factorial_moment": {
+        "denominator": "4",
+        "numerator": "21"
+      },
+      "independent_map_baseline": {
+        "denominator": "4",
+        "numerator": "21"
+      },
+      "joint_target_count": 256,
+      "label_tuple_count": 64,
+      "moment_order": 3,
+      "n_bits": 2,
+      "nonnegative_excess": {
+        "denominator": "1",
+        "numerator": "0"
+      },
+      "register_offset": 1
+    },
+    {
+      "control_passed": true,
+      "exact_catalogue_bound": {
+        "denominator": "1",
+        "numerator": "8591041376"
+      },
+      "exact_factorial_moment": {
+        "denominator": "8",
+        "numerator": "81"
+      },
+      "independent_map_baseline": {
+        "denominator": "16",
+        "numerator": "105"
+      },
+      "joint_target_count": 256,
+      "label_tuple_count": 64,
+      "moment_order": 4,
+      "n_bits": 2,
+      "nonnegative_excess": {
+        "denominator": "16",
+        "numerator": "57"
+      },
+      "register_offset": 1
+    },
+    {
+      "control_passed": true,
+      "exact_catalogue_bound": {
+        "denominator": "1",
+        "numerator": "3710869441920"
+      },
+      "exact_factorial_moment": {
+        "denominator": "4",
+        "numerator": "105"
+      },
+      "independent_map_baseline": {
+        "denominator": "16",
+        "numerator": "105"
+      },
+      "joint_target_count": 256,
+      "label_tuple_count": 64,
+      "moment_order": 5,
+      "n_bits": 2,
+      "nonnegative_excess": {
+        "denominator": "16",
+        "numerator": "315"
+      },
+      "register_offset": 1
+    },
+    {
+      "control_passed": true,
+      "exact_catalogue_bound": {
+        "denominator": "1",
+        "numerator": "474989306328576"
+      },
+      "exact_factorial_moment": {
+        "denominator": "4",
+        "numerator": "315"
+      },
+      "independent_map_baseline": {
+        "denominator": "64",
+        "numerator": "315"
+      },
+      "joint_target_count": 256,
+      "label_tuple_count": 64,
+      "moment_order": 6,
+      "n_bits": 2,
+      "nonnegative_excess": {
+        "denominator": "64",
+        "numerator": "4725"
+      },
+      "register_offset": 1
+    },
+    {
+      "control_passed": true,
+      "exact_catalogue_bound": {
+        "denominator": "1",
+        "numerator": "2"
+      },
+      "exact_factorial_moment": {
+        "denominator": "16",
+        "numerator": "3"
+      },
+      "independent_map_baseline": {
+        "denominator": "16",
+        "numerator": "3"
+      },
+      "joint_target_count": 512,
+      "label_tuple_count": 64,
+      "moment_order": 2,
+      "n_bits": 3,
+      "nonnegative_excess": {
+        "denominator": "1",
+        "numerator": "0"
+      },
+      "register_offset": -1
+    },
+    {
+      "control_passed": true,
+      "exact_catalogue_bound": {
+        "denominator": "1",
+        "numerator": "658"
+      },
+      "exact_factorial_moment": {
+        "denominator": "64",
+        "numerator": "3"
+      },
+      "independent_map_baseline": {
+        "denominator": "64",
+        "numerator": "3"
+      },
+      "joint_target_count": 512,
+      "label_tuple_count": 64,
+      "moment_order": 3,
+      "n_bits": 3,
+      "nonnegative_excess": {
+        "denominator": "1",
+        "numerator": "0"
+      },
+      "register_offset": -1
+    },
+    {
+      "control_passed": true,
+      "exact_catalogue_bound": {
+        "denominator": "1",
+        "numerator": "23112"
+      },
+      "exact_factorial_moment": {
+        "denominator": "64",
+        "numerator": "3"
+      },
+      "independent_map_baseline": {
+        "denominator": "512",
+        "numerator": "3"
+      },
+      "joint_target_count": 512,
+      "label_tuple_count": 64,
+      "moment_order": 4,
+      "n_bits": 3,
+      "nonnegative_excess": {
+        "denominator": "512",
+        "numerator": "21"
+      },
+      "register_offset": -1
+    },
+    {
+      "control_passed": true,
+      "exact_catalogue_bound": {
+        "denominator": "1",
+        "numerator": "368928"
+      },
+      "exact_factorial_moment": {
+        "denominator": "1",
+        "numerator": "0"
+      },
+      "independent_map_baseline": {
+        "denominator": "1",
+        "numerator": "0"
+      },
+      "joint_target_count": 512,
+      "label_tuple_count": 64,
+      "moment_order": 5,
+      "n_bits": 3,
+      "nonnegative_excess": {
+        "denominator": "1",
+        "numerator": "0"
+      },
+      "register_offset": -1
+    },
+    {
+      "control_passed": true,
+      "exact_catalogue_bound": {
+        "denominator": "1",
+        "numerator": "5899392"
+      },
+      "exact_factorial_moment": {
+        "denominator": "1",
+        "numerator": "0"
+      },
+      "independent_map_baseline": {
+        "denominator": "1",
+        "numerator": "0"
+      },
+      "joint_target_count": 512,
+      "label_tuple_count": 64,
+      "moment_order": 6,
+      "n_bits": 3,
+      "nonnegative_excess": {
+        "denominator": "1",
+        "numerator": "0"
+      },
+      "register_offset": -1
+    },
+    {
+      "control_passed": true,
+      "exact_catalogue_bound": {
+        "denominator": "1",
+        "numerator": "4"
+      },
+      "exact_factorial_moment": {
+        "denominator": "8",
+        "numerator": "7"
+      },
+      "independent_map_baseline": {
+        "denominator": "8",
+        "numerator": "7"
+      },
+      "joint_target_count": 4096,
+      "label_tuple_count": 512,
+      "moment_order": 2,
+      "n_bits": 3,
+      "nonnegative_excess": {
+        "denominator": "1",
+        "numerator": "0"
+      },
+      "register_offset": 0
+    },
+    {
+      "control_passed": true,
+      "exact_catalogue_bound": {
+        "denominator": "1",
+        "numerator": "2614"
+      },
+      "exact_factorial_moment": {
+        "denominator": "32",
+        "numerator": "21"
+      },
+      "independent_map_baseline": {
+        "denominator": "32",
+        "numerator": "21"
+      },
+      "joint_target_count": 4096,
+      "label_tuple_count": 512,
+      "moment_order": 3,
+      "n_bits": 3,
+      "nonnegative_excess": {
+        "denominator": "1",
+        "numerator": "0"
+      },
+      "register_offset": 0
+    },
+    {
+      "control_passed": true,
+      "exact_catalogue_bound": {
+        "denominator": "1",
+        "numerator": "537009368"
+      },
+      "exact_factorial_moment": {
+        "denominator": "128",
+        "numerator": "117"
+      },
+      "independent_map_baseline": {
+        "denominator": "256",
+        "numerator": "105"
+      },
+      "joint_target_count": 4096,
+      "label_tuple_count": 512,
+      "moment_order": 4,
+      "n_bits": 3,
+      "nonnegative_excess": {
+        "denominator": "256",
+        "numerator": "129"
+      },
+      "register_offset": 0
+    },
+    {
+      "control_passed": true,
+      "exact_catalogue_bound": {
+        "denominator": "1",
+        "numerator": "231930446688"
+      },
+      "exact_factorial_moment": {
+        "denominator": "64",
+        "numerator": "105"
+      },
+      "independent_map_baseline": {
+        "denominator": "512",
+        "numerator": "105"
+      },
+      "joint_target_count": 4096,
+      "label_tuple_count": 512,
+      "moment_order": 5,
+      "n_bits": 3,
+      "nonnegative_excess": {
+        "denominator": "512",
+        "numerator": "735"
+      },
+      "register_offset": 0
+    },
+    {
+      "control_passed": true,
+      "exact_catalogue_bound": {
+        "denominator": "1",
+        "numerator": "29686849342848"
+      },
+      "exact_factorial_moment": {
+        "denominator": "64",
+        "numerator": "315"
+      },
+      "independent_map_baseline": {
+        "denominator": "4096",
+        "numerator": "315"
+      },
+      "joint_target_count": 4096,
+      "label_tuple_count": 512,
+      "moment_order": 6,
+      "n_bits": 3,
+      "nonnegative_excess": {
+        "denominator": "4096",
+        "numerator": "19845"
+      },
+      "register_offset": 0
+    },
+    {
+      "control_passed": true,
+      "exact_catalogue_bound": {
+        "denominator": "1",
+        "numerator": "8"
+      },
+      "exact_factorial_moment": {
+        "denominator": "4",
+        "numerator": "15"
+      },
+      "independent_map_baseline": {
+        "denominator": "4",
+        "numerator": "15"
+      },
+      "joint_target_count": 32768,
+      "label_tuple_count": 4096,
+      "moment_order": 2,
+      "n_bits": 3,
+      "nonnegative_excess": {
+        "denominator": "1",
+        "numerator": "0"
+      },
+      "register_offset": 1
+    },
+    {
+      "control_passed": true,
+      "exact_catalogue_bound": {
+        "denominator": "1",
+        "numerator": "10402"
+      },
+      "exact_factorial_moment": {
+        "denominator": "16",
+        "numerator": "105"
+      },
+      "independent_map_baseline": {
+        "denominator": "16",
+        "numerator": "105"
+      },
+      "joint_target_count": 32768,
+      "label_tuple_count": 4096,
+      "moment_order": 3,
+      "n_bits": 3,
+      "nonnegative_excess": {
+        "denominator": "1",
+        "numerator": "0"
+      },
+      "register_offset": 1
+    },
+    {
+      "control_passed": true,
+      "exact_catalogue_bound": {
+        "denominator": "1",
+        "numerator": "4295797384"
+      },
+      "exact_factorial_moment": {
+        "denominator": "1",
+        "numerator": "15"
+      },
+      "independent_map_baseline": {
+        "denominator": "128",
+        "numerator": "1365"
+      },
+      "joint_target_count": 32768,
+      "label_tuple_count": 4096,
+      "moment_order": 4,
+      "n_bits": 3,
+      "nonnegative_excess": {
+        "denominator": "128",
+        "numerator": "555"
+      },
+      "register_offset": 1
+    },
+    {
+      "control_passed": true,
+      "exact_catalogue_bound": {
+        "denominator": "1",
+        "numerator": "3873064081852960"
+      },
+      "exact_factorial_moment": {
+        "denominator": "32",
+        "numerator": "1665"
+      },
+      "independent_map_baseline": {
+        "denominator": "256",
+        "numerator": "4095"
+      },
+      "joint_target_count": 32768,
+      "label_tuple_count": 4096,
+      "moment_order": 5,
+      "n_bits": 3,
+      "nonnegative_excess": {
+        "denominator": "256",
+        "numerator": "9225"
+      },
+      "register_offset": 1
+    },
+    {
+      "control_passed": true,
+      "exact_catalogue_bound": {
+        "denominator": "1",
+        "numerator": "10032124411947526272"
+      },
+      "exact_factorial_moment": {
+        "denominator": "64",
+        "numerator": "17505"
+      },
+      "independent_map_baseline": {
+        "denominator": "2048",
+        "numerator": "45045"
+      },
+      "joint_target_count": 32768,
+      "label_tuple_count": 4096,
+      "moment_order": 6,
+      "n_bits": 3,
+      "nonnegative_excess": {
+        "denominator": "2048",
+        "numerator": "515115"
+      },
+      "register_offset": 1
+    }
+  ],
+  "scaling_rows": [
+    {
+      "bound_below_one": true,
+      "certified_binary_exponent_upper_bound": -1244,
+      "finite_row_is_asymptotic_proof": false,
+      "moment_order": 12,
+      "n_bits": 4096,
+      "register_offset": 2,
+      "schedule": "logarithmic"
+    },
+    {
+      "bound_below_one": true,
+      "certified_binary_exponent_upper_bound": -886,
+      "finite_row_is_asymptotic_proof": false,
+      "moment_order": 16,
+      "n_bits": 4096,
+      "register_offset": 2,
+      "schedule": "cube_root"
+    },
+    {
+      "bound_below_one": false,
+      "certified_binary_exponent_upper_bound": 803,
+      "finite_row_is_asymptotic_proof": false,
+      "moment_order": 27,
+      "n_bits": 4096,
+      "register_offset": 2,
+      "schedule": "two_fifths_power"
+    },
+    {
+      "bound_below_one": true,
+      "certified_binary_exponent_upper_bound": -25462,
+      "finite_row_is_asymptotic_proof": false,
+      "moment_order": 16,
+      "n_bits": 65536,
+      "register_offset": 2,
+      "schedule": "logarithmic"
+    },
+    {
+      "bound_below_one": true,
+      "certified_binary_exponent_upper_bound": -20386,
+      "finite_row_is_asymptotic_proof": false,
+      "moment_order": 40,
+      "n_bits": 65536,
+      "register_offset": 2,
+      "schedule": "cube_root"
+    },
+    {
+      "bound_below_one": false,
+      "certified_binary_exponent_upper_bound": 3288,
+      "finite_row_is_asymptotic_proof": false,
+      "moment_order": 84,
+      "n_bits": 65536,
+      "register_offset": 2,
+      "schedule": "two_fifths_power"
+    },
+    {
+      "bound_below_one": true,
+      "certified_binary_exponent_upper_bound": -418186,
+      "finite_row_is_asymptotic_proof": false,
+      "moment_order": 20,
+      "n_bits": 1048576,
+      "register_offset": 2,
+      "schedule": "logarithmic"
+    },
+    {
+      "bound_below_one": true,
+      "certified_binary_exponent_upper_bound": -375359,
+      "finite_row_is_asymptotic_proof": false,
+      "moment_order": 101,
+      "n_bits": 1048576,
+      "register_offset": 2,
+      "schedule": "cube_root"
+    },
+    {
+      "bound_below_one": true,
+      "certified_binary_exponent_upper_bound": -92004,
+      "finite_row_is_asymptotic_proof": false,
+      "moment_order": 256,
+      "n_bits": 1048576,
+      "register_offset": 2,
+      "schedule": "two_fifths_power"
+    },
+    {
+      "bound_below_one": true,
+      "certified_binary_exponent_upper_bound": -6709006,
+      "finite_row_is_asymptotic_proof": false,
+      "moment_order": 24,
+      "n_bits": 16777216,
+      "register_offset": 2,
+      "schedule": "logarithmic"
+    },
+    {
+      "bound_below_one": true,
+      "certified_binary_exponent_upper_bound": -6383460,
+      "finite_row_is_asymptotic_proof": false,
+      "moment_order": 256,
+      "n_bits": 16777216,
+      "register_offset": 2,
+      "schedule": "cube_root"
+    },
+    {
+      "bound_below_one": true,
+      "certified_binary_exponent_upper_bound": -3219038,
+      "finite_row_is_asymptotic_proof": false,
+      "moment_order": 776,
+      "n_bits": 16777216,
+      "register_offset": 2,
+      "schedule": "two_fifths_power"
+    }
+  ],
+  "source_contract": "a_i and S independent uniform in Z_(2^n); m=n+c; ordered distinct Boolean tuples",
+  "status": "LOCAL_DERIVATION_REVIEW_PENDING",
+  "terminal_lattice_controls": [
+    {
+      "bad_distinct_row_lattices_checked": 0,
+      "moment_order": 2,
+      "reachable_lattices_checked": 2,
+      "same_span_repairs_charged": 0
+    },
+    {
+      "bad_distinct_row_lattices_checked": 0,
+      "moment_order": 3,
+      "reachable_lattices_checked": 5,
+      "same_span_repairs_charged": 0
+    },
+    {
+      "bad_distinct_row_lattices_checked": 4,
+      "moment_order": 4,
+      "reachable_lattices_checked": 19,
+      "same_span_repairs_charged": 0
+    },
+    {
+      "bad_distinct_row_lattices_checked": 40,
+      "moment_order": 5,
+      "reachable_lattices_checked": 137,
+      "same_span_repairs_charged": 0
+    }
+  ],
+  "weighted_bad_tuple_controls": {
+    "expected_inverse_legal_fraction": {
+      "denominator": "16",
+      "numerator": "21"
+    },
+    "legal_target_law_is_joint_conditioning": true,
+    "per_instance_inequality_checks": 768,
+    "per_label_legal_event_squared_bound_checked": true,
+    "planted_target_change_of_measure_checked": true,
+    "rows": [
+      {
+        "mean_bad_contribution": {
+          "denominator": "1",
+          "numerator": "0"
+        },
+        "mean_occupancy_weighted_bad_contribution": {
+          "denominator": "1",
+          "numerator": "0"
+        },
+        "moment_order": 2,
+        "per_label_uniform_legal_bad_event_probability": {
+          "denominator": "1",
+          "numerator": "0"
+        },
+        "uniform_target_bad_event_probability": {
+          "denominator": "1",
+          "numerator": "0"
+        }
+      },
+      {
+        "mean_bad_contribution": {
+          "denominator": "1",
+          "numerator": "0"
+        },
+        "mean_occupancy_weighted_bad_contribution": {
+          "denominator": "1",
+          "numerator": "0"
+        },
+        "moment_order": 3,
+        "per_label_uniform_legal_bad_event_probability": {
+          "denominator": "1",
+          "numerator": "0"
+        },
+        "uniform_target_bad_event_probability": {
+          "denominator": "1",
+          "numerator": "0"
+        }
+      },
+      {
+        "mean_bad_contribution": {
+          "denominator": "8",
+          "numerator": "39"
+        },
+        "mean_occupancy_weighted_bad_contribution": {
+          "denominator": "4",
+          "numerator": "99"
+        },
+        "moment_order": 4,
+        "per_label_uniform_legal_bad_event_probability": {
+          "denominator": "32",
+          "numerator": "9"
+        },
+        "uniform_target_bad_event_probability": {
+          "denominator": "256",
+          "numerator": "39"
+        }
+      }
+    ]
+  }
+}

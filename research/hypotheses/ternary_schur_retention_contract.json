@@ -1,0 +1,37 @@
+{
+  "hypothesis_id": "HYP-NATIVE-CONSTANT-RATE-LINEAR-TOP-ERASURE",
+  "status": "CONSTANT_RATE_GROWING_DEPTH_ROUTE_OBSTRUCTED_UNDER_IID_POLYNOMIAL_WIDTH_SCOPE_REVIEW_PENDING",
+  "candidate_record_accepted": false,
+  "note": "research/TERNARY_SCHUR_RETENTION_BOUND.md",
+  "report": "research/phase_workbench/ternary_schur_retention_bound.json",
+  "source_audit": "research/literature_audits/ternary_schur_retention_sources.json",
+  "known_theorem_application": "Product-Singleton implies k<=1+floor((support-d)/min(L,d)) when all mixed component top terms vanish and kernel distance is at least d. No saturation or independent-frame selection is required.",
+  "local_source_consequence": "Polynomial m in growing n and growing L, with unfiltered IID uniform low native A, has growing distance with high probability, forcing the retained linear top-cancelling fraction to vanish.",
+  "scope_requirements": [
+    "A*W^(star L)=0 for every native component, not secret-specific cancellation",
+    "Linear physical restriction with support measured only on its nonzero coordinates",
+    "Certified matrix distance or an explicitly statistical unfiltered IID source guarantee",
+    "Growing n and L, polynomial m for the asymptotic statement"
+  ],
+  "not_proved": [
+    "Universal quantum decoder lower bound",
+    "Optimal full-source recursive sieve complexity",
+    "Efficient minimum-distance solver",
+    "Probability transfer to conditioned or correlated intermediate sources",
+    "Impossibility of entangled phase decoding or nonlinear instruments"
+  ],
+  "revised_research_priority": "Deprioritize constant-rate exact linear degree erasure. Investigate direct entangled native decoding or implicit full-source receivers; pursue sublinear-retention construction only with a plausible charged growing-depth improvement.",
+  "falsifiers_of_application": [
+    "The proposed source is not IID uniform in low labels and its conditioning cost is unproved.",
+    "A kernel word is shorter than the asserted distance premise.",
+    "The receiver is not an all-component top-cancelling linear restriction.",
+    "The proposal keeps n fixed or uses superpolynomial width, outside the stated asymptotic scope."
+  ],
+  "proof_obligations_before_reopening": {
+    "PO-SCOPE": "Identify the exact violated premise; this is not an arbitrary receiver no-go.",
+    "PO-SOURCE": "Prove the altered source law and charge all conditioning and acquisition.",
+    "PO-DECODER": "Show complete secret recovery under actual state access and compare known sieves and legal classical baselines.",
+    "PO-COST": "Prove a full recursion ledger, not a one-stage extrapolation.",
+    "PO-REVIEW": "Independent mathematical review of the native application and asymptotic statement."
+  }
+}

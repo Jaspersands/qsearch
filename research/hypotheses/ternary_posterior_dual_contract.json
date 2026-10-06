@@ -1,0 +1,37 @@
+{
+  "hypothesis_id": "HYP-NATIVE-LEAST-TRIT-DUAL-PARTITION-FRONTIER",
+  "status": "EXACT_EXPONENTIAL_JOINT_BASELINE_AND_SCOPED_RECEIVER_GATES_REVIEW_PENDING",
+  "candidate_record_accepted": false,
+  "note": "research/TERNARY_POSTERIOR_DUAL.md",
+  "report": "research/classical_baselines/ternary_posterior_dual.json",
+  "original_source": "Fresh IID even-native qutrits, actual paired covariant readout, two full uniform modular labels and uniform ALL secrets.",
+  "implemented_baseline": "Exact sparse cyclotomic meet-in-the-middle computation of three posterior Fourier coefficients, with rigorous ball positivity/ordering and full exponential state/join accounting.",
+  "new_representations": [
+    "Weighted signed-root difference partition function with correlated paired noise",
+    "Canonical sparse Z[X]/Phi_(3^r) phase coefficients; exact cancellation, not numerical zero tests",
+    "Least-trit class posterior from C_0 and C_(+/-q/3 e_j)",
+    "ANOVA degree in complete records, explicitly distinct from label-adaptive or nonlinear inference",
+    "Original-basis final-POVM Hamming radius, explicitly distinct from gate locality or entanglement"
+  ],
+  "proof_obligations_before_candidate_acceptance": {
+    "PO-REVIEW": "Independent review of posterior duality, paired likelihood Gram, class-mixture bounds and sparse relation union gate.",
+    "PO-COST": "Polynomial full-source runtime and memory, not merely half enumeration; count dense phase joins and cancellation costs.",
+    "PO-WEAK-GUARANTEE": "Prove inverse-polynomial average-all-secret least-trit advantage across required lower roots; single posterior/MAP controls are insufficient.",
+    "PO-SOURCE": "Retain full modulus, correlated pairs, fresh original IDs and IID label acquisition; no chosen labels or field-shadow replacement.",
+    "PO-ESTIMATOR": "Supply a computable receiver outcome estimator, not a free nuisance-fiber inverse or a formal relation count.",
+    "PO-SCOPE": "Do not promote output-record-degree or final-effect-radius gates to generic learning/circuit hardness.",
+    "PO-NATURAL-REDUCTION": "Prove natural-problem acquisition and original quantum costs separately."
+  },
+  "falsifiers": [
+    "The exact posterior disagrees with original Born likelihoods or bounded all-secret reference.",
+    "Independent marginal errors replace correlated paired noise.",
+    "Formal target relations are scored as advantage despite the q9 exact phase-cancellation control.",
+    "Budget/precision exhaustion or zero likelihood produces a partial certified trit.",
+    "The polynomial q3 incidence countercontrol is labeled classically hard.",
+    "A local/shallow circuit is assigned short final-POVM radius without computing the original-basis effects.",
+    "Tiny finite posteriors are presented as a polynomial native weak learner."
+  ],
+  "polynomial_higher_root_native_weak_learner": false,
+  "general_classical_hardness_or_quantum_advantage_claim": false,
+  "routine_wiring_owner": "Gemini or Antigravity"
+}

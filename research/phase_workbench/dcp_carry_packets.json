@@ -1,0 +1,247 @@
+{
+  "claim_gate": {
+    "constant_fraction_product_yield_proved": false,
+    "full_secret_decoder": false,
+    "general_fault_model_covered": false,
+    "growing_modulus_product_extractor_derived": false,
+    "higher_level_packet_decoder": false,
+    "independent_phase_output_claim": false,
+    "independent_theorem_review": false,
+    "known_secret_simulation_is_dequantization": false,
+    "matched_test_batches_are_unconditional_source_samples": false,
+    "native_iid_quadratic_tensor_matcher": false,
+    "noise_free_bell_interface_derived": true,
+    "novelty_claim": false,
+    "q4_greedy_product_extractor_derived": true,
+    "speedup_claim_allowed": false,
+    "uniform_output_label_proof_requires_low_label_only_selection": true,
+    "unknown_state_preparation_or_inverse_granted": false
+  },
+  "controls": {
+    "fault_shift_rows": 384,
+    "matched_bell_rows": 128,
+    "physical_chart_branches": 156,
+    "polynomial_identity_points": 1344
+  },
+  "countercontrols": {
+    "entangled_packet_single_qubit_purity": 0.5,
+    "mismatched_quadratic_bell_distribution_uniform": true,
+    "modulus_eight_cubic_carry_retained": true,
+    "retained_qubits_not_independent": true
+  },
+  "exhaustive_code_conductor_controls": 264,
+  "isotropic_product_readout_controls": {
+    "affine_phase_identity_checks": 3136,
+    "uniform_high_bit_source_strata": [
+      {
+        "dimension": 1,
+        "high_label_tables_exhausted": 8,
+        "input_qubits": 3,
+        "joint_output_labels_uniform_and_independent": true,
+        "low_labels_fixed_for_identity_control_not_native_hard_family": true,
+        "retained_product_phase_qubits": 1
+      },
+      {
+        "dimension": 1,
+        "high_label_tables_exhausted": 16,
+        "input_qubits": 4,
+        "joint_output_labels_uniform_and_independent": true,
+        "low_labels_fixed_for_identity_control_not_native_hard_family": true,
+        "retained_product_phase_qubits": 3
+      },
+      {
+        "dimension": 2,
+        "high_label_tables_exhausted": 256,
+        "input_qubits": 4,
+        "joint_output_labels_uniform_and_independent": true,
+        "low_labels_fixed_for_identity_control_not_native_hard_family": true,
+        "retained_product_phase_qubits": 1
+      }
+    ]
+  },
+  "matched_control_resource_record": {
+    "all_syndromes_kept": true,
+    "cnots": 4,
+    "compact_evaluator_prepares_unknown_phase": false,
+    "compact_public_evaluator": true,
+    "free_postselection": false,
+    "input_phase_qubits": 5,
+    "measured_syndrome_qubits": 2,
+    "output_is_independent_phase_qubits": false,
+    "retained_logical_qubits": 3,
+    "syndrome_probability_denominator_decimal": "4",
+    "unknown_preparation_or_inverse_available": false
+  },
+  "native_iid_canonical_chart_pair_controls": [
+    {
+      "chart_selection": "canonical RREF, no alignment search",
+      "common_radical_dimension_histogram": {
+        "0": 4,
+        "1": 3,
+        "2": 1
+      },
+      "dimension": 2,
+      "finite_controls_are_asymptotic_evidence": false,
+      "input_qubits_per_packet": 6,
+      "source_conditioning_or_success_postselection": false,
+      "unconditional_iid_pair_count": 8
+    },
+    {
+      "chart_selection": "canonical RREF, no alignment search",
+      "common_radical_dimension_histogram": {
+        "0": 8
+      },
+      "dimension": 4,
+      "finite_controls_are_asymptotic_evidence": false,
+      "input_qubits_per_packet": 12,
+      "source_conditioning_or_success_postselection": false,
+      "unconditional_iid_pair_count": 8
+    },
+    {
+      "chart_selection": "canonical RREF, no alignment search",
+      "common_radical_dimension_histogram": {
+        "0": 8
+      },
+      "dimension": 8,
+      "finite_controls_are_asymptotic_evidence": false,
+      "input_qubits_per_packet": 24,
+      "source_conditioning_or_success_postselection": false,
+      "unconditional_iid_pair_count": 8
+    },
+    {
+      "chart_selection": "canonical RREF, no alignment search",
+      "common_radical_dimension_histogram": {
+        "0": 8
+      },
+      "dimension": 16,
+      "finite_controls_are_asymptotic_evidence": false,
+      "input_qubits_per_packet": 48,
+      "source_conditioning_or_success_postselection": false,
+      "unconditional_iid_pair_count": 8
+    },
+    {
+      "chart_selection": "canonical RREF, no alignment search",
+      "common_radical_dimension_histogram": {
+        "0": 8
+      },
+      "dimension": 32,
+      "finite_controls_are_asymptotic_evidence": false,
+      "input_qubits_per_packet": 96,
+      "source_conditioning_or_success_postselection": false,
+      "unconditional_iid_pair_count": 8
+    }
+  ],
+  "single_packet_native_source_bounds": [
+    {
+      "all_clifford_or_quantum_measurements_excluded": false,
+      "all_kernel_basis_charts_included": true,
+      "bipartite_cut_bound": {
+        "denominator_binary_exponent": 64,
+        "numerator_hex": "0x115995539c481001"
+      },
+      "bound_vacuous": false,
+      "dimension": 8,
+      "input_qubits": 24,
+      "public_guaranteed_single_packet_equation_probability_upper_bound": {
+        "denominator_binary_exponent": 64,
+        "numerator_hex": "0x2b5995539c481001"
+      },
+      "rank_or_zero_or_even_event_bound": {
+        "denominator_binary_exponent": 7,
+        "numerator_hex": "0xd"
+      },
+      "source": "unconditional independent uniform labels over Z_4^n"
+    },
+    {
+      "all_clifford_or_quantum_measurements_excluded": false,
+      "all_kernel_basis_charts_included": true,
+      "bipartite_cut_bound": {
+        "denominator_binary_exponent": 256,
+        "numerator_hex": "0x2004f0f4a9f005994940c8e7b732fd009c113affa45f884550013000200001"
+      },
+      "bound_vacuous": false,
+      "dimension": 16,
+      "input_qubits": 48,
+      "public_guaranteed_single_packet_equation_probability_upper_bound": {
+        "denominator_binary_exponent": 256,
+        "numerator_hex": "0x5204f0f4a9f005994940c8e7b732fd009c113affa45f884550013000200001"
+      },
+      "rank_or_zero_or_even_event_bound": {
+        "denominator_binary_exponent": 15,
+        "numerator_hex": "0x19"
+      },
+      "source": "unconditional independent uniform labels over Z_4^n"
+    },
+    {
+      "all_clifford_or_quantum_measurements_excluded": false,
+      "all_kernel_basis_charts_included": true,
+      "bipartite_cut_bound": {
+        "denominator_binary_exponent": 1024,
+        "numerator_hex": "0x40000013e00007e6c004f818f4d4642d40f3d1a9847ab4397c895836c603fb518fd29d65a69fc98172c3048f208e90e8b5a38e725a065e0ec02ac860bd7e6a293e36d6e9ac790b2427769f2a3306ef0423ae0276750c8a02df295dae019e8748230605db482a064d0f4001301100002e80000004e00000004000000001"
+      },
+      "bound_vacuous": false,
+      "dimension": 32,
+      "input_qubits": 96,
+      "public_guaranteed_single_packet_equation_probability_upper_bound": {
+        "denominator_binary_exponent": 1024,
+        "numerator_hex": "0xa2000013e00007e6c004f818f4d4642d40f3d1a9847ab4397c895836c603fb518fd29d65a69fc98172c3048f208e90e8b5a38e725a065e0ec02ac860bd7e6a293e36d6e9ac790b2427769f2a3306ef0423ae0276750c8a02df295dae019e8748230605db482a064d0f4001301100002e80000004e00000004000000001"
+      },
+      "rank_or_zero_or_even_event_bound": {
+        "denominator_binary_exponent": 31,
+        "numerator_hex": "0x31"
+      },
+      "source": "unconditional independent uniform labels over Z_4^n"
+    },
+    {
+      "all_clifford_or_quantum_measurements_excluded": false,
+      "all_kernel_basis_charts_included": true,
+      "bipartite_cut_bound": {
+        "denominator_binary_exponent": 4096,
+        "numerator_hex": "0x800000000000004fc0000000000040458000000000526f63e0000000a50ee0ae80000237797b7009400cc6684b6f0e04034030a2ba47ad03db5b98a20439f7bbfe499fbe034fbae49992f95c9de7554489caae3ba6d5523987898a1559fc211890d44ec98e37a1e61f540da2c9788e0a015809566e9e52b752c3768aa49d8ed0bc2b6da8825acb4745e56732b79851cb23f40510e9a2ea52029dcd27de3b9f0fd16e993f964fa3bfae9e86be3e5380be477138b68f7ec499da9bf28e7cab3b02bcdbf284d53714887734be4e86555a4add318a7615bb56d71789aae0ff3c10220d1f603707583e663e7f00b58bc1b6d96c7ee8276dfe9846af278df73fcbab2dcde7dfecee18cce61d556e0eb88f2238cb7afc66b3729c0ecb595ede13ed6231419b14b545e6ef69251593134aefeb3908db3f1ac5c8b3621bc4b6308ae159627e5f16f730f377f1b2343cfef827daf0b70e82f9bd49a6a79286fa9a1f5ff64446ad1a0c372634fd119921d21f42f96878fa90eb7425d09c8d136533d0ca8fd3ad473d99585aeebaa69cd48462c7a0dbc210463909ed148e06c42e45fb31f2b3c3e348bdae2f09ec865b450711e39bfe4cdb34611a0fee30037b2541004a32427ea1a8000008ff46b86800000000ee27ad000000000014e764000000000001848000000000000013c000000000000000800000000000000001"
+      },
+      "bound_vacuous": false,
+      "dimension": 64,
+      "input_qubits": 192,
+      "public_guaranteed_single_packet_equation_probability_upper_bound": {
+        "denominator_binary_exponent": 4096,
+        "numerator_hex": "0x1420000000000004fc0000000000040458000000000526f63e0000000a50ee0ae80000237797b7009400cc6684b6f0e04034030a2ba47ad03db5b98a20439f7bbfe499fbe034fbae49992f95c9de7554489caae3ba6d5523987898a1559fc211890d44ec98e37a1e61f540da2c9788e0a015809566e9e52b752c3768aa49d8ed0bc2b6da8825acb4745e56732b79851cb23f40510e9a2ea52029dcd27de3b9f0fd16e993f964fa3bfae9e86be3e5380be477138b68f7ec499da9bf28e7cab3b02bcdbf284d53714887734be4e86555a4add318a7615bb56d71789aae0ff3c10220d1f603707583e663e7f00b58bc1b6d96c7ee8276dfe9846af278df73fcbab2dcde7dfecee18cce61d556e0eb88f2238cb7afc66b3729c0ecb595ede13ed6231419b14b545e6ef69251593134aefeb3908db3f1ac5c8b3621bc4b6308ae159627e5f16f730f377f1b2343cfef827daf0b70e82f9bd49a6a79286fa9a1f5ff64446ad1a0c372634fd119921d21f42f96878fa90eb7425d09c8d136533d0ca8fd3ad473d99585aeebaa69cd48462c7a0dbc210463909ed148e06c42e45fb31f2b3c3e348bdae2f09ec865b450711e39bfe4cdb34611a0fee30037b2541004a32427ea1a8000008ff46b86800000000ee27ad000000000014e764000000000001848000000000000013c000000000000000800000000000000001"
+      },
+      "rank_or_zero_or_even_event_bound": {
+        "denominator_binary_exponent": 63,
+        "numerator_hex": "0x61"
+      },
+      "source": "unconditional independent uniform labels over Z_4^n"
+    },
+    {
+      "all_clifford_or_quantum_measurements_excluded": false,
+      "all_kernel_basis_charts_included": true,
+      "bipartite_cut_bound": {
+        "denominator_binary_exponent": 16384,
+        "numerator_hex": "0x10000000000000000000000000000013f8000000000000000000000000002066b000000000000000000000000053eb58fc000000000000000000000154f3b69ed00000000000000000000952863708b7a800000000000000006de823173d85a570000000000000090e405dce344a1d663e00000000014e0bc9c8421b1deb32a890000000581643a750e1a6af9b378e09180029944838a8f128cc3b44ef310aed5476850ca06e4779386ee5e6fcce64af99d17016340e817e9a12b3498896bb43bc4f85ac8bcbd3ef913731289e969bc1e5453f8b771ad2d3cd76825549793132da81ca4982fc6cb739528078ba8d838c7ec387dc33fe009a935db2c58b430c101ca26e30b9662da05e8c78940c227db084e6f693be2b093893636e1f3bde09b86943da79fa8fbfeaf8eb0580ed316f05c2f4cd4ecdf9d3dbc59fbd276ac0b3e2b94f599cd66b3d07c4110bf7c73978303ba57137f77d67df55d40b5de14f7d06a2cd6658335f805ade7de275d872207c0c87b5203f2e748fdfda3e02858babd5cbce09cc5ed37ec7d82d0c6970826ff0e66348c50ebaa5c0f42ff51de2833ee460108d52ce4e48895d1ef442481c7cd915a67cc984dfa122f51cda81afb6c9361b5aabad445fbc1da06c7b2619df56e6d0fd20632ab6e42ad57d46250c8cc0c5f66a97fa96b66985f019c77ad03b6f3095741097408844814f7f51fd0563cc0eeef523af7eee756cc883718c7fbedfab71dbabadc0a5d593a9f2421a1712208895a32f195ba86a7a2b2b9512e155bf1f4cc709bb61412d950a347f9e0f23d72a1b8319476ad8b0ed994b4120b9510fd5bcb5e87ec9581b541b0fe1766cf8c368fa038294cea2dcdf654d4419ec180e1ab357248eaa345b13ee91766b6a7e5fb45fe02b76d702b26cf4d4a85bc54c306096082288f28e398f65890d31e1de5e91e788fb5cb37a39ab4dc552b2d570b9f0a5b4518ee1f7b0e8cfc6174d35b8ea32440ba69f1d59e1290cd2969f948f4496a5a6bfb5dd953b79dae74e4005fc5955f2dfb16d6622925af4b20f1a36ed340532d8f2df42dc0d313d61fe11ba83d3ed8685b932a4a5c848d67270494a81b883eaa08a4860722cd4d27992b5bcb688e5f974446efc404a251ba713628e100feafba4d745e52afc3429213989245657ddfe80ea7fc006f546e20fcec92c2731dcf4573cf1fd35ac9d96748331aa2713f498266d07429fa8a26fa5816878568b104c9e546a30cc1ece8c0128942af7a408a8aedf16fc9ce43cde9e347b8c353a49991daac38d506779f6568ade9d582ae99a24fe53c63a655ee610a78e94da94096c579eead7c7f4c66d28a73166c19cfd7dbb3a64170c170b49181e81d13d3f8e1d67957c7e494b7d227ae12e6b9d0089c03507f3d35c5f8800018b515bb5228fb91bd7aed0b2d1110ec661dd15deb770e6f963c569ce89c6d6e670643e69f7b69428498f1d4b27ccfc2ce06e988332789e83e6be3f8a0df2c4e0e466d88a118707e13b5c5b5d5609918df3c6a9fd17768daff25b4671d7e86b0378e987065b3dfe0330146b3b3832545d558148f15542df8a8750d7fe433f38f7b3c47edc2a719d03cd8b5d1ee692dcc17828e80f91bf8fea987c37da0e1370526639ed8035c9ad3daf6013b70ac17d6c3415828b92cee8a75681645f375d628c0736d0a3f82f7ce01cba34a846506dbb5b814732dc877b1e30e306f32d4407a27e388516768fba2abe9b677c1c16043f37749c6985a1db14922cff54e9bb4936d6a707382d90a49bd22a9ce535deead2d3f7dae087e2ae76b67c05b5417f9fc7ff6ad77b1adb46473fdf1456b2a3c7330ceb74b82a814a1ab62166cc3008a16523717d508a2aa19c41d9dacd815c701f6ca6c9eae50c9dee9d5e0d5ca75e337205f8a2b932cea6a3eabbe079dbe6f81b3f90cebb370245d9dabe07699b08671a9ec2f55780e8f549015e5cca3d511f588a7cc72e7650652a3d45f9ff9bff3f65f3bd600eef84eb8a58e31382b280543676d03e5a8a395ac439f066da07cb56ae8e38bff1bfded085f8214f06c612daf66e213e6a35d6c36e2079e3f1c594888b43bf09d597e73ff0248d958bb84e4ab408e7b708f4b90bf3bf97b5f586df0260b846d38c260cdcf6e198d65e3f57df56794aeae36095367771fe40e0f9566c63cca142a43c90e075358aeba5b8dc0345f8a07d1521bd260e46e22ea1d53a7652b10f3fe40b94204b7eb0578f0638168b70873c613c244a592849d6d75c88f4924d77a95419a0ff66d48e4091a2bcaa2a1c5cc3e4d4dcce31a667cb7bf44427ea32a6cd50678262990e5c31fa0201ce79a7d1f8e8d4e1b08ee0edadaec138c62bac4f165a1e13afdf916e75c8fe2d59392175cb15e9a9fd07aa775dc4ee78163a63ad5877216f0ee8995d000b1743cea7080bff4fe9c6ec8a34fe3285f7dc9a24ccad0431d2d211c87e333e8fd3491be19498b32eb7814f44edad1e0e729f678f5ea4f4026539971de2b594f0bbb9d17d74e83edd2ed6882555180a0a971425b0ebf668886f57a8bfd074b2d7d54a0b1edceb15af642767f36257f20ea54a1483ca8958f77a9da789349aedd5e6e019000114a73f5ff768239f3069f7464000000019ca5cecbc3c6ea33173b40000000000022ae1063b36095178660000000000000029a1a3240ffd50c0400000000000000002c18d3e85e96a0000000000000000000028aabe13fa0000000000000000000000020416134000000000000000000000000015e55d0000000000000000000000000000c670000000000000000000000000000004f800000000000000000000000000000010000000000000000000000000000000001"
+      },
+      "bound_vacuous": false,
+      "dimension": 128,
+      "input_qubits": 384,
+      "public_guaranteed_single_packet_equation_probability_upper_bound": {
+        "denominator_binary_exponent": 16384,
+        "numerator_hex": "0x28200000000000000000000000000013f8000000000000000000000000002066b000000000000000000000000053eb58fc000000000000000000000154f3b69ed00000000000000000000952863708b7a800000000000000006de823173d85a570000000000000090e405dce344a1d663e00000000014e0bc9c8421b1deb32a890000000581643a750e1a6af9b378e09180029944838a8f128cc3b44ef310aed5476850ca06e4779386ee5e6fcce64af99d17016340e817e9a12b3498896bb43bc4f85ac8bcbd3ef913731289e969bc1e5453f8b771ad2d3cd76825549793132da81ca4982fc6cb739528078ba8d838c7ec387dc33fe009a935db2c58b430c101ca26e30b9662da05e8c78940c227db084e6f693be2b093893636e1f3bde09b86943da79fa8fbfeaf8eb0580ed316f05c2f4cd4ecdf9d3dbc59fbd276ac0b3e2b94f599cd66b3d07c4110bf7c73978303ba57137f77d67df55d40b5de14f7d06a2cd6658335f805ade7de275d872207c0c87b5203f2e748fdfda3e02858babd5cbce09cc5ed37ec7d82d0c6970826ff0e66348c50ebaa5c0f42ff51de2833ee460108d52ce4e48895d1ef442481c7cd915a67cc984dfa122f51cda81afb6c9361b5aabad445fbc1da06c7b2619df56e6d0fd20632ab6e42ad57d46250c8cc0c5f66a97fa96b66985f019c77ad03b6f3095741097408844814f7f51fd0563cc0eeef523af7eee756cc883718c7fbedfab71dbabadc0a5d593a9f2421a1712208895a32f195ba86a7a2b2b9512e155bf1f4cc709bb61412d950a347f9e0f23d72a1b8319476ad8b0ed994b4120b9510fd5bcb5e87ec9581b541b0fe1766cf8c368fa038294cea2dcdf654d4419ec180e1ab357248eaa345b13ee91766b6a7e5fb45fe02b76d702b26cf4d4a85bc54c306096082288f28e398f65890d31e1de5e91e788fb5cb37a39ab4dc552b2d570b9f0a5b4518ee1f7b0e8cfc6174d35b8ea32440ba69f1d59e1290cd2969f948f4496a5a6bfb5dd953b79dae74e4005fc5955f2dfb16d6622925af4b20f1a36ed340532d8f2df42dc0d313d61fe11ba83d3ed8685b932a4a5c848d67270494a81b883eaa08a4860722cd4d27992b5bcb688e5f974446efc404a251ba713628e100feafba4d745e52afc3429213989245657ddfe80ea7fc006f546e20fcec92c2731dcf4573cf1fd35ac9d96748331aa2713f498266d07429fa8a26fa5816878568b104c9e546a30cc1ece8c0128942af7a408a8aedf16fc9ce43cde9e347b8c353a49991daac38d506779f6568ade9d582ae99a24fe53c63a655ee610a78e94da94096c579eead7c7f4c66d28a73166c19cfd7dbb3a64170c170b49181e81d13d3f8e1d67957c7e494b7d227ae12e6b9d0089c03507f3d35c5f8800018b515bb5228fb91bd7aed0b2d1110ec661dd15deb770e6f963c569ce89c6d6e670643e69f7b69428498f1d4b27ccfc2ce06e988332789e83e6be3f8a0df2c4e0e466d88a118707e13b5c5b5d5609918df3c6a9fd17768daff25b4671d7e86b0378e987065b3dfe0330146b3b3832545d558148f15542df8a8750d7fe433f38f7b3c47edc2a719d03cd8b5d1ee692dcc17828e80f91bf8fea987c37da0e1370526639ed8035c9ad3daf6013b70ac17d6c3415828b92cee8a75681645f375d628c0736d0a3f82f7ce01cba34a846506dbb5b814732dc877b1e30e306f32d4407a27e388516768fba2abe9b677c1c16043f37749c6985a1db14922cff54e9bb4936d6a707382d90a49bd22a9ce535deead2d3f7dae087e2ae76b67c05b5417f9fc7ff6ad77b1adb46473fdf1456b2a3c7330ceb74b82a814a1ab62166cc3008a16523717d508a2aa19c41d9dacd815c701f6ca6c9eae50c9dee9d5e0d5ca75e337205f8a2b932cea6a3eabbe079dbe6f81b3f90cebb370245d9dabe07699b08671a9ec2f55780e8f549015e5cca3d511f588a7cc72e7650652a3d45f9ff9bff3f65f3bd600eef84eb8a58e31382b280543676d03e5a8a395ac439f066da07cb56ae8e38bff1bfded085f8214f06c612daf66e213e6a35d6c36e2079e3f1c594888b43bf09d597e73ff0248d958bb84e4ab408e7b708f4b90bf3bf97b5f586df0260b846d38c260cdcf6e198d65e3f57df56794aeae36095367771fe40e0f9566c63cca142a43c90e075358aeba5b8dc0345f8a07d1521bd260e46e22ea1d53a7652b10f3fe40b94204b7eb0578f0638168b70873c613c244a592849d6d75c88f4924d77a95419a0ff66d48e4091a2bcaa2a1c5cc3e4d4dcce31a667cb7bf44427ea32a6cd50678262990e5c31fa0201ce79a7d1f8e8d4e1b08ee0edadaec138c62bac4f165a1e13afdf916e75c8fe2d59392175cb15e9a9fd07aa775dc4ee78163a63ad5877216f0ee8995d000b1743cea7080bff4fe9c6ec8a34fe3285f7dc9a24ccad0431d2d211c87e333e8fd3491be19498b32eb7814f44edad1e0e729f678f5ea4f4026539971de2b594f0bbb9d17d74e83edd2ed6882555180a0a971425b0ebf668886f57a8bfd074b2d7d54a0b1edceb15af642767f36257f20ea54a1483ca8958f77a9da789349aedd5e6e019000114a73f5ff768239f3069f7464000000019ca5cecbc3c6ea33173b40000000000022ae1063b36095178660000000000000029a1a3240ffd50c0400000000000000002c18d3e85e96a0000000000000000000028aabe13fa0000000000000000000000020416134000000000000000000000000015e55d0000000000000000000000000000c670000000000000000000000000000004f800000000000000000000000000000010000000000000000000000000000000001"
+      },
+      "rank_or_zero_or_even_event_bound": {
+        "denominator_binary_exponent": 127,
+        "numerator_hex": "0xc1"
+      },
+      "source": "unconditional independent uniform labels over Z_4^n"
+    }
+  ],
+  "source_link": {
+    "checked_sections": [
+      "4.2",
+      "4.3"
+    ],
+    "imported_claim_scope": "sample-only prime-power sieve; not a standard-LWE attack",
+    "literature_id": "ARXIV-2609.34996-v1",
+    "paper_correctness_independently_verified": false,
+    "url": "https://arxiv.org/html/2609.34996v1"
+  },
+  "status": "LOCAL_DERIVATION_REVIEW_PENDING"
+}

@@ -1,0 +1,68 @@
+{
+  "hypothesis_id": "HYP-DHSP-DOMAIN-RETAINING-SECTOR-RETURN",
+  "status": "PHYSICAL_WORKBENCH_WITH_SCOPED_CUTS_LOCAL_DERIVATION_REVIEW_PENDING",
+  "candidate_record_accepted": false,
+  "note": "research/DHSP_DOMAIN_COLLISION_WALK.md",
+  "report": "research/phase_workbench/dhsp_domain_collision_walk.json",
+  "source_audit": "research/literature_audits/dhsp_domain_collision_walk_sources.json",
+  "outside_screen_parent": "research/hypotheses/dhsp_codomain_sample_simulation_contract.json",
+  "ontology_nodes": ["dihedral-hsp", "full-function-oracle-access", "domain-retaining-interference", "quantum-walks", "collision-verification", "amplitude-amplification"],
+  "research_target": "Public nonlocal oracle-dependent interference yielding accessible hidden-partner transport OR reproducible unconditional pair concentration on unfiltered sources, with a consequential reduction and matched baselines.",
+  "physical_interface": {
+    "input": "One fixed f_s(b,x)=pi(x-b*s) evaluation oracle, N=2^n.",
+    "retained": ["both computational group domains", "both time clocks", "all failure outcomes"],
+    "known_operations": ["cyclic QFT and public even Fourier multiplier", "known left reflection", "known oracle-value potential", "computational-index CNOT", "all-zero reflection"],
+    "verification": "Distinct inputs with equal function values; four evaluation calls for a clean phase marker, two for final measured verification.",
+    "not_supplied": ["inverse function", "coset support projector", "oracle eigenbasis", "hidden shift dependent driver", "cloned walk eigenstate", "free exact spectral resolution"],
+    "calibration_only": "Explicit small source tables and hidden plus/minus bases are exponential verification machinery, not algorithm advice."
+  },
+  "local_derivations": {
+    "sector_identity": "Seeded partner transport amplitude equals half the difference of plus/minus sector return amplitudes. This does NOT gate all independent-preparation strategies.",
+    "independent_preparations": "Two fresh identical hidden-symmetric preparations have collision probability equal to the IPR of the unconditional position law. Reproducible pair concentration is an alternative to transport; no unknown-state cloning is granted.",
+    "conditional_record_falsifier": "One measured coset has conditional IPR1/2, but two fresh random records match only1/N, giving unconditional partner yield1/(2N), not1/2.",
+    "selected_label_baseline": "Costed known-label Grover preparation can concentrate on one coset, but costs O(sqrt(N)); its rank-one interpolation has protected-sector minimum gap1/sqrt(N) despite an irrelevant endpoint minus-sector degeneracy.",
+    "chirp_cut": "Modulus-N quadratic Fourier driver preserves position parity for N divisible by four; odd shifts have exactly zero SEEDED second-walk yield, not zero independent-preparation yield.",
+    "local_driver_cut": "For nearest-rotation/reflection driver with polynomial clock and diagonal kicks, a pointwise Dyson/word-ball bound gives polynomial/2^n collision yield; polynomial ordinary amplification does not rescue it.",
+    "marker_only_cut": "Any oracle-independent preparation has sum_s p_s<=1; uniform-shift mean success after j ordinary amplification iterations is <=(2j+1)^2/N.",
+    "excluded_transfer": "No general DHSP lower bound, no nonlocal-driver impossibility, no dequantization of all retained-domain protocols."
+  },
+  "evidence": {
+    "native_oracle_pilot_controls": 48,
+    "all_pilots_lose_same_budget_classical_birthday": true,
+    "nonzero_pilots_lose_phase_free_amplification_query_proxy": true,
+    "physical_amplification_controls": 4,
+    "independent_preparations_amplification_countercontrols": 3,
+    "selected_fibre_and_record_alignment_controls": 6,
+    "all_shift_phase_free_controls": 12,
+    "scaling_evidence": "Exact scoped bounds only; finite pilot trends are not an asymptotic algorithm claim.",
+    "precision": "Total composed trace error is explicit in the local bound; physical exponentially small probabilities require their own precision proof."
+  },
+  "proof_obligations": {
+    "PO-REVIEW": "Independent review of interaction-picture truncation, word geometry, source-average marker partition and amplification scope.",
+    "PO-PUBLIC-PRIMITIVE": "A nonlocal mechanism may depend on public indices and evaluated labels, not hidden reflection, unknown coset projector or free eigensystem.",
+    "PO-SECTOR-CONTRAST-OR-CONCENTRATION": "For seeded transport derive accessible-time plus/minus return contrast; for fresh preparations derive unconditional concentration with charged record alignment. A favorable conditional eigenvector/coset is insufficient.",
+    "PO-UNFILTERED-SCALING": "Prove success and resource scaling for unfiltered shifts and one fixed source permutation across calls; charge conditioning and source rarity.",
+    "PO-TOTAL-COST": "Account for A, A inverse, controlled powers, marker, known QFT/multiplier arithmetic, memory, precision and unknown-success scheduling.",
+    "PO-BASELINES": "Survive same-access classical birthday and algebraic/reconstruction attacks, phase-free marker search, and established DHSP quantum baselines; compare total runtime rather than one proxy.",
+    "PO-NATURAL-REDUCTION": "Connect a successful source or structured promise to a consequential natural problem with parameter and error losses.",
+    "PO-NO-CLAIM-PROMOTION": "Workbenches, local bounds and tiny calibrations do not satisfy the candidate proof gate or establish novelty."
+  },
+  "experiments_with_falsifiers": [
+    {"experiment": "Public Fourier driver and clean oracle marker executed with A/A inverse.", "falsifier": "A gate needs hidden shift information, a supplied support reflection or an unknown-state copy."},
+    {"experiment": "Sector-return or two-fresh-preparation retained-domain success accounting.", "falsifier": "Seeded transport lacks partner contrast, fresh localization occurs on independently unmatched records, or success exists only after rare normalized postselection."},
+    {"experiment": "Held-out unfiltered nonlocal-driver sweeps after an analytic mechanism is specified.", "falsifier": "Yield remains O(1/N), oracle phases lose their matched phase-free budget, or parameter choices depend on source inspection."},
+    {"experiment": "Classical and known-quantum matched-cost attacks.", "falsifier": "Birthday recovery, natural algebraic reconstruction or established DHSP processing solves the same promise more cheaply."},
+    {"experiment": "Independent local proof audit.", "falsifier": "An allowed phase changes hop support, word geometry exceeds its stated bound, or the marker-only argument uses oracle-dependent preparation."}
+  ],
+  "deprioritize": ["nearest-neighbor random-potential localization in this exact template", "naive modulus-N chirp for odd shifts", "oracle-free preparation promoted beyond ordinary Grover search", "broad random parameter sweeps without a sector-return mechanism"],
+  "gemini_integration": [
+    "Expose a separate domain-retaining workbench; never merge its access promise with codomain-erasure or supplied-coset results.",
+    "Register scoped negative results for the parity trap and local/marker-only templates, keeping review-pending status; do not assert a general HSP no-go.",
+    "Keep all query ledgers, precision counters, raw exact-zero residuals, full failures, and paired classical/phase-free/fresh-preparation baselines. Do not transfer the parity trap or sector-return requirement to all protocols.",
+    "Run CLI/registry integration and full production validation; prior writer omissions remain unresolved by this theory pass.",
+    "Do not promote this contract to an accepted CandidateRecord or run large random sweeps without a new analytic target."
+  ],
+  "independent_review": false,
+  "novelty_claim": false,
+  "speedup_claim_allowed": false
+}

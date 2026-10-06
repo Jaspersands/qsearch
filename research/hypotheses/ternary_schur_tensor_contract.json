@@ -1,0 +1,36 @@
+{
+  "hypothesis_id": "HYP-NATIVE-TERNARY-WEIGHTED-SCHUR-SUBSPACE",
+  "status": "EXACT_TENSOR_AND_LOW_RETENTION_BASELINE_VERIFIED_HIGH_RETENTION_GROWING_DEPTH_DECODER_MISSING",
+  "candidate_record_accepted": false,
+  "note": "research/TERNARY_SCHUR_TENSOR.md",
+  "report": "research/phase_workbench/ternary_schur_tensor.json",
+  "source_audit": "research/literature_audits/ternary_schur_tensor_sources.json",
+  "local_results": {
+    "tensor": "Native level3 mixed third derivative is -A*((Vu) star (Vv) star (Vw)). It is factored, syndrome independent and high-label independent.",
+    "sparse_polynomial": "Public component polynomials need polynomial tensor arithmetic and2h+binomial(h,2) residual evaluations, not a3^h table or unknown phase oracle.",
+    "false_gate": "All diagonal cubic polarizations vanish automatically on the native kernel, including genuinely cubic states. Mixed terms are mandatory.",
+    "true_gate": "A retained W gives quadratic phase on every affine branch exactly when its triple Schur span is contained in kerA.",
+    "baseline": "Disjoint n+1-coordinate kernel blocks satisfy the gate, but retain only floor(m/(n+1)) outputs. Every physical syndrome is charged.",
+    "quadratic_source": "For a low-defined frame and all affine syndromes, high native digits induce independent uniform linear labels and an affine quadratic source of Schur-square rank d2. A consistent fixed-frame cross filter costs3^(-n*e), leaving diagonal entropy d2-e. Product IID labels require d2-e=k. Other frames, Clifford changes and useful correlated outputs remain open.",
+    "secret_scope": "Conditional level3 outputs see secret modulo3, losing the top modulo9 digit after measurement. Intermediate odd-source acquisition is not charged.",
+    "literature_correction": "Known polynomial-phase techniques allow varying univariate matrices with shared unknown parameters. Identical copies are not a universal input prerequisite."
+  },
+  "proof_obligations_for_next_candidate": {
+    "PO-SCHUR": "Prove all weighted mixed triple constraints, not diagonal polarization or an invalid division by3 factorial.",
+    "PO-CONSTRUCTION": "Give an efficient native-source algorithm finding overlapping high-retention subspaces; record actual search costs and source conditioning.",
+    "PO-RECEIVER": "Decode informative unknown parameters from the resulting coefficients under supplied-state access, comparing known varying-Y phase elimination.",
+    "PO-DEPTH": "Prove growing-modulus phase and complete-secret recursion with genuinely improved total costs, not fixed-level success.",
+    "PO-SOURCE": "Charge intermediate acquisition, native inputs, measured outcomes, correlations and any rare filtering. Reprove conditioning for high-label-adaptive frames; do not treat quadratic-admission rank as product IID source admission.",
+    "PO-BASELINES": "Compare disjoint kernel blocks, applicable known quantum polynomial-phase algorithms and legal classical measurement inference.",
+    "PO-REVIEW": "Independent mathematical review and novelty search before proposing a CandidateRecord."
+  },
+  "falsifiers": [
+    "A purported cubic cancellation has a nonzero weighted mixed Schur witness.",
+    "High retention is obtained only through exponential search, source conditioning, or missing branch outcomes.",
+    "Quadratic coefficients fail to identify the target secret under the actual source law.",
+    "The full growing-depth construction still has roughly n+1 consumption at each stage or loses unrecovered secret digits.",
+    "A varying-state claim ignores the known shared-parameter univariate phase interface.",
+    "A fixed-F3 statement is copied into a growing prime-power phase claim despite the higher-level derivative countercontrol."
+  ],
+  "next_experiment": "Investigate overlapping weighted-Schur subspace geometry and source throughput before any low-level success sweep; reject the route if no growing-depth improvement survives."
+}

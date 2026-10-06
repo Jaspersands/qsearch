@@ -1,0 +1,34 @@
+{
+  "hypothesis_id": "HYP-DCP-PGM-NORMALIZATION-ESCAPE",
+  "status": "REPLACEMENT_PRIMITIVE_REQUIRED_LOCAL_ROUTE_FALSIFIER_REVIEW_PENDING",
+  "candidate_record_accepted": false,
+  "note": "research/DCP_PGM_PROJECTED_ENCODING.md",
+  "report": "research/classical_baselines/dcp_pgm_projected_encoding.json",
+  "all_record_followup": "research/hypotheses/dcp_pgm_failure_readout_contract.json",
+  "literature_ids": ["ARXIV-2106.07634", "ARXIV-2006.16924", "ARXIV-quant-ph-0501044-v2"],
+  "ontology_nodes": ["dihedral-hsp", "collective-state-readout", "hidden-shift"],
+  "rejected_route": "Native uniform comparison projected encoding T, followed only by jointly bounded odd singular-value polynomials and classical successful-output decoding, cannot achieve inverse-polynomial native success with polynomial degree.",
+  "positive_interface": "The public comparison unitary and its known inverse are explicitly constructed; ideal polar readout equals the known fiber PGM, but its construction is not supplied.",
+  "not_ruled_out": ["other better normalized encodings with actual circuits", "fiber-dependent transformations", "arbitrary interleaved quantum algorithms", "direct structured decoders", "failure-branch inference", "multiple unknown input packets with charged source"],
+  "proof_obligations": {
+    "PO-REVIEW": "Review rectangular projector conventions, character singular vectors, Bernstein scalar/vector step and all-branch probability accounting.",
+    "PO-REPLACEMENT": "A new route must specify the costed primitive changing source geometry, normalization or decoding; renaming generic PGM/Petz/QSVT is insufficient.",
+    "PO-ACCESS": "Only known trial-state inverse is supplied. Unknown-input preparation/inverse, chosen labels and duplicated native states are not free.",
+    "PO-COMPOSITION": "Provide scalable precision/noise and natural-problem state supply before any algorithm claim.",
+    "PO-CLASSICAL": "Kill apparent herald-conditioned signals using unconditional success and matched legal classical/known-quantum baselines.",
+    "PO-SCOPE": "Condition-one binary identity input has a linear Hadamard decoder despite failing this representation's polynomial gate. Do not claim general DHSP/QSVT hardness."
+  },
+  "experiments_with_falsifiers": [
+    {
+      "experiment": "Independent projected-unitary and known-reflection physical executions, all secrets and complete native herald censuses.",
+      "falsifier": "A physical allowed branch exceeds the polynomial envelope, the rectangular block is misnormalized, or failure has been silently discarded."
+    },
+    {
+      "experiment": "Construct a source-valid normalization escape or a directly different collective decoder.",
+      "falsifier": "It grants efficient fiber inversion, hidden advice, unavailable copies, exponential query degree or a free amplified success flag."
+    }
+  ],
+  "independent_review": false,
+  "novelty_claim": false,
+  "speedup_claim_allowed": false
+}

@@ -1,0 +1,38 @@
+{
+  "status": "PRIMARY_SOURCES_INSPECTED_LOCAL_DERIVATIONS_REVIEW_PENDING",
+  "verified_date": "2026-10-06",
+  "records": [
+    {
+      "id": "arXiv:1503.09016v2",
+      "url": "https://arxiv.org/html/1503.09016v2",
+      "title": "Solving systems of diagonal polynomial equations over finite fields",
+      "sections_inspected": ["Theorem5", "Corollary6", "Section5 shared-parameter phase construction"],
+      "supported_claim": "Constant-degree univariate HPGP-prime over prime fields with growing parameter dimension is already quantum polynomial time.",
+      "transfer_gate": "Fixed-field incidence decoding is a known-easy baseline. No novelty claim or free prime-power transfer."
+    },
+    {
+      "id": "arXiv:2609.34996v1",
+      "url": "https://arxiv.org/html/2609.34996v1",
+      "title": "Cyclotomic Cosets: Hidden Subgroup and Quantum Sieving Algorithm for Prime-Power Moduli",
+      "sections_inspected": ["Section4.2 Lemma7 and proof", "Theorem4.2", "Section4.3 recursive sieve"],
+      "supported_claim": "Low-only zero-sum selection preserves uniform high lifts; published sieve accounts for successive levels and secret-digit recursion.",
+      "transfer_gate": "Our weighted integer-secret line source has its own exact unimodular proof; it is not automatically a general ring-secret sieve improvement."
+    },
+    {
+      "id": "arXiv:2208.07851v2",
+      "url": "https://arxiv.org/html/2208.07851v2",
+      "title": "Optimal algorithms for learning quantum phase states",
+      "sections_inspected": ["Boolean-domain phase-state definition", "Section5.1 Theorem8"],
+      "supported_claim": "The generalized separable learner uses copies of one Boolean-domain unknown polynomial, assumes even q and explicitly charges q dependence.",
+      "transfer_gate": "It does not prove a learner for varying native ternary packets with growing prime-power root order."
+    }
+  ],
+  "local_results_not_attributed_as_published_theorems": [
+    "Full-depth integer-secret native kernel-line source law",
+    "Specific cubic incidence support-span proof and2/81 rank-escape bound",
+    "Growing-root F3 MUB support-zero census and independent-trial elimination law",
+    "Native L5 low-shadow false-constraint counterexample"
+  ],
+  "novelty_claim": false,
+  "independent_mathematical_review_complete": false
+}

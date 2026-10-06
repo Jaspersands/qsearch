@@ -1,0 +1,32 @@
+{
+  "audit_date": "2026-10-06",
+  "primary_sources": [
+    {
+      "url": "https://arxiv.org/pdf/1101.1469v2",
+      "title": "The inverse conjecture for the Gowers norm over finite fields in low characteristic",
+      "authors": "Terence Tao and Tamar Ziegler",
+      "inspected": ["Definition1.2", "Lemma1.7 including parts iii, v and vi"],
+      "baseline": "Nonclassical polynomial canonical depth and root-order bounds; for characteristic3, degree d bounds relative root order by3^ceil(d/2).",
+      "transfer_gate": "The inverse Gowers theorem is not an efficient supplied-state decoder or access to the unknown phase. The general degree-root bound is known, not a novelty claim."
+    },
+    {
+      "url": "https://arxiv.org/html/2608.00265v1",
+      "title": "No low-degree tests for quantum states",
+      "authors": "Omar Alrabiah, Srinivasan Arunachalam, Sabee Grewal and John Wright",
+      "inspected": ["Abstract", "Introduction and input definitions", "Theorem1.1"],
+      "baseline": "Generic unknown phase-state copy testing can require degree-dependent combinatorial copy counts.",
+      "transfer_gate": "This is not a lower bound for the known native component family with few shared secret parameters and growing prime-power phase. Known component arithmetic is not quantum property testing. No full proof audit claimed."
+    }
+  ],
+  "local_derivations": [
+    "Native exact factored mixed derivative engine and sharp growing-depth degree controls",
+    "Depth-independent minus sign in the weighted L-fold Schur top tensor",
+    "Actual native cubic-admitted subspace failing at the fifth derivative",
+    "Conditional native secret visibility consequence and full-order degree window",
+    "Actual native lifted-quadratic versus additive-degree countercontrol"
+  ],
+  "novelty_search_exhaustive": false,
+  "independent_human_review": false,
+  "paper_refuted": false,
+  "new_algorithm_claimed": false
+}

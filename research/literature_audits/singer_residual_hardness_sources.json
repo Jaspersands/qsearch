@@ -1,0 +1,49 @@
+{
+  "audit_id": "AUDIT-SINGER-RESIDUAL-HARDNESS",
+  "checked_date": "2026-10-05",
+  "sources": [
+    {
+      "id": "ROETTELER-1608.02005V1",
+      "author": "Martin Roetteler",
+      "title": "Quantum algorithms for abelian difference sets and applications to dihedral hidden subgroups",
+      "url": "https://arxiv.org/abs/1608.02005",
+      "pdf": "https://arxiv.org/pdf/1608.02005v1",
+      "pdf_sha256": "fe90f4d7322ee6c422f90ea5b9944f3f6a5a0bc279a0499b09083db4864d4fb7",
+      "read_scope": "Sections3-4 HTML; relevant PDF text; printed pages7-8 visually inspected and pages13-14 text-inspected.",
+      "mechanism": "Difference-set Fourier phase cancellation and Singer finite-geometry instances.",
+      "literal_formula_diagnostics": "Printed coefficient/probability formulas need normalization and trivial-character accounting; this audit does not refute the known efficient cases.",
+      "local_followup": "Classical normal extraction, known-DLog residual, growing-density query and injectivization gates.",
+      "unverified": "No independent theorem review, complete coherent Gauss-sum implementation audit or generic lattice reduction into this source."
+    },
+    {
+      "id": "SHOR-QUANT-PH-9508027V2",
+      "url": "https://arxiv.org/abs/quant-ph/9508027",
+      "read_scope": "Official abstract and metadata; known discrete-log algorithm comparator, not a new implementation.",
+      "local_use": "The extracted finite-field cyclic residual is already a standard Shor target."
+    },
+    {
+      "id": "BBBV-QUANT-PH-9701001",
+      "url": "https://arxiv.org/abs/quant-ph/9701001",
+      "read_scope": "Official abstract/metadata; background for the independently written local query hybrid, not a full-paper proof audit.",
+      "invalid_transfer": "No unstructured-search theorem is asserted against arbitrary full-oracle DHSP."
+    },
+    {
+      "id": "KLEINJUNG-WESOLOWSKI-1906.10668V2",
+      "authors": ["Thorsten Kleinjung", "Benjamin Wesolowski"],
+      "url": "https://arxiv.org/abs/1906.10668",
+      "read_scope": "Official abstract and PDF first-page Theorem1.1 statement; full proof not audited or implemented.",
+      "theorem_statement": "DLog in F_(p^n)* has expected time (p*n)^(2 log2(n)+O(1)); fixed characteristic gives quasi-polynomial expected time.",
+      "local_use": "Stronger classical residual comparator than enumeration for the fixed-prime controls and characteristic-two growing-base-field ledgers.",
+      "invalid_transfer": "This does not supply the hidden normal/target or remove the sparse membership-access cost."
+    },
+    {
+      "id": "KU-CFIP-2023-STILL-ABSTRACT-ONLY",
+      "url": "https://i2s-research.ku.edu/quantum-polynomial-time-reduction-dihedral-hidden-subgroup-problem",
+      "read_scope": "Defense abstract rechecked; ScholarWorks search/root inaccessible through the browsing tool. No dissertation or exact CFIP interface obtained.",
+      "reduction_verified": false,
+      "refuted_by_this_audit": false
+    }
+  ],
+  "independent_review": false,
+  "novelty_claim": false
+}

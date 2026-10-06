@@ -1,0 +1,52 @@
+{
+  "status": "CURATED_SOURCE_APPLICABILITY_AUDIT_NOT_ACTIVE_CANDIDATE_EVIDENCE",
+  "checked_on": "2026-10-05",
+  "records": [
+    {
+      "id": "ARXIV-1004.0579",
+      "title": "On the matrices of given rank in a large subspace",
+      "url": "https://arxiv.org/pdf/1004.0579",
+      "evidence_read": "Theorem9, Proposition10 and their proofs; arbitrary-field hypothesis checked, including F2.",
+      "mechanism": "Trivial-spectrum dimension bound via induction and a directed elementary-matrix cycle.",
+      "problem_family": "Linear spaces of matrices and affine full-rank matrix spaces over arbitrary fields.",
+      "reduction": "An all-nonsingular affine n-by-n pivot pencil has variation dimension at most n(n-1)/2.",
+      "no_go_barrier": "A lower dimension does not imply a nonsingular translate, useful native coverage or higher-carry closure.",
+      "proof_technique": "Induction on matrix dimension; a zero row-supported subspace enables the rank bound.",
+      "open_question": "Can native binary code products produce an efficiently selected pencil satisfying the necessary bound and sufficient nonsingularity conditions?",
+      "reusable_abstraction": "Keep arbitrary-field dimension bounds separate from field-size-qualified classifications.",
+      "proof_independently_peer_reviewed_by_this_project": false,
+      "native_decoder_application_proved": false
+    },
+    {
+      "id": "ARXIV-1512.03531-v6",
+      "title": "Constructive noncommutative rank computation is in deterministic polynomial time",
+      "url": "https://arxiv.org/abs/1512.03531",
+      "evidence_read": "Current abstract only; sufficiently-large-base-field requirement checked.",
+      "mechanism": "Constructive matrix-space rank certificates with controlled tensor blow-up.",
+      "problem_family": "Noncommutative rank over sufficiently large fields.",
+      "reduction": "Potential operator-space abstraction, not a proved algorithm for binary prescribed-dimension pivot spans.",
+      "no_go_barrier": "Field extension, binary descent, exact dimension constraints and nonsingular affine coverage are separate unresolved requirements.",
+      "proof_technique": "Author-described regularity and blow-up reduction; full theorem review pending.",
+      "open_question": "Which certificate, if any, transfers to the actual F2 carry-polar operator family without changing access or dimensions?",
+      "reusable_abstraction": "Export the full operator family, not selected matrix columns alone.",
+      "binary_pivot_search_solved": false
+    },
+    {
+      "id": "ARXIV-2207.08311-v1",
+      "title": "Shrunk subspaces via operator Sinkhorn iteration",
+      "url": "https://arxiv.org/abs/2207.08311",
+      "evidence_read": "Abstract only; complex-field scope checked.",
+      "mechanism": "Operator scaling with marginal majorization and rounding of approximate shrunk subspaces.",
+      "problem_family": "Minimum shrunk subspaces over the complex field.",
+      "reduction": "Possible conceptual relation to subspace expansion; prescribed binary W and all-background inversion are not supplied.",
+      "no_go_barrier": "Low Schur-product dimension is not automatically a shrunk subspace, and complex certificates need not descend to binary spans.",
+      "proof_technique": "Author-described Sinkhorn iteration and rounding; full proof not audited.",
+      "open_question": "Is there a source-valid finite-field expansion certificate applicable to this actual code-product problem?",
+      "reusable_abstraction": "Track base field, tensor blow-up, approximate versus exact certificates and dimension promises.",
+      "binary_pivot_search_solved": false
+    }
+  ],
+  "candidate_record_accepted": false,
+  "novelty_claim": false,
+  "speedup_claim_allowed": false
+}

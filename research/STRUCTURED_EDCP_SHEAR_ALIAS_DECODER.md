@@ -24,6 +24,12 @@ This tests a concrete global constructor for the three-block regime from
 `STRUCTURED_EDCP_IDEAL_COLLISION_CORE.md`; it is not a new generic no-go
 principle, an efficient decoder or a claimed novel Fourier identity.
 
+FOLLOW-UP: `STRUCTURED_EDCP_FOURIER_ERASURE_AUDIT.md` analyzes computing f
+then Fourier-measuring ALL coefficient registers. Its full residual cq
+comparison covers arbitrary subsequent quantum channels, with explicit
+error. It does not cover keeping the measured outcome coherent or simulate
+arbitrary quantum computation classically.
+
 FOLLOW-UP: `STRUCTURED_EDCP_MODULE_GLUING_AUDIT.md` audits the alternative
 of solving orthogonal rank-one ideals. It identifies their missing integral
 index and bounds the fidelity of constructors discarding the associated
@@ -291,3 +297,9 @@ the final measurement lies inside (4)'s scope. Use exact/sound log-determinant
 enclosures for a certificate; the displayed FFT numbers are only references.
 Retain adaptive-alias and non-Fourier measurements as open cases, not blanket
 negative results. The next main-model pass must attack one of those cases.
+
+FOLLOW-UP (2026-09-27): `STRUCTURED_EDCP_NONLINEAR_CHIRP_AUDIT.md` treats
+nonlinear controlled addition explicitly, gives an exact domination bound
+for fixed affine readout after ANY diagonal phase on a positive envelope,
+and derives a finite-grid classical sampler for scoped quadratic chirps.
+Its rational-core/alias test is not a blanket normalizer-circuit simulation.

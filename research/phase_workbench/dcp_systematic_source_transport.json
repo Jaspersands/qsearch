@@ -1,0 +1,894 @@
+{
+  "status": "LOCAL_DERIVATION_REVIEW_PENDING",
+  "complete_native_source_controls": [
+    {
+      "dimension": 1,
+      "modulus": 8,
+      "all_invertible_binary_prefixes": 1,
+      "exact_acceptance_probability": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x2"
+      },
+      "transports": [
+        {
+          "transport": {
+            "binary_prefix": [
+              [
+                1
+              ]
+            ],
+            "modulus_hex": "0x8",
+            "row_transform": [
+              [
+                1
+              ]
+            ],
+            "row_transform_inverse_hex": [
+              [
+                "0x1"
+              ]
+            ],
+            "selection_uses_binary_prefix_only": true,
+            "row_transform_uses_actual_full_label_prefix_inverse": false,
+            "secret_transform": "s_prime=T^(-transpose)*s mod q; calibration only",
+            "coordinate_recovery": "s=T^transpose*s_prime mod q; after a real decoder exists",
+            "unknown_secret_recovered": false
+          },
+          "tail_coset_controls": [
+            {
+              "original_tail_low_column": [
+                0
+              ],
+              "transformed_tail_low_column": [
+                0
+              ],
+              "distinct_higher_lifts": 4,
+              "each_lift_multiplicity": 1
+            },
+            {
+              "original_tail_low_column": [
+                1
+              ],
+              "transformed_tail_low_column": [
+                1
+              ],
+              "distinct_higher_lifts": 4,
+              "each_lift_multiplicity": 1
+            }
+          ],
+          "distinct_transformed_higher_prefix_tables": 4
+        }
+      ],
+      "complete_tail_label_vectors": 8,
+      "each_tail_label_vector_multiplicity_over_prefixes": 1,
+      "fixed_secret_phase_covariance_checks": 16
+    },
+    {
+      "dimension": 2,
+      "modulus": 8,
+      "all_invertible_binary_prefixes": 6,
+      "exact_acceptance_probability": {
+        "sign": 1,
+        "numerator_hex": "0x3",
+        "denominator_hex": "0x8"
+      },
+      "transports": [
+        {
+          "transport": {
+            "binary_prefix": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                0
+              ]
+            ],
+            "modulus_hex": "0x8",
+            "row_transform": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                0
+              ]
+            ],
+            "row_transform_inverse_hex": [
+              [
+                "0x0",
+                "0x1"
+              ],
+              [
+                "0x1",
+                "0x0"
+              ]
+            ],
+            "selection_uses_binary_prefix_only": true,
+            "row_transform_uses_actual_full_label_prefix_inverse": false,
+            "secret_transform": "s_prime=T^(-transpose)*s mod q; calibration only",
+            "coordinate_recovery": "s=T^transpose*s_prime mod q; after a real decoder exists",
+            "unknown_secret_recovered": false
+          },
+          "tail_coset_controls": [
+            {
+              "original_tail_low_column": [
+                0,
+                0
+              ],
+              "transformed_tail_low_column": [
+                0,
+                0
+              ],
+              "distinct_higher_lifts": 16,
+              "each_lift_multiplicity": 1
+            },
+            {
+              "original_tail_low_column": [
+                0,
+                1
+              ],
+              "transformed_tail_low_column": [
+                1,
+                0
+              ],
+              "distinct_higher_lifts": 16,
+              "each_lift_multiplicity": 1
+            },
+            {
+              "original_tail_low_column": [
+                1,
+                0
+              ],
+              "transformed_tail_low_column": [
+                0,
+                1
+              ],
+              "distinct_higher_lifts": 16,
+              "each_lift_multiplicity": 1
+            },
+            {
+              "original_tail_low_column": [
+                1,
+                1
+              ],
+              "transformed_tail_low_column": [
+                1,
+                1
+              ],
+              "distinct_higher_lifts": 16,
+              "each_lift_multiplicity": 1
+            }
+          ],
+          "distinct_transformed_higher_prefix_tables": 256
+        },
+        {
+          "transport": {
+            "binary_prefix": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "modulus_hex": "0x8",
+            "row_transform": [
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                0
+              ]
+            ],
+            "row_transform_inverse_hex": [
+              [
+                "0x0",
+                "0x1"
+              ],
+              [
+                "0x1",
+                "0x7"
+              ]
+            ],
+            "selection_uses_binary_prefix_only": true,
+            "row_transform_uses_actual_full_label_prefix_inverse": false,
+            "secret_transform": "s_prime=T^(-transpose)*s mod q; calibration only",
+            "coordinate_recovery": "s=T^transpose*s_prime mod q; after a real decoder exists",
+            "unknown_secret_recovered": false
+          },
+          "tail_coset_controls": [
+            {
+              "original_tail_low_column": [
+                0,
+                0
+              ],
+              "transformed_tail_low_column": [
+                0,
+                0
+              ],
+              "distinct_higher_lifts": 16,
+              "each_lift_multiplicity": 1
+            },
+            {
+              "original_tail_low_column": [
+                0,
+                1
+              ],
+              "transformed_tail_low_column": [
+                1,
+                0
+              ],
+              "distinct_higher_lifts": 16,
+              "each_lift_multiplicity": 1
+            },
+            {
+              "original_tail_low_column": [
+                1,
+                0
+              ],
+              "transformed_tail_low_column": [
+                1,
+                1
+              ],
+              "distinct_higher_lifts": 16,
+              "each_lift_multiplicity": 1
+            },
+            {
+              "original_tail_low_column": [
+                1,
+                1
+              ],
+              "transformed_tail_low_column": [
+                0,
+                1
+              ],
+              "distinct_higher_lifts": 16,
+              "each_lift_multiplicity": 1
+            }
+          ],
+          "distinct_transformed_higher_prefix_tables": 256
+        },
+        {
+          "transport": {
+            "binary_prefix": [
+              [
+                1,
+                0
+              ],
+              [
+                0,
+                1
+              ]
+            ],
+            "modulus_hex": "0x8",
+            "row_transform": [
+              [
+                1,
+                0
+              ],
+              [
+                0,
+                1
+              ]
+            ],
+            "row_transform_inverse_hex": [
+              [
+                "0x1",
+                "0x0"
+              ],
+              [
+                "0x0",
+                "0x1"
+              ]
+            ],
+            "selection_uses_binary_prefix_only": true,
+            "row_transform_uses_actual_full_label_prefix_inverse": false,
+            "secret_transform": "s_prime=T^(-transpose)*s mod q; calibration only",
+            "coordinate_recovery": "s=T^transpose*s_prime mod q; after a real decoder exists",
+            "unknown_secret_recovered": false
+          },
+          "tail_coset_controls": [
+            {
+              "original_tail_low_column": [
+                0,
+                0
+              ],
+              "transformed_tail_low_column": [
+                0,
+                0
+              ],
+              "distinct_higher_lifts": 16,
+              "each_lift_multiplicity": 1
+            },
+            {
+              "original_tail_low_column": [
+                0,
+                1
+              ],
+              "transformed_tail_low_column": [
+                0,
+                1
+              ],
+              "distinct_higher_lifts": 16,
+              "each_lift_multiplicity": 1
+            },
+            {
+              "original_tail_low_column": [
+                1,
+                0
+              ],
+              "transformed_tail_low_column": [
+                1,
+                0
+              ],
+              "distinct_higher_lifts": 16,
+              "each_lift_multiplicity": 1
+            },
+            {
+              "original_tail_low_column": [
+                1,
+                1
+              ],
+              "transformed_tail_low_column": [
+                1,
+                1
+              ],
+              "distinct_higher_lifts": 16,
+              "each_lift_multiplicity": 1
+            }
+          ],
+          "distinct_transformed_higher_prefix_tables": 256
+        },
+        {
+          "transport": {
+            "binary_prefix": [
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "modulus_hex": "0x8",
+            "row_transform": [
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "row_transform_inverse_hex": [
+              [
+                "0x1",
+                "0x0"
+              ],
+              [
+                "0x7",
+                "0x1"
+              ]
+            ],
+            "selection_uses_binary_prefix_only": true,
+            "row_transform_uses_actual_full_label_prefix_inverse": false,
+            "secret_transform": "s_prime=T^(-transpose)*s mod q; calibration only",
+            "coordinate_recovery": "s=T^transpose*s_prime mod q; after a real decoder exists",
+            "unknown_secret_recovered": false
+          },
+          "tail_coset_controls": [
+            {
+              "original_tail_low_column": [
+                0,
+                0
+              ],
+              "transformed_tail_low_column": [
+                0,
+                0
+              ],
+              "distinct_higher_lifts": 16,
+              "each_lift_multiplicity": 1
+            },
+            {
+              "original_tail_low_column": [
+                0,
+                1
+              ],
+              "transformed_tail_low_column": [
+                0,
+                1
+              ],
+              "distinct_higher_lifts": 16,
+              "each_lift_multiplicity": 1
+            },
+            {
+              "original_tail_low_column": [
+                1,
+                0
+              ],
+              "transformed_tail_low_column": [
+                1,
+                1
+              ],
+              "distinct_higher_lifts": 16,
+              "each_lift_multiplicity": 1
+            },
+            {
+              "original_tail_low_column": [
+                1,
+                1
+              ],
+              "transformed_tail_low_column": [
+                1,
+                0
+              ],
+              "distinct_higher_lifts": 16,
+              "each_lift_multiplicity": 1
+            }
+          ],
+          "distinct_transformed_higher_prefix_tables": 256
+        },
+        {
+          "transport": {
+            "binary_prefix": [
+              [
+                1,
+                1
+              ],
+              [
+                0,
+                1
+              ]
+            ],
+            "modulus_hex": "0x8",
+            "row_transform": [
+              [
+                1,
+                1
+              ],
+              [
+                0,
+                1
+              ]
+            ],
+            "row_transform_inverse_hex": [
+              [
+                "0x1",
+                "0x7"
+              ],
+              [
+                "0x0",
+                "0x1"
+              ]
+            ],
+            "selection_uses_binary_prefix_only": true,
+            "row_transform_uses_actual_full_label_prefix_inverse": false,
+            "secret_transform": "s_prime=T^(-transpose)*s mod q; calibration only",
+            "coordinate_recovery": "s=T^transpose*s_prime mod q; after a real decoder exists",
+            "unknown_secret_recovered": false
+          },
+          "tail_coset_controls": [
+            {
+              "original_tail_low_column": [
+                0,
+                0
+              ],
+              "transformed_tail_low_column": [
+                0,
+                0
+              ],
+              "distinct_higher_lifts": 16,
+              "each_lift_multiplicity": 1
+            },
+            {
+              "original_tail_low_column": [
+                0,
+                1
+              ],
+              "transformed_tail_low_column": [
+                1,
+                1
+              ],
+              "distinct_higher_lifts": 16,
+              "each_lift_multiplicity": 1
+            },
+            {
+              "original_tail_low_column": [
+                1,
+                0
+              ],
+              "transformed_tail_low_column": [
+                1,
+                0
+              ],
+              "distinct_higher_lifts": 16,
+              "each_lift_multiplicity": 1
+            },
+            {
+              "original_tail_low_column": [
+                1,
+                1
+              ],
+              "transformed_tail_low_column": [
+                0,
+                1
+              ],
+              "distinct_higher_lifts": 16,
+              "each_lift_multiplicity": 1
+            }
+          ],
+          "distinct_transformed_higher_prefix_tables": 256
+        },
+        {
+          "transport": {
+            "binary_prefix": [
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                0
+              ]
+            ],
+            "modulus_hex": "0x8",
+            "row_transform": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "row_transform_inverse_hex": [
+              [
+                "0x7",
+                "0x1"
+              ],
+              [
+                "0x1",
+                "0x0"
+              ]
+            ],
+            "selection_uses_binary_prefix_only": true,
+            "row_transform_uses_actual_full_label_prefix_inverse": false,
+            "secret_transform": "s_prime=T^(-transpose)*s mod q; calibration only",
+            "coordinate_recovery": "s=T^transpose*s_prime mod q; after a real decoder exists",
+            "unknown_secret_recovered": false
+          },
+          "tail_coset_controls": [
+            {
+              "original_tail_low_column": [
+                0,
+                0
+              ],
+              "transformed_tail_low_column": [
+                0,
+                0
+              ],
+              "distinct_higher_lifts": 16,
+              "each_lift_multiplicity": 1
+            },
+            {
+              "original_tail_low_column": [
+                0,
+                1
+              ],
+              "transformed_tail_low_column": [
+                1,
+                1
+              ],
+              "distinct_higher_lifts": 16,
+              "each_lift_multiplicity": 1
+            },
+            {
+              "original_tail_low_column": [
+                1,
+                0
+              ],
+              "transformed_tail_low_column": [
+                0,
+                1
+              ],
+              "distinct_higher_lifts": 16,
+              "each_lift_multiplicity": 1
+            },
+            {
+              "original_tail_low_column": [
+                1,
+                1
+              ],
+              "transformed_tail_low_column": [
+                1,
+                0
+              ],
+              "distinct_higher_lifts": 16,
+              "each_lift_multiplicity": 1
+            }
+          ],
+          "distinct_transformed_higher_prefix_tables": 256
+        }
+      ],
+      "complete_tail_label_vectors": 64,
+      "each_tail_label_vector_multiplicity_over_prefixes": 6,
+      "fixed_secret_phase_covariance_checks": 1152
+    }
+  ],
+  "arbitrary_precision_transport_control": {
+    "binary_prefix": [
+      [
+        1,
+        1,
+        0
+      ],
+      [
+        0,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1
+      ]
+    ],
+    "modulus_hex": "0x20000000000000000",
+    "row_transform": [
+      [
+        0,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        0,
+        1
+      ]
+    ],
+    "row_transform_inverse_hex": [
+      [
+        "0x1ffffffffffffffff",
+        "0x1",
+        "0x0"
+      ],
+      [
+        "0x0",
+        "0x1",
+        "0x1ffffffffffffffff"
+      ],
+      [
+        "0x1",
+        "0x1ffffffffffffffff",
+        "0x1"
+      ]
+    ],
+    "selection_uses_binary_prefix_only": true,
+    "row_transform_uses_actual_full_label_prefix_inverse": false,
+    "secret_transform": "s_prime=T^(-transpose)*s mod q; calibration only",
+    "coordinate_recovery": "s=T^transpose*s_prime mod q; after a real decoder exists",
+    "unknown_secret_recovered": false
+  },
+  "scaling_source_ledgers": [
+    {
+      "status": "EXACT_LOW_SELECTED_NATIVE_SYSTEMATIC_SOURCE_NOT_DECODER",
+      "dimension": 2,
+      "original_states_per_attempt": 34,
+      "allocated_attempts": 8,
+      "original_states_charged": 272,
+      "exact_binary_prefix_acceptance_probability": {
+        "sign": 1,
+        "numerator_hex": "0x3",
+        "denominator_hex": "0x8"
+      },
+      "all_allocated_attempts_reject_probability": {
+        "sign": 1,
+        "numerator_hex": "0x5f5e1",
+        "denominator_hex": "0x1000000"
+      },
+      "expected_attempts_until_acceptance": {
+        "sign": 1,
+        "numerator_hex": "0x8",
+        "denominator_hex": "0x3"
+      },
+      "expected_attempts_upper_bound": 4,
+      "conditioning": "first n binary columns invertible; low-only T is binary-prefix inverse lifted with entries0/1",
+      "transformed_binary_prefix_is_identity": true,
+      "transformed_higher_bits_on_every_column_are_iid_uniform_conditional_on_entire_transformed_B": true,
+      "transformed_tail_full_labels_are_iid_uniform_and_independent_of_original_binary_prefix": true,
+      "transformed_prefix_full_labels_are_exact_identity": false,
+      "same_source_law_requires_low_only_transform_not_full_prefix_inverse": true,
+      "fixed_secret_transport_is_conditioned_on_original_binary_prefix": true,
+      "uniform_secret_average_is_automatically_a_fixed_secret_decoder_guarantee": false,
+      "labels_changed_requires_extra_unknown_state_preparation": false,
+      "q_over_2_residue_coordinates_transform_back_mod_q_over_2_only": true,
+      "lost_original_top_bits_still_require_fresh_completion": true,
+      "different_transformed_secret_coordinates_across_packets_must_be_reconciled": true,
+      "finite_profile_statistics_are_native_scaling_theorems": false,
+      "candidate_record_accepted": false,
+      "speedup_claim_allowed": false
+    },
+    {
+      "status": "EXACT_LOW_SELECTED_NATIVE_SYSTEMATIC_SOURCE_NOT_DECODER",
+      "dimension": 4,
+      "original_states_per_attempt": 84,
+      "allocated_attempts": 8,
+      "original_states_charged": 672,
+      "exact_binary_prefix_acceptance_probability": {
+        "sign": 1,
+        "numerator_hex": "0x13b",
+        "denominator_hex": "0x400"
+      },
+      "all_allocated_attempts_reject_probability": {
+        "sign": 1,
+        "numerator_hex": "0xd856312cdf9399193e1",
+        "denominator_hex": "0x100000000000000000000"
+      },
+      "expected_attempts_until_acceptance": {
+        "sign": 1,
+        "numerator_hex": "0x400",
+        "denominator_hex": "0x13b"
+      },
+      "expected_attempts_upper_bound": 4,
+      "conditioning": "first n binary columns invertible; low-only T is binary-prefix inverse lifted with entries0/1",
+      "transformed_binary_prefix_is_identity": true,
+      "transformed_higher_bits_on_every_column_are_iid_uniform_conditional_on_entire_transformed_B": true,
+      "transformed_tail_full_labels_are_iid_uniform_and_independent_of_original_binary_prefix": true,
+      "transformed_prefix_full_labels_are_exact_identity": false,
+      "same_source_law_requires_low_only_transform_not_full_prefix_inverse": true,
+      "fixed_secret_transport_is_conditioned_on_original_binary_prefix": true,
+      "uniform_secret_average_is_automatically_a_fixed_secret_decoder_guarantee": false,
+      "labels_changed_requires_extra_unknown_state_preparation": false,
+      "q_over_2_residue_coordinates_transform_back_mod_q_over_2_only": true,
+      "lost_original_top_bits_still_require_fresh_completion": true,
+      "different_transformed_secret_coordinates_across_packets_must_be_reconciled": true,
+      "finite_profile_statistics_are_native_scaling_theorems": false,
+      "candidate_record_accepted": false,
+      "speedup_claim_allowed": false
+    },
+    {
+      "status": "EXACT_LOW_SELECTED_NATIVE_SYSTEMATIC_SOURCE_NOT_DECODER",
+      "dimension": 8,
+      "original_states_per_attempt": 280,
+      "allocated_attempts": 8,
+      "original_states_charged": 2240,
+      "exact_binary_prefix_acceptance_probability": {
+        "sign": 1,
+        "numerator_hex": "0x4a3823a9b",
+        "denominator_hex": "0x1000000000"
+      },
+      "all_allocated_attempts_reject_probability": {
+        "sign": 1,
+        "numerator_hex": "0x108bde641ab27fd5a0a743c59c905024786be2f723519599080e981c6ff087d94502f4e1",
+        "denominator_hex": "0x1000000000000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "expected_attempts_until_acceptance": {
+        "sign": 1,
+        "numerator_hex": "0x1000000000",
+        "denominator_hex": "0x4a3823a9b"
+      },
+      "expected_attempts_upper_bound": 4,
+      "conditioning": "first n binary columns invertible; low-only T is binary-prefix inverse lifted with entries0/1",
+      "transformed_binary_prefix_is_identity": true,
+      "transformed_higher_bits_on_every_column_are_iid_uniform_conditional_on_entire_transformed_B": true,
+      "transformed_tail_full_labels_are_iid_uniform_and_independent_of_original_binary_prefix": true,
+      "transformed_prefix_full_labels_are_exact_identity": false,
+      "same_source_law_requires_low_only_transform_not_full_prefix_inverse": true,
+      "fixed_secret_transport_is_conditioned_on_original_binary_prefix": true,
+      "uniform_secret_average_is_automatically_a_fixed_secret_decoder_guarantee": false,
+      "labels_changed_requires_extra_unknown_state_preparation": false,
+      "q_over_2_residue_coordinates_transform_back_mod_q_over_2_only": true,
+      "lost_original_top_bits_still_require_fresh_completion": true,
+      "different_transformed_secret_coordinates_across_packets_must_be_reconciled": true,
+      "finite_profile_statistics_are_native_scaling_theorems": false,
+      "candidate_record_accepted": false,
+      "speedup_claim_allowed": false
+    },
+    {
+      "status": "EXACT_LOW_SELECTED_NATIVE_SYSTEMATIC_SOURCE_NOT_DECODER",
+      "dimension": 16,
+      "original_states_per_attempt": 1056,
+      "allocated_attempts": 8,
+      "original_states_charged": 8448,
+      "exact_binary_prefix_acceptance_probability": {
+        "sign": 1,
+        "numerator_hex": "0x49ee4e2e148973d4a964f48c9d2309709b",
+        "denominator_hex": "0x10000000000000000000000000000000000"
+      },
+      "all_allocated_attempts_reject_probability": {
+        "sign": 1,
+        "numerator_hex": "0x10c1eef00a2cb1b87bd42f5a69916b597291cae9bcb694b944258a6b33b5dcb12f25a0cd6f7977e33aec3888055eaf1537b056e4b9557bf8e71c3ec069c2ddeb69c86bd3f3e0961c12648e3d6a606433d7cb08a2cd00d15a618d41d7ff1d193255f0d830710b043b1ebc66724ec65422b177611b4f6e191d05493a5085a5ed9c7c91261d9b7104e1",
+        "denominator_hex": "0x100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "expected_attempts_until_acceptance": {
+        "sign": 1,
+        "numerator_hex": "0x10000000000000000000000000000000000",
+        "denominator_hex": "0x49ee4e2e148973d4a964f48c9d2309709b"
+      },
+      "expected_attempts_upper_bound": 4,
+      "conditioning": "first n binary columns invertible; low-only T is binary-prefix inverse lifted with entries0/1",
+      "transformed_binary_prefix_is_identity": true,
+      "transformed_higher_bits_on_every_column_are_iid_uniform_conditional_on_entire_transformed_B": true,
+      "transformed_tail_full_labels_are_iid_uniform_and_independent_of_original_binary_prefix": true,
+      "transformed_prefix_full_labels_are_exact_identity": false,
+      "same_source_law_requires_low_only_transform_not_full_prefix_inverse": true,
+      "fixed_secret_transport_is_conditioned_on_original_binary_prefix": true,
+      "uniform_secret_average_is_automatically_a_fixed_secret_decoder_guarantee": false,
+      "labels_changed_requires_extra_unknown_state_preparation": false,
+      "q_over_2_residue_coordinates_transform_back_mod_q_over_2_only": true,
+      "lost_original_top_bits_still_require_fresh_completion": true,
+      "different_transformed_secret_coordinates_across_packets_must_be_reconciled": true,
+      "finite_profile_statistics_are_native_scaling_theorems": false,
+      "candidate_record_accepted": false,
+      "speedup_claim_allowed": false
+    },
+    {
+      "status": "EXACT_LOW_SELECTED_NATIVE_SYSTEMATIC_SOURCE_NOT_DECODER",
+      "dimension": 32,
+      "original_states_per_attempt": 4144,
+      "allocated_attempts": 8,
+      "original_states_charged": 33152,
+      "exact_binary_prefix_acceptance_probability": {
+        "sign": 1,
+        "numerator_hex": "0x49ee044028ee24c00c4178babccca19e58e816de6052a85864213758f2035200927c2a0beb13cc9ed1474bab24b2b229a078c5899a62bc4477f3f9891dc2043f709b",
+        "denominator_hex": "0x1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "all_allocated_attempts_reject_probability": {
+        "sign": 1,
+        "numerator_hex": "0x10c2255fcd13ea0df6972141f50e8c9a647c970067d86cd47c0ef842838de736701d43e3c09857eb0723a66446370b62476e9f129f87c476831a9dc81b65ec1e0913db5b27f7ceff956af05fc313d78af801038eb5fa065397f10041d19e2909c9c197652ffba5e3f277794b7a38c51d817bf66343f844e1434214240f07096104b5b0c81c3933712fd8c14d7eaaa55b9acb1fd16fed1b817f7c7f54a0f8e52e964ca0db92ab9eb8ab5463d85e47feeb67ce7aca38cdb53ee006e0b8933a1cadf60aee09c471d3b1b28c8b85da24cb37f7eec2a4e2821392b84ae5d5270615405aacbec6e285dd923bf7384dad99cf66206273823bae41a8e76afe944b8278fd1329c43dfe5694da4365f3bcb6fa6366953fb4c82be490e594595a2f94b193f2b9428184045c7ab78ee791c0605421b8b895033eb1d1f22ad32d35e972383bfac47b028595db537ca6001598e4aa09e5bc9d8150402ab94f5498b15b17ab16cb53a80f8555f1b61f0a42406dfa3dbcf3be046453c3e8e4fd587cbe206b8ce34726e72faae032783c7994cb983011953499dd2d425bd7108e55a182f48dca16296b656112e99ef4267e7133c08cebc56121650dacbcf3f5da9c8c84fbee1532f8e707bcff53ac573b72728341738dce48a90ef0d3fd89e03b0e156ae1d8bbcb5f38488af160229bbb37030d30e697433952641f72199b4001e854c983d657af4657fae4533c34c0eb5b77c44de98104e1",
+        "denominator_hex": "0x1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "expected_attempts_until_acceptance": {
+        "sign": 1,
+        "numerator_hex": "0x1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "denominator_hex": "0x49ee044028ee24c00c4178babccca19e58e816de6052a85864213758f2035200927c2a0beb13cc9ed1474bab24b2b229a078c5899a62bc4477f3f9891dc2043f709b"
+      },
+      "expected_attempts_upper_bound": 4,
+      "conditioning": "first n binary columns invertible; low-only T is binary-prefix inverse lifted with entries0/1",
+      "transformed_binary_prefix_is_identity": true,
+      "transformed_higher_bits_on_every_column_are_iid_uniform_conditional_on_entire_transformed_B": true,
+      "transformed_tail_full_labels_are_iid_uniform_and_independent_of_original_binary_prefix": true,
+      "transformed_prefix_full_labels_are_exact_identity": false,
+      "same_source_law_requires_low_only_transform_not_full_prefix_inverse": true,
+      "fixed_secret_transport_is_conditioned_on_original_binary_prefix": true,
+      "uniform_secret_average_is_automatically_a_fixed_secret_decoder_guarantee": false,
+      "labels_changed_requires_extra_unknown_state_preparation": false,
+      "q_over_2_residue_coordinates_transform_back_mod_q_over_2_only": true,
+      "lost_original_top_bits_still_require_fresh_completion": true,
+      "different_transformed_secret_coordinates_across_packets_must_be_reconciled": true,
+      "finite_profile_statistics_are_native_scaling_theorems": false,
+      "candidate_record_accepted": false,
+      "speedup_claim_allowed": false
+    }
+  ],
+  "claim_gate": {
+    "systematic_identity_binary_prefix_can_be_native_with_constant_acceptance": true,
+    "higher_labels_stay_native_under_low_selected_row_transport": true,
+    "full_label_prefix_inverse_preserves_same_higher_prefix_law": false,
+    "finite_systematic_profiles_establish_a_scalable_decoder": false,
+    "independent_theorem_review": false,
+    "novelty_claim": false,
+    "candidate_record_accepted": false,
+    "speedup_claim_allowed": false
+  },
+  "dependency_sha256": {
+    "theorems/dcp_systematic_source_transport.py": "1678b797a2e49554c0bad99befc91b9dd50810e69f3e501e43fe498513434574",
+    "theorems/dcp_lowbit_fiber_normalizer.py": "10039d11f1981b07162aa1810c09011be122387b4bb0b72245f04fe847600f00"
+  }
+}

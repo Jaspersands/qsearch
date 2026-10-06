@@ -1,0 +1,39 @@
+{
+  "hypothesis_id": "HYP-NATIVE-DCP-PATH-CODE-FUSION",
+  "status": "DEFERRED_PAIR_FUSION_EQUIVALENCE_AND_SCOPED_SIGN_LOSS_LOCAL_REVIEW_PENDING",
+  "candidate_record_accepted": false,
+  "note": "research/DCP_PATH_CODE_FUSION.md",
+  "report": "research/phase_workbench/dcp_path_code_fusion.json",
+  "source_audit": "research/literature_audits/dcp_path_code_fusion_sources.json",
+  "source": "Consume2m IID native DCP qubits once, with public uniform labels; no chosen labels, cloning or reusable source inverse.",
+  "mechanism": "Adjacent duplicate-pair CSS checks; exact public3m-2 CNOT/m Hadamard implementation retains common parity p and Fourier-logical bit t. Measuring p equals ordinary measured pair fusion followed by X parity checks.",
+  "local_results": {
+    "full_instrument": "All z,x,p,t amplitudes are products of cosines and -i sines with prefix syndromes and charged branch probabilities.",
+    "sign": "Even m erases s/-s exactly. Odd m retains sign even in the measured comparator; parity coherence can strictly improve this statistic without creating input information.",
+    "measured_source_decay": "For odd m and odd secret, full public-label measured-fusion cq sign trace distance has mean((2/N)cot(pi/N))^m<(2/pi)^m. This does not cover coherent common parity or arbitrary DCP algorithms.",
+    "label_closure": "Odd zero-syndrome measured-p branch is flat but generally nonlinear in secret. A discreteN32 countercontrol rejects every modular linear phase label; no universal discrete-family no-go.",
+    "branch_cost": "IID nonzero-secret specified syndrome mean4^(-(m-1)); specified syndrome and measured p mean2^(-(2m-1)). No per-instance lower bound or E[1/P]=1/E[P] inference.",
+    "research_decision": "Primitive/sign-only rationale is insufficient. Deprioritize fixed path-code metrics unless an explicit decoder or reduction uses the remaining coherent resource."
+  },
+  "proof_obligations_for_new_candidate": {
+    "PO-SOURCE": "State preparation, current-label selection and every discarded branch must be charged under the native source.",
+    "PO-INSTRUMENT": "Retain exact complex phases, full syndrome record and coherent registers; distinguish measurement from dephasing.",
+    "PO-CLOSURE": "Supply a composable nonlinear-state representation or prove known-label closure; flatness is insufficient.",
+    "PO-TARGET": "Recover the full hidden element or a proved reduction target; pairwise sign distinguishability is not enough.",
+    "PO-DECODE": "Give uniform operations and asymptotic resource bounds, not efficient likelihood evaluation for a supplied secret.",
+    "PO-BASELINE": "Compare against measured fusion, native source receivers and known Kuperberg/Regev sieves with legal label-selection costs.",
+    "PO-REVIEW": "Independent theorem review of the general Kraus identity, sign law and mean-yield scopes remains pending."
+  },
+  "falsifiable_experiments": [
+    {"experiment": "Replay every full syndrome of the compiled native instrument.", "falsifier": "Any complex amplitude, normalization or public compiler cost disagrees with physical projectors."},
+    {"experiment": "Measure common parity and compare to explicit ordinary pair fusion plus Fourier checks.", "falsifier": "The branch density matrices differ after the documented classical relabeling."},
+    {"experiment": "Attempt to attach a modular label to the nonlinear flat output.", "falsifier": "One public L fails on another secret or a zero-probability branch is normalized for free."},
+    {"experiment": "Propose a coherent nonlinear-state decoder or natural reduction.", "falsifier": "It is only a sign benchmark, candidate-secret evaluation, chosen-label promise or uncharged rare branch."}
+  ],
+  "negative_result_scope": "Only primitive-only novelty, unique-coherence sign interpretation and free large-block branch claims are removed; no generic algorithm impossibility.",
+  "not_excluded": ["end-to-end coherent nonlinear-state decoders", "label-adaptive path or nonpath selection with conditioned-source proof", "useful natural reductions", "other coherent fusion protocols"],
+  "gemini_tasks": ["Wire the live report and scoped equivalence into CLI/registry without accepting a candidate.", "Record scoped negative results with the stated falsifiers and review-pending status.", "Preserve measured/coherent branch distinctions, full native costs and exact scaling integers.", "Run production tests and CLI validation; do not infer full-suite green from focused mathematics tests."],
+  "independent_theorem_review": false,
+  "novelty_claim": false,
+  "full_classical_dequantization": false
+}

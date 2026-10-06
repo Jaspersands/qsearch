@@ -1,0 +1,39 @@
+{
+  "status": "PRIMARY_APPLICABILITY_AUDIT_NOT_ACCEPTED_CANDIDATE_EVIDENCE",
+  "checked_on": "2026-10-05",
+  "records": [
+    {
+      "id": "ARXIV-quant-ph-0501044-v2",
+      "title": "Optimal measurements for the dihedral hidden subgroup problem",
+      "url": "https://arxiv.org/html/quant-ph/0501044",
+      "evidence_read": "Sections4/5/8, Eq27/29 and Theorem2 proof.",
+      "mechanism": "Collective PGM expressed through subset-sum fiber multiplicities.",
+      "problem_family": "Cyclic dihedral hidden subgroup states.",
+      "reduction": "Fiber preparation connects to measurement implementation.",
+      "no_go_barrier": "Information-theoretic success does not supply efficient fiber processing.",
+      "proof_technique": "Covariance, character orthogonality and multiplicity moments.",
+      "open_question": "Costed native collective implementation without exponential tables.",
+      "reusable_abstraction": "Distinguish success existence from circuit cost.",
+      "local_application": "Vector-group decomposition and random-target pairwise/Holder lower bound are derived locally, not attributed as an exact paper theorem.",
+      "new_local_application_independently_reviewed": false
+    },
+    {
+      "id": "ARXIV-2610.02031-v1",
+      "title": "Adaptivity is all you need: Optimal stabilizer learning using just single-copy measurements",
+      "url": "https://arxiv.org/html/2610.02031",
+      "evidence_read": "TheoremII.1, Algorithm1 and computational-difference proof; nullity extension scope.",
+      "mechanism": "Adaptive Clifford changes across repeated copies of a fixed state.",
+      "problem_family": "Unknown stabilizer-state learning.",
+      "reduction": "No source-preserving transfer to changing native DCP packets supplied.",
+      "no_go_barrier": "Single-copy measurement does not mean one physical copy total.",
+      "proof_technique": "Computational differences and monotone diagonal stabilizer growth.",
+      "open_question": "A legitimate varying-packet transfer, if one exists.",
+      "reusable_abstraction": "Audit state identity and copy lineage before invoking a learner.",
+      "native_transfer_proved": false
+    }
+  ],
+  "independent_review": false,
+  "candidate_record_accepted": false,
+  "novelty_claim": false,
+  "speedup_claim_allowed": false
+}

@@ -2,6 +2,14 @@
 
 Date: 2026-09-27. LOCAL DERIVATION / REVIEW PENDING.
 
+PRIOR UPDATE (2026-09-28): `STRUCTURED_EDCP_SMALL_SECRET_TARGET.md` applies
+the same ideal-norm method to the reduction's SMALL secret differences.
+One block already suffices statistically for that prior, including a
+classical local-readout decoder with exponential search. This note's full
+uniform-secret target remains valid but is not a necessary first decoding
+target for the hardness-linked source. Prior-aware inversion now deserves
+priority alongside, rather than after, the joint-fiber construction.
+
 ## 1. Research Decision
 
 The wide-support information bound can be substantially sharpened by using

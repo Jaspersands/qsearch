@@ -1,0 +1,41 @@
+{
+  "hypothesis_id": "HYP-NATIVE-A2-PAIR-CVP",
+  "status": "EXACT_SOURCE_VALID_REPRESENTATION_CLASSICAL_HEURISTICS_NO_POLYNOMIAL_COVERAGE_PROOF",
+  "candidate_record_accepted": false,
+  "note": "research/TERNARY_PAIR_LATTICE.md",
+  "report": "research/phase_workbench/ternary_pair_lattice.json",
+  "depends_on": ["HYP-NATIVE-LEAST-TRIT-ORDINARY-PAIR-FINDER"],
+  "implemented": [
+    "Exact A2 native ternary shell and illegal integer norm gap.",
+    "Complete scalar congruence lattice using a gcd quotient, including all-zero labels.",
+    "Unimodular LLL transform verification and exact rectangular Bareiss GS/Babai.",
+    "Work-charged single rounding-deviation lists and public center perturbations.",
+    "Verified original-digit coordinate-deflation second-witness baseline.",
+    "Complete tiny source census and fresh-label independent uniform-target scaling."
+  ],
+  "conditional_reductions": {
+    "exact_CVP_to_pair": "At most2M+1 pointwise single-witness oracle calls, with exact terminal digit checks.",
+    "approximate_CVP_to_one_witness": "Squared approximation factor strictly below1+3/M when a native word exists.",
+    "native_pair_to_weak_quantum_learner": "Population informative acceptance4*beta at the actual underfull original-source scale."
+  },
+  "proof_obligations_before_candidate_acceptance": {
+    "PO-REVIEW": "Independent review of exact geometry, gcd completeness and conditional reductions.",
+    "PO-COVERAGE": "Inverse-polynomial TWO-witness coverage under IID stripped labels and independent uniform targets, not planted or success-only data.",
+    "PO-COST": "Polynomial charged preparation/decoding with capped or occupancy-weighted source runtime; no hidden exponential list.",
+    "PO-SLICES": "Prove pointwise solver guarantees or a valid distributional reduction for adaptive coordinate slices.",
+    "PO-ACCESS": "All pair selection uses ONLY stripped source labels, target and public randomness.",
+    "PO-BASELINE": "Compare actual unknown-secret quantum access to legal classical access, not known phase substitution.",
+    "PO-VECTOR-REDUCTION": "No extension from scalar gcd arithmetic to vector-secret lattice/HSP instances without a new reduction.",
+    "PO-HARDWARE-AMPLIFICATION": "Retain the physical receiver and full-secret bootstrap obligations; no free source copies or ideal inverse oracle."
+  },
+  "falsifiers": [
+    "Illegal one-hot encoding, shell norm mismatch, wrong congruence or non-unimodular lattice change.",
+    "Duplicate or singleton outputs counted as two witnesses.",
+    "Fixed-quota scaling hides untested bases, deflation costs or empty targets.",
+    "Empirical pair fractions are treated as population or pointwise guarantees.",
+    "Heuristic failure is treated as a classical hardness certificate."
+  ],
+  "polynomial_pair_finder_proved": false,
+  "novelty_claim": false,
+  "routine_wiring_owner": "Gemini or Antigravity"
+}

@@ -1,0 +1,56 @@
+{
+  "hypothesis_id": "HYP-SINGER-RESIDUAL-HARDNESS-ADMISSION",
+  "status": "KNOWN_SHOR_RESIDUAL_AND_SPARSE_MEMBERSHIP_GATE_LOCAL_REVIEW_PENDING",
+  "candidate_record_accepted": false,
+  "note": "research/SINGER_RESIDUAL_HARDNESS.md",
+  "report": "research/classical_baselines/singer_residual_hardness.json",
+  "source_audit": "research/literature_audits/singer_residual_hardness_sources.json",
+  "ontology_nodes": ["hidden-shift", "difference-sets", "finite-projective-geometry", "finite-field-discrete-log", "query-access-models", "spectral-phase-implementation"],
+  "classification": "Classically extracted geometric normal with already-known quantum residual, NOT complete classical dequantization or a new algorithm.",
+  "source_interfaces": {
+    "membership": "One coherent XOR bit for Tr(alpha^(k+s))=0 on the cyclic projective quotient; field/primitive alpha public, hidden normal not supplied.",
+    "stronger_full_values": "Full trace values reveal a linear functional with m chosen queries; this is not a membership-bit interface or automatically a quotient-periodic value sequence.",
+    "stronger_white_box": "A public beta=alpha^s supplies secret-correlated data; sparse membership-query lower bounds do not cover it.",
+    "not_covered": ["arbitrary full-function DHSP oracle", "supplied phase/coset states", "opaque two-black-box reference function", "unknown group actions without public field coordinates"]
+  },
+  "residual_reduction": {
+    "binary_classical_extraction": "Exactly m membership queries and trace-pairing linear algebra recover beta over F_2.",
+    "fixed_base_field_extraction": "Collect m-1 independent positive projective points; expected queries<q(m-1)+q^2/(q-1)^2; recover normal up to F_q*.",
+    "residual_map": "gamma=alpha^(q-1), w=normal^(q-1), gamma^s=w in order-v finite-field subgroup.",
+    "known_quantum_solver": "Shor discrete logarithm; bounded table phase cancellation is not a new mechanism.",
+    "known_classical_solver": "Kleinjung-Wesolowski Theorem1.1: expected (p*n)^(2 log2(n)+O(1)); quasi-polynomial in fixed characteristic. Statement checked, algorithm not implemented here; geometry extraction costs remain charged.",
+    "classical_remaining_problem": "Large discrete logarithms are not computed and not declared easy.",
+    "setup_debt": "Primitive-element/field representation and certificate generation must be accounted for; bounded producer factorization is not certified polynomial classical setup."
+  },
+  "local_screens": {
+    "sparse_queries": "Uniform hidden shift, secret-independent initial memory and T membership queries imply mean recovery<=(1/sqrt(v)+2T sqrt(k/v))^2, capped1; arbitrary known adaptive processing allowed.",
+    "offsets": "Any injective r-bit membership tuple needs r>=ceil((v-1)/k); for growing-q Singer projective planes this is q, not logarithmic.",
+    "random_offset_sufficiency": "A charged O(log(v)/influence) tuple suffices, where influence=2(k-lambda)/v; no constant influence in the sparse regime.",
+    "spectral_normalization": "Retain zero-character amplitude and full final probabilities. Leading term4(k-lambda)/v can exceed1 and is not exact success.",
+    "phase_cost": "Almost-flat magnitude is not an efficient coherent phase compiler."
+  },
+  "proof_obligations": {
+    "PO-INDEPENDENT-REVIEW": "Review the trace-normal extraction, quotient residual, reference-prefix hybrid/Minkowski proof and deterministic offset counting.",
+    "PO-ACCESS": "Specify bits versus full values versus supplied normal/program; charge every packed underlying query and secret-dependent side resource.",
+    "PO-RESIDUAL-NOVELTY": "Classify what remains after classical feature extraction and compare to known quantum solvers before admitting a new candidate.",
+    "PO-PHASE-COMPILER": "Give a uniform coherent phase recipe, cleanup, precision and total runtime rather than using a dense Fourier table.",
+    "PO-NATURAL-REDUCTION": "Connect any escape to a consequential natural problem; do not assume generic lattice reductions land in the Singer family.",
+    "PO-ERROR": "Include total implementation trace error and sampling-budget failures; ideal bounds and successful pilot seeds do not certify physical/asymptotic success.",
+    "PO-SETUP": "Account for public primitive certification and field representation costs; serialized large exponents must not lose precision."
+  },
+  "experiments_with_falsifiers": [
+    {"experiment": "Opaque-membership classical reconstruction with no inverse/log calls.", "falsifier": "The normal cannot be certified from the retained query transcript, public field data or rank constraints."},
+    {"experiment": "Growing-base-field sparse access and injectivization ledgers.", "falsifier": "A source satisfies the declared secret-independent membership model yet exceeds the recovery bound, or an injective tuple has fewer than the density lower bound offsets."},
+    {"experiment": "Physical Fourier decoder with both trivial-character phases.", "falsifier": "Reported target probability ignores output normalization or the correcting phase table is promoted to an efficient uniform circuit."},
+    {"experiment": "New structured source admission after classical normal-form extraction.", "falsifier": "The proposed breakthrough is a known Shor/Gauss-sum solver composition, an uncharged stronger value interface, or an unsupported natural reduction."}
+  ],
+  "gemini_integration": [
+    "Expose a residual-hardness category distinct from classically dequantized, generic hardness and accepted novel quantum candidate.",
+    "Register only scoped review-pending source/query/offset negatives, preserving the public-field and access promises.",
+    "Keep large exponents as decimal strings and retain failed sampling budgets, complete phase outputs and the known-solver comparator.",
+    "Repair production writer omissions and run full CLI/registry validation. Do not accept this contract as an algorithm candidate."
+  ],
+  "independent_review": false,
+  "novelty_claim": false,
+  "speedup_claim_allowed": false
+}

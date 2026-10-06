@@ -1,0 +1,1143 @@
+{
+  "status": "LOCAL_DERIVATION_REVIEW_PENDING",
+  "bounded_full_unitary_and_fixed_secret_controls": [
+    {
+      "labels": [
+        [
+          1,
+          1,
+          2,
+          4
+        ]
+      ],
+      "modulus": 8,
+      "logical_width": 3,
+      "accepted_target_witness_pairs": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          5
+        ]
+      ],
+      "full_basis_forward_inverse_checks": 64,
+      "fixed_secret_QFT_controls": 4,
+      "uniform_target_coverage": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x1"
+      },
+      "herald_probability": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x2"
+      },
+      "correct_readout_probability_for_every_secret": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x2"
+      },
+      "conditional_correct_readout_given_herald": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x1"
+      },
+      "which_path_history_not_uncomputed_correct_readout_probability": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x8"
+      },
+      "reference_finder_uses_bounded_enumeration": true,
+      "reference_finder_is_a_uniform_polynomial_algorithm": false,
+      "candidate_record_accepted": false,
+      "speedup_claim_allowed": false
+    },
+    {
+      "labels": [
+        [
+          1,
+          1,
+          2,
+          4
+        ]
+      ],
+      "modulus": 8,
+      "logical_width": 3,
+      "accepted_target_witness_pairs": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "full_basis_forward_inverse_checks": 64,
+      "fixed_secret_QFT_controls": 4,
+      "uniform_target_coverage": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x2"
+      },
+      "herald_probability": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x4"
+      },
+      "correct_readout_probability_for_every_secret": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x8"
+      },
+      "conditional_correct_readout_given_herald": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x2"
+      },
+      "which_path_history_not_uncomputed_correct_readout_probability": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x10"
+      },
+      "reference_finder_uses_bounded_enumeration": true,
+      "reference_finder_is_a_uniform_polynomial_algorithm": false,
+      "candidate_record_accepted": false,
+      "speedup_claim_allowed": false
+    },
+    {
+      "labels": [
+        [
+          1,
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          2
+        ]
+      ],
+      "modulus": 4,
+      "logical_width": 2,
+      "accepted_target_witness_pairs": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ]
+      ],
+      "full_basis_forward_inverse_checks": 32,
+      "fixed_secret_QFT_controls": 4,
+      "uniform_target_coverage": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x1"
+      },
+      "herald_probability": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x1"
+      },
+      "correct_readout_probability_for_every_secret": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x1"
+      },
+      "conditional_correct_readout_given_herald": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x1"
+      },
+      "which_path_history_not_uncomputed_correct_readout_probability": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x4"
+      },
+      "reference_finder_uses_bounded_enumeration": true,
+      "reference_finder_is_a_uniform_polynomial_algorithm": false,
+      "candidate_record_accepted": false,
+      "speedup_claim_allowed": false
+    }
+  ],
+  "complete_independent_full_target_source_controls": [
+    {
+      "dimension": 1,
+      "physical_width": 3,
+      "modulus": 4,
+      "complete_label_tables": 64,
+      "full_binary_rank_label_tables": 56,
+      "parity_wrapper_domain_and_uniform_full_target_image_pairs": 224,
+      "uniform_full_target_joint_law_exact_bijection_verified": true,
+      "original_binary_row_syndrome_not_rref_row_bits_used": true
+    },
+    {
+      "dimension": 2,
+      "physical_width": 3,
+      "modulus": 4,
+      "complete_label_tables": 4096,
+      "full_binary_rank_label_tables": 2688,
+      "parity_wrapper_domain_and_uniform_full_target_image_pairs": 43008,
+      "uniform_full_target_joint_law_exact_bijection_verified": true,
+      "original_binary_row_syndrome_not_rref_row_bits_used": true
+    }
+  ],
+  "conditional_resource_scaling_assuming_missing_finder": [
+    {
+      "status": "CONDITIONAL_SINGLE_WITNESS_NATIVE_READOUT_REDUCTION_NOT_SOLVER",
+      "dimension": 8,
+      "full_modulus_bits": 33,
+      "logical_width": 256,
+      "original_phase_states_per_attempt": 264,
+      "density_overhead_bits": 0,
+      "assumed_unconditional_uniform_target_coverage_lower_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x40"
+      },
+      "binary_rank_rejection_probability_upper_bound": "2^-256",
+      "all_binary_prefixes_are_not_postselected": true,
+      "coverage_after_charging_full_rank_rejection_lower_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x80"
+      },
+      "ideal_correct_residue_probability_per_original_attempt_lower_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x4000"
+      },
+      "expected_prelabel_packet_faults_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x1"
+      },
+      "conditional_independent_fair_Z_mixture_ideal_component_weight_lower_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x2"
+      },
+      "gauged_correct_residue_probability_lower_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x8000"
+      },
+      "success_bound_is_for_each_fixed_secret": true,
+      "coverage_can_be_label_average_without_identifying_good_packets": true,
+      "canonical_selection_overhead_is_exponential_when_overhead_bits_exceeds_log_scale": true,
+      "fault_statuses_may_be_correlated_but_must_precede_fresh_labels_and_solver_seed": true,
+      "gauge_transfer_is_a_source_obligation_not_an_arbitrary_noise_promise": true,
+      "full_secret_completion_or_natural_lattice_composition_implemented": false,
+      "uniform_polynomial_witness_finder_constructed": false,
+      "independent_theorem_review": false,
+      "candidate_record_accepted": false,
+      "novelty_claim": false,
+      "speedup_claim_allowed": false
+    },
+    {
+      "status": "CONDITIONAL_SINGLE_WITNESS_NATIVE_READOUT_REDUCTION_NOT_SOLVER",
+      "dimension": 8,
+      "full_modulus_bits": 33,
+      "logical_width": 260,
+      "original_phase_states_per_attempt": 268,
+      "density_overhead_bits": 4,
+      "assumed_unconditional_uniform_target_coverage_lower_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x40"
+      },
+      "binary_rank_rejection_probability_upper_bound": "2^-260",
+      "all_binary_prefixes_are_not_postselected": true,
+      "coverage_after_charging_full_rank_rejection_lower_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x80"
+      },
+      "ideal_correct_residue_probability_per_original_attempt_lower_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x40000"
+      },
+      "expected_prelabel_packet_faults_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x43",
+        "denominator_hex": "0x42"
+      },
+      "conditional_independent_fair_Z_mixture_ideal_component_weight_lower_bound": {
+        "sign": 1,
+        "numerator_hex": "0x83",
+        "denominator_hex": "0x108"
+      },
+      "gauged_correct_residue_probability_lower_bound": {
+        "sign": 1,
+        "numerator_hex": "0x83",
+        "denominator_hex": "0x4200000"
+      },
+      "success_bound_is_for_each_fixed_secret": true,
+      "coverage_can_be_label_average_without_identifying_good_packets": true,
+      "canonical_selection_overhead_is_exponential_when_overhead_bits_exceeds_log_scale": true,
+      "fault_statuses_may_be_correlated_but_must_precede_fresh_labels_and_solver_seed": true,
+      "gauge_transfer_is_a_source_obligation_not_an_arbitrary_noise_promise": true,
+      "full_secret_completion_or_natural_lattice_composition_implemented": false,
+      "uniform_polynomial_witness_finder_constructed": false,
+      "independent_theorem_review": false,
+      "candidate_record_accepted": false,
+      "novelty_claim": false,
+      "speedup_claim_allowed": false
+    },
+    {
+      "status": "CONDITIONAL_SINGLE_WITNESS_NATIVE_READOUT_REDUCTION_NOT_SOLVER",
+      "dimension": 16,
+      "full_modulus_bits": 65,
+      "logical_width": 1024,
+      "original_phase_states_per_attempt": 1040,
+      "density_overhead_bits": 0,
+      "assumed_unconditional_uniform_target_coverage_lower_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x100"
+      },
+      "binary_rank_rejection_probability_upper_bound": "2^-1024",
+      "all_binary_prefixes_are_not_postselected": true,
+      "coverage_after_charging_full_rank_rejection_lower_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x200"
+      },
+      "ideal_correct_residue_probability_per_original_attempt_lower_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x40000"
+      },
+      "expected_prelabel_packet_faults_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x1"
+      },
+      "conditional_independent_fair_Z_mixture_ideal_component_weight_lower_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x2"
+      },
+      "gauged_correct_residue_probability_lower_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x80000"
+      },
+      "success_bound_is_for_each_fixed_secret": true,
+      "coverage_can_be_label_average_without_identifying_good_packets": true,
+      "canonical_selection_overhead_is_exponential_when_overhead_bits_exceeds_log_scale": true,
+      "fault_statuses_may_be_correlated_but_must_precede_fresh_labels_and_solver_seed": true,
+      "gauge_transfer_is_a_source_obligation_not_an_arbitrary_noise_promise": true,
+      "full_secret_completion_or_natural_lattice_composition_implemented": false,
+      "uniform_polynomial_witness_finder_constructed": false,
+      "independent_theorem_review": false,
+      "candidate_record_accepted": false,
+      "novelty_claim": false,
+      "speedup_claim_allowed": false
+    },
+    {
+      "status": "CONDITIONAL_SINGLE_WITNESS_NATIVE_READOUT_REDUCTION_NOT_SOLVER",
+      "dimension": 16,
+      "full_modulus_bits": 65,
+      "logical_width": 1040,
+      "original_phase_states_per_attempt": 1056,
+      "density_overhead_bits": 16,
+      "assumed_unconditional_uniform_target_coverage_lower_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x100"
+      },
+      "binary_rank_rejection_probability_upper_bound": "2^-1040",
+      "all_binary_prefixes_are_not_postselected": true,
+      "coverage_after_charging_full_rank_rejection_lower_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x200"
+      },
+      "ideal_correct_residue_probability_per_original_attempt_lower_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x400000000"
+      },
+      "expected_prelabel_packet_faults_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x42",
+        "denominator_hex": "0x41"
+      },
+      "conditional_independent_fair_Z_mixture_ideal_component_weight_lower_bound": {
+        "sign": 1,
+        "numerator_hex": "0x81",
+        "denominator_hex": "0x104"
+      },
+      "gauged_correct_residue_probability_lower_bound": {
+        "sign": 1,
+        "numerator_hex": "0x81",
+        "denominator_hex": "0x41000000000"
+      },
+      "success_bound_is_for_each_fixed_secret": true,
+      "coverage_can_be_label_average_without_identifying_good_packets": true,
+      "canonical_selection_overhead_is_exponential_when_overhead_bits_exceeds_log_scale": true,
+      "fault_statuses_may_be_correlated_but_must_precede_fresh_labels_and_solver_seed": true,
+      "gauge_transfer_is_a_source_obligation_not_an_arbitrary_noise_promise": true,
+      "full_secret_completion_or_natural_lattice_composition_implemented": false,
+      "uniform_polynomial_witness_finder_constructed": false,
+      "independent_theorem_review": false,
+      "candidate_record_accepted": false,
+      "novelty_claim": false,
+      "speedup_claim_allowed": false
+    },
+    {
+      "status": "CONDITIONAL_SINGLE_WITNESS_NATIVE_READOUT_REDUCTION_NOT_SOLVER",
+      "dimension": 32,
+      "full_modulus_bits": 129,
+      "logical_width": 4096,
+      "original_phase_states_per_attempt": 4128,
+      "density_overhead_bits": 0,
+      "assumed_unconditional_uniform_target_coverage_lower_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x400"
+      },
+      "binary_rank_rejection_probability_upper_bound": "2^-4096",
+      "all_binary_prefixes_are_not_postselected": true,
+      "coverage_after_charging_full_rank_rejection_lower_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x800"
+      },
+      "ideal_correct_residue_probability_per_original_attempt_lower_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x400000"
+      },
+      "expected_prelabel_packet_faults_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x1"
+      },
+      "conditional_independent_fair_Z_mixture_ideal_component_weight_lower_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x2"
+      },
+      "gauged_correct_residue_probability_lower_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x800000"
+      },
+      "success_bound_is_for_each_fixed_secret": true,
+      "coverage_can_be_label_average_without_identifying_good_packets": true,
+      "canonical_selection_overhead_is_exponential_when_overhead_bits_exceeds_log_scale": true,
+      "fault_statuses_may_be_correlated_but_must_precede_fresh_labels_and_solver_seed": true,
+      "gauge_transfer_is_a_source_obligation_not_an_arbitrary_noise_promise": true,
+      "full_secret_completion_or_natural_lattice_composition_implemented": false,
+      "uniform_polynomial_witness_finder_constructed": false,
+      "independent_theorem_review": false,
+      "candidate_record_accepted": false,
+      "novelty_claim": false,
+      "speedup_claim_allowed": false
+    }
+  ],
+  "conditional_full_secret_block_ledgers": [
+    {
+      "status": "CONDITIONAL_FULL_SECRET_RESOURCE_COMPOSITION_NOT_NATIVE_LATTICE_PROOF",
+      "dimension": 8,
+      "full_modulus_bits": 33,
+      "density_overhead_bits": 0,
+      "selector": {
+        "status": "CONDITIONAL_SINGLE_WITNESS_NATIVE_READOUT_REDUCTION_NOT_SOLVER",
+        "dimension": 8,
+        "full_modulus_bits": 33,
+        "logical_width": 256,
+        "original_phase_states_per_attempt": 264,
+        "density_overhead_bits": 0,
+        "assumed_unconditional_uniform_target_coverage_lower_bound": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_hex": "0x40"
+        },
+        "binary_rank_rejection_probability_upper_bound": "2^-256",
+        "all_binary_prefixes_are_not_postselected": true,
+        "coverage_after_charging_full_rank_rejection_lower_bound": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_hex": "0x80"
+        },
+        "ideal_correct_residue_probability_per_original_attempt_lower_bound": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_hex": "0x4000"
+        },
+        "expected_prelabel_packet_faults_upper_bound": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "conditional_independent_fair_Z_mixture_ideal_component_weight_lower_bound": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_hex": "0x1"
+        },
+        "gauged_correct_residue_probability_lower_bound": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_hex": "0x4000"
+        },
+        "success_bound_is_for_each_fixed_secret": true,
+        "coverage_can_be_label_average_without_identifying_good_packets": true,
+        "canonical_selection_overhead_is_exponential_when_overhead_bits_exceeds_log_scale": true,
+        "fault_statuses_may_be_correlated_but_must_precede_fresh_labels_and_solver_seed": true,
+        "gauge_transfer_is_a_source_obligation_not_an_arbitrary_noise_promise": true,
+        "full_secret_completion_or_natural_lattice_composition_implemented": false,
+        "uniform_polynomial_witness_finder_constructed": false,
+        "independent_theorem_review": false,
+        "candidate_record_accepted": false,
+        "novelty_claim": false,
+        "speedup_claim_allowed": false
+      },
+      "fresh_binary_completion_states": 24,
+      "completion_rank_failure_probability_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x10000"
+      },
+      "fresh_full_candidate_verification_states": 84,
+      "ideal_complete_block_success_lower_bound": {
+        "sign": 1,
+        "numerator_hex": "0xffff",
+        "denominator_hex": "0x40000000"
+      },
+      "original_states_per_complete_attempt": 372,
+      "original_states_preallocated_for_all_attempts": 1675339061381824512,
+      "basis_fault_marginal_promise_required_for_each_fixed_secret": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x108"
+      },
+      "amplification": {
+        "status": "CONDITIONAL_CORRELATED_PRELABEL_BLOCK_AMPLIFICATION_LEDGER",
+        "preallocated_disjoint_attempts": 4503599627370496,
+        "expected_faults_per_complete_block_upper_bound": {
+          "sign": 1,
+          "numerator_hex": "0x1f",
+          "denominator_hex": "0x16"
+        },
+        "maximum_faults_in_good_block": 12,
+        "guaranteed_good_blocks_on_aggregate_budget_event": 2251799813685248,
+        "source_labels_seeds_and_latent_gauge_coins_independent_conditional_fault_statuses": true,
+        "independence_of_fault_statuses_or_unconditional_attempt_success_assumed": false,
+        "aggregate_budget_failure_probability_upper_bound": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_hex": "0x4"
+        },
+        "no_correct_verified_candidate_on_budget_event_probability_upper_bound": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_hex": "0x1fffe01"
+        },
+        "any_wrong_full_candidate_passes_fresh_tests_upper_bound": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_hex": "0x100000000"
+        },
+        "total_algorithm_failure_probability_upper_bound": {
+          "sign": 1,
+          "numerator_hex": "0x7fff8141fffe01",
+          "denominator_hex": "0x1fffe0100000000"
+        },
+        "candidate_committed_before_fresh_verification_labels_required": true,
+        "ideal_block_success_must_include_all_required_readout_and_true_candidate_verification": true,
+        "gate_precision_and_native_gauge_lineage_composition_verified": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      "full_secret_failure_bound_below_one_third_as_declared": true,
+      "correlated_prelabel_faults_not_iid_success_trials": true,
+      "native_lattice_state_supply_gauge_lineage_and_gate_precision_composed": false,
+      "finder_coverage_is_an_assumption_not_an_experimental_result": true,
+      "large_constant_state_budget_is_a_conditional_ledger_not_an_executed_algorithm": true,
+      "candidate_record_accepted": false,
+      "speedup_claim_allowed": false
+    },
+    {
+      "status": "CONDITIONAL_FULL_SECRET_RESOURCE_COMPOSITION_NOT_NATIVE_LATTICE_PROOF",
+      "dimension": 8,
+      "full_modulus_bits": 33,
+      "density_overhead_bits": 16,
+      "selector": {
+        "status": "CONDITIONAL_SINGLE_WITNESS_NATIVE_READOUT_REDUCTION_NOT_SOLVER",
+        "dimension": 8,
+        "full_modulus_bits": 33,
+        "logical_width": 272,
+        "original_phase_states_per_attempt": 280,
+        "density_overhead_bits": 16,
+        "assumed_unconditional_uniform_target_coverage_lower_bound": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_hex": "0x40"
+        },
+        "binary_rank_rejection_probability_upper_bound": "2^-272",
+        "all_binary_prefixes_are_not_postselected": true,
+        "coverage_after_charging_full_rank_rejection_lower_bound": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_hex": "0x80"
+        },
+        "ideal_correct_residue_probability_per_original_attempt_lower_bound": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_hex": "0x40000000"
+        },
+        "expected_prelabel_packet_faults_upper_bound": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "conditional_independent_fair_Z_mixture_ideal_component_weight_lower_bound": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_hex": "0x1"
+        },
+        "gauged_correct_residue_probability_lower_bound": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_hex": "0x40000000"
+        },
+        "success_bound_is_for_each_fixed_secret": true,
+        "coverage_can_be_label_average_without_identifying_good_packets": true,
+        "canonical_selection_overhead_is_exponential_when_overhead_bits_exceeds_log_scale": true,
+        "fault_statuses_may_be_correlated_but_must_precede_fresh_labels_and_solver_seed": true,
+        "gauge_transfer_is_a_source_obligation_not_an_arbitrary_noise_promise": true,
+        "full_secret_completion_or_natural_lattice_composition_implemented": false,
+        "uniform_polynomial_witness_finder_constructed": false,
+        "independent_theorem_review": false,
+        "candidate_record_accepted": false,
+        "novelty_claim": false,
+        "speedup_claim_allowed": false
+      },
+      "fresh_binary_completion_states": 24,
+      "completion_rank_failure_probability_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x10000"
+      },
+      "fresh_full_candidate_verification_states": 100,
+      "ideal_complete_block_success_lower_bound": {
+        "sign": 1,
+        "numerator_hex": "0xffff",
+        "denominator_hex": "0x400000000000"
+      },
+      "original_states_per_complete_attempt": 404,
+      "original_states_preallocated_for_all_attempts": 119239753692458541645824,
+      "basis_fault_marginal_promise_required_for_each_fixed_secret": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x108"
+      },
+      "amplification": {
+        "status": "CONDITIONAL_CORRELATED_PRELABEL_BLOCK_AMPLIFICATION_LEDGER",
+        "preallocated_disjoint_attempts": 295147905179352825856,
+        "expected_faults_per_complete_block_upper_bound": {
+          "sign": 1,
+          "numerator_hex": "0x65",
+          "denominator_hex": "0x42"
+        },
+        "maximum_faults_in_good_block": 13,
+        "guaranteed_good_blocks_on_aggregate_budget_event": 147573952589676412928,
+        "source_labels_seeds_and_latent_gauge_coins_independent_conditional_fault_statuses": true,
+        "independence_of_fault_statuses_or_unconditional_attempt_success_assumed": false,
+        "aggregate_budget_failure_probability_upper_bound": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_hex": "0x4"
+        },
+        "no_correct_verified_candidate_on_budget_event_probability_upper_bound": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_hex": "0xffff01"
+        },
+        "any_wrong_full_candidate_passes_fresh_tests_upper_bound": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_hex": "0x100000000"
+        },
+        "total_algorithm_failure_probability_upper_bound": {
+          "sign": 1,
+          "numerator_hex": "0x3fffc140ffff01",
+          "denominator_hex": "0xffff0100000000"
+        },
+        "candidate_committed_before_fresh_verification_labels_required": true,
+        "ideal_block_success_must_include_all_required_readout_and_true_candidate_verification": true,
+        "gate_precision_and_native_gauge_lineage_composition_verified": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      "full_secret_failure_bound_below_one_third_as_declared": true,
+      "correlated_prelabel_faults_not_iid_success_trials": true,
+      "native_lattice_state_supply_gauge_lineage_and_gate_precision_composed": false,
+      "finder_coverage_is_an_assumption_not_an_experimental_result": true,
+      "large_constant_state_budget_is_a_conditional_ledger_not_an_executed_algorithm": true,
+      "candidate_record_accepted": false,
+      "speedup_claim_allowed": false
+    },
+    {
+      "status": "CONDITIONAL_FULL_SECRET_RESOURCE_COMPOSITION_NOT_NATIVE_LATTICE_PROOF",
+      "dimension": 16,
+      "full_modulus_bits": 65,
+      "density_overhead_bits": 0,
+      "selector": {
+        "status": "CONDITIONAL_SINGLE_WITNESS_NATIVE_READOUT_REDUCTION_NOT_SOLVER",
+        "dimension": 16,
+        "full_modulus_bits": 65,
+        "logical_width": 1024,
+        "original_phase_states_per_attempt": 1040,
+        "density_overhead_bits": 0,
+        "assumed_unconditional_uniform_target_coverage_lower_bound": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_hex": "0x100"
+        },
+        "binary_rank_rejection_probability_upper_bound": "2^-1024",
+        "all_binary_prefixes_are_not_postselected": true,
+        "coverage_after_charging_full_rank_rejection_lower_bound": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_hex": "0x200"
+        },
+        "ideal_correct_residue_probability_per_original_attempt_lower_bound": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_hex": "0x40000"
+        },
+        "expected_prelabel_packet_faults_upper_bound": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "conditional_independent_fair_Z_mixture_ideal_component_weight_lower_bound": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_hex": "0x1"
+        },
+        "gauged_correct_residue_probability_lower_bound": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_hex": "0x40000"
+        },
+        "success_bound_is_for_each_fixed_secret": true,
+        "coverage_can_be_label_average_without_identifying_good_packets": true,
+        "canonical_selection_overhead_is_exponential_when_overhead_bits_exceeds_log_scale": true,
+        "fault_statuses_may_be_correlated_but_must_precede_fresh_labels_and_solver_seed": true,
+        "gauge_transfer_is_a_source_obligation_not_an_arbitrary_noise_promise": true,
+        "full_secret_completion_or_natural_lattice_composition_implemented": false,
+        "uniform_polynomial_witness_finder_constructed": false,
+        "independent_theorem_review": false,
+        "candidate_record_accepted": false,
+        "novelty_claim": false,
+        "speedup_claim_allowed": false
+      },
+      "fresh_binary_completion_states": 32,
+      "completion_rank_failure_probability_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x10000"
+      },
+      "fresh_full_candidate_verification_states": 88,
+      "ideal_complete_block_success_lower_bound": {
+        "sign": 1,
+        "numerator_hex": "0xffff",
+        "denominator_hex": "0x400000000"
+      },
+      "original_states_per_complete_attempt": 1160,
+      "original_states_preallocated_for_all_attempts": 83586809083996405760,
+      "basis_fault_marginal_promise_required_for_each_fixed_secret": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x410"
+      },
+      "amplification": {
+        "status": "CONDITIONAL_CORRELATED_PRELABEL_BLOCK_AMPLIFICATION_LEDGER",
+        "preallocated_disjoint_attempts": 72057594037927936,
+        "expected_faults_per_complete_block_upper_bound": {
+          "sign": 1,
+          "numerator_hex": "0x1d",
+          "denominator_hex": "0x1a"
+        },
+        "maximum_faults_in_good_block": 9,
+        "guaranteed_good_blocks_on_aggregate_budget_event": 36028797018963968,
+        "source_labels_seeds_and_latent_gauge_coins_independent_conditional_fault_statuses": true,
+        "independence_of_fault_statuses_or_unconditional_attempt_success_assumed": false,
+        "aggregate_budget_failure_probability_upper_bound": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_hex": "0x4"
+        },
+        "no_correct_verified_candidate_on_budget_event_probability_upper_bound": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_hex": "0xffff001"
+        },
+        "any_wrong_full_candidate_passes_fresh_tests_upper_bound": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_hex": "0x100000000"
+        },
+        "total_algorithm_failure_probability_upper_bound": {
+          "sign": 1,
+          "numerator_hex": "0x3fffc014ffff001",
+          "denominator_hex": "0xffff00100000000"
+        },
+        "candidate_committed_before_fresh_verification_labels_required": true,
+        "ideal_block_success_must_include_all_required_readout_and_true_candidate_verification": true,
+        "gate_precision_and_native_gauge_lineage_composition_verified": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      "full_secret_failure_bound_below_one_third_as_declared": true,
+      "correlated_prelabel_faults_not_iid_success_trials": true,
+      "native_lattice_state_supply_gauge_lineage_and_gate_precision_composed": false,
+      "finder_coverage_is_an_assumption_not_an_experimental_result": true,
+      "large_constant_state_budget_is_a_conditional_ledger_not_an_executed_algorithm": true,
+      "candidate_record_accepted": false,
+      "speedup_claim_allowed": false
+    },
+    {
+      "status": "CONDITIONAL_FULL_SECRET_RESOURCE_COMPOSITION_NOT_NATIVE_LATTICE_PROOF",
+      "dimension": 16,
+      "full_modulus_bits": 65,
+      "density_overhead_bits": 16,
+      "selector": {
+        "status": "CONDITIONAL_SINGLE_WITNESS_NATIVE_READOUT_REDUCTION_NOT_SOLVER",
+        "dimension": 16,
+        "full_modulus_bits": 65,
+        "logical_width": 1040,
+        "original_phase_states_per_attempt": 1056,
+        "density_overhead_bits": 16,
+        "assumed_unconditional_uniform_target_coverage_lower_bound": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_hex": "0x100"
+        },
+        "binary_rank_rejection_probability_upper_bound": "2^-1040",
+        "all_binary_prefixes_are_not_postselected": true,
+        "coverage_after_charging_full_rank_rejection_lower_bound": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_hex": "0x200"
+        },
+        "ideal_correct_residue_probability_per_original_attempt_lower_bound": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_hex": "0x400000000"
+        },
+        "expected_prelabel_packet_faults_upper_bound": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "conditional_independent_fair_Z_mixture_ideal_component_weight_lower_bound": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_hex": "0x1"
+        },
+        "gauged_correct_residue_probability_lower_bound": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_hex": "0x400000000"
+        },
+        "success_bound_is_for_each_fixed_secret": true,
+        "coverage_can_be_label_average_without_identifying_good_packets": true,
+        "canonical_selection_overhead_is_exponential_when_overhead_bits_exceeds_log_scale": true,
+        "fault_statuses_may_be_correlated_but_must_precede_fresh_labels_and_solver_seed": true,
+        "gauge_transfer_is_a_source_obligation_not_an_arbitrary_noise_promise": true,
+        "full_secret_completion_or_natural_lattice_composition_implemented": false,
+        "uniform_polynomial_witness_finder_constructed": false,
+        "independent_theorem_review": false,
+        "candidate_record_accepted": false,
+        "novelty_claim": false,
+        "speedup_claim_allowed": false
+      },
+      "fresh_binary_completion_states": 32,
+      "completion_rank_failure_probability_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x10000"
+      },
+      "fresh_full_candidate_verification_states": 104,
+      "ideal_complete_block_success_lower_bound": {
+        "sign": 1,
+        "numerator_hex": "0xffff",
+        "denominator_hex": "0x4000000000000"
+      },
+      "original_states_per_complete_attempt": 1192,
+      "original_states_preallocated_for_all_attempts": 5629060847580617094725632,
+      "basis_fault_marginal_promise_required_for_each_fixed_secret": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x410"
+      },
+      "amplification": {
+        "status": "CONDITIONAL_CORRELATED_PRELABEL_BLOCK_AMPLIFICATION_LEDGER",
+        "preallocated_disjoint_attempts": 4722366482869645213696,
+        "expected_faults_per_complete_block_upper_bound": {
+          "sign": 1,
+          "numerator_hex": "0x95",
+          "denominator_hex": "0x82"
+        },
+        "maximum_faults_in_good_block": 10,
+        "guaranteed_good_blocks_on_aggregate_budget_event": 2361183241434822606848,
+        "source_labels_seeds_and_latent_gauge_coins_independent_conditional_fault_statuses": true,
+        "independence_of_fault_statuses_or_unconditional_attempt_success_assumed": false,
+        "aggregate_budget_failure_probability_upper_bound": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_hex": "0x4"
+        },
+        "no_correct_verified_candidate_on_budget_event_probability_upper_bound": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_hex": "0x7fff801"
+        },
+        "any_wrong_full_candidate_passes_fresh_tests_upper_bound": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_hex": "0x100000000"
+        },
+        "total_algorithm_failure_probability_upper_bound": {
+          "sign": 1,
+          "numerator_hex": "0x1fffe0147fff801",
+          "denominator_hex": "0x7fff80100000000"
+        },
+        "candidate_committed_before_fresh_verification_labels_required": true,
+        "ideal_block_success_must_include_all_required_readout_and_true_candidate_verification": true,
+        "gate_precision_and_native_gauge_lineage_composition_verified": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      "full_secret_failure_bound_below_one_third_as_declared": true,
+      "correlated_prelabel_faults_not_iid_success_trials": true,
+      "native_lattice_state_supply_gauge_lineage_and_gate_precision_composed": false,
+      "finder_coverage_is_an_assumption_not_an_experimental_result": true,
+      "large_constant_state_budget_is_a_conditional_ledger_not_an_executed_algorithm": true,
+      "candidate_record_accepted": false,
+      "speedup_claim_allowed": false
+    },
+    {
+      "status": "CONDITIONAL_FULL_SECRET_RESOURCE_COMPOSITION_NOT_NATIVE_LATTICE_PROOF",
+      "dimension": 32,
+      "full_modulus_bits": 129,
+      "density_overhead_bits": 0,
+      "selector": {
+        "status": "CONDITIONAL_SINGLE_WITNESS_NATIVE_READOUT_REDUCTION_NOT_SOLVER",
+        "dimension": 32,
+        "full_modulus_bits": 129,
+        "logical_width": 4096,
+        "original_phase_states_per_attempt": 4128,
+        "density_overhead_bits": 0,
+        "assumed_unconditional_uniform_target_coverage_lower_bound": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_hex": "0x400"
+        },
+        "binary_rank_rejection_probability_upper_bound": "2^-4096",
+        "all_binary_prefixes_are_not_postselected": true,
+        "coverage_after_charging_full_rank_rejection_lower_bound": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_hex": "0x800"
+        },
+        "ideal_correct_residue_probability_per_original_attempt_lower_bound": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_hex": "0x400000"
+        },
+        "expected_prelabel_packet_faults_upper_bound": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "conditional_independent_fair_Z_mixture_ideal_component_weight_lower_bound": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_hex": "0x1"
+        },
+        "gauged_correct_residue_probability_lower_bound": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_hex": "0x400000"
+        },
+        "success_bound_is_for_each_fixed_secret": true,
+        "coverage_can_be_label_average_without_identifying_good_packets": true,
+        "canonical_selection_overhead_is_exponential_when_overhead_bits_exceeds_log_scale": true,
+        "fault_statuses_may_be_correlated_but_must_precede_fresh_labels_and_solver_seed": true,
+        "gauge_transfer_is_a_source_obligation_not_an_arbitrary_noise_promise": true,
+        "full_secret_completion_or_natural_lattice_composition_implemented": false,
+        "uniform_polynomial_witness_finder_constructed": false,
+        "independent_theorem_review": false,
+        "candidate_record_accepted": false,
+        "novelty_claim": false,
+        "speedup_claim_allowed": false
+      },
+      "fresh_binary_completion_states": 48,
+      "completion_rank_failure_probability_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x10000"
+      },
+      "fresh_full_candidate_verification_states": 92,
+      "ideal_complete_block_success_lower_bound": {
+        "sign": 1,
+        "numerator_hex": "0xffff",
+        "denominator_hex": "0x4000000000"
+      },
+      "original_states_per_complete_attempt": 4268,
+      "original_states_preallocated_for_all_attempts": 4920668981662022893568,
+      "basis_fault_marginal_promise_required_for_each_fixed_secret": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x1020"
+      },
+      "amplification": {
+        "status": "CONDITIONAL_CORRELATED_PRELABEL_BLOCK_AMPLIFICATION_LEDGER",
+        "preallocated_disjoint_attempts": 1152921504606846976,
+        "expected_faults_per_complete_block_upper_bound": {
+          "sign": 1,
+          "numerator_hex": "0x42b",
+          "denominator_hex": "0x408"
+        },
+        "maximum_faults_in_good_block": 9,
+        "guaranteed_good_blocks_on_aggregate_budget_event": 576460752303423488,
+        "source_labels_seeds_and_latent_gauge_coins_independent_conditional_fault_statuses": true,
+        "independence_of_fault_statuses_or_unconditional_attempt_success_assumed": false,
+        "aggregate_budget_failure_probability_upper_bound": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_hex": "0x4"
+        },
+        "no_correct_verified_candidate_on_budget_event_probability_upper_bound": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_hex": "0xffff001"
+        },
+        "any_wrong_full_candidate_passes_fresh_tests_upper_bound": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_hex": "0x100000000"
+        },
+        "total_algorithm_failure_probability_upper_bound": {
+          "sign": 1,
+          "numerator_hex": "0x3fffc014ffff001",
+          "denominator_hex": "0xffff00100000000"
+        },
+        "candidate_committed_before_fresh_verification_labels_required": true,
+        "ideal_block_success_must_include_all_required_readout_and_true_candidate_verification": true,
+        "gate_precision_and_native_gauge_lineage_composition_verified": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      "full_secret_failure_bound_below_one_third_as_declared": true,
+      "correlated_prelabel_faults_not_iid_success_trials": true,
+      "native_lattice_state_supply_gauge_lineage_and_gate_precision_composed": false,
+      "finder_coverage_is_an_assumption_not_an_experimental_result": true,
+      "large_constant_state_budget_is_a_conditional_ledger_not_an_executed_algorithm": true,
+      "candidate_record_accepted": false,
+      "speedup_claim_allowed": false
+    }
+  ],
+  "legal_target_source_transfer_controls": [
+    {
+      "legal_input_sampling_law": "IID native label matrix and independent uniform target, globally conditioned on existence",
+      "native_legal_pair_probability_lower_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x2"
+      },
+      "unconditional_verified_target_coverage_lower_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x20"
+      },
+      "mean_of_per_label_legal_coverage_ratios_is_this_law": false,
+      "planted_target_coverage_automatically_transfers": false
+    },
+    {
+      "legal_input_sampling_law": "IID native label matrix and independent uniform target, globally conditioned on existence",
+      "native_legal_pair_probability_lower_bound": {
+        "sign": 1,
+        "numerator_hex": "0x10",
+        "denominator_hex": "0x11"
+      },
+      "unconditional_verified_target_coverage_lower_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x11"
+      },
+      "mean_of_per_label_legal_coverage_ratios_is_this_law": false,
+      "planted_target_coverage_automatically_transfers": false
+    },
+    {
+      "legal_input_sampling_law": "IID native label matrix and independent uniform target, globally conditioned on existence",
+      "native_legal_pair_probability_lower_bound": {
+        "sign": 1,
+        "numerator_hex": "0x10000",
+        "denominator_hex": "0x10001"
+      },
+      "unconditional_verified_target_coverage_lower_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1000",
+        "denominator_hex": "0x10001"
+      },
+      "mean_of_per_label_legal_coverage_ratios_is_this_law": false,
+      "planted_target_coverage_automatically_transfers": false
+    }
+  ],
+  "claim_gate": {
+    "single_partial_witness_suffices_for_this_conditional_readout": true,
+    "complete_fiber_rank_unrank_uniform_sampling_or_two_witnesses_required": false,
+    "inverse_witness_function_required": false,
+    "shared_seed_and_clean_target_dependent_history_required": true,
+    "original_states_and_rejections_are_charged": true,
+    "arbitrary_measured_quantum_solver_automatically_lifts": false,
+    "uniform_polynomial_native_finder_supplied": false,
+    "full_native_lattice_fault_and_precision_composition_verified": false,
+    "independent_theorem_review": false,
+    "novelty_claim": false,
+    "candidate_record_accepted": false,
+    "speedup_claim_allowed": false
+  },
+  "dependency_sha256": {
+    "theorems/dcp_partial_witness_readout.py": "c8ee7b222ca37e4c0626477463995cf06eef5d5f198596ccbb73dd8406ff4a5d",
+    "theorems/dcp_carry_packets.py": "c3d345cc0d123a86e29c976959471d645945e767f6d0ee1bc6bd79149a0322c6",
+    "theorems/dcp_conditional_carry_features.py": "aa80e04ed54f1143ec2fac2b8083cd6e4cc93a055a1bf748f345d4af64de96fc",
+    "theorems/dcp_dense_phase_transport.py": "0a82763c85a7a68cdb9feb04bf0f46a3649e4548f70ab992480174a6a2684656",
+    "theorems/dcp_prelabel_fault_gauge.py": "1cea363074eef2ccc26b5ab29931b04e995469f94a2959e2831e39794fd093ab",
+    "theorems/dcp_physical_phase_noise.py": "19dfbdf5b2cb037b41c772cc51a5309e030fe07f40fd17a7a1db79f0a48e073f",
+    "theorems/dcp_terminal_affine_fibers.py": "eabeb22f435ebe0aedbfc79d2c2f6072ff1f5cf251d833b90dfca88d0bd6e5ef",
+    "theorems/dcp_bell_inference_kernel.py": "80a386759b43dacbcd7ed078c649e3004df51a704fc7747d01907dbc89b22a64"
+  }
+}

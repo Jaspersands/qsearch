@@ -1,0 +1,25 @@
+{
+  "audit_id": "LIT-AUDIT-DCP-PATH-CODE-FUSION",
+  "status": "PRIMARY_PAIR_FUSION_MECHANISMS_INSPECTED_LOCAL_GENERALIZATION_REVIEW_PENDING",
+  "sources": [
+    {
+      "id": "KUPERBERG-2003-DHSP",
+      "url": "https://arxiv.org/pdf/quant-ph/0302112",
+      "inspected": "Section3, pages2-3, native uniformly labelled phase states, CNOT/parity sum-difference extraction and its sieve role.",
+      "supports": "The first stage of the measured comparator is an established native pair-fusion primitive.",
+      "does_not_support": "A claim that the paper states our full path-code identity, sign-decay formula, nonlinear decoder or coherent-fusion impossibility."
+    },
+    {
+      "id": "REGEV-2004-POLYNOMIAL-SPACE-DHSP",
+      "url": "https://arxiv.org/pdf/quant-ph/0406151",
+      "inspected": "Section2.2 native source and parity-fusion equations; openingsection3 shows a different label/subset-sum combiner, not this fixed code.",
+      "supports": "Native uniformly random public labels and measured pair parity can be compared under the same access interface.",
+      "does_not_support": "Transfer of a Regev runtime bound to the nonlinear path output or a new lattice reduction."
+    }
+  ],
+  "local_derivations_not_attributed_to_sources": ["full all-syndrome path-code Kraus amplitudes", "explicit linear-cost compiler", "common-parity dephasing comparator", "odd/even sign law", "source-averaged measured sign decay", "exact fixed-branch source yield", "discrete known-label countercontrol"],
+  "full_paper_proofs_reviewed": false,
+  "comprehensive_priority_search_completed": false,
+  "independent_theorem_review": false,
+  "new_algorithm_claim": false
+}

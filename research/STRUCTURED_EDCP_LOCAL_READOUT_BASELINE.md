@@ -8,11 +8,24 @@ decoding also suffice with a constant number of blocks in a scoped growing
 Gaussian regime. The classical search is not shown to be efficient. This
 does not classically simulate the original quantum source or prove a speedup.
 
+WIDE-SOURCE FOLLOW-UP (2026-09-27):
+`STRUCTURED_EDCP_FOURIER_ERASURE_AUDIT.md` replaces this note's narrow-width
+divisor estimate with the ideal-dual maximum-mass bound, retaining the
+periodization error before summing over Q competitors. The theorem-linked
+source lanes also have sufficient finite classical-ML counts 4,3,3 at
+d=64,256,1024. Neither this nor that bound supplies an efficient ML decoder.
+
 FOLLOW-UP: `STRUCTURED_EDCP_CLASSICAL_READOUT_SIMULATION.md` approximates
 this specified local measurement classically from the retained integer
 source (A,b), with explicit hashing, noise and source losses. It does not
 simulate the quantum states or arbitrary joint measurements. Its access
 premises are essential; standalone EDCP is not thereby dequantized.
+
+CHIRP FOLLOW-UP (2026-09-27): `STRUCTURED_EDCP_NONLINEAR_CHIRP_AUDIT.md`
+extends the measured comparator to quadratic phases with a certified alias
+bound, including fast rational cores. It also proves exact no-improvement
+for fixed affine readout after arbitrary diagonal phases on a positive
+envelope. Neither result simulates arbitrary quantum processing.
 
 The research consequence is substantive: an information certificate alone
 cannot justify a collective-measurement advantage for this family. Any proposed

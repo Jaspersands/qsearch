@@ -1,0 +1,28 @@
+{
+  "audit_date": "2026-10-06",
+  "primary_sources": [
+    {
+      "url": "https://arxiv.org/html/2609.34996v1",
+      "inspected": "Trace pairing, native PSP/CCP input and integer-secret scope as recorded in cyclotomic_rescaling_sources.json",
+      "use": "Existing sample source, not an attribution of the locally derived correlated cubic compiler."
+    },
+    {
+      "url": "https://arxiv.org/html/2208.07851",
+      "title": "Optimal algorithms for learning quantum phase states",
+      "inspected": ["Abstract", "Section2.5 same-function copy input", "Section5.1 Theorem8"],
+      "transfer_gate": "Boolean domain and identical unknown-function copies; the stated generalized separable theorem assumes even q. No automatic varying ternary-source transfer."
+    },
+    {
+      "url": "https://arxiv.org/html/2405.06357",
+      "title": "Beyond Bell sampling: stabilizer state learning and quantum pseudorandomness lower bounds on qudits",
+      "inspected": ["Abstract", "Introduction and beginning of Section1.1"],
+      "transfer_gate": "The stated qudit stabilizer learner requires copies of an unknown stabilizer state. Native cubic packets and unmatched quadratic packets do not automatically satisfy that promise.",
+      "inspection_limit": "A subsequent fetch of the detailed Method2 section timed out; no full theorem-transfer or entire-paper audit claimed."
+    }
+  ],
+  "local_derivations": ["Public odd-level GF3 kernel state with exact divided frequencies", "Level3 classical cubic phase and low-label-only leading signature", "Conditional three-packet cubic cancellation", "L5 fourth-difference countercontrol"],
+  "novelty_search_exhaustive": false,
+  "independent_human_review": false,
+  "paper_refuted": false,
+  "new_algorithm_claimed": false
+}

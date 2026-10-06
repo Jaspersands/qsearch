@@ -1,0 +1,37 @@
+{
+  "hypothesis_id": "HYP-NATIVE-BABAI-REPAIR-COVERAGE",
+  "status": "EXACT_DECODER_PREDICATE_AND_COUNTEREXAMPLES_IMPLEMENTED_POPULATION_THEOREM_MISSING",
+  "candidate_record_accepted": false,
+  "note": "research/TERNARY_PAIR_CELL_COVERAGE.md",
+  "report": "research/phase_workbench/ternary_pair_cell_coverage.json",
+  "depends_on": ["HYP-NATIVE-A2-PAIR-CVP", "HYP-NATIVE-LEAST-TRIT-ORDINARY-PAIR-FINDER"],
+  "implemented": [
+    "Exact target-independent native residual and primitive integer GS compiler.",
+    "IFF recovery predicate for complete k-repair lists with bounded integer magnitudes.",
+    "Exact word/pair repair histograms and uniform-target conditional coverage including empty cosets.",
+    "Deterministic beta_label<=3^M*gamma/(2Q) counting bound.",
+    "Exact native second, third and fourth projection moments; no independence or Gaussian assumption.",
+    "Recorded full-decoder counterexamples to deterministic single-repair completeness.",
+    "Planted-word geometry and empirical repair-pattern collision diagnostics."
+  ],
+  "negative_result_handoff": {
+    "negative_id": "NEG-NATIVE-RECORDED-SINGLE-REPAIR-NOT-COMPLETE",
+    "claim_falsified": "The recorded fixed public single-repair policies recover two native words for every non-singleton target.",
+    "counterexamples": [{"width": 6, "modulus": "2187", "target": "470", "seed": 83376}, {"width": 10, "modulus": "177147", "target": "97", "seed": 83380}],
+    "evidence": "Complete real fibers, rounded-error signatures and actual exhausted decoder costs in the live report; independent integer replay.",
+    "does_not_falsify": "Randomized pointwise positive success, average-case polynomial coverage, other bases, adaptive repairs, general CVP or the native quantum source."
+  },
+  "proof_obligations_before_candidate_acceptance": {
+    "PO-REVIEW": "External review of recovery induction, half-cell ties, source moments and counting bounds.",
+    "PO-POPULATION": "Prove pair coverage across actual random source labels, not a single conditional census or planted-word recall.",
+    "PO-LIST-COST": "Charge all forced repair patterns and prove the list/training cost stays polynomial as root depth grows.",
+    "PO-DEPENDENCE": "Do not replace uncorrelated GS projections with independent rounding events or a joint Gaussian promise.",
+    "PO-ACCESS": "Ground-truth word analysis is not given to the unknown-target decoder; catalogs must use allowed public training only.",
+    "PO-STATISTICS": "Do not treat dependent sample-pair comparisons or shared-word charts as independent confidence trials.",
+    "PO-RECEIVER": "Retain all original pair collimation source/runtime/reduction/hardware obligations."
+  },
+  "next_target": "research/NATIVE_TERNARY_REPAIR_CATALOG_TARGET.md",
+  "routine_wiring_owner": "Gemini or Antigravity",
+  "novelty_claim": false,
+  "polynomial_pair_finder_proved": false
+}

@@ -7,6 +7,21 @@ a Gaussian coefficient secret prior. It reuses the repository's exact Babai
 helper in bounded trials. It does not provide a scaling guarantee, a verified
 MLWE attack, a new quantum algorithm, or production integration.
 
+NATIVE-RING FOLLOW-UP (2026-09-29):
+`NATIVE_RLWE_PHASE_DECODER_TARGET.md` gives a simpler distinct source. Its
+graph lattice uses C_a and modulus q, not this note's geometric-power matrix
+and Q. Prioritize attacks on ORIGINAL (a,b), then on the noisier native
+Fourier readout. Hidden elliptical covariance is not available to a legal
+decoder; ideal and physical readout noise are different contracts.
+
+ONE-BLOCK FOLLOW-UP (2026-09-28):
+`STRUCTURED_EDCP_SMALL_SECRET_TARGET.md` certifies sufficient one-block
+information for both hardness-linked small-secret source lanes, and gives
+much narrower sufficient phase widths. Prioritize L=1 benchmarks on this
+note's 2d-dimensional graph lattice, preserving the actual prior and label.
+The certificate does not make Babai/LLL or any other decoder successful;
+compare against the original retained RLWE input as well as this readout.
+
 The EDCP/LWE connection is already established in
 [Brakerski, Kirshanova, Stehle and Wen](https://arxiv.org/abs/1710.08223).
 The structured source and its balanced coefficient evaluation are from

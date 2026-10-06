@@ -1,0 +1,33 @@
+{
+  "hypothesis_id": "HYP-NATIVE-TERNARY-NONCLASSICAL-DEPTH",
+  "status": "EXACT_HIERARCHY_AND_CONDITIONAL_VISIBILITY_GATE_VERIFIED_DECODER_MISSING",
+  "candidate_record_accepted": false,
+  "note": "research/TERNARY_PHASE_DEPTH.md",
+  "report": "research/phase_workbench/ternary_phase_depth.json",
+  "source_audit": "research/literature_audits/ternary_phase_depth_sources.json",
+  "local_results": {
+    "degree": "Native odd L=2r+1 kernel phases have additive degree at most L, with sharp controls through L19.",
+    "representation": "Exact mixed derivatives use local cyclic integer identities in O(n*m*order) arithmetic, not exponential derivative cubes or phase tables.",
+    "tensor": "Top derivative is -3^(r-1) times the low-label weighted L-fold Schur product, independent of syndrome and higher labels.",
+    "counterexample": "A native coordinate-evaluation subspace passes every level3 cubic constraint but has fifth derivative3 mod9 at level5.",
+    "visibility": "A proved whole-component degree bound d limits residual relative phase order to3^min(r,ceil(d/2)); constant degree can erase high secret digits.",
+    "scope": "Degree reduction by one or two can retain full residual order. Extra junk, coherent syndromes, other records and other decoders are not excluded."
+  },
+  "proof_obligations_for_next_candidate": {
+    "PO-ACCESS": "Use actual supplied native states; public component derivatives do not supply unknown weighted phase queries or inverse preparation.",
+    "PO-DEPTH": "Prove every required mixed higher-degree constraint at growing r, with efficient verification and construction.",
+    "PO-VISIBILITY": "Recover every target digit; show informative residual order and address top-digit loss from the initial measured syndrome.",
+    "PO-SOURCE": "Charge intermediate odd-source acquisition, all outcomes, source conditioning, output correlations, and total source consumption.",
+    "PO-DECODER": "Give an efficient supplied-state decoder, not generic arbitrary-polynomial learning or uncharged degree testing.",
+    "PO-BASELINES": "Compare applicable known varying-Y phase algorithms, quantum sieves and legal classical measurements; do not transfer generic copy lower bounds without matching the promise.",
+    "PO-REVIEW": "Independent mathematical review and novelty search before CandidateRecord admission."
+  },
+  "falsifiers": [
+    "A claimed higher-level admission has a nonzero exact mixed derivative.",
+    "Whole-phase constant degree aliases distinct target secrets with no retained informative subsystem or records.",
+    "Formal lifted polynomial degree is substituted for additive phase degree.",
+    "An efficient tester or quantum oracle is inferred from classical evaluation of known components.",
+    "The source or decoder cost reproduces existing recursive sieve overhead."
+  ],
+  "next_experiment": "Investigate source-adapted depth-sensitive transforms in the full-order degree window, or an implicit full-source modular receiver, before more fixed-level sweeps."
+}

@@ -1,0 +1,28 @@
+{
+  "hypothesis_id": "HYP-NATIVE-TERNARY-LIKELIHOOD-RECEIVER",
+  "status": "FIXED_ARITY_SQ_AND_NEAR_ENTROPY_MUB_ROUTES_SCREENED_REVIEW_PENDING",
+  "candidate_record_accepted": false,
+  "note": "research/TERNARY_LIKELIHOOD_GATE.md",
+  "report": "research/classical_baselines/ternary_likelihood_gate.json",
+  "exact_source": "IID uniform native even-level frequency pairs; fixed unknown s in Z_(3^r)^n; public independent uniform F3 quadratic MUB bases; all labels, bases and classical outcomes retained.",
+  "local_identity": "Centered single-record likelihood Gram=(2/3)I on ALL secrets. k-record centered Gram=((5/3)^k-1)I.",
+  "SQ_scope": "Arbitrary bounded real k-record expectation queries at exact absolute tolerance, against adversarial legal STAT oracle. Growing arity can make the screen vacuous; raw records are a different interface.",
+  "observation_density_scope": "Any processing of M records from THIS measured source has uniform-secret success squared<=min(1,(5/3)^M/3^(nr)). Not a bound on other quantum measurements or additional charged records.",
+  "mandatory_counterexample": "Actual R=3 incidence decoding is polynomial raw-sample inference on the same family, despite its exponentially large SQ dimension.",
+  "falsifiers": [
+    "Direct complete-source Born likelihood Gram is not diagonal2/3.",
+    "A sparse character coefficient disagrees with an actual native Born probability.",
+    "A proposed generic classical-hardness interpretation also excludes the recorded field incidence decoder; that interpretation is false.",
+    "A proposal uses label-adaptive quantum bases, chosen labels, raw-sample exact equations, or growing-arity processing; current SQ application is not established."
+  ],
+  "proof_obligations_before_candidate_acceptance": {
+    "PO-INTERFACE": "State exact source and actual allowed quantum/classical access; do not replace raw samples by a statistical-query interface silently.",
+    "PO-SOURCE": "Charge all native sample construction, conditioning, measured outcomes and surplus records.",
+    "PO-DECODER": "Supply complete growing-root secret recovery; fixed-field incidence success is not sufficient.",
+    "PO-IMPLEMENTATION": "Give an implicit polynomial decoder/receiver rather than a full group likelihood FFT or explicit product expansion.",
+    "PO-BASELINES": "Compare raw-sample algebraic attacks and published native sieves, not only bounded spectral moments.",
+    "PO-REVIEW": "Independent mathematical review of the local character, SQ and finite-density derivations."
+  },
+  "general_classical_hardness_proved": false,
+  "new_algorithm_or_quantum_advantage_claim": false
+}

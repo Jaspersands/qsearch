@@ -1,0 +1,31 @@
+{
+  "audit_id": "AUDIT-NATIVE-LEAST-TRIT-ORDINARY-PAIR-COLLIMATION",
+  "primary_sources": [
+    {
+      "title": "A Subexponential Time Algorithm for the Dihedral Hidden Subgroup Problem with Polynomial Space",
+      "author": "Oded Regev",
+      "arxiv_id": "quant-ph/0406151",
+      "url": "https://arxiv.org/pdf/quant-ph/0406151",
+      "inspected": "Section3, measured low subset sum, classically found endpoints and two-word phase projection.",
+      "does_not_supply": "Polynomial full-depth ordinary ternary pair finder or the new native uniform-target/high-trit transfer."
+    },
+    {
+      "title": "Another subexponential-time quantum algorithm for the dihedral hidden subgroup problem",
+      "author": "Greg Kuperberg",
+      "arxiv_id": "1112.3333",
+      "url": "https://arxiv.org/pdf/1112.3333",
+      "inspected": "Algorithm4.1 and Proposition4.2, explicit collimation/indexing/classical memory costs.",
+      "does_not_supply": "Free exponentially large phase-vector indexing or an ordinary polynomial ternary witness solver."
+    }
+  ],
+  "existing_repository_bridge": "research/DCP_MEASURED_FIBER_COLLIMATION.md already describes the binary ordinary two-witness interface; this is not a rediscovery of collimation.",
+  "local_derivations_review_pending": [
+    "Native simplex unit minors give pairwise pointed collision independence in the nuisance product group.",
+    "Underfull density1/3 gives exact4*beta informative acceptance after independent target high-trit rejection.",
+    "Two-endpoint qutrit Fourier readout gives raw least-trit advantagep/3 without identical copies or native product outputs.",
+    "Uniform-target runtime caps and negative single-to-two-witness source controls prevent optimistic acceptance accounting."
+  ],
+  "reference_algorithm_is_exponential": true,
+  "novelty_claim": false,
+  "accepted_candidate": false
+}

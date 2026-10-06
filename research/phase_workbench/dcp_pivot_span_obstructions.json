@@ -1,0 +1,5574 @@
+{
+  "status": "LOCAL_DERIVATION_REVIEW_PENDING",
+  "abstract_countercontrols": [
+    {
+      "name": "binary_correlated_nonsingular_countercontrol",
+      "operator_family": {
+        "input_bits": 2,
+        "dimension": 2,
+        "background_bits": 1,
+        "constant_rows_hex": [
+          "0x2",
+          "0x3"
+        ],
+        "variation_rows_hex": [
+          [
+            "0x1",
+            "0x2"
+          ]
+        ],
+        "polar_operators_rows_hex": [
+          [
+            "0x1"
+          ],
+          [
+            "0x2"
+          ]
+        ],
+        "operator_convention": "D_l maps input U coefficients to background covector; rows indexed by V",
+        "decoder_or_candidate": false
+      },
+      "all_span_certificate": {
+        "status": "MAXIMAL_COMPLETE_ROW_BLOCK_AND_ALL_FIXED_SPANS_NECESSARY_GATE",
+        "background_matrix_image_dimension": 1,
+        "matrix_image_annihilator_basis_hex": [
+          "0x9",
+          "0x2",
+          "0x4"
+        ],
+        "complete_row_block_basis_hex": [],
+        "complete_row_block_dimension": 0,
+        "complete_row_block_codimension": 2,
+        "complete_row_block_background_witnesses_hex": [],
+        "annihilator_row_span_basis_hex": [
+          "0x1",
+          "0x2"
+        ],
+        "eligible_exact_fixed_pivot_span_must_annihilate_complete_row_block": true,
+        "every_n_dimensional_span_complete_block_rank_lower_bound": 0,
+        "every_n_dimensional_span_variation_image_dimension_lower_bound": 1,
+        "all_fixed_n_dimensional_spans_excluded_by_complete_block": false,
+        "all_fixed_n_dimensional_spans_excluded_by_dimension_theorem": false,
+        "all_fixed_spans_uniform_background_invertibility_fraction_upper_bound": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_hex": "0x1"
+        },
+        "dimension_theorem": {
+          "source": "https://arxiv.org/pdf/1004.0579",
+          "theorem": 9,
+          "field": "arbitrary field, including F2",
+          "maximum_nonsingular_affine_dimension": 1,
+          "classification_for_larger_fields_used": false
+        },
+        "background_uniformity_and_fixed_W_required_for_fraction_bound": true,
+        "background_adaptive_pivots_or_other_isotropic_charts_excluded": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      "weighted_radical_screen": {
+        "status": "EXACT_BOUNDED_WEIGHTED_RADICAL_SPAN_NECESSARY_GATE",
+        "combinations_evaluated": 3,
+        "combination_cap": 4095,
+        "weighted_radicals": [
+          {
+            "output_weight_hex": "0x1",
+            "radical_basis_hex": [
+              "0x2"
+            ]
+          },
+          {
+            "output_weight_hex": "0x2",
+            "radical_basis_hex": [
+              "0x1"
+            ]
+          },
+          {
+            "output_weight_hex": "0x3",
+            "radical_basis_hex": [
+              "0x3"
+            ]
+          }
+        ],
+        "eligible_direction_span_basis_hex": [
+          "0x1",
+          "0x2"
+        ],
+        "eligible_direction_span_dimension": 2,
+        "all_fixed_spans_excluded": false,
+        "necessary_gate_pass_proves_an_eligible_n_dimensional_pivot_span_exists": false,
+        "enumerating_weight_combinations_is_polynomial_in_unbounded_n": false,
+        "general_decoder_no_go": false,
+        "speedup_claim_allowed": false
+      },
+      "selected_span_certificate": {
+        "status": "ACTUAL_SELECTED_SPAN_NECESSARY_OBSTRUCTIONS_NOT_DECODER",
+        "directions_in_U_coordinates_hex": [
+          "0x1",
+          "0x2"
+        ],
+        "restricted_operator_family": {
+          "input_bits": 2,
+          "dimension": 2,
+          "background_bits": 1,
+          "constant_rows_hex": [
+            "0x2",
+            "0x3"
+          ],
+          "variation_rows_hex": [
+            [
+              "0x1",
+              "0x2"
+            ]
+          ],
+          "polar_operators_rows_hex": [
+            [
+              "0x1"
+            ],
+            [
+              "0x2"
+            ]
+          ],
+          "operator_convention": "D_l maps input U coefficients to background covector; rows indexed by V",
+          "decoder_or_candidate": false
+        },
+        "complete_row_block": {
+          "status": "MAXIMAL_COMPLETE_ROW_BLOCK_AND_ALL_FIXED_SPANS_NECESSARY_GATE",
+          "background_matrix_image_dimension": 1,
+          "matrix_image_annihilator_basis_hex": [
+            "0x9",
+            "0x2",
+            "0x4"
+          ],
+          "complete_row_block_basis_hex": [],
+          "complete_row_block_dimension": 0,
+          "complete_row_block_codimension": 2,
+          "complete_row_block_background_witnesses_hex": [],
+          "annihilator_row_span_basis_hex": [
+            "0x1",
+            "0x2"
+          ],
+          "eligible_exact_fixed_pivot_span_must_annihilate_complete_row_block": true,
+          "every_n_dimensional_span_complete_block_rank_lower_bound": 0,
+          "every_n_dimensional_span_variation_image_dimension_lower_bound": 1,
+          "all_fixed_n_dimensional_spans_excluded_by_complete_block": false,
+          "all_fixed_n_dimensional_spans_excluded_by_dimension_theorem": false,
+          "all_fixed_spans_uniform_background_invertibility_fraction_upper_bound": {
+            "sign": 1,
+            "numerator_hex": "0x1",
+            "denominator_hex": "0x1"
+          },
+          "dimension_theorem": {
+            "source": "https://arxiv.org/pdf/1004.0579",
+            "theorem": 9,
+            "field": "arbitrary field, including F2",
+            "maximum_nonsingular_affine_dimension": 1,
+            "classification_for_larger_fields_used": false
+          },
+          "background_uniformity_and_fixed_W_required_for_fraction_bound": true,
+          "background_adaptive_pivots_or_other_isotropic_charts_excluded": false,
+          "candidate_record_accepted": false,
+          "speedup_claim_allowed": false
+        },
+        "pencil_coverage": {
+          "status": "EXACT_SELECTED_BINARY_PIVOT_PENCIL_COVERAGE_NOT_DECODER_BOUND",
+          "constant_matrix_rows": [
+            2,
+            3
+          ],
+          "variation_generator_rows": [
+            [
+              1,
+              2
+            ]
+          ],
+          "dimension": 2,
+          "background_bits": 1,
+          "constant_matrix_rank": 2,
+          "background_matrix_image_rank": 1,
+          "individual_column_variation_ranks": [
+            1,
+            1
+          ],
+          "background_image_is_cartesian_product_of_column_spaces": false,
+          "all_columns_vary_and_separability_rules_out_every_constant_part": false,
+          "all_backgrounds_invertible_certified": false,
+          "exact_uniform_background_invertibility_fraction": null,
+          "singular_background_mask_hex": null,
+          "singular_matrix_nonzero_kernel_vector_hex": null,
+          "shortest_normalized_variation_cycle": null,
+          "backgrounds_enumerated_by_certificate": false,
+          "actual_native_chart_or_source_prevalence_proved_by_matrix_input": false,
+          "one_singular_background_proves_large_failure_mass": false,
+          "approximate_transport_or_general_algorithms_ruled_out": false,
+          "candidate_record_accepted": false,
+          "speedup_claim_allowed": false
+        },
+        "dimension_theorem_excludes_every_constant_part": false,
+        "all_backgrounds_invertible_excluded": false,
+        "surjective_direction_background_witness": null,
+        "deterministic_direction_probe_menu_size": 3,
+        "successful_surjective_probes_before_stopping": 0,
+        "uniform_background_invertibility_fraction_upper_bound": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_hex": "0x1"
+        },
+        "nonzero_determinant_complement_boolean_degree_upper_bound": 1,
+        "no_obstruction_is_a_success_proof": false,
+        "fixed_span_may_depend_on_middle_labels_but_not_on_background": true,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      "control_is_an_algorithm_candidate": false
+    },
+    {
+      "name": "one_unused_coordinate_cannot_hide_complete_two_column_block",
+      "operator_family": {
+        "input_bits": 3,
+        "dimension": 2,
+        "background_bits": 4,
+        "constant_rows_hex": [
+          "0x1",
+          "0x4"
+        ],
+        "variation_rows_hex": [
+          [
+            "0x1",
+            "0x0"
+          ],
+          [
+            "0x2",
+            "0x0"
+          ],
+          [
+            "0x0",
+            "0x1"
+          ],
+          [
+            "0x0",
+            "0x2"
+          ]
+        ],
+        "polar_operators_rows_hex": [
+          [
+            "0x1",
+            "0x2",
+            "0x0",
+            "0x0"
+          ],
+          [
+            "0x0",
+            "0x0",
+            "0x1",
+            "0x2"
+          ]
+        ],
+        "operator_convention": "D_l maps input U coefficients to background covector; rows indexed by V",
+        "decoder_or_candidate": false
+      },
+      "all_span_certificate": {
+        "status": "MAXIMAL_COMPLETE_ROW_BLOCK_AND_ALL_FIXED_SPANS_NECESSARY_GATE",
+        "background_matrix_image_dimension": 4,
+        "matrix_image_annihilator_basis_hex": [
+          "0x4",
+          "0x20"
+        ],
+        "complete_row_block_basis_hex": [
+          "0x1",
+          "0x2"
+        ],
+        "complete_row_block_dimension": 2,
+        "complete_row_block_codimension": 1,
+        "complete_row_block_background_witnesses_hex": [
+          [
+            "0x1",
+            "0x4"
+          ],
+          [
+            "0x2",
+            "0x8"
+          ]
+        ],
+        "annihilator_row_span_basis_hex": [
+          "0x4"
+        ],
+        "eligible_exact_fixed_pivot_span_must_annihilate_complete_row_block": true,
+        "every_n_dimensional_span_complete_block_rank_lower_bound": 1,
+        "every_n_dimensional_span_variation_image_dimension_lower_bound": 2,
+        "all_fixed_n_dimensional_spans_excluded_by_complete_block": true,
+        "all_fixed_n_dimensional_spans_excluded_by_dimension_theorem": true,
+        "all_fixed_spans_uniform_background_invertibility_fraction_upper_bound": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_hex": "0x2"
+        },
+        "dimension_theorem": {
+          "source": "https://arxiv.org/pdf/1004.0579",
+          "theorem": 9,
+          "field": "arbitrary field, including F2",
+          "maximum_nonsingular_affine_dimension": 1,
+          "classification_for_larger_fields_used": false
+        },
+        "background_uniformity_and_fixed_W_required_for_fraction_bound": true,
+        "background_adaptive_pivots_or_other_isotropic_charts_excluded": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      "weighted_radical_screen": {
+        "status": "EXACT_BOUNDED_WEIGHTED_RADICAL_SPAN_NECESSARY_GATE",
+        "combinations_evaluated": 3,
+        "combination_cap": 4095,
+        "weighted_radicals": [
+          {
+            "output_weight_hex": "0x1",
+            "radical_basis_hex": [
+              "0x4"
+            ]
+          },
+          {
+            "output_weight_hex": "0x2",
+            "radical_basis_hex": [
+              "0x4"
+            ]
+          },
+          {
+            "output_weight_hex": "0x3",
+            "radical_basis_hex": [
+              "0x4"
+            ]
+          }
+        ],
+        "eligible_direction_span_basis_hex": [
+          "0x4"
+        ],
+        "eligible_direction_span_dimension": 1,
+        "all_fixed_spans_excluded": true,
+        "necessary_gate_pass_proves_an_eligible_n_dimensional_pivot_span_exists": false,
+        "enumerating_weight_combinations_is_polynomial_in_unbounded_n": false,
+        "general_decoder_no_go": false,
+        "speedup_claim_allowed": false
+      },
+      "selected_span_certificate": {
+        "status": "ACTUAL_SELECTED_SPAN_NECESSARY_OBSTRUCTIONS_NOT_DECODER",
+        "directions_in_U_coordinates_hex": [
+          "0x1",
+          "0x4"
+        ],
+        "restricted_operator_family": {
+          "input_bits": 2,
+          "dimension": 2,
+          "background_bits": 4,
+          "constant_rows_hex": [
+            "0x1",
+            "0x2"
+          ],
+          "variation_rows_hex": [
+            [
+              "0x1",
+              "0x0"
+            ],
+            [
+              "0x0",
+              "0x0"
+            ],
+            [
+              "0x0",
+              "0x1"
+            ],
+            [
+              "0x0",
+              "0x0"
+            ]
+          ],
+          "polar_operators_rows_hex": [
+            [
+              "0x1",
+              "0x0",
+              "0x0",
+              "0x0"
+            ],
+            [
+              "0x0",
+              "0x0",
+              "0x1",
+              "0x0"
+            ]
+          ],
+          "operator_convention": "D_l maps input U coefficients to background covector; rows indexed by V",
+          "decoder_or_candidate": false
+        },
+        "complete_row_block": {
+          "status": "MAXIMAL_COMPLETE_ROW_BLOCK_AND_ALL_FIXED_SPANS_NECESSARY_GATE",
+          "background_matrix_image_dimension": 2,
+          "matrix_image_annihilator_basis_hex": [
+            "0x2",
+            "0x8"
+          ],
+          "complete_row_block_basis_hex": [
+            "0x1"
+          ],
+          "complete_row_block_dimension": 1,
+          "complete_row_block_codimension": 1,
+          "complete_row_block_background_witnesses_hex": [
+            [
+              "0x1",
+              "0x4"
+            ]
+          ],
+          "annihilator_row_span_basis_hex": [
+            "0x2"
+          ],
+          "eligible_exact_fixed_pivot_span_must_annihilate_complete_row_block": true,
+          "every_n_dimensional_span_complete_block_rank_lower_bound": 1,
+          "every_n_dimensional_span_variation_image_dimension_lower_bound": 2,
+          "all_fixed_n_dimensional_spans_excluded_by_complete_block": true,
+          "all_fixed_n_dimensional_spans_excluded_by_dimension_theorem": true,
+          "all_fixed_spans_uniform_background_invertibility_fraction_upper_bound": {
+            "sign": 1,
+            "numerator_hex": "0x1",
+            "denominator_hex": "0x2"
+          },
+          "dimension_theorem": {
+            "source": "https://arxiv.org/pdf/1004.0579",
+            "theorem": 9,
+            "field": "arbitrary field, including F2",
+            "maximum_nonsingular_affine_dimension": 1,
+            "classification_for_larger_fields_used": false
+          },
+          "background_uniformity_and_fixed_W_required_for_fraction_bound": true,
+          "background_adaptive_pivots_or_other_isotropic_charts_excluded": false,
+          "candidate_record_accepted": false,
+          "speedup_claim_allowed": false
+        },
+        "pencil_coverage": {
+          "status": "EXACT_SELECTED_BINARY_PIVOT_PENCIL_COVERAGE_NOT_DECODER_BOUND",
+          "constant_matrix_rows": [
+            1,
+            2
+          ],
+          "variation_generator_rows": [
+            [
+              1,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "dimension": 2,
+          "background_bits": 4,
+          "constant_matrix_rank": 2,
+          "background_matrix_image_rank": 2,
+          "individual_column_variation_ranks": [
+            2,
+            0
+          ],
+          "background_image_is_cartesian_product_of_column_spaces": true,
+          "all_columns_vary_and_separability_rules_out_every_constant_part": false,
+          "all_backgrounds_invertible_certified": false,
+          "exact_uniform_background_invertibility_fraction": null,
+          "singular_background_mask_hex": "0x1",
+          "singular_matrix_nonzero_kernel_vector_hex": "0x1",
+          "shortest_normalized_variation_cycle": [
+            0
+          ],
+          "backgrounds_enumerated_by_certificate": false,
+          "actual_native_chart_or_source_prevalence_proved_by_matrix_input": false,
+          "one_singular_background_proves_large_failure_mass": false,
+          "approximate_transport_or_general_algorithms_ruled_out": false,
+          "candidate_record_accepted": false,
+          "speedup_claim_allowed": false
+        },
+        "dimension_theorem_excludes_every_constant_part": true,
+        "all_backgrounds_invertible_excluded": true,
+        "surjective_direction_background_witness": {
+          "input_direction_hex": "0x1",
+          "background_mask_hex": "0x1"
+        },
+        "deterministic_direction_probe_menu_size": 3,
+        "successful_surjective_probes_before_stopping": 1,
+        "uniform_background_invertibility_fraction_upper_bound": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_hex": "0x2"
+        },
+        "nonzero_determinant_complement_boolean_degree_upper_bound": 2,
+        "no_obstruction_is_a_success_proof": false,
+        "fixed_span_may_depend_on_middle_labels_but_not_on_background": true,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      "control_is_an_algorithm_candidate": false
+    },
+    {
+      "name": "strict_triangular_positive_countercontrol",
+      "operator_family": {
+        "input_bits": 2,
+        "dimension": 2,
+        "background_bits": 1,
+        "constant_rows_hex": [
+          "0x1",
+          "0x2"
+        ],
+        "variation_rows_hex": [
+          [
+            "0x2",
+            "0x0"
+          ]
+        ],
+        "polar_operators_rows_hex": [
+          [
+            "0x2"
+          ],
+          [
+            "0x0"
+          ]
+        ],
+        "operator_convention": "D_l maps input U coefficients to background covector; rows indexed by V",
+        "decoder_or_candidate": false
+      },
+      "all_span_certificate": {
+        "status": "MAXIMAL_COMPLETE_ROW_BLOCK_AND_ALL_FIXED_SPANS_NECESSARY_GATE",
+        "background_matrix_image_dimension": 1,
+        "matrix_image_annihilator_basis_hex": [
+          "0x1",
+          "0x4",
+          "0x8"
+        ],
+        "complete_row_block_basis_hex": [],
+        "complete_row_block_dimension": 0,
+        "complete_row_block_codimension": 2,
+        "complete_row_block_background_witnesses_hex": [],
+        "annihilator_row_span_basis_hex": [
+          "0x1",
+          "0x2"
+        ],
+        "eligible_exact_fixed_pivot_span_must_annihilate_complete_row_block": true,
+        "every_n_dimensional_span_complete_block_rank_lower_bound": 0,
+        "every_n_dimensional_span_variation_image_dimension_lower_bound": 1,
+        "all_fixed_n_dimensional_spans_excluded_by_complete_block": false,
+        "all_fixed_n_dimensional_spans_excluded_by_dimension_theorem": false,
+        "all_fixed_spans_uniform_background_invertibility_fraction_upper_bound": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_hex": "0x1"
+        },
+        "dimension_theorem": {
+          "source": "https://arxiv.org/pdf/1004.0579",
+          "theorem": 9,
+          "field": "arbitrary field, including F2",
+          "maximum_nonsingular_affine_dimension": 1,
+          "classification_for_larger_fields_used": false
+        },
+        "background_uniformity_and_fixed_W_required_for_fraction_bound": true,
+        "background_adaptive_pivots_or_other_isotropic_charts_excluded": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      "weighted_radical_screen": {
+        "status": "EXACT_BOUNDED_WEIGHTED_RADICAL_SPAN_NECESSARY_GATE",
+        "combinations_evaluated": 3,
+        "combination_cap": 4095,
+        "weighted_radicals": [
+          {
+            "output_weight_hex": "0x1",
+            "radical_basis_hex": [
+              "0x1"
+            ]
+          },
+          {
+            "output_weight_hex": "0x2",
+            "radical_basis_hex": [
+              "0x1",
+              "0x2"
+            ]
+          },
+          {
+            "output_weight_hex": "0x3",
+            "radical_basis_hex": [
+              "0x1"
+            ]
+          }
+        ],
+        "eligible_direction_span_basis_hex": [
+          "0x1",
+          "0x2"
+        ],
+        "eligible_direction_span_dimension": 2,
+        "all_fixed_spans_excluded": false,
+        "necessary_gate_pass_proves_an_eligible_n_dimensional_pivot_span_exists": false,
+        "enumerating_weight_combinations_is_polynomial_in_unbounded_n": false,
+        "general_decoder_no_go": false,
+        "speedup_claim_allowed": false
+      },
+      "selected_span_certificate": {
+        "status": "ACTUAL_SELECTED_SPAN_NECESSARY_OBSTRUCTIONS_NOT_DECODER",
+        "directions_in_U_coordinates_hex": [
+          "0x1",
+          "0x2"
+        ],
+        "restricted_operator_family": {
+          "input_bits": 2,
+          "dimension": 2,
+          "background_bits": 1,
+          "constant_rows_hex": [
+            "0x1",
+            "0x2"
+          ],
+          "variation_rows_hex": [
+            [
+              "0x2",
+              "0x0"
+            ]
+          ],
+          "polar_operators_rows_hex": [
+            [
+              "0x2"
+            ],
+            [
+              "0x0"
+            ]
+          ],
+          "operator_convention": "D_l maps input U coefficients to background covector; rows indexed by V",
+          "decoder_or_candidate": false
+        },
+        "complete_row_block": {
+          "status": "MAXIMAL_COMPLETE_ROW_BLOCK_AND_ALL_FIXED_SPANS_NECESSARY_GATE",
+          "background_matrix_image_dimension": 1,
+          "matrix_image_annihilator_basis_hex": [
+            "0x1",
+            "0x4",
+            "0x8"
+          ],
+          "complete_row_block_basis_hex": [],
+          "complete_row_block_dimension": 0,
+          "complete_row_block_codimension": 2,
+          "complete_row_block_background_witnesses_hex": [],
+          "annihilator_row_span_basis_hex": [
+            "0x1",
+            "0x2"
+          ],
+          "eligible_exact_fixed_pivot_span_must_annihilate_complete_row_block": true,
+          "every_n_dimensional_span_complete_block_rank_lower_bound": 0,
+          "every_n_dimensional_span_variation_image_dimension_lower_bound": 1,
+          "all_fixed_n_dimensional_spans_excluded_by_complete_block": false,
+          "all_fixed_n_dimensional_spans_excluded_by_dimension_theorem": false,
+          "all_fixed_spans_uniform_background_invertibility_fraction_upper_bound": {
+            "sign": 1,
+            "numerator_hex": "0x1",
+            "denominator_hex": "0x1"
+          },
+          "dimension_theorem": {
+            "source": "https://arxiv.org/pdf/1004.0579",
+            "theorem": 9,
+            "field": "arbitrary field, including F2",
+            "maximum_nonsingular_affine_dimension": 1,
+            "classification_for_larger_fields_used": false
+          },
+          "background_uniformity_and_fixed_W_required_for_fraction_bound": true,
+          "background_adaptive_pivots_or_other_isotropic_charts_excluded": false,
+          "candidate_record_accepted": false,
+          "speedup_claim_allowed": false
+        },
+        "pencil_coverage": {
+          "status": "EXACT_SELECTED_BINARY_PIVOT_PENCIL_COVERAGE_NOT_DECODER_BOUND",
+          "constant_matrix_rows": [
+            1,
+            2
+          ],
+          "variation_generator_rows": [
+            [
+              2,
+              0
+            ]
+          ],
+          "dimension": 2,
+          "background_bits": 1,
+          "constant_matrix_rank": 2,
+          "background_matrix_image_rank": 1,
+          "individual_column_variation_ranks": [
+            0,
+            1
+          ],
+          "background_image_is_cartesian_product_of_column_spaces": true,
+          "all_columns_vary_and_separability_rules_out_every_constant_part": false,
+          "all_backgrounds_invertible_certified": true,
+          "exact_uniform_background_invertibility_fraction": {
+            "sign": 1,
+            "numerator_hex": "0x1",
+            "denominator_hex": "0x1"
+          },
+          "singular_background_mask_hex": null,
+          "singular_matrix_nonzero_kernel_vector_hex": null,
+          "shortest_normalized_variation_cycle": null,
+          "backgrounds_enumerated_by_certificate": false,
+          "actual_native_chart_or_source_prevalence_proved_by_matrix_input": false,
+          "one_singular_background_proves_large_failure_mass": false,
+          "approximate_transport_or_general_algorithms_ruled_out": false,
+          "candidate_record_accepted": false,
+          "speedup_claim_allowed": false
+        },
+        "dimension_theorem_excludes_every_constant_part": false,
+        "all_backgrounds_invertible_excluded": false,
+        "surjective_direction_background_witness": null,
+        "deterministic_direction_probe_menu_size": 3,
+        "successful_surjective_probes_before_stopping": 0,
+        "uniform_background_invertibility_fraction_upper_bound": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_hex": "0x1"
+        },
+        "nonzero_determinant_complement_boolean_degree_upper_bound": 1,
+        "no_obstruction_is_a_success_proof": false,
+        "fixed_span_may_depend_on_middle_labels_but_not_on_background": true,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      "control_is_an_algorithm_candidate": false
+    },
+    {
+      "name": "correlated_high_dimension_gate",
+      "operator_family": {
+        "input_bits": 3,
+        "dimension": 3,
+        "background_bits": 4,
+        "constant_rows_hex": [
+          "0x1",
+          "0x2",
+          "0x4"
+        ],
+        "variation_rows_hex": [
+          [
+            "0x3",
+            "0x0",
+            "0x0"
+          ],
+          [
+            "0x0",
+            "0x6",
+            "0x0"
+          ],
+          [
+            "0x0",
+            "0x0",
+            "0x5"
+          ],
+          [
+            "0x1",
+            "0x2",
+            "0x4"
+          ]
+        ],
+        "polar_operators_rows_hex": [
+          [
+            "0x3",
+            "0x0",
+            "0x0",
+            "0x1"
+          ],
+          [
+            "0x0",
+            "0x6",
+            "0x0",
+            "0x2"
+          ],
+          [
+            "0x0",
+            "0x0",
+            "0x5",
+            "0x4"
+          ]
+        ],
+        "operator_convention": "D_l maps input U coefficients to background covector; rows indexed by V",
+        "decoder_or_candidate": false
+      },
+      "all_span_certificate": {
+        "status": "MAXIMAL_COMPLETE_ROW_BLOCK_AND_ALL_FIXED_SPANS_NECESSARY_GATE",
+        "background_matrix_image_dimension": 4,
+        "matrix_image_annihilator_basis_hex": [
+          "0x143",
+          "0x4",
+          "0x8",
+          "0x170",
+          "0x80"
+        ],
+        "complete_row_block_basis_hex": [],
+        "complete_row_block_dimension": 0,
+        "complete_row_block_codimension": 3,
+        "complete_row_block_background_witnesses_hex": [],
+        "annihilator_row_span_basis_hex": [
+          "0x1",
+          "0x2",
+          "0x4"
+        ],
+        "eligible_exact_fixed_pivot_span_must_annihilate_complete_row_block": true,
+        "every_n_dimensional_span_complete_block_rank_lower_bound": 0,
+        "every_n_dimensional_span_variation_image_dimension_lower_bound": 4,
+        "all_fixed_n_dimensional_spans_excluded_by_complete_block": false,
+        "all_fixed_n_dimensional_spans_excluded_by_dimension_theorem": true,
+        "all_fixed_spans_uniform_background_invertibility_fraction_upper_bound": {
+          "sign": 1,
+          "numerator_hex": "0x7",
+          "denominator_hex": "0x8"
+        },
+        "dimension_theorem": {
+          "source": "https://arxiv.org/pdf/1004.0579",
+          "theorem": 9,
+          "field": "arbitrary field, including F2",
+          "maximum_nonsingular_affine_dimension": 3,
+          "classification_for_larger_fields_used": false
+        },
+        "background_uniformity_and_fixed_W_required_for_fraction_bound": true,
+        "background_adaptive_pivots_or_other_isotropic_charts_excluded": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      "weighted_radical_screen": {
+        "status": "EXACT_BOUNDED_WEIGHTED_RADICAL_SPAN_NECESSARY_GATE",
+        "combinations_evaluated": 7,
+        "combination_cap": 4095,
+        "weighted_radicals": [
+          {
+            "output_weight_hex": "0x1",
+            "radical_basis_hex": [
+              "0x4"
+            ]
+          },
+          {
+            "output_weight_hex": "0x2",
+            "radical_basis_hex": [
+              "0x1"
+            ]
+          },
+          {
+            "output_weight_hex": "0x3",
+            "radical_basis_hex": [
+              "0x7"
+            ]
+          },
+          {
+            "output_weight_hex": "0x4",
+            "radical_basis_hex": [
+              "0x2"
+            ]
+          },
+          {
+            "output_weight_hex": "0x5",
+            "radical_basis_hex": [
+              "0x7"
+            ]
+          },
+          {
+            "output_weight_hex": "0x6",
+            "radical_basis_hex": [
+              "0x7"
+            ]
+          },
+          {
+            "output_weight_hex": "0x7",
+            "radical_basis_hex": []
+          }
+        ],
+        "eligible_direction_span_basis_hex": [
+          "0x1",
+          "0x2",
+          "0x4"
+        ],
+        "eligible_direction_span_dimension": 3,
+        "all_fixed_spans_excluded": false,
+        "necessary_gate_pass_proves_an_eligible_n_dimensional_pivot_span_exists": false,
+        "enumerating_weight_combinations_is_polynomial_in_unbounded_n": false,
+        "general_decoder_no_go": false,
+        "speedup_claim_allowed": false
+      },
+      "selected_span_certificate": {
+        "status": "ACTUAL_SELECTED_SPAN_NECESSARY_OBSTRUCTIONS_NOT_DECODER",
+        "directions_in_U_coordinates_hex": [
+          "0x1",
+          "0x2",
+          "0x4"
+        ],
+        "restricted_operator_family": {
+          "input_bits": 3,
+          "dimension": 3,
+          "background_bits": 4,
+          "constant_rows_hex": [
+            "0x1",
+            "0x2",
+            "0x4"
+          ],
+          "variation_rows_hex": [
+            [
+              "0x3",
+              "0x0",
+              "0x0"
+            ],
+            [
+              "0x0",
+              "0x6",
+              "0x0"
+            ],
+            [
+              "0x0",
+              "0x0",
+              "0x5"
+            ],
+            [
+              "0x1",
+              "0x2",
+              "0x4"
+            ]
+          ],
+          "polar_operators_rows_hex": [
+            [
+              "0x3",
+              "0x0",
+              "0x0",
+              "0x1"
+            ],
+            [
+              "0x0",
+              "0x6",
+              "0x0",
+              "0x2"
+            ],
+            [
+              "0x0",
+              "0x0",
+              "0x5",
+              "0x4"
+            ]
+          ],
+          "operator_convention": "D_l maps input U coefficients to background covector; rows indexed by V",
+          "decoder_or_candidate": false
+        },
+        "complete_row_block": {
+          "status": "MAXIMAL_COMPLETE_ROW_BLOCK_AND_ALL_FIXED_SPANS_NECESSARY_GATE",
+          "background_matrix_image_dimension": 4,
+          "matrix_image_annihilator_basis_hex": [
+            "0x143",
+            "0x4",
+            "0x8",
+            "0x170",
+            "0x80"
+          ],
+          "complete_row_block_basis_hex": [],
+          "complete_row_block_dimension": 0,
+          "complete_row_block_codimension": 3,
+          "complete_row_block_background_witnesses_hex": [],
+          "annihilator_row_span_basis_hex": [
+            "0x1",
+            "0x2",
+            "0x4"
+          ],
+          "eligible_exact_fixed_pivot_span_must_annihilate_complete_row_block": true,
+          "every_n_dimensional_span_complete_block_rank_lower_bound": 0,
+          "every_n_dimensional_span_variation_image_dimension_lower_bound": 4,
+          "all_fixed_n_dimensional_spans_excluded_by_complete_block": false,
+          "all_fixed_n_dimensional_spans_excluded_by_dimension_theorem": true,
+          "all_fixed_spans_uniform_background_invertibility_fraction_upper_bound": {
+            "sign": 1,
+            "numerator_hex": "0x7",
+            "denominator_hex": "0x8"
+          },
+          "dimension_theorem": {
+            "source": "https://arxiv.org/pdf/1004.0579",
+            "theorem": 9,
+            "field": "arbitrary field, including F2",
+            "maximum_nonsingular_affine_dimension": 3,
+            "classification_for_larger_fields_used": false
+          },
+          "background_uniformity_and_fixed_W_required_for_fraction_bound": true,
+          "background_adaptive_pivots_or_other_isotropic_charts_excluded": false,
+          "candidate_record_accepted": false,
+          "speedup_claim_allowed": false
+        },
+        "pencil_coverage": {
+          "status": "EXACT_SELECTED_BINARY_PIVOT_PENCIL_COVERAGE_NOT_DECODER_BOUND",
+          "constant_matrix_rows": [
+            1,
+            2,
+            4
+          ],
+          "variation_generator_rows": [
+            [
+              3,
+              0,
+              0
+            ],
+            [
+              0,
+              6,
+              0
+            ],
+            [
+              0,
+              0,
+              5
+            ],
+            [
+              1,
+              2,
+              4
+            ]
+          ],
+          "dimension": 3,
+          "background_bits": 4,
+          "constant_matrix_rank": 3,
+          "background_matrix_image_rank": 4,
+          "individual_column_variation_ranks": [
+            2,
+            2,
+            2
+          ],
+          "background_image_is_cartesian_product_of_column_spaces": false,
+          "all_columns_vary_and_separability_rules_out_every_constant_part": false,
+          "all_backgrounds_invertible_certified": false,
+          "exact_uniform_background_invertibility_fraction": null,
+          "singular_background_mask_hex": null,
+          "singular_matrix_nonzero_kernel_vector_hex": null,
+          "shortest_normalized_variation_cycle": null,
+          "backgrounds_enumerated_by_certificate": false,
+          "actual_native_chart_or_source_prevalence_proved_by_matrix_input": false,
+          "one_singular_background_proves_large_failure_mass": false,
+          "approximate_transport_or_general_algorithms_ruled_out": false,
+          "candidate_record_accepted": false,
+          "speedup_claim_allowed": false
+        },
+        "dimension_theorem_excludes_every_constant_part": true,
+        "all_backgrounds_invertible_excluded": true,
+        "surjective_direction_background_witness": {
+          "input_direction_hex": "0x3",
+          "background_mask_hex": "0x8"
+        },
+        "deterministic_direction_probe_menu_size": 6,
+        "successful_surjective_probes_before_stopping": 1,
+        "uniform_background_invertibility_fraction_upper_bound": {
+          "sign": 1,
+          "numerator_hex": "0x7",
+          "denominator_hex": "0x8"
+        },
+        "nonzero_determinant_complement_boolean_degree_upper_bound": 3,
+        "no_obstruction_is_a_success_proof": false,
+        "fixed_span_may_depend_on_middle_labels_but_not_on_background": true,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      "control_is_an_algorithm_candidate": false
+    }
+  ],
+  "native_correlated_positive_packet": {
+    "operator_family": {
+      "input_bits": 2,
+      "dimension": 2,
+      "background_bits": 1,
+      "constant_rows_hex": [
+        "0x2",
+        "0x3"
+      ],
+      "variation_rows_hex": [
+        [
+          "0x1",
+          "0x2"
+        ]
+      ],
+      "polar_operators_rows_hex": [
+        [
+          "0x1"
+        ],
+        [
+          "0x2"
+        ]
+      ],
+      "operator_convention": "D_l maps input U coefficients to background covector; rows indexed by V",
+      "decoder_or_candidate": false
+    },
+    "provenance": {
+      "actual_packet_operator_family": true,
+      "labels": [
+        [
+          1,
+          0,
+          3,
+          2,
+          1
+        ],
+        [
+          0,
+          1,
+          2,
+          1,
+          1
+        ]
+      ],
+      "modulus": 8,
+      "logical_width": 3,
+      "isotropic_directions_hex": [
+        "0x1",
+        "0x2"
+      ],
+      "complement_directions_hex": [
+        "0x4"
+      ],
+      "variation_selected_from_binary_labels_only": true,
+      "constant_part_depends_on_middle_label_bits": true,
+      "input_assignments_or_secret_states_enumerated": false,
+      "native_source_prevalence_verified": false
+    },
+    "physical_code_schur_certificate": {
+      "status": "EXACT_PHYSICAL_CODE_SCHUR_PRODUCT_REFORMULATION",
+      "physical_pivot_directions_hex": [
+        "0x5",
+        "0xa"
+      ],
+      "dual_code_rows_hex": [
+        "0x15",
+        "0x1a"
+      ],
+      "polar_variation_dimension": 1,
+      "identity": "dim(C_perp + C_perp*W_physical)-n; * is coordinatewise product",
+      "individual_column_variation_dimensions": [
+        1,
+        1
+      ],
+      "disjoint_physical_supports": true,
+      "unused_physical_columns_binary_rank": 1,
+      "disjoint_support_and_unused_full_rank_certify_column_separability": false,
+      "all_constant_parts_excluded_by_disjoint_support_gate": false,
+      "selected_span_excluded_by_nonsingular_dimension_bound": false,
+      "low_product_dimension_proves_a_nonsingular_pencil_exists": false,
+      "all_code_subspaces_or_quantum_decoders_excluded": false,
+      "candidate_record_accepted": false,
+      "speedup_claim_allowed": false
+    },
+    "certificate": {
+      "status": "ACTUAL_SELECTED_SPAN_NECESSARY_OBSTRUCTIONS_NOT_DECODER",
+      "directions_in_U_coordinates_hex": [
+        "0x1",
+        "0x2"
+      ],
+      "restricted_operator_family": {
+        "input_bits": 2,
+        "dimension": 2,
+        "background_bits": 1,
+        "constant_rows_hex": [
+          "0x2",
+          "0x3"
+        ],
+        "variation_rows_hex": [
+          [
+            "0x1",
+            "0x2"
+          ]
+        ],
+        "polar_operators_rows_hex": [
+          [
+            "0x1"
+          ],
+          [
+            "0x2"
+          ]
+        ],
+        "operator_convention": "D_l maps input U coefficients to background covector; rows indexed by V",
+        "decoder_or_candidate": false
+      },
+      "complete_row_block": {
+        "status": "MAXIMAL_COMPLETE_ROW_BLOCK_AND_ALL_FIXED_SPANS_NECESSARY_GATE",
+        "background_matrix_image_dimension": 1,
+        "matrix_image_annihilator_basis_hex": [
+          "0x9",
+          "0x2",
+          "0x4"
+        ],
+        "complete_row_block_basis_hex": [],
+        "complete_row_block_dimension": 0,
+        "complete_row_block_codimension": 2,
+        "complete_row_block_background_witnesses_hex": [],
+        "annihilator_row_span_basis_hex": [
+          "0x1",
+          "0x2"
+        ],
+        "eligible_exact_fixed_pivot_span_must_annihilate_complete_row_block": true,
+        "every_n_dimensional_span_complete_block_rank_lower_bound": 0,
+        "every_n_dimensional_span_variation_image_dimension_lower_bound": 1,
+        "all_fixed_n_dimensional_spans_excluded_by_complete_block": false,
+        "all_fixed_n_dimensional_spans_excluded_by_dimension_theorem": false,
+        "all_fixed_spans_uniform_background_invertibility_fraction_upper_bound": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_hex": "0x1"
+        },
+        "dimension_theorem": {
+          "source": "https://arxiv.org/pdf/1004.0579",
+          "theorem": 9,
+          "field": "arbitrary field, including F2",
+          "maximum_nonsingular_affine_dimension": 1,
+          "classification_for_larger_fields_used": false
+        },
+        "background_uniformity_and_fixed_W_required_for_fraction_bound": true,
+        "background_adaptive_pivots_or_other_isotropic_charts_excluded": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      "pencil_coverage": {
+        "status": "EXACT_SELECTED_BINARY_PIVOT_PENCIL_COVERAGE_NOT_DECODER_BOUND",
+        "constant_matrix_rows": [
+          2,
+          3
+        ],
+        "variation_generator_rows": [
+          [
+            1,
+            2
+          ]
+        ],
+        "dimension": 2,
+        "background_bits": 1,
+        "constant_matrix_rank": 2,
+        "background_matrix_image_rank": 1,
+        "individual_column_variation_ranks": [
+          1,
+          1
+        ],
+        "background_image_is_cartesian_product_of_column_spaces": false,
+        "all_columns_vary_and_separability_rules_out_every_constant_part": false,
+        "all_backgrounds_invertible_certified": false,
+        "exact_uniform_background_invertibility_fraction": null,
+        "singular_background_mask_hex": null,
+        "singular_matrix_nonzero_kernel_vector_hex": null,
+        "shortest_normalized_variation_cycle": null,
+        "backgrounds_enumerated_by_certificate": false,
+        "actual_native_chart_or_source_prevalence_proved_by_matrix_input": false,
+        "one_singular_background_proves_large_failure_mass": false,
+        "approximate_transport_or_general_algorithms_ruled_out": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      "dimension_theorem_excludes_every_constant_part": false,
+      "all_backgrounds_invertible_excluded": false,
+      "surjective_direction_background_witness": null,
+      "deterministic_direction_probe_menu_size": 3,
+      "successful_surjective_probes_before_stopping": 0,
+      "uniform_background_invertibility_fraction_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x1"
+      },
+      "nonzero_determinant_complement_boolean_degree_upper_bound": 1,
+      "no_obstruction_is_a_success_proof": false,
+      "fixed_span_may_depend_on_middle_labels_but_not_on_background": true,
+      "candidate_record_accepted": false,
+      "speedup_claim_allowed": false
+    }
+  },
+  "systematic_actual_packet_operator_profiles": [
+    {
+      "operator_family": {
+        "input_bits": 19,
+        "dimension": 2,
+        "background_bits": 13,
+        "constant_rows_hex": [
+          "0x2baa7",
+          "0x8f47"
+        ],
+        "variation_rows_hex": [
+          [
+            "0xc",
+            "0xc"
+          ],
+          [
+            "0x44",
+            "0x44"
+          ],
+          [
+            "0x0",
+            "0x44"
+          ],
+          [
+            "0x204",
+            "0x0"
+          ],
+          [
+            "0x0",
+            "0x84"
+          ],
+          [
+            "0x104",
+            "0x104"
+          ],
+          [
+            "0x804",
+            "0x804"
+          ],
+          [
+            "0x0",
+            "0x404"
+          ],
+          [
+            "0x2004",
+            "0x0"
+          ],
+          [
+            "0x4004",
+            "0x4004"
+          ],
+          [
+            "0x0",
+            "0x10004"
+          ],
+          [
+            "0x20004",
+            "0x0"
+          ],
+          [
+            "0x0",
+            "0x40004"
+          ]
+        ],
+        "polar_operators_rows_hex": [
+          [
+            "0xc",
+            "0x44",
+            "0x0",
+            "0x204",
+            "0x0",
+            "0x104",
+            "0x804",
+            "0x0",
+            "0x2004",
+            "0x4004",
+            "0x0",
+            "0x20004",
+            "0x0"
+          ],
+          [
+            "0xc",
+            "0x44",
+            "0x44",
+            "0x0",
+            "0x84",
+            "0x104",
+            "0x804",
+            "0x404",
+            "0x0",
+            "0x4004",
+            "0x10004",
+            "0x0",
+            "0x40004"
+          ]
+        ],
+        "operator_convention": "D_l maps input U coefficients to background covector; rows indexed by V",
+        "decoder_or_candidate": false
+      },
+      "provenance": {
+        "actual_packet_operator_family": true,
+        "labels": [
+          [
+            179,
+            54,
+            310,
+            402,
+            281,
+            195,
+            129,
+            487,
+            148,
+            402,
+            368,
+            213,
+            219,
+            96,
+            254,
+            183,
+            273,
+            407,
+            267,
+            194,
+            158,
+            253,
+            75,
+            151,
+            430,
+            437,
+            225,
+            378,
+            62,
+            234,
+            285,
+            396,
+            377,
+            260
+          ],
+          [
+            286,
+            335,
+            22,
+            18,
+            341,
+            191,
+            129,
+            297,
+            440,
+            120,
+            223,
+            134,
+            364,
+            297,
+            455,
+            383,
+            31,
+            214,
+            57,
+            325,
+            313,
+            342,
+            409,
+            453,
+            480,
+            302,
+            403,
+            209,
+            322,
+            435,
+            52,
+            61,
+            440,
+            299
+          ]
+        ],
+        "modulus": 512,
+        "logical_width": 32,
+        "isotropic_directions_hex": [
+          "0x1",
+          "0x2",
+          "0x4",
+          "0x18",
+          "0x40",
+          "0x80",
+          "0x320",
+          "0x1800",
+          "0x6000",
+          "0x8400",
+          "0x60000",
+          "0x110000",
+          "0x400000",
+          "0x880000",
+          "0x1200000",
+          "0x4000000",
+          "0xa000000",
+          "0x50000000",
+          "0xa0000000"
+        ],
+        "complement_directions_hex": [
+          "0x8",
+          "0x20",
+          "0x100",
+          "0x400",
+          "0x800",
+          "0x2000",
+          "0x10000",
+          "0x20000",
+          "0x80000",
+          "0x200000",
+          "0x2000000",
+          "0x10000000",
+          "0x20000000"
+        ],
+        "variation_selected_from_binary_labels_only": true,
+        "constant_part_depends_on_middle_label_bits": true,
+        "input_assignments_or_secret_states_enumerated": false,
+        "native_source_prevalence_verified": false
+      },
+      "source_scope": "systematic fixed-prefix finite profile; not an unconditional native success estimate",
+      "all_span_certificate": {
+        "status": "MAXIMAL_COMPLETE_ROW_BLOCK_AND_ALL_FIXED_SPANS_NECESSARY_GATE",
+        "background_matrix_image_dimension": 13,
+        "matrix_image_annihilator_basis_hex": [
+          "0x1",
+          "0x2",
+          "0x248422244",
+          "0x400008",
+          "0x10",
+          "0x20",
+          "0x80",
+          "0x8000100",
+          "0x400",
+          "0x40000800",
+          "0x1000",
+          "0x200004000",
+          "0x8000",
+          "0x10000",
+          "0x40000",
+          "0x80000",
+          "0x100000",
+          "0x2a6e600000",
+          "0x800000",
+          "0x1000000",
+          "0x10000000",
+          "0x80000000",
+          "0x100000000",
+          "0x400000000",
+          "0x1000000000"
+        ],
+        "complete_row_block_basis_hex": [
+          "0x44"
+        ],
+        "complete_row_block_dimension": 1,
+        "complete_row_block_codimension": 18,
+        "complete_row_block_background_witnesses_hex": [
+          [
+            "0x6",
+            "0x4"
+          ]
+        ],
+        "annihilator_row_span_basis_hex": [
+          "0x1",
+          "0x2",
+          "0x8",
+          "0x10",
+          "0x20",
+          "0x44",
+          "0x80",
+          "0x100",
+          "0x200",
+          "0x400",
+          "0x800",
+          "0x1000",
+          "0x2000",
+          "0x4000",
+          "0x8000",
+          "0x10000",
+          "0x20000",
+          "0x40000"
+        ],
+        "eligible_exact_fixed_pivot_span_must_annihilate_complete_row_block": true,
+        "every_n_dimensional_span_complete_block_rank_lower_bound": 0,
+        "every_n_dimensional_span_variation_image_dimension_lower_bound": 0,
+        "all_fixed_n_dimensional_spans_excluded_by_complete_block": false,
+        "all_fixed_n_dimensional_spans_excluded_by_dimension_theorem": false,
+        "all_fixed_spans_uniform_background_invertibility_fraction_upper_bound": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_hex": "0x1"
+        },
+        "dimension_theorem": {
+          "source": "https://arxiv.org/pdf/1004.0579",
+          "theorem": 9,
+          "field": "arbitrary field, including F2",
+          "maximum_nonsingular_affine_dimension": 1,
+          "classification_for_larger_fields_used": false
+        },
+        "background_uniformity_and_fixed_W_required_for_fraction_bound": true,
+        "background_adaptive_pivots_or_other_isotropic_charts_excluded": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      "weighted_radical_screen": {
+        "status": "EXACT_BOUNDED_WEIGHTED_RADICAL_SPAN_NECESSARY_GATE",
+        "combinations_evaluated": 3,
+        "combination_cap": 4095,
+        "weighted_radicals": [
+          {
+            "output_weight_hex": "0x1",
+            "radical_basis_hex": [
+              "0x1",
+              "0x2",
+              "0x26b4c",
+              "0x10",
+              "0x20",
+              "0x80",
+              "0x400",
+              "0x1000",
+              "0x8000",
+              "0x10000",
+              "0x40000"
+            ]
+          },
+          {
+            "output_weight_hex": "0x2",
+            "radical_basis_hex": [
+              "0x1",
+              "0x2",
+              "0x54dcc",
+              "0x10",
+              "0x20",
+              "0x200",
+              "0x1000",
+              "0x2000",
+              "0x8000",
+              "0x20000"
+            ]
+          },
+          {
+            "output_weight_hex": "0x3",
+            "radical_basis_hex": [
+              "0x1",
+              "0x2",
+              "0x726c4",
+              "0x8",
+              "0x10",
+              "0x20",
+              "0x100",
+              "0x800",
+              "0x1000",
+              "0x4000",
+              "0x8000"
+            ]
+          }
+        ],
+        "eligible_direction_span_basis_hex": [
+          "0x1",
+          "0x2",
+          "0x8",
+          "0x10",
+          "0x20",
+          "0x44",
+          "0x80",
+          "0x100",
+          "0x200",
+          "0x400",
+          "0x800",
+          "0x1000",
+          "0x2000",
+          "0x4000",
+          "0x8000",
+          "0x10000",
+          "0x20000",
+          "0x40000"
+        ],
+        "eligible_direction_span_dimension": 18,
+        "all_fixed_spans_excluded": false,
+        "necessary_gate_pass_proves_an_eligible_n_dimensional_pivot_span_exists": false,
+        "enumerating_weight_combinations_is_polynomial_in_unbounded_n": false,
+        "general_decoder_no_go": false,
+        "speedup_claim_allowed": false
+      },
+      "physical_code_schur_certificate": {
+        "status": "EXACT_PHYSICAL_CODE_SCHUR_PRODUCT_REFORMULATION",
+        "physical_pivot_directions_hex": [
+          "0x4",
+          "0x8"
+        ],
+        "dual_code_rows_hex": [
+          "0x146e798f1",
+          "0x2acdde4f2"
+        ],
+        "polar_variation_dimension": 0,
+        "identity": "dim(C_perp + C_perp*W_physical)-n; * is coordinatewise product",
+        "individual_column_variation_dimensions": [
+          0,
+          0
+        ],
+        "disjoint_physical_supports": true,
+        "unused_physical_columns_binary_rank": 2,
+        "disjoint_support_and_unused_full_rank_certify_column_separability": true,
+        "all_constant_parts_excluded_by_disjoint_support_gate": false,
+        "selected_span_excluded_by_nonsingular_dimension_bound": false,
+        "low_product_dimension_proves_a_nonsingular_pencil_exists": false,
+        "all_code_subspaces_or_quantum_decoders_excluded": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      "first_basis_pivot_span_certificate": {
+        "status": "ACTUAL_SELECTED_SPAN_NECESSARY_OBSTRUCTIONS_NOT_DECODER",
+        "directions_in_U_coordinates_hex": [
+          "0x1",
+          "0x2"
+        ],
+        "restricted_operator_family": {
+          "input_bits": 2,
+          "dimension": 2,
+          "background_bits": 13,
+          "constant_rows_hex": [
+            "0x3",
+            "0x3"
+          ],
+          "variation_rows_hex": [
+            [
+              "0x0",
+              "0x0"
+            ],
+            [
+              "0x0",
+              "0x0"
+            ],
+            [
+              "0x0",
+              "0x0"
+            ],
+            [
+              "0x0",
+              "0x0"
+            ],
+            [
+              "0x0",
+              "0x0"
+            ],
+            [
+              "0x0",
+              "0x0"
+            ],
+            [
+              "0x0",
+              "0x0"
+            ],
+            [
+              "0x0",
+              "0x0"
+            ],
+            [
+              "0x0",
+              "0x0"
+            ],
+            [
+              "0x0",
+              "0x0"
+            ],
+            [
+              "0x0",
+              "0x0"
+            ],
+            [
+              "0x0",
+              "0x0"
+            ],
+            [
+              "0x0",
+              "0x0"
+            ]
+          ],
+          "polar_operators_rows_hex": [
+            [
+              "0x0",
+              "0x0",
+              "0x0",
+              "0x0",
+              "0x0",
+              "0x0",
+              "0x0",
+              "0x0",
+              "0x0",
+              "0x0",
+              "0x0",
+              "0x0",
+              "0x0"
+            ],
+            [
+              "0x0",
+              "0x0",
+              "0x0",
+              "0x0",
+              "0x0",
+              "0x0",
+              "0x0",
+              "0x0",
+              "0x0",
+              "0x0",
+              "0x0",
+              "0x0",
+              "0x0"
+            ]
+          ],
+          "operator_convention": "D_l maps input U coefficients to background covector; rows indexed by V",
+          "decoder_or_candidate": false
+        },
+        "complete_row_block": {
+          "status": "MAXIMAL_COMPLETE_ROW_BLOCK_AND_ALL_FIXED_SPANS_NECESSARY_GATE",
+          "background_matrix_image_dimension": 0,
+          "matrix_image_annihilator_basis_hex": [
+            "0x1",
+            "0x2",
+            "0x4",
+            "0x8"
+          ],
+          "complete_row_block_basis_hex": [],
+          "complete_row_block_dimension": 0,
+          "complete_row_block_codimension": 2,
+          "complete_row_block_background_witnesses_hex": [],
+          "annihilator_row_span_basis_hex": [
+            "0x1",
+            "0x2"
+          ],
+          "eligible_exact_fixed_pivot_span_must_annihilate_complete_row_block": true,
+          "every_n_dimensional_span_complete_block_rank_lower_bound": 0,
+          "every_n_dimensional_span_variation_image_dimension_lower_bound": 0,
+          "all_fixed_n_dimensional_spans_excluded_by_complete_block": false,
+          "all_fixed_n_dimensional_spans_excluded_by_dimension_theorem": false,
+          "all_fixed_spans_uniform_background_invertibility_fraction_upper_bound": {
+            "sign": 1,
+            "numerator_hex": "0x1",
+            "denominator_hex": "0x1"
+          },
+          "dimension_theorem": {
+            "source": "https://arxiv.org/pdf/1004.0579",
+            "theorem": 9,
+            "field": "arbitrary field, including F2",
+            "maximum_nonsingular_affine_dimension": 1,
+            "classification_for_larger_fields_used": false
+          },
+          "background_uniformity_and_fixed_W_required_for_fraction_bound": true,
+          "background_adaptive_pivots_or_other_isotropic_charts_excluded": false,
+          "candidate_record_accepted": false,
+          "speedup_claim_allowed": false
+        },
+        "pencil_coverage": {
+          "status": "EXACT_SELECTED_BINARY_PIVOT_PENCIL_COVERAGE_NOT_DECODER_BOUND",
+          "constant_matrix_rows": [
+            3,
+            3
+          ],
+          "variation_generator_rows": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "dimension": 2,
+          "background_bits": 13,
+          "constant_matrix_rank": 1,
+          "background_matrix_image_rank": 0,
+          "individual_column_variation_ranks": [
+            0,
+            0
+          ],
+          "background_image_is_cartesian_product_of_column_spaces": true,
+          "all_columns_vary_and_separability_rules_out_every_constant_part": false,
+          "all_backgrounds_invertible_certified": false,
+          "exact_uniform_background_invertibility_fraction": {
+            "sign": 0,
+            "numerator_hex": "0x0",
+            "denominator_hex": "0x1"
+          },
+          "singular_background_mask_hex": "0x0",
+          "singular_matrix_nonzero_kernel_vector_hex": "0x3",
+          "shortest_normalized_variation_cycle": null,
+          "backgrounds_enumerated_by_certificate": false,
+          "actual_native_chart_or_source_prevalence_proved_by_matrix_input": false,
+          "one_singular_background_proves_large_failure_mass": false,
+          "approximate_transport_or_general_algorithms_ruled_out": false,
+          "candidate_record_accepted": false,
+          "speedup_claim_allowed": false
+        },
+        "dimension_theorem_excludes_every_constant_part": false,
+        "all_backgrounds_invertible_excluded": true,
+        "surjective_direction_background_witness": null,
+        "deterministic_direction_probe_menu_size": 3,
+        "successful_surjective_probes_before_stopping": 0,
+        "uniform_background_invertibility_fraction_upper_bound": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "nonzero_determinant_complement_boolean_degree_upper_bound": 0,
+        "no_obstruction_is_a_success_proof": false,
+        "fixed_span_may_depend_on_middle_labels_but_not_on_background": true,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      }
+    },
+    {
+      "operator_family": {
+        "input_bits": 23,
+        "dimension": 3,
+        "background_bits": 29,
+        "constant_rows_hex": [
+          "0x6caa85",
+          "0x1fee79",
+          "0x2be99b"
+        ],
+        "variation_rows_hex": [
+          [
+            "0x3",
+            "0x3",
+            "0x0"
+          ],
+          [
+            "0x0",
+            "0x3",
+            "0x0"
+          ],
+          [
+            "0x0",
+            "0x0",
+            "0x5"
+          ],
+          [
+            "0x5",
+            "0x0",
+            "0x0"
+          ],
+          [
+            "0x0",
+            "0x11",
+            "0x0"
+          ],
+          [
+            "0x0",
+            "0x0",
+            "0x41"
+          ],
+          [
+            "0x9",
+            "0x0",
+            "0x0"
+          ],
+          [
+            "0x81",
+            "0x81",
+            "0x0"
+          ],
+          [
+            "0x0",
+            "0x41",
+            "0x0"
+          ],
+          [
+            "0x0",
+            "0x0",
+            "0x101"
+          ],
+          [
+            "0x101",
+            "0x101",
+            "0x101"
+          ],
+          [
+            "0x0",
+            "0x401",
+            "0x401"
+          ],
+          [
+            "0x0",
+            "0x0",
+            "0x201"
+          ],
+          [
+            "0x2001",
+            "0x0",
+            "0x0"
+          ],
+          [
+            "0x0",
+            "0x401",
+            "0x0"
+          ],
+          [
+            "0x801",
+            "0x801",
+            "0x0"
+          ],
+          [
+            "0x4001",
+            "0x4001",
+            "0x0"
+          ],
+          [
+            "0x0",
+            "0x4001",
+            "0x4001"
+          ],
+          [
+            "0x4001",
+            "0x0",
+            "0x0"
+          ],
+          [
+            "0x8001",
+            "0x0",
+            "0x8001"
+          ],
+          [
+            "0x0",
+            "0x20001",
+            "0x0"
+          ],
+          [
+            "0x0",
+            "0x10001",
+            "0x10001"
+          ],
+          [
+            "0x20001",
+            "0x20001",
+            "0x0"
+          ],
+          [
+            "0x0",
+            "0x0",
+            "0x40001"
+          ],
+          [
+            "0x0",
+            "0x100001",
+            "0x100001"
+          ],
+          [
+            "0x200001",
+            "0x0",
+            "0x0"
+          ],
+          [
+            "0x80001",
+            "0x80001",
+            "0x0"
+          ],
+          [
+            "0x0",
+            "0x100001",
+            "0x0"
+          ],
+          [
+            "0x1",
+            "0x0",
+            "0x1"
+          ]
+        ],
+        "polar_operators_rows_hex": [
+          [
+            "0x3",
+            "0x0",
+            "0x0",
+            "0x5",
+            "0x0",
+            "0x0",
+            "0x9",
+            "0x81",
+            "0x0",
+            "0x0",
+            "0x101",
+            "0x0",
+            "0x0",
+            "0x2001",
+            "0x0",
+            "0x801",
+            "0x4001",
+            "0x0",
+            "0x4001",
+            "0x8001",
+            "0x0",
+            "0x0",
+            "0x20001",
+            "0x0",
+            "0x0",
+            "0x200001",
+            "0x80001",
+            "0x0",
+            "0x1"
+          ],
+          [
+            "0x3",
+            "0x3",
+            "0x0",
+            "0x0",
+            "0x11",
+            "0x0",
+            "0x0",
+            "0x81",
+            "0x41",
+            "0x0",
+            "0x101",
+            "0x401",
+            "0x0",
+            "0x0",
+            "0x401",
+            "0x801",
+            "0x4001",
+            "0x4001",
+            "0x0",
+            "0x0",
+            "0x20001",
+            "0x10001",
+            "0x20001",
+            "0x0",
+            "0x100001",
+            "0x0",
+            "0x80001",
+            "0x100001",
+            "0x0"
+          ],
+          [
+            "0x0",
+            "0x0",
+            "0x5",
+            "0x0",
+            "0x0",
+            "0x41",
+            "0x0",
+            "0x0",
+            "0x0",
+            "0x101",
+            "0x101",
+            "0x401",
+            "0x201",
+            "0x0",
+            "0x0",
+            "0x0",
+            "0x0",
+            "0x4001",
+            "0x0",
+            "0x8001",
+            "0x0",
+            "0x10001",
+            "0x0",
+            "0x40001",
+            "0x100001",
+            "0x0",
+            "0x0",
+            "0x0",
+            "0x1"
+          ]
+        ],
+        "operator_convention": "D_l maps input U coefficients to background covector; rows indexed by V",
+        "decoder_or_candidate": false
+      },
+      "provenance": {
+        "actual_packet_operator_family": true,
+        "labels": [
+          [
+            7575,
+            4928,
+            204,
+            2671,
+            2383,
+            5578,
+            4955,
+            5342,
+            5875,
+            6964,
+            4489,
+            3528,
+            3531,
+            4941,
+            7932,
+            6927,
+            8032,
+            2446,
+            3190,
+            1883,
+            6832,
+            3553,
+            1732,
+            2159,
+            484,
+            3622,
+            4477,
+            802,
+            3702,
+            953,
+            5993,
+            2093,
+            830,
+            4164,
+            6249,
+            7985,
+            2324,
+            2269,
+            4825,
+            4490,
+            1922,
+            5547,
+            414,
+            5516,
+            1367,
+            3428,
+            2898,
+            1929,
+            6179,
+            1695,
+            1686,
+            7946,
+            4713,
+            4414,
+            4283
+          ],
+          [
+            4944,
+            4065,
+            5782,
+            6303,
+            7507,
+            7575,
+            6314,
+            5424,
+            6676,
+            1831,
+            8076,
+            912,
+            7750,
+            280,
+            3427,
+            5737,
+            3318,
+            2587,
+            3563,
+            2111,
+            4110,
+            6605,
+            1035,
+            5485,
+            380,
+            6546,
+            6508,
+            4355,
+            6548,
+            2783,
+            579,
+            2463,
+            1077,
+            1376,
+            5738,
+            5454,
+            668,
+            5118,
+            5356,
+            8049,
+            1577,
+            5243,
+            3693,
+            7352,
+            4814,
+            7873,
+            4350,
+            3284,
+            2219,
+            1951,
+            1293,
+            7348,
+            7008,
+            3864,
+            6004
+          ],
+          [
+            8034,
+            3698,
+            217,
+            7681,
+            4890,
+            350,
+            4202,
+            6827,
+            4778,
+            1312,
+            5751,
+            2835,
+            4078,
+            1268,
+            7898,
+            2340,
+            2068,
+            450,
+            2011,
+            2354,
+            171,
+            7223,
+            1101,
+            2364,
+            5345,
+            6659,
+            4714,
+            5218,
+            3285,
+            2056,
+            5710,
+            4350,
+            2513,
+            3276,
+            5160,
+            4126,
+            5601,
+            7337,
+            2605,
+            6740,
+            1851,
+            5416,
+            4327,
+            1839,
+            1858,
+            6843,
+            3621,
+            6456,
+            7856,
+            1694,
+            334,
+            6751,
+            7506,
+            4564,
+            799
+          ]
+        ],
+        "modulus": 8192,
+        "logical_width": 52,
+        "isotropic_directions_hex": [
+          "0x1",
+          "0xe",
+          "0xb0",
+          "0x600",
+          "0x840",
+          "0x2000",
+          "0xc100",
+          "0x11000",
+          "0x160000",
+          "0x600000",
+          "0x3080000",
+          "0xc000000",
+          "0x40000000",
+          "0x80800000",
+          "0x330000000",
+          "0xc00000000",
+          "0xa000000000",
+          "0x25000000000",
+          "0x90000000000",
+          "0x600000000000",
+          "0x1840000000000",
+          "0x2100000000000",
+          "0x4000000000000"
+        ],
+        "complement_directions_hex": [
+          "0x2",
+          "0x4",
+          "0x10",
+          "0x20",
+          "0x40",
+          "0x100",
+          "0x200",
+          "0x1000",
+          "0x4000",
+          "0x20000",
+          "0x40000",
+          "0x80000",
+          "0x200000",
+          "0x800000",
+          "0x1000000",
+          "0x4000000",
+          "0x10000000",
+          "0x20000000",
+          "0x100000000",
+          "0x400000000",
+          "0x1000000000",
+          "0x2000000000",
+          "0x4000000000",
+          "0x10000000000",
+          "0x40000000000",
+          "0x100000000000",
+          "0x200000000000",
+          "0x800000000000",
+          "0x8000000000000"
+        ],
+        "variation_selected_from_binary_labels_only": true,
+        "constant_part_depends_on_middle_label_bits": true,
+        "input_assignments_or_secret_states_enumerated": false,
+        "native_source_prevalence_verified": false
+      },
+      "source_scope": "systematic fixed-prefix finite profile; not an unconditional native success estimate",
+      "all_span_certificate": {
+        "status": "MAXIMAL_COMPLETE_ROW_BLOCK_AND_ALL_FIXED_SPANS_NECESSARY_GATE",
+        "background_matrix_image_dimension": 29,
+        "matrix_image_annihilator_basis_hex": [
+          "0x551d14404c022600f",
+          "0x10",
+          "0x20",
+          "0x40",
+          "0x40000080",
+          "0x80000100",
+          "0x200",
+          "0x400",
+          "0x400000800",
+          "0x1000",
+          "0x2000000000008000",
+          "0x10000",
+          "0x40000",
+          "0x40000080000",
+          "0x100000",
+          "0x400000",
+          "0x40000d26e9800000",
+          "0x2000000",
+          "0x4000000",
+          "0x10000000",
+          "0x100000000",
+          "0x800000000",
+          "0x1000000000",
+          "0x4000000000",
+          "0x4000008000000000",
+          "0x20000000000",
+          "0x100000000000",
+          "0x200000000000",
+          "0x800000000000",
+          "0x2000000000000",
+          "0x4000000000000",
+          "0x8000000000000",
+          "0x20000000000000",
+          "0x200000000000000",
+          "0x400000000000000",
+          "0x800000000000000",
+          "0x8000000000000000",
+          "0x20000000000000000",
+          "0x80000000000000000",
+          "0x100000000000000000"
+        ],
+        "complete_row_block_basis_hex": [
+          "0x4001"
+        ],
+        "complete_row_block_dimension": 1,
+        "complete_row_block_codimension": 22,
+        "complete_row_block_background_witnesses_hex": [
+          [
+            "0x40000",
+            "0x50000",
+            "0x70000"
+          ]
+        ],
+        "annihilator_row_span_basis_hex": [
+          "0x2",
+          "0x4",
+          "0x8",
+          "0x10",
+          "0x20",
+          "0x40",
+          "0x80",
+          "0x100",
+          "0x200",
+          "0x400",
+          "0x800",
+          "0x1000",
+          "0x2000",
+          "0x4001",
+          "0x8000",
+          "0x10000",
+          "0x20000",
+          "0x40000",
+          "0x80000",
+          "0x100000",
+          "0x200000",
+          "0x400000"
+        ],
+        "eligible_exact_fixed_pivot_span_must_annihilate_complete_row_block": true,
+        "every_n_dimensional_span_complete_block_rank_lower_bound": 0,
+        "every_n_dimensional_span_variation_image_dimension_lower_bound": 0,
+        "all_fixed_n_dimensional_spans_excluded_by_complete_block": false,
+        "all_fixed_n_dimensional_spans_excluded_by_dimension_theorem": false,
+        "all_fixed_spans_uniform_background_invertibility_fraction_upper_bound": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_hex": "0x1"
+        },
+        "dimension_theorem": {
+          "source": "https://arxiv.org/pdf/1004.0579",
+          "theorem": 9,
+          "field": "arbitrary field, including F2",
+          "maximum_nonsingular_affine_dimension": 3,
+          "classification_for_larger_fields_used": false
+        },
+        "background_uniformity_and_fixed_W_required_for_fraction_bound": true,
+        "background_adaptive_pivots_or_other_isotropic_charts_excluded": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      "weighted_radical_screen": {
+        "status": "EXACT_BOUNDED_WEIGHTED_RADICAL_SPAN_NECESSARY_GATE",
+        "combinations_evaluated": 7,
+        "combination_cap": 4095,
+        "weighted_radicals": [
+          {
+            "output_weight_hex": "0x1",
+            "radical_basis_hex": [
+              "0x10",
+              "0x20",
+              "0x40",
+              "0x200",
+              "0x400",
+              "0x1000",
+              "0x10000",
+              "0x40000",
+              "0x100000",
+              "0x400000"
+            ]
+          },
+          {
+            "output_weight_hex": "0x2",
+            "radical_basis_hex": [
+              "0x1b4dd3",
+              "0x4",
+              "0x8",
+              "0x20",
+              "0x200",
+              "0x1000",
+              "0x2000",
+              "0x8000",
+              "0x40000",
+              "0x200000",
+              "0x400000"
+            ]
+          },
+          {
+            "output_weight_hex": "0x3",
+            "radical_basis_hex": [
+              "0x20",
+              "0x80",
+              "0x100",
+              "0x200",
+              "0x800",
+              "0x1000",
+              "0x40000",
+              "0x80000",
+              "0x400000"
+            ]
+          },
+          {
+            "output_weight_hex": "0x4",
+            "radical_basis_hex": [
+              "0x2",
+              "0x8",
+              "0x10",
+              "0x20",
+              "0x80",
+              "0x800",
+              "0x1000",
+              "0x2000",
+              "0x20000",
+              "0x80000",
+              "0x200000",
+              "0x400000"
+            ]
+          },
+          {
+            "output_weight_hex": "0x5",
+            "radical_basis_hex": [
+              "0x3f6fcf",
+              "0x10",
+              "0x20",
+              "0x1000",
+              "0x8000",
+              "0x400000"
+            ]
+          },
+          {
+            "output_weight_hex": "0x6",
+            "radical_basis_hex": [
+              "0x8",
+              "0x20",
+              "0x1000",
+              "0x2000",
+              "0x10000",
+              "0x200000",
+              "0x400000"
+            ]
+          },
+          {
+            "output_weight_hex": "0x7",
+            "radical_basis_hex": [
+              "0x36675f",
+              "0x20",
+              "0x80",
+              "0x800",
+              "0x1000",
+              "0x8000",
+              "0x10000",
+              "0x80000",
+              "0x400000"
+            ]
+          }
+        ],
+        "eligible_direction_span_basis_hex": [
+          "0x2",
+          "0x4",
+          "0x8",
+          "0x10",
+          "0x20",
+          "0x40",
+          "0x80",
+          "0x100",
+          "0x200",
+          "0x400",
+          "0x800",
+          "0x1000",
+          "0x2000",
+          "0x4001",
+          "0x8000",
+          "0x10000",
+          "0x20000",
+          "0x40000",
+          "0x80000",
+          "0x100000",
+          "0x200000",
+          "0x400000"
+        ],
+        "eligible_direction_span_dimension": 22,
+        "all_fixed_spans_excluded": false,
+        "necessary_gate_pass_proves_an_eligible_n_dimensional_pivot_span_exists": false,
+        "enumerating_weight_combinations_is_polynomial_in_unbounded_n": false,
+        "general_decoder_no_go": false,
+        "speedup_claim_allowed": false
+      },
+      "physical_code_schur_certificate": {
+        "status": "EXACT_PHYSICAL_CODE_SCHUR_PRODUCT_REFORMULATION",
+        "physical_pivot_directions_hex": [
+          "0xf",
+          "0x70",
+          "0x580"
+        ],
+        "dual_code_rows_hex": [
+          "0x53926ce4a8b559",
+          "0x72781e8eec23a",
+          "0x486d7113740c8c"
+        ],
+        "polar_variation_dimension": 7,
+        "identity": "dim(C_perp + C_perp*W_physical)-n; * is coordinatewise product",
+        "individual_column_variation_dimensions": [
+          3,
+          2,
+          2
+        ],
+        "disjoint_physical_supports": true,
+        "unused_physical_columns_binary_rank": 3,
+        "disjoint_support_and_unused_full_rank_certify_column_separability": true,
+        "all_constant_parts_excluded_by_disjoint_support_gate": true,
+        "selected_span_excluded_by_nonsingular_dimension_bound": true,
+        "low_product_dimension_proves_a_nonsingular_pencil_exists": false,
+        "all_code_subspaces_or_quantum_decoders_excluded": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      "first_basis_pivot_span_certificate": {
+        "status": "ACTUAL_SELECTED_SPAN_NECESSARY_OBSTRUCTIONS_NOT_DECODER",
+        "directions_in_U_coordinates_hex": [
+          "0x1",
+          "0x2",
+          "0x4"
+        ],
+        "restricted_operator_family": {
+          "input_bits": 3,
+          "dimension": 3,
+          "background_bits": 29,
+          "constant_rows_hex": [
+            "0x5",
+            "0x1",
+            "0x3"
+          ],
+          "variation_rows_hex": [
+            [
+              "0x3",
+              "0x3",
+              "0x0"
+            ],
+            [
+              "0x0",
+              "0x3",
+              "0x0"
+            ],
+            [
+              "0x0",
+              "0x0",
+              "0x5"
+            ],
+            [
+              "0x5",
+              "0x0",
+              "0x0"
+            ],
+            [
+              "0x0",
+              "0x1",
+              "0x0"
+            ],
+            [
+              "0x0",
+              "0x0",
+              "0x1"
+            ],
+            [
+              "0x1",
+              "0x0",
+              "0x0"
+            ],
+            [
+              "0x1",
+              "0x1",
+              "0x0"
+            ],
+            [
+              "0x0",
+              "0x1",
+              "0x0"
+            ],
+            [
+              "0x0",
+              "0x0",
+              "0x1"
+            ],
+            [
+              "0x1",
+              "0x1",
+              "0x1"
+            ],
+            [
+              "0x0",
+              "0x1",
+              "0x1"
+            ],
+            [
+              "0x0",
+              "0x0",
+              "0x1"
+            ],
+            [
+              "0x1",
+              "0x0",
+              "0x0"
+            ],
+            [
+              "0x0",
+              "0x1",
+              "0x0"
+            ],
+            [
+              "0x1",
+              "0x1",
+              "0x0"
+            ],
+            [
+              "0x1",
+              "0x1",
+              "0x0"
+            ],
+            [
+              "0x0",
+              "0x1",
+              "0x1"
+            ],
+            [
+              "0x1",
+              "0x0",
+              "0x0"
+            ],
+            [
+              "0x1",
+              "0x0",
+              "0x1"
+            ],
+            [
+              "0x0",
+              "0x1",
+              "0x0"
+            ],
+            [
+              "0x0",
+              "0x1",
+              "0x1"
+            ],
+            [
+              "0x1",
+              "0x1",
+              "0x0"
+            ],
+            [
+              "0x0",
+              "0x0",
+              "0x1"
+            ],
+            [
+              "0x0",
+              "0x1",
+              "0x1"
+            ],
+            [
+              "0x1",
+              "0x0",
+              "0x0"
+            ],
+            [
+              "0x1",
+              "0x1",
+              "0x0"
+            ],
+            [
+              "0x0",
+              "0x1",
+              "0x0"
+            ],
+            [
+              "0x1",
+              "0x0",
+              "0x1"
+            ]
+          ],
+          "polar_operators_rows_hex": [
+            [
+              "0x3",
+              "0x0",
+              "0x0",
+              "0x5",
+              "0x0",
+              "0x0",
+              "0x1",
+              "0x1",
+              "0x0",
+              "0x0",
+              "0x1",
+              "0x0",
+              "0x0",
+              "0x1",
+              "0x0",
+              "0x1",
+              "0x1",
+              "0x0",
+              "0x1",
+              "0x1",
+              "0x0",
+              "0x0",
+              "0x1",
+              "0x0",
+              "0x0",
+              "0x1",
+              "0x1",
+              "0x0",
+              "0x1"
+            ],
+            [
+              "0x3",
+              "0x3",
+              "0x0",
+              "0x0",
+              "0x1",
+              "0x0",
+              "0x0",
+              "0x1",
+              "0x1",
+              "0x0",
+              "0x1",
+              "0x1",
+              "0x0",
+              "0x0",
+              "0x1",
+              "0x1",
+              "0x1",
+              "0x1",
+              "0x0",
+              "0x0",
+              "0x1",
+              "0x1",
+              "0x1",
+              "0x0",
+              "0x1",
+              "0x0",
+              "0x1",
+              "0x1",
+              "0x0"
+            ],
+            [
+              "0x0",
+              "0x0",
+              "0x5",
+              "0x0",
+              "0x0",
+              "0x1",
+              "0x0",
+              "0x0",
+              "0x0",
+              "0x1",
+              "0x1",
+              "0x1",
+              "0x1",
+              "0x0",
+              "0x0",
+              "0x0",
+              "0x0",
+              "0x1",
+              "0x0",
+              "0x1",
+              "0x0",
+              "0x1",
+              "0x0",
+              "0x1",
+              "0x1",
+              "0x0",
+              "0x0",
+              "0x0",
+              "0x1"
+            ]
+          ],
+          "operator_convention": "D_l maps input U coefficients to background covector; rows indexed by V",
+          "decoder_or_candidate": false
+        },
+        "complete_row_block": {
+          "status": "MAXIMAL_COMPLETE_ROW_BLOCK_AND_ALL_FIXED_SPANS_NECESSARY_GATE",
+          "background_matrix_image_dimension": 7,
+          "matrix_image_annihilator_basis_hex": [
+            "0x20",
+            "0x80"
+          ],
+          "complete_row_block_basis_hex": [
+            "0x1"
+          ],
+          "complete_row_block_dimension": 1,
+          "complete_row_block_codimension": 2,
+          "complete_row_block_background_witnesses_hex": [
+            [
+              "0xc000000",
+              "0x8000000",
+              "0x1c000000"
+            ]
+          ],
+          "annihilator_row_span_basis_hex": [
+            "0x2",
+            "0x4"
+          ],
+          "eligible_exact_fixed_pivot_span_must_annihilate_complete_row_block": true,
+          "every_n_dimensional_span_complete_block_rank_lower_bound": 1,
+          "every_n_dimensional_span_variation_image_dimension_lower_bound": 7,
+          "all_fixed_n_dimensional_spans_excluded_by_complete_block": true,
+          "all_fixed_n_dimensional_spans_excluded_by_dimension_theorem": true,
+          "all_fixed_spans_uniform_background_invertibility_fraction_upper_bound": {
+            "sign": 1,
+            "numerator_hex": "0x1",
+            "denominator_hex": "0x2"
+          },
+          "dimension_theorem": {
+            "source": "https://arxiv.org/pdf/1004.0579",
+            "theorem": 9,
+            "field": "arbitrary field, including F2",
+            "maximum_nonsingular_affine_dimension": 3,
+            "classification_for_larger_fields_used": false
+          },
+          "background_uniformity_and_fixed_W_required_for_fraction_bound": true,
+          "background_adaptive_pivots_or_other_isotropic_charts_excluded": false,
+          "candidate_record_accepted": false,
+          "speedup_claim_allowed": false
+        },
+        "pencil_coverage": {
+          "status": "EXACT_SELECTED_BINARY_PIVOT_PENCIL_COVERAGE_NOT_DECODER_BOUND",
+          "constant_matrix_rows": [
+            5,
+            1,
+            3
+          ],
+          "variation_generator_rows": [
+            [
+              3,
+              3,
+              0
+            ],
+            [
+              0,
+              3,
+              0
+            ],
+            [
+              0,
+              0,
+              5
+            ],
+            [
+              5,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              1,
+              1,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              1,
+              1
+            ],
+            [
+              0,
+              1,
+              1
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              1,
+              1,
+              0
+            ],
+            [
+              1,
+              1,
+              0
+            ],
+            [
+              0,
+              1,
+              1
+            ],
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              1,
+              0,
+              1
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              1,
+              1
+            ],
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              1,
+              1,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              1,
+              0,
+              1
+            ]
+          ],
+          "dimension": 3,
+          "background_bits": 29,
+          "constant_matrix_rank": 3,
+          "background_matrix_image_rank": 7,
+          "individual_column_variation_ranks": [
+            3,
+            2,
+            2
+          ],
+          "background_image_is_cartesian_product_of_column_spaces": true,
+          "all_columns_vary_and_separability_rules_out_every_constant_part": true,
+          "all_backgrounds_invertible_certified": false,
+          "exact_uniform_background_invertibility_fraction": null,
+          "singular_background_mask_hex": "0x4000000",
+          "singular_matrix_nonzero_kernel_vector_hex": "0x3",
+          "shortest_normalized_variation_cycle": [
+            0
+          ],
+          "backgrounds_enumerated_by_certificate": false,
+          "actual_native_chart_or_source_prevalence_proved_by_matrix_input": false,
+          "one_singular_background_proves_large_failure_mass": false,
+          "approximate_transport_or_general_algorithms_ruled_out": false,
+          "candidate_record_accepted": false,
+          "speedup_claim_allowed": false
+        },
+        "dimension_theorem_excludes_every_constant_part": true,
+        "all_backgrounds_invertible_excluded": true,
+        "surjective_direction_background_witness": {
+          "input_direction_hex": "0x1",
+          "background_mask_hex": "0x18000000"
+        },
+        "deterministic_direction_probe_menu_size": 6,
+        "successful_surjective_probes_before_stopping": 1,
+        "uniform_background_invertibility_fraction_upper_bound": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_hex": "0x2"
+        },
+        "nonzero_determinant_complement_boolean_degree_upper_bound": 3,
+        "no_obstruction_is_a_success_proof": false,
+        "fixed_span_may_depend_on_middle_labels_but_not_on_background": true,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      }
+    },
+    {
+      "operator_family": {
+        "input_bits": 32,
+        "dimension": 4,
+        "background_bits": 48,
+        "constant_rows_hex": [
+          "0xcd918885",
+          "0x9e67374a",
+          "0x168e60d3",
+          "0xe44929d0"
+        ],
+        "variation_rows_hex": [
+          [
+            "0x9",
+            "0x0",
+            "0x0",
+            "0x9"
+          ],
+          [
+            "0x0",
+            "0x5",
+            "0x0",
+            "0x0"
+          ],
+          [
+            "0x3",
+            "0x0",
+            "0x0",
+            "0x0"
+          ],
+          [
+            "0x11",
+            "0x0",
+            "0x11",
+            "0x0"
+          ],
+          [
+            "0x9",
+            "0x0",
+            "0x9",
+            "0x9"
+          ],
+          [
+            "0x0",
+            "0x41",
+            "0x41",
+            "0x41"
+          ],
+          [
+            "0x11",
+            "0x11",
+            "0x0",
+            "0x0"
+          ],
+          [
+            "0x11",
+            "0x0",
+            "0x0",
+            "0x0"
+          ],
+          [
+            "0x41",
+            "0x0",
+            "0x41",
+            "0x41"
+          ],
+          [
+            "0x0",
+            "0x41",
+            "0x0",
+            "0x0"
+          ],
+          [
+            "0x0",
+            "0x0",
+            "0x0",
+            "0x201"
+          ],
+          [
+            "0x0",
+            "0x81",
+            "0x0",
+            "0x0"
+          ],
+          [
+            "0x0",
+            "0x201",
+            "0x0",
+            "0x201"
+          ],
+          [
+            "0x401",
+            "0x0",
+            "0x0",
+            "0x0"
+          ],
+          [
+            "0x401",
+            "0x401",
+            "0x401",
+            "0x0"
+          ],
+          [
+            "0x4001",
+            "0x0",
+            "0x4001",
+            "0x0"
+          ],
+          [
+            "0x1001",
+            "0x1001",
+            "0x0",
+            "0x1001"
+          ],
+          [
+            "0x1001",
+            "0x0",
+            "0x0",
+            "0x0"
+          ],
+          [
+            "0x4001",
+            "0x0",
+            "0x0",
+            "0x0"
+          ],
+          [
+            "0x0",
+            "0x0",
+            "0x0",
+            "0x100001"
+          ],
+          [
+            "0x0",
+            "0x8001",
+            "0x8001",
+            "0x8001"
+          ],
+          [
+            "0x20001",
+            "0x0",
+            "0x20001",
+            "0x0"
+          ],
+          [
+            "0x20001",
+            "0x20001",
+            "0x20001",
+            "0x0"
+          ],
+          [
+            "0x0",
+            "0x80001",
+            "0x80001",
+            "0x80001"
+          ],
+          [
+            "0x40001",
+            "0x40001",
+            "0x0",
+            "0x40001"
+          ],
+          [
+            "0x40001",
+            "0x40001",
+            "0x40001",
+            "0x40001"
+          ],
+          [
+            "0x80001",
+            "0x80001",
+            "0x80001",
+            "0x0"
+          ],
+          [
+            "0x0",
+            "0x0",
+            "0x400001",
+            "0x400001"
+          ],
+          [
+            "0x200001",
+            "0x0",
+            "0x0",
+            "0x200001"
+          ],
+          [
+            "0x400001",
+            "0x400001",
+            "0x400001",
+            "0x0"
+          ],
+          [
+            "0x800001",
+            "0x0",
+            "0x800001",
+            "0x0"
+          ],
+          [
+            "0x4000001",
+            "0x4000001",
+            "0x4000001",
+            "0x4000001"
+          ],
+          [
+            "0x0",
+            "0x0",
+            "0x0",
+            "0x4000001"
+          ],
+          [
+            "0x2000001",
+            "0x0",
+            "0x0",
+            "0x0"
+          ],
+          [
+            "0x2000001",
+            "0x0",
+            "0x2000001",
+            "0x2000001"
+          ],
+          [
+            "0x4000001",
+            "0x0",
+            "0x0",
+            "0x4000001"
+          ],
+          [
+            "0x0",
+            "0x4000001",
+            "0x0",
+            "0x0"
+          ],
+          [
+            "0x8000001",
+            "0x0",
+            "0x0",
+            "0x8000001"
+          ],
+          [
+            "0x8000001",
+            "0x8000001",
+            "0x8000001",
+            "0x8000001"
+          ],
+          [
+            "0x0",
+            "0x8000001",
+            "0x0",
+            "0x8000001"
+          ],
+          [
+            "0x0",
+            "0x0",
+            "0x0",
+            "0x40000001"
+          ],
+          [
+            "0x0",
+            "0x20000001",
+            "0x20000001",
+            "0x20000001"
+          ],
+          [
+            "0x40000001",
+            "0x0",
+            "0x40000001",
+            "0x0"
+          ],
+          [
+            "0x40000001",
+            "0x40000001",
+            "0x0",
+            "0x40000001"
+          ],
+          [
+            "0x0",
+            "0x80000001",
+            "0x80000001",
+            "0x0"
+          ],
+          [
+            "0x80000001",
+            "0x0",
+            "0x80000001",
+            "0x80000001"
+          ],
+          [
+            "0x1",
+            "0x1",
+            "0x1",
+            "0x1"
+          ],
+          [
+            "0x1",
+            "0x0",
+            "0x0",
+            "0x0"
+          ]
+        ],
+        "polar_operators_rows_hex": [
+          [
+            "0x9",
+            "0x0",
+            "0x3",
+            "0x11",
+            "0x9",
+            "0x0",
+            "0x11",
+            "0x11",
+            "0x41",
+            "0x0",
+            "0x0",
+            "0x0",
+            "0x0",
+            "0x401",
+            "0x401",
+            "0x4001",
+            "0x1001",
+            "0x1001",
+            "0x4001",
+            "0x0",
+            "0x0",
+            "0x20001",
+            "0x20001",
+            "0x0",
+            "0x40001",
+            "0x40001",
+            "0x80001",
+            "0x0",
+            "0x200001",
+            "0x400001",
+            "0x800001",
+            "0x4000001",
+            "0x0",
+            "0x2000001",
+            "0x2000001",
+            "0x4000001",
+            "0x0",
+            "0x8000001",
+            "0x8000001",
+            "0x0",
+            "0x0",
+            "0x0",
+            "0x40000001",
+            "0x40000001",
+            "0x0",
+            "0x80000001",
+            "0x1",
+            "0x1"
+          ],
+          [
+            "0x0",
+            "0x5",
+            "0x0",
+            "0x0",
+            "0x0",
+            "0x41",
+            "0x11",
+            "0x0",
+            "0x0",
+            "0x41",
+            "0x0",
+            "0x81",
+            "0x201",
+            "0x0",
+            "0x401",
+            "0x0",
+            "0x1001",
+            "0x0",
+            "0x0",
+            "0x0",
+            "0x8001",
+            "0x0",
+            "0x20001",
+            "0x80001",
+            "0x40001",
+            "0x40001",
+            "0x80001",
+            "0x0",
+            "0x0",
+            "0x400001",
+            "0x0",
+            "0x4000001",
+            "0x0",
+            "0x0",
+            "0x0",
+            "0x0",
+            "0x4000001",
+            "0x0",
+            "0x8000001",
+            "0x8000001",
+            "0x0",
+            "0x20000001",
+            "0x0",
+            "0x40000001",
+            "0x80000001",
+            "0x0",
+            "0x1",
+            "0x0"
+          ],
+          [
+            "0x0",
+            "0x0",
+            "0x0",
+            "0x11",
+            "0x9",
+            "0x41",
+            "0x0",
+            "0x0",
+            "0x41",
+            "0x0",
+            "0x0",
+            "0x0",
+            "0x0",
+            "0x0",
+            "0x401",
+            "0x4001",
+            "0x0",
+            "0x0",
+            "0x0",
+            "0x0",
+            "0x8001",
+            "0x20001",
+            "0x20001",
+            "0x80001",
+            "0x0",
+            "0x40001",
+            "0x80001",
+            "0x400001",
+            "0x0",
+            "0x400001",
+            "0x800001",
+            "0x4000001",
+            "0x0",
+            "0x0",
+            "0x2000001",
+            "0x0",
+            "0x0",
+            "0x0",
+            "0x8000001",
+            "0x0",
+            "0x0",
+            "0x20000001",
+            "0x40000001",
+            "0x0",
+            "0x80000001",
+            "0x80000001",
+            "0x1",
+            "0x0"
+          ],
+          [
+            "0x9",
+            "0x0",
+            "0x0",
+            "0x0",
+            "0x9",
+            "0x41",
+            "0x0",
+            "0x0",
+            "0x41",
+            "0x0",
+            "0x201",
+            "0x0",
+            "0x201",
+            "0x0",
+            "0x0",
+            "0x0",
+            "0x1001",
+            "0x0",
+            "0x0",
+            "0x100001",
+            "0x8001",
+            "0x0",
+            "0x0",
+            "0x80001",
+            "0x40001",
+            "0x40001",
+            "0x0",
+            "0x400001",
+            "0x200001",
+            "0x0",
+            "0x0",
+            "0x4000001",
+            "0x4000001",
+            "0x0",
+            "0x2000001",
+            "0x4000001",
+            "0x0",
+            "0x8000001",
+            "0x8000001",
+            "0x8000001",
+            "0x40000001",
+            "0x20000001",
+            "0x0",
+            "0x40000001",
+            "0x0",
+            "0x80000001",
+            "0x1",
+            "0x0"
+          ]
+        ],
+        "operator_convention": "D_l maps input U coefficients to background covector; rows indexed by V",
+        "decoder_or_candidate": false
+      },
+      "provenance": {
+        "actual_packet_operator_family": true,
+        "labels": [
+          [
+            75161,
+            79898,
+            90972,
+            7188,
+            96079,
+            82475,
+            4152,
+            65745,
+            41867,
+            59327,
+            107071,
+            121626,
+            97018,
+            115300,
+            34757,
+            84841,
+            22855,
+            23264,
+            47759,
+            63260,
+            153,
+            130394,
+            94126,
+            6356,
+            24472,
+            94004,
+            45679,
+            72983,
+            68302,
+            38322,
+            101911,
+            107087,
+            57346,
+            126571,
+            57574,
+            100544,
+            82339,
+            4676,
+            76954,
+            61916,
+            47693,
+            63767,
+            68682,
+            96638,
+            41474,
+            7032,
+            85405,
+            62473,
+            54614,
+            107547,
+            14903,
+            33316,
+            66835,
+            122294,
+            103581,
+            121455,
+            68455,
+            18105,
+            1355,
+            94845,
+            87816,
+            23705,
+            123558,
+            19713,
+            31210,
+            125045,
+            102576,
+            127896,
+            126363,
+            100559,
+            114808,
+            75532,
+            102220,
+            43304,
+            83144,
+            29959,
+            36680,
+            19913,
+            30082,
+            5700,
+            48149,
+            86201,
+            128685,
+            38045
+          ],
+          [
+            62158,
+            85343,
+            104214,
+            51654,
+            127319,
+            120022,
+            93093,
+            40770,
+            79492,
+            111552,
+            20700,
+            129183,
+            90760,
+            69337,
+            41081,
+            11878,
+            37009,
+            42216,
+            127084,
+            122635,
+            109826,
+            64402,
+            35213,
+            74315,
+            94573,
+            128170,
+            7966,
+            120739,
+            100271,
+            69393,
+            58534,
+            118715,
+            12008,
+            51058,
+            16813,
+            9514,
+            48180,
+            34052,
+            28642,
+            103871,
+            39908,
+            112861,
+            74613,
+            81522,
+            96391,
+            69373,
+            69081,
+            88953,
+            63116,
+            35937,
+            72640,
+            94522,
+            29248,
+            112816,
+            49774,
+            102489,
+            21722,
+            121243,
+            113714,
+            52821,
+            103096,
+            94092,
+            74944,
+            58940,
+            88266,
+            125786,
+            18721,
+            34622,
+            95284,
+            78355,
+            72639,
+            31044,
+            77908,
+            72006,
+            120013,
+            29940,
+            53851,
+            67039,
+            102765,
+            120327,
+            71540,
+            18367,
+            8999,
+            108984
+          ],
+          [
+            19428,
+            117728,
+            49005,
+            113174,
+            63227,
+            109940,
+            17640,
+            58980,
+            116323,
+            95494,
+            12887,
+            127516,
+            10801,
+            84343,
+            6522,
+            18874,
+            106779,
+            23304,
+            39271,
+            17660,
+            31440,
+            32782,
+            112244,
+            100882,
+            99754,
+            68620,
+            125250,
+            1133,
+            51044,
+            109325,
+            86585,
+            58472,
+            2600,
+            114262,
+            41598,
+            46806,
+            87456,
+            102290,
+            67521,
+            69251,
+            37023,
+            8471,
+            29693,
+            3756,
+            52115,
+            111208,
+            2708,
+            21123,
+            53523,
+            52309,
+            37850,
+            119961,
+            120100,
+            110730,
+            89460,
+            49687,
+            31513,
+            111372,
+            63113,
+            107383,
+            75218,
+            105816,
+            45372,
+            131037,
+            123885,
+            86024,
+            60924,
+            68317,
+            23460,
+            102379,
+            114312,
+            26920,
+            117261,
+            99622,
+            37927,
+            8971,
+            119481,
+            99864,
+            93949,
+            13791,
+            39519,
+            44447,
+            66754,
+            30828
+          ],
+          [
+            51808,
+            9360,
+            38392,
+            104857,
+            95227,
+            121075,
+            98324,
+            119218,
+            4120,
+            82702,
+            58557,
+            30284,
+            112332,
+            95809,
+            102598,
+            108778,
+            105338,
+            124756,
+            23765,
+            126446,
+            24786,
+            98293,
+            115320,
+            12182,
+            91255,
+            11634,
+            17380,
+            112224,
+            62728,
+            46196,
+            89362,
+            8425,
+            128554,
+            126460,
+            102791,
+            40694,
+            78906,
+            123123,
+            108848,
+            130139,
+            2012,
+            22234,
+            41041,
+            114678,
+            74497,
+            80054,
+            20863,
+            35557,
+            126236,
+            14322,
+            83791,
+            49559,
+            57571,
+            35941,
+            122777,
+            62708,
+            28348,
+            36067,
+            131040,
+            26319,
+            35965,
+            127704,
+            42036,
+            121409,
+            62623,
+            27469,
+            113978,
+            40079,
+            97665,
+            74383,
+            52135,
+            20453,
+            81069,
+            74624,
+            76037,
+            92306,
+            3349,
+            11611,
+            99660,
+            46408,
+            49761,
+            98715,
+            40637,
+            94378
+          ]
+        ],
+        "modulus": 131072,
+        "logical_width": 80,
+        "isotropic_directions_hex": [
+          "0x1",
+          "0x28",
+          "0x84",
+          "0x142",
+          "0x1c10",
+          "0x2000",
+          "0x1c200",
+          "0xc0000",
+          "0x200000",
+          "0x1120000",
+          "0x2c00000",
+          "0x10000000",
+          "0x68000000",
+          "0x80000000",
+          "0x504000000",
+          "0x4800000000",
+          "0x8000000000",
+          "0x23000000000",
+          "0x1c0000000000",
+          "0x610000000000",
+          "0x2000200000000",
+          "0x5000000000000",
+          "0x28800000000000",
+          "0x50000000000000",
+          "0x400000000000000",
+          "0x1a00000000000000",
+          "0xe180000000000000",
+          "0x170000000000000000",
+          "0x200000000000000000",
+          "0x1400000000000000000",
+          "0x6880000000000000000",
+          "0x58000000000000000000"
+        ],
+        "complement_directions_hex": [
+          "0x2",
+          "0x4",
+          "0x8",
+          "0x10",
+          "0x40",
+          "0x200",
+          "0x400",
+          "0x800",
+          "0x4000",
+          "0x8000",
+          "0x20000",
+          "0x40000",
+          "0x100000",
+          "0x400000",
+          "0x800000",
+          "0x4000000",
+          "0x8000000",
+          "0x20000000",
+          "0x100000000",
+          "0x200000000",
+          "0x800000000",
+          "0x1000000000",
+          "0x2000000000",
+          "0x10000000000",
+          "0x40000000000",
+          "0x80000000000",
+          "0x200000000000",
+          "0x800000000000",
+          "0x1000000000000",
+          "0x8000000000000",
+          "0x10000000000000",
+          "0x80000000000000",
+          "0x100000000000000",
+          "0x200000000000000",
+          "0x800000000000000",
+          "0x2000000000000000",
+          "0x4000000000000000",
+          "0x10000000000000000",
+          "0x20000000000000000",
+          "0x40000000000000000",
+          "0x80000000000000000",
+          "0x400000000000000000",
+          "0x800000000000000000",
+          "0x2000000000000000000",
+          "0x8000000000000000000",
+          "0x10000000000000000000",
+          "0x20000000000000000000",
+          "0x80000000000000000000"
+        ],
+        "variation_selected_from_binary_labels_only": true,
+        "constant_part_depends_on_middle_label_bits": true,
+        "input_assignments_or_secret_states_enumerated": false,
+        "native_source_prevalence_verified": false
+      },
+      "source_scope": "systematic fixed-prefix finite profile; not an unconditional native success estimate",
+      "all_span_certificate": {
+        "status": "MAXIMAL_COMPLETE_ROW_BLOCK_AND_ALL_FIXED_SPANS_NECESSARY_GATE",
+        "background_matrix_image_dimension": 48,
+        "matrix_image_annihilator_basis_hex": [
+          "0x4",
+          "0x8000000000000000000000008",
+          "0x20",
+          "0x80",
+          "0x100",
+          "0x200",
+          "0x800",
+          "0x2000",
+          "0x8000",
+          "0x10000",
+          "0x200000000000000020000",
+          "0x40000000000000000000000040000",
+          "0x80000000800000000000000080000",
+          "0x100000",
+          "0x200000000000000000000000200000",
+          "0x400000004000000000000000400000",
+          "0x8000000000000000800000",
+          "0x1000000",
+          "0x8000000080000000800000008000000",
+          "0x10000000",
+          "0x20000000",
+          "0x400000004000000040000000",
+          "0x80000000000000000000000080000000",
+          "0x4e380249804804004c0202d500000000",
+          "0x200000000",
+          "0x800000000",
+          "0x2000000000",
+          "0x10000000000",
+          "0x4000000040000000000",
+          "0x80000000000",
+          "0x1000000000000000100000000000",
+          "0x200000000000",
+          "0x400000000000",
+          "0x8000000000000000800000000000",
+          "0x1000000000000",
+          "0x40000000000000004000000000000",
+          "0x800000008000000000000",
+          "0x10000000000000",
+          "0x20000000000000",
+          "0x400000004000000040000000000000",
+          "0x80000000000000",
+          "0x100000000000000",
+          "0x200000000000000",
+          "0x1000000000000000",
+          "0x20000000000000002000000000000000",
+          "0x80000000800000008000000000000000",
+          "0xcc7c1209ccce44190000000000000000",
+          "0x20000000000000000",
+          "0x40000000000000000",
+          "0x200000000000000000",
+          "0x40000000400000000000000000",
+          "0x800000000000000000",
+          "0x1000000000000000000",
+          "0x2000000000000000000",
+          "0x8000000000000000000",
+          "0x10000000000000000000",
+          "0x20000000000000000000",
+          "0x8000000080000000000000000000",
+          "0x100000000000000000000",
+          "0x1000000000000000000000",
+          "0x2000000000000000000000",
+          "0x10000000000000000000000",
+          "0x2000000020000000000000000000000",
+          "0x100000000000000000000000",
+          "0x20000000200000000000000000000000",
+          "0x2000000000000000000000000",
+          "0x4000000000000000000000000",
+          "0x10000000000000000000000000",
+          "0x20000000000000000000000000",
+          "0x80000000000000000000000000",
+          "0x100000000000000000000000000",
+          "0x400000000000000000000000000",
+          "0x800000000000000000000000000",
+          "0x2000000000000000000000000000",
+          "0x4000000000000000000000000000",
+          "0x10000000000000000000000000000",
+          "0x20000000000000000000000000000",
+          "0x800000000000000000000000000000",
+          "0x1000000000000000000000000000000",
+          "0x10000000000000000000000000000000"
+        ],
+        "complete_row_block_basis_hex": [
+          "0x4000001"
+        ],
+        "complete_row_block_dimension": 1,
+        "complete_row_block_codimension": 31,
+        "complete_row_block_background_witnesses_hex": [
+          [
+            "0x900000000",
+            "0x1000000000",
+            "0x1880000000",
+            "0x100000000"
+          ]
+        ],
+        "annihilator_row_span_basis_hex": [
+          "0x2",
+          "0x4",
+          "0x8",
+          "0x10",
+          "0x20",
+          "0x40",
+          "0x80",
+          "0x100",
+          "0x200",
+          "0x400",
+          "0x800",
+          "0x1000",
+          "0x2000",
+          "0x4000",
+          "0x8000",
+          "0x10000",
+          "0x20000",
+          "0x40000",
+          "0x80000",
+          "0x100000",
+          "0x200000",
+          "0x400000",
+          "0x800000",
+          "0x1000000",
+          "0x2000000",
+          "0x4000001",
+          "0x8000000",
+          "0x10000000",
+          "0x20000000",
+          "0x40000000",
+          "0x80000000"
+        ],
+        "eligible_exact_fixed_pivot_span_must_annihilate_complete_row_block": true,
+        "every_n_dimensional_span_complete_block_rank_lower_bound": 0,
+        "every_n_dimensional_span_variation_image_dimension_lower_bound": 0,
+        "all_fixed_n_dimensional_spans_excluded_by_complete_block": false,
+        "all_fixed_n_dimensional_spans_excluded_by_dimension_theorem": false,
+        "all_fixed_spans_uniform_background_invertibility_fraction_upper_bound": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_hex": "0x1"
+        },
+        "dimension_theorem": {
+          "source": "https://arxiv.org/pdf/1004.0579",
+          "theorem": 9,
+          "field": "arbitrary field, including F2",
+          "maximum_nonsingular_affine_dimension": 6,
+          "classification_for_larger_fields_used": false
+        },
+        "background_uniformity_and_fixed_W_required_for_fraction_bound": true,
+        "background_adaptive_pivots_or_other_isotropic_charts_excluded": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      "weighted_radical_screen": {
+        "status": "EXACT_BOUNDED_WEIGHTED_RADICAL_SPAN_NECESSARY_GATE",
+        "combinations_evaluated": 15,
+        "combination_cap": 4095,
+        "weighted_radicals": [
+          {
+            "output_weight_hex": "0x1",
+            "radical_basis_hex": [
+              "0x4",
+              "0x20",
+              "0x80",
+              "0x100",
+              "0x200",
+              "0x800",
+              "0x2000",
+              "0x8000",
+              "0x10000",
+              "0x100000",
+              "0x1000000",
+              "0x10000000",
+              "0x20000000"
+            ]
+          },
+          {
+            "output_weight_hex": "0x2",
+            "radical_basis_hex": [
+              "0x2",
+              "0x8",
+              "0x20",
+              "0x100",
+              "0x800",
+              "0x2000",
+              "0x4000",
+              "0x10000",
+              "0x100000",
+              "0x200000",
+              "0x800000",
+              "0x1000000",
+              "0x2000000",
+              "0x10000000"
+            ]
+          },
+          {
+            "output_weight_hex": "0x3",
+            "radical_basis_hex": [
+              "0x20",
+              "0x100",
+              "0x800",
+              "0x2000",
+              "0x10000",
+              "0x40000",
+              "0x100000",
+              "0x400000",
+              "0x1000000",
+              "0x10000000"
+            ]
+          },
+          {
+            "output_weight_hex": "0x4",
+            "radical_basis_hex": [
+              "0x2",
+              "0x4",
+              "0x20",
+              "0x80",
+              "0x100",
+              "0x200",
+              "0x800",
+              "0x1000",
+              "0x2000",
+              "0x10000",
+              "0x100000",
+              "0x200000",
+              "0x1000000",
+              "0x10000000"
+            ]
+          },
+          {
+            "output_weight_hex": "0x5",
+            "radical_basis_hex": [
+              "0x4",
+              "0x20",
+              "0x80",
+              "0x100",
+              "0x200",
+              "0x800",
+              "0x2000",
+              "0x10000",
+              "0x20000",
+              "0x100000",
+              "0x800000",
+              "0x1000000",
+              "0x10000000"
+            ]
+          },
+          {
+            "output_weight_hex": "0x6",
+            "radical_basis_hex": [
+              "0xcec652dd",
+              "0x2",
+              "0x20",
+              "0x100",
+              "0x400",
+              "0x800",
+              "0x2000",
+              "0x8000",
+              "0x10000",
+              "0x80000",
+              "0x100000",
+              "0x200000",
+              "0x1000000",
+              "0x10000000",
+              "0x20000000"
+            ]
+          },
+          {
+            "output_weight_hex": "0x7",
+            "radical_basis_hex": [
+              "0x20",
+              "0x100",
+              "0x800",
+              "0x2000",
+              "0x8000",
+              "0x10000",
+              "0x100000",
+              "0x800000",
+              "0x1000000",
+              "0x10000000",
+              "0x20000000",
+              "0x40000000",
+              "0x80000000"
+            ]
+          },
+          {
+            "output_weight_hex": "0x8",
+            "radical_basis_hex": [
+              "0x2",
+              "0x4",
+              "0x10",
+              "0x20",
+              "0x80",
+              "0x100",
+              "0x400",
+              "0x800",
+              "0x2000",
+              "0x4000",
+              "0x10000",
+              "0x20000",
+              "0x800000",
+              "0x1000000",
+              "0x10000000"
+            ]
+          },
+          {
+            "output_weight_hex": "0x9",
+            "radical_basis_hex": [
+              "0x4",
+              "0x8",
+              "0x20",
+              "0x80",
+              "0x100",
+              "0x800",
+              "0x2000",
+              "0x10000",
+              "0x40000",
+              "0x200000",
+              "0x1000000",
+              "0x10000000",
+              "0x80000000"
+            ]
+          },
+          {
+            "output_weight_hex": "0xa",
+            "radical_basis_hex": [
+              "0xce7a06dd",
+              "0x2",
+              "0x20",
+              "0x100",
+              "0x800",
+              "0x1000",
+              "0x2000",
+              "0x4000",
+              "0x8000",
+              "0x10000",
+              "0x40000",
+              "0x800000",
+              "0x1000000",
+              "0x10000000",
+              "0x20000000"
+            ]
+          },
+          {
+            "output_weight_hex": "0xb",
+            "radical_basis_hex": [
+              "0x8",
+              "0x20",
+              "0x100",
+              "0x800",
+              "0x2000",
+              "0x8000",
+              "0x10000",
+              "0x80000",
+              "0x200000",
+              "0x1000000",
+              "0x10000000",
+              "0x20000000"
+            ]
+          },
+          {
+            "output_weight_hex": "0xc",
+            "radical_basis_hex": [
+              "0xccfe5619",
+              "0x2",
+              "0x4",
+              "0x20",
+              "0x40",
+              "0x80",
+              "0x100",
+              "0x800",
+              "0x2000",
+              "0x8000",
+              "0x10000",
+              "0x1000000",
+              "0x2000000",
+              "0x10000000",
+              "0x20000000"
+            ]
+          },
+          {
+            "output_weight_hex": "0xd",
+            "radical_basis_hex": [
+              "0x4",
+              "0x20",
+              "0x80",
+              "0x100",
+              "0x800",
+              "0x2000",
+              "0x8000",
+              "0x10000",
+              "0x20000",
+              "0x80000",
+              "0x200000",
+              "0x400000",
+              "0x800000",
+              "0x1000000",
+              "0x10000000",
+              "0x20000000"
+            ]
+          },
+          {
+            "output_weight_hex": "0xe",
+            "radical_basis_hex": [
+              "0x2",
+              "0x20",
+              "0x100",
+              "0x400",
+              "0x800",
+              "0x1000",
+              "0x2000",
+              "0x10000",
+              "0x400000",
+              "0x1000000",
+              "0x2000000",
+              "0x10000000",
+              "0x80000000"
+            ]
+          },
+          {
+            "output_weight_hex": "0xf",
+            "radical_basis_hex": [
+              "0x20",
+              "0x100",
+              "0x800",
+              "0x2000",
+              "0x10000",
+              "0x200000",
+              "0x800000",
+              "0x1000000",
+              "0x8000000",
+              "0x10000000"
+            ]
+          }
+        ],
+        "eligible_direction_span_basis_hex": [
+          "0x2",
+          "0x4",
+          "0x8",
+          "0x10",
+          "0x20",
+          "0x40",
+          "0x80",
+          "0x100",
+          "0x200",
+          "0x400",
+          "0x800",
+          "0x1000",
+          "0x2000",
+          "0x4000",
+          "0x8000",
+          "0x10000",
+          "0x20000",
+          "0x40000",
+          "0x80000",
+          "0x100000",
+          "0x200000",
+          "0x400000",
+          "0x800000",
+          "0x1000000",
+          "0x2000000",
+          "0x4000001",
+          "0x8000000",
+          "0x10000000",
+          "0x20000000",
+          "0x40000000",
+          "0x80000000"
+        ],
+        "eligible_direction_span_dimension": 31,
+        "all_fixed_spans_excluded": false,
+        "necessary_gate_pass_proves_an_eligible_n_dimensional_pivot_span_exists": false,
+        "enumerating_weight_combinations_is_polynomial_in_unbounded_n": false,
+        "general_decoder_no_go": false,
+        "speedup_claim_allowed": false
+      },
+      "physical_code_schur_certificate": {
+        "status": "EXACT_PHYSICAL_CODE_SCHUR_PRODUCT_REFORMULATION",
+        "physical_pivot_directions_hex": [
+          "0x1f",
+          "0x280",
+          "0x840",
+          "0x1420"
+        ],
+        "dual_code_rows_hex": [
+          "0xf2832afd6c312cc15c7b1",
+          "0x6f4640a82f684b9c96852",
+          "0x3dd298d8b97c068053514",
+          "0x735fb9a7cd4a481242438"
+        ],
+        "polar_variation_dimension": 8,
+        "identity": "dim(C_perp + C_perp*W_physical)-n; * is coordinatewise product",
+        "individual_column_variation_dimensions": [
+          4,
+          1,
+          1,
+          2
+        ],
+        "disjoint_physical_supports": true,
+        "unused_physical_columns_binary_rank": 4,
+        "disjoint_support_and_unused_full_rank_certify_column_separability": true,
+        "all_constant_parts_excluded_by_disjoint_support_gate": true,
+        "selected_span_excluded_by_nonsingular_dimension_bound": true,
+        "low_product_dimension_proves_a_nonsingular_pencil_exists": false,
+        "all_code_subspaces_or_quantum_decoders_excluded": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      "first_basis_pivot_span_certificate": {
+        "status": "ACTUAL_SELECTED_SPAN_NECESSARY_OBSTRUCTIONS_NOT_DECODER",
+        "directions_in_U_coordinates_hex": [
+          "0x1",
+          "0x2",
+          "0x4",
+          "0x8"
+        ],
+        "restricted_operator_family": {
+          "input_bits": 4,
+          "dimension": 4,
+          "background_bits": 48,
+          "constant_rows_hex": [
+            "0x5",
+            "0xa",
+            "0x3",
+            "0x0"
+          ],
+          "variation_rows_hex": [
+            [
+              "0x9",
+              "0x0",
+              "0x0",
+              "0x9"
+            ],
+            [
+              "0x0",
+              "0x5",
+              "0x0",
+              "0x0"
+            ],
+            [
+              "0x3",
+              "0x0",
+              "0x0",
+              "0x0"
+            ],
+            [
+              "0x1",
+              "0x0",
+              "0x1",
+              "0x0"
+            ],
+            [
+              "0x9",
+              "0x0",
+              "0x9",
+              "0x9"
+            ],
+            [
+              "0x0",
+              "0x1",
+              "0x1",
+              "0x1"
+            ],
+            [
+              "0x1",
+              "0x1",
+              "0x0",
+              "0x0"
+            ],
+            [
+              "0x1",
+              "0x0",
+              "0x0",
+              "0x0"
+            ],
+            [
+              "0x1",
+              "0x0",
+              "0x1",
+              "0x1"
+            ],
+            [
+              "0x0",
+              "0x1",
+              "0x0",
+              "0x0"
+            ],
+            [
+              "0x0",
+              "0x0",
+              "0x0",
+              "0x1"
+            ],
+            [
+              "0x0",
+              "0x1",
+              "0x0",
+              "0x0"
+            ],
+            [
+              "0x0",
+              "0x1",
+              "0x0",
+              "0x1"
+            ],
+            [
+              "0x1",
+              "0x0",
+              "0x0",
+              "0x0"
+            ],
+            [
+              "0x1",
+              "0x1",
+              "0x1",
+              "0x0"
+            ],
+            [
+              "0x1",
+              "0x0",
+              "0x1",
+              "0x0"
+            ],
+            [
+              "0x1",
+              "0x1",
+              "0x0",
+              "0x1"
+            ],
+            [
+              "0x1",
+              "0x0",
+              "0x0",
+              "0x0"
+            ],
+            [
+              "0x1",
+              "0x0",
+              "0x0",
+              "0x0"
+            ],
+            [
+              "0x0",
+              "0x0",
+              "0x0",
+              "0x1"
+            ],
+            [
+              "0x0",
+              "0x1",
+              "0x1",
+              "0x1"
+            ],
+            [
+              "0x1",
+              "0x0",
+              "0x1",
+              "0x0"
+            ],
+            [
+              "0x1",
+              "0x1",
+              "0x1",
+              "0x0"
+            ],
+            [
+              "0x0",
+              "0x1",
+              "0x1",
+              "0x1"
+            ],
+            [
+              "0x1",
+              "0x1",
+              "0x0",
+              "0x1"
+            ],
+            [
+              "0x1",
+              "0x1",
+              "0x1",
+              "0x1"
+            ],
+            [
+              "0x1",
+              "0x1",
+              "0x1",
+              "0x0"
+            ],
+            [
+              "0x0",
+              "0x0",
+              "0x1",
+              "0x1"
+            ],
+            [
+              "0x1",
+              "0x0",
+              "0x0",
+              "0x1"
+            ],
+            [
+              "0x1",
+              "0x1",
+              "0x1",
+              "0x0"
+            ],
+            [
+              "0x1",
+              "0x0",
+              "0x1",
+              "0x0"
+            ],
+            [
+              "0x1",
+              "0x1",
+              "0x1",
+              "0x1"
+            ],
+            [
+              "0x0",
+              "0x0",
+              "0x0",
+              "0x1"
+            ],
+            [
+              "0x1",
+              "0x0",
+              "0x0",
+              "0x0"
+            ],
+            [
+              "0x1",
+              "0x0",
+              "0x1",
+              "0x1"
+            ],
+            [
+              "0x1",
+              "0x0",
+              "0x0",
+              "0x1"
+            ],
+            [
+              "0x0",
+              "0x1",
+              "0x0",
+              "0x0"
+            ],
+            [
+              "0x1",
+              "0x0",
+              "0x0",
+              "0x1"
+            ],
+            [
+              "0x1",
+              "0x1",
+              "0x1",
+              "0x1"
+            ],
+            [
+              "0x0",
+              "0x1",
+              "0x0",
+              "0x1"
+            ],
+            [
+              "0x0",
+              "0x0",
+              "0x0",
+              "0x1"
+            ],
+            [
+              "0x0",
+              "0x1",
+              "0x1",
+              "0x1"
+            ],
+            [
+              "0x1",
+              "0x0",
+              "0x1",
+              "0x0"
+            ],
+            [
+              "0x1",
+              "0x1",
+              "0x0",
+              "0x1"
+            ],
+            [
+              "0x0",
+              "0x1",
+              "0x1",
+              "0x0"
+            ],
+            [
+              "0x1",
+              "0x0",
+              "0x1",
+              "0x1"
+            ],
+            [
+              "0x1",
+              "0x1",
+              "0x1",
+              "0x1"
+            ],
+            [
+              "0x1",
+              "0x0",
+              "0x0",
+              "0x0"
+            ]
+          ],
+          "polar_operators_rows_hex": [
+            [
+              "0x9",
+              "0x0",
+              "0x3",
+              "0x1",
+              "0x9",
+              "0x0",
+              "0x1",
+              "0x1",
+              "0x1",
+              "0x0",
+              "0x0",
+              "0x0",
+              "0x0",
+              "0x1",
+              "0x1",
+              "0x1",
+              "0x1",
+              "0x1",
+              "0x1",
+              "0x0",
+              "0x0",
+              "0x1",
+              "0x1",
+              "0x0",
+              "0x1",
+              "0x1",
+              "0x1",
+              "0x0",
+              "0x1",
+              "0x1",
+              "0x1",
+              "0x1",
+              "0x0",
+              "0x1",
+              "0x1",
+              "0x1",
+              "0x0",
+              "0x1",
+              "0x1",
+              "0x0",
+              "0x0",
+              "0x0",
+              "0x1",
+              "0x1",
+              "0x0",
+              "0x1",
+              "0x1",
+              "0x1"
+            ],
+            [
+              "0x0",
+              "0x5",
+              "0x0",
+              "0x0",
+              "0x0",
+              "0x1",
+              "0x1",
+              "0x0",
+              "0x0",
+              "0x1",
+              "0x0",
+              "0x1",
+              "0x1",
+              "0x0",
+              "0x1",
+              "0x0",
+              "0x1",
+              "0x0",
+              "0x0",
+              "0x0",
+              "0x1",
+              "0x0",
+              "0x1",
+              "0x1",
+              "0x1",
+              "0x1",
+              "0x1",
+              "0x0",
+              "0x0",
+              "0x1",
+              "0x0",
+              "0x1",
+              "0x0",
+              "0x0",
+              "0x0",
+              "0x0",
+              "0x1",
+              "0x0",
+              "0x1",
+              "0x1",
+              "0x0",
+              "0x1",
+              "0x0",
+              "0x1",
+              "0x1",
+              "0x0",
+              "0x1",
+              "0x0"
+            ],
+            [
+              "0x0",
+              "0x0",
+              "0x0",
+              "0x1",
+              "0x9",
+              "0x1",
+              "0x0",
+              "0x0",
+              "0x1",
+              "0x0",
+              "0x0",
+              "0x0",
+              "0x0",
+              "0x0",
+              "0x1",
+              "0x1",
+              "0x0",
+              "0x0",
+              "0x0",
+              "0x0",
+              "0x1",
+              "0x1",
+              "0x1",
+              "0x1",
+              "0x0",
+              "0x1",
+              "0x1",
+              "0x1",
+              "0x0",
+              "0x1",
+              "0x1",
+              "0x1",
+              "0x0",
+              "0x0",
+              "0x1",
+              "0x0",
+              "0x0",
+              "0x0",
+              "0x1",
+              "0x0",
+              "0x0",
+              "0x1",
+              "0x1",
+              "0x0",
+              "0x1",
+              "0x1",
+              "0x1",
+              "0x0"
+            ],
+            [
+              "0x9",
+              "0x0",
+              "0x0",
+              "0x0",
+              "0x9",
+              "0x1",
+              "0x0",
+              "0x0",
+              "0x1",
+              "0x0",
+              "0x1",
+              "0x0",
+              "0x1",
+              "0x0",
+              "0x0",
+              "0x0",
+              "0x1",
+              "0x0",
+              "0x0",
+              "0x1",
+              "0x1",
+              "0x0",
+              "0x0",
+              "0x1",
+              "0x1",
+              "0x1",
+              "0x0",
+              "0x1",
+              "0x1",
+              "0x0",
+              "0x0",
+              "0x1",
+              "0x1",
+              "0x0",
+              "0x1",
+              "0x1",
+              "0x0",
+              "0x1",
+              "0x1",
+              "0x1",
+              "0x1",
+              "0x1",
+              "0x0",
+              "0x1",
+              "0x0",
+              "0x1",
+              "0x1",
+              "0x0"
+            ]
+          ],
+          "operator_convention": "D_l maps input U coefficients to background covector; rows indexed by V",
+          "decoder_or_candidate": false
+        },
+        "complete_row_block": {
+          "status": "MAXIMAL_COMPLETE_ROW_BLOCK_AND_ALL_FIXED_SPANS_NECESSARY_GATE",
+          "background_matrix_image_dimension": 8,
+          "matrix_image_annihilator_basis_hex": [
+            "0x4",
+            "0x8008",
+            "0x20",
+            "0x80",
+            "0x200",
+            "0x400",
+            "0x2000",
+            "0x4000"
+          ],
+          "complete_row_block_basis_hex": [
+            "0x1"
+          ],
+          "complete_row_block_dimension": 1,
+          "complete_row_block_codimension": 3,
+          "complete_row_block_background_witnesses_hex": [
+            [
+              "0x800000000000",
+              "0x600000000000",
+              "0x700000000000",
+              "0xd00000000000"
+            ]
+          ],
+          "annihilator_row_span_basis_hex": [
+            "0x2",
+            "0x4",
+            "0x8"
+          ],
+          "eligible_exact_fixed_pivot_span_must_annihilate_complete_row_block": true,
+          "every_n_dimensional_span_complete_block_rank_lower_bound": 1,
+          "every_n_dimensional_span_variation_image_dimension_lower_bound": 8,
+          "all_fixed_n_dimensional_spans_excluded_by_complete_block": true,
+          "all_fixed_n_dimensional_spans_excluded_by_dimension_theorem": true,
+          "all_fixed_spans_uniform_background_invertibility_fraction_upper_bound": {
+            "sign": 1,
+            "numerator_hex": "0x1",
+            "denominator_hex": "0x2"
+          },
+          "dimension_theorem": {
+            "source": "https://arxiv.org/pdf/1004.0579",
+            "theorem": 9,
+            "field": "arbitrary field, including F2",
+            "maximum_nonsingular_affine_dimension": 6,
+            "classification_for_larger_fields_used": false
+          },
+          "background_uniformity_and_fixed_W_required_for_fraction_bound": true,
+          "background_adaptive_pivots_or_other_isotropic_charts_excluded": false,
+          "candidate_record_accepted": false,
+          "speedup_claim_allowed": false
+        },
+        "pencil_coverage": {
+          "status": "EXACT_SELECTED_BINARY_PIVOT_PENCIL_COVERAGE_NOT_DECODER_BOUND",
+          "constant_matrix_rows": [
+            5,
+            10,
+            3,
+            0
+          ],
+          "variation_generator_rows": [
+            [
+              9,
+              0,
+              0,
+              9
+            ],
+            [
+              0,
+              5,
+              0,
+              0
+            ],
+            [
+              3,
+              0,
+              0,
+              0
+            ],
+            [
+              1,
+              0,
+              1,
+              0
+            ],
+            [
+              9,
+              0,
+              9,
+              9
+            ],
+            [
+              0,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              0,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              1,
+              0,
+              1,
+              1
+            ],
+            [
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              1,
+              1,
+              1,
+              0
+            ],
+            [
+              1,
+              0,
+              1,
+              0
+            ],
+            [
+              1,
+              1,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              0,
+              1,
+              0
+            ],
+            [
+              1,
+              1,
+              1,
+              0
+            ],
+            [
+              0,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              0,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              1,
+              1
+            ],
+            [
+              1,
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              0
+            ],
+            [
+              1,
+              0,
+              1,
+              0
+            ],
+            [
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              0,
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              1,
+              0,
+              1,
+              1
+            ],
+            [
+              1,
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              0,
+              1,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              0,
+              1,
+              0
+            ],
+            [
+              1,
+              1,
+              0,
+              1
+            ],
+            [
+              0,
+              1,
+              1,
+              0
+            ],
+            [
+              1,
+              0,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              0,
+              0,
+              0
+            ]
+          ],
+          "dimension": 4,
+          "background_bits": 48,
+          "constant_matrix_rank": 3,
+          "background_matrix_image_rank": 8,
+          "individual_column_variation_ranks": [
+            4,
+            1,
+            1,
+            2
+          ],
+          "background_image_is_cartesian_product_of_column_spaces": true,
+          "all_columns_vary_and_separability_rules_out_every_constant_part": true,
+          "all_backgrounds_invertible_certified": false,
+          "exact_uniform_background_invertibility_fraction": null,
+          "singular_background_mask_hex": "0x0",
+          "singular_matrix_nonzero_kernel_vector_hex": "0xf",
+          "shortest_normalized_variation_cycle": null,
+          "backgrounds_enumerated_by_certificate": false,
+          "actual_native_chart_or_source_prevalence_proved_by_matrix_input": false,
+          "one_singular_background_proves_large_failure_mass": false,
+          "approximate_transport_or_general_algorithms_ruled_out": false,
+          "candidate_record_accepted": false,
+          "speedup_claim_allowed": false
+        },
+        "dimension_theorem_excludes_every_constant_part": true,
+        "all_backgrounds_invertible_excluded": true,
+        "surjective_direction_background_witness": {
+          "input_direction_hex": "0x1",
+          "background_mask_hex": "0xf00000000000"
+        },
+        "deterministic_direction_probe_menu_size": 10,
+        "successful_surjective_probes_before_stopping": 1,
+        "uniform_background_invertibility_fraction_upper_bound": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_hex": "0x2"
+        },
+        "nonzero_determinant_complement_boolean_degree_upper_bound": 4,
+        "no_obstruction_is_a_success_proof": false,
+        "fixed_span_may_depend_on_middle_labels_but_not_on_background": true,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      }
+    }
+  ],
+  "claim_gate": {
+    "full_polar_operators_exported_without_assignment_enumeration": true,
+    "polynomial_all_span_complete_block_and_dimension_gates": true,
+    "weighted_radical_menu_charged_as_exponential": true,
+    "all_isotropic_charts_or_background_adaptive_pivots_ruled_out": false,
+    "full_growing_modulus_decoder_implemented": false,
+    "independent_theorem_review": false,
+    "novelty_claim": false,
+    "candidate_record_accepted": false,
+    "speedup_claim_allowed": false
+  },
+  "dependency_sha256": {
+    "theorems/dcp_pivot_span_obstructions.py": "175ba883a0c114044785574beeb466a4ddcb1d2e110d4eb37131d5ea7d4e1a94",
+    "theorems/dcp_conditional_carry_features.py": "aa80e04ed54f1143ec2fac2b8083cd6e4cc93a055a1bf748f345d4af64de96fc",
+    "theorems/dcp_lowbit_fiber_normalizer.py": "10039d11f1981b07162aa1810c09011be122387b4bb0b72245f04fe847600f00",
+    "theorems/dcp_carry_packets.py": "c3d345cc0d123a86e29c976959471d645945e767f6d0ee1bc6bd79149a0322c6",
+    "research/phase_workbench/dcp_conditional_carry_features.json": "7de1254c948ae74de5afa697e7db79710c68bb52875a62b507a1f12d82327148"
+  }
+}

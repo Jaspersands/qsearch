@@ -1,0 +1,30 @@
+{
+  "audit_id": "LIT-NATIVE-PAIRED-POSTERIOR-DUAL",
+  "status": "LOCAL_DERIVATIONS_REVIEW_PENDING_BACKEND_PRIMARY_DOCS_INSPECTED",
+  "primary_sources": [
+    {
+      "id": "PYTHON-FLINT-ARB",
+      "url": "https://python-flint.readthedocs.io/en/latest/arb.html",
+      "used_for": "Real interval enclosure semantics, exact rational inputs, positivity/comparison and enclosure serialization."
+    },
+    {
+      "id": "PYTHON-FLINT-ACB",
+      "url": "https://python-flint.readthedocs.io/en/latest/acb.html",
+      "used_for": "Complex interval evaluation of exact rational root angles, not a theorem about quantum algorithmic advantage."
+    }
+  ],
+  "existing_repo_dependencies": [
+    "research/TERNARY_COVARIANT_NOISE.md",
+    "research/TERNARY_LIKELIHOOD_GATE.md",
+    "research/TERNARY_LEAST_TRIT_BOOTSTRAP.md",
+    "research/TERNARY_INCIDENCE_DECODER.md"
+  ],
+  "local_derivations": [
+    "Exact paired-record least-trit posterior as three weighted signed-root convolution coefficients",
+    "All-secret raw-record least-trit advantage at most sqrt(((5/3)^M-1)/(2*q^n))",
+    "Complete-record ANOVA-degree norm sum_j binom(M,j)*(2/3)^j",
+    "Full-label final-effect Hamming-radius advantage gate via oriented unit-coefficient modular relations"
+  ],
+  "novelty_claim": false,
+  "independent_mathematical_review_complete": false
+}

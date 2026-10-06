@@ -1,0 +1,293 @@
+{
+  "status": "LOCAL_DERIVATION_REVIEW_PENDING",
+  "physical_instruments": [
+    {
+      "modulus": 8,
+      "exact_density_phase_identities": 64,
+      "every_branch_kraus_norm_squared": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x2"
+      },
+      "target_can_be_entangled_with_an_untouched_reference": true
+    },
+    {
+      "modulus": 16,
+      "exact_density_phase_identities": 128,
+      "every_branch_kraus_norm_squared": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x2"
+      },
+      "target_can_be_entangled_with_an_untouched_reference": true
+    },
+    {
+      "modulus": 128,
+      "exact_density_phase_identities": 1024,
+      "every_branch_kraus_norm_squared": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x2"
+      },
+      "target_can_be_entangled_with_an_untouched_reference": true
+    }
+  ],
+  "complete_nonlinear_packet_pullback": {
+    "modulus": 8,
+    "all_higher_label_tables": 64,
+    "all_program_outcomes": 8,
+    "exact_branch_and_packet_pullback_checks": 16384,
+    "all_updated_higher_label_tables": 64,
+    "updated_table_multiplicity_from_all_branches": 8,
+    "map_anf_hex": [
+      [
+        "0x1"
+      ],
+      [
+        "0x3"
+      ]
+    ],
+    "map_is_injective": false,
+    "public_map_inverse_required": false,
+    "compiled_functions_hex": [
+      [
+        "0x3"
+      ],
+      [
+        "0x1"
+      ],
+      [
+        "0x3"
+      ]
+    ],
+    "resource_plan": {
+      "status": "CONSUMED_PROGRAM_INSTRUMENT_NOT_REUSABLE_ORACLE",
+      "modulus": 8,
+      "dimension": 1,
+      "public_labels": [
+        [
+          1,
+          0,
+          1
+        ]
+      ],
+      "target_qubits": 2,
+      "public_boolean_anf_functions_hex": [
+        [
+          "0x3"
+        ],
+        [
+          "0x1"
+        ],
+        [
+          "0x3"
+        ]
+      ],
+      "program_phase_states_consumed": 3,
+      "program_measurements_in_Z": 3,
+      "boolean_accumulator_to_program_cnots": 3,
+      "public_evaluator_resources": {
+        "description_size_monomials": 3,
+        "maximum_anf_degree": 2,
+        "compute_uncompute_toffoli_upper_bound": 8,
+        "compute_uncompute_cnot_upper_bound": 6,
+        "compute_uncompute_x_upper_bound": 0,
+        "reusable_clean_work_qubits_upper_bound": 2,
+        "physical_gate_backend_exported": false
+      },
+      "operations": [
+        "compute_public_f_i_into_clean_accumulator",
+        "CNOT_accumulator_to_supplied_program_i",
+        "measure_program_i_in_Z_and_record_b_i",
+        "uncompute_public_f_i_and_reuse_clean_accumulator",
+        "replace_label_column_i_by_(-1)^b_i_times_original_column_i"
+      ],
+      "one_step_kraus_identity": "K_b(z)=2^-1/2 exp(i theta b) exp(i(-1)^b theta f(z))",
+      "branch_probability": "2^-m_independent_of_secret_labels_and_target_state_for_phase_only_programs",
+      "all_outcomes_kept": true,
+      "postselection_used": false,
+      "secret_dependent_rotation_or_inverse_used": false,
+      "same_program_or_phase_function_reusable": false,
+      "all_input_bit_noise_models_covered": false,
+      "physical_controlled_gate_precision_and_backend_verified": false,
+      "unknown_residue_decoder": false,
+      "speedup_claim_allowed": false
+    },
+    "bounded_controls_are_not_algorithmic_advantage_evidence": true
+  },
+  "scalable_public_map_control": {
+    "input_bits": 64,
+    "description": {
+      "description_size_monomials": 3,
+      "maximum_anf_degree": 2,
+      "compute_uncompute_toffoli_upper_bound": 4,
+      "compute_uncompute_cnot_upper_bound": 6,
+      "compute_uncompute_x_upper_bound": 0,
+      "reusable_clean_work_qubits_upper_bound": 2,
+      "physical_gate_backend_exported": false
+    },
+    "output_at_both_extreme_bits": [
+      1,
+      1,
+      1
+    ],
+    "truth_table_enumeration_used": false
+  },
+  "source_gates": [
+    {
+      "status": "CONDITIONAL_SIGN_COVARIANT_SOURCE_GATE_NOT_PROVEN_REDUCTION",
+      "native_updated_source_certified_as_declared": true,
+      "issues": [],
+      "declarations_programmatically_proven": false,
+      "high_label_selected_functions_automatically_native": false,
+      "repeated_same_function_queries_available": false,
+      "candidate_record_accepted": false,
+      "speedup_claim_allowed": false
+    },
+    {
+      "status": "CONDITIONAL_SIGN_COVARIANT_SOURCE_GATE_NOT_PROVEN_REDUCTION",
+      "native_updated_source_certified_as_declared": false,
+      "issues": [
+        "selector_precedes_current_higher_labels_and_program_outcomes is not established",
+        "native_iid_current_higher_labels is not established",
+        "independent_phase_only_programs is not established",
+        "each_program_consumed_once is not established"
+      ],
+      "declarations_programmatically_proven": false,
+      "high_label_selected_functions_automatically_native": false,
+      "repeated_same_function_queries_available": false,
+      "candidate_record_accepted": false,
+      "speedup_claim_allowed": false
+    },
+    {
+      "status": "CONDITIONAL_SIGN_COVARIANT_SOURCE_GATE_NOT_PROVEN_REDUCTION",
+      "native_updated_source_certified_as_declared": false,
+      "issues": [
+        "selector_precedes_current_higher_labels_and_program_outcomes is not established"
+      ],
+      "declarations_programmatically_proven": false,
+      "high_label_selected_functions_automatically_native": false,
+      "repeated_same_function_queries_available": false,
+      "candidate_record_accepted": false,
+      "speedup_claim_allowed": false
+    },
+    {
+      "status": "CONDITIONAL_SIGN_COVARIANT_SOURCE_GATE_NOT_PROVEN_REDUCTION",
+      "native_updated_source_certified_as_declared": false,
+      "issues": [
+        "outcome selection needs its own source and consumption ledger"
+      ],
+      "declarations_programmatically_proven": false,
+      "high_label_selected_functions_automatically_native": false,
+      "repeated_same_function_queries_available": false,
+      "candidate_record_accepted": false,
+      "speedup_claim_allowed": false
+    }
+  ],
+  "sign_orbit_selector_source": {
+    "status": "SIGN_ORBIT_INVARIANT_SELECTOR_SOURCE_IDENTITY",
+    "canonical_public_sign_orbit_columns": [
+      [
+        1,
+        2
+      ],
+      [
+        3,
+        5
+      ],
+      [
+        4,
+        0
+      ]
+    ],
+    "conditional_column_orbit_sizes": [
+      2,
+      2,
+      1
+    ],
+    "allowed_selector": "arbitrary_public_function_of_all_canonical_sign_orbits_and_prior_only",
+    "conditional_source": "independent_uniform_sign_orbit_elements_per_column_not_uniform_higher_labels",
+    "native_unconditional_updated_label_law_preserved": true,
+    "selector_recomputed_on_updated_labels_equals_preinjection_selector": true,
+    "conditional_higher_labels_are_iid_uniform": false,
+    "old_fixed_low_chart_high_label_moment_theorem_automatically_usable": false,
+    "cost_or_success_of_a_particular_selector_proved": false,
+    "new_hidden_phase_queries_or_copies_available": false,
+    "independent_theorem_review": false,
+    "speedup_claim_allowed": false
+  },
+  "selector_source_controls": {
+    "modulus": 8,
+    "all_original_label_sign_pairs": 16,
+    "unconditional_updated_label_counts": [
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2
+    ],
+    "safe_sign_orbit_selected_3_counts": [
+      0,
+      0,
+      0,
+      2,
+      0,
+      2,
+      0,
+      0
+    ],
+    "unsafe_original_label_less_than_4_counts": [
+      2,
+      1,
+      1,
+      1,
+      0,
+      1,
+      1,
+      1
+    ],
+    "sign_covariance_allows_higher_label_selection_but_not_old_iid_moments": true
+  },
+  "nonlinear_product_falsifier": {
+    "status": "LOCAL_SOURCE_UNIVERSAL_PHASE_PRODUCT_CRITERION_REVIEW_PENDING",
+    "modulus": 8,
+    "source_universal_phase_product": false,
+    "nonliteral_physical_coordinate_functions": [
+      1
+    ],
+    "requires_functions_fixed_across_all_current_higher_label_tables": true,
+    "criterion": "every_physical_boolean_function_is_constant_or_one_possibly_complemented_variable",
+    "proof": "all_secret_and_higher_label_product_phases_force_mixed_derivatives_zero_mod_q_over_2_then_zero_in_Z",
+    "fixed_degree_or_low_anf_degree_alone_suffices": false,
+    "high_label_adaptive_or_sign_orbit_selected_functions_covered": false,
+    "general_measurements_or_nonproduct_decoders_closed": false,
+    "independent_theorem_review": false,
+    "speedup_claim_allowed": false
+  },
+  "literature": [
+    {
+      "id": "ARXIV-quant-ph-0102037",
+      "url": "https://arxiv.org/abs/quant-ph/0102037",
+      "scope": "Known stochastic U(1) program-state processing; not a DCP decoder or repeated random-label access theorem."
+    }
+  ],
+  "claim_gate": {
+    "nonlinear_public_pullback_uses_supplied_states_not_their_inverse": true,
+    "random_signed_programs_create_a_reusable_phase_oracle": false,
+    "multiple_copies_of_one_packet_prepared": false,
+    "uniform_source_assumed_after_high_label_dependent_selection": false,
+    "nonlinear_pullback_is_an_independent_phase_qubit_factory": false,
+    "independent_theorem_review": false,
+    "novelty_claim": false,
+    "unknown_residue_decoder": false,
+    "speedup_claim_allowed": false
+  },
+  "dependency_sha256": {
+    "theorems/dcp_boolean_phase_pullback.py": "add300c25590282caa92d08cdeace2bc293ac8d9e9df68c3e4bb013c13815b09",
+    "theorems/dcp_carry_packets.py": "c3d345cc0d123a86e29c976959471d645945e767f6d0ee1bc6bd79149a0322c6",
+    "theorems/dcp_bell_inference_kernel.py": "80a386759b43dacbcd7ed078c649e3004df51a704fc7747d01907dbc89b22a64"
+  }
+}

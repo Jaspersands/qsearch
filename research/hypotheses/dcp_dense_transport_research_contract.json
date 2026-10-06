@@ -1,0 +1,206 @@
+{
+  "hypothesis_id": "HYP-DCP-DENSE-NATIVE-PHASE-TRANSPORT",
+  "status": "CONDITIONAL_DECODER_TARGET_NOT_ACCEPTED_CANDIDATE",
+  "candidate_record_accepted": false,
+  "objective": "Implement a uniform polynomial native growing-modulus residue decoder through a source-valid seeded partial arithmetic witness finder, efficient phase-separating transport, quantum fiber operations or branch-mixing readout. Do not universally require complete fiber rank/unrank, two witnesses or fixed clean junk.",
+  "literature_ids": ["ARXIV-quant-ph-0501044", "ARXIV-quant-ph-0304125"],
+  "ontology_nodes": ["dihedral-hsp", "hidden-shift", "unique-svp"],
+  "theory_note": "research/DCP_DENSE_PHASE_TRANSPORT.md",
+  "live_report": "research/phase_workbench/dcp_dense_phase_transport.json",
+  "first_layer_followup": {
+    "theory_note": "research/DCP_LOWBIT_FIBER_NORMALIZER.md",
+    "live_report": "research/phase_workbench/dcp_lowbit_fiber_normalizer.json",
+    "implemented_interface": "polynomial classical first-residue-bit-plane permutation and inverse, with exact native middle-label rank law",
+    "iterated_full_transport_implemented": false,
+    "blind_native_quadratic_model_recursion_falsified": true
+  },
+  "conditional_carry_followup": {
+    "theory_note": "research/DCP_CONDITIONAL_CARRY_FEATURES.md",
+    "live_report": "research/phase_workbench/dcp_conditional_carry_features.json",
+    "literature_status_audit": "research/literature_audits/dcp_conditional_carry_sources.json",
+    "implemented_interfaces": ["fresh carry-bit physical-feature source and symbolic linear recovery", "exact fixed-direction affine-source mass gate", "actual-packet pivot pencil extraction and polynomial column-separable coverage/witness gate"],
+    "quartic_persists_without_adaptive_pivot_selection": true,
+    "nonconstant_nonsingular_pencils_are_not_ruled_out_by_common_radical_bounds": true,
+    "positive_pencil_control_is_a_scalable_native_family": false,
+    "full_transport_or_decoder_implemented": false
+  },
+  "pivot_span_followup": {
+    "theory_note": "research/DCP_PIVOT_SPAN_OBSTRUCTIONS.md",
+    "live_report": "research/phase_workbench/dcp_pivot_span_obstructions.json",
+    "literature_status_audit": "research/literature_audits/dcp_pivot_span_sources.json",
+    "implemented_interfaces": ["full actual carry-polar operator family", "complete-row-block all-span gate and uniform-background mass bound", "arbitrary-field affine-nonsingular dimension gate", "charged weighted-radical necessary screen", "exact physical code Schur-product reformulation"],
+    "other_isotropic_charts_or_background_adaptive_pivots_ruled_out": false,
+    "low_schur_product_dimension_is_a_decoder_proof": false,
+    "full_transport_or_decoder_implemented": false
+  },
+  "systematic_source_followup": {
+    "theory_note": "research/DCP_SYSTEMATIC_SOURCE_TRANSPORT.md",
+    "live_report": "research/phase_workbench/dcp_systematic_source_transport.json",
+    "implemented_interface": "low-only binary-prefix row transport with exact higher-label IID law, fixed-secret covariance, inverse and rejection ledger",
+    "identity_binary_prefix_requires_literal_exponentially_rare_native_event": false,
+    "structured_tail_selection_cost_removed": false,
+    "full_native_or_lattice_decoder_implemented": false
+  },
+  "native_schur_expansion_followup": {
+    "theory_note": "research/DCP_NATIVE_SCHUR_EXPANSION.md",
+    "live_report": "research/phase_workbench/dcp_native_schur_expansion.json",
+    "literature_status_audit": "research/literature_audits/dcp_native_schur_sources.json",
+    "implemented_interfaces": ["all physical kernel subcodes signature obstruction", "exact product-stabilizer decomposition", "native subspace-envelope source bounds", "label-adaptive pool regrouping ledger", "positive nonrare middle-label identity-pencil control"],
+    "enumerable_low_image_pencil_route_deprioritized_on_native_dense_source": true,
+    "large_image_rank_proves_matrix_inversion_hard": false,
+    "larger_correlated_pencils_or_general_quantum_algorithms_ruled_out": false,
+    "independent_envelope_proof_review_complete": false
+  },
+  "terminal_affine_fiber_followup": {
+    "theory_note": "research/DCP_TERMINAL_AFFINE_FIBERS.md",
+    "live_report": "research/phase_workbench/dcp_terminal_affine_fibers.json",
+    "implemented_interfaces": ["exact two-adic affine-plane source count", "parity-kernel point-mass source and high-probability gates", "physical affine block clean rank-r compression gate", "packet-menu selection ledger", "increased-density escape controls"],
+    "near_density_one_physical_affine_flat_tail_route_deprioritized": true,
+    "all_nonlinear_charts_or_interblock_quantum_operations_excluded": false,
+    "increased_density_can_make_this_bound_vacuous": true,
+    "incident_point_mass_is_global_plane_absence_or_instance_certification": false,
+    "independent_mathematical_review_complete": false
+  },
+  "affine_cube_hierarchy_followup": {
+    "theory_note": "research/DCP_AFFINE_CUBE_HIERARCHY.md",
+    "live_report": "research/phase_workbench/dcp_affine_cube_hierarchy.json",
+    "implemented_interfaces": ["polynomial symbolic higher-cube incidence bound", "cube-free cap recurrence and compression ledger", "actual-parity all-block quadratic rank gate", "dense native zero-column budget", "phase-separation countercontrol with perfect readout but unflattened junk"],
+    "constant_density_increase_is_an_established_clean_affine_tail_escape": false,
+    "fixed_clean_junk_required_for_general_residue_readout": false,
+    "independent_mathematical_review_complete": false
+  },
+  "phase_transport_target": {
+    "sufficient_exact_identity": "F_A(P(t,j)) = t + c_A(j); t-QFT recovers the residue even though junk phase depends on the unknown secret",
+    "fixed_clean_junk_required": false,
+    "geometry_gate_applicability": "Only architectures explicitly compressing physical affine tails into secret-independent clean target subspaces; not general phase separation or unknown-junk decoders",
+    "approximate_readout_metric": "Existing exact offset-bucket collision certificate, not flat-junk projection probability",
+    "classical_arithmetic_solver_is_a_legitimate_research_contribution": true,
+    "classical_arithmetic_baseline_simulates_DCP_input": false
+  },
+  "single_partial_witness_followup": {
+    "theory_note": "research/DCP_PARTIAL_WITNESS_READOUT.md",
+    "live_report": "research/reductions/dcp_partial_witness_readout.json",
+    "independent_code_checker": "research/certificates/dcp_partial_witness_crosscheck.js",
+    "implemented_interfaces": ["verified single-witness complete basis permutation", "exact independent full-target parity-alignment source wrapper", "all measured syndromes retained by label orientation", "fixed-secret heralded QFT success law", "correlated prelabel-fault complete-block resource ledger"],
+    "required_source": "IID labels modulo2^L, independent uniform FULL target, explicit fresh shared seed; m=nL+Delta",
+    "fixed_source_success_identity": "2^(-Delta)*rho^2 for EACH fixed secret; herald2^(-Delta)*rho",
+    "complete_fiber_rank_unrank_uniform_sampler_second_witness_or_inverse_finder_required": false,
+    "target_dependent_history_may_be_measured_or_discarded": false,
+    "polynomial_finder_implemented": false,
+    "arbitrary_measured_quantum_solver_automatically_compatible": false,
+    "known_partial_subset_sum_reduction_is_a_new_discovery": false,
+    "full_native_lattice_composition_verified": false,
+    "independent_mathematical_review_complete": false,
+    "candidate_record_accepted": false
+  },
+  "preferred_direct_purified_witness_followup": {
+    "theory_note": "research/DCP_DIRECT_WITNESS_FILTER.md",
+    "live_report": "research/reductions/dcp_direct_witness_filter.json",
+    "independent_code_checker": "research/certificates/dcp_direct_witness_crosscheck.js",
+    "input": "Original m=nL+Delta product phase qubits, IID Fourier labels moduloq=2^L, independent full arithmetic target",
+    "sufficient_arithmetic_interface": "Known uniform bounded classical or quantum witness circuit with accessible retained purification and inverse; verified output success beta on native independent full targets",
+    "heralded_kraus_block": "K=sum_x p_F(x)(x)|F(x)><x|; p_t(x) is verified solver output probability, not an amplitude or uniform-fiber assumption",
+    "fixed_source_success": "2^(-Delta)*beta_A^2 for EVERY fixed full secret; source average >=2^(-Delta)*beta^2",
+    "finder_circuit_calls": "One known forward and one known inverse per attempt; all workspace-zero herald losses charged",
+    "deterministic_canonical_witness_uniform_fiber_or_paired_workspace_overlap_required": false,
+    "parity_measurement_binary_rank_rejection_target_alignment_top_bit_completion_required": false,
+    "measured_output_only_black_box_suffices": false,
+    "uniform_polynomial_finder_supplied": false,
+    "independent_mathematical_review_complete": false,
+    "full_native_lattice_composition_verified": false,
+    "candidate_record_accepted": false
+  },
+  "binary_error_source_followup": {
+    "contract": "research/hypotheses/dcp_binary_error_source_bridge_contract.json",
+    "source_audit": "research/literature_audits/binary_error_frontier_sources.json",
+    "actual_classical_binary_error_component": "research/classical_baselines/native_binary_error_hensel.json",
+    "actual_fixed_prime_quotient_component": "research/classical_baselines/ternary_quotient_decoder.json",
+    "known_ternary_quantum_reduction_finite_audit": "research/reductions/ternary_decoder_filter.json",
+    "ternary_finite_audit_is_scalable_quantum_circuit": false,
+    "fixed_prime_quotient_component_is_native_quantum_source_bridge": false,
+    "positive_and_scoped_source_reductions": "research/reductions/dcp_binary_error_source_bridge.json",
+    "classical_observation_strong_converse": "research/reductions/dcp_fourier_noise_decoder_bound.json",
+    "native_boolean_subset_sum_to_binary_error_quantum_source_bridge_supplied": false,
+    "single_translation_or_measured_independent_Fourier_noise_shortcut_valid": false,
+    "collective_different_label_or_correlated_noise_algorithms_ruled_out": false,
+    "uniform_polynomial_native_witness_finder_supplied": false,
+    "candidate_record_accepted": false
+  },
+  "relation_walk_followup": {
+    "theory_note": "research/DCP_RELATION_WALK_STATIONARITY.md",
+    "live_report": "research/phase_workbench/dcp_relation_walk_stationarity.json",
+    "independent_code_checker": "research/certificates/dcp_relation_walk_crosscheck.js",
+    "actual_signed_relation_swap_implemented": true,
+    "raw_state_is_fixed_by_pure_equal_sum_Laplacian_evolution": true,
+    "explicit_label_adaptive_polynomial_dictionary_applicability_charged": true,
+    "arbitrary_fiber_Hamiltonians_transverse_drives_or_implicit_neighbor_finders_ruled_out": false,
+    "next_obligation": "A collision-walk proposal must supply actual nonstationary source dynamics and coherent readout, not merely a fiber mixing-time bound or rare long endpoint patterns.",
+    "independent_mathematical_review_complete": false,
+    "candidate_record_accepted": false
+  },
+  "native_product_readout_followup": {
+    "theory_note": "research/DCP_NATIVE_PRODUCT_READOUT_BOUND.md",
+    "live_report": "research/classical_baselines/dcp_native_product_readout_bound.json",
+    "independent_code_checker": "research/certificates/dcp_native_product_readout_crosscheck.js",
+    "source": "Actual IID native phase qubits and uniform secret; no Fourier-noise conversion assumed",
+    "blocked_class": "Near-entropy-width nonadaptive product POVMs, even selected using the entire public label matrix, with arbitrary classical-record decoding",
+    "correct_probability_source_gate": "sqrt(((3/2)^m+(2^m-(3/2)^m)/(q/2)^n)/q^n), capped1",
+    "outcome_adaptive_measurements_entangled_readout_or_higher_sample_budgets_ruled_out": false,
+    "actual_adaptive_scope_countercontrol_verified": true,
+    "independent_mathematical_review_complete": false,
+    "candidate_record_accepted": false
+  },
+  "input_access": {
+    "allowed": ["supplied unknown coset states", "native independent uniform public Fourier labels", "charged known reversible arithmetic and QFT", "fresh original states for completion and verification"],
+    "not_granted": ["same-label copies", "unknown preparation inverses", "hidden-phase evaluators", "chosen hidden labels", "fiber sampling or ranking oracles", "exponential lookup advice"]
+  },
+  "target_parameters": {
+    "q": "power of two at least8, uniform runtime polynomial in n and log2(q)",
+    "logical_width": "n log2(q/2)+Delta",
+    "density_overhead": "even constant Delta, baseline16",
+    "natural_lattice_coordinate_regime": "q=2^(4n+1), not q=poly(n)",
+    "natural_lattice_composition_verified": false
+  },
+  "proof_obligations": {
+    "PO-SOURCE": "Prove the full native label and chart law, all prefix attempts, stochastic signs, and any high-label selection conditioning. No uncharged favorable labels or outcomes.",
+    "PO-PIVOT-STRUCTURE": "Any low-variation pivot route must survive the all-subcode Schur/signature-space source bounds and charge all adaptive source-pool menus. Larger matrix images are not ruled out or automatically hard to invert; prove actual structure and higher-carry closure.",
+    "PO-IMPLEMENTATION": "Supply a uniform polynomial native partial witness finder with clean reversible transcript, BOTH directions of a chosen full transport architecture, or a genuinely branch-mixing quantum decoder. Full transport inversion is not required by the single-witness alternative. Enumeration and near-uniform histograms do not satisfy this obligation.",
+    "PO-PARTIAL-WITNESS": "Prove unconditional independent-full-target coverage beta for an explicit bounded shared-seed finder at m=nL+Delta, Delta at most logarithmic for this one-word filter. Use the exact original-row parity-alignment wrapper; retain every measured syndrome and charge full-rank aborts. Verify outputs, uncompute all target-dependent history, and derive fixed-secret success2^(-Delta)*rho^2. Planted, even-only or mean-per-label legal coverage does not transfer for free. Complete fiber rank/unrank, inverse finder and a second witness are not necessary here. Compose correlated prelabel noise, fresh completion and verification, all source/precision costs and named baselines before accepting any candidate.",
+    "PO-DIRECT-PURIFIED-FINDER": "Preferred alternative: construct a uniform bounded classical OR quantum finder for IID native A and independent uniform FULL targets at m=nL+Delta. Supply actual accessible purification and known inverse, verify Boolean outputs and preserve target control. Compute target, finder, word-match flag, XOR word away, uncompute finder and CHARGE workspace-zero herald; prove K weights are output probabilities p_t(x), full-secret success2^(-Delta)*beta_A^2 for each secret and source-average Jensen bound. No parity chart, binary-rank abort, target alignment, canonical witness, matching or final-bit completion is required in this route. Output-only black boxes, unknown advice/inverses, selected/planted coverage and excessive density do not pass. Compose original-state faults, fresh verification and all natural source/precision costs before acceptance.",
+    "PO-ITERATION": "The first-layer common-isotropic normalizer is reversible and low-selected. Its next quotient can have quartic low bits even when every first-layer background has full rank. Supply an actual compact higher-carry invariant and prove its conditional source law; unused random higher labels do not make the reparameterized graph a native quadratic chart.",
+    "PO-TERMINAL-GEOMETRY": "Near-density-one transports ending in physical affine tails must survive the native affine-plane incidence and clean rank-r compression gates. Nonlinear physical charts, interblock quantum readout, retained secret-dependent trash and increased-density sources are not ruled out, but need their own source, cost and output proofs. Do not convert a uniform-secret mean or source mean into a per-secret or per-instance bound.",
+    "PO-PHASE-SEPARATION": "Fixed clean junk is optional. Prove that F_A(P(t,j))-t is independent of t, or derive its actual offset-collision readout law, allowing secret-dependent junk. Clean-affine-tail geometry gates cannot reject this broader target. Implement both transport directions uniformly, charge conditional native source and all access, and test independent arithmetic targets against the exact two-forward-call baseline.",
+    "PO-ACCESS": "Charge every input state, evaluator, ancilla, classical preparation, measurement, precision and inverse. No fiber/reflection oracle, cloned packet or unknown preparation inverse.",
+    "PO-SUCCESS": "Prove source-average residue success for each fixed secret and bounded-error full-secret completion with fresh original registers. The packet loses one original secret bit per coordinate.",
+    "PO-CLASSICAL": "Apply the exact two-forward-call independent-uniform-target witness baseline to every classically evaluable monomial transport. This does not simulate DCP. Quantum-only access is not classical access.",
+    "PO-NOISE": "For correlated basis statuses use prelabel classical product-state lineage, independent fresh labels, discarded gauge data, and conditional independent fair gauge-error coins. Arbitrary correlated Z laws and entangled faults are excluded.",
+    "PO-AMPLIFICATION": "Preallocate disjoint independent attempts; establish fixed-secret register fault budgets, candidate commitment before verification labels, rank completion and exact false-accept tail. Do not infer conditional independence from marginals.",
+    "PO-REDUCTION": "Compose a successful decoder with the actual lattice source M=2^(4n), polynomial supply and total preparation/circuit perturbation below the failure margin. The current ledger is not this proof.",
+    "PO-COMPARISON": "Compare against named subset-sum algorithms, arithmetic baselines and quantum DCP sieves in the SAME access/parameter/noise model. No novelty or speedup from constant-size controls."
+  },
+  "experiments_with_falsifiers": [
+    {
+      "experiment": "Construct a uniform bounded seeded arithmetic witness finder on IID native labels and independent uniform FULL targets, with m=nL+O(log(nL)) and growing L.",
+      "falsifier": "Verified unconditional coverage is negligible, preprocessing/history/runtime is superpolynomial, the law is planted or selected, coherence leaves which-target history, or density overhead kills the heralded throughput."
+    },
+    {
+      "experiment": "Construct reversible dense residue transport without enumerating assignments or requesting a fiber oracle.",
+      "falsifier": "Matching, normalization, sampling, rank/unrank, preprocessing or inverse cost is exponential in n log q."
+    },
+    {
+      "experiment": "Test each classically evaluable transport against independently sampled uniform residue challenges using the two-call witness routine.",
+      "falsifier": "A claimed uniquely quantum signal equals the classical witness baseline; reassess it as an arithmetic solver instead of claiming DCP dequantization."
+    },
+    {
+      "experiment": "Develop a quantum-only fiber operator or nonmonomial decoder on the native source, then derive the complete source/output law.",
+      "falsifier": "The construction hides exponential state preparation, repeated unknown program access, uncharged rejection, same-label copies, or a natural-source selection penalty."
+    },
+    {
+      "experiment": "Compose a polynomial decoder at q=2^(4n+1) through correlated-prelabel faults, completion, verification and source/gate approximation.",
+      "falsifier": "Required fault lineage, fixed-secret marginal promises, independent conditional coins, polynomial supply or total error margin fails."
+    }
+  ],
+  "blocked_on": ["no polynomial native partial witness finder, full transport or branch-mixing decoder", "no independently reviewed local derivations", "no full natural lattice state-supply and precision composition"],
+  "speedup_claim_allowed": false,
+  "novelty_claim": false
+}

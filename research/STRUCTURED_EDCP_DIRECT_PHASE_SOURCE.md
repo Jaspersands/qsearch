@@ -2,6 +2,13 @@
 
 Date: 2026-09-26. LOCAL DERIVATION / REVIEW PENDING.
 
+SIMPLER DISTINCT SOURCE (2026-09-29):
+`NATIVE_RLWE_PHASE_DECODER_TARGET.md` prepares phase states from the original
+normal-form Ring-LWE sample modulo q, without this note's Q=q^d+1 reduction
+or fresh-selector hashing. It retains the hardness bridge and provides a
+prior-aware one-block information certificate. Do not interchange the two
+state families, label distributions or source-error ledgers.
+
 ## 1. Decision And Limits
 
 There is a simpler forward construction of the required coefficient PHASE

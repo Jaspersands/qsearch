@@ -1,0 +1,43 @@
+{
+  "hypothesis_id": "HYP-NATIVE-DCP-PROJECTIVE-CODE-ADMISSION",
+  "status": "FIXED_CODE_SIGNAL_CEILING_AND_STABILIZER_TARGET_LOSS_LOCAL_REVIEW_PENDING",
+  "candidate_record_accepted": false,
+  "note": "research/DCP_PROJECTIVE_CODE_ADMISSION.md",
+  "report": "research/phase_workbench/dcp_projective_code_admission.json",
+  "source_audit": "research/literature_audits/dcp_projective_code_admission_sources.json",
+  "follow_up": "research/DCP_PATH_CODE_FUSION.md closes the six-to-two instrument with a full-syndrome linear-cost compiler. Measuring retained common parity equals ordinary pair fusion plus Fourier checks, and sign signal survives that comparator too. Extra coherent information is not ruled out; no decoder or sieve improvement supplied.",
+  "source": "Existing IID native DCP phase qubits with public uniform labels; consumed once. No reusable phase oracle, free conditional copies or new toy problem.",
+  "mechanism": "Known commuting CSS Pauli action from full-rank binary self-orthogonal M, followed by full Boolean Fourier readout. Distinct native labels are allowed for this raw measurement; same-state literature guarantees are not imported.",
+  "local_results": {
+    "target_loss": "Fixed-label product packet Pauli anyonic stabilizer is identical for every odd secret, despite different raw measurement laws.",
+    "noncentral_action": "Dihedral irrep rotation/reflection commutator is scalar only when 4k=0 modN; generic noncentral commutators cannot be neutralized as scalar cocycles.",
+    "exact_kernel": "For secret order>=4, IID uniform labels and prelabel fixed M: K(s,s)=sum_v 2^(dim(C_v)-wt(v)); K(s,t)=1 off negation orbits.",
+    "matched_baseline": "Systematic M=[I,A] gives AA^T=I and K<= (3/2)^h. Bell pairs attain this using2h<=r native qubits. This is chi-squared signal only, not transcript/sample/time dominance.",
+    "individual_readout_baseline": "Individual X readout uses2h native qubits for2h output bits with kernel(3/2)^(2h); its proposed-secret likelihood costsO(h) cosine factors. No efficient full-secret search or classical phase-state simulator inferred.",
+    "retained_quantum_escape": "Outcome-only ceiling excludes no retained-register decoder. Overlapping six-qubit/two-row code without all-ones leaves2 encoded qubits; seven of eight unfiltered source controls distinguish s/-s with identical classical outcomes. All-ones controls instead erase that distinction.",
+    "concrete_native_state": "All-zero measured-generator branch has unnormalized logical amplitudes exp(i sum theta/2)*(C_p+(-1)^a i S_p)/4, with C/S products of three pair half-angle cosines/sines. Branch probability and all parent outcomes are retained; no reusable phase oracle or new decoder.",
+    "sq_scope": "Bounded one-record expectation queries at tolerance tau have a Bessel/reference-path screen; raw samples, current-label-adaptive codes and multirecord inference are not excluded. Screen can be vacuous at growing h.",
+    "physical_cost": "r standard native full-oracle bridge queries, <=2 sum(rowweights) known two-qubit Clifford gates and4h Hadamards in the purified readout. No state cloning or postselection."
+  },
+  "dependencies": ["standard native DCP source bridge", "known binary code with MM^T=0 and full row rank", "label-oblivious selection for moment transfer", "explicit source/output transcript", "matched Bell and individual-readout baselines"],
+  "proof_obligations_for_new_candidate": {
+    "PO-TARGET": "Learned subgroup or statistic must preserve enough full-secret information; a shared odd-secret stabilizer is insufficient.",
+    "PO-REPRESENTATION": "Known gauge, scalar cocycle and a genuine abelian projective action; noncentral dihedral commutator is not a scalar phase.",
+    "PO-SOURCE": "Charge native states, actual labels, failed selection and any repeated conditional-state preparation; no free inverse or cloning.",
+    "PO-SELECTION": "If M depends on current labels, do not use the fixed-M IID moment formula without a new conditioned-source proof.",
+    "PO-DECODE": "Give a uniform full-record algorithm and total runtime beyond a chi-squared benchmark. Compare against known sieves, Bell/readout inference and classical label-relation search.",
+    "PO-BASELINE": "Specify an actual improvement beyond the matched signal ceiling: inference, noise, compiler resources, higher moments or a new reduction.",
+    "PO-REVIEW": "Independently review source character averages, shortened-code/systematic bound, target-loss and SQ scopes. No independent theorem review yet."
+  },
+  "falsifiable_experiments": [
+    {"experiment": "Purified native coded measurement, retaining all outcomes.", "falsifier": "Pauli/Fourier likelihood, normalization, full source-state count or phase-neutrality countercontrol fails."},
+    {"experiment": "Exact code shortening and Bell ceiling.", "falsifier": "A full-rank self-orthogonal fixed code exceeds the stated source-averaged collision kernel."},
+    {"experiment": "Label-adaptive measurement admission.", "falsifier": "Claimed advantage is a source-conditioned artifact, free label matching, a known sieve step or lacks a uniform decoder."},
+    {"experiment": "Raw-transcript inference beyond SQ.", "falsifier": "A bounded-loss engine is incorrectly treated as a raw symbolic solver or identifiability is called polynomial-time inference."}
+  ],
+  "not_excluded": ["retained quantum register protocols", "overlapping native logical-state transport", "label-adaptive code selection", "non-CSS or rotated actions", "encoded-subspace conversions", "raw sample and multirecord inference", "higher-moment/noise advantages", "growing-row measurements outside the nonvacuous SQ regime"],
+  "gemini_tasks": ["Integrate only as scoped admission/known-baseline audit, never an accepted algorithm.", "Preserve informative raw laws alongside target-independent stabilizer output.", "Expose code-selection timing, matched physical costs and vacuous SQ cases.", "Run full CLI/registry validation independently; do not reinterpret focused tests as a full-suite pass."],
+  "independent_theorem_review": false,
+  "novelty_claim": false,
+  "full_classical_dequantization": false
+}

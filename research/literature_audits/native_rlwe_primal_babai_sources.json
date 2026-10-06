@@ -1,0 +1,27 @@
+{
+  "status": "LOCAL_DERIVATION_REVIEW_PENDING",
+  "checked_date": "2026-10-05",
+  "novelty_claim": false,
+  "independent_proof_review": false,
+  "sources": [
+    {
+      "url": "https://isa-afp.org/entries/Babai_Nearest_Plane.html",
+      "checked": "entry and outline proof",
+      "supports": "established nearest-plane algorithm and declared LLL approximation formalization",
+      "does_not_support": "formal verification of this repository or new source-specific probability bounds"
+    },
+    {
+      "url": "https://arxiv.org/abs/1502.04796",
+      "checked": "author-linked abstract; local centered-MGF proof supplied explicitly",
+      "supports": "established lattice Gaussian moment and shifted-sum analysis context",
+      "does_not_support": "attribution of the local shared-shape mixture certificate as a published new theorem"
+    },
+    {
+      "url": "https://eprint.iacr.org/2017/258.pdf",
+      "checked": false,
+      "access_result": "HTTP403",
+      "local_dependency": "research/STRUCTURED_EDCP_SOURCE_HARDNESS_AUDIT.md",
+      "review_obligation": "reverify precise source, normalization and reduction contracts independently"
+    }
+  ]
+}

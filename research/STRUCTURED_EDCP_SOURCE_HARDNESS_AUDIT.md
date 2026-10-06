@@ -6,6 +6,21 @@ This audits a missing implication, not an algorithm or a security estimate.
 No novelty, independent proof verification, efficient decoder, or quantum
 speedup is claimed. Production integration is assigned to Gemini.
 
+NATIVE-RING FOLLOW-UP (2026-09-29):
+`NATIVE_RLWE_PHASE_DECODER_TARGET.md` uses this normal-form/rounding bridge
+but prepares phase states directly modulo q. It removes the scalar mixing
+and selector steps from that distinct route, derives sharper small-secret
+tails, and gives separate q-near-d^4 references. No live parameters or old
+error ledgers are changed. The actual decoder remains missing.
+
+PRIOR-SPECIFIC FOLLOW-UP (2026-09-28):
+`STRUCTURED_EDCP_SMALL_SECRET_TARGET.md` proves one-block information
+sufficiency for the actual small-secret priors of BOTH lanes, including
+an exhaustive classical-readout comparator. The three/four-block tables
+below are sufficient counts for the stronger full-uniform-secret target,
+not required counts for this reduction. Efficient prior-aware decoding
+remains open; label normalization must push the prior forward.
+
 ## 1. Decision
 
 The existing coefficient-noise reference r_e=r_s=sqrt(d) is NOT justified by

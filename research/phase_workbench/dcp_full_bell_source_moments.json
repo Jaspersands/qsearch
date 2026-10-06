@@ -1,0 +1,781 @@
+{
+  "status": "LOCAL_DERIVATION_REVIEW_PENDING",
+  "complete_q8_source": {
+    "left_low": [
+      [
+        1,
+        1,
+        1
+      ]
+    ],
+    "right_low": [
+      [
+        1,
+        1,
+        0
+      ]
+    ],
+    "complete_higher_label_tables": 4096,
+    "xor_outcomes_checked": [
+      0,
+      3
+    ],
+    "source_mean_relative_collisions": {
+      "0": {
+        "sign": 1,
+        "numerator_hex": "0x7",
+        "denominator_binary_exponent": 2
+      },
+      "3": {
+        "sign": 1,
+        "numerator_hex": "0x7",
+        "denominator_binary_exponent": 2
+      }
+    },
+    "all_tables_obey_secret_negation_invariance": true,
+    "certificate": {
+      "status": "LOCAL_DERIVATION_REVIEW_PENDING",
+      "modulus": 8,
+      "logical_width": 2,
+      "input_phase_qubits": 6,
+      "selected_row_rank_histogram": {
+        "0": 1,
+        "2": 3
+      },
+      "ordered_disjoint_physical_direction_pairs": 7,
+      "high_label_mean_relative_full_collision": {
+        "sign": 1,
+        "numerator_hex": "0x7",
+        "denominator_binary_exponent": 2
+      },
+      "universal_mean_relative_collision_lower_bound": {
+        "sign": 1,
+        "numerator_hex": "0x7",
+        "denominator_binary_exponent": 2
+      },
+      "requires_nonzero_secret_parity": true,
+      "conditions_on_low_labels_and_public_charts": true,
+      "uniform_average_over_all_remaining_label_bits": true,
+      "independent_of_xor_and_initial_syndrome": true,
+      "mask_enumeration_count": 4,
+      "mask_enumeration_is_polynomial": false,
+      "full_secret_likelihood_evaluator_implemented": false,
+      "statistic_is_mutual_information": false,
+      "source_tail_concentration_proved": false,
+      "unknown_secret_decoder": false,
+      "speedup_claim_allowed": false
+    },
+    "bounded_identity_control_not_candidate": true
+  },
+  "growing_modulus_quartets": [
+    {
+      "modulus": 8,
+      "physical_source_surviving_quartets": 28,
+      "quartets_checked": 256,
+      "certificate": {
+        "status": "LOCAL_DERIVATION_REVIEW_PENDING",
+        "modulus": 8,
+        "logical_width": 2,
+        "input_phase_qubits": 6,
+        "selected_row_rank_histogram": {
+          "0": 1,
+          "2": 3
+        },
+        "ordered_disjoint_physical_direction_pairs": 7,
+        "high_label_mean_relative_full_collision": {
+          "sign": 1,
+          "numerator_hex": "0x7",
+          "denominator_binary_exponent": 2
+        },
+        "universal_mean_relative_collision_lower_bound": {
+          "sign": 1,
+          "numerator_hex": "0x7",
+          "denominator_binary_exponent": 2
+        },
+        "requires_nonzero_secret_parity": true,
+        "conditions_on_low_labels_and_public_charts": true,
+        "uniform_average_over_all_remaining_label_bits": true,
+        "independent_of_xor_and_initial_syndrome": true,
+        "mask_enumeration_count": 4,
+        "mask_enumeration_is_polynomial": false,
+        "full_secret_likelihood_evaluator_implemented": false,
+        "statistic_is_mutual_information": false,
+        "source_tail_concentration_proved": false,
+        "unknown_secret_decoder": false,
+        "speedup_claim_allowed": false
+      }
+    },
+    {
+      "modulus": 16,
+      "physical_source_surviving_quartets": 28,
+      "quartets_checked": 256,
+      "certificate": {
+        "status": "LOCAL_DERIVATION_REVIEW_PENDING",
+        "modulus": 16,
+        "logical_width": 2,
+        "input_phase_qubits": 6,
+        "selected_row_rank_histogram": {
+          "0": 1,
+          "2": 3
+        },
+        "ordered_disjoint_physical_direction_pairs": 7,
+        "high_label_mean_relative_full_collision": {
+          "sign": 1,
+          "numerator_hex": "0x7",
+          "denominator_binary_exponent": 2
+        },
+        "universal_mean_relative_collision_lower_bound": {
+          "sign": 1,
+          "numerator_hex": "0x7",
+          "denominator_binary_exponent": 2
+        },
+        "requires_nonzero_secret_parity": true,
+        "conditions_on_low_labels_and_public_charts": true,
+        "uniform_average_over_all_remaining_label_bits": true,
+        "independent_of_xor_and_initial_syndrome": true,
+        "mask_enumeration_count": 4,
+        "mask_enumeration_is_polynomial": false,
+        "full_secret_likelihood_evaluator_implemented": false,
+        "statistic_is_mutual_information": false,
+        "source_tail_concentration_proved": false,
+        "unknown_secret_decoder": false,
+        "speedup_claim_allowed": false
+      }
+    },
+    {
+      "modulus": 32,
+      "physical_source_surviving_quartets": 28,
+      "quartets_checked": 256,
+      "certificate": {
+        "status": "LOCAL_DERIVATION_REVIEW_PENDING",
+        "modulus": 32,
+        "logical_width": 2,
+        "input_phase_qubits": 6,
+        "selected_row_rank_histogram": {
+          "0": 1,
+          "2": 3
+        },
+        "ordered_disjoint_physical_direction_pairs": 7,
+        "high_label_mean_relative_full_collision": {
+          "sign": 1,
+          "numerator_hex": "0x7",
+          "denominator_binary_exponent": 2
+        },
+        "universal_mean_relative_collision_lower_bound": {
+          "sign": 1,
+          "numerator_hex": "0x7",
+          "denominator_binary_exponent": 2
+        },
+        "requires_nonzero_secret_parity": true,
+        "conditions_on_low_labels_and_public_charts": true,
+        "uniform_average_over_all_remaining_label_bits": true,
+        "independent_of_xor_and_initial_syndrome": true,
+        "mask_enumeration_count": 4,
+        "mask_enumeration_is_polynomial": false,
+        "full_secret_likelihood_evaluator_implemented": false,
+        "statistic_is_mutual_information": false,
+        "source_tail_concentration_proved": false,
+        "unknown_secret_decoder": false,
+        "speedup_claim_allowed": false
+      }
+    },
+    {
+      "modulus": 128,
+      "physical_source_surviving_quartets": 28,
+      "quartets_checked": 256,
+      "certificate": {
+        "status": "LOCAL_DERIVATION_REVIEW_PENDING",
+        "modulus": 128,
+        "logical_width": 2,
+        "input_phase_qubits": 6,
+        "selected_row_rank_histogram": {
+          "0": 1,
+          "2": 3
+        },
+        "ordered_disjoint_physical_direction_pairs": 7,
+        "high_label_mean_relative_full_collision": {
+          "sign": 1,
+          "numerator_hex": "0x7",
+          "denominator_binary_exponent": 2
+        },
+        "universal_mean_relative_collision_lower_bound": {
+          "sign": 1,
+          "numerator_hex": "0x7",
+          "denominator_binary_exponent": 2
+        },
+        "requires_nonzero_secret_parity": true,
+        "conditions_on_low_labels_and_public_charts": true,
+        "uniform_average_over_all_remaining_label_bits": true,
+        "independent_of_xor_and_initial_syndrome": true,
+        "mask_enumeration_count": 4,
+        "mask_enumeration_is_polynomial": false,
+        "full_secret_likelihood_evaluator_implemented": false,
+        "statistic_is_mutual_information": false,
+        "source_tail_concentration_proved": false,
+        "unknown_secret_decoder": false,
+        "speedup_claim_allowed": false
+      }
+    }
+  ],
+  "systematic_source_control": {
+    "dimension": 1,
+    "complete_systematic_pair_tables": 16,
+    "mean_relative_collision": {
+      "sign": 1,
+      "numerator_hex": "0x41",
+      "denominator_binary_exponent": 5
+    },
+    "full_source_formula": {
+      "status": "LOCAL_DERIVATION_REVIEW_PENDING",
+      "dimension": 1,
+      "logical_width": 2,
+      "input_qubits_per_packet": 3,
+      "two_public_prefix_invertibility_probability": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_binary_exponent": 2
+      },
+      "conditional_mean_relative_full_collision": {
+        "sign": 1,
+        "numerator_hex": "0x41",
+        "denominator_binary_exponent": 5
+      },
+      "public_source_rejection_charged": true,
+      "prefix_selection_is_secret_independent": true,
+      "conditions_on_prefix_success_not_unconditional_claim": true,
+      "valid_for_all_power_of_two_moduli_at_least_eight": true,
+      "requires_nonzero_secret_parity": true,
+      "mean_does_not_prove_typical_instance_signal": true,
+      "mean_does_not_prove_information_or_efficiency": true,
+      "speedup_claim_allowed": false
+    }
+  },
+  "systematic_source_scaling": [
+    {
+      "status": "LOCAL_DERIVATION_REVIEW_PENDING",
+      "dimension": 1,
+      "logical_width": 2,
+      "input_qubits_per_packet": 3,
+      "two_public_prefix_invertibility_probability": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_binary_exponent": 2
+      },
+      "conditional_mean_relative_full_collision": {
+        "sign": 1,
+        "numerator_hex": "0x41",
+        "denominator_binary_exponent": 5
+      },
+      "public_source_rejection_charged": true,
+      "prefix_selection_is_secret_independent": true,
+      "conditions_on_prefix_success_not_unconditional_claim": true,
+      "valid_for_all_power_of_two_moduli_at_least_eight": true,
+      "requires_nonzero_secret_parity": true,
+      "mean_does_not_prove_typical_instance_signal": true,
+      "mean_does_not_prove_information_or_efficiency": true,
+      "speedup_claim_allowed": false
+    },
+    {
+      "status": "LOCAL_DERIVATION_REVIEW_PENDING",
+      "dimension": 2,
+      "logical_width": 4,
+      "input_qubits_per_packet": 6,
+      "two_public_prefix_invertibility_probability": {
+        "sign": 1,
+        "numerator_hex": "0x9",
+        "denominator_binary_exponent": 6
+      },
+      "conditional_mean_relative_full_collision": {
+        "sign": 1,
+        "numerator_hex": "0x1769",
+        "denominator_binary_exponent": 11
+      },
+      "public_source_rejection_charged": true,
+      "prefix_selection_is_secret_independent": true,
+      "conditions_on_prefix_success_not_unconditional_claim": true,
+      "valid_for_all_power_of_two_moduli_at_least_eight": true,
+      "requires_nonzero_secret_parity": true,
+      "mean_does_not_prove_typical_instance_signal": true,
+      "mean_does_not_prove_information_or_efficiency": true,
+      "speedup_claim_allowed": false
+    },
+    {
+      "status": "LOCAL_DERIVATION_REVIEW_PENDING",
+      "dimension": 4,
+      "logical_width": 8,
+      "input_qubits_per_packet": 12,
+      "two_public_prefix_invertibility_probability": {
+        "sign": 1,
+        "numerator_hex": "0x18399",
+        "denominator_binary_exponent": 20
+      },
+      "conditional_mean_relative_full_collision": {
+        "sign": 1,
+        "numerator_hex": "0x22e5771",
+        "denominator_binary_exponent": 23
+      },
+      "public_source_rejection_charged": true,
+      "prefix_selection_is_secret_independent": true,
+      "conditions_on_prefix_success_not_unconditional_claim": true,
+      "valid_for_all_power_of_two_moduli_at_least_eight": true,
+      "requires_nonzero_secret_parity": true,
+      "mean_does_not_prove_typical_instance_signal": true,
+      "mean_does_not_prove_information_or_efficiency": true,
+      "speedup_claim_allowed": false
+    },
+    {
+      "status": "LOCAL_DERIVATION_REVIEW_PENDING",
+      "dimension": 8,
+      "logical_width": 16,
+      "input_qubits_per_packet": 24,
+      "two_public_prefix_invertibility_probability": {
+        "sign": 1,
+        "numerator_hex": "0x158480edb8f4d699d9",
+        "denominator_binary_exponent": 72
+      },
+      "conditional_mean_relative_full_collision": {
+        "sign": 1,
+        "numerator_hex": "0x448169b168ae1",
+        "denominator_binary_exponent": 47
+      },
+      "public_source_rejection_charged": true,
+      "prefix_selection_is_secret_independent": true,
+      "conditions_on_prefix_success_not_unconditional_claim": true,
+      "valid_for_all_power_of_two_moduli_at_least_eight": true,
+      "requires_nonzero_secret_parity": true,
+      "mean_does_not_prove_typical_instance_signal": true,
+      "mean_does_not_prove_information_or_efficiency": true,
+      "speedup_claim_allowed": false
+    },
+    {
+      "status": "LOCAL_DERIVATION_REVIEW_PENDING",
+      "dimension": 16,
+      "logical_width": 32,
+      "input_qubits_per_packet": 48,
+      "two_public_prefix_invertibility_probability": {
+        "sign": 1,
+        "numerator_hex": "0x1559c66bbd44b071cda786bbb4dd8fef022db0a8c230125fcd6411013b417e6dfdd9",
+        "denominator_binary_exponent": 272
+      },
+      "conditional_mean_relative_full_collision": {
+        "sign": 1,
+        "numerator_hex": "0x16ab63c2775a7e1fed2dce7dc1",
+        "denominator_binary_exponent": 95
+      },
+      "public_source_rejection_charged": true,
+      "prefix_selection_is_secret_independent": true,
+      "conditions_on_prefix_success_not_unconditional_claim": true,
+      "valid_for_all_power_of_two_moduli_at_least_eight": true,
+      "requires_nonzero_secret_parity": true,
+      "mean_does_not_prove_typical_instance_signal": true,
+      "mean_does_not_prove_information_or_efficiency": true,
+      "speedup_claim_allowed": false
+    },
+    {
+      "status": "LOCAL_DERIVATION_REVIEW_PENDING",
+      "dimension": 32,
+      "logical_width": 64,
+      "input_qubits_per_packet": 96,
+      "two_public_prefix_invertibility_probability": {
+        "sign": 1,
+        "numerator_hex": "0x15599bb87eb5fd1dcad7ca038597c6e93f763ecbd5401564790d3c00e659c73c3d73f6251f8ee0f3c3c8db39097f0269a5c4a4e18d42fa369323e7ab81a66d40c69379d6b7cb43eecb8099e15cd917aa49cf36106c9235fcec1b7a0bc61c8c0c249d0b48b352cf9f54f032249d224db9a72e653a9477055eced95d36dba1d42975d1fdd9",
+        "denominator_binary_exponent": 1056
+      },
+      "conditional_mean_relative_full_collision": {
+        "sign": 1,
+        "numerator_hex": "0x3ac24734841d651e7e7f8fa2047afa98c78fcba1e0702029b81",
+        "denominator_binary_exponent": 191
+      },
+      "public_source_rejection_charged": true,
+      "prefix_selection_is_secret_independent": true,
+      "conditions_on_prefix_success_not_unconditional_claim": true,
+      "valid_for_all_power_of_two_moduli_at_least_eight": true,
+      "requires_nonzero_secret_parity": true,
+      "mean_does_not_prove_typical_instance_signal": true,
+      "mean_does_not_prove_information_or_efficiency": true,
+      "speedup_claim_allowed": false
+    },
+    {
+      "status": "LOCAL_DERIVATION_REVIEW_PENDING",
+      "dimension": 64,
+      "logical_width": 128,
+      "input_qubits_per_packet": 192,
+      "two_public_prefix_invertibility_probability": {
+        "sign": 1,
+        "numerator_hex": "0x15599bb85402c5ad1bb46016b02e1e36b813e5b08338a098fab08d3f75c1d98dbe9d3e300abc6a3c7d8a2acbc786407e7ab0b5ae7c00a58eb28f5b7bc03bb5f2d6f2770222da1aaab660c8c4331b05d28d648407c67dea37ca8520293958450a37d1b21da3feb89608bcaf2dc9dcc1bc9fa87b8f7020f520c0a26e31bcef3f39caae1e867c1b095bd075752240feb5a1acb58a257d1a4b353737a1c9e955449a6c463b8f57e6f09133628e48366ab7b7bc7c92595f7acf809613a9e4a6d82bd4dece26bce757a841dbd81882b00a6694f58311d77a7d4b09707e1f8927eead9cd28cdda6db956893d705565eda947f9daa859f3b6bf51f87a14d1f02acf9b4d16f0e83044dc7efa4969d6f5be5e96a11511b63b556a5421ab76e9ed7593e652e437338085d9d7a3226cc2c47a1fa17d9e4ff2f6f134b8cb67b9465bad9c8ce3838d05ac9efdb567ce4c68583d801fa37a93aa87eddbbef7331222472e7a73da795a2ae35a6ea41db4fda2b25bd67f2d86f06871c961c2885d792f30a41d94318e4a6e29f6791db40765a897e807cdb3928041ddc5fec87e3f425a1a73a714ae29e23cb07f47b883ef61c4fea6507f976c04933fe5a871026adbaa887cdcd16740351e389e5e0bf8f3eb1863a19201dcaa5cff1730ffb2831d12e800c1fa0ece309c0da8a18da21c27b21806cfb2beeaa2bb435138f9c5b6c125576675c6b4d0cb2e9cb8d75d1fdd9",
+        "denominator_binary_exponent": 4160
+      },
+      "conditional_mean_relative_full_collision": {
+        "sign": 1,
+        "numerator_hex": "0x1aea89d5cbe26428c452f4dc9434cbd26a97fdff7e67df0b2c2007a39a552c51cafbb8acfd4aad816ab05b292939d848dbb701",
+        "denominator_binary_exponent": 383
+      },
+      "public_source_rejection_charged": true,
+      "prefix_selection_is_secret_independent": true,
+      "conditions_on_prefix_success_not_unconditional_claim": true,
+      "valid_for_all_power_of_two_moduli_at_least_eight": true,
+      "requires_nonzero_secret_parity": true,
+      "mean_does_not_prove_typical_instance_signal": true,
+      "mean_does_not_prove_information_or_efficiency": true,
+      "speedup_claim_allowed": false
+    },
+    {
+      "status": "LOCAL_DERIVATION_REVIEW_PENDING",
+      "dimension": 128,
+      "logical_width": 256,
+      "input_qubits_per_packet": 384,
+      "two_public_prefix_invertibility_probability": {
+        "sign": 1,
+        "numerator_hex": "0x15599bb85402c5acf10128a6082892dccef3b5d1ac3be3a5dfc8c2c3df297235bb1e2fbad26a8c8adf32341d83c4b0b5b3a5fa5ab4a813dba4c3d4b74022995aa431749d05cf8ca2eb8726b509f20e51c58e4e45ba693d620e38d8996cd6975951444cae7cc56a8717916cc3b0582f73a691c224c3cbae30b51455120dfa476dc4b2ef1580ace90452faf49292ad7db46abb2b9ee98f91abbc13e9a59c6b4e1ce58261f1cca4308efb377304e8c8083a7a796296283fdad73ae0823d13bd24edb57bd3f68ac0cbc2b42fde2de152161f8060f8e0ade1408af8822eb3f95554ea7eac64f0205531cb52cf500cda260c16c6940a9e2f7d41f06d77366264b0771759aeacbe72f8d6d50d4e39a22d99659b5ed3e3962f6198043e6adcd9c46c2c74c51f75a9d254fca3b52d2b62e2e940b966b4c6b89f92ec269899c885a686ea37dce12eaad433a5a4c76a83b4a88e5922d07212c3e8a8dfc68787d963266b6fedd19919e7a928da38a3936d356e15fc71d84c0a27be87f9b43e0c5018a6065100aecc1d86728f88867d05da4d4e4b8d9219cf936f425045547b431a737970bc24c72ab9e654a5a3e42cf6da2f2e66e528cb0a9099889c7937bcf42152efbd29564b1c2ed372c2d80918fd7bb88b7d3f8e48e807d547193b9af23e414484c5b701a1f3cfc70a581471185131685636056236fee413e0f906935c78c96879606904679e52e782a8f67c24ea1342766354ad84be89ad67f48879a96e674e91b5fefffa9be7a4efa036b1f6d95dc5110e026ace807089b40895d21347e32b481c65c6fcd78961551f80e237fd830dd67ce70140ed516757d9ddb7af46b309b6a22b169b35dc85c54ad2aa5746f02ef338235c1d18b66ac4d53130c9fa8bb02de35c3204eadca1ec862769124e46903a847ca0232e2d3aa048693805df4efdb968a100f3e159b27da7ba21f39ee2ecd5e22ad11cee8f7b8c2a372d3f95cfc9de788c3eb4e02ca4a0fcdf02b6178ba1646fad7e44fb1a6f54c26511bb6624f7d7cbc9a3c09ffeafac90f2d9c90aa96f309e18d0fd3d0fc548df9e415af579a920ceee0c7249e9a7e4e8ee9723d92f768feba1aac7e24cdedaba3bd12a54e54d434fb1e6c810c9fd53ee3dda82cf7810d01b3850db09ea2eda180b4ff5b64e39c8e616ed19e9d1e45bd19834fdf498ae21c942250fa3c060fb5c92efcf0f3c14bfb0e3baa7cf008c9a2d4d21e2b63f9f571cfbe1042ac71709b91197d5425af36254e489ed0ab8210a919c922b89e2b7ab9b1f5e519b7b814e76e39eb92afc93453f53a2893c65e8605802f4608f8f8576efb4a884f4f2276cd15ef0f9b243f58c77f20127464d2f7d8196cc710d961292e712d320145b94cee012e003d64027ca9e86f2e840f5e0c145c59521e3e801791624308e19ffaf6bfdfd1afc8c44d46bc9e0cff973ab6184782edc2c390aef26e6be9e8b69edbfe4b58cdb552c38930362cdc8247a0dd86c0444425950a1eff31cf0a0f0b6dade030088557557b5763e2118df3db6062968adc7e582d79676824c0811d4fc6000fa743894615b6b134caeb52c59f6c88ffda415f3ce2cc333a21538eed9e5fd0e2daf60c8a3389dee9689b99d0076e873274da0abb631b75f0dcf630b3685327cca8562366d80a7864a6aad2b7efa1fc35b7f0dcdb42ab5dd4c9a5bd4b97e6a4fc1cc93adb44d5fe10f78027ff4f1a6a2e7bf4c13439c130dde6f0c7595b3b47f26577dc5646f2ebb4770f5a8ff3e15b2a78904f8ac9968253b99ac3035a9df36f3feb159bd5823406c796f9af51e89d6f794bd840e65dadbd6387a622f0df5be6245b051068a7df2040c3a2df47d2c6f3a2e41427853138afd51d1fe8b9ec73d27c9ba0ce7ac3789e82fd24c0912adcf3b640f6a25df16e50bb41f17e170529144e8250beff0aa201281b6edaa3f8179d33a54cf8abe046eb63efbd302bb07b9b9c7823b4c08287a661ce11358d9eb14059170197cf60fbc4945a0a21028d73664c26057f98d0c71f51452a756231ec14fbf8112f3a573710ed2c8b1ebaa8a076d956523c2548f2c01af9aa82c1b84bea03a5b47b4f7b98e26d4e5f2013d455be21297683ee53d381db0c058be5f910de7a4f78b9868a736a947b7e4df25a621a458ee0cf6f1069f6bffce34c949a7164ad29b5fc922f71e5d241580742daf134528eca1a40c8f4684e16c44f992275c26185c93279f589a5de2bf9d2e1e42de5b82ea8300d2813b163a045c23635cf57f8e76a224312f4d0c5523a178305b6ef67cf3e913ad8f1362871b026d23275941f43da895af37f833f2d844742463eebba7c2ec14995fae29b9549ead7899280fb7d6df4c7ea796dbee9c1891b9c17d5fe212a73e7629bd1b25b3a1e8ab829dfc3b2336c7e92807359468bf37b91fcc84e67be5a58065055ae23838cb00c6c83f512261954e2871e77dfccb015bba4589382e03e317c07d9eaf193a697af69f1037cb4c31f6c74c080c508a23be1c3bcb040bc1805cd7649637b5451b833c7442a20bf90a943c0b051d4699fc530f5cd94a0d10014775d333f4a793aa46bb08de5805bfbde2d42407aa62db3b2d5963ef6086985b03a17cb6481ed4437f65e61085b8281916a4d855daad991b50b2ababdc983dcc50f0d635b760162fa8dbc39fc8fbef36a48333895b5e2116571eb8008a3f2bdfbbdfdff5c36f30ea985e6d02c6babd79a319e32edef9cb52b0e37ebbc6f1b332de7eeba3b2be56a7eeabc03d9dd6e96ed52a8523877df016238b2ce1106bccfd96ea64dce515e2986d35e45af06a5bee9fb78adbd6bfd9b9c7943db50fe879831b025a93062bf58169239085f660aca952bcb2024b4ca1389d05c82af387ee2f3e4c4e20542eceddfca49d33b34470b2e9cb8d75d1fdd9",
+        "denominator_binary_exponent": 16512
+      },
+      "conditional_mean_relative_full_collision": {
+        "sign": 1,
+        "numerator_hex": "0x5a8f553bace22c9abe037b2a43e70c791e7957388c3eeb45a4907ca30d8a6aa5a3b33bdd20800b48d5186b2971691217948428419bd8e6b614d81ce7669d04ea668fab9a901ae18b263e53d3eea9a47a4f055b4d420760dfa7ca530032ef7bb3620bf116e01",
+        "denominator_binary_exponent": 767
+      },
+      "public_source_rejection_charged": true,
+      "prefix_selection_is_secret_independent": true,
+      "conditions_on_prefix_success_not_unconditional_claim": true,
+      "valid_for_all_power_of_two_moduli_at_least_eight": true,
+      "requires_nonzero_secret_parity": true,
+      "mean_does_not_prove_typical_instance_signal": true,
+      "mean_does_not_prove_information_or_efficiency": true,
+      "speedup_claim_allowed": false
+    }
+  ],
+  "fresh_native_candidate_verification": [
+    {
+      "status": "LOCAL_DERIVATION_REVIEW_PENDING",
+      "modulus": 8,
+      "dimension": 1,
+      "verification_states_consumed": 40,
+      "difference_character_image_order": 4,
+      "candidate_equals_secret": false,
+      "one_test_high_source_average_acceptance": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_binary_exponent": 1
+      },
+      "all_tests_high_source_average_acceptance": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_binary_exponent": 40
+      },
+      "requires_fresh_original_native_phase_states": true,
+      "does_not_grant_phase_state_from_carry_packet": true,
+      "candidate_committed_before_verification_labels": true,
+      "all_native_labels_retained_no_postselection": true,
+      "public_known_candidate_phase_correction_not_unknown_inverse": true,
+      "ideal_noiseless_and_exact_measurement_model": true,
+      "unknown_secret_used_only_for_calibration_certificate": true,
+      "decoder_implemented": false,
+      "speedup_claim_allowed": false
+    },
+    {
+      "status": "LOCAL_DERIVATION_REVIEW_PENDING",
+      "modulus": 128,
+      "dimension": 2,
+      "verification_states_consumed": 40,
+      "difference_character_image_order": 2,
+      "candidate_equals_secret": false,
+      "one_test_high_source_average_acceptance": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_binary_exponent": 1
+      },
+      "all_tests_high_source_average_acceptance": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_binary_exponent": 40
+      },
+      "requires_fresh_original_native_phase_states": true,
+      "does_not_grant_phase_state_from_carry_packet": true,
+      "candidate_committed_before_verification_labels": true,
+      "all_native_labels_retained_no_postselection": true,
+      "public_known_candidate_phase_correction_not_unknown_inverse": true,
+      "ideal_noiseless_and_exact_measurement_model": true,
+      "unknown_secret_used_only_for_calibration_certificate": true,
+      "decoder_implemented": false,
+      "speedup_claim_allowed": false
+    },
+    {
+      "status": "LOCAL_DERIVATION_REVIEW_PENDING",
+      "modulus": 18446744073709551616,
+      "dimension": 2,
+      "verification_states_consumed": 40,
+      "difference_character_image_order": 9223372036854775808,
+      "candidate_equals_secret": false,
+      "one_test_high_source_average_acceptance": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_binary_exponent": 1
+      },
+      "all_tests_high_source_average_acceptance": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_binary_exponent": 40
+      },
+      "requires_fresh_original_native_phase_states": true,
+      "does_not_grant_phase_state_from_carry_packet": true,
+      "candidate_committed_before_verification_labels": true,
+      "all_native_labels_retained_no_postselection": true,
+      "public_known_candidate_phase_correction_not_unknown_inverse": true,
+      "ideal_noiseless_and_exact_measurement_model": true,
+      "unknown_secret_used_only_for_calibration_certificate": true,
+      "decoder_implemented": false,
+      "speedup_claim_allowed": false
+    },
+    {
+      "status": "LOCAL_DERIVATION_REVIEW_PENDING",
+      "modulus": 8,
+      "dimension": 1,
+      "verification_states_consumed": 40,
+      "difference_character_image_order": 1,
+      "candidate_equals_secret": true,
+      "one_test_high_source_average_acceptance": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_binary_exponent": 0
+      },
+      "all_tests_high_source_average_acceptance": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_binary_exponent": 0
+      },
+      "requires_fresh_original_native_phase_states": true,
+      "does_not_grant_phase_state_from_carry_packet": true,
+      "candidate_committed_before_verification_labels": true,
+      "all_native_labels_retained_no_postselection": true,
+      "public_known_candidate_phase_correction_not_unknown_inverse": true,
+      "ideal_noiseless_and_exact_measurement_model": true,
+      "unknown_secret_used_only_for_calibration_certificate": true,
+      "decoder_implemented": false,
+      "speedup_claim_allowed": false
+    }
+  ],
+  "fresh_packet_residue_verification": [
+    {
+      "status": "LOCAL_DERIVATION_REVIEW_PENDING",
+      "modulus": 8,
+      "packet_secret_modulus": 4,
+      "logical_width": 2,
+      "candidate_equals_packet_residue": true,
+      "fresh_packets_consumed": 3,
+      "fresh_original_phase_states_consumed": 9,
+      "one_test_conditional_high_source_mean_acceptance": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_binary_exponent": 0
+      },
+      "all_tests_conditional_high_source_mean_acceptance": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_binary_exponent": 0
+      },
+      "conditions_on_low_labels_chart_and_syndrome": true,
+      "candidate_committed_before_fresh_higher_labels": true,
+      "uniform_native_higher_labels_required": true,
+      "no_secret_parity_precondition": true,
+      "does_not_recover_lost_original_high_bit": true,
+      "known_public_residue_phase_correction_not_hidden_inverse": true,
+      "ideal_noiseless_exact_model": true,
+      "residue_decoder_implemented": false,
+      "speedup_claim_allowed": false
+    },
+    {
+      "status": "LOCAL_DERIVATION_REVIEW_PENDING",
+      "modulus": 8,
+      "packet_secret_modulus": 4,
+      "logical_width": 2,
+      "candidate_equals_packet_residue": false,
+      "fresh_packets_consumed": 3,
+      "fresh_original_phase_states_consumed": 9,
+      "one_test_conditional_high_source_mean_acceptance": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_binary_exponent": 2
+      },
+      "all_tests_conditional_high_source_mean_acceptance": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_binary_exponent": 6
+      },
+      "conditions_on_low_labels_chart_and_syndrome": true,
+      "candidate_committed_before_fresh_higher_labels": true,
+      "uniform_native_higher_labels_required": true,
+      "no_secret_parity_precondition": true,
+      "does_not_recover_lost_original_high_bit": true,
+      "known_public_residue_phase_correction_not_hidden_inverse": true,
+      "ideal_noiseless_exact_model": true,
+      "residue_decoder_implemented": false,
+      "speedup_claim_allowed": false
+    },
+    {
+      "status": "LOCAL_DERIVATION_REVIEW_PENDING",
+      "modulus": 8,
+      "packet_secret_modulus": 4,
+      "logical_width": 2,
+      "candidate_equals_packet_residue": false,
+      "fresh_packets_consumed": 3,
+      "fresh_original_phase_states_consumed": 9,
+      "one_test_conditional_high_source_mean_acceptance": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_binary_exponent": 2
+      },
+      "all_tests_conditional_high_source_mean_acceptance": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_binary_exponent": 6
+      },
+      "conditions_on_low_labels_chart_and_syndrome": true,
+      "candidate_committed_before_fresh_higher_labels": true,
+      "uniform_native_higher_labels_required": true,
+      "no_secret_parity_precondition": true,
+      "does_not_recover_lost_original_high_bit": true,
+      "known_public_residue_phase_correction_not_hidden_inverse": true,
+      "ideal_noiseless_exact_model": true,
+      "residue_decoder_implemented": false,
+      "speedup_claim_allowed": false
+    },
+    {
+      "status": "LOCAL_DERIVATION_REVIEW_PENDING",
+      "modulus": 8,
+      "packet_secret_modulus": 4,
+      "logical_width": 2,
+      "candidate_equals_packet_residue": false,
+      "fresh_packets_consumed": 3,
+      "fresh_original_phase_states_consumed": 9,
+      "one_test_conditional_high_source_mean_acceptance": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_binary_exponent": 2
+      },
+      "all_tests_conditional_high_source_mean_acceptance": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_binary_exponent": 6
+      },
+      "conditions_on_low_labels_chart_and_syndrome": true,
+      "candidate_committed_before_fresh_higher_labels": true,
+      "uniform_native_higher_labels_required": true,
+      "no_secret_parity_precondition": true,
+      "does_not_recover_lost_original_high_bit": true,
+      "known_public_residue_phase_correction_not_hidden_inverse": true,
+      "ideal_noiseless_exact_model": true,
+      "residue_decoder_implemented": false,
+      "speedup_claim_allowed": false
+    }
+  ],
+  "known_residue_high_bit_completion": [
+    {
+      "status": "LOCAL_DERIVATION_REVIEW_PENDING",
+      "dimension": 8,
+      "requires_correct_known_s_mod_q_over_two": true,
+      "fresh_original_phase_states_consumed": 48,
+      "highest_bit_vector_binary_rank_failure_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0xff",
+        "denominator_binary_exponent": 48
+      },
+      "public_candidate_correction_followed_by_hadamard": true,
+      "classical_binary_equation_solver_required": true,
+      "all_labels_retained_no_source_postselection": true,
+      "incorrect_residue_not_covered": true,
+      "noise_or_rotation_error_not_covered": true,
+      "residue_decoder_implemented": false,
+      "speedup_claim_allowed": false
+    },
+    {
+      "status": "LOCAL_DERIVATION_REVIEW_PENDING",
+      "dimension": 32,
+      "requires_correct_known_s_mod_q_over_two": true,
+      "fresh_original_phase_states_consumed": 72,
+      "highest_bit_vector_binary_rank_failure_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0xffffffff",
+        "denominator_binary_exponent": 72
+      },
+      "public_candidate_correction_followed_by_hadamard": true,
+      "classical_binary_equation_solver_required": true,
+      "all_labels_retained_no_source_postselection": true,
+      "incorrect_residue_not_covered": true,
+      "noise_or_rotation_error_not_covered": true,
+      "residue_decoder_implemented": false,
+      "speedup_claim_allowed": false
+    },
+    {
+      "status": "LOCAL_DERIVATION_REVIEW_PENDING",
+      "dimension": 128,
+      "requires_correct_known_s_mod_q_over_two": true,
+      "fresh_original_phase_states_consumed": 168,
+      "highest_bit_vector_binary_rank_failure_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0xffffffffffffffffffffffffffffffff",
+        "denominator_binary_exponent": 168
+      },
+      "public_candidate_correction_followed_by_hadamard": true,
+      "classical_binary_equation_solver_required": true,
+      "all_labels_retained_no_source_postselection": true,
+      "incorrect_residue_not_covered": true,
+      "noise_or_rotation_error_not_covered": true,
+      "residue_decoder_implemented": false,
+      "speedup_claim_allowed": false
+    }
+  ],
+  "known_residue_correction_plan": {
+    "status": "PUBLIC_KNOWN_CANDIDATE_PLAN_NOT_UNKNOWN_PREPARATION_INVERSE",
+    "modulus": 8,
+    "logical_width": 3,
+    "steps_compute_phase_uncompute": [
+      {
+        "physical_coordinate": 0,
+        "affine_origin": 1,
+        "logical_parity_mask_hex": "0x7",
+        "known_phase_exponent_mod_q_hex": "0x7"
+      },
+      {
+        "physical_coordinate": 1,
+        "affine_origin": 0,
+        "logical_parity_mask_hex": "0x1",
+        "known_phase_exponent_mod_q_hex": "0x5"
+      },
+      {
+        "physical_coordinate": 2,
+        "affine_origin": 0,
+        "logical_parity_mask_hex": "0x2",
+        "known_phase_exponent_mod_q_hex": "0x3"
+      },
+      {
+        "physical_coordinate": 3,
+        "affine_origin": 0,
+        "logical_parity_mask_hex": "0x4",
+        "known_phase_exponent_mod_q_hex": "0x1"
+      }
+    ],
+    "reusable_clean_ancillas": 1,
+    "known_diagonal_phase_gates": 4,
+    "cnot_gates": 12,
+    "x_gates": 2,
+    "candidate_dependent_global_phase_ignored": true,
+    "unknown_secret_or_phase_evaluator_required": false,
+    "angle_precision_cost_must_be_charged": true,
+    "physical_backend_execution_verified": false
+  },
+  "claim_gate": {
+    "one_bit_gate_cannot_close_full_output": true,
+    "collision_mean_is_secret_mutual_information": false,
+    "typical_source_concentration_proved": false,
+    "full_bell_real_measurement_is_invariant_under_secret_negation": true,
+    "negation_ambiguity_closes_general_complex_measurements": false,
+    "unknown_secret_decoder": false,
+    "independent_theorem_review": false,
+    "speedup_claim_allowed": false
+  },
+  "dependency_sha256": {
+    "theorems/dcp_full_bell_source_moments.py": "11923ee1ae8679c403c1656567c925b28e83ce6efed16f5fcf7172be13aec29a",
+    "theorems/dcp_carry_packets.py": "c3d345cc0d123a86e29c976959471d645945e767f6d0ee1bc6bd79149a0322c6",
+    "theorems/dcp_correlated_bell.py": "0dd06a02c125e176fec8ef08422a89221983dc71b547e79b8a7a2ebe080473fa"
+  }
+}

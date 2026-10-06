@@ -1,0 +1,25 @@
+{
+  "audit_id": "LIT-NATIVE-LEAST-TRIT-BOOTSTRAP",
+  "status": "PRIMARY_COMPARATOR_INSPECTED_LOCAL_TERNARY_DERIVATIONS_REVIEW_PENDING",
+  "sources": [
+    {
+      "id": "KUPERBERG-DHSP-2003",
+      "title": "A subexponential-time quantum algorithm for the dihedral hidden subgroup problem",
+      "author": "Greg Kuperberg",
+      "url": "https://arxiv.org/abs/quant-ph/0302112",
+      "primary_pdf": "https://arxiv.org/pdf/quant-ph/0302112",
+      "inspected": "Section3, page2: binary parity recovery reduces recursively to a subgroup isomorphic to D_(N/2), conditional on knowing the correct parity.",
+      "used_for": "Known digit-to-full-secret bootstrap comparator; the existence of this general paradigm is not claimed novel.",
+      "not_transferred": "No claimed published proof of this repo's ternary vector weak-average learner, source bridge, copy gate or efficient missing learner."
+    }
+  ],
+  "local_derivations": [
+    "Exact original even-native known-prefix diagonal phase correction and uniform frequency lift count",
+    "Average-all-secret least-trit learner self-reduction with scalar sign error symmetry",
+    "Fresh-call Hoeffding amplification and earliest-prefix-error union bound",
+    "Uniform native mean least-trit advantage at most sqrt((3^M-1)/(2*q^n)) for arbitrary full-label POVMs",
+    "Nuisance-fiber least-trit information optimum with explicit matching primal and PSD dual"
+  ],
+  "novelty_claim": false,
+  "independent_mathematical_review_complete": false
+}

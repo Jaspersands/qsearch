@@ -1,0 +1,42 @@
+{
+  "hypothesis_id": "HYP-DCP-NATIVE-ADAPTIVE-READOUT-RESOURCE-GAP",
+  "status": "MEASUREMENT_CLASS_DIAGNOSTIC_LOCAL_DERIVATION_REVIEW_PENDING",
+  "candidate_record_accepted": false,
+  "objective": "Construct a costed native collective readout or source-valid feedback mechanism, not more fixed-axis experiments.",
+  "note": "research/DCP_ADAPTIVE_PRODUCT_READOUT_BOUND.md",
+  "report": "research/classical_baselines/dcp_adaptive_product_readout_bound.json",
+  "normalization_followup": "research/hypotheses/dcp_pgm_normalization_route_contract.json",
+  "literature_ids": ["ARXIV-quant-ph-0501044-v2", "ARXIV-2610.02031-v1"],
+  "ontology_nodes": ["dihedral-hsp", "hidden-shift", "collective-state-readout"],
+  "input_access": {
+    "supplied": "m independent native phase qubits, IID public labels A over Z_(2^L), one uniform independent hidden vector s",
+    "not_granted": ["chosen labels", "same-label copies", "unknown preparation inverse", "secret-dependent axes", "free favorable batch selection", "exponential classical advice"]
+  },
+  "local_result": "At exact entropy width, source-mean collective PGM lower bound exceeds the fixed-order once-per-qubit adaptive POVM upper bound in the certified growing regimes.",
+  "counterpressure": "The adaptive upper bound becomes vacuous with two surplus qubits. The native +16 target, label/outcome-adaptive order, revisits, quantum memory and collective primitives remain open.",
+  "proof_obligations": {
+    "PO-REVIEW": "Independently review refinement, causal Fourier cancellation, dyadic alias and pairwise fiber moments; code crosschecks are not theorem review.",
+    "PO-SOURCE": "Track input counts and the exact joint native law through ordering, sample selection and feedback; do not silently grant duplicate packets.",
+    "PO-CONSTRUCTIVE": "Supply uniform polynomial-bit circuits, memory and gate precision. An existence PGM, full fiber table or optimal exhaustive record decoder is not such a circuit.",
+    "PO-NATURAL-REDUCTION": "Compose state supply, secret source, noise, input counts and precision with an independently verified natural-problem reduction.",
+    "PO-CLASSICAL": "Use identical supplied-state/public-data models. Classically simulating known-secret calibration does not solve unknown-secret recovery; compare with legal measured-data attacks and known quantum algorithms.",
+    "PO-SCOPE": "Do not extrapolate an entropy-width source-mean gap to speedup, typical-label success, +16 samples, all LOCC, or fixed secrets."
+  },
+  "experiments_with_falsifiers": [
+    {
+      "experiment": "Independent review and complete native bounded instrument/fiber censuses.",
+      "falsifier": "An allowed tree exceeds the common envelope, latest-linear cancellation fails, or exact target moments disagree."
+    },
+    {
+      "experiment": "Sharpen the feedback bound at native +16 without imposing false independence on earlier odd characters.",
+      "falsifier": "The improved bound remains vacuous, omits feedback terms, or assumes label-adaptive order preserves the fixed physical-frequency source."
+    },
+    {
+      "experiment": "Construct source-valid collective/quantum-memory or adaptive-order inference with costed fresh-state use.",
+      "falsifier": "It enumerates secrets/fibers, uses copies or chosen labels, consumes a superpolynomial batch, or the legal classical baseline matches it."
+    }
+  ],
+  "independent_review": false,
+  "novelty_claim": false,
+  "speedup_claim_allowed": false
+}

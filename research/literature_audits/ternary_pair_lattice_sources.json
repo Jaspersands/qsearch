@@ -1,0 +1,33 @@
+{
+  "audit_id": "AUD-NATIVE-A2-PAIR-CVP",
+  "review_status": "LOCAL_DERIVATIONS_REVIEW_PENDING",
+  "sources": [
+    {
+      "url": "https://python-flint.readthedocs.io/en/latest/fmpz_mat.html",
+      "type": "official_library_documentation",
+      "checked": "LLL transform interface, integer determinant and matrix multiplication; also checked installed API.",
+      "does_not_supply": "Ternary witness coverage, a CVP oracle, or a quantum algorithm."
+    },
+    {
+      "url": "https://arxiv.org/abs/quant-ph/0406151",
+      "type": "primary_research",
+      "scope": "Previously audited measured-fiber projection and phase compression receiver; not an efficient solver for this underfull ternary CVP.",
+      "checked_in": "research/literature_audits/ternary_pair_collimation_sources.json"
+    },
+    {
+      "url": "https://arxiv.org/abs/1112.3333",
+      "type": "primary_research",
+      "scope": "Previously audited collimation/resource accounting; not free exponential tables or a polynomial pair-finder guarantee.",
+      "checked_in": "research/literature_audits/ternary_pair_collimation_sources.json"
+    }
+  ],
+  "local_derivations": [
+    "A2 exact native shell and18 absolute squared-norm gap.",
+    "Complete scalar gcd quotient kernel, embedded Gram determinant, and source-scale norm representation.",
+    "Pointwise CVP/near-exact CVP to two-witness coordinate-deflation reduction."
+  ],
+  "independent_certificate": "research/certificates/ternary_pair_lattice_crosscheck.js",
+  "independent_LLL_search": false,
+  "quantum_speedup_claim": false,
+  "novelty_claim": false
+}

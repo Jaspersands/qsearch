@@ -1,0 +1,38 @@
+{
+  "hypothesis_id": "HYP-CIRCUIT-STATE-ISOMORPHISM-DHSP-TRANSFER",
+  "status": "ACCESS_TASK_AND_GROUP_TRANSFER_BLOCKED_LOCAL_REVIEW_PENDING",
+  "candidate_record_accepted": false,
+  "note": "research/STATE_ISOMORPHISM_TRANSFER.md",
+  "report": "research/reductions/state_isomorphism_transfer.json",
+  "source_audit": "research/literature_audits/state_isomorphism_transfer_sources.json",
+  "literature_id": "state-isomorphism-2026",
+  "source": "Existing native IID DCP phase packets, contrasted with the existing injective full-function hidden-shift oracle model. No new toy promise.",
+  "local_results": {
+    "native_packet_gap": "For nonzero difference, mean squared orbit overlap2^-r. Failure of overlap<=alpha anywhere has source probability upper(N-1)*2^-r/alpha^2. This is information, not a receiver or hardness theorem.",
+    "cyclic_order": "Conjugate lift retains image orderN/gcd(N,K), not exponent two in generic native packets.",
+    "task": "All unrestricted native isomorphism decisions are YES for every s; a witness/search reduction is separate.",
+    "access": "Finite native packets do not supply a classical preparation circuit or reusable preparation/inverse. Exact deterministic reflection programming from the stated finite nonorthogonal copy programs fails; approximate/heralded methods are not excluded.",
+    "full_function_lane": "Two selector-XOR queries prepare the real double-graph coherent lift; two invert it. Its exact reflection at gap1 retains the full standard right-coset shift under the known sign map t=-s; the target group remains nonabelian dihedral.",
+    "literature_correction": "The existing generic phase-sieve/Gowers attribution was OUR extraction error and is corrected. No source paper is refuted."
+  },
+  "proof_obligations_for_new_candidate": {
+    "PO-TASK": "Specify decision versus hidden-element search, witness multiplicity and a gap-preserving recovery reduction.",
+    "PO-ACCESS": "Distinguish supplied samples, conditional repeats, classical descriptions, preparation/inverse, entrywise conjugates and controlled superposition of states.",
+    "PO-GROUP": "Show the representation and group family lie within the selected efficient solver's actual scope; preserve cyclic order and the hidden element.",
+    "PO-GAP": "Prove the real source gap under legal label selection and charge precision/repetitions; don't equate separability with efficient inference.",
+    "PO-COST": "Count all source/oracle queries, Clifford/representation operations, conjugate preparation and failures. Reduction-instance construction is not solving its target.",
+    "PO-BASELINE": "Compare the complete decoder to legal native receivers, known dihedral sieves and classical full-function/query baselines.",
+    "PO-REVIEW": "Independently review local source moment, image order, graph lift, exact program scope and decision/search analysis."
+  },
+  "falsifiable_experiments": [
+    {"experiment": "Exact hidden-shift graph lift under the public representation.", "falsifier": "The target reflection, gap1, preparation inverse or group law differs from the reported physical instance."},
+    {"experiment": "Native random packet source-gap test.", "falsifier": "The exact2^-r moment or Markov union upper fails, or selected labels are represented as IID."},
+    {"experiment": "Attempt a pure Pauli solver transfer.", "falsifier": "It changes generic cyclic order to exponent two by discarding witness information or assumes an unknown conditional preparation circuit."},
+    {"experiment": "Propose a new coherent native decoder or access conversion.", "falsifier": "It gives only an unrestricted YES decision, uses free repeated labels, relies on exact universal state programming, or leaves the dihedral decoder unchanged."}
+  ],
+  "not_excluded": ["approximate or heralded source conversions with charged errors and branches", "source-legal decision-to-search reductions", "nonhomomorphic useful state encodings with a proof", "new generalized-dihedral receivers", "full-function-oracle algorithms", "natural restricted group-action reductions"],
+  "gemini_tasks": ["Wire this as a scoped transfer audit/negative result, never a new algorithm.", "Refresh only affected literature/candidate provenance; corrected paper is framework/background, not a claimed phase sieve.", "Preserve full-function lane availability and native sample lane access failures as distinct facts.", "Run production tests, CLI and registry validation; focused math tests are not a broad green claim."],
+  "independent_theorem_review": false,
+  "novelty_claim": false,
+  "generic_DCP_no_go": false
+}

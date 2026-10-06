@@ -1,0 +1,60 @@
+{
+  "hypothesis_id": "HYP-DCP-COLLECTIVE-BINARY-ERROR-SOURCE-BRIDGE",
+  "status": "RESEARCH_CONTRACT_NOT_ACCEPTED_CANDIDATE",
+  "candidate_record_accepted": false,
+  "objective": "Construct or falsify an A-adaptive collective measurement exploiting native subgroup translations, or a quantum source conversion outside the full-coordinate Boolean-envelope Fourier model, preserving physical arithmetic witnesses at growing two-power modulus.",
+  "literature_ids": ["ARXIV-2609.40321-v1", "ARXIV-2108.11015-v2", "ECCC-TR10-066-REV1"],
+  "ontology_nodes": ["dihedral-hsp", "hidden-shift", "unique-svp"],
+  "source_audit": "research/literature_audits/binary_error_frontier_sources.json",
+  "theory_notes": ["research/BINARY_ERROR_HENSEL_DECODER.md", "research/DCP_BINARY_ERROR_SOURCE_BRIDGE.md", "research/DCP_FOURIER_NOISE_DECODER_BOUND.md", "research/TERNARY_QUOTIENT_DECODER.md", "research/TERNARY_DECODER_FILTER.md"],
+  "fixed_prime_known_component_followup": {
+    "classical_quotient_report": "research/classical_baselines/ternary_quotient_decoder.json",
+    "finite_quantum_filter_report": "research/reductions/ternary_decoder_filter.json",
+    "independent_bounded_checker": "research/certificates/ternary_decoder_filter_crosscheck.js",
+    "known_algorithm_not_novelty": true,
+    "coherent_simulator_and_basis_table_are_exponential": true,
+    "scalable_quantum_circuit_compiled": false,
+    "specialized_signed_interface_full_target_wrapper_has_no_marker_inclusion_loss": true,
+    "generic_zero_solver_gets_marker_guarantee": false,
+    "source_alphabet_or_native_DCP_density_gap_removed": false
+  },
+  "implemented_components": [
+    "Actual pointwise-source mod-four binary-error linearization and unique Hensel lifts, polynomial in modulus bit length",
+    "Hidden-marker nonempty zero-sum to independent full-target wrapper with polynomial coverage loss",
+    "Scoped exact and approximate single-translation binary-error conversion bounds",
+    "Collision strong converse for classical decoding of arbitrary entangled Boolean-envelope full-coordinate Fourier noise",
+    "Exact coherent subgroup-readout countercontrols on explicitly rare dyadic labels"
+  ],
+  "implemented_native_collective_quantum_bridge": false,
+  "uniform_polynomial_native_arithmetic_witness_finder": false,
+  "independent_theorem_review_complete": false,
+  "input_contract": {
+    "modulus": "q=2^L with growing n,L; natural coordinate regime L=4n+1",
+    "native_labels": "IID independent public Fourier labels from supplied unknown phase states",
+    "preferred_direct_filter_width": "m=nL+Delta, Delta at most logarithmic",
+    "arithmetic_target": "Independent uniform FULL group target, not planted or even-only",
+    "not_granted": ["same-label copies", "unknown preparation inverses", "chosen hidden labels", "hidden-secret evaluators", "exponential quantum advice", "free noise purification"]
+  },
+  "proof_obligations": {
+    "PO-BE-CLASSICAL": "Independently review mod-four feature source theorem and Hensel lifting. Binary errors must be fixed independently of A. Full rank and every lift/root check are required.",
+    "PO-BE-STATE": "Write the actual collective input/output density operators and retained environment; no substitution of binary errors for a broad Fourier envelope.",
+    "PO-BE-ERROR-LAW": "Derive the exact error distribution and its correlations from permitted native states. Single-translation local filters cannot pass the large-q success-weighted-fidelity bound.",
+    "PO-BE-INFORMATION": "If the bridge uses the full coordinate DFT intensity of any secret-independent Boolean envelope, apply the collision converse: arbitrary entanglement and public-A-dependent amplitudes cannot yield near-entropy-width high recovery from classical observations. A genuine A-adaptive subgroup-covariant measurement or another noise law needs an explicit physical construction, not a scope disclaimer.",
+    "PO-BE-MARKER": "For zero-to-target reduction, choose uniform marker independent of IID extended matrix and solver seed; do not leak marker/target/original-matrix side information. Charge extra arithmetic column and coverage loss.",
+    "PO-BE-ALGEBRA": "Respect two-power ring arithmetic and Boolean unit-gap witnesses. Fixed-prime field theorems, modulo-three relabeling or order-two gaps do not automatically transfer.",
+    "PO-BE-COST": "Runtime, memory, precision, preprocessing, all samples and herald probabilities must be polynomial in input bit length. No hidden dependence polynomial in q value.",
+    "PO-BE-READOUT": "Preserve target control, verified physical words and accessible program purification/inverse for the preferred direct filter; charge 2^-Delta and all cleanup projections. Excess density needs a different proved readout.",
+    "PO-BE-BASELINES": "Compare actual native arithmetic against meet-in-the-middle, lattice, algebraic, noisy-decoding and quantum filtering prior art under the same source/access and sample budget.",
+    "PO-BE-COMPOSITION": "Compose fixed-secret phase covariance, native lattice preparation, faults, fresh verification and approximation before a lattice or algorithmic speedup claim. Independent review and novelty audit remain separate gates."
+  },
+  "falsifiable_experiments": [
+    {"id": "EXP-BE-NATIVE-HENSEL", "falsifier": "A full-feature-rank fixed-source instance has a wrong/nonunique secret or a failed unique lift.", "status": "FOUR_GROWING_MODULUS_CONTROLS_PASS_NOT_PEER_REVIEW"},
+    {"id": "EXP-BE-MARKER-LAW", "falsifier": "Source-average verified target coverage differs from successful zero-output weight/(m+1) without marker leakage.", "status": "1105_COMPLETE_MARKER_CONTROLS_PASS"},
+    {"id": "EXP-BE-FOURIER-DECODER", "falsifier": "An optimal decoder exceeds the collision bound on the declared independent classical-observation source.", "status": "SIX_EXHAUSTIVE_SMALL_SOURCE_CONTROLS_PASS"},
+    {"id": "EXP-BE-COLLECTIVE-SOURCE", "falsifier": "Proposed collective transformation has wrong error support, exponentially small useful branch mass, nonphysical witness output or uncharged inverse access.", "status": "NO_COLLECTIVE_CONSTRUCTION_YET"}
+  ],
+  "next_GPT_task": "Construct an actual A-adaptive native-subgroup collective primitive with scalable source and success proof, or falsify a specific construction. Do not merely entangle Boolean envelope amplitudes before a full-coordinate Fourier measurement or add another unconstructed sufficient interface.",
+  "next_Gemini_task": "Integrate reports as baselines/scoped negative results and open proof obligations, with no accepted candidate or speedup claim; run production regressions.",
+  "speedup_claim_allowed": false,
+  "novelty_claim": false
+}

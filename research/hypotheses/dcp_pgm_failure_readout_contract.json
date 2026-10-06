@@ -1,0 +1,47 @@
+{
+  "hypothesis_id": "HYP-DCP-COLLECTIVE-TERMINAL-READOUT-ESCAPE",
+  "status": "SCOPED_ALL_RECORD_ARCHITECTURE_FALSIFIER_LOCAL_DERIVATION_REVIEW_PENDING",
+  "candidate_record_accepted": false,
+  "note": "research/DCP_PGM_FAILURE_READOUT.md",
+  "report": "research/classical_baselines/dcp_pgm_failure_readout.json",
+  "literature_ids": ["ARXIV-1806.01838", "ARXIV-quant-ph-9701001-v1"],
+  "ontology_nodes": ["dihedral-hsp", "hidden-shift", "collective-state-readout"],
+  "rejected_architecture": "Same native comparison U, projector-controlled auxiliary processors with polynomially many output kicks, then complete computational signal/auxiliary readout and any classical guess: retaining failures does not rescue native near-entropy-width success.",
+  "input_access": {
+    "supplied": "One native phase batch, IID public labels, uniform independent full vector secret; optionally secret-independent joint classical physical-Z faults conditional on the labels.",
+    "known_gates": "Public U and U inverse; input/output projector-controlled known auxiliary gates.",
+    "not_granted": ["unknown state-preparation inverse", "secret side information", "additional free batches", "chosen label factory", "arbitrary collective terminal measurement as a free decoder"]
+  },
+  "mathematical_interfaces": {
+    "raw_full_channel": "Uniform public trial plus known phase corrections and legal individual measurements; not a classical reconstruction of quantum inputs.",
+    "hybrid": "Whole-state distance to an auxiliary-only modified reference is at most2k sqrt(h_A), including all failures.",
+    "source_gate": "Native mean complete-record correctness <=sqrt(B)+2k sqrt((N+G-1)/(NG)), capped at1.",
+    "phase_fault_gate": "Fiber signed sums bound corrupted herald by clean h_A; local-reference source gate additionally requires secret independence conditional on A.",
+    "precision_gate": "A separately proved total output trace-error budget adds to the ideal correctness bound; do not call finite-precision output exponentially small without that proof."
+  },
+  "proof_obligations": {
+    "PO-REVIEW": "Independently review full-channel factorization, reference-prefix telescoping, source averaging, correlated-fault purification and probability/error conventions.",
+    "PO-ESCAPE": "Specify an actual costed outside-class primitive: terminal collective basis, other signal operations, different encoding or charged additional source.",
+    "PO-NATURAL-SOURCE": "Verify label law, full-secret prior or an explicitly different natural promise, physical fault lineage and gate precision. A uniform-secret converse is not automatically a short-secret lattice theorem.",
+    "PO-TERMINAL": "A named collective readout is not an implementation. Show its circuit and demonstrate why its reference output is not merely the legal local baseline.",
+    "PO-CLASSICAL": "Retain all failed outputs, auxiliary records, input costs and matched record decoders. Unknown-secret probability scoring is calibration, not a fast baseline solver.",
+    "PO-SCOPE": "Direct binary Hadamards and arbitrary collective data operations remain open. No general QSVT, DHSP, lattice or noisy-input hardness is claimed."
+  },
+  "experiments_with_falsifiers": [
+    {
+      "experiment": "Execute full declared projector/auxiliary instruments and independent-language raw/local, mixed-fault and hybrid checks.",
+      "falsifier": "An allowed complete channel violates the common gate, failure probabilities were normalized away, or a processor/source operation falls outside the declared algebra."
+    },
+    {
+      "experiment": "Construct a terminal collective decoder or changed source geometry with polynomial costs.",
+      "falsifier": "The terminal procedure requires fiber advice, exponential preprocessing, unknown preparation inverses or restores only a different local channel."
+    },
+    {
+      "experiment": "Audit actual natural secret promises and source correlations before transferring the uniform-secret screen.",
+      "falsifier": "A promised short/structured secret or secret-correlated side record invalidates the full uniform conditional prior."
+    }
+  ],
+  "independent_review": false,
+  "novelty_claim": false,
+  "speedup_claim_allowed": false
+}

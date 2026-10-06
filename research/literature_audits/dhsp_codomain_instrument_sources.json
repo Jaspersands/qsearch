@@ -1,0 +1,46 @@
+{
+  "audit_id": "AUDIT-DHSP-CODOMAIN-INSTRUMENT",
+  "review_status": "PRIMARY_SOURCE_INSPECTION_AND_LOCAL_DERIVATION_NOT_INDEPENDENT_REVIEW",
+  "checked_date": "2026-10-05",
+  "sources": [
+    {
+      "id": "ARXIV-2202.09697-WITHDRAWN",
+      "authors": ["Matthew Moore", "Grace Young"],
+      "url": "https://arxiv.org/abs/2202.09697",
+      "read_version": "v1 PDF; current v2 withdrawal notice",
+      "pdf": "https://arxiv.org/pdf/2202.09697v1",
+      "locations": ["Definition4.2 and Lemma4.3, printed pages7-8", "Definition4.4 and Lemma4.5, printed pages8-9", "first maximal-subgroup comparison, printed page9"],
+      "mechanism": "Hash codomain states to guide subgroup-lattice descent.",
+      "invalid_primitive": "Inferring coherent pure hash amplitudes from diagonal probabilities after tracing entangled domain/function registers.",
+      "withdrawal": "23 February2022; the notice identifies Lemma4.3 as incorrect and not repairable by a minor revision.",
+      "local_followup_not_in_paper": "Two-query uniform-domain heralding, full failure retention, classical collision baseline and correlation-safe compression gate.",
+      "algorithm_claim_accepted": false
+    },
+    {
+      "id": "LINDZEY-ROSMANIS-QIC-2022",
+      "authors": ["Nathan Lindzey", "Ansis Rosmanis"],
+      "title": "A tight lower bound for non-coherent index erasure",
+      "url": "https://www.rintonpress.com/xxqic22/qic-22-78/0594-0626.pdf",
+      "location": "Theorem1, printed page595",
+      "mechanism": "Symmetric state-generation adversary and association-scheme Krein parameters.",
+      "theorem": "Bounded-error noncoherent index erasure for injective[n]->[m] has Theta(sqrt(n)) query complexity when m>=n^(3+epsilon), fixed epsilon>0.",
+      "required_range_premise_preserved": true,
+      "local_embedding": "f(b,x)=g(x), hiding the known H0, reduces generic pure-image preparation to the state-generation problem.",
+      "invalid_transfers": ["generic DHSP lower bound", "surjective/permutation-only codomain without verifying the range premise", "structured natural function oracle", "all approximate compressed instruments", "arbitrary HSP algorithm"]
+    },
+    {
+      "id": "KU-YOUNG-2023-DEFENSE-ABSTRACT-ONLY",
+      "author": "Grace Young",
+      "url": "https://i2s-research.ku.edu/quantum-polynomial-time-reduction-dihedral-hidden-subgroup-problem",
+      "date": "2023-08-03",
+      "read_scope": "Institutional defense abstract ONLY; dissertation and CFIP proof not obtained or audited.",
+      "stated_direction": "Quantum polynomial-time reduction from DHSP to a Codomain Fiber Intersection Problem.",
+      "lead": "Extract exact CFIP access assumptions, source promises, failure outputs and charged primitive costs from the full text.",
+      "reduction_verified": false,
+      "refuted_by_this_audit": false
+    }
+  ],
+  "scope": "Local repaired instrument and explicit source controls, not a generic HSP impossibility claim.",
+  "novelty_claim": false,
+  "independent_review": false
+}

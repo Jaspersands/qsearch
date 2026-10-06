@@ -1,0 +1,5214 @@
+{
+  "status": "LOCAL_DERIVATION_REVIEW_PENDING",
+  "new_full_depth_algorithm": false,
+  "candidate_accepted": false,
+  "speedup_claim_allowed": false,
+  "source_law_scope": "one low-defined kernel line; fresh unfiltered IID native batches; arbitrary odd depth",
+  "six_unimodular_line_matrices": [
+    {
+      "physical_digit_permutation": [
+        0,
+        1,
+        2
+      ],
+      "integer_matrix": [
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "determinant": 1
+    },
+    {
+      "physical_digit_permutation": [
+        0,
+        2,
+        1
+      ],
+      "integer_matrix": [
+        [
+          2,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "determinant": -1
+    },
+    {
+      "physical_digit_permutation": [
+        1,
+        0,
+        2
+      ],
+      "integer_matrix": [
+        [
+          -1,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "determinant": -1
+    },
+    {
+      "physical_digit_permutation": [
+        1,
+        2,
+        0
+      ],
+      "integer_matrix": [
+        [
+          1,
+          1
+        ],
+        [
+          -1,
+          0
+        ]
+      ],
+      "determinant": 1
+    },
+    {
+      "physical_digit_permutation": [
+        2,
+        0,
+        1
+      ],
+      "integer_matrix": [
+        [
+          -2,
+          -1
+        ],
+        [
+          -1,
+          -1
+        ]
+      ],
+      "determinant": 1
+    },
+    {
+      "physical_digit_permutation": [
+        2,
+        1,
+        0
+      ],
+      "integer_matrix": [
+        [
+          -1,
+          -1
+        ],
+        [
+          -2,
+          -1
+        ]
+      ],
+      "determinant": -1
+    }
+  ],
+  "full_native_source_control": {
+    "native_source_batches_enumerated": 729,
+    "physical_input_words": 6561,
+    "all_affine_branches_replayed": 2187,
+    "conditional_low_and_outcome_strata": 27,
+    "frequency_pairs_per_stratum": 9,
+    "multiplicity_per_pair": 9,
+    "all_branches_probability": "1/3",
+    "parent_secret": 8,
+    "retained_secret_residue": 2,
+    "maximum_amplitude_error": 2.437438961788735e-15,
+    "maximum_Born_probability_error": 8.881784197001252e-16,
+    "conditional_product_uniformity_checked": true
+  },
+  "growing_depth_output_controls": [
+    {
+      "level": 3,
+      "output_first": [
+        2,
+        0,
+        2
+      ],
+      "output_second": [
+        2,
+        2,
+        0
+      ],
+      "even_native_output_labels": [
+        [
+          0,
+          2
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "resources": {
+        "odd_parent_level": 3,
+        "even_output_level": 2,
+        "retained_phase_modulus": 3,
+        "odd_input_qutrits_consumed": 4,
+        "qutrits_measured": 3,
+        "all_syndromes_and_complement_outcomes_kept": true,
+        "branch_probability": "1/27",
+        "frame_selected_using_only_low_labels": true,
+        "IID_output_claim_requires_fresh_IID_native_input_batches": true,
+        "intermediate_odd_source_acquisition_charged": false,
+        "initial_top_secret_digit_retained": false,
+        "unknown_preparation_or_inverse_supplied": false,
+        "multiple_outputs_from_one_packet_certified_independent": false
+      }
+    },
+    {
+      "level": 5,
+      "output_first": [
+        4,
+        0,
+        3
+      ],
+      "output_second": [
+        3,
+        2,
+        6
+      ],
+      "even_native_output_labels": [
+        [
+          3,
+          4
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          6,
+          3
+        ]
+      ],
+      "resources": {
+        "odd_parent_level": 5,
+        "even_output_level": 4,
+        "retained_phase_modulus": 9,
+        "odd_input_qutrits_consumed": 4,
+        "qutrits_measured": 3,
+        "all_syndromes_and_complement_outcomes_kept": true,
+        "branch_probability": "1/27",
+        "frame_selected_using_only_low_labels": true,
+        "IID_output_claim_requires_fresh_IID_native_input_batches": true,
+        "intermediate_odd_source_acquisition_charged": false,
+        "initial_top_secret_digit_retained": false,
+        "unknown_preparation_or_inverse_supplied": false,
+        "multiple_outputs_from_one_packet_certified_independent": false
+      }
+    },
+    {
+      "level": 7,
+      "output_first": [
+        6,
+        20,
+        19
+      ],
+      "output_second": [
+        13,
+        12,
+        14
+      ],
+      "even_native_output_labels": [
+        [
+          6,
+          20
+        ],
+        [
+          20,
+          8
+        ],
+        [
+          19,
+          5
+        ]
+      ],
+      "resources": {
+        "odd_parent_level": 7,
+        "even_output_level": 6,
+        "retained_phase_modulus": 27,
+        "odd_input_qutrits_consumed": 4,
+        "qutrits_measured": 3,
+        "all_syndromes_and_complement_outcomes_kept": true,
+        "branch_probability": "1/27",
+        "frame_selected_using_only_low_labels": true,
+        "IID_output_claim_requires_fresh_IID_native_input_batches": true,
+        "intermediate_odd_source_acquisition_charged": false,
+        "initial_top_secret_digit_retained": false,
+        "unknown_preparation_or_inverse_supplied": false,
+        "multiple_outputs_from_one_packet_certified_independent": false
+      }
+    },
+    {
+      "level": 9,
+      "output_first": [
+        29,
+        1,
+        3
+      ],
+      "output_second": [
+        37,
+        7,
+        80
+      ],
+      "even_native_output_labels": [
+        [
+          73,
+          44
+        ],
+        [
+          75,
+          74
+        ],
+        [
+          4,
+          1
+        ]
+      ],
+      "resources": {
+        "odd_parent_level": 9,
+        "even_output_level": 8,
+        "retained_phase_modulus": 81,
+        "odd_input_qutrits_consumed": 4,
+        "qutrits_measured": 3,
+        "all_syndromes_and_complement_outcomes_kept": true,
+        "branch_probability": "1/27",
+        "frame_selected_using_only_low_labels": true,
+        "IID_output_claim_requires_fresh_IID_native_input_batches": true,
+        "intermediate_odd_source_acquisition_charged": false,
+        "initial_top_secret_digit_retained": false,
+        "unknown_preparation_or_inverse_supplied": false,
+        "multiple_outputs_from_one_packet_certified_independent": false
+      }
+    },
+    {
+      "level": 19,
+      "output_first": [
+        15142,
+        16029,
+        12778
+      ],
+      "output_second": [
+        3876,
+        4749,
+        17862
+      ],
+      "even_native_output_labels": [
+        [
+          15142,
+          11266
+        ],
+        [
+          16029,
+          11280
+        ],
+        [
+          12778,
+          14599
+        ]
+      ],
+      "resources": {
+        "odd_parent_level": 19,
+        "even_output_level": 18,
+        "retained_phase_modulus": 19683,
+        "odd_input_qutrits_consumed": 4,
+        "qutrits_measured": 3,
+        "all_syndromes_and_complement_outcomes_kept": true,
+        "branch_probability": "1/27",
+        "frame_selected_using_only_low_labels": true,
+        "IID_output_claim_requires_fresh_IID_native_input_batches": true,
+        "intermediate_odd_source_acquisition_charged": false,
+        "initial_top_secret_digit_retained": false,
+        "unknown_preparation_or_inverse_supplied": false,
+        "multiple_outputs_from_one_packet_certified_independent": false
+      }
+    }
+  ],
+  "final_field_native_decoders": [
+    {
+      "dimension": 1,
+      "seed": 59301,
+      "parent_secret_calibration_only": [
+        8
+      ],
+      "result": {
+        "samples": 2,
+        "feature_dimension": 3,
+        "rank": 2,
+        "secret": [
+          2
+        ],
+        "feature_vector": [
+          1,
+          2,
+          1
+        ],
+        "secret_assignments_enumerated": false,
+        "phase_modulus": 3,
+        "complete_parent_secret_recovered": false,
+        "speedup_claim_allowed": false,
+        "novelty_claim": false,
+        "status": "FIELD_SECRET_CERTIFIED"
+      },
+      "probability_budget": {
+        "feature_dimension": 3,
+        "target_rank": 2,
+        "rank_escape_probability_lower_bound": "2/81",
+        "confidence_bits": 16,
+        "sufficient_fresh_IID_samples": 5346,
+        "failure_probability_upper_bound": "2^-16",
+        "probability_theorem_status": "LOCAL_DERIVATION_REVIEW_PENDING",
+        "source_uniformity_and_fresh_batches_required": true
+      },
+      "public_measurement_records": [
+        {
+          "alpha": [
+            2
+          ],
+          "beta": [
+            1
+          ],
+          "basis": 1,
+          "outcome": 0
+        },
+        {
+          "alpha": [
+            1
+          ],
+          "beta": [
+            1
+          ],
+          "basis": 0,
+          "outcome": 2
+        }
+      ],
+      "source_batches": 2,
+      "odd_native_qutrits_consumed": 4,
+      "actual_labels_sampled_before_all_measurement_outcomes": true,
+      "secret_given_to_classical_decoder": false,
+      "odd_source_acquisition_and_high_digit_recursion_supplied": false
+    },
+    {
+      "dimension": 2,
+      "seed": 59302,
+      "parent_secret_calibration_only": [
+        8,
+        7
+      ],
+      "result": {
+        "samples": 9,
+        "feature_dimension": 8,
+        "rank": 7,
+        "secret": [
+          2,
+          1
+        ],
+        "feature_vector": [
+          1,
+          1,
+          2,
+          1,
+          2,
+          1,
+          2,
+          1
+        ],
+        "secret_assignments_enumerated": false,
+        "phase_modulus": 3,
+        "complete_parent_secret_recovered": false,
+        "speedup_claim_allowed": false,
+        "novelty_claim": false,
+        "status": "FIELD_SECRET_CERTIFIED"
+      },
+      "probability_budget": {
+        "feature_dimension": 8,
+        "target_rank": 7,
+        "rank_escape_probability_lower_bound": "2/81",
+        "confidence_bits": 16,
+        "sufficient_fresh_IID_samples": 5751,
+        "failure_probability_upper_bound": "2^-16",
+        "probability_theorem_status": "LOCAL_DERIVATION_REVIEW_PENDING",
+        "source_uniformity_and_fresh_batches_required": true
+      },
+      "public_measurement_records": [
+        {
+          "alpha": [
+            2,
+            1
+          ],
+          "beta": [
+            2,
+            0
+          ],
+          "basis": 1,
+          "outcome": 2
+        },
+        {
+          "alpha": [
+            2,
+            0
+          ],
+          "beta": [
+            2,
+            1
+          ],
+          "basis": 0,
+          "outcome": 0
+        },
+        {
+          "alpha": [
+            2,
+            1
+          ],
+          "beta": [
+            2,
+            2
+          ],
+          "basis": 2,
+          "outcome": 0
+        },
+        {
+          "alpha": [
+            0,
+            1
+          ],
+          "beta": [
+            1,
+            2
+          ],
+          "basis": 2,
+          "outcome": 0
+        },
+        {
+          "alpha": [
+            2,
+            2
+          ],
+          "beta": [
+            1,
+            0
+          ],
+          "basis": 0,
+          "outcome": 0
+        },
+        {
+          "alpha": [
+            2,
+            1
+          ],
+          "beta": [
+            2,
+            0
+          ],
+          "basis": 1,
+          "outcome": 2
+        },
+        {
+          "alpha": [
+            2,
+            1
+          ],
+          "beta": [
+            2,
+            0
+          ],
+          "basis": 2,
+          "outcome": 1
+        },
+        {
+          "alpha": [
+            0,
+            2
+          ],
+          "beta": [
+            1,
+            1
+          ],
+          "basis": 1,
+          "outcome": 1
+        },
+        {
+          "alpha": [
+            2,
+            0
+          ],
+          "beta": [
+            2,
+            1
+          ],
+          "basis": 0,
+          "outcome": 1
+        }
+      ],
+      "source_batches": 9,
+      "odd_native_qutrits_consumed": 27,
+      "actual_labels_sampled_before_all_measurement_outcomes": true,
+      "secret_given_to_classical_decoder": false,
+      "odd_source_acquisition_and_high_digit_recursion_supplied": false
+    },
+    {
+      "dimension": 4,
+      "seed": 59304,
+      "parent_secret_calibration_only": [
+        8,
+        7,
+        6,
+        8
+      ],
+      "result": {
+        "samples": 30,
+        "feature_dimension": 31,
+        "rank": 30,
+        "secret": [
+          2,
+          1,
+          0,
+          2
+        ],
+        "feature_vector": [
+          1,
+          2,
+          0,
+          1,
+          2,
+          1,
+          0,
+          0,
+          2,
+          0,
+          1,
+          1,
+          0,
+          2,
+          1,
+          0,
+          0,
+          1,
+          0,
+          0,
+          2,
+          0,
+          2,
+          0,
+          0,
+          1,
+          0,
+          2,
+          2,
+          0,
+          1
+        ],
+        "secret_assignments_enumerated": false,
+        "phase_modulus": 3,
+        "complete_parent_secret_recovered": false,
+        "speedup_claim_allowed": false,
+        "novelty_claim": false,
+        "status": "FIELD_SECRET_CERTIFIED"
+      },
+      "probability_budget": {
+        "feature_dimension": 31,
+        "target_rank": 30,
+        "rank_escape_probability_lower_bound": "2/81",
+        "confidence_bits": 16,
+        "sufficient_fresh_IID_samples": 7614,
+        "failure_probability_upper_bound": "2^-16",
+        "probability_theorem_status": "LOCAL_DERIVATION_REVIEW_PENDING",
+        "source_uniformity_and_fresh_batches_required": true
+      },
+      "public_measurement_records": [
+        {
+          "alpha": [
+            2,
+            0,
+            0,
+            2
+          ],
+          "beta": [
+            1,
+            2,
+            1,
+            2
+          ],
+          "basis": 0,
+          "outcome": 0
+        },
+        {
+          "alpha": [
+            1,
+            0,
+            2,
+            1
+          ],
+          "beta": [
+            2,
+            1,
+            0,
+            2
+          ],
+          "basis": 2,
+          "outcome": 2
+        },
+        {
+          "alpha": [
+            0,
+            2,
+            2,
+            1
+          ],
+          "beta": [
+            1,
+            1,
+            1,
+            0
+          ],
+          "basis": 1,
+          "outcome": 2
+        },
+        {
+          "alpha": [
+            1,
+            0,
+            2,
+            1
+          ],
+          "beta": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "basis": 0,
+          "outcome": 0
+        },
+        {
+          "alpha": [
+            0,
+            1,
+            0,
+            2
+          ],
+          "beta": [
+            0,
+            0,
+            2,
+            1
+          ],
+          "basis": 1,
+          "outcome": 0
+        },
+        {
+          "alpha": [
+            1,
+            2,
+            1,
+            2
+          ],
+          "beta": [
+            1,
+            2,
+            1,
+            0
+          ],
+          "basis": 0,
+          "outcome": 0
+        },
+        {
+          "alpha": [
+            1,
+            0,
+            0,
+            1
+          ],
+          "beta": [
+            0,
+            2,
+            1,
+            0
+          ],
+          "basis": 0,
+          "outcome": 2
+        },
+        {
+          "alpha": [
+            1,
+            2,
+            1,
+            2
+          ],
+          "beta": [
+            0,
+            0,
+            0,
+            2
+          ],
+          "basis": 0,
+          "outcome": 2
+        },
+        {
+          "alpha": [
+            0,
+            1,
+            1,
+            2
+          ],
+          "beta": [
+            0,
+            1,
+            2,
+            1
+          ],
+          "basis": 1,
+          "outcome": 1
+        },
+        {
+          "alpha": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "beta": [
+            1,
+            1,
+            2,
+            1
+          ],
+          "basis": 1,
+          "outcome": 2
+        },
+        {
+          "alpha": [
+            2,
+            0,
+            1,
+            1
+          ],
+          "beta": [
+            1,
+            0,
+            1,
+            1
+          ],
+          "basis": 1,
+          "outcome": 0
+        },
+        {
+          "alpha": [
+            2,
+            1,
+            1,
+            2
+          ],
+          "beta": [
+            0,
+            2,
+            0,
+            0
+          ],
+          "basis": 0,
+          "outcome": 0
+        },
+        {
+          "alpha": [
+            1,
+            1,
+            1,
+            2
+          ],
+          "beta": [
+            0,
+            0,
+            2,
+            0
+          ],
+          "basis": 2,
+          "outcome": 0
+        },
+        {
+          "alpha": [
+            1,
+            2,
+            1,
+            2
+          ],
+          "beta": [
+            2,
+            2,
+            0,
+            0
+          ],
+          "basis": 0,
+          "outcome": 2
+        },
+        {
+          "alpha": [
+            2,
+            1,
+            2,
+            0
+          ],
+          "beta": [
+            1,
+            0,
+            1,
+            0
+          ],
+          "basis": 1,
+          "outcome": 0
+        },
+        {
+          "alpha": [
+            2,
+            1,
+            2,
+            0
+          ],
+          "beta": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "basis": 0,
+          "outcome": 1
+        },
+        {
+          "alpha": [
+            1,
+            0,
+            0,
+            2
+          ],
+          "beta": [
+            1,
+            0,
+            1,
+            0
+          ],
+          "basis": 0,
+          "outcome": 1
+        },
+        {
+          "alpha": [
+            0,
+            1,
+            2,
+            0
+          ],
+          "beta": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "basis": 0,
+          "outcome": 1
+        },
+        {
+          "alpha": [
+            2,
+            1,
+            2,
+            2
+          ],
+          "beta": [
+            1,
+            0,
+            0,
+            2
+          ],
+          "basis": 2,
+          "outcome": 0
+        },
+        {
+          "alpha": [
+            1,
+            0,
+            2,
+            0
+          ],
+          "beta": [
+            2,
+            0,
+            1,
+            1
+          ],
+          "basis": 1,
+          "outcome": 0
+        },
+        {
+          "alpha": [
+            1,
+            0,
+            1,
+            2
+          ],
+          "beta": [
+            1,
+            1,
+            2,
+            2
+          ],
+          "basis": 1,
+          "outcome": 0
+        },
+        {
+          "alpha": [
+            1,
+            1,
+            0,
+            1
+          ],
+          "beta": [
+            2,
+            0,
+            2,
+            1
+          ],
+          "basis": 1,
+          "outcome": 1
+        },
+        {
+          "alpha": [
+            2,
+            1,
+            1,
+            1
+          ],
+          "beta": [
+            0,
+            1,
+            2,
+            1
+          ],
+          "basis": 2,
+          "outcome": 2
+        },
+        {
+          "alpha": [
+            1,
+            2,
+            1,
+            0
+          ],
+          "beta": [
+            1,
+            1,
+            2,
+            1
+          ],
+          "basis": 2,
+          "outcome": 1
+        },
+        {
+          "alpha": [
+            1,
+            2,
+            2,
+            0
+          ],
+          "beta": [
+            2,
+            2,
+            0,
+            2
+          ],
+          "basis": 2,
+          "outcome": 2
+        },
+        {
+          "alpha": [
+            1,
+            0,
+            1,
+            1
+          ],
+          "beta": [
+            2,
+            1,
+            2,
+            1
+          ],
+          "basis": 0,
+          "outcome": 2
+        },
+        {
+          "alpha": [
+            1,
+            2,
+            2,
+            0
+          ],
+          "beta": [
+            2,
+            2,
+            1,
+            2
+          ],
+          "basis": 2,
+          "outcome": 0
+        },
+        {
+          "alpha": [
+            2,
+            0,
+            0,
+            2
+          ],
+          "beta": [
+            2,
+            1,
+            0,
+            2
+          ],
+          "basis": 2,
+          "outcome": 2
+        },
+        {
+          "alpha": [
+            2,
+            0,
+            2,
+            1
+          ],
+          "beta": [
+            2,
+            2,
+            0,
+            2
+          ],
+          "basis": 1,
+          "outcome": 0
+        },
+        {
+          "alpha": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "beta": [
+            0,
+            1,
+            1,
+            0
+          ],
+          "basis": 0,
+          "outcome": 0
+        }
+      ],
+      "source_batches": 30,
+      "odd_native_qutrits_consumed": 150,
+      "actual_labels_sampled_before_all_measurement_outcomes": true,
+      "secret_given_to_classical_decoder": false,
+      "odd_source_acquisition_and_high_digit_recursion_supplied": false
+    },
+    {
+      "dimension": 8,
+      "seed": 59308,
+      "parent_secret_calibration_only": [
+        8,
+        7,
+        6,
+        8,
+        7,
+        6,
+        8,
+        7
+      ],
+      "result": {
+        "samples": 156,
+        "feature_dimension": 157,
+        "rank": 156,
+        "secret": [
+          2,
+          1,
+          0,
+          2,
+          1,
+          0,
+          2,
+          1
+        ],
+        "feature_vector": [
+          1,
+          1,
+          2,
+          0,
+          1,
+          2,
+          0,
+          1,
+          2,
+          1,
+          2,
+          1,
+          0,
+          0,
+          0,
+          1,
+          2,
+          0,
+          1,
+          2,
+          1,
+          0,
+          2,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          2,
+          0,
+          1,
+          2,
+          0,
+          1,
+          2,
+          1,
+          0,
+          2,
+          1,
+          0,
+          2,
+          1,
+          2,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          2,
+          1,
+          0,
+          0,
+          0,
+          1,
+          2,
+          0,
+          2,
+          1,
+          2,
+          0,
+          0,
+          0,
+          2,
+          1,
+          0,
+          2,
+          1,
+          2,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          2,
+          1,
+          0,
+          0,
+          0,
+          1,
+          2,
+          0,
+          1,
+          2,
+          1,
+          0,
+          2,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          2,
+          0,
+          1,
+          2,
+          0,
+          2,
+          1,
+          2,
+          0,
+          0,
+          0,
+          2,
+          1,
+          0,
+          2,
+          1,
+          2,
+          0,
+          1,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          1,
+          0,
+          2,
+          1,
+          0,
+          2,
+          1,
+          2,
+          0,
+          1,
+          2,
+          0,
+          1
+        ],
+        "secret_assignments_enumerated": false,
+        "phase_modulus": 3,
+        "complete_parent_secret_recovered": false,
+        "speedup_claim_allowed": false,
+        "novelty_claim": false,
+        "status": "FIELD_SECRET_CERTIFIED"
+      },
+      "probability_budget": {
+        "feature_dimension": 157,
+        "target_rank": 156,
+        "rank_escape_probability_lower_bound": "2/81",
+        "confidence_bits": 16,
+        "sufficient_fresh_IID_samples": 17820,
+        "failure_probability_upper_bound": "2^-16",
+        "probability_theorem_status": "LOCAL_DERIVATION_REVIEW_PENDING",
+        "source_uniformity_and_fresh_batches_required": true
+      },
+      "public_measurement_records": [
+        {
+          "alpha": [
+            1,
+            0,
+            1,
+            2,
+            2,
+            1,
+            0,
+            2
+          ],
+          "beta": [
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            0,
+            1
+          ],
+          "basis": 0,
+          "outcome": 0
+        },
+        {
+          "alpha": [
+            0,
+            2,
+            1,
+            1,
+            0,
+            2,
+            2,
+            1
+          ],
+          "beta": [
+            2,
+            2,
+            1,
+            1,
+            0,
+            0,
+            1,
+            1
+          ],
+          "basis": 1,
+          "outcome": 1
+        },
+        {
+          "alpha": [
+            1,
+            1,
+            2,
+            2,
+            2,
+            2,
+            0,
+            1
+          ],
+          "beta": [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "basis": 2,
+          "outcome": 1
+        },
+        {
+          "alpha": [
+            2,
+            2,
+            1,
+            0,
+            2,
+            2,
+            0,
+            2
+          ],
+          "beta": [
+            1,
+            2,
+            1,
+            1,
+            1,
+            1,
+            0,
+            1
+          ],
+          "basis": 0,
+          "outcome": 0
+        },
+        {
+          "alpha": [
+            0,
+            2,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2
+          ],
+          "beta": [
+            0,
+            2,
+            1,
+            2,
+            1,
+            2,
+            1,
+            0
+          ],
+          "basis": 0,
+          "outcome": 2
+        },
+        {
+          "alpha": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0
+          ],
+          "beta": [
+            0,
+            1,
+            0,
+            0,
+            0,
+            2,
+            0,
+            1
+          ],
+          "basis": 1,
+          "outcome": 0
+        },
+        {
+          "alpha": [
+            0,
+            1,
+            2,
+            1,
+            0,
+            0,
+            1,
+            2
+          ],
+          "beta": [
+            2,
+            0,
+            0,
+            2,
+            0,
+            1,
+            2,
+            1
+          ],
+          "basis": 0,
+          "outcome": 0
+        },
+        {
+          "alpha": [
+            1,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            0
+          ],
+          "beta": [
+            1,
+            1,
+            2,
+            1,
+            2,
+            2,
+            2,
+            2
+          ],
+          "basis": 2,
+          "outcome": 0
+        },
+        {
+          "alpha": [
+            0,
+            2,
+            2,
+            0,
+            1,
+            1,
+            1,
+            0
+          ],
+          "beta": [
+            1,
+            2,
+            1,
+            0,
+            1,
+            1,
+            2,
+            1
+          ],
+          "basis": 2,
+          "outcome": 0
+        },
+        {
+          "alpha": [
+            2,
+            1,
+            1,
+            0,
+            1,
+            0,
+            1,
+            1
+          ],
+          "beta": [
+            2,
+            0,
+            0,
+            0,
+            0,
+            2,
+            0,
+            1
+          ],
+          "basis": 0,
+          "outcome": 2
+        },
+        {
+          "alpha": [
+            1,
+            1,
+            0,
+            0,
+            1,
+            2,
+            0,
+            1
+          ],
+          "beta": [
+            1,
+            2,
+            2,
+            1,
+            2,
+            1,
+            0,
+            1
+          ],
+          "basis": 0,
+          "outcome": 2
+        },
+        {
+          "alpha": [
+            1,
+            1,
+            0,
+            2,
+            2,
+            2,
+            2,
+            0
+          ],
+          "beta": [
+            2,
+            0,
+            1,
+            1,
+            1,
+            2,
+            1,
+            2
+          ],
+          "basis": 0,
+          "outcome": 1
+        },
+        {
+          "alpha": [
+            2,
+            0,
+            1,
+            0,
+            2,
+            2,
+            2,
+            0
+          ],
+          "beta": [
+            0,
+            2,
+            2,
+            1,
+            2,
+            2,
+            1,
+            0
+          ],
+          "basis": 2,
+          "outcome": 1
+        },
+        {
+          "alpha": [
+            1,
+            2,
+            1,
+            1,
+            2,
+            0,
+            2,
+            1
+          ],
+          "beta": [
+            1,
+            1,
+            0,
+            2,
+            1,
+            0,
+            1,
+            0
+          ],
+          "basis": 2,
+          "outcome": 1
+        },
+        {
+          "alpha": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "beta": [
+            0,
+            2,
+            1,
+            2,
+            0,
+            2,
+            1,
+            0
+          ],
+          "basis": 2,
+          "outcome": 0
+        },
+        {
+          "alpha": [
+            1,
+            0,
+            2,
+            0,
+            2,
+            1,
+            2,
+            0
+          ],
+          "beta": [
+            1,
+            2,
+            1,
+            0,
+            1,
+            0,
+            2,
+            0
+          ],
+          "basis": 2,
+          "outcome": 2
+        },
+        {
+          "alpha": [
+            2,
+            0,
+            2,
+            0,
+            1,
+            0,
+            1,
+            1
+          ],
+          "beta": [
+            1,
+            2,
+            0,
+            1,
+            1,
+            2,
+            0,
+            0
+          ],
+          "basis": 0,
+          "outcome": 1
+        },
+        {
+          "alpha": [
+            0,
+            2,
+            1,
+            2,
+            2,
+            2,
+            1,
+            0
+          ],
+          "beta": [
+            1,
+            1,
+            2,
+            2,
+            0,
+            1,
+            2,
+            0
+          ],
+          "basis": 2,
+          "outcome": 1
+        },
+        {
+          "alpha": [
+            0,
+            1,
+            1,
+            2,
+            2,
+            1,
+            2,
+            0
+          ],
+          "beta": [
+            2,
+            1,
+            0,
+            1,
+            2,
+            0,
+            2,
+            1
+          ],
+          "basis": 1,
+          "outcome": 0
+        },
+        {
+          "alpha": [
+            0,
+            1,
+            2,
+            1,
+            1,
+            2,
+            1,
+            1
+          ],
+          "beta": [
+            1,
+            1,
+            1,
+            1,
+            2,
+            0,
+            1,
+            2
+          ],
+          "basis": 0,
+          "outcome": 2
+        },
+        {
+          "alpha": [
+            0,
+            1,
+            1,
+            0,
+            1,
+            2,
+            0,
+            1
+          ],
+          "beta": [
+            0,
+            0,
+            0,
+            2,
+            2,
+            0,
+            2,
+            1
+          ],
+          "basis": 2,
+          "outcome": 0
+        },
+        {
+          "alpha": [
+            0,
+            0,
+            0,
+            0,
+            2,
+            2,
+            1,
+            2
+          ],
+          "beta": [
+            0,
+            0,
+            0,
+            1,
+            2,
+            2,
+            0,
+            2
+          ],
+          "basis": 2,
+          "outcome": 1
+        },
+        {
+          "alpha": [
+            2,
+            0,
+            1,
+            1,
+            1,
+            2,
+            0,
+            2
+          ],
+          "beta": [
+            0,
+            2,
+            2,
+            2,
+            2,
+            1,
+            1,
+            1
+          ],
+          "basis": 1,
+          "outcome": 2
+        },
+        {
+          "alpha": [
+            0,
+            2,
+            1,
+            2,
+            2,
+            2,
+            1,
+            1
+          ],
+          "beta": [
+            1,
+            0,
+            1,
+            1,
+            0,
+            1,
+            1,
+            1
+          ],
+          "basis": 2,
+          "outcome": 1
+        },
+        {
+          "alpha": [
+            1,
+            2,
+            1,
+            2,
+            0,
+            1,
+            1,
+            1
+          ],
+          "beta": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          "basis": 2,
+          "outcome": 2
+        },
+        {
+          "alpha": [
+            2,
+            1,
+            0,
+            2,
+            0,
+            0,
+            1,
+            1
+          ],
+          "beta": [
+            1,
+            2,
+            0,
+            2,
+            1,
+            1,
+            2,
+            2
+          ],
+          "basis": 1,
+          "outcome": 2
+        },
+        {
+          "alpha": [
+            2,
+            1,
+            1,
+            0,
+            2,
+            2,
+            2,
+            0
+          ],
+          "beta": [
+            0,
+            0,
+            2,
+            2,
+            2,
+            0,
+            1,
+            0
+          ],
+          "basis": 0,
+          "outcome": 1
+        },
+        {
+          "alpha": [
+            2,
+            0,
+            1,
+            0,
+            2,
+            0,
+            2,
+            2
+          ],
+          "beta": [
+            0,
+            2,
+            1,
+            1,
+            2,
+            1,
+            2,
+            1
+          ],
+          "basis": 2,
+          "outcome": 0
+        },
+        {
+          "alpha": [
+            1,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            2
+          ],
+          "beta": [
+            1,
+            1,
+            2,
+            2,
+            0,
+            1,
+            1,
+            1
+          ],
+          "basis": 2,
+          "outcome": 0
+        },
+        {
+          "alpha": [
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "beta": [
+            1,
+            0,
+            2,
+            2,
+            2,
+            1,
+            0,
+            2
+          ],
+          "basis": 2,
+          "outcome": 1
+        },
+        {
+          "alpha": [
+            1,
+            0,
+            1,
+            0,
+            2,
+            0,
+            1,
+            2
+          ],
+          "beta": [
+            1,
+            1,
+            1,
+            0,
+            2,
+            2,
+            2,
+            0
+          ],
+          "basis": 0,
+          "outcome": 2
+        },
+        {
+          "alpha": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            2,
+            0,
+            1
+          ],
+          "beta": [
+            0,
+            1,
+            1,
+            2,
+            2,
+            0,
+            1,
+            0
+          ],
+          "basis": 2,
+          "outcome": 0
+        },
+        {
+          "alpha": [
+            2,
+            0,
+            2,
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          "beta": [
+            2,
+            0,
+            1,
+            0,
+            1,
+            1,
+            1,
+            1
+          ],
+          "basis": 1,
+          "outcome": 2
+        },
+        {
+          "alpha": [
+            2,
+            0,
+            2,
+            2,
+            2,
+            2,
+            1,
+            2
+          ],
+          "beta": [
+            1,
+            2,
+            2,
+            0,
+            1,
+            0,
+            1,
+            1
+          ],
+          "basis": 2,
+          "outcome": 2
+        },
+        {
+          "alpha": [
+            1,
+            0,
+            0,
+            0,
+            1,
+            2,
+            2,
+            2
+          ],
+          "beta": [
+            2,
+            0,
+            0,
+            2,
+            2,
+            2,
+            0,
+            0
+          ],
+          "basis": 1,
+          "outcome": 0
+        },
+        {
+          "alpha": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            2,
+            1,
+            2
+          ],
+          "beta": [
+            0,
+            1,
+            1,
+            0,
+            2,
+            0,
+            2,
+            0
+          ],
+          "basis": 0,
+          "outcome": 1
+        },
+        {
+          "alpha": [
+            2,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          "beta": [
+            2,
+            0,
+            2,
+            2,
+            0,
+            1,
+            0,
+            1
+          ],
+          "basis": 1,
+          "outcome": 2
+        },
+        {
+          "alpha": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            1
+          ],
+          "beta": [
+            2,
+            2,
+            2,
+            1,
+            2,
+            0,
+            1,
+            2
+          ],
+          "basis": 2,
+          "outcome": 2
+        },
+        {
+          "alpha": [
+            0,
+            0,
+            1,
+            2,
+            1,
+            2,
+            1,
+            2
+          ],
+          "beta": [
+            2,
+            2,
+            1,
+            1,
+            2,
+            1,
+            2,
+            2
+          ],
+          "basis": 2,
+          "outcome": 0
+        },
+        {
+          "alpha": [
+            2,
+            0,
+            1,
+            0,
+            2,
+            0,
+            0,
+            1
+          ],
+          "beta": [
+            2,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            1
+          ],
+          "basis": 2,
+          "outcome": 1
+        },
+        {
+          "alpha": [
+            2,
+            2,
+            1,
+            0,
+            1,
+            1,
+            0,
+            2
+          ],
+          "beta": [
+            1,
+            2,
+            2,
+            0,
+            0,
+            2,
+            0,
+            1
+          ],
+          "basis": 0,
+          "outcome": 1
+        },
+        {
+          "alpha": [
+            1,
+            2,
+            0,
+            2,
+            0,
+            0,
+            1,
+            0
+          ],
+          "beta": [
+            2,
+            2,
+            2,
+            2,
+            1,
+            1,
+            2,
+            0
+          ],
+          "basis": 1,
+          "outcome": 2
+        },
+        {
+          "alpha": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            0,
+            0
+          ],
+          "beta": [
+            2,
+            0,
+            1,
+            1,
+            0,
+            1,
+            0,
+            0
+          ],
+          "basis": 2,
+          "outcome": 1
+        },
+        {
+          "alpha": [
+            2,
+            2,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2
+          ],
+          "beta": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            2,
+            0,
+            0
+          ],
+          "basis": 0,
+          "outcome": 2
+        },
+        {
+          "alpha": [
+            2,
+            1,
+            0,
+            2,
+            0,
+            2,
+            2,
+            1
+          ],
+          "beta": [
+            2,
+            1,
+            1,
+            2,
+            1,
+            0,
+            1,
+            0
+          ],
+          "basis": 0,
+          "outcome": 2
+        },
+        {
+          "alpha": [
+            1,
+            0,
+            0,
+            0,
+            2,
+            2,
+            2,
+            2
+          ],
+          "beta": [
+            1,
+            1,
+            2,
+            1,
+            0,
+            2,
+            2,
+            0
+          ],
+          "basis": 1,
+          "outcome": 0
+        },
+        {
+          "alpha": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            2,
+            1,
+            2
+          ],
+          "beta": [
+            0,
+            2,
+            2,
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "basis": 0,
+          "outcome": 2
+        },
+        {
+          "alpha": [
+            0,
+            2,
+            2,
+            2,
+            2,
+            2,
+            1,
+            2
+          ],
+          "beta": [
+            1,
+            2,
+            1,
+            2,
+            1,
+            1,
+            1,
+            2
+          ],
+          "basis": 1,
+          "outcome": 0
+        },
+        {
+          "alpha": [
+            0,
+            2,
+            2,
+            1,
+            0,
+            1,
+            2,
+            2
+          ],
+          "beta": [
+            2,
+            1,
+            1,
+            0,
+            0,
+            2,
+            2,
+            2
+          ],
+          "basis": 1,
+          "outcome": 0
+        },
+        {
+          "alpha": [
+            1,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            0
+          ],
+          "beta": [
+            1,
+            2,
+            2,
+            0,
+            1,
+            2,
+            2,
+            2
+          ],
+          "basis": 0,
+          "outcome": 1
+        },
+        {
+          "alpha": [
+            2,
+            2,
+            2,
+            0,
+            1,
+            0,
+            0,
+            1
+          ],
+          "beta": [
+            0,
+            0,
+            2,
+            0,
+            1,
+            1,
+            1,
+            2
+          ],
+          "basis": 0,
+          "outcome": 0
+        },
+        {
+          "alpha": [
+            0,
+            2,
+            0,
+            2,
+            2,
+            1,
+            1,
+            1
+          ],
+          "beta": [
+            2,
+            2,
+            0,
+            1,
+            2,
+            2,
+            1,
+            1
+          ],
+          "basis": 1,
+          "outcome": 2
+        },
+        {
+          "alpha": [
+            2,
+            1,
+            2,
+            1,
+            2,
+            1,
+            1,
+            1
+          ],
+          "beta": [
+            0,
+            1,
+            1,
+            1,
+            2,
+            1,
+            2,
+            0
+          ],
+          "basis": 2,
+          "outcome": 0
+        },
+        {
+          "alpha": [
+            1,
+            1,
+            1,
+            2,
+            0,
+            2,
+            2,
+            0
+          ],
+          "beta": [
+            1,
+            2,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0
+          ],
+          "basis": 0,
+          "outcome": 0
+        },
+        {
+          "alpha": [
+            2,
+            0,
+            2,
+            1,
+            1,
+            0,
+            1,
+            2
+          ],
+          "beta": [
+            2,
+            0,
+            1,
+            2,
+            1,
+            0,
+            2,
+            2
+          ],
+          "basis": 0,
+          "outcome": 2
+        },
+        {
+          "alpha": [
+            0,
+            2,
+            1,
+            0,
+            0,
+            2,
+            2,
+            1
+          ],
+          "beta": [
+            2,
+            0,
+            2,
+            1,
+            2,
+            0,
+            1,
+            2
+          ],
+          "basis": 1,
+          "outcome": 0
+        },
+        {
+          "alpha": [
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            1,
+            2
+          ],
+          "beta": [
+            1,
+            0,
+            1,
+            1,
+            0,
+            1,
+            0,
+            0
+          ],
+          "basis": 2,
+          "outcome": 2
+        },
+        {
+          "alpha": [
+            1,
+            1,
+            1,
+            1,
+            2,
+            1,
+            2,
+            0
+          ],
+          "beta": [
+            1,
+            2,
+            2,
+            2,
+            0,
+            1,
+            1,
+            2
+          ],
+          "basis": 1,
+          "outcome": 0
+        },
+        {
+          "alpha": [
+            1,
+            1,
+            2,
+            2,
+            0,
+            1,
+            0,
+            0
+          ],
+          "beta": [
+            1,
+            1,
+            0,
+            2,
+            1,
+            1,
+            0,
+            2
+          ],
+          "basis": 0,
+          "outcome": 2
+        },
+        {
+          "alpha": [
+            0,
+            0,
+            2,
+            2,
+            0,
+            1,
+            1,
+            1
+          ],
+          "beta": [
+            2,
+            2,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "basis": 0,
+          "outcome": 1
+        },
+        {
+          "alpha": [
+            1,
+            1,
+            2,
+            1,
+            2,
+            0,
+            0,
+            0
+          ],
+          "beta": [
+            2,
+            0,
+            2,
+            1,
+            2,
+            2,
+            1,
+            0
+          ],
+          "basis": 2,
+          "outcome": 0
+        },
+        {
+          "alpha": [
+            0,
+            0,
+            1,
+            2,
+            1,
+            1,
+            0,
+            2
+          ],
+          "beta": [
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            2,
+            2
+          ],
+          "basis": 2,
+          "outcome": 2
+        },
+        {
+          "alpha": [
+            0,
+            2,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2
+          ],
+          "beta": [
+            1,
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            1
+          ],
+          "basis": 2,
+          "outcome": 1
+        },
+        {
+          "alpha": [
+            0,
+            0,
+            2,
+            1,
+            1,
+            1,
+            0,
+            1
+          ],
+          "beta": [
+            2,
+            2,
+            2,
+            1,
+            2,
+            0,
+            2,
+            2
+          ],
+          "basis": 2,
+          "outcome": 2
+        },
+        {
+          "alpha": [
+            1,
+            1,
+            1,
+            0,
+            2,
+            1,
+            2,
+            2
+          ],
+          "beta": [
+            2,
+            1,
+            2,
+            1,
+            0,
+            2,
+            1,
+            0
+          ],
+          "basis": 2,
+          "outcome": 0
+        },
+        {
+          "alpha": [
+            2,
+            2,
+            0,
+            1,
+            0,
+            1,
+            1,
+            0
+          ],
+          "beta": [
+            2,
+            0,
+            2,
+            2,
+            1,
+            0,
+            0,
+            0
+          ],
+          "basis": 0,
+          "outcome": 1
+        },
+        {
+          "alpha": [
+            2,
+            1,
+            0,
+            1,
+            0,
+            1,
+            1,
+            1
+          ],
+          "beta": [
+            2,
+            0,
+            1,
+            2,
+            2,
+            1,
+            0,
+            2
+          ],
+          "basis": 0,
+          "outcome": 1
+        },
+        {
+          "alpha": [
+            1,
+            2,
+            2,
+            0,
+            0,
+            2,
+            0,
+            0
+          ],
+          "beta": [
+            1,
+            1,
+            2,
+            1,
+            0,
+            2,
+            1,
+            0
+          ],
+          "basis": 0,
+          "outcome": 2
+        },
+        {
+          "alpha": [
+            0,
+            1,
+            1,
+            2,
+            1,
+            0,
+            2,
+            2
+          ],
+          "beta": [
+            1,
+            0,
+            2,
+            0,
+            2,
+            0,
+            0,
+            2
+          ],
+          "basis": 2,
+          "outcome": 0
+        },
+        {
+          "alpha": [
+            0,
+            0,
+            1,
+            2,
+            1,
+            1,
+            2,
+            1
+          ],
+          "beta": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            2
+          ],
+          "basis": 0,
+          "outcome": 1
+        },
+        {
+          "alpha": [
+            0,
+            2,
+            0,
+            2,
+            0,
+            1,
+            0,
+            0
+          ],
+          "beta": [
+            2,
+            2,
+            1,
+            0,
+            0,
+            2,
+            1,
+            1
+          ],
+          "basis": 2,
+          "outcome": 1
+        },
+        {
+          "alpha": [
+            2,
+            0,
+            2,
+            0,
+            2,
+            1,
+            0,
+            1
+          ],
+          "beta": [
+            2,
+            1,
+            0,
+            2,
+            1,
+            1,
+            2,
+            0
+          ],
+          "basis": 2,
+          "outcome": 1
+        },
+        {
+          "alpha": [
+            1,
+            0,
+            0,
+            0,
+            2,
+            2,
+            0,
+            1
+          ],
+          "beta": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            2,
+            2,
+            0
+          ],
+          "basis": 2,
+          "outcome": 2
+        },
+        {
+          "alpha": [
+            2,
+            0,
+            2,
+            2,
+            1,
+            0,
+            1,
+            0
+          ],
+          "beta": [
+            2,
+            2,
+            1,
+            0,
+            2,
+            1,
+            0,
+            2
+          ],
+          "basis": 2,
+          "outcome": 2
+        },
+        {
+          "alpha": [
+            1,
+            1,
+            0,
+            2,
+            1,
+            2,
+            2,
+            0
+          ],
+          "beta": [
+            2,
+            2,
+            0,
+            0,
+            0,
+            0,
+            0,
+            2
+          ],
+          "basis": 2,
+          "outcome": 0
+        },
+        {
+          "alpha": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0
+          ],
+          "beta": [
+            0,
+            0,
+            2,
+            2,
+            0,
+            2,
+            1,
+            0
+          ],
+          "basis": 0,
+          "outcome": 2
+        },
+        {
+          "alpha": [
+            1,
+            0,
+            2,
+            2,
+            0,
+            0,
+            0,
+            2
+          ],
+          "beta": [
+            1,
+            0,
+            1,
+            2,
+            2,
+            0,
+            1,
+            1
+          ],
+          "basis": 2,
+          "outcome": 2
+        },
+        {
+          "alpha": [
+            1,
+            0,
+            2,
+            0,
+            2,
+            1,
+            1,
+            1
+          ],
+          "beta": [
+            0,
+            2,
+            0,
+            1,
+            1,
+            0,
+            0,
+            1
+          ],
+          "basis": 1,
+          "outcome": 2
+        },
+        {
+          "alpha": [
+            2,
+            2,
+            0,
+            2,
+            2,
+            1,
+            0,
+            2
+          ],
+          "beta": [
+            0,
+            2,
+            2,
+            2,
+            1,
+            2,
+            0,
+            0
+          ],
+          "basis": 1,
+          "outcome": 2
+        },
+        {
+          "alpha": [
+            0,
+            1,
+            2,
+            0,
+            1,
+            0,
+            0,
+            1
+          ],
+          "beta": [
+            2,
+            0,
+            1,
+            1,
+            1,
+            0,
+            1,
+            1
+          ],
+          "basis": 1,
+          "outcome": 0
+        },
+        {
+          "alpha": [
+            0,
+            2,
+            0,
+            0,
+            0,
+            0,
+            2,
+            0
+          ],
+          "beta": [
+            1,
+            2,
+            2,
+            1,
+            0,
+            0,
+            1,
+            2
+          ],
+          "basis": 2,
+          "outcome": 2
+        },
+        {
+          "alpha": [
+            0,
+            1,
+            2,
+            2,
+            2,
+            2,
+            1,
+            1
+          ],
+          "beta": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            2
+          ],
+          "basis": 2,
+          "outcome": 1
+        },
+        {
+          "alpha": [
+            0,
+            0,
+            2,
+            1,
+            0,
+            1,
+            2,
+            1
+          ],
+          "beta": [
+            0,
+            1,
+            2,
+            2,
+            1,
+            1,
+            2,
+            1
+          ],
+          "basis": 0,
+          "outcome": 1
+        },
+        {
+          "alpha": [
+            2,
+            0,
+            1,
+            0,
+            0,
+            2,
+            0,
+            2
+          ],
+          "beta": [
+            1,
+            1,
+            2,
+            2,
+            2,
+            1,
+            2,
+            1
+          ],
+          "basis": 1,
+          "outcome": 1
+        },
+        {
+          "alpha": [
+            0,
+            1,
+            2,
+            0,
+            1,
+            2,
+            0,
+            1
+          ],
+          "beta": [
+            2,
+            1,
+            2,
+            2,
+            1,
+            0,
+            2,
+            2
+          ],
+          "basis": 1,
+          "outcome": 0
+        },
+        {
+          "alpha": [
+            0,
+            1,
+            0,
+            2,
+            0,
+            2,
+            2,
+            0
+          ],
+          "beta": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            2,
+            1,
+            1
+          ],
+          "basis": 2,
+          "outcome": 0
+        },
+        {
+          "alpha": [
+            1,
+            1,
+            2,
+            0,
+            2,
+            1,
+            2,
+            2
+          ],
+          "beta": [
+            0,
+            0,
+            2,
+            2,
+            0,
+            2,
+            0,
+            1
+          ],
+          "basis": 1,
+          "outcome": 1
+        },
+        {
+          "alpha": [
+            1,
+            1,
+            1,
+            2,
+            2,
+            1,
+            2,
+            0
+          ],
+          "beta": [
+            1,
+            1,
+            2,
+            2,
+            0,
+            0,
+            0,
+            1
+          ],
+          "basis": 0,
+          "outcome": 2
+        },
+        {
+          "alpha": [
+            1,
+            1,
+            2,
+            1,
+            2,
+            2,
+            1,
+            1
+          ],
+          "beta": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0
+          ],
+          "basis": 1,
+          "outcome": 0
+        },
+        {
+          "alpha": [
+            0,
+            2,
+            0,
+            2,
+            0,
+            0,
+            0,
+            1
+          ],
+          "beta": [
+            0,
+            0,
+            2,
+            2,
+            1,
+            0,
+            0,
+            2
+          ],
+          "basis": 1,
+          "outcome": 1
+        },
+        {
+          "alpha": [
+            0,
+            1,
+            1,
+            2,
+            2,
+            1,
+            1,
+            2
+          ],
+          "beta": [
+            0,
+            1,
+            2,
+            2,
+            1,
+            0,
+            2,
+            2
+          ],
+          "basis": 2,
+          "outcome": 2
+        },
+        {
+          "alpha": [
+            0,
+            1,
+            1,
+            2,
+            2,
+            1,
+            1,
+            1
+          ],
+          "beta": [
+            1,
+            1,
+            2,
+            0,
+            2,
+            0,
+            1,
+            2
+          ],
+          "basis": 2,
+          "outcome": 0
+        },
+        {
+          "alpha": [
+            2,
+            2,
+            2,
+            0,
+            0,
+            1,
+            2,
+            1
+          ],
+          "beta": [
+            2,
+            0,
+            1,
+            1,
+            0,
+            1,
+            2,
+            2
+          ],
+          "basis": 2,
+          "outcome": 0
+        },
+        {
+          "alpha": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0
+          ],
+          "beta": [
+            0,
+            2,
+            1,
+            0,
+            1,
+            0,
+            1,
+            2
+          ],
+          "basis": 0,
+          "outcome": 0
+        },
+        {
+          "alpha": [
+            2,
+            1,
+            0,
+            2,
+            2,
+            2,
+            0,
+            1
+          ],
+          "beta": [
+            0,
+            0,
+            2,
+            0,
+            1,
+            1,
+            0,
+            0
+          ],
+          "basis": 0,
+          "outcome": 0
+        },
+        {
+          "alpha": [
+            1,
+            0,
+            2,
+            2,
+            0,
+            0,
+            2,
+            2
+          ],
+          "beta": [
+            1,
+            1,
+            0,
+            1,
+            2,
+            0,
+            1,
+            1
+          ],
+          "basis": 2,
+          "outcome": 0
+        },
+        {
+          "alpha": [
+            0,
+            2,
+            2,
+            1,
+            2,
+            0,
+            1,
+            0
+          ],
+          "beta": [
+            0,
+            0,
+            0,
+            2,
+            2,
+            0,
+            2,
+            2
+          ],
+          "basis": 0,
+          "outcome": 2
+        },
+        {
+          "alpha": [
+            2,
+            0,
+            2,
+            0,
+            0,
+            0,
+            1,
+            1
+          ],
+          "beta": [
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            2,
+            2
+          ],
+          "basis": 1,
+          "outcome": 1
+        },
+        {
+          "alpha": [
+            0,
+            2,
+            1,
+            0,
+            2,
+            0,
+            0,
+            0
+          ],
+          "beta": [
+            2,
+            2,
+            0,
+            1,
+            2,
+            0,
+            0,
+            0
+          ],
+          "basis": 1,
+          "outcome": 1
+        },
+        {
+          "alpha": [
+            1,
+            2,
+            0,
+            2,
+            1,
+            2,
+            0,
+            0
+          ],
+          "beta": [
+            0,
+            1,
+            2,
+            2,
+            1,
+            1,
+            0,
+            1
+          ],
+          "basis": 2,
+          "outcome": 0
+        },
+        {
+          "alpha": [
+            2,
+            1,
+            0,
+            0,
+            0,
+            1,
+            1,
+            2
+          ],
+          "beta": [
+            2,
+            2,
+            2,
+            0,
+            1,
+            0,
+            1,
+            0
+          ],
+          "basis": 2,
+          "outcome": 2
+        },
+        {
+          "alpha": [
+            1,
+            1,
+            2,
+            1,
+            1,
+            0,
+            1,
+            2
+          ],
+          "beta": [
+            0,
+            1,
+            0,
+            0,
+            1,
+            1,
+            0,
+            2
+          ],
+          "basis": 0,
+          "outcome": 1
+        },
+        {
+          "alpha": [
+            1,
+            0,
+            1,
+            0,
+            2,
+            1,
+            2,
+            2
+          ],
+          "beta": [
+            0,
+            1,
+            0,
+            2,
+            0,
+            1,
+            0,
+            1
+          ],
+          "basis": 1,
+          "outcome": 0
+        },
+        {
+          "alpha": [
+            2,
+            0,
+            1,
+            1,
+            2,
+            1,
+            0,
+            2
+          ],
+          "beta": [
+            0,
+            2,
+            2,
+            1,
+            0,
+            1,
+            2,
+            1
+          ],
+          "basis": 2,
+          "outcome": 0
+        },
+        {
+          "alpha": [
+            0,
+            2,
+            1,
+            0,
+            2,
+            2,
+            2,
+            1
+          ],
+          "beta": [
+            2,
+            1,
+            1,
+            0,
+            2,
+            1,
+            2,
+            2
+          ],
+          "basis": 0,
+          "outcome": 2
+        },
+        {
+          "alpha": [
+            2,
+            0,
+            1,
+            0,
+            0,
+            1,
+            1,
+            2
+          ],
+          "beta": [
+            2,
+            2,
+            1,
+            0,
+            1,
+            1,
+            1,
+            0
+          ],
+          "basis": 0,
+          "outcome": 2
+        },
+        {
+          "alpha": [
+            2,
+            1,
+            0,
+            0,
+            0,
+            2,
+            2,
+            0
+          ],
+          "beta": [
+            0,
+            1,
+            2,
+            1,
+            1,
+            0,
+            1,
+            1
+          ],
+          "basis": 0,
+          "outcome": 2
+        },
+        {
+          "alpha": [
+            2,
+            2,
+            2,
+            2,
+            1,
+            2,
+            0,
+            1
+          ],
+          "beta": [
+            1,
+            1,
+            0,
+            2,
+            1,
+            1,
+            0,
+            2
+          ],
+          "basis": 0,
+          "outcome": 0
+        },
+        {
+          "alpha": [
+            0,
+            0,
+            1,
+            0,
+            0,
+            2,
+            2,
+            2
+          ],
+          "beta": [
+            2,
+            0,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0
+          ],
+          "basis": 2,
+          "outcome": 2
+        },
+        {
+          "alpha": [
+            1,
+            1,
+            1,
+            2,
+            0,
+            1,
+            0,
+            1
+          ],
+          "beta": [
+            0,
+            2,
+            2,
+            1,
+            2,
+            0,
+            1,
+            0
+          ],
+          "basis": 1,
+          "outcome": 1
+        },
+        {
+          "alpha": [
+            1,
+            2,
+            0,
+            1,
+            2,
+            2,
+            0,
+            0
+          ],
+          "beta": [
+            0,
+            2,
+            1,
+            1,
+            1,
+            1,
+            0,
+            2
+          ],
+          "basis": 2,
+          "outcome": 1
+        },
+        {
+          "alpha": [
+            0,
+            2,
+            1,
+            0,
+            1,
+            0,
+            1,
+            2
+          ],
+          "beta": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            2
+          ],
+          "basis": 1,
+          "outcome": 2
+        },
+        {
+          "alpha": [
+            2,
+            1,
+            2,
+            1,
+            2,
+            0,
+            2,
+            2
+          ],
+          "beta": [
+            1,
+            0,
+            2,
+            2,
+            2,
+            1,
+            0,
+            1
+          ],
+          "basis": 1,
+          "outcome": 2
+        },
+        {
+          "alpha": [
+            2,
+            1,
+            1,
+            2,
+            1,
+            0,
+            2,
+            1
+          ],
+          "beta": [
+            2,
+            1,
+            2,
+            0,
+            1,
+            2,
+            0,
+            1
+          ],
+          "basis": 0,
+          "outcome": 0
+        },
+        {
+          "alpha": [
+            0,
+            0,
+            1,
+            2,
+            2,
+            2,
+            2,
+            1
+          ],
+          "beta": [
+            0,
+            1,
+            2,
+            0,
+            2,
+            1,
+            2,
+            2
+          ],
+          "basis": 2,
+          "outcome": 2
+        },
+        {
+          "alpha": [
+            2,
+            2,
+            0,
+            0,
+            0,
+            0,
+            2,
+            1
+          ],
+          "beta": [
+            2,
+            0,
+            1,
+            0,
+            2,
+            0,
+            0,
+            1
+          ],
+          "basis": 0,
+          "outcome": 0
+        },
+        {
+          "alpha": [
+            1,
+            0,
+            2,
+            0,
+            2,
+            1,
+            0,
+            1
+          ],
+          "beta": [
+            1,
+            1,
+            2,
+            2,
+            0,
+            2,
+            2,
+            2
+          ],
+          "basis": 1,
+          "outcome": 2
+        },
+        {
+          "alpha": [
+            1,
+            2,
+            0,
+            1,
+            1,
+            1,
+            2,
+            0
+          ],
+          "beta": [
+            2,
+            1,
+            0,
+            1,
+            1,
+            0,
+            2,
+            1
+          ],
+          "basis": 2,
+          "outcome": 0
+        },
+        {
+          "alpha": [
+            0,
+            1,
+            2,
+            2,
+            1,
+            2,
+            0,
+            1
+          ],
+          "beta": [
+            2,
+            0,
+            0,
+            1,
+            2,
+            0,
+            1,
+            0
+          ],
+          "basis": 1,
+          "outcome": 1
+        },
+        {
+          "alpha": [
+            2,
+            2,
+            0,
+            1,
+            2,
+            1,
+            0,
+            0
+          ],
+          "beta": [
+            0,
+            0,
+            2,
+            0,
+            2,
+            1,
+            1,
+            1
+          ],
+          "basis": 0,
+          "outcome": 0
+        },
+        {
+          "alpha": [
+            0,
+            0,
+            1,
+            2,
+            0,
+            1,
+            1,
+            2
+          ],
+          "beta": [
+            0,
+            1,
+            2,
+            2,
+            0,
+            2,
+            0,
+            0
+          ],
+          "basis": 2,
+          "outcome": 2
+        },
+        {
+          "alpha": [
+            2,
+            2,
+            2,
+            1,
+            1,
+            2,
+            2,
+            1
+          ],
+          "beta": [
+            1,
+            2,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          "basis": 1,
+          "outcome": 2
+        },
+        {
+          "alpha": [
+            1,
+            0,
+            2,
+            0,
+            1,
+            0,
+            2,
+            1
+          ],
+          "beta": [
+            2,
+            1,
+            1,
+            2,
+            0,
+            2,
+            1,
+            2
+          ],
+          "basis": 0,
+          "outcome": 0
+        },
+        {
+          "alpha": [
+            0,
+            2,
+            0,
+            1,
+            2,
+            0,
+            1,
+            0
+          ],
+          "beta": [
+            1,
+            0,
+            1,
+            2,
+            1,
+            0,
+            0,
+            1
+          ],
+          "basis": 1,
+          "outcome": 1
+        },
+        {
+          "alpha": [
+            1,
+            2,
+            0,
+            1,
+            1,
+            0,
+            1,
+            2
+          ],
+          "beta": [
+            2,
+            0,
+            0,
+            0,
+            1,
+            2,
+            0,
+            1
+          ],
+          "basis": 0,
+          "outcome": 2
+        },
+        {
+          "alpha": [
+            1,
+            1,
+            0,
+            1,
+            2,
+            0,
+            0,
+            0
+          ],
+          "beta": [
+            0,
+            2,
+            1,
+            1,
+            2,
+            0,
+            0,
+            1
+          ],
+          "basis": 1,
+          "outcome": 1
+        },
+        {
+          "alpha": [
+            0,
+            1,
+            0,
+            2,
+            0,
+            0,
+            0,
+            2
+          ],
+          "beta": [
+            1,
+            1,
+            0,
+            1,
+            2,
+            1,
+            0,
+            2
+          ],
+          "basis": 1,
+          "outcome": 1
+        },
+        {
+          "alpha": [
+            2,
+            2,
+            1,
+            2,
+            0,
+            0,
+            2,
+            0
+          ],
+          "beta": [
+            2,
+            2,
+            2,
+            1,
+            1,
+            2,
+            1,
+            1
+          ],
+          "basis": 0,
+          "outcome": 2
+        },
+        {
+          "alpha": [
+            0,
+            0,
+            2,
+            0,
+            1,
+            1,
+            1,
+            2
+          ],
+          "beta": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            1,
+            2,
+            0
+          ],
+          "basis": 1,
+          "outcome": 0
+        },
+        {
+          "alpha": [
+            1,
+            0,
+            1,
+            2,
+            0,
+            1,
+            0,
+            2
+          ],
+          "beta": [
+            0,
+            2,
+            0,
+            1,
+            2,
+            2,
+            0,
+            2
+          ],
+          "basis": 2,
+          "outcome": 2
+        },
+        {
+          "alpha": [
+            0,
+            1,
+            0,
+            0,
+            2,
+            0,
+            1,
+            0
+          ],
+          "beta": [
+            2,
+            0,
+            2,
+            2,
+            1,
+            2,
+            2,
+            0
+          ],
+          "basis": 2,
+          "outcome": 0
+        },
+        {
+          "alpha": [
+            2,
+            0,
+            1,
+            0,
+            2,
+            0,
+            1,
+            2
+          ],
+          "beta": [
+            2,
+            1,
+            2,
+            2,
+            2,
+            2,
+            2,
+            1
+          ],
+          "basis": 2,
+          "outcome": 1
+        },
+        {
+          "alpha": [
+            2,
+            2,
+            0,
+            0,
+            0,
+            1,
+            2,
+            2
+          ],
+          "beta": [
+            0,
+            2,
+            0,
+            0,
+            0,
+            1,
+            0,
+            1
+          ],
+          "basis": 0,
+          "outcome": 0
+        },
+        {
+          "alpha": [
+            1,
+            2,
+            2,
+            1,
+            0,
+            2,
+            0,
+            0
+          ],
+          "beta": [
+            0,
+            1,
+            0,
+            1,
+            0,
+            2,
+            1,
+            1
+          ],
+          "basis": 1,
+          "outcome": 2
+        },
+        {
+          "alpha": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            2
+          ],
+          "beta": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            2,
+            2
+          ],
+          "basis": 2,
+          "outcome": 2
+        },
+        {
+          "alpha": [
+            2,
+            0,
+            0,
+            0,
+            1,
+            2,
+            1,
+            1
+          ],
+          "beta": [
+            0,
+            2,
+            2,
+            0,
+            0,
+            0,
+            2,
+            0
+          ],
+          "basis": 1,
+          "outcome": 0
+        },
+        {
+          "alpha": [
+            1,
+            0,
+            2,
+            1,
+            2,
+            2,
+            2,
+            2
+          ],
+          "beta": [
+            2,
+            0,
+            1,
+            0,
+            2,
+            0,
+            1,
+            1
+          ],
+          "basis": 2,
+          "outcome": 1
+        },
+        {
+          "alpha": [
+            2,
+            1,
+            2,
+            0,
+            1,
+            0,
+            2,
+            1
+          ],
+          "beta": [
+            1,
+            0,
+            1,
+            0,
+            0,
+            1,
+            1,
+            2
+          ],
+          "basis": 2,
+          "outcome": 1
+        },
+        {
+          "alpha": [
+            1,
+            0,
+            2,
+            0,
+            1,
+            2,
+            2,
+            1
+          ],
+          "beta": [
+            2,
+            1,
+            0,
+            1,
+            2,
+            1,
+            1,
+            1
+          ],
+          "basis": 0,
+          "outcome": 2
+        },
+        {
+          "alpha": [
+            1,
+            1,
+            0,
+            0,
+            1,
+            2,
+            1,
+            0
+          ],
+          "beta": [
+            0,
+            2,
+            0,
+            2,
+            0,
+            2,
+            0,
+            1
+          ],
+          "basis": 0,
+          "outcome": 2
+        },
+        {
+          "alpha": [
+            2,
+            2,
+            2,
+            0,
+            1,
+            0,
+            2,
+            2
+          ],
+          "beta": [
+            2,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            1
+          ],
+          "basis": 2,
+          "outcome": 2
+        },
+        {
+          "alpha": [
+            1,
+            2,
+            2,
+            2,
+            0,
+            1,
+            1,
+            1
+          ],
+          "beta": [
+            2,
+            2,
+            0,
+            1,
+            0,
+            0,
+            2,
+            2
+          ],
+          "basis": 0,
+          "outcome": 1
+        },
+        {
+          "alpha": [
+            0,
+            0,
+            2,
+            1,
+            0,
+            2,
+            0,
+            2
+          ],
+          "beta": [
+            2,
+            2,
+            1,
+            2,
+            1,
+            1,
+            0,
+            2
+          ],
+          "basis": 2,
+          "outcome": 0
+        },
+        {
+          "alpha": [
+            2,
+            1,
+            2,
+            1,
+            1,
+            2,
+            1,
+            1
+          ],
+          "beta": [
+            2,
+            2,
+            0,
+            2,
+            1,
+            2,
+            1,
+            1
+          ],
+          "basis": 0,
+          "outcome": 2
+        },
+        {
+          "alpha": [
+            2,
+            0,
+            0,
+            2,
+            2,
+            2,
+            1,
+            0
+          ],
+          "beta": [
+            0,
+            0,
+            0,
+            2,
+            0,
+            0,
+            2,
+            2
+          ],
+          "basis": 0,
+          "outcome": 1
+        },
+        {
+          "alpha": [
+            0,
+            2,
+            2,
+            2,
+            2,
+            1,
+            0,
+            2
+          ],
+          "beta": [
+            1,
+            0,
+            0,
+            2,
+            2,
+            0,
+            1,
+            2
+          ],
+          "basis": 1,
+          "outcome": 0
+        },
+        {
+          "alpha": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            2,
+            1,
+            2
+          ],
+          "beta": [
+            1,
+            1,
+            2,
+            2,
+            2,
+            1,
+            2,
+            1
+          ],
+          "basis": 1,
+          "outcome": 2
+        },
+        {
+          "alpha": [
+            2,
+            2,
+            0,
+            1,
+            1,
+            1,
+            0,
+            1
+          ],
+          "beta": [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            2
+          ],
+          "basis": 1,
+          "outcome": 2
+        },
+        {
+          "alpha": [
+            1,
+            2,
+            2,
+            2,
+            0,
+            2,
+            0,
+            0
+          ],
+          "beta": [
+            0,
+            2,
+            1,
+            0,
+            2,
+            2,
+            2,
+            2
+          ],
+          "basis": 1,
+          "outcome": 2
+        },
+        {
+          "alpha": [
+            0,
+            0,
+            0,
+            0,
+            2,
+            2,
+            0,
+            1
+          ],
+          "beta": [
+            1,
+            2,
+            1,
+            0,
+            2,
+            1,
+            1,
+            2
+          ],
+          "basis": 0,
+          "outcome": 1
+        },
+        {
+          "alpha": [
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            2
+          ],
+          "beta": [
+            2,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            2
+          ],
+          "basis": 2,
+          "outcome": 1
+        },
+        {
+          "alpha": [
+            2,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            1
+          ],
+          "beta": [
+            2,
+            1,
+            1,
+            0,
+            2,
+            0,
+            2,
+            0
+          ],
+          "basis": 0,
+          "outcome": 2
+        },
+        {
+          "alpha": [
+            2,
+            1,
+            2,
+            1,
+            1,
+            1,
+            2,
+            1
+          ],
+          "beta": [
+            0,
+            1,
+            2,
+            2,
+            2,
+            2,
+            1,
+            2
+          ],
+          "basis": 2,
+          "outcome": 1
+        },
+        {
+          "alpha": [
+            2,
+            0,
+            2,
+            1,
+            2,
+            2,
+            1,
+            0
+          ],
+          "beta": [
+            2,
+            2,
+            1,
+            1,
+            0,
+            1,
+            2,
+            0
+          ],
+          "basis": 1,
+          "outcome": 0
+        },
+        {
+          "alpha": [
+            0,
+            1,
+            2,
+            2,
+            1,
+            2,
+            1,
+            1
+          ],
+          "beta": [
+            1,
+            1,
+            2,
+            1,
+            1,
+            0,
+            2,
+            0
+          ],
+          "basis": 0,
+          "outcome": 1
+        },
+        {
+          "alpha": [
+            2,
+            1,
+            1,
+            1,
+            0,
+            1,
+            0,
+            2
+          ],
+          "beta": [
+            2,
+            2,
+            2,
+            2,
+            1,
+            2,
+            2,
+            1
+          ],
+          "basis": 1,
+          "outcome": 0
+        }
+      ],
+      "source_batches": 156,
+      "odd_native_qutrits_consumed": 1404,
+      "actual_labels_sampled_before_all_measurement_outcomes": true,
+      "secret_given_to_classical_decoder": false,
+      "odd_source_acquisition_and_high_digit_recursion_supplied": false
+    }
+  ],
+  "higher_root_support_exclusion_ledgers": [
+    {
+      "phase_modulus": "3",
+      "root_digits": 1,
+      "fixed_MUB_outcome_zero_fraction": "2/9",
+      "some_MUB_outcome_zero_fraction": "1",
+      "measurements": 1000,
+      "independent_trial_elimination_union_bound": "1",
+      "independent_trial_survival_law": "(1-2/R^2)^M",
+      "true_and_trial_secrets": "s=e1,t=e2; IID native even-level frequency vectors; n>=2",
+      "measurement_scope": "fresh single-qutrit quadratic F3 MUB; support-zero constraints only",
+      "positive_likelihood_information_ruled_out": false,
+      "general_classical_or_quantum_decoder_lower_bound": false
+    },
+    {
+      "phase_modulus": "9",
+      "root_digits": 2,
+      "fixed_MUB_outcome_zero_fraction": "2/81",
+      "some_MUB_outcome_zero_fraction": "1/9",
+      "measurements": 1000,
+      "independent_trial_elimination_union_bound": "1",
+      "independent_trial_survival_law": "(1-2/R^2)^M",
+      "true_and_trial_secrets": "s=e1,t=e2; IID native even-level frequency vectors; n>=2",
+      "measurement_scope": "fresh single-qutrit quadratic F3 MUB; support-zero constraints only",
+      "positive_likelihood_information_ruled_out": false,
+      "general_classical_or_quantum_decoder_lower_bound": false
+    },
+    {
+      "phase_modulus": "81",
+      "root_digits": 4,
+      "fixed_MUB_outcome_zero_fraction": "2/6561",
+      "some_MUB_outcome_zero_fraction": "1/729",
+      "measurements": 1000,
+      "independent_trial_elimination_union_bound": "2000/6561",
+      "independent_trial_survival_law": "(1-2/R^2)^M",
+      "true_and_trial_secrets": "s=e1,t=e2; IID native even-level frequency vectors; n>=2",
+      "measurement_scope": "fresh single-qutrit quadratic F3 MUB; support-zero constraints only",
+      "positive_likelihood_information_ruled_out": false,
+      "general_classical_or_quantum_decoder_lower_bound": false
+    },
+    {
+      "phase_modulus": "6561",
+      "root_digits": 8,
+      "fixed_MUB_outcome_zero_fraction": "2/43046721",
+      "some_MUB_outcome_zero_fraction": "1/4782969",
+      "measurements": 1000,
+      "independent_trial_elimination_union_bound": "2000/43046721",
+      "independent_trial_survival_law": "(1-2/R^2)^M",
+      "true_and_trial_secrets": "s=e1,t=e2; IID native even-level frequency vectors; n>=2",
+      "measurement_scope": "fresh single-qutrit quadratic F3 MUB; support-zero constraints only",
+      "positive_likelihood_information_ruled_out": false,
+      "general_classical_or_quantum_decoder_lower_bound": false
+    },
+    {
+      "phase_modulus": "43046721",
+      "root_digits": 16,
+      "fixed_MUB_outcome_zero_fraction": "2/1853020188851841",
+      "some_MUB_outcome_zero_fraction": "1/205891132094649",
+      "measurements": 1000,
+      "independent_trial_elimination_union_bound": "2000/1853020188851841",
+      "independent_trial_survival_law": "(1-2/R^2)^M",
+      "true_and_trial_secrets": "s=e1,t=e2; IID native even-level frequency vectors; n>=2",
+      "measurement_scope": "fresh single-qutrit quadratic F3 MUB; support-zero constraints only",
+      "positive_likelihood_information_ruled_out": false,
+      "general_classical_or_quantum_decoder_lower_bound": false
+    }
+  ],
+  "native_low_shadow_countercontrol": {
+    "native_labels": [
+      [
+        [
+          1,
+          0
+        ]
+      ],
+      [
+        [
+          1,
+          0
+        ]
+      ],
+      [
+        [
+          1,
+          0
+        ]
+      ]
+    ],
+    "odd_parent_level": 5,
+    "initial_syndrome": [
+      0
+    ],
+    "complement": [
+      0
+    ],
+    "native_residual_frequencies": [
+      [
+        0
+      ],
+      [
+        8
+      ],
+      [
+        8
+      ]
+    ],
+    "actual_phase_modulus": 9,
+    "secret": [
+      1
+    ],
+    "MUB_basis": 2,
+    "actual_outcome_probabilities": [
+      0.6327325234075244,
+      0.18363373829623766,
+      0.1836337382962379
+    ],
+    "formal_quadratic_alpha_beta_mod9": [
+      3,
+      5
+    ],
+    "incorrect_field_shadow_alpha_beta": [
+      0,
+      2
+    ],
+    "positive_probability_false_constraint_outcome": 1,
+    "false_constraint_value_at_true_secret": 2,
+    "total_false_constraint_probability": 0.36726747659247555,
+    "field_shadow_transfer_admitted": false,
+    "deterministic_native_countercontrol_not_IID_frequency_claim": true
+  },
+  "remaining_blockers": [
+    "source cost through all secret digits",
+    "implicit deeper-root likelihood or collective decoder",
+    "comparison with published quantum sieves",
+    "independent mathematical review"
+  ]
+}

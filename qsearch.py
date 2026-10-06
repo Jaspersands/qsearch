@@ -20113,6 +20113,108 @@ def command_self_dual_wreath_trace_biased_adaptive_walsh_no_go(args: argparse.Na
     return 0 if validation["valid"] else 1
 
 
+def command_ternary_pair_lattice(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    from theorems.ternary_pair_lattice import REPORT, build_report
+    report = build_report()
+    REPORT.parent.mkdir(parents=True, exist_ok=True)
+    REPORT.write_text(json.dumps(report, indent=2) + "\n")
+    validation = validate_registry()
+    print("ternary_pair_lattice complete")
+    print(f"Artifact: {REPORT}")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_ternary_pair_collimation(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    from theorems.ternary_pair_collimation import REPORT, build_report
+    report = build_report()
+    REPORT.parent.mkdir(parents=True, exist_ok=True)
+    REPORT.write_text(json.dumps(report, indent=2, allow_nan=False) + "\n")
+    validation = validate_registry()
+    print("ternary_pair_collimation complete")
+    print(f"Artifact: {REPORT}")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_ternary_pair_cell_coverage(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    from theorems.ternary_pair_cell_coverage import REPORT, build_report
+    report = build_report()
+    REPORT.parent.mkdir(parents=True, exist_ok=True)
+    REPORT.write_text(json.dumps(report, indent=2) + "\n")
+    validation = validate_registry()
+    print("ternary_pair_cell_coverage complete")
+    print(f"Artifact: {REPORT}")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_ternary_curvature_frontier(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    from theorems.ternary_curvature_frontier import REPORT, write_ternary_curvature_frontier_report
+    write_ternary_curvature_frontier_report(write_registry=not args.no_registry)
+    validation = validate_registry()
+    print("ternary_curvature_frontier complete")
+    print(f"Artifact: {REPORT}")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_ternary_cyclic_extractor(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    from theorems.ternary_cyclic_extractor import REPORT, build_report
+    report = build_report()
+    REPORT.parent.mkdir(parents=True, exist_ok=True)
+    REPORT.write_text(json.dumps(report, indent=2, allow_nan=False) + "\n")
+    validation = validate_registry()
+    print("ternary_cyclic_extractor complete")
+    print(f"Artifact: {REPORT}")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_ternary_posterior_dual(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    from theorems.ternary_posterior_dual import REPORT, build_report
+    report = build_report()
+    REPORT.parent.mkdir(parents=True, exist_ok=True)
+    REPORT.write_text(json.dumps(report, indent=2, allow_nan=False) + "\n")
+    validation = validate_registry()
+    print("ternary_posterior_dual complete")
+    print(f"Artifact: {REPORT}")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_ternary_least_trit_bootstrap(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    from theorems.ternary_least_trit_bootstrap import REPORT, build_report
+    report = build_report()
+    REPORT.parent.mkdir(parents=True, exist_ok=True)
+    REPORT.write_text(json.dumps(report, indent=2, allow_nan=False) + "\n")
+    validation = validate_registry()
+    print("ternary_least_trit_bootstrap complete")
+    print(f"Artifact: {REPORT}")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_ternary_covariant_noise(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    from theorems.ternary_covariant_noise import REPORT, build_report
+    report = build_report()
+    REPORT.parent.mkdir(parents=True, exist_ok=True)
+    REPORT.write_text(json.dumps(report, indent=2, allow_nan=False) + "\n")
+    validation = validate_registry()
+    print("ternary_covariant_noise complete")
+    print(f"Artifact: {REPORT}")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--root", type=Path, default=Path.cwd())
@@ -27659,6 +27761,62 @@ def build_parser() -> argparse.ArgumentParser:
     scale_free_graph.set_defaults(
         func=command_sdw_scale_free_endpoint_graph_transfer_boundary
     )
+
+    ternary_pair_lattice = subparsers.add_parser(
+        "ternary-pair-lattice",
+        help="Run exact A2 ternary congruence geometry and ordinary pair-finder falsifiers.",
+    )
+    ternary_pair_lattice.add_argument("--no-registry", action="store_true")
+    ternary_pair_lattice.set_defaults(func=command_ternary_pair_lattice)
+
+    ternary_pair_collimation = subparsers.add_parser(
+        "ternary-pair-collimation",
+        help="Run exact native least-trit pair receiver and arithmetic target audit.",
+    )
+    ternary_pair_collimation.add_argument("--no-registry", action="store_true")
+    ternary_pair_collimation.set_defaults(func=command_ternary_pair_collimation)
+
+    ternary_pair_cell_coverage = subparsers.add_parser(
+        "ternary-pair-cell-coverage",
+        help="Run exact native-word recovery predicates for public Babai repair lists.",
+    )
+    ternary_pair_cell_coverage.add_argument("--no-registry", action="store_true")
+    ternary_pair_cell_coverage.set_defaults(func=command_ternary_pair_cell_coverage)
+
+    ternary_curvature_frontier = subparsers.add_parser(
+        "ternary-curvature-frontier",
+        help="Run sharp scalar curvature geometry and exact joint full-root source replay.",
+    )
+    ternary_curvature_frontier.add_argument("--no-registry", action="store_true")
+    ternary_curvature_frontier.set_defaults(func=command_ternary_curvature_frontier)
+
+    ternary_cyclic_extractor = subparsers.add_parser(
+        "ternary-cyclic-extractor",
+        help="Run exact native curvature cycle extractor and partition audit.",
+    )
+    ternary_cyclic_extractor.add_argument("--no-registry", action="store_true")
+    ternary_cyclic_extractor.set_defaults(func=command_ternary_cyclic_extractor)
+
+    ternary_posterior_dual = subparsers.add_parser(
+        "ternary-posterior-dual",
+        help="Run exact joint paired posterior and final-effect support frontier audit.",
+    )
+    ternary_posterior_dual.add_argument("--no-registry", action="store_true")
+    ternary_posterior_dual.set_defaults(func=command_ternary_posterior_dual)
+
+    ternary_least_trit_bootstrap = subparsers.add_parser(
+        "ternary-least-trit-bootstrap",
+        help="Run native weak least-trit bootstrap and full-label copy gate audit.",
+    )
+    ternary_least_trit_bootstrap.add_argument("--no-registry", action="store_true")
+    ternary_least_trit_bootstrap.set_defaults(func=command_ternary_least_trit_bootstrap)
+
+    ternary_covariant_noise = subparsers.add_parser(
+        "ternary-covariant-noise",
+        help="Run native covariant receiver and exact classical signal ledger audit.",
+    )
+    ternary_covariant_noise.add_argument("--no-registry", action="store_true")
+    ternary_covariant_noise.set_defaults(func=command_ternary_covariant_noise)
 
     validate = subparsers.add_parser("validate", help="Validate candidates and experiments against proof obligations.")
     validate.set_defaults(func=command_validate)

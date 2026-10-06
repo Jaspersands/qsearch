@@ -34,6 +34,17 @@ from research_registry import (
 
 LITERATURE_RECORDS_PATH = Path("research/literature_records.json")
 
+# Primary-source override: broad hidden-shift tags must not invent a sieve.
+STATE_ISOMORPHISM_AUDITED_MECHANISM = {
+    "mechanism": "Circuit-input pure/mixed state orbit decision; phase-invariant conjugate lift and generalized-dihedral StateHSP reduction.",
+    "problem_family": "Group state isomorphism; efficient pure Pauli case has an exponent-two lifted group, not generic cyclic shifts.",
+    "reduction": "PSGI over abelian G maps to generalized-dihedral StateHSP, not automatically to an efficient algorithm.",
+    "no_go_barrier": "Local transfer audit: decision versus hidden-element search, native copies versus circuit descriptions, and cyclic order versus Pauli exponent two are distinct obligations.",
+    "proof_technique": "Conjugate tensor lifting, group representations, Fourier constraints and complexity reductions; not Gowers-norm phase sieving.",
+    "open_question": "Project question: supply an efficient cyclic hidden-element decoder under a proved native or full-function-oracle access contract.",
+    "reusable_abstraction": "Access/task/group/gap admission ledger; see research/STATE_ISOMORPHISM_TRANSFER.md for local falsifiers.",
+}
+
 
 @dataclass(frozen=True)
 class LiteratureMechanismRecord:
@@ -476,7 +487,7 @@ MECHANISM_RULES: list[tuple[set[str], dict[str, str]]] = [
         },
     ),
     (
-        {"hidden-shift", "dihedral-hsp", "gowers-norm", "lattice-adjacent", "unique-svp", "state-isomorphism"},
+        {"hidden-shift", "dihedral-hsp", "gowers-norm", "lattice-adjacent", "unique-svp"},
         {
             "mechanism": "Phase-state Fourier sampling, higher-order harmonic analysis, and family-specific sieving.",
             "problem_family": "Hidden shift and dihedral HSP families over growing abelian groups and group actions.",
@@ -674,14 +685,21 @@ def extract_literature_records(
         if record_id in seen:
             continue
         seen.add(record_id)
-        rule = _rule_for_item(item.get("tags", []), item.get("title", ""), item.get("abstract", ""))
+        parsed_url = urllib.parse.urlparse(item.get("url", ""))
+        audited_isomorphism = record_id == "state-isomorphism-2026" or (
+            parsed_url.hostname == "arxiv.org" and
+            re.fullmatch(r"/(?:abs|html|pdf)/2605\.12615(?:v[0-9]+)?(?:\.pdf)?", parsed_url.path) is not None
+        )
+        rule = STATE_ISOMORPHISM_AUDITED_MECHANISM if audited_isomorphism else _rule_for_item(
+            item.get("tags", []), item.get("title", ""), item.get("abstract", "")
+        )
         records.append(
             LiteratureMechanismRecord(
                 id=record_id,
                 title=item.get("title", ""),
                 url=item.get("url", ""),
                 year=item.get("year"),
-                source=item.get("source", "seed"),
+                source="primary_audit_2605.12615v2" if audited_isomorphism else item.get("source", "seed"),
                 tags=list(item.get("tags", [])),
                 abstract=item.get("abstract", ""),
                 **rule,

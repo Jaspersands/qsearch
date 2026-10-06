@@ -1,0 +1,24 @@
+{
+  "audit_id": "AUDIT-CIRCUIT-STATE-ISOMORPHISM-TRANSFER",
+  "status": "PRIMARY_SCOPE_INSPECTED_AND_LOCAL_NATIVE_TRANSFER_TESTED_REVIEW_PENDING",
+  "sources": [
+    {
+      "id": "GHEORGHIU-JACOBS-MEHRABAN-MOTAMEDI-2605.12615v2",
+      "url": "https://arxiv.org/html/2605.12615v2",
+      "checked_sections": ["circuit-input task definitions", "Lemma4.3 phase-invariant lift proof", "Theorem4.4 exact generalized-dihedral reduction", "Theorem4.5 approximate construction", "Theorem4.6 Pauli solver proof and exponent-two group", "general upper/hardness scope statements"],
+      "does_not_establish": "Generic cyclic hidden-element recovery from independent native DCP samples.",
+      "full_paper_proof_audit": false
+    },
+    {
+      "id": "NIELSEN-CHUANG-QUANT-PH-9703032",
+      "url": "https://arxiv.org/pdf/quant-ph/9703032",
+      "checked_sections": ["exact deterministic programmable-unitary result and its inner-product proof, pages1-2", "probabilistic-program discussion for scope countercheck"],
+      "does_not_establish": "A quantitative approximate-program lower bound or impossibility of general DCP algorithms."
+    }
+  ],
+  "local_derivations_not_claimed_as_new_paper_results": ["native packet mean squared orbit overlaps and source union bound", "cyclic lifted image order and order-two aliases", "full real graph lift physical supports and exact reflection stabilizer", "exact finite-copy reflection-program counterexample", "native unrestricted decision is all-YES, not witness output", "charged function-oracle preparation and inverse"],
+  "project_record_corrected": "research/literature_records.json state-isomorphism-2026 no longer claims phase sieving or Gowers techniques.",
+  "paper_refuted": false,
+  "independent_theorem_review": false,
+  "new_algorithm_claim": false
+}

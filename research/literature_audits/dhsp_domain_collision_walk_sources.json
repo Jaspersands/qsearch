@@ -1,0 +1,52 @@
+{
+  "audit_id": "AUDIT-DHSP-DOMAIN-COLLISION-WALK",
+  "checked_date": "2026-10-05",
+  "inspection_scope": "Official arXiv abstracts; no full-paper theorem audit in this pass. Local physical controls and mathematical bounds are separate review-pending derivations.",
+  "sources": [
+    {
+      "id": "BHMT-QUANT-PH-0005055",
+      "title": "Quantum Amplitude Amplification and Estimation",
+      "authors": ["Gilles Brassard", "Peter Hoyer", "Michele Mosca", "Alain Tapp"],
+      "url": "https://arxiv.org/abs/quant-ph/0005055",
+      "mechanism": "Amplify a preparation's success using that preparation and its inverse; account for success uncertainty.",
+      "local_use": "Cost and actually execute A/A inverse rather than granting a reflection about an unknown coset state.",
+      "not_transferred": "Calibration success does not certify an efficient preparation, unknown-success schedule or total-runtime advantage."
+    },
+    {
+      "id": "BBHT-QUANT-PH-9605034",
+      "title": "Tight bounds on quantum searching",
+      "url": "https://arxiv.org/abs/quant-ph/9605034",
+      "mechanism": "Unstructured quantum search and unknown solution counts.",
+      "local_use": "Comparator for the clean equality-marker-only interface.",
+      "not_transferred": "No Grover lower bound is asserted against all full-function DHSP algorithms."
+    },
+    {
+      "id": "KUPERBERG-QUANT-PH-0302112",
+      "title": "A subexponential-time quantum algorithm for the dihedral hidden subgroup problem",
+      "url": "https://arxiv.org/abs/quant-ph/0302112",
+      "mechanism": "Combining phase/representation information to decode a hidden dihedral subgroup.",
+      "local_use": "Established subexponential comparator; small collision probabilities or birthday-level performance are not a breakthrough.",
+      "not_transferred": "No best-current constants or exhaustive literature comparison is claimed."
+    },
+    {
+      "id": "MNRS-QUANT-PH-0608026",
+      "title": "Search via Quantum Walk",
+      "url": "https://arxiv.org/abs/quant-ph/0608026",
+      "mechanism": "Costed walk-based search with approximate reflections and amplification.",
+      "local_use": "Reminder to verify preparation, inverse, marking and reflection interfaces.",
+      "not_transferred": "This Floquet collision protocol has not been shown to satisfy the MNRS framework or its stationary/gap assumptions."
+    },
+    {
+      "id": "LIU-ET-AL-2006.08992",
+      "title": "Three-state quantum walk on the Cayley graph of the dihedral group",
+      "authors": ["Ying Liu", "Jiabin Yuan", "Wenjing Dai", "Dan Li"],
+      "url": "https://arxiv.org/abs/2006.08992",
+      "mechanism": "Position-distribution and localization properties of a different dihedral-group walk.",
+      "local_use": "Countercheck against conflating group-walk localization with hidden-subgroup decoding.",
+      "not_transferred": "Neither a DHSP oracle recovery algorithm nor a theorem about the present Fourier driver is established by this source."
+    }
+  ],
+  "independent_review": false,
+  "novelty_claim": false,
+  "speedup_claim_allowed": false
+}

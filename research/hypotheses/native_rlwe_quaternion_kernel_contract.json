@@ -1,0 +1,73 @@
+{
+  "id": "NATIVE-RLWE-DEFINITE-QUATERNION-SHORT-ELEMENT",
+  "status": "RESEARCH_CONTRACT_NOT_ACCEPTED_CANDIDATE",
+  "candidate_record_accepted": false,
+  "scope": "Native IID graph kernel in power-two cyclotomic R, unchanged original coefficient metric",
+  "hypothesis": "A label-adaptive definite quaternion left-ideal representation might support a source-valid short-element primitive producing a new useful projective relation direction.",
+  "constructed": [
+    "Exact signed isometry from saved native adjoint kernel to graph kernel",
+    "Polynomial-bit real positive parameter rho=-M*bar(M) modulo q",
+    "Full graph closure as a left ideal in O_rho",
+    "Exact Gershgorin metric-transfer bounds",
+    "Unavoidable original-coordinate distortion lower bound for every positive congruence lift, with exact IID norm-source moments",
+    "Norm-one unit classification for the constructed order: fixed-reduced-norm generators cannot improve original physical length within their unit orbit",
+    "Alternative known principal encoding, with no shortness promise"
+  ],
+  "literature_ids": ["EPRINT-2025-287", "EPRINT-2024-1147", "EPRINT-2025-1095", "PJM-2019-UNIT-SIGNATURES", "ARXIV-1406.0981-v1"],
+  "public_native_classification_audit": {
+    "report": "research/reductions/native_rlwe_ideal_class_orbits.json",
+    "note": "research/NATIVE_RLWE_IDEAL_CLASS_ORBIT_AUDIT.md",
+    "scope": "Unit M and unit beta=1+M*bar(M), certified prime q3mod8, power-two d>=4",
+    "class_equivalence": "Public dihedral orbit M->X^2M and M->-M^-1, computable classically in polynomial bit complexity",
+    "classmate_geometry": "Explicit signed isometries; native canonicalization cannot improve successive minima",
+    "short_element_algorithm_supplied": false,
+    "nonnative_transport_or_general_ideal_class_algorithms_ruled_out": false
+  },
+  "alternative_encoding_audit": {
+    "report": "research/reductions/native_rlwe_conductor_order.json",
+    "note": "research/NATIVE_RLWE_CONDUCTOR_ORDER_AUDIT.md",
+    "order": "O_q=R+qRj with j^2=-1",
+    "original_metric_preserved": true,
+    "direct_principal_ideal_route": "BLOCKED_FOR_EVERY_NONZERO_NATIVE_RATIO_OVER_THIS_ORDER",
+    "ambient_overorder_rescue": "SATURATION_ERASES_LEVEL_DATA_WHEN_1+M*bar(M)_IS_A_UNIT_MOD_Q",
+    "general_nonprincipal_short_element_methods_ruled_out": false
+  },
+  "evidence_files": [
+    "research/NATIVE_RLWE_QUATERNION_KERNEL_AUDIT.md",
+    "research/reductions/native_rlwe_quaternion_kernel.json",
+    "research/certificates/native_rlwe_quaternion_kernel_crosscheck.js"
+  ],
+  "proof_obligations": [
+    {"id": "INPUT-SOURCE", "status": "CONSTRUCTED_LOCAL_REVIEW_PENDING", "claim": "Exact graph map and public IID source; prime certificates external to source-count formula"},
+    {"id": "ORDER-PRESENTATION", "status": "CONSTRUCTED_LOCAL_REVIEW_PENDING", "claim": "Definite parameter and full left-ideal closure with polynomial-bit presentation"},
+    {"id": "PRINCIPALITY-OR-GENERAL-IDEAL", "status": "OPEN", "claim": "Prove appropriate input promise, or design a short-element algorithm that does not require principality"},
+    {"id": "NORM-PROMISE", "status": "OPEN", "claim": "Do not replace short-element search by norm-reduced PIP without a sourced norm promise"},
+    {"id": "QUANTUM-PRIMITIVE", "status": "OPEN", "claim": "Explicit implementable quantum short-element algorithm with cost, precision and success probability"},
+    {"id": "ORIGINAL-METRIC", "status": "OPEN_WITH_ALL_LIFTS_DISTORTION_OBSTRUCTION", "claim": "Output shortness survives rho metric distortion; changing only the real positive congruence lift cannot remove the proved source-typical worst-case distortion"},
+    {"id": "COMPLETION", "status": "OPEN", "claim": "New projective direction with useful index, Gram height and reciprocal energy after costed native completion"},
+    {"id": "CLASSICAL-COMPARISON", "status": "OPEN", "claim": "Survive legal native lattice/short-element classical baselines; d64 loose geometry is already classically covered"},
+    {"id": "INDEPENDENT-REVIEW", "status": "OPEN", "claim": "Independent verification of local proofs and any new algorithm, beyond matching implementations"}
+  ],
+  "falsifiable_experiments": [
+    {"id": "QK-SOURCE-GATE", "falsifier": "Under q prime 3 mod8, any claimed original-metric K-conjugate-semilinear J^2=-I structure on a graph with M*bar(M)!=-1 modulo q contradicts the local source lemma; audit proof and coordinates first", "scope": "Specified Hamilton structure only"},
+    {"id": "QK-METRIC-TRANSFER", "falsifier": "Weighted-short output misses the native physical norm or reciprocal-energy threshold", "scope": "Actual algorithm and native source distribution"},
+    {"id": "QK-ALL-LIFTS-DISTORTION", "falsifier": "Any claimed small condition number for diag(I,C_rho) must satisfy the centered-residue lower bound for that instance, regardless of positive real congruence lift", "scope": "Original graph coordinates, not arbitrary new coordinate constructions"},
+    {"id": "QK-CONDUCTOR-PRINCIPALITY", "falsifier": "A claimed principal generator over O_q on nonzero M contradicts the local global-principality lemma using the published full real-unit signature theorem", "scope": "This exact conductor order and fractional graph ideal, not all quaternion encodings"},
+    {"id": "QK-OVERORDER-LEVEL-ERASURE", "falsifier": "Extending to an overorder containing O_0 when beta is invertible modulo q produces the whole chosen overorder; at a fixed overorder the ideal no longer carries M. M-dependent order choice or retained level data requires a separate costed reduction", "scope": "Saturation-only PIP routes, not algorithms preserving extra data"},
+    {"id": "QK-PUBLIC-CLASS-DEQUANTIZATION", "falsifier": "Class equivalence and transport restricted to the generic native family are already polynomial classical public dihedral canonicalization and exact signed isometries; they do not supply a short relation or hidden oracle", "scope": "Not arbitrary nonnative representatives, ideal-class algorithms or secret-dependent quantum states"},
+    {"id": "QK-PRINCIPAL-GENERATOR", "falsifier": "Treating an arbitrary principal generator as a short relation fails on the d2 q257 M128 control", "scope": "Universal unqualified generator-to-shortness transfer"},
+    {"id": "QK-CLASSICAL-KILL", "falsifier": "Classical short-element or lattice algorithms meet or beat the proposed cost and output guarantee under identical access", "scope": "Matched growing families, not small favorable examples"}
+  ],
+  "failure_modes": [
+    "Order structure is algebraically valid but has useless metric distortion",
+    "Native left ideal is not principal or lacks the needed reduced-norm promise",
+    "Quaternion PIP routine is missing, exponential, or merely number-field PIP in disguise",
+    "Searching norm-one units only rotates fixed-norm generators and cannot shorten them in the constructed order",
+    "Native ideal-class canonicalization is already public classical arithmetic and preserves short-vector geometry; KLPT-style fixed-dimension/maximal-order setup cannot silently supply the missing growing-degree native short basis",
+    "Known principal encoding is indefinite, degenerate or supplies only a long generator",
+    "Source gate is improperly generalized to all quaternion methods or all quantum algorithms"
+  ],
+  "novelty_claim": false,
+  "independent_review": false,
+  "speedup_claim_allowed": false
+}

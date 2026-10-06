@@ -1,0 +1,18 @@
+{
+  "audit_date": "2026-10-06",
+  "primary_sources": [
+    {
+      "url": "https://arxiv.org/html/2609.34996v1",
+      "title": "Cyclotomic Cosets: Hidden Subgroup and Quantum Sieving Algorithm for Prime-Power Moduli",
+      "authors": "Boucher, Fouque and Shen",
+      "inspected": ["Sections2.1-2.4", "Section3.1 Lemma4 and Proposition2", "Section3.3 Definition9 and Lemma5", "Section4.2 Lemmas6/7 and Theorem4.2", "Section4.3", "Sections5.1-5.2", "standard LWE sample-budget qualification"],
+      "scope": "Trace-dual phase samples over ramified quotient rings, integer-secret CCP restriction, native difference combining and source uniformity. Growing-level sample consumption remains explicit."
+    }
+  ],
+  "local_derivation_not_source_attribution": "Combining input-index multiplication with Galois trace covariance gives the L-th-power residue gate, legal odd ternary Gaussian merge and its conditional source law.",
+  "novelty_search_exhaustive": false,
+  "independent_human_review": false,
+  "paper_refuted": false,
+  "new_algorithm_claimed": false,
+  "critical_limits": ["General ring secrets are not fixed by Galois transport.", "The sample ledger is not a lower bound.", "All six qutrit permutations are covered, not arbitrary collective instruments.", "Correcting even levels alone does not remove odd-stage one-output consumption."]
+}

@@ -1,0 +1,3068 @@
+{
+  "status": "LOCAL_DERIVATION_REVIEW_PENDING",
+  "quadratic_gauss": {
+    "complete_quadratic_phase_tables": 2196,
+    "exact_value_checksum": "8b7c1fc1f7d8268638675acf1ca8902fb752fc5af234404812643af4ff7dae00"
+  },
+  "physical_bell": {
+    "controls": [
+      {
+        "left": {
+          "labels": [
+            [
+              1,
+              0,
+              2,
+              3
+            ]
+          ],
+          "modulus": 4,
+          "origin": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "kernel_rows_hex": [
+            "0x4",
+            "0x1",
+            "0x2",
+            "0x4"
+          ],
+          "retained_qubits": 3
+        },
+        "right": {
+          "labels": [
+            [
+              0,
+              3,
+              3,
+              3
+            ]
+          ],
+          "modulus": 4,
+          "origin": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "kernel_rows_hex": [
+            "0x1",
+            "0x6",
+            "0x2",
+            "0x4"
+          ],
+          "retained_qubits": 3
+        },
+        "secret_for_calibration_only": [
+          0
+        ],
+        "xor_outcome": 6,
+        "parity_mask": 1,
+        "joint_zero_parity_probability": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_binary_exponent": 3
+        },
+        "hadamard_outcome": 5,
+        "q4_joint_full_probability": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_binary_exponent": 0
+        },
+        "identity_control_not_candidate_or_native_success_sweep": true
+      },
+      {
+        "left": {
+          "labels": [
+            [
+              2,
+              1,
+              2,
+              2
+            ]
+          ],
+          "modulus": 4,
+          "origin": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "kernel_rows_hex": [
+            "0x1",
+            "0x0",
+            "0x2",
+            "0x4"
+          ],
+          "retained_qubits": 3
+        },
+        "right": {
+          "labels": [
+            [
+              0,
+              2,
+              3,
+              1
+            ]
+          ],
+          "modulus": 4,
+          "origin": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "kernel_rows_hex": [
+            "0x1",
+            "0x2",
+            "0x4",
+            "0x4"
+          ],
+          "retained_qubits": 3
+        },
+        "secret_for_calibration_only": [
+          0
+        ],
+        "xor_outcome": 0,
+        "parity_mask": 3,
+        "joint_zero_parity_probability": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_binary_exponent": 3
+        },
+        "hadamard_outcome": 0,
+        "q4_joint_full_probability": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_binary_exponent": 3
+        },
+        "identity_control_not_candidate_or_native_success_sweep": true
+      },
+      {
+        "left": {
+          "labels": [
+            [
+              1,
+              1,
+              1,
+              0
+            ]
+          ],
+          "modulus": 4,
+          "origin": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "kernel_rows_hex": [
+            "0x3",
+            "0x1",
+            "0x2",
+            "0x4"
+          ],
+          "retained_qubits": 3
+        },
+        "right": {
+          "labels": [
+            [
+              0,
+              0,
+              2,
+              3
+            ]
+          ],
+          "modulus": 4,
+          "origin": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "kernel_rows_hex": [
+            "0x1",
+            "0x2",
+            "0x4",
+            "0x0"
+          ],
+          "retained_qubits": 3
+        },
+        "secret_for_calibration_only": [
+          0
+        ],
+        "xor_outcome": 2,
+        "parity_mask": 7,
+        "joint_zero_parity_probability": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_binary_exponent": 3
+        },
+        "hadamard_outcome": 1,
+        "q4_joint_full_probability": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_binary_exponent": 0
+        },
+        "identity_control_not_candidate_or_native_success_sweep": true
+      },
+      {
+        "left": {
+          "labels": [
+            [
+              3,
+              3,
+              0,
+              3
+            ]
+          ],
+          "modulus": 4,
+          "origin": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "kernel_rows_hex": [
+            "0x5",
+            "0x1",
+            "0x2",
+            "0x4"
+          ],
+          "retained_qubits": 3
+        },
+        "right": {
+          "labels": [
+            [
+              3,
+              0,
+              1,
+              3
+            ]
+          ],
+          "modulus": 4,
+          "origin": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "kernel_rows_hex": [
+            "0x6",
+            "0x1",
+            "0x2",
+            "0x4"
+          ],
+          "retained_qubits": 3
+        },
+        "secret_for_calibration_only": [
+          0
+        ],
+        "xor_outcome": 1,
+        "parity_mask": 5,
+        "joint_zero_parity_probability": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_binary_exponent": 3
+        },
+        "hadamard_outcome": 2,
+        "q4_joint_full_probability": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_binary_exponent": 0
+        },
+        "identity_control_not_candidate_or_native_success_sweep": true
+      },
+      {
+        "left": {
+          "labels": [
+            [
+              3,
+              0,
+              2,
+              3,
+              1,
+              2
+            ],
+            [
+              0,
+              3,
+              3,
+              1,
+              1,
+              3
+            ]
+          ],
+          "modulus": 4,
+          "origin": [
+            1,
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          "kernel_rows_hex": [
+            "0x6",
+            "0xf",
+            "0x1",
+            "0x2",
+            "0x4",
+            "0x8"
+          ],
+          "retained_qubits": 4
+        },
+        "right": {
+          "labels": [
+            [
+              1,
+              3,
+              2,
+              2,
+              0,
+              3
+            ],
+            [
+              2,
+              1,
+              1,
+              0,
+              2,
+              3
+            ]
+          ],
+          "modulus": 4,
+          "origin": [
+            1,
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          "kernel_rows_hex": [
+            "0x1",
+            "0x9",
+            "0x1",
+            "0x2",
+            "0x4",
+            "0x8"
+          ],
+          "retained_qubits": 4
+        },
+        "secret_for_calibration_only": [
+          0,
+          0
+        ],
+        "xor_outcome": 11,
+        "parity_mask": 13,
+        "joint_zero_parity_probability": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_binary_exponent": 4
+        },
+        "hadamard_outcome": 12,
+        "q4_joint_full_probability": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_binary_exponent": 0
+        },
+        "identity_control_not_candidate_or_native_success_sweep": true
+      },
+      {
+        "left": {
+          "labels": [
+            [
+              1,
+              2,
+              0,
+              3,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              2,
+              3,
+              2,
+              0
+            ]
+          ],
+          "modulus": 4,
+          "origin": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "kernel_rows_hex": [
+            "0x0",
+            "0x1",
+            "0x2",
+            "0x0",
+            "0x4",
+            "0x8"
+          ],
+          "retained_qubits": 4
+        },
+        "right": {
+          "labels": [
+            [
+              1,
+              3,
+              1,
+              0,
+              2,
+              0
+            ],
+            [
+              1,
+              2,
+              0,
+              3,
+              2,
+              0
+            ]
+          ],
+          "modulus": 4,
+          "origin": [
+            1,
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          "kernel_rows_hex": [
+            "0x2",
+            "0x3",
+            "0x1",
+            "0x2",
+            "0x4",
+            "0x8"
+          ],
+          "retained_qubits": 4
+        },
+        "secret_for_calibration_only": [
+          0,
+          1
+        ],
+        "xor_outcome": 12,
+        "parity_mask": 13,
+        "joint_zero_parity_probability": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_binary_exponent": 0
+        },
+        "hadamard_outcome": 0,
+        "q4_joint_full_probability": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_binary_exponent": 0
+        },
+        "identity_control_not_candidate_or_native_success_sweep": true
+      },
+      {
+        "left": {
+          "labels": [
+            [
+              3,
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              1,
+              2,
+              1,
+              3,
+              1,
+              1
+            ]
+          ],
+          "modulus": 4,
+          "origin": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "kernel_rows_hex": [
+            "0x2",
+            "0x1",
+            "0xc",
+            "0x2",
+            "0x4",
+            "0x8"
+          ],
+          "retained_qubits": 4
+        },
+        "right": {
+          "labels": [
+            [
+              1,
+              2,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              0,
+              2,
+              2,
+              1,
+              1,
+              1
+            ]
+          ],
+          "modulus": 4,
+          "origin": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "kernel_rows_hex": [
+            "0x2",
+            "0x1",
+            "0x2",
+            "0xc",
+            "0x4",
+            "0x8"
+          ],
+          "retained_qubits": 4
+        },
+        "secret_for_calibration_only": [
+          1,
+          0
+        ],
+        "xor_outcome": 14,
+        "parity_mask": 1,
+        "joint_zero_parity_probability": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_binary_exponent": 0
+        },
+        "hadamard_outcome": 3,
+        "q4_joint_full_probability": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_binary_exponent": 6
+        },
+        "identity_control_not_candidate_or_native_success_sweep": true
+      },
+      {
+        "left": {
+          "labels": [
+            [
+              2,
+              2,
+              2,
+              3,
+              3,
+              2
+            ],
+            [
+              0,
+              0,
+              2,
+              3,
+              0,
+              0
+            ]
+          ],
+          "modulus": 4,
+          "origin": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "kernel_rows_hex": [
+            "0x1",
+            "0x2",
+            "0x4",
+            "0x0",
+            "0x0",
+            "0x8"
+          ],
+          "retained_qubits": 4
+        },
+        "right": {
+          "labels": [
+            [
+              3,
+              1,
+              3,
+              0,
+              3,
+              2
+            ],
+            [
+              1,
+              1,
+              3,
+              3,
+              0,
+              3
+            ]
+          ],
+          "modulus": 4,
+          "origin": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "kernel_rows_hex": [
+            "0x7",
+            "0x1",
+            "0x2",
+            "0xc",
+            "0x4",
+            "0x8"
+          ],
+          "retained_qubits": 4
+        },
+        "secret_for_calibration_only": [
+          0,
+          0
+        ],
+        "xor_outcome": 11,
+        "parity_mask": 1,
+        "joint_zero_parity_probability": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_binary_exponent": 4
+        },
+        "hadamard_outcome": 8,
+        "q4_joint_full_probability": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_binary_exponent": 0
+        },
+        "identity_control_not_candidate_or_native_success_sweep": true
+      },
+      {
+        "left": {
+          "labels": [
+            [
+              3,
+              5,
+              2,
+              5
+            ]
+          ],
+          "modulus": 8,
+          "origin": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "kernel_rows_hex": [
+            "0x5",
+            "0x1",
+            "0x2",
+            "0x4"
+          ],
+          "retained_qubits": 3
+        },
+        "right": {
+          "labels": [
+            [
+              2,
+              1,
+              2,
+              3
+            ]
+          ],
+          "modulus": 8,
+          "origin": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "kernel_rows_hex": [
+            "0x1",
+            "0x4",
+            "0x2",
+            "0x4"
+          ],
+          "retained_qubits": 3
+        },
+        "secret_for_calibration_only": [
+          1
+        ],
+        "xor_outcome": 4,
+        "parity_mask": 2,
+        "joint_zero_parity_probability": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_binary_exponent": 0
+        },
+        "hadamard_outcome": 5,
+        "q4_joint_full_probability": null,
+        "identity_control_not_candidate_or_native_success_sweep": true
+      },
+      {
+        "left": {
+          "labels": [
+            [
+              5,
+              1,
+              4,
+              1
+            ]
+          ],
+          "modulus": 8,
+          "origin": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "kernel_rows_hex": [
+            "0x5",
+            "0x1",
+            "0x2",
+            "0x4"
+          ],
+          "retained_qubits": 3
+        },
+        "right": {
+          "labels": [
+            [
+              1,
+              3,
+              5,
+              4
+            ]
+          ],
+          "modulus": 8,
+          "origin": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "kernel_rows_hex": [
+            "0x3",
+            "0x1",
+            "0x2",
+            "0x4"
+          ],
+          "retained_qubits": 3
+        },
+        "secret_for_calibration_only": [
+          0
+        ],
+        "xor_outcome": 0,
+        "parity_mask": 5,
+        "joint_zero_parity_probability": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_binary_exponent": 3
+        },
+        "hadamard_outcome": 5,
+        "q4_joint_full_probability": null,
+        "identity_control_not_candidate_or_native_success_sweep": true
+      },
+      {
+        "left": {
+          "labels": [
+            [
+              3,
+              4,
+              0,
+              6
+            ]
+          ],
+          "modulus": 8,
+          "origin": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "kernel_rows_hex": [
+            "0x0",
+            "0x1",
+            "0x2",
+            "0x4"
+          ],
+          "retained_qubits": 3
+        },
+        "right": {
+          "labels": [
+            [
+              2,
+              5,
+              7,
+              0
+            ]
+          ],
+          "modulus": 8,
+          "origin": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "kernel_rows_hex": [
+            "0x1",
+            "0x2",
+            "0x2",
+            "0x4"
+          ],
+          "retained_qubits": 3
+        },
+        "secret_for_calibration_only": [
+          0
+        ],
+        "xor_outcome": 6,
+        "parity_mask": 3,
+        "joint_zero_parity_probability": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_binary_exponent": 3
+        },
+        "hadamard_outcome": 3,
+        "q4_joint_full_probability": null,
+        "identity_control_not_candidate_or_native_success_sweep": true
+      },
+      {
+        "left": {
+          "labels": [
+            [
+              6,
+              7,
+              4,
+              4,
+              1,
+              2
+            ],
+            [
+              2,
+              0,
+              2,
+              5,
+              0,
+              6
+            ]
+          ],
+          "modulus": 8,
+          "origin": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "kernel_rows_hex": [
+            "0x1",
+            "0x4",
+            "0x2",
+            "0x0",
+            "0x4",
+            "0x8"
+          ],
+          "retained_qubits": 4
+        },
+        "right": {
+          "labels": [
+            [
+              3,
+              4,
+              4,
+              5,
+              7,
+              5
+            ],
+            [
+              0,
+              4,
+              0,
+              1,
+              7,
+              0
+            ]
+          ],
+          "modulus": 8,
+          "origin": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "kernel_rows_hex": [
+            "0x8",
+            "0x1",
+            "0x2",
+            "0x4",
+            "0x4",
+            "0x8"
+          ],
+          "retained_qubits": 4
+        },
+        "secret_for_calibration_only": [
+          3,
+          3
+        ],
+        "xor_outcome": 4,
+        "parity_mask": 5,
+        "joint_zero_parity_probability": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_binary_exponent": 0
+        },
+        "hadamard_outcome": 5,
+        "q4_joint_full_probability": null,
+        "identity_control_not_candidate_or_native_success_sweep": true
+      },
+      {
+        "left": {
+          "labels": [
+            [
+              5,
+              2,
+              7,
+              3,
+              7,
+              2
+            ],
+            [
+              2,
+              4,
+              5,
+              5,
+              7,
+              0
+            ]
+          ],
+          "modulus": 8,
+          "origin": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "kernel_rows_hex": [
+            "0x0",
+            "0x1",
+            "0x6",
+            "0x2",
+            "0x4",
+            "0x8"
+          ],
+          "retained_qubits": 4
+        },
+        "right": {
+          "labels": [
+            [
+              7,
+              6,
+              5,
+              3,
+              7,
+              1
+            ],
+            [
+              0,
+              4,
+              7,
+              6,
+              3,
+              2
+            ]
+          ],
+          "modulus": 8,
+          "origin": [
+            1,
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          "kernel_rows_hex": [
+            "0xa",
+            "0x1",
+            "0x4",
+            "0x2",
+            "0x4",
+            "0x8"
+          ],
+          "retained_qubits": 4
+        },
+        "secret_for_calibration_only": [
+          1,
+          1
+        ],
+        "xor_outcome": 5,
+        "parity_mask": 12,
+        "joint_zero_parity_probability": {
+          "sign": 1,
+          "numerator_hex": "0x3",
+          "denominator_binary_exponent": 6
+        },
+        "hadamard_outcome": 14,
+        "q4_joint_full_probability": null,
+        "identity_control_not_candidate_or_native_success_sweep": true
+      },
+      {
+        "left": {
+          "labels": [
+            [
+              0,
+              5,
+              6,
+              0,
+              0,
+              7
+            ],
+            [
+              7,
+              3,
+              5,
+              0,
+              3,
+              6
+            ]
+          ],
+          "modulus": 8,
+          "origin": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "kernel_rows_hex": [
+            "0xd",
+            "0x8",
+            "0x1",
+            "0x2",
+            "0x4",
+            "0x8"
+          ],
+          "retained_qubits": 4
+        },
+        "right": {
+          "labels": [
+            [
+              7,
+              4,
+              4,
+              0,
+              3,
+              5
+            ],
+            [
+              2,
+              5,
+              5,
+              1,
+              7,
+              2
+            ]
+          ],
+          "modulus": 8,
+          "origin": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "kernel_rows_hex": [
+            "0xc",
+            "0x7",
+            "0x1",
+            "0x2",
+            "0x4",
+            "0x8"
+          ],
+          "retained_qubits": 4
+        },
+        "secret_for_calibration_only": [
+          2,
+          1
+        ],
+        "xor_outcome": 1,
+        "parity_mask": 2,
+        "joint_zero_parity_probability": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_binary_exponent": 6
+        },
+        "hadamard_outcome": 2,
+        "q4_joint_full_probability": null,
+        "identity_control_not_candidate_or_native_success_sweep": true
+      },
+      {
+        "left": {
+          "labels": [
+            [
+              3,
+              0,
+              4,
+              4,
+              5,
+              2
+            ],
+            [
+              0,
+              4,
+              6,
+              1,
+              2,
+              7
+            ]
+          ],
+          "modulus": 8,
+          "origin": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "kernel_rows_hex": [
+            "0x4",
+            "0x1",
+            "0x2",
+            "0x8",
+            "0x4",
+            "0x8"
+          ],
+          "retained_qubits": 4
+        },
+        "right": {
+          "labels": [
+            [
+              6,
+              7,
+              1,
+              2,
+              7,
+              3
+            ],
+            [
+              7,
+              0,
+              1,
+              6,
+              5,
+              6
+            ]
+          ],
+          "modulus": 8,
+          "origin": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "kernel_rows_hex": [
+            "0x5",
+            "0xd",
+            "0x1",
+            "0x2",
+            "0x4",
+            "0x8"
+          ],
+          "retained_qubits": 4
+        },
+        "secret_for_calibration_only": [
+          0,
+          3
+        ],
+        "xor_outcome": 15,
+        "parity_mask": 11,
+        "joint_zero_parity_probability": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_binary_exponent": 6
+        },
+        "hadamard_outcome": 2,
+        "q4_joint_full_probability": null,
+        "identity_control_not_candidate_or_native_success_sweep": true
+      }
+    ],
+    "complete_derivative_polynomial_assignments": 184,
+    "width_mismatch_controls_charged": 1
+  },
+  "native_rank_controls": [
+    {
+      "dimension": 4,
+      "unconditional_label_pairs_drawn": 4,
+      "nonfull_width_pairs_charged": 0,
+      "rows": [
+        {
+          "middle_linear_rank": 4,
+          "secret_has_nonzero_parity": true,
+          "known_secret_bias_for_calibration_only": {
+            "sign": -1,
+            "numerator_hex": "0x1",
+            "denominator_binary_exponent": 2
+          }
+        },
+        {
+          "middle_linear_rank": 4,
+          "secret_has_nonzero_parity": false,
+          "known_secret_bias_for_calibration_only": {
+            "sign": 0,
+            "numerator_hex": "0x0",
+            "denominator_binary_exponent": 0
+          }
+        },
+        {
+          "middle_linear_rank": 3,
+          "secret_has_nonzero_parity": true,
+          "known_secret_bias_for_calibration_only": {
+            "sign": -1,
+            "numerator_hex": "0x1",
+            "denominator_binary_exponent": 1
+          }
+        }
+      ],
+      "nonfull_prefix_pairs_charged": 1,
+      "xor_uniformly_drawn_not_postselected": true,
+      "parity_selected_before_v_and_without_secret": true,
+      "finite_rows_are_not_an_asymptotic_theorem": true
+    },
+    {
+      "dimension": 8,
+      "unconditional_label_pairs_drawn": 4,
+      "nonfull_width_pairs_charged": 0,
+      "rows": [
+        {
+          "middle_linear_rank": 12,
+          "secret_has_nonzero_parity": true,
+          "known_secret_bias_for_calibration_only": {
+            "sign": 0,
+            "numerator_hex": "0x0",
+            "denominator_binary_exponent": 0
+          }
+        },
+        {
+          "middle_linear_rank": 12,
+          "secret_has_nonzero_parity": true,
+          "known_secret_bias_for_calibration_only": {
+            "sign": 0,
+            "numerator_hex": "0x0",
+            "denominator_binary_exponent": 0
+          }
+        },
+        {
+          "middle_linear_rank": 8,
+          "secret_has_nonzero_parity": true,
+          "known_secret_bias_for_calibration_only": {
+            "sign": 0,
+            "numerator_hex": "0x0",
+            "denominator_binary_exponent": 0
+          }
+        },
+        {
+          "middle_linear_rank": 8,
+          "secret_has_nonzero_parity": true,
+          "known_secret_bias_for_calibration_only": {
+            "sign": 1,
+            "numerator_hex": "0x1",
+            "denominator_binary_exponent": 3
+          }
+        }
+      ],
+      "nonfull_prefix_pairs_charged": 0,
+      "xor_uniformly_drawn_not_postselected": true,
+      "parity_selected_before_v_and_without_secret": true,
+      "finite_rows_are_not_an_asymptotic_theorem": true
+    },
+    {
+      "dimension": 16,
+      "unconditional_label_pairs_drawn": 4,
+      "nonfull_width_pairs_charged": 0,
+      "rows": [
+        {
+          "middle_linear_rank": 11,
+          "secret_has_nonzero_parity": true,
+          "known_secret_bias_for_calibration_only": {
+            "sign": 0,
+            "numerator_hex": "0x0",
+            "denominator_binary_exponent": 0
+          }
+        },
+        {
+          "middle_linear_rank": 19,
+          "secret_has_nonzero_parity": true,
+          "known_secret_bias_for_calibration_only": {
+            "sign": 0,
+            "numerator_hex": "0x0",
+            "denominator_binary_exponent": 0
+          }
+        },
+        {
+          "middle_linear_rank": 17,
+          "secret_has_nonzero_parity": true,
+          "known_secret_bias_for_calibration_only": {
+            "sign": 0,
+            "numerator_hex": "0x0",
+            "denominator_binary_exponent": 0
+          }
+        },
+        {
+          "middle_linear_rank": 19,
+          "secret_has_nonzero_parity": true,
+          "known_secret_bias_for_calibration_only": {
+            "sign": 0,
+            "numerator_hex": "0x0",
+            "denominator_binary_exponent": 0
+          }
+        }
+      ],
+      "nonfull_prefix_pairs_charged": 0,
+      "xor_uniformly_drawn_not_postselected": true,
+      "parity_selected_before_v_and_without_secret": true,
+      "finite_rows_are_not_an_asymptotic_theorem": true
+    },
+    {
+      "dimension": 32,
+      "unconditional_label_pairs_drawn": 4,
+      "nonfull_width_pairs_charged": 0,
+      "rows": [
+        {
+          "middle_linear_rank": 31,
+          "secret_has_nonzero_parity": true,
+          "known_secret_bias_for_calibration_only": {
+            "sign": 0,
+            "numerator_hex": "0x0",
+            "denominator_binary_exponent": 0
+          }
+        },
+        {
+          "middle_linear_rank": 36,
+          "secret_has_nonzero_parity": true,
+          "known_secret_bias_for_calibration_only": {
+            "sign": 0,
+            "numerator_hex": "0x0",
+            "denominator_binary_exponent": 0
+          }
+        },
+        {
+          "middle_linear_rank": 35,
+          "secret_has_nonzero_parity": true,
+          "known_secret_bias_for_calibration_only": {
+            "sign": 0,
+            "numerator_hex": "0x0",
+            "denominator_binary_exponent": 0
+          }
+        },
+        {
+          "middle_linear_rank": 32,
+          "secret_has_nonzero_parity": true,
+          "known_secret_bias_for_calibration_only": {
+            "sign": 0,
+            "numerator_hex": "0x0",
+            "denominator_binary_exponent": 0
+          }
+        }
+      ],
+      "nonfull_prefix_pairs_charged": 0,
+      "xor_uniformly_drawn_not_postselected": true,
+      "parity_selected_before_v_and_without_secret": true,
+      "finite_rows_are_not_an_asymptotic_theorem": true
+    }
+  ],
+  "full_output_countercontrol": {
+    "q4_nonmatching_full_readout_bayes_success": {
+      "sign": 1,
+      "numerator_hex": "0x7",
+      "denominator_binary_exponent": 3
+    },
+    "one_coordinate_parity_bayes_success": {
+      "sign": 1,
+      "numerator_hex": "0x3",
+      "denominator_binary_exponent": 2
+    },
+    "fixed_dimension_control_not_new_speedup": true,
+    "absence_of_public_common_radical_does_not_imply_no_full_information": true
+  },
+  "middle_parseval_controls": {
+    "rows": [
+      {
+        "left_low": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "right_low": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "xor_outcome": 0,
+        "parity_mask": 1,
+        "secret_for_calibration_only": 1,
+        "middle_tables_exhausted": 64,
+        "middle_linear_rank": 2,
+        "average_squared_bias": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_binary_exponent": 2
+        },
+        "equality_uses_invariance_along_selected_row_kernel": true,
+        "top_bits_fixed_only_because_their_magnitude_effect_is_a_global_phase": true
+      },
+      {
+        "left_low": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "right_low": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "xor_outcome": 0,
+        "parity_mask": 1,
+        "secret_for_calibration_only": 3,
+        "middle_tables_exhausted": 64,
+        "middle_linear_rank": 2,
+        "average_squared_bias": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_binary_exponent": 2
+        },
+        "equality_uses_invariance_along_selected_row_kernel": true,
+        "top_bits_fixed_only_because_their_magnitude_effect_is_a_global_phase": true
+      },
+      {
+        "left_low": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "right_low": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "xor_outcome": 0,
+        "parity_mask": 2,
+        "secret_for_calibration_only": 1,
+        "middle_tables_exhausted": 64,
+        "middle_linear_rank": 2,
+        "average_squared_bias": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_binary_exponent": 2
+        },
+        "equality_uses_invariance_along_selected_row_kernel": true,
+        "top_bits_fixed_only_because_their_magnitude_effect_is_a_global_phase": true
+      },
+      {
+        "left_low": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "right_low": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "xor_outcome": 0,
+        "parity_mask": 2,
+        "secret_for_calibration_only": 3,
+        "middle_tables_exhausted": 64,
+        "middle_linear_rank": 2,
+        "average_squared_bias": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_binary_exponent": 2
+        },
+        "equality_uses_invariance_along_selected_row_kernel": true,
+        "top_bits_fixed_only_because_their_magnitude_effect_is_a_global_phase": true
+      },
+      {
+        "left_low": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "right_low": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "xor_outcome": 0,
+        "parity_mask": 3,
+        "secret_for_calibration_only": 1,
+        "middle_tables_exhausted": 64,
+        "middle_linear_rank": 2,
+        "average_squared_bias": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_binary_exponent": 2
+        },
+        "equality_uses_invariance_along_selected_row_kernel": true,
+        "top_bits_fixed_only_because_their_magnitude_effect_is_a_global_phase": true
+      },
+      {
+        "left_low": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "right_low": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "xor_outcome": 0,
+        "parity_mask": 3,
+        "secret_for_calibration_only": 3,
+        "middle_tables_exhausted": 64,
+        "middle_linear_rank": 2,
+        "average_squared_bias": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_binary_exponent": 2
+        },
+        "equality_uses_invariance_along_selected_row_kernel": true,
+        "top_bits_fixed_only_because_their_magnitude_effect_is_a_global_phase": true
+      },
+      {
+        "left_low": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "right_low": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "xor_outcome": 1,
+        "parity_mask": 1,
+        "secret_for_calibration_only": 1,
+        "middle_tables_exhausted": 64,
+        "middle_linear_rank": 2,
+        "average_squared_bias": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_binary_exponent": 2
+        },
+        "equality_uses_invariance_along_selected_row_kernel": true,
+        "top_bits_fixed_only_because_their_magnitude_effect_is_a_global_phase": true
+      },
+      {
+        "left_low": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "right_low": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "xor_outcome": 1,
+        "parity_mask": 1,
+        "secret_for_calibration_only": 3,
+        "middle_tables_exhausted": 64,
+        "middle_linear_rank": 2,
+        "average_squared_bias": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_binary_exponent": 2
+        },
+        "equality_uses_invariance_along_selected_row_kernel": true,
+        "top_bits_fixed_only_because_their_magnitude_effect_is_a_global_phase": true
+      },
+      {
+        "left_low": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "right_low": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "xor_outcome": 1,
+        "parity_mask": 2,
+        "secret_for_calibration_only": 1,
+        "middle_tables_exhausted": 64,
+        "middle_linear_rank": 2,
+        "average_squared_bias": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_binary_exponent": 2
+        },
+        "equality_uses_invariance_along_selected_row_kernel": true,
+        "top_bits_fixed_only_because_their_magnitude_effect_is_a_global_phase": true
+      },
+      {
+        "left_low": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "right_low": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "xor_outcome": 1,
+        "parity_mask": 2,
+        "secret_for_calibration_only": 3,
+        "middle_tables_exhausted": 64,
+        "middle_linear_rank": 2,
+        "average_squared_bias": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_binary_exponent": 2
+        },
+        "equality_uses_invariance_along_selected_row_kernel": true,
+        "top_bits_fixed_only_because_their_magnitude_effect_is_a_global_phase": true
+      },
+      {
+        "left_low": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "right_low": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "xor_outcome": 1,
+        "parity_mask": 3,
+        "secret_for_calibration_only": 1,
+        "middle_tables_exhausted": 64,
+        "middle_linear_rank": 2,
+        "average_squared_bias": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_binary_exponent": 2
+        },
+        "equality_uses_invariance_along_selected_row_kernel": true,
+        "top_bits_fixed_only_because_their_magnitude_effect_is_a_global_phase": true
+      },
+      {
+        "left_low": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "right_low": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "xor_outcome": 1,
+        "parity_mask": 3,
+        "secret_for_calibration_only": 3,
+        "middle_tables_exhausted": 64,
+        "middle_linear_rank": 2,
+        "average_squared_bias": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_binary_exponent": 2
+        },
+        "equality_uses_invariance_along_selected_row_kernel": true,
+        "top_bits_fixed_only_because_their_magnitude_effect_is_a_global_phase": true
+      },
+      {
+        "left_low": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "right_low": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "xor_outcome": 2,
+        "parity_mask": 1,
+        "secret_for_calibration_only": 1,
+        "middle_tables_exhausted": 64,
+        "middle_linear_rank": 2,
+        "average_squared_bias": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_binary_exponent": 2
+        },
+        "equality_uses_invariance_along_selected_row_kernel": true,
+        "top_bits_fixed_only_because_their_magnitude_effect_is_a_global_phase": true
+      },
+      {
+        "left_low": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "right_low": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "xor_outcome": 2,
+        "parity_mask": 1,
+        "secret_for_calibration_only": 3,
+        "middle_tables_exhausted": 64,
+        "middle_linear_rank": 2,
+        "average_squared_bias": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_binary_exponent": 2
+        },
+        "equality_uses_invariance_along_selected_row_kernel": true,
+        "top_bits_fixed_only_because_their_magnitude_effect_is_a_global_phase": true
+      },
+      {
+        "left_low": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "right_low": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "xor_outcome": 2,
+        "parity_mask": 2,
+        "secret_for_calibration_only": 1,
+        "middle_tables_exhausted": 64,
+        "middle_linear_rank": 2,
+        "average_squared_bias": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_binary_exponent": 2
+        },
+        "equality_uses_invariance_along_selected_row_kernel": true,
+        "top_bits_fixed_only_because_their_magnitude_effect_is_a_global_phase": true
+      },
+      {
+        "left_low": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "right_low": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "xor_outcome": 2,
+        "parity_mask": 2,
+        "secret_for_calibration_only": 3,
+        "middle_tables_exhausted": 64,
+        "middle_linear_rank": 2,
+        "average_squared_bias": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_binary_exponent": 2
+        },
+        "equality_uses_invariance_along_selected_row_kernel": true,
+        "top_bits_fixed_only_because_their_magnitude_effect_is_a_global_phase": true
+      },
+      {
+        "left_low": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "right_low": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "xor_outcome": 2,
+        "parity_mask": 3,
+        "secret_for_calibration_only": 1,
+        "middle_tables_exhausted": 64,
+        "middle_linear_rank": 2,
+        "average_squared_bias": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_binary_exponent": 2
+        },
+        "equality_uses_invariance_along_selected_row_kernel": true,
+        "top_bits_fixed_only_because_their_magnitude_effect_is_a_global_phase": true
+      },
+      {
+        "left_low": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "right_low": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "xor_outcome": 2,
+        "parity_mask": 3,
+        "secret_for_calibration_only": 3,
+        "middle_tables_exhausted": 64,
+        "middle_linear_rank": 2,
+        "average_squared_bias": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_binary_exponent": 2
+        },
+        "equality_uses_invariance_along_selected_row_kernel": true,
+        "top_bits_fixed_only_because_their_magnitude_effect_is_a_global_phase": true
+      },
+      {
+        "left_low": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "right_low": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "xor_outcome": 3,
+        "parity_mask": 1,
+        "secret_for_calibration_only": 1,
+        "middle_tables_exhausted": 64,
+        "middle_linear_rank": 2,
+        "average_squared_bias": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_binary_exponent": 2
+        },
+        "equality_uses_invariance_along_selected_row_kernel": true,
+        "top_bits_fixed_only_because_their_magnitude_effect_is_a_global_phase": true
+      },
+      {
+        "left_low": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "right_low": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "xor_outcome": 3,
+        "parity_mask": 1,
+        "secret_for_calibration_only": 3,
+        "middle_tables_exhausted": 64,
+        "middle_linear_rank": 2,
+        "average_squared_bias": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_binary_exponent": 2
+        },
+        "equality_uses_invariance_along_selected_row_kernel": true,
+        "top_bits_fixed_only_because_their_magnitude_effect_is_a_global_phase": true
+      },
+      {
+        "left_low": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "right_low": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "xor_outcome": 3,
+        "parity_mask": 2,
+        "secret_for_calibration_only": 1,
+        "middle_tables_exhausted": 64,
+        "middle_linear_rank": 2,
+        "average_squared_bias": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_binary_exponent": 2
+        },
+        "equality_uses_invariance_along_selected_row_kernel": true,
+        "top_bits_fixed_only_because_their_magnitude_effect_is_a_global_phase": true
+      },
+      {
+        "left_low": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "right_low": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "xor_outcome": 3,
+        "parity_mask": 2,
+        "secret_for_calibration_only": 3,
+        "middle_tables_exhausted": 64,
+        "middle_linear_rank": 2,
+        "average_squared_bias": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_binary_exponent": 2
+        },
+        "equality_uses_invariance_along_selected_row_kernel": true,
+        "top_bits_fixed_only_because_their_magnitude_effect_is_a_global_phase": true
+      },
+      {
+        "left_low": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "right_low": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "xor_outcome": 3,
+        "parity_mask": 3,
+        "secret_for_calibration_only": 1,
+        "middle_tables_exhausted": 64,
+        "middle_linear_rank": 2,
+        "average_squared_bias": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_binary_exponent": 2
+        },
+        "equality_uses_invariance_along_selected_row_kernel": true,
+        "top_bits_fixed_only_because_their_magnitude_effect_is_a_global_phase": true
+      },
+      {
+        "left_low": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "right_low": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "xor_outcome": 3,
+        "parity_mask": 3,
+        "secret_for_calibration_only": 3,
+        "middle_tables_exhausted": 64,
+        "middle_linear_rank": 2,
+        "average_squared_bias": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_binary_exponent": 2
+        },
+        "equality_uses_invariance_along_selected_row_kernel": true,
+        "top_bits_fixed_only_because_their_magnitude_effect_is_a_global_phase": true
+      },
+      {
+        "left_low": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "right_low": [
+          [
+            1,
+            1,
+            0
+          ]
+        ],
+        "xor_outcome": 0,
+        "parity_mask": 1,
+        "secret_for_calibration_only": 1,
+        "middle_tables_exhausted": 64,
+        "middle_linear_rank": 2,
+        "average_squared_bias": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_binary_exponent": 2
+        },
+        "equality_uses_invariance_along_selected_row_kernel": true,
+        "top_bits_fixed_only_because_their_magnitude_effect_is_a_global_phase": true
+      },
+      {
+        "left_low": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "right_low": [
+          [
+            1,
+            1,
+            0
+          ]
+        ],
+        "xor_outcome": 0,
+        "parity_mask": 1,
+        "secret_for_calibration_only": 3,
+        "middle_tables_exhausted": 64,
+        "middle_linear_rank": 2,
+        "average_squared_bias": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_binary_exponent": 2
+        },
+        "equality_uses_invariance_along_selected_row_kernel": true,
+        "top_bits_fixed_only_because_their_magnitude_effect_is_a_global_phase": true
+      },
+      {
+        "left_low": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "right_low": [
+          [
+            1,
+            1,
+            0
+          ]
+        ],
+        "xor_outcome": 0,
+        "parity_mask": 2,
+        "secret_for_calibration_only": 1,
+        "middle_tables_exhausted": 64,
+        "middle_linear_rank": 2,
+        "average_squared_bias": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_binary_exponent": 2
+        },
+        "equality_uses_invariance_along_selected_row_kernel": true,
+        "top_bits_fixed_only_because_their_magnitude_effect_is_a_global_phase": true
+      },
+      {
+        "left_low": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "right_low": [
+          [
+            1,
+            1,
+            0
+          ]
+        ],
+        "xor_outcome": 0,
+        "parity_mask": 2,
+        "secret_for_calibration_only": 3,
+        "middle_tables_exhausted": 64,
+        "middle_linear_rank": 2,
+        "average_squared_bias": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_binary_exponent": 2
+        },
+        "equality_uses_invariance_along_selected_row_kernel": true,
+        "top_bits_fixed_only_because_their_magnitude_effect_is_a_global_phase": true
+      },
+      {
+        "left_low": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "right_low": [
+          [
+            1,
+            1,
+            0
+          ]
+        ],
+        "xor_outcome": 0,
+        "parity_mask": 3,
+        "secret_for_calibration_only": 1,
+        "middle_tables_exhausted": 64,
+        "middle_linear_rank": 2,
+        "average_squared_bias": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_binary_exponent": 2
+        },
+        "equality_uses_invariance_along_selected_row_kernel": true,
+        "top_bits_fixed_only_because_their_magnitude_effect_is_a_global_phase": true
+      },
+      {
+        "left_low": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "right_low": [
+          [
+            1,
+            1,
+            0
+          ]
+        ],
+        "xor_outcome": 0,
+        "parity_mask": 3,
+        "secret_for_calibration_only": 3,
+        "middle_tables_exhausted": 64,
+        "middle_linear_rank": 2,
+        "average_squared_bias": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_binary_exponent": 2
+        },
+        "equality_uses_invariance_along_selected_row_kernel": true,
+        "top_bits_fixed_only_because_their_magnitude_effect_is_a_global_phase": true
+      },
+      {
+        "left_low": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "right_low": [
+          [
+            1,
+            1,
+            0
+          ]
+        ],
+        "xor_outcome": 1,
+        "parity_mask": 1,
+        "secret_for_calibration_only": 1,
+        "middle_tables_exhausted": 64,
+        "middle_linear_rank": 2,
+        "average_squared_bias": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_binary_exponent": 2
+        },
+        "equality_uses_invariance_along_selected_row_kernel": true,
+        "top_bits_fixed_only_because_their_magnitude_effect_is_a_global_phase": true
+      },
+      {
+        "left_low": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "right_low": [
+          [
+            1,
+            1,
+            0
+          ]
+        ],
+        "xor_outcome": 1,
+        "parity_mask": 1,
+        "secret_for_calibration_only": 3,
+        "middle_tables_exhausted": 64,
+        "middle_linear_rank": 2,
+        "average_squared_bias": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_binary_exponent": 2
+        },
+        "equality_uses_invariance_along_selected_row_kernel": true,
+        "top_bits_fixed_only_because_their_magnitude_effect_is_a_global_phase": true
+      },
+      {
+        "left_low": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "right_low": [
+          [
+            1,
+            1,
+            0
+          ]
+        ],
+        "xor_outcome": 1,
+        "parity_mask": 2,
+        "secret_for_calibration_only": 1,
+        "middle_tables_exhausted": 64,
+        "middle_linear_rank": 2,
+        "average_squared_bias": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_binary_exponent": 2
+        },
+        "equality_uses_invariance_along_selected_row_kernel": true,
+        "top_bits_fixed_only_because_their_magnitude_effect_is_a_global_phase": true
+      },
+      {
+        "left_low": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "right_low": [
+          [
+            1,
+            1,
+            0
+          ]
+        ],
+        "xor_outcome": 1,
+        "parity_mask": 2,
+        "secret_for_calibration_only": 3,
+        "middle_tables_exhausted": 64,
+        "middle_linear_rank": 2,
+        "average_squared_bias": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_binary_exponent": 2
+        },
+        "equality_uses_invariance_along_selected_row_kernel": true,
+        "top_bits_fixed_only_because_their_magnitude_effect_is_a_global_phase": true
+      },
+      {
+        "left_low": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "right_low": [
+          [
+            1,
+            1,
+            0
+          ]
+        ],
+        "xor_outcome": 1,
+        "parity_mask": 3,
+        "secret_for_calibration_only": 1,
+        "middle_tables_exhausted": 64,
+        "middle_linear_rank": 2,
+        "average_squared_bias": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_binary_exponent": 2
+        },
+        "equality_uses_invariance_along_selected_row_kernel": true,
+        "top_bits_fixed_only_because_their_magnitude_effect_is_a_global_phase": true
+      },
+      {
+        "left_low": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "right_low": [
+          [
+            1,
+            1,
+            0
+          ]
+        ],
+        "xor_outcome": 1,
+        "parity_mask": 3,
+        "secret_for_calibration_only": 3,
+        "middle_tables_exhausted": 64,
+        "middle_linear_rank": 2,
+        "average_squared_bias": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_binary_exponent": 2
+        },
+        "equality_uses_invariance_along_selected_row_kernel": true,
+        "top_bits_fixed_only_because_their_magnitude_effect_is_a_global_phase": true
+      },
+      {
+        "left_low": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "right_low": [
+          [
+            1,
+            1,
+            0
+          ]
+        ],
+        "xor_outcome": 2,
+        "parity_mask": 1,
+        "secret_for_calibration_only": 1,
+        "middle_tables_exhausted": 64,
+        "middle_linear_rank": 2,
+        "average_squared_bias": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_binary_exponent": 2
+        },
+        "equality_uses_invariance_along_selected_row_kernel": true,
+        "top_bits_fixed_only_because_their_magnitude_effect_is_a_global_phase": true
+      },
+      {
+        "left_low": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "right_low": [
+          [
+            1,
+            1,
+            0
+          ]
+        ],
+        "xor_outcome": 2,
+        "parity_mask": 1,
+        "secret_for_calibration_only": 3,
+        "middle_tables_exhausted": 64,
+        "middle_linear_rank": 2,
+        "average_squared_bias": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_binary_exponent": 2
+        },
+        "equality_uses_invariance_along_selected_row_kernel": true,
+        "top_bits_fixed_only_because_their_magnitude_effect_is_a_global_phase": true
+      },
+      {
+        "left_low": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "right_low": [
+          [
+            1,
+            1,
+            0
+          ]
+        ],
+        "xor_outcome": 2,
+        "parity_mask": 2,
+        "secret_for_calibration_only": 1,
+        "middle_tables_exhausted": 64,
+        "middle_linear_rank": 2,
+        "average_squared_bias": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_binary_exponent": 2
+        },
+        "equality_uses_invariance_along_selected_row_kernel": true,
+        "top_bits_fixed_only_because_their_magnitude_effect_is_a_global_phase": true
+      },
+      {
+        "left_low": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "right_low": [
+          [
+            1,
+            1,
+            0
+          ]
+        ],
+        "xor_outcome": 2,
+        "parity_mask": 2,
+        "secret_for_calibration_only": 3,
+        "middle_tables_exhausted": 64,
+        "middle_linear_rank": 2,
+        "average_squared_bias": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_binary_exponent": 2
+        },
+        "equality_uses_invariance_along_selected_row_kernel": true,
+        "top_bits_fixed_only_because_their_magnitude_effect_is_a_global_phase": true
+      },
+      {
+        "left_low": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "right_low": [
+          [
+            1,
+            1,
+            0
+          ]
+        ],
+        "xor_outcome": 2,
+        "parity_mask": 3,
+        "secret_for_calibration_only": 1,
+        "middle_tables_exhausted": 64,
+        "middle_linear_rank": 2,
+        "average_squared_bias": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_binary_exponent": 2
+        },
+        "equality_uses_invariance_along_selected_row_kernel": true,
+        "top_bits_fixed_only_because_their_magnitude_effect_is_a_global_phase": true
+      },
+      {
+        "left_low": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "right_low": [
+          [
+            1,
+            1,
+            0
+          ]
+        ],
+        "xor_outcome": 2,
+        "parity_mask": 3,
+        "secret_for_calibration_only": 3,
+        "middle_tables_exhausted": 64,
+        "middle_linear_rank": 2,
+        "average_squared_bias": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_binary_exponent": 2
+        },
+        "equality_uses_invariance_along_selected_row_kernel": true,
+        "top_bits_fixed_only_because_their_magnitude_effect_is_a_global_phase": true
+      },
+      {
+        "left_low": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "right_low": [
+          [
+            1,
+            1,
+            0
+          ]
+        ],
+        "xor_outcome": 3,
+        "parity_mask": 1,
+        "secret_for_calibration_only": 1,
+        "middle_tables_exhausted": 64,
+        "middle_linear_rank": 2,
+        "average_squared_bias": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_binary_exponent": 2
+        },
+        "equality_uses_invariance_along_selected_row_kernel": true,
+        "top_bits_fixed_only_because_their_magnitude_effect_is_a_global_phase": true
+      },
+      {
+        "left_low": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "right_low": [
+          [
+            1,
+            1,
+            0
+          ]
+        ],
+        "xor_outcome": 3,
+        "parity_mask": 1,
+        "secret_for_calibration_only": 3,
+        "middle_tables_exhausted": 64,
+        "middle_linear_rank": 2,
+        "average_squared_bias": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_binary_exponent": 2
+        },
+        "equality_uses_invariance_along_selected_row_kernel": true,
+        "top_bits_fixed_only_because_their_magnitude_effect_is_a_global_phase": true
+      },
+      {
+        "left_low": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "right_low": [
+          [
+            1,
+            1,
+            0
+          ]
+        ],
+        "xor_outcome": 3,
+        "parity_mask": 2,
+        "secret_for_calibration_only": 1,
+        "middle_tables_exhausted": 64,
+        "middle_linear_rank": 2,
+        "average_squared_bias": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_binary_exponent": 2
+        },
+        "equality_uses_invariance_along_selected_row_kernel": true,
+        "top_bits_fixed_only_because_their_magnitude_effect_is_a_global_phase": true
+      },
+      {
+        "left_low": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "right_low": [
+          [
+            1,
+            1,
+            0
+          ]
+        ],
+        "xor_outcome": 3,
+        "parity_mask": 2,
+        "secret_for_calibration_only": 3,
+        "middle_tables_exhausted": 64,
+        "middle_linear_rank": 2,
+        "average_squared_bias": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_binary_exponent": 2
+        },
+        "equality_uses_invariance_along_selected_row_kernel": true,
+        "top_bits_fixed_only_because_their_magnitude_effect_is_a_global_phase": true
+      },
+      {
+        "left_low": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "right_low": [
+          [
+            1,
+            1,
+            0
+          ]
+        ],
+        "xor_outcome": 3,
+        "parity_mask": 3,
+        "secret_for_calibration_only": 1,
+        "middle_tables_exhausted": 64,
+        "middle_linear_rank": 2,
+        "average_squared_bias": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_binary_exponent": 2
+        },
+        "equality_uses_invariance_along_selected_row_kernel": true,
+        "top_bits_fixed_only_because_their_magnitude_effect_is_a_global_phase": true
+      },
+      {
+        "left_low": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "right_low": [
+          [
+            1,
+            1,
+            0
+          ]
+        ],
+        "xor_outcome": 3,
+        "parity_mask": 3,
+        "secret_for_calibration_only": 3,
+        "middle_tables_exhausted": 64,
+        "middle_linear_rank": 2,
+        "average_squared_bias": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_binary_exponent": 2
+        },
+        "equality_uses_invariance_along_selected_row_kernel": true,
+        "top_bits_fixed_only_because_their_magnitude_effect_is_a_global_phase": true
+      }
+    ],
+    "nonzero_secret_parity_precondition_required": true,
+    "all_even_secret_exception_squared_bias_witness": {
+      "sign": 1,
+      "numerator_hex": "0x1",
+      "denominator_binary_exponent": 0
+    },
+    "bounded_identity_controls_not_scalable_candidate_family": true
+  },
+  "tail_unit_information_certificates": [
+    {
+      "status": "LOCAL_DERIVATION_REVIEW_PENDING",
+      "dimension": 8,
+      "modulus": 8,
+      "secret_parameter_modulus_after_parity_chart": 4,
+      "input_qubits_per_packet": 24,
+      "fresh_pair_attempts": 64,
+      "tail_unit_dictionary_size": 8,
+      "middle_rank_floor_outside_bad_event": 5,
+      "selected_pivot_count_tail_bound": {
+        "sign": 1,
+        "numerator_hex": "0x2b9",
+        "denominator_binary_exponent": 16
+      },
+      "rank_failure_bound_given_enough_selected_pivots": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_binary_exponent": 3
+      },
+      "two_prefix_rank_failure_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_binary_exponent": 7
+      },
+      "public_low_rank_event_probability_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_binary_exponent": 0
+      },
+      "one_bit_average_squared_bias_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_binary_exponent": 0
+      },
+      "transcript_kl_to_matched_fair_reference_bits_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x40",
+        "denominator_binary_exponent": 0
+      },
+      "uniform_secret_mutual_information_bits_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x10",
+        "denominator_binary_exponent": 0
+      },
+      "identification_success_expression": "min(1,4^-n+sqrt(KL_bits/2))",
+      "success_below_one_over_10": false,
+      "success_below_one_over_100": false,
+      "high_bits_and_classical_history_can_choose_dictionary_member": true,
+      "selector_cannot_inspect_v_before_selecting_parity": true,
+      "all_other_v_information_discarded": true,
+      "coherent_memory_or_reused_packets_covered": false,
+      "external_secret_correlated_side_information_covered": false,
+      "full_bell_transcript_covered": false,
+      "general_high_level_or_adaptive_quantum_decoder_closed": false,
+      "independent_theorem_review": false
+    },
+    {
+      "status": "LOCAL_DERIVATION_REVIEW_PENDING",
+      "dimension": 16,
+      "modulus": 8,
+      "secret_parameter_modulus_after_parity_chart": 4,
+      "input_qubits_per_packet": 48,
+      "fresh_pair_attempts": 256,
+      "tail_unit_dictionary_size": 16,
+      "middle_rank_floor_outside_bad_event": 9,
+      "selected_pivot_count_tail_bound": {
+        "sign": 1,
+        "numerator_hex": "0x44e439",
+        "denominator_binary_exponent": 32
+      },
+      "rank_failure_bound_given_enough_selected_pivots": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_binary_exponent": 7
+      },
+      "two_prefix_rank_failure_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_binary_exponent": 15
+      },
+      "public_low_rank_event_probability_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x2450439",
+        "denominator_binary_exponent": 28
+      },
+      "one_bit_average_squared_bias_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x2c51439",
+        "denominator_binary_exponent": 28
+      },
+      "transcript_kl_to_matched_fair_reference_bits_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x2c51439",
+        "denominator_binary_exponent": 20
+      },
+      "uniform_secret_mutual_information_bits_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x20",
+        "denominator_binary_exponent": 0
+      },
+      "identification_success_expression": "min(1,4^-n+sqrt(KL_bits/2))",
+      "success_below_one_over_10": false,
+      "success_below_one_over_100": false,
+      "high_bits_and_classical_history_can_choose_dictionary_member": true,
+      "selector_cannot_inspect_v_before_selecting_parity": true,
+      "all_other_v_information_discarded": true,
+      "coherent_memory_or_reused_packets_covered": false,
+      "external_secret_correlated_side_information_covered": false,
+      "full_bell_transcript_covered": false,
+      "general_high_level_or_adaptive_quantum_decoder_closed": false,
+      "independent_theorem_review": false
+    },
+    {
+      "status": "LOCAL_DERIVATION_REVIEW_PENDING",
+      "dimension": 32,
+      "modulus": 8,
+      "secret_parameter_modulus_after_parity_chart": 4,
+      "input_qubits_per_packet": 96,
+      "fresh_pair_attempts": 1024,
+      "tail_unit_dictionary_size": 32,
+      "middle_rank_floor_outside_bad_event": 17,
+      "selected_pivot_count_tail_bound": {
+        "sign": 1,
+        "numerator_hex": "0xcc6285331039",
+        "denominator_binary_exponent": 64
+      },
+      "rank_failure_bound_given_enough_selected_pivots": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_binary_exponent": 15
+      },
+      "two_prefix_rank_failure_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_binary_exponent": 31
+      },
+      "public_low_rank_event_probability_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x2cc6295331039",
+        "denominator_binary_exponent": 59
+      },
+      "one_bit_average_squared_bias_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x34c629d331039",
+        "denominator_binary_exponent": 59
+      },
+      "transcript_kl_to_matched_fair_reference_bits_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x34c629d331039",
+        "denominator_binary_exponent": 49
+      },
+      "uniform_secret_mutual_information_bits_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x34c629d331039",
+        "denominator_binary_exponent": 49
+      },
+      "identification_success_expression": "min(1,4^-n+sqrt(KL_bits/2))",
+      "success_below_one_over_10": false,
+      "success_below_one_over_100": false,
+      "high_bits_and_classical_history_can_choose_dictionary_member": true,
+      "selector_cannot_inspect_v_before_selecting_parity": true,
+      "all_other_v_information_discarded": true,
+      "coherent_memory_or_reused_packets_covered": false,
+      "external_secret_correlated_side_information_covered": false,
+      "full_bell_transcript_covered": false,
+      "general_high_level_or_adaptive_quantum_decoder_closed": false,
+      "independent_theorem_review": false
+    },
+    {
+      "status": "LOCAL_DERIVATION_REVIEW_PENDING",
+      "dimension": 64,
+      "modulus": 8,
+      "secret_parameter_modulus_after_parity_chart": 4,
+      "input_qubits_per_packet": 192,
+      "fresh_pair_attempts": 4096,
+      "tail_unit_dictionary_size": 64,
+      "middle_rank_floor_outside_bad_event": 33,
+      "selected_pivot_count_tail_bound": {
+        "sign": 1,
+        "numerator_hex": "0x8ecc85ba612282833f5d67039",
+        "denominator_binary_exponent": 128
+      },
+      "rank_failure_bound_given_enough_selected_pivots": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_binary_exponent": 31
+      },
+      "two_prefix_rank_failure_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_binary_exponent": 63
+      },
+      "public_low_rank_event_probability_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0xaecc85ba61a282833f5d67039",
+        "denominator_binary_exponent": 122
+      },
+      "one_bit_average_squared_bias_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0xb6cc85ba61e282833f5d67039",
+        "denominator_binary_exponent": 122
+      },
+      "transcript_kl_to_matched_fair_reference_bits_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0xb6cc85ba61e282833f5d67039",
+        "denominator_binary_exponent": 110
+      },
+      "uniform_secret_mutual_information_bits_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0xb6cc85ba61e282833f5d67039",
+        "denominator_binary_exponent": 110
+      },
+      "identification_success_expression": "min(1,4^-n+sqrt(KL_bits/2))",
+      "success_below_one_over_10": true,
+      "success_below_one_over_100": false,
+      "high_bits_and_classical_history_can_choose_dictionary_member": true,
+      "selector_cannot_inspect_v_before_selecting_parity": true,
+      "all_other_v_information_discarded": true,
+      "coherent_memory_or_reused_packets_covered": false,
+      "external_secret_correlated_side_information_covered": false,
+      "full_bell_transcript_covered": false,
+      "general_high_level_or_adaptive_quantum_decoder_closed": false,
+      "independent_theorem_review": false
+    },
+    {
+      "status": "LOCAL_DERIVATION_REVIEW_PENDING",
+      "dimension": 128,
+      "modulus": 8,
+      "secret_parameter_modulus_after_parity_chart": 4,
+      "input_qubits_per_packet": 384,
+      "fresh_pair_attempts": 16384,
+      "tail_unit_dictionary_size": 128,
+      "middle_rank_floor_outside_bad_event": 65,
+      "selected_pivot_count_tail_bound": {
+        "sign": 1,
+        "numerator_hex": "0x5caed0b31c18ce5b692ef8b3151ee52356a06e058f64e117039",
+        "denominator_binary_exponent": 256
+      },
+      "rank_failure_bound_given_enough_selected_pivots": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_binary_exponent": 63
+      },
+      "two_prefix_rank_failure_bound": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_binary_exponent": 127
+      },
+      "public_low_rank_event_probability_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x5cced0b31c18ce5b692f38b3151ee52356a06e058f64e117039",
+        "denominator_binary_exponent": 249
+      },
+      "one_bit_average_squared_bias_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x5cd6d0b31c18ce5b692f58b3151ee52356a06e058f64e117039",
+        "denominator_binary_exponent": 249
+      },
+      "transcript_kl_to_matched_fair_reference_bits_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x5cd6d0b31c18ce5b692f58b3151ee52356a06e058f64e117039",
+        "denominator_binary_exponent": 235
+      },
+      "uniform_secret_mutual_information_bits_upper_bound": {
+        "sign": 1,
+        "numerator_hex": "0x5cd6d0b31c18ce5b692f58b3151ee52356a06e058f64e117039",
+        "denominator_binary_exponent": 235
+      },
+      "identification_success_expression": "min(1,4^-n+sqrt(KL_bits/2))",
+      "success_below_one_over_10": true,
+      "success_below_one_over_100": true,
+      "high_bits_and_classical_history_can_choose_dictionary_member": true,
+      "selector_cannot_inspect_v_before_selecting_parity": true,
+      "all_other_v_information_discarded": true,
+      "coherent_memory_or_reused_packets_covered": false,
+      "external_secret_correlated_side_information_covered": false,
+      "full_bell_transcript_covered": false,
+      "general_high_level_or_adaptive_quantum_decoder_closed": false,
+      "independent_theorem_review": false
+    }
+  ],
+  "claim_gate": {
+    "matched_packets_or_copies_required": false,
+    "full_q8_likelihood_implemented": false,
+    "marginals_can_be_multiplied_as_independent": false,
+    "unknown_secret_decoder": false,
+    "known_secret_simulation_is_dequantization": false,
+    "all_full_output_or_quantum_adaptive_measurements_closed": false,
+    "independent_theorem_review": false,
+    "speedup_claim_allowed": false
+  },
+  "dependency_sha256": {
+    "theorems/dcp_correlated_bell.py": "0dd06a02c125e176fec8ef08422a89221983dc71b547e79b8a7a2ebe080473fa",
+    "theorems/dcp_carry_packets.py": "c3d345cc0d123a86e29c976959471d645945e767f6d0ee1bc6bd79149a0322c6"
+  }
+}

@@ -1,0 +1,393 @@
+{
+  "status": "LOCAL_DERIVATION_REVIEW_PENDING",
+  "complete_hidden_marker_source_controls": [
+    {
+      "modulus": 3,
+      "original_columns": 2,
+      "all_extended_native_label_tables": 27,
+      "complete_source_and_marker_trials": 81,
+      "accepted_target_trials": 39,
+      "successful_zero_output_weight_sum": 39,
+      "nonempty_zero_successes": 27,
+      "exact_uniform_full_target_coverage": {
+        "sign": 1,
+        "numerator_hex": "0xd",
+        "denominator_hex": "0x1b"
+      },
+      "bounded_reference_zero_solver_is_polynomial": false
+    },
+    {
+      "modulus": 4,
+      "original_columns": 3,
+      "all_extended_native_label_tables": 256,
+      "complete_source_and_marker_trials": 1024,
+      "accepted_target_trials": 404,
+      "successful_zero_output_weight_sum": 404,
+      "nonempty_zero_successes": 256,
+      "exact_uniform_full_target_coverage": {
+        "sign": 1,
+        "numerator_hex": "0x65",
+        "denominator_hex": "0x100"
+      },
+      "bounded_reference_zero_solver_is_polynomial": false
+    }
+  ],
+  "single_translation_channel_controls": [
+    {
+      "modulus": 3,
+      "copies": 1,
+      "source_family_rank": 2,
+      "target_family_rank": 2,
+      "all_q_minus_one_target_columns_independent": true,
+      "target_projector_sum_operator_norm": 1.4999999999999996,
+      "actual_random_two_kraus_channel_mean_success_fidelity": 0.16755684899524848,
+      "ternary_exact_isometry_residual": 4.47545209131181e-16,
+      "certificate": {
+        "status": "LOCAL_SINGLE_TRANSLATION_SOURCE_INFORMATION_BOUND_REVIEW_PENDING",
+        "modulus": 3,
+        "same_translation_input_copies": 1,
+        "source_family_span_dimension": 2,
+        "binary_localized_target_family_rank_lower_bound": 2,
+        "arbitrary_heralded_channel_uniform_mean_success_times_target_fidelity_upper_bound": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_hex": "0x1"
+        },
+        "proof": "Pull back target POVM |g_v><g_v|/2; its sum<=I. Any measurement guesses a uniform index on an r-dimensional input ensemble with probability<=r/q.",
+        "exact_nonzero_pure_target_branch_ruled_out": false,
+        "arbitrary_exact_heralded_branch_necessary_same_translation_copies": 1,
+        "nonzero_success_on_every_translation_necessary_copies": 1,
+        "same_label_copies_granted_by_native_source": false,
+        "native_different_label_collective_algorithm_ruled_out": false,
+        "arbitrary_quantum_subset_sum_algorithm_ruled_out": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      }
+    },
+    {
+      "modulus": 4,
+      "copies": 1,
+      "source_family_rank": 2,
+      "target_family_rank": 3,
+      "all_q_minus_one_target_columns_independent": true,
+      "target_projector_sum_operator_norm": 1.9999999999999998,
+      "actual_random_two_kraus_channel_mean_success_fidelity": 0.20832140608361704,
+      "ternary_exact_isometry_residual": null,
+      "certificate": {
+        "status": "LOCAL_SINGLE_TRANSLATION_SOURCE_INFORMATION_BOUND_REVIEW_PENDING",
+        "modulus": 4,
+        "same_translation_input_copies": 1,
+        "source_family_span_dimension": 2,
+        "binary_localized_target_family_rank_lower_bound": 3,
+        "arbitrary_heralded_channel_uniform_mean_success_times_target_fidelity_upper_bound": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_hex": "0x1"
+        },
+        "proof": "Pull back target POVM |g_v><g_v|/2; its sum<=I. Any measurement guesses a uniform index on an r-dimensional input ensemble with probability<=r/q.",
+        "exact_nonzero_pure_target_branch_ruled_out": true,
+        "arbitrary_exact_heralded_branch_necessary_same_translation_copies": 2,
+        "nonzero_success_on_every_translation_necessary_copies": 2,
+        "same_label_copies_granted_by_native_source": false,
+        "native_different_label_collective_algorithm_ruled_out": false,
+        "arbitrary_quantum_subset_sum_algorithm_ruled_out": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      }
+    },
+    {
+      "modulus": 8,
+      "copies": 1,
+      "source_family_rank": 2,
+      "target_family_rank": 7,
+      "all_q_minus_one_target_columns_independent": true,
+      "target_projector_sum_operator_norm": 1.9999999999999998,
+      "actual_random_two_kraus_channel_mean_success_fidelity": 0.11534765319119698,
+      "ternary_exact_isometry_residual": null,
+      "certificate": {
+        "status": "LOCAL_SINGLE_TRANSLATION_SOURCE_INFORMATION_BOUND_REVIEW_PENDING",
+        "modulus": 8,
+        "same_translation_input_copies": 1,
+        "source_family_span_dimension": 2,
+        "binary_localized_target_family_rank_lower_bound": 7,
+        "arbitrary_heralded_channel_uniform_mean_success_times_target_fidelity_upper_bound": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_hex": "0x2"
+        },
+        "proof": "Pull back target POVM |g_v><g_v|/2; its sum<=I. Any measurement guesses a uniform index on an r-dimensional input ensemble with probability<=r/q.",
+        "exact_nonzero_pure_target_branch_ruled_out": true,
+        "arbitrary_exact_heralded_branch_necessary_same_translation_copies": 4,
+        "nonzero_success_on_every_translation_necessary_copies": 6,
+        "same_label_copies_granted_by_native_source": false,
+        "native_different_label_collective_algorithm_ruled_out": false,
+        "arbitrary_quantum_subset_sum_algorithm_ruled_out": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      }
+    },
+    {
+      "modulus": 8,
+      "copies": 2,
+      "source_family_rank": 3,
+      "target_family_rank": 7,
+      "all_q_minus_one_target_columns_independent": true,
+      "target_projector_sum_operator_norm": 1.9999999999999998,
+      "actual_random_two_kraus_channel_mean_success_fidelity": 0.16490179466692634,
+      "ternary_exact_isometry_residual": null,
+      "certificate": {
+        "status": "LOCAL_SINGLE_TRANSLATION_SOURCE_INFORMATION_BOUND_REVIEW_PENDING",
+        "modulus": 8,
+        "same_translation_input_copies": 2,
+        "source_family_span_dimension": 3,
+        "binary_localized_target_family_rank_lower_bound": 7,
+        "arbitrary_heralded_channel_uniform_mean_success_times_target_fidelity_upper_bound": {
+          "sign": 1,
+          "numerator_hex": "0x3",
+          "denominator_hex": "0x4"
+        },
+        "proof": "Pull back target POVM |g_v><g_v|/2; its sum<=I. Any measurement guesses a uniform index on an r-dimensional input ensemble with probability<=r/q.",
+        "exact_nonzero_pure_target_branch_ruled_out": true,
+        "arbitrary_exact_heralded_branch_necessary_same_translation_copies": 4,
+        "nonzero_success_on_every_translation_necessary_copies": 6,
+        "same_label_copies_granted_by_native_source": false,
+        "native_different_label_collective_algorithm_ruled_out": false,
+        "arbitrary_quantum_subset_sum_algorithm_ruled_out": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      }
+    },
+    {
+      "modulus": 16,
+      "copies": 3,
+      "source_family_rank": 4,
+      "target_family_rank": 15,
+      "all_q_minus_one_target_columns_independent": true,
+      "target_projector_sum_operator_norm": 1.9999999999999993,
+      "actual_random_two_kraus_channel_mean_success_fidelity": 0.07870160306932199,
+      "ternary_exact_isometry_residual": null,
+      "certificate": {
+        "status": "LOCAL_SINGLE_TRANSLATION_SOURCE_INFORMATION_BOUND_REVIEW_PENDING",
+        "modulus": 16,
+        "same_translation_input_copies": 3,
+        "source_family_span_dimension": 4,
+        "binary_localized_target_family_rank_lower_bound": 15,
+        "arbitrary_heralded_channel_uniform_mean_success_times_target_fidelity_upper_bound": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_hex": "0x2"
+        },
+        "proof": "Pull back target POVM |g_v><g_v|/2; its sum<=I. Any measurement guesses a uniform index on an r-dimensional input ensemble with probability<=r/q.",
+        "exact_nonzero_pure_target_branch_ruled_out": true,
+        "arbitrary_exact_heralded_branch_necessary_same_translation_copies": 8,
+        "nonzero_success_on_every_translation_necessary_copies": 14,
+        "same_label_copies_granted_by_native_source": false,
+        "native_different_label_collective_algorithm_ruled_out": false,
+        "arbitrary_quantum_subset_sum_algorithm_ruled_out": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      }
+    }
+  ],
+  "native_growing_modulus_source_ledgers": [
+    {
+      "dimension": 8,
+      "native_modulus_bits": 33,
+      "envelope": {
+        "modulus": 8589934592,
+        "two_point_gap": 1,
+        "gap_gcd_with_modulus": 1,
+        "minimum_fourier_support_with_both_nonzero_coefficients": 8589934591,
+        "arbitrary_normalized_two_frequency_retention_mass_upper_bound": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_hex": "0x80000000"
+        },
+        "bound_is_on_known_envelope_spectral_truncation_not_a_legal_unknown_translation_decoder": true,
+        "binary_support_compatible_with_minimum_size": false,
+        "full_boolean_unit_gap_source": true,
+        "collective_multi_column_transforms_ruled_out": false
+      },
+      "generously_assumed_but_unavailable_same_translation_copy_ledger": {
+        "status": "LOCAL_SINGLE_TRANSLATION_SOURCE_INFORMATION_BOUND_REVIEW_PENDING",
+        "modulus": 8589934592,
+        "same_translation_input_copies": 64,
+        "source_family_span_dimension": 65,
+        "binary_localized_target_family_rank_lower_bound": 8589934591,
+        "arbitrary_heralded_channel_uniform_mean_success_times_target_fidelity_upper_bound": {
+          "sign": 1,
+          "numerator_hex": "0x41",
+          "denominator_hex": "0x100000000"
+        },
+        "proof": "Pull back target POVM |g_v><g_v|/2; its sum<=I. Any measurement guesses a uniform index on an r-dimensional input ensemble with probability<=r/q.",
+        "exact_nonzero_pure_target_branch_ruled_out": true,
+        "arbitrary_exact_heralded_branch_necessary_same_translation_copies": 4294967296,
+        "nonzero_success_on_every_translation_necessary_copies": 8589934590,
+        "same_label_copies_granted_by_native_source": false,
+        "native_different_label_collective_algorithm_ruled_out": false,
+        "arbitrary_quantum_subset_sum_algorithm_ruled_out": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      }
+    },
+    {
+      "dimension": 16,
+      "native_modulus_bits": 65,
+      "envelope": {
+        "modulus": 36893488147419103232,
+        "two_point_gap": 1,
+        "gap_gcd_with_modulus": 1,
+        "minimum_fourier_support_with_both_nonzero_coefficients": 36893488147419103231,
+        "arbitrary_normalized_two_frequency_retention_mass_upper_bound": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_hex": "0x8000000000000000"
+        },
+        "bound_is_on_known_envelope_spectral_truncation_not_a_legal_unknown_translation_decoder": true,
+        "binary_support_compatible_with_minimum_size": false,
+        "full_boolean_unit_gap_source": true,
+        "collective_multi_column_transforms_ruled_out": false
+      },
+      "generously_assumed_but_unavailable_same_translation_copy_ledger": {
+        "status": "LOCAL_SINGLE_TRANSLATION_SOURCE_INFORMATION_BOUND_REVIEW_PENDING",
+        "modulus": 36893488147419103232,
+        "same_translation_input_copies": 256,
+        "source_family_span_dimension": 257,
+        "binary_localized_target_family_rank_lower_bound": 36893488147419103231,
+        "arbitrary_heralded_channel_uniform_mean_success_times_target_fidelity_upper_bound": {
+          "sign": 1,
+          "numerator_hex": "0x101",
+          "denominator_hex": "0x10000000000000000"
+        },
+        "proof": "Pull back target POVM |g_v><g_v|/2; its sum<=I. Any measurement guesses a uniform index on an r-dimensional input ensemble with probability<=r/q.",
+        "exact_nonzero_pure_target_branch_ruled_out": true,
+        "arbitrary_exact_heralded_branch_necessary_same_translation_copies": 18446744073709551616,
+        "nonzero_success_on_every_translation_necessary_copies": 36893488147419103230,
+        "same_label_copies_granted_by_native_source": false,
+        "native_different_label_collective_algorithm_ruled_out": false,
+        "arbitrary_quantum_subset_sum_algorithm_ruled_out": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      }
+    },
+    {
+      "dimension": 32,
+      "native_modulus_bits": 129,
+      "envelope": {
+        "modulus": 680564733841876926926749214863536422912,
+        "two_point_gap": 1,
+        "gap_gcd_with_modulus": 1,
+        "minimum_fourier_support_with_both_nonzero_coefficients": 680564733841876926926749214863536422911,
+        "arbitrary_normalized_two_frequency_retention_mass_upper_bound": {
+          "sign": 1,
+          "numerator_hex": "0x1",
+          "denominator_hex": "0x80000000000000000000000000000000"
+        },
+        "bound_is_on_known_envelope_spectral_truncation_not_a_legal_unknown_translation_decoder": true,
+        "binary_support_compatible_with_minimum_size": false,
+        "full_boolean_unit_gap_source": true,
+        "collective_multi_column_transforms_ruled_out": false
+      },
+      "generously_assumed_but_unavailable_same_translation_copy_ledger": {
+        "status": "LOCAL_SINGLE_TRANSLATION_SOURCE_INFORMATION_BOUND_REVIEW_PENDING",
+        "modulus": 680564733841876926926749214863536422912,
+        "same_translation_input_copies": 1024,
+        "source_family_span_dimension": 1025,
+        "binary_localized_target_family_rank_lower_bound": 680564733841876926926749214863536422911,
+        "arbitrary_heralded_channel_uniform_mean_success_times_target_fidelity_upper_bound": {
+          "sign": 1,
+          "numerator_hex": "0x401",
+          "denominator_hex": "0x100000000000000000000000000000000"
+        },
+        "proof": "Pull back target POVM |g_v><g_v|/2; its sum<=I. Any measurement guesses a uniform index on an r-dimensional input ensemble with probability<=r/q.",
+        "exact_nonzero_pure_target_branch_ruled_out": true,
+        "arbitrary_exact_heralded_branch_necessary_same_translation_copies": 340282366920938463463374607431768211456,
+        "nonzero_success_on_every_translation_necessary_copies": 680564733841876926926749214863536422910,
+        "same_label_copies_granted_by_native_source": false,
+        "native_different_label_collective_algorithm_ruled_out": false,
+        "arbitrary_quantum_subset_sum_algorithm_ruled_out": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      }
+    }
+  ],
+  "ternary_high_density_import_ledgers": [
+    {
+      "ternary_dimension": 32,
+      "ternary_columns": 64,
+      "native_modulus_bits": 129,
+      "ternary_group_entropy_bits_integer_upper_bound": 51,
+      "one_selected_witness_full_group_readout_probability_upper_bound_dyadic_exponent": 13,
+      "bound_scope": "Only the one-word direct filter; not all generalized-dihedral algorithms or the paper's explicit-input subset-sum algorithm",
+      "additive_homomorphism_between_ternary_and_two_power_groups_is_nontrivial": false,
+      "nonlinear_or_collective_reduction_ruled_out": false,
+      "zero_to_target_gap_removed_by_hidden_marker_under_its_contract": true,
+      "field_alphabet_density_and_spectral_source_gaps_removed": false,
+      "new_paper_is_a_native_DCP_solver": false,
+      "candidate_record_accepted": false,
+      "speedup_claim_allowed": false
+    },
+    {
+      "ternary_dimension": 64,
+      "ternary_columns": 256,
+      "native_modulus_bits": 257,
+      "ternary_group_entropy_bits_integer_upper_bound": 102,
+      "one_selected_witness_full_group_readout_probability_upper_bound_dyadic_exponent": 154,
+      "bound_scope": "Only the one-word direct filter; not all generalized-dihedral algorithms or the paper's explicit-input subset-sum algorithm",
+      "additive_homomorphism_between_ternary_and_two_power_groups_is_nontrivial": false,
+      "nonlinear_or_collective_reduction_ruled_out": false,
+      "zero_to_target_gap_removed_by_hidden_marker_under_its_contract": true,
+      "field_alphabet_density_and_spectral_source_gaps_removed": false,
+      "new_paper_is_a_native_DCP_solver": false,
+      "candidate_record_accepted": false,
+      "speedup_claim_allowed": false
+    },
+    {
+      "ternary_dimension": 128,
+      "ternary_columns": 1024,
+      "native_modulus_bits": 513,
+      "ternary_group_entropy_bits_integer_upper_bound": 203,
+      "one_selected_witness_full_group_readout_probability_upper_bound_dyadic_exponent": 821,
+      "bound_scope": "Only the one-word direct filter; not all generalized-dihedral algorithms or the paper's explicit-input subset-sum algorithm",
+      "additive_homomorphism_between_ternary_and_two_power_groups_is_nontrivial": false,
+      "nonlinear_or_collective_reduction_ruled_out": false,
+      "zero_to_target_gap_removed_by_hidden_marker_under_its_contract": true,
+      "field_alphabet_density_and_spectral_source_gaps_removed": false,
+      "new_paper_is_a_native_DCP_solver": false,
+      "candidate_record_accepted": false,
+      "speedup_claim_allowed": false
+    },
+    {
+      "ternary_dimension": 256,
+      "ternary_columns": 4096,
+      "native_modulus_bits": 1025,
+      "ternary_group_entropy_bits_integer_upper_bound": 406,
+      "one_selected_witness_full_group_readout_probability_upper_bound_dyadic_exponent": 3690,
+      "bound_scope": "Only the one-word direct filter; not all generalized-dihedral algorithms or the paper's explicit-input subset-sum algorithm",
+      "additive_homomorphism_between_ternary_and_two_power_groups_is_nontrivial": false,
+      "nonlinear_or_collective_reduction_ruled_out": false,
+      "zero_to_target_gap_removed_by_hidden_marker_under_its_contract": true,
+      "field_alphabet_density_and_spectral_source_gaps_removed": false,
+      "new_paper_is_a_native_DCP_solver": false,
+      "candidate_record_accepted": false,
+      "speedup_claim_allowed": false
+    }
+  ],
+  "claim_gate": {
+    "zero_to_uniform_target_interface_supplied_with_polynomial_loss": true,
+    "single_translation_exact_or_approximate_binary_error_conversion_closed_as_scoped": true,
+    "native_distinct_label_collective_binary_error_conversion_implemented": false,
+    "new_ternary_paper_directly_solves_native_DCP": false,
+    "global_quantum_subset_sum_no_go_claimed": false,
+    "independent_theorem_review": false,
+    "uniform_polynomial_native_witness_finder_supplied": false,
+    "candidate_record_accepted": false,
+    "novelty_claim": false,
+    "speedup_claim_allowed": false
+  },
+  "dependency_sha256": {
+    "theorems/dcp_binary_error_source_bridge.py": "0799267c284d50cb532c97f6223c7144cf10bc8f32f28efb775cabb619f3a1b7",
+    "theorems/binary_error_hensel_decoder.py": "ac2e7a3ebd5f48f0167bfd512fea2e35b131564c0c1b800c9078acb500608408",
+    "theorems/dcp_direct_witness_filter.py": "6e9acbc95072a87514637d075652f0ab8c25559f9b1fe969801435d910d25c04"
+  }
+}

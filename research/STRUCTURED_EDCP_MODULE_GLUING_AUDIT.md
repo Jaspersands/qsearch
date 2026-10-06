@@ -569,3 +569,10 @@ natural labels, and beat matched classical reduction. In particular, access
 to an S-unit algorithm alone does not meet that requirement. The source
 hardness contracts are now separated in
 `STRUCTURED_EDCP_SOURCE_HARDNESS_AUDIT.md`.
+
+FOLLOW-UP (2026-09-28): `STRUCTURED_EDCP_ARCHIMEDEAN_GAUSSIAN_AUDIT.md`
+audits APPROXIMATE Gaussian replacement under arbitrary positive embedding
+weights. It combines a natural-label correlation bound with a finite-integer
+broad/narrow precision split. Ambient overlap only transfers to conditional
+fibers with an additional frequency-marginal premise; do not discard that
+scope restriction or call this a universal ideal-sampler impossibility.

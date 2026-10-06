@@ -1,0 +1,5143 @@
+{
+  "status": "LOCAL_DERIVATION_REVIEW_PENDING",
+  "fixed_pivot_conditional_carry_control": {
+    "lower_labels": [
+      [
+        1,
+        1,
+        3,
+        1,
+        1,
+        3
+      ]
+    ],
+    "modulus": 16,
+    "division_binary_exponent": 2,
+    "fixed_low_residue": [
+      0
+    ],
+    "isotropic_directions_hex": [
+      "0x1f",
+      "0x6",
+      "0x18"
+    ],
+    "complement_directions_hex": [
+      "0x2",
+      "0x8"
+    ],
+    "globally_constant_pivot_coefficient": 1,
+    "bounded_normalized_to_logical_permutation": [
+      0,
+      31,
+      6,
+      25,
+      24,
+      7,
+      30,
+      1,
+      2,
+      29,
+      27,
+      4,
+      26,
+      5,
+      3,
+      28,
+      23,
+      8,
+      17,
+      14,
+      16,
+      15,
+      22,
+      9,
+      10,
+      21,
+      19,
+      12,
+      13,
+      18,
+      20,
+      11
+    ],
+    "physical_features_anf_hex": [
+      [
+        "0x4",
+        "0x5",
+        "0xa",
+        "0xc"
+      ],
+      [
+        "0x5",
+        "0x8",
+        "0xa",
+        "0xc"
+      ],
+      [
+        "0x1",
+        "0x4",
+        "0x5",
+        "0x8",
+        "0xa",
+        "0xc"
+      ],
+      [
+        "0x1",
+        "0x5",
+        "0x8",
+        "0xa",
+        "0xc"
+      ],
+      [
+        "0x2",
+        "0x5",
+        "0xa",
+        "0xc"
+      ],
+      [
+        "0x2",
+        "0x5",
+        "0x8",
+        "0xa",
+        "0xc"
+      ]
+    ],
+    "carry_offset_anf_hex": [
+      [
+        "0x1",
+        "0x2",
+        "0x4",
+        "0xe",
+        "0xf"
+      ]
+    ],
+    "conditional_source_certificate": {
+      "status": "CONDITIONAL_FEATURE_SOURCE_NOT_NATIVE_QUADRATIC_RESTART",
+      "input_bits": 4,
+      "physical_feature_count": 6,
+      "output_dimension": 1,
+      "feature_function_space_rank": 5,
+      "nonlinear_feature_function_space_rank": 1,
+      "conditional_distinct_functions_per_output_row": "0x20",
+      "each_row_function_has_equal_fresh_label_multiplicity": "0x2",
+      "fresh_bit_law": "next(r)=carry(r) XOR H_fresh*physical_features(r)",
+      "features_and_carry_selected_before_fresh_labels_as_declared": true,
+      "conditional_source_identity_usable_as_declared": true,
+      "lineage_declaration_is_programmatically_proved": false,
+      "iid_uniform_fresh_label_matrix_independent_of_all_lower_data_required": true,
+      "linear_feature_recovery_proves_injectivity": true,
+      "linear_recovery_rows_hex": [
+        "0xa",
+        "0x22",
+        "0xc",
+        "0x30"
+      ],
+      "failure_to_find_linear_recovery_proves_noninjectivity": false,
+      "full_cube_uniform_input_mean_residue_chi_squared": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x10"
+      },
+      "histogram_moment_requires_full_cube_uniform_domain_and_prior_selection": true,
+      "fresh_label_bits_are_iid_random_ANF_coefficients": false,
+      "feature_resources": {
+        "description_size_monomials": 28,
+        "maximum_anf_degree": 2,
+        "compute_uncompute_toffoli_upper_bound": 72,
+        "compute_uncompute_cnot_upper_bound": 56,
+        "compute_uncompute_x_upper_bound": 0,
+        "reusable_clean_work_qubits_upper_bound": 2,
+        "physical_gate_backend_exported": false
+      },
+      "carry_resources": {
+        "description_size_monomials": 5,
+        "maximum_anf_degree": 4,
+        "compute_uncompute_toffoli_upper_bound": 20,
+        "compute_uncompute_cnot_upper_bound": 10,
+        "compute_uncompute_x_upper_bound": 0,
+        "reusable_clean_work_qubits_upper_bound": 4,
+        "physical_gate_backend_exported": false
+      },
+      "candidate_record_accepted": false,
+      "speedup_claim_allowed": false
+    },
+    "all_fresh_label_bit_tables": 64,
+    "distinct_next_bit_functions": 32,
+    "each_next_bit_function_source_multiplicity": 2,
+    "all_source_Hamming_weight_histogram": {
+      "1": 2,
+      "5": 8,
+      "7": 28,
+      "9": 22,
+      "11": 4
+    },
+    "exact_mean_next_bit_histogram_chi_squared": {
+      "sign": 1,
+      "numerator_hex": "0x1",
+      "denominator_hex": "0x10"
+    },
+    "all_fresh_functions_have_degree_four": true,
+    "degree_four_persists_without_adaptive_pivots": true,
+    "full_cube_top_coefficient_forces_odd_weight_and_unbalanced_functions": true,
+    "exact_one_bit_permutation_normalizer_possible_for_this_complete_domain": false,
+    "all_background_second_derivative_direction_pairs_per_source": 105,
+    "complete_source_direction_pairs_checked": 6720,
+    "fixed_direction_affine_gates": [
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x1",
+          "0x2"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          0
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          1
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x1",
+          "0x3"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          0
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          1
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x1",
+          "0x4"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          1
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          2
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x1",
+          "0x5"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          1
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          2
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x1",
+          "0x6"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          1
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          4
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x1",
+          "0x7"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          1
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          4
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x1",
+          "0x8"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          0
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          1
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x1",
+          "0x9"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          0
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          1
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x1",
+          "0xa"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          0
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          3
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x1",
+          "0xb"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          0
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          3
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x1",
+          "0xc"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          1
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          4
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x1",
+          "0xd"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          1
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          4
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x1",
+          "0xe"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          1
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          7
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x1",
+          "0xf"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          1
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          7
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x2",
+          "0x3"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          0
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          1
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x2",
+          "0x4"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          0
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          2
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x2",
+          "0x5"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          0
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          2
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x2",
+          "0x6"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          0
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          2
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x2",
+          "0x7"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          0
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          2
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x2",
+          "0x8"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          1
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          3
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x2",
+          "0x9"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          1
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          3
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x2",
+          "0xa"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          1
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          3
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x2",
+          "0xb"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          1
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          3
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x2",
+          "0xc"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          1
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          6
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x2",
+          "0xd"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          1
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          5
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x2",
+          "0xe"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          1
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          6
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x2",
+          "0xf"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          1
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          5
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x3",
+          "0x4"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          1
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          3
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x3",
+          "0x5"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          1
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          5
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x3",
+          "0x6"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          1
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          5
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x3",
+          "0x7"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          1
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          3
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x3",
+          "0x8"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          1
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          3
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x3",
+          "0x9"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          1
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          5
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x3",
+          "0xa"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          1
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          5
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x3",
+          "0xb"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          1
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          3
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x3",
+          "0xc"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          0
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          6
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x3",
+          "0xd"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          0
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          10
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x3",
+          "0xe"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          0
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          10
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x3",
+          "0xf"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          0
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          6
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x4",
+          "0x5"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          1
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          2
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x4",
+          "0x6"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          0
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          2
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x4",
+          "0x7"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          1
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          3
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x4",
+          "0x8"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          1
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          3
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x4",
+          "0x9"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          0
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          2
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x4",
+          "0xa"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          1
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          6
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x4",
+          "0xb"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          0
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          4
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x4",
+          "0xc"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          1
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          3
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x4",
+          "0xd"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          0
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          2
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x4",
+          "0xe"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          1
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          6
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x4",
+          "0xf"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          0
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          4
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x5",
+          "0x6"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          1
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          5
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x5",
+          "0x7"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          0
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          2
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x5",
+          "0x8"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          1
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          3
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x5",
+          "0x9"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          0
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          4
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x5",
+          "0xa"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          1
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          7
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x5",
+          "0xb"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          0
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          10
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x5",
+          "0xc"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          0
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          4
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x5",
+          "0xd"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          1
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          3
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x5",
+          "0xe"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          0
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          10
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x5",
+          "0xf"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          1
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          7
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x6",
+          "0x7"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          1
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          4
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x6",
+          "0x8"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          0
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          6
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x6",
+          "0x9"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          1
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          7
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x6",
+          "0xa"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          0
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          6
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x6",
+          "0xb"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          1
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          7
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x6",
+          "0xc"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          0
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          6
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x6",
+          "0xd"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          1
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          7
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x6",
+          "0xe"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          0
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          6
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x6",
+          "0xf"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          1
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          7
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x7",
+          "0x8"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          0
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          4
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x7",
+          "0x9"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          1
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          10
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x7",
+          "0xa"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          0
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          6
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x7",
+          "0xb"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          1
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          7
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x7",
+          "0xc"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          1
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          7
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x7",
+          "0xd"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          0
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          6
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x7",
+          "0xe"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          1
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          10
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x7",
+          "0xf"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          0
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          4
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x8",
+          "0x9"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          0
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          1
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x8",
+          "0xa"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          1
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          3
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x8",
+          "0xb"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          1
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          3
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x8",
+          "0xc"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          1
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          3
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x8",
+          "0xd"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          1
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          3
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x8",
+          "0xe"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          0
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          6
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x8",
+          "0xf"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          0
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          4
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x9",
+          "0xa"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          1
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          5
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x9",
+          "0xb"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          1
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          3
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x9",
+          "0xc"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          0
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          4
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x9",
+          "0xd"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          0
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          2
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x9",
+          "0xe"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          1
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          10
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0x9",
+          "0xf"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          1
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          7
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0xa",
+          "0xb"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          0
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          3
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0xa",
+          "0xc"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          0
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          6
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0xa",
+          "0xd"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          0
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          6
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0xa",
+          "0xe"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          1
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          6
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0xa",
+          "0xf"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          1
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          7
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0xb",
+          "0xc"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          1
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          7
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0xb",
+          "0xd"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          1
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          7
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0xb",
+          "0xe"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          0
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          10
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0xb",
+          "0xf"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          0
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          4
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0xc",
+          "0xd"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          1
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          4
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0xc",
+          "0xe"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          1
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          6
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0xc",
+          "0xf"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          0
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          6
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0xd",
+          "0xe"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          0
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          10
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0xd",
+          "0xf"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          1
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          5
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      },
+      {
+        "status": "EXACT_FIXED_DIRECTION_FRESH_BIT_AFFINENESS_GATE",
+        "directions_hex": [
+          "0xe",
+          "0xf"
+        ],
+        "all_backgrounds_and_all_retained_assignments_required": true,
+        "fresh_label_constraint_ranks": [
+          1
+        ],
+        "source_constraints_consistent": false,
+        "exact_fixed_direction_affine_source_mass": {
+          "sign": 0,
+          "numerator_hex": "0x0",
+          "denominator_hex": "0x1"
+        },
+        "source_universal_affine_on_these_directions": false,
+        "fresh_bit_source_mass_usable_as_declared": true,
+        "directions_features_and_offsets_must_precede_fresh_H": true,
+        "fresh_H_adaptive_direction_search_source_mass_covered": false,
+        "higher_layer_decoder_or_general_quantum_no_go": false,
+        "explicit_derivative_equations": [
+          7
+        ],
+        "translation_expansion_cap_per_polynomial": 100000,
+        "expansion_polynomial_at_unbounded_ANF_degree": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false
+      }
+    ],
+    "other_parameterizations_approximate_normalizers_or_general_algorithms_excluded": false
+  },
+  "constant_pivot_radical_controls": [
+    {
+      "status": "COMMON_ISOTROPIC_GLOBALLY_CONSTANT_PIVOT_NECESSITY",
+      "low_labels": [
+        [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "dimension": 1,
+      "logical_width": 5,
+      "common_binary_quadratic_radical_dimension": 1,
+      "radical_directions_hex": [
+        "0x1f"
+      ],
+      "n_independent_globally_constant_pivot_directions_not_excluded": true,
+      "necessary_condition_is_a_rank_or_decoder_sufficiency_proof": false,
+      "requires_isotropic_U_and_constant_pivot_coefficients_on_every_complement": true,
+      "connected_fundamental_graph_bounds_common_radical_by_one": true,
+      "adaptive_pivots_or_nonisotropic_constructions_ruled_out": false,
+      "fixed_but_background_varying_nonsingular_pivot_pencils_ruled_out": false,
+      "candidate_record_accepted": false,
+      "speedup_claim_allowed": false
+    },
+    {
+      "status": "COMMON_ISOTROPIC_GLOBALLY_CONSTANT_PIVOT_NECESSITY",
+      "low_labels": [
+        [
+          1,
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "dimension": 2,
+      "logical_width": 4,
+      "common_binary_quadratic_radical_dimension": 0,
+      "radical_directions_hex": [],
+      "n_independent_globally_constant_pivot_directions_not_excluded": false,
+      "necessary_condition_is_a_rank_or_decoder_sufficiency_proof": false,
+      "requires_isotropic_U_and_constant_pivot_coefficients_on_every_complement": true,
+      "connected_fundamental_graph_bounds_common_radical_by_one": true,
+      "adaptive_pivots_or_nonisotropic_constructions_ruled_out": false,
+      "fixed_but_background_varying_nonsingular_pivot_pencils_ruled_out": false,
+      "candidate_record_accepted": false,
+      "speedup_claim_allowed": false
+    },
+    {
+      "status": "COMMON_ISOTROPIC_GLOBALLY_CONSTANT_PIVOT_NECESSITY",
+      "low_labels": [
+        [
+          1,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "dimension": 2,
+      "logical_width": 5,
+      "common_binary_quadratic_radical_dimension": 1,
+      "radical_directions_hex": [
+        "0x1f"
+      ],
+      "n_independent_globally_constant_pivot_directions_not_excluded": false,
+      "necessary_condition_is_a_rank_or_decoder_sufficiency_proof": false,
+      "requires_isotropic_U_and_constant_pivot_coefficients_on_every_complement": true,
+      "connected_fundamental_graph_bounds_common_radical_by_one": true,
+      "adaptive_pivots_or_nonisotropic_constructions_ruled_out": false,
+      "fixed_but_background_varying_nonsingular_pivot_pencils_ruled_out": false,
+      "candidate_record_accepted": false,
+      "speedup_claim_allowed": false
+    }
+  ],
+  "fresh_H_adaptive_feature_countercontrol": {
+    "all_fresh_label_tables": [
+      {
+        "fresh_label_mask": 0,
+        "chosen_physical_direction": 1,
+        "feature_map_is_injective": true,
+        "output_values": [
+          0,
+          0
+        ]
+      },
+      {
+        "fresh_label_mask": 1,
+        "chosen_physical_direction": 2,
+        "feature_map_is_injective": true,
+        "output_values": [
+          0,
+          0
+        ]
+      },
+      {
+        "fresh_label_mask": 2,
+        "chosen_physical_direction": 1,
+        "feature_map_is_injective": true,
+        "output_values": [
+          0,
+          0
+        ]
+      },
+      {
+        "fresh_label_mask": 3,
+        "chosen_physical_direction": 3,
+        "feature_map_is_injective": true,
+        "output_values": [
+          0,
+          0
+        ]
+      }
+    ],
+    "actual_mean_histogram_chi_squared": {
+      "sign": 1,
+      "numerator_hex": "0x1",
+      "denominator_hex": "0x1"
+    },
+    "invalid_fixed_feature_injective_formula": {
+      "sign": 1,
+      "numerator_hex": "0x1",
+      "denominator_hex": "0x2"
+    },
+    "fresh_label_adaptive_feature_selection_falsifies_prior_selection_assumption": true,
+    "algorithm_candidate": false
+  },
+  "nonconstant_nonsingular_pivot_pencil_control": {
+    "status": "NATIVE_FIXED_LABEL_MATRIX_PENCIL_COUNTERCONTROL_NOT_SCALABLE_DECODER",
+    "low_labels": [
+      [
+        1,
+        0,
+        1,
+        0,
+        1
+      ],
+      [
+        0,
+        1,
+        0,
+        1,
+        1
+      ]
+    ],
+    "specific_labels": [
+      [
+        1,
+        0,
+        3,
+        2,
+        1
+      ],
+      [
+        0,
+        1,
+        2,
+        1,
+        1
+      ]
+    ],
+    "modulus": 8,
+    "logical_width": 3,
+    "isotropic_directions_hex": [
+      "0x1",
+      "0x2"
+    ],
+    "complement_directions_hex": [
+      "0x4"
+    ],
+    "pivot_matrix_rows_per_background": [
+      [
+        2,
+        3
+      ],
+      [
+        3,
+        1
+      ]
+    ],
+    "pivot_matrix_is_globally_constant": false,
+    "every_background_has_an_invertible_fixed_direction_pivot_matrix": true,
+    "common_binary_quadratic_radical_dimension": 0,
+    "whole_space_normalization_permutation": [
+      0,
+      2,
+      3,
+      1,
+      7,
+      4,
+      6,
+      5
+    ],
+    "all_middle_label_tables": 1024,
+    "number_of_good_backgrounds_source_histogram": {
+      "0": 384,
+      "1": 512,
+      "2": 128
+    },
+    "conditional_all_backgrounds_invertible_probability": {
+      "sign": 1,
+      "numerator_hex": "0x1",
+      "denominator_hex": "0x8"
+    },
+    "specified_systematic_low_label_source_probability": {
+      "sign": 1,
+      "numerator_hex": "0x1",
+      "denominator_hex": "0x40"
+    },
+    "structured_n_dimensional_low_signature_probability_expression": "2^(-n*(n+1))_for_R=[I_n|1]",
+    "selected_low_signature_is_a_polynomial_native_source_family": false,
+    "growing_modulus_or_dense_packet_extension_implemented": false,
+    "constant_matrix_radical_obstruction_is_a_general_fixed_pivot_no_go": false,
+    "abstract_nonsingular_pencil_prior_art": "https://arxiv.org/abs/1405.1575",
+    "candidate_record_accepted": false,
+    "speedup_claim_allowed": false
+  },
+  "pivot_pencil_coverage_controls": [
+    {
+      "status": "EXACT_SELECTED_BINARY_PIVOT_PENCIL_COVERAGE_NOT_DECODER_BOUND",
+      "constant_matrix_rows": [
+        1,
+        2
+      ],
+      "variation_generator_rows": [],
+      "dimension": 2,
+      "background_bits": 0,
+      "constant_matrix_rank": 2,
+      "background_matrix_image_rank": 0,
+      "individual_column_variation_ranks": [
+        0,
+        0
+      ],
+      "background_image_is_cartesian_product_of_column_spaces": true,
+      "all_columns_vary_and_separability_rules_out_every_constant_part": false,
+      "all_backgrounds_invertible_certified": true,
+      "exact_uniform_background_invertibility_fraction": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x1"
+      },
+      "singular_background_mask_hex": null,
+      "singular_matrix_nonzero_kernel_vector_hex": null,
+      "shortest_normalized_variation_cycle": null,
+      "backgrounds_enumerated_by_certificate": false,
+      "actual_native_chart_or_source_prevalence_proved_by_matrix_input": false,
+      "one_singular_background_proves_large_failure_mass": false,
+      "approximate_transport_or_general_algorithms_ruled_out": false,
+      "candidate_record_accepted": false,
+      "speedup_claim_allowed": false
+    },
+    {
+      "status": "EXACT_SELECTED_BINARY_PIVOT_PENCIL_COVERAGE_NOT_DECODER_BOUND",
+      "constant_matrix_rows": [
+        1,
+        2
+      ],
+      "variation_generator_rows": [
+        [
+          2,
+          0
+        ]
+      ],
+      "dimension": 2,
+      "background_bits": 1,
+      "constant_matrix_rank": 2,
+      "background_matrix_image_rank": 1,
+      "individual_column_variation_ranks": [
+        0,
+        1
+      ],
+      "background_image_is_cartesian_product_of_column_spaces": true,
+      "all_columns_vary_and_separability_rules_out_every_constant_part": false,
+      "all_backgrounds_invertible_certified": true,
+      "exact_uniform_background_invertibility_fraction": {
+        "sign": 1,
+        "numerator_hex": "0x1",
+        "denominator_hex": "0x1"
+      },
+      "singular_background_mask_hex": null,
+      "singular_matrix_nonzero_kernel_vector_hex": null,
+      "shortest_normalized_variation_cycle": null,
+      "backgrounds_enumerated_by_certificate": false,
+      "actual_native_chart_or_source_prevalence_proved_by_matrix_input": false,
+      "one_singular_background_proves_large_failure_mass": false,
+      "approximate_transport_or_general_algorithms_ruled_out": false,
+      "candidate_record_accepted": false,
+      "speedup_claim_allowed": false
+    },
+    {
+      "status": "EXACT_SELECTED_BINARY_PIVOT_PENCIL_COVERAGE_NOT_DECODER_BOUND",
+      "constant_matrix_rows": [
+        1,
+        2
+      ],
+      "variation_generator_rows": [
+        [
+          2,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "dimension": 2,
+      "background_bits": 2,
+      "constant_matrix_rank": 2,
+      "background_matrix_image_rank": 2,
+      "individual_column_variation_ranks": [
+        1,
+        1
+      ],
+      "background_image_is_cartesian_product_of_column_spaces": true,
+      "all_columns_vary_and_separability_rules_out_every_constant_part": true,
+      "all_backgrounds_invertible_certified": false,
+      "exact_uniform_background_invertibility_fraction": null,
+      "singular_background_mask_hex": "0x3",
+      "singular_matrix_nonzero_kernel_vector_hex": "0x3",
+      "shortest_normalized_variation_cycle": [
+        0,
+        1
+      ],
+      "backgrounds_enumerated_by_certificate": false,
+      "actual_native_chart_or_source_prevalence_proved_by_matrix_input": false,
+      "one_singular_background_proves_large_failure_mass": false,
+      "approximate_transport_or_general_algorithms_ruled_out": false,
+      "candidate_record_accepted": false,
+      "speedup_claim_allowed": false
+    },
+    {
+      "status": "EXACT_SELECTED_BINARY_PIVOT_PENCIL_COVERAGE_NOT_DECODER_BOUND",
+      "constant_matrix_rows": [
+        2,
+        3
+      ],
+      "variation_generator_rows": [
+        [
+          1,
+          2
+        ]
+      ],
+      "dimension": 2,
+      "background_bits": 1,
+      "constant_matrix_rank": 2,
+      "background_matrix_image_rank": 1,
+      "individual_column_variation_ranks": [
+        1,
+        1
+      ],
+      "background_image_is_cartesian_product_of_column_spaces": false,
+      "all_columns_vary_and_separability_rules_out_every_constant_part": false,
+      "all_backgrounds_invertible_certified": false,
+      "exact_uniform_background_invertibility_fraction": null,
+      "singular_background_mask_hex": null,
+      "singular_matrix_nonzero_kernel_vector_hex": null,
+      "shortest_normalized_variation_cycle": null,
+      "backgrounds_enumerated_by_certificate": false,
+      "actual_native_chart_or_source_prevalence_proved_by_matrix_input": false,
+      "one_singular_background_proves_large_failure_mass": false,
+      "approximate_transport_or_general_algorithms_ruled_out": false,
+      "candidate_record_accepted": false,
+      "speedup_claim_allowed": false
+    },
+    {
+      "status": "EXACT_SELECTED_BINARY_PIVOT_PENCIL_COVERAGE_NOT_DECODER_BOUND",
+      "constant_matrix_rows": [
+        1,
+        2
+      ],
+      "variation_generator_rows": [
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "dimension": 2,
+      "background_bits": 4,
+      "constant_matrix_rank": 2,
+      "background_matrix_image_rank": 4,
+      "individual_column_variation_ranks": [
+        2,
+        2
+      ],
+      "background_image_is_cartesian_product_of_column_spaces": true,
+      "all_columns_vary_and_separability_rules_out_every_constant_part": true,
+      "all_backgrounds_invertible_certified": false,
+      "exact_uniform_background_invertibility_fraction": {
+        "sign": 1,
+        "numerator_hex": "0x3",
+        "denominator_hex": "0x8"
+      },
+      "singular_background_mask_hex": "0x1",
+      "singular_matrix_nonzero_kernel_vector_hex": "0x1",
+      "shortest_normalized_variation_cycle": [
+        0
+      ],
+      "backgrounds_enumerated_by_certificate": false,
+      "actual_native_chart_or_source_prevalence_proved_by_matrix_input": false,
+      "one_singular_background_proves_large_failure_mass": false,
+      "approximate_transport_or_general_algorithms_ruled_out": false,
+      "candidate_record_accepted": false,
+      "speedup_claim_allowed": false
+    },
+    {
+      "status": "EXACT_SELECTED_BINARY_PIVOT_PENCIL_COVERAGE_NOT_DECODER_BOUND",
+      "constant_matrix_rows": [
+        1,
+        2,
+        4
+      ],
+      "variation_generator_rows": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ],
+        [
+          4,
+          0,
+          0
+        ]
+      ],
+      "dimension": 3,
+      "background_bits": 3,
+      "constant_matrix_rank": 3,
+      "background_matrix_image_rank": 3,
+      "individual_column_variation_ranks": [
+        1,
+        1,
+        1
+      ],
+      "background_image_is_cartesian_product_of_column_spaces": true,
+      "all_columns_vary_and_separability_rules_out_every_constant_part": true,
+      "all_backgrounds_invertible_certified": false,
+      "exact_uniform_background_invertibility_fraction": null,
+      "singular_background_mask_hex": "0x7",
+      "singular_matrix_nonzero_kernel_vector_hex": "0x7",
+      "shortest_normalized_variation_cycle": [
+        0,
+        1,
+        2
+      ],
+      "backgrounds_enumerated_by_certificate": false,
+      "actual_native_chart_or_source_prevalence_proved_by_matrix_input": false,
+      "one_singular_background_proves_large_failure_mass": false,
+      "approximate_transport_or_general_algorithms_ruled_out": false,
+      "candidate_record_accepted": false,
+      "speedup_claim_allowed": false
+    }
+  ],
+  "systematic_packet_pencil_profiles": [
+    {
+      "status": "EXACT_SELECTED_BINARY_PIVOT_PENCIL_COVERAGE_NOT_DECODER_BOUND",
+      "constant_matrix_rows": [
+        3,
+        3
+      ],
+      "variation_generator_rows": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "dimension": 2,
+      "background_bits": 13,
+      "constant_matrix_rank": 1,
+      "background_matrix_image_rank": 0,
+      "individual_column_variation_ranks": [
+        0,
+        0
+      ],
+      "background_image_is_cartesian_product_of_column_spaces": true,
+      "all_columns_vary_and_separability_rules_out_every_constant_part": false,
+      "all_backgrounds_invertible_certified": false,
+      "exact_uniform_background_invertibility_fraction": {
+        "sign": 0,
+        "numerator_hex": "0x0",
+        "denominator_hex": "0x1"
+      },
+      "singular_background_mask_hex": "0x0",
+      "singular_matrix_nonzero_kernel_vector_hex": "0x3",
+      "shortest_normalized_variation_cycle": null,
+      "backgrounds_enumerated_by_certificate": false,
+      "actual_native_chart_or_source_prevalence_proved_by_matrix_input": false,
+      "one_singular_background_proves_large_failure_mass": false,
+      "approximate_transport_or_general_algorithms_ruled_out": false,
+      "candidate_record_accepted": false,
+      "speedup_claim_allowed": false,
+      "actual_packet_first_residue_plane_pencil_extracted": true,
+      "logical_width": 32,
+      "isotropic_width": 19,
+      "isotropic_directions_hex": [
+        "0x1",
+        "0x2",
+        "0x4",
+        "0x18",
+        "0x40",
+        "0x80",
+        "0x320",
+        "0x1800",
+        "0x6000",
+        "0x8400",
+        "0x60000",
+        "0x110000",
+        "0x400000",
+        "0x880000",
+        "0x1200000",
+        "0x4000000",
+        "0xa000000",
+        "0x50000000",
+        "0xa0000000"
+      ],
+      "complement_directions_hex": [
+        "0x8",
+        "0x20",
+        "0x100",
+        "0x400",
+        "0x800",
+        "0x2000",
+        "0x10000",
+        "0x20000",
+        "0x80000",
+        "0x200000",
+        "0x2000000",
+        "0x10000000",
+        "0x20000000"
+      ],
+      "pivot_indices": [
+        0,
+        1
+      ],
+      "actual_native_selection_prevalence_and_iteration_success_verified": false,
+      "labels": [
+        [
+          179,
+          54,
+          310,
+          402,
+          281,
+          195,
+          129,
+          487,
+          148,
+          402,
+          368,
+          213,
+          219,
+          96,
+          254,
+          183,
+          273,
+          407,
+          267,
+          194,
+          158,
+          253,
+          75,
+          151,
+          430,
+          437,
+          225,
+          378,
+          62,
+          234,
+          285,
+          396,
+          377,
+          260
+        ],
+        [
+          286,
+          335,
+          22,
+          18,
+          341,
+          191,
+          129,
+          297,
+          440,
+          120,
+          223,
+          134,
+          364,
+          297,
+          455,
+          383,
+          31,
+          214,
+          57,
+          325,
+          313,
+          342,
+          409,
+          453,
+          480,
+          302,
+          403,
+          209,
+          322,
+          435,
+          52,
+          61,
+          440,
+          299
+        ]
+      ],
+      "modulus": 512,
+      "source": "fixed_identity_binary_prefix_with_fair_systematic_tail_and_native_uniform_higher_labels",
+      "systematic_chart_profile_not_unconditional_source_success_experiment": true,
+      "physical_assignments_or_secret_states_enumerated": false,
+      "finite_profiles_prove_typical_large_n_source_behavior": false
+    },
+    {
+      "status": "EXACT_SELECTED_BINARY_PIVOT_PENCIL_COVERAGE_NOT_DECODER_BOUND",
+      "constant_matrix_rows": [
+        5,
+        1,
+        3
+      ],
+      "variation_generator_rows": [
+        [
+          3,
+          3,
+          0
+        ],
+        [
+          0,
+          3,
+          0
+        ],
+        [
+          0,
+          0,
+          5
+        ],
+        [
+          5,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          1,
+          0
+        ],
+        [
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          1
+        ]
+      ],
+      "dimension": 3,
+      "background_bits": 29,
+      "constant_matrix_rank": 3,
+      "background_matrix_image_rank": 7,
+      "individual_column_variation_ranks": [
+        3,
+        2,
+        2
+      ],
+      "background_image_is_cartesian_product_of_column_spaces": true,
+      "all_columns_vary_and_separability_rules_out_every_constant_part": true,
+      "all_backgrounds_invertible_certified": false,
+      "exact_uniform_background_invertibility_fraction": null,
+      "singular_background_mask_hex": "0x4000000",
+      "singular_matrix_nonzero_kernel_vector_hex": "0x3",
+      "shortest_normalized_variation_cycle": [
+        0
+      ],
+      "backgrounds_enumerated_by_certificate": false,
+      "actual_native_chart_or_source_prevalence_proved_by_matrix_input": false,
+      "one_singular_background_proves_large_failure_mass": false,
+      "approximate_transport_or_general_algorithms_ruled_out": false,
+      "candidate_record_accepted": false,
+      "speedup_claim_allowed": false,
+      "actual_packet_first_residue_plane_pencil_extracted": true,
+      "logical_width": 52,
+      "isotropic_width": 23,
+      "isotropic_directions_hex": [
+        "0x1",
+        "0xe",
+        "0xb0",
+        "0x600",
+        "0x840",
+        "0x2000",
+        "0xc100",
+        "0x11000",
+        "0x160000",
+        "0x600000",
+        "0x3080000",
+        "0xc000000",
+        "0x40000000",
+        "0x80800000",
+        "0x330000000",
+        "0xc00000000",
+        "0xa000000000",
+        "0x25000000000",
+        "0x90000000000",
+        "0x600000000000",
+        "0x1840000000000",
+        "0x2100000000000",
+        "0x4000000000000"
+      ],
+      "complement_directions_hex": [
+        "0x2",
+        "0x4",
+        "0x10",
+        "0x20",
+        "0x40",
+        "0x100",
+        "0x200",
+        "0x1000",
+        "0x4000",
+        "0x20000",
+        "0x40000",
+        "0x80000",
+        "0x200000",
+        "0x800000",
+        "0x1000000",
+        "0x4000000",
+        "0x10000000",
+        "0x20000000",
+        "0x100000000",
+        "0x400000000",
+        "0x1000000000",
+        "0x2000000000",
+        "0x4000000000",
+        "0x10000000000",
+        "0x40000000000",
+        "0x100000000000",
+        "0x200000000000",
+        "0x800000000000",
+        "0x8000000000000"
+      ],
+      "pivot_indices": [
+        0,
+        1,
+        2
+      ],
+      "actual_native_selection_prevalence_and_iteration_success_verified": false,
+      "labels": [
+        [
+          7575,
+          4928,
+          204,
+          2671,
+          2383,
+          5578,
+          4955,
+          5342,
+          5875,
+          6964,
+          4489,
+          3528,
+          3531,
+          4941,
+          7932,
+          6927,
+          8032,
+          2446,
+          3190,
+          1883,
+          6832,
+          3553,
+          1732,
+          2159,
+          484,
+          3622,
+          4477,
+          802,
+          3702,
+          953,
+          5993,
+          2093,
+          830,
+          4164,
+          6249,
+          7985,
+          2324,
+          2269,
+          4825,
+          4490,
+          1922,
+          5547,
+          414,
+          5516,
+          1367,
+          3428,
+          2898,
+          1929,
+          6179,
+          1695,
+          1686,
+          7946,
+          4713,
+          4414,
+          4283
+        ],
+        [
+          4944,
+          4065,
+          5782,
+          6303,
+          7507,
+          7575,
+          6314,
+          5424,
+          6676,
+          1831,
+          8076,
+          912,
+          7750,
+          280,
+          3427,
+          5737,
+          3318,
+          2587,
+          3563,
+          2111,
+          4110,
+          6605,
+          1035,
+          5485,
+          380,
+          6546,
+          6508,
+          4355,
+          6548,
+          2783,
+          579,
+          2463,
+          1077,
+          1376,
+          5738,
+          5454,
+          668,
+          5118,
+          5356,
+          8049,
+          1577,
+          5243,
+          3693,
+          7352,
+          4814,
+          7873,
+          4350,
+          3284,
+          2219,
+          1951,
+          1293,
+          7348,
+          7008,
+          3864,
+          6004
+        ],
+        [
+          8034,
+          3698,
+          217,
+          7681,
+          4890,
+          350,
+          4202,
+          6827,
+          4778,
+          1312,
+          5751,
+          2835,
+          4078,
+          1268,
+          7898,
+          2340,
+          2068,
+          450,
+          2011,
+          2354,
+          171,
+          7223,
+          1101,
+          2364,
+          5345,
+          6659,
+          4714,
+          5218,
+          3285,
+          2056,
+          5710,
+          4350,
+          2513,
+          3276,
+          5160,
+          4126,
+          5601,
+          7337,
+          2605,
+          6740,
+          1851,
+          5416,
+          4327,
+          1839,
+          1858,
+          6843,
+          3621,
+          6456,
+          7856,
+          1694,
+          334,
+          6751,
+          7506,
+          4564,
+          799
+        ]
+      ],
+      "modulus": 8192,
+      "source": "fixed_identity_binary_prefix_with_fair_systematic_tail_and_native_uniform_higher_labels",
+      "systematic_chart_profile_not_unconditional_source_success_experiment": true,
+      "physical_assignments_or_secret_states_enumerated": false,
+      "finite_profiles_prove_typical_large_n_source_behavior": false
+    },
+    {
+      "status": "EXACT_SELECTED_BINARY_PIVOT_PENCIL_COVERAGE_NOT_DECODER_BOUND",
+      "constant_matrix_rows": [
+        5,
+        10,
+        3,
+        0
+      ],
+      "variation_generator_rows": [
+        [
+          9,
+          0,
+          0,
+          9
+        ],
+        [
+          0,
+          5,
+          0,
+          0
+        ],
+        [
+          3,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          1,
+          0
+        ],
+        [
+          9,
+          0,
+          9,
+          9
+        ],
+        [
+          0,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          1,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          0,
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          0,
+          0,
+          0
+        ]
+      ],
+      "dimension": 4,
+      "background_bits": 48,
+      "constant_matrix_rank": 3,
+      "background_matrix_image_rank": 8,
+      "individual_column_variation_ranks": [
+        4,
+        1,
+        1,
+        2
+      ],
+      "background_image_is_cartesian_product_of_column_spaces": true,
+      "all_columns_vary_and_separability_rules_out_every_constant_part": true,
+      "all_backgrounds_invertible_certified": false,
+      "exact_uniform_background_invertibility_fraction": null,
+      "singular_background_mask_hex": "0x0",
+      "singular_matrix_nonzero_kernel_vector_hex": "0xf",
+      "shortest_normalized_variation_cycle": null,
+      "backgrounds_enumerated_by_certificate": false,
+      "actual_native_chart_or_source_prevalence_proved_by_matrix_input": false,
+      "one_singular_background_proves_large_failure_mass": false,
+      "approximate_transport_or_general_algorithms_ruled_out": false,
+      "candidate_record_accepted": false,
+      "speedup_claim_allowed": false,
+      "actual_packet_first_residue_plane_pencil_extracted": true,
+      "logical_width": 80,
+      "isotropic_width": 32,
+      "isotropic_directions_hex": [
+        "0x1",
+        "0x28",
+        "0x84",
+        "0x142",
+        "0x1c10",
+        "0x2000",
+        "0x1c200",
+        "0xc0000",
+        "0x200000",
+        "0x1120000",
+        "0x2c00000",
+        "0x10000000",
+        "0x68000000",
+        "0x80000000",
+        "0x504000000",
+        "0x4800000000",
+        "0x8000000000",
+        "0x23000000000",
+        "0x1c0000000000",
+        "0x610000000000",
+        "0x2000200000000",
+        "0x5000000000000",
+        "0x28800000000000",
+        "0x50000000000000",
+        "0x400000000000000",
+        "0x1a00000000000000",
+        "0xe180000000000000",
+        "0x170000000000000000",
+        "0x200000000000000000",
+        "0x1400000000000000000",
+        "0x6880000000000000000",
+        "0x58000000000000000000"
+      ],
+      "complement_directions_hex": [
+        "0x2",
+        "0x4",
+        "0x8",
+        "0x10",
+        "0x40",
+        "0x200",
+        "0x400",
+        "0x800",
+        "0x4000",
+        "0x8000",
+        "0x20000",
+        "0x40000",
+        "0x100000",
+        "0x400000",
+        "0x800000",
+        "0x4000000",
+        "0x8000000",
+        "0x20000000",
+        "0x100000000",
+        "0x200000000",
+        "0x800000000",
+        "0x1000000000",
+        "0x2000000000",
+        "0x10000000000",
+        "0x40000000000",
+        "0x80000000000",
+        "0x200000000000",
+        "0x800000000000",
+        "0x1000000000000",
+        "0x8000000000000",
+        "0x10000000000000",
+        "0x80000000000000",
+        "0x100000000000000",
+        "0x200000000000000",
+        "0x800000000000000",
+        "0x2000000000000000",
+        "0x4000000000000000",
+        "0x10000000000000000",
+        "0x20000000000000000",
+        "0x40000000000000000",
+        "0x80000000000000000",
+        "0x400000000000000000",
+        "0x800000000000000000",
+        "0x2000000000000000000",
+        "0x8000000000000000000",
+        "0x10000000000000000000",
+        "0x20000000000000000000",
+        "0x80000000000000000000"
+      ],
+      "pivot_indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "actual_native_selection_prevalence_and_iteration_success_verified": false,
+      "labels": [
+        [
+          75161,
+          79898,
+          90972,
+          7188,
+          96079,
+          82475,
+          4152,
+          65745,
+          41867,
+          59327,
+          107071,
+          121626,
+          97018,
+          115300,
+          34757,
+          84841,
+          22855,
+          23264,
+          47759,
+          63260,
+          153,
+          130394,
+          94126,
+          6356,
+          24472,
+          94004,
+          45679,
+          72983,
+          68302,
+          38322,
+          101911,
+          107087,
+          57346,
+          126571,
+          57574,
+          100544,
+          82339,
+          4676,
+          76954,
+          61916,
+          47693,
+          63767,
+          68682,
+          96638,
+          41474,
+          7032,
+          85405,
+          62473,
+          54614,
+          107547,
+          14903,
+          33316,
+          66835,
+          122294,
+          103581,
+          121455,
+          68455,
+          18105,
+          1355,
+          94845,
+          87816,
+          23705,
+          123558,
+          19713,
+          31210,
+          125045,
+          102576,
+          127896,
+          126363,
+          100559,
+          114808,
+          75532,
+          102220,
+          43304,
+          83144,
+          29959,
+          36680,
+          19913,
+          30082,
+          5700,
+          48149,
+          86201,
+          128685,
+          38045
+        ],
+        [
+          62158,
+          85343,
+          104214,
+          51654,
+          127319,
+          120022,
+          93093,
+          40770,
+          79492,
+          111552,
+          20700,
+          129183,
+          90760,
+          69337,
+          41081,
+          11878,
+          37009,
+          42216,
+          127084,
+          122635,
+          109826,
+          64402,
+          35213,
+          74315,
+          94573,
+          128170,
+          7966,
+          120739,
+          100271,
+          69393,
+          58534,
+          118715,
+          12008,
+          51058,
+          16813,
+          9514,
+          48180,
+          34052,
+          28642,
+          103871,
+          39908,
+          112861,
+          74613,
+          81522,
+          96391,
+          69373,
+          69081,
+          88953,
+          63116,
+          35937,
+          72640,
+          94522,
+          29248,
+          112816,
+          49774,
+          102489,
+          21722,
+          121243,
+          113714,
+          52821,
+          103096,
+          94092,
+          74944,
+          58940,
+          88266,
+          125786,
+          18721,
+          34622,
+          95284,
+          78355,
+          72639,
+          31044,
+          77908,
+          72006,
+          120013,
+          29940,
+          53851,
+          67039,
+          102765,
+          120327,
+          71540,
+          18367,
+          8999,
+          108984
+        ],
+        [
+          19428,
+          117728,
+          49005,
+          113174,
+          63227,
+          109940,
+          17640,
+          58980,
+          116323,
+          95494,
+          12887,
+          127516,
+          10801,
+          84343,
+          6522,
+          18874,
+          106779,
+          23304,
+          39271,
+          17660,
+          31440,
+          32782,
+          112244,
+          100882,
+          99754,
+          68620,
+          125250,
+          1133,
+          51044,
+          109325,
+          86585,
+          58472,
+          2600,
+          114262,
+          41598,
+          46806,
+          87456,
+          102290,
+          67521,
+          69251,
+          37023,
+          8471,
+          29693,
+          3756,
+          52115,
+          111208,
+          2708,
+          21123,
+          53523,
+          52309,
+          37850,
+          119961,
+          120100,
+          110730,
+          89460,
+          49687,
+          31513,
+          111372,
+          63113,
+          107383,
+          75218,
+          105816,
+          45372,
+          131037,
+          123885,
+          86024,
+          60924,
+          68317,
+          23460,
+          102379,
+          114312,
+          26920,
+          117261,
+          99622,
+          37927,
+          8971,
+          119481,
+          99864,
+          93949,
+          13791,
+          39519,
+          44447,
+          66754,
+          30828
+        ],
+        [
+          51808,
+          9360,
+          38392,
+          104857,
+          95227,
+          121075,
+          98324,
+          119218,
+          4120,
+          82702,
+          58557,
+          30284,
+          112332,
+          95809,
+          102598,
+          108778,
+          105338,
+          124756,
+          23765,
+          126446,
+          24786,
+          98293,
+          115320,
+          12182,
+          91255,
+          11634,
+          17380,
+          112224,
+          62728,
+          46196,
+          89362,
+          8425,
+          128554,
+          126460,
+          102791,
+          40694,
+          78906,
+          123123,
+          108848,
+          130139,
+          2012,
+          22234,
+          41041,
+          114678,
+          74497,
+          80054,
+          20863,
+          35557,
+          126236,
+          14322,
+          83791,
+          49559,
+          57571,
+          35941,
+          122777,
+          62708,
+          28348,
+          36067,
+          131040,
+          26319,
+          35965,
+          127704,
+          42036,
+          121409,
+          62623,
+          27469,
+          113978,
+          40079,
+          97665,
+          74383,
+          52135,
+          20453,
+          81069,
+          74624,
+          76037,
+          92306,
+          3349,
+          11611,
+          99660,
+          46408,
+          49761,
+          98715,
+          40637,
+          94378
+        ]
+      ],
+      "modulus": 131072,
+      "source": "fixed_identity_binary_prefix_with_fair_systematic_tail_and_native_uniform_higher_labels",
+      "systematic_chart_profile_not_unconditional_source_success_experiment": true,
+      "physical_assignments_or_secret_states_enumerated": false,
+      "finite_profiles_prove_typical_large_n_source_behavior": false
+    }
+  ],
+  "claim_gate": {
+    "fresh_carry_features_have_an_explicit_conditional_source_law": true,
+    "first_layer_quartic_failure_is_only_an_adaptive_pivot_artifact": false,
+    "fresh_label_bits_restore_a_native_quadratic_family": false,
+    "fixed_pivot_rank_condition_always_suffices": false,
+    "full_growing_modulus_decoder_implemented": false,
+    "candidate_record_accepted": false,
+    "speedup_claim_allowed": false,
+    "independent_theorem_review": false,
+    "novelty_claim": false
+  },
+  "dependency_sha256": {
+    "theorems/dcp_conditional_carry_features.py": "aa80e04ed54f1143ec2fac2b8083cd6e4cc93a055a1bf748f345d4af64de96fc",
+    "theorems/dcp_lowbit_fiber_normalizer.py": "10039d11f1981b07162aa1810c09011be122387b4bb0b72245f04fe847600f00",
+    "theorems/dcp_carry_packets.py": "c3d345cc0d123a86e29c976959471d645945e767f6d0ee1bc6bd79149a0322c6",
+    "theorems/dcp_boolean_phase_pullback.py": "add300c25590282caa92d08cdeace2bc293ac8d9e9df68c3e4bb013c13815b09"
+  }
+}

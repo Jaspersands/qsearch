@@ -1,0 +1,82 @@
+{
+  "status": "CURATED_PRIMARY_SOURCE_AUDIT_NOT_ACCEPTED_CANDIDATE",
+  "checked_on": "2026-10-05",
+  "records": [
+    {
+      "id": "ARXIV-1406.0981-v1",
+      "url": "https://arxiv.org/html/1406.0981",
+      "title": "On the quaternion l-isogeny path problem",
+      "evidence_read": "Primary HTML Sections2.4,3.1,4.1 and4.6; associated PDF available",
+      "mechanism": "Classical heuristic smooth-norm ideal-class representatives",
+      "problem_family": "Maximal definite quaternion orders over Q",
+      "reusable_abstraction": "Separate ideal-class transport from original-metric short-element guarantees",
+      "native_transfer_barrier": "Growing center degree, nonmaximal conductor order and native short-basis setup are not supplied; Section4.6 still uses maximal orders",
+      "native_growing_degree_short_element_solver_verified": false,
+      "all_KLPT_extensions_ruled_out": false
+    },
+    {
+      "id": "PJM-2019-UNIT-SIGNATURES",
+      "url": "https://msp.org/pjm/2019/298-2/pjm-v298-n2-p03-s.pdf",
+      "title": "Signature ranks of units in cyclotomic extensions of abelian number fields",
+      "evidence_read": "Section3, Proposition3 and following discussion; PDF page8, journal page291",
+      "mechanism": "Full circular-unit signature rank for real 2-power cyclotomic fields",
+      "problem_family": "Real cyclotomic unit signatures",
+      "proof_technique": "Published Weber/Hasse full-signature result, not the class-number-one conjecture",
+      "reusable_abstraction": "Full signatures imply totally positive units are squares; our local inference then classifies ambient integral Hamilton units up to central scaling",
+      "associated_local_inference": "Only the zero graph ratio is principal over O_q=R+qRj",
+      "local_inference_independently_reviewed": false,
+      "efficient_quaternion_generator_obtained": false
+    },
+    {
+      "id": "EPRINT-2025-287",
+      "url": "https://eprint.iacr.org/2025/287",
+      "title": "A reduction from Hawk to the principal ideal problem in a quaternion algebra",
+      "publication_status": "EUROCRYPT_2025_MINOR_REVISION",
+      "evidence_read": "Current primary abstract and metadata; NOT the merged current full proof. Earlier full 2024/1147 PDF read separately.",
+      "mechanism": "Rank-two module-LIP encoded in a quaternion principal-ideal variant",
+      "problem_family": "CM rank-two module lattice isomorphism; Hawk special case",
+      "reduction": "Classical deterministic polynomial-time, nonuniform in general, uniform for Hawk",
+      "no_go_barrier": "No native random graph-kernel short-element solver or efficient quaternion generator supplied by the reduction alone",
+      "proof_technique": "Quaternionic representation of rank-two metric and ideal structure",
+      "open_question": "Efficient generator algorithm with the actual norm promise and native metric transfer",
+      "reusable_abstraction": "Separate ideal construction, norm promise, generator algorithm and geometric output",
+      "native_RLWE_SVP_reduction_verified": false,
+      "current_full_proof_independently_reviewed": false
+    },
+    {
+      "id": "EPRINT-2024-1147",
+      "url": "https://eprint.iacr.org/2024/1147.pdf",
+      "evidence_read": "Earlier full PDF, before merger into 2025/287; later refresh returned 403",
+      "version_scope": "Earlier text, not interchangeable with the merged paper",
+      "mechanism": "Norm-reduced quaternion principal-ideal reduction for rank-two module-LIP",
+      "no_go_barrier": "Number-field units or principal ideals do not automatically solve quaternion short-generator search",
+      "reusable_abstraction": "Preserve the metric and integral presentation, including possible half-integral CM-to-real coordinates",
+      "efficient_quaternion_generator_obtained": false
+    },
+    {
+      "id": "EPRINT-2025-1095",
+      "url": "https://eprint.iacr.org/2025/1095",
+      "title": "Ideally HAWKward: How Not to Break Module-LIP",
+      "evidence_read": "Full seven-page PDF read during this pass; endpoint now returns 403 on refresh",
+      "mechanism": "Audit of ideal and quaternion-generator attack costs",
+      "no_go_barrier": "Large ideal/four-square enumeration and unresolved generator discovery are not efficient algorithms",
+      "proof_technique": "Algorithm-cost critique and parameter-qualified enumeration estimates",
+      "open_question": "A genuinely efficient generator primitive, not more ideal enumeration",
+      "reusable_abstraction": "Known ideal presentation is not a known short generator",
+      "cryptographic_hardness_theorem_claimed_here": false,
+      "all_quaternion_methods_ruled_out": false
+    }
+  ],
+  "associated_local_artifacts": [
+    "research/NATIVE_RLWE_QUATERNION_KERNEL_AUDIT.md",
+    "research/reductions/native_rlwe_quaternion_kernel.json",
+    "research/hypotheses/native_rlwe_quaternion_kernel_contract.json",
+    "research/NATIVE_RLWE_CONDUCTOR_ORDER_AUDIT.md",
+    "research/reductions/native_rlwe_conductor_order.json",
+    "research/NATIVE_RLWE_IDEAL_CLASS_ORBIT_AUDIT.md",
+    "research/reductions/native_rlwe_ideal_class_orbits.json"
+  ],
+  "candidate_record_accepted": false,
+  "speedup_claim_allowed": false,
+  "novelty_claim": false
+}

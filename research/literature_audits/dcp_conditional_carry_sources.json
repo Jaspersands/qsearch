@@ -1,0 +1,70 @@
+{
+  "status": "CURATED_SOURCE_AUDIT_NOT_ACTIVE_HYPOTHESIS_SEEDS",
+  "checked_on": "2026-10-04",
+  "active_pipeline_integration": "Gemini: preserve version/withdrawal status and prevent withdrawn advantage claims becoming supporting proof evidence.",
+  "records": [
+    {
+      "id": "ARXIV-2411.14697-v2-WITHDRAWN",
+      "title": "Quantum Advantage via Solving Multivariate Quadratics",
+      "url": "https://arxiv.org/abs/2411.14697",
+      "publication_status": "WITHDRAWN",
+      "evidence_read": "Author arXiv version2 withdrawal comment, not a reconstruction of the classical attack.",
+      "mechanism": "Proposed specified quadratic systems as a replacement for a random oracle in quantum-advantage constructions.",
+      "problem_family": "Specified underdetermined binary quadratic systems, not arbitrary MQ or native DCP carry quotients.",
+      "reduction": "The earlier abstract connects the proposal to Yamakawa-Zhandry; this audit does not verify that construction.",
+      "no_go_barrier": "Authors withdrew after being informed of a classical attack. The advertised classical-hardness separation cannot support a project speedup claim.",
+      "proof_technique": "Not audited: withdrawal does not imply the quantum algorithm's proofs are false.",
+      "open_question": "Determine the actual attack and which source structures made the proposed separation vulnerable, before borrowing its abstractions.",
+      "reusable_abstraction": "Keep algorithm correctness, classical hardness, source distribution, version status and novelty as separate obligations.",
+      "quantum_advantage_supporting_evidence_allowed": false,
+      "candidate_record_accepted": false
+    },
+    {
+      "id": "ARXIV-1507.03674-v1",
+      "title": "Algorithm for Solving Massively Underdefined Systems of Multivariate Quadratic Equations over Finite Fields",
+      "url": "https://arxiv.org/abs/1507.03674",
+      "publication_status": "PREPRINT_SOURCE_CHECKED",
+      "evidence_read": "Abstract only; theorem assumptions and full implementation have not been independently audited.",
+      "mechanism": "Classical underdetermined MQ reduction using finite-field square roots and guess-and-determine.",
+      "problem_family": "Quadratic systems over finite fields in a strongly underdetermined regime.",
+      "reduction": "Author-claimed characteristic-two polynomial regime has at least m(m+1)/2 variables for m equations; do not transfer it to higher-degree carry graphs.",
+      "no_go_barrier": "Polynomial first-layer MQ solution is already a classical baseline; higher quotients need not remain quadratic.",
+      "proof_technique": "Author-described square-root reduction; full proof review remains outstanding.",
+      "open_question": "Can an explicitly source-correct higher-carry representation admit a comparable classical reduction without silently changing its degree or domain?",
+      "reusable_abstraction": "Record equations, variables, field characteristic, algebraic degree, solution distribution and inverse/ranking requirements separately.",
+      "transfer_to_native_growing_modulus_decoder_proved": false
+    },
+    {
+      "id": "ARXIV-1405.1575",
+      "title": "Primitive spaces of matrices with upper rank two over the field with two elements",
+      "url": "https://arxiv.org/abs/1405.1575",
+      "publication_status": "PRIMARY_SOURCE_CHECKED",
+      "evidence_read": "Sections5.2 and5.3, especially the irreducible two-dimensional companion-matrix example and binary affine nonsingular spaces.",
+      "mechanism": "Nonsingular affine matrix pencils from trivial-spectrum matrix spaces over F2.",
+      "problem_family": "Binary matrix-space geometry; possible low-bit fiber pivot blocks, not a DCP algorithm.",
+      "reduction": "For invertible M0, test the translated pencil through M0^-1 times its variation space; nonsingularity is not equivalent to a constant matrix.",
+      "no_go_barrier": "An abstract nonsingular pencil does not prove its native-source prevalence, growing-q extension or carry-recursion closure.",
+      "proof_technique": "Classification of small binary matrix spaces and their trivial spectra.",
+      "open_question": "Can a constructible native low-label chart induce a useful nonsingular pencil without exponentially rare signatures or an inverse-degree explosion?",
+      "reusable_abstraction": "Separate constant-pivot radical obstructions, nonsingular varying pencils, source mass and complete decoder success.",
+      "native_scalable_application_proved": false
+    },
+    {
+      "id": "ARXIV-1102.2493",
+      "title": "Large affine spaces of non-singular matrices",
+      "url": "https://arxiv.org/abs/1102.2493",
+      "publication_status": "PRIMARY_ABSTRACT_CHECKED",
+      "evidence_read": "Abstract field-size qualification only; no full classification transfer.",
+      "mechanism": "Classification of maximal-dimensional affine nonsingular matrix spaces.",
+      "problem_family": "Fields with at least three elements in the stated classification.",
+      "reduction": "Background context for the dedicated binary-field source above.",
+      "no_go_barrier": "Do not import a field-size-qualified classification into F2 without a separate theorem.",
+      "proof_technique": "Trivial-spectrum matrix-space classification.",
+      "open_question": "Which field-size-specific hypotheses matter for the actual binary pivot source?",
+      "reusable_abstraction": "Treat field characteristic and field cardinality as independent theorem applicability checks.",
+      "classification_automatically_applies_to_F2": false
+    }
+  ],
+  "speedup_claim_allowed": false,
+  "novelty_claim": false
+}

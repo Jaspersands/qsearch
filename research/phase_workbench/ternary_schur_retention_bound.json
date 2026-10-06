@@ -1,0 +1,1739 @@
+{
+  "status": "NATIVE_ADAPTIVE_LINEAR_RETENTION_BOUND_VERIFIED_REVIEW_PENDING",
+  "sharp_disjoint_restriction_control": {
+    "distance_certificate": {
+      "native_low_rows": [
+        [
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "physical_kernel_basis": [
+        [
+          2,
+          1,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          1,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          1
+        ]
+      ],
+      "kernel_dimension": 3,
+      "minimum_distance": 2,
+      "minimum_weight_witness": [
+        2,
+        0,
+        0,
+        1
+      ],
+      "projective_weight_histogram": {
+        "2": 6,
+        "3": 4,
+        "4": 3
+      },
+      "projective_kernel_words_enumerated": 13,
+      "bounded_exhaustive_certificate_not_scalable_distance_algorithm": true
+    },
+    "restriction_admission": {
+      "odd_degree": 3,
+      "physical_frame_columns": [
+        [
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          2
+        ]
+      ],
+      "native_low_rows": [
+        [
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "power_dimension": 2,
+      "power_histories": [
+        {
+          "degree": 1,
+          "dimension": 2,
+          "candidate_products": 2
+        }
+      ],
+      "evaluated_through_degree": 1,
+      "higher_Schur_admission": true,
+      "mixed_failure_witness": null,
+      "projective_geometry": {
+        "physical_width": 4,
+        "frame_dimension": 2,
+        "zero_row_coordinates": [],
+        "classes": [
+          {
+            "representative": [
+              0,
+              1
+            ],
+            "signed_block_word": [
+              0,
+              0,
+              1,
+              2
+            ],
+            "support": [
+              2,
+              3
+            ]
+          },
+          {
+            "representative": [
+              1,
+              0
+            ],
+            "signed_block_word": [
+              1,
+              2,
+              0,
+              0
+            ],
+            "support": [
+              0,
+              1
+            ]
+          }
+        ],
+        "projective_length": 2,
+        "direct_odd_stabilization_bound": 3,
+        "known_coding_regularity_bound": 1
+      },
+      "signed_block_component_images": [
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "odd_power_saturated": true,
+      "all_odd_powers_admitted": true,
+      "disjoint_kernel_refinement": {
+        "certified": true,
+        "dimension": 2,
+        "signed_blocks": [
+          [
+            0,
+            0,
+            1,
+            2
+          ],
+          [
+            1,
+            2,
+            0,
+            0
+          ]
+        ],
+        "original_frame_contained": true,
+        "new_source_sampler_or_complete_receiver": false
+      },
+      "fixed_frame_reference_probability": {
+        "unconditional_admission_probability_denominator": "9",
+        "conditional_on_AW_zero_probability_denominator": "1",
+        "requires_frame_fixed_independently_of_uniform_low_A": true,
+        "invalid_after_source_adaptive_frame_selection": true,
+        "algorithm_for_finding_admitted_frame_supplied": false
+      },
+      "fixed_frame_probability_applicable_to_this_source_adaptive_kernel_frame": false,
+      "resources": {
+        "candidate_products_processed": 2,
+        "coordinatewise_products_upper_bound": 8,
+        "modular_elimination_entry_operations_upper_bound": 32,
+        "maximum_basis_vectors_stored_per_power": 4,
+        "full_basis_multisets_not_enumerated": "4",
+        "unknown_weighted_phase_queries": 0,
+        "quantum_instrument_or_decoder_supplied": false
+      },
+      "secret_decoder_or_generic_no_go": false
+    },
+    "retention_bound": {
+      "nonzero_physical_support": 4,
+      "required_odd_Schur_degree": 3,
+      "kernel_distance_lower_bound": 2,
+      "product_Singleton_power_used": 2,
+      "maximum_admitted_frame_dimension": 2,
+      "maximum_retained_support_fraction": {
+        "numerator": "1",
+        "denominator": "2"
+      },
+      "requires_certified_kernel_distance_and_all_mixed_admission": true,
+      "valid_for_source_adaptively_selected_linear_frames": true,
+      "requires_projective_saturation": false,
+      "distance_certified_by_this_arithmetic_ledger": false,
+      "nonlinear_or_arbitrary_quantum_receiver_no_go": false
+    },
+    "exact_source_distance_certificate_supplied": true,
+    "high_retention_claim_excluded_by_bound": false,
+    "full_phase_instrument_or_decoder_supplied": false
+  },
+  "full_kernel_retention_countercontrol": {
+    "distance_certificate": {
+      "native_low_rows": [
+        [
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "physical_kernel_basis": [
+        [
+          2,
+          1,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          1,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          1
+        ]
+      ],
+      "kernel_dimension": 3,
+      "minimum_distance": 2,
+      "minimum_weight_witness": [
+        2,
+        0,
+        0,
+        1
+      ],
+      "projective_weight_histogram": {
+        "2": 6,
+        "3": 4,
+        "4": 3
+      },
+      "projective_kernel_words_enumerated": 13,
+      "bounded_exhaustive_certificate_not_scalable_distance_algorithm": true
+    },
+    "restriction_admission": {
+      "odd_degree": 3,
+      "physical_frame_columns": [
+        [
+          2,
+          1,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          1,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          1
+        ]
+      ],
+      "native_low_rows": [
+        [
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "power_dimension": 4,
+      "power_histories": [
+        {
+          "degree": 1,
+          "dimension": 3,
+          "candidate_products": 3
+        },
+        {
+          "degree": 2,
+          "dimension": 4,
+          "candidate_products": 9
+        },
+        {
+          "degree": 3,
+          "dimension": 4,
+          "candidate_products": 12
+        }
+      ],
+      "evaluated_through_degree": 3,
+      "higher_Schur_admission": false,
+      "mixed_failure_witness": {
+        "basis_factor_indices": [
+          0,
+          0,
+          1
+        ],
+        "physical_product_word": [
+          2,
+          0,
+          0,
+          0
+        ],
+        "weighted_component_values_mod3": [
+          2
+        ]
+      },
+      "projective_geometry": {
+        "physical_width": 4,
+        "frame_dimension": 3,
+        "zero_row_coordinates": [],
+        "classes": [
+          {
+            "representative": [
+              0,
+              0,
+              1
+            ],
+            "signed_block_word": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "support": [
+              3
+            ]
+          },
+          {
+            "representative": [
+              0,
+              1,
+              0
+            ],
+            "signed_block_word": [
+              0,
+              0,
+              1,
+              0
+            ],
+            "support": [
+              2
+            ]
+          },
+          {
+            "representative": [
+              1,
+              0,
+              0
+            ],
+            "signed_block_word": [
+              0,
+              1,
+              0,
+              0
+            ],
+            "support": [
+              1
+            ]
+          },
+          {
+            "representative": [
+              1,
+              1,
+              1
+            ],
+            "signed_block_word": [
+              2,
+              0,
+              0,
+              0
+            ],
+            "support": [
+              0
+            ]
+          }
+        ],
+        "projective_length": 4,
+        "direct_odd_stabilization_bound": 5,
+        "known_coding_regularity_bound": 2
+      },
+      "signed_block_component_images": [
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ]
+      ],
+      "odd_power_saturated": true,
+      "all_odd_powers_admitted": false,
+      "disjoint_kernel_refinement": {
+        "certified": false,
+        "dimension": null,
+        "signed_blocks": null,
+        "original_frame_contained": false,
+        "new_source_sampler_or_complete_receiver": false
+      },
+      "fixed_frame_reference_probability": {
+        "unconditional_admission_probability_denominator": "81",
+        "conditional_on_AW_zero_probability_denominator": "3",
+        "requires_frame_fixed_independently_of_uniform_low_A": true,
+        "invalid_after_source_adaptive_frame_selection": true,
+        "algorithm_for_finding_admitted_frame_supplied": false
+      },
+      "fixed_frame_probability_applicable_to_this_source_adaptive_kernel_frame": false,
+      "resources": {
+        "candidate_products_processed": 24,
+        "coordinatewise_products_upper_bound": 96,
+        "modular_elimination_entry_operations_upper_bound": 384,
+        "maximum_basis_vectors_stored_per_power": 4,
+        "full_basis_multisets_not_enumerated": "10",
+        "unknown_weighted_phase_queries": 0,
+        "quantum_instrument_or_decoder_supplied": false
+      },
+      "secret_decoder_or_generic_no_go": false
+    },
+    "retention_bound": {
+      "nonzero_physical_support": 4,
+      "required_odd_Schur_degree": 3,
+      "kernel_distance_lower_bound": 2,
+      "product_Singleton_power_used": 2,
+      "maximum_admitted_frame_dimension": 2,
+      "maximum_retained_support_fraction": {
+        "numerator": "1",
+        "denominator": "2"
+      },
+      "requires_certified_kernel_distance_and_all_mixed_admission": true,
+      "valid_for_source_adaptively_selected_linear_frames": true,
+      "requires_projective_saturation": false,
+      "distance_certified_by_this_arithmetic_ledger": false,
+      "nonlinear_or_arbitrary_quantum_receiver_no_go": false
+    },
+    "exact_source_distance_certificate_supplied": true,
+    "high_retention_claim_excluded_by_bound": true,
+    "full_phase_instrument_or_decoder_supplied": false
+  },
+  "complete_IID_source_controls": [
+    {
+      "secret_dimension": 1,
+      "physical_width": 3,
+      "all_source_matrices_enumerated": 27,
+      "minimum_distance_histogram": {
+        "1": 19,
+        "2": 8
+      },
+      "distance_checks": [
+        {
+          "distance": 1,
+          "actual_failure_probability": {
+            "numerator": "0",
+            "denominator": "1"
+          },
+          "envelope": {
+            "secret_dimension": 1,
+            "physical_width": 3,
+            "kernel_distance_lower_bound": 1,
+            "projective_short_words": "0",
+            "each_projective_word_kernel_probability_denominator": "3",
+            "distance_failure_probability_upper_bound": {
+              "numerator": "0",
+              "denominator": "1"
+            },
+            "distance_success_probability_lower_bound": {
+              "numerator": "1",
+              "denominator": "1"
+            },
+            "IID_uniform_low_native_A_required": true,
+            "conditions_on_full_row_rank": false,
+            "simultaneous_for_all_source_adaptive_frames": true,
+            "certifies_this_particular_matrix": false,
+            "postselected_or_correlated_source_transfer_proved": false
+          }
+        },
+        {
+          "distance": 2,
+          "actual_failure_probability": {
+            "numerator": "19",
+            "denominator": "27"
+          },
+          "envelope": {
+            "secret_dimension": 1,
+            "physical_width": 3,
+            "kernel_distance_lower_bound": 2,
+            "projective_short_words": "3",
+            "each_projective_word_kernel_probability_denominator": "3",
+            "distance_failure_probability_upper_bound": {
+              "numerator": "1",
+              "denominator": "1"
+            },
+            "distance_success_probability_lower_bound": {
+              "numerator": "0",
+              "denominator": "1"
+            },
+            "IID_uniform_low_native_A_required": true,
+            "conditions_on_full_row_rank": false,
+            "simultaneous_for_all_source_adaptive_frames": true,
+            "certifies_this_particular_matrix": false,
+            "postselected_or_correlated_source_transfer_proved": false
+          }
+        },
+        {
+          "distance": 3,
+          "actual_failure_probability": {
+            "numerator": "1",
+            "denominator": "1"
+          },
+          "envelope": {
+            "secret_dimension": 1,
+            "physical_width": 3,
+            "kernel_distance_lower_bound": 3,
+            "projective_short_words": "9",
+            "each_projective_word_kernel_probability_denominator": "3",
+            "distance_failure_probability_upper_bound": {
+              "numerator": "1",
+              "denominator": "1"
+            },
+            "distance_success_probability_lower_bound": {
+              "numerator": "0",
+              "denominator": "1"
+            },
+            "IID_uniform_low_native_A_required": true,
+            "conditions_on_full_row_rank": false,
+            "simultaneous_for_all_source_adaptive_frames": true,
+            "certifies_this_particular_matrix": false,
+            "postselected_or_correlated_source_transfer_proved": false
+          }
+        }
+      ]
+    },
+    {
+      "secret_dimension": 2,
+      "physical_width": 3,
+      "all_source_matrices_enumerated": 729,
+      "minimum_distance_histogram": {
+        "1": 217,
+        "2": 320,
+        "3": 192
+      },
+      "distance_checks": [
+        {
+          "distance": 1,
+          "actual_failure_probability": {
+            "numerator": "0",
+            "denominator": "1"
+          },
+          "envelope": {
+            "secret_dimension": 2,
+            "physical_width": 3,
+            "kernel_distance_lower_bound": 1,
+            "projective_short_words": "0",
+            "each_projective_word_kernel_probability_denominator": "9",
+            "distance_failure_probability_upper_bound": {
+              "numerator": "0",
+              "denominator": "1"
+            },
+            "distance_success_probability_lower_bound": {
+              "numerator": "1",
+              "denominator": "1"
+            },
+            "IID_uniform_low_native_A_required": true,
+            "conditions_on_full_row_rank": false,
+            "simultaneous_for_all_source_adaptive_frames": true,
+            "certifies_this_particular_matrix": false,
+            "postselected_or_correlated_source_transfer_proved": false
+          }
+        },
+        {
+          "distance": 2,
+          "actual_failure_probability": {
+            "numerator": "217",
+            "denominator": "729"
+          },
+          "envelope": {
+            "secret_dimension": 2,
+            "physical_width": 3,
+            "kernel_distance_lower_bound": 2,
+            "projective_short_words": "3",
+            "each_projective_word_kernel_probability_denominator": "9",
+            "distance_failure_probability_upper_bound": {
+              "numerator": "1",
+              "denominator": "3"
+            },
+            "distance_success_probability_lower_bound": {
+              "numerator": "2",
+              "denominator": "3"
+            },
+            "IID_uniform_low_native_A_required": true,
+            "conditions_on_full_row_rank": false,
+            "simultaneous_for_all_source_adaptive_frames": true,
+            "certifies_this_particular_matrix": false,
+            "postselected_or_correlated_source_transfer_proved": false
+          }
+        },
+        {
+          "distance": 3,
+          "actual_failure_probability": {
+            "numerator": "179",
+            "denominator": "243"
+          },
+          "envelope": {
+            "secret_dimension": 2,
+            "physical_width": 3,
+            "kernel_distance_lower_bound": 3,
+            "projective_short_words": "9",
+            "each_projective_word_kernel_probability_denominator": "9",
+            "distance_failure_probability_upper_bound": {
+              "numerator": "1",
+              "denominator": "1"
+            },
+            "distance_success_probability_lower_bound": {
+              "numerator": "0",
+              "denominator": "1"
+            },
+            "IID_uniform_low_native_A_required": true,
+            "conditions_on_full_row_rank": false,
+            "simultaneous_for_all_source_adaptive_frames": true,
+            "certifies_this_particular_matrix": false,
+            "postselected_or_correlated_source_transfer_proved": false
+          }
+        }
+      ]
+    }
+  ],
+  "growing_source_retention_envelopes": [
+    {
+      "source_distance_envelope": {
+        "secret_dimension": 16,
+        "physical_width": 32,
+        "kernel_distance_lower_bound": 4,
+        "projective_short_words": "20864",
+        "each_projective_word_kernel_probability_denominator": "43046721",
+        "distance_failure_probability_upper_bound": {
+          "numerator": "20864",
+          "denominator": "43046721"
+        },
+        "distance_success_probability_lower_bound": {
+          "numerator": "43025857",
+          "denominator": "43046721"
+        },
+        "IID_uniform_low_native_A_required": true,
+        "conditions_on_full_row_rank": false,
+        "simultaneous_for_all_source_adaptive_frames": true,
+        "certifies_this_particular_matrix": false,
+        "postselected_or_correlated_source_transfer_proved": false
+      },
+      "required_failure_budget": {
+        "numerator": "1",
+        "denominator": "1000"
+      },
+      "simultaneous_adaptive_frame_retention_bound": {
+        "nonzero_physical_support": 32,
+        "required_odd_Schur_degree": 3,
+        "kernel_distance_lower_bound": 4,
+        "product_Singleton_power_used": 3,
+        "maximum_admitted_frame_dimension": 10,
+        "maximum_retained_support_fraction": {
+          "numerator": "5",
+          "denominator": "16"
+        },
+        "requires_certified_kernel_distance_and_all_mixed_admission": true,
+        "valid_for_source_adaptively_selected_linear_frames": true,
+        "requires_projective_saturation": false,
+        "distance_certified_by_this_arithmetic_ledger": false,
+        "nonlinear_or_arbitrary_quantum_receiver_no_go": false
+      },
+      "individual_matrix_distance_certificate_supplied": false,
+      "complete_algorithm_sample_complexity_bound": false
+    },
+    {
+      "source_distance_envelope": {
+        "secret_dimension": 16,
+        "physical_width": 32,
+        "kernel_distance_lower_bound": 4,
+        "projective_short_words": "20864",
+        "each_projective_word_kernel_probability_denominator": "43046721",
+        "distance_failure_probability_upper_bound": {
+          "numerator": "20864",
+          "denominator": "43046721"
+        },
+        "distance_success_probability_lower_bound": {
+          "numerator": "43025857",
+          "denominator": "43046721"
+        },
+        "IID_uniform_low_native_A_required": true,
+        "conditions_on_full_row_rank": false,
+        "simultaneous_for_all_source_adaptive_frames": true,
+        "certifies_this_particular_matrix": false,
+        "postselected_or_correlated_source_transfer_proved": false
+      },
+      "required_failure_budget": {
+        "numerator": "1",
+        "denominator": "1000"
+      },
+      "simultaneous_adaptive_frame_retention_bound": {
+        "nonzero_physical_support": 32,
+        "required_odd_Schur_degree": 9,
+        "kernel_distance_lower_bound": 4,
+        "product_Singleton_power_used": 4,
+        "maximum_admitted_frame_dimension": 8,
+        "maximum_retained_support_fraction": {
+          "numerator": "1",
+          "denominator": "4"
+        },
+        "requires_certified_kernel_distance_and_all_mixed_admission": true,
+        "valid_for_source_adaptively_selected_linear_frames": true,
+        "requires_projective_saturation": false,
+        "distance_certified_by_this_arithmetic_ledger": false,
+        "nonlinear_or_arbitrary_quantum_receiver_no_go": false
+      },
+      "individual_matrix_distance_certificate_supplied": false,
+      "complete_algorithm_sample_complexity_bound": false
+    },
+    {
+      "source_distance_envelope": {
+        "secret_dimension": 16,
+        "physical_width": 32,
+        "kernel_distance_lower_bound": 4,
+        "projective_short_words": "20864",
+        "each_projective_word_kernel_probability_denominator": "43046721",
+        "distance_failure_probability_upper_bound": {
+          "numerator": "20864",
+          "denominator": "43046721"
+        },
+        "distance_success_probability_lower_bound": {
+          "numerator": "43025857",
+          "denominator": "43046721"
+        },
+        "IID_uniform_low_native_A_required": true,
+        "conditions_on_full_row_rank": false,
+        "simultaneous_for_all_source_adaptive_frames": true,
+        "certifies_this_particular_matrix": false,
+        "postselected_or_correlated_source_transfer_proved": false
+      },
+      "required_failure_budget": {
+        "numerator": "1",
+        "denominator": "1000"
+      },
+      "simultaneous_adaptive_frame_retention_bound": {
+        "nonzero_physical_support": 32,
+        "required_odd_Schur_degree": 19,
+        "kernel_distance_lower_bound": 4,
+        "product_Singleton_power_used": 4,
+        "maximum_admitted_frame_dimension": 8,
+        "maximum_retained_support_fraction": {
+          "numerator": "1",
+          "denominator": "4"
+        },
+        "requires_certified_kernel_distance_and_all_mixed_admission": true,
+        "valid_for_source_adaptively_selected_linear_frames": true,
+        "requires_projective_saturation": false,
+        "distance_certified_by_this_arithmetic_ledger": false,
+        "nonlinear_or_arbitrary_quantum_receiver_no_go": false
+      },
+      "individual_matrix_distance_certificate_supplied": false,
+      "complete_algorithm_sample_complexity_bound": false
+    },
+    {
+      "source_distance_envelope": {
+        "secret_dimension": 16,
+        "physical_width": 32,
+        "kernel_distance_lower_bound": 4,
+        "projective_short_words": "20864",
+        "each_projective_word_kernel_probability_denominator": "43046721",
+        "distance_failure_probability_upper_bound": {
+          "numerator": "20864",
+          "denominator": "43046721"
+        },
+        "distance_success_probability_lower_bound": {
+          "numerator": "43025857",
+          "denominator": "43046721"
+        },
+        "IID_uniform_low_native_A_required": true,
+        "conditions_on_full_row_rank": false,
+        "simultaneous_for_all_source_adaptive_frames": true,
+        "certifies_this_particular_matrix": false,
+        "postselected_or_correlated_source_transfer_proved": false
+      },
+      "required_failure_budget": {
+        "numerator": "1",
+        "denominator": "1000"
+      },
+      "simultaneous_adaptive_frame_retention_bound": {
+        "nonzero_physical_support": 32,
+        "required_odd_Schur_degree": 39,
+        "kernel_distance_lower_bound": 4,
+        "product_Singleton_power_used": 4,
+        "maximum_admitted_frame_dimension": 8,
+        "maximum_retained_support_fraction": {
+          "numerator": "1",
+          "denominator": "4"
+        },
+        "requires_certified_kernel_distance_and_all_mixed_admission": true,
+        "valid_for_source_adaptively_selected_linear_frames": true,
+        "requires_projective_saturation": false,
+        "distance_certified_by_this_arithmetic_ledger": false,
+        "nonlinear_or_arbitrary_quantum_receiver_no_go": false
+      },
+      "individual_matrix_distance_certificate_supplied": false,
+      "complete_algorithm_sample_complexity_bound": false
+    },
+    {
+      "source_distance_envelope": {
+        "secret_dimension": 16,
+        "physical_width": 32,
+        "kernel_distance_lower_bound": 4,
+        "projective_short_words": "20864",
+        "each_projective_word_kernel_probability_denominator": "43046721",
+        "distance_failure_probability_upper_bound": {
+          "numerator": "20864",
+          "denominator": "43046721"
+        },
+        "distance_success_probability_lower_bound": {
+          "numerator": "43025857",
+          "denominator": "43046721"
+        },
+        "IID_uniform_low_native_A_required": true,
+        "conditions_on_full_row_rank": false,
+        "simultaneous_for_all_source_adaptive_frames": true,
+        "certifies_this_particular_matrix": false,
+        "postselected_or_correlated_source_transfer_proved": false
+      },
+      "required_failure_budget": {
+        "numerator": "1",
+        "denominator": "1000"
+      },
+      "simultaneous_adaptive_frame_retention_bound": {
+        "nonzero_physical_support": 32,
+        "required_odd_Schur_degree": 79,
+        "kernel_distance_lower_bound": 4,
+        "product_Singleton_power_used": 4,
+        "maximum_admitted_frame_dimension": 8,
+        "maximum_retained_support_fraction": {
+          "numerator": "1",
+          "denominator": "4"
+        },
+        "requires_certified_kernel_distance_and_all_mixed_admission": true,
+        "valid_for_source_adaptively_selected_linear_frames": true,
+        "requires_projective_saturation": false,
+        "distance_certified_by_this_arithmetic_ledger": false,
+        "nonlinear_or_arbitrary_quantum_receiver_no_go": false
+      },
+      "individual_matrix_distance_certificate_supplied": false,
+      "complete_algorithm_sample_complexity_bound": false
+    },
+    {
+      "source_distance_envelope": {
+        "secret_dimension": 32,
+        "physical_width": 64,
+        "kernel_distance_lower_bound": 9,
+        "projective_short_words": "608833429120",
+        "each_projective_word_kernel_probability_denominator": "1853020188851841",
+        "distance_failure_probability_upper_bound": {
+          "numerator": "608833429120",
+          "denominator": "1853020188851841"
+        },
+        "distance_success_probability_lower_bound": {
+          "numerator": "1852411355422721",
+          "denominator": "1853020188851841"
+        },
+        "IID_uniform_low_native_A_required": true,
+        "conditions_on_full_row_rank": false,
+        "simultaneous_for_all_source_adaptive_frames": true,
+        "certifies_this_particular_matrix": false,
+        "postselected_or_correlated_source_transfer_proved": false
+      },
+      "required_failure_budget": {
+        "numerator": "1",
+        "denominator": "1000"
+      },
+      "simultaneous_adaptive_frame_retention_bound": {
+        "nonzero_physical_support": 64,
+        "required_odd_Schur_degree": 3,
+        "kernel_distance_lower_bound": 9,
+        "product_Singleton_power_used": 3,
+        "maximum_admitted_frame_dimension": 19,
+        "maximum_retained_support_fraction": {
+          "numerator": "19",
+          "denominator": "64"
+        },
+        "requires_certified_kernel_distance_and_all_mixed_admission": true,
+        "valid_for_source_adaptively_selected_linear_frames": true,
+        "requires_projective_saturation": false,
+        "distance_certified_by_this_arithmetic_ledger": false,
+        "nonlinear_or_arbitrary_quantum_receiver_no_go": false
+      },
+      "individual_matrix_distance_certificate_supplied": false,
+      "complete_algorithm_sample_complexity_bound": false
+    },
+    {
+      "source_distance_envelope": {
+        "secret_dimension": 32,
+        "physical_width": 64,
+        "kernel_distance_lower_bound": 9,
+        "projective_short_words": "608833429120",
+        "each_projective_word_kernel_probability_denominator": "1853020188851841",
+        "distance_failure_probability_upper_bound": {
+          "numerator": "608833429120",
+          "denominator": "1853020188851841"
+        },
+        "distance_success_probability_lower_bound": {
+          "numerator": "1852411355422721",
+          "denominator": "1853020188851841"
+        },
+        "IID_uniform_low_native_A_required": true,
+        "conditions_on_full_row_rank": false,
+        "simultaneous_for_all_source_adaptive_frames": true,
+        "certifies_this_particular_matrix": false,
+        "postselected_or_correlated_source_transfer_proved": false
+      },
+      "required_failure_budget": {
+        "numerator": "1",
+        "denominator": "1000"
+      },
+      "simultaneous_adaptive_frame_retention_bound": {
+        "nonzero_physical_support": 64,
+        "required_odd_Schur_degree": 9,
+        "kernel_distance_lower_bound": 9,
+        "product_Singleton_power_used": 9,
+        "maximum_admitted_frame_dimension": 7,
+        "maximum_retained_support_fraction": {
+          "numerator": "7",
+          "denominator": "64"
+        },
+        "requires_certified_kernel_distance_and_all_mixed_admission": true,
+        "valid_for_source_adaptively_selected_linear_frames": true,
+        "requires_projective_saturation": false,
+        "distance_certified_by_this_arithmetic_ledger": false,
+        "nonlinear_or_arbitrary_quantum_receiver_no_go": false
+      },
+      "individual_matrix_distance_certificate_supplied": false,
+      "complete_algorithm_sample_complexity_bound": false
+    },
+    {
+      "source_distance_envelope": {
+        "secret_dimension": 32,
+        "physical_width": 64,
+        "kernel_distance_lower_bound": 9,
+        "projective_short_words": "608833429120",
+        "each_projective_word_kernel_probability_denominator": "1853020188851841",
+        "distance_failure_probability_upper_bound": {
+          "numerator": "608833429120",
+          "denominator": "1853020188851841"
+        },
+        "distance_success_probability_lower_bound": {
+          "numerator": "1852411355422721",
+          "denominator": "1853020188851841"
+        },
+        "IID_uniform_low_native_A_required": true,
+        "conditions_on_full_row_rank": false,
+        "simultaneous_for_all_source_adaptive_frames": true,
+        "certifies_this_particular_matrix": false,
+        "postselected_or_correlated_source_transfer_proved": false
+      },
+      "required_failure_budget": {
+        "numerator": "1",
+        "denominator": "1000"
+      },
+      "simultaneous_adaptive_frame_retention_bound": {
+        "nonzero_physical_support": 64,
+        "required_odd_Schur_degree": 19,
+        "kernel_distance_lower_bound": 9,
+        "product_Singleton_power_used": 9,
+        "maximum_admitted_frame_dimension": 7,
+        "maximum_retained_support_fraction": {
+          "numerator": "7",
+          "denominator": "64"
+        },
+        "requires_certified_kernel_distance_and_all_mixed_admission": true,
+        "valid_for_source_adaptively_selected_linear_frames": true,
+        "requires_projective_saturation": false,
+        "distance_certified_by_this_arithmetic_ledger": false,
+        "nonlinear_or_arbitrary_quantum_receiver_no_go": false
+      },
+      "individual_matrix_distance_certificate_supplied": false,
+      "complete_algorithm_sample_complexity_bound": false
+    },
+    {
+      "source_distance_envelope": {
+        "secret_dimension": 32,
+        "physical_width": 64,
+        "kernel_distance_lower_bound": 9,
+        "projective_short_words": "608833429120",
+        "each_projective_word_kernel_probability_denominator": "1853020188851841",
+        "distance_failure_probability_upper_bound": {
+          "numerator": "608833429120",
+          "denominator": "1853020188851841"
+        },
+        "distance_success_probability_lower_bound": {
+          "numerator": "1852411355422721",
+          "denominator": "1853020188851841"
+        },
+        "IID_uniform_low_native_A_required": true,
+        "conditions_on_full_row_rank": false,
+        "simultaneous_for_all_source_adaptive_frames": true,
+        "certifies_this_particular_matrix": false,
+        "postselected_or_correlated_source_transfer_proved": false
+      },
+      "required_failure_budget": {
+        "numerator": "1",
+        "denominator": "1000"
+      },
+      "simultaneous_adaptive_frame_retention_bound": {
+        "nonzero_physical_support": 64,
+        "required_odd_Schur_degree": 39,
+        "kernel_distance_lower_bound": 9,
+        "product_Singleton_power_used": 9,
+        "maximum_admitted_frame_dimension": 7,
+        "maximum_retained_support_fraction": {
+          "numerator": "7",
+          "denominator": "64"
+        },
+        "requires_certified_kernel_distance_and_all_mixed_admission": true,
+        "valid_for_source_adaptively_selected_linear_frames": true,
+        "requires_projective_saturation": false,
+        "distance_certified_by_this_arithmetic_ledger": false,
+        "nonlinear_or_arbitrary_quantum_receiver_no_go": false
+      },
+      "individual_matrix_distance_certificate_supplied": false,
+      "complete_algorithm_sample_complexity_bound": false
+    },
+    {
+      "source_distance_envelope": {
+        "secret_dimension": 32,
+        "physical_width": 64,
+        "kernel_distance_lower_bound": 9,
+        "projective_short_words": "608833429120",
+        "each_projective_word_kernel_probability_denominator": "1853020188851841",
+        "distance_failure_probability_upper_bound": {
+          "numerator": "608833429120",
+          "denominator": "1853020188851841"
+        },
+        "distance_success_probability_lower_bound": {
+          "numerator": "1852411355422721",
+          "denominator": "1853020188851841"
+        },
+        "IID_uniform_low_native_A_required": true,
+        "conditions_on_full_row_rank": false,
+        "simultaneous_for_all_source_adaptive_frames": true,
+        "certifies_this_particular_matrix": false,
+        "postselected_or_correlated_source_transfer_proved": false
+      },
+      "required_failure_budget": {
+        "numerator": "1",
+        "denominator": "1000"
+      },
+      "simultaneous_adaptive_frame_retention_bound": {
+        "nonzero_physical_support": 64,
+        "required_odd_Schur_degree": 79,
+        "kernel_distance_lower_bound": 9,
+        "product_Singleton_power_used": 9,
+        "maximum_admitted_frame_dimension": 7,
+        "maximum_retained_support_fraction": {
+          "numerator": "7",
+          "denominator": "64"
+        },
+        "requires_certified_kernel_distance_and_all_mixed_admission": true,
+        "valid_for_source_adaptively_selected_linear_frames": true,
+        "requires_projective_saturation": false,
+        "distance_certified_by_this_arithmetic_ledger": false,
+        "nonlinear_or_arbitrary_quantum_receiver_no_go": false
+      },
+      "individual_matrix_distance_certificate_supplied": false,
+      "complete_algorithm_sample_complexity_bound": false
+    },
+    {
+      "source_distance_envelope": {
+        "secret_dimension": 64,
+        "physical_width": 128,
+        "kernel_distance_lower_bound": 19,
+        "projective_short_words": "540655675295047729560108288",
+        "each_projective_word_kernel_probability_denominator": "3433683820292512484657849089281",
+        "distance_failure_probability_upper_bound": {
+          "numerator": "60072852810560858840012032",
+          "denominator": "381520424476945831628649898809"
+        },
+        "distance_success_probability_lower_bound": {
+          "numerator": "381460351624135270769809886777",
+          "denominator": "381520424476945831628649898809"
+        },
+        "IID_uniform_low_native_A_required": true,
+        "conditions_on_full_row_rank": false,
+        "simultaneous_for_all_source_adaptive_frames": true,
+        "certifies_this_particular_matrix": false,
+        "postselected_or_correlated_source_transfer_proved": false
+      },
+      "required_failure_budget": {
+        "numerator": "1",
+        "denominator": "1000"
+      },
+      "simultaneous_adaptive_frame_retention_bound": {
+        "nonzero_physical_support": 128,
+        "required_odd_Schur_degree": 3,
+        "kernel_distance_lower_bound": 19,
+        "product_Singleton_power_used": 3,
+        "maximum_admitted_frame_dimension": 37,
+        "maximum_retained_support_fraction": {
+          "numerator": "37",
+          "denominator": "128"
+        },
+        "requires_certified_kernel_distance_and_all_mixed_admission": true,
+        "valid_for_source_adaptively_selected_linear_frames": true,
+        "requires_projective_saturation": false,
+        "distance_certified_by_this_arithmetic_ledger": false,
+        "nonlinear_or_arbitrary_quantum_receiver_no_go": false
+      },
+      "individual_matrix_distance_certificate_supplied": false,
+      "complete_algorithm_sample_complexity_bound": false
+    },
+    {
+      "source_distance_envelope": {
+        "secret_dimension": 64,
+        "physical_width": 128,
+        "kernel_distance_lower_bound": 19,
+        "projective_short_words": "540655675295047729560108288",
+        "each_projective_word_kernel_probability_denominator": "3433683820292512484657849089281",
+        "distance_failure_probability_upper_bound": {
+          "numerator": "60072852810560858840012032",
+          "denominator": "381520424476945831628649898809"
+        },
+        "distance_success_probability_lower_bound": {
+          "numerator": "381460351624135270769809886777",
+          "denominator": "381520424476945831628649898809"
+        },
+        "IID_uniform_low_native_A_required": true,
+        "conditions_on_full_row_rank": false,
+        "simultaneous_for_all_source_adaptive_frames": true,
+        "certifies_this_particular_matrix": false,
+        "postselected_or_correlated_source_transfer_proved": false
+      },
+      "required_failure_budget": {
+        "numerator": "1",
+        "denominator": "1000"
+      },
+      "simultaneous_adaptive_frame_retention_bound": {
+        "nonzero_physical_support": 128,
+        "required_odd_Schur_degree": 9,
+        "kernel_distance_lower_bound": 19,
+        "product_Singleton_power_used": 9,
+        "maximum_admitted_frame_dimension": 13,
+        "maximum_retained_support_fraction": {
+          "numerator": "13",
+          "denominator": "128"
+        },
+        "requires_certified_kernel_distance_and_all_mixed_admission": true,
+        "valid_for_source_adaptively_selected_linear_frames": true,
+        "requires_projective_saturation": false,
+        "distance_certified_by_this_arithmetic_ledger": false,
+        "nonlinear_or_arbitrary_quantum_receiver_no_go": false
+      },
+      "individual_matrix_distance_certificate_supplied": false,
+      "complete_algorithm_sample_complexity_bound": false
+    },
+    {
+      "source_distance_envelope": {
+        "secret_dimension": 64,
+        "physical_width": 128,
+        "kernel_distance_lower_bound": 19,
+        "projective_short_words": "540655675295047729560108288",
+        "each_projective_word_kernel_probability_denominator": "3433683820292512484657849089281",
+        "distance_failure_probability_upper_bound": {
+          "numerator": "60072852810560858840012032",
+          "denominator": "381520424476945831628649898809"
+        },
+        "distance_success_probability_lower_bound": {
+          "numerator": "381460351624135270769809886777",
+          "denominator": "381520424476945831628649898809"
+        },
+        "IID_uniform_low_native_A_required": true,
+        "conditions_on_full_row_rank": false,
+        "simultaneous_for_all_source_adaptive_frames": true,
+        "certifies_this_particular_matrix": false,
+        "postselected_or_correlated_source_transfer_proved": false
+      },
+      "required_failure_budget": {
+        "numerator": "1",
+        "denominator": "1000"
+      },
+      "simultaneous_adaptive_frame_retention_bound": {
+        "nonzero_physical_support": 128,
+        "required_odd_Schur_degree": 19,
+        "kernel_distance_lower_bound": 19,
+        "product_Singleton_power_used": 19,
+        "maximum_admitted_frame_dimension": 6,
+        "maximum_retained_support_fraction": {
+          "numerator": "3",
+          "denominator": "64"
+        },
+        "requires_certified_kernel_distance_and_all_mixed_admission": true,
+        "valid_for_source_adaptively_selected_linear_frames": true,
+        "requires_projective_saturation": false,
+        "distance_certified_by_this_arithmetic_ledger": false,
+        "nonlinear_or_arbitrary_quantum_receiver_no_go": false
+      },
+      "individual_matrix_distance_certificate_supplied": false,
+      "complete_algorithm_sample_complexity_bound": false
+    },
+    {
+      "source_distance_envelope": {
+        "secret_dimension": 64,
+        "physical_width": 128,
+        "kernel_distance_lower_bound": 19,
+        "projective_short_words": "540655675295047729560108288",
+        "each_projective_word_kernel_probability_denominator": "3433683820292512484657849089281",
+        "distance_failure_probability_upper_bound": {
+          "numerator": "60072852810560858840012032",
+          "denominator": "381520424476945831628649898809"
+        },
+        "distance_success_probability_lower_bound": {
+          "numerator": "381460351624135270769809886777",
+          "denominator": "381520424476945831628649898809"
+        },
+        "IID_uniform_low_native_A_required": true,
+        "conditions_on_full_row_rank": false,
+        "simultaneous_for_all_source_adaptive_frames": true,
+        "certifies_this_particular_matrix": false,
+        "postselected_or_correlated_source_transfer_proved": false
+      },
+      "required_failure_budget": {
+        "numerator": "1",
+        "denominator": "1000"
+      },
+      "simultaneous_adaptive_frame_retention_bound": {
+        "nonzero_physical_support": 128,
+        "required_odd_Schur_degree": 39,
+        "kernel_distance_lower_bound": 19,
+        "product_Singleton_power_used": 19,
+        "maximum_admitted_frame_dimension": 6,
+        "maximum_retained_support_fraction": {
+          "numerator": "3",
+          "denominator": "64"
+        },
+        "requires_certified_kernel_distance_and_all_mixed_admission": true,
+        "valid_for_source_adaptively_selected_linear_frames": true,
+        "requires_projective_saturation": false,
+        "distance_certified_by_this_arithmetic_ledger": false,
+        "nonlinear_or_arbitrary_quantum_receiver_no_go": false
+      },
+      "individual_matrix_distance_certificate_supplied": false,
+      "complete_algorithm_sample_complexity_bound": false
+    },
+    {
+      "source_distance_envelope": {
+        "secret_dimension": 64,
+        "physical_width": 128,
+        "kernel_distance_lower_bound": 19,
+        "projective_short_words": "540655675295047729560108288",
+        "each_projective_word_kernel_probability_denominator": "3433683820292512484657849089281",
+        "distance_failure_probability_upper_bound": {
+          "numerator": "60072852810560858840012032",
+          "denominator": "381520424476945831628649898809"
+        },
+        "distance_success_probability_lower_bound": {
+          "numerator": "381460351624135270769809886777",
+          "denominator": "381520424476945831628649898809"
+        },
+        "IID_uniform_low_native_A_required": true,
+        "conditions_on_full_row_rank": false,
+        "simultaneous_for_all_source_adaptive_frames": true,
+        "certifies_this_particular_matrix": false,
+        "postselected_or_correlated_source_transfer_proved": false
+      },
+      "required_failure_budget": {
+        "numerator": "1",
+        "denominator": "1000"
+      },
+      "simultaneous_adaptive_frame_retention_bound": {
+        "nonzero_physical_support": 128,
+        "required_odd_Schur_degree": 79,
+        "kernel_distance_lower_bound": 19,
+        "product_Singleton_power_used": 19,
+        "maximum_admitted_frame_dimension": 6,
+        "maximum_retained_support_fraction": {
+          "numerator": "3",
+          "denominator": "64"
+        },
+        "requires_certified_kernel_distance_and_all_mixed_admission": true,
+        "valid_for_source_adaptively_selected_linear_frames": true,
+        "requires_projective_saturation": false,
+        "distance_certified_by_this_arithmetic_ledger": false,
+        "nonlinear_or_arbitrary_quantum_receiver_no_go": false
+      },
+      "individual_matrix_distance_certificate_supplied": false,
+      "complete_algorithm_sample_complexity_bound": false
+    },
+    {
+      "source_distance_envelope": {
+        "secret_dimension": 128,
+        "physical_width": 256,
+        "kernel_distance_lower_bound": 40,
+        "projective_short_words": "5836793809776394736266593997274734521231297755652459887104",
+        "each_projective_word_kernel_probability_denominator": "11790184577738583171520872861412518665678211592275841109096961",
+        "distance_failure_probability_upper_bound": {
+          "numerator": "5836793809776394736266593997274734521231297755652459887104",
+          "denominator": "11790184577738583171520872861412518665678211592275841109096961"
+        },
+        "distance_success_probability_lower_bound": {
+          "numerator": "11784347783928806776784606267415243931156980294520188649209857",
+          "denominator": "11790184577738583171520872861412518665678211592275841109096961"
+        },
+        "IID_uniform_low_native_A_required": true,
+        "conditions_on_full_row_rank": false,
+        "simultaneous_for_all_source_adaptive_frames": true,
+        "certifies_this_particular_matrix": false,
+        "postselected_or_correlated_source_transfer_proved": false
+      },
+      "required_failure_budget": {
+        "numerator": "1",
+        "denominator": "1000"
+      },
+      "simultaneous_adaptive_frame_retention_bound": {
+        "nonzero_physical_support": 256,
+        "required_odd_Schur_degree": 3,
+        "kernel_distance_lower_bound": 40,
+        "product_Singleton_power_used": 3,
+        "maximum_admitted_frame_dimension": 73,
+        "maximum_retained_support_fraction": {
+          "numerator": "73",
+          "denominator": "256"
+        },
+        "requires_certified_kernel_distance_and_all_mixed_admission": true,
+        "valid_for_source_adaptively_selected_linear_frames": true,
+        "requires_projective_saturation": false,
+        "distance_certified_by_this_arithmetic_ledger": false,
+        "nonlinear_or_arbitrary_quantum_receiver_no_go": false
+      },
+      "individual_matrix_distance_certificate_supplied": false,
+      "complete_algorithm_sample_complexity_bound": false
+    },
+    {
+      "source_distance_envelope": {
+        "secret_dimension": 128,
+        "physical_width": 256,
+        "kernel_distance_lower_bound": 40,
+        "projective_short_words": "5836793809776394736266593997274734521231297755652459887104",
+        "each_projective_word_kernel_probability_denominator": "11790184577738583171520872861412518665678211592275841109096961",
+        "distance_failure_probability_upper_bound": {
+          "numerator": "5836793809776394736266593997274734521231297755652459887104",
+          "denominator": "11790184577738583171520872861412518665678211592275841109096961"
+        },
+        "distance_success_probability_lower_bound": {
+          "numerator": "11784347783928806776784606267415243931156980294520188649209857",
+          "denominator": "11790184577738583171520872861412518665678211592275841109096961"
+        },
+        "IID_uniform_low_native_A_required": true,
+        "conditions_on_full_row_rank": false,
+        "simultaneous_for_all_source_adaptive_frames": true,
+        "certifies_this_particular_matrix": false,
+        "postselected_or_correlated_source_transfer_proved": false
+      },
+      "required_failure_budget": {
+        "numerator": "1",
+        "denominator": "1000"
+      },
+      "simultaneous_adaptive_frame_retention_bound": {
+        "nonzero_physical_support": 256,
+        "required_odd_Schur_degree": 9,
+        "kernel_distance_lower_bound": 40,
+        "product_Singleton_power_used": 9,
+        "maximum_admitted_frame_dimension": 25,
+        "maximum_retained_support_fraction": {
+          "numerator": "25",
+          "denominator": "256"
+        },
+        "requires_certified_kernel_distance_and_all_mixed_admission": true,
+        "valid_for_source_adaptively_selected_linear_frames": true,
+        "requires_projective_saturation": false,
+        "distance_certified_by_this_arithmetic_ledger": false,
+        "nonlinear_or_arbitrary_quantum_receiver_no_go": false
+      },
+      "individual_matrix_distance_certificate_supplied": false,
+      "complete_algorithm_sample_complexity_bound": false
+    },
+    {
+      "source_distance_envelope": {
+        "secret_dimension": 128,
+        "physical_width": 256,
+        "kernel_distance_lower_bound": 40,
+        "projective_short_words": "5836793809776394736266593997274734521231297755652459887104",
+        "each_projective_word_kernel_probability_denominator": "11790184577738583171520872861412518665678211592275841109096961",
+        "distance_failure_probability_upper_bound": {
+          "numerator": "5836793809776394736266593997274734521231297755652459887104",
+          "denominator": "11790184577738583171520872861412518665678211592275841109096961"
+        },
+        "distance_success_probability_lower_bound": {
+          "numerator": "11784347783928806776784606267415243931156980294520188649209857",
+          "denominator": "11790184577738583171520872861412518665678211592275841109096961"
+        },
+        "IID_uniform_low_native_A_required": true,
+        "conditions_on_full_row_rank": false,
+        "simultaneous_for_all_source_adaptive_frames": true,
+        "certifies_this_particular_matrix": false,
+        "postselected_or_correlated_source_transfer_proved": false
+      },
+      "required_failure_budget": {
+        "numerator": "1",
+        "denominator": "1000"
+      },
+      "simultaneous_adaptive_frame_retention_bound": {
+        "nonzero_physical_support": 256,
+        "required_odd_Schur_degree": 19,
+        "kernel_distance_lower_bound": 40,
+        "product_Singleton_power_used": 19,
+        "maximum_admitted_frame_dimension": 12,
+        "maximum_retained_support_fraction": {
+          "numerator": "3",
+          "denominator": "64"
+        },
+        "requires_certified_kernel_distance_and_all_mixed_admission": true,
+        "valid_for_source_adaptively_selected_linear_frames": true,
+        "requires_projective_saturation": false,
+        "distance_certified_by_this_arithmetic_ledger": false,
+        "nonlinear_or_arbitrary_quantum_receiver_no_go": false
+      },
+      "individual_matrix_distance_certificate_supplied": false,
+      "complete_algorithm_sample_complexity_bound": false
+    },
+    {
+      "source_distance_envelope": {
+        "secret_dimension": 128,
+        "physical_width": 256,
+        "kernel_distance_lower_bound": 40,
+        "projective_short_words": "5836793809776394736266593997274734521231297755652459887104",
+        "each_projective_word_kernel_probability_denominator": "11790184577738583171520872861412518665678211592275841109096961",
+        "distance_failure_probability_upper_bound": {
+          "numerator": "5836793809776394736266593997274734521231297755652459887104",
+          "denominator": "11790184577738583171520872861412518665678211592275841109096961"
+        },
+        "distance_success_probability_lower_bound": {
+          "numerator": "11784347783928806776784606267415243931156980294520188649209857",
+          "denominator": "11790184577738583171520872861412518665678211592275841109096961"
+        },
+        "IID_uniform_low_native_A_required": true,
+        "conditions_on_full_row_rank": false,
+        "simultaneous_for_all_source_adaptive_frames": true,
+        "certifies_this_particular_matrix": false,
+        "postselected_or_correlated_source_transfer_proved": false
+      },
+      "required_failure_budget": {
+        "numerator": "1",
+        "denominator": "1000"
+      },
+      "simultaneous_adaptive_frame_retention_bound": {
+        "nonzero_physical_support": 256,
+        "required_odd_Schur_degree": 39,
+        "kernel_distance_lower_bound": 40,
+        "product_Singleton_power_used": 39,
+        "maximum_admitted_frame_dimension": 6,
+        "maximum_retained_support_fraction": {
+          "numerator": "3",
+          "denominator": "128"
+        },
+        "requires_certified_kernel_distance_and_all_mixed_admission": true,
+        "valid_for_source_adaptively_selected_linear_frames": true,
+        "requires_projective_saturation": false,
+        "distance_certified_by_this_arithmetic_ledger": false,
+        "nonlinear_or_arbitrary_quantum_receiver_no_go": false
+      },
+      "individual_matrix_distance_certificate_supplied": false,
+      "complete_algorithm_sample_complexity_bound": false
+    },
+    {
+      "source_distance_envelope": {
+        "secret_dimension": 128,
+        "physical_width": 256,
+        "kernel_distance_lower_bound": 40,
+        "projective_short_words": "5836793809776394736266593997274734521231297755652459887104",
+        "each_projective_word_kernel_probability_denominator": "11790184577738583171520872861412518665678211592275841109096961",
+        "distance_failure_probability_upper_bound": {
+          "numerator": "5836793809776394736266593997274734521231297755652459887104",
+          "denominator": "11790184577738583171520872861412518665678211592275841109096961"
+        },
+        "distance_success_probability_lower_bound": {
+          "numerator": "11784347783928806776784606267415243931156980294520188649209857",
+          "denominator": "11790184577738583171520872861412518665678211592275841109096961"
+        },
+        "IID_uniform_low_native_A_required": true,
+        "conditions_on_full_row_rank": false,
+        "simultaneous_for_all_source_adaptive_frames": true,
+        "certifies_this_particular_matrix": false,
+        "postselected_or_correlated_source_transfer_proved": false
+      },
+      "required_failure_budget": {
+        "numerator": "1",
+        "denominator": "1000"
+      },
+      "simultaneous_adaptive_frame_retention_bound": {
+        "nonzero_physical_support": 256,
+        "required_odd_Schur_degree": 79,
+        "kernel_distance_lower_bound": 40,
+        "product_Singleton_power_used": 40,
+        "maximum_admitted_frame_dimension": 6,
+        "maximum_retained_support_fraction": {
+          "numerator": "3",
+          "denominator": "128"
+        },
+        "requires_certified_kernel_distance_and_all_mixed_admission": true,
+        "valid_for_source_adaptively_selected_linear_frames": true,
+        "requires_projective_saturation": false,
+        "distance_certified_by_this_arithmetic_ledger": false,
+        "nonlinear_or_arbitrary_quantum_receiver_no_go": false
+      },
+      "individual_matrix_distance_certificate_supplied": false,
+      "complete_algorithm_sample_complexity_bound": false
+    },
+    {
+      "source_distance_envelope": {
+        "secret_dimension": 256,
+        "physical_width": 512,
+        "kernel_distance_lower_bound": 81,
+        "projective_short_words": "75724065233904082654390548767109843175335290581057080097070253551802904977751862545872741187019067701807620440272204800",
+        "each_projective_word_kernel_probability_denominator": "139008452377144732764939786789661303114218850808529137991604824430036072629766435941001769154109609521811665540548899435521",
+        "distance_failure_probability_upper_bound": {
+          "numerator": "75724065233904082654390548767109843175335290581057080097070253551802904977751862545872741187019067701807620440272204800",
+          "denominator": "139008452377144732764939786789661303114218850808529137991604824430036072629766435941001769154109609521811665540548899435521"
+        },
+        "distance_success_probability_lower_bound": {
+          "numerator": "138932728311910828682285396240894193271043515517948080911507754176484269724788684078455896412922590454109857920108627230721",
+          "denominator": "139008452377144732764939786789661303114218850808529137991604824430036072629766435941001769154109609521811665540548899435521"
+        },
+        "IID_uniform_low_native_A_required": true,
+        "conditions_on_full_row_rank": false,
+        "simultaneous_for_all_source_adaptive_frames": true,
+        "certifies_this_particular_matrix": false,
+        "postselected_or_correlated_source_transfer_proved": false
+      },
+      "required_failure_budget": {
+        "numerator": "1",
+        "denominator": "1000"
+      },
+      "simultaneous_adaptive_frame_retention_bound": {
+        "nonzero_physical_support": 512,
+        "required_odd_Schur_degree": 3,
+        "kernel_distance_lower_bound": 81,
+        "product_Singleton_power_used": 3,
+        "maximum_admitted_frame_dimension": 144,
+        "maximum_retained_support_fraction": {
+          "numerator": "9",
+          "denominator": "32"
+        },
+        "requires_certified_kernel_distance_and_all_mixed_admission": true,
+        "valid_for_source_adaptively_selected_linear_frames": true,
+        "requires_projective_saturation": false,
+        "distance_certified_by_this_arithmetic_ledger": false,
+        "nonlinear_or_arbitrary_quantum_receiver_no_go": false
+      },
+      "individual_matrix_distance_certificate_supplied": false,
+      "complete_algorithm_sample_complexity_bound": false
+    },
+    {
+      "source_distance_envelope": {
+        "secret_dimension": 256,
+        "physical_width": 512,
+        "kernel_distance_lower_bound": 81,
+        "projective_short_words": "75724065233904082654390548767109843175335290581057080097070253551802904977751862545872741187019067701807620440272204800",
+        "each_projective_word_kernel_probability_denominator": "139008452377144732764939786789661303114218850808529137991604824430036072629766435941001769154109609521811665540548899435521",
+        "distance_failure_probability_upper_bound": {
+          "numerator": "75724065233904082654390548767109843175335290581057080097070253551802904977751862545872741187019067701807620440272204800",
+          "denominator": "139008452377144732764939786789661303114218850808529137991604824430036072629766435941001769154109609521811665540548899435521"
+        },
+        "distance_success_probability_lower_bound": {
+          "numerator": "138932728311910828682285396240894193271043515517948080911507754176484269724788684078455896412922590454109857920108627230721",
+          "denominator": "139008452377144732764939786789661303114218850808529137991604824430036072629766435941001769154109609521811665540548899435521"
+        },
+        "IID_uniform_low_native_A_required": true,
+        "conditions_on_full_row_rank": false,
+        "simultaneous_for_all_source_adaptive_frames": true,
+        "certifies_this_particular_matrix": false,
+        "postselected_or_correlated_source_transfer_proved": false
+      },
+      "required_failure_budget": {
+        "numerator": "1",
+        "denominator": "1000"
+      },
+      "simultaneous_adaptive_frame_retention_bound": {
+        "nonzero_physical_support": 512,
+        "required_odd_Schur_degree": 9,
+        "kernel_distance_lower_bound": 81,
+        "product_Singleton_power_used": 9,
+        "maximum_admitted_frame_dimension": 48,
+        "maximum_retained_support_fraction": {
+          "numerator": "3",
+          "denominator": "32"
+        },
+        "requires_certified_kernel_distance_and_all_mixed_admission": true,
+        "valid_for_source_adaptively_selected_linear_frames": true,
+        "requires_projective_saturation": false,
+        "distance_certified_by_this_arithmetic_ledger": false,
+        "nonlinear_or_arbitrary_quantum_receiver_no_go": false
+      },
+      "individual_matrix_distance_certificate_supplied": false,
+      "complete_algorithm_sample_complexity_bound": false
+    },
+    {
+      "source_distance_envelope": {
+        "secret_dimension": 256,
+        "physical_width": 512,
+        "kernel_distance_lower_bound": 81,
+        "projective_short_words": "75724065233904082654390548767109843175335290581057080097070253551802904977751862545872741187019067701807620440272204800",
+        "each_projective_word_kernel_probability_denominator": "139008452377144732764939786789661303114218850808529137991604824430036072629766435941001769154109609521811665540548899435521",
+        "distance_failure_probability_upper_bound": {
+          "numerator": "75724065233904082654390548767109843175335290581057080097070253551802904977751862545872741187019067701807620440272204800",
+          "denominator": "139008452377144732764939786789661303114218850808529137991604824430036072629766435941001769154109609521811665540548899435521"
+        },
+        "distance_success_probability_lower_bound": {
+          "numerator": "138932728311910828682285396240894193271043515517948080911507754176484269724788684078455896412922590454109857920108627230721",
+          "denominator": "139008452377144732764939786789661303114218850808529137991604824430036072629766435941001769154109609521811665540548899435521"
+        },
+        "IID_uniform_low_native_A_required": true,
+        "conditions_on_full_row_rank": false,
+        "simultaneous_for_all_source_adaptive_frames": true,
+        "certifies_this_particular_matrix": false,
+        "postselected_or_correlated_source_transfer_proved": false
+      },
+      "required_failure_budget": {
+        "numerator": "1",
+        "denominator": "1000"
+      },
+      "simultaneous_adaptive_frame_retention_bound": {
+        "nonzero_physical_support": 512,
+        "required_odd_Schur_degree": 19,
+        "kernel_distance_lower_bound": 81,
+        "product_Singleton_power_used": 19,
+        "maximum_admitted_frame_dimension": 23,
+        "maximum_retained_support_fraction": {
+          "numerator": "23",
+          "denominator": "512"
+        },
+        "requires_certified_kernel_distance_and_all_mixed_admission": true,
+        "valid_for_source_adaptively_selected_linear_frames": true,
+        "requires_projective_saturation": false,
+        "distance_certified_by_this_arithmetic_ledger": false,
+        "nonlinear_or_arbitrary_quantum_receiver_no_go": false
+      },
+      "individual_matrix_distance_certificate_supplied": false,
+      "complete_algorithm_sample_complexity_bound": false
+    },
+    {
+      "source_distance_envelope": {
+        "secret_dimension": 256,
+        "physical_width": 512,
+        "kernel_distance_lower_bound": 81,
+        "projective_short_words": "75724065233904082654390548767109843175335290581057080097070253551802904977751862545872741187019067701807620440272204800",
+        "each_projective_word_kernel_probability_denominator": "139008452377144732764939786789661303114218850808529137991604824430036072629766435941001769154109609521811665540548899435521",
+        "distance_failure_probability_upper_bound": {
+          "numerator": "75724065233904082654390548767109843175335290581057080097070253551802904977751862545872741187019067701807620440272204800",
+          "denominator": "139008452377144732764939786789661303114218850808529137991604824430036072629766435941001769154109609521811665540548899435521"
+        },
+        "distance_success_probability_lower_bound": {
+          "numerator": "138932728311910828682285396240894193271043515517948080911507754176484269724788684078455896412922590454109857920108627230721",
+          "denominator": "139008452377144732764939786789661303114218850808529137991604824430036072629766435941001769154109609521811665540548899435521"
+        },
+        "IID_uniform_low_native_A_required": true,
+        "conditions_on_full_row_rank": false,
+        "simultaneous_for_all_source_adaptive_frames": true,
+        "certifies_this_particular_matrix": false,
+        "postselected_or_correlated_source_transfer_proved": false
+      },
+      "required_failure_budget": {
+        "numerator": "1",
+        "denominator": "1000"
+      },
+      "simultaneous_adaptive_frame_retention_bound": {
+        "nonzero_physical_support": 512,
+        "required_odd_Schur_degree": 39,
+        "kernel_distance_lower_bound": 81,
+        "product_Singleton_power_used": 39,
+        "maximum_admitted_frame_dimension": 12,
+        "maximum_retained_support_fraction": {
+          "numerator": "3",
+          "denominator": "128"
+        },
+        "requires_certified_kernel_distance_and_all_mixed_admission": true,
+        "valid_for_source_adaptively_selected_linear_frames": true,
+        "requires_projective_saturation": false,
+        "distance_certified_by_this_arithmetic_ledger": false,
+        "nonlinear_or_arbitrary_quantum_receiver_no_go": false
+      },
+      "individual_matrix_distance_certificate_supplied": false,
+      "complete_algorithm_sample_complexity_bound": false
+    },
+    {
+      "source_distance_envelope": {
+        "secret_dimension": 256,
+        "physical_width": 512,
+        "kernel_distance_lower_bound": 81,
+        "projective_short_words": "75724065233904082654390548767109843175335290581057080097070253551802904977751862545872741187019067701807620440272204800",
+        "each_projective_word_kernel_probability_denominator": "139008452377144732764939786789661303114218850808529137991604824430036072629766435941001769154109609521811665540548899435521",
+        "distance_failure_probability_upper_bound": {
+          "numerator": "75724065233904082654390548767109843175335290581057080097070253551802904977751862545872741187019067701807620440272204800",
+          "denominator": "139008452377144732764939786789661303114218850808529137991604824430036072629766435941001769154109609521811665540548899435521"
+        },
+        "distance_success_probability_lower_bound": {
+          "numerator": "138932728311910828682285396240894193271043515517948080911507754176484269724788684078455896412922590454109857920108627230721",
+          "denominator": "139008452377144732764939786789661303114218850808529137991604824430036072629766435941001769154109609521811665540548899435521"
+        },
+        "IID_uniform_low_native_A_required": true,
+        "conditions_on_full_row_rank": false,
+        "simultaneous_for_all_source_adaptive_frames": true,
+        "certifies_this_particular_matrix": false,
+        "postselected_or_correlated_source_transfer_proved": false
+      },
+      "required_failure_budget": {
+        "numerator": "1",
+        "denominator": "1000"
+      },
+      "simultaneous_adaptive_frame_retention_bound": {
+        "nonzero_physical_support": 512,
+        "required_odd_Schur_degree": 79,
+        "kernel_distance_lower_bound": 81,
+        "product_Singleton_power_used": 79,
+        "maximum_admitted_frame_dimension": 6,
+        "maximum_retained_support_fraction": {
+          "numerator": "3",
+          "denominator": "256"
+        },
+        "requires_certified_kernel_distance_and_all_mixed_admission": true,
+        "valid_for_source_adaptively_selected_linear_frames": true,
+        "requires_projective_saturation": false,
+        "distance_certified_by_this_arithmetic_ledger": false,
+        "nonlinear_or_arbitrary_quantum_receiver_no_go": false
+      },
+      "individual_matrix_distance_certificate_supplied": false,
+      "complete_algorithm_sample_complexity_bound": false
+    }
+  ],
+  "claim_gate": {
+    "new_algorithm": false,
+    "candidate_accepted": false,
+    "generic_quantum_decoder_lower_bound": false,
+    "complete_source_recursion_bound": false,
+    "independent_human_review": false
+  }
+}

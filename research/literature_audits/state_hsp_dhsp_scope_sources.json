@@ -1,0 +1,13 @@
+{
+  "audit_id": "AUDIT-STATE-HSP-DHSP-TRANSFER",
+  "status": "FORMAL_STATEMENTS_AND_LOCAL_APPLICABILITY_CHECKS_REVIEW_PENDING",
+  "sources": [
+    {"id": "HOLT-SUBRAMANIAN-2609.38085v1", "url": "https://arxiv.org/html/2609.38085v1", "checked_sections": ["7.1 normal-core statement and graph-state reduction", "7.2.2 Baer-norm definition and group-class statement", "8.2 center-index definition and anyonic reduction"], "full_paper_proof_audit": false},
+    {"id": "LIU-CARRASCO-EISERT-BELLANTE-2609.35656v1", "url": "https://arxiv.org/html/2609.35656v1", "checked_sections": ["Definitions1.2-1.3 access models", "Theorems3.15-3.16 abelian upper statements", "introductory query/sample lower statements"], "full_lower_bound_proof_audit": false}
+  ],
+  "local_work_not_attributed_as_new_paper_theorems": ["dihedral reflection core is trivial", "Baer norm equals dihedral center", "weak labels retain no shift beyond rare parity", "A and inverse are already available in the same full-function oracle model"],
+  "transfer_decision": "Normal-core result applies but loses target; group-class and abelian query theorems do not apply to the full growing DHSP family.",
+  "paper_refutation": false,
+  "independent_theorem_review": false,
+  "novelty_claim": false
+}

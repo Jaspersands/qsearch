@@ -1,0 +1,37 @@
+{
+  "hypothesis_id": "HYP-SINGER-KNOWN-SHOR-ACCESS-CLOSURE",
+  "status": "KNOWN_SOLVER_QUERY_ORDER_CLOSED_LOCAL_DERIVATION_REVIEW_PENDING",
+  "candidate_record_accepted": false,
+  "novelty_claim": false,
+  "independent_theorem_review": false,
+  "note": "research/SINGER_SHOR_ACCESS_CLOSURE.md",
+  "report": "research/phase_workbench/singer_shor_access_closure.json",
+  "parent_contract": "research/hypotheses/singer_residual_hardness_contract.json",
+  "classification": "Public-field Singer membership: paid known Shor arithmetic plus Theta(sqrt(q)) query access, not a new mechanism or complete classical dequantization.",
+  "source_interface": "Only secret input: XOR membership Tr_(E/F_q)(alpha^(k+s))=0 on canonical Z_v. Field representation, base embedding and primitive alpha public. No beta/program or extra unknown oracle.",
+  "mechanism": "Known coherent log_alpha(x), membership kickback, cleanup, Grover recurrence and additive Fourier annihilator readout; public trace-pairing inverse and known residual DLog.",
+  "exact_output_law": "j charged phase queries: zero output cos^2(2j theta), each of q-1 nonzero normal coordinates sin^2(2j theta)/(q-1), theta=asin(1/sqrt(q)). All other outputs zero under exact promise.",
+  "query_accounting": "Choose j uniformly below ceil(q/sqrt(q-1)); mean correct normal >=1/4. R repetitions fail <=(3/4)^R. At most R(J-1) secret membership calls, 2R(J-1) clean known-log maps, 4R(J-1) underlying boosted DLog computation/inverse calls; at most one additional residual solver.",
+  "matching_lower_scope": "Prior uniform-shift sparse-membership gate gives Omega(sqrt(q)) for constant success; arbitrary known processing allowed. No general full-function DHSP transfer.",
+  "dependencies": ["supplied public field and primitive element", "usable public F_q embedding", "uniform coherent known quantum discrete logarithm", "coherent cleanup with worst-case input error", "additive QFT and public trace-pairing inverse", "known residual subgroup DLog"],
+  "proof_obligations": {
+    "PO-REVIEW": "Independently review coordinate quotient periodicity, zero-branch XOR control, Grover/Fourier output law, random-schedule bound and matching lower scope.",
+    "PO-COMPILER": "Tables are calibration only. A real compiler must implement known DLog coherently, with workspace cleanup and total known-operation costs.",
+    "PO-PRECISION": "For Q phase calls budget e<=(delta/(4Q))^2 uniformly for coordinate DLog outputs. Residual output failure, QFT and physical compilation errors additional.",
+    "PO-PRIME-POWER": "Literal controls use prime q; arbitrary prime-power subfield embeddings and absolute-trace Fourier coordinates not implemented.",
+    "PO-SETUP": "Public primitive and field setup supplied; bounded factorization/table construction is not polynomial classical setup.",
+    "PO-REDUCTION": "No admission of generic HSP/lattice consequence without a natural reduction preserving this special public-field promise.",
+    "PO-NOVELTY": "No algorithm candidate unless a genuinely new residual/mechanism survives known Shor comparison and the sparse access gate."
+  },
+  "falsifiable_experiments": [
+    {"experiment": "Execute every bounded Grover schedule branch and full additive Fourier output.", "falsifier": "Exact probability law, normalization or trace-pairing decoder fails; non-negligible off-annihilator output under ideal source."},
+    {"experiment": "Trace out injective known-log workspace rather than uncomputing it.", "falsifier": "Reduced state retains coherences or Fourier distribution is not uniform under the declared coordinate record."},
+    {"experiment": "Certify integer schedule and total arithmetic/error counts at growing q.", "falsifier": "Mean-schedule bound below 1/4, nonminimal ceil integer, omitted arithmetic maps or precision dependency."}
+  ],
+  "gemini_tasks": [
+    "Integrate as known-solver/access-closed review-pending audit, NEVER accepted novel candidate.",
+    "Expose full-state failure probability, dual basis, known Shor dependencies and sqrt(q) rather than polylog(q) costs.",
+    "Retain decimal strings for large counts and exact rational error budgets.",
+    "Run full production/CLI validation and repair previously identified registry writer omissions."
+  ]
+}
