@@ -2775,3 +2775,49 @@ Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
 | Playwright screenshots at 1440 and 390, overflow, console errors, redirects | 3 (tool), 5–9 |
 | CI: node checks, data diff, changelog parse, checker | 9 |
 | Simulated widgets removed | 6 (`site/progress.js` deleted, index rewritten) |
+
+---
+
+## Addendum: circuit identity and negative-results map (spec revision b)
+
+Same global constraints as above, with one override: the negative-results map may use per-track colors (`#3b6ea5` codes and cosets, `#c2410c` dihedral sieve, `#6b8e23` hidden-shift literature, `#8e5ea2` coset-observables literature, `#9ca3af` other). Each task follows red → green → verify → commit.
+
+### Task 10: Circuit plan and SVG module
+
+**Files:** create `site/js/lib/circuit.js`, `tests/js/circuit.test.mjs`.
+
+**Interfaces (exports):**
+- `STAGES = ["hypothesis", "structure", "classical attack", "proof gate", "separation"]`
+- `wirePlan(tracks) -> [{label, active, solidTo, endsAt}]` — `label = short_title || title`; stage clamped to 0–3. Non-active: `solidTo = endsAt = min(stage + 1, 3)`. Active: `solidTo = stage`, `endsAt = null`.
+- `aliveAt(wire, gate) -> boolean` — `wire.active || gate <= wire.endsAt`.
+- `wireExtents(plan, gateYs, width) -> [{x, end}]` — x evenly spaced with 22 px margins; `end` = meter top (`gateYs[endsAt] + 30`) for ended wires, `gateYs[4]` for active ones.
+- `circuitSvg({plan, gateYs, height, width}) -> string` — vertical circuit: labels at top, solid wires, `wire-live` overlay lines (`data-wire=i`, initially zero length), dashed continuation (`wire-dash`) for active wires, one `gate` box per stage spanning only alive wires (stage names; single letters H S A P when `width < 100`; last gate always "?"), one `meter` per ended wire, one `circuit-dot` on the first active wire.
+- `circuitStrip({plan, width, height = 64}) -> string` — horizontal version for page headers: wire labels at left, gates as evenly spaced faint ticks with stage names (class `strip-stage`), meters where wires end, dashed continuation and a "?" box for active wires.
+
+**Tests first:** snapshot-shaped tracks (Codes stage 1 blocked, DHSP stage 2 blocked, Cosets stage 3 active) give `solidTo/endsAt` = 2/2, 3/3, 3/null; a blocked stage-3 track caps at 3; `aliveAt` truth table; `circuitSvg` has 5 gate boxes, 2 meters, 1 dashed line, 1 dot, gate 3 box spans only wires 0 and 2 (check its x and width against `wireExtents`), short labels at width 60; `circuitStrip` has 2 meters and 1 "?" box.
+
+### Task 11: Circuit on the home page, strip on other pages
+
+**Files:** modify `index.html`, `site/js/home.js`, `site/js/common.js`, `site/styles.css`, `open-problems.html`, `negative-results.html`, `how-it-works.html`, `site/js/open-problems.js`, `site/js/negative-results.js`.
+
+- Home: add `class="has-circuit"` to `<body>` and an absolutely positioned `<svg class="circuit-svg" id="circuit">` inside `<main>` (`main` gets `position: relative`). `.has-circuit main .wrap` gets extra left padding equal to the gutter (150 px; 60 px below 760 px). Gate y positions: the intro `h1` and the `h2` of `#tracks`, `#activity`, `#results` (offset relative to `main`, +18 px), separation = `main.offsetHeight - 48`. The SVG's left edge aligns with the first `.wrap`'s content box. Redraw on a debounced `ResizeObserver` of `main` (content height changes as data loads). Scroll handler sets each `wire-live` `y2` to `min(end, scrollProgressY)` and moves the dot along the active wire; skipped entirely under `prefers-reduced-motion`.
+- "ideas ruled out" figure becomes a link to `negative-results.html#map` (no underline; underline on the label on hover).
+- `common.js` gains `initCircuitStrip(snapshotPromise)`: fills `#circuit-strip` (a `<div>` under the header) with `circuitStrip` at the container's width, redrawn on resize. Open problems, Negative results, and How it works share one snapshot promise between the footer and the strip.
+- Verify: smoke at 1440/390 (no overflow, no errors), screenshots reviewed; wires end at Activity (Codes) and Results (DHSP); Cosets dashed to the "?" gate above the footer.
+
+### Task 12: Negative-results map builder
+
+**Files:** create `tools/build_negative_map.py`, `tests/test_build_negative_map.py`; generate `site/data/negative_map.json`.
+
+- `build_map(records, seed=7, regions=9) -> {"points": [{id, x, y}], "regions": [{x, y, label, count}]}`: TF-IDF (id words + claim + reason, English stop words, `min_df=min(3, n)`, `max_df=0.4` only when n ≥ 50) → `TruncatedSVD(min(40, features - 1))` → row-normalise → `TSNE(perplexity=min(30, max(5, (n - 1) // 3)), init="pca", metric="cosine", random_state=seed)` → scale to [0, 1] → `KMeans(min(regions, n))` → label each region with the highest-mean claim bigram not in a generic-phrase list and not already used. Coordinates rounded to 4 places.
+- `main(argv)` with `--root`; writes compact JSON. Imports scikit-learn lazily so `py_compile` in CI needs no extra dependency.
+- Tests (skipped when scikit-learn is missing): 60 synthetic records in two vocabularies → 60 points in [0, 1]; with `regions=2`, 2 distinct non-empty labels; the two topics' centroids are more than 0.2 apart.
+
+### Task 13: Map on the Negative results page
+
+**Files:** create `site/js/lib/map.js`, `tests/js/map.test.mjs`; modify `negative-results.html`, `site/js/negative-results.js`, `site/styles.css`, `.github/workflows/validate.yml`.
+
+- `map.js` exports `TRACK_COLORS`, `trackOf(tags)` (priority: the two literature tags, then dihedral sieve, then codes and cosets, else `OTHER`), `projectPoints(points, width, height, pad) -> [[x, y]]`, `nearestIndex(screen, mx, my, include, maxDist = 10) -> index | -1`. Tests cover each.
+- Page: `<section id="map">` with a canvas (560 px tall desktop, 380 px mobile), region labels, hover tooltip (id + claim), and a note "N records aren't on the map yet" when coordinates are missing. Filter chips gain a color swatch (they double as the legend) and a "Grey: other" note. Points not in the current matches are drawn at 12% opacity. Clicking a point: if the record is in the current matches, page the list to it, open it, scroll to it, and update the hash; otherwise fall back to the existing hash behaviour (clear filters). If `negative_map.json` fails to load, the map section is hidden and the list works as before.
+- CI: parse-check `site/data/negative_map.json`.
+- Final verification: all Python and Node tests, `check_site.py`, smoke at both widths with redirects, screenshot review against the spec, then the full-suite comparison with `main` before offering to land the branch.
