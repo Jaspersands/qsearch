@@ -41,11 +41,11 @@ read, and that a skeptical expert can verify. It must not look AI-generated.
 5. Rounded containers only where a control needs one (inputs, buttons). Structure comes from type, whitespace, and hairline rules.
 6. Copy is plain and first-person plural. Banned words: monograph, protocol APG, rigorous, first-class, certified, peer-verifiable, deterministic audit, executive abstract, laboratory.
 7. Every number on the page comes from data, carries a date, and links to its source file.
-8. Status vocabulary is exactly three terms — **open**, **ruled out**, **active** — rendered as a small colored dot plus plain text, identical on every page.
+8. Status vocabulary is exactly three terms — **open**, **ruled out**, **active** — rendered as a small colored dot plus plain text, identical on every page. Mapping: a track with snapshot tone `active` is **active**, any other track is **open** (its current route failed, but the problem is unresolved); frontiers and proof debts are **open**; negative results are **ruled out** (implied by the page, so rows carry no marker).
 
 ### Tokens
 
-- Page `#FFFFFF`; text `#111111`; secondary text `#555555`; muted `#8A8A8A`; hairline `#E6E6E6`.
+- Page `#FFFFFF`; text `#111111`; secondary text `#555555`; muted `#767676` (AA on white); hairline `#E6E6E6`.
 - One accent, muted red-orange (`#C2410C` range, tuned for AA contrast on white), used only for status and the current verdict.
 - Links: underlined, text-colored; hover darkens the underline.
 - Typefaces (Google Fonts): Schibsted Grotesk for headings and UI; Source Serif 4 for long prose; JetBrains Mono only for literal paths and commands. Tabular figures for numbers.
@@ -90,7 +90,7 @@ Shared header on every page: wordmark "Q-Search", links Home · Open problems ·
 
 ## Data and build
 
-- Static site: HTML + one stylesheet (`site/styles.css`, rewritten) + small vanilla JS files under `site/`. No framework, no bundler. KaTeX stays (jsDelivr). Chart drawn as hand-written SVG.
+- Static site: HTML + one stylesheet (`site/styles.css`, rewritten) + small vanilla JS files under `site/`. No framework, no bundler. KaTeX is dropped: no page shows typeset math once the simulated widgets are gone. Chart drawn as hand-written SVG.
 - `research/progress_snapshot.json` (existing `tools/build_progress_snapshot.py`) remains the source for verdict, tracks, milestones, metrics, conjecture, execution model.
 - New `tools/build_site_data.py` (deterministic, no wall-clock time) writes:
   - `site/data/activity.json` — weekly run counts (ISO weeks, from `recorded_at`) from `research/experiment_run_history.json`.
