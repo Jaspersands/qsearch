@@ -34,8 +34,16 @@ export function trackStatusKind(tone) {
   return tone === "active" ? "active" : "open";
 }
 
+const ACRONYMS = new Set(["cfi", "dcp", "dhsp", "hsp", "pgm", "qft", "wl"]);
+
 export function humanizeId(id) {
-  const words = String(id).replace(/[-_]+/g, " ").trim().toLowerCase();
+  const words = String(id)
+    .replace(/[-_]+/g, " ")
+    .trim()
+    .toLowerCase()
+    .split(/\s+/)
+    .map((word) => (ACRONYMS.has(word) ? word.toUpperCase() : word))
+    .join(" ");
   return words.charAt(0).toUpperCase() + words.slice(1);
 }
 

@@ -34,6 +34,8 @@ test("status markers use the three-word vocabulary", () => {
 
 test("humanizeId turns registry ids into sentence case", () => {
   assert.equal(humanizeId("code-equivalence-hard-family-search"), "Code equivalence hard family search");
+  assert.equal(humanizeId("dcp-density-one-subset-sum-partial-solver"), "DCP density one subset sum partial solver");
+  assert.equal(humanizeId("nonabelian-hsp-via-cfi-and-wl"), "Nonabelian HSP via CFI and WL");
 });
 
 test("bibtexEntry fills date and count from the snapshot", () => {

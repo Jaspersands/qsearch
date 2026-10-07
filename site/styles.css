@@ -97,6 +97,7 @@ ul, ol { margin: 0 0 1em; padding-left: 1.2em; }
 .row-title { font-weight: 600; }
 .row-title.mono { font-weight: 500; }
 .row-next { display: block; margin-top: 4px; font-size: 0.92rem; color: var(--text-2); }
+.row:not([open]) > summary .clamp { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 .row-body { max-width: var(--measure); padding-bottom: 24px; }
 .row-body > *:last-child { margin-bottom: 0; }
 .row-body h4 { margin: 16px 0 6px; }
@@ -156,7 +157,9 @@ button.button:hover { background: var(--fill); }
   .table thead { display: none; }
   .table tr { display: block; padding: 12px 0; border-bottom: 1px solid var(--rule); }
   .table td { display: block; border: 0; padding: 2px 0; }
-  .table td[data-label]::before { content: attr(data-label) ": "; color: var(--text-2); font-family: var(--sans); }
+  .table td[data-label]::before { content: attr(data-label) ": "; color: var(--text-2); font-family: var(--sans); font-variant-numeric: normal; }
+  .table td.inline-sm { display: inline-block; margin-right: 20px; }
+  .table td.no-label::before { content: none; }
   .table.plain td[data-label]::before { content: none; }
   .table.plain .id { margin-bottom: 2px; }
 }
@@ -175,6 +178,11 @@ button.button:hover { background: var(--fill); }
 .debt-group { margin-top: 40px; }
 .debt-group h3 { margin-bottom: 6px; }
 .debt-group > p { max-width: var(--measure); }
+.debt-group .table { table-layout: fixed; }
+.debt-group th:nth-child(1) { width: 46%; }
+.debt-group th:nth-child(2) { width: 22%; }
+.debt-group th:nth-child(3) { width: 10%; }
+.table details.sub { margin: 0; }
 
 /* How it works */
 .loop { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid var(--rule-strong); counter-reset: loop; }
