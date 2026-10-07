@@ -1170,7 +1170,7 @@ test("activityChart returns an empty string without weeks", () => {
 
 - [ ] **Step 2: Run the tests to verify they fail**
 
-Run: `cd "/Users/jaspersands/Desktop/quantum algorithm search" && /Users/jaspersands/.nvm/versions/node/v24.18.0/bin/node --test tests/js/`
+Run: `cd "/Users/jaspersands/Desktop/quantum algorithm search" && /Users/jaspersands/.nvm/versions/node/v24.18.0/bin/node --test tests/js/*.test.mjs`
 Expected: FAIL — `Cannot find module .../site/js/lib/format.js`.
 
 - [ ] **Step 3: Write the implementations**
@@ -1368,7 +1368,7 @@ export function activityChart({ weeks, points = [], width = 720, height = 240 })
 
 - [ ] **Step 4: Run the tests to verify they pass**
 
-Run: `cd "/Users/jaspersands/Desktop/quantum algorithm search" && /Users/jaspersands/.nvm/versions/node/v24.18.0/bin/node --test tests/js/`
+Run: `cd "/Users/jaspersands/Desktop/quantum algorithm search" && /Users/jaspersands/.nvm/versions/node/v24.18.0/bin/node --test tests/js/*.test.mjs`
 Expected: all tests pass (`# fail 0`).
 
 - [ ] **Step 5: Commit**
@@ -2713,7 +2713,7 @@ with:
       - name: Check website JavaScript
         run: |
           for file in site/js/*.js site/js/lib/*.js; do node --check "$file"; done
-          node --test tests/js/
+          node --test tests/js/*.test.mjs
       - name: Verify website data and references
         run: |
           python -m pip install pytest
@@ -2732,7 +2732,7 @@ Run:
 ```bash
 cd "/Users/jaspersands/Desktop/quantum algorithm search" && \
 /opt/anaconda3/bin/python3 -m pytest tests/test_build_site_data.py tests/test_check_site.py -q && \
-/Users/jaspersands/.nvm/versions/node/v24.18.0/bin/node --test tests/js/ && \
+/Users/jaspersands/.nvm/versions/node/v24.18.0/bin/node --test tests/js/*.test.mjs && \
 for f in site/js/*.js site/js/lib/*.js; do /Users/jaspersands/.nvm/versions/node/v24.18.0/bin/node --check "$f" || exit 1; done && \
 /opt/anaconda3/bin/python3 tools/build_site_data.py --skip-changelog && git diff --exit-code site/data/activity.json site/data/negatives.json && \
 /opt/anaconda3/bin/python3 tools/check_site.py && \
