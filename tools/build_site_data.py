@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import subprocess
 from collections import Counter
 from datetime import date, datetime, timedelta
@@ -48,12 +49,38 @@ def weekly_runs(runs: list[dict[str, Any]]) -> dict[str, Any]:
     return {"total_runs": sum(counts.values()), "weeks": weeks}
 
 
-def repo_path(value: Any, root: Path) -> str | None:
-    """Return value when it names an existing file in the repository."""
-    if not isinstance(value, str) or not value:
+REPO_DIR_PATH = re.compile(r"/((?:core|docs|research|site|tests|theorems|tools)/.+)$")
+
+
+def relative_source(value: Any) -> str:
+    """Strip machine-specific prefixes so no local absolute path reaches the site."""
+    if not isinstance(value, str):
+        return ""
+    if not Path(value).is_absolute():
+        return value
+    match = REPO_DIR_PATH.search(value)
+    return match.group(1) if match else Path(value).name
+
+
+def tracked_files(root: Path) -> set[str] | None:
+    """Files git tracks under root, or None when root is not a git checkout."""
+    result = subprocess.run(["git", "ls-files"], cwd=root, capture_output=True, text=True)
+    return set(result.stdout.splitlines()) if result.returncode == 0 else None
+
+
+def repo_path(value: Any, root: Path, tracked: set[str] | None = None) -> str | None:
+    """Return value when it names a committed file in the repository.
+
+    Only relative paths qualify, and when the tracked-file set is known the file
+    must be in it, so local-only files never become public links and the output
+    is the same on any checkout.
+    """
+    if not isinstance(value, str) or not value or Path(value).is_absolute():
         return None
     looks_like_path = "/" in value or value.endswith((".py", ".json", ".md"))
-    return value if looks_like_path and (root / value).is_file() else None
+    if not looks_like_path or not (root / value).is_file():
+        return None
+    return value if tracked is None or value in tracked else None
 
 
 def is_filter_tag(tag: Any) -> bool:
@@ -79,9 +106,11 @@ def slim_negatives(
         for tag, count in sorted(tag_counts.items(), key=lambda item: (-item[1], item[0]))
         if count >= min_tag_count
     ]
+    tracked = tracked_files(root)
     slim = []
     for record in sorted(records, key=lambda item: item["id"]):
         evidence = record.get("evidence") if isinstance(record.get("evidence"), dict) else {}
+        source = relative_source(record.get("source", ""))
         slim.append(
             {
                 "id": record["id"],
@@ -89,10 +118,10 @@ def slim_negatives(
                 "reason": record.get("reason_invalid", ""),
                 "lesson": record.get("lesson", ""),
                 "tags": [tag for tag in record.get("applies_to", []) if is_filter_tag(tag)],
-                "source": record.get("source", ""),
-                "source_path": repo_path(record.get("source"), root),
-                "derivation_path": repo_path(evidence.get("derivation"), root),
-                "artifact_path": repo_path(evidence.get("artifact"), root),
+                "source": source,
+                "source_path": repo_path(source, root, tracked),
+                "derivation_path": repo_path(relative_source(evidence.get("derivation")), root, tracked),
+                "artifact_path": repo_path(relative_source(evidence.get("artifact")), root, tracked),
                 "review_status": evidence.get("status", ""),
             }
         )

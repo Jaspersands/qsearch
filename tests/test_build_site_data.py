@@ -7,6 +7,7 @@ from pathlib import Path
 
 from tools.build_site_data import (
     build_changelog,
+    relative_source,
     describe_changes,
     main,
     repo_path,
@@ -72,6 +73,28 @@ class NegativesTests(unittest.TestCase):
         self.assertIsNone(repo_path("research/missing.md", self.root))
         self.assertIsNone(repo_path("EXP-COSET-BINARY", self.root))
         self.assertIsNone(repo_path(None, self.root))
+
+    def test_relative_source_strips_machine_specific_prefixes(self) -> None:
+        self.assertEqual(
+            relative_source("/Users/someone/Desktop/project dir/research/phase_workbench/x.json"),
+            "research/phase_workbench/x.json",
+        )
+        self.assertEqual(relative_source("research/x.json"), "research/x.json")
+        self.assertEqual(relative_source("EXP-SOME-ID"), "EXP-SOME-ID")
+        self.assertEqual(relative_source("/opt/elsewhere/file.json"), "file.json")
+        self.assertEqual(relative_source(None), "")
+
+    def test_slim_negatives_never_exposes_absolute_sources(self) -> None:
+        record = negative("ABS", ["DHS-GOWERS-SIEVE"], source=str(self.root / "research" / "note.md"))
+        slim = slim_negatives([record], self.root, min_tag_count=1)["records"][0]
+        self.assertEqual(slim["source"], "research/note.md")
+        self.assertEqual(slim["source_path"], "research/note.md")
+
+    def test_repo_path_rejects_absolute_and_untracked_paths(self) -> None:
+        absolute = str(self.root / "research" / "note.md")
+        self.assertIsNone(repo_path(absolute, self.root))
+        self.assertIsNone(repo_path("research/note.md", self.root, tracked={"research/other.md"}))
+        self.assertEqual(repo_path("research/note.md", self.root, tracked={"research/note.md"}), "research/note.md")
 
     def test_slim_negatives_keeps_display_fields_sorted_by_id(self) -> None:
         records = [
