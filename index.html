@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="site/styles.css">
   <script type="module" src="site/js/home.js"></script>
 </head>
-<body>
+<body class="has-circuit">
   <header class="site-header">
     <div class="wrap header-inner">
       <a class="wordmark" href="index.html">Q-Search</a>
@@ -25,7 +25,8 @@
     </div>
   </header>
 
-  <main>
+  <main id="main">
+    <div class="circuit-svg" id="circuit" aria-hidden="true"></div>
     <section class="wrap intro with-notes">
       <div>
         <h1>Looking for quantum speedups, and keeping every idea that fails.</h1>
@@ -35,7 +36,7 @@
         </div>
         <p class="verdict" id="verdict"><span class="verdict-label" id="verdict-title">Current verdict</span> <span class="muted" id="verdict-detail">Reading the latest snapshot.</span></p>
         <div class="figures">
-          <div><span class="figure-value" id="fig-negatives">–</span><span class="figure-label">ideas ruled out</span></div>
+          <a class="figure-link" href="negative-results.html#map"><span class="figure-value" id="fig-negatives">–</span><span class="figure-label">ideas ruled out, mapped</span></a>
           <div><span class="figure-value" id="fig-experiments">–</span><span class="figure-label">experiments run</span></div>
           <div><span class="figure-value" id="fig-debts">–</span><span class="figure-label">open proof debts</span></div>
         </div>

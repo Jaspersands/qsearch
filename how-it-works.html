@@ -10,8 +10,10 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Schibsted+Grotesk:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
   <link rel="stylesheet" href="site/styles.css">
   <script type="module">
-    import { initFooter } from "./site/js/common.js";
-    initFooter();
+    import { SNAPSHOT_PATH, initCircuitStrip, initFooter, loadJson } from "./site/js/common.js";
+    const snapshotPromise = loadJson(SNAPSHOT_PATH);
+    initFooter(snapshotPromise);
+    initCircuitStrip(snapshotPromise);
   </script>
 </head>
 <body>
@@ -27,6 +29,8 @@
       <a class="header-github" href="https://github.com/Jaspersands/qsearch">GitHub</a>
     </div>
   </header>
+
+  <div class="wrap"><div class="circuit-strip" id="circuit-strip" title="Where each line of attack stands: a meter marks where a route stopped; the dashed line is still running."></div></div>
 
   <main>
     <div class="wrap page-head">

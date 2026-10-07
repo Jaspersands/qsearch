@@ -69,6 +69,8 @@ test("circuitSvg uses single-letter gate labels in a narrow gutter", () => {
   assert.ok(svg.includes(">A<"));
   assert.ok(!svg.includes(">classical attack<"));
   assert.ok(svg.includes(">?<"));
+  assert.ok(!svg.includes(">DHSP<"), "wire labels would collide in a 60 px gutter");
+  assert.ok(svg.includes('x1="12"'), "narrow wires use a 12 px margin");
 });
 
 test("circuitStrip draws the same ends horizontally", () => {

@@ -13,7 +13,9 @@
   --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
   --measure: 40rem;
   --wide: 70rem;
+  --gutter: 150px;
 }
+@media (max-width: 760px) { :root { --gutter: 60px; } }
 
 *, *::before, *::after { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }
@@ -56,7 +58,7 @@ ul, ol { margin: 0 0 1em; padding-left: 1.2em; }
 /* Page structure */
 .intro { padding-top: 72px; padding-bottom: 56px; }
 .intro h1 { margin-bottom: 24px; }
-.page-head { padding-top: 64px; padding-bottom: 32px; }
+.page-head { padding-top: 40px; padding-bottom: 32px; }
 .page-head h1 { margin-bottom: 20px; }
 .section { padding: 64px 0; border-top: 1px solid var(--rule); }
 .section-head { max-width: var(--measure); margin-bottom: 28px; }
@@ -211,4 +213,34 @@ button.button:hover { background: var(--fill); }
   .page-head { padding-top: 40px; }
   .section { padding: 44px 0; }
   .figures { gap: 12px; }
+}
+
+/* Circuit identity */
+.has-circuit main { position: relative; }
+.has-circuit main .wrap { padding-left: calc(24px + var(--gutter)); }
+.circuit-svg { position: absolute; top: 0; left: 0; width: var(--gutter); pointer-events: none; }
+.circuit-svg svg { display: block; width: 100%; height: 100%; overflow: visible; }
+.wire { stroke: #d4d4d4; stroke-width: 1.5; }
+.wire-strong { stroke: var(--text); }
+.wire-dash { stroke: var(--text); stroke-dasharray: 4 4; }
+.wire-live { stroke: var(--text); stroke-width: 1.5; }
+.wire-label { font: 500 11px var(--mono); fill: var(--text-2); text-anchor: middle; }
+.gate rect { fill: var(--bg); stroke: var(--text); stroke-width: 1.2; }
+.gate text { font: 500 11px var(--mono); fill: var(--text); text-anchor: middle; dominant-baseline: middle; }
+.meter rect { fill: var(--bg); stroke: var(--text); stroke-width: 1.2; }
+.meter path { fill: none; stroke: var(--text); stroke-width: 1.2; }
+.meter line { stroke: var(--text); stroke-width: 1.2; }
+.circuit-dot { fill: var(--accent); }
+.circuit-strip { margin-top: 22px; }
+.circuit-strip svg { display: block; width: 100%; height: 64px; overflow: visible; }
+.strip-tick { stroke: var(--rule); stroke-width: 1; }
+.strip-stage { font: 11px var(--sans); fill: var(--text-3); text-anchor: middle; }
+.strip-label { text-anchor: start; }
+.strip-q rect { fill: var(--bg); stroke: var(--text); stroke-width: 1.2; }
+.strip-q text { font: 500 10px var(--mono); fill: var(--text); text-anchor: middle; dominant-baseline: middle; }
+.figure-link { text-decoration: none; display: block; }
+.figure-link:hover .figure-label { text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: 0.2em; }
+@media (max-width: 640px) {
+  .has-circuit main .wrap { padding-left: calc(16px + var(--gutter)); }
+  .strip-stage { display: none; }
 }

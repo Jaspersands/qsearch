@@ -1,4 +1,5 @@
 import { REPO_URL, escapeHtml, formatDate } from "./lib/format.js";
+import { circuitStrip, wirePlan } from "./lib/circuit.js";
 
 export const SNAPSHOT_PATH = "research/progress_snapshot.json";
 
@@ -47,4 +48,25 @@ export function initFooter(snapshotPromise = loadJson(SNAPSHOT_PATH)) {
       }
     })
     .catch(() => {});
+}
+
+export function initCircuitStrip(snapshotPromise) {
+  const container = document.getElementById("circuit-strip");
+  if (!container) return;
+  snapshotPromise
+    .then((snapshot) => {
+      const plan = wirePlan(snapshot.tracks);
+      const draw = () => {
+        container.innerHTML = circuitStrip({ plan, width: Math.max(320, Math.round(container.clientWidth)) });
+      };
+      draw();
+      let timer;
+      window.addEventListener("resize", () => {
+        clearTimeout(timer);
+        timer = setTimeout(draw, 150);
+      });
+    })
+    .catch(() => {
+      container.hidden = true;
+    });
 }

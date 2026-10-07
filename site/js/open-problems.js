@@ -1,4 +1,4 @@
-import { initFooter, loadJson, setText, showLoadError } from "./common.js";
+import { SNAPSHOT_PATH, initCircuitStrip, initFooter, loadJson, setText, showLoadError } from "./common.js";
 import { escapeHtml, formatDate, formatNumber, humanizeId, statusMarker } from "./lib/format.js";
 import { groupDebts } from "./lib/debts.js";
 
@@ -89,7 +89,9 @@ function renderDebts(report) {
 }
 
 function main() {
-  initFooter();
+  const snapshotPromise = loadJson(SNAPSHOT_PATH);
+  initFooter(snapshotPromise);
+  initCircuitStrip(snapshotPromise);
   loadJson(FRONTIERS_PATH)
     .then(renderFrontiers)
     .catch(() => showLoadError(document.getElementById("frontier-rows"), FRONTIERS_PATH));

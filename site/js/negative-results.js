@@ -1,4 +1,4 @@
-import { initFooter, loadJson, setText, showLoadError } from "./common.js";
+import { SNAPSHOT_PATH, initCircuitStrip, initFooter, loadJson, setText, showLoadError } from "./common.js";
 import { escapeHtml, formatNumber, repoUrl } from "./lib/format.js";
 import { filterRecords, recordIdFromHash } from "./lib/negatives.js";
 
@@ -118,7 +118,9 @@ function wireControls() {
 }
 
 function main() {
-  initFooter();
+  const snapshotPromise = loadJson(SNAPSHOT_PATH);
+  initFooter(snapshotPromise);
+  initCircuitStrip(snapshotPromise);
   loadJson(DATA_PATH)
     .then((data) => {
       state.records = data.records;

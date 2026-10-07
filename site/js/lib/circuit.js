@@ -28,9 +28,10 @@ export function aliveAt(wire, gate) {
 }
 
 export function wireExtents(plan, gateYs, width) {
-  const span = width - 44;
+  const margin = width < 100 ? 12 : 22;
+  const span = width - 2 * margin;
   return plan.map((wire, i) => ({
-    x: plan.length === 1 ? width / 2 : 22 + (i * span) / (plan.length - 1),
+    x: plan.length === 1 ? width / 2 : margin + (i * span) / (plan.length - 1),
     end: wire.active ? gateYs[LAST] : gateYs[wire.endsAt] + METER_GAP,
   }));
 }
@@ -48,13 +49,15 @@ function meter(x, top, w = 24, h = 20) {
 /** Vertical circuit for the home page gutter. */
 export function circuitSvg({ plan, gateYs, height, width = 150 }) {
   const extents = wireExtents(plan, gateYs, width);
-  const labels = width < 100 ? SHORT_STAGES : [...STAGES.slice(0, LAST), "?"];
+  const narrow = width < 100;
+  const labels = narrow ? SHORT_STAGES : [...STAGES.slice(0, LAST), "?"];
+  const gatePad = narrow ? 9 : 14;
   const parts = [];
 
   plan.forEach((wire, i) => {
     const { x, end } = extents[i];
     const solidEnd = wire.active ? gateYs[wire.solidTo] : end;
-    parts.push(`<text class="wire-label" x="${x}" y="${TOP - 12}">${escapeHtml(wire.label)}</text>`);
+    if (!narrow) parts.push(`<text class="wire-label" x="${x}" y="${TOP - 12}">${escapeHtml(wire.label)}</text>`);
     parts.push(`<line class="wire" x1="${x}" x2="${x}" y1="${TOP}" y2="${solidEnd}"/>`);
     if (wire.active) parts.push(`<line class="wire wire-dash" x1="${x}" x2="${x}" y1="${solidEnd}" y2="${end}"/>`);
     parts.push(`<line class="wire-live" data-wire="${i}" x1="${x}" x2="${x}" y1="${TOP}" y2="${TOP}"/>`);
@@ -64,8 +67,8 @@ export function circuitSvg({ plan, gateYs, height, width = 150 }) {
   STAGES.forEach((_, gate) => {
     const xs = plan.map((wire, i) => (aliveAt(wire, gate) ? extents[i].x : null)).filter((x) => x !== null);
     if (!xs.length) return;
-    const left = Math.min(...xs) - 14;
-    const boxWidth = Math.max(...xs) + 14 - left;
+    const left = Math.min(...xs) - gatePad;
+    const boxWidth = Math.max(...xs) + gatePad - left;
     const y = gateYs[gate];
     parts.push(
       `<g class="gate" data-gate="${gate}"><rect x="${left}" y="${y - 12}" width="${boxWidth}" height="24" rx="2"/>` +
