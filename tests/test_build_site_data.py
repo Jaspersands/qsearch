@@ -1,9 +1,20 @@
 import json
+import os
+import subprocess
 import tempfile
 import unittest
 from pathlib import Path
 
-from tools.build_site_data import main, repo_path, slim_negatives, week_start, weekly_runs
+from tools.build_site_data import (
+    build_changelog,
+    describe_changes,
+    main,
+    repo_path,
+    slim_negatives,
+    snapshot_versions,
+    week_start,
+    weekly_runs,
+)
 
 
 def negative(record_id, tags, source="EXP-X", evidence=None):
@@ -119,11 +130,102 @@ class MainTests(unittest.TestCase):
             (root / "research" / "registry" / "negative_results.json").write_text(
                 json.dumps([negative("A", ["DHS-GOWERS-SIEVE"])])
             )
-            self.assertEqual(main(["--root", str(root)]), 0)
+            self.assertEqual(main(["--root", str(root), "--skip-changelog"]), 0)
             activity = json.loads((root / "site" / "data" / "activity.json").read_text())
             self.assertEqual(activity["total_runs"], 1)
             negatives = json.loads((root / "site" / "data" / "negatives.json").read_text())
             self.assertEqual(negatives["count"], 1)
+            self.assertFalse((root / "site" / "data" / "changelog.json").exists())
+
+
+def snapshot(verdict="No breakthrough yet", tracks=None, negatives=10, experiments=5):
+    return {
+        "verdict": {"title": verdict, "detail": "d"},
+        "tracks": tracks if tracks is not None else [{"short_title": "DHSP", "status": "Blocked"}],
+        "metrics": {"negative_results": negatives, "experiments": experiments},
+    }
+
+
+class ChangelogTests(unittest.TestCase):
+    def test_first_snapshot(self) -> None:
+        self.assertEqual(describe_changes(None, snapshot()), ["First public snapshot."])
+
+    def test_no_change_gives_no_entries(self) -> None:
+        self.assertEqual(describe_changes(snapshot(), snapshot()), [])
+
+    def test_verdict_track_and_negative_changes(self) -> None:
+        before = snapshot(tracks=[{"short_title": "DHSP", "status": "Blocked"}, {"short_title": "Old", "status": "x"}])
+        after = snapshot(
+            verdict="Speedup found",
+            tracks=[{"short_title": "DHSP", "status": "Readout checked"}, {"short_title": "Codes", "status": "Closed"}],
+            negatives=13,
+        )
+        self.assertEqual(
+            describe_changes(before, after),
+            [
+                'Verdict changed from "No breakthrough yet" to "Speedup found".',
+                "DHSP: Readout checked (was: Blocked).",
+                "Codes track added: Closed.",
+                "Old track removed.",
+                "3 more ideas ruled out (13 in total).",
+            ],
+        )
+
+    def test_single_new_negative_is_singular(self) -> None:
+        self.assertEqual(
+            describe_changes(snapshot(negatives=10), snapshot(negatives=11)),
+            ["1 more idea ruled out (11 in total)."],
+        )
+
+    def test_build_changelog_keeps_last_version_per_date(self) -> None:
+        versions = [
+            {"commit": "aaaaaaaa", "date": "2026-07-17", "snapshot": snapshot(negatives=10)},
+            {"commit": "bbbbbbbb", "date": "2026-07-17", "snapshot": snapshot(negatives=12)},
+            {"commit": "cccccccc", "date": "2026-07-20", "snapshot": snapshot(negatives=15)},
+        ]
+        changelog = build_changelog(versions)
+        self.assertEqual(
+            changelog["points"],
+            [
+                {"date": "2026-07-17", "negative_results": 12, "experiments": 5},
+                {"date": "2026-07-20", "negative_results": 15, "experiments": 5},
+            ],
+        )
+        self.assertEqual([e["date"] for e in changelog["entries"]], ["2026-07-20", "2026-07-17"])
+        self.assertEqual(changelog["entries"][0]["changes"], ["3 more ideas ruled out (15 in total)."])
+        self.assertEqual(changelog["entries"][1]["commit"], "bbbbbbbb")
+
+
+class SnapshotVersionsTests(unittest.TestCase):
+    def git(self, root: Path, *args: str, when: str = "2026-07-17T12:00:00+00:00") -> None:
+        env = dict(os.environ, GIT_AUTHOR_DATE=when, GIT_COMMITTER_DATE=when)
+        subprocess.run(
+            ["git", "-c", "user.name=Test", "-c", "user.email=test@example.com", "-c", "commit.gpgsign=false", *args],
+            cwd=root, check=True, capture_output=True, env=env,
+        )
+
+    def test_reads_every_committed_version_oldest_first(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            path = root / "research" / "progress_snapshot.json"
+            path.parent.mkdir()
+            self.git(root, "init", "-q")
+            path.write_text(json.dumps(snapshot(negatives=1)))
+            self.git(root, "add", ".")
+            self.git(root, "commit", "-q", "-m", "one", when="2026-07-17T12:00:00+00:00")
+            path.write_text(json.dumps(snapshot(negatives=2)))
+            self.git(root, "commit", "-q", "-am", "two", when="2026-07-19T12:00:00+00:00")
+            versions = snapshot_versions(root)
+            self.assertEqual([v["date"] for v in versions], ["2026-07-17", "2026-07-19"])
+            self.assertEqual([v["snapshot"]["metrics"]["negative_results"] for v in versions], [1, 2])
+            self.assertEqual(len(versions[0]["commit"]), 8)
+
+            (root / "research" / "experiment_run_history.json").write_text("[]")
+            (root / "research" / "registry").mkdir()
+            (root / "research" / "registry" / "negative_results.json").write_text("[]")
+            self.assertEqual(main(["--root", str(root)]), 0)
+            changelog = json.loads((root / "site" / "data" / "changelog.json").read_text())
+            self.assertEqual(len(changelog["points"]), 2)
 
 
 if __name__ == "__main__":
