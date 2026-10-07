@@ -109,3 +109,27 @@ Shared header on every page: wordmark "Q-Search", links Home · Open problems ·
 ## Out of scope
 
 Dark mode, README changes, any change to research code or registries, analytics, a JS framework.
+
+## Revision 2026-10-07 b: circuit identity and negative-results map
+
+After reviewing the first build, the user found it too plain and chose two concepts from a prototype page (`circuit as layout` and `map of where we looked`). The Fourier-sampling demo and phase coloring were rejected. Everything above still applies except where this section overrides it.
+
+### Circuit as the home page's spine
+
+- Three vertical wires run down the left gutter of the home page, one per snapshot track (labels from `short_title`).
+- Five gates, in order: hypothesis, structure, classical attack, proof gate, separation. The first four sit beside the first four home sections (intro, where things stand, activity, results so far). The separation gate sits at the bottom of the circuit, above the footer, labelled "?".
+- Wire ends are data-driven from each track's `stage` (integer) and `tone`:
+  - tone other than `active`: the wire is solid down to gate `stage + 1` (capped at the proof gate) and ends there in a measurement symbol.
+  - tone `active`: the wire is solid down to gate `stage` and continues dashed to the separation gate.
+  - A gate box spans only the wires still alive at that gate.
+- Scroll progress: the live part of each wire darkens and an accent dot rides the active wire. Disabled under `prefers-reduced-motion`.
+- Gutter: 150 px on desktop, 60 px below 760 px.
+- Other pages get a horizontal three-wire strip under the header using the same plan (ends and dashed continuation), as a compact progress map.
+
+### Map at the top of Negative results
+
+- `tools/build_negative_map.py` (local, needs scikit-learn) computes a 2D layout of all negative results: TF-IDF over id, claim, and reason → truncated SVD → t-SNE (fixed seed) → k-means regions labelled with the most distinctive two-word phrase from their claims. Output: `site/data/negative_map.json` with `points: [{id, x, y}]` normalised to [0, 1] and `regions: [{x, y, label, count}]`. Committed; CI only parse-checks it.
+- The page draws the map on a canvas above the search box. Point color = track (the four filter tags plus grey for other). This is the one place the site uses colors beyond the single accent.
+- Map and list are synced: points not matching the current search/filter are dimmed; clicking a point opens and scrolls to its record in the list on the same page (keeping the current filter if the record matches it). Hover shows id and claim.
+- Records without map coordinates still appear in the list; a note states how many are not yet on the map.
+- The home page's "ideas ruled out" figure links to the map.
