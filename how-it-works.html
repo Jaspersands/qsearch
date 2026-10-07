@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How it works · Q-Search</title>
+  <meta name="description" content="How Q-Search proposes quantum algorithms, attacks them classically, records what fails, and decides what can be claimed.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Schibsted+Grotesk:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+  <link rel="stylesheet" href="site/styles.css">
+  <script type="module">
+    import { initFooter } from "./site/js/common.js";
+    initFooter();
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="wordmark" href="index.html">Q-Search</a>
+      <nav aria-label="Site">
+        <a href="index.html">Home</a>
+        <a href="open-problems.html">Open problems</a>
+        <a href="negative-results.html">Negative results</a>
+        <a href="how-it-works.html" aria-current="page">How it works</a>
+      </nav>
+      <a class="header-github" href="https://github.com/Jaspersands/qsearch">GitHub</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap page-head">
+      <h1>How it works</h1>
+      <div class="prose">
+        <p>Most proposals for new quantum algorithms fall apart for one of two reasons: a classical algorithm turns out to do the same job, or the idea only works on small examples. Q-Search is set up to find out which, as early as possible, and to write the answer down.</p>
+      </div>
+    </div>
+
+    <section class="section" id="loop">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>The loop</h2>
+          <p>Every idea goes through the same four steps.</p>
+        </div>
+        <ol class="loop">
+          <li>
+            <h3>Propose</h3>
+            <p>Write down a candidate quantum procedure for one specific problem, including the exact measurement it would make.</p>
+          </li>
+          <li>
+            <h3>Attack classically</h3>
+            <p>Try to get the same answer with classical methods: information-set decoding, lattice reduction, Weisfeiler–Leman refinement, Fourier methods. If one works, the quantum idea offers no speedup.</p>
+          </li>
+          <li>
+            <h3>Record</h3>
+            <p>Every idea that fails goes into the negative-results registry with the reason and the lesson, so it isn't tried again.</p>
+          </li>
+          <li>
+            <h3>Proof gate</h3>
+            <p>An idea that survives still can't be called a speedup until its missing proofs, its proof debts, are written and checked.</p>
+          </li>
+        </ol>
+        <p class="loop-return">Ideas that survive the gate at small sizes go back to step 2 at larger sizes. So far, none has made it through.</p>
+      </div>
+    </section>
+
+    <section class="section" id="terms">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Terms used on this site</h2>
+        </div>
+        <dl class="terms">
+          <dt>Hidden subgroup problem</dt>
+          <dd>A family of problems where a function hides a subgroup and you have to find it. Shor's factoring algorithm solves the abelian case. The dihedral and symmetric-group cases are open.</dd>
+          <dt>Code equivalence</dt>
+          <dd>Deciding whether two error-correcting codes are the same up to reordering their coordinates. Some post-quantum cryptography depends on this being hard.</dd>
+          <dt>Dequantization</dt>
+          <dd>Showing that a classical algorithm can do what a proposed quantum one does, about as fast. A dequantized idea offers no speedup.</dd>
+          <dt>Negative result</dt>
+          <dd>A recorded failure: the claim that was tested, why it's false or blocked, and what to do differently next time.</dd>
+          <dt>Proof debt</dt>
+          <dd>A proof that has to exist before a claim can be made. For example, that a reduction really preserves the original problem, or that no known classical method already works.</dd>
+          <dt>Kill criterion</dt>
+          <dd>A condition, decided in advance, that ends a line of research if it's met.</dd>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section" id="repository">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>What's in the repository</h2>
+          <p>Everything on this site is generated from these folders.</p>
+        </div>
+        <table class="table plain">
+          <thead><tr><th>Path</th><th>What it holds</th></tr></thead>
+          <tbody>
+            <tr><td class="id" data-label="Path"><a href="https://github.com/Jaspersands/qsearch/blob/main/qsearch.py">qsearch.py</a></td><td data-label="Holds">The command-line entry point for every registered workflow.</td></tr>
+            <tr><td class="id" data-label="Path"><a href="https://github.com/Jaspersands/qsearch/tree/main/core">core/</a></td><td data-label="Holds">The framework: research registry, experiment runner, proof gate, and the classical-attack scanner.</td></tr>
+            <tr><td class="id" data-label="Path"><a href="https://github.com/Jaspersands/qsearch/tree/main/theorems">theorems/</a></td><td data-label="Holds">One module per verification workbench: dihedral and phase-state problems (<code>dcp_*</code>), coset states (<code>coset_*</code>, <code>cfi_*</code>), wreath products (<code>self_dual_wreath_*</code>), and code equivalence (<code>code_*</code>, <code>goppa_*</code>, <code>bch_*</code>).</td></tr>
+            <tr><td class="id" data-label="Path"><a href="https://github.com/Jaspersands/qsearch/tree/main/research/registry">research/registry/</a></td><td data-label="Holds">The canonical registries: candidates, experiments, results, negative results, and dequantization checks.</td></tr>
+            <tr><td class="id" data-label="Path"><a href="https://github.com/Jaspersands/qsearch/tree/main/research">research/</a></td><td data-label="Holds">Generated outputs for each area, the written derivations (<code>*.md</code>), the frontier map, and the proof-debt report.</td></tr>
+            <tr><td class="id" data-label="Path"><a href="https://github.com/Jaspersands/qsearch/tree/main/tests">tests/</a></td><td data-label="Holds">Unit, integration, and registry tests.</td></tr>
+            <tr><td class="id" data-label="Path"><a href="https://github.com/Jaspersands/qsearch/tree/main/tools">tools/</a></td><td data-label="Holds">Scripts that build and check this website's data.</td></tr>
+            <tr><td class="id" data-label="Path"><a href="https://github.com/Jaspersands/qsearch/tree/main/site">site/</a></td><td data-label="Holds">This website's styles, scripts, and data files.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section" id="commands">
+      <div class="wrap with-notes">
+        <div>
+          <div class="section-head">
+            <h2>Main commands</h2>
+            <p>Run these from the repository root.</p>
+          </div>
+          <div class="command"><pre id="cmd-validate">python qsearch.py validate</pre><button class="copy" type="button" data-copy="cmd-validate">Copy</button></div>
+          <div class="command"><pre id="cmd-run-next">python qsearch.py run-next</pre><button class="copy" type="button" data-copy="cmd-run-next">Copy</button></div>
+          <div class="command"><pre id="cmd-build">python tools/build_progress_snapshot.py
+python tools/build_site_data.py</pre><button class="copy" type="button" data-copy="cmd-build">Copy</button></div>
+          <div class="command"><pre id="cmd-tests">python -m pytest tests/</pre><button class="copy" type="button" data-copy="cmd-tests">Copy</button></div>
+        </div>
+        <aside class="note">
+          <p><code>validate</code> checks every candidate and experiment against its proof obligations. GitHub Actions runs it on every push.</p>
+          <p><code>run-next</code> runs the highest-priority registered experiment.</p>
+          <p>The two build scripts regenerate the files this website reads.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="limits">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Limits</h2>
+        </div>
+        <ul class="prose">
+          <li>Numerical checks are not formal proofs. Many derivations in the registry are marked review-pending: written down and checked by scripts, but not yet independently reviewed.</li>
+          <li>Results at small sizes don't establish how an idea scales. The proof gate exists because small cases often look better than large ones.</li>
+          <li>Research runs in interactive sessions directed by Jasper Sands, using AI coding agents. GitHub Actions validates every push. Nothing runs on its own between sessions.</li>
+          <li>No speedup is claimed. The site will only say otherwise once every proof debt for that claim is closed.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p>Q-Search is an open research project by Jasper Sands. Data updated <time data-updated>recently</time>.</p>
+      <p><a href="https://github.com/Jaspersands/qsearch">Source on GitHub</a> · <a href="index.html#cite">Cite</a></p>
+    </div>
+  </footer>
+  <script type="module">
+    import { bindCopyButtons } from "./site/js/common.js";
+    bindCopyButtons();
+  </script>
+</body>
+</html>
