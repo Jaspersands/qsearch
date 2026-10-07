@@ -1,793 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Q-Search is a proof-gated research program investigating structural quantum algorithms for hard non-abelian problems.">
-    <title>Q-Search | Quantum Algorithm Research Monograph & Benchmark</title>
-    
-    <!-- Academic Typography: Newsreader + Inter + IBM Plex Mono -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,600&display=swap" rel="stylesheet">
-    
-    <!-- KaTeX for Scientific Mathematical Typesetting -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
-    
-    <link rel="stylesheet" href="site/styles.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Q-Search · looking for quantum speedups</title>
+  <meta name="description" content="An open research project looking for quantum algorithms that beat classical ones on hard algebraic problems, with a public record of every idea that failed.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Schibsted+Grotesk:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+  <link rel="stylesheet" href="site/styles.css">
+  <script type="module" src="site/js/home.js"></script>
 </head>
 <body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="wordmark" href="index.html">Q-Search</a>
+      <nav aria-label="Site">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="open-problems.html">Open problems</a>
+        <a href="negative-results.html">Negative results</a>
+        <a href="how-it-works.html">How it works</a>
+      </nav>
+      <a class="header-github" href="https://github.com/Jaspersands/qsearch">GitHub</a>
+    </div>
+  </header>
 
-    <!-- Archival Publication Banner -->
-    <aside class="pub-banner" aria-label="Journal publication details">
-        <div class="pub-banner-left">
-            <span class="pub-tag"><span class="pub-tag-dot" aria-hidden="true"></span> Autonomous Science Monograph</span>
-            <span>Vol. 2026.09 &bull; Computational Complexity</span>
-            <span>ISSN 2026-QSRCH</span>
+  <main>
+    <section class="wrap intro with-notes">
+      <div>
+        <h1>Looking for quantum speedups, and keeping every idea that fails.</h1>
+        <div class="prose">
+          <p>Quantum computers are known to beat classical ones on a few problems, like factoring. Q-Search asks whether the same kind of speedup exists for harder relatives of those problems: the dihedral hidden subgroup problem, hidden subgroups of symmetric groups, and deciding whether two error-correcting codes are the same up to relabeling.</p>
+          <p>Each idea gets attacked with the best classical methods we can find. Almost all of them fail. We keep every failure on record, with the reason, so the same idea doesn't get tried twice.</p>
         </div>
-        <div class="pub-banner-right">
-            <span>Machine Proof-Gate Protocol APG-v4</span>
-            <a class="pub-link" href="#quickstart">Deterministic Audit &rarr;</a>
+        <p class="verdict" id="verdict"><span class="verdict-label" id="verdict-title">Current verdict</span> <span class="muted" id="verdict-detail">Reading the latest snapshot.</span></p>
+        <div class="figures">
+          <div><span class="figure-value" id="fig-negatives">–</span><span class="figure-label">ideas ruled out</span></div>
+          <div><span class="figure-value" id="fig-experiments">–</span><span class="figure-label">experiments run</span></div>
+          <div><span class="figure-value" id="fig-debts">–</span><span class="figure-label">open proof debts</span></div>
         </div>
-    </aside>
+      </div>
+      <aside class="note">
+        <p>As of <span id="snapshot-date">the latest snapshot</span>.</p>
+        <p>Counts come from <a href="https://github.com/Jaspersands/qsearch/blob/main/research/progress_snapshot.json"><code>progress_snapshot.json</code></a>, which <a href="https://github.com/Jaspersands/qsearch/blob/main/tools/build_progress_snapshot.py"><code>build_progress_snapshot.py</code></a> builds from the registries.</p>
+        <p>No speedup is claimed anywhere on this site.</p>
+      </aside>
+    </section>
 
-    <!-- Main Site Header -->
-    <header class="site-header">
-        <a class="brand" href="#top" aria-label="Q-Search home">
-            <span class="brand-symbol" aria-hidden="true">&fnof;</span>
-            <div class="brand-text">
-                <span class="brand-title">Q-Search</span>
-                <span class="brand-subtitle">Quantum Complexity Laboratory</span>
-            </div>
-        </a>
-        <nav aria-label="Main site navigation">
-            <a href="index.html" class="active">Monograph</a>
-            <a href="methodology.html">Methodology</a>
-            <a href="frontier.html">Frontier Map</a>
-            <a href="negative-results.html">Negative Results <span class="nav-count">(914)</span></a>
-            <a href="proof-debt.html">Proof Debt <span class="nav-count">(24)</span></a>
-            <a href="repomap.html">Repo Map</a>
-        </nav>
-        <div class="header-actions">
-            <a class="github-link" href="https://github.com/Jaspersands/qsearch" target="_blank" rel="noreferrer">
-                <span>GitHub</span>
-                <span aria-hidden="true">&rarr;</span>
-            </a>
+    <section class="section" id="tracks">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Where things stand</h2>
+          <p>Three lines of attack. Each row shows the current state and the next step. Open a row for the evidence.</p>
         </div>
-    </header>
+        <div class="rows" id="track-rows"></div>
+      </div>
+    </section>
 
-    <!-- Floating Reading / Sub-Navigation Rail -->
-    <nav class="subnav-rail" aria-label="Monograph section navigation">
-        <span class="rail-label">Sections:</span>
-        <a class="rail-link" href="#top">&sect;1 Abstract</a>
-        <a class="rail-link" href="#how-it-works">&sect;2 Protocol</a>
-        <a class="rail-link" href="#workbench">&sect;3 Workbench</a>
-        <a class="rail-link" href="#matrix">&sect;4 Matrix</a>
-        <a class="rail-link" href="#falsifier-sandbox">&sect;5 Falsifier Arena</a>
-        <a class="rail-link" href="#pipeline">&sect;6 Pipeline</a>
-        <a class="rail-link" href="#case-study">&sect;7 Commutant</a>
-        <a class="rail-link" href="#spectral-sandbox">&sect;8 Spectral Sandbox</a>
-        <a class="rail-link" href="#negatives-spotlight">&sect;9 Negative Registry</a>
-        <a class="rail-link" href="#evidence">&sect;10 Evidence</a>
-        <a class="rail-link" href="#quickstart">&sect;11 Verification</a>
-        <a class="rail-link" href="#citation">&sect;12 Citation</a>
-    </nav>
+    <section class="section" id="activity">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Activity</h2>
+          <p>Experiment runs per week, and the running total of ideas ruled out.</p>
+        </div>
+        <figure class="chart" id="activity-chart"></figure>
+        <p class="legend"><span class="legend-bar">Runs per week (left scale)</span><span class="legend-line">Ideas ruled out, running total (right scale)</span></p>
+        <p class="small">Runs come from <a href="https://github.com/Jaspersands/qsearch/blob/main/research/experiment_run_history.json"><code>experiment_run_history.json</code></a>. The total comes from each committed version of the snapshot.</p>
+      </div>
+    </section>
 
-    <main id="top">
-        <!-- Hero Section: Editorial Prospectus & Proof-Gate Ledger -->
-        <section class="hero" aria-labelledby="page-title">
-            <div class="hero-copy">
-                <p class="eyebrow">Academic Research Monograph &bull; Vol. 2026.09</p>
-                <h1 id="page-title">Q-Search</h1>
-                <p class="hero-subtitle">A proof-gated investigation into structural quantum advantage.</p>
-                
-                <!-- Editorial Abstract Box with Drop Cap -->
-                <div class="abstract-box">
-                    <div class="abstract-header">
-                        <span class="abstract-label">Executive Abstract</span>
-                        <span class="abstract-label" style="font-size: 0.65rem; color: var(--green);">Peer-Verifiable</span>
-                    </div>
-                    <p class="abstract-text">
-                        <span class="drop-cap">F</span>ormulating candidate quantum mechanisms for non-abelian hidden subgroup and linear code equivalence problems, attacking them with automated classical falsification suites, and recording negative boundaries as first-class scientific assets. No speedup is declared from small-scale simulation; candidates must survive rigorous dequantization gates to remain active.
-                    </p>
-                </div>
+    <section class="section" id="results">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Results so far</h2>
+          <p>The strongest things established so far. Most are limits: proofs that a route can't work.</p>
+        </div>
+        <ol class="milestones" id="milestones"></ol>
+      </div>
+    </section>
 
-                <!-- Academic Metadata Strip -->
-                <div class="hero-meta-strip">
-                    <div class="meta-item">
-                        <span class="meta-label">Principal:</span>
-                        <span class="meta-val">Jasper Sands</span>
-                    </div>
-                    <div class="meta-item">
-                        <span class="meta-label">Protocol:</span>
-                        <span class="meta-val">Automated Proof-Gate APG-v4</span>
-                    </div>
-                    <div class="meta-item">
-                        <span class="meta-label">Falsification:</span>
-                        <span class="meta-val">ISD &bull; LLL &bull; WL &bull; Fourier Contraction</span>
-                    </div>
-                    <div class="meta-item">
-                        <span class="meta-label">Open Claims:</span>
-                        <span class="meta-val" style="color: var(--green);">0 Unverified</span>
-                    </div>
-                </div>
+    <section class="section" id="changes">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>What changed</h2>
+          <p>How the verdict, the three tracks, and the count of ruled-out ideas have moved, newest first.</p>
+        </div>
+        <ol class="changelog" id="changelog"></ol>
+        <button class="button" type="button" id="changelog-more" hidden>Show all changes</button>
+      </div>
+    </section>
 
-                <div class="hero-actions">
-                    <a class="primary-action" href="#workbench">Interactive Workbench &darr;</a>
-                    <a class="secondary-action" href="#falsifier-sandbox">Falsifier Arena</a>
-                    <a class="secondary-action" href="#spectral-sandbox">Spectral Sandbox</a>
-                    <a class="secondary-action" href="#quickstart">Verification Console</a>
-                </div>
-            </div>
-            
-            <!-- Live Proof-Gate Ledger Plate -->
-            <div class="ledger-plate" aria-label="Current research verdict and ledger credentials">
-                <div>
-                    <div class="seal-header">
-                        <div class="seal-badge" data-hologram="true">
-                            <span class="seal-dot" aria-hidden="true"></span>
-                            <span>Proof Gate Active</span>
-                        </div>
-                        <span class="seal-id">ID: CERT-2026.09</span>
-                    </div>
-                    <h2 class="ledger-title" id="verdict-title">Loading certified status...</h2>
-                    <p class="ledger-detail" id="verdict-detail">Querying the latest proof debt registry and empirical falsification telemetry.</p>
-                </div>
+    <section class="section" id="reproduce">
+      <div class="wrap with-notes">
+        <div>
+          <div class="section-head">
+            <h2>Check it yourself</h2>
+            <p>Everything here is generated from files in the repository. To rebuild and validate the registries on your machine:</p>
+          </div>
+          <div class="command"><pre id="cmd-setup">git clone https://github.com/Jaspersands/qsearch.git
+cd qsearch
+python -m pip install -r requirements.txt</pre><button class="copy" type="button" data-copy="cmd-setup">Copy</button></div>
+          <div class="command"><pre id="cmd-validate">python qsearch.py validate</pre><button class="copy" type="button" data-copy="cmd-validate">Copy</button></div>
+          <div class="command"><pre id="cmd-tests">python -m pytest tests/test_classical_baseline_suite.py</pre><button class="copy" type="button" data-copy="cmd-tests">Copy</button></div>
+        </div>
+        <aside class="note">
+          <p><code>validate</code> checks every candidate and experiment against its proof obligations. GitHub Actions runs the same check on every push.</p>
+          <p>The test file runs the classical baseline attacks on small instances. More commands are on <a href="how-it-works.html#commands">How it works</a>.</p>
+        </aside>
+      </div>
+    </section>
 
-                <div class="ledger-grid">
-                    <div>
-                        <span class="ledger-cell-label">Proof Obligation</span>
-                        <span class="ledger-cell-val" style="color: var(--rust);">24 Open Debts</span>
-                    </div>
-                    <div>
-                        <span class="ledger-cell-label">Classical Falsifiers</span>
-                        <span class="ledger-cell-val">4 Engine Suites</span>
-                    </div>
-                    <div>
-                        <span class="ledger-cell-label">Negative Memory</span>
-                        <span class="ledger-cell-val" style="color: var(--green);">914 Retained</span>
-                    </div>
-                    <div>
-                        <span class="ledger-cell-label">Test Suite Status</span>
-                        <span class="ledger-cell-val">100% Deterministic</span>
-                    </div>
-                </div>
-
-                <div class="ledger-footer">
-                    <span id="last-updated">Snapshot loading...</span>
-                    <span>Direct Git Audit &check;</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- Academic Parchment Metric Ribbon -->
-        <section class="metric-strip" aria-label="Research registry summary ledger">
-            <div><strong id="metric-experiments">--</strong><span>experiments run</span></div>
-            <div><strong id="metric-results">--</strong><span>empirical checks</span></div>
-            <div><strong id="metric-blockers">--</strong><span>claim blockers</span></div>
-            <div><strong id="metric-negatives">--</strong><span>negative results</span></div>
-            <div><strong id="metric-debts">--</strong><span>open proof debts</span></div>
-        </section>
-
-        <!-- Section 2: How the Scientific Engine Works -->
-        <section id="how-it-works" class="content-section">
-            <div class="section-heading">
-                <p class="eyebrow">Scientific Operating Protocol</p>
-                <h2>How Q-Search operates</h2>
-                <p>
-                    Most quantum algorithm proposals collapse when scaled or when subjected to classical dequantization.
-                    Q-Search executes a continuous, automated falsification loop designed to systematically dismantle its own candidates before any speedup is claimed.
-                </p>
-            </div>
-            <div class="pipeline-grid">
-                <div class="pipeline-card">
-                    <div class="step-num">01 / HYPOTHESIS</div>
-                    <h3>Propose Mechanism</h3>
-                    <p>Generates candidate quantum observables, coset state frames, and noncommuting invariant operators for hard computational targets.</p>
-                    <span class="card-tag">Representation Theory</span>
-                </div>
-                <div class="pipeline-card">
-                    <div class="step-num">02 / FALSIFICATION</div>
-                    <h3>Classical Attack Suite</h3>
-                    <p>Attacks candidate states with automated classical ISD, Weisfeiler-Leman invariants, lattice BDD decoders, and Fourier contraction.</p>
-                    <span class="card-tag">Automated Attack</span>
-                </div>
-                <div class="pipeline-card">
-                    <div class="step-num">03 / REGISTRY</div>
-                    <h3>Negative Result Index</h3>
-                    <p>Every dequantized candidate or structural barrier is permanently cataloged (914 records) to prevent circular research dead-ends.</p>
-                    <span class="card-tag">Permanent Memory</span>
-                </div>
-                <div class="pipeline-card">
-                    <div class="step-num">04 / COMPLEXITY</div>
-                    <h3>Proof Debt Gate</h3>
-                    <p>No speedup is declared from small-scale simulation. Candidates must satisfy formal asymptotic complexity bounds.</p>
-                    <span class="card-tag">Complexity Gate</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section 3: Interactive Research Workbench (Track Dossier) -->
-        <section id="workbench" class="content-section alt-bg">
-            <div class="section-heading compact">
-                <p class="eyebrow">Interactive Investigation</p>
-                <h2>Research track workbench</h2>
-                <p>Select an active or falsified program below to inspect its mathematical target, candidate quantum observable, classical attack suite, and current epistemic status.</p>
-            </div>
-
-            <div class="workbench-container">
-                <!-- Sidebar Track List -->
-                <div class="workbench-sidebar">
-                    <div class="workbench-tab-header">Select Program Track</div>
-                    <div id="workbench-tabs" class="workbench-tabs" role="tablist">
-                        <!-- Populated dynamically by progress.js -->
-                    </div>
-                </div>
-
-                <!-- Main Dossier Detail Pane -->
-                <div id="workbench-dossier" class="workbench-dossier" role="tabpanel">
-                    <!-- Populated dynamically by progress.js -->
-                </div>
-            </div>
-        </section>
-
-        <!-- Section 4: Interactive Classical Attack & Falsification Matrix -->
-        <section id="matrix" class="content-section">
-            <div class="section-heading compact">
-                <p class="eyebrow rust">Empirical Falsification Matrix</p>
-                <h2>Automated classical dequantization suites</h2>
-                <p>Every quantum shortcut must survive these four rigorous classical baseline families. Click a filter to inspect specific attack boundaries.</p>
-            </div>
-
-            <div class="matrix-container">
-                <div class="matrix-controls">
-                    <div class="matrix-filters">
-                        <button class="matrix-filter-btn active" onclick="filterMatrix('all', this)">All Attack Families (4)</button>
-                        <button class="matrix-filter-btn" onclick="filterMatrix('coset', this)">Nonabelian Cosets</button>
-                        <button class="matrix-filter-btn" onclick="filterMatrix('dhsp', this)">Dihedral HSP</button>
-                        <button class="matrix-filter-btn" onclick="filterMatrix('code', this)">Code Equivalence</button>
-                    </div>
-                    <span style="font-family: var(--mono); font-size: 0.72rem; color: var(--muted-light);">Zero-tolerance empirical checks</span>
-                </div>
-
-                <div class="matrix-table-wrapper">
-                    <table class="falsification-table" id="matrix-table">
-                        <thead>
-                            <tr>
-                                <th>Target Program</th>
-                                <th>Candidate Mechanism</th>
-                                <th>Classical Attack / Falsifier</th>
-                                <th>Asymptotic Barrier / Outcome</th>
-                                <th>Verification Module</th>
-                            </tr>
-                        </thead>
-                        <tbody id="matrix-tbody">
-                            <tr data-group="dhsp">
-                                <td>
-                                    <span class="target-id">Dihedral Hidden Subgroup ($D_N$)</span>
-                                    <span class="target-sub">Hidden reflection recovery</span>
-                                </td>
-                                <td>Gowers-sieve coset state nearest-plane decoding</td>
-                                <td><span class="attack-name">Lattice Nearest-Plane Sieve</span><br><span style="color:var(--muted); font-size:0.78rem;">Enumerates 16.7M assignments</span></td>
-                                <td>
-                                    <span class="status-label blocked">Route Falsified</span><br>
-                                    Fixed-depth lists collapse exponentially at scale; small-$n$ success was a finite dimension artifact.
-                                </td>
-                                <td><span class="test-badge">tests/test_dhs_sieve.py</span></td>
-                            </tr>
-                            <tr data-group="code">
-                                <td>
-                                    <span class="target-id">Linear Code Equivalence</span>
-                                    <span class="target-sub">Goppa / McEliece cryptosystems</span>
-                                </td>
-                                <td>High-weight syzygy collective quantum invariants</td>
-                                <td><span class="attack-name">Hull Projector Reduction</span><br><span style="color:var(--muted); font-size:0.78rem;">Iterative subspace contraction</span></td>
-                                <td>
-                                    <span class="status-label blocked">Dequantized to P</span><br>
-                                    Classical hull-projector attack resolved syzygy collisions in polynomial classical time $O(n^3)$.
-                                </td>
-                                <td><span class="test-badge">tests/test_code_syzygy.py</span></td>
-                            </tr>
-                            <tr data-group="coset">
-                                <td>
-                                    <span class="target-id">Coset States ($S_n$)</span>
-                                    <span class="target-sub">Fixed-sector natural access</span>
-                                </td>
-                                <td>Stable-sector 3-copy coupling tree postselection</td>
-                                <td><span class="attack-name">Weak-Fourier Trace Audit</span><br><span style="color:var(--muted); font-size:0.78rem;">Exact representation character sum</span></td>
-                                <td>
-                                    <span class="status-label blocked">No-Go Theorem</span><br>
-                                    Weak-Fourier mass decays factorially as $O(n^9 / (n!)^3)$, ruling out fixed-sector generic amplification.
-                                </td>
-                                <td><span class="test-badge">tests/test_fourier_decay.py</span></td>
-                            </tr>
-                            <tr data-group="coset">
-                                <td>
-                                    <span class="target-id">Coset States ($S_n$)</span>
-                                    <span class="target-sub">Commutant operator separation</span>
-                                </td>
-                                <td>Synthesized invariant $T_{T1} + c T_{C1}$ ($c \neq 0$)</td>
-                                <td><span class="attack-name">Graph Isomorphism Censuses</span><br><span style="color:var(--muted); font-size:0.78rem;">Weisfeiler-Leman &amp; spectral audit</span></td>
-                                <td>
-                                    <span class="status-label active">Active Frontier</span><br>
-                                    Separates 20/20 targets at $n=8$ and 27/27 at $n=9$; scalable decoder remains the primary open debt.
-                                </td>
-                                <td><span class="test-badge">tests/test_commutant.py</span></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section 5: The Falsifier: Interactive Attack Sandbox -->
-        <section id="falsifier-sandbox" class="content-section alt-bg">
-            <div class="section-heading compact">
-                <p class="eyebrow rust">Interactive Complexity Simulator &bull; Falsification Arena</p>
-                <h2>The Falsifier: attack a quantum candidate</h2>
-                <p>Can a candidate quantum speedup survive automated classical dequantization? Pick a candidate, configure problem scaling $n$, deploy an attack algorithm, and observe the epistemic barrier in action.</p>
-            </div>
-
-            <div class="falsifier-plate">
-                <!-- Step 1: Candidate Picker Grid -->
-                <div class="candidate-picker-grid" id="candidate-picker-grid">
-                    <div class="candidate-pick-card selected" onclick="selectFalsifierCandidate('coset_fixed', this)">
-                        <span class="card-tag" style="margin-bottom:8px;">Symmetric Group HSP</span>
-                        <div class="cand-title">Fixed-Sector Coset Frame ($S_n$)</div>
-                        <div class="cand-desc">Postselecting stable-sector 3-copy coupling trees to extract binary hidden coset signals.</div>
-                    </div>
-                    <div class="candidate-pick-card" onclick="selectFalsifierCandidate('goppa_syzygy', this)">
-                        <span class="card-tag" style="margin-bottom:8px;">Linear Code Equiv</span>
-                        <div class="cand-title">Goppa Syzygy Invariants</div>
-                        <div class="cand-desc">High-weight alternant syzygy collective observables aimed at McEliece cryptosystems.</div>
-                    </div>
-                    <div class="candidate-pick-card" onclick="selectFalsifierCandidate('dhs_sieve', this)">
-                        <span class="card-tag" style="margin-bottom:8px;">Dihedral HSP ($D_N$)</span>
-                        <div class="cand-title">Lattice Nearest-Plane Sieve</div>
-                        <div class="cand-desc">Nearest-plane lattice decoding on Gowers-sieve coset states for hidden reflection recovery.</div>
-                    </div>
-                    <div class="candidate-pick-card" onclick="selectFalsifierCandidate('commutant_synth', this)">
-                        <span class="card-tag" style="margin-bottom:8px;">Active Commutant</span>
-                        <div class="cand-title">Synthesized $T_{T1} + c T_{C1}$</div>
-                        <div class="cand-desc">Independent third generator invariant breaking spectral degeneracies across nonabelian targets.</div>
-                    </div>
-                </div>
-
-                <!-- Step 2: Controls Bar -->
-                <div class="falsifier-controls-bar">
-                    <div class="slider-group">
-                        <div class="slider-label-bar">
-                            <span>Problem Scale ($n$)</span>
-                            <span id="falsifier-n-display" style="color:var(--green);">n = 8</span>
-                        </div>
-                        <input type="range" class="academic-slider" id="falsifier-n-slider" min="4" max="16" value="8" oninput="updateFalsifierN(this.value)">
-                    </div>
-
-                    <div class="attack-selector-wrap">
-                        <label class="attack-selector-label" for="attack-select">Classical Attack Baseline</label>
-                        <select id="attack-select" class="attack-select-dropdown">
-                            <option value="fourier">Weak-Fourier Trace Audit</option>
-                            <option value="hull">Hull Projector Reduction</option>
-                            <option value="lattice">Lattice Nearest-Plane Sieve</option>
-                            <option value="wl">Weisfeiler-Leman Invariant Audit</option>
-                        </select>
-                    </div>
-
-                    <button class="launch-attack-btn" id="launch-falsifier-btn" onclick="runFalsifierAttack()">
-                        <span>&zap; Launch Classical Attack</span>
-                    </button>
-                </div>
-
-                <!-- Step 3: Attack Execution Arena & Diagnostic Drawer -->
-                <div class="falsifier-arena">
-                    <div class="falsifier-log-drawer" id="falsifier-log-drawer" aria-live="polite">
-                        <span class="log-line cyan">[SYSTEM] Falsification suite initialized.</span>
-                        <span class="log-line">[SYSTEM] Ready to attack candidate: Fixed-Sector Coset Frame at scale n=8.</span>
-                        <span class="log-line">[READY] Click "Launch Classical Attack" to begin dequantization check...</span>
-                    </div>
-
-                    <div class="falsifier-verdict-plate" id="falsifier-verdict-card">
-                        <div>
-                            <div class="verdict-badge-lg" id="falsifier-verdict-badge">
-                                <span>Awaiting Simulation</span>
-                            </div>
-                            <h4 id="falsifier-verdict-title" style="font-family:var(--serif); font-size:1.3rem; margin-bottom:8px;">Ready for attack</h4>
-                            <p class="verdict-math-proof" id="falsifier-verdict-desc">
-                                Select a candidate quantum algorithm and deploy an automated classical attack suite to evaluate whether the claimed advantage collapses into polynomial time or an asymptotic no-go boundary.
-                            </p>
-                        </div>
-                        <div style="font-family:var(--mono); font-size:0.72rem; color:var(--muted-light); border-top:1px solid var(--line); padding-top:8px;">
-                            Protocol APG-v4 &bull; Deterministic Benchmark
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section 6: Vector Pipeline & Progress Map -->
-        <section id="pipeline" class="content-section">
-            <div class="pipeline-visual-plate">
-                <div class="pipeline-header">
-                    <div>
-                        <p class="eyebrow">Topological Progress Map</p>
-                        <h3>Survival of research trajectories across 5 stages</h3>
-                    </div>
-                    <div class="pipeline-legend">
-                        <span class="legend-item"><span class="legend-pip active"></span> Surviving Active Structure</span>
-                        <span class="legend-item"><span class="legend-pip blocked"></span> Falsified / Dequantized</span>
-                    </div>
-                </div>
-
-                <div class="pipeline-svg-wrapper">
-                    <svg id="pipeline-svg" viewBox="0 0 1000 240" width="100%" height="240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Research track progression pipeline">
-                        <!-- Populated dynamically by progress.js -->
-                    </svg>
-                </div>
-
-                <div class="pipeline-stage-labels">
-                    <span style="text-align: left; padding-left: 12px;">Program Track</span>
-                    <span>I. Hypothesis</span>
-                    <span>II. Structure</span>
-                    <span>III. Classical Attacks</span>
-                    <span>IV. Proof Gate</span>
-                    <span>V. Separation</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section 6: Featured Exhibit 01: Commutant Geometry & Mathematical Lemma Exhibit -->
-        <section id="case-study" class="content-section">
-            <div class="section-heading compact">
-                <p class="eyebrow">Featured Exhibit 01 &bull; Commutant Geometry</p>
-                <h2>Anatomy of an invariant: resolving degeneracy for $S_8$ and $S_9$</h2>
-                <p>A concrete walkthrough of how Q-Search generated a non-trivial algebraic invariant, mathematically proved it against known collisions, and mapped its physical falsification boundary.</p>
-            </div>
-            
-            <div class="case-study-plate">
-                <div class="case-study-header">
-                    <h3>Spectral Degeneracy &amp; Natural-Access Obstruction</h3>
-                    <p>
-                        In non-abelian hidden subgroup problems on $S_n$, candidate quantum algorithms measure collective invariants of multiple coset states. The central challenge: Can an algebraic invariant separate hidden conjugate classes without exponentially decoding the full copy register?
-                    </p>
-                </div>
-                
-                <div class="figure-layout">
-                    <!-- Left: Formal Theorem Environments & Proofs -->
-                    <div>
-                        <!-- Theorem 1 Callout -->
-                        <div class="math-callout theorem">
-                            <div class="callout-title">
-                                <span aria-hidden="true">&sect;</span>
-                                <span>Theorem 1 (Commutant Multiplicity Splitting)</span>
-                            </div>
-                            <div class="callout-body">
-                                For all $n \le 9$, let $T = T_{T1} + c T_{C1}$ be the synthesized commutant observable with coupling parameter $c \neq 0$. Then $T \in \operatorname{End}_{S_n \wr S_k}(\mathcal{H}^{\otimes 3})$ has simple spectrum on the commutant space, resolving <strong>20 / 20 targets at $n=8$</strong> and <strong>27 / 27 targets at $n=9$</strong> without pairwise eigenvalue collisions.
-                            </div>
-                            <details class="proof-disclosure">
-                                <summary>Proof Outline &amp; Gram Determinant Check &rarr;</summary>
-                                <div class="proof-disclosure-content">
-                                    The proof computes fourth moments over the commutant basis and establishes that the discriminant $\Delta(c) = \det(\operatorname{Gram}(T))$ is non-vanishing for all $c \in \mathbb{R} \setminus \{0\}$. Verified deterministically in <code>tests/test_commutant_splitting.py</code>.
-                                </div>
-                            </details>
-                        </div>
-
-                        <!-- Barrier Callout -->
-                        <div class="math-callout barrier">
-                            <div class="callout-title">
-                                <span aria-hidden="true">&Delta;</span>
-                                <span>Theorem 2 (Natural-Access Factorial Obstruction)</span>
-                            </div>
-                            <div class="callout-body">
-                                The natural weak-Fourier sampling probability $P_{\text{natural}}$ of obtaining the fixed-sector coupling tree basis states decays factorially:
-                                $$P_{\text{natural}} = \frac{d_W^3 d_\xi \operatorname{Tr}(F)}{(n!)^3} \le \frac{25}{3}\frac{n^9}{(n!)^3}$$
-                                Consequently, fixed-sector postselection cannot yield a bounded-error polynomial quantum algorithm. Generic amplification requires uniform adaptation across high-dimensional partitions.
-                            </div>
-                            <details class="proof-disclosure">
-                                <summary>Representation Character Calculation &rarr;</summary>
-                                <div class="proof-disclosure-content">
-                                    Derived from the Schur-Weyl duality decomposition of the 3-copy state space $\mathcal{H}^{\otimes 3}$ and the Littlewood-Richardson coefficients of $S_n \wr S_3$. Verified in <code>tests/test_fourier_decay.py</code>.
-                                </div>
-                            </details>
-                        </div>
-
-                        <div class="math-callout" style="border-left-color: var(--amber); background: var(--amber-soft);">
-                            <div class="callout-title" style="color: var(--amber);">
-                                <span>Epistemic Verdict</span>
-                            </div>
-                            <div class="callout-body" style="font-size: 0.90rem;">
-                                The finite algebraic separation is mathematically certified, but fixed-sector postselection cannot yield an asymptotic speedup. A viable algorithm must consume typical high-dimensional irrep labels.
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Right: Vector Scientific Diagram -->
-                    <div class="scientific-diagram-card">
-                        <svg class="diagram-svg" viewBox="0 0 380 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Coupling tree irrep branching and third generator invariant spectrum">
-                            <defs>
-                                <pattern id="diagGrid" width="20" height="20" patternUnits="userSpaceOnUse">
-                                    <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#EAE9E1" stroke-width="0.75"/>
-                                </pattern>
-                            </defs>
-                            <rect width="100%" height="100%" fill="url(#diagGrid)" rx="6"/>
-                            
-                            <!-- Coupling Tree Left -->
-                            <circle cx="90" cy="50" r="15" fill="#FFFFFF" stroke="#121514" stroke-width="2"/>
-                            <text x="90" y="54" text-anchor="middle" font-family="'IBM Plex Mono', monospace" font-size="10" font-weight="600" fill="#121514">T_L</text>
-                            
-                            <!-- Coupling Tree Right -->
-                            <circle cx="290" cy="50" r="15" fill="#FFFFFF" stroke="#121514" stroke-width="2"/>
-                            <text x="290" y="54" text-anchor="middle" font-family="'IBM Plex Mono', monospace" font-size="10" font-weight="600" fill="#121514">T_R</text>
-                            
-                            <!-- Connecting Algebra Line -->
-                            <path d="M 105 50 L 275 50" stroke="#0E5B37" stroke-width="2.5" stroke-dasharray="4,3"/>
-                            <circle cx="190" cy="50" r="13" fill="#EEF6F1" stroke="#0E5B37" stroke-width="2"/>
-                            <text x="190" y="54" text-anchor="middle" font-family="'IBM Plex Mono', monospace" font-size="9" font-weight="700" fill="#0E5B37">T_C1</text>
-                            
-                            <!-- Degeneracy branches -->
-                            <line x1="90" y1="65" x2="60" y2="120" stroke="#505853" stroke-width="1.5"/>
-                            <line x1="90" y1="65" x2="120" y2="120" stroke="#505853" stroke-width="1.5"/>
-                            
-                            <line x1="290" y1="65" x2="260" y2="120" stroke="#505853" stroke-width="1.5"/>
-                            <line x1="290" y1="65" x2="320" y2="120" stroke="#505853" stroke-width="1.5"/>
-                            
-                            <!-- Irrep Nodes -->
-                            <circle cx="60" cy="120" r="8" fill="#FFFFFF" stroke="#505853" stroke-width="1.5"/>
-                            <circle cx="120" cy="120" r="8" fill="#FFFFFF" stroke="#505853" stroke-width="1.5"/>
-                            <circle cx="260" cy="120" r="8" fill="#FFFFFF" stroke="#505853" stroke-width="1.5"/>
-                            <circle cx="320" cy="120" r="8" fill="#FFFFFF" stroke="#505853" stroke-width="1.5"/>
-                            
-                            <!-- Spectral Separation Box -->
-                            <rect x="35" y="145" width="310" height="46" rx="4" fill="#FFFFFF" stroke="#0E5B37" stroke-width="1.5"/>
-                            <text x="190" y="165" text-anchor="middle" font-family="'Newsreader', Georgia, serif" font-size="13" font-style="italic" fill="#121514">Simple Spectrum: T_T1 + c&middot;T_C1 (c &ne; 0)</text>
-                            <text x="190" y="181" text-anchor="middle" font-family="'IBM Plex Mono', monospace" font-size="9.5" font-weight="600" fill="#0E5B37">20/20 at n=8  &bull;  27/27 at n=9 (Degeneracy Broken)</text>
-                            
-                            <!-- Factorial Obstruction Line -->
-                            <line x1="35" y1="225" x2="345" y2="225" stroke="#9E2A2B" stroke-width="2" stroke-dasharray="4,4"/>
-                            <rect x="80" y="215" width="220" height="20" rx="3" fill="#FBF0F0" stroke="#E8B9BA" stroke-width="1"/>
-                            <text x="190" y="229" text-anchor="middle" font-family="'IBM Plex Mono', monospace" font-size="9" font-weight="600" fill="#9E2A2B">Natural Access Mass: O(n⁹ / (n!)³)</text>
-                        </svg>
-                        
-                        <div class="diagram-caption">
-                            <strong>Figure 1:</strong> Irrep branching &amp; invariant operator spectrum. Coupling $T_{C1}$ eliminates the $n=8$ degeneracy across all graph targets, while natural-access weak-Fourier mass decays factorially.
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Interactive Explorable Physics Sandbox: Theorem 1 in Action -->
-                <div class="spectral-sandbox-plate" id="spectral-sandbox">
-                    <div class="sandbox-header-row">
-                        <div>
-                            <p class="eyebrow" style="margin-bottom:6px;">Explorable Complexity Sandbox &bull; Theorem 1 in Action</p>
-                            <h3 style="font-family:var(--serif); font-size:1.5rem; margin-bottom:4px;">Spectral Splitting: Drag $c$ to Break Degeneracy</h3>
-                            <p style="font-size:0.90rem; color:var(--muted); max-width:640px; margin:0;">
-                                For $S_8$, standard 2-generator invariants collapse into exact eigenvalue collisions on two targets. Drag the coupling slider $c$ for $T = T_{T1} + c T_{C1}$ to observe the eigenvalues repelling and breaking degeneracy in real time.
-                            </p>
-                        </div>
-                        <div class="sandbox-status-badges">
-                            <div class="sandbox-badge separated" id="collision-badge">
-                                <span class="seal-dot" style="width:6px; height:6px;"></span>
-                                <span id="collision-status-text">0 / 20 Collisions (Separated)</span>
-                            </div>
-                            <div class="sandbox-badge">
-                                <span>Spectral Gap &Delta;&lambda;: </span>
-                                <strong id="gap-val-text" style="color:var(--ink); margin-left:4px;">0.142</strong>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="sandbox-controls-row">
-                        <div class="slider-group">
-                            <div class="slider-label-bar">
-                                <span>Coupling Parameter ($c$)</span>
-                                <span id="c-slider-val" style="color:var(--green); font-family:var(--mono); font-size:0.9rem;">c = 1.00</span>
-                            </div>
-                            <input type="range" class="academic-slider" id="c-slider" min="-2.0" max="2.0" step="0.05" value="1.0" oninput="updateSpectralSandbox(parseFloat(this.value))">
-                        </div>
-
-                        <div style="display:flex; flex-direction:column; gap:6px;">
-                            <span style="font-family:var(--mono); font-size:0.68rem; font-weight:600; text-transform:uppercase; color:var(--muted-light);">Preset States</span>
-                            <div class="preset-btn-group">
-                                <button class="preset-btn" onclick="setCPreset(0.0)">c = 0.00 (Collision!)</button>
-                                <button class="preset-btn" onclick="setCPreset(0.4)">c = +0.40</button>
-                                <button class="preset-btn active" id="preset-c-1" onclick="setCPreset(1.0)">c = +1.00 (Standard)</button>
-                                <button class="preset-btn" onclick="setCPreset(-1.5)">c = -1.50</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Live Energy Levels Visualization -->
-                    <div class="spectrum-visual-container">
-                        <div style="display:flex; justify-content:space-between; font-family:var(--mono); font-size:0.72rem; color:var(--muted-light); margin-bottom:10px;">
-                            <span>&larr; Target 01 (Multiplicity 1)</span>
-                            <span style="color:var(--ink); font-weight:600;">Eigenvalue Spectrum &lambda;(c) across 20 Targets in S_8</span>
-                            <span>Target 20 (Multiplicity 17) &rarr;</span>
-                        </div>
-                        <svg class="spectrum-svg" id="spectrum-svg" viewBox="0 0 800 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Interactive eigenvalue energy spectrum for S_8 targets">
-                            <!-- Populated dynamically by progress.js -->
-                        </svg>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section 7: Negative Results Spotlight -->
-        <section id="negatives-spotlight" class="content-section alt-bg">
-            <div class="section-heading compact">
-                <p class="eyebrow rust">Negative Results Spotlight &bull; Archival Records</p>
-                <h2>What Q-Search successfully killed</h2>
-                <p>Negative results are first-class scientific assets. Here are three representative candidate shortcuts that Q-Search rigorously disproved with automated attack suites.</p>
-            </div>
-            
-            <div class="spotlight-grid">
-                <article class="spotlight-card">
-                    <div>
-                        <div class="spotlight-top">
-                            <span class="spotlight-domain">Dihedral HSP</span>
-                            <span class="spotlight-id">DHS-NEAREST-PLANE</span>
-                        </div>
-                        <h3>Lattice Nearest-Plane Sieve Collapse</h3>
-                        <span class="spot-label">The Hypothesis</span>
-                        <p>Nearest-plane lattice decoding on Gowers-sieve coset states recovers dihedral reflections in polynomial time.</p>
-                        <span class="spot-label">The Falsifier</span>
-                        <p>All-target censuses across $16.7\times 10^6$ assignments proved fixed-depth lists collapse exponentially at scale. Small-$n$ success was an artifact.</p>
-                    </div>
-                </article>
-                
-                <article class="spotlight-card">
-                    <div>
-                        <div class="spotlight-top">
-                            <span class="spotlight-domain">Code Equivalence</span>
-                            <span class="spotlight-id">CODE-GOPPA-SYZYGY</span>
-                        </div>
-                        <h3>Goppa Code Syzygy Collisions</h3>
-                        <span class="spot-label">The Hypothesis</span>
-                        <p>High-weight syzygies of alternant codes provide a quantum invariant that resists classical permutation attacks.</p>
-                        <span class="spot-label">The Falsifier</span>
-                        <p>An automated classical hull-projector reduction resolved the syzygy collisions in polynomial classical time, dequantizing the advantage.</p>
-                    </div>
-                </article>
-                
-                <article class="spotlight-card">
-                    <div>
-                        <div class="spotlight-top">
-                            <span class="spotlight-domain">Coset States</span>
-                            <span class="spotlight-id">COSET-NATURAL-ACCESS</span>
-                        </div>
-                        <h3>Fixed-Sector Frame Postselection</h3>
-                        <span class="spot-label">The Hypothesis</span>
-                        <p>Postselecting stable 3-copy coupling trees provides efficient binary coset state discrimination.</p>
-                        <span class="spot-label">The Falsifier</span>
-                        <p>Exact weak-Fourier trace proved natural sampling mass decays factorially as $O(n^9 / (n!)^3)$, ruling out generic amplification.</p>
-                    </div>
-                </article>
-            </div>
-        </section>
-
-        <!-- Section 8: Evidence & Milestones -->
-        <section id="evidence" class="content-section">
-            <div class="section-heading compact">
-                <p class="eyebrow">Recent Milestones</p>
-                <h2>Strongest certified evidence</h2>
-                <p>Verified algebraic milestones and bounds produced by the automated research engine.</p>
-            </div>
-            
-            <div style="display: grid; grid-template-columns: 1.4fr 1fr; gap: 36px; align-items: start;">
-                <div id="milestone-list" class="milestone-list"></div>
-                
-                <aside class="ledger-plate" aria-labelledby="conjecture-title" style="box-shadow: none;">
-                    <p class="eyebrow">Active Mathematical Target</p>
-                    <h3 id="conjecture-title" style="font-family: var(--serif); font-size: 1.4rem; margin-bottom: 8px;">Third-generator scaling</h3>
-                    <div style="background: var(--paper-plate); padding: 10px 14px; border-radius: 4px; font-family: var(--mono); font-size: 0.84rem; font-weight: 600; color: var(--green); margin-bottom: 14px;">
-                        20 / 20 at n=8; 27 / 27 at n=9
-                    </div>
-                    <p id="conjecture-summary" style="font-size: 0.88rem; color: var(--muted); margin-bottom: 16px;">Loading conjecture status...</p>
-                    <div id="conjecture-facts" style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px; font-family: var(--mono); font-size: 0.78rem;"></div>
-                    <p style="font-size: 0.82rem; color: var(--muted-light); border-top: 1px solid var(--line); padding-top: 12px; margin: 0;">
-                        <strong>Boundary:</strong> stable-sector circuits are mechanism controls only. A viable algorithm must consume naturally sampled high-dimensional labels and survive classical baselines.
-                    </p>
-                </aside>
-            </div>
-        </section>
-
-        <!-- Section 9: Deterministic Verification Console -->
-        <section id="quickstart" class="content-section alt-bg">
-            <div class="section-heading compact">
-                <p class="eyebrow">Deterministic Reproduction</p>
-                <h2>Inspect &amp; verify locally in 30 seconds</h2>
-                <p>Every claim, theorem check, and classical attack suite is fully reproducible from source with automated tests.</p>
-            </div>
-
-            <div class="terminal-card">
-                <div class="terminal-header">
-                    <div class="terminal-dots">
-                        <span class="terminal-dot red"></span>
-                        <span class="terminal-dot yellow"></span>
-                        <span class="terminal-dot green"></span>
-                    </div>
-                    <div class="terminal-tabs">
-                        <button class="term-tab-btn active" onclick="switchTermTab('fast', this)">1. Quick Smoke Test</button>
-                        <button class="term-tab-btn" onclick="switchTermTab('baseline', this)">2. Classical Attack Suite</button>
-                        <button class="term-tab-btn" onclick="switchTermTab('coset', this)">3. Commutant Proofs (n=8, 9)</button>
-                        <button class="term-tab-btn" onclick="switchTermTab('negatives', this)">4. Negative Registry Census</button>
-                    </div>
-                    <div style="display: flex; gap: 8px; align-items: center;">
-                        <button class="terminal-run-action" id="term-run-btn" onclick="runSimulatedPytest()">&#9654; Run in Browser</button>
-                        <button class="terminal-copy-action" id="copy-term-btn" onclick="copyActiveTermCommand()">Copy Command</button>
-                    </div>
-                </div>
-                <div class="terminal-body">
-                    <pre><code id="terminal-code-display"><span class="t-comment"># 1. Fast smoke check of classical dequantization baselines</span>
-<span class="t-cmd">git clone</span> https://github.com/Jaspersands/qsearch.git
-<span class="t-cmd">cd</span> qsearch &amp;&amp; <span class="t-cmd">pip install</span> -r requirements.txt
-<span class="t-cmd">pytest</span> tests/test_classical_baseline_suite.py -k "smoke"</code></pre>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section 10: Citation & BibTeX Module -->
-        <section id="citation" class="content-section">
-            <div class="section-heading compact">
-                <p class="eyebrow">Academic Citation</p>
-                <h2>Cite this monograph</h2>
-                <p>If you build upon Q-Search's open-source invariants, negative findings, or dequantization attack suites, please cite the monograph.</p>
-            </div>
-
-            <div class="citation-plate">
-                <div class="citation-header">
-                    <h4>BibTeX Citation Entry</h4>
-                    <button class="copy-cmd-btn" onclick="copyBibtex()">Copy BibTeX</button>
-                </div>
-                <div class="bibtex-code" id="bibtex-text">@misc{sands2026qsearch,
+    <section class="section" id="cite">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Cite</h2>
+          <p>If you use the negative results or the attack code, please cite the project.</p>
+        </div>
+        <div class="command"><pre id="bibtex">@misc{sands2026qsearch,
   author       = {Sands, Jasper},
-  title        = {Q-Search: A Proof-Gated Investigation into Structural Quantum Advantage},
+  title        = {Q-Search: an open search for structural quantum speedups},
   year         = {2026},
-  publisher    = {Autonomous Quantum Science Laboratory},
-  howpublished = {\url{https://qsearch.jaspersands.com}},
-  note         = {Certified Snapshot Vol. 2026.09, 914 Negative Results, 1,304 Classical Dequantization Checks}
-}</div>
-            </div>
-        </section>
+  howpublished = {\url{https://qsearch.jaspersands.com}}
+}</pre><button class="copy" type="button" data-copy="bibtex">Copy</button></div>
+      </div>
+    </section>
 
-        <!-- Section 11: Execution Model & Authorship -->
-        <section class="content-section alt-bg" aria-labelledby="operations-title">
-            <div>
-                <p class="eyebrow">Execution Model &amp; Authorship</p>
-                <h2 id="operations-title">How the project is built</h2>
-            </div>
-            <p id="execution-copy" style="max-width: 820px; font-size: 1.02rem; line-height: 1.65; color: var(--muted); margin-bottom: 28px;">
-                Research runs interactively during active Codex sessions directed by Jasper Sands. GitHub Actions automatically validates pushed snapshots and enforces that no unverified claim passes the proof gate.
-            </p>
-            
-            <div class="author-profile-card">
-                <div class="author-meta">
-                    <h3>Jasper Sands</h3>
-                    <span class="author-role">Architect &amp; Researcher</span>
-                </div>
-                <div class="author-desc">
-                    <p>
-                        Q-Search is designed and built by Jasper Sands to explore proof-gated autonomous systems for quantum complexity theory.
-                        The mathematical formulations, classical attack matrices, and proof obligations are formally defined and verified by deterministic automated test suites, guaranteeing zero unchecked claims.
-                    </p>
-                </div>
-            </div>
-            
-            <div class="operations-links">
-                <a href="repomap.html">Repository Map</a>
-                <a href="proof-debt.html">Proof Debt (24)</a>
-                <a href="negative-results.html">Negative Results (914)</a>
-                <a href="methodology.html">Methodology</a>
-            </div>
-        </section>
-    </main>
+    <section class="section" id="about">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>About</h2>
+        </div>
+        <div class="prose">
+          <p id="execution-model">Research runs in interactive sessions. A GitHub workflow validates every pushed snapshot.</p>
+          <p>Q-Search is built and directed by Jasper Sands. The code, the data, and every negative result are public on <a href="https://github.com/Jaspersands/qsearch">GitHub</a>.</p>
+        </div>
+      </div>
+    </section>
+  </main>
 
-    <!-- Site Footer -->
-    <footer>
-        <span>&copy; 2026 Q-Search Quantum Algorithm Research Monograph &bull; Directed by Jasper Sands</span>
-        <span>No breakthrough claim is made without a proof-complete complexity separation.</span>
-    </footer>
-
-    <script src="site/progress.js" defer></script>
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p>Q-Search is an open research project by Jasper Sands. Data updated <time data-updated>recently</time>.</p>
+      <p><a href="https://github.com/Jaspersands/qsearch">Source on GitHub</a> · <a href="index.html#cite">Cite</a></p>
+    </div>
+  </footer>
 </body>
 </html>

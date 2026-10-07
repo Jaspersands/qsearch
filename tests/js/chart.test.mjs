@@ -28,6 +28,8 @@ test("activityChart draws one bar per week, the line, and month ticks", () => {
   assert.match(svg, /<path class="chart-line" d="M[\d.]+,[\d.]+ L[\d.]+,[\d.]+"/);
   assert.ok(svg.includes(">Aug<"));
   assert.ok(svg.includes(">520<"));
+  assert.ok(svg.includes('class="chart-label chart-label-line" x="670" y="24">1,000<'), "line scale labelled on the right");
+  assert.ok(svg.includes('class="chart-label" x="30" y="24" text-anchor="end">10<'), "run scale labelled on the left");
   assert.ok(svg.includes('aria-label="Experiment runs per week from Jul 6, 2026: 20 runs in total. Ideas ruled out grew to 520."'));
 });
 

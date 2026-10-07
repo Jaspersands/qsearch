@@ -220,12 +220,17 @@ class SnapshotVersionsTests(unittest.TestCase):
             self.assertEqual([v["snapshot"]["metrics"]["negative_results"] for v in versions], [1, 2])
             self.assertEqual(len(versions[0]["commit"]), 8)
 
+            dated = dict(snapshot(negatives=3), updated_at="2026-07-20")
+            path.write_text(json.dumps(dated))
+            self.git(root, "commit", "-q", "-am", "three", when="2026-07-21T12:00:00+00:00")
+            self.assertEqual(snapshot_versions(root)[-1]["date"], "2026-07-20")
+
             (root / "research" / "experiment_run_history.json").write_text("[]")
             (root / "research" / "registry").mkdir()
             (root / "research" / "registry" / "negative_results.json").write_text("[]")
             self.assertEqual(main(["--root", str(root)]), 0)
             changelog = json.loads((root / "site" / "data" / "changelog.json").read_text())
-            self.assertEqual(len(changelog["points"]), 2)
+            self.assertEqual(len(changelog["points"]), 3)
 
 
 if __name__ == "__main__":

@@ -63,9 +63,11 @@ export function activityChart({ weeks, points = [], width = 720, height = 240 })
     parts.push(`<path class="chart-line" d="${path}"/>`);
     const last = visible[visible.length - 1];
     parts.push(
-      `<text class="chart-label chart-label-strong" x="${(x(dayValue(last.date)) + 6).toFixed(1)}" ` +
-        `y="${(yLine(last.negative_results) + 4).toFixed(1)}">${formatNumber(last.negative_results)}</text>`,
+      `<text class="chart-label chart-label-strong" x="${x(dayValue(last.date)).toFixed(1)}" ` +
+        `y="${(yLine(last.negative_results) - 8).toFixed(1)}" text-anchor="end">${formatNumber(last.negative_results)}</text>`,
     );
+    parts.push(`<text class="chart-label chart-label-line" x="${pad.left + plotWidth + 6}" y="${pad.top + 4}">${formatNumber(lineMax)}</text>`);
+    parts.push(`<text class="chart-label chart-label-line" x="${pad.left + plotWidth + 6}" y="${baseline}">0</text>`);
   }
 
   parts.push(`<line class="chart-axis" x1="${pad.left}" x2="${pad.left + plotWidth}" y1="${baseline}" y2="${baseline}"/>`);

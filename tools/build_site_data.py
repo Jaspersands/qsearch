@@ -106,7 +106,7 @@ def _git(root: Path, *args: str) -> str:
 
 
 def snapshot_versions(root: Path) -> list[dict[str, Any]]:
-    """Every committed version of the progress snapshot, oldest first."""
+    """Every committed version of the progress snapshot, oldest first, dated by updated_at when present."""
     log = _git(root, "log", "--format=%H %cs", "--", SNAPSHOT_PATH)
     versions = []
     for line in reversed(log.splitlines()):
@@ -121,7 +121,10 @@ def snapshot_versions(root: Path) -> list[dict[str, Any]]:
             snapshot = json.loads(shown.stdout)
         except json.JSONDecodeError:
             continue
-        versions.append({"commit": commit[:8], "date": day, "snapshot": snapshot})
+        # Prefer the snapshot's own data date so the site shows one date per snapshot.
+        updated = snapshot.get("updated_at")
+        version_date = updated[:10] if isinstance(updated, str) and len(updated) >= 10 else day
+        versions.append({"commit": commit[:8], "date": version_date, "snapshot": snapshot})
     return versions
 
 
