@@ -40,6 +40,14 @@
       </aside>
     </div>
 
+    <section class="wrap map-section" id="map" hidden>
+      <div class="map-frame">
+        <canvas class="map-canvas" id="nr-map" role="img" aria-label="Map of every negative result. Similar records sit close together. The list below has the same records."></canvas>
+        <div class="map-tip" id="nr-map-tip" hidden></div>
+      </div>
+      <p class="small">Each dot is one negative result, placed by how similar its wording is to the others, so related dead ends cluster into regions. Hover to read one, click to open it in the list. Colors match the filters below; grey is other.<span id="nr-map-missing"></span> Layout by <a href="https://github.com/Jaspersands/qsearch/blob/main/tools/build_negative_map.py"><code>build_negative_map.py</code></a>.</p>
+    </section>
+
     <section class="wrap" id="registry">
       <label class="visually-hidden" for="nr-search">Search negative results</label>
       <input class="search" id="nr-search" type="search" placeholder="Try “Goppa”, “sieve”, or “decoder”" autocomplete="off">
