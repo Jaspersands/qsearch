@@ -1,268 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Interactive database of 914 retained negative results, no-go theorems, and dequantization findings for the Q-Search quantum algorithm search program.">
-    <title>Q-Search | Negative Results Explorer</title>
-    <!-- Academic Typography: Newsreader + Inter + IBM Plex Mono -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="site/styles.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Negative results · Q-Search</title>
+  <meta name="description" content="Every idea Q-Search has ruled out, with the reason it failed and what it taught us. Searchable, with a link for each result.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Schibsted+Grotesk:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+  <link rel="stylesheet" href="site/styles.css">
+  <script type="module" src="site/js/negative-results.js"></script>
 </head>
 <body>
-    <!-- Archival Publication Banner -->
-    <aside class="pub-banner" aria-label="Journal publication details">
-        <div class="pub-banner-left">
-            <span class="pub-tag"><span class="pub-tag-dot" aria-hidden="true"></span> Autonomous Science Monograph</span>
-            <span>Vol. 2026.09 &bull; Computational Complexity</span>
-            <span>ISSN 2026-QSRCH</span>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="wordmark" href="index.html">Q-Search</a>
+      <nav aria-label="Site">
+        <a href="index.html">Home</a>
+        <a href="open-problems.html">Open problems</a>
+        <a href="negative-results.html" aria-current="page">Negative results</a>
+        <a href="how-it-works.html">How it works</a>
+      </nav>
+      <a class="header-github" href="https://github.com/Jaspersands/qsearch">GitHub</a>
+    </div>
+  </header>
+
+  <div class="wrap"><div class="circuit-strip" id="circuit-strip" title="Where each line of attack stands: a meter marks where a route stopped; the dashed line is still running."></div></div>
+
+  <main>
+    <div class="wrap page-head with-notes">
+      <div>
+        <h1>Negative results</h1>
+        <div class="prose">
+          <p>Every idea we've ruled out, with the reason it failed and what it taught us. There are <span id="nr-total">hundreds of</span> records. Each one has its own link, so you can point someone at a single dead end.</p>
         </div>
-        <div class="pub-banner-right">
-            <span>Negative Results Registry</span>
-            <a class="pub-link" href="index.html">&larr; Return to Monograph</a>
-        </div>
-    </aside>
+      </div>
+      <aside class="note">
+        <p>Source: <a href="https://github.com/Jaspersands/qsearch/blob/main/research/registry/negative_results.json"><code>negative_results.json</code></a>, the full registry. This page reads a smaller copy built by <a href="https://github.com/Jaspersands/qsearch/blob/main/tools/build_site_data.py"><code>build_site_data.py</code></a>.</p>
+      </aside>
+    </div>
 
-    <!-- Main Site Header -->
-    <header class="site-header">
-        <a class="brand" href="index.html" aria-label="Q-Search home">
-            <span class="brand-symbol" aria-hidden="true">&fnof;</span>
-            <div class="brand-text">
-                <span class="brand-title">Q-Search</span>
-                <span class="brand-subtitle">Quantum Complexity Laboratory</span>
-            </div>
-        </a>
-        <nav aria-label="Main site navigation">
-            <a href="index.html">Monograph</a>
-            <a href="methodology.html">Methodology</a>
-            <a href="frontier.html">Frontier Map</a>
-            <a href="negative-results.html" class="active">Negative Results <span class="nav-count">(914)</span></a>
-            <a href="proof-debt.html">Proof Debt <span class="nav-count">(24)</span></a>
-            <a href="repomap.html">Repo Map</a>
-        </nav>
-        <div class="header-actions">
-            <a class="github-link" href="https://github.com/Jaspersands/qsearch" target="_blank" rel="noreferrer">GitHub &rarr;</a>
-        </div>
-    </header>
+    <section class="wrap map-section" id="map" hidden>
+      <div class="map-frame">
+        <canvas class="map-canvas" id="nr-map" role="img" aria-label="Map of every negative result. Similar records sit close together. The list below has the same records."></canvas>
+        <div class="map-tip" id="nr-map-tip" hidden></div>
+      </div>
+      <p class="small">Each dot is one negative result, placed by how similar its wording is to the others, so related dead ends cluster into regions. Hover to read one, click to open it in the list. Colors match the filters below; grey is other.<span id="nr-map-missing"></span> Layout by <a href="https://github.com/Jaspersands/qsearch/blob/main/tools/build_negative_map.py"><code>build_negative_map.py</code></a>.</p>
+    </section>
 
-    <main id="top">
-        <section class="hero" aria-labelledby="page-title">
-            <div class="hero-copy">
-                <p class="eyebrow">Negative-Result First Methodology</p>
-                <h1 id="page-title">Negative Results</h1>
-                <p class="hero-lede">
-                    A permanent catalog of 914 verified negative results, no-go theorems, and dequantization attacks. Every failed hypothesis and structural barrier is indexed to prevent cyclical research dead-ends.
-                </p>
-                <div class="hero-actions">
-                    <a class="primary-action" href="index.html">← Back to live progress</a>
-                    <a class="secondary-action" href="research/registry/negative_results.json" download="negative_results.json">Download raw JSON (914 records)</a>
-                </div>
-            </div>
-            <div class="verdict-block" aria-label="Negative results summary">
-                <p class="eyebrow">Registry Memory</p>
-                <strong id="verdict-title">914 Retained Records</strong>
-                <p id="verdict-detail">Negative results are first-class scientific assets. Over 1,300 classical attack findings ensure zero toy benchmarks are mistaken for speedups.</p>
-                <div class="updated-row">
-                    <span class="status-dot" aria-hidden="true"></span>
-                    <span>100% Machine-Verifiable</span>
-                </div>
-            </div>
-        </section>
+    <section class="wrap" id="registry">
+      <label class="visually-hidden" for="nr-search">Search negative results</label>
+      <input class="search" id="nr-search" type="search" placeholder="Try “Goppa”, “sieve”, or “decoder”" autocomplete="off">
+      <div class="filters" id="nr-tags" role="group" aria-label="Filter by line of research"></div>
+      <p class="result-count" id="nr-count" aria-live="polite"></p>
+      <div class="rows" id="nr-rows"></div>
+      <button class="button" type="button" id="nr-more" hidden>Show more</button>
+    </section>
+  </main>
 
-        <section class="metric-strip" aria-label="Negative results metrics">
-            <div><strong id="metric-neg-count">914</strong><span>negative results</span></div>
-            <div><strong>1,304</strong><span>attack findings</span></div>
-            <div><strong>0</strong><span>erased dead-ends</span></div>
-            <div><strong>100%</strong><span>reproducible</span></div>
-            <div><strong>0</strong><span>toy claims promoted</span></div>
-        </section>
-
-        <!-- Section 1: Interactive Negative Results Explorer -->
-        <section class="content-section" id="explorer">
-            <div class="section-heading compact">
-                <p class="eyebrow">Searchable Database</p>
-                <h2>Negative results & no-go theorems</h2>
-            </div>
-
-            <div class="explorer-controls">
-                <input type="text" id="neg-search" class="search-input" placeholder="Search 914 records by claim, lesson, reason, or module source..." oninput="filterNegatives()">
-                <div class="filter-btn-group">
-                    <button class="filter-btn active" id="filter-btn-all" onclick="setCandidateFilter('all', this)">All (914)</button>
-                    <button class="filter-btn" onclick="setCandidateFilter('DHS-GOWERS-SIEVE', this)">DHS-GOWERS-SIEVE</button>
-                    <button class="filter-btn" onclick="setCandidateFilter('CODE-COSET-COLLECTIVE', this)">CODE-COSET-COLLECTIVE</button>
-                    <button class="filter-btn" onclick="setCandidateFilter('PO-DEQUANTIZATION', this)">Dequantization</button>
-                </div>
-            </div>
-
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; font-family: var(--mono); font-size: 0.78rem; color: var(--muted);">
-                <span id="neg-count-display">Loading records...</span>
-                <span id="pagination-info">Page 1</span>
-            </div>
-
-            <div id="neg-card-container">
-                <!-- Dynamically populated via JavaScript -->
-                <div style="text-align: center; padding: 40px; color: var(--muted); font-family: var(--mono);">
-                    Loading 914 negative-result records from registry...
-                </div>
-            </div>
-
-            <div style="display: flex; justify-content: center; gap: 12px; margin-top: 24px;" id="pagination-controls">
-                <button class="filter-btn" id="prev-page-btn" onclick="prevPage()" disabled>← Previous 20</button>
-                <button class="filter-btn" id="next-page-btn" onclick="nextPage()">Next 20 →</button>
-            </div>
-        </section>
-
-        <!-- Operations Band -->
-        <section class="content-section operations-band" aria-labelledby="operations-title">
-            <div>
-                <p class="eyebrow">Quick Navigation</p>
-                <h2 id="operations-title">Explore Q-Search pages</h2>
-            </div>
-            <p id="execution-copy">
-                Access interactive dashboards for live progress, research methodology, frontier data, negative results, proof debt, and repository architecture.
-            </p>
-            <div class="operations-links">
-                <a href="index.html">Live progress</a>
-                <a href="methodology.html">Methodology</a>
-                <a href="frontier.html">Frontier map</a>
-                <a href="proof-debt.html">Proof debt</a>
-                <a href="repomap.html">Repository map</a>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <span>Q-Search negative results database</span>
-        <span>No breakthrough claim is made without a proof-complete complexity separation.</span>
-    </footer>
-
-    <script>
-        let allNegatives = [];
-        let filteredNegatives = [];
-        let currentPage = 1;
-        const pageSize = 20;
-        let activeCandidateFilter = 'all';
-
-        fetch('research/registry/negative_results.json')
-            .then(res => res.json())
-            .then(data => {
-                allNegatives = data || [];
-                document.getElementById('metric-neg-count').textContent = allNegatives.length;
-                document.getElementById('verdict-title').textContent = `${allNegatives.length} Retained Records`;
-                const allBtn = document.getElementById('filter-btn-all');
-                if (allBtn) allBtn.textContent = `All (${allNegatives.length})`;
-                filteredNegatives = allNegatives;
-                renderPage();
-            })
-            .catch(err => {
-                console.error('Error loading negative_results.json:', err);
-                document.getElementById('neg-card-container').innerHTML = `
-                    <div style="text-align: center; color: var(--rust); padding: 32px;">
-                        Failed to load research/registry/negative_results.json
-                    </div>`;
-            });
-
-        function setCandidateFilter(filter, btn) {
-            activeCandidateFilter = filter;
-            document.querySelectorAll('.filter-btn-group .filter-btn').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            currentPage = 1;
-            filterNegatives();
-        }
-
-        function filterNegatives() {
-            const q = document.getElementById('neg-search').value.toLowerCase().trim();
-            filteredNegatives = allNegatives.filter(item => {
-                const appliesTo = item.applies_to || [];
-                const matchesCandidate = activeCandidateFilter === 'all' || appliesTo.some(a => a.includes(activeCandidateFilter));
-
-                const matchesQuery = !q ||
-                    item.id.toLowerCase().includes(q) ||
-                    (item.claim && item.claim.toLowerCase().includes(q)) ||
-                    (item.reason_invalid && item.reason_invalid.toLowerCase().includes(q)) ||
-                    (item.lesson && item.lesson.toLowerCase().includes(q)) ||
-                    (item.source && item.source.toLowerCase().includes(q));
-
-                return matchesCandidate && matchesQuery;
-            });
-
-            currentPage = 1;
-            renderPage();
-        }
-
-        function renderPage() {
-            const container = document.getElementById('neg-card-container');
-            const total = filteredNegatives.length;
-            const totalPages = Math.max(1, Math.ceil(total / pageSize));
-
-            if (currentPage > totalPages) currentPage = totalPages;
-            if (currentPage < 1) currentPage = 1;
-
-            document.getElementById('neg-count-display').textContent = `Showing ${total === 0 ? 0 : (currentPage - 1) * pageSize + 1}–${Math.min(currentPage * pageSize, total)} of ${total} records`;
-            document.getElementById('pagination-info').textContent = `Page ${currentPage} of ${totalPages}`;
-
-            document.getElementById('prev-page-btn').disabled = currentPage <= 1;
-            document.getElementById('next-page-btn').disabled = currentPage >= totalPages;
-
-            if (total === 0) {
-                container.innerHTML = `<div style="text-align: center; padding: 40px; color: var(--muted); font-family: var(--mono);">No negative results match the query.</div>`;
-                return;
-            }
-
-            const start = (currentPage - 1) * pageSize;
-            const pageItems = filteredNegatives.slice(start, start + pageSize);
-
-            container.innerHTML = pageItems.map(item => {
-                const appliesBadges = (item.applies_to || []).map(a => `<span class="badge badge-neutral">${escapeHtml(a)}</span>`).join(' ');
-                return `
-                    <div class="detail-card">
-                        <div class="detail-card-header">
-                            <div>
-                                <h3 style="color: var(--rust); font-size: 0.95rem;">${escapeHtml(item.id)}</h3>
-                                <div style="display: flex; gap: 6px; margin-top: 6px; flex-wrap: wrap;">
-                                    ${appliesBadges}
-                                    <span class="badge badge-blue">Source: ${escapeHtml(item.source)}</span>
-                                </div>
-                            </div>
-                        </div>
-                        <p><strong>Claim Tested:</strong> ${escapeHtml(item.claim)}</p>
-                        <p><strong>Why Invalid:</strong> ${escapeHtml(item.reason_invalid)}</p>
-                        <div style="background: var(--amber-soft); border-left: 3px solid var(--amber); padding: 10px 14px; border-radius: 0 4px 4px 0; margin-top: 10px;">
-                            <strong style="font-size: 0.82rem; color: #6b4408;">Lesson Learned:</strong>
-                            <p style="margin: 4px 0 0; font-size: 0.84rem; color: #4e3206;">${escapeHtml(item.lesson)}</p>
-                        </div>
-                    </div>
-                `;
-            }).join('');
-        }
-
-        function prevPage() {
-            if (currentPage > 1) {
-                currentPage--;
-                renderPage();
-                document.getElementById('explorer').scrollIntoView({ behavior: 'smooth' });
-            }
-        }
-
-        function nextPage() {
-            const totalPages = Math.ceil(filteredNegatives.length / pageSize);
-            if (currentPage < totalPages) {
-                currentPage++;
-                renderPage();
-                document.getElementById('explorer').scrollIntoView({ behavior: 'smooth' });
-            }
-        }
-
-        function escapeHtml(str) {
-            return String(str || '')
-                .replaceAll('&', '&amp;')
-                .replaceAll('<', '&lt;')
-                .replaceAll('>', '&gt;')
-                .replaceAll('"', '&quot;')
-                .replaceAll("'", '&#039;');
-        }
-    </script>
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p>Q-Search is an open research project by Jasper Sands. Data updated <time data-updated>recently</time>.</p>
+      <p><a href="https://github.com/Jaspersands/qsearch">Source on GitHub</a> · <a href="index.html#cite">Cite</a></p>
+    </div>
+  </footer>
 </body>
 </html>

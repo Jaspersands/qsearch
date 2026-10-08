@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Open problems · Q-Search</title>
+  <meta name="description" content="The research frontiers Q-Search is working on now, and the proofs still missing before any idea could be called a speedup.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Schibsted+Grotesk:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+  <link rel="stylesheet" href="site/styles.css">
+  <script type="module" src="site/js/open-problems.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="wordmark" href="index.html">Q-Search</a>
+      <nav aria-label="Site">
+        <a href="index.html">Home</a>
+        <a href="open-problems.html" aria-current="page">Open problems</a>
+        <a href="negative-results.html">Negative results</a>
+        <a href="how-it-works.html">How it works</a>
+      </nav>
+      <a class="header-github" href="https://github.com/Jaspersands/qsearch">GitHub</a>
+    </div>
+  </header>
+
+  <div class="wrap"><div class="circuit-strip" id="circuit-strip" title="Where each line of attack stands: a meter marks where a route stopped; the dashed line is still running."></div></div>
+
+  <main>
+    <div class="wrap page-head">
+      <h1>Open problems</h1>
+      <div class="prose">
+        <p>What we're working on now, ranked by priority, and the proofs still missing before any idea here could be called a speedup.</p>
+      </div>
+    </div>
+
+    <section class="section" id="frontiers">
+      <div class="wrap with-notes">
+        <div>
+          <div class="section-head">
+            <h2>Research frontiers</h2>
+            <p>Each frontier is a line of work with a next experiment and a list of conditions that would end it. Open one for details.</p>
+          </div>
+        </div>
+        <aside class="note">
+          <p>Ranked on <span id="frontier-date">the date in the file</span> from the current blockers.</p>
+          <p>Source: <a href="https://github.com/Jaspersands/qsearch/blob/main/research/frontier_map.json"><code>frontier_map.json</code></a>.</p>
+        </aside>
+      </div>
+      <div class="wrap">
+        <div class="rows" id="frontier-rows"></div>
+      </div>
+    </section>
+
+    <section class="section" id="proof-debts">
+      <div class="wrap with-notes">
+        <div>
+          <div class="section-head">
+            <h2>Proof debts</h2>
+            <p>A proof debt is a proof that has to exist before a claim can be made. There are <span id="debt-count">several</span> open, grouped by what kind of proof is missing.</p>
+          </div>
+          <div class="field">
+            <label for="debt-candidate">Candidate</label>
+            <select id="debt-candidate"><option value="">All candidates</option></select>
+          </div>
+        </div>
+        <aside class="note">
+          <p>Source: <a href="https://github.com/Jaspersands/qsearch/blob/main/research/proof_debt_report.json"><code>proof_debt_report.json</code></a>.</p>
+        </aside>
+      </div>
+      <div class="wrap" id="debt-groups"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p>Q-Search is an open research project by Jasper Sands. Data updated <time data-updated>recently</time>.</p>
+      <p><a href="https://github.com/Jaspersands/qsearch">Source on GitHub</a> · <a href="index.html#cite">Cite</a></p>
+    </div>
+  </footer>
+</body>
+</html>

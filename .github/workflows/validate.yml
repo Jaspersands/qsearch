@@ -27,5 +27,18 @@ jobs:
         run: |
           python tools/build_progress_snapshot.py
           git diff --exit-code research/progress_snapshot.json
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
       - name: Check website JavaScript
-        run: node --check site/progress.js
+        run: |
+          for file in site/js/*.js site/js/lib/*.js; do node --check "$file"; done
+          node --test tests/js/*.test.mjs
+      - name: Verify website data and references
+        run: |
+          python -m pip install pytest
+          python -m pytest tests/test_build_site_data.py tests/test_check_site.py tests/test_build_negative_map.py -q
+          python tools/build_site_data.py --skip-changelog
+          git diff --exit-code site/data/activity.json site/data/negatives.json
+          python -c "import json; json.load(open('site/data/changelog.json')); json.load(open('site/data/negative_map.json'))"
+          python tools/check_site.py
