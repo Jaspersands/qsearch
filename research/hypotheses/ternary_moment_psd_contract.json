@@ -1,0 +1,22 @@
+{
+  "hypothesis_id": "HYP-NATIVE-MOMENT-PSD-CUTS",
+  "status": "EXACT_INDEFINITE_POINTS_AND_VALID_CUTS_ALL_ACTIVE_BRANCHES_CAPPED",
+  "candidate_record_accepted": false,
+  "note": "research/TERNARY_MOMENT_PSD.md",
+  "report": "research/phase_workbench/ternary_moment_psd.json",
+  "depends_on": ["HYP-NATIVE-COUPLED-PREFIX-MOMENTS"],
+  "finite_evidence": {"prefixes": 3, "total_windings_retained": 26, "active_primal_windings": 8, "exact_negative_quadratic_forms": 32, "valid_quadratic_cuts": 24, "exact_new_primal_points": 24, "new_dual_obstructions": 0, "PSD_continuations": 0, "cut_cap_unknown_windings": 8},
+  "proof_obligations_before_candidate_acceptance": {
+    "PO-REVIEW": "Review singular-pivot exact elimination, original-coordinate quadratic forms and complete strengthened-LP proof ledgers.",
+    "PO-GLOBAL-CONE": "Resolve full fixed-winding PSD feasibility; one negative point or a cut cap is not a global obstruction.",
+    "PO-POPULATION": "Prove actual ordinary two-witness source-law success rather than selected-prefix behavior.",
+    "PO-COST": "Charge all model/source preparation, exact bit complexity, re-solves, failures and receiver retention.",
+    "PO-RECEIVER": "Preserve native phase, reduction and full-depth secret-recovery obligations."
+  },
+  "falsifier": "Exact PSD moment continuations survive false native prefixes, or bounded valid cuts fail to improve costed pair recovery.",
+  "not_proved": ["full PSD infeasibility", "native integer recovery", "global distribution", "population hardness", "quantum speedup"],
+  "next_target": "research/NATIVE_TERNARY_PSD_SUPPORT_LIFT_TARGET.md",
+  "routine_wiring_owner": "Gemini or Antigravity",
+  "novelty_claim": false,
+  "polynomial_pair_finder_proved": false
+}

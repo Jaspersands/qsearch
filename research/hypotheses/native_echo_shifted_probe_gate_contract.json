@@ -1,0 +1,31 @@
+{
+  "id": "HYP-NATIVE-ECHO-SHIFTED-PROBE-GATE",
+  "status": "scoped_weak_target_obstruction_review_pending",
+  "derivation": "research/NATIVE_ECHO_SHIFTED_PROBE_GATE.md",
+  "implementation": "theorems/native_echo_shifted_probe_gate.py",
+  "artifact": "research/classical_baselines/native_echo_shifted_probe_gate.json",
+  "independent_checker": "research/certificates/native_echo_shifted_probe_gate_crosscheck.js",
+  "claim": "One partial echo with near-entropy copies and logarithmic mediator has exponentially small population least-trit advantage for a polynomial precommitted menu of A-independent policies, even with arbitrary decoding and full-A menu selection.",
+  "explicit_escape": "Full-A calibrated values outside a fixed small menu, multiple echo rounds, wide mediators and large copy surplus.",
+  "exact_adaptive_scope_falsifier": "At q9, left shift0 and right shift inverse(a) on units with zero fallback give centered inner product4/27 for nonexceptional secrets3 and6, retaining all243 source/outcome records.",
+  "proof_obligations": [
+    "Externally review centered Gram orthogonality including nonzero fixed phase settings.",
+    "Keep the outcome-dependent common phase and identify the positive normalized dephased-A background channel.",
+    "Verify target-dual bad-B mass and exceptional-secret replacement under the full original IID source.",
+    "Review the finite-menu mask argument and its square-root policy-count dependence.",
+    "Use only even-native independent full frequency pairs and the stated uniform secret prior.",
+    "Do not infer a general quantum lower bound, classical simulation or novelty from this scoped cut."
+  ],
+  "falsifiers": [
+    "A nonexceptional off-diagonal Gram entry is nonzero.",
+    "The dephased-A background is not positive or normalized.",
+    "A polynomial fixed menu exceeds the mean weak-trit bound under the stated source law.",
+    "Full-A inverse calibration is mistakenly claimed to be covered."
+  ],
+  "candidate_record_accepted": false,
+  "all_collective_receivers_ruled_out": false,
+  "classical_dequantization_claimed": false,
+  "new_speedup_claimed": false,
+  "novelty_claimed": false,
+  "routine_CLI_registry_UI_and_Git_owner": "Gemini or Antigravity"
+}

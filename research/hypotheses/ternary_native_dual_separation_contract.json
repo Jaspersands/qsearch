@@ -1,0 +1,27 @@
+{
+  "hypothesis_id": "HYP-NATIVE-COUPLED-PREFIX-SEPARATION",
+  "status": "EXACT_INTEGER_CERTIFICATES_IMPLEMENTED_SMALL_FINITE_GAIN",
+  "candidate_record_accepted": false,
+  "note": "research/TERNARY_NATIVE_DUAL_SEPARATION.md",
+  "report": "research/phase_workbench/ternary_native_dual_separation.json",
+  "depends_on": ["HYP-NATIVE-TARGET-ADAPTIVE-SHELL"],
+  "implemented": [
+    "Pointwise original-native support theorem for every integer dual direction annihilating the unassigned prefix.",
+    "Bounded dyadic coupled separator search without trusting an approximate feasibility result.",
+    "Standalone exact integer certificate verification and independent BigInt replay.",
+    "Matched source-target experiment with all separation calls and failed attempts charged."
+  ],
+  "proof_obligations_before_candidate_acceptance": {
+    "PO-REVIEW": "External review of native support, annihilator argument and conversion from rational search directions.",
+    "PO-POPULATION": "Prove useful costed pair coverage over actual random labels and independent uniform targets.",
+    "PO-INTEGRALITY": "Quantify projected product-simplex integrality gaps; convex feasibility is not native feasibility.",
+    "PO-COST": "Charge search, basis and source costs and prove polynomial total work; more separators alone do not suffice.",
+    "PO-RECEIVER": "Retain all original phase-source, vector-reduction and full-depth recovery obligations."
+  },
+  "falsifier": "Exact fractional continuation certificates for many source prefixes, or no improvement in node/pair scaling after charging coupled separator work.",
+  "not_proved": ["LP completeness", "absence of all separators after search failure", "native word existence from convex membership", "population hardness", "quantum speedup"],
+  "next_target": "research/NATIVE_TERNARY_PREFIX_INTEGRALITY_TARGET.md",
+  "routine_wiring_owner": "Gemini or Antigravity",
+  "novelty_claim": false,
+  "polynomial_pair_finder_proved": false
+}

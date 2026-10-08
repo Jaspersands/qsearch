@@ -1,0 +1,25 @@
+{
+  "id": "NATIVE-PHASE-SOURCE-DOMINANCE",
+  "status": "EXACT_STATISTICAL_BASELINE_REVIEW_PENDING_NOT_EFFICIENT_DEQUANTIZATION",
+  "derivation": "research/NATIVE_PHASE_SOURCE_DOMINANCE.md",
+  "producer": "theorems/native_phase_source_dominance.py",
+  "report": "research/classical_baselines/native_phase_source_dominance.json",
+  "independent_checker": "research/certificates/native_phase_source_dominance_crosscheck.js",
+  "mechanism": "explicit quantum-discrimination dual Gamma=sum_C max_s pi_s*p(C|s)*sigma_C bounds every prepared-state receiver by Bayes success on original classical data",
+  "proof_obligations": [
+    {"id": "ORIGINAL-DATA-LAW", "claim": "sum all original error vectors for all secrets; zero-likelihood transcripts implicit, no favorable subset", "status": "EXACT_COMPLETE_FINITE_REPLAY"},
+    {"id": "DUAL-FEASIBILITY", "claim": "Gamma-pi_s*rho_s is a nonnegative mixture of actual prepared pure states for EVERY s", "status": "DERIVED_GENERAL_AND_EXACT_FINITE_MATRIX_REPLAY"},
+    {"id": "DUAL-TRACE", "claim": "Tr(Gamma) equals original-data classical Bayes success", "status": "EXACT_RATIONAL_AND_CYCLOTOMIC_REPLAY"},
+    {"id": "DOWNSTREAM-COMPARISON", "claim": "retain ALL native F3 outcomes and distinguish numerical PGM/readout diagnostics from proof", "status": "EXACT_LIKELIHOODS_NUMERICAL_SUCCESS_LABELED_DIAGNOSTIC"},
+    {"id": "MATCHED-BASELINE", "claim": "any computational speedup must beat attacks on original noisy-linear values at matched source parameters", "status": "REQUIRED_EFFICIENT_ORIGINAL_DATA_ATTACKS_REMAIN_OPEN"},
+    {"id": "SOURCE-QUALITY", "claim": "receiver sample count, success and alpha must jointly survive input/noise/precision costs", "status": "EXACT_PRE_ROUNDING_POSITIVE_AND_VACUOUS_CONTROLS_NOT_IMPOSSIBILITY"}
+  ],
+  "experiment": {
+    "controls": "(n,q,M)=(1,3,1),(2,3,1),(1,9,1),(1,3,2),(2,3,2), uniform labels precommitted",
+    "calibration_is_LWE_hardness_source": false,
+    "observed": {"complete_nonzero_source_transcripts": 225, "exact_dual_entries": 189, "exact_conditional_density_entries": 1161, "exact_readout_likelihood_entries": 171, "nonnegative_dual_difference_decompositions": 33, "source_budget_controls": 2},
+    "falsifiers": ["quantum-information gain attributed to a comparison with weaker readout data", "wrong original source likelihood", "truncated complete law", "negative dual coefficient", "wrong exact dual/density matrix", "original-data MAP mislabeled efficient", "noise-budget failure mislabeled impossibility"],
+    "accepted_speedup_candidates": 0
+  },
+  "not_claimed": ["efficient classical MAP", "efficient simulation of a quantum receiver", "computational quantum advantage refuted", "new quantum algorithm", "LWE cryptanalysis", "noise robustness impossible"]
+}

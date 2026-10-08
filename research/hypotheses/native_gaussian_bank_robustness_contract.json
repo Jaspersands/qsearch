@@ -1,0 +1,27 @@
+{
+  "id": "NATIVE-GAUSSIAN-BANK-ROBUSTNESS",
+  "status": "SHARPER_CONDITIONAL_SOURCE_ERROR_LEDGER_REVIEW_PENDING_NOT_RECEIVER",
+  "derivation": "research/NATIVE_GAUSSIAN_BANK_ROBUSTNESS.md",
+  "producer": "theorems/native_gaussian_bank_robustness.py",
+  "report": "research/reductions/native_gaussian_bank_robustness.json",
+  "independent_checker": "research/certificates/native_gaussian_bank_robustness_crosscheck.js",
+  "mechanism": "Gaussian maximum-error control improves fixed-bank norm scaling from sqrt(M) to sqrt(log M)",
+  "access_model": "existing explicit fixed noisy phase bank, known inverses, committed canonical exposure, no QRAM or new labels",
+  "proof_obligations": [
+    {"id": "GAUSSIAN-SOURCE", "claim": "each error is nearest-integer rounded continuous D_alpha noise", "status": "EXPLICIT_SOURCE_PREMISE_NOT_A_SECOND_MOMENT_CONSEQUENCE"},
+    {"id": "MAXIMUM-NORM", "claim": "E||V_C-V_s||<=min(2,2 alpha sqrt(pi log(4M))+pi/q)", "status": "MGF_JENSEN_DERIVATION_EXACT_REPLAY_EXTERNAL_REVIEW_PENDING"},
+    {"id": "FIXED-ERROR-HYBRID", "claim": "loss<=min(1,W E||V_C-V_s||) with no error refresh on reuse", "status": "POINTWISE_HYBRID_UNDER_EXISTING_INDEXED_ACCESS_CONTRACT"},
+    {"id": "TAIL-EVENT", "claim": "good-event bound has explicit failure probability", "status": "CHERNOFF_UNION_BOUND_EXACT_INTERVAL_REPLAY_NO_POSTSELECTION"},
+    {"id": "TAIL-COUNTEREXAMPLE", "claim": "independent centered heavy tails with the same moment budget violate this certificate", "status": "EXACT_RATIONAL_COUNTERCONTROL_AND_TAMPER_TESTS"},
+    {"id": "ASYMPTOTIC-CAPACITY", "claim": "linear banks fail full-uniform-secret recovery at exponential modulus and polynomial exposure; quadratic banks can clear the necessary support envelope", "status": "LOGARITHMIC_UPPER_AND_SINGLE_TERM_LOWER_CERTIFICATES_NOT_FREQUENCY_SPREAD_OR_DECODER"},
+    {"id": "PHYSICAL-ACCESS", "claim": "all controls, phase and caller gates are paid", "status": "BRANCH_AND_LOCAL_PRECISION_LEDGER_FULL_HARDWARE_COMPILATION_OPEN"},
+    {"id": "SOURCE-COMPOSITION", "claim": "source theorem and rounding errors compose with recovery", "status": "NOT_ADMITTED_SOURCE_CALLER_AND_RECEIVER_DEBT_REMAINS"},
+    {"id": "CONSTRUCTIVE-RECEIVER", "claim": "capacity-compatible exposure gives efficient recovery", "status": "OPEN_NOT_SUPPLIED"}
+  ],
+  "experiment": {
+    "observed": {"logarithm_controls": 10, "hybrid_controls": 4, "tail_controls": 2, "joint_profiles": 3, "heavy_tail_countercontrols": 1, "scaling_profiles": 9, "generic_ledger_exclusions_reopened_by_Gaussian_tails": 1},
+    "falsifiers": ["Gaussian width mistaken for standard deviation", "moment promoted to Gaussian tails", "rounding omitted", "fixed errors refreshed", "free large powers", "free caller gates", "rare banks conditioned away", "hypothetical success reported as execution"],
+    "accepted_speedup_candidates": 0
+  },
+  "not_claimed": ["new concentration theorem", "efficient decoder", "hardware implementation", "general LWE algorithm", "hardness transfer", "quantum speedup"]
+}

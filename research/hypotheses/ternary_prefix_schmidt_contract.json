@@ -1,0 +1,25 @@
+{
+  "hypothesis_id": "HYP-NATIVE-PREFIX-SCHMIDT-MPS-FIDELITY",
+  "status": "SOURCE_WEIGHTED_FIXED_CUT_MPS_OBSTRUCTION_REVIEW_PENDING",
+  "candidate_record_accepted": false,
+  "note": "research/TERNARY_PREFIX_SCHMIDT.md",
+  "report": "research/phase_workbench/ternary_prefix_schmidt.json",
+  "depends_on": ["HYP-NATIVE-FULL-LABEL-COHERENT-EDGE-RECEIVER"],
+  "mechanism": "Prefix frequency measurement produces exact Schmidt weights proportional to products of complementary half-syndrome counts. Native collision moments and Born size bias bound average purity at balanced middle scales.",
+  "falsifiers": [
+    "An actual native prefix projector has a Schmidt spectrum different from its complementary syndrome-count products.",
+    "The exact IID low-label census contradicts the uniform-target variance, disjoint-half collision product or true Born averaging.",
+    "A mean fixed-cut rank-chi full-state approximation violates the Cauchy-Schwarz fidelity/purity bound under the stated source law."
+  ],
+  "proof_obligations": {
+    "PO-REVIEW": "Independently review source-weighted size bias, collision independence and the mean fidelity argument; finite cases alone do not prove the population theorem.",
+    "PO-SCOPE": "Do not promote this to quantum hardness, a bound on arbitrary tensor geometries, label-adaptive partitions, sieve-retained label laws or observable-specific approximations.",
+    "PO-ALTERNATIVE": "Investigate carry/stabilizer descriptions or observable-only contractions that may survive large explicit Schmidt rank.",
+    "PO-SECRET-SIGNAL": "Prefix outcome probabilities are independent of the secret and exactly classically samplable. A useful readout must retain and access additional phase information; high entanglement alone is not an advantage.",
+    "PO-NOVELTY": "Novelty and significance have not been established. This is a scoped research representation audit."
+  },
+  "quantum_speedup_proved": false,
+  "generic_quantum_lower_bound": false,
+  "novelty_claim": false,
+  "routine_wiring_owner": "Gemini or Antigravity"
+}

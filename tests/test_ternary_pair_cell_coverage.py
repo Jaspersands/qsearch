@@ -13,7 +13,7 @@ from ternary_pair_lattice import (
 )
 from ternary_pair_cell_coverage import (
     best_repair_cost, compile_chart, exact_word_census, integer_gs_directions,
-    planted_word_probe, public_charts, projection_moments, repair_cost, repair_list_size, rounded_errors,
+    planted_word_probe, population_pair_lower, public_charts, projection_moments, repair_cost, repair_list_size, rounded_errors,
 )
 
 
@@ -166,6 +166,7 @@ def test_counting_bound_and_distinct_pair_layers_include_empty_and_singleton_tar
             beta = Fraction(row["beta_exact_conditional_uniform_targets"])
             gamma = Fraction(row["gamma_exact_conditional"])
             assert beta <= gamma/6
+            assert Fraction(row["full_truth_minus_missing_words_pair_lower"]) <= beta
             assert row["pair_covered_targets"] >= last; last = row["pair_covered_targets"]
     capped = exact_word_census(view, prepared, max_words=8)
     assert capped["status"] == "WORD_BUDGET_NO_PARTIAL_CENSUS" and capped["words_classified"] == 0
@@ -213,6 +214,21 @@ def test_real_pair_counterexample_is_replayed_against_actual_full_scheduled_deco
     assert all(view.value(w) == (int(c["target"]),) for w in c["complete_actual_fiber"])
     assert c["actual_decoder_candidate_cost"] == 150
     assert "EXHAUSTED" in c["actual_complete_scheduled_decoder_status"]
+
+
+def test_population_word_to_pair_lower_survives_complete_native_label_census():
+    gamma_sum = Fraction(0); beta_sum = Fraction(0)
+    for A in product(range(9), repeat=2):
+        view = problem(A, 9); prepared = public_charts(view, seed=883)
+        row = exact_word_census(view, prepared)["layers"][0]["depths"][1]
+        gamma_sum += Fraction(row["gamma_exact_conditional"])
+        beta_sum += Fraction(row["beta_exact_conditional_uniform_targets"])
+    lower = population_pair_lower(1, gamma_sum/81)
+    assert Fraction(lower["population_beta_lower_if_expected_gamma_proved"]) <= beta_sum/81
+    assert lower["expected_gamma_is_an_unproved_assumption_not_a_sample_estimate"]
+    assert population_pair_lower(10, Fraction(8, 9))["population_beta_lower_if_expected_gamma_proved"] == "0"
+    assert Fraction(population_pair_lower(10, Fraction(9, 10))["population_beta_lower_if_expected_gamma_proved"]) > 0
+    with pytest.raises(ValueError): population_pair_lower(10, 0.9)
 
 
 @pytest.mark.parametrize("call", [lambda: repair_cost((0,), True), lambda: repair_cost((0.5,)), lambda: repair_list_size(2, 3),

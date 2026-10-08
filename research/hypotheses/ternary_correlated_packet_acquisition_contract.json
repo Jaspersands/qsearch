@@ -1,0 +1,38 @@
+{
+  "hypothesis_id": "HYP-NATIVE-ORIGINAL-SOURCE-CORRELATED-PACKET-ACQUISITION",
+  "status": "ACQUISITION_CHARGED_JOINT_PHASE_EXACT_DECODER_OPEN_REVIEW_PENDING",
+  "candidate_record_accepted": false,
+  "note": "research/TERNARY_CORRELATED_PACKET_ACQUISITION.md",
+  "report": "research/phase_workbench/ternary_correlated_packet_acquisition.json",
+  "depends_on": ["HYP-NATIVE-CURVATURE-CYCLIC-EXTRACTOR"],
+  "literature": [
+    {"id": "arxiv:2609.34996v1", "url": "https://arxiv.org/html/2609.34996v1", "role": "Native source and known sieve baseline; no unrestricted upstream sample supply."},
+    {"id": "arxiv:1503.09016", "url": "https://arxiv.org/abs/1503.09016", "role": "Known diagonal zero-sum support construction."}
+  ],
+  "research_decision": "The growing-depth joint packet now has a charged original-native acquisition path. Seek an efficient decoder or useful multi-depth instrument for its shared-parameter phases; do not recurse as if its logical wires were IID native samples.",
+  "proof_obligations": {
+    "PO-SOURCE": "M=K*(n+1)^2 provided original even-native states, K>n, with unique recorded ancestors and an explicit input cap. IDs are not proof of independence. Upstream DCP/LWE source caps and joint error guarantees remain open.",
+    "PO-MASK": "Fixed disjoint windows and curvature-only support selection. Every support is nonempty and has zero actual native curvature. Selected calibration seeds are not a source-population estimate.",
+    "PO-INSTRUMENT": "Replay inverse SUM on only active complements, then the Gaussian syndrome map. All pointer and syndrome outcomes are accepted. Inactive originals stay live and are not measured zero.",
+    "PO-PROBABILITY": "For S active originals and outer rank rho, combined raw branch mass is3^-(S-K+rho), with total branch mass1. Do not count pointer tags as source copies.",
+    "PO-PHASE": "Lift logical assignments through odd pivots back to true original coordinates. Original frequency differences divided by3 equal the packet residual and growing-depth hierarchy at every checked word.",
+    "PO-LAW": "IID intermediate odd labels require IID original full frequency pairs and the curvature-only policy. The retained h logical registers are a correlated payload, not IID native samples. Unused curvature-selected originals are not fresh IID inputs.",
+    "PO-RESOURCE": "Charge all original inputs, both SUM stages and Gaussian support calls. Hardware synthesis and total error certification are not supplied. No preparation inverse, phase oracle, amplification, cloning or matched packet factory.",
+    "PO-VISIBILITY": "The packet payload sees the residual secret modulo q/3; untouched original states can still depend on the parent high digit. Keep branch global phases until both measurements actually occur.",
+    "PO-DECODER": "No efficient decoder or full-depth complexity improvement follows from constant-fraction one-step logical retention. A legal next stage must accept the coupled phase family and charge its true source transitions.",
+    "PO-REVIEW": "External mathematical review and novelty checks remain necessary. Acquisition correctness is neither a generic complexity obstruction nor an accepted breakthrough algorithm."
+  },
+  "falsifiable_experiments": [
+    "Independent even/odd native chart reconstruction fails the original-root phase identity.",
+    "A measurement branch has incorrect raw probability or total instrument mass differs from1.",
+    "Two purported original ancestors coincide, the input cap is exceeded, or an untouched register is consumed without being charged.",
+    "Reduced-state purity contradicts a proposed product-native output interpretation.",
+    "A proposed decoder requires unprovided identical packets, phase queries, preparation inverses or an IID recursive input law."
+  ],
+  "one_step_acquisition_and_phase_instrument_implemented": true,
+  "efficient_secret_decoder_supplied": false,
+  "full_depth_polynomial_algorithm_supplied": false,
+  "quantum_speedup_proved": false,
+  "novelty_claim": false,
+  "routine_wiring_owner": "Gemini or Antigravity"
+}

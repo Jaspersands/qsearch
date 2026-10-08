@@ -1,0 +1,37 @@
+{
+  "id": "HYP-NATIVE-DIAGONAL-ORBIT-CHANNEL",
+  "status": "scoped_original_source_one_copy_channel_simulation_review_pending",
+  "derivation": "research/NATIVE_DIAGONAL_ORBIT_CHANNEL.md",
+  "implementation": "theorems/native_diagonal_orbit_channel.py",
+  "artifact": "research/reductions/native_diagonal_orbit_channel.json",
+  "independent_checker": "research/certificates/native_diagonal_orbit_channel_crosscheck.js",
+  "literature_links": ["https://arxiv.org/html/2609.34996v1"],
+  "local_result": "Readouts preserving simultaneous-rotation word orbits can be simulated from one original native qutrit, retaining the exact public IID frequency record. This includes label-dependent group operations and synchronized relative orbit preparation/inverse.",
+  "information_consequence": "Uniform full-secret correctness is at most3/K for K possible secrets, independently of nominal original copy count, for the preserving readout only.",
+  "source_access": "One actual uniformly labelled native sample; public random offsets and M-1 uniform classical frequency rows; a1 is solved from the supplied label; known ternary additions embed the input without cloning or an unknown inverse.",
+  "explicit_escape": "Seed Fourier readout distinguishes the original coherent batch from its orbit-pinched state. Seed mixing and independent per-copy group actions are allowed by the real model and are outside the cut.",
+  "proof_obligations": [
+    "Externally review exact word-orbit representation and entire-transcript channel equivalence.",
+    "Preserve the full uniform IID source prior and public frequency correlations in the one-copy simulation.",
+    "Never supply the conditional effective native qutrit for a fixed cohort as an uncharged oracle.",
+    "Check every receiver operation and final observable for cross-orbit matrix elements before applying the bound.",
+    "Use the actual full-ring or integer-embedded prior size and a complete joint source-error budget.",
+    "A positive receiver must couple distinct offsets or use independent per-copy actions, then satisfy existing decoding and resource obligations.",
+    "Review prior literature before a novelty claim."
+  ],
+  "falsifiers": [
+    "An original branch phase is not a global phase times its effective native qutrit.",
+    "An induced action fails the branch intertwining identity.",
+    "Synthetic public rows do not have the exact original full IID frequency distribution.",
+    "A purported preserving readout distinguishes original and pinched channels.",
+    "A fixed-cohort conditional branch or arbitrary seed-mixing readout is incorrectly covered.",
+    "The information cut is interpreted as classical dequantization or an unrestricted native impossibility result."
+  ],
+  "arbitrary_collective_receivers_ruled_out": false,
+  "classical_dequantization_claimed": false,
+  "candidate_record_accepted": false,
+  "native_full_depth_receiver_supplied": false,
+  "new_speedup_claimed": false,
+  "novelty_claimed": false,
+  "routine_CLI_registry_UI_and_Git_owner": "Gemini or Antigravity"
+}

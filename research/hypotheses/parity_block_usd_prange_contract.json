@@ -1,0 +1,25 @@
+{
+  "id": "PARITY-BLOCK-USD-PRANGE",
+  "status": "CONSTRUCTIVE_LOCAL_DECODER_CLASSICALLY_MATCHED_EXTERNAL_REVIEW_PENDING",
+  "derivation": "research/PARITY_BLOCK_USD_PRANGE.md",
+  "producer": "theorems/parity_block_usd_prange.py",
+  "report": "research/classical_baselines/parity_block_usd_prange.json",
+  "independent_checker": "research/certificates/parity_block_usd_prange_crosscheck.js",
+  "literature": [{"url": "https://arxiv.org/html/2609.40345v1", "scope": "product USD and classical Prange mechanism; no imported shattering theorem"}],
+  "access_model": "public signed-XOR Ising clauses and known binary pure-state overlap; classical sampler receives the full public problem, not an unknown quantum codeword",
+  "proof_obligations": [
+    {"id": "LOCAL-INSTRUMENT", "claim": "four-qubit public gate program unambiguously decodes a three-message parity block with success1-c^2", "status": "EXACT_MASS_AND_GRAM_REPLAY_NUMERICAL_GATE_CONFORMANCE_REVIEW_PENDING"},
+    {"id": "COHERENT-PRIOR", "claim": "arbitrary coherent codeword priors retain Bernoulli erasurec^2", "status": "FALSIFIED_BY_EQUAL_SUPERPOSITION_ERASURE4c^2/(1+3c^2)"},
+    {"id": "CLASSICAL-MATCH", "claim": "spin elimination yields a correlated block-Prange sampler with mean constraint load2c^2", "status": "CONSTRUCTIVE_EXACT_GF2_SAMPLER_AND_FULL_SIGN_CENSUS"},
+    {"id": "NORMALIZATION", "claim": "random-sign averaged sampler TV is at most3 times the proposal rank-failure mass", "status": "SCOPED_DERIVATION_AND_EXACT_COMPLETE_DISTRIBUTIONS_REVIEW_PENDING"},
+    {"id": "FIXED-SIGNS", "claim": "small rank failure suffices for arbitrary signed Gibbs instances", "status": "FALSIFIED_BY_PLANTED_NORMALIZATION_TILT_ALTERNATIVE_ZERO_OUTER_CLASSICAL_SAMPLER_SUPPLIED"},
+    {"id": "GLOBAL-QUANTUM-GIBBS", "claim": "local decoder implies a costed coherent global Gibbs sampler", "status": "NOT_SUPPLIED_INPUT_NORMALIZATION_AND_HARDWARE_DEBTS_OPEN"}
+  ],
+  "experiment": {
+    "observed": {"actual_local_quantum_programs": 3, "complete_signed_instances": 192, "scaling_profiles": 4, "live_classical_samples": 32},
+    "falsifiers": ["parity promise removed", "scratch or failure state silently discarded", "coherent prior assigned classical-codeword erasure law", "rank failures postselected away", "partition tilt omitted", "random-sign average promoted to fixed signs", "only independent-clause Prange used as baseline"],
+    "accepted_speedup_candidates": 0
+  },
+  "negative_scope": "joint triple parity USD does not establish a Gibbs sampling speedup over matched correlated block-Prange",
+  "not_claimed": ["general DQI impossibility", "LWE decoder", "Shor-level algorithm", "universal hardware implementation", "novelty", "machine-checked proof"]
+}

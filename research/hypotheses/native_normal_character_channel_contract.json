@@ -1,0 +1,36 @@
+{
+  "id": "HYP-NATIVE-NORMAL-CHARACTER-CHANNEL",
+  "status": "scoped_exact_channel_cut_and_coherent_escape_local_review_pending",
+  "derivation": "research/NATIVE_NORMAL_CHARACTER_CHANNEL.md",
+  "implementation": "theorems/native_normal_character_channel.py",
+  "artifact": "research/reductions/native_normal_character_channel.json",
+  "independent_checker": "research/certificates/native_normal_character_channel_crosscheck.js",
+  "dependencies": ["HYP-NATIVE-STATE-HSP-CENTRAL-DESCENT", "native full-root phase and ring pairing"],
+  "literature_links": ["https://arxiv.org/html/2609.34996v1"],
+  "mechanism_tested": "Measure the deep normal subgroup pi^c A before attempting a reduced-class receiver; compare coherent character retention and public Fourier/feedforward pointer erasure.",
+  "local_result": "Measured outputs identify s and s+pi^(c+1)A for every fixed native label cohort and arbitrary batch size; coherent outputs need not.",
+  "positive_control": "Public conjugate-basis pointer measurement and known normal-action correction restore the original input including entanglement, but do not decode or erase its word index.",
+  "cut": "Do not promote irreversible deep normal-character measurement to free growing-depth central descent.",
+  "proof_obligations": [
+    "External review of the annihilator-ideal calculation and actual integer-secret precision bound.",
+    "A constructive decoder must act jointly on words and characters or otherwise preserve cross-character phases.",
+    "Charge clean word/fiber erasure, inter-sector mixing and source error; coherent public hash computation alone supplies none.",
+    "Keep additional untouched originals and preceding arbitrary noncommuting operations outside the exact-channel bound.",
+    "Check prior literature before any novelty claim."
+  ],
+  "falsifiers": [
+    "A phase difference is not constant in a claimed character class.",
+    "The normal-dual quotient is computed at the wrong pi-adic root.",
+    "Raw character outcomes are dropped or reweighted by the secret.",
+    "The class2 group-projection ceiling of one integer trit is incorrectly substituted for this channel's two-trit ceiling.",
+    "The measured-channel bound is promoted to a coherent or arbitrary-receiver lower bound.",
+    "Conjugate pointer erasure is said to undo already classically measured characters or to decode the secret."
+  ],
+  "bound_for_all_native_receivers": false,
+  "coherent_receiver_ruled_out": false,
+  "native_full_depth_receiver_supplied": false,
+  "candidate_record_accepted": false,
+  "new_speedup_claimed": false,
+  "novelty_claimed": false,
+  "routine_CLI_registry_UI_and_Git_owner": "Gemini or Antigravity"
+}

@@ -1,0 +1,29 @@
+{
+  "hypothesis_id": "HYP-NATIVE-INITIAL-POLYNOMIAL-FREQUENCY-PHASE-COMPILER",
+  "status": "CONSTRUCTIVE_UNIFORM_PRIOR_RISK_EQUIVALENCE_REVIEW_PENDING",
+  "candidate_record_accepted": false,
+  "note": "research/TERNARY_SYNDROME_PHASE_COMPILER.md",
+  "report": "research/phase_workbench/ternary_syndrome_phase_compiler.json",
+  "depends_on": ["HYP-NATIVE-CAUSAL-PHASE-FEEDBACK-ACCESS"],
+  "mechanism": "For r>=2, an initial modular integer polynomial phase of the complete native frequency only translates the logical least trit inside uniform-prior nuisance fibers. Compute/copy/uncompute and measure one derivative trit, remove the initial phase, run the original remaining receiver and translate its prediction. Mean success is exactly preserved for every fixed public label matrix.",
+  "research_decision": "Do not promote an initial total-frequency polynomial chirp as the missing receiver. Partial-block polynomials, top-digit nonpolynomial phases and phases after noncommuting mixing remain specific unexcluded targets; none is an algorithm merely because this compiler does not apply.",
+  "falsifiers": [
+    "A modular integer polynomial violates square-zero Taylor at r>=2.",
+    "The one-trit clean-workspace compiler changes complete uniform-secret mean success.",
+    "A root-one, top-digit nonpolynomial or partial-block phase is falsely compiled away.",
+    "The guarantee is promoted to pointwise secret success or to receivers with unaccounted additional secret-bearing input."
+  ],
+  "proof_obligations": {
+    "PO-REVIEW": "Review ensemble dephasing, the square-zero Taylor identity, derivative-only instrument and the sign of the decoder translation.",
+    "PO-PRIOR": "Uniform over every secret coordinate and high digit is essential. Mean-risk equivalence does not preserve each pure state or each fixed secret's success.",
+    "PO-BATCH": "The complete secret-bearing source batch used by the remaining receiver must be included in F. Additional same-secret states, workspace or query access require a new analysis.",
+    "PO-CLEAN": "Copy only the derivative trit and uncompute all scratch. Measuring total F or retaining its target high trit erases the useful coherence.",
+    "PO-SCOPE": "Only an initial integer polynomial of TOTAL F at r>=2 is removed. Partial blocks, nonpolynomial carries, other priors and interleaved mixing remain outside the reduction.",
+    "PO-COST": "Charge coefficient computation, public polynomial encoding, arithmetic and source copies. Finite exact MAP and full-prior replays are exponential calibration, not supplied efficient decoders.",
+    "PO-NOVELTY": "No novelty, efficient algorithm or generic quantum lower bound is claimed."
+  },
+  "quantum_speedup_proved": false,
+  "generic_quantum_lower_bound": false,
+  "novelty_claim": false,
+  "routine_wiring_owner": "Gemini or Antigravity"
+}

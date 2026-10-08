@@ -1,0 +1,40 @@
+{
+  "id": "HYP-TERNARY-NATIVE-SPECTRAL-ACCESS",
+  "status": "restricted_native_access_boundary_local_derivation_review_pending",
+  "candidate_record_accepted": false,
+  "derivation": "research/TERNARY_NATIVE_SPECTRAL_ACCESS.md",
+  "implementation": "theorems/ternary_native_spectral_access.py",
+  "artifact": "research/phase_workbench/ternary_native_spectral_access.json",
+  "independent_checker": "research/certificates/ternary_native_spectral_access_crosscheck.js",
+  "mechanism": "Exact shifted-fiber Hellinger affinity optimizes public unitaries that nondestructively imprint one fixed secret character on the unaltered native source.",
+  "source": "original_even_level_native_qutrit_phase_states_with_full_public_labels",
+  "source_law": "all_IID_uniform_full_frequency_rows",
+  "secret_scope": "uniform_all_shared_secrets",
+  "fixed_offset_scope": "nonzero_direction_committed_before_labels; optimized_unitary_may_depend_on_labels",
+  "underfull_conclusion": "At D=G/9, population minimum squared generator error exceeds16/9 even with unbounded gate cost.",
+  "overfull_escape": "Existence obstruction weakens with extra copies; normalized fiber transport is still not compiled efficiently.",
+  "not_covered": [
+    "General collective POVMs, source-changing instruments or postselected factories.",
+    "Label-adaptive offsets without a separate probability argument.",
+    "Classically learned small-R moment models that do not require a nondemolition action on original states.",
+    "A generic quantum lower bound, IID-average hardness or a new quantum speedup."
+  ],
+  "proof_obligations": [
+    "Independent review of orthogonal-fiber unitary optimum and fixed-offset IID population law.",
+    "For any positive native spectral proposal, implement controlled generators and charge state/copy/error costs.",
+    "For an enlarged-batch fiber construction, supply a clean normalized fiber transform, not just a dense optimum.",
+    "Do not replace operator period with the weaker equality U^q=I when claiming full-root coverage.",
+    "Compare against direct classical inference and known native/DCP sieves in the same source regime."
+  ],
+  "falsifiers": [
+    "Optimal unitary reference exceeds or fails to attain the exact radical optimum.",
+    "Complete native ensemble disagrees with the ordered-pair or chi-squared identities.",
+    "A diagonal/commutant projector readout is promoted as secret-informative.",
+    "A label-chosen direction inherits a fixed-direction population bound.",
+    "A dense basis extension is claimed to be an efficient coherent fiber compiler."
+  ],
+  "generic_quantum_receiver_lower_bound": false,
+  "native_spectral_generator_compiler_supplied": false,
+  "quantum_speedup_proved": false,
+  "routine_wiring_owner": "Gemini or Antigravity"
+}

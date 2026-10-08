@@ -1,0 +1,37 @@
+{
+  "id": "HYP-NATIVE-MULTIROUND-ECHO-HISTORY-RECEIVER",
+  "status": "actual_multiround_receiver_negative_conditional_controls_review_pending",
+  "derivation": "research/NATIVE_ECHO_HISTORY_RECEIVER.md",
+  "implementation": "theorems/native_echo_history_receiver.py",
+  "artifact": "research/phase_workbench/native_echo_history_receiver.json",
+  "independent_checker": "research/certificates/native_echo_history_receiver_crosscheck.js",
+  "literature_links": ["https://arxiv.org/abs/quant-ph/0511069", "https://arxiv.org/abs/quant-ph/0504083"],
+  "mechanism": "Interleave genuine public partial-frequency echoes on one original native batch without measurement or source repreparation; contract the full mediator history.",
+  "source": "Even-native full-IID independent frequency pairs with uniform integer secret in Z_(3^r)^n; all calibration failures retained.",
+  "conditional_contraction_cost": "O(3^(w*d)*d*m*n^2); no unknown-secret inference included.",
+  "negative_evidence": "All96 non-product finite controls lose to their own matched same-copy history-LOCC baselines for full-secret and least-trit MAP.",
+  "proof_obligations": [
+    "Review the mediator-history amplitude and full-word dephasing laws.",
+    "Keep all scratch erased before every B transform and apply initial settings only once.",
+    "Charge mediator width TIMES echo depth in the contraction exponent.",
+    "Supply an informative efficient unknown-secret decoder, not only conditional likelihood evaluation.",
+    "Compare matched input counts, source errors and full classical processing costs.",
+    "Never extend the one-echo obstruction to multiple rounds or infer A-independence from a matrix alone.",
+    "Compile public arithmetic, phase precision and hardware gate resources before claiming an executable quantum algorithm."
+  ],
+  "falsifiers": [
+    "Streaming and physical amplitudes disagree.",
+    "Full-word dephasing is equated with tracing frequency scratch despite collisions.",
+    "Clean output exceeds the pointwise3^(w*d) dirty-history domination factor.",
+    "Quantum-input LOCC is mislabeled as classical dequantization.",
+    "A repeated zero-lens Fourier sequence is claimed to gain information.",
+    "Finite reference MAP or policy selection is presented as a scalable algorithm."
+  ],
+  "candidate_record_accepted": false,
+  "efficient_unknown_secret_decoder_supplied": false,
+  "classical_simulation_without_unknown_input_states_claimed": false,
+  "all_multiround_or_collective_receivers_ruled_out": false,
+  "new_speedup_claimed": false,
+  "novelty_claimed": false,
+  "routine_CLI_registry_UI_and_Git_owner": "Gemini or Antigravity"
+}

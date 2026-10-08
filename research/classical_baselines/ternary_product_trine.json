@@ -1,0 +1,2057 @@
+{
+  "status": "PHYSICAL_PRODUCT_READOUT_AND_COSTED_BASELINE_REVIEW_PENDING",
+  "derivation_sha256": "89774f558d4a8e1a91a207b794d5fb6599b308773b0e20edba1956c289368dde",
+  "quantum_speedup_proved": false,
+  "candidate_record_accepted": false,
+  "novelty_claim": false,
+  "randomized_recipes": [
+    {
+      "digits": 1,
+      "modulus": "3",
+      "original_qutrits": 1,
+      "clean_quantum_ancillas": 0,
+      "uniform_independent_public_random_trits": 2,
+      "gates": [
+        "diag(1,chi_q(-alpha),chi_q(-beta))",
+        "inverse_F3"
+      ],
+      "report": "(y1,y2)=(alpha+(q/3)z,beta+2(q/3)z) modq",
+      "settings_and_pointer_reconstructible_from_y_and_independent_uniform_z": true,
+      "exact_effect_identity": "E_(y,z)=E_y/3; E_y=v_y*v_y^dagger/q^2",
+      "full_q_squared_table_required": false,
+      "unknown_source_inverse_required": false,
+      "phase_synthesis_and_classical_randomness_error_must_be_charged": true,
+      "hardware_gate_export_implemented": false,
+      "novelty_claim": false
+    },
+    {
+      "digits": 16,
+      "modulus": "43046721",
+      "original_qutrits": 1,
+      "clean_quantum_ancillas": 0,
+      "uniform_independent_public_random_trits": 32,
+      "gates": [
+        "diag(1,chi_q(-alpha),chi_q(-beta))",
+        "inverse_F3"
+      ],
+      "report": "(y1,y2)=(alpha+(q/3)z,beta+2(q/3)z) modq",
+      "settings_and_pointer_reconstructible_from_y_and_independent_uniform_z": true,
+      "exact_effect_identity": "E_(y,z)=E_y/3; E_y=v_y*v_y^dagger/q^2",
+      "full_q_squared_table_required": false,
+      "unknown_source_inverse_required": false,
+      "phase_synthesis_and_classical_randomness_error_must_be_charged": true,
+      "hardware_gate_export_implemented": false,
+      "novelty_claim": false
+    },
+    {
+      "digits": 32,
+      "modulus": "1853020188851841",
+      "original_qutrits": 1,
+      "clean_quantum_ancillas": 0,
+      "uniform_independent_public_random_trits": 64,
+      "gates": [
+        "diag(1,chi_q(-alpha),chi_q(-beta))",
+        "inverse_F3"
+      ],
+      "report": "(y1,y2)=(alpha+(q/3)z,beta+2(q/3)z) modq",
+      "settings_and_pointer_reconstructible_from_y_and_independent_uniform_z": true,
+      "exact_effect_identity": "E_(y,z)=E_y/3; E_y=v_y*v_y^dagger/q^2",
+      "full_q_squared_table_required": false,
+      "unknown_source_inverse_required": false,
+      "phase_synthesis_and_classical_randomness_error_must_be_charged": true,
+      "hardware_gate_export_implemented": false,
+      "novelty_claim": false
+    },
+    {
+      "digits": 64,
+      "modulus": "3433683820292512484657849089281",
+      "original_qutrits": 1,
+      "clean_quantum_ancillas": 0,
+      "uniform_independent_public_random_trits": 128,
+      "gates": [
+        "diag(1,chi_q(-alpha),chi_q(-beta))",
+        "inverse_F3"
+      ],
+      "report": "(y1,y2)=(alpha+(q/3)z,beta+2(q/3)z) modq",
+      "settings_and_pointer_reconstructible_from_y_and_independent_uniform_z": true,
+      "exact_effect_identity": "E_(y,z)=E_y/3; E_y=v_y*v_y^dagger/q^2",
+      "full_q_squared_table_required": false,
+      "unknown_source_inverse_required": false,
+      "phase_synthesis_and_classical_randomness_error_must_be_charged": true,
+      "hardware_gate_export_implemented": false,
+      "novelty_claim": false
+    }
+  ],
+  "compiler_controls": [
+    {
+      "modulus": 3,
+      "input_state": [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "settings_enumerated_for_calibration_only": 9,
+      "branch_effect_identity_residual": 1.3877787807814457e-17,
+      "covariant_circuit_probability_residual": 2.7755575615628914e-17,
+      "independent_uniform_pointer_residual": 6.938893903907228e-18,
+      "effect_completeness_residual": 2.2221755593370216e-16,
+      "normalization_residual": 4.440892098500626e-16,
+      "existing_two_register_gate_tape_replayed": true,
+      "arbitrary_input_not_just_native_phases": true
+    },
+    {
+      "modulus": 3,
+      "input_state": [
+        [
+          0.5773502691896258,
+          0.0
+        ],
+        [
+          0.5773502691896258,
+          0.0
+        ],
+        [
+          0.5773502691896258,
+          0.0
+        ]
+      ],
+      "settings_enumerated_for_calibration_only": 9,
+      "branch_effect_identity_residual": 3.469446951953614e-17,
+      "covariant_circuit_probability_residual": 2.220446049250313e-16,
+      "independent_uniform_pointer_residual": 6.938893903907228e-17,
+      "effect_completeness_residual": 2.2221755593370216e-16,
+      "normalization_residual": 4.440892098500626e-16,
+      "existing_two_register_gate_tape_replayed": true,
+      "arbitrary_input_not_just_native_phases": true
+    },
+    {
+      "modulus": 3,
+      "input_state": [
+        [
+          0.2672612419124244,
+          0.0
+        ],
+        [
+          0.0,
+          0.5345224838248488
+        ],
+        [
+          -0.8017837257372732,
+          0.0
+        ]
+      ],
+      "settings_enumerated_for_calibration_only": 9,
+      "branch_effect_identity_residual": 2.7755575615628914e-17,
+      "covariant_circuit_probability_residual": 1.942890293094024e-16,
+      "independent_uniform_pointer_residual": 6.938893903907228e-17,
+      "effect_completeness_residual": 2.2221755593370216e-16,
+      "normalization_residual": 2.220446049250313e-16,
+      "existing_two_register_gate_tape_replayed": true,
+      "arbitrary_input_not_just_native_phases": true
+    },
+    {
+      "modulus": 9,
+      "input_state": [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "settings_enumerated_for_calibration_only": 81,
+      "branch_effect_identity_residual": 8.673617379884035e-19,
+      "covariant_circuit_probability_residual": 1.0408340855860843e-17,
+      "independent_uniform_pointer_residual": 3.469446951953614e-18,
+      "effect_completeness_residual": 2.2204485695166297e-15,
+      "normalization_residual": 4.440892098500626e-16,
+      "existing_two_register_gate_tape_replayed": true,
+      "arbitrary_input_not_just_native_phases": true
+    },
+    {
+      "modulus": 9,
+      "input_state": [
+        [
+          0.5773502691896258,
+          0.0
+        ],
+        [
+          0.5773502691896258,
+          0.0
+        ],
+        [
+          0.5773502691896258,
+          0.0
+        ]
+      ],
+      "settings_enumerated_for_calibration_only": 81,
+      "branch_effect_identity_residual": 6.938893903907228e-18,
+      "covariant_circuit_probability_residual": 3.8163916471489756e-17,
+      "independent_uniform_pointer_residual": 1.3877787807814457e-17,
+      "effect_completeness_residual": 2.2204485695166297e-15,
+      "normalization_residual": 4.440892098500626e-16,
+      "existing_two_register_gate_tape_replayed": true,
+      "arbitrary_input_not_just_native_phases": true
+    },
+    {
+      "modulus": 9,
+      "input_state": [
+        [
+          0.2672612419124244,
+          0.0
+        ],
+        [
+          0.0,
+          0.5345224838248488
+        ],
+        [
+          -0.8017837257372732,
+          0.0
+        ]
+      ],
+      "settings_enumerated_for_calibration_only": 81,
+      "branch_effect_identity_residual": 5.204170427930421e-18,
+      "covariant_circuit_probability_residual": 3.469446951953614e-17,
+      "independent_uniform_pointer_residual": 1.3877787807814457e-17,
+      "effect_completeness_residual": 2.2204485695166297e-15,
+      "normalization_residual": 0.0,
+      "existing_two_register_gate_tape_replayed": true,
+      "arbitrary_input_not_just_native_phases": true
+    },
+    {
+      "modulus": 27,
+      "input_state": [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "settings_enumerated_for_calibration_only": 729,
+      "branch_effect_identity_residual": 1.6263032587282567e-19,
+      "covariant_circuit_probability_residual": 1.951563910473908e-18,
+      "independent_uniform_pointer_residual": 7.047314121155779e-19,
+      "effect_completeness_residual": 1.2545520364993237e-14,
+      "normalization_residual": 4.440892098500626e-16,
+      "existing_two_register_gate_tape_replayed": true,
+      "arbitrary_input_not_just_native_phases": true
+    },
+    {
+      "modulus": 27,
+      "input_state": [
+        [
+          0.5773502691896258,
+          0.0
+        ],
+        [
+          0.5773502691896258,
+          0.0
+        ],
+        [
+          0.5773502691896258,
+          0.0
+        ]
+      ],
+      "settings_enumerated_for_calibration_only": 729,
+      "branch_effect_identity_residual": 1.0842021724855044e-18,
+      "covariant_circuit_probability_residual": 7.806255641895632e-18,
+      "independent_uniform_pointer_residual": 2.8189256484623115e-18,
+      "effect_completeness_residual": 1.2545520364993237e-14,
+      "normalization_residual": 4.440892098500626e-16,
+      "existing_two_register_gate_tape_replayed": true,
+      "arbitrary_input_not_just_native_phases": true
+    },
+    {
+      "modulus": 27,
+      "input_state": [
+        [
+          0.2672612419124244,
+          0.0
+        ],
+        [
+          0.0,
+          0.5345224838248488
+        ],
+        [
+          -0.8017837257372732,
+          0.0
+        ]
+      ],
+      "settings_enumerated_for_calibration_only": 729,
+      "branch_effect_identity_residual": 1.0842021724855044e-18,
+      "covariant_circuit_probability_residual": 5.637851296924623e-18,
+      "independent_uniform_pointer_residual": 1.951563910473908e-18,
+      "effect_completeness_residual": 1.2545520364993237e-14,
+      "normalization_residual": 4.440892098500626e-16,
+      "existing_two_register_gate_tape_replayed": true,
+      "arbitrary_input_not_just_native_phases": true
+    }
+  ],
+  "exact_Gram_controls": [
+    {
+      "modulus": 3,
+      "dimension": 1,
+      "complete_secret_pairs": 9,
+      "direction_pairs_per_secret_pair": 36,
+      "zero_diagonal": "2",
+      "nonzero_diagonal": "2/3",
+      "off_diagonal": "0"
+    },
+    {
+      "modulus": 9,
+      "dimension": 1,
+      "complete_secret_pairs": 81,
+      "direction_pairs_per_secret_pair": 36,
+      "zero_diagonal": "2",
+      "nonzero_diagonal": "2/3",
+      "off_diagonal": "0"
+    },
+    {
+      "modulus": 27,
+      "dimension": 1,
+      "complete_secret_pairs": 729,
+      "direction_pairs_per_secret_pair": 36,
+      "zero_diagonal": "2",
+      "nonzero_diagonal": "2/3",
+      "off_diagonal": "0"
+    },
+    {
+      "modulus": 3,
+      "dimension": 2,
+      "complete_secret_pairs": 81,
+      "direction_pairs_per_secret_pair": 36,
+      "zero_diagonal": "2",
+      "nonzero_diagonal": "2/3",
+      "off_diagonal": "0"
+    }
+  ],
+  "fixed_readout_scaling_gates": [
+    {
+      "dimension": 1,
+      "digits": 8,
+      "original_independent_qutrits": 6,
+      "secret_population": "6561",
+      "nonzero_secret_centered_product_norm_squared": "14896/729",
+      "zero_secret_centered_product_norm_squared": "728",
+      "nonzero_contribution_advantage_upper_squared": "7448/4782969",
+      "zero_secret_advantage_upper": "728/4782969",
+      "mean_advantage_upper_formula": "min(2/3,sqrt(nonzero_squared)+zero_upper)",
+      "requested_advantage": "1/10",
+      "necessary_copy_gate_passed": false,
+      "scope": "ANY classical joint processing of fixed inverse-F3 records; uniform ALL secrets; IID full native labels",
+      "zero_secret_exception_kept": true,
+      "other_bases_or_adaptive_LOCC_covered": false,
+      "chosen_labels_or_sieve_retained_law_covered": false,
+      "unmeasured_states_covered": false,
+      "speedup_claim_allowed": false,
+      "status": "LOCAL_DERIVATION_REVIEW_PENDING"
+    },
+    {
+      "dimension": 1,
+      "digits": 16,
+      "original_independent_qutrits": 14,
+      "secret_population": "43046721",
+      "nonzero_secret_centered_product_norm_squared": "6098732656/4782969",
+      "zero_secret_centered_product_norm_squared": "4782968",
+      "nonzero_contribution_advantage_upper_squared": "3049366328/205891132094649",
+      "zero_secret_advantage_upper": "4782968/205891132094649",
+      "mean_advantage_upper_formula": "min(2/3,sqrt(nonzero_squared)+zero_upper)",
+      "requested_advantage": "1/10",
+      "necessary_copy_gate_passed": false,
+      "scope": "ANY classical joint processing of fixed inverse-F3 records; uniform ALL secrets; IID full native labels",
+      "zero_secret_exception_kept": true,
+      "other_bases_or_adaptive_LOCC_covered": false,
+      "chosen_labels_or_sieve_retained_law_covered": false,
+      "unmeasured_states_covered": false,
+      "speedup_claim_allowed": false,
+      "status": "LOCAL_DERIVATION_REVIEW_PENDING"
+    },
+    {
+      "dimension": 1,
+      "digits": 32,
+      "original_independent_qutrits": 30,
+      "secret_population": "1853020188851841",
+      "nonzero_secret_centered_product_norm_squared": "931322368724346420976/205891132094649",
+      "zero_secret_centered_product_norm_squared": "205891132094648",
+      "nonzero_contribution_advantage_upper_squared": "465661184362173210488/381520424476945831628649898809",
+      "zero_secret_advantage_upper": "205891132094648/381520424476945831628649898809",
+      "mean_advantage_upper_formula": "min(2/3,sqrt(nonzero_squared)+zero_upper)",
+      "requested_advantage": "1/10",
+      "necessary_copy_gate_passed": false,
+      "scope": "ANY classical joint processing of fixed inverse-F3 records; uniform ALL secrets; IID full native labels",
+      "zero_secret_exception_kept": true,
+      "other_bases_or_adaptive_LOCC_covered": false,
+      "chosen_labels_or_sieve_retained_law_covered": false,
+      "unmeasured_states_covered": false,
+      "speedup_claim_allowed": false,
+      "status": "LOCAL_DERIVATION_REVIEW_PENDING"
+    },
+    {
+      "dimension": 1,
+      "digits": 64,
+      "original_independent_qutrits": 62,
+      "secret_population": "3433683820292512484657849089281",
+      "nonzero_secret_centered_product_norm_squared": "21684043449709707159724579071567205578616816/381520424476945831628649898809",
+      "zero_secret_centered_product_norm_squared": "381520424476945831628649898808",
+      "nonzero_contribution_advantage_upper_squared": "10842021724854853579862289535783602789308408/1310020508637620352391208095712502073964245732475093456566329",
+      "zero_secret_advantage_upper": "381520424476945831628649898808/1310020508637620352391208095712502073964245732475093456566329",
+      "mean_advantage_upper_formula": "min(2/3,sqrt(nonzero_squared)+zero_upper)",
+      "requested_advantage": "1/10",
+      "necessary_copy_gate_passed": false,
+      "scope": "ANY classical joint processing of fixed inverse-F3 records; uniform ALL secrets; IID full native labels",
+      "zero_secret_exception_kept": true,
+      "other_bases_or_adaptive_LOCC_covered": false,
+      "chosen_labels_or_sieve_retained_law_covered": false,
+      "unmeasured_states_covered": false,
+      "speedup_claim_allowed": false,
+      "status": "LOCAL_DERIVATION_REVIEW_PENDING"
+    },
+    {
+      "dimension": 2,
+      "digits": 32,
+      "original_independent_qutrits": 62,
+      "secret_population": "3433683820292512484657849089281",
+      "nonzero_secret_centered_product_norm_squared": "21684043449709707159724579071567205578616816/381520424476945831628649898809",
+      "zero_secret_centered_product_norm_squared": "381520424476945831628649898808",
+      "nonzero_contribution_advantage_upper_squared": "10842021724854853579862289535783602789308408/1310020508637620352391208095712502073964245732475093456566329",
+      "zero_secret_advantage_upper": "381520424476945831628649898808/1310020508637620352391208095712502073964245732475093456566329",
+      "mean_advantage_upper_formula": "min(2/3,sqrt(nonzero_squared)+zero_upper)",
+      "requested_advantage": "1/10",
+      "necessary_copy_gate_passed": false,
+      "scope": "ANY classical joint processing of fixed inverse-F3 records; uniform ALL secrets; IID full native labels",
+      "zero_secret_exception_kept": true,
+      "other_bases_or_adaptive_LOCC_covered": false,
+      "chosen_labels_or_sieve_retained_law_covered": false,
+      "unmeasured_states_covered": false,
+      "speedup_claim_allowed": false,
+      "status": "LOCAL_DERIVATION_REVIEW_PENDING"
+    }
+  ],
+  "joint_correlation_countercontrol": {
+    "modulus": 81,
+    "native_level": 8,
+    "native_labels": [
+      [
+        [
+          80,
+          79
+        ]
+      ],
+      [
+        [
+          55,
+          29
+        ]
+      ]
+    ],
+    "frequency_rows": [
+      [
+        1,
+        2
+      ],
+      [
+        26,
+        52
+      ]
+    ],
+    "word_frequencies": [
+      0,
+      26,
+      52,
+      1,
+      27,
+      53,
+      2,
+      28,
+      54
+    ],
+    "outputs": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        2,
+        2
+      ]
+    ],
+    "exact_character_counts": [
+      [
+        [
+          19,
+          0,
+          0
+        ],
+        [
+          9,
+          5,
+          5
+        ],
+        [
+          9,
+          5,
+          5
+        ],
+        [
+          9,
+          5,
+          5
+        ],
+        [
+          9,
+          5,
+          5
+        ],
+        [
+          19,
+          0,
+          0
+        ],
+        [
+          9,
+          5,
+          5
+        ],
+        [
+          19,
+          0,
+          0
+        ],
+        [
+          9,
+          5,
+          5
+        ]
+      ],
+      [
+        [
+          9,
+          5,
+          5
+        ],
+        [
+          19,
+          0,
+          0
+        ],
+        [
+          9,
+          5,
+          5
+        ],
+        [
+          19,
+          0,
+          0
+        ],
+        [
+          9,
+          5,
+          5
+        ],
+        [
+          9,
+          5,
+          5
+        ],
+        [
+          9,
+          5,
+          5
+        ],
+        [
+          9,
+          5,
+          5
+        ],
+        [
+          19,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          9,
+          5,
+          5
+        ],
+        [
+          9,
+          5,
+          5
+        ],
+        [
+          19,
+          0,
+          0
+        ],
+        [
+          9,
+          5,
+          5
+        ],
+        [
+          19,
+          0,
+          0
+        ],
+        [
+          9,
+          5,
+          5
+        ],
+        [
+          19,
+          0,
+          0
+        ],
+        [
+          9,
+          5,
+          5
+        ],
+        [
+          9,
+          5,
+          5
+        ]
+      ]
+    ],
+    "joint_trit_laws": [
+      [
+        "19/81",
+        "4/81",
+        "4/81",
+        "4/81",
+        "4/81",
+        "19/81",
+        "4/81",
+        "19/81",
+        "4/81"
+      ],
+      [
+        "4/81",
+        "19/81",
+        "4/81",
+        "19/81",
+        "4/81",
+        "4/81",
+        "4/81",
+        "4/81",
+        "19/81"
+      ],
+      [
+        "4/81",
+        "4/81",
+        "19/81",
+        "4/81",
+        "19/81",
+        "4/81",
+        "19/81",
+        "4/81",
+        "4/81"
+      ]
+    ],
+    "single_qutrit_marginals": [
+      [
+        "1/3",
+        "1/3",
+        "1/3",
+        "1/3",
+        "1/3",
+        "1/3"
+      ],
+      [
+        "1/3",
+        "1/3",
+        "1/3",
+        "1/3",
+        "1/3",
+        "1/3"
+      ],
+      [
+        "1/3",
+        "1/3",
+        "1/3",
+        "1/3",
+        "1/3",
+        "1/3"
+      ]
+    ],
+    "joint_MAP_success": "19/27",
+    "physical_all_secrets_twirl_residual": 2.220446049250313e-16,
+    "calibration_secrets_enumerated": 81,
+    "final_effect_word_Hamming_radius": 2,
+    "entangling_readout_gates": 0,
+    "prespecified_legal_labels_not_IID_population_evidence": true,
+    "efficient_native_population_decoder_proved": false,
+    "speedup_claim_allowed": false
+  },
+  "exact_posterior_controls": [
+    {
+      "solver": {
+        "status": "COSTED_EXPONENTIAL_JOINT_CLASSICAL_BASELINE",
+        "dimension": 1,
+        "modulus": "81",
+        "records": [
+          {
+            "first": [
+              1
+            ],
+            "second": [
+              2
+            ],
+            "digit": 0,
+            "modulus": 81,
+            "readout": "FIXED_INVERSE_F3_NO_PUBLIC_PHASE_RANDOMIZATION"
+          },
+          {
+            "first": [
+              26
+            ],
+            "second": [
+              52
+            ],
+            "digit": 0,
+            "modulus": 81,
+            "readout": "FIXED_INVERSE_F3_NO_PUBLIC_PHASE_RANDOMIZATION"
+          }
+        ],
+        "target_coordinate": 0,
+        "target_frequencies": [
+          [
+            0
+          ],
+          [
+            27
+          ],
+          [
+            54
+          ]
+        ],
+        "coefficient_numerators": [
+          [
+            [
+              "0",
+              "9"
+            ]
+          ],
+          [
+            [
+              "0",
+              "5"
+            ]
+          ],
+          [
+            [
+              "0",
+              "5"
+            ]
+          ]
+        ],
+        "likelihood_common_denominator": "9",
+        "cost_ledger": {
+          "half_phase_updates": 14,
+          "maximum_stored_half_monomials": 5,
+          "matched_phase_products": 5,
+          "frequency_bucket_joins": 5,
+          "raw_assignments_per_half": [
+            "7",
+            "7"
+          ],
+          "generic_time_not_polynomial": true,
+          "secret_assignments_enumerated": false,
+          "original_native_qutrits_consumed": 2,
+          "original_record_ids": [
+            0,
+            1
+          ],
+          "independence_not_proved_by_ID_uniqueness_alone": true,
+          "max_half_states": 100000,
+          "max_join_products": 10000000
+        },
+        "posterior": {
+          "class_likelihood_numerators": [
+            [
+              [
+                "0",
+                "19"
+              ]
+            ],
+            [
+              [
+                "0",
+                "4"
+              ]
+            ],
+            [
+              [
+                "0",
+                "4"
+              ]
+            ]
+          ],
+          "normalizer_numerator": [
+            [
+              "0",
+              "9"
+            ]
+          ],
+          "root_modulus": "81",
+          "posterior_formula": "Z_t/(3*C_0); common3^M likelihood denominator cancels",
+          "status": "EXACT_POSTERIOR_WITH_CERTIFIED_BALL_ORDERING",
+          "posterior_probabilities": [
+            0.7037037037037037,
+            0.14814814814814814,
+            0.14814814814814814
+          ],
+          "posterior_probability_enclosures": [
+            "[0.70370370370370370370370370370370370370 +/- 4.25e-39]",
+            "[0.148148148148148148148148148148148148148 +/- 8.59e-40]",
+            "[0.148148148148148148148148148148148148148 +/- 8.59e-40]"
+          ],
+          "precision_bits": 128,
+          "MAP_tied_classes": [
+            0
+          ],
+          "maximum_a_posteriori_trit": 0,
+          "exactly_uniform_least_trit": false,
+          "uniform_secret_weak_success_guarantee_proved": false
+        },
+        "original_unknown_phase_states_classically_simulated": false,
+        "polynomial_native_weak_learner_implemented": false,
+        "speedup_or_general_hardness_claim": false,
+        "observation_model": "FIXED_PRODUCT_INVERSE_F3",
+        "paired_covariant_generative_law_used": false,
+        "adapter_scope": "LIKELIHOOD_PHASE_ALGEBRA_ONLY_CONSTANTS_CANCEL",
+        "fixed_trine_probability_to_adapter_probability_ratio": "2187",
+        "speedup_claim_allowed": false
+      },
+      "dense_secret_count_calibration_only": 81,
+      "actual_fixed_trine_likelihood_residual": 2.7755575615628914e-17
+    },
+    {
+      "solver": {
+        "status": "COSTED_EXPONENTIAL_JOINT_CLASSICAL_BASELINE",
+        "dimension": 1,
+        "modulus": "81",
+        "records": [
+          {
+            "first": [
+              1
+            ],
+            "second": [
+              2
+            ],
+            "digit": 0,
+            "modulus": 81,
+            "readout": "FIXED_INVERSE_F3_NO_PUBLIC_PHASE_RANDOMIZATION"
+          },
+          {
+            "first": [
+              26
+            ],
+            "second": [
+              52
+            ],
+            "digit": 1,
+            "modulus": 81,
+            "readout": "FIXED_INVERSE_F3_NO_PUBLIC_PHASE_RANDOMIZATION"
+          }
+        ],
+        "target_coordinate": 0,
+        "target_frequencies": [
+          [
+            0
+          ],
+          [
+            27
+          ],
+          [
+            54
+          ]
+        ],
+        "coefficient_numerators": [
+          [
+            [
+              "0",
+              "9"
+            ]
+          ],
+          [
+            [
+              "0",
+              "-5"
+            ],
+            [
+              "27",
+              "-5"
+            ]
+          ],
+          [
+            [
+              "27",
+              "5"
+            ]
+          ]
+        ],
+        "likelihood_common_denominator": "9",
+        "cost_ledger": {
+          "half_phase_updates": 14,
+          "maximum_stored_half_monomials": 7,
+          "matched_phase_products": 7,
+          "frequency_bucket_joins": 5,
+          "raw_assignments_per_half": [
+            "7",
+            "7"
+          ],
+          "generic_time_not_polynomial": true,
+          "secret_assignments_enumerated": false,
+          "original_native_qutrits_consumed": 2,
+          "original_record_ids": [
+            0,
+            1
+          ],
+          "independence_not_proved_by_ID_uniqueness_alone": true,
+          "max_half_states": 100000,
+          "max_join_products": 10000000
+        },
+        "posterior": {
+          "class_likelihood_numerators": [
+            [
+              [
+                "0",
+                "4"
+              ]
+            ],
+            [
+              [
+                "0",
+                "19"
+              ]
+            ],
+            [
+              [
+                "0",
+                "4"
+              ]
+            ]
+          ],
+          "normalizer_numerator": [
+            [
+              "0",
+              "9"
+            ]
+          ],
+          "root_modulus": "81",
+          "posterior_formula": "Z_t/(3*C_0); common3^M likelihood denominator cancels",
+          "status": "EXACT_POSTERIOR_WITH_CERTIFIED_BALL_ORDERING",
+          "posterior_probabilities": [
+            0.14814814814814814,
+            0.7037037037037037,
+            0.14814814814814814
+          ],
+          "posterior_probability_enclosures": [
+            "[0.148148148148148148148148148148148148148 +/- 8.59e-40]",
+            "[0.70370370370370370370370370370370370370 +/- 4.25e-39]",
+            "[0.148148148148148148148148148148148148148 +/- 8.59e-40]"
+          ],
+          "precision_bits": 128,
+          "MAP_tied_classes": [
+            1
+          ],
+          "maximum_a_posteriori_trit": 1,
+          "exactly_uniform_least_trit": false,
+          "uniform_secret_weak_success_guarantee_proved": false
+        },
+        "original_unknown_phase_states_classically_simulated": false,
+        "polynomial_native_weak_learner_implemented": false,
+        "speedup_or_general_hardness_claim": false,
+        "observation_model": "FIXED_PRODUCT_INVERSE_F3",
+        "paired_covariant_generative_law_used": false,
+        "adapter_scope": "LIKELIHOOD_PHASE_ALGEBRA_ONLY_CONSTANTS_CANCEL",
+        "fixed_trine_probability_to_adapter_probability_ratio": "2187",
+        "speedup_claim_allowed": false
+      },
+      "dense_secret_count_calibration_only": 81,
+      "actual_fixed_trine_likelihood_residual": 5.551115123125783e-17
+    },
+    {
+      "solver": {
+        "status": "COSTED_EXPONENTIAL_JOINT_CLASSICAL_BASELINE",
+        "dimension": 1,
+        "modulus": "81",
+        "records": [
+          {
+            "first": [
+              1
+            ],
+            "second": [
+              2
+            ],
+            "digit": 0,
+            "modulus": 81,
+            "readout": "FIXED_INVERSE_F3_NO_PUBLIC_PHASE_RANDOMIZATION"
+          },
+          {
+            "first": [
+              26
+            ],
+            "second": [
+              52
+            ],
+            "digit": 2,
+            "modulus": 81,
+            "readout": "FIXED_INVERSE_F3_NO_PUBLIC_PHASE_RANDOMIZATION"
+          }
+        ],
+        "target_coordinate": 0,
+        "target_frequencies": [
+          [
+            0
+          ],
+          [
+            27
+          ],
+          [
+            54
+          ]
+        ],
+        "coefficient_numerators": [
+          [
+            [
+              "0",
+              "9"
+            ]
+          ],
+          [
+            [
+              "27",
+              "5"
+            ]
+          ],
+          [
+            [
+              "0",
+              "-5"
+            ],
+            [
+              "27",
+              "-5"
+            ]
+          ]
+        ],
+        "likelihood_common_denominator": "9",
+        "cost_ledger": {
+          "half_phase_updates": 14,
+          "maximum_stored_half_monomials": 7,
+          "matched_phase_products": 7,
+          "frequency_bucket_joins": 5,
+          "raw_assignments_per_half": [
+            "7",
+            "7"
+          ],
+          "generic_time_not_polynomial": true,
+          "secret_assignments_enumerated": false,
+          "original_native_qutrits_consumed": 2,
+          "original_record_ids": [
+            0,
+            1
+          ],
+          "independence_not_proved_by_ID_uniqueness_alone": true,
+          "max_half_states": 100000,
+          "max_join_products": 10000000
+        },
+        "posterior": {
+          "class_likelihood_numerators": [
+            [
+              [
+                "0",
+                "4"
+              ]
+            ],
+            [
+              [
+                "0",
+                "4"
+              ]
+            ],
+            [
+              [
+                "0",
+                "19"
+              ]
+            ]
+          ],
+          "normalizer_numerator": [
+            [
+              "0",
+              "9"
+            ]
+          ],
+          "root_modulus": "81",
+          "posterior_formula": "Z_t/(3*C_0); common3^M likelihood denominator cancels",
+          "status": "EXACT_POSTERIOR_WITH_CERTIFIED_BALL_ORDERING",
+          "posterior_probabilities": [
+            0.14814814814814814,
+            0.14814814814814814,
+            0.7037037037037037
+          ],
+          "posterior_probability_enclosures": [
+            "[0.148148148148148148148148148148148148148 +/- 8.59e-40]",
+            "[0.148148148148148148148148148148148148148 +/- 8.59e-40]",
+            "[0.70370370370370370370370370370370370370 +/- 4.25e-39]"
+          ],
+          "precision_bits": 128,
+          "MAP_tied_classes": [
+            2
+          ],
+          "maximum_a_posteriori_trit": 2,
+          "exactly_uniform_least_trit": false,
+          "uniform_secret_weak_success_guarantee_proved": false
+        },
+        "original_unknown_phase_states_classically_simulated": false,
+        "polynomial_native_weak_learner_implemented": false,
+        "speedup_or_general_hardness_claim": false,
+        "observation_model": "FIXED_PRODUCT_INVERSE_F3",
+        "paired_covariant_generative_law_used": false,
+        "adapter_scope": "LIKELIHOOD_PHASE_ALGEBRA_ONLY_CONSTANTS_CANCEL",
+        "fixed_trine_probability_to_adapter_probability_ratio": "2187",
+        "speedup_claim_allowed": false
+      },
+      "dense_secret_count_calibration_only": 81,
+      "actual_fixed_trine_likelihood_residual": 8.326672684688674e-17
+    },
+    {
+      "solver": {
+        "status": "COSTED_EXPONENTIAL_JOINT_CLASSICAL_BASELINE",
+        "dimension": 1,
+        "modulus": "81",
+        "records": [
+          {
+            "first": [
+              1
+            ],
+            "second": [
+              2
+            ],
+            "digit": 1,
+            "modulus": 81,
+            "readout": "FIXED_INVERSE_F3_NO_PUBLIC_PHASE_RANDOMIZATION"
+          },
+          {
+            "first": [
+              26
+            ],
+            "second": [
+              52
+            ],
+            "digit": 0,
+            "modulus": 81,
+            "readout": "FIXED_INVERSE_F3_NO_PUBLIC_PHASE_RANDOMIZATION"
+          }
+        ],
+        "target_coordinate": 0,
+        "target_frequencies": [
+          [
+            0
+          ],
+          [
+            27
+          ],
+          [
+            54
+          ]
+        ],
+        "coefficient_numerators": [
+          [
+            [
+              "0",
+              "9"
+            ]
+          ],
+          [
+            [
+              "0",
+              "-5"
+            ],
+            [
+              "27",
+              "-5"
+            ]
+          ],
+          [
+            [
+              "27",
+              "5"
+            ]
+          ]
+        ],
+        "likelihood_common_denominator": "9",
+        "cost_ledger": {
+          "half_phase_updates": 14,
+          "maximum_stored_half_monomials": 7,
+          "matched_phase_products": 7,
+          "frequency_bucket_joins": 5,
+          "raw_assignments_per_half": [
+            "7",
+            "7"
+          ],
+          "generic_time_not_polynomial": true,
+          "secret_assignments_enumerated": false,
+          "original_native_qutrits_consumed": 2,
+          "original_record_ids": [
+            0,
+            1
+          ],
+          "independence_not_proved_by_ID_uniqueness_alone": true,
+          "max_half_states": 100000,
+          "max_join_products": 10000000
+        },
+        "posterior": {
+          "class_likelihood_numerators": [
+            [
+              [
+                "0",
+                "4"
+              ]
+            ],
+            [
+              [
+                "0",
+                "19"
+              ]
+            ],
+            [
+              [
+                "0",
+                "4"
+              ]
+            ]
+          ],
+          "normalizer_numerator": [
+            [
+              "0",
+              "9"
+            ]
+          ],
+          "root_modulus": "81",
+          "posterior_formula": "Z_t/(3*C_0); common3^M likelihood denominator cancels",
+          "status": "EXACT_POSTERIOR_WITH_CERTIFIED_BALL_ORDERING",
+          "posterior_probabilities": [
+            0.14814814814814814,
+            0.7037037037037037,
+            0.14814814814814814
+          ],
+          "posterior_probability_enclosures": [
+            "[0.148148148148148148148148148148148148148 +/- 8.59e-40]",
+            "[0.70370370370370370370370370370370370370 +/- 4.25e-39]",
+            "[0.148148148148148148148148148148148148148 +/- 8.59e-40]"
+          ],
+          "precision_bits": 128,
+          "MAP_tied_classes": [
+            1
+          ],
+          "maximum_a_posteriori_trit": 1,
+          "exactly_uniform_least_trit": false,
+          "uniform_secret_weak_success_guarantee_proved": false
+        },
+        "original_unknown_phase_states_classically_simulated": false,
+        "polynomial_native_weak_learner_implemented": false,
+        "speedup_or_general_hardness_claim": false,
+        "observation_model": "FIXED_PRODUCT_INVERSE_F3",
+        "paired_covariant_generative_law_used": false,
+        "adapter_scope": "LIKELIHOOD_PHASE_ALGEBRA_ONLY_CONSTANTS_CANCEL",
+        "fixed_trine_probability_to_adapter_probability_ratio": "2187",
+        "speedup_claim_allowed": false
+      },
+      "dense_secret_count_calibration_only": 81,
+      "actual_fixed_trine_likelihood_residual": 1.1102230246251565e-16
+    },
+    {
+      "solver": {
+        "status": "COSTED_EXPONENTIAL_JOINT_CLASSICAL_BASELINE",
+        "dimension": 1,
+        "modulus": "81",
+        "records": [
+          {
+            "first": [
+              1
+            ],
+            "second": [
+              2
+            ],
+            "digit": 1,
+            "modulus": 81,
+            "readout": "FIXED_INVERSE_F3_NO_PUBLIC_PHASE_RANDOMIZATION"
+          },
+          {
+            "first": [
+              26
+            ],
+            "second": [
+              52
+            ],
+            "digit": 1,
+            "modulus": 81,
+            "readout": "FIXED_INVERSE_F3_NO_PUBLIC_PHASE_RANDOMIZATION"
+          }
+        ],
+        "target_coordinate": 0,
+        "target_frequencies": [
+          [
+            0
+          ],
+          [
+            27
+          ],
+          [
+            54
+          ]
+        ],
+        "coefficient_numerators": [
+          [
+            [
+              "0",
+              "9"
+            ]
+          ],
+          [
+            [
+              "27",
+              "5"
+            ]
+          ],
+          [
+            [
+              "0",
+              "-5"
+            ],
+            [
+              "27",
+              "-5"
+            ]
+          ]
+        ],
+        "likelihood_common_denominator": "9",
+        "cost_ledger": {
+          "half_phase_updates": 14,
+          "maximum_stored_half_monomials": 7,
+          "matched_phase_products": 11,
+          "frequency_bucket_joins": 5,
+          "raw_assignments_per_half": [
+            "7",
+            "7"
+          ],
+          "generic_time_not_polynomial": true,
+          "secret_assignments_enumerated": false,
+          "original_native_qutrits_consumed": 2,
+          "original_record_ids": [
+            0,
+            1
+          ],
+          "independence_not_proved_by_ID_uniqueness_alone": true,
+          "max_half_states": 100000,
+          "max_join_products": 10000000
+        },
+        "posterior": {
+          "class_likelihood_numerators": [
+            [
+              [
+                "0",
+                "4"
+              ]
+            ],
+            [
+              [
+                "0",
+                "4"
+              ]
+            ],
+            [
+              [
+                "0",
+                "19"
+              ]
+            ]
+          ],
+          "normalizer_numerator": [
+            [
+              "0",
+              "9"
+            ]
+          ],
+          "root_modulus": "81",
+          "posterior_formula": "Z_t/(3*C_0); common3^M likelihood denominator cancels",
+          "status": "EXACT_POSTERIOR_WITH_CERTIFIED_BALL_ORDERING",
+          "posterior_probabilities": [
+            0.14814814814814814,
+            0.14814814814814814,
+            0.7037037037037037
+          ],
+          "posterior_probability_enclosures": [
+            "[0.148148148148148148148148148148148148148 +/- 8.59e-40]",
+            "[0.148148148148148148148148148148148148148 +/- 8.59e-40]",
+            "[0.70370370370370370370370370370370370370 +/- 4.25e-39]"
+          ],
+          "precision_bits": 128,
+          "MAP_tied_classes": [
+            2
+          ],
+          "maximum_a_posteriori_trit": 2,
+          "exactly_uniform_least_trit": false,
+          "uniform_secret_weak_success_guarantee_proved": false
+        },
+        "original_unknown_phase_states_classically_simulated": false,
+        "polynomial_native_weak_learner_implemented": false,
+        "speedup_or_general_hardness_claim": false,
+        "observation_model": "FIXED_PRODUCT_INVERSE_F3",
+        "paired_covariant_generative_law_used": false,
+        "adapter_scope": "LIKELIHOOD_PHASE_ALGEBRA_ONLY_CONSTANTS_CANCEL",
+        "fixed_trine_probability_to_adapter_probability_ratio": "2187",
+        "speedup_claim_allowed": false
+      },
+      "dense_secret_count_calibration_only": 81,
+      "actual_fixed_trine_likelihood_residual": 1.1102230246251565e-16
+    },
+    {
+      "solver": {
+        "status": "COSTED_EXPONENTIAL_JOINT_CLASSICAL_BASELINE",
+        "dimension": 1,
+        "modulus": "81",
+        "records": [
+          {
+            "first": [
+              1
+            ],
+            "second": [
+              2
+            ],
+            "digit": 1,
+            "modulus": 81,
+            "readout": "FIXED_INVERSE_F3_NO_PUBLIC_PHASE_RANDOMIZATION"
+          },
+          {
+            "first": [
+              26
+            ],
+            "second": [
+              52
+            ],
+            "digit": 2,
+            "modulus": 81,
+            "readout": "FIXED_INVERSE_F3_NO_PUBLIC_PHASE_RANDOMIZATION"
+          }
+        ],
+        "target_coordinate": 0,
+        "target_frequencies": [
+          [
+            0
+          ],
+          [
+            27
+          ],
+          [
+            54
+          ]
+        ],
+        "coefficient_numerators": [
+          [
+            [
+              "0",
+              "9"
+            ]
+          ],
+          [
+            [
+              "0",
+              "5"
+            ]
+          ],
+          [
+            [
+              "0",
+              "5"
+            ]
+          ]
+        ],
+        "likelihood_common_denominator": "9",
+        "cost_ledger": {
+          "half_phase_updates": 14,
+          "maximum_stored_half_monomials": 7,
+          "matched_phase_products": 9,
+          "frequency_bucket_joins": 5,
+          "raw_assignments_per_half": [
+            "7",
+            "7"
+          ],
+          "generic_time_not_polynomial": true,
+          "secret_assignments_enumerated": false,
+          "original_native_qutrits_consumed": 2,
+          "original_record_ids": [
+            0,
+            1
+          ],
+          "independence_not_proved_by_ID_uniqueness_alone": true,
+          "max_half_states": 100000,
+          "max_join_products": 10000000
+        },
+        "posterior": {
+          "class_likelihood_numerators": [
+            [
+              [
+                "0",
+                "19"
+              ]
+            ],
+            [
+              [
+                "0",
+                "4"
+              ]
+            ],
+            [
+              [
+                "0",
+                "4"
+              ]
+            ]
+          ],
+          "normalizer_numerator": [
+            [
+              "0",
+              "9"
+            ]
+          ],
+          "root_modulus": "81",
+          "posterior_formula": "Z_t/(3*C_0); common3^M likelihood denominator cancels",
+          "status": "EXACT_POSTERIOR_WITH_CERTIFIED_BALL_ORDERING",
+          "posterior_probabilities": [
+            0.7037037037037037,
+            0.14814814814814814,
+            0.14814814814814814
+          ],
+          "posterior_probability_enclosures": [
+            "[0.70370370370370370370370370370370370370 +/- 4.25e-39]",
+            "[0.148148148148148148148148148148148148148 +/- 8.59e-40]",
+            "[0.148148148148148148148148148148148148148 +/- 8.59e-40]"
+          ],
+          "precision_bits": 128,
+          "MAP_tied_classes": [
+            0
+          ],
+          "maximum_a_posteriori_trit": 0,
+          "exactly_uniform_least_trit": false,
+          "uniform_secret_weak_success_guarantee_proved": false
+        },
+        "original_unknown_phase_states_classically_simulated": false,
+        "polynomial_native_weak_learner_implemented": false,
+        "speedup_or_general_hardness_claim": false,
+        "observation_model": "FIXED_PRODUCT_INVERSE_F3",
+        "paired_covariant_generative_law_used": false,
+        "adapter_scope": "LIKELIHOOD_PHASE_ALGEBRA_ONLY_CONSTANTS_CANCEL",
+        "fixed_trine_probability_to_adapter_probability_ratio": "2187",
+        "speedup_claim_allowed": false
+      },
+      "dense_secret_count_calibration_only": 81,
+      "actual_fixed_trine_likelihood_residual": 8.326672684688674e-17
+    },
+    {
+      "solver": {
+        "status": "COSTED_EXPONENTIAL_JOINT_CLASSICAL_BASELINE",
+        "dimension": 1,
+        "modulus": "81",
+        "records": [
+          {
+            "first": [
+              1
+            ],
+            "second": [
+              2
+            ],
+            "digit": 2,
+            "modulus": 81,
+            "readout": "FIXED_INVERSE_F3_NO_PUBLIC_PHASE_RANDOMIZATION"
+          },
+          {
+            "first": [
+              26
+            ],
+            "second": [
+              52
+            ],
+            "digit": 0,
+            "modulus": 81,
+            "readout": "FIXED_INVERSE_F3_NO_PUBLIC_PHASE_RANDOMIZATION"
+          }
+        ],
+        "target_coordinate": 0,
+        "target_frequencies": [
+          [
+            0
+          ],
+          [
+            27
+          ],
+          [
+            54
+          ]
+        ],
+        "coefficient_numerators": [
+          [
+            [
+              "0",
+              "9"
+            ]
+          ],
+          [
+            [
+              "27",
+              "5"
+            ]
+          ],
+          [
+            [
+              "0",
+              "-5"
+            ],
+            [
+              "27",
+              "-5"
+            ]
+          ]
+        ],
+        "likelihood_common_denominator": "9",
+        "cost_ledger": {
+          "half_phase_updates": 14,
+          "maximum_stored_half_monomials": 7,
+          "matched_phase_products": 7,
+          "frequency_bucket_joins": 5,
+          "raw_assignments_per_half": [
+            "7",
+            "7"
+          ],
+          "generic_time_not_polynomial": true,
+          "secret_assignments_enumerated": false,
+          "original_native_qutrits_consumed": 2,
+          "original_record_ids": [
+            0,
+            1
+          ],
+          "independence_not_proved_by_ID_uniqueness_alone": true,
+          "max_half_states": 100000,
+          "max_join_products": 10000000
+        },
+        "posterior": {
+          "class_likelihood_numerators": [
+            [
+              [
+                "0",
+                "4"
+              ]
+            ],
+            [
+              [
+                "0",
+                "4"
+              ]
+            ],
+            [
+              [
+                "0",
+                "19"
+              ]
+            ]
+          ],
+          "normalizer_numerator": [
+            [
+              "0",
+              "9"
+            ]
+          ],
+          "root_modulus": "81",
+          "posterior_formula": "Z_t/(3*C_0); common3^M likelihood denominator cancels",
+          "status": "EXACT_POSTERIOR_WITH_CERTIFIED_BALL_ORDERING",
+          "posterior_probabilities": [
+            0.14814814814814814,
+            0.14814814814814814,
+            0.7037037037037037
+          ],
+          "posterior_probability_enclosures": [
+            "[0.148148148148148148148148148148148148148 +/- 8.59e-40]",
+            "[0.148148148148148148148148148148148148148 +/- 8.59e-40]",
+            "[0.70370370370370370370370370370370370370 +/- 4.25e-39]"
+          ],
+          "precision_bits": 128,
+          "MAP_tied_classes": [
+            2
+          ],
+          "maximum_a_posteriori_trit": 2,
+          "exactly_uniform_least_trit": false,
+          "uniform_secret_weak_success_guarantee_proved": false
+        },
+        "original_unknown_phase_states_classically_simulated": false,
+        "polynomial_native_weak_learner_implemented": false,
+        "speedup_or_general_hardness_claim": false,
+        "observation_model": "FIXED_PRODUCT_INVERSE_F3",
+        "paired_covariant_generative_law_used": false,
+        "adapter_scope": "LIKELIHOOD_PHASE_ALGEBRA_ONLY_CONSTANTS_CANCEL",
+        "fixed_trine_probability_to_adapter_probability_ratio": "2187",
+        "speedup_claim_allowed": false
+      },
+      "dense_secret_count_calibration_only": 81,
+      "actual_fixed_trine_likelihood_residual": 5.551115123125783e-17
+    },
+    {
+      "solver": {
+        "status": "COSTED_EXPONENTIAL_JOINT_CLASSICAL_BASELINE",
+        "dimension": 1,
+        "modulus": "81",
+        "records": [
+          {
+            "first": [
+              1
+            ],
+            "second": [
+              2
+            ],
+            "digit": 2,
+            "modulus": 81,
+            "readout": "FIXED_INVERSE_F3_NO_PUBLIC_PHASE_RANDOMIZATION"
+          },
+          {
+            "first": [
+              26
+            ],
+            "second": [
+              52
+            ],
+            "digit": 1,
+            "modulus": 81,
+            "readout": "FIXED_INVERSE_F3_NO_PUBLIC_PHASE_RANDOMIZATION"
+          }
+        ],
+        "target_coordinate": 0,
+        "target_frequencies": [
+          [
+            0
+          ],
+          [
+            27
+          ],
+          [
+            54
+          ]
+        ],
+        "coefficient_numerators": [
+          [
+            [
+              "0",
+              "9"
+            ]
+          ],
+          [
+            [
+              "0",
+              "5"
+            ]
+          ],
+          [
+            [
+              "0",
+              "5"
+            ]
+          ]
+        ],
+        "likelihood_common_denominator": "9",
+        "cost_ledger": {
+          "half_phase_updates": 14,
+          "maximum_stored_half_monomials": 7,
+          "matched_phase_products": 9,
+          "frequency_bucket_joins": 5,
+          "raw_assignments_per_half": [
+            "7",
+            "7"
+          ],
+          "generic_time_not_polynomial": true,
+          "secret_assignments_enumerated": false,
+          "original_native_qutrits_consumed": 2,
+          "original_record_ids": [
+            0,
+            1
+          ],
+          "independence_not_proved_by_ID_uniqueness_alone": true,
+          "max_half_states": 100000,
+          "max_join_products": 10000000
+        },
+        "posterior": {
+          "class_likelihood_numerators": [
+            [
+              [
+                "0",
+                "19"
+              ]
+            ],
+            [
+              [
+                "0",
+                "4"
+              ]
+            ],
+            [
+              [
+                "0",
+                "4"
+              ]
+            ]
+          ],
+          "normalizer_numerator": [
+            [
+              "0",
+              "9"
+            ]
+          ],
+          "root_modulus": "81",
+          "posterior_formula": "Z_t/(3*C_0); common3^M likelihood denominator cancels",
+          "status": "EXACT_POSTERIOR_WITH_CERTIFIED_BALL_ORDERING",
+          "posterior_probabilities": [
+            0.7037037037037037,
+            0.14814814814814814,
+            0.14814814814814814
+          ],
+          "posterior_probability_enclosures": [
+            "[0.70370370370370370370370370370370370370 +/- 4.25e-39]",
+            "[0.148148148148148148148148148148148148148 +/- 8.59e-40]",
+            "[0.148148148148148148148148148148148148148 +/- 8.59e-40]"
+          ],
+          "precision_bits": 128,
+          "MAP_tied_classes": [
+            0
+          ],
+          "maximum_a_posteriori_trit": 0,
+          "exactly_uniform_least_trit": false,
+          "uniform_secret_weak_success_guarantee_proved": false
+        },
+        "original_unknown_phase_states_classically_simulated": false,
+        "polynomial_native_weak_learner_implemented": false,
+        "speedup_or_general_hardness_claim": false,
+        "observation_model": "FIXED_PRODUCT_INVERSE_F3",
+        "paired_covariant_generative_law_used": false,
+        "adapter_scope": "LIKELIHOOD_PHASE_ALGEBRA_ONLY_CONSTANTS_CANCEL",
+        "fixed_trine_probability_to_adapter_probability_ratio": "2187",
+        "speedup_claim_allowed": false
+      },
+      "dense_secret_count_calibration_only": 81,
+      "actual_fixed_trine_likelihood_residual": 8.326672684688674e-17
+    },
+    {
+      "solver": {
+        "status": "COSTED_EXPONENTIAL_JOINT_CLASSICAL_BASELINE",
+        "dimension": 1,
+        "modulus": "81",
+        "records": [
+          {
+            "first": [
+              1
+            ],
+            "second": [
+              2
+            ],
+            "digit": 2,
+            "modulus": 81,
+            "readout": "FIXED_INVERSE_F3_NO_PUBLIC_PHASE_RANDOMIZATION"
+          },
+          {
+            "first": [
+              26
+            ],
+            "second": [
+              52
+            ],
+            "digit": 2,
+            "modulus": 81,
+            "readout": "FIXED_INVERSE_F3_NO_PUBLIC_PHASE_RANDOMIZATION"
+          }
+        ],
+        "target_coordinate": 0,
+        "target_frequencies": [
+          [
+            0
+          ],
+          [
+            27
+          ],
+          [
+            54
+          ]
+        ],
+        "coefficient_numerators": [
+          [
+            [
+              "0",
+              "9"
+            ]
+          ],
+          [
+            [
+              "0",
+              "-5"
+            ],
+            [
+              "27",
+              "-5"
+            ]
+          ],
+          [
+            [
+              "27",
+              "5"
+            ]
+          ]
+        ],
+        "likelihood_common_denominator": "9",
+        "cost_ledger": {
+          "half_phase_updates": 14,
+          "maximum_stored_half_monomials": 7,
+          "matched_phase_products": 11,
+          "frequency_bucket_joins": 5,
+          "raw_assignments_per_half": [
+            "7",
+            "7"
+          ],
+          "generic_time_not_polynomial": true,
+          "secret_assignments_enumerated": false,
+          "original_native_qutrits_consumed": 2,
+          "original_record_ids": [
+            0,
+            1
+          ],
+          "independence_not_proved_by_ID_uniqueness_alone": true,
+          "max_half_states": 100000,
+          "max_join_products": 10000000
+        },
+        "posterior": {
+          "class_likelihood_numerators": [
+            [
+              [
+                "0",
+                "4"
+              ]
+            ],
+            [
+              [
+                "0",
+                "19"
+              ]
+            ],
+            [
+              [
+                "0",
+                "4"
+              ]
+            ]
+          ],
+          "normalizer_numerator": [
+            [
+              "0",
+              "9"
+            ]
+          ],
+          "root_modulus": "81",
+          "posterior_formula": "Z_t/(3*C_0); common3^M likelihood denominator cancels",
+          "status": "EXACT_POSTERIOR_WITH_CERTIFIED_BALL_ORDERING",
+          "posterior_probabilities": [
+            0.14814814814814814,
+            0.7037037037037037,
+            0.14814814814814814
+          ],
+          "posterior_probability_enclosures": [
+            "[0.148148148148148148148148148148148148148 +/- 8.59e-40]",
+            "[0.70370370370370370370370370370370370370 +/- 4.25e-39]",
+            "[0.148148148148148148148148148148148148148 +/- 8.59e-40]"
+          ],
+          "precision_bits": 128,
+          "MAP_tied_classes": [
+            1
+          ],
+          "maximum_a_posteriori_trit": 1,
+          "exactly_uniform_least_trit": false,
+          "uniform_secret_weak_success_guarantee_proved": false
+        },
+        "original_unknown_phase_states_classically_simulated": false,
+        "polynomial_native_weak_learner_implemented": false,
+        "speedup_or_general_hardness_claim": false,
+        "observation_model": "FIXED_PRODUCT_INVERSE_F3",
+        "paired_covariant_generative_law_used": false,
+        "adapter_scope": "LIKELIHOOD_PHASE_ALGEBRA_ONLY_CONSTANTS_CANCEL",
+        "fixed_trine_probability_to_adapter_probability_ratio": "2187",
+        "speedup_claim_allowed": false
+      },
+      "dense_secret_count_calibration_only": 81,
+      "actual_fixed_trine_likelihood_residual": 1.3877787807814457e-16
+    }
+  ],
+  "example_approximation_error_budget": {
+    "outcome_TV_upper": "1/5000",
+    "scope": "one normalized input, diagonal/F3 operator-norm errors and settings TV",
+    "source_preparation_error_covered": false
+  },
+  "falsifiers": [
+    "Randomized branch effects differ from E_y/3 on an arbitrary input.",
+    "The fixed-readout full-label centered Gram has an off-diagonal or wrong zero diagonal.",
+    "Exact phase algebra disagrees with direct fixed-trine joint posterior.",
+    "Claimed joint signal disappears under the actual native all-secret twirl."
+  ],
+  "general_quantum_hardness_or_all_LOCC_bound": false
+}

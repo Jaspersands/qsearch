@@ -1,0 +1,22 @@
+{
+  "hypothesis_id": "HYP-NATIVE-MOMENT-FACE-AND-HULL",
+  "status": "FOUR_EXACT_SUPPLIED_HULL_OBSTRUCTIONS_FULL_MOMENT_SDP_UNKNOWN",
+  "candidate_record_accepted": false,
+  "note": "research/TERNARY_MOMENT_PSD_MIXTURES.md",
+  "report": "research/phase_workbench/ternary_moment_psd_mixtures.json",
+  "depends_on": ["HYP-NATIVE-MOMENT-PSD-CUTS"],
+  "finite_evidence": {"supplied_hulls": 8, "points_per_hull": 4, "face_dimension_minimum": 14, "face_dimension_maximum": 21, "numeric_grid_proposals": 1320, "exact_negative_mixture_forms": 64, "exact_PSD_mixtures": 0, "exact_supplied_hull_SOS_obstructions": 4, "hull_unknowns": 4, "whole_prefix_eliminations": 0},
+  "proof_obligations_before_candidate_acceptance": {
+    "PO-REVIEW": "Review source/normalization kernels, exact face reconstruction and nonnegative SOS dual trace certificates.",
+    "PO-SCOPE": "Do not impose hull-specific zero rows on the full native model; restricted hull exclusion does not prove full SDP exclusion.",
+    "PO-LIFT": "Certify support of embedded SOS functionals over the entire original moment LP or provide exact escaping points.",
+    "PO-POPULATION": "Establish actual source-law two-witness coverage and polynomial full receiver cost.",
+    "PO-RECEIVER": "Preserve all original quantum-source, reduction and secret-recovery obligations."
+  },
+  "falsifier": "Full base moment points escape the finite-hull PSD duals or a PSD continuation exists on a known false native prefix.",
+  "not_proved": ["full moment SDP infeasibility", "no convex mixture in the four unknown hulls", "native integer recovery", "source hardness", "quantum speedup"],
+  "next_target": "research/NATIVE_TERNARY_PSD_SUPPORT_LIFT_TARGET.md",
+  "routine_wiring_owner": "Gemini or Antigravity",
+  "novelty_claim": false,
+  "polynomial_pair_finder_proved": false
+}

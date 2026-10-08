@@ -57432,6 +57432,25 @@
   {
     "applies_to": [
       "CODE-COSET-COLLECTIVE",
+      "EXP-CODE-SELF-DUAL-WREATH-COHERENT-COMPONENT-TRIM-HYBRID"
+    ],
+    "claim": "Positive affine-subspace erasure instruments with retained branch phases evade matched classical constraint sampling.",
+    "evidence": {
+      "complete_signed_instances": 145,
+      "exact_Gram_entries": 208,
+      "exact_dual_subspaces": 164,
+      "exact_rank_transposes": 52,
+      "four_message_optimal_load": "4*c^2 - c^4",
+      "local_partial_decoders": 4
+    },
+    "id": "NEG-AFFINE-ERASURE-INSTRUMENT-MATCHED-CLASSICAL-DUAL",
+    "lesson": "Affine branch phases and negative Gram entries outside the origin-linear cone do not create a quantum separation if the underlying mixture has an efficient low-load affine representation with matched classical equation rank conditions.",
+    "reason_invalid": "Every positive uniform-affine-subspace mixture supplies both a coherent quantum partial-linear-information instrument and a matched classical affine-constraint sampler where quantum reconstruction and classical equation matrices are exact transposes; mean unresolved loads are matched.",
+    "source": "/Users/jaspersands/Desktop/quantum algorithm search/research/classical_baselines/linear_erasure_prange_duality.json"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
       "EXP-CODE-GOPPA-HULL-PROJECTOR"
     ],
     "claim": "goppa-scale-m6-t3-n48-3-4 remains a code-native hard row after public-generator preprocessing.",
@@ -67843,6 +67862,24 @@
     "lesson": "Curvature cancellation alone does not yield independent native product outputs. Do not infer full-root product state compilation or independent IID children from total isotropy without accounting for mixed phase defects.",
     "reason_invalid": "While totally isotropic subspaces ensure low phase affine on every measured complement, full-root states retain nonzero mixed phase defects and entanglement; calibration first logical purity is 19/27 < 1 on the zero pointer branch, falsifying product state compilation.",
     "source": "/Users/jaspersands/Desktop/quantum algorithm search/research/phase_workbench/ternary_curvature_frontier.json"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "EXP-CODE-SELF-DUAL-WREATH-COHERENT-COMPONENT-TRIM-HYBRID"
+    ],
+    "claim": "Collective three-message parity block USD decoding establishes a quantum Gibbs sampling advantage over classical Prange methods.",
+    "evidence": {
+      "all_zero_planted_sign_alternative_sampler_supplied": true,
+      "exact_sign_cases_replayed": 192,
+      "independent_clause_prange_load_per_block": "3*c^2 - c^3",
+      "joint_quantum_erasure_load_per_block": "2*c^2",
+      "matched_classical_block_constraint_load_per_block": "2*c^2"
+    },
+    "id": "NEG-PARITY-BLOCK-USD-MATCHED-CLASSICAL-PRANGE",
+    "lesson": "Joint parity block decoding improves on independent product USD, but eliminating the inner spins reveals an exact classical correlated constraint sampler with the same threshold. Comparing only against independent-clause Prange creates a false quantum advantage signal.",
+    "reason_invalid": "Eliminating the Hamiltonian block spin yields a correlated classical block-Prange sampler whose constraint load 2*c^2 exactly matches the joint quantum erasure load, matching the random-sign Gibbs sampling threshold.",
+    "source": "/Users/jaspersands/Desktop/quantum algorithm search/research/classical_baselines/parity_block_usd_prange.json"
   },
   {
     "applies_to": [

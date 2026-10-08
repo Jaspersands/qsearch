@@ -1,0 +1,38 @@
+{
+  "hypothesis_id": "HYP-NATIVE-ONE-USE-QUADRATIC-PROGRAM-SECRET-EQUATION-RECEIVER",
+  "status": "CONDITIONAL_RECEIVER_COMPILED_NATIVE_PROGRAM_FACTORY_OPEN_REVIEW_PENDING",
+  "candidate_record_accepted": false,
+  "note": "research/TERNARY_QUADRATIC_PROGRAM_RECEIVER.md",
+  "report": "research/phase_workbench/ternary_quadratic_program_receiver.json",
+  "next_constructive_target": "research/TERNARY_PROGRAM_FACTORY_TARGET.md",
+  "depends_on": ["HYP-NATIVE-ORIGINAL-SOURCE-CORRELATED-PACKET-ACQUISITION"],
+  "literature": [
+    {"id": "arxiv:quant-ph/9908010", "url": "https://arxiv.org/abs/quant-ph/9908010", "role": "Established gate teleportation, not a novelty claim."},
+    {"id": "arxiv:quant-ph/0002039", "url": "https://arxiv.org/abs/quant-ph/0002039", "role": "Established teleportation-based gate construction."}
+  ],
+  "research_decision": "Quadratic programs with a common isotropic input yield exact equations in one use; identical copies are unnecessary. Build a charged native program factory with a valid label law, rather than another readout obstruction.",
+  "proof_obligations": {
+    "PO-PROGRAM": "One genuinely supplied flat field3 program with public component quadratic functions and common unknown secret. Public classical functions do not grant an unknown phase oracle.",
+    "PO-CHOI": "Basis copying produces an entangled Choi program, not two independent copies. Bell output is3^-d U_s X^a Z^-b on arbitrary reference-entangled data. Every Bell outcome has probability3^-2d.",
+    "PO-ISOTROPY": "A nonzero direction must annul every component quadratic form before the random Bell shift. Wide construction is polynomial only under its stated width bound; bounded exhaustive controls are not scalable solvers.",
+    "PO-CORRECTION": "Shift the known affine output line, unembed it with a public field chart, and remove only the known b*v phase. No unknown Clifford correction or inverse.",
+    "PO-LABEL": "Fixed-program uniform labels require full gradient rank. Alternatively fresh independent uniform linear offsets plus a matrix-only isotropic chooser give a source-ensemble uniform law. Do not mix these criteria or grant the offset source premise without proof.",
+    "PO-NATIVE": "Native level3 packet restrictions must pass all mixed cubic components and match true original-root phases. Every complement outcome is charged. Engineered low-source calibrations are not an IID native program factory.",
+    "PO-RESOURCE": "Charge original ancestry, all source/program measurements and the conditional Bell branch mass. Each program is consumed once. Calibration outcomes are virtual controls, not independently acquired source samples.",
+    "PO-DEPTH": "Only a field-root conditional receiver is implemented. Higher-depth phase restrictions, typical factory coverage, full-secret digit recovery and a complexity improvement against known sieves remain open.",
+    "PO-REVIEW": "External mathematical review and novelty checking are pending. Gate teleportation is known; no generic no-go, accepted breakthrough algorithm or standard LWE attack."
+  },
+  "falsifiable_experiments": [
+    "An anisotropic line is incorrectly assigned a deterministic Fourier equation.",
+    "An actual original frequency table disagrees with the public quadratic family.",
+    "A Bell shift/phase branch is omitted, has wrong probability, or needs an unknown correction.",
+    "Gradient-deficient fixed programs are called uniform, or beta-dependent directions are assigned the fresh-offset law.",
+    "An engineered rare program branch or virtual calibration outcome is counted as a free scalable source factory."
+  ],
+  "conditional_quadratic_receiver_implemented": true,
+  "unconditional_IID_native_program_factory_supplied": false,
+  "full_depth_polynomial_algorithm_supplied": false,
+  "quantum_speedup_proved": false,
+  "novelty_claim": false,
+  "routine_wiring_owner": "Gemini or Antigravity"
+}

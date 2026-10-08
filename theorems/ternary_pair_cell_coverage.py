@@ -148,6 +148,19 @@ def repair_list_size(rank, repairs, magnitude=1):
     return sum(math.comb(rank, j)*(2*magnitude)**j for j in range(repairs+1))
 
 
+def population_pair_lower(width, expected_gamma):
+    """Conditional source bound; the mean word recall must be PROVED."""
+    if type(width) is not int or width < 1 or type(expected_gamma) not in (int, Fraction):
+        raise ValueError("positive width and exact rational expected recall required")
+    gamma = Fraction(expected_gamma)
+    if not 0 <= gamma <= 1: raise ValueError("expected recall must lie in[0,1]")
+    Q = 3**(width+1)
+    lower = max(Fraction(0), (Fraction(2, 9)-Fraction(2, Q*Q))/6-(1-gamma)/3)
+    return {"population_beta_lower_if_expected_gamma_proved": str(lower),
+            "strict_positive_gamma_threshold": str(Fraction(8, 9)+Fraction(1, Q*Q)),
+            "expected_gamma_is_an_unproved_assumption_not_a_sample_estimate": True}
+
+
 def exact_word_census(problem, prepared, magnitudes=(1, 2), max_words=100_000):
     scalar_labels(problem); D = 3**problem.width; Q = problem.moduli[0]; d = 2*problem.width
     if type(max_words) is not int or max_words < 1: raise ValueError("positive word budget required")
@@ -175,11 +188,13 @@ def exact_word_census(problem, prepared, magnitudes=(1, 2), max_words=100_000):
             recovered = sum(count for cost, count in costs[b].items() if type(cost) is int and cost <= k)
             covered = sum(count for cost, count in pair_minimum.items() if cost <= k)
             beta = Fraction(covered, Q); upper = Fraction(recovered, 2*Q)
-            assert beta <= upper
+            lower = Fraction(max(0, sum(v >= 2 for v in truth.values())-(D-recovered)), Q)
+            assert lower <= beta <= upper
             bounds.append({"repairs": k, "recovered_words": recovered, "pair_covered_targets": covered,
                            "gamma_exact_conditional": str(Fraction(recovered, D)),
                            "beta_exact_conditional_uniform_targets": str(beta),
                            "word_count_pair_coverage_upper": str(upper),
+                           "full_truth_minus_missing_words_pair_lower": str(lower),
                            "scheduled_candidates_all_charts": str(len(prepared["charts"])*repair_list_size(d, k, b))})
         layers.append({"maximum_repair_magnitude": b,
                        "minimum_word_repairs_histogram": {str(k): v for k, v in sorted(costs[b].items(), key=lambda x: str(x[0]))},
@@ -283,6 +298,8 @@ def build_report():
             "novelty_claim": False, "uniform_target_population_coverage_proved": False,
             "predicate": "Fixed public basis/center word appears in complete k-repair list iff at mostk rounded exact GS errors are nonzero and each magnitude<=B.",
             "deterministic_counting_bound": "beta_label<=3^M*gamma/(2Q); gamma/6 at underfull scalar source scale",
+            "deterministic_pair_lower": "covered_pair_targets>=true_pair_targets-(3^M-recovered_words)",
+            "conditional_population_pair_lower": "max(0,(2/9-2/Q^2)/6-(1-E_labels[gamma])/3); positive if proven mean gamma>8/9+1/Q^2",
             "list_cost": "number_charts*sum_{j=0}^k binomial(2M,j)*(2B)^j",
             "analysis_never_given_to_public_solver": True, "exact_controls": exact, "planted_geometry_probes": probes,
             "unrounded_projection_covariances_zero_but_rounding_errors_not_assumed_independent": True,

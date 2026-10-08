@@ -1,0 +1,39 @@
+{
+  "hypothesis_id": "HYP-NATIVE-PSD-GLOBAL-SUPPORT",
+  "status": "FOUR_GLOBAL_ESCAPES_ONE_EXACT_NATIVE_PSD_RELAXATION_GAP",
+  "candidate_record_accepted": false,
+  "note": "research/TERNARY_PSD_SUPPORT_LIFT.md",
+  "report": "research/phase_workbench/ternary_psd_support_lift.json",
+  "depends_on": ["HYP-NATIVE-MOMENT-FACE-AND-HULL"],
+  "finite_evidence": {
+    "original_hull_duals_tested": 4,
+    "exact_global_base_moment_escapes": 4,
+    "exact_global_degree_two_SDP_obstructions": 0,
+    "support_unknowns": 0,
+    "support_LP_calls": 4,
+    "bounded_expanded_hulls": 4,
+    "refinement_rounds_per_hull": 1,
+    "refinement_numeric_grid_proposals": 1980,
+    "refinement_exact_positivity_checks": 25,
+    "exact_PSD_native_relaxation_gaps": 1,
+    "remaining_hull_unknowns": 3,
+    "whole_new_prefix_eliminations": 0
+  },
+  "scoped_negative_result": {
+    "target": "11366831",
+    "winding": 3,
+    "claim": "The complete original degree-two PSD moment relaxation is feasible on this independently verified empty native prefix. Further PSD square cuts cannot reject the retained continuation.",
+    "not_claimed": ["population or asymptotic hierarchy gap", "general decoder lower bound", "classical dequantization", "quantum speedup"]
+  },
+  "proof_obligations_before_candidate_acceptance": {
+    "PO-REVIEW": "Independently review zero embedding, original-column objective expansion, exact escape arrays and positive mixture face/LDL/native-emptiness certificates.",
+    "PO-LOCAL": "Test non-PSD native marginal realizability constraints before investing further in square-cut pruning.",
+    "PO-POPULATION": "Prove actual source-law two-witness coverage and charge complete receiver cost; selected false-prefix exclusions are insufficient.",
+    "PO-RECEIVER": "Preserve all original quantum-source, reduction, access-model and secret-recovery obligations."
+  },
+  "falsifier": "An exact PSD continuation on an independently empty native prefix refutes completeness of this degree-two relaxation. This falsifier has occurred at the recorded finite source instance.",
+  "next_target": "research/NATIVE_TERNARY_LOCAL_MARGINAL_TARGET.md",
+  "routine_wiring_owner": "Gemini or Antigravity",
+  "novelty_claim": false,
+  "polynomial_pair_finder_proved": false
+}

@@ -1,0 +1,29 @@
+{
+  "hypothesis_id": "HYP-NATIVE-FIXED-REPAIR-CATALOG",
+  "status": "IMPLEMENTED_FIXED_PUBLIC_CATALOG_BASELINE_SCALING_UNFAVORABLE",
+  "candidate_record_accepted": false,
+  "note": "research/TERNARY_REPAIR_CATALOG.md",
+  "report": "research/phase_workbench/ternary_repair_catalog.json",
+  "depends_on": ["HYP-NATIVE-BABAI-REPAIR-COVERAGE", "HYP-NATIVE-A2-PAIR-CVP"],
+  "implemented": [
+    "Full-kernel and actual Gram-Schmidt projection validation, with adversarial later-direction test.",
+    "Public label-local training, held-out word recall and separate uniform-target pair tests.",
+    "Exact forced-pattern decodes and exponential small-source collision/fiber censuses.",
+    "Conditional Cauchy collision-mass bound for target-independent catalogs.",
+    "Disjoint-pair rational binomial endpoints with dependent-chart Bonferroni correction.",
+    "Independent BigInt replay of all live target decodes, failures, witnesses and counters."
+  ],
+  "proof_obligations_before_candidate_acceptance": {
+    "PO-REVIEW": "External review of decoder induction, collision bounds, statistics and source transfer.",
+    "PO-POPULATION": "Prove inverse-polynomial pair coverage over actual random labels and independent uniform targets, including empty fibers.",
+    "PO-COST": "Prove polynomial training, catalog generation and decode cost across growing roots; charge original basis preparation.",
+    "PO-COLLISION-LAW": "A catalog no-go needs true population collision mass, not zero empirical collisions.",
+    "PO-ACCESS": "No unknown source word, phase or target-dependent advice may enter fixed-catalog training.",
+    "PO-RECEIVER": "Retain vector-secret reductions, full-depth recovery, source runtime and implementation obligations."
+  },
+  "falsifier": "The recorded fixed-budget catalog fails scalable word recall or verified uniform-target pair coverage; current finite evidence is unfavorable but not a population theorem.",
+  "excluded_from_obstruction": "Target-adaptive patterns, alternate bases, general CVP, other receivers and all polynomial catalogs not tested here.",
+  "routine_wiring_owner": "Gemini or Antigravity",
+  "novelty_claim": false,
+  "polynomial_pair_finder_proved": false
+}

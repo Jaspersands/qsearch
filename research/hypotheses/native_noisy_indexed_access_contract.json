@@ -1,0 +1,28 @@
+{
+  "id": "NATIVE-NOISY-INDEXED-ACCESS",
+  "status": "CONDITIONAL_FIXED_BANK_COHERENT_SOURCE_INTERFACE_REVIEW_PENDING_NOT_ALGORITHM",
+  "derivation": "research/NATIVE_NOISY_INDEXED_ACCESS.md",
+  "producer": "theorems/native_noisy_indexed_access.py",
+  "report": "research/reductions/native_noisy_indexed_access.json",
+  "independent_checker": "research/certificates/native_noisy_indexed_access_crosscheck.js",
+  "mechanism": "known noisy phase multiplexor and inverse approximate ideal phase access on a fixed classical sample bank, with weighted-power hybrid error",
+  "access_model": "2M independent classical originals, M fixed label pairs, explicit O(M) controlled branch program per phase query, no QRAM, no chosen-label oracle",
+  "proof_obligations": [
+    {"id": "FIXED-BANK-COMPILER", "claim": "known original values determine every controlled phase and its inverse without hidden truth", "status": "EXPLICIT_KNOWN_BRANCH_ANGLE_RECIPES_AND_EXACT_REPLAY_NOT_HARDWARE_SYNTHESIS"},
+    {"id": "NORM-ERROR", "claim": "E[||V_C-V_s||^2]<=80MV/q^2", "status": "DERIVED_FROM_BLOCK_NORM_AND_PUBLIC_ERROR_MOMENTS_EXTERNAL_REVIEW_PENDING"},
+    {"id": "COHERENT-HYBRID", "claim": "complete receiver correctness loss<=min(1,W*sqrt(80MV/q^2)) plus ALL gate/caller/rounding losses", "status": "DERIVED_WITH_EXACT_SCALAR_BUDGET_AND_POINTWISE_SHARED_ERROR_CONTROLS"},
+    {"id": "POWER-ACCOUNTING", "claim": "phase powers/inverses charge canonical signed exposure; fast-forwarding a known description does not erase ideal-comparison error", "status": "IMPLEMENTED_AND_TAMPER_TESTED"},
+    {"id": "ACCESS-SCOPE", "claim": "only indexed original labels, no exact ideal inverse or newly independent source copies", "status": "EXPLICIT_LIMITS_AND_FALSIFIERS"},
+    {"id": "PHYSICAL-PRECISION", "claim": "explicit branch gate/F3 promises at precision scaling with T and all caller operations", "status": "KNOWN_ANGLES_CERTIFIED_HARDWARE_AND_CALLER_ERROR_BUDGET_OPEN"},
+    {"id": "SOURCE-COMPOSITION", "claim": "receiver M,W/success/noise parameters and source rounding compose with precise source theorem", "status": "NOT_ADMITTED_RECEIVER_AND_EXTERNAL_REVIEW_REQUIRED"},
+    {"id": "CONSTRUCTIVE-RECEIVER", "claim": "polynomial weighted exposure achieves growing-root full-secret recovery", "status": "OPEN_NOT_SUPPLIED"}
+  ],
+  "experiment": {
+    "observed": {"exact_scalar_bound_controls": 7, "literal_fixed_bank_recipes": 4, "literal_original_bank_records": 6, "certified_known_angles": 24},
+    "literal_recipe_inputs_are_IID_law_certificates": false,
+    "hardware_states_executed": 0,
+    "falsifiers": ["wrong inverse order", "missing phase power exposure", "shared errors falsely refreshed", "arbitrary new labels", "exact ideal inverse asserted", "free QRAM", "copy-only averaged loss reused for coherent query circuit", "uncharged gate/caller/rounding errors", "vacuous budget promoted to success"],
+    "accepted_speedup_candidates": 0
+  },
+  "not_claimed": ["exact unknown-source reflection", "chosen-query LWE oracle", "fresh IID originals from reuse", "efficient receiver", "hardware execution", "unconditional source hardness transfer", "quantum algorithmic speedup"]
+}

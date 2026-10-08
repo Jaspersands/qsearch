@@ -1,6 +1,8 @@
 # Native Repair Catalog And Collision-Mass Target
 
-NEXT THEORY TASK / LOCAL DERIVATION REVIEW PENDING. Not yet implemented.
+IMPLEMENTED BASELINE / LOCAL DERIVATION REVIEW PENDING. Read
+`TERNARY_REPAIR_CATALOG.md` and its live report. No polynomial catalog coverage
+or population collision-mass theorem has been proved.
 Read `TERNARY_PAIR_CELL_COVERAGE.md`. Do not merely increase generic repair
 depth: at larger roots that can conceal an exponential list.
 
@@ -74,3 +76,5 @@ source-law scaling, not a finite repair-depth success plot.
 
 No new accepted candidate should be created until this mechanism meets the
 existing pair-finder, source-runtime, access, reduction and hardware obligations.
+
+The next target-adaptive baseline is documented in `TERNARY_ADAPTIVE_SHELL.md`.

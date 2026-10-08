@@ -1,0 +1,34 @@
+{
+  "id": "HYP-NATIVE-NONCENTRAL-FILTER-TRADEOFF",
+  "status": "scoped_rank_depth_cut_with_constructive_label_adaptive_counterexample_review_pending",
+  "derivation": "research/NATIVE_NONCENTRAL_FILTER_TRADEOFF.md",
+  "implementation": "theorems/native_noncentral_filter_tradeoff.py",
+  "artifact": "research/reductions/native_noncentral_filter_tradeoff.json",
+  "independent_checker": "research/certificates/native_noncentral_filter_tradeoff_crosscheck.js",
+  "literature_links": ["https://arxiv.org/abs/quant-ph/0005055", "https://arxiv.org/html/2609.34996v1"],
+  "local_result": "For a fixed frequency-label-blind group filter, standard relative reflections obey p_k <= min(1,(2k+1)^2 rank(P)/3^(nr)). More copies in the same diagonal orbit do not change its unconditioned group marginal.",
+  "constructive_counterexample": "A rank3 filter selected using the observed frequency label succeeds with probability1/3 at growing roots, amplified to25/27 in one available relative iteration. It only relocates the original unknown seed, preserving reference entanglement; it does not decode.",
+  "matched_baseline": "A public fixed-generator test is compared to direct order-three stabilizer measurements, with separate-copy false acceptance3^(-M). This is a quantum verification primitive, not classical dequantization or a lower bound on label-aware inference.",
+  "proof_obligations": [
+    "Externally review the source-weighted polynomial/SOS and copy-access assumptions.",
+    "Do not apply the exponential rank bound to observed-label-dependent projectors or infer memory lower bounds from rank.",
+    "Separate synchronized single-group orbit costs from product-group orbits and seed-isotype-changing operations.",
+    "Retain recorded frequencies in inference baselines; averaged guess probabilities do not prove label-aware noninformativeness.",
+    "Any receiver must extract new useful information, not merely amplify coordinate events or relocate the original qutrit.",
+    "Certify source error and abelian-QFT gate precision before growing-instance hardware/runtime claims."
+  ],
+  "falsifiers": [
+    "An exact SOS fails coefficient-by-coefficient reconstruction.",
+    "Actual source-weighted full good vectors fail the compression-polynomial law.",
+    "Extra diagonal copies are granted new group marginal mass.",
+    "The label-adaptive counterexample is rejected by a purported universal rank cut.",
+    "A conditioned seed relocation or direct fixed-guess measurement is promoted to full secret recovery."
+  ],
+  "label_adaptive_receivers_ruled_out": false,
+  "arbitrary_collective_receivers_ruled_out": false,
+  "candidate_record_accepted": false,
+  "native_full_depth_receiver_supplied": false,
+  "new_speedup_claimed": false,
+  "novelty_claimed": false,
+  "routine_CLI_registry_UI_and_Git_owner": "Gemini or Antigravity"
+}

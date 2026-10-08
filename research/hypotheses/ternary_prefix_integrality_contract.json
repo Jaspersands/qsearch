@@ -1,0 +1,22 @@
+{
+  "hypothesis_id": "HYP-NATIVE-PREFIX-INTEGRALITY",
+  "status": "EXACT_PRIMAL_DUAL_AUDIT_AND_MATCHED_LINEAR_BASELINE_IMPLEMENTED",
+  "candidate_record_accepted": false,
+  "note": "research/TERNARY_PREFIX_INTEGRALITY.md",
+  "reports": ["research/phase_workbench/ternary_prefix_integrality.json", "research/phase_workbench/ternary_prefix_lp_decoder.json"],
+  "depends_on": ["HYP-NATIVE-TARGET-ADAPTIVE-SHELL", "HYP-NATIVE-COUPLED-PREFIX-SEPARATION"],
+  "finite_evidence": {"parent_prefixes": 72, "exact_feasible": 26, "exact_linear_obstructions": 46, "exact_fixed_winding_gaps": 16, "prefix_only_gap_resolved_by_windings": 1, "root32_native_truth_unknown": 9, "runtime_exact_farkas_prunes": 536},
+  "proof_obligations_before_candidate_acceptance": {
+    "PO-REVIEW": "External review of exact prefix representation, winding schedule, retained-domain constraints and proof replay.",
+    "PO-DISCRETE": "Provide a mechanism beyond the real product-simplex relaxation for genuine fixed-winding gaps.",
+    "PO-POPULATION": "Prove useful pair success over the original source labels and independent uniform targets, not selected branches.",
+    "PO-COST": "Charge original basis preparation, all optimization, failures, source retention and full physical receiver costs.",
+    "PO-RECEIVER": "Retain all native-phase, vector-reduction, full-depth recovery and classical-comparison obligations."
+  },
+  "falsifier": "Fixed-winding fractional continuations persist or certified linear pruning fails to improve larger-root pair recovery after costs.",
+  "not_proved": ["population integrality gap", "general branch-and-bound lower bound", "polynomial pair finding", "quantum speedup", "full enumeration tree independently replayed"],
+  "next_target": "research/NATIVE_TERNARY_COUPLED_MOMENTS_TARGET.md",
+  "routine_wiring_owner": "Gemini or Antigravity",
+  "novelty_claim": false,
+  "polynomial_pair_finder_proved": false
+}

@@ -1,0 +1,27 @@
+{
+  "hypothesis_id": "HYP-NATIVE-TRANSLATION-STABILITY-GATE",
+  "status": "KNOWN_TOPOLOGICAL_FALSIFIER_AND_Q_DEPENDENT_PAIR_REPAIR_REVIEW_PENDING",
+  "note": "research/TERNARY_TRANSLATION_STABILITY.md",
+  "report": "research/classical_baselines/ternary_translation_stability.json",
+  "candidate_record_accepted": false,
+  "proof_obligations": {
+    "PO-TOPOLOGY": "Full-root clock/shift operators have exact q-order and commutator chi_q(1)I. Their principal-log winding1 and spectral cut gap>=1 prevent operator-norm proximity<1/4 to any commuting pair despite commutator errorO(1/q). This is established operator theory, not a native-source or novelty claim.",
+    "PO-PAIR-REPAIR": "Exact q-order pair with commutator norm<=delta has pinching error eta=(q-1)*delta/2. At eta<1, polar/unit-root rounding gives a commuting exact-order pair within2*(q-1)*delta, fixing the first generator.",
+    "PO-MULTI": "Successive conditional expectations avoid q^n enumeration, but conservative rounded-generator errors satisfy epsilon_j<=2*(q-1)*[(j-1)*delta+2*sum previous epsilon]. The rapid coefficient growth is a strategy bound, not impossibility.",
+    "PO-NORMS": "Operator-norm separation does not imply a normalized Hilbert--Schmidt or observable-only obstruction. Entrywise moment residuals do not automatically certify the required operator-norm and exact-order premises.",
+    "PO-CALIBRATION": "Positive controls use known q-order rational unitary conjugations, analytic norm bounds and numerical polar/Schur replay. Numerical outputs are not exact unknown-input certificates.",
+    "PO-NATIVE": "A native approximate flat method still needs original-block retention, positive weights, metric conditioning, all generator relations and nonexponential precision. No supplied native completion, hidden oracle problem, noisy decoder or quantum advantage is produced.",
+    "PO-REVIEW": "The local bounds and source adaptation need independent mathematical review. No novelty claim."
+  },
+  "falsifiable_experiments": [
+    "A commutator-only rounding gate accepts full-root nonzero-winding clock/shift operators as operator-norm-close to commuting ones.",
+    "A certified exact-order pair violates the pinching/polar/root-rounding distance bound.",
+    "A many-generator precision ledger silently treats conservative exponential error growth as polynomial or a global impossibility theorem.",
+    "A native source-specific or observable-only method survives these operator-level warnings and yields a genuinely costed recovery argument."
+  ],
+  "native_approximate_flatness_proved": false,
+  "native_noisy_recovery_proved": false,
+  "quantum_speedup_proved": false,
+  "novelty_claim": false,
+  "routine_wiring_owner": "Gemini or Antigravity"
+}

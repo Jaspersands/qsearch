@@ -1,0 +1,31 @@
+{
+  "hypothesis_id": "HYP-NATIVE-ADAPTIVE-CHARACTER-SYNCHRONIZATION-LIFT",
+  "status": "POLYNOMIAL_RANK_ONE_SOUND_LIFT_AND_ALL_RANK_GAP_REVIEW_PENDING",
+  "note": "research/TERNARY_CHARACTER_SYNCHRONIZATION.md",
+  "report": "research/classical_baselines/ternary_character_synchronization.json",
+  "candidate_record_accepted": false,
+  "depends_on": ["native covariant readout and polynomial-sample identifiability", "source-aware Fourier information cost"],
+  "proof_obligations": {
+    "PO-LOCAL-FAKE": "Independent observed phases define a rank-one unit-diagonal PSD moment matrix with perfect native local fit. Its equal-difference constraints hold whenever no accidental formal difference resonance occurs. Rank1 alone does not imply a global character.",
+    "PO-SOURCE": "Fixed preregistered template resonance probability follows from IID uniform original frequencies and subgroup zero mass. Label-adaptive relations are expressly excluded. Paired error maxima give a separate union bound against a genuine perfect fit.",
+    "PO-CHARACTER": "A full mod3 row basis is a unit basis over Z_(3^r). Prime-field inversion followed by Newton lifting compiles every modular relation. A nonzero phase residual is an exact global character falsifier. Rank deficiency remains unknown.",
+    "PO-LIFT": "Addition, conjugation, q-power loops and native target identifications compile into polynomially many native-valid linear moment stencils. Rank-one PSD feasibility forces qth-root basis phases and one shared character. No exponential full group or monomial enumeration is used.",
+    "PO-GAP": "Gram-vector anchored errors obey epsilon_(u+v)<=epsilon_u+epsilon_v. A nonzero modular target residual gives every exactly feasible PSD point score deficit at least8/[q^2*(1+sum(lambda^2))]. This is not a gap to the planted true secret or a tightness theorem.",
+    "PO-SOLVER": "Convex tightness, reliable approximate-rank rounding, numerical constraint-error propagation, native-secret success and held-out prediction are unresolved. A polynomial lift and exact validator do not solve noisy inference.",
+    "PO-ACCESS": "Original native states and classical covariant outcomes do not grant chosen-frequency samples, coherent LWE training states or unknown state inverses. Known-secret simulations are calibration only.",
+    "PO-REVIEW": "Independent mathematical review, external physical IID source/error audit and comparison against known sieves remain required. No novelty or quantum speedup is claimed."
+  },
+  "falsifiable_experiments": [
+    "A perfect rank-one local fit passes the shared-character validator despite a nonzero native group relation.",
+    "A compiled addition stencil compares unequal actual frequency differences or drops a q-power loop.",
+    "A genuine character fails any compiled constraint.",
+    "An exactly feasible PSD point exceeds the rational near-perfect score-gap certificate.",
+    "A numerical high-rank solution is treated as a character, solver residuals exceed the claimed gap, or true-secret information enters optimization."
+  ],
+  "polynomial_character_consistency_lift_implemented": true,
+  "convex_relaxation_tightness_proved": false,
+  "efficient_noisy_decoder_supplied": false,
+  "quantum_speedup_proved": false,
+  "novelty_claim": false,
+  "routine_wiring_owner": "Gemini or Antigravity"
+}

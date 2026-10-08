@@ -1,0 +1,31 @@
+{
+  "id": "TERNARY-EXACT-QUOTIENT-CVP",
+  "status": "RESEARCH_COMPILER_AND_BOUNDED_CLASSICAL_ATTACK_NOT_SPEEDUP",
+  "problem_family": "native paired covariant shared-secret recovery over Z/(3^r)",
+  "parent_evidence": "research/classical_baselines/ternary_full_record_cvp.json",
+  "derivation": "research/TERNARY_QUOTIENT_CVP.md",
+  "producer": "theorems/ternary_quotient_cvp.py",
+  "report": "research/classical_baselines/ternary_quotient_cvp.json",
+  "independent_checker": "research/certificates/ternary_quotient_cvp_crosscheck.js",
+  "mechanism": "exact minimization over mutually orthogonal GS-dead code-zero integer coefficients, retaining their coupled periodic objective on live coefficients",
+  "access_model": "reuse all original measured records and public label-only full-root LLL basis; no chosen queries, true-secret input, or oracle for unknown quantum states",
+  "proof_obligations": [
+    {"id": "WHOLE-LATTICE", "claim": "all basis rows satisfy original code congruences and determinant equals the complete code-lattice index", "status": "EXACT_INDEPENDENTLY_CHECKED_FINITE_CONTROLS"},
+    {"id": "DEAD-ANCESTRY", "claim": "dead coefficients have zero code image and no GS path to live coefficients", "status": "EXACT_INDEPENDENTLY_CHECKED_FINITE_CONTROLS"},
+    {"id": "ORTHOGONAL-DEAD", "claim": "all represented dead-dead GS entries vanish exactly; fail closed otherwise", "status": "EXACT_GUARD_WITH_COUNTERCONTROL"},
+    {"id": "CONDITIONAL-MINIMUM", "claim": "nearest rounding of dead coefficients attains global conditional Euclidean minimum for each fixed live assignment", "status": "DERIVED_REVIEW_PENDING_WITH_EXACT_REPLAY"},
+    {"id": "GLOBAL-CVP", "claim": "efficiently optimize coupled periodic objective over all integer live coefficients", "status": "OPEN_NO_GUARANTEE_FROM_BEAM"},
+    {"id": "GEOMETRY-AND-SEARCH-COST", "claim": "prove useful LLL-coordinate conditioning and scalable search cost; systematic q-axes-first coordinates already give exactly n unknowns while preserving q^n secret classes", "status": "OPEN_DIMENSION_COUNT_ALONE_IS_NOT_PROGRESS"},
+    {"id": "POPULATION-RECOVERY", "claim": "recover at large n and r with charged original copies and an appropriate failure bound", "status": "OPEN_ALL_SIX_LARGER_ROOT_CONTROLS_FAIL"},
+    {"id": "MAJOR-SPEEDUP", "claim": "classical-hard source reduction plus efficient quantum recovery and matched dequantization comparison", "status": "OPEN_NOT_ESTABLISHED"}
+  ],
+  "experiment": {
+    "training": "all eight saved native full-record cohorts; old validation explicitly influenced design",
+    "search_policy": "beam width32, radius1, exact partial costs and lexicographic ties",
+    "validation": "512 new original simulated records per cohort after both training-only selections; seed120200+parent_seed",
+    "falsifiers": ["positive64*C-81*W on a public valid lattice-point witness", "frozen candidates fail fresh native score threshold", "dead-dead coupling invalidates analytic elimination"],
+    "observed": {"cohorts": 8, "larger_root_recoveries": 0, "improved_training_Euclidean_cost": 5, "exact_9_over_8_counterexamples": 4, "exact_eliminated_directions": 2460, "beam_expansions": 28992},
+    "cost": "M inherited training,512 inherited validation,512 new validation;3 inherited LLL reductions and0 new LLL calls per cohort"
+  },
+  "not_claimed": ["near-exact CVP solver", "global optimum from beam", "Gaussian or BDD source promise", "ordinary low-dimensional CVP after elimination", "polynomial active-dimension scaling", "classical hardness", "quantum advantage", "production registry admission"]
+}

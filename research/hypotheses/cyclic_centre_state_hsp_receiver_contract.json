@@ -1,0 +1,36 @@
+{
+  "id": "HYP-CYCLIC-CENTRE-STATE-HSP-RECEIVER",
+  "status": "constructive_restricted_algorithm_local_derivation_review_pending",
+  "derivation": "research/CYCLIC_CENTRE_STATE_HSP_RECEIVER.md",
+  "implementation": "theorems/cyclic_centre_state_hsp_receiver.py",
+  "artifact": "research/reductions/cyclic_centre_state_hsp_receiver.json",
+  "independent_checker": "research/certificates/cyclic_centre_state_hsp_receiver_crosscheck.js",
+  "literature_source_record": "research/literature_audits/cyclic_centre_state_hsp_sources.json",
+  "mechanism": "Paid central-character buckets, known p-copy cocycle cancellation, gap-free approximate sector overgroup learning, exact commutator rigidity and fresh-original-copy Bose phase decoding.",
+  "source": "IID copies of ONE unknown mixed state with a known controlled action of an odd-prime cyclic-centre bilinear extension of F_p^d; original Bose overlap gap epsilon.",
+  "cost_parameters": ["d", "p", "1/epsilon", "failure_bits", "known controlled action cost"],
+  "proof_obligations": [
+    "Independent mathematical review of the simultaneous approximate-eigenvector and exact finite commutator argument.",
+    "Review source/stopping conditioning: selection reads only central labels, not internal quantum outcomes.",
+    "Account for sector quota failures and all copies, including discarded and untouched buckets.",
+    "Review the public half-quadratic abelian chart and final original-state phase recovery.",
+    "Find a substantive actual problem/state-generation reduction before claiming a major algorithmic contribution.",
+    "Check novelty against existing nil-2 HSP and StateHSP work; no priority claim from a limited search.",
+    "Extend the ideal protocol with a source/action precision theorem before noisy application."
+  ],
+  "falsifiers": [
+    "One tensor outcome fails its complete literal Kraus probability identity.",
+    "A genuinely noncommuting finite-group pair passes the stated approximate-overlap thresholds.",
+    "A data-selected bucket invalidates the same-sector IID sample law or failure ledger.",
+    "The final decoder returns only pi(S), dropping central eigenvalue phases.",
+    "The claimed polynomial cost silently treats growing p, rare sector supply or density-table simulation as free."
+  ],
+  "minimum_conditional_gap_assumed": false,
+  "large_vector_centre_or_growing_DHSP_transfer_supplied": false,
+  "all_central_extensions_solved": false,
+  "new_classical_HSP_speedup_claimed": false,
+  "candidate_record_accepted": false,
+  "speedup_claim_allowed": false,
+  "novelty_claimed": false,
+  "routine_wiring_owner": "Gemini or Antigravity"
+}

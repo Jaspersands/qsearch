@@ -1,0 +1,22 @@
+{
+  "hypothesis_id": "HYP-NATIVE-BOOLEAN-EVENT-SEPARATION",
+  "status": "ZERO_LP_DETECTOR_MATCHES_37_OLD_FAILURES_AND_REJECTS_14_NEW_JOINT_TRIPLES",
+  "candidate_record_accepted": false,
+  "note": "research/TERNARY_EVENT_TRIANGLES.md",
+  "report": "research/phase_workbench/ternary_event_triangles.json",
+  "depends_on": ["HYP-NATIVE-JOINT-LOCAL-PSD", "HYP-NATIVE-LOCAL-MARGINAL-REALIZABILITY"],
+  "finite_evidence": {"actual_source_PSD_points": 2, "complete_triples_tested": 728, "exact_event_combinations": 235872, "LP_calls": 0, "retained_native_inequalities": 51, "old_exact_local_obstructions_matched": 37, "contradictions_with_exact_extensions": 0, "new_joint_point_event_failures": 14},
+  "mechanism": "For native Boolean events, E[(X-Y)*(X-Z)]=p_X-J_XY-J_XZ+J_YZ is nonnegative. Cache exact event sums and retain strict violations as native-valid NON-PSD cuts.",
+  "proof_obligations_before_candidate_acceptance": {
+    "PO-REVIEW": "Review complement-canonical completeness of the enumerated FAMILY, exact coefficient expansion and every local native truth table.",
+    "PO-VOCABULARY": "Try to falsify completeness for three-digit local marginals. No-event-violation is not an extendability proof.",
+    "PO-COST": "Separate point-separation arithmetic/timings from full conditional-moment and receiver cost; retain rational bit complexity.",
+    "PO-POPULATION": "Prove fresh-target native two-witness coverage and all original quantum receiver obligations before any candidate promotion."
+  },
+  "falsifier": "An exact event-feasible but locally nonextendable marginal point disproves completeness of this necessary-condition family; matching one source point does not establish it.",
+  "not_proved": ["complete local polytope characterization", "native witness construction", "controlled decoder speedup", "source-population performance", "quantum advantage"],
+  "next_target": "research/NATIVE_TERNARY_EVENT_FAMILY_TARGET.md",
+  "routine_wiring_owner": "Gemini or Antigravity",
+  "novelty_claim": false,
+  "polynomial_pair_finder_proved": false
+}

@@ -1,0 +1,1049 @@
+{
+  "status": "LABEL_INDEPENDENT_PRODUCT_POVM_GATE_REVIEW_PENDING",
+  "derivation_sha256": "67dfe929563e843312aaebe3e2b8bf1fd1b79388a58ff14661602bc5a41943e2",
+  "quantum_speedup_proved": false,
+  "candidate_record_accepted": false,
+  "novelty_claim": false,
+  "all_LOCC_or_general_quantum_lower_bound": false,
+  "universal_scaling_gates": [
+    {
+      "dimension": 1,
+      "digits": 8,
+      "original_independent_qutrits": 6,
+      "nonzero_Gram_operator_norm_upper": "29792/729",
+      "nonzero_contribution_advantage_upper_squared": "14896/4782969",
+      "zero_secret_advantage_upper": "728/4782969",
+      "requested_advantage": "1/10",
+      "necessary_copy_gate_passed": false,
+      "scope": "arbitrary fixed label-independent single-qutrit POVMs followed by ANY joint classical processing; IID full labels; ALL uniform secrets",
+      "different_POVM_per_original_copy_covered": true,
+      "shared_independent_public_measurement_randomness_covered": true,
+      "opposite_secret_correlations_kept": true,
+      "label_dependent_quantum_measurements_covered": false,
+      "outcome_adaptive_quantum_measurements_covered": false,
+      "collective_quantum_measurements_covered": false,
+      "chosen_labels_or_retained_sieve_law_covered": false,
+      "speedup_claim_allowed": false,
+      "status": "LOCAL_DERIVATION_REVIEW_PENDING"
+    },
+    {
+      "dimension": 1,
+      "digits": 16,
+      "original_independent_qutrits": 14,
+      "nonzero_Gram_operator_norm_upper": "12197465312/4782969",
+      "nonzero_contribution_advantage_upper_squared": "6098732656/205891132094649",
+      "zero_secret_advantage_upper": "4782968/205891132094649",
+      "requested_advantage": "1/10",
+      "necessary_copy_gate_passed": false,
+      "scope": "arbitrary fixed label-independent single-qutrit POVMs followed by ANY joint classical processing; IID full labels; ALL uniform secrets",
+      "different_POVM_per_original_copy_covered": true,
+      "shared_independent_public_measurement_randomness_covered": true,
+      "opposite_secret_correlations_kept": true,
+      "label_dependent_quantum_measurements_covered": false,
+      "outcome_adaptive_quantum_measurements_covered": false,
+      "collective_quantum_measurements_covered": false,
+      "chosen_labels_or_retained_sieve_law_covered": false,
+      "speedup_claim_allowed": false,
+      "status": "LOCAL_DERIVATION_REVIEW_PENDING"
+    },
+    {
+      "dimension": 1,
+      "digits": 32,
+      "original_independent_qutrits": 30,
+      "nonzero_Gram_operator_norm_upper": "1862644737448692841952/205891132094649",
+      "nonzero_contribution_advantage_upper_squared": "931322368724346420976/381520424476945831628649898809",
+      "zero_secret_advantage_upper": "205891132094648/381520424476945831628649898809",
+      "requested_advantage": "1/10",
+      "necessary_copy_gate_passed": false,
+      "scope": "arbitrary fixed label-independent single-qutrit POVMs followed by ANY joint classical processing; IID full labels; ALL uniform secrets",
+      "different_POVM_per_original_copy_covered": true,
+      "shared_independent_public_measurement_randomness_covered": true,
+      "opposite_secret_correlations_kept": true,
+      "label_dependent_quantum_measurements_covered": false,
+      "outcome_adaptive_quantum_measurements_covered": false,
+      "collective_quantum_measurements_covered": false,
+      "chosen_labels_or_retained_sieve_law_covered": false,
+      "speedup_claim_allowed": false,
+      "status": "LOCAL_DERIVATION_REVIEW_PENDING"
+    },
+    {
+      "dimension": 1,
+      "digits": 64,
+      "original_independent_qutrits": 62,
+      "nonzero_Gram_operator_norm_upper": "43368086899419414319449158143134411157233632/381520424476945831628649898809",
+      "nonzero_contribution_advantage_upper_squared": "21684043449709707159724579071567205578616816/1310020508637620352391208095712502073964245732475093456566329",
+      "zero_secret_advantage_upper": "381520424476945831628649898808/1310020508637620352391208095712502073964245732475093456566329",
+      "requested_advantage": "1/10",
+      "necessary_copy_gate_passed": false,
+      "scope": "arbitrary fixed label-independent single-qutrit POVMs followed by ANY joint classical processing; IID full labels; ALL uniform secrets",
+      "different_POVM_per_original_copy_covered": true,
+      "shared_independent_public_measurement_randomness_covered": true,
+      "opposite_secret_correlations_kept": true,
+      "label_dependent_quantum_measurements_covered": false,
+      "outcome_adaptive_quantum_measurements_covered": false,
+      "collective_quantum_measurements_covered": false,
+      "chosen_labels_or_retained_sieve_law_covered": false,
+      "speedup_claim_allowed": false,
+      "status": "LOCAL_DERIVATION_REVIEW_PENDING"
+    }
+  ],
+  "certified_POVM_controls": [
+    {
+      "name": "computational",
+      "effects_Qomega": [
+        [
+          [
+            [
+              "1",
+              "0"
+            ],
+            [
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0"
+            ]
+          ],
+          [
+            [
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0"
+            ]
+          ],
+          [
+            [
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0"
+            ]
+          ]
+        ],
+        [
+          [
+            [
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0"
+            ]
+          ],
+          [
+            [
+              "0",
+              "0"
+            ],
+            [
+              "1",
+              "0"
+            ],
+            [
+              "0",
+              "0"
+            ]
+          ],
+          [
+            [
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0"
+            ]
+          ]
+        ],
+        [
+          [
+            [
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0"
+            ]
+          ],
+          [
+            [
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0"
+            ]
+          ],
+          [
+            [
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0"
+            ],
+            [
+              "1",
+              "0"
+            ]
+          ]
+        ]
+      ],
+      "invariants": {
+        "nonzero_diagonal": "0",
+        "opposite_nonzero_secret_Gram": "0",
+        "zero_diagonal": "0",
+        "exact_PSD_and_completeness_certified": true
+      },
+      "physical_control": {
+        "modulus": 9,
+        "complete_native_label_pairs": 81,
+        "complete_secret_pairs": 81,
+        "outcomes": 3,
+        "actual_Born_Gram_residual": 1.972152263052534e-31,
+        "exact_invariants": {
+          "nonzero_diagonal": "0",
+          "opposite_nonzero_secret_Gram": "0",
+          "zero_diagonal": "0",
+          "exact_PSD_and_completeness_certified": true
+        },
+        "nonprimitive_and_zero_secrets_kept": true
+      },
+      "eight_copy_scalar_gate": {
+        "nonzero_product_diagonal": "0",
+        "opposite_product_entry": "0",
+        "nonzero_Gram_operator_norm": "0",
+        "nonzero_contribution_advantage_upper_squared": "0",
+        "invariant_inputs_are_assumptions_unless_POVM_certified": true
+      }
+    },
+    {
+      "name": "inverse_F3",
+      "effects_Qomega": [
+        [
+          [
+            [
+              "1/3",
+              "0"
+            ],
+            [
+              "1/3",
+              "0"
+            ],
+            [
+              "1/3",
+              "0"
+            ]
+          ],
+          [
+            [
+              "1/3",
+              "0"
+            ],
+            [
+              "1/3",
+              "0"
+            ],
+            [
+              "1/3",
+              "0"
+            ]
+          ],
+          [
+            [
+              "1/3",
+              "0"
+            ],
+            [
+              "1/3",
+              "0"
+            ],
+            [
+              "1/3",
+              "0"
+            ]
+          ]
+        ],
+        [
+          [
+            [
+              "1/3",
+              "0"
+            ],
+            [
+              "-1/3",
+              "-1/3"
+            ],
+            [
+              "0",
+              "1/3"
+            ]
+          ],
+          [
+            [
+              "0",
+              "1/3"
+            ],
+            [
+              "1/3",
+              "0"
+            ],
+            [
+              "-1/3",
+              "-1/3"
+            ]
+          ],
+          [
+            [
+              "-1/3",
+              "-1/3"
+            ],
+            [
+              "0",
+              "1/3"
+            ],
+            [
+              "1/3",
+              "0"
+            ]
+          ]
+        ],
+        [
+          [
+            [
+              "1/3",
+              "0"
+            ],
+            [
+              "0",
+              "1/3"
+            ],
+            [
+              "-1/3",
+              "-1/3"
+            ]
+          ],
+          [
+            [
+              "-1/3",
+              "-1/3"
+            ],
+            [
+              "1/3",
+              "0"
+            ],
+            [
+              "0",
+              "1/3"
+            ]
+          ],
+          [
+            [
+              "0",
+              "1/3"
+            ],
+            [
+              "-1/3",
+              "-1/3"
+            ],
+            [
+              "1/3",
+              "0"
+            ]
+          ]
+        ]
+      ],
+      "invariants": {
+        "nonzero_diagonal": "2/3",
+        "opposite_nonzero_secret_Gram": "0",
+        "zero_diagonal": "2",
+        "exact_PSD_and_completeness_certified": true
+      },
+      "physical_control": {
+        "modulus": 9,
+        "complete_native_label_pairs": 81,
+        "complete_secret_pairs": 81,
+        "outcomes": 3,
+        "actual_Born_Gram_residual": 4.440892098500626e-15,
+        "exact_invariants": {
+          "nonzero_diagonal": "2/3",
+          "opposite_nonzero_secret_Gram": "0",
+          "zero_diagonal": "2",
+          "exact_PSD_and_completeness_certified": true
+        },
+        "nonprimitive_and_zero_secrets_kept": true
+      },
+      "eight_copy_scalar_gate": {
+        "nonzero_product_diagonal": "384064/6561",
+        "opposite_product_entry": "0",
+        "nonzero_Gram_operator_norm": "384064/6561",
+        "nonzero_contribution_advantage_upper_squared": "192032/43046721",
+        "invariant_inputs_are_assumptions_unless_POVM_certified": true
+      }
+    },
+    {
+      "name": "real_pair_basis",
+      "effects_Qomega": [
+        [
+          [
+            [
+              "1/2",
+              "0"
+            ],
+            [
+              "1/2",
+              "0"
+            ],
+            [
+              "0",
+              "0"
+            ]
+          ],
+          [
+            [
+              "1/2",
+              "0"
+            ],
+            [
+              "1/2",
+              "0"
+            ],
+            [
+              "0",
+              "0"
+            ]
+          ],
+          [
+            [
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0"
+            ]
+          ]
+        ],
+        [
+          [
+            [
+              "1/2",
+              "0"
+            ],
+            [
+              "-1/2",
+              "0"
+            ],
+            [
+              "0",
+              "0"
+            ]
+          ],
+          [
+            [
+              "-1/2",
+              "0"
+            ],
+            [
+              "1/2",
+              "0"
+            ],
+            [
+              "0",
+              "0"
+            ]
+          ],
+          [
+            [
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0"
+            ]
+          ]
+        ],
+        [
+          [
+            [
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0"
+            ]
+          ],
+          [
+            [
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0"
+            ]
+          ],
+          [
+            [
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0"
+            ],
+            [
+              "1",
+              "0"
+            ]
+          ]
+        ]
+      ],
+      "invariants": {
+        "nonzero_diagonal": "1/3",
+        "opposite_nonzero_secret_Gram": "1/3",
+        "zero_diagonal": "2/3",
+        "exact_PSD_and_completeness_certified": true
+      },
+      "physical_control": {
+        "modulus": 9,
+        "complete_native_label_pairs": 81,
+        "complete_secret_pairs": 81,
+        "outcomes": 3,
+        "actual_Born_Gram_residual": 3.3306690738754696e-16,
+        "exact_invariants": {
+          "nonzero_diagonal": "1/3",
+          "opposite_nonzero_secret_Gram": "1/3",
+          "zero_diagonal": "2/3",
+          "exact_PSD_and_completeness_certified": true
+        },
+        "nonprimitive_and_zero_secrets_kept": true
+      },
+      "eight_copy_scalar_gate": {
+        "nonzero_product_diagonal": "58975/6561",
+        "opposite_product_entry": "58975/6561",
+        "nonzero_Gram_operator_norm": "117950/6561",
+        "nonzero_contribution_advantage_upper_squared": "58975/43046721",
+        "invariant_inputs_are_assumptions_unless_POVM_certified": true
+      }
+    },
+    {
+      "name": "real_dense_basis",
+      "effects_Qomega": [
+        [
+          [
+            [
+              "1/9",
+              "0"
+            ],
+            [
+              "-2/9",
+              "0"
+            ],
+            [
+              "-2/9",
+              "0"
+            ]
+          ],
+          [
+            [
+              "-2/9",
+              "0"
+            ],
+            [
+              "4/9",
+              "0"
+            ],
+            [
+              "4/9",
+              "0"
+            ]
+          ],
+          [
+            [
+              "-2/9",
+              "0"
+            ],
+            [
+              "4/9",
+              "0"
+            ],
+            [
+              "4/9",
+              "0"
+            ]
+          ]
+        ],
+        [
+          [
+            [
+              "4/9",
+              "0"
+            ],
+            [
+              "-2/9",
+              "0"
+            ],
+            [
+              "4/9",
+              "0"
+            ]
+          ],
+          [
+            [
+              "-2/9",
+              "0"
+            ],
+            [
+              "1/9",
+              "0"
+            ],
+            [
+              "-2/9",
+              "0"
+            ]
+          ],
+          [
+            [
+              "4/9",
+              "0"
+            ],
+            [
+              "-2/9",
+              "0"
+            ],
+            [
+              "4/9",
+              "0"
+            ]
+          ]
+        ],
+        [
+          [
+            [
+              "4/9",
+              "0"
+            ],
+            [
+              "4/9",
+              "0"
+            ],
+            [
+              "-2/9",
+              "0"
+            ]
+          ],
+          [
+            [
+              "4/9",
+              "0"
+            ],
+            [
+              "4/9",
+              "0"
+            ],
+            [
+              "-2/9",
+              "0"
+            ]
+          ],
+          [
+            [
+              "-2/9",
+              "0"
+            ],
+            [
+              "-2/9",
+              "0"
+            ],
+            [
+              "1/9",
+              "0"
+            ]
+          ]
+        ]
+      ],
+      "invariants": {
+        "nonzero_diagonal": "16/27",
+        "opposite_nonzero_secret_Gram": "16/27",
+        "zero_diagonal": "0",
+        "exact_PSD_and_completeness_certified": true
+      },
+      "physical_control": {
+        "modulus": 9,
+        "complete_native_label_pairs": 81,
+        "complete_secret_pairs": 81,
+        "outcomes": 3,
+        "actual_Born_Gram_residual": 2.220446049250313e-16,
+        "exact_invariants": {
+          "nonzero_diagonal": "16/27",
+          "opposite_nonzero_secret_Gram": "16/27",
+          "zero_diagonal": "0",
+          "exact_PSD_and_completeness_certified": true
+        },
+        "nonprimitive_and_zero_secrets_kept": true
+      },
+      "eight_copy_scalar_gate": {
+        "nonzero_product_diagonal": "11405770741120/282429536481",
+        "opposite_product_entry": "11405770741120/282429536481",
+        "nonzero_Gram_operator_norm": "22811541482240/282429536481",
+        "nonzero_contribution_advantage_upper_squared": "11405770741120/1853020188851841",
+        "invariant_inputs_are_assumptions_unless_POVM_certified": true
+      }
+    },
+    {
+      "name": "public_half_F3_half_real_dense",
+      "effects_Qomega": [
+        [
+          [
+            [
+              "1/6",
+              "0"
+            ],
+            [
+              "1/6",
+              "0"
+            ],
+            [
+              "1/6",
+              "0"
+            ]
+          ],
+          [
+            [
+              "1/6",
+              "0"
+            ],
+            [
+              "1/6",
+              "0"
+            ],
+            [
+              "1/6",
+              "0"
+            ]
+          ],
+          [
+            [
+              "1/6",
+              "0"
+            ],
+            [
+              "1/6",
+              "0"
+            ],
+            [
+              "1/6",
+              "0"
+            ]
+          ]
+        ],
+        [
+          [
+            [
+              "1/6",
+              "0"
+            ],
+            [
+              "-1/6",
+              "-1/6"
+            ],
+            [
+              "0",
+              "1/6"
+            ]
+          ],
+          [
+            [
+              "0",
+              "1/6"
+            ],
+            [
+              "1/6",
+              "0"
+            ],
+            [
+              "-1/6",
+              "-1/6"
+            ]
+          ],
+          [
+            [
+              "-1/6",
+              "-1/6"
+            ],
+            [
+              "0",
+              "1/6"
+            ],
+            [
+              "1/6",
+              "0"
+            ]
+          ]
+        ],
+        [
+          [
+            [
+              "1/6",
+              "0"
+            ],
+            [
+              "0",
+              "1/6"
+            ],
+            [
+              "-1/6",
+              "-1/6"
+            ]
+          ],
+          [
+            [
+              "-1/6",
+              "-1/6"
+            ],
+            [
+              "1/6",
+              "0"
+            ],
+            [
+              "0",
+              "1/6"
+            ]
+          ],
+          [
+            [
+              "0",
+              "1/6"
+            ],
+            [
+              "-1/6",
+              "-1/6"
+            ],
+            [
+              "1/6",
+              "0"
+            ]
+          ]
+        ],
+        [
+          [
+            [
+              "1/18",
+              "0"
+            ],
+            [
+              "-1/9",
+              "0"
+            ],
+            [
+              "-1/9",
+              "0"
+            ]
+          ],
+          [
+            [
+              "-1/9",
+              "0"
+            ],
+            [
+              "2/9",
+              "0"
+            ],
+            [
+              "2/9",
+              "0"
+            ]
+          ],
+          [
+            [
+              "-1/9",
+              "0"
+            ],
+            [
+              "2/9",
+              "0"
+            ],
+            [
+              "2/9",
+              "0"
+            ]
+          ]
+        ],
+        [
+          [
+            [
+              "2/9",
+              "0"
+            ],
+            [
+              "-1/9",
+              "0"
+            ],
+            [
+              "2/9",
+              "0"
+            ]
+          ],
+          [
+            [
+              "-1/9",
+              "0"
+            ],
+            [
+              "1/18",
+              "0"
+            ],
+            [
+              "-1/9",
+              "0"
+            ]
+          ],
+          [
+            [
+              "2/9",
+              "0"
+            ],
+            [
+              "-1/9",
+              "0"
+            ],
+            [
+              "2/9",
+              "0"
+            ]
+          ]
+        ],
+        [
+          [
+            [
+              "2/9",
+              "0"
+            ],
+            [
+              "2/9",
+              "0"
+            ],
+            [
+              "-1/9",
+              "0"
+            ]
+          ],
+          [
+            [
+              "2/9",
+              "0"
+            ],
+            [
+              "2/9",
+              "0"
+            ],
+            [
+              "-1/9",
+              "0"
+            ]
+          ],
+          [
+            [
+              "-1/9",
+              "0"
+            ],
+            [
+              "-1/9",
+              "0"
+            ],
+            [
+              "1/18",
+              "0"
+            ]
+          ]
+        ]
+      ],
+      "invariants": {
+        "nonzero_diagonal": "17/27",
+        "opposite_nonzero_secret_Gram": "8/27",
+        "zero_diagonal": "1",
+        "exact_PSD_and_completeness_certified": true
+      },
+      "physical_control": {
+        "modulus": 9,
+        "complete_native_label_pairs": 81,
+        "complete_secret_pairs": 81,
+        "outcomes": 6,
+        "actual_Born_Gram_residual": 2.220446049250313e-15,
+        "exact_invariants": {
+          "nonzero_diagonal": "17/27",
+          "opposite_nonzero_secret_Gram": "8/27",
+          "zero_diagonal": "1",
+          "exact_PSD_and_completeness_certified": true
+        },
+        "nonprimitive_and_zero_secrets_kept": true
+      },
+      "eight_copy_scalar_gate": {
+        "nonzero_product_diagonal": "13765794088735/282429536481",
+        "opposite_product_entry": "1969445854144/282429536481",
+        "nonzero_Gram_operator_norm": "15735239942879/282429536481",
+        "nonzero_contribution_advantage_upper_squared": "15735239942879/3706040377703682",
+        "invariant_inputs_are_assumptions_unless_POVM_certified": true
+      }
+    }
+  ],
+  "falsifiers": [
+    "A positive complete fixed qutrit POVM violates d<=2/3 or |eta|<=d.",
+    "A native full-label Born census has a nonzero Gram entry outside s=t, s=-t or s=t=0.",
+    "A label-independent product POVM classifier violates the source-average copy bound."
+  ]
+}

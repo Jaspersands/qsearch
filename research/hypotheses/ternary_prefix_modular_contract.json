@@ -1,0 +1,23 @@
+{
+  "hypothesis_id": "HYP-NATIVE-PREFIX-MOD2-SHADOW",
+  "status": "EXACT_DISCRETE_BASELINE_FALSIFIED_ON_ALL_AUDITED_FEASIBLE_PREFIXES",
+  "candidate_record_accepted": false,
+  "note": "research/TERNARY_PREFIX_MODULAR.md",
+  "report": "research/phase_workbench/ternary_prefix_modular.json",
+  "depends_on": ["HYP-NATIVE-PREFIX-INTEGRALITY"],
+  "finite_evidence": {"audited_lp_feasible_prefixes": 26, "exact_modular_native_words": 26, "affine_proposals": 3163, "complete_support_tables": 11, "full_support_certificates": 3, "independent_fourier_full_support_certificates": 3, "guarded_out_full_support_tables": 15, "mod2_obstruction_prunes": 0},
+  "implemented": ["Full modulo-two prefix annihilator", "Exact two-choice-domain elimination", "Complete support DP with ambient preflight", "Exact Fourier weighted-character sufficient condition", "Original-coordinate native modular word certificates with all failures charged"],
+  "proof_obligations_before_candidate_acceptance": {
+    "PO-REVIEW": "Review quotient equivalence and independent exact certificates; modulo-two witnesses never imply integer continuation.",
+    "PO-NEW-MECHANISM": "Supply integer-precision or coupled structure not erased by this modular shadow.",
+    "PO-POPULATION": "Prove source-law success rather than extrapolating selected finite prefix results.",
+    "PO-COST": "Prove total work and acceptance bounds; uniform affine rejection and growing-rank DP can both be exponential.",
+    "PO-RECEIVER": "Supply the missing ordinary pair finder or a different efficient physical receiver."
+  },
+  "falsifier": "Original-coordinate modular words survive every audited false prefix, so this necessary-condition test cannot prune them.",
+  "not_proved": ["integer native feasibility", "full support in guarded cases", "all-prime modular-cut obstruction", "source dequantization", "population hardness", "quantum speedup"],
+  "next_target": "research/NATIVE_TERNARY_COUPLED_MOMENTS_TARGET.md",
+  "routine_wiring_owner": "Gemini or Antigravity",
+  "novelty_claim": false,
+  "polynomial_pair_finder_proved": false
+}

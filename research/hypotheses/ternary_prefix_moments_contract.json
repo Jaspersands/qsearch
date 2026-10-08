@@ -1,0 +1,23 @@
+{
+  "hypothesis_id": "HYP-NATIVE-COUPLED-PREFIX-MOMENTS",
+  "status": "EXACT_RANK_TWO_LINEAR_MOMENT_PILOT_MIXED_AND_INCOMPLETE",
+  "candidate_record_accepted": false,
+  "note": "research/TERNARY_PREFIX_MOMENTS.md",
+  "report": "research/phase_workbench/ternary_prefix_moments.json",
+  "depends_on": ["HYP-NATIVE-PREFIX-INTEGRALITY", "HYP-NATIVE-PREFIX-MOD2-SHADOW"],
+  "finite_evidence": {"known_false_native_prefixes": 16, "winding_branches": 186, "exact_dual_obstructions": 73, "exact_pairwise_continuations": 8, "unknown_branches": 105, "unknown_branches_with_reconstruction_guards": 103, "all_winding_prefix_eliminations": 2, "prefixes_with_exact_surviving_moments": 3, "LP_calls": 354},
+  "proof_obligations_before_candidate_acceptance": {
+    "PO-REVIEW": "Review native-conditioned moment representation and exact signed equality dual certificates.",
+    "PO-POSITIVITY": "Audit the necessary PSD moment matrix; pairwise consistency does not imply global native realizability.",
+    "PO-CERTIFICATION": "Resolve unknown statuses without treating numerical LP flags or reconstruction guards as proofs.",
+    "PO-POPULATION": "Establish ordinary two-witness success on the true random-label and uniform-target distribution.",
+    "PO-COST": "Charge full model construction, basis preparation, exact bit complexity, all failures and physical receiver costs.",
+    "PO-RECEIVER": "Retain all source, reduction, full-depth secret recovery and classical-comparison obligations."
+  },
+  "falsifier": "Known false prefixes retain exact pairwise or PSD moment continuations, or expensive pruning fails to improve actual pair recovery.",
+  "not_proved": ["PSD moment feasibility", "global native distribution", "polynomial pair finding", "population hardness", "quantum speedup", "all 16 false prefixes eliminated"],
+  "next_target": "research/NATIVE_TERNARY_MOMENT_PSD_TARGET.md",
+  "routine_wiring_owner": "Gemini or Antigravity",
+  "novelty_claim": false,
+  "polynomial_pair_finder_proved": false
+}

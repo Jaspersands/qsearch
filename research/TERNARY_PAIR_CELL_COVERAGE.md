@@ -87,6 +87,19 @@ benchmarks. Small gamma is not a generic hardness statement: the explicit
 zero-label kernel can have exponentially small word recall while the easy
 nonempty target is decoded to a pair. This control is tested.
 
+Each missed genuine pair target must lose at least one word, and different
+targets have disjoint fibers. Hence covered_pair_targets>=true_pair_targets
+minus(3^M-recovered_words). Combining this with the existing exact native
+two-element mass bound gives
+
+```text
+E_labels beta >= max(0,(2/9-2/Q^2)/6-(1-E_labels gamma)/3).
+```
+
+This is positive if PROVEN mean word recall exceeds8/9+1/Q^2. It removes a
+pair-correlation assumption at sufficiently high recall, not the need for a
+population theorem. Do not insert planted sample recall for the unknown mean.
+
 ## Live Findings
 
 Three exhaustive fixed-label controls classify59,787 words and account for

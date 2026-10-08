@@ -1,0 +1,34 @@
+{
+  "id": "TERNARY-NOISE-DEGRADATION",
+  "status": "CONDITIONAL_CLASSICAL_SOURCE_REDUCTION_REVIEW_PENDING_NOT_SPEEDUP",
+  "problem_family": "full-root native even-level paired readout for integer-vector secrets",
+  "derivation": "research/TERNARY_NOISE_DEGRADATION.md",
+  "producer": "theorems/ternary_noise_degradation.py",
+  "certified_public_sampler": "theorems/ternary_certified_noise_sampler.py",
+  "report": "research/reductions/ternary_noise_degradation.json",
+  "independent_checker": "research/certificates/ternary_noise_degradation_crosscheck.js",
+  "literature": [{"id": "B-L-P-R-S-2013", "url": "https://arxiv.org/html/1306.0281", "theorem": "2.16 search LWE for general integer modulus; classical guard q>=2^(n/2)"}],
+  "mechanism": "add PUBLIC native noise to independently paired noisy linear samples; transfer success through a charged transcript TV bound",
+  "access_model": "2M classical noisy-linear source samples, unchanged IID full-root labels, reduction-side random mask, no chosen queries or hidden-secret input",
+  "proof_obligations": [
+    {"id": "FORWARD-CONVOLUTION", "claim": "paired source convolution multiplies the native six Fourier coefficients by phi,phi,phi^2", "status": "DERIVED_GENERAL_AND_EXACT_FINITE_REPLAY"},
+    {"id": "TV-TRANSFER", "claim": "per-pair TV<=min(1,80V/(3q^2)); fixed M-record decoder success transfers after ALL abort losses", "status": "DERIVED_REVIEW_PENDING"},
+    {"id": "CERTIFIED-SAMPLER", "claim": "rational Machin/Taylor intervals and lazy bits decide rejection exactly without a q^2 table", "status": "IMPLEMENTED_WITH_EXACT_INDEPENDENT_REPLAY"},
+    {"id": "ABORT-ACCOUNTING", "claim": "unknown precision/proposal/source-rounding failures cannot be dropped or replaced by accepted prefixes", "status": "IMPLEMENTED_AND_TAMPER_TESTED"},
+    {"id": "SCALABLE-PRECISION", "claim": "caps grow with log(M) and confidence rather than assuming fixed64-bit precision suffices asymptotically", "status": "EXACT_RATIONAL_BUDGET_GUARD_IMPLEMENTED"},
+    {"id": "GAUSSIAN-CONVENTION", "claim": "continuous D_alpha is scaled and rounded, with V<=q^2*alpha^2/3+1/2; not discrete-Gaussian equality or standard deviation alpha", "status": "DERIVED_WITH_PARAMETER_AND_ROUNDING_GUARDS"},
+    {"id": "SOURCE-THEOREM", "claim": "compose reviewed source theorem at the precise modulus/noise/secret/sample parameters", "status": "THEOREM2.16_CHECKED_PARAMETER_PROFILES_MATCH_OR_FAIL_EXTERNAL_REVIEW_OPEN"},
+    {"id": "ORACLE-CONTAINMENT", "claim": "source supplies containing rational observation intervals at charged precision", "status": "EXPLICIT_INPUT_PROMISE_NOT_INFERRED_FROM_VALUES"},
+    {"id": "EFFICIENT-DECODER", "claim": "a scalable native decoder with stated success/sample bound exists", "status": "OPEN_NOT_SUPPLIED"},
+    {"id": "COHERENT-INPUT", "claim": "supply the unknown native quantum input, not only classical measured transcripts", "status": "NOT_PROVIDED_BY_THIS_SUBSYSTEM_DIRECT_NOISY_PHASE_PREPARATION_IS_NEXT_TARGET"}
+  ],
+  "experiment": {
+    "calibration_law": "chi(0)=1/2,chi(+/-1)=1/4,V=1/2; NOT an LWE-hardness source",
+    "controls": "n4,M16,r2/4/16/80; all2M source originals preserved per cohort",
+    "observed": {"classical_input_originals": 128, "complete_paired_outputs": 64, "exact_public_noise_proposals": 205, "exact_coin_decisions": 206, "exact_finite_convolution_entries": 90, "Gaussian_parameter_profiles": 4, "source_rounding_controls": 4, "explicit_sampler_abort_controls": 2},
+    "falsifiers": ["vacuous complete-transcript TV budget", "source theorem guard fails", "ambiguous containing interval", "precision/proposal cap", "shared original error samples invalidate IID noise", "unknown-state preparation cannot be inferred from a classical transcript"],
+    "quantum_states_prepared": 0,
+    "accepted_speedup_candidates": 0
+  },
+  "not_claimed": ["unconditional LWE hardness", "cryptanalytic attack", "efficient native recovery", "general ring-secret reduction", "unknown coherent input supplied", "exact distribution after conditioning away aborts", "Shor-level algorithm"]
+}

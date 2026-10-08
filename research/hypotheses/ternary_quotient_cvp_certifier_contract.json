@@ -1,0 +1,29 @@
+{
+  "id": "TERNARY-QUOTIENT-CVP-FINITE-CERTIFIER",
+  "status": "FINITE_CERTIFICATION_OR_EXPLICIT_UNKNOWN_NOT_SPEEDUP",
+  "problem_family": "native full-root paired-readout code lattice",
+  "derivation": "research/TERNARY_QUOTIENT_CVP_CERTIFIER.md",
+  "producer": "theorems/ternary_quotient_cvp_certifier.py",
+  "report": "research/classical_baselines/ternary_quotient_cvp_certifier.json",
+  "independent_checker": "research/certificates/ternary_quotient_cvp_certifier_crosscheck.js",
+  "parent_evidence": ["research/classical_baselines/ternary_full_record_cvp.json", "research/classical_baselines/ternary_quotient_cvp.json"],
+  "mechanism": "complete radius-bounded search on the exact periodic objective; strict valid incumbent updates; UNKNOWN when a viable branch remains at the node cap",
+  "proof_obligations": [
+    {"id": "VALID-INITIAL-BOUND", "claim": "canonical point of best public training proposal converted to integer reduced-basis coordinates exactly", "status": "EXACT_REPLAY_AND_MEMBERSHIP_CHECKS"},
+    {"id": "ADMISSIBLE-PREFIX-BOUND", "claim": "processed GS costs and finalized dead terms lower-bound every completion", "status": "DERIVED_REVIEW_PENDING_WITH_EXACT_REPLAY"},
+    {"id": "COMPLETE-INTEGER-BRANCHES", "claim": "both outward integer fronts exhaust all possible improvements within a valid shrinking radius", "status": "DERIVED_REVIEW_PENDING_WITH_EXACT_REPLAY"},
+    {"id": "CAP-NOT-PROOF", "claim": "cap exhaustion retains UNKNOWN even if no better point was found", "status": "TESTED_WITH_TAMPER_CASE"},
+    {"id": "SCALABLE-COST", "claim": "efficiently certify or approximate native full-size inputs at population copy budgets", "status": "OPEN_NOT_ESTABLISHED"}
+  ],
+  "experiment": {
+    "node_cap": 4096,
+    "cohorts": "all eight existing full-record native training cohorts",
+    "initial_bound": "best canonical public training proposal including inherited candidates",
+    "observed": {"certified_finite_optima": 1, "unknown_capped_controls": 7, "exact_tested_extensions": 31758},
+    "falsifiers": ["unvisited viable branch prevents an optimality claim", "positive64*C-81*W refutes9/8 for the supplied output point", "false complete/capped status rejected by independent replay"],
+    "new_original_qutrits": 0,
+    "new_LLL_calls": 0,
+    "fresh_validation": "none; changed outputs cannot inherit predecessor heldout confidence"
+  },
+  "not_claimed": ["efficient general CVP", "efficient source-specific CVP at growing n and r", "hardness from capped failure", "population recovery", "new validated candidate", "quantum speedup"]
+}

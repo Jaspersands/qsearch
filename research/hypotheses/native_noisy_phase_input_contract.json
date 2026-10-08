@@ -1,0 +1,35 @@
+{
+  "id": "NATIVE-NOISY-PHASE-INPUT",
+  "status": "CONDITIONAL_COPY_ONLY_SOURCE_REDUCTION_REVIEW_PENDING_NOT_SPEEDUP",
+  "problem_family": "even-level full-root native qutrits for integer-embedded vector secrets",
+  "derivation": "research/NATIVE_NOISY_PHASE_INPUT.md",
+  "producer": "theorems/native_noisy_phase_input.py",
+  "report": "research/reductions/native_noisy_phase_input.json",
+  "independent_checker": "research/certificates/native_noisy_phase_input_crosscheck.js",
+  "literature": [{"id": "B-L-P-R-S-2013", "url": "https://arxiv.org/html/1306.0281", "theorem": "2.16 general-modulus search LWE source, continuous D_alpha convention"}],
+  "mechanism": "secret-blind F3 and known diagonal phases from disjoint original noisy-linear values; averaged-state trace-distance transfer to any fixed copy-only receiver",
+  "access_model": "2M classical noisy-linear originals; M supplied qutrits in an explicit local gate model; receiver gets labels and states, not noisy values, mask, or ideal-state inverse",
+  "proof_obligations": [
+    {"id": "ACTUAL-NATIVE-SOURCE", "claim": "P^2=-3Z and T=-Z^-1 give an unbounded period6 even-level frequency compiler with determinant-1", "status": "DERIVED_EXACT_IDENTITY_AND_ORIGINAL_SOURCE_CONFORMANCE_TESTED"},
+    {"id": "SECRET-BLIND-PREPARATION", "claim": "known b,d define every local phase gate without hidden secret or error inputs", "status": "IMPLEMENTED_GATE_RECIPE_AND_INDEPENDENT_EXACT_REPLAY"},
+    {"id": "AVERAGED-DENSITY", "claim": "symmetric IID errors give off-diagonal coefficients phi,phi,phi^2", "status": "DERIVED_GENERAL_AND_EXACT_FINITE_REPLAY"},
+    {"id": "TRACE-TRANSFER", "claim": "exact eigenformula gives per-input trace distance<=min(1,20V/q^2); product/CPTP bounds charge ALL M inputs", "status": "SYMBOLIC_AND_RATIONAL_CONTROLS_TESTED_EXTERNAL_REVIEW_PENDING"},
+    {"id": "SOURCE-INDEPENDENCE", "claim": "one disjoint original pair per state; unique IDs do not prove an IID source law", "status": "REUSE_REJECTED_EXACT_1_OVER_48_SHARED_ERROR_COUNTERCONTROL"},
+    {"id": "INPUT-PROMISES", "claim": "source law, moment, and mask uniformity are true premises, not learned from realized values", "status": "EXPLICIT_PROMISES_NOT_SCHEMA_CERTIFIED"},
+    {"id": "GATE-PRECISION", "claim": "P=kappa+ceil(log2(2M)) bounds total preparation error<=2^-kappa", "status": "IMPLEMENTED_EXACT_KNOWN_ANGLE_COMPILER_AND_LEDGER"},
+    {"id": "HARDWARE-COMPILATION", "claim": "F3 and known phases implemented in a selected physical gate set at the promised operator error", "status": "OPEN_IDEAL_QUTRIT_GATE_MODEL_ONLY"},
+    {"id": "SOURCE-ROUNDING", "claim": "continuous D_alpha is scaled then rounded with containing intervals and both original-input abort losses charged", "status": "EXISTING_EXACT_ADAPTER_REUSED_GAUSSIAN_PARAMETER_GUARDS_IMPLEMENTED"},
+    {"id": "COMPOSED-SOURCE-THEOREM", "claim": "specific receiver M/success/noise parameters compose with published worst-case source theorem", "status": "CONDITIONAL_PROFILES_NOT_ADMITTED_EXTERNAL_REVIEW_AND_RECEIVER_REQUIRED"},
+    {"id": "EFFICIENT-RECEIVER", "claim": "polynomial growing-root native recovery with an explicit success and original-copy bound", "status": "OPEN_NOT_SUPPLIED"},
+    {"id": "SCOPE", "claim": "no odd-level/full-ring-secret/ideal-source-reflection promise is inherited", "status": "EXPLICIT_EXCLUSIONS_AND_TAMPER_TESTS"}
+  ],
+  "experiment": {
+    "calibration_law": "chi(0)=1/2,chi(+/-1)=1/4,V=1/2; NOT an LWE-hardness source",
+    "controls": "n4,M8,r1/2/16/80/300, including beyond old level512 cap",
+    "observed": {"classical_originals": 80, "native_gate_recipes": 40, "exact_known_angles": 80, "exact_density_entries": 36, "rational_trace_controls": 7, "Gaussian_source_profiles": 4, "shared_pair_countercontrols": 1},
+    "falsifiers": ["actual native frequency map not bijective", "wrong phi^2 density entry", "shared or asymmetric errors", "false moment bound", "receiver obtains hidden ideal reflection", "uncharged gate or source-rounding loss", "failed source theorem parameter guard", "vacuous success transfer", "decoder cannot use this source scope"],
+    "hardware_states_executed": 0,
+    "accepted_speedup_candidates": 0
+  },
+  "not_claimed": ["efficient native decoder", "new lattice algorithm", "cryptanalytic attack", "classical simulation of an unknown quantum input", "unconditional composed hardness", "arbitrary full ring secrets", "unknown ideal source reflection", "universal gate synthesis", "Shor-level algorithm"]
+}

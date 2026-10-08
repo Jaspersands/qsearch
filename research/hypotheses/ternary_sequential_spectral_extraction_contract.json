@@ -1,0 +1,33 @@
+{
+  "id": "HYP-TERNARY-SEQUENTIAL-SPECTRAL-EXTRACTION",
+  "status": "conditional_classical_rounding_local_derivation_review_pending",
+  "candidate_record_accepted": false,
+  "derivation": "research/TERNARY_SEQUENTIAL_SPECTRAL_EXTRACTION.md",
+  "implementation": "theorems/ternary_sequential_spectral_extraction.py",
+  "artifact": "research/classical_baselines/ternary_sequential_spectral_extraction.json",
+  "independent_checker": "research/certificates/ternary_sequential_spectral_extraction_crosscheck.js",
+  "mechanism": "Sequential finite-order projectors define a positive shared-secret distribution; weighted pinching bounds original moment disturbance without global commuting-matrix rounding.",
+  "access_model": "supplied_classical_matrices_and_state",
+  "native_model_construction": "not_supplied",
+  "control_truth_access": "known_support_encodes_calibration_matrices_only",
+  "proof_obligations": [
+    "Independent review of coefficient-sensitive pinching/telescoping law in a positive metric.",
+    "Construct small-R operators, state and original moment bounds from actual native inputs without hidden-secret access.",
+    "Charge dimension, full root, original copies, coefficient heights, sign precision and all controlled operations.",
+    "If source is quantum-only, supply and charge fresh preparations without assuming cloning or inverse state preparation.",
+    "Establish useful original harmonic score, and separately prove native prediction/recovery; score is not likelihood.",
+    "Compare any quantum construction against classical matrix extraction and the same upstream source model.",
+    "No conditional-on-success sampling guarantee may replace the joint bad-and-returned bound."
+  ],
+  "falsifiers": [
+    "Exact Heisenberg moment differs from complete sequential reference distribution.",
+    "A valid supplied model exceeds the coefficient-sensitive disturbance envelope.",
+    "False delta/sigma, changed original moments or an indefinite metric pass validation.",
+    "Unknown or capped random prefixes are silently redrawn.",
+    "Seeded samples, known-support matrices or q^n reference controls are promoted to a native solver."
+  ],
+  "next_research_decision": "Audit actual native operator access before any further generic representation machinery.",
+  "native_noisy_recovery_proved": false,
+  "quantum_speedup_proved": false,
+  "routine_wiring_owner": "Gemini or Antigravity"
+}

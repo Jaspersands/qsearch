@@ -1,0 +1,28 @@
+{
+  "id": "NEGATIVE-NATIVE-ORDER-THREE-JOINT-PLANE-LAWS",
+  "status": "EXACT_FINITE_JOINT_LAW_OBSTRUCTIONS_REVIEW_PENDING",
+  "source": "Strengthened native character moment points with exact PSD, all cyclic laws and all-secret score gaps",
+  "mechanism": "Fourier inversion on every complete represented order-three rank-two subgroup",
+  "claim": "Three exact joint violations survive cyclic cuts; fixed uniform mixing removes ALL represented order-three plane violations while preserving exact gaps above every genuine character",
+  "evidence": "research/classical_baselines/ternary_character_joint_plane.json",
+  "independent_checker": "research/certificates/ternary_character_joint_plane_crosscheck.js",
+  "proof_obligations": [
+    "Public-node-only compiler with every order-three line pair checked",
+    "Independent generators, all nine moments represented and no zero filling",
+    "Exact conjugate reality and normalization",
+    "Strictly negative rational interval upper bounds",
+    "Independent replay of the original exact PSD, cyclic and character-gap certificates",
+    "Every exact mixed moment equals three quarters parent plus one quarter uniform-secret identity",
+    "ALL cyclic and joint-plane laws remain nonnegative and both all-secret score gaps remain strictly positive"
+  ],
+  "falsifiers": [
+    "An honest character or mixture violates a retained joint law",
+    "Negative probability fails exact independent replay",
+    "A purported plane is dependent or lacks a represented moment",
+    "New false solutions survive all the joint-plane cuts"
+  ],
+  "all_joint_plane_cuts_solve_global_realizability": false,
+  "population_or_asymptotic_failure_claim": false,
+  "accepted_speedup_candidate": false,
+  "routine_integration_owner": "Gemini or Antigravity"
+}

@@ -1,0 +1,29 @@
+{
+  "hypothesis_id": "HYP-NATIVE-TARGET-ADAPTIVE-SHELL",
+  "status": "EXACT_ADAPTIVE_ENUMERATION_IMPLEMENTED_NO_POLYNOMIAL_BOUND",
+  "candidate_record_accepted": false,
+  "note": "research/TERNARY_ADAPTIVE_SHELL.md",
+  "report": "research/phase_workbench/ternary_adaptive_shell.json",
+  "depends_on": ["HYP-NATIVE-A2-PAIR-CVP", "HYP-NATIVE-FIXED-REPAIR-CATALOG"],
+  "implemented": [
+    "Exact inclusive shell enumeration with lazy distance-ordered coefficient intervals.",
+    "Native GS support-range coefficient constraints.",
+    "Rank-aware prefix-projector block energy tests and one-hot support cuts.",
+    "Complete-fiber versus capped-incomplete semantics and distinct verified pairs.",
+    "Paired 120-target comparison against the catalog target fixtures with all failures charged."
+  ],
+  "proof_obligations_before_candidate_acceptance": {
+    "PO-REVIEW": "External review of interval arithmetic, completeness induction and projector range/energy cuts.",
+    "PO-COST": "Prove polynomial total coefficient-node, arithmetic and preparation cost, not a finite node cap.",
+    "PO-POPULATION": "Prove inverse-polynomial verified pair coverage on actual source labels and independent uniform targets.",
+    "PO-DEPENDENCE": "Do not add correlated block energy lower bounds or infer independent GS branches.",
+    "PO-ACCESS": "No planted incoming word, phase evaluator or unknown-secret advice enters the decoder.",
+    "PO-RECEIVER": "Retain vector-secret, full-depth bootstrap, source/runtime and coherent implementation obligations."
+  },
+  "falsifier": "Middle-depth branch counts grow while costed uniform-target pair coverage disappears; current finite caps cannot establish a general enumeration lower bound.",
+  "next_math_target": "Exact dual separators for the coupled projected product simplex, or a source-law obstruction for this relaxation.",
+  "routine_wiring_owner": "Gemini or Antigravity",
+  "novelty_claim": false,
+  "polynomial_pair_finder_proved": false,
+  "population_coverage_proved": false
+}

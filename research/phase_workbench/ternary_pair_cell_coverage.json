@@ -6,6 +6,8 @@
   "uniform_target_population_coverage_proved": false,
   "predicate": "Fixed public basis/center word appears in complete k-repair list iff at mostk rounded exact GS errors are nonzero and each magnitude<=B.",
   "deterministic_counting_bound": "beta_label<=3^M*gamma/(2Q); gamma/6 at underfull scalar source scale",
+  "deterministic_pair_lower": "covered_pair_targets>=true_pair_targets-(3^M-recovered_words)",
+  "conditional_population_pair_lower": "max(0,(2/9-2/Q^2)/6-(1-E_labels[gamma])/3); positive if proven mean gamma>8/9+1/Q^2",
   "list_cost": "number_charts*sum_{j=0}^k binomial(2M,j)*(2B)^j",
   "analysis_never_given_to_public_solver": true,
   "exact_controls": [
@@ -328,6 +330,7 @@
                 "gamma_exact_conditional": "1",
                 "beta_exact_conditional_uniform_targets": "1/27",
                 "word_count_pair_coverage_upper": "1/6",
+                "full_truth_minus_missing_words_pair_lower": "1/27",
                 "scheduled_candidates_all_charts": "6"
               },
               {
@@ -337,6 +340,7 @@
                 "gamma_exact_conditional": "1",
                 "beta_exact_conditional_uniform_targets": "1/27",
                 "word_count_pair_coverage_upper": "1/6",
+                "full_truth_minus_missing_words_pair_lower": "1/27",
                 "scheduled_candidates_all_charts": "54"
               },
               {
@@ -346,6 +350,7 @@
                 "gamma_exact_conditional": "1",
                 "beta_exact_conditional_uniform_targets": "1/27",
                 "word_count_pair_coverage_upper": "1/6",
+                "full_truth_minus_missing_words_pair_lower": "1/27",
                 "scheduled_candidates_all_charts": "198"
               },
               {
@@ -355,6 +360,7 @@
                 "gamma_exact_conditional": "1",
                 "beta_exact_conditional_uniform_targets": "1/27",
                 "word_count_pair_coverage_upper": "1/6",
+                "full_truth_minus_missing_words_pair_lower": "1/27",
                 "scheduled_candidates_all_charts": "390"
               },
               {
@@ -364,6 +370,7 @@
                 "gamma_exact_conditional": "1",
                 "beta_exact_conditional_uniform_targets": "1/27",
                 "word_count_pair_coverage_upper": "1/6",
+                "full_truth_minus_missing_words_pair_lower": "1/27",
                 "scheduled_candidates_all_charts": "486"
               }
             ]
@@ -385,6 +392,7 @@
                 "gamma_exact_conditional": "1",
                 "beta_exact_conditional_uniform_targets": "1/27",
                 "word_count_pair_coverage_upper": "1/6",
+                "full_truth_minus_missing_words_pair_lower": "1/27",
                 "scheduled_candidates_all_charts": "6"
               },
               {
@@ -394,6 +402,7 @@
                 "gamma_exact_conditional": "1",
                 "beta_exact_conditional_uniform_targets": "1/27",
                 "word_count_pair_coverage_upper": "1/6",
+                "full_truth_minus_missing_words_pair_lower": "1/27",
                 "scheduled_candidates_all_charts": "102"
               },
               {
@@ -403,6 +412,7 @@
                 "gamma_exact_conditional": "1",
                 "beta_exact_conditional_uniform_targets": "1/27",
                 "word_count_pair_coverage_upper": "1/6",
+                "full_truth_minus_missing_words_pair_lower": "1/27",
                 "scheduled_candidates_all_charts": "678"
               },
               {
@@ -412,6 +422,7 @@
                 "gamma_exact_conditional": "1",
                 "beta_exact_conditional_uniform_targets": "1/27",
                 "word_count_pair_coverage_upper": "1/6",
+                "full_truth_minus_missing_words_pair_lower": "1/27",
                 "scheduled_candidates_all_charts": "2214"
               },
               {
@@ -421,13 +432,14 @@
                 "gamma_exact_conditional": "1",
                 "beta_exact_conditional_uniform_targets": "1/27",
                 "word_count_pair_coverage_upper": "1/6",
+                "full_truth_minus_missing_words_pair_lower": "1/27",
                 "scheduled_candidates_all_charts": "3750"
               }
             ]
           }
         ],
         "missed_pair_target_certificate": null,
-        "word_analysis_wall_seconds": 0.00025645794812589884,
+        "word_analysis_wall_seconds": 0.0001912920270115137,
         "LLL_preparations_separately_charged": 2,
         "sampled_targets_or_planted_targets_used": false,
         "target_denominator_includes_all_empty_cosets": true
@@ -1856,6 +1868,7 @@
                 "gamma_exact_conditional": "553/729",
                 "beta_exact_conditional_uniform_targets": "10/729",
                 "word_count_pair_coverage_upper": "553/4374",
+                "full_truth_minus_missing_words_pair_lower": "0",
                 "scheduled_candidates_all_charts": "6"
               },
               {
@@ -1865,6 +1878,7 @@
                 "gamma_exact_conditional": "727/729",
                 "beta_exact_conditional_uniform_targets": "128/2187",
                 "word_count_pair_coverage_upper": "727/4374",
+                "full_truth_minus_missing_words_pair_lower": "127/2187",
                 "scheduled_candidates_all_charts": "150"
               },
               {
@@ -1874,6 +1888,7 @@
                 "gamma_exact_conditional": "1",
                 "beta_exact_conditional_uniform_targets": "43/729",
                 "word_count_pair_coverage_upper": "1/6",
+                "full_truth_minus_missing_words_pair_lower": "43/729",
                 "scheduled_candidates_all_charts": "1734"
               },
               {
@@ -1883,6 +1898,7 @@
                 "gamma_exact_conditional": "1",
                 "beta_exact_conditional_uniform_targets": "43/729",
                 "word_count_pair_coverage_upper": "1/6",
+                "full_truth_minus_missing_words_pair_lower": "43/729",
                 "scheduled_candidates_all_charts": "12294"
               },
               {
@@ -1892,6 +1908,7 @@
                 "gamma_exact_conditional": "1",
                 "beta_exact_conditional_uniform_targets": "43/729",
                 "word_count_pair_coverage_upper": "1/6",
+                "full_truth_minus_missing_words_pair_lower": "43/729",
                 "scheduled_candidates_all_charts": "59814"
               },
               {
@@ -1901,6 +1918,7 @@
                 "gamma_exact_conditional": "1",
                 "beta_exact_conditional_uniform_targets": "43/729",
                 "word_count_pair_coverage_upper": "1/6",
+                "full_truth_minus_missing_words_pair_lower": "43/729",
                 "scheduled_candidates_all_charts": "211878"
               },
               {
@@ -1910,6 +1928,7 @@
                 "gamma_exact_conditional": "1",
                 "beta_exact_conditional_uniform_targets": "43/729",
                 "word_count_pair_coverage_upper": "1/6",
+                "full_truth_minus_missing_words_pair_lower": "43/729",
                 "scheduled_candidates_all_charts": "566694"
               },
               {
@@ -1919,6 +1938,7 @@
                 "gamma_exact_conditional": "1",
                 "beta_exact_conditional_uniform_targets": "43/729",
                 "word_count_pair_coverage_upper": "1/6",
+                "full_truth_minus_missing_words_pair_lower": "43/729",
                 "scheduled_candidates_all_charts": "1174950"
               },
               {
@@ -1928,6 +1948,7 @@
                 "gamma_exact_conditional": "1",
                 "beta_exact_conditional_uniform_targets": "43/729",
                 "word_count_pair_coverage_upper": "1/6",
+                "full_truth_minus_missing_words_pair_lower": "43/729",
                 "scheduled_candidates_all_charts": "1935270"
               },
               {
@@ -1937,6 +1958,7 @@
                 "gamma_exact_conditional": "1",
                 "beta_exact_conditional_uniform_targets": "43/729",
                 "word_count_pair_coverage_upper": "1/6",
+                "full_truth_minus_missing_words_pair_lower": "43/729",
                 "scheduled_candidates_all_charts": "2611110"
               },
               {
@@ -1946,6 +1968,7 @@
                 "gamma_exact_conditional": "1",
                 "beta_exact_conditional_uniform_targets": "43/729",
                 "word_count_pair_coverage_upper": "1/6",
+                "full_truth_minus_missing_words_pair_lower": "43/729",
                 "scheduled_candidates_all_charts": "3016614"
               },
               {
@@ -1955,6 +1978,7 @@
                 "gamma_exact_conditional": "1",
                 "beta_exact_conditional_uniform_targets": "43/729",
                 "word_count_pair_coverage_upper": "1/6",
+                "full_truth_minus_missing_words_pair_lower": "43/729",
                 "scheduled_candidates_all_charts": "3164070"
               },
               {
@@ -1964,6 +1988,7 @@
                 "gamma_exact_conditional": "1",
                 "beta_exact_conditional_uniform_targets": "43/729",
                 "word_count_pair_coverage_upper": "1/6",
+                "full_truth_minus_missing_words_pair_lower": "43/729",
                 "scheduled_candidates_all_charts": "3188646"
               }
             ]
@@ -1989,6 +2014,7 @@
                 "gamma_exact_conditional": "553/729",
                 "beta_exact_conditional_uniform_targets": "10/729",
                 "word_count_pair_coverage_upper": "553/4374",
+                "full_truth_minus_missing_words_pair_lower": "0",
                 "scheduled_candidates_all_charts": "6"
               },
               {
@@ -1998,6 +2024,7 @@
                 "gamma_exact_conditional": "727/729",
                 "beta_exact_conditional_uniform_targets": "128/2187",
                 "word_count_pair_coverage_upper": "727/4374",
+                "full_truth_minus_missing_words_pair_lower": "127/2187",
                 "scheduled_candidates_all_charts": "294"
               },
               {
@@ -2007,6 +2034,7 @@
                 "gamma_exact_conditional": "1",
                 "beta_exact_conditional_uniform_targets": "43/729",
                 "word_count_pair_coverage_upper": "1/6",
+                "full_truth_minus_missing_words_pair_lower": "43/729",
                 "scheduled_candidates_all_charts": "6630"
               },
               {
@@ -2016,6 +2044,7 @@
                 "gamma_exact_conditional": "1",
                 "beta_exact_conditional_uniform_targets": "43/729",
                 "word_count_pair_coverage_upper": "1/6",
+                "full_truth_minus_missing_words_pair_lower": "43/729",
                 "scheduled_candidates_all_charts": "91110"
               },
               {
@@ -2025,6 +2054,7 @@
                 "gamma_exact_conditional": "1",
                 "beta_exact_conditional_uniform_targets": "43/729",
                 "word_count_pair_coverage_upper": "1/6",
+                "full_truth_minus_missing_words_pair_lower": "43/729",
                 "scheduled_candidates_all_charts": "851430"
               },
               {
@@ -2034,6 +2064,7 @@
                 "gamma_exact_conditional": "1",
                 "beta_exact_conditional_uniform_targets": "43/729",
                 "word_count_pair_coverage_upper": "1/6",
+                "full_truth_minus_missing_words_pair_lower": "43/729",
                 "scheduled_candidates_all_charts": "5717478"
               },
               {
@@ -2043,6 +2074,7 @@
                 "gamma_exact_conditional": "1",
                 "beta_exact_conditional_uniform_targets": "43/729",
                 "word_count_pair_coverage_upper": "1/6",
+                "full_truth_minus_missing_words_pair_lower": "43/729",
                 "scheduled_candidates_all_charts": "28425702"
               },
               {
@@ -2052,6 +2084,7 @@
                 "gamma_exact_conditional": "1",
                 "beta_exact_conditional_uniform_targets": "43/729",
                 "word_count_pair_coverage_upper": "1/6",
+                "full_truth_minus_missing_words_pair_lower": "43/729",
                 "scheduled_candidates_all_charts": "106282470"
               },
               {
@@ -2061,6 +2094,7 @@
                 "gamma_exact_conditional": "1",
                 "beta_exact_conditional_uniform_targets": "43/729",
                 "word_count_pair_coverage_upper": "1/6",
+                "full_truth_minus_missing_words_pair_lower": "43/729",
                 "scheduled_candidates_all_charts": "300924390"
               },
               {
@@ -2070,6 +2104,7 @@
                 "gamma_exact_conditional": "1",
                 "beta_exact_conditional_uniform_targets": "43/729",
                 "word_count_pair_coverage_upper": "1/6",
+                "full_truth_minus_missing_words_pair_lower": "43/729",
                 "scheduled_candidates_all_charts": "646954470"
               },
               {
@@ -2079,6 +2114,7 @@
                 "gamma_exact_conditional": "1",
                 "beta_exact_conditional_uniform_targets": "43/729",
                 "word_count_pair_coverage_upper": "1/6",
+                "full_truth_minus_missing_words_pair_lower": "43/729",
                 "scheduled_candidates_all_charts": "1062190566"
               },
               {
@@ -2088,6 +2124,7 @@
                 "gamma_exact_conditional": "1",
                 "beta_exact_conditional_uniform_targets": "43/729",
                 "word_count_pair_coverage_upper": "1/6",
+                "full_truth_minus_missing_words_pair_lower": "43/729",
                 "scheduled_candidates_all_charts": "1364180454"
               },
               {
@@ -2097,6 +2134,7 @@
                 "gamma_exact_conditional": "1",
                 "beta_exact_conditional_uniform_targets": "43/729",
                 "word_count_pair_coverage_upper": "1/6",
+                "full_truth_minus_missing_words_pair_lower": "43/729",
                 "scheduled_candidates_all_charts": "1464843750"
               }
             ]
@@ -2314,7 +2352,7 @@
           "actual_decoder_candidate_cost": 150,
           "scope": "This FIXED public single-repair decoder misses a real pair target; not a general CVP or quantum-source no-go."
         },
-        "word_analysis_wall_seconds": 0.06993562506977469,
+        "word_analysis_wall_seconds": 0.03763304103631526,
         "LLL_preparations_separately_charged": 2,
         "sampled_targets_or_planted_targets_used": false,
         "target_denominator_includes_all_empty_cosets": true
@@ -5613,6 +5651,7 @@
                 "gamma_exact_conditional": "3085/6561",
                 "beta_exact_conditional_uniform_targets": "1309/177147",
                 "word_count_pair_coverage_upper": "3085/39366",
+                "full_truth_minus_missing_words_pair_lower": "0",
                 "scheduled_candidates_all_charts": "6"
               },
               {
@@ -5622,6 +5661,7 @@
                 "gamma_exact_conditional": "6161/6561",
                 "beta_exact_conditional_uniform_targets": "2291/59049",
                 "word_count_pair_coverage_upper": "6161/39366",
+                "full_truth_minus_missing_words_pair_lower": "454/19683",
                 "scheduled_candidates_all_charts": "246"
               },
               {
@@ -5631,6 +5671,7 @@
                 "gamma_exact_conditional": "58999/59049",
                 "beta_exact_conditional_uniform_targets": "7676/177147",
                 "word_count_pair_coverage_upper": "58999/354294",
+                "full_truth_minus_missing_words_pair_lower": "7636/177147",
                 "scheduled_candidates_all_charts": "4806"
               },
               {
@@ -5640,6 +5681,7 @@
                 "gamma_exact_conditional": "1",
                 "beta_exact_conditional_uniform_targets": "854/19683",
                 "word_count_pair_coverage_upper": "1/6",
+                "full_truth_minus_missing_words_pair_lower": "854/19683",
                 "scheduled_candidates_all_charts": "59526"
               },
               {
@@ -5649,6 +5691,7 @@
                 "gamma_exact_conditional": "1",
                 "beta_exact_conditional_uniform_targets": "854/19683",
                 "word_count_pair_coverage_upper": "1/6",
+                "full_truth_minus_missing_words_pair_lower": "854/19683",
                 "scheduled_candidates_all_charts": "524646"
               },
               {
@@ -5658,6 +5701,7 @@
                 "gamma_exact_conditional": "1",
                 "beta_exact_conditional_uniform_targets": "854/19683",
                 "word_count_pair_coverage_upper": "1/6",
+                "full_truth_minus_missing_words_pair_lower": "854/19683",
                 "scheduled_candidates_all_charts": "3501414"
               },
               {
@@ -5667,6 +5711,7 @@
                 "gamma_exact_conditional": "1",
                 "beta_exact_conditional_uniform_targets": "854/19683",
                 "word_count_pair_coverage_upper": "1/6",
+                "full_truth_minus_missing_words_pair_lower": "854/19683",
                 "scheduled_candidates_all_charts": "18385254"
               },
               {
@@ -5676,6 +5721,7 @@
                 "gamma_exact_conditional": "1",
                 "beta_exact_conditional_uniform_targets": "854/19683",
                 "word_count_pair_coverage_upper": "1/6",
+                "full_truth_minus_missing_words_pair_lower": "854/19683",
                 "scheduled_candidates_all_charts": "77920614"
               },
               {
@@ -5685,6 +5731,7 @@
                 "gamma_exact_conditional": "1",
                 "beta_exact_conditional_uniform_targets": "854/19683",
                 "word_count_pair_coverage_upper": "1/6",
+                "full_truth_minus_missing_words_pair_lower": "854/19683",
                 "scheduled_candidates_all_charts": "271410534"
               },
               {
@@ -5694,6 +5741,7 @@
                 "gamma_exact_conditional": "1",
                 "beta_exact_conditional_uniform_targets": "854/19683",
                 "word_count_pair_coverage_upper": "1/6",
+                "full_truth_minus_missing_words_pair_lower": "854/19683",
                 "scheduled_candidates_all_charts": "787383654"
               },
               {
@@ -5703,6 +5751,7 @@
                 "gamma_exact_conditional": "1",
                 "beta_exact_conditional_uniform_targets": "854/19683",
                 "word_count_pair_coverage_upper": "1/6",
+                "full_truth_minus_missing_words_pair_lower": "854/19683",
                 "scheduled_candidates_all_charts": "1922524518"
               },
               {
@@ -5712,6 +5761,7 @@
                 "gamma_exact_conditional": "1",
                 "beta_exact_conditional_uniform_targets": "854/19683",
                 "word_count_pair_coverage_upper": "1/6",
+                "full_truth_minus_missing_words_pair_lower": "854/19683",
                 "scheduled_candidates_all_charts": "3986416998"
               },
               {
@@ -5721,6 +5771,7 @@
                 "gamma_exact_conditional": "1",
                 "beta_exact_conditional_uniform_targets": "854/19683",
                 "word_count_pair_coverage_upper": "1/6",
+                "full_truth_minus_missing_words_pair_lower": "854/19683",
                 "scheduled_candidates_all_charts": "7082255718"
               },
               {
@@ -5730,6 +5781,7 @@
                 "gamma_exact_conditional": "1",
                 "beta_exact_conditional_uniform_targets": "854/19683",
                 "word_count_pair_coverage_upper": "1/6",
+                "full_truth_minus_missing_words_pair_lower": "854/19683",
                 "scheduled_candidates_all_charts": "10892518758"
               },
               {
@@ -5739,6 +5791,7 @@
                 "gamma_exact_conditional": "1",
                 "beta_exact_conditional_uniform_targets": "854/19683",
                 "word_count_pair_coverage_upper": "1/6",
+                "full_truth_minus_missing_words_pair_lower": "854/19683",
                 "scheduled_candidates_all_charts": "14702781798"
               },
               {
@@ -5748,6 +5801,7 @@
                 "gamma_exact_conditional": "1",
                 "beta_exact_conditional_uniform_targets": "854/19683",
                 "word_count_pair_coverage_upper": "1/6",
+                "full_truth_minus_missing_words_pair_lower": "854/19683",
                 "scheduled_candidates_all_charts": "17750992230"
               },
               {
@@ -5757,6 +5811,7 @@
                 "gamma_exact_conditional": "1",
                 "beta_exact_conditional_uniform_targets": "854/19683",
                 "word_count_pair_coverage_upper": "1/6",
+                "full_truth_minus_missing_words_pair_lower": "854/19683",
                 "scheduled_candidates_all_charts": "19656123750"
               },
               {
@@ -5766,6 +5821,7 @@
                 "gamma_exact_conditional": "1",
                 "beta_exact_conditional_uniform_targets": "854/19683",
                 "word_count_pair_coverage_upper": "1/6",
+                "full_truth_minus_missing_words_pair_lower": "854/19683",
                 "scheduled_candidates_all_charts": "20552656230"
               },
               {
@@ -5775,6 +5831,7 @@
                 "gamma_exact_conditional": "1",
                 "beta_exact_conditional_uniform_targets": "854/19683",
                 "word_count_pair_coverage_upper": "1/6",
+                "full_truth_minus_missing_words_pair_lower": "854/19683",
                 "scheduled_candidates_all_charts": "20851500390"
               },
               {
@@ -5784,6 +5841,7 @@
                 "gamma_exact_conditional": "1",
                 "beta_exact_conditional_uniform_targets": "854/19683",
                 "word_count_pair_coverage_upper": "1/6",
+                "full_truth_minus_missing_words_pair_lower": "854/19683",
                 "scheduled_candidates_all_charts": "20914414950"
               },
               {
@@ -5793,6 +5851,7 @@
                 "gamma_exact_conditional": "1",
                 "beta_exact_conditional_uniform_targets": "854/19683",
                 "word_count_pair_coverage_upper": "1/6",
+                "full_truth_minus_missing_words_pair_lower": "854/19683",
                 "scheduled_candidates_all_charts": "20920706406"
               }
             ]
@@ -5820,6 +5879,7 @@
                 "gamma_exact_conditional": "3085/6561",
                 "beta_exact_conditional_uniform_targets": "1309/177147",
                 "word_count_pair_coverage_upper": "3085/39366",
+                "full_truth_minus_missing_words_pair_lower": "0",
                 "scheduled_candidates_all_charts": "6"
               },
               {
@@ -5829,6 +5889,7 @@
                 "gamma_exact_conditional": "6161/6561",
                 "beta_exact_conditional_uniform_targets": "2291/59049",
                 "word_count_pair_coverage_upper": "6161/39366",
+                "full_truth_minus_missing_words_pair_lower": "454/19683",
                 "scheduled_candidates_all_charts": "486"
               },
               {
@@ -5838,6 +5899,7 @@
                 "gamma_exact_conditional": "58999/59049",
                 "beta_exact_conditional_uniform_targets": "7676/177147",
                 "word_count_pair_coverage_upper": "58999/354294",
+                "full_truth_minus_missing_words_pair_lower": "7636/177147",
                 "scheduled_candidates_all_charts": "18726"
               },
               {
@@ -5847,6 +5909,7 @@
                 "gamma_exact_conditional": "1",
                 "beta_exact_conditional_uniform_targets": "854/19683",
                 "word_count_pair_coverage_upper": "1/6",
+                "full_truth_minus_missing_words_pair_lower": "854/19683",
                 "scheduled_candidates_all_charts": "456486"
               },
               {
@@ -5856,6 +5919,7 @@
                 "gamma_exact_conditional": "1",
                 "beta_exact_conditional_uniform_targets": "854/19683",
                 "word_count_pair_coverage_upper": "1/6",
+                "full_truth_minus_missing_words_pair_lower": "854/19683",
                 "scheduled_candidates_all_charts": "7898406"
               },
               {
@@ -5865,6 +5929,7 @@
                 "gamma_exact_conditional": "1",
                 "beta_exact_conditional_uniform_targets": "854/19683",
                 "word_count_pair_coverage_upper": "1/6",
+                "full_truth_minus_missing_words_pair_lower": "854/19683",
                 "scheduled_candidates_all_charts": "103154982"
               },
               {
@@ -5874,6 +5939,7 @@
                 "gamma_exact_conditional": "1",
                 "beta_exact_conditional_uniform_targets": "854/19683",
                 "word_count_pair_coverage_upper": "1/6",
+                "full_truth_minus_missing_words_pair_lower": "854/19683",
                 "scheduled_candidates_all_charts": "1055720742"
               },
               {
@@ -5883,6 +5949,7 @@
                 "gamma_exact_conditional": "1",
                 "beta_exact_conditional_uniform_targets": "854/19683",
                 "word_count_pair_coverage_upper": "1/6",
+                "full_truth_minus_missing_words_pair_lower": "854/19683",
                 "scheduled_candidates_all_charts": "8676246822"
               },
               {
@@ -5892,6 +5959,7 @@
                 "gamma_exact_conditional": "1",
                 "beta_exact_conditional_uniform_targets": "854/19683",
                 "word_count_pair_coverage_upper": "1/6",
+                "full_truth_minus_missing_words_pair_lower": "854/19683",
                 "scheduled_candidates_all_charts": "58209666342"
               },
               {
@@ -5901,6 +5969,7 @@
                 "gamma_exact_conditional": "1",
                 "beta_exact_conditional_uniform_targets": "854/19683",
                 "word_count_pair_coverage_upper": "1/6",
+                "full_truth_minus_missing_words_pair_lower": "854/19683",
                 "scheduled_candidates_all_charts": "322387903782"
               },
               {
@@ -5910,6 +5979,7 @@
                 "gamma_exact_conditional": "1",
                 "beta_exact_conditional_uniform_targets": "854/19683",
                 "word_count_pair_coverage_upper": "1/6",
+                "full_truth_minus_missing_words_pair_lower": "854/19683",
                 "scheduled_candidates_all_charts": "1484772148518"
               },
               {
@@ -5919,6 +5989,7 @@
                 "gamma_exact_conditional": "1",
                 "beta_exact_conditional_uniform_targets": "854/19683",
                 "word_count_pair_coverage_upper": "1/6",
+                "full_truth_minus_missing_words_pair_lower": "854/19683",
                 "scheduled_candidates_all_charts": "5711623947558"
               },
               {
@@ -5928,6 +5999,7 @@
                 "gamma_exact_conditional": "1",
                 "beta_exact_conditional_uniform_targets": "854/19683",
                 "word_count_pair_coverage_upper": "1/6",
+                "full_truth_minus_missing_words_pair_lower": "854/19683",
                 "scheduled_candidates_all_charts": "18392179344678"
               },
               {
@@ -5937,6 +6009,7 @@
                 "gamma_exact_conditional": "1",
                 "beta_exact_conditional_uniform_targets": "854/19683",
                 "word_count_pair_coverage_upper": "1/6",
+                "full_truth_minus_missing_words_pair_lower": "854/19683",
                 "scheduled_candidates_all_charts": "49605854168358"
               },
               {
@@ -5946,6 +6019,7 @@
                 "gamma_exact_conditional": "1",
                 "beta_exact_conditional_uniform_targets": "854/19683",
                 "word_count_pair_coverage_upper": "1/6",
+                "full_truth_minus_missing_words_pair_lower": "854/19683",
                 "scheduled_candidates_all_charts": "112033203815718"
               },
               {
@@ -5955,6 +6029,7 @@
                 "gamma_exact_conditional": "1",
                 "beta_exact_conditional_uniform_targets": "854/19683",
                 "word_count_pair_coverage_upper": "1/6",
+                "full_truth_minus_missing_words_pair_lower": "854/19683",
                 "scheduled_candidates_all_charts": "211916963251494"
               },
               {
@@ -5964,6 +6039,7 @@
                 "gamma_exact_conditional": "1",
                 "beta_exact_conditional_uniform_targets": "854/19683",
                 "word_count_pair_coverage_upper": "1/6",
+                "full_truth_minus_missing_words_pair_lower": "854/19683",
                 "scheduled_candidates_all_charts": "336771662546214"
               },
               {
@@ -5973,6 +6049,7 @@
                 "gamma_exact_conditional": "1",
                 "beta_exact_conditional_uniform_targets": "854/19683",
                 "word_count_pair_coverage_upper": "1/6",
+                "full_truth_minus_missing_words_pair_lower": "854/19683",
                 "scheduled_candidates_all_charts": "454281967764774"
               },
               {
@@ -5982,6 +6059,7 @@
                 "gamma_exact_conditional": "1",
                 "beta_exact_conditional_uniform_targets": "854/19683",
                 "word_count_pair_coverage_upper": "1/6",
+                "full_truth_minus_missing_words_pair_lower": "854/19683",
                 "scheduled_candidates_all_charts": "532622171243814"
               },
               {
@@ -5991,6 +6069,7 @@
                 "gamma_exact_conditional": "1",
                 "beta_exact_conditional_uniform_targets": "854/19683",
                 "word_count_pair_coverage_upper": "1/6",
+                "full_truth_minus_missing_words_pair_lower": "854/19683",
                 "scheduled_candidates_all_charts": "565607520077094"
               },
               {
@@ -6000,6 +6079,7 @@
                 "gamma_exact_conditional": "1",
                 "beta_exact_conditional_uniform_targets": "854/19683",
                 "word_count_pair_coverage_upper": "1/6",
+                "full_truth_minus_missing_words_pair_lower": "854/19683",
                 "scheduled_candidates_all_charts": "572204589843750"
               }
             ]
@@ -6325,7 +6405,7 @@
           "actual_decoder_candidate_cost": 246,
           "scope": "This FIXED public single-repair decoder misses a real pair target; not a general CVP or quantum-source no-go."
         },
-        "word_analysis_wall_seconds": 10.910600290982984,
+        "word_analysis_wall_seconds": 6.514739999896847,
         "LLL_preparations_separately_charged": 2,
         "sampled_targets_or_planted_targets_used": false,
         "target_denominator_includes_all_empty_cosets": true

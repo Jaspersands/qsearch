@@ -1,0 +1,31 @@
+{
+  "hypothesis_id": "HYP-NATIVE-COLLECTIVE-CHARACTER-FEEDFORWARD-RECEIVER",
+  "status": "CONCRETE_CHARACTER_RECEIVER_COSTED_NEGATIVE_REVIEW_PENDING",
+  "note": "research/TERNARY_COLLECTIVE_CHARACTER_RECEIVER.md",
+  "report": "research/phase_workbench/ternary_collective_character_receiver.json",
+  "depends_on": ["HYP-NATIVE-DEPTH-INDEPENDENT-RIDGE-CANCELLATION"],
+  "candidate_record_accepted": false,
+  "proof_obligations": {
+    "PO-INSTRUMENT": "Reversible public frequency evaluation, word Fourier erasure and group Fourier readout use each unknown input once. Charge every measurement branch and retained root.",
+    "PO-NORMALIZATION": "The zero erasure branch has joint correct probability exactly1/q^n, regardless of batch density. Its conditional correctness must not replace correct yield; reciprocal yield is not a correctness flag.",
+    "PO-FEEDFORWARD": "Rescue only characters with chi_q(delta.F)=chi_3(t.x) for every word. The elementary correction image has rank at most n, so direct correct yield is at most3^(-n*(r-1)).",
+    "PO-COMPLETENESS": "Local mod3 frequency span certifies full ring span. Only then are all corrections order-three secrets and the quadratic nullspace complete. Deficient span must retain incomplete status.",
+    "PO-INFORMATION": "The source two-point law implies mean ideal PGM failure <=(q^n-1)/3^(dB). This is an information-theoretic ensemble bound, not an efficient measurement or a fixed-instance certificate.",
+    "PO-ALL-RECORDS": "All outcome likelihoods factor into local Fourier probabilities at one shared shifted secret. Keeping every record is not ruled out by exact-character yield. Current classical MAP enumerates q^n secrets and joint outcomes.",
+    "PO-ERROR": "IID source supply and channel errors remain external. Neither deterministic ancestry IDs nor arithmetic controls certify physical independence or error accumulation.",
+    "PO-SCOPE": "Do not claim impossibility of noncharacter, approximate, outcome-adaptive or source-aware collective transforms, or of classical statistical decoding from all records. No novelty or speedup is claimed."
+  },
+  "falsifiable_experiments": [
+    "An alleged exact character has a nonzero modular residual at any native word.",
+    "Actual word-erasure and group-Fourier amplitudes violate the exact joint-yield formula.",
+    "A complete correction image disagrees with exhaustive full-ring search at bounded controls.",
+    "All-record likelihood witnesses disagree with the actual instrument or exceed optimal PGM success.",
+    "Conditional success, source-state inverse, refreshed higher secret or omitted original ancestry is treated as free."
+  ],
+  "exact_character_receiver_implemented": true,
+  "efficient_all_record_likelihood_optimizer_supplied": false,
+  "general_collective_receiver_ruled_out": false,
+  "quantum_speedup_proved": false,
+  "novelty_claim": false,
+  "routine_wiring_owner": "Gemini or Antigravity"
+}

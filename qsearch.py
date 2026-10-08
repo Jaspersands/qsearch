@@ -20215,6 +20215,56 @@ def command_ternary_covariant_noise(args: argparse.Namespace) -> int:
     return 0 if validation["valid"] else 1
 
 
+def command_parity_block_usd_prange(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    from theorems.parity_block_usd_prange import REPORT, write_report
+    write_report(write_registry=not args.no_registry)
+    validation = validate_registry()
+    print("parity_block_usd_prange complete")
+    print(f"Artifact: {REPORT}")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_linear_erasure_prange_duality(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    from theorems.linear_erasure_prange_duality import REPORT, write_report
+    write_report(write_registry=not args.no_registry)
+    validation = validate_registry()
+    print("linear_erasure_prange_duality complete")
+    print(f"Artifact: {REPORT}")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_native_recovery_capacity(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    from theorems.native_recovery_capacity import REPORT, build_report
+    from ternary_measured_lattice_decoder import exact_json
+    report = build_report()
+    REPORT.parent.mkdir(parents=True, exist_ok=True)
+    REPORT.write_text(json.dumps(exact_json(report), indent=2) + "\n")
+    validation = validate_registry()
+    print("native_recovery_capacity complete")
+    print(f"Artifact: {REPORT}")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_native_gaussian_bank_robustness(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    from theorems.native_gaussian_bank_robustness import REPORT, build_report
+    from ternary_measured_lattice_decoder import exact_json
+    report = build_report()
+    REPORT.parent.mkdir(parents=True, exist_ok=True)
+    REPORT.write_text(json.dumps(exact_json(report), indent=2) + "\n")
+    validation = validate_registry()
+    print("native_gaussian_bank_robustness complete")
+    print(f"Artifact: {REPORT}")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--root", type=Path, default=Path.cwd())
@@ -27817,6 +27867,34 @@ def build_parser() -> argparse.ArgumentParser:
     )
     ternary_covariant_noise.add_argument("--no-registry", action="store_true")
     ternary_covariant_noise.set_defaults(func=command_ternary_covariant_noise)
+
+    parity_block_usd_prange = subparsers.add_parser(
+        "parity-block-usd-prange",
+        help="Run constructive parity block USD and matched classical block-Prange sampler audit.",
+    )
+    parity_block_usd_prange.add_argument("--no-registry", action="store_true")
+    parity_block_usd_prange.set_defaults(func=command_parity_block_usd_prange)
+
+    linear_erasure_prange_duality = subparsers.add_parser(
+        "linear-erasure-prange-duality",
+        help="Run positive affine-subspace instrument duality and matched affine Gibbs sampler audit.",
+    )
+    linear_erasure_prange_duality.add_argument("--no-registry", action="store_true")
+    linear_erasure_prange_duality.set_defaults(func=command_linear_erasure_prange_duality)
+
+    native_recovery_capacity = subparsers.add_parser(
+        "native-recovery-capacity",
+        help="Run full-recovery capacity gates for native copies and fixed-bank phase queries.",
+    )
+    native_recovery_capacity.add_argument("--no-registry", action="store_true")
+    native_recovery_capacity.set_defaults(func=command_native_recovery_capacity)
+
+    native_gaussian_bank_robustness = subparsers.add_parser(
+        "native-gaussian-bank-robustness",
+        help="Run Gaussian-tail refinement of the fixed-bank coherent phase error ledger.",
+    )
+    native_gaussian_bank_robustness.add_argument("--no-registry", action="store_true")
+    native_gaussian_bank_robustness.set_defaults(func=command_native_gaussian_bank_robustness)
 
     validate = subparsers.add_parser("validate", help="Validate candidates and experiments against proof obligations.")
     validate.set_defaults(func=command_validate)

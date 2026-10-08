@@ -1,0 +1,29 @@
+{
+  "id": "REDUCTION-NATIVE-COVARIANT-NEAR-EXACT-CVP",
+  "status": "CONDITIONAL_SOURCE_SPECIFIC_REDUCTION_REVIEW_PENDING",
+  "input": "M=2048*(2*n*r+kappa+1) original IID native qutrit readouts at q=3^r",
+  "primary_result": "A norm-9/8 Euclidean CVP approximation on the explicit full code lattice recovers the shared secret except probability2^-kappa; alternative approximation/copy tradeoffs are charged",
+  "evidence": "research/reductions/ternary_native_cvp_reduction.json",
+  "independent_checker": "research/certificates/ternary_native_cvp_reduction_crosscheck.js",
+  "literature": ["https://arxiv.org/abs/1710.08223"],
+  "proof_obligations": [
+    "Full-label shifts kill all nonzero noise modes for every nonzero, even nonprimitive, secret difference",
+    "Finite odd-root Dirichlet second derivative gives the exact true Euclidean mean",
+    "Independent original PAIRS and the all-secret union bound retain raw source cost",
+    "Ordinary Euclidean code lattice equals the complete modular code",
+    "Norm versus squared approximation factor and public radius threshold are exact",
+    "Rank failures, joint source error, solver errors and acquisition debts remain visible",
+    "An efficient near-exact CVP solver for this specific random-code family must still be constructed"
+  ],
+  "falsifiers": [
+    "A nonprimitive difference retains a nonzero wrong-residual Fourier mode",
+    "The direct native second moment contradicts the analytic formula",
+    "Conditional/chosen labels are mistaken for the original IID source law",
+    "A small below-budget calibration is assigned the population confidence guarantee",
+    "LLL/Babai is declared to meet9/8 approximation without proof"
+  ],
+  "near_exact_CVP_solver_supplied": false,
+  "original_quantum_source_classically_simulated": false,
+  "accepted_speedup_candidate": false,
+  "routine_integration_owner": "Gemini or Antigravity"
+}

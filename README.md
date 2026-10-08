@@ -30,6 +30,360 @@ The central question driving Q-Search is: **Can genuine polynomial or super-poly
 
 ### Current Research Decision
 
+**The missing result is an efficient receiver, not more infrastructure.**
+
+The [collective-decoder audit](research/LINEAR_ERASURE_PRANGE_DUALITY.md)
+now constructs partial four-message parity decoding, but also derives its
+matched classical affine-mixture sampler. Their reconstruction/equation
+matrices are transposes; exact duals certify optimality only within this
+instrument family. Negative overlaps do not escape the affine counterpart.
+The preceding [triple-block audit](research/PARITY_BLOCK_USD_PRANGE.md)
+also falsifies unqualified coherent-prior and fixed-sign sampling claims.
+These review-pending results eliminate false advantage signals, not establish
+a new speedup. A useful next receiver must beat more than product decoding
+or independent-clause Prange, with its actual coherent input and partition
+normalization accounted for.
+
+The latest [full-recovery capacity audit](research/NATIVE_RECOVERY_CAPACITY.md)
+corrects the noisy-input examples: small approximation loss does not establish
+recovery feasibility. Two copy profiles lack enough Hilbert-space dimension;
+the original indexed profile cannot yield a nontrivial full-recovery guarantee
+with its generic noise ledger at any weighted exposure. Larger-bank and
+lower-noise controls are not excluded. These scoped, review-pending bounds
+neither solve nor rule out general quantum LWE algorithms.
+The subsequent [Gaussian-tail refinement](research/NATIVE_GAUSSIAN_BANK_ROBUSTNESS.md)
+reopens the original indexed parameters: at the necessary capacity threshold,
+its sharper noise loss is about0.143 rather than1. This uses an explicit
+Gaussian source premise, falsified by a matching-moment heavy-tail control.
+It remains a conditional error budget, not a constructed recovery algorithm.
+Its scaling audit also rejects linear-size banks at exponential modulus and
+polynomial phase exposure. The revised asymptotic target uses a quadratic-size
+bank with polynomial exposure; clearing these necessary budgets does not prove
+frequency coverage or efficient decoding.
+
+A separate [cyclic-centre StateHSP receiver](research/CYCLIC_CENTRE_STATE_HSP_RECEIVER.md)
+now specifies a costed constructive algorithm for odd-prime bilinear
+extensions: paid sector copies, approximate commuting-overgroup extraction
+and original-state phase recovery. Exact independent controls pass, but the
+derivation needs external review. This is not a native DHSP receiver, a
+general central-extension solver or a new classical-problem speedup.
+
+The [vector-centre extension](research/VECTOR_CENTRE_STATE_HSP_TARGET.md)
+uses bounded-memory zero-sum blocks of heterogeneous sectors, rather than
+waiting for repeated labels. It recovers the full subgroup through a central
+quotient on the original state's support. Exact independent instruments,
+cost ledgers and source-specific basis-readout baselines are implemented;
+the latter prevent an advantage claim from the calibration sources. General
+nilpotency, a native full-depth receiver and external theorem review remain
+open. The producer is `theorems/vector_centre_state_hsp_receiver.py --write`.
+The [native source bridge](research/NATIVE_STATE_HSP_BRIDGE.md) now verifies
+that ideal cyclotomic samples supply a copy-only StateHSP instance and retain
+gap one under central descent. Naive descent still has growing-depth copy
+and register costs; that is the next mathematical bottleneck.
+
+The [native orbit-source audit](research/NATIVE_ORBIT_SOURCE_ACCESS.md)
+now gives a one-copy conversion to ordinary coset mixed states. Its known
+relative inverse does not supply fixed-purification reflection: whole
+Fourier-label filters cannot be amplified with it. A noncentral countercontrol
+does amplify but simply returns the original seed. Neither result solves
+growing-depth recovery or establishes a new speedup.
+
+The [noncentral-filter audit](research/NATIVE_NONCENTRAL_FILTER_TRADEOFF.md)
+adds exact source-weighted amplification bounds and a critical counterexample:
+the exponential low-rank cut does not apply to observed-label-dependent
+filters. A cheap label-adaptive filter has constant success at growing roots,
+but merely relocates the original qutrit. Direct stabilizer measurements are
+the matched baseline for fixed-generator verification, not a classical solver.
+
+The [word-orbit channel audit](research/NATIVE_DIAGONAL_ORBIT_CHANNEL.md)
+goes beyond that rank cut: synchronized group readouts that never interfere
+distinct original word orbits can be simulated with one native qutrit while
+preserving all public labels. More copies do not rescue this restricted
+receiver. Seed mixing escapes the cut and remains a legitimate research
+direction; the result is not classical dequantization or general impossibility.
+
+The [partial phase echo](research/NATIVE_PARTIAL_PHASE_ECHO.md) is a concrete
+cross-orbit measurement with cleared scratch and a costed output law. All72
+tested non-product records lose to their own matched LOCC baselines, including
+for least-trit inference. A [scoped shifted-probe bound](research/NATIVE_ECHO_SHIFTED_PROBE_GATE.md)
+obstructs small fixed-menu echoes near the information threshold; an exact
+inverse-label counterexample prevents extending it to arbitrary adaptive
+couplings. These are review-pending negative results, not an efficient decoder.
+
+The [multi-round echo workbench](research/NATIVE_ECHO_HISTORY_RECEIVER.md)
+now tests an actual escape from that one-echo cut. Its mediator-history
+contraction charges width times depth; all96 non-product controls lose to
+their own same-copy LOCC baselines. Conditional tensor simulation does not
+solve unknown-secret inference or constitute classical dequantization.
+
+The [one-use packet-line compiler](research/TERNARY_PACKET_LINE_RECEIVER.md)
+shows that a known-line Bell readout, even with high-label-informed directions,
+is exactly an ordinary packet restriction plus public randomness. It preserves
+curved states and external references. Rare exact-affine admission is not an
+information lower bound: non-affine lines still produce the existing noisy
+field-readout family. A new receiver must do more than repackage that projection.
+
+The [collective label-access gate](research/NATIVE_LABEL_ACCESS_GATE.md)
+bounds even weak-trit inference for arbitrary collective measurements whose
+quantum control reads only a label prefix, while allowing full-label classical
+decoding. It is a review-pending sample/access tradeoff, not an exclusion of
+all polynomial-copy receivers. Full-label operations remain outside its scope.
+
+The [native character SDP decoder](research/TERNARY_CHARACTER_SDP_DECODER.md)
+now tests computational recovery from lawful quantum-produced classical
+records: complete moment constraints, secret-blind rounding, classical
+multi-start baselines and fresh verification. Numerical feasibility, small
+secret spaces and capped references do not establish scalable recovery.
+
+The [full-root lattice baseline](research/TERNARY_MEASURED_LATTICE_DECODER.md)
+recovers 3 of 12 fixed controls and fails all larger-root controls on fresh
+data. A separate [native CVP reduction](research/TERNARY_NATIVE_CVP_REDUCTION.md)
+derives recovery conditional on a norm9/8 approximate closest-vector solver
+and a charged polynomial copy surplus. That solver is NOT implemented;
+neither bounded failure nor the conditional reduction is a speedup claim.
+
+The [full-record follow-up](research/TERNARY_FULL_RECORD_CVP.md) uses ALL
+training records rather than small lattice subsets. It recovers only the two
+small-root controls out of eight and gives five exact finite counterexamples
+to this optimizer's9/8 approximation guarantee. All six larger-root controls
+fail independent validation.
+
+An [exact quotient compiler](research/TERNARY_QUOTIENT_CVP.md) then eliminates
+mutually orthogonal code-zero directions while retaining their essential
+periodic cost. The largest represented input has1024 dimensions but only59
+remaining integer choices. A bounded search improves five training fits,
+yet still fails all larger-root validation and retains four exact factor
+counterexamples. This is a coordinate-level optimization: a systematic basis
+already has just n=8 choices for this input, with the original q^n periodic
+search intact. The59-coordinate count is not an intrinsic dimension reduction.
+A [complete radius-search certifier](research/TERNARY_QUOTIENT_CVP_CERTIFIER.md)
+proves the finite optimum for one small-root control; seven controls remain
+explicitly UNKNOWN at the4096-extension cap. No scalable solver, search-cost
+bound, inherited validation for changed outputs, or speedup follows.
+
+The [noise-degradation source reduction](research/TERNARY_NOISE_DEGRADATION.md)
+now transforms noisy linear CLASSICAL samples into approximate native measured
+transcripts, with exact rejection decisions, source-rounding guards and all
+TV/abort costs charged. It checks general-modulus search-LWE source theorem
+parameters without importing a prime-only result. No decoder, unconditional
+hardness claim or unknown quantum input is supplied by that classical subsystem.
+A separate [direct noisy-phase input bridge](research/NATIVE_NOISY_PHASE_INPUT.md)
+now supplies secret-blind, copy-only native qutrit GATE RECIPES from independent
+noisy values, with averaged-state trace loss<=20V/q^2 per input. Its exact
+even-level label compiler works beyond the old level512 cap. Shared-error
+copy reuse fails an exact countercontrol; preparation and source-rounding
+losses are charged. Hardware synthesis, an efficient growing-root receiver,
+external composition/novelty review and any speedup remain open.
+The [original-data baseline](research/NATIVE_PHASE_SOURCE_DOMINANCE.md) supplies
+an exact discrimination dual: no prepared-state receiver gains information
+over the original noisy classical records. This is NOT efficient classical
+dequantization. Any computational advantage must beat matched original-data
+attacks, not merely a weaker native readout. Sample count and noise quality
+must also survive one joint error ledger.
+An [indexed-access extension](research/NATIVE_NOISY_INDEXED_ACCESS.md) conditionally
+supports approximate coherent phase queries and inverses on a FIXED original
+bank. This is stronger than copy-only access, but it charges every phase power,
+keeps errors fixed on reuse, and grants neither new labels nor an exact ideal
+inverse. A polynomial-exposure receiver exploiting this interface is still
+missing; encoding or source access alone is not the algorithm.
+
+The SDP decoder's [exact finite gap certificates](research/TERNARY_CHARACTER_SDP_GAP_CERTIFICATE.md)
+now prove that two higher-dimensional cohorts admit feasible pseudo-moments
+scoring above EVERY genuine character. This refutes universal tightness of
+that specific relaxation, not other sample regimes or the original problem.
+
+The [complete cyclic positivity repair](research/TERNARY_CHARACTER_CYCLIC_DECODER.md)
+rejects those old witnesses but still admits NEW exact finite gaps: both
+harder cohorts satisfy every represented cyclic law without recovering the
+secret. The [joint-plane audit](research/TERNARY_CHARACTER_JOINT_PLANE.md)
+identifies three exact negative nine-sector joint probabilities in these
+survivors. Exact uniform mixing then satisfies ALL these joint cuts while
+preserving gaps above every genuine secret. Neither separate cyclic nor
+these joint-plane marginals enforce global realizability. No scalable
+receiver or speedup follows, and another solver run is not needed to expose
+this finite limitation.
+
+Imported breakthrough claims also need mathematical admission. The
+[module-to-ideal literature audit](research/MODULE_IDEAL_METRIC_AUDIT.md)
+records exact counterexamples to a claimed attack's stated base case and
+tests missing metric/affine-decoding bridges. Engineered counterexamples are
+not random-source hardness or cryptographic security guarantees.
+
+The [depth-independent ridge factory](research/TERNARY_RIDGE_CANCELLATION.md)
+now lowers phase degree while retaining the larger root, with explicit original
+source costs. The [collective character receiver](research/TERNARY_COLLECTIVE_CHARACTER_RECEIVER.md)
+tests a concrete readout rather than treating that degree drop as an algorithm.
+Its exact feedforward has an exponential correct-yield ceiling. Keeping every
+measurement outcome avoids that postselection claim, but the current likelihood
+decoder still enumerates all secrets. Source-aware inference or a genuinely
+different collective transform is the unresolved target; no speedup is claimed.
+The [source-aware Fourier information bound](research/TERNARY_FOURIER_INFORMATION.md)
+also shows that certified wider outputs yield about one bit each under this
+fixed local measurement, not one trit per retained coordinate. Classical
+inference must therefore charge the larger sample requirement.
+
+The [character synchronization audit](research/TERNARY_CHARACTER_SYNCHRONIZATION.md)
+distinguishes perfect phase fit from a valid shared secret. The
+[observable moment audit](research/TERNARY_OBSERVABLE_MOMENT_LIFT.md) finds exact
+higher-rank counterfeits even with full sparse translation consistency on the
+actual native sources. An observable-basis circuit repairs a specific weighted
+diagnostic at every rank, with a rational numerical-residual budget; native
+noisy recovery remains unproved. The
+[exact flat certificate](research/TERNARY_FLAT_CHARACTER_CERTIFICATE.md) now
+verifies a supplied completion and extracts genuine secrets without a full
+secret-grid search; finding the completion from noisy records is still open.
+The [translation-stability audit](research/TERNARY_TRANSLATION_STABILITY.md)
+retains both an obstruction to naive approximate rounding and a conditional
+finite-order pair repair. Noisy recovery and a quantum speedup remain unproved;
+no algorithm candidate is accepted.
+
+The [sequential spectral extractor](research/TERNARY_SEQUENTIAL_SPECTRAL_EXTRACTION.md)
+now gives conditional polynomial-disturbance moment rounding without global
+commuting-matrix repair. Exact independent replay checks all live sampling
+paths; its known-support controls remain limited to supplied matrices, not
+learned native models. The [native spectral access audit](research/TERNARY_NATIVE_SPECTRAL_ACCESS.md)
+then closes one tempting shortcut: diagonal encoding-commuting readout is
+uninformative, and accurate fixed-character nondemolition generators are
+obstructed on the underfull source. Extra copies remove that existence
+obstruction but do not compile normalized fiber transport. Other collective
+receivers and source-aware classical learners remain open; no speedup is claimed.
+
+The [costed block walk](research/TERNARY_NATIVE_BLOCK_WALK.md) now tests an
+actual conditional sampler: cheap small-support full-fiber moves freeze,
+including an extensive-distance obstruction in the near-entropy regime.
+Allowing temporary violations through
+[soft fiber cooling](research/TERNARY_SOFT_FIBER_COOLING.md) repairs that
+connectivity issue but not preparation: its binary-energy local parent has
+an exponentially small population success ceiling at polynomial action.
+This bound follows actual state transfer, not just a small gap. The separate
+[residual-energy test](research/TERNARY_RESIDUAL_FIBER_COOLING.md) also blocks
+cold local-parent evolution from a granted warm Gibbs state. Its hot-stage
+dynamics, global operations and other receivers remain open, not ruled out.
+
+The [hot phase/mixer test](research/TERNARY_HOT_PHASE_MIXER.md) now executes
+one- and two-layer native circuits with matched rejection/Grover baselines.
+A one-layer population bound survives public continuous angle tuning.
+Five-word ternary torsion gives a concrete higher-order correlation beyond
+that bound. The [complete two-layer weighted path law](research/TERNARY_TWO_LAYER_PATH_TRANSFER.md)
+now retains all signed interference through137 integer-lattice states,
+without enumerating the original word cube. Independent exact replay agrees.
+The tested growing menus give essentially rejection-baseline performance;
+structural bounds exclude the quarter-turn template and continuous angles
+in the stated near-entropy regime. The
+[exact continuous-loop certificate](research/TERNARY_CONTINUOUS_LOOP_CERTIFICATE.md)
+removes that continuous bound's larger-batch slack and also covers fixed
+coordinate-dependent mixer angles and arbitrary fixed residual phases.
+Public label-trained function families are not covered. Different collective operations remain
+open. No efficient receiver or speedup is supplied.
+
+The native least-trit route still lacks a polynomial-time weak learner.
+Classical two-witness searches fail to scale in the tested regimes; exact
+[prefix and moment audits](research/TERNARY_PREFIX_MOMENTS.md) expose false
+fractional solutions rather than construct larger-root witnesses.
+
+The [proper-marginal proof control](research/NATIVE_PROPER_MARGINAL_GAP_DERIVATION.md)
+now shows that pair PSD plus consistent distributions on EVERY proper subset
+need not imply a global native solution. This is a representation warning,
+not random-source hardness or a quantum lower bound.
+
+The [native full-label coherent-edge receiver](research/TERNARY_COHERENT_EDGE_RECEIVER.md)
+bypasses classical witness finding and gives a review-pending constant
+population trit advantage with polynomial workspace. Its explicitly charged
+generic search time is still exponential. Independent arithmetic and finite
+unitary controls pass, including negative fixed-time and dirty-scratch
+falsifiers. The next target is a structure-aware collective measurement that
+removes that cost, not another finite pruning benchmark. No speedup is claimed.
+
+The [native prefix Schmidt audit](research/TERNARY_PREFIX_SCHMIDT.md) additionally
+shows why small final fibers do not justify cheap multiscale MPS simulation:
+faithful middle-scale states require exponentially growing mean bond cost
+under the stated source law and fixed cut. This is not quantum hardness;
+implicit or observable-specific transforms remain open.
+
+The [product-trine baseline](research/TERNARY_PRODUCT_TRINE.md) supplies an
+ancilla-free randomized realization of the existing covariant measurement
+and exact joint decoding for fixed Fourier records. A source-valid control
+shows informative joint outcomes despite uniform individual marginals, but
+the IID copy bound makes this fixed readout exponentially weak at M=nr-2.
+Neither the simpler measurement nor the exponential reference decoder is a
+new speedup; label-sensitive or collective receivers remain the target.
+
+The [label-independent product POVM extension](research/TERNARY_BLIND_PRODUCT_GATE.md)
+extends that copy-density obstruction to arbitrary fixed product measurements,
+including their opposite-secret correlations. Label-aware local bases,
+outcome-adaptive policies and polynomial sample surplus remain open.
+
+The [source/resource audit](research/NATIVE_SOURCE_PRIORITY_AUDIT.md) separates
+known DCP-to-native conversion from ungranted source supply. The target is
+polynomial time AND polynomial copies, compared against published sieves on
+both axes; current constructions neither meet that target nor establish an
+LWE attack.
+
+The [phase-feedback compiler](research/TERNARY_PHASE_FEEDBACK.md) checks that
+public diagonal feedback before full covariant readout adds no information:
+the same raw records reproduce its causal transcript. Fixed-trine readout
+has a separately charged q^2/3 resampling cost, with explicit shortages and
+limitations on batch-dependent policies. Original quantum inputs are not
+classically simulated by either statement.
+
+The [initial polynomial-phase compiler](research/TERNARY_SYNDROME_PHASE_COMPILER.md)
+removes integer polynomial chirps of the complete frequency sum at r>=2
+without changing uniform-secret mean success. It uses one measured derivative
+trit and clean scratch, not a frequency-fiber inverse. Partial-block and
+top-digit phases remain outside this particular equivalence; no efficient
+receiver or pointwise secret guarantee is supplied.
+
+The [single-layer Fourier gate](research/TERNARY_SINGLE_LAYER_FOURIER_GATE.md)
+separately bounds ANY initial full-label-dependent collective diagonal phase
+followed by fixed word Fourier readout. Exact native offset moments make its
+mean trit signal exponentially weak at M=nr-2, including partial-block and
+top-digit chirps. Label-independent word permutations and label-dependent
+affine maps do not remove this obstruction. Noncommuting layers, label-aware
+nonlinear maps and larger costed batches remain open, not established solutions.
+
+The [batch-fiber route](research/TERNARY_BATCH_FIBER_COMPILER.md) gives a
+conditional polynomial-supply architecture when q=poly(n), but its complete
+reference transformation is exponential. Exact worst-case lexicographic
+ranking has a model-counting reduction. A [clean affine alternative](research/TERNARY_AFFINE_LINE_EXTRACTOR.md)
+has a typical coverage obstruction, even for polynomial label-chosen direction
+menus. The revised target is a [costed nonlinear three-cycle action](research/TERNARY_NONLINEAR_CYCLE_COMPILER.md):
+canonicalize three orbit words and erase the original index without global
+ranking. At full depth, efficient evaluation AND adequate native coverage are
+still missing. The [known shallow kernel action](research/TERNARY_SHALLOW_KERNEL_CYCLE.md)
+already has a polynomial word algorithm and acceptance1; reusing its old
+cycles at a prefix larger by J loses the exact mean survival factor J^(-2*n).
+All three derivations are review-pending; no speedup is established.
+
+The [correlated-packet acquisition](research/TERNARY_CORRELATED_PACKET_ACQUISITION.md)
+now charges the original samples needed by the growing-depth carry track.
+At K=2n it retains at least n joint logical registers from 2n*(n+1)^2 original
+inputs after one root lowering. These are NOT independent native samples;
+an efficient joint decoder and a useful full-depth transition remain missing.
+The [packet Pauli audit](research/TERNARY_PACKET_PAULI_GATE.md) derives an exact
+restricted-rank signal law and obstructs low-defined polynomial probe menus
+in the constant-rate source regime. High-informed implicit observables and
+collective decoding remain open; this is not a general receiver lower bound.
+
+The [one-use quadratic-program receiver](research/TERNARY_QUADRATIC_PROGRAM_RECEIVER.md)
+now extracts exact secret equations from suitable quadratic phase programs
+without identical copies or an unknown inverse. Native calibration instruments
+pass, but their engineered source geometry is not a scalable IID factory.
+The [unmatched native cubic factory](research/TERNARY_CUBIC_PROGRAM_FACTORY.md)
+now combines different supplied programs with signed one-use injections.
+It cancels their cubic tops for all outcomes and has a locally derived uniform
+equation-label law under an explicit IID original-input premise. Matching
+copies are unnecessary at field root. Worst-case input cost is about n^15
+per equation; known fixed-root sieves are already polynomial. Growing-depth
+costs, upstream sample supply and independent mathematical review remain open.
+
+The [compact growing-depth phase verifier](research/TERNARY_NATIVE_PHASE_IDENTITY.md)
+now merges native programs at their actual roots without expanding high-degree
+tensors. Exact valuation certificates and soundness-accounted random tests
+distinguish true degree drops from false quadratic transfers. Root9/27 controls
+already give exact quadratic counterexamples; a useful full-depth decoder
+remains missing. The next target is
+[depth-independent ridge cancellation](research/NATIVE_RIDGE_CANCELLATION_TARGET.md).
+
 The [DCP pairing-program audit](research/DCP_PAIRING_PROGRAMS.md) now supplies
 explicit conditional parity readouts, clean-workspace controls and an exact
 coverage/noise tradeoff. Run `python qsearch.py dcp-coherent-matching`.

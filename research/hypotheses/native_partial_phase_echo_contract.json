@@ -1,0 +1,33 @@
+{
+  "id": "HYP-NATIVE-PARTIAL-PHASE-ECHO",
+  "status": "constructive_measurement_negative_controls_review_pending",
+  "derivation": "research/NATIVE_PARTIAL_PHASE_ECHO.md",
+  "implementation": "theorems/native_partial_phase_echo.py",
+  "artifact": "research/phase_workbench/native_partial_phase_echo.json",
+  "independent_checker": "research/certificates/native_partial_phase_echo_crosscheck.js",
+  "mechanism": "Public partial-frequency bilinear chirp, A Fourier, undo chirp on updated A word, B Fourier with all frequency scratch erased.",
+  "source": "Original even-native IID independent full frequency pairs; one M-copy batch, integer secret in Z_(3^r)^n.",
+  "negative_evidence": "All 12 finite cohorts lose to best tested product and same-copy single-copy-gate LOCC baselines. This is conditional numerical evidence, not population dominance.",
+  "literature_links": ["https://arxiv.org/abs/quant-ph/0504083", "https://arxiv.org/html/2609.34996v1"],
+  "proof_obligations": [
+    "Review the complete original-source amplitude law and reversible scratch schedule.",
+    "Compile public arithmetic and phase precision, including finite-source error accumulation.",
+    "Supply an informative polynomial-time unknown-secret decoder; fast likelihood does not solve secret search.",
+    "Compare to same-copy committed product and randomized LOCC policies without reference-driven selection.",
+    "Charge source failures, all quantum copies, all decoding and policy-search costs.",
+    "Do not use A-independent Gram cuts for arbitrary full-A-calibrated coupling values.",
+    "Establish novelty externally before claiming a new measurement or algorithm."
+  ],
+  "falsifiers": [
+    "Streaming amplitudes disagree with complete physical gate replay.",
+    "Uncleared frequency scratch is treated as full-word dephasing despite collisions.",
+    "Reference MAP is presented as an efficient algorithm.",
+    "The mechanism loses to matched same-copy baselines under the claimed scaling regime."
+  ],
+  "candidate_record_accepted": false,
+  "efficient_unknown_secret_decoder_supplied": false,
+  "clean_echo_classical_dequantization_claimed": false,
+  "new_speedup_claimed": false,
+  "novelty_claimed": false,
+  "routine_CLI_registry_UI_and_Git_owner": "Gemini or Antigravity"
+}

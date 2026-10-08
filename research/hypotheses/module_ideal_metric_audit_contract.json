@@ -1,0 +1,39 @@
+{
+  "id": "HYP-MODULE-IDEAL-METRIC-AUDIT",
+  "status": "literature_linked_exact_falsifiers_not_an_algorithm_candidate",
+  "derivation": "research/MODULE_IDEAL_METRIC_AUDIT.md",
+  "implementation": "theorems/module_ideal_metric_audit.py",
+  "artifact": "research/reductions/module_ideal_metric_audit.json",
+  "independent_checker": "research/certificates/module_ideal_metric_audit_crosscheck.js",
+  "literature_source_record": "research/literature_audits/module_ideal_metric_sources.json",
+  "literature_ids": ["LIT-LUO-MODULE-LATTICE-IV-2605.17412"],
+  "claim_falsified_as_stated": "CLAIM-LUO-IV-ZETA8-BASE",
+  "obligations_still_required": [
+    "OBLIGATION-MODULE-IDEAL-METRIC-LIFT",
+    "OBLIGATION-PUBLIC-KERNEL-SOURCE-COMPATIBILITY",
+    "OBLIGATION-SVP-AFFINE-KEY-RECOVERY"
+  ],
+  "mechanism": "Exact field norm and integral unit certificates; two free rank-two modules with identical ideal/Smith data and unbounded shortest-length ratio; exact homogeneous-versus-affine syndrome controls.",
+  "research_decision": "Do not import the claimed cryptographic break or use principal-ideal outputs as a cost-free module decoder. Require actual source-specific geometry and affine recovery bridges.",
+  "proof_obligations": [
+    "Review the version-specific source claim and exact zeta8 arithmetic.",
+    "For any proposed repair, state how an arbitrary input ideal is represented and solved, not just unit ideals.",
+    "Charge off-diagonal coupled module geometry, metric loss and the lifted original-norm output.",
+    "Show how an informative target ideal is obtained from the actual public kernel; its determinant ideal is the known scalar (q^k), not an iid small-matrix determinant.",
+    "Supply a separate affine decoding/BDD/embedding reduction with error and uniqueness premises.",
+    "Do not extend engineered controls to random-MLWE failure probabilities or security guarantees."
+  ],
+  "falsifiers": [
+    "The ring identities, integral inverse or field determinant disagree with independent replay.",
+    "The module basis change is nonunimodular or its complete coefficient Gram differs.",
+    "A valid source-specific metric/decoding theorem supplies premises not tested by these engineered examples.",
+    "A corrected paper version replaces the specific invalid base case; that requires a new version audit."
+  ],
+  "all_PIP_or_module_SVP_algorithms_refuted": false,
+  "random_MLWE_average_case_claim_refuted_by_engineered_metric_examples": false,
+  "real_cryptographic_break_or_security_guarantee_established": false,
+  "speedup_claim_allowed": false,
+  "candidate_record_accepted": false,
+  "novelty_claim": false,
+  "routine_wiring_owner": "Gemini or Antigravity"
+}

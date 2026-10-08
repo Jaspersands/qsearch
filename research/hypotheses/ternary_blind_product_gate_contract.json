@@ -1,0 +1,27 @@
+{
+  "hypothesis_id": "HYP-NATIVE-LABEL-INDEPENDENT-PRODUCT-POVM-GATE",
+  "status": "SCOPED_SOURCE_AVERAGE_COPY_BOUND_REVIEW_PENDING",
+  "candidate_record_accepted": false,
+  "note": "research/TERNARY_BLIND_PRODUCT_GATE.md",
+  "report": "research/classical_baselines/ternary_blind_product_gate.json",
+  "depends_on": ["HYP-NATIVE-PRODUCT-TRINE-JOINT-BASELINE"],
+  "mechanism": "Any fixed label-independent qutrit POVM has nonzero-secret Gram supported on opposite-secret pairs with diagonal d<=2/3 and opposite entry |eta|<=d. Product block norms and a separately charged zero secret bound any classical joint classifier at the native copy budget.",
+  "research_decision": "Do not pursue blind product basis changes at M=nr-2 as a constant population-advantage decoder. Investigate label-sensitive local measurements, outcome-adaptive policies or collective observables instead, with honest cost and source accounting.",
+  "falsifiers": [
+    "A positive complete fixed POVM violates the scalar coherence inequalities.",
+    "The native full-label centered Gram has support beyond equal or opposite nonzero secrets and the zero diagonal.",
+    "A product of certified POVMs violates the paired-block operator-norm or classifier transfer bound."
+  ],
+  "proof_obligations": {
+    "PO-REVIEW": "Independently review arbitrary POVM coherence bounds, composite-ring root orthogonality, product opposite-secret blocks and source-average classifier transfer.",
+    "PO-SCOPE": "Quantum POVMs must be fixed independently of all native labels and earlier outcomes. This is not a lower bound for label-aware local measurements, adaptive LOCC, collective measurements or chosen/retained label laws.",
+    "PO-RANDOMNESS": "Condition on shared public measurement randomness before product factorization; independence of the unconditional records is not assumed.",
+    "PO-SURPLUS": "Polynomial sample surplus can make this gate vacuous. Do not promote a copy-density bound to computational hardness or a prohibition on all polynomial-time algorithms.",
+    "PO-CERTIFICATES": "Supplied scalar invariants are assumptions unless their actual complete positive POVM has been certified. Finite exact rational controls are not a restriction of the general derivation.",
+    "PO-NOVELTY": "No novelty, accepted algorithm or quantum speedup claim; independent literature and mathematical review remain necessary."
+  },
+  "quantum_speedup_proved": false,
+  "generic_quantum_lower_bound": false,
+  "novelty_claim": false,
+  "routine_wiring_owner": "Gemini or Antigravity"
+}

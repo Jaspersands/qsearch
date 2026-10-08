@@ -1,0 +1,32 @@
+{
+  "hypothesis_id": "HYP-NATIVE-PRODUCT-TRINE-JOINT-BASELINE",
+  "status": "EXPLICIT_RECEIVER_AND_SCOPED_CLASSICAL_RECORD_BOUND_REVIEW_PENDING",
+  "candidate_record_accepted": false,
+  "note": "research/TERNARY_PRODUCT_TRINE.md",
+  "report": "research/classical_baselines/ternary_product_trine.json",
+  "depends_on": [
+    "HYP-NATIVE-COVARIANT-PAIRED-NOISE-DECODER",
+    "HYP-NATIVE-LEAST-TRIT-DUAL-PARTITION-FRONTIER"
+  ],
+  "mechanism": "Public randomized diagonal phases and one inverse-F3 realize the full-root covariant POVM without quantum ancillas. Fixed inverse-F3 records reuse exact joint likelihood algebra but have a distinct full-label centered Gram, including a zero-secret exception.",
+  "research_decision": "At M=nr-2, reject fixed product inverse-F3 followed by arbitrary classical decoding as a constant population-advantage route. Do not extend this exclusion to other measurement policies or polynomial surplus samples.",
+  "falsifiers": [
+    "An arbitrary-input randomized branch effect differs from the covariant effect divided by three.",
+    "Full-label and output character orthogonality contradicts the exact nonzero-secret, zero-secret or off-diagonal Gram.",
+    "The exact phase-algebra adapter gives a different posterior from the actual fixed-trine likelihood.",
+    "The physical all-secret native twirl disagrees with the exact joint correlation countercontrol."
+  ],
+  "proof_obligations": {
+    "PO-REVIEW": "Independently review the randomized effect identity, Gram over the composite ring, omitted-zero contribution and classifier copy bound.",
+    "PO-MODEL": "Keep fixed-trine data distinct from paired covariant data; an observation-wise likelihood constant transfers the posterior, not the generative law or copy bound.",
+    "PO-SOURCE": "The population theorem requires IID full even-level native rows and independent original copies. Unique ancestor IDs alone do not prove this.",
+    "PO-SCOPE": "Do not claim a bound on all product bases, adaptive LOCC, collective receivers, chosen labels, sieve-retained laws or polynomial surplus copies.",
+    "PO-COMPLEXITY": "Exact joint decoding remains exponential. The randomized compiler saves measurement ancillas but does not solve decoding or supply source states.",
+    "PO-PRECISION": "Charge public phase synthesis, F3 implementation and classical randomness errors; hardware gate export is not supplied.",
+    "PO-NOVELTY": "No novelty or speedup claim. Prespecified small native labels are proof countercontrols, not algorithm candidates."
+  },
+  "quantum_speedup_proved": false,
+  "generic_quantum_lower_bound": false,
+  "novelty_claim": false,
+  "routine_wiring_owner": "Gemini or Antigravity"
+}

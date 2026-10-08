@@ -1,0 +1,1952 @@
+{
+  "status": "SOURCE_LOCAL_FOURIER_INFORMATION_CEILING_REVIEW_PENDING",
+  "derivation_sha256": "71d8481bc2724a3327e64bb78c8b971d0540274c6071052bc30730ae92961cdd",
+  "native_controls": [
+    {
+      "seed": 89000,
+      "components": 1,
+      "phase_digits": 2,
+      "selected_source_frames": [
+        {
+          "domain_sign": 1,
+          "physical_frame_rows": [
+            [
+              1
+            ],
+            [
+              1
+            ]
+          ],
+          "physical_base": [
+            0,
+            0
+          ]
+        }
+      ],
+      "selected_coefficients": [
+        1
+      ],
+      "physical_source_shape_selection_is_low_only": true,
+      "energy": {
+        "width": 1,
+        "program_dimension": 3,
+        "directions": [
+          [
+            1
+          ]
+        ],
+        "physical_frame_rank": 1,
+        "symmetric_square_feature_rank": 1,
+        "symmetric_square_dimension": 1,
+        "unordered_pair_separation_certified_by_square_span": true,
+        "ordered_balanced_quadruples": "15",
+        "energy_method": "full-symmetric-square-rank-certificate",
+        "conditional_mean_local_Fourier_collision_nonzero_secret": "5/9",
+        "entropy_deficit_upper_nats": 0.5108256237659907,
+        "full_square_rank_bound_less_than_one_bit": true,
+        "physical_IID_source_premise_certified": false
+      },
+      "information_bound": {
+        "components": 1,
+        "phase_digits": 2,
+        "outputs": 1,
+        "secret_count": "9",
+        "exact_zero_secret_prior_mass": "1/9",
+        "exact_information_bound_formula": "log(E/D^2)+(log(D)-log(E/D^2))/G",
+        "numeric_entropy_and_Fano_values_are_estimates": true,
+        "mean_mutual_information_per_output_upper_nats": 0.5761352531995595,
+        "mean_mutual_information_per_output_upper_bits": 0.8311874726723117,
+        "mean_joint_information_upper_nats": 0.5761352531995595,
+        "target_mean_full_secret_error": 0.1,
+        "Fano_required_outputs_lower_real": 2.8681097659524593,
+        "conditional_low_frame_and_physical_IID_premise_required": true,
+        "public_full_labels_conditioned_in_mutual_information": true,
+        "shared_public_secret_shift_allowed": true,
+        "label_or_outcome_adaptive_measurement_bases_covered": false,
+        "collective_nonproduct_measurements_covered": false,
+        "computational_cost_of_classical_inference_lower_bounded": false,
+        "source_realization_pointwise_information_bound": false
+      }
+    },
+    {
+      "seed": 89128,
+      "components": 1,
+      "phase_digits": 2,
+      "selected_source_frames": [
+        {
+          "domain_sign": 2,
+          "physical_frame_rows": [
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "physical_base": [
+            2,
+            0,
+            0
+          ]
+        },
+        {
+          "domain_sign": 1,
+          "physical_frame_rows": [
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "physical_base": [
+            1,
+            0,
+            0
+          ]
+        }
+      ],
+      "selected_coefficients": [
+        2,
+        0,
+        1
+      ],
+      "physical_source_shape_selection_is_low_only": true,
+      "energy": {
+        "width": 2,
+        "program_dimension": 9,
+        "directions": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "physical_frame_rank": 2,
+        "symmetric_square_feature_rank": 3,
+        "symmetric_square_dimension": 3,
+        "unordered_pair_separation_certified_by_square_span": true,
+        "ordered_balanced_quadruples": "153",
+        "energy_method": "full-symmetric-square-rank-certificate",
+        "conditional_mean_local_Fourier_collision_nonzero_secret": "17/81",
+        "entropy_deficit_upper_nats": 0.6359887667199967,
+        "full_square_rank_bound_less_than_one_bit": true,
+        "physical_IID_source_premise_certified": false
+      },
+      "information_bound": {
+        "components": 1,
+        "phase_digits": 2,
+        "outputs": 1,
+        "secret_count": "9",
+        "exact_zero_secret_prior_mass": "1/9",
+        "exact_information_bound_formula": "log(E/D^2)+(log(D)-log(E/D^2))/G",
+        "numeric_entropy_and_Fano_values_are_estimates": true,
+        "mean_mutual_information_per_output_upper_nats": 0.8094594123440215,
+        "mean_mutual_information_per_output_upper_bits": 1.1678030799896144,
+        "mean_joint_information_upper_nats": 0.8094594123440215,
+        "target_mean_full_secret_error": 0.1,
+        "Fano_required_outputs_lower_real": 2.041386042353991,
+        "conditional_low_frame_and_physical_IID_premise_required": true,
+        "public_full_labels_conditioned_in_mutual_information": true,
+        "shared_public_secret_shift_allowed": true,
+        "label_or_outcome_adaptive_measurement_bases_covered": false,
+        "collective_nonproduct_measurements_covered": false,
+        "computational_cost_of_classical_inference_lower_bounded": false,
+        "source_realization_pointwise_information_bound": false
+      }
+    },
+    {
+      "seed": 89031,
+      "components": 2,
+      "phase_digits": 3,
+      "selected_source_frames": [
+        {
+          "domain_sign": 1,
+          "physical_frame_rows": [
+            [
+              0,
+              0,
+              2
+            ],
+            [
+              1,
+              2,
+              2
+            ],
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          "physical_base": [
+            1,
+            2,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "domain_sign": 1,
+          "physical_frame_rows": [
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              1,
+              1,
+              0
+            ],
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          "physical_base": [
+            2,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "domain_sign": 2,
+          "physical_frame_rows": [
+            [
+              2,
+              1,
+              1
+            ],
+            [
+              0,
+              2,
+              0
+            ],
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          "physical_base": [
+            2,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "domain_sign": 2,
+          "physical_frame_rows": [
+            [
+              2,
+              0,
+              0
+            ],
+            [
+              2,
+              2,
+              0
+            ],
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          "physical_base": [
+            0,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "domain_sign": 1,
+          "physical_frame_rows": [
+            [
+              0,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              0
+            ],
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          "physical_base": [
+            1,
+            2,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "domain_sign": 2,
+          "physical_frame_rows": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              2,
+              2
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "physical_base": [
+            0,
+            1,
+            0,
+            0,
+            2
+          ]
+        },
+        {
+          "domain_sign": 1,
+          "physical_frame_rows": [
+            [
+              0,
+              1,
+              1
+            ],
+            [
+              1,
+              2,
+              2
+            ],
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          "physical_base": [
+            0,
+            1,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "selected_coefficients": [
+        1,
+        1,
+        0,
+        0,
+        2,
+        2,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "physical_source_shape_selection_is_low_only": true,
+      "energy": {
+        "width": 3,
+        "program_dimension": 27,
+        "directions": [
+          [
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            2,
+            2
+          ]
+        ],
+        "physical_frame_rank": 3,
+        "symmetric_square_feature_rank": 6,
+        "symmetric_square_dimension": 6,
+        "unordered_pair_separation_certified_by_square_span": true,
+        "ordered_balanced_quadruples": "1431",
+        "energy_method": "full-symmetric-square-rank-certificate",
+        "conditional_mean_local_Fourier_collision_nonzero_secret": "53/729",
+        "entropy_deficit_upper_nats": 0.6744550475477928,
+        "full_square_rank_bound_less_than_one_bit": true,
+        "physical_IID_source_premise_certified": false
+      },
+      "information_bound": {
+        "components": 2,
+        "phase_digits": 3,
+        "outputs": 1,
+        "secret_count": "729",
+        "exact_zero_secret_prior_mass": "1/729",
+        "exact_information_bound_formula": "log(E/D^2)+(log(D)-log(E/D^2))/G",
+        "numeric_entropy_and_Fano_values_are_estimates": true,
+        "mean_mutual_information_per_output_upper_nats": 0.6780509073810665,
+        "mean_mutual_information_per_output_upper_bits": 0.9782206815489266,
+        "mean_joint_information_upper_nats": 0.6780509073810665,
+        "target_mean_full_secret_error": 0.1,
+        "Fano_required_outputs_lower_real": 8.269915023157628,
+        "conditional_low_frame_and_physical_IID_premise_required": true,
+        "public_full_labels_conditioned_in_mutual_information": true,
+        "shared_public_secret_shift_allowed": true,
+        "label_or_outcome_adaptive_measurement_bases_covered": false,
+        "collective_nonproduct_measurements_covered": false,
+        "computational_cost_of_classical_inference_lower_bounded": false,
+        "source_realization_pointwise_information_bound": false
+      }
+    }
+  ],
+  "original_high_chart_census": {
+    "complete_original_high_chart_words": 81,
+    "original_program": {
+      "source": {
+        "original_even_level": 4,
+        "dimension": 1,
+        "parent_modulus": "9",
+        "acquired_original_native_inputs": 8,
+        "odd_inputs_acquired": 2,
+        "active_original_inputs": 2,
+        "untouched_original_inputs": 6,
+        "original_source_ids": [
+          "ridge-cancel-1-1-1-89000-0-0",
+          "ridge-cancel-1-1-1-89000-0-1",
+          "ridge-cancel-1-1-1-89000-0-2",
+          "ridge-cancel-1-1-1-89000-0-3",
+          "ridge-cancel-1-1-1-89000-0-4",
+          "ridge-cancel-1-1-1-89000-0-5",
+          "ridge-cancel-1-1-1-89000-0-6",
+          "ridge-cancel-1-1-1-89000-0-7"
+        ],
+        "active_original_source_ids": [
+          "ridge-cancel-1-1-1-89000-0-0",
+          "ridge-cancel-1-1-1-89000-0-4"
+        ],
+        "untouched_original_source_ids": [
+          "ridge-cancel-1-1-1-89000-0-1",
+          "ridge-cancel-1-1-1-89000-0-2",
+          "ridge-cancel-1-1-1-89000-0-3",
+          "ridge-cancel-1-1-1-89000-0-5",
+          "ridge-cancel-1-1-1-89000-0-6",
+          "ridge-cancel-1-1-1-89000-0-7"
+        ],
+        "odd_input_original_ancestors": [
+          [
+            "ridge-cancel-1-1-1-89000-0-0"
+          ],
+          [
+            "ridge-cancel-1-1-1-89000-0-4"
+          ]
+        ],
+        "fixed_disjoint_curvature_only_windows": true,
+        "distinct_ids_certify_physical_independence": false,
+        "IID_odd_label_law_premise": "IID original full frequency pairs; independent parents; curvature-only support selection",
+        "IID_odd_label_law_status": "LOCAL_DERIVATION_REVIEW_PENDING",
+        "untouched_curvature_labels_claimed_fresh_IID": false,
+        "intermediate_odd_input_acquisition_charged": true,
+        "upstream_DCP_or_LWE_input_acquisition_implemented_here": false,
+        "upstream_conversion_cap_and_joint_error_obligations_remain": true,
+        "unknown_preparation_inverse_or_amplification_used": false
+      },
+      "original_labels": [
+        [
+          [
+            5,
+            4
+          ]
+        ],
+        [
+          [
+            6,
+            5
+          ]
+        ],
+        [
+          [
+            2,
+            6
+          ]
+        ],
+        [
+          [
+            6,
+            5
+          ]
+        ],
+        [
+          [
+            8,
+            1
+          ]
+        ],
+        [
+          [
+            5,
+            3
+          ]
+        ],
+        [
+          [
+            0,
+            3
+          ]
+        ],
+        [
+          [
+            1,
+            0
+          ]
+        ]
+      ],
+      "original_frequency_pairs": [
+        [
+          [
+            4
+          ],
+          [
+            5
+          ]
+        ],
+        [
+          [
+            5
+          ],
+          [
+            6
+          ]
+        ],
+        [
+          [
+            6
+          ],
+          [
+            2
+          ]
+        ],
+        [
+          [
+            5
+          ],
+          [
+            6
+          ]
+        ],
+        [
+          [
+            1
+          ],
+          [
+            8
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            5
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            0
+          ]
+        ],
+        [
+          [
+            0
+          ],
+          [
+            1
+          ]
+        ]
+      ],
+      "original_affine_base": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "original_affine_columns": [
+        [
+          2,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ]
+      ],
+      "raw_source_program_branch_probability": "1/3",
+      "all_source_measurement_outcomes_accepted": true,
+      "compact_phase": {
+        "width": 1,
+        "components": 1,
+        "phase_digits": 1,
+        "phase_modulus": "3",
+        "numerator_modulus": "9",
+        "exact_shared_denominator": 3,
+        "additive_degree_bound": 3,
+        "projective_ridge_groups": [
+          {
+            "direction": [
+              1
+            ],
+            "component_tables": [
+              [
+                0,
+                6,
+                3
+              ]
+            ]
+          }
+        ],
+        "stored_local_frequency_entries": 3,
+        "high_degree_tensor_expanded": false,
+        "unknown_weighted_phase_oracle_supplied": false
+      },
+      "IID_full_depth_output_label_law_proved": false
+    },
+    "original_source_supports_unchanged": true,
+    "records": [
+      {
+        "original_pivot_alpha_delta_lifts": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "actual_phase_values": [
+          0,
+          2,
+          1
+        ]
+      },
+      {
+        "original_pivot_alpha_delta_lifts": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "actual_phase_values": [
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "original_pivot_alpha_delta_lifts": [
+          0,
+          0,
+          0,
+          2
+        ],
+        "actual_phase_values": [
+          0,
+          0,
+          2
+        ]
+      },
+      {
+        "original_pivot_alpha_delta_lifts": [
+          0,
+          0,
+          1,
+          0
+        ],
+        "actual_phase_values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "original_pivot_alpha_delta_lifts": [
+          0,
+          0,
+          1,
+          1
+        ],
+        "actual_phase_values": [
+          0,
+          2,
+          2
+        ]
+      },
+      {
+        "original_pivot_alpha_delta_lifts": [
+          0,
+          0,
+          1,
+          2
+        ],
+        "actual_phase_values": [
+          0,
+          1,
+          1
+        ]
+      },
+      {
+        "original_pivot_alpha_delta_lifts": [
+          0,
+          0,
+          2,
+          0
+        ],
+        "actual_phase_values": [
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "original_pivot_alpha_delta_lifts": [
+          0,
+          0,
+          2,
+          1
+        ],
+        "actual_phase_values": [
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "original_pivot_alpha_delta_lifts": [
+          0,
+          0,
+          2,
+          2
+        ],
+        "actual_phase_values": [
+          0,
+          2,
+          0
+        ]
+      },
+      {
+        "original_pivot_alpha_delta_lifts": [
+          0,
+          1,
+          0,
+          0
+        ],
+        "actual_phase_values": [
+          0,
+          2,
+          2
+        ]
+      },
+      {
+        "original_pivot_alpha_delta_lifts": [
+          0,
+          1,
+          0,
+          1
+        ],
+        "actual_phase_values": [
+          0,
+          1,
+          1
+        ]
+      },
+      {
+        "original_pivot_alpha_delta_lifts": [
+          0,
+          1,
+          0,
+          2
+        ],
+        "actual_phase_values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "original_pivot_alpha_delta_lifts": [
+          0,
+          1,
+          1,
+          0
+        ],
+        "actual_phase_values": [
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "original_pivot_alpha_delta_lifts": [
+          0,
+          1,
+          1,
+          1
+        ],
+        "actual_phase_values": [
+          0,
+          2,
+          0
+        ]
+      },
+      {
+        "original_pivot_alpha_delta_lifts": [
+          0,
+          1,
+          1,
+          2
+        ],
+        "actual_phase_values": [
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "original_pivot_alpha_delta_lifts": [
+          0,
+          1,
+          2,
+          0
+        ],
+        "actual_phase_values": [
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "original_pivot_alpha_delta_lifts": [
+          0,
+          1,
+          2,
+          1
+        ],
+        "actual_phase_values": [
+          0,
+          0,
+          2
+        ]
+      },
+      {
+        "original_pivot_alpha_delta_lifts": [
+          0,
+          1,
+          2,
+          2
+        ],
+        "actual_phase_values": [
+          0,
+          2,
+          1
+        ]
+      },
+      {
+        "original_pivot_alpha_delta_lifts": [
+          0,
+          2,
+          0,
+          0
+        ],
+        "actual_phase_values": [
+          0,
+          2,
+          0
+        ]
+      },
+      {
+        "original_pivot_alpha_delta_lifts": [
+          0,
+          2,
+          0,
+          1
+        ],
+        "actual_phase_values": [
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "original_pivot_alpha_delta_lifts": [
+          0,
+          2,
+          0,
+          2
+        ],
+        "actual_phase_values": [
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "original_pivot_alpha_delta_lifts": [
+          0,
+          2,
+          1,
+          0
+        ],
+        "actual_phase_values": [
+          0,
+          0,
+          2
+        ]
+      },
+      {
+        "original_pivot_alpha_delta_lifts": [
+          0,
+          2,
+          1,
+          1
+        ],
+        "actual_phase_values": [
+          0,
+          2,
+          1
+        ]
+      },
+      {
+        "original_pivot_alpha_delta_lifts": [
+          0,
+          2,
+          1,
+          2
+        ],
+        "actual_phase_values": [
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "original_pivot_alpha_delta_lifts": [
+          0,
+          2,
+          2,
+          0
+        ],
+        "actual_phase_values": [
+          0,
+          1,
+          1
+        ]
+      },
+      {
+        "original_pivot_alpha_delta_lifts": [
+          0,
+          2,
+          2,
+          1
+        ],
+        "actual_phase_values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "original_pivot_alpha_delta_lifts": [
+          0,
+          2,
+          2,
+          2
+        ],
+        "actual_phase_values": [
+          0,
+          2,
+          2
+        ]
+      },
+      {
+        "original_pivot_alpha_delta_lifts": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "actual_phase_values": [
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "original_pivot_alpha_delta_lifts": [
+          1,
+          0,
+          0,
+          1
+        ],
+        "actual_phase_values": [
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "original_pivot_alpha_delta_lifts": [
+          1,
+          0,
+          0,
+          2
+        ],
+        "actual_phase_values": [
+          0,
+          2,
+          0
+        ]
+      },
+      {
+        "original_pivot_alpha_delta_lifts": [
+          1,
+          0,
+          1,
+          0
+        ],
+        "actual_phase_values": [
+          0,
+          2,
+          1
+        ]
+      },
+      {
+        "original_pivot_alpha_delta_lifts": [
+          1,
+          0,
+          1,
+          1
+        ],
+        "actual_phase_values": [
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "original_pivot_alpha_delta_lifts": [
+          1,
+          0,
+          1,
+          2
+        ],
+        "actual_phase_values": [
+          0,
+          0,
+          2
+        ]
+      },
+      {
+        "original_pivot_alpha_delta_lifts": [
+          1,
+          0,
+          2,
+          0
+        ],
+        "actual_phase_values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "original_pivot_alpha_delta_lifts": [
+          1,
+          0,
+          2,
+          1
+        ],
+        "actual_phase_values": [
+          0,
+          2,
+          2
+        ]
+      },
+      {
+        "original_pivot_alpha_delta_lifts": [
+          1,
+          0,
+          2,
+          2
+        ],
+        "actual_phase_values": [
+          0,
+          1,
+          1
+        ]
+      },
+      {
+        "original_pivot_alpha_delta_lifts": [
+          1,
+          1,
+          0,
+          0
+        ],
+        "actual_phase_values": [
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "original_pivot_alpha_delta_lifts": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "actual_phase_values": [
+          0,
+          0,
+          2
+        ]
+      },
+      {
+        "original_pivot_alpha_delta_lifts": [
+          1,
+          1,
+          0,
+          2
+        ],
+        "actual_phase_values": [
+          0,
+          2,
+          1
+        ]
+      },
+      {
+        "original_pivot_alpha_delta_lifts": [
+          1,
+          1,
+          1,
+          0
+        ],
+        "actual_phase_values": [
+          0,
+          2,
+          2
+        ]
+      },
+      {
+        "original_pivot_alpha_delta_lifts": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "actual_phase_values": [
+          0,
+          1,
+          1
+        ]
+      },
+      {
+        "original_pivot_alpha_delta_lifts": [
+          1,
+          1,
+          1,
+          2
+        ],
+        "actual_phase_values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "original_pivot_alpha_delta_lifts": [
+          1,
+          1,
+          2,
+          0
+        ],
+        "actual_phase_values": [
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "original_pivot_alpha_delta_lifts": [
+          1,
+          1,
+          2,
+          1
+        ],
+        "actual_phase_values": [
+          0,
+          2,
+          0
+        ]
+      },
+      {
+        "original_pivot_alpha_delta_lifts": [
+          1,
+          1,
+          2,
+          2
+        ],
+        "actual_phase_values": [
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "original_pivot_alpha_delta_lifts": [
+          1,
+          2,
+          0,
+          0
+        ],
+        "actual_phase_values": [
+          0,
+          1,
+          1
+        ]
+      },
+      {
+        "original_pivot_alpha_delta_lifts": [
+          1,
+          2,
+          0,
+          1
+        ],
+        "actual_phase_values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "original_pivot_alpha_delta_lifts": [
+          1,
+          2,
+          0,
+          2
+        ],
+        "actual_phase_values": [
+          0,
+          2,
+          2
+        ]
+      },
+      {
+        "original_pivot_alpha_delta_lifts": [
+          1,
+          2,
+          1,
+          0
+        ],
+        "actual_phase_values": [
+          0,
+          2,
+          0
+        ]
+      },
+      {
+        "original_pivot_alpha_delta_lifts": [
+          1,
+          2,
+          1,
+          1
+        ],
+        "actual_phase_values": [
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "original_pivot_alpha_delta_lifts": [
+          1,
+          2,
+          1,
+          2
+        ],
+        "actual_phase_values": [
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "original_pivot_alpha_delta_lifts": [
+          1,
+          2,
+          2,
+          0
+        ],
+        "actual_phase_values": [
+          0,
+          0,
+          2
+        ]
+      },
+      {
+        "original_pivot_alpha_delta_lifts": [
+          1,
+          2,
+          2,
+          1
+        ],
+        "actual_phase_values": [
+          0,
+          2,
+          1
+        ]
+      },
+      {
+        "original_pivot_alpha_delta_lifts": [
+          1,
+          2,
+          2,
+          2
+        ],
+        "actual_phase_values": [
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "original_pivot_alpha_delta_lifts": [
+          2,
+          0,
+          0,
+          0
+        ],
+        "actual_phase_values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "original_pivot_alpha_delta_lifts": [
+          2,
+          0,
+          0,
+          1
+        ],
+        "actual_phase_values": [
+          0,
+          2,
+          2
+        ]
+      },
+      {
+        "original_pivot_alpha_delta_lifts": [
+          2,
+          0,
+          0,
+          2
+        ],
+        "actual_phase_values": [
+          0,
+          1,
+          1
+        ]
+      },
+      {
+        "original_pivot_alpha_delta_lifts": [
+          2,
+          0,
+          1,
+          0
+        ],
+        "actual_phase_values": [
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "original_pivot_alpha_delta_lifts": [
+          2,
+          0,
+          1,
+          1
+        ],
+        "actual_phase_values": [
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "original_pivot_alpha_delta_lifts": [
+          2,
+          0,
+          1,
+          2
+        ],
+        "actual_phase_values": [
+          0,
+          2,
+          0
+        ]
+      },
+      {
+        "original_pivot_alpha_delta_lifts": [
+          2,
+          0,
+          2,
+          0
+        ],
+        "actual_phase_values": [
+          0,
+          2,
+          1
+        ]
+      },
+      {
+        "original_pivot_alpha_delta_lifts": [
+          2,
+          0,
+          2,
+          1
+        ],
+        "actual_phase_values": [
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "original_pivot_alpha_delta_lifts": [
+          2,
+          0,
+          2,
+          2
+        ],
+        "actual_phase_values": [
+          0,
+          0,
+          2
+        ]
+      },
+      {
+        "original_pivot_alpha_delta_lifts": [
+          2,
+          1,
+          0,
+          0
+        ],
+        "actual_phase_values": [
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "original_pivot_alpha_delta_lifts": [
+          2,
+          1,
+          0,
+          1
+        ],
+        "actual_phase_values": [
+          0,
+          2,
+          0
+        ]
+      },
+      {
+        "original_pivot_alpha_delta_lifts": [
+          2,
+          1,
+          0,
+          2
+        ],
+        "actual_phase_values": [
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "original_pivot_alpha_delta_lifts": [
+          2,
+          1,
+          1,
+          0
+        ],
+        "actual_phase_values": [
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "original_pivot_alpha_delta_lifts": [
+          2,
+          1,
+          1,
+          1
+        ],
+        "actual_phase_values": [
+          0,
+          0,
+          2
+        ]
+      },
+      {
+        "original_pivot_alpha_delta_lifts": [
+          2,
+          1,
+          1,
+          2
+        ],
+        "actual_phase_values": [
+          0,
+          2,
+          1
+        ]
+      },
+      {
+        "original_pivot_alpha_delta_lifts": [
+          2,
+          1,
+          2,
+          0
+        ],
+        "actual_phase_values": [
+          0,
+          2,
+          2
+        ]
+      },
+      {
+        "original_pivot_alpha_delta_lifts": [
+          2,
+          1,
+          2,
+          1
+        ],
+        "actual_phase_values": [
+          0,
+          1,
+          1
+        ]
+      },
+      {
+        "original_pivot_alpha_delta_lifts": [
+          2,
+          1,
+          2,
+          2
+        ],
+        "actual_phase_values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "original_pivot_alpha_delta_lifts": [
+          2,
+          2,
+          0,
+          0
+        ],
+        "actual_phase_values": [
+          0,
+          0,
+          2
+        ]
+      },
+      {
+        "original_pivot_alpha_delta_lifts": [
+          2,
+          2,
+          0,
+          1
+        ],
+        "actual_phase_values": [
+          0,
+          2,
+          1
+        ]
+      },
+      {
+        "original_pivot_alpha_delta_lifts": [
+          2,
+          2,
+          0,
+          2
+        ],
+        "actual_phase_values": [
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "original_pivot_alpha_delta_lifts": [
+          2,
+          2,
+          1,
+          0
+        ],
+        "actual_phase_values": [
+          0,
+          1,
+          1
+        ]
+      },
+      {
+        "original_pivot_alpha_delta_lifts": [
+          2,
+          2,
+          1,
+          1
+        ],
+        "actual_phase_values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "original_pivot_alpha_delta_lifts": [
+          2,
+          2,
+          1,
+          2
+        ],
+        "actual_phase_values": [
+          0,
+          2,
+          2
+        ]
+      },
+      {
+        "original_pivot_alpha_delta_lifts": [
+          2,
+          2,
+          2,
+          0
+        ],
+        "actual_phase_values": [
+          0,
+          2,
+          0
+        ]
+      },
+      {
+        "original_pivot_alpha_delta_lifts": [
+          2,
+          2,
+          2,
+          1
+        ],
+        "actual_phase_values": [
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "original_pivot_alpha_delta_lifts": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "actual_phase_values": [
+          0,
+          0,
+          1
+        ]
+      }
+    ],
+    "frequency_pair_counts": [
+      {
+        "pair": [
+          0,
+          0
+        ],
+        "count": 9
+      },
+      {
+        "pair": [
+          0,
+          1
+        ],
+        "count": 9
+      },
+      {
+        "pair": [
+          0,
+          2
+        ],
+        "count": 9
+      },
+      {
+        "pair": [
+          1,
+          0
+        ],
+        "count": 9
+      },
+      {
+        "pair": [
+          1,
+          1
+        ],
+        "count": 9
+      },
+      {
+        "pair": [
+          1,
+          2
+        ],
+        "count": 9
+      },
+      {
+        "pair": [
+          2,
+          0
+        ],
+        "count": 9
+      },
+      {
+        "pair": [
+          2,
+          1
+        ],
+        "count": 9
+      },
+      {
+        "pair": [
+          2,
+          2
+        ],
+        "count": 9
+      }
+    ],
+    "mean_Fourier_collision_by_secret": [
+      1.0,
+      0.5555555555555557,
+      0.5555555555555557
+    ],
+    "virtual_chart_lifts_are_additional_supplied_states": false,
+    "finite_chart_proves_physical_IID_source_premise": false
+  },
+  "growing_dimension_information_ledgers": [
+    {
+      "components": 32,
+      "phase_digits": 4,
+      "outputs": 45,
+      "secret_count": "11790184577738583171520872861412518665678211592275841109096961",
+      "exact_zero_secret_prior_mass": "1/11790184577738583171520872861412518665678211592275841109096961",
+      "exact_information_bound_formula": "log(E/D^2)+(log(D)-log(E/D^2))/G",
+      "numeric_entropy_and_Fano_values_are_estimates": true,
+      "mean_mutual_information_per_output_upper_nats": 0.6744550475477928,
+      "mean_mutual_information_per_output_upper_bits": 0.9730329523997308,
+      "mean_joint_information_upper_nats": 30.35047713965068,
+      "target_mean_full_secret_error": 0.1,
+      "Fano_required_outputs_lower_real": 187.1659988907261,
+      "conditional_low_frame_and_physical_IID_premise_required": true,
+      "public_full_labels_conditioned_in_mutual_information": true,
+      "shared_public_secret_shift_allowed": true,
+      "label_or_outcome_adaptive_measurement_bases_covered": false,
+      "collective_nonproduct_measurements_covered": false,
+      "computational_cost_of_classical_inference_lower_bounded": false,
+      "source_realization_pointwise_information_bound": false
+    },
+    {
+      "components": 128,
+      "phase_digits": 5,
+      "outputs": 130,
+      "secret_count": "227825861182900204487926163254208870201769978356428036221706558661607687977185749264584650783143108160792377891873308886306706850459123338011190895923705000376577729402891616048151369267252375988442315730579445584361719023528399440428651198470683264566951628130091486700352935020754795437899820617563660801",
+      "exact_zero_secret_prior_mass": "1/227825861182900204487926163254208870201769978356428036221706558661607687977185749264584650783143108160792377891873308886306706850459123338011190895923705000376577729402891616048151369267252375988442315730579445584361719023528399440428651198470683264566951628130091486700352935020754795437899820617563660801",
+      "exact_information_bound_formula": "log(E/D^2)+(log(D)-log(E/D^2))/G",
+      "numeric_entropy_and_Fano_values_are_estimates": true,
+      "mean_mutual_information_per_output_upper_nats": 0.6744550475477928,
+      "mean_mutual_information_per_output_upper_bits": 0.9730329523997308,
+      "mean_joint_information_upper_nats": 87.67915618121307,
+      "target_mean_full_secret_error": 0.1,
+      "Fano_required_outputs_lower_real": 937.7579685985249,
+      "conditional_low_frame_and_physical_IID_premise_required": true,
+      "public_full_labels_conditioned_in_mutual_information": true,
+      "shared_public_secret_shift_allowed": true,
+      "label_or_outcome_adaptive_measurement_bases_covered": false,
+      "collective_nonproduct_measurements_covered": false,
+      "computational_cost_of_classical_inference_lower_bounded": false,
+      "source_realization_pointwise_information_bound": false
+    },
+    {
+      "components": 256,
+      "phase_digits": 8,
+      "outputs": 345,
+      "secret_count": "139421472706236791468735287967015707232606232113998186759762284283203248267399327423485002476018294548027207658124580006956269122224761375615358997681237349433785401584729106693395255281491169142017082115307947771801954704567433211464560639140944673635364155016693389201613594038984686916178623702578352190636251776039742101384851474311083735102877993131212196962695464654469816719202970619252343026646014132485548307935847260900441555694943498191955672798596377459777392636575523873495086339994375985976543710570091438233257228420529594557457359609723639787519567621434999954843382100489400924995961904023259324301047965917783124275162880514542735528152228927483841372844810255470399471841348890379437250393401562476664019972812975660227449988177768002661436897984534184331079950399306756818061310948084534985374661203278436590349231431071569402389429768922180485838968764968523571261288038064310442585283933256404572748606640151307376800250725427496845607662821346676098703361",
+      "exact_zero_secret_prior_mass": "1/139421472706236791468735287967015707232606232113998186759762284283203248267399327423485002476018294548027207658124580006956269122224761375615358997681237349433785401584729106693395255281491169142017082115307947771801954704567433211464560639140944673635364155016693389201613594038984686916178623702578352190636251776039742101384851474311083735102877993131212196962695464654469816719202970619252343026646014132485548307935847260900441555694943498191955672798596377459777392636575523873495086339994375985976543710570091438233257228420529594557457359609723639787519567621434999954843382100489400924995961904023259324301047965917783124275162880514542735528152228927483841372844810255470399471841348890379437250393401562476664019972812975660227449988177768002661436897984534184331079950399306756818061310948084534985374661203278436590349231431071569402389429768922180485838968764968523571261288038064310442585283933256404572748606640151307376800250725427496845607662821346676098703361",
+      "exact_information_bound_formula": "log(E/D^2)+(log(D)-log(E/D^2))/G",
+      "numeric_entropy_and_Fano_values_are_estimates": true,
+      "mean_mutual_information_per_output_upper_nats": 0.6744550475477928,
+      "mean_mutual_information_per_output_upper_bits": 0.9730329523997308,
+      "mean_joint_information_upper_nats": 232.68699140398854,
+      "target_mean_full_secret_error": 0.1,
+      "Fano_required_outputs_lower_real": 3001.885885294971,
+      "conditional_low_frame_and_physical_IID_premise_required": true,
+      "public_full_labels_conditioned_in_mutual_information": true,
+      "shared_public_secret_shift_allowed": true,
+      "label_or_outcome_adaptive_measurement_bases_covered": false,
+      "collective_nonproduct_measurements_covered": false,
+      "computational_cost_of_classical_inference_lower_bounded": false,
+      "source_realization_pointwise_information_bound": false
+    }
+  ],
+  "general_collective_receiver_ruled_out": false,
+  "quantum_speedup_proved": false,
+  "candidate_record_accepted": false,
+  "routine_wiring_owner": "Gemini or Antigravity"
+}

@@ -1,0 +1,30 @@
+{
+  "hypothesis_id": "HYP-NATIVE-OBSERVABLE-BASIS-MOMENT-LIFT",
+  "status": "EXACT_FULL_TRANSLATION_FALSIFIER_AND_ALL_RANK_DIAGNOSTIC_REPAIR_REVIEW_PENDING",
+  "note": "research/TERNARY_OBSERVABLE_MOMENT_LIFT.md",
+  "report": "research/classical_baselines/ternary_observable_moment_lift.json",
+  "candidate_record_accepted": false,
+  "depends_on": ["native original-source phase synchronization circuit", "native covariant noise law", "unit-basis inverse over Z_(3^r)"],
+  "proof_obligations": {
+    "PO-PSD": "Saturate orthogonal classes under every selected and full translation equality; the resulting 0/1 Gram matrix is exactly PSD with unit diagonal and checked rank.",
+    "PO-NONEXTENSION": "Perfect native pair moments at a unit difference basis force any representing character distribution to secret0, contradicting zero native anchors. This is pointwise, not random-source noisy inference hardness.",
+    "PO-SEPARATION": "Weighted native-harmonic score has exact integrality gap2m*w for0<w<=1/(m*q^2). Secret0 attains the true optimum; a chord-distance bound rules out every nonzero secret without exponential enumeration. This is not the native noisy likelihood objective.",
+    "PO-REPAIR": "Explicit difference anchors, balanced unit-basis row reconstruction, conjugation, addition and q-loops compile in polynomial size. Gram error propagation proves B<=C*A at any PSD rank. The selected diagnostic is tight when w*C<1.",
+    "PO-RESIDUAL": "For exact PSD/unit diagonal and selected complex equality residuals at most tau, beta_j=6*sum(abs(lambda_j))+1 and E=sum(beta_j^2) give B<=(sqrt(C*A)+sqrt(E*tau))^2. Weighted diagnostic excess is at most w*E*tau/(1-w*C). Floating PSD and diagonal premises remain uncertified.",
+    "PO-NOISE": "Native noise first harmonics are1/3, not near1; the coefficient-weighted saturation bound can be vacuous. Native likelihood tightness, planted recovery and efficient decoding remain unproved.",
+    "PO-ACCESS": "No oracle queries, hidden-secret selection, physical IID guarantee, free postselection or quantum LWE examples are introduced.",
+    "PO-REVIEW": "Independent mathematical review and a costed decoder/quantum implementation are still needed. These exact native representation controls are not an accepted algorithm candidate."
+  },
+  "falsifiable_experiments": [
+    "A partition Gram matrix fails any full equal-frequency equality or its difference basis is not invertible at the retained root.",
+    "A true character exceeds the rational separating score maximum.",
+    "A feasible repaired Gram matrix violates B<=C*A or exceeds the repaired weighted diagnostic optimum.",
+    "Saturated basis pair moments leave any native anchor inconsistent with the same character.",
+    "A native noisy high-rank likelihood optimum cannot be rounded, or the source/noise error makes the saturation bound vacuous."
+  ],
+  "native_noisy_likelihood_tightness_proved": false,
+  "efficient_noisy_decoder_supplied": false,
+  "quantum_speedup_proved": false,
+  "novelty_claim": false,
+  "routine_wiring_owner": "Gemini or Antigravity"
+}

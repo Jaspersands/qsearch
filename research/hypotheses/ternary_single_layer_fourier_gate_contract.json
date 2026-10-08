@@ -1,0 +1,36 @@
+{
+  "hypothesis_id": "HYP-NATIVE-LABEL-AWARE-SINGLE-PHASE-FOURIER-GATE",
+  "status": "COLLECTIVE_LABEL_AWARE_RECEIVER_ENVELOPE_REVIEW_PENDING",
+  "candidate_record_accepted": false,
+  "note": "research/TERNARY_SINGLE_LAYER_FOURIER_GATE.md",
+  "report": "research/classical_baselines/ternary_single_layer_fourier_gate.json",
+  "depends_on": [
+    "HYP-NATIVE-INITIAL-POLYNOMIAL-FREQUENCY-PHASE-COMPILER",
+    "HYP-NATIVE-PRODUCT-TRINE-JOINT-BASELINE"
+  ],
+  "mechanism": "Exact Fourier Parseval reduces uniform-prior least-trit advantage to the squared multiplicities of informative native word offsets. A unit-minor population calculation bounds this energy independently of ANY full-label-dependent collective initial diagonal phase, including partial-block quadratics and top-digit phases. Independent word permutations and label-dependent affine maps also cannot evade the population envelope.",
+  "research_decision": "Do not scan more single-chirp/fixed-Fourier receivers at the underfull batch. Seek an explicit noncommuting mixer, label-dependent nonlinear word map or a costed larger-batch readout with an efficient decoder. The latter remains open: polynomial surplus samples are not forbidden by this bound.",
+  "falsifiers": [
+    "Complete raw physical success exceeds the exact per-label offset-energy envelope.",
+    "Composite-root population moments disagree with complete source censuses or omit inactive-coordinate multiplicities.",
+    "Nonlinear label-independent permutation signature routing exceeds the identity expectation.",
+    "The theorem is misapplied to a label-dependent nonlinear map, a different source law, an earlier noncommuting mixer or extra secret-bearing inputs."
+  ],
+  "proof_obligations": {
+    "PO-REVIEW": "Review the uniform-prior nuisance projection, both Fourier Parseval factors, zero-sum three-vector inequality and Jensen step.",
+    "PO-MOMENT": "Use native simplex transition minors over Z_(3^r), including the unit2 mixed-sign case for permutation signatures. Do not substitute an IID random graph or a prime field.",
+    "PO-PHASE": "The initial phase can depend on every public label and entangle all words. Independent public phase coins are conditioned on; they do not prove a changed source is IID.",
+    "PO-PERMUTATION": "General word permutations are fixed independently of random native labels. Only the invertible affine subclass has exact output relabeling even when label-dependent.",
+    "PO-ROUTING": "A surviving label-dependent nonlinear route must supply mean phase-weighted offset energy at least (9/2)*epsilon^2*D^2. A uniform multiplicity cap below 9*epsilon^2*D*G/(4*(D-1)) cannot support the target advantage. This is necessary, not sufficient; do not assume independence between the maximum multiplicity and the edge count.",
+    "PO-PRIOR": "Every secret coordinate and high digit is uniform. This is a mean-secret advantage bound, not preservation of individual pure states or pointwise hardness.",
+    "PO-BATCH": "Use the actual complete native batch. M=n*r-2 gives exponential suppression, but larger polynomial sample budgets can make the gate vacuous.",
+    "PO-DECODER": "The bound grants arbitrary classical postprocessing. Exact MAP in physical calibrations is exponential and not an efficient supplied decoder.",
+    "PO-FAILURE": "All Born outcomes and consumed sources remain in the raw score; do not promote postselected conditional success.",
+    "PO-SCOPE": "Multiple phase/mixing layers, label-dependent nonlinear word maps, arbitrary label-aware POVMs and other source laws require separate arguments.",
+    "PO-NOVELTY": "This is a restricted receiver exclusion, not a new quantum algorithm or a generic quantum lower bound. Novelty is unreviewed."
+  },
+  "quantum_speedup_proved": false,
+  "generic_quantum_lower_bound": false,
+  "novelty_claim": false,
+  "routine_wiring_owner": "Gemini or Antigravity"
+}

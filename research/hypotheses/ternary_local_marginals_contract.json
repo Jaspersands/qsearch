@@ -1,0 +1,35 @@
+{
+  "hypothesis_id": "HYP-NATIVE-LOCAL-MARGINAL-REALIZABILITY",
+  "status": "PSD_GAP_FAILS_37_EXACT_LOCAL_CUTS_STRENGTHENED_LP_STILL_FEASIBLE",
+  "candidate_record_accepted": false,
+  "note": "research/TERNARY_LOCAL_MARGINALS.md",
+  "report": "research/phase_workbench/ternary_local_marginals.json",
+  "depends_on": ["HYP-NATIVE-PSD-GLOBAL-SUPPORT"],
+  "finite_evidence": {
+    "native_block_count": 14,
+    "complete_triples_tested": 364,
+    "exact_three_block_extensions": 327,
+    "exact_nonPSD_local_obstructions": 37,
+    "unknown_local_verdicts": 0,
+    "tiny_LP_calls": 401,
+    "native_valid_cuts_added": 37,
+    "maximum_cut_coefficient_bits": 1,
+    "cut_original_nonzero_coefficients": 167,
+    "whole_model_resolves": 1,
+    "exact_strengthened_primal_continuations": 1,
+    "exact_global_duals": 0,
+    "whole_new_prefix_eliminations": 0
+  },
+  "proof_obligations_before_candidate_acceptance": {
+    "PO-REVIEW": "Review complete original triple indexing, all local native assignment inequalities, exact local marginal certificates and global slack accounting.",
+    "PO-JOINT": "Determine the intersection with PSD without assuming an indefinite LP continuation is a joint-feasible point.",
+    "PO-LEVERAGE": "Demonstrate fresh-target larger-root native pair recovery per fully charged work before integrating a costly conditional moment solver.",
+    "PO-POPULATION": "Prove actual source-law two-witness success and all receiver/reduction obligations."
+  },
+  "falsifier": "The base model with all selected valid local cuts admits a different exact fractional continuation; scoped point rejection alone does not produce recovery or global infeasibility.",
+  "not_proved": ["joint local-plus-PSD feasibility or infeasibility", "global native realization from local extensions", "source-population gap", "scalable two-witness solver", "quantum speedup"],
+  "next_target": "research/NATIVE_TERNARY_JOINT_REALIZABILITY_TARGET.md",
+  "routine_wiring_owner": "Gemini or Antigravity",
+  "novelty_claim": false,
+  "polynomial_pair_finder_proved": false
+}

@@ -1,0 +1,39 @@
+{
+  "id": "HYP-NATIVE-COLLECTIVE-PREFIX-LABEL-ACCESS-GATE",
+  "status": "collective_weak_target_copy_access_tradeoff_review_pending",
+  "derivation": "research/NATIVE_LABEL_ACCESS_GATE.md",
+  "implementation": "theorems/native_label_access_gate.py",
+  "artifact": "research/classical_baselines/native_label_access_gate.json",
+  "independent_checker": "research/certificates/native_label_access_gate_crosscheck.js",
+  "source": "M original even-native IID full frequency pairs and uniform integer-embedded secret in Z_(3^r)^n; conditional high lifts remain uniform given all low prefixes.",
+  "claim": "Arbitrary collective measurements whose effective POVM depends only on label residues modulo3^ell have raw mean least-trit advantage at most sqrt(((5/3)^M-1)/3^(n(r-ell)))+(1-3^(-M))/3^(n(r-ell)), capped at2/3, with unlimited full-label final classical decoding.",
+  "proof_obligations": [
+    "Externally review the conditional A2 character covariance and residue/sign block argument over composite ternary roots.",
+    "Review tensor fourth-moment induction, positive-effect spectral extension and weighted three-class transfer.",
+    "Charge every high-kernel secret and every source abort; do not condition correctness on their removal.",
+    "Verify the ENTIRE effective quantum measurement is unchanged by higher-label variations preserving the low prefix.",
+    "Do not confuse a low-controlled coupling matrix with an echo whose other gates use full frequencies.",
+    "Validate all ideal-source joint-error, source supply and upstream reduction obligations separately.",
+    "Do not infer a polynomial-copy impossibility from a near-entropy copy bound or a passed necessary gate.",
+    "Check novelty externally; finite algebraic certificates do not prove the general theorem."
+  ],
+  "falsifiers": [
+    "A nonkernel covariance crosses residue/sign blocks.",
+    "A positive complete effect violates the stated tensor variance bound.",
+    "A lawful low-prefix collective measurement and decoder exceed the raw source-average weak bound.",
+    "A full-label-controlled circuit or filtered non-IID source is declared to be covered.",
+    "Kernel omission, floating underflow or a full-label information-only PGM score is promoted to a speedup."
+  ],
+  "explicit_escapes": [
+    "More charged polynomial copies can make the bound vacuous.",
+    "Higher-label quantum control, including full-frequency phase gates.",
+    "Different source or secret prior with separately justified access and reductions."
+  ],
+  "candidate_record_accepted": false,
+  "full_label_PGM_compiler_supplied": false,
+  "all_polynomial_copy_receivers_ruled_out": false,
+  "classical_dequantization_claimed": false,
+  "new_speedup_claimed": false,
+  "novelty_claimed": false,
+  "routine_CLI_registry_UI_and_Git_owner": "Gemini or Antigravity"
+}

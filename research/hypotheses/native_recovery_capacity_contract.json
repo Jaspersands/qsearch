@@ -1,0 +1,24 @@
+{
+  "id": "NATIVE-RECOVERY-CAPACITY",
+  "status": "SCOPED_DIMENSION_AND_GENERIC_TRANSFER_EXCLUSION_EXTERNAL_REVIEW_PENDING",
+  "derivation": "research/NATIVE_RECOVERY_CAPACITY.md",
+  "producer": "theorems/native_recovery_capacity.py",
+  "report": "research/reductions/native_recovery_capacity.json",
+  "independent_checker": "research/certificates/native_recovery_capacity_crosscheck.js",
+  "mechanism": "full-uniform-secret dimension bounds for qutrit copies and Laurent signature spans of bounded weighted phase queries",
+  "access_model": "uniform secret conditioned on public labels; copy-only qutrits or fixed-bank exact phases with no original-value-dependent additional gates",
+  "proof_obligations": [
+    {"id": "COPY-DIMENSION", "claim": "full recovery success <= min(1,3^(M-nr)) at q=3^r", "status": "ELEMENTARY_DERIVATION_EXACT_REPLAY_REVIEW_PENDING"},
+    {"id": "QUERY-SPAN", "claim": "weighted exposure W spans at most sum_j 2^j choose(2M,j) choose(W,j) dimensions", "status": "LAURENT_EXPANSION_DERIVATION_EXACT_INTEGER_REPLAY_REVIEW_PENDING"},
+    {"id": "CAP-SAFETY", "claim": "incomplete signature counts and unresolved proxy enclosures cannot pass or exclude a receiver", "status": "UNKNOWN_STATUSES_AND_INDEPENDENT_TAMPER_TESTS"},
+    {"id": "GLOBAL-LEDGER", "claim": "monotonicity of L(K,W)/W for K>=2 extends a boundary comparison to all exposures", "status": "LOCAL_PROOF_AND_EXACT_ALL_EXPOSURE_WITNESS_REVIEW_PENDING"},
+    {"id": "ACCESS-SCOPE", "claim": "classical original values, secret-dependent initial inputs and smaller secret priors are outside these bounds", "status": "EXPLICIT_EXCLUSIONS_NOT_GENERAL_LWE_LOWER_BOUND"},
+    {"id": "RECEIVER", "claim": "a capacity pass provides an efficient receiver", "status": "FALSE_NECESSARY_CONDITIONS_ONLY"}
+  ],
+  "experiment": {
+    "observed": {"copy_profiles": 4, "query_profiles": 3, "joint_Gaussian_profiles": 3, "exact_small_signature_controls": 25, "global_generic_ledger_exclusions": 1},
+    "falsifiers": ["inverse-query signatures omitted", "ancilla size counted as secret information", "abort-conditioned correctness substituted", "partial sum promoted to dimension upper bound", "upper noise proxy called actual error lower bound", "original-value-dependent preprocessing silently included", "capacity pass promoted to scalable recovery"],
+    "accepted_speedup_candidates": 0
+  },
+  "not_claimed": ["novel general polynomial method", "computational hardness", "impossibility of noisy LWE algorithms", "efficient decoder", "hardness transfer", "quantum speedup"]
+}

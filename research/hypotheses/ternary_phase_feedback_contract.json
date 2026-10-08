@@ -1,0 +1,31 @@
+{
+  "hypothesis_id": "HYP-NATIVE-CAUSAL-PHASE-FEEDBACK-ACCESS",
+  "status": "CONSTRUCTIVE_RECORD_COMPILATION_AND_COSTED_FILTER_REVIEW_PENDING",
+  "candidate_record_accepted": false,
+  "note": "research/TERNARY_PHASE_FEEDBACK.md",
+  "report": "research/classical_baselines/ternary_phase_feedback.json",
+  "depends_on": ["HYP-NATIVE-PRODUCT-TRINE-JOINT-BASELINE"],
+  "mechanism": "Any causal public diagonal phase correction before full covariant readout can be compiled into an invertible classical record relabeling. A prescribed fixed-trine orbit can instead be filtered from covariant records with exact input-independent probability3/q^2 and fully charged source shortage.",
+  "research_decision": "Do not mistake nonlinear or outcome-adaptive diagonal feedback before FULL covariant measurement for additional quantum information. Preserve fixed-trine and batch-label-dependent readout as different access models unless their source emulation costs are actually met.",
+  "falsifiers": [
+    "The physical covariant effect identity fails on an arbitrary input.",
+    "A causal transcript cannot recover every original raw record and its exact posterior.",
+    "A fixed-trine orbit has input-dependent acceptance or the wrong conditional Born law.",
+    "The emulator retries an already consumed ancestor, silently normalizes an incomplete stream, or uses a current outcome to select its orbit."
+  ],
+  "proof_obligations": {
+    "PO-REVIEW": "Independently review the causal transcript coupling, scaled-identity orbit effect and stopped fresh-source label law.",
+    "PO-INPUT": "A covariant-record source still requires the actual quantum data. No classical simulator for original DCP inputs, unknown states or their preparation inverse is supplied.",
+    "PO-CAUSAL": "Phases use public labels and earlier reports, never current/future outcomes or unknown secret. Arbitrary callback closures are not accepted as audited public policies.",
+    "PO-READOUT": "Full-covariant feedback equivalence does not cover arbitrary non-diagonal gates, collective measurements or retained quantum memory.",
+    "PO-CAP": "Fixed-trine emulation consumes q^2/3 raw covariant records on average per output and can fail under a cap. Every rejected record is consumed; IDs alone do not prove a fresh source.",
+    "PO-REGIME": "q^2 overhead is polynomial in q, not logq. In q=poly(n) it may be polynomial only if upstream source supply permits. Do not assert universal exponential cost or free simulation.",
+    "PO-LOOKAHEAD": "The fixed-trine resampling reduction covers one-pass current-label/past-output policies, not a basis chosen from the entire eventual accepted batch. Label matching and whole-batch postselection are not free.",
+    "PO-DECODER": "An efficient decoder of quantum-produced raw records could still be a major quantum algorithm. Feedback compilation does not solve that inference problem.",
+    "PO-NOVELTY": "This is an access/equivalence baseline with no novelty or speedup claim."
+  },
+  "quantum_speedup_proved": false,
+  "generic_quantum_lower_bound": false,
+  "novelty_claim": false,
+  "routine_wiring_owner": "Gemini or Antigravity"
+}

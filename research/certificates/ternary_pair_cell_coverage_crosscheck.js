@@ -52,6 +52,11 @@ function prepare(saved,A,Q) {
       for(let j=0;j<i;j++)check(dot(v,rows[j])===0n,"GS orthogonality to entire earlier span");
       for(let j=0;j<v.length;j+=3)check(v[j]+v[j+1]+v[j+2]===0n,"native GS block plane");
       check(eq(fraction(r.multiplier),F(1n,C)),"GS projection reciprocal");
+      const prefix=[...direction.map(x=>x.v),v];
+      for(let k=0;k<v.length;k++) {
+        const reconstructed=prefix.reduce((s,u)=>add(s,F(dot(rows[i],u)*u[k],dot(u,u))),F(0n));
+        check(eq(reconstructed,F(rows[i][k])),"GS projection lies in the actual current row prefix span");
+      }
       const moments=r.unperturbed_uniform_word_moments;
       const second=F(3n*norm,C*C), third=F(9n*v.reduce((s,x)=>s+x**3n,0n),C**3n);
       let block=0n; for(let j=0;j<v.length;j+=3)block+=(v[j]**2n+v[j+1]**2n+v[j+2]**2n)**2n;
@@ -102,6 +107,8 @@ for(const control of report.exact_controls) {
       check(eq(fraction(depth.gamma_exact_conditional),F(BigInt(n),BigInt(D))),"conditional word fraction");
       check(eq(fraction(depth.beta_exact_conditional_uniform_targets),F(BigInt(p),Q)),"exact uniform-target coverage");
       check(eq(fraction(depth.word_count_pair_coverage_upper),F(BigInt(n),2n*Q)),"deterministic beta upper");
+      const lower=Math.max(0,c.true_pair_targets-(D-n));
+      check(eq(fraction(depth.full_truth_minus_missing_words_pair_lower),F(BigInt(lower),Q))&&p>=lower,"missing-word pair coverage lower");
       check(BigInt(depth.scheduled_candidates_all_charts)===BigInt(charts.length)*listSize(2*M,k,B),"all forced-repair list costs");
     }
   }

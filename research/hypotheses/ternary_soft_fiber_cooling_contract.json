@@ -1,0 +1,39 @@
+{
+  "id": "HYP-TERNARY-SOFT-FIBER-COOLING",
+  "status": "actual_conditional_parent_and_state_transfer_obstruction_review_pending",
+  "derivation": "research/TERNARY_SOFT_FIBER_COOLING.md",
+  "implementation": "theorems/ternary_soft_fiber_cooling.py",
+  "artifact": "research/phase_workbench/ternary_soft_fiber_cooling.json",
+  "independent_checker": "research/certificates/ternary_soft_fiber_cooling_crosscheck.js",
+  "mechanism": "Conditional coherent Gibbs parents for binary full-frequency membership energy, allowing intermediate violations; direct state-transfer bound from the actual uniform initial state.",
+  "source": "original_even_native_qutrits_with_full_public_rows",
+  "population_law": "all_IID_uniform_full_native_frequency_rows",
+  "weighting": "original_source_Born_weights_C_y_over_3_to_M_not_uniform_occupied_fibers",
+  "research_decision": "Polynomial-action logarithmic-support binary-energy parent cooling does not implement a useful population-average normalized-fiber eraser.",
+  "proof_obligations": [
+    "Review exact conditional-projector norm and Duhamel state-transfer proof, including signed schedules and marked-projector controls.",
+    "Charge a uniform per-instance integrated action cap, all original copies and complete-channel simulation error.",
+    "Do not infer runtime solely from small spectator spectral gaps.",
+    "Clean coherent erasure requires a full vector/scratch certificate, not just successful fiber membership.",
+    "Residual-aware energies, non-parent controls and warm starts require separate state-transfer arguments."
+  ],
+  "falsifiers": [
+    "Actual full-root conditional projection violates its exact uniform-state norm ceiling.",
+    "Entire native label-population purity violates 1/G+(1-1/G)/D.",
+    "Signed/reheating dynamics exceed the action ceiling beyond validated numerical error.",
+    "A supplied ground-state projector or a postselected output is treated as free parent evolution.",
+    "The global-block bisector positive control is excluded by a purported general Hamiltonian lower bound."
+  ],
+  "not_covered": [
+    "Residual/distance energies modifying unmarked conditional classes.",
+    "Nonlocal polynomial-description operations and different encodings.",
+    "Independently prepared warm states or extra non-parent controls.",
+    "Arbitrary collective POVMs or quantum circuits."
+  ],
+  "candidate_record_accepted": false,
+  "efficient_fiber_eraser_supplied": false,
+  "arbitrary_quantum_receiver_lower_bound": false,
+  "quantum_speedup_proved": false,
+  "novelty_claim": false,
+  "routine_wiring_owner": "Gemini or Antigravity"
+}

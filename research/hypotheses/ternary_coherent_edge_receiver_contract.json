@@ -1,0 +1,32 @@
+{
+  "hypothesis_id": "HYP-NATIVE-FULL-LABEL-COHERENT-EDGE-RECEIVER",
+  "status": "CONSTRUCTIVE_RECEIVER_WITH_EXPONENTIAL_CHARGED_SEARCH_REVIEW_PENDING",
+  "candidate_record_accepted": false,
+  "note": "research/TERNARY_COHERENT_EDGE_RECEIVER.md",
+  "report": "research/phase_workbench/ternary_coherent_edge_receiver.json",
+  "depends_on": ["HYP-NATIVE-FULL-LABEL-WEAK-LEAST-TRIT"],
+  "mechanism": "Use all signed nonzero native F3 offsets, a clean full-label informative-edge predicate, one shared geometric Grover time and reversible order-three orientation before a trine readout. Classical two-witness search is bypassed, not the exponential cost.",
+  "falsifiers": [
+    "A native directed edge and its reverse fail to map to a common representative/canonical offset with opposite orientation bits.",
+    "Actual unconditioned Born correctness differs from 1/3 plus one-third the oriented cross-endpoint interference.",
+    "The shared-time kernel is negative or violates its bounded-degree lower bound.",
+    "The complete IID native-source degree census contradicts the first or second moment.",
+    "Runtime or state acquisition is hidden in a full table, retained history, degree oracle, source reflection or postselection."
+  ],
+  "proof_obligations_before_candidate_acceptance": {
+    "PO-REVIEW": "Review the native unit-minor population transfer, trine normalization, reversible scratch cleanup, exact kernel and clipping.",
+    "PO-EFFICIENT-MEASUREMENT": "Replace O(3^(n*r/2)) generic search with a charged structure-aware implementation. The present subsystem is explicitly exponential.",
+    "PO-SOURCE": "Supply acquisition of the clean IID native full-label vector source from the actual target computational problem.",
+    "PO-NOISE": "Prove allowed precision and noise guarantees. No DCP noise theorem is transferred automatically.",
+    "PO-BOOTSTRAP": "Resolve all lower-root cases, fresh-state guarantees and end-to-end amplified recovery, not just n*r>=5 population advantage.",
+    "PO-BASELINES": "Compare full recovery with serious classical methods and established quantum sieves; finite coherent calibration is not a separation.",
+    "PO-NOVELTY": "Complete a literature comparison and independent review; no novelty is asserted."
+  },
+  "classical_witness_finder_required": false,
+  "low_only_solver_beta_transfer_applicable": false,
+  "polynomial_time_weak_learner_implemented": false,
+  "full_secret_decoder_implemented": false,
+  "quantum_speedup_proved": false,
+  "novelty_claim": false,
+  "routine_wiring_owner": "Gemini or Antigravity"
+}

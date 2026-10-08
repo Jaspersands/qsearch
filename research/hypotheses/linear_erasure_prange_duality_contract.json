@@ -1,0 +1,28 @@
+{
+  "id": "AFFINE-ERASURE-PRANGE-DUALITY",
+  "status": "MECHANISM_LEVEL_CLASSICAL_COUNTERPART_DERIVATION_EXTERNAL_REVIEW_PENDING",
+  "derivation": "research/LINEAR_ERASURE_PRANGE_DUALITY.md",
+  "producer": "theorems/linear_erasure_prange_duality.py",
+  "report": "research/classical_baselines/linear_erasure_prange_duality.json",
+  "independent_checker": "research/certificates/linear_erasure_prange_duality_crosscheck.js",
+  "literature": [{"url": "https://arxiv.org/html/2609.40345v1", "scope": "motivation from the product-USD/Prange correspondence, not attribution of the affine theorem"}],
+  "mechanism": "a positive uniform-affine-subspace mixture supplies both a coherent partial-linear-information instrument and a matched affine-constraint classical sampler",
+  "access_model": "public explicit affine factor maps and efficiently represented known rational mixture; no comparison with classical state-only discrimination",
+  "proof_obligations": [
+    {"id": "AFFINE-INSTRUMENT", "claim": "branch l outputs sqrt(w_l)*(-1)^(d dot offset_l) times its exact linear information", "status": "CONSTRUCTIVE_CONSTANT_SIZE_ISOMETRIES_EXACT_GRAM_REPLAY_PHASES_RETAINED_REVIEW_PENDING"},
+    {"id": "GLOBAL-RANK", "claim": "quantum unique-reconstruction and classical full-row-rank matrices are transposes", "status": "GENERAL_DERIVATION_AND52_EXACT_BRANCH_CONTROLS_EXTERNAL_REVIEW_PENDING"},
+    {"id": "COHERENT-PRIOR", "claim": "codeword branch probabilities hold for arbitrary coherent priors", "status": "FALSIFIED_NO_GLOBAL_GIBBS_SUCCESS_INFERRED"},
+    {"id": "POSITIVE-MIXTURE-COST", "claim": "representation, affine membership, random coins and GF2 elimination are polynomially costed", "status": "EXPLICIT_BASIS_SAMPLER_IMPLEMENTED_NO_EXPONENTIAL_LOCAL_TABLE_PROMOTED"},
+    {"id": "CLASSICAL-NORMALIZATION", "claim": "random-sign average TV is at most3 times branch-proposal rank failure", "status": "SCOPED_DERIVATION_FULL_SIGN_CENSUSES_AND_EXACT_CHERNOFF_LEDGER"},
+    {"id": "FOUR-MESSAGE-OPTIMALITY", "claim": "mean unresolved load4c^2-c^4 is optimal within positive affine-subspace instruments", "status": "EXACT_FIXED_DUAL_ON_ALL51_AFFINE_SUBSPACES_NOT_OPTIMAL_GENERAL_QUANTUM_MEASUREMENT"},
+    {"id": "SIGNED-OVERLAP-ESCAPE", "claim": "negative Gram entries escape the matched classical mechanism", "status": "FALSIFIED_BY_PHASE_RETAINING_AFFINE_INSTRUMENT_WITH_OPTIMAL_LOAD3/5"},
+    {"id": "SPEEDUP", "claim": "these local decoder improvements establish an asymptotic quantum advantage", "status": "NOT_ADMITTED_MATCHED_CLASSICAL_RANK_CONDITIONS_AND_GLOBAL_PRIOR_DEBT"}
+  ],
+  "experiment": {
+    "observed": {"actual_constant_size_instrument_controls": 4, "exact_Gram_entries": 208, "complete_signed_instances": 145, "exact_dual_subspaces": 164, "exact_rank_transposes": 52, "scaling_profiles": 4, "live72bit_classical_samples": 16},
+    "falsifiers": ["affine phase discarded", "nonuniform coherent prior replaced with a codeword mixture", "dual checked only on chosen branches", "classical affine offsets omitted", "arbitrary fixed-sign partition claim", "large integer rounded in JSON", "classical state-only access compared against public-factor access", "outside-origin cone called outside-affine cone"],
+    "accepted_speedup_candidates": 0
+  },
+  "next_target": "actual scalable receiver not reducible to an efficiently represented low-load affine-erasure instrument, with full coherent source and normalization contracts and a stronger classical baseline",
+  "not_claimed": ["general quantum dequantization", "classical hardness", "native hidden-shift receiver", "global coherent Gibbs sampler", "novelty", "machine-checked proof"]
+}

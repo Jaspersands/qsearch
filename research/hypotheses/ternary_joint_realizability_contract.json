@@ -1,0 +1,22 @@
+{
+  "hypothesis_id": "HYP-NATIVE-JOINT-LOCAL-PSD",
+  "status": "EXACT_NATIVE_GAP_WITH_ALL_37_SELECTED_LOCAL_CUTS_AND_PSD",
+  "candidate_record_accepted": false,
+  "note": "research/TERNARY_JOINT_REALIZABILITY.md",
+  "report": "research/phase_workbench/ternary_joint_realizability.json",
+  "depends_on": ["HYP-NATIVE-LOCAL-MARGINAL-REALIZABILITY"],
+  "finite_evidence": {"local_native_cuts": 37, "PSD_square_cuts": 3, "total_LP_calls": 4, "numeric_hull_proposals": 660, "exact_hull_checks": 9, "full_joint_PSD_native_gaps": 1, "exact_global_obstructions": 0, "whole_prefix_eliminations": 0},
+  "scoped_negative_result": {"target": "11366831", "winding": 3, "claim": "All original equations, all37 selected native local inequalities and complete PSD admit an exact continuation on this empty prefix. This does not establish full three-block local consistency."},
+  "proof_obligations_before_candidate_acceptance": {
+    "PO-REVIEW": "Review the entire mixed local/PSD slack ledger, support-model scope and original-coordinate exact LDL/native-emptiness certificates.",
+    "PO-LOCAL-CLOSURE": "Do not equate one selected cut per failing triple with its full local marginal polytope; the new point fails14 Boolean-event triples.",
+    "PO-LEVERAGE": "Establish fresh-target source-law two-witness coverage and charge the complete receiver, not finite-prefix point rejection.",
+    "PO-ARCHITECTURE": "Distinguish a sufficient ordinary classical helper from a necessity theorem for all quantum receivers."
+  },
+  "falsifier": "An exact joint PSD continuation on an independently empty prefix refutes completeness of this selected-cut relaxation. This finite falsifier has occurred.",
+  "not_proved": ["full three-block consistency", "population or hierarchy lower bound", "native recovery", "quantum speedup"],
+  "next_target": "research/NATIVE_TERNARY_EVENT_FAMILY_TARGET.md",
+  "routine_wiring_owner": "Gemini or Antigravity",
+  "novelty_claim": false,
+  "polynomial_pair_finder_proved": false
+}

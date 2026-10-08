@@ -1,0 +1,36 @@
+{
+  "id": "ATTEMPT-NATIVE-FULL-RECORD-CVP-AND-ROUNDING-INFLUENCE",
+  "status": "IMPLEMENTED_OPTIMIZER_WITH_EXACT_FINITE_FACTOR_FAILURES_REVIEW_PENDING",
+  "input": "All original paired readouts at q=3^r, full labels, M=4nr or8nr; no Gaussian or BDD promise",
+  "evidence": "research/classical_baselines/ternary_full_record_cvp.json",
+  "independent_checker": "research/certificates/ternary_full_record_cvp_crosscheck.js",
+  "literature": ["https://arxiv.org/abs/1102.2936", "https://arxiv.org/abs/1003.0064"],
+  "primary_results": [
+    "Exact full-cohort Euclidean LLL/Babai repair and Kannan-style modular proposal generator",
+    "Five finite native-source instances refute a norm9/8 approximation guarantee for this optimizer",
+    "Public GS dependency compiler proves arbitrary dead-only repairs preserve the returned modular secret for every target",
+    "A zero-code row can still be influential through feedforward; blanket q-axis pruning is unsound"
+  ],
+  "proof_obligations": [
+    "Complete code lattice index, exact sparse profiles and unimodular transforms",
+    "Every repaired path and modular unit-coefficient embedding extraction",
+    "Both training objectives frozen before fresh data, joint candidate multiplicity charged",
+    "Approximation comparison uses a valid public point, not assumed global optimum or true-secret advice to the decoder",
+    "Dead influence closes the entire GS ancestor DAG, not only each row's code secret",
+    "A future optimized influence-menu experiment needs NEW held-out samples",
+    "Growing-root algorithm, approximation guarantee and actual source acquisition remain unresolved"
+  ],
+  "falsifiers": [
+    "A discarded rounding node reaches a nonzero-secret ancestor",
+    "A comparison point is not in the actual full-root lattice",
+    "A squared-factor violation does not satisfy the exact integer inequality",
+    "A unit coefficient other than+/-1 is declared a literal CVP error vector",
+    "Old held-out data is used to certify a newly selected optimized candidate",
+    "Finite optimizer failure is promoted to population or classical hardness"
+  ],
+  "optimized_influence_menu_recovery_tested": false,
+  "near_exact_CVP_solver_implemented": false,
+  "original_quantum_source_classically_simulated": false,
+  "accepted_speedup_candidate": false,
+  "routine_integration_owner": "Gemini or Antigravity"
+}

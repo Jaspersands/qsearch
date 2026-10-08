@@ -1,0 +1,28 @@
+{
+  "id": "BASELINE-NATIVE-FULL-ROOT-PAIRED-LATTICE",
+  "status": "IMPLEMENTED_BOUNDED_CLASSICAL_RECORD_ATTACK_REVIEW_PENDING",
+  "input": "Full-modulus IID covariant records from supplied native qutrits; correlated outcomes retained",
+  "primary_result": "Exact label-only code lattice, paired metric, exact LLL/Babai repair shortlist and native-score training selection",
+  "evidence": "research/classical_baselines/ternary_measured_lattice_decoder.json",
+  "independent_checker": "research/certificates/ternary_measured_lattice_decoder_crosscheck.js",
+  "literature": ["https://eprint.iacr.org/2019/1019", "https://arxiv.org/abs/1710.08223"],
+  "proof_obligations": [
+    "Systematic basis equals the full modular code lattice at unit rank",
+    "Paired metric and every unimodular transform are exact",
+    "Every Babai repair and full-root secret membership is independently replayed",
+    "Only training records select the candidate; fresh batch is acquired afterwards",
+    "Surrogate metric is not silently promoted to exact likelihood or a Gaussian promise",
+    "All original source and classical list costs, rank failures and misses remain visible"
+  ],
+  "falsifiers": [
+    "A decoded point leaves the actual full-root code",
+    "Hidden truth enters subset selection, lattice reduction or proposal ranking",
+    "A noise pair is treated as two independent originals",
+    "A candidate chosen after seeing fresh data inherits a one-candidate verifier",
+    "Failed bounded attacks are promoted to classical hardness"
+  ],
+  "population_recovery_proved": false,
+  "original_quantum_source_classically_simulated": false,
+  "accepted_speedup_candidate": false,
+  "routine_integration_owner": "Gemini or Antigravity"
+}

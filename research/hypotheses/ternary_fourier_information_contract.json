@@ -1,0 +1,29 @@
+{
+  "hypothesis_id": "HYP-NATIVE-SOURCE-LOCAL-FOURIER-INFORMATION",
+  "status": "MEASUREMENT_SPECIFIC_INFORMATION_BOUND_REVIEW_PENDING",
+  "note": "research/TERNARY_FOURIER_INFORMATION.md",
+  "report": "research/phase_workbench/ternary_fourier_information.json",
+  "depends_on": ["HYP-NATIVE-DEPTH-INDEPENDENT-RIDGE-CANCELLATION", "HYP-NATIVE-COLLECTIVE-CHARACTER-FEEDFORWARD-RECEIVER"],
+  "candidate_record_accepted": false,
+  "proof_obligations": {
+    "PO-CONDITIONING": "Condition low frames, source outcomes and original low-ell-only selection, not full alpha/delta labels, for source moments. An output-curvature selector reads delta mod3 and does not satisfy this premise. Mutual information conditions full public labels and then averages over their source distribution. Do not interchange these statements.",
+    "PO-MOMENT": "For every nonzero secret including divisible secrets, effective order is at least3. Independent alpha/delta enforce equality of the two physical-trit multisets in each fourth moment, also at effective order3. Fixed low carries then cancel exactly.",
+    "PO-GEOMETRY": "The actual selected physical frame is injective. Full symmetric-square direction rank separates unordered word pairs by sums and outer products, giving energy2D^2-D. Rank failure is not proof failure of every decoder; use a bounded pair census or retain missing status.",
+    "PO-ENTROPY": "Exact mean local Fourier collision is E/D^3. Shannon versus collision entropy and Jensen give a source-mean information bound log(E/D^2)+(log(D)-log(E/D^2))/q^n, with zero-secret correction retained.",
+    "PO-SAMPLES": "Fixed product measurements factor conditional on secret and labels. Entropy subadditivity and Fano impose a total-information sample requirement, even for unlimited classical decoding. This is not an inference-time lower bound.",
+    "PO-NUMERICS": "Large-root zero mass is retained exactly as a rational. Floating entropy and Fano values are estimates, not certified numerical intervals or an exact proof from finite samples.",
+    "PO-SCOPE": "The bound is source-mean, uniform-prior and specific to fixed local Fourier bases. It excludes label/outcome-adaptive bases and coherent nonproduct measurements. Classical simulation and quantum hardness are not proved.",
+    "PO-REVIEW": "Physical IID supply, correlated channel error, independent mathematical review, novelty comparison and a tractable full-secret inference algorithm remain unresolved."
+  },
+  "falsifiable_experiments": [
+    "A physical code with the certified square rank has an extra unordered-pair collision.",
+    "True original alpha/delta chart mutations change low acquisition supports or violate the exact fourth moment.",
+    "A divisible nonzero secret is incorrectly treated as an exception to the effective-order argument.",
+    "A pointwise, adaptive-measurement, collective or computational-hardness claim is inferred from this source-mean entropy bound."
+  ],
+  "general_collective_receiver_ruled_out": false,
+  "efficient_full_secret_decoder_supplied": false,
+  "quantum_speedup_proved": false,
+  "novelty_claim": false,
+  "routine_wiring_owner": "Gemini or Antigravity"
+}

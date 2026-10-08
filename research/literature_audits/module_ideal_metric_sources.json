@@ -1,0 +1,43 @@
+{
+  "id": "LIT-LUO-MODULE-LATTICE-IV-2605.17412",
+  "title": "Module Lattice Security (Part IV): Probabilistic Polynomial Quantum Attack on Module-LWE over 2-Power Cyclotomics",
+  "authors": ["Ming-Xing Luo"],
+  "version": "v1",
+  "checked_at": "2026-10-08",
+  "primary_url": "https://arxiv.org/html/2605.17412v1",
+  "claims_audited": [
+    {
+      "id": "CLAIM-LUO-IV-ZETA8-BASE",
+      "location": "Section 5.4, base case L=3",
+      "claim_paraphrase": "The base unit generator is sqrt(2), and principal ideals at the base are unit powers whose exponent is determined by ideal norm.",
+      "audit_status": "EXACT_ALGEBRAIC_COUNTEREXAMPLES",
+      "evidence": "research/reductions/module_ideal_metric_audit.json#zeta8_base_case_control"
+    },
+    {
+      "id": "OBLIGATION-MODULE-IDEAL-METRIC-LIFT",
+      "location": "Sections 3.2 and 4.1; module-to-ideal transport",
+      "claim_paraphrase": "The proposed pipeline moves from module geometry to principal-ideal generators with controlled loss.",
+      "audit_status": "METRIC_BRIDGE_REQUIRED_ENGINEERED_COUNTEREXAMPLES_TO_DIAGONAL_DATA_SUFFICIENCY",
+      "evidence": "research/reductions/module_ideal_metric_audit.json#module_metric_controls",
+      "random_MLWE_distribution_claim_not_resolved": true
+    },
+    {
+      "id": "OBLIGATION-PUBLIC-KERNEL-SOURCE-COMPATIBILITY",
+      "location": "Sections 2.2 and 4.1; public kernel versus small iid module matrices",
+      "claim_paraphrase": "A small iid matrix determinant law is used in the attack's source analysis.",
+      "audit_status": "NATIVE_PUBLIC_KERNEL_DETERMINANT_IS_FIXED_SCALAR",
+      "evidence": "research/reductions/module_ideal_metric_audit.json#native_public_kernel_source_theorem",
+      "different_target_ideal_reductions_not_excluded": true
+    },
+    {
+      "id": "OBLIGATION-SVP-AFFINE-KEY-RECOVERY",
+      "location": "Sections 2.2, 2.3 and 2.7",
+      "claim_paraphrase": "A sufficiently small SVP approximation factor is treated as enough for secret recovery.",
+      "audit_status": "AFFINE_DECODING_REDUCTION_REQUIRED",
+      "evidence": "research/reductions/module_ideal_metric_audit.json#homogeneous_affine_controls"
+    }
+  ],
+  "paper_is_not_treated_as_an_established_cryptographic_break": true,
+  "all_possible_repairs_or_PIP_algorithms_refuted": false,
+  "audit_does_not_claim_novelty": true
+}
