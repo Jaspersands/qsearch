@@ -20309,6 +20309,17 @@ def command_native_gaussian_bank_robustness(args: argparse.Namespace) -> int:
     return 0 if validation["valid"] else 1
 
 
+def command_native_history_erasure_dequantization(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    from theorems.native_history_erasure_dequantization import REPORT, write_report
+    write_report(write_registry=not getattr(args, "no_registry", False))
+    validation = validate_registry()
+    print("native_history_erasure_dequantization complete")
+    print(f"Artifact: {REPORT}")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--root", type=Path, default=Path.cwd())
@@ -27967,6 +27978,13 @@ def build_parser() -> argparse.ArgumentParser:
     )
     native_gaussian_bank_robustness.add_argument("--no-registry", action="store_true")
     native_gaussian_bank_robustness.set_defaults(func=command_native_gaussian_bank_robustness)
+
+    native_history_erasure_dequantization = subparsers.add_parser(
+        "native-history-erasure-dequantization",
+        help="Run native phase bank history erasure barrier, ISIS equivalence, and classical dequantization audit.",
+    )
+    native_history_erasure_dequantization.add_argument("--no-registry", action="store_true")
+    native_history_erasure_dequantization.set_defaults(func=command_native_history_erasure_dequantization)
 
     validate = subparsers.add_parser("validate", help="Validate candidates and experiments against proof obligations.")
     validate.set_defaults(func=command_validate)

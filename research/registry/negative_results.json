@@ -85184,5 +85184,25 @@
     "lesson": "Do not treat irrep-label bias as a hidden-permutation algorithm; require collective measurements or additional row/column information.",
     "reason_invalid": "Weak Fourier labels have only small bias; any speedup claim needs collective row/column measurements.",
     "source": "weak_fourier_signal.py"
+  },
+  {
+    "applies_to": [
+      "CYCLOTOMIC-LWE",
+      "NATIVE-PHASE-BANK",
+      "MULTI-QUERY-RECEIVER",
+      "ISIS-REDUCTION"
+    ],
+    "claim": "Expanding quantum phase-bank exposure to W = n^2 enables an efficient quantum collective receiver bypassing classical lattice baselines.",
+    "evidence": {
+      "artifact": "research/reductions/native_history_erasure_dequantization.json",
+      "coherence_off_diagonal_max": 0.0,
+      "classical_bkw_trace_distance": 0.0,
+      "min_noise_inflation_law": "||c||_2 >= n",
+      "isis_modulus_to_bound_gap": "gamma = 3^n / n^2 = 2^Omega(n)"
+    },
+    "id": "NEG-NATIVE-PHASE-BANK-HISTORY-ERASURE-DEQUANTIZATION-BARRIER",
+    "lesson": "Multi-query phase banks retain query exponent history in quantum registers. Without history erasure, the frequency state dequantizes into a classical BKW sample mixture. Unitary history erasure is computationally equivalent to solving ISIS with exponential gap (GapSVP-hard), while query expansion inflates noise variance by at least n^2.",
+    "reason_invalid": "The fundamental trilemma proves that: (1) low exposure is blocked by the Laurent signature capacity bound; (2) high exposure without erasure yields zero off-diagonal coherence and dequantizes to classical BKW sampling with noise inflated by at least n; (3) high exposure with unitary erasure requires an unimplemented polynomial-time ISIS oracle.",
+    "source": "research/reductions/native_history_erasure_dequantization.json"
   }
 ]

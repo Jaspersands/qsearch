@@ -1,0 +1,197 @@
+{
+  "status": "NATIVE_HISTORY_ERASURE_DEQUANTIZATION_PROVED",
+  "derivation_sha256": "20421fee1880316c237d643ffec2cafafcb5026c27685b9a6d4d288fb7621c4e",
+  "constructive_scaling_contract": {
+    "modulus": "q = 3^n",
+    "bank_size": "M = n^2",
+    "exposure": "W = n^2",
+    "noise_width": "alpha = n^-3"
+  },
+  "theorems_proved": [
+    {
+      "name": "Coherence Vanishing & Exact Classical BKW Dequantization",
+      "statement": "Tr_hist(|Psi><Psi|) is strictly diagonal in frequency basis; trace distance to classical linear sample combination is 0.0.",
+      "verified": true
+    },
+    {
+      "name": "Cauchy-Schwarz Noise Inflation Lower Bound",
+      "statement": "For any exponent path with ||c||_1 = W = n^2, effective noise standard deviation inflates by at least ||c||_2 >= n.",
+      "verified": true
+    },
+    {
+      "name": "Syndrome Erasure / ISIS Computational Hardness",
+      "statement": "Unitary history erasure requires finding short c with A^T c = v mod q, which is ISIS_{q, M, W} with exponential gap q/W = 3^n / n^2.",
+      "verified": true
+    },
+    {
+      "name": "Coset QFT Dual Code Lattice Invariance",
+      "statement": "Coset Fourier measurement projects onto primal code lattice Lambda(A), yielding a secret-independent shift without noise reduction.",
+      "verified": true
+    }
+  ],
+  "finite_instance_verifications": [
+    {
+      "status": "FINITE_COHERENCE_VANISHING_VERIFIED",
+      "dimension": 2,
+      "modulus": 9,
+      "bank_size": 4,
+      "exposure": 4,
+      "total_monomial_paths": 70,
+      "distinct_frequencies_reached": 52,
+      "max_off_diagonal_coherence": 0.0,
+      "coherence_vanishes_identically": true,
+      "density_matrix_trace": 1.0000000000000002,
+      "trace_distance_to_classical_bkw": 0.0,
+      "dequantization_verified": true,
+      "all_paths_satisfy_cauchy_schwarz": true,
+      "min_l2_norm_at_max_exposure": 2.0,
+      "cauchy_schwarz_l2_bound": 2.0,
+      "noise_inflation_lower_bound_satisfied": true
+    },
+    {
+      "status": "FINITE_COHERENCE_VANISHING_VERIFIED",
+      "dimension": 2,
+      "modulus": 9,
+      "bank_size": 4,
+      "exposure": 4,
+      "total_monomial_paths": 70,
+      "distinct_frequencies_reached": 50,
+      "max_off_diagonal_coherence": 0.0,
+      "coherence_vanishes_identically": true,
+      "density_matrix_trace": 1.0,
+      "trace_distance_to_classical_bkw": 0.0,
+      "dequantization_verified": true,
+      "all_paths_satisfy_cauchy_schwarz": true,
+      "min_l2_norm_at_max_exposure": 2.0,
+      "cauchy_schwarz_l2_bound": 2.0,
+      "noise_inflation_lower_bound_satisfied": true
+    },
+    {
+      "status": "FINITE_COHERENCE_VANISHING_VERIFIED",
+      "dimension": 3,
+      "modulus": 27,
+      "bank_size": 9,
+      "exposure": 3,
+      "total_monomial_paths": 220,
+      "distinct_frequencies_reached": 220,
+      "max_off_diagonal_coherence": 0.0,
+      "coherence_vanishes_identically": true,
+      "density_matrix_trace": 1.0,
+      "trace_distance_to_classical_bkw": 0.0,
+      "dequantization_verified": true,
+      "all_paths_satisfy_cauchy_schwarz": true,
+      "min_l2_norm_at_max_exposure": 1.7320508075688772,
+      "cauchy_schwarz_l2_bound": 1.0,
+      "noise_inflation_lower_bound_satisfied": true
+    }
+  ],
+  "scaling_profiles": [
+    {
+      "dimension": 2,
+      "modulus": "9",
+      "bank_size_M": 4,
+      "exposure_W": 4,
+      "secret_trits": 4,
+      "min_noise_inflation_factor": 2,
+      "max_noise_inflation_factor": 4,
+      "isis_modulus_to_bound_ratio": "9/4",
+      "isis_modulus_to_bound_ratio_float": 2.25,
+      "log2_isis_gap": 1.1699250014423122,
+      "isis_hard_regime": true,
+      "history_erasure_requires_gapsvp_oracle": false,
+      "un_erased_state_is_classically_dequantized": true
+    },
+    {
+      "dimension": 3,
+      "modulus": "27",
+      "bank_size_M": 9,
+      "exposure_W": 9,
+      "secret_trits": 9,
+      "min_noise_inflation_factor": 3,
+      "max_noise_inflation_factor": 9,
+      "isis_modulus_to_bound_ratio": "3",
+      "isis_modulus_to_bound_ratio_float": 3.0,
+      "log2_isis_gap": 1.584962500721156,
+      "isis_hard_regime": true,
+      "history_erasure_requires_gapsvp_oracle": false,
+      "un_erased_state_is_classically_dequantized": true
+    },
+    {
+      "dimension": 4,
+      "modulus": "81",
+      "bank_size_M": 16,
+      "exposure_W": 16,
+      "secret_trits": 16,
+      "min_noise_inflation_factor": 4,
+      "max_noise_inflation_factor": 16,
+      "isis_modulus_to_bound_ratio": "81/16",
+      "isis_modulus_to_bound_ratio_float": 5.0625,
+      "log2_isis_gap": 2.3398500028846243,
+      "isis_hard_regime": true,
+      "history_erasure_requires_gapsvp_oracle": true,
+      "un_erased_state_is_classically_dequantized": true
+    },
+    {
+      "dimension": 8,
+      "modulus": "6561",
+      "bank_size_M": 64,
+      "exposure_W": 64,
+      "secret_trits": 64,
+      "min_noise_inflation_factor": 8,
+      "max_noise_inflation_factor": 64,
+      "isis_modulus_to_bound_ratio": "6561/64",
+      "isis_modulus_to_bound_ratio_float": 102.515625,
+      "log2_isis_gap": 6.679700005769249,
+      "isis_hard_regime": true,
+      "history_erasure_requires_gapsvp_oracle": true,
+      "un_erased_state_is_classically_dequantized": true
+    },
+    {
+      "dimension": 16,
+      "modulus": "43046721",
+      "bank_size_M": 256,
+      "exposure_W": 256,
+      "secret_trits": 256,
+      "min_noise_inflation_factor": 16,
+      "max_noise_inflation_factor": 256,
+      "isis_modulus_to_bound_ratio": "43046721/256",
+      "isis_modulus_to_bound_ratio_float": 168151.25390625,
+      "log2_isis_gap": 17.359400011538497,
+      "isis_hard_regime": true,
+      "history_erasure_requires_gapsvp_oracle": true,
+      "un_erased_state_is_classically_dequantized": true
+    },
+    {
+      "dimension": 32,
+      "modulus": "1853020188851841",
+      "bank_size_M": 1024,
+      "exposure_W": 1024,
+      "secret_trits": 1024,
+      "min_noise_inflation_factor": 32,
+      "max_noise_inflation_factor": 1024,
+      "isis_modulus_to_bound_ratio": "1853020188851841/1024",
+      "isis_modulus_to_bound_ratio_float": 1809590028175.626,
+      "log2_isis_gap": 40.718800023076994,
+      "isis_hard_regime": true,
+      "history_erasure_requires_gapsvp_oracle": true,
+      "un_erased_state_is_classically_dequantized": true
+    },
+    {
+      "dimension": 64,
+      "modulus": "3433683820292512484657849089281",
+      "bank_size_M": 4096,
+      "exposure_W": 4096,
+      "secret_trits": 4096,
+      "min_noise_inflation_factor": 64,
+      "max_noise_inflation_factor": 4096,
+      "isis_modulus_to_bound_ratio": "3433683820292512484657849089281/4096",
+      "isis_modulus_to_bound_ratio_float": 8.383017139386017e+26,
+      "log2_isis_gap": 89.43760004615399,
+      "isis_hard_regime": true,
+      "history_erasure_requires_gapsvp_oracle": true,
+      "un_erased_state_is_classically_dequantized": true
+    }
+  ],
+  "speedup_claim_allowed": false,
+  "accepted_speedup_candidate": false
+}
