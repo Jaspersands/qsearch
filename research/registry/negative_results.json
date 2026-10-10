@@ -67633,6 +67633,28 @@
   },
   {
     "applies_to": [
+      "DCP-DENSITY-ONE-SUBSET-SUM",
+      "2-ADIC-CARRY-RECURRENCE",
+      "COLLISION-WALK",
+      "SPECTRAL-GAP"
+    ],
+    "claim": "Non-local, carry-directed relation networks or 2-adic quotient embeddings can establish an inverse-polynomial legal coverage walk or connected graph on density-one subset sum fibers.",
+    "evidence": {
+      "admissibility_bound": "P_adm <= 2^-W* = 2^-Omega(n / log n)",
+      "artifact": "research/classical_baselines/dcp_two_adic_carry_fragmentation_barrier.json",
+      "average_degree_ceiling": "d_bar <= n^C 2^-Omega(n / log n) -> 0",
+      "carry_entropy_bound": "H(c_k) <= log2(m) = O(log n) bits",
+      "critical_weight_formula": "W* = floor((k - lambda) / log2(2em)) = Omega(n / log n)",
+      "isolated_vertex_fraction": "V_iso / |F_k| >= 1 - 2^-Omega(n / log n) -> 1",
+      "residual_fiber_entropy": "H(x | c_k) >= (1 - alpha)n - log2(m) = Omega(n) bits"
+    },
+    "id": "NEG-DCP-TWO-ADIC-CARRY-DICTIONARY-FRAGMENTATION-BARRIER",
+    "lesson": "Instance-adaptive non-local relations cannot overcome fiber fragmentation. Low-weight relations do not exist modulo 2^k, while high-weight relations are incompatible with almost all Boolean assignments. Carry conditioning leaves an exponential entropy Omega(n) intact while carry-preserving moves force exact integer collisions.",
+    "reason_invalid": "By the Birthday/Volume lower bound on modular relation vectors, any residue-conserving move Delta in {-1, 0, 1}^m modulo 2^k has Hamming weight w >= Omega(n / log n) with probability 1 - 2^-Omega(n). By the Boolean admissibility decay law, compatibility probability collapses as 2^-Omega(n / log n). For any polynomial dictionary D of size n^C, the average degree collapses as n^C 2^-Omega(n / log n) -> 0, over 1 - 2^-Omega(n / log n) of vertices are completely isolated, and the global spectral gap is identically 0.",
+    "source": "research/classical_baselines/dcp_two_adic_carry_fragmentation_barrier.json"
+  },
+  {
+    "applies_to": [
       "DHS-GOWERS-SIEVE",
       "EXP-DHS-DCP-SUBSET-SUM-TWO-ADIC-SEARCH"
     ],
@@ -67886,6 +67908,26 @@
     "lesson": "Reject this specified architecture, not different access models or independently justified routes.",
     "reason_invalid": "Exceptional commuting classes do not cover the full natural reduction family. | Many restricted multiplicity instances have polynomial classical algorithms.",
     "source": "EXP-COSET-RECOUPLING-MECHANISM-SYNTHESIS"
+  },
+  {
+    "applies_to": [
+      "CYCLOTOMIC-LWE",
+      "NATIVE-PHASE-BANK",
+      "MULTI-QUERY-RECEIVER",
+      "ISIS-REDUCTION"
+    ],
+    "claim": "Expanding quantum phase-bank exposure to W = n^2 enables an efficient quantum collective receiver bypassing classical lattice baselines.",
+    "evidence": {
+      "artifact": "research/reductions/native_history_erasure_dequantization.json",
+      "classical_bkw_trace_distance": 0.0,
+      "coherence_off_diagonal_max": 0.0,
+      "isis_modulus_to_bound_gap": "gamma = 3^n / n^2 = 2^Omega(n)",
+      "min_noise_inflation_law": "||c||_2 >= n"
+    },
+    "id": "NEG-NATIVE-PHASE-BANK-HISTORY-ERASURE-DEQUANTIZATION-BARRIER",
+    "lesson": "Multi-query phase banks retain query exponent history in quantum registers. Without history erasure, the frequency state dequantizes into a classical BKW sample mixture. Unitary history erasure is computationally equivalent to solving ISIS with exponential gap (GapSVP-hard), while query expansion inflates noise variance by at least n^2.",
+    "reason_invalid": "The fundamental trilemma proves that: (1) low exposure is blocked by the Laurent signature capacity bound; (2) high exposure without erasure yields zero off-diagonal coherence and dequantizes to classical BKW sampling with noise inflated by at least n; (3) high exposure with unitary erasure requires an unimplemented polynomial-time ISIS oracle.",
+    "source": "research/reductions/native_history_erasure_dequantization.json"
   },
   {
     "applies_to": [
@@ -72073,6 +72115,27 @@
     "lesson": "Lesson from exact theorem analysis for EXP-CODE-SELF-DUAL-WREATH-WINDOWED-ROOT-FLATNESS-BRIDGE.",
     "reason_invalid": "Falsified or refined by exact theorem evaluation.",
     "source": "EXP-CODE-SELF-DUAL-WREATH-WINDOWED-ROOT-FLATNESS-BRIDGE"
+  },
+  {
+    "applies_to": [
+      "CODE-EQUIVALENCE",
+      "WREATH-PRODUCT-HSP",
+      "NONABELIAN-COSET-OBSERVABLES",
+      "HOLEVO-BOUND"
+    ],
+    "claim": "Orientation sub-POVMs or structured Naimark dilations on O(1) mixed coset copies can distinguish the (n!)^2 residual hidden permutations.",
+    "evidence": {
+      "artifact": "research/representation/wreath_coset_permutation_holevo_collapse.json",
+      "fano_success_ceiling": "P_succ <= O(1 / (n^2 log n)) -> 0",
+      "holevo_information_bound": "I(tau : Q^k) <= O(k^2 / n) = o(1) bits",
+      "overlap_formula": "Tr(rho_tau rho_tau') = 1 / |C(tau^-1 tau')|",
+      "purity": "Tr(rho_tau^2) = 1/n!",
+      "secret_entropy": "H(tau) = log2(n!) = Theta(n log n) bits"
+    },
+    "id": "NEG-WREATH-COSET-PERMUTATION-HOLEVO-INFORMATION-COLLAPSE",
+    "lesson": "Constant conclusive sub-POVM success on cycle-orientation parity cannot be lifted to fine-permutation decoding on O(1) copies. The mixed coset state has purity 1/n!, and the Holevo mutual information collapses as O(k^2 / n) bits. Disclosing the hidden permutation requires an unbreachable copy complexity of k = Omega(n log n).",
+    "reason_invalid": "By the conjugacy class overlap law and the Holevo bound, the mutual information provided by k = O(1) mixed coset copies is at most O(k^2 / n) bits, whereas identifying the hidden permutation requires log2(n!) = Omega(n log n) bits. Fano's inequality strictly bounds identification success to P_succ <= O(1 / (n^2 log n)), collapsing as 2^-Omega(n log n).",
+    "source": "research/representation/wreath_coset_permutation_holevo_collapse.json"
   },
   {
     "applies_to": [
@@ -85184,46 +85247,5 @@
     "lesson": "Do not treat irrep-label bias as a hidden-permutation algorithm; require collective measurements or additional row/column information.",
     "reason_invalid": "Weak Fourier labels have only small bias; any speedup claim needs collective row/column measurements.",
     "source": "weak_fourier_signal.py"
-  },
-  {
-    "applies_to": [
-      "CYCLOTOMIC-LWE",
-      "NATIVE-PHASE-BANK",
-      "MULTI-QUERY-RECEIVER",
-      "ISIS-REDUCTION"
-    ],
-    "claim": "Expanding quantum phase-bank exposure to W = n^2 enables an efficient quantum collective receiver bypassing classical lattice baselines.",
-    "evidence": {
-      "artifact": "research/reductions/native_history_erasure_dequantization.json",
-      "coherence_off_diagonal_max": 0.0,
-      "classical_bkw_trace_distance": 0.0,
-      "min_noise_inflation_law": "||c||_2 >= n",
-      "isis_modulus_to_bound_gap": "gamma = 3^n / n^2 = 2^Omega(n)"
-    },
-    "id": "NEG-NATIVE-PHASE-BANK-HISTORY-ERASURE-DEQUANTIZATION-BARRIER",
-    "lesson": "Multi-query phase banks retain query exponent history in quantum registers. Without history erasure, the frequency state dequantizes into a classical BKW sample mixture. Unitary history erasure is computationally equivalent to solving ISIS with exponential gap (GapSVP-hard), while query expansion inflates noise variance by at least n^2.",
-    "reason_invalid": "The fundamental trilemma proves that: (1) low exposure is blocked by the Laurent signature capacity bound; (2) high exposure without erasure yields zero off-diagonal coherence and dequantizes to classical BKW sampling with noise inflated by at least n; (3) high exposure with unitary erasure requires an unimplemented polynomial-time ISIS oracle.",
-    "source": "research/reductions/native_history_erasure_dequantization.json"
-  },
-  {
-    "applies_to": [
-      "CODE-EQUIVALENCE",
-      "WREATH-PRODUCT-HSP",
-      "NONABELIAN-COSET-OBSERVABLES",
-      "HOLEVO-BOUND"
-    ],
-    "claim": "Orientation sub-POVMs or structured Naimark dilations on O(1) mixed coset copies can distinguish the (n!)^2 residual hidden permutations.",
-    "evidence": {
-      "artifact": "research/representation/wreath_coset_permutation_holevo_collapse.json",
-      "overlap_formula": "Tr(rho_tau rho_tau') = 1 / |C(tau^-1 tau')|",
-      "purity": "Tr(rho_tau^2) = 1/n!",
-      "holevo_information_bound": "I(tau : Q^k) <= O(k^2 / n) = o(1) bits",
-      "secret_entropy": "H(tau) = log2(n!) = Theta(n log n) bits",
-      "fano_success_ceiling": "P_succ <= O(1 / (n^2 log n)) -> 0"
-    },
-    "id": "NEG-WREATH-COSET-PERMUTATION-HOLEVO-INFORMATION-COLLAPSE",
-    "lesson": "Constant conclusive sub-POVM success on cycle-orientation parity cannot be lifted to fine-permutation decoding on O(1) copies. The mixed coset state has purity 1/n!, and the Holevo mutual information collapses as O(k^2 / n) bits. Disclosing the hidden permutation requires an unbreachable copy complexity of k = Omega(n log n).",
-    "reason_invalid": "By the conjugacy class overlap law and the Holevo bound, the mutual information provided by k = O(1) mixed coset copies is at most O(k^2 / n) bits, whereas identifying the hidden permutation requires log2(n!) = Omega(n log n) bits. Fano's inequality strictly bounds identification success to P_succ <= O(1 / (n^2 log n)), collapsing as 2^-Omega(n log n).",
-    "source": "research/representation/wreath_coset_permutation_holevo_collapse.json"
   }
 ]
