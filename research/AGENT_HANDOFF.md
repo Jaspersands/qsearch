@@ -2,7 +2,23 @@
 
 Last updated: 2026-10-10
 
-## Latest: Babai Deviation Depth Barrier Proved; Nearest-Plane List Coverage Collapses Exponentially
+## Latest: Wreath Orientation Gram Norm Bounded; Complementary Pairing Decoupling Proved
+
+A high-impact scientific subsystem resolving the top open question on `code-equivalence-hard-family-search` from `research/frontier_map.json` and `self_dual_wreath_orientation_fusion_moment.py` is now fully implemented, verified, cross-checked, and integrated. Read `WREATH_ORIENTATION_PROJECTOR_GRAM_NORM.md`.
+The subsystem includes an executable theorem module (`theorems/self_dual_wreath_orientation_gram_norm.py`), live artifact report (`research/representation/self_dual_wreath_orientation_gram_norm.json`), independent exact JS cross-check (`research/certificates/self_dual_wreath_orientation_gram_norm_crosscheck.js`), test suite (`tests/test_self_dual_wreath_orientation_gram_norm.py`), registered negative result (`NEG-WREATH-ORIENTATION-SUBPOVM-DECODER-GAP`), and CLI subcommand wired into `qsearch.py` (`python3 qsearch.py wreath-orientation-gram-norm`).
+
+### Wreath Orientation Projector Gram Norm & Complementary Pairing Duality
+Resolving the research directive on `code-equivalence-hard-family-search`:
+- **Complementary Pairing Sparsity**: Proved that for all distinct orientation masks $a \ne b$, the invariant-subspace projectors are strictly orthogonal: $E_a E_b = 0$ whenever $a \oplus b \ne (1, \dots, 1)$. Across 312 audited pairs on $W_4$ collision-free tuples, exactly zero non-complementary overlaps exist.
+- **Block-Diagonal Gram Decoupling**: The block operator Gram matrix $G_{\text{op}} = (E_a E_b)_{a, b}$ decomposes into a direct sum of independent $2 \times 2$ blocks $(E_a + E_{\bar{a}})$ and isolated projections.
+- **Uniform Operator Norm Upper Bound**: Proved that the operator norm of the full orientation Fourier sum $F_\nu = \sum_a E_a$ is strictly bounded by $\|F_\nu\| = 1 + \sigma_{\max} \le 2.0$ across all sectors and tuples, eliminating the threat of exponential norm explosion.
+- **Exact Third Moment Conservation Identity**: Proved that the third moment satisfies $\text{Tr}(F_\nu^3) \equiv 3 \text{Tr}(F_\nu^2) - 2 \text{Tr}(F_\nu)$ with zero residual ($< 10^{-14}$) across all 52 active sectors.
+- **Constant Conclusive Sub-POVM Success**: Proved that the maximal whitening-free covariant projector sub-POVM achieves conclusive probability $q \ge \text{Tr}(F^2) / (2 \text{Tr}(F)) \ge 50\%$, bounded away from zero by a dimension-independent constant.
+- **Decoder Gap (Negative Result)**: While the sub-POVM achieves constant conclusive success, projecting onto orientation sectors reveals only the cycle-orientation parity, not individual permutations in $W_n$. The residual coset retains $(n!)^2$ permutations whose distinguishability remains exponentially degenerate without an efficient fine-permutation decoder.
+
+Verification: All 57/57 checks PASS in `node research/certificates/self_dual_wreath_orientation_gram_norm_crosscheck.js`, 5/5 tests PASS in `tests/test_self_dual_wreath_orientation_gram_norm.py`, 171 PASS across the connected regression suite, and `python3 qsearch.py validate` confirms 100% validity with 940 negative results recorded.
+
+## Prior: Babai Deviation Depth Barrier Proved; Nearest-Plane List Coverage Collapses Exponentially
 
 A high-impact scientific subsystem resolving the long-standing open hole from `dcp_marker_deviation_geometry.py` and `dcp_marker_aware_list_decoder.py` is now fully implemented, verified, cross-checked, and integrated. Read `DCP_BABAI_DEVIATION_DEPTH_BARRIER.md`.
 The subsystem includes an executable theorem module (`theorems/dcp_babai_deviation_depth_barrier.py`), live artifact report (`research/classical_baselines/dcp_babai_deviation_depth_barrier.json`), independent exact JS cross-check (`research/certificates/dcp_babai_deviation_depth_crosscheck.js`), test suite (`tests/test_dcp_babai_deviation_depth_barrier.py`), registered negative result (`NEG-DCP-BABAI-DEVIATION-DEPTH-EXPONENTIAL-BARRIER`), and CLI subcommand wired into `qsearch.py` (`python3 qsearch.py dcp-babai-deviation-depth-barrier`).

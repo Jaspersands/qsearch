@@ -20270,6 +20270,17 @@ def command_dcp_babai_deviation_depth_barrier(args: argparse.Namespace) -> int:
     return 0 if validation["valid"] else 1
 
 
+def command_wreath_orientation_gram_norm(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    from theorems.self_dual_wreath_orientation_gram_norm import REPORT_PATH, write_report
+    write_report(write_registry=not args.no_registry)
+    validation = validate_registry()
+    print("wreath_orientation_gram_norm complete")
+    print(f"Artifact: {REPORT_PATH}")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
 def command_native_recovery_capacity(args: argparse.Namespace) -> int:
     initialize_seed_registry(overwrite=False)
     from theorems.native_recovery_capacity import REPORT, build_report
@@ -27935,6 +27946,13 @@ def build_parser() -> argparse.ArgumentParser:
     )
     dcp_babai_deviation_depth_barrier.add_argument("--no-registry", action="store_true")
     dcp_babai_deviation_depth_barrier.set_defaults(func=command_dcp_babai_deviation_depth_barrier)
+
+    wreath_orientation_gram_norm = subparsers.add_parser(
+        "wreath-orientation-gram-norm",
+        help="Run wreath orientation projector Gram norm, complementary pairing duality, and sub-POVM audit.",
+    )
+    wreath_orientation_gram_norm.add_argument("--no-registry", action="store_true")
+    wreath_orientation_gram_norm.set_defaults(func=command_wreath_orientation_gram_norm)
 
     native_recovery_capacity = subparsers.add_parser(
         "native-recovery-capacity",

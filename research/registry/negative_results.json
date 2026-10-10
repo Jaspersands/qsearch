@@ -72077,6 +72077,24 @@
   {
     "applies_to": [
       "CODE-COSET-COLLECTIVE",
+      "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-GRAM-NORM"
+    ],
+    "claim": "The constant conclusive probability q >= 1/2 of the orientation projector sub-POVM yields a polynomial-time quantum algorithm for rigid code equivalence.",
+    "evidence": {
+      "complementary_pairing_sparsity": "E_a E_b = 0 for a ^ b != (1, ..., 1)",
+      "maximum_operator_norm": 2.0,
+      "minimum_conclusive_probability": 0.6,
+      "residual_coset_degeneracy": "(n!)^2 permutations",
+      "third_moment_conservation_identity": "Tr(F^3) = 3 Tr(F^2) - 2 Tr(F)"
+    },
+    "id": "NEG-WREATH-ORIENTATION-SUBPOVM-DECODER-GAP",
+    "lesson": "Bypassing frame ill-conditioning via complementary pairing solves the quantum measurement existence problem (admissible POVM with Omega(1) conclusive rate), but does not solve the post-measurement decoding problem for non-abelian hidden subgroups.",
+    "reason_invalid": "While complementary pairing duality bounds the operator norm ||F_nu|| <= 2 and guarantees constant conclusive measurement success q >= 50%, the orientation POVM measures only the coarse cycle-orientation parity across the k copies. The residual hidden coset contains (n!)^2 permutations whose distinguishability inside the orientation sector remains exponentially degenerate without an efficient fine-permutation decoder.",
+    "source": "research/representation/self_dual_wreath_orientation_gram_norm.json"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
       "carrier-conditioned PGM",
       "multiplicity whitening"
     ],
