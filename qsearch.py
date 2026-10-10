@@ -20259,6 +20259,17 @@ def command_nil3_state_hsp_descent_receiver(args: argparse.Namespace) -> int:
     return 0 if validation["valid"] else 1
 
 
+def command_dcp_babai_deviation_depth_barrier(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    from theorems.dcp_babai_deviation_depth_barrier import REPORT_PATH, write_report
+    write_report(write_registry=not args.no_registry)
+    validation = validate_registry()
+    print("dcp_babai_deviation_depth_barrier complete")
+    print(f"Artifact: {REPORT_PATH}")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
 def command_native_recovery_capacity(args: argparse.Namespace) -> int:
     initialize_seed_registry(overwrite=False)
     from theorems.native_recovery_capacity import REPORT, build_report
@@ -27917,6 +27928,13 @@ def build_parser() -> argparse.ArgumentParser:
     )
     nil3_state_hsp_descent_receiver.add_argument("--no-registry", action="store_true")
     nil3_state_hsp_descent_receiver.set_defaults(func=command_nil3_state_hsp_descent_receiver)
+
+    dcp_babai_deviation_depth_barrier = subparsers.add_parser(
+        "dcp-babai-deviation-depth-barrier",
+        help="Run DCP density-one subset sum Babai deviation depth scaling and exponential list coverage collapse audit.",
+    )
+    dcp_babai_deviation_depth_barrier.add_argument("--no-registry", action="store_true")
+    dcp_babai_deviation_depth_barrier.set_defaults(func=command_dcp_babai_deviation_depth_barrier)
 
     native_recovery_capacity = subparsers.add_parser(
         "native-recovery-capacity",

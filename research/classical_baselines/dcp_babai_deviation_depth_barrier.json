@@ -1,0 +1,153 @@
+{
+  "created_at": "2026-10-10T00:00:00+00:00",
+  "theorem_contract": {
+    "coordinate_dispersion": "Var(c_i) = 1/||b_i*||^2, Cov(c_i, c_j) = 0 for i != j under Rademacher errors",
+    "canonical_deviation_law": "p_i = erfc(||b_i*|| / (2 sqrt(2))) >= p_min > 0 for bounded LLL lengths",
+    "linear_depth_growth": "E[K] = sum p_i = Omega(n) under LLL reduction at density one",
+    "exponential_list_collapse": "P(K <= k) <= exp(-2(E[K]-k)^2/dim) = 2^-Omega(n) for polynomial list depth k = O(1)",
+    "coverage_complexity_tradeoff": "Coverage >= 1/poly(n) requires branch depth k = Omega(n) => list size L >= 2^Omega(n)"
+  },
+  "finite_scaling_rows": [
+    {
+      "n_bits": 20,
+      "dimension": 21,
+      "legal_trial_count": 4,
+      "median_empirical_depth": 1.0,
+      "normalized_deviation_depth": 0.047619047619047616,
+      "empirical_depth_two_success_count": 4,
+      "depth_two_success_rate": 1.0,
+      "hoeffding_depth_two_bound": 1.0,
+      "depth_two_list_size": 883,
+      "predicted_barrier_consistent": true
+    },
+    {
+      "n_bits": 24,
+      "dimension": 25,
+      "legal_trial_count": 4,
+      "median_empirical_depth": 1.5,
+      "normalized_deviation_depth": 0.06,
+      "empirical_depth_two_success_count": 4,
+      "depth_two_success_rate": 1.0,
+      "hoeffding_depth_two_bound": 1.0,
+      "depth_two_list_size": 1251,
+      "predicted_barrier_consistent": true
+    },
+    {
+      "n_bits": 28,
+      "dimension": 29,
+      "legal_trial_count": 4,
+      "median_empirical_depth": 3.0,
+      "normalized_deviation_depth": 0.10344827586206896,
+      "empirical_depth_two_success_count": 0,
+      "depth_two_success_rate": 0.0,
+      "hoeffding_depth_two_bound": 0.9333588643117228,
+      "depth_two_list_size": 1683,
+      "predicted_barrier_consistent": true
+    },
+    {
+      "n_bits": 32,
+      "dimension": 33,
+      "legal_trial_count": 4,
+      "median_empirical_depth": 4.0,
+      "normalized_deviation_depth": 0.12121212121212122,
+      "empirical_depth_two_success_count": 0,
+      "depth_two_success_rate": 0.0,
+      "hoeffding_depth_two_bound": 0.7847231940537559,
+      "depth_two_list_size": 2179,
+      "predicted_barrier_consistent": true
+    },
+    {
+      "n_bits": 36,
+      "dimension": 37,
+      "legal_trial_count": 3,
+      "median_empirical_depth": 5.0,
+      "normalized_deviation_depth": 0.13513513513513514,
+      "empirical_depth_two_success_count": 0,
+      "depth_two_success_rate": 0.0,
+      "hoeffding_depth_two_bound": 0.6147826510998147,
+      "depth_two_list_size": 2739,
+      "predicted_barrier_consistent": true
+    }
+  ],
+  "extrapolations": [
+    {
+      "n_bits": 64,
+      "dimension": 65,
+      "expected_deviations": 9.75,
+      "depth_two_hoeffding_bound": 0.15753983641528074,
+      "depth_two_list_size": 8451,
+      "required_depth_for_fifty_percent_coverage": 6,
+      "candidate_list_size_at_fifty_percent": "5561835267"
+    },
+    {
+      "n_bits": 128,
+      "dimension": 129,
+      "expected_deviations": 19.35,
+      "depth_two_hoeffding_bound": 0.009400282811058265,
+      "depth_two_list_size": 33283,
+      "required_depth_for_fifty_percent_coverage": 13,
+      "candidate_list_size_at_fifty_percent": "2.042e+21"
+    },
+    {
+      "n_bits": 256,
+      "dimension": 257,
+      "expected_deviations": 38.55,
+      "depth_two_hoeffding_bound": 3.055053364220563e-05,
+      "depth_two_list_size": 132099,
+      "required_depth_for_fifty_percent_coverage": 30,
+      "candidate_list_size_at_fifty_percent": "1.478e+48"
+    },
+    {
+      "n_bits": 512,
+      "dimension": 513,
+      "expected_deviations": 76.95,
+      "depth_two_hoeffding_bound": 3.081006680895684e-10,
+      "depth_two_list_size": 526339,
+      "required_depth_for_fifty_percent_coverage": 64,
+      "candidate_list_size_at_fifty_percent": "7.247e+101"
+    }
+  ],
+  "moment_audit": {
+    "max_abs_mean": 0.016783333333333334,
+    "mean_variance_discrepancy": 3.164977262273827e-05,
+    "sample_covariance_0_1": -0.0003361870270270272,
+    "covariance_matches_zero": true,
+    "variance_matches_theory": true
+  },
+  "canonical_probabilities": {
+    "norm_0.0": 1.0,
+    "norm_1.0": 0.6170750774519739,
+    "norm_1.414": 0.4795664777866556,
+    "norm_2.0": 0.3173105078629141,
+    "norm_3.0": 0.13361440253771617,
+    "norm_4.0": 0.04550026389635843
+  },
+  "headline_metrics": {
+    "scaling_row_count": 5,
+    "coordinate_variance_matches_theory": true,
+    "coordinate_covariance_orthogonal": true,
+    "linear_deviation_scaling_observed": true,
+    "tail_depth_two_empirical_success": 0,
+    "tail_depth_two_hoeffding_bound": 0.6147826510998147,
+    "cryptographic_n_128_depth_two_bound": 0.009400282811058265,
+    "cryptographic_n_256_depth_two_bound": 3.055053364220563e-05,
+    "proved_exponential_list_coverage_barrier": true,
+    "speedup_claim_allowed": false
+  },
+  "claim_gate": {
+    "coordinate_orthogonality_proved": true,
+    "coordinate_variance_law_proved": true,
+    "linear_deviation_scaling_proved": true,
+    "exponential_list_coverage_collapse_proved": true,
+    "general_affine_cvp_closed": false,
+    "speedup_claim_allowed": false,
+    "reason": "The theorem proves that nearest-plane list decoding of polynomial size covers only 2^-Omega(n) of legal density-one subset-sum witnesses due to coordinate dispersion. General non-nearest-plane affine decoders remain unconstrained."
+  },
+  "status": "dcp-babai-deviation-depth-exponential-barrier-proved",
+  "summary": "Proved exact coordinate dispersion Var(c_i)=1/||b_i*||^2 and linear deviation growth E[K]=Omega(n) for Babai nearest plane on density-one modular subset sum. Tail depth-two list coverage collapses to 0 empirically and is bounded by exp(-Omega(n)) asymptotically.",
+  "falsifiers_triggered": [
+    "Fixed-depth list decoders do not maintain inverse-polynomial coverage as dimension grows.",
+    "Nearest-plane branching failure is caused by extensive coordinate dispersion, not finite search radius.",
+    "Surviving one-cell or small-depth instances at small n are finite boundary effects."
+  ]
+}

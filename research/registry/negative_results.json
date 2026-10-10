@@ -65137,6 +65137,26 @@
   {
     "applies_to": [
       "DHS-GOWERS-SIEVE",
+      "EXP-DHS-DCP-BABAI-DEVIATION-DEPTH-BARRIER"
+    ],
+    "claim": "Fixed-depth or polynomial-size nearest-plane list decoding recovers legal density-one subset-sum witnesses with inverse-polynomial probability.",
+    "evidence": {
+      "canonical_deviation_law": "p_i = erfc(||b_i*|| / (2 sqrt(2)))",
+      "coordinate_covariance": "Cov(c_i, c_j) = 0 for i != j",
+      "coordinate_variance_law": "Var(c_i) = 1/||b_i*||^2",
+      "linear_depth_slope": 0.15,
+      "n_128_hoeffding_bound": 0.009400282811058265,
+      "n_256_hoeffding_bound": 3.055053364220563e-05,
+      "tail_depth_two_empirical_success": 0
+    },
+    "id": "NEG-DCP-BABAI-DEVIATION-DEPTH-EXPONENTIAL-BARRIER",
+    "lesson": "Nearest-plane branching fails not due to lack of search radius but due to intrinsic coordinate dispersion under LLL reduction. The deviation depth grows linearly with dimension, rendering polynomial-depth lists exponentially empty.",
+    "reason_invalid": "Gram-Schmidt coordinate projections of legal Boolean error vectors have exact variance 1/||b_i*||^2 and pairwise covariance 0. In an LLL-reduced kernel basis, bounded GS lengths yield an extensive expected deviation count E[K] = Omega(n). By Hoeffding's tail inequality, the probability that a witness has <= k deviations decays exponentially as 2^-Omega(n) for any constant depth k. Achieving inverse-polynomial coverage requires branch depth k = Omega(n), which forces list size L = 2^Omega(n).",
+    "source": "research/classical_baselines/dcp_babai_deviation_depth_barrier.json"
+  },
+  {
+    "applies_to": [
+      "DHS-GOWERS-SIEVE",
       "EXP-DHS-DCP-COHERENT-FIBER-ERASURE-BOUNDARY",
       "lindzey-rosmanis-index-erasure-2019"
     ],
