@@ -57450,6 +57450,25 @@
   },
   {
     "applies_to": [
+      "DHS-GOWERS-SIEVE",
+      "EXP-DHS-RECURSIVE-DECODER"
+    ],
+    "claim": "Iterated central descent through the lower central series provides a polynomial-time quantum algorithm for StateHSP over arbitrary nilpotency class r.",
+    "evidence": {
+      "general_depth_leaf_dilation": "(n+1)^(2(r-2))",
+      "growing_depth_complexity": "n^Omega(r)",
+      "nil3_copy_complexity": "O(n^4)",
+      "nil3_runtime": "O(n^4)",
+      "phase_lift_probability": 1.0,
+      "tree_depth": "r - 2"
+    },
+    "id": "NEG-CENTRAL-DESCENT-TREE-DILATION-BARRIER",
+    "lesson": "Nil-3 StateHSP is solvable in polynomial time O(n^4) because r-2 = 1 requires only a single descent level. However, naive central descent cannot solve growing-depth (r = omega(1)) cyclotomic LWE due to the tree dilation barrier. Escaping this barrier requires non-central coherent operations rather than iterated central quotienting.",
+    "reason_invalid": "Conditioning on zero-sum central character windows of size W=(n+1)^2 at each central level creates a complete conditioning tree of depth r-2 with branching factor W. Leaf copy complexity scales as W^(r-2) = (n+1)^(2(r-2)), which is strictly superpolynomial / exponential n^Omega(r) when r = omega(1).",
+    "source": "/Users/jaspersands/Desktop/quantum algorithm search/research/reductions/nil3_state_hsp_descent_receiver.json"
+  },
+  {
+    "applies_to": [
       "CODE-COSET-COLLECTIVE",
       "EXP-CODE-GOPPA-HULL-PROJECTOR"
     ],
@@ -67862,6 +67881,25 @@
     "lesson": "Curvature cancellation alone does not yield independent native product outputs. Do not infer full-root product state compilation or independent IID children from total isotropy without accounting for mixed phase defects.",
     "reason_invalid": "While totally isotropic subspaces ensure low phase affine on every measured complement, full-root states retain nonzero mixed phase defects and entanglement; calibration first logical purity is 19/27 < 1 on the zero pointer branch, falsifying product state compilation.",
     "source": "/Users/jaspersands/Desktop/quantum algorithm search/research/phase_workbench/ternary_curvature_frontier.json"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "EXP-CODE-SELF-DUAL-WREATH-COHERENT-COMPONENT-TRIM-HYBRID"
+    ],
+    "claim": "Minimum-error state discrimination on correlated parity blocks provides a quantum decoding advantage over classical methods for multi-block code recovery.",
+    "evidence": {
+      "exact_noise_conservation": "8A^2 + 24B^2 + 32C^2 = 64",
+      "helstrom_optimal_measurement": "Walsh-Hadamard H^3",
+      "isd_complexity_dimension_128": "2^6.5 trials",
+      "lpn_block_noise_rate_c_half": 0.06786662,
+      "marginal_bit_error_rate_c_half": 0.03393716,
+      "single_block_success_c_half": 0.93213338
+    },
+    "id": "NEG-PARITY-BLOCK-MED-LPN-DECODING-BARRIER",
+    "lesson": "Moving from USD to MED improves single-block fidelity from 62.5% to 93.2% but replaces exact polynomial-time Gaussian elimination with NP-hard LPN decoding. Quantum minimum-error measurements on abelian group codes are diagonalized by the group Fourier transform and induce classical noisy syndrome channels.",
+    "reason_invalid": "The optimal Helstrom/PGM measurement on four-message parity blocks collapses to the local Walsh-Hadamard transform followed by computational-basis readout, inducing a classical additive noise channel. Multi-block recovery reduces to Learning Parity with Noise (LPN) with noise rate eta(c)=1-p_succ, incurring exponential Information Set Decoding complexity without escaping classical dequantization bounds.",
+    "source": "/Users/jaspersands/Desktop/quantum algorithm search/research/classical_baselines/parity_block_med_lpn_barrier.json"
   },
   {
     "applies_to": [

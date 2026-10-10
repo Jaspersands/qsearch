@@ -1,0 +1,351 @@
+{
+  "status": "PARITY_BLOCK_MED_LPN_BARRIER_CERTIFIED",
+  "derivation_sha256": "9159216d4091eaf18f117b6d4c3f2ed00ec588654dc0ac11a8f947a126f52f4b",
+  "producer_sha256": "fffe32120d62f70295c30cfa640d1e2df087fa680093df1621635930838afdb4",
+  "gram_eigenvalues": [
+    {
+      "overlap": "1/4",
+      "lambda_000": "353/256",
+      "lambda_w2": "225/256",
+      "lambda_w1_w3": "255/256",
+      "multiplicities": {
+        "lambda_000": 1,
+        "lambda_w2": 3,
+        "lambda_w1_w3": 4
+      },
+      "exact_trace": "8",
+      "is_trace_8": true
+    },
+    {
+      "overlap": "1/2",
+      "lambda_000": "41/16",
+      "lambda_w2": "9/16",
+      "lambda_w1_w3": "15/16",
+      "multiplicities": {
+        "lambda_000": 1,
+        "lambda_w2": 3,
+        "lambda_w1_w3": 4
+      },
+      "exact_trace": "8",
+      "is_trace_8": true
+    },
+    {
+      "overlap": "3/4",
+      "lambda_000": "1201/256",
+      "lambda_w2": "49/256",
+      "lambda_w1_w3": "175/256",
+      "multiplicities": {
+        "lambda_000": 1,
+        "lambda_w2": 3,
+        "lambda_w1_w3": 4
+      },
+      "exact_trace": "8",
+      "is_trace_8": true
+    }
+  ],
+  "noise_spectrum_closed_forms": [
+    {
+      "overlap": "1/4",
+      "p_success": 0.9947439858614541,
+      "p_error_single_word": 0.0008759260960889842,
+      "p_error_tail_111": 4.5756201177256744e-07,
+      "total_block_error": 0.005256014138545678,
+      "sum_probabilities_diagnostic": 0.9999999999999997,
+      "marginal_bit_error_rate": 0.0026282358502787255,
+      "raw_binary_channel_error_rate": 0.375,
+      "classical_uncoupled_map_success": 0.244140625,
+      "algebraic_conservation_certified": true
+    },
+    {
+      "overlap": "1/2",
+      "p_success": 0.9321333842606653,
+      "p_error_single_word": 0.011309818921291901,
+      "p_error_tail_111": 7.70221158334963e-06,
+      "total_block_error": 0.06786661573933475,
+      "sum_probabilities_diagnostic": 1.0,
+      "marginal_bit_error_rate": 0.03393715897545905,
+      "raw_binary_channel_error_rate": 0.25,
+      "classical_uncoupled_map_success": 0.421875,
+      "algebraic_conservation_certified": true
+    },
+    {
+      "overlap": "3/4",
+      "p_success": 0.7194548116629893,
+      "p_error_single_word": 0.04668113668014059,
+      "p_error_tail_111": 0.0004583682561672915,
+      "total_block_error": 0.2805451883370108,
+      "sum_probabilities_diagnostic": 1.0,
+      "marginal_bit_error_rate": 0.14050177829658905,
+      "raw_binary_channel_error_rate": 0.125,
+      "classical_uncoupled_map_success": 0.669921875,
+      "algebraic_conservation_certified": true
+    }
+  ],
+  "physical_helstrom_controls": [
+    {
+      "overlap": "1/4",
+      "gram_matrix_max_error": 0.0,
+      "lambda_hermiticity_error": 6.938893903907228e-18,
+      "helstrom_condition_min_eigenvalue": -3.9699162954470834e-17,
+      "helstrom_optimality_verified": true,
+      "transition_matrix_max_error": 1.6263032587282567e-18,
+      "p_success_simulated": 0.9947439858614541,
+      "p_error_single_word_simulated": 0.0008759260960889858,
+      "p_error_tail_111_simulated": 4.575620117724736e-07
+    },
+    {
+      "overlap": "1/2",
+      "gram_matrix_max_error": 0.0,
+      "lambda_hermiticity_error": 3.469446951953614e-18,
+      "helstrom_condition_min_eigenvalue": -1.611797243529501e-17,
+      "helstrom_optimality_verified": true,
+      "transition_matrix_max_error": 2.220446049250313e-16,
+      "p_success_simulated": 0.932133384260665,
+      "p_error_single_word_simulated": 0.01130981892129189,
+      "p_error_tail_111_simulated": 7.702211583349438e-06
+    },
+    {
+      "overlap": "3/4",
+      "gram_matrix_max_error": 0.0,
+      "lambda_hermiticity_error": 6.938893903907228e-18,
+      "helstrom_condition_min_eigenvalue": -3.654951907757917e-17,
+      "helstrom_optimality_verified": true,
+      "transition_matrix_max_error": 2.7755575615628914e-17,
+      "p_success_simulated": 0.7194548116629893,
+      "p_error_single_word_simulated": 0.04668113668014059,
+      "p_error_tail_111_simulated": 0.000458368256167285
+    }
+  ],
+  "lpn_scaling_ledgers": [
+    {
+      "overlap": "1/4",
+      "block_error_rate_eta": 0.005256014138545678,
+      "marginal_bit_error_rate": 0.0026282358502787255,
+      "usd_vs_med_tradeoff": {
+        "usd": "Zero error per non-erased block; global decoding in O(h^3) by Gaussian elimination; matched classical Prange",
+        "med": "Higher local block fidelity (93.2% vs 62.5%); non-zero error rate eta=6.79%; global decoding reduces to LPN with exponential ISD complexity"
+      },
+      "profiles": [
+        {
+          "code_dimension_h": 16,
+          "block_count_B": 11,
+          "clean_information_set_probability": 0.9587670608103809,
+          "expected_isd_prange_trials": 1.0430062117014822,
+          "log2_expected_isd_trials": 0.06074774996145548,
+          "classical_gaussian_elimination_cost_usd": "O(16^3)",
+          "classical_noisy_syndrome_decoding_cost_med": "2^0.1",
+          "decoding_regime": "tractable small LPN"
+        },
+        {
+          "code_dimension_h": 32,
+          "block_count_B": 22,
+          "clean_information_set_probability": 0.9192342768949766,
+          "expected_isd_prange_trials": 1.0878619576478772,
+          "log2_expected_isd_trials": 0.12149549992291096,
+          "classical_gaussian_elimination_cost_usd": "O(32^3)",
+          "classical_noisy_syndrome_decoding_cost_med": "2^0.1",
+          "decoding_regime": "tractable small LPN"
+        },
+        {
+          "code_dimension_h": 64,
+          "block_count_B": 43,
+          "clean_information_set_probability": 0.8449916558186304,
+          "expected_isd_prange_trials": 1.1834436388974716,
+          "log2_expected_isd_trials": 0.24299099984582193,
+          "classical_gaussian_elimination_cost_usd": "O(64^3)",
+          "classical_noisy_syndrome_decoding_cost_med": "2^0.2",
+          "decoding_regime": "NP-hard LPN"
+        },
+        {
+          "code_dimension_h": 128,
+          "block_count_B": 86,
+          "clean_information_set_probability": 0.7140108984031108,
+          "expected_isd_prange_trials": 1.4005388464468895,
+          "log2_expected_isd_trials": 0.48598199969164385,
+          "classical_gaussian_elimination_cost_usd": "O(128^3)",
+          "classical_noisy_syndrome_decoding_cost_med": "2^0.5",
+          "decoding_regime": "NP-hard LPN"
+        },
+        {
+          "code_dimension_h": 256,
+          "block_count_B": 171,
+          "clean_information_set_probability": 0.5098115630384175,
+          "expected_isd_prange_trials": 1.9615090604067837,
+          "log2_expected_isd_trials": 0.9719639993832877,
+          "classical_gaussian_elimination_cost_usd": "O(256^3)",
+          "classical_noisy_syndrome_decoding_cost_med": "2^1.0",
+          "decoding_regime": "NP-hard LPN"
+        }
+      ]
+    },
+    {
+      "overlap": "1/2",
+      "block_error_rate_eta": 0.06786661573933475,
+      "marginal_bit_error_rate": 0.03393715897545905,
+      "usd_vs_med_tradeoff": {
+        "usd": "Zero error per non-erased block; global decoding in O(h^3) by Gaussian elimination; matched classical Prange",
+        "med": "Higher local block fidelity (93.2% vs 62.5%); non-zero error rate eta=6.79%; global decoding reduces to LPN with exponential ISD complexity"
+      },
+      "profiles": [
+        {
+          "code_dimension_h": 16,
+          "block_count_B": 11,
+          "clean_information_set_probability": 0.5755539532251677,
+          "expected_isd_prange_trials": 1.7374565744816992,
+          "log2_expected_isd_trials": 0.7969769199582619,
+          "classical_gaussian_elimination_cost_usd": "O(16^3)",
+          "classical_noisy_syndrome_decoding_cost_med": "2^0.8",
+          "decoding_regime": "tractable small LPN"
+        },
+        {
+          "code_dimension_h": 32,
+          "block_count_B": 22,
+          "clean_information_set_probability": 0.3312623530731184,
+          "expected_isd_prange_trials": 3.0187553482096816,
+          "log2_expected_isd_trials": 1.5939538399165238,
+          "classical_gaussian_elimination_cost_usd": "O(32^3)",
+          "classical_noisy_syndrome_decoding_cost_med": "2^1.6",
+          "decoding_regime": "tractable small LPN"
+        },
+        {
+          "code_dimension_h": 64,
+          "block_count_B": 43,
+          "clean_information_set_probability": 0.10973474656353938,
+          "expected_isd_prange_trials": 9.112883852344554,
+          "log2_expected_isd_trials": 3.1879076798330477,
+          "classical_gaussian_elimination_cost_usd": "O(64^3)",
+          "classical_noisy_syndrome_decoding_cost_med": "2^3.2",
+          "decoding_regime": "NP-hard LPN"
+        },
+        {
+          "code_dimension_h": 128,
+          "block_count_B": 86,
+          "clean_information_set_probability": 0.012041714603364218,
+          "expected_isd_prange_trials": 83.0446521063221,
+          "log2_expected_isd_trials": 6.375815359666095,
+          "classical_gaussian_elimination_cost_usd": "O(128^3)",
+          "classical_noisy_syndrome_decoding_cost_med": "2^6.4",
+          "decoding_regime": "NP-hard LPN"
+        },
+        {
+          "code_dimension_h": 256,
+          "block_count_B": 171,
+          "clean_information_set_probability": 0.00014500289058887506,
+          "expected_isd_prange_trials": 6896.414243460069,
+          "log2_expected_isd_trials": 12.75163071933219,
+          "classical_gaussian_elimination_cost_usd": "O(256^3)",
+          "classical_noisy_syndrome_decoding_cost_med": "2^12.8",
+          "decoding_regime": "NP-hard LPN"
+        }
+      ]
+    },
+    {
+      "overlap": "3/4",
+      "block_error_rate_eta": 0.2805451883370108,
+      "marginal_bit_error_rate": 0.14050177829658905,
+      "usd_vs_med_tradeoff": {
+        "usd": "Zero error per non-erased block; global decoding in O(h^3) by Gaussian elimination; matched classical Prange",
+        "med": "Higher local block fidelity (93.2% vs 62.5%); non-zero error rate eta=6.79%; global decoding reduces to LPN with exponential ISD complexity"
+      },
+      "profiles": [
+        {
+          "code_dimension_h": 16,
+          "block_count_B": 11,
+          "clean_information_set_probability": 0.08869920341109716,
+          "expected_isd_prange_trials": 11.274058408002455,
+          "log2_expected_isd_trials": 3.4949350417311407,
+          "classical_gaussian_elimination_cost_usd": "O(16^3)",
+          "classical_noisy_syndrome_decoding_cost_med": "2^3.5",
+          "decoding_regime": "tractable small LPN"
+        },
+        {
+          "code_dimension_h": 32,
+          "block_count_B": 22,
+          "clean_information_set_probability": 0.00786754868576319,
+          "expected_isd_prange_trials": 127.10439298705087,
+          "log2_expected_isd_trials": 6.989870083462281,
+          "classical_gaussian_elimination_cost_usd": "O(32^3)",
+          "classical_noisy_syndrome_decoding_cost_med": "2^7.0",
+          "decoding_regime": "tractable small LPN"
+        },
+        {
+          "code_dimension_h": 64,
+          "block_count_B": 43,
+          "clean_information_set_probability": 6.18983223228541e-05,
+          "expected_isd_prange_trials": 16155.526716606662,
+          "log2_expected_isd_trials": 13.979740166924563,
+          "classical_gaussian_elimination_cost_usd": "O(64^3)",
+          "classical_noisy_syndrome_decoding_cost_med": "2^14.0",
+          "decoding_regime": "NP-hard LPN"
+        },
+        {
+          "code_dimension_h": 128,
+          "block_count_B": 86,
+          "clean_information_set_probability": 3.831402306383938e-09,
+          "expected_isd_prange_trials": 261001043.49099165,
+          "log2_expected_isd_trials": 27.959480333849125,
+          "classical_gaussian_elimination_cost_usd": "O(128^3)",
+          "classical_noisy_syndrome_decoding_cost_med": "2^28.0",
+          "decoding_regime": "NP-hard LPN"
+        },
+        {
+          "code_dimension_h": 256,
+          "block_count_B": 171,
+          "clean_information_set_probability": 1.4679643633364162e-17,
+          "expected_isd_prange_trials": 6.812154470338651e+16,
+          "log2_expected_isd_trials": 55.91896066769825,
+          "classical_gaussian_elimination_cost_usd": "O(256^3)",
+          "classical_noisy_syndrome_decoding_cost_med": "2^55.9",
+          "decoding_regime": "NP-hard LPN"
+        }
+      ]
+    }
+  ],
+  "global_coherent_bounds": [
+    {
+      "overlap": "1/2",
+      "dimension_h": 16,
+      "blocks_B": 32,
+      "code_rate": 0.16666666666666666,
+      "channel_cutoff_rate_R0": 0.5541303716626126,
+      "rate_exceeds_cutoff": false,
+      "bhattacharyya_parameter": 0.3621349373707733,
+      "global_error_exponent_bound": -0.0,
+      "global_coherent_pgm_escapes_cutoff": false,
+      "global_pgm_is_walsh_hadamard": true
+    },
+    {
+      "overlap": "1/2",
+      "dimension_h": 32,
+      "blocks_B": 64,
+      "code_rate": 0.16666666666666666,
+      "channel_cutoff_rate_R0": 0.5541303716626126,
+      "rate_exceeds_cutoff": false,
+      "bhattacharyya_parameter": 0.3621349373707733,
+      "global_error_exponent_bound": -0.0,
+      "global_coherent_pgm_escapes_cutoff": false,
+      "global_pgm_is_walsh_hadamard": true
+    },
+    {
+      "overlap": "1/2",
+      "dimension_h": 64,
+      "blocks_B": 128,
+      "code_rate": 0.16666666666666666,
+      "channel_cutoff_rate_R0": 0.5541303716626126,
+      "rate_exceeds_cutoff": false,
+      "bhattacharyya_parameter": 0.3621349373707733,
+      "global_error_exponent_bound": -0.0,
+      "global_coherent_pgm_escapes_cutoff": false,
+      "global_pgm_is_walsh_hadamard": true
+    }
+  ],
+  "summary": {
+    "local_helstrom_measurement_is_hadamard": true,
+    "algebraic_noise_conservation_proven": true,
+    "block_wise_med_reduces_to_lpn": true,
+    "usd_avoids_lpn_via_exact_erasure_at_cost_of_prange_dequantization": true,
+    "med_improves_local_fidelity_but_incurs_exponential_isd_decoding": true,
+    "quantum_speedup_claimed": false,
+    "shor_level_speedup_falsified_for_this_architecture": true
+  }
+}

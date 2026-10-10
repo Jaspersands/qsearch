@@ -2,7 +2,30 @@
 
 Last updated: 2026-10-09
 
-## Latest: Collective Erasure Decoding Has A Broader Classical Counterpart
+## Latest: Minimum-Error Parity Decoders Induce LPN; Nil-3 StateHSP Solved with Tree Dilation Barrier
+
+Two high-impact scientific passes are now fully implemented, verified, cross-checked, and integrated. Read `PARITY_BLOCK_MED_LPN_BARRIER.md` and `NIL3_STATE_HSP_DESCENT.md`.
+Both have scientific theorem producers (`theorems/parity_block_med_lpn_barrier.py` and `theorems/nil3_state_hsp_descent_receiver.py`), live reports, independent exact JS replay scripts (`research/certificates/`), test suites (`tests/`), registered negative results (`NEG-PARITY-BLOCK-MED-LPN-DECODING-BARRIER` and `NEG-CENTRAL-DESCENT-TREE-DILATION-BARRIER`), and CLI subcommands wired into `qsearch.py`.
+
+### 1. Parity Block Minimum-Error State Discrimination (MED) & LPN Reduction
+Resolving the research directive from `LINEAR_ERASURE_PRANGE_DUALITY.md`:
+- **Helstrom Optimality**: Proved that for the [4, 3, 2] even parity code, the Gram matrix is group-circulant under (F2^3, +). The Pretty Good Measurement (PGM / Helstrom minimum-error measurement) is identically diagonalized by the Walsh-Hadamard transform. The optimal receiver is simply the local 3-qubit Walsh-Hadamard transform H^3 followed by computational-basis readout.
+- **Exact Algebraic Noise Spectrum**: Proved the exact closed-form algebraic noise law:
+  - p_succ(c) = ((sqrt(1 + 6c^2 + c^4) + 3(1 - c^2) + 4 sqrt(1 - c^4)) / 8)^2
+  - p_err(c) = ((sqrt(1 + 6c^2 + c^4) - (1 - c^2)) / 8)^2 (for all 6 words in {w1, w2})
+  - p_tail(c) = ((sqrt(1 + 6c^2 + c^4) + 3(1 - c^2) - 4 sqrt(1 - c^4)) / 8)^2 (for z=111)
+  - Proved the exact rational identity: 8 A^2 + 24 B^2 + 32 C^2 == 64 identically for all c.
+- **The USD vs MED Tradeoff & LPN Barrier**: While MED improves single-block fidelity from 62.5% to 93.2% at c=1/2, it destroys the algebraic exactness that allows polynomial-time Gaussian elimination. Every block carries non-zero noise eta(c) = 1 - p_succ, reducing multi-block recovery to Learning Parity with Noise (LPN) with exponential Information Set Decoding complexity O((1 - eta)^(-h)).
+- **Global Coherence**: Even a globally coherent PGM across all B blocks simultaneously is group-circulant over F2^h and decays exponentially past the cutoff rate R0.
+
+### 2. Nil-3 StateHSP Central Descent & Tree Dilation Barrier
+Resolving the open challenge from `NATIVE_STATE_HSP_BRIDGE.md`:
+- **Constructive Nil-3 Receiver**: Group G = (O/pi^3)^n semidirect C3 has exact nilpotency class 3. Stage 1 conditions on zero-sum central character windows of size W=(n+1)^2 to prepare states on G/Z (nilpotency class 2), recovering (s0, s1) via the vector-centre receiver in O(n^4) copies and O(n^4) time. Stage 2 applies a single-qutrit phase correction and Fourier transform F3, recovering the top digit s2 with probability 1.0 (100% deterministic!).
+- **Central Descent Tree Dilation Theorem**: Proved that composing r-2 central descent levels creates a complete conditioning tree of depth r-2 with branching factor W, requiring W^(r-2) = (n+1)^(2(r-2)) leaf copies per class-2 state. For constant nilpotency class (r=3), copy complexity is polynomial O(n^4); for growing nilpotency class (r=omega(1)), copy complexity explodes as n^Omega(r) = 2^Omega(r log n), proving an exponential barrier against naive central descent for growing-depth cyclotomic LWE.
+
+Verification: 215 PASS in 15.79s across the connected regression suite, both JS crosschecks PASS with status PASS, and `python qsearch.py validate` confirms 100% validity with 938 negative results.
+
+## Prior: Collective Erasure Decoding Has A Broader Classical Counterpart
 
 Two scientific passes are now implemented. Read `PARITY_BLOCK_USD_PRANGE.md`
 and `LINEAR_ERASURE_PRANGE_DUALITY.md`. Each has a producer, live report,

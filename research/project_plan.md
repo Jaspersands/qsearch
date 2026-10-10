@@ -9,7 +9,7 @@
 - The project needs explicit scalable families, classical baselines, structural quantum handles, and kill criteria.
 
 Repository scan:
-- Scanned files, excluding vendor and git: 29
+- Scanned files, excluding vendor and git: 3712
 - Historical runs: 0
 - Tiny-instance success_rate >= 1.0 runs: 0
 - Claimed speedups: `{}`

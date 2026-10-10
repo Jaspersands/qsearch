@@ -20237,6 +20237,28 @@ def command_linear_erasure_prange_duality(args: argparse.Namespace) -> int:
     return 0 if validation["valid"] else 1
 
 
+def command_parity_block_med_lpn_barrier(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    from theorems.parity_block_med_lpn_barrier import REPORT, write_report
+    write_report(write_registry=not args.no_registry)
+    validation = validate_registry()
+    print("parity_block_med_lpn_barrier complete")
+    print(f"Artifact: {REPORT}")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_nil3_state_hsp_descent_receiver(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    from theorems.nil3_state_hsp_descent_receiver import REPORT, write_report
+    write_report(write_registry=not args.no_registry)
+    validation = validate_registry()
+    print("nil3_state_hsp_descent_receiver complete")
+    print(f"Artifact: {REPORT}")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
 def command_native_recovery_capacity(args: argparse.Namespace) -> int:
     initialize_seed_registry(overwrite=False)
     from theorems.native_recovery_capacity import REPORT, build_report
@@ -27881,6 +27903,20 @@ def build_parser() -> argparse.ArgumentParser:
     )
     linear_erasure_prange_duality.add_argument("--no-registry", action="store_true")
     linear_erasure_prange_duality.set_defaults(func=command_linear_erasure_prange_duality)
+
+    parity_block_med_lpn_barrier = subparsers.add_parser(
+        "parity-block-med-lpn-barrier",
+        help="Run parity block minimum-error discrimination, Helstrom optimality, and LPN reduction audit.",
+    )
+    parity_block_med_lpn_barrier.add_argument("--no-registry", action="store_true")
+    parity_block_med_lpn_barrier.set_defaults(func=command_parity_block_med_lpn_barrier)
+
+    nil3_state_hsp_descent_receiver = subparsers.add_parser(
+        "nil3-state-hsp-descent-receiver",
+        help="Run Nil-3 StateHSP central descent receiver and tree dilation complexity barrier audit.",
+    )
+    nil3_state_hsp_descent_receiver.add_argument("--no-registry", action="store_true")
+    nil3_state_hsp_descent_receiver.set_defaults(func=command_nil3_state_hsp_descent_receiver)
 
     native_recovery_capacity = subparsers.add_parser(
         "native-recovery-capacity",
