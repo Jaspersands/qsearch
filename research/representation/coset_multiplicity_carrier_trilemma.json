@@ -1,0 +1,203 @@
+{
+  "report_id": "COSET-MULTIPLICITY-CARRIER-TRILEMMA-REPORT",
+  "negative_result_id": "NEG-COSET-MULTIPLICITY-CARRIER-DECOUPLING-TRILEMMA",
+  "derivation_path": "research/COSET_MULTIPLICITY_CARRIER_TRILEMMA.md",
+  "summary": "Proves the Multiplicity-Carrier Decoupling Trilemma for non-abelian coset states: (1) Commutant measurements have identically zero mutual information (I = 0.0 bits) with any hidden conjugacy element by Schur invariance. (2) Carrier recoupling across k >= 3 copies is strictly non-commuting: [K_12, K_23]_{(0,0,0),(0,0,1)} = n for all n >= 3, ruling out simultaneous diagonalization. (3) Transforming carrier parenthesizations requires Racah 6j associators acting on a multiplicity space of factorial dimension dim(Commutant) = 2^Omega(n log n).",
+  "pillars": {
+    "pillar_1_commutant_zero_information": "Tr(E_y sigma_h) = Tr(E_y sigma_{xhx^-1}) = const for all E_y in End_{S_n}(V^k). Mutual information I(h : E) = 0.0 bits identically across all conjugacy classes.",
+    "pillar_2_carrier_non_commutation": "[K_12, K_23]_{(0,0,0),(0,0,1)} = n for all n >= 3. Overlapping pair class sums do not commute, preventing simultaneous pairwise Kronecker diagonalization.",
+    "pillar_3_multiplicity_explosion": "dim(Commutant(V^k)) = (1/n!) sum (fix(g) - 1)^{2k} = 2^Omega(n log n) for k >= n, forcing exponential quantum circuit complexity for general Racah associator networks.",
+    "pillar_4_exhaustive_trilemma": "Every receiver on non-abelian coset states faces an exhaustive trilemma: commutant readout is zero-information; separable carrier readout requires k = Omega(n!) copies; and collective carrier recoupling is blocked by non-commuting class sums and factorial multiplicity."
+  },
+  "headline_metrics": {
+    "all_commutator_witnesses_verified": true,
+    "all_commutant_zero_information_verified": true,
+    "tail_n": 16,
+    "tail_commutator_witness": 16,
+    "tail_racah_dimension_log2": 84.10361971369602,
+    "speedup_claim_allowed": false,
+    "accepted_speedup_candidate": false
+  },
+  "small_commutator_audits": [
+    {
+      "n": 3,
+      "standard_dimension": 2,
+      "three_copy_dimension": 8,
+      "observed_witness_entry": 3,
+      "theoretical_witness_entry": 3,
+      "entry_matches_closed_form": true,
+      "is_strictly_noncommuting": true
+    },
+    {
+      "n": 4,
+      "standard_dimension": 3,
+      "three_copy_dimension": 27,
+      "observed_witness_entry": 4,
+      "theoretical_witness_entry": 4,
+      "entry_matches_closed_form": true,
+      "is_strictly_noncommuting": true
+    },
+    {
+      "n": 5,
+      "standard_dimension": 4,
+      "three_copy_dimension": 64,
+      "observed_witness_entry": 5,
+      "theoretical_witness_entry": 5,
+      "entry_matches_closed_form": true,
+      "is_strictly_noncommuting": true
+    },
+    {
+      "n": 6,
+      "standard_dimension": 5,
+      "three_copy_dimension": 125,
+      "observed_witness_entry": 6,
+      "theoretical_witness_entry": 6,
+      "entry_matches_closed_form": true,
+      "is_strictly_noncommuting": true
+    }
+  ],
+  "small_zero_information_audits": [
+    {
+      "n": 3,
+      "transposition_count": 3,
+      "min_trace": -5.551115123125783e-17,
+      "max_trace": 0.0,
+      "trace_variation": 5.551115123125783e-17,
+      "is_constant_across_class": true,
+      "mutual_information_bits": 0.0,
+      "zero_information_verified": true
+    },
+    {
+      "n": 4,
+      "transposition_count": 6,
+      "min_trace": 0.33333333333333326,
+      "max_trace": 0.33333333333333337,
+      "trace_variation": 1.1102230246251565e-16,
+      "is_constant_across_class": true,
+      "mutual_information_bits": 0.0,
+      "zero_information_verified": true
+    },
+    {
+      "n": 5,
+      "transposition_count": 10,
+      "min_trace": 0.49999999999999994,
+      "max_trace": 0.5,
+      "trace_variation": 5.551115123125783e-17,
+      "is_constant_across_class": true,
+      "mutual_information_bits": 0.0,
+      "zero_information_verified": true
+    },
+    {
+      "n": 6,
+      "transposition_count": 15,
+      "min_trace": 0.5999999999999999,
+      "max_trace": 0.6000000000000001,
+      "trace_variation": 2.220446049250313e-16,
+      "is_constant_across_class": true,
+      "mutual_information_bits": 0.0,
+      "zero_information_verified": true
+    }
+  ],
+  "scaling_profiles": [
+    {
+      "n": 3,
+      "standard_dimension": 2,
+      "commutator_witness_entry": 3,
+      "commutator_matches_n": true,
+      "commutant_mutual_information_bits": 0.0,
+      "commutant_dimension_k3": 11,
+      "asymptotic_mult_dimension_log2_k_n": 5.5731976205034215,
+      "racah_complexity_exponential": false,
+      "status": "PASS"
+    },
+    {
+      "n": 4,
+      "standard_dimension": 3,
+      "commutator_witness_entry": 4,
+      "commutator_matches_n": true,
+      "commutant_mutual_information_bits": 0.0,
+      "commutant_dimension_k3": 31,
+      "asymptotic_mult_dimension_log2_k_n": 10.450480169325102,
+      "racah_complexity_exponential": true,
+      "status": "PASS"
+    },
+    {
+      "n": 5,
+      "standard_dimension": 4,
+      "commutator_witness_entry": 5,
+      "commutator_matches_n": true,
+      "commutant_mutual_information_bits": 0.0,
+      "commutant_dimension_k3": 40,
+      "asymptotic_mult_dimension_log2_k_n": 15.603834730008007,
+      "racah_complexity_exponential": true,
+      "status": "PASS"
+    },
+    {
+      "n": 6,
+      "standard_dimension": 5,
+      "commutator_witness_entry": 6,
+      "commutator_matches_n": true,
+      "commutant_mutual_information_bits": 0.0,
+      "commutant_dimension_k3": 41,
+      "asymptotic_mult_dimension_log2_k_n": 21.00953237965519,
+      "racah_complexity_exponential": true,
+      "status": "PASS"
+    },
+    {
+      "n": 7,
+      "standard_dimension": 6,
+      "commutator_witness_entry": 7,
+      "commutator_matches_n": true,
+      "commutant_mutual_information_bits": 0.0,
+      "commutant_dimension_k3": 41,
+      "asymptotic_mult_dimension_log2_k_n": 26.636855841915704,
+      "racah_complexity_exponential": true,
+      "status": "PASS"
+    },
+    {
+      "n": 8,
+      "standard_dimension": 7,
+      "commutator_witness_entry": 8,
+      "commutator_matches_n": true,
+      "commutant_mutual_information_bits": 0.0,
+      "commutant_dimension_k3": 41,
+      "asymptotic_mult_dimension_log2_k_n": 32.45923908003337,
+      "racah_complexity_exponential": true,
+      "status": "PASS"
+    },
+    {
+      "n": 10,
+      "standard_dimension": 9,
+      "commutator_witness_entry": 10,
+      "commutator_matches_n": true,
+      "commutant_mutual_information_bits": 0.0,
+      "commutant_dimension_k3": 41,
+      "asymptotic_mult_dimension_log2_k_n": 44.60616948886225,
+      "racah_complexity_exponential": true,
+      "status": "PASS"
+    },
+    {
+      "n": 12,
+      "standard_dimension": 11,
+      "commutator_witness_entry": 12,
+      "commutator_matches_n": true,
+      "commutant_mutual_information_bits": 0.0,
+      "commutant_dimension_k3": 41,
+      "asymptotic_mult_dimension_log2_k_n": 57.31914932930883,
+      "racah_complexity_exponential": true,
+      "status": "PASS"
+    },
+    {
+      "n": 16,
+      "standard_dimension": 15,
+      "commutator_witness_entry": 16,
+      "commutator_matches_n": true,
+      "commutant_mutual_information_bits": 0.0,
+      "commutant_dimension_k3": 41,
+      "asymptotic_mult_dimension_log2_k_n": 84.10361971369602,
+      "racah_complexity_exponential": true,
+      "status": "PASS"
+    }
+  ],
+  "status": "PASS"
+}

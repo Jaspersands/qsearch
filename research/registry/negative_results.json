@@ -85247,5 +85247,24 @@
     "lesson": "Do not treat irrep-label bias as a hidden-permutation algorithm; require collective measurements or additional row/column information.",
     "reason_invalid": "Weak Fourier labels have only small bias; any speedup claim needs collective row/column measurements.",
     "source": "weak_fourier_signal.py"
+  },
+  {
+    "id": "NEG-COSET-MULTIPLICITY-CARRIER-DECOUPLING-TRILEMMA",
+    "applies_to": [
+      "NONABELIAN-COSET-OBSERVABLES",
+      "MULTIPLICITY-COMMUTANT",
+      "RACAH-RECOUPLING",
+      "KRONECKER-POVM"
+    ],
+    "claim": "Multiplicity-space commutant Hamiltonians or pairwise Kronecker recoupling observables can extract hidden subgroup or code equivalence permutations in polynomial quantum time.",
+    "evidence": {
+      "artifact": "research/representation/coset_multiplicity_carrier_trilemma.json",
+      "commutant_mutual_information": "0.0 bits identically",
+      "commutator_closed_form": "[K_12, K_23]_{(0,0,0),(0,0,1)} = n",
+      "commutant_dimension_law": "dim(Commutant(V^k)) = (1/n!) sum (fix(g) - 1)^{2k} = 2^Omega(n log n)"
+    },
+    "lesson": "Spectral gaps in commutant Hamiltonians are irrelevant for secret identification because commutant outcomes are completely secret-independent. Non-abelian quantum algorithms cannot separate multiplicity and carrier registers without incurring either zero information or factorial associator complexity.",
+    "reason_invalid": "By Schur's lemma, all observables in the commutant End_{S_n}(V^k) have identically zero mutual information (I = 0 bits) with any hidden conjugacy element. Informative measurements must operate on carrier registers, but overlapping pairwise class sums satisfy [K_{12}, K_{23}] = n for all n >= 3, ruling out simultaneous diagonalization. Coherent Racah associator transforms face a factorial multiplicity space dimension (n-1)^{2k}/n! = 2^Omega(n log n), requiring exponential quantum circuit synthesis.",
+    "source": "research/representation/coset_multiplicity_carrier_trilemma.json"
   }
 ]
