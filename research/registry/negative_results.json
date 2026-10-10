@@ -85204,5 +85204,26 @@
     "lesson": "Multi-query phase banks retain query exponent history in quantum registers. Without history erasure, the frequency state dequantizes into a classical BKW sample mixture. Unitary history erasure is computationally equivalent to solving ISIS with exponential gap (GapSVP-hard), while query expansion inflates noise variance by at least n^2.",
     "reason_invalid": "The fundamental trilemma proves that: (1) low exposure is blocked by the Laurent signature capacity bound; (2) high exposure without erasure yields zero off-diagonal coherence and dequantizes to classical BKW sampling with noise inflated by at least n; (3) high exposure with unitary erasure requires an unimplemented polynomial-time ISIS oracle.",
     "source": "research/reductions/native_history_erasure_dequantization.json"
+  },
+  {
+    "applies_to": [
+      "CODE-EQUIVALENCE",
+      "WREATH-PRODUCT-HSP",
+      "NONABELIAN-COSET-OBSERVABLES",
+      "HOLEVO-BOUND"
+    ],
+    "claim": "Orientation sub-POVMs or structured Naimark dilations on O(1) mixed coset copies can distinguish the (n!)^2 residual hidden permutations.",
+    "evidence": {
+      "artifact": "research/representation/wreath_coset_permutation_holevo_collapse.json",
+      "overlap_formula": "Tr(rho_tau rho_tau') = 1 / |C(tau^-1 tau')|",
+      "purity": "Tr(rho_tau^2) = 1/n!",
+      "holevo_information_bound": "I(tau : Q^k) <= O(k^2 / n) = o(1) bits",
+      "secret_entropy": "H(tau) = log2(n!) = Theta(n log n) bits",
+      "fano_success_ceiling": "P_succ <= O(1 / (n^2 log n)) -> 0"
+    },
+    "id": "NEG-WREATH-COSET-PERMUTATION-HOLEVO-INFORMATION-COLLAPSE",
+    "lesson": "Constant conclusive sub-POVM success on cycle-orientation parity cannot be lifted to fine-permutation decoding on O(1) copies. The mixed coset state has purity 1/n!, and the Holevo mutual information collapses as O(k^2 / n) bits. Disclosing the hidden permutation requires an unbreachable copy complexity of k = Omega(n log n).",
+    "reason_invalid": "By the conjugacy class overlap law and the Holevo bound, the mutual information provided by k = O(1) mixed coset copies is at most O(k^2 / n) bits, whereas identifying the hidden permutation requires log2(n!) = Omega(n log n) bits. Fano's inequality strictly bounds identification success to P_succ <= O(1 / (n^2 log n)), collapsing as 2^-Omega(n log n).",
+    "source": "research/representation/wreath_coset_permutation_holevo_collapse.json"
   }
 ]

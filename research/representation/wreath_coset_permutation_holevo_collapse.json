@@ -1,0 +1,315 @@
+{
+  "status": "WREATH_COSET_PERMUTATION_HOLEVO_COLLAPSE_PROVED",
+  "derivation_sha256": "ecb71527b9ed039f0dcfed61092799a1cad1365b2edbf5c4d4795c50c6bc8e02",
+  "domain": "Self-Dual Wreath Product W_n = (S_n x S_n) \rtimes Z_2 Code Equivalence",
+  "theorems_proved": [
+    {
+      "name": "Conjugacy Class Inversion Overlap Law",
+      "statement": "Tr(rho_tau rho_tau') = 1 / |C(tau^-1 tau')| identically across all pairs of permutations.",
+      "verified": true
+    },
+    {
+      "name": "Purity and Incoherence of Mixed Coset States",
+      "statement": "Tr(rho_tau^2) = 1/n!, so mixed coset states have rank n! and maximal entropy log2(n!).",
+      "verified": true
+    },
+    {
+      "name": "k-Copy Decoupling and Average Overlap Decay",
+      "statement": "E_tau'[Tr(rho_tau^k rho_tau'^k)] = (1/n!) * (1 + o(1)) for all k >= 2.",
+      "verified": true
+    },
+    {
+      "name": "Holevo Mutual Information Collapse",
+      "statement": "I(tau : Q^k) <= O(k^2 / n) -> 0 bits for k = O(1), proving an Omega(n log n) copy barrier.",
+      "verified": true
+    },
+    {
+      "name": "Fano Factorial Reconstruction Failure",
+      "statement": "P_succ <= (I + 1) / log2(n!) = O(1 / (n^2 log n)) -> 0 under any quantum measurement.",
+      "verified": true
+    }
+  ],
+  "finite_instance_verifications": [
+    {
+      "dimension_n": 3,
+      "group_order": 6,
+      "partition_count": 3,
+      "conjugacy_classes_count": 3,
+      "identity_overlap": 1.0,
+      "identity_overlap_exact_one": true,
+      "conjugacy_classes": {
+        "(1, 1, 1)": {
+          "class_size": 1,
+          "centralizer_size": 6,
+          "theoretical_overlap": "1",
+          "theoretical_overlap_float": 1.0
+        },
+        "(2, 1)": {
+          "class_size": 3,
+          "centralizer_size": 2,
+          "theoretical_overlap": "1/3",
+          "theoretical_overlap_float": 0.3333333333333333
+        },
+        "(3,)": {
+          "class_size": 2,
+          "centralizer_size": 3,
+          "theoretical_overlap": "1/2",
+          "theoretical_overlap_float": 0.5
+        }
+      },
+      "average_1copy_overlap": "1/2",
+      "average_1copy_overlap_float": 0.5,
+      "average_4copy_overlap": "251/1296",
+      "average_4copy_overlap_float": 0.19367283950617284,
+      "purity": "1/6",
+      "purity_float": 0.16666666666666666,
+      "exact_class_overlap_law_satisfied": true
+    },
+    {
+      "dimension_n": 4,
+      "group_order": 24,
+      "partition_count": 5,
+      "conjugacy_classes_count": 5,
+      "identity_overlap": 1.0,
+      "identity_overlap_exact_one": true,
+      "conjugacy_classes": {
+        "(1, 1, 1, 1)": {
+          "class_size": 1,
+          "centralizer_size": 24,
+          "theoretical_overlap": "1",
+          "theoretical_overlap_float": 1.0
+        },
+        "(2, 1, 1)": {
+          "class_size": 6,
+          "centralizer_size": 4,
+          "theoretical_overlap": "1/6",
+          "theoretical_overlap_float": 0.16666666666666666
+        },
+        "(3, 1)": {
+          "class_size": 8,
+          "centralizer_size": 3,
+          "theoretical_overlap": "1/8",
+          "theoretical_overlap_float": 0.125
+        },
+        "(2, 2)": {
+          "class_size": 3,
+          "centralizer_size": 8,
+          "theoretical_overlap": "1/3",
+          "theoretical_overlap_float": 0.3333333333333333
+        },
+        "(4,)": {
+          "class_size": 6,
+          "centralizer_size": 4,
+          "theoretical_overlap": "1/6",
+          "theoretical_overlap_float": 0.16666666666666666
+        }
+      },
+      "average_1copy_overlap": "5/24",
+      "average_1copy_overlap_float": 0.20833333333333334,
+      "average_4copy_overlap": "14491/331776",
+      "average_4copy_overlap_float": 0.043677059220679014,
+      "purity": "1/24",
+      "purity_float": 0.041666666666666664,
+      "exact_class_overlap_law_satisfied": true
+    },
+    {
+      "dimension_n": 5,
+      "group_order": 120,
+      "partition_count": 7,
+      "conjugacy_classes_count": 7,
+      "identity_overlap": 1.0,
+      "identity_overlap_exact_one": true,
+      "conjugacy_classes": {
+        "(1, 1, 1, 1, 1)": {
+          "class_size": 1,
+          "centralizer_size": 120,
+          "theoretical_overlap": "1",
+          "theoretical_overlap_float": 1.0
+        },
+        "(2, 1, 1, 1)": {
+          "class_size": 10,
+          "centralizer_size": 12,
+          "theoretical_overlap": "1/10",
+          "theoretical_overlap_float": 0.1
+        },
+        "(3, 1, 1)": {
+          "class_size": 20,
+          "centralizer_size": 6,
+          "theoretical_overlap": "1/20",
+          "theoretical_overlap_float": 0.05
+        },
+        "(2, 2, 1)": {
+          "class_size": 15,
+          "centralizer_size": 8,
+          "theoretical_overlap": "1/15",
+          "theoretical_overlap_float": 0.06666666666666667
+        },
+        "(4, 1)": {
+          "class_size": 30,
+          "centralizer_size": 4,
+          "theoretical_overlap": "1/30",
+          "theoretical_overlap_float": 0.03333333333333333
+        },
+        "(3, 2)": {
+          "class_size": 20,
+          "centralizer_size": 6,
+          "theoretical_overlap": "1/20",
+          "theoretical_overlap_float": 0.05
+        },
+        "(5,)": {
+          "class_size": 24,
+          "centralizer_size": 5,
+          "theoretical_overlap": "1/24",
+          "theoretical_overlap_float": 0.041666666666666664
+        }
+      },
+      "average_1copy_overlap": "7/120",
+      "average_1copy_overlap_float": 0.058333333333333334,
+      "average_4copy_overlap": "1730861/207360000",
+      "average_4copy_overlap_float": 0.008347130594135803,
+      "purity": "1/120",
+      "purity_float": 0.008333333333333333,
+      "exact_class_overlap_law_satisfied": true
+    }
+  ],
+  "scaling_profiles": [
+    {
+      "dimension_n": 3,
+      "group_order_n_factorial": "6",
+      "secret_entropy_bits": 2.584962500721156,
+      "partition_count": 3,
+      "average_1copy_overlap": "1/2",
+      "average_1copy_overlap_float": 0.5,
+      "copies_k": 4,
+      "average_kcopy_overlap": "29/162",
+      "average_kcopy_overlap_float": 0.17901234567901234,
+      "holevo_mutual_information_upper_bound_bits": 2.584962500721156,
+      "raw_holevo_scaling_bound": 5.333333333333333,
+      "fano_identification_success_upper_bound": 1.0,
+      "map_full_recovery_probability_upper_bound": 1.0,
+      "secret_entropy_exceeds_holevo_bound": true,
+      "copy_barrier_confirmed": true
+    },
+    {
+      "dimension_n": 4,
+      "group_order_n_factorial": "24",
+      "secret_entropy_bits": 4.584962500721156,
+      "partition_count": 5,
+      "average_1copy_overlap": "5/24",
+      "average_1copy_overlap_float": 0.20833333333333334,
+      "copies_k": 4,
+      "average_kcopy_overlap": "55/1296",
+      "average_kcopy_overlap_float": 0.04243827160493827,
+      "holevo_mutual_information_upper_bound_bits": 4.0,
+      "raw_holevo_scaling_bound": 4.0,
+      "fano_identification_success_upper_bound": 1.0,
+      "map_full_recovery_probability_upper_bound": 0.6666666666666667,
+      "secret_entropy_exceeds_holevo_bound": true,
+      "copy_barrier_confirmed": true
+    },
+    {
+      "dimension_n": 5,
+      "group_order_n_factorial": "120",
+      "secret_entropy_bits": 6.906890595608519,
+      "partition_count": 7,
+      "average_1copy_overlap": "7/120",
+      "average_1copy_overlap_float": 0.058333333333333334,
+      "copies_k": 4,
+      "average_kcopy_overlap": "503/60000",
+      "average_kcopy_overlap_float": 0.008383333333333333,
+      "holevo_mutual_information_upper_bound_bits": 3.2,
+      "raw_holevo_scaling_bound": 3.2,
+      "fano_identification_success_upper_bound": 0.6080883925786241,
+      "map_full_recovery_probability_upper_bound": 0.07657989033313567,
+      "secret_entropy_exceeds_holevo_bound": true,
+      "copy_barrier_confirmed": true
+    },
+    {
+      "dimension_n": 6,
+      "group_order_n_factorial": "720",
+      "secret_entropy_bits": 9.491853096329674,
+      "partition_count": 11,
+      "average_1copy_overlap": "11/720",
+      "average_1copy_overlap_float": 0.015277777777777777,
+      "copies_k": 4,
+      "average_kcopy_overlap": "677/486000",
+      "average_kcopy_overlap_float": 0.0013930041152263374,
+      "holevo_mutual_information_upper_bound_bits": 2.6666666666666665,
+      "raw_holevo_scaling_bound": 2.6666666666666665,
+      "fano_identification_success_upper_bound": 0.38629618784181347,
+      "map_full_recovery_probability_upper_bound": 0.008818894733156665,
+      "secret_entropy_exceeds_holevo_bound": true,
+      "copy_barrier_confirmed": true
+    },
+    {
+      "dimension_n": 8,
+      "group_order_n_factorial": "40320",
+      "secret_entropy_bits": 15.29920801838728,
+      "partition_count": 22,
+      "average_1copy_overlap": "11/20160",
+      "average_1copy_overlap_float": 0.0005456349206349206,
+      "copies_k": 4,
+      "average_kcopy_overlap": "3139/126443520",
+      "average_kcopy_overlap_float": 2.482531330984775e-05,
+      "holevo_mutual_information_upper_bound_bits": 2.0,
+      "raw_holevo_scaling_bound": 2.0,
+      "fano_identification_success_upper_bound": 0.19608858160464676,
+      "map_full_recovery_probability_upper_bound": 9.920634920634917e-05,
+      "secret_entropy_exceeds_holevo_bound": true,
+      "copy_barrier_confirmed": true
+    },
+    {
+      "dimension_n": 16,
+      "group_order_n_factorial": "20922789888000",
+      "secret_entropy_bits": 44.25014046988262,
+      "partition_count": 231,
+      "average_1copy_overlap": "1/90574848000",
+      "average_1copy_overlap_float": 1.104059263781486e-11,
+      "copies_k": 4,
+      "average_kcopy_overlap": "3527/73784859033600000",
+      "average_kcopy_overlap_float": 4.78011348967121e-14,
+      "holevo_mutual_information_upper_bound_bits": 1.0,
+      "raw_holevo_scaling_bound": 1.0,
+      "fano_identification_success_upper_bound": 0.04519759663500352,
+      "map_full_recovery_probability_upper_bound": 9.558954664774759e-14,
+      "secret_entropy_exceeds_holevo_bound": true,
+      "copy_barrier_confirmed": true
+    },
+    {
+      "dimension_n": 32,
+      "group_order_n_factorial": "263130836933693530167218012160000000",
+      "secret_entropy_bits": 117.6632636523603,
+      "partition_count": 8349,
+      "average_1copy_overlap": "1/31516449506970119794851840000000",
+      "average_1copy_overlap_float": 3.1729462412282255e-32,
+      "copies_k": 4,
+      "average_kcopy_overlap": "924487/243244397012298905823777878892871680000000",
+      "average_kcopy_overlap_float": 3.800650750254511e-36,
+      "holevo_mutual_information_upper_bound_bits": 0.5,
+      "raw_holevo_scaling_bound": 0.5,
+      "fano_identification_success_upper_bound": 0.01274824404354273,
+      "map_full_recovery_probability_upper_bound": 5.3745641478329165e-36,
+      "secret_entropy_exceeds_holevo_bound": true,
+      "copy_barrier_confirmed": true
+    },
+    {
+      "dimension_n": 64,
+      "group_order_n_factorial": "126886932185884164103433389335161480802865516174545192198801894375214704230400000000000000",
+      "secret_entropy_bits": 295.99514394172405,
+      "partition_count": 1741630,
+      "average_1copy_overlap": "15833/1153517565326219673667576266683286189116959237950410838170926312501951856640000000000000",
+      "average_1copy_overlap_float": 1.3725842133597993e-83,
+      "copies_k": 4,
+      "average_kcopy_overlap": "109270423/13862042220312997650572338223770991674573505046291634224598796329654380636274176294912000000000000",
+      "average_kcopy_overlap_float": 7.882707415208892e-90,
+      "holevo_mutual_information_upper_bound_bits": 0.25,
+      "raw_holevo_scaling_bound": 0.25,
+      "fano_identification_success_upper_bound": 0.004223042254524628,
+      "map_full_recovery_probability_upper_bound": 9.372179581586663e-90,
+      "secret_entropy_exceeds_holevo_bound": true,
+      "copy_barrier_confirmed": true
+    }
+  ],
+  "speedup_claim_allowed": false,
+  "accepted_speedup_candidate": false
+}

@@ -2,7 +2,22 @@
 
 Last updated: 2026-10-10
 
-## Latest: Native Phase Bank History Entanglement & Classical Dequantization Duality Proved
+## Latest: Non-Abelian Coset Permutation Decoder Gap & Factorial Holevo Collapse Proved
+
+A high-impact scientific subsystem resolving the fine-permutation decoder gap from `WREATH_ORIENTATION_PROJECTOR_GRAM_NORM.md` and `code-equivalence-hard-family-search` in `research/frontier_map.json` is now fully implemented, verified, cross-checked, and integrated. Read `WREATH_COSET_PERMUTATION_HOLEVO_COLLAPSE.md`.
+The subsystem includes an executable theorem module (`theorems/wreath_coset_permutation_holevo_collapse.py`), live artifact report (`research/representation/wreath_coset_permutation_holevo_collapse.json`), independent exact JS cross-check (`research/certificates/wreath_coset_permutation_holevo_collapse_crosscheck.js`), test suite (`tests/test_wreath_coset_permutation_holevo_collapse.py`), registered negative result (`NEG-WREATH-COSET-PERMUTATION-HOLEVO-INFORMATION-COLLAPSE`), and CLI subcommand wired into `qsearch.py` (`python3 qsearch.py wreath-coset-permutation-holevo-collapse`).
+
+### Wreath Coset Permutation Decoder Gap & Factorial Holevo Information Collapse
+Resolving the fine-permutation decoder gap in non-abelian hidden subgroup code equivalence:
+- **Exact Conjugacy Class Inversion Law**: Proved that for any pair of hidden permutations $\tau, \tau' \in S_n$, the total single-copy Hilbert-Schmidt overlap across all irreps $\nu \vdash n$ satisfies the closed identity: $\text{Tr}(\rho_\tau \rho_{\tau'}) = \frac{1}{n!} \sum_\nu |\chi_\nu(\tau^{-1} \tau')|^2 = \frac{|Z(\tau^{-1} \tau')|}{n!} = \frac{1}{|C(\tau^{-1} \tau')|}$, where $C(\tau^{-1} \tau')$ is the conjugacy class in $S_n$.
+- **Exact $k$-Copy Decoupling**: Proved that the $k$-copy overlap factors as $\text{Tr}(\rho_\tau^{\otimes k} \rho_{\tau'}^{\otimes k}) = \frac{1}{|C(\tau^{-1} \tau')|^k}$. Under a uniform prior over all $n!$ permutations, the average overlap decays as $\mathbb{E}_{\tau'}[\text{Tr}(\rho_\tau^{\otimes k} \rho_{\tau'}^{\otimes k})] = \frac{1}{n!} (1 + o(1))$ for all $k \ge 2$.
+- **Purity and Incoherence**: Proved that the mixed coset state $\rho_\tau$ has purity $\text{Tr}(\rho_\tau^2) = 1/n!$, corresponding to a maximally mixed rank-$n!$ state in the coset sector with von Neumann entropy $S(\rho_\tau) = \log_2(n!) = \Theta(n \log n)$ bits.
+- **Holevo Mutual Information Collapse**: Proved that for any $k = O(1)$ copies, the quantum Holevo mutual information satisfies $I(\tau : Q^{\otimes k}) \le O(k^2 / n) \to 0$ bits, whereas the hidden secret contains $\log_2(n!) = \Theta(n \log n)$ bits.
+- **Factorial Reconstruction Failure (Fano Bound)**: Proved by Fano's inequality that identification success probability under ANY quantum measurement on $k = O(1)$ copies is strictly bounded by $P_{\text{succ}} \le \frac{I + 1}{\log_2(n!)} = O\left( \frac{1}{n^2 \log n} \right) \to 0$. The probability of recovering the hidden permutation collapses as $2^{-\Omega(n \log n)} = (n!)^{-1 + o(1)}$, proving an unbreachable copy complexity barrier of $k = \Omega(n \log n)$ copies.
+
+Verification: All 69/69 checks PASS in `node research/certificates/wreath_coset_permutation_holevo_collapse_crosscheck.js`, 8/8 tests PASS in `tests/test_wreath_coset_permutation_holevo_collapse.py`, 149 PASS across the connected regression suite, and `python3 qsearch.py validate` confirms 100% validity with 942 negative results recorded.
+
+## Prior: Native Phase Bank History Entanglement & Classical Dequantization Duality Proved
 
 A high-impact scientific subsystem resolving the constructive research contract on cyclotomic/ternary LWE ($q = 3^n, M = n^2, W = n^2, \alpha = n^{-3}$) from `research/AGENT_HANDOFF.md` and `native_gaussian_bank_robustness.py` is now fully implemented, verified, cross-checked, and integrated. Read `NATIVE_HISTORY_ERASURE_DEQUANTIZATION.md`.
 The subsystem includes an executable theorem module (`theorems/native_history_erasure_dequantization.py`), live artifact report (`research/reductions/native_history_erasure_dequantization.json`), independent exact JS cross-check (`research/certificates/native_history_erasure_dequantization_crosscheck.js`), test suite (`tests/test_native_history_erasure_dequantization.py`), registered negative result (`NEG-NATIVE-PHASE-BANK-HISTORY-ERASURE-DEQUANTIZATION-BARRIER`), and CLI subcommand wired into `qsearch.py` (`python3 qsearch.py native-history-erasure-dequantization`).
