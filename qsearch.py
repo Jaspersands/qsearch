@@ -20386,6 +20386,23 @@ def command_dcp_general_povm_secret_variance_collapse(args: argparse.Namespace) 
     return 0 if validation["valid"] else 1
 
 
+def command_self_dual_wreath_naimark_compressed_permutation_barrier(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    import json
+    from theorems.self_dual_wreath_naimark_compressed_permutation_barrier import REPORT, build_report, register_negative_result
+    report = build_report()
+    REPORT.parent.mkdir(parents=True, exist_ok=True)
+    with open(REPORT, "w", encoding="utf-8") as f:
+        json.dump(report, f, indent=2)
+    if not getattr(args, "no_registry", False):
+        register_negative_result()
+    validation = validate_registry()
+    print("self_dual_wreath_naimark_compressed_permutation_barrier complete")
+    print(f"Artifact: {REPORT}")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--root", type=Path, default=Path.cwd())
@@ -28093,6 +28110,13 @@ def build_parser() -> argparse.ArgumentParser:
     )
     dcp_general_povm_secret_variance_collapse.add_argument("--no-registry", action="store_true")
     dcp_general_povm_secret_variance_collapse.set_defaults(func=command_dcp_general_povm_secret_variance_collapse)
+
+    self_dual_wreath_naimark_compressed_permutation_barrier = subparsers.add_parser(
+        "self-dual-wreath-naimark-compressed-permutation-barrier",
+        help="Run uniform harmonic Naimark dilation, Young branching reciprocity, and compressed permutation multiplicity barrier audit.",
+    )
+    self_dual_wreath_naimark_compressed_permutation_barrier.add_argument("--no-registry", action="store_true")
+    self_dual_wreath_naimark_compressed_permutation_barrier.set_defaults(func=command_self_dual_wreath_naimark_compressed_permutation_barrier)
 
     validate = subparsers.add_parser("validate", help="Validate candidates and experiments against proof obligations.")
     validate.set_defaults(func=command_validate)

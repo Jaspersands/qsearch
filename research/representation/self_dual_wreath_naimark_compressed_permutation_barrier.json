@@ -1,0 +1,866 @@
+{
+  "created_at": "2026-10-11T00:00:00+00:00",
+  "status": "SELF_DUAL_WREATH_NAIMARK_COMPRESSED_PERMUTATION_BARRIER_PROVED",
+  "derivation_sha256": "5b30165a00d190aaee39270266e1d697843fe66c167595d666a13ecc056c22a5",
+  "theorem_contract": {
+    "young_branching_reciprocity": "sum_{alpha in nu^-} d_alpha = d_nu for every parent nu |- n, and sum_{nu : alpha in nu^-} d_nu = n * d_alpha for every child alpha |- n-1, proving exact multiplicity conservation.",
+    "computational_basis_diagonal_invariance": "For every left-covariant point POVM M_j = L(x_j) (T_H / n) L(x_j)^dagger, [M_j]_{g, g} == 1/n! identically for all g in S_n and all j in {0, ..., n-1}, forcing p(j | tau) == 1/n on diagonal mixed coset states with I(tau(n) : J) == 0.0 bits identically.",
+    "peter_weyl_conclusive_probability_identity": "The sum of raw measurement overlaps across all n outcomes satisfies sum_{j=0}^{n-1} raw_overlap(j) == p(n) / n! identically. The conclusive measurement probability collapses as P_concl = p(n) / n! = 2^{-Omega(n log n)}.",
+    "physical_bias_and_mutual_information_extinction": "The physical bias on legal normalized POVMs is bounded by Delta_phys <= p(n) / n! = 2^{-Omega(n log n)}. Single-copy mutual information collapses as I(tau(n) : J) <= (2/ln 2) n (p(n)/n!)^2 = 2^{-Omega(n log n)} bits. Copy complexity to distinguish tau(n) requires N_copies >= (n! / p(n))^2 = 2^{Omega(n log n)}.",
+    "class_algebra_commutant_invariance": "All central / class-algebra POVM effects commute with S_n, giving identical outcome distributions p(lambda | tau) across each conjugacy class C = ct(tau) with I(tau | ct(tau) : Lambda) == 0.0 bits. Total recovered entropy is at most log_2 p(n) = O(sqrt{n}) bits, leaving Theta(n log n) bits unrecovered.",
+    "universal_trilemma_barrier": "Every uniform harmonic Naimark dilation faces an exhaustive trilemma between central zero-information, point-stabilizer factorial purity decay, and uncompressed exponential dilation dimension."
+  },
+  "headline_metrics": {
+    "audited_finite_dimensions": [
+      3,
+      4,
+      5,
+      6
+    ],
+    "all_young_branching_dimensions_conserved": true,
+    "computational_basis_diagonal_invariance_proved": true,
+    "conclusive_probability_identity_verified": true,
+    "physical_bias_bounded_by_conclusive_probability": true,
+    "conclusive_probability_at_n_16": 1.104059263781486e-11,
+    "log2_conclusive_probability_at_n_16": -36.3984,
+    "log2_copies_needed_at_n_16": 72.7968,
+    "mutual_information_at_n_16_bits": 5.627419478591035e-21,
+    "conclusive_probability_at_n_32": 3.1729462412282255e-32,
+    "log2_copies_needed_at_n_32": 209.2718,
+    "speedup_claim_allowed": false
+  },
+  "claim_gate": {
+    "young_branching_reciprocity_proved": true,
+    "computational_basis_diagonal_invariance_proved": true,
+    "conclusive_probability_identity_proved": true,
+    "physical_bias_factorial_collapse_proved": true,
+    "class_algebra_commutant_invariance_proved": true,
+    "universal_trilemma_barrier_proved": true,
+    "speedup_claim_allowed": false
+  },
+  "reciprocity_instances": [
+    {
+      "n": 3,
+      "parent_count": 3,
+      "child_count": 2,
+      "parent_all_conserved": true,
+      "child_all_conserved": true,
+      "parent_records": [
+        {
+          "partition": [
+            3
+          ],
+          "dimension": 1,
+          "children_count": 1,
+          "sum_children_dimensions": 1,
+          "dimension_conserved": true
+        },
+        {
+          "partition": [
+            2,
+            1
+          ],
+          "dimension": 2,
+          "children_count": 2,
+          "sum_children_dimensions": 2,
+          "dimension_conserved": true
+        },
+        {
+          "partition": [
+            1,
+            1,
+            1
+          ],
+          "dimension": 1,
+          "children_count": 1,
+          "sum_children_dimensions": 1,
+          "dimension_conserved": true
+        }
+      ],
+      "child_records": [
+        {
+          "child_partition": [
+            2
+          ],
+          "child_dimension": 1,
+          "covering_parent_count": 2,
+          "sum_parent_dimensions": 3,
+          "expected_sum": 3,
+          "reciprocity_conserved": true
+        },
+        {
+          "child_partition": [
+            1,
+            1
+          ],
+          "child_dimension": 1,
+          "covering_parent_count": 2,
+          "sum_parent_dimensions": 3,
+          "expected_sum": 3,
+          "reciprocity_conserved": true
+        }
+      ]
+    },
+    {
+      "n": 4,
+      "parent_count": 5,
+      "child_count": 3,
+      "parent_all_conserved": true,
+      "child_all_conserved": true,
+      "parent_records": [
+        {
+          "partition": [
+            4
+          ],
+          "dimension": 1,
+          "children_count": 1,
+          "sum_children_dimensions": 1,
+          "dimension_conserved": true
+        },
+        {
+          "partition": [
+            3,
+            1
+          ],
+          "dimension": 3,
+          "children_count": 2,
+          "sum_children_dimensions": 3,
+          "dimension_conserved": true
+        },
+        {
+          "partition": [
+            2,
+            2
+          ],
+          "dimension": 2,
+          "children_count": 1,
+          "sum_children_dimensions": 2,
+          "dimension_conserved": true
+        },
+        {
+          "partition": [
+            2,
+            1,
+            1
+          ],
+          "dimension": 3,
+          "children_count": 2,
+          "sum_children_dimensions": 3,
+          "dimension_conserved": true
+        },
+        {
+          "partition": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "dimension": 1,
+          "children_count": 1,
+          "sum_children_dimensions": 1,
+          "dimension_conserved": true
+        }
+      ],
+      "child_records": [
+        {
+          "child_partition": [
+            3
+          ],
+          "child_dimension": 1,
+          "covering_parent_count": 2,
+          "sum_parent_dimensions": 4,
+          "expected_sum": 4,
+          "reciprocity_conserved": true
+        },
+        {
+          "child_partition": [
+            2,
+            1
+          ],
+          "child_dimension": 2,
+          "covering_parent_count": 3,
+          "sum_parent_dimensions": 8,
+          "expected_sum": 8,
+          "reciprocity_conserved": true
+        },
+        {
+          "child_partition": [
+            1,
+            1,
+            1
+          ],
+          "child_dimension": 1,
+          "covering_parent_count": 2,
+          "sum_parent_dimensions": 4,
+          "expected_sum": 4,
+          "reciprocity_conserved": true
+        }
+      ]
+    },
+    {
+      "n": 5,
+      "parent_count": 7,
+      "child_count": 5,
+      "parent_all_conserved": true,
+      "child_all_conserved": true,
+      "parent_records": [
+        {
+          "partition": [
+            5
+          ],
+          "dimension": 1,
+          "children_count": 1,
+          "sum_children_dimensions": 1,
+          "dimension_conserved": true
+        },
+        {
+          "partition": [
+            4,
+            1
+          ],
+          "dimension": 4,
+          "children_count": 2,
+          "sum_children_dimensions": 4,
+          "dimension_conserved": true
+        },
+        {
+          "partition": [
+            3,
+            2
+          ],
+          "dimension": 5,
+          "children_count": 2,
+          "sum_children_dimensions": 5,
+          "dimension_conserved": true
+        },
+        {
+          "partition": [
+            3,
+            1,
+            1
+          ],
+          "dimension": 6,
+          "children_count": 2,
+          "sum_children_dimensions": 6,
+          "dimension_conserved": true
+        },
+        {
+          "partition": [
+            2,
+            2,
+            1
+          ],
+          "dimension": 5,
+          "children_count": 2,
+          "sum_children_dimensions": 5,
+          "dimension_conserved": true
+        },
+        {
+          "partition": [
+            2,
+            1,
+            1,
+            1
+          ],
+          "dimension": 4,
+          "children_count": 2,
+          "sum_children_dimensions": 4,
+          "dimension_conserved": true
+        },
+        {
+          "partition": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "dimension": 1,
+          "children_count": 1,
+          "sum_children_dimensions": 1,
+          "dimension_conserved": true
+        }
+      ],
+      "child_records": [
+        {
+          "child_partition": [
+            4
+          ],
+          "child_dimension": 1,
+          "covering_parent_count": 2,
+          "sum_parent_dimensions": 5,
+          "expected_sum": 5,
+          "reciprocity_conserved": true
+        },
+        {
+          "child_partition": [
+            3,
+            1
+          ],
+          "child_dimension": 3,
+          "covering_parent_count": 3,
+          "sum_parent_dimensions": 15,
+          "expected_sum": 15,
+          "reciprocity_conserved": true
+        },
+        {
+          "child_partition": [
+            2,
+            2
+          ],
+          "child_dimension": 2,
+          "covering_parent_count": 2,
+          "sum_parent_dimensions": 10,
+          "expected_sum": 10,
+          "reciprocity_conserved": true
+        },
+        {
+          "child_partition": [
+            2,
+            1,
+            1
+          ],
+          "child_dimension": 3,
+          "covering_parent_count": 3,
+          "sum_parent_dimensions": 15,
+          "expected_sum": 15,
+          "reciprocity_conserved": true
+        },
+        {
+          "child_partition": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "child_dimension": 1,
+          "covering_parent_count": 2,
+          "sum_parent_dimensions": 5,
+          "expected_sum": 5,
+          "reciprocity_conserved": true
+        }
+      ]
+    },
+    {
+      "n": 6,
+      "parent_count": 11,
+      "child_count": 7,
+      "parent_all_conserved": true,
+      "child_all_conserved": true,
+      "parent_records": [
+        {
+          "partition": [
+            6
+          ],
+          "dimension": 1,
+          "children_count": 1,
+          "sum_children_dimensions": 1,
+          "dimension_conserved": true
+        },
+        {
+          "partition": [
+            5,
+            1
+          ],
+          "dimension": 5,
+          "children_count": 2,
+          "sum_children_dimensions": 5,
+          "dimension_conserved": true
+        },
+        {
+          "partition": [
+            4,
+            2
+          ],
+          "dimension": 9,
+          "children_count": 2,
+          "sum_children_dimensions": 9,
+          "dimension_conserved": true
+        },
+        {
+          "partition": [
+            4,
+            1,
+            1
+          ],
+          "dimension": 10,
+          "children_count": 2,
+          "sum_children_dimensions": 10,
+          "dimension_conserved": true
+        },
+        {
+          "partition": [
+            3,
+            3
+          ],
+          "dimension": 5,
+          "children_count": 1,
+          "sum_children_dimensions": 5,
+          "dimension_conserved": true
+        },
+        {
+          "partition": [
+            3,
+            2,
+            1
+          ],
+          "dimension": 16,
+          "children_count": 3,
+          "sum_children_dimensions": 16,
+          "dimension_conserved": true
+        },
+        {
+          "partition": [
+            3,
+            1,
+            1,
+            1
+          ],
+          "dimension": 10,
+          "children_count": 2,
+          "sum_children_dimensions": 10,
+          "dimension_conserved": true
+        },
+        {
+          "partition": [
+            2,
+            2,
+            2
+          ],
+          "dimension": 5,
+          "children_count": 1,
+          "sum_children_dimensions": 5,
+          "dimension_conserved": true
+        },
+        {
+          "partition": [
+            2,
+            2,
+            1,
+            1
+          ],
+          "dimension": 9,
+          "children_count": 2,
+          "sum_children_dimensions": 9,
+          "dimension_conserved": true
+        },
+        {
+          "partition": [
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "dimension": 5,
+          "children_count": 2,
+          "sum_children_dimensions": 5,
+          "dimension_conserved": true
+        },
+        {
+          "partition": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "dimension": 1,
+          "children_count": 1,
+          "sum_children_dimensions": 1,
+          "dimension_conserved": true
+        }
+      ],
+      "child_records": [
+        {
+          "child_partition": [
+            5
+          ],
+          "child_dimension": 1,
+          "covering_parent_count": 2,
+          "sum_parent_dimensions": 6,
+          "expected_sum": 6,
+          "reciprocity_conserved": true
+        },
+        {
+          "child_partition": [
+            4,
+            1
+          ],
+          "child_dimension": 4,
+          "covering_parent_count": 3,
+          "sum_parent_dimensions": 24,
+          "expected_sum": 24,
+          "reciprocity_conserved": true
+        },
+        {
+          "child_partition": [
+            3,
+            2
+          ],
+          "child_dimension": 5,
+          "covering_parent_count": 3,
+          "sum_parent_dimensions": 30,
+          "expected_sum": 30,
+          "reciprocity_conserved": true
+        },
+        {
+          "child_partition": [
+            3,
+            1,
+            1
+          ],
+          "child_dimension": 6,
+          "covering_parent_count": 3,
+          "sum_parent_dimensions": 36,
+          "expected_sum": 36,
+          "reciprocity_conserved": true
+        },
+        {
+          "child_partition": [
+            2,
+            2,
+            1
+          ],
+          "child_dimension": 5,
+          "covering_parent_count": 3,
+          "sum_parent_dimensions": 30,
+          "expected_sum": 30,
+          "reciprocity_conserved": true
+        },
+        {
+          "child_partition": [
+            2,
+            1,
+            1,
+            1
+          ],
+          "child_dimension": 4,
+          "covering_parent_count": 3,
+          "sum_parent_dimensions": 24,
+          "expected_sum": 24,
+          "reciprocity_conserved": true
+        },
+        {
+          "child_partition": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "child_dimension": 1,
+          "covering_parent_count": 2,
+          "sum_parent_dimensions": 6,
+          "expected_sum": 6,
+          "reciprocity_conserved": true
+        }
+      ]
+    }
+  ],
+  "finite_povm_instances": [
+    {
+      "n": 3,
+      "n_factorial": 6,
+      "partition_count_p_n": 3,
+      "point_stabilizer_order": 2,
+      "coset_count": 3,
+      "computational_basis_diagonal_exact_constant": true,
+      "diagonal_matrix_element": 0.16666666666666666,
+      "secret_permutation": [
+        2,
+        1,
+        0
+      ],
+      "secret_target_point": 0,
+      "raw_overlaps": [
+        0.22222222,
+        0.13888889,
+        0.13888889
+      ],
+      "sum_raw_overlaps_conclusive_probability": 0.5,
+      "expected_conclusive_probability": 0.5,
+      "conclusive_probability_identity_verified": true,
+      "normalized_conditional_probabilities": [
+        0.44444444,
+        0.27777778,
+        0.27777778
+      ],
+      "conditional_bias": 0.11111111,
+      "physical_probabilities": [
+        0.38888889,
+        0.30555556,
+        0.30555556
+      ],
+      "physical_bias": 0.05555556,
+      "physical_bias_bounded_by_conclusive_prob": true
+    },
+    {
+      "n": 4,
+      "n_factorial": 24,
+      "partition_count_p_n": 5,
+      "point_stabilizer_order": 6,
+      "coset_count": 4,
+      "computational_basis_diagonal_exact_constant": true,
+      "diagonal_matrix_element": 0.041666666666666664,
+      "secret_permutation": [
+        3,
+        1,
+        2,
+        0
+      ],
+      "secret_target_point": 0,
+      "raw_overlaps": [
+        0.07291667,
+        0.04513889,
+        0.04513889,
+        0.04513889
+      ],
+      "sum_raw_overlaps_conclusive_probability": 0.20833333,
+      "expected_conclusive_probability": 0.20833333,
+      "conclusive_probability_identity_verified": true,
+      "normalized_conditional_probabilities": [
+        0.35,
+        0.21666667,
+        0.21666667,
+        0.21666667
+      ],
+      "conditional_bias": 0.1,
+      "physical_probabilities": [
+        0.27083333,
+        0.24305556,
+        0.24305556,
+        0.24305556
+      ],
+      "physical_bias": 0.02083333,
+      "physical_bias_bounded_by_conclusive_prob": true
+    },
+    {
+      "n": 5,
+      "n_factorial": 120,
+      "partition_count_p_n": 7,
+      "point_stabilizer_order": 24,
+      "coset_count": 5,
+      "computational_basis_diagonal_exact_constant": true,
+      "diagonal_matrix_element": 0.008333333333333333,
+      "secret_permutation": [
+        4,
+        1,
+        2,
+        3,
+        0
+      ],
+      "secret_target_point": 0,
+      "raw_overlaps": [
+        0.02,
+        0.00958333,
+        0.00958333,
+        0.00958333,
+        0.00958333
+      ],
+      "sum_raw_overlaps_conclusive_probability": 0.05833333,
+      "expected_conclusive_probability": 0.05833333,
+      "conclusive_probability_identity_verified": true,
+      "normalized_conditional_probabilities": [
+        0.34285714,
+        0.16428571,
+        0.16428571,
+        0.16428571,
+        0.16428571
+      ],
+      "conditional_bias": 0.14285714,
+      "physical_probabilities": [
+        0.20833333,
+        0.19791667,
+        0.19791667,
+        0.19791667,
+        0.19791667
+      ],
+      "physical_bias": 0.00833333,
+      "physical_bias_bounded_by_conclusive_prob": true
+    }
+  ],
+  "scaling_profiles": [
+    {
+      "n": 3,
+      "n_factorial": "6",
+      "partition_count_p_n": 3,
+      "secret_permutation_entropy_bits": 2.585,
+      "conjugacy_class_entropy_bits": 1.585,
+      "class_algebra_unrecovered_entropy_bits": 1.0,
+      "conclusive_probability": 0.5,
+      "log2_conclusive_probability": -1.0,
+      "physical_bias_upper_bound": 0.5,
+      "single_copy_mutual_information_upper_bound_bits": 2.164042561333445,
+      "fano_point_success_probability_upper_bound": 0.83333333,
+      "log2_copies_needed_for_distinction": 2.0,
+      "factorial_suppression_active": true,
+      "mutual_information_vanishes": true
+    },
+    {
+      "n": 4,
+      "n_factorial": "24",
+      "partition_count_p_n": 5,
+      "secret_permutation_entropy_bits": 4.585,
+      "conjugacy_class_entropy_bits": 2.3219,
+      "class_algebra_unrecovered_entropy_bits": 2.263,
+      "conclusive_probability": 0.20833333333333334,
+      "log2_conclusive_probability": -2.263,
+      "physical_bias_upper_bound": 0.20833333333333334,
+      "single_copy_mutual_information_upper_bound_bits": 0.5009357780864457,
+      "fano_point_success_probability_upper_bound": 0.45833333,
+      "log2_copies_needed_for_distinction": 4.5261,
+      "factorial_suppression_active": true,
+      "mutual_information_vanishes": true
+    },
+    {
+      "n": 5,
+      "n_factorial": "120",
+      "partition_count_p_n": 7,
+      "secret_permutation_entropy_bits": 6.9069,
+      "conjugacy_class_entropy_bits": 2.8074,
+      "class_algebra_unrecovered_entropy_bits": 4.0995,
+      "conclusive_probability": 0.058333333333333334,
+      "log2_conclusive_probability": -4.0995,
+      "physical_bias_upper_bound": 0.058333333333333334,
+      "single_copy_mutual_information_upper_bound_bits": 0.049091706252471674,
+      "fano_point_success_probability_upper_bound": 0.25833333,
+      "log2_copies_needed_for_distinction": 8.1991,
+      "factorial_suppression_active": false,
+      "mutual_information_vanishes": true
+    },
+    {
+      "n": 6,
+      "n_factorial": "720",
+      "partition_count_p_n": 11,
+      "secret_permutation_entropy_bits": 9.4919,
+      "conjugacy_class_entropy_bits": 3.4594,
+      "class_algebra_unrecovered_entropy_bits": 6.0324,
+      "conclusive_probability": 0.015277777777777777,
+      "log2_conclusive_probability": -6.0324,
+      "physical_bias_upper_bound": 0.015277777777777777,
+      "single_copy_mutual_information_upper_bound_bits": 0.004040881943230661,
+      "fano_point_success_probability_upper_bound": 0.18194444,
+      "log2_copies_needed_for_distinction": 12.0648,
+      "factorial_suppression_active": true,
+      "mutual_information_vanishes": false
+    },
+    {
+      "n": 8,
+      "n_factorial": "40320",
+      "partition_count_p_n": 22,
+      "secret_permutation_entropy_bits": 15.2992,
+      "conjugacy_class_entropy_bits": 4.4594,
+      "class_algebra_unrecovered_entropy_bits": 10.8398,
+      "conclusive_probability": 0.0005456349206349206,
+      "log2_conclusive_probability": -10.8398,
+      "physical_bias_upper_bound": 0.0005456349206349206,
+      "single_copy_mutual_information_upper_bound_bits": 6.872248202773234e-06,
+      "fano_point_success_probability_upper_bound": 0.12554563,
+      "log2_copies_needed_for_distinction": 21.6796,
+      "factorial_suppression_active": true,
+      "mutual_information_vanishes": true
+    },
+    {
+      "n": 10,
+      "n_factorial": "3628800",
+      "partition_count_p_n": 42,
+      "secret_permutation_entropy_bits": 21.7911,
+      "conjugacy_class_entropy_bits": 5.3923,
+      "class_algebra_unrecovered_entropy_bits": 16.3987,
+      "conclusive_probability": 1.1574074074074073e-05,
+      "log2_conclusive_probability": -16.3987,
+      "physical_bias_upper_bound": 1.1574074074074073e-05,
+      "single_copy_mutual_information_upper_bound_bits": 3.865245201284303e-09,
+      "fano_point_success_probability_upper_bound": 0.10001157,
+      "log2_copies_needed_for_distinction": 32.7975,
+      "factorial_suppression_active": true,
+      "mutual_information_vanishes": true
+    },
+    {
+      "n": 12,
+      "n_factorial": "479001600",
+      "partition_count_p_n": 77,
+      "secret_permutation_entropy_bits": 28.8355,
+      "conjugacy_class_entropy_bits": 6.2668,
+      "class_algebra_unrecovered_entropy_bits": 22.5687,
+      "conclusive_probability": 1.6075102880658437e-07,
+      "log2_conclusive_probability": -22.5687,
+      "physical_bias_upper_bound": 1.6075102880658437e-07,
+      "single_copy_mutual_information_upper_bound_bits": 8.947326854824775e-13,
+      "fano_point_success_probability_upper_bound": 0.08333349,
+      "log2_copies_needed_for_distinction": 45.1373,
+      "factorial_suppression_active": true,
+      "mutual_information_vanishes": true
+    },
+    {
+      "n": 16,
+      "n_factorial": "20922789888000",
+      "partition_count_p_n": 231,
+      "secret_permutation_entropy_bits": 44.2501,
+      "conjugacy_class_entropy_bits": 7.8517,
+      "class_algebra_unrecovered_entropy_bits": 36.3984,
+      "conclusive_probability": 1.104059263781486e-11,
+      "log2_conclusive_probability": -36.3984,
+      "physical_bias_upper_bound": 1.104059263781486e-11,
+      "single_copy_mutual_information_upper_bound_bits": 5.627419478591035e-21,
+      "fano_point_success_probability_upper_bound": 0.0625,
+      "log2_copies_needed_for_distinction": 72.7968,
+      "factorial_suppression_active": true,
+      "mutual_information_vanishes": true
+    },
+    {
+      "n": 20,
+      "n_factorial": "2432902008176640000",
+      "partition_count_p_n": 627,
+      "secret_permutation_entropy_bits": 61.0774,
+      "conjugacy_class_entropy_bits": 9.2923,
+      "class_algebra_unrecovered_entropy_bits": 51.7851,
+      "conclusive_probability": 2.5771691498167273e-16,
+      "log2_conclusive_probability": -51.7851,
+      "physical_bias_upper_bound": 2.5771691498167273e-16,
+      "single_copy_mutual_information_upper_bound_bits": 3.83283724613963e-30,
+      "fano_point_success_probability_upper_bound": 0.05,
+      "log2_copies_needed_for_distinction": 103.5701,
+      "factorial_suppression_active": true,
+      "mutual_information_vanishes": true
+    },
+    {
+      "n": 24,
+      "n_factorial": "620448401733239439360000",
+      "partition_count_p_n": 1575,
+      "secret_permutation_entropy_bits": 79.0377,
+      "conjugacy_class_entropy_bits": 10.6211,
+      "class_algebra_unrecovered_entropy_bits": 68.4165,
+      "conclusive_probability": 2.5384866744763866e-21,
+      "log2_conclusive_probability": -68.4165,
+      "physical_bias_upper_bound": 2.5384866744763866e-21,
+      "single_copy_mutual_information_upper_bound_bits": 4.462369743491599e-40,
+      "fano_point_success_probability_upper_bound": 0.04166667,
+      "log2_copies_needed_for_distinction": 136.833,
+      "factorial_suppression_active": true,
+      "mutual_information_vanishes": true
+    },
+    {
+      "n": 32,
+      "n_factorial": "263130836933693530167218012160000000",
+      "partition_count_p_n": 8349,
+      "secret_permutation_entropy_bits": 117.6633,
+      "conjugacy_class_entropy_bits": 13.0274,
+      "class_algebra_unrecovered_entropy_bits": 104.6359,
+      "conclusive_probability": 3.1729462412282255e-32,
+      "log2_conclusive_probability": -104.6359,
+      "physical_bias_upper_bound": 3.1729462412282255e-32,
+      "single_copy_mutual_information_upper_bound_bits": 9.295653801287209e-62,
+      "fano_point_success_probability_upper_bound": 0.03125,
+      "log2_copies_needed_for_distinction": 209.2718,
+      "factorial_suppression_active": true,
+      "mutual_information_vanishes": true
+    }
+  ],
+  "falsifiers_triggered": [
+    "NEG-SELF-DUAL-WREATH-NAIMARK-COMPRESSED-PERMUTATION-BARRIER"
+  ],
+  "summary": "Proved the Uniform Harmonic Naimark Dilation & Compressed Permutation Multiplicity Obstruction for self-dual code equivalence wreath products W_n = (S_n x S_n) \\rtimes Z_2. Established exact Young branching dimension reciprocity: sum_{alpha in nu^-} d_alpha = d_nu and sum_{nu : alpha in nu^-} d_nu = n * d_alpha. Proved computational basis diagonal invariance [M_j]_{g, g} == 1/n! identically, giving zero bias and I(tau(n) : J) == 0.0 bits on diagonal mixed coset states. Proved that on entangled carrier states, the conclusive measurement probability satisfies the closed identity P_concl = p(n) / n! = 2^{-Omega(n log n)}. Physical bias collapses as Delta_phys <= p(n) / n! = 2^{-Omega(n log n)}, collapsing single-copy mutual information to 2^{-Omega(n log n)} bits and requiring copy complexity N_copies >= (n! / p(n))^2 = 2^{Omega(n log n)}. All central class-algebra POVMs have identical distributions across conjugacy classes with zero inner information. Formally registered NEG-SELF-DUAL-WREATH-NAIMARK-COMPRESSED-PERMUTATION-BARRIER."
+}

@@ -305,6 +305,43 @@ def write_coset_holevo_report(
     payload = asdict(build_coset_holevo_report(n_values=n_values, error=error))
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(payload, indent=2, sort_keys=True))
+    if write_registry:
+        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-COSET-HOLEVO"
+        upsert_experiment_result(
+            ExperimentResultRecord(
+                id=result_id,
+                experiment_id=registry_experiment_id,
+                candidate_id=registry_candidate_id,
+                created_at=utc_now(),
+                status=payload["status"],
+                summary=payload["summary"],
+                metrics=payload["headline_metrics"],
+                artifacts={"coset_holevo_information": str(output_path)},
+                falsifiers_triggered=payload.get("falsifiers_triggered", []),
+            )
+        )
+        upsert_negative_result(
+            NegativeResultRecord(
+                id="NEG-COSET-UNDERCHARGED-HOLEVO-COPY-BUDGET",
+                source=str(output_path),
+                claim="A collective hidden-involution decoder may use fewer than the exact Holevo/Fano copy lower bound.",
+                reason_invalid="Entropy subadditivity bounds k-copy information by k times the exact one-copy character formula.",
+                lesson="Charge the exact copy lower bound, then focus research on uniform recoupling circuits, state-dependent frame action, and a compressed verified decoder.",
+                applies_to=["CODE-COSET-COLLECTIVE", registry_experiment_id],
+                evidence=payload["headline_metrics"],
+            )
+        )
+        upsert_negative_result(
+            NegativeResultRecord(
+                id="NEG-COSET-POLYNOMIAL-COPY-LOWER-BOUND-AS-NO-ALGORITHM",
+                source=str(output_path),
+                claim="The Omega(n log n) hard-family copy requirement rules out a polynomial quantum algorithm.",
+                reason_invalid="The certified copy count is polynomial; it only rules out under-sampled mechanisms.",
+                lesson="Charge the exact copy lower bound, then focus research on uniform recoupling circuits, state-dependent frame action, and a compressed verified decoder.",
+                applies_to=["CODE-COSET-COLLECTIVE", registry_experiment_id],
+                evidence=payload["headline_metrics"],
+            )
+        )
     return payload
 
 

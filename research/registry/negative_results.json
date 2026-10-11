@@ -57469,6 +57469,27 @@
   },
   {
     "applies_to": [
+      "CHARACTER-SHIFT-DECODING-LOWER-BOUND",
+      "LEGENDRE-PRG-INVERSION",
+      "CYCLOTOMIC-DEGREE-OBSTRUCTION",
+      "QUERY-TIME-SEPARATION"
+    ],
+    "claim": "Logarithmic sample fingerprinting Q(p) = O(log p) for shifted multiplicative characters yields a classical polynomial-time decoding algorithm.",
+    "evidence": {
+      "artifact": "research/classical_baselines/character_shift_decoding_lower_bound_barrier.json",
+      "autocorrelation_identity": "sum (x(x+delta) / p) == -1 identically for all delta != 0 (mod p)",
+      "cyclotomic_degree": "deg((x+s)^{(p-1)/2} - y) = (p-1)/2 = 2^{Omega(n)}",
+      "exact_agreement_count": "N_agree(delta) == (p - 3) / 2 < p/2 identically",
+      "query_ceiling": "k*(p) = 2 ceil(log2 p) samples achieves failure <= 1/p",
+      "uniform_time_lower_bound": "T >= p/2 = 2^{Omega(n)} operations in uniform model"
+    },
+    "id": "NEG-CHARACTER-SHIFT-UNIFORM-DECODING-LOWER-BOUND-BARRIER",
+    "lesson": "Do not confuse logarithmic query complexity O(log p) with polynomial classical decoding time. Shifted Legendre characters are information-theoretically identifiable in O(log p) samples, but uniform decoding without advice requires Omega(p) operations, matching the computational hardness of inverting the Legendre PRG.",
+    "reason_invalid": "By Weil's character sum theorem, pairwise agreement between distinct shifts is strictly (p-3)/(2p) < 1/2, allowing O(log p) samples to uniquely fingerprint the shift. However, in the uniform model without advice, recovering the shift s requires solving polynomial equations of degree (p-1)/2 = 2^{Omega(n)} or testing Omega(p) candidate shifts. Efficient decoding is only possible with non-uniform advice of size S = p log2 p bits or via van Dam-Hallgren's quantum Fourier transform.",
+    "source": "research/classical_baselines/character_shift_decoding_lower_bound_barrier.json"
+  },
+  {
+    "applies_to": [
       "CODE-COSET-COLLECTIVE",
       "EXP-CODE-GOPPA-HULL-PROJECTOR"
     ],
@@ -62904,6 +62925,25 @@
   },
   {
     "applies_to": [
+      "NONABELIAN-COSET-OBSERVABLES",
+      "MULTIPLICITY-COMMUTANT",
+      "RACAH-RECOUPLING",
+      "KRONECKER-POVM"
+    ],
+    "claim": "Multiplicity-space commutant Hamiltonians or pairwise Kronecker recoupling observables can extract hidden subgroup or code equivalence permutations in polynomial quantum time.",
+    "evidence": {
+      "artifact": "research/representation/coset_multiplicity_carrier_trilemma.json",
+      "commutant_dimension_law": "dim(Commutant(V^k)) = (1/n!) sum (fix(g) - 1)^{2k} = 2^Omega(n log n)",
+      "commutant_mutual_information": "0.0 bits identically",
+      "commutator_closed_form": "[K_12, K_23]_{(0,0,0),(0,0,1)} = n"
+    },
+    "id": "NEG-COSET-MULTIPLICITY-CARRIER-DECOUPLING-TRILEMMA",
+    "lesson": "Spectral gaps in commutant Hamiltonians are irrelevant for secret identification because commutant outcomes are completely secret-independent. Non-abelian quantum algorithms cannot separate multiplicity and carrier registers without incurring either zero information or factorial associator complexity.",
+    "reason_invalid": "By Schur's lemma, all observables in the commutant End_{S_n}(V^k) have identically zero mutual information (I = 0 bits) with any hidden conjugacy element. Informative measurements must operate on carrier registers, but overlapping pairwise class sums satisfy [K_{12}, K_{23}] = n for all n >= 3, ruling out simultaneous diagonalization. Coherent Racah associator transforms face a factorial multiplicity space dimension (n-1)^{2k}/n! = 2^Omega(n log n), requiring exponential quantum circuit synthesis.",
+    "source": "research/representation/coset_multiplicity_carrier_trilemma.json"
+  },
+  {
+    "applies_to": [
       "CODE-COSET-COLLECTIVE",
       "EXP-COSET-STABLE-SHAPE-FAMILY-CERTIFICATE"
     ],
@@ -65870,6 +65910,27 @@
     "lesson": "Use the bounded list as a stronger classical falsifier, then derive a source-conditioned cell-mass theorem or change the decoder mechanism.",
     "reason_invalid": "The list-size theorem is deterministic, while source coverage remains an unproved probability statement; finite failures also say nothing about general affine-CVP decoders.",
     "source": "research/classical_baselines/dcp_marker_aware_list_decoder.json"
+  },
+  {
+    "applies_to": [
+      "DCP-DENSITY-ONE-SUBSET-SUM-PARTIAL-SOLVER",
+      "NON-ERASURE-POVM",
+      "INACCESSIBLE-ENVIRONMENT",
+      "SECRET-VARIANCE-COLLAPSE"
+    ],
+    "claim": "General non-erasure POVM measurements or open-system channels with an inaccessible environment can extract the hidden secret s in polynomial time from density-one subset sum phase states.",
+    "evidence": {
+      "artifact": "research/classical_baselines/dcp_general_povm_secret_variance_collapse.json",
+      "fano_success_bound": "P_succ <= (I + 1)/n = O(1/n) -> 0; exact unique recovery collapses as 2^{-Omega(n)}",
+      "mutual_information_bound": "I(s : Y) <= (M^2 / ln 2) 2^{-2n} = 2^{-Omega(n)} bits",
+      "parseval_variance_bound": "E_a[Var_s(p(y | s))] <= 2^{-2n} Tr(E_y^2) <= 2^{-2n}",
+      "shallow_depth_zero_information": "I(s : Y) == 0.0 bits identically for circuit depth d < W*(n) = Omega(n / log n)",
+      "total_variation_bound": "TV(p(. | s), p_bar) <= (1/2) M 2^{-n} = 2^{-Omega(n)} for M = poly(n)"
+    },
+    "id": "NEG-DCP-GENERAL-POVM-SECRET-VARIANCE-COLLAPSE",
+    "lesson": "Non-erasure measurements and inaccessible environments cannot evade the density-one subset-sum barrier. The Fourier spectrum of the measurement likelihood on random sources is exponentially suppressed by Parseval's identity, restricting the mutual information to 2^{-Omega(n)} bits per copy. Discarding the environment register merely destroys the coherent phase information needed to reconstruct the secret.",
+    "reason_invalid": "By Parseval's identity on the cyclic group Z_{2^n}, the variance of the measurement likelihood across all secrets s is bounded by 2^{-2n} Tr(E_y^2) <= 2^{-2n}. For any polynomial-outcome POVM with M = poly(n) outcomes, the total variation distance from a secret-independent distribution collapses as M 2^{-n} = 2^{-Omega(n)}, and the mutual information is bounded by 2^{-Omega(n)} bits. Shallow circuits have zero information (I = 0 bits), deep non-erasure POVMs have exponentially vanishing variance, and coherent erasure POVMs dequantize to classical subset-sum solvers.",
+    "source": "research/classical_baselines/dcp_general_povm_secret_variance_collapse.json"
   },
   {
     "applies_to": [
@@ -70126,6 +70187,31 @@
   {
     "applies_to": [
       "CODE-COSET-COLLECTIVE",
+      "CODE-EQUIVALENCE-HARD-FAMILY-SEARCH",
+      "UNIFORM-HARMONIC-NAIMARK-DILATION",
+      "COMPRESSED-PERMUTATION-POVM",
+      "CHILD-STAR-MULTIPLICITY-COLLAPSE"
+    ],
+    "claim": "A uniform harmonic Naimark dilation with compressed permutation outcomes (point-stabilizer or cycle-type) on the growing-width carrier space can bypass the Holevo information collapse and identify the hidden permutation in polynomial time.",
+    "evidence": {
+      "artifact": "research/representation/self_dual_wreath_naimark_compressed_permutation_barrier.json",
+      "class_algebra_commutant_invariance": "I(tau | ct(tau) : Lambda) == 0.0 bits; unrecovered entropy >= Theta(n log n) bits",
+      "computational_basis_diagonal_invariance": "[M_j]_{g, g} == 1/n! identically for all g in S_n and all j in {0, ..., n-1}; I(tau(n) : J) == 0.0 bits on diagonal mixed coset states",
+      "conclusive_probability_closed_identity": "P_concl = sum_{j=0}^{n-1} raw_overlap(j) == p(n) / n! = 2^{-Omega(n log n)}",
+      "copy_complexity_lower_bound": "N_copies >= (n! / p(n))^2 = 2^{Omega(n log n)}",
+      "physical_bias_bound": "Delta_phys <= p(n) / n! = 2^{-Omega(n log n)}",
+      "single_copy_mutual_information_bound": "I(tau(n) : J) <= (2/ln 2) n (p(n)/n!)^2 = 2^{-Omega(n log n)} bits",
+      "speedup_claim_allowed": false,
+      "young_branching_reciprocity": "sum_{alpha in nu^-} d_alpha = d_nu and sum_{nu covers alpha} d_nu = n * d_alpha identically"
+    },
+    "id": "NEG-SELF-DUAL-WREATH-NAIMARK-COMPRESSED-PERMUTATION-BARRIER",
+    "lesson": "Uniform harmonic Naimark dilations with compressed permutation outcomes cannot evade the factorial mixed-state decoherence barrier. In the computational basis, all diagonal elements of covariant point POVMs are identically 1/n!, yielding zero information on mixed coset states. On entangled carrier states, the conclusive measurement probability collapses factorially as P_concl = p(n)/n! = 2^{-Omega(n log n)}, forcing physical bias to vanish as 2^{-Omega(n log n)} and requiring at least (n!/p(n))^2 copies to distinguish the secret point.",
+    "reason_invalid": "By the Peter-Weyl decomposition and Frobenius reciprocity on S_n downarrow S_{n-1}, any covariant point POVM has diagonal matrix elements [M_j]_{g, g} = 1/n! identically across all group elements g, producing exactly flat outcome distributions p(j | tau) = 1/n with zero mutual information. When coupled to the entangled carrier, the total conclusive measurement probability is p(n)/n!, which collapses as 2^{-Omega(n log n)}. Physical normalized POVMs have bias bounded by p(n)/n!, requiring (n!/p(n))^2 = 2^{Omega(n log n)} copies. Central class-algebra POVMs commute with S_n and provide 0 bits of information about the inner permutation within any conjugacy class.",
+    "source": "research/representation/self_dual_wreath_naimark_compressed_permutation_barrier.json"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
       "EXP-CODE-SELF-DUAL-WREATH-NATIVE-FRAME-ACCESS-BOUNDARY",
       "PO-MEASUREMENT"
     ],
@@ -70895,6 +70981,27 @@
     "lesson": "Lesson from exact theorem analysis for EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-RECOUPLING-STATIONARITY.",
     "reason_invalid": "Falsified or refined by exact theorem evaluation.",
     "source": "EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-RECOUPLING-STATIONARITY"
+  },
+  {
+    "applies_to": [
+      "CODE-EQUIVALENCE-HARD-FAMILY-SEARCH",
+      "WREATH-ORIENTATION-PROJECTOR",
+      "RACAH-CUMULANT-PROBE",
+      "SIGN-ORBIT-SYNDROME"
+    ],
+    "claim": "Multi-copy collective orientation-syndrome conditioning or Racah associator cumulants in W_n = S_n wr Z_2 yield asymptotic quantum speedups for code equivalence.",
+    "evidence": {
+      "artifact": "research/representation/self_dual_wreath_plancherel_mass_extinction_barrier.json",
+      "multi_copy_6tuple_orbit_mass": "P_orbit <= 16 [M_max(n)]^3 = 2^{-Omega(sqrt(n))}",
+      "physical_information_ceiling": "I_physical <= O(1/n^2) + 2^{-Omega(sqrt(n))} -> 0",
+      "s6_to_s7_cmi_collapse": "Typical CMI drops from 1.0 to 2.3e-5 (43,000x); weighted CMI drops from 1.1e-4 to 3.2e-7 (335x)",
+      "sign_swap_self_dual_mass": "P_{W_{2m}}(lambda = mu) <= (1 / sqrt(pi m)) exp(-c sqrt(m)) = 2^{-Omega(sqrt(n))}",
+      "wreath_plancherel_factorization": "M_{W_n}(lambda, mu) = binom(n, k) 2^{-n} M_k(lambda) M_{n-k}(mu)"
+    },
+    "id": "NEG-SELF-DUAL-WREATH-PLANCHEREL-SIGN-ORBIT-MASS-EXTINCTION-BARRIER",
+    "lesson": "The 1-bit orientation-syndrome CMI spike at S_6 is an isolated finite-size resonance with no asymptotic survival. Any quantum receiver faces the Mass-Information Trilemma: typical sectors decouple to uniform Haar randomness with CMI O(1/n^2) bits, while atypical informative sectors have physical mass exponentially extinguished as 2^{-Omega(sqrt(n))}, imposing a copy complexity lower bound of N_copies = 2^{Omega(sqrt(n))}.",
+    "reason_invalid": "By the exact factorization of wreath Plancherel measure and the Biane-Kerov-Sniady character theorem, the physical probability of sign-swap self-dual irreps and repeated sign-orbit tuples decays exponentially as 2^{-Omega(sqrt(n))}. Typical partitions have vanishing normalized characters r_lambda(w) = O(1/n), collapsing the conditional mutual information to zero. No polynomial-time quantum advantage is possible through orientation-syndrome postselection.",
+    "source": "research/representation/self_dual_wreath_plancherel_mass_extinction_barrier.json"
   },
   {
     "applies_to": [
@@ -85247,87 +85354,5 @@
     "lesson": "Do not treat irrep-label bias as a hidden-permutation algorithm; require collective measurements or additional row/column information.",
     "reason_invalid": "Weak Fourier labels have only small bias; any speedup claim needs collective row/column measurements.",
     "source": "weak_fourier_signal.py"
-  },
-  {
-    "id": "NEG-COSET-MULTIPLICITY-CARRIER-DECOUPLING-TRILEMMA",
-    "applies_to": [
-      "NONABELIAN-COSET-OBSERVABLES",
-      "MULTIPLICITY-COMMUTANT",
-      "RACAH-RECOUPLING",
-      "KRONECKER-POVM"
-    ],
-    "claim": "Multiplicity-space commutant Hamiltonians or pairwise Kronecker recoupling observables can extract hidden subgroup or code equivalence permutations in polynomial quantum time.",
-    "evidence": {
-      "artifact": "research/representation/coset_multiplicity_carrier_trilemma.json",
-      "commutant_mutual_information": "0.0 bits identically",
-      "commutator_closed_form": "[K_12, K_23]_{(0,0,0),(0,0,1)} = n",
-      "commutant_dimension_law": "dim(Commutant(V^k)) = (1/n!) sum (fix(g) - 1)^{2k} = 2^Omega(n log n)"
-    },
-    "lesson": "Spectral gaps in commutant Hamiltonians are irrelevant for secret identification because commutant outcomes are completely secret-independent. Non-abelian quantum algorithms cannot separate multiplicity and carrier registers without incurring either zero information or factorial associator complexity.",
-    "reason_invalid": "By Schur's lemma, all observables in the commutant End_{S_n}(V^k) have identically zero mutual information (I = 0 bits) with any hidden conjugacy element. Informative measurements must operate on carrier registers, but overlapping pairwise class sums satisfy [K_{12}, K_{23}] = n for all n >= 3, ruling out simultaneous diagonalization. Coherent Racah associator transforms face a factorial multiplicity space dimension (n-1)^{2k}/n! = 2^Omega(n log n), requiring exponential quantum circuit synthesis.",
-    "source": "research/representation/coset_multiplicity_carrier_trilemma.json"
-  },
-  {
-    "id": "NEG-SELF-DUAL-WREATH-PLANCHEREL-SIGN-ORBIT-MASS-EXTINCTION-BARRIER",
-    "applies_to": [
-      "CODE-EQUIVALENCE-HARD-FAMILY-SEARCH",
-      "WREATH-ORIENTATION-PROJECTOR",
-      "RACAH-CUMULANT-PROBE",
-      "SIGN-ORBIT-SYNDROME"
-    ],
-    "claim": "Multi-copy collective orientation-syndrome conditioning or Racah associator cumulants in W_n = S_n wr Z_2 yield asymptotic quantum speedups for code equivalence.",
-    "evidence": {
-      "artifact": "research/representation/self_dual_wreath_plancherel_mass_extinction_barrier.json",
-      "wreath_plancherel_factorization": "M_{W_n}(lambda, mu) = binom(n, k) 2^{-n} M_k(lambda) M_{n-k}(mu)",
-      "sign_swap_self_dual_mass": "P_{W_{2m}}(lambda = mu) <= (1 / sqrt(pi m)) exp(-c sqrt(m)) = 2^{-Omega(sqrt(n))}",
-      "multi_copy_6tuple_orbit_mass": "P_orbit <= 16 [M_max(n)]^3 = 2^{-Omega(sqrt(n))}",
-      "s6_to_s7_cmi_collapse": "Typical CMI drops from 1.0 to 2.3e-5 (43,000x); weighted CMI drops from 1.1e-4 to 3.2e-7 (335x)",
-      "physical_information_ceiling": "I_physical <= O(1/n^2) + 2^{-Omega(sqrt(n))} -> 0"
-    },
-    "lesson": "The 1-bit orientation-syndrome CMI spike at S_6 is an isolated finite-size resonance with no asymptotic survival. Any quantum receiver faces the Mass-Information Trilemma: typical sectors decouple to uniform Haar randomness with CMI O(1/n^2) bits, while atypical informative sectors have physical mass exponentially extinguished as 2^{-Omega(sqrt(n))}, imposing a copy complexity lower bound of N_copies = 2^{Omega(sqrt(n))}.",
-    "reason_invalid": "By the exact factorization of wreath Plancherel measure and the Biane-Kerov-Sniady character theorem, the physical probability of sign-swap self-dual irreps and repeated sign-orbit tuples decays exponentially as 2^{-Omega(sqrt(n))}. Typical partitions have vanishing normalized characters r_lambda(w) = O(1/n), collapsing the conditional mutual information to zero. No polynomial-time quantum advantage is possible through orientation-syndrome postselection.",
-    "source": "research/representation/self_dual_wreath_plancherel_mass_extinction_barrier.json"
-  },
-  {
-    "id": "NEG-CHARACTER-SHIFT-UNIFORM-DECODING-LOWER-BOUND-BARRIER",
-    "applies_to": [
-      "CHARACTER-SHIFT-DECODING-LOWER-BOUND",
-      "LEGENDRE-PRG-INVERSION",
-      "CYCLOTOMIC-DEGREE-OBSTRUCTION",
-      "QUERY-TIME-SEPARATION"
-    ],
-    "claim": "Logarithmic sample fingerprinting Q(p) = O(log p) for shifted multiplicative characters yields a classical polynomial-time decoding algorithm.",
-    "evidence": {
-      "artifact": "research/classical_baselines/character_shift_decoding_lower_bound_barrier.json",
-      "autocorrelation_identity": "sum (x(x+delta) / p) == -1 identically for all delta != 0 (mod p)",
-      "exact_agreement_count": "N_agree(delta) == (p - 3) / 2 < p/2 identically",
-      "query_ceiling": "k*(p) = 2 ceil(log2 p) samples achieves failure <= 1/p",
-      "uniform_time_lower_bound": "T >= p/2 = 2^{Omega(n)} operations in uniform model",
-      "cyclotomic_degree": "deg((x+s)^{(p-1)/2} - y) = (p-1)/2 = 2^{Omega(n)}"
-    },
-    "lesson": "Do not confuse logarithmic query complexity O(log p) with polynomial classical decoding time. Shifted Legendre characters are information-theoretically identifiable in O(log p) samples, but uniform decoding without advice requires Omega(p) operations, matching the computational hardness of inverting the Legendre PRG.",
-    "reason_invalid": "By Weil's character sum theorem, pairwise agreement between distinct shifts is strictly (p-3)/(2p) < 1/2, allowing O(log p) samples to uniquely fingerprint the shift. However, in the uniform model without advice, recovering the shift s requires solving polynomial equations of degree (p-1)/2 = 2^{Omega(n)} or testing Omega(p) candidate shifts. Efficient decoding is only possible with non-uniform advice of size S = p log2 p bits or via van Dam-Hallgren's quantum Fourier transform.",
-    "source": "research/classical_baselines/character_shift_decoding_lower_bound_barrier.json"
-  },
-  {
-    "id": "NEG-DCP-GENERAL-POVM-SECRET-VARIANCE-COLLAPSE",
-    "applies_to": [
-      "DCP-DENSITY-ONE-SUBSET-SUM-PARTIAL-SOLVER",
-      "NON-ERASURE-POVM",
-      "INACCESSIBLE-ENVIRONMENT",
-      "SECRET-VARIANCE-COLLAPSE"
-    ],
-    "claim": "General non-erasure POVM measurements or open-system channels with an inaccessible environment can extract the hidden secret s in polynomial time from density-one subset sum phase states.",
-    "evidence": {
-      "artifact": "research/classical_baselines/dcp_general_povm_secret_variance_collapse.json",
-      "parseval_variance_bound": "E_a[Var_s(p(y | s))] <= 2^{-2n} Tr(E_y^2) <= 2^{-2n}",
-      "shallow_depth_zero_information": "I(s : Y) == 0.0 bits identically for circuit depth d < W*(n) = Omega(n / log n)",
-      "total_variation_bound": "TV(p(. | s), p_bar) <= (1/2) M 2^{-n} = 2^{-Omega(n)} for M = poly(n)",
-      "mutual_information_bound": "I(s : Y) <= (M^2 / ln 2) 2^{-2n} = 2^{-Omega(n)} bits",
-      "fano_success_bound": "P_succ <= (I + 1)/n = O(1/n) -> 0; exact unique recovery collapses as 2^{-Omega(n)}"
-    },
-    "lesson": "Non-erasure measurements and inaccessible environments cannot evade the density-one subset-sum barrier. The Fourier spectrum of the measurement likelihood on random sources is exponentially suppressed by Parseval's identity, restricting the mutual information to 2^{-Omega(n)} bits per copy. Discarding the environment register merely destroys the coherent phase information needed to reconstruct the secret.",
-    "reason_invalid": "By Parseval's identity on the cyclic group Z_{2^n}, the variance of the measurement likelihood across all secrets s is bounded by 2^{-2n} Tr(E_y^2) <= 2^{-2n}. For any polynomial-outcome POVM with M = poly(n) outcomes, the total variation distance from a secret-independent distribution collapses as M 2^{-n} = 2^{-Omega(n)}, and the mutual information is bounded by 2^{-Omega(n)} bits. Shallow circuits have zero information (I = 0 bits), deep non-erasure POVMs have exponentially vanishing variance, and coherent erasure POVMs dequantize to classical subset-sum solvers.",
-    "source": "research/classical_baselines/dcp_general_povm_secret_variance_collapse.json"
   }
 ]
