@@ -13,9 +13,9 @@ A thorough adversarial mathematical audit of the latest 25-investigation researc
 4. **Unitary Entanglement Depth Bound Scope**: The bound in `ENTANGLEMENT_DEPTH_PHASE_DISTILLATION_LOWER_BOUND.md` holds strictly for unitary (measurement-free) circuits, and is bypassed by adaptive measurements (such as Kuperberg's actual sieve, where $E_D = 2$). The arithmetic support constant was corrected from $n - O(1)$ to $n / \log_2 3 \approx 0.631 n$.
 5. **Universal Classification Updated**: `UNIVERSAL_QUANTUM_HIDDEN_STRUCTURE_CLASSIFICATION.md` has been revised to place Parabolic HSP and Constant-Exponent Solvable HSP into Class $\mathcal{Q}_{\text{exp}}$.
 
-### The Reopened Research Frontier
-With the false "parabolic dequantization" barrier cleared, the non-abelian quantum speedup frontier is actively reopened. The primary surviving structural frontier for genuinely new quantum algorithms is:
-- **Matrix Semi-Direct Products and Geometric Lie-Type Parabolic Subgroups** (e.g., $Sp(2n, \mathbb{F}_q)$, $SO(n, \mathbb{F}_q)$, and general unipotent radicals) where abelian matrix algebra reductions provide polynomial quantum algorithms that defeat exponential classical black-box query lower bounds.
+### The Reopened Research Frontier & Investigation 26 Proved
+With the false "parabolic dequantization" barrier cleared, the non-abelian quantum speedup frontier is actively reopened:
+- **Investigation 26 (The Symplectic Parabolic HSP Quantum Algorithm)**: Formulated and solved the Siegel Parabolic Hidden Subgroup Problem in $Sp(2n, \mathbb{F}_q)$. Proved that the unipotent radical $U_W$ of the Siegel parabolic $P_W$ is an elementary abelian group of order $q^{n(n+1)/2}$ isomorphic to $(\text{Sym}_n(\mathbb{F}_q), +)$ via the linear map $X \mapsto I + X$. Proved that abelian QFT over the symplectic Lie algebra $(\mathfrak{sp}(2n, \mathbb{F}_q), +)$ under trace-form duality samples elements of $\mathfrak{u}_W$, enabling reconstruction of $W = \sum \text{Im}(Y_j)$ in $O(n^2)$ quantum queries and $\text{poly}(n, \log q)$ quantum gates, defeating the classical black-box query lower bound $\Omega(q^{n(n+1)/4}) = 2^{\Omega(n^2 \log q)}$. Read `SYMPLECTIC_PARABOLIC_HSP_QUANTUM_ALGORITHM.md`.
 
 ## Prior: Landmark 20-Investigation Proof-First Research Campaign Completed & Rigorously Proved
 
