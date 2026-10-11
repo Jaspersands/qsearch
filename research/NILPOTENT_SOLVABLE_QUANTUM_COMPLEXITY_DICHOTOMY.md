@@ -1,128 +1,68 @@
-# The Nilpotent-Solvable Quantum Complexity Dichotomy: Central Induction vs. Automorphic Sieve Barrier
+# Nilpotent and Solvable Groups in the Hidden Subgroup Problem: Structural Boundaries, 2-Group Obstructions, and Open Complexities
 
 **Investigation**: Investigation 22 (The Structural Frontier of Non-Abelian HSP)  
 **Date**: 2026-10-11  
-**Status**: AUDITED & REVISED (See `research/ADVERSARIAL_MATHEMATICAL_AUDIT_REPORT.md`)  
+**Status**: AUDITED & DISPROVED AS UNIVERSAL DICHOTOMY (Corrected with explicit counterexamples and bounds)  
 **Core Invariants**: `speedup_claim_allowed = False`, `accepted_speedup_candidate = False`  
 
-> [!WARNING]
-> **Adversarial Audit Scope Notice (2026-10-11)**:
-> The dichotomy claimed in Theorem 22.1 ("if and only if nilpotent") is **OVERSTATED**. While the automorphic relative phase sieve obstruction holds strictly for solvable groups with **growing exponent** (such as cyclic kernels $\mathbb{Z}_{2^n}$ where phases are continuous angles in $\mathbb{R}/\mathbb{Z}$, e.g. $D_N$ and $AGL(1, p)$), it does **NOT** apply to solvable groups with **constant exponent** and constant derived length.
-> **Friedl, Ivanyos, Magniez, Santha, and Sen (STOC 2003 / SICOMP 2014)** established an explicit **polynomial-time quantum algorithm** for non-nilpotent solvable groups of constant exponent (e.g. $\mathbb{F}_p^n \rtimes H$ with $p = O(1)$), even when $Z(G) = \{1\}$.
-> The true dichotomy is: **Nilpotent Groups and Constant-Exponent Solvable Groups $\in \text{BQP}$**, while **Growing-Exponent Solvable Non-Nilpotent Groups $\in \mathcal{S}_{\text{subexp}}$** (Kuperberg sieve lower-bounded).
+---
+
+## 1. Executive Summary & Audit Disproof Notice
+
+> [!CAUTION]
+> **Audit Disproof Notice (2026-10-11)**:
+> The original claim that *"polynomial-time quantum speedups exist if and only if $G$ is nilpotent"* is **DISPROVED AND FALSE**.
+> 
+> 1. **Nilpotence is Insufficient (The Nilpotent 2-Group Counterexample)**:
+>    Every dihedral group of power-of-two order $D_{2^k} = \mathbb{Z}_{2^k} \rtimes \mathbb{Z}_2$ is a finite $2$-group, and therefore **strictly nilpotent** (with lower central series of length $k$).
+>    However, for a hidden reflection $H = \{0, (s, 1)\}$, the intersection with the center is trivial:
+>    $$H \cap Z(D_{2^k}) = \{0\}.$$
+>    Inductive central quotienting yields zero information about the secret shift $s$ at every stage. Finding $H$ in $D_{2^k}$ is precisely the famous Dihedral Hidden Subgroup Problem, for which no polynomial-time quantum algorithm is known (best known is Kuperberg's subexponential $2^{O(\sqrt{k})}$ sieve).
+>    Thus, **nilpotency alone does not guarantee quantum polynomial tractability**. Known polynomial-time algorithms for nilpotent groups (e.g. Hallgren-Russell-Ta-Shma 2000, Ivanyos-Sanselme-Santha 2007) strictly require bounded nilpotency class ($c = O(1)$) and bounded prime factors.
+>
+> 2. **Nilpotence is Not Necessary (The Constant-Exponent Solvable Counterexample)**:
+>    **Friedl, Ivanyos, Magniez, Santha, and Sen (STOC 2003 / SICOMP 2014)** established an explicit **polynomial-time quantum algorithm** for non-nilpotent solvable groups of constant exponent and constant derived length (e.g. $\mathbb{F}_p^n \rtimes H$ with $p = O(1)$), even with trivial center $Z(G) = \{1\}$.
+>
+> 3. **Upper Bound vs. Lower Bound Confusion**:
+>    Kuperberg's sieve provides a $2^{O(\sqrt{\log N})}$ **algorithm upper bound**, but does **not** constitute a proven universal lower bound for all quantum algorithms.
+>
+> **Status**: The universal "iff" dichotomy is **RETRACTED**. Below is the corrected, rigorous structural boundary.
 
 ---
 
-## 1. Executive Summary & Foundational Question
+## 2. The Structural Landscape of Non-Abelian HSP
 
-Why do certain non-abelian groups (such as the Heisenberg groups $H_{2n+1}(\mathbb{F}_p)$ and upper unitriangular groups $U_n(\mathbb{F}_q)$) admit polynomial-time quantum algorithms for the Hidden Subgroup Problem (HSP), while minimally non-abelian solvable groups (such as the dihedral group $D_N = \mathbb{Z}_N \rtimes \mathbb{Z}_2$ and affine group $AGL(1, p) = \mathbb{Z}_p \rtimes \mathbb{Z}_p^\times$) remain intractably stuck at superpolynomial Kuperberg sieve bounds ($2^{\Omega(\sqrt{\log N})}$)?
+The true complexity of the Hidden Subgroup Problem does not track the coarse abelian / nilpotent / solvable division, but depends critically on **three algebraic parameters**:
+1. **Nilpotency Class & Center Intersection**: Does the hidden subgroup intersect the center non-trivially ($H \cap Z(G) \ne \{1\}$), and is the nilpotency class bounded ($c = O(1)$)?
+2. **Group Exponent**: Is the exponent of the group constant ($\text{exp}(G) = O(1)$) or growing ($N = 2^n$)?
+3. **Subgroup Promise**: Is the hidden subgroup promised to be normal, an involution, a maximal parabolic, or a general subgroup?
 
-We prove that this disparity is not an accidental failure of algorithmic design, but a strict, universal mathematical dichotomy dictated by group cohomology and the structure of the derived series:
-- In **nilpotent groups**, the lower central series produces central abelian quotients $G_i / G_{i+1} \le Z(G / G_{i+1})$, enabling **inductive central quotienting** via Shor's abelian QFT in polynomial time.
-- In **solvable non-nilpotent groups**, the center is trivial ($Z(G) = \{1\}$). Group multiplication is driven by non-trivial automorphisms $\phi_b \in \text{Aut}(A)$, forcing the hidden subgroup to be encoded as **relative phase shifts** across automorphism orbits. This phase encoding is strictly barred by the Kuperberg sieve collision entropy and commutant rank dilemma.
+### Exact Comparative Analysis of Group Classes
 
----
-
-## 2. Rigorous Mathematical Formulations
-
-### Definition 1: The Nilpotent Lower Central Series
-A finite group $G$ is nilpotent of class $c$ if its lower central series:
-$$G = G_1 \triangleright G_2 \triangleright \dots \triangleright G_{c} \triangleright G_{c+1} = \{1\},$$
-defined recursively by $G_{i+1} = [G, G_i]$, terminates at the trivial subgroup with $G_c \ne \{1\}$ and $G_{c+1} = \{1\}$.
-By definition, each quotient $G_i / G_{i+1}$ is contained in the center of $G / G_{i+1}$:
-$$G_i / G_{i+1} \le Z(G / G_{i+1}).$$
-
-### Definition 2: The Metabelian Automorphic Extension
-A finite group $G$ is metabelian (solvable of derived length 2) if its derived subgroup $G' = [G, G] = A$ is abelian, so that $G / A \cong B$ is abelian and $G \cong A \rtimes_\phi B$ for a homomorphism $\phi: B \to \text{Aut}(A)$.
-When the action is faithful ($\ker(\phi) = \{1\}$) and has no fixed points on $A \setminus \{0\}$, the center is trivial:
-$$Z(G) = \{ g \in G : g x = x g \text{ for all } x \in G \} = \{1\}.$$
+| Group Family | Algebraic Type | Center & Derived Structure | Exponent | Quantum HSP Complexity | Primary References |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Abelian Groups** | Abelian | $Z(G) = G$ | Arbitrary | **$\text{poly}(\log \|G\|)$** (BQP) | Shor (1994) |
+| **Heisenberg Groups** $H_{2n+1}(\mathbb{F}_p)$ | Nilpotent (class 2) | $Z(G) \cong \mathbb{F}_p$ | $p$ | **$\text{poly}(n, \log p)$** (BQP) | Hallgren, Russell, Ta-Shma (2000) |
+| **Nilpotent Groups (Bounded Class $c$)** | Nilpotent | Central tower, $c = O(1)$ | Bounded primes | **$\text{poly}(\log \|G\|)$** (BQP) | Ivanyos, Sanselme, Santha (2007) |
+| **Dihedral 2-Groups** $D_{2^k}$ | **Nilpotent** (class $k-1$) | $Z(G) \cong \mathbb{Z}_2$, $H \cap Z = \{0\}$ | $2^k$ (Growing) | **$2^{O(\sqrt{k})}$** (Open in BQP) | Kuperberg (2005), Regev (2008) |
+| **Affine Groups** $\mathbb{F}_p^n \rtimes H$ | **Non-Nilpotent** (Solvable) | $Z(G) = \{1\}$ | $p = O(1)$ (Constant) | **$\text{poly}(n)$** (BQP) | Friedl, Ivanyos, Magniez, Santha, Sen (2003) |
+| **Dihedral Groups** $D_N$ ($N$ odd) | **Non-Nilpotent** (Solvable) | $Z(G) = \{1\}$ | $N$ (Growing) | **$2^{O(\sqrt{\log N})}$** (Open in BQP) | Kuperberg (2005) |
+| **Symmetric Groups** $S_n$ | Non-Solvable | $Z(G) = \{1\}$ | $n!$ | **Open** ($2^{O(n \log n)}$) | Hallgren et al. (2006), Moore et al. (2007) |
 
 ---
 
-## 3. Asymptotic Theorems and Proofs
+## 3. Rigorous Analysis of the 2-Group Obstruction
 
-### Theorem 1: The Nilpotent Inductive Central Quotienting Law
-**Theorem Statement**:  
-Let $G$ be a finite nilpotent group of class $c$ and order $|G| = 2^n$, and let $H \le G$ be a hidden subgroup accessed via an evaluation oracle $f: G \to S$.  
-Then $H$ can be determined by an inductive quantum algorithm using at most $c$ stages of abelian quantum Fourier sampling, with total query complexity:
-$$Q \le O(c \cdot \log |G|),$$
-and total gate complexity $T \le O(c \cdot \log^3 |G|)$.  
-For any class $c = O(\text{poly}(\log \log |G|))$, the Hidden Subgroup Problem over $G$ is in **BQP**.
+### Theorem 1 (Failure of Central Induction on Dihedral 2-Groups):
+Let $G = D_{2^k} = \mathbb{Z}_{2^k} \rtimes \mathbb{Z}_2$ be the dihedral group of order $2^{k+1}$.
+1. $G$ is nilpotent of class $k$. The lower central series is $G_1 = G$, $G_2 = 2 \mathbb{Z}_{2^k}$, $G_3 = 4 \mathbb{Z}_{2^k}$, ..., $G_k = 2^{k-1} \mathbb{Z}_{2^k} = Z(G)$, $G_{k+1} = \{0\}$.
+2. Let $H = \{0, (s, 1)\}$ be a hidden reflection subgroup of order 2.
+3. Because $(s, 1) \notin \mathbb{Z}_{2^k}$, $(s, 1)$ cannot belong to any term $G_j$ of the lower central series for $j \ge 2$.
+4. In particular:
+   $$H \cap Z(G) = \{0\}.$$
+5. Any quantum algorithm that restricts queries to the center $Z(G)$ observes only the trivial intersection $H \cap Z(G) = \{0\}$.
+6. The quotient group $G / Z(G)$ is isomorphic to $D_{2^{k-1}}$, and the projected subgroup is $\overline{H} \cong \mathbb{Z}_2$.
+7. Inductive quotienting down the entire central series yields zero information about the secret shift $s \pmod{2^k}$.
+8. Reconstructing $s$ requires distinguishing coset states across the reflection branches, reducing strictly to the Kuperberg dihedral sieve.
 
-**Proof**:  
-1. *Base Case ($i = c$)*: Consider the terminal non-trivial term $G_c$. Since $G_{c+1} = [G, G_c] = \{1\}$, $G_c$ is contained in the center $Z(G)$.
-2. Therefore, $G_c$ is an abelian subgroup that commutes with all elements of $G$.
-3. Restricting the oracle $f$ to cosets of $G_c$ defines an abelian hidden subgroup problem over the abelian group $G_c$.
-4. By Shor's algorithm, using $O(\log |G_c|)$ queries, the quantum computer determines the intersection:
-   $$H_c = H \cap G_c.$$
-5. *Inductive Step*: Having determined $H_c$, the algorithm defines the quotient group $\overline{G} = G / G_c$ and the projected subgroup $\overline{H} = H / H_c$.
-6. The quotient group $\overline{G}$ has nilpotency class $c - 1$.
-7. The algorithm prepares quantum states on $\overline{G}$ by coset averaging over $H_c$, which is efficient since $H_c$ is known explicitly.
-8. By induction on $c$, the full subgroup $H$ is reconstructed after exactly $c$ rounds of abelian Fourier sampling.
-9. Total query complexity is $\sum_{i=1}^c O(\log |G_i/G_{i+1}|) = O(c \log |G|)$, and gate complexity is $O(c \log^3 |G|)$. $\blacksquare$
-
----
-
-### Theorem 2: The Automorphic Relative Phase Obstruction in Solvable Groups
-**Theorem Statement**:  
-Let $G = A \rtimes_\phi B$ be a finite solvable group of derived length 2 with trivial center $Z(G) = \{1\}$, where $|A| = N = 2^n$ and $|B| = k = O(1)$ (e.g. $D_N = \mathbb{Z}_N \rtimes \mathbb{Z}_2$).  
-Let $H = \{0, (s, b)\} \le G$ be a hidden subgroup of order 2 generated by an involution with $b \ne 0$.
-1. **Central Quotienting Collapse**: Because $Z(G) = \{1\}$, $H \cap Z(G) = \{0\}$ identically. Inductive central quotienting yields zero information in every round.
-2. **Relative Phase Encoding**: The coset state $|g H\rangle$ on $G$ decomposes as:
-   $$|g H\rangle = \frac{1}{\sqrt{2}} \left( |x, 0\rangle + |x + \phi_0(s), b\rangle \right) = \frac{1}{\sqrt{2}} |x\rangle \left( |0\rangle + e^{i \theta_s(x)} |b\rangle \right),$$
-   encoding $s$ strictly as a relative phase between the $0$ and $b$ branches of the quotient register $B$.
-3. **The Sieve Pool Lower Bound**: Any quantum algorithm reconstructing $s$ via collective phase measurements on $P$ independent copies requires a pool size of:
-   $$P \ge 2^{\Omega(\sqrt{\log N})},$$
-   governed by the collision entropy of random linear forms over $\mathbb{Z}_N$.
-4. **Single-Copy Plancherel Extinction**: For any single-copy measurement in the irreducible representations of $G$, the mutual information between the irrep outcome $\pi$ and the secret shift $s$ is strictly bounded by:
-   $$I(s : \pi) \le \frac{1}{N \ln 2} = 2^{-\Omega(n)} \text{ bits}.$$
-
-**Proof**:  
-1. *Central Collapse*: Suppose $g = (x, y) \in Z(G)$. Then for all $(a, 0) \in A$:
-   $$(x, y)(a, 0) = (x + \phi_y(a), y) = (a, 0)(x, y) = (a + x, y) \implies \phi_y(a) = a.$$
-   Since $\ker(\phi) = \{1\}$ and $\phi_y$ has no non-trivial fixed points for $y \ne 0$, we must have $y = 0$.
-   Next, for all $(0, b) \in B$:
-   $$(x, 0)(0, b) = (x, b) = (0, b)(x, 0) = (\phi_b(x), b) \implies \phi_b(x) = x.$$
-   Again, $\phi_b$ has no non-trivial fixed points on $A$, forcing $x = 0$.
-   Hence $Z(G) = \{(0, 0)\} = \{1\}$, so $H \cap Z(G) = \{0\}$ and central quotienting is completely precluded.
-2. *Relative Phase Formulation*: For $H = \{(0, 0), (s, b)\}$, the left coset $(x, 0) H$ contains $(x, 0)$ and $(x + \phi_0(s), b) = (x + s, b)$.
-   Applying the abelian QFT over $A$ to the first register yields the entangled state:
-   $$|\psi_k\rangle = \frac{1}{\sqrt{2}} \left( |0\rangle + \omega_N^{k s} |b\rangle \right) \otimes |k\rangle.$$
-   Conditioned on observing wavenumber $k$, the state is the phase state $|\phi_{k, s}\rangle = \frac{1}{\sqrt{2}} (|0\rangle + e^{i 2\pi k s / N} |1\rangle)$.
-3. *Sieve Lower Bound*: Combining $P$ such states produces a joint state:
-   $$|\Psi_{\vec{k}, s}\rangle = \bigotimes_{j=1}^P \frac{1}{\sqrt{2}} \left( |0\rangle + e^{i 2\pi k_j s / N} |1\rangle \right).$$
-   The density operator twirled over unknown $s$ has a commutant algebra determined by the Hamming weight subspaces.
-   To eliminate the phase uncertainty, the algorithm must find a subset $J \subset \{1, \dots, P\}$ such that $\sum_{j \in J} \pm k_j \equiv 0 \pmod N$.
-   By the generalized birthday problem over $\mathbb{Z}_N$, finding a zero-sum subset among random residues $\{k_1, \dots, k_P\}$ requires $P \ge 2^{\Omega(\sqrt{\log N})}$ samples (Kuperberg 2005, Regev 2008).
-4. *Single-Copy Plancherel Extinction*: The 2-dimensional irreps of $D_N$ are $\rho_m$ for $m \in \{1, \dots, N/2 - 1\}$.
-   The character evaluated on the involution $(s, 1)$ is:
-   $$\chi_m(s, 1) = \text{Tr}\begin{pmatrix} 0 & \omega_N^{m s} \\ \omega_N^{-m s} & 0 \end{pmatrix} = 0.$$
-   The character is IDENTICALLY ZERO for all $m$ and all $s$!
-   Hence the measurement distribution over irreps is completely independent of $s$:
-   $$P(m \mid s) = \frac{d_m^2}{|G|} = \frac{4}{2N} = \frac{2}{N}.$$
-   The mutual information is $I(s : m) \equiv 0.0000000000$ bits identically!
-   Within the irrep, the state has dimension 2, and the trace distance to the maximally mixed state is $\le 1/\sqrt{N} = 2^{-n/2}$.
-   The mutual information collapses as $I \le \frac{1}{N \ln 2} = 2^{-\Omega(n)}$ bits. $\blacksquare$
-
----
-
-## 4. The Unified Non-Abelian Classification Table
-
-| Group Family | Algebraic Structure | Center $Z(G)$ | Commutator Action | Quantum Algorithm | Quantum Complexity | Classical Baseline | Quantum Speedup Status |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :---: |
-| **Abelian Groups** ($\mathbb{Z}_N, \mathbb{F}_2^n$) | Commutative | $G$ | Trivial | Shor's QFT | $O(\text{poly}(n))$ | $2^{\Omega(n)}$ | **Exponential (Shor)** |
-| **Heisenberg Groups** ($H_{2n+1}(\mathbb{F}_p)$) | Nilpotent class 2 | $\mathbb{F}_p$ | Central commutator | Central Induction | $O(\text{poly}(n))$ | $2^{\Omega(n)}$ | **Polynomial over Classical** (Hallgren et al.) |
-| **Upper Unitriangular** ($U_n(\mathbb{F}_q)$) | Nilpotent class $n-1$ | Non-trivial | Central tower | Mal'cev Sieve | $O(\text{poly}(n))$ for $c=O(1)$ | $2^{\Omega(n)}$ | **Conditional BQP** |
-| **Dihedral Groups** ($D_N$) | Solvable length 2 | $\{1\}$ | Automorphism $\phi(x) = -x$ | Kuperberg Sieve | $2^{\Omega(\sqrt{\log N})}$ | $2^{O(\sqrt{\log N})}$ | **No Exponential Speedup** |
-| **Affine Groups** ($AGL(1, p)$) | Solvable length 2 | $\{1\}$ | Automorphism $\phi(x) = a x$ | Shifted Sieve | $2^{\Omega(\sqrt{\log p})}$ | $2^{O(\sqrt{\log p})}$ | **No Exponential Speedup** |
-| **Symmetric Group** ($S_n$) | Non-solvable ($A_n$) | $\{1\}$ | Conjugation permutation | Multi-copy Commutant | $(n!)^m$ gates | $2^{O(\log^c n)}$ (Babai) | **Factorially Extinguished** |
-| **Linear Lie Groups** ($GL(n, q)$) | Lie type | Scaled $I$ | Deligne-Lusztig Weyl $S_n$ | Transvection Interferometry | Classically dequantized | $O(q n^3)$ classical | **Dequantized Classically** |
-
----
-
-## 5. Conclusion & The Final Boundary of Non-Abelian Quantum Algorithms
-
-This investigation settles the foundational boundary between quantum tractability and intractability across finite non-abelian groups:
-1. **The Nilpotent Frontier is the True Boundary of Polynomial Quantum Advantage**: Polynomial-time quantum speedups for non-abelian HSP exist *if and only if* the group is nilpotent (or has bounded nilpotency class), where the derived series yields central quotients that can be dismantled inductively by Shor's abelian QFT.
-2. **Automorphic Actions Generate Relative Phase Obstructions**: As soon as the commutator action becomes automorphic ($Z(G) = \{1\}$), the group loses central quotienting. The hidden subgroup is necessarily cast into relative phases across automorphism orbits, falling strictly under the Kuperberg sieve collision lower bound $2^{\Omega(\sqrt{\log N})}$.
-3. **No Intermediate Regime Exists**: The algebraic gap between central action and automorphic action is topological and discrete; no non-abelian group can bypass this boundary without either admitting central induction or collapsing into an exponential sieve.
+*Conclusion*: Nilpotency is **neither necessary nor sufficient** for polynomial-time quantum algorithms in the Hidden Subgroup Problem.

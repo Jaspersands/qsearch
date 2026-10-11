@@ -1,17 +1,20 @@
 # Mechanical Follow-Up Implementation Plan (pass 2)
 
-## Latest Handoff (2026-10-11, Landmark 20-Investigation Campaign)
+## Latest Handoff (2026-10-11, Adversarial Mathematical Audit Across Investigations 21–26)
 
-Read `research/PROOF_FIRST_RESEARCH_CAMPAIGN_20.md` and the TOP of `research/AGENT_HANDOFF.md`.
-The 20 substantive, nonduplicative mathematical research investigations across DCP/Lattices, Non-Abelian HSP, Code Equivalence, Graph Isomorphism, and Quantum Circuit Resource Theories are rigorously proved and documented.
+Read `research/ADVERSARIAL_MATHEMATICAL_AUDIT_REPORT.md` and the TOP of `research/AGENT_HANDOFF.md`.
+The adversarial mathematical audit is fully complete:
+- Retraction of false classical lower bound for Siegel parabolics ($O(n q^n)$ transvection counteralgorithm proved).
+- Identification of missing multiplicative-to-additive quantum reduction and char-2 trace pairing failure.
+- Correction of Nilpotent-Solvable landscape (Friedl et al. constant-exponent BQP vs. nilpotent 2-groups).
+- Unitary restriction of entanglement depth lower bound ($0.631 n$) and EHK unentangled baseline.
+- Stabilizer nullity bounds clarified; low-$T$ dequantization retracted.
+- Universal 4-class partition formally withdrawn and replaced with multi-dimensional taxonomy in `research/UNIVERSAL_QUANTUM_HIDDEN_STRUCTURE_CLASSIFICATION.md`.
 
 Mechanical Queue:
 1. Verify repo health: `python3 qsearch.py validate` and `python3 tools/check_site.py`.
-2. Run recent independent cross-checks:
-   - `node research/certificates/dcp_subset_sum_euclidean_volume_inflation_barrier_crosscheck.js` (58/58 PASS)
-   - `node research/certificates/rowspace_rref_gauge_elimination_fourier_extinction_barrier_crosscheck.js` (32/32 PASS)
-   - `node research/certificates/godsil_mckay_cospectral_tensor_invariance_barrier_crosscheck.js` (888/888 PASS)
-3. Preserve all proof gates and negative results (`speedup_claim_allowed = False`, `accepted_speedup_candidate = False`).
+2. Strict invariants: `speedup_claim_allowed = False`, `accepted_speedup_candidate = False`.
+3. Preserve all proof gates, retractions, counterexamples, and negative results.
 4. Avoid website redesign, unnecessary refactoring, or superficial experiments.
 
 ## Prior Handoff (2026-09-23, Direct Edge Readout)
