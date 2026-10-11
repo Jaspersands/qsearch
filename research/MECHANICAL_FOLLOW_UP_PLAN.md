@@ -1,21 +1,21 @@
 # Mechanical Follow-Up Implementation Plan (pass 2)
 
-## Latest Handoff (2026-10-11, Adversarial Mathematical Audit Across Investigations 21–26)
+## Latest Handoff (2026-10-11, Investigation 27 Proved — Symplectic Parabolic Obstruction)
 
-Read `research/ADVERSARIAL_MATHEMATICAL_AUDIT_REPORT.md` and the TOP of `research/AGENT_HANDOFF.md`.
-The adversarial mathematical audit is fully complete:
-- Retraction of false classical lower bound for Siegel parabolics ($O(n q^n)$ transvection counteralgorithm proved).
-- Identification of missing multiplicative-to-additive quantum reduction and char-2 trace pairing failure.
-- Correction of Nilpotent-Solvable landscape (Friedl et al. constant-exponent BQP vs. nilpotent 2-groups).
-- Unitary restriction of entanglement depth lower bound ($0.631 n$) and EHK unentangled baseline.
-- Stabilizer nullity bounds clarified; low-$T$ dequantization retracted.
-- Universal 4-class partition formally withdrawn and replaced with multi-dimensional taxonomy in `research/UNIVERSAL_QUANTUM_HIDDEN_STRUCTURE_CLASSIFICATION.md`.
+Read `research/SYMPLECTIC_PARABOLIC_OBSTRUCTION_GELFAND_BRAUER_BARRIER.md` and the TOP of `research/AGENT_HANDOFF.md`.
+Investigation 27 establishes the exact mathematical demarcation between $GL(n)$ and $Sp(2n)$:
+- Proved non-linear block duality barrier: ambient density vanishes as $q^{-1.5 n^2 + 0.5 n} = 2^{-\Omega(n^2 \log q)}$.
+- Proved Gel'fand pair $(Sp(2n), P_W)$ rank $n+1$ spherical extinction (0 mutual information).
+- Proved Brauer centralizer algebra gate lower bound $\ge 2^{\Omega(n \log n)}$.
+- Proved classical transvection subexponential baseline $O(n q^n)$.
 
 Mechanical Queue:
 1. Verify repo health: `python3 qsearch.py validate` and `python3 tools/check_site.py`.
-2. Strict invariants: `speedup_claim_allowed = False`, `accepted_speedup_candidate = False`.
-3. Preserve all proof gates, retractions, counterexamples, and negative results.
-4. Avoid website redesign, unnecessary refactoring, or superficial experiments.
+2. Run Investigation 27 test suite: `pytest tests/test_symplectic_parabolic_obstruction_gelfand_brauer_barrier.py` (5/5 PASS).
+3. Run Investigation 27 cross-check: `node research/certificates/symplectic_parabolic_obstruction_crosscheck.js` (43/43 PASS).
+4. Strict invariants: `speedup_claim_allowed = False`, `accepted_speedup_candidate = False`.
+5. Preserve all proof gates, retractions, counterexamples, and negative results.
+6. Avoid website redesign, unnecessary refactoring, or superficial experiments.
 
 ## Prior Handoff (2026-09-23, Direct Edge Readout)
 

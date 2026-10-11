@@ -83,7 +83,7 @@ The table below summarizes the exact mathematical status of key hidden structure
 
 ---
 
-## 4. Master Cross-Reference Table of Investigations 1–25
+## 4. Master Cross-Reference Table of Investigations 1–27
 
 | # | Investigation Focus | Domain | Primary Obstruction / Mechanism | Epistemic Status |
 | :-: | :--- | :--- | :--- | :---: |
@@ -112,6 +112,8 @@ The table below summarizes the exact mathematical status of key hidden structure
 | **23** | Unitary Entanglement Depth Lower Bound | Entanglement Theory | Unitary circuits require $E_D \ge 0.631 n$; bypassed by adaptive sieves & EHK | Audited: Scope & constants corrected |
 | **24** | Stabilizer Nullity & Fault-Tolerant Overhead | Resource Theories | Magic state burden $\Omega(P \log^2 P) = 2^{\Omega(\sqrt{n})}$ for sieves | Audited: Dequantization claim retracted |
 | **25** | Hidden Structure Research Taxonomy | Meta-Complexity | Replaced universal 4-class partition with audited multi-dimensional ledger | Audited: Master taxonomy established |
+| **26** | Symplectic Parabolic Counteralgorithm & Gaps | Lie Matrix HSP | Transvections test $v \in W$ in $O(n q^n)$; quantum reduction unestablished | Audited: Lower bound disproved |
+| **27** | Symplectic Parabolic Obstruction & Brauer Barrier | Lie Representation | Ambient density collapses $q^{-1.5 n^2}$; Gel'fand rank $n+1$ spherical extinction; Brauer $(2M-1)!!$ gates | Proved Mathematical Obstruction |
 
 ---
 
