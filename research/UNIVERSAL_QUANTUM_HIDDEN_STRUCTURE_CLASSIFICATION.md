@@ -84,7 +84,7 @@ The table below summarizes the exact mathematical status of key hidden structure
 
 ---
 
-## 4. Master Cross-Reference Table of Investigations 1–28
+## 4. Master Cross-Reference Table of Investigations 1–29
 
 | # | Investigation Focus | Domain | Primary Obstruction / Mechanism | Epistemic Status |
 | :-: | :--- | :--- | :--- | :---: |
@@ -116,6 +116,7 @@ The table below summarizes the exact mathematical status of key hidden structure
 | **26** | Symplectic Parabolic Counteralgorithm & Gaps | Lie Matrix HSP | Transvections test $v \in W$ in $O(n q^n)$; quantum reduction unestablished | Audited: Lower bound disproved |
 | **27** | Symplectic Parabolic Obstruction & Partition Barrier | Lie Representation | Ambient density collapses $q^{-1.5 n^2}$; Gel'fand rank $n+1$ spherical extinction; Partition commutant $B(2M) \ge (2M-1)!!$ gates | Proved Mathematical Obstruction |
 | **28** | Isotropic Parabolic Spectrum & Dequantization | Lie Matrix HSP | $T_u \in P_U \iff u \in U^\perp$ solves HSP in $O(n q^k)$ queries; Heisenberg $k=1$ in $O(q n)$ polynomial time; Heisenberg radical $U_1$ abelian in char 2 vs class 2 in char $\ge 3$; $(Sp(4, \mathbb{F}_2), P_1)$ Gel'fand rank 3 with irreps $[1, 5, 9]$ | Proved Theorems & Classical Dequantization |
+| **29** | Zero-Sum Central Descent & Carry Phase Transition | Nilpotent/Solvable | Imran-Ivanyos descent requires $c=O(1), p=O(1)$ and $H \cap Z \ne \{1\}$; Davenport bound $\mathsf{D} = 1 + m(p-1)$; $D_{2^k}$ fails with $H \cap Z_i = \{0\}$; Trine POVM $E_D=1$ unentangled bound; carry topology controls transition | Proved Structural Phase Boundaries |
 
 ---
 

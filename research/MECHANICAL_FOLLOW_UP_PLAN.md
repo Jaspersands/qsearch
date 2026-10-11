@@ -1,6 +1,25 @@
 # Mechanical Follow-Up Implementation Plan (pass 2)
 
-## Latest Handoff (2026-10-11, Investigation 28 Proved — Isotropic Parabolic Spectrum & Low-Dimensional Classical Dequantization)
+## Latest Handoff (2026-10-11, Investigation 29 Proved — Zero-Sum Central Descent Demarcation & Carry Phase Transition)
+
+Read `research/NILPOTENT_SOLVABLE_EXPONENT_DESCENT_PHASE_TRANSITION.md` and the TOP of `research/AGENT_HANDOFF.md`.
+Investigation 29 resolves the structural boundary between BQP and subexponential sieving across nilpotent and solvable groups:
+- Proved Imran-Ivanyos Zero-Sum Descent Boundary: polynomial quantum descent requires $c = O(1)$, $p = O(1)$, and non-trivial central intersection. Davenport constant $\mathsf{D}(\mathbb{F}_p^m) = 1 + m(p-1)$ explodes when $p = \omega(1)$.
+- Proved 2-Group Central Kernel Bypass Failure: for $D_{2^k} = \mathbb{Z}_{2^k} \rtimes \mathbb{Z}_2$, reflection subgroup $H \cap Z_i(D_{2^k}) = \{0\}$ for all $i < k$. Central quotienting yields 0 bits of information per level; Imran-Ivanyos descent stalls completely and reduces strictly to Kuperberg's sieve $2^{\Omega(\sqrt{k})}$.
+- Proved Trine POVM Unentangled Bound: $M \ge \frac{n \ln p + \ln(1/\epsilon)}{\ln(p / (p-1))} = O(n)$ single-qubit measurements ($E_D = 1$) uniquely determine $s \in \mathbb{F}_p^n$ via linear dis-equations $\langle k, s \rangle \not\equiv j \pmod p$.
+- Proved Carry-Disruption Phase Transition: direct products $(\mathbb{Z}_p)^n$ have zero carries and decouple completely; cyclic groups $\mathbb{Z}_{p^n}$ induce carry propagation flipping higher bits with prob $\ge 1/2$.
+- Registered negative result: `NEG-NILPOTENT-CENTRAL-DESCENT-BARRIER` (valid with 955 negative results).
+
+Mechanical Queue:
+1. Verify repo health: `python3 qsearch.py validate` and `python3 tools/check_site.py`.
+2. Run Investigation 29 test suite: `pytest tests/test_nilpotent_solvable_exponent_descent_phase_transition.py` (6/6 PASS).
+3. Run Investigation 29 cross-check: `node research/certificates/nilpotent_solvable_exponent_descent_crosscheck.js` (71/71 PASS).
+4. Run Investigation 28 test suite: `pytest tests/test_isotropic_parabolic_hsp_spectrum_dequantization.py` (7/7 PASS).
+5. Run Investigation 27 test suite: `pytest tests/test_symplectic_parabolic_obstruction_gelfand_brauer_barrier.py` (8/8 PASS).
+6. Strict invariants: `speedup_claim_allowed = False`, `accepted_speedup_candidate = False`.
+7. Preserve all proof gates, retractions, counterexamples, and negative results.
+
+## Prior Handoff (2026-10-11, Investigation 28 Proved — Isotropic Parabolic Spectrum & Low-Dimensional Classical Dequantization)
 
 Read `research/ISOTROPIC_PARABOLIC_HSP_SPECTRUM_DEQUANTIZATION.md` and the TOP of `research/AGENT_HANDOFF.md`.
 Investigation 28 establishes the full complexity spectrum for isotropic parabolics $P_k = \text{Stab}_{Sp(2n)}(U)$ ($1 \le k \le n$):

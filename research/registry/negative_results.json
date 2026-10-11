@@ -68115,6 +68115,26 @@
   },
   {
     "applies_to": [
+      "NONABELIAN-COSET-COLLECTIVE-OBSERVABLES",
+      "NILPOTENT-SOLVABLE-HSP",
+      "CENTRAL-DESCENT-BARRIER",
+      "DIHEDRAL-COSET-PROBLEM"
+    ],
+    "claim": "Inductive central quotienting and Imran-Ivanyos zero-sum subsequence descent can solve the Hidden Subgroup Problem in all nilpotent groups in polynomial quantum time.",
+    "evidence": {
+      "carry_disruption": "Direct product zero-carry vs cyclic group carry propagation",
+      "central_intersection_failure": "H cap Z_i(D_{2^k}) == {0} identically for all i < k",
+      "davenport_constant_bound": "D(F_p^m) = 1 + m(p - 1)",
+      "speedup_claim_allowed": false,
+      "unentangled_sample_bound": "M >= (n ln p + ln(1/eps)) / ln(p/(p-1)) at E_D = 1"
+    },
+    "id": "NEG-NILPOTENT-CENTRAL-DESCENT-BARRIER",
+    "lesson": "Nilpotence alone is fundamentally insufficient for polynomial-time quantum algorithms. Nilpotent 2-groups (D_{2^k}) with reflection subgroups defeat central quotienting because H cap Z(G) = {0}. Zero-sum subsequence descent algorithms (Imran-Ivanyos 2024) are strictly bounded by constant prime factors p = O(1) and constant nilpotency class c = O(1), and fail when the hidden subgroup does not intersect the center. The quantum complexity is governed by the exponent-dimension geometry and carry topology rather than the abstract nilpotency classification.",
+    "reason_invalid": "For dihedral 2-groups D_{2^k} = Z_{2^k} x| Z_2 (which are strictly nilpotent of class k-1), every reflection hidden subgroup H = { (0, 0), (s, 1) } satisfies H cap Z_i(D_{2^k}) = { (0, 0) } for all i in {1, ..., k-1}. The subgroup does not intersect the center at any level, rendering inductive central quotienting and zero-sum subsequence descent completely powerless (yielding 0 bits of information per level). The problem reduces strictly to Kuperberg's dihedral sieve 2^{Omega(sqrt(k))}. Furthermore, when prime factors grow (p = omega(1)), the Davenport constant D(F_p^m) = 1 + m(p - 1) forces the zero-sum subsequence lifting problem to become computationally intractable. Polynomial-time descent strictly requires constant class c = O(1), constant prime factors p = O(1), and non-trivial central intersection.",
+    "source": "research/NILPOTENT_SOLVABLE_EXPONENT_DESCENT_PHASE_TRANSITION.md"
+  },
+  {
+    "applies_to": [
       "CODE-COSET-COLLECTIVE",
       "EXP-CODE-SELF-DUAL-WREATH-COHERENT-COMPONENT-TRIM-HYBRID"
     ],

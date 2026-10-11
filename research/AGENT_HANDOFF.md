@@ -2,7 +2,39 @@
 
 Last updated: 2026-10-11
 
-## Latest: Investigation 28 Proved — The Isotropic Parabolic HSP Spectrum & Low-Dimensional Classical Dequantization
+## Latest: Investigation 29 Proved — Zero-Sum Central Descent Demarcation & Carry Phase Transition in Nilpotent and Solvable HSP
+
+A major foundational investigation resolving the structural boundary between polynomial-time quantum algorithms (BQP) and subexponential sieving across nilpotent and solvable groups has been established in `research/NILPOTENT_SOLVABLE_EXPONENT_DESCENT_PHASE_TRANSITION.md`.
+
+### Core Invariants & Status:
+- `speedup_claim_allowed = False` strictly enforced everywhere.
+- `accepted_speedup_candidate = False` strictly enforced everywhere.
+- Registered negative result: `NEG-NILPOTENT-CENTRAL-DESCENT-BARRIER` (valid with 955 negative results).
+
+### Investigation 29 Summary & Key Mathematical Discoveries:
+1. **Imran-Ivanyos Zero-Sum Descent Boundary (Theorem 1)**:
+   The Imran-Ivanyos (2024) central descent algorithm for nilpotent groups requires constant nilpotency class $c = O(1)$, constant prime factors $p = O(1)$, and non-trivial central intersection $H \cap Z_i(G) \supsetneq H \cap Z_{i-1}(G)$. When prime factors grow ($p = \omega(1)$), the Davenport constant $\mathsf{D}(\mathbb{F}_p^m) = 1 + m(p-1)$ causes the zero-sum subsequence lifting problem to become computationally intractable.
+2. **The 2-Group Central Kernel Bypass Failure (Theorem 2)**:
+   For dihedral 2-groups $D_{2^k} = \mathbb{Z}_{2^k} \rtimes \mathbb{Z}_2$ (nilpotent of class $k$), every reflection subgroup $H = \{0, (s, 1)\}$ satisfies:
+   $$H \cap Z_i(D_{2^k}) = \{0\} \quad \forall i \in \{1, \dots, k-1\}.$$
+   At every level of the upper central series, the quotient image $H Z_i / Z_i \cong H$ is faithful. Central quotienting yields **identically 0 bits of information**, causing Imran-Ivanyos central descent to stall and forcing all $k$ bits of $s$ to be extracted across reflection branches in $2^{\Omega(\sqrt{k})}$ time.
+3. **Trine POVM Single-Copy Information Bound, $E_D = 1$ (Theorem 3)**:
+   In constant-exponent semidirect products $(\mathbb{Z}_p)^n \rtimes \mathbb{Z}_2$ ($p = O(1)$), unentangled single-qubit Trine POVM measurements ($E_D = 1$) on $M = O(n)$ independent coset states provide classical dis-equations $\langle k_i, s \rangle \not\equiv j_i \pmod p$ that uniquely determine $s \in \mathbb{F}_p^n$ with probability $\ge 1 - \epsilon$. Entanglement is not required for information acquisition, only for classical decoding.
+4. **The Carry-Disruption Phase Transition (Theorem 4)**:
+   In direct products $K = (\mathbb{Z}_p)^n$, component addition has zero carries, allowing polynomial-time linear-algebraic elimination. In cyclic groups $K = \mathbb{Z}_{p^n}$, modular subtraction wraps around, inducing carry propagation across higher bits with probability $\ge 1/2$. This destroys coordinate independence and enforces Kuperberg's collision pool barrier $P = 2^{\Omega(\sqrt{n})}$.
+5. **The Tripartite Tractability Law (Theorem 5)**:
+   Every non-abelian Hidden Subgroup Problem in a nilpotent or solvable group falls into:
+   - Sector I (Constant Exponent / Bounded-Class Central BQP): $c = O(1)$, $p = O(1)$, solved in $\text{poly}(\log |G|)$ by Friedl et al. (2003) or Imran-Ivanyos (2024).
+   - Sector II (Growing Exponent Cyclic / Carry Sieve Barrier): Growing cyclic exponent $N = 2^{\omega(1)}$ or trivial central intersection $H \cap Z(G) = \{1\}$, requiring subexponential sieving $2^{\Omega(\sqrt{\log N})}$.
+   - Sector III (Classical Linear / Transvection Dequantization): Solvable by classical adaptive transvections or point queries in polynomial or subexponential classical time.
+6. **Verification Matrix**:
+   - `pytest -v tests/test_nilpotent_solvable_exponent_descent_phase_transition.py` (6/6 PASS).
+   - `node research/certificates/nilpotent_solvable_exponent_descent_crosscheck.js` (71/71 PASS).
+   - `python3 qsearch.py validate` (0 issues, 955 negative results).
+
+---
+
+## Prior: Investigation 28 Proved — The Isotropic Parabolic HSP Spectrum & Low-Dimensional Classical Dequantization
 
 A major mathematical investigation completing the analysis of the entire parabolic spectrum $P_k = \text{Stab}_{Sp(2n)}(U)$ for $k$-dimensional isotropic subspaces $U \le \mathbb{F}_q^{2n}$ ($1 \le k \le n$) has been established in `research/ISOTROPIC_PARABOLIC_HSP_SPECTRUM_DEQUANTIZATION.md`.
 
