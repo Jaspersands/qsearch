@@ -106,10 +106,10 @@ For $G = SL(2, \mathbb{F}_q)$ with $q = 2^n$:
 
 ---
 
-## 3. The Universal Lie-Type Trilemma
+## 3. The Lie-Type Complexity Landscape (Audited)
 
-**Theorem 4 (The Universal Trilemma for Finite Groups of Lie Type)**:  
-Every Hidden Subgroup Problem over any finite group of Lie type $G(q)$ (including $GL(n, q)$, $SL(n, q)$, $Sp(2n, q)$, and $SO(n, q)$) falls into one of three mutually exclusive sectors:
+**Theorem 4 (The Complexity Landscape for Finite Groups of Lie Type)**:  
+Hidden Subgroup Problems over finite groups of Lie type $G(q)$ (including $GL(n, q)$, $SL(n, q)$, and $Sp(2n, q)$) divide structurally across three distinct regimes:
 
 ```
                           Finite Groups of Lie Type G(q)
@@ -121,13 +121,13 @@ Abelian / Solvable Radicals    Parabolic Subspaces         Generic Non-Abelian T
   (Unipotent U, Tori T)       (Flag & Subspace Stabs)         & Weyl Commutants
          │                              │                              │
          ▼                              ▼                              ▼
-  Reduces to Shor's             Dequantized Classically         Plancherel Extinction
-  Abelian HSP / DLog            in O(q n^3) via Elementary      (I <= 2^{-Omega(n^2)})
-  (No NEW Speedup)             Transvections (Theorem 1)       & Commutant Explosion
+  Reduces to Shor's             Quantum Poly-Time in GL(n)      Plancherel Extinction
+  Abelian HSP / DLog            (Decker et al. MFCS 2014);      (I <= 2^{-Omega(n^2)})
+  (No NEW Speedup)             Classical Queries 2^{Omega(n)}  & Commutant Explosion
 ```
 
 - **Sector I**: Solved by Shor's abelian QFT and discrete logarithm in polynomial time. Provides **zero new speedup** beyond Shor.
-- **Sector II**: Solved by deterministic classical transvection interferometry in $O(q n^3)$ operations. Classical algorithm completely **dequantizes** the problem.
+- **Sector II**: For $GL(n, \mathbb{F}_q)$, solved in quantum polynomial time $\text{poly}(n, \log q)$ by Decker et al. (MFCS 2014). The original claim of classical transvection dequantization in $O(q n^3)$ is **RETRACTED** (transvections produce zero collisions); classical black-box query complexity requires $2^{\Omega(n-k)}$ queries. Parabolic HSP in $GL(n, q)$ is a **genuine non-abelian quantum speedup**. (For $Sp(2n, \mathbb{F}_q)$, the problem is severely obstructed by non-linear ambient density collapse and Gel'fand extinction; see Investigation 27).
 - **Sector III**: Suffers exponential single-copy Plancherel extinction ($I \le 2^{-\Omega(n^2)}$ bits) and factorial multi-copy commutant explosion ($(n!)^m$). Computationally **intractable** on a quantum computer.
 
-**Conclusion**: Finite groups of Lie type provide **no loophole** around the foundational boundaries established in Investigations 1–20.
+**Conclusion**: Maximal tori and generic Lie subgroups remain strictly intractable (Sectors I and III), while parabolic subgroups in $GL(n, q)$ admit a genuine quantum speedup via Decker et al. (2014). No unproven speedup claims are permitted without an end-to-end algorithm.

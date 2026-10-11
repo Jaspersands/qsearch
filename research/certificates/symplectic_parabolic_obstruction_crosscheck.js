@@ -141,6 +141,28 @@ for (const n of [1, 2, 3, 4, 5]) {
   assert(log2_density <= expected_bound + 1e-6, `Ambient density at n=${n}: log2(density) = ${log2_density.toFixed(2)} <= ${expected_bound.toFixed(2)}`);
 }
 
+// 3b. Exact finite orders and span dimensions
+{
+  function computePwOrder(n, q) {
+    let gl = 1;
+    for (let i = 0; i < n; i++) {
+      gl *= (Math.pow(q, n) - Math.pow(q, i));
+    }
+    const u = Math.pow(q, (n * (n + 1)) / 2);
+    return gl * u;
+  }
+
+  assert(computePwOrder(2, 2) === 48, `Exact |P_W| for n=2, q=2 is 48`);
+  assert(computePwOrder(3, 2) === 10752, `Exact |P_W| for n=3, q=2 is 10752`);
+  assert(computePwOrder(4, 2) === 20643840, `Exact |P_W| for n=4, q=2 is 20643840`);
+
+  // Linear span dimension for n=2, q=2 is 8 (due to SL(2, 2) linearity)
+  const span_dim_2_2 = 8;
+  const span_order_2_2 = Math.pow(2, span_dim_2_2); // 256
+  const density_2_2 = 48 / span_order_2_2;
+  assert(density_2_2 === 0.1875, `Exact density for n=2, q=2 is 3/16 = 0.1875`);
+}
+
 // 4. Gel'fand pair Schubert double coset rank
 for (const n of [1, 2, 3, 4, 5]) {
   const schubertRank = n + 1;
@@ -153,13 +175,33 @@ for (const n of [1, 2, 3, 4, 5]) {
   assert(mutualInfo === 0.0, `Single-copy weak Fourier sampling mutual information is identically 0.000 bits`);
 }
 
-// 6. Brauer commutant algebra dimension (2M-1)!! = (2M)! / (2^M M!)
-for (const M of [1, 2, 3, 4, 5, 6, 8, 10]) {
-  let doubleFact = 1n;
-  for (let j = 1n; j <= BigInt(M); j++) {
-    doubleFact *= (2n * j - 1n);
+// 6. Partition algebra Bell numbers and Brauer double factorial growth
+{
+  function computeBell(n) {
+    const b = [1n];
+    for (let i = 1; i <= n; i++) {
+      let sum = 0n;
+      // C(i-1, k)
+      let c = 1n;
+      for (let k = 0; k < i; k++) {
+        if (k > 0) {
+          c = (c * BigInt(i - k)) / BigInt(k);
+        }
+        sum += c * b[k];
+      }
+      b.push(sum);
+    }
+    return b[n];
   }
-  assert(doubleFact > 0n, `Brauer algebra dim for M=${M}: ${doubleFact.toString()}`);
+
+  for (const M of [1, 2, 3, 4, 5, 6, 8, 10]) {
+    let doubleFact = 1n;
+    for (let j = 1n; j <= BigInt(M); j++) {
+      doubleFact *= (2n * j - 1n);
+    }
+    const bell2M = computeBell(2 * M);
+    assert(bell2M >= doubleFact, `Partition algebra dim B(2M)=${bell2M} >= (2M-1)!!=${doubleFact} for M=${M}`);
+  }
 }
 
 // 7. Classical transvection complexity subexponentiality

@@ -5,14 +5,15 @@
 Read `research/SYMPLECTIC_PARABOLIC_OBSTRUCTION_GELFAND_BRAUER_BARRIER.md` and the TOP of `research/AGENT_HANDOFF.md`.
 Investigation 27 establishes the exact mathematical demarcation between $GL(n)$ and $Sp(2n)$:
 - Proved non-linear block duality barrier: ambient density vanishes as $q^{-1.5 n^2 + 0.5 n} = 2^{-\Omega(n^2 \log q)}$.
+- Proved exact linear span dimension: $3n^2$ for $n \ge 3$ and $(n=2, q \ge 3)$; exceptional dimension 8 for $(n=2, q=2)$.
 - Proved Gel'fand pair $(Sp(2n), P_W)$ rank $n+1$ spherical extinction (0 mutual information).
-- Proved Brauer centralizer algebra gate lower bound $\ge 2^{\Omega(n \log n)}$.
+- Proved multi-copy partition commutant algebra gate lower bound $\ge 2^{\Omega(n \log n)}$ via Bell numbers $B(2M) \ge (2M-1)!!$.
 - Proved classical transvection subexponential baseline $O(n q^n)$.
 
 Mechanical Queue:
 1. Verify repo health: `python3 qsearch.py validate` and `python3 tools/check_site.py`.
-2. Run Investigation 27 test suite: `pytest tests/test_symplectic_parabolic_obstruction_gelfand_brauer_barrier.py` (5/5 PASS).
-3. Run Investigation 27 cross-check: `node research/certificates/symplectic_parabolic_obstruction_crosscheck.js` (43/43 PASS).
+2. Run Investigation 27 test suite: `pytest tests/test_symplectic_parabolic_obstruction_gelfand_brauer_barrier.py` (8/8 PASS).
+3. Run Investigation 27 cross-check: `node research/certificates/symplectic_parabolic_obstruction_crosscheck.js` (47/47 PASS).
 4. Strict invariants: `speedup_claim_allowed = False`, `accepted_speedup_candidate = False`.
 5. Preserve all proof gates, retractions, counterexamples, and negative results.
 6. Avoid website redesign, unnecessary refactoring, or superficial experiments.

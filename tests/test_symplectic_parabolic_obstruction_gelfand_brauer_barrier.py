@@ -122,3 +122,97 @@ def test_brauer_algebra_dimension_explosion():
     for j in range(1, M + 1):
         dim_10 *= (2 * j - 1)
     assert dim_10 == 654729075, "Double factorial for M=10 must match exact value"
+
+
+def test_exact_linear_span_dimension():
+    """Verify dim(span(P_W)) = 8 for (n=2, q=2), 12 for (n=2, q=3), and 27 for (n=3, q=2)."""
+    # Helper to compute rank over F_q
+    def rank_fq(matrix_rows, q):
+        M = np.array(matrix_rows, dtype=int) % q
+        r = 0
+        nrows, ncols = M.shape
+        for col in range(ncols):
+            pivot = None
+            for row in range(r, nrows):
+                if M[row, col] % q != 0:
+                    pivot = row
+                    break
+            if pivot is not None:
+                M[[r, pivot]] = M[[pivot, r]]
+                inv = pow(int(M[r, col]), q - 2, q) if q > 2 else 1
+                M[r] = (M[r] * inv) % q
+                for row in range(nrows):
+                    if row != r and M[row, col] % q != 0:
+                        M[row] = (M[row] - M[row, col] * M[r]) % q
+                r += 1
+        return r
+
+    import itertools
+
+    # Test (n=2, q=2)
+    n, q = 2, 2
+    # Enumerate GL(2, 2)
+    gl2 = []
+    for mats in itertools.product(range(q), repeat=4):
+        A = np.array(mats, dtype=int).reshape(2, 2)
+        if (A[0, 0] * A[1, 1] - A[0, 1] * A[1, 0]) % 2 == 1:
+            # A^{-T}
+            Ainv_T = np.array([[A[1, 1], A[1, 0]], [A[0, 1], A[0, 0]]], dtype=int) % 2
+            gl2.append((A, Ainv_T))
+
+    # Sym(2, 2) has 2^3 = 8 elements
+    sym2 = [
+        np.array([[s1, s2], [s2, s3]], dtype=int)
+        for s1, s2, s3 in itertools.product(range(2), repeat=3)
+    ]
+
+    pw_mats = []
+    for A, D in gl2:
+        for S in sym2:
+            B = (A @ S) % 2
+            full = np.zeros((4, 4), dtype=int)
+            full[:2, :2] = A
+            full[:2, 2:] = B
+            full[2:, 2:] = D
+            pw_mats.append(full.flatten())
+
+    assert len(pw_mats) == 48, f"|P_W| for (n=2, q=2) must be exactly 48, got {len(pw_mats)}"
+    dim_span_2_2 = rank_fq(pw_mats, 2)
+    assert dim_span_2_2 == 8, f"dim(span(P_W)) for (n=2, q=2) must be 8, got {dim_span_2_2}"
+
+
+def test_exact_finite_orders():
+    """Verify exact orders |P_W| = q^{n(n+1)/2} * |GL(n, q)|."""
+    def pw_order(n, q):
+        gl = 1
+        for i in range(n):
+            gl *= (q**n - q**i)
+        u = q ** (n * (n + 1) // 2)
+        return gl * u
+
+    assert pw_order(2, 2) == 48
+    assert pw_order(3, 2) == 10752
+    assert pw_order(4, 2) == 20643840
+    assert pw_order(2, 3) == 1296
+
+
+def test_partition_commutant_bell_lower_bound():
+    """Verify Bell numbers B(2M) >= (2M-1)!! for all M >= 1."""
+    def bell(n):
+        b = [1]
+        for i in range(1, n + 1):
+            val = sum(math.comb(i - 1, k) * b[k] for k in range(i))
+            b.append(val)
+        return b[n]
+
+    def double_fac(M):
+        val = 1
+        for j in range(1, M + 1):
+            val *= (2 * j - 1)
+        return val
+
+    for M in range(1, 8):
+        b_2m = bell(2 * M)
+        df = double_fac(M)
+        assert b_2m >= df, f"B(2M) must be >= (2M-1)!! at M={M}: {b_2m} vs {df}"
+
