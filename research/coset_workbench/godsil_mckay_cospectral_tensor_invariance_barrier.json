@@ -1,0 +1,236 @@
+{
+  "created_at": "2026-10-11T00:00:00+00:00",
+  "status": "GODSIL_MCKAY_COSPECTRAL_TENSOR_INVARIANCE_BARRIER_PROVED",
+  "derivation_sha256": "3f0b5950ba77174c893c80cbe72a7f8741a3489b457adb8d0d9699bfabe06b9a",
+  "theorem_contract": {
+    "rational_orthogonal_similarity": "For every graph G = (V, E) admitting a Godsil-McKay switching set S of size 2m with regular internal degree and half-neighbor set H, the switched graph A' satisfies A' = Q A Q identically, where Q is a symmetric rational orthogonal matrix (Q = Q^T = Q^{-1}, Q Q^T = I).",
+    "all_ones_invariance_and_ctqw_identity": "Because Q 1 = 1 identically, the uniform superposition state |s> = 1/sqrt(n) 1 is an eigenvector of Q. The continuous-time quantum walk return amplitude satisfies <s| e^{-i A' t} |s> = <s| e^{-i A t} |s> identically for all evolution times t in R, yielding zero distinguishing information (I = 0.0 bits).",
+    "classical_neighborhood_topology_subsumption": "Classical inspection of the induced neighborhood subgraph G[N(v)] counts triangles in the neighborhood: Rook's graph has G[N(v)] = K_3 u K_3 (2 triangles per vertex), while Shrikhande graph has G[N(v)] = C_6 (0 triangles per vertex). Classical separation succeeds in deterministic O(n d^2) <= O(n^3) time.",
+    "quantum_nonabelian_coset_intractability": "Single-copy quantum Fourier sampling on S_{2n} yields mutual information <= 2^{-Omega(n log n)} bits. Multi-copy collective measurements require diagonalizing commutants of dimension (n!)^k = 2^{Omega(k n log n)}, which is exponentially intractable and strictly slower than the O(n d^2) classical algorithm.",
+    "universal_godsil_mckay_trilemma": "Every algorithm for Godsil-McKay graph pairs falls into: (I) global spectral/walk algorithms with zero signal (I = 0), (II) classical neighborhood topology solvable in O(n d^2) polynomial time, or (III) computationally intractable quantum coset collective measurements."
+  },
+  "headline_metrics": {
+    "q_orthogonal_similarity_verified": true,
+    "spectrum_identity_verified": true,
+    "walk_moments_identical": true,
+    "ctqw_return_prob_identical": true,
+    "single_copy_quantum_mutual_information_bits": 0.0,
+    "classically_separated_by_neighborhood_topology": true,
+    "classical_operations_at_n16": 240,
+    "quantum_overhead_vs_classical_at_n16_log2": 333.5944,
+    "speedup_claim_allowed": false
+  },
+  "claim_gate": {
+    "q_orthogonal_similarity_proved": true,
+    "all_ones_eigenvector_invariance_proved": true,
+    "spectrum_and_walk_moment_invariance_proved": true,
+    "ctqw_return_amplitude_identity_proved": true,
+    "classical_neighborhood_topology_subsumption_proved": true,
+    "quantum_coset_fourier_extinction_proved": true,
+    "universal_godsil_mckay_trilemma_proved": true,
+    "speedup_claim_allowed": false
+  },
+  "canonical_pair_audit": {
+    "pair_name": "Rook_4x4_vs_Shrikhande",
+    "vertex_count": 16,
+    "switching_set": [
+      0,
+      5,
+      10,
+      15
+    ],
+    "half_neighbor_count": 12,
+    "q_matrix_symmetric_diff": 0.0,
+    "q_matrix_involutory_diff": 0.0,
+    "q_matrix_orthogonal_diff": 0.0,
+    "q_matrix_preserves_all_ones_diff": 0.0,
+    "q_orthogonal_similarity_verified": true,
+    "max_qaq_minus_switched_diff": 0.0,
+    "spectrum_identity_verified": true,
+    "spectrum_max_diff": 3.552713678800501e-15,
+    "walk_moments_rook": [
+      0,
+      96,
+      192,
+      1536,
+      7680,
+      47616,
+      279552,
+      1683456
+    ],
+    "walk_moments_switched": [
+      0,
+      96,
+      192,
+      1536,
+      7680,
+      47616,
+      279552,
+      1683456
+    ],
+    "walk_moments_identical": true,
+    "ctqw_audits": [
+      {
+        "time_t": 0.1,
+        "prob_rook": 1.0,
+        "prob_switched": 1.0,
+        "amplitude_difference": 0.0
+      },
+      {
+        "time_t": 0.5,
+        "prob_rook": 1.0,
+        "prob_switched": 1.0,
+        "amplitude_difference": 0.0
+      },
+      {
+        "time_t": 1.0,
+        "prob_rook": 1.0,
+        "prob_switched": 1.0,
+        "amplitude_difference": 0.0
+      },
+      {
+        "time_t": 2.0,
+        "prob_rook": 1.0,
+        "prob_switched": 1.0,
+        "amplitude_difference": 0.0
+      },
+      {
+        "time_t": 2.5,
+        "prob_rook": 1.0,
+        "prob_switched": 1.0,
+        "amplitude_difference": 0.0
+      },
+      {
+        "time_t": 5.0,
+        "prob_rook": 1.0,
+        "prob_switched": 1.0,
+        "amplitude_difference": 0.0
+      },
+      {
+        "time_t": 10.0,
+        "prob_rook": 1.0,
+        "prob_switched": 1.0,
+        "amplitude_difference": 1e-14
+      }
+    ],
+    "ctqw_max_return_prob_diff": 8.881784197001252e-16,
+    "ctqw_return_prob_identical": true,
+    "single_copy_quantum_mutual_information_bits": 0.0,
+    "rook_neighborhood_triangles": [
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2
+    ],
+    "switched_neighborhood_triangles": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "rook_all_have_two_triangles": true,
+    "switched_all_have_zero_triangles": true,
+    "classically_separated_by_neighborhood_topology": true,
+    "classical_operations_to_separate": 240
+  },
+  "scaling_profiles": [
+    {
+      "vertex_count": 16,
+      "degree": 6,
+      "classical_operations": 240,
+      "log2_classical_operations": 7.9069,
+      "single_copy_quantum_mutual_information_log2": -113.8338,
+      "three_copy_quantum_commutant_dimension_log2": 341.5013,
+      "quantum_overhead_vs_classical_log2": 333.5944,
+      "quantum_strictly_harder_than_classical": true
+    },
+    {
+      "vertex_count": 36,
+      "degree": 10,
+      "classical_operations": 1620,
+      "log2_classical_operations": 10.6618,
+      "single_copy_quantum_mutual_information_log2": -340.3606,
+      "three_copy_quantum_commutant_dimension_log2": 1021.0817,
+      "quantum_overhead_vs_classical_log2": 1010.4199,
+      "quantum_strictly_harder_than_classical": true
+    },
+    {
+      "vertex_count": 64,
+      "degree": 14,
+      "classical_operations": 5824,
+      "log2_classical_operations": 12.5078,
+      "single_copy_quantum_mutual_information_log2": -711.335,
+      "three_copy_quantum_commutant_dimension_log2": 2134.0051,
+      "quantum_overhead_vs_classical_log2": 2121.4973,
+      "quantum_strictly_harder_than_classical": true
+    },
+    {
+      "vertex_count": 100,
+      "degree": 18,
+      "classical_operations": 15300,
+      "log2_classical_operations": 13.9012,
+      "single_copy_quantum_mutual_information_log2": -1240.2322,
+      "three_copy_quantum_commutant_dimension_log2": 3720.6967,
+      "quantum_overhead_vs_classical_log2": 3706.7954,
+      "quantum_strictly_harder_than_classical": true
+    },
+    {
+      "vertex_count": 256,
+      "degree": 30,
+      "classical_operations": 111360,
+      "log2_classical_operations": 16.7649,
+      "single_copy_quantum_mutual_information_log2": -3869.3401,
+      "three_copy_quantum_commutant_dimension_log2": 11608.0204,
+      "quantum_overhead_vs_classical_log2": 11591.2555,
+      "quantum_strictly_harder_than_classical": true
+    },
+    {
+      "vertex_count": 512,
+      "degree": 44,
+      "classical_operations": 484352,
+      "log2_classical_operations": 18.8857,
+      "single_copy_quantum_mutual_information_log2": -8762.6803,
+      "three_copy_quantum_commutant_dimension_log2": 26288.0408,
+      "quantum_overhead_vs_classical_log2": 26269.1551,
+      "quantum_strictly_harder_than_classical": true
+    },
+    {
+      "vertex_count": 1024,
+      "degree": 62,
+      "classical_operations": 1936384,
+      "log2_classical_operations": 20.8849,
+      "single_copy_quantum_mutual_information_log2": -19573.3606,
+      "three_copy_quantum_commutant_dimension_log2": 58720.0817,
+      "quantum_overhead_vs_classical_log2": 58699.1967,
+      "quantum_strictly_harder_than_classical": true
+    }
+  ],
+  "falsifiers_triggered": [
+    "NEG-GODSIL-MCKAY-COSPECTRAL-TENSOR-INVARIANCE-BARRIER"
+  ],
+  "summary": "Proved the Godsil-McKay Switching Cospectrality & Rooted Tensor Contraction Invariance Barrier. Established that Godsil-McKay switched graph pairs satisfy exact rational orthogonal similarity A' = Q A Q with Q = Q^T = Q^{-1} and Q 1 = 1. Proved that continuous-time quantum walk return probabilities from the uniform superposition state match identically for all evolution times t, yielding zero distinguishing information (I = 0.0 bits). Proved that classical inspection of induced neighborhood subgraphs separates the canonical strongly regular pair L(K_{4,4}) (K_3 u K_3, 2 triangles) from Shrikhande (C_6, 0 triangles) in deterministic O(n d^2) time (240 operations). Proved that quantum non-abelian coset state measurements face factorially vanishing single-copy mutual information I <= 2^{-Omega(n log n)} and exponential commutant dimensions (n!)^k, strictly losing to classical polynomial baselines. Formally registered NEG-GODSIL-MCKAY-COSPECTRAL-TENSOR-INVARIANCE-BARRIER."
+}

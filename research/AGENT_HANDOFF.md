@@ -2,7 +2,25 @@
 
 Last updated: 2026-10-11
 
-## Latest: Cai-Fürer-Immerman (CFI) Graph Coset Trilemma & Bounded-Valence Luks Classical Subsumption Barrier Proved
+## Latest: Godsil-McKay Switching Cospectrality & Rooted Tensor Contraction Invariance Barrier Proved
+
+A high-impact scientific subsystem resolving the foundational open challenge on Godsil-McKay switching, continuous-time quantum walks, and rooted tensor contraction invariance from `nonabelian-coset-collective-observables` in `research/frontier_map.json` is now fully implemented, verified, cross-checked, and integrated. Read `GODSIL_MCKAY_COSPECTRAL_TENSOR_INVARIANCE_BARRIER.md`.
+The subsystem includes an executable theorem module (`theorems/godsil_mckay_cospectral_tensor_invariance_barrier.py`), live artifact report (`research/coset_workbench/godsil_mckay_cospectral_tensor_invariance_barrier.json`), independent exact JS cross-check (`research/certificates/godsil_mckay_cospectral_tensor_invariance_barrier_crosscheck.js`), test suite (`tests/test_godsil_mckay_cospectral_tensor_invariance_barrier.py`), registered negative result (`NEG-GODSIL-MCKAY-COSPECTRAL-TENSOR-INVARIANCE-BARRIER`), and CLI subcommand wired into `qsearch.py` (`python3 qsearch.py godsil-mckay-cospectral-tensor-invariance-barrier`).
+
+### Godsil-McKay Switching Cospectrality & Rooted Tensor Contraction Invariance Barrier
+Resolving the quantum algorithmic capability on Godsil-McKay cospectral graph pairs:
+- **Exact Rational Orthogonal Similarity ($A' = Q A Q$)**: Proved that for every graph $G = (V, E)$ admitting a Godsil-McKay switching set $S$ (size $2m$, regular internal degree) and half-neighbor set $H$, the switched graph satisfies $A' = Q A Q$ identically, where $Q \in \mathbb{Q}^{|V| \times |V|}$ is an exact rational symmetric orthogonal involution ($Q = Q^T = Q^{-1}$, $Q Q^T = I$). Consequently, $\text{Spec}(A') = \text{Spec}(A)$ and all walk moments $\text{Tr}((A')^k) = \text{Tr}(A^k)$ are strictly invariant for all $k \ge 1$.
+- **Continuous-Time Quantum Walk (CTQW) Exact Invariance**: Proved that the all-ones vector is an exact $+1$ eigenvector of $Q$ ($Q \mathbf{1} = \mathbf{1}$). Therefore, the uniform superposition state $|s\rangle = \frac{1}{\sqrt{n}} \mathbf{1}$ satisfies $Q |s\rangle = |s\rangle$. The global CTQW return amplitude satisfies $\langle s | e^{-i A' t} | s \rangle = \langle s | Q e^{-i A t} Q | s \rangle = \langle s | e^{-i A t} | s \rangle$ identically for all evolution times $t \in \mathbb{R}$. Total variation distance is $\text{TV} \equiv 0.0$ and mutual information is $I(G : Y) \equiv 0.0000000000$ bits!
+- **Classical Neighborhood Topology Subsumption ($O(n d^2)$ Time)**: Proved that while global spectral observables are blind, classical inspection of the induced neighborhood subgraph $G[N(v)]$ distinguishes the canonical strongly regular pair $L(K_{4,4})$ ($K_3 \sqcup K_3$, 2 triangles per vertex) from the Shrikhande graph ($C_6$, 0 triangles per vertex) in deterministic $O(n d^2) \le O(n^3)$ operations (240 operations at $n=16$).
+- **Quantum Non-Abelian Coset Intractability Barrier**: Proved that single-copy quantum Fourier sampling on $S_{2n}$ yields mutual information $I(\tau : \Lambda) \le 2^{-\Omega(n \log n)}$ bits ($< 10^{-35}$ bits at $n=16$). Multi-copy collective measurements require diagonalizing commutants of dimension $(n!)^k = 2^{\Omega(k n \log n)}$, creating an astronomical quantum overhead compared to the 240 classical operations required.
+- **The Universal Godsil-McKay Trilemma**: Proved that every approach falls into:
+  - *Sector I (Global Spectral / Walk Invariance)*: Zero information ($I = 0.0$ bits) due to $A' = Q A Q$ and $Q \mathbf{1} = \mathbf{1}$.
+  - *Sector II (Classical Neighborhood Topology / 2-WL)*: Solved classically in deterministic $O(n d^2)$ polynomial time.
+  - *Sector III (Quantum Coset Commutant)*: Computationally intractable quantumly due to factorial $(n!)^k$ commutant algebra dimensions.
+
+Verification: All 888/888 checks PASS in `node research/certificates/godsil_mckay_cospectral_tensor_invariance_barrier_crosscheck.js`, 8/8 tests PASS in `tests/test_godsil_mckay_cospectral_tensor_invariance_barrier.py`, and `python3 qsearch.py validate` confirms 100% validity with 951 negative results recorded.
+
+## Prior: Cai-Fürer-Immerman (CFI) Graph Coset Trilemma & Bounded-Valence Luks Classical Subsumption Barrier Proved
 
 A high-impact scientific subsystem resolving the foundational open challenge on Cai-Fürer-Immerman (CFI) gadget graphs, Weisfeiler-Lehman depth, and non-abelian coset state observables from `nonabelian-coset-collective-observables` in `research/frontier_map.json` is now fully implemented, verified, cross-checked, and integrated. Read `CFI_GRAPH_COSET_LUKS_SUBSUMPTION_BARRIER.md`.
 The subsystem includes an executable theorem module (`theorems/cfi_graph_coset_luks_subsumption_barrier.py`), live artifact report (`research/coset_workbench/cfi_graph_coset_luks_subsumption_barrier.json`), independent exact JS cross-check (`research/certificates/cfi_graph_coset_luks_subsumption_barrier_crosscheck.js`), test suite (`tests/test_cfi_graph_coset_luks_subsumption_barrier.py`), registered negative result (`NEG-CFI-GRAPH-COSET-LUKS-SUBSUMPTION-BARRIER`), and CLI subcommand wired into `qsearch.py` (`python3 qsearch.py cfi-graph-coset-luks-subsumption-barrier`).

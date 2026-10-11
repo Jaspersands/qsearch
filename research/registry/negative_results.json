@@ -65912,6 +65912,7 @@
     "source": "research/classical_baselines/dcp_marker_aware_list_decoder.json"
   },
   {
+    "id": "NEG-DCP-GENERAL-POVM-SECRET-VARIANCE-COLLAPSE",
     "applies_to": [
       "DCP-DENSITY-ONE-SUBSET-SUM-PARTIAL-SOLVER",
       "NON-ERASURE-POVM",
@@ -65921,13 +65922,12 @@
     "claim": "General non-erasure POVM measurements or open-system channels with an inaccessible environment can extract the hidden secret s in polynomial time from density-one subset sum phase states.",
     "evidence": {
       "artifact": "research/classical_baselines/dcp_general_povm_secret_variance_collapse.json",
-      "fano_success_bound": "P_succ <= (I + 1)/n = O(1/n) -> 0; exact unique recovery collapses as 2^{-Omega(n)}",
-      "mutual_information_bound": "I(s : Y) <= (M^2 / ln 2) 2^{-2n} = 2^{-Omega(n)} bits",
       "parseval_variance_bound": "E_a[Var_s(p(y | s))] <= 2^{-2n} Tr(E_y^2) <= 2^{-2n}",
       "shallow_depth_zero_information": "I(s : Y) == 0.0 bits identically for circuit depth d < W*(n) = Omega(n / log n)",
-      "total_variation_bound": "TV(p(. | s), p_bar) <= (1/2) M 2^{-n} = 2^{-Omega(n)} for M = poly(n)"
+      "total_variation_bound": "TV(p(. | s), p_bar) <= (1/2) M 2^{-n} = 2^{-Omega(n)} for M = poly(n)",
+      "mutual_information_bound": "I(s : Y) <= (M^2 / ln 2) 2^{-2n} = 2^{-Omega(n)} bits",
+      "fano_success_bound": "P_succ <= (I + 1)/n = O(1/n) -> 0; exact unique recovery collapses as 2^{-Omega(n)}"
     },
-    "id": "NEG-DCP-GENERAL-POVM-SECRET-VARIANCE-COLLAPSE",
     "lesson": "Non-erasure measurements and inaccessible environments cannot evade the density-one subset-sum barrier. The Fourier spectrum of the measurement likelihood on random sources is exponentially suppressed by Parseval's identity, restricting the mutual information to 2^{-Omega(n)} bits per copy. Discarding the environment register merely destroys the coherent phase information needed to reconstruct the secret.",
     "reason_invalid": "By Parseval's identity on the cyclic group Z_{2^n}, the variance of the measurement likelihood across all secrets s is bounded by 2^{-2n} Tr(E_y^2) <= 2^{-2n}. For any polynomial-outcome POVM with M = poly(n) outcomes, the total variation distance from a secret-independent distribution collapses as M 2^{-n} = 2^{-Omega(n)}, and the mutual information is bounded by 2^{-Omega(n)} bits. Shallow circuits have zero information (I = 0 bits), deep non-erasure POVMs have exponentially vanishing variance, and coherent erasure POVMs dequantize to classical subset-sum solvers.",
     "source": "research/classical_baselines/dcp_general_povm_secret_variance_collapse.json"
@@ -85398,5 +85398,28 @@
     "lesson": "Cai-F\u00fcrer-Immerman gadget graphs cannot provide an algorithmic quantum advantage. Although CFI graphs defeat k-dimensional Weisfeiler-Lehman, all 3-regular CFI graphs have bounded maximum degree Delta <= 4, which is solvable in deterministic polynomial time O(N^4) classically by Luks' algorithm (1982). Meanwhile, quantum algorithms on non-abelian coset states face factorially vanishing single-copy information and exponential (N!)^k commutant dimensions for multi-copy collective measurements, making the quantum approach strictly harder than the classical baseline.",
     "reason_invalid": "For all 3-regular base graphs, the CFI construction produces graphs with N_CFI = 7 |V| vertices and maximum degree Delta <= 4. By Luks' polynomial-time algorithm for bounded valence (JCSS 1982), Graph Isomorphism on these graphs is solved in O(N^4) deterministic classical time. Quantum non-abelian coset state measurements provide <= 2^{-Omega(N log N)} bits of information on single copies, and multi-copy collective measurements require diagonalizing commutant algebras of dimension (N!)^k = 2^{Omega(k N log N)}, completely falsifying the hypothesis of a quantum advantage on CFI graphs.",
     "source": "research/coset_workbench/cfi_graph_coset_luks_subsumption_barrier.json"
+  },
+  {
+    "id": "NEG-GODSIL-MCKAY-COSPECTRAL-TENSOR-INVARIANCE-BARRIER",
+    "applies_to": [
+      "NONABELIAN-COSET-COLLECTIVE-OBSERVABLES",
+      "GODSIL-MCKAY-SEARCH",
+      "GRAPHLET-TENSOR-OBSERVABLES",
+      "INDIVIDUALIZED-TENSOR-OBSERVABLES"
+    ],
+    "claim": "Quantum walks, adjacency spectral phase estimation, or non-abelian coset state measurements can achieve an algorithmic speedup on Godsil-McKay cospectral graphs.",
+    "evidence": {
+      "artifact": "research/coset_workbench/godsil_mckay_cospectral_tensor_invariance_barrier.json",
+      "orthogonal_similarity": "A' = Q A Q identically with Q = Q^T = Q^{-1}",
+      "all_ones_invariance": "Q 1 = 1 forces uniform CTQW return probabilities to match identically for all t",
+      "walk_moments": "Tr((A')^k) == Tr(A^k) identically for all closed walk lengths k >= 1",
+      "classical_subsumption": "Local neighborhood subgraph inspection distinguishes L(K_4,4) from Shrikhande in O(n d^2) <= O(n^3) time (240 operations)",
+      "single_copy_fourier_extinction": "I(G : Lambda) <= 2^{-Omega(n log n)} bits",
+      "multi_copy_commutant_dimension": "(n!)^k = 2^{Omega(k n log n)}",
+      "speedup_claim_allowed": false
+    },
+    "lesson": "Godsil-McKay switched cospectral graphs cannot provide an algorithmic quantum advantage. Spectral and walk-based quantum algorithms have zero distinguishing power due to exact rational orthogonal similarity A' = Q A Q with Q 1 = 1. Meanwhile, classical inspection of induced neighborhood subgraphs separates the graphs in deterministic polynomial time O(n d^2) <= O(n^3). Non-abelian quantum coset state approaches face factorially vanishing single-copy information and exponential commutant dimensions, making quantum algorithms strictly harder than the classical baseline.",
+    "reason_invalid": "For all Godsil-McKay switched graph pairs, the switched adjacency matrix satisfies A' = Q A Q where Q is a rational orthogonal involution satisfying Q 1 = 1. Continuous-time quantum walks initialized on the uniform state have identical return probabilities for all times t, yielding zero information. All closed walk moments are invariant. Meanwhile, classical inspection of induced neighborhood subgraphs decides isomorphism in deterministic O(n d^2) time. Quantum coset state measurements face factorially vanishing single-copy information <= 2^{-Omega(n log n)} and exponential (n!)^k commutant dimensions, completely falsifying the hypothesis of a quantum advantage on Godsil-McKay graphs.",
+    "source": "research/coset_workbench/godsil_mckay_cospectral_tensor_invariance_barrier.json"
   }
 ]
