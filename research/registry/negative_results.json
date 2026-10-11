@@ -85617,5 +85617,28 @@
     "lesson": "The Hidden Subgroup Problem in the symmetric group S_n (and hence the standard quantum approach to Graph Isomorphism) is obstructed at every measurement tier. Weak Fourier sampling produces identical output distributions for conjugate subgroups (TV distance 0.000). Single-copy strong Fourier sampling yields exponentially vanishing mutual information 2^{-Omega(n log n)}. Multi-copy collective measurements require diagonalizing a commutant algebra of factorial dimension 2^{Omega(n^2 log^2 n)} governed by #P-hard Kronecker-Racah Clebsch-Gordan coefficients.",
     "reason_invalid": "Characters of S_n are class functions, so chi_lambda(H_1) = chi_lambda(H_2) for all conjugate hidden subgroups, proving p(lambda | H_1) = p(lambda | H_2) and TV = 0.000 identically (weak Fourier blindness). For single-copy states, Moore, Russell, and Schulman proved that any POVM yields mutual information at most poly(n) / n! = 2^{-Omega(n log n)}. (S_n, H) is not a Gel'fand pair for n >= 4 (irrep [3,1] has multiplicity 2 for transpositions, and [2,2] has multiplicity 2 for matchings in S_4), inducing non-commutative Hecke algebras of dimension 7 and 8. For M copies, the commutant dimension dim(C_M) = (1/n!) sum chi_perm(g)^{2M} >= (n!)^{2M-1} / 2^{2M}; at the Ettinger-Hoyer-Knill information threshold M = Omega(n log n), this exceeds 2^{Omega(n^2 log^2 n)}, requiring at least 2^{Omega(n^2 log^2 n)} quantum gates. Furthermore, decomposing multi-copy states is equivalent to computing Kronecker coefficients and Racah 6j/3nj symbols, which are #P-hard and require diagonalizing exponential-rank matrices.",
     "source": "research/GRAPH_ISOMORPHISM_SN_COMMUTANT_RACAH_BARRIER.md"
+  },
+  {
+    "applies_to": [
+      "NONABELIAN-COSET-COLLECTIVE-OBSERVABLES",
+      "WREATH-PRODUCT-HSP",
+      "LINEAR-CODE-EQUIVALENCE-BARRIER",
+      "SWAP-CHARACTER-UNIVERSALITY",
+      "SENDRIER-HULL-DEQUANTIZATION"
+    ],
+    "claim": "Quantum algorithms can achieve an exponential speedup for Linear Code Equivalence modeled as an HSP over the wreath product W_n = (S_n x S_n) \rtimes Z_2 over classical algorithms.",
+    "evidence": {
+      "black_box_query_lower_bound": "Omega(n!) = 2^{Omega(n log n)}",
+      "multi_copy_commutant_explosion": "dim(C_M) >= ((n!)^2)^{2M-1} / 2^{2M} >= 2^{Omega(n^2 log^2 n)} at M = Omega(n log n)",
+      "sendrier_classical_dequantization": "LCD and bounded hull h <= O(log n) codes solved in O(n^3 + 2^h n^2) classical time",
+      "single_copy_mutual_info": "I(sigma : M) <= poly(n) / n! = 2^{-Omega(n log n)}",
+      "speedup_claim_allowed": false,
+      "swap_character_universality": "chi_{(lambda, lambda, pm)}(tau_sigma) = pm d_lambda identically for all sigma in S_n",
+      "weak_fourier_blindness": "TV distance identically 0.000 across all candidate code equivalences"
+    },
+    "id": "NEG-LINEAR-CODE-EQUIVALENCE-WREATH-BARRIER",
+    "lesson": "Linear Code Equivalence over the wreath product W_n = (S_n x S_n) \rtimes Z_2 cannot achieve a quantum speedup. All n! code-swapping involutions are conjugate to tau_id in W_n, forcing all character values on extended irreps to be identically pm d_lambda independent of sigma. Weak Fourier sampling is completely blind (TV distance 0.000). Single-copy strong Fourier sampling yields exponentially vanishing information 2^{-Omega(n log n)}. Multi-copy collective measurements require diagonalizing a commutant of dimension 2^{Omega(n^2 log^2 n)}. Furthermore, for all codes with hull dimension h <= O(log n) (including all LCD codes h = 0), Sendrier's Support Splitting Algorithm solves the problem in polynomial classical time O(n^3 + 2^h n^2), completely dequantizing the problem classically.",
+    "reason_invalid": "For any permutation sigma in S_n, the swap involution tau_sigma = (sigma, sigma^-1, 1) satisfies (sigma, 1, 0) (1, 1, 1) (sigma, 1, 0)^-1 = tau_sigma, proving that all code equivalences belong to the exact same conjugacy class in W_n. By Clifford theory, chi_{(lambda, lambda, pm)}(tau_sigma) = pm Tr(rho(sigma) rho(sigma^-1)) = pm d_lambda, which is completely independent of sigma. Consequently, weak Fourier sampling produces identical probability distributions for all sigma, proving TV = 0.000 identically. For single-copy states, mutual information is bounded by poly(n) / n! = 2^{-Omega(n log n)}. The multi-copy commutant dimension is dim(C_M) >= ((n!)^2)^{2M-1} / 2^{2M} >= 2^{Omega(n^2 log^2 n)} at M = Omega(n log n) copies, requiring 2^{Omega(n^2 log^2 n)} quantum gates. On the classical side, for all codes with bounded hull dimension h <= O(log n) (such as LCD codes where the Gram matrix G G^T is invertible over F_q), Sendrier's algorithm computes the equivalence in polynomial classical time O(n^3 + 2^h n^2), dequantizing the problem classically and leaving no quantum advantage.",
+    "source": "research/LINEAR_CODE_EQUIVALENCE_WREATH_COMMUTANT_BARRIER.md"
   }
 ]

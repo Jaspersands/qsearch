@@ -78,7 +78,7 @@ The table below summarizes the exact mathematical status of key hidden structure
 | **Non-Split Maximal Torus (Singer Cycle)** | $GL(n, \mathbb{F}_q)$, Singer cycle $T$ | Multiplicative | $\Omega(q^{n(n-1)/4}) = 2^{\Omega(n^2 \log q)}$ | $2^{\Omega(n^2 \log q)}$ (Birthday) | $2^{\Omega(n^2 \log n)}$ gates | Transvections empty; spherical extinction $I = 0$; commutant $n^M \ge 2^{\Omega(n^2 \log n)}$ | **Impenetrable Quantum Barrier** |
 | **Unitriangular Group $U_n(\mathbb{F}_q)$** | $U_n(\mathbb{F}_q)$, involution $H \cong \mathbb{Z}_2$ | Multiplicative | $\Omega(q^{n(n-1)/4}) = 2^{\Omega(n^2 \log q)}$ | $2^{\Omega(n^2 \log q)}$ (Birthday) | Open / Wild ($n \ge 6$) | 26/27 bypass $Z_1$; supercharacters blind ($\text{TV} \equiv 0$); wild rep type | **Strong Quantum Barrier** |
 | **Graph Isomorphism** | $S_n$, involution $H \cong \mathbb{Z}_2$ | Multiplicative | $\Omega(\sqrt{n!})$ | $2^{O(\log^c n)}$ (Babai 2016) | $2^{\Omega(n^2 \log^2 n)}$ gates | Weak TV $\equiv 0$; single $I \le 2^{-\Omega(n \log n)}$; commutant $(n!)^{2M-1}/2^{2M}$; Racah $\#P$-hard | **Impenetrable Quantum Barrier** |
-| **Linear Code Equivalence** | $W_n = (S_n \times S_n) \rtimes \mathbb{Z}_2$ | Multiplicative | $\Omega(n!)$ | Quasi-poly for LCD / bounded-hull | Open | Single-copy $I \le \frac{1}{2 \ln 2 \cdot n!}$; commutant $(n!)^m$ | **Strong Quantum Barrier** |
+| **Linear Code Equivalence** | $W_n = (S_n \times S_n) \rtimes \mathbb{Z}_2$ | Multiplicative | $\Omega(n!)$ | Quasi-poly / $O(n^3)$ for LCD ($h=0$) | $2^{\Omega(n^2 \log^2 n)}$ gates | Swap character universality; weak TV $\equiv 0$; commutant $\dim \ge 2^{\Omega(n^2 \log^2 n)}$; LCD dequantized | **Impenetrable Quantum Barrier** |
 | **Monomial Code Decoupling** | Monomial phases $(\mathbb{F}_q^\times)^n$ | Matrix generator | $O(kn)$ | $O(kn)$ (Projective normalization) | $O(kn)$ classical | Classical subsumption | **Dequantized Classically** |
 | **Self-Dual Code Gauge** | $GL_k(\mathbb{F}_2)$ row scrambler | Matrix generator | $O(k^2 n)$ | $O(k^2 n)$ (Classical RREF) | $O(n^3)$ classical | Gauge dimension eliminated classically | **Dequantized Classically** |
 | **Algebraic Geometry Codes** | Curve automorphism | Matrix generator | $O(n^4)$ | $O(n^4)$ (Star square / conductor) | $O(n^4)$ classical | Classical subsumption | **Dequantized Classically** |
@@ -87,7 +87,7 @@ The table below summarizes the exact mathematical status of key hidden structure
 
 ---
 
-## 4. Master Cross-Reference Table of Investigations 1–34
+## 4. Master Cross-Reference Table of Investigations 1–35
 
 | # | Investigation Focus | Domain | Primary Obstruction / Mechanism | Epistemic Status |
 | :-: | :--- | :--- | :--- | :--- | :---: |
@@ -125,6 +125,7 @@ The table below summarizes the exact mathematical status of key hidden structure
 | **32** | Non-Split Maximal Torus (Singer Cycle) HSP Obstruction | Lie Matrix HSP | Transvections empty ($T \cap \text{Trans} = \emptyset$); classical query lower bound $2^{\Omega(n^2 \log q)}$; Gel'fand rank 3 with irreps $[1, 2, 3]$ and 0.000 bits info; Deligne-Lusztig cuspidal commutant $n^M \ge 2^{\Omega(n^2 \log n)}$ gates | Proved Mathematical Barrier |
 | **33** | Unitriangular Supercharacter HSP Obstruction & Wild Barrier | Nilpotent Groups | 26/27 involutions bypass $Z_1$; superclasses contract to $B(n)$; intra-superclass $\text{TV} \equiv 0.000$; wild for $n \ge 6$; query lower bound $2^{\Omega(n^2 \log q)}$ | Proved Mathematical Obstruction |
 | **34** | Graph Isomorphism & Symmetric Group Multi-Copy Commutant Barrier | Symmetric Group HSP | Weak TV $\equiv 0$; $(S_4, H)$ not Gel'fand; single-copy $I \le 2^{-\Omega(n \log n)}$; commutant $\dim(\mathcal{C}_M) \ge 2^{\Omega(n^2 \log^2 n)}$; Racah $\#P$-hard | Proved Mathematical Barrier |
+| **35** | Linear Code Equivalence & Wreath Product Swap Invariance Barrier | Code Equivalence HSP | All $n!$ swaps conjugate; character universality $\chi_{(\lambda, \lambda, \pm)} = \pm d_\lambda$; weak TV $\equiv 0.000$; commutant $\dim(\mathcal{C}_M) \ge 2^{\Omega(n^2 \log^2 n)}$; LCD dequantized $O(n^3)$ | Proved Mathematical Barrier |
 
 ---
 

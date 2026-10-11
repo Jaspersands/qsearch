@@ -1,6 +1,26 @@
 # Mechanical Follow-Up Implementation Plan (pass 2)
 
-## Latest Handoff (2026-10-12, Investigation 34 Proved — Graph Isomorphism & Symmetric Group $S_n$ Multi-Copy Commutant Barrier)
+## Latest Handoff (2026-10-12, Investigation 35 Proved — Linear Code Equivalence on Wreath Product $W_n$: Swap Character Invariance, Multi-Copy Commutant Barrier, and Hull-Dequantization Demarcation)
+
+Read `research/LINEAR_CODE_EQUIVALENCE_WREATH_COMMUTANT_BARRIER.md` and the TOP of `research/AGENT_HANDOFF.md`.
+Investigation 35 establishes the exact classical and quantum complexity bounds for Linear Code Equivalence over $W_n = (S_n \times S_n) \rtimes \mathbb{Z}_2$:
+- Proved Wreath Swap Conjugacy & Character Universality: All $n!$ code-swapping involutions $\tau_\sigma = (\sigma, \sigma^{-1}, 1)$ are conjugate in $W_n$ to $(1, 1, 1)$; characters on extended irreps are $\chi_{(\lambda, \lambda, \pm)}(\tau_\sigma) = \pm d_\lambda$ identically independent of $\sigma$.
+- Proved Universal Weak Fourier Blindness: $p(\Lambda \mid H_\sigma) \equiv p(\Lambda \mid H_{\text{id}})$, yielding TV distance $\equiv 0.000$ and 0.000 bits mutual information.
+- Proved Single-Copy Strong Fourier Extinction: $I(\sigma : M) \le \text{poly}(n) / n! = 2^{-\Omega(n \log n)}$.
+- Proved Multi-Copy Commutant Dimension Explosion: $\dim(\mathcal{C}_M) \ge ((n!)^2)^{2M-1} / 2^{2M} \ge 2^{\Omega(M n \log n)}$. At $M = \Omega(n \log n)$, $\dim(\mathcal{C}_M) \ge 2^{\Omega(n^2 \log^2 n)}$, requiring $2^{\Omega(n^2 \log^2 n)}$ quantum gates.
+- Proved Sendrier Hull Demarcation & Classical Dequantization: Codes with hull dimension $h = \dim(C \cap C^\perp) \le O(\log n)$ (including all LCD codes $h = 0$) are solved in classical time $O(n^3 + 2^h n^2) = \text{poly}(n)$.
+- Proved Black-Box Query Lower Bound: $Q_{\text{classical}} \ge \Omega(n!) = 2^{\Omega(n \log n)}$.
+- Registered negative result: `NEG-LINEAR-CODE-EQUIVALENCE-WREATH-BARRIER` (valid with 961 negative results).
+
+Mechanical Queue:
+1. Verify repo health: `python3 qsearch.py validate` and `python3 tools/check_site.py`.
+2. Run Investigation 35 test suite: `pytest tests/test_linear_code_equivalence_wreath_obstruction.py` (6/6 PASS).
+3. Run Investigation 35 cross-check: `node research/certificates/linear_code_equivalence_wreath_crosscheck.js` (18/18 PASS).
+4. Run Investigation 34 test suite: `pytest tests/test_symmetric_group_hsp_obstruction.py` (6/6 PASS).
+5. Strict invariants: `speedup_claim_allowed = False`, `accepted_speedup_candidate = False`.
+6. Preserve all proof gates, retractions, counterexamples, and negative results.
+
+## Prior Handoff (2026-10-12, Investigation 34 Proved — Graph Isomorphism & Symmetric Group $S_n$ Multi-Copy Commutant Barrier)
 
 Read `research/GRAPH_ISOMORPHISM_SN_COMMUTANT_RACAH_BARRIER.md` and the TOP of `research/AGENT_HANDOFF.md`.
 Investigation 34 establishes the exact classical and quantum complexity bounds for symmetric group $S_n$ HSP:

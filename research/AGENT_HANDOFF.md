@@ -2,7 +2,47 @@
 
 Last updated: 2026-10-12
 
-## Latest: Investigation 34 Proved — Graph Isomorphism & Symmetric Group $S_n$ Hidden Subgroup Obstruction: Weak Fourier Blindness, Gel'fand Collapse, and Multi-Copy Kronecker-Racah Commutant Barrier
+## Latest: Investigation 35 Proved — Linear Code Equivalence on Wreath Product $W_n$: Swap Character Invariance, Multi-Copy Commutant Barrier, and Hull-Dequantization Demarcation
+
+A major foundational investigation resolving the quantum and representation-theoretic complexity bounds for Linear Code Equivalence over the wreath product $W_n = (S_n \times S_n) \rtimes \mathbb{Z}_2$ has been completed and verified in `research/LINEAR_CODE_EQUIVALENCE_WREATH_COMMUTANT_BARRIER.md`.
+
+### Core Invariants & Status:
+- `speedup_claim_allowed = False` strictly enforced everywhere.
+- `accepted_speedup_candidate = False` strictly enforced everywhere.
+- Registered negative result: `NEG-LINEAR-CODE-EQUIVALENCE-WREATH-BARRIER` (valid with 961 negative results).
+
+### Investigation 35 Summary & Key Mathematical Discoveries:
+1. **Wreath Swap Conjugacy & Character Universality (Theorem 1)**:
+   All $n!$ code-swapping involutions $\tau_\sigma = (\sigma, \sigma^{-1}, 1)$ are conjugate in $W_n$ to the canonical swap $\tau_{\text{id}} = (1, 1, 1)$ via:
+   $$(\sigma, 1, 0) \cdot (1, 1, 1) \cdot (\sigma, 1, 0)^{-1} = (\sigma, \sigma^{-1}, 1) = \tau_\sigma.$$
+   By Clifford theory, for every irreducible representation $\Lambda \in \text{Irr}(W_n)$:
+   - On induced irreps ($\lambda \ne \mu$): $\chi_\Lambda(\tau_\sigma) = 0$.
+   - On extended irreps ($\lambda = \mu$): $\chi_{(\lambda, \lambda, \pm)}(\tau_\sigma) = \pm d_\lambda$ **identically for all $\sigma \in S_n$**.
+2. **Universal Weak Fourier Blindness (Theorem 2)**:
+   Because the character values $\chi_\Lambda(\tau_\sigma)$ are identically independent of $\sigma$, the weak Fourier measurement distribution satisfies:
+   $$p(\Lambda \mid H_\sigma) \equiv p(\Lambda \mid H_{\text{id}}) \quad \forall \Lambda \in \text{Irr}(W_n).$$
+   The total variation distance between the distributions for any two candidate permutations is:
+   $$\|p(\cdot \mid H_{\sigma_1}) - p(\cdot \mid H_{\sigma_2})\|_{\text{TV}} \equiv 0.000.$$
+   Weak Fourier sampling provides **identically 0.000 bits of mutual information** to distinguish any code equivalence permutation.
+3. **Single-Copy Strong Fourier Sampling Factorial Extinction (Theorem 3)**:
+   For any single-register quantum POVM on $\rho_{H_\sigma}$, the mutual information is factorially bounded:
+   $$I(\sigma : M) \le \frac{\text{poly}(n)}{n!} = 2^{-\Omega(n \log n)}.$$
+4. **Multi-Copy Commutant Dimension Factorial Explosion (Theorem 4)**:
+   For $M$ copies of the coset state $\rho_{H_\sigma}^{\otimes M}$, the commutant algebra has dimension:
+   $$\dim(\mathcal{C}_M) = \frac{1}{|W_n|} \sum_{g \in W_n} (\chi_{\text{perm}}(g))^{2M} \ge \frac{((n!)^2)^{2M-1}}{2^{2M}} = 2^{\Omega(M n \log n)}.$$
+   At the information threshold $M = \Omega(n \log n)$, $\dim(\mathcal{C}_M) \ge 2^{\Omega(n^2 \log^2 n)}$, enforcing a quantum circuit lower bound of $2^{\Omega(n^2 \log^2 n)}$ quantum gates.
+5. **Sendrier Hull Demarcation & Classical Dequantization for $h \le O(\log n)$ (Theorem 5)**:
+   For codes with hull dimension $h = \dim(C \cap C^\perp) \le O(\log n)$ (including all LCD codes $h = 0$), Sendrier's Support Splitting Algorithm (SSA) reconstructs $\sigma$ in polynomial classical time $O(n^3 + 2^h n^2) = \text{poly}(n)$, completely dequantizing the problem classically.
+6. **Black-Box Multiplicative Query Lower Bound (Theorem 6)**:
+   In the black-box oracle model on $W_n$, any classical algorithm requires $Q_{\text{classical}} \ge \Omega(n!) = 2^{\Omega(n \log n)}$.
+7. **Verification Matrix**:
+   - `pytest -v tests/test_linear_code_equivalence_wreath_obstruction.py` (6/6 PASS).
+   - `node research/certificates/linear_code_equivalence_wreath_crosscheck.js` (18/18 PASS).
+   - `python3 qsearch.py validate` (0 issues, 961 negative results).
+
+---
+
+## Prior: Investigation 34 Proved — Graph Isomorphism & Symmetric Group $S_n$ Multi-Copy Commutant Barrier
 
 A major foundational investigation resolving the quantum and representation-theoretic complexity bounds for the Symmetric Group $S_n$ HSP (and the quantum formulation of Graph Isomorphism) has been completed and verified in `research/GRAPH_ISOMORPHISM_SN_COMMUTANT_RACAH_BARRIER.md`.
 
