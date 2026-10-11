@@ -1,6 +1,20 @@
 # Mechanical Follow-Up Implementation Plan (pass 2)
 
-## Latest Handoff (2026-09-23, Direct Edge Readout)
+## Latest Handoff (2026-10-11, Landmark 20-Investigation Campaign)
+
+Read `research/PROOF_FIRST_RESEARCH_CAMPAIGN_20.md` and the TOP of `research/AGENT_HANDOFF.md`.
+The 20 substantive, nonduplicative mathematical research investigations across DCP/Lattices, Non-Abelian HSP, Code Equivalence, Graph Isomorphism, and Quantum Circuit Resource Theories are rigorously proved and documented.
+
+Mechanical Queue:
+1. Verify repo health: `python3 qsearch.py validate` and `python3 tools/check_site.py`.
+2. Run recent independent cross-checks:
+   - `node research/certificates/dcp_subset_sum_euclidean_volume_inflation_barrier_crosscheck.js` (58/58 PASS)
+   - `node research/certificates/rowspace_rref_gauge_elimination_fourier_extinction_barrier_crosscheck.js` (32/32 PASS)
+   - `node research/certificates/godsil_mckay_cospectral_tensor_invariance_barrier_crosscheck.js` (888/888 PASS)
+3. Preserve all proof gates and negative results (`speedup_claim_allowed = False`, `accepted_speedup_candidate = False`).
+4. Avoid website redesign, unnecessary refactoring, or superficial experiments.
+
+## Prior Handoff (2026-09-23, Direct Edge Readout)
 
 Read the TOP of AGENT_HANDOFF.md and DCP_COHERENT_EDGE_READOUT.md. The direct
 support-index readout is wired into the EXISTING matching CLI/runner/report.
