@@ -20454,6 +20454,24 @@ def command_godsil_mckay_cospectral_tensor_invariance_barrier(args: argparse.Nam
     return 0 if validation["valid"] else 1
 
 
+def command_rowspace_rref_gauge_elimination_fourier_extinction_barrier(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    import json
+    from theorems.rowspace_rref_gauge_elimination_fourier_extinction_barrier import REPORT, build_report, register_negative_result
+    report = build_report()
+    REPORT.parent.mkdir(parents=True, exist_ok=True)
+    with open(REPORT, "w", encoding="utf-8") as f:
+        json.dump(report, f, indent=2)
+    if not getattr(args, "no_registry", False):
+        register_negative_result()
+    validation = validate_registry()
+    print("rowspace_rref_gauge_elimination_fourier_extinction_barrier complete")
+    print(f"Artifact: {REPORT}")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -28191,6 +28209,13 @@ def build_parser() -> argparse.ArgumentParser:
     )
     godsil_mckay_cospectral_tensor_invariance_barrier.add_argument("--no-registry", action="store_true")
     godsil_mckay_cospectral_tensor_invariance_barrier.set_defaults(func=command_godsil_mckay_cospectral_tensor_invariance_barrier)
+
+    rowspace_rref_gauge_elimination_fourier_extinction_barrier = subparsers.add_parser(
+        "rowspace-rref-gauge-elimination-fourier-extinction-barrier",
+        help="Run rowspace RREF gauge elimination and self-dual code equivalence Fourier extinction barrier audit.",
+    )
+    rowspace_rref_gauge_elimination_fourier_extinction_barrier.add_argument("--no-registry", action="store_true")
+    rowspace_rref_gauge_elimination_fourier_extinction_barrier.set_defaults(func=command_rowspace_rref_gauge_elimination_fourier_extinction_barrier)
 
     validate = subparsers.add_parser("validate", help="Validate candidates and experiments against proof obligations.")
     validate.set_defaults(func=command_validate)

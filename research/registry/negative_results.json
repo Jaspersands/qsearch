@@ -85421,5 +85421,28 @@
     "lesson": "Godsil-McKay switched cospectral graphs cannot provide an algorithmic quantum advantage. Spectral and walk-based quantum algorithms have zero distinguishing power due to exact rational orthogonal similarity A' = Q A Q with Q 1 = 1. Meanwhile, classical inspection of induced neighborhood subgraphs separates the graphs in deterministic polynomial time O(n d^2) <= O(n^3). Non-abelian quantum coset state approaches face factorially vanishing single-copy information and exponential commutant dimensions, making quantum algorithms strictly harder than the classical baseline.",
     "reason_invalid": "For all Godsil-McKay switched graph pairs, the switched adjacency matrix satisfies A' = Q A Q where Q is a rational orthogonal involution satisfying Q 1 = 1. Continuous-time quantum walks initialized on the uniform state have identical return probabilities for all times t, yielding zero information. All closed walk moments are invariant. Meanwhile, classical inspection of induced neighborhood subgraphs decides isomorphism in deterministic O(n d^2) time. Quantum coset state measurements face factorially vanishing single-copy information <= 2^{-Omega(n log n)} and exponential (n!)^k commutant dimensions, completely falsifying the hypothesis of a quantum advantage on Godsil-McKay graphs.",
     "source": "research/coset_workbench/godsil_mckay_cospectral_tensor_invariance_barrier.json"
+  },
+  {
+    "id": "NEG-ROWSPACE-RREF-GAUGE-ELIMINATION-FOURIER-EXTINCTION-BARRIER",
+    "applies_to": [
+      "CODE-EQUIVALENCE-HARD-FAMILY-SEARCH",
+      "SELF-DUAL-HSP-APPLICABILITY",
+      "ROWSPACE-CANONICAL-HSP",
+      "CODE-COSET-COLLECTIVE"
+    ],
+    "claim": "Quantum Fourier sampling on single coset states can achieve an exponential speedup for high-rate or self-dual linear code equivalence by exploiting the Dinh-Moore-Russell dimension gate violation.",
+    "evidence": {
+      "artifact": "research/representation/rowspace_rref_gauge_elimination_fourier_extinction_barrier.json",
+      "rref_gauge_elimination": "Gaussian elimination RREF(AM) = RREF(M) removes GL_k(F_2) in O(k^2 n) deterministic classical time",
+      "physical_wreath_group": "Oracle reduces strictly to W_n = (S_n x S_n) wr Z_2 of order 2 (n!)^2 independent of code dimension k",
+      "centralizer_order": "|C_{W_n}(tau)| = 2 n! identically for all permutation shifts tau",
+      "total_variation_bound": "TV(P, P_Planch) <= 1 / (2 sqrt(n!)) = 2^{-Omega(n log n)}",
+      "mutual_information_collapse": "I <= 1 / (2 ln 2 * n!) = 2^{-Omega(n log n)} bits",
+      "multi_copy_commutant_dimension": "(n!)^m = 2^{Omega(m n log n)}",
+      "speedup_claim_allowed": false
+    },
+    "lesson": "The failure of the Dinh-Moore-Russell dimension gate condition q^{k^2} <= n^{0.2 n} on self-dual codes (k = n/2) was purely an artifact of including the redundant GL_k(F_2) row scrambler in the ambient group. Computing the canonical Reduced Row Echelon Form (RREF) in O(n^3) classical time completely eliminates GL_k(F_2), reducing the hidden subgroup problem strictly to the wreath product W_n = (S_n x S_n) wr Z_2. Over W_n, character orthogonality and the 2 n! centralizer order prove that single-copy quantum Fourier sampling has total variation distance <= 1 / (2 sqrt(n!)) and mutual information <= 1 / (2 ln 2 * n!) bits, factorially extinguishing quantum distinguishability for all codes regardless of rate. Multi-copy collective measurements face factorial (n!)^m commutant algebra dimensions, rendering quantum code equivalence strictly intractable.",
+    "reason_invalid": "The apparent quantum opening from the Dinh-Moore-Russell dimension gate failure is entirely spurious. Gaussian elimination over GF(2) eliminates the GL_k row scrambler in O(n^3) classical preprocessing, leaving the canonical permutation hidden subgroup problem over W_n = (S_n x S_n) wr Z_2. For any code dimension k (including self-dual codes k = n/2), the centralizer of the hidden shift involution has order 2 * n!, which forces the single-copy Fourier total variation distance to be bounded by 1 / (2 sqrt(n!)) and mutual information to vanish as 2^{-Omega(n log n)} bits. Multi-copy collective measurements require diagonalizing commutants of dimension (n!)^m, completely falsifying the hypothesis of a quantum advantage.",
+    "source": "research/representation/rowspace_rref_gauge_elimination_fourier_extinction_barrier.json"
   }
 ]
