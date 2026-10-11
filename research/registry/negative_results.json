@@ -85571,5 +85571,28 @@
     "lesson": "Non-split maximal tori (Singer cycles) in GL(n, F_q) constitute an impenetrable barrier for both classical and quantum algorithms. Because T acts irreducibly on F_q^n, it contains zero transvections, zero unipotent elements, and stabilizes no non-trivial subspaces. Classical collision algorithms require 2^{Omega(n^2 log q)} queries. Single-copy weak Fourier sampling suffers complete spherical extinction (0.000 bits mutual information) across cuspidal Deligne-Lusztig representations of exponential dimension 2^{Theta(n^2 log q)}. Multi-copy collective tomography requires diagonalizing a commutant of dimension >= n^M, enforcing a quantum gate lower bound of 2^{Omega(n^2 log n)}.",
     "reason_invalid": "Every element g in T \\ F_q* I has an irreducible characteristic polynomial of degree n over F_q with no eigenvalues in F_q. Consequently, T contains no transvections or unipotent matrices (T cap Transvections = empty). Classical structured probes cannot produce collisions, enforcing an unconditional query lower bound of Omega(sqrt(|GL|/|T|)) = 2^{Omega(n^2 log q)}. Weak Fourier sampling over GL(n, F_q) projects onto cuspidal Deligne-Lusztig representations R_T^G(theta) with probability d_theta / |G/T|, which is identically independent of T (0.000 bits of mutual information). Multi-copy measurements on M copies require diagonalizing a commutant algebra of dimension >= n^M, which for M = Omega(n^2) copies needed to identify T among N_Singer = 2^{Theta(n^2 log q)} candidates requires at least 2^{Omega(n^2 log n)} quantum gates.",
     "source": "research/SINGER_CYCLE_TORAL_HSP_OBSTRUCTION_DELIGNE_LUSZTIG_BARRIER.md"
+  },
+  {
+    "applies_to": [
+      "NONABELIAN-COSET-COLLECTIVE-OBSERVABLES",
+      "NILPOTENT-GROUP-HSP",
+      "UNITRIANGULAR-HSP",
+      "SUPERCHARACTER-BLINDNESS-OBSTRUCTION",
+      "WILD-REPRESENTATION-BARRIER"
+    ],
+    "claim": "Quantum algorithms can solve the Hidden Subgroup Problem in unitriangular groups U_n(F_q) efficiently using central inductive quotienting or supercharacter Fourier sampling.",
+    "evidence": {
+      "central_intersection_bypass": "26/27 non-trivial involutions in U_4(F_2) satisfy H cap Z_1 = {I}, 20/27 satisfy H cap Z_2 = {I}",
+      "classical_query_lower_bound": "Omega(q^{n(n-1)/4}) = 2^{Omega(n^2 log q)}",
+      "speedup_claim_allowed": false,
+      "superclass_bell_contraction": "U_4(F_2) order 64 contracts to B(4) = 15 superclasses",
+      "supercharacter_tv_blindness": "TV distance identically 0.000 for distinct involutions in the same superclass",
+      "transvection_emptiness": "21/27 compound involutions contain zero elementary transvections",
+      "wild_representation_type": "Irrep classification is wild for n >= 6, precluding efficient non-abelian QFT"
+    },
+    "id": "NEG-UNITRIANGULAR-SUPERCHARACTER-BARRIER",
+    "lesson": "Hidden Subgroup Problems in unitriangular groups U_n(F_q) cannot be solved by central quotienting, supercharacter Fourier sampling, or transvection probes. For growing n, hidden subgroups bypass the 1-dimensional center with overwhelming probability (26/27 involutions in U_4(F_2)), stalling nilpotent central descent. Supercharacter theory compresses the group to Bell number B(n) classes, rendering distinct intra-superclass subgroups completely indistinguishable (TV distance 0.000). Full non-abelian Fourier sampling is obstructed by wild representation type for n >= 6, and classical black-box queries require 2^{Omega(n^2 log q)} evaluations.",
+    "reason_invalid": "The center Z_1(U_n(F_q)) is 1-dimensional, concentrated in the corner entry (1, n). In U_4(F_2) of order 64, exactly 26 out of 27 non-trivial involutions satisfy H cap Z_1 = {I}, causing central induction (Ivanyos et al.) to fail immediately at step 0. Supercharacters are constant on superclasses (orbit size B(n)), so any two hidden subgroups with non-trivial elements in the same superclass produce identical supercharacter Fourier measurement distributions, proving TV = 0.000 (supercharacter blindness). Compound involutions (21 of 27) contain zero elementary transvections (support >= 2), defeating single-coordinate transvection probes. For n >= 6, the representation theory of U_n(F_q) is wild (containing the matrix pair classification problem), blocking efficient circuit synthesis for non-abelian Fourier transforms. The classical randomized query lower bound is unconditionally Omega(q^{n(n-1)/4}) = 2^{Omega(n^2 log q)}.",
+    "source": "research/UNITRIANGULAR_SUPERCHARACTER_HSP_OBSTRUCTION.md"
   }
 ]

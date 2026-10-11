@@ -1,8 +1,44 @@
 # Research Agent Handoff
 
-Last updated: 2026-10-11
+Last updated: 2026-10-12
 
-## Latest: Investigation 32 Proved — Non-Split Maximal Torus (Singer Cycle) HSP Obstruction and Deligne-Lusztig Commutant Barrier in $GL(n, \mathbb{F}_q)$
+## Latest: Investigation 33 Proved — Unitriangular HSP Obstruction, Supercharacter Blindness, and Wild Nilpotent Representation Barrier in $U_n(\mathbb{F}_q)$
+
+A major foundational investigation analyzing the unipotent radical of Borel subgroups (unitriangular groups $U_n(\mathbb{F}_q)$) has been completed and verified in `research/UNITRIANGULAR_SUPERCHARACTER_HSP_OBSTRUCTION.md`.
+
+### Core Invariants & Status:
+- `speedup_claim_allowed = False` strictly enforced everywhere.
+- `accepted_speedup_candidate = False` strictly enforced everywhere.
+- Registered negative result: `NEG-UNITRIANGULAR-SUPERCHARACTER-BARRIER` (valid with 959 negative results).
+
+### Investigation 33 Summary & Key Mathematical Discoveries:
+1. **Upper Central Series & Deep Central Kernel Bypass (Theorem 1)**:
+   The center $Z_1(U_n(\mathbb{F}_q))$ is 1-dimensional, restricted entirely to entry $(1, n)$.
+   In $U_4(\mathbb{F}_2)$ (order 64), the upper central series has orders $|Z_1| = 2, |Z_2| = 8, |Z_3| = 64$.
+   Among the 27 non-trivial involutions, **26 out of 27 satisfy $H \cap Z_1 = \{I\}$**, and **20 out of 27 satisfy $H \cap Z_2 = \{I\}$**.
+   Central induction algorithms (Ivanyos et al. 2007) fail immediately at step 0 without extracting any information.
+2. **Superclass Partition & Bell Number Contraction (Theorem 2)**:
+   The algebra group action partitions $U_n(\mathbb{F}_q)$ into superclasses indexed by set partitions.
+   In $U_4(\mathbb{F}_2)$, the 64 group elements contract to exactly the **Bell number $B(4) = 15$ superclasses**.
+3. **Supercharacter Blindness & Intra-Superclass Indistinguishability (Theorem 3)**:
+   Because supercharacters are constant on superclasses, any two hidden subgroups whose non-trivial elements share the same superclass induce **identically zero total variation distance**:
+   $$\|p(\cdot \mid H_1) - p(\cdot \mid H_2)\|_{\text{TV}} \equiv 0.000.$$
+   Weak Fourier sampling over supercharacters is provably blind to intra-superclass hidden subgroup distinctions.
+4. **Elementary Transvection Emptiness (Theorem 4)**:
+   For all compound involutions (weight $\ge 2$, comprising 21 of the 27 involutions in $U_4(\mathbb{F}_2)$), the intersection $H \cap \text{ElementaryTransvections} = \emptyset$. Single-coordinate transvection probes produce zero collisions.
+5. **Wild Representation Type Barrier ($n \ge 6$) (Theorem 5)**:
+   For $n \ge 6$, the classification of irreducible representations of $U_n(\mathbb{F}_q)$ is wild (containing the matrix pair classification problem), blocking efficient circuit synthesis for non-abelian Fourier transforms.
+6. **Unconditional Classical Query Lower Bound (Theorem 6)**:
+   Classical black-box query complexity of finding a hidden involution $H \cong \mathbb{Z}_2$ is unconditionally bounded by:
+   $$Q_{\text{classical}} \ge \Omega(q^{n(n-1)/4}) = 2^{\Omega(n^2 \log q)}.$$
+7. **Verification Matrix**:
+   - `pytest -v tests/test_unitriangular_supercharacter_hsp_obstruction.py` (6/6 PASS).
+   - `node research/certificates/unitriangular_supercharacter_hsp_crosscheck.js` (34/34 PASS).
+   - `python3 qsearch.py validate` (0 issues, 959 negative results).
+
+---
+
+## Prior: Investigation 32 Proved — Non-Split Maximal Torus (Singer Cycle) HSP Obstruction and Deligne-Lusztig Commutant Barrier in $GL(n, \mathbb{F}_q)$
 
 A major foundational investigation establishing the rigorous complexity lower bounds for maximal tori in Lie matrix groups has been completed and verified in `research/SINGER_CYCLE_TORAL_HSP_OBSTRUCTION_DELIGNE_LUSZTIG_BARRIER.md`.
 

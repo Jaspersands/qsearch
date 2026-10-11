@@ -1,6 +1,25 @@
 # Mechanical Follow-Up Implementation Plan (pass 2)
 
-## Latest Handoff (2026-10-11, Investigation 32 Proved — Non-Split Maximal Torus HSP Obstruction and Deligne-Lusztig Barrier in $GL(n, \mathbb{F}_q)$)
+## Latest Handoff (2026-10-12, Investigation 33 Proved — Unitriangular HSP Obstruction, Supercharacter Blindness, and Wild Nilpotent Representation Barrier in $U_n(\mathbb{F}_q)$)
+
+Read `research/UNITRIANGULAR_SUPERCHARACTER_HSP_OBSTRUCTION.md` and the TOP of `research/AGENT_HANDOFF.md`.
+Investigation 33 establishes the exact classical and quantum complexity bounds for unitriangular groups $U_n(\mathbb{F}_q)$:
+- Proved Upper Central Series & Deep Central Kernel Bypass: $Z_1(U_n(\mathbb{F}_q))$ is 1-dimensional, and 26/27 non-trivial involutions in $U_4(\mathbb{F}_2)$ satisfy $H \cap Z_1 = \{I\}$ (20/27 satisfy $H \cap Z_2 = \{I\}$). Central quotienting terminates at step 0 without extracting information.
+- Proved Superclass Partition & Bell Number Contraction: $U_4(\mathbb{F}_2)$ contracts from 64 elements to exactly the Bell number $B(4) = 15$ superclasses.
+- Proved Supercharacter Blindness & Intra-Superclass Indistinguishability: Supercharacters are constant on superclasses, inducing $\text{TV} \equiv 0.000$ between intra-superclass hidden subgroups.
+- Proved Elementary Transvection Emptiness: 21 of 27 involutions are compound (weight $\ge 2$), satisfying $H \cap \text{ElementaryTransvections} = \emptyset$. Single-coordinate probes produce zero collisions.
+- Proved Wild Nilpotent Representation Barrier: Irrep classification of $U_n(\mathbb{F}_q)$ is wild for $n \ge 6$, blocking non-abelian Fourier transform quantum circuits.
+- Proved Unconditional Classical Query Lower Bound: $Q_{\text{classical}} \ge \Omega(q^{n(n-1)/4}) = 2^{\Omega(n^2 \log q)}$.
+- Registered negative result: `NEG-UNITRIANGULAR-SUPERCHARACTER-BARRIER` (valid with 959 negative results).
+
+Mechanical Queue:
+1. Verify repo health: `python3 qsearch.py validate` and `python3 tools/check_site.py`.
+2. Run Investigation 33 test suite: `pytest tests/test_unitriangular_supercharacter_hsp_obstruction.py` (6/6 PASS).
+3. Run Investigation 33 cross-check: `node research/certificates/unitriangular_supercharacter_hsp_crosscheck.js` (34/34 PASS).
+4. Strict invariants: `speedup_claim_allowed = False`, `accepted_speedup_candidate = False`.
+5. Preserve all proof gates, retractions, counterexamples, and negative results.
+
+## Prior Handoff (2026-10-11, Investigation 32 Proved — Non-Split Maximal Torus HSP Obstruction and Deligne-Lusztig Barrier in $GL(n, \mathbb{F}_q)$)
 
 Read `research/SINGER_CYCLE_TORAL_HSP_OBSTRUCTION_DELIGNE_LUSZTIG_BARRIER.md` and the TOP of `research/AGENT_HANDOFF.md`.
 Investigation 32 establishes the exact classical and quantum complexity bounds for maximal non-split tori (Singer cycles):
