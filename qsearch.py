@@ -20471,6 +20471,24 @@ def command_rowspace_rref_gauge_elimination_fourier_extinction_barrier(args: arg
     return 0 if validation["valid"] else 1
 
 
+def command_dcp_subset_sum_euclidean_volume_inflation_barrier(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    import json
+    from theorems.dcp_subset_sum_euclidean_volume_inflation_barrier import REPORT, build_report, register_negative_result
+    report = build_report()
+    REPORT.parent.mkdir(parents=True, exist_ok=True)
+    with open(REPORT, "w", encoding="utf-8") as f:
+        json.dump(report, f, indent=2)
+    if not getattr(args, "no_registry", False):
+        register_negative_result()
+    validation = validate_registry()
+    print("dcp_subset_sum_euclidean_volume_inflation_barrier complete")
+    print(f"Artifact: {REPORT}")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+
 
 
 
@@ -28216,6 +28234,13 @@ def build_parser() -> argparse.ArgumentParser:
     )
     rowspace_rref_gauge_elimination_fourier_extinction_barrier.add_argument("--no-registry", action="store_true")
     rowspace_rref_gauge_elimination_fourier_extinction_barrier.set_defaults(func=command_rowspace_rref_gauge_elimination_fourier_extinction_barrier)
+
+    dcp_subset_sum_euclidean_volume_inflation_barrier = subparsers.add_parser(
+        "dcp-subset-sum-euclidean-volume-inflation-barrier",
+        help="Run density-one subset-sum Euclidean volume inflation and BDD multiplicity barrier audit.",
+    )
+    dcp_subset_sum_euclidean_volume_inflation_barrier.add_argument("--no-registry", action="store_true")
+    dcp_subset_sum_euclidean_volume_inflation_barrier.set_defaults(func=command_dcp_subset_sum_euclidean_volume_inflation_barrier)
 
     validate = subparsers.add_parser("validate", help="Validate candidates and experiments against proof obligations.")
     validate.set_defaults(func=command_validate)

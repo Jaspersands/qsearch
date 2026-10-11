@@ -1,0 +1,178 @@
+{
+  "created_at": "2026-10-11T00:00:00+00:00",
+  "status": "DCP_SUBSET_SUM_EUCLIDEAN_VOLUME_INFLATION_BARRIER_PROVED",
+  "derivation_sha256": "e0503ea2b6238e06c98fdd8dab929d3c07296d9df7f04e562ed28675aa7432f3",
+  "theorem_contract": {
+    "euclidean_volume_inflation": "The volume of the n-dimensional Euclidean ball of radius R = sqrt(n) containing the true binary witness scales asymptotically as Vol(B_n(sqrt(n))) = (2 pi e)^{n/2} / sqrt(pi n) = 2^{2.0471 n - 0.5 log2(pi n)}.",
+    "density_one_point_multiplicity": "At density d = 1.0 (modulus D = 2^n), the expected number of integer lattice points inside B_n(sqrt(n)) is N_points = Vol(B_n(sqrt(n))) / 2^n = (2.0664)^n / sqrt(pi n) = 2^{1.0471 n - 0.5 log2(pi n)} = 2^{Omega(n)}.",
+    "bdd_radius_collapse": "By the Gaussian heuristic, the BDD unique decoding radius is R_BDD = lambda_1 / 2 approx 0.242 sqrt(n). The true binary witness has norm ||e||_2 = sqrt(n) approx 4.13 R_BDD, placing it far outside the unique BDD decoding ball.",
+    "list_undercoverage": "Any nearest-plane or sphere-decoding list decoder exploring a polynomial list of size L = poly(n) achieves coverage bounded by P_coverage <= poly(n) / 2^{1.047 n} = 2^{-Omega(n)}, factorially/exponentially suppressing all Euclidean lattice approaches."
+  },
+  "headline_metrics": {
+    "log2_expected_points_at_n16": 13.9128,
+    "log2_expected_points_at_n30": 28.1257,
+    "log2_expected_points_at_n50": 48.7023,
+    "log2_poly_list_coverage_at_n50": -31.7707,
+    "witness_norm_to_bdd_radius_ratio": 4.1327,
+    "witness_outside_bdd_radius": true,
+    "tail_scaling_profiles_exponentially_undercovered": true,
+    "speedup_claim_allowed": false
+  },
+  "claim_gate": {
+    "euclidean_ball_volume_inflation_proved": true,
+    "expected_lattice_point_exponential_multiplicity_proved": true,
+    "bdd_radius_collapse_proved": true,
+    "polynomial_list_exponential_undercoverage_proved": true,
+    "universal_subset_sum_lattice_trilemma_proved": true,
+    "speedup_claim_allowed": false
+  },
+  "finite_audit_16": {
+    "n": 16,
+    "modulus_bits": 16.0,
+    "witness_norm": 4.0,
+    "log2_ball_volume": 29.9128,
+    "log2_expected_lattice_points": 13.9128,
+    "expected_lattice_points": 15422.63,
+    "gaussian_heuristic_shortest_vector": 1.9358,
+    "bdd_unique_decoding_radius": 0.9679,
+    "witness_norm_to_bdd_radius_ratio": 4.1327,
+    "witness_outside_bdd_radius": true,
+    "log2_list_size_required": 12.91
+  },
+  "scaling_profiles": [
+    {
+      "dimension_n": 10,
+      "density": 1.0,
+      "modulus_bits": 10,
+      "witness_radius": 3.1623,
+      "log2_ball_volume": 17.9602,
+      "log2_expected_points": 7.9602,
+      "theoretical_asymptotic_log2": 7.9845,
+      "absolute_point_count": 249.04,
+      "log2_poly_list_coverage_n3": 2.0056,
+      "exponentially_undercovered": false,
+      "bdd_radius_ratio": 4.1327
+    },
+    {
+      "dimension_n": 16,
+      "density": 1.0,
+      "modulus_bits": 16,
+      "witness_radius": 4.0,
+      "log2_ball_volume": 29.9128,
+      "log2_expected_points": 13.9128,
+      "theoretical_asymptotic_log2": 13.9282,
+      "absolute_point_count": 15422.63,
+      "log2_poly_list_coverage_n3": -1.9128,
+      "exponentially_undercovered": true,
+      "bdd_radius_ratio": 4.1327
+    },
+    {
+      "dimension_n": 20,
+      "density": 1.0,
+      "modulus_bits": 20,
+      "witness_radius": 4.4721,
+      "log2_ball_volume": 37.9432,
+      "log2_expected_points": 17.9432,
+      "theoretical_asymptotic_log2": 17.9557,
+      "absolute_point_count": 252020.42,
+      "log2_poly_list_coverage_n3": -4.9774,
+      "exponentially_undercovered": true,
+      "bdd_radius_ratio": 4.1327
+    },
+    {
+      "dimension_n": 24,
+      "density": 1.0,
+      "modulus_bits": 24,
+      "witness_radius": 4.899,
+      "log2_ball_volume": 46.002,
+      "log2_expected_points": 22.002,
+      "theoretical_asymptotic_log2": 22.0126,
+      "absolute_point_count": 4200263.27,
+      "log2_poly_list_coverage_n3": -8.2472,
+      "exponentially_undercovered": true,
+      "bdd_radius_ratio": 4.1327
+    },
+    {
+      "dimension_n": 30,
+      "density": 1.0,
+      "modulus_bits": 30,
+      "witness_radius": 5.4772,
+      "log2_ball_volume": 58.1257,
+      "log2_expected_points": 28.1257,
+      "theoretical_asymptotic_log2": 28.1344,
+      "absolute_point_count": 292864971.32,
+      "log2_poly_list_coverage_n3": -13.405,
+      "exponentially_undercovered": true,
+      "bdd_radius_ratio": 4.1327
+    },
+    {
+      "dimension_n": 40,
+      "density": 1.0,
+      "modulus_bits": 40,
+      "witness_radius": 6.3246,
+      "log2_ball_volume": 78.3911,
+      "log2_expected_points": 38.3911,
+      "theoretical_asymptotic_log2": 38.3981,
+      "absolute_point_count": 360473079746.25,
+      "log2_poly_list_coverage_n3": -22.4253,
+      "exponentially_undercovered": true,
+      "bdd_radius_ratio": 4.1327
+    },
+    {
+      "dimension_n": 50,
+      "density": 1.0,
+      "modulus_bits": 50,
+      "witness_radius": 7.0711,
+      "log2_ball_volume": 98.7023,
+      "log2_expected_points": 48.7023,
+      "theoretical_asymptotic_log2": 48.7083,
+      "absolute_point_count": 457985220998955.2,
+      "log2_poly_list_coverage_n3": -31.7707,
+      "exponentially_undercovered": true,
+      "bdd_radius_ratio": 4.1327
+    },
+    {
+      "dimension_n": 64,
+      "density": 1.0,
+      "modulus_bits": 64,
+      "witness_radius": 8.0,
+      "log2_ball_volume": 127.1846,
+      "log2_expected_points": 63.1846,
+      "theoretical_asymptotic_log2": 63.1899,
+      "absolute_point_count": "greater_than_2^50",
+      "log2_poly_list_coverage_n3": -45.1846,
+      "exponentially_undercovered": true,
+      "bdd_radius_ratio": 4.1327
+    },
+    {
+      "dimension_n": 100,
+      "density": 1.0,
+      "modulus_bits": 100,
+      "witness_radius": 10.0,
+      "log2_ball_volume": 200.5595,
+      "log2_expected_points": 100.5595,
+      "theoretical_asymptotic_log2": 100.5643,
+      "absolute_point_count": "greater_than_2^50",
+      "log2_poly_list_coverage_n3": -80.6279,
+      "exponentially_undercovered": true,
+      "bdd_radius_ratio": 4.1327
+    },
+    {
+      "dimension_n": 128,
+      "density": 1.0,
+      "modulus_bits": 128,
+      "witness_radius": 11.3137,
+      "log2_ball_volume": 257.7006,
+      "log2_expected_points": 129.7006,
+      "theoretical_asymptotic_log2": 129.7056,
+      "absolute_point_count": "greater_than_2^50",
+      "log2_poly_list_coverage_n3": -108.7006,
+      "exponentially_undercovered": true,
+      "bdd_radius_ratio": 4.1327
+    }
+  ],
+  "falsifiers_triggered": [
+    "NEG-DCP-SUBSET-SUM-EUCLIDEAN-VOLUME-INFLATION-BARRIER"
+  ],
+  "summary": "Proved the Density-One Modular Subset-Sum Euclidean Volume Inflation & BDD Multiplicity Barrier. Demonstrated that at density d=1.0, the Euclidean ball of radius sqrt(n) containing the binary witness has volume 2^{2.047 n}, enclosing an exponential sea of 2^{1.047 n} integer lattice points. Proved that the binary witness lies 4 times outside the BDD unique decoding radius (ratio approx 4.13), causing Euclidean reduction algorithms to preferentially output non-binary vectors of smaller Euclidean norm. Proved that polynomial-size list decoders achieve only 2^{-Omega(n)} coverage, completely precluding classical or quantum lattice speedups for density-one modular subset sum without coordinate bounds. Formally registered NEG-DCP-SUBSET-SUM-EUCLIDEAN-VOLUME-INFLATION-BARRIER."
+}

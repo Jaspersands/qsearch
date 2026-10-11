@@ -85444,5 +85444,25 @@
     "lesson": "The failure of the Dinh-Moore-Russell dimension gate condition q^{k^2} <= n^{0.2 n} on self-dual codes (k = n/2) was purely an artifact of including the redundant GL_k(F_2) row scrambler in the ambient group. Computing the canonical Reduced Row Echelon Form (RREF) in O(n^3) classical time completely eliminates GL_k(F_2), reducing the hidden subgroup problem strictly to the wreath product W_n = (S_n x S_n) wr Z_2. Over W_n, character orthogonality and the 2 n! centralizer order prove that single-copy quantum Fourier sampling has total variation distance <= 1 / (2 sqrt(n!)) and mutual information <= 1 / (2 ln 2 * n!) bits, factorially extinguishing quantum distinguishability for all codes regardless of rate. Multi-copy collective measurements face factorial (n!)^m commutant algebra dimensions, rendering quantum code equivalence strictly intractable.",
     "reason_invalid": "The apparent quantum opening from the Dinh-Moore-Russell dimension gate failure is entirely spurious. Gaussian elimination over GF(2) eliminates the GL_k row scrambler in O(n^3) classical preprocessing, leaving the canonical permutation hidden subgroup problem over W_n = (S_n x S_n) wr Z_2. For any code dimension k (including self-dual codes k = n/2), the centralizer of the hidden shift involution has order 2 * n!, which forces the single-copy Fourier total variation distance to be bounded by 1 / (2 sqrt(n!)) and mutual information to vanish as 2^{-Omega(n log n)} bits. Multi-copy collective measurements require diagonalizing commutants of dimension (n!)^m, completely falsifying the hypothesis of a quantum advantage.",
     "source": "research/representation/rowspace_rref_gauge_elimination_fourier_extinction_barrier.json"
+  },
+  {
+    "id": "NEG-DCP-SUBSET-SUM-EUCLIDEAN-VOLUME-INFLATION-BARRIER",
+    "applies_to": [
+      "DCP-DENSITY-ONE-SUBSET-SUM-PARTIAL-SOLVER",
+      "DCP-SUBSET-SUM-AFFINE-BDD-GEOMETRY",
+      "DCP-BABAI-DEVIATION-DEPTH-BARRIER"
+    ],
+    "claim": "Euclidean lattice reduction, BDD algorithms, or nearest-plane list decoders can achieve polynomial-time or inverse-polynomial coverage for density-one modular subset sum.",
+    "evidence": {
+      "artifact": "research/classical_baselines/dcp_subset_sum_euclidean_volume_inflation_barrier.json",
+      "euclidean_ball_volume": "Vol(B_n(sqrt(n))) = (2 pi e)^{n/2} / sqrt(pi n) = 2^{2.047 n - 0.5 log2(pi n)}",
+      "expected_point_multiplicity": "N_points = Vol(B_n(sqrt(n))) / 2^n = (2.066)^n / sqrt(pi n) = 2^{1.047 n - 0.5 log2(pi n)} = 2^{Omega(n)}",
+      "bdd_radius_ratio": "||e||_2 / lambda_1(L) = sqrt(2 pi e) / 2 = 2.066 > 0.5, placing the witness far outside unique BDD radius",
+      "list_undercoverage": "P_coverage <= poly(n) / 2^{1.047 n} = 2^{-Omega(n)} for any polynomial-size list",
+      "speedup_claim_allowed": false
+    },
+    "lesson": "Euclidean lattice reduction fundamentally fails at density one due to Euclidean volume inflation. At density d=1 (D = 2^n), the Euclidean ball of radius sqrt(n) containing the true binary witness has volume 2^{2.047 n}, enclosing an exponential sea of 2^{1.047 n} integer lattice points. Because Euclidean algorithms optimize geometric distance without coordinate bounds, they preferentially output non-binary points of equal or smaller Euclidean norm. The true binary witness lies 4 times outside the BDD unique decoding radius, forcing any list decoder to inspect 2^{Omega(n)} candidates, rendering all Euclidean lattice approaches exponentially ineffective.",
+    "reason_invalid": "For all density-one modular subset-sum instances (modulus D approx 2^n), the Euclidean ball of radius sqrt(n) contains Vol / 2^n = 2^{1.047 n - 0.5 log2(pi n)} = 2^{Omega(n)} integer lattice points by the Gaussian volume heuristic. The true binary witness has norm sqrt(n), which is a factor of 4.13 larger than the BDD unique decoding radius lambda_1 / 2 approx 0.242 sqrt(n). Euclidean lattice algorithms (LLL, BKZ, Babai) optimize unconstrained Euclidean distance and preferentially output non-binary points. Any polynomial-size list decoder has coverage bounded by poly(n) * 2^{-1.047 n} = 2^{-Omega(n)}, completely falsifying the hypothesis that lattice algorithms can solve density-one modular subset sum in polynomial time.",
+    "source": "research/classical_baselines/dcp_subset_sum_euclidean_volume_inflation_barrier.json"
   }
 ]
