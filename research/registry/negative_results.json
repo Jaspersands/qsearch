@@ -85308,5 +85308,26 @@
     "lesson": "Do not confuse logarithmic query complexity O(log p) with polynomial classical decoding time. Shifted Legendre characters are information-theoretically identifiable in O(log p) samples, but uniform decoding without advice requires Omega(p) operations, matching the computational hardness of inverting the Legendre PRG.",
     "reason_invalid": "By Weil's character sum theorem, pairwise agreement between distinct shifts is strictly (p-3)/(2p) < 1/2, allowing O(log p) samples to uniquely fingerprint the shift. However, in the uniform model without advice, recovering the shift s requires solving polynomial equations of degree (p-1)/2 = 2^{Omega(n)} or testing Omega(p) candidate shifts. Efficient decoding is only possible with non-uniform advice of size S = p log2 p bits or via van Dam-Hallgren's quantum Fourier transform.",
     "source": "research/classical_baselines/character_shift_decoding_lower_bound_barrier.json"
+  },
+  {
+    "id": "NEG-DCP-GENERAL-POVM-SECRET-VARIANCE-COLLAPSE",
+    "applies_to": [
+      "DCP-DENSITY-ONE-SUBSET-SUM-PARTIAL-SOLVER",
+      "NON-ERASURE-POVM",
+      "INACCESSIBLE-ENVIRONMENT",
+      "SECRET-VARIANCE-COLLAPSE"
+    ],
+    "claim": "General non-erasure POVM measurements or open-system channels with an inaccessible environment can extract the hidden secret s in polynomial time from density-one subset sum phase states.",
+    "evidence": {
+      "artifact": "research/classical_baselines/dcp_general_povm_secret_variance_collapse.json",
+      "parseval_variance_bound": "E_a[Var_s(p(y | s))] <= 2^{-2n} Tr(E_y^2) <= 2^{-2n}",
+      "shallow_depth_zero_information": "I(s : Y) == 0.0 bits identically for circuit depth d < W*(n) = Omega(n / log n)",
+      "total_variation_bound": "TV(p(. | s), p_bar) <= (1/2) M 2^{-n} = 2^{-Omega(n)} for M = poly(n)",
+      "mutual_information_bound": "I(s : Y) <= (M^2 / ln 2) 2^{-2n} = 2^{-Omega(n)} bits",
+      "fano_success_bound": "P_succ <= (I + 1)/n = O(1/n) -> 0; exact unique recovery collapses as 2^{-Omega(n)}"
+    },
+    "lesson": "Non-erasure measurements and inaccessible environments cannot evade the density-one subset-sum barrier. The Fourier spectrum of the measurement likelihood on random sources is exponentially suppressed by Parseval's identity, restricting the mutual information to 2^{-Omega(n)} bits per copy. Discarding the environment register merely destroys the coherent phase information needed to reconstruct the secret.",
+    "reason_invalid": "By Parseval's identity on the cyclic group Z_{2^n}, the variance of the measurement likelihood across all secrets s is bounded by 2^{-2n} Tr(E_y^2) <= 2^{-2n}. For any polynomial-outcome POVM with M = poly(n) outcomes, the total variation distance from a secret-independent distribution collapses as M 2^{-n} = 2^{-Omega(n)}, and the mutual information is bounded by 2^{-Omega(n)} bits. Shallow circuits have zero information (I = 0 bits), deep non-erasure POVMs have exponentially vanishing variance, and coherent erasure POVMs dequantize to classical subset-sum solvers.",
+    "source": "research/classical_baselines/dcp_general_povm_secret_variance_collapse.json"
   }
 ]

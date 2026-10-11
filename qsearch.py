@@ -20375,6 +20375,17 @@ def command_character_shift_decoding_lower_bound_barrier(args: argparse.Namespac
     return 0 if validation["valid"] else 1
 
 
+def command_dcp_general_povm_secret_variance_collapse(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    from theorems.dcp_general_povm_secret_variance_collapse import REPORT, write_report
+    write_report(write_registry=not getattr(args, "no_registry", False))
+    validation = validate_registry()
+    print("dcp_general_povm_secret_variance_collapse complete")
+    print(f"Artifact: {REPORT}")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--root", type=Path, default=Path.cwd())
@@ -28075,6 +28086,13 @@ def build_parser() -> argparse.ArgumentParser:
     )
     character_shift_decoding_lower_bound_barrier.add_argument("--no-registry", action="store_true")
     character_shift_decoding_lower_bound_barrier.set_defaults(func=command_character_shift_decoding_lower_bound_barrier)
+
+    dcp_general_povm_secret_variance_collapse = subparsers.add_parser(
+        "dcp-general-povm-secret-variance-collapse",
+        help="Run general quantum POVM secret variance collapse, shallow-depth zero-information, and Fano reconstruction failure audit.",
+    )
+    dcp_general_povm_secret_variance_collapse.add_argument("--no-registry", action="store_true")
+    dcp_general_povm_secret_variance_collapse.set_defaults(func=command_dcp_general_povm_secret_variance_collapse)
 
     validate = subparsers.add_parser("validate", help="Validate candidates and experiments against proof obligations.")
     validate.set_defaults(func=command_validate)
