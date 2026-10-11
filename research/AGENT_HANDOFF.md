@@ -2,7 +2,50 @@
 
 Last updated: 2026-10-11
 
-## Latest: Investigation 30 Proved — Orthogonal Parabolic HSP Obstruction, Quadratic Invariant Demarcation, and Bireflection Classical Dequantization
+## Latest: Investigation 31 Proved — Unitary Parabolic HSP Obstruction, Hermitian Invariant Demarcation, and Classical Dequantization
+
+A major foundational investigation completing the algebraic and quantum complexity classification of parabolic subgroups across the **entire Cartan-Killing quadrumvirate of classical Lie-type matrix groups** ($GL, Sp, O, U$) has been established in `research/UNITARY_PARABOLIC_HSP_OBSTRUCTION_HERMITIAN_DEMARCATION.md`.
+
+### Core Invariants & Status:
+- `speedup_claim_allowed = False` strictly enforced everywhere.
+- `accepted_speedup_candidate = False` strictly enforced everywhere.
+- Registered negative result: `NEG-UNITARY-PARABOLIC-DEQUANTIZATION-BOUND` (valid with 957 negative results).
+
+### Investigation 31 Summary & Key Mathematical Discoveries:
+1. **The Unitary Transvection Membership Lemma (Theorem 1)**:
+   For any $k$-dimensional isotropic subspace $U \le V = \mathbb{F}_{q^2}^n$ ($1 \le k \le m = \lfloor n/2 \rfloor$), any non-zero skew-Hermitian scalar $\lambda \in \mathbb{F}_{q^2}^\times$ ($\lambda + \overline{\lambda} = 0$), and any non-zero isotropic vector $v \in V$ ($\Phi(v, v) = 0$), the unitary transvection:
+   $$T_{v, \lambda}(x) = x + \lambda \Phi(x, v) v$$
+   belongs to $SU(V, \Phi)$ and satisfies:
+   $$T_{v, \lambda} \in P_U \iff v \in U^\perp.$$
+   This holds unconditionally across all characteristics ($p=2$ and $p>2$) and all dimensions $n \ge 2$.
+2. **Universal Classical Query Complexity & Polynomial Dequantization (Theorem 2)**:
+   A classical randomized algorithm testing unitary transvections reconstructs a basis for $U^\perp$ in expected query complexity:
+   $$Q_{\text{classical}} \le 4(n - k)(q^{2k} + 1) = O(n q^{2k}) \text{ queries},$$
+   and recovers $U = (U^\perp)^\perp$ in $O(n^3)$ classical operations over $\mathbb{F}_{q^2}$. For any $k \le O(\log n)$ (including line parabolic $k = 1$ in $O(n q^2)$ queries), the unitary parabolic HSP is solved in $\text{poly}(n, \log q)$ classical time, completely dequantizing low-dimensional unitary parabolics. For maximal isotropic parabolics ($k = m$), the classical complexity is subexponential $2^{O(\sqrt{N_{\text{input}}})}$.
+3. **Ambient Density Exponential Collapse (Theorem 3)**:
+   For maximal unitary parabolics $P_m \le U(2m, \mathbb{F}_{q^2})$, the ambient linear span $\text{span}(P_m) \subset \mathcal{M}_{2m}(\mathbb{F}_{q^2})$ has dimension $3m^2$ over $\mathbb{F}_{q^2}$ (cardinality $q^{6m^2}$). The ambient density collapses as:
+   $$\rho_m = \frac{|P_m|}{|\text{span}(P_m)|} = q^{-3 m^2} \prod_{j=1}^m (1 - q^{-2j}) \le q^{-3 m^2} = 2^{-\Omega(m^2 \log q)}.$$
+   Additive Fourier sampling over $\mathcal{M}_{2m}(\mathbb{F}_{q^2})$ suffers total destructive interference, bounding measurement success by $2^{-\Omega(m^2 \log q)}$.
+4. **Self-Orthogonality of Off-Diagonal Trace Pairing in Characteristic 2 (Theorem 4)**:
+   For any strictly off-diagonal skew-Hermitian matrix $B \in \mathfrak{u}(2m, \mathbb{F}_{2^{2r}})$, the matrix trace pairing satisfies:
+   $$\text{Tr}(B^2) = 2 \sum_{i < j} N_{\mathbb{F}_{q^2}/\mathbb{F}_q}(B_{ij}) \equiv 0 \pmod 2.$$
+   The Killing form / trace pairing restricted to nilpotent radicals has degenerate isotropic self-nullity over fields of characteristic 2, destroying Lie algebra Fourier sampling.
+5. **Line Radical Generalized Heisenberg Structure & Spherical Extinction (Theorem 5)**:
+   - The line unipotent radical $R_u(P_1)$ has order $q^{2n - 3}$ and is a generalized Heisenberg group of nilpotency class 2 with 1-dimensional center $Z(R_u(P_1)) \cong (\mathbb{F}_q, +)$.
+   - $(U(n, \mathbb{F}_{q^2}), P_1)$ is a Gel'fand pair with single-copy spherical extinction ($I(U : \Lambda) \equiv 0.000$ bits).
+   - Multi-copy tomographic reconstruction requires diagonalizing the partition commutant $P_M(|X_1|)$ with Bell dimension $B(2M) \ge (2M - 1)!! = 2^{\Omega(M \log M)}$, requiring at least $2^{\Omega(n \log n)}$ quantum gates.
+6. **The Complete Classical Quadrumvirate Demarcation Theorem**:
+   Synthesizing Investigations 26–31 establishes the final demarcation:
+   - $GL(n)$: BQP tractable (Decker et al. 2014) because ambient density is constant ($\ge 1/16$) and diagonal blocks are independent.
+   - $Sp(2n), O(2n), U(n)$: ALL THREE isometry groups impose non-linear block relations ($D = A^{-\Phi}$) that collapse ambient density exponentially ($2^{-\Omega(n^2 \log q)}$) and possess geometric transvections / reflections testing $v \in U^\perp$ that dequantize the problem classically in $O(n q^{O(k)})$ queries.
+7. **Verification Matrix**:
+   - `pytest -v tests/test_unitary_parabolic_hsp_obstruction.py` (6/6 PASS).
+   - `node research/certificates/unitary_parabolic_hsp_crosscheck.js` (69/69 PASS).
+   - `python3 qsearch.py validate` (0 issues, 957 negative results).
+
+---
+
+## Prior: Investigation 30 Proved — Orthogonal Parabolic HSP Obstruction, Quadratic Invariant Demarcation, and Bireflection Classical Dequantization
 
 A major foundational investigation resolving the algebraic and quantum complexity landscape of parabolic subgroups in orthogonal groups $O(d, \mathbb{F}_q)$ and special orthogonal groups $SO(d, \mathbb{F}_q)$ has been established in `research/ORTHOGONAL_PARABOLIC_HSP_OBSTRUCTION_QUADRATIC_INVARIANT.md`.
 

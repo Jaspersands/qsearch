@@ -74,6 +74,7 @@ The table below summarizes the exact mathematical status of key hidden structure
 | **Siegel Parabolic in $Sp(2n, q)$** | $Sp(2n, \mathbb{F}_q)$, Siegel $P_W$ | Multiplicative | $\le O(n q^n)$ queries | $O(n q^n)$ (Transvections) | Open for mult oracle; $\text{poly}$ for additive | Mult-to-additive reduction open; char-2 trace pairing fails | **Unestablished** |
 | **Isotropic Parabolic in $Sp(2n, q)$ ($k \le O(\log n)$)** | $Sp(2n, \mathbb{F}_q)$, isotropic $P_U$ | Multiplicative | $O(n q^k)$ | $O(n q^k)$ (Transvections) | $\text{poly}(n)$ classical | Classical dequantization via $T_u \in P_U \iff u \in U^\perp$ | **Dequantized Classically** |
 | **Orthogonal Parabolic in $O(d, q) / SO(d, q)$** | $O(d, \mathbb{F}_q)$, isotropic $P_U$ | Multiplicative | $O(d q^k)$ | $O(d q^k)$ (Reflections/Bireflections) | $\text{poly}(d)$ classical for $k \le O(\log d)$ | Classical dequantization via $R_v \in P_U \iff v \in U^\perp$; char-2 trace pairing vanishes | **Dequantized Classically** |
+| **Unitary Parabolic in $U(n, q^2) / SU(n, q^2)$** | $U(n, \mathbb{F}_{q^2})$, isotropic $P_U$ | Multiplicative | $O(n q^{2k})$ | $O(n q^{2k})$ (Unitary transvections) | $\text{poly}(n)$ classical for $k \le O(\log n)$ | Classical dequantization via $T_{v, \lambda} \in P_U \iff v \in U^\perp$; density collapses $q^{-3m^2}$ | **Dequantized Classically** |
 | **Maximal Torus in $GL(n, q)$** | $GL(n, \mathbb{F}_q)$, $T \cong (\mathbb{F}_q^\times)^n$ | Multiplicative | $\Omega(q^{n(n-1)/4})$ | $2^{\Omega(n^2 \log q)}$ | Open ($2^{O(n \log n)}$) | Single-copy $I \le 2^{-\Omega(n^2)}$; commutant $(n!)^m$ | **Strong Quantum Barrier** |
 | **Graph Isomorphism** | $S_n$, involution $H \cong \mathbb{Z}_2$ | Multiplicative | $\Omega(\sqrt{n!})$ | $2^{O(\log^c n)}$ (Babai 2016) | Open | Single-copy $I \le \frac{1}{2 \ln 2 \cdot n!}$; commutant $(n!)^m$ | **Strong Quantum Barrier** |
 | **Linear Code Equivalence** | $W_n = (S_n \times S_n) \rtimes \mathbb{Z}_2$ | Multiplicative | $\Omega(n!)$ | Quasi-poly for LCD / bounded-hull | Open | Single-copy $I \le \frac{1}{2 \ln 2 \cdot n!}$; commutant $(n!)^m$ | **Strong Quantum Barrier** |
@@ -85,7 +86,7 @@ The table below summarizes the exact mathematical status of key hidden structure
 
 ---
 
-## 4. Master Cross-Reference Table of Investigations 1–30
+## 4. Master Cross-Reference Table of Investigations 1–31
 
 | # | Investigation Focus | Domain | Primary Obstruction / Mechanism | Epistemic Status |
 | :-: | :--- | :--- | :--- | :---: |
@@ -119,6 +120,7 @@ The table below summarizes the exact mathematical status of key hidden structure
 | **28** | Isotropic Parabolic Spectrum & Dequantization | Lie Matrix HSP | $T_u \in P_U \iff u \in U^\perp$ solves HSP in $O(n q^k)$ queries; Heisenberg $k=1$ in $O(q n)$ polynomial time; Heisenberg radical $U_1$ abelian in char 2 vs class 2 in char $\ge 3$; $(Sp(4, \mathbb{F}_2), P_1)$ Gel'fand rank 3 with irreps $[1, 5, 9]$ | Proved Theorems & Classical Dequantization |
 | **29** | Zero-Sum Central Descent & Carry Phase Transition | Nilpotent/Solvable | Imran-Ivanyos descent requires $c=O(1), p=O(1)$ and $H \cap Z \ne \{1\}$; Davenport bound $\mathsf{D} = 1 + m(p-1)$; $D_{2^k}$ fails with $H \cap Z_i = \{0\}$; Trine POVM $E_D=1$ unentangled bound; carry topology controls transition | Proved Structural Phase Boundaries |
 | **30** | Orthogonal Parabolic HSP & Quadratic Invariant | Lie Matrix HSP | Orthogonal reflections $R_v \in P_U \iff v \in U^\perp$ dequantize in $O(d q^k)$ queries; line radical universally abelian of order $q^{d-2}$; char-2 trace pairing identically vanishes on alternating Lie algebras; Gel'fand rank 3 with irreps $[1, 6, 9]$ and 0 mutual info | Proved Theorems & Classical Dequantization |
+| **31** | Unitary Parabolic HSP & Hermitian Invariant | Lie Matrix HSP | Unitary transvections $T_{v, \lambda} \in P_U \iff v \in U^\perp$ dequantize in $O(n q^{2k})$ queries; ambient density collapses $q^{-3m^2}$; line radical generalized Heisenberg of class 2 with center order $q$; quadrumvirate demarcation complete | Proved Theorems & Classical Dequantization |
 
 ---
 

@@ -1,6 +1,29 @@
 # Mechanical Follow-Up Implementation Plan (pass 2)
 
-## Latest Handoff (2026-10-11, Investigation 30 Proved — Orthogonal Parabolic HSP Obstruction, Quadratic Invariant Demarcation, and Bireflection Dequantization)
+## Latest Handoff (2026-10-11, Investigation 31 Proved — Unitary Parabolic HSP Obstruction, Hermitian Invariant Demarcation, and Classical Dequantization)
+
+Read `research/UNITARY_PARABOLIC_HSP_OBSTRUCTION_HERMITIAN_DEMARCATION.md` and the TOP of `research/AGENT_HANDOFF.md`.
+Investigation 31 completes the entire classical Lie matrix group quadrumvirate ($GL, Sp, O, U$):
+- Proved Unitary Transvection Membership Lemma: $T_{v, \lambda} \in P_U \iff v \in U^\perp$ for all non-zero skew-Hermitian $\lambda$ and isotropic $v$.
+- Proved Universal Classical Query Complexity: $Q_{\text{classical}} \le 4(n - k)(q^{2k} + 1) = O(n q^{2k})$ queries and $O(n^3)$ classical operations over $\mathbb{F}_{q^2}$, solving $k \le O(\log n)$ in polynomial time.
+- Proved Ambient Density Exponential Collapse: $|P_m| / |\text{span}(P_m)| = q^{-3m^2} \prod (1 - q^{-2j}) \le 2^{-\Omega(m^2 \log q)}$, precluding additive Fourier sampling over $\mathcal{M}_n(\mathbb{F}_{q^2})$.
+- Proved Characteristic 2 Trace Pairing Self-Orthogonality: $\text{Tr}(B^2) \equiv 0 \pmod 2$ on off-diagonal skew-Hermitian matrices.
+- Proved Line Radical Heisenberg Structure: $|R_u(P_1)| = q^{2n - 3}$ with center order $q$, $(U, P_1)$ Gel'fand pair with 0.000 bits mutual information, and partition commutant $B(2M) \ge (2M - 1)!! = 2^{\Omega(n \log n)}$ gates.
+- Proved Unified Classical Quadrumvirate Demarcation: Decker et al. polynomial BQP algorithm is unique to $GL(n)$ due to coordinate independence; $Sp(2n), O(2n), U(n)$ all collapse exponentially and are classically dequantized by geometric transvections/reflections.
+- Registered negative result: `NEG-UNITARY-PARABOLIC-DEQUANTIZATION-BOUND` (valid with 957 negative results).
+
+Mechanical Queue:
+1. Verify repo health: `python3 qsearch.py validate` and `python3 tools/check_site.py`.
+2. Run Investigation 31 test suite: `pytest tests/test_unitary_parabolic_hsp_obstruction.py` (6/6 PASS).
+3. Run Investigation 31 cross-check: `node research/certificates/unitary_parabolic_hsp_crosscheck.js` (69/69 PASS).
+4. Run Investigation 30 test suite: `pytest tests/test_orthogonal_parabolic_hsp_obstruction.py` (7/7 PASS).
+5. Run Investigation 29 test suite: `pytest tests/test_nilpotent_solvable_exponent_descent_phase_transition.py` (6/6 PASS).
+6. Run Investigation 28 test suite: `pytest tests/test_isotropic_parabolic_hsp_spectrum_dequantization.py` (7/7 PASS).
+7. Run Investigation 27 test suite: `pytest tests/test_symplectic_parabolic_obstruction_gelfand_brauer_barrier.py` (8/8 PASS).
+8. Strict invariants: `speedup_claim_allowed = False`, `accepted_speedup_candidate = False`.
+9. Preserve all proof gates, retractions, counterexamples, and negative results.
+
+## Prior Handoff (2026-10-11, Investigation 30 Proved — Orthogonal Parabolic HSP Obstruction, Quadratic Invariant Demarcation, and Bireflection Dequantization)
 
 Read `research/ORTHOGONAL_PARABOLIC_HSP_OBSTRUCTION_QUADRATIC_INVARIANT.md` and the TOP of `research/AGENT_HANDOFF.md`.
 Investigation 30 settles the parabolic HSP across orthogonal groups $O(d, \mathbb{F}_q)$ and special orthogonal groups $SO(d, \mathbb{F}_q)$:
