@@ -85354,5 +85354,27 @@
     "lesson": "Do not treat irrep-label bias as a hidden-permutation algorithm; require collective measurements or additional row/column information.",
     "reason_invalid": "Weak Fourier labels have only small bias; any speedup claim needs collective row/column measurements.",
     "source": "weak_fourier_signal.py"
+  },
+  {
+    "id": "NEG-DIHEDRAL-COSET-CHIRP-ALIASING-SPECTRAL-FLATNESS-BARRIER",
+    "applies_to": [
+      "HIDDEN-SHIFT-PHASE-FAMILY-GENERATION",
+      "DIHEDRAL-COSET-PROBLEM",
+      "DHSP-GOWERS-SIEVE",
+      "QUADRATIC-CHIRP-ALIASING",
+      "NONLINEAR-PHASE-SPECTRAL-FLATNESS"
+    ],
+    "claim": "Non-linear polynomial phase families (quadratic chirps or higher-degree polynomials) can provide an exponential quantum speedup for the Dihedral Hidden Subgroup Problem by evading linear spectral tests while enabling polynomial quantum shift extraction.",
+    "evidence": {
+      "artifact": "research/classical_baselines/dihedral_coset_chirp_aliasing_spectral_flatness_barrier.json",
+      "cubic_gauss_spectral_flatness": "|F_hat(k)|^2 == 1/p identically for all k in Z_p; I(s : K) == 0.0 bits identically",
+      "dirac_needle_alignment_landscape": "S(alpha) = 1.0 for alpha = 3 a s mod p, and 1/p otherwise; requires Omega(sqrt{p}) = 2^{Omega(n/2)} quantum queries by BBBV",
+      "bombieri_weil_anti_concentration": "P(k) <= (d-2)^2 / p for all frequencies k; TV(P, U_p) <= (d-2)/sqrt{p} -> 0; I(s : K) <= (d-2)^4 / (p ln 2) -> 0 bits",
+      "multi_copy_sieve_decoherence": "Tr_v(omega^{3 a s u v}) = p delta_{u, 0}; off-diagonal cross-coordinate coherence vanishes identically",
+      "speedup_claim_allowed": false
+    },
+    "lesson": "Non-linear polynomial phase families cannot provide an algorithmic speedup for DHSP. For cubic phases, the shift difference is an exact quadratic chirp whose Fourier spectrum is identically flat across the entire group, yielding zero mutual information. Searching for the correct chirp rate faces an unstructured Dirac needle landscape requiring 2^{Omega(n/2)} quantum queries by BBBV. For degree d >= 4, Bombieri-Weil bounds force all spectral amplitudes to 2^{-Omega(n)}. Multi-copy cross-phases decohere completely, ruling out Kuperberg quantum sieves.",
+    "reason_invalid": "By the evaluation of quadratic Gauss sums, the Fourier transform of a quadratic chirp has magnitude exactly 1/sqrt(p) at every frequency, making the measurement outcome distribution identically uniform and independent of the secret shift s. Candidate de-chirping unitaries produce an alignment function with value 1 at the unique solution and 1/p elsewhere, which by the BBBV theorem requires Omega(sqrt{p}) quantum queries. For degree d >= 4, the Bombieri-Weil bound forces P(k) <= (d-2)^2 / p, collapsing mutual information to 2^{-Omega(n)} bits. Multi-copy sieve cross-phases decohere completely, establishing an inescapable exponential query and computational barrier.",
+    "source": "research/classical_baselines/dihedral_coset_chirp_aliasing_spectral_flatness_barrier.json"
   }
 ]
