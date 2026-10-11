@@ -85266,5 +85266,26 @@
     "lesson": "Spectral gaps in commutant Hamiltonians are irrelevant for secret identification because commutant outcomes are completely secret-independent. Non-abelian quantum algorithms cannot separate multiplicity and carrier registers without incurring either zero information or factorial associator complexity.",
     "reason_invalid": "By Schur's lemma, all observables in the commutant End_{S_n}(V^k) have identically zero mutual information (I = 0 bits) with any hidden conjugacy element. Informative measurements must operate on carrier registers, but overlapping pairwise class sums satisfy [K_{12}, K_{23}] = n for all n >= 3, ruling out simultaneous diagonalization. Coherent Racah associator transforms face a factorial multiplicity space dimension (n-1)^{2k}/n! = 2^Omega(n log n), requiring exponential quantum circuit synthesis.",
     "source": "research/representation/coset_multiplicity_carrier_trilemma.json"
+  },
+  {
+    "id": "NEG-SELF-DUAL-WREATH-PLANCHEREL-SIGN-ORBIT-MASS-EXTINCTION-BARRIER",
+    "applies_to": [
+      "CODE-EQUIVALENCE-HARD-FAMILY-SEARCH",
+      "WREATH-ORIENTATION-PROJECTOR",
+      "RACAH-CUMULANT-PROBE",
+      "SIGN-ORBIT-SYNDROME"
+    ],
+    "claim": "Multi-copy collective orientation-syndrome conditioning or Racah associator cumulants in W_n = S_n wr Z_2 yield asymptotic quantum speedups for code equivalence.",
+    "evidence": {
+      "artifact": "research/representation/self_dual_wreath_plancherel_mass_extinction_barrier.json",
+      "wreath_plancherel_factorization": "M_{W_n}(lambda, mu) = binom(n, k) 2^{-n} M_k(lambda) M_{n-k}(mu)",
+      "sign_swap_self_dual_mass": "P_{W_{2m}}(lambda = mu) <= (1 / sqrt(pi m)) exp(-c sqrt(m)) = 2^{-Omega(sqrt(n))}",
+      "multi_copy_6tuple_orbit_mass": "P_orbit <= 16 [M_max(n)]^3 = 2^{-Omega(sqrt(n))}",
+      "s6_to_s7_cmi_collapse": "Typical CMI drops from 1.0 to 2.3e-5 (43,000x); weighted CMI drops from 1.1e-4 to 3.2e-7 (335x)",
+      "physical_information_ceiling": "I_physical <= O(1/n^2) + 2^{-Omega(sqrt(n))} -> 0"
+    },
+    "lesson": "The 1-bit orientation-syndrome CMI spike at S_6 is an isolated finite-size resonance with no asymptotic survival. Any quantum receiver faces the Mass-Information Trilemma: typical sectors decouple to uniform Haar randomness with CMI O(1/n^2) bits, while atypical informative sectors have physical mass exponentially extinguished as 2^{-Omega(sqrt(n))}, imposing a copy complexity lower bound of N_copies = 2^{Omega(sqrt(n))}.",
+    "reason_invalid": "By the exact factorization of wreath Plancherel measure and the Biane-Kerov-Sniady character theorem, the physical probability of sign-swap self-dual irreps and repeated sign-orbit tuples decays exponentially as 2^{-Omega(sqrt(n))}. Typical partitions have vanishing normalized characters r_lambda(w) = O(1/n), collapsing the conditional mutual information to zero. No polynomial-time quantum advantage is possible through orientation-syndrome postselection.",
+    "source": "research/representation/self_dual_wreath_plancherel_mass_extinction_barrier.json"
   }
 ]

@@ -20353,6 +20353,17 @@ def command_coset_multiplicity_carrier_trilemma(args: argparse.Namespace) -> int
     return 0 if validation["valid"] else 1
 
 
+def command_self_dual_wreath_plancherel_mass_extinction_barrier(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    from theorems.self_dual_wreath_plancherel_mass_extinction_barrier import REPORT, write_report
+    write_report(write_registry=not getattr(args, "no_registry", False))
+    validation = validate_registry()
+    print("self_dual_wreath_plancherel_mass_extinction_barrier complete")
+    print(f"Artifact: {REPORT}")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--root", type=Path, default=Path.cwd())
@@ -28039,6 +28050,13 @@ def build_parser() -> argparse.ArgumentParser:
     )
     coset_multiplicity_carrier_trilemma.add_argument("--no-registry", action="store_true")
     coset_multiplicity_carrier_trilemma.set_defaults(func=command_coset_multiplicity_carrier_trilemma)
+
+    self_dual_wreath_plancherel_mass_extinction_barrier = subparsers.add_parser(
+        "self-dual-wreath-plancherel-mass-extinction-barrier",
+        help="Run wreath product sign-orbit Plancherel mass extinction barrier, Euler self-conjugacy, and Racah CMI collapse audit.",
+    )
+    self_dual_wreath_plancherel_mass_extinction_barrier.add_argument("--no-registry", action="store_true")
+    self_dual_wreath_plancherel_mass_extinction_barrier.set_defaults(func=command_self_dual_wreath_plancherel_mass_extinction_barrier)
 
     validate = subparsers.add_parser("validate", help="Validate candidates and experiments against proof obligations.")
     validate.set_defaults(func=command_validate)
