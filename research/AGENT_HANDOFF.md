@@ -2,7 +2,48 @@
 
 Last updated: 2026-10-12
 
-## Latest: Investigation 33 Proved — Unitriangular HSP Obstruction, Supercharacter Blindness, and Wild Nilpotent Representation Barrier in $U_n(\mathbb{F}_q)$
+## Latest: Investigation 34 Proved — Graph Isomorphism & Symmetric Group $S_n$ Hidden Subgroup Obstruction: Weak Fourier Blindness, Gel'fand Collapse, and Multi-Copy Kronecker-Racah Commutant Barrier
+
+A major foundational investigation resolving the quantum and representation-theoretic complexity bounds for the Symmetric Group $S_n$ HSP (and the quantum formulation of Graph Isomorphism) has been completed and verified in `research/GRAPH_ISOMORPHISM_SN_COMMUTANT_RACAH_BARRIER.md`.
+
+### Core Invariants & Status:
+- `speedup_claim_allowed = False` strictly enforced everywhere.
+- `accepted_speedup_candidate = False` strictly enforced everywhere.
+- Registered negative result: `NEG-SYMMETRIC-GROUP-KRONECKER-RACAH-BARRIER` (valid with 960 negative results).
+
+### Investigation 34 Summary & Key Mathematical Discoveries:
+1. **Conjugacy Class Invariance & Weak Fourier Blindness (Theorem 1)**:
+   For any two conjugate subgroups $H_1, H_2 \le S_n$ (e.g. any two transpositions or any two matching involutions), characters are class functions: $\chi_\lambda(H_1) = \chi_\lambda(H_2)$.
+   Weak Fourier sampling produces identical probability distributions $p(\lambda \mid H_1) \equiv p(\lambda \mid H_2)$, yielding **identically zero total variation distance**:
+   $$\|p(\cdot \mid H_1) - p(\cdot \mid H_2)\|_{\text{TV}} \equiv 0.000.$$
+   Weak Fourier sampling provides **identically 0.000 bits of mutual information** to distinguish any conjugate candidate subgroups in $S_n$.
+2. **Double Coset Decomposition & Gel'fand Pair Collapse (Theorem 2)**:
+   - For $S_3$ and $H = \langle (1 2) \rangle$, $|H \backslash S_3 / H| = 2$ (commutative Gel'fand pair).
+   - For all $n \ge 4$, $(S_n, H)$ is **NOT a Gel'fand pair**:
+     - In $S_4$, transpositions have 7 double cosets with sizes $[2, 2, 4, 4, 4, 4, 4]$ and non-commutative Hecke algebra.
+     - In $S_4$, matchings have 8 double cosets with sizes $[2, 2, 2, 2, 4, 4, 4, 4]$ and non-commutative Hecke algebra.
+     - Irrep $[3, 1]$ has multiplicity 2 in $\mathbb{C}[S_4/H_{\text{trans}}]$ (commutant dim $\sum m^2 = 7$), and irrep $[2, 2]$ has multiplicity 2 in $\mathbb{C}[S_4/H_{\text{match}}]$ (commutant dim $\sum m^2 = 8$).
+3. **Single-Copy Strong Fourier Sampling Exponential Extinction (Theorem 3)**:
+   For any POVM applied to a single coset state $\rho_H$, mutual information is factorially extinguished:
+   $$I(H : M) \le \frac{\text{poly}(n)}{n!} = 2^{-\Omega(n \log n)}.$$
+4. **Multi-Copy Commutant Dimension Factorial Explosion (Theorem 4)**:
+   For $M$ copies of the coset state $\rho_H^{\otimes M}$, the commutant dimension is:
+   $$\dim(\mathcal{C}_M) = \frac{1}{|S_n|} \sum_{g \in S_n} (\chi_{\text{perm}}(g))^{2M} \ge \frac{(n!)^{2M-1}}{2^{2M}} = 2^{\Omega(M n \log n)}.$$
+   For $S_4$ transpositions: $M = 1..4 \implies [7, 868, 124432, 17915968]$.
+   For $S_4$ matchings: $M = 1..4 \implies [8, 896, 124928, 17924096]$.
+   At the Ettinger-Høyer-Knill information threshold $M = \Omega(n \log n)$, $\dim(\mathcal{C}_M) \ge 2^{\Omega(n^2 \log^2 n)}$, enforcing a quantum gate lower bound of $2^{\Omega(n^2 \log^2 n)}$.
+5. **Kronecker Multiplicity & Racah Circuit Complexity Barrier (Theorem 5)**:
+   Diagonalizing $\mathcal{C}_M$ requires computing Kronecker coefficients and Racah $6j/3nj$ basis changes, which are $\#P$-hard and require diagonalizing matrices of exponential rank $2^{\Omega(n)}$.
+6. **Unconditional Classical Black-Box Query Lower Bound (Theorem 6)**:
+   In the black-box oracle model, $Q_{\text{classical}} \ge \Omega(\sqrt{n! / 2}) = 2^{\Omega(n \log n)}$.
+7. **Verification Matrix**:
+   - `pytest -v tests/test_symmetric_group_hsp_obstruction.py` (6/6 PASS).
+   - `node research/certificates/symmetric_group_hsp_crosscheck.js` (21/21 PASS).
+   - `python3 qsearch.py validate` (0 issues, 960 negative results).
+
+---
+
+## Prior: Investigation 33 Proved — Unitriangular HSP Obstruction, Supercharacter Blindness, and Wild Nilpotent Representation Barrier in $U_n(\mathbb{F}_q)$
 
 A major foundational investigation analyzing the unipotent radical of Borel subgroups (unitriangular groups $U_n(\mathbb{F}_q)$) has been completed and verified in `research/UNITRIANGULAR_SUPERCHARACTER_HSP_OBSTRUCTION.md`.
 

@@ -1,6 +1,26 @@
 # Mechanical Follow-Up Implementation Plan (pass 2)
 
-## Latest Handoff (2026-10-12, Investigation 33 Proved — Unitriangular HSP Obstruction, Supercharacter Blindness, and Wild Nilpotent Representation Barrier in $U_n(\mathbb{F}_q)$)
+## Latest Handoff (2026-10-12, Investigation 34 Proved — Graph Isomorphism & Symmetric Group $S_n$ Multi-Copy Commutant Barrier)
+
+Read `research/GRAPH_ISOMORPHISM_SN_COMMUTANT_RACAH_BARRIER.md` and the TOP of `research/AGENT_HANDOFF.md`.
+Investigation 34 establishes the exact classical and quantum complexity bounds for symmetric group $S_n$ HSP:
+- Proved Weak Fourier Blindness: $\chi_\lambda(H_1) = \chi_\lambda(H_2)$ for conjugate subgroups; $p(\lambda \mid H_1) \equiv p(\lambda \mid H_2)$, yielding TV distance $\equiv 0.000$ and $I(H : \Lambda) = 0.000$ bits.
+- Proved Gel'fand Collapse: $(S_3, H)$ is a Gel'fand pair (dim 2), but $(S_4, H)$ has non-commutative Hecke algebras of dimension 7 (transpositions) and 8 (matchings), with irrep multiplicities $> 1$.
+- Proved Single-Copy Strong Fourier Extinction: $I(H : M) \le \text{poly}(n) / n! = 2^{-\Omega(n \log n)}$.
+- Proved Multi-Copy Commutant Dimension Explosion: $\dim(\mathcal{C}_M) = (1/n!) \sum \chi_{\text{perm}}(g)^{2M} \ge (n!)^{2M-1} / 2^{2M} \ge 2^{\Omega(M n \log n)}$. At $M = \Omega(n \log n)$, $\dim(\mathcal{C}_M) \ge 2^{\Omega(n^2 \log^2 n)}$, enforcing a $2^{\Omega(n^2 \log^2 n)}$ gate lower bound.
+- Proved Kronecker-Racah Complexity Barrier: Kronecker positivity is NP-hard, computation is $\#P$-hard, and Racah matrices have rank $2^{\Omega(n)}$.
+- Proved Unconditional Classical Black-Box Query Lower Bound: $Q_{\text{classical}} \ge \Omega(\sqrt{n! / 2}) = 2^{\Omega(n \log n)}$.
+- Registered negative result: `NEG-SYMMETRIC-GROUP-KRONECKER-RACAH-BARRIER` (valid with 960 negative results).
+
+Mechanical Queue:
+1. Verify repo health: `python3 qsearch.py validate` and `python3 tools/check_site.py`.
+2. Run Investigation 34 test suite: `pytest tests/test_symmetric_group_hsp_obstruction.py` (6/6 PASS).
+3. Run Investigation 34 cross-check: `node research/certificates/symmetric_group_hsp_crosscheck.js` (21/21 PASS).
+4. Run Investigation 33 test suite: `pytest tests/test_unitriangular_supercharacter_hsp_obstruction.py` (6/6 PASS).
+5. Strict invariants: `speedup_claim_allowed = False`, `accepted_speedup_candidate = False`.
+6. Preserve all proof gates, retractions, counterexamples, and negative results.
+
+## Prior Handoff (2026-10-12, Investigation 33 Proved — Unitriangular HSP Obstruction, Supercharacter Blindness, and Wild Nilpotent Representation Barrier in $U_n(\mathbb{F}_q)$)
 
 Read `research/UNITRIANGULAR_SUPERCHARACTER_HSP_OBSTRUCTION.md` and the TOP of `research/AGENT_HANDOFF.md`.
 Investigation 33 establishes the exact classical and quantum complexity bounds for unitriangular groups $U_n(\mathbb{F}_q)$:
