@@ -20420,6 +20420,24 @@ def command_dihedral_coset_chirp_aliasing_spectral_flatness_barrier(args: argpar
     return 0 if validation["valid"] else 1
 
 
+def command_cfi_graph_coset_luks_subsumption_barrier(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    import json
+    from theorems.cfi_graph_coset_luks_subsumption_barrier import REPORT, build_report, register_negative_result
+    report = build_report()
+    REPORT.parent.mkdir(parents=True, exist_ok=True)
+    with open(REPORT, "w", encoding="utf-8") as f:
+        json.dump(report, f, indent=2)
+    if not getattr(args, "no_registry", False):
+        register_negative_result()
+    validation = validate_registry()
+    print("cfi_graph_coset_luks_subsumption_barrier complete")
+    print(f"Artifact: {REPORT}")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--root", type=Path, default=Path.cwd())
@@ -28141,6 +28159,13 @@ def build_parser() -> argparse.ArgumentParser:
     )
     dihedral_coset_chirp_aliasing_spectral_flatness_barrier.add_argument("--no-registry", action="store_true")
     dihedral_coset_chirp_aliasing_spectral_flatness_barrier.set_defaults(func=command_dihedral_coset_chirp_aliasing_spectral_flatness_barrier)
+
+    cfi_graph_coset_luks_subsumption_barrier = subparsers.add_parser(
+        "cfi-graph-coset-luks-subsumption-barrier",
+        help="Run Cai-Fürer-Immerman (CFI) graph coset trilemma and bounded-valence Luks classical subsumption barrier audit.",
+    )
+    cfi_graph_coset_luks_subsumption_barrier.add_argument("--no-registry", action="store_true")
+    cfi_graph_coset_luks_subsumption_barrier.set_defaults(func=command_cfi_graph_coset_luks_subsumption_barrier)
 
     validate = subparsers.add_parser("validate", help="Validate candidates and experiments against proof obligations.")
     validate.set_defaults(func=command_validate)

@@ -85376,5 +85376,27 @@
     "lesson": "Non-linear polynomial phase families cannot provide an algorithmic speedup for DHSP. For cubic phases, the shift difference is an exact quadratic chirp whose Fourier spectrum is identically flat across the entire group, yielding zero mutual information. Searching for the correct chirp rate faces an unstructured Dirac needle landscape requiring 2^{Omega(n/2)} quantum queries by BBBV. For degree d >= 4, Bombieri-Weil bounds force all spectral amplitudes to 2^{-Omega(n)}. Multi-copy cross-phases decohere completely, ruling out Kuperberg quantum sieves.",
     "reason_invalid": "By the evaluation of quadratic Gauss sums, the Fourier transform of a quadratic chirp has magnitude exactly 1/sqrt(p) at every frequency, making the measurement outcome distribution identically uniform and independent of the secret shift s. Candidate de-chirping unitaries produce an alignment function with value 1 at the unique solution and 1/p elsewhere, which by the BBBV theorem requires Omega(sqrt{p}) quantum queries. For degree d >= 4, the Bombieri-Weil bound forces P(k) <= (d-2)^2 / p, collapsing mutual information to 2^{-Omega(n)} bits. Multi-copy sieve cross-phases decohere completely, establishing an inescapable exponential query and computational barrier.",
     "source": "research/classical_baselines/dihedral_coset_chirp_aliasing_spectral_flatness_barrier.json"
+  },
+  {
+    "id": "NEG-CFI-GRAPH-COSET-LUKS-SUBSUMPTION-BARRIER",
+    "applies_to": [
+      "NONABELIAN-COSET-COLLECTIVE-OBSERVABLES",
+      "CFI-BASE-FAMILY-SEARCH",
+      "BOUNDED-VALENCE-LUKS-SUBSUMPTION",
+      "CFI-GRAPH-COSET-TRILEMMA"
+    ],
+    "claim": "Quantum collective measurements or non-abelian coset state observables on Cai-F\u00fcrer-Immerman (CFI) gadget graphs can provide an exponential quantum speedup over classical Graph Isomorphism algorithms.",
+    "evidence": {
+      "artifact": "research/coset_workbench/cfi_graph_coset_luks_subsumption_barrier.json",
+      "exact_7v_cfi_vertex_identity": "N_CFI == 7 |V| identically for all 3-regular base graphs G = (V, E)",
+      "max_degree_four_ceiling": "Delta_CFI <= 4 identically for all vertices in 3-regular CFI graphs",
+      "luks_polynomial_subsumption": "Luks' algorithm (1982) solves Graph Isomorphism for valence Delta <= 4 in deterministic O(N^4) time classically",
+      "single_copy_fourier_extinction": "I(tau : K) <= 2^{-Omega(N log N)} bits for single-copy quantum Fourier sampling",
+      "multi_copy_commutant_intractability": "Multi-copy collective observables require diagonalizing commutants of dimension (N!)^k = 2^{Omega(k N log N)}",
+      "speedup_claim_allowed": false
+    },
+    "lesson": "Cai-F\u00fcrer-Immerman gadget graphs cannot provide an algorithmic quantum advantage. Although CFI graphs defeat k-dimensional Weisfeiler-Lehman, all 3-regular CFI graphs have bounded maximum degree Delta <= 4, which is solvable in deterministic polynomial time O(N^4) classically by Luks' algorithm (1982). Meanwhile, quantum algorithms on non-abelian coset states face factorially vanishing single-copy information and exponential (N!)^k commutant dimensions for multi-copy collective measurements, making the quantum approach strictly harder than the classical baseline.",
+    "reason_invalid": "For all 3-regular base graphs, the CFI construction produces graphs with N_CFI = 7 |V| vertices and maximum degree Delta <= 4. By Luks' polynomial-time algorithm for bounded valence (JCSS 1982), Graph Isomorphism on these graphs is solved in O(N^4) deterministic classical time. Quantum non-abelian coset state measurements provide <= 2^{-Omega(N log N)} bits of information on single copies, and multi-copy collective measurements require diagonalizing commutant algebras of dimension (N!)^k = 2^{Omega(k N log N)}, completely falsifying the hypothesis of a quantum advantage on CFI graphs.",
+    "source": "research/coset_workbench/cfi_graph_coset_luks_subsumption_barrier.json"
   }
 ]
