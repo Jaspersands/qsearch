@@ -2,8 +2,13 @@
 
 **Investigation**: Investigation 23 (Quantum Information Theory & Entanglement Spectrum)  
 **Date**: 2026-10-11  
-**Status**: RIGOROUSLY PROVED  
+**Status**: AUDITED & REVISED (See `research/ADVERSARIAL_MATHEMATICAL_AUDIT_REPORT.md`)  
 **Core Invariants**: `speedup_claim_allowed = False`, `accepted_speedup_candidate = False`  
+
+> [!WARNING]
+> **Adversarial Audit Scope Notice (2026-10-11)**:
+> 1. **Unitary Circuit Scope**: The entanglement depth lower bound applies **strictly to coherent, measurement-free unitary circuits** where all registers remain in a pure state until the final measurement. It is **BYPASSED** by adaptive circuits with intermediate measurements and feed-forward (such as Kuperberg's actual sieve), which only entangle 2 qubits at a time ($E_D = 2$ identically at all stages) and immediately measure the target register.
+> 2. **Arithmetic Correction**: In Theorem 1, the union bound on subset collisions is $\frac{3^m - 1}{2^n}$. Demanding this probability be bounded by $\epsilon < 1$ implies $m \ge \frac{n}{\log_2 3} \approx 0.6309 n$, not $m \ge n - O(1)$. The support lower bound is $E_D \ge 0.631 n = \Omega(n)$.
 
 ---
 

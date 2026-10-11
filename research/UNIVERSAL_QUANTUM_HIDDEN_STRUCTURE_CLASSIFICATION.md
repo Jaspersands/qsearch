@@ -2,8 +2,16 @@
 
 **Investigation**: Investigation 25 (Grand Synthesis & Algorithmic Boundary)  
 **Date**: 2026-10-11  
-**Status**: RIGOROUSLY PROVED & UNIFIED  
+**Status**: AUDITED & REVISED (See `research/ADVERSARIAL_MATHEMATICAL_AUDIT_REPORT.md`)  
 **Core Invariants**: `speedup_claim_allowed = False`, `accepted_speedup_candidate = False`  
+
+> [!WARNING]
+> **Adversarial Audit Revision Notice (2026-10-11)**:
+> The membership boundaries of the 4 classes have been **REVISED** following the adversarial mathematical audit:
+> 1. **Parabolic Subgroups in $GL(n, q)$** belong to **Class $\mathcal{Q}_{\text{exp}}$** (Decker et al., MFCS 2014, arXiv:1406.6511), NOT Class $\mathcal{C}_{\text{poly}}$. The claimed classical transvection dequantization was mathematically invalid (zero collisions).
+> 2. **Constant-Exponent Solvable Groups** (e.g. $\mathbb{F}_p^n \rtimes H$ with $p = O(1)$) belong to **Class $\mathcal{Q}_{\text{exp}}$** (Friedl et al., STOC 2003 / SICOMP 2014), NOT Class $\mathcal{S}_{\text{subexp}}$.
+> 3. **Class $\mathcal{S}_{\text{subexp}}$** is restricted to solvable groups with **growing exponent** (e.g. cyclic kernels of order $2^n$ where continuous phase sieving applies).
+> 4. **Unitary Entanglement Depth Bound**: The $E_D = \Omega(n)$ lower bound applies strictly to unitary distillation circuits, and is bypassed by adaptive measurements with intermediate feed-forward.
 
 ---
 

@@ -2,8 +2,16 @@
 
 **Investigation**: Investigation 24 (Quantum Resource Theories & Classical Simulation)  
 **Date**: 2026-10-11  
-**Status**: RIGOROUSLY PROVED  
+**Status**: AUDITED & REVISED (See `research/ADVERSARIAL_MATHEMATICAL_AUDIT_REPORT.md`)  
 **Core Invariants**: `speedup_claim_allowed = False`, `accepted_speedup_candidate = False`  
+
+> [!WARNING]
+> **Adversarial Audit Correction Notice (2026-10-11)**:
+> Theorem 2 (Stabilizer Rank Classical Dequantization Threshold) contains an **INVALID APPLICATION OF BRAVYI-GOSSET SIMULATION**.
+> Bravyi-Gosset classical simulation scales as $O(\chi_{\text{total}} \cdot \text{poly}(P))$, where $\chi_{\text{total}}$ is the stabilizer rank of the **entire state** (input state plus injected magic states).
+> In Theorem 1, the author correctly proved that the input state $|\Psi_{\vec{k}, s}\rangle = \bigotimes_{j=1}^P |\psi_{k_j, s}\rangle$ has maximal stabilizer nullity $\nu = P$ and stabilizer fidelity $\le (0.8536)^P = 2^{-\Omega(P)}$. Consequently, the **input state itself has stabilizer rank $\chi(|\Psi\rangle) = 2^{\Omega(P)}$**.
+> Even if a circuit uses zero $T$ gates ($T_{\text{count}} = 0$, pure Clifford), simulating a Clifford circuit on an input of $P$ magic-like states requires $2^{\Omega(P)}$ classical time.
+> Therefore, low-$T$-count circuits acting on $P$ coset registers **ARE NOT DEQUANTIZED IN POLYNOMIAL TIME** by Bravyi-Gosset simulation. Theorem 3 (magic state distillation burden on physical fault-tolerant architectures) remains mathematically valid.
 
 ---
 

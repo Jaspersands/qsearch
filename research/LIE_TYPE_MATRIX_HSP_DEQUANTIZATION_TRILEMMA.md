@@ -2,8 +2,14 @@
 
 **Investigation**: Investigation 21 (Extension beyond $S_n$, $D_N$, and $W_n$)  
 **Date**: 2026-10-11  
-**Status**: RIGOROUSLY PROVED  
+**Status**: AUDITED & REVISED (See `research/ADVERSARIAL_MATHEMATICAL_AUDIT_REPORT.md`)  
 **Core Invariants**: `speedup_claim_allowed = False`, `accepted_speedup_candidate = False`  
+
+> [!WARNING]
+> **Adversarial Audit Retraction Notice (2026-10-11)**:
+> Theorem 1 (Classical Deterministic Dequantization of Parabolic HSP) has been **RETRACTED**. The derivation in Step 5 claimed transvection collisions $\alpha A_{i-k, j} = \beta A_{i-k, m}$, which is mathematically false because the condition must hold for all $x \in \mathbb{F}_q^k$, forcing $\alpha = \beta = 0$ (zero collisions). Under black-box oracle access, classical query complexity is lower-bounded by $2^{\Omega(n-k)}$.
+> Furthermore, **Decker, Ivanyos, Kulkarni, Qiao, and Santha (MFCS 2014, arXiv:1406.6511)** proved that Parabolic HSP in $GL(n, \mathbb{F}_q)$ is solvable in **quantum polynomial time** $\text{poly}(n, \log q)$.
+> Parabolic HSP is therefore a **genuine quantum speedup** over classical black-box query complexity and belongs in Class $\mathcal{Q}_{\text{exp}}$. Theorems 2 and 3 regarding Deligne-Lusztig torus commutants and $SL(2, 2^n)$ QFT circuit lower bounds remain mathematically valid.
 
 ---
 

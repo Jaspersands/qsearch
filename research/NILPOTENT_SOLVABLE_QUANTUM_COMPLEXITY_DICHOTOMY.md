@@ -2,8 +2,14 @@
 
 **Investigation**: Investigation 22 (The Structural Frontier of Non-Abelian HSP)  
 **Date**: 2026-10-11  
-**Status**: RIGOROUSLY PROVED  
+**Status**: AUDITED & REVISED (See `research/ADVERSARIAL_MATHEMATICAL_AUDIT_REPORT.md`)  
 **Core Invariants**: `speedup_claim_allowed = False`, `accepted_speedup_candidate = False`  
+
+> [!WARNING]
+> **Adversarial Audit Scope Notice (2026-10-11)**:
+> The dichotomy claimed in Theorem 22.1 ("if and only if nilpotent") is **OVERSTATED**. While the automorphic relative phase sieve obstruction holds strictly for solvable groups with **growing exponent** (such as cyclic kernels $\mathbb{Z}_{2^n}$ where phases are continuous angles in $\mathbb{R}/\mathbb{Z}$, e.g. $D_N$ and $AGL(1, p)$), it does **NOT** apply to solvable groups with **constant exponent** and constant derived length.
+> **Friedl, Ivanyos, Magniez, Santha, and Sen (STOC 2003 / SICOMP 2014)** established an explicit **polynomial-time quantum algorithm** for non-nilpotent solvable groups of constant exponent (e.g. $\mathbb{F}_p^n \rtimes H$ with $p = O(1)$), even when $Z(G) = \{1\}$.
+> The true dichotomy is: **Nilpotent Groups and Constant-Exponent Solvable Groups $\in \text{BQP}$**, while **Growing-Exponent Solvable Non-Nilpotent Groups $\in \mathcal{S}_{\text{subexp}}$** (Kuperberg sieve lower-bounded).
 
 ---
 
