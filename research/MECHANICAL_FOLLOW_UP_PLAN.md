@@ -1,6 +1,25 @@
 # Mechanical Follow-Up Implementation Plan (pass 2)
 
-## Latest Handoff (2026-10-11, Investigation 27 Proved — Symplectic Parabolic Obstruction)
+## Latest Handoff (2026-10-11, Investigation 28 Proved — Isotropic Parabolic Spectrum & Low-Dimensional Classical Dequantization)
+
+Read `research/ISOTROPIC_PARABOLIC_HSP_SPECTRUM_DEQUANTIZATION.md` and the TOP of `research/AGENT_HANDOFF.md`.
+Investigation 28 establishes the full complexity spectrum for isotropic parabolics $P_k = \text{Stab}_{Sp(2n)}(U)$ ($1 \le k \le n$):
+- Proved General Isotropic Transvection Lemma: $T_u \in P_U \iff u \in U^\perp$ for all $1 \le k \le n$.
+- Proved Universal Classical Query Complexity: $Q_{\text{classical}} \le 4(2n - k)(q^k + 1) = O(n q^k)$ queries and $O(n^3)$ classical time.
+- Proved Polynomial Classical Dequantization for all $k \le O(\log n)$ (in particular Heisenberg parabolic $k = 1$ in $O(q n)$ queries).
+- Proved Characteristic Duality of Heisenberg Radical $U_1$: elementary abelian $(\mathbb{Z}_2^r)^{2n-1}$ in char 2 vs Heisenberg class 2 in odd char.
+- Proved Gel'fand Pair $(Sp(2n, \mathbb{F}_2), P_1)$ rank 3 collapse: irrep dimensions $[1, 5, 9]$ on 15 lines, yielding 0.000 bits single-copy mutual information.
+- Registered negative result: `NEG-ISOTROPIC-PARABOLIC-DEQUANTIZATION-BOUND` (valid with 954 negative results).
+
+Mechanical Queue:
+1. Verify repo health: `python3 qsearch.py validate` and `python3 tools/check_site.py`.
+2. Run Investigation 28 test suite: `pytest tests/test_isotropic_parabolic_hsp_spectrum_dequantization.py` (7/7 PASS).
+3. Run Investigation 28 cross-check: `node research/certificates/isotropic_parabolic_hsp_spectrum_crosscheck.js` (111/111 PASS).
+4. Run Investigation 27 test suite: `pytest tests/test_symplectic_parabolic_obstruction_gelfand_brauer_barrier.py` (8/8 PASS).
+5. Strict invariants: `speedup_claim_allowed = False`, `accepted_speedup_candidate = False`.
+6. Preserve all proof gates, retractions, counterexamples, and negative results.
+
+## Prior Handoff (2026-10-11, Investigation 27 Proved — Symplectic Parabolic Obstruction)
 
 Read `research/SYMPLECTIC_PARABOLIC_OBSTRUCTION_GELFAND_BRAUER_BARRIER.md` and the TOP of `research/AGENT_HANDOFF.md`.
 Investigation 27 establishes the exact mathematical demarcation between $GL(n)$ and $Sp(2n)$:

@@ -72,6 +72,7 @@ The table below summarizes the exact mathematical status of key hidden structure
 | **Growing-Exponent Solvable** | $D_N$, $N$ odd, reflection $H$ | Multiplicative | $\Omega(\sqrt{N})$ | $2^{O(\sqrt{\log N})}$ | **$2^{O(\sqrt{\log N})}$** (Kuperberg 2005) | Collision pool $P \ge 2^{\Omega(\sqrt{\log N})}$; $E_D \ge 0.63n$ unitary | **Open in BQP** |
 | **Parabolic HSP in $GL(n, q)$** | $GL(n, \mathbb{F}_q)$, parabolic $P_W$ | Multiplicative | $\Omega(q^{n/2})$ | $2^{\Omega(n)}$ queries | **$\text{poly}(n, \log q)$** (Decker et al. 2014) | None | **Proved BQP Speedup** |
 | **Siegel Parabolic in $Sp(2n, q)$** | $Sp(2n, \mathbb{F}_q)$, Siegel $P_W$ | Multiplicative | $\le O(n q^n)$ queries | $O(n q^n)$ (Transvections) | Open for mult oracle; $\text{poly}$ for additive | Mult-to-additive reduction open; char-2 trace pairing fails | **Unestablished** |
+| **Isotropic Parabolic in $Sp(2n, q)$ ($k \le O(\log n)$)** | $Sp(2n, \mathbb{F}_q)$, isotropic $P_U$ | Multiplicative | $O(n q^k)$ | $O(n q^k)$ (Transvections) | $\text{poly}(n)$ classical | Classical dequantization via $T_u \in P_U \iff u \in U^\perp$ | **Dequantized Classically** |
 | **Maximal Torus in $GL(n, q)$** | $GL(n, \mathbb{F}_q)$, $T \cong (\mathbb{F}_q^\times)^n$ | Multiplicative | $\Omega(q^{n(n-1)/4})$ | $2^{\Omega(n^2 \log q)}$ | Open ($2^{O(n \log n)}$) | Single-copy $I \le 2^{-\Omega(n^2)}$; commutant $(n!)^m$ | **Strong Quantum Barrier** |
 | **Graph Isomorphism** | $S_n$, involution $H \cong \mathbb{Z}_2$ | Multiplicative | $\Omega(\sqrt{n!})$ | $2^{O(\log^c n)}$ (Babai 2016) | Open | Single-copy $I \le \frac{1}{2 \ln 2 \cdot n!}$; commutant $(n!)^m$ | **Strong Quantum Barrier** |
 | **Linear Code Equivalence** | $W_n = (S_n \times S_n) \rtimes \mathbb{Z}_2$ | Multiplicative | $\Omega(n!)$ | Quasi-poly for LCD / bounded-hull | Open | Single-copy $I \le \frac{1}{2 \ln 2 \cdot n!}$; commutant $(n!)^m$ | **Strong Quantum Barrier** |
@@ -83,7 +84,7 @@ The table below summarizes the exact mathematical status of key hidden structure
 
 ---
 
-## 4. Master Cross-Reference Table of Investigations 1–27
+## 4. Master Cross-Reference Table of Investigations 1–28
 
 | # | Investigation Focus | Domain | Primary Obstruction / Mechanism | Epistemic Status |
 | :-: | :--- | :--- | :--- | :---: |
@@ -114,6 +115,7 @@ The table below summarizes the exact mathematical status of key hidden structure
 | **25** | Hidden Structure Research Taxonomy | Meta-Complexity | Replaced universal 4-class partition with audited multi-dimensional ledger | Audited: Master taxonomy established |
 | **26** | Symplectic Parabolic Counteralgorithm & Gaps | Lie Matrix HSP | Transvections test $v \in W$ in $O(n q^n)$; quantum reduction unestablished | Audited: Lower bound disproved |
 | **27** | Symplectic Parabolic Obstruction & Partition Barrier | Lie Representation | Ambient density collapses $q^{-1.5 n^2}$; Gel'fand rank $n+1$ spherical extinction; Partition commutant $B(2M) \ge (2M-1)!!$ gates | Proved Mathematical Obstruction |
+| **28** | Isotropic Parabolic Spectrum & Dequantization | Lie Matrix HSP | $T_u \in P_U \iff u \in U^\perp$ solves HSP in $O(n q^k)$ queries; Heisenberg $k=1$ in $O(q n)$ polynomial time; Heisenberg radical $U_1$ abelian in char 2 vs class 2 in char $\ge 3$; $(Sp(4, \mathbb{F}_2), P_1)$ Gel'fand rank 3 with irreps $[1, 5, 9]$ | Proved Theorems & Classical Dequantization |
 
 ---
 

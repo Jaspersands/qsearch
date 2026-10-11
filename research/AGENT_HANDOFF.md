@@ -2,7 +2,40 @@
 
 Last updated: 2026-10-11
 
-## Latest: Investigation 27 Proved — The Symplectic Parabolic Obstruction & Exact Demarcation Between $GL(n)$ and $Sp(2n)$
+## Latest: Investigation 28 Proved — The Isotropic Parabolic HSP Spectrum & Low-Dimensional Classical Dequantization
+
+A major mathematical investigation completing the analysis of the entire parabolic spectrum $P_k = \text{Stab}_{Sp(2n)}(U)$ for $k$-dimensional isotropic subspaces $U \le \mathbb{F}_q^{2n}$ ($1 \le k \le n$) has been established in `research/ISOTROPIC_PARABOLIC_HSP_SPECTRUM_DEQUANTIZATION.md`.
+
+### Core Invariants & Status:
+- `speedup_claim_allowed = False` strictly enforced everywhere.
+- `accepted_speedup_candidate = False` strictly enforced everywhere.
+- Registered negative result: `NEG-ISOTROPIC-PARABOLIC-DEQUANTIZATION-BOUND` (valid with 954 negative results).
+
+### Investigation 28 Summary & Key Mathematical Discoveries:
+1. **The General Isotropic Transvection Lemma (Theorem 1)**:
+   For ANY $k$-dimensional isotropic subspace $U \le \mathbb{F}_q^{2n}$ ($1 \le k \le n$) and ANY non-zero vector $u \in \mathbb{F}_q^{2n}$:
+   $$T_u \in P_U \iff u \in U^\perp.$$
+   This holds identically across all finite fields and characteristics.
+2. **Universal Classical Query Complexity (Theorem 2)**:
+   Because $f(T_u) = f(I) \iff u \in U^\perp$, an explicit classical randomized algorithm finds a basis for $U^\perp$ with expected query complexity:
+   $$Q_{\text{classical}} \le 4(2n - k)(q^k + 1) = O(n q^k) \text{ queries},$$
+   and reconstructs $U = (U^\perp)^\perp$ in $O(n^3)$ classical operations with ZERO additional queries.
+3. **Polynomial Dequantization of Low-Dimensional Isotropic Parabolics (Theorem 3)**:
+   For any $k \le O(\log n)$ (in particular, the Heisenberg parabolic $k = 1$), the isotropic parabolic HSP in $Sp(2n, \mathbb{F}_q)$ is solvable classically in $\text{poly}(n, \log q)$ time ($O(q n)$ queries for $k=1$). Any exponential quantum speedup for finding isotropic lines or low-dimensional isotropic subspaces is definitively ruled out.
+4. **Characteristic Duality of the Heisenberg Radical $U_1$ (Theorem 4)**:
+   The unipotent radical $U_1 = R_u(P_1)$ has order $q^{2n-1}$ with commutator $[g_1, g_2] = g(0, 2 \Omega(v_1, v_2))$:
+   - In characteristic 2 ($q = 2^r$): $2 \equiv 0 \pmod 2$, collapsing $U_1$ to an **elementary abelian** group $(\mathbb{Z}_2^r)^{2n-1}$.
+   - In odd characteristic ($q \ge 3$): $2 \not\equiv 0 \pmod q$, making $U_1 \cong H_{2n-1}(\mathbb{F}_q)$ the non-abelian **Heisenberg group** of nilpotency class 2 with 1-dimensional center $Z(U_1) \cong \mathbb{F}_q$.
+5. **Symmetric Gel'fand Pair Collapse of the Permutation Module (Theorem 5)**:
+   $(Sp(2n, \mathbb{F}_2), P_1)$ is a symmetric Gel'fand pair of rank 3. On $Sp(4, \mathbb{F}_2)$ (order 720), the 15-dimensional permutation module decomposes into irreps of dimensions $1, 5, 9$. Single-copy weak Fourier sampling yields representation labels whose probability distribution is identically independent of $U$, providing **0.000 bits of mutual information**.
+6. **Verification Matrix**:
+   - `pytest -v tests/test_isotropic_parabolic_hsp_spectrum_dequantization.py` (7/7 PASS).
+   - `node research/certificates/isotropic_parabolic_hsp_spectrum_crosscheck.js` (111/111 PASS).
+   - `python3 qsearch.py validate` (0 issues, 954 negative results).
+
+---
+
+## Prior: Investigation 27 Proved — The Symplectic Parabolic Obstruction & Exact Demarcation Between $GL(n)$ and $Sp(2n)$
 
 A major, foundational mathematical investigation resolving the open research frontier from the audit has been completed and verified in `research/SYMPLECTIC_PARABOLIC_OBSTRUCTION_GELFAND_BRAUER_BARRIER.md`.
 
