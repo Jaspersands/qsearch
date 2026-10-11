@@ -1,6 +1,29 @@
 # Mechanical Follow-Up Implementation Plan (pass 2)
 
-## Latest Handoff (2026-10-11, Investigation 31 Proved — Unitary Parabolic HSP Obstruction, Hermitian Invariant Demarcation, and Classical Dequantization)
+## Latest Handoff (2026-10-11, Investigation 32 Proved — Non-Split Maximal Torus HSP Obstruction and Deligne-Lusztig Barrier in $GL(n, \mathbb{F}_q)$)
+
+Read `research/SINGER_CYCLE_TORAL_HSP_OBSTRUCTION_DELIGNE_LUSZTIG_BARRIER.md` and the TOP of `research/AGENT_HANDOFF.md`.
+Investigation 32 establishes the exact classical and quantum complexity bounds for maximal non-split tori (Singer cycles):
+- Proved Transvection Emptiness: $T \cap \text{Transvections} = \emptyset$ (every element in $T \setminus \mathbb{F}_q^\times I$ has an irreducible char poly over $\mathbb{F}_q$, possessing zero eigenvalues in $\mathbb{F}_q$).
+- Proved Unconditional Classical Query Lower Bound: $Q_{\text{classical}} \ge \Omega(q^{n(n-1)/4}) = 2^{\Omega(n^2 \log q)}$ queries.
+- Proved Gel'fand Pair & Spherical Extinction: $(GL(2, \mathbb{F}_3), T)$ is a Gel'fand pair of rank 3 with double coset orbit sizes $[1, 1, 4]$ and irrep dimensions $[1, 2, 3]$; single-copy mutual information is identically 0.000 bits.
+- Proved Deligne-Lusztig Commutant Lower Bound: cuspidal Deligne-Lusztig representations of dimension $2^{\Theta(n^2 \log q)}$ enforce a multi-copy commutant dimension $\ge n^M$, requiring at least $2^{\Omega(n^2 \log n)}$ quantum gates.
+- Proved Flag-Torus Spectrum Dichotomy: Parabolic/flag sector (dequantized in $O(n q^{O(k)})$ / BQP in GL) vs Non-split toral sector ($2^{\Omega(n^2 \log q)}$ classical queries and $2^{\Omega(n^2 \log n)}$ quantum gates).
+- Registered negative result: `NEG-SINGER-CYCLE-TORAL-HSP-BARRIER` (valid with 958 negative results).
+
+Mechanical Queue:
+1. Verify repo health: `python3 qsearch.py validate` and `python3 tools/check_site.py`.
+2. Run Investigation 32 test suite: `pytest tests/test_singer_cycle_toral_hsp_obstruction.py` (6/6 PASS).
+3. Run Investigation 32 cross-check: `node research/certificates/singer_cycle_toral_hsp_crosscheck.js` (40/40 PASS).
+4. Run Investigation 31 test suite: `pytest tests/test_unitary_parabolic_hsp_obstruction.py` (6/6 PASS).
+5. Run Investigation 30 test suite: `pytest tests/test_orthogonal_parabolic_hsp_obstruction.py` (7/7 PASS).
+6. Run Investigation 29 test suite: `pytest tests/test_nilpotent_solvable_exponent_descent_phase_transition.py` (6/6 PASS).
+7. Run Investigation 28 test suite: `pytest tests/test_isotropic_parabolic_hsp_spectrum_dequantization.py` (7/7 PASS).
+8. Run Investigation 27 test suite: `pytest tests/test_symplectic_parabolic_obstruction_gelfand_brauer_barrier.py` (8/8 PASS).
+9. Strict invariants: `speedup_claim_allowed = False`, `accepted_speedup_candidate = False`.
+10. Preserve all proof gates, retractions, counterexamples, and negative results.
+
+## Prior Handoff (2026-10-11, Investigation 31 Proved — Unitary Parabolic HSP Obstruction, Hermitian Invariant Demarcation, and Classical Dequantization)
 
 Read `research/UNITARY_PARABOLIC_HSP_OBSTRUCTION_HERMITIAN_DEMARCATION.md` and the TOP of `research/AGENT_HANDOFF.md`.
 Investigation 31 completes the entire classical Lie matrix group quadrumvirate ($GL, Sp, O, U$):

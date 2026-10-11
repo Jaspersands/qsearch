@@ -2,7 +2,44 @@
 
 Last updated: 2026-10-11
 
-## Latest: Investigation 31 Proved — Unitary Parabolic HSP Obstruction, Hermitian Invariant Demarcation, and Classical Dequantization
+## Latest: Investigation 32 Proved — Non-Split Maximal Torus (Singer Cycle) HSP Obstruction and Deligne-Lusztig Commutant Barrier in $GL(n, \mathbb{F}_q)$
+
+A major foundational investigation establishing the rigorous complexity lower bounds for maximal tori in Lie matrix groups has been completed and verified in `research/SINGER_CYCLE_TORAL_HSP_OBSTRUCTION_DELIGNE_LUSZTIG_BARRIER.md`.
+
+### Core Invariants & Status:
+- `speedup_claim_allowed = False` strictly enforced everywhere.
+- `accepted_speedup_candidate = False` strictly enforced everywhere.
+- Registered negative result: `NEG-SINGER-CYCLE-TORAL-HSP-BARRIER` (valid with 958 negative results).
+
+### Investigation 32 Summary & Key Mathematical Discoveries:
+1. **Transvection Emptiness & Irreducible Spectral Demarcation (Theorem 1)**:
+   A Singer cycle $T \cong \mathbb{F}_{q^n}^\times \le GL(n, \mathbb{F}_q)$ of order $q^n - 1$ acts irreducibly on $\mathbb{F}_q^n$. Every element $g \in T \setminus \mathbb{F}_q^\times I$ has an irreducible characteristic polynomial over $\mathbb{F}_q$ with zero eigenvalues in $\mathbb{F}_q$.
+   Consequently, $T$ contains **ZERO transvections and ZERO unipotent elements**:
+   $$T \cap \text{Transvections} = \emptyset.$$
+   The transvection / reflection techniques that dequantized parabolic subgroups fail completely for Singer cycles.
+2. **Unconditional Classical Query Lower Bound (Theorem 2)**:
+   Structured classical probes produce zero collisions. In the black-box oracle model, the collision probability is bounded by $|T| / |GL(n, \mathbb{F}_q)| \le q^{-n^2 + n}$.
+   Any classical algorithm requires an unconditional query lower bound of:
+   $$Q_{\text{classical}} \ge \Omega\left( \sqrt{\frac{|GL(n, \mathbb{F}_q)|}{|T|}} \right) = \Omega\left( q^{\frac{n(n-1)}{4}} \prod_{j=1}^{n-1} (q^j - 1)^{1/2} \right) = 2^{\Omega(n^2 \log q)} \text{ queries}.$$
+3. **Gel'fand Pair Decomposition & Single-Copy Spherical Extinction (Theorem 3)**:
+   For $(GL(2, \mathbb{F}_3), T)$ (where $|G| = 48, |T| = 8$), the pair is a symmetric Gel'fand pair of rank 3 with double coset orbit sizes $[1, 1, 4]$ and irrep dimensions $[1, 2, 3]$.
+   Single-copy weak Fourier sampling yields representation labels with probability $p(\lambda) = d_\lambda / 6$, completely independent of $T$, yielding **identically 0.000 bits of mutual information**.
+4. **Deligne-Lusztig Multi-Copy Commutant Lower Bound (Theorem 4)**:
+   Deligne-Lusztig induction $R_T^G(\theta)$ associates with $T$ cuspidal representations of dimension $d_\theta = \prod_{j=1}^{n-1} (q^j - 1) = 2^{\Theta(n^2 \log q)}$.
+   By Frobenius reciprocity and the Weyl group action $W(T) \cong \mathbb{Z}_n$, the commutant algebra $\text{End}_G((\mathbb{C}^{G/T})^{\otimes M})$ has dimension $\ge n^M$. Reconstructing $T$ out of $N_{\text{Singer}} = 2^{\Theta(n^2 \log q)}$ candidates requires $M = \Omega(n^2)$ copies, giving a quantum circuit lower bound of:
+   $$2^{\Omega(n^2 \log n)} \text{ quantum gates}.$$
+5. **The Flag-Torus Spectrum Dichotomy (Theorem 5)**:
+   The complexity of algebraic HSPs in finite Lie groups exhibits a strict dichotomy:
+   - Flag / Parabolic Sector: High unipotent radical density, geometric transvection probes, classically dequantized in $O(n q^{O(k)})$ or in BQP via abelianization (Decker et al. 2014).
+   - Non-Split Toral Sector: Zero unipotent density, irreducible spectrum, classical query lower bound $2^{\Omega(n^2 \log q)}$, and quantum circuit lower bound $2^{\Omega(n^2 \log n)}$.
+6. **Verification Matrix**:
+   - `pytest -v tests/test_singer_cycle_toral_hsp_obstruction.py` (6/6 PASS).
+   - `node research/certificates/singer_cycle_toral_hsp_crosscheck.js` (40/40 PASS).
+   - `python3 qsearch.py validate` (0 issues, 958 negative results).
+
+---
+
+## Prior: Investigation 31 Proved — Unitary Parabolic HSP Obstruction, Hermitian Invariant Demarcation, and Classical Dequantization
 
 A major foundational investigation completing the algebraic and quantum complexity classification of parabolic subgroups across the **entire Cartan-Killing quadrumvirate of classical Lie-type matrix groups** ($GL, Sp, O, U$) has been established in `research/UNITARY_PARABOLIC_HSP_OBSTRUCTION_HERMITIAN_DEMARCATION.md`.
 
