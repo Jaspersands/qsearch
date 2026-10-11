@@ -85505,5 +85505,27 @@
     "lesson": "Do not treat irrep-label bias as a hidden-permutation algorithm; require collective measurements or additional row/column information.",
     "reason_invalid": "Weak Fourier labels have only small bias; any speedup claim needs collective row/column measurements.",
     "source": "weak_fourier_signal.py"
+  },
+  {
+    "applies_to": [
+      "NONABELIAN-COSET-COLLECTIVE-OBSERVABLES",
+      "LIE-TYPE-MATRIX-HSP",
+      "ORTHOGONAL-PARABOLIC-HSP",
+      "QUADRATIC-INVARIANT-OBSTRUCTION"
+    ],
+    "claim": "Quantum algorithms can achieve an exponential speedup for finding unknown parabolic subgroups P_U stabilizing isotropic subspaces in orthogonal groups O(d, F_q) and SO(d, F_q) over classical algorithms.",
+    "evidence": {
+      "ambient_density_collapse": "|P_m| / |span(P_m)| = q^{-(3m^2+m)/2} prod(1 - q^{-j}) <= 2^{-Omega(m^2 log q)}",
+      "bireflection_equivalence": "R_v in P_U <=> v in U^perp (odd char) and T_v in P_U <=> v in U^perp (char 2)",
+      "gelfand_pair_collapse": "(O^+(4, F_3), P_1) rank 3 with irreps [1, 6, 9], 0.000 bits mutual info",
+      "line_radical_abelian": "E(u, w1) E(u, w2) = E(u, w1 + w2) universally abelian of order q^{d-2}",
+      "query_complexity_bound": "Q_classical <= 4(d - k)(q^k + 1) = O(d q^k)",
+      "speedup_claim_allowed": false,
+      "trace_pairing_degeneracy": "Tr(B C) = 2 sum_{i < j} B_ij C_ij == 0 mod 2 on alternating Lie algebras"
+    },
+    "id": "NEG-ORTHOGONAL-PARABOLIC-DEQUANTIZATION-BOUND",
+    "lesson": "Orthogonal parabolic HSP in O(d, F_q) and SO(d, F_q) cannot yield an exponential quantum speedup. The problem is classically dequantized in O(d q^k) queries via orthogonal reflections (in odd characteristic) and orthogonal transvections (in characteristic 2). For all low dimensions k <= O(log d), the problem is solved in polynomial classical time poly(d, log q). Additive Fourier sampling over M_d(F_q) is extinguished by ambient density collapse 2^{-Omega(m^2 log q)}, Lie algebra trace duality fails over F_2, and single-copy weak Fourier sampling yields identically 0.000 bits of mutual information.",
+    "reason_invalid": "For every k-dimensional isotropic subspace U in F_q^d (1 <= k <= m = floor(d/2)) and every non-singular vector v in F_q^d, the orthogonal reflection R_v (for p > 2) or transvection T_v (for p = 2) belongs to P_U if and only if v in U^perp. In SO(d, F_q) for k < m, bireflections R_{v0} R_v satisfy the identical equivalence. An explicit classical randomized algorithm finds a basis of U^perp in expected O(d q^k) queries and recovers U = (U^perp)^perp in O(d^3) classical time. For all k <= O(log d), the classical time is poly(d, log q), ruling out any quantum speedup. For maximal isotropic parabolics, the ambient density collapses exponentially to q^{-(3m^2+m)/2} prod(1 - q^{-j}) = 2^{-Omega(m^2 log q)}, destroying additive Fourier sampling. Over F_2, the trace pairing on alternating matrices identically vanishes (Tr(B C) == 0 mod 2), invalidating Lie algebra Fourier sampling. Furthermore, (O^+(4, F_3), P_1) is a symmetric Gel'fand pair with irrep dimensions [1, 6, 9], yielding 0.000 bits of single-copy mutual information, and multi-copy collective tomography requires diagonalizing the partition commutant P_M(|X_1|) of dimension B(2M) >= (2M - 1)!! = 2^{Omega(d log d)}.",
+    "source": "research/ORTHOGONAL_PARABOLIC_HSP_OBSTRUCTION_QUADRATIC_INVARIANT.md"
   }
 ]

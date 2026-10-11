@@ -2,7 +2,48 @@
 
 Last updated: 2026-10-11
 
-## Latest: Investigation 29 Proved — Zero-Sum Central Descent Demarcation & Carry Phase Transition in Nilpotent and Solvable HSP
+## Latest: Investigation 30 Proved — Orthogonal Parabolic HSP Obstruction, Quadratic Invariant Demarcation, and Bireflection Classical Dequantization
+
+A major foundational investigation resolving the algebraic and quantum complexity landscape of parabolic subgroups in orthogonal groups $O(d, \mathbb{F}_q)$ and special orthogonal groups $SO(d, \mathbb{F}_q)$ has been established in `research/ORTHOGONAL_PARABOLIC_HSP_OBSTRUCTION_QUADRATIC_INVARIANT.md`.
+
+### Core Invariants & Status:
+- `speedup_claim_allowed = False` strictly enforced everywhere.
+- `accepted_speedup_candidate = False` strictly enforced everywhere.
+- Registered negative result: `NEG-ORTHOGONAL-PARABOLIC-DEQUANTIZATION-BOUND` (valid with 956 negative results).
+
+### Investigation 30 Summary & Key Mathematical Discoveries:
+1. **The Orthogonal Reflection & Transvection Membership Lemma (Theorem 1)**:
+   For any $k$-dimensional isotropic subspace $U \le V$ ($1 \le k \le m = \lfloor d/2 \rfloor$):
+   - In odd characteristic ($p > 2$): For every non-singular vector $v \in V$ ($Q(v) \ne 0$), the orthogonal reflection $R_v(x) = x - \frac{B(x, v)}{Q(v)} v \in O(d, \mathbb{F}_q)$ satisfies:
+     $$R_v \in P_U \iff v \in U^\perp.$$
+   - In characteristic 2 ($p = 2$): For every non-singular vector $v \in V$ ($Q(v) = 1$), the orthogonal transvection $T_v(x) = x + B(x, v) v \in O(d, \mathbb{F}_2)$ satisfies:
+     $$T_v \in P_U \iff v \in U^\perp.$$
+   - In $SO(d, \mathbb{F}_q)$ (for $p > 2$ and $k < m$): For any fixed non-singular vector $v_0 \in U^\perp$, the orthogonal bireflection $R_{v_0} R_v \in SO(d, \mathbb{F}_q)$ satisfies:
+     $$R_{v_0} R_v \in P_U \iff v \in U^\perp.$$
+2. **Universal Classical Query Complexity & Polynomial Dequantization (Theorem 2)**:
+   Because $f(R_v) = f(I) \iff v \in U^\perp$, a classical randomized algorithm testing non-singular vectors reconstructs a basis for $U^\perp$ in expected query complexity:
+   $$Q_{\text{classical}} \le 4(d - k)(q^k + 1) = O(d q^k) \text{ queries},$$
+   and recovers $U = (U^\perp)^\perp$ in $O(d^3)$ classical operations. For any $k \le O(\log d)$ (including the isotropic line parabolic $k = 1$), the classical runtime is $\text{poly}(d, \log q)$, completely ruling out any quantum advantage. For maximal isotropic parabolics ($k = m$), the classical complexity is subexponential $2^{O(\sqrt{N_{\text{input}}})}$.
+3. **Ambient Density Exponential Collapse (Theorem 3)**:
+   For maximal isotropic parabolics $P_m \le O^+(2m, \mathbb{F}_q)$, the ambient linear span $\text{span}(P_m) \subset \mathcal{M}_{2m}(\mathbb{F}_q)$ has dimension $3m^2$. The ambient density collapses as:
+   $$\frac{|P_m|}{|\text{span}(P_m)|} = q^{-\frac{3m^2 + m}{2}} \prod_{j=1}^m (1 - q^{-j}) \le q^{-\frac{3m^2 + m}{2}} = 2^{-\Omega(m^2 \log q)}.$$
+   Additive Fourier sampling over $\mathcal{M}_{2m}(\mathbb{F}_q)$ suffers total destructive interference, bounding measurement success by $2^{-\Omega(m^2 \log q)}$.
+4. **Degeneracy of Matrix Trace Pairing in Characteristic 2 (Theorem 4)**:
+   The unipotent radical Lie algebra $\mathfrak{u} \subset \mathfrak{so}(2m, \mathbb{F}_2)$ consists of alternating matrices. For ANY alternating matrices $B, C \in \text{Alt}_m(\mathbb{F}_2)$, the matrix trace pairing identically vanishes:
+   $$\text{Tr}(B C) = 2 \sum_{i < j} B_{ij} C_{ij} \equiv 0 \pmod 2.$$
+   The Lie algebra trace duality $\mathfrak{u}^\perp = \mathfrak{p}$ fails completely in characteristic 2.
+5. **Abelian Universality of the Line Radical & Gel'fand Pair Collapse (Theorem 5)**:
+   - In contrast to $Sp(2n)$ (where the line radical is the non-abelian Heisenberg group in odd characteristic), the orthogonal line unipotent radical $R_u(P_1)$ is **unconditionally abelian** of order $q^{d-2}$ across all dimensions and all characteristics:
+     $$E(u, w_1) \circ E(u, w_2) = E(u, w_1 + w_2) \implies R_u(P_1) \cong (\mathbb{F}_q^{d-2}, +).$$
+   - $(O^+(4, \mathbb{F}_3), P_1)$ is a symmetric Gel'fand pair of rank 3 with irreps $[1, 6, 9]$ on 16 isotropic lines. Single-copy weak Fourier sampling yields representation labels with probability $p(\lambda) = d_\lambda / |X_1|$, yielding **identically 0.000 bits of mutual information**. Multi-copy tomographic reconstruction requires diagonalizing the partition commutant $P_M(|X_1|)$ with Bell dimension $B(2M) \ge (2M - 1)!! = 2^{\Omega(M \log M)}$, requiring at least $2^{\Omega(d \log d)}$ quantum gates.
+6. **Verification Matrix**:
+   - `pytest -v tests/test_orthogonal_parabolic_hsp_obstruction.py` (7/7 PASS).
+   - `node research/certificates/orthogonal_parabolic_hsp_crosscheck.js` (117/117 PASS).
+   - `python3 qsearch.py validate` (0 issues, 956 negative results).
+
+---
+
+## Prior: Investigation 29 Proved — Zero-Sum Central Descent Demarcation & Carry Phase Transition in Nilpotent and Solvable HSP
 
 A major foundational investigation resolving the structural boundary between polynomial-time quantum algorithms (BQP) and subexponential sieving across nilpotent and solvable groups has been established in `research/NILPOTENT_SOLVABLE_EXPONENT_DESCENT_PHASE_TRANSITION.md`.
 

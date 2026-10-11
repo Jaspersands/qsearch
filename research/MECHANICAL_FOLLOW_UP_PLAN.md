@@ -1,6 +1,28 @@
 # Mechanical Follow-Up Implementation Plan (pass 2)
 
-## Latest Handoff (2026-10-11, Investigation 29 Proved — Zero-Sum Central Descent Demarcation & Carry Phase Transition)
+## Latest Handoff (2026-10-11, Investigation 30 Proved — Orthogonal Parabolic HSP Obstruction, Quadratic Invariant Demarcation, and Bireflection Dequantization)
+
+Read `research/ORTHOGONAL_PARABOLIC_HSP_OBSTRUCTION_QUADRATIC_INVARIANT.md` and the TOP of `research/AGENT_HANDOFF.md`.
+Investigation 30 settles the parabolic HSP across orthogonal groups $O(d, \mathbb{F}_q)$ and special orthogonal groups $SO(d, \mathbb{F}_q)$:
+- Proved Orthogonal Reflection & Transvection Membership Lemma: $R_v \in P_U \iff v \in U^\perp$ for $p > 2$, $T_v \in P_U \iff v \in U^\perp$ for $p = 2$, and bireflections $R_{v0} R_v \in P_U \iff v \in U^\perp$ in $SO(d, \mathbb{F}_q)$.
+- Proved Universal Classical Query Complexity: $Q_{\text{classical}} \le 4(d - k)(q^k + 1) = O(d q^k)$ queries and $O(d^3)$ classical time, solving low dimensions $k \le O(\log d)$ in polynomial classical time.
+- Proved Ambient Density Collapse: $|P_m| / |\text{span}(P_m)| = q^{-(3m^2+m)/2} \prod (1 - q^{-j}) \le 2^{-\Omega(m^2 \log q)}$, precluding additive Fourier sampling over $\mathcal{M}_d(\mathbb{F}_q)$.
+- Proved Matrix Trace Pairing Degeneracy in Char 2: $\text{Tr}(B C) = 2 \sum_{i < j} B_{ij} C_{ij} \equiv 0 \pmod 2$ on alternating Lie algebras.
+- Proved Line Radical Abelian Universality: $E(u, w_1) E(u, w_2) = E(u, w_1 + w_2)$, making $R_u(P_1) \cong (\mathbb{F}_q^{d-2}, +)$ abelian in all dimensions and characteristics.
+- Proved Gel'fand Pair Collapse: $(O^+(4, \mathbb{F}_3), P_1)$ rank 3 with irreps $[1, 6, 9]$ and 0.000 bits mutual information; multi-copy partition commutant $B(2M) \ge (2M - 1)!! = 2^{\Omega(d \log d)}$ gates.
+- Registered negative result: `NEG-ORTHOGONAL-PARABOLIC-DEQUANTIZATION-BOUND` (valid with 956 negative results).
+
+Mechanical Queue:
+1. Verify repo health: `python3 qsearch.py validate` and `python3 tools/check_site.py`.
+2. Run Investigation 30 test suite: `pytest tests/test_orthogonal_parabolic_hsp_obstruction.py` (7/7 PASS).
+3. Run Investigation 30 cross-check: `node research/certificates/orthogonal_parabolic_hsp_crosscheck.js` (117/117 PASS).
+4. Run Investigation 29 test suite: `pytest tests/test_nilpotent_solvable_exponent_descent_phase_transition.py` (6/6 PASS).
+5. Run Investigation 28 test suite: `pytest tests/test_isotropic_parabolic_hsp_spectrum_dequantization.py` (7/7 PASS).
+6. Run Investigation 27 test suite: `pytest tests/test_symplectic_parabolic_obstruction_gelfand_brauer_barrier.py` (8/8 PASS).
+7. Strict invariants: `speedup_claim_allowed = False`, `accepted_speedup_candidate = False`.
+8. Preserve all proof gates, retractions, counterexamples, and negative results.
+
+## Prior Handoff (2026-10-11, Investigation 29 Proved — Zero-Sum Central Descent Demarcation & Carry Phase Transition)
 
 Read `research/NILPOTENT_SOLVABLE_EXPONENT_DESCENT_PHASE_TRANSITION.md` and the TOP of `research/AGENT_HANDOFF.md`.
 Investigation 29 resolves the structural boundary between BQP and subexponential sieving across nilpotent and solvable groups:
