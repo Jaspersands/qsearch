@@ -20364,6 +20364,17 @@ def command_self_dual_wreath_plancherel_mass_extinction_barrier(args: argparse.N
     return 0 if validation["valid"] else 1
 
 
+def command_character_shift_decoding_lower_bound_barrier(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    from theorems.character_shift_decoding_lower_bound_barrier import REPORT, write_report
+    write_report(write_registry=not getattr(args, "no_registry", False))
+    validation = validate_registry()
+    print("character_shift_decoding_lower_bound_barrier complete")
+    print(f"Artifact: {REPORT}")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--root", type=Path, default=Path.cwd())
@@ -28057,6 +28068,13 @@ def build_parser() -> argparse.ArgumentParser:
     )
     self_dual_wreath_plancherel_mass_extinction_barrier.add_argument("--no-registry", action="store_true")
     self_dual_wreath_plancherel_mass_extinction_barrier.set_defaults(func=command_self_dual_wreath_plancherel_mass_extinction_barrier)
+
+    character_shift_decoding_lower_bound_barrier = subparsers.add_parser(
+        "character-shift-decoding-lower-bound-barrier",
+        help="Run uniform character shift decoding lower bound, Weil agreement identity, and cyclotomic degree obstruction audit.",
+    )
+    character_shift_decoding_lower_bound_barrier.add_argument("--no-registry", action="store_true")
+    character_shift_decoding_lower_bound_barrier.set_defaults(func=command_character_shift_decoding_lower_bound_barrier)
 
     validate = subparsers.add_parser("validate", help="Validate candidates and experiments against proof obligations.")
     validate.set_defaults(func=command_validate)

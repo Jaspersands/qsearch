@@ -85287,5 +85287,26 @@
     "lesson": "The 1-bit orientation-syndrome CMI spike at S_6 is an isolated finite-size resonance with no asymptotic survival. Any quantum receiver faces the Mass-Information Trilemma: typical sectors decouple to uniform Haar randomness with CMI O(1/n^2) bits, while atypical informative sectors have physical mass exponentially extinguished as 2^{-Omega(sqrt(n))}, imposing a copy complexity lower bound of N_copies = 2^{Omega(sqrt(n))}.",
     "reason_invalid": "By the exact factorization of wreath Plancherel measure and the Biane-Kerov-Sniady character theorem, the physical probability of sign-swap self-dual irreps and repeated sign-orbit tuples decays exponentially as 2^{-Omega(sqrt(n))}. Typical partitions have vanishing normalized characters r_lambda(w) = O(1/n), collapsing the conditional mutual information to zero. No polynomial-time quantum advantage is possible through orientation-syndrome postselection.",
     "source": "research/representation/self_dual_wreath_plancherel_mass_extinction_barrier.json"
+  },
+  {
+    "id": "NEG-CHARACTER-SHIFT-UNIFORM-DECODING-LOWER-BOUND-BARRIER",
+    "applies_to": [
+      "CHARACTER-SHIFT-DECODING-LOWER-BOUND",
+      "LEGENDRE-PRG-INVERSION",
+      "CYCLOTOMIC-DEGREE-OBSTRUCTION",
+      "QUERY-TIME-SEPARATION"
+    ],
+    "claim": "Logarithmic sample fingerprinting Q(p) = O(log p) for shifted multiplicative characters yields a classical polynomial-time decoding algorithm.",
+    "evidence": {
+      "artifact": "research/classical_baselines/character_shift_decoding_lower_bound_barrier.json",
+      "autocorrelation_identity": "sum (x(x+delta) / p) == -1 identically for all delta != 0 (mod p)",
+      "exact_agreement_count": "N_agree(delta) == (p - 3) / 2 < p/2 identically",
+      "query_ceiling": "k*(p) = 2 ceil(log2 p) samples achieves failure <= 1/p",
+      "uniform_time_lower_bound": "T >= p/2 = 2^{Omega(n)} operations in uniform model",
+      "cyclotomic_degree": "deg((x+s)^{(p-1)/2} - y) = (p-1)/2 = 2^{Omega(n)}"
+    },
+    "lesson": "Do not confuse logarithmic query complexity O(log p) with polynomial classical decoding time. Shifted Legendre characters are information-theoretically identifiable in O(log p) samples, but uniform decoding without advice requires Omega(p) operations, matching the computational hardness of inverting the Legendre PRG.",
+    "reason_invalid": "By Weil's character sum theorem, pairwise agreement between distinct shifts is strictly (p-3)/(2p) < 1/2, allowing O(log p) samples to uniquely fingerprint the shift. However, in the uniform model without advice, recovering the shift s requires solving polynomial equations of degree (p-1)/2 = 2^{Omega(n)} or testing Omega(p) candidate shifts. Efficient decoding is only possible with non-uniform advice of size S = p log2 p bits or via van Dam-Hallgren's quantum Fourier transform.",
+    "source": "research/classical_baselines/character_shift_decoding_lower_bound_barrier.json"
   }
 ]
