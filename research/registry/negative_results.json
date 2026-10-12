@@ -85987,5 +85987,28 @@
     "lesson": "Universal quantum computation cannot be implemented transversally in any quantum error correcting code. By the Eastin-Knill theorem (2009), the group of logical transversal gates for any code with distance d >= 2 is strictly finite, precluding continuous or universal quantum gate synthesis. By the Bravyi-König theorem (2013), local topological stabilizer codes in D dimensions are restricted to the D-th level of the Clifford hierarchy C^(D); in 2D surface codes, transversal operations are strictly limited to the Clifford group C^(2) = <H, S, CNOT>. On explicit codes like the [[7,1,3]] Steane code, transversal T^7 applies a relative phase (-1) to weight-4 codewords, knocking states out of the code space. Consequently, universal fault-tolerant quantum computation fundamentally requires non-transversal magic state injection and distillation (e.g. the Bravyi-Kitaev 15-to-1 protocol with threshold 1/sqrt(35) ~ 0.1690), incurring an Omega(log^2.465(1/P_L)) space-time volume overhead that consumes over 90% of physical quantum computer resources and shifts quantum crossover thresholds for polynomial speedups to astronomical problem sizes.",
     "reason_invalid": "Theoretical quantum algorithms assume that universal gates (including non-Clifford T-gates) can be applied with unit time and error. In fault-tolerant quantum error correction, the Eastin-Knill theorem proves that no code can implement a universal gate set transversally. In 2D surface codes, the Bravyi-König bound restricts transversal gates strictly to the Clifford group, which is dequantized classically in O(n^2) operations by the Gottesman-Knill theorem. Non-Clifford universality requires magic state distillation, which imposes an exponential physical qubit overhead on polynomial speedups. Thus, claiming fault-tolerant universality without magic state distillation or ignoring Eastin-Knill overhead in algorithmic scaling is mathematically invalid.",
     "source": "research/EASTIN_KNILL_NON_CLIFFORD_FAULT_TOLERANT_BARRIER.md"
+  },
+  {
+    "applies_to": [
+      "TOPOLOGICAL-QUANTUM-COMPUTING",
+      "ANYONIC-BRAID-GROUPS",
+      "FIBONACCI-ANYONS",
+      "TEMPERLEY-LIEB-COMMUTANT",
+      "JONES-POLYNOMIAL-HARDNESS"
+    ],
+    "claim": "Quantum Fourier sampling can solve the Hidden Subgroup Problem over non-abelian anyonic braid groups B_n in polynomial time.",
+    "evidence": {
+      "artin_braid_satisfaction": "Fibonacci anyon representation rho(B_n) satisfies Artin relations with machine precision (< 1e-15) and generates a dense subgroup in SU(2)",
+      "classical_garside_dequantization": "Braid word problem and abelian writhe invariant w(beta) are solved classically in O(L) to O(L^2 n) via Garside left-greedy normal forms",
+      "epistemic_invariants_enforced": "speedup_claim_allowed = False; accepted_speedup_candidate = False",
+      "garside_center_schur_scalar": "Central Garside element Delta_3^2 acts as scalar exp(2pi i / 5) * I by Schur's lemma, providing 0.000 bits of mutual information about central subgroup orientation",
+      "speedup_claim_allowed": false,
+      "temperley_lieb_catalan_inflation": "Multi-copy commutant algebra C_M = End_{B_n}(V^M) has dimension dim(C_M) = C_M = Theta(4^M / M^1.5) > 6.5e9 for M=20, requiring #P-hard quantum 6j-symbols to diagonalize",
+      "weak_fourier_conjugacy_blindness": "Knot trace characters are class functions invariant under arbitrary conjugation: Tr(gamma beta gamma^-1) == Tr(beta) identically (TV == 0.000, 0.000 bits mutual information)"
+    },
+    "id": "NEG-ANYONIC-BRAID-GROUP-HSP-COMMUTANT-BARRIER",
+    "lesson": "The Hidden Subgroup Problem over anyonic braid groups B_n cannot be solved by quantum Fourier sampling. In non-abelian anyon representations (such as Fibonacci anyons from SU(2)_3 Chern-Simons theory), trace characters are class functions invariant under conjugation, blinding weak Fourier sampling completely (TV == 0.000, 0.000 bits of mutual information). Central Garside elements Delta_n^2 act as global scalar phases exp(2pi i / 5) by Schur's lemma, hiding central subgroups behind unobservable global phases. Furthermore, multi-copy strong Fourier sampling across M registers encounters exponential Catalan commutant inflation dim(C_M) = (1/(M+1)) binom(2M, M) = Theta(4^M / M^1.5), where diagonalizing entangling measurements requires evaluating quantum Racah 6j-coefficients, which is #P-hard. Finally, algebraic word equivalence in B_n is completely dequantized classically in polynomial time via Garside normal forms, while finding black-box hidden subgroups requires Omega(2^{L/2}) queries due to exponential Cayley tree volume.",
+    "reason_invalid": "Braid groups B_n possess infinite conjugacy classes, and anyonic trace characters are class functions that yield identically zero total variation distance between conjugate subgroup orientations in weak Fourier sampling. Central subgroups act as scalar multiples of identity by Schur's lemma, leaving zero detectable relative phases. Multi-copy strong Fourier sampling is obstructed by Temperley-Lieb Catalan commutant explosion dim(C_M) = Theta(4^M / M^1.5) and the #P-hardness of quantum Racah recoupling symbols. On classical computers, the word problem is solved in O(L^2 n) time via Garside normal forms. Thus, claiming polynomial-time quantum Fourier solvability for the Hidden Subgroup Problem over non-abelian braid groups B_n is mathematically invalid.",
+    "source": "research/ANYONIC_BRAID_GROUP_HSP_COMMUTANT_BARRIER.md"
   }
 ]

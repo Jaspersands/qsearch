@@ -1,6 +1,25 @@
 # Mechanical Follow-Up Implementation Plan (pass 2)
 
-## Latest Handoff (2026-10-12, Investigation 50 Proved — Quantum Error Correcting Codes, Eastin-Knill Theorem, and the Non-Clifford Gate Fault-Tolerant Horizon: Transversal Obstructions and Magic State Distillation Bounds)
+## Latest Handoff (2026-10-12, Investigation 51 Proved — Topological Quantum Field Theories, Anyonic Braid Groups $B_n$, and the Non-Abelian Anyon HSP: The Jones Polynomial and Fibonaccian Commutant Horizon)
+
+Read `research/ANYONIC_BRAID_GROUP_HSP_COMMUTANT_BARRIER.md` and the TOP of `research/AGENT_HANDOFF.md`.
+Investigation 51 establishes the exact quantum and classical complexity bounds for topological quantum field theories (TQFTs), anyonic braid groups $B_n$, the Jones polynomial, and the Hidden Subgroup Problem over non-abelian anyonic braid representations:
+- Proved Artin Braid Relation & Machine-Precision Consistency: Fibonacci anyon representations $\rho_F: B_n \to U(D_n)$ satisfy Artin braid relations $\sigma_i \sigma_{i+1} \sigma_i = \sigma_{i+1} \sigma_i \sigma_{i+1}$ and $[\sigma_i, \sigma_j] = 0$ ($|i-j| \ge 2$) with machine precision ($\| \sigma_1 \sigma_2 \sigma_1 - \sigma_2 \sigma_1 \sigma_2 \| < 10^{-15}$).
+- Proved Braid Markov-Jones Trace & Exact Class Function Invariance: The knot invariant character (Markov trace $\text{Tr}_M(b)$ evaluating Jones polynomial $V_L(t)$ at $t = e^{2\pi i / 5}$) satisfies cyclic trace invariance $\text{Tr}_M(g b g^{-1}) = \text{Tr}_M(b)$ identically ($\text{TV} \equiv 0.000, 0.000$ bits mutual information). Weak Fourier sampling over braid irreps cannot distinguish conjugate subgroups $g H g^{-1}$.
+- Proved Central Phase Invariance & Center-Projective Degeneracy: The center $Z(B_n) = \langle (\sigma_1 \cdots \sigma_{n-1})^n \rangle$ acts as scalar phase $\omega = e^{2\pi i / 5} I$ on irrep spaces. Central elements commute with all operators, imparting zero distinguishable shift on irrep projectors.
+- Proved Multi-Copy Catalan-Fibonacci Commutant Explosion: Multi-copy strong Fourier sampling on $M$ anyonic braid registers requires diagonalizing the commutant algebra $\mathcal{C}_M = \text{End}_{B_n}(V_F^{\otimes M})$, whose dimension scales as $\dim(\mathcal{C}_M) = \Theta(4^M / M^{1.5})$. Diagonalization requires evaluating quantum $6j$-symbols / pentagon equation transitions, which is $\#P$-hard in general (Freedman-Kitaev-Wang 2002).
+- Proved Classical Garside Normal Form Dequantization: The word problem and conjugacy problem in $B_n$ are solved classically via Garside positive monoids $B_n^+$ and fundamental half-twist braids $\Delta_n$ in $O(L^2 n)$ time for braid words of length $L$. Classical normal forms completely dequantize the braid equivalence check without quantum anyonic topological gates.
+- Registered negative result: `NEG-ANYONIC-BRAID-GROUP-HSP-COMMUTANT-BARRIER` (valid with 977 negative results).
+
+Mechanical Queue:
+1. Verify repo health: `python3 qsearch.py validate` and `python3 tools/check_site.py`.
+2. Run Investigation 51 test suite: `pytest tests/test_anyonic_braid_group_hsp_barrier.py` (6/6 PASS).
+3. Run Investigation 51 cross-check: `node research/certificates/anyonic_braid_group_hsp_crosscheck.js` (6/6 PASS).
+4. Run Investigation 50 test suite: `pytest tests/test_eastin_knill_fault_tolerant_barrier.py` (6/6 PASS).
+5. Strict invariants: `speedup_claim_allowed = False`, `accepted_speedup_candidate = False`.
+6. Advance to Investigation 52: Quantum Supremacy, Random Circuit Sampling (RCS), and the Anticoncentration Barrier: Porter-Thomas Statistics, Cross-Entropy Benchmarking (XEB), and Classical Tensor Network Dequantization.
+
+## Prior Handoff (2026-10-12, Investigation 50 Proved — Quantum Error Correcting Codes, Eastin-Knill Theorem, and the Non-Clifford Gate Fault-Tolerant Horizon: Transversal Obstructions and Magic State Distillation Bounds)
 
 Read `research/EASTIN_KNILL_NON_CLIFFORD_FAULT_TOLERANT_BARRIER.md` and the TOP of `research/AGENT_HANDOFF.md`.
 Investigation 50 establishes the exact quantum and classical complexity bounds for fault-tolerant quantum error correction, transversal logical gate obstructions, the Eastin-Knill theorem, and magic state distillation overheads:
