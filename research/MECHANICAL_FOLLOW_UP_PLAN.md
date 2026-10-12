@@ -1,6 +1,24 @@
 # Mechanical Follow-Up Implementation Plan (pass 2)
 
-## Latest Handoff (2026-10-12, Investigation 45 Proved — Non-Compact Real Lie Groups and the $SL(2, \mathbb{R})$ Hyperbolic Upper Half-Plane HSP: Harish-Chandra Distribution Characters, Continuous Plancherel Measure, and Infinite-Dimensional Commutant Barrier)
+## Latest Handoff (2026-10-12, Investigation 46 Proved — Quantum Phase Estimation on Continuous Spectrum Hamiltonians and Singular Spectral Measures: Resolvent Broadening, Universal Peak Flattening, and Classical KPM Dequantization)
+
+Read `research/CONTINUOUS_SPECTRUM_QPE_SINGULAR_MEASURE_BARRIER.md` and the TOP of `research/AGENT_HANDOFF.md`.
+Investigation 46 establishes the exact quantum and classical complexity bounds for Quantum Phase Estimation (QPE), Resolvent Green's function simulation, and density estimation over continuous and singular continuous Hamiltonian spectra:
+- Proved Universal Peak Flattening on Absolutely Continuous Spectra: For non-normalizable generalized eigenstates in $d\mu_{\text{ac}}(E) = \rho(E) dE$, QPE discrete bin probabilities scale as $P(k) \approx \rho(2\pi k / (N\tau)) \frac{2\pi}{N\tau} = \Theta(1/N) = \Theta(2^{-m}) \to 0$. Discrete peaks flatten completely into a continuous density distribution with zero $O(1)$-confidence isolated outcomes.
+- Proved Resolvent Lorentzian Broadening & Condition Number Barrier: Resolvent $(E + i\eta - H)^{-1}$ induces Lorentzian convolution with FWHM $= 2\eta$. Resolving detail $\delta$ requires $\eta \le \delta / 2$ and operator condition number $\kappa = 1/\eta \ge 2/\delta$, lower-bounding quantum QSVT/LCU query depth at $\Omega(1/\eta)$.
+- Proved Singular Continuous Spectra & Hofstadter Cantor Intermittency: Almost Mathieu operator at critical coupling $\lambda=1$ has Cantor spectrum with gap-to-spacing ratio $> 1000$ and Devil's staircase IDS; QPE alternates between zero in gaps and fractional Hölder spikes $(\Delta E)^{\alpha_H}$, causing catastrophic phase extraction breakdown.
+- Proved Classical Kernel Polynomial Method (KPM) Complete Dequantization: Classical KPM with Jackson damping evaluates continuous spectral densities to resolution $\eta$ using $M = \lceil \pi / \eta \rceil = \Theta(1/\eta)$ Chebyshev sparse matrix-vector multiplications, exactly matching the quantum $\Omega(1/\eta)$ query lower bound.
+- Registered negative result: `NEG-CONTINUOUS-SPECTRUM-QPE-SINGULAR-MEASURE-BARRIER` (valid with 972 negative results).
+
+Mechanical Queue:
+1. Verify repo health: `python3 qsearch.py validate` and `python3 tools/check_site.py`.
+2. Run Investigation 46 test suite: `pytest tests/test_continuous_spectrum_qpe_barrier.py` (6/6 PASS).
+3. Run Investigation 46 cross-check: `node research/certificates/continuous_spectrum_qpe_crosscheck.js` (6/6 PASS).
+4. Run Investigation 45 test suite: `pytest tests/test_sl2r_hyperbolic_hsp_barrier.py` (6/6 PASS).
+5. Strict invariants: `speedup_claim_allowed = False`, `accepted_speedup_candidate = False`.
+6. Advance to Investigation 47: Quantum Chaos, Spectral Form Factors, and Random Matrix Theory (RMT) vs. Quantum Fourier Sampling.
+
+## Prior Handoff (2026-10-12, Investigation 45 Proved — Non-Compact Real Lie Groups and the $SL(2, \mathbb{R})$ Hyperbolic Upper Half-Plane HSP: Harish-Chandra Distribution Characters, Continuous Plancherel Measure, and Infinite-Dimensional Commutant Barrier)
 
 Read `research/SL2R_NONCOMPACT_LIE_CONTINUOUS_SPECTRUM_BARRIER.md` and the TOP of `research/AGENT_HANDOFF.md`.
 Investigation 45 establishes the exact quantum and representation-theoretic complexity bounds for the Hidden Subgroup Problem over non-compact simple real Lie groups $SL(2, \mathbb{R})$ and the hyperbolic upper half-plane $\mathbb{H}^2$:

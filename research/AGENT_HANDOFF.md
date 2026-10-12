@@ -2,7 +2,32 @@
 
 Last updated: 2026-10-12
 
-## Latest: Investigation 45 Proved — Non-Compact Real Lie Groups and the $SL(2, \mathbb{R})$ Hyperbolic Upper Half-Plane HSP: Harish-Chandra Distribution Characters, Continuous Plancherel Measure, and Infinite-Dimensional Commutant Barrier
+## Latest: Investigation 46 Proved — Quantum Phase Estimation on Continuous Spectrum Hamiltonians and Singular Spectral Measures: Resolvent Broadening, Universal Peak Flattening, and Classical KPM Dequantization
+
+A major foundational investigation resolving the quantum and classical complexity bounds for Quantum Phase Estimation (QPE), Resolvent Green's function simulation, and density estimation over continuous and singular continuous Hamiltonian spectra has been completed and verified in `research/CONTINUOUS_SPECTRUM_QPE_SINGULAR_MEASURE_BARRIER.md`.
+
+### Core Invariants & Status:
+- `speedup_claim_allowed = False` strictly enforced everywhere.
+- `accepted_speedup_candidate = False` strictly enforced everywhere.
+- Registered negative result: `NEG-CONTINUOUS-SPECTRUM-QPE-SINGULAR-MEASURE-BARRIER` (valid with 972 negative results).
+
+### Investigation 46 Summary & Key Mathematical Discoveries:
+1. **Universal Peak Flattening Theorem on Absolutely Continuous Spectra (Theorem 1)**:
+   For any state $|\psi\rangle$ supported on an absolutely continuous spectrum $d\mu_{\text{ac}}(E) = \rho(E) dE$, generalized eigenstates $|E\rangle$ are non-normalizable in Hilbert space. Under $m$-qubit QPE ($N = 2^m$), the measurement probability of any discrete bin scales strictly as $P(k) \approx \rho(2\pi k / (N\tau)) \frac{2\pi}{N\tau} = \Theta(1/N) = \Theta(2^{-m}) \to 0$. Discrete peaks flatten completely, converting QPE into continuous density sampling with zero $O(1)$-confidence isolated outcomes.
+2. **Resolvent Lorentzian Broadening & Condition Number Barrier (Theorem 2)**:
+   Simulating the resolvent $(E + i\eta - H)^{-1}$ induces exact Lorentzian convolution $(\rho * L_\eta)(E)$ with FWHM $= 2\eta$. Resolving spectral detail $\delta$ requires $\eta \le \delta / 2$ and operator condition number $\kappa = \|(E + i\eta - H)^{-1}\| = 1/\eta \ge 2/\delta$, lower-bounding quantum QSVT/LCU query depth at $\Omega(1/\eta)$.
+3. **Singular Continuous Spectra & Hofstadter Cantor Intermittency (Theorem 3)**:
+   For singular continuous Hamiltonians (Almost Mathieu operator at critical coupling $\lambda=1$), the spectrum is a Cantor set with gap-to-spacing ratio $> 1000$ and Devil's staircase IDS. QPE alternates between zero probability in Hofstadter gaps and fractional Hölder spikes $(\Delta E)^{\alpha_H}$, causing catastrophic phase estimation breakdown.
+4. **Classical Kernel Polynomial Method (KPM) Complete Dequantization (Theorem 4)**:
+   Classical KPM with Jackson damping evaluates continuous spectral densities to resolution $\eta$ using $M = \lceil \pi / \eta \rceil = \Theta(1/\eta)$ Chebyshev sparse matrix-vector multiplications, exactly matching the quantum $\Omega(1/\eta)$ query lower bound. Continuous spectral estimation possesses zero exponential quantum speedup.
+5. **Verification Matrix**:
+   - `pytest -v tests/test_continuous_spectrum_qpe_barrier.py` (6/6 PASS).
+   - `node research/certificates/continuous_spectrum_qpe_crosscheck.js` (6/6 PASS).
+   - `python3 qsearch.py validate` (0 issues, 972 negative results).
+
+---
+
+## Prior: Investigation 45 Proved — Non-Compact Real Lie Groups and the $SL(2, \mathbb{R})$ Hyperbolic Upper Half-Plane HSP: Harish-Chandra Distribution Characters, Continuous Plancherel Measure, and Infinite-Dimensional Commutant Barrier
 
 A major foundational investigation resolving the quantum and classical complexity bounds for the Hidden Subgroup Problem over non-compact simple real Lie groups (specifically analyzing $SL(2, \mathbb{R})$, the hyperbolic upper half-plane $\mathbb{H}^2 = SL(2, \mathbb{R})/SO(2)$, discrete Fuchsian subgroups $\Gamma \subset SL(2, \mathbb{R})$, and continuous spherical principal series representations $\mathcal{P}_{i r}$) has been completed and verified in `research/SL2R_NONCOMPACT_LIE_CONTINUOUS_SPECTRUM_BARRIER.md`.
 

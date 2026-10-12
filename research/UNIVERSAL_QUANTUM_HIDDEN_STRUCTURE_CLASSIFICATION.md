@@ -87,7 +87,7 @@ The table below summarizes the exact mathematical status of key hidden structure
 
 ---
 
-## 4. Master Cross-Reference Table of Investigations 1–45
+## 4. Master Cross-Reference Table of Investigations 1–46
 
 | # | Investigation Focus | Domain | Primary Obstruction / Mechanism | Epistemic Status |
 | :-: | :--- | :--- | :--- | :--- | :---: |
@@ -136,6 +136,7 @@ The table below summarizes the exact mathematical status of key hidden structure
 | **43** | Arbitrary-Degree Number Fields & Exponential Degree Barrier | Multi-Dim Continuous HSP | Continuous torus $\mathbb{R}^r/\Lambda_K \cong (S^1)^r$ dual lattice basis $B^*$; poly in $\log |\Delta_K|$ for fixed $n$; collapses to $2^{\Omega(n \log n)}$ for growing $n$ via SIVP/CVP hardness | Proved Quantum Algorithm & Degree Barrier Demarcation |
 | **44** | Compact Non-Abelian Lie HSP & $SU(2)$ Commutant Inflation | Compact Lie Group HSP | Wigner $\chi_j(\theta) = \frac{\sin(d_j \theta)}{\sin \theta}$ class functions; weak orientation TV $\equiv 0.000$; spin-coherent rank-1 $\Pi_n$; Catalan commutant $C_M = \Theta(4^M / M^{1.5})$; Racah $6j$ $\#P$-hard | Proved Mathematical Barrier & Representation Obstruction |
 | **45** | Non-Compact Real Lie Groups & $SL(2, \mathbb{R})$ Hyperbolic HSP | Non-Compact Lie HSP | Harish-Chandra distribution characters; Selberg trace weak TV $\equiv 0.000$; continuous Plancherel measure $d\mu(r) = \frac{1}{4\pi} r \tanh(\frac{\pi r}{2})$ spectral broadening; Anosov chaos $\lambda = 1.000$; Repka continuous tensor product infinite commutant $\dim(\mathcal{C}_M) = \infty$ | Proved Mathematical Barrier & Representation Obstruction |
+| **46** | Continuous Spectrum QPE & Singular Spectral Measures | Spectral Estimation | Universal peak flattening $P(k_{\max}) = \Theta(1/N) \to 0$; resolvent FWHM $2\eta$ & condition $\kappa = 1/\eta$; Almost Mathieu Cantor gap ratio $> 1000$ with Devil's staircase intermittency; classical KPM $\Theta(1/\eta)$ dequantization | Proved Mathematical Barrier & Classical Dequantization |
 
 ---
 
