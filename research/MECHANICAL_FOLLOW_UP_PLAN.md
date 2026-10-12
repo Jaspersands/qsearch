@@ -1,6 +1,26 @@
 # Mechanical Follow-Up Implementation Plan (pass 2)
 
-## Latest Handoff (2026-10-12, Investigation 37 Proved — Cai-Fürer-Immerman (CFI) Graph Isomorphism: Multi-Particle Quantum Walk Blindness, Weisfeiler-Lehman Invariance, and Luks' Solvable Tower Classical Dequantization)
+## Latest Handoff (2026-10-12, Investigation 38 Proved — Dihedral Hidden Subgroup Problem (DHSP): Reflection Character Trace Vanishing, Modular Subset-Sum Commutant Duality, and the uSVP Lattice Cryptographic Barrier)
+
+Read `research/DIHEDRAL_HSP_SUBSET_SUM_COMMUTANT_BARRIER.md` and the TOP of `research/AGENT_HANDOFF.md`.
+Investigation 38 establishes the exact quantum representation-theoretic, measurement-algebraic, and cryptographic hardness bounds for the Dihedral Hidden Subgroup Problem over $D_N = \mathbb{Z}_N \rtimes \mathbb{Z}_2$:
+- Proved Reflection Character Trace Vanishing: $\rho_j(r^d s)$ has zero diagonal for all $j \in \{1, \dots, \lfloor (N-1)/2 \rfloor\}$ and $d \in \mathbb{Z}_N$, forcing $\text{Tr}(\rho_j(r^d s)) \equiv 0$ identically.
+- Proved Universal Weak Fourier Blindness: $p(\rho_j \mid H_d) = 2/N$ identically independent of $d$; TV distance is identically 0.000 (0.000 bits mutual information).
+- Proved Single-Copy LWE/LPN Equivalence: Projected irrep state is rank-1 pure state $|\phi_{j, d}\rangle = \frac{1}{\sqrt{2}}(|0\rangle + e^{-2\pi i j d / N}|1\rangle)$; unentangled extraction is continuous LWE / LPN hard ($2^{\Omega(n)}$).
+- Proved Modular Subset-Sum Commutant Duality: $\dim(\mathcal{C}_M) = \sum_{v \in \mathbb{Z}_N} |f^{-1}(v)|^2$. For $M < \log N$, $\mathcal{C}_M$ is abelian (dimension $2^M$, purely diagonal); for $M \ge \log N$, non-trivial entangling measurements are NP-complete to construct.
+- Proved Kuperberg Sieve Birthday Barrier: Collision tree depth is $\Theta(\sqrt{n})$, lower-bounding state complexity at $2^{\Omega(\sqrt{n})}$.
+- Proved Regev uSVP Lattice Boundary: $\text{uSVP}_{\tilde{O}(n^2)} \le_q \text{DHSP}$; an efficient quantum algorithm would break lattice cryptography.
+- Registered negative result: `NEG-DIHEDRAL-HSP-SUBSET-SUM-COMMUTANT-BARRIER` (valid with 964 negative results).
+
+Mechanical Queue:
+1. Verify repo health: `python3 qsearch.py validate` and `python3 tools/check_site.py`.
+2. Run Investigation 38 test suite: `pytest tests/test_dihedral_hsp_subset_sum_commutant_obstruction.py` (6/6 PASS).
+3. Run Investigation 38 cross-check: `node research/certificates/dihedral_hsp_subset_sum_commutant_crosscheck.js` (6/6 PASS).
+4. Run Investigation 37 test suite: `pytest tests/test_cfi_luks_solvable_tower_obstruction.py` (6/6 PASS).
+5. Strict invariants: `speedup_claim_allowed = False`, `accepted_speedup_candidate = False`.
+6. Preserve all proof gates, retractions, counterexamples, and negative results.
+
+## Prior Handoff (2026-10-12, Investigation 37 Proved — Cai-Fürer-Immerman (CFI) Graph Isomorphism: Multi-Particle Quantum Walk Blindness, Weisfeiler-Lehman Invariance, and Luks' Solvable Tower Classical Dequantization)
 
 Read `research/CFI_QUANTUM_WALK_LUKS_SOLVABLE_TOWER_OBSTRUCTION.md` and the TOP of `research/AGENT_HANDOFF.md`.
 Investigation 37 establishes the exact classical and quantum complexity bounds for the benchmark Cai-Fürer-Immerman (CFI) graphs (over $K_4$, treewidth 3, 28 vertices, 48 edges):

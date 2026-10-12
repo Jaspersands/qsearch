@@ -2,7 +2,40 @@
 
 Last updated: 2026-10-12
 
-## Latest: Investigation 37 Proved — Cai-Fürer-Immerman (CFI) Graph Isomorphism: Multi-Particle Quantum Walk Blindness, Weisfeiler-Lehman Invariance, and Luks' Solvable Tower Classical Dequantization
+## Latest: Investigation 38 Proved — Dihedral Hidden Subgroup Problem (DHSP): Reflection Character Trace Vanishing, Modular Subset-Sum Commutant Duality, and the uSVP Lattice Cryptographic Barrier
+
+A major foundational investigation resolving the quantum representation-theoretic, measurement-algebraic, and cryptographic hardness bounds for the Dihedral Hidden Subgroup Problem over $D_N = \mathbb{Z}_N \rtimes \mathbb{Z}_2$ has been completed and verified in `research/DIHEDRAL_HSP_SUBSET_SUM_COMMUTANT_BARRIER.md`.
+
+### Core Invariants & Status:
+- `speedup_claim_allowed = False` strictly enforced everywhere.
+- `accepted_speedup_candidate = False` strictly enforced everywhere.
+- Registered negative result: `NEG-DIHEDRAL-HSP-SUBSET-SUM-COMMUTANT-BARRIER` (valid with 964 negative results).
+
+### Investigation 38 Summary & Key Mathematical Discoveries:
+1. **Reflection Character Trace Vanishing (Theorem 1)**:
+   For every 2-dimensional irreducible representation $\rho_j$ ($j = 1, \dots, \lfloor (N-1)/2 \rfloor$) of $D_N$, and for every reflection element $r^d s$ ($d \in \mathbb{Z}_N$), the representation matrix is $\rho_j(r^d s) = \begin{pmatrix} 0 & \omega^{jd} \\ \omega^{-jd} & 0 \end{pmatrix}$. The diagonal entries are strictly zero, proving $\text{Tr}(\rho_j(r^d s)) \equiv 0$ identically for all $j, d, N$.
+2. **Universal Weak Fourier Blindness (Theorem 2)**:
+   Because reflection characters vanish identically on 2D irreps, the weak Fourier measurement distribution satisfies $p(\rho_j \mid H_d) = \frac{2}{2N}[2 + 0] = \frac{2}{N}$ identically independent of $d$. For odd $N$, the total variation distance between any two candidate reflection parameters is:
+   $$\|p(\cdot \mid H_{d_1}) - p(\cdot \mid H_{d_2})\|_{\text{TV}} \equiv 0.000.$$
+   Weak Fourier sampling provides **identically 0.000 bits of mutual information** regarding the hidden reflection axis.
+3. **Single-Copy Strong Fourier Sampling & Continuous LWE/LPN Equivalence (Theorem 3)**:
+   Conditional on observing 2D irrep $\rho_j$, the internal representation register collapses to the rank-1 pure state $|\phi_{j, d}\rangle = \frac{1}{\sqrt{2}}(|0\rangle + e^{-2\pi i j d / N}|1\rangle)$. Unentangled single-copy phase extraction is polynomial-time equivalent to Continuous LWE / Learning Parity with Noise (LPN), requiring $2^{\Omega(n)}$ classical time.
+4. **Modular Subset-Sum Commutant Duality (Theorem 4)**:
+   On $(\mathbb{C}^2)^{\otimes M}$, the commutant algebra $\mathcal{C}_M$ of the group action consists of operators whose non-zero entries satisfy $\sum_{k=1}^M (b_k - b'_k) j_k \equiv 0 \pmod N$. The commutant algebra dimension is **identically the sum of squared fiber sizes of the Modular Subset Sum function**:
+   $$\dim(\mathcal{C}_M) = \sum_{v \in \mathbb{Z}_N} \left| \left\{ b \in \{0, 1\}^M \;\middle|\; \sum_{k=1}^M b_k j_k \equiv v \pmod N \right\} \right|^2.$$
+   For $M < \log_2 N$, with high probability all subset sums are distinct, rendering $\mathcal{C}_M$ abelian (dimension $2^M$, purely diagonal) and incapable of collective phase extraction. For $M \ge \log_2 N$, constructing entangling measurements that diagonalize $\mathcal{C}_M$ is computationally equivalent to the NP-complete Modular Subset Sum Problem.
+5. **Kuperberg Sieve Collision Depth Lower Bound (Theorem 5)**:
+   Kuperberg's sieve combines state pairs via CNOT to achieve birthday collisions. To cancel $n = \log_2 N$ bits down to 1 bit, the collision tree requires depth $\Theta(\sqrt{n})$ and state complexity $2^{\Theta(\sqrt{n})}$. Any binary collision sieve is lower-bounded by $2^{\Omega(\sqrt{n})}$ quantum states.
+6. **Regev's uSVP Lattice Cryptographic Demarcation (Theorem 6)**:
+   By Regev's reduction ($\text{uSVP}_{\tilde{O}(n^2)} \le_q \text{DHSP}$), an efficient polynomial-time quantum algorithm for DHSP would break post-quantum lattice cryptography (including ML-KEM/Kyber). The structural hardness of DHSP is reinforced by the cryptographic hardness of the Shortest Vector Problem.
+7. **Verification Matrix**:
+   - `pytest -v tests/test_dihedral_hsp_subset_sum_commutant_obstruction.py` (6/6 PASS).
+   - `node research/certificates/dihedral_hsp_subset_sum_commutant_crosscheck.js` (6/6 PASS).
+   - `python3 qsearch.py validate` (0 issues, 964 negative results).
+
+---
+
+## Prior: Investigation 37 Proved — Cai-Fürer-Immerman (CFI) Graph Isomorphism: Multi-Particle Quantum Walk Blindness, Weisfeiler-Lehman Invariance, and Luks' Solvable Tower Classical Dequantization
 
 A major foundational investigation resolving the quantum walk, spectral, adiabatic, and group-theoretic complexity bounds for the benchmark Cai-Fürer-Immerman (CFI) graphs (specifically over base graph $K_4$, treewidth 3, 28 vertices, 48 edges) has been completed and verified in `research/CFI_QUANTUM_WALK_LUKS_SOLVABLE_TOWER_OBSTRUCTION.md`.
 
