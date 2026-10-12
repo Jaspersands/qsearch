@@ -87,7 +87,7 @@ The table below summarizes the exact mathematical status of key hidden structure
 
 ---
 
-## 4. Master Cross-Reference Table of Investigations 1–44
+## 4. Master Cross-Reference Table of Investigations 1–45
 
 | # | Investigation Focus | Domain | Primary Obstruction / Mechanism | Epistemic Status |
 | :-: | :--- | :--- | :--- | :--- | :---: |
@@ -135,6 +135,7 @@ The table below summarizes the exact mathematical status of key hidden structure
 | **42** | Real Quadratic Regulator & Principal Ideal Infrastructure | Continuous Abelian HSP | Quotient $\mathbb{R}/R\mathbb{Z} \cong S^1$ abelian 1D characters; Shanks infrastructure regularized $h(x) = (\mathfrak{r}_x, x - \delta(\mathfrak{r}_x))$; Hallgren BQP $O(\log^3 d)$; classical Buchmann index calculus $L_d[1/2, \sqrt{2}]$ superpolynomial | Proved Quantum Algorithm & Subexponential Demarcation |
 | **43** | Arbitrary-Degree Number Fields & Exponential Degree Barrier | Multi-Dim Continuous HSP | Continuous torus $\mathbb{R}^r/\Lambda_K \cong (S^1)^r$ dual lattice basis $B^*$; poly in $\log |\Delta_K|$ for fixed $n$; collapses to $2^{\Omega(n \log n)}$ for growing $n$ via SIVP/CVP hardness | Proved Quantum Algorithm & Degree Barrier Demarcation |
 | **44** | Compact Non-Abelian Lie HSP & $SU(2)$ Commutant Inflation | Compact Lie Group HSP | Wigner $\chi_j(\theta) = \frac{\sin(d_j \theta)}{\sin \theta}$ class functions; weak orientation TV $\equiv 0.000$; spin-coherent rank-1 $\Pi_n$; Catalan commutant $C_M = \Theta(4^M / M^{1.5})$; Racah $6j$ $\#P$-hard | Proved Mathematical Barrier & Representation Obstruction |
+| **45** | Non-Compact Real Lie Groups & $SL(2, \mathbb{R})$ Hyperbolic HSP | Non-Compact Lie HSP | Harish-Chandra distribution characters; Selberg trace weak TV $\equiv 0.000$; continuous Plancherel measure $d\mu(r) = \frac{1}{4\pi} r \tanh(\frac{\pi r}{2})$ spectral broadening; Anosov chaos $\lambda = 1.000$; Repka continuous tensor product infinite commutant $\dim(\mathcal{C}_M) = \infty$ | Proved Mathematical Barrier & Representation Obstruction |
 
 ---
 

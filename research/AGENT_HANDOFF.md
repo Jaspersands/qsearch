@@ -2,7 +2,37 @@
 
 Last updated: 2026-10-12
 
-## Latest: Investigation 44 Proved — Compact Non-Abelian Lie Group Hidden Subgroup Problem: $SU(2)$ / $SO(3)$ Wigner-D Matrix Character Blindness, Spin-Coherent Projection, and Multi-Copy Commutant Inflation
+## Latest: Investigation 45 Proved — Non-Compact Real Lie Groups and the $SL(2, \mathbb{R})$ Hyperbolic Upper Half-Plane HSP: Harish-Chandra Distribution Characters, Continuous Plancherel Measure, and Infinite-Dimensional Commutant Barrier
+
+A major foundational investigation resolving the quantum and classical complexity bounds for the Hidden Subgroup Problem over non-compact simple real Lie groups (specifically analyzing $SL(2, \mathbb{R})$, the hyperbolic upper half-plane $\mathbb{H}^2 = SL(2, \mathbb{R})/SO(2)$, discrete Fuchsian subgroups $\Gamma \subset SL(2, \mathbb{R})$, and continuous spherical principal series representations $\mathcal{P}_{i r}$) has been completed and verified in `research/SL2R_NONCOMPACT_LIE_CONTINUOUS_SPECTRUM_BARRIER.md`.
+
+### Core Invariants & Status:
+- `speedup_claim_allowed = False` strictly enforced everywhere.
+- `accepted_speedup_candidate = False` strictly enforced everywhere.
+- Registered negative result: `NEG-SL2R-NONCOMPACT-LIE-CONTINUOUS-SPECTRUM-BARRIER` (valid with 971 negative results).
+
+### Investigation 45 Summary & Key Mathematical Discoveries:
+1. **Harish-Chandra Distribution Characters & Exact Conjugacy Invariance (Theorem 1)**:
+   For spherical principal series $\mathcal{P}_{i r}$ ($r \in \mathbb{R}_{\ge 0}$), characters exist as Harish-Chandra distributions that evaluate on regular hyperbolic conjugacy classes ($|\text{Tr}(\gamma)| > 2$) to $\Theta_{i r}(\gamma) = \frac{\cos(r \ell(\gamma) / 2)}{\sinh(\ell(\gamma) / 2)}$, where $\ell(\gamma) = 2 \text{arcosh}(|\text{Tr}(\gamma)| / 2)$ is the geodesic translation length in $\mathbb{H}^2$. Because trace and translation length are invariant under conjugation, characters are strictly class functions: $\Theta_{i r}(g \gamma g^{-1}) = \Theta_{i r}(\gamma)$ for all $g, \gamma \in SL(2, \mathbb{R})$.
+2. **Universal Weak Fourier Blindness via Selberg Trace Invariance (Theorem 2)**:
+   For any discrete Fuchsian subgroup $\Gamma \subset SL(2, \mathbb{R})$, the weak Fourier sampling density over continuous irrep parameter $r$ is identical across all conjugate orientations $g \Gamma g^{-1}$ by the Selberg trace formula:
+   $$\text{TV}(p(\cdot \mid g_1 \Gamma g_1^{-1}), \, p(\cdot \mid g_2 \Gamma g_2^{-1})) \equiv 0.000 \quad (0.000\text{ bits of mutual information}).$$
+3. **Continuous Plancherel Measure & Spectral Broadening Obstruction (Theorem 3)**:
+   Plancherel density $d\mu(r) = \frac{1}{4\pi} r \tanh(\frac{\pi r}{2}) dr$ is continuous on $\mathbb{R}_{\ge 0}$, suppressed quadratically at $r \to 0$ ($\sim \frac{\pi}{8} r^2 dr$) and growing linearly at $r \to \infty$ ($\sim \frac{1}{4\pi} r dr$), with diverging volume $\int_0^\infty d\mu(r) = \infty$. Generalized eigenstates $|\pi_{i r}\rangle \notin L^2(G)$ require finite measurement binning $\Delta r$, inducing continuous spectral broadening that blinds quantum cycle extraction.
+4. **Hyperbolic Geodesic Flow, Anosov Chaos, and BGS Spectral Rigidity (Theorem 4)**:
+   Geodesic flow on $M = \mathbb{H}^2 / \Gamma$ has constant negative curvature $K = -1$ and Lyapunov exponent $\lambda = 1.000$ ($J(t) \sim \frac{\theta_0}{2} e^t$). Quantum Laplacian eigenvalues $\lambda_j = 1/4 + r_j^2$ exhibit GOE Wigner level repulsion $P(s) = \frac{\pi s}{2} \exp(-\pi s^2 / 4)$ with zero Poissonian level clustering. Invariant abelian tori do not exist.
+5. **Multi-Copy Infinite-Dimensional von Neumann Commutant Inflation (Theorem 5)**:
+   For $M \ge 2$ copies, Repka's theorem (1978) proves $\mathcal{P}_{i r_1} \otimes \mathcal{P}_{i r_2}$ decomposes into a continuous direct integral of principal series irreps and discrete series irreps. The commutant algebra $\mathcal{C}_M = \text{End}_G((\mathcal{P}_{i r})^{\otimes M})$ is an **infinite-dimensional von Neumann algebra** of Type II$_\infty$ / Type III. Diagonalizing entangling measurements requires continuous Racah-Wigner $6j$-coefficients (transcendental Barnes contour integrals of gamma functions) that cannot be synthesized by discrete finite-depth quantum circuits.
+6. **Classical Geometric 3-Point Dequantization vs. Black-Box Lower Bound (Theorem 6)**:
+   In the geometric model on $\mathbb{H}^2$, 3 point evaluations reconstruct $g \in PSL(2, \mathbb{R})$ via Möbius cross-ratio in $O(1)$ operations with machine precision ($< 10^{-14}$). In the black-box algebraic model, finding collisions requires $\Omega(\text{vol}(\mathbb{H}^2 / \Gamma))$ queries. Standard quantum Fourier algorithms fail across both access models.
+7. **Verification Matrix**:
+   - `pytest -v tests/test_sl2r_hyperbolic_hsp_barrier.py` (6/6 PASS).
+   - `node research/certificates/sl2r_hyperbolic_hsp_crosscheck.js` (6/6 PASS).
+   - `python3 qsearch.py validate` (0 issues, 971 negative results).
+
+---
+
+## Prior: Investigation 44 Proved — Compact Non-Abelian Lie Group Hidden Subgroup Problem: $SU(2)$ / $SO(3)$ Wigner-D Matrix Character Blindness, Spin-Coherent Projection, and Multi-Copy Commutant Inflation
 
 A major foundational investigation resolving the quantum and classical complexity bounds for the Hidden Subgroup Problem over compact non-abelian Lie groups (specifically analyzing $SU(2)$ and $SO(3)$, continuous maximal tori $U(1)_\vec{n}$, discrete binary polyhedral subgroups $2T, 2O, 2I$, and Racah $6j$-recoupling commutants) has been completed and verified in `research/SU2_COMPACT_LIE_HSP_COMMUTANT_INFLATION.md`.
 

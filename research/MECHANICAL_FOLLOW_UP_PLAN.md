@@ -1,6 +1,26 @@
 # Mechanical Follow-Up Implementation Plan (pass 2)
 
-## Latest Handoff (2026-10-12, Investigation 44 Proved — Compact Non-Abelian Lie Group Hidden Subgroup Problem: $SU(2)$ / $SO(3)$ Wigner-D Matrix Character Blindness, Spin-Coherent Projection, and Multi-Copy Commutant Inflation)
+## Latest Handoff (2026-10-12, Investigation 45 Proved — Non-Compact Real Lie Groups and the $SL(2, \mathbb{R})$ Hyperbolic Upper Half-Plane HSP: Harish-Chandra Distribution Characters, Continuous Plancherel Measure, and Infinite-Dimensional Commutant Barrier)
+
+Read `research/SL2R_NONCOMPACT_LIE_CONTINUOUS_SPECTRUM_BARRIER.md` and the TOP of `research/AGENT_HANDOFF.md`.
+Investigation 45 establishes the exact quantum and representation-theoretic complexity bounds for the Hidden Subgroup Problem over non-compact simple real Lie groups $SL(2, \mathbb{R})$ and the hyperbolic upper half-plane $\mathbb{H}^2$:
+- Proved Harish-Chandra Distribution Characters: Spherical principal series characters $\Theta_{i r}(\gamma) = \frac{\cos(r \ell(\gamma) / 2)}{\sinh(\ell(\gamma) / 2)}$ on hyperbolic regular conjugacy classes are strictly class functions; $\Theta_{i r}(g \gamma g^{-1}) = \Theta_{i r}(\gamma)$ identically.
+- Proved Universal Weak Fourier Blindness via Selberg Trace Invariance: For any discrete Fuchsian subgroup $\Gamma \subset SL(2, \mathbb{R})$, the weak Fourier sampling density on irrep parameter $r$ is identical across all conjugate orientations $g \Gamma g^{-1}$ (TV distance identically 0.000, 0.000 bits mutual information).
+- Proved Continuous Plancherel Measure Scaling & Spectral Broadening: Plancherel density $d\mu(r) = \frac{1}{4\pi} r \tanh(\frac{\pi r}{2}) dr$ has quadratic threshold suppression ($\sim \frac{\pi}{8} r^2 dr$), linear growth at infinity, and infinite total volume. Generalized eigenstates $|\pi_{i r}\rangle \notin L^2(G)$ require finite measurement bins $\Delta r$, inducing continuous spectral broadening.
+- Proved Hyperbolic Geodesic Flow, Anosov Chaos, and BGS Spectral Rigidity: Constant negative curvature $K = -1$ yields Lyapunov exponent $\lambda = 1.000$; Laplacian eigenvalues follow GOE level repulsion with zero invariant tori.
+- Proved Multi-Copy Infinite-Dimensional von Neumann Commutant Inflation: By Repka's theorem (1978), the commutant algebra $\mathcal{C}_M = \text{End}_G((\mathcal{P}_{i r})^{\otimes M})$ is an infinite-dimensional von Neumann algebra of Type II$_\infty$ / Type III; continuous Racah $6j$-coefficients are transcendental Barnes contour integrals that cannot be synthesized by finite-depth discrete quantum circuits.
+- Proved Classical Geometric 3-Point Dequantization: 3 point evaluations in $\mathbb{H}^2$ uniquely reconstruct $g \in PSL(2, \mathbb{R})$ via Möbius cross-ratio in $O(1)$ operations with machine precision (< 1e-14), while black-box queries require $\Omega(\text{vol}(\mathbb{H}^2 / \Gamma))$.
+- Registered negative result: `NEG-SL2R-NONCOMPACT-LIE-CONTINUOUS-SPECTRUM-BARRIER` (valid with 971 negative results).
+
+Mechanical Queue:
+1. Verify repo health: `python3 qsearch.py validate` and `python3 tools/check_site.py`.
+2. Run Investigation 45 test suite: `pytest tests/test_sl2r_hyperbolic_hsp_barrier.py` (6/6 PASS).
+3. Run Investigation 45 cross-check: `node research/certificates/sl2r_hyperbolic_hsp_crosscheck.js` (6/6 PASS).
+4. Run Investigation 44 test suite: `pytest tests/test_su2_compact_lie_hsp_commutant_inflation.py` (6/6 PASS).
+5. Strict invariants: `speedup_claim_allowed = False`, `accepted_speedup_candidate = False`.
+6. Advance to Investigation 46: Quantum Phase Estimation on Continuous Spectrum Hamiltonians & Singular Spectral Measures.
+
+## Prior Handoff (2026-10-12, Investigation 44 Proved — Compact Non-Abelian Lie Group Hidden Subgroup Problem: $SU(2)$ / $SO(3)$ Wigner-D Matrix Character Blindness, Spin-Coherent Projection, and Multi-Copy Commutant Inflation)
 
 Read `research/SU2_COMPACT_LIE_HSP_COMMUTANT_INFLATION.md` and the TOP of `research/AGENT_HANDOFF.md`.
 Investigation 44 establishes the exact quantum and representation-theoretic complexity bounds for the Hidden Subgroup Problem over compact non-abelian Lie groups $SU(2)$ and $SO(3)$:
