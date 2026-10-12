@@ -2,7 +2,36 @@
 
 Last updated: 2026-10-12
 
-## Latest: Investigation 39 Proved — Bent Function Hidden Shift Problem: Spectral Flatness Blindness, Dual-Oracle Inflation, and Classical Affine-Derivative Dequantization
+## Latest: Investigation 40 Proved — Legendre Symbol Hidden Shift Problem: Superposition Oracle Necessity, Exact Totient Peak Scaling, and Classical PRF Security Demarcation
+
+A major foundational investigation resolving the quantum and classical query complexity bounds for the Legendre Symbol Hidden Shift Problem over finite fields $\mathbb{F}_p$ and composite rings $\mathbb{Z}_N$ (specifically analyzing the van Dam-Hallgren-Ip 2006 algorithm, quadratic Gauss sums, and Damgård's Legendre PRF) has been completed and verified in `research/LEGENDRE_HIDDEN_SHIFT_CLASSICAL_PRF_DEMARCATION.md`.
+
+### Core Invariants & Status:
+- `speedup_claim_allowed = False` strictly enforced everywhere.
+- `accepted_speedup_candidate = False` strictly enforced everywhere.
+- Registered negative result: `NEG-LEGENDRE-HIDDEN-SHIFT-CLASSICAL-PRF-DEMARCATION` (valid with 966 negative results).
+
+### Investigation 40 Summary & Key Mathematical Discoveries:
+1. **Exact Gauss Sum Totient Peak Scaling (Theorem 1)**:
+   For any odd prime $p$, the single-query van Dam-Hallgren-Ip algorithm reconstructs the secret shift $s$ with peak measurement probability $P(\text{success}) = \frac{p - 1}{p} = 1 - \frac{1}{p}$ (verified across $p \in [7, 11, 13, 17, 19, 23]$). For composite modulus $N = \prod p_i$, the Gauss sum vanishes on all non-coprime elements, restricting the peak probability to **identically the totient ratio**:
+   $$P_{\text{composite}}(\text{success}) = \frac{\phi(N)}{N} = \prod_{i} \left( 1 - \frac{1}{p_i} \right).$$
+   As the density of small prime factors increases, the single-query success probability degrades monotonically toward zero.
+2. **Superposition Oracle Necessity (Theorem 2)**:
+   The vDHI algorithm requires coherent quantum superposition queries $\sum |x\rangle |g(x)\rangle$. Against any physical server providing classical input-output pairs $(x_i, g(x_i))$, the quantum adversary receives only a classical statistical mixture $\rho_{\text{classical}} = \frac{1}{p} \sum |x\rangle \langle x| \otimes |g(x)\rangle \langle g(x)|$. By Holevo's theorem, no quantum measurement can extract more information than classical queries.
+3. **Weil Bound & Classical PRF Hardness (Theorem 3)**:
+   In the classical oracle model, the Legendre hidden shift problem is identical to the **Legendre PRF Key Recovery Problem** (Damgård 1988). By the Weil bound on character sums, the correlation between distinct shifts is bounded by $|\sum_{x} \chi(x + s_1) \chi(x + s_2)| \le 2\sqrt{p} + 1$, forcing the normalized correlation $\rho(s_1, s_2) \le O(1/\sqrt{p}) \to 0$. Classical and quantum algorithms given classical data face an identical query/time lower bound of $\Omega(\sqrt{p})$ via baby-step giant-step (Khovratovich 2020).
+4. **Phase Cancellation Factoring Barrier for Composite Moduli (Theorem 4)**:
+   For composite $N = p q$, implementing the phase gate $|k\rangle \mapsto \left( \frac{k}{N} \right) |k\rangle$ on arbitrary quantum states requires solving the Quadratic Residuosity Problem (QRP), which is polynomial-time equivalent to integer factoring.
+5. **Epistemic Model Demarcation (Theorem 5)**:
+   The vDHI quantum speedup is confined strictly to the coherent superposition query model and presents zero threat to classical cryptographic APIs implementing the Legendre PRF.
+6. **Verification Matrix**:
+   - `pytest -v tests/test_legendre_hidden_shift_prf_demarcation.py` (5/5 PASS).
+   - `node research/certificates/legendre_hidden_shift_crosscheck.js` (5/5 PASS).
+   - `python3 qsearch.py validate` (0 issues, 966 negative results).
+
+---
+
+## Prior: Investigation 39 Proved — Bent Function Hidden Shift Problem: Spectral Flatness Blindness, Dual-Oracle Inflation, and Classical Affine-Derivative Dequantization
 
 A major foundational investigation resolving the quantum and classical query complexity bounds for the Hidden Shift Problem over Boolean bent functions (specifically analyzing Roetteler's 2010 algorithm, Maiorana-McFarland bilinear functions, and higher-order algebraic derivatives) has been completed and verified in `research/BENT_FUNCTION_HIDDEN_SHIFT_DUAL_DEQUANTIZATION_BARRIER.md`.
 

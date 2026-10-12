@@ -1,6 +1,25 @@
 # Mechanical Follow-Up Implementation Plan (pass 2)
 
-## Latest Handoff (2026-10-12, Investigation 39 Proved — Bent Function Hidden Shift Problem: Spectral Flatness Blindness, Dual-Oracle Inflation, and Classical Affine-Derivative Dequantization)
+## Latest Handoff (2026-10-12, Investigation 40 Proved — Legendre Symbol Hidden Shift Problem: Superposition Oracle Necessity, Exact Totient Peak Scaling, and Classical PRF Security Demarcation)
+
+Read `research/LEGENDRE_HIDDEN_SHIFT_CLASSICAL_PRF_DEMARCATION.md` and the TOP of `research/AGENT_HANDOFF.md`.
+Investigation 40 establishes the exact quantum and classical complexity bounds for the Legendre Symbol Hidden Shift Problem over $\mathbb{F}_p$ and composite moduli $\mathbb{Z}_N$:
+- Proved Exact Gauss Sum Peak Scaling: Single-query vDHI algorithm achieves target probability exactly $(p - 1)/p = 1 - 1/p$ on primes $p$.
+- Proved Composite Modulus Totient Collapse: On composite moduli $N = \prod p_i$, Gauss sums vanish on non-coprimes, restricting target probability to exactly $\phi(N)/N = \prod (1 - 1/p_i)$.
+- Proved Superposition Oracle Necessity: vDHI requires coherent superposition queries; against classical APIs providing $(x_i, g(x_i))$, the quantum state is an unentangled classical mixture with zero quantum advantage.
+- Proved Weil Bound & Legendre PRF Security: In the classical oracle model (Legendre PRF), the Weil bound $|\sum \chi(x+s_1) \chi(x+s_2)| \le 2\sqrt{p} + 1$ forces correlation to $O(1/\sqrt{p})$, requiring $\Omega(\sqrt{p})$ query/time by baby-step giant-step.
+- Proved Jacobi Factoring Barrier: Implementing the phase gate on composite $N$ requires solving Quadratic Residuosity, which is as hard as factoring $N$.
+- Registered negative result: `NEG-LEGENDRE-HIDDEN-SHIFT-CLASSICAL-PRF-DEMARCATION` (valid with 966 negative results).
+
+Mechanical Queue:
+1. Verify repo health: `python3 qsearch.py validate` and `python3 tools/check_site.py`.
+2. Run Investigation 40 test suite: `pytest tests/test_legendre_hidden_shift_prf_demarcation.py` (5/5 PASS).
+3. Run Investigation 40 cross-check: `node research/certificates/legendre_hidden_shift_crosscheck.js` (5/5 PASS).
+4. Run Investigation 39 test suite: `pytest tests/test_bent_function_hidden_shift_dequantization_obstruction.py` (6/6 PASS).
+5. Strict invariants: `speedup_claim_allowed = False`, `accepted_speedup_candidate = False`.
+6. Preserve all proof gates, retractions, counterexamples, and negative results.
+
+## Prior Handoff (2026-10-12, Investigation 39 Proved — Bent Function Hidden Shift Problem: Spectral Flatness Blindness, Dual-Oracle Inflation, and Classical Affine-Derivative Dequantization)
 
 Read `research/BENT_FUNCTION_HIDDEN_SHIFT_DUAL_DEQUANTIZATION_BARRIER.md` and the TOP of `research/AGENT_HANDOFF.md`.
 Investigation 39 establishes the exact quantum and classical complexity bounds for the Hidden Shift Problem over Boolean bent functions:

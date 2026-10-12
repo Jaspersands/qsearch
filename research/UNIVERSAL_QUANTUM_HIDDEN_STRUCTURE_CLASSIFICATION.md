@@ -130,6 +130,7 @@ The table below summarizes the exact mathematical status of key hidden structure
 | **37** | Cai-Fürer-Immerman (CFI) Graph Isomorphism Obstruction | Graph Algorithms | $X(K_4) \not\cong X'(K_4)$ cospectral ($\Delta < 2 \cdot 10^{-15}$); CTQW return TV $\equiv 0.000$; 1-WL & 2-WL invariant; adiabatic gap $\Delta = 2^{-\Omega(n)}$; Luks solvable tower dequantizes in $O(n^4 \log n)$ | Proved Mathematical Obstruction & Classical Subsumption |
 | **38** | Dihedral Hidden Subgroup Problem (DHSP) & Commutant Barrier | Dihedral Group HSP | $\text{Tr}(\rho_j(r^d s)) \equiv 0$; Weak TV $\equiv 0.000$; single-copy LWE hard; commutant $\dim(\mathcal{C}_M) = \sum |f^{-1}(v)|^2$ (Modular Subset Sum); Kuperberg $2^{\Theta(\sqrt{n})}$; uSVP protected | Proved Mathematical Barrier & Cryptographic Boundary |
 | **39** | Bent Function Hidden Shift Problem & Dual Dequantization | Boolean Hidden Shift | Walsh flat $|\hat{f}| = 2^{n/2}$; black-box TV $\equiv 0.000$; dual oracle $\tilde{f}$ takes $2^{\Omega(n)}$ queries; quadratic dequantized in $n+1$ queries ($O(n^3)$); cubic in $O(n^2)$ | Proved Mathematical Barrier & Classical Dequantization |
+| **40** | Legendre Symbol Hidden Shift & Classical PRF Demarcation | Multiplicative Shift | Gauss sum $|\tau_p| = \sqrt{p}$; vDHI peak $(p-1)/p$; composite totient $\phi(N)/N$; classical Weil bound $|\rho| \le 2/\sqrt{p}$; PRF secure ($O(\sqrt{p})$ query/time) | Proved Mathematical Barrier & Model Demarcation |
 
 ---
 
