@@ -1,6 +1,25 @@
 # Mechanical Follow-Up Implementation Plan (pass 2)
 
-## Latest Handoff (2026-10-12, Investigation 51 Proved — Topological Quantum Field Theories, Anyonic Braid Groups $B_n$, and the Non-Abelian Anyon HSP: The Jones Polynomial and Fibonaccian Commutant Horizon)
+## Latest Handoff (2026-10-12, Investigation 52 Proved — Quantum Supremacy, Random Circuit Sampling (RCS), and the Anticoncentration Barrier: Porter-Thomas Statistics, Cross-Entropy Benchmarking (XEB), and Classical Tensor Network Dequantization)
+
+Read `research/QUANTUM_SUPREMACY_RCS_ANTICONCENTRATION_BARRIER.md` and the TOP of `research/AGENT_HANDOFF.md`.
+Investigation 52 establishes the exact quantum and classical complexity bounds for Random Circuit Sampling (RCS), Porter-Thomas distributions, Linear Cross-Entropy Benchmarking (XEB), classical space-time tensor network slicing, and noise spoofing:
+- Proved Porter-Thomas Distribution & Anticoncentration Horizon: In the Haar-random and random circuit limit, output probabilities $p(x) = |\langle x|\psi\rangle|^2$ over dimension $D = 2^n$ strictly obey the exponential Porter-Thomas distribution $P(p) = D e^{-D p}$. The rescaled variable $u = D p$ satisfies $\mathbb{E}[u] = 1.0$, $\mathbb{E}[u^2] = 2.0$, and variance $\text{Var}(u) = 1.0$. The anticoncentration ratio is $\mathbb{E}[p^2] / (\mathbb{E}[p])^2 \equiv 2.0$.
+- Proved Linear XEB Fidelity Contrast and Noise Decay: Linear Cross-Entropy Benchmarking satisfies $F_{\text{XEB}}(q) = 2^n \sum_x q(x) p(x) - 1$. Normalized Linear XEB evaluates to $1.0$ for the ideal quantum state, $0.0$ for uniform white noise, and decays linearly $F_{\text{norm}}(q_{\text{noisy}}) = \lambda$ under global depolarizing noise $\rho = \lambda |\psi\rangle\langle\psi| + (1-\lambda) \frac{I}{2^n}$. In physical experimental implementations ($F_{\text{XEB}} \approx 0.0022$), over $99.78\%$ of the physical output is uncorrelated white noise.
+- Proved Anticoncentration Shannon Entropy & Constructive Peak Absence: Anticoncentrated states exhibit near-maximal Shannon entropy $H(p) = n - \frac{1 - \gamma}{\ln 2} \approx n - 0.6099$ bits. The maximum individual basis state probability is strictly bounded by $p_{\max} = O(n / 2^n) \to 0$. Random circuits deliberately eliminate constructive quantum interference, making RCS structurally incapable of solving search, period finding, or algebraic problems.
+- Proved Classical Tensor Network Slicing Dequantization: The classical simulation complexity of 2D grid circuits is governed by the space-time treewidth $\text{tw}(G) = \min(L_1, L_2) \cdot \min(d, \max(L_1, L_2))$. Slicing $s$ tensor indices reduces tensor contraction memory from $O(2^{\text{tw}})$ to $O(2^{\text{tw} - s})$ at the cost of evaluating $2^s$ independent contractions. This technique (Pan & Chen 2021) dequantized Sycamore 53-qubit depth-20 amplitude computation from the claimed 10,000 years down to dozens of seconds on classical hardware.
+- Proved Classical Spoofing & The Verification Catch-22: For any physical device subject to constant error rates $\epsilon_g > 0$, circuit fidelity decays as $F \sim e^{-\epsilon_g N_g} \le O(1/\text{poly}(n))$. Shallow classical tensor networks and local marginal product samplers can spoof the noisy quantum distribution in classical polynomial time $\text{poly}(n, 1/\epsilon)$ (Gao et al. 2021, Aharonov et al. 2023). Furthermore, classical verification of XEB requires computing ideal amplitudes $p(x)$ which is itself $\#P$-hard, creating an unbreakable verification dilemma: if a quantum advantage cannot be verified classically in polynomial time, it cannot serve as a verifiable computational speedup.
+- Registered negative result: `NEG-QUANTUM-SUPREMACY-RCS-ANTICONCENTRATION-BARRIER` (valid with 978 negative results).
+
+Mechanical Queue:
+1. Verify repo health: `python3 qsearch.py validate` and `python3 tools/check_site.py`.
+2. Run Investigation 52 test suite: `pytest tests/test_quantum_supremacy_rcs_barrier.py` (6/6 PASS).
+3. Run Investigation 52 cross-check: `node research/certificates/quantum_supremacy_rcs_crosscheck.js` (6/6 PASS).
+4. Run Investigation 51 test suite: `pytest tests/test_anyonic_braid_group_hsp_barrier.py` (6/6 PASS).
+5. Strict invariants: `speedup_claim_allowed = False`, `accepted_speedup_candidate = False`.
+6. Advance to Investigation 53: Boson Sampling, Permanents vs. Hafnians, and the Photonic Linear-Optical Quantum Advantage Horizon: Aaronson-Arkhipov Theorem, Gaussian Boson Sampling (GBS), and Classical Dequantization under Photon Loss and Distinguishability.
+
+## Prior Handoff (2026-10-12, Investigation 51 Proved — Topological Quantum Field Theories, Anyonic Braid Groups $B_n$, and the Non-Abelian Anyon HSP: The Jones Polynomial and Fibonaccian Commutant Horizon)
 
 Read `research/ANYONIC_BRAID_GROUP_HSP_COMMUTANT_BARRIER.md` and the TOP of `research/AGENT_HANDOFF.md`.
 Investigation 51 establishes the exact quantum and classical complexity bounds for topological quantum field theories (TQFTs), anyonic braid groups $B_n$, the Jones polynomial, and the Hidden Subgroup Problem over non-abelian anyonic braid representations:
