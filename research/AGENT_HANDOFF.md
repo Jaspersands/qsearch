@@ -2,7 +2,34 @@
 
 Last updated: 2026-10-12
 
-## Latest: Investigation 53 Proved — Boson Sampling, Permanents vs. Hafnians, and the Photonic Linear-Optical Quantum Advantage Horizon: Aaronson-Arkhipov Theorem, Gaussian Boson Sampling (GBS), and Classical Dequantization under Photon Loss and Distinguishability
+## Latest: Investigation 54 Proved — Continuous-Variable Quantum Computing, Non-Gaussian Magic, and the Gottesman-Kitaev-Preskill (GKP) Horizon: Wigner Negativity, Hudson's Theorem, and the Cubic Phase Gate Fault-Tolerant Barrier
+
+A major foundational investigation resolving the quantum and classical complexity bounds for continuous-variable (CV) quantum computing, Gaussian states, symplectic group $Sp(2N, \mathbb{R})$, Hudson's theorem, Mari-Eisert classical dequantization, Wigner negativity, the Gottesman-Kitaev-Preskill (GKP) code, non-Gaussian magic, the cubic phase gate ($V_\gamma = e^{i \gamma \hat{x}^3}$), physical Kerr $\chi^{(3)}$ weakness, and the finite squeezing $\ge 10$ dB threshold barrier has been completed and verified in `research/CONTINUOUS_VARIABLE_GKP_NON_GAUSSIAN_BARRIER.md`.
+
+### Core Invariants & Status:
+- `speedup_claim_allowed = False` strictly enforced everywhere.
+- `accepted_speedup_candidate = False` strictly enforced everywhere.
+- Registered negative result: `NEG-CONTINUOUS-VARIABLE-GKP-NON-GAUSSIAN-BARRIER` (valid with 980 negative results).
+
+### Investigation 54 Summary & Key Mathematical Discoveries:
+1. **Hudson's Theorem & Mari-Eisert Gaussian Dequantization (Theorem 1)**:
+   Pure quantum states have non-negative Wigner functions $W(x, p) \ge 0$ if and only if they are Gaussian states. Under quadratic Hamiltonians, Gaussian states evolve via the real symplectic group $Sp(2N, \mathbb{R})$ preserving the symplectic form $S \Omega S^T = \Omega$. Covariance matrix propagation $\sigma' = S \sigma S^T$ is simulated classically in $O(N^3)$ operations, proving that pure Gaussian CV quantum computing possesses zero quantum speedup.
+2. **GKP Stabilizer Algebra & Logical Pauli Subgroup (Theorem 2)**:
+   The GKP grid code encodes a discrete qubit into position and momentum quadratures via stabilizers $S_x = e^{i 2\sqrt{\pi} \hat{p}}$ and $S_p = e^{-i 2\sqrt{\pi} \hat{x}}$. The Baker-Campbell-Hausdorff commutation phase evaluates to $e^{i (2\sqrt{\pi})(2\sqrt{\pi})} = e^{4\pi i} \equiv 1.0$, guaranteeing $[S_x, S_p] = 0$. The logical Pauli operators $Z_L = e^{i \sqrt{\pi} \hat{p}}$ and $X_L = e^{-i \sqrt{\pi} \hat{x}}$ satisfy $Z_L X_L = e^{i \pi} X_L Z_L = - X_L Z_L$, exactly recovering discrete qubit Pauli algebra within an infinite-dimensional bosonic mode.
+3. **Non-Gaussian Wigner Negativity & Magic Emergence (Theorem 3)**:
+   Non-Gaussian operations are strictly necessary to generate Wigner negativity $\mathcal{N}_W(\rho) = \int |W(x, p)| dx dp - 1 > 0$. Perturbing the vacuum with a cubic phase gate $V_\gamma = e^{i \gamma \hat{x}^3}$ creates pronounced negative quasi-probability ripples ($\min_{x, p} W(x, p) < 0$), confirming that non-Gaussian Hamiltonians are the sole source of non-stabilizer magic in continuous variables.
+4. **Heisenberg Momentum Shear & Non-Linear Symplectic Breakdown (Theorem 4)**:
+   The cubic phase gate induces non-linear Heisenberg momentum shear $V_\gamma^\dagger \hat{p} V_\gamma = \hat{p} + 3\gamma \hat{x}^2$. The quadratic coordinate dependence breaks the linear symplectic group $Sp(2N, \mathbb{R})$, taking the gate into level 3 of the Clifford hierarchy. In physical optical and microwave platforms, third-order Kerr nonlinearities $\chi^{(3)}$ are suppressed by orders of magnitude ($\chi^{(3)} / \kappa \le 10^{-6}$), rendering deterministic unitary non-Gaussian gates physically inaccessible without probabilistic state injection.
+5. **Finite Squeezing Energy Cutoff & Fault-Tolerant Threshold (Theorem 5)**:
+   Ideal GKP states require infinite average photon number $\langle \hat{n} \rangle = \infty$. Physical states are damped by a Gaussian envelope parameter $\Delta$, yielding finite photon number $\langle \hat{n} \rangle \approx 1 / (2\Delta^2)$ and intrinsic displacement noise variance $\sigma^2 = \Delta^2 / 2$. GKP error correction requires squeezing exceeding the 10 dB threshold ($\Delta \le 0.3162$, $\langle \hat{n} \rangle \ge 5.0$), with concatenated surface codes requiring $\ge 13 - 15 \text{ dB}$ ($\langle \hat{n} \rangle \ge 16$). Below 10 dB, intrinsic displacement noise overwhelms the Voronoi cell radius, causing uncorrectable logical phase errors.
+6. **Verification Matrix**:
+   - `pytest -v tests/test_continuous_variable_gkp_barrier.py` (6/6 PASS).
+   - `node research/certificates/continuous_variable_gkp_crosscheck.js` (6/6 PASS).
+   - `python3 qsearch.py validate` (0 issues, 980 negative results).
+
+---
+
+## Prior: Investigation 53 Proved — Boson Sampling, Permanents vs. Hafnians, and the Photonic Linear-Optical Quantum Advantage Horizon: Aaronson-Arkhipov Theorem, Gaussian Boson Sampling (GBS), and Classical Dequantization under Photon Loss and Distinguishability
 
 A major foundational investigation resolving the quantum and classical complexity bounds for photonic linear-optical quantum computing, Aaronson-Arkhipov Boson Sampling, Gaussian Boson Sampling (GBS), matrix permanents, Hafnians, Hong-Ou-Mandel interference, transmission loss thresholds, and classical polynomial dequantization has been completed and verified in `research/BOSON_SAMPLING_PHOTONIC_LOSS_BARRIER.md`.
 
