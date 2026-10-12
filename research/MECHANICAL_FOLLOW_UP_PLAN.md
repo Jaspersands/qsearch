@@ -1,6 +1,25 @@
 # Mechanical Follow-Up Implementation Plan (pass 2)
 
-## Latest Handoff (2026-10-12, Investigation 35 Proved — Linear Code Equivalence on Wreath Product $W_n$: Swap Character Invariance, Multi-Copy Commutant Barrier, and Hull-Dequantization Demarcation)
+## Latest Handoff (2026-10-12, Investigation 36 Proved — Strongly Cospectral Graph Isomorphism: Continuous-Time Quantum Walk Blindness, 2-WL Invariance, and Local Neighborhood Dequantization)
+
+Read `research/STRONGLY_COSPECTRAL_QUANTUM_WALK_OBSTRUCTION.md` and the TOP of `research/AGENT_HANDOFF.md`.
+Investigation 36 establishes the exact classical and quantum complexity bounds for distinguishing strongly cospectral, strongly regular graphs ($4 \times 4$ Rook's graph $L(K_{4,4})$ vs Shrikhande graph, SRG(16, 6, 2, 2)):
+- Proved Bose-Mesner Spectral Collapse & Continuous-Time Quantum Walk Blindness: 3-dimensional Bose-Mesner algebra $\{I, A, J - I - A\}$ forces identical adjacency spectra $\{6^1, 2^6, (-2)^9\}$ and Laplacian spectra $\{0^1, 4^6, 8^9\}$. Diagonal return amplitudes $\langle v | e^{-i A t} | v \rangle = \frac{1}{16}(e^{-6it} + 6e^{-2it} + 9e^{2it})$ match identically for all $v$ and $t$, proving $\|p_t^{(G_1)} - p_t^{(G_2)}\|_{\text{TV}} \equiv 0.000$ and 0.000 bits mutual information.
+- Proved 2-Weisfeiler-Lehman (2-WL) Invariance: 2-WL color refinement produces identical pair color histograms $\{(0, 16), (1, 96), (2, 144)\}$, blinding all unentangled 2-particle quantum walks.
+- Proved Clique Demarcation: Rook graph $L(K_{4,4})$ has clique number 4 (8 maximum 4-cliques), while Shrikhande has clique number 3 (0 4-cliques).
+- Proved Classical Local Neighborhood Check & Complete Dequantization: Induced neighborhood subgraph $N(v)$ is $K_3 \sqcup K_3$ (2 triangles) in Rook, but $C_6$ (0 triangles) in Shrikhande. Checking triangles takes $O(k^2) = O(1)$ per vertex, dequantizing the distinction globally in $O(n)$ classical time.
+- Proved Automorphism Distinction: $|\text{Aut}(L(K_{4,4}))| = 1152$ vs $|\text{Aut}(\text{Shrikhande})| = 192$.
+- Registered negative result: `NEG-STRONGLY-COSPECTRAL-QUANTUM-WALK-BLINDNESS` (valid with 962 negative results).
+
+Mechanical Queue:
+1. Verify repo health: `python3 qsearch.py validate` and `python3 tools/check_site.py`.
+2. Run Investigation 36 test suite: `pytest tests/test_strongly_cospectral_quantum_walk_obstruction.py` (6/6 PASS).
+3. Run Investigation 36 cross-check: `node research/certificates/strongly_cospectral_quantum_walk_crosscheck.js` (9/9 PASS).
+4. Run Investigation 35 test suite: `pytest tests/test_linear_code_equivalence_wreath_obstruction.py` (6/6 PASS).
+5. Strict invariants: `speedup_claim_allowed = False`, `accepted_speedup_candidate = False`.
+6. Preserve all proof gates, retractions, counterexamples, and negative results.
+
+## Prior Handoff (2026-10-12, Investigation 35 Proved — Linear Code Equivalence on Wreath Product $W_n$: Swap Character Invariance, Multi-Copy Commutant Barrier, and Hull-Dequantization Demarcation)
 
 Read `research/LINEAR_CODE_EQUIVALENCE_WREATH_COMMUTANT_BARRIER.md` and the TOP of `research/AGENT_HANDOFF.md`.
 Investigation 35 establishes the exact classical and quantum complexity bounds for Linear Code Equivalence over $W_n = (S_n \times S_n) \rtimes \mathbb{Z}_2$:

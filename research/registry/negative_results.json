@@ -85640,5 +85640,28 @@
     "lesson": "Linear Code Equivalence over the wreath product W_n = (S_n x S_n) \rtimes Z_2 cannot achieve a quantum speedup. All n! code-swapping involutions are conjugate to tau_id in W_n, forcing all character values on extended irreps to be identically pm d_lambda independent of sigma. Weak Fourier sampling is completely blind (TV distance 0.000). Single-copy strong Fourier sampling yields exponentially vanishing information 2^{-Omega(n log n)}. Multi-copy collective measurements require diagonalizing a commutant of dimension 2^{Omega(n^2 log^2 n)}. Furthermore, for all codes with hull dimension h <= O(log n) (including all LCD codes h = 0), Sendrier's Support Splitting Algorithm solves the problem in polynomial classical time O(n^3 + 2^h n^2), completely dequantizing the problem classically.",
     "reason_invalid": "For any permutation sigma in S_n, the swap involution tau_sigma = (sigma, sigma^-1, 1) satisfies (sigma, 1, 0) (1, 1, 1) (sigma, 1, 0)^-1 = tau_sigma, proving that all code equivalences belong to the exact same conjugacy class in W_n. By Clifford theory, chi_{(lambda, lambda, pm)}(tau_sigma) = pm Tr(rho(sigma) rho(sigma^-1)) = pm d_lambda, which is completely independent of sigma. Consequently, weak Fourier sampling produces identical probability distributions for all sigma, proving TV = 0.000 identically. For single-copy states, mutual information is bounded by poly(n) / n! = 2^{-Omega(n log n)}. The multi-copy commutant dimension is dim(C_M) >= ((n!)^2)^{2M-1} / 2^{2M} >= 2^{Omega(n^2 log^2 n)} at M = Omega(n log n) copies, requiring 2^{Omega(n^2 log^2 n)} quantum gates. On the classical side, for all codes with bounded hull dimension h <= O(log n) (such as LCD codes where the Gram matrix G G^T is invertible over F_q), Sendrier's algorithm computes the equivalence in polynomial classical time O(n^3 + 2^h n^2), dequantizing the problem classically and leaving no quantum advantage.",
     "source": "research/LINEAR_CODE_EQUIVALENCE_WREATH_COMMUTANT_BARRIER.md"
+  },
+  {
+    "applies_to": [
+      "GRAPH-ISOMORPHISM-QUANTUM-WALK",
+      "STRONGLY-REGULAR-GRAPHS",
+      "BOSE-MESNER-ALGEBRA",
+      "COSPECTRAL-QUANTUM-BLINDNESS",
+      "NEIGHBORHOOD-TRIANGLE-SUBSUMPTION"
+    ],
+    "claim": "Continuous-time quantum walks or spectral graph invariants can efficiently distinguish non-isomorphic strongly regular graphs with identical parameters (such as the 4x4 Rook graph and the Shrikhande graph) with quantum advantage.",
+    "evidence": {
+      "automorphism_group_orders": "|Aut(Rook)| = 1152 vs |Aut(Shrikhande)| = 192",
+      "clique_demarcation": "Rook has 8 4-cliques (max clique = 4), Shrikhande has 0 4-cliques (max clique = 3)",
+      "exact_cospectrality": "Adjacency {6^1, 2^6, -2^9} and Laplacian {0^1, 4^6, 8^9} spectra are identical to machine precision",
+      "local_neighborhood_subsumption": "Neighbor triangles: Rook has 2 (K_3 \\sqcup K_3) vs Shrikhande has 0 (C_6), solved in O(1) classical operations",
+      "quantum_walk_tv_blindness": "Return amplitudes identical for all t; TV distance identically 0.000",
+      "speedup_claim_allowed": false,
+      "two_wl_invariance": "2-WL color refinement produces identical color histograms"
+    },
+    "id": "NEG-STRONGLY-COSPECTRAL-QUANTUM-WALK-BLINDNESS",
+    "lesson": "Continuous-time quantum walks and spectral invariants are completely blinded by strongly regular graphs with identical parameters. For the 4x4 Rook graph L(K_{4,4}) and the Shrikhande graph (v=16, k=6, lambda=2, mu=2), the 3-dimensional Bose-Mesner algebra forces identical adjacency spectra {6^1, 2^6, -2^9}, identical Laplacian spectra {0^1, 4^6, 8^9}, and identical continuous-time quantum walk return amplitudes for all t (TV distance 0.000). 2-WL also fails to distinguish them. However, classical local neighborhood checks (counting triangles in the neighbor subgraph, 2 vs 0) distinguish them in O(1) operations per vertex, and 3-WL / clique counting (8 vs 0 K_4 cliques) solves the problem in polynomial time, completely subsuming quantum walks.",
+    "reason_invalid": "Both graphs generate isomorphic 3-dimensional Bose-Mesner algebras, guaranteeing identical eigenvalues and walk moments Tr(A^k) and Tr(L^k) for all k >= 0. Because both graphs are vertex-transitive, the return amplitude <v|exp(-i A t)|v> = (1/16) (e^{-6it} + 6 e^{-2it} + 9 e^{2it}) is vertex-invariant and identical across both graphs for all t, proving that single-particle and unentangled quantum walks yield identically 0.000 bits of mutual information. 2-WL color refinement is similarly invariant. In contrast, an elementary classical algorithm examines the neighbor subgraph G[N(v)]: for the Rook graph it is K_3 \\sqcup K_3 (2 triangles), while for the Shrikhande graph it is C_6 (0 triangles). This local check takes O(Delta^3) = O(6^3) = O(1) operations per vertex (O(n) globally), completely dequantizing the distinction classically.",
+    "source": "research/STRONGLY_COSPECTRAL_QUANTUM_WALK_OBSTRUCTION.md"
   }
 ]

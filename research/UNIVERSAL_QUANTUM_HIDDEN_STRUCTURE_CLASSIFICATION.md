@@ -83,11 +83,11 @@ The table below summarizes the exact mathematical status of key hidden structure
 | **Self-Dual Code Gauge** | $GL_k(\mathbb{F}_2)$ row scrambler | Matrix generator | $O(k^2 n)$ | $O(k^2 n)$ (Classical RREF) | $O(n^3)$ classical | Gauge dimension eliminated classically | **Dequantized Classically** |
 | **Algebraic Geometry Codes** | Curve automorphism | Matrix generator | $O(n^4)$ | $O(n^4)$ (Star square / conductor) | $O(n^4)$ classical | Classical subsumption | **Dequantized Classically** |
 | **CFI Graphs ($\Delta \le 4$)** | Color flip automorphisms | Graph adjacency | $O(n^4)$ | $O(n^4)$ (Luks solvable towers) | $O(n^4)$ classical | Classical subsumption | **Dequantized Classically** |
-| **Cospectral Graphs (Godsil-McKay)** | Switching cospectral pairs | Graph adjacency | $O(n^3)$ | $O(n^3)$ (2-Weisfeiler-Lehman) | Continuous walk blinded ($I = 0$) | Quantum walk invariant blind; 2-WL splits | **Dequantized Classically** |
+| **Cospectral Graphs (Godsil-McKay / SRG)** | Strongly regular pairs $(16, 6, 2, 2)$ | Graph adjacency | $O(n)$ local check | $O(1)$ per vertex ($O(n)$ globally) | Continuous walk blinded ($I = 0$) | Bose-Mesner spectra identical; CTQW TV $\equiv 0$; 2-WL blind; neighborhood triangles split | **Dequantized Classically** |
 
 ---
 
-## 4. Master Cross-Reference Table of Investigations 1–35
+## 4. Master Cross-Reference Table of Investigations 1–36
 
 | # | Investigation Focus | Domain | Primary Obstruction / Mechanism | Epistemic Status |
 | :-: | :--- | :--- | :--- | :--- | :---: |
@@ -126,6 +126,7 @@ The table below summarizes the exact mathematical status of key hidden structure
 | **33** | Unitriangular Supercharacter HSP Obstruction & Wild Barrier | Nilpotent Groups | 26/27 involutions bypass $Z_1$; superclasses contract to $B(n)$; intra-superclass $\text{TV} \equiv 0.000$; wild for $n \ge 6$; query lower bound $2^{\Omega(n^2 \log q)}$ | Proved Mathematical Obstruction |
 | **34** | Graph Isomorphism & Symmetric Group Multi-Copy Commutant Barrier | Symmetric Group HSP | Weak TV $\equiv 0$; $(S_4, H)$ not Gel'fand; single-copy $I \le 2^{-\Omega(n \log n)}$; commutant $\dim(\mathcal{C}_M) \ge 2^{\Omega(n^2 \log^2 n)}$; Racah $\#P$-hard | Proved Mathematical Barrier |
 | **35** | Linear Code Equivalence & Wreath Product Swap Invariance Barrier | Code Equivalence HSP | All $n!$ swaps conjugate; character universality $\chi_{(\lambda, \lambda, \pm)} = \pm d_\lambda$; weak TV $\equiv 0.000$; commutant $\dim(\mathcal{C}_M) \ge 2^{\Omega(n^2 \log^2 n)}$; LCD dequantized $O(n^3)$ | Proved Mathematical Barrier |
+| **36** | Strongly Cospectral Graph Isomorphism Obstruction | Graph Algorithms | Bose-Mesner algebra $\{6^1, 2^6, -2^9\}$ and $\{0^1, 4^6, 8^9\}$ identical; CTQW return TV $\equiv 0.000$; 2-WL blind; neighbor triangles split ($2$ vs $0$) in $O(1)$ | Proved Mathematical Obstruction & Classical Subsumption |
 
 ---
 
