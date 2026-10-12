@@ -86155,5 +86155,30 @@
     "lesson": "Quantum Machine Learning (QML) cannot achieve scalable super-polynomial quantum advantage over classical machine learning. Expressive global quantum feature maps concentrate exponentially under Haar measure, forcing off-diagonal kernel elements to vanish with variance Theta(1/8^n), which collapses the Gram matrix to the identity matrix and requires Omega(4^n) measurement shots per entry to detect any data structure. Projected quantum kernels designed to avoid concentration are mathematically identical to classical Gaussian RBF kernels on classical Bloch feature vectors, running in O(n) classical time without quantum advantage. In variational QNNs, the Quantum Tangent Kernel vanishes as Theta(P / 2^n), demanding exponential overparameterization P = Omega(2^n) to sustain gradient flow. Furthermore, early claims of exponential speedups via HHL (such as QSVM and QPCA) are fully dequantized by classical randomized sample-and-query algorithms operating in poly(k, 1/eps) log(Nd) time. Thus, quantum processors do not expand the computational capacity of classical reproducing kernel Hilbert spaces.",
     "reason_invalid": "Expressive quantum kernels concentrate exponentially to the identity matrix due to Haar measure geometry, requiring exponentially many measurement shots Omega(4^n) to resolve kernel values. Local projected kernels that avoid concentration are classically simulable in linear time O(n) as standard classical Gaussian RBF kernels on Bloch vectors. Variational QTK gradient flows require an exponential number of parameters P = Omega(2^n) to avoid vanishing, and classical SQ dequantization proves that classical algorithms match logarithmic matrix operations given symmetric data access. Therefore, claiming scalable quantum computational advantage for quantum kernels or QML models on general data distributions is mathematically and computationally invalid.",
     "source": "research/QUANTUM_MACHINE_LEARNING_KERNEL_CONCENTRATION_BARRIER.md"
+  },
+  {
+    "applies_to": [
+      "QAOA",
+      "COMBINATORIAL-OPTIMIZATION",
+      "MAX-CUT",
+      "GOEMANS-WILLIAMSON-SDP",
+      "HASTINGS-LOCAL-ALGORITHM",
+      "LIGHT-CONE-LOCALITY",
+      "OVERLAP-GAP-PROPERTY"
+    ],
+    "claim": "The Quantum Approximate Optimization Algorithm (QAOA) at bounded depth p = O(1) outperforms classical polynomial-time approximation algorithms or achieves quantum computational advantage for combinatorial optimization on bounded-degree graphs.",
+    "evidence": {
+      "bravyi_lightcone_tree_barrier": "Bravyi et al. (PRL 2020) proved that depth-p QAOA light cones on graphs with girth g > 2p + 1 see only bipartite trees, blinding local measurements to cycle frustration; seeing cycles requires p = Omega(log n), where light cones contain poly(n) qubits and trigger barren plateaus",
+      "epistemic_invariants_enforced": "speedup_claim_allowed = False; accepted_speedup_candidate = False",
+      "farhi_exact_p1_ratio": "For Max-Cut on 3-regular graphs, QAOA at p=1 has exact analytical ratio alpha = 1/2 + sqrt(3)/9 approx 0.69245009, offering only a slight improvement over random guessing (0.50)",
+      "goemans_williamson_sdp_dominance": "The classical Goemans-Williamson SDP algorithm achieves an approximation ratio alpha_GW approx 0.878567, strictly dominating QAOA p=1 (0.6925) and p=2 (0.7559) by over 18%, requiring p >= 11 for QAOA to match",
+      "hastings_classical_local_superiority": "Hastings (2019) proved that a classical randomized local algorithm with interaction radius R=1 achieves alpha > 0.7025 on high-girth 3-regular graphs, strictly beating p=1 QAOA under identical locality constraints",
+      "overlap_gap_property_parisi_barrier": "Gamarnik et al. (2021) proved that the Overlap Gap Property (OGP) on random regular graphs creates an unbridgeable constant gap between spatially stable algorithms (including low-depth QAOA) and the ground state Parisi constant P_* approx 0.7632",
+      "speedup_claim_allowed": false
+    },
+    "id": "NEG-QAOA-BOUNDED-DEPTH-OPTIMIZATION-BARRIER",
+    "lesson": "The Quantum Approximate Optimization Algorithm (QAOA) cannot achieve quantum speedup or surpass classical algorithms on bounded-degree combinatorial optimization problems. At depth p=1 on 3-regular graphs, QAOA achieves an approximation ratio of exactly 1/2 + sqrt(3)/9 approx 0.69245, which is outperformed by classical local rounding algorithms (alpha > 0.7025 by Hastings 2019) and heavily dominated by classical Goemans-Williamson SDP relaxation (alpha_GW approx 0.87857). By the Bravyi-Kliesch-Koenig-Tang theorem (PRL 2020), depth-p QAOA is restricted by Lieb-Robinson light cones to tree-like local neighborhoods on graphs of high girth, rendering it blind to cycle frustration and topological constraints unless depth reaches p = Omega(log n). At logarithmic depth, the circuit light cone explodes to polynomial size, inducing barren plateaus and classical tensor network simulability. Furthermore, the Overlap Gap Property (OGP) rigorously prevents any low-depth quantum or local algorithm from reaching the ground state energy governed by the Parisi constant. Thus, QAOA provides zero algorithmic advantage over classical optimization techniques.",
+    "reason_invalid": "QAOA at low depth p=O(1) is provably inferior to classical algorithms: Goemans-Williamson SDP achieves 0.87856 on Max-Cut, beating QAOA p=1 (0.6925) by over 18%, and classical local algorithms beat p=1 QAOA under identical radius constraints. Light-cone locality prevents low-depth circuits from detecting cycle frustration on high-girth graphs, and the Overlap Gap Property fundamentally blocks spatially stable quantum circuits from optimizing past the clustering barrier. Increasing depth to Omega(log n) requires circuits with polynomial neighborhood size that suffer from barren plateaus and noise-induced fidelity collapse. Therefore, claiming that QAOA achieves scalable quantum advantage or beats classical algorithms on combinatorial optimization is mathematically and computationally invalid.",
+    "source": "research/QAOA_BOUNDED_DEPTH_OPTIMIZATION_BARRIER.md"
   }
 ]

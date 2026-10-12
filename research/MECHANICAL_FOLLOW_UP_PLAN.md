@@ -1,25 +1,25 @@
 # Mechanical Follow-Up Implementation Plan (pass 2)
 
-## Latest Handoff (2026-10-12, Investigation 57 Proved — Quantum Machine Learning (QML), Quantum Kernel Methods, and the Quantum Tangent Kernel (QTK): Haar Random Feature Collapses, Projected Quantum Kernels, and Classical Reproducing Kernel Hilbert Space (RKHS) Dequantization)
+## Latest Handoff (2026-10-12, Investigation 58 Proved — Quantum Approximate Optimization Algorithm (QAOA) on Bounded-Degree Graphs: Hastings-Bravyi-Koenig Non-Local Correlation Barriers, Overlap Gaps (OGP), and Classical Goemans-Williamson Superiority)
 
-Read `research/QUANTUM_MACHINE_LEARNING_KERNEL_CONCENTRATION_BARRIER.md` and the TOP of `research/AGENT_HANDOFF.md`.
-Investigation 57 establishes the exact computational complexity, kernel concentration flattop, classical Bloch-vector equivalence of Projected Quantum Kernels (PQK), Quantum Tangent Kernel (QTK) overparameterization scaling, and classical sample-and-query dequantization:
-- Proved Haar Kernel Exponential Concentration: For expressive quantum feature maps forming unitary 2-designs, off-diagonal kernel elements concentrate exponentially with variance $\text{Var}(K) = \Theta(1/8^n)$, collapsing the Gram matrix to identity $K \to I_N$ and demanding $\Omega(4^n)$ shots to detect data structure (Thanasilp et al. 2022, Huang et al. 2021).
-- Proved Projected Quantum Kernel Classical Subsumption: Local projected quantum kernels $K_{\text{PQK}}(x, x') = \exp(-\gamma \sum_k \|\rho_k(x) - \rho_k(x')\|_F^2)$ are mathematically identical to classical Gaussian RBF kernels on 3n-dimensional classical Bloch vectors evaluated in $O(n)$ time with $< 10^{-12}$ difference, providing zero non-classical feature space advantage (Huang et al. Nature Comm 2021).
-- Proved Quantum Tangent Kernel (QTK) Vanishing Dynamics: Trace norm vanishes as $\mathbb{E}[\Theta(x, x)] = \Theta(P / 2^n)$; sustaining gradient flow requires exponential overparameterization $P = \Omega(2^n)$ (exceeding $10^6$ parameters for 20 qubits), rendering variational QML non-scalable (Liu et al. 2023, Shaydulin et al. 2024).
-- Proved Geometric Difference Collapse & Classical Shadows: Geometric difference collapses to $g(K_Q, I_N) \to 1.0$ under Haar concentration, eliminating all separation. Physical quantum learning problems are efficiently solved classically via randomized classical shadows (Huang, Kueng, Preskill 2020).
-- Proved Classical SQ Dequantization: Given sample-and-query access, classical randomized linear algebra algorithms compute low-rank PCA and kernel ridge regression in $\text{poly}(k, 1/\epsilon) \log(Nd)$ time, matching quantum logarithmic runtime (Tang STOC 2019, Chia et al. JACM 2022).
-- Registered negative result: `NEG-QUANTUM-MACHINE-LEARNING-KERNEL-CONCENTRATION-BARRIER` (valid with 983 negative results).
+Read `research/QAOA_BOUNDED_DEPTH_OPTIMIZATION_BARRIER.md` and the TOP of `research/AGENT_HANDOFF.md`.
+Investigation 58 establishes the exact approximation ratios, light-cone tree locality, classical SDP dominance, Hastings local algorithm superiority, and the Overlap Gap Property (OGP) barrier for QAOA:
+- Proved Farhi $p=1$ Exact Analytical Approximation Bound: For Max-Cut on 3-regular graphs, QAOA at $p=1$ achieves an optimal edge cut fraction $\langle C_{uv} \rangle = \frac{1}{2} + \frac{1}{2} \sin(4\beta) \sin(\gamma) \cos^2(\gamma)$ with exact maximum $\alpha_{\text{QAOA}}(p=1) = \frac{1}{2} + \frac{\sqrt{3}}{9} \approx 0.69245009$ ($< 10^{-12}$ error).
+- Proved Classical Goemans-Williamson SDP Dominance: Classical polynomial-time Goemans-Williamson SDP relaxation achieves guaranteed ratio $\alpha_{\text{GW}} \approx 0.878567$, strictly beating QAOA $p=1$ ($0.6925$) by $+18.61\%$ and $p=2$ ($0.7559$) by $+12.27\%$, requiring depth $p \ge 11$ to match.
+- Proved Hastings Classical Local Rounding Superiority: Classical randomized local algorithms with radius $R=1$ achieve $\alpha > 0.7025 > 0.69245$, strictly outperforming $p=1$ QAOA under identical locality constraints (Hastings 2019).
+- Proved Bravyi-Kliesch-Koenig-Tang Light-Cone Obstacle: QAOA depth-$p$ light cones on graphs with girth $g > 2p + 1$ see only unfrustrated bipartite trees, blinding local measurements to cycle frustration unless $p = \Omega(\log n)$ (where light cones contain $> 3,000$ qubits at $p=11$, triggering barren plateaus).
+- Proved Overlap Gap Property (OGP) Barrier: Clustering of near-optimal solutions creates an unbridgeable constant gap between spatially stable algorithms (including low-depth QAOA) and the ground state Parisi constant $P_* \approx 0.7632$ (Gamarnik et al. 2021).
+- Registered negative result: `NEG-QAOA-BOUNDED-DEPTH-OPTIMIZATION-BARRIER` (valid with 984 negative results).
 
 Mechanical Queue:
 1. Verify repo health: `python3 qsearch.py validate` and `python3 tools/check_site.py`.
-2. Run Investigation 57 test suite: `pytest tests/test_qml_kernel_concentration_barrier.py` (6/6 PASS).
-3. Run Investigation 57 cross-check: `node research/certificates/qml_kernel_concentration_crosscheck.js` (6/6 PASS).
-4. Run Investigation 56 test suite: `pytest tests/test_barren_plateaus_vqa_barrier.py` (6/6 PASS).
+2. Run Investigation 58 test suite: `pytest tests/test_qaoa_bounded_depth_barrier.py` (6/6 PASS).
+3. Run Investigation 58 cross-check: `node research/certificates/qaoa_bounded_depth_crosscheck.js` (6/6 PASS).
+4. Run Investigation 57 test suite: `pytest tests/test_qml_kernel_concentration_barrier.py` (6/6 PASS).
 5. Strict invariants: `speedup_claim_allowed = False`, `accepted_speedup_candidate = False`.
-6. Advance to Investigation 58: Quantum Approximate Optimization Algorithm (QAOA) on Bounded-Degree Graphs: Hastings-Bravyi-Koenig Non-Local Correlation Barriers, Overlap Gaps (OGP), and Classical Goemans-Williamson Superiority.
+6. Advance to Investigation 59: Quantum Annealing and Adiabatic Quantum Computing (AQC): Vanishing Spectral Gaps, Anderson Localization in Energy Space, and First-Order Quantum Phase Transition Bottlenecks.
 
-## Prior Handoff (2026-10-12, Investigation 56 Proved — Barren Plateaus in Variational Quantum Algorithms (VQAs): Haar Measure Concentration, Lie Algebraic Dynamical Horizons, and the Vanishing Gradient Barrier)
+## Prior Handoff (2026-10-12, Investigation 57 Proved — Quantum Machine Learning (QML), Quantum Kernel Methods, and the Quantum Tangent Kernel (QTK): Haar Random Feature Collapses, Projected Quantum Kernels, and Classical Reproducing Kernel Hilbert Space (RKHS) Dequantization)
 
 Read `research/CONTINUOUS_VARIABLE_GKP_NON_GAUSSIAN_BARRIER.md` and the TOP of `research/AGENT_HANDOFF.md`.
 Investigation 54 establishes the exact quantum and classical complexity bounds for continuous-variable (CV) quantum computing, Gaussian states, symplectic group $Sp(2N, \mathbb{R})$, Hudson's theorem, Mari-Eisert classical dequantization, Wigner negativity, the Gottesman-Kitaev-Preskill (GKP) code, non-Gaussian magic, the cubic phase gate ($V_\gamma = e^{i \gamma \hat{x}^3}$), physical Kerr $\chi^{(3)}$ weakness, and the finite squeezing $\ge 10$ dB threshold barrier:

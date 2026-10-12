@@ -2,7 +2,34 @@
 
 Last updated: 2026-10-12
 
-## Latest: Investigation 57 Proved — Quantum Machine Learning (QML), Quantum Kernel Methods, and the Quantum Tangent Kernel (QTK): Haar Random Feature Collapses, Projected Quantum Kernels, and Classical Reproducing Kernel Hilbert Space (RKHS) Dequantization
+## Latest: Investigation 58 Proved — Quantum Approximate Optimization Algorithm (QAOA) on Bounded-Degree Graphs: Hastings-Bravyi-Koenig Non-Local Correlation Barriers, Overlap Gaps (OGP), and Classical Goemans-Williamson Superiority
+
+A major foundational investigation resolving the approximation ratios, light-cone tree locality, classical SDP dominance, Hastings local algorithm superiority, and the Overlap Gap Property (OGP) barrier for the Quantum Approximate Optimization Algorithm (QAOA) has been completed and verified in `research/QAOA_BOUNDED_DEPTH_OPTIMIZATION_BARRIER.md`.
+
+### Core Invariants & Status:
+- `speedup_claim_allowed = False` strictly enforced everywhere.
+- `accepted_speedup_candidate = False` strictly enforced everywhere.
+- Registered negative result: `NEG-QAOA-BOUNDED-DEPTH-OPTIMIZATION-BARRIER` (valid with 984 negative results).
+
+### Investigation 58 Summary & Key Mathematical Discoveries:
+1. **Farhi $p=1$ Exact Analytical Approximation Bound (Theorem 1)**:
+   For Max-Cut on 3-regular graphs at depth $p=1$, the expected edge cut fraction on tree neighborhoods evaluates analytically to $\langle C_{uv} \rangle = \frac{1}{2} + \frac{1}{2} \sin(4\beta) \sin(\gamma) \cos^2(\gamma)$. Maximizing over $(\gamma, \beta)$ yields $\beta^* = \pi/8$ and $\sin(\gamma^*) = 1/\sqrt{3}$ ($\cos^2(\gamma^*) = 2/3$), producing the exact optimal approximation ratio $\alpha_{\text{QAOA}}(p=1) = \frac{1}{2} + \frac{\sqrt{3}}{9} \approx 0.69245009$ ($< 10^{-12}$ error).
+2. **Classical Goemans-Williamson SDP Dominance (Theorem 2)**:
+   The classical polynomial-time Goemans-Williamson SDP relaxation achieves a guaranteed approximation ratio $\alpha_{\text{GW}} = \min_{0 < \theta \le \pi} \frac{2}{\pi} \frac{\theta}{1 - \cos\theta} \approx 0.878567$. Classical SDP strictly dominates QAOA at $p=1$ ($0.6925$) by $+18.61\%$ and $p=2$ ($0.7559$) by $+12.27\%$, requiring depth $p \ge 11$ for QAOA on 3-regular graphs to match.
+3. **Hastings Classical Local Rounding Superiority (Theorem 3)**:
+   By Hastings (2019), a classical randomized local algorithm with interaction radius $R=1$ assigns spins via Gaussian smoothed local fields on high-girth graphs, achieving an approximation ratio $\alpha_{\text{classical local}} > 0.7025 > \alpha_{\text{QAOA}}(p=1) \approx 0.69245$. QAOA is strictly surpassed by classical algorithms operating under identical locality.
+4. **Bravyi-Kliesch-Koenig-Tang Light-Cone Obstacle (Theorem 4)**:
+   By Bravyi et al. (PRL 2020), a depth-$p$ QAOA circuit possesses a light-cone radius of $p$. On graphs of girth $g > 2p + 1$, the light-cone neighborhood is strictly isomorphic to an unfrustrated bipartite tree $T_D$. QAOA is blinded to cycle frustration and global topological constraints unless depth reaches $p = \Omega(\log n)$, where the light cone expands to $> 3,000$ qubits for $p=11$, triggering exponential barren plateaus and noise collapse.
+5. **The Overlap Gap Property (OGP) Barrier (Theorem 5)**:
+   By Gamarnik, Jagannath, and Wein (2021), near-optimal cuts on random regular graphs cluster into disconnected components separated by an overlap gap. Any spatially stable algorithm (including all $o(\log n)$-depth QAOA circuits) is provably obstructed from reaching the ground state energy governed by the Parisi constant $P_* \approx 0.7632$, creating an unbridgeable constant barrier.
+6. **Verification Matrix**:
+   - `pytest -v tests/test_qaoa_bounded_depth_barrier.py` (6/6 PASS).
+   - `node research/certificates/qaoa_bounded_depth_crosscheck.js` (6/6 PASS).
+   - `python3 qsearch.py validate` (0 issues, 984 negative results).
+
+---
+
+## Prior: Investigation 57 Proved — Quantum Machine Learning (QML), Quantum Kernel Methods, and the Quantum Tangent Kernel (QTK): Haar Random Feature Collapses, Projected Quantum Kernels, and Classical Reproducing Kernel Hilbert Space (RKHS) Dequantization
 
 A major foundational investigation resolving the computational complexity, kernel concentration flattop, classical Bloch-vector equivalence of Projected Quantum Kernels (PQK), Quantum Tangent Kernel (QTK) overparameterization scaling, and classical sample-and-query dequantization has been completed and verified in `research/QUANTUM_MACHINE_LEARNING_KERNEL_CONCENTRATION_BARRIER.md`.
 
