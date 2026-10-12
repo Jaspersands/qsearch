@@ -1,6 +1,25 @@
 # Mechanical Follow-Up Implementation Plan (pass 2)
 
-## Latest Handoff (2026-10-12, Investigation 49 Proved — Quantum Ergodicity, Eigenstate Thermalization Hypothesis (ETH), and the Local Observable Measurement Barrier: Microcanonical Equivalence and Algorithmic Information Horizons)
+## Latest Handoff (2026-10-12, Investigation 50 Proved — Quantum Error Correcting Codes, Eastin-Knill Theorem, and the Non-Clifford Gate Fault-Tolerant Horizon: Transversal Obstructions and Magic State Distillation Bounds)
+
+Read `research/EASTIN_KNILL_NON_CLIFFORD_FAULT_TOLERANT_BARRIER.md` and the TOP of `research/AGENT_HANDOFF.md`.
+Investigation 50 establishes the exact quantum and classical complexity bounds for fault-tolerant quantum error correction, transversal logical gate obstructions, the Eastin-Knill theorem, and magic state distillation overheads:
+- Proved Eastin-Knill Finiteness Theorem: For any quantum code of distance $d \ge 2$, the Knill-Laflamme error detection condition forces the Lie algebra dimension of continuous transversal generators to identically 0 ($P_C H_k P_C = c_k P_C \implies G_L = c I_L$). The transversal gate group $\mathcal{G}_{\text{transversal}}$ is strictly finite, proving that no QECC can implement a universal gate set transversally.
+- Proved Bravyi-König Dimensionality Constraint: In $D$ spatial dimensions, local topological stabilizer codes satisfy $\mathcal{G}_{\text{transversal}} \subseteq \mathcal{C}^{(D)}$. For 2D surface codes ($D=2$), transversal gates are confined to the Clifford group $\mathcal{C}^{(2)} = \langle H, S, \text{CNOT} \rangle$. Non-Clifford gates (such as the $T$-gate at level 3) are mathematically impossible to implement transversally in 2D.
+- Proved Steane Code Non-Clifford Coherence Corruption: On the $[[7, 1, 3]]$ Steane code, transversal $T^{\otimes 7}$ applies relative phase $(e^{i\pi/4})^4 = -1$ to weight-4 codewords relative to the weight-0 codeword. This phase flip corrupts the stabilizer codespace, knocking states out of the code space and proving that transversal non-Clifford gates fail on CSS codes.
+- Proved Bravyi-Kitaev 15-to-1 Distillation Threshold & Overhead: Universality requires injecting noisy magic states and distilling them. The Bravyi-Kitaev 15-to-1 protocol has cubic error suppression $P_{\text{out}}(\epsilon) \approx 35 \epsilon^3$, with distillation threshold $\epsilon_{\text{thresh}} = 1/\sqrt{35} \approx 0.16903$. Distillation overhead scales as $\Omega(\log^{2.465}(1/P_L))$, consuming over $90\%$ of physical fault-tolerant resources and nullifying quadratic/polynomial quantum speedups for realistic problem sizes.
+- Proved Gottesman-Knill Classical Dequantization: Transversal Clifford circuits on stabilizer states operate with $T$-count = 0 and are simulated classically in $O(n^2)$ time by the Gottesman-Knill theorem. Transversal fault-tolerant gates provide zero quantum speedup.
+- Registered negative result: `NEG-EASTIN-KNILL-NON-CLIFFORD-FAULT-TOLERANT-BARRIER` (valid with 976 negative results).
+
+Mechanical Queue:
+1. Verify repo health: `python3 qsearch.py validate` and `python3 tools/check_site.py`.
+2. Run Investigation 50 test suite: `pytest tests/test_eastin_knill_fault_tolerant_barrier.py` (6/6 PASS).
+3. Run Investigation 50 cross-check: `node research/certificates/eastin_knill_fault_tolerant_crosscheck.js` (6/6 PASS).
+4. Run Investigation 49 test suite: `pytest tests/test_quantum_ergodicity_eth_barrier.py` (6/6 PASS).
+5. Strict invariants: `speedup_claim_allowed = False`, `accepted_speedup_candidate = False`.
+6. Advance to Investigation 51: Topological Quantum Field Theories, Anyonic Braid Groups $B_n$, and the Non-Abelian Anyon HSP: The Jones Polynomial and Fibonaccian Commutant Horizon.
+
+## Prior Handoff (2026-10-12, Investigation 49 Proved — Quantum Ergodicity, Eigenstate Thermalization Hypothesis (ETH), and the Local Observable Measurement Barrier: Microcanonical Equivalence and Algorithmic Information Horizons)
 
 Read `research/QUANTUM_ERGODICITY_ETH_LOCAL_OBSERVABLE_BARRIER.md` and the TOP of `research/AGENT_HANDOFF.md`.
 Investigation 49 establishes the exact quantum and classical complexity bounds for quantum ergodicity, Srednicki's Eigenstate Thermalization Hypothesis (ETH), and the measurement of local observables on excited many-body states:

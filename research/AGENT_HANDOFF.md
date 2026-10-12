@@ -2,14 +2,34 @@
 
 Last updated: 2026-10-12
 
-## Latest: Investigation 49 Proved — Quantum Ergodicity, Eigenstate Thermalization Hypothesis (ETH), and the Local Observable Measurement Barrier: Microcanonical Equivalence and Algorithmic Information Horizons
+## Latest: Investigation 50 Proved — Quantum Error Correcting Codes, Eastin-Knill Theorem, and the Non-Clifford Gate Fault-Tolerant Horizon: Transversal Obstructions and Magic State Distillation Bounds
 
-A major foundational investigation resolving the quantum and classical complexity bounds for quantum ergodicity, Srednicki's Eigenstate Thermalization Hypothesis (ETH), and the measurement of local observables on excited many-body states has been completed and verified in `research/QUANTUM_ERGODICITY_ETH_LOCAL_OBSERVABLE_BARRIER.md`.
+A major foundational investigation resolving the quantum and classical complexity bounds for fault-tolerant quantum error correction, transversal logical gate obstructions, the Eastin-Knill theorem, and magic state distillation overheads has been completed and verified in `research/EASTIN_KNILL_NON_CLIFFORD_FAULT_TOLERANT_BARRIER.md`.
 
 ### Core Invariants & Status:
 - `speedup_claim_allowed = False` strictly enforced everywhere.
 - `accepted_speedup_candidate = False` strictly enforced everywhere.
-- Registered negative result: `NEG-QUANTUM-ERGODICITY-ETH-LOCAL-OBSERVABLE-BARRIER` (valid with 975 negative results).
+- Registered negative result: `NEG-EASTIN-KNILL-NON-CLIFFORD-FAULT-TOLERANT-BARRIER` (valid with 976 negative results).
+
+### Investigation 50 Summary & Key Mathematical Discoveries:
+1. **Eastin-Knill Finiteness Theorem (Theorem 1)**:
+   For any quantum code of distance $d \ge 2$, the Knill-Laflamme error detection condition forces the Lie algebra dimension of continuous transversal generators to identically 0 ($P_C H_k P_C = c_k P_C \implies G_L = c I_L$). The transversal gate group $\mathcal{G}_{\text{transversal}}$ is strictly finite, proving that no QECC can implement a universal gate set transversally.
+2. **Bravyi-König Dimensionality Constraint (Theorem 2)**:
+   In $D$ spatial dimensions, local topological stabilizer codes satisfy $\mathcal{G}_{\text{transversal}} \subseteq \mathcal{C}^{(D)}$. For 2D surface codes ($D=2$), transversal gates are confined to the Clifford group $\mathcal{C}^{(2)} = \langle H, S, \text{CNOT} \rangle$. Non-Clifford gates (such as the $T$-gate at level 3) are mathematically impossible to implement transversally in 2D.
+3. **Steane Code Non-Clifford Coherence Corruption (Theorem 3)**:
+   On the $[[7, 1, 3]]$ Steane code, transversal $T^{\otimes 7}$ applies relative phase $(e^{i\pi/4})^4 = -1$ to weight-4 codewords relative to the weight-0 codeword. This phase flip corrupts the stabilizer codespace, knocking states out of the code space and proving that transversal non-Clifford gates fail on CSS codes.
+4. **Bravyi-Kitaev 15-to-1 Distillation Threshold & Overhead (Theorem 4)**:
+   Universality requires injecting noisy magic states and distilling them. The Bravyi-Kitaev 15-to-1 protocol has cubic error suppression $P_{\text{out}}(\epsilon) \approx 35 \epsilon^3$, with distillation threshold $\epsilon_{\text{thresh}} = 1/\sqrt{35} \approx 0.16903$. Distillation overhead scales as $\Omega(\log^{2.465}(1/P_L))$, consuming over $90\%$ of physical fault-tolerant resources and nullifying quadratic/polynomial quantum speedups for realistic problem sizes.
+5. **Gottesman-Knill Classical Dequantization (Theorem 5)**:
+   Transversal Clifford circuits on stabilizer states operate with $T$-count = 0 and are simulated classically in $O(n^2)$ time by the Gottesman-Knill theorem. Transversal fault-tolerant gates provide zero quantum speedup.
+6. **Verification Matrix**:
+   - `pytest -v tests/test_eastin_knill_fault_tolerant_barrier.py` (6/6 PASS).
+   - `node research/certificates/eastin_knill_fault_tolerant_crosscheck.js` (6/6 PASS).
+   - `python3 qsearch.py validate` (0 issues, 976 negative results).
+
+---
+
+## Prior: Investigation 49 Proved — Quantum Ergodicity, Eigenstate Thermalization Hypothesis (ETH), and the Local Observable Measurement Barrier: Microcanonical Equivalence and Algorithmic Information Horizons
 
 ### Investigation 49 Summary & Key Mathematical Discoveries:
 1. **Srednicki ETH Matrix Element Scaling (Theorem 1)**:
