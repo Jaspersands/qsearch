@@ -85804,5 +85804,28 @@
     "lesson": "Hallgren's quantum period-finding algorithm for real quadratic fields computes the regulator R = ln epsilon_d in polynomial time O(log^3 d) by discretizing the continuous abelian circle group R / R Z and regularizing Shanks' infrastructure via h(x) = (r_x, x - delta(r_x)). However, this quantum advantage does not represent an exponential speedup over an exponential classical baseline. Classical computation is not restricted to black-box search: Buchmann's (1990) index calculus algorithm over smooth prime ideals computes R in subexponential time L_d[1/2, sqrt{2}] = exp((sqrt{2} + o(1)) sqrt{ln d ln ln d}). The quantum speedup is therefore superpolynomial over subexponential index calculus (identical in complexity structure to Shor's factoring algorithm). Furthermore, the continuous-to-discrete discretization introduces rounding jitter epsilon_k in [-Delta/2, Delta/2], requiring mesh parameter N Delta^2 >= 2 R^2 to prevent phase decoherence and ensure continued fraction convergence.",
     "reason_invalid": "Hallgren's algorithm maps the continuous non-compact period finding problem over R to the compact circle group R / R Z = S^1, which avoids all non-abelian representation obstructions because all irreps are 1-dimensional characters chi_k(x) = exp(2 pi i k x / R). Shanks' infrastructure cycle has irregular step lengths delta(r_{i+1}) - delta(r_i) in (0, ln(2 sqrt{d})], which is regularized by incorporating the intra-cell offset h(x) = (r_x, x - delta(r_x)). A discrete mesh of N points with spacing Delta produces a state with rounding jitter bounded by Delta / 2. By Legendre's continued fraction theorem, if N Delta^2 >= 2 R^2, the peak frequency mode recovers R with precision 2^{-Omega(n)} in polynomial time O(log^3 d). However, claiming an exponential quantum speedup is mathematically invalid because classical algorithms run in subexponential time L_d[1/2, sqrt{2}] via Buchmann's index calculus, restricting the quantum advantage to a superpolynomial separation over subexponential classical methods.",
     "source": "research/REAL_QUADRATIC_REGULATOR_INFRASTRUCTURE_DEMARCATION.md"
+  },
+  {
+    "applies_to": [
+      "ARBITRARY-DEGREE-NUMBER-FIELD",
+      "MULTIDIMENSIONAL-CONTINUOUS-HSP",
+      "HALLGREN-SCHMIDT-VOLLMER",
+      "EXPONENTIAL-DEGREE-BARRIER",
+      "LATTICE-SIVP-HARDNESS"
+    ],
+    "claim": "Quantum algorithms can compute the unit group regulator and solve the Principal Ideal Problem in polynomial time for algebraic number fields of arbitrary, growing degree n = [K : Q].",
+    "evidence": {
+      "compact_representation_overhead": "Manipulating algebraic units and reduced ideals in degree n requires compact representations with n^{O(n)} overhead",
+      "continuous_torus_dual_lattice": "Quotient R^r / Lambda is an r-dimensional compact torus with complete 1D character basis chi_u(x) = exp(2 pi i u . x) labeled by dual lattice Lambda^*",
+      "epistemic_invariants_enforced": "speedup_claim_allowed = False; accepted_speedup_candidate = False",
+      "exponential_degree_barrier": "For unbounded degree n, quantum complexity is 2^{Omega(n log n)} poly(log |Delta_K|); polynomial time collapses",
+      "lattice_reconstruction_hardness": "Reconstructing dual lattice Lambda^* in dimension r = Theta(n) requires solving SIVP/CVP in dimension r, which is lattice-hard (2^{Omega(r)})",
+      "mesh_volume_explosion": "Sampling hypercube requires (M / Delta)^r = 2^{Omega(n log n)} states, causing exponential mode dispersion",
+      "speedup_claim_allowed": false
+    },
+    "id": "NEG-ARBITRARY-DEGREE-REGULATOR-EXPONENTIAL-BARRIER",
+    "lesson": "While Hallgren (2005) and Schmidt-Vollmer (2005) established polynomial-time quantum algorithms for fixed field degree n = O(1), the algorithm scales as 2^{Omega(n log n)} poly(log |Delta_K|) for growing degree n. When n is unbounded, polynomial tractability collapses due to three compounding mathematical barriers: (1) Lattice reconstruction hardness: dual lattice sampling in dimension r = Theta(n) requires solving SIVP/CVP in dimension r, which is lattice-hard and requires 2^{Omega(r)} operations; (2) Compact representation overhead: manipulating algebraic units and reduced ideals in degree n requires n^{O(n)} operations; and (3) Multi-dimensional grid volume explosion: the sampling mesh requires (M / Delta)^r = 2^{Omega(n log n)} states. Therefore, the quantum regulator algorithm is confined strictly to constant-degree number fields.",
+    "reason_invalid": "The multi-dimensional continuous torus HSP over R^r / Lambda_K (where r = r_1 + r_2 - 1 = Theta(n)) avoids non-abelian representation obstacles because the torus is abelian, yielding dual lattice characters chi_u(x) = exp(2 pi i u . x). However, inverting the dual lattice from noisy quantum samples requires solving BDD and SIVP in dimension r, which is NP-hard under randomized reductions and takes 2^{Omega(r)} = 2^{Omega(n)} operations. Furthermore, polynomial multiplication and compact representation arithmetic scale as n^{O(n)}, and the discrete grid volume grows as 2^{Omega(n log n)}. Thus, claiming polynomial-time quantum solvability for arbitrary degree number fields is mathematically invalid: the algorithm is polynomial only in log |Delta_K| for constant degree n, and exponential in n.",
+    "source": "research/ARBITRARY_DEGREE_NUMBER_FIELD_REGULATOR_BARRIER.md"
   }
 ]

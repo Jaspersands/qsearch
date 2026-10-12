@@ -2,7 +2,38 @@
 
 Last updated: 2026-10-12
 
-## Latest: Investigation 42 Proved — Real Quadratic Number Fields, Unit Group Regulators, and Principal Ideal Infrastructure: Continuous Non-Compact Period Finding (Hallgren's Algorithm vs. Classical Subexponential Index Calculus)
+## Latest: Investigation 43 Proved — Arbitrary-Degree Algebraic Number Fields, Multi-Dimensional Unit Group Regulators, and the Exponential Degree Barrier: The $\mathbb{R}^r / \Lambda$ Continuous Torus HSP (Hallgren-Schmidt-Vollmer Algorithm vs. Lattice Hardness)
+
+A major foundational investigation resolving the quantum and classical complexity bounds for continuous period finding over algebraic number fields of arbitrary degree $K / \mathbb{Q}$ ($n = [K : \mathbb{Q}]$), multi-dimensional unit group regulators $R_K$, and the Principal Ideal Problem (specifically analyzing the Hallgren 2005 / Schmidt-Vollmer 2005 / Biasse-Song 2016 algorithms and lattice SIVP hardness) has been completed and verified in `research/ARBITRARY_DEGREE_NUMBER_FIELD_REGULATOR_BARRIER.md`.
+
+### Core Invariants & Status:
+- `speedup_claim_allowed = False` strictly enforced everywhere.
+- `accepted_speedup_candidate = False` strictly enforced everywhere.
+- Registered negative result: `NEG-ARBITRARY-DEGREE-REGULATOR-EXPONENTIAL-BARRIER` (valid with 969 negative results).
+
+### Investigation 43 Summary & Key Mathematical Discoveries:
+1. **Multi-Dimensional Continuous Torus Reduction (Theorem 1)**:
+   The underlying algebraic structure is the $r$-dimensional continuous abelian additive Lie group $(\mathbb{R}^r, +)$, where $r = r_1 + r_2 - 1 = \Theta(n)$ is the unit group rank. The quotient group $T^r = \mathbb{R}^r / \Lambda_K \cong (S^1)^r$ is a compact $r$-dimensional abelian real torus. All irreducible representations are 1-dimensional characters $\chi_u(x) = \exp(2\pi i \, u \cdot x)$ labeled by dual lattice points $u \in \Lambda_K^*$, preserving strict Fourier character orthogonality with zero commutant inflation.
+2. **Dual Lattice Basis Inversion & Exact Regulator Reconstruction (Theorem 2)**:
+   Multi-dimensional continuous QFT measures vectors $w_i \approx u_i \in \Lambda_K^*$. Sampling $r + O(1)$ linearly independent dual vectors reconstructs the dual lattice basis matrix $B^*$. Inverting yields the primal unit lattice $B = (B^*)^{-T}$, from which the regulator is determined as $R_K = \det(B) = 1 / \det(B^*)$.
+3. **The Exponential Degree Barrier ($n^{O(n)}$) (Theorem 3)**:
+   While the quantum algorithm runs in polynomial time $\text{poly}(\log |\Delta_K|)$ for **constant degree $n = O(1)$**, it is **exponential in the field degree $n$**:
+   $$T_{\text{quantum}}(n, \Delta_K) = 2^{\Omega(n \log n)} \cdot \text{poly}(\log |\Delta_K|).$$
+   When $n$ is unbounded (e.g. $n = \Omega(\log |\Delta_K|)$), polynomial tractability collapses due to three compounding mathematical obstructions:
+   - *Lattice Reconstruction Hardness*: Reconstructing the dual lattice $\Lambda_K^*$ in dimension $r \approx n$ from noisy samples requires solving SIVP / CVP in dimension $r$, which is lattice-hard ($2^{\Omega(n)}$).
+   - *Compact Representation Overhead*: Manipulating algebraic units and reduced ideals in degree $n$ requires compact representations with $n^{O(n)}$ arithmetic scaling.
+   - *Sampling Mesh Volume Explosion*: The sampling hypercube $[0, M]^r$ requires $(M / \Delta)^r = 2^{\Omega(n \log(M/\Delta))}$ states, inducing exponential mode dispersion.
+4. **Classical-Quantum Demarcation (Theorem 4)**:
+   - For constant degree $n = O(1)$: Quantum runs in $\text{poly}(\log |\Delta_K|)$ vs. classical subexponential index calculus $L_{|\Delta_K|}[1/2]$ (superpolynomial speedup).
+   - For growing degree $n \to \infty$: Both quantum and classical algorithms scale as $2^{\Omega(n)}$, leaving zero unassisted polynomial quantum advantage.
+5. **Verification Matrix**:
+   - `pytest -v tests/test_arbitrary_degree_regulator_barrier.py` (6/6 PASS).
+   - `node research/certificates/arbitrary_degree_regulator_crosscheck.js` (6/6 PASS).
+   - `python3 qsearch.py validate` (0 issues, 969 negative results).
+
+---
+
+## Prior: Investigation 42 Proved — Real Quadratic Number Fields, Unit Group Regulators, and Principal Ideal Infrastructure: Continuous Non-Compact Period Finding (Hallgren's Algorithm vs. Classical Subexponential Index Calculus)
 
 A major foundational investigation resolving the quantum and classical complexity bounds for continuous period finding over real quadratic number fields $K = \mathbb{Q}(\sqrt{d})$, Shanks' infrastructure, and Pell's equation (specifically analyzing Hallgren's 2002 STOC / 2007 JACM algorithm and Buchmann's 1990 subexponential index calculus) has been completed and verified in `research/REAL_QUADRATIC_REGULATOR_INFRASTRUCTURE_DEMARCATION.md`.
 

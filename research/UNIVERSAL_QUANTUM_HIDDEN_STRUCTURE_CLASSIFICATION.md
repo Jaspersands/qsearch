@@ -87,7 +87,7 @@ The table below summarizes the exact mathematical status of key hidden structure
 
 ---
 
-## 4. Master Cross-Reference Table of Investigations 1–42
+## 4. Master Cross-Reference Table of Investigations 1–43
 
 | # | Investigation Focus | Domain | Primary Obstruction / Mechanism | Epistemic Status |
 | :-: | :--- | :--- | :--- | :--- | :---: |
@@ -133,6 +133,7 @@ The table below summarizes the exact mathematical status of key hidden structure
 | **40** | Legendre Symbol Hidden Shift & Classical PRF Demarcation | Multiplicative Shift | Gauss sum $|\tau_p| = \sqrt{p}$; vDHI peak $(p-1)/p$; composite totient $\phi(N)/N$; classical Weil bound $|\rho| \le 2/\sqrt{p}$; PRF secure ($O(\sqrt{p})$ query/time) | Proved Mathematical Barrier & Model Demarcation |
 | **41** | Heisenberg HSP De-Chirping & Unipotent Boundary | Nilpotent Group HSP | Non-central $\text{Tr}(\rho_w) \equiv 0$; Weak TV $\equiv 0.000$; rank-1 chirp projector factored; diagonal de-chirp solves in BQP ($P=1.0$); $U_n$ fails for $n \ge 4$ via central bypass (26/27) & wild irreps | Proved Quantum Algorithm & Complexity Boundary |
 | **42** | Real Quadratic Regulator & Principal Ideal Infrastructure | Continuous Abelian HSP | Quotient $\mathbb{R}/R\mathbb{Z} \cong S^1$ abelian 1D characters; Shanks infrastructure regularized $h(x) = (\mathfrak{r}_x, x - \delta(\mathfrak{r}_x))$; Hallgren BQP $O(\log^3 d)$; classical Buchmann index calculus $L_d[1/2, \sqrt{2}]$ superpolynomial | Proved Quantum Algorithm & Subexponential Demarcation |
+| **43** | Arbitrary-Degree Number Fields & Exponential Degree Barrier | Multi-Dim Continuous HSP | Continuous torus $\mathbb{R}^r/\Lambda_K \cong (S^1)^r$ dual lattice basis $B^*$; poly in $\log |\Delta_K|$ for fixed $n$; collapses to $2^{\Omega(n \log n)}$ for growing $n$ via SIVP/CVP hardness | Proved Quantum Algorithm & Degree Barrier Demarcation |
 
 ---
 

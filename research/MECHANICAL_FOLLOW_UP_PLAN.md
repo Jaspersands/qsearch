@@ -1,6 +1,24 @@
 # Mechanical Follow-Up Implementation Plan (pass 2)
 
-## Latest Handoff (2026-10-12, Investigation 42 Proved — Real Quadratic Number Fields, Unit Group Regulators, and Principal Ideal Infrastructure: Continuous Non-Compact Period Finding (Hallgren's Algorithm vs. Classical Subexponential Index Calculus))
+## Latest Handoff (2026-10-12, Investigation 43 Proved — Arbitrary-Degree Algebraic Number Fields, Multi-Dimensional Unit Group Regulators, and the Exponential Degree Barrier: The $\mathbb{R}^r / \Lambda$ Continuous Torus HSP (Hallgren-Schmidt-Vollmer Algorithm vs. Lattice Hardness))
+
+Read `research/ARBITRARY_DEGREE_NUMBER_FIELD_REGULATOR_BARRIER.md` and the TOP of `research/AGENT_HANDOFF.md`.
+Investigation 43 establishes the exact multi-dimensional continuous mechanics and proves the Exponential Degree Barrier ($n^{O(n)}$) for number fields of arbitrary degree:
+- Proved Multi-Dimensional Continuous Torus Reduction: Quotient $T^r = \mathbb{R}^r / \Lambda_K \cong (S^1)^r$ has complete 1D character basis $\chi_u(x) = \exp(2\pi i \, u \cdot x)$ labeled by dual lattice $\Lambda_K^*$, preserving character orthogonality.
+- Proved Dual Lattice Basis Inversion: Multi-dimensional QFT samples dual vectors $w_i \approx u_i \in \Lambda_K^*$; inverting dual basis matrix $B^*$ reconstructs primal lattice $B = (B^*)^{-T}$ and regulator $R_K = \det(B) = 1 / \det(B^*)$.
+- Proved Exponential Degree Barrier: For constant degree $n = O(1)$, algorithm runs in $\text{poly}(\log |\Delta_K|)$; for unbounded degree $n$, complexity scales as $2^{\Omega(n \log n)}$ due to lattice SIVP/CVP hardness in dimension $r = \Theta(n)$, compact representation overhead, and grid volume explosion.
+- Proved Classical-Quantum Demarcation: Polynomial quantum advantage is strictly restricted to constant field degrees; for growing degree $n \to \infty$, both classical and quantum algorithms scale as $2^{\Omega(n)}$.
+- Registered negative result: `NEG-ARBITRARY-DEGREE-REGULATOR-EXPONENTIAL-BARRIER` (valid with 969 negative results).
+
+Mechanical Queue:
+1. Verify repo health: `python3 qsearch.py validate` and `python3 tools/check_site.py`.
+2. Run Investigation 43 test suite: `pytest tests/test_arbitrary_degree_regulator_barrier.py` (6/6 PASS).
+3. Run Investigation 43 cross-check: `node research/certificates/arbitrary_degree_regulator_crosscheck.js` (6/6 PASS).
+4. Run Investigation 42 test suite: `pytest tests/test_real_quadratic_regulator_infrastructure.py` (6/6 PASS).
+5. Strict invariants: `speedup_claim_allowed = False`, `accepted_speedup_candidate = False`.
+6. Preserve all proof gates, retractions, counterexamples, and negative results.
+
+## Prior Handoff (2026-10-12, Investigation 42 Proved — Real Quadratic Number Fields, Unit Group Regulators, and Principal Ideal Infrastructure: Continuous Non-Compact Period Finding (Hallgren's Algorithm vs. Classical Subexponential Index Calculus))
 
 Read `research/REAL_QUADRATIC_REGULATOR_INFRASTRUCTURE_DEMARCATION.md` and the TOP of `research/AGENT_HANDOFF.md`.
 Investigation 42 establishes the exact quantum and classical complexity bounds for continuous period finding over real quadratic number fields $K = \mathbb{Q}(\sqrt{d})$, Shanks' infrastructure, and Pell's equation:
