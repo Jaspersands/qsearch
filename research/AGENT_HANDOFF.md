@@ -2,7 +2,34 @@
 
 Last updated: 2026-10-12
 
-## Latest: Investigation 56 Proved — Barren Plateaus in Variational Quantum Algorithms (VQAs): Haar Measure Concentration, Lie Algebraic Dynamical Horizons, and the Vanishing Gradient Barrier
+## Latest: Investigation 57 Proved — Quantum Machine Learning (QML), Quantum Kernel Methods, and the Quantum Tangent Kernel (QTK): Haar Random Feature Collapses, Projected Quantum Kernels, and Classical Reproducing Kernel Hilbert Space (RKHS) Dequantization
+
+A major foundational investigation resolving the computational complexity, kernel concentration flattop, classical Bloch-vector equivalence of Projected Quantum Kernels (PQK), Quantum Tangent Kernel (QTK) overparameterization scaling, and classical sample-and-query dequantization has been completed and verified in `research/QUANTUM_MACHINE_LEARNING_KERNEL_CONCENTRATION_BARRIER.md`.
+
+### Core Invariants & Status:
+- `speedup_claim_allowed = False` strictly enforced everywhere.
+- `accepted_speedup_candidate = False` strictly enforced everywhere.
+- Registered negative result: `NEG-QUANTUM-MACHINE-LEARNING-KERNEL-CONCENTRATION-BARRIER` (valid with 983 negative results).
+
+### Investigation 57 Summary & Key Mathematical Discoveries:
+1. **Haar Kernel Exponential Concentration (Theorem 1)**:
+   By Thanasilp et al. (2022) and Huang et al. (2021), expressive quantum feature maps forming unitary 2-designs cause off-diagonal kernel elements $K(x, x') = |\langle \psi(x)|\psi(x')\rangle|^2$ ($x \ne x'$) to concentrate exponentially with mean $\mathbb{E}[K] = 1/2^n$ and variance $\text{Var}(K) = \Theta(1/8^n)$. The Gram matrix collapses into the identity matrix $K \to I_N$, requiring $\Omega(4^n)$ measurement shots per entry to distinguish distinct data points, destroying generalization.
+2. **Projected Quantum Kernel Classical Subsumption (Theorem 2)**:
+   By Huang et al. (Nature Comm 2021), Projected Quantum Kernels $K_{\text{PQK}}(x, x') = \exp(-\gamma \sum_k \|\rho_k(x) - \rho_k(x')\|_F^2)$ defined on local 1-qubit reduced states are mathematically identical to standard classical Gaussian RBF kernels on 3n-dimensional classical Bloch vectors $\vec{\phi}(x) = (\vec{r}_1(x), \dots, \vec{r}_n(x))$ via $\|\rho_k(x) - \rho_k(x')\|_F^2 = \frac{1}{2} \|\vec{r}_k(x) - \vec{r}_k(x')\|_2^2$. The kernel is evaluated classically in $O(n)$ time with machine precision ($< 10^{-12}$ difference), providing zero non-classical feature space advantage.
+3. **Quantum Tangent Kernel (QTK) Vanishing Dynamics (Theorem 3)**:
+   By Liu et al. (2023) and Shaydulin et al. (2024), the expected trace norm of the QTK vanishes as $\mathbb{E}[\Theta(x, x)] = \Theta(P / 2^n)$ for $P$ parameters. Sustaining gradient flow requires exponential overparameterization $P = \Omega(2^n)$ (exceeding $10^6$ parameters for 20 qubits), which renders variational QML non-scalable.
+4. **Geometric Difference Collapse & Classical Shadows (Theorem 4)**:
+   The geometric difference between quantum and classical kernels $g(K_Q, K_C) = \sqrt{\|\sqrt{K_Q} K_C^{-1} \sqrt{K_Q}\|_\infty}$ collapses to $g(K_Q, I_N) \to 1.0$ under Haar concentration, eliminating all separation. Furthermore, physical quantum learning problems are efficiently solved classically via randomized classical shadows (Huang, Kueng, Preskill 2020) without quantum machine learning models.
+5. **Classical SQ Dequantization (Theorem 5)**:
+   By Tang (STOC 2019) and Chia et al. (JACM 2022), quantum machine learning algorithms relying on state preparation/QRAM (QSVM, Quantum PCA, Recommendation Systems) are dequantized classically: given sample-and-query access, classical randomized linear algebra algorithms compute low-rank PCA and kernel ridge regression in $\text{poly}(k, 1/\epsilon) \log(Nd)$ time, matching quantum logarithmic runtime.
+6. **Verification Matrix**:
+   - `pytest -v tests/test_qml_kernel_concentration_barrier.py` (6/6 PASS).
+   - `node research/certificates/qml_kernel_concentration_crosscheck.js` (6/6 PASS).
+   - `python3 qsearch.py validate` (0 issues, 983 negative results).
+
+---
+
+## Prior: Investigation 56 Proved — Barren Plateaus in Variational Quantum Algorithms (VQAs): Haar Measure Concentration, Lie Algebraic Dynamical Horizons, and the Vanishing Gradient Barrier
 
 A major foundational investigation resolving the optimization complexity, gradient concentration, Dynamical Lie Algebra (DLA) classification, and Noise-Induced Barren Plateaus (NIBP) of Variational Quantum Algorithms (VQAs) has been completed and verified in `research/BARREN_PLATEAUS_VQA_OPTIMIZATION_BARRIER.md`.
 

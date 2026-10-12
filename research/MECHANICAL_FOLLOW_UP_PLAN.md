@@ -1,25 +1,25 @@
 # Mechanical Follow-Up Implementation Plan (pass 2)
 
-## Latest Handoff (2026-10-12, Investigation 56 Proved — Barren Plateaus in Variational Quantum Algorithms (VQAs): Haar Measure Concentration, Lie Algebraic Dynamical Horizons, and the Vanishing Gradient Barrier)
+## Latest Handoff (2026-10-12, Investigation 57 Proved — Quantum Machine Learning (QML), Quantum Kernel Methods, and the Quantum Tangent Kernel (QTK): Haar Random Feature Collapses, Projected Quantum Kernels, and Classical Reproducing Kernel Hilbert Space (RKHS) Dequantization)
 
-Read `research/BARREN_PLATEAUS_VQA_OPTIMIZATION_BARRIER.md` and the TOP of `research/AGENT_HANDOFF.md`.
-Investigation 56 establishes the exact quantum and classical complexity bounds for Variational Quantum Algorithms (VQAs), Haar measure concentration, Dynamical Lie Algebra (DLA) dimension scaling, and Noise-Induced Barren Plateaus (NIBP):
-- Proved Parameter-Shift Rule Exactness: For any parameterized unitary $U(\theta) = \exp(-i \theta P / 2)$ with Pauli generator $P$, the analytical gradient of an expectation value evaluates exactly via $\frac{\partial C}{\partial \theta} = \frac{1}{2} [ C(\theta + \pi/2) - C(\theta - \pi/2) ]$ with machine precision error $< 10^{-15}$.
-- Proved Haar Measure Gradient Variance Exponential Collapse: For ansätze forming approximate 2-designs, global cost gradient variance vanishes exponentially as $\text{Var}(\partial_\theta C) = \Theta(1 / 4^n)$, demanding $\Omega(4^n)$ measurement shots per optimization step (McClean et al. 2018).
-- Proved Local vs. Global Cost Contrast & Depth Convergence: Local cost functions exhibit polynomial variance $\text{Var} = \Theta(1/n)$ at logarithmic depth $d = O(\log n)$ (variance contrast $> 680\times$), but polynomial depth circuits converge to 2-designs, universally triggering barren plateaus (Cerezo et al. 2021).
-- Proved Dynamical Lie Algebra (DLA) Dilemma & Dequantization: $\text{Var}(\partial_\theta C) = \Theta(1 / \dim(\mathfrak{g}))$. If $\dim(\mathfrak{g}) = \text{poly}(n)$ (e.g. matchgates with $\dim(\mathfrak{so}(2n)) = n(2n-1)$), gradients do not vanish, but the system is classically simulable in polynomial time $O(n^3)$; if universal ($\dim(\mathfrak{g}) = 4^n - 1$), the circuit is unoptimizable due to exponential barren plateaus (Fontana et al. 2024, Larocca et al. 2022).
-- Proved Noise-Induced Barren Plateaus (NIBP): Local noise dampens gradients by $(1 - \epsilon)^{2d}$, extinguishing over $98\%$ of gradient signal at depth $d = 100$ (Wang et al. PRX 2021).
-- Registered negative result: `NEG-BARREN-PLATEAUS-VARIATIONAL-QUANTUM-HORIZON` (valid with 982 negative results).
+Read `research/QUANTUM_MACHINE_LEARNING_KERNEL_CONCENTRATION_BARRIER.md` and the TOP of `research/AGENT_HANDOFF.md`.
+Investigation 57 establishes the exact computational complexity, kernel concentration flattop, classical Bloch-vector equivalence of Projected Quantum Kernels (PQK), Quantum Tangent Kernel (QTK) overparameterization scaling, and classical sample-and-query dequantization:
+- Proved Haar Kernel Exponential Concentration: For expressive quantum feature maps forming unitary 2-designs, off-diagonal kernel elements concentrate exponentially with variance $\text{Var}(K) = \Theta(1/8^n)$, collapsing the Gram matrix to identity $K \to I_N$ and demanding $\Omega(4^n)$ shots to detect data structure (Thanasilp et al. 2022, Huang et al. 2021).
+- Proved Projected Quantum Kernel Classical Subsumption: Local projected quantum kernels $K_{\text{PQK}}(x, x') = \exp(-\gamma \sum_k \|\rho_k(x) - \rho_k(x')\|_F^2)$ are mathematically identical to classical Gaussian RBF kernels on 3n-dimensional classical Bloch vectors evaluated in $O(n)$ time with $< 10^{-12}$ difference, providing zero non-classical feature space advantage (Huang et al. Nature Comm 2021).
+- Proved Quantum Tangent Kernel (QTK) Vanishing Dynamics: Trace norm vanishes as $\mathbb{E}[\Theta(x, x)] = \Theta(P / 2^n)$; sustaining gradient flow requires exponential overparameterization $P = \Omega(2^n)$ (exceeding $10^6$ parameters for 20 qubits), rendering variational QML non-scalable (Liu et al. 2023, Shaydulin et al. 2024).
+- Proved Geometric Difference Collapse & Classical Shadows: Geometric difference collapses to $g(K_Q, I_N) \to 1.0$ under Haar concentration, eliminating all separation. Physical quantum learning problems are efficiently solved classically via randomized classical shadows (Huang, Kueng, Preskill 2020).
+- Proved Classical SQ Dequantization: Given sample-and-query access, classical randomized linear algebra algorithms compute low-rank PCA and kernel ridge regression in $\text{poly}(k, 1/\epsilon) \log(Nd)$ time, matching quantum logarithmic runtime (Tang STOC 2019, Chia et al. JACM 2022).
+- Registered negative result: `NEG-QUANTUM-MACHINE-LEARNING-KERNEL-CONCENTRATION-BARRIER` (valid with 983 negative results).
 
 Mechanical Queue:
 1. Verify repo health: `python3 qsearch.py validate` and `python3 tools/check_site.py`.
-2. Run Investigation 56 test suite: `pytest tests/test_barren_plateaus_vqa_barrier.py` (6/6 PASS).
-3. Run Investigation 56 cross-check: `node research/certificates/barren_plateaus_vqa_crosscheck.js` (6/6 PASS).
-4. Run Investigation 55 test suite: `pytest tests/test_quantum_error_mitigation_barrier.py` (6/6 PASS).
+2. Run Investigation 57 test suite: `pytest tests/test_qml_kernel_concentration_barrier.py` (6/6 PASS).
+3. Run Investigation 57 cross-check: `node research/certificates/qml_kernel_concentration_crosscheck.js` (6/6 PASS).
+4. Run Investigation 56 test suite: `pytest tests/test_barren_plateaus_vqa_barrier.py` (6/6 PASS).
 5. Strict invariants: `speedup_claim_allowed = False`, `accepted_speedup_candidate = False`.
-6. Advance to Investigation 57: Quantum Machine Learning (QML), Quantum Kernel Methods, and the Quantum Tangent Kernel (QTK): Haar Random Feature Collapses, Projected Quantum Kernels, and Classical Reproducing Kernel Hilbert Space (RKHS) Dequantization.
+6. Advance to Investigation 58: Quantum Approximate Optimization Algorithm (QAOA) on Bounded-Degree Graphs: Hastings-Bravyi-Koenig Non-Local Correlation Barriers, Overlap Gaps (OGP), and Classical Goemans-Williamson Superiority.
 
-## Prior Handoff (2026-10-12, Investigation 55 Proved — Quantum Error Mitigation (QEM) and the Exponential Sampling Barrier: Zero-Noise Extrapolation (ZNE), Probabilistic Error Cancellation (PEC), and the Uncorrectable Noise Horizon)
+## Prior Handoff (2026-10-12, Investigation 56 Proved — Barren Plateaus in Variational Quantum Algorithms (VQAs): Haar Measure Concentration, Lie Algebraic Dynamical Horizons, and the Vanishing Gradient Barrier)
 
 Read `research/CONTINUOUS_VARIABLE_GKP_NON_GAUSSIAN_BARRIER.md` and the TOP of `research/AGENT_HANDOFF.md`.
 Investigation 54 establishes the exact quantum and classical complexity bounds for continuous-variable (CV) quantum computing, Gaussian states, symplectic group $Sp(2N, \mathbb{R})$, Hudson's theorem, Mari-Eisert classical dequantization, Wigner negativity, the Gottesman-Kitaev-Preskill (GKP) code, non-Gaussian magic, the cubic phase gate ($V_\gamma = e^{i \gamma \hat{x}^3}$), physical Kerr $\chi^{(3)}$ weakness, and the finite squeezing $\ge 10$ dB threshold barrier:
