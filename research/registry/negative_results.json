@@ -85918,5 +85918,28 @@
     "lesson": "Quantum period finding and phase estimation cannot operate on quantum chaotic systems whose spectra follow Random Matrix Theory (RMT). Unlike integrable systems where harmonic progressions En = n Delta generate 100% return revivals F(T) = 1.000 and SFF revival spikes of height N^2, chaotic systems exhibit Wigner level repulsion (P(0) = 0) with no harmonic ladder. The Spectral Form Factor K(t) exhibits a linear ramp K(t) ~ t / 2pi and plateau N, never exceeding N for t > t_dip. The quantum return fidelity collapses to F(t) <= 1/N = 2^-n, an exponential suppression of Omega(N) = 2^Omega(n). The system never revives within polynomial time, causing quantum period finding algorithms to fail completely. Furthermore, measuring the SFF ramp on quantum hardware requires Omega(N^2) = 2^Omega(n) SWAP test shots, while classical computation diagnoses quantum chaos via the Oganesyan-Huse ratio <r> in O(N log N) operations.",
     "reason_invalid": "Quantum period finding fundamentally requires harmonic arithmetic eigenvalue progressions En = n Delta. In quantum chaotic systems (by the Bohigas-Giannoni-Schmit conjecture), energy levels obey Random Matrix Theory with Wigner level repulsion P(0) = 0 and zero harmonic coherence. The Spectral Form Factor lacks periodic revival spikes, replacing them with a linear ramp and plateau K(t) <= N. The state return fidelity collapses to F(t) = K(t) / N^2 <= 1/N = 2^-n -> 0, preventing constructive Fourier interference in polynomial time. Measuring the ramp quantumly requires an exponential number of shots Omega(N^2) = 2^Omega(n), whereas classical algorithms compute the consecutive gap ratio <r> in O(N log N) time. Thus, claiming quantum Fourier speedups for period finding on chaotic Hamiltonians is mathematically invalid.",
     "source": "research/QUANTUM_CHAOS_SFF_PERIOD_FINDING_BARRIER.md"
+  },
+  {
+    "applies_to": [
+      "QUANTUM-SCRAMBLING",
+      "OUT-OF-TIME-ORDER-CORRELATOR",
+      "MSS-CHAOS-BOUND",
+      "OPERATOR-SIZE-GROWTH",
+      "CLIFFORD-DEQUANTIZATION"
+    ],
+    "claim": "Quantum algorithms can efficiently extract local phases, period structures, or hidden subgroups after time evolution under fast-scrambling quantum chaotic Hamiltonians.",
+    "evidence": {
+      "clifford_gottesman_knill_dequantization": "Clifford scrambling preserves single Pauli strings (|c_P| = 1) and is solved classically in O(n^2) operations via Gottesman-Knill theorem",
+      "epistemic_invariants_enforced": "speedup_claim_allowed = False; accepted_speedup_candidate = False",
+      "maldacena_shenker_stanford_chaos_bound": "Quantum Lyapunov exponent is universally upper bounded by lambda_L <= 2pi k_B T / hbar = 2pi / beta; non-integrable spin chains are strictly sub-maximal",
+      "operator_size_growth_saturation": "Average Pauli operator size S(W(t)) expands from S(W(0)) = 1.0 to the Haar-random infinite-temperature limit (3/4)*n, converting local information into irreducible n-body Pauli entanglement",
+      "otoc_squared_commutator_saturation": "Chaotic Ising chain squared commutator C(t) = 1 - Re(F(t)) saturates to scrambled plateau C(5.0) ~ 0.9411, while integrable chain undergoes periodic revivals to C(5.0) ~ 0.0019",
+      "speedup_claim_allowed": false,
+      "swingle_loschmidt_echo_collapse": "Time-reversal echo return probability F_echo(t) collapses to < 0.01 in chaotic systems, while integrable systems revive to > 0.95"
+    },
+    "id": "NEG-QUANTUM-SCRAMBLING-OTOC-MSS-COMPLEXITY-BARRIER",
+    "lesson": "Quantum algorithms cannot extract phase, period, or group-theoretic structure from quantum states that have undergone time evolution under fast-scrambling chaotic Hamiltonians. In non-integrable systems, the Out-of-Time-Order Correlator (OTOC) decays rapidly, and the squared commutator C(t) = 1 - Re(F(t)) saturates to an extensive scrambled plateau C(t) -> 1.0 with zero revivals. The Heisenberg operator W(t) undergoes exponential operator size growth, saturating to the Haar-random limit S_infty = (3/4)n, delocalizing initially local quantum information across non-local n-body Pauli entanglement. Consequently, all local observables decay to thermal equilibrium, and any subsequent measurement to extract period or phase information requires measuring non-local operators of Pauli weight Omega(n), which is exponentially suppressed by Omega(2^-n). The rate of this scrambling is universally bounded by the Maldacena-Shenker-Stanford (MSS) bound lambda_L <= 2pi / beta. Furthermore, in Clifford circuits where scrambling is superficially fast, operator support remains concentrated on single Pauli strings (|c_P| = 1), dequantizing OTOC evaluation classically in O(n^2) time via the Gottesman-Knill theorem.",
+    "reason_invalid": "Quantum phase estimation and Fourier sampling fundamentally require observables that maintain localized support and coherent periodic revivals. In chaotic many-body systems, quantum scrambling rapidly delocalizes local operators across the entire Hilbert space, saturating the average operator size to (3/4)n and collapsing the Swingle-Loschmidt time-reversal echo to F_echo(t) <= 2^-2n -> 0. Once information is scrambled, extracting any global algebraic period or coset orientation requires measuring operators of weight Omega(n), requiring exponential quantum circuit depth. For Clifford scrambling where operator spreading occurs, the dynamics are dequantized classically in O(n^2) operations by the Gottesman-Knill theorem. Thus, claiming quantum algorithmic speedups for phase or hidden structure extraction in fast-scrambled chaotic systems is mathematically invalid.",
+    "source": "research/QUANTUM_SCRAMBLING_OTOC_MSS_COMPLEXITY_BARRIER.md"
   }
 ]

@@ -1,6 +1,26 @@
 # Mechanical Follow-Up Implementation Plan (pass 2)
 
-## Latest Handoff (2026-10-12, Investigation 47 Proved — Quantum Chaos, Spectral Form Factors (SFF), and Random Matrix Theory (RMT) vs. Quantum Fourier Sampling: The Ramp-and-Plateau Demarcation and Period Finding Obstruction)
+## Latest Handoff (2026-10-12, Investigation 48 Proved — Quantum Scrambling, Out-of-Time-Order Correlators (OTOC), the Maldacena-Shenker-Stanford (MSS) Chaos Bound, and Operator Complexity Growth: The Information Butterfly Barrier)
+
+Read `research/QUANTUM_SCRAMBLING_OTOC_MSS_COMPLEXITY_BARRIER.md` and the TOP of `research/AGENT_HANDOFF.md`.
+Investigation 48 establishes the exact quantum and classical complexity bounds for quantum information scrambling, out-of-time-order correlators (OTOC), operator size growth, and the Maldacena-Shenker-Stanford (MSS) chaos bound:
+- Proved OTOC Scrambling vs. Integrable Revivals: In chaotic quantum systems (mixed-field Ising model with $h=0.5$), the squared commutator $C(t) = 1 - \text{Re}(F(t))$ saturates to an extensive scrambled plateau $C(5.0) \approx 0.9411 > 0.80$ with zero revivals. Integrable systems ($h=0$) undergo coherent de-scrambling revivals where $C(5.0) \approx 0.0019 < 0.01$.
+- Proved Operator Size Growth & Haar Saturation: Under Heisenberg evolution, an initially local single-qubit operator ($S(W(0)) = 1.0$) expands in Pauli weight, saturating to the infinite-temperature Haar-random limit $S_\infty = \frac{3}{4} n = 3.0$ (for $n=4$, $S(2.5) > 2.5$). Local quantum information is irrevocably converted into non-local $n$-body Pauli entanglement.
+- Proved Swingle-Loschmidt Time-Reversal Fragility: The time-reversal echo return probability under butterfly perturbation collapses to the exponential noise floor in chaotic regimes ($F_{\text{echo}}(5.0) \approx 0.0035 < 0.01$), whereas integrable systems revive to near-perfect fidelity ($F_{\text{echo}}(5.0) \approx 0.9962 > 0.95$).
+- Proved Maldacena-Shenker-Stanford (MSS) Universal Chaos Bound: In thermal quantum systems at temperature $T = 1 / (k_B \beta)$, the quantum Lyapunov exponent governing OTOC exponential growth satisfies $\lambda_L \le 2\pi k_B T / \hbar = 2\pi / \beta$. Physical lattice spin chains are strictly sub-maximal ($\lambda_L < 2\pi / \beta$), with the bound saturated only in holographic gravity duals (SYK model and black holes).
+- Proved Clifford Stabilizer Classical Dequantization: Under Clifford circuits, Heisenberg evolution preserves single Pauli strings ($|c_P| \equiv 1$). The OTOC $F \in \{-1, +1\}$ is computed classically in $O(n^2)$ time via the Gottesman-Knill theorem, proving that fast quantum scrambling hardness requires non-Clifford $T$-gate resource magic.
+- Proved Algorithmic Extraction Horizon: Once an algorithmic state becomes scrambled across $n$ qubits, extracting any global or group-theoretic structure requires measuring non-local observables of weight $\Omega(n)$, rendering quantum phase estimation and period finding exponentially suppressed by $\Omega(2^{-n})$.
+- Registered negative result: `NEG-QUANTUM-SCRAMBLING-OTOC-MSS-COMPLEXITY-BARRIER` (valid with 974 negative results).
+
+Mechanical Queue:
+1. Verify repo health: `python3 qsearch.py validate` and `python3 tools/check_site.py`.
+2. Run Investigation 48 test suite: `pytest tests/test_quantum_scrambling_otoc_barrier.py` (6/6 PASS).
+3. Run Investigation 48 cross-check: `node research/certificates/quantum_scrambling_otoc_crosscheck.js` (6/6 PASS).
+4. Run Investigation 47 test suite: `pytest tests/test_quantum_chaos_sff_period_barrier.py` (6/6 PASS).
+5. Strict invariants: `speedup_claim_allowed = False`, `accepted_speedup_candidate = False`.
+6. Advance to Investigation 49: Quantum Ergodicity, Eigenstate Thermalization Hypothesis (ETH), and the Local Observable Measurement Barrier.
+
+## Prior Handoff (2026-10-12, Investigation 47 Proved — Quantum Chaos, Spectral Form Factors (SFF), and Random Matrix Theory (RMT) vs. Quantum Fourier Sampling: The Ramp-and-Plateau Demarcation and Period Finding Obstruction)
 
 Read `research/QUANTUM_CHAOS_SFF_PERIOD_FINDING_BARRIER.md` and the TOP of `research/AGENT_HANDOFF.md`.
 Investigation 47 establishes the exact quantum and classical complexity bounds for period finding, phase estimation, and return revivals over quantum chaotic Hamiltonians whose spectra obey Random Matrix Theory (RMT):
