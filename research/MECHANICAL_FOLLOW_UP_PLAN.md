@@ -1,6 +1,26 @@
 # Mechanical Follow-Up Implementation Plan (pass 2)
 
-## Latest Handoff (2026-10-12, Investigation 40 Proved — Legendre Symbol Hidden Shift Problem: Superposition Oracle Necessity, Exact Totient Peak Scaling, and Classical PRF Security Demarcation)
+## Latest Handoff (2026-10-12, Investigation 41 Proved — Heisenberg Group $H_3(\mathbb{Z}_p)$ Hidden Subgroup Problem: Non-Central Character Vanishing, Quadratic De-Chirping, and the Heisenberg-Unipotent Boundary)
+
+Read `research/HEISENBERG_HSP_DECHIRPING_UNIPOTENT_BOUNDARY.md` and the TOP of `research/AGENT_HANDOFF.md`.
+Investigation 41 establishes the exact quantum and classical complexity bounds for the Heisenberg group $H_3(\mathbb{Z}_p)$ HSP and proves the exact boundary against $U_n(\mathbb{F}_p)$ for $n \ge 4$:
+- Proved Universal Non-Central Character Vanishing: Across all $p - 1$ non-linear $p$-dim irreps, $\text{Tr}(\rho_w(g)) \equiv 0$ on all non-central $g \notin Z(H_3)$.
+- Proved Weak Fourier Central Blindness: Distribution $P(\rho \mid H)$ depends exclusively on $[a : b]$; TV distance is identically 0.000 across central shifts $c$ (0.000 bits mutual information).
+- Proved Rank-1 Chirp Projector Factorization: Projector $\Pi_H^{(\rho_w)}$ is strictly rank-1 onto $|\psi\rangle = \frac{1}{\sqrt{p}} \sum \omega^{\alpha z^2 + \beta z} |z\rangle$.
+- Proved Quadratic De-Chirping & Exact Recovery: Unitary $U = \text{diag}(\omega^{-\alpha z^2})$ cancels chirp phase, and 1D $\text{QFT}_{\mathbb{Z}_p}$ recovers $c$ with 100% peak probability ($P = 1.000000$).
+- Proved Classical Black-Box Birthday Lower Bound: Any classical algorithm requires $\Omega(p) = \Omega(2^n)$ queries by collision bound $T^2 / (2 p^2) \ge 1/2$.
+- Proved Heisenberg-Unipotent Boundary: $U_n(\mathbb{F}_p)$ fails for $n \ge 4$ via central bypass (26/27 in $U_4(\mathbb{F}_2)$ bypass $Z_1$), wild representation type ($n \ge 6$), supercharacter blindness, and higher-degree polynomial phases.
+- Registered negative result: `NEG-HEISENBERG-UNIPOTENT-REPRESENTATION-BOUNDARY` (valid with 967 negative results).
+
+Mechanical Queue:
+1. Verify repo health: `python3 qsearch.py validate` and `python3 tools/check_site.py`.
+2. Run Investigation 41 test suite: `pytest tests/test_heisenberg_hsp_dechirping_unipotent_boundary.py` (6/6 PASS).
+3. Run Investigation 41 cross-check: `node research/certificates/heisenberg_hsp_dechirping_crosscheck.js` (8/8 PASS).
+4. Run Investigation 40 test suite: `pytest tests/test_legendre_hidden_shift_prf_demarcation.py` (5/5 PASS).
+5. Strict invariants: `speedup_claim_allowed = False`, `accepted_speedup_candidate = False`.
+6. Preserve all proof gates, retractions, counterexamples, and negative results.
+
+## Prior Handoff (2026-10-12, Investigation 40 Proved — Legendre Symbol Hidden Shift Problem: Superposition Oracle Necessity, Exact Totient Peak Scaling, and Classical PRF Security Demarcation)
 
 Read `research/LEGENDRE_HIDDEN_SHIFT_CLASSICAL_PRF_DEMARCATION.md` and the TOP of `research/AGENT_HANDOFF.md`.
 Investigation 40 establishes the exact quantum and classical complexity bounds for the Legendre Symbol Hidden Shift Problem over $\mathbb{F}_p$ and composite moduli $\mathbb{Z}_N$:

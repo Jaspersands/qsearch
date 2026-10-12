@@ -87,7 +87,7 @@ The table below summarizes the exact mathematical status of key hidden structure
 
 ---
 
-## 4. Master Cross-Reference Table of Investigations 1–36
+## 4. Master Cross-Reference Table of Investigations 1–41
 
 | # | Investigation Focus | Domain | Primary Obstruction / Mechanism | Epistemic Status |
 | :-: | :--- | :--- | :--- | :--- | :---: |
@@ -131,6 +131,7 @@ The table below summarizes the exact mathematical status of key hidden structure
 | **38** | Dihedral Hidden Subgroup Problem (DHSP) & Commutant Barrier | Dihedral Group HSP | $\text{Tr}(\rho_j(r^d s)) \equiv 0$; Weak TV $\equiv 0.000$; single-copy LWE hard; commutant $\dim(\mathcal{C}_M) = \sum |f^{-1}(v)|^2$ (Modular Subset Sum); Kuperberg $2^{\Theta(\sqrt{n})}$; uSVP protected | Proved Mathematical Barrier & Cryptographic Boundary |
 | **39** | Bent Function Hidden Shift Problem & Dual Dequantization | Boolean Hidden Shift | Walsh flat $|\hat{f}| = 2^{n/2}$; black-box TV $\equiv 0.000$; dual oracle $\tilde{f}$ takes $2^{\Omega(n)}$ queries; quadratic dequantized in $n+1$ queries ($O(n^3)$); cubic in $O(n^2)$ | Proved Mathematical Barrier & Classical Dequantization |
 | **40** | Legendre Symbol Hidden Shift & Classical PRF Demarcation | Multiplicative Shift | Gauss sum $|\tau_p| = \sqrt{p}$; vDHI peak $(p-1)/p$; composite totient $\phi(N)/N$; classical Weil bound $|\rho| \le 2/\sqrt{p}$; PRF secure ($O(\sqrt{p})$ query/time) | Proved Mathematical Barrier & Model Demarcation |
+| **41** | Heisenberg HSP De-Chirping & Unipotent Boundary | Nilpotent Group HSP | Non-central $\text{Tr}(\rho_w) \equiv 0$; Weak TV $\equiv 0.000$; rank-1 chirp projector factored; diagonal de-chirp solves in BQP ($P=1.0$); $U_n$ fails for $n \ge 4$ via central bypass (26/27) & wild irreps | Proved Quantum Algorithm & Complexity Boundary |
 
 ---
 

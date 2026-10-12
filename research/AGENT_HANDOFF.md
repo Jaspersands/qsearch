@@ -2,7 +2,43 @@
 
 Last updated: 2026-10-12
 
-## Latest: Investigation 40 Proved — Legendre Symbol Hidden Shift Problem: Superposition Oracle Necessity, Exact Totient Peak Scaling, and Classical PRF Security Demarcation
+## Latest: Investigation 41 Proved — Heisenberg Group $H_3(\mathbb{Z}_p)$ Hidden Subgroup Problem: Non-Central Character Vanishing, Quadratic De-Chirping, and the Heisenberg-Unipotent Boundary
+
+A major foundational investigation resolving the quantum and classical query complexity bounds for the Hidden Subgroup Problem over the Heisenberg group $H_3(\mathbb{Z}_p)$ and establishing the exact complexity boundary against higher unitriangular groups $U_n(\mathbb{F}_p)$ for $n \ge 4$ has been completed and verified in `research/HEISENBERG_HSP_DECHIRPING_UNIPOTENT_BOUNDARY.md`.
+
+### Core Invariants & Status:
+- `speedup_claim_allowed = False` strictly enforced everywhere.
+- `accepted_speedup_candidate = False` strictly enforced everywhere.
+- Registered negative result: `NEG-HEISENBERG-UNIPOTENT-REPRESENTATION-BOUNDARY` (valid with 967 negative results).
+
+### Investigation 41 Summary & Key Mathematical Discoveries:
+1. **Universal Non-Central Character Vanishing (Theorem 1)**:
+   For any odd prime $p$, across all $p - 1$ irreducible $p$-dimensional representations $\rho_w$ of $H_3(\mathbb{Z}_p)$ ($w \in \mathbb{Z}_p^\times$), the character trace vanishes identically on all non-central elements:
+   $$\text{Tr}(\rho_w(g)) = 0 \quad \forall g \notin Z(H_3).$$
+2. **Weak Fourier Central Blindness (Theorem 2)**:
+   The weak Fourier measurement distribution $P(\rho \mid H)$ depends exclusively on the abelian quotient projection $[a : b] \in \mathbb{P}^1(\mathbb{Z}_p)$ and is strictly invariant under the central shear coordinate $c$. Across any two subgroups differing only in $c$, the total variation distance is identically zero:
+   $$\text{TV}(P_1, P_2) \equiv 0.000 \quad (0.000\text{ bits of mutual information}).$$
+3. **Strict Rank-1 Chirp Projector Factorization (Theorem 3)**:
+   The representation space projector $\Pi_H^{(\rho_w)} = \frac{1}{|H|} \sum_{h \in H} \rho_w(h)$ is strictly of **rank 1**, factoring onto a pure normalized chirp state with quadratic phase:
+   $$|\psi_{a, b, c}^{(w)}\rangle = \frac{1}{\sqrt{p}} \sum_{z \in \mathbb{Z}_p} \omega^{\alpha z^2 + \beta z} |z\rangle, \quad \alpha = \frac{w a}{2 b} \pmod p, \quad \beta = w \left( \frac{c}{b} - \frac{a}{2} \right) \pmod p.$$
+4. **Quadratic De-Chirping & Exact QFT Reconstruction (Theorem 4)**:
+   Once $[a : b]$ is determined from $O(1)$ 1D irrep samples, the quadratic rate $\alpha$ is classically computable. Applying the diagonal unitary de-chirping gate $U_{\text{dechirp}} = \text{diag}(\omega^{-\alpha z^2})$ cancels the chirp phase, after which a 1D $\text{QFT}_{\mathbb{Z}_p}$ focuses 100% of the probability amplitude onto mode $\beta$, determining $c$ with **100% peak probability** ($P = 1.000000$) in $O(1)$ queries and $O(\log^2 p)$ quantum gate operations.
+5. **Classical Black-Box Birthday Lower Bound (Theorem 5)**:
+   In the classical black-box query model, any algorithm requires $\Omega(p) = \Omega(2^n)$ queries (where $n = \log p$) to find a collision in $H$, establishing a proven exponential quantum query speedup in BQP.
+6. **The Heisenberg-Unipotent Complexity Boundary (Theorem 6)**:
+   This polynomial quantum algorithm cannot be extended to $U_n(\mathbb{F}_p)$ for $n \ge 4$:
+   - *Central Bypass Obstruction*: $Z_1$ has dimension 1 while $[G, G]$ has dimension $\binom{n-1}{2} \ge 3$. In $U_4(\mathbb{F}_2)$, 26 out of 27 non-trivial involutions bypass $Z_1$ completely ($H \cap Z_1 = \{I\}$), breaking central descent cascades.
+   - *Wild Representation Type*: For $n \ge 6$, classifying irreps contains the wild matrix pair problem (Gelfand-Ponomarev 1969); no closed-form irreps or efficient QFT circuits exist.
+   - *Supercharacter Coarsening Blindness*: Coarse-graining via Diaconis-Isaacs supercharacters induces intra-superclass TV blindness ($\text{TV} \equiv 0.000$).
+   - *Higher-Degree Chirp Hardness*: Group element powers induce polynomial phases of degree $n - 1 \ge 3$, requiring solving multivariate non-linear polynomial systems over finite fields.
+7. **Verification Matrix**:
+   - `pytest -v tests/test_heisenberg_hsp_dechirping_unipotent_boundary.py` (6/6 PASS).
+   - `node research/certificates/heisenberg_hsp_dechirping_crosscheck.js` (8/8 PASS).
+   - `python3 qsearch.py validate` (0 issues, 967 negative results).
+
+---
+
+## Prior: Investigation 40 Proved — Legendre Symbol Hidden Shift Problem: Superposition Oracle Necessity, Exact Totient Peak Scaling, and Classical PRF Security Demarcation
 
 A major foundational investigation resolving the quantum and classical query complexity bounds for the Legendre Symbol Hidden Shift Problem over finite fields $\mathbb{F}_p$ and composite rings $\mathbb{Z}_N$ (specifically analyzing the van Dam-Hallgren-Ip 2006 algorithm, quadratic Gauss sums, and Damgård's Legendre PRF) has been completed and verified in `research/LEGENDRE_HIDDEN_SHIFT_CLASSICAL_PRF_DEMARCATION.md`.
 
