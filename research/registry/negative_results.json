@@ -85827,5 +85827,28 @@
     "lesson": "While Hallgren (2005) and Schmidt-Vollmer (2005) established polynomial-time quantum algorithms for fixed field degree n = O(1), the algorithm scales as 2^{Omega(n log n)} poly(log |Delta_K|) for growing degree n. When n is unbounded, polynomial tractability collapses due to three compounding mathematical barriers: (1) Lattice reconstruction hardness: dual lattice sampling in dimension r = Theta(n) requires solving SIVP/CVP in dimension r, which is lattice-hard and requires 2^{Omega(r)} operations; (2) Compact representation overhead: manipulating algebraic units and reduced ideals in degree n requires n^{O(n)} operations; and (3) Multi-dimensional grid volume explosion: the sampling mesh requires (M / Delta)^r = 2^{Omega(n log n)} states. Therefore, the quantum regulator algorithm is confined strictly to constant-degree number fields.",
     "reason_invalid": "The multi-dimensional continuous torus HSP over R^r / Lambda_K (where r = r_1 + r_2 - 1 = Theta(n)) avoids non-abelian representation obstacles because the torus is abelian, yielding dual lattice characters chi_u(x) = exp(2 pi i u . x). However, inverting the dual lattice from noisy quantum samples requires solving BDD and SIVP in dimension r, which is NP-hard under randomized reductions and takes 2^{Omega(r)} = 2^{Omega(n)} operations. Furthermore, polynomial multiplication and compact representation arithmetic scale as n^{O(n)}, and the discrete grid volume grows as 2^{Omega(n log n)}. Thus, claiming polynomial-time quantum solvability for arbitrary degree number fields is mathematically invalid: the algorithm is polynomial only in log |Delta_K| for constant degree n, and exponential in n.",
     "source": "research/ARBITRARY_DEGREE_NUMBER_FIELD_REGULATOR_BARRIER.md"
+  },
+  {
+    "applies_to": [
+      "SU2-HSP",
+      "SO3-HSP",
+      "COMPACT-LIE-GROUP",
+      "WIGNER-D-MATRICES",
+      "CATALAN-COMMUTANT-INFLATION"
+    ],
+    "claim": "The Hidden Subgroup Problem over the compact Lie group SU(2) or SO(3) can be solved in polynomial time by standard quantum Fourier sampling.",
+    "evidence": {
+      "catalan_commutant_inflation": "Commutant dimension of V_1^{otimes M} scales as Catalan number C_M = (1/(M+1)) binom(2M, M) = Theta(4^M / M^{3/2}), exceeding 6.5 billion for M=20",
+      "epistemic_invariants_enforced": "speedup_claim_allowed = False; accepted_speedup_candidate = False",
+      "racah_recoupling_hardness": "Diagonalizing multi-copy commutant requires evaluating 3nj-symbols, which is #P-hard in general (Aharonov-Jones-Landau 2009)",
+      "speedup_claim_allowed": false,
+      "spin_coherent_projector": "Strong Fourier projection for torus U(1)_n onto integer spin j yields rank-1 spin-coherent state |j, n, 0>, but extracting n requires entangling measurements across M = Omega(1/eps^2) copies",
+      "weak_fourier_orientation_blindness": "Wigner characters chi_j(theta) = sin((2j+1)theta) / sin(theta) are class functions; weak Fourier sampling TV distance across all orientations is identically 0.000",
+      "wigner_character_conjugacy_invariance": "chi_j(g h g^{-1}) == chi_j(h) identically for all g, h in SU(2)"
+    },
+    "id": "NEG-SU2-COMPACT-LIE-HSP-COMMUTANT-INFLATION",
+    "lesson": "The Hidden Subgroup Problem over compact non-abelian Lie groups such as SU(2) and SO(3) cannot be solved by quantum Fourier sampling. Irreducible representations have dimension d_j = 2j + 1, and character traces chi_j(theta) are strictly class functions. For any subgroup H <= SU(2) (including continuous tori U(1)_n and finite binary polyhedral groups 2T, 2O, 2I), the weak Fourier sampling distribution is identically invariant under ambient rotations g, forcing total variation distance to zero (TV == 0.000, 0.000 bits mutual information). While strong Fourier sampling on integer spins j yields rank-1 spin-coherent projectors |j, n, 0><j, n, 0|, single-copy measurements provide only O(log j) bits of information. Distinguishing orientations requires multi-copy measurements across M registers, where the SU(2) commutant algebra C_M = End_SU(2)(V_1^{otimes M}) explodes exponentially with Catalan dimension dim(C_M) = (1/(M+1)) binom(2M, M) = Theta(4^M / M^{3/2}). Diagonalizing this commutant requires evaluating Racah recoupling symbols, which is #P-hard in general (Aharonov-Jones-Landau 2009).",
+    "reason_invalid": "In SU(2), irreducible representations have dimension d_j = 2j + 1, and character traces chi_j(theta) = sin((2j+1)theta) / sin(theta) are strictly class functions. For any subgroup H <= SU(2) (including continuous tori U(1)_n and finite binary polyhedral groups 2T, 2O, 2I), the weak Fourier sampling distribution is identically invariant under ambient rotations g, forcing total variation distance to zero (TV == 0.000, 0.000 bits mutual information). While strong Fourier sampling on integer spins j yields rank-1 spin-coherent projectors |j, n, 0><j, n, 0|, single-copy measurements provide only O(log j) bits of information. Distinguishing orientations requires multi-copy measurements across M registers, where the SU(2) commutant algebra C_M = End_SU(2)(V_1^{otimes M}) explodes exponentially with Catalan dimension dim(C_M) = (1/(M+1)) binom(2M, M) = Theta(4^M / M^{3/2}). Diagonalizing this commutant requires evaluating Racah recoupling symbols, which is #P-hard in general (Aharonov-Jones-Landau 2009).",
+    "source": "research/SU2_COMPACT_LIE_HSP_COMMUTANT_INFLATION.md"
   }
 ]

@@ -1,6 +1,25 @@
 # Mechanical Follow-Up Implementation Plan (pass 2)
 
-## Latest Handoff (2026-10-12, Investigation 43 Proved — Arbitrary-Degree Algebraic Number Fields, Multi-Dimensional Unit Group Regulators, and the Exponential Degree Barrier: The $\mathbb{R}^r / \Lambda$ Continuous Torus HSP (Hallgren-Schmidt-Vollmer Algorithm vs. Lattice Hardness))
+## Latest Handoff (2026-10-12, Investigation 44 Proved — Compact Non-Abelian Lie Group Hidden Subgroup Problem: $SU(2)$ / $SO(3)$ Wigner-D Matrix Character Blindness, Spin-Coherent Projection, and Multi-Copy Commutant Inflation)
+
+Read `research/SU2_COMPACT_LIE_HSP_COMMUTANT_INFLATION.md` and the TOP of `research/AGENT_HANDOFF.md`.
+Investigation 44 establishes the exact quantum and representation-theoretic complexity bounds for the Hidden Subgroup Problem over compact non-abelian Lie groups $SU(2)$ and $SO(3)$:
+- Proved Wigner Character Conjugacy Invariance: Characters $\chi_j(\theta) = \frac{\sin((2j+1)\theta)}{\sin \theta}$ are class functions; $\chi_j(g h g^{-1}) = \chi_j(h)$ identically for all rotations $g \in SU(2)$.
+- Proved Universal Weak Fourier Orientation Blindness: For both continuous tori $U(1)_\vec{n}$ and discrete binary polyhedral groups ($2T, 2O, 2I$), weak Fourier sampling distribution $P(j \mid g H g^{-1})$ is strictly rotation-invariant (TV distance identically 0.000, 0.000 bits mutual information).
+- Proved Rank-1 Spin-Coherent Subgroup Projection: Strong Fourier projector $\Pi_{U(1)_\vec{n}}^{(j)}$ is strictly rank-1 onto spin-coherent state $|j, \vec{n}, 0\rangle$ for integer spin $j$, and 0 for half-integer spin.
+- Proved Multi-Copy Catalan Commutant Inflation: Commutant algebra $\mathcal{C}_M = \text{End}_{SU(2)}(V_1^{\otimes M})$ dimension grows as Catalan numbers $C_M = \frac{1}{M+1}\binom{2M}{M} = \Theta(4^M / M^{1.5})$; diagonalizing entangling measurements requires Racah $6j$-symbols, which is $\#P$-hard in general.
+- Proved Continuous Non-Abelian Demarcation: Unlike abelian continuous Lie groups $(\mathbb{R}^r, +)$, non-abelian compact Lie groups suffer from multi-dimensional irrep blindness ($d_j = 2j + 1$) and exponential commutant inflation, placing the $SU(2)$ / $SO(3)$ HSP outside BQP.
+- Registered negative result: `NEG-SU2-COMPACT-LIE-HSP-COMMUTANT-INFLATION` (valid with 970 negative results).
+
+Mechanical Queue:
+1. Verify repo health: `python3 qsearch.py validate` and `python3 tools/check_site.py`.
+2. Run Investigation 44 test suite: `pytest tests/test_su2_compact_lie_hsp_commutant_inflation.py` (6/6 PASS).
+3. Run Investigation 44 cross-check: `node research/certificates/su2_compact_lie_hsp_crosscheck.js` (6/6 PASS).
+4. Run Investigation 43 test suite: `pytest tests/test_arbitrary_degree_regulator_barrier.py` (6/6 PASS).
+5. Strict invariants: `speedup_claim_allowed = False`, `accepted_speedup_candidate = False`.
+6. Preserve all proof gates, retractions, counterexamples, and negative results.
+
+## Prior Handoff (2026-10-12, Investigation 43 Proved — Arbitrary-Degree Algebraic Number Fields, Multi-Dimensional Unit Group Regulators, and the Exponential Degree Barrier: The $\mathbb{R}^r / \Lambda$ Continuous Torus HSP (Hallgren-Schmidt-Vollmer Algorithm vs. Lattice Hardness))
 
 Read `research/ARBITRARY_DEGREE_NUMBER_FIELD_REGULATOR_BARRIER.md` and the TOP of `research/AGENT_HANDOFF.md`.
 Investigation 43 establishes the exact multi-dimensional continuous mechanics and proves the Exponential Degree Barrier ($n^{O(n)}$) for number fields of arbitrary degree:

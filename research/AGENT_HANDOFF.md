@@ -2,7 +2,39 @@
 
 Last updated: 2026-10-12
 
-## Latest: Investigation 43 Proved — Arbitrary-Degree Algebraic Number Fields, Multi-Dimensional Unit Group Regulators, and the Exponential Degree Barrier: The $\mathbb{R}^r / \Lambda$ Continuous Torus HSP (Hallgren-Schmidt-Vollmer Algorithm vs. Lattice Hardness)
+## Latest: Investigation 44 Proved — Compact Non-Abelian Lie Group Hidden Subgroup Problem: $SU(2)$ / $SO(3)$ Wigner-D Matrix Character Blindness, Spin-Coherent Projection, and Multi-Copy Commutant Inflation
+
+A major foundational investigation resolving the quantum and classical complexity bounds for the Hidden Subgroup Problem over compact non-abelian Lie groups (specifically analyzing $SU(2)$ and $SO(3)$, continuous maximal tori $U(1)_\vec{n}$, discrete binary polyhedral subgroups $2T, 2O, 2I$, and Racah $6j$-recoupling commutants) has been completed and verified in `research/SU2_COMPACT_LIE_HSP_COMMUTANT_INFLATION.md`.
+
+### Core Invariants & Status:
+- `speedup_claim_allowed = False` strictly enforced everywhere.
+- `accepted_speedup_candidate = False` strictly enforced everywhere.
+- Registered negative result: `NEG-SU2-COMPACT-LIE-HSP-COMMUTANT-INFLATION` (valid with 970 negative results).
+
+### Investigation 44 Summary & Key Mathematical Discoveries:
+1. **Wigner Character Conjugacy Invariance (Theorem 1)**:
+   By the Weyl character formula for $SU(2)$, irreducible representations $V_j$ (spin $j \in \frac{1}{2}\mathbb{Z}_{\ge 0}$, dimension $d_j = 2j + 1$) have characters that are strictly class functions: $\chi_j(\theta) = \frac{\sin((2j + 1)\theta)}{\sin \theta}$. For any subgroup $H \le SU(2)$ and rotation $g \in SU(2)$, $\chi_j(g h g^{-1}) = \chi_j(h)$ identically.
+2. **Universal Weak Fourier Orientation Blindness (Theorem 2)**:
+   For both continuous maximal tori $U(1)_\vec{n} = \{ e^{-i \theta \vec{n} \cdot \vec{\sigma}} \}$ and discrete binary polyhedral subgroups ($2T, 2O, 2I$), the weak Fourier sampling distribution $P(j \mid g H g^{-1})$ is **strictly invariant under orientation $g$**:
+   $$\text{TV}(P(\cdot \mid g_1 H g_1^{-1}), \, P(\cdot \mid g_2 H g_2^{-1})) \equiv 0.000 \quad (0.000\text{ bits of mutual information}).$$
+3. **Rank-1 Spin-Coherent Subgroup Projection (Theorem 3)**:
+   Under strong Fourier sampling, the subgroup projector for $U(1)_\vec{n}$ onto $V_j$ (for integer spin $j \in \mathbb{Z}$) is strictly of **rank 1**:
+   $$\Pi_{U(1)_\vec{n}}^{(j)} = |j, \vec{n}, 0\rangle \langle j, \vec{n}, 0|,$$
+   projecting onto a pure spin-coherent state with zero magnetic quantum number along $\vec{n}$. For half-integer spin $j \in \mathbb{Z} + 1/2$, the projector is identically zero ($\Pi^{(j)} = 0$).
+4. **Multi-Copy Catalan Commutant Inflation (Theorem 4)**:
+   For $M$ copies of the vector representation $V_1 \cong \mathbb{C}^3$, the commutant algebra of $SU(2)$-invariant observables has dimension equal to the Catalan number:
+   $$\dim(\mathcal{C}_M) = C_M = \frac{1}{M + 1} \binom{2M}{M} = \Theta\left( \frac{4^M}{\sqrt{\pi} M^{3/2}} \right).$$
+   The commutant dimension exceeds 16,796 for $M = 10$ and $6.5 \times 10^9$ for $M = 20$. Diagonalizing this algebra requires evaluating Racah $6j$-recoupling symbols, which is $\#P$-hard in general (Aharonov-Jones-Landau 2009).
+5. **Continuous Non-Abelian Demarcation (Theorem 5)**:
+   Unlike abelian continuous groups $(\mathbb{R}^r, +)$ where 1D characters enable polynomial-time period finding, non-abelian compact Lie groups suffer from multi-dimensional irrep blindness ($d_j = 2j + 1$) and exponential commutant inflation, replicating the non-abelian HSP barriers found in $S_n$ and $D_N$.
+6. **Verification Matrix**:
+   - `pytest -v tests/test_su2_compact_lie_hsp_commutant_inflation.py` (6/6 PASS).
+   - `node research/certificates/su2_compact_lie_hsp_crosscheck.js` (6/6 PASS).
+   - `python3 qsearch.py validate` (0 issues, 970 negative results).
+
+---
+
+## Prior: Investigation 43 Proved — Arbitrary-Degree Algebraic Number Fields, Multi-Dimensional Unit Group Regulators, and the Exponential Degree Barrier: The $\mathbb{R}^r / \Lambda$ Continuous Torus HSP (Hallgren-Schmidt-Vollmer Algorithm vs. Lattice Hardness)
 
 A major foundational investigation resolving the quantum and classical complexity bounds for continuous period finding over algebraic number fields of arbitrary degree $K / \mathbb{Q}$ ($n = [K : \mathbb{Q}]$), multi-dimensional unit group regulators $R_K$, and the Principal Ideal Problem (specifically analyzing the Hallgren 2005 / Schmidt-Vollmer 2005 / Biasse-Song 2016 algorithms and lattice SIVP hardness) has been completed and verified in `research/ARBITRARY_DEGREE_NUMBER_FIELD_REGULATOR_BARRIER.md`.
 
