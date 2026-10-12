@@ -1,6 +1,25 @@
 # Mechanical Follow-Up Implementation Plan (pass 2)
 
-## Latest Handoff (2026-10-12, Investigation 41 Proved — Heisenberg Group $H_3(\mathbb{Z}_p)$ Hidden Subgroup Problem: Non-Central Character Vanishing, Quadratic De-Chirping, and the Heisenberg-Unipotent Boundary)
+## Latest Handoff (2026-10-12, Investigation 42 Proved — Real Quadratic Number Fields, Unit Group Regulators, and Principal Ideal Infrastructure: Continuous Non-Compact Period Finding (Hallgren's Algorithm vs. Classical Subexponential Index Calculus))
+
+Read `research/REAL_QUADRATIC_REGULATOR_INFRASTRUCTURE_DEMARCATION.md` and the TOP of `research/AGENT_HANDOFF.md`.
+Investigation 42 establishes the exact quantum and classical complexity bounds for continuous period finding over real quadratic number fields $K = \mathbb{Q}(\sqrt{d})$, Shanks' infrastructure, and Pell's equation:
+- Proved Continuous Non-Compact Abelian Reduction: Quotient $\mathbb{R} / R \mathbb{Z} \cong S^1$ is abelian with complete 1D character basis $\chi_k(x) = \exp(2\pi i k x / R)$, preventing character vanishing or non-abelian commutant inflation.
+- Proved Infrastructure Regularization: Regularized function $h(x) = (\mathfrak{r}_x, x - \delta(\mathfrak{r}_x))$ incorporates intra-cell offsets, restoring exact continuous periodicity $h(x + R) == h(x)$ over $\mathbb{R}$.
+- Proved Discretization Jitter Bound: Discrete grid rounding jitter $|\epsilon_k| \le \Delta / 2$ retains $\ge 0.405$ probability mass in sinc main lobe when $N \Delta \gg R$.
+- Proved Legendre Continued Fraction Reconstruction: Measured frequency $\omega \approx k / R$ uniquely reconstructs $R$ to high precision in $O(\log^3 d)$ quantum gate operations.
+- Proved Classical Subexponential Demarcation: Classical Buchmann index calculus over smooth prime ideals runs in subexponential time $L_d[1/2, \sqrt{2}] = \exp(O(\sqrt{\ln d \ln \ln d}))$; quantum speedup is superpolynomial over $L[1/2]$, rather than exponential over an exponential baseline.
+- Registered negative result: `NEG-CONTINUOUS-HSP-IRRATIONAL-JITTER-INDEX-CALCULUS-BOUNDARY` (valid with 968 negative results).
+
+Mechanical Queue:
+1. Verify repo health: `python3 qsearch.py validate` and `python3 tools/check_site.py`.
+2. Run Investigation 42 test suite: `pytest tests/test_real_quadratic_regulator_infrastructure.py` (6/6 PASS).
+3. Run Investigation 42 cross-check: `node research/certificates/real_quadratic_regulator_crosscheck.js` (6/6 PASS).
+4. Run Investigation 41 test suite: `pytest tests/test_heisenberg_hsp_dechirping_unipotent_boundary.py` (6/6 PASS).
+5. Strict invariants: `speedup_claim_allowed = False`, `accepted_speedup_candidate = False`.
+6. Preserve all proof gates, retractions, counterexamples, and negative results.
+
+## Prior Handoff (2026-10-12, Investigation 41 Proved — Heisenberg Group $H_3(\mathbb{Z}_p)$ Hidden Subgroup Problem: Non-Central Character Vanishing, Quadratic De-Chirping, and the Heisenberg-Unipotent Boundary)
 
 Read `research/HEISENBERG_HSP_DECHIRPING_UNIPOTENT_BOUNDARY.md` and the TOP of `research/AGENT_HANDOFF.md`.
 Investigation 41 establishes the exact quantum and classical complexity bounds for the Heisenberg group $H_3(\mathbb{Z}_p)$ HSP and proves the exact boundary against $U_n(\mathbb{F}_p)$ for $n \ge 4$:

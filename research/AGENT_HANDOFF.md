@@ -2,7 +2,38 @@
 
 Last updated: 2026-10-12
 
-## Latest: Investigation 41 Proved — Heisenberg Group $H_3(\mathbb{Z}_p)$ Hidden Subgroup Problem: Non-Central Character Vanishing, Quadratic De-Chirping, and the Heisenberg-Unipotent Boundary
+## Latest: Investigation 42 Proved — Real Quadratic Number Fields, Unit Group Regulators, and Principal Ideal Infrastructure: Continuous Non-Compact Period Finding (Hallgren's Algorithm vs. Classical Subexponential Index Calculus)
+
+A major foundational investigation resolving the quantum and classical complexity bounds for continuous period finding over real quadratic number fields $K = \mathbb{Q}(\sqrt{d})$, Shanks' infrastructure, and Pell's equation (specifically analyzing Hallgren's 2002 STOC / 2007 JACM algorithm and Buchmann's 1990 subexponential index calculus) has been completed and verified in `research/REAL_QUADRATIC_REGULATOR_INFRASTRUCTURE_DEMARCATION.md`.
+
+### Core Invariants & Status:
+- `speedup_claim_allowed = False` strictly enforced everywhere.
+- `accepted_speedup_candidate = False` strictly enforced everywhere.
+- Registered negative result: `NEG-CONTINUOUS-HSP-IRRATIONAL-JITTER-INDEX-CALCULUS-BOUNDARY` (valid with 968 negative results).
+
+### Investigation 42 Summary & Key Mathematical Discoveries:
+1. **Continuous Non-Compact Abelian Reduction (Theorem 1)**:
+   The underlying group of the regulator problem is the continuous additive group $(\mathbb{R}, +)$. The quotient group $\mathbb{R} / R \mathbb{Z} \cong U(1) \cong S^1$ is a compact, 1-dimensional **abelian** Lie group. Continuous characters $\chi_k(x) = \exp(2\pi i k x / R)$ form a complete 1D orthonormal basis of $L^2(S^1)$, preventing character vanishing, non-abelian commutant inflation, or representation-theoretic obstructions.
+2. **Shanks' Infrastructure Irregularity & Cell Regularization (Theorem 2)**:
+   In real quadratic fields, the sequence of reduced principal ideals $\mathfrak{r}_0, \dots, \mathfrak{r}_{m-1}$ forms Shanks' infrastructure, where step distances $\delta(\mathfrak{r}_{i+1}) - \delta(\mathfrak{r}_i) \in (0, \ln(2\sqrt{d})]$ are irregular and non-uniform. Discretizing the ideals alone yields an aperiodic sequence. Hallgren's regularized function:
+   $$h(x) = (\mathfrak{r}_x, \, x - \delta(\mathfrak{r}_x))$$
+   includes the intra-cell distance offset $x - \delta(\mathfrak{r}_x) \in [0, \Delta_i)$, restoring **exact continuous periodicity** $h(x + R) = h(x)$ for all $x \in \mathbb{R}$.
+3. **Continuous-to-Discrete Discretization Jitter Bound (Theorem 3)**:
+   Sampling on a finite discrete mesh $x_j = j \Delta$ with $\Delta = 2^{-m}$ induces rounding jitter $|(x_0 + k R) - j_k \Delta| \le \Delta / 2$. Over a grid of size $N = 2^{2m}$ with $N \Delta \gg R$, the continuous-to-discrete Fourier transform concentrates $\Omega(1)$ probability mass into sharp sinc-like peaks centered at integer multiples $k / R$.
+4. **Legendre Continued Fraction Convergence & Polynomial Reconstruction (Theorem 4)**:
+   From a measured Fourier frequency $\omega = \frac{s}{N \Delta}$, if $|\omega - \frac{k}{R}| < \frac{1}{2 R^2}$, Legendre's continued fraction theorem guarantees that $k$ appears as the denominator of a principal convergent. The regulator $R$ is reconstructed to $n$-bit precision in $O(\log^3 d)$ quantum gate operations.
+5. **Classical Subexponential Demarcation (Theorem 5)**:
+   Unlike black-box HSPs where classical algorithms are provably exponential $\Omega(2^{n/2})$, the infrastructure problem is not black-box: Buchmann's (1990) classical **index calculus** over smooth prime ideals computes $R$ in subexponential time:
+   $$L_d[1/2, \sqrt{2}] = \exp\left( (\sqrt{2} + o(1)) \sqrt{\ln d \ln \ln d} \right).$$
+   Hallgren's quantum algorithm delivers a **superpolynomial speedup over subexponential classical index calculus** ($O(\log^3 d)$ vs. $L_d[1/2]$), placing the regulator problem in the same complexity demarcation class as Shor's integer factorization.
+6. **Verification Matrix**:
+   - `pytest -v tests/test_real_quadratic_regulator_infrastructure.py` (6/6 PASS).
+   - `node research/certificates/real_quadratic_regulator_crosscheck.js` (6/6 PASS).
+   - `python3 qsearch.py validate` (0 issues, 968 negative results).
+
+---
+
+## Prior: Investigation 41 Proved — Heisenberg Group $H_3(\mathbb{Z}_p)$ Hidden Subgroup Problem: Non-Central Character Vanishing, Quadratic De-Chirping, and the Heisenberg-Unipotent Boundary
 
 A major foundational investigation resolving the quantum and classical query complexity bounds for the Hidden Subgroup Problem over the Heisenberg group $H_3(\mathbb{Z}_p)$ and establishing the exact complexity boundary against higher unitriangular groups $U_n(\mathbb{F}_p)$ for $n \ge 4$ has been completed and verified in `research/HEISENBERG_HSP_DECHIRPING_UNIPOTENT_BOUNDARY.md`.
 
