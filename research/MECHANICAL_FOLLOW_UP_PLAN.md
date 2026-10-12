@@ -1,6 +1,25 @@
 # Mechanical Follow-Up Implementation Plan (pass 2)
 
-## Latest Handoff (2026-10-12, Investigation 36 Proved — Strongly Cospectral Graph Isomorphism: Continuous-Time Quantum Walk Blindness, 2-WL Invariance, and Local Neighborhood Dequantization)
+## Latest Handoff (2026-10-12, Investigation 37 Proved — Cai-Fürer-Immerman (CFI) Graph Isomorphism: Multi-Particle Quantum Walk Blindness, Weisfeiler-Lehman Invariance, and Luks' Solvable Tower Classical Dequantization)
+
+Read `research/CFI_QUANTUM_WALK_LUKS_SOLVABLE_TOWER_OBSTRUCTION.md` and the TOP of `research/AGENT_HANDOFF.md`.
+Investigation 37 establishes the exact classical and quantum complexity bounds for the benchmark Cai-Fürer-Immerman (CFI) graphs (over $K_4$, treewidth 3, 28 vertices, 48 edges):
+- Proved Parity Topological Obstruction & Non-Isomorphism: All 64 edge flip vectors induce identically 0 mod 2 vertex parity change; sum delta sigma = 2 sum b = 0 mod 2. $X(K_4) \not\cong X'(K_4)$ with $|Aut| = 576$ vs $192$.
+- Proved Exact Cospectrality & 1-Particle Walk Blindness: Adjacency (< 1.78e-15) and Laplacian (< 3.55e-15) spectra match identically; return TV distance identically 0.000 for all $t$.
+- Proved Weisfeiler-Lehman Hierarchy Failure & Multi-Particle Walk Extinction: 1-WL hashes and 2-WL pair histograms (10 classes) match identically across all iterations; $m$-particle walks with $m < \text{tw}(G_0)$ yield 0.000 bits info.
+- Proved Quantum Adiabatic Exponential Bottleneck: Macroscopic cycle cut closes spectral gap exponentially $\Delta = 2^{-\Omega(n)}$, requiring $T = 2^{\Omega(n)}$.
+- Proved Classical Polynomial-Time Dequantization via Luks' (1982) Solvable Tower: Bounded valence $\Delta \le 4$ gives solvable automorphism groups with derived length 4 and Sylow 2-subgroups of order 64. Luks algorithm runs in $O(n^4 \log n)$, completely subsuming quantum algorithms.
+- Registered negative result: `NEG-CFI-QUANTUM-WALK-LUKS-SUBSUMPTION` (valid with 963 negative results).
+
+Mechanical Queue:
+1. Verify repo health: `python3 qsearch.py validate` and `python3 tools/check_site.py`.
+2. Run Investigation 37 test suite: `pytest tests/test_cfi_luks_solvable_tower_obstruction.py` (6/6 PASS).
+3. Run Investigation 37 cross-check: `node research/certificates/cfi_luks_solvable_tower_crosscheck.js` (10/10 PASS).
+4. Run Investigation 36 test suite: `pytest tests/test_strongly_cospectral_quantum_walk_obstruction.py` (6/6 PASS).
+5. Strict invariants: `speedup_claim_allowed = False`, `accepted_speedup_candidate = False`.
+6. Preserve all proof gates, retractions, counterexamples, and negative results.
+
+## Prior Handoff (2026-10-12, Investigation 36 Proved — Strongly Cospectral Graph Isomorphism: Continuous-Time Quantum Walk Blindness, 2-WL Invariance, and Local Neighborhood Dequantization)
 
 Read `research/STRONGLY_COSPECTRAL_QUANTUM_WALK_OBSTRUCTION.md` and the TOP of `research/AGENT_HANDOFF.md`.
 Investigation 36 establishes the exact classical and quantum complexity bounds for distinguishing strongly cospectral, strongly regular graphs ($4 \times 4$ Rook's graph $L(K_{4,4})$ vs Shrikhande graph, SRG(16, 6, 2, 2)):

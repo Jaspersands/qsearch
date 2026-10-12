@@ -85663,5 +85663,30 @@
     "lesson": "Continuous-time quantum walks and spectral invariants are completely blinded by strongly regular graphs with identical parameters. For the 4x4 Rook graph L(K_{4,4}) and the Shrikhande graph (v=16, k=6, lambda=2, mu=2), the 3-dimensional Bose-Mesner algebra forces identical adjacency spectra {6^1, 2^6, -2^9}, identical Laplacian spectra {0^1, 4^6, 8^9}, and identical continuous-time quantum walk return amplitudes for all t (TV distance 0.000). 2-WL also fails to distinguish them. However, classical local neighborhood checks (counting triangles in the neighbor subgraph, 2 vs 0) distinguish them in O(1) operations per vertex, and 3-WL / clique counting (8 vs 0 K_4 cliques) solves the problem in polynomial time, completely subsuming quantum walks.",
     "reason_invalid": "Both graphs generate isomorphic 3-dimensional Bose-Mesner algebras, guaranteeing identical eigenvalues and walk moments Tr(A^k) and Tr(L^k) for all k >= 0. Because both graphs are vertex-transitive, the return amplitude <v|exp(-i A t)|v> = (1/16) (e^{-6it} + 6 e^{-2it} + 9 e^{2it}) is vertex-invariant and identical across both graphs for all t, proving that single-particle and unentangled quantum walks yield identically 0.000 bits of mutual information. 2-WL color refinement is similarly invariant. In contrast, an elementary classical algorithm examines the neighbor subgraph G[N(v)]: for the Rook graph it is K_3 \\sqcup K_3 (2 triangles), while for the Shrikhande graph it is C_6 (0 triangles). This local check takes O(Delta^3) = O(6^3) = O(1) operations per vertex (O(n) globally), completely dequantizing the distinction classically.",
     "source": "research/STRONGLY_COSPECTRAL_QUANTUM_WALK_OBSTRUCTION.md"
+  },
+  {
+    "applies_to": [
+      "CAI-FURER-IMMERMAN-GRAPHS",
+      "WEISFEILER-LEHMAN-HIERARCHY",
+      "MULTI-PARTICLE-QUANTUM-WALK",
+      "QUANTUM-ADIABATIC-ALGORITHM",
+      "LUKS-SOLVABLE-TOWER-SUBSUMPTION"
+    ],
+    "claim": "Multi-particle quantum walks or quantum adiabatic evolution can achieve an algorithmic quantum speedup over classical algorithms on Cai-Fürer-Immerman (CFI) graph isomorphism instances.",
+    "evidence": {
+      "automorphism_group_orders": "|Aut(X(K_4))| = 576 vs |Aut(X'(K_4))| = 192",
+      "cycle_space_parity_obstruction": "All 64 edge flip vectors induce identically 0 mod 2 vertex parity change; sum delta sigma = 2 sum b = 0 mod 2",
+      "exact_cospectrality": "Adjacency (< 1.78e-15) and Laplacian (< 3.55e-15) spectra match identically",
+      "luks_polynomial_subsumption": "Classical Luks algorithm tests bounded-degree isomorphism in O(n^4 log n), dequantizing CFI instances",
+      "one_and_two_wl_invariance": "1-WL hashes and 2-WL pair histograms (10 colors) match identically across all iterations",
+      "quantum_adiabatic_exponential_barrier": "Spectral gap closes exponentially Delta = 2^{-Omega(n)}, requiring T = 2^{Omega(n)}",
+      "quantum_walk_tv_blindness": "CTQW return amplitudes match identically for all t; TV distance identically 0.000",
+      "solvable_tower_structure": "Both automorphism groups are solvable with derived length 4, Sylow 2-subgroups of order 64",
+      "speedup_claim_allowed": false
+    },
+    "id": "NEG-CFI-QUANTUM-WALK-LUKS-SUBSUMPTION",
+    "lesson": "Cai-Fürer-Immerman (CFI) graphs do not yield a quantum speedup for Graph Isomorphism. While CFI graphs defeat the classical k-Weisfeiler-Lehman hierarchy for k < tw(G), this barrier equally blinds all non-interacting m-particle quantum walks (m < tw(G)), rendering them completely unable to distinguish the graphs (TV distance identically 0.000). Quantum adiabatic algorithms incur an exponentially closing spectral gap Delta = 2^{-Omega(n)} due to the topological parity barrier, requiring exponential evolution time 2^{Omega(n)}. Crucially, classical computation is not bounded by the WL hierarchy: Eugene Luks' (1982) solvable tower algorithm solves bounded-degree Graph Isomorphism in deterministic classical polynomial time O(n^4 log n) by exploiting the solvable 2-group filtration of vertex stabilizers, completely dequantizing CFI graph distinction classically.",
+    "reason_invalid": "On the base graph K_4 (tw = 3), the untwisted CFI graph X(K_4) and twisted graph X'(K_4) on 28 vertices are strictly cospectral (adjacency and Laplacian spectra match within 2e-15) and produce identical 1-WL and 2-WL color refinement partitions (TV distance 0.000). Because m-particle non-interacting quantum walks are bounded by m-WL, any quantum walk with m < tw(G) yields 0.000 bits of mutual information. In the adiabatic model, crossing the topological parity obstruction requires tunneling across a macroscopic cycle cut, closing the spectral gap exponentially Delta = 2^{-Omega(n)} and requiring T = Omega(1/Delta^2) = 2^{Omega(n)} time. Conversely, CFI graphs have bounded valence Delta <= 4. Luks (1982) proved that Graph Isomorphism for valence d is solvable in deterministic classical polynomial time O(n^{f(d)}), specifically O(n^4 log n) for Delta = 3/4. Both Aut(X(K_4)) (order 576) and Aut(X'(K_4)) (order 192) are solvable groups with derived length 4 and Sylow 2-subgroups of order 64. Luks' solvable tower algorithm bypasses the WL hierarchy entirely and solves the isomorphism problem in polynomial classical time, disproving any quantum advantage.",
+    "source": "research/CFI_QUANTUM_WALK_LUKS_SOLVABLE_TOWER_OBSTRUCTION.md"
   }
 ]

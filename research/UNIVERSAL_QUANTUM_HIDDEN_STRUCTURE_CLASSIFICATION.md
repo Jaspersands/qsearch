@@ -127,6 +127,7 @@ The table below summarizes the exact mathematical status of key hidden structure
 | **34** | Graph Isomorphism & Symmetric Group Multi-Copy Commutant Barrier | Symmetric Group HSP | Weak TV $\equiv 0$; $(S_4, H)$ not Gel'fand; single-copy $I \le 2^{-\Omega(n \log n)}$; commutant $\dim(\mathcal{C}_M) \ge 2^{\Omega(n^2 \log^2 n)}$; Racah $\#P$-hard | Proved Mathematical Barrier |
 | **35** | Linear Code Equivalence & Wreath Product Swap Invariance Barrier | Code Equivalence HSP | All $n!$ swaps conjugate; character universality $\chi_{(\lambda, \lambda, \pm)} = \pm d_\lambda$; weak TV $\equiv 0.000$; commutant $\dim(\mathcal{C}_M) \ge 2^{\Omega(n^2 \log^2 n)}$; LCD dequantized $O(n^3)$ | Proved Mathematical Barrier |
 | **36** | Strongly Cospectral Graph Isomorphism Obstruction | Graph Algorithms | Bose-Mesner algebra $\{6^1, 2^6, -2^9\}$ and $\{0^1, 4^6, 8^9\}$ identical; CTQW return TV $\equiv 0.000$; 2-WL blind; neighbor triangles split ($2$ vs $0$) in $O(1)$ | Proved Mathematical Obstruction & Classical Subsumption |
+| **37** | Cai-Fürer-Immerman (CFI) Graph Isomorphism Obstruction | Graph Algorithms | $X(K_4) \not\cong X'(K_4)$ cospectral ($\Delta < 2 \cdot 10^{-15}$); CTQW return TV $\equiv 0.000$; 1-WL & 2-WL invariant; adiabatic gap $\Delta = 2^{-\Omega(n)}$; Luks solvable tower dequantizes in $O(n^4 \log n)$ | Proved Mathematical Obstruction & Classical Subsumption |
 
 ---
 

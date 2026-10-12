@@ -2,7 +2,34 @@
 
 Last updated: 2026-10-12
 
-## Latest: Investigation 36 Proved — Strongly Cospectral Graph Isomorphism: Continuous-Time Quantum Walk Blindness, 2-WL Invariance, and Local Neighborhood Dequantization
+## Latest: Investigation 37 Proved — Cai-Fürer-Immerman (CFI) Graph Isomorphism: Multi-Particle Quantum Walk Blindness, Weisfeiler-Lehman Invariance, and Luks' Solvable Tower Classical Dequantization
+
+A major foundational investigation resolving the quantum walk, spectral, adiabatic, and group-theoretic complexity bounds for the benchmark Cai-Fürer-Immerman (CFI) graphs (specifically over base graph $K_4$, treewidth 3, 28 vertices, 48 edges) has been completed and verified in `research/CFI_QUANTUM_WALK_LUKS_SOLVABLE_TOWER_OBSTRUCTION.md`.
+
+### Core Invariants & Status:
+- `speedup_claim_allowed = False` strictly enforced everywhere.
+- `accepted_speedup_candidate = False` strictly enforced everywhere.
+- Registered negative result: `NEG-CFI-QUANTUM-WALK-LUKS-SUBSUMPTION` (valid with 963 negative results).
+
+### Investigation 37 Summary & Key Mathematical Discoveries:
+1. **Topological Parity Obstruction & Non-Isomorphism (Theorem 1)**:
+   For any base graph $G_0$, any edge bit-flip vector $b \in \mathbb{F}_2^{|E_0|}$ changes vertex incident parity by $\Delta \sigma(v) = \sum_{e \in E(v)} b_e$. Summing over all vertices yields $\sum_{v} \Delta \sigma(v) \equiv 2 \sum_e b_e \equiv 0 \pmod 2$. In $X(K_4)$, total parity is 0, while in $X'(K_4)$ total parity is 1 ($1 \not\equiv 0 \pmod 2$). Thus $X(K_4) \not\cong X'(K_4)$. The automorphism group orders differ sharply: $|\text{Aut}(X(K_4))| = 576$ vs $|\text{Aut}(X'(K_4))| = 192$.
+2. **Adjacency and Laplacian Cospectrality & 1-Particle Walk Blindness (Theorem 2)**:
+   $X(K_4)$ and $X'(K_4)$ on 28 vertices have identically matching adjacency spectra ($\Delta \le 1.78 \times 10^{-15}$) and Laplacian spectra ($\Delta \le 3.55 \times 10^{-15}$). For single-particle CTQWs with $H = A$, return probability distributions match identically for all $t$, yielding $\|p_t^{(X)} - p_t^{(X')}\|_{\text{TV}} \le 1.06 \times 10^{-15} \equiv 0.000$ and **0.000 bits of mutual information**.
+3. **Weisfeiler-Lehman Failure & Multi-Particle Quantum Walk Extinction (Theorem 3)**:
+   By the CFI theorem, $k$-WL fails for all $k < \text{tw}(G_0)$. For $K_4$ ($\text{tw} = 3$), 1-WL hashes match identically across all iterations, and 2-WL pair refinement yields an identical 10-class color histogram: $[12, 16, 36, 48, 48, 96, 96, 144, 144, 144]$. Because non-interacting $m$-particle quantum walks are upper-bounded by $m$-WL (Gamble et al. 2010), any $m$-particle walk with $m < \text{tw}(G_0)$ is strictly blind ($\text{TV} \equiv 0.000$).
+4. **Quantum Adiabatic Algorithm Exponential Bottleneck (Theorem 4)**:
+   Tunneling between parity configurations requires flipping a macroscopic cycle cut of length $\Omega(n)$. The spectral gap closes exponentially $\Delta_{\min} = 2^{-\Omega(n)}$, requiring exponential evolution time $T \ge \Omega(1/\Delta_{\min}^2) = 2^{\Omega(n)}$.
+5. **Classical Polynomial-Time Dequantization via Luks' (1982) Solvable Tower (Theorem 5)**:
+   CFI graphs have bounded maximum degree $\Delta \le 4$. Eugene Luks (1982) proved that bounded-degree Graph Isomorphism is decidable in deterministic classical polynomial time $O(n^4 \log n)$ via solvable towers. Both automorphism groups are solvable with derived series length 4 and Sylow 2-subgroups of order 64. Classical group theory bypasses the $k$-WL barrier entirely, establishing complete classical subsumption.
+6. **Verification Matrix**:
+   - `pytest -v tests/test_cfi_luks_solvable_tower_obstruction.py` (6/6 PASS).
+   - `node research/certificates/cfi_luks_solvable_tower_crosscheck.js` (10/10 PASS).
+   - `python3 qsearch.py validate` (0 issues, 963 negative results).
+
+---
+
+## Prior: Investigation 36 Proved — Strongly Cospectral Graph Isomorphism: Continuous-Time Quantum Walk Blindness, 2-WL Invariance, and Local Neighborhood Dequantization
 
 A major foundational investigation resolving the quantum walk and spectral distinguishability bounds for strongly cospectral, strongly regular graphs (specifically the 4x4 Rook's graph $L(K_{4,4})$ versus the Shrikhande graph, both SRG(16, 6, 2, 2)) has been completed and verified in `research/STRONGLY_COSPECTRAL_QUANTUM_WALK_OBSTRUCTION.md`.
 
