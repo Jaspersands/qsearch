@@ -1,6 +1,25 @@
 # Mechanical Follow-Up Implementation Plan (pass 2)
 
-## Latest Handoff (2026-10-12, Investigation 46 Proved — Quantum Phase Estimation on Continuous Spectrum Hamiltonians and Singular Spectral Measures: Resolvent Broadening, Universal Peak Flattening, and Classical KPM Dequantization)
+## Latest Handoff (2026-10-12, Investigation 47 Proved — Quantum Chaos, Spectral Form Factors (SFF), and Random Matrix Theory (RMT) vs. Quantum Fourier Sampling: The Ramp-and-Plateau Demarcation and Period Finding Obstruction)
+
+Read `research/QUANTUM_CHAOS_SFF_PERIOD_FINDING_BARRIER.md` and the TOP of `research/AGENT_HANDOFF.md`.
+Investigation 47 establishes the exact quantum and classical complexity bounds for period finding, phase estimation, and return revivals over quantum chaotic Hamiltonians whose spectra obey Random Matrix Theory (RMT):
+- Proved Wigner Surmise Level Repulsion & Loss of Harmonic Coherence: In chaotic RMT spectra, eigenvalues repel each other ($P(s) \sim s^\beta$ as $s \to 0$, $P(0) = 0$). The Oganesyan-Huse consecutive gap ratio strictly separates integrable systems ($\langle r \rangle_{\text{Poisson}} = 2\ln 2 - 1 \approx 0.386$) from chaotic systems ($\langle r \rangle_{\text{GUE}} \approx 0.600$, $\langle r \rangle_{\text{GOE}} \approx 0.536$). Eigenvalues lack harmonic arithmetic progressions, destroying constructive Fourier interference.
+- Proved Spectral Form Factor Ramp-and-Plateau vs. Periodic Revivals: The Spectral Form Factor $K(t) = \langle |\text{Tr}(e^{-i H t})|^2 \rangle$ in chaotic systems has zero periodic revival spikes. Instead, it exhibits an early dephasing dip down to $t_{\text{dip}} \sim \sqrt{N}$, a linear ramp $K_{\text{conn}}(t) \approx \frac{t}{2\pi} \ll N^2$, and saturation to the diagonal plateau $K(t) = N$ for $t \ge t_H = 2\pi / \Delta$. At no time $t > t_{\text{dip}}$ does $K(t)$ exceed $N$.
+- Proved Universal Return Fidelity Collapse in Quantum Chaos: For any normalized state $|\psi_0\rangle = \frac{1}{\sqrt{N}} \sum_{n=1}^N |n\rangle$, the quantum return fidelity collapses to $F(t) = \frac{K(t)}{N^2} \le \frac{1}{N} = 2^{-n} \to 0$ for all $t \le \text{poly}(n)$. While integrable periodic systems revive with $F(T) = 1.000$, chaotic systems are exponentially suppressed by $\Omega(N) = 2^{\Omega(n)}$, causing quantum period finding algorithms to fail completely.
+- Proved Exponential Measurement Barrier for Quantum SWAP Tests: Measuring the SFF ramp on quantum hardware via two-copy SWAP tests yields expectation value $\langle \text{SWAP} \rangle = K(t) / N^2 \le 1/N = 2^{-n}$, requiring an exponential number of shots $M = \Omega(N^2) = 2^{\Omega(n)}$ to resolve.
+- Proved Classical Diagnostic Dequantization: Diagnosing quantum chaos and distinguishing it from integrable periodicity is solved classically in $O(N \log N)$ operations by computing the consecutive gap ratio $\langle r \rangle$ from eigenvalues, completely dequantizing the spectral characterization without exponential quantum evolution.
+- Registered negative result: `NEG-QUANTUM-CHAOS-SFF-PERIOD-FINDING-BARRIER` (valid with 973 negative results).
+
+Mechanical Queue:
+1. Verify repo health: `python3 qsearch.py validate` and `python3 tools/check_site.py`.
+2. Run Investigation 47 test suite: `pytest tests/test_quantum_chaos_sff_period_barrier.py` (6/6 PASS).
+3. Run Investigation 47 cross-check: `node research/certificates/quantum_chaos_sff_crosscheck.js` (6/6 PASS).
+4. Run Investigation 46 test suite: `pytest tests/test_continuous_spectrum_qpe_barrier.py` (6/6 PASS).
+5. Strict invariants: `speedup_claim_allowed = False`, `accepted_speedup_candidate = False`.
+6. Advance to Investigation 48: Quantum Scrambling, Out-of-Time-Order Correlators (OTOC), the MSS Bound $\lambda_L \le 2\pi k_B T / \hbar$, and Quantum Circuit Complexity Growth.
+
+## Prior Handoff (2026-10-12, Investigation 46 Proved — Quantum Phase Estimation on Continuous Spectrum Hamiltonians and Singular Spectral Measures: Resolvent Broadening, Universal Peak Flattening, and Classical KPM Dequantization)
 
 Read `research/CONTINUOUS_SPECTRUM_QPE_SINGULAR_MEASURE_BARRIER.md` and the TOP of `research/AGENT_HANDOFF.md`.
 Investigation 46 establishes the exact quantum and classical complexity bounds for Quantum Phase Estimation (QPE), Resolvent Green's function simulation, and density estimation over continuous and singular continuous Hamiltonian spectra:

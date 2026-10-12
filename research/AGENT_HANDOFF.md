@@ -2,7 +2,34 @@
 
 Last updated: 2026-10-12
 
-## Latest: Investigation 46 Proved — Quantum Phase Estimation on Continuous Spectrum Hamiltonians and Singular Spectral Measures: Resolvent Broadening, Universal Peak Flattening, and Classical KPM Dequantization
+## Latest: Investigation 47 Proved — Quantum Chaos, Spectral Form Factors (SFF), and Random Matrix Theory (RMT) vs. Quantum Fourier Sampling: The Ramp-and-Plateau Demarcation and Period Finding Obstruction
+
+A major foundational investigation resolving the quantum and classical complexity bounds for period finding, phase estimation, and return revivals over quantum chaotic Hamiltonians whose spectra obey Random Matrix Theory (RMT) has been completed and verified in `research/QUANTUM_CHAOS_SFF_PERIOD_FINDING_BARRIER.md`.
+
+### Core Invariants & Status:
+- `speedup_claim_allowed = False` strictly enforced everywhere.
+- `accepted_speedup_candidate = False` strictly enforced everywhere.
+- Registered negative result: `NEG-QUANTUM-CHAOS-SFF-PERIOD-FINDING-BARRIER` (valid with 973 negative results).
+
+### Investigation 47 Summary & Key Mathematical Discoveries:
+1. **Wigner Surmise Level Repulsion & Loss of Harmonic Coherence (Theorem 1)**:
+   In chaotic RMT spectra, eigenvalues repel each other ($P(s) \sim s^\beta$ as $s \to 0$, $P(0) = 0$). The Oganesyan-Huse consecutive gap ratio strictly separates integrable systems ($\langle r \rangle_{\text{Poisson}} = 2\ln 2 - 1 \approx 0.386$) from chaotic systems ($\langle r \rangle_{\text{GUE}} \approx 0.600$, $\langle r \rangle_{\text{GOE}} \approx 0.536$). Eigenvalues lack harmonic arithmetic progressions, destroying constructive Fourier interference.
+2. **Spectral Form Factor Ramp-and-Plateau vs. Periodic Revivals (Theorem 2)**:
+   The Spectral Form Factor $K(t) = \langle |\text{Tr}(e^{-i H t})|^2 \rangle$ in chaotic systems has zero periodic revival spikes. Instead, it exhibits an early dephasing dip down to $t_{\text{dip}} \sim \sqrt{N}$, a linear ramp $K_{\text{conn}}(t) \approx \frac{t}{2\pi} \ll N^2$, and saturation to the diagonal plateau $K(t) = N$ for $t \ge t_H = 2\pi / \Delta$. At no time $t > t_{\text{dip}}$ does $K(t)$ exceed $N$.
+3. **Universal Return Fidelity Collapse in Quantum Chaos (Theorem 3)**:
+   For any normalized state $|\psi_0\rangle = \frac{1}{\sqrt{N}} \sum_{n=1}^N |n\rangle$, the quantum return fidelity collapses to $F(t) = \frac{K(t)}{N^2} \le \frac{1}{N} = 2^{-n} \to 0$ for all $t \le \text{poly}(n)$. While integrable periodic systems revive with $F(T) = 1.000$, chaotic systems are exponentially suppressed by $\Omega(N) = 2^{\Omega(n)}$, causing quantum period finding algorithms to fail completely.
+4. **Exponential Measurement Barrier for Quantum SWAP Tests (Theorem 4)**:
+   Measuring the SFF ramp on quantum hardware via two-copy SWAP tests yields expectation value $\langle \text{SWAP} \rangle = K(t) / N^2 \le 1/N = 2^{-n}$, requiring an exponential number of shots $M = \Omega(N^2) = 2^{\Omega(n)}$ to resolve.
+5. **Classical Diagnostic Dequantization (Theorem 5)**:
+   Diagnosing quantum chaos and distinguishing it from integrable periodicity is solved classically in $O(N \log N)$ operations by computing the consecutive gap ratio $\langle r \rangle$ from eigenvalues, completely dequantizing the spectral characterization without exponential quantum evolution.
+6. **Verification Matrix**:
+   - `pytest -v tests/test_quantum_chaos_sff_period_barrier.py` (6/6 PASS).
+   - `node research/certificates/quantum_chaos_sff_crosscheck.js` (6/6 PASS).
+   - `python3 qsearch.py validate` (0 issues, 973 negative results).
+
+---
+
+## Prior: Investigation 46 Proved — Quantum Phase Estimation on Continuous Spectrum Hamiltonians and Singular Spectral Measures: Resolvent Broadening, Universal Peak Flattening, and Classical KPM Dequantization
 
 A major foundational investigation resolving the quantum and classical complexity bounds for Quantum Phase Estimation (QPE), Resolvent Green's function simulation, and density estimation over continuous and singular continuous Hamiltonian spectra has been completed and verified in `research/CONTINUOUS_SPECTRUM_QPE_SINGULAR_MEASURE_BARRIER.md`.
 

@@ -87,7 +87,7 @@ The table below summarizes the exact mathematical status of key hidden structure
 
 ---
 
-## 4. Master Cross-Reference Table of Investigations 1–46
+## 4. Master Cross-Reference Table of Investigations 1–47
 
 | # | Investigation Focus | Domain | Primary Obstruction / Mechanism | Epistemic Status |
 | :-: | :--- | :--- | :--- | :--- | :---: |
@@ -137,6 +137,7 @@ The table below summarizes the exact mathematical status of key hidden structure
 | **44** | Compact Non-Abelian Lie HSP & $SU(2)$ Commutant Inflation | Compact Lie Group HSP | Wigner $\chi_j(\theta) = \frac{\sin(d_j \theta)}{\sin \theta}$ class functions; weak orientation TV $\equiv 0.000$; spin-coherent rank-1 $\Pi_n$; Catalan commutant $C_M = \Theta(4^M / M^{1.5})$; Racah $6j$ $\#P$-hard | Proved Mathematical Barrier & Representation Obstruction |
 | **45** | Non-Compact Real Lie Groups & $SL(2, \mathbb{R})$ Hyperbolic HSP | Non-Compact Lie HSP | Harish-Chandra distribution characters; Selberg trace weak TV $\equiv 0.000$; continuous Plancherel measure $d\mu(r) = \frac{1}{4\pi} r \tanh(\frac{\pi r}{2})$ spectral broadening; Anosov chaos $\lambda = 1.000$; Repka continuous tensor product infinite commutant $\dim(\mathcal{C}_M) = \infty$ | Proved Mathematical Barrier & Representation Obstruction |
 | **46** | Continuous Spectrum QPE & Singular Spectral Measures | Spectral Estimation | Universal peak flattening $P(k_{\max}) = \Theta(1/N) \to 0$; resolvent FWHM $2\eta$ & condition $\kappa = 1/\eta$; Almost Mathieu Cantor gap ratio $> 1000$ with Devil's staircase intermittency; classical KPM $\Theta(1/\eta)$ dequantization | Proved Mathematical Barrier & Classical Dequantization |
+| **47** | Quantum Chaos, SFF Ramp & RMT Period Barrier | Quantum Chaos | Wigner level repulsion $P(0)=0$; SFF linear ramp $K(t) \sim t/2\pi \ll N^2$; return fidelity collapse $F(t) \le 1/N = 2^{-n} \to 0$; SWAP test requires $\Omega(N^2) = 2^{\Omega(n)}$ shots; classical $\langle r \rangle$ dequantization | Proved Mathematical Barrier & Classical Dequantization |
 
 ---
 

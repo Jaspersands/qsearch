@@ -85895,5 +85895,28 @@
     "lesson": "Quantum Phase Estimation cannot achieve exponential speedup on continuous or singular continuous Hamiltonian spectra. For absolutely continuous spectra dmu_ac(E) = rho(E) dE, generalized eigenstates are non-normalizable in Hilbert space, and the discrete QPE measurement probability exhibits Universal Peak Flattening: P(k_max) = Theta(1/N) = Theta(2^-m) -> 0. Rather than concentrating mass into a sharp discrete peak with O(1) confidence as in discrete eigenvalue estimation, QPE on the continuum smears probability mass into a flat distribution scaling as O(2^-m). Furthermore, simulating the resolvent Green's operator (E + i eta - H)^-1 induces Lorentzian broadening of FWHM = 2 eta, with condition number kappa = 1/eta requiring Omega(1/eta) quantum circuit depth. On classical computers, the Kernel Polynomial Method (KPM) evaluates the continuous spectral density to the same resolution eta using M = Theta(1/eta) Chebyshev matrix-vector multiplications, completely dequantizing continuous spectral estimation. For singular continuous spectra (such as the Almost Mathieu operator at critical coupling), the spectrum is a Cantor set where QPE fluctuates wildly between zero in Hofstadter gaps and intermittent fractional spikes, precluding stable phase extraction.",
     "reason_invalid": "Standard QPE exponential precision relies strictly on pure-point discrete spectra with normalizable eigenstates in Hilbert space. On absolutely continuous spectra, generalized eigenstates are non-normalizable, and the QPE Fejér kernel forces every discrete computational bin to have probability P(k) = Theta(1/N) -> 0 (Universal Peak Flattening). Resolvent simulation requires condition number kappa = 1/eta, lower-bounding quantum circuit depth at Omega(1/eta) queries. Because the classical Kernel Polynomial Method (KPM) computes the identical continuous spectral density in Theta(1/eta) operations, quantum algorithms possess zero exponential speedup for continuous spectral density estimation. On singular continuous spectra, the Cantor structure induces pathological intermittency that prevents continued fraction period recovery. Thus, claiming exponential quantum advantage for continuous spectrum phase estimation is mathematically invalid.",
     "source": "research/CONTINUOUS_SPECTRUM_QPE_SINGULAR_MEASURE_BARRIER.md"
+  },
+  {
+    "applies_to": [
+      "QUANTUM-CHAOS",
+      "SPECTRAL-FORM-FACTOR",
+      "RANDOM-MATRIX-THEORY",
+      "WIGNER-SURMISE-REPULSION",
+      "RETURN-FIDELITY-COLLAPSE"
+    ],
+    "claim": "Quantum Fourier Sampling or Quantum Phase Estimation can extract periods or harmonic structures from quantum chaotic Hamiltonians whose spectra obey Random Matrix Theory.",
+    "evidence": {
+      "classical_oganesyan_huse_dequantization": "Classical consecutive gap ratio <r> distinguishes Poisson (<r> ~ 0.386) from GUE (<r> ~ 0.600) in O(N log N) operations without quantum evolution",
+      "epistemic_invariants_enforced": "speedup_claim_allowed = False; accepted_speedup_candidate = False",
+      "return_fidelity_collapse": "Chaotic return fidelity collapses to F(t) = K(t) / N^2 <= 1/N = 2^-n, an exponential suppression of Omega(N) compared to integrable revivals F(T) = 1.000",
+      "sff_linear_ramp": "Spectral Form Factor K(t) exhibits a linear ramp K_GUE(t) ~ t / 2pi and saturates at plateau N, with zero periodic revival spikes of height N^2",
+      "speedup_claim_allowed": false,
+      "swap_test_exponential_measurement_barrier": "Measuring the SFF ramp on quantum computers via two-copy SWAP tests yields <SWAP> = K(t) / N^2 <= 1/N = 2^-n, requiring Omega(N^2) = 2^Omega(n) measurement shots",
+      "wigner_surmise_level_repulsion": "Level spacing distribution obeys Wigner surmise P(0) = 0, precluding harmonic arithmetic progressions"
+    },
+    "id": "NEG-QUANTUM-CHAOS-SFF-PERIOD-FINDING-BARRIER",
+    "lesson": "Quantum period finding and phase estimation cannot operate on quantum chaotic systems whose spectra follow Random Matrix Theory (RMT). Unlike integrable systems where harmonic progressions En = n Delta generate 100% return revivals F(T) = 1.000 and SFF revival spikes of height N^2, chaotic systems exhibit Wigner level repulsion (P(0) = 0) with no harmonic ladder. The Spectral Form Factor K(t) exhibits a linear ramp K(t) ~ t / 2pi and plateau N, never exceeding N for t > t_dip. The quantum return fidelity collapses to F(t) <= 1/N = 2^-n, an exponential suppression of Omega(N) = 2^Omega(n). The system never revives within polynomial time, causing quantum period finding algorithms to fail completely. Furthermore, measuring the SFF ramp on quantum hardware requires Omega(N^2) = 2^Omega(n) SWAP test shots, while classical computation diagnoses quantum chaos via the Oganesyan-Huse ratio <r> in O(N log N) operations.",
+    "reason_invalid": "Quantum period finding fundamentally requires harmonic arithmetic eigenvalue progressions En = n Delta. In quantum chaotic systems (by the Bohigas-Giannoni-Schmit conjecture), energy levels obey Random Matrix Theory with Wigner level repulsion P(0) = 0 and zero harmonic coherence. The Spectral Form Factor lacks periodic revival spikes, replacing them with a linear ramp and plateau K(t) <= N. The state return fidelity collapses to F(t) = K(t) / N^2 <= 1/N = 2^-n -> 0, preventing constructive Fourier interference in polynomial time. Measuring the ramp quantumly requires an exponential number of shots Omega(N^2) = 2^Omega(n), whereas classical algorithms compute the consecutive gap ratio <r> in O(N log N) time. Thus, claiming quantum Fourier speedups for period finding on chaotic Hamiltonians is mathematically invalid.",
+    "source": "research/QUANTUM_CHAOS_SFF_PERIOD_FINDING_BARRIER.md"
   }
 ]
