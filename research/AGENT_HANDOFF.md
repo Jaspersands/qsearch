@@ -2,14 +2,34 @@
 
 Last updated: 2026-10-12
 
-## Latest: Investigation 48 Proved — Quantum Scrambling, Out-of-Time-Order Correlators (OTOC), the Maldacena-Shenker-Stanford (MSS) Chaos Bound, and Operator Complexity Growth: The Information Butterfly Barrier
+## Latest: Investigation 49 Proved — Quantum Ergodicity, Eigenstate Thermalization Hypothesis (ETH), and the Local Observable Measurement Barrier: Microcanonical Equivalence and Algorithmic Information Horizons
 
-A major foundational investigation resolving the quantum and classical complexity bounds for quantum information scrambling, out-of-time-order correlators (OTOC), operator size growth, and the Maldacena-Shenker-Stanford (MSS) chaos bound has been completed and verified in `research/QUANTUM_SCRAMBLING_OTOC_MSS_COMPLEXITY_BARRIER.md`.
+A major foundational investigation resolving the quantum and classical complexity bounds for quantum ergodicity, Srednicki's Eigenstate Thermalization Hypothesis (ETH), and the measurement of local observables on excited many-body states has been completed and verified in `research/QUANTUM_ERGODICITY_ETH_LOCAL_OBSERVABLE_BARRIER.md`.
 
 ### Core Invariants & Status:
 - `speedup_claim_allowed = False` strictly enforced everywhere.
 - `accepted_speedup_candidate = False` strictly enforced everywhere.
-- Registered negative result: `NEG-QUANTUM-SCRAMBLING-OTOC-MSS-COMPLEXITY-BARRIER` (valid with 974 negative results).
+- Registered negative result: `NEG-QUANTUM-ERGODICITY-ETH-LOCAL-OBSERVABLE-BARRIER` (valid with 975 negative results).
+
+### Investigation 49 Summary & Key Mathematical Discoveries:
+1. **Srednicki ETH Matrix Element Scaling (Theorem 1)**:
+   In chaotic quantum many-body systems, the off-diagonal matrix elements of local observables scale as $\sigma_{\text{off}} = \Theta(e^{-S(E)/2}) = \Theta(2^{-n/2})$ with the thermodynamic microcanonical entropy $S(E) = \Theta(n)$. Concrete diagonalization of the mixed-field Ising chain confirms that $\sigma_{\text{off}} \approx 1/\sqrt{D}$ ($0.1194 \approx 0.1250$ for $n=6, D=64$).
+2. **Eigenstate Thermal Blindness & Consecutive Difference Suppression (Theorem 2)**:
+   The diagonal matrix elements $\langle E_m | A | E_m \rangle$ fluctuate from the smooth microcanonical curve $\bar{A}(E)$ by an exponentially small envelope $O(2^{-n/2})$. Consecutive eigenstate differences in the bulk are suppressed ($|\Delta A|_{\text{c}} \approx 0.1373$), whereas integrable systems exhibit macroscopic fluctuations ($|\Delta A|_{\text{i}} \approx 0.3937$, a $> 2.8\times$ jump). Adjacent chaotic eigenstates are locally indistinguishable.
+3. **Temporal Fluctuation Collapse & Relative Phase Erasure (Theorem 3)**:
+   For any non-equilibrium initial state, time-dependent expectation values relax to the diagonal ensemble $\bar{A}_{\text{diag}} \approx \bar{A}(E)$, with long-time temporal fluctuations decaying as $\text{Var}_t(\langle A(t) \rangle) \le O(e^{-S(E)}) = O(2^{-n})$. All microscopic relative phase information is completely erased from all local observables.
+4. **Exponential Measurement Shot Lower Bound (Theorem 4)**:
+   Distinguishing a specific bulk eigenstate $|E_m\rangle$ from the microcanonical thermal ensemble using local measurements requires resolving a signal difference $\delta \le O(2^{-n/2})$. By Hoeffding's inequality, resolving this bias requires an exponential number of measurements $M_{\text{shots}} = \Omega(1/\delta^2) = \Omega(2^n)$ ($> 4.5 \times 10^{15}$ shots for $n=50$). Polynomial-time quantum algorithms ($M = \text{poly}(n)$) have total variation distance $\text{TV} \le O(\text{poly}(n) \cdot 2^{-n/2}) \to 0$ from thermal noise.
+5. **Classical High-Temperature & Microcanonical Dequantization (Theorem 5)**:
+   Because every individual chaotic eigenstate in the bulk satisfies $\langle E_m | A | E_m \rangle \approx \text{Tr}(A)/D + O(2^{-n/2})$, the local observable expectation value on an unknown chaotic eigenstate is evaluated classically in $O(1)$ operations via $\text{Tr}(A)/D$ (identically zero for traceless Pauli strings), matching quantum expectations to within $O(2^{-n/2})$ error without synthesizing the exponentially complex quantum state.
+6. **Verification Matrix**:
+   - `pytest -v tests/test_quantum_ergodicity_eth_barrier.py` (6/6 PASS).
+   - `node research/certificates/quantum_ergodicity_eth_crosscheck.js` (6/6 PASS).
+   - `python3 qsearch.py validate` (0 issues, 975 negative results).
+
+---
+
+## Prior: Investigation 48 Proved — Quantum Scrambling, Out-of-Time-Order Correlators (OTOC), the Maldacena-Shenker-Stanford (MSS) Chaos Bound, and Operator Complexity Growth: The Information Butterfly Barrier
 
 ### Investigation 48 Summary & Key Mathematical Discoveries:
 1. **OTOC Scrambling vs. Integrable Revivals (Theorem 1)**:

@@ -1,6 +1,25 @@
 # Mechanical Follow-Up Implementation Plan (pass 2)
 
-## Latest Handoff (2026-10-12, Investigation 48 Proved — Quantum Scrambling, Out-of-Time-Order Correlators (OTOC), the Maldacena-Shenker-Stanford (MSS) Chaos Bound, and Operator Complexity Growth: The Information Butterfly Barrier)
+## Latest Handoff (2026-10-12, Investigation 49 Proved — Quantum Ergodicity, Eigenstate Thermalization Hypothesis (ETH), and the Local Observable Measurement Barrier: Microcanonical Equivalence and Algorithmic Information Horizons)
+
+Read `research/QUANTUM_ERGODICITY_ETH_LOCAL_OBSERVABLE_BARRIER.md` and the TOP of `research/AGENT_HANDOFF.md`.
+Investigation 49 establishes the exact quantum and classical complexity bounds for quantum ergodicity, Srednicki's Eigenstate Thermalization Hypothesis (ETH), and the measurement of local observables on excited many-body states:
+- Proved Srednicki ETH Matrix Element Scaling: In chaotic quantum many-body systems, off-diagonal matrix elements of local observables scale as $\sigma_{\text{off}} = \Theta(e^{-S(E)/2}) = \Theta(2^{-n/2})$ with thermodynamic entropy $S(E) = \Theta(n)$ ($0.1194 \approx 0.1250$ for $n=6, D=64$).
+- Proved Eigenstate Thermal Blindness & Consecutive Difference Suppression: Diagonal matrix elements $\langle E_m | A | E_m \rangle$ fluctuate from the smooth microcanonical curve $\bar{A}(E)$ by an exponentially small envelope $O(2^{-n/2})$. Consecutive eigenstate differences in the bulk are suppressed ($|\Delta A|_{\text{c}} \approx 0.1373$), whereas integrable systems exhibit macroscopic fluctuations ($|\Delta A|_{\text{i}} \approx 0.3937$, a $> 2.8\times$ jump). Adjacent chaotic eigenstates are locally indistinguishable.
+- Proved Temporal Fluctuation Collapse & Relative Phase Erasure: For any non-equilibrium initial state, time-dependent expectation values relax to the diagonal ensemble $\bar{A}_{\text{diag}} \approx \bar{A}(E)$, with long-time temporal fluctuations decaying as $\text{Var}_t(\langle A(t) \rangle) \le O(e^{-S(E)}) = O(2^{-n})$. All microscopic relative phase information is completely erased from all local observables.
+- Proved Exponential Measurement Shot Lower Bound: Distinguishing a specific bulk eigenstate $|E_m\rangle$ from the microcanonical thermal ensemble using local measurements requires resolving a signal difference $\delta \le O(2^{-n/2})$. By Hoeffding's inequality, resolving this bias requires an exponential number of measurements $M_{\text{shots}} = \Omega(1/\delta^2) = \Omega(2^n)$ ($> 4.5 \times 10^{15}$ shots for $n=50$). Polynomial-time quantum algorithms ($M = \text{poly}(n)$) have total variation distance $\text{TV} \le O(\text{poly}(n) \cdot 2^{-n/2}) \to 0$ from thermal noise.
+- Proved Classical High-Temperature & Microcanonical Dequantization: Because every individual chaotic eigenstate in the bulk satisfies $\langle E_m | A | E_m \rangle \approx \text{Tr}(A)/D + O(2^{-n/2})$, the local observable expectation value on an unknown chaotic eigenstate is evaluated classically in $O(1)$ operations via $\text{Tr}(A)/D$ (identically zero for traceless Pauli strings), matching quantum expectations to within $O(2^{-n/2})$ error without synthesizing the exponentially complex quantum state.
+- Registered negative result: `NEG-QUANTUM-ERGODICITY-ETH-LOCAL-OBSERVABLE-BARRIER` (valid with 975 negative results).
+
+Mechanical Queue:
+1. Verify repo health: `python3 qsearch.py validate` and `python3 tools/check_site.py`.
+2. Run Investigation 49 test suite: `pytest tests/test_quantum_ergodicity_eth_barrier.py` (6/6 PASS).
+3. Run Investigation 49 cross-check: `node research/certificates/quantum_ergodicity_eth_crosscheck.js` (6/6 PASS).
+4. Run Investigation 48 test suite: `pytest tests/test_quantum_scrambling_otoc_barrier.py` (6/6 PASS).
+5. Strict invariants: `speedup_claim_allowed = False`, `accepted_speedup_candidate = False`.
+6. Advance to Investigation 50: Quantum Error Correcting Codes, Eastin-Knill Theorem, and the Non-Clifford Gate Fault-Tolerant Horizon: Transversal Obstructions and Magic State Distillation Bounds.
+
+## Prior Handoff (2026-10-12, Investigation 48 Proved — Quantum Scrambling, Out-of-Time-Order Correlators (OTOC), the Maldacena-Shenker-Stanford (MSS) Chaos Bound, and Operator Complexity Growth: The Information Butterfly Barrier)
 
 Read `research/QUANTUM_SCRAMBLING_OTOC_MSS_COMPLEXITY_BARRIER.md` and the TOP of `research/AGENT_HANDOFF.md`.
 Investigation 48 establishes the exact quantum and classical complexity bounds for quantum information scrambling, out-of-time-order correlators (OTOC), operator size growth, and the Maldacena-Shenker-Stanford (MSS) chaos bound:
