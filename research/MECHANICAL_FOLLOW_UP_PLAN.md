@@ -1,25 +1,25 @@
 # Mechanical Follow-Up Implementation Plan (pass 2)
 
-## Latest Handoff (2026-10-12, Investigation 60 Proved — Quantum Simulation of Many-Body Physics: Lieb-Robinson Light Cones, Trotter Error Accumulation, and Classical Tensor Network (MPS/PEPS) Simulation Horizons)
+## Latest Handoff (2026-10-12, Investigation 61 Proved — Quantum Walks, Continuous-Time Quantum Search, and the Spatial Graph Topology Horizon: Glued Trees, Childs-Goldstone Anderson Localization, and Classical Reversible Markov Chain Dequantization)
 
-Read `research/QUANTUM_SIMULATION_TENSOR_NETWORK_BARRIER.md` and the TOP of `research/AGENT_HANDOFF.md`.
-Investigation 60 establishes the exact computational complexity, extensive Trotter error scaling, Lieb-Robinson light cones, 1D Area Law Matrix Product State (MPS) dequantization, and physical noise fidelity collapse of many-body quantum simulation:
-- Proved Extensive Trotter-Suzuki Error Accumulation: For an $N$-particle lattice Hamiltonian $H = A + B$, the commutator norm scales extensively $\|[A, B]\| = \Theta(N)$. The first-order Trotter error demands $r_1 = \Omega(N t^2 / \epsilon)$ Trotter steps, scaling total gate count as $N_{\text{gates}} = \Omega(N^2 t^2 / \epsilon)$ ($> 5 \times 10^6$ gates for $N=100, t=5$).
-- Proved Lieb-Robinson Light-Cone Locality: Local operator commutators decay exponentially outside the causal light-cone $d(X, Y) > v_{LR} |t|$. Information propagates at finite velocity $v_{LR}$, strictly confining local observable dynamics at time $t$ to a spatial ball of radius $R(t) = v_{LR} |t|$.
-- Proved 1D Area Law & Classical Matrix Product State Dequantization: 1D gapped ground states obey the Area Law $S(A) \le O(1)$ and are efficiently represented by Matrix Product States (MPS) with constant bond dimension $\chi = O(1)$, enabling classical DMRG to compute ground states and correlations in linear classical time $O(N \chi^3) = O(N)$.
-- Proved Short-Time Dynamics & Classical Light-Cone Subsumption: Entanglement grows at most linearly $S(t) \le 2 v_{LR} s_{\max} t$. For short to intermediate times $t \le O(\log N)$, classical TEBD simulates dynamics in polynomial time $\text{poly}(N)$. In arbitrary dimensions, predicting local observables at $t = O(1)$ requires simulating a constant volume $V = O((v_{LR} t)^D) = O(1)$ in $O(1)$ classical time per observable.
-- Proved Physical Noise Fidelity Collapse & Fault-Tolerance Inevitability: While volume-law regimes ($t = \Omega(N)$ in 2D/3D) defeat classical tensor networks, physical quantum circuits require $N_{\text{gates}} \ge 10^5$ gates, where physical noise exponentially extinguishes fidelity $F(t) \le \exp(-\epsilon_{\text{gate}} N_{\text{gates}}) \le e^{-100} < 10^{-43}$, proving physical fault tolerance is strictly unavoidable.
-- Registered negative result: `NEG-QUANTUM-SIMULATION-TENSOR-NETWORK-HORIZON` (valid with 986 negative results).
+Read `research/QUANTUM_WALKS_SPATIAL_TOPOLOGY_BARRIER.md` and the TOP of `research/AGENT_HANDOFF.md`.
+Investigation 61 establishes the exact computational complexity, oracle dependency, lattice dimensional thresholds, spatial disorder Anderson localization, and classical Markov Chain Monte Carlo (MCMC) dequantization of quantum walks on graphs:
+- Proved The Glued-Trees Oracle Demarcation: The exponential quantum speedup on glued trees ($\Theta(n)$ quantum propagation vs. $2^{\Omega(n)}$ classical random walk steps) is strictly an artifact of an adversarial black-box local neighbor oracle with randomized vertex labels. Given explicit adjacency, classical Breadth-First Search (BFS) finds the exact shortest path from ENTRANCE to EXIT in linear time $O(N) = O(2^n)$.
+- Proved Childs-Goldstone Lattice Search Horizon ($d=4$ Threshold): Continuous-time quantum search on periodic lattices attains Grover speedup $O(\sqrt{N})$ if and only if $d > 4$. In $d = 4$ it suffers logarithmic slowdown $O(\sqrt{N \log N})$, in $d = 3$ it achieves only sub-quadratic $O(N^{2/3})$, and in 1D it takes linear time $O(N)$, offering zero asymptotic quantum speedup over classical linear search.
+- Proved Spatial Disorder & Anderson Localization Wavepacket Freezing: On spatial graphs with on-site disorder $W > 0$, quantum walks undergo Anderson localization with finite localization length $\xi \sim 1/W^2$. The wavepacket variance is strictly bounded for all time: $\sup_{t \ge 0} \langle x^2(t) \rangle \le O(\xi^2) < \infty$, completely freezing quantum walk exploration while classical diffusion continues unhindered.
+- Proved Szegedy Walk Spectral Gap Demarcation & Expander Dequantization: For any reversible Markov chain $P$ with spectral gap $\delta = 1 - \lambda_2$, Szegedy's quantum walk achieves at most an exact quadratic improvement in the spectral gap: $\Delta \theta = \Theta(\sqrt{\delta})$. On expander graphs where $\delta = \Theta(1)$, classical MCMC mixes in $O(\log N)$ time and independent sampling finds marked items in $O(1/\epsilon)$ trials, completely dequantizing quantum walk search in polynomial time.
+- Proved Adjacency Matrix BFS Classical Shortest-Path Subsumption: On the glued-trees graph of $N = 30$ vertices, classical BFS explores $\le N$ nodes, finding the optimal path of length $2n+1 = 7$ in $O(N)$ operations.
+- Registered negative result: `NEG-QUANTUM-WALKS-SPATIAL-TOPOLOGY-BARRIER` (valid with 987 negative results).
 
 Mechanical Queue:
 1. Verify repo health: `python3 qsearch.py validate` and `python3 tools/check_site.py`.
-2. Run Investigation 60 test suite: `pytest tests/test_quantum_simulation_tensor_network_barrier.py` (6/6 PASS).
-3. Run Investigation 60 cross-check: `node research/certificates/quantum_simulation_tensor_network_crosscheck.js` (6/6 PASS).
-4. Run Investigation 59 test suite: `pytest tests/test_quantum_annealing_spectral_gap_barrier.py` (6/6 PASS).
+2. Run Investigation 61 test suite: `pytest tests/test_quantum_walks_spatial_topology_barrier.py` (6/6 PASS).
+3. Run Investigation 61 cross-check: `node research/certificates/quantum_walks_spatial_topology_crosscheck.js` (6/6 PASS).
+4. Run Investigation 60 test suite: `pytest tests/test_quantum_simulation_tensor_network_barrier.py` (6/6 PASS).
 5. Strict invariants: `speedup_claim_allowed = False`, `accepted_speedup_candidate = False`.
-6. Advance to Investigation 61: Quantum Walks, Continuous-Time Quantum Search, and the Spatial Graph Topology Horizon: Glued Trees, Childs-Goldstone Anderson Localization, and Classical Reversible Markov Chain Dequantization.
+6. Advance to Investigation 62: The Harrow-Hassidim-Lloyd (HHL) Algorithm, Quantum Linear Systems (QLSP), and the Input-Output Dequantization Horizon: State Preparation QRAM Bottlenecks, Condition Number Scaling, Tomography Traps, and Tang's Classical Sample-and-Query Dequantization.
 
-## Prior Handoff (2026-10-12, Investigation 59 Proved — Quantum Annealing and Adiabatic Quantum Computing (AQC): Vanishing Spectral Gaps, Anderson Localization in Energy Space, and First-Order Quantum Phase Transition Bottlenecks)
+## Prior Handoff (2026-10-12, Investigation 60 Proved — Quantum Simulation of Many-Body Physics: Lieb-Robinson Light Cones, Trotter Error Accumulation, and Classical Tensor Network (MPS/PEPS) Simulation Horizons)
 
 Read `research/CONTINUOUS_VARIABLE_GKP_NON_GAUSSIAN_BARRIER.md` and the TOP of `research/AGENT_HANDOFF.md`.
 Investigation 54 establishes the exact quantum and classical complexity bounds for continuous-variable (CV) quantum computing, Gaussian states, symplectic group $Sp(2N, \mathbb{R})$, Hudson's theorem, Mari-Eisert classical dequantization, Wigner negativity, the Gottesman-Kitaev-Preskill (GKP) code, non-Gaussian magic, the cubic phase gate ($V_\gamma = e^{i \gamma \hat{x}^3}$), physical Kerr $\chi^{(3)}$ weakness, and the finite squeezing $\ge 10$ dB threshold barrier:

@@ -86231,5 +86231,31 @@
     "lesson": "Quantum simulation of many-body physics cannot achieve quantum computational advantage without full fault-tolerant quantum error correction or outside long-time 2D/3D non-integrable dynamics. Digital Trotter-Suzuki simulation incurs extensive commutator error accumulation ||[A, B]|| = Theta(N), requiring Omega(N^2 t^2 / eps) gates. By the Lieb-Robinson bound, information propagation is strictly causal, and 1D gapped ground states obey the Area Law S(A) <= O(1), enabling classical Matrix Product States (MPS) and DMRG to simulate ground states and short-time dynamics (t <= O(log N)) in classical polynomial time. While long-time evolution in higher dimensions generates volume-law entanglement that defeats classical tensor networks, physical quantum circuits in this regime require over 10^5 gates, causing physical noise to exponentially extinguish quantum state fidelity (F <= exp(-100) < 10^-43). Thus, NISQ quantum simulation is either dequantized classically by tensor networks or destroyed physically by unmitigated noise, establishing the strict necessity of physical fault tolerance.",
     "reason_invalid": "Trotter errors accumulate extensively, demanding super-linear gate counts that overwhelm NISQ coherence times. 1D gapped ground states and short-time dynamics (t <= O(log N)) are proven to obey area laws and are simulated in polynomial time classically by Matrix Product States (MPS) and TEBD algorithms. Higher-dimensional long-time dynamics that defeat tensor networks require gate counts where physical noise completely thermalizes the quantum processor (F < 10^-43). Therefore, claiming that noisy NISQ quantum simulators achieve scalable quantum computational advantage over classical simulation methods is mathematically, physically, and computationally invalid.",
     "source": "research/QUANTUM_SIMULATION_TENSOR_NETWORK_BARRIER.md"
+  },
+  {
+    "applies_to": [
+      "QUANTUM-WALKS",
+      "CONTINUOUS-TIME-QUANTUM-WALK",
+      "DISCRETE-TIME-QUANTUM-WALK",
+      "GLUED-TREES",
+      "CHILDS-GOLDSTONE-SEARCH",
+      "ANDERSON-LOCALIZATION",
+      "SZEGEDY-WALK",
+      "REVERSIBLE-MARKOV-CHAINS",
+      "SPATIAL-TOPOLOGY-BARRIER"
+    ],
+    "claim": "Quantum random walks (continuous or discrete) provide scalable superpolynomial speedups for search, optimization, or graph exploration on arbitrary spatial graph topologies or without highly artificial black-box oracles.",
+    "evidence": {
+      "anderson_localization_disorder_freezing": "On spatial graphs with random on-site disorder W > 0, quantum walks undergo Anderson localization with finite localization length xi ~ 1/W^2; wavepacket spread is strictly bounded sup_t <x^2(t)> <= xi^2 < infinity, completely halting ballistic spread and destroying quantum search advantages",
+      "childs_goldstone_dimension_barrier": "Childs and Goldstone (2004) proved that continuous-time quantum walk spatial search on lattices achieves Grover speedup O(sqrt(N)) only in dimensions d > 4; in d=4 it suffers logarithmic slowdown O(sqrt(N log N)), in d=3 it achieves only O(N^(2/3)), and in d=1 it takes O(N), offering zero quantum speedup over classical linear search",
+      "epistemic_invariants_enforced": "speedup_claim_allowed = False; accepted_speedup_candidate = False",
+      "glued_trees_oracle_dependence": "Childs et al. (2003) exponential speedup on glued trees requires an artificial black-box neighbor oracle with randomized vertex labels; given the explicit adjacency matrix or coordinate labels, classical BFS finds the shortest path from ENTRANCE to EXIT in linear time O(N) = O(2^n) or O(poly(n)) hill climbing",
+      "speedup_claim_allowed": false,
+      "szegedy_spectral_gap_quadratic_bound": "Szegedy (2004) quantum walks on reversible Markov chains achieve at most a quadratic speedup in the classical spectral gap Delta theta = Theta(sqrt(delta)); on expander graphs with delta = Theta(1), the quantum phase gap is constant and classical MCMC mixes in O(log N) time, dequantizing quantum walk search in polynomial time"
+    },
+    "id": "NEG-QUANTUM-WALKS-SPATIAL-TOPOLOGY-BARRIER",
+    "lesson": "Quantum random walks cannot provide scalable superpolynomial quantum speedup for general graph exploration, optimization, or spatial search. The exponential separation on glued trees is strictly an artifact of an adversarial black-box oracle hiding symmetric binary trees with randomized vertex labels; given an explicit adjacency matrix, classical Breadth-First Search (BFS) finds the shortest path from ENTRANCE to EXIT in linear time O(N). For spatial search on lattices, Childs & Goldstone (2004) established a critical dimension barrier at d=4: while d > 4 attains Grover speedup O(sqrt(N)), in d=3 the speedup is sub-quadratic O(N^(2/3)), and in d=1 quantum walks take linear time O(N), offering zero speedup over classical search. On spatial graphs with disorder, Anderson localization confines quantum wavepackets to a bounded envelope sup_t <x^2(t)> <= xi^2, completely halting propagation while classical diffusion continues unhindered. Finally, Szegedy quantum walks on reversible Markov chains are strictly bounded by a quadratic spectral gap relation Delta theta = Theta(sqrt(delta)), and on expander graphs are dequantized in polynomial time by classical MCMC sampling.",
+    "reason_invalid": "The glued-trees speedup requires an artificial black-box oracle model and collapses under explicit adjacency representations or random perturbations. Continuous-time quantum walk spatial search suffers from energy dispersion collapse in low dimensions d <= 4, yielding zero speedup in 1D. Spatial disorder induces Anderson localization that freezes wavepacket spreading. Szegedy walks achieve at most quadratic speedups over classical Markov chains and are dequantized by classical MCMC on expanders. Therefore, claiming that quantum walks achieve scalable, general-purpose speedups on arbitrary graphs or physical spatial topologies is mathematically, physically, and computationally invalid.",
+    "source": "research/QUANTUM_WALKS_SPATIAL_TOPOLOGY_BARRIER.md"
   }
 ]

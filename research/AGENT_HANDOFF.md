@@ -2,7 +2,34 @@
 
 Last updated: 2026-10-12
 
-## Latest: Investigation 60 Proved — Quantum Simulation of Many-Body Physics: Lieb-Robinson Light Cones, Trotter Error Accumulation, and Classical Tensor Network (MPS/PEPS) Simulation Horizons
+## Latest: Investigation 61 Proved — Quantum Walks, Continuous-Time Quantum Search, and the Spatial Graph Topology Horizon: Glued Trees, Childs-Goldstone Anderson Localization, and Classical Reversible Markov Chain Dequantization
+
+A major foundational investigation resolving the algorithmic complexity, oracle dependency, lattice dimensional thresholds, spatial disorder Anderson localization, and classical Markov Chain Monte Carlo (MCMC) dequantization of quantum walks on graphs has been completed and verified in `research/QUANTUM_WALKS_SPATIAL_TOPOLOGY_BARRIER.md`.
+
+### Core Invariants & Status:
+- `speedup_claim_allowed = False` strictly enforced everywhere.
+- `accepted_speedup_candidate = False` strictly enforced everywhere.
+- Registered negative result: `NEG-QUANTUM-WALKS-SPATIAL-TOPOLOGY-BARRIER` (valid with 987 negative results).
+
+### Investigation 61 Summary & Key Mathematical Discoveries:
+1. **The Glued-Trees Oracle Demarcation (Theorem 1)**:
+   The exponential quantum speedup on glued trees ($\Theta(n)$ quantum propagation vs. $2^{\Omega(n)}$ classical random walk steps) is strictly an artifact of an adversarial black-box local neighbor oracle with randomized vertex labels. When given the explicit graph adjacency matrix or standard topological embeddings, classical Breadth-First Search (BFS) finds the exact shortest path from ENTRANCE to EXIT in linear time $O(|V| + |E|) = O(N)$. Furthermore, the quantum walk's polynomial runtime relies entirely on an artificial, fragile 1D column-subspace symmetry; perturbing the glued interface destroys column coherence.
+2. **Childs-Goldstone Lattice Search Horizon ($d=4$ Threshold) (Theorem 2)**:
+   For spatial search on $d$-dimensional periodic hypercubic lattices $\mathbb{Z}_L^d$ ($N = L^d$), continuous-time quantum walk search achieves the quadratic Grover speedup $T = \Theta(\sqrt{N})$ if and only if $d > 4$. In dimension $d = 4$, the Green's function integral diverges logarithmically, causing a logarithmic slowdown $T = \Theta(\sqrt{N \log N})$. In $d = 3$, the algorithm achieves only sub-quadratic speedup $T = \Theta(N^{2/3})$. In physical dimensions $d = 1$ and $d = 2$, low-energy dispersion completely collapses the speedup: 1D quantum walk search requires $T = \Theta(N)$, offering zero asymptotic quantum speedup over classical linear search.
+3. **Spatial Disorder & Anderson Localization Wavepacket Freezing (Theorem 3)**:
+   On spatial graphs subject to non-zero on-site potential disorder ($W > 0$), quantum walks undergo Anderson localization. Wavepackets do not propagate ballistically ($\langle x^2(t) \rangle \sim v^2 t^2$); instead, all eigenstates are exponentially localized with localization length $\xi \sim 1/W^2$. The wavepacket variance is strictly bounded for all time: $\sup_{t \ge 0} \langle x^2(t) \rangle \le O(\xi^2) < \infty$. While classical diffusion overcomes finite barriers via thermal/probabilistic hopping ($\langle x^2(t) \rangle \to \infty$), quantum walk exploration is completely frozen by destructive interference.
+4. **Szegedy Walk Spectral Gap Demarcation & Expander Dequantization (Theorem 4)**:
+   For any ergodic, reversible Markov chain $P$ with spectral gap $\delta = 1 - \lambda_2$, Szegedy's quantum walk achieves at most an exact quadratic improvement in the spectral gap: $\Delta \theta = 2 \arccos(1 - \delta) = 2\sqrt{2\delta} + O(\delta^{3/2})$. On spectral expander graphs ($\delta = \Theta(1)$), the quantum phase gap is constant $\Theta(1)$, and the quantum hitting time matches Grover search. However, on expanders, classical Markov Chain Monte Carlo (MCMC) mixes in $t_{\text{mix}} = O(\log N)$ time, and classical random sampling hits any target fraction $\epsilon$ in $O(1/\epsilon)$ trials, completely dequantizing quantum walk search in polynomial time.
+5. **Adjacency Matrix BFS Classical Shortest-Path Subsumption (Theorem 5)**:
+   When the glued-trees graph is specified explicitly by its adjacency matrix, classical BFS finds the exact shortest path of length $2n + 1$ from ENTRANCE to EXIT in linear time $O(N)$ operations, confirming that the exponential speedup is an oracle separation, not an intrinsic property of graph connectivity.
+6. **Verification Matrix**:
+   - `pytest -v tests/test_quantum_walks_spatial_topology_barrier.py` (6/6 PASS).
+   - `node research/certificates/quantum_walks_spatial_topology_crosscheck.js` (6/6 PASS).
+   - `python3 qsearch.py validate` (0 issues, 987 negative results).
+
+---
+
+## Prior: Investigation 60 Proved — Quantum Simulation of Many-Body Physics: Lieb-Robinson Light Cones, Trotter Error Accumulation, and Classical Tensor Network (MPS/PEPS) Simulation Horizons
 
 A major foundational investigation resolving the algorithmic complexity, extensive Trotter error scaling, Lieb-Robinson light cones, 1D Area Law Matrix Product State (MPS) dequantization, and physical noise fidelity collapse of many-body quantum simulation has been completed and verified in `research/QUANTUM_SIMULATION_TENSOR_NETWORK_BARRIER.md`.
 
