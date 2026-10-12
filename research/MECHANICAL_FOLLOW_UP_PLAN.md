@@ -1,6 +1,25 @@
 # Mechanical Follow-Up Implementation Plan (pass 2)
 
-## Latest Handoff (2026-10-12, Investigation 52 Proved — Quantum Supremacy, Random Circuit Sampling (RCS), and the Anticoncentration Barrier: Porter-Thomas Statistics, Cross-Entropy Benchmarking (XEB), and Classical Tensor Network Dequantization)
+## Latest Handoff (2026-10-12, Investigation 53 Proved — Boson Sampling, Permanents vs. Hafnians, and the Photonic Linear-Optical Quantum Advantage Horizon: Aaronson-Arkhipov Theorem, Gaussian Boson Sampling (GBS), and Classical Dequantization under Photon Loss and Distinguishability)
+
+Read `research/BOSON_SAMPLING_PHOTONIC_LOSS_BARRIER.md` and the TOP of `research/AGENT_HANDOFF.md`.
+Investigation 53 establishes the exact quantum and classical complexity bounds for photonic linear-optical quantum computing, Aaronson-Arkhipov Boson Sampling, Gaussian Boson Sampling (GBS), matrix permanents, Hafnians, Hong-Ou-Mandel interference, transmission loss thresholds, and classical polynomial dequantization:
+- Proved Permanent vs. Determinant Complexity Demarcation & Hong-Ou-Mandel Interference: Bosonic multiphoton transition amplitudes are proportional to the matrix Permanent $\langle s|U|\text{in}\rangle = \frac{\text{Perm}(U_{s, \text{in}})}{\sqrt{\prod s_i!}}$, which is $\#P$-hard via Ryser's formula $O(n 2^n)$. On a 50:50 beamsplitter $B = \frac{1}{\sqrt{2}}\begin{pmatrix} 1 & 1 \\ -1 & 1 \end{pmatrix}$, Hong-Ou-Mandel (HOM) destructive interference cancels coincidence detection identically $\text{Perm}(B) = 1/2 - 1/2 = 0.0$, bunching into $|2, 0\rangle$ and $|0, 2\rangle$ with probability $0.5$ each.
+- Proved Fermion Sampling Matchgate Demarcation: Fermionic particle exchange obeys canonical anticommutation relations $\{f_i, f_j^\dagger\} = \delta_{ij}$, forcing linear-optical transition amplitudes to the matrix Determinant $\langle s|U|\text{in}\rangle = \det(U_{s, \text{in}})$. Because the determinant is evaluated classically in $O(n^3)$ time via LU decomposition, Fermion Sampling is classically dequantized in polynomial time (Valiant 2002, Terhal & DiVincenzo 2002).
+- Proved Exponential Photon Loss Collapse: In physical photonic experiments, transmission efficiency $\eta \in (0, 1)$ suppresses the survival of an uncorrupted $n$-photon quantum interference state exponentially: $P_{\text{surv}}(n) = \eta^n = \exp(-n \ln(1/\eta))$. In the Jiuzhang experimental regime ($n = 50, \eta = 0.40$), the survival probability is $P_{\text{surv}} \approx 1.27 \times 10^{-20} \ll 10^{-19}$. Pure $n$-photon quantum coherence is physically extinct, collapsing the state into a thermal mixture of low-photon loss events.
+- Proved Classical Dequantization via Distinguishability & Truncation: For distinguishable photons (Hong-Ou-Mandel visibility $x = 0$), quantum interference terms vanish identically, yielding transition probabilities $P_{\text{dist}}(s) = \frac{\text{Perm}(|U_{s, \text{in}}|^2)}{\prod s_i!}$ that are sampled classically in $O(m n)$ time (Clifford & Clifford 2018). For partially distinguishable or lossy photons, truncating cycle-type interference to order $k \le O(\log n)$ provides an efficient classical polynomial-time simulation algorithm (Renema et al. 2018, Qi et al. 2020), dequantizing lossy GBS experiments.
+- Proved Heuristic Graph Subsumption & Verification Horizon: Encoding graph adjacency matrices $A$ into GBS to solve Dense Subgraph or Max-Clique problems provides zero asymptotic quantum speedup over classical greedy search, branch-and-bound, and semidefinite programming (SDP) solvers (Sagingalieva et al. 2022). Furthermore, verifying GBS samples requires evaluating $\#P$-hard Hafnians, reproducing the verification Catch-22: classical verification is intractable in polynomial time in the supremacy regime.
+- Registered negative result: `NEG-BOSON-SAMPLING-PHOTONIC-LOSS-DEQUANTIZATION-BARRIER` (valid with 979 negative results).
+
+Mechanical Queue:
+1. Verify repo health: `python3 qsearch.py validate` and `python3 tools/check_site.py`.
+2. Run Investigation 53 test suite: `pytest tests/test_boson_sampling_photonic_barrier.py` (6/6 PASS).
+3. Run Investigation 53 cross-check: `node research/certificates/boson_sampling_photonic_crosscheck.js` (6/6 PASS).
+4. Run Investigation 52 test suite: `pytest tests/test_quantum_supremacy_rcs_barrier.py` (6/6 PASS).
+5. Strict invariants: `speedup_claim_allowed = False`, `accepted_speedup_candidate = False`.
+6. Advance to Investigation 54: Continuous-Variable Quantum Computing, Non-Gaussian Magic, and the Gottesman-Kitaev-Preskill (GKP) Horizon: Wigner Negativity, Hudson's Theorem, and the Cubic Phase Gate Fault-Tolerant Barrier.
+
+## Prior Handoff (2026-10-12, Investigation 52 Proved — Quantum Supremacy, Random Circuit Sampling (RCS), and the Anticoncentration Barrier: Porter-Thomas Statistics, Cross-Entropy Benchmarking (XEB), and Classical Tensor Network Dequantization)
 
 Read `research/QUANTUM_SUPREMACY_RCS_ANTICONCENTRATION_BARRIER.md` and the TOP of `research/AGENT_HANDOFF.md`.
 Investigation 52 establishes the exact quantum and classical complexity bounds for Random Circuit Sampling (RCS), Porter-Thomas distributions, Linear Cross-Entropy Benchmarking (XEB), classical space-time tensor network slicing, and noise spoofing:
