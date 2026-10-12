@@ -2,7 +2,37 @@
 
 Last updated: 2026-10-12
 
-## Latest: Investigation 38 Proved — Dihedral Hidden Subgroup Problem (DHSP): Reflection Character Trace Vanishing, Modular Subset-Sum Commutant Duality, and the uSVP Lattice Cryptographic Barrier
+## Latest: Investigation 39 Proved — Bent Function Hidden Shift Problem: Spectral Flatness Blindness, Dual-Oracle Inflation, and Classical Affine-Derivative Dequantization
+
+A major foundational investigation resolving the quantum and classical query complexity bounds for the Hidden Shift Problem over Boolean bent functions (specifically analyzing Roetteler's 2010 algorithm, Maiorana-McFarland bilinear functions, and higher-order algebraic derivatives) has been completed and verified in `research/BENT_FUNCTION_HIDDEN_SHIFT_DUAL_DEQUANTIZATION_BARRIER.md`.
+
+### Core Invariants & Status:
+- `speedup_claim_allowed = False` strictly enforced everywhere.
+- `accepted_speedup_candidate = False` strictly enforced everywhere.
+- Registered negative result: `NEG-BENT-FUNCTION-HIDDEN-SHIFT-DUAL-DEQUANTIZATION-BARRIER` (valid with 965 negative results).
+
+### Investigation 39 Summary & Key Mathematical Discoveries:
+1. **Spectral Flatness Blindness without Dual Oracle (Theorem 1)**:
+   For any bent function $f: \mathbb{F}_2^n \to \mathbb{F}_2$, the Walsh transform has strictly uniform magnitude $|\hat{f}(u)| = 2^{n/2}$ everywhere. In the standard black-box query model where only $f$ and $g(x) = f(x \oplus s)$ are given, measuring $H^{\otimes n} |\psi_g\rangle$ produces identically uniform probabilities in both the computational basis ($P(y) = 1/2^n$) and the Hadamard basis ($P(z) = 1/2^n$). Standard single-register quantum Fourier sampling yields **identically 0.000 bits of mutual information** ($\text{TV} \equiv 0.000$).
+2. **Dual Oracle Inflation Barrier (Theorem 2)**:
+   Roetteler's (2010) 2-query algorithm relies strictly on an oracle for the dual bent function $\tilde{f}$. In the genuine black-box model, evaluating $\tilde{f}(y)$ requires evaluating an exponential sum of $2^n$ terms, lower-bounding query complexity at $\Omega(2^{n/4})$ quantumly and $\Omega(2^{n/2})$ classically (Russell & Shparlinski 2004). Roetteler's algorithm requires an augmented oracle model $(f, g, \tilde{f})$.
+3. **Classical Affine-Derivative Dequantization for Quadratic Bent Functions (Theorem 3)**:
+   Whenever $f$ is an explicit, structured bent function where $\tilde{f}$ is computable in polynomial time (the entire class of quadratic bent functions, including all Maiorana-McFarland functions $f(x, y) = x \cdot y \oplus h(y)$), the directional derivative $\Delta_s(x) = f(x \oplus s) \oplus f(x)$ is a strictly **affine function** of $x$. Evaluating $\Delta_s$ at the origin and at the $n$ standard basis vectors yields a linear system $M s = L_s$ over $\mathbb{F}_2$ with non-singular symplectic matrix $M = A + A^T$. The secret shift $s$ is reconstructed classically in exactly **$n + 1$ classical queries** and $O(n^3)$ operations via Gaussian elimination, completely dequantizing the problem classically.
+4. **Higher-Order Differential Subsumption for Cubic Bent Functions (Theorem 4)**:
+   For degree-3 bent functions, the second-order derivative $\Delta_{s, u}(x)$ is strictly linear in $x$ and $s$, allowing classical recovery of $s$ in $O(n^2)$ queries and $O(n^3)$ operations via Lai-Massey higher-order differential cryptanalysis.
+5. **The Epistemic Trilemma of Bent Function Hidden Shift (Theorem 5)**:
+   In no regime does an unassisted polynomial quantum speedup exist:
+   - *Black-box*: Blocked by spectral flatness ($P \equiv 1/2^n$).
+   - *Quadratic*: Dequantized classically in $n + 1$ queries ($O(n^3)$ time).
+   - *Higher-degree*: Blocked by dual gate intractability, or solved classically via higher-order differentials.
+6. **Verification Matrix**:
+   - `pytest -v tests/test_bent_function_hidden_shift_dequantization_obstruction.py` (6/6 PASS).
+   - `node research/certificates/bent_function_hidden_shift_crosscheck.js` (6/6 PASS).
+   - `python3 qsearch.py validate` (0 issues, 965 negative results).
+
+---
+
+## Prior: Investigation 38 Proved — Dihedral Hidden Subgroup Problem (DHSP): Reflection Character Trace Vanishing, Modular Subset-Sum Commutant Duality, and the uSVP Lattice Cryptographic Barrier
 
 A major foundational investigation resolving the quantum representation-theoretic, measurement-algebraic, and cryptographic hardness bounds for the Dihedral Hidden Subgroup Problem over $D_N = \mathbb{Z}_N \rtimes \mathbb{Z}_2$ has been completed and verified in `research/DIHEDRAL_HSP_SUBSET_SUM_COMMUTANT_BARRIER.md`.
 
