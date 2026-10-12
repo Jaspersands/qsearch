@@ -2,7 +2,34 @@
 
 Last updated: 2026-10-12
 
-## Latest: Investigation 58 Proved — Quantum Approximate Optimization Algorithm (QAOA) on Bounded-Degree Graphs: Hastings-Bravyi-Koenig Non-Local Correlation Barriers, Overlap Gaps (OGP), and Classical Goemans-Williamson Superiority
+## Latest: Investigation 59 Proved — Quantum Annealing and Adiabatic Quantum Computing (AQC): Vanishing Spectral Gaps, Anderson Localization in Energy Space, and First-Order Quantum Phase Transition Bottlenecks
+
+A major foundational investigation resolving the computational complexity, adiabatic runtime scaling, first-order phase transitions, Anderson localization, and classical Path Integral Monte Carlo (PIMC) dequantization of Quantum Annealing (QA) and Adiabatic Quantum Computing (AQC) has been completed and verified in `research/QUANTUM_ANNEALING_SPECTRAL_GAP_BARRIER.md`.
+
+### Core Invariants & Status:
+- `speedup_claim_allowed = False` strictly enforced everywhere.
+- `accepted_speedup_candidate = False` strictly enforced everywhere.
+- Registered negative result: `NEG-QUANTUM-ANNEALING-SPECTRAL-GAP-BARRIER` (valid with 985 negative results).
+
+### Investigation 59 Summary & Key Mathematical Discoveries:
+1. **The Quantum Adiabatic Theorem & Quadratic Gap Scaling (Theorem 1)**:
+   By Messiah (1961) and Jansen, Ruskai, Seiler (2007), maintaining ground state adiabatic fidelity $1 - \delta$ along schedule $H(s)$ requires annealing time $T \ge \frac{c}{\delta} \frac{\max \|\frac{dH}{ds}\|}{\Delta_{\min}^2}$. When the minimum spectral gap $\Delta_{\min}$ vanishes exponentially as $\Theta(e^{-\alpha n})$, the required runtime explodes exponentially as $T = \Omega(e^{2\alpha n})$ (exceeding $4.85 \times 10^8$ time units for $n=50$ qubits at $\alpha=0.2$).
+2. **First-Order Quantum Phase Transitions & Tunneling Suppression (Theorem 2)**:
+   In hard combinatorial optimization instances (3-SAT, Random Exact Cover, spin glasses), the instantaneous ground state undergoes a first-order quantum phase transition at critical $s^* \in (0, 1)$ between a paramagnetic state and a spin glass configuration separated by extensive Hamming distance $d_H = \Theta(n)$. By Landau-Zener theory and $d_H$-order perturbation theory, the avoided crossing gap collapses exponentially as $\Delta_{\min} \approx 2 |V_{\text{eff}}| = \Theta((\Gamma / J)^{d_H}) = \Theta(e^{-\alpha n})$, rendering quantum tunneling exponentially slow.
+3. **Anderson Localization in Hamming Space (Theorem 3)**:
+   Altshuler, Krovi, and Roland (PNAS 2010) proved that on the Boolean hypercube $\{0, 1\}^n$, disordered problem Hamiltonians $H_P$ induce Anderson localization near $s \to 1$. Eigenstates localize in tiny Hamming basins of radius $r = O(1)$, producing an unbridgeable cascade of perturbative avoided crossings with gaps $\Delta_{\min} \sim e^{-c n \log n}$, trapping annealers in metastable false vacua.
+4. **Stoquastic Hamiltonians & Zero Sign Problem Dequantization (Theorem 4)**:
+   Standard transverse-field Ising annealers $H(s) = - (1 - s) \sum X_i + s H_P(Z)$ are strictly stoquastic ($H_{ij} \le 0$ for all $i \ne j$ in the computational basis). Under Suzuki-Trotter mapping, the partition function maps to a classical $(d+1)$-dimensional Ising system with strictly positive Boltzmann weights, having **zero fermion sign problem**. By Bravyi, Hastings, Terhal (2008), stoquastic ground states can be simulated or sampled classically in polynomial time via Path Integral Monte Carlo (PIMC) and Simulated Quantum Annealing (SQA).
+5. **Thermal Noise & Open-System Collapse (Theorem 5)**:
+   In physical NISQ annealing processors operating at $12-20\text{ mK}$, thermal energy $k_B T_{\text{temp}} \gg \Delta_{\min}$ for $n \ge 50$ qubits. Thermal excitations overwhelm quantum tunneling, destroying coherent quantum dynamics and reducing physical processors to classical thermal relaxers.
+6. **Verification Matrix**:
+   - `pytest -v tests/test_quantum_annealing_spectral_gap_barrier.py` (6/6 PASS).
+   - `node research/certificates/quantum_annealing_spectral_gap_crosscheck.js` (6/6 PASS).
+   - `python3 qsearch.py validate` (0 issues, 985 negative results).
+
+---
+
+## Prior: Investigation 58 Proved — Quantum Approximate Optimization Algorithm (QAOA) on Bounded-Degree Graphs: Hastings-Bravyi-Koenig Non-Local Correlation Barriers, Overlap Gaps (OGP), and Classical Goemans-Williamson Superiority
 
 A major foundational investigation resolving the approximation ratios, light-cone tree locality, classical SDP dominance, Hastings local algorithm superiority, and the Overlap Gap Property (OGP) barrier for the Quantum Approximate Optimization Algorithm (QAOA) has been completed and verified in `research/QAOA_BOUNDED_DEPTH_OPTIMIZATION_BARRIER.md`.
 

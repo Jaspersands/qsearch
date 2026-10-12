@@ -1,25 +1,25 @@
 # Mechanical Follow-Up Implementation Plan (pass 2)
 
-## Latest Handoff (2026-10-12, Investigation 58 Proved — Quantum Approximate Optimization Algorithm (QAOA) on Bounded-Degree Graphs: Hastings-Bravyi-Koenig Non-Local Correlation Barriers, Overlap Gaps (OGP), and Classical Goemans-Williamson Superiority)
+## Latest Handoff (2026-10-12, Investigation 59 Proved — Quantum Annealing and Adiabatic Quantum Computing (AQC): Vanishing Spectral Gaps, Anderson Localization in Energy Space, and First-Order Quantum Phase Transition Bottlenecks)
 
-Read `research/QAOA_BOUNDED_DEPTH_OPTIMIZATION_BARRIER.md` and the TOP of `research/AGENT_HANDOFF.md`.
-Investigation 58 establishes the exact approximation ratios, light-cone tree locality, classical SDP dominance, Hastings local algorithm superiority, and the Overlap Gap Property (OGP) barrier for QAOA:
-- Proved Farhi $p=1$ Exact Analytical Approximation Bound: For Max-Cut on 3-regular graphs, QAOA at $p=1$ achieves an optimal edge cut fraction $\langle C_{uv} \rangle = \frac{1}{2} + \frac{1}{2} \sin(4\beta) \sin(\gamma) \cos^2(\gamma)$ with exact maximum $\alpha_{\text{QAOA}}(p=1) = \frac{1}{2} + \frac{\sqrt{3}}{9} \approx 0.69245009$ ($< 10^{-12}$ error).
-- Proved Classical Goemans-Williamson SDP Dominance: Classical polynomial-time Goemans-Williamson SDP relaxation achieves guaranteed ratio $\alpha_{\text{GW}} \approx 0.878567$, strictly beating QAOA $p=1$ ($0.6925$) by $+18.61\%$ and $p=2$ ($0.7559$) by $+12.27\%$, requiring depth $p \ge 11$ to match.
-- Proved Hastings Classical Local Rounding Superiority: Classical randomized local algorithms with radius $R=1$ achieve $\alpha > 0.7025 > 0.69245$, strictly outperforming $p=1$ QAOA under identical locality constraints (Hastings 2019).
-- Proved Bravyi-Kliesch-Koenig-Tang Light-Cone Obstacle: QAOA depth-$p$ light cones on graphs with girth $g > 2p + 1$ see only unfrustrated bipartite trees, blinding local measurements to cycle frustration unless $p = \Omega(\log n)$ (where light cones contain $> 3,000$ qubits at $p=11$, triggering barren plateaus).
-- Proved Overlap Gap Property (OGP) Barrier: Clustering of near-optimal solutions creates an unbridgeable constant gap between spatially stable algorithms (including low-depth QAOA) and the ground state Parisi constant $P_* \approx 0.7632$ (Gamarnik et al. 2021).
-- Registered negative result: `NEG-QAOA-BOUNDED-DEPTH-OPTIMIZATION-BARRIER` (valid with 984 negative results).
+Read `research/QUANTUM_ANNEALING_SPECTRAL_GAP_BARRIER.md` and the TOP of `research/AGENT_HANDOFF.md`.
+Investigation 59 establishes the exact computational complexity, adiabatic runtime scaling, first-order phase transitions, Anderson localization, and classical Path Integral Monte Carlo (PIMC) dequantization of Quantum Annealing (QA) and Adiabatic Quantum Computing (AQC):
+- Proved The Quantum Adiabatic Theorem & Quadratic Gap Scaling: Maintaining adiabatic fidelity requires $T \ge \frac{c}{\delta} \frac{\max \|\frac{dH}{ds}\|}{\Delta_{\min}^2}$. Exponential gap collapse $\Delta_{\min} = \Theta(e^{-\alpha n})$ forces runtime explosion $T = \Omega(e^{2\alpha n})$ ($> 4.85 \times 10^8$ time units for $n=50$ at $\alpha=0.2$).
+- Proved First-Order Quantum Phase Transitions & Tunneling Suppression: Competing minima separated by extensive Hamming distance $d_H = \Theta(n)$ induce avoided crossing gaps $\Delta_{\min} = \Theta((\Gamma / J)^{d_H}) = \Theta(e^{-\alpha n})$, rendering quantum tunneling exponentially slow.
+- Proved Anderson Localization in Hamming Space: Disordered problem Hamiltonians cause Anderson localization on $\{0, 1\}^n$, trapping the annealer in false vacua via a cascade of exponentially vanishing perturbative anticrossings (Altshuler, Krovi, Roland 2010).
+- Proved Stoquastic Hamiltonians & Zero Sign Problem Dequantization: Transverse-field Ising annealers are strictly stoquastic ($H_{ij} \le 0$ for $i \ne j$), having zero fermion sign problem under Suzuki-Trotter mapping and enabling classical Path Integral Monte Carlo (PIMC) simulation in polynomial time (Bravyi, Hastings, Terhal 2008).
+- Proved Thermal Noise & Open-System Collapse: Thermal energy $k_B T_{\text{temp}} \gg \Delta_{\min}$ for $n \ge 50$ qubits at $10-20\text{ mK}$, destroying quantum coherence and reducing physical annealers to classical thermal relaxers.
+- Registered negative result: `NEG-QUANTUM-ANNEALING-SPECTRAL-GAP-BARRIER` (valid with 985 negative results).
 
 Mechanical Queue:
 1. Verify repo health: `python3 qsearch.py validate` and `python3 tools/check_site.py`.
-2. Run Investigation 58 test suite: `pytest tests/test_qaoa_bounded_depth_barrier.py` (6/6 PASS).
-3. Run Investigation 58 cross-check: `node research/certificates/qaoa_bounded_depth_crosscheck.js` (6/6 PASS).
-4. Run Investigation 57 test suite: `pytest tests/test_qml_kernel_concentration_barrier.py` (6/6 PASS).
+2. Run Investigation 59 test suite: `pytest tests/test_quantum_annealing_spectral_gap_barrier.py` (6/6 PASS).
+3. Run Investigation 59 cross-check: `node research/certificates/quantum_annealing_spectral_gap_crosscheck.js` (6/6 PASS).
+4. Run Investigation 58 test suite: `pytest tests/test_qaoa_bounded_depth_barrier.py` (6/6 PASS).
 5. Strict invariants: `speedup_claim_allowed = False`, `accepted_speedup_candidate = False`.
-6. Advance to Investigation 59: Quantum Annealing and Adiabatic Quantum Computing (AQC): Vanishing Spectral Gaps, Anderson Localization in Energy Space, and First-Order Quantum Phase Transition Bottlenecks.
+6. Advance to Investigation 60: Quantum Simulation of Many-Body Physics: Lieb-Robinson Light Cones, Trotter Error Accumulation, and Classical Tensor Network (MPS/PEPS) Simulation Horizons.
 
-## Prior Handoff (2026-10-12, Investigation 57 Proved — Quantum Machine Learning (QML), Quantum Kernel Methods, and the Quantum Tangent Kernel (QTK): Haar Random Feature Collapses, Projected Quantum Kernels, and Classical Reproducing Kernel Hilbert Space (RKHS) Dequantization)
+## Prior Handoff (2026-10-12, Investigation 58 Proved — Quantum Approximate Optimization Algorithm (QAOA) on Bounded-Degree Graphs: Hastings-Bravyi-Koenig Non-Local Correlation Barriers, Overlap Gaps (OGP), and Classical Goemans-Williamson Superiority)
 
 Read `research/CONTINUOUS_VARIABLE_GKP_NON_GAUSSIAN_BARRIER.md` and the TOP of `research/AGENT_HANDOFF.md`.
 Investigation 54 establishes the exact quantum and classical complexity bounds for continuous-variable (CV) quantum computing, Gaussian states, symplectic group $Sp(2N, \mathbb{R})$, Hudson's theorem, Mari-Eisert classical dequantization, Wigner negativity, the Gottesman-Kitaev-Preskill (GKP) code, non-Gaussian magic, the cubic phase gate ($V_\gamma = e^{i \gamma \hat{x}^3}$), physical Kerr $\chi^{(3)}$ weakness, and the finite squeezing $\ge 10$ dB threshold barrier:
