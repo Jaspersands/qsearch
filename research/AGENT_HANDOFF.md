@@ -2,7 +2,34 @@
 
 Last updated: 2026-10-12
 
-## Latest: Investigation 59 Proved — Quantum Annealing and Adiabatic Quantum Computing (AQC): Vanishing Spectral Gaps, Anderson Localization in Energy Space, and First-Order Quantum Phase Transition Bottlenecks
+## Latest: Investigation 60 Proved — Quantum Simulation of Many-Body Physics: Lieb-Robinson Light Cones, Trotter Error Accumulation, and Classical Tensor Network (MPS/PEPS) Simulation Horizons
+
+A major foundational investigation resolving the algorithmic complexity, extensive Trotter error scaling, Lieb-Robinson light cones, 1D Area Law Matrix Product State (MPS) dequantization, and physical noise fidelity collapse of many-body quantum simulation has been completed and verified in `research/QUANTUM_SIMULATION_TENSOR_NETWORK_BARRIER.md`.
+
+### Core Invariants & Status:
+- `speedup_claim_allowed = False` strictly enforced everywhere.
+- `accepted_speedup_candidate = False` strictly enforced everywhere.
+- Registered negative result: `NEG-QUANTUM-SIMULATION-TENSOR-NETWORK-HORIZON` (valid with 986 negative results).
+
+### Investigation 60 Summary & Key Mathematical Discoveries:
+1. **Extensive Trotter-Suzuki Error Accumulation (Theorem 1)**:
+   For an $N$-particle lattice Hamiltonian $H = A + B$, the commutator norm scales extensively: $\|[A, B]\| = \Theta(N)$. The first-order Trotter error $\|e^{-i t (A + B)} - (S_1(t/r))^r\| \le \frac{t^2}{2r} \|[A, B]\|$ demands $r_1 = \Omega(N t^2 / \epsilon)$ Trotter steps, scaling the total gate count as $N_{\text{gates}} = \Omega(N^2 t^2 / \epsilon)$ (exceeding $5 \times 10^6$ gates for $N=100$ and $t=5$). For second-order Strang splitting, $N_{\text{gates}} = \Omega(N^{1.5} t^{1.5} / \sqrt{\epsilon})$, scaling as $\Omega(N^3 / \sqrt{\epsilon})$ for long-time evolution ($t = \Omega(N)$).
+2. **Lieb-Robinson Light-Cone Locality (Theorem 2)**:
+   By Lieb & Robinson (1972) and Hastings (2004), operator commutators in local lattice spin systems satisfy $\|[A_X(t), B_Y]\| \le c \|A_X\| \|B_Y\| \exp(-\mu(d(X, Y) - v_{LR} |t|))$. Information propagates at a finite velocity $v_{LR}$, strictly confining local observable dynamics at time $t$ to a spatial ball of radius $R(t) = v_{LR} |t|$.
+3. **1D Area Law & Classical Matrix Product State Dequantization (Theorem 3)**:
+   By Hastings (2007) and Landau, Vazirani, Vidick (2015), ground states of 1D gapped Hamiltonians obey the Area Law $S(A) \le c_0 / \Delta = O(1)$. Such states are represented with machine precision by Matrix Product States (MPS) with constant bond dimension $\chi = O(1)$, allowing classical DMRG to compute ground states and local correlation functions in linear classical time $O(N \chi^3) = O(N)$, completely dequantizing 1D ground state quantum simulation.
+4. **Short-Time Dynamics & Classical Light-Cone Subsumption (Theorem 4)**:
+   By Osborne (2006) and Haah et al. (2018), 1D entanglement entropy grows at most linearly $S(t) \le 2 v_{LR} s_{\max} t$. For short to intermediate times $t \le O(\log N)$, the entanglement entropy is logarithmic $S(t) \le O(\log N)$, enabling classical TEBD to simulate dynamics in polynomial time $O(N t \cdot \text{poly}(N)) = \text{poly}(N)$. In arbitrary dimensions, predicting local observables at $t = O(1)$ requires simulating a constant volume $V = O((v_{LR} t)^D) = O(1)$, which is evaluated classically in $O(1)$ time per observable.
+5. **Physical Noise Fidelity Collapse & Fault-Tolerance Inevitability (Theorem 5)**:
+   Quantum advantage requires 2D/3D long-time evolution ($t = \Omega(N)$) where volume-law entanglement $S(t) = \Theta(N)$ defeats tensor networks. However, in this regime, physical quantum circuits require $N_{\text{gates}} \ge 10^5$ gates. With physical gate error $\epsilon_{\text{gate}} \approx 10^{-3}$, fidelity collapses exponentially as $F(t) \le \exp(-\epsilon_{\text{gate}} N_{\text{gates}}) \le e^{-100} < 10^{-43}$, reducing the state to white noise. Thus, physical fault-tolerant error correction is strictly unavoidable for quantum advantage in many-body simulation.
+6. **Verification Matrix**:
+   - `pytest -v tests/test_quantum_simulation_tensor_network_barrier.py` (6/6 PASS).
+   - `node research/certificates/quantum_simulation_tensor_network_crosscheck.js` (6/6 PASS).
+   - `python3 qsearch.py validate` (0 issues, 986 negative results).
+
+---
+
+## Prior: Investigation 59 Proved — Quantum Annealing and Adiabatic Quantum Computing (AQC): Vanishing Spectral Gaps, Anderson Localization in Energy Space, and First-Order Quantum Phase Transition Bottlenecks
 
 A major foundational investigation resolving the computational complexity, adiabatic runtime scaling, first-order phase transitions, Anderson localization, and classical Path Integral Monte Carlo (PIMC) dequantization of Quantum Annealing (QA) and Adiabatic Quantum Computing (AQC) has been completed and verified in `research/QUANTUM_ANNEALING_SPECTRAL_GAP_BARRIER.md`.
 

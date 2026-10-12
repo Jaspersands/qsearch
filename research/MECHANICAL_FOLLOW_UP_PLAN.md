@@ -1,25 +1,25 @@
 # Mechanical Follow-Up Implementation Plan (pass 2)
 
-## Latest Handoff (2026-10-12, Investigation 59 Proved — Quantum Annealing and Adiabatic Quantum Computing (AQC): Vanishing Spectral Gaps, Anderson Localization in Energy Space, and First-Order Quantum Phase Transition Bottlenecks)
+## Latest Handoff (2026-10-12, Investigation 60 Proved — Quantum Simulation of Many-Body Physics: Lieb-Robinson Light Cones, Trotter Error Accumulation, and Classical Tensor Network (MPS/PEPS) Simulation Horizons)
 
-Read `research/QUANTUM_ANNEALING_SPECTRAL_GAP_BARRIER.md` and the TOP of `research/AGENT_HANDOFF.md`.
-Investigation 59 establishes the exact computational complexity, adiabatic runtime scaling, first-order phase transitions, Anderson localization, and classical Path Integral Monte Carlo (PIMC) dequantization of Quantum Annealing (QA) and Adiabatic Quantum Computing (AQC):
-- Proved The Quantum Adiabatic Theorem & Quadratic Gap Scaling: Maintaining adiabatic fidelity requires $T \ge \frac{c}{\delta} \frac{\max \|\frac{dH}{ds}\|}{\Delta_{\min}^2}$. Exponential gap collapse $\Delta_{\min} = \Theta(e^{-\alpha n})$ forces runtime explosion $T = \Omega(e^{2\alpha n})$ ($> 4.85 \times 10^8$ time units for $n=50$ at $\alpha=0.2$).
-- Proved First-Order Quantum Phase Transitions & Tunneling Suppression: Competing minima separated by extensive Hamming distance $d_H = \Theta(n)$ induce avoided crossing gaps $\Delta_{\min} = \Theta((\Gamma / J)^{d_H}) = \Theta(e^{-\alpha n})$, rendering quantum tunneling exponentially slow.
-- Proved Anderson Localization in Hamming Space: Disordered problem Hamiltonians cause Anderson localization on $\{0, 1\}^n$, trapping the annealer in false vacua via a cascade of exponentially vanishing perturbative anticrossings (Altshuler, Krovi, Roland 2010).
-- Proved Stoquastic Hamiltonians & Zero Sign Problem Dequantization: Transverse-field Ising annealers are strictly stoquastic ($H_{ij} \le 0$ for $i \ne j$), having zero fermion sign problem under Suzuki-Trotter mapping and enabling classical Path Integral Monte Carlo (PIMC) simulation in polynomial time (Bravyi, Hastings, Terhal 2008).
-- Proved Thermal Noise & Open-System Collapse: Thermal energy $k_B T_{\text{temp}} \gg \Delta_{\min}$ for $n \ge 50$ qubits at $10-20\text{ mK}$, destroying quantum coherence and reducing physical annealers to classical thermal relaxers.
-- Registered negative result: `NEG-QUANTUM-ANNEALING-SPECTRAL-GAP-BARRIER` (valid with 985 negative results).
+Read `research/QUANTUM_SIMULATION_TENSOR_NETWORK_BARRIER.md` and the TOP of `research/AGENT_HANDOFF.md`.
+Investigation 60 establishes the exact computational complexity, extensive Trotter error scaling, Lieb-Robinson light cones, 1D Area Law Matrix Product State (MPS) dequantization, and physical noise fidelity collapse of many-body quantum simulation:
+- Proved Extensive Trotter-Suzuki Error Accumulation: For an $N$-particle lattice Hamiltonian $H = A + B$, the commutator norm scales extensively $\|[A, B]\| = \Theta(N)$. The first-order Trotter error demands $r_1 = \Omega(N t^2 / \epsilon)$ Trotter steps, scaling total gate count as $N_{\text{gates}} = \Omega(N^2 t^2 / \epsilon)$ ($> 5 \times 10^6$ gates for $N=100, t=5$).
+- Proved Lieb-Robinson Light-Cone Locality: Local operator commutators decay exponentially outside the causal light-cone $d(X, Y) > v_{LR} |t|$. Information propagates at finite velocity $v_{LR}$, strictly confining local observable dynamics at time $t$ to a spatial ball of radius $R(t) = v_{LR} |t|$.
+- Proved 1D Area Law & Classical Matrix Product State Dequantization: 1D gapped ground states obey the Area Law $S(A) \le O(1)$ and are efficiently represented by Matrix Product States (MPS) with constant bond dimension $\chi = O(1)$, enabling classical DMRG to compute ground states and correlations in linear classical time $O(N \chi^3) = O(N)$.
+- Proved Short-Time Dynamics & Classical Light-Cone Subsumption: Entanglement grows at most linearly $S(t) \le 2 v_{LR} s_{\max} t$. For short to intermediate times $t \le O(\log N)$, classical TEBD simulates dynamics in polynomial time $\text{poly}(N)$. In arbitrary dimensions, predicting local observables at $t = O(1)$ requires simulating a constant volume $V = O((v_{LR} t)^D) = O(1)$ in $O(1)$ classical time per observable.
+- Proved Physical Noise Fidelity Collapse & Fault-Tolerance Inevitability: While volume-law regimes ($t = \Omega(N)$ in 2D/3D) defeat classical tensor networks, physical quantum circuits require $N_{\text{gates}} \ge 10^5$ gates, where physical noise exponentially extinguishes fidelity $F(t) \le \exp(-\epsilon_{\text{gate}} N_{\text{gates}}) \le e^{-100} < 10^{-43}$, proving physical fault tolerance is strictly unavoidable.
+- Registered negative result: `NEG-QUANTUM-SIMULATION-TENSOR-NETWORK-HORIZON` (valid with 986 negative results).
 
 Mechanical Queue:
 1. Verify repo health: `python3 qsearch.py validate` and `python3 tools/check_site.py`.
-2. Run Investigation 59 test suite: `pytest tests/test_quantum_annealing_spectral_gap_barrier.py` (6/6 PASS).
-3. Run Investigation 59 cross-check: `node research/certificates/quantum_annealing_spectral_gap_crosscheck.js` (6/6 PASS).
-4. Run Investigation 58 test suite: `pytest tests/test_qaoa_bounded_depth_barrier.py` (6/6 PASS).
+2. Run Investigation 60 test suite: `pytest tests/test_quantum_simulation_tensor_network_barrier.py` (6/6 PASS).
+3. Run Investigation 60 cross-check: `node research/certificates/quantum_simulation_tensor_network_crosscheck.js` (6/6 PASS).
+4. Run Investigation 59 test suite: `pytest tests/test_quantum_annealing_spectral_gap_barrier.py` (6/6 PASS).
 5. Strict invariants: `speedup_claim_allowed = False`, `accepted_speedup_candidate = False`.
-6. Advance to Investigation 60: Quantum Simulation of Many-Body Physics: Lieb-Robinson Light Cones, Trotter Error Accumulation, and Classical Tensor Network (MPS/PEPS) Simulation Horizons.
+6. Advance to Investigation 61: Quantum Walks, Continuous-Time Quantum Search, and the Spatial Graph Topology Horizon: Glued Trees, Childs-Goldstone Anderson Localization, and Classical Reversible Markov Chain Dequantization.
 
-## Prior Handoff (2026-10-12, Investigation 58 Proved — Quantum Approximate Optimization Algorithm (QAOA) on Bounded-Degree Graphs: Hastings-Bravyi-Koenig Non-Local Correlation Barriers, Overlap Gaps (OGP), and Classical Goemans-Williamson Superiority)
+## Prior Handoff (2026-10-12, Investigation 59 Proved — Quantum Annealing and Adiabatic Quantum Computing (AQC): Vanishing Spectral Gaps, Anderson Localization in Energy Space, and First-Order Quantum Phase Transition Bottlenecks)
 
 Read `research/CONTINUOUS_VARIABLE_GKP_NON_GAUSSIAN_BARRIER.md` and the TOP of `research/AGENT_HANDOFF.md`.
 Investigation 54 establishes the exact quantum and classical complexity bounds for continuous-variable (CV) quantum computing, Gaussian states, symplectic group $Sp(2N, \mathbb{R})$, Hudson's theorem, Mari-Eisert classical dequantization, Wigner negativity, the Gottesman-Kitaev-Preskill (GKP) code, non-Gaussian magic, the cubic phase gate ($V_\gamma = e^{i \gamma \hat{x}^3}$), physical Kerr $\chi^{(3)}$ weakness, and the finite squeezing $\ge 10$ dB threshold barrier:

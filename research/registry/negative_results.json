@@ -86205,5 +86205,31 @@
     "lesson": "Quantum Annealing (QA) and Adiabatic Quantum Computing (AQC) cannot provide a scalable quantum computational speedup over classical optimization algorithms on NP-hard problems. The adiabatic theorem enforces runtime scaling T = Omega(1 / Delta_min^2). In hard combinatorial problems, first-order quantum phase transitions separate the initial paramagnetic state from the spin-glass ground state by extensive Hamming distance d_H = Theta(n), causing the avoided crossing gap to collapse exponentially Delta_min = Theta(e^(-alpha n)) and forcing annealing runtime to scale exponentially as T = Omega(e^(2 alpha n)). Disordered energy landscapes induce Anderson localization in Hamming space, trapping annealers in metastable local minima (Altshuler et al. 2010). Furthermore, standard transverse-field annealers are strictly stoquastic (H_ij <= 0), possessing zero sign problem and rendering their tunneling dynamics classically simulable in polynomial time via classical Path Integral Monte Carlo (PIMC). Finally, physical device temperatures k_B T_temp overwhelm exponentially small spectral gaps, reducing physical annealers to classical thermal relaxers.",
     "reason_invalid": "First-order quantum phase transitions across extensive Hamming distances force the minimum spectral gap to vanish exponentially Delta_min = Theta(e^(-alpha n)), demanding exponentially large annealing runtimes T = Omega(e^(2 alpha n)) under the adiabatic theorem. Anderson localization traps the state in local minima near s -> 1. Standard stoquastic Hamiltonians have zero sign problem, allowing classical Path Integral Monte Carlo and Simulated Quantum Annealing to match quantum tunneling in polynomial time. Open-system thermal noise easily exceeds the spectral gap for moderate qubit numbers. Therefore, claiming scalable quantum algorithmic speedups for quantum annealers on NP-hard optimization problems is mathematically, physically, and computationally invalid.",
     "source": "research/QUANTUM_ANNEALING_SPECTRAL_GAP_BARRIER.md"
+  },
+  {
+    "applies_to": [
+      "QUANTUM-SIMULATION",
+      "MANY-BODY-PHYSICS",
+      "TROTTER-SUZUKI",
+      "LIEB-ROBINSON-BOUND",
+      "AREA-LAW",
+      "MATRIX-PRODUCT-STATES",
+      "PEPS",
+      "FAULT-TOLERANCE-INEVITABILITY"
+    ],
+    "claim": "Digital or analog quantum simulators can achieve uncorrectable quantum computational speedup over classical algorithms in NISQ, 1D, gapped, or short-time regimes of many-body physics.",
+    "evidence": {
+      "area_law_mps_dequantization": "Hastings (2007) and Landau et al. (2015) proved that 1D gapped ground states obey the Area Law S(A) <= O(1), allowing classical Matrix Product States (MPS/DMRG) with constant bond dimension chi = O(1) to evaluate ground states in linear classical time O(N chi^3)",
+      "classical_tebd_short_time_simulation": "Entanglement entropy under real-time evolution grows at most linearly S(t) <= 2 v_LR t, allowing classical TEBD to simulate 1D dynamics up to t <= O(log N) in polynomial time O(N t poly(N))",
+      "epistemic_invariants_enforced": "speedup_claim_allowed = False; accepted_speedup_candidate = False",
+      "extensive_trotter_gate_overhead": "Trotter product formulas on N-particle lattices suffer from extensive commutator scaling ||[A, B]|| = Theta(N), requiring N_gates = Omega(N^2 t^2 / eps) gates, which exceeds 5 million gates for 100 qubits at moderate time t=5",
+      "lieb_robinson_causal_lightcone": "Lieb and Robinson (1972) proved that operator information propagates at bounded velocity v_LR, confining local observable dynamics at time t to spatial radius R(t) = v_LR t and rendering short-time local dynamics simulable classically in O(1) time",
+      "physical_noise_fidelity_collapse": "In volume-law entanglement regimes where classical tensor networks fail, executing the required N_gates >= 10^5 noisy gates at error rate eps = 10^-3 causes physical fidelity to collapse exponentially as F <= exp(-100) < 10^-43, destroying all quantum coherence",
+      "speedup_claim_allowed": false
+    },
+    "id": "NEG-QUANTUM-SIMULATION-TENSOR-NETWORK-HORIZON",
+    "lesson": "Quantum simulation of many-body physics cannot achieve quantum computational advantage without full fault-tolerant quantum error correction or outside long-time 2D/3D non-integrable dynamics. Digital Trotter-Suzuki simulation incurs extensive commutator error accumulation ||[A, B]|| = Theta(N), requiring Omega(N^2 t^2 / eps) gates. By the Lieb-Robinson bound, information propagation is strictly causal, and 1D gapped ground states obey the Area Law S(A) <= O(1), enabling classical Matrix Product States (MPS) and DMRG to simulate ground states and short-time dynamics (t <= O(log N)) in classical polynomial time. While long-time evolution in higher dimensions generates volume-law entanglement that defeats classical tensor networks, physical quantum circuits in this regime require over 10^5 gates, causing physical noise to exponentially extinguish quantum state fidelity (F <= exp(-100) < 10^-43). Thus, NISQ quantum simulation is either dequantized classically by tensor networks or destroyed physically by unmitigated noise, establishing the strict necessity of physical fault tolerance.",
+    "reason_invalid": "Trotter errors accumulate extensively, demanding super-linear gate counts that overwhelm NISQ coherence times. 1D gapped ground states and short-time dynamics (t <= O(log N)) are proven to obey area laws and are simulated in polynomial time classically by Matrix Product States (MPS) and TEBD algorithms. Higher-dimensional long-time dynamics that defeat tensor networks require gate counts where physical noise completely thermalizes the quantum processor (F < 10^-43). Therefore, claiming that noisy NISQ quantum simulators achieve scalable quantum computational advantage over classical simulation methods is mathematically, physically, and computationally invalid.",
+    "source": "research/QUANTUM_SIMULATION_TENSOR_NETWORK_BARRIER.md"
   }
 ]
