@@ -1,5 +1,10 @@
 # Bent Function Hidden Shift Problem: Spectral Flatness Blindness, Dual-Oracle Inflation, and Classical Affine-Derivative Dequantization
 
+**GENERAL CONCLUSION RETRACTED,2026-10-13.** This negative is quarantined.
+Explicit higher-degree bent functions can have efficient duals and nonlinear
+derivatives. Two flat measurement bases do not exclude all measurements.
+Read [the correction](HSP_CAMPAIGN_CLAIM_AUDIT.md). Historical text follows.
+
 **Author**: Adversarial Mathematical Research Runner  
 **Date**: 2026-10-12  
 **Status**: Formally Verified & Empirically Confirmed (Investigation 39)  

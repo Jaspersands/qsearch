@@ -1,0 +1,6923 @@
+{
+  "status": "SOURCE_SPECIFIC_WORD_SPAN_DECISION_AND_WIDTH_CHANGING_REDUCTION_TARGET_REVIEW_PENDING",
+  "producer_sha256": "867c8f8b8e19660784714184963fdeaa6d27ab1cf2ae83a7d1ba82e60f5fff96",
+  "derivation_sha256": "e4866dd3a87dc97f13729f1ecfd549c70c4860fd29a0238c37efaeb590ccceac",
+  "dependency_sha256": {
+    "native_word_frame_access.py": "36bfface798ebaf7ef26d5ded59a3152363a2da5182fbde3b6b24a80b9ac612d",
+    "native_full_root_slice.py": "e3cd11cda6bc5a73ca4fb6131c1ac4c0d16f6a5608bd1ccbd1f6d691da77c966",
+    "native_small_multiple_completion.py": "5519f9809f60ed4ab1447c5bf6aa217b8bacab3d709abb85314212749149eaac",
+    "ternary_covariant_noise.py": "2dadce1a070376a073c4a0fccd1aed2c5988d6478983b654c2a2d640f863d42a",
+    "ternary_measured_lattice_decoder.py": "151f7c5fbb9e09ad8c231fb841c6d8ce385d54123acd9d15f33b3ce51efced4b",
+    "ternary_noise_degradation.py": "def0aebaf71b7bbd0a659993c3181b28c10b2ae26563cb4dbd7a74f26fd4fde4"
+  },
+  "actual_original_data_controls": [
+    {
+      "original_records": [
+        {
+          "label": [
+            2
+          ],
+          "value": 0,
+          "modulus": 3,
+          "source_id": "known-group-99001-0"
+        },
+        {
+          "label": [
+            2
+          ],
+          "value": 0,
+          "modulus": 3,
+          "source_id": "known-group-99001-1"
+        },
+        {
+          "label": [
+            0
+          ],
+          "value": 0,
+          "modulus": 3,
+          "source_id": "known-group-99001-2"
+        },
+        {
+          "label": [
+            0
+          ],
+          "value": 0,
+          "modulus": 3,
+          "source_id": "known-group-99001-3"
+        },
+        {
+          "label": [
+            2
+          ],
+          "value": 0,
+          "modulus": 3,
+          "source_id": "known-group-99001-4"
+        },
+        {
+          "label": [
+            1
+          ],
+          "value": 0,
+          "modulus": 3,
+          "source_id": "known-group-99001-5"
+        }
+      ],
+      "known_mask": [
+        0
+      ],
+      "preparation_contract": {
+        "public_family": {
+          "modulus": "3",
+          "dimension": 1,
+          "cohorts": 1,
+          "sites": 3,
+          "paired_labels": [
+            [
+              [
+                [
+                  2
+                ],
+                [
+                  2
+                ]
+              ],
+              [
+                [
+                  0
+                ],
+                [
+                  0
+                ]
+              ],
+              [
+                [
+                  2
+                ],
+                [
+                  1
+                ]
+              ]
+            ]
+          ],
+          "responses_masks_source_IDs_and_errors_supplied": false
+        },
+        "known_word_phases_by_cohort": [
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        ],
+        "original_records_paid_once": 6,
+        "cohort_controlled_local_diagonal_gates": 3,
+        "uniform_index_qubits": 0,
+        "uniform_qutrits": 3,
+        "word_domain_size": "27",
+        "frequency_group_size": "3",
+        "frequency_coordinate_trits": 1,
+        "secret_or_errors_supplied_to_preparation": false,
+        "same_as_previous_native_point_seed": false,
+        "all_word_table_required_for_indexed_preparation": false,
+        "normalized_fibre_oracle_supplied": false,
+        "physical_gate_synthesis_and_precision_supplied": false
+      },
+      "actual_word_rows": [
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            0,
+            0
+          ],
+          "frequency": [
+            1
+          ],
+          "known_phase": 0
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            0,
+            1
+          ],
+          "frequency": [
+            1
+          ],
+          "known_phase": 0
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            0,
+            2
+          ],
+          "frequency": [
+            1
+          ],
+          "known_phase": 0
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            1,
+            0
+          ],
+          "frequency": [
+            1
+          ],
+          "known_phase": 0
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            1,
+            1
+          ],
+          "frequency": [
+            1
+          ],
+          "known_phase": 0
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            1,
+            2
+          ],
+          "frequency": [
+            1
+          ],
+          "known_phase": 0
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            2,
+            0
+          ],
+          "frequency": [
+            1
+          ],
+          "known_phase": 0
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            2,
+            1
+          ],
+          "frequency": [
+            1
+          ],
+          "known_phase": 0
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            2,
+            2
+          ],
+          "frequency": [
+            1
+          ],
+          "known_phase": 0
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            0,
+            0
+          ],
+          "frequency": [
+            2
+          ],
+          "known_phase": 0
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            0,
+            1
+          ],
+          "frequency": [
+            2
+          ],
+          "known_phase": 0
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            0,
+            2
+          ],
+          "frequency": [
+            2
+          ],
+          "known_phase": 0
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            1,
+            0
+          ],
+          "frequency": [
+            2
+          ],
+          "known_phase": 0
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            1,
+            1
+          ],
+          "frequency": [
+            2
+          ],
+          "known_phase": 0
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            1,
+            2
+          ],
+          "frequency": [
+            2
+          ],
+          "known_phase": 0
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            2,
+            0
+          ],
+          "frequency": [
+            2
+          ],
+          "known_phase": 0
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            2,
+            1
+          ],
+          "frequency": [
+            2
+          ],
+          "known_phase": 0
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            2,
+            2
+          ],
+          "frequency": [
+            2
+          ],
+          "known_phase": 0
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            0,
+            0
+          ],
+          "frequency": [
+            0
+          ],
+          "known_phase": 0
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            0,
+            1
+          ],
+          "frequency": [
+            0
+          ],
+          "known_phase": 0
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            0,
+            2
+          ],
+          "frequency": [
+            0
+          ],
+          "known_phase": 0
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            1,
+            0
+          ],
+          "frequency": [
+            0
+          ],
+          "known_phase": 0
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            1,
+            1
+          ],
+          "frequency": [
+            0
+          ],
+          "known_phase": 0
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            1,
+            2
+          ],
+          "frequency": [
+            0
+          ],
+          "known_phase": 0
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            2,
+            0
+          ],
+          "frequency": [
+            0
+          ],
+          "known_phase": 0
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            2,
+            1
+          ],
+          "frequency": [
+            0
+          ],
+          "known_phase": 0
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            2,
+            2
+          ],
+          "frequency": [
+            0
+          ],
+          "known_phase": 0
+        }
+      ],
+      "actual_fibre_counts": [
+        9,
+        9,
+        9
+      ],
+      "span_rank": 3,
+      "word_dimension": 27,
+      "exact_span_acceptance_root_polynomial": [
+        "1"
+      ],
+      "diagnostic_span_acceptance_probability": 1.0000000000000002,
+      "exact_uniform_raw_value_null_acceptance": "1/9",
+      "diagnostic_raw_comparison_acceptance_probability": 0.33333333333333337,
+      "ideal_raw_comparison_acceptance": "1/3",
+      "truth_fixture_only": {
+        "masked_secret": [
+          0
+        ],
+        "original_errors": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "pathwise_span_rejection_upper": "0",
+      "dense_reference_is_an_efficient_decision_algorithm": false,
+      "source_calibration_is_unbounded_Gaussian_advantage_evidence": false,
+      "span_effect_implementation_supplied": false
+    },
+    {
+      "original_records": [
+        {
+          "label": [
+            7
+          ],
+          "value": 8,
+          "modulus": 9,
+          "source_id": "known-group-99002-0"
+        },
+        {
+          "label": [
+            4
+          ],
+          "value": 2,
+          "modulus": 9,
+          "source_id": "known-group-99002-1"
+        },
+        {
+          "label": [
+            3
+          ],
+          "value": 6,
+          "modulus": 9,
+          "source_id": "known-group-99002-2"
+        },
+        {
+          "label": [
+            0
+          ],
+          "value": 0,
+          "modulus": 9,
+          "source_id": "known-group-99002-3"
+        },
+        {
+          "label": [
+            6
+          ],
+          "value": 3,
+          "modulus": 9,
+          "source_id": "known-group-99002-4"
+        },
+        {
+          "label": [
+            0
+          ],
+          "value": 0,
+          "modulus": 9,
+          "source_id": "known-group-99002-5"
+        },
+        {
+          "label": [
+            6
+          ],
+          "value": 3,
+          "modulus": 9,
+          "source_id": "known-group-99002-6"
+        },
+        {
+          "label": [
+            2
+          ],
+          "value": 1,
+          "modulus": 9,
+          "source_id": "known-group-99002-7"
+        }
+      ],
+      "known_mask": [
+        7
+      ],
+      "preparation_contract": {
+        "public_family": {
+          "modulus": "9",
+          "dimension": 1,
+          "cohorts": 1,
+          "sites": 4,
+          "paired_labels": [
+            [
+              [
+                [
+                  7
+                ],
+                [
+                  4
+                ]
+              ],
+              [
+                [
+                  3
+                ],
+                [
+                  0
+                ]
+              ],
+              [
+                [
+                  6
+                ],
+                [
+                  0
+                ]
+              ],
+              [
+                [
+                  6
+                ],
+                [
+                  2
+                ]
+              ]
+            ]
+          ],
+          "responses_masks_source_IDs_and_errors_supplied": false
+        },
+        "known_word_phases_by_cohort": [
+          [
+            [
+              3,
+              0,
+              6
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              6,
+              3
+            ]
+          ]
+        ],
+        "original_records_paid_once": 8,
+        "cohort_controlled_local_diagonal_gates": 4,
+        "uniform_index_qubits": 0,
+        "uniform_qutrits": 4,
+        "word_domain_size": "81",
+        "frequency_group_size": "9",
+        "frequency_coordinate_trits": 2,
+        "secret_or_errors_supplied_to_preparation": false,
+        "same_as_previous_native_point_seed": false,
+        "all_word_table_required_for_indexed_preparation": false,
+        "normalized_fibre_oracle_supplied": false,
+        "physical_gate_synthesis_and_precision_supplied": false
+      },
+      "actual_word_rows": [
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "frequency": [
+            4
+          ],
+          "known_phase": 3
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "frequency": [
+            3
+          ],
+          "known_phase": 0
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            0,
+            0,
+            2
+          ],
+          "frequency": [
+            5
+          ],
+          "known_phase": 6
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "frequency": [
+            1
+          ],
+          "known_phase": 3
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "frequency": [
+            0
+          ],
+          "known_phase": 0
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            0,
+            1,
+            2
+          ],
+          "frequency": [
+            2
+          ],
+          "known_phase": 6
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            0,
+            2,
+            0
+          ],
+          "frequency": [
+            7
+          ],
+          "known_phase": 3
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            0,
+            2,
+            1
+          ],
+          "frequency": [
+            6
+          ],
+          "known_phase": 0
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            0,
+            2,
+            2
+          ],
+          "frequency": [
+            8
+          ],
+          "known_phase": 6
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "frequency": [
+            7
+          ],
+          "known_phase": 3
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            1,
+            0,
+            1
+          ],
+          "frequency": [
+            6
+          ],
+          "known_phase": 0
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            1,
+            0,
+            2
+          ],
+          "frequency": [
+            8
+          ],
+          "known_phase": 6
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            1,
+            1,
+            0
+          ],
+          "frequency": [
+            4
+          ],
+          "known_phase": 3
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            1,
+            1,
+            1
+          ],
+          "frequency": [
+            3
+          ],
+          "known_phase": 0
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            1,
+            1,
+            2
+          ],
+          "frequency": [
+            5
+          ],
+          "known_phase": 6
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            1,
+            2,
+            0
+          ],
+          "frequency": [
+            1
+          ],
+          "known_phase": 3
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            1,
+            2,
+            1
+          ],
+          "frequency": [
+            0
+          ],
+          "known_phase": 0
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "frequency": [
+            2
+          ],
+          "known_phase": 6
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            2,
+            0,
+            0
+          ],
+          "frequency": [
+            1
+          ],
+          "known_phase": 3
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            2,
+            0,
+            1
+          ],
+          "frequency": [
+            0
+          ],
+          "known_phase": 0
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            2,
+            0,
+            2
+          ],
+          "frequency": [
+            2
+          ],
+          "known_phase": 6
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            2,
+            1,
+            0
+          ],
+          "frequency": [
+            7
+          ],
+          "known_phase": 3
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            2,
+            1,
+            1
+          ],
+          "frequency": [
+            6
+          ],
+          "known_phase": 0
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            2,
+            1,
+            2
+          ],
+          "frequency": [
+            8
+          ],
+          "known_phase": 6
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            2,
+            2,
+            0
+          ],
+          "frequency": [
+            4
+          ],
+          "known_phase": 3
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            2,
+            2,
+            1
+          ],
+          "frequency": [
+            3
+          ],
+          "known_phase": 0
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            2,
+            2,
+            2
+          ],
+          "frequency": [
+            5
+          ],
+          "known_phase": 6
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "frequency": [
+            3
+          ],
+          "known_phase": 0
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            0,
+            0,
+            1
+          ],
+          "frequency": [
+            2
+          ],
+          "known_phase": 6
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            0,
+            0,
+            2
+          ],
+          "frequency": [
+            4
+          ],
+          "known_phase": 3
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            0,
+            1,
+            0
+          ],
+          "frequency": [
+            0
+          ],
+          "known_phase": 0
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            0,
+            1,
+            1
+          ],
+          "frequency": [
+            8
+          ],
+          "known_phase": 6
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            0,
+            1,
+            2
+          ],
+          "frequency": [
+            1
+          ],
+          "known_phase": 3
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            0,
+            2,
+            0
+          ],
+          "frequency": [
+            6
+          ],
+          "known_phase": 0
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            0,
+            2,
+            1
+          ],
+          "frequency": [
+            5
+          ],
+          "known_phase": 6
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            0,
+            2,
+            2
+          ],
+          "frequency": [
+            7
+          ],
+          "known_phase": 3
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            1,
+            0,
+            0
+          ],
+          "frequency": [
+            6
+          ],
+          "known_phase": 0
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            1,
+            0,
+            1
+          ],
+          "frequency": [
+            5
+          ],
+          "known_phase": 6
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            1,
+            0,
+            2
+          ],
+          "frequency": [
+            7
+          ],
+          "known_phase": 3
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            1,
+            1,
+            0
+          ],
+          "frequency": [
+            3
+          ],
+          "known_phase": 0
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "frequency": [
+            2
+          ],
+          "known_phase": 6
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            1,
+            1,
+            2
+          ],
+          "frequency": [
+            4
+          ],
+          "known_phase": 3
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            1,
+            2,
+            0
+          ],
+          "frequency": [
+            0
+          ],
+          "known_phase": 0
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            1,
+            2,
+            1
+          ],
+          "frequency": [
+            8
+          ],
+          "known_phase": 6
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            1,
+            2,
+            2
+          ],
+          "frequency": [
+            1
+          ],
+          "known_phase": 3
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            2,
+            0,
+            0
+          ],
+          "frequency": [
+            0
+          ],
+          "known_phase": 0
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            2,
+            0,
+            1
+          ],
+          "frequency": [
+            8
+          ],
+          "known_phase": 6
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            2,
+            0,
+            2
+          ],
+          "frequency": [
+            1
+          ],
+          "known_phase": 3
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            2,
+            1,
+            0
+          ],
+          "frequency": [
+            6
+          ],
+          "known_phase": 0
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            2,
+            1,
+            1
+          ],
+          "frequency": [
+            5
+          ],
+          "known_phase": 6
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            2,
+            1,
+            2
+          ],
+          "frequency": [
+            7
+          ],
+          "known_phase": 3
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            2,
+            2,
+            0
+          ],
+          "frequency": [
+            3
+          ],
+          "known_phase": 0
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "frequency": [
+            2
+          ],
+          "known_phase": 6
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "frequency": [
+            4
+          ],
+          "known_phase": 3
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            0,
+            0,
+            0
+          ],
+          "frequency": [
+            2
+          ],
+          "known_phase": 6
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            0,
+            0,
+            1
+          ],
+          "frequency": [
+            1
+          ],
+          "known_phase": 3
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            0,
+            0,
+            2
+          ],
+          "frequency": [
+            3
+          ],
+          "known_phase": 0
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            0,
+            1,
+            0
+          ],
+          "frequency": [
+            8
+          ],
+          "known_phase": 6
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            0,
+            1,
+            1
+          ],
+          "frequency": [
+            7
+          ],
+          "known_phase": 3
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            0,
+            1,
+            2
+          ],
+          "frequency": [
+            0
+          ],
+          "known_phase": 0
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            0,
+            2,
+            0
+          ],
+          "frequency": [
+            5
+          ],
+          "known_phase": 6
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            0,
+            2,
+            1
+          ],
+          "frequency": [
+            4
+          ],
+          "known_phase": 3
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            0,
+            2,
+            2
+          ],
+          "frequency": [
+            6
+          ],
+          "known_phase": 0
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            1,
+            0,
+            0
+          ],
+          "frequency": [
+            5
+          ],
+          "known_phase": 6
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            1,
+            0,
+            1
+          ],
+          "frequency": [
+            4
+          ],
+          "known_phase": 3
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            1,
+            0,
+            2
+          ],
+          "frequency": [
+            6
+          ],
+          "known_phase": 0
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            1,
+            1,
+            0
+          ],
+          "frequency": [
+            2
+          ],
+          "known_phase": 6
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            1,
+            1,
+            1
+          ],
+          "frequency": [
+            1
+          ],
+          "known_phase": 3
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            1,
+            1,
+            2
+          ],
+          "frequency": [
+            3
+          ],
+          "known_phase": 0
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            1,
+            2,
+            0
+          ],
+          "frequency": [
+            8
+          ],
+          "known_phase": 6
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            1,
+            2,
+            1
+          ],
+          "frequency": [
+            7
+          ],
+          "known_phase": 3
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            1,
+            2,
+            2
+          ],
+          "frequency": [
+            0
+          ],
+          "known_phase": 0
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            2,
+            0,
+            0
+          ],
+          "frequency": [
+            8
+          ],
+          "known_phase": 6
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            2,
+            0,
+            1
+          ],
+          "frequency": [
+            7
+          ],
+          "known_phase": 3
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            2,
+            0,
+            2
+          ],
+          "frequency": [
+            0
+          ],
+          "known_phase": 0
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "frequency": [
+            5
+          ],
+          "known_phase": 6
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            2,
+            1,
+            1
+          ],
+          "frequency": [
+            4
+          ],
+          "known_phase": 3
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            2,
+            1,
+            2
+          ],
+          "frequency": [
+            6
+          ],
+          "known_phase": 0
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            2,
+            2,
+            0
+          ],
+          "frequency": [
+            2
+          ],
+          "known_phase": 6
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "frequency": [
+            1
+          ],
+          "known_phase": 3
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "frequency": [
+            3
+          ],
+          "known_phase": 0
+        }
+      ],
+      "actual_fibre_counts": [
+        9,
+        9,
+        9,
+        9,
+        9,
+        9,
+        9,
+        9,
+        9
+      ],
+      "span_rank": 9,
+      "word_dimension": 81,
+      "exact_span_acceptance_root_polynomial": [
+        "1"
+      ],
+      "diagnostic_span_acceptance_probability": 0.9999999999999998,
+      "exact_uniform_raw_value_null_acceptance": "1/9",
+      "diagnostic_raw_comparison_acceptance_probability": 0.1111111111111111,
+      "ideal_raw_comparison_acceptance": "1/9",
+      "truth_fixture_only": {
+        "masked_secret": [
+          3
+        ],
+        "original_errors": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "pathwise_span_rejection_upper": "0",
+      "dense_reference_is_an_efficient_decision_algorithm": false,
+      "source_calibration_is_unbounded_Gaussian_advantage_evidence": false,
+      "span_effect_implementation_supplied": false
+    },
+    {
+      "original_records": [
+        {
+          "label": [
+            14
+          ],
+          "value": 5,
+          "modulus": 27,
+          "source_id": "known-group-99003-0"
+        },
+        {
+          "label": [
+            8
+          ],
+          "value": 14,
+          "modulus": 27,
+          "source_id": "known-group-99003-1"
+        },
+        {
+          "label": [
+            17
+          ],
+          "value": 14,
+          "modulus": 27,
+          "source_id": "known-group-99003-2"
+        },
+        {
+          "label": [
+            19
+          ],
+          "value": 13,
+          "modulus": 27,
+          "source_id": "known-group-99003-3"
+        },
+        {
+          "label": [
+            9
+          ],
+          "value": 26,
+          "modulus": 27,
+          "source_id": "known-group-99003-4"
+        },
+        {
+          "label": [
+            15
+          ],
+          "value": 19,
+          "modulus": 27,
+          "source_id": "known-group-99003-5"
+        },
+        {
+          "label": [
+            19
+          ],
+          "value": 13,
+          "modulus": 27,
+          "source_id": "known-group-99003-6"
+        },
+        {
+          "label": [
+            11
+          ],
+          "value": 25,
+          "modulus": 27,
+          "source_id": "known-group-99003-7"
+        },
+        {
+          "label": [
+            25
+          ],
+          "value": 2,
+          "modulus": 27,
+          "source_id": "known-group-99003-8"
+        },
+        {
+          "label": [
+            23
+          ],
+          "value": 7,
+          "modulus": 27,
+          "source_id": "known-group-99003-9"
+        }
+      ],
+      "known_mask": [
+        1
+      ],
+      "preparation_contract": {
+        "public_family": {
+          "modulus": "27",
+          "dimension": 1,
+          "cohorts": 1,
+          "sites": 5,
+          "paired_labels": [
+            [
+              [
+                [
+                  14
+                ],
+                [
+                  8
+                ]
+              ],
+              [
+                [
+                  17
+                ],
+                [
+                  19
+                ]
+              ],
+              [
+                [
+                  9
+                ],
+                [
+                  15
+                ]
+              ],
+              [
+                [
+                  19
+                ],
+                [
+                  11
+                ]
+              ],
+              [
+                [
+                  25
+                ],
+                [
+                  23
+                ]
+              ]
+            ]
+          ],
+          "responses_masks_source_IDs_and_errors_supplied": false
+        },
+        "known_word_phases_by_cohort": [
+          [
+            [
+              19,
+              3,
+              5
+            ],
+            [
+              4,
+              1,
+              22
+            ],
+            [
+              8,
+              26,
+              20
+            ],
+            [
+              5,
+              4,
+              18
+            ],
+            [
+              0,
+              3,
+              24
+            ]
+          ]
+        ],
+        "original_records_paid_once": 10,
+        "cohort_controlled_local_diagonal_gates": 5,
+        "uniform_index_qubits": 0,
+        "uniform_qutrits": 5,
+        "word_domain_size": "243",
+        "frequency_group_size": "27",
+        "frequency_coordinate_trits": 3,
+        "secret_or_errors_supplied_to_preparation": false,
+        "same_as_previous_native_point_seed": false,
+        "all_word_table_required_for_indexed_preparation": false,
+        "normalized_fibre_oracle_supplied": false,
+        "physical_gate_synthesis_and_precision_supplied": false
+      },
+      "actual_word_rows": [
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "frequency": [
+            3
+          ],
+          "known_phase": 9
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "frequency": [
+            3
+          ],
+          "known_phase": 12
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            0,
+            0,
+            0,
+            2
+          ],
+          "frequency": [
+            9
+          ],
+          "known_phase": 6
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          "frequency": [
+            3
+          ],
+          "known_phase": 8
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            0,
+            0,
+            1,
+            1
+          ],
+          "frequency": [
+            3
+          ],
+          "known_phase": 11
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            0,
+            0,
+            1,
+            2
+          ],
+          "frequency": [
+            9
+          ],
+          "known_phase": 5
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            0,
+            0,
+            2,
+            0
+          ],
+          "frequency": [
+            0
+          ],
+          "known_phase": 22
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            0,
+            0,
+            2,
+            1
+          ],
+          "frequency": [
+            0
+          ],
+          "known_phase": 25
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            0,
+            0,
+            2,
+            2
+          ],
+          "frequency": [
+            6
+          ],
+          "known_phase": 19
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "frequency": [
+            0
+          ],
+          "known_phase": 0
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            0,
+            1,
+            0,
+            1
+          ],
+          "frequency": [
+            0
+          ],
+          "known_phase": 3
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            0,
+            1,
+            0,
+            2
+          ],
+          "frequency": [
+            6
+          ],
+          "known_phase": 24
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            0,
+            1,
+            1,
+            0
+          ],
+          "frequency": [
+            0
+          ],
+          "known_phase": 26
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            0,
+            1,
+            1,
+            1
+          ],
+          "frequency": [
+            0
+          ],
+          "known_phase": 2
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            0,
+            1,
+            1,
+            2
+          ],
+          "frequency": [
+            6
+          ],
+          "known_phase": 23
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            0,
+            1,
+            2,
+            0
+          ],
+          "frequency": [
+            24
+          ],
+          "known_phase": 13
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            0,
+            1,
+            2,
+            1
+          ],
+          "frequency": [
+            24
+          ],
+          "known_phase": 16
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            0,
+            1,
+            2,
+            2
+          ],
+          "frequency": [
+            3
+          ],
+          "known_phase": 10
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            0,
+            2,
+            0,
+            0
+          ],
+          "frequency": [
+            6
+          ],
+          "known_phase": 21
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            0,
+            2,
+            0,
+            1
+          ],
+          "frequency": [
+            6
+          ],
+          "known_phase": 24
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            0,
+            2,
+            0,
+            2
+          ],
+          "frequency": [
+            12
+          ],
+          "known_phase": 18
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            0,
+            2,
+            1,
+            0
+          ],
+          "frequency": [
+            6
+          ],
+          "known_phase": 20
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            0,
+            2,
+            1,
+            1
+          ],
+          "frequency": [
+            6
+          ],
+          "known_phase": 23
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            0,
+            2,
+            1,
+            2
+          ],
+          "frequency": [
+            12
+          ],
+          "known_phase": 17
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            0,
+            2,
+            2,
+            0
+          ],
+          "frequency": [
+            3
+          ],
+          "known_phase": 7
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            0,
+            2,
+            2,
+            1
+          ],
+          "frequency": [
+            3
+          ],
+          "known_phase": 10
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            0,
+            2,
+            2,
+            2
+          ],
+          "frequency": [
+            9
+          ],
+          "known_phase": 4
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          "frequency": [
+            15
+          ],
+          "known_phase": 6
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            1,
+            0,
+            0,
+            1
+          ],
+          "frequency": [
+            15
+          ],
+          "known_phase": 9
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            1,
+            0,
+            0,
+            2
+          ],
+          "frequency": [
+            21
+          ],
+          "known_phase": 3
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            1,
+            0,
+            1,
+            0
+          ],
+          "frequency": [
+            15
+          ],
+          "known_phase": 5
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            1,
+            0,
+            1,
+            1
+          ],
+          "frequency": [
+            15
+          ],
+          "known_phase": 8
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            1,
+            0,
+            1,
+            2
+          ],
+          "frequency": [
+            21
+          ],
+          "known_phase": 2
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            1,
+            0,
+            2,
+            0
+          ],
+          "frequency": [
+            12
+          ],
+          "known_phase": 19
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            1,
+            0,
+            2,
+            1
+          ],
+          "frequency": [
+            12
+          ],
+          "known_phase": 22
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            1,
+            0,
+            2,
+            2
+          ],
+          "frequency": [
+            18
+          ],
+          "known_phase": 16
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            1,
+            1,
+            0,
+            0
+          ],
+          "frequency": [
+            12
+          ],
+          "known_phase": 24
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            1,
+            1,
+            0,
+            1
+          ],
+          "frequency": [
+            12
+          ],
+          "known_phase": 0
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            1,
+            1,
+            0,
+            2
+          ],
+          "frequency": [
+            18
+          ],
+          "known_phase": 21
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            1,
+            1,
+            1,
+            0
+          ],
+          "frequency": [
+            12
+          ],
+          "known_phase": 23
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            1,
+            1,
+            1,
+            1
+          ],
+          "frequency": [
+            12
+          ],
+          "known_phase": 26
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            1,
+            1,
+            1,
+            2
+          ],
+          "frequency": [
+            18
+          ],
+          "known_phase": 20
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            1,
+            1,
+            2,
+            0
+          ],
+          "frequency": [
+            9
+          ],
+          "known_phase": 10
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            1,
+            1,
+            2,
+            1
+          ],
+          "frequency": [
+            9
+          ],
+          "known_phase": 13
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            1,
+            1,
+            2,
+            2
+          ],
+          "frequency": [
+            15
+          ],
+          "known_phase": 7
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            1,
+            2,
+            0,
+            0
+          ],
+          "frequency": [
+            18
+          ],
+          "known_phase": 18
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            1,
+            2,
+            0,
+            1
+          ],
+          "frequency": [
+            18
+          ],
+          "known_phase": 21
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            1,
+            2,
+            0,
+            2
+          ],
+          "frequency": [
+            24
+          ],
+          "known_phase": 15
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            1,
+            2,
+            1,
+            0
+          ],
+          "frequency": [
+            18
+          ],
+          "known_phase": 17
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            1,
+            2,
+            1,
+            1
+          ],
+          "frequency": [
+            18
+          ],
+          "known_phase": 20
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            1,
+            2,
+            1,
+            2
+          ],
+          "frequency": [
+            24
+          ],
+          "known_phase": 14
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            1,
+            2,
+            2,
+            0
+          ],
+          "frequency": [
+            15
+          ],
+          "known_phase": 4
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            1,
+            2,
+            2,
+            1
+          ],
+          "frequency": [
+            15
+          ],
+          "known_phase": 7
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            1,
+            2,
+            2,
+            2
+          ],
+          "frequency": [
+            21
+          ],
+          "known_phase": 1
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            2,
+            0,
+            0,
+            0
+          ],
+          "frequency": [
+            21
+          ],
+          "known_phase": 0
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            2,
+            0,
+            0,
+            1
+          ],
+          "frequency": [
+            21
+          ],
+          "known_phase": 3
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            2,
+            0,
+            0,
+            2
+          ],
+          "frequency": [
+            0
+          ],
+          "known_phase": 24
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            2,
+            0,
+            1,
+            0
+          ],
+          "frequency": [
+            21
+          ],
+          "known_phase": 26
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            2,
+            0,
+            1,
+            1
+          ],
+          "frequency": [
+            21
+          ],
+          "known_phase": 2
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            2,
+            0,
+            1,
+            2
+          ],
+          "frequency": [
+            0
+          ],
+          "known_phase": 23
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            2,
+            0,
+            2,
+            0
+          ],
+          "frequency": [
+            18
+          ],
+          "known_phase": 13
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            2,
+            0,
+            2,
+            1
+          ],
+          "frequency": [
+            18
+          ],
+          "known_phase": 16
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            2,
+            0,
+            2,
+            2
+          ],
+          "frequency": [
+            24
+          ],
+          "known_phase": 10
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            2,
+            1,
+            0,
+            0
+          ],
+          "frequency": [
+            18
+          ],
+          "known_phase": 18
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            2,
+            1,
+            0,
+            1
+          ],
+          "frequency": [
+            18
+          ],
+          "known_phase": 21
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            2,
+            1,
+            0,
+            2
+          ],
+          "frequency": [
+            24
+          ],
+          "known_phase": 15
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            2,
+            1,
+            1,
+            0
+          ],
+          "frequency": [
+            18
+          ],
+          "known_phase": 17
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            2,
+            1,
+            1,
+            1
+          ],
+          "frequency": [
+            18
+          ],
+          "known_phase": 20
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            2,
+            1,
+            1,
+            2
+          ],
+          "frequency": [
+            24
+          ],
+          "known_phase": 14
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            2,
+            1,
+            2,
+            0
+          ],
+          "frequency": [
+            15
+          ],
+          "known_phase": 4
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            2,
+            1,
+            2,
+            1
+          ],
+          "frequency": [
+            15
+          ],
+          "known_phase": 7
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            2,
+            1,
+            2,
+            2
+          ],
+          "frequency": [
+            21
+          ],
+          "known_phase": 1
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            2,
+            2,
+            0,
+            0
+          ],
+          "frequency": [
+            24
+          ],
+          "known_phase": 12
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            2,
+            2,
+            0,
+            1
+          ],
+          "frequency": [
+            24
+          ],
+          "known_phase": 15
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            2,
+            2,
+            0,
+            2
+          ],
+          "frequency": [
+            3
+          ],
+          "known_phase": 9
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            2,
+            2,
+            1,
+            0
+          ],
+          "frequency": [
+            24
+          ],
+          "known_phase": 11
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            2,
+            2,
+            1,
+            1
+          ],
+          "frequency": [
+            24
+          ],
+          "known_phase": 14
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            2,
+            2,
+            1,
+            2
+          ],
+          "frequency": [
+            3
+          ],
+          "known_phase": 8
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            2,
+            2,
+            2,
+            0
+          ],
+          "frequency": [
+            21
+          ],
+          "known_phase": 25
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            2,
+            2,
+            2,
+            1
+          ],
+          "frequency": [
+            21
+          ],
+          "known_phase": 1
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            2,
+            2,
+            2,
+            2
+          ],
+          "frequency": [
+            0
+          ],
+          "known_phase": 22
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          "frequency": [
+            10
+          ],
+          "known_phase": 20
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            0,
+            0,
+            0,
+            1
+          ],
+          "frequency": [
+            10
+          ],
+          "known_phase": 23
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            0,
+            0,
+            0,
+            2
+          ],
+          "frequency": [
+            16
+          ],
+          "known_phase": 17
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            0,
+            0,
+            1,
+            0
+          ],
+          "frequency": [
+            10
+          ],
+          "known_phase": 19
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            0,
+            0,
+            1,
+            1
+          ],
+          "frequency": [
+            10
+          ],
+          "known_phase": 22
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            0,
+            0,
+            1,
+            2
+          ],
+          "frequency": [
+            16
+          ],
+          "known_phase": 16
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            0,
+            0,
+            2,
+            0
+          ],
+          "frequency": [
+            7
+          ],
+          "known_phase": 6
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            0,
+            0,
+            2,
+            1
+          ],
+          "frequency": [
+            7
+          ],
+          "known_phase": 9
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            0,
+            0,
+            2,
+            2
+          ],
+          "frequency": [
+            13
+          ],
+          "known_phase": 3
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            0,
+            1,
+            0,
+            0
+          ],
+          "frequency": [
+            7
+          ],
+          "known_phase": 11
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            0,
+            1,
+            0,
+            1
+          ],
+          "frequency": [
+            7
+          ],
+          "known_phase": 14
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            0,
+            1,
+            0,
+            2
+          ],
+          "frequency": [
+            13
+          ],
+          "known_phase": 8
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            0,
+            1,
+            1,
+            0
+          ],
+          "frequency": [
+            7
+          ],
+          "known_phase": 10
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            0,
+            1,
+            1,
+            1
+          ],
+          "frequency": [
+            7
+          ],
+          "known_phase": 13
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            0,
+            1,
+            1,
+            2
+          ],
+          "frequency": [
+            13
+          ],
+          "known_phase": 7
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            0,
+            1,
+            2,
+            0
+          ],
+          "frequency": [
+            4
+          ],
+          "known_phase": 24
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            0,
+            1,
+            2,
+            1
+          ],
+          "frequency": [
+            4
+          ],
+          "known_phase": 0
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            0,
+            1,
+            2,
+            2
+          ],
+          "frequency": [
+            10
+          ],
+          "known_phase": 21
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            0,
+            2,
+            0,
+            0
+          ],
+          "frequency": [
+            13
+          ],
+          "known_phase": 5
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            0,
+            2,
+            0,
+            1
+          ],
+          "frequency": [
+            13
+          ],
+          "known_phase": 8
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            0,
+            2,
+            0,
+            2
+          ],
+          "frequency": [
+            19
+          ],
+          "known_phase": 2
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            0,
+            2,
+            1,
+            0
+          ],
+          "frequency": [
+            13
+          ],
+          "known_phase": 4
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            0,
+            2,
+            1,
+            1
+          ],
+          "frequency": [
+            13
+          ],
+          "known_phase": 7
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            0,
+            2,
+            1,
+            2
+          ],
+          "frequency": [
+            19
+          ],
+          "known_phase": 1
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            0,
+            2,
+            2,
+            0
+          ],
+          "frequency": [
+            10
+          ],
+          "known_phase": 18
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            0,
+            2,
+            2,
+            1
+          ],
+          "frequency": [
+            10
+          ],
+          "known_phase": 21
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            0,
+            2,
+            2,
+            2
+          ],
+          "frequency": [
+            16
+          ],
+          "known_phase": 15
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            1,
+            0,
+            0,
+            0
+          ],
+          "frequency": [
+            22
+          ],
+          "known_phase": 17
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            1,
+            0,
+            0,
+            1
+          ],
+          "frequency": [
+            22
+          ],
+          "known_phase": 20
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            1,
+            0,
+            0,
+            2
+          ],
+          "frequency": [
+            1
+          ],
+          "known_phase": 14
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            1,
+            0,
+            1,
+            0
+          ],
+          "frequency": [
+            22
+          ],
+          "known_phase": 16
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            1,
+            0,
+            1,
+            1
+          ],
+          "frequency": [
+            22
+          ],
+          "known_phase": 19
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            1,
+            0,
+            1,
+            2
+          ],
+          "frequency": [
+            1
+          ],
+          "known_phase": 13
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            1,
+            0,
+            2,
+            0
+          ],
+          "frequency": [
+            19
+          ],
+          "known_phase": 3
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            1,
+            0,
+            2,
+            1
+          ],
+          "frequency": [
+            19
+          ],
+          "known_phase": 6
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            1,
+            0,
+            2,
+            2
+          ],
+          "frequency": [
+            25
+          ],
+          "known_phase": 0
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            1,
+            1,
+            0,
+            0
+          ],
+          "frequency": [
+            19
+          ],
+          "known_phase": 8
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            1,
+            1,
+            0,
+            1
+          ],
+          "frequency": [
+            19
+          ],
+          "known_phase": 11
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            1,
+            1,
+            0,
+            2
+          ],
+          "frequency": [
+            25
+          ],
+          "known_phase": 5
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            1,
+            1,
+            1,
+            0
+          ],
+          "frequency": [
+            19
+          ],
+          "known_phase": 7
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "frequency": [
+            19
+          ],
+          "known_phase": 10
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            1,
+            1,
+            1,
+            2
+          ],
+          "frequency": [
+            25
+          ],
+          "known_phase": 4
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            1,
+            1,
+            2,
+            0
+          ],
+          "frequency": [
+            16
+          ],
+          "known_phase": 21
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            1,
+            1,
+            2,
+            1
+          ],
+          "frequency": [
+            16
+          ],
+          "known_phase": 24
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            1,
+            1,
+            2,
+            2
+          ],
+          "frequency": [
+            22
+          ],
+          "known_phase": 18
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            1,
+            2,
+            0,
+            0
+          ],
+          "frequency": [
+            25
+          ],
+          "known_phase": 2
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            1,
+            2,
+            0,
+            1
+          ],
+          "frequency": [
+            25
+          ],
+          "known_phase": 5
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            1,
+            2,
+            0,
+            2
+          ],
+          "frequency": [
+            4
+          ],
+          "known_phase": 26
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            1,
+            2,
+            1,
+            0
+          ],
+          "frequency": [
+            25
+          ],
+          "known_phase": 1
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            1,
+            2,
+            1,
+            1
+          ],
+          "frequency": [
+            25
+          ],
+          "known_phase": 4
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            1,
+            2,
+            1,
+            2
+          ],
+          "frequency": [
+            4
+          ],
+          "known_phase": 25
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            1,
+            2,
+            2,
+            0
+          ],
+          "frequency": [
+            22
+          ],
+          "known_phase": 15
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            1,
+            2,
+            2,
+            1
+          ],
+          "frequency": [
+            22
+          ],
+          "known_phase": 18
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            1,
+            2,
+            2,
+            2
+          ],
+          "frequency": [
+            1
+          ],
+          "known_phase": 12
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            2,
+            0,
+            0,
+            0
+          ],
+          "frequency": [
+            1
+          ],
+          "known_phase": 11
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            2,
+            0,
+            0,
+            1
+          ],
+          "frequency": [
+            1
+          ],
+          "known_phase": 14
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            2,
+            0,
+            0,
+            2
+          ],
+          "frequency": [
+            7
+          ],
+          "known_phase": 8
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            2,
+            0,
+            1,
+            0
+          ],
+          "frequency": [
+            1
+          ],
+          "known_phase": 10
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            2,
+            0,
+            1,
+            1
+          ],
+          "frequency": [
+            1
+          ],
+          "known_phase": 13
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            2,
+            0,
+            1,
+            2
+          ],
+          "frequency": [
+            7
+          ],
+          "known_phase": 7
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            2,
+            0,
+            2,
+            0
+          ],
+          "frequency": [
+            25
+          ],
+          "known_phase": 24
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            2,
+            0,
+            2,
+            1
+          ],
+          "frequency": [
+            25
+          ],
+          "known_phase": 0
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            2,
+            0,
+            2,
+            2
+          ],
+          "frequency": [
+            4
+          ],
+          "known_phase": 21
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            2,
+            1,
+            0,
+            0
+          ],
+          "frequency": [
+            25
+          ],
+          "known_phase": 2
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            2,
+            1,
+            0,
+            1
+          ],
+          "frequency": [
+            25
+          ],
+          "known_phase": 5
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            2,
+            1,
+            0,
+            2
+          ],
+          "frequency": [
+            4
+          ],
+          "known_phase": 26
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            2,
+            1,
+            1,
+            0
+          ],
+          "frequency": [
+            25
+          ],
+          "known_phase": 1
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            2,
+            1,
+            1,
+            1
+          ],
+          "frequency": [
+            25
+          ],
+          "known_phase": 4
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            2,
+            1,
+            1,
+            2
+          ],
+          "frequency": [
+            4
+          ],
+          "known_phase": 25
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            2,
+            1,
+            2,
+            0
+          ],
+          "frequency": [
+            22
+          ],
+          "known_phase": 15
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            2,
+            1,
+            2,
+            1
+          ],
+          "frequency": [
+            22
+          ],
+          "known_phase": 18
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            2,
+            1,
+            2,
+            2
+          ],
+          "frequency": [
+            1
+          ],
+          "known_phase": 12
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            2,
+            2,
+            0,
+            0
+          ],
+          "frequency": [
+            4
+          ],
+          "known_phase": 23
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            2,
+            2,
+            0,
+            1
+          ],
+          "frequency": [
+            4
+          ],
+          "known_phase": 26
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            2,
+            2,
+            0,
+            2
+          ],
+          "frequency": [
+            10
+          ],
+          "known_phase": 20
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            2,
+            2,
+            1,
+            0
+          ],
+          "frequency": [
+            4
+          ],
+          "known_phase": 22
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            2,
+            2,
+            1,
+            1
+          ],
+          "frequency": [
+            4
+          ],
+          "known_phase": 25
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            2,
+            2,
+            1,
+            2
+          ],
+          "frequency": [
+            10
+          ],
+          "known_phase": 19
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            2,
+            2,
+            2,
+            0
+          ],
+          "frequency": [
+            1
+          ],
+          "known_phase": 9
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            2,
+            2,
+            2,
+            1
+          ],
+          "frequency": [
+            1
+          ],
+          "known_phase": 12
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            2,
+            2,
+            2,
+            2
+          ],
+          "frequency": [
+            7
+          ],
+          "known_phase": 6
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            0,
+            0,
+            0,
+            0
+          ],
+          "frequency": [
+            8
+          ],
+          "known_phase": 22
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            0,
+            0,
+            0,
+            1
+          ],
+          "frequency": [
+            8
+          ],
+          "known_phase": 25
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            0,
+            0,
+            0,
+            2
+          ],
+          "frequency": [
+            14
+          ],
+          "known_phase": 19
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            0,
+            0,
+            1,
+            0
+          ],
+          "frequency": [
+            8
+          ],
+          "known_phase": 21
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            0,
+            0,
+            1,
+            1
+          ],
+          "frequency": [
+            8
+          ],
+          "known_phase": 24
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            0,
+            0,
+            1,
+            2
+          ],
+          "frequency": [
+            14
+          ],
+          "known_phase": 18
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            0,
+            0,
+            2,
+            0
+          ],
+          "frequency": [
+            5
+          ],
+          "known_phase": 8
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            0,
+            0,
+            2,
+            1
+          ],
+          "frequency": [
+            5
+          ],
+          "known_phase": 11
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            0,
+            0,
+            2,
+            2
+          ],
+          "frequency": [
+            11
+          ],
+          "known_phase": 5
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            0,
+            1,
+            0,
+            0
+          ],
+          "frequency": [
+            5
+          ],
+          "known_phase": 13
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            0,
+            1,
+            0,
+            1
+          ],
+          "frequency": [
+            5
+          ],
+          "known_phase": 16
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            0,
+            1,
+            0,
+            2
+          ],
+          "frequency": [
+            11
+          ],
+          "known_phase": 10
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            0,
+            1,
+            1,
+            0
+          ],
+          "frequency": [
+            5
+          ],
+          "known_phase": 12
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            0,
+            1,
+            1,
+            1
+          ],
+          "frequency": [
+            5
+          ],
+          "known_phase": 15
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            0,
+            1,
+            1,
+            2
+          ],
+          "frequency": [
+            11
+          ],
+          "known_phase": 9
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            0,
+            1,
+            2,
+            0
+          ],
+          "frequency": [
+            2
+          ],
+          "known_phase": 26
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            0,
+            1,
+            2,
+            1
+          ],
+          "frequency": [
+            2
+          ],
+          "known_phase": 2
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            0,
+            1,
+            2,
+            2
+          ],
+          "frequency": [
+            8
+          ],
+          "known_phase": 23
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            0,
+            2,
+            0,
+            0
+          ],
+          "frequency": [
+            11
+          ],
+          "known_phase": 7
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            0,
+            2,
+            0,
+            1
+          ],
+          "frequency": [
+            11
+          ],
+          "known_phase": 10
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            0,
+            2,
+            0,
+            2
+          ],
+          "frequency": [
+            17
+          ],
+          "known_phase": 4
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            0,
+            2,
+            1,
+            0
+          ],
+          "frequency": [
+            11
+          ],
+          "known_phase": 6
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            0,
+            2,
+            1,
+            1
+          ],
+          "frequency": [
+            11
+          ],
+          "known_phase": 9
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            0,
+            2,
+            1,
+            2
+          ],
+          "frequency": [
+            17
+          ],
+          "known_phase": 3
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            0,
+            2,
+            2,
+            0
+          ],
+          "frequency": [
+            8
+          ],
+          "known_phase": 20
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            0,
+            2,
+            2,
+            1
+          ],
+          "frequency": [
+            8
+          ],
+          "known_phase": 23
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            0,
+            2,
+            2,
+            2
+          ],
+          "frequency": [
+            14
+          ],
+          "known_phase": 17
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            1,
+            0,
+            0,
+            0
+          ],
+          "frequency": [
+            20
+          ],
+          "known_phase": 19
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            1,
+            0,
+            0,
+            1
+          ],
+          "frequency": [
+            20
+          ],
+          "known_phase": 22
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            1,
+            0,
+            0,
+            2
+          ],
+          "frequency": [
+            26
+          ],
+          "known_phase": 16
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            1,
+            0,
+            1,
+            0
+          ],
+          "frequency": [
+            20
+          ],
+          "known_phase": 18
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            1,
+            0,
+            1,
+            1
+          ],
+          "frequency": [
+            20
+          ],
+          "known_phase": 21
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            1,
+            0,
+            1,
+            2
+          ],
+          "frequency": [
+            26
+          ],
+          "known_phase": 15
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            1,
+            0,
+            2,
+            0
+          ],
+          "frequency": [
+            17
+          ],
+          "known_phase": 5
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            1,
+            0,
+            2,
+            1
+          ],
+          "frequency": [
+            17
+          ],
+          "known_phase": 8
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            1,
+            0,
+            2,
+            2
+          ],
+          "frequency": [
+            23
+          ],
+          "known_phase": 2
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            1,
+            1,
+            0,
+            0
+          ],
+          "frequency": [
+            17
+          ],
+          "known_phase": 10
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            1,
+            1,
+            0,
+            1
+          ],
+          "frequency": [
+            17
+          ],
+          "known_phase": 13
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            1,
+            1,
+            0,
+            2
+          ],
+          "frequency": [
+            23
+          ],
+          "known_phase": 7
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            1,
+            1,
+            1,
+            0
+          ],
+          "frequency": [
+            17
+          ],
+          "known_phase": 9
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "frequency": [
+            17
+          ],
+          "known_phase": 12
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            1,
+            1,
+            1,
+            2
+          ],
+          "frequency": [
+            23
+          ],
+          "known_phase": 6
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            1,
+            1,
+            2,
+            0
+          ],
+          "frequency": [
+            14
+          ],
+          "known_phase": 23
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            1,
+            1,
+            2,
+            1
+          ],
+          "frequency": [
+            14
+          ],
+          "known_phase": 26
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            1,
+            1,
+            2,
+            2
+          ],
+          "frequency": [
+            20
+          ],
+          "known_phase": 20
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            1,
+            2,
+            0,
+            0
+          ],
+          "frequency": [
+            23
+          ],
+          "known_phase": 4
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            1,
+            2,
+            0,
+            1
+          ],
+          "frequency": [
+            23
+          ],
+          "known_phase": 7
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            1,
+            2,
+            0,
+            2
+          ],
+          "frequency": [
+            2
+          ],
+          "known_phase": 1
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            1,
+            2,
+            1,
+            0
+          ],
+          "frequency": [
+            23
+          ],
+          "known_phase": 3
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            1,
+            2,
+            1,
+            1
+          ],
+          "frequency": [
+            23
+          ],
+          "known_phase": 6
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            1,
+            2,
+            1,
+            2
+          ],
+          "frequency": [
+            2
+          ],
+          "known_phase": 0
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            1,
+            2,
+            2,
+            0
+          ],
+          "frequency": [
+            20
+          ],
+          "known_phase": 17
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            1,
+            2,
+            2,
+            1
+          ],
+          "frequency": [
+            20
+          ],
+          "known_phase": 20
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            1,
+            2,
+            2,
+            2
+          ],
+          "frequency": [
+            26
+          ],
+          "known_phase": 14
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            2,
+            0,
+            0,
+            0
+          ],
+          "frequency": [
+            26
+          ],
+          "known_phase": 13
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            2,
+            0,
+            0,
+            1
+          ],
+          "frequency": [
+            26
+          ],
+          "known_phase": 16
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            2,
+            0,
+            0,
+            2
+          ],
+          "frequency": [
+            5
+          ],
+          "known_phase": 10
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            2,
+            0,
+            1,
+            0
+          ],
+          "frequency": [
+            26
+          ],
+          "known_phase": 12
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            2,
+            0,
+            1,
+            1
+          ],
+          "frequency": [
+            26
+          ],
+          "known_phase": 15
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            2,
+            0,
+            1,
+            2
+          ],
+          "frequency": [
+            5
+          ],
+          "known_phase": 9
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            2,
+            0,
+            2,
+            0
+          ],
+          "frequency": [
+            23
+          ],
+          "known_phase": 26
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            2,
+            0,
+            2,
+            1
+          ],
+          "frequency": [
+            23
+          ],
+          "known_phase": 2
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            2,
+            0,
+            2,
+            2
+          ],
+          "frequency": [
+            2
+          ],
+          "known_phase": 23
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            2,
+            1,
+            0,
+            0
+          ],
+          "frequency": [
+            23
+          ],
+          "known_phase": 4
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            2,
+            1,
+            0,
+            1
+          ],
+          "frequency": [
+            23
+          ],
+          "known_phase": 7
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            2,
+            1,
+            0,
+            2
+          ],
+          "frequency": [
+            2
+          ],
+          "known_phase": 1
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            2,
+            1,
+            1,
+            0
+          ],
+          "frequency": [
+            23
+          ],
+          "known_phase": 3
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            2,
+            1,
+            1,
+            1
+          ],
+          "frequency": [
+            23
+          ],
+          "known_phase": 6
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            2,
+            1,
+            1,
+            2
+          ],
+          "frequency": [
+            2
+          ],
+          "known_phase": 0
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            2,
+            1,
+            2,
+            0
+          ],
+          "frequency": [
+            20
+          ],
+          "known_phase": 17
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            2,
+            1,
+            2,
+            1
+          ],
+          "frequency": [
+            20
+          ],
+          "known_phase": 20
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            2,
+            1,
+            2,
+            2
+          ],
+          "frequency": [
+            26
+          ],
+          "known_phase": 14
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            2,
+            2,
+            0,
+            0
+          ],
+          "frequency": [
+            2
+          ],
+          "known_phase": 25
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            2,
+            2,
+            0,
+            1
+          ],
+          "frequency": [
+            2
+          ],
+          "known_phase": 1
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            2,
+            2,
+            0,
+            2
+          ],
+          "frequency": [
+            8
+          ],
+          "known_phase": 22
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            2,
+            2,
+            1,
+            0
+          ],
+          "frequency": [
+            2
+          ],
+          "known_phase": 24
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            2,
+            2,
+            1,
+            1
+          ],
+          "frequency": [
+            2
+          ],
+          "known_phase": 0
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            2,
+            2,
+            1,
+            2
+          ],
+          "frequency": [
+            8
+          ],
+          "known_phase": 21
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            2,
+            2,
+            2,
+            0
+          ],
+          "frequency": [
+            26
+          ],
+          "known_phase": 11
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            2,
+            2,
+            2,
+            1
+          ],
+          "frequency": [
+            26
+          ],
+          "known_phase": 14
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "frequency": [
+            5
+          ],
+          "known_phase": 8
+        }
+      ],
+      "actual_fibre_counts": [
+        9,
+        10,
+        11,
+        9,
+        11,
+        9,
+        7,
+        9,
+        9,
+        5,
+        9,
+        7,
+        8,
+        7,
+        5,
+        9,
+        5,
+        8,
+        13,
+        8,
+        9,
+        10,
+        9,
+        13,
+        11,
+        13,
+        10
+      ],
+      "span_rank": 27,
+      "word_dimension": 243,
+      "exact_span_acceptance_root_polynomial": [
+        "-143161/1216215",
+        "-221149/2653560",
+        "-2116339/29189160",
+        "-415039/7297290",
+        "-265091/7297290",
+        "-1511/160380",
+        "-791/63180",
+        "-3641/379080",
+        "0",
+        "-3155507/29189160",
+        "-187927/2653560",
+        "-204593/3243240",
+        "-74974/3648645",
+        "74974/3648645",
+        "204593/3243240",
+        "187927/2653560",
+        "3155507/29189160",
+        "2590039/14594580"
+      ],
+      "diagnostic_span_acceptance_probability": 0.7595865772168644,
+      "exact_uniform_raw_value_null_acceptance": "1/9",
+      "diagnostic_raw_comparison_acceptance_probability": 0.03015232596907978,
+      "ideal_raw_comparison_acceptance": "257/6561",
+      "truth_fixture_only": {
+        "masked_secret": [
+          13
+        ],
+        "original_errors": [
+          -1,
+          -1,
+          -1,
+          1,
+          -1,
+          1,
+          1,
+          1,
+          -1,
+          1
+        ]
+      },
+      "pathwise_span_rejection_upper": "880/2187",
+      "dense_reference_is_an_efficient_decision_algorithm": false,
+      "source_calibration_is_unbounded_Gaussian_advantage_evidence": false,
+      "span_effect_implementation_supplied": false
+    },
+    {
+      "original_records": [
+        {
+          "label": [
+            1,
+            1
+          ],
+          "value": 1,
+          "modulus": 3,
+          "source_id": "known-group-99004-0"
+        },
+        {
+          "label": [
+            0,
+            2
+          ],
+          "value": 2,
+          "modulus": 3,
+          "source_id": "known-group-99004-1"
+        },
+        {
+          "label": [
+            0,
+            1
+          ],
+          "value": 1,
+          "modulus": 3,
+          "source_id": "known-group-99004-2"
+        },
+        {
+          "label": [
+            0,
+            2
+          ],
+          "value": 2,
+          "modulus": 3,
+          "source_id": "known-group-99004-3"
+        },
+        {
+          "label": [
+            2,
+            2
+          ],
+          "value": 2,
+          "modulus": 3,
+          "source_id": "known-group-99004-4"
+        },
+        {
+          "label": [
+            2,
+            1
+          ],
+          "value": 1,
+          "modulus": 3,
+          "source_id": "known-group-99004-5"
+        }
+      ],
+      "known_mask": [
+        0,
+        0
+      ],
+      "preparation_contract": {
+        "public_family": {
+          "modulus": "3",
+          "dimension": 2,
+          "cohorts": 1,
+          "sites": 3,
+          "paired_labels": [
+            [
+              [
+                [
+                  1,
+                  1
+                ],
+                [
+                  0,
+                  2
+                ]
+              ],
+              [
+                [
+                  0,
+                  1
+                ],
+                [
+                  0,
+                  2
+                ]
+              ],
+              [
+                [
+                  2,
+                  2
+                ],
+                [
+                  2,
+                  1
+                ]
+              ]
+            ]
+          ],
+          "responses_masks_source_IDs_and_errors_supplied": false
+        },
+        "known_word_phases_by_cohort": [
+          [
+            [
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1
+            ],
+            [
+              2,
+              2,
+              2
+            ]
+          ]
+        ],
+        "original_records_paid_once": 6,
+        "cohort_controlled_local_diagonal_gates": 3,
+        "uniform_index_qubits": 0,
+        "uniform_qutrits": 3,
+        "word_domain_size": "27",
+        "frequency_group_size": "9",
+        "frequency_coordinate_trits": 2,
+        "secret_or_errors_supplied_to_preparation": false,
+        "same_as_previous_native_point_seed": false,
+        "all_word_table_required_for_indexed_preparation": false,
+        "normalized_fibre_oracle_supplied": false,
+        "physical_gate_synthesis_and_precision_supplied": false
+      },
+      "actual_word_rows": [
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            0,
+            0
+          ],
+          "frequency": [
+            0,
+            1
+          ],
+          "known_phase": 1
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            0,
+            1
+          ],
+          "frequency": [
+            1,
+            1
+          ],
+          "known_phase": 1
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            0,
+            2
+          ],
+          "frequency": [
+            2,
+            1
+          ],
+          "known_phase": 1
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            1,
+            0
+          ],
+          "frequency": [
+            0,
+            1
+          ],
+          "known_phase": 1
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            1,
+            1
+          ],
+          "frequency": [
+            1,
+            1
+          ],
+          "known_phase": 1
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            1,
+            2
+          ],
+          "frequency": [
+            2,
+            1
+          ],
+          "known_phase": 1
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            2,
+            0
+          ],
+          "frequency": [
+            0,
+            1
+          ],
+          "known_phase": 1
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            2,
+            1
+          ],
+          "frequency": [
+            1,
+            1
+          ],
+          "known_phase": 1
+        },
+        {
+          "cohort": 0,
+          "word": [
+            0,
+            2,
+            2
+          ],
+          "frequency": [
+            2,
+            1
+          ],
+          "known_phase": 1
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            0,
+            0
+          ],
+          "frequency": [
+            1,
+            1
+          ],
+          "known_phase": 1
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            0,
+            1
+          ],
+          "frequency": [
+            2,
+            1
+          ],
+          "known_phase": 1
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            0,
+            2
+          ],
+          "frequency": [
+            0,
+            1
+          ],
+          "known_phase": 1
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            1,
+            0
+          ],
+          "frequency": [
+            1,
+            1
+          ],
+          "known_phase": 1
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            1,
+            1
+          ],
+          "frequency": [
+            2,
+            1
+          ],
+          "known_phase": 1
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            1,
+            2
+          ],
+          "frequency": [
+            0,
+            1
+          ],
+          "known_phase": 1
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            2,
+            0
+          ],
+          "frequency": [
+            1,
+            1
+          ],
+          "known_phase": 1
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            2,
+            1
+          ],
+          "frequency": [
+            2,
+            1
+          ],
+          "known_phase": 1
+        },
+        {
+          "cohort": 0,
+          "word": [
+            1,
+            2,
+            2
+          ],
+          "frequency": [
+            0,
+            1
+          ],
+          "known_phase": 1
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            0,
+            0
+          ],
+          "frequency": [
+            2,
+            1
+          ],
+          "known_phase": 1
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            0,
+            1
+          ],
+          "frequency": [
+            0,
+            1
+          ],
+          "known_phase": 1
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            0,
+            2
+          ],
+          "frequency": [
+            1,
+            1
+          ],
+          "known_phase": 1
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            1,
+            0
+          ],
+          "frequency": [
+            2,
+            1
+          ],
+          "known_phase": 1
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            1,
+            1
+          ],
+          "frequency": [
+            0,
+            1
+          ],
+          "known_phase": 1
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            1,
+            2
+          ],
+          "frequency": [
+            1,
+            1
+          ],
+          "known_phase": 1
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            2,
+            0
+          ],
+          "frequency": [
+            2,
+            1
+          ],
+          "known_phase": 1
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            2,
+            1
+          ],
+          "frequency": [
+            0,
+            1
+          ],
+          "known_phase": 1
+        },
+        {
+          "cohort": 0,
+          "word": [
+            2,
+            2,
+            2
+          ],
+          "frequency": [
+            1,
+            1
+          ],
+          "known_phase": 1
+        }
+      ],
+      "actual_fibre_counts": [
+        0,
+        9,
+        0,
+        0,
+        9,
+        0,
+        0,
+        9,
+        0
+      ],
+      "span_rank": 3,
+      "word_dimension": 27,
+      "exact_span_acceptance_root_polynomial": [
+        "1"
+      ],
+      "diagnostic_span_acceptance_probability": 1.0,
+      "exact_uniform_raw_value_null_acceptance": "1/9",
+      "diagnostic_raw_comparison_acceptance_probability": 0.33333333333333337,
+      "ideal_raw_comparison_acceptance": "1/3",
+      "truth_fixture_only": {
+        "masked_secret": [
+          0,
+          1
+        ],
+        "original_errors": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "pathwise_span_rejection_upper": "0",
+      "dense_reference_is_an_efficient_decision_algorithm": false,
+      "source_calibration_is_unbounded_Gaussian_advantage_evidence": false,
+      "span_effect_implementation_supplied": false
+    }
+  ],
+  "scaling_decision_route_ledgers": [
+    {
+      "decision": {
+        "dimension": 8,
+        "root_digits": 8,
+        "original_modulus": 6561,
+        "original_pairs": 76,
+        "original_classical_values": 152,
+        "word_dimension_base3_exponent": 76,
+        "frequency_group_base3_exponent": 64,
+        "true_original_marginal_second_moment_upper": "14479979/262144",
+        "uniform_null_acceptance_upper_without_balance": "1/531441",
+        "source_span_rejection_upper": "1375598005/176319369216",
+        "hypothetical_span_effect_operator_norm_error": "1/16",
+        "hypothetical_each_ensemble_preparation_trace_distance_upper": "1/64",
+        "decision_advantage_lower_IF_effect_and_source_promises_hold": "147393537995/176319369216",
+        "original_noise_independence_or_label_independence_required_for_moment_bound": false,
+        "null_raw_values_IID_uniform_independent_of_labels_required": true,
+        "span_null_acceptance_invariant_under_data_adaptive_known_mask": true,
+        "identity_null_density_after_data_adaptive_mask_claimed": false,
+        "balanced_fibres_or_full_frequency_coverage_assumed": false,
+        "uniform_operator_norm_approximation_is_sufficient_not_necessary": true,
+        "all_other_ensemble_decision_tests_excluded": false,
+        "span_projection_proved_easier_than_coherent_row_preparation": false,
+        "source_noise_and_gate_precision_promises_established": false,
+        "efficient_span_effect_supplied": false
+      },
+      "width_changing_search_route": {
+        "dimension": 8,
+        "root_digits": 8,
+        "original_modulus": 6561,
+        "decision_rows": 152,
+        "declared_omega_sqrt_log_function": "ceil(log2(n+2))",
+        "smoothing_function_value": 4,
+        "decision_continuous_D_alpha_width": "1/512",
+        "search_continuous_D_alpha_width": "1/8192",
+        "search_to_decision_width_multiplier": 16,
+        "fresh_auxiliary_Gaussian_width_squared": "255/67108864",
+        "selected_prime_power_theorem_parameter_guards": true,
+        "search_alpha_q_at_least_2_sqrt_n": false,
+        "worst_case_lattice_reduction_compatibility_established": false,
+        "rounded_search_input_then_fresh_Gaussian_widening_TV_squared_upper": "28051505152/76838396985",
+        "fresh_Gaussian_auxiliary_noise_is_not_a_fresh_original_sample": true,
+        "polynomial_expansion_of_disjoint_original_samples_is_required": true,
+        "fixed_existing_source_bank_suffices_proved": false,
+        "same_width_search_recovery_claimed": false,
+        "rounding_then_widening_claimed_exact": false,
+        "full_source_adapter_or_published_reduction_implemented": false,
+        "actual_decision_algorithm_supplied": false,
+        "source_statement_url": "https://eprint.iacr.org/2011/501",
+        "source_statement": "Section3 Theorem3.1 prime-power example; full adapted proof review pending"
+      },
+      "raw_normalization_countercontrol": {
+        "dimension": 8,
+        "root_digits": 8,
+        "word_trits": 76,
+        "hypothetical_balanced_fibre_size": {
+          "base": 3,
+          "exponent": 12
+        },
+        "hypothetical_raw_comparison_positive_eigenvalue": {
+          "base": 3,
+          "exponent": -64
+        },
+        "ideal_span_effect_accepts_codewords": "1",
+        "ideal_raw_comparison_accepts_codewords": {
+          "base": 3,
+          "exponent": -64
+        },
+        "supported_condition_number": "1",
+        "small_condition_number_supplies_absolute_spectral_normalization": false,
+        "balanced_source_assumed_by_decision_ledger": false,
+        "known_single_seed_reflection_is_the_span_reflection": false,
+        "efficient_group_twirl_or_label_forward_map_supplies_span_projection": false
+      }
+    },
+    {
+      "decision": {
+        "dimension": 32,
+        "root_digits": 32,
+        "original_modulus": 1853020188851841,
+        "original_pairs": 1036,
+        "original_classical_values": 2072,
+        "word_dimension_base3_exponent": 1036,
+        "frequency_group_base3_exponent": 1024,
+        "true_original_marginal_second_moment_upper": "1144561273430837494886486567339/1073741824",
+        "uniform_null_acceptance_upper_without_balance": "1/531441",
+        "source_span_rejection_upper": "1482206849092934555878000104704005/57607655128752665137801420266270621696",
+        "hypothetical_span_effect_operator_norm_error": "1/16",
+        "hypothetical_each_ensemble_preparation_trace_distance_upper": "1/64",
+        "decision_advantage_lower_IF_effect_and_source_promises_hold": "48604868409069519031493172730784511995/57607655128752665137801420266270621696",
+        "original_noise_independence_or_label_independence_required_for_moment_bound": false,
+        "null_raw_values_IID_uniform_independent_of_labels_required": true,
+        "span_null_acceptance_invariant_under_data_adaptive_known_mask": true,
+        "identity_null_density_after_data_adaptive_mask_claimed": false,
+        "balanced_fibres_or_full_frequency_coverage_assumed": false,
+        "uniform_operator_norm_approximation_is_sufficient_not_necessary": true,
+        "all_other_ensemble_decision_tests_excluded": false,
+        "span_projection_proved_easier_than_coherent_row_preparation": false,
+        "source_noise_and_gate_precision_promises_established": false,
+        "efficient_span_effect_supplied": false
+      },
+      "width_changing_search_route": {
+        "dimension": 32,
+        "root_digits": 32,
+        "original_modulus": 1853020188851841,
+        "decision_rows": 2072,
+        "declared_omega_sqrt_log_function": "ceil(log2(n+2))",
+        "smoothing_function_value": 6,
+        "decision_continuous_D_alpha_width": "1/32768",
+        "search_continuous_D_alpha_width": "1/1179648",
+        "search_to_decision_width_multiplier": 36,
+        "fresh_auxiliary_Gaussian_width_squared": "1295/1391569403904",
+        "selected_prime_power_theorem_parameter_guards": true,
+        "search_alpha_q_at_least_2_sqrt_n": true,
+        "worst_case_lattice_reduction_compatibility_established": false,
+        "rounded_search_input_then_fresh_Gaussian_widening_TV_squared_upper": "377957122048/1483690539632567123000305162035",
+        "fresh_Gaussian_auxiliary_noise_is_not_a_fresh_original_sample": true,
+        "polynomial_expansion_of_disjoint_original_samples_is_required": true,
+        "fixed_existing_source_bank_suffices_proved": false,
+        "same_width_search_recovery_claimed": false,
+        "rounding_then_widening_claimed_exact": false,
+        "full_source_adapter_or_published_reduction_implemented": false,
+        "actual_decision_algorithm_supplied": false,
+        "source_statement_url": "https://eprint.iacr.org/2011/501",
+        "source_statement": "Section3 Theorem3.1 prime-power example; full adapted proof review pending"
+      },
+      "raw_normalization_countercontrol": {
+        "dimension": 32,
+        "root_digits": 32,
+        "word_trits": 1036,
+        "hypothetical_balanced_fibre_size": {
+          "base": 3,
+          "exponent": 12
+        },
+        "hypothetical_raw_comparison_positive_eigenvalue": {
+          "base": 3,
+          "exponent": -1024
+        },
+        "ideal_span_effect_accepts_codewords": "1",
+        "ideal_raw_comparison_accepts_codewords": {
+          "base": 3,
+          "exponent": -1024
+        },
+        "supported_condition_number": "1",
+        "small_condition_number_supplies_absolute_spectral_normalization": false,
+        "balanced_source_assumed_by_decision_ledger": false,
+        "known_single_seed_reflection_is_the_span_reflection": false,
+        "efficient_group_twirl_or_label_forward_map_supplies_span_projection": false
+      }
+    },
+    {
+      "decision": {
+        "dimension": 64,
+        "root_digits": 64,
+        "original_modulus": "3433683820292512484657849089281",
+        "original_pairs": 4108,
+        "original_classical_values": 8216,
+        "word_dimension_base3_exponent": 4108,
+        "frequency_group_base3_exponent": 4096,
+        "true_original_marginal_second_moment_upper": "3930061525912861057173624287137506221892737197425314729437355/68719476736",
+        "uniform_null_acceptance_upper_without_balance": "1/531441",
+        "source_span_rejection_upper": "20180865935562541528586560714451094449419205508778991135660817925/12659614293797696089764526880285177008519369112148205943615953896996864",
+        "hypothetical_span_effect_operator_norm_error": "1/16",
+        "hypothetical_each_ensemble_preparation_trace_distance_upper": "1/64",
+        "decision_advantage_lower_IF_effect_and_source_promises_hold": "10681505558228127588402083665278622444259312949822496479306726335726075/12659614293797696089764526880285177008519369112148205943615953896996864",
+        "original_noise_independence_or_label_independence_required_for_moment_bound": false,
+        "null_raw_values_IID_uniform_independent_of_labels_required": true,
+        "span_null_acceptance_invariant_under_data_adaptive_known_mask": true,
+        "identity_null_density_after_data_adaptive_mask_claimed": false,
+        "balanced_fibres_or_full_frequency_coverage_assumed": false,
+        "uniform_operator_norm_approximation_is_sufficient_not_necessary": true,
+        "all_other_ensemble_decision_tests_excluded": false,
+        "span_projection_proved_easier_than_coherent_row_preparation": false,
+        "source_noise_and_gate_precision_promises_established": false,
+        "efficient_span_effect_supplied": false
+      },
+      "width_changing_search_route": {
+        "dimension": 64,
+        "root_digits": 64,
+        "original_modulus": "3433683820292512484657849089281",
+        "decision_rows": 8216,
+        "declared_omega_sqrt_log_function": "ceil(log2(n+2))",
+        "smoothing_function_value": 7,
+        "decision_continuous_D_alpha_width": "1/262144",
+        "search_continuous_D_alpha_width": "1/12845056",
+        "search_to_decision_width_multiplier": 49,
+        "fresh_auxiliary_Gaussian_width_squared": "75/5156108238848",
+        "selected_prime_power_theorem_parameter_guards": true,
+        "search_alpha_q_at_least_2_sqrt_n": true,
+        "worst_case_lattice_reduction_compatibility_established": false,
+        "rounded_search_input_then_fresh_Gaussian_widening_TV_squared_upper": "16642444221218816/884263843330393737864065464605938899925865869420688083182272075",
+        "fresh_Gaussian_auxiliary_noise_is_not_a_fresh_original_sample": true,
+        "polynomial_expansion_of_disjoint_original_samples_is_required": true,
+        "fixed_existing_source_bank_suffices_proved": false,
+        "same_width_search_recovery_claimed": false,
+        "rounding_then_widening_claimed_exact": false,
+        "full_source_adapter_or_published_reduction_implemented": false,
+        "actual_decision_algorithm_supplied": false,
+        "source_statement_url": "https://eprint.iacr.org/2011/501",
+        "source_statement": "Section3 Theorem3.1 prime-power example; full adapted proof review pending"
+      },
+      "raw_normalization_countercontrol": {
+        "dimension": 64,
+        "root_digits": 64,
+        "word_trits": 4108,
+        "hypothetical_balanced_fibre_size": {
+          "base": 3,
+          "exponent": 12
+        },
+        "hypothetical_raw_comparison_positive_eigenvalue": {
+          "base": 3,
+          "exponent": -4096
+        },
+        "ideal_span_effect_accepts_codewords": "1",
+        "ideal_raw_comparison_accepts_codewords": {
+          "base": 3,
+          "exponent": -4096
+        },
+        "supported_condition_number": "1",
+        "small_condition_number_supplies_absolute_spectral_normalization": false,
+        "balanced_source_assumed_by_decision_ledger": false,
+        "known_single_seed_reflection_is_the_span_reflection": false,
+        "efficient_group_twirl_or_label_forward_map_supplies_span_projection": false
+      }
+    },
+    {
+      "decision": {
+        "dimension": 128,
+        "root_digits": 128,
+        "original_modulus": "11790184577738583171520872861412518665678211592275841109096961",
+        "original_pairs": 16396,
+        "original_classical_values": 32792,
+        "word_dimension_base3_exponent": 16396,
+        "frequency_group_base3_exponent": 16384,
+        "true_original_marginal_second_moment_upper": "46336150792381577588313262263220434371406283602843045997201608143345357543255478647000589718036536507270555182381989734059/4398046511104",
+        "uniform_null_acceptance_upper_without_balance": "1/531441",
+        "source_span_rejection_upper": "949659410489860432672480310084702802441971782440268227712646958897863102849021034870277086271158815716510028462918879599539205/9552588109238561361345216634732930044677006668949372888592221495725228352722040935761305343920677710328180834687162959429688891539456",
+        "hypothetical_span_effect_operator_norm_error": "1/16",
+        "hypothetical_each_ensemble_preparation_trace_distance_upper": "1/64",
+        "decision_advantage_lower_IF_effect_and_source_promises_hold": "8059977292630800356320772375428551834753848441364804600132230205922219993800345864719178072972365124950140626616593625039066178636795/9552588109238561361345216634732930044677006668949372888592221495725228352722040935761305343920677710328180834687162959429688891539456",
+        "original_noise_independence_or_label_independence_required_for_moment_bound": false,
+        "null_raw_values_IID_uniform_independent_of_labels_required": true,
+        "span_null_acceptance_invariant_under_data_adaptive_known_mask": true,
+        "identity_null_density_after_data_adaptive_mask_claimed": false,
+        "balanced_fibres_or_full_frequency_coverage_assumed": false,
+        "uniform_operator_norm_approximation_is_sufficient_not_necessary": true,
+        "all_other_ensemble_decision_tests_excluded": false,
+        "span_projection_proved_easier_than_coherent_row_preparation": false,
+        "source_noise_and_gate_precision_promises_established": false,
+        "efficient_span_effect_supplied": false
+      },
+      "width_changing_search_route": {
+        "dimension": 128,
+        "root_digits": 128,
+        "original_modulus": "11790184577738583171520872861412518665678211592275841109096961",
+        "decision_rows": 32792,
+        "declared_omega_sqrt_log_function": "ceil(log2(n+2))",
+        "smoothing_function_value": 8,
+        "decision_continuous_D_alpha_width": "1/2097152",
+        "search_continuous_D_alpha_width": "1/134217728",
+        "search_to_decision_width_multiplier": 64,
+        "fresh_auxiliary_Gaussian_width_squared": "4095/18014398509481984",
+        "selected_prime_power_theorem_parameter_guards": true,
+        "search_alpha_q_at_least_2_sqrt_n": true,
+        "worst_case_lattice_reduction_compatibility_established": false,
+        "rounded_search_input_then_fresh_Gaussian_widening_TV_squared_upper": "1624502428788066353152/3984677287390853764706998988325641253769083358426487740529352292286984021932254886248815712802551956942731392719834202319209465",
+        "fresh_Gaussian_auxiliary_noise_is_not_a_fresh_original_sample": true,
+        "polynomial_expansion_of_disjoint_original_samples_is_required": true,
+        "fixed_existing_source_bank_suffices_proved": false,
+        "same_width_search_recovery_claimed": false,
+        "rounding_then_widening_claimed_exact": false,
+        "full_source_adapter_or_published_reduction_implemented": false,
+        "actual_decision_algorithm_supplied": false,
+        "source_statement_url": "https://eprint.iacr.org/2011/501",
+        "source_statement": "Section3 Theorem3.1 prime-power example; full adapted proof review pending"
+      },
+      "raw_normalization_countercontrol": {
+        "dimension": 128,
+        "root_digits": 128,
+        "word_trits": 16396,
+        "hypothetical_balanced_fibre_size": {
+          "base": 3,
+          "exponent": 12
+        },
+        "hypothetical_raw_comparison_positive_eigenvalue": {
+          "base": 3,
+          "exponent": -16384
+        },
+        "ideal_span_effect_accepts_codewords": "1",
+        "ideal_raw_comparison_accepts_codewords": {
+          "base": 3,
+          "exponent": -16384
+        },
+        "supported_condition_number": "1",
+        "small_condition_number_supplies_absolute_spectral_normalization": false,
+        "balanced_source_assumed_by_decision_ledger": false,
+        "known_single_seed_reflection_is_the_span_reflection": false,
+        "efficient_group_twirl_or_label_forward_map_supplies_span_projection": false
+      }
+    }
+  ],
+  "null_independence_countercontrol": {
+    "kind": "UNIFORM_RAW_MARGINALS_WITH_CODEWORD_DEPENDENCE_ARE_NOT_THE_NULL",
+    "complete_equal_weight_original_banks": [
+      {
+        "original_records": [
+          {
+            "label": [
+              1
+            ],
+            "value": 0,
+            "modulus": 3,
+            "source_id": "null-dependence-0-0"
+          },
+          {
+            "label": [
+              1
+            ],
+            "value": 0,
+            "modulus": 3,
+            "source_id": "null-dependence-0-1"
+          },
+          {
+            "label": [
+              1
+            ],
+            "value": 0,
+            "modulus": 3,
+            "source_id": "null-dependence-0-2"
+          },
+          {
+            "label": [
+              1
+            ],
+            "value": 0,
+            "modulus": 3,
+            "source_id": "null-dependence-0-3"
+          }
+        ],
+        "known_mask": [
+          0
+        ],
+        "preparation_contract": {
+          "public_family": {
+            "modulus": "3",
+            "dimension": 1,
+            "cohorts": 1,
+            "sites": 2,
+            "paired_labels": [
+              [
+                [
+                  [
+                    1
+                  ],
+                  [
+                    1
+                  ]
+                ],
+                [
+                  [
+                    1
+                  ],
+                  [
+                    1
+                  ]
+                ]
+              ]
+            ],
+            "responses_masks_source_IDs_and_errors_supplied": false
+          },
+          "known_word_phases_by_cohort": [
+            [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0
+              ]
+            ]
+          ],
+          "original_records_paid_once": 4,
+          "cohort_controlled_local_diagonal_gates": 2,
+          "uniform_index_qubits": 0,
+          "uniform_qutrits": 2,
+          "word_domain_size": "9",
+          "frequency_group_size": "3",
+          "frequency_coordinate_trits": 1,
+          "secret_or_errors_supplied_to_preparation": false,
+          "same_as_previous_native_point_seed": false,
+          "all_word_table_required_for_indexed_preparation": false,
+          "normalized_fibre_oracle_supplied": false,
+          "physical_gate_synthesis_and_precision_supplied": false
+        },
+        "actual_word_rows": [
+          {
+            "cohort": 0,
+            "word": [
+              0,
+              0
+            ],
+            "frequency": [
+              2
+            ],
+            "known_phase": 0
+          },
+          {
+            "cohort": 0,
+            "word": [
+              0,
+              1
+            ],
+            "frequency": [
+              1
+            ],
+            "known_phase": 0
+          },
+          {
+            "cohort": 0,
+            "word": [
+              0,
+              2
+            ],
+            "frequency": [
+              0
+            ],
+            "known_phase": 0
+          },
+          {
+            "cohort": 0,
+            "word": [
+              1,
+              0
+            ],
+            "frequency": [
+              1
+            ],
+            "known_phase": 0
+          },
+          {
+            "cohort": 0,
+            "word": [
+              1,
+              1
+            ],
+            "frequency": [
+              0
+            ],
+            "known_phase": 0
+          },
+          {
+            "cohort": 0,
+            "word": [
+              1,
+              2
+            ],
+            "frequency": [
+              2
+            ],
+            "known_phase": 0
+          },
+          {
+            "cohort": 0,
+            "word": [
+              2,
+              0
+            ],
+            "frequency": [
+              0
+            ],
+            "known_phase": 0
+          },
+          {
+            "cohort": 0,
+            "word": [
+              2,
+              1
+            ],
+            "frequency": [
+              2
+            ],
+            "known_phase": 0
+          },
+          {
+            "cohort": 0,
+            "word": [
+              2,
+              2
+            ],
+            "frequency": [
+              1
+            ],
+            "known_phase": 0
+          }
+        ],
+        "actual_fibre_counts": [
+          3,
+          3,
+          3
+        ],
+        "span_rank": 3,
+        "word_dimension": 9,
+        "exact_span_acceptance_root_polynomial": [
+          "1"
+        ],
+        "diagnostic_span_acceptance_probability": 1.0000000000000002,
+        "exact_uniform_raw_value_null_acceptance": "1/3",
+        "diagnostic_raw_comparison_acceptance_probability": 0.3333333333333333,
+        "ideal_raw_comparison_acceptance": "1/3",
+        "truth_fixture_only": {
+          "masked_secret": [
+            0
+          ],
+          "original_errors": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "pathwise_span_rejection_upper": "0",
+        "dense_reference_is_an_efficient_decision_algorithm": false,
+        "source_calibration_is_unbounded_Gaussian_advantage_evidence": false,
+        "span_effect_implementation_supplied": false
+      },
+      {
+        "original_records": [
+          {
+            "label": [
+              1
+            ],
+            "value": 1,
+            "modulus": 3,
+            "source_id": "null-dependence-1-0"
+          },
+          {
+            "label": [
+              1
+            ],
+            "value": 1,
+            "modulus": 3,
+            "source_id": "null-dependence-1-1"
+          },
+          {
+            "label": [
+              1
+            ],
+            "value": 1,
+            "modulus": 3,
+            "source_id": "null-dependence-1-2"
+          },
+          {
+            "label": [
+              1
+            ],
+            "value": 1,
+            "modulus": 3,
+            "source_id": "null-dependence-1-3"
+          }
+        ],
+        "known_mask": [
+          0
+        ],
+        "preparation_contract": {
+          "public_family": {
+            "modulus": "3",
+            "dimension": 1,
+            "cohorts": 1,
+            "sites": 2,
+            "paired_labels": [
+              [
+                [
+                  [
+                    1
+                  ],
+                  [
+                    1
+                  ]
+                ],
+                [
+                  [
+                    1
+                  ],
+                  [
+                    1
+                  ]
+                ]
+              ]
+            ],
+            "responses_masks_source_IDs_and_errors_supplied": false
+          },
+          "known_word_phases_by_cohort": [
+            [
+              [
+                1,
+                0,
+                2
+              ],
+              [
+                1,
+                0,
+                2
+              ]
+            ]
+          ],
+          "original_records_paid_once": 4,
+          "cohort_controlled_local_diagonal_gates": 2,
+          "uniform_index_qubits": 0,
+          "uniform_qutrits": 2,
+          "word_domain_size": "9",
+          "frequency_group_size": "3",
+          "frequency_coordinate_trits": 1,
+          "secret_or_errors_supplied_to_preparation": false,
+          "same_as_previous_native_point_seed": false,
+          "all_word_table_required_for_indexed_preparation": false,
+          "normalized_fibre_oracle_supplied": false,
+          "physical_gate_synthesis_and_precision_supplied": false
+        },
+        "actual_word_rows": [
+          {
+            "cohort": 0,
+            "word": [
+              0,
+              0
+            ],
+            "frequency": [
+              2
+            ],
+            "known_phase": 2
+          },
+          {
+            "cohort": 0,
+            "word": [
+              0,
+              1
+            ],
+            "frequency": [
+              1
+            ],
+            "known_phase": 1
+          },
+          {
+            "cohort": 0,
+            "word": [
+              0,
+              2
+            ],
+            "frequency": [
+              0
+            ],
+            "known_phase": 0
+          },
+          {
+            "cohort": 0,
+            "word": [
+              1,
+              0
+            ],
+            "frequency": [
+              1
+            ],
+            "known_phase": 1
+          },
+          {
+            "cohort": 0,
+            "word": [
+              1,
+              1
+            ],
+            "frequency": [
+              0
+            ],
+            "known_phase": 0
+          },
+          {
+            "cohort": 0,
+            "word": [
+              1,
+              2
+            ],
+            "frequency": [
+              2
+            ],
+            "known_phase": 2
+          },
+          {
+            "cohort": 0,
+            "word": [
+              2,
+              0
+            ],
+            "frequency": [
+              0
+            ],
+            "known_phase": 0
+          },
+          {
+            "cohort": 0,
+            "word": [
+              2,
+              1
+            ],
+            "frequency": [
+              2
+            ],
+            "known_phase": 2
+          },
+          {
+            "cohort": 0,
+            "word": [
+              2,
+              2
+            ],
+            "frequency": [
+              1
+            ],
+            "known_phase": 1
+          }
+        ],
+        "actual_fibre_counts": [
+          3,
+          3,
+          3
+        ],
+        "span_rank": 3,
+        "word_dimension": 9,
+        "exact_span_acceptance_root_polynomial": [
+          "1"
+        ],
+        "diagnostic_span_acceptance_probability": 1.0,
+        "exact_uniform_raw_value_null_acceptance": "1/3",
+        "diagnostic_raw_comparison_acceptance_probability": 0.33333333333333326,
+        "ideal_raw_comparison_acceptance": "1/3",
+        "truth_fixture_only": {
+          "masked_secret": [
+            1
+          ],
+          "original_errors": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "pathwise_span_rejection_upper": "0",
+        "dense_reference_is_an_efficient_decision_algorithm": false,
+        "source_calibration_is_unbounded_Gaussian_advantage_evidence": false,
+        "span_effect_implementation_supplied": false
+      },
+      {
+        "original_records": [
+          {
+            "label": [
+              1
+            ],
+            "value": 2,
+            "modulus": 3,
+            "source_id": "null-dependence-2-0"
+          },
+          {
+            "label": [
+              1
+            ],
+            "value": 2,
+            "modulus": 3,
+            "source_id": "null-dependence-2-1"
+          },
+          {
+            "label": [
+              1
+            ],
+            "value": 2,
+            "modulus": 3,
+            "source_id": "null-dependence-2-2"
+          },
+          {
+            "label": [
+              1
+            ],
+            "value": 2,
+            "modulus": 3,
+            "source_id": "null-dependence-2-3"
+          }
+        ],
+        "known_mask": [
+          0
+        ],
+        "preparation_contract": {
+          "public_family": {
+            "modulus": "3",
+            "dimension": 1,
+            "cohorts": 1,
+            "sites": 2,
+            "paired_labels": [
+              [
+                [
+                  [
+                    1
+                  ],
+                  [
+                    1
+                  ]
+                ],
+                [
+                  [
+                    1
+                  ],
+                  [
+                    1
+                  ]
+                ]
+              ]
+            ],
+            "responses_masks_source_IDs_and_errors_supplied": false
+          },
+          "known_word_phases_by_cohort": [
+            [
+              [
+                2,
+                0,
+                1
+              ],
+              [
+                2,
+                0,
+                1
+              ]
+            ]
+          ],
+          "original_records_paid_once": 4,
+          "cohort_controlled_local_diagonal_gates": 2,
+          "uniform_index_qubits": 0,
+          "uniform_qutrits": 2,
+          "word_domain_size": "9",
+          "frequency_group_size": "3",
+          "frequency_coordinate_trits": 1,
+          "secret_or_errors_supplied_to_preparation": false,
+          "same_as_previous_native_point_seed": false,
+          "all_word_table_required_for_indexed_preparation": false,
+          "normalized_fibre_oracle_supplied": false,
+          "physical_gate_synthesis_and_precision_supplied": false
+        },
+        "actual_word_rows": [
+          {
+            "cohort": 0,
+            "word": [
+              0,
+              0
+            ],
+            "frequency": [
+              2
+            ],
+            "known_phase": 1
+          },
+          {
+            "cohort": 0,
+            "word": [
+              0,
+              1
+            ],
+            "frequency": [
+              1
+            ],
+            "known_phase": 2
+          },
+          {
+            "cohort": 0,
+            "word": [
+              0,
+              2
+            ],
+            "frequency": [
+              0
+            ],
+            "known_phase": 0
+          },
+          {
+            "cohort": 0,
+            "word": [
+              1,
+              0
+            ],
+            "frequency": [
+              1
+            ],
+            "known_phase": 2
+          },
+          {
+            "cohort": 0,
+            "word": [
+              1,
+              1
+            ],
+            "frequency": [
+              0
+            ],
+            "known_phase": 0
+          },
+          {
+            "cohort": 0,
+            "word": [
+              1,
+              2
+            ],
+            "frequency": [
+              2
+            ],
+            "known_phase": 1
+          },
+          {
+            "cohort": 0,
+            "word": [
+              2,
+              0
+            ],
+            "frequency": [
+              0
+            ],
+            "known_phase": 0
+          },
+          {
+            "cohort": 0,
+            "word": [
+              2,
+              1
+            ],
+            "frequency": [
+              2
+            ],
+            "known_phase": 1
+          },
+          {
+            "cohort": 0,
+            "word": [
+              2,
+              2
+            ],
+            "frequency": [
+              1
+            ],
+            "known_phase": 2
+          }
+        ],
+        "actual_fibre_counts": [
+          3,
+          3,
+          3
+        ],
+        "span_rank": 3,
+        "word_dimension": 9,
+        "exact_span_acceptance_root_polynomial": [
+          "1"
+        ],
+        "diagnostic_span_acceptance_probability": 1.0,
+        "exact_uniform_raw_value_null_acceptance": "1/3",
+        "diagnostic_raw_comparison_acceptance_probability": 0.33333333333333326,
+        "ideal_raw_comparison_acceptance": "1/3",
+        "truth_fixture_only": {
+          "masked_secret": [
+            2
+          ],
+          "original_errors": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "pathwise_span_rejection_upper": "0",
+        "dense_reference_is_an_efficient_decision_algorithm": false,
+        "source_calibration_is_unbounded_Gaussian_advantage_evidence": false,
+        "span_effect_implementation_supplied": false
+      }
+    ],
+    "each_raw_value_marginal_uniform": true,
+    "raw_values_jointly_IID": false,
+    "exact_correlated_null_mean_span_acceptance": "1",
+    "exact_IID_null_mean_span_acceptance": "1/3",
+    "countercontrol_is_not_a_hard_source_or_speedup_candidate": true
+  },
+  "accepted_speedup_candidate": false,
+  "new_active_negative_result_created": false,
+  "research_decision": "SEARCH_SOURCE_COMPATIBLE_DECISION_MECHANISMS_TOO; DO_NOT_REQUIRE_FIXED_BANK_FULL_COHERENT_DECODING_BY_FIAT",
+  "remaining_obligations": [
+    "explicit efficient source decision effect or alternative ensemble test",
+    "classical comparisons beyond bounded-error fixtures",
+    "complete MP12 source/noise/precision/sample audit",
+    "legal physical preparation and effect accuracy",
+    "production integration"
+  ]
+}

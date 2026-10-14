@@ -1,0 +1,33 @@
+{
+  "id": "ADMISSION-KNOWN-PREPARATION-MEASURED-PACKET-FAMILY",
+  "status": "LOCAL_DERIVATION_REVIEW_PENDING_NOT_A_UNIVERSAL_NEGATIVE",
+  "cases": [
+    {
+      "source": "original classical records with explicit known two/three-entry phase preparations",
+      "receiver": "the covered measured-compression and local-readout primitives",
+      "decision": "MATCHED_EFFICIENT_CLASSICAL_SIMULATION_REQUIRED",
+      "superpolynomial_quantum_advantage_from_this_family_admissible": false,
+      "artifact": "research/classical_baselines/known_preparation_packet_simulation.json"
+    },
+    {
+      "source": "unknown quantum-only labelled phase packets",
+      "receiver": "the same measured-compression primitives",
+      "decision": "SIMULATION_NOT_LEGAL_WITHOUT_THE_MISSING_CLASSICAL_PHASE_VALUES",
+      "quantum_advantage_established": false
+    },
+    {
+      "source": "original classical records",
+      "receiver": "persistent wide coherence or large phase-vector/frequency work registers",
+      "decision": "OUTSIDE_THIS_CUT_REQUIRE_SOURCE_COST_NOISE_AND_CLASSICAL_TENSOR_BASELINE",
+      "quantum_advantage_established": false
+    },
+    {
+      "source": "classically specified quantum preparation",
+      "receiver": "arbitrary wide computation with a single final qubit",
+      "decision": "NOT_COVERED_KNOWN_CIRCUIT_DESCRIPTION_IS_NOT_AN_EFFICIENT_STATE_TABLE",
+      "quantum_advantage_established": false
+    }
+  ],
+  "do_not_create_a_broad_HSP_or_LWE_no_go_from_this_artifact": true,
+  "main_registry_integration_performed": false
+}

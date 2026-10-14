@@ -1,0 +1,170 @@
+{
+  "status": "ROUNDED_GAUSSIAN_ORIGINAL_PREFIX_INFORMATION_BOUND_REVIEW_PENDING",
+  "producer_sha256": "23102078ba0bc6e699cc3f1a814e2fcdd58c463579f47f3fc3df4c8299ed72c7",
+  "derivation_sha256": "93753698bb9dc2d17c1363d1c782bfba6044da668bef82cecbabb653184a76fe",
+  "dependency_sha256": {
+    "native_small_multiple_completion.py": "5519f9809f60ed4ab1447c5bf6aa217b8bacab3d709abb85314212749149eaac",
+    "ternary_measured_lattice_decoder.py": "151f7c5fbb9e09ad8c231fb841c6d8ce385d54123acd9d15f33b3ce51efced4b"
+  },
+  "original_mod9_profiles": [
+    {
+      "dimension": 8,
+      "root_digits": 8,
+      "prefix_digits": 2,
+      "original_values": 152,
+      "continuous_D_alpha_width": "1/512",
+      "Gaussian_width_in_prefix_periods_squared": "531441/262144",
+      "Gaussian_decay_floor": 6,
+      "requested_certificate_bits": 128,
+      "conservative_bank_TV_budget_bits": 0,
+      "whole_prefix_bank_to_secret_independent_uniform_TV_upper": "1",
+      "uncapped_bank_bound_IF_decay_floor_positive": {
+        "rational_factor": "1216/7",
+        "base": 2,
+        "exponent": -6
+      },
+      "rounded_original_errors_are_IID_continuous_D_alpha_then_round": true,
+      "noise_independent_of_original_labels_required": true,
+      "public_labels_and_noise_independent_of_secret_required_for_recovery_bound": true,
+      "source_Gaussian_law_established_by_calibration": false,
+      "public_labels_can_be_kept_at_the_full_original_modulus": true,
+      "arbitrary_classical_or_quantum_postprocessing_of_prefix_records_covered": true,
+      "original_full_response_values_available_to_this_restricted_algorithm": false,
+      "true_quotient_side_information_or_other_coherent_access_excluded": false,
+      "exact_uniformity_claimed": false,
+      "general_LWE_or_quantum_decoder_lower_bound_proved": false
+    },
+    {
+      "dimension": 32,
+      "root_digits": 32,
+      "prefix_digits": 2,
+      "original_values": 2072,
+      "continuous_D_alpha_width": "1/32768",
+      "Gaussian_width_in_prefix_periods_squared": "42391158275216203514294433201/1073741824",
+      "Gaussian_decay_floor": "118439527997419806702",
+      "requested_certificate_bits": 128,
+      "conservative_bank_TV_budget_bits": 128,
+      "whole_prefix_bank_to_secret_independent_uniform_TV_upper": "1/340282366920938463463374607431768211456",
+      "uncapped_bank_bound_IF_decay_floor_positive": {
+        "rational_factor": "2368",
+        "base": 2,
+        "exponent": "-118439527997419806702"
+      },
+      "rounded_original_errors_are_IID_continuous_D_alpha_then_round": true,
+      "noise_independent_of_original_labels_required": true,
+      "public_labels_and_noise_independent_of_secret_required_for_recovery_bound": true,
+      "source_Gaussian_law_established_by_calibration": false,
+      "public_labels_can_be_kept_at_the_full_original_modulus": true,
+      "arbitrary_classical_or_quantum_postprocessing_of_prefix_records_covered": true,
+      "original_full_response_values_available_to_this_restricted_algorithm": false,
+      "true_quotient_side_information_or_other_coherent_access_excluded": false,
+      "exact_uniformity_claimed": false,
+      "general_LWE_or_quantum_decoder_lower_bound_proved": false
+    },
+    {
+      "dimension": 64,
+      "root_digits": 64,
+      "prefix_digits": 2,
+      "original_values": 8216,
+      "continuous_D_alpha_width": "1/262144",
+      "Gaussian_width_in_prefix_periods_squared": "145557834293068928043467566190278008218249525830565939618481/68719476736",
+      "Gaussian_decay_floor": "6354435796372225509991442938492895695595486576955",
+      "requested_certificate_bits": 128,
+      "conservative_bank_TV_budget_bits": 128,
+      "whole_prefix_bank_to_secret_independent_uniform_TV_upper": "1/340282366920938463463374607431768211456",
+      "uncapped_bank_bound_IF_decay_floor_positive": {
+        "rational_factor": "65728/7",
+        "base": 2,
+        "exponent": "-6354435796372225509991442938492895695595486576955"
+      },
+      "rounded_original_errors_are_IID_continuous_D_alpha_then_round": true,
+      "noise_independent_of_original_labels_required": true,
+      "public_labels_and_noise_independent_of_secret_required_for_recovery_bound": true,
+      "source_Gaussian_law_established_by_calibration": false,
+      "public_labels_can_be_kept_at_the_full_original_modulus": true,
+      "arbitrary_classical_or_quantum_postprocessing_of_prefix_records_covered": true,
+      "original_full_response_values_available_to_this_restricted_algorithm": false,
+      "true_quotient_side_information_or_other_coherent_access_excluded": false,
+      "exact_uniformity_claimed": false,
+      "general_LWE_or_quantum_decoder_lower_bound_proved": false
+    },
+    {
+      "dimension": 128,
+      "root_digits": 128,
+      "prefix_digits": 2,
+      "original_values": 32792,
+      "continuous_D_alpha_width": "1/2097152",
+      "Gaussian_width_in_prefix_periods_squared": "1716153733051169540307898602341497569311343837142335036933392894197976205305758468407429248816168018787798340006776536241/4398046511104",
+      "Gaussian_decay_floor": "1170624545728403204730897370387650132200640544266890426752110825553683893285159548491330439548733933489392034",
+      "requested_certificate_bits": 128,
+      "conservative_bank_TV_budget_bits": 128,
+      "whole_prefix_bank_to_secret_independent_uniform_TV_upper": "1/340282366920938463463374607431768211456",
+      "uncapped_bank_bound_IF_decay_floor_positive": {
+        "rational_factor": "262336/7",
+        "base": 2,
+        "exponent": "-1170624545728403204730897370387650132200640544266890426752110825553683893285159548491330439548733933489392034"
+      },
+      "rounded_original_errors_are_IID_continuous_D_alpha_then_round": true,
+      "noise_independent_of_original_labels_required": true,
+      "public_labels_and_noise_independent_of_secret_required_for_recovery_bound": true,
+      "source_Gaussian_law_established_by_calibration": false,
+      "public_labels_can_be_kept_at_the_full_original_modulus": true,
+      "arbitrary_classical_or_quantum_postprocessing_of_prefix_records_covered": true,
+      "original_full_response_values_available_to_this_restricted_algorithm": false,
+      "true_quotient_side_information_or_other_coherent_access_excluded": false,
+      "exact_uniformity_claimed": false,
+      "general_LWE_or_quantum_decoder_lower_bound_proved": false
+    }
+  ],
+  "full_original_root_outside_the_cut": {
+    "dimension": 32,
+    "root_digits": 32,
+    "prefix_digits": 32,
+    "original_values": 2072,
+    "continuous_D_alpha_width": "1/32768",
+    "Gaussian_width_in_prefix_periods_squared": "1/1073741824",
+    "Gaussian_decay_floor": 0,
+    "requested_certificate_bits": 128,
+    "conservative_bank_TV_budget_bits": 0,
+    "whole_prefix_bank_to_secret_independent_uniform_TV_upper": "1",
+    "uncapped_bank_bound_IF_decay_floor_positive": null,
+    "rounded_original_errors_are_IID_continuous_D_alpha_then_round": true,
+    "noise_independent_of_original_labels_required": true,
+    "public_labels_and_noise_independent_of_secret_required_for_recovery_bound": true,
+    "source_Gaussian_law_established_by_calibration": false,
+    "public_labels_can_be_kept_at_the_full_original_modulus": true,
+    "arbitrary_classical_or_quantum_postprocessing_of_prefix_records_covered": true,
+    "original_full_response_values_available_to_this_restricted_algorithm": false,
+    "true_quotient_side_information_or_other_coherent_access_excluded": false,
+    "exact_uniformity_claimed": false,
+    "general_LWE_or_quantum_decoder_lower_bound_proved": false
+  },
+  "correlated_Gaussian_marginal_countercontrol": {
+    "prefix_modulus": 9,
+    "dimension": 1,
+    "original_labels": [
+      [
+        0
+      ],
+      [
+        1
+      ]
+    ],
+    "scalar_observations": [
+      "E",
+      "E+s"
+    ],
+    "E_can_be_a_single_rounded_Gaussian": true,
+    "marginal_Gaussian_laws_suffice_for_bank_bound": false,
+    "errors_are_IID": false,
+    "original_difference_recovers_secret_prefix_exactly": true,
+    "event_b2_minus_b1_equals_s_has_shared_error_probability": "1",
+    "same_event_has_IID_uniform_null_probability": "1/9",
+    "whole_bank_TV_from_IID_null_lower": "8/9",
+    "countercontrol_is_a_hard_source_or_speedup_candidate": false
+  },
+  "research_decision": "DO_NOT_TRANSFER_BOUNDED_ERROR_LOW_DIGIT_DECODING_TO_GAUSSIAN_ORIGINAL_PREFIXES",
+  "accepted_speedup_candidate": false,
+  "new_active_negative_result_created": false,
+  "next_obligation": "source-correct quotient adapter with acquired lower-secret side information, or a collective full-value mechanism"
+}

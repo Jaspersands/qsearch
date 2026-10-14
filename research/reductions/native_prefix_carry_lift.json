@@ -1,0 +1,3489 @@
+{
+  "status": "COMPACT_NATIVE_FIRST_CARRY_EQUATIONS_AND_PREFIX_ROW_REFERENCE_REVIEW_PENDING",
+  "producer_sha256": "cc5723557180eb5d974c02ec64a54d4595970026021827fa8d520d1e2c70949b",
+  "derivation_sha256": "8274f399cd848171614857250ea7893f9ca3392ab4d9c7a02f65143bf6f9d106",
+  "dependency_sha256": {
+    "native_affine_fibre_relaxation.py": "725c4cc15d814ef1b960cf8bff5b816122a5f4f217c99debf7b47a03c41eb5bd",
+    "native_known_seed_group_workbench.py": "0df1a11e94612888d9a063adc7e1fa95f4c9933a8a8ca28b73ab3425f6337991",
+    "native_short_preimage_reduction.py": "0132546a2322c739351a80bae0c11226d47b32aec26c527f673902227c010ee7",
+    "known_preparation_coherent_reflection.py": "0fad142d491405c040aeb0c5939be373b55e7a4418979b06c0f6cdce8a489cca",
+    "ternary_covariant_noise.py": "2dadce1a070376a073c4a0fccd1aed2c5988d6478983b654c2a2d640f863d42a",
+    "ternary_measured_lattice_decoder.py": "151f7c5fbb9e09ad8c231fb841c6d8ce385d54123acd9d15f33b3ce51efced4b",
+    "ternary_noise_degradation.py": "def0aebaf71b7bbd0a659993c3181b28c10b2ae26563cb4dbd7a74f26fd4fde4"
+  },
+  "bounded_carry_controls": [
+    {
+      "status": "PREFIX_RANK_UNSUPPORTED_NOT_NO_WORDS",
+      "public_family": {
+        "modulus": "9",
+        "dimension": 1,
+        "cohorts": 1,
+        "sites": 3,
+        "paired_labels": [
+          [
+            [
+              [
+                1
+              ],
+              [
+                2
+              ]
+            ],
+            [
+              [
+                2
+              ],
+              [
+                7
+              ]
+            ],
+            [
+              [
+                1
+              ],
+              [
+                5
+              ]
+            ]
+          ]
+        ],
+        "responses_masks_source_IDs_and_errors_supplied": false
+      },
+      "source_impossibility_or_general_no_go_inferred": false
+    },
+    {
+      "status": "EXACT_COMPACT_MOD9_CARRY_AND_COMPLETE_PREFIX_WORD_CONTROL",
+      "public_family": {
+        "modulus": "9",
+        "dimension": 2,
+        "cohorts": 1,
+        "sites": 4,
+        "paired_labels": [
+          [
+            [
+              [
+                0,
+                7
+              ],
+              [
+                7,
+                4
+              ]
+            ],
+            [
+              [
+                7,
+                1
+              ],
+              [
+                0,
+                3
+              ]
+            ],
+            [
+              [
+                0,
+                6
+              ],
+              [
+                1,
+                0
+              ]
+            ],
+            [
+              [
+                0,
+                2
+              ],
+              [
+                6,
+                3
+              ]
+            ]
+          ]
+        ],
+        "responses_masks_source_IDs_and_errors_supplied": false
+      },
+      "target": [
+        7,
+        0
+      ],
+      "cohort_controls": [
+        {
+          "compact_circuit": {
+            "public_family": {
+              "modulus": "9",
+              "dimension": 2,
+              "cohorts": 1,
+              "sites": 4,
+              "paired_labels": [
+                [
+                  [
+                    [
+                      0,
+                      7
+                    ],
+                    [
+                      7,
+                      4
+                    ]
+                  ],
+                  [
+                    [
+                      7,
+                      1
+                    ],
+                    [
+                      0,
+                      3
+                    ]
+                  ],
+                  [
+                    [
+                      0,
+                      6
+                    ],
+                    [
+                      1,
+                      0
+                    ]
+                  ],
+                  [
+                    [
+                      0,
+                      2
+                    ],
+                    [
+                      6,
+                      3
+                    ]
+                  ]
+                ]
+              ],
+              "responses_masks_source_IDs_and_errors_supplied": false
+            },
+            "cohort": 0,
+            "target": [
+              7,
+              0
+            ],
+            "prefix_recipe": {
+              "modulus": "3",
+              "matrix": [
+                [
+                  1,
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  2,
+                  1,
+                  0,
+                  2
+                ]
+              ],
+              "pivot_columns": [
+                0,
+                1
+              ],
+              "free_columns": [
+                2,
+                3
+              ],
+              "pivot_minor_inverse": [
+                [
+                  2,
+                  1
+                ],
+                [
+                  2,
+                  2
+                ]
+              ],
+              "inverse_lift_digits": [
+                1
+              ],
+              "free_registers": 2,
+              "free_fibre_size": {
+                "base": "3",
+                "exponent": 2
+              },
+              "coordinate_bijection": "z <-> (A*z,z_free)",
+              "unit_minor_verified_modulo_full_root": true,
+              "uses_composite_modulus_field_inverse": false,
+              "classical_matrix_preprocessing_arithmetic_order": "O(n^2*d+n^3*log(r))",
+              "reversible_affine_map_modular_multiply_add_order": "O(n*d+n^2)",
+              "uniform_free_register_trits": 2,
+              "physical_gate_synthesis_and_precision_supplied": false
+            },
+            "word_offsets": [
+              2,
+              1,
+              0,
+              0
+            ],
+            "pivot_affine_forms": [
+              {
+                "site": 0,
+                "offset": 2,
+                "coefficients": [
+                  1,
+                  1
+                ]
+              },
+              {
+                "site": 1,
+                "offset": 1,
+                "coefficients": [
+                  1,
+                  2
+                ]
+              }
+            ],
+            "F3_constants": [
+              2,
+              2
+            ],
+            "F3_linear_coefficients": [
+              [
+                1,
+                2
+              ],
+              [
+                0,
+                0
+              ]
+            ],
+            "F3_diagonal_quadratic": [
+              [
+                1,
+                0
+              ],
+              [
+                0,
+                1
+              ]
+            ],
+            "F3_pivot_weights": [
+              [
+                {
+                  "square": 2,
+                  "cube": 1
+                },
+                {
+                  "square": 2,
+                  "cube": 2
+                }
+              ],
+              [
+                {
+                  "square": 2,
+                  "cube": 1
+                },
+                {
+                  "square": 2,
+                  "cube": 1
+                }
+              ]
+            ],
+            "free_trits": 2,
+            "next_digit_equations": 2,
+            "total_degree_upper": 3,
+            "dense_divided_cube_forms_upper": 2,
+            "expanded_cubic_tensor_materialized": false,
+            "divided_cubes_are_ordinary_rank_one_F3_cubes": false,
+            "coefficient_division_by3_is_verified_integer_division": true,
+            "source_values_mask_secret_or_errors_supplied": false,
+            "matching_mod9_implies_full_root_matching": true,
+            "polynomial_cubic_solver_or_uniform_row_sampler_supplied": false,
+            "physical_row_preparation_circuit_executed": false
+          },
+          "canonical_polynomials": [
+            [
+              {
+                "powers": [
+                  0,
+                  0
+                ],
+                "coefficient": 2
+              },
+              {
+                "powers": [
+                  0,
+                  1
+                ],
+                "coefficient": 2
+              },
+              {
+                "powers": [
+                  0,
+                  2
+                ],
+                "coefficient": 1
+              },
+              {
+                "powers": [
+                  1,
+                  0
+                ],
+                "coefficient": 1
+              },
+              {
+                "powers": [
+                  1,
+                  2
+                ],
+                "coefficient": 2
+              },
+              {
+                "powers": [
+                  2,
+                  0
+                ],
+                "coefficient": 1
+              }
+            ],
+            [
+              {
+                "powers": [
+                  0,
+                  0
+                ],
+                "coefficient": 2
+              },
+              {
+                "powers": [
+                  2,
+                  0
+                ],
+                "coefficient": 1
+              },
+              {
+                "powers": [
+                  2,
+                  1
+                ],
+                "coefficient": 1
+              }
+            ]
+          ],
+          "complete_prefix_word_rows": [
+            {
+              "free_trits": [
+                0,
+                0
+              ],
+              "native_word": [
+                2,
+                1,
+                0,
+                0
+              ],
+              "actual_frequency": [
+                4,
+                6
+              ],
+              "next_digit_residual": [
+                2,
+                2
+              ],
+              "matches_mod9_target": false,
+              "matches_entire_root_target": false
+            },
+            {
+              "free_trits": [
+                0,
+                1
+              ],
+              "native_word": [
+                0,
+                0,
+                0,
+                1
+              ],
+              "actual_frequency": [
+                4,
+                6
+              ],
+              "next_digit_residual": [
+                2,
+                2
+              ],
+              "matches_mod9_target": false,
+              "matches_entire_root_target": false
+            },
+            {
+              "free_trits": [
+                0,
+                2
+              ],
+              "native_word": [
+                1,
+                2,
+                0,
+                2
+              ],
+              "actual_frequency": [
+                1,
+                6
+              ],
+              "next_digit_residual": [
+                1,
+                2
+              ],
+              "matches_mod9_target": false,
+              "matches_entire_root_target": false
+            },
+            {
+              "free_trits": [
+                1,
+                0
+              ],
+              "native_word": [
+                0,
+                2,
+                1,
+                0
+              ],
+              "actual_frequency": [
+                1,
+                0
+              ],
+              "next_digit_residual": [
+                1,
+                0
+              ],
+              "matches_mod9_target": false,
+              "matches_entire_root_target": false
+            },
+            {
+              "free_trits": [
+                1,
+                1
+              ],
+              "native_word": [
+                1,
+                1,
+                1,
+                1
+              ],
+              "actual_frequency": [
+                7,
+                3
+              ],
+              "next_digit_residual": [
+                0,
+                1
+              ],
+              "matches_mod9_target": false,
+              "matches_entire_root_target": false
+            },
+            {
+              "free_trits": [
+                1,
+                2
+              ],
+              "native_word": [
+                2,
+                0,
+                1,
+                2
+              ],
+              "actual_frequency": [
+                4,
+                6
+              ],
+              "next_digit_residual": [
+                2,
+                2
+              ],
+              "matches_mod9_target": false,
+              "matches_entire_root_target": false
+            },
+            {
+              "free_trits": [
+                2,
+                0
+              ],
+              "native_word": [
+                1,
+                0,
+                2,
+                0
+              ],
+              "actual_frequency": [
+                4,
+                0
+              ],
+              "next_digit_residual": [
+                2,
+                0
+              ],
+              "matches_mod9_target": false,
+              "matches_entire_root_target": false
+            },
+            {
+              "free_trits": [
+                2,
+                1
+              ],
+              "native_word": [
+                2,
+                2,
+                2,
+                1
+              ],
+              "actual_frequency": [
+                7,
+                3
+              ],
+              "next_digit_residual": [
+                0,
+                1
+              ],
+              "matches_mod9_target": false,
+              "matches_entire_root_target": false
+            },
+            {
+              "free_trits": [
+                2,
+                2
+              ],
+              "native_word": [
+                0,
+                1,
+                2,
+                2
+              ],
+              "actual_frequency": [
+                4,
+                6
+              ],
+              "next_digit_residual": [
+                2,
+                2
+              ],
+              "matches_mod9_target": false,
+              "matches_entire_root_target": false
+            }
+          ],
+          "mod9_filter_acceptance": "0",
+          "entire_root_filter_acceptance": "0"
+        }
+      ],
+      "complete_prefix_words_checked": 9,
+      "new_cubic_solver_or_full_root_row_circuit": false
+    },
+    {
+      "status": "EXACT_COMPACT_MOD9_CARRY_AND_COMPLETE_PREFIX_WORD_CONTROL",
+      "public_family": {
+        "modulus": "27",
+        "dimension": 2,
+        "cohorts": 2,
+        "sites": 4,
+        "paired_labels": [
+          [
+            [
+              [
+                3,
+                0
+              ],
+              [
+                6,
+                0
+              ]
+            ],
+            [
+              [
+                7,
+                20
+              ],
+              [
+                16,
+                18
+              ]
+            ],
+            [
+              [
+                12,
+                21
+              ],
+              [
+                0,
+                19
+              ]
+            ],
+            [
+              [
+                9,
+                0
+              ],
+              [
+                19,
+                26
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                26,
+                16
+              ],
+              [
+                18,
+                11
+              ]
+            ],
+            [
+              [
+                4,
+                10
+              ],
+              [
+                8,
+                12
+              ]
+            ],
+            [
+              [
+                12,
+                23
+              ],
+              [
+                25,
+                8
+              ]
+            ],
+            [
+              [
+                2,
+                18
+              ],
+              [
+                16,
+                4
+              ]
+            ]
+          ]
+        ],
+        "responses_masks_source_IDs_and_errors_supplied": false
+      },
+      "target": [
+        7,
+        9
+      ],
+      "cohort_controls": [
+        {
+          "compact_circuit": {
+            "public_family": {
+              "modulus": "27",
+              "dimension": 2,
+              "cohorts": 2,
+              "sites": 4,
+              "paired_labels": [
+                [
+                  [
+                    [
+                      3,
+                      0
+                    ],
+                    [
+                      6,
+                      0
+                    ]
+                  ],
+                  [
+                    [
+                      7,
+                      20
+                    ],
+                    [
+                      16,
+                      18
+                    ]
+                  ],
+                  [
+                    [
+                      12,
+                      21
+                    ],
+                    [
+                      0,
+                      19
+                    ]
+                  ],
+                  [
+                    [
+                      9,
+                      0
+                    ],
+                    [
+                      19,
+                      26
+                    ]
+                  ]
+                ],
+                [
+                  [
+                    [
+                      26,
+                      16
+                    ],
+                    [
+                      18,
+                      11
+                    ]
+                  ],
+                  [
+                    [
+                      4,
+                      10
+                    ],
+                    [
+                      8,
+                      12
+                    ]
+                  ],
+                  [
+                    [
+                      12,
+                      23
+                    ],
+                    [
+                      25,
+                      8
+                    ]
+                  ],
+                  [
+                    [
+                      2,
+                      18
+                    ],
+                    [
+                      16,
+                      4
+                    ]
+                  ]
+                ]
+              ],
+              "responses_masks_source_IDs_and_errors_supplied": false
+            },
+            "cohort": 0,
+            "target": [
+              7,
+              9
+            ],
+            "prefix_recipe": {
+              "modulus": "3",
+              "matrix": [
+                [
+                  0,
+                  2,
+                  0,
+                  1
+                ],
+                [
+                  0,
+                  2,
+                  1,
+                  2
+                ]
+              ],
+              "pivot_columns": [
+                1,
+                2
+              ],
+              "free_columns": [
+                0,
+                3
+              ],
+              "pivot_minor_inverse": [
+                [
+                  2,
+                  0
+                ],
+                [
+                  2,
+                  1
+                ]
+              ],
+              "inverse_lift_digits": [
+                1
+              ],
+              "free_registers": 2,
+              "free_fibre_size": {
+                "base": "3",
+                "exponent": 2
+              },
+              "coordinate_bijection": "z <-> (A*z,z_free)",
+              "unit_minor_verified_modulo_full_root": true,
+              "uses_composite_modulus_field_inverse": false,
+              "classical_matrix_preprocessing_arithmetic_order": "O(n^2*d+n^3*log(r))",
+              "reversible_affine_map_modular_multiply_add_order": "O(n*d+n^2)",
+              "uniform_free_register_trits": 2,
+              "physical_gate_synthesis_and_precision_supplied": false
+            },
+            "word_offsets": [
+              0,
+              0,
+              1,
+              0
+            ],
+            "pivot_affine_forms": [
+              {
+                "site": 1,
+                "offset": 0,
+                "coefficients": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "site": 2,
+                "offset": 1,
+                "coefficients": [
+                  0,
+                  2
+                ]
+              }
+            ],
+            "F3_constants": [
+              0,
+              0
+            ],
+            "F3_linear_coefficients": [
+              [
+                0,
+                2
+              ],
+              [
+                0,
+                0
+              ]
+            ],
+            "F3_diagonal_quadratic": [
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                2
+              ]
+            ],
+            "F3_pivot_weights": [
+              [
+                {
+                  "square": 1,
+                  "cube": 2
+                },
+                {
+                  "square": 2,
+                  "cube": 2
+                }
+              ],
+              [
+                {
+                  "square": 0,
+                  "cube": 0
+                },
+                {
+                  "square": 1,
+                  "cube": 1
+                }
+              ]
+            ],
+            "free_trits": 2,
+            "next_digit_equations": 2,
+            "total_degree_upper": 3,
+            "dense_divided_cube_forms_upper": 2,
+            "expanded_cubic_tensor_materialized": false,
+            "divided_cubes_are_ordinary_rank_one_F3_cubes": false,
+            "coefficient_division_by3_is_verified_integer_division": true,
+            "source_values_mask_secret_or_errors_supplied": false,
+            "matching_mod9_implies_full_root_matching": false,
+            "polynomial_cubic_solver_or_uniform_row_sampler_supplied": false,
+            "physical_row_preparation_circuit_executed": false
+          },
+          "canonical_polynomials": [
+            [
+              {
+                "powers": [
+                  0,
+                  1
+                ],
+                "coefficient": 2
+              },
+              {
+                "powers": [
+                  0,
+                  2
+                ],
+                "coefficient": 1
+              }
+            ],
+            []
+          ],
+          "complete_prefix_word_rows": [
+            {
+              "free_trits": [
+                0,
+                0
+              ],
+              "native_word": [
+                0,
+                0,
+                1,
+                0
+              ],
+              "actual_frequency": [
+                7,
+                18
+              ],
+              "next_digit_residual": [
+                0,
+                0
+              ],
+              "matches_mod9_target": true,
+              "matches_entire_root_target": false
+            },
+            {
+              "free_trits": [
+                0,
+                1
+              ],
+              "native_word": [
+                0,
+                1,
+                0,
+                1
+              ],
+              "actual_frequency": [
+                7,
+                18
+              ],
+              "next_digit_residual": [
+                0,
+                0
+              ],
+              "matches_mod9_target": true,
+              "matches_entire_root_target": false
+            },
+            {
+              "free_trits": [
+                0,
+                2
+              ],
+              "native_word": [
+                0,
+                2,
+                2,
+                2
+              ],
+              "actual_frequency": [
+                22,
+                18
+              ],
+              "next_digit_residual": [
+                2,
+                0
+              ],
+              "matches_mod9_target": false,
+              "matches_entire_root_target": false
+            },
+            {
+              "free_trits": [
+                1,
+                0
+              ],
+              "native_word": [
+                1,
+                0,
+                1,
+                0
+              ],
+              "actual_frequency": [
+                7,
+                18
+              ],
+              "next_digit_residual": [
+                0,
+                0
+              ],
+              "matches_mod9_target": true,
+              "matches_entire_root_target": false
+            },
+            {
+              "free_trits": [
+                1,
+                1
+              ],
+              "native_word": [
+                1,
+                1,
+                0,
+                1
+              ],
+              "actual_frequency": [
+                7,
+                18
+              ],
+              "next_digit_residual": [
+                0,
+                0
+              ],
+              "matches_mod9_target": true,
+              "matches_entire_root_target": false
+            },
+            {
+              "free_trits": [
+                1,
+                2
+              ],
+              "native_word": [
+                1,
+                2,
+                2,
+                2
+              ],
+              "actual_frequency": [
+                22,
+                18
+              ],
+              "next_digit_residual": [
+                2,
+                0
+              ],
+              "matches_mod9_target": false,
+              "matches_entire_root_target": false
+            },
+            {
+              "free_trits": [
+                2,
+                0
+              ],
+              "native_word": [
+                2,
+                0,
+                1,
+                0
+              ],
+              "actual_frequency": [
+                25,
+                18
+              ],
+              "next_digit_residual": [
+                0,
+                0
+              ],
+              "matches_mod9_target": true,
+              "matches_entire_root_target": false
+            },
+            {
+              "free_trits": [
+                2,
+                1
+              ],
+              "native_word": [
+                2,
+                1,
+                0,
+                1
+              ],
+              "actual_frequency": [
+                25,
+                18
+              ],
+              "next_digit_residual": [
+                0,
+                0
+              ],
+              "matches_mod9_target": true,
+              "matches_entire_root_target": false
+            },
+            {
+              "free_trits": [
+                2,
+                2
+              ],
+              "native_word": [
+                2,
+                2,
+                2,
+                2
+              ],
+              "actual_frequency": [
+                13,
+                18
+              ],
+              "next_digit_residual": [
+                2,
+                0
+              ],
+              "matches_mod9_target": false,
+              "matches_entire_root_target": false
+            }
+          ],
+          "mod9_filter_acceptance": "2/3",
+          "entire_root_filter_acceptance": "0"
+        },
+        {
+          "compact_circuit": {
+            "public_family": {
+              "modulus": "27",
+              "dimension": 2,
+              "cohorts": 2,
+              "sites": 4,
+              "paired_labels": [
+                [
+                  [
+                    [
+                      3,
+                      0
+                    ],
+                    [
+                      6,
+                      0
+                    ]
+                  ],
+                  [
+                    [
+                      7,
+                      20
+                    ],
+                    [
+                      16,
+                      18
+                    ]
+                  ],
+                  [
+                    [
+                      12,
+                      21
+                    ],
+                    [
+                      0,
+                      19
+                    ]
+                  ],
+                  [
+                    [
+                      9,
+                      0
+                    ],
+                    [
+                      19,
+                      26
+                    ]
+                  ]
+                ],
+                [
+                  [
+                    [
+                      26,
+                      16
+                    ],
+                    [
+                      18,
+                      11
+                    ]
+                  ],
+                  [
+                    [
+                      4,
+                      10
+                    ],
+                    [
+                      8,
+                      12
+                    ]
+                  ],
+                  [
+                    [
+                      12,
+                      23
+                    ],
+                    [
+                      25,
+                      8
+                    ]
+                  ],
+                  [
+                    [
+                      2,
+                      18
+                    ],
+                    [
+                      16,
+                      4
+                    ]
+                  ]
+                ]
+              ],
+              "responses_masks_source_IDs_and_errors_supplied": false
+            },
+            "cohort": 1,
+            "target": [
+              7,
+              9
+            ],
+            "prefix_recipe": {
+              "modulus": "3",
+              "matrix": [
+                [
+                  2,
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "pivot_columns": [
+                0,
+                1
+              ],
+              "free_columns": [
+                2,
+                3
+              ],
+              "pivot_minor_inverse": [
+                [
+                  2,
+                  0
+                ],
+                [
+                  0,
+                  1
+                ]
+              ],
+              "inverse_lift_digits": [
+                1
+              ],
+              "free_registers": 2,
+              "free_fibre_size": {
+                "base": "3",
+                "exponent": 2
+              },
+              "coordinate_bijection": "z <-> (A*z,z_free)",
+              "unit_minor_verified_modulo_full_root": true,
+              "uses_composite_modulus_field_inverse": false,
+              "classical_matrix_preprocessing_arithmetic_order": "O(n^2*d+n^3*log(r))",
+              "reversible_affine_map_modular_multiply_add_order": "O(n*d+n^2)",
+              "uniform_free_register_trits": 2,
+              "physical_gate_synthesis_and_precision_supplied": false
+            },
+            "word_offsets": [
+              1,
+              2,
+              0,
+              0
+            ],
+            "pivot_affine_forms": [
+              {
+                "site": 0,
+                "offset": 1,
+                "coefficients": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "site": 1,
+                "offset": 2,
+                "coefficients": [
+                  2,
+                  2
+                ]
+              }
+            ],
+            "F3_constants": [
+              0,
+              2
+            ],
+            "F3_linear_coefficients": [
+              [
+                2,
+                2
+              ],
+              [
+                2,
+                0
+              ]
+            ],
+            "F3_diagonal_quadratic": [
+              [
+                1,
+                2
+              ],
+              [
+                0,
+                1
+              ]
+            ],
+            "F3_pivot_weights": [
+              [
+                {
+                  "square": 1,
+                  "cube": 2
+                },
+                {
+                  "square": 1,
+                  "cube": 0
+                }
+              ],
+              [
+                {
+                  "square": 1,
+                  "cube": 0
+                },
+                {
+                  "square": 0,
+                  "cube": 1
+                }
+              ]
+            ],
+            "free_trits": 2,
+            "next_digit_equations": 2,
+            "total_degree_upper": 3,
+            "dense_divided_cube_forms_upper": 2,
+            "expanded_cubic_tensor_materialized": false,
+            "divided_cubes_are_ordinary_rank_one_F3_cubes": false,
+            "coefficient_division_by3_is_verified_integer_division": true,
+            "source_values_mask_secret_or_errors_supplied": false,
+            "matching_mod9_implies_full_root_matching": false,
+            "polynomial_cubic_solver_or_uniform_row_sampler_supplied": false,
+            "physical_row_preparation_circuit_executed": false
+          },
+          "canonical_polynomials": [
+            [
+              {
+                "powers": [
+                  0,
+                  1
+                ],
+                "coefficient": 2
+              },
+              {
+                "powers": [
+                  1,
+                  0
+                ],
+                "coefficient": 2
+              },
+              {
+                "powers": [
+                  1,
+                  1
+                ],
+                "coefficient": 2
+              },
+              {
+                "powers": [
+                  2,
+                  0
+                ],
+                "coefficient": 2
+              }
+            ],
+            [
+              {
+                "powers": [
+                  0,
+                  0
+                ],
+                "coefficient": 2
+              },
+              {
+                "powers": [
+                  1,
+                  0
+                ],
+                "coefficient": 2
+              },
+              {
+                "powers": [
+                  1,
+                  2
+                ],
+                "coefficient": 2
+              },
+              {
+                "powers": [
+                  2,
+                  1
+                ],
+                "coefficient": 2
+              }
+            ]
+          ],
+          "complete_prefix_word_rows": [
+            {
+              "free_trits": [
+                0,
+                0
+              ],
+              "native_word": [
+                1,
+                2,
+                0,
+                0
+              ],
+              "actual_frequency": [
+                25,
+                24
+              ],
+              "next_digit_residual": [
+                0,
+                2
+              ],
+              "matches_mod9_target": false,
+              "matches_entire_root_target": false
+            },
+            {
+              "free_trits": [
+                0,
+                1
+              ],
+              "native_word": [
+                1,
+                1,
+                0,
+                1
+              ],
+              "actual_frequency": [
+                22,
+                6
+              ],
+              "next_digit_residual": [
+                2,
+                2
+              ],
+              "matches_mod9_target": false,
+              "matches_entire_root_target": false
+            },
+            {
+              "free_trits": [
+                0,
+                2
+              ],
+              "native_word": [
+                1,
+                0,
+                0,
+                2
+              ],
+              "actual_frequency": [
+                19,
+                24
+              ],
+              "next_digit_residual": [
+                1,
+                2
+              ],
+              "matches_mod9_target": false,
+              "matches_entire_root_target": false
+            },
+            {
+              "free_trits": [
+                1,
+                0
+              ],
+              "native_word": [
+                2,
+                1,
+                1,
+                0
+              ],
+              "actual_frequency": [
+                1,
+                21
+              ],
+              "next_digit_residual": [
+                1,
+                1
+              ],
+              "matches_mod9_target": false,
+              "matches_entire_root_target": false
+            },
+            {
+              "free_trits": [
+                1,
+                1
+              ],
+              "native_word": [
+                2,
+                0,
+                1,
+                1
+              ],
+              "actual_frequency": [
+                13,
+                24
+              ],
+              "next_digit_residual": [
+                2,
+                2
+              ],
+              "matches_mod9_target": false,
+              "matches_entire_root_target": false
+            },
+            {
+              "free_trits": [
+                1,
+                2
+              ],
+              "native_word": [
+                2,
+                2,
+                1,
+                2
+              ],
+              "actual_frequency": [
+                25,
+                12
+              ],
+              "next_digit_residual": [
+                0,
+                1
+              ],
+              "matches_mod9_target": false,
+              "matches_entire_root_target": false
+            },
+            {
+              "free_trits": [
+                2,
+                0
+              ],
+              "native_word": [
+                0,
+                0,
+                2,
+                0
+              ],
+              "actual_frequency": [
+                7,
+                9
+              ],
+              "next_digit_residual": [
+                0,
+                0
+              ],
+              "matches_mod9_target": true,
+              "matches_entire_root_target": true
+            },
+            {
+              "free_trits": [
+                2,
+                1
+              ],
+              "native_word": [
+                0,
+                2,
+                2,
+                1
+              ],
+              "actual_frequency": [
+                7,
+                9
+              ],
+              "next_digit_residual": [
+                0,
+                0
+              ],
+              "matches_mod9_target": true,
+              "matches_entire_root_target": true
+            },
+            {
+              "free_trits": [
+                2,
+                2
+              ],
+              "native_word": [
+                0,
+                1,
+                2,
+                2
+              ],
+              "actual_frequency": [
+                16,
+                6
+              ],
+              "next_digit_residual": [
+                0,
+                2
+              ],
+              "matches_mod9_target": false,
+              "matches_entire_root_target": false
+            }
+          ],
+          "mod9_filter_acceptance": "2/9",
+          "entire_root_filter_acceptance": "2/9"
+        }
+      ],
+      "complete_prefix_words_checked": 18,
+      "new_cubic_solver_or_full_root_row_circuit": false
+    },
+    {
+      "status": "EXACT_COMPACT_MOD9_CARRY_AND_COMPLETE_PREFIX_WORD_CONTROL",
+      "public_family": {
+        "modulus": "3433683820292512484657849089281",
+        "dimension": 3,
+        "cohorts": 1,
+        "sites": 6,
+        "paired_labels": [
+          [
+            [
+              [
+                "2126359220191561060891776037892",
+                "1898334635504203474711023894096",
+                "1803572306622726182725745306699"
+              ],
+              [
+                "2847876940968047347333820108255",
+                "1436215618800473863667567940648",
+                "3254836629208900106878583281189"
+              ]
+            ],
+            [
+              [
+                "560345528091124830768542794238",
+                "2928445611123372524547313571399",
+                "1332907735805911879903105007111"
+              ],
+              [
+                "2496458899750275583832577936950",
+                "2803310965110825411644202068191",
+                "476023078411529561877204604762"
+              ]
+            ],
+            [
+              [
+                "1850539827104183112047425647050",
+                "1873059155592837482075914225998",
+                "12871284926543522098628385093"
+              ],
+              [
+                "2126926006187043671277548502209",
+                "475227165917637699822553932035",
+                "2537092228993421813404085566355"
+              ]
+            ],
+            [
+              [
+                "739434812447005050704133491057",
+                "2345561031312199238662921136913",
+                "3029717479818533028892929086644"
+              ],
+              [
+                "1372757230785404259551023854334",
+                "1834105650616717384509344881777",
+                "2698611899934399273207282657805"
+              ]
+            ],
+            [
+              [
+                "334585293973788144151458932042",
+                "910058093831397023638612850821",
+                "761227873210388152792351069272"
+              ],
+              [
+                "1996079412928222432848202082163",
+                "3371258571805937205471185220493",
+                "915824988008920470384848982062"
+              ]
+            ],
+            [
+              [
+                "3064118735724046386102834218880",
+                "778029886928764279436643378694",
+                "1946022145310259323639012578246"
+              ],
+              [
+                "3049887169088805542321418093445",
+                "753129348435370838540254746889",
+                "2197700312113192596941909741601"
+              ]
+            ]
+          ]
+        ],
+        "responses_masks_source_IDs_and_errors_supplied": false
+      },
+      "target": [
+        7,
+        9,
+        11
+      ],
+      "cohort_controls": [
+        {
+          "compact_circuit": {
+            "public_family": {
+              "modulus": "3433683820292512484657849089281",
+              "dimension": 3,
+              "cohorts": 1,
+              "sites": 6,
+              "paired_labels": [
+                [
+                  [
+                    [
+                      "2126359220191561060891776037892",
+                      "1898334635504203474711023894096",
+                      "1803572306622726182725745306699"
+                    ],
+                    [
+                      "2847876940968047347333820108255",
+                      "1436215618800473863667567940648",
+                      "3254836629208900106878583281189"
+                    ]
+                  ],
+                  [
+                    [
+                      "560345528091124830768542794238",
+                      "2928445611123372524547313571399",
+                      "1332907735805911879903105007111"
+                    ],
+                    [
+                      "2496458899750275583832577936950",
+                      "2803310965110825411644202068191",
+                      "476023078411529561877204604762"
+                    ]
+                  ],
+                  [
+                    [
+                      "1850539827104183112047425647050",
+                      "1873059155592837482075914225998",
+                      "12871284926543522098628385093"
+                    ],
+                    [
+                      "2126926006187043671277548502209",
+                      "475227165917637699822553932035",
+                      "2537092228993421813404085566355"
+                    ]
+                  ],
+                  [
+                    [
+                      "739434812447005050704133491057",
+                      "2345561031312199238662921136913",
+                      "3029717479818533028892929086644"
+                    ],
+                    [
+                      "1372757230785404259551023854334",
+                      "1834105650616717384509344881777",
+                      "2698611899934399273207282657805"
+                    ]
+                  ],
+                  [
+                    [
+                      "334585293973788144151458932042",
+                      "910058093831397023638612850821",
+                      "761227873210388152792351069272"
+                    ],
+                    [
+                      "1996079412928222432848202082163",
+                      "3371258571805937205471185220493",
+                      "915824988008920470384848982062"
+                    ]
+                  ],
+                  [
+                    [
+                      "3064118735724046386102834218880",
+                      "778029886928764279436643378694",
+                      "1946022145310259323639012578246"
+                    ],
+                    [
+                      "3049887169088805542321418093445",
+                      "753129348435370838540254746889",
+                      "2197700312113192596941909741601"
+                    ]
+                  ]
+                ]
+              ],
+              "responses_masks_source_IDs_and_errors_supplied": false
+            },
+            "cohort": 0,
+            "target": [
+              7,
+              9,
+              11
+            ],
+            "prefix_recipe": {
+              "modulus": "3",
+              "matrix": [
+                [
+                  1,
+                  1,
+                  1,
+                  0,
+                  2,
+                  1
+                ],
+                [
+                  0,
+                  0,
+                  2,
+                  1,
+                  2,
+                  2
+                ],
+                [
+                  0,
+                  0,
+                  2,
+                  2,
+                  2,
+                  1
+                ]
+              ],
+              "pivot_columns": [
+                0,
+                2,
+                3
+              ],
+              "free_columns": [
+                1,
+                4,
+                5
+              ],
+              "pivot_minor_inverse": [
+                [
+                  1,
+                  2,
+                  2
+                ],
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  0,
+                  2,
+                  1
+                ]
+              ],
+              "inverse_lift_digits": [
+                1
+              ],
+              "free_registers": 3,
+              "free_fibre_size": {
+                "base": "3",
+                "exponent": 3
+              },
+              "coordinate_bijection": "z <-> (A*z,z_free)",
+              "unit_minor_verified_modulo_full_root": true,
+              "uses_composite_modulus_field_inverse": false,
+              "classical_matrix_preprocessing_arithmetic_order": "O(n^2*d+n^3*log(r))",
+              "reversible_affine_map_modular_multiply_add_order": "O(n*d+n^2)",
+              "uniform_free_register_trits": 3,
+              "physical_gate_synthesis_and_precision_supplied": false
+            },
+            "word_offsets": [
+              2,
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "pivot_affine_forms": [
+              {
+                "site": 0,
+                "offset": 2,
+                "coefficients": [
+                  2,
+                  2,
+                  2
+                ]
+              },
+              {
+                "site": 2,
+                "offset": 1,
+                "coefficients": [
+                  0,
+                  2,
+                  0
+                ]
+              },
+              {
+                "site": 3,
+                "offset": 0,
+                "coefficients": [
+                  0,
+                  0,
+                  1
+                ]
+              }
+            ],
+            "F3_constants": [
+              0,
+              2,
+              2
+            ],
+            "F3_linear_coefficients": [
+              [
+                1,
+                2,
+                0
+              ],
+              [
+                0,
+                0,
+                2
+              ],
+              [
+                1,
+                1,
+                2
+              ]
+            ],
+            "F3_diagonal_quadratic": [
+              [
+                0,
+                1,
+                1
+              ],
+              [
+                2,
+                0,
+                0
+              ],
+              [
+                2,
+                2,
+                2
+              ]
+            ],
+            "F3_pivot_weights": [
+              [
+                {
+                  "square": 1,
+                  "cube": 1
+                },
+                {
+                  "square": 0,
+                  "cube": 0
+                },
+                {
+                  "square": 2,
+                  "cube": 0
+                }
+              ],
+              [
+                {
+                  "square": 0,
+                  "cube": 1
+                },
+                {
+                  "square": 2,
+                  "cube": 2
+                },
+                {
+                  "square": 2,
+                  "cube": 2
+                }
+              ],
+              [
+                {
+                  "square": 2,
+                  "cube": 0
+                },
+                {
+                  "square": 0,
+                  "cube": 1
+                },
+                {
+                  "square": 1,
+                  "cube": 2
+                }
+              ]
+            ],
+            "free_trits": 3,
+            "next_digit_equations": 3,
+            "total_degree_upper": 3,
+            "dense_divided_cube_forms_upper": 3,
+            "expanded_cubic_tensor_materialized": false,
+            "divided_cubes_are_ordinary_rank_one_F3_cubes": false,
+            "coefficient_division_by3_is_verified_integer_division": true,
+            "source_values_mask_secret_or_errors_supplied": false,
+            "matching_mod9_implies_full_root_matching": false,
+            "polynomial_cubic_solver_or_uniform_row_sampler_supplied": false,
+            "physical_row_preparation_circuit_executed": false
+          },
+          "canonical_polynomials": [
+            [
+              {
+                "powers": [
+                  0,
+                  1,
+                  0
+                ],
+                "coefficient": 2
+              },
+              {
+                "powers": [
+                  0,
+                  1,
+                  1
+                ],
+                "coefficient": 2
+              },
+              {
+                "powers": [
+                  0,
+                  1,
+                  2
+                ],
+                "coefficient": 2
+              },
+              {
+                "powers": [
+                  0,
+                  2,
+                  1
+                ],
+                "coefficient": 2
+              },
+              {
+                "powers": [
+                  1,
+                  0,
+                  0
+                ],
+                "coefficient": 1
+              },
+              {
+                "powers": [
+                  1,
+                  0,
+                  1
+                ],
+                "coefficient": 2
+              },
+              {
+                "powers": [
+                  1,
+                  0,
+                  2
+                ],
+                "coefficient": 2
+              },
+              {
+                "powers": [
+                  1,
+                  1,
+                  0
+                ],
+                "coefficient": 2
+              },
+              {
+                "powers": [
+                  1,
+                  1,
+                  1
+                ],
+                "coefficient": 1
+              },
+              {
+                "powers": [
+                  1,
+                  2,
+                  0
+                ],
+                "coefficient": 2
+              },
+              {
+                "powers": [
+                  2,
+                  0,
+                  1
+                ],
+                "coefficient": 2
+              },
+              {
+                "powers": [
+                  2,
+                  1,
+                  0
+                ],
+                "coefficient": 2
+              }
+            ],
+            [
+              {
+                "powers": [
+                  0,
+                  0,
+                  0
+                ],
+                "coefficient": 2
+              },
+              {
+                "powers": [
+                  0,
+                  0,
+                  1
+                ],
+                "coefficient": 2
+              },
+              {
+                "powers": [
+                  0,
+                  0,
+                  2
+                ],
+                "coefficient": 1
+              },
+              {
+                "powers": [
+                  2,
+                  0,
+                  0
+                ],
+                "coefficient": 2
+              }
+            ],
+            [
+              {
+                "powers": [
+                  0,
+                  0,
+                  0
+                ],
+                "coefficient": 2
+              },
+              {
+                "powers": [
+                  0,
+                  0,
+                  1
+                ],
+                "coefficient": 2
+              },
+              {
+                "powers": [
+                  0,
+                  0,
+                  2
+                ],
+                "coefficient": 1
+              },
+              {
+                "powers": [
+                  0,
+                  1,
+                  0
+                ],
+                "coefficient": 1
+              },
+              {
+                "powers": [
+                  0,
+                  1,
+                  1
+                ],
+                "coefficient": 1
+              },
+              {
+                "powers": [
+                  0,
+                  2,
+                  0
+                ],
+                "coefficient": 1
+              },
+              {
+                "powers": [
+                  1,
+                  0,
+                  0
+                ],
+                "coefficient": 1
+              },
+              {
+                "powers": [
+                  1,
+                  0,
+                  1
+                ],
+                "coefficient": 1
+              },
+              {
+                "powers": [
+                  1,
+                  1,
+                  0
+                ],
+                "coefficient": 1
+              },
+              {
+                "powers": [
+                  2,
+                  0,
+                  0
+                ],
+                "coefficient": 1
+              }
+            ]
+          ],
+          "complete_prefix_word_rows": [
+            {
+              "free_trits": [
+                0,
+                0,
+                0
+              ],
+              "native_word": [
+                2,
+                0,
+                1,
+                0,
+                0,
+                0
+              ],
+              "actual_frequency": [
+                "2126993608350777623623272183121",
+                "694363194427546935706713613935",
+                "2905575728710558084996422552065"
+              ],
+              "next_digit_residual": [
+                0,
+                2,
+                2
+              ],
+              "matches_mod9_target": false,
+              "matches_entire_root_target": false
+            },
+            {
+              "free_trits": [
+                0,
+                0,
+                1
+              ],
+              "native_word": [
+                1,
+                0,
+                1,
+                1,
+                0,
+                1
+              ],
+              "actual_frequency": [
+                "2511925573627418185657642889644",
+                "1442196779386964859839145287868",
+                "2556509642295639281113152877370"
+              ],
+              "next_digit_residual": [
+                0,
+                2,
+                2
+              ],
+              "matches_mod9_target": false,
+              "matches_entire_root_target": false
+            },
+            {
+              "free_trits": [
+                0,
+                0,
+                2
+              ],
+              "native_word": [
+                0,
+                0,
+                1,
+                2,
+                0,
+                2
+              ],
+              "actual_frequency": [
+                "2308715641757637277827307760833",
+                "1751771351731685017593990393687",
+                "1525616647658312636577466164938"
+              ],
+              "next_digit_residual": [
+                0,
+                1,
+                1
+              ],
+              "matches_mod9_target": false,
+              "matches_entire_root_target": false
+            },
+            {
+              "free_trits": [
+                0,
+                1,
+                0
+              ],
+              "native_word": [
+                1,
+                0,
+                0,
+                0,
+                1,
+                0
+              ],
+              "actual_frequency": [
+                "1730083102512254985446025193147",
+                "3056809505642959126196210550666",
+                "1060012442660929026963312765812"
+              ],
+              "next_digit_residual": [
+                2,
+                2,
+                1
+              ],
+              "matches_mod9_target": false,
+              "matches_entire_root_target": false
+            },
+            {
+              "free_trits": [
+                0,
+                1,
+                1
+              ],
+              "native_word": [
+                0,
+                0,
+                0,
+                1,
+                1,
+                1
+              ],
+              "actual_frequency": [
+                "3384145725751949172812112777862",
+                "1757316320421053398801160995662",
+                "3224521029072513419937227346209"
+              ],
+              "next_digit_residual": [
+                2,
+                2,
+                2
+              ],
+              "matches_mod9_target": false,
+              "matches_entire_root_target": false
+            },
+            {
+              "free_trits": [
+                0,
+                1,
+                2
+              ],
+              "native_word": [
+                2,
+                0,
+                0,
+                2,
+                1,
+                2
+              ],
+              "actual_frequency": [
+                "235541953599997566964298624656",
+                "3239254626838188101738632597755",
+                "216594934859520711882153802961"
+              ],
+              "next_digit_residual": [
+                0,
+                1,
+                2
+              ],
+              "matches_mod9_target": false,
+              "matches_entire_root_target": false
+            },
+            {
+              "free_trits": [
+                0,
+                2,
+                0
+              ],
+              "native_word": [
+                0,
+                0,
+                2,
+                0,
+                2,
+                0
+              ],
+              "actual_frequency": [
+                "2367252877338471224341535957695",
+                "670201606852452127406313739293",
+                "1225618630262575646714008341002"
+              ],
+              "next_digit_residual": [
+                1,
+                2,
+                2
+              ],
+              "matches_mod9_target": false,
+              "matches_entire_root_target": false
+            },
+            {
+              "free_trits": [
+                0,
+                2,
+                1
+              ],
+              "native_word": [
+                2,
+                0,
+                2,
+                1,
+                2,
+                1
+              ],
+              "actual_frequency": [
+                "1075921660295994713690144518015",
+                "543072155702960945193890680563",
+                "1413094117098493976168536090583"
+              ],
+              "next_digit_residual": [
+                2,
+                2,
+                1
+              ],
+              "matches_mod9_target": false,
+              "matches_entire_root_target": false
+            },
+            {
+              "free_trits": [
+                0,
+                2,
+                2
+              ],
+              "native_word": [
+                1,
+                0,
+                2,
+                2,
+                2,
+                2
+              ],
+              "actual_frequency": [
+                "3037264890755672665185941600293",
+                "2899973498229004754476217015319",
+                "1302310269927176619433514212340"
+              ],
+              "next_digit_residual": [
+                2,
+                1,
+                2
+              ],
+              "matches_mod9_target": false,
+              "matches_entire_root_target": false
+            },
+            {
+              "free_trits": [
+                1,
+                0,
+                0
+              ],
+              "native_word": [
+                1,
+                1,
+                1,
+                0,
+                0,
+                0
+              ],
+              "actual_frequency": [
+                "204788473078312210378930531651",
+                "2048563359680884035538249615809",
+                "1988200467012825433440989309003"
+              ],
+              "next_digit_residual": [
+                1,
+                1,
+                1
+              ],
+              "matches_mod9_target": false,
+              "matches_entire_root_target": false
+            },
+            {
+              "free_trits": [
+                1,
+                0,
+                1
+              ],
+              "native_word": [
+                0,
+                1,
+                1,
+                1,
+                0,
+                1
+              ],
+              "actual_frequency": [
+                "1858851096318006397745018116366",
+                "749070174458978308143200060805",
+                "719025233131897341757054800119"
+              ],
+              "next_digit_residual": [
+                1,
+                1,
+                2
+              ],
+              "matches_mod9_target": false,
+              "matches_entire_root_target": false
+            },
+            {
+              "free_trits": [
+                1,
+                0,
+                2
+              ],
+              "native_word": [
+                2,
+                1,
+                1,
+                2,
+                0,
+                2
+              ],
+              "actual_frequency": [
+                "2143931144458567276555053052441",
+                "2231008480876113011080671662898",
+                "1144782959211417118359830346152"
+              ],
+              "next_digit_residual": [
+                2,
+                0,
+                2
+              ],
+              "matches_mod9_target": false,
+              "matches_entire_root_target": false
+            },
+            {
+              "free_trits": [
+                1,
+                1,
+                0
+              ],
+              "native_word": [
+                0,
+                1,
+                0,
+                0,
+                1,
+                0
+              ],
+              "actual_frequency": [
+                "1077008625202843197533400419869",
+                "2363682900714972574500265323603",
+                "2656211853789699572265063777842"
+              ],
+              "next_digit_residual": [
+                0,
+                1,
+                1
+              ],
+              "matches_mod9_target": false,
+              "matches_entire_root_target": false
+            },
+            {
+              "free_trits": [
+                1,
+                1,
+                1
+              ],
+              "native_word": [
+                2,
+                1,
+                0,
+                1,
+                1,
+                1
+              ],
+              "actual_frequency": [
+                "3219361228452879171539858069470",
+                "2236553449565481392287842264873",
+                "2843687340625617901719591527423"
+              ],
+              "next_digit_residual": [
+                1,
+                1,
+                0
+              ],
+              "matches_mod9_target": false,
+              "matches_entire_root_target": false
+            },
+            {
+              "free_trits": [
+                1,
+                1,
+                2
+              ],
+              "native_word": [
+                1,
+                1,
+                0,
+                2,
+                1,
+                2
+              ],
+              "actual_frequency": [
+                "1747020638620044638377806062467",
+                "1159770971799012716912319510348",
+                "2732903493454300544984569649180"
+              ],
+              "next_digit_residual": [
+                1,
+                0,
+                1
+              ],
+              "matches_mod9_target": false,
+              "matches_entire_root_target": false
+            },
+            {
+              "free_trits": [
+                1,
+                2,
+                0
+              ],
+              "native_word": [
+                2,
+                1,
+                2,
+                0,
+                2,
+                0
+              ],
+              "actual_frequency": [
+                "2202468380039401223069281249303",
+                "1149438735996880120892995008504",
+                "844784941815680128496372522216"
+              ],
+              "next_digit_residual": [
+                0,
+                1,
+                0
+              ],
+              "matches_mod9_target": false,
+              "matches_entire_root_target": false
+            },
+            {
+              "free_trits": [
+                1,
+                2,
+                1
+              ],
+              "native_word": [
+                1,
+                1,
+                2,
+                1,
+                2,
+                1
+              ],
+              "actual_frequency": [
+                "2587400345316041785103651955826",
+                "1897272320956298045025426682437",
+                "495718855400761324613102847521"
+              ],
+              "next_digit_residual": [
+                0,
+                1,
+                0
+              ],
+              "matches_mod9_target": false,
+              "matches_entire_root_target": false
+            },
+            {
+              "free_trits": [
+                1,
+                2,
+                2
+              ],
+              "native_word": [
+                0,
+                1,
+                2,
+                2,
+                2,
+                2
+              ],
+              "actual_frequency": [
+                "2384190413446260877273316827015",
+                "2206846893301018202780271788256",
+                "2898509681055947164735265224370"
+              ],
+              "next_digit_residual": [
+                0,
+                0,
+                2
+              ],
+              "matches_mod9_target": false,
+              "matches_entire_root_target": false
+            },
+            {
+              "free_trits": [
+                2,
+                0,
+                0
+              ],
+              "native_word": [
+                0,
+                2,
+                1,
+                0,
+                0,
+                0
+              ],
+              "actual_frequency": [
+                "610741521376473132589898508799",
+                "1730840692790538822551638898370",
+                "2721370030032230448162592438799"
+              ],
+              "next_digit_residual": [
+                2,
+                1,
+                2
+              ],
+              "matches_mod9_target": false,
+              "matches_entire_root_target": false
+            },
+            {
+              "free_trits": [
+                2,
+                0,
+                1
+              ],
+              "native_word": [
+                2,
+                2,
+                1,
+                1,
+                0,
+                1
+              ],
+              "actual_frequency": [
+                "2753094124626509106596356158400",
+                "1603711241641047640339215839640",
+                "2908845516868148777617120188380"
+              ],
+              "next_digit_residual": [
+                0,
+                1,
+                1
+              ],
+              "matches_mod9_target": false,
+              "matches_entire_root_target": false
+            },
+            {
+              "free_trits": [
+                2,
+                0,
+                2
+              ],
+              "native_word": [
+                1,
+                2,
+                1,
+                2,
+                0,
+                2
+              ],
+              "actual_frequency": [
+                "1280753534793674573434304151397",
+                "526928763874578964963693085115",
+                "2798061669696831420882098310137"
+              ],
+              "next_digit_residual": [
+                0,
+                0,
+                2
+              ],
+              "matches_mod9_target": false,
+              "matches_entire_root_target": false
+            },
+            {
+              "free_trits": [
+                2,
+                1,
+                0
+              ],
+              "native_word": [
+                2,
+                2,
+                0,
+                0,
+                1,
+                0
+              ],
+              "actual_frequency": [
+                "1971251653511345906384738461903",
+                "3218323967897041906696281102438",
+                "1412348317233438523467280076822"
+              ],
+              "next_digit_residual": [
+                2,
+                1,
+                0
+              ],
+              "matches_mod9_target": false,
+              "matches_entire_root_target": false
+            },
+            {
+              "free_trits": [
+                2,
+                1,
+                1
+              ],
+              "native_word": [
+                1,
+                2,
+                0,
+                1,
+                1,
+                1
+              ],
+              "actual_frequency": [
+                "2356183618787986468419109168426",
+                "532473732563947346170863687090",
+                "1063282230818519719584010402127"
+              ],
+              "next_digit_residual": [
+                2,
+                1,
+                0
+              ],
+              "matches_mod9_target": false,
+              "matches_entire_root_target": false
+            },
+            {
+              "free_trits": [
+                2,
+                1,
+                2
+              ],
+              "native_word": [
+                0,
+                2,
+                0,
+                2,
+                1,
+                2
+              ],
+              "actual_frequency": [
+                "2152973686918205560588774039615",
+                "842048304908667503925708792909",
+                "32389236181193075048323689695"
+              ],
+              "next_digit_residual": [
+                2,
+                0,
+                2
+              ],
+              "matches_mod9_target": false,
+              "matches_entire_root_target": false
+            },
+            {
+              "free_trits": [
+                2,
+                2,
+                0
+              ],
+              "native_word": [
+                1,
+                2,
+                2,
+                0,
+                2,
+                0
+              ],
+              "actual_frequency": [
+                "1339290770374508519948532348259",
+                "2879042839287858559433865520002",
+                "2498063652301094431018640486201"
+              ],
+              "next_digit_residual": [
+                1,
+                1,
+                0
+              ],
+              "matches_mod9_target": false,
+              "matches_entire_root_target": false
+            },
+            {
+              "free_trits": [
+                2,
+                2,
+                1
+              ],
+              "native_word": [
+                0,
+                2,
+                2,
+                1,
+                2,
+                1
+              ],
+              "actual_frequency": [
+                "2993353393614202707314619932974",
+                "1579549654065952832038815964998",
+                "1228888418420166339334705977317"
+              ],
+              "next_digit_residual": [
+                1,
+                1,
+                1
+              ],
+              "matches_mod9_target": false,
+              "matches_entire_root_target": false
+            },
+            {
+              "free_trits": [
+                2,
+                2,
+                2
+              ],
+              "native_word": [
+                2,
+                2,
+                2,
+                2,
+                2,
+                2
+              ],
+              "actual_frequency": [
+                "3278433441754763586124654869049",
+                "3061487960483087534976287567091",
+                "1654646144499686115937481523350"
+              ],
+              "next_digit_residual": [
+                2,
+                0,
+                1
+              ],
+              "matches_mod9_target": false,
+              "matches_entire_root_target": false
+            }
+          ],
+          "mod9_filter_acceptance": "0",
+          "entire_root_filter_acceptance": "0"
+        }
+      ],
+      "complete_prefix_words_checked": 27,
+      "new_cubic_solver_or_full_root_row_circuit": false
+    },
+    {
+      "status": "EXACT_COMPACT_MOD9_CARRY_AND_COMPLETE_PREFIX_WORD_CONTROL",
+      "public_family": {
+        "modulus": "9",
+        "dimension": 1,
+        "cohorts": 1,
+        "sites": 3,
+        "paired_labels": [
+          [
+            [
+              [
+                1
+              ],
+              [
+                6
+              ]
+            ],
+            [
+              [
+                2
+              ],
+              [
+                5
+              ]
+            ],
+            [
+              [
+                3
+              ],
+              [
+                5
+              ]
+            ]
+          ]
+        ],
+        "responses_masks_source_IDs_and_errors_supplied": false
+      },
+      "target": [
+        7
+      ],
+      "cohort_controls": [
+        {
+          "compact_circuit": {
+            "public_family": {
+              "modulus": "9",
+              "dimension": 1,
+              "cohorts": 1,
+              "sites": 3,
+              "paired_labels": [
+                [
+                  [
+                    [
+                      1
+                    ],
+                    [
+                      6
+                    ]
+                  ],
+                  [
+                    [
+                      2
+                    ],
+                    [
+                      5
+                    ]
+                  ],
+                  [
+                    [
+                      3
+                    ],
+                    [
+                      5
+                    ]
+                  ]
+                ]
+              ],
+              "responses_masks_source_IDs_and_errors_supplied": false
+            },
+            "cohort": 0,
+            "target": [
+              7
+            ],
+            "prefix_recipe": {
+              "modulus": "3",
+              "matrix": [
+                [
+                  1,
+                  1,
+                  2
+                ]
+              ],
+              "pivot_columns": [
+                0
+              ],
+              "free_columns": [
+                1,
+                2
+              ],
+              "pivot_minor_inverse": [
+                [
+                  1
+                ]
+              ],
+              "inverse_lift_digits": [
+                1
+              ],
+              "free_registers": 2,
+              "free_fibre_size": {
+                "base": "3",
+                "exponent": 2
+              },
+              "coordinate_bijection": "z <-> (A*z,z_free)",
+              "unit_minor_verified_modulo_full_root": true,
+              "uses_composite_modulus_field_inverse": false,
+              "classical_matrix_preprocessing_arithmetic_order": "O(n^2*d+n^3*log(r))",
+              "reversible_affine_map_modular_multiply_add_order": "O(n*d+n^2)",
+              "uniform_free_register_trits": 2,
+              "physical_gate_synthesis_and_precision_supplied": false
+            },
+            "word_offsets": [
+              1,
+              0,
+              0
+            ],
+            "pivot_affine_forms": [
+              {
+                "site": 0,
+                "offset": 1,
+                "coefficients": [
+                  2,
+                  1
+                ]
+              }
+            ],
+            "F3_constants": [
+              1
+            ],
+            "F3_linear_coefficients": [
+              [
+                1,
+                0
+              ]
+            ],
+            "F3_diagonal_quadratic": [
+              [
+                0,
+                2
+              ]
+            ],
+            "F3_pivot_weights": [
+              [
+                {
+                  "square": 2,
+                  "cube": 1
+                }
+              ]
+            ],
+            "free_trits": 2,
+            "next_digit_equations": 1,
+            "total_degree_upper": 3,
+            "dense_divided_cube_forms_upper": 1,
+            "expanded_cubic_tensor_materialized": false,
+            "divided_cubes_are_ordinary_rank_one_F3_cubes": false,
+            "coefficient_division_by3_is_verified_integer_division": true,
+            "source_values_mask_secret_or_errors_supplied": false,
+            "matching_mod9_implies_full_root_matching": true,
+            "polynomial_cubic_solver_or_uniform_row_sampler_supplied": false,
+            "physical_row_preparation_circuit_executed": false
+          },
+          "canonical_polynomials": [
+            [
+              {
+                "powers": [
+                  0,
+                  0
+                ],
+                "coefficient": 1
+              },
+              {
+                "powers": [
+                  0,
+                  2
+                ],
+                "coefficient": 2
+              },
+              {
+                "powers": [
+                  1,
+                  0
+                ],
+                "coefficient": 1
+              },
+              {
+                "powers": [
+                  1,
+                  1
+                ],
+                "coefficient": 2
+              },
+              {
+                "powers": [
+                  1,
+                  2
+                ],
+                "coefficient": 2
+              },
+              {
+                "powers": [
+                  2,
+                  0
+                ],
+                "coefficient": 1
+              },
+              {
+                "powers": [
+                  2,
+                  1
+                ],
+                "coefficient": 1
+              }
+            ]
+          ],
+          "complete_prefix_word_rows": [
+            {
+              "free_trits": [
+                0,
+                0
+              ],
+              "native_word": [
+                1,
+                0,
+                0
+              ],
+              "actual_frequency": [
+                1
+              ],
+              "next_digit_residual": [
+                1
+              ],
+              "matches_mod9_target": false,
+              "matches_entire_root_target": false
+            },
+            {
+              "free_trits": [
+                0,
+                1
+              ],
+              "native_word": [
+                2,
+                0,
+                1
+              ],
+              "actual_frequency": [
+                7
+              ],
+              "next_digit_residual": [
+                0
+              ],
+              "matches_mod9_target": true,
+              "matches_entire_root_target": true
+            },
+            {
+              "free_trits": [
+                0,
+                2
+              ],
+              "native_word": [
+                0,
+                0,
+                2
+              ],
+              "actual_frequency": [
+                7
+              ],
+              "next_digit_residual": [
+                0
+              ],
+              "matches_mod9_target": true,
+              "matches_entire_root_target": true
+            },
+            {
+              "free_trits": [
+                1,
+                0
+              ],
+              "native_word": [
+                0,
+                1,
+                0
+              ],
+              "actual_frequency": [
+                7
+              ],
+              "next_digit_residual": [
+                0
+              ],
+              "matches_mod9_target": true,
+              "matches_entire_root_target": true
+            },
+            {
+              "free_trits": [
+                1,
+                1
+              ],
+              "native_word": [
+                1,
+                1,
+                1
+              ],
+              "actual_frequency": [
+                1
+              ],
+              "next_digit_residual": [
+                1
+              ],
+              "matches_mod9_target": false,
+              "matches_entire_root_target": false
+            },
+            {
+              "free_trits": [
+                1,
+                2
+              ],
+              "native_word": [
+                2,
+                1,
+                2
+              ],
+              "actual_frequency": [
+                1
+              ],
+              "next_digit_residual": [
+                1
+              ],
+              "matches_mod9_target": false,
+              "matches_entire_root_target": false
+            },
+            {
+              "free_trits": [
+                2,
+                0
+              ],
+              "native_word": [
+                2,
+                2,
+                0
+              ],
+              "actual_frequency": [
+                1
+              ],
+              "next_digit_residual": [
+                1
+              ],
+              "matches_mod9_target": false,
+              "matches_entire_root_target": false
+            },
+            {
+              "free_trits": [
+                2,
+                1
+              ],
+              "native_word": [
+                0,
+                2,
+                1
+              ],
+              "actual_frequency": [
+                7
+              ],
+              "next_digit_residual": [
+                0
+              ],
+              "matches_mod9_target": true,
+              "matches_entire_root_target": true
+            },
+            {
+              "free_trits": [
+                2,
+                2
+              ],
+              "native_word": [
+                1,
+                2,
+                2
+              ],
+              "actual_frequency": [
+                4
+              ],
+              "next_digit_residual": [
+                2
+              ],
+              "matches_mod9_target": false,
+              "matches_entire_root_target": false
+            }
+          ],
+          "mod9_filter_acceptance": "4/9",
+          "entire_root_filter_acceptance": "4/9"
+        }
+      ],
+      "complete_prefix_words_checked": 9,
+      "new_cubic_solver_or_full_root_row_circuit": false
+    }
+  ],
+  "growing_prefix_filter_ledgers": [
+    {
+      "dimension": 8,
+      "root_digits": 8,
+      "cohorts": 1,
+      "sites": 88,
+      "free_native_word_trits_per_cohort": 80,
+      "uniform_higher_target_mean_acceptance": {
+        "base": 3,
+        "negative_exponent": 56
+      },
+      "prescribed_target_ensemble_mean_under_uniform_higher_labels": {
+        "base": 3,
+        "negative_exponent": 56
+      },
+      "ordinary_amplification_mean_acceptance_upper": "min(1,(2j+1)^2*3^[-n(r-1)])",
+      "full_prefix_rank_in_each_cohort_required": true,
+      "IID_uniform_higher_original_labels_conditioned_on_low_labels_required_for_prescribed_target_mean": true,
+      "prescribed_target_fixed_conditioned_on_low_labels_before_higher_labels_required": true,
+      "prefix_basis_and_cohort_weights_depend_only_on_low_labels_required": true,
+      "uniform_target_mean_is_a_per_dataset_prescribed_target_promise": false,
+      "population_law_established_by_finite_artifact": false,
+      "later_digit_equations_proved_degree3": false,
+      "generic_carry_solvers_excluded": false,
+      "accepted_speedup_candidate": false
+    },
+    {
+      "dimension": 32,
+      "root_digits": 32,
+      "cohorts": 1,
+      "sites": 1048,
+      "free_native_word_trits_per_cohort": 1016,
+      "uniform_higher_target_mean_acceptance": {
+        "base": 3,
+        "negative_exponent": 992
+      },
+      "prescribed_target_ensemble_mean_under_uniform_higher_labels": {
+        "base": 3,
+        "negative_exponent": 992
+      },
+      "ordinary_amplification_mean_acceptance_upper": "min(1,(2j+1)^2*3^[-n(r-1)])",
+      "full_prefix_rank_in_each_cohort_required": true,
+      "IID_uniform_higher_original_labels_conditioned_on_low_labels_required_for_prescribed_target_mean": true,
+      "prescribed_target_fixed_conditioned_on_low_labels_before_higher_labels_required": true,
+      "prefix_basis_and_cohort_weights_depend_only_on_low_labels_required": true,
+      "uniform_target_mean_is_a_per_dataset_prescribed_target_promise": false,
+      "population_law_established_by_finite_artifact": false,
+      "later_digit_equations_proved_degree3": false,
+      "generic_carry_solvers_excluded": false,
+      "accepted_speedup_candidate": false
+    },
+    {
+      "dimension": 64,
+      "root_digits": 64,
+      "cohorts": 1,
+      "sites": 4120,
+      "free_native_word_trits_per_cohort": 4056,
+      "uniform_higher_target_mean_acceptance": {
+        "base": 3,
+        "negative_exponent": 4032
+      },
+      "prescribed_target_ensemble_mean_under_uniform_higher_labels": {
+        "base": 3,
+        "negative_exponent": 4032
+      },
+      "ordinary_amplification_mean_acceptance_upper": "min(1,(2j+1)^2*3^[-n(r-1)])",
+      "full_prefix_rank_in_each_cohort_required": true,
+      "IID_uniform_higher_original_labels_conditioned_on_low_labels_required_for_prescribed_target_mean": true,
+      "prescribed_target_fixed_conditioned_on_low_labels_before_higher_labels_required": true,
+      "prefix_basis_and_cohort_weights_depend_only_on_low_labels_required": true,
+      "uniform_target_mean_is_a_per_dataset_prescribed_target_promise": false,
+      "population_law_established_by_finite_artifact": false,
+      "later_digit_equations_proved_degree3": false,
+      "generic_carry_solvers_excluded": false,
+      "accepted_speedup_candidate": false
+    },
+    {
+      "dimension": 128,
+      "root_digits": 128,
+      "cohorts": 1,
+      "sites": 16408,
+      "free_native_word_trits_per_cohort": 16280,
+      "uniform_higher_target_mean_acceptance": {
+        "base": 3,
+        "negative_exponent": 16256
+      },
+      "prescribed_target_ensemble_mean_under_uniform_higher_labels": {
+        "base": 3,
+        "negative_exponent": 16256
+      },
+      "ordinary_amplification_mean_acceptance_upper": "min(1,(2j+1)^2*3^[-n(r-1)])",
+      "full_prefix_rank_in_each_cohort_required": true,
+      "IID_uniform_higher_original_labels_conditioned_on_low_labels_required_for_prescribed_target_mean": true,
+      "prescribed_target_fixed_conditioned_on_low_labels_before_higher_labels_required": true,
+      "prefix_basis_and_cohort_weights_depend_only_on_low_labels_required": true,
+      "uniform_target_mean_is_a_per_dataset_prescribed_target_promise": false,
+      "population_law_established_by_finite_artifact": false,
+      "later_digit_equations_proved_degree3": false,
+      "generic_carry_solvers_excluded": false,
+      "accepted_speedup_candidate": false
+    }
+  ],
+  "research_decision": "SEARCH_STRUCTURED_CARRY_SYSTEMS_NOT_FREE_HIGHER_ROOT_LINEARIZATION",
+  "polynomial_cubic_solver_or_full_root_row_circuit": false,
+  "accepted_speedup_candidate": false,
+  "new_active_negative_result_created": false,
+  "remaining_obligations": [
+    "external polynomial identity and access review",
+    "known underdetermined polynomial-system algorithm comparison",
+    "uniform coherent solution sampler versus one-witness search",
+    "later digits and complete row normalization",
+    "physical prefix/filter/compiler precision",
+    "production admission integration"
+  ]
+}

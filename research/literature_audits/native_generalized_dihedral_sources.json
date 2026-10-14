@@ -1,0 +1,24 @@
+{
+  "audit_id": "AUDIT-NATIVE-GENERALIZED-DIHEDRAL-PHASE-BRIDGE",
+  "primary_sources": [
+    {
+      "literature_id": "kuperberg-dhsp-2003",
+      "title": "A subexponential-time quantum algorithm for the dihedral hidden subgroup problem",
+      "author": "Greg Kuperberg",
+      "arxiv_id": "quant-ph/0302112",
+      "url": "https://arxiv.org/pdf/quant-ph/0302112",
+      "inspected": "Section3 labelled phase qubits and measured CNOT sum/difference; Theorem7.1 and Section7 arbitrary finite abelian direct products and labelled phase-source interface.",
+      "supports": "known ideal time/query form 2^{O(sqrt(log|A|))} for the generalized-dihedral phase source",
+      "does_not_supply": "The repository's physical noisy preparation, polynomial growing-depth recovery, a robust decoder, finite fitted constants or free desired branch signs."
+    }
+  ],
+  "local_derivations_review_pending": [
+    "Carried additive charts and unimodular perfect-pairing matrices for all supported native levels.",
+    "Original-qutrit two-level projection gives uniform generalized-abelian dual labels at probability2/3.",
+    "Finite original extraction cap3*(M+b) gives the declared conditional binomial-tail guarantee.",
+    "Full-ring and externally promised integer-embedded secret entropy domains are distinct."
+  ],
+  "known_sieve_implemented": false,
+  "novelty_claim": false,
+  "accepted_candidate": false
+}

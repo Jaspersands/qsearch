@@ -1,0 +1,42 @@
+{
+  "id": "WORKING-CONTRACT-SOURCE-AWARE-BASIS-LOTTERY-MULTIPLE-COMPLETION",
+  "status": "SUPERSEDED_BY_IMPLEMENTED_DISJOINT_BASIS_COMPARATOR_AND_MONOTONE_SOURCE_THEOREM",
+  "superseded_by": "research/hypotheses/native_basis_lottery_contract.json",
+  "bounded_probe": {
+    "generator": "native_full_root_slice.source_data(4,16,90,False,103001)",
+    "external_coefficient": 81,
+    "record_modification": "add Q=q/81 ONLY to the first original response",
+    "public_original_radius": "Q",
+    "original_records_paid_and_verified": 180,
+    "disjoint_block_width": 4,
+    "trial_results": [[0, "singular"], [4, "singular"], [8, "original-radius-fit"]],
+    "cubic_features_compiled": 0,
+    "multiple_equation_verified": true,
+    "matches_truth_only_after_solving": true,
+    "unbounded_Gaussian_source_or_new_quantum_algorithm": false
+  },
+  "source_access": "same actual original classical records and external known coefficient/multiple pairs",
+  "rationale": "For narrow rounded-Gaussian derived noise, clean n-row unit bases may avoid the entire cubic feature matrix and whole-bank triplet truncation",
+  "proposed_mechanism": [
+    "use disjoint original blocks with fixed or label-only basis selection",
+    "invert verified unit minors over the true derived modulus, never as a prime field",
+    "recover a candidate missing quotient from a clean basis",
+    "lift it and verify the supplied multiple and ALL original circular-radius distances",
+    "reject incomplete/capped blocks and failed fits without guessing",
+    "retain public original-code separation to exclude any wrong adaptive radius-fit candidate"
+  ],
+  "provisional_source_argument": [
+    "a fixed n-by-n IID uniform F3 label matrix is invertible with probability product_{j=1..n}(1-3^-j), at least1/2",
+    "Gaussian zero-error mass is p0(beta)=erf(sqrt(pi)/(2beta)); clean independent basis errors have probability p0(beta)^n",
+    "disjoint original blocks justify a repeated-trial failure bound; reusing a block does not create independent trials",
+    "original radius failures, code-separation failure, source laws and external coverage remain explicit",
+    "a common successful clean basis at the maximum supported valuation may cover all smaller true valuations by monotone odd-rounding thresholds",
+    "this monotone coupling needs proof before removing a valuation union multiplier",
+    "constant beta eventually gives exponentially small clean-basis probability; do not claim an asymptotic polynomial attack there"
+  ],
+  "implementation_owner": "GPT for source mathematics and targeted scientific code; Gemini for production wiring and global tests",
+  "exact_source_bound_or_algorithm_implemented": true,
+  "accepted_speedup_candidate": false,
+  "new_active_negative_result_created": false,
+  "novelty_claim": false
+}

@@ -1,0 +1,5533 @@
+{
+  "status": "ACTUAL_TWO_WORD_COLLISION_SYMMETRY_REFERENCE_MEASURED_LAW_CLASSICAL_RARE_BRANCH_PAID",
+  "producer_sha256": "6153c36c145e5ff4e174079603fd85b379d696465dee0807cd483849d46c01dd",
+  "derivation_sha256": "7db27ab63571a96dd55f2756eec661bf935394d1f353cd00e73aeb11ffbb3165",
+  "dependency_sha256": {
+    "native_word_spectral_filter_audit.py": "dc2353aa4e95c208df17028d77575dffb1bcd305e3bc537ab13bc9dff7fe96ad",
+    "native_word_span_decision.py": "867c8f8b8e19660784714184963fdeaa6d27ab1cf2ae83a7d1ba82e60f5fff96",
+    "native_full_root_slice.py": "e3cd11cda6bc5a73ca4fb6131c1ac4c0d16f6a5608bd1ccbd1f6d691da77c966",
+    "native_small_multiple_completion.py": "5519f9809f60ed4ab1447c5bf6aa217b8bacab3d709abb85314212749149eaac",
+    "ternary_measured_lattice_decoder.py": "151f7c5fbb9e09ad8c231fb841c6d8ce385d54123acd9d15f33b3ce51efced4b"
+  },
+  "actual_source_controls": [
+    {
+      "native_spectral_reference": {
+        "original_records": [
+          {
+            "label": [
+              2
+            ],
+            "value": 0,
+            "modulus": 3,
+            "source_id": "known-group-99001-0"
+          },
+          {
+            "label": [
+              2
+            ],
+            "value": 0,
+            "modulus": 3,
+            "source_id": "known-group-99001-1"
+          },
+          {
+            "label": [
+              0
+            ],
+            "value": 0,
+            "modulus": 3,
+            "source_id": "known-group-99001-2"
+          },
+          {
+            "label": [
+              0
+            ],
+            "value": 0,
+            "modulus": 3,
+            "source_id": "known-group-99001-3"
+          },
+          {
+            "label": [
+              2
+            ],
+            "value": 0,
+            "modulus": 3,
+            "source_id": "known-group-99001-4"
+          },
+          {
+            "label": [
+              1
+            ],
+            "value": 0,
+            "modulus": 3,
+            "source_id": "known-group-99001-5"
+          }
+        ],
+        "known_mask": [
+          0
+        ],
+        "actual_native_word_rows": [
+          {
+            "word": [
+              0,
+              0,
+              0
+            ],
+            "frequency": [
+              1
+            ],
+            "known_phase": 0
+          },
+          {
+            "word": [
+              0,
+              0,
+              1
+            ],
+            "frequency": [
+              1
+            ],
+            "known_phase": 0
+          },
+          {
+            "word": [
+              0,
+              0,
+              2
+            ],
+            "frequency": [
+              1
+            ],
+            "known_phase": 0
+          },
+          {
+            "word": [
+              0,
+              1,
+              0
+            ],
+            "frequency": [
+              1
+            ],
+            "known_phase": 0
+          },
+          {
+            "word": [
+              0,
+              1,
+              1
+            ],
+            "frequency": [
+              1
+            ],
+            "known_phase": 0
+          },
+          {
+            "word": [
+              0,
+              1,
+              2
+            ],
+            "frequency": [
+              1
+            ],
+            "known_phase": 0
+          },
+          {
+            "word": [
+              0,
+              2,
+              0
+            ],
+            "frequency": [
+              1
+            ],
+            "known_phase": 0
+          },
+          {
+            "word": [
+              0,
+              2,
+              1
+            ],
+            "frequency": [
+              1
+            ],
+            "known_phase": 0
+          },
+          {
+            "word": [
+              0,
+              2,
+              2
+            ],
+            "frequency": [
+              1
+            ],
+            "known_phase": 0
+          },
+          {
+            "word": [
+              1,
+              0,
+              0
+            ],
+            "frequency": [
+              2
+            ],
+            "known_phase": 0
+          },
+          {
+            "word": [
+              1,
+              0,
+              1
+            ],
+            "frequency": [
+              2
+            ],
+            "known_phase": 0
+          },
+          {
+            "word": [
+              1,
+              0,
+              2
+            ],
+            "frequency": [
+              2
+            ],
+            "known_phase": 0
+          },
+          {
+            "word": [
+              1,
+              1,
+              0
+            ],
+            "frequency": [
+              2
+            ],
+            "known_phase": 0
+          },
+          {
+            "word": [
+              1,
+              1,
+              1
+            ],
+            "frequency": [
+              2
+            ],
+            "known_phase": 0
+          },
+          {
+            "word": [
+              1,
+              1,
+              2
+            ],
+            "frequency": [
+              2
+            ],
+            "known_phase": 0
+          },
+          {
+            "word": [
+              1,
+              2,
+              0
+            ],
+            "frequency": [
+              2
+            ],
+            "known_phase": 0
+          },
+          {
+            "word": [
+              1,
+              2,
+              1
+            ],
+            "frequency": [
+              2
+            ],
+            "known_phase": 0
+          },
+          {
+            "word": [
+              1,
+              2,
+              2
+            ],
+            "frequency": [
+              2
+            ],
+            "known_phase": 0
+          },
+          {
+            "word": [
+              2,
+              0,
+              0
+            ],
+            "frequency": [
+              0
+            ],
+            "known_phase": 0
+          },
+          {
+            "word": [
+              2,
+              0,
+              1
+            ],
+            "frequency": [
+              0
+            ],
+            "known_phase": 0
+          },
+          {
+            "word": [
+              2,
+              0,
+              2
+            ],
+            "frequency": [
+              0
+            ],
+            "known_phase": 0
+          },
+          {
+            "word": [
+              2,
+              1,
+              0
+            ],
+            "frequency": [
+              0
+            ],
+            "known_phase": 0
+          },
+          {
+            "word": [
+              2,
+              1,
+              1
+            ],
+            "frequency": [
+              0
+            ],
+            "known_phase": 0
+          },
+          {
+            "word": [
+              2,
+              1,
+              2
+            ],
+            "frequency": [
+              0
+            ],
+            "known_phase": 0
+          },
+          {
+            "word": [
+              2,
+              2,
+              0
+            ],
+            "frequency": [
+              0
+            ],
+            "known_phase": 0
+          },
+          {
+            "word": [
+              2,
+              2,
+              1
+            ],
+            "frequency": [
+              0
+            ],
+            "known_phase": 0
+          },
+          {
+            "word": [
+              2,
+              2,
+              2
+            ],
+            "frequency": [
+              0
+            ],
+            "known_phase": 0
+          }
+        ],
+        "word_dimension": 27,
+        "supported_frequency_count": 3,
+        "collision_probability": "1/3",
+        "spectral_filter_controls": [
+          {
+            "filter": {
+              "family": "GEOMETRIC",
+              "degree": 1,
+              "ascending_coefficients": [
+                "0",
+                "1"
+              ],
+              "global_effect_range": "[0,1] on ALL x in [0,1]",
+              "global_range_certificate": "1-(1-x)^d belongs to [0,1] on [0,1]",
+              "polynomial_selected_independently_of_original_values": true,
+              "filter_physical_QSVT_implementation_supplied": false
+            },
+            "exact_source_acceptance_root_polynomial": [
+              "1/3"
+            ],
+            "exact_source_minus_IID_null_root_polynomial": [
+              "8/27"
+            ],
+            "IID_null_acceptance": "1/27",
+            "ideal_source_acceptance_IF_codeword": "1/3",
+            "absolute_source_null_gap_upper": "10/27",
+            "diagnostic_source_acceptance_probability": 0.3333333333333333,
+            "matched_classical_monomial_estimator": {
+              "coefficient_l1_norm": "1",
+              "maximum_words_per_monomial_shot": 2,
+              "identity": "E[all k+1 frequencies equal * exp(i*(phase_last-phase_first))] = <psi,K^k psi> for k>=1",
+              "coefficient_norm_and_inverse_precision_are_not_free": true,
+              "polynomial_time_classical_dequantization_established": false
+            }
+          }
+        ],
+        "dense_control_is_scalable_circuit": false,
+        "IID_label_source_law_established_by_this_fixture": false
+      },
+      "literal_joint_branches": {
+        "equal_plus": 0.33333333333333354,
+        "equal_minus": 0.0,
+        "unequal_plus": 0.6666666666666671,
+        "unequal_minus": 0.0,
+        "complete_mass": 1.0000000000000002,
+        "whole_joint_amplitudes_evaluated": 1458,
+        "branch_discarded_for_free": false
+      },
+      "exact_equal_plus_root_polynomial": [
+        "1/3"
+      ],
+      "exact_equal_minus_root_polynomial": [],
+      "exact_equal_total_probability": "1/3",
+      "IID_null_equal_plus_probability": "5/27",
+      "IID_null_equal_minus_probability": "4/27",
+      "effective_original_word_effect_commutes_with_raw_Gram": true,
+      "phase_independent_diagonal_term_cancels_source_vs_IID_null": true,
+      "classical_full_measured_readout_identity": {
+        "word_pair_probability": "1/729",
+        "conditional_plus_probability": "(1+cos(2*pi*(phase_w-phase_v)/q))/2",
+        "conditional_minus_probability": "(1-cos(2*pi*(phase_w-phase_v)/q))/2",
+        "predicate": "f_A(w)==f_A(v)",
+        "original_phase_evaluator_and_frequency_work_paid": true,
+        "entire_measured_word_pair_and_flag_law_matched": true,
+        "finite_precision_classical_sampler_implemented_here": false,
+        "coherent_amplification_or_retained_unmeasured_output_simulated": false
+      },
+      "scalable_logical_recipe": {
+        "original_records_paid_once": 6,
+        "uniform_qutrits": 6,
+        "original_response_phase_gates": 3,
+        "controlled_qutrit_swaps": 3,
+        "forward_and_uncompute_label_coordinate_accumulations": 12,
+        "frequency_comparison_coordinates": 1,
+        "known_initial_preparation_inverse_available_on_this_source": true,
+        "normalized_fibre_preparation_required_by_one_pass": false,
+        "full_word_table_required_by_logical_recipe": false,
+        "physical_gate_compilation_and_precision_certified": false
+      },
+      "accepted_speedup_candidate": false
+    },
+    {
+      "native_spectral_reference": {
+        "original_records": [
+          {
+            "label": [
+              7
+            ],
+            "value": 8,
+            "modulus": 9,
+            "source_id": "known-group-99002-0"
+          },
+          {
+            "label": [
+              4
+            ],
+            "value": 2,
+            "modulus": 9,
+            "source_id": "known-group-99002-1"
+          },
+          {
+            "label": [
+              3
+            ],
+            "value": 6,
+            "modulus": 9,
+            "source_id": "known-group-99002-2"
+          },
+          {
+            "label": [
+              0
+            ],
+            "value": 0,
+            "modulus": 9,
+            "source_id": "known-group-99002-3"
+          },
+          {
+            "label": [
+              6
+            ],
+            "value": 3,
+            "modulus": 9,
+            "source_id": "known-group-99002-4"
+          },
+          {
+            "label": [
+              0
+            ],
+            "value": 0,
+            "modulus": 9,
+            "source_id": "known-group-99002-5"
+          },
+          {
+            "label": [
+              6
+            ],
+            "value": 3,
+            "modulus": 9,
+            "source_id": "known-group-99002-6"
+          },
+          {
+            "label": [
+              2
+            ],
+            "value": 1,
+            "modulus": 9,
+            "source_id": "known-group-99002-7"
+          }
+        ],
+        "known_mask": [
+          7
+        ],
+        "actual_native_word_rows": [
+          {
+            "word": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "frequency": [
+              4
+            ],
+            "known_phase": 3
+          },
+          {
+            "word": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "frequency": [
+              3
+            ],
+            "known_phase": 0
+          },
+          {
+            "word": [
+              0,
+              0,
+              0,
+              2
+            ],
+            "frequency": [
+              5
+            ],
+            "known_phase": 6
+          },
+          {
+            "word": [
+              0,
+              0,
+              1,
+              0
+            ],
+            "frequency": [
+              1
+            ],
+            "known_phase": 3
+          },
+          {
+            "word": [
+              0,
+              0,
+              1,
+              1
+            ],
+            "frequency": [
+              0
+            ],
+            "known_phase": 0
+          },
+          {
+            "word": [
+              0,
+              0,
+              1,
+              2
+            ],
+            "frequency": [
+              2
+            ],
+            "known_phase": 6
+          },
+          {
+            "word": [
+              0,
+              0,
+              2,
+              0
+            ],
+            "frequency": [
+              7
+            ],
+            "known_phase": 3
+          },
+          {
+            "word": [
+              0,
+              0,
+              2,
+              1
+            ],
+            "frequency": [
+              6
+            ],
+            "known_phase": 0
+          },
+          {
+            "word": [
+              0,
+              0,
+              2,
+              2
+            ],
+            "frequency": [
+              8
+            ],
+            "known_phase": 6
+          },
+          {
+            "word": [
+              0,
+              1,
+              0,
+              0
+            ],
+            "frequency": [
+              7
+            ],
+            "known_phase": 3
+          },
+          {
+            "word": [
+              0,
+              1,
+              0,
+              1
+            ],
+            "frequency": [
+              6
+            ],
+            "known_phase": 0
+          },
+          {
+            "word": [
+              0,
+              1,
+              0,
+              2
+            ],
+            "frequency": [
+              8
+            ],
+            "known_phase": 6
+          },
+          {
+            "word": [
+              0,
+              1,
+              1,
+              0
+            ],
+            "frequency": [
+              4
+            ],
+            "known_phase": 3
+          },
+          {
+            "word": [
+              0,
+              1,
+              1,
+              1
+            ],
+            "frequency": [
+              3
+            ],
+            "known_phase": 0
+          },
+          {
+            "word": [
+              0,
+              1,
+              1,
+              2
+            ],
+            "frequency": [
+              5
+            ],
+            "known_phase": 6
+          },
+          {
+            "word": [
+              0,
+              1,
+              2,
+              0
+            ],
+            "frequency": [
+              1
+            ],
+            "known_phase": 3
+          },
+          {
+            "word": [
+              0,
+              1,
+              2,
+              1
+            ],
+            "frequency": [
+              0
+            ],
+            "known_phase": 0
+          },
+          {
+            "word": [
+              0,
+              1,
+              2,
+              2
+            ],
+            "frequency": [
+              2
+            ],
+            "known_phase": 6
+          },
+          {
+            "word": [
+              0,
+              2,
+              0,
+              0
+            ],
+            "frequency": [
+              1
+            ],
+            "known_phase": 3
+          },
+          {
+            "word": [
+              0,
+              2,
+              0,
+              1
+            ],
+            "frequency": [
+              0
+            ],
+            "known_phase": 0
+          },
+          {
+            "word": [
+              0,
+              2,
+              0,
+              2
+            ],
+            "frequency": [
+              2
+            ],
+            "known_phase": 6
+          },
+          {
+            "word": [
+              0,
+              2,
+              1,
+              0
+            ],
+            "frequency": [
+              7
+            ],
+            "known_phase": 3
+          },
+          {
+            "word": [
+              0,
+              2,
+              1,
+              1
+            ],
+            "frequency": [
+              6
+            ],
+            "known_phase": 0
+          },
+          {
+            "word": [
+              0,
+              2,
+              1,
+              2
+            ],
+            "frequency": [
+              8
+            ],
+            "known_phase": 6
+          },
+          {
+            "word": [
+              0,
+              2,
+              2,
+              0
+            ],
+            "frequency": [
+              4
+            ],
+            "known_phase": 3
+          },
+          {
+            "word": [
+              0,
+              2,
+              2,
+              1
+            ],
+            "frequency": [
+              3
+            ],
+            "known_phase": 0
+          },
+          {
+            "word": [
+              0,
+              2,
+              2,
+              2
+            ],
+            "frequency": [
+              5
+            ],
+            "known_phase": 6
+          },
+          {
+            "word": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "frequency": [
+              3
+            ],
+            "known_phase": 0
+          },
+          {
+            "word": [
+              1,
+              0,
+              0,
+              1
+            ],
+            "frequency": [
+              2
+            ],
+            "known_phase": 6
+          },
+          {
+            "word": [
+              1,
+              0,
+              0,
+              2
+            ],
+            "frequency": [
+              4
+            ],
+            "known_phase": 3
+          },
+          {
+            "word": [
+              1,
+              0,
+              1,
+              0
+            ],
+            "frequency": [
+              0
+            ],
+            "known_phase": 0
+          },
+          {
+            "word": [
+              1,
+              0,
+              1,
+              1
+            ],
+            "frequency": [
+              8
+            ],
+            "known_phase": 6
+          },
+          {
+            "word": [
+              1,
+              0,
+              1,
+              2
+            ],
+            "frequency": [
+              1
+            ],
+            "known_phase": 3
+          },
+          {
+            "word": [
+              1,
+              0,
+              2,
+              0
+            ],
+            "frequency": [
+              6
+            ],
+            "known_phase": 0
+          },
+          {
+            "word": [
+              1,
+              0,
+              2,
+              1
+            ],
+            "frequency": [
+              5
+            ],
+            "known_phase": 6
+          },
+          {
+            "word": [
+              1,
+              0,
+              2,
+              2
+            ],
+            "frequency": [
+              7
+            ],
+            "known_phase": 3
+          },
+          {
+            "word": [
+              1,
+              1,
+              0,
+              0
+            ],
+            "frequency": [
+              6
+            ],
+            "known_phase": 0
+          },
+          {
+            "word": [
+              1,
+              1,
+              0,
+              1
+            ],
+            "frequency": [
+              5
+            ],
+            "known_phase": 6
+          },
+          {
+            "word": [
+              1,
+              1,
+              0,
+              2
+            ],
+            "frequency": [
+              7
+            ],
+            "known_phase": 3
+          },
+          {
+            "word": [
+              1,
+              1,
+              1,
+              0
+            ],
+            "frequency": [
+              3
+            ],
+            "known_phase": 0
+          },
+          {
+            "word": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "frequency": [
+              2
+            ],
+            "known_phase": 6
+          },
+          {
+            "word": [
+              1,
+              1,
+              1,
+              2
+            ],
+            "frequency": [
+              4
+            ],
+            "known_phase": 3
+          },
+          {
+            "word": [
+              1,
+              1,
+              2,
+              0
+            ],
+            "frequency": [
+              0
+            ],
+            "known_phase": 0
+          },
+          {
+            "word": [
+              1,
+              1,
+              2,
+              1
+            ],
+            "frequency": [
+              8
+            ],
+            "known_phase": 6
+          },
+          {
+            "word": [
+              1,
+              1,
+              2,
+              2
+            ],
+            "frequency": [
+              1
+            ],
+            "known_phase": 3
+          },
+          {
+            "word": [
+              1,
+              2,
+              0,
+              0
+            ],
+            "frequency": [
+              0
+            ],
+            "known_phase": 0
+          },
+          {
+            "word": [
+              1,
+              2,
+              0,
+              1
+            ],
+            "frequency": [
+              8
+            ],
+            "known_phase": 6
+          },
+          {
+            "word": [
+              1,
+              2,
+              0,
+              2
+            ],
+            "frequency": [
+              1
+            ],
+            "known_phase": 3
+          },
+          {
+            "word": [
+              1,
+              2,
+              1,
+              0
+            ],
+            "frequency": [
+              6
+            ],
+            "known_phase": 0
+          },
+          {
+            "word": [
+              1,
+              2,
+              1,
+              1
+            ],
+            "frequency": [
+              5
+            ],
+            "known_phase": 6
+          },
+          {
+            "word": [
+              1,
+              2,
+              1,
+              2
+            ],
+            "frequency": [
+              7
+            ],
+            "known_phase": 3
+          },
+          {
+            "word": [
+              1,
+              2,
+              2,
+              0
+            ],
+            "frequency": [
+              3
+            ],
+            "known_phase": 0
+          },
+          {
+            "word": [
+              1,
+              2,
+              2,
+              1
+            ],
+            "frequency": [
+              2
+            ],
+            "known_phase": 6
+          },
+          {
+            "word": [
+              1,
+              2,
+              2,
+              2
+            ],
+            "frequency": [
+              4
+            ],
+            "known_phase": 3
+          },
+          {
+            "word": [
+              2,
+              0,
+              0,
+              0
+            ],
+            "frequency": [
+              2
+            ],
+            "known_phase": 6
+          },
+          {
+            "word": [
+              2,
+              0,
+              0,
+              1
+            ],
+            "frequency": [
+              1
+            ],
+            "known_phase": 3
+          },
+          {
+            "word": [
+              2,
+              0,
+              0,
+              2
+            ],
+            "frequency": [
+              3
+            ],
+            "known_phase": 0
+          },
+          {
+            "word": [
+              2,
+              0,
+              1,
+              0
+            ],
+            "frequency": [
+              8
+            ],
+            "known_phase": 6
+          },
+          {
+            "word": [
+              2,
+              0,
+              1,
+              1
+            ],
+            "frequency": [
+              7
+            ],
+            "known_phase": 3
+          },
+          {
+            "word": [
+              2,
+              0,
+              1,
+              2
+            ],
+            "frequency": [
+              0
+            ],
+            "known_phase": 0
+          },
+          {
+            "word": [
+              2,
+              0,
+              2,
+              0
+            ],
+            "frequency": [
+              5
+            ],
+            "known_phase": 6
+          },
+          {
+            "word": [
+              2,
+              0,
+              2,
+              1
+            ],
+            "frequency": [
+              4
+            ],
+            "known_phase": 3
+          },
+          {
+            "word": [
+              2,
+              0,
+              2,
+              2
+            ],
+            "frequency": [
+              6
+            ],
+            "known_phase": 0
+          },
+          {
+            "word": [
+              2,
+              1,
+              0,
+              0
+            ],
+            "frequency": [
+              5
+            ],
+            "known_phase": 6
+          },
+          {
+            "word": [
+              2,
+              1,
+              0,
+              1
+            ],
+            "frequency": [
+              4
+            ],
+            "known_phase": 3
+          },
+          {
+            "word": [
+              2,
+              1,
+              0,
+              2
+            ],
+            "frequency": [
+              6
+            ],
+            "known_phase": 0
+          },
+          {
+            "word": [
+              2,
+              1,
+              1,
+              0
+            ],
+            "frequency": [
+              2
+            ],
+            "known_phase": 6
+          },
+          {
+            "word": [
+              2,
+              1,
+              1,
+              1
+            ],
+            "frequency": [
+              1
+            ],
+            "known_phase": 3
+          },
+          {
+            "word": [
+              2,
+              1,
+              1,
+              2
+            ],
+            "frequency": [
+              3
+            ],
+            "known_phase": 0
+          },
+          {
+            "word": [
+              2,
+              1,
+              2,
+              0
+            ],
+            "frequency": [
+              8
+            ],
+            "known_phase": 6
+          },
+          {
+            "word": [
+              2,
+              1,
+              2,
+              1
+            ],
+            "frequency": [
+              7
+            ],
+            "known_phase": 3
+          },
+          {
+            "word": [
+              2,
+              1,
+              2,
+              2
+            ],
+            "frequency": [
+              0
+            ],
+            "known_phase": 0
+          },
+          {
+            "word": [
+              2,
+              2,
+              0,
+              0
+            ],
+            "frequency": [
+              8
+            ],
+            "known_phase": 6
+          },
+          {
+            "word": [
+              2,
+              2,
+              0,
+              1
+            ],
+            "frequency": [
+              7
+            ],
+            "known_phase": 3
+          },
+          {
+            "word": [
+              2,
+              2,
+              0,
+              2
+            ],
+            "frequency": [
+              0
+            ],
+            "known_phase": 0
+          },
+          {
+            "word": [
+              2,
+              2,
+              1,
+              0
+            ],
+            "frequency": [
+              5
+            ],
+            "known_phase": 6
+          },
+          {
+            "word": [
+              2,
+              2,
+              1,
+              1
+            ],
+            "frequency": [
+              4
+            ],
+            "known_phase": 3
+          },
+          {
+            "word": [
+              2,
+              2,
+              1,
+              2
+            ],
+            "frequency": [
+              6
+            ],
+            "known_phase": 0
+          },
+          {
+            "word": [
+              2,
+              2,
+              2,
+              0
+            ],
+            "frequency": [
+              2
+            ],
+            "known_phase": 6
+          },
+          {
+            "word": [
+              2,
+              2,
+              2,
+              1
+            ],
+            "frequency": [
+              1
+            ],
+            "known_phase": 3
+          },
+          {
+            "word": [
+              2,
+              2,
+              2,
+              2
+            ],
+            "frequency": [
+              3
+            ],
+            "known_phase": 0
+          }
+        ],
+        "word_dimension": 81,
+        "supported_frequency_count": 9,
+        "collision_probability": "1/9",
+        "spectral_filter_controls": [
+          {
+            "filter": {
+              "family": "GEOMETRIC",
+              "degree": 1,
+              "ascending_coefficients": [
+                "0",
+                "1"
+              ],
+              "global_effect_range": "[0,1] on ALL x in [0,1]",
+              "global_range_certificate": "1-(1-x)^d belongs to [0,1] on [0,1]",
+              "polynomial_selected_independently_of_original_values": true,
+              "filter_physical_QSVT_implementation_supplied": false
+            },
+            "exact_source_acceptance_root_polynomial": [
+              "1/9"
+            ],
+            "exact_source_minus_IID_null_root_polynomial": [
+              "8/81"
+            ],
+            "IID_null_acceptance": "1/81",
+            "ideal_source_acceptance_IF_codeword": "1/9",
+            "absolute_source_null_gap_upper": "10/81",
+            "diagnostic_source_acceptance_probability": 0.1111111111111111,
+            "matched_classical_monomial_estimator": {
+              "coefficient_l1_norm": "1",
+              "maximum_words_per_monomial_shot": 2,
+              "identity": "E[all k+1 frequencies equal * exp(i*(phase_last-phase_first))] = <psi,K^k psi> for k>=1",
+              "coefficient_norm_and_inverse_precision_are_not_free": true,
+              "polynomial_time_classical_dequantization_established": false
+            }
+          }
+        ],
+        "dense_control_is_scalable_circuit": false,
+        "IID_label_source_law_established_by_this_fixture": false
+      },
+      "literal_joint_branches": {
+        "equal_plus": 0.11111111111111106,
+        "equal_minus": 0.0,
+        "unequal_plus": 0.3888888888888888,
+        "unequal_minus": 0.4999999999999999,
+        "complete_mass": 0.9999999999999998,
+        "whole_joint_amplitudes_evaluated": 13122,
+        "branch_discarded_for_free": false
+      },
+      "exact_equal_plus_root_polynomial": [
+        "1/9"
+      ],
+      "exact_equal_minus_root_polynomial": [],
+      "exact_equal_total_probability": "1/9",
+      "IID_null_equal_plus_probability": "5/81",
+      "IID_null_equal_minus_probability": "4/81",
+      "effective_original_word_effect_commutes_with_raw_Gram": true,
+      "phase_independent_diagonal_term_cancels_source_vs_IID_null": true,
+      "classical_full_measured_readout_identity": {
+        "word_pair_probability": "1/6561",
+        "conditional_plus_probability": "(1+cos(2*pi*(phase_w-phase_v)/q))/2",
+        "conditional_minus_probability": "(1-cos(2*pi*(phase_w-phase_v)/q))/2",
+        "predicate": "f_A(w)==f_A(v)",
+        "original_phase_evaluator_and_frequency_work_paid": true,
+        "entire_measured_word_pair_and_flag_law_matched": true,
+        "finite_precision_classical_sampler_implemented_here": false,
+        "coherent_amplification_or_retained_unmeasured_output_simulated": false
+      },
+      "scalable_logical_recipe": {
+        "original_records_paid_once": 8,
+        "uniform_qutrits": 8,
+        "original_response_phase_gates": 4,
+        "controlled_qutrit_swaps": 4,
+        "forward_and_uncompute_label_coordinate_accumulations": 16,
+        "frequency_comparison_coordinates": 1,
+        "known_initial_preparation_inverse_available_on_this_source": true,
+        "normalized_fibre_preparation_required_by_one_pass": false,
+        "full_word_table_required_by_logical_recipe": false,
+        "physical_gate_compilation_and_precision_certified": false
+      },
+      "accepted_speedup_candidate": false
+    },
+    {
+      "native_spectral_reference": {
+        "original_records": [
+          {
+            "label": [
+              14
+            ],
+            "value": 5,
+            "modulus": 27,
+            "source_id": "known-group-99003-0"
+          },
+          {
+            "label": [
+              8
+            ],
+            "value": 14,
+            "modulus": 27,
+            "source_id": "known-group-99003-1"
+          },
+          {
+            "label": [
+              17
+            ],
+            "value": 14,
+            "modulus": 27,
+            "source_id": "known-group-99003-2"
+          },
+          {
+            "label": [
+              19
+            ],
+            "value": 13,
+            "modulus": 27,
+            "source_id": "known-group-99003-3"
+          },
+          {
+            "label": [
+              9
+            ],
+            "value": 26,
+            "modulus": 27,
+            "source_id": "known-group-99003-4"
+          },
+          {
+            "label": [
+              15
+            ],
+            "value": 19,
+            "modulus": 27,
+            "source_id": "known-group-99003-5"
+          },
+          {
+            "label": [
+              19
+            ],
+            "value": 13,
+            "modulus": 27,
+            "source_id": "known-group-99003-6"
+          },
+          {
+            "label": [
+              11
+            ],
+            "value": 25,
+            "modulus": 27,
+            "source_id": "known-group-99003-7"
+          },
+          {
+            "label": [
+              25
+            ],
+            "value": 2,
+            "modulus": 27,
+            "source_id": "known-group-99003-8"
+          },
+          {
+            "label": [
+              23
+            ],
+            "value": 7,
+            "modulus": 27,
+            "source_id": "known-group-99003-9"
+          }
+        ],
+        "known_mask": [
+          1
+        ],
+        "actual_native_word_rows": [
+          {
+            "word": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "frequency": [
+              3
+            ],
+            "known_phase": 9
+          },
+          {
+            "word": [
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "frequency": [
+              3
+            ],
+            "known_phase": 12
+          },
+          {
+            "word": [
+              0,
+              0,
+              0,
+              0,
+              2
+            ],
+            "frequency": [
+              9
+            ],
+            "known_phase": 6
+          },
+          {
+            "word": [
+              0,
+              0,
+              0,
+              1,
+              0
+            ],
+            "frequency": [
+              3
+            ],
+            "known_phase": 8
+          },
+          {
+            "word": [
+              0,
+              0,
+              0,
+              1,
+              1
+            ],
+            "frequency": [
+              3
+            ],
+            "known_phase": 11
+          },
+          {
+            "word": [
+              0,
+              0,
+              0,
+              1,
+              2
+            ],
+            "frequency": [
+              9
+            ],
+            "known_phase": 5
+          },
+          {
+            "word": [
+              0,
+              0,
+              0,
+              2,
+              0
+            ],
+            "frequency": [
+              0
+            ],
+            "known_phase": 22
+          },
+          {
+            "word": [
+              0,
+              0,
+              0,
+              2,
+              1
+            ],
+            "frequency": [
+              0
+            ],
+            "known_phase": 25
+          },
+          {
+            "word": [
+              0,
+              0,
+              0,
+              2,
+              2
+            ],
+            "frequency": [
+              6
+            ],
+            "known_phase": 19
+          },
+          {
+            "word": [
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            "frequency": [
+              0
+            ],
+            "known_phase": 0
+          },
+          {
+            "word": [
+              0,
+              0,
+              1,
+              0,
+              1
+            ],
+            "frequency": [
+              0
+            ],
+            "known_phase": 3
+          },
+          {
+            "word": [
+              0,
+              0,
+              1,
+              0,
+              2
+            ],
+            "frequency": [
+              6
+            ],
+            "known_phase": 24
+          },
+          {
+            "word": [
+              0,
+              0,
+              1,
+              1,
+              0
+            ],
+            "frequency": [
+              0
+            ],
+            "known_phase": 26
+          },
+          {
+            "word": [
+              0,
+              0,
+              1,
+              1,
+              1
+            ],
+            "frequency": [
+              0
+            ],
+            "known_phase": 2
+          },
+          {
+            "word": [
+              0,
+              0,
+              1,
+              1,
+              2
+            ],
+            "frequency": [
+              6
+            ],
+            "known_phase": 23
+          },
+          {
+            "word": [
+              0,
+              0,
+              1,
+              2,
+              0
+            ],
+            "frequency": [
+              24
+            ],
+            "known_phase": 13
+          },
+          {
+            "word": [
+              0,
+              0,
+              1,
+              2,
+              1
+            ],
+            "frequency": [
+              24
+            ],
+            "known_phase": 16
+          },
+          {
+            "word": [
+              0,
+              0,
+              1,
+              2,
+              2
+            ],
+            "frequency": [
+              3
+            ],
+            "known_phase": 10
+          },
+          {
+            "word": [
+              0,
+              0,
+              2,
+              0,
+              0
+            ],
+            "frequency": [
+              6
+            ],
+            "known_phase": 21
+          },
+          {
+            "word": [
+              0,
+              0,
+              2,
+              0,
+              1
+            ],
+            "frequency": [
+              6
+            ],
+            "known_phase": 24
+          },
+          {
+            "word": [
+              0,
+              0,
+              2,
+              0,
+              2
+            ],
+            "frequency": [
+              12
+            ],
+            "known_phase": 18
+          },
+          {
+            "word": [
+              0,
+              0,
+              2,
+              1,
+              0
+            ],
+            "frequency": [
+              6
+            ],
+            "known_phase": 20
+          },
+          {
+            "word": [
+              0,
+              0,
+              2,
+              1,
+              1
+            ],
+            "frequency": [
+              6
+            ],
+            "known_phase": 23
+          },
+          {
+            "word": [
+              0,
+              0,
+              2,
+              1,
+              2
+            ],
+            "frequency": [
+              12
+            ],
+            "known_phase": 17
+          },
+          {
+            "word": [
+              0,
+              0,
+              2,
+              2,
+              0
+            ],
+            "frequency": [
+              3
+            ],
+            "known_phase": 7
+          },
+          {
+            "word": [
+              0,
+              0,
+              2,
+              2,
+              1
+            ],
+            "frequency": [
+              3
+            ],
+            "known_phase": 10
+          },
+          {
+            "word": [
+              0,
+              0,
+              2,
+              2,
+              2
+            ],
+            "frequency": [
+              9
+            ],
+            "known_phase": 4
+          },
+          {
+            "word": [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "frequency": [
+              15
+            ],
+            "known_phase": 6
+          },
+          {
+            "word": [
+              0,
+              1,
+              0,
+              0,
+              1
+            ],
+            "frequency": [
+              15
+            ],
+            "known_phase": 9
+          },
+          {
+            "word": [
+              0,
+              1,
+              0,
+              0,
+              2
+            ],
+            "frequency": [
+              21
+            ],
+            "known_phase": 3
+          },
+          {
+            "word": [
+              0,
+              1,
+              0,
+              1,
+              0
+            ],
+            "frequency": [
+              15
+            ],
+            "known_phase": 5
+          },
+          {
+            "word": [
+              0,
+              1,
+              0,
+              1,
+              1
+            ],
+            "frequency": [
+              15
+            ],
+            "known_phase": 8
+          },
+          {
+            "word": [
+              0,
+              1,
+              0,
+              1,
+              2
+            ],
+            "frequency": [
+              21
+            ],
+            "known_phase": 2
+          },
+          {
+            "word": [
+              0,
+              1,
+              0,
+              2,
+              0
+            ],
+            "frequency": [
+              12
+            ],
+            "known_phase": 19
+          },
+          {
+            "word": [
+              0,
+              1,
+              0,
+              2,
+              1
+            ],
+            "frequency": [
+              12
+            ],
+            "known_phase": 22
+          },
+          {
+            "word": [
+              0,
+              1,
+              0,
+              2,
+              2
+            ],
+            "frequency": [
+              18
+            ],
+            "known_phase": 16
+          },
+          {
+            "word": [
+              0,
+              1,
+              1,
+              0,
+              0
+            ],
+            "frequency": [
+              12
+            ],
+            "known_phase": 24
+          },
+          {
+            "word": [
+              0,
+              1,
+              1,
+              0,
+              1
+            ],
+            "frequency": [
+              12
+            ],
+            "known_phase": 0
+          },
+          {
+            "word": [
+              0,
+              1,
+              1,
+              0,
+              2
+            ],
+            "frequency": [
+              18
+            ],
+            "known_phase": 21
+          },
+          {
+            "word": [
+              0,
+              1,
+              1,
+              1,
+              0
+            ],
+            "frequency": [
+              12
+            ],
+            "known_phase": 23
+          },
+          {
+            "word": [
+              0,
+              1,
+              1,
+              1,
+              1
+            ],
+            "frequency": [
+              12
+            ],
+            "known_phase": 26
+          },
+          {
+            "word": [
+              0,
+              1,
+              1,
+              1,
+              2
+            ],
+            "frequency": [
+              18
+            ],
+            "known_phase": 20
+          },
+          {
+            "word": [
+              0,
+              1,
+              1,
+              2,
+              0
+            ],
+            "frequency": [
+              9
+            ],
+            "known_phase": 10
+          },
+          {
+            "word": [
+              0,
+              1,
+              1,
+              2,
+              1
+            ],
+            "frequency": [
+              9
+            ],
+            "known_phase": 13
+          },
+          {
+            "word": [
+              0,
+              1,
+              1,
+              2,
+              2
+            ],
+            "frequency": [
+              15
+            ],
+            "known_phase": 7
+          },
+          {
+            "word": [
+              0,
+              1,
+              2,
+              0,
+              0
+            ],
+            "frequency": [
+              18
+            ],
+            "known_phase": 18
+          },
+          {
+            "word": [
+              0,
+              1,
+              2,
+              0,
+              1
+            ],
+            "frequency": [
+              18
+            ],
+            "known_phase": 21
+          },
+          {
+            "word": [
+              0,
+              1,
+              2,
+              0,
+              2
+            ],
+            "frequency": [
+              24
+            ],
+            "known_phase": 15
+          },
+          {
+            "word": [
+              0,
+              1,
+              2,
+              1,
+              0
+            ],
+            "frequency": [
+              18
+            ],
+            "known_phase": 17
+          },
+          {
+            "word": [
+              0,
+              1,
+              2,
+              1,
+              1
+            ],
+            "frequency": [
+              18
+            ],
+            "known_phase": 20
+          },
+          {
+            "word": [
+              0,
+              1,
+              2,
+              1,
+              2
+            ],
+            "frequency": [
+              24
+            ],
+            "known_phase": 14
+          },
+          {
+            "word": [
+              0,
+              1,
+              2,
+              2,
+              0
+            ],
+            "frequency": [
+              15
+            ],
+            "known_phase": 4
+          },
+          {
+            "word": [
+              0,
+              1,
+              2,
+              2,
+              1
+            ],
+            "frequency": [
+              15
+            ],
+            "known_phase": 7
+          },
+          {
+            "word": [
+              0,
+              1,
+              2,
+              2,
+              2
+            ],
+            "frequency": [
+              21
+            ],
+            "known_phase": 1
+          },
+          {
+            "word": [
+              0,
+              2,
+              0,
+              0,
+              0
+            ],
+            "frequency": [
+              21
+            ],
+            "known_phase": 0
+          },
+          {
+            "word": [
+              0,
+              2,
+              0,
+              0,
+              1
+            ],
+            "frequency": [
+              21
+            ],
+            "known_phase": 3
+          },
+          {
+            "word": [
+              0,
+              2,
+              0,
+              0,
+              2
+            ],
+            "frequency": [
+              0
+            ],
+            "known_phase": 24
+          },
+          {
+            "word": [
+              0,
+              2,
+              0,
+              1,
+              0
+            ],
+            "frequency": [
+              21
+            ],
+            "known_phase": 26
+          },
+          {
+            "word": [
+              0,
+              2,
+              0,
+              1,
+              1
+            ],
+            "frequency": [
+              21
+            ],
+            "known_phase": 2
+          },
+          {
+            "word": [
+              0,
+              2,
+              0,
+              1,
+              2
+            ],
+            "frequency": [
+              0
+            ],
+            "known_phase": 23
+          },
+          {
+            "word": [
+              0,
+              2,
+              0,
+              2,
+              0
+            ],
+            "frequency": [
+              18
+            ],
+            "known_phase": 13
+          },
+          {
+            "word": [
+              0,
+              2,
+              0,
+              2,
+              1
+            ],
+            "frequency": [
+              18
+            ],
+            "known_phase": 16
+          },
+          {
+            "word": [
+              0,
+              2,
+              0,
+              2,
+              2
+            ],
+            "frequency": [
+              24
+            ],
+            "known_phase": 10
+          },
+          {
+            "word": [
+              0,
+              2,
+              1,
+              0,
+              0
+            ],
+            "frequency": [
+              18
+            ],
+            "known_phase": 18
+          },
+          {
+            "word": [
+              0,
+              2,
+              1,
+              0,
+              1
+            ],
+            "frequency": [
+              18
+            ],
+            "known_phase": 21
+          },
+          {
+            "word": [
+              0,
+              2,
+              1,
+              0,
+              2
+            ],
+            "frequency": [
+              24
+            ],
+            "known_phase": 15
+          },
+          {
+            "word": [
+              0,
+              2,
+              1,
+              1,
+              0
+            ],
+            "frequency": [
+              18
+            ],
+            "known_phase": 17
+          },
+          {
+            "word": [
+              0,
+              2,
+              1,
+              1,
+              1
+            ],
+            "frequency": [
+              18
+            ],
+            "known_phase": 20
+          },
+          {
+            "word": [
+              0,
+              2,
+              1,
+              1,
+              2
+            ],
+            "frequency": [
+              24
+            ],
+            "known_phase": 14
+          },
+          {
+            "word": [
+              0,
+              2,
+              1,
+              2,
+              0
+            ],
+            "frequency": [
+              15
+            ],
+            "known_phase": 4
+          },
+          {
+            "word": [
+              0,
+              2,
+              1,
+              2,
+              1
+            ],
+            "frequency": [
+              15
+            ],
+            "known_phase": 7
+          },
+          {
+            "word": [
+              0,
+              2,
+              1,
+              2,
+              2
+            ],
+            "frequency": [
+              21
+            ],
+            "known_phase": 1
+          },
+          {
+            "word": [
+              0,
+              2,
+              2,
+              0,
+              0
+            ],
+            "frequency": [
+              24
+            ],
+            "known_phase": 12
+          },
+          {
+            "word": [
+              0,
+              2,
+              2,
+              0,
+              1
+            ],
+            "frequency": [
+              24
+            ],
+            "known_phase": 15
+          },
+          {
+            "word": [
+              0,
+              2,
+              2,
+              0,
+              2
+            ],
+            "frequency": [
+              3
+            ],
+            "known_phase": 9
+          },
+          {
+            "word": [
+              0,
+              2,
+              2,
+              1,
+              0
+            ],
+            "frequency": [
+              24
+            ],
+            "known_phase": 11
+          },
+          {
+            "word": [
+              0,
+              2,
+              2,
+              1,
+              1
+            ],
+            "frequency": [
+              24
+            ],
+            "known_phase": 14
+          },
+          {
+            "word": [
+              0,
+              2,
+              2,
+              1,
+              2
+            ],
+            "frequency": [
+              3
+            ],
+            "known_phase": 8
+          },
+          {
+            "word": [
+              0,
+              2,
+              2,
+              2,
+              0
+            ],
+            "frequency": [
+              21
+            ],
+            "known_phase": 25
+          },
+          {
+            "word": [
+              0,
+              2,
+              2,
+              2,
+              1
+            ],
+            "frequency": [
+              21
+            ],
+            "known_phase": 1
+          },
+          {
+            "word": [
+              0,
+              2,
+              2,
+              2,
+              2
+            ],
+            "frequency": [
+              0
+            ],
+            "known_phase": 22
+          },
+          {
+            "word": [
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            "frequency": [
+              10
+            ],
+            "known_phase": 20
+          },
+          {
+            "word": [
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "frequency": [
+              10
+            ],
+            "known_phase": 23
+          },
+          {
+            "word": [
+              1,
+              0,
+              0,
+              0,
+              2
+            ],
+            "frequency": [
+              16
+            ],
+            "known_phase": 17
+          },
+          {
+            "word": [
+              1,
+              0,
+              0,
+              1,
+              0
+            ],
+            "frequency": [
+              10
+            ],
+            "known_phase": 19
+          },
+          {
+            "word": [
+              1,
+              0,
+              0,
+              1,
+              1
+            ],
+            "frequency": [
+              10
+            ],
+            "known_phase": 22
+          },
+          {
+            "word": [
+              1,
+              0,
+              0,
+              1,
+              2
+            ],
+            "frequency": [
+              16
+            ],
+            "known_phase": 16
+          },
+          {
+            "word": [
+              1,
+              0,
+              0,
+              2,
+              0
+            ],
+            "frequency": [
+              7
+            ],
+            "known_phase": 6
+          },
+          {
+            "word": [
+              1,
+              0,
+              0,
+              2,
+              1
+            ],
+            "frequency": [
+              7
+            ],
+            "known_phase": 9
+          },
+          {
+            "word": [
+              1,
+              0,
+              0,
+              2,
+              2
+            ],
+            "frequency": [
+              13
+            ],
+            "known_phase": 3
+          },
+          {
+            "word": [
+              1,
+              0,
+              1,
+              0,
+              0
+            ],
+            "frequency": [
+              7
+            ],
+            "known_phase": 11
+          },
+          {
+            "word": [
+              1,
+              0,
+              1,
+              0,
+              1
+            ],
+            "frequency": [
+              7
+            ],
+            "known_phase": 14
+          },
+          {
+            "word": [
+              1,
+              0,
+              1,
+              0,
+              2
+            ],
+            "frequency": [
+              13
+            ],
+            "known_phase": 8
+          },
+          {
+            "word": [
+              1,
+              0,
+              1,
+              1,
+              0
+            ],
+            "frequency": [
+              7
+            ],
+            "known_phase": 10
+          },
+          {
+            "word": [
+              1,
+              0,
+              1,
+              1,
+              1
+            ],
+            "frequency": [
+              7
+            ],
+            "known_phase": 13
+          },
+          {
+            "word": [
+              1,
+              0,
+              1,
+              1,
+              2
+            ],
+            "frequency": [
+              13
+            ],
+            "known_phase": 7
+          },
+          {
+            "word": [
+              1,
+              0,
+              1,
+              2,
+              0
+            ],
+            "frequency": [
+              4
+            ],
+            "known_phase": 24
+          },
+          {
+            "word": [
+              1,
+              0,
+              1,
+              2,
+              1
+            ],
+            "frequency": [
+              4
+            ],
+            "known_phase": 0
+          },
+          {
+            "word": [
+              1,
+              0,
+              1,
+              2,
+              2
+            ],
+            "frequency": [
+              10
+            ],
+            "known_phase": 21
+          },
+          {
+            "word": [
+              1,
+              0,
+              2,
+              0,
+              0
+            ],
+            "frequency": [
+              13
+            ],
+            "known_phase": 5
+          },
+          {
+            "word": [
+              1,
+              0,
+              2,
+              0,
+              1
+            ],
+            "frequency": [
+              13
+            ],
+            "known_phase": 8
+          },
+          {
+            "word": [
+              1,
+              0,
+              2,
+              0,
+              2
+            ],
+            "frequency": [
+              19
+            ],
+            "known_phase": 2
+          },
+          {
+            "word": [
+              1,
+              0,
+              2,
+              1,
+              0
+            ],
+            "frequency": [
+              13
+            ],
+            "known_phase": 4
+          },
+          {
+            "word": [
+              1,
+              0,
+              2,
+              1,
+              1
+            ],
+            "frequency": [
+              13
+            ],
+            "known_phase": 7
+          },
+          {
+            "word": [
+              1,
+              0,
+              2,
+              1,
+              2
+            ],
+            "frequency": [
+              19
+            ],
+            "known_phase": 1
+          },
+          {
+            "word": [
+              1,
+              0,
+              2,
+              2,
+              0
+            ],
+            "frequency": [
+              10
+            ],
+            "known_phase": 18
+          },
+          {
+            "word": [
+              1,
+              0,
+              2,
+              2,
+              1
+            ],
+            "frequency": [
+              10
+            ],
+            "known_phase": 21
+          },
+          {
+            "word": [
+              1,
+              0,
+              2,
+              2,
+              2
+            ],
+            "frequency": [
+              16
+            ],
+            "known_phase": 15
+          },
+          {
+            "word": [
+              1,
+              1,
+              0,
+              0,
+              0
+            ],
+            "frequency": [
+              22
+            ],
+            "known_phase": 17
+          },
+          {
+            "word": [
+              1,
+              1,
+              0,
+              0,
+              1
+            ],
+            "frequency": [
+              22
+            ],
+            "known_phase": 20
+          },
+          {
+            "word": [
+              1,
+              1,
+              0,
+              0,
+              2
+            ],
+            "frequency": [
+              1
+            ],
+            "known_phase": 14
+          },
+          {
+            "word": [
+              1,
+              1,
+              0,
+              1,
+              0
+            ],
+            "frequency": [
+              22
+            ],
+            "known_phase": 16
+          },
+          {
+            "word": [
+              1,
+              1,
+              0,
+              1,
+              1
+            ],
+            "frequency": [
+              22
+            ],
+            "known_phase": 19
+          },
+          {
+            "word": [
+              1,
+              1,
+              0,
+              1,
+              2
+            ],
+            "frequency": [
+              1
+            ],
+            "known_phase": 13
+          },
+          {
+            "word": [
+              1,
+              1,
+              0,
+              2,
+              0
+            ],
+            "frequency": [
+              19
+            ],
+            "known_phase": 3
+          },
+          {
+            "word": [
+              1,
+              1,
+              0,
+              2,
+              1
+            ],
+            "frequency": [
+              19
+            ],
+            "known_phase": 6
+          },
+          {
+            "word": [
+              1,
+              1,
+              0,
+              2,
+              2
+            ],
+            "frequency": [
+              25
+            ],
+            "known_phase": 0
+          },
+          {
+            "word": [
+              1,
+              1,
+              1,
+              0,
+              0
+            ],
+            "frequency": [
+              19
+            ],
+            "known_phase": 8
+          },
+          {
+            "word": [
+              1,
+              1,
+              1,
+              0,
+              1
+            ],
+            "frequency": [
+              19
+            ],
+            "known_phase": 11
+          },
+          {
+            "word": [
+              1,
+              1,
+              1,
+              0,
+              2
+            ],
+            "frequency": [
+              25
+            ],
+            "known_phase": 5
+          },
+          {
+            "word": [
+              1,
+              1,
+              1,
+              1,
+              0
+            ],
+            "frequency": [
+              19
+            ],
+            "known_phase": 7
+          },
+          {
+            "word": [
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "frequency": [
+              19
+            ],
+            "known_phase": 10
+          },
+          {
+            "word": [
+              1,
+              1,
+              1,
+              1,
+              2
+            ],
+            "frequency": [
+              25
+            ],
+            "known_phase": 4
+          },
+          {
+            "word": [
+              1,
+              1,
+              1,
+              2,
+              0
+            ],
+            "frequency": [
+              16
+            ],
+            "known_phase": 21
+          },
+          {
+            "word": [
+              1,
+              1,
+              1,
+              2,
+              1
+            ],
+            "frequency": [
+              16
+            ],
+            "known_phase": 24
+          },
+          {
+            "word": [
+              1,
+              1,
+              1,
+              2,
+              2
+            ],
+            "frequency": [
+              22
+            ],
+            "known_phase": 18
+          },
+          {
+            "word": [
+              1,
+              1,
+              2,
+              0,
+              0
+            ],
+            "frequency": [
+              25
+            ],
+            "known_phase": 2
+          },
+          {
+            "word": [
+              1,
+              1,
+              2,
+              0,
+              1
+            ],
+            "frequency": [
+              25
+            ],
+            "known_phase": 5
+          },
+          {
+            "word": [
+              1,
+              1,
+              2,
+              0,
+              2
+            ],
+            "frequency": [
+              4
+            ],
+            "known_phase": 26
+          },
+          {
+            "word": [
+              1,
+              1,
+              2,
+              1,
+              0
+            ],
+            "frequency": [
+              25
+            ],
+            "known_phase": 1
+          },
+          {
+            "word": [
+              1,
+              1,
+              2,
+              1,
+              1
+            ],
+            "frequency": [
+              25
+            ],
+            "known_phase": 4
+          },
+          {
+            "word": [
+              1,
+              1,
+              2,
+              1,
+              2
+            ],
+            "frequency": [
+              4
+            ],
+            "known_phase": 25
+          },
+          {
+            "word": [
+              1,
+              1,
+              2,
+              2,
+              0
+            ],
+            "frequency": [
+              22
+            ],
+            "known_phase": 15
+          },
+          {
+            "word": [
+              1,
+              1,
+              2,
+              2,
+              1
+            ],
+            "frequency": [
+              22
+            ],
+            "known_phase": 18
+          },
+          {
+            "word": [
+              1,
+              1,
+              2,
+              2,
+              2
+            ],
+            "frequency": [
+              1
+            ],
+            "known_phase": 12
+          },
+          {
+            "word": [
+              1,
+              2,
+              0,
+              0,
+              0
+            ],
+            "frequency": [
+              1
+            ],
+            "known_phase": 11
+          },
+          {
+            "word": [
+              1,
+              2,
+              0,
+              0,
+              1
+            ],
+            "frequency": [
+              1
+            ],
+            "known_phase": 14
+          },
+          {
+            "word": [
+              1,
+              2,
+              0,
+              0,
+              2
+            ],
+            "frequency": [
+              7
+            ],
+            "known_phase": 8
+          },
+          {
+            "word": [
+              1,
+              2,
+              0,
+              1,
+              0
+            ],
+            "frequency": [
+              1
+            ],
+            "known_phase": 10
+          },
+          {
+            "word": [
+              1,
+              2,
+              0,
+              1,
+              1
+            ],
+            "frequency": [
+              1
+            ],
+            "known_phase": 13
+          },
+          {
+            "word": [
+              1,
+              2,
+              0,
+              1,
+              2
+            ],
+            "frequency": [
+              7
+            ],
+            "known_phase": 7
+          },
+          {
+            "word": [
+              1,
+              2,
+              0,
+              2,
+              0
+            ],
+            "frequency": [
+              25
+            ],
+            "known_phase": 24
+          },
+          {
+            "word": [
+              1,
+              2,
+              0,
+              2,
+              1
+            ],
+            "frequency": [
+              25
+            ],
+            "known_phase": 0
+          },
+          {
+            "word": [
+              1,
+              2,
+              0,
+              2,
+              2
+            ],
+            "frequency": [
+              4
+            ],
+            "known_phase": 21
+          },
+          {
+            "word": [
+              1,
+              2,
+              1,
+              0,
+              0
+            ],
+            "frequency": [
+              25
+            ],
+            "known_phase": 2
+          },
+          {
+            "word": [
+              1,
+              2,
+              1,
+              0,
+              1
+            ],
+            "frequency": [
+              25
+            ],
+            "known_phase": 5
+          },
+          {
+            "word": [
+              1,
+              2,
+              1,
+              0,
+              2
+            ],
+            "frequency": [
+              4
+            ],
+            "known_phase": 26
+          },
+          {
+            "word": [
+              1,
+              2,
+              1,
+              1,
+              0
+            ],
+            "frequency": [
+              25
+            ],
+            "known_phase": 1
+          },
+          {
+            "word": [
+              1,
+              2,
+              1,
+              1,
+              1
+            ],
+            "frequency": [
+              25
+            ],
+            "known_phase": 4
+          },
+          {
+            "word": [
+              1,
+              2,
+              1,
+              1,
+              2
+            ],
+            "frequency": [
+              4
+            ],
+            "known_phase": 25
+          },
+          {
+            "word": [
+              1,
+              2,
+              1,
+              2,
+              0
+            ],
+            "frequency": [
+              22
+            ],
+            "known_phase": 15
+          },
+          {
+            "word": [
+              1,
+              2,
+              1,
+              2,
+              1
+            ],
+            "frequency": [
+              22
+            ],
+            "known_phase": 18
+          },
+          {
+            "word": [
+              1,
+              2,
+              1,
+              2,
+              2
+            ],
+            "frequency": [
+              1
+            ],
+            "known_phase": 12
+          },
+          {
+            "word": [
+              1,
+              2,
+              2,
+              0,
+              0
+            ],
+            "frequency": [
+              4
+            ],
+            "known_phase": 23
+          },
+          {
+            "word": [
+              1,
+              2,
+              2,
+              0,
+              1
+            ],
+            "frequency": [
+              4
+            ],
+            "known_phase": 26
+          },
+          {
+            "word": [
+              1,
+              2,
+              2,
+              0,
+              2
+            ],
+            "frequency": [
+              10
+            ],
+            "known_phase": 20
+          },
+          {
+            "word": [
+              1,
+              2,
+              2,
+              1,
+              0
+            ],
+            "frequency": [
+              4
+            ],
+            "known_phase": 22
+          },
+          {
+            "word": [
+              1,
+              2,
+              2,
+              1,
+              1
+            ],
+            "frequency": [
+              4
+            ],
+            "known_phase": 25
+          },
+          {
+            "word": [
+              1,
+              2,
+              2,
+              1,
+              2
+            ],
+            "frequency": [
+              10
+            ],
+            "known_phase": 19
+          },
+          {
+            "word": [
+              1,
+              2,
+              2,
+              2,
+              0
+            ],
+            "frequency": [
+              1
+            ],
+            "known_phase": 9
+          },
+          {
+            "word": [
+              1,
+              2,
+              2,
+              2,
+              1
+            ],
+            "frequency": [
+              1
+            ],
+            "known_phase": 12
+          },
+          {
+            "word": [
+              1,
+              2,
+              2,
+              2,
+              2
+            ],
+            "frequency": [
+              7
+            ],
+            "known_phase": 6
+          },
+          {
+            "word": [
+              2,
+              0,
+              0,
+              0,
+              0
+            ],
+            "frequency": [
+              8
+            ],
+            "known_phase": 22
+          },
+          {
+            "word": [
+              2,
+              0,
+              0,
+              0,
+              1
+            ],
+            "frequency": [
+              8
+            ],
+            "known_phase": 25
+          },
+          {
+            "word": [
+              2,
+              0,
+              0,
+              0,
+              2
+            ],
+            "frequency": [
+              14
+            ],
+            "known_phase": 19
+          },
+          {
+            "word": [
+              2,
+              0,
+              0,
+              1,
+              0
+            ],
+            "frequency": [
+              8
+            ],
+            "known_phase": 21
+          },
+          {
+            "word": [
+              2,
+              0,
+              0,
+              1,
+              1
+            ],
+            "frequency": [
+              8
+            ],
+            "known_phase": 24
+          },
+          {
+            "word": [
+              2,
+              0,
+              0,
+              1,
+              2
+            ],
+            "frequency": [
+              14
+            ],
+            "known_phase": 18
+          },
+          {
+            "word": [
+              2,
+              0,
+              0,
+              2,
+              0
+            ],
+            "frequency": [
+              5
+            ],
+            "known_phase": 8
+          },
+          {
+            "word": [
+              2,
+              0,
+              0,
+              2,
+              1
+            ],
+            "frequency": [
+              5
+            ],
+            "known_phase": 11
+          },
+          {
+            "word": [
+              2,
+              0,
+              0,
+              2,
+              2
+            ],
+            "frequency": [
+              11
+            ],
+            "known_phase": 5
+          },
+          {
+            "word": [
+              2,
+              0,
+              1,
+              0,
+              0
+            ],
+            "frequency": [
+              5
+            ],
+            "known_phase": 13
+          },
+          {
+            "word": [
+              2,
+              0,
+              1,
+              0,
+              1
+            ],
+            "frequency": [
+              5
+            ],
+            "known_phase": 16
+          },
+          {
+            "word": [
+              2,
+              0,
+              1,
+              0,
+              2
+            ],
+            "frequency": [
+              11
+            ],
+            "known_phase": 10
+          },
+          {
+            "word": [
+              2,
+              0,
+              1,
+              1,
+              0
+            ],
+            "frequency": [
+              5
+            ],
+            "known_phase": 12
+          },
+          {
+            "word": [
+              2,
+              0,
+              1,
+              1,
+              1
+            ],
+            "frequency": [
+              5
+            ],
+            "known_phase": 15
+          },
+          {
+            "word": [
+              2,
+              0,
+              1,
+              1,
+              2
+            ],
+            "frequency": [
+              11
+            ],
+            "known_phase": 9
+          },
+          {
+            "word": [
+              2,
+              0,
+              1,
+              2,
+              0
+            ],
+            "frequency": [
+              2
+            ],
+            "known_phase": 26
+          },
+          {
+            "word": [
+              2,
+              0,
+              1,
+              2,
+              1
+            ],
+            "frequency": [
+              2
+            ],
+            "known_phase": 2
+          },
+          {
+            "word": [
+              2,
+              0,
+              1,
+              2,
+              2
+            ],
+            "frequency": [
+              8
+            ],
+            "known_phase": 23
+          },
+          {
+            "word": [
+              2,
+              0,
+              2,
+              0,
+              0
+            ],
+            "frequency": [
+              11
+            ],
+            "known_phase": 7
+          },
+          {
+            "word": [
+              2,
+              0,
+              2,
+              0,
+              1
+            ],
+            "frequency": [
+              11
+            ],
+            "known_phase": 10
+          },
+          {
+            "word": [
+              2,
+              0,
+              2,
+              0,
+              2
+            ],
+            "frequency": [
+              17
+            ],
+            "known_phase": 4
+          },
+          {
+            "word": [
+              2,
+              0,
+              2,
+              1,
+              0
+            ],
+            "frequency": [
+              11
+            ],
+            "known_phase": 6
+          },
+          {
+            "word": [
+              2,
+              0,
+              2,
+              1,
+              1
+            ],
+            "frequency": [
+              11
+            ],
+            "known_phase": 9
+          },
+          {
+            "word": [
+              2,
+              0,
+              2,
+              1,
+              2
+            ],
+            "frequency": [
+              17
+            ],
+            "known_phase": 3
+          },
+          {
+            "word": [
+              2,
+              0,
+              2,
+              2,
+              0
+            ],
+            "frequency": [
+              8
+            ],
+            "known_phase": 20
+          },
+          {
+            "word": [
+              2,
+              0,
+              2,
+              2,
+              1
+            ],
+            "frequency": [
+              8
+            ],
+            "known_phase": 23
+          },
+          {
+            "word": [
+              2,
+              0,
+              2,
+              2,
+              2
+            ],
+            "frequency": [
+              14
+            ],
+            "known_phase": 17
+          },
+          {
+            "word": [
+              2,
+              1,
+              0,
+              0,
+              0
+            ],
+            "frequency": [
+              20
+            ],
+            "known_phase": 19
+          },
+          {
+            "word": [
+              2,
+              1,
+              0,
+              0,
+              1
+            ],
+            "frequency": [
+              20
+            ],
+            "known_phase": 22
+          },
+          {
+            "word": [
+              2,
+              1,
+              0,
+              0,
+              2
+            ],
+            "frequency": [
+              26
+            ],
+            "known_phase": 16
+          },
+          {
+            "word": [
+              2,
+              1,
+              0,
+              1,
+              0
+            ],
+            "frequency": [
+              20
+            ],
+            "known_phase": 18
+          },
+          {
+            "word": [
+              2,
+              1,
+              0,
+              1,
+              1
+            ],
+            "frequency": [
+              20
+            ],
+            "known_phase": 21
+          },
+          {
+            "word": [
+              2,
+              1,
+              0,
+              1,
+              2
+            ],
+            "frequency": [
+              26
+            ],
+            "known_phase": 15
+          },
+          {
+            "word": [
+              2,
+              1,
+              0,
+              2,
+              0
+            ],
+            "frequency": [
+              17
+            ],
+            "known_phase": 5
+          },
+          {
+            "word": [
+              2,
+              1,
+              0,
+              2,
+              1
+            ],
+            "frequency": [
+              17
+            ],
+            "known_phase": 8
+          },
+          {
+            "word": [
+              2,
+              1,
+              0,
+              2,
+              2
+            ],
+            "frequency": [
+              23
+            ],
+            "known_phase": 2
+          },
+          {
+            "word": [
+              2,
+              1,
+              1,
+              0,
+              0
+            ],
+            "frequency": [
+              17
+            ],
+            "known_phase": 10
+          },
+          {
+            "word": [
+              2,
+              1,
+              1,
+              0,
+              1
+            ],
+            "frequency": [
+              17
+            ],
+            "known_phase": 13
+          },
+          {
+            "word": [
+              2,
+              1,
+              1,
+              0,
+              2
+            ],
+            "frequency": [
+              23
+            ],
+            "known_phase": 7
+          },
+          {
+            "word": [
+              2,
+              1,
+              1,
+              1,
+              0
+            ],
+            "frequency": [
+              17
+            ],
+            "known_phase": 9
+          },
+          {
+            "word": [
+              2,
+              1,
+              1,
+              1,
+              1
+            ],
+            "frequency": [
+              17
+            ],
+            "known_phase": 12
+          },
+          {
+            "word": [
+              2,
+              1,
+              1,
+              1,
+              2
+            ],
+            "frequency": [
+              23
+            ],
+            "known_phase": 6
+          },
+          {
+            "word": [
+              2,
+              1,
+              1,
+              2,
+              0
+            ],
+            "frequency": [
+              14
+            ],
+            "known_phase": 23
+          },
+          {
+            "word": [
+              2,
+              1,
+              1,
+              2,
+              1
+            ],
+            "frequency": [
+              14
+            ],
+            "known_phase": 26
+          },
+          {
+            "word": [
+              2,
+              1,
+              1,
+              2,
+              2
+            ],
+            "frequency": [
+              20
+            ],
+            "known_phase": 20
+          },
+          {
+            "word": [
+              2,
+              1,
+              2,
+              0,
+              0
+            ],
+            "frequency": [
+              23
+            ],
+            "known_phase": 4
+          },
+          {
+            "word": [
+              2,
+              1,
+              2,
+              0,
+              1
+            ],
+            "frequency": [
+              23
+            ],
+            "known_phase": 7
+          },
+          {
+            "word": [
+              2,
+              1,
+              2,
+              0,
+              2
+            ],
+            "frequency": [
+              2
+            ],
+            "known_phase": 1
+          },
+          {
+            "word": [
+              2,
+              1,
+              2,
+              1,
+              0
+            ],
+            "frequency": [
+              23
+            ],
+            "known_phase": 3
+          },
+          {
+            "word": [
+              2,
+              1,
+              2,
+              1,
+              1
+            ],
+            "frequency": [
+              23
+            ],
+            "known_phase": 6
+          },
+          {
+            "word": [
+              2,
+              1,
+              2,
+              1,
+              2
+            ],
+            "frequency": [
+              2
+            ],
+            "known_phase": 0
+          },
+          {
+            "word": [
+              2,
+              1,
+              2,
+              2,
+              0
+            ],
+            "frequency": [
+              20
+            ],
+            "known_phase": 17
+          },
+          {
+            "word": [
+              2,
+              1,
+              2,
+              2,
+              1
+            ],
+            "frequency": [
+              20
+            ],
+            "known_phase": 20
+          },
+          {
+            "word": [
+              2,
+              1,
+              2,
+              2,
+              2
+            ],
+            "frequency": [
+              26
+            ],
+            "known_phase": 14
+          },
+          {
+            "word": [
+              2,
+              2,
+              0,
+              0,
+              0
+            ],
+            "frequency": [
+              26
+            ],
+            "known_phase": 13
+          },
+          {
+            "word": [
+              2,
+              2,
+              0,
+              0,
+              1
+            ],
+            "frequency": [
+              26
+            ],
+            "known_phase": 16
+          },
+          {
+            "word": [
+              2,
+              2,
+              0,
+              0,
+              2
+            ],
+            "frequency": [
+              5
+            ],
+            "known_phase": 10
+          },
+          {
+            "word": [
+              2,
+              2,
+              0,
+              1,
+              0
+            ],
+            "frequency": [
+              26
+            ],
+            "known_phase": 12
+          },
+          {
+            "word": [
+              2,
+              2,
+              0,
+              1,
+              1
+            ],
+            "frequency": [
+              26
+            ],
+            "known_phase": 15
+          },
+          {
+            "word": [
+              2,
+              2,
+              0,
+              1,
+              2
+            ],
+            "frequency": [
+              5
+            ],
+            "known_phase": 9
+          },
+          {
+            "word": [
+              2,
+              2,
+              0,
+              2,
+              0
+            ],
+            "frequency": [
+              23
+            ],
+            "known_phase": 26
+          },
+          {
+            "word": [
+              2,
+              2,
+              0,
+              2,
+              1
+            ],
+            "frequency": [
+              23
+            ],
+            "known_phase": 2
+          },
+          {
+            "word": [
+              2,
+              2,
+              0,
+              2,
+              2
+            ],
+            "frequency": [
+              2
+            ],
+            "known_phase": 23
+          },
+          {
+            "word": [
+              2,
+              2,
+              1,
+              0,
+              0
+            ],
+            "frequency": [
+              23
+            ],
+            "known_phase": 4
+          },
+          {
+            "word": [
+              2,
+              2,
+              1,
+              0,
+              1
+            ],
+            "frequency": [
+              23
+            ],
+            "known_phase": 7
+          },
+          {
+            "word": [
+              2,
+              2,
+              1,
+              0,
+              2
+            ],
+            "frequency": [
+              2
+            ],
+            "known_phase": 1
+          },
+          {
+            "word": [
+              2,
+              2,
+              1,
+              1,
+              0
+            ],
+            "frequency": [
+              23
+            ],
+            "known_phase": 3
+          },
+          {
+            "word": [
+              2,
+              2,
+              1,
+              1,
+              1
+            ],
+            "frequency": [
+              23
+            ],
+            "known_phase": 6
+          },
+          {
+            "word": [
+              2,
+              2,
+              1,
+              1,
+              2
+            ],
+            "frequency": [
+              2
+            ],
+            "known_phase": 0
+          },
+          {
+            "word": [
+              2,
+              2,
+              1,
+              2,
+              0
+            ],
+            "frequency": [
+              20
+            ],
+            "known_phase": 17
+          },
+          {
+            "word": [
+              2,
+              2,
+              1,
+              2,
+              1
+            ],
+            "frequency": [
+              20
+            ],
+            "known_phase": 20
+          },
+          {
+            "word": [
+              2,
+              2,
+              1,
+              2,
+              2
+            ],
+            "frequency": [
+              26
+            ],
+            "known_phase": 14
+          },
+          {
+            "word": [
+              2,
+              2,
+              2,
+              0,
+              0
+            ],
+            "frequency": [
+              2
+            ],
+            "known_phase": 25
+          },
+          {
+            "word": [
+              2,
+              2,
+              2,
+              0,
+              1
+            ],
+            "frequency": [
+              2
+            ],
+            "known_phase": 1
+          },
+          {
+            "word": [
+              2,
+              2,
+              2,
+              0,
+              2
+            ],
+            "frequency": [
+              8
+            ],
+            "known_phase": 22
+          },
+          {
+            "word": [
+              2,
+              2,
+              2,
+              1,
+              0
+            ],
+            "frequency": [
+              2
+            ],
+            "known_phase": 24
+          },
+          {
+            "word": [
+              2,
+              2,
+              2,
+              1,
+              1
+            ],
+            "frequency": [
+              2
+            ],
+            "known_phase": 0
+          },
+          {
+            "word": [
+              2,
+              2,
+              2,
+              1,
+              2
+            ],
+            "frequency": [
+              8
+            ],
+            "known_phase": 21
+          },
+          {
+            "word": [
+              2,
+              2,
+              2,
+              2,
+              0
+            ],
+            "frequency": [
+              26
+            ],
+            "known_phase": 11
+          },
+          {
+            "word": [
+              2,
+              2,
+              2,
+              2,
+              1
+            ],
+            "frequency": [
+              26
+            ],
+            "known_phase": 14
+          },
+          {
+            "word": [
+              2,
+              2,
+              2,
+              2,
+              2
+            ],
+            "frequency": [
+              5
+            ],
+            "known_phase": 8
+          }
+        ],
+        "word_dimension": 243,
+        "supported_frequency_count": 27,
+        "collision_probability": "257/6561",
+        "spectral_filter_controls": [
+          {
+            "filter": {
+              "family": "GEOMETRIC",
+              "degree": 1,
+              "ascending_coefficients": [
+                "0",
+                "1"
+              ],
+              "global_effect_range": "[0,1] on ALL x in [0,1]",
+              "global_range_certificate": "1-(1-x)^d belongs to [0,1] on [0,1]",
+              "polynomial_selected_independently_of_original_values": true,
+              "filter_physical_QSVT_implementation_supplied": false
+            },
+            "exact_source_acceptance_root_polynomial": [
+              "-92/19683",
+              "-65/19683",
+              "-19/6561",
+              "-5/2187",
+              "-28/19683",
+              "-2/6561",
+              "-1/2187",
+              "-7/19683",
+              "0",
+              "-85/19683",
+              "-56/19683",
+              "-17/6561",
+              "-17/19683",
+              "17/19683",
+              "17/6561",
+              "56/19683",
+              "85/19683",
+              "46/6561"
+            ],
+            "exact_source_minus_IID_null_root_polynomial": [
+              "-92/19683",
+              "-65/19683",
+              "-19/6561",
+              "-5/2187",
+              "-28/19683",
+              "-2/6561",
+              "-1/2187",
+              "-7/19683",
+              "0",
+              "-85/19683",
+              "-56/19683",
+              "-17/6561",
+              "-17/19683",
+              "17/19683",
+              "17/6561",
+              "56/19683",
+              "85/19683",
+              "19/6561"
+            ],
+            "IID_null_acceptance": "1/243",
+            "ideal_source_acceptance_IF_codeword": "257/6561",
+            "absolute_source_null_gap_upper": "284/6561",
+            "diagnostic_source_acceptance_probability": 0.030152325969079793,
+            "matched_classical_monomial_estimator": {
+              "coefficient_l1_norm": "1",
+              "maximum_words_per_monomial_shot": 2,
+              "identity": "E[all k+1 frequencies equal * exp(i*(phase_last-phase_first))] = <psi,K^k psi> for k>=1",
+              "coefficient_norm_and_inverse_precision_are_not_free": true,
+              "polynomial_time_classical_dequantization_established": false
+            }
+          }
+        ],
+        "dense_control_is_scalable_circuit": false,
+        "IID_label_source_law_established_by_this_fixture": false
+      },
+      "literal_joint_branches": {
+        "equal_plus": 0.0346615920349895,
+        "equal_minus": 0.004509266065909729,
+        "unequal_plus": 0.4654467562007562,
+        "unequal_minus": 0.4953823856983442,
+        "complete_mass": 0.9999999999999994,
+        "whole_joint_amplitudes_evaluated": 118098,
+        "branch_discarded_for_free": false
+      },
+      "exact_equal_plus_root_polynomial": [
+        "-46/19683",
+        "-65/39366",
+        "-19/13122",
+        "-5/4374",
+        "-14/19683",
+        "-1/6561",
+        "-1/4374",
+        "-7/39366",
+        "0",
+        "-85/39366",
+        "-28/19683",
+        "-17/13122",
+        "-17/39366",
+        "17/39366",
+        "17/13122",
+        "28/19683",
+        "85/39366",
+        "101/4374"
+      ],
+      "exact_equal_minus_root_polynomial": [
+        "46/19683",
+        "65/39366",
+        "19/13122",
+        "5/4374",
+        "14/19683",
+        "1/6561",
+        "1/4374",
+        "7/39366",
+        "0",
+        "85/39366",
+        "28/19683",
+        "17/13122",
+        "17/39366",
+        "-17/39366",
+        "-17/13122",
+        "-28/19683",
+        "-85/39366",
+        "211/13122"
+      ],
+      "exact_equal_total_probability": "257/6561",
+      "IID_null_equal_plus_probability": "142/6561",
+      "IID_null_equal_minus_probability": "115/6561",
+      "effective_original_word_effect_commutes_with_raw_Gram": true,
+      "phase_independent_diagonal_term_cancels_source_vs_IID_null": true,
+      "classical_full_measured_readout_identity": {
+        "word_pair_probability": "1/59049",
+        "conditional_plus_probability": "(1+cos(2*pi*(phase_w-phase_v)/q))/2",
+        "conditional_minus_probability": "(1-cos(2*pi*(phase_w-phase_v)/q))/2",
+        "predicate": "f_A(w)==f_A(v)",
+        "original_phase_evaluator_and_frequency_work_paid": true,
+        "entire_measured_word_pair_and_flag_law_matched": true,
+        "finite_precision_classical_sampler_implemented_here": false,
+        "coherent_amplification_or_retained_unmeasured_output_simulated": false
+      },
+      "scalable_logical_recipe": {
+        "original_records_paid_once": 10,
+        "uniform_qutrits": 10,
+        "original_response_phase_gates": 5,
+        "controlled_qutrit_swaps": 5,
+        "forward_and_uncompute_label_coordinate_accumulations": 20,
+        "frequency_comparison_coordinates": 1,
+        "known_initial_preparation_inverse_available_on_this_source": true,
+        "normalized_fibre_preparation_required_by_one_pass": false,
+        "full_word_table_required_by_logical_recipe": false,
+        "physical_gate_compilation_and_precision_certified": false
+      },
+      "accepted_speedup_candidate": false
+    },
+    {
+      "native_spectral_reference": {
+        "original_records": [
+          {
+            "label": [
+              1,
+              1
+            ],
+            "value": 1,
+            "modulus": 3,
+            "source_id": "known-group-99004-0"
+          },
+          {
+            "label": [
+              0,
+              2
+            ],
+            "value": 2,
+            "modulus": 3,
+            "source_id": "known-group-99004-1"
+          },
+          {
+            "label": [
+              0,
+              1
+            ],
+            "value": 1,
+            "modulus": 3,
+            "source_id": "known-group-99004-2"
+          },
+          {
+            "label": [
+              0,
+              2
+            ],
+            "value": 2,
+            "modulus": 3,
+            "source_id": "known-group-99004-3"
+          },
+          {
+            "label": [
+              2,
+              2
+            ],
+            "value": 2,
+            "modulus": 3,
+            "source_id": "known-group-99004-4"
+          },
+          {
+            "label": [
+              2,
+              1
+            ],
+            "value": 1,
+            "modulus": 3,
+            "source_id": "known-group-99004-5"
+          }
+        ],
+        "known_mask": [
+          0,
+          0
+        ],
+        "actual_native_word_rows": [
+          {
+            "word": [
+              0,
+              0,
+              0
+            ],
+            "frequency": [
+              0,
+              1
+            ],
+            "known_phase": 1
+          },
+          {
+            "word": [
+              0,
+              0,
+              1
+            ],
+            "frequency": [
+              1,
+              1
+            ],
+            "known_phase": 1
+          },
+          {
+            "word": [
+              0,
+              0,
+              2
+            ],
+            "frequency": [
+              2,
+              1
+            ],
+            "known_phase": 1
+          },
+          {
+            "word": [
+              0,
+              1,
+              0
+            ],
+            "frequency": [
+              0,
+              1
+            ],
+            "known_phase": 1
+          },
+          {
+            "word": [
+              0,
+              1,
+              1
+            ],
+            "frequency": [
+              1,
+              1
+            ],
+            "known_phase": 1
+          },
+          {
+            "word": [
+              0,
+              1,
+              2
+            ],
+            "frequency": [
+              2,
+              1
+            ],
+            "known_phase": 1
+          },
+          {
+            "word": [
+              0,
+              2,
+              0
+            ],
+            "frequency": [
+              0,
+              1
+            ],
+            "known_phase": 1
+          },
+          {
+            "word": [
+              0,
+              2,
+              1
+            ],
+            "frequency": [
+              1,
+              1
+            ],
+            "known_phase": 1
+          },
+          {
+            "word": [
+              0,
+              2,
+              2
+            ],
+            "frequency": [
+              2,
+              1
+            ],
+            "known_phase": 1
+          },
+          {
+            "word": [
+              1,
+              0,
+              0
+            ],
+            "frequency": [
+              1,
+              1
+            ],
+            "known_phase": 1
+          },
+          {
+            "word": [
+              1,
+              0,
+              1
+            ],
+            "frequency": [
+              2,
+              1
+            ],
+            "known_phase": 1
+          },
+          {
+            "word": [
+              1,
+              0,
+              2
+            ],
+            "frequency": [
+              0,
+              1
+            ],
+            "known_phase": 1
+          },
+          {
+            "word": [
+              1,
+              1,
+              0
+            ],
+            "frequency": [
+              1,
+              1
+            ],
+            "known_phase": 1
+          },
+          {
+            "word": [
+              1,
+              1,
+              1
+            ],
+            "frequency": [
+              2,
+              1
+            ],
+            "known_phase": 1
+          },
+          {
+            "word": [
+              1,
+              1,
+              2
+            ],
+            "frequency": [
+              0,
+              1
+            ],
+            "known_phase": 1
+          },
+          {
+            "word": [
+              1,
+              2,
+              0
+            ],
+            "frequency": [
+              1,
+              1
+            ],
+            "known_phase": 1
+          },
+          {
+            "word": [
+              1,
+              2,
+              1
+            ],
+            "frequency": [
+              2,
+              1
+            ],
+            "known_phase": 1
+          },
+          {
+            "word": [
+              1,
+              2,
+              2
+            ],
+            "frequency": [
+              0,
+              1
+            ],
+            "known_phase": 1
+          },
+          {
+            "word": [
+              2,
+              0,
+              0
+            ],
+            "frequency": [
+              2,
+              1
+            ],
+            "known_phase": 1
+          },
+          {
+            "word": [
+              2,
+              0,
+              1
+            ],
+            "frequency": [
+              0,
+              1
+            ],
+            "known_phase": 1
+          },
+          {
+            "word": [
+              2,
+              0,
+              2
+            ],
+            "frequency": [
+              1,
+              1
+            ],
+            "known_phase": 1
+          },
+          {
+            "word": [
+              2,
+              1,
+              0
+            ],
+            "frequency": [
+              2,
+              1
+            ],
+            "known_phase": 1
+          },
+          {
+            "word": [
+              2,
+              1,
+              1
+            ],
+            "frequency": [
+              0,
+              1
+            ],
+            "known_phase": 1
+          },
+          {
+            "word": [
+              2,
+              1,
+              2
+            ],
+            "frequency": [
+              1,
+              1
+            ],
+            "known_phase": 1
+          },
+          {
+            "word": [
+              2,
+              2,
+              0
+            ],
+            "frequency": [
+              2,
+              1
+            ],
+            "known_phase": 1
+          },
+          {
+            "word": [
+              2,
+              2,
+              1
+            ],
+            "frequency": [
+              0,
+              1
+            ],
+            "known_phase": 1
+          },
+          {
+            "word": [
+              2,
+              2,
+              2
+            ],
+            "frequency": [
+              1,
+              1
+            ],
+            "known_phase": 1
+          }
+        ],
+        "word_dimension": 27,
+        "supported_frequency_count": 3,
+        "collision_probability": "1/3",
+        "spectral_filter_controls": [
+          {
+            "filter": {
+              "family": "GEOMETRIC",
+              "degree": 1,
+              "ascending_coefficients": [
+                "0",
+                "1"
+              ],
+              "global_effect_range": "[0,1] on ALL x in [0,1]",
+              "global_range_certificate": "1-(1-x)^d belongs to [0,1] on [0,1]",
+              "polynomial_selected_independently_of_original_values": true,
+              "filter_physical_QSVT_implementation_supplied": false
+            },
+            "exact_source_acceptance_root_polynomial": [
+              "1/3"
+            ],
+            "exact_source_minus_IID_null_root_polynomial": [
+              "8/27"
+            ],
+            "IID_null_acceptance": "1/27",
+            "ideal_source_acceptance_IF_codeword": "1/3",
+            "absolute_source_null_gap_upper": "10/27",
+            "diagnostic_source_acceptance_probability": 0.3333333333333333,
+            "matched_classical_monomial_estimator": {
+              "coefficient_l1_norm": "1",
+              "maximum_words_per_monomial_shot": 2,
+              "identity": "E[all k+1 frequencies equal * exp(i*(phase_last-phase_first))] = <psi,K^k psi> for k>=1",
+              "coefficient_norm_and_inverse_precision_are_not_free": true,
+              "polynomial_time_classical_dequantization_established": false
+            }
+          }
+        ],
+        "dense_control_is_scalable_circuit": false,
+        "IID_label_source_law_established_by_this_fixture": false
+      },
+      "literal_joint_branches": {
+        "equal_plus": 0.33333333333333354,
+        "equal_minus": 0.0,
+        "unequal_plus": 0.6666666666666671,
+        "unequal_minus": 0.0,
+        "complete_mass": 1.0000000000000002,
+        "whole_joint_amplitudes_evaluated": 1458,
+        "branch_discarded_for_free": false
+      },
+      "exact_equal_plus_root_polynomial": [
+        "1/3"
+      ],
+      "exact_equal_minus_root_polynomial": [],
+      "exact_equal_total_probability": "1/3",
+      "IID_null_equal_plus_probability": "5/27",
+      "IID_null_equal_minus_probability": "4/27",
+      "effective_original_word_effect_commutes_with_raw_Gram": true,
+      "phase_independent_diagonal_term_cancels_source_vs_IID_null": true,
+      "classical_full_measured_readout_identity": {
+        "word_pair_probability": "1/729",
+        "conditional_plus_probability": "(1+cos(2*pi*(phase_w-phase_v)/q))/2",
+        "conditional_minus_probability": "(1-cos(2*pi*(phase_w-phase_v)/q))/2",
+        "predicate": "f_A(w)==f_A(v)",
+        "original_phase_evaluator_and_frequency_work_paid": true,
+        "entire_measured_word_pair_and_flag_law_matched": true,
+        "finite_precision_classical_sampler_implemented_here": false,
+        "coherent_amplification_or_retained_unmeasured_output_simulated": false
+      },
+      "scalable_logical_recipe": {
+        "original_records_paid_once": 6,
+        "uniform_qutrits": 6,
+        "original_response_phase_gates": 3,
+        "controlled_qutrit_swaps": 3,
+        "forward_and_uncompute_label_coordinate_accumulations": 24,
+        "frequency_comparison_coordinates": 2,
+        "known_initial_preparation_inverse_available_on_this_source": true,
+        "normalized_fibre_preparation_required_by_one_pass": false,
+        "full_word_table_required_by_logical_recipe": false,
+        "physical_gate_compilation_and_precision_certified": false
+      },
+      "accepted_speedup_candidate": false
+    }
+  ],
+  "independent_error_label_census": {
+    "complete_original_label_banks": 81,
+    "words_per_bank": 9,
+    "original_secret_USED_ONLY_TO_GENERATE_CONTROL": 1,
+    "original_error_recipe": "(1,0,0,0)",
+    "errors_independent_of_labels": true,
+    "exact_mean_collision": "11/27",
+    "exact_mean_raw_acceptance": "2/27",
+    "exact_mean_error_fidelity": "0",
+    "exact_mean_C_minus_R": "1/3",
+    "one_over_N_times_mean_one_minus_error_fidelity": "1/3",
+    "independent_error_averaging_identity_holds": true,
+    "is_hard_source_or_algorithm_candidate": false
+  },
+  "label_dependent_error_countercensus": {
+    "complete_original_label_banks": 81,
+    "words_per_bank": 9,
+    "original_secret_USED_ONLY_TO_GENERATE_CONTROL": 1,
+    "original_error_recipe": "e_i=-a_i",
+    "errors_independent_of_labels": false,
+    "exact_mean_collision": "11/27",
+    "exact_mean_raw_acceptance": "11/27",
+    "exact_mean_error_fidelity": "1/9",
+    "exact_mean_C_minus_R": "0",
+    "one_over_N_times_mean_one_minus_error_fidelity": "8/27",
+    "independent_error_averaging_identity_holds": false,
+    "is_hard_source_or_algorithm_candidate": false
+  },
+  "scaling_ensemble_ledgers": [
+    {
+      "dimension": 8,
+      "root_digits": 8,
+      "word_surplus": 12,
+      "word_sites": 76,
+      "true_original_error_second_moment_over_q_squared_upper": "14479979/11284439629824",
+      "mean_equality_probability": "1824803796823893419871536635705673201/6265787482177970379256224194341930332206694446810665274859598050801",
+      "conditional_IID_null_antisymmetric_probability": "912400181570036563679525988928291960/1824803796823893419871536635705673201",
+      "conditional_source_antisymmetric_probability_upper": "58313192753026650497937411293901364005/14948792703581334895587628119700874862592",
+      "conditional_antisymmetric_gap_lower": "7416069094668712879164739490006666372315/14948792703581334895587628119700874862592",
+      "target_mean_amplified_equality_probability": "1/2",
+      "necessary_standard_amplification_iterations_lower": 655140954225003,
+      "original_errors_independent_of_full_root_original_labels_required": true,
+      "IID_uniform_full_root_original_labels_and_IID_uniform_null_values_required": true,
+      "conditional_bounds_are_unamplified_source_and_branch_ensemble_bounds": true,
+      "amplified_ensemble_source_gap_certified": false,
+      "generic_trace_error_safe_after_rare_branch_conditioning": false,
+      "arbitrary_nonstandard_quantum_algorithm_lower_bound": false
+    },
+    {
+      "dimension": 32,
+      "root_digits": 32,
+      "word_surplus": 12,
+      "word_sites": 1036,
+      "true_original_error_second_moment_over_q_squared_upper": "1144561273430837494886486567339/3686889928240170568819290897041319788544",
+      "mean_equality_probability": "198436110878625173975243197683513869379688222593501168547013992268245129503720679644170306037015863262000361443903034020975618123346567151006190517228818080124628691256432094539281480297307615406332858123369930397481069405542960523814322338294472468521145582704869137287797093031169499419173512788753555747263397319882979626036051749283102599784588393767178689006644363950990608475764811246686456758574289153185964127497014031016724677280648685785551779957278711777417741023721769631699268975601/74094286876475186694936150172478794467403488600895310369794828121749817462474965965264293200857638472898127265041384923476846618584249410218402001086714458220440347603590021190244667862050948420002700136441371071794202610150021273333937570625702778301451561906226551450694730029672060999420883959121942066543920280110336582102066852359356651266808583547644541166051840431436093867069945908866084430423784396582252278317734604180191560800076467622631114707758857433601557320174332982854102179612951168363360366089079964026120454729034668261209696648351140852319186536303037811001921826866187716980778990236024958565873232055312581347916836383529105911816748693450940143026018806977444565714838295652138511786319719764160803438371700597846936249167181205102396686501798831455093459920157982150147321151560993357162495324531495620011785900960105914775240945825772519574747399423637135234670176236935205917965878773716902546092261448650943634102045771914351126581937439298892571012873201",
+      "conditional_IID_null_antisymmetric_probability": "99217868743388216477599832361879842256549998591862192406503120815656703712340031189459538021663462229011570487568984294750230007309756279422665967938740548657720688532341750138350270745143831724964286275775944675399890304070017503073154998838587035973206981776241207120780983548136720414292614066980007620663597471667586091652734802378021805514168470474692637827251221603183790478517812906912040510755151833933243855285375105521918835186817393264513741379375506514071772373455354464682779309560/198436110878625173975243197683513869379688222593501168547013992268245129503720679644170306037015863262000361443903034020975618123346567151006190517228818080124628691256432094539281480297307615406332858123369930397481069405542960523814322338294472468521145582704869137287797093031169499419173512788753555747263397319882979626036051749283102599784588393767178689006644363950990608475764811246686456758574289153185964127497014031016724677280648685785551779957278711777417741023721769631699268975601",
+      "conditional_source_antisymmetric_probability_upper": "12236870478351213365576385849850643438169571822768923793709601633666731205058842448434657557588947425910841905772119961854398785417416254797356820511569297451996124626982357023959368232713765790292655441174826036623534040327615921817778157352639117210543654899243656106444923417578605553026274840809617681892818296291993145129981763419506607471071029584403524648850375449484801109250981158895589896850065845144186706066799997951238343217968886437655596954885718798617475402766737701771077988745315/951201569831612664805781080019146235879661520887785514561617115230479565323398470302013818619748323820869901720695167092930421711114285700267278755628457815701772135144706468405127394213621166319135465323751991481001644950795955996430294218054696060123560002424415362288864569701721549819242447295908793011394121636999383974173161138542987847642169415235717307446085122625252243534096286709967991232360200334130859524362555358113797006647924463297237683293638777054708960967726072289502595041644773376",
+      "conditional_antisymmetric_gap_lower": "3329113571841596900905344063497147604664066295347976306008369357985301732941425725527460142696418047615955793244999923987531568973136798100677262982171068920496016145479252179279097036321889035474224797680968959064211327277094432234225245986887979200824053686351830094339416184895149261605522162888838443743265226510367900164491547668082834421390093481879991012202586909572815087505908657105590124170101060400472314174648491972742391396392745736506320759001157435760388006896766929257182322367716752715/6658410988821288653640467560134023651157630646214498601931319806613356957263789292114096730338238266746089312044866169650512951977799999901870951289399204709912404946012945278835891759495348164233948257266263940367011514655571691975012059526382872420864920016970907536022051987912050848734697131071361551079758851458995687819212127969800914933495185906650021152122595858376765704738674006969775938626521402338916016670537887506796579046535471243080663783055471439382962726774082506026518165291513413632",
+      "target_mean_amplified_equality_probability": "1/2",
+      "necessary_standard_amplification_iterations_lower": "6831829423182561209976996437611784782292054049664569291000275239350693557458861392452727985390716430794098954360163881785365277956507224449250584696251558553213616556893925967868832609857339041172102492663936976079664511762659286917037276361960",
+      "original_errors_independent_of_full_root_original_labels_required": true,
+      "IID_uniform_full_root_original_labels_and_IID_uniform_null_values_required": true,
+      "conditional_bounds_are_unamplified_source_and_branch_ensemble_bounds": true,
+      "amplified_ensemble_source_gap_certified": false,
+      "generic_trace_error_safe_after_rare_branch_conditioning": false,
+      "arbitrary_nonstandard_quantum_algorithm_lower_bound": false
+    },
+    {
+      "dimension": 64,
+      "root_digits": 64,
+      "word_surplus": 12,
+      "word_sites": 4108,
+      "true_original_error_second_moment_over_q_squared_upper": "3930061525912861057173624287137506221892737197425314729437355/810215314803052549744929720338251328545239623177485180391421049407799296",
+      "mean_equality_probability": "10330354033783615706219262168010196935043239004881403396496573947907551899301818647983324014699770705705175208364745463832094619452276768555597018379815781514201054131289914176890437053063362378470644470842686071452469279913235723053955829837442079229964282215636503019157665989689500430227839379663591552052377690008153328866725049080021341202981245827140397215899807373891632591158761616089699524556176710172892947853445462312832630850177380460524122002348882947319966558801121825648506037816364087211926315343241381948225832877209719738225683652725338219897228056367536041046723416625142653907497808941309707576745701884325228740567520733572612513288640607266205462180325922751192666074036609232609229272914499165685720361687334278106935060331604176392502483719407747591716357358962315669357493878540182247254449553560272355798793217119715818952733647919616143087438052311819812079744290866615312762939913371086699777060830205389926902952560876021178541977331943540028369638891449509451436107151420118117117533049582973994158531827383909545763976886479546083992918713909742604777369992497147820172059815436833583310902817395594867622751854562368726261326042716355123890510645766589994256300838325616037392942473459760319383483182053297984691038629817914205266969336806372953597443512279298991763232574292190558475430332362804229511163228850724359761056304064150641028444402542266361753840889515789960075543854382928793869393743867577539213812975128495463063509932544994845401562705841215509280884476086647758123064628440075456650834389505360353823608884159636874773099135283023445894204944587595595998529603544343261592656542650662012004428617084369020127979836527022771115714151175388234550068981898044349702678300192217719691190100245675988723991157902579825027193799326924649902343636320752042710786786926623120147275753675730098918749861753007788631463074781638066438565907804008889460196971494010821283677979176361609509400361225009894132230060678224881/200804629024997170149282499045278655004377759195740503357742464616435876526985500254857545251592079751248370865568858950112779476640673154550818218648378332079273764295846200607278485578135973096410512818164552046596612955290956873134413646562163912039500564102892193646081289146463369177351238303739875372559067310506212633062635759040423595878178953028514044043285132207830803133206219905683551565586242219184593925297618185625193358068388417098522519208299638397471610660275370387728309078304257131094645246584771474806913520303064946889645991118806337331861335043443498414247184837510450293841320192218637964899589000767951102108735029306544446735703737310010828224461129563927968486782270146474900512685231300431227281978035876094251858895615943686157627330944812041964859362914006306640279086903133572867719182289950780484069182008762065662047256546089198310642065549789142769605870848830596611582463172688049102566565173670810874422975967794767253946456845043878051097964641041229311120658050767071961281878092208619600362402812255878556549486306970563494732927671689822057728184540796816157407043470560448673867750564484348375686701207687599232689663560015978063336607124390427784740820331022171587130793276267472663720004325995012777336564509345877338378774462350366976353562256782065991824956372205011457912296296082852687542793086172455289871142289037873859501768954827969001269317399139492289209018549162681380384132012417455424511296951359719106678018692323125455067897723291352276706971493072475180630083893081730974397499209043077018467007838986354669608211016219624630152151923150443690067779039807757547989053141247028738089736287194331933496424063292712422916834495487485460020813255196146098362361305898944334703349702994055222966225576448886976003945955111679825670733198465944655022947953868768095283911808367576281107921340164162139979781710133636058990856109143353746455457777092083240607455697122591502370127511949745559286159970670716475665197031240025387298767707183093821270286145675373508672458005940715135043909568464094907786891854035501868630741056511880290807842766997801920467278812186298331647065427467256954059852108835155215250826784087545883909461924653462903342632843876709108379691257271195599969269175445444753765939651870160540762343277577515529834176827985678617991314996170677877649344378403915388402404333354979459667216830890985568599349381947207955403829500054360937218773808505318684971411440895960986694823840719528734755888472684111522184030061293078458616108700744610975624820410419561263907320515579271378160543091849190450423125873421305558525628120367284607770318017225162404400850326805364378930790005979566774033680181867993014795341069366640833807768847071270403293295099735420964662950135007836432163022904005000699164865006772450699076001992850053254241435280221436023187762687737427329697186995138406119791847520007427465998480995477645951617823310574526412967170204953353499442646443609968158210582299433643806953516593059923960213287546357058604208376930646866853813315711600748931309109275753899617021495684978835722104491725323016974864390780824840083275796064683096149156190895496393796253463390654675509122303346899965975112666653803962019307772471964163039904952119534213609846308103398237901808468065706796275107131181216866190348863442117379012939958833050977802007164976335601595105955635881614554808895442510332336275489911567553054188382061699884001394321526031139964204839758599445952849148414189545824881503868465664780089721871067023991841352044253613946130160416602058693949818037255419243153478071135714279959862310080479826697209331163548928986477128792210428012031234166428525798864136493748862815234696527354360646516762306875415970714744551228671953841888310203913851771081684999885787720129000911294880972046098209154368171746443405341915950307749547455853361877079638696189082128788312674826260224705966246123498543453983854645124081",
+      "conditional_IID_null_antisymmetric_probability": "5165167297718282065144334570686459735358057868961408679063318062413148837424270008865413062663527575549790962991792795868968012178504350576314099228878860481189407695088874496258134244110407500514466083061846757029715120922292466436146691609470135996074311124224354493062431244826884023224277708355567266055625686298432390784188327990764393471209987415015486014292255345445357269352067988619949124297344872094219501940176830149850864413848658225470888564556708636508471618705171010330824151312058838849764727808799025353610633756926636083902284300156937604593166117378772962232860537231421714067814119961894780902048871330368773908644728668575839665170073547975281871800285439156875615449147874694874587832752167076662349715242188814669735996964568151469217630945922389261565074524787551606420847340166258024077088304268033671631209488617119925165925653772235467556695900924885342851591881788083091315749931791092618588877981666092092968971225368444318613815783533675223464450741671545297869434689634860429058165219726165115317950324660764742822691507753975457738832002588154040916497271746189362809167924604722882598975527131401293127286579100334371627614465423529268852948080972939994522038880837987694356244652321352550131037522207114543338868832788020276117886289869558342051229463995339976405368866700802761718815196447797730077451629249906673236002727755951054695336011955645750201172429131646475224490256243501700225748511253089965619322504916117617149128956745651082935721947037457908358525038344696289740629823388838425226060490884346938891141958112721219217045865356845397154780926193805148194021709835889266640633395255559845026969592817216325041898958215343827270432374760368486831604586962338869764095666631967719121188914373216920306888225758318805055186548963104311353592117700460996995216073278995184417291420144798190112448155471227539598011982422379597083198076750868663206536685779208836405307737186244961933085113116558799593865817602764280/10330354033783615706219262168010196935043239004881403396496573947907551899301818647983324014699770705705175208364745463832094619452276768555597018379815781514201054131289914176890437053063362378470644470842686071452469279913235723053955829837442079229964282215636503019157665989689500430227839379663591552052377690008153328866725049080021341202981245827140397215899807373891632591158761616089699524556176710172892947853445462312832630850177380460524122002348882947319966558801121825648506037816364087211926315343241381948225832877209719738225683652725338219897228056367536041046723416625142653907497808941309707576745701884325228740567520733572612513288640607266205462180325922751192666074036609232609229272914499165685720361687334278106935060331604176392502483719407747591716357358962315669357493878540182247254449553560272355798793217119715818952733647919616143087438052311819812079744290866615312762939913371086699777060830205389926902952560876021178541977331943540028369638891449509451436107151420118117117533049582973994158531827383909545763976886479546083992918713909742604777369992497147820172059815436833583310902817395594867622751854562368726261326042716355123890510645766589994256300838325616037392942473459760319383483182053297984691038629817914205266969336806372953597443512279298991763232574292190558475430332362804229511163228850724359761056304064150641028444402542266361753840889515789960075543854382928793869393743867577539213812975128495463063509932544994845401562705841215509280884476086647758123064628440075456650834389505360353823608884159636874773099135283023445894204944587595595998529603544343261592656542650662012004428617084369020127979836527022771115714151175388234550068981898044349702678300192217719691190100245675988723991157902579825027193799326924649902343636320752042710786786926623120147275753675730098918749861753007788631463074781638066438565907804008889460196971494010821283677979176361609509400361225009894132230060678224881",
+      "conditional_source_antisymmetric_probability_upper": "2526012768931750324239634097188092451529869253058768138421221215468626585438254914262956306454370609028990562896317211302019856527893772810937987120359066032261351460644564760787960754349487265048506856375795236536429939728178837833240094911763550967951949074122181208634673122990393053340185132685869709633497068216585588517915942186384342596170762959605487945621212626026529023577221673079509372831565336564941023855069546501124712194561914829594654187808515861501392219741595221124943120474159614087659841586345305174380210300627509373417658213018730686673712630741398667036724431074780501084356593230426911820943817776018004278213475540118049053971835949850612712464730216463845614376838465316152297304736190355077858322084921705386244094091204553914578947189693981768027721028672813704861897688271041735475472935108322173372514881301382517011827752013608675670199575231045905260038590894479186693939760874743255301405180260693298967433227523103866721164887196964198964113202760351269980894287575255971916902226875456553207701962705545811714119269734326105009929194146042948590123561740076318508993332850378797034187040110778625690550369460082735628496304338409077552868254484350509492436288403882734013786495927679164393223524211933915410965074159923832833546380604745758519944005017896714770959301506312894177193157762986283708512297538883993165165463274556777562749606657887277978150825542328756595021056698509158994022473535320694688151585185408679121781775137469040309697779937929660862985613822737104563926475212280791635024220842097844223898361730276968836288785962114876347570718121589767730891678309379323702220339229309504864699648802305897746198325491194548693564052536391516799602930709571004525837918720057032936131405246438023466909819575988456404146208427853367941611255745445740588799301461000133615864121988979032812010723646693779837560954846549705698919789834338550536931859254855865347472039150076173074241642480688410931236288711461778275/3169180909371593471345976772632418087895010562276943710466864720164895931351714023315093785464781317121612009848326243323085516123221010977632167978315692007726777647329705120313656151289554145094870892736611588405933912548001224861118109470025337613352675383162371449363388349529134110171892854599718085569060275544646037202579773458763324817775839180636033945909937420254586159076758563211811918602537706070674694052827261539515476473082323205492894501371606245776524801276034229233724815977130214871722524682928910721533908387855523572071785168264082066071246498796586560885499334454455027847667835613898684103531871407267316604889769287892592856132505486893280887577218906631242488984502567954342021176780973751488532454832028007277789633922859060915915244798116336885388893954642291306879913252917877069559831901644512152357763773128271911372560570543823555102443064507514520509097676665344590466402737767277891965931911195339907069715129628711433745797828847917181451036517007524080654355746350080519248350159725572838809242088427786338262749718737825357405318212273480341664046962761929661494049000018356871008201357210595703636083462919194433684683693075703161530840822021953205340831424467564591403985787479929895982183939248923498085051398524327996182533160758441494291424673889068827673489805844774914060853492644618183757208866773687485077448228597868492088186036762378091532403701632704796723543324570604673597555101804160434690534591402667815110153652232279922106306272062949198660670235910446155957877208746036827291971385288403452597670622154335201456150586186176100294059693780372520863379507950771428167030908888930178164898594110276558160374223745070644442091836498763744821123110842579749166470758781031829984668335705295709784429056698910878751514262768794870256201107982239127826287459734197618053573433252215183127062544102406405843243893058481274047308269082769239851773220448930052663106975654131580650914082573714570898167886440076531659177984",
+      "conditional_antisymmetric_gap_lower": "11092094628944975923296859572951592100044675989547580469956786547106772268172732214590889744141379613895997499909107913112331642649407254703084227639956919742765438786548503375485254960490659967560512161277931052836486517269387653093349023679971536651048999668492779101938440098678157097915215234008564872530554185255183691143470705901031925309663233552690828644049693298896113827748332519993879274454857781681631941152067031488452613094419736352535623129836409505991288104895907486562536060704280782526438267997675673048080033090444653333261297640826656208505307213630148368908920314897955799289254795225526812095309894272098515652593653162834646302479150280382612373592958049210374044027680598571938953715493904480363872885731802244779822870249729102229854635757036775358429416235835437039048967436027514810762189096557105160686210255663538062471189945465321087722909268747792732727330436639321178511556925800160627270329190458914740859868705828664287694604373868664820983261128248696391607010368734804835372870431928678494697460189171544493565973377415239362204721710672795459072660693646621882409997899621409301301144446757583848866522877375240393823507810271160130447558850404587178267721625165780283676119181042078348895352583649545867545800264473600673788775892993600359316696412617762222254232063933155095074136767953448970048859187739050314112442946581057702749144768293035144626764654932870848560133789270852917930879878319039943395514455084665896611724959582159033434672548453203336180589000344511510584540759463331977921494162463442215742673039805237647112447504698333440449823331028464583516504236987824797994206193131660943114297266670648694764846704247407693399149143739331489184756582882901747656165380734378870477379571015518780449797338210985001907718022464358868976564227544641134988819529998301673405942422162797982673248011047157348917544362633439688137056472929010583661803020899950330566448033711068535740471230918542975339459365754065870666045515/22184266365601154299421837408426926615265073935938605973268053041154271519461998163205656498253469219851284068938283703261598612862547076843425175848209844054087443531307935842195593059026879015664096249156281118841537387836008574027826766290177363293468727682136600145543718446703938771203249982198026598983421928812522260418058414211343273724430874264452237621369561941782103113537309942482683430217763942494722858369790830776608335311576262438450261509601243720435673608932239604636073711839911504102057672780502375050737358714988665004502496177848574462498725491576105926198495341181185194933674849297290788724723099850871216234228385015248149992927538408252966213040532346418697422891517975680394148237466816260419727183824196050944527437460013426411406713586814358197722257682496039148159392770425139486918823311511585066504346411897903379607923993806764885717101451552601643563683736657412133264819164370945243761523378367379349488005907400980036220584801935420270157255619052668564580490224450563634738451118079009871664694618994504367839248031164777501837227485914362391648328739333507630458343000128498097057409500474169925452584240434361035792785851529922130715885754153672437385819971272952139827900512359509271875287574742464486595359789670295973277732125309090460039972717223481793714428640913424398425974448512327286300462067415812395542137600185079444617302257336646640726825911428933577064803271994232715182885712629123042833742139818674705771075565625959454744143904440644390624691651373123091705140461222257791043799697018824168183694355080346410193054103303232702058417856462607646043656555655399997169216362222511247154290158771935907122619566215494511094642855491346213747861775898058244165295311467222809892678349937069968491003396892376151260599839381564091793407755875673894784012218139383326375014032765506281889437808716844840902707251409368918331157883579384678962412543142510368641748829578921064556398578016001996287175205080535721614245888",
+      "target_mean_amplified_equality_probability": "1/2",
+      "necessary_standard_amplification_iterations_lower": "49292888020186801344805184039619053640404420414604815127006427698763932697572520805894386824648542677759132256738463107070430990805105943639742558951220611241259215611197934242833838167314088164559888682502805548314043731530985980344496807105454035316785770757677552667123054498862940399593008383519556464270019942861106670750677633678692355376763627577671552120251939054249723453619682285642063412855969572222202055944902058690012346652904125002261853291905282605613775135934488466726850937422414373578517049936899955252932272090573842983601532439291573677538079426464047540324793378271696652877133048135016436549111678722957680769395921332677692294430146721864120584756466317947554023077589536346366657621063701523891202472776342074837711475376829959441640666489160874227515445972668706251093284300178260554344173092044919430193647569392048264569302014461112547986496521152174749731195025775462193878046402499650670856024956160198885403457453357094434400512537273598991064914",
+      "original_errors_independent_of_full_root_original_labels_required": true,
+      "IID_uniform_full_root_original_labels_and_IID_uniform_null_values_required": true,
+      "conditional_bounds_are_unamplified_source_and_branch_ensemble_bounds": true,
+      "amplified_ensemble_source_gap_certified": false,
+      "generic_trace_error_safe_after_rare_branch_conditioning": false,
+      "arbitrary_nonstandard_quantum_algorithm_lower_bound": false
+    }
+  ],
+  "accepted_speedup_candidate": false,
+  "new_active_negative_result_created": false,
+  "research_decision": "KEEP_AS_CONSTRUCTIVE_COLLECTIVE_BASELINE_NOT_A_NEW_SPEEDUP_OR_FREE_FIBRE_NORMALIZER"
+}

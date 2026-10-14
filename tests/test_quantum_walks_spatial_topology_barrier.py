@@ -3,6 +3,9 @@ Tests for Investigation 61: Quantum Walks, Continuous-Time Quantum Search,
 and the Spatial Graph Topology Horizon: Glued Trees, Childs-Goldstone Anderson
 Localization, and Classical Reversible Markov Chain Dequantization.
 
+HISTORICAL NUMERICAL CONTROLS ONLY. The general negative conclusion was
+quarantined by CAMPAIGN_NEGATIVE_CLAIM_AUDIT.md; the prose below is not a proof.
+
 Validates:
 1. Glued-Trees column subspace reduction and classical random walk trapping:
    - 1D tight-binding projection with O(1) hopping yields ballistic quantum transfer
@@ -303,7 +306,7 @@ def test_epistemic_invariants_and_negative_results():
     Validates repository invariants:
     - speedup_claim_allowed == False
     - accepted_speedup_candidate == False
-    - NEG-QUANTUM-WALKS-SPATIAL-TOPOLOGY-BARRIER registered in negative_results.json.
+    - The unsupported broad negative is preserved in quarantine, not active guidance.
     """
     speedup_claim_allowed = False
     accepted_speedup_candidate = False
@@ -318,6 +321,9 @@ def test_epistemic_invariants_and_negative_results():
     with open(reg_path, "r", encoding="utf-8") as f:
         data = json.load(f)
 
-    # Verify existing entry count and structure
+    # Numerical test counts do not certify general negative claims.
     assert isinstance(data, list)
-    assert len(data) >= 986
+    identifier = "NEG-QUANTUM-WALKS-SPATIAL-TOPOLOGY-BARRIER"
+    assert not any(row.get("id") == identifier for row in data)
+    archive = json.loads((repo_root / "research/registry/quarantined_campaign_negatives.json").read_text())
+    assert any(row["id"] == identifier and row["status"] == "QUARANTINED_OVERBROAD_NO_GO" for row in archive)

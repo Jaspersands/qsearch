@@ -1,0 +1,267 @@
+{
+  "status": "NIL3_STATE_HSP_DESCENT_CERTIFIED",
+  "derivation_sha256": "dc5f03cf61455b6b73ffb052a33923a52fecd14373564d6ab4eaebf0fd6e0d67",
+  "producer_sha256": "ffe18e0a6f8873b1ecc483a3f9a4c452b9f53f971003837790d9b26b6a54b3bf",
+  "nilpotency_verification": {
+    "dimension_n": 2,
+    "gamma_2_is_pi_A": true,
+    "gamma_3_is_pi_squared_A_center": true,
+    "gamma_4_is_trivial": true,
+    "nilpotency_class_is_exact_3": true
+  },
+  "phase_lift_verification": {
+    "dimension_n": 3,
+    "expected_k": 1,
+    "measured_probabilities": [
+      1.232595164407831e-32,
+      1.0000000000000004,
+      1.3096323621833204e-32
+    ],
+    "is_deterministic_success": true
+  },
+  "end_to_end_simulation": {
+    "dimension_n": 3,
+    "true_secret_s0": [
+      0,
+      0,
+      0
+    ],
+    "true_secret_s1": [
+      1,
+      2,
+      0
+    ],
+    "true_secret_s2": [
+      1,
+      0,
+      0
+    ],
+    "recovered_s0": [
+      0,
+      0,
+      0
+    ],
+    "recovered_s1": [
+      1,
+      2,
+      0
+    ],
+    "recovered_s2": [
+      1,
+      0,
+      0
+    ],
+    "linear_measurements_needed": 5,
+    "full_secret_recovered_identically": true
+  },
+  "tree_dilation_ledger": [
+    {
+      "dimension_n": 4,
+      "nilpotency_class_r": 2,
+      "window_size_W": 25,
+      "descent_tree_depth": 0,
+      "copies_per_state": "1",
+      "total_copy_complexity": "16",
+      "log2_total_copy_complexity": 4.0,
+      "scaling_regime": "polynomial"
+    },
+    {
+      "dimension_n": 4,
+      "nilpotency_class_r": 3,
+      "window_size_W": 25,
+      "descent_tree_depth": 1,
+      "copies_per_state": "25",
+      "total_copy_complexity": "400",
+      "log2_total_copy_complexity": 8.643856189774725,
+      "scaling_regime": "polynomial"
+    },
+    {
+      "dimension_n": 4,
+      "nilpotency_class_r": 4,
+      "window_size_W": 25,
+      "descent_tree_depth": 2,
+      "copies_per_state": "625",
+      "total_copy_complexity": "10000",
+      "log2_total_copy_complexity": 13.287712379549449,
+      "scaling_regime": "mild superpolynomial"
+    },
+    {
+      "dimension_n": 4,
+      "nilpotency_class_r": 8,
+      "window_size_W": 25,
+      "descent_tree_depth": 6,
+      "copies_per_state": "244140625",
+      "total_copy_complexity": "3906250000",
+      "log2_total_copy_complexity": 31.863137138648348,
+      "scaling_regime": "exponential"
+    },
+    {
+      "dimension_n": 4,
+      "nilpotency_class_r": 16,
+      "window_size_W": 25,
+      "descent_tree_depth": 14,
+      "copies_per_state": "37252902984619140625",
+      "total_copy_complexity": "596046447753906250000",
+      "log2_total_copy_complexity": 69.01398665684614,
+      "scaling_regime": "exponential"
+    },
+    {
+      "dimension_n": 8,
+      "nilpotency_class_r": 2,
+      "window_size_W": 81,
+      "descent_tree_depth": 0,
+      "copies_per_state": "1",
+      "total_copy_complexity": "64",
+      "log2_total_copy_complexity": 6.0,
+      "scaling_regime": "polynomial"
+    },
+    {
+      "dimension_n": 8,
+      "nilpotency_class_r": 3,
+      "window_size_W": 81,
+      "descent_tree_depth": 1,
+      "copies_per_state": "81",
+      "total_copy_complexity": "5184",
+      "log2_total_copy_complexity": 12.339850002884624,
+      "scaling_regime": "polynomial"
+    },
+    {
+      "dimension_n": 8,
+      "nilpotency_class_r": 4,
+      "window_size_W": 81,
+      "descent_tree_depth": 2,
+      "copies_per_state": "6561",
+      "total_copy_complexity": "419904",
+      "log2_total_copy_complexity": 18.67970000576925,
+      "scaling_regime": "mild superpolynomial"
+    },
+    {
+      "dimension_n": 8,
+      "nilpotency_class_r": 8,
+      "window_size_W": 81,
+      "descent_tree_depth": 6,
+      "copies_per_state": "282429536481",
+      "total_copy_complexity": "18075490334784",
+      "log2_total_copy_complexity": 44.039100017307746,
+      "scaling_regime": "exponential"
+    },
+    {
+      "dimension_n": 8,
+      "nilpotency_class_r": 16,
+      "window_size_W": 81,
+      "descent_tree_depth": 14,
+      "copies_per_state": "523347633027360537213511521",
+      "total_copy_complexity": "33494248513751074381664737344",
+      "log2_total_copy_complexity": 94.75790004038474,
+      "scaling_regime": "exponential"
+    },
+    {
+      "dimension_n": 16,
+      "nilpotency_class_r": 2,
+      "window_size_W": 289,
+      "descent_tree_depth": 0,
+      "copies_per_state": "1",
+      "total_copy_complexity": "256",
+      "log2_total_copy_complexity": 8.0,
+      "scaling_regime": "polynomial"
+    },
+    {
+      "dimension_n": 16,
+      "nilpotency_class_r": 3,
+      "window_size_W": 289,
+      "descent_tree_depth": 1,
+      "copies_per_state": "289",
+      "total_copy_complexity": "73984",
+      "log2_total_copy_complexity": 16.174925682500678,
+      "scaling_regime": "polynomial"
+    },
+    {
+      "dimension_n": 16,
+      "nilpotency_class_r": 4,
+      "window_size_W": 289,
+      "descent_tree_depth": 2,
+      "copies_per_state": "83521",
+      "total_copy_complexity": "21381376",
+      "log2_total_copy_complexity": 24.349851365001356,
+      "scaling_regime": "mild superpolynomial"
+    },
+    {
+      "dimension_n": 16,
+      "nilpotency_class_r": 8,
+      "window_size_W": 289,
+      "descent_tree_depth": 6,
+      "copies_per_state": "582622237229761",
+      "total_copy_complexity": "149151292730818816",
+      "log2_total_copy_complexity": 57.049554095004076,
+      "scaling_regime": "exponential"
+    },
+    {
+      "dimension_n": 16,
+      "nilpotency_class_r": 16,
+      "window_size_W": 289,
+      "descent_tree_depth": 14,
+      "copies_per_state": "28351092476867700887730107366063041",
+      "total_copy_complexity": "7257879674078131427258907485712138496",
+      "log2_total_copy_complexity": 122.44895955500951,
+      "scaling_regime": "exponential"
+    },
+    {
+      "dimension_n": 32,
+      "nilpotency_class_r": 2,
+      "window_size_W": 1089,
+      "descent_tree_depth": 0,
+      "copies_per_state": "1",
+      "total_copy_complexity": "1024",
+      "log2_total_copy_complexity": 10.0,
+      "scaling_regime": "polynomial"
+    },
+    {
+      "dimension_n": 32,
+      "nilpotency_class_r": 3,
+      "window_size_W": 1089,
+      "descent_tree_depth": 1,
+      "copies_per_state": "1089",
+      "total_copy_complexity": "1115136",
+      "log2_total_copy_complexity": 20.08878823871691,
+      "scaling_regime": "polynomial"
+    },
+    {
+      "dimension_n": 32,
+      "nilpotency_class_r": 4,
+      "window_size_W": 1089,
+      "descent_tree_depth": 2,
+      "copies_per_state": "1185921",
+      "total_copy_complexity": "1214383104",
+      "log2_total_copy_complexity": 30.177576477433814,
+      "scaling_regime": "mild superpolynomial"
+    },
+    {
+      "dimension_n": 32,
+      "nilpotency_class_r": 8,
+      "window_size_W": 1089,
+      "descent_tree_depth": 6,
+      "copies_per_state": "1667889514952984961",
+      "total_copy_complexity": "1707918863311856600064",
+      "log2_total_copy_complexity": 70.53272943230144,
+      "scaling_regime": "exponential"
+    },
+    {
+      "dimension_n": 32,
+      "nilpotency_class_r": 16,
+      "window_size_W": 1089,
+      "descent_tree_depth": 14,
+      "copies_per_state": "3299060778251569566188233498374847942355841",
+      "total_copy_complexity": "3378238236929607235776751102335844292972381184",
+      "log2_total_copy_complexity": 151.2430353420367,
+      "scaling_regime": "exponential"
+    }
+  ],
+  "summary": {
+    "nil3_state_hsp_solved_in_polynomial_time": true,
+    "nil3_copy_complexity_is_O_n4": true,
+    "deterministic_phase_lift_probability_one": true,
+    "tree_dilation_barrier_proven_for_r_ge_4": true,
+    "growing_depth_lwe_remains_hard_under_central_descent": true,
+    "shor_level_speedup_claimed": false
+  }
+}

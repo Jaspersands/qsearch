@@ -1,5 +1,10 @@
 # Quantum Annealing and Adiabatic Quantum Computing (AQC): Vanishing Spectral Gaps, Anderson Localization in Energy Space, and First-Order Quantum Phase Transition Bottlenecks
 
+**RETRACTED AS A GENERAL NO-GO CONCLUSION,2026-10-13.** The original record is
+quarantined, not active search guidance. Sufficient bounds and stoquasticity
+were overgeneralized. Read [the correction](CAMPAIGN_NEGATIVE_CLAIM_AUDIT.md).
+The original account below is retained for provenance, not endorsed as proved.
+
 **Investigation 59**  
 **Epistemic Invariant Enforced**: `speedup_claim_allowed = False` and `accepted_speedup_candidate = False`.  
 **Negative Result Registered**: `NEG-QUANTUM-ANNEALING-SPECTRAL-GAP-BARRIER` (Registry Entry 985).

@@ -1,5 +1,10 @@
 # Dihedral Hidden Subgroup Problem (DHSP): Weak Fourier Blindness, Modular Subset-Sum Commutant Duality, and the uSVP Lattice Cryptographic Barrier
 
+**GENERAL CONCLUSION RETRACTED,2026-10-13.** This negative is quarantined.
+Weak-sampling facts and particular subset-sum reductions remain scoped facts,
+not universal measurement hardness or sieve optimality. Read
+[the correction](HSP_CAMPAIGN_CLAIM_AUDIT.md). Historical text follows.
+
 **Author**: Adversarial Mathematical Research Runner  
 **Date**: 2026-10-12  
 **Status**: Formally Verified & Empirically Confirmed (Investigation 38)  

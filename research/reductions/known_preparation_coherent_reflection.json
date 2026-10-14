@@ -1,0 +1,2636 @@
+{
+  "status": "CONDITIONAL_KNOWN_BANK_REFLECTION_ACCESS_EXTERNAL_REVIEW_PENDING",
+  "producer_sha256": "0fad142d491405c040aeb0c5939be373b55e7a4418979b06c0f6cdce8a489cca",
+  "derivation_sha256": "e3327d4d1e9c81a700e376ea1285b697a00eb1b4cd519b410c63c2ee542dad5b",
+  "source_constructor_sha256": "d88c46217853fe1c264322fbbea1e94f58cd1aec28bc6875a1bd70cf7cb8bf7f",
+  "preparation_controls": [
+    {
+      "recipe": {
+        "modulus": "9",
+        "native_even_level": 4,
+        "secret_dimension": 3,
+        "cohorts": 1,
+        "sites_per_cohort": 3,
+        "known_phase_numerators": [
+          [
+            [
+              0,
+              8,
+              4
+            ],
+            [
+              0,
+              7,
+              1
+            ],
+            [
+              0,
+              1,
+              5
+            ]
+          ]
+        ],
+        "public_native_labels": [
+          [
+            [
+              [
+                5,
+                3
+              ],
+              [
+                6,
+                8
+              ],
+              [
+                4,
+                8
+              ]
+            ],
+            [
+              [
+                3,
+                0
+              ],
+              [
+                8,
+                5
+              ],
+              [
+                4,
+                8
+              ]
+            ],
+            [
+              [
+                1,
+                1
+              ],
+              [
+                8,
+                3
+              ],
+              [
+                2,
+                4
+              ]
+            ]
+          ]
+        ],
+        "source_receipts": {
+          "phase_access": "ORIGINAL_CLASSICAL_RECORDS_AND_PREPARATION_RANDOMNESS",
+          "modulus": "9",
+          "dimension": 3,
+          "original_classical_records": [
+            {
+              "label": [
+                3,
+                8,
+                8
+              ],
+              "value": 0,
+              "modulus": 9,
+              "source_id": "known-phase-81103-0"
+            },
+            {
+              "label": [
+                5,
+                6,
+                4
+              ],
+              "value": 6,
+              "modulus": 9,
+              "source_id": "known-phase-81103-1"
+            },
+            {
+              "label": [
+                0,
+                5,
+                8
+              ],
+              "value": 8,
+              "modulus": 9,
+              "source_id": "known-phase-81103-2"
+            },
+            {
+              "label": [
+                3,
+                8,
+                4
+              ],
+              "value": 1,
+              "modulus": 9,
+              "source_id": "known-phase-81103-3"
+            },
+            {
+              "label": [
+                1,
+                3,
+                4
+              ],
+              "value": 4,
+              "modulus": 9,
+              "source_id": "known-phase-81103-4"
+            },
+            {
+              "label": [
+                1,
+                8,
+                2
+              ],
+              "value": 2,
+              "modulus": 9,
+              "source_id": "known-phase-81103-5"
+            }
+          ],
+          "preparation_random_mask": [
+            1,
+            2,
+            2
+          ],
+          "original_record_count": 6,
+          "known_source_receipts": [
+            {
+              "raw_source_ids": [
+                "known-phase-81103-0",
+                "known-phase-81103-1"
+              ],
+              "known_phase_values": [
+                "8",
+                "4"
+              ],
+              "public_native_ring_label": [
+                [
+                  5,
+                  3
+                ],
+                [
+                  6,
+                  8
+                ],
+                [
+                  4,
+                  8
+                ]
+              ],
+              "packet": {
+                "modulus": "9",
+                "phase_numerators": [
+                  "0",
+                  "8",
+                  "4"
+                ],
+                "original_sources": [
+                  "known-phase-81103-0",
+                  "known-phase-81103-1"
+                ],
+                "phase_access": "ORIGINAL_CLASSICAL_RECORDS_AND_PREPARATION_RANDOMNESS"
+              },
+              "hidden_secret_or_errors_used": false
+            },
+            {
+              "raw_source_ids": [
+                "known-phase-81103-2",
+                "known-phase-81103-3"
+              ],
+              "known_phase_values": [
+                "7",
+                "1"
+              ],
+              "public_native_ring_label": [
+                [
+                  3,
+                  0
+                ],
+                [
+                  8,
+                  5
+                ],
+                [
+                  4,
+                  8
+                ]
+              ],
+              "packet": {
+                "modulus": "9",
+                "phase_numerators": [
+                  "0",
+                  "7",
+                  "1"
+                ],
+                "original_sources": [
+                  "known-phase-81103-2",
+                  "known-phase-81103-3"
+                ],
+                "phase_access": "ORIGINAL_CLASSICAL_RECORDS_AND_PREPARATION_RANDOMNESS"
+              },
+              "hidden_secret_or_errors_used": false
+            },
+            {
+              "raw_source_ids": [
+                "known-phase-81103-4",
+                "known-phase-81103-5"
+              ],
+              "known_phase_values": [
+                "1",
+                "5"
+              ],
+              "public_native_ring_label": [
+                [
+                  1,
+                  1
+                ],
+                [
+                  8,
+                  3
+                ],
+                [
+                  2,
+                  4
+                ]
+              ],
+              "packet": {
+                "modulus": "9",
+                "phase_numerators": [
+                  "0",
+                  "1",
+                  "5"
+                ],
+                "original_sources": [
+                  "known-phase-81103-4",
+                  "known-phase-81103-5"
+                ],
+                "phase_access": "ORIGINAL_CLASSICAL_RECORDS_AND_PREPARATION_RANDOMNESS"
+              },
+              "hidden_secret_or_errors_used": false
+            }
+          ],
+          "source_error_law_required_for_simulation": false,
+          "source_states_or_hidden_secret_read": false
+        },
+        "original_classical_record_count": 6,
+        "source_bank_reused_with_frozen_errors": true,
+        "preparation_order": [
+          "Hadamard_index_tensor_F3_sites",
+          "known_controlled_diagonal"
+        ],
+        "inverse_order": [
+          "known_controlled_diagonal_inverse",
+          "Hadamard_index_tensor_F3_sites_inverse"
+        ],
+        "reflection_order": [
+          "preparation_inverse",
+          "zero_register_phase_flip",
+          "preparation"
+        ],
+        "controlled_diagonal_branches_per_preparation_upper": 6,
+        "index_comparison_compute_uncompute_pairs_per_preparation_upper": 1,
+        "qutrit_Fourier_gates_per_preparation": 3,
+        "index_Hadamards_per_preparation": 0,
+        "preparation_calls_per_reflection": 2,
+        "multiplexor": "explicit index equality; no QRAM",
+        "zero_test_synthesis_is_a_remaining_obligation": true,
+        "ideal_unknown_state_inverse_supplied": false,
+        "secret_or_errors_read_by_preparation": false,
+        "relative_cohort_phases_may_be_discarded": false,
+        "new_independent_originals_created_by_reuse": false,
+        "hardware_synthesis_implemented": false
+      },
+      "seed_basis_phase_numerators": [
+        0,
+        1,
+        5,
+        7,
+        8,
+        3,
+        1,
+        2,
+        6,
+        8,
+        0,
+        4,
+        6,
+        7,
+        2,
+        0,
+        1,
+        5,
+        4,
+        5,
+        0,
+        2,
+        3,
+        7,
+        5,
+        6,
+        1
+      ],
+      "literal_dimension": 27,
+      "diagnostic_max_errors": {
+        "unitarity": 3.238408621575745e-16,
+        "inverse_returns_zero": 3.137308674968725e-16,
+        "reflection_equals_rank_one_formula": 5.551115123125783e-16,
+        "reflection_squares_to_identity": 6.661338147750939e-16
+      },
+      "central_support": {
+        "native_level": 4,
+        "dimension": 3,
+        "cohorts": 1,
+        "sites_per_cohort": 3,
+        "central_generator": [
+          3,
+          6
+        ],
+        "cohort_central_character_rows": [
+          [
+            2,
+            1,
+            0
+          ]
+        ],
+        "vector_stabilizer_central_rank": 1,
+        "ray_stabilizer_central_rank": 0,
+        "nonzero_extra_vector_stabilizer_witness": [
+          1,
+          1,
+          0
+        ],
+        "nonzero_extra_ray_stabilizer_witness": [
+          1,
+          0,
+          0
+        ],
+        "vector_kernel_order": {
+          "base": 3,
+          "exponent": 2
+        },
+        "ray_kernel_order": {
+          "base": 3,
+          "exponent": 3
+        },
+        "full_hidden_subgroup_or_gap_established": false,
+        "noisy_seed_necessarily_fixed_by_H": false
+      },
+      "dense_control_is_a_scalable_receiver": false
+    },
+    {
+      "recipe": {
+        "modulus": "9",
+        "native_even_level": 4,
+        "secret_dimension": 3,
+        "cohorts": 2,
+        "sites_per_cohort": 1,
+        "known_phase_numerators": [
+          [
+            [
+              0,
+              5,
+              2
+            ]
+          ],
+          [
+            [
+              0,
+              8,
+              3
+            ]
+          ]
+        ],
+        "public_native_labels": [
+          [
+            [
+              [
+                3,
+                7
+              ],
+              [
+                4,
+                0
+              ],
+              [
+                0,
+                0
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                0,
+                0
+              ],
+              [
+                6,
+                1
+              ],
+              [
+                5,
+                2
+              ]
+            ]
+          ]
+        ],
+        "source_receipts": {
+          "phase_access": "ORIGINAL_CLASSICAL_RECORDS_AND_PREPARATION_RANDOMNESS",
+          "modulus": "9",
+          "dimension": 3,
+          "original_classical_records": [
+            {
+              "label": [
+                7,
+                0,
+                0
+              ],
+              "value": 6,
+              "modulus": 9,
+              "source_id": "known-phase-81201-0"
+            },
+            {
+              "label": [
+                3,
+                4,
+                0
+              ],
+              "value": 8,
+              "modulus": 9,
+              "source_id": "known-phase-81201-1"
+            },
+            {
+              "label": [
+                0,
+                1,
+                2
+              ],
+              "value": 6,
+              "modulus": 9,
+              "source_id": "known-phase-81201-2"
+            },
+            {
+              "label": [
+                0,
+                6,
+                5
+              ],
+              "value": 4,
+              "modulus": 9,
+              "source_id": "known-phase-81201-3"
+            }
+          ],
+          "preparation_random_mask": [
+            5,
+            6,
+            7
+          ],
+          "original_record_count": 4,
+          "known_source_receipts": [
+            {
+              "raw_source_ids": [
+                "known-phase-81201-0",
+                "known-phase-81201-1"
+              ],
+              "known_phase_values": [
+                "5",
+                "2"
+              ],
+              "public_native_ring_label": [
+                [
+                  3,
+                  7
+                ],
+                [
+                  4,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ]
+              ],
+              "packet": {
+                "modulus": "9",
+                "phase_numerators": [
+                  "0",
+                  "5",
+                  "2"
+                ],
+                "original_sources": [
+                  "known-phase-81201-0",
+                  "known-phase-81201-1"
+                ],
+                "phase_access": "ORIGINAL_CLASSICAL_RECORDS_AND_PREPARATION_RANDOMNESS"
+              },
+              "hidden_secret_or_errors_used": false
+            },
+            {
+              "raw_source_ids": [
+                "known-phase-81201-2",
+                "known-phase-81201-3"
+              ],
+              "known_phase_values": [
+                "8",
+                "3"
+              ],
+              "public_native_ring_label": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  6,
+                  1
+                ],
+                [
+                  5,
+                  2
+                ]
+              ],
+              "packet": {
+                "modulus": "9",
+                "phase_numerators": [
+                  "0",
+                  "8",
+                  "3"
+                ],
+                "original_sources": [
+                  "known-phase-81201-2",
+                  "known-phase-81201-3"
+                ],
+                "phase_access": "ORIGINAL_CLASSICAL_RECORDS_AND_PREPARATION_RANDOMNESS"
+              },
+              "hidden_secret_or_errors_used": false
+            }
+          ],
+          "source_error_law_required_for_simulation": false,
+          "source_states_or_hidden_secret_read": false
+        },
+        "original_classical_record_count": 4,
+        "source_bank_reused_with_frozen_errors": true,
+        "preparation_order": [
+          "Hadamard_index_tensor_F3_sites",
+          "known_controlled_diagonal"
+        ],
+        "inverse_order": [
+          "known_controlled_diagonal_inverse",
+          "Hadamard_index_tensor_F3_sites_inverse"
+        ],
+        "reflection_order": [
+          "preparation_inverse",
+          "zero_register_phase_flip",
+          "preparation"
+        ],
+        "controlled_diagonal_branches_per_preparation_upper": 4,
+        "index_comparison_compute_uncompute_pairs_per_preparation_upper": 2,
+        "qutrit_Fourier_gates_per_preparation": 1,
+        "index_Hadamards_per_preparation": 1,
+        "preparation_calls_per_reflection": 2,
+        "multiplexor": "explicit index equality; no QRAM",
+        "zero_test_synthesis_is_a_remaining_obligation": true,
+        "ideal_unknown_state_inverse_supplied": false,
+        "secret_or_errors_read_by_preparation": false,
+        "relative_cohort_phases_may_be_discarded": false,
+        "new_independent_originals_created_by_reuse": false,
+        "hardware_synthesis_implemented": false
+      },
+      "seed_basis_phase_numerators": [
+        0,
+        5,
+        2,
+        0,
+        8,
+        3
+      ],
+      "literal_dimension": 6,
+      "diagnostic_max_errors": {
+        "unitarity": 2.7336071744532853e-16,
+        "inverse_returns_zero": 2.7336071744532853e-16,
+        "reflection_equals_rank_one_formula": 2.9504581591051765e-16,
+        "reflection_squares_to_identity": 3.775166431889533e-16
+      },
+      "central_support": {
+        "native_level": 4,
+        "dimension": 3,
+        "cohorts": 2,
+        "sites_per_cohort": 1,
+        "central_generator": [
+          3,
+          6
+        ],
+        "cohort_central_character_rows": [
+          [
+            2,
+            2,
+            0
+          ],
+          [
+            0,
+            2,
+            2
+          ]
+        ],
+        "vector_stabilizer_central_rank": 2,
+        "ray_stabilizer_central_rank": 1,
+        "nonzero_extra_vector_stabilizer_witness": [
+          1,
+          2,
+          1
+        ],
+        "nonzero_extra_ray_stabilizer_witness": [
+          0,
+          1,
+          0
+        ],
+        "vector_kernel_order": {
+          "base": 3,
+          "exponent": 1
+        },
+        "ray_kernel_order": {
+          "base": 3,
+          "exponent": 2
+        },
+        "full_hidden_subgroup_or_gap_established": false,
+        "noisy_seed_necessarily_fixed_by_H": false
+      },
+      "dense_control_is_a_scalable_receiver": false
+    },
+    {
+      "recipe": {
+        "modulus": "9",
+        "native_even_level": 4,
+        "secret_dimension": 3,
+        "cohorts": 2,
+        "sites_per_cohort": 2,
+        "known_phase_numerators": [
+          [
+            [
+              0,
+              6,
+              2
+            ],
+            [
+              0,
+              1,
+              6
+            ]
+          ],
+          [
+            [
+              0,
+              4,
+              7
+            ],
+            [
+              0,
+              7,
+              4
+            ]
+          ]
+        ],
+        "public_native_labels": [
+          [
+            [
+              [
+                2,
+                7
+              ],
+              [
+                4,
+                2
+              ],
+              [
+                7,
+                7
+              ]
+            ],
+            [
+              [
+                1,
+                5
+              ],
+              [
+                6,
+                1
+              ],
+              [
+                6,
+                0
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                0,
+                8
+              ],
+              [
+                4,
+                5
+              ],
+              [
+                0,
+                2
+              ]
+            ],
+            [
+              [
+                2,
+                8
+              ],
+              [
+                5,
+                2
+              ],
+              [
+                7,
+                2
+              ]
+            ]
+          ]
+        ],
+        "source_receipts": {
+          "phase_access": "ORIGINAL_CLASSICAL_RECORDS_AND_PREPARATION_RANDOMNESS",
+          "modulus": "9",
+          "dimension": 3,
+          "original_classical_records": [
+            {
+              "label": [
+                7,
+                2,
+                7
+              ],
+              "value": 5,
+              "modulus": 9,
+              "source_id": "known-phase-81202-0"
+            },
+            {
+              "label": [
+                2,
+                4,
+                7
+              ],
+              "value": 5,
+              "modulus": 9,
+              "source_id": "known-phase-81202-1"
+            },
+            {
+              "label": [
+                5,
+                1,
+                0
+              ],
+              "value": 3,
+              "modulus": 9,
+              "source_id": "known-phase-81202-2"
+            },
+            {
+              "label": [
+                1,
+                6,
+                6
+              ],
+              "value": 6,
+              "modulus": 9,
+              "source_id": "known-phase-81202-3"
+            },
+            {
+              "label": [
+                8,
+                5,
+                2
+              ],
+              "value": 1,
+              "modulus": 9,
+              "source_id": "known-phase-81202-4"
+            },
+            {
+              "label": [
+                0,
+                4,
+                0
+              ],
+              "value": 6,
+              "modulus": 9,
+              "source_id": "known-phase-81202-5"
+            },
+            {
+              "label": [
+                8,
+                2,
+                2
+              ],
+              "value": 7,
+              "modulus": 9,
+              "source_id": "known-phase-81202-6"
+            },
+            {
+              "label": [
+                2,
+                5,
+                7
+              ],
+              "value": 0,
+              "modulus": 9,
+              "source_id": "known-phase-81202-7"
+            }
+          ],
+          "preparation_random_mask": [
+            0,
+            7,
+            2
+          ],
+          "original_record_count": 8,
+          "known_source_receipts": [
+            {
+              "raw_source_ids": [
+                "known-phase-81202-0",
+                "known-phase-81202-1"
+              ],
+              "known_phase_values": [
+                "6",
+                "2"
+              ],
+              "public_native_ring_label": [
+                [
+                  2,
+                  7
+                ],
+                [
+                  4,
+                  2
+                ],
+                [
+                  7,
+                  7
+                ]
+              ],
+              "packet": {
+                "modulus": "9",
+                "phase_numerators": [
+                  "0",
+                  "6",
+                  "2"
+                ],
+                "original_sources": [
+                  "known-phase-81202-0",
+                  "known-phase-81202-1"
+                ],
+                "phase_access": "ORIGINAL_CLASSICAL_RECORDS_AND_PREPARATION_RANDOMNESS"
+              },
+              "hidden_secret_or_errors_used": false
+            },
+            {
+              "raw_source_ids": [
+                "known-phase-81202-2",
+                "known-phase-81202-3"
+              ],
+              "known_phase_values": [
+                "1",
+                "6"
+              ],
+              "public_native_ring_label": [
+                [
+                  1,
+                  5
+                ],
+                [
+                  6,
+                  1
+                ],
+                [
+                  6,
+                  0
+                ]
+              ],
+              "packet": {
+                "modulus": "9",
+                "phase_numerators": [
+                  "0",
+                  "1",
+                  "6"
+                ],
+                "original_sources": [
+                  "known-phase-81202-2",
+                  "known-phase-81202-3"
+                ],
+                "phase_access": "ORIGINAL_CLASSICAL_RECORDS_AND_PREPARATION_RANDOMNESS"
+              },
+              "hidden_secret_or_errors_used": false
+            },
+            {
+              "raw_source_ids": [
+                "known-phase-81202-4",
+                "known-phase-81202-5"
+              ],
+              "known_phase_values": [
+                "4",
+                "7"
+              ],
+              "public_native_ring_label": [
+                [
+                  0,
+                  8
+                ],
+                [
+                  4,
+                  5
+                ],
+                [
+                  0,
+                  2
+                ]
+              ],
+              "packet": {
+                "modulus": "9",
+                "phase_numerators": [
+                  "0",
+                  "4",
+                  "7"
+                ],
+                "original_sources": [
+                  "known-phase-81202-4",
+                  "known-phase-81202-5"
+                ],
+                "phase_access": "ORIGINAL_CLASSICAL_RECORDS_AND_PREPARATION_RANDOMNESS"
+              },
+              "hidden_secret_or_errors_used": false
+            },
+            {
+              "raw_source_ids": [
+                "known-phase-81202-6",
+                "known-phase-81202-7"
+              ],
+              "known_phase_values": [
+                "7",
+                "4"
+              ],
+              "public_native_ring_label": [
+                [
+                  2,
+                  8
+                ],
+                [
+                  5,
+                  2
+                ],
+                [
+                  7,
+                  2
+                ]
+              ],
+              "packet": {
+                "modulus": "9",
+                "phase_numerators": [
+                  "0",
+                  "7",
+                  "4"
+                ],
+                "original_sources": [
+                  "known-phase-81202-6",
+                  "known-phase-81202-7"
+                ],
+                "phase_access": "ORIGINAL_CLASSICAL_RECORDS_AND_PREPARATION_RANDOMNESS"
+              },
+              "hidden_secret_or_errors_used": false
+            }
+          ],
+          "source_error_law_required_for_simulation": false,
+          "source_states_or_hidden_secret_read": false
+        },
+        "original_classical_record_count": 8,
+        "source_bank_reused_with_frozen_errors": true,
+        "preparation_order": [
+          "Hadamard_index_tensor_F3_sites",
+          "known_controlled_diagonal"
+        ],
+        "inverse_order": [
+          "known_controlled_diagonal_inverse",
+          "Hadamard_index_tensor_F3_sites_inverse"
+        ],
+        "reflection_order": [
+          "preparation_inverse",
+          "zero_register_phase_flip",
+          "preparation"
+        ],
+        "controlled_diagonal_branches_per_preparation_upper": 8,
+        "index_comparison_compute_uncompute_pairs_per_preparation_upper": 2,
+        "qutrit_Fourier_gates_per_preparation": 2,
+        "index_Hadamards_per_preparation": 1,
+        "preparation_calls_per_reflection": 2,
+        "multiplexor": "explicit index equality; no QRAM",
+        "zero_test_synthesis_is_a_remaining_obligation": true,
+        "ideal_unknown_state_inverse_supplied": false,
+        "secret_or_errors_read_by_preparation": false,
+        "relative_cohort_phases_may_be_discarded": false,
+        "new_independent_originals_created_by_reuse": false,
+        "hardware_synthesis_implemented": false
+      },
+      "seed_basis_phase_numerators": [
+        0,
+        1,
+        6,
+        6,
+        7,
+        3,
+        2,
+        3,
+        8,
+        0,
+        7,
+        4,
+        4,
+        2,
+        8,
+        7,
+        5,
+        2
+      ],
+      "literal_dimension": 18,
+      "diagnostic_max_errors": {
+        "unitarity": 5.551115123125783e-16,
+        "inverse_returns_zero": 3.043636481661797e-16,
+        "reflection_equals_rank_one_formula": 5.551164337312848e-16,
+        "reflection_squares_to_identity": 1.3322676295501878e-15
+      },
+      "central_support": {
+        "native_level": 4,
+        "dimension": 3,
+        "cohorts": 2,
+        "sites_per_cohort": 2,
+        "central_generator": [
+          3,
+          6
+        ],
+        "cohort_central_character_rows": [
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            0,
+            2,
+            1
+          ]
+        ],
+        "vector_stabilizer_central_rank": 1,
+        "ray_stabilizer_central_rank": 0,
+        "nonzero_extra_vector_stabilizer_witness": [
+          1,
+          0,
+          0
+        ],
+        "nonzero_extra_ray_stabilizer_witness": [
+          1,
+          0,
+          0
+        ],
+        "vector_kernel_order": {
+          "base": 3,
+          "exponent": 2
+        },
+        "ray_kernel_order": {
+          "base": 3,
+          "exponent": 3
+        },
+        "full_hidden_subgroup_or_gap_established": false,
+        "noisy_seed_necessarily_fixed_by_H": false
+      },
+      "dense_control_is_a_scalable_receiver": false
+    },
+    {
+      "recipe": {
+        "modulus": "9",
+        "native_even_level": 4,
+        "secret_dimension": 3,
+        "cohorts": 4,
+        "sites_per_cohort": 2,
+        "known_phase_numerators": [
+          [
+            [
+              0,
+              2,
+              8
+            ],
+            [
+              0,
+              2,
+              7
+            ]
+          ],
+          [
+            [
+              0,
+              8,
+              6
+            ],
+            [
+              0,
+              5,
+              1
+            ]
+          ],
+          [
+            [
+              0,
+              3,
+              8
+            ],
+            [
+              0,
+              1,
+              6
+            ]
+          ],
+          [
+            [
+              0,
+              6,
+              7
+            ],
+            [
+              0,
+              0,
+              6
+            ]
+          ]
+        ],
+        "public_native_labels": [
+          [
+            [
+              [
+                3,
+                7
+              ],
+              [
+                8,
+                4
+              ],
+              [
+                4,
+                4
+              ]
+            ],
+            [
+              [
+                3,
+                2
+              ],
+              [
+                8,
+                6
+              ],
+              [
+                0,
+                5
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                4,
+                0
+              ],
+              [
+                2,
+                8
+              ],
+              [
+                2,
+                8
+              ]
+            ],
+            [
+              [
+                8,
+                4
+              ],
+              [
+                2,
+                1
+              ],
+              [
+                3,
+                5
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                4,
+                5
+              ],
+              [
+                0,
+                5
+              ],
+              [
+                7,
+                0
+              ]
+            ],
+            [
+              [
+                7,
+                6
+              ],
+              [
+                3,
+                2
+              ],
+              [
+                2,
+                2
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                0,
+                2
+              ],
+              [
+                0,
+                0
+              ],
+              [
+                5,
+                0
+              ]
+            ],
+            [
+              [
+                3,
+                4
+              ],
+              [
+                3,
+                5
+              ],
+              [
+                4,
+                1
+              ]
+            ]
+          ]
+        ],
+        "source_receipts": {
+          "phase_access": "ORIGINAL_CLASSICAL_RECORDS_AND_PREPARATION_RANDOMNESS",
+          "modulus": "9",
+          "dimension": 3,
+          "original_classical_records": [
+            {
+              "label": [
+                7,
+                4,
+                4
+              ],
+              "value": 7,
+              "modulus": 9,
+              "source_id": "known-phase-81402-0"
+            },
+            {
+              "label": [
+                3,
+                8,
+                4
+              ],
+              "value": 6,
+              "modulus": 9,
+              "source_id": "known-phase-81402-1"
+            },
+            {
+              "label": [
+                2,
+                6,
+                5
+              ],
+              "value": 5,
+              "modulus": 9,
+              "source_id": "known-phase-81402-2"
+            },
+            {
+              "label": [
+                3,
+                8,
+                0
+              ],
+              "value": 8,
+              "modulus": 9,
+              "source_id": "known-phase-81402-3"
+            },
+            {
+              "label": [
+                0,
+                8,
+                8
+              ],
+              "value": 3,
+              "modulus": 9,
+              "source_id": "known-phase-81402-4"
+            },
+            {
+              "label": [
+                4,
+                2,
+                2
+              ],
+              "value": 1,
+              "modulus": 9,
+              "source_id": "known-phase-81402-5"
+            },
+            {
+              "label": [
+                4,
+                1,
+                5
+              ],
+              "value": 1,
+              "modulus": 9,
+              "source_id": "known-phase-81402-6"
+            },
+            {
+              "label": [
+                8,
+                2,
+                3
+              ],
+              "value": 5,
+              "modulus": 9,
+              "source_id": "known-phase-81402-7"
+            },
+            {
+              "label": [
+                5,
+                5,
+                0
+              ],
+              "value": 4,
+              "modulus": 9,
+              "source_id": "known-phase-81402-8"
+            },
+            {
+              "label": [
+                4,
+                0,
+                7
+              ],
+              "value": 8,
+              "modulus": 9,
+              "source_id": "known-phase-81402-9"
+            },
+            {
+              "label": [
+                6,
+                2,
+                2
+              ],
+              "value": 2,
+              "modulus": 9,
+              "source_id": "known-phase-81402-10"
+            },
+            {
+              "label": [
+                7,
+                3,
+                2
+              ],
+              "value": 0,
+              "modulus": 9,
+              "source_id": "known-phase-81402-11"
+            },
+            {
+              "label": [
+                2,
+                0,
+                0
+              ],
+              "value": 3,
+              "modulus": 9,
+              "source_id": "known-phase-81402-12"
+            },
+            {
+              "label": [
+                0,
+                0,
+                5
+              ],
+              "value": 1,
+              "modulus": 9,
+              "source_id": "known-phase-81402-13"
+            },
+            {
+              "label": [
+                4,
+                5,
+                1
+              ],
+              "value": 4,
+              "modulus": 9,
+              "source_id": "known-phase-81402-14"
+            },
+            {
+              "label": [
+                3,
+                3,
+                4
+              ],
+              "value": 0,
+              "modulus": 9,
+              "source_id": "known-phase-81402-15"
+            }
+          ],
+          "preparation_random_mask": [
+            6,
+            1,
+            3
+          ],
+          "original_record_count": 16,
+          "known_source_receipts": [
+            {
+              "raw_source_ids": [
+                "known-phase-81402-0",
+                "known-phase-81402-1"
+              ],
+              "known_phase_values": [
+                "2",
+                "8"
+              ],
+              "public_native_ring_label": [
+                [
+                  3,
+                  7
+                ],
+                [
+                  8,
+                  4
+                ],
+                [
+                  4,
+                  4
+                ]
+              ],
+              "packet": {
+                "modulus": "9",
+                "phase_numerators": [
+                  "0",
+                  "2",
+                  "8"
+                ],
+                "original_sources": [
+                  "known-phase-81402-0",
+                  "known-phase-81402-1"
+                ],
+                "phase_access": "ORIGINAL_CLASSICAL_RECORDS_AND_PREPARATION_RANDOMNESS"
+              },
+              "hidden_secret_or_errors_used": false
+            },
+            {
+              "raw_source_ids": [
+                "known-phase-81402-2",
+                "known-phase-81402-3"
+              ],
+              "known_phase_values": [
+                "2",
+                "7"
+              ],
+              "public_native_ring_label": [
+                [
+                  3,
+                  2
+                ],
+                [
+                  8,
+                  6
+                ],
+                [
+                  0,
+                  5
+                ]
+              ],
+              "packet": {
+                "modulus": "9",
+                "phase_numerators": [
+                  "0",
+                  "2",
+                  "7"
+                ],
+                "original_sources": [
+                  "known-phase-81402-2",
+                  "known-phase-81402-3"
+                ],
+                "phase_access": "ORIGINAL_CLASSICAL_RECORDS_AND_PREPARATION_RANDOMNESS"
+              },
+              "hidden_secret_or_errors_used": false
+            },
+            {
+              "raw_source_ids": [
+                "known-phase-81402-4",
+                "known-phase-81402-5"
+              ],
+              "known_phase_values": [
+                "8",
+                "6"
+              ],
+              "public_native_ring_label": [
+                [
+                  4,
+                  0
+                ],
+                [
+                  2,
+                  8
+                ],
+                [
+                  2,
+                  8
+                ]
+              ],
+              "packet": {
+                "modulus": "9",
+                "phase_numerators": [
+                  "0",
+                  "8",
+                  "6"
+                ],
+                "original_sources": [
+                  "known-phase-81402-4",
+                  "known-phase-81402-5"
+                ],
+                "phase_access": "ORIGINAL_CLASSICAL_RECORDS_AND_PREPARATION_RANDOMNESS"
+              },
+              "hidden_secret_or_errors_used": false
+            },
+            {
+              "raw_source_ids": [
+                "known-phase-81402-6",
+                "known-phase-81402-7"
+              ],
+              "known_phase_values": [
+                "5",
+                "1"
+              ],
+              "public_native_ring_label": [
+                [
+                  8,
+                  4
+                ],
+                [
+                  2,
+                  1
+                ],
+                [
+                  3,
+                  5
+                ]
+              ],
+              "packet": {
+                "modulus": "9",
+                "phase_numerators": [
+                  "0",
+                  "5",
+                  "1"
+                ],
+                "original_sources": [
+                  "known-phase-81402-6",
+                  "known-phase-81402-7"
+                ],
+                "phase_access": "ORIGINAL_CLASSICAL_RECORDS_AND_PREPARATION_RANDOMNESS"
+              },
+              "hidden_secret_or_errors_used": false
+            },
+            {
+              "raw_source_ids": [
+                "known-phase-81402-8",
+                "known-phase-81402-9"
+              ],
+              "known_phase_values": [
+                "3",
+                "8"
+              ],
+              "public_native_ring_label": [
+                [
+                  4,
+                  5
+                ],
+                [
+                  0,
+                  5
+                ],
+                [
+                  7,
+                  0
+                ]
+              ],
+              "packet": {
+                "modulus": "9",
+                "phase_numerators": [
+                  "0",
+                  "3",
+                  "8"
+                ],
+                "original_sources": [
+                  "known-phase-81402-8",
+                  "known-phase-81402-9"
+                ],
+                "phase_access": "ORIGINAL_CLASSICAL_RECORDS_AND_PREPARATION_RANDOMNESS"
+              },
+              "hidden_secret_or_errors_used": false
+            },
+            {
+              "raw_source_ids": [
+                "known-phase-81402-10",
+                "known-phase-81402-11"
+              ],
+              "known_phase_values": [
+                "1",
+                "6"
+              ],
+              "public_native_ring_label": [
+                [
+                  7,
+                  6
+                ],
+                [
+                  3,
+                  2
+                ],
+                [
+                  2,
+                  2
+                ]
+              ],
+              "packet": {
+                "modulus": "9",
+                "phase_numerators": [
+                  "0",
+                  "1",
+                  "6"
+                ],
+                "original_sources": [
+                  "known-phase-81402-10",
+                  "known-phase-81402-11"
+                ],
+                "phase_access": "ORIGINAL_CLASSICAL_RECORDS_AND_PREPARATION_RANDOMNESS"
+              },
+              "hidden_secret_or_errors_used": false
+            },
+            {
+              "raw_source_ids": [
+                "known-phase-81402-12",
+                "known-phase-81402-13"
+              ],
+              "known_phase_values": [
+                "6",
+                "7"
+              ],
+              "public_native_ring_label": [
+                [
+                  0,
+                  2
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  5,
+                  0
+                ]
+              ],
+              "packet": {
+                "modulus": "9",
+                "phase_numerators": [
+                  "0",
+                  "6",
+                  "7"
+                ],
+                "original_sources": [
+                  "known-phase-81402-12",
+                  "known-phase-81402-13"
+                ],
+                "phase_access": "ORIGINAL_CLASSICAL_RECORDS_AND_PREPARATION_RANDOMNESS"
+              },
+              "hidden_secret_or_errors_used": false
+            },
+            {
+              "raw_source_ids": [
+                "known-phase-81402-14",
+                "known-phase-81402-15"
+              ],
+              "known_phase_values": [
+                "0",
+                "6"
+              ],
+              "public_native_ring_label": [
+                [
+                  3,
+                  4
+                ],
+                [
+                  3,
+                  5
+                ],
+                [
+                  4,
+                  1
+                ]
+              ],
+              "packet": {
+                "modulus": "9",
+                "phase_numerators": [
+                  "0",
+                  "0",
+                  "6"
+                ],
+                "original_sources": [
+                  "known-phase-81402-14",
+                  "known-phase-81402-15"
+                ],
+                "phase_access": "ORIGINAL_CLASSICAL_RECORDS_AND_PREPARATION_RANDOMNESS"
+              },
+              "hidden_secret_or_errors_used": false
+            }
+          ],
+          "source_error_law_required_for_simulation": false,
+          "source_states_or_hidden_secret_read": false
+        },
+        "original_classical_record_count": 16,
+        "source_bank_reused_with_frozen_errors": true,
+        "preparation_order": [
+          "Hadamard_index_tensor_F3_sites",
+          "known_controlled_diagonal"
+        ],
+        "inverse_order": [
+          "known_controlled_diagonal_inverse",
+          "Hadamard_index_tensor_F3_sites_inverse"
+        ],
+        "reflection_order": [
+          "preparation_inverse",
+          "zero_register_phase_flip",
+          "preparation"
+        ],
+        "controlled_diagonal_branches_per_preparation_upper": 16,
+        "index_comparison_compute_uncompute_pairs_per_preparation_upper": 4,
+        "qutrit_Fourier_gates_per_preparation": 2,
+        "index_Hadamards_per_preparation": 2,
+        "preparation_calls_per_reflection": 2,
+        "multiplexor": "explicit index equality; no QRAM",
+        "zero_test_synthesis_is_a_remaining_obligation": true,
+        "ideal_unknown_state_inverse_supplied": false,
+        "secret_or_errors_read_by_preparation": false,
+        "relative_cohort_phases_may_be_discarded": false,
+        "new_independent_originals_created_by_reuse": false,
+        "hardware_synthesis_implemented": false
+      },
+      "seed_basis_phase_numerators": [
+        0,
+        2,
+        7,
+        2,
+        4,
+        0,
+        8,
+        1,
+        6,
+        0,
+        5,
+        1,
+        8,
+        4,
+        0,
+        6,
+        2,
+        7,
+        0,
+        1,
+        6,
+        3,
+        4,
+        0,
+        8,
+        0,
+        5,
+        0,
+        0,
+        6,
+        6,
+        6,
+        3,
+        7,
+        7,
+        4
+      ],
+      "literal_dimension": 36,
+      "diagnostic_max_errors": {
+        "unitarity": 2.9766560853408183e-16,
+        "inverse_returns_zero": 2.9766560853408183e-16,
+        "reflection_equals_rank_one_formula": 4.440893402971471e-16,
+        "reflection_squares_to_identity": 9.992007221626409e-16
+      },
+      "central_support": {
+        "native_level": 4,
+        "dimension": 3,
+        "cohorts": 4,
+        "sites_per_cohort": 2,
+        "central_generator": [
+          3,
+          6
+        ],
+        "cohort_central_character_rows": [
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            2,
+            2,
+            0
+          ],
+          [
+            2,
+            2,
+            1
+          ],
+          [
+            0,
+            1,
+            2
+          ]
+        ],
+        "vector_stabilizer_central_rank": 3,
+        "ray_stabilizer_central_rank": 2,
+        "nonzero_extra_vector_stabilizer_witness": null,
+        "nonzero_extra_ray_stabilizer_witness": [
+          1,
+          1,
+          0
+        ],
+        "vector_kernel_order": {
+          "base": 3,
+          "exponent": 0
+        },
+        "ray_kernel_order": {
+          "base": 3,
+          "exponent": 1
+        },
+        "full_hidden_subgroup_or_gap_established": false,
+        "noisy_seed_necessarily_fixed_by_H": false
+      },
+      "dense_control_is_a_scalable_receiver": false
+    }
+  ],
+  "exact_IID_error_controls": [
+    {
+      "modulus": 3,
+      "cohorts": 1,
+      "sites_per_cohort": 1,
+      "error_law": [
+        [
+          -1,
+          "1/2"
+        ],
+        [
+          1,
+          "1/2"
+        ]
+      ],
+      "error_configurations_checked": 4,
+      "mean_fidelity_exact": [
+        "1/6"
+      ],
+      "formula_fidelity_exact": [
+        "1/6"
+      ],
+      "mean_trace_distance_squared_exact": [
+        "5/6"
+      ],
+      "mean_reflection_operator_error_squared_exact": [
+        "10/3"
+      ],
+      "ideal_phase_values_or_hidden_secret_used_as_oracle": false
+    },
+    {
+      "modulus": 9,
+      "cohorts": 1,
+      "sites_per_cohort": 2,
+      "error_law": [
+        [
+          -1,
+          "1/2"
+        ],
+        [
+          1,
+          "1/2"
+        ]
+      ],
+      "error_configurations_checked": 16,
+      "mean_fidelity_exact": [
+        "-71/324",
+        "-31/324",
+        "0",
+        "-10/81",
+        "10/81",
+        "5/18"
+      ],
+      "formula_fidelity_exact": [
+        "-71/324",
+        "-31/324",
+        "0",
+        "-10/81",
+        "10/81",
+        "5/18"
+      ],
+      "mean_trace_distance_squared_exact": [
+        "71/324",
+        "31/324",
+        "0",
+        "10/81",
+        "-10/81",
+        "13/18"
+      ],
+      "mean_reflection_operator_error_squared_exact": [
+        "71/81",
+        "31/81",
+        "0",
+        "40/81",
+        "-40/81",
+        "26/9"
+      ],
+      "ideal_phase_values_or_hidden_secret_used_as_oracle": false
+    },
+    {
+      "modulus": 9,
+      "cohorts": 2,
+      "sites_per_cohort": 1,
+      "error_law": [
+        [
+          -1,
+          "1/2"
+        ],
+        [
+          1,
+          "1/2"
+        ]
+      ],
+      "error_configurations_checked": 16,
+      "mean_fidelity_exact": [
+        "-2/9",
+        "-1/12",
+        "0",
+        "-5/36",
+        "5/36",
+        "7/18"
+      ],
+      "formula_fidelity_exact": [
+        "-2/9",
+        "-1/12",
+        "0",
+        "-5/36",
+        "5/36",
+        "7/18"
+      ],
+      "mean_trace_distance_squared_exact": [
+        "2/9",
+        "1/12",
+        "0",
+        "5/36",
+        "-5/36",
+        "11/18"
+      ],
+      "mean_reflection_operator_error_squared_exact": [
+        "8/9",
+        "1/3",
+        "0",
+        "5/9",
+        "-5/9",
+        "22/9"
+      ],
+      "ideal_phase_values_or_hidden_secret_used_as_oracle": false
+    },
+    {
+      "modulus": 9,
+      "cohorts": 2,
+      "sites_per_cohort": 2,
+      "error_law": [
+        [
+          -1,
+          "1/2"
+        ],
+        [
+          1,
+          "1/2"
+        ]
+      ],
+      "error_configurations_checked": 256,
+      "mean_fidelity_exact": [
+        "-131/648",
+        "-67/648",
+        "0",
+        "-8/81",
+        "8/81",
+        "25/108"
+      ],
+      "formula_fidelity_exact": [
+        "-131/648",
+        "-67/648",
+        "0",
+        "-8/81",
+        "8/81",
+        "25/108"
+      ],
+      "mean_trace_distance_squared_exact": [
+        "131/648",
+        "67/648",
+        "0",
+        "8/81",
+        "-8/81",
+        "83/108"
+      ],
+      "mean_reflection_operator_error_squared_exact": [
+        "131/162",
+        "67/162",
+        "0",
+        "32/81",
+        "-32/81",
+        "83/27"
+      ],
+      "ideal_phase_values_or_hidden_secret_used_as_oracle": false
+    }
+  ],
+  "characteristic_controls": [
+    {
+      "cohorts": 1,
+      "sites_per_cohort": 8,
+      "characteristic": "9/10",
+      "single_overlap_mean": "14/15",
+      "single_overlap_mean_squared": "196/225",
+      "single_overlap_squared_mean": "137/150",
+      "mean_seed_fidelity": "124097929967680321/256289062500000000",
+      "mean_pure_trace_distance_squared": "132191132532319679/256289062500000000",
+      "mean_reflection_operator_error_squared": "132191132532319679/64072265625000000",
+      "independence_promise": "INDEPENDENT_SYMMETRIC_ORIGINAL_ERRORS_INDEPENDENT_OF_LABELS",
+      "source_law_inferred_from_records": false
+    },
+    {
+      "cohorts": 4,
+      "sites_per_cohort": 8,
+      "characteristic": "9/10",
+      "single_overlap_mean": "14/15",
+      "single_overlap_mean_squared": "196/225",
+      "single_overlap_squared_mean": "137/150",
+      "mean_seed_fidelity": "828958227318515872843/2242016718750000000000",
+      "mean_pure_trace_distance_squared": "1413058491431484127157/2242016718750000000000",
+      "mean_reflection_operator_error_squared": "1413058491431484127157/560504179687500000000",
+      "independence_promise": "INDEPENDENT_SYMMETRIC_ORIGINAL_ERRORS_INDEPENDENT_OF_LABELS",
+      "source_law_inferred_from_records": false
+    },
+    {
+      "cohorts": 1024,
+      "sites_per_cohort": 64,
+      "characteristic": "999/1000",
+      "single_overlap_mean": "1499/1500",
+      "single_overlap_mean_squared": "2247001/2250000",
+      "single_overlap_squared_mean": "1498667/1500000",
+      "mean_seed_fidelity": "200317860636968158705219743400574621382566788814601937167700212993862793571611719525804281619223748055711237693180256180867600405640259571070156506038476831567667624713872115610018466630374262178342936890908110431536578049740016502659542740434280715282968775454050306202981071419778141901610607343886293876891602390552972816891431224954132405237074759278110282638002832683360539543128356053320099740239322396368697472406530263723/218162239713096731528942056451553578416287915010833862711147446145076855827937833964824676513671875000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "mean_pure_trace_distance_squared": "17844379076128572823722313050978957033721126196231925543447233151214062256326114439020394894448126944288762306819743819132399594359740428929843493961523168432332375286127884389981533369625737821657063109091889568463421950259983497340457259565719284717031224545949693797018928580221858098389392656113706123108397609447027183108568775045867594762925240721889717361997167316639460456871643946679900259760677603631302527593469736277/218162239713096731528942056451553578416287915010833862711147446145076855827937833964824676513671875000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "mean_reflection_operator_error_squared": "17844379076128572823722313050978957033721126196231925543447233151214062256326114439020394894448126944288762306819743819132399594359740428929843493961523168432332375286127884389981533369625737821657063109091889568463421950259983497340457259565719284717031224545949693797018928580221858098389392656113706123108397609447027183108568775045867594762925240721889717361997167316639460456871643946679900259760677603631302527593469736277/54540559928274182882235514112888394604071978752708465677786861536269213956984458491206169128417968750000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "independence_promise": "INDEPENDENT_SYMMETRIC_ORIGINAL_ERRORS_INDEPENDENT_OF_LABELS",
+      "source_law_inferred_from_records": false
+    },
+    {
+      "cohorts": 2,
+      "sites_per_cohort": 3,
+      "characteristic": "-1",
+      "single_overlap_mean": "-1/3",
+      "single_overlap_mean_squared": "1/9",
+      "single_overlap_squared_mean": "1/9",
+      "mean_seed_fidelity": "1/729",
+      "mean_pure_trace_distance_squared": "728/729",
+      "mean_reflection_operator_error_squared": "2912/729",
+      "independence_promise": "INDEPENDENT_SYMMETRIC_ORIGINAL_ERRORS_INDEPENDENT_OF_LABELS",
+      "source_law_inferred_from_records": false
+    },
+    {
+      "cohorts": 4,
+      "sites_per_cohort": 8,
+      "characteristic": "1",
+      "single_overlap_mean": "1",
+      "single_overlap_mean_squared": "1",
+      "single_overlap_squared_mean": "1",
+      "mean_seed_fidelity": "1",
+      "mean_pure_trace_distance_squared": "0",
+      "mean_reflection_operator_error_squared": "0",
+      "independence_promise": "INDEPENDENT_SYMMETRIC_ORIGINAL_ERRORS_INDEPENDENT_OF_LABELS",
+      "source_law_inferred_from_records": false
+    }
+  ],
+  "scalable_reflection_budgets": [
+    {
+      "dimension": 8,
+      "budget": {
+        "modulus": "6561",
+        "cohorts": 8192,
+        "sites_per_cohort": 64,
+        "original_classical_records_paid_once": "1048576",
+        "reflection_query_cap": "8",
+        "initial_point_seed_copies": "1",
+        "source_integer_second_moment_upper": "14479979/262144",
+        "IID_promise": "INDEPENDENT_SYMMETRIC_ORIGINAL_ERRORS_INDEPENDENT_OF_LABELS",
+        "precision_bits": 64,
+        "pi_interval": [
+          "6718758133902934949214239962785319167504959092029518092/2138647136899061028079661453666179440915584564208984375",
+          "151771946115584516382367720337721868331394620512/48310510893944118130209418572485446929931640625"
+        ],
+        "Machin_terms": [
+          15,
+          4
+        ],
+        "moment_constant": "8/3",
+        "mean_pure_trace_distance_squared_upper": "651449832812640595371897338850753657553240400082038626849014044319226179636151415002853924992052998/301400931896959424737019625525443235140032013403968493083668715726286535527833621017634868621826171875",
+        "sqrt_e2_interval": [
+          "857606206973012809/18446744073709551616",
+          "428803103486506405/9223372036854775808"
+        ],
+        "sqrt_K_e2_interval": [
+          "857606206973012809/18446744073709551616",
+          "428803103486506405/9223372036854775808"
+        ],
+        "complete_preparation_operator_error_promise": "1/1099511627776",
+        "zero_phase_operator_error_promise": "1/1099511627776",
+        "complete_receiver_other_operations_loss_promise": "0",
+        "sqrt_K_delta_U_squared_interval": [
+          "1/1099511627776",
+          "1/1099511627776"
+        ],
+        "averaged_complete_receiver_noise_loss_upper": "7289652759270608885/9223372036854775808",
+        "complete_hardware_loss_upper": "25/1099511627776",
+        "source_rounding_loss_upper": "0",
+        "complete_success_loss_upper": "7289652759480324085/9223372036854775808",
+        "bound_is_nonvacuous": true,
+        "noise_is_resampled_per_reflection": false,
+        "averaged_copy_density_bound_used_as_operator_bound": false,
+        "arbitrary_diagonal_queries_or_phase_powers_covered": false,
+        "arbitrary_work_register_allowed_in_hybrid": true,
+        "source_independence_established_by_unique_IDs": false,
+        "receiver_or_classical_separation_supplied": false
+      },
+      "Gaussian_style_moment_is_a_promise_not_source_execution": true
+    },
+    {
+      "dimension": 32,
+      "budget": {
+        "modulus": "1853020188851841",
+        "cohorts": 131072,
+        "sites_per_cohort": 1024,
+        "original_classical_records_paid_once": "268435456",
+        "reflection_query_cap": "32",
+        "initial_point_seed_copies": "4",
+        "source_integer_second_moment_upper": "1144561273430837494886486567339/1073741824",
+        "IID_promise": "INDEPENDENT_SYMMETRIC_ORIGINAL_ERRORS_INDEPENDENT_OF_LABELS",
+        "precision_bits": 64,
+        "pi_interval": [
+          "6718758133902934949214239962785319167504959092029518092/2138647136899061028079661453666179440915584564208984375",
+          "151771946115584516382367720337721868331394620512/48310510893944118130209418572485446929931640625"
+        ],
+        "Machin_terms": [
+          15,
+          4
+        ],
+        "moment_constant": "8/3",
+        "mean_pure_trace_distance_squared_upper": "2340611914813682660299297955086406547066956649873761537944764352554729339383861316421181912854008264039842179919770780969/279757734137892560717654997685280146179400452083506186726076771940287322737397815406445999997231410816311836242675781250000000",
+        "sqrt_e2_interval": [
+          "53357242519308673/18446744073709551616",
+          "26678621259654337/9223372036854775808"
+        ],
+        "sqrt_K_e2_interval": [
+          "106714485038617347/18446744073709551616",
+          "26678621259654337/4611686018427387904"
+        ],
+        "complete_preparation_operator_error_promise": "1/1099511627776",
+        "zero_phase_operator_error_promise": "1/1099511627776",
+        "complete_receiver_other_operations_loss_promise": "0",
+        "sqrt_K_delta_U_squared_interval": [
+          "1/549755813888",
+          "1/549755813888"
+        ],
+        "averaged_complete_receiver_noise_loss_upper": "880394501568593121/4611686018427387904",
+        "complete_hardware_loss_upper": "49/549755813888",
+        "source_rounding_loss_upper": "0",
+        "complete_success_loss_upper": "880394501979634913/4611686018427387904",
+        "bound_is_nonvacuous": true,
+        "noise_is_resampled_per_reflection": false,
+        "averaged_copy_density_bound_used_as_operator_bound": false,
+        "arbitrary_diagonal_queries_or_phase_powers_covered": false,
+        "arbitrary_work_register_allowed_in_hybrid": true,
+        "source_independence_established_by_unique_IDs": false,
+        "receiver_or_classical_separation_supplied": false
+      },
+      "Gaussian_style_moment_is_a_promise_not_source_execution": true
+    },
+    {
+      "dimension": 128,
+      "budget": {
+        "modulus": "11790184577738583171520872861412518665678211592275841109096961",
+        "cohorts": 2097152,
+        "sites_per_cohort": 16384,
+        "original_classical_records_paid_once": "68719476736",
+        "reflection_query_cap": "128",
+        "initial_point_seed_copies": "1",
+        "source_integer_second_moment_upper": "46336150792381577588313262263220434371406283602843045997201608143345357543255478647000589718036536507270555182381989734059/4398046511104",
+        "IID_promise": "INDEPENDENT_SYMMETRIC_ORIGINAL_ERRORS_INDEPENDENT_OF_LABELS",
+        "precision_bits": 64,
+        "pi_interval": [
+          "6718758133902934949214239962785319167504959092029518092/2138647136899061028079661453666179440915584564208984375",
+          "151771946115584516382367720337721868331394620512/48310510893944118130209418572485446929931640625"
+        ],
+        "Machin_terms": [
+          15,
+          4
+        ],
+        "moment_constant": "8/3",
+        "mean_pure_trace_distance_squared_upper": "1042324636205559509684531231551730682450762431411939500569312332157222409696880370537008675110703896935307397761772300494667887136025681701845943996817946133635871344552708722369857542122916680356855039681835670979/31893020971804576486429952859439786083683583675961224484489821775578276455368437204729364776182428294988244903770050959270324202992910180697484297896873960403012044991394939492010962567292153835296630859375000000000000000",
+        "sqrt_e2_interval": [
+          "416853457182099/2305843009213693952",
+          "3334827657456793/18446744073709551616"
+        ],
+        "sqrt_K_e2_interval": [
+          "416853457182099/2305843009213693952",
+          "3334827657456793/18446744073709551616"
+        ],
+        "complete_preparation_operator_error_promise": "1/1099511627776",
+        "zero_phase_operator_error_promise": "1/1099511627776",
+        "complete_receiver_other_operations_loss_promise": "0",
+        "sqrt_K_delta_U_squared_interval": [
+          "1/1099511627776",
+          "1/1099511627776"
+        ],
+        "averaged_complete_receiver_noise_loss_upper": "857050707966395801/18446744073709551616",
+        "complete_hardware_loss_upper": "385/1099511627776",
+        "source_rounding_loss_upper": "0",
+        "complete_success_loss_upper": "857050714425623961/18446744073709551616",
+        "bound_is_nonvacuous": true,
+        "noise_is_resampled_per_reflection": false,
+        "averaged_copy_density_bound_used_as_operator_bound": false,
+        "arbitrary_diagonal_queries_or_phase_powers_covered": false,
+        "arbitrary_work_register_allowed_in_hybrid": true,
+        "source_independence_established_by_unique_IDs": false,
+        "receiver_or_classical_separation_supplied": false
+      },
+      "Gaussian_style_moment_is_a_promise_not_source_execution": true
+    },
+    {
+      "dimension": 1024,
+      "budget": {
+        "modulus": "373391848741020043532959754184866588225409776783734007750636931722079040617265251229993688938803977220468765065431475158108727054592160858581351336982809187314191748594262580938807019951956404285571818041046681288797402925517668012340617298396574731619152386723046235125934896058590588284654793540505936202376547807442730582144527058988756251452817793413352141920744623027518729185432862375737063985485319476416926263819972887006907013899256524297198527698749274196276811060702333710356481",
+        "cohorts": 134217728,
+        "sites_per_cohort": 1,
+        "original_classical_records_paid_once": "268435456",
+        "reflection_query_cap": "1048576",
+        "initial_point_seed_copies": "4",
+        "source_integer_second_moment_upper": "46473824235412263822911762655671902410868744037999395586587428094401082755799775807828334158672764849342402552708193335652089707408253791871786332560412449811261800528243035564465085093830389714005694038435982590600651568189144403821520213046981557878454718338897796400537864679661562305392874567526117396878750592013247367128283824770361245034292664377070732320898488218156605573067656873084114342215338044161849435978615753633480518564981166063985224266198792486592464212191841291165028779998125328658847903523363812744419076140176531519152453203241213262506522540478333318281127366829800308331987301341086441433682655305927708091720960171514245176050742975827947124281603418490133157280449630126479083464467187492221339990937658553409149996059256000887145632661511394777026650133102252272687103649361511661791553734426145530116410477023856467463143256307393495279656254989507857087096012688103480861761311085468190916202213383769125600083575142498948535888183576311002991275/1152921504606846976",
+        "IID_promise": "INDEPENDENT_SYMMETRIC_ORIGINAL_ERRORS_INDEPENDENT_OF_LABELS",
+        "precision_bits": 64,
+        "pi_interval": [
+          "6718758133902934949214239962785319167504959092029518092/2138647136899061028079661453666179440915584564208984375",
+          "151771946115584516382367720337721868331394620512/48310510893944118130209418572485446929931640625"
+        ],
+        "Machin_terms": [
+          15,
+          4
+        ],
+        "moment_constant": "8/3",
+        "mean_pure_trace_distance_squared_upper": "5973837595901675965147636754283139362237005332164602842417719122158139486433686732286741912973924768836822036294759444825833203603065094254584003088226954461312861000508328582459400151330016625995630461801212267915151765911267939337431936557003223268654347502930143611421113876132246538785353691450803256361057412111896182137517092611666717084408364265838885097136766472015195862948966071957046975362883719846790833062496159181148142502297744857267544413103180879409671413766107423396184349148706691324523924398634012240454538241327815383556319250428926802585260118419335843803170655579346336206912005576814904574911921109522035283167947449618790662532498987220882723392121285764674028083968649202207337870864811605565353047211612999645980891059899296704220931082233698789705787317830841223528953444070186231314947329901693948986341534967403412297778208349499984762486434537274375873044201481210897698048656407491286588344571057497100891892513051153808102379443351335399812564282294971025251413349413387739536144916664673146025460137174900596763196617267524956613933/785065565257780803396478765059506986129419071031791680317627887611355442734971700574801738019646702958636664013952536668726752414976094264239213798107534903730960916566089194836205746702056486449702003331510024323558214524229764422519848149501760044492130115854658530496209048392037005118381777051177723292933220756911013623849664518651134363494575068024498850456191412819196853156146713745986112385458428055945033032856046212936759669904999792882395551377848831330388348479541121780023914906147870479508645170194605167668444155259698762696770340742455542668854993850601636791302618567840571926278968201915853283746896332933302954519059887110669942637142664230833435711228326307688227232097496420838140019601461742636636878812977326737492264631012239616701664579869615334062610233723831139086306226336714573741893265124707532458421061388890717171910630272359809497034971942152559011195779852266747267698790742998022635116111975932611189294589581680689225271950446701610953540952792270582831397982608822586440272400753281139094808789062500000000000000000000000000000000000000000000000",
+        "sqrt_e2_interval": [
+          "6360678973/2305843009213693952",
+          "50885431785/18446744073709551616"
+        ],
+        "sqrt_K_e2_interval": [
+          "101770863569/18446744073709551616",
+          "50885431785/9223372036854775808"
+        ],
+        "complete_preparation_operator_error_promise": "1/1099511627776",
+        "zero_phase_operator_error_promise": "1/1099511627776",
+        "complete_receiver_other_operations_loss_promise": "0",
+        "sqrt_K_delta_U_squared_interval": [
+          "1/549755813888",
+          "1/549755813888"
+        ],
+        "averaged_complete_receiver_noise_loss_upper": "53357293404819945/9223372036854775808",
+        "complete_hardware_loss_upper": "1572865/549755813888",
+        "source_rounding_loss_upper": "0",
+        "complete_success_loss_upper": "53383681700663785/9223372036854775808",
+        "bound_is_nonvacuous": true,
+        "noise_is_resampled_per_reflection": false,
+        "averaged_copy_density_bound_used_as_operator_bound": false,
+        "arbitrary_diagonal_queries_or_phase_powers_covered": false,
+        "arbitrary_work_register_allowed_in_hybrid": true,
+        "source_independence_established_by_unique_IDs": false,
+        "receiver_or_classical_separation_supplied": false
+      },
+      "Gaussian_style_moment_is_a_promise_not_source_execution": true
+    }
+  ],
+  "conditional_bank_gap_budgets": [
+    {
+      "dimension": 8,
+      "native_level": 16,
+      "sites_per_cohort": 64,
+      "group_order_compact": {
+        "base": 3,
+        "exponent": 129
+      },
+      "nonhidden_absolute_overlap_upper": "1/2",
+      "ideal_absolute_overlap_gap_lower": "1/2",
+      "bank_failure_bits": 32,
+      "bank_failure_upper": "1/4294967296",
+      "conservative_cohort_threshold": "4672",
+      "Hadamard_cohort_count": "8192",
+      "original_classical_records_required": "1048576",
+      "seed_dimension_compact": {
+        "coefficient": "8192",
+        "base": 3,
+        "exponent": 64
+      },
+      "native_backend_within_current_level_cap": true,
+      "resource_profile_is_an_executed_bank": false,
+      "seed_only_polynomial_dimension_when_sites_fixed": true,
+      "IID_full_native_labels_and_ideal_states_are_external_promises": true,
+      "observed_bank_has_been_certified": false,
+      "efficient_subgroup_decoder_supplied": false,
+      "gap_guarantee_includes_noise": false,
+      "accepted_speedup_candidate": false
+    },
+    {
+      "dimension": 32,
+      "native_level": 64,
+      "sites_per_cohort": 1024,
+      "group_order_compact": {
+        "base": 3,
+        "exponent": 2049
+      },
+      "nonhidden_absolute_overlap_upper": "1/2",
+      "ideal_absolute_overlap_gap_lower": "1/2",
+      "bank_failure_bits": 32,
+      "bank_failure_upper": "1/4294967296",
+      "conservative_cohort_threshold": "66112",
+      "Hadamard_cohort_count": "131072",
+      "original_classical_records_required": "268435456",
+      "seed_dimension_compact": {
+        "coefficient": "131072",
+        "base": 3,
+        "exponent": 1024
+      },
+      "native_backend_within_current_level_cap": true,
+      "resource_profile_is_an_executed_bank": false,
+      "seed_only_polynomial_dimension_when_sites_fixed": true,
+      "IID_full_native_labels_and_ideal_states_are_external_promises": true,
+      "observed_bank_has_been_certified": false,
+      "efficient_subgroup_decoder_supplied": false,
+      "gap_guarantee_includes_noise": false,
+      "accepted_speedup_candidate": false
+    },
+    {
+      "dimension": 128,
+      "native_level": 256,
+      "sites_per_cohort": 16384,
+      "group_order_compact": {
+        "base": 3,
+        "exponent": 32769
+      },
+      "nonhidden_absolute_overlap_upper": "1/2",
+      "ideal_absolute_overlap_gap_lower": "1/2",
+      "bank_failure_bits": 32,
+      "bank_failure_upper": "1/4294967296",
+      "conservative_cohort_threshold": "1049152",
+      "Hadamard_cohort_count": "2097152",
+      "original_classical_records_required": "68719476736",
+      "seed_dimension_compact": {
+        "coefficient": "2097152",
+        "base": 3,
+        "exponent": 16384
+      },
+      "native_backend_within_current_level_cap": true,
+      "resource_profile_is_an_executed_bank": false,
+      "seed_only_polynomial_dimension_when_sites_fixed": true,
+      "IID_full_native_labels_and_ideal_states_are_external_promises": true,
+      "observed_bank_has_been_certified": false,
+      "efficient_subgroup_decoder_supplied": false,
+      "gap_guarantee_includes_noise": false,
+      "accepted_speedup_candidate": false
+    },
+    {
+      "dimension": 1024,
+      "native_level": 2048,
+      "sites_per_cohort": 1,
+      "group_order_compact": {
+        "base": 3,
+        "exponent": 2097153
+      },
+      "nonhidden_absolute_overlap_upper": "1/2",
+      "ideal_absolute_overlap_gap_lower": "1/2",
+      "bank_failure_bits": 32,
+      "bank_failure_upper": "1/4294967296",
+      "conservative_cohort_threshold": "67109440",
+      "Hadamard_cohort_count": "134217728",
+      "original_classical_records_required": "268435456",
+      "seed_dimension_compact": {
+        "coefficient": "134217728",
+        "base": 3,
+        "exponent": 1
+      },
+      "native_backend_within_current_level_cap": false,
+      "resource_profile_is_an_executed_bank": false,
+      "seed_only_polynomial_dimension_when_sites_fixed": true,
+      "IID_full_native_labels_and_ideal_states_are_external_promises": true,
+      "observed_bank_has_been_certified": false,
+      "efficient_subgroup_decoder_supplied": false,
+      "gap_guarantee_includes_noise": false,
+      "accepted_speedup_candidate": false
+    }
+  ],
+  "frozen_bank_copy_budget_falsifier": {
+    "modulus": 81,
+    "reflections_of_noisy_bank": 20,
+    "frozen_error_law": [
+      [
+        -1,
+        "1/2"
+      ],
+      [
+        1,
+        "1/2"
+      ]
+    ],
+    "actual_minus_probability_per_frozen_error": [
+      0.9996239762520948,
+      0.9996239762520948
+    ],
+    "analytic_minus_probability": 0.9996239762521152,
+    "averaged_copy_trace_distance": 0.001503529416103988,
+    "invalid_T_times_copy_budget": 0.03007058832207976,
+    "reflection_operator_errors": [
+      0.07755074251363345,
+      0.07755074251363345
+    ],
+    "correct_clipped_T_operator_budget": 1,
+    "copy_trace_distance_box": [
+      "469135694431349042589651034981942868086308177889474154582485591105913192767344040633303190976400237182534962967201950353176311585450630140329877038108623091319006092197767784405187292413123841999946807116253999827581371457822138882334863278805702369244327527109072832607394536783880795404053050728597587155003194991278633462694923108629499107987607470724363015471142283407207147340856832652470569325862322998409491165700629943021799124924196560603230368906029618836957517568031077838792677455024608872702995732732890328214571629331065174304651724238029326818765282509953718055024961372166733314479226238054871679290296501170446758362206486685328728512913915542324443723309273532658015978013602077746018327740640283128876387590510744344444168751663112004732218665598354897438223330931464721102192783265407369833880638814819557155990004421932437247840120207227794948363059002457566106726043264271423779366779524576667570612000726308989683188489229501937897854721946957481378471926993069587344097169982467308882302273791175131803008247782235413965566044829366267551707321733696211713372513123193013795292631546122004875472094307550796172285125424191624036803676769204576652549678947713358673443718625709639915848302604914757339494315352035874980211828262582467535255945727505045004877350296582306362931252892866494628980453548583752391404578920529422849563179633420168567374974752520980033468945049735641453379703782614958106910680104642550034698857517841053016668298011146585955507498290244199261158573432475640483556348742319369103254785207523587944121632053290030209915599502459471163772260386819223582201916407526052787959093974178724754561753343655809254994540901561264956357870095683397891970557371658384154303511657653649824985306434961558557340842527818707399988040789612001068487998089563477150520573910972701808013849202635221524340112209679548079262033519840788674994750061867255237662054778647964649233114672440829934277426039653119577489032591857641920066227072909057819835490300325744459674545941660042017074965398045089713890701158550010511446/312022957054608610745723577285606610777989914241384044519117064798665993049061840592896971079422626217946819331758257904209592326535116965628321249463017540483212809199260964918106226579474391750325662167067962972813370216410290442460846109841641044127457026894509764972511815864438416204470925759078761711597970475951233470711265242022922836465015631458647496744534551961479682539475650550219162439610774461553449837577587558326451315782202569006823989757127065034569078712491394148837583939927094265499684825731340805737823593577776745461431759305241356270845144678334155632668923204014465110321608988591289479943628125199591713663405318078390980178457834836711431147752639667334314469645189760280480888935832719774729034356200718555481675951221465239360640399575827686037197339153797981535072382626444038856372209958576745169775505901358521191818547197121796166082224572142673502002425543463816010330282340288767711091772380202543157319621107507174110671188413930977489799670221563812172976844336478351701695487133954181421833481704068218591953298074349642135002027613367030703341732407683919054350851812483802535196962699937106703142234575548075897754523383582390880046193674312009012552950753567227743060504776007899082833338887027207866008684985468915291282802783368755091926779085176534178526868979394630905621348298760790984334726108918408186396170513960801297469085079422445739330763601129762823401628607323487980585445990299631579829304937207240010627705905568356339688083951249820818446226448136902117986405704523976851426755243144841203793683429202029918862040127105461008914307304960476870036704963449678012644534624645865693615962791139255303428635287579179166198801377153466643252078036183620893128435007486357547829528898743509425055447253942790479207269020558469329261806892723617499349234850978968757318326651835687876503011712160290847394317632971145188294701710162340804438016872625102730347685426636668644889372958539621158454557794528064712373951986468283953875198146604145243643846254512680860222773038259447275777347385883331298828125",
+      "469135694431349042635826917188972299706690687460977456718210963889670959473228145982272414506309911344885462444807544024200846369060414037871356177204488600675357138702671950480321149724926014647853938281059086424027672022067014456759101088808003100621327795270623438819080860582790988799278331173694872842968061090728053982902140813450580762688502444050261880518788231172800882289242694566793135679421862179571405012591057256916853320220137493999426240191055096028380946823257210258246656545774546044601495099625335280589949319187992207863744360336177622696769415933785877907902357556820764595379113517419355781976373868685247744760016816794395222507308485187855139623851750209096634406554595651527423541255415748327194590716651293881498626644914670440896930668745848646416932698084685688447808266815681995629952498012835276972871754725199137197363754373027247433876288850481493508752613066841671233488718075905743432415163466497177902707935749041027180826937653788733006957370194109690960743072767152714366500706277346931797580832175943769230237830780606013921474096914375487666386325660971768048365424281856952142925394489371061017703021731042263389944674816797267462929474712264144962682898187635185616484855456292014549207576129867858864158329411193093689509168440710847766150097256095334937317664670896908512027741167033000023399115556271718212417803128603307694744171581450888027943632255102527559546312089513358949165866934960438098575795760006740056555355774347026400848677505562197482790699939265111452101493666178092823343621856927038968668489800776900748744816592330894944056289729594568614218909895251058466093478530240363406873739462415765771311387426625298902414958237887244978975592098936852748673152209780845795050626550190938793699831479809418342776746278815060882860411029533634027872725628827364783598710969456583992548949022262402529168001693169777664929017870056813393928709711577297486429292523211478330546385691638421852037607087501425045690022108976716952219591792354662359517682100100037553748060387100333500315099580791221448946/312022957054608610745723577285606610777989914241384044519117064798665993049061840592896971079422626217946819331758257904209592326535116965628321249463017540483212809199260964918106226579474391750325662167067962972813370216410290442460846109841641044127457026894509764972511815864438416204470925759078761711597970475951233470711265242022922836465015631458647496744534551961479682539475650550219162439610774461553449837577587558326451315782202569006823989757127065034569078712491394148837583939927094265499684825731340805737823593577776745461431759305241356270845144678334155632668923204014465110321608988591289479943628125199591713663405318078390980178457834836711431147752639667334314469645189760280480888935832719774729034356200718555481675951221465239360640399575827686037197339153797981535072382626444038856372209958576745169775505901358521191818547197121796166082224572142673502002425543463816010330282340288767711091772380202543157319621107507174110671188413930977489799670221563812172976844336478351701695487133954181421833481704068218591953298074349642135002027613367030703341732407683919054350851812483802535196962699937106703142234575548075897754523383582390880046193674312009012552950753567227743060504776007899082833338887027207866008684985468915291282802783368755091926779085176534178526868979394630905621348298760790984334726108918408186396170513960801297469085079422445739330763601129762823401628607323487980585445990299631579829304937207240010627705905568356339688083951249820818446226448136902117986405704523976851426755243144841203793683429202029918862040127105461008914307304960476870036704963449678012644534624645865693615962791139255303428635287579179166198801377153466643252078036183620893128435007486357547829528898743509425055447253942790479207269020558469329261806892723617499349234850978968757318326651835687876503011712160290847394317632971145188294701710162340804438016872625102730347685426636668644889372958539621158454557794528064712373951986468283953875198146604145243643846254512680860222773038259447275777347385883331298828125"
+    ],
+    "actual_minus_probability_box": [
+      "21433991616777420707281197389114794387821804408177851548211895145792852926073724389069429304238850458199923289968239923474953827472724587813280699037663833738602903500360463149823789256694672058098057808484686759277444827893568585271531508301670535459444313248144062567411030611557003602637702496818282229859411248857215197281536610398776104921900841362032912003017769774933640535618090979969773578523627555478207476914933429117635359665928241326353814688140287930275756752180330227895881603102508508514756894360657207641732330744264659118668270721095252086342876866916666559746639882797637299535865927802923136939907916785656536240489650835728663155498107373225316653731135127869553496866724111733799524853409937214468108972293890626708053819443995715520857852872592577477056907123632301825226466640715261433432784067352675399514773076077209964778380737276162973516473533217800893663155391131819042443081264864454843246100836332448358144328944829037466505078930223437072097782228725344033135287400297986156864202373145606339974597945420378984131695637708518458797964565293321352098736418067138692305713966357085087581509432194944781507503351768404394129002149301597291975260801289530380921493780663634222598509682683698640376038077994533486079033489843577345869976290876730517145936320081898937313224731461741457444855970601138568627951519090829983105748613459876946237505271757734466602641119399825941029656072928729017918058939623067168672562475247110010241838331110460418752867433603241069473711775173892635487563281829782083768864373511702094256054019170508097336289338193334356658818713528300641810845192030054890306543585244051138457566947318213564931964308849617427998641857561652515932217014325095650851875274724355572799683829372296214749856018665855607874192308391146150532484579360283302234499852195125362399744076123885577063789702409391475894305652777466986808125465589097572780766384722261048931806708356739882510383493610471080608255019263572266440352716638364799430195459356451858269062542843301659948429462985076176/21442054338412103507726030980764941517005884772553425935773053441692532233169342861248923850937247970696220116753956670024219196351374085806534333725208286365596080840305820667082712982604935318994254661713622226841157795056362239491691260836138752375979532578516990120153353409781391472067825201889396106231844273506945635961047329172319655439180774163898876398560677878665086212408162369624251332970237620505665222533956006809417614288331659083703875789361595635839028840368005192811250871002267175914084598797177088685987863754139948066338653368828084905119430634781338211233395429708442616956229482369587606829227691541088638123790755090226669186685770309418321551503253300301971202331290795905899923282118556383347099037144680016119906555804254151300076199452712834938577894578620522318143164165974011706596350127605322163364988248131037607836537647645929277793621423748486005393699331549633861179676172959785608244479021242336011467461690813673806251370221556602545920028115091226356160355862247317445932289039857951685907609348428597584086697343818743831026197207889605269047689897647772343096770480709764102694285499436187752749732447013430836105304284296858114420592972807234464143554831277916775901260143395291711975001368612270343147220033032883622410463229468585213248943836759200202934386043580429401882152856041645353676948751278750353487203591313618447977345407794575472300162729496952319659945893465478511508217175390580014019450847483462870721099028734754476342953398584327019857383938069731755640075933976293117195823435339257938582514263356797598053215934108122210820641829460786347669953442201875878496616810975898059771022658743935681760328723681026072469574408788382412892713187991176902189583031757046733345449318451044295566094543077396674610806215180361238799976262817845080424292239481249670343807578097271324723905954387734635190507536797555198326296093683560393693881826032336222327737849867204785667015910317990988732671354074238811101084324866488225970168776082953876471748344556544907391071319580078125",
+      "21433991616777420707287318216066368814715291924136630980951187219423686844452115518550734259062227881228286854125965061435299459388146444774331539554446986215483960430185860697557340325511173267427788836623733330976811162622926688514361472299743738931261992110460636767797408241899246721484568259793353181126568263470099710640560871389857065615952792408233256905370190367522734894980933510238605479441194716831566201795686115918034784301150728162064007388438879498661309984269730694092103329338656912555317561669325281086182221832343972157860265815139457388464909627308183688883604918833553337884096679246562112481504787109009511141782249152649889591863057310119151130842720391825850446931397038305817564027664801151262955944067871609719050633489482115308735704576656709779525070091083300527087456855587747118955566106034687594787864821161025507382599260743674388313746172091336659223665474641359843672033001086968818756800374446688220675607461368591373790566364548372176233526696811828413236764812769821178522846695502480420970351187601661996361498902315331511467044882842741696454245017035356740930557803810336497760373887847446315668864652950831310789058453437063833442709128221381770043004656347153061396237631485167356225453573191928576967821374525596568264242626293201456514636051505183221932972287677020313695723455760419631064745656811004156525256430436719937619388266682640455737860815444667628059294174476227298501179246010510603703716296010990134304416063206302675180614354902620977070721359668067887737880378408766789527400417243813090250540456258923302074057763069689400452008820389378684595597161411895927044590466245628481042543634421955096566024536414422242531176186306268759227101096303766969927318641380257505625485625521741552330381241644998021939026130611322813270504357878551696480418622940160602175496176164162060963880052264275891356626360547904911730234525509030681955805537620895990125690063667795682453422710173104768910119145888754206597119406380197980677785246061861622791363517774869567281803486422576176/21442054338412103507726030980764941517005884772553425935773053441692532233169342861248923850937247970696220116753956670024219196351374085806534333725208286365596080840305820667082712982604935318994254661713622226841157795056362239491691260836138752375979532578516990120153353409781391472067825201889396106231844273506945635961047329172319655439180774163898876398560677878665086212408162369624251332970237620505665222533956006809417614288331659083703875789361595635839028840368005192811250871002267175914084598797177088685987863754139948066338653368828084905119430634781338211233395429708442616956229482369587606829227691541088638123790755090226669186685770309418321551503253300301971202331290795905899923282118556383347099037144680016119906555804254151300076199452712834938577894578620522318143164165974011706596350127605322163364988248131037607836537647645929277793621423748486005393699331549633861179676172959785608244479021242336011467461690813673806251370221556602545920028115091226356160355862247317445932289039857951685907609348428597584086697343818743831026197207889605269047689897647772343096770480709764102694285499436187752749732447013430836105304284296858114420592972807234464143554831277916775901260143395291711975001368612270343147220033032883622410463229468585213248943836759200202934386043580429401882152856041645353676948751278750353487203591313618447977345407794575472300162729496952319659945893465478511508217175390580014019450847483462870721099028734754476342953398584327019857383938069731755640075933976293117195823435339257938582514263356797598053215934108122210820641829460786347669953442201875878496616810975898059771022658743935681760328723681026072469574408788382412892713187991176902189583031757046733345449318451044295566094543077396674610806215180361238799976262817845080424292239481249670343807578097271324723905954387734635190507536797555198326296093683560393693881826032336222327737849867204785667015910317990988732671354074238811101084324866488225970168776082953876471748344556544907391071319580078125"
+    ],
+    "rational_falsifier_precision_bits": 64,
+    "falsifier_is_certified_by_rational_boxes": true,
+    "averaged_copy_budget_falsified": true,
+    "candidate_algorithm": false,
+    "source_model_changed_by_fresh_error_each_call": false
+  },
+  "correlated_bank_IID_budget_falsifier": {
+    "modulus": 81,
+    "cohorts": 2,
+    "sites_per_cohort": 8,
+    "marginal_integer_second_moment": "1",
+    "distinct_original_IDs_can_still_be_correlated": true,
+    "joint_error_law": "same independent sign pair at every site; opposite pair in second cohort",
+    "squared_trace_distance_per_pair": [
+      0.17056524993811029,
+      0.03159751517037246,
+      0.03159751517037246,
+      0.17056524993811029
+    ],
+    "actual_mean_trace_distance_squared": 0.10108138255424137,
+    "misapplied_IID_moment_upper": 0.032091382496048315,
+    "IID_bound_is_falsified_without_IID": true,
+    "mean_trace_distance_squared_exact": [
+      "1483960/14348907",
+      "3480724/43046721",
+      "2390360/43046721",
+      "502600/14348907",
+      "915160/43046721",
+      "573884/43046721",
+      "150880/14348907",
+      "541189/43046721",
+      "787384/43046721",
+      "1045688/43046721",
+      "1124872/43046721",
+      "933650/43046721",
+      "63760/4782969",
+      "245828/43046721",
+      "21848/14348907",
+      "16385/86093442",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "1483960/14348907",
+      "3480724/43046721",
+      "2390360/43046721",
+      "502600/14348907",
+      "915160/43046721",
+      "573884/43046721",
+      "150880/14348907",
+      "541189/43046721",
+      "787384/43046721",
+      "1045688/43046721",
+      "82717/3188646",
+      "868106/43046721",
+      "328012/43046721",
+      "-328012/43046721",
+      "-868106/43046721",
+      "-82717/3188646",
+      "-1045688/43046721",
+      "-787384/43046721",
+      "-541189/43046721",
+      "-150880/14348907",
+      "-573884/43046721",
+      "-915160/43046721",
+      "-502600/14348907",
+      "-2390360/43046721",
+      "-3480724/43046721",
+      "-1483960/14348907",
+      "38197271/43046721"
+    ],
+    "certified_mean_trace_distance_squared_box": [
+      "5336351155635718456190023797379187059324603562571966307582167954165865412524755741194240070126781399053275502103445577835601231737182844797397595031119027593935249064481317417306721119126839946994509479629865026858806186573276683041512945896150823498903138607658426015199189594132627164886881793282899132515323064891065265912939595149521657903639886407797168230081769133420630920944973739104895622660031356620501263915407594951209453583911181171546324493585267611382804899187881013863792238154041570464676608541688657349126207555292764195657188751388747272744738436014913251360229812203073902002673946544144500682720956524487200749982774231220307042152966007416963219437644148524466195169164737203466601827656181042606277260343202484994560465664475345652651536049546974010129477929056590989238035405647248387054012415319209144535128482656621280285705509016012283132019415735954758894920049461774204910328740774542070175589707933350124548917850257586900122488765621267909014171841955357914738981703971850268068170839936706566080936113666076622728648607686469960711678985177610615120401626042364871877990720198257372255013639976834843300035360580035711391127418352720309957048774861382360422034699277645329274949142808226971676218628226175823272326475394373126046531118586387329591905407736662700019484131217087803270292690140267516382720334981603607792557470539638543242153313252308367435060312888286157844581156908659952521530031326429831475199404801199035624241877297092103899499654388125699478901979008346470343127940717272483882787690429976159746500485768127921789296595497862218190042981465601458841670170325469975061147261588202444437975344333093941667589624639531713237739092445999480824530828275310953725325560491441220385239098459844349989069665947484066120322625944613939777440598342911829862416907438906739475937604277034878642741482671486213385287767571191996011155316574201068243805442608215064690741447849109268701054290094700796681620932519532190439348565854819747474410903020934444274418878704989519428461993693111762126856119815478409129416931020900131180591764469983944427644597545437753368541275432667471861202970677719743012643530785961302358841371325328000940065158151420644112256538297057593011911695188299948858970324274733204439241253596614506005151531649073333975116265792628532724568320134801578896683457760939162022565856083177421110957348295484364501279349925132776240841230528545442917558661744506230271085988860268413960013157818390402412665025307446739452025968122931519248192416069127426613329626203481680146572292165927285553772025206184746494922942834066874338073029702752543181279341923917/52792621359054399866353798990639054467753272139510821173739262298772081989284106894158395592937056420942961451241173365728830241017242041009047201722082728224959617296786449310570294247029494747118479653905602701239189888352317197877585217405824505857670310552813670798773316585315264872657224165384064316194894323040435765593926532625926069368549876248331134494317789125091857882562732622933774756903049331719928267932145436463930292907909796510160363573421173631576059519076714845339022727626727771407594405208255949821223144499258398642751661316132001819727158342714328347327465779043735535697696157046236289174128443022064454654934174286778425418224711565417619590404949255474660826527068582720695011158337560916959087757482211028910210201058258884733517734279822056177116342022547359942050660246849386502617671467489566544684323935982270317804652308560653967433979457949072297489888423264799384481314667160435049066506510022559745434980366570446260817841466571293065534965380169801639054230237155792275748159183552774761751996656189081906778066071737569864465435943338827353795172433883517410382355638819109348012084215679847110120843783896511999576249528807058623372739833577417358267983463785946060047709566177607832824722998859926193624007592637202645412883554885704481709095949543885130444681923519087924167143069002317758300916937435383827127045667508297128960087391261431290874367762121184378662779720597360912665406087934816681946126363688101611058962657731349329322656180105769260160088712938825811972237695148713882396714144748389463600442770459927081798033931297480460450204959767398281558313199994854790754368310042372479923184973463447837263193585590708245301592827086521149084961274379236969139234634374498855447932541994288589267268343086568471440707718336921534590719497538181977124481692806697349813458555972677381248908495509417730422880484871763721496986042670503824560013484391711699244277917264028285722411349700015331524384536031425740568706104038472593714671893952902039220688181218909236647869802833659189077166117988012926779804094841318854190039806228358408767248164729371820495056335231964867643846652426105790538250523259731959994407544721953778529261061944801969335671894693908336374254227051207789068904515990372724388796930030086533941232472828295867405051314718800638145450105269382870175300898722946342890226172087911583540012497828714800976210248711313860197899673143748287959844604731062052922110651427716387527591183862106867305982741457798483881627707912929386878889194052608321586216225944574886236978596132847593527113434777947066718677355048883192978337319800630211830139160156250",
+      "5336351155635718456190031037507350474453095599660528209005159271404535691671885446558175200393043841352440588355317639218614029024655592116294144557441037859737389495730218650983522248423829540897340519315567287121852287379991244003730972356940292608080921624336069054371966662312859187061098027226994876587386022839398389909270882858648885934484671820555547022021052900279898324446728802158131568216762702257205543225663724465376105074523455415586367935035563261448883318122787249630884395789256594551203561621508732178799287242548849636916158007126476849849850941752795915913684515019694471492787458988654698710606034121661319092585949414043487685546660785695260205973089487756660699547536945095273352732861841695862714188099151090239439424438129490873926759402524991441069812126210351134127638027935828257777287815395311453381220736162046265453815078430743206298932667382971400907700179813944397309739629836321421205787538012898288228133509937151428966843911485231396927808280853719180111565449206841687234870539079693124034708860810618249195754870817106006003052648318558404910304355052494340307786603940593078259406019732863680431772676069106907003808320170787960831887989836669445694608666108616057452488364524746246048975087957243031040053441843162477536385786362149374295805474923151048197180051929804141835233430417233088490181483472381654976104352963890412740654719001337541170968199463463408419523523344654272832388504546881128502658199508946207391225041614629745313962157726441067592631214850799054487245530299511088647299062970850347590039953382085821600305676449006966362580898087628444947701185748396692082050375380412338512809617029726911559361772044026883568953178410602287790854528006135697820722578395459216955459476118599281743784526840415633754372765732582885854638348872636918921822093430554749526413425824679125391440608170186357986109791758148281959658957222176699572330319015631836358392033122023389789910653091165814431906467198583474975919061906672868024507725542437273098196140651060148786736662827923901165477700979790684270486552915043986719550586761388725401703583514316956333012807840907083509493670379308682182773155778166072965387503056830657474578820344398227218366519128055324350670524186706001609073411574721627828714649864436143487823697486667129816811987808509298501459239641089694545210772442414938857399813186189910160224151511621729560605006804875602135500014509921097251049751609028806021235686606940513548577435251782802998858475253032710796321603279444203808254798943250673589692572357627322063460673799777370699463929267014468604415631320631889520423209814578009337285201298917/52792621359054399866353798990639054467753272139510821173739262298772081989284106894158395592937056420942961451241173365728830241017242041009047201722082728224959617296786449310570294247029494747118479653905602701239189888352317197877585217405824505857670310552813670798773316585315264872657224165384064316194894323040435765593926532625926069368549876248331134494317789125091857882562732622933774756903049331719928267932145436463930292907909796510160363573421173631576059519076714845339022727626727771407594405208255949821223144499258398642751661316132001819727158342714328347327465779043735535697696157046236289174128443022064454654934174286778425418224711565417619590404949255474660826527068582720695011158337560916959087757482211028910210201058258884733517734279822056177116342022547359942050660246849386502617671467489566544684323935982270317804652308560653967433979457949072297489888423264799384481314667160435049066506510022559745434980366570446260817841466571293065534965380169801639054230237155792275748159183552774761751996656189081906778066071737569864465435943338827353795172433883517410382355638819109348012084215679847110120843783896511999576249528807058623372739833577417358267983463785946060047709566177607832824722998859926193624007592637202645412883554885704481709095949543885130444681923519087924167143069002317758300916937435383827127045667508297128960087391261431290874367762121184378662779720597360912665406087934816681946126363688101611058962657731349329322656180105769260160088712938825811972237695148713882396714144748389463600442770459927081798033931297480460450204959767398281558313199994854790754368310042372479923184973463447837263193585590708245301592827086521149084961274379236969139234634374498855447932541994288589267268343086568471440707718336921534590719497538181977124481692806697349813458555972677381248908495509417730422880484871763721496986042670503824560013484391711699244277917264028285722411349700015331524384536031425740568706104038472593714671893952902039220688181218909236647869802833659189077166117988012926779804094841318854190039806228358408767248164729371820495056335231964867643846652426105790538250523259731959994407544721953778529261061944801969335671894693908336374254227051207789068904515990372724388796930030086533941232472828295867405051314718800638145450105269382870175300898722946342890226172087911583540012497828714800976210248711313860197899673143748287959844604731062052922110651427716387527591183862106867305982741457798483881627707912929386878889194052608321586216225944574886236978596132847593527113434777947066718677355048883192978337319800630211830139160156250"
+    ],
+    "misapplied_IID_budget": {
+      "modulus": "81",
+      "cohorts": 2,
+      "sites_per_cohort": 8,
+      "original_classical_records_paid_once": "32",
+      "reflection_query_cap": "1",
+      "initial_point_seed_copies": "0",
+      "source_integer_second_moment_upper": "1",
+      "IID_promise": "INDEPENDENT_SYMMETRIC_ORIGINAL_ERRORS_INDEPENDENT_OF_LABELS",
+      "precision_bits": 64,
+      "pi_interval": [
+        "6718758133902934949214239962785319167504959092029518092/2138647136899061028079661453666179440915584564208984375",
+        "151771946115584516382367720337721868331394620512/48310510893944118130209418572485446929931640625"
+      ],
+      "Machin_terms": [
+        15,
+        4
+      ],
+      "moment_constant": "8/3",
+      "mean_pure_trace_distance_squared_upper": "1474222312173560958144092059764830864098945269871471617782628842504012157359994069522719433097216/45938261224959522136415123536875969385769244536498779619519694517038033154676668345928192138671875",
+      "sqrt_e2_interval": [
+        "1652281119658553609/9223372036854775808",
+        "3304562239317107219/18446744073709551616"
+      ],
+      "sqrt_K_e2_interval": [
+        "0",
+        "0"
+      ],
+      "complete_preparation_operator_error_promise": "0",
+      "zero_phase_operator_error_promise": "0",
+      "complete_receiver_other_operations_loss_promise": "0",
+      "sqrt_K_delta_U_squared_interval": [
+        "0",
+        "0"
+      ],
+      "averaged_complete_receiver_noise_loss_upper": "3304562239317107219/9223372036854775808",
+      "complete_hardware_loss_upper": "0",
+      "source_rounding_loss_upper": "0",
+      "complete_success_loss_upper": "3304562239317107219/9223372036854775808",
+      "bound_is_nonvacuous": true,
+      "noise_is_resampled_per_reflection": false,
+      "averaged_copy_density_bound_used_as_operator_bound": false,
+      "arbitrary_diagonal_queries_or_phase_powers_covered": false,
+      "arbitrary_work_register_allowed_in_hybrid": true,
+      "source_independence_established_by_unique_IDs": false,
+      "receiver_or_classical_separation_supplied": false
+    },
+    "falsifier_is_certified_by_rational_boxes": true,
+    "source_independence_promise_satisfied": false,
+    "universal_noise_no_go": false
+  },
+  "research_decision": "REQUIRE_COSTED_WIDE_COHERENT_WORK_AND_ORIGINAL_DATA_BASELINES_BEFORE_ADMISSION",
+  "unknown_quantum_only_phase_sources_covered": false,
+  "generic_known_preparation_classical_simulation_proved": false,
+  "quantum_hardware_executed": false,
+  "efficient_receiver_supplied": false,
+  "hardness_transfer_admitted": false,
+  "accepted_speedup_candidate": false,
+  "new_active_negative_result_created": false,
+  "remaining_proof_debt": [
+    "external review of IID law, hybrid and bank-gap composition",
+    "source rounding and original-data hardness promises",
+    "complete physical controlled phases/Fourier/zero-test synthesis",
+    "retained coherent work/group circuit and efficient full decoder",
+    "same-original-data and tensor-rank classical attack suite",
+    "no ideal source inverse imported for opaque quantum-only inputs"
+  ]
+}

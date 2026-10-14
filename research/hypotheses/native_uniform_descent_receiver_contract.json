@@ -1,0 +1,29 @@
+{
+  "id": "CONTRACT-NATIVE-UNIFORM-MEASURED-DESCENT",
+  "status": "LOCAL_DERIVATION_AND_FINITE_REFERENCE_REPLAY_EXTERNAL_REVIEW_PENDING",
+  "kind": "source-specific receiver contract, not an accepted speedup candidate",
+  "source": "independent uniformly labelled native cyclotomic phase qutrits over R_L^n",
+  "mechanism": "coarse-only zero-sum support, measured common-index compression, exact pi division, recursively measured lower prefix, top-character reconstruction",
+  "proof_obligations": [
+    {"id": "phase-identity", "status": "LOCAL_DERIVATION_AND_EXACT_FINITE_REPLAY", "statement": "lambda_(t+v)=lambda_v+zeta^v*lambda_t including the retained global phase"},
+    {"id": "same-source-law", "status": "LOCAL_CONDITIONAL_DERIVATION", "statement": "coarse-only selection of disjoint IID ideal-coset lifts and all complement outcomes produce IID lower-level native labelled densities"},
+    {"id": "source-filtration", "status": "IMPLEMENTED_POLICY_AND_SCOPED_TESTS", "statement": "selection inspects residues only; do not condition on or select through unused higher labels"},
+    {"id": "copy-gate-accounting", "status": "FINITE_COMPLETE_REPLAY_AND_UPPER_RECURRENCE", "statement": "all original lineages, SUM gates, complement measurements, digit readouts and leftovers are paid; no cloning, free fresh states or assigned lower secret"},
+    {"id": "rank-failure", "status": "CONDITIONAL_PROJECTIVE_LINE_UNION_BOUND", "statement": "ideal IID uniform character rows give failure <= L*(3^n-1)/(2*3^(n+h))"},
+    {"id": "physical-source", "status": "OPEN_EXTERNAL_PRECONDITION", "statement": "certify the supplied source independence and native phase promises without receiver-side access to amplitudes or secret"},
+    {"id": "noise-composition", "status": "LOCAL_PARTIAL_COMPOSITION_ROBUST_DECODER_OPEN", "statement": "adaptive original-copy/source/gate budgets and exact dephasing/symmetric-error kernel transport are implemented in NATIVE_DESCENT_NOISE_COMPOSITION.md; growing-depth promises remain insufficient and no robust decoder is supplied"},
+    {"id": "growing-depth", "status": "OPEN", "statement": "remove the growing-depth upper cost for a genuine full-ring receiver; the existing upper bound is not a hardness theorem"},
+    {"id": "classical-counterpart", "status": "OPEN", "statement": "compare against original-data classical attacks and efficient decoders of legitimate single-copy quantum measurements"},
+    {"id": "external-review-and-novelty", "status": "OPEN", "statement": "review the general source-law proof and compare known nilpotent HSP/hidden-shift descent constructions; do not claim new algorithmic novelty"}
+  ],
+  "falsifiers": [
+    "literal SUM/measurement replay disagrees with retained amplitudes or native child label",
+    "higher-label or outcome filtering makes the claimed IID child law false",
+    "unknown lower secret or top digit is used in any receiver gate parameter",
+    "physical lineage is reused, discarded without accounting, or regenerated without cost",
+    "finite source failure is turned into guessed recovery or an unbudgeted retry",
+    "a polynomial growing-depth solver, classical separation or universal lower bound is inferred from these controls"
+  ],
+  "artifacts": ["research/NATIVE_UNIFORM_DESCENT_RECEIVER.md", "research/reductions/native_uniform_descent_receiver.json", "research/certificates/native_uniform_descent_crosscheck.js", "tests/test_native_uniform_descent_receiver.py"],
+  "accepted_speedup_candidate": false
+}

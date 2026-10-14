@@ -1,0 +1,1442 @@
+{
+  "status": "PHYSICAL_DCP_BAD_REGISTER_CNOT_LINEAGE_AUDIT_NOT_A_GENERAL_DCP_NO_GO",
+  "producer_sha256": "8742d49e96d40012bd87eb508e9cc0776fec88d03074b1b17741a1796d08bfe8",
+  "derivation_sha256": "8bdee120cfbdb26d4f056f03c7af15004c4cf234755205be6bdd449f8f7c05c4",
+  "primary_latex_sha256": "884dc13648dcf9d93c489cb6c6b159408f24da59b536c3aedaec1fe0d52069bb",
+  "dependency_sha256": {
+    "dcp_sample_workbench.py": "21f96597229f03c57003b3aac33a3eb4d2cf56e42a41fdc0d0174d104e302df8",
+    "dcp_carry_packets.py": "c3d345cc0d123a86e29c976959471d645945e767f6d0ee1bc6bd79149a0322c6",
+    "dcp_physical_phase_noise.py": "19dfbdf5b2cb037b41c772cc51a5309e030fe07f40fd17a7a1db79f0a48e073f",
+    "native_basis_lottery.py": "8dd21b0b64454b5daaa9b6cc67ff6eb2a715edd045d5f6af5d3c5f3fbd1a0038",
+    "native_small_multiple_completion.py": "5519f9809f60ed4ab1447c5bf6aa217b8bacab3d709abb85314212749149eaac",
+    "ternary_measured_lattice_decoder.py": "151f7c5fbb9e09ad8c231fb841c6d8ce385d54123acd9d15f33b3ce51efced4b"
+  },
+  "existing_state_input_theorem_contract": {
+    "theorem_contract_id": "THM-REGEV-USVP-TO-DCP-2003",
+    "source_problem": "theta(n^2.5)-unique-SVP",
+    "target_problem": "dihedral-coset-problem-state-input",
+    "supplied_resources": [
+      "independent D_N register samples, each normally a coset state but subject to the theorem's bad-register promise",
+      "known uniformly distributed Fourier label k after the group Fourier transform",
+      "single-qubit phase state (|0> + omega_N^(k*s)|1>)/sqrt(2)"
+    ],
+    "allowed_operations": [
+      "classical computation on known labels",
+      "two-state CNOT combine",
+      "computational-basis branch measurement",
+      "postselection with charged success probability"
+    ],
+    "forbidden_resources": [
+      "coherent phase evaluator",
+      "chosen label queries",
+      "full phase truth table",
+      "family-specific advice not constructed from the lattice instance"
+    ],
+    "label_distribution": "for a good register k is uniform in Z_N; k=0 is legal and carries no hidden-shift information",
+    "state_expression": "|psi_k> = (|0> + exp(2*pi*i*k*s/N)|1>)/sqrt(2)",
+    "failure_parameter": 1,
+    "maximum_bad_register_probability": "1/log2(N) for the f=1 theorem specialization",
+    "bad_register_state": "arbitrary computational-basis state |b,x> rather than a coset state",
+    "current_workbench_models_bad_registers": false,
+    "full_family_scope": "all good and bad-register DCP inputs emitted by the exact f=1 lattice-to-DCP theorem contract",
+    "full_family_coverage": false
+  },
+  "literal_physical_merge_controls": [
+    {
+      "case": "GOOD_GOOD",
+      "private_source_parameters": {
+        "left_bad_probability": "0",
+        "left_bad_zero_probability": "1/2",
+        "right_bad_probability": "0",
+        "right_bad_zero_probability": "1/2"
+      },
+      "input_audits": [
+        {
+          "modulus": 32,
+          "measured_Fourier_label": 11,
+          "original_state_receipt_IDs": [
+            "GOOD_GOOD:left"
+          ],
+          "merge_depth": 0,
+          "PRIVATE_density_zero_population": "1/2",
+          "PRIVATE_density_phase_visibility": "1",
+          "density_expression": "[[a,v*exp(-2*pi*i*k*s/N)/2],[v*exp(2*pi*i*k*s/N)/2,1-a]]",
+          "phase_visibility_alone_certifies_secret_information_at_zero_label": false,
+          "source_noise_parameters_or_phase_given_to_solver": false
+        },
+        {
+          "modulus": 32,
+          "measured_Fourier_label": 7,
+          "original_state_receipt_IDs": [
+            "GOOD_GOOD:right"
+          ],
+          "merge_depth": 0,
+          "PRIVATE_density_zero_population": "1/2",
+          "PRIVATE_density_phase_visibility": "1",
+          "density_expression": "[[a,v*exp(-2*pi*i*k*s/N)/2],[v*exp(2*pi*i*k*s/N)/2,1-a]]",
+          "phase_visibility_alone_certifies_secret_information_at_zero_label": false,
+          "source_noise_parameters_or_phase_given_to_solver": false
+        }
+      ],
+      "literal_branches": [
+        {
+          "merge": {
+            "input_public_views": [
+              {
+                "modulus": 32,
+                "measured_Fourier_label": 11,
+                "original_state_receipt_IDs": [
+                  "GOOD_GOOD:left"
+                ],
+                "merge_depth": 0
+              },
+              {
+                "modulus": 32,
+                "measured_Fourier_label": 7,
+                "original_state_receipt_IDs": [
+                  "GOOD_GOOD:right"
+                ],
+                "merge_depth": 0
+              }
+            ],
+            "branch": 0,
+            "exact_branch_probability": "1/2",
+            "branch_chosen_for_free": false,
+            "conditional_product_source_model_required": true,
+            "receipt_IDs_prove_statistical_independence": false,
+            "coherent_phase_evaluator_or_chosen_label_query_supplied": false,
+            "status": "ACTUAL_CNOT_MEASURED_TARGET_BRANCH",
+            "output_audit": {
+              "modulus": 32,
+              "measured_Fourier_label": 18,
+              "original_state_receipt_IDs": [
+                "GOOD_GOOD:left",
+                "GOOD_GOOD:right"
+              ],
+              "merge_depth": 1,
+              "PRIVATE_density_zero_population": "1/2",
+              "PRIVATE_density_phase_visibility": "1",
+              "density_expression": "[[a,v*exp(-2*pi*i*k*s/N)/2],[v*exp(2*pi*i*k*s/N)/2,1-a]]",
+              "phase_visibility_alone_certifies_secret_information_at_zero_label": false,
+              "source_noise_parameters_or_phase_given_to_solver": false
+            }
+          },
+          "diagnostic_literal_probability": 0.5,
+          "literal_density_agrees_with_exact_output": true,
+          "diagnostic_output_visibility": 1.0
+        },
+        {
+          "merge": {
+            "input_public_views": [
+              {
+                "modulus": 32,
+                "measured_Fourier_label": 11,
+                "original_state_receipt_IDs": [
+                  "GOOD_GOOD:left"
+                ],
+                "merge_depth": 0
+              },
+              {
+                "modulus": 32,
+                "measured_Fourier_label": 7,
+                "original_state_receipt_IDs": [
+                  "GOOD_GOOD:right"
+                ],
+                "merge_depth": 0
+              }
+            ],
+            "branch": 1,
+            "exact_branch_probability": "1/2",
+            "branch_chosen_for_free": false,
+            "conditional_product_source_model_required": true,
+            "receipt_IDs_prove_statistical_independence": false,
+            "coherent_phase_evaluator_or_chosen_label_query_supplied": false,
+            "status": "ACTUAL_CNOT_MEASURED_TARGET_BRANCH",
+            "output_audit": {
+              "modulus": 32,
+              "measured_Fourier_label": 4,
+              "original_state_receipt_IDs": [
+                "GOOD_GOOD:left",
+                "GOOD_GOOD:right"
+              ],
+              "merge_depth": 1,
+              "PRIVATE_density_zero_population": "1/2",
+              "PRIVATE_density_phase_visibility": "1",
+              "density_expression": "[[a,v*exp(-2*pi*i*k*s/N)/2],[v*exp(2*pi*i*k*s/N)/2,1-a]]",
+              "phase_visibility_alone_certifies_secret_information_at_zero_label": false,
+              "source_noise_parameters_or_phase_given_to_solver": false
+            }
+          },
+          "diagnostic_literal_probability": 0.5,
+          "literal_density_agrees_with_exact_output": true,
+          "diagnostic_output_visibility": 1.0
+        }
+      ],
+      "hidden_s_ONLY_FOR_LITERAL_CALIBRATION": 13
+    },
+    {
+      "case": "GOOD_BAD_ZERO",
+      "private_source_parameters": {
+        "left_bad_probability": "0",
+        "left_bad_zero_probability": "1/2",
+        "right_bad_probability": "1",
+        "right_bad_zero_probability": "1"
+      },
+      "input_audits": [
+        {
+          "modulus": 32,
+          "measured_Fourier_label": 11,
+          "original_state_receipt_IDs": [
+            "GOOD_BAD_ZERO:left"
+          ],
+          "merge_depth": 0,
+          "PRIVATE_density_zero_population": "1/2",
+          "PRIVATE_density_phase_visibility": "1",
+          "density_expression": "[[a,v*exp(-2*pi*i*k*s/N)/2],[v*exp(2*pi*i*k*s/N)/2,1-a]]",
+          "phase_visibility_alone_certifies_secret_information_at_zero_label": false,
+          "source_noise_parameters_or_phase_given_to_solver": false
+        },
+        {
+          "modulus": 32,
+          "measured_Fourier_label": 7,
+          "original_state_receipt_IDs": [
+            "GOOD_BAD_ZERO:right"
+          ],
+          "merge_depth": 0,
+          "PRIVATE_density_zero_population": "1",
+          "PRIVATE_density_phase_visibility": "0",
+          "density_expression": "[[a,v*exp(-2*pi*i*k*s/N)/2],[v*exp(2*pi*i*k*s/N)/2,1-a]]",
+          "phase_visibility_alone_certifies_secret_information_at_zero_label": false,
+          "source_noise_parameters_or_phase_given_to_solver": false
+        }
+      ],
+      "literal_branches": [
+        {
+          "merge": {
+            "input_public_views": [
+              {
+                "modulus": 32,
+                "measured_Fourier_label": 11,
+                "original_state_receipt_IDs": [
+                  "GOOD_BAD_ZERO:left"
+                ],
+                "merge_depth": 0
+              },
+              {
+                "modulus": 32,
+                "measured_Fourier_label": 7,
+                "original_state_receipt_IDs": [
+                  "GOOD_BAD_ZERO:right"
+                ],
+                "merge_depth": 0
+              }
+            ],
+            "branch": 0,
+            "exact_branch_probability": "1/2",
+            "branch_chosen_for_free": false,
+            "conditional_product_source_model_required": true,
+            "receipt_IDs_prove_statistical_independence": false,
+            "coherent_phase_evaluator_or_chosen_label_query_supplied": false,
+            "status": "ACTUAL_CNOT_MEASURED_TARGET_BRANCH",
+            "output_audit": {
+              "modulus": 32,
+              "measured_Fourier_label": 18,
+              "original_state_receipt_IDs": [
+                "GOOD_BAD_ZERO:left",
+                "GOOD_BAD_ZERO:right"
+              ],
+              "merge_depth": 1,
+              "PRIVATE_density_zero_population": "1",
+              "PRIVATE_density_phase_visibility": "0",
+              "density_expression": "[[a,v*exp(-2*pi*i*k*s/N)/2],[v*exp(2*pi*i*k*s/N)/2,1-a]]",
+              "phase_visibility_alone_certifies_secret_information_at_zero_label": false,
+              "source_noise_parameters_or_phase_given_to_solver": false
+            }
+          },
+          "diagnostic_literal_probability": 0.5,
+          "literal_density_agrees_with_exact_output": true,
+          "diagnostic_output_visibility": 0.0
+        },
+        {
+          "merge": {
+            "input_public_views": [
+              {
+                "modulus": 32,
+                "measured_Fourier_label": 11,
+                "original_state_receipt_IDs": [
+                  "GOOD_BAD_ZERO:left"
+                ],
+                "merge_depth": 0
+              },
+              {
+                "modulus": 32,
+                "measured_Fourier_label": 7,
+                "original_state_receipt_IDs": [
+                  "GOOD_BAD_ZERO:right"
+                ],
+                "merge_depth": 0
+              }
+            ],
+            "branch": 1,
+            "exact_branch_probability": "1/2",
+            "branch_chosen_for_free": false,
+            "conditional_product_source_model_required": true,
+            "receipt_IDs_prove_statistical_independence": false,
+            "coherent_phase_evaluator_or_chosen_label_query_supplied": false,
+            "status": "ACTUAL_CNOT_MEASURED_TARGET_BRANCH",
+            "output_audit": {
+              "modulus": 32,
+              "measured_Fourier_label": 4,
+              "original_state_receipt_IDs": [
+                "GOOD_BAD_ZERO:left",
+                "GOOD_BAD_ZERO:right"
+              ],
+              "merge_depth": 1,
+              "PRIVATE_density_zero_population": "0",
+              "PRIVATE_density_phase_visibility": "0",
+              "density_expression": "[[a,v*exp(-2*pi*i*k*s/N)/2],[v*exp(2*pi*i*k*s/N)/2,1-a]]",
+              "phase_visibility_alone_certifies_secret_information_at_zero_label": false,
+              "source_noise_parameters_or_phase_given_to_solver": false
+            }
+          },
+          "diagnostic_literal_probability": 0.5,
+          "literal_density_agrees_with_exact_output": true,
+          "diagnostic_output_visibility": 0.0
+        }
+      ],
+      "hidden_s_ONLY_FOR_LITERAL_CALIBRATION": 13
+    },
+    {
+      "case": "BAD_ONE_GOOD",
+      "private_source_parameters": {
+        "left_bad_probability": "1",
+        "left_bad_zero_probability": "0",
+        "right_bad_probability": "0",
+        "right_bad_zero_probability": "1/2"
+      },
+      "input_audits": [
+        {
+          "modulus": 32,
+          "measured_Fourier_label": 11,
+          "original_state_receipt_IDs": [
+            "BAD_ONE_GOOD:left"
+          ],
+          "merge_depth": 0,
+          "PRIVATE_density_zero_population": "0",
+          "PRIVATE_density_phase_visibility": "0",
+          "density_expression": "[[a,v*exp(-2*pi*i*k*s/N)/2],[v*exp(2*pi*i*k*s/N)/2,1-a]]",
+          "phase_visibility_alone_certifies_secret_information_at_zero_label": false,
+          "source_noise_parameters_or_phase_given_to_solver": false
+        },
+        {
+          "modulus": 32,
+          "measured_Fourier_label": 7,
+          "original_state_receipt_IDs": [
+            "BAD_ONE_GOOD:right"
+          ],
+          "merge_depth": 0,
+          "PRIVATE_density_zero_population": "1/2",
+          "PRIVATE_density_phase_visibility": "1",
+          "density_expression": "[[a,v*exp(-2*pi*i*k*s/N)/2],[v*exp(2*pi*i*k*s/N)/2,1-a]]",
+          "phase_visibility_alone_certifies_secret_information_at_zero_label": false,
+          "source_noise_parameters_or_phase_given_to_solver": false
+        }
+      ],
+      "literal_branches": [
+        {
+          "merge": {
+            "input_public_views": [
+              {
+                "modulus": 32,
+                "measured_Fourier_label": 11,
+                "original_state_receipt_IDs": [
+                  "BAD_ONE_GOOD:left"
+                ],
+                "merge_depth": 0
+              },
+              {
+                "modulus": 32,
+                "measured_Fourier_label": 7,
+                "original_state_receipt_IDs": [
+                  "BAD_ONE_GOOD:right"
+                ],
+                "merge_depth": 0
+              }
+            ],
+            "branch": 0,
+            "exact_branch_probability": "1/2",
+            "branch_chosen_for_free": false,
+            "conditional_product_source_model_required": true,
+            "receipt_IDs_prove_statistical_independence": false,
+            "coherent_phase_evaluator_or_chosen_label_query_supplied": false,
+            "status": "ACTUAL_CNOT_MEASURED_TARGET_BRANCH",
+            "output_audit": {
+              "modulus": 32,
+              "measured_Fourier_label": 18,
+              "original_state_receipt_IDs": [
+                "BAD_ONE_GOOD:left",
+                "BAD_ONE_GOOD:right"
+              ],
+              "merge_depth": 1,
+              "PRIVATE_density_zero_population": "0",
+              "PRIVATE_density_phase_visibility": "0",
+              "density_expression": "[[a,v*exp(-2*pi*i*k*s/N)/2],[v*exp(2*pi*i*k*s/N)/2,1-a]]",
+              "phase_visibility_alone_certifies_secret_information_at_zero_label": false,
+              "source_noise_parameters_or_phase_given_to_solver": false
+            }
+          },
+          "diagnostic_literal_probability": 0.5,
+          "literal_density_agrees_with_exact_output": true,
+          "diagnostic_output_visibility": 0.0
+        },
+        {
+          "merge": {
+            "input_public_views": [
+              {
+                "modulus": 32,
+                "measured_Fourier_label": 11,
+                "original_state_receipt_IDs": [
+                  "BAD_ONE_GOOD:left"
+                ],
+                "merge_depth": 0
+              },
+              {
+                "modulus": 32,
+                "measured_Fourier_label": 7,
+                "original_state_receipt_IDs": [
+                  "BAD_ONE_GOOD:right"
+                ],
+                "merge_depth": 0
+              }
+            ],
+            "branch": 1,
+            "exact_branch_probability": "1/2",
+            "branch_chosen_for_free": false,
+            "conditional_product_source_model_required": true,
+            "receipt_IDs_prove_statistical_independence": false,
+            "coherent_phase_evaluator_or_chosen_label_query_supplied": false,
+            "status": "ACTUAL_CNOT_MEASURED_TARGET_BRANCH",
+            "output_audit": {
+              "modulus": 32,
+              "measured_Fourier_label": 4,
+              "original_state_receipt_IDs": [
+                "BAD_ONE_GOOD:left",
+                "BAD_ONE_GOOD:right"
+              ],
+              "merge_depth": 1,
+              "PRIVATE_density_zero_population": "0",
+              "PRIVATE_density_phase_visibility": "0",
+              "density_expression": "[[a,v*exp(-2*pi*i*k*s/N)/2],[v*exp(2*pi*i*k*s/N)/2,1-a]]",
+              "phase_visibility_alone_certifies_secret_information_at_zero_label": false,
+              "source_noise_parameters_or_phase_given_to_solver": false
+            }
+          },
+          "diagnostic_literal_probability": 0.5,
+          "literal_density_agrees_with_exact_output": true,
+          "diagnostic_output_visibility": 0.0
+        }
+      ],
+      "hidden_s_ONLY_FOR_LITERAL_CALIBRATION": 13
+    },
+    {
+      "case": "BAD_ZERO_BAD_ZERO",
+      "private_source_parameters": {
+        "left_bad_probability": "1",
+        "left_bad_zero_probability": "1",
+        "right_bad_probability": "1",
+        "right_bad_zero_probability": "1"
+      },
+      "input_audits": [
+        {
+          "modulus": 32,
+          "measured_Fourier_label": 11,
+          "original_state_receipt_IDs": [
+            "BAD_ZERO_BAD_ZERO:left"
+          ],
+          "merge_depth": 0,
+          "PRIVATE_density_zero_population": "1",
+          "PRIVATE_density_phase_visibility": "0",
+          "density_expression": "[[a,v*exp(-2*pi*i*k*s/N)/2],[v*exp(2*pi*i*k*s/N)/2,1-a]]",
+          "phase_visibility_alone_certifies_secret_information_at_zero_label": false,
+          "source_noise_parameters_or_phase_given_to_solver": false
+        },
+        {
+          "modulus": 32,
+          "measured_Fourier_label": 7,
+          "original_state_receipt_IDs": [
+            "BAD_ZERO_BAD_ZERO:right"
+          ],
+          "merge_depth": 0,
+          "PRIVATE_density_zero_population": "1",
+          "PRIVATE_density_phase_visibility": "0",
+          "density_expression": "[[a,v*exp(-2*pi*i*k*s/N)/2],[v*exp(2*pi*i*k*s/N)/2,1-a]]",
+          "phase_visibility_alone_certifies_secret_information_at_zero_label": false,
+          "source_noise_parameters_or_phase_given_to_solver": false
+        }
+      ],
+      "literal_branches": [
+        {
+          "merge": {
+            "input_public_views": [
+              {
+                "modulus": 32,
+                "measured_Fourier_label": 11,
+                "original_state_receipt_IDs": [
+                  "BAD_ZERO_BAD_ZERO:left"
+                ],
+                "merge_depth": 0
+              },
+              {
+                "modulus": 32,
+                "measured_Fourier_label": 7,
+                "original_state_receipt_IDs": [
+                  "BAD_ZERO_BAD_ZERO:right"
+                ],
+                "merge_depth": 0
+              }
+            ],
+            "branch": 0,
+            "exact_branch_probability": "1",
+            "branch_chosen_for_free": false,
+            "conditional_product_source_model_required": true,
+            "receipt_IDs_prove_statistical_independence": false,
+            "coherent_phase_evaluator_or_chosen_label_query_supplied": false,
+            "status": "ACTUAL_CNOT_MEASURED_TARGET_BRANCH",
+            "output_audit": {
+              "modulus": 32,
+              "measured_Fourier_label": 18,
+              "original_state_receipt_IDs": [
+                "BAD_ZERO_BAD_ZERO:left",
+                "BAD_ZERO_BAD_ZERO:right"
+              ],
+              "merge_depth": 1,
+              "PRIVATE_density_zero_population": "1",
+              "PRIVATE_density_phase_visibility": "0",
+              "density_expression": "[[a,v*exp(-2*pi*i*k*s/N)/2],[v*exp(2*pi*i*k*s/N)/2,1-a]]",
+              "phase_visibility_alone_certifies_secret_information_at_zero_label": false,
+              "source_noise_parameters_or_phase_given_to_solver": false
+            }
+          },
+          "diagnostic_literal_probability": 1.0,
+          "literal_density_agrees_with_exact_output": true,
+          "diagnostic_output_visibility": 0.0
+        },
+        {
+          "merge": {
+            "input_public_views": [
+              {
+                "modulus": 32,
+                "measured_Fourier_label": 11,
+                "original_state_receipt_IDs": [
+                  "BAD_ZERO_BAD_ZERO:left"
+                ],
+                "merge_depth": 0
+              },
+              {
+                "modulus": 32,
+                "measured_Fourier_label": 7,
+                "original_state_receipt_IDs": [
+                  "BAD_ZERO_BAD_ZERO:right"
+                ],
+                "merge_depth": 0
+              }
+            ],
+            "branch": 1,
+            "exact_branch_probability": "0",
+            "branch_chosen_for_free": false,
+            "conditional_product_source_model_required": true,
+            "receipt_IDs_prove_statistical_independence": false,
+            "coherent_phase_evaluator_or_chosen_label_query_supplied": false,
+            "status": "IMPOSSIBLE_BRANCH_NOT_A_POSTSELECTED_STATE",
+            "output_audit": null
+          },
+          "diagnostic_literal_probability": 0.0,
+          "literal_density_agrees_with_exact_output": false,
+          "diagnostic_output_visibility": 0
+        }
+      ],
+      "hidden_s_ONLY_FOR_LITERAL_CALIBRATION": 13
+    },
+    {
+      "case": "BALANCED_CONTAMINATION",
+      "private_source_parameters": {
+        "left_bad_probability": "1/32",
+        "left_bad_zero_probability": "1/2",
+        "right_bad_probability": "1/32",
+        "right_bad_zero_probability": "1/2"
+      },
+      "input_audits": [
+        {
+          "modulus": 32,
+          "measured_Fourier_label": 11,
+          "original_state_receipt_IDs": [
+            "BALANCED_CONTAMINATION:left"
+          ],
+          "merge_depth": 0,
+          "PRIVATE_density_zero_population": "1/2",
+          "PRIVATE_density_phase_visibility": "31/32",
+          "density_expression": "[[a,v*exp(-2*pi*i*k*s/N)/2],[v*exp(2*pi*i*k*s/N)/2,1-a]]",
+          "phase_visibility_alone_certifies_secret_information_at_zero_label": false,
+          "source_noise_parameters_or_phase_given_to_solver": false
+        },
+        {
+          "modulus": 32,
+          "measured_Fourier_label": 7,
+          "original_state_receipt_IDs": [
+            "BALANCED_CONTAMINATION:right"
+          ],
+          "merge_depth": 0,
+          "PRIVATE_density_zero_population": "1/2",
+          "PRIVATE_density_phase_visibility": "31/32",
+          "density_expression": "[[a,v*exp(-2*pi*i*k*s/N)/2],[v*exp(2*pi*i*k*s/N)/2,1-a]]",
+          "phase_visibility_alone_certifies_secret_information_at_zero_label": false,
+          "source_noise_parameters_or_phase_given_to_solver": false
+        }
+      ],
+      "literal_branches": [
+        {
+          "merge": {
+            "input_public_views": [
+              {
+                "modulus": 32,
+                "measured_Fourier_label": 11,
+                "original_state_receipt_IDs": [
+                  "BALANCED_CONTAMINATION:left"
+                ],
+                "merge_depth": 0
+              },
+              {
+                "modulus": 32,
+                "measured_Fourier_label": 7,
+                "original_state_receipt_IDs": [
+                  "BALANCED_CONTAMINATION:right"
+                ],
+                "merge_depth": 0
+              }
+            ],
+            "branch": 0,
+            "exact_branch_probability": "1/2",
+            "branch_chosen_for_free": false,
+            "conditional_product_source_model_required": true,
+            "receipt_IDs_prove_statistical_independence": false,
+            "coherent_phase_evaluator_or_chosen_label_query_supplied": false,
+            "status": "ACTUAL_CNOT_MEASURED_TARGET_BRANCH",
+            "output_audit": {
+              "modulus": 32,
+              "measured_Fourier_label": 18,
+              "original_state_receipt_IDs": [
+                "BALANCED_CONTAMINATION:left",
+                "BALANCED_CONTAMINATION:right"
+              ],
+              "merge_depth": 1,
+              "PRIVATE_density_zero_population": "1/2",
+              "PRIVATE_density_phase_visibility": "961/1024",
+              "density_expression": "[[a,v*exp(-2*pi*i*k*s/N)/2],[v*exp(2*pi*i*k*s/N)/2,1-a]]",
+              "phase_visibility_alone_certifies_secret_information_at_zero_label": false,
+              "source_noise_parameters_or_phase_given_to_solver": false
+            }
+          },
+          "diagnostic_literal_probability": 0.5,
+          "literal_density_agrees_with_exact_output": true,
+          "diagnostic_output_visibility": 0.9384765624999999
+        },
+        {
+          "merge": {
+            "input_public_views": [
+              {
+                "modulus": 32,
+                "measured_Fourier_label": 11,
+                "original_state_receipt_IDs": [
+                  "BALANCED_CONTAMINATION:left"
+                ],
+                "merge_depth": 0
+              },
+              {
+                "modulus": 32,
+                "measured_Fourier_label": 7,
+                "original_state_receipt_IDs": [
+                  "BALANCED_CONTAMINATION:right"
+                ],
+                "merge_depth": 0
+              }
+            ],
+            "branch": 1,
+            "exact_branch_probability": "1/2",
+            "branch_chosen_for_free": false,
+            "conditional_product_source_model_required": true,
+            "receipt_IDs_prove_statistical_independence": false,
+            "coherent_phase_evaluator_or_chosen_label_query_supplied": false,
+            "status": "ACTUAL_CNOT_MEASURED_TARGET_BRANCH",
+            "output_audit": {
+              "modulus": 32,
+              "measured_Fourier_label": 4,
+              "original_state_receipt_IDs": [
+                "BALANCED_CONTAMINATION:left",
+                "BALANCED_CONTAMINATION:right"
+              ],
+              "merge_depth": 1,
+              "PRIVATE_density_zero_population": "1/2",
+              "PRIVATE_density_phase_visibility": "961/1024",
+              "density_expression": "[[a,v*exp(-2*pi*i*k*s/N)/2],[v*exp(2*pi*i*k*s/N)/2,1-a]]",
+              "phase_visibility_alone_certifies_secret_information_at_zero_label": false,
+              "source_noise_parameters_or_phase_given_to_solver": false
+            }
+          },
+          "diagnostic_literal_probability": 0.5,
+          "literal_density_agrees_with_exact_output": true,
+          "diagnostic_output_visibility": 0.9384765625
+        }
+      ],
+      "hidden_s_ONLY_FOR_LITERAL_CALIBRATION": 13
+    },
+    {
+      "case": "BIASED_ALLOWED_CONTAMINATION",
+      "private_source_parameters": {
+        "left_bad_probability": "1/32",
+        "left_bad_zero_probability": "1",
+        "right_bad_probability": "1/32",
+        "right_bad_zero_probability": "1"
+      },
+      "input_audits": [
+        {
+          "modulus": 32,
+          "measured_Fourier_label": 11,
+          "original_state_receipt_IDs": [
+            "BIASED_ALLOWED_CONTAMINATION:left"
+          ],
+          "merge_depth": 0,
+          "PRIVATE_density_zero_population": "33/64",
+          "PRIVATE_density_phase_visibility": "31/32",
+          "density_expression": "[[a,v*exp(-2*pi*i*k*s/N)/2],[v*exp(2*pi*i*k*s/N)/2,1-a]]",
+          "phase_visibility_alone_certifies_secret_information_at_zero_label": false,
+          "source_noise_parameters_or_phase_given_to_solver": false
+        },
+        {
+          "modulus": 32,
+          "measured_Fourier_label": 7,
+          "original_state_receipt_IDs": [
+            "BIASED_ALLOWED_CONTAMINATION:right"
+          ],
+          "merge_depth": 0,
+          "PRIVATE_density_zero_population": "33/64",
+          "PRIVATE_density_phase_visibility": "31/32",
+          "density_expression": "[[a,v*exp(-2*pi*i*k*s/N)/2],[v*exp(2*pi*i*k*s/N)/2,1-a]]",
+          "phase_visibility_alone_certifies_secret_information_at_zero_label": false,
+          "source_noise_parameters_or_phase_given_to_solver": false
+        }
+      ],
+      "literal_branches": [
+        {
+          "merge": {
+            "input_public_views": [
+              {
+                "modulus": 32,
+                "measured_Fourier_label": 11,
+                "original_state_receipt_IDs": [
+                  "BIASED_ALLOWED_CONTAMINATION:left"
+                ],
+                "merge_depth": 0
+              },
+              {
+                "modulus": 32,
+                "measured_Fourier_label": 7,
+                "original_state_receipt_IDs": [
+                  "BIASED_ALLOWED_CONTAMINATION:right"
+                ],
+                "merge_depth": 0
+              }
+            ],
+            "branch": 0,
+            "exact_branch_probability": "1025/2048",
+            "branch_chosen_for_free": false,
+            "conditional_product_source_model_required": true,
+            "receipt_IDs_prove_statistical_independence": false,
+            "coherent_phase_evaluator_or_chosen_label_query_supplied": false,
+            "status": "ACTUAL_CNOT_MEASURED_TARGET_BRANCH",
+            "output_audit": {
+              "modulus": 32,
+              "measured_Fourier_label": 18,
+              "original_state_receipt_IDs": [
+                "BIASED_ALLOWED_CONTAMINATION:left",
+                "BIASED_ALLOWED_CONTAMINATION:right"
+              ],
+              "merge_depth": 1,
+              "PRIVATE_density_zero_population": "1089/2050",
+              "PRIVATE_density_phase_visibility": "961/1025",
+              "density_expression": "[[a,v*exp(-2*pi*i*k*s/N)/2],[v*exp(2*pi*i*k*s/N)/2,1-a]]",
+              "phase_visibility_alone_certifies_secret_information_at_zero_label": false,
+              "source_noise_parameters_or_phase_given_to_solver": false
+            }
+          },
+          "diagnostic_literal_probability": 0.50048828125,
+          "literal_density_agrees_with_exact_output": true,
+          "diagnostic_output_visibility": 0.937560975609756
+        },
+        {
+          "merge": {
+            "input_public_views": [
+              {
+                "modulus": 32,
+                "measured_Fourier_label": 11,
+                "original_state_receipt_IDs": [
+                  "BIASED_ALLOWED_CONTAMINATION:left"
+                ],
+                "merge_depth": 0
+              },
+              {
+                "modulus": 32,
+                "measured_Fourier_label": 7,
+                "original_state_receipt_IDs": [
+                  "BIASED_ALLOWED_CONTAMINATION:right"
+                ],
+                "merge_depth": 0
+              }
+            ],
+            "branch": 1,
+            "exact_branch_probability": "1023/2048",
+            "branch_chosen_for_free": false,
+            "conditional_product_source_model_required": true,
+            "receipt_IDs_prove_statistical_independence": false,
+            "coherent_phase_evaluator_or_chosen_label_query_supplied": false,
+            "status": "ACTUAL_CNOT_MEASURED_TARGET_BRANCH",
+            "output_audit": {
+              "modulus": 32,
+              "measured_Fourier_label": 4,
+              "original_state_receipt_IDs": [
+                "BIASED_ALLOWED_CONTAMINATION:left",
+                "BIASED_ALLOWED_CONTAMINATION:right"
+              ],
+              "merge_depth": 1,
+              "PRIVATE_density_zero_population": "1/2",
+              "PRIVATE_density_phase_visibility": "31/33",
+              "density_expression": "[[a,v*exp(-2*pi*i*k*s/N)/2],[v*exp(2*pi*i*k*s/N)/2,1-a]]",
+              "phase_visibility_alone_certifies_secret_information_at_zero_label": false,
+              "source_noise_parameters_or_phase_given_to_solver": false
+            }
+          },
+          "diagnostic_literal_probability": 0.49951171875,
+          "literal_density_agrees_with_exact_output": true,
+          "diagnostic_output_visibility": 0.9393939393939393
+        }
+      ],
+      "hidden_s_ONLY_FOR_LITERAL_CALIBRATION": 13
+    }
+  ],
+  "pure_bad_controls_are_components_NOT_all_promised_source_distributions": true,
+  "correlated_bad_register_countercontrol": {
+    "legal_marginal_bad_probability": "1/32",
+    "noise_recipe": "all good with1-p; all bad00 or bad11 with p/2 each",
+    "marginal_zero_population": "1/2",
+    "marginal_phase_visibility": "31/32",
+    "disjoint_receipt_IDs": [
+      "correlated:left",
+      "correlated:right"
+    ],
+    "literal_joint_branches": [
+      {
+        "branch": 0,
+        "exact_branch_probability": "33/64",
+        "exact_output_visibility": "31/33"
+      },
+      {
+        "branch": 1,
+        "exact_branch_probability": "31/64",
+        "exact_output_visibility": "1"
+      }
+    ],
+    "marginal_product_CNOT_formula_applies": false,
+    "IDs_or_marginal_rates_prove_independence": false,
+    "countercontrol_claimed_as_all_published_source_models": false
+  },
+  "single_register_heralding_countercontrol": {
+    "actual_DCP_modulus": 32,
+    "nonzero_measured_label": 7,
+    "complete_hidden_sweep_FOR_CALIBRATION_ONLY": 32,
+    "exact_uniform_secret_good_density": "I/2",
+    "exact_balanced_bad_density": "I/2",
+    "fixed_effects": [
+      "Z0",
+      "Z1",
+      "Xplus",
+      "Yplus",
+      "identity"
+    ],
+    "exact_good_AND_bad_acceptance_probabilities": [
+      "1/2",
+      "1/2",
+      "1/2",
+      "1/2",
+      "1"
+    ],
+    "diagnostic_same_good_bad_probabilities": [
+      0.5,
+      0.5,
+      0.4999999999999999,
+      0.4999999999999999,
+      1.0
+    ],
+    "PSD_effect_rejecting_both_bad_basis_states_must_be_zero": true,
+    "source_phase_or_other_register_information_given_to_filter": false,
+    "label_zero_EXCEPTION_has_known_phase_but_no_hidden_secret_information": true,
+    "all_collective_or_posterior_conditioned_purification_excluded": false
+  },
+  "existing_physical_Z_balanced_subclass_bridge": {
+    "legal_balanced_bad_rate_at_logN5": "1/5",
+    "equivalent_physical_Z_flip_rate": "1/10",
+    "exact_one_register_phase_contrast": "4/5",
+    "left_public_packet_labels": [
+      [
+        1,
+        1,
+        1
+      ]
+    ],
+    "right_public_packet_labels": [
+      [
+        1,
+        1,
+        0
+      ]
+    ],
+    "left_actual_kernel_rows": [
+      3,
+      1,
+      2
+    ],
+    "right_actual_kernel_rows": [
+      1,
+      1,
+      2
+    ],
+    "existing_packet_noise_contrasts": [
+      {
+        "logical_Fourier_mask": 0,
+        "original_physical_phase_error_support": 0,
+        "exact_existing_physical_Z_contrast": "1",
+        "exact_balanced_bad_contrast": "1"
+      },
+      {
+        "logical_Fourier_mask": 1,
+        "original_physical_phase_error_support": 4,
+        "exact_existing_physical_Z_contrast": "256/625",
+        "exact_balanced_bad_contrast": "256/625"
+      },
+      {
+        "logical_Fourier_mask": 2,
+        "original_physical_phase_error_support": 3,
+        "exact_existing_physical_Z_contrast": "64/125",
+        "exact_balanced_bad_contrast": "64/125"
+      },
+      {
+        "logical_Fourier_mask": 3,
+        "original_physical_phase_error_support": 5,
+        "exact_existing_physical_Z_contrast": "1024/3125",
+        "exact_balanced_bad_contrast": "1024/3125"
+      }
+    ],
+    "diagnostic_balanced_density_channel_error": 0.0,
+    "diagnostic_biased_basis_density_channel_error": 0.09999999999999998,
+    "balanced_independent_subclass_covered_by_existing_physical_Z": true,
+    "FULL_arbitrary_basis_contamination_promise_covered_by_existing_physical_Z": false,
+    "unknown_coset_phases_are_made_classically_known_by_noise_bridge": false
+  },
+  "balanced_bad_register_lineage_profiles": [
+    {
+      "log2_original_modulus": 32,
+      "failure_parameter": 1,
+      "legal_per_register_bad_probability": "1/32",
+      "bad_conditional_density": "I/2 from equal bad basis-state mixture",
+      "visibility_bound_is_for_LEGAL_MAX_RATE_BALANCED_subclass_NOT_all_smaller_rates": true,
+      "balanced_merge_depth": 6,
+      "disjoint_original_state_leaves": 64,
+      "exact_visibility_formula": "(1-p_bad)^original_leaves",
+      "visibility_exact_power_box": {
+        "base": "31/32",
+        "exponent": 64,
+        "bits": 192,
+        "required_operand_bits_upper": 384,
+        "max_bit_work": 524288,
+        "status": "CERTIFIED_INTEGER_DYADIC_POWER",
+        "lower": "822827807752119775681513177060082346012594890920194961449/6277101735386680763835789423207666416102355444464034512896",
+        "upper": "411413903876059887840756588530041173006297445460097480725/3138550867693340381917894711603833208051177722232017256448"
+      },
+      "reciprocal_Bernoulli_complete_blocks": 2,
+      "visibility_Bernoulli_upper": "1/4",
+      "output_phase_visibility_upper": "411413903876059887840756588530041173006297445460097480725/3138550867693340381917894711603833208051177722232017256448",
+      "best_single_target_parity_success_upper": "3549964771569400269758651300133874381057475167692114737173/6277101735386680763835789423207666416102355444464034512896",
+      "necessary_INDEPENDENT_target_copies_for_parity_success3over4_lower": 8,
+      "parity_copy_lower_bound_uses_Pinsker_and_gamma_at_most_half": true,
+      "target_label_would_encode_only_parity_not_full_secret": true,
+      "parity_copy_bound_requires_actual_label_N_over_2_AND_independent_targets": true,
+      "all_realized_branches_have_probability_half_IN_balanced_model": true,
+      "label_target_success_certifies_phase_information": false,
+      "any_output_ancestor_reuse_is_free": false,
+      "source_bad_flags_given_to_algorithm": false,
+      "independent_source_noise_conditional_on_common_secret_required": true,
+      "source_ID_uniqueness_establishes_statistical_independence": false,
+      "arbitrary_collective_DCP_decoder_or_fault_correction_excluded": false
+    },
+    {
+      "log2_original_modulus": 32,
+      "failure_parameter": 2,
+      "legal_per_register_bad_probability": "1/1024",
+      "bad_conditional_density": "I/2 from equal bad basis-state mixture",
+      "visibility_bound_is_for_LEGAL_MAX_RATE_BALANCED_subclass_NOT_all_smaller_rates": true,
+      "balanced_merge_depth": 6,
+      "disjoint_original_state_leaves": 64,
+      "exact_visibility_formula": "(1-p_bad)^original_leaves",
+      "visibility_exact_power_box": {
+        "base": "1023/1024",
+        "exponent": 64,
+        "bits": 192,
+        "required_operand_bits_upper": 704,
+        "max_bit_work": 524288,
+        "status": "CERTIFIED_INTEGER_DYADIC_POWER",
+        "lower": "5896611296545025408753328965001985540948651203583609423469/6277101735386680763835789423207666416102355444464034512896",
+        "upper": "2948305648272512704376664482500992770474325601791804711735/3138550867693340381917894711603833208051177722232017256448"
+      },
+      "reciprocal_Bernoulli_complete_blocks": 0,
+      "visibility_Bernoulli_upper": "1",
+      "output_phase_visibility_upper": "2948305648272512704376664482500992770474325601791804711735/3138550867693340381917894711603833208051177722232017256448",
+      "best_single_target_parity_success_upper": "6086856515965853086294559194104825978525503324023821968183/6277101735386680763835789423207666416102355444464034512896",
+      "necessary_INDEPENDENT_target_copies_for_parity_success3over4_lower": null,
+      "parity_copy_lower_bound_uses_Pinsker_and_gamma_at_most_half": false,
+      "target_label_would_encode_only_parity_not_full_secret": true,
+      "parity_copy_bound_requires_actual_label_N_over_2_AND_independent_targets": true,
+      "all_realized_branches_have_probability_half_IN_balanced_model": true,
+      "label_target_success_certifies_phase_information": false,
+      "any_output_ancestor_reuse_is_free": false,
+      "source_bad_flags_given_to_algorithm": false,
+      "independent_source_noise_conditional_on_common_secret_required": true,
+      "source_ID_uniqueness_establishes_statistical_independence": false,
+      "arbitrary_collective_DCP_decoder_or_fault_correction_excluded": false
+    },
+    {
+      "log2_original_modulus": 32,
+      "failure_parameter": 4,
+      "legal_per_register_bad_probability": "1/1048576",
+      "bad_conditional_density": "I/2 from equal bad basis-state mixture",
+      "visibility_bound_is_for_LEGAL_MAX_RATE_BALANCED_subclass_NOT_all_smaller_rates": true,
+      "balanced_merge_depth": 6,
+      "disjoint_original_state_leaves": 64,
+      "exact_visibility_formula": "(1-p_bad)^original_leaves",
+      "visibility_exact_power_box": {
+        "base": "1048575/1048576",
+        "exponent": 64,
+        "bits": 192,
+        "required_operand_bits_upper": 1344,
+        "max_bit_work": 524288,
+        "status": "CERTIFIED_INTEGER_DYADIC_POWER",
+        "lower": "6276718623010562848508517068010368124532279244669759551235/6277101735386680763835789423207666416102355444464034512896",
+        "upper": "1569179655752640712127129267002592031133069811167439887809/1569275433846670190958947355801916604025588861116008628224"
+      },
+      "reciprocal_Bernoulli_complete_blocks": 0,
+      "visibility_Bernoulli_upper": "1",
+      "output_phase_visibility_upper": "1569179655752640712127129267002592031133069811167439887809/1569275433846670190958947355801916604025588861116008628224",
+      "best_single_target_parity_success_upper": "3138455089599310903086076622804508635158658672283448516033/3138550867693340381917894711603833208051177722232017256448",
+      "necessary_INDEPENDENT_target_copies_for_parity_success3over4_lower": null,
+      "parity_copy_lower_bound_uses_Pinsker_and_gamma_at_most_half": false,
+      "target_label_would_encode_only_parity_not_full_secret": true,
+      "parity_copy_bound_requires_actual_label_N_over_2_AND_independent_targets": true,
+      "all_realized_branches_have_probability_half_IN_balanced_model": true,
+      "label_target_success_certifies_phase_information": false,
+      "any_output_ancestor_reuse_is_free": false,
+      "source_bad_flags_given_to_algorithm": false,
+      "independent_source_noise_conditional_on_common_secret_required": true,
+      "source_ID_uniqueness_establishes_statistical_independence": false,
+      "arbitrary_collective_DCP_decoder_or_fault_correction_excluded": false
+    },
+    {
+      "log2_original_modulus": 128,
+      "failure_parameter": 1,
+      "legal_per_register_bad_probability": "1/128",
+      "bad_conditional_density": "I/2 from equal bad basis-state mixture",
+      "visibility_bound_is_for_LEGAL_MAX_RATE_BALANCED_subclass_NOT_all_smaller_rates": true,
+      "balanced_merge_depth": 12,
+      "disjoint_original_state_leaves": 4096,
+      "exact_visibility_formula": "(1-p_bad)^original_leaves",
+      "visibility_exact_power_box": {
+        "base": "127/128",
+        "exponent": 4096,
+        "bits": 192,
+        "required_operand_bits_upper": 32768,
+        "max_bit_work": 524288,
+        "status": "CERTIFIED_INTEGER_DYADIC_POWER",
+        "lower": "70107507225681536429659883818907574740559731/6277101735386680763835789423207666416102355444464034512896",
+        "upper": "17526876806420384107414970954726893685139933/1569275433846670190958947355801916604025588861116008628224"
+      },
+      "reciprocal_Bernoulli_complete_blocks": 32,
+      "visibility_Bernoulli_upper": "1/4294967296",
+      "output_phase_visibility_upper": "17526876806420384107414970954726893685139933/1569275433846670190958947355801916604025588861116008628224",
+      "best_single_target_parity_success_upper": "1569275433846687717835753776186024018996543588009693768157/3138550867693340381917894711603833208051177722232017256448",
+      "necessary_INDEPENDENT_target_copies_for_parity_success3over4_lower": "1002072853601854934009970872",
+      "parity_copy_lower_bound_uses_Pinsker_and_gamma_at_most_half": true,
+      "target_label_would_encode_only_parity_not_full_secret": true,
+      "parity_copy_bound_requires_actual_label_N_over_2_AND_independent_targets": true,
+      "all_realized_branches_have_probability_half_IN_balanced_model": true,
+      "label_target_success_certifies_phase_information": false,
+      "any_output_ancestor_reuse_is_free": false,
+      "source_bad_flags_given_to_algorithm": false,
+      "independent_source_noise_conditional_on_common_secret_required": true,
+      "source_ID_uniqueness_establishes_statistical_independence": false,
+      "arbitrary_collective_DCP_decoder_or_fault_correction_excluded": false
+    },
+    {
+      "log2_original_modulus": 128,
+      "failure_parameter": 2,
+      "legal_per_register_bad_probability": "1/16384",
+      "bad_conditional_density": "I/2 from equal bad basis-state mixture",
+      "visibility_bound_is_for_LEGAL_MAX_RATE_BALANCED_subclass_NOT_all_smaller_rates": true,
+      "balanced_merge_depth": 12,
+      "disjoint_original_state_leaves": 4096,
+      "exact_visibility_formula": "(1-p_bad)^original_leaves",
+      "visibility_exact_power_box": {
+        "base": "16383/16384",
+        "exponent": 4096,
+        "bits": 192,
+        "required_operand_bits_upper": 61440,
+        "max_bit_work": 524288,
+        "status": "CERTIFIED_INTEGER_DYADIC_POWER",
+        "lower": "4888574448414888159581240544423016707404978048978854220383/6277101735386680763835789423207666416102355444464034512896",
+        "upper": "152767951512965254986913767013219272106405564030589194387/196159429230833773869868419475239575503198607639501078528"
+      },
+      "reciprocal_Bernoulli_complete_blocks": 0,
+      "visibility_Bernoulli_upper": "1",
+      "output_phase_visibility_upper": "152767951512965254986913767013219272106405564030589194387/196159429230833773869868419475239575503198607639501078528",
+      "best_single_target_parity_success_upper": "348927380743799028856782186488458847609604171670090272915/392318858461667547739736838950479151006397215279002157056",
+      "necessary_INDEPENDENT_target_copies_for_parity_success3over4_lower": null,
+      "parity_copy_lower_bound_uses_Pinsker_and_gamma_at_most_half": false,
+      "target_label_would_encode_only_parity_not_full_secret": true,
+      "parity_copy_bound_requires_actual_label_N_over_2_AND_independent_targets": true,
+      "all_realized_branches_have_probability_half_IN_balanced_model": true,
+      "label_target_success_certifies_phase_information": false,
+      "any_output_ancestor_reuse_is_free": false,
+      "source_bad_flags_given_to_algorithm": false,
+      "independent_source_noise_conditional_on_common_secret_required": true,
+      "source_ID_uniqueness_establishes_statistical_independence": false,
+      "arbitrary_collective_DCP_decoder_or_fault_correction_excluded": false
+    },
+    {
+      "log2_original_modulus": 128,
+      "failure_parameter": 4,
+      "legal_per_register_bad_probability": "1/268435456",
+      "bad_conditional_density": "I/2 from equal bad basis-state mixture",
+      "visibility_bound_is_for_LEGAL_MAX_RATE_BALANCED_subclass_NOT_all_smaller_rates": true,
+      "balanced_merge_depth": 12,
+      "disjoint_original_state_leaves": 4096,
+      "exact_visibility_formula": "(1-p_bad)^original_leaves",
+      "visibility_exact_power_box": {
+        "base": "268435455/268435456",
+        "exponent": 4096,
+        "bits": 192,
+        "required_operand_bits_upper": 118784,
+        "max_bit_work": 524288,
+        "status": "CERTIFIED_INTEGER_DYADIC_POWER",
+        "lower": "3138502977572972672215556153566278343762845423998847719521/3138550867693340381917894711603833208051177722232017256448",
+        "upper": "6277005955145945344431112307132556687525690847997695439043/6277101735386680763835789423207666416102355444464034512896"
+      },
+      "reciprocal_Bernoulli_complete_blocks": 0,
+      "visibility_Bernoulli_upper": "1",
+      "output_phase_visibility_upper": "6277005955145945344431112307132556687525690847997695439043/6277101735386680763835789423207666416102355444464034512896",
+      "best_single_target_parity_success_upper": "12554107690532626108266901730340223103628046292461729951939/12554203470773361527671578846415332832204710888928069025792",
+      "necessary_INDEPENDENT_target_copies_for_parity_success3over4_lower": null,
+      "parity_copy_lower_bound_uses_Pinsker_and_gamma_at_most_half": false,
+      "target_label_would_encode_only_parity_not_full_secret": true,
+      "parity_copy_bound_requires_actual_label_N_over_2_AND_independent_targets": true,
+      "all_realized_branches_have_probability_half_IN_balanced_model": true,
+      "label_target_success_certifies_phase_information": false,
+      "any_output_ancestor_reuse_is_free": false,
+      "source_bad_flags_given_to_algorithm": false,
+      "independent_source_noise_conditional_on_common_secret_required": true,
+      "source_ID_uniqueness_establishes_statistical_independence": false,
+      "arbitrary_collective_DCP_decoder_or_fault_correction_excluded": false
+    },
+    {
+      "log2_original_modulus": 1024,
+      "failure_parameter": 1,
+      "legal_per_register_bad_probability": "1/1024",
+      "bad_conditional_density": "I/2 from equal bad basis-state mixture",
+      "visibility_bound_is_for_LEGAL_MAX_RATE_BALANCED_subclass_NOT_all_smaller_rates": true,
+      "balanced_merge_depth": 32,
+      "disjoint_original_state_leaves": 4294967296,
+      "exact_visibility_formula": "(1-p_bad)^original_leaves",
+      "visibility_exact_power_box": {
+        "base": "1023/1024",
+        "exponent": 4294967296,
+        "bits": 192,
+        "required_operand_bits_upper": 47244640256,
+        "max_bit_work": 524288,
+        "status": "UNKNOWN_EXACT_POWER_CAP",
+        "lower": "0",
+        "upper": "1"
+      },
+      "reciprocal_Bernoulli_complete_blocks": 4194304,
+      "visibility_Bernoulli_upper": "1/6277101735386680763835789423207666416102355444464034512896",
+      "output_phase_visibility_upper": "1/6277101735386680763835789423207666416102355444464034512896",
+      "best_single_target_parity_success_upper": "6277101735386680763835789423207666416102355444464034512897/12554203470773361527671578846415332832204710888928069025792",
+      "necessary_INDEPENDENT_target_copies_for_parity_success3over4_lower": "4925250774549309901534880012517951725634967408808180833493536675530715221437151326426783281860614455100828498788352",
+      "parity_copy_lower_bound_uses_Pinsker_and_gamma_at_most_half": true,
+      "target_label_would_encode_only_parity_not_full_secret": true,
+      "parity_copy_bound_requires_actual_label_N_over_2_AND_independent_targets": true,
+      "all_realized_branches_have_probability_half_IN_balanced_model": true,
+      "label_target_success_certifies_phase_information": false,
+      "any_output_ancestor_reuse_is_free": false,
+      "source_bad_flags_given_to_algorithm": false,
+      "independent_source_noise_conditional_on_common_secret_required": true,
+      "source_ID_uniqueness_establishes_statistical_independence": false,
+      "arbitrary_collective_DCP_decoder_or_fault_correction_excluded": false
+    },
+    {
+      "log2_original_modulus": 1024,
+      "failure_parameter": 2,
+      "legal_per_register_bad_probability": "1/1048576",
+      "bad_conditional_density": "I/2 from equal bad basis-state mixture",
+      "visibility_bound_is_for_LEGAL_MAX_RATE_BALANCED_subclass_NOT_all_smaller_rates": true,
+      "balanced_merge_depth": 32,
+      "disjoint_original_state_leaves": 4294967296,
+      "exact_visibility_formula": "(1-p_bad)^original_leaves",
+      "visibility_exact_power_box": {
+        "base": "1048575/1048576",
+        "exponent": 4294967296,
+        "bits": 192,
+        "required_operand_bits_upper": 90194313216,
+        "max_bit_work": 524288,
+        "status": "UNKNOWN_EXACT_POWER_CAP",
+        "lower": "0",
+        "upper": "1"
+      },
+      "reciprocal_Bernoulli_complete_blocks": 4096,
+      "visibility_Bernoulli_upper": "1/6277101735386680763835789423207666416102355444464034512896",
+      "output_phase_visibility_upper": "1/6277101735386680763835789423207666416102355444464034512896",
+      "best_single_target_parity_success_upper": "6277101735386680763835789423207666416102355444464034512897/12554203470773361527671578846415332832204710888928069025792",
+      "necessary_INDEPENDENT_target_copies_for_parity_success3over4_lower": "4925250774549309901534880012517951725634967408808180833493536675530715221437151326426783281860614455100828498788352",
+      "parity_copy_lower_bound_uses_Pinsker_and_gamma_at_most_half": true,
+      "target_label_would_encode_only_parity_not_full_secret": true,
+      "parity_copy_bound_requires_actual_label_N_over_2_AND_independent_targets": true,
+      "all_realized_branches_have_probability_half_IN_balanced_model": true,
+      "label_target_success_certifies_phase_information": false,
+      "any_output_ancestor_reuse_is_free": false,
+      "source_bad_flags_given_to_algorithm": false,
+      "independent_source_noise_conditional_on_common_secret_required": true,
+      "source_ID_uniqueness_establishes_statistical_independence": false,
+      "arbitrary_collective_DCP_decoder_or_fault_correction_excluded": false
+    },
+    {
+      "log2_original_modulus": 1024,
+      "failure_parameter": 4,
+      "legal_per_register_bad_probability": "1/1099511627776",
+      "bad_conditional_density": "I/2 from equal bad basis-state mixture",
+      "visibility_bound_is_for_LEGAL_MAX_RATE_BALANCED_subclass_NOT_all_smaller_rates": true,
+      "balanced_merge_depth": 32,
+      "disjoint_original_state_leaves": 4294967296,
+      "exact_visibility_formula": "(1-p_bad)^original_leaves",
+      "visibility_exact_power_box": {
+        "base": "1099511627775/1099511627776",
+        "exponent": 4294967296,
+        "bits": 192,
+        "required_operand_bits_upper": 176093659136,
+        "max_bit_work": 524288,
+        "status": "UNKNOWN_EXACT_POWER_CAP",
+        "lower": "0",
+        "upper": "1"
+      },
+      "reciprocal_Bernoulli_complete_blocks": 0,
+      "visibility_Bernoulli_upper": "1",
+      "output_phase_visibility_upper": "1",
+      "best_single_target_parity_success_upper": "1",
+      "necessary_INDEPENDENT_target_copies_for_parity_success3over4_lower": null,
+      "parity_copy_lower_bound_uses_Pinsker_and_gamma_at_most_half": false,
+      "target_label_would_encode_only_parity_not_full_secret": true,
+      "parity_copy_bound_requires_actual_label_N_over_2_AND_independent_targets": true,
+      "all_realized_branches_have_probability_half_IN_balanced_model": true,
+      "label_target_success_certifies_phase_information": false,
+      "any_output_ancestor_reuse_is_free": false,
+      "source_bad_flags_given_to_algorithm": false,
+      "independent_source_noise_conditional_on_common_secret_required": true,
+      "source_ID_uniqueness_establishes_statistical_independence": false,
+      "arbitrary_collective_DCP_decoder_or_fault_correction_excluded": false
+    },
+    {
+      "log2_original_modulus": 4096,
+      "failure_parameter": 1,
+      "legal_per_register_bad_probability": "1/4096",
+      "bad_conditional_density": "I/2 from equal bad basis-state mixture",
+      "visibility_bound_is_for_LEGAL_MAX_RATE_BALANCED_subclass_NOT_all_smaller_rates": true,
+      "balanced_merge_depth": 64,
+      "disjoint_original_state_leaves": "18446744073709551616",
+      "exact_visibility_formula": "(1-p_bad)^original_leaves",
+      "visibility_exact_power_box": {
+        "base": "4095/4096",
+        "exponent": "18446744073709551616",
+        "bits": 192,
+        "required_operand_bits_upper": "239807672958224171008",
+        "max_bit_work": 524288,
+        "status": "UNKNOWN_EXACT_POWER_CAP",
+        "lower": "0",
+        "upper": "1"
+      },
+      "reciprocal_Bernoulli_complete_blocks": 4503599627370496,
+      "visibility_Bernoulli_upper": "1/6277101735386680763835789423207666416102355444464034512896",
+      "output_phase_visibility_upper": "1/6277101735386680763835789423207666416102355444464034512896",
+      "best_single_target_parity_success_upper": "6277101735386680763835789423207666416102355444464034512897/12554203470773361527671578846415332832204710888928069025792",
+      "necessary_INDEPENDENT_target_copies_for_parity_success3over4_lower": "4925250774549309901534880012517951725634967408808180833493536675530715221437151326426783281860614455100828498788352",
+      "parity_copy_lower_bound_uses_Pinsker_and_gamma_at_most_half": true,
+      "target_label_would_encode_only_parity_not_full_secret": true,
+      "parity_copy_bound_requires_actual_label_N_over_2_AND_independent_targets": true,
+      "all_realized_branches_have_probability_half_IN_balanced_model": true,
+      "label_target_success_certifies_phase_information": false,
+      "any_output_ancestor_reuse_is_free": false,
+      "source_bad_flags_given_to_algorithm": false,
+      "independent_source_noise_conditional_on_common_secret_required": true,
+      "source_ID_uniqueness_establishes_statistical_independence": false,
+      "arbitrary_collective_DCP_decoder_or_fault_correction_excluded": false
+    },
+    {
+      "log2_original_modulus": 4096,
+      "failure_parameter": 2,
+      "legal_per_register_bad_probability": "1/16777216",
+      "bad_conditional_density": "I/2 from equal bad basis-state mixture",
+      "visibility_bound_is_for_LEGAL_MAX_RATE_BALANCED_subclass_NOT_all_smaller_rates": true,
+      "balanced_merge_depth": 64,
+      "disjoint_original_state_leaves": "18446744073709551616",
+      "exact_visibility_formula": "(1-p_bad)^original_leaves",
+      "visibility_exact_power_box": {
+        "base": "16777215/16777216",
+        "exponent": "18446744073709551616",
+        "bits": 192,
+        "required_operand_bits_upper": "461168601842738790400",
+        "max_bit_work": 524288,
+        "status": "UNKNOWN_EXACT_POWER_CAP",
+        "lower": "0",
+        "upper": "1"
+      },
+      "reciprocal_Bernoulli_complete_blocks": 1099511627776,
+      "visibility_Bernoulli_upper": "1/6277101735386680763835789423207666416102355444464034512896",
+      "output_phase_visibility_upper": "1/6277101735386680763835789423207666416102355444464034512896",
+      "best_single_target_parity_success_upper": "6277101735386680763835789423207666416102355444464034512897/12554203470773361527671578846415332832204710888928069025792",
+      "necessary_INDEPENDENT_target_copies_for_parity_success3over4_lower": "4925250774549309901534880012517951725634967408808180833493536675530715221437151326426783281860614455100828498788352",
+      "parity_copy_lower_bound_uses_Pinsker_and_gamma_at_most_half": true,
+      "target_label_would_encode_only_parity_not_full_secret": true,
+      "parity_copy_bound_requires_actual_label_N_over_2_AND_independent_targets": true,
+      "all_realized_branches_have_probability_half_IN_balanced_model": true,
+      "label_target_success_certifies_phase_information": false,
+      "any_output_ancestor_reuse_is_free": false,
+      "source_bad_flags_given_to_algorithm": false,
+      "independent_source_noise_conditional_on_common_secret_required": true,
+      "source_ID_uniqueness_establishes_statistical_independence": false,
+      "arbitrary_collective_DCP_decoder_or_fault_correction_excluded": false
+    },
+    {
+      "log2_original_modulus": 4096,
+      "failure_parameter": 4,
+      "legal_per_register_bad_probability": "1/281474976710656",
+      "bad_conditional_density": "I/2 from equal bad basis-state mixture",
+      "visibility_bound_is_for_LEGAL_MAX_RATE_BALANCED_subclass_NOT_all_smaller_rates": true,
+      "balanced_merge_depth": 64,
+      "disjoint_original_state_leaves": "18446744073709551616",
+      "exact_visibility_formula": "(1-p_bad)^original_leaves",
+      "visibility_exact_power_box": {
+        "base": "281474976710655/281474976710656",
+        "exponent": "18446744073709551616",
+        "bits": 192,
+        "required_operand_bits_upper": "903890459611768029184",
+        "max_bit_work": 524288,
+        "status": "UNKNOWN_EXACT_POWER_CAP",
+        "lower": "0",
+        "upper": "1"
+      },
+      "reciprocal_Bernoulli_complete_blocks": 65536,
+      "visibility_Bernoulli_upper": "1/6277101735386680763835789423207666416102355444464034512896",
+      "output_phase_visibility_upper": "1/6277101735386680763835789423207666416102355444464034512896",
+      "best_single_target_parity_success_upper": "6277101735386680763835789423207666416102355444464034512897/12554203470773361527671578846415332832204710888928069025792",
+      "necessary_INDEPENDENT_target_copies_for_parity_success3over4_lower": "4925250774549309901534880012517951725634967408808180833493536675530715221437151326426783281860614455100828498788352",
+      "parity_copy_lower_bound_uses_Pinsker_and_gamma_at_most_half": true,
+      "target_label_would_encode_only_parity_not_full_secret": true,
+      "parity_copy_bound_requires_actual_label_N_over_2_AND_independent_targets": true,
+      "all_realized_branches_have_probability_half_IN_balanced_model": true,
+      "label_target_success_certifies_phase_information": false,
+      "any_output_ancestor_reuse_is_free": false,
+      "source_bad_flags_given_to_algorithm": false,
+      "independent_source_noise_conditional_on_common_secret_required": true,
+      "source_ID_uniqueness_establishes_statistical_independence": false,
+      "arbitrary_collective_DCP_decoder_or_fault_correction_excluded": false
+    }
+  ],
+  "source_reduction_failure_tradeoffs": [
+    {
+      "lattice_dimension": 8,
+      "published_M": {
+        "base": 2,
+        "exponent": 32
+      },
+      "published_DCP_log2N": 264,
+      "illustrative_sqrt_log_depth_NOT_universal_sieve_requirement": 17,
+      "balanced_original_leaves_at_illustrative_depth": 131072,
+      "minimum_integer_f_for_Bernoulli_visibility_lower_at_least_half": 3,
+      "diagnostic_unique_SVP_approximation_n_power": "13/2",
+      "diagnostic_approximation_exceeds_LLL_2_to_nminus1over2": true,
+      "published_prime_lower_bound_n_power": 8,
+      "variable_f_is_covered_by_constant_f_polynomial_reduction": false,
+      "raising_f_removes_all_algorithmic_blockers": false,
+      "different_sieves_or_collective_noise_handling_excluded": false
+    },
+    {
+      "lattice_dimension": 32,
+      "published_M": {
+        "base": 2,
+        "exponent": 128
+      },
+      "published_DCP_log2N": 4128,
+      "illustrative_sqrt_log_depth_NOT_universal_sieve_requirement": 65,
+      "balanced_original_leaves_at_illustrative_depth": "36893488147419103232",
+      "minimum_integer_f_for_Bernoulli_visibility_lower_at_least_half": 6,
+      "diagnostic_unique_SVP_approximation_n_power": "25/2",
+      "diagnostic_approximation_exceeds_LLL_2_to_nminus1over2": true,
+      "published_prime_lower_bound_n_power": 14,
+      "variable_f_is_covered_by_constant_f_polynomial_reduction": false,
+      "raising_f_removes_all_algorithmic_blockers": false,
+      "different_sieves_or_collective_noise_handling_excluded": false
+    },
+    {
+      "lattice_dimension": 128,
+      "published_M": {
+        "base": 2,
+        "exponent": 512
+      },
+      "published_DCP_log2N": 65664,
+      "illustrative_sqrt_log_depth_NOT_universal_sieve_requirement": 257,
+      "balanced_original_leaves_at_illustrative_depth": "231584178474632390847141970017375815706539969331281128078915168015826259279872",
+      "minimum_integer_f_for_Bernoulli_visibility_lower_at_least_half": 17,
+      "diagnostic_unique_SVP_approximation_n_power": "69/2",
+      "diagnostic_approximation_exceeds_LLL_2_to_nminus1over2": true,
+      "published_prime_lower_bound_n_power": 36,
+      "variable_f_is_covered_by_constant_f_polynomial_reduction": false,
+      "raising_f_removes_all_algorithmic_blockers": false,
+      "different_sieves_or_collective_noise_handling_excluded": false
+    },
+    {
+      "lattice_dimension": 512,
+      "published_M": {
+        "base": 2,
+        "exponent": 2048
+      },
+      "published_DCP_log2N": 1049088,
+      "illustrative_sqrt_log_depth_NOT_universal_sieve_requirement": 1025,
+      "balanced_original_leaves_at_illustrative_depth": "359538626972463181545861038157804946723595395788461314546860162315465351611001926265416954644815072042240227759742786715317579537628833244985694861278948248755535786849730970552604439202492188238906165904170011537676301364684925762947826221081654474326701021369172596479894491876959432609670712659248448274432",
+      "minimum_integer_f_for_Bernoulli_visibility_lower_at_least_half": 52,
+      "diagnostic_unique_SVP_approximation_n_power": "209/2",
+      "diagnostic_approximation_exceeds_LLL_2_to_nminus1over2": true,
+      "published_prime_lower_bound_n_power": 106,
+      "variable_f_is_covered_by_constant_f_polynomial_reduction": false,
+      "raising_f_removes_all_algorithmic_blockers": false,
+      "different_sieves_or_collective_noise_handling_excluded": false
+    }
+  ],
+  "actual_lattice_to_coset_state_generator_implemented": false,
+  "coherent_phase_evaluator_or_chosen_label_queries_supplied": false,
+  "full_bad_register_DCP_solver_supplied": false,
+  "additional_state_preparation_or_gate_errors_certified": false,
+  "accepted_speedup_candidate": false,
+  "new_active_negative_result_created": false,
+  "research_decision": "REQUIRE_PHASE_VISIBILITY_AND_REAL_BAD_REGISTER_COVERAGE_NOT_JUST_SIEVE_LABEL_SUCCESS"
+}

@@ -1,0 +1,19 @@
+{
+  "status": "PRIMARY_NONZERO_AND_AVERAGE_CASE_INTERFACE_RECHECKED_RECURSIVE_REDUCTION_UNPROVED",
+  "checked_date": "2026-10-14",
+  "records": [
+    {
+      "id": "LIT-BTV-2026-SAMPLE-PRESERVING",
+      "title": "Sample-Preserving Search-to-Decision Reduction for Noisy Linear Equations over Large Moduli",
+      "url": "https://arxiv.org/html/2610.12913v1",
+      "scope_read": "Definitions2.2/2.5/2.7, Theorem3.1, Section3.7, Corollary4.1 and Section4.1",
+      "nonzero_coefficient_scope": "c is explicitly nonzero in Z_q, not just a nonzero integer",
+      "success_scope": "source-average list coverage; not a certified true-pair output or uniform per-instance conditional recursive promise",
+      "reusable_abstraction": "bounded multiple lists with explicit coefficient ambiguity and recovery/verifier interfaces",
+      "applicability_gate": "derive rounded-continuous-Gaussian tolerance for the general-noise theorem at every used root; do not substitute the discrete-Gaussian corollary",
+      "complete_recursive_reduction_or_novelty_claim": false
+    }
+  ],
+  "local_composition_and_countercontrols_are_independent_derivations_not_attributed_to_the_paper": true,
+  "actual_quantum_mechanism_or_speedup_admitted": false
+}

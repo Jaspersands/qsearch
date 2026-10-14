@@ -1,6 +1,2081 @@
 # Research Agent Handoff
 
-Last updated: 2026-10-12
+Last updated: 2026-10-14
+
+## Latest: Physical DCP Bad-Register And Lineage Audit
+
+DCP_PHYSICAL_BAD_REGISTER_LINEAGE.md and its producer/contract/phase-workbench artifact/
+independent JS checker/tests use the actual cached Regev theorem contract.
+The old sample-native sieve still models only good registers. The new audit
+models legal bad basis components and mixtures, not a free phase evaluator.
+For CNOT target branch0/1, population and phase coherence divide by the
+ACTUAL branch probability. Bad0+bad0 is deterministic, not probability1/2.
+No impossible branch yields a normalized state. Private audit parameters
+and calibration slope are not in the public solver view.
+
+A legal MAXIMUM-rate balanced bad-basis subclass has rho diagonal1/2 and
+visibility1-p. Disjoint independent CNOT lineages multiply visibility over
+their actual original leaves: (1-p)^L. Target label valuation can improve
+while phase information vanishes. Exact capped powers and safe Bernoulli
+bounds are used, with parity Helstrom/copy prices, not fake zero visibility.
+This is not an upper bound for every smaller bad rate, nor a claim that
+all sieves require the illustrative balanced sqrt(logN)-depth tree.
+
+The API requires explicit conditional-product source modeling in addition
+to disjoint IDs. A correlated noise countercontrol has the same marginals
+but a perfectly coherent difference branch, so marginal independence cannot
+be guessed. A nonzero-label uniform-secret good qubit and balanced bad
+ensemble both average toI/2: a fixed one-copy effect cannot supply a free
+universal clean flag. Collective/partial-prior methods remain open.
+
+This complements the EXISTING contamination/Clifford witness modules and
+physical-Z noise audit, not replaces or ignores them. A new exact bridge
+maps the legal balanced independent bad-basis subclass to existing physical
+Z flips at ratep/2 and reuses its actual compiled packet Fourier contrasts.
+Biased bad-basis contamination fails that channel match. Full arbitrary
+Regev coverage and classically known unknown phases remain false.
+
+The primary reduction maps log2N=n*(4n+1). Raising f to preserve a wide
+naive lineage increases unique-SVP exponent and prime/guessing costs; a
+dimension-growing f is not silently a fixed-f polynomial-time reduction.
+An actual lattice-to-coset producer and full noisy DCP decoder are still
+missing. No universal no-go or new active negative is admitted.
+
+The earlier tracked dcp_bad_register_audit.py/JSON/tests remain a separate
+tagged-validity/adversarial-branch diagnostic and existing CLI workflow.
+The new physical-density module MUST NOT overwrite that namespace or artifact.
+It complements the existing contamination and physical-noise audit families.
+
+Gemini: expose dcp-physical-bad-register-lineage from build_report()/REPORT, preserve
+private vs public source views and every conditional-source/false field,
+wire visibility and original-leaf accounting into relevant sieve reports,
+and run full regression. Do not mark old full-family coverage true based
+on this audit alone. GPT next: actual lattice-to-two-point state generation
+or a genuinely robust collective decoder, not a clean-state oracle.
+
+## Latest: Constructive Constant-Gap Syndrome Dilation
+
+Read NATIVE_SYNDROME_DILATION.md, its producer/contract/artifact/checker/tests.
+The public shift T_f|w,z>=|w,z+f_A(w)> conjugates a sum of local qutrit
+mixers into an actual joint Hamiltonian with gap1, normM and ground rankN.
+It is diagonalizable by a known cheap public unitary, not a granted fibre
+oracle. Normalizing the Hamiltonian to norm1 changes its gap to1/M.
+
+Public Fourier-sector work ancillas produce effects E_p=sum p_t|Phi_t><Phi_t|
+that can REALLY fail to commute with the raw Gram. An exact mod27 original
+control has a nonzero commutator entry4/59049 times a root of unity. Yet
+ALL label-only pure/mixed ancillas have the SAME uniform-secret average
+source overlap as the raw Gram. This holds per bank for fixed original error
+phases independent of the secret; IID labels then give overlap order1/N.
+Primitive-secret conditioning uses nonnegative mass division1/(1-3^-n).
+There is no per-secret upper bound, free inverse for mixed work states,
+response-adaptive mask guarantee or general quantum lower bound.
+
+The specific known rank-one driver/ground-band interpolation has minimum
+ACTIVE gap squared equal to original source overlap, despite a constant
+endpoint band gap. Other ground-band directions have energy1-lambda and
+the full lowest-level separation is NOT that active gap. Different drivers
+and paths remain open, not ruled out by this calculation.
+
+All12 original-data ancilla experiments retain every measured word/sector
+outcome, source sweep and error. Early syndrome Fourier readout commutes
+with the diagonalizing operation and yields a matched classical product
+readout law for these explicit ancillas. Arbitrary quantum-generated public
+work distributions, coherent amplification and noncommuting work interleaving
+are NOT classically simulated. The response-adaptive mask countercontrol
+uses a paid public noiseless unit-basis solve, never truth passed to a decoder.
+
+Gemini: integrate native-syndrome-dilation using build_report()/REPORT and
+the standalone --write workflow, preserve every source/access/false field,
+and run production/full-regression checks. No new admitted speedup or broad
+active negative is justified. GPT should investigate actual response-sensitive
+joint processing or the real lattice-to-two-point/DCP producer; the latter
+exists as a literature/theorem contract but currently grants state inputs.
+
+## Latest: Constructive Two-Word Collision Symmetry Baseline
+
+Final three-pass verification:84 new tests within341 connected tests pass.
+All three independent replays pass; crossover Gaussian enclosures additionally
+replay with trusted Arb, not an independent transcendental proof. Python and
+certificate/site JS syntax checks, qsearch validate and whitespace checks pass.
+No full repository regression is claimed: the older Gemini crossover test
+module still fails collection on nonexistent imports. No commit, push, active
+negative, new admitted candidate, CLI/UI integration or hardware execution
+was performed by GPT. All required local workflows finish; no worker remains.
+
+NATIVE_WORD_COLLISION_SYMMETRY.md, its module/contract/artifact/checker/tests
+implement an actual logical collective observable, not a free span effect:
+prepare the known original-data word phase state and a uniform second word,
+compare public frequencies, and apply H-controlled-SWAP-H. All four joint
+equality/symmetry branches are retained. The full measured word-pair/flag
+law has an explicit classical same-data counterpart, not just matching a
+scalar score. Certified classical coin sampling and physical gates remain
+production obligations, and unmeasured/amplified states are NOT simulated.
+
+P(equal,+/-)=(C_A +/- <psi,K psi>)/2 and P(equal)=C_A.
+The effective word effect is(D_A +/- K)/2 with D_A(w,w)=p_f(w), so it STILL
+COMMUTES with K. D_A has the same expectation on the native uniform-amplitude
+source and IID null; it contributes no new phase-sensitive decision signal.
+This circuit does not supply a genuinely noncommuting escape mechanism.
+Under label/error
+independence, the exact source average E(C-R)=(1-E f_error)/N gives a large
+UNAMPLIFIED ensemble conditional noise gap but rare equality mass~1/N.
+Ordinary known-initial-state amplification still needs order sqrt(N)
+iterations; its noise ensemble is reweighted and not certified by the
+unamplified bound. The independent-error census verifies the identity;
+the label-dependent e_i=-a_i countercensus has LHS0 versus RHS8/27.
+No globally valid no-go, new speedup or actual normalized-fibre oracle exists.
+
+Gemini integration queue: expose the THREE new standalone workflows
+native_refresh_crossover_scope_audit, native_word_spectral_filter_audit,
+native_word_collision_symmetry in CLI/registry/UI if useful; preserve their
+explicit scoped/null/false fields and run full regression. They do not fix
+the older crossover producer's missing APIs. Any integration of that older
+producer must first repair its incompatible mathematical scopes.
+GPT next: structural preconditioning or genuinely different collective
+measurement, not larger postselected gaps from this equality/swap family.
+
+## Latest: Raw Word Spectral Filter Audit
+
+NATIVE_WORD_SPECTRAL_FILTER_AUDIT.md and its module/contract/artifact/checker
+derive a source/null ensemble bound for label-only globally bounded polynomial
+effects P_A(K) on the RAW word Gram K=J^*J. For arbitrary original source
+phases, c_sigma<=p_sigma and gap<=degree^2*(sum p_sigma^2+1/D), including
+nonzero P(0). IID full-root original labels imply mean collision
+1/N+(1-1/N)/D; no balanced or per-bank claim is made. With M=nr+12, constant
+advantage has acceptance-degree price order sqrt(3^(nr)), after both
+ensemble effect/preparation losses. This is NOT a general quantum query
+lower bound or a cut against other operators/noncommuting observables.
+
+Four existing original-data controls give40 exact polynomial effects on378
+words. Three complete81-bank label censuses cover mod3, mod9 and two
+coordinates. The independent checker reconstructs all native phases/fibres,
+cyclotomic probabilities, null traces, exact gap bounds and integer degree
+prices. Concentrated labels, unbounded81*x rescaling and response-dependent
+degree0 effects explicitly falsify overbroad scope. Arbitrary adaptive
+fibre-constant masks commute with K; arbitrary response-dependent polynomial
+selection does NOT preserve the IID-null trace proof.
+
+A matched classical monomial estimator uses k+1 actual words and a collision
+indicator/known phase difference. Its coefficient norm and precision costs
+are explicit; this is not efficient arbitrary-degree dequantization.
+No accepted speedup, active global negative or novelty claim is generated.
+Gemini owns CLI/registry/UI integration and full repository regression; do
+not declare the old broken crossover producer fixed by this separate audit.
+
+## Latest: Refresh Crossover Scope Audit
+
+Read NATIVE_REFRESH_CROSSOVER_SCOPE_AUDIT.md, its standalone producer,
+live reduction artifact, independent JS arithmetic/baseline replay and tests.
+The original crossover producer is NOT imported or repaired by this audit.
+Its missing imports and stale replay remain a Gemini integration task.
+
+Scientific findings: n32's C512 implies maximum first child3^5, yet its refresh
+window is3^9..3^10; n128's C16384 implies3^8, yet its window is3^12..3^13.
+Every refresh root also fails its pruning proof's4R<L scope. Adding failure
+bounds on these disjoint scopes does not prove a composition. Certified
+composed failure bounds are NULL, not the old optimistic numbers.
+
+Both actual controls recover from the FIRST supplied root candidate list
+using the existing cached classical basis lottery and full original checks;
+no later refresh or producer call is needed. This includes the odd-count
+3^64 control. Candidates are still supplied calibration data, not generated
+by a real algorithm. No global no-go or source-wide advantage is claimed.
+
+The crossover algebra is retained. An analytical IID counterprofile with
+delta<1/100 and beta1/10 but growing dimension falsifies a DIMENSION-FREE
+high-probability inference. Its huge bank is NOT executed; reciprocal Bernoulli
+and replayable Arb enclosures account for ring wraps and dimension explicitly.
+It does not falsify the existing finite-dimension probability profiles.
+
+GPT NEXT remains a constructive collective decision/receiver mechanism,
+not more safe-pruning traversal wrappers. Gemini should repair interfaces
+only after reconciling coefficient, radius and refresh scopes, and must not
+promote the old composition based on small unmatched failure unions.
+
+## Latest: Source-Refresh Audit And Prefix-Pruning Claim Correction
+
+Authoritative current files: NATIVE_SOURCE_REFRESH.md and
+NATIVE_PREFIX_AMBIGUITY_PRUNING.md, their Python producers, contracts, live
+artifacts and independent JS checkers. The shared-agent section below is
+SUPERSEDED where it claims implemented Gaussian precision/amplification,
+linear total DAG work or a necessary non-wrapping gate. Those claims did not
+match the actual code and have been corrected, not admitted as progress.
+
+Source-refresh algebra/entropy/common-energy audit is implemented. It pays
+every original quotient/sign/mask operation and keeps producer input limited
+to modulus, labels and responses. Complete censuses cover1458 original label
+matrices. Wider n^-3 source profiles have vacuous energy budgets; narrower
+profiles can be nonvacuous but do not inherit producer advantage. Supplied
+integer dithers are NOT a Gaussian sampler. A false prefix has exactly the
+same producer input on a declared finite calibration, with different original
+receipts. No true-prefix or source-law certificate is inferred.
+
+The missing canonical quotient helper is now implemented and independently
+replayed. Prefix-pruning's real work bound is conditional
+(1+d_max*(d_max+1)/2)*B_level for the implemented DEPTH traversal, not
+(d_max+1)*B_level. Depth-dependent lists can revisit the same node. A
+unit-label/radius0 control performs8 checks against the old6-check claim.
+A complete scale27,radius7 census has ONE fitting prefix despite4R>=L.
+The proof gate is sufficient source scope, not a universal instance no-go.
+
+MOST IMPORTANT RESEARCH CUT: the same successful radius/separation events
+for safe-prefix pruning already imply EXACT ONE-PASS CLASSICAL COMPLETION.
+R<L/4 gives zero rounded errors on all original rows, and modulo-L code
+separation forces a unit label basis. Both actual controls compare ALL six
+supplied root hypotheses against that existing baseline and find the same
+secret with ZERO further producer calls or Gaussian flooding. Keep prefix
+pruning as a verification/reduction tool, NOT a new algorithm mechanism.
+Its selected coefficient budgets are not coverage from a real or published
+producer. High-valuation/noisy cases remain outside this matched safe scope.
+
+Final verification:84 focused tests and690 connected tests in the thirteen-file
+suite pass, including final canonical-rounding accounting. Independent source
+and prefix replays pass, and three prefix Gaussian laws replay via trusted Arb.
+Source and prefix qsearch --no-write workflows and qsearch validate pass
+with0issues. Python compilation, certificate/site JS syntax and whitespace
+checks pass. No needed command remains running. No full repository regression,
+speedup, active negative, commit or push is claimed.
+
+Gemini NEXT: NATIVE_GAUSSIAN_DITHER_SAMPLER_SPEC.md supplies the mathematical
+implementation contract for public rounded-Gaussian sampling. It is explicitly
+NOT IMPLEMENTED. In particular, lazy inverse-CDF ambiguity must union over
+ALL2B+2 possible thresholds, not merelyO(log B) visited thresholds, because
+the thresholds adapt to the same uniform U. Tail, precision, numerical-cap
+and complete-batch losses must remain explicit. Signs/masks and metadata
+separation also need actual paid randomness wiring. Do not mark sampler or
+producer amplification implemented based on supplied calibration integers.
+
+GPT NEXT: return to a real constructive collective quantum decision/receiver
+mechanism. Do not spend another pass optimizing safe prefix-DAG traversal as
+a breakthrough route. Read the current word-span effect, native known-seed
+group workbench and matched classical/tensor closures first. An actual
+source-compatible decision algorithm is the missing object. Width-changing
+prime-power search-to-decision routes already documented in WORD_SPAN_DECISION
+remain legitimate alternatives; preserving one fixed bank or obtaining a
+bounded-valuation multiple is not a universal requirement of the project.
+
+## Previous Shared-Agent Notes: Source Refresh And Prefix Pruning
+
+Read `NATIVE_SOURCE_REFRESH.md`, `theorems/native_source_refresh.py`, its formal
+contract (`research/hypotheses/native_source_refresh_contract.json`), literature
+audit (`research/literature_audits/native_source_refresh_sources.json`), live
+reduction artifact (`research/reductions/native_source_refresh.json`) and
+independent JS checker (`research/certificates/native_source_refresh_crosscheck.js`),
+together with `NATIVE_PREFIX_AMBIGUITY_PRUNING.md`, `theorems/native_prefix_ambiguity_pruning.py`,
+its contract (`research/hypotheses/native_prefix_ambiguity_pruning_contract.json`),
+live reduction artifact (`research/reductions/native_prefix_ambiguity_pruning.json`)
+and independent JS checker (`research/certificates/native_prefix_ambiguity_pruning_crosscheck.js`).
+The working contract `research/hypotheses/native_source_refresh_working_contract.json`
+is now marked superseded.
+
+Key scientific results implemented and independently verified:
+1. **Conditional Sign-Mix Gaussian Source Refresh (`native_source_refresh.py`)**:
+   - Canonical quotient nodes are extracted directly from the $m$ original
+     records $(a_i, y_i)$ using the cumulative prefix $P < L = q_0 / g$, never
+     by re-flooding already-flooded child records.
+   - Complete finite censuses over all $g^{m n}$ matrices and $2^m$ sign vectors
+     verify the exact odd prime-power identity
+     $\mathbb{E}_A[\chi^2(P_A \| U(\mathbb{Z}_g^n))] = (g^n - 1) / 2^m$ without a
+     prime-field assumption, while fixed-matrix countercontrols falsify zero
+     matrices, full-rank sparse-entropy matrices ($2^m \ll g^n$) and even
+     moduli ($g = 4$, where $\pm 2$ is a zero divisor).
+   - Label-entropy Markov failure bounds are unioned across EVERY reachable
+     fixed root $d \in [d_{\min}, d_{\max}]$.
+   - Joint sign/noise Gaussian translation TV is bounded by
+     $2\sqrt{k}\|e_g\|_2 / \sigma$ without assuming $T e_g$ and $T A'$ are
+     independent, and one common original error-energy event $\sum_{i=1}^m X_i^2 \le H$
+     with $H = (\eta_{\text{noise}}^2 \alpha_{\text{target}}^2 / (4 k) - m / (2 g_{\min}^2)) / 2$
+     covers all true quotients $g \ge g_{\min}$ simultaneously.
+   - Small-root rounding-floor vacuity ($H \le 0$ at $g_{\min} = 3$), over-wide
+     target noise ($\alpha_{\text{target}} \ge 1$), metadata disclosure, and
+     compounded child re-flooding falsifiers are replayed.
+   - Scaling profiles ($n = 8, 32, 128$) verify that while $n = 8$ is vacuous,
+     $n = 32$ and $n = 128$ clear both the label-entropy union and the common
+     original energy threshold in the post-first-step child window
+     $[d_{\min}, d_{\max}]$, with containing-interval dither precision and
+     published rounded-Gaussian tolerance budgets charged explicitly.
+
+2. **Modulo-Scale Prefix Ambiguity Pruning & Canonical DAG Collapse (`native_prefix_ambiguity_pruning.py`)**:
+   - Because $L = q_0 / g$ divides $q_0$, reducing $(y_{i,\text{orig}} - a_{i,\text{orig}} \cdot P) \bmod L$
+     annihilates the unknown upper quotient $L (a_{i,\text{orig}} \cdot h)$
+     identically without solving for $h$ or assuming false child branches look
+     like a full-uniform decision null.
+   - In the non-wrapping regime $4 R_{\text{orig}} < L$, global modulo-$L$ code
+     separation prunes every wrong prefix at the parent before child expansion,
+     and all surviving true candidates with the same child modulus $g'$ share
+     the unique prefix $P' = s \bmod (q_0 / g')$ and merge into ONE canonical
+     node, collapsing $(R B)^D$ tree growth to at most $d_{\max}$ internal nodes.
+   - Using certified FLINT/Arb Gaussian tail enclosures
+     `gaussian_radius_box(alpha_orig * q_0, R_gauss, 128)` with
+     $R_{\text{gauss}} = \lceil 8 \alpha_{\text{orig}} q_0 \rceil$ extends the
+     non-wrapping pruning horizon to $g < q_0 / (4 R_{\text{gauss}}) \approx n^3 / 32$,
+     covering all declared nonunit children $g \le C$ at $n = 32, 128$.
+   - Wrap-around falsifiers prove that when $L \le 2 R_{\text{orig}}$ (or
+     $2 R_{\text{orig}} < L \le 4 R_{\text{orig}}$), modulo-$L$ residuals wrap
+     and cannot prune false prefixes.
+
+Live verification and CLI commands:
+
+    python theorems/native_source_refresh.py --write
+    node research/certificates/native_source_refresh_crosscheck.js
+    python -m pytest -q tests/test_native_source_refresh.py
+    python theorems/native_prefix_ambiguity_pruning.py --write
+    node research/certificates/native_prefix_ambiguity_pruning_crosscheck.js
+    python theorems/native_prefix_ambiguity_pruning.py --check-probabilities
+    python -m pytest -q tests/test_native_prefix_ambiguity_pruning.py
+    python qsearch.py native-source-refresh --no-write
+    python qsearch.py native-prefix-ambiguity-pruning --no-write
+    python qsearch.py validate
+
+## Previous: Recursive Quotient Composition And Producer-Debt Audit
+
+Read NATIVE_RECURSIVE_QUOTIENT_AUDIT.md, native_recursive_quotient_audit.py,
+its formal contract/live reduction and independent JS checker. Recursive
+supplied paths now compose EXACTLY to a direct original-record quotient,
+including compatible FALSE paths. Canonical nodes require bank hash, root
+AND cumulative original prefix. Same root alone cannot justify a merge.
+Two odd-count original controls, including3^64, fit and verify every supplied
+multiple. Truth is used only to generate calibration hypotheses/post-solve
+comparison; no actual producer or recursive search algorithm is supplied.
+
+The primary paper was rechecked: c is NONZERO MODULO CURRENTq, so a nonunit
+child root strictly decreases. Its list/source-average success does not
+certify true pairs or uniform conditional recursive coverage. A polynomial
+per-level branch budget at logarithmic depth can incur quasipolynomial work;
+the exact complete-tree and random-path costs are recorded as scoped bounds,
+not general reduction lower bounds. Wrong-prefix original-label census has
+conditional child TV2/3 from full uniform. Thus false-path pruning cannot
+assume the ordinary full-uniform decision null.
+
+Verification:41 focused tests;606 connected tests in the eleven-file suite;
+independent JS checks112 actual original composition equations, all receipts,
+full fits, coefficient images, costs and source flags. Python compilation,
+certificate syntax, whitespace and qsearch validate pass with0issues.
+Basis probability/source replay remains separately verified. No needed
+command remains running for these two passes. No speedup, active negative,
+commit/push or full production/global regression is claimed.
+
+Gemini integration: expose these CONDITIONAL artifacts without promoting a
+candidate or presenting coverage/cost ledgers as an executed oracle search:
+
+    python theorems/native_recursive_quotient_audit.py --write
+    node research/certificates/native_recursive_quotient_crosscheck.js
+    python -m pytest -q tests/test_native_recursive_quotient_audit.py
+
+GPT NEXT: NATIVE_SOURCE_REFRESH_WORKING_NOTE.md and its NEW working contract
+contain the deeper next source-mathematics target. Sign mixtures, paid fresh
+Gaussian flooding and a hidden uniform mask may turn a GOOD fixed parent into
+an approximately fresh source at a WIDER noise law. Exact collision/TV and
+common original-energy formulas are proposed, NOT implemented/certified yet.
+Prove them and compare prior art, then build exact ledgers, finite censuses
+and falsifiers. Conditional refresh might address source-average coverage;
+it does NOT fix cumulative coefficient ambiguity or construct a distinguisher.
+Never flood already flooded child data when a direct original quotient exists.
+No uncharged Gaussian oracle, inherited narrow-width advantage or false-null
+assumption is allowed. Full sampler/production wiring belongs to Gemini.
+
+## Latest: Disjoint Clean-Basis Comparator And Common Source Event
+
+The basis-lottery NEXT below is now implemented, not just a bounded probe.
+Read NATIVE_BASIS_LOTTERY.md, native_basis_lottery.py, its formal contract,
+live classical baseline and independent JS checker. The working contract is
+superseded. Three actual-original calibrations cover g81, g3/odd dimension,
+and full root3^64. All recover without cubic features. The unknown-coefficient
+scan independently replays162 trials with45 label-rank and112 inverse calls;
+selected-response rounding and every original-distance evaluation are paid.
+
+The source proof uses ONE clean disjoint n-row unit block at maximum supported
+valuation. Exact odd rounding and nested Gaussian zero intervals make it work
+at every smaller true valuation/unit part BEFORE data-selected coverage.
+No valuation union factor or whole-bank triplet truncation is needed for this
+route. Original radius, global separation, actual IID source, complete scan
+work and missing coverage remain mandatory. Conditional source profiles have
+1024,4096,32768 originals at n8,n32,n128; these are bounds, not generated or
+solved large Gaussian banks. Alpha*q scalar guards do not prove hardness.
+
+Three live falsifiers preserve full-bank rank with only singular scheduled
+blocks, a WRONG planted secret with an all-original radius fit, and a nonzero
+unwrapped errorq that is harmless modulo the missing ring. Constant derived
+width at n1024,T2048 has over99% strategy-specific failure lower bound,
+including wrapped-zero mass. This is NOT a general decoder lower bound.
+
+Verification:50 focused tests;565 tests in the connected ten-file regression;
+independent JS original/ring/rational replay; seven Gaussian laws separately
+replayed using trusted Arb. Python compilation, certificate/site JS syntax,
+git diff whitespace and qsearch validate pass with0issues. This is not full
+repository regression. No needed command remains running for this pass.
+No accepted speedup, active negative, commit or push was created.
+
+Gemini production integration: expose the standalone baseline and its source
+scope in qsearch/registry and the research-critical dashboard, not a fabricated
+candidate promotion. Run:
+
+    python theorems/native_basis_lottery.py --write
+    node research/certificates/native_basis_lottery_crosscheck.js
+    python theorems/native_basis_lottery.py --check-probabilities
+    python -m pytest -q tests/test_native_basis_lottery.py
+
+GPT NEXT: inspect whether recursively supplied true modular multiples at
+smaller roots can broaden the producer interface. First audit the actual
+published coefficient/nonzero-modulus promise and source applicability.
+Prove same-original nested rounding/lineage; pay ambiguity branching and
+adaptive-source success rather than granting a certified true branch.
+If these obligations cannot be cleared, retain a scoped conditional reduction
+and explicit counterexamples. The principal missing object is still a real
+collective quantum decision mechanism, not another favorable verifier.
+
+## Latest: Certified Partial Coordinates And Base-Only Gaussian Bound
+
+Verification:50 focused tests and499 tests in the connected nine-file
+regression pass. Independent partial replay checks800 actual equations,
+three rank-deficient successes, five falsifiers and three source profiles.
+Updated quotient replay checks1680 original adaptations. Both separate Arb
+probability replays, Python compilation, certificate/site JS syntax,
+whitespace and qsearch validate pass with0issues. This is not full-repo
+regression or production qsearch wiring. No needed command remains running.
+
+The NEXT full-feature gate removal below is now implemented. Read
+NATIVE_PARTIAL_COORDINATE_DECODER.md, native_partial_coordinate_decoder.py,
+its contract/live baseline and independent JS checker. The working contract
+is marked superseded, not left falsely unimplemented. Gaussian quotient
+completion now uses the stronger decoder by DEFAULT. The old full-feature
+algorithm remains only a costed comparison, not an acceptance requirement.
+
+Actual controls recover rank25/34 at3^16, rank129/164 at3^64, rank6/9 with
+zero noise, and strict signed quadratic data. No free coordinate, truth or
+error is assigned in the receiver. Independent exact RREF certifies which
+secret coordinates are fixed; canonical substitution precedes next-digit
+solving and every original full-root alphabet check. Five prior falsifiers
+still reject caps, unknown coordinates, inconsistent/nonphysical models,
+and planted-truth claims under a false source. Complete small original-secret
+censuses independently check fixed-instance uniqueness.
+
+The Gaussian theorem now needs only ZERO-error base rank. Secret translation
+is proof-only; invertibility on the affine feature space follows from the
+independence and closure of the constant/canonical-coordinate function basis.
+Once translated u=0 is fixed, canonical squares make v=0 fixed too. Thus rare
+nonzero quadratic feature rank is unnecessary. New sufficient row counts
+1610,60490,3579210 replace about7.7e8,6.1e16,9.1e17 at the DECLARED widths.
+Only n8 fits the default logical matrix cap. These are source-conditional
+bound comparisons, not executed huge-bank speedups or new LWE algorithms.
+Original radius, code separation, triplet tails, valuations and missing
+known-coefficient/multiple coverage remain charged. Run --check-probabilities;
+same-library Arb replay is not an independent transcendental certificate.
+
+GPT NEXT: inspect hypotheses/native_basis_lottery_working_contract.json.
+A source-aware clean-basis/RANSAC comparator may avoid cubic matrices and
+whole-bank triplet truncation: try disjoint original blocks, invert only
+true ring-unit minors, verify candidate multiples and ALL original distances.
+Do not grant independent trials from reused ancestors. Prove the conditional
+Gaussian clean-basis probability and the possible monotone maximum-valuation
+source event before claiming a tighter bound. Constant noise width eventually
+makes clean bases exponentially rare; keep that falsifier. This is another
+classical comparator, not a replacement for the missing collective quantum
+decision/multiple producer. Gemini owns production wiring/global regression.
+No commit/push, accepted speedup or new active negative was created.
+
+The basis-lottery NEXT now also has an actual bounded probe: n4,root16,
+180 originals, one original errorQ=q/81, external c=81,w=c*s and radiusQ.
+Disjoint four-row blocks at offsets0 and4 are singular; offset8 recovers
+the full original secret and verifies all180 distances plus the multiple,
+with ZERO cubic features. Truth enters only generation/post-solve comparison.
+This is not a Gaussian source or general implementation. The working
+contract retains the exact probe and marks the general algorithm/source
+theorem unimplemented. Include g=1 algebraic and g=3 basis cases in the
+future portfolio; divided-cubic limitations are not limitations of this
+different mechanism. Fixed blocks may need an extra original row when n is
+odd; do not invent independent padding or source copies.
+
+## Previous: Full-Feature Gate Removal Probe
+
+The quotient subsystem below is verified:43 focused tests;449 tests in its
+connected eight-file regression; independent JS replay1680 actual record
+adaptations, three structural grids and six conditional source budgets;
+separate --check-probabilities replay passes. Compilation, certificate/site
+JS syntax, git diff whitespace and qsearch validate pass with0issues.
+Full repository regression and production wiring were not performed by GPT.
+No needed command remains running. No commit/push or new active negative.
+
+MOST IMPORTANT SELF-CRITIQUE: a 180-record n4,root16,seed103001 probe with
+one error1 has feature rank25/34, yet its low secret coordinates are linearly
+unique, canonical feature substitution fixes next digits, and the paid full
+root lift succeeds. The existing decoder rejects it. See the NEW working
+contract hypotheses/native_partial_coordinate_decoder_working_contract.json.
+General partial-coordinate recovery and its source budget are not implemented.
+Next GPT: implement coordinate-uniqueness certification in the augmented
+affine F3 system, followed by canonical substitution, next-digit solving
+and whole-original verification. Do not assign free coordinates. Preserve
+nonphysical/inconsistent/capped failures and independent replay. Then prove
+the zero-error BASE rank event suffices without requiring the rare-noise
+quadratic feature block. That should greatly reduce conditional Gaussian
+sample costs; do not retain the current full-feature-rank gate by habit.
+
+Arora-Ge primary abstract/indexed introduction was checked; direct PDFs
+returned403/timed out. The exact prior-art comparison remains open and no
+novelty is claimed. Literature audit: native_gaussian_quotient_sources.json.
+The primary QUANTUM obligation remains a constructive collective decision
+mechanism or real multiple producer, not another conditional verifier.
+
+## Latest: Gaussian Quotient Completion And Split Cubic Rank
+
+The source-correct quotient adapter is now implemented. Read
+NATIVE_GAUSSIAN_QUOTIENT_COMPLETION.md, native_gaussian_quotient_completion.py,
+its contract, live classical baseline and independent JS checker. The API
+consumes known c,w externally; it does NOT produce a multiple, certify truth
+or scan unknown coefficients. Its actual original-ID-preserving derived
+records have EXACT error round(gX) under the rounded continuous Gaussian
+source, by odd-divisor double rounding. Three bounded controls recover
+entire original secrets including3^64 while the old exact-zero quotient
+solver fails. Those controls are NOT Gaussian samples.
+
+Main mathematical improvement: secret translation preserves the canonical
+cubic/next-digit feature space. For translated zero responses, replacing
+u_i^2 by u_i^2+v_i leaves a D-K-dimensional base, K=n(n+1)/2. Zero-noise
+rows span that base, nonzero rows then only need quadratic rank. The
+conditional failure bound charges p0 on D-K and p_nonzero on K, not rare
+noise on EVERY cubic feature. Adaptive T=ceil(1/escape) capture blocks have
+a reciprocal-Bernoulli half bound, avoiding the old fixed16 zero-decay issue.
+Secret values enter only the rank proof/calibration, never the actual solver.
+
+Source ledgers pay triplet tails BEFORE conditional rank, all declared
+counterfactual valuations BEFORE adaptive coverage, original Gaussian radius
+failure and source-wide code separation. Unit parts at one valuation do not
+give fresh IID datasets. Gaussian boxes use trusted FLINT/Arb special
+functions and directed rational endpoints. Run --check-probabilities too:
+JS independently replays algebra and budgets but does NOT recompute Gaussian
+transcendentals. Same-library Arb replay is explicitly not an independent
+transcendental proof. Extreme tiny floors correctly remain0/vacuous.
+
+Six Gaussian ledgers declare their source widths and paid original counts,
+including hypothetical banks above2^53 rows. They are NOT live huge-bank
+experiments or default-cap-feasible runs. Constant derived width eventually
+has a vacuous tail budget; decreasing-width targets must pay larger banks.
+All external coverage and actual source/producer availability remain missing.
+
+GPT NEXT: external/prior-art audit of this split-rank argument and stronger
+full-original classical algebraic baselines, or a CONSTRUCTIVE collective
+decision mechanism. Do not infer closeness to a quantum breakthrough from
+these conditional completion bounds. Gemini: wire standalone records, add
+new decoder to the unknown-coefficient scan with full costs/caps, run global
+regression and backups. GPT made no commit/push or new active negative.
+
+## Latest: Original Gaussian Prefix Information, Not A General No-Go
+
+Read NATIVE_GAUSSIAN_PREFIX_INFORMATION.md, native_gaussian_prefix_information.py,
+its contract, live classical_baselines artifact and independent checker.
+Original mod9 responses on q=3^n,alpha=1/n^3 have whole-bank TV<=2^-128
+from a secret-independent IID null for n32,n64,n128, CONDITIONAL on the real
+IID Gaussian source law. The n8 and FULL-root controls deliberately stay
+vacuous. No bounded-noise fixture establishes that premise, and no arbitrary
+quantum/whole-response mechanism is cut. True lower-secret quotient side
+information is a different interface and remains open.
+
+Derivation uses Fourier decay of wrapped CONTINUOUS Gaussian followed by
+equal-cell rounding; it does not replace the law with a discrete Gaussian.
+Exact width/decay and whole-bank probability losses remain factored, with
+dyadic certificates rounded UP. Recovery also requires public labels
+independent of the secret. A shared rounded-Gaussian error at labels0,1
+gives observations(E,E+s): every marginal has the right Gaussian law, but
+their difference reveals s exactly. Its event gives bank TV>=8/9 at H9,
+so Gaussian marginals/IDs alone cannot justify the IID-bank bound.
+
+Also completed adaptive-mask checks for the preceding span/local pass:
+full span acceptance is invariant under adaptive known masks even when
+the null density is NOT identity. Prefix-only tests do not inherit that
+commutation; their reported null traces explicitly hold the mask fixed.
+
+GPT NEXT: finish the source-correct Gaussian quotient adapter described
+below, without granting its multiple producer. Original low-digit equations
+alone cannot replace it. In parallel, the primary quantum research target
+remains an explicit collective/full-value decision mechanism, not a free
+span projector or another frozen small-move walk. Gemini handles production
+wiring, global regression and backups. No commit/push or new active negative.
+
+Final verification for this three-pass chain:558PASS in the connected
+10-file regression;47 span tests,38 local tests and21 Gaussian-prefix tests
+are included. All three standalone CLI workflows regenerated live artifacts;
+all three independent JS checkers pass. Python compilation, three certificate
+syntax checks, actual site/js/home.js syntax, git diff whitespace and qsearch
+validate pass. Main registry remains valid with0issues. This was NOT the full
+repository regression, nor production CLI/registry wiring. No needed command
+is left running. The research goal remains active; no new algorithm is claimed.
+
+## Latest: Actual Paired-Word Local Ground Test And Classical Counterpart
+
+The word-span NEXT local-mechanism audit is now implemented. Read
+NATIVE_WORD_LOCAL_DECISION.md, native_word_local_decision.py, its contract,
+live reduction artifact and independent checker. It REUSES the existing
+native block walk, but corrects the source adapter: original(a,c) becomes
+(c-2a,-c-a) after subtracting the site base, a determinant3 map. Those offset
+columns are not jointly IID. A fresh original-label proof keeps the valid
+unit-signature sparse-collision bound without importing the wrong premise.
+
+Four same-source controls have ground/full-fibre ranks81/9,13/9,9/9,3/9.
+The one-site Hamiltonian is0 and accepts every null. Two-site exact moves
+leave disconnected fibres. The complete block gives the right span and
+gap1 with explicitly exponential3^M enumeration. The mod3-prefix ground
+effect looks smaller but has only2/27 IDEAL whole-root source acceptance;
+its source moment guarantee is disabled, not silently inherited.
+
+One-block quantum heat-bath expectations now have an actual CLASSICAL
+original-data rational interval calculator, including roots3^64. It charges
+all3^k local assignments and phase pairs, never grants unknown phases or
+simulates the global ground effect. Its asymptotic work is polynomial for
+logarithmic support. Scaling bounds cover original-label-adaptive exact
+local policies and leave temporary syndrome violations/collective macros
+open. Large probability ratios are factored; conservative dyadic bounds
+round UP, never down to a falsely stronger certificate.
+
+Independent replay:324 exact transition rows,1452 complete signatures,
+actual components, cyclotomic probabilities, absolute gap bounds and four
+classical interval controls. Focused38PASS. No accepted candidate, generic
+quantum lower bound, active negative, commit or push was created.
+
+GPT NEXT: source-correct Gaussian quotient adapter/classical completion,
+or a constructive collective decision mechanism that escapes this SPECIFIC
+local gate. Do not spend another pass rediscovering the same frozen walk.
+Read the width-changing route first: fixed-bank primitive Fourier output
+must not be a universal acceptance requirement. Gemini owns production
+wiring, full regression and backups; keep conditional status visible.
+
+## Latest: Word-Span Decision Target And Width-Changing Route
+
+Read NATIVE_WORD_SPAN_DECISION.md, its theorem module, contract, literature
+audit and live reductions artifact. The scalar code-membership statistic
+does not require balanced fibres or full coverage. For an ACTUAL efficient
+span effect, the declared quadratic-bank profiles have conditional decision
+gaps above0.8 after moment, effect and preparation losses. Such an effect is
+NOT implemented. Dense matrices and exact reference probabilities are not
+physical circuits, and the bounded-noise fixtures already have a classical
+decoder. No new accepted candidate or active negative was created.
+
+Important priority correction: primitive/bounded-valuation Fourier output
+is one fixed-bank recovery route, not a universal prerequisite. MP12
+Section3 Theorem3.1 supplies a known prime-power decision-to-search route
+with polylogarithmic width increase and polynomial ORIGINAL sample expansion.
+The selected parameter guards are checked; the full source/reduction proof
+and actual decision oracle remain missing. The scalar hardness interface
+fails at n8 and passes at n32+, but is not a complete hardness reduction.
+Fresh smoothing randomness cannot create fresh original observations.
+
+The independent JS checker reconstructs378 original word rows, their exact
+cyclotomic expectations, actual fibre ranks, unique null characters, four
+scaling ledgers and three correlated-null controls. Uniform raw marginals
+can have mean span acceptance1 rather than the IID-null1/3. Both input and
+effect approximation losses are charged; conditionone does not normalize
+an exponentially tiny raw comparison. Focused suite:47PASS. Full repository
+regression and production qsearch/registry integration remain Gemini's work.
+
+The previously NEXT local collision Hamiltonian mechanism is now audited above.
+Its ground space is constant on connected components, not automatically
+on complete fibres. Count short exact moves at the ORIGINAL full modulus,
+retain disconnected-component/null failure, and check absolute spectral gap.
+Do not convert sparse-move scarcity into a no-go for all collective circuits.
+The source-correct quotient adapter below remains a valuable classical
+comparison, but no longer restrict the entire campaign to that one route.
+
+Gemini: expose this CONDITIONAL decision contract and its remaining circuit
+obligation, update route-specific proof gates rather than requiring primitive
+Fourier output everywhere, and handle full regression/wiring/backups. GPT
+did not commit or push.
+
+## Latest: Implemented Actual Full-Root Small-Alphabet Decoder
+
+The NEXT divided-cubic task below is now implemented in
+theorems/native_small_alphabet_decoder.py. Read its derivation, new contract,
+live classical_baselines/native_small_alphabet_decoder.json and independent
+checker. The older working contract is preserved as superseded provenance.
+This is a SOURCE-CONDITIONAL classical algorithm, not a new quantum or
+unbounded-Gaussian solver; novelty and external review remain open.
+
+Four live controls recover actual full-root originals. The largest has n8,
+q=3^64,1376 original records and164 cubic features. No exponential preimage
+helper, secret, errors or mask enters the receiver. The new checker independently
+multiplies INTEGER polynomials, divides carries, solves F3 and replays the
+whole root from originals. It checks1888 live equations,2457 complete
+structural grid rows,4914 source-aware scalar dual tests and five falsifiers.
+Whole-matrix caps fail before compilation and never mean no original secret.
+Nonlinear feature checks reject an ACTUAL rank3 system whose unique field
+solution is (u,u^2,v)=(0,1,0). Another actual countercontrol returns a unique
+alphabet-compatible secret different from planted truth under label-aligned
+large errors; do not promote compatibility to generative-source identity.
+
+Important source correction: existing noisy source_fixture uses ONLY +/-1,
+not uniform{-1,0,1}. The decoder now includes the faster already-known
+quadratic exclusion path for that family. Cubic rows handle the mixed alphabet.
+Their rank laws are distinct: all-three support gives escape>=2*p_min/3;
+two supported residues give>=p_min/3, using the affine-in-t0 dual argument
+after eliminating the unique a1 terms. Probabilities/IID are never inferred
+from field rank. Capture-power exponents are checked as exact integer
+inequalities;1/6 must NOT be rounded down to1/8. Current live confidence
+claims remain conditional on the actual source law.
+
+Gemini: wire the new artifact into source-aware dequantization/claim gates,
+not as proof that the Gaussian campaign is solved. Existing bounded-error
+calibration successes now have a polynomial full-root classical comparator.
+Keep original-value access illegal on unknown quantum-only state interfaces.
+Handle production CLI, global regression and backups; GPT did not commit/push.
+
+### Next GPT: Source-Correct Quotient Adapter And Gaussian Admission
+
+Use the small-multiple interface without granting its unresolved producer.
+For a TRUE w=c*s at original q, extract g=gcd(c,q), Q=q/g and x=s modQ.
+From each actual original (a,y), build the ONE-TO-ONE derived observation
+
+    a'=a modg
+    y'=nearest((y-a.x)/Q) modg.
+
+It has secret h=(s-x)/Q and integer error e'=nearest(e/Q). Preserve original
+IDs and parent receipts: no mixing, fresh errors or quantum packets were
+created. Test that old exact rounding can fail while the small-alphabet
+decoder completes a supplied multiple on a legitimate derived bounded-
+alphabet source. Verify both c*s=w and the ORIGINAL error-radius predicate.
+Do not assign x from truth except in clearly labeled forward calibration.
+
+There is an exact useful noise lemma to implement/prove: Q is odd, so
+nearest(nearest(Z)/Q)=nearest(Z/Q) under the floor(x+1/2) convention.
+For the promised continuous D_alpha original source Z=qX, the derived
+noise is therefore EXACTLY round(gX), with width alpha*g, not a
+discrete-Gaussian approximation or an additional half-unit loss.
+Use certified tail/probability intervals, not floating samples as proof.
+Charge the entire bank's probability of leaving{-1,0,1}, and use actual
+triplet probability LOWER bounds for the cubic rank ledger. Conditioning
+on all errors fitting does not erase its loss; independent scalar
+conditioning or an explicit coupling must preserve the true source law.
+
+Crucial adaptive issue: never condition a rank/noise guarantee on a
+data-selected multiple being true. For every predetermined valuation d,
+the counterfactual TRUE x_d=s mod(q/3^d) depends only on the planted secret.
+All true coefficients of that valuation produce this same quotient;
+unit-part variation does not produce new independent source instances.
+Uniformly union the corresponding good-source events over allowed d
+before combining with external usable-multiple list coverage. Values/
+prefixes of wrong list elements cannot inherit the true quotient's law.
+
+At alpha*g of constant order, Gaussian tails outside three values have
+constant probability, so growing-bank exact alphabet solving eventually
+has a vacuous whole-bank tail budget. Do not hide that. Larger alphabets,
+robust corrupted equations or choosing g with a properly charged decreasing
+width are real next alternatives. All are classical comparisons; the
+actual source distinguisher/bounded-valuation Fourier producer remains missing.
+
+## Latest: Actual Small-Multiple Completion And Rounded-Gaussian Interface
+
+Read NATIVE_SMALL_MULTIPLE_COMPLETION.md and NATIVE_ROUNDED_GAUSSIAN_TOLERANCE.md,
+their theorem modules, contracts, live baseline/reduction artifacts and
+independent checkers. No decision algorithm or multiple-producing oracle
+was supplied. Twelve truth-generated CALIBRATION multiples all complete,
+including signed coefficients and actual3^64 originals. Three complete
+unknown-coefficient scans replay36 trials, public inverse caching and every
+original response/verification evaluation. Divisibility, consistency and
+bounded fit never certify orbit membership or truth by themselves.
+
+Verification:9-file connected scientific regression514 PASS in7.09s.
+Both new independent checkers and live workflows PASS; Python compile,
+checker/site JS syntax and whitespace checks PASS. Main registry validation
+reported0 issues. Full repository regression was not run. Current production
+registries have not yet consumed these standalone scientific artifacts.
+
+The verifier now has a GLOBAL original-code separation union over all
+3-adic difference strata.13122 complete small original-label banks verify
+its scoped bound. This covers all adaptive candidate choices at once.
+Noise, labels and list coverage are composed as unconditional good-source
+events; do not condition a moment bound on a data-selected multiple being
+true. Analytical budgets require a complete uncapped coefficient scan.
+Same-bank noise/label correlations between events need no independence
+assumption for the union. IID original label rows remain required for the
+code-distance population bound; one observed instance is not certified.
+
+Rounded CONTINUOUS Gaussian source noise can clear the GENERAL noise-function
+interface of arXiv2610.12913 under its actual law and precision promises.
+Nearest-integer/modular channels contract TV; correct D_alpha normalization
+gives TV^2<=11*m*B^2/[7*(alpha*q)^2]. Precision plans use the existing
+containing-interval abort ledger and charge two unconditioned adapter losses.
+Twelve budgets/four precision plans are replayed. Growing controls n32/64/128
+have positive tolerance; n8 does not clear this sufficient budget. None is
+an actual measured decision advantage or an implemented published reduction.
+A matching-moment-upper heavy tail has translation TV1; moment-only source
+substitution remains forbidden. Fixed-shift TV is not a conditional adaptive-
+query or postselection guarantee. Abort-compatible reduction wiring needs
+explicit review.
+
+The actual conditional coefficient ceiling does NOT guarantee useful
+3-adic valuation. All positive growing controls still have vacuous worst-
+coefficient completion budgets. A new exact logical countercontrol preserves
+nearly all threshold covariance with a coarse periodic predictor whose
+primitive Fourier coefficients are ALL zero. It uses the certified B and
+charges that coarse factor. The real receiver is not granted the unknown
+scalar inner product: this falsifies correlation=>primitive-support, not
+a real-source distinguisher or a general no-go.
+
+Gemini owns production CLI/registry/admission integration, global regression
+and backups. Keep all actual decision/coverage/precision/source claims
+unresolved. GPT did not commit or push.
+
+### Next GPT: Actual Small-Alphabet Carry Decoder
+
+There is a stronger classical-completion opportunity worth implementing
+before inventing another quantum predicate. Read the WORKING contract
+hypotheses/native_small_alphabet_carry_working_contract.json; it is NOT an
+admitted algorithm.6561 exact divided-cubic evaluations,19683 actual mod9
+bounded-error source equations and a complete243-row
+n2 public-parameter grid with feature rank9 were verified in this turn.
+
+For actual modulus>=9 originals with signed errors in{-1,0,1}, write secret
+s=u+3v mod9, u canonical F3 trits. Let a,t denote ORIGINAL label/response
+mod9 and x=t-a.u. Then (x^3-x)/3+a.v=0 mod3. Dividing AFTER reducing toF3
+would erase everything; divide exact integers first. On canonical u,
+u_i^3=u_i+3*(u_i^2-u_i). The divided-cubic coefficients are:
+
+    constant: (t^3-t)/3
+    u_i: (a_i-a_i^3)/3 - t^2*a_i + a_i^3
+    u_i^2: t*a_i^2-a_i^3
+    u_i*u_j (i<j): 2*t*a_i*a_j
+    u_i^2*u_j (i!=j): -a_i^2*a_j
+    u_i*u_j*u_k (i<j<k): -2*a_i*a_j*a_k
+    v_i: a_i
+
+All coefficients are mod3. Linearize THESE canonical-trit features plus v,
+not an unrestricted formal field cube. Feature width
+D=3n+C(n,2)+n(n-1)+C(n,3). Extract u/v only after checking ALL nonlinear
+feature identities and original low9 residuals. If correct low9 is recovered
+and TRUE original |e|<=1, return to originals, subtract known low9, round
+to9-spaced centers and use a full-ring unit minor to recover all higher
+digits. Do not assign them from truth or use a prime-only composite inverse.
+
+WORKING rank argument to prove/review: write a=a0+3a1 and t=t0+3t1.
+Linear-u columns contain unique a1_i; remaining columns contain distinct
+canonical ANF monomials t0*a0_i^2, t0*a0_i*a0_j, a0_i^2*a0_j,
+a0_i*a0_j*a0_k and a0_i. They should have no nonzero dual annihilator.
+Under independent uniform full labels and independent noise residues with
+each probability>=p_min>0, (a0,a1,t0) dominates uniform mass by3*p_min.
+A nonzero reduced F3 polynomial of total degree<=3 has relative support
+at least2/9 (prove with leading-coefficient induction); row escape is thus
+at least2*p_min/3. Charge a projective-hyperplane rank union across D unknowns.
+This is a working general derivation, not established by the n2 grid alone.
+Noise0/noiseless data is a separate elementary baseline, not p_min>0 by fiat.
+
+This may give a polynomial ACTUAL full-root classical decoder for the
+strict bounded-noise family, not the campaign's unbounded Gaussian source.
+It would expose how easy existing +/-1 calibration fixtures are.
+For a correct small multiple and quotient Q, apply it to rounded residuals
+over g only after proving/charging their signed error alphabet and joint
+source law. Gaussian tails and data-selected multiple dependence cannot be
+discarded. Robust corrupted-equation solving remains open.
+
+Review Arora-Ge (ECCC TR10-066 revision1) and prime-power/integer-valued
+polynomial literature before novelty claims. The Duke PDF endpoint returned
+403; the primary ECCC abstract was available, not yet the full proof.
+GPT should own this algebra/decoder/rank proof and targeted tests. Gemini
+should handle main wiring, broad regressions and backups. No toy oracle
+or extra quantum sample source should be introduced.
+
+## Latest: All-Root Completion And Source-Correct Classical Descent
+
+The earlier NEXT all-root block task below is now implemented. Read
+NATIVE_FULL_ROOT_SLICE.md and its contract, theorem, live artifact and checker.
+Shared exact ring MITM replaces the first-carry-specific search kernel.
+Five live slice controls include one actual full-root witness and four
+failed restricted slices. Three small original-data reconstructions match
+truth, including noisy inputs, with27194 paid assignments in total.
+The independent checker replays831 actual word checks. Higher-root matching,
+rank failure, exponential search, sample banks and lost row mass are charged.
+This is NOT a polynomial preimage helper or a uniform coherent full row.
+51 focused all-root tests were rerun successfully in this continuation.
+
+The next source-law/information task is also implemented in
+theorems/native_classical_modulus_descent.py. Read its derivation, contract,
+live classical_baselines/native_classical_modulus_descent.json and independent
+checker. Use actual classical paired noisy-linear records only. Disjoint
+n+1-sized low-slope kernel blocks give exact divisible labels and nearest-
+third circular responses. Typed derived pairs retain actual original lineage;
+they cannot be passed off as independent original scalar noise records.
+The first noise bound uses5mV; recursion with correlated pairs uses9mV.
+Moment upper growth is NOT a noise lower bound or a general obstruction.
+
+7371 exact original-label assignments verify joint uniform output pairs
+conditional on LOW SLOPES. Conditioning on ALL LOW LABELS changes that law.
+29 actual descent blocks and nine fixed-error alias replays show exact lost
+secret digits. After d levels, observations depend only on s mod(q/3^d).
+Compressed-only full-secret success is at most3^(-nd), with additional
+observation-alphabet or genuinely certified joint-noise-atom bounds.
+This explicitly excludes parent responses, value-dependent hashes/receipts,
+truth fixtures and unknown quantum-only states. Verification artifacts retain
+parents and are NOT themselves compressed-only receiver inputs.
+
+The crucial countercontrol is implemented too: given a CORRECT lower vector,
+return to original values, round the three top-digit centers, and solve F3
+equations with a label-only basis. Three live conditional lifts match truth.
+Their known lower vectors come from truth FOR CALIBRATION ONLY. Wrong
+consistent answers under label-aligned noise prevent treating consistency
+as a proof. Original-bank noise/rank budgets are charged and grow favorably
+under the declared cubic-bank, n^-6 relative-moment profile; none verifies
+the missing lower decoder. The exact rank expression stays symbolic rather
+than expanding millions of denominator digits.
+
+Gemini: integrate the two new baseline artifacts into CLI/registry claim
+gates without promoting conditional results to speedups or broad negatives.
+Run global regression and handle backups. GPT did not commit/push.
+Never pass truth lower prefixes into a production receiver. Never apply
+compressed-only bounds to code that reads retained parent values or hashes.
+
+Verification: expanded13-file connected regression764 PASS in176.54s.
+After the final covariance/sample-accounting refinements,136 focused
+descent tests PASS in2.03s, including six independent-checker tamper cases.
+New, all-root and diagonal checkers, live artifact generation, Python
+compile, checker/site JS syntax and whitespace checks PASS. Main registry
+validation reports0 issues. Full repository regression was not run.
+
+### Next GPT: A Noise-Robust Lower Receiver, Not Another Free Quotient
+
+First attack the actual correlated paired source. Derive a likelihood/
+characteristic-function bound for the source-specific rounded error law,
+including circular aliasing and disjoint ancestry. Finite moment bounds
+alone cannot certify maximum atoms or recovery. Test Gaussian promises
+against explicit heavy-tail and correlated-noise countercontrols. Compare
+to the known modulus/dimension-switching and improved BKW mechanisms in
+the cited primary papers; small-secret promises cannot be silently imported.
+The arXiv2610.12913 introduction and Section4.1 were checked: a distinguisher
+is still required; general composite output can be a nonunit multiple.
+Next audit whether dividing its3-adic factor exposes a usable lower quotient,
+then complete it from ORIGINAL values under a noise budget. Small-multiple
+size alone does not ensure the residual centers survive amplified noise.
+No free decision oracle, unrestricted nonunit inverse or complete reduction
+is admitted. Full proof/source compatibility review remains outstanding.
+
+Then design a retained-complement or original-bank recursive receiver.
+For the implemented fixed disjoint-block policy, M contracts by n+1 per
+level; a polynomial bank cannot support depth proportional to n. This is
+that policy's resource accounting, NOT a lower bound on all receivers.
+Any reuse must retain correlated-error ancestry and charge its information;
+new copies prepared from the same data are not fresh samples. Coherent
+complements and actual normalized-fibre processing remain outside the
+compressed-only exclusion, but need a constructive access/cost comparison.
+Alternative high-upside task: a structured bypass of the actual all-root
+vector-sum search with source-correct coherent row normalization, not a
+generic oracle or assumed polynomial helper.
+
+## Latest: Actual Classical Diagonal Slice And Paid MITM
+
+Read `NATIVE_CARRY_DIAGONAL_SLICE.md`, its theorem, contract, live classical
+baseline and independent checker. The earlier NEXT output normalization and
+affine-population tasks below are now implemented and tested. No growing-
+root preimage solver, uniform coherent row or quantum speedup is supplied.
+
+Normalize by the actual prefix minor inverse. Partition k free coordinates
+into n+1-sized blocks; choose disjoint nonzero kernel vectors of the dense
+pivot slopes. On their span, all ordinary linear-form squares vanish and
+each divided cube becomes linear. The restricted ACTUAL first-carry system
+is diagonal quadratic plus linear. Overlapping kernel vectors are rejected;
+an explicit countercontrol shows kernel membership alone is insufficient.
+
+The public-label MITM solver pays3^floor(t/2) left assignments/storage and
+up to3^ceil(t/2) right assignments. Caps fail before enumeration and never
+mean no solutions. Every returned word is checked against original labels.
+Four live controls: one failed slice and three verified mod9 witnesses,
+including an eight-equation control with267 assignments and81 stored entries.
+None of these witnesses is a full higher-root match. The failed slice does
+not exclude full-prefix witnesses, as an explicit countercontrol verifies.
+
+Full-prefix mass is3^(t-k), not free. A witness is not a normalized full
+coherent row. Conditional IID higher labels give uniform affine coefficient
+masks, exact first/second root-count moments and scoped existence bounds.
+The quadratic slice columns equal S^(-1) times original low-a weighted
+projections; at fixed low slopes they are independent uniform vectors.
+This identifies a random three-choice vector-sum baseline under the actual
+source premises, not an artificial oracle or permission to change inputs.
+No independence is assigned to repeated slices on the same original bank.
+
+The low-slope block choices are independently replayed. Merely valid external
+kernel directions keep UNKNOWN selection provenance and cannot silently
+inherit the fixed-before-higher-label population model.
+The earlier45-test/448-connected verification has been expanded with exact
+wide-root block-additivity, actual selector unit-minor tests and external
+selection provenance checks; see the final verification line below.
+The independent checker validates292 exact parameter/grid points and all
+four paid search transcripts. A coefficient-separating degree3 grid replaces
+exponential verification for the larger slice; its solution count stays
+UNKNOWN. Main production wiring/global regression/Git backups remain Gemini
+work. No GPT commit or push, candidate or active negative was created.
+
+```
+python theorems/native_carry_diagonal_slice.py --write
+node research/certificates/native_carry_diagonal_slice_crosscheck.js
+python -m pytest -q tests/test_native_carry_diagonal_slice.py
+```
+
+### Next GPT: Exact All-Root Block-Additive Slice
+
+An exact wide-label test now verifies the following observation; implement
+its reusable representation and solver extension next. Final verification:
+48 focused tests and expanded11-file suite451 PASS in13.60s; independent
+checker/live workflow, syntax and whitespace checks PASS. Registry valid,
+0 issues. Full repository regression was not run. B*v=0 makes every
+pivot WORD trit constant on this disjoint slice, and every free word site
+depends on only one parameter. The ORIGINAL frequency at ANY root therefore
+is base_frequency plus a sum of three-choice block contributions,
+not merely a mod9 polynomial. Obtain base from raw.word(0). For each
+direction, compute actual changes for parameters1 and2 only on its support.
+Each change is divisible by3 because the low prefix is fixed. Divide their
+canonical modulo-q residues by3 to get vectors over Z_(q/3)^n. The target
+is (target-base_frequency modq)/3. This is exact original-data arithmetic,
+not an extrapolation that later unrestricted carry equations remain cubic.
+
+Implement that all-root representation and a shared, costed ring-valued
+three-choice MITM engine. Verify actual whole-root frequency for every
+reported witness. It is still search ON A SLICE, not a general full-row
+solver. Under IID higher original labels and low-only slice choice, working
+full-root moment derivation suggests mean3^[t-n(r-1)], so a t about n slice
+is overwhelmingly unlikely to hit a growing-root target. Verify with
+original coefficient maps: for distinct native words, a differing site's
+two actual selector coefficient pairs have determinant+1 or-1, yielding
+pairwise uniform original-frequency lifts. Do not replace the paired block
+choices by independent ring vectors: conditioned on all low labels their
+mod3 sum is constrained, and the difference coefficient matrix has
+determinant3, not a unit. Any derived-target independence must be PROVED,
+not guessed. Keep low-label conditioning explicit.
+
+Explore the sample-bank tradeoff (M about n^3 gives t about n^2), but charge
+original samples, phase-noise budgets, search exponent and lost full-row
+mass. This may reopen larger slices without making the solver polynomial.
+No such full-root extension or scaling claim is admitted by this pass.
+Gemini owns production qsearch/registry/dequantization/UI integration,
+global regression and backups; GPT should work on the above actual-source
+algebra and stronger classical/quantum comparisons.
+
+## Latest: Compact Native Mod9 Carry Equations And Prefix Rows
+
+Read `NATIVE_PREFIX_CARRY_LIFT.md`, its theorem, contract, independent
+checker and live artifact. This implements the NEXT first-carry derivation
+below. It does not supply a cubic solver or higher-root row compiler.
+Final verification:34 carry tests plus50 affine tests; expanded10-file
+connected suite403 PASS in12.43s. Both new live workflows, exact JS checkers,
+Python/checker/site JS syntax and whitespace checks PASS. Registry validation
+0 issues. Full repository regression was not run; production integration
+and backups remain Gemini work.
+
+Direct low-prefix F3 parametrization has k=M-n free NATIVE word trits, much
+stronger than q-wide affine relaxation. Only n pivot word coordinates depend
+densely on these free trits. Exact canonical-trit lift and the actual native
+selector formula yield coefficientwise-divisible mod9 carry equations.
+After pure-trit cube reduction they are genuine mixed F3 cubics. The compact
+representation uses at most n divided-cube forms per n-equation system,
+not k^3 entries. A k1000 control evaluates exactly without expansion.
+These divided cubes are NOT rank-one F3 cubes. Capped expanded polynomials
+match independent full evaluation-basis interpolation.
+
+The live exact checker verifies63 actual prefix words and10 canonical carry
+equations, including higher-root3^64 labels. One rank-deficient control is
+unsupported, not no words. Zero acceptance remains visible. A q27 control
+matches mod9 while failing the full root; later digits are NOT assumed cubic.
+Full-prefix/filter target mean is3^[-n(r-1)]. Its prescribed-target ensemble
+version requires IID uniform higher labels conditioned on low labels, with
+target/basis/cohort weights fixed from low information before higher labels.
+Choosing easy targets or high-label-adaptive preparation is outside that
+scoped mean. No generic quantum lower bound or speedup is admitted.
+
+Literature refreshed: Ivanyos/Santha's diagonal homogeneous systems and
+their separate hidden-polynomial state model do not automatically solve
+our mixed inhomogeneous ternary cubics. arXiv2411.14697 remains WITHDRAWN
+after a reported classical attack; v1 technique discussion is not advantage
+proof evidence. Sources and applicability gates are preserved in
+`literature_audits/native_prefix_carry_sources.json`.
+
+```
+python theorems/native_prefix_carry_lift.py --write
+node research/certificates/native_prefix_carry_crosscheck.js
+python -m pytest -q tests/test_native_prefix_carry_lift.py
+```
+
+Next GPT: attack the ACTUAL compact first-carry system with known classical
+and quantum polynomial-system tools. Its cubic vector coefficients on pivot
+forms equal the original mod3 slope minor; an exact test verifies that its
+inverse makes the divided-cube coefficient matrix the identity and preserves
+the zero set. Implement that NORMALIZED representation and investigate its
+remaining coupled quadratic terms; it is not independent scalar solving
+or the published diagonal SDE. Do not claim that fixing
+low linear forms eliminates divided-cube carry information. Check this
+algebraically against the implemented native evaluator. Finding one witness
+is not normalized coherent row sampling. Test actual later-digit degree and
+representation growth before any recursion or full-root claim. A classical
+helper that truly extends to prescribed full-root targets triggers the
+original-data reconstruction audit. Underconstrained equations alone do not
+prove existence: a full-prefix-rank constant nonzero carry countercontrol
+has10 free variables and no solution.
+
+Further high-impact NEXT derivation: with fixed low labels, prefix basis and
+target-low digit, the cubic/quadratic core depends only on low labels.
+Uniform first higher original-label digits appear only as a uniform random
+constant+linear perturbation of each carry equation. Working proof to audit:
+for each output coordinate, let h_a,h_c be the first higher label digits,
+d=h_a+h_c. Their contribution is sum(h_a)+sum(d_j*t_j). In the affine
+prefix coordinates t_j=c_j+sum(b_jl*u_l), b has a free-coordinate identity
+block, so d*b is uniform over all k linear coefficients. Independently,
+sum(h_a)+d*c is uniform. Independent original coordinates give n independent
+affine masks. This is a population distribution lemma, not an ability to
+change the GIVEN original labels or a chosen-label oracle.
+If correct, pairwise-independent zero indicators imply E Z=B*3^(k-n),
+Var Z=B*3^(k-n)*(1-3^-n), and no-first-lift-solution probability at most
+min(1,(3^n-1)/(B*3^k)), conditional on the stated low-prefix ranks. Verify
+this directly against compiled coefficients and small complete populations;
+it is not admitted by this pass. High-probability existence still does not
+construct a witness, a coherent uniform sampler or later-digit recursion.
+
+Gemini owns production CLI/registry/admission/dequantization/UI integration,
+global regression and backups. These artifacts are review-pending scientific
+contracts, not new accepted candidates or active negative results. No GPT
+commit or push.
+
+## Latest: Exact Affine Relaxation, Filter Price And F3 Countercontrol
+
+Read `NATIVE_AFFINE_FIBRE_RELAXATION.md`, its theorem module, live artifact
+and hypothesis contract. This implements the preceding next affine-filter
+task below. It is not a physical gate compiler or general fibre lower bound.
+No source values, mask, secret or errors enter either public helper.
+
+The modular library's arbitrary-modulus matrix inverse assumes primality.
+The replacement uses F3 RREF to choose a unit minor and exact Newton/Hensel
+lifting, with BOTH full-root inverse identities checked at every lift.
+The actual coordinate map z<->(Az,z_free) is bijective. Uniform unrestricted
+solutions then accept native selector membership with exact probability
+eta_sigma/[B*q^(2M-n)]. All failure is retained. The uniform-target mean is
+(3/q^2)^M, whereas every target separately obeys the weaker upper
+min(1,3^M/q^(2M-n)). Ordinary amplification pays that price; other row
+constructions are NOT excluded. Scalable exponents remain compact.
+
+Four complete controls independently replay6885 coordinates and33 native
+memberships; two additional rank-deficient controls remain unsupported, NOT
+no solutions. At q=3 the native word map is genuinely affine: slopes a+c,
+offset sum(a). The implemented direct endpoint helper avoids this filter
+and reconstructs ideal original-data secret(2,0) through the classical
+short-preimage reduction. At higher roots, defects(3,-3) and(-6,3) block
+unqualified F3 extrapolation. This is a known linear endpoint, not a new
+quantum algorithm or growing-root helper.
+
+50 focused tests PASS, including exact high-root inverse lifting, bad-rank
+and bad-receipt controls, actual endpoint and forged certificate rejection.
+No accepted candidate, active negative, commit or push is created.
+
+```
+python theorems/native_affine_fibre_relaxation.py --write
+node research/certificates/native_affine_fibre_crosscheck.js
+python -m pytest -q tests/test_native_affine_fibre_relaxation.py
+```
+
+### Next GPT: Native Prefix Rows And First Carry Lift
+
+Do not keep studying the weaker unrestricted q-wide relaxation. A stronger
+constructive baseline prepares native words matching sigma modulo3 by
+direct F3 affine parametrization, with M-n free trits per full-rank cohort.
+Filtering the higher-root target then accepts eta_sigma/[B*3^(M-n)], with
+known mod3 preparation/inverse and actual high-root predicate. Uniform-target
+mean is3^[-n(r-1)]. For prescribed targets, conditional IID uniform higher
+label digits give the same ensemble mean because each valid word has a unit
+original coefficient; this population premise is NOT inferred from examples.
+Implement and independently verify that baseline and all outcome branches.
+
+More promising mathematical task: compile actual mod9 carry constraints
+after the low-digit affine parametrization instead of declaring them linear.
+For an integer affine lift T of a canonical free-trit form,
+t=T mod3 satisfies t==T^3-3T(T-1) mod9. Thus the ACTUAL selector frequency
+for one pair is
+
+```
+a + (c-2a)*T^3 + 3*a*T*(T-1) (mod9).
+```
+
+Reduce free-trit cubes by u^3==u+3u(u-1) mod9. Low-prefix correctness should
+make all remaining constant/linear coefficients divisible by3, permitting
+an honest F3 degree-at-most3 next-digit system. This is a NEXT derivation
+to verify exhaustively and symbolically, not a theorem already admitted here.
+Only n pivot word coordinates depend densely on free variables; investigate
+the resulting structured divided-cube terms without materializing free^3
+tensors. Characteristic3 divided cubes are NOT ordinary rank-one cubic
+tensors: avoid a bogus low-rank theorem. Do not extrapolate a mod9 degree
+bound or solver to every higher root. Review known underdetermined polynomial
+system algorithms before writing a new solver, and compare any helper with
+the ORIGINAL-data classical reduction.
+
+Gemini: production CLI/admission/registry/dequantization/UI integration,
+global regression and backups. Keep this cut scoped to the uniform affine
+filter and preserve the direct endpoint countercontrol. GPT owns the above
+carry derivation and scientific tests, not routine production wiring.
+
+## Latest: Actual Word Frame, Missing Row Circuit And Conditional Reliability
+
+Read `NATIVE_WORD_FRAME_ACCESS.md`, its contract, theorem module and live
+reduction artifact. This completes the structural frame/access audit listed
+as NEXT below. It does NOT supply an efficient normalized-row circuit.
+
+A legal alternative feature state is compiled from original paired values
+with phases(y1,y2-y1,-y2), including the known mask. It is not the previous
+native point seed. Uniform index/local F3 plus actual indexed phases cost
+2BM paid original rows and BM controlled local diagonals; full word tables
+are unnecessary for this preparation. Physical synthesis is still missing.
+
+Three operations are distinct: forward copy x->(x,sigma_x); projected
+incidence J|x>=|sigma_x>/sqrt(D); clean normalized erasure Q|F_sigma>=|sigma>.
+J's singular values are sqrt(p_sigma), even when its condition number is1.
+The full word pointer, if discarded, dephases EVERY actual feature phase;
+the following group Fourier readout is uniform. Q's inverse prepares
+uniform fibres, not just one valid short word. None is a free normalized row.
+
+Reference Q followed by actual product-group Fourier has ideal success
+(sum sqrt(eta_sigma))^2/(DN). Its noisy dilation retains all fibre-orthogonal
+failure. Four bounded controls replay the full good/failure law; noisy
+controls leak substantial mass. Floating receiver laws are explicitly
+diagnostics, NOT exact scalable gate certificates.
+
+New useful local derivation: exact selector-word mean square is
+2/(3B)*sum_pairs(e1^2+e2^2-e1*e2). Cross-site terms cancel pathwise, so true
+marginal moments suffice even for correlated/noncentred errors. Pure-distance
+square<=80MV/q^2 and complete measurement loss<=its square root, rationally
+enclosed. No generic hardware error or source-quality inference is included.
+
+Under IID uniform public labels for each fixed secret, distinct actual words
+collide with probability1/N. Hellinger plus that identity gives ensemble
+ideal receiver failure<=(N-1)/D; subtract the above unconditional noise loss
+for the actual COMPLETE reference. At q=3^n,M=n^2+24,B=1 the coverage loss
+is<=3^-24 and noise lossO(n^-2). This is statistical feasibility conditional
+on Q, not per-instance balance or an efficient LWE/quantum decoder.
+The next decisive obligation is an ACTUAL normalized-fibre gate construction,
+or falsification of a proposed construction, not more fake free-row access.
+
+The JS checker exactly verifies243 original word rows and rational ledgers,
+and replays102 receiver probabilities with explicit floating tolerance.
+Complete small-label-population tests verify the collision identity and
+receiver bound without importing random-occupancy assumptions.
+Final verification:42 frame tests plus41 short-preimage tests; expanded
+eight-file connected suite319 PASS in11.92s. Both live workflows and JS
+checkers PASS; Python/checker/site JS syntax and whitespace checks PASS.
+Registry validation0 issues. Massive repository regression was not run.
+No candidate, active negative, commit or push was created.
+
+```
+python theorems/native_word_frame_access.py --write
+node research/certificates/native_word_frame_crosscheck.js
+python -m pytest -q tests/test_native_word_frame_access.py
+```
+
+Gemini: production contract admission and CLI/registry/dequantization/UI
+integration; massive regression and Git backups. Do not turn conditional
+ensemble reference success into an accepted algorithm or active negative.
+Next GPT: investigate constructive coherent row preparation under the real
+near-density-one native selector map, including source-value-dependent
+cleanup proposals and a matched original-data classical comparison.
+Test Gaussian-relaxation proposals critically: if each cohort's n-by-2M
+public label matrix has full rank modulo3, its unrestricted Z_(3^r) affine
+fibre has q^(2M-n) points. Filtering it into native selector coefficient
+words accepts eta_sigma/[B*q^(2M-n)] when cohorts are sampled uniformly.
+Its uniform-target mean is(3/q^2)^M; the deterministic per-target upper
+is min(1,3^M/q^(2M-n)). Ordinary amplification of that relaxation appears
+worse than the existing comparison route at growing root. Verify and cost
+the real parametrization/filter before claiming any negative.
+Do not turn that scoped relaxation cost into a no-go: at q=3 the three
+coefficient pairs ARE an affine F3 line. At higher roots the extrapolated
+third pair differs by(3,-3), and the cyclic slope closure also fails.
+A proposed F3 Gaussian decoder must account for these actual ring carries,
+or explicitly restrict to a proved endpoint family. This is a next
+constructive/falsification task, not already implemented in this pass.
+
+## Latest: Conditional Classical Short-Preimage Reduction
+
+Read `NATIVE_SHORT_PREIMAGE_REDUCTION.md`, its hypothesis contract and live
+reduction artifact. The earlier NEXT short-preimage obligation below is now
+implemented, not a supplied scalable helper. Native selector words have
+coefficient pairs(1,0),(-1,1),(0,-1), squared norm<=2M. A receipt-checked
+external helper for all nr nonadaptive coordinate frequencies supplies an
+exact classical decoder of ORIGINAL noisy records, including zero secrets
+and known masks. All targets are requested before reading responses.
+
+For a genuinely label-only helper and independent centred original errors,
+failure<=72*n*r*M*V/q^2 plus whole-batch helper failure. Derived probes may
+overlap and need not be independent. A weaker pathwise global-moment bound
+144*B*M^2*V/q^2 permits data-dependent choices and correlated/noncentred
+errors; it only requires true marginal moments. Neither is inferred from
+the observed small data or interface hash. A helper's API does not prove its
+independence or polynomial runtime.
+
+The only implemented helper pays B*3^M enumerations with a hard cap512.
+Five live original-data controls preserve two successful ideal recoveries,
+two incomplete helpers and one noisy wrong recovery. Eight scaling ledgers
+are conditional, not efficient decoder claims. An independent JS checker
+replays273 words, seven valid probes, six missing frequencies and all ledgers.
+41 targeted tests PASS, including root3^64 deterministic easy-label controls,
+response/family mismatch rejection and forged certificate rejection. These
+controls do not establish coverage for random public labels.
+
+```
+python theorems/native_short_preimage_reduction.py --write
+node research/certificates/native_short_preimage_crosscheck.js
+python -m pytest -q tests/test_native_short_preimage_reduction.py
+```
+
+Next GPT: native incidence/frame access with honest singular-value scaling,
+actual retained garbage and structured noise. Inspect existing projected PGM
+and canonical erasure modules to avoid duplicating their scoped results.
+Gemini: wire this contract into candidate/reduction/dequantization admission,
+not into an unconditional negative or new speedup claim. CLI/UI production
+integration, global regression and backups remain your work. No GPT commits.
+
+## Latest: Actual Native Group Coupling And Paid Postselection
+
+Read `NATIVE_KNOWN_SEED_GROUP_WORKBENCH.md`, its contract and live reduction
+artifact. `theorems/native_known_seed_group_workbench.py` implements actual
+controlled induced action on a uniform work register plus the known indexed
+source, followed by the ACTUAL original-data preparation inverse. No ideal
+unknown inverse or quantum-only input reflection is granted. This supersedes
+the NEXT group/postselection hypothesis in the older section below.
+
+There are four finite source controls with full and integer-slice domains,
+2748 exact group rows, complete source-zero/nonzero mass, four actual work
+Fourier kernels, eight whole-preparation amplification controls and four
+same-original-data classical shadows. The finite joint states have nontrivial
+Schmidt rank; entanglement is real, not a dummy workspace. Literal source
+matrices and inverse match independent exact cyclotomic scalar laws.
+
+### What Survived Critique
+
+The full-group central point-evaluation ceiling is STRONGER than the earlier
+working bound and needs no ideal-source assumption. For each target coset,
+m(g_t z) has at most C<=B occupied central characters. Orthogonality/Cauchy
+give |m(g_t)|^2 <= C/3^n * sum_z|m(g_t z)|^2. Conditional full-secret decoding
+given zero plus rotation1/2 is <=C/3^n, also with actual phase noise. Identity
+outputs do not decode anything. This ceiling does NOT survive restricting
+to the public INTEGER-secret slice. In a calibration the full-domain
+conditional score is1/3 while the promised slice is1; the slice still accepts
+only1/3 of raw shots. Do not turn this scoped full-domain ceiling into a no-go
+for the actual original-data problem.
+
+For the slice, the physical Fourier amplitudes are weighted fibre coefficients
+z_sigma, NOT sqrt(p_sigma). Public selector frequencies are(a,c-a,-c), and
+actual source phase differences are(y1,y2-y1,-y2). The word map is a real
+labelled subset-sum instance from original noisy rows, not a new oracle.
+P_zero=sum|z|^2<=sum p^2. In the ideal common-secret case,
+z_sigma=p_sigma*omega^(sigma.s), so correct-and-zero is1/N, N=q^n.
+
+Source phase noise can preserve conditional correctness without dividing a
+generic global trace error by a rare event. Since the ideal seed is fixed by
+the true h, |m_y(h)|^2>=max(0,1-4*D_pure^2). The random-label collision identity
+E sum p^2=1/N+(1-1/N)/(B*3^M) then gives a joint-ensemble conditional lower
+max(0,1-4*e2)/[1+(N-1)/(B*3^M)]. At scalable n8,32,64,128 and M=n^2+24,
+the Gaussian-style moment premise makes this reliability high, but acceptance
+remains order1/N. The premise is not measured from samples. Generic hardware
+errors are NOT covered by this structured conditional phase-noise argument.
+
+The full known original-data preparation A_y is invertible, so a true
+rank-one whole-orbit reflection is legal here, unlike the older copy-only
+RELATIVE orbit reflection. Actual finite Grover trajectories obey the exact
+sine/polynomial law; (2j+1)^2 P_zero bounds success. The ledgers record the
+minimal NECESSARY j for half mean acceptance, not a sufficient decoder.
+This is Grover-scale, not a Shor-level receiver. Per-bank normalized good
+distribution is unchanged, but amplification reweights different datasets:
+the UNAMPLIFIED ensemble correctness bound is explicitly NOT claimed for
+the amplified ensemble. An exact two-instrument counterexample covers that
+mistake. All zero failures and raw probabilities remain in the artifact.
+
+### Classical Counterpart
+
+One-pass COMPUTATIONAL group readout can measure g early. It commutes with
+controlled rho and source-only inverse/measurements. The shadow samples
+the actual canonical group coordinates with finite coin caps, constructs B
+known product source terms, applies per-cohort public action/inverse and index
+Hadamard, then uses exact dyadic Gram sampling. This works at roots3^32 and
+3^64 without allocating either exponential register. Original noise-law
+independence is not required by the logical counterpart. Group FOURIER
+interference and whole-orbit amplification are outside the early-measurement
+argument; do not declare arbitrary group/work circuits dequantized.
+
+Independent `certificates/native_known_seed_group_crosscheck.js` replays all
+2748 exact group branches, weighted integer Fourier laws, central ceilings,
+quadratic true-target noise check, paid amplification, collision/moment/price
+ledgers and recorded group/source coin decisions. It does not reconstruct
+the entire scalable shadow tensor computation; small source-prefix comparisons
+are independently checked against literal matrices in the tests.
+
+Verification:34 new group-workbench tests PASS; expanded15-file connected
+suite671 PASS in31.95s after final checker strengthening. Python/new checker/
+site JS syntax and whitespace checks PASS. Registry validation0 issues,978
+active negatives and9 quarantines. No accepted candidate, active negative, source-hardness transfer,
+hardware execution or efficient full decoder is created. Main production
+CLI/registry/UI wiring and massive global regression remain Gemini work.
+No commits or pushes.
+
+```
+python theorems/native_known_seed_group_workbench.py --write
+node research/certificates/native_known_seed_group_crosscheck.js
+python -m pytest -q tests/test_native_known_seed_group_workbench.py
+```
+
+### Next GPT: Structural Fibre Processing And Honest Block Normalization
+
+Inspect existing PGM, multiplicity and fibre-erasure modules FIRST. The next
+highest-impact problem is the actual labelled incidence/frame operator,
+not more direct-postselection or seed-only experiments. An easy column map
+x->sigma(x) is not a free coherent inverse or a normalized row-preparation
+oracle. Constant relative conditioning can coexist with singular values
+of order N^(-1/2) in a norm-one physical block encoding. Prove and track that
+absolute scale, and then search for a STRUCTURED bypass rather than declaring
+all quantum decoders impossible.
+
+Formalize the classical helper falsifier, using this ACTUAL word map. A word
+chooses coefficient pairs(1,0),(-1,1),(0,-1), so beta has squared norm<=2M
+and eta=y.beta. A label-only classical short-preimage helper for prescribed
+sigma can therefore synthesize a noisy value of sigma.s from original data.
+Working derivation to verify next: request ALL nr nonadaptive frequencies
+sigma_(i,j)=3^(r-j)*unit_i, j1..r, and recover low trits successively by
+subtracting the known lower prefix and rounding to the nearest third. If each
+phase error is <q/6, this reconstructs s, including zero. Source moment/union
+suggest failure<=72*n*r*M*V/q^2 plus helper failures. Overlapping original
+lineages do not require fresh errors; label-only helper choices remain
+independent of original errors. This is a NEXT reduction obligation, not a
+new accepted classical solver: the short-preimage helper is missing and must
+not be supplied by an exponentially enumerated toy fixture at scale.
+
+A quantum-only efficient preimage/fibre mechanism could itself be a major
+SIS/LWE contribution. Specify its actual gates, row access, normalization,
+retained pointers, success and source-noise correlation. Do not replace it
+with a classical trapdoor and call the resulting decoder a quantum discovery.
+Keep full-domain versus integer-promise distinctions, nine quarantines and
+source-private actual versus ideal inverse semantics intact. Gemini owns
+production admission/dequantization/mutation/CLI/UI and backups.
+
+## Latest: Costed Coherent Reflection And Tensor Counterpart
+
+Read `KNOWN_PREPARATION_COHERENT_REFLECTION.md` and
+`KNOWN_REFLECTION_TENSOR_SIMULATION.md`, their contracts, and live artifacts.
+These supersede the earlier NEXT GPT reflection suggestion below. Two
+scientific passes are implemented; no accepted candidate or active negative
+was added, and no general quantum LWE/HSP impossibility is claimed.
+
+### Access pass
+
+`theorems/known_preparation_coherent_reflection.py` uses the actual original
+records/mask to prepare B orthogonal indexed cohorts of M source qutrits.
+Known preparation, correctly ordered inverse, and a charged zero-register
+phase gate supply an ACTUAL point-seed reflection, never a free ideal inverse.
+Originals2*B*M are paid once, explicit multiplexors costO(B*M), and reuse has
+frozen errors/labels. Relative cohort phases cannot be independently erased.
+
+Under explicit IID independent symmetric original errors, the exact mean
+fidelity is A^M+(C^M-A^M)/B, with A=[(1+2*gamma)/3]^2 and
+C=(3+4*gamma+2*gamma^2)/9. Moment bounds on pure squared trace error do not
+grow with B: product-only16*pi^2*M*V/(9*q^2), indexed-cohort8*pi^2*M*V/(3*q^2).
+T reused reflections and K initial same-bank copies cost sqrt(K*e2)+
+2*T*sqrt(e2), not T times the averaged-copy density error. Complete forward/
+inverse preparation, zero-phase, other receiver operations and rounding
+promises are separate charges. This composite bound does not cover arbitrary
+indexed diagonal queries or fast-forwarded phase powers.
+
+Exact rational falsifiers expose the frozen-copy budget error and a correlated
+matching-moment bank that violates the IID bound. Actual native central rows
+separate vector and ray stabilizers: a single product cohort has extra central
+stabilizers, and merely removing a fixed-vector kernel need not remove the ray
+kernel. A conditional IID ideal-bank overlap gap is costed using complex
+Hoeffding and all3^(nL+1) group elements. This is not certification of an
+observed bank, a decoder, or a source/hardness transfer. Formal profiles above
+level512 explicitly exceed the existing ring backend cap.
+
+Independent `certificates/known_preparation_coherent_reflection_crosscheck.js`
+replays full preparation/reflection composites in exact cyclotomic arithmetic
+at dimensions27,6,18,36, complete IID error censuses, central rows/kernels,
+rational source/noise/gate budgets and both rational falsifiers.
+
+### Tensor pass
+
+`theorems/known_reflection_tensor_simulation.py` constructs the same-original-
+data counterpart for ONE known cohort seed, local F3/root diagonals,
+FULL-SYSTEM reflection about that seed, and terminal product measurements.
+Each reflection adds B product terms; locals preserve them. Rank<=B*(T+1),
+even at exponentially wide3^M. Approximate roots use certified cosine boxes
+at double precision before sine-square-root reconstruction and exact dyadic
+complex arithmetic afterward. Polynomial denominator bounds and a complete
+near-unitary hybrid account for all logical approximation error.
+
+Sampling uses exact Gram norms, unnormalized prefixes, integer weights and
+capped uniform-bit rejection. ALL coin aborts are charged. A successful local
+draw has the correct conditional rational law, but conditioning on WHOLE
+completion need not: the exact two-factor falsifier gives9/13 instead of3/4.
+Never promote completed-only statistics as an exact channel.
+
+Live controls have5,14,8,4 terms at roots9,9,3^16,3^64; the last two never
+allocate their full Hilbert space. Source noise/independence is NOT required
+by this logical counterpart; it simulates the actual known noisy point
+phases, not the secret-ideal reference. Unknown quantum-only phases,
+subsystem reflections, entangled work and general adaptive quantum circuits
+are not covered. Known preparation alone is not a universal simulation theorem.
+
+`certificates/known_reflection_tensor_simulation_crosscheck.js` independently
+checks all raw phase receipts, error/resource ledgers and recorded coin
+decisions. It explicitly does NOT reconstruct the whole tensor computation.
+Small tensor norms/Born prefixes use independent stdlib rational replay;
+high-root entries have independent100-digit transcendental tests. Full
+independent tensor reconstruction and external proof review remain debt.
+
+Verification:71 access tests and46 tensor tests; expanded12-file connected
+suite562 PASS in26.88s. Both independent checker workflows are exercised by
+that suite. Python, both new checkers and site JS syntax PASS; tracked diff
+whitespace PASS. Registry validation0 issues,978 active negatives and9
+quarantines. Main production CLI/registry/UI integration and massive global
+regression remain Gemini work. No commits/pushes. Commands:
+
+```
+python theorems/known_preparation_coherent_reflection.py --write
+node research/certificates/known_preparation_coherent_reflection_crosscheck.js
+python theorems/known_reflection_tensor_simulation.py --write
+node research/certificates/known_reflection_tensor_simulation_crosscheck.js
+```
+
+### Next GPT: actual group/work coupling, not more seed-only gates
+
+Read `native_noncentral_filter_tradeoff.py` and `native_orbit_source_access.py`
+before claiming new access: existing orbit/two-reflection controls already
+exist, and their fixed-filter bounds exclude label-adaptive filters. Do not
+reuse those bounds to forbid every known-preparation group circuit.
+
+Highest-impact next audit: implement ACTUAL controlled native induced action
+on a retained group register and this known seed; pay the group/index/source
+gates. Try to kill simple prepare/controlled-action/unprepare/source-zero
+postselection BEFORE using its output as a decoder. Working derivation below
+is a NEXT hypothesis to independently verify, not a new registry negative:
+
+For center Z=pi^(L-1)*F3^n, a cohort has one central row c_b and
+m(z)=<Phi,rho(z)Phi>=B^-1*sum_b chi_(c_b)(z). If w_c is the empirical central
+sector weight, Parseval suggests sum_z|m(z)|^2=3^n*sum_c w_c^2>=3^n/B.
+Source-zero postselection after uniform controlled group action produces
+group amplitudes m(g)/sqrt(|G|), not a free uniform-H state. For an IDEAL
+H-fixed seed with |H|=3 and H intersect Z={1}, the H*Z mass suggests
+conditional probability of a true H element<=B/3^n. For an arbitrary actual
+noisy seed, center mass alone suggests<=3B/3^n. Unconditional true-H-plus-zero
+success is always<=3/|G|. A large absolute overlap gap does not by itself
+control aggregate false-positive mass. Test actual carries and all source
+branches; do not divide a global noise bound by this rare success probability.
+
+This concerns that SPECIFIC direct-postselection decoder, not group Fourier
+sampling, adaptive sector descent or arbitrary quantum algorithms. Original-
+data promises matter: ACTUAL even-level LWE inputs have INTEGER-
+EMBEDDED secrets. At level2r, nonzero center vectors have nonzero zeta
+coordinate; the t=1 hidden generator has zero zeta coordinate. A cheap public
+filter/preparation of that promised group slice can therefore remove the
+central false-positive coset members. The above conditional ceiling does NOT
+automatically apply after that filter. Verify the even/odd carried charts
+and the restricted normalization; do not turn this proposed full-group ceiling
+into a no-go for the actual integer-embedded source. Ordinary unfiltered
+postselection and restricted-slice postselection are different experiments.
+The new exact carried-ring tests verify this even/odd distinction at
+levels2,4,16,128 and3,5,17,127; the proposed postselection ceiling itself
+is still unimplemented and needs independent proof/replay.
+
+Multiple same-bank seed copies can convolve central sectors; they are legal COSTED
+preparations, not fresh IID originals. Their source-ideal squared error is
+at most K times the original point-seed squared error. Flat tensor rank can
+look exponential B^K, but a hierarchical product-of-blocks representation
+may still simulate full-system reflections/local block gates efficiently.
+Do not accept multiple seeds as an escape merely because the flat simulator
+does not implement them. Genuine inter-block/group coupling needs its own
+Schmidt/tensor and original-data attack analysis. Then derive a constructive
+decoder or a precisely scoped falsifier rather than re-running toy sweeps.
+
+Also inspect the native PGM/multiplicity/fibre-erasure modules before adding
+a purported efficient normalizer. Nearly uniform subset-sum weights can have
+constant relative condition number but exponentially small singular values
+under a norm-one block encoding. Do not discard the absolute normalization
+cost. A CLASSICALLY compilable short preimage sampler for arbitrary original
+LWE frequency labels would itself enable classical chosen-frequency attacks;
+it is not an innocuous free ingredient in a quantum decoder. Any genuinely
+quantum fibre mechanism needs an explicit circuit, legality, original-noise
+correlation analysis and a matched SIS/preimage classical baseline.
+
+### Gemini integration tasks
+
+Wire both standalone workflows into production CLI and artifact dashboards
+only after reading their scope. Admission/dequantization must distinguish
+original known classical phases from opaque quantum-only inputs, full-system
+from subsystem reflections, logical approximation from source-to-ideal error,
+and whole-completion conditioning from unconditional channels. Use the
+contracts as proposed classification rules, not broad proved no-gos. Refresh
+production proof/dequantization/mutation views and run the massive regression.
+Keep nine quarantines withdrawn. GPT remains on deep source/receiver proofs;
+Gemini owns this wiring, UI, packaging, backups and full regression.
+
+## Latest: Same-Original-Data Measured-Packet Simulation Constructed
+
+Read `KNOWN_PREPARATION_PACKET_SIMULATION.md`, its contract and
+`known_preparation_access_admission.json`. This closes a computational part
+of the earlier statistical source-dominance audit, not a universal quantum
+LWE/HSP no-go. No accepted candidate or new broad negative was created.
+
+`theorems/known_preparation_packet_simulation.py` reconstructs the ACTUAL
+prepared point state from original NoisyLinearRecord values and the known
+mask; it does not know the secret or errors. The source constructor is
+authoritative `native_noisy_phase_input.prepare_inputs`, whose recipes contain
+known_phase_values. A same-original-data classical competitor retains those
+values even though the copy-only receiver view withholds them.
+
+Exact integer two/three-entry phase descriptors preserve actual noisy point
+realizations. Common-index SUM/complement compression retains one packet at
+uniform branch3^(1-B), with phases summed at shifted indices inO(B), not3^B.
+Projection succeeds2/3; measured CNOT produces one sum/difference phase packet
+at1/2. Known diagonal feedback and local F3/anti-trine Born laws are covered.
+No arbitrary wide unitary, unknown quantum-only phase, coherent history or
+unmeasured cross-packet entanglement is admitted by analogy.
+
+The sampler uses existing exact rational Machin/Taylor cosine boxes, not
+floating probabilities. Private dyadic coin refinement stops or ABORTS at
+its precision cap. Per-call unconditional error/abort <=8*2^-B. With T calls,
+B=h+bit_length(8T-1), adaptive coupling gives error <=2^-h; never condition
+away aborted events. All uniform complements/projections/signs are charged
+stochastic calls in the live controls. Source rounding/hardware errors remain
+separate promises. Known preparation alone does NOT make general quantum
+circuits easy: a wide circuit with one final output can remain outside this
+specific factorized primitive family. Bell coherence is a boundary witness,
+not a tiny claimed hard algorithm.
+
+Independent `certificates/known_preparation_packet_simulation_crosscheck.js`
+verifies the actual classical phase receipts, complete72-path adaptive logical
+quantum law inQ(zeta9), rational Born/categorical decisions and four scalable
+roots3,9,3^16,3^64. The high-root controls never enumerate root tables or secret
+hypotheses. Field normalization and all reject branches are retained. No new
+general impossibility or quantum-only source dequantization is claimed.
+
+Entry points:
+`python theorems/known_preparation_packet_simulation.py --write`
+`node research/certificates/known_preparation_packet_simulation_crosscheck.js`
+`python -m pytest -q tests/test_known_preparation_packet_simulation.py`
+
+Verification:72 new simulation tests PASS, including complete literal channel
+and finite-coin cell checks, Bell boundary and forged-certificate rejection.
+Expanded32-file connected suite1257 PASS in234.61s. Independent exact channel
+and scalable rational transcript replay PASS. Python/new checker/site JS
+syntax and tracked diff whitespace PASS. Registry validation0 issues,978
+active negatives and9 quarantines. Main CLI/registry/UI admission integration,
+massive full-production regression and external proof review not performed.
+No commits or pushes.
+
+DEPRIORITIZE measured single-retained-packet compression as a Shor-level route
+on the ORIGINAL CLASSICALLY PREPARED noisy records. Keep it as an honest
+quantum-input baseline. Future hypotheses must name a paid coherent/source
+mechanism outside this cut and survive its appropriate original-data/tensor
+comparison. Outside-the-cut status is NOT evidence of advantage.
+
+NEXT GPT: audit legal COHERENT PREPARATION AND REFLECTION access on the same
+original data. Those explicit known gate recipes can supply an ACTUAL point
+preparation/inverse; this is different from a free IDEAL unknown-state inverse
+or a copy-only HSP source. Frozen-bank coherent query error cannot inherit an
+averaged-density per-copy budget. For product-bank rank-one reflections,
+||R_y-R_s||=2*sqrt(1-|<psi_y,psi_s>|^2); independent symmetric pair errors
+suggest E||R_y-R_s||^2 <=(64*pi^2/9)*M*V/q^2, hence a T-query hybrid budget
+O(T*sqrt(M*V/q^2)), not O(T*M*V/q^2). For a uniformly INDEXED pure bank seed,
+the norm may avoid the factorM; verify the exact phase gauge and correlations.
+These are NEXT hypotheses, not validated new oracle capabilities.
+
+Important: `NATIVE_NOISY_INDEXED_ACCESS.md` ALREADY implements fixed-bank
+known phase/inverse recipes and generic weighted operator-error accounting;
+do not rediscover or label that access as a new implementation. The remaining
+scientific work is the specific pure-seed/reflection composite error and its
+operational meaning. A uniformly indexed coherent seed averages point errors
+differently from a tensor-product cohort; coherent superpositions of cohorts
+also retain relative global phases. A single fixed-label product cohort has
+one central character and can have a larger central stabilizer than H.
+Do not assume that its pure ray supplies the mixed-source gap-one contract.
+Check coherent central-sector support and compare to the existing native
+mixed-source bridge. Seed-only polynomial-dimension computation is also a
+classical baseline; a wide GROUP/work register changes the relevant question.
+
+Also try to kill naive reflection improvements: full-system reflections about
+known product vectors can maintain a low tensor-rank description, while a
+reflection on a SUBSYSTEM with a coherent wide work register can behave
+differently. Do not mistake large ambient dimension for computational hardness,
+or a constant target Hamiltonian gap for an efficient preparation path. Raw
+phase access, qRAM/multiplexor cost, pure versus mixed source, central-sector
+support, original bank reuse/noise and actual retained coherence must be explicit.
+Gemini owns production admission/dequantization/CLI/UI refresh and massive
+regression. Do not add a general LWE/HSP no-go; do not restore nine quarantines.
+No GPT commits/pushes.
+
+
+## Latest: Actual Copy-Only Ternary Phase Endpoint And Noise Falsifier
+
+Read `TERNARY_PHASE_QUBIT_DECODER.md`, its contract and literature audit.
+`theorems/ternary_phase_qubit_decoder.py` implements the known-style F3^d
+phase-qubit endpoint, not a new polynomial growing-depth hidden-shift solver.
+
+At true order3 character labels, the anti-trine POVM excludes b=k.s with
+probability0 and returns either other b with probability1/2. Its known
+isometry is an embedded qubit, diag(1,-1,1), then inverse_F3/measurement.
+No secret, unknown input inverse, value oracle, scalar check or chosen outcome.
+The affine quadratic equation(k.s-b)^2=1 lifts to symmetric products s_i*s_j
+PLUS linear entries s_i. Exact F3 elimination requires full rank/consistency
+and checks the rank-one lift. It reconstructs zero secret with the same code.
+
+With D=d*(d+1)/2+d and M=3D+2h, a nonzero dual polynomial Q(k)+b*w.k
+escapes with probability >=1/3: w!=0 uses the two distinct allowed b values;
+w=0 uses the nonzero degree2 zero-count bound. Projective hyperplane union
+gives failure <=(3^D-1)/2*(2/3)^M <=2^(-h-1). Source row IID/uniformity and
+ideal common phase are EXTERNAL promises, never learned from finite labels.
+Actual high-root adapter checks divisibility by m_j/3 in powers-of3 factors,
+and drops only trivial factors. No arbitrary root family becomes a free F3
+sample. Full growing-depth sieve and robust noisy solver still absent.
+
+Forward controls consume actual ORIGINAL native level1 qutrits through the
+paid projection bridge. Direct native qutrit Fourier is a STRONGER baseline
+on that calibration, so do not manufacture a toy algorithm candidate from
+these controls. Six ideal original-source recoveries (d1,2,4,8,16 and zero)
+pass, as do deficient/short-source/invalid-lift/reused-copy rejection controls.
+Primary FIMS quant-ph/0211091 Section3/Theorem3.5 verifies the known fixed-prime
+inequation-lifting context. This local copy-only variant is review pending;
+the paper's value-oracle zero/scalar checks were not assumed.
+
+For independent dephasing visibility gamma, forbidden b=k.s has probability
+(1-gamma)/3. ANY forbidden equation is false at the true secret. This strict
+decoder's correct probability is <=[(2+gamma)/3]^M and >=that factor times
+(1-rank_failure_bound). It is not error correcting. Both live gamma9/10 and
+gamma0 controls return INCONSISTENT_EXCLUSION_EQUATIONS, not robust recovery.
+
+Independent `certificates/ternary_phase_qubit_decoder_crosscheck.js` verifies
+exact Q(zeta3) effects/Born laws,1352 original qutrits,905 measurements and
+2178 dual polynomials, with exact field reconstruction and noise bounds.
+It reuses exported integer-chart helpers from the preceding independent
+bridge checker. All broad speedup/hardware/robustness flags remain false.
+
+Entry points:
+`python theorems/ternary_phase_qubit_decoder.py --write`
+`node research/certificates/ternary_phase_qubit_decoder_crosscheck.js`
+`python -m pytest -q tests/test_ternary_phase_qubit_decoder.py`
+
+Verification:63 new endpoint tests PASS;358 PASS across the five connected
+receiver/bridge/noise modules;1185 PASS in54.68s across31 connected scientific,
+audit and registry files. Independent exact endpoint replay PASS. Python,
+new/helper checker and site JS syntax PASS. Registry validation0 issues,
+978 active negatives and9 quarantines; tracked diff whitespace PASS. Full
+massive production regression, main CLI/registry/UI integration and external
+proof review were not performed. No commits or pushes.
+
+NEXT HIGHEST IMPACT: audit same-original-data classical simulation BEFORE
+calling a measured compression sieve useful for the noisy classical source.
+Authoritative `native_noisy_phase_input.prepare_inputs` constructs each
+qutrit from KNOWN classical phase values in `reduction_side_recipes`.
+Common-index SUM/complement compression retains one bounded-size phase
+packet; CNOT/complement compression also does. For this restricted primitive
+family, an exact rational phase representation may classically sample every
+adaptive transcript using original values, without knowing the hidden secret.
+`ternary_certified_noise_sampler.cosine_box` supplies charged rational Born
+intervals. This is NOT a verified negative yet: prove the source access,
+factorized update, bounded precision/abort and full adaptive simulation.
+
+Do NOT infer that arbitrary wide quantum circuits are easy merely because
+they end with one qubit: universal computation is a counterexample. Restrict
+to bounded-arity measured-one-packet gates and the specifically factorized
+common-index merge; unmeasured history pointers, wide coherent phase vectors
+and unknown quantum-only phase sources are outside that proposed argument.
+If the scoped simulation holds, it deprioritizes this measured receiver for
+CLASSICALLY PREPARED noisy records, not for unknown HSP quantum input.
+Then pursue source-specific persistent coherence rather than polishing a
+classically simulable sieve. Gemini owns production wiring/regression; no Git.
+
+
+## Latest: Costed Native To Generalized-Dihedral Phase Bridge
+
+Read `NATIVE_GENERALIZED_DIHEDRAL_BRIDGE.md`, its hypothesis contract and
+`literature_audits/native_generalized_dihedral_sources.json`. This changes the
+KNOWN IDEAL baseline; it is not a new speedup or an executed full sieve.
+
+`theorems/native_generalized_dihedral_bridge.py` supplies an exact scalable
+additive chart: R_(2r)=(Z_(3^r))^2; R_(2r+1)=Z_(3^(r+1)) x Z_(3^r).
+Odd coordinates(a+b,b) use basis(1,pi) with actual mixed-characteristic carries.
+The trace-pairing dual map is an integer determinant-minus-one matrix, with
+the right cyclic periods. No field-shadow ring or secret-dependent gates.
+
+Project each ORIGINAL qutrit onto basis{0,1}, retain a qubit on success2/3,
+and charge all rejected originals. Dual labels remain uniform IID under the
+source promise. To obtain M accepted inputs, cap3*(M+b) originals gives
+conditional failure <=2^(M-1)*(2/3)^cap <=2^(-b-1). Finite source exhaustion
+returns no complete batch; it never regenerates an unknown input for free.
+
+Actual density-level CNOT/right-measurement yields labels k+l or k-l at
+probability1/2. Signs are MEASURED, not selected by Gaussian elimination.
+Both recorded gate branches are counterfactual alternatives, not cloned
+physical outputs. A real sieve may keep only its actual one-child result.
+Original physical ancestry is explicit and overlapping parents are rejected.
+Symmetric-error projected qubits retain contrast gamma; real contrasts
+multiply on merging, so ideal Kuperberg bounds cannot establish noisy success.
+
+Verified primary paper quant-ph/0302112: Theorem7.1/Section7 operates on this
+general finite-abelian labelled phase source. The known conditional ideal
+time/query form is2^{O(sqrt(n*L*log2(3)))} at full-ring entropy3^(nL).
+At L=Theta(n) this exponent scale isO(n), rather than the old stipulated
+native upper ledger'sO(n logn). Do not call that ledger a lower bound or use
+it as the only growing-depth competitor. Fixed L also retains the existing
+polynomial native receiver, which can be preferable.
+
+An EXTERNAL integer-embedded secret promise reduces the active phase axes
+to the first coordinate of each ring component, giving group entropy
+3^(n*ceil(L/2)). Tests verify that restriction and uniform marginal; no
+promise is inferred from data. The full solver, physical noise preparation,
+robust decoding, constants/memory implementation and classical separation
+remain open. No accepted candidate or new negative is created.
+
+Entry points:
+`python theorems/native_generalized_dihedral_bridge.py --write`
+`node research/certificates/native_generalized_dihedral_crosscheck.js`
+`python -m pytest -q tests/test_native_generalized_dihedral_bridge.py`
+
+Independent checker replays85 actual native projections,21 charged rejects,
+64 CNOT alternative branches, four complete dual-label censuses and eight
+scalable charts; all broad promotion flags stay false. External review pending.
+
+NEXT GPT: implement/attack a costed generalized-abelian sieve from this
+finite source with actual measured signs and noise/ancestry exposure, or find
+a structurally justified way around its exponential signal loss. Do not
+merely expand tiny label-combination menus. Gemini owns production CLI,
+registry/UI and full massive regression; expose as a known-baseline bridge.
+No GPT commits/pushes or blanket campaign endorsement.
+
+Verification:295 PASS across bridge/descent/noise/conditional-receiver tests,
+then1122 PASS in50.78s across30 connected files. Independent bridge replay
+PASS; Python and checker/site JS syntax PASS; registry validation has0 issues,
+978 active negatives and9 quarantines; tracked diff whitespace PASS. Full
+massive production regression and main CLI/UI integration were not performed.
+
+NEXT deep target, NOT IMPLEMENTED/VERIFIED YET: the F3^d phase-qubit base case
+can use the anti-trine POVM E_b=(1/3)[[1,-omega^-b],[-omega^b,1]]. For ideal
+phase omega^(k.s), b is uniform among the two values NOT equal to k.s.
+The consequent equation(k.s-b)^2=1 linearizes in symmetric monomials s_i*s_j
+and s_i. Candidate row dimension D=d*(d+1)/2+d; each nonzero dual polynomial
+appears nonzero with probability at least1/3 (linear part plus two b values,
+or a degree2 Schwartz-Zippel argument). M=3D+2b rows should give conditional
+rank failure <=2^(-b-1). Verify literal POVM/isometry, source independence,
+rank proof, complete finite controls and known fixed-exponent literature
+BEFORE promotion. Noisy exclusions can violate the polynomial equations;
+this does not supply robust decoding or a new algorithm. This may be a useful
+actual base decoder for a costed generalized-abelian sieve, not toy oracle work.
+
+
+## Latest: Costed Noise Composition And Original Symmetric-Error Transport
+
+The receiver below is now paired with `NATIVE_DESCENT_NOISE_COMPOSITION.md`,
+`theorems/native_descent_noise_composition.py`, its contract/report, the exact
+JS checker and `tests/test_native_descent_noise_composition.py`. Read both
+receiver and noise contracts. No noisy robust decoder or speedup is supplied.
+
+Adaptive error accounting uses the ORIGINAL copy cap C, joint independent
+source trace promises, known-unitary operator errors and measurement
+half-diamond errors. It charges SUM/correction/Fourier gates and all measured
+registers; no rare-branch denominator appears. Marginal bounds do not certify
+correlated sources. Zero lower recovery bounds mean insufficient guarantees,
+not observed failure or general impossibility. Two low/zero-noise compositions
+have positive guarantees; five more demanding controls do not.
+
+Actual mixed-state instruments have been tested against dense SUM replay.
+For independent phase dephasing, visibility is the PRODUCT of the original
+contrasts: (1-eta)^B at B original ancestors. This explicit noise family is
+not relabelled as Gaussian. Its exact fixed-transcript readout product uses
+actual disjoint final-packet lineages, not a conjectured typical tree size.
+
+The deeper follow-up transports the EXISTING symmetric independent-pair
+error kernel K=[[1,g,g],[g,1,g^2],[g,g^2,1]]. It accumulates each original
+offset tau through measured branches. At offset counts c0+c1+c2=B, the
+unordered off-diagonal contrasts are g^(B+c0),g^(B+c1),g^(B+c2); the correct
+character probability is1/3+2/9 times their sum. Uniform branches can have
+different contrasts. No fresh noise kernel is invented at intermediate levels.
+The exact characteristic g remains a source promise, not inferred from a
+second moment or claimed Gaussian density. Even-source physical preparation
+and arbitrary full-ring calibration are distinct scopes.
+
+A fixed UNFILTERED disjoint tree has mean contrast[g*(2+g)/3]^B from its
+uniform relative offsets; arbitrary adaptive-tree posteriors do not inherit
+that average claim. Transcript-specific transport needs no such averaging.
+The independent checker verifies20 dephasing and15 symmetric-error transcript
+controls, seven input compositions,12 exposure contracts and four fixed-tree
+mean contracts. Noisy receiver execution, robust decoding and universal
+impossibility flags remain false.
+
+Entry points:
+`python theorems/native_descent_noise_composition.py --write`
+`node research/certificates/native_descent_noise_crosscheck.js`
+`python -m pytest -q tests/test_native_descent_noise_composition.py`
+
+NEXT GPT: pursue a structural growing-depth improvement or noise-management
+mechanism with a legitimate classical/raw-data counterpart. More favorable
+finite sweeps alone are not a result. Gemini owns production commands, registry
+refreshes, UI and full massive regression. Expose these as review-pending
+contracts, not accepted candidates or blanket no-go negatives. No GPT commits.
+
+Verification:217 PASS across the noise, uniform-descent and conditional
+nil3 tests, then1044 PASS in49.88s across29 connected scientific/audit/registry
+files. All three independent JS replays PASS (uniform descent, noise transport,
+conditional nil3). Registry validation has0 issues,978 active negatives and9
+quarantines. New Python/checker syntax, site JS syntax and tracked diff
+whitespace checks PASS. Full production regression and unreviewed campaign
+claims remain Gemini/research work, respectively. No commits or pushes.
+
+## Latest: Actual Native Lower-Phase Stream And Recursive Reference Receiver
+
+Read `NATIVE_UNIFORM_DESCENT_RECEIVER.md` and
+`hypotheses/native_uniform_descent_receiver_contract.json` before the earlier
+nil3 handoff below. The generic StateHSP receiver is still absent, but native
+original phase samples now have a COMPLETE source-specific reference decoder.
+
+`theorems/native_uniform_descent_receiver.py` takes only supplied registers
+and labels. A coarse-residue-only zero-sum block is transformed with known
+SUM-inverse gates, its complements are measured with ALL outcomes accepted,
+and one pivot is retained. The exact common-index identity gives a native
+sample at one lower mixed-characteristic level, including the actual global
+phase. No integer-secret/Galois restriction is needed. The conditional IID
+source law is a local ideal-coset derivation under a legal coarse filtration,
+not inferred from finite source counts or arbitrary higher-label inspections.
+
+The recursive receiver learns lower prefixes from measured original inputs,
+then corrects fresh inputs to recover the next character digit. It preserves
+all physical lineages and leftovers and returns no recovery on rank failure
+or finite-source exhaustion. Unknown secrets occur only in forward fixtures.
+Numerical amplitudes are simulator bookkeeping, never free classical access.
+
+With W=(n+1)^2 and K=n+8, the original-copy UPPER bound is
+K*(1+W+...+W^(L-1)), live unknown qutrit buffer <=(L-1)*W+L,
+and the conditional ideal rank-failure budget is
+min(1,L*(3^n-1)/(2*3^K)). All fixed L are polynomial; this upper ledger
+does NOT prove a lower bound, LWE hardness or a growing-depth algorithm.
+
+Live producer has five recoveries at (n,L)=(1,2),(1,3),(2,3),(4,3),(1,4).
+Independent checker `certificates/native_uniform_descent_crosscheck.js`
+replays ALL747 supplied original amplitudes,272 merges and147 final digit
+measurements, exact carried-ring labels/prefixes and six conditional censuses.
+It also checks scoped flags and large integer cost/rank ledgers. The derivation
+and six scientific dependencies are hash-pinned. External review, physical
+source/hardware, noise composition and novelty remain open; no speedup admitted.
+
+Scientific entry points:
+`python theorems/native_uniform_descent_receiver.py --write`
+`node research/certificates/native_uniform_descent_crosscheck.js`
+`python -m pytest -q tests/test_native_uniform_descent_receiver.py`
+
+NEXT GPT: compose adaptive error budgets and test original-data/single-copy
+baselines, then seek structurally justified growing-depth improvements.
+Gemini owns production CLI/registry/UI refresh and full massive regressions;
+expose this as an ideal source-specific reference, not the retracted generic
+nil3 claim. Do not reinsert nine quarantined negatives. No GPT Git work.
+
+
+## Latest: HSP Overclaims Retracted And Native Nil3 Claim Corrected
+
+Two additional substantive passes followed the physics-claim audit below.
+Read `HSP_CAMPAIGN_CLAIM_AUDIT.md` and the REPLACEMENT
+`NIL3_STATE_HSP_DESCENT.md`. Nine original negatives are now preserved in
+`registry/quarantined_campaign_negatives.json`, excluded from active loading,
+protected against upsert, and checked against raw-file restoration.
+
+The five HSP negatives withdrawn here are33 and38-41. Verified distinctions:
+- Imran/Ivanyos2023 covers constant class and bounded group-order prime factors.
+  U4(F_(2^r)) is a growing class3 family covered by that theorem; center bypass
+  does not rule it out. This is known HSP under the paper's access assumptions,
+  not an implemented native StateHSP compiler or new discovery.
+- A DHSP optimal-measurement/average-subset-sum reduction is not NP-hardness of
+  every collective measurement. Supplied dyadic labels have a polynomial inverse
+  QFT, but their ordered IID source probability is2^-m^2; no random-source
+  algorithm is supplied.
+- Explicit cubic Maiorana-McFarland functions have cubic efficient duals and
+  nonaffine derivatives. A matched chosen-query classical attack still recovers
+  their shifts in2m+1 queries; no advantage is claimed.
+- Classical Legendre samples identify a shift information-theoretically with
+  O(logp) samples, not necessarily efficiently in time. Jacobi arithmetic does
+  not need factoring. Nonprimitive composite characters give identical shifted
+  oracles, invalidating a general full-modulus totient-success formula.
+- Naively waiting for a useful1D weak Heisenberg sample costs Theta(p) copies,
+  not poly(logp). This does not exclude known efficient Heisenberg algorithms.
+
+Producer/report/tests: `theorems/hsp_campaign_claim_audit.py --write`,
+`research/reductions/hsp_campaign_claim_audit.json`,
+`tests/test_hsp_campaign_claim_audit.py`. These are26 scoped algebra/access
+controls and bibliographical corrections, not a universal classification.
+
+The constructive follow-up found defects in the intervening nil3 receiver:
+`recovered_s0=s0` and `recovered_s1=s1` were direct secret assignments.
+Its F3 truncated-polynomial arithmetic is NOT O/(pi^3): the native ring has
+characteristic9 and HNF(9,6,3). The old model even cubes a purported order3
+hidden generator to a nonidentity z digit. Code/report/doc/tests/checker are
+preserved under `quarantine/nil3_claimed_receiver/` with executable code in
+.txt files. NEG-CENTRAL-DESCENT-TREE-DILATION-BARRIER is the ninth quarantine.
+
+Replacement `theorems/nil3_state_hsp_descent_receiver.py` uses the existing
+correct cyclotomic arithmetic and ORIGINAL native supplied qutrits. Given
+ACTUALLY KNOWN lower-quotient representatives, it computes public phase gates,
+measures top-character outcomes and reconstructs top digits from a finite
+full-rank batch. It never takes the unknown top digits as gate parameters.
+All729 scalar combinations and three vector batches pass; the independent
+JS checker replays the mixed-characteristic source and correction exponents.
+Insufficient labels return no answer; wrong lower values need not give
+deterministic measurements. Full recovery raises NotImplementedError because
+the lower-quotient receiver is absent. The CLI now prints the honest status.
+
+The tree ledger is accounting for ONE stipulated disjoint recursion, not a
+universal necessary-copy theorem. Every fixed depth is polynomial in n,
+including r4 and r8. Growing r changes that particular cost, not a hardness
+proof for LWE or every algorithm. Neither full nil3 success nor O(n^4) full
+receiver complexity is admitted.
+
+NEXT GPT: construct and verify actual lower-quotient state creation/recovery
+from original native inputs, using the existing conditional central gap and
+costed group-action interface. Do not assume weak direction estimates, a
+perfect StateHSP oracle, or a native quotient receiver from a citation.
+The general growing-depth/full-label receiver remains open. Audit other
+campaign claims selectively; do not blanket-reject unreviewed work.
+
+Gemini: production refresh should use corrected statuses and all nine
+quarantines, never archived positive or general negative claims. Run relevant
+dequantize/proofs/conjectures/mutate workflows and full production regression.
+The `nil3-state-hsp-descent-receiver` command is now a conditional-component
+audit, not a complete receiver. No frequent commits or GPT Git work.
+
+Verification:154 PASS in the four audit/registry/conditional-receiver test
+files, then861 PASS in46.08s across27 connected scientific and affected
+historical test files. The replacement independent JS replay PASS covers729
+native scalar phases, three vector batches and20 stipulated-tree records.
+`python qsearch.py nil3-state-hsp-descent-receiver --no-registry` runs live and
+prints NIL3_CONDITIONAL_NATIVE_PHASE_LIFT_NOT_COMPLETE_RECEIVER. Registry validation
+reports0 issues,978 active negatives and9 quarantines. Python syntax, checker
+and site JS syntax, and tracked diff whitespace checks PASS. Full production
+regression and remaining campaign review were not performed. No Git commits.
+
+## Latest Correction: Investigations59-61 General Negatives Quarantined
+
+Read `CAMPAIGN_NEGATIVE_CLAIM_AUDIT.md` BEFORE treating the historical campaign
+summaries below as established mathematics. The original claims in59-61 are
+preserved but their GENERAL no-go conclusions are not valid active guidance.
+Three records moved to `registry/quarantined_campaign_negatives.json`.
+Registry loading filters those IDs, upsert rejects restoration, and validation
+detects raw-file reintroduction. No blanket quarantine or endorsement of the
+remaining campaign was made. Their review remains necessary.
+
+Verified problems: positivity/stoquasticity does not guarantee efficient QMC
+mixing; an adiabatic or Trotter sufficient upper-error budget is not a universal
+necessary runtime lower bound; low target fidelity is not white noise; O(N)
+BFS on N=exp(n) is not polynomial-depth dequantization; a critical dimension
+for one Hamiltonian does not exclude improved walk models. Primary source
+contradictions and exact counterfamilies are recorded in the audit.
+
+Producer: `python theorems/campaign_negative_claim_audit.py --write`.
+New tests: `tests/test_campaign_negative_claim_audit.py`. These countercontrols
+are NOT quantum algorithm candidates or general hardness results. Old finite
+tests/checkers may still pass; this does not rehabilitate their broad prose.
+
+Gemini: do not reinsert the quarantined IDs or create broad replacements from
+numerical formulas. Audit each remaining claim's quantifiers, source theorem,
+input model, approximation/error norm and actual evidence. Keep the historical
+campaign for provenance, but do not label it collectively "proved". Production
+integration should expose the quarantine separately from active negatives.
+`theorems/product_channel_erasure_ceiling.py` was an unfinished GPT pass captured
+in the intervening commits; it is not validated until its derivation, independent
+replay and tests exist. It must not be promoted into a negative or candidate.
+
+Verification:45 PASS across the audit, registry IO and the three affected
+historical numerical suites. `python qsearch.py validate` reports0 issues,
+984 active negatives and3 quarantined originals. Python syntax and
+`git diff --check` PASS. Original record objects compare exactly to their
+pre-quarantine snapshot. Full production regression and the remaining campaign
+review were not performed; validation is NOT mathematical certification.
+No commits or pushes were made in this correction pass.
 
 ## Latest: Investigation 61 Proved — Quantum Walks, Continuous-Time Quantum Search, and the Spatial Graph Topology Horizon: Glued Trees, Childs-Goldstone Anderson Localization, and Classical Reversible Markov Chain Dequantization
 

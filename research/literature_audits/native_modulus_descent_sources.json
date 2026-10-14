@@ -1,0 +1,31 @@
+{
+  "status": "SOURCE_APPLICABILITY_AUDIT_PENDING_NOT_SPEEDUP_EVIDENCE",
+  "checked_date": "2026-10-14",
+  "records": [
+    {
+      "id": "LIT-BLPRS-2013-MODULUS-DIMENSION",
+      "url": "https://arxiv.org/html/1306.0281",
+      "scope_read": "introduction techniques and section organization",
+      "mechanism": "modulus/dimension switching and binary-secret reduction",
+      "applicability_gate": "do not import small-secret rounding into fixed-dimension arbitrary-secret input",
+      "full_reduction_reproduced": false
+    },
+    {
+      "id": "LIT-KF-2015-BKW-QUANTIZATION",
+      "url": "https://arxiv.org/abs/1506.02717",
+      "scope_read": "abstract only",
+      "mechanism": "quantized BKW classical comparison",
+      "applicability_gate": "actual paired-source noise and sample tradeoff still require implementation",
+      "full_reduction_reproduced": false
+    },
+    {
+      "id": "LIT-BTV-2026-SAMPLE-PRESERVING",
+      "url": "https://arxiv.org/html/2610.12913v1",
+      "scope_read": "introduction, Definitions2.1/2.7, Theorem3.1, terminal hybrid argument and Section4.1",
+      "mechanism": "sample-preserving search from decision",
+      "applicability_gate": "general rounded-Gaussian tolerance now has a local proof; distinguisher, usable coefficient valuation and full reduction/abort review remain missing",
+      "full_reduction_reproduced": false
+    }
+  ],
+  "quantum_speedup_or_hardness_transfer_admitted": false
+}

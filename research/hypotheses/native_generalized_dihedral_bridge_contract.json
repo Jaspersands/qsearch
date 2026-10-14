@@ -1,0 +1,44 @@
+{
+  "id": "CONTRACT-NATIVE-GENERALIZED-DIHEDRAL-PHASE-BRIDGE",
+  "status": "LOCAL_REDUCTION_AND_FINITE_INSTRUMENT_REPLAY_EXTERNAL_REVIEW_PENDING",
+  "kind": "known-baseline applicability reduction, not a new speedup candidate",
+  "literature_ids": ["kuperberg-dhsp-2003"],
+  "ontology_nodes": ["hidden-shift", "dihedral-hsp"],
+  "source": "independent uniformly labelled original native cyclotomic qutrits, one unknown full-ring secret",
+  "target": "uniformly labelled generalized-dihedral phase qubits over the explicit carried additive group R_L^n",
+  "resolved_local_obligations": [
+    "exact even/odd cyclic-factor coordinates and integer inverse for the native mixed-characteristic ring",
+    "perfect trace dual label map with integer determinant minus one and actual cyclic periods",
+    "literal two-level projection success two thirds, independent of labels and secret",
+    "finite original-copy cap and conditional binomial-tail failure bound, all rejects charged",
+    "actual measured CNOT sum/difference branches with one retained physical child",
+    "complete finite source phase/projection/merge replay and tampering rejection",
+    "conditional integer-embedded source uses only first phase axis per ring coordinate, not arbitrary full-ring data"
+  ],
+  "known_ideal_baseline": {
+    "reference": "https://arxiv.org/abs/quant-ph/0302112",
+    "source_location": "Theorem7.1 and Section7 labelled phase-state interface",
+    "full_ring_group_order_log3": "n*L",
+    "time_query_form": "2^{O(sqrt(n*L*log2(3)))}",
+    "conditional_integer_secret_group_order_log3": "n*ceil(L/2)",
+    "full_Kuperberg_sieve_implemented": false,
+    "finite_constants_or_runtime_estimated": false
+  },
+  "open_obligations": [
+    "external review of reduction and literature applicability",
+    "costed streaming sieve with actual measured signs, finite source exhaustion and physical memory accounting",
+    "source preparation, approximation and original noise/gate error composition across the sieve",
+    "robust noisy decoder and comparison to classical original records or legitimate local-measurement decoders",
+    "a structural improvement beyond existing applicable ideal baselines"
+  ],
+  "falsifiers": [
+    "native carries or character phases disagree with explicit cyclic-factor chart",
+    "projection success is implemented by selecting a desired public label",
+    "rejected originals, ideal phase regeneration or a measured merge sign is obtained for free",
+    "both counterfactual CNOT branches enter a physical sieve population",
+    "unknown secret or unknown-state inverse appears in any gate parameter",
+    "an ideal literature bound is promoted to an implemented noisy full receiver or a new classical-problem speedup"
+  ],
+  "accepted_speedup_candidate": false,
+  "growing_depth_polynomial_receiver_supplied": false
+}

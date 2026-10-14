@@ -1,5 +1,10 @@
 # Unitriangular HSP Obstruction, Supercharacter Blindness, and the Wild Nilpotent Representation Barrier in $U_n(\mathbb{F}_q)$
 
+**GENERAL CONCLUSION RETRACTED,2026-10-13.** This negative is quarantined.
+Published constant-class bounded-prime-factor algorithms cover growing
+U4(F_(2^r)); blindness/wildness does not prove a general circuit lower bound.
+Read [the correction](HSP_CAMPAIGN_CLAIM_AUDIT.md). Historical text follows.
+
 **Investigation**: Investigation 33  
 **Date**: 2026-10-12  
 **Status**: PROVED MATHEMATICAL OBSTRUCTION & SUPERCHARACTER BLINDNESS BARRIER (Zero Speedup Retained)  

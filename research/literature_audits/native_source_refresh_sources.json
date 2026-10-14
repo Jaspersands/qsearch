@@ -1,0 +1,36 @@
+{
+  "status": "RERANDOMIZATION_SCOPE_CHECKED_FULL_FIXED_PARENT_FLOODING_PRIOR_ART_REVIEW_PENDING",
+  "checked_date": "2026-10-14",
+  "records": [
+    {
+      "id": "LIT-BTV-2026-SAMPLE-PRESERVING",
+      "title": "Sample-Preserving Search-to-Decision Reduction for Noisy Linear Equations over Large Moduli",
+      "url": "https://arxiv.org/html/2610.12913v1",
+      "scope_read": "Definitions2.2/2.5/2.7, Theorem3.1, Section3.7, Corollary4.1 and Section4.1",
+      "relevance_to_refresh": "Supplies the general-noise search-to-decision tolerance interface at each fixed modulus q; requires verifying that the wider flooded noise width alpha_target clears the general translation budget and stays within (0, 1)."
+    },
+    {
+      "id": "LIT-ALBRECHT-2025-HOLLOW-LWE",
+      "title": "Rerandomising LWE (Hollow LWE author discussion)",
+      "url": "https://martinralbrecht.wordpress.com/2025/03/01/rerandomising-lwe/",
+      "primary_paper_url": "https://eprint.iacr.org/2025/340",
+      "scope_read": "author discussion and primary abstract on signed-permutation/basis-change rotations and hollow matrices, not a full proof",
+      "relevance_to_refresh": "Different rerandomization setting; this source does not supply the fixed-parent sign-mixing, flooding and secret-masking theorem used in the local proposal.",
+      "full_fixed_parent_flooding_prior_art_comparison_completed": false
+    },
+    {
+      "id": "LIT-BLPR-2013-LWE-HARDNESS",
+      "title": "Classical Hardness of Learning with Errors",
+      "url": "https://arxiv.org/html/1306.0281",
+      "scope_read": "Theorem2.16 and continuous-Gaussian D_alpha rounding / leftover-hashing rerandomization preliminaries",
+      "relevance_to_refresh": "Standard leftover hashing / noise flooding ingredients; our odd prime-power sign-sum chi-square identity and common original error-energy bound across nested odd-rounded quotients are local derivations for the canonical quotient tree."
+    }
+  ],
+  "local_derivations_not_attributed_to_external_authors": [
+    "exact odd prime-power sign-sum chi-square identity (g^n-1)/2^m via unit +/-2 differences",
+    "common original error-energy event sum X_i^2 <= H covering all nested odd-rounded quotients g >= g_min",
+    "compounded re-flooding falsifier versus direct original-record canonical quotient extraction"
+  ],
+  "complete_recursive_reduction_or_novelty_claim": false,
+  "actual_quantum_mechanism_or_speedup_admitted": false
+}

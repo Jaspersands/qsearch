@@ -32,6 +32,201 @@ The central question driving Q-Search is: **Can genuine polynomial or super-poly
 
 **The missing result is an efficient receiver, not more infrastructure.**
 
+**Latest scope checks:** the [refresh crossover audit](research/NATIVE_REFRESH_CROSSOVER_SCOPE_AUDIT.md)
+retains a useful width lemma but rejects incompatible composition scopes and
+matches both recovery controls classically. The [raw spectral-filter audit](research/NATIVE_WORD_SPECTRAL_FILTER_AUDIT.md)
+charges an exponential degree price for its specific ensemble filter model,
+not all quantum algorithms. A [constructive collision/swap test](research/NATIVE_WORD_COLLISION_SYMMETRY.md)
+retains all branches and exposes a classical measured counterpart and rare-event
+price. The [syndrome dilation](research/NATIVE_SYNDROME_DILATION.md) constructs
+a constant-gap joint Hamiltonian and genuinely noncommuting word effects,
+but neither removes the average source-overlap cost. None supplies an
+efficient new quantum algorithm.
+
+The [DCP physical bad-register audit](research/DCP_PHYSICAL_BAD_REGISTER_LINEAGE.md) now checks
+physical merges against the lattice reduction's actual noisy-state promise.
+Improving labels is not sufficient if the merged phase information is lost.
+
+**Campaign integrity correction:** the latest annealing, simulation and walk
+general no-go claims are [quarantined](research/CAMPAIGN_NEGATIVE_CLAIM_AUDIT.md).
+Their numerical checks do not establish those broad conclusions. Original
+records are preserved; remaining campaign claims still need individual review.
+The subsequent [HSP correction](research/HSP_CAMPAIGN_CLAIM_AUDIT.md) quarantines
+five more general claims about unitriangular groups, DHSP, bent functions and
+Legendre shifts. Known algorithms and exact countercontrols reopen those
+overbroad exclusions; they do not constitute new speedups.
+The [nil3 correction](research/NIL3_STATE_HSP_DESCENT.md) also withdraws the
+purported complete receiver: it assigned lower secret digits and used the
+wrong ring. Its replacement implements a native conditional top-digit lift
+with actual carries and explicit known-lower inputs. The lower-quotient
+receiver remains missing; the declared recursion cost is not a no-go theorem.
+
+A source-specific follow-up now supplies that missing native lower-phase
+stream: [measured uniform descent](research/NATIVE_UNIFORM_DESCENT_RECEIVER.md)
+compresses zero-sum blocks into actual lower-level qutrits and recovers full
+ring secrets recursively from supplied inputs. Five finite controls have
+complete independent phase, carry and physical-lineage replay. This is an
+ideal-source reference baseline, not a general StateHSP decoder, an efficient
+growing-depth receiver, a hardware execution or a new speedup. Its copy
+recurrence is an upper bound, and source/noise promises remain explicit.
+Run `python theorems/native_uniform_descent_receiver.py --write` and
+`node research/certificates/native_uniform_descent_crosscheck.js`.
+The [noise composition audit](research/NATIVE_DESCENT_NOISE_COMPOSITION.md)
+now charges original source, gate and measurement errors and transports the
+actual symmetric-error kernel through measured ancestor offsets. It exposes
+contrast loss in this recursive compression and insufficient growing-depth
+guarantees. These are scoped receiver limitations, not universal negatives;
+a robust noisy decoder and classical comparison remain missing.
+The [generalized-dihedral bridge](research/NATIVE_GENERALIZED_DIHEDRAL_BRIDGE.md)
+now provides a stronger known ideal baseline: paid native qutrits convert to
+uniformly labelled phase qubits through a constant-probability local projection.
+Exact carried-group charts and both measured CNOT sign branches are replayed.
+Kuperberg's applicable ideal bound improves the growing-depth comparison;
+the complete sieve and its noise robustness are not implemented or claimed.
+The [ternary phase-qubit endpoint](research/TERNARY_PHASE_QUBIT_DECODER.md)
+now supplies a costed polynomial decoder at the actual order3 character
+subgroup. It uses measured quadratic exclusions, exact finite-field solving
+and rank-one checks, including zero secret. Noisy countercontrols explicitly
+falsify its exact equations. This is a known-style sieve component, not a new
+speedup or a decoder for unrestricted high-root inputs.
+The [same-original-data simulation audit](research/KNOWN_PREPARATION_PACKET_SIMULATION.md)
+now constructs an efficient classical counterpart for the specified measured
+phase-compression family when its states are prepared from known classical
+records. That family is deprioritized for a superpolynomial quantum advantage
+on this source. Unknown quantum-only phases and persistent wide coherence
+remain outside the cut; neither is automatically evidence of advantage.
+The [coherent reflection audit](research/KNOWN_PREPARATION_COHERENT_REFLECTION.md)
+now costs actual fixed-bank preparation/inverse/reflection access. Exact
+controls preserve cohort phases; certified counterexamples reject copy-only
+noise budgets for reused reflections and reject IID bounds for correlated
+originals. Pure central-sector support and conditional finite-bank gaps are
+explicit. This supplies an access contract, not the missing coherent decoder.
+The follow-up [tensor counterpart](research/KNOWN_REFLECTION_TENSOR_SIMULATION.md)
+also simulates known full-system seed reflections plus local gates with linear
+term growth, certified rational precision and finite sampling. Exponentially
+wide product cohorts alone do not escape this closure; a useful decoder needs
+actual entangled group/work coupling outside it, with its own classical checks.
+The [known-seed group workbench](research/NATIVE_KNOWN_SEED_GROUP_WORKBENCH.md)
+now executes that coupling and tracks all postselection branches. The public
+integer-secret slice avoids an overbroad central exclusion, and structured
+phase noise can preserve conditional correctness. Acceptance still scales
+as the inverse secret space; ordinary amplification is Grover-scale. The
+missing operation is structural fibre/normalization processing, not declaring
+a postselected output to be an efficient decoder.
+The [short-preimage reduction](research/NATIVE_SHORT_PREIMAGE_REDUCTION.md)
+now shows why a classically compilable chosen-frequency helper cannot be
+granted for free: verified short native words supply an original-data
+classical secret decoder under explicit moment bounds. Its only provided
+helper is capped exponential enumeration; live missing frequencies and noisy
+wrong outputs remain visible. Quantum-only fibre processing is not excluded.
+The [native word-frame audit](research/NATIVE_WORD_FRAME_ACCESS.md) now
+separates forward label computation, projected comparison and normalized
+fibre erasure. Its conditional receiver keeps noise leakage and discarded
+pointers explicit. Actual random-label collision and marginal-error bounds
+support high ensemble success in the declared scalable regime, IF the
+missing normalized-fibre circuit is supplied. Dense reference matrices are
+not that circuit, and no new speedup is claimed.
+The [affine-fibre relaxation audit](research/NATIVE_AFFINE_FIBRE_RELAXATION.md)
+now supplies exact unit-minor/Hensel coordinate recipes and counts the price
+of filtering unrestricted modular solutions into real selector words. That
+particular route has prohibitive growing-root acceptance. A direct F3 row
+recipe and actual classical reconstruction explicitly prevent a general
+no-go conclusion; higher-root carries remain the next structural target.
+The [prefix/carry workbench](research/NATIVE_PREFIX_CARRY_LIFT.md) now
+compiles the first mod9 lift into compact mixed cubic equations over F3,
+starting from real native words rather than unrestricted coefficients.
+Exact controls and independent interpolation verify the carry representation.
+This opens a concrete algebraic solver target, not a solved cubic system,
+uniform coherent sampler or growing-root algorithm.
+The [classical diagonal-slice baseline](research/NATIVE_CARRY_DIAGONAL_SLICE.md)
+now removes mixed cubics on carefully verified disjoint kernel blocks and
+uses a costed meet-in-the-middle search. It finds actual mod9 words without
+reading source responses or secrets. Successful slices lose most of the
+full-row mass, and the witnessed mod9 matches do not satisfy their full
+higher-root targets. This is a stronger classical comparison, not a new
+quantum algorithm.
+
+The [all-root slice baseline](research/NATIVE_FULL_ROOT_SLICE.md) now checks
+actual whole-root words and reconstructs small original-data secrets with
+a paid exponential helper. The [original-data descent audit](research/NATIVE_CLASSICAL_MODULUS_DESCENT.md)
+adds exact lower-root record transformations with correlated-noise lineage.
+Compressed-only observations erase secret digits; retaining the original
+bank restores a digit classically IF the correct lower quotient is supplied.
+Neither result supplies that missing scalable lower decoder or a new speedup.
+The [small-multiple completion audit](research/NATIVE_SMALL_MULTIPLE_COMPLETION.md)
+now specifies a less demanding producer interface and a source-wide classical
+verifier. [Rounded-Gaussian tolerance](research/NATIVE_ROUNDED_GAUSSIAN_TOLERANCE.md)
+clears a conditional literature noise interface, but a real distinguisher and
+usable-valuation Fourier information remain missing.
+The [small-alphabet decoder](research/NATIVE_SMALL_ALPHABET_DECODER.md) now
+recovers full-root classical secrets with polynomial work on explicit bounded
+noise families. This makes those calibration fixtures classically easy;
+it does not solve the unbounded Gaussian source or supply a quantum speedup.
+
+The [word-span decision audit](research/NATIVE_WORD_SPAN_DECISION.md) broadens
+the target beyond full recovery: a source-compatible span effect would have
+a constant conditional distinguishing gap without balanced fibres. No efficient
+effect is supplied. An older prime-power search-to-decision route permits
+noise widening and more paid original samples, so primitive Fourier output
+and a fixed bank are not universal requirements. Exact replay and a correlated
+null countercontrol keep those conditional statements separate from an algorithm.
+The [local ground-test audit](research/NATIVE_WORD_LOCAL_DECISION.md) now
+tests a concrete alternative. Exact small moves freeze on the declared IID
+growing-root source; disconnected components inflate null acceptance, and
+prefix-only moves can lose the ideal source. Its one-block energy statistic
+has an implemented classical rational-precision counterpart. Collective
+macros and other ensemble tests remain open, not ruled out by this audit.
+The [Gaussian prefix-information check](research/NATIVE_GAUSSIAN_PREFIX_INFORMATION.md)
+also separates bounded-error successes from the hard source: original mod9
+responses lose their information under the declared wide IID Gaussian law.
+Full original values and legitimate quotient side information remain outside
+this cut; a shared-error countercontrol shows why Gaussian marginals are insufficient.
+The [Gaussian quotient completion](research/NATIVE_GAUSSIAN_QUOTIENT_COMPLETION.md)
+now preserves actual originals and supplies a sharper conditional rank bound:
+zero-error rows span a cubic base; nonzero-error rows need only span a quadratic
+block. Bounded calibrations complete supplied multiples where strict rounding
+fails. Gaussian ledgers retain tails, source assumptions and potentially huge
+matrix costs; they do not supply a multiple producer or a new quantum algorithm.
+The [partial-coordinate decoder](research/NATIVE_PARTIAL_COORDINATE_DECODER.md)
+removes an unnecessary full-feature-rank gate. Exact affine certificates and
+canonical substitution recover rank-deficient original-data controls while
+still rejecting false nonlinear models. Gaussian quotient completion now
+defaults to it. Its base-only source bound greatly reduces conditional row
+counts; tails, matrix caps and missing producer/source promises remain explicit.
+The [disjoint-basis comparator](research/NATIVE_BASIS_LOTTERY.md) now avoids
+cubic matrices entirely for supplied-multiple completion: label-only unit
+bases propose candidates, then every original distance is checked. One
+maximum-valuation clean-block event covers all smaller true quotients under
+explicit IID Gaussian premises. Independent replay preserves wrong-fit,
+singular-schedule and wrapped-error falsifiers. Constant-width scaling can
+still fail; no multiple producer, general LWE solver or quantum speedup is supplied.
+The [recursive-quotient audit](research/NATIVE_RECURSIVE_QUOTIENT_AUDIT.md)
+now proves exact same-original path composition and canonical prefix-node
+sharing. It also exposes missing joint source coverage and cumulative
+list/coefficient branching costs. A wrong-prefix countercontrol rejects the
+assumption that every false branch is full-uniform null. Recursion remains
+a conditional research route, not an implemented search-to-decision reduction.
+The [conditional source-refresh audit](research/NATIVE_SOURCE_REFRESH.md)
+proves the odd prime-power sign-sum chi-square identity $(g^n - 1) / 2^m$,
+bounds joint sign/noise Gaussian translation TV without assuming $T e_g$ and
+$T A'$ independence, and establishes one common original error-energy event
+$\sum X_i^2 \le H$ covering all true quotients $g \ge g_{\min}$ simultaneously.
+Complete finite censuses, supplied sign/mask algebra, false-prefix input aliases
+and small-root rounding-floor vacuity gates are verified. Integer dithers are
+not certified Gaussian samples. A real wider-width producer, sampler loss and
+conditional coverage amplification remain missing; narrow-source advantage
+is not inherited by the flooded target source.
+The [modulo-scale prefix-pruning audit](research/NATIVE_PREFIX_AMBIGUITY_PRUNING.md)
+then shows that reducing $(y_{\text{orig}} - a_{\text{orig}} \cdot P) \bmod L$
+at cumulative scale $L = q_0 / g$ annihilates the unknown upper quotient $L h$
+identically. In the non-wrapping regime $4 R_{\text{orig}} < L$, global
+modulo-$L$ code separation permits one surviving prefix per valuation.
+The actual level traversal can revisit nodes, so its conditional work bound
+is quadratic in root length. A unique-prefix countercontrol also shows the
+proof gate is not necessary for every fixed instance. Crucially, the same
+successful source events already support one-pass classical completion.
+This remains an audit tool, not a new completion mechanism or quantum speedup.
+
 The [collective-decoder audit](research/LINEAR_ERASURE_PRANGE_DUALITY.md)
 now constructs partial four-message parity decoding, but also derives its
 matched classical affine-mixture sampler. Their reconstruction/equation

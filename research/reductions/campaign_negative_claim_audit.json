@@ -1,0 +1,458 @@
+{
+  "status": "CAMPAIGN_GENERAL_NO_GO_OVERCLAIMS_QUARANTINED",
+  "derivation_sha256": "30bce8df0f861ad36a4e86bc0b829adb1622a0964d50dbd0573c7f119b2f7f7d",
+  "quarantined_ids": [
+    "NEG-QUANTUM-ANNEALING-SPECTRAL-GAP-BARRIER",
+    "NEG-QUANTUM-SIMULATION-TENSOR-NETWORK-HORIZON",
+    "NEG-QUANTUM-WALKS-SPATIAL-TOPOLOGY-BARRIER"
+  ],
+  "active_negative_count_diagnostic": 978,
+  "original_records_sha256": "2503cca1a4893a6b6bf0695e7bc0eb2c9d248e001732d16ee0b3763bf9dd5886",
+  "stationary_small_gap_controls": [
+    {
+      "n": 8,
+      "epsilon": "1/6561",
+      "H0": [
+        [
+          "-1/6561",
+          "0"
+        ],
+        [
+          "0",
+          "1/6561"
+        ]
+      ],
+      "Hprime": [
+        [
+          "-1/6561",
+          "0"
+        ],
+        [
+          "0",
+          "1/6561"
+        ]
+      ],
+      "ground_projector": [
+        [
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "0"
+        ]
+      ],
+      "minimum_gap": "2/6561",
+      "derivative_norm": "1/6561",
+      "misused_gap_squared_runtime_proxy": "6561/4",
+      "ground_state_leakage_for_every_positive_runtime": "0",
+      "sufficient_error_bound_is_a_necessary_runtime_bound": false
+    },
+    {
+      "n": 64,
+      "epsilon": "1/3433683820292512484657849089281",
+      "H0": [
+        [
+          "-1/3433683820292512484657849089281",
+          "0"
+        ],
+        [
+          "0",
+          "1/3433683820292512484657849089281"
+        ]
+      ],
+      "Hprime": [
+        [
+          "-1/3433683820292512484657849089281",
+          "0"
+        ],
+        [
+          "0",
+          "1/3433683820292512484657849089281"
+        ]
+      ],
+      "ground_projector": [
+        [
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "0"
+        ]
+      ],
+      "minimum_gap": "2/3433683820292512484657849089281",
+      "derivative_norm": "1/3433683820292512484657849089281",
+      "misused_gap_squared_runtime_proxy": "3433683820292512484657849089281/4",
+      "ground_state_leakage_for_every_positive_runtime": "0",
+      "sufficient_error_bound_is_a_necessary_runtime_bound": false
+    },
+    {
+      "n": 256,
+      "epsilon": "1/139008452377144732764939786789661303114218850808529137991604824430036072629766435941001769154109609521811665540548899435521",
+      "H0": [
+        [
+          "-1/139008452377144732764939786789661303114218850808529137991604824430036072629766435941001769154109609521811665540548899435521",
+          "0"
+        ],
+        [
+          "0",
+          "1/139008452377144732764939786789661303114218850808529137991604824430036072629766435941001769154109609521811665540548899435521"
+        ]
+      ],
+      "Hprime": [
+        [
+          "-1/139008452377144732764939786789661303114218850808529137991604824430036072629766435941001769154109609521811665540548899435521",
+          "0"
+        ],
+        [
+          "0",
+          "1/139008452377144732764939786789661303114218850808529137991604824430036072629766435941001769154109609521811665540548899435521"
+        ]
+      ],
+      "ground_projector": [
+        [
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "0"
+        ]
+      ],
+      "minimum_gap": "2/139008452377144732764939786789661303114218850808529137991604824430036072629766435941001769154109609521811665540548899435521",
+      "derivative_norm": "1/139008452377144732764939786789661303114218850808529137991604824430036072629766435941001769154109609521811665540548899435521",
+      "misused_gap_squared_runtime_proxy": "139008452377144732764939786789661303114218850808529137991604824430036072629766435941001769154109609521811665540548899435521/4",
+      "ground_state_leakage_for_every_positive_runtime": "0",
+      "sufficient_error_bound_is_a_necessary_runtime_bound": false
+    }
+  ],
+  "periodic_Trotter_controls": [
+    {
+      "independent_cells": 1,
+      "A": [
+        [
+          "3",
+          "0"
+        ],
+        [
+          "0",
+          "-3"
+        ]
+      ],
+      "B": [
+        [
+          "0",
+          "4"
+        ],
+        [
+          "4",
+          "0"
+        ]
+      ],
+      "AplusB": [
+        [
+          "3",
+          "4"
+        ],
+        [
+          "4",
+          "-3"
+        ]
+      ],
+      "commutator": [
+        [
+          "0",
+          "24"
+        ],
+        [
+          "-24",
+          "0"
+        ]
+      ],
+      "single_cell_commutator_norm": 24,
+      "total_commutator_norm": 24,
+      "runtime": "2*pi",
+      "Trotter_steps": 1,
+      "exact_complete_Trotter_error": "0",
+      "first_order_upper_bound": "48*pi^2*independent_cells",
+      "generic_upper_bound_implies_necessary_steps": false,
+      "generic_simulation_is_always_easy": false
+    },
+    {
+      "independent_cells": 100,
+      "A": [
+        [
+          "3",
+          "0"
+        ],
+        [
+          "0",
+          "-3"
+        ]
+      ],
+      "B": [
+        [
+          "0",
+          "4"
+        ],
+        [
+          "4",
+          "0"
+        ]
+      ],
+      "AplusB": [
+        [
+          "3",
+          "4"
+        ],
+        [
+          "4",
+          "-3"
+        ]
+      ],
+      "commutator": [
+        [
+          "0",
+          "24"
+        ],
+        [
+          "-24",
+          "0"
+        ]
+      ],
+      "single_cell_commutator_norm": 24,
+      "total_commutator_norm": 2400,
+      "runtime": "2*pi",
+      "Trotter_steps": 1,
+      "exact_complete_Trotter_error": "0",
+      "first_order_upper_bound": "48*pi^2*independent_cells",
+      "generic_upper_bound_implies_necessary_steps": false,
+      "generic_simulation_is_always_easy": false
+    },
+    {
+      "independent_cells": 1048576,
+      "A": [
+        [
+          "3",
+          "0"
+        ],
+        [
+          "0",
+          "-3"
+        ]
+      ],
+      "B": [
+        [
+          "0",
+          "4"
+        ],
+        [
+          "4",
+          "0"
+        ]
+      ],
+      "AplusB": [
+        [
+          "3",
+          "4"
+        ],
+        [
+          "4",
+          "-3"
+        ]
+      ],
+      "commutator": [
+        [
+          "0",
+          "24"
+        ],
+        [
+          "-24",
+          "0"
+        ]
+      ],
+      "single_cell_commutator_norm": 24,
+      "total_commutator_norm": 25165824,
+      "runtime": "2*pi",
+      "Trotter_steps": 1,
+      "exact_complete_Trotter_error": "0",
+      "first_order_upper_bound": "48*pi^2*independent_cells",
+      "generic_upper_bound_implies_necessary_steps": false,
+      "generic_simulation_is_always_easy": false
+    }
+  ],
+  "low_fidelity_countercontrol": {
+    "target": [
+      [
+        "1/2",
+        "1/2"
+      ],
+      [
+        "1/2",
+        "1/2"
+      ]
+    ],
+    "unitary_error": [
+      [
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "-1"
+      ]
+    ],
+    "output": [
+      [
+        "1/2",
+        "-1/2"
+      ],
+      [
+        "-1/2",
+        "1/2"
+      ]
+    ],
+    "target_fidelity": "0",
+    "output_purity": "1",
+    "maximally_mixed_purity": "1/2",
+    "squared_Hilbert_Schmidt_distance_to_white": "1/2",
+    "low_fidelity_implies_white_noise": false,
+    "all_noise_models_preserve_quantum_advantage": false
+  },
+  "positive_slow_chain_controls": [
+    {
+      "n": 8,
+      "transition_matrix": [
+        [
+          "255/256",
+          "1/256"
+        ],
+        [
+          "1/256",
+          "255/256"
+        ]
+      ],
+      "stationary_weights": [
+        "1/2",
+        "1/2"
+      ],
+      "positive_transition_weights": true,
+      "reversible": true,
+      "spectral_gap": "1/128",
+      "steps": 32,
+      "TV_from_point_start_lower_at_steps": "3/8",
+      "positivity_alone_implies_fast_mixing": false,
+      "this_example_excludes_every_classical_sampler": false,
+      "direct_uniform_sampler_is_easy": true
+    },
+    {
+      "n": 64,
+      "transition_matrix": [
+        [
+          "18446744073709551615/18446744073709551616",
+          "1/18446744073709551616"
+        ],
+        [
+          "1/18446744073709551616",
+          "18446744073709551615/18446744073709551616"
+        ]
+      ],
+      "stationary_weights": [
+        "1/2",
+        "1/2"
+      ],
+      "positive_transition_weights": true,
+      "reversible": true,
+      "spectral_gap": "1/9223372036854775808",
+      "steps": "2305843009213693952",
+      "TV_from_point_start_lower_at_steps": "3/8",
+      "positivity_alone_implies_fast_mixing": false,
+      "this_example_excludes_every_classical_sampler": false,
+      "direct_uniform_sampler_is_easy": true
+    },
+    {
+      "n": 256,
+      "transition_matrix": [
+        [
+          "115792089237316195423570985008687907853269984665640564039457584007913129639935/115792089237316195423570985008687907853269984665640564039457584007913129639936",
+          "1/115792089237316195423570985008687907853269984665640564039457584007913129639936"
+        ],
+        [
+          "1/115792089237316195423570985008687907853269984665640564039457584007913129639936",
+          "115792089237316195423570985008687907853269984665640564039457584007913129639935/115792089237316195423570985008687907853269984665640564039457584007913129639936"
+        ]
+      ],
+      "stationary_weights": [
+        "1/2",
+        "1/2"
+      ],
+      "positive_transition_weights": true,
+      "reversible": true,
+      "spectral_gap": "1/57896044618658097711785492504343953926634992332820282019728792003956564819968",
+      "steps": "14474011154664524427946373126085988481658748083205070504932198000989141204992",
+      "TV_from_point_start_lower_at_steps": "3/8",
+      "positivity_alone_implies_fast_mixing": false,
+      "this_example_excludes_every_classical_sampler": false,
+      "direct_uniform_sampler_is_easy": true
+    }
+  ],
+  "graph_input_controls": [
+    {
+      "tree_depth": 8,
+      "explicit_graph_vertices": 1022,
+      "adjacency_list_BFS_operations_scale": "Theta(explicit_graph_vertices)",
+      "dense_adjacency_matrix_scan_operations_scale": "O(explicit_graph_vertices^2)",
+      "linear_vertex_cost_is_polynomial_tree_depth_cost": false,
+      "oracle_algorithm_dequantized_by_expanding_exponential_graph": false,
+      "every_quantum_walk_algorithm_has_a_speedup": false
+    },
+    {
+      "tree_depth": 32,
+      "explicit_graph_vertices": 17179869182,
+      "adjacency_list_BFS_operations_scale": "Theta(explicit_graph_vertices)",
+      "dense_adjacency_matrix_scan_operations_scale": "O(explicit_graph_vertices^2)",
+      "linear_vertex_cost_is_polynomial_tree_depth_cost": false,
+      "oracle_algorithm_dequantized_by_expanding_exponential_graph": false,
+      "every_quantum_walk_algorithm_has_a_speedup": false
+    },
+    {
+      "tree_depth": 64,
+      "explicit_graph_vertices": "73786976294838206462",
+      "adjacency_list_BFS_operations_scale": "Theta(explicit_graph_vertices)",
+      "dense_adjacency_matrix_scan_operations_scale": "O(explicit_graph_vertices^2)",
+      "linear_vertex_cost_is_polynomial_tree_depth_cost": false,
+      "oracle_algorithm_dequantized_by_expanding_exponential_graph": false,
+      "every_quantum_walk_algorithm_has_a_speedup": false
+    },
+    {
+      "tree_depth": 256,
+      "explicit_graph_vertices": "463168356949264781694283940034751631413079938662562256157830336031652518559742",
+      "adjacency_list_BFS_operations_scale": "Theta(explicit_graph_vertices)",
+      "dense_adjacency_matrix_scan_operations_scale": "O(explicit_graph_vertices^2)",
+      "linear_vertex_cost_is_polynomial_tree_depth_cost": false,
+      "oracle_algorithm_dequantized_by_expanding_exponential_graph": false,
+      "every_quantum_walk_algorithm_has_a_speedup": false
+    }
+  ],
+  "primary_source_contradictions": [
+    {
+      "claim": "absence of a sign problem implies polynomial QMC equilibration",
+      "source": "https://arxiv.org/abs/1302.5733",
+      "assessment": "published counterexamples; not a proof of hardness against all classical algorithms"
+    },
+    {
+      "claim": "stoquastic frustration-free ground-state decision is generally in BPP",
+      "source": "https://arxiv.org/abs/0806.1746",
+      "assessment": "paper has restricted simulation results and MA-complete stoquastic6SAT, not the stated general BPP conclusion"
+    },
+    {
+      "claim": "critical dimension4 excludes improved spatial-search Hamiltonians",
+      "source": "https://arxiv.org/abs/quant-ph/0405120",
+      "assessment": "Dirac/coin variant improves the critical dimension to2"
+    }
+  ],
+  "remaining_campaign_claims_verified": false,
+  "countercontrols_are_quantum_algorithm_candidates": false,
+  "new_quantum_speedup_established": false
+}

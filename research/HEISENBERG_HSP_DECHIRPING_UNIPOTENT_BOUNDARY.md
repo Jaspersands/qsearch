@@ -1,5 +1,10 @@
 # Heisenberg Group $H_3(\mathbb{Z}_p)$ Hidden Subgroup Problem: Non-Central Character Vanishing, Quadratic De-Chirping, and the Heisenberg-Unipotent Boundary
 
+**GENERAL CONCLUSION RETRACTED,2026-10-13.** This negative is quarantined.
+The efficient nilpotent HSP frontier does not terminate at Heisenberg groups.
+Also, a rare1D weak sample is not a free direction-estimation step. Read
+[the correction](HSP_CAMPAIGN_CLAIM_AUDIT.md). Historical text follows.
+
 **Status**: Formally Proved & Computationally Verified  
 **Invariants Enforced**: `speedup_claim_allowed = False`, `accepted_speedup_candidate = False`  
 **Classification**: Algebraic Quantum Algorithms / Nilpotent Hidden Subgroup Problem / Representation Theory Boundary  

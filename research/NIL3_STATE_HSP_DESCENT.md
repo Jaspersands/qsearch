@@ -1,120 +1,107 @@
-# Nil-3 StateHSP Central Descent and Tree Dilation Barrier
+# Native Level3: Conditional Phase Lift, Not A Complete Receiver
 
-LOCAL DERIVATION / EXTERNAL REVIEW AND NOVELTY CHECK PENDING.
-This note resolves the open challenge articulated in `NATIVE_STATE_HSP_BRIDGE.md`:
-it provides an explicit constructive quantum algorithm for StateHSP over groups
-of nilpotency class 3 ($r=3$), achieving polynomial copy complexity $\mathcal{O}(n^4)$
-and polynomial time $\mathcal{O}(n^4)$. It simultaneously proves the Central Descent
-Tree Dilation Theorem, showing why iterated central descent incurs $W^{r-2}$ copy
-complexity, establishing an exponential barrier for growing nilpotency class ($r = \omega(1)$).
+CORRECTED2026-10-13. The former full-recovery and universal tree-barrier
+claims are withdrawn. Historical code, report, document, tests and checker
+are preserved in quarantine/nil3_claimed_receiver/. Their positive flags
+were not evidence of an implemented quotient receiver.
 
----
+## What Was Wrong
 
-## 1. Group Structure at Nilpotency Class 3
+The former "end-to-end simulation" set recovered_s0=s0 and recovered_s1=s1.
+It generated an ideal residual directly from s2, rather than obtaining it
+from original samples with lawful known-parameter gates. These are
+oracle-assisted fixtures, not recovery of unknown data.
 
-Consider the cyclotomic ternary ring $A = (\mathcal{O}/(\pi^3))^n$, where $\pi = \zeta - 1$
-with $\zeta = e^{2\pi i / 3}$, so that $\pi^3 = 0$.
-The semidirect product group is $G = A \rtimes C_3$, with group law:
-$$(b, t)(b', t') = (b + \zeta^t b', t + t').$$
+It also replaced the actual ring O/(pi^3), O=Z[zeta3], pi=zeta3-1, with
+F3[pi]/(pi^3). Those rings differ. Since pi^2=-3*zeta3, the native quotient
+has characteristic9, with additive group Z9 x Z3. In its power-basis chart,
 
-### Polynomial Decomposition
-Every ring element $b \in A$ expands uniquely as:
-$$b = x + \pi y + \pi^2 z, \quad x, y, z \in \mathbb{F}_3^n.$$
-Since $\zeta = 1 + \pi$, we have $\zeta^t = 1 + t\pi + \binom{t}{2}\pi^2 \pmod{\pi^3}$ for $t \in \{0, 1, 2\}$.
-The group multiplication in coordinates $(x, y, z, t)$ is:
-$$(x, y, z, t) \cdot (x', y', z', t') = \left( x + x', \ y + y' + t x', \ z + z' + t y' + \binom{t}{2} x', \ t + t' \right).$$
+    ideal HNF=(9,6,3), three times1=(3,0)!=0,
+    pi^2=(6,0).
 
-### Lower Central Series
-1. $\gamma_1(G) = G$.
-2. $\gamma_2(G) = [G, G] = \pi A \cong \mathbb{F}_3^n \times \mathbb{F}_3^n$ (spanned by $y$ and $z$, with $x = 0, t = 0$).
-3. $\gamma_3(G) = [G, \gamma_2(G)] = \pi^2 A = Z \cong \mathbb{F}_3^n$ (spanned by $z$, with $x = 0, y = 0, t = 0$).
-4. $\gamma_4(G) = [G, \gamma_3(G)] = \{0\}$ since $Z$ is central.
-Thus, $G$ has **exact nilpotency class 3**.
+The incorrect coordinate program sets three times1 to0. Worse, its
+purported hidden generator with x=2,y=z=0,t=1 cubes to z=2, not identity.
+The true native generator(-s,1) cubes to identity because
+1+zeta3+zeta3^2=0. The corrected producer uses the existing
+cyclotomic_rescaling_gate.py and NativeGroup backend, with all carries paid.
 
----
+## The Honest Constructive Component
 
-## 2. Hidden Subgroup and Ideal Cyclotomic Samples
+INPUT: original ideal native qutrit samples and their public labels, plus
+ACTUALLY KNOWN lower quotient values s mod pi^2. This pass does not supply
+the procedure that learns those lower values.
 
-The hidden subgroup is $H_s = \langle (-s, 1) \rangle$, with secret:
-$$s = s_0 + \pi s_1 + \pi^2 s_2 \in A.$$
-Because $(-s, 1)^3 = (0, 0)$, $H_s$ is a cyclic subgroup of order 3.
-The intersection with the center $Z = \pi^2 A$ is trivial: $H_s \cap Z = \{0\}$.
+For each coordinate, choose the canonical level2 representative l and
+lift it into the level3 ring. The unknown residual is pi^2*u, u inF3.
+The original supplied state is
 
-A supplied cyclotomic state sample $|\psi_a^s\rangle$ has classical label $a \in \widehat{A}$:
-$$|\psi_a^s\rangle = \frac{1}{\sqrt{3}} \sum_{j=0}^2 \chi_a(\lambda_j s) |j\rangle, \quad \lambda_0 = 0, \ \lambda_1 = 1, \ \lambda_2 = 1+\zeta.$$
+    |psi_a^s>=1/sqrt3 sum_j chi_a(lambda_j*s)|j>,
+    lambda=(0,1,1+zeta3).
 
----
+Using ONLY public a and known l, apply
 
-## 3. Constructive Two-Stage Descent Algorithm for Nil-3
+    D(a,l)=diag_j chi_a(-lambda_j*l).
 
-### Stage 1: Central Quotient to Nil-2
-1. **Central Character Measurement:**
-   Measure the center $Z = \pi^2 A \cong \mathbb{F}_3^n$ on $N_1 = \mathcal{O}(n^2)$ samples,
-   obtaining central characters $\lambda_i \in \widehat{Z} \cong \mathbb{F}_3^n$.
-2. **Zero-Sum Buffering:**
-   Accumulate samples into windows of size $W = (n+1)^2$.
-   By the zero-sum theorem in vector spaces over $\mathbb{F}_3$, every window contains
-   a non-empty subset of registers whose characters sum to zero: $\sum_{j \in \text{supp}} \lambda_j = 0$.
-3. **Induced Nil-2 State:**
-   The joint state on this zero-sum block has expectation 1 on $H_s \cdot Z$ and 0 elsewhere.
-   Its quotient in $G/Z$ is an instance of StateHSP over the nil-2 group:
-   $$G/Z \cong (\mathcal{O}/(\pi^2))^n \rtimes C_3.$$
-4. **Class-2 Recovery:**
-   Execute the heterogeneous zero-sum block receiver (`vector_centre_state_hsp_receiver.py`)
-   on the block states. This recovers the lower digits:
-   $$(s_0, s_1) \in \mathbb{F}_3^n \times \mathbb{F}_3^n.$$
-   **Copy cost of Stage 1:** $N_1 \cdot W = \mathcal{O}(n^2) \cdot (n+1)^2 = \mathcal{O}(n^4)$ copies.
+All exponents are exact multiples of1/9 in the actual native chart.
+Since zeta3 acts trivially on pi^2 and lambda_j*pi^2=j*pi^2, the residual is
 
-### Stage 2: Deterministic Phase Lift for Top Digit $s_2$
-With $(s_0, s_1)$ known, recover the top digit $s_2 \in \mathbb{F}_3^n$:
-1. Take $N_2 = \mathcal{O}(n)$ fresh original samples $|\psi_a^s\rangle$.
-2. Apply the single-qutrit phase correction:
-   $$U_{\text{corr}} = \text{diag}\left( 1, \ \chi_a(-(s_0 + \pi s_1)), \ \chi_a(-(s_0 + \pi s_1)(1+\zeta)) \right).$$
-3. The residual state is:
-   $$|\psi_a^{\text{res}}\rangle = \frac{1}{\sqrt{3}} \sum_{j=0}^2 \omega^{j (a_0 \cdot s_2 \pmod 3)} |j\rangle.$$
-4. Apply the single-qutrit Fourier transform $F_3$ and measure in the computational basis.
-   This reveals $k = a_0 \cdot s_2 \pmod 3$ with **probability 1.0 (100% deterministic)**!
-5. After $n$ independent samples, solve the linear system $A_0 s_2 \equiv k \pmod 3$ via
-   classical Gaussian elimination in $\mathcal{O}(n^3)$ time.
+    1/sqrt3 sum_j omega3^(j*k)|j>,
+    k=sum_i central_character(a_i)*u_i mod3.
 
-**Total Complexity for Nil-3:**
-- Quantum copy complexity: $\mathcal{O}(n^4)$.
-- Gate complexity: $\mathcal{O}(n^4)$.
-- Classical post-processing: $\mathcal{O}(n^3)$.
-- **Status:** Fully polynomial in $n$.
+The central coefficient is computed by the existing exact pairing:
+central_character(a)=3*pairing(a,pi^2,level3) mod3. In this chart it is
+2*(a0+a1) mod3, not an unspecified free label digit. Fourier measurement
+reveals k deterministically for an IDEAL sample with the CORRECT known lower
+premise. Wrong lower information can yield a non-deterministic residual.
 
----
+The new conditional_phase_lift(sample,known_lower) never takes an unknown
+top secret. SuppliedPhaseSample holds the public label and the input state
+used for numerical circuit conformance. The only true secrets appear in
+producer/test fixtures that generate original samples. This is not a grant
+of physical classical access to unknown state amplitudes.
 
-## 4. The Tree Dilation Barrier for Growing Depth ($r \ge 4$)
+recover_top_digits(samples,known_lower,rng) uses a finite supplied batch,
+records actual simulated measurement outcomes, solves full-rank F3 equations,
+and charges all consumed samples. Insufficient labels return UNKNOWN/no
+recovered digits, not a free extra source, pseudoinverse guess or postselection.
+There is no assignment of an unknown secret to a recovered output.
 
-Why does this central descent mechanism fail to provide a polynomial algorithm for
-arbitrary depth $r = \omega(1)$?
+The report checks ALL729 scalar combinations: nine known lower
+representatives, three residual digits, and27 original labels. Each retains
+source exponents, correction exponents, exact residual phases and numerical
+Fourier conformance. Three vector batches use independent original labels
+and explicit known lower inputs. These are CONDITIONAL recovery experiments,
+not complete StateHSP or LWE algorithm executions.
 
-### Theorem 2 (Central Descent Tree Dilation)
-To reduce StateHSP from nilpotency class $k$ to class $k-1$ via central conditioning:
-1. Each class-$(k-1)$ sample requires a zero-sum block of $W_k = (n+1)^2$ class-$k$ samples.
-2. Composing $m = r - 2$ descent levels creates a complete conditioning tree of depth $m$
-   with branching factor $W = (n+1)^2$.
-3. The number of original leaf copies required to prepare a single class-2 state is:
-   $$\mathcal{K}(r) = \prod_{k=3}^r W_k = W^{r-2} = (n+1)^{2(r-2)}.$$
-4. Since the base receiver requires $M = \mathcal{O}(n^2)$ class-2 states, the total copy complexity is:
-   $$\mathcal{C}(n, r) = M \cdot W^{r-2} = \mathcal{O}\left( n^2 (n+1)^{2(r-2)} \right) = n^{\mathcal{O}(r)}.$$
+Universal hardware compilation, finite precision, noisy source composition,
+and a complete lower-quotient receiver remain open. No quantum speedup is
+admitted. A correct conditional lift is reusable research machinery, not
+a Shor-level result.
 
-### Asymptotic Regimes
-- **Constant Depth ($r = \mathcal{O}(1)$):**
-  $\mathcal{C}(n, r) = \text{poly}(n)$. (Class 2 is $\mathcal{O}(n^2)$, Class 3 is $\mathcal{O}(n^4)$).
-- **Growing Depth ($r = \omega(1)$):**
-  $\mathcal{C}(n, r) = n^{\Omega(r)} = 2^{\Omega(r \log n)}$ is **strictly superpolynomial**.
-- **Cryptographic Cyclotomic LWE ($r = \Theta(n)$):**
-  $\mathcal{C}(n, n) = n^{\Omega(n)} = 2^{\Omega(n \log n)}$, which is completely exponential.
+## The Tree Ledger Is Not A No-Go Theorem
 
----
+For a SPECIFIED disjoint recursion spending W=(n+1)^2 children per level,
+its literal accounting is n^2*W^(r-2). Every FIXED r gives polynomial growth
+in n of degree2r-2: r4 is not "mild superpolynomial", and fixed r8 is not
+exponential in n. If r grows with n, that chosen formula can be
+superpolynomial.
 
-## 5. Conclusions
+No claim is made that every algorithm must use this tree, each level must
+spend this many inputs, reuse/compression is impossible, or LWE is hard.
+An implementation upper-cost ledger cannot establish a universal necessary
+copy lower bound. NEG-CENTRAL-DESCENT-TREE-DILATION-BARRIER is quarantined
+because it bundled that generality with the invalid positive receiver claim.
 
-1. Nil-3 StateHSP is tractably solvable in polynomial time $\mathcal{O}(n^4)$ and copies $\mathcal{O}(n^4)$.
-2. Naive central descent cannot solve growing-depth ($r = \omega(1)$) cyclotomic LWE due to the
-   tree dilation barrier $\mathcal{O}(n^{2r})$.
-3. Any future polynomial quantum algorithm for general cyclotomic LWE must avoid iterated central
-   conditioning trees, requiring either non-central coherent operations or global polynomial-depth
-   ansatzes.
+## Exact Replay And Remaining Debt
+
+The replacement independent checker reads this report, pins source and
+derivation hashes, replays the actual mixed-characteristic ring, checks
+original-state phase correction and full-rank reconstruction, and rejects
+promotion to a complete receiver. It does not certify the absent lower stage.
+
+NEXT: implement and verify actual lower-quotient state creation/recovery
+from original native inputs with the existing central-character gap contract.
+A citation to a bounded-class HSP algorithm is not a compiler for this
+particular StateHSP interface. Keep sample conditioning, tensor workspace,
+caller gates and representation access explicit. Growing native depth remains
+a separate open target rather than a proved global impossibility.

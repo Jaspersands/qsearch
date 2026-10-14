@@ -1,5 +1,13 @@
 # Hidden Structure Problem Taxonomy and Epistemic Research Ledger
 
+**Further correction,2026-10-13:** historical campaign labels in this ledger
+are not a collective mathematical certification. General conclusions from
+33,38-41 and59-61 are quarantined; the claimed full nil3 receiver is withdrawn.
+Read [the HSP audit](HSP_CAMPAIGN_CLAIM_AUDIT.md),
+[the simulation/walk audit](CAMPAIGN_NEGATIVE_CLAIM_AUDIT.md) and
+[the native nil3 correction](NIL3_STATE_HSP_DESCENT.md). Unreviewed entries
+still need their own source, access, parameter and proof-scope checks.
+
 **Investigation**: Investigation 25 (Taxonomy & Problem Ledger)  
 **Date**: 2026-10-11  
 **Status**: AUDITED & REVISED (Formal Retraction of Universal 4-Class Partitioning Theorem)  

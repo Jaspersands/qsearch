@@ -20251,9 +20251,9 @@ def command_parity_block_med_lpn_barrier(args: argparse.Namespace) -> int:
 def command_nil3_state_hsp_descent_receiver(args: argparse.Namespace) -> int:
     initialize_seed_registry(overwrite=False)
     from theorems.nil3_state_hsp_descent_receiver import REPORT, write_report
-    write_report(write_registry=not args.no_registry)
+    report = write_report(write_registry=not args.no_registry)
     validation = validate_registry()
-    print("nil3_state_hsp_descent_receiver complete")
+    print(report["status"])
     print(f"Artifact: {REPORT}")
     print(f"Registry valid: {validation['valid']}")
     return 0 if validation["valid"] else 1
@@ -20488,8 +20488,130 @@ def command_dcp_subset_sum_euclidean_volume_inflation_barrier(args: argparse.Nam
     return 0 if validation["valid"] else 1
 
 
+def command_native_basis_lottery(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    from theorems.native_basis_lottery import REPORT, build_report, exact_json
+    report = build_report()
+    if not getattr(args, "no_write", False):
+        REPORT.parent.mkdir(parents=True, exist_ok=True)
+        REPORT.write_text(json.dumps(exact_json(report), indent=2) + "\n")
+    validation = validate_registry()
+    print(report["status"])
+    print(f"Artifact: {REPORT}")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
 
 
+def command_native_recursive_quotient_audit(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    from theorems.native_recursive_quotient_audit import REPORT, build_report, exact_json
+    report = build_report()
+    if not getattr(args, "no_write", False):
+        REPORT.parent.mkdir(parents=True, exist_ok=True)
+        REPORT.write_text(json.dumps(exact_json(report), indent=2) + "\n")
+    validation = validate_registry()
+    print(report["status"])
+    print(f"Artifact: {REPORT}")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_native_source_refresh(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    from theorems.native_source_refresh import REPORT, build_report, exact_json
+    report = build_report()
+    if not getattr(args, "no_write", False):
+        REPORT.parent.mkdir(parents=True, exist_ok=True)
+        REPORT.write_text(json.dumps(exact_json(report), indent=2) + "\n")
+    validation = validate_registry()
+    print(report["status"])
+    print(f"Artifact: {REPORT}")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_native_prefix_ambiguity_pruning(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    from theorems.native_prefix_ambiguity_pruning import REPORT, build_report, exact_json
+    report = build_report()
+    if not getattr(args, "no_write", False):
+        REPORT.parent.mkdir(parents=True, exist_ok=True)
+        REPORT.write_text(json.dumps(exact_json(report), indent=2) + "\n")
+    validation = validate_registry()
+    print(report["status"])
+    print(f"Artifact: {REPORT}")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_dcp_bad_register_audit(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    from theorems.dcp_physical_bad_register_lineage import REPORT, build_report, exact_json
+    report = build_report()
+    if not getattr(args, "no_write", False):
+        REPORT.parent.mkdir(parents=True, exist_ok=True)
+        REPORT.write_text(json.dumps(exact_json(report), indent=2) + "\n")
+    validation = validate_registry()
+    print(report["status"])
+    print(f"Artifact: {REPORT}")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_native_syndrome_dilation(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    from theorems.native_syndrome_dilation import REPORT, build_report, exact_json
+    report = build_report()
+    if not getattr(args, "no_write", False):
+        REPORT.parent.mkdir(parents=True, exist_ok=True)
+        REPORT.write_text(json.dumps(exact_json(report), indent=2) + "\n")
+    validation = validate_registry()
+    print(report["status"])
+    print(f"Artifact: {REPORT}")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_native_word_collision_symmetry(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    from theorems.native_word_collision_symmetry import REPORT, build_report, exact_json
+    report = build_report()
+    if not getattr(args, "no_write", False):
+        REPORT.parent.mkdir(parents=True, exist_ok=True)
+        REPORT.write_text(json.dumps(exact_json(report), indent=2) + "\n")
+    validation = validate_registry()
+    print(report["status"])
+    print(f"Artifact: {REPORT}")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_native_word_spectral_filter_audit(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    from theorems.native_word_spectral_filter_audit import REPORT, build_report, exact_json
+    report = build_report()
+    if not getattr(args, "no_write", False):
+        REPORT.parent.mkdir(parents=True, exist_ok=True)
+        REPORT.write_text(json.dumps(exact_json(report), indent=2) + "\n")
+    validation = validate_registry()
+    print(report["status"])
+    print(f"Artifact: {REPORT}")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_native_refresh_crossover_scope_audit(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    from theorems.native_refresh_crossover_scope_audit import REPORT, build_report, exact_json
+    report = build_report()
+    if not getattr(args, "no_write", False):
+        REPORT.parent.mkdir(parents=True, exist_ok=True)
+        REPORT.write_text(json.dumps(exact_json(report), indent=2) + "\n")
+    validation = validate_registry()
+    print(report["status"])
+    print(f"Artifact: {REPORT}")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -28118,7 +28240,7 @@ def build_parser() -> argparse.ArgumentParser:
 
     nil3_state_hsp_descent_receiver = subparsers.add_parser(
         "nil3-state-hsp-descent-receiver",
-        help="Run Nil-3 StateHSP central descent receiver and tree dilation complexity barrier audit.",
+        help="Audit the conditional native level3 phase lift; complete quotient recovery remains open.",
     )
     nil3_state_hsp_descent_receiver.add_argument("--no-registry", action="store_true")
     nil3_state_hsp_descent_receiver.set_defaults(func=command_nil3_state_hsp_descent_receiver)
@@ -28241,6 +28363,76 @@ def build_parser() -> argparse.ArgumentParser:
     )
     dcp_subset_sum_euclidean_volume_inflation_barrier.add_argument("--no-registry", action="store_true")
     dcp_subset_sum_euclidean_volume_inflation_barrier.set_defaults(func=command_dcp_subset_sum_euclidean_volume_inflation_barrier)
+
+    native_basis_lottery = subparsers.add_parser(
+        "native-basis-lottery",
+        help="Audit disjoint clean-basis classical multiple completion and monotone Gaussian source event.",
+    )
+    native_basis_lottery.add_argument("--no-write", action="store_true")
+    native_basis_lottery.set_defaults(func=command_native_basis_lottery)
+
+    native_recursive_quotient_audit = subparsers.add_parser(
+        "native-recursive-quotient-audit",
+        help="Audit exact same-original recursive quotient composition, canonical nodes, and producer coverage debt.",
+    )
+    native_recursive_quotient_audit.add_argument("--no-write", action="store_true")
+    native_recursive_quotient_audit.set_defaults(func=command_native_recursive_quotient_audit)
+
+    native_source_refresh = subparsers.add_parser(
+        "native-source-refresh",
+        help="Audit conditional sign-mix Gaussian source refresh, odd prime-power chi-square identity, and common energy event.",
+    )
+    native_source_refresh.add_argument("--no-write", action="store_true")
+    native_source_refresh.set_defaults(func=command_native_source_refresh)
+
+    native_prefix_ambiguity_pruning = subparsers.add_parser(
+        "native-prefix-ambiguity-pruning",
+        help="Audit modulo-scale original-prefix pruning, canonical DAG width collapse, and wrap-around horizons.",
+    )
+    native_prefix_ambiguity_pruning.add_argument("--no-write", action="store_true")
+    native_prefix_ambiguity_pruning.set_defaults(func=command_native_prefix_ambiguity_pruning)
+
+    dcp_bad_audit = subparsers.add_parser(
+        "dcp-bad-register-audit",
+        help="Physical CNOT merge audit under the real lattice-to-DCP bad-register promise.",
+    )
+    dcp_bad_audit.add_argument("--no-write", action="store_true")
+    dcp_bad_audit.set_defaults(func=command_dcp_bad_register_audit)
+
+    dcp_lineage = subparsers.add_parser(
+        "dcp-physical-bad-register-lineage",
+        help="Audit physical CNOT bad-register lineage and visibility degradation.",
+    )
+    dcp_lineage.add_argument("--no-write", action="store_true")
+    dcp_lineage.set_defaults(func=command_dcp_bad_register_audit)
+
+    native_syndrome_dilation = subparsers.add_parser(
+        "native-syndrome-dilation",
+        help="Audit constructive constant-gap syndrome dilation and noncommuting word effects.",
+    )
+    native_syndrome_dilation.add_argument("--no-write", action="store_true")
+    native_syndrome_dilation.set_defaults(func=command_native_syndrome_dilation)
+
+    native_word_collision_symmetry = subparsers.add_parser(
+        "native-word-collision-symmetry",
+        help="Audit two-word collision/swap symmetry observable and rare branch costs.",
+    )
+    native_word_collision_symmetry.add_argument("--no-write", action="store_true")
+    native_word_collision_symmetry.set_defaults(func=command_native_word_collision_symmetry)
+
+    native_word_spectral_filter_audit = subparsers.add_parser(
+        "native-word-spectral-filter-audit",
+        help="Audit bounded raw-frame spectral filters, exact controls, and degree price.",
+    )
+    native_word_spectral_filter_audit.add_argument("--no-write", action="store_true")
+    native_word_spectral_filter_audit.set_defaults(func=command_native_word_spectral_filter_audit)
+
+    native_refresh_crossover_scope_audit = subparsers.add_parser(
+        "native-refresh-crossover-scope-audit",
+        help="Audit composability, classical dominance, and dimension debt of refresh crossover.",
+    )
+    native_refresh_crossover_scope_audit.add_argument("--no-write", action="store_true")
+    native_refresh_crossover_scope_audit.set_defaults(func=command_native_refresh_crossover_scope_audit)
 
     validate = subparsers.add_parser("validate", help="Validate candidates and experiments against proof obligations.")
     validate.set_defaults(func=command_validate)

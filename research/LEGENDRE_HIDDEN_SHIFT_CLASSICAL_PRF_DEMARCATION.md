@@ -1,5 +1,11 @@
 # Legendre Symbol Hidden Shift Problem: Superposition Oracle Necessity, Exact Totient Peak Scaling, and Classical PRF Security Demarcation
 
+**GENERAL CONCLUSION RETRACTED,2026-10-13.** This negative is quarantined.
+Classical sample identifiability, computational recovery and coherent oracle
+access are distinct. Jacobi evaluation does not require factoring, and
+nonprimitive composite symbols violate a general totient-success assertion.
+Read [the correction](HSP_CAMPAIGN_CLAIM_AUDIT.md). Historical text follows.
+
 **Author**: Adversarial Mathematical Research Runner  
 **Date**: 2026-10-12  
 **Status**: Formally Verified & Empirically Confirmed (Investigation 40)  

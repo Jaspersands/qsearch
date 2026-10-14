@@ -1,0 +1,28 @@
+{
+  "status": "PRIMARY_STATEMENT_CHECKED_ADAPTED_REDUCTION_AND_PRIOR_ART_REVIEW_PENDING",
+  "checked_date": "2026-10-14",
+  "records": [
+    {
+      "id": "LIT-MP-2012-PRIME-POWER-SEARCH-DECISION",
+      "authors": "Daniele Micciancio and Chris Peikert",
+      "title": "Trapdoors for Lattices: Simpler, Tighter, Faster, Smaller",
+      "url": "https://eprint.iacr.org/2011/501",
+      "primary_statement_url": "https://eprint.iacr.org/2011/501.pdf",
+      "scope_read": "indexed Section3 Theorem3.1 statement, prime-power example and beginning of digit-test proof",
+      "mechanism": "Gaussian noise widening, prime-power hybrids, randomized decision tests and final rounding",
+      "problem_family": "continuous-torus LWE at composite moduli with polynomially bounded prime factors",
+      "source_search_width": "alpha_S",
+      "hypothetical_decision_width": "alpha_D",
+      "selected_prime_power_sufficient_conditions": [
+        "h grows omega(sqrt(log n)); 0<alpha_S<=1/h",
+        "alpha_D>=alpha_S; alpha_D*q>=h",
+        "for the selected small-prime case, alpha_D>=alpha_S*h^2"
+      ],
+      "reusable_abstraction": "a decision oracle can suffice with width increase and polynomial original-sample expansion",
+      "applicability_gate": "not same-width or fixed-bank recovery; continuous source, full oracle randomization/amplification, widened law and extra originals must be justified",
+      "full_reduction_reproduced": false,
+      "quantum_speedup_or_hardness_transfer_admitted": false
+    }
+  ],
+  "word_span_derivation_status": "local conditional derivation and finite replay, independent mathematical review and prior-art comparison pending"
+}

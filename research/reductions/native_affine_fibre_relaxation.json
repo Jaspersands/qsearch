@@ -1,0 +1,1907 @@
+{
+  "status": "SCOPED_NATIVE_AFFINE_RELAXATION_FILTER_AND_ENDPOINT_COUNTERCONTROL_REVIEW_PENDING",
+  "producer_sha256": "725c4cc15d814ef1b960cf8bff5b816122a5f4f217c99debf7b47a03c41eb5bd",
+  "derivation_sha256": "c5fea81a53ef24e52af6437640a31417c69620e1e6e4f1a2ac855d711c71098e",
+  "dependency_sha256": {
+    "native_short_preimage_reduction.py": "0132546a2322c739351a80bae0c11226d47b32aec26c527f673902227c010ee7",
+    "native_known_seed_group_workbench.py": "0df1a11e94612888d9a063adc7e1fa95f4c9933a8a8ca28b73ab3425f6337991",
+    "known_preparation_coherent_reflection.py": "0fad142d491405c040aeb0c5939be373b55e7a4418979b06c0f6cdce8a489cca",
+    "ternary_covariant_noise.py": "2dadce1a070376a073c4a0fccd1aed2c5988d6478983b654c2a2d640f863d42a",
+    "ternary_measured_lattice_decoder.py": "151f7c5fbb9e09ad8c231fb841c6d8ce385d54123acd9d15f33b3ce51efced4b",
+    "ternary_noise_degradation.py": "def0aebaf71b7bbd0a659993c3181b28c10b2ae26563cb4dbd7a74f26fd4fde4"
+  },
+  "bounded_filter_controls": [
+    {
+      "status": "COMPLETE_EXACT_PUBLIC_AFFINE_FILTER_CONTROL",
+      "public_family": {
+        "modulus": "3",
+        "dimension": 1,
+        "cohorts": 1,
+        "sites": 2,
+        "paired_labels": [
+          [
+            [
+              [
+                1
+              ],
+              [
+                2
+              ]
+            ],
+            [
+              [
+                2
+              ],
+              [
+                2
+              ]
+            ]
+          ]
+        ],
+        "responses_masks_source_IDs_and_errors_supplied": false
+      },
+      "public_affine_recipes": [
+        {
+          "modulus": "3",
+          "matrix": [
+            [
+              1,
+              2,
+              2,
+              2
+            ]
+          ],
+          "pivot_columns": [
+            0
+          ],
+          "free_columns": [
+            1,
+            2,
+            3
+          ],
+          "pivot_minor_inverse": [
+            [
+              1
+            ]
+          ],
+          "inverse_lift_digits": [
+            1
+          ],
+          "free_registers": 3,
+          "free_fibre_size": {
+            "base": "3",
+            "exponent": 3
+          },
+          "coordinate_bijection": "z <-> (A*z,z_free)",
+          "unit_minor_verified_modulo_full_root": true,
+          "uses_composite_modulus_field_inverse": false,
+          "classical_matrix_preprocessing_arithmetic_order": "O(n^2*d+n^3*log(r))",
+          "reversible_affine_map_modular_multiply_add_order": "O(n*d+n^2)",
+          "uniform_free_register_trits": 3,
+          "physical_gate_synthesis_and_precision_supplied": false
+        }
+      ],
+      "all_target_filter_laws": [
+        {
+          "target": [
+            0
+          ],
+          "native_word_count": 3,
+          "raw_filter_acceptance": "1/9",
+          "complete_failure_probability": "8/9",
+          "conditional_word_probability": "1/3"
+        },
+        {
+          "target": [
+            1
+          ],
+          "native_word_count": 3,
+          "raw_filter_acceptance": "1/9",
+          "complete_failure_probability": "8/9",
+          "conditional_word_probability": "1/3"
+        },
+        {
+          "target": [
+            2
+          ],
+          "native_word_count": 3,
+          "raw_filter_acceptance": "1/9",
+          "complete_failure_probability": "8/9",
+          "conditional_word_probability": "1/3"
+        }
+      ],
+      "accepted_word_receipts": [
+        {
+          "cohort": 0,
+          "target": [
+            0
+          ],
+          "free_coordinates": [
+            0,
+            1,
+            0
+          ],
+          "coefficients": [
+            1,
+            0,
+            1,
+            0
+          ],
+          "word": [
+            0,
+            0
+          ]
+        },
+        {
+          "cohort": 0,
+          "target": [
+            0
+          ],
+          "free_coordinates": [
+            1,
+            1,
+            0
+          ],
+          "coefficients": [
+            2,
+            1,
+            1,
+            0
+          ],
+          "word": [
+            1,
+            0
+          ]
+        },
+        {
+          "cohort": 0,
+          "target": [
+            0
+          ],
+          "free_coordinates": [
+            2,
+            1,
+            0
+          ],
+          "coefficients": [
+            0,
+            2,
+            1,
+            0
+          ],
+          "word": [
+            2,
+            0
+          ]
+        },
+        {
+          "cohort": 0,
+          "target": [
+            1
+          ],
+          "free_coordinates": [
+            0,
+            2,
+            1
+          ],
+          "coefficients": [
+            1,
+            0,
+            2,
+            1
+          ],
+          "word": [
+            0,
+            1
+          ]
+        },
+        {
+          "cohort": 0,
+          "target": [
+            1
+          ],
+          "free_coordinates": [
+            1,
+            2,
+            1
+          ],
+          "coefficients": [
+            2,
+            1,
+            2,
+            1
+          ],
+          "word": [
+            1,
+            1
+          ]
+        },
+        {
+          "cohort": 0,
+          "target": [
+            1
+          ],
+          "free_coordinates": [
+            2,
+            2,
+            1
+          ],
+          "coefficients": [
+            0,
+            2,
+            2,
+            1
+          ],
+          "word": [
+            2,
+            1
+          ]
+        },
+        {
+          "cohort": 0,
+          "target": [
+            2
+          ],
+          "free_coordinates": [
+            0,
+            0,
+            2
+          ],
+          "coefficients": [
+            1,
+            0,
+            0,
+            2
+          ],
+          "word": [
+            0,
+            2
+          ]
+        },
+        {
+          "cohort": 0,
+          "target": [
+            2
+          ],
+          "free_coordinates": [
+            1,
+            0,
+            2
+          ],
+          "coefficients": [
+            2,
+            1,
+            0,
+            2
+          ],
+          "word": [
+            1,
+            2
+          ]
+        },
+        {
+          "cohort": 0,
+          "target": [
+            2
+          ],
+          "free_coordinates": [
+            2,
+            0,
+            2
+          ],
+          "coefficients": [
+            0,
+            2,
+            0,
+            2
+          ],
+          "word": [
+            2,
+            2
+          ]
+        }
+      ],
+      "complete_coordinates_checked_per_cohort": [
+        81
+      ],
+      "complete_native_memberships_checked": 9,
+      "uniform_target_mean_acceptance_exact": "1/9",
+      "source_values_mask_secret_and_errors_used_by_relaxation": false,
+      "discarding_failure_is_free": false,
+      "bounded_exhaustive_replay_is_polynomial_algorithm": false,
+      "physical_uniform_affine_state_circuit_executed": false,
+      "all_quantum_fibre_preparation_excluded": false
+    },
+    {
+      "status": "COMPLETE_EXACT_PUBLIC_AFFINE_FILTER_CONTROL",
+      "public_family": {
+        "modulus": "9",
+        "dimension": 1,
+        "cohorts": 1,
+        "sites": 2,
+        "paired_labels": [
+          [
+            [
+              [
+                2
+              ],
+              [
+                1
+              ]
+            ],
+            [
+              [
+                6
+              ],
+              [
+                0
+              ]
+            ]
+          ]
+        ],
+        "responses_masks_source_IDs_and_errors_supplied": false
+      },
+      "public_affine_recipes": [
+        {
+          "modulus": "9",
+          "matrix": [
+            [
+              2,
+              1,
+              6,
+              0
+            ]
+          ],
+          "pivot_columns": [
+            0
+          ],
+          "free_columns": [
+            1,
+            2,
+            3
+          ],
+          "pivot_minor_inverse": [
+            [
+              5
+            ]
+          ],
+          "inverse_lift_digits": [
+            1,
+            2
+          ],
+          "free_registers": 3,
+          "free_fibre_size": {
+            "base": "9",
+            "exponent": 3
+          },
+          "coordinate_bijection": "z <-> (A*z,z_free)",
+          "unit_minor_verified_modulo_full_root": true,
+          "uses_composite_modulus_field_inverse": false,
+          "classical_matrix_preprocessing_arithmetic_order": "O(n^2*d+n^3*log(r))",
+          "reversible_affine_map_modular_multiply_add_order": "O(n*d+n^2)",
+          "uniform_free_register_trits": 6,
+          "physical_gate_synthesis_and_precision_supplied": false
+        }
+      ],
+      "all_target_filter_laws": [
+        {
+          "target": [
+            0
+          ],
+          "native_word_count": 0,
+          "raw_filter_acceptance": "0",
+          "complete_failure_probability": "1",
+          "conditional_word_probability": null
+        },
+        {
+          "target": [
+            1
+          ],
+          "native_word_count": 0,
+          "raw_filter_acceptance": "0",
+          "complete_failure_probability": "1",
+          "conditional_word_probability": null
+        },
+        {
+          "target": [
+            2
+          ],
+          "native_word_count": 3,
+          "raw_filter_acceptance": "1/243",
+          "complete_failure_probability": "242/243",
+          "conditional_word_probability": "1/3"
+        },
+        {
+          "target": [
+            3
+          ],
+          "native_word_count": 0,
+          "raw_filter_acceptance": "0",
+          "complete_failure_probability": "1",
+          "conditional_word_probability": null
+        },
+        {
+          "target": [
+            4
+          ],
+          "native_word_count": 0,
+          "raw_filter_acceptance": "0",
+          "complete_failure_probability": "1",
+          "conditional_word_probability": null
+        },
+        {
+          "target": [
+            5
+          ],
+          "native_word_count": 3,
+          "raw_filter_acceptance": "1/243",
+          "complete_failure_probability": "242/243",
+          "conditional_word_probability": "1/3"
+        },
+        {
+          "target": [
+            6
+          ],
+          "native_word_count": 0,
+          "raw_filter_acceptance": "0",
+          "complete_failure_probability": "1",
+          "conditional_word_probability": null
+        },
+        {
+          "target": [
+            7
+          ],
+          "native_word_count": 0,
+          "raw_filter_acceptance": "0",
+          "complete_failure_probability": "1",
+          "conditional_word_probability": null
+        },
+        {
+          "target": [
+            8
+          ],
+          "native_word_count": 3,
+          "raw_filter_acceptance": "1/243",
+          "complete_failure_probability": "242/243",
+          "conditional_word_probability": "1/3"
+        }
+      ],
+      "accepted_word_receipts": [
+        {
+          "cohort": 0,
+          "target": [
+            2
+          ],
+          "free_coordinates": [
+            0,
+            0,
+            8
+          ],
+          "coefficients": [
+            1,
+            0,
+            0,
+            8
+          ],
+          "word": [
+            0,
+            2
+          ]
+        },
+        {
+          "cohort": 0,
+          "target": [
+            2
+          ],
+          "free_coordinates": [
+            1,
+            8,
+            1
+          ],
+          "coefficients": [
+            8,
+            1,
+            8,
+            1
+          ],
+          "word": [
+            1,
+            1
+          ]
+        },
+        {
+          "cohort": 0,
+          "target": [
+            2
+          ],
+          "free_coordinates": [
+            8,
+            8,
+            1
+          ],
+          "coefficients": [
+            0,
+            8,
+            8,
+            1
+          ],
+          "word": [
+            2,
+            1
+          ]
+        },
+        {
+          "cohort": 0,
+          "target": [
+            5
+          ],
+          "free_coordinates": [
+            0,
+            8,
+            1
+          ],
+          "coefficients": [
+            1,
+            0,
+            8,
+            1
+          ],
+          "word": [
+            0,
+            1
+          ]
+        },
+        {
+          "cohort": 0,
+          "target": [
+            5
+          ],
+          "free_coordinates": [
+            1,
+            1,
+            0
+          ],
+          "coefficients": [
+            8,
+            1,
+            1,
+            0
+          ],
+          "word": [
+            1,
+            0
+          ]
+        },
+        {
+          "cohort": 0,
+          "target": [
+            5
+          ],
+          "free_coordinates": [
+            8,
+            1,
+            0
+          ],
+          "coefficients": [
+            0,
+            8,
+            1,
+            0
+          ],
+          "word": [
+            2,
+            0
+          ]
+        },
+        {
+          "cohort": 0,
+          "target": [
+            8
+          ],
+          "free_coordinates": [
+            0,
+            1,
+            0
+          ],
+          "coefficients": [
+            1,
+            0,
+            1,
+            0
+          ],
+          "word": [
+            0,
+            0
+          ]
+        },
+        {
+          "cohort": 0,
+          "target": [
+            8
+          ],
+          "free_coordinates": [
+            1,
+            0,
+            8
+          ],
+          "coefficients": [
+            8,
+            1,
+            0,
+            8
+          ],
+          "word": [
+            1,
+            2
+          ]
+        },
+        {
+          "cohort": 0,
+          "target": [
+            8
+          ],
+          "free_coordinates": [
+            8,
+            0,
+            8
+          ],
+          "coefficients": [
+            0,
+            8,
+            0,
+            8
+          ],
+          "word": [
+            2,
+            2
+          ]
+        }
+      ],
+      "complete_coordinates_checked_per_cohort": [
+        6561
+      ],
+      "complete_native_memberships_checked": 9,
+      "uniform_target_mean_acceptance_exact": "1/729",
+      "source_values_mask_secret_and_errors_used_by_relaxation": false,
+      "discarding_failure_is_free": false,
+      "bounded_exhaustive_replay_is_polynomial_algorithm": false,
+      "physical_uniform_affine_state_circuit_executed": false,
+      "all_quantum_fibre_preparation_excluded": false
+    },
+    {
+      "status": "NONFREE_RANK_UNSUPPORTED_NOT_NO_SOLUTIONS",
+      "public_family": {
+        "modulus": "3",
+        "dimension": 2,
+        "cohorts": 1,
+        "sites": 2,
+        "paired_labels": [
+          [
+            [
+              [
+                0,
+                2
+              ],
+              [
+                0,
+                2
+              ]
+            ],
+            [
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                1
+              ]
+            ]
+          ]
+        ],
+        "responses_masks_source_IDs_and_errors_supplied": false
+      },
+      "target_failure_or_general_no_go_inferred": false
+    },
+    {
+      "status": "NONFREE_RANK_UNSUPPORTED_NOT_NO_SOLUTIONS",
+      "public_family": {
+        "modulus": "9",
+        "dimension": 1,
+        "cohorts": 2,
+        "sites": 1,
+        "paired_labels": [
+          [
+            [
+              [
+                6
+              ],
+              [
+                7
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                6
+              ],
+              [
+                3
+              ]
+            ]
+          ]
+        ],
+        "responses_masks_source_IDs_and_errors_supplied": false
+      },
+      "target_failure_or_general_no_go_inferred": false
+    },
+    {
+      "status": "COMPLETE_EXACT_PUBLIC_AFFINE_FILTER_CONTROL",
+      "public_family": {
+        "modulus": "3",
+        "dimension": 2,
+        "cohorts": 1,
+        "sites": 2,
+        "paired_labels": [
+          [
+            [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                2
+              ]
+            ],
+            [
+              [
+                1,
+                2
+              ],
+              [
+                2,
+                0
+              ]
+            ]
+          ]
+        ],
+        "responses_masks_source_IDs_and_errors_supplied": false
+      },
+      "public_affine_recipes": [
+        {
+          "modulus": "3",
+          "matrix": [
+            [
+              0,
+              1,
+              1,
+              2
+            ],
+            [
+              1,
+              2,
+              2,
+              0
+            ]
+          ],
+          "pivot_columns": [
+            0,
+            1
+          ],
+          "free_columns": [
+            2,
+            3
+          ],
+          "pivot_minor_inverse": [
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              0
+            ]
+          ],
+          "inverse_lift_digits": [
+            1
+          ],
+          "free_registers": 2,
+          "free_fibre_size": {
+            "base": "3",
+            "exponent": 2
+          },
+          "coordinate_bijection": "z <-> (A*z,z_free)",
+          "unit_minor_verified_modulo_full_root": true,
+          "uses_composite_modulus_field_inverse": false,
+          "classical_matrix_preprocessing_arithmetic_order": "O(n^2*d+n^3*log(r))",
+          "reversible_affine_map_modular_multiply_add_order": "O(n*d+n^2)",
+          "uniform_free_register_trits": 2,
+          "physical_gate_synthesis_and_precision_supplied": false
+        }
+      ],
+      "all_target_filter_laws": [
+        {
+          "target": [
+            0,
+            0
+          ],
+          "native_word_count": 1,
+          "raw_filter_acceptance": "1/9",
+          "complete_failure_probability": "8/9",
+          "conditional_word_probability": "1"
+        },
+        {
+          "target": [
+            0,
+            1
+          ],
+          "native_word_count": 1,
+          "raw_filter_acceptance": "1/9",
+          "complete_failure_probability": "8/9",
+          "conditional_word_probability": "1"
+        },
+        {
+          "target": [
+            0,
+            2
+          ],
+          "native_word_count": 1,
+          "raw_filter_acceptance": "1/9",
+          "complete_failure_probability": "8/9",
+          "conditional_word_probability": "1"
+        },
+        {
+          "target": [
+            1,
+            0
+          ],
+          "native_word_count": 1,
+          "raw_filter_acceptance": "1/9",
+          "complete_failure_probability": "8/9",
+          "conditional_word_probability": "1"
+        },
+        {
+          "target": [
+            1,
+            1
+          ],
+          "native_word_count": 1,
+          "raw_filter_acceptance": "1/9",
+          "complete_failure_probability": "8/9",
+          "conditional_word_probability": "1"
+        },
+        {
+          "target": [
+            1,
+            2
+          ],
+          "native_word_count": 1,
+          "raw_filter_acceptance": "1/9",
+          "complete_failure_probability": "8/9",
+          "conditional_word_probability": "1"
+        },
+        {
+          "target": [
+            2,
+            0
+          ],
+          "native_word_count": 1,
+          "raw_filter_acceptance": "1/9",
+          "complete_failure_probability": "8/9",
+          "conditional_word_probability": "1"
+        },
+        {
+          "target": [
+            2,
+            1
+          ],
+          "native_word_count": 1,
+          "raw_filter_acceptance": "1/9",
+          "complete_failure_probability": "8/9",
+          "conditional_word_probability": "1"
+        },
+        {
+          "target": [
+            2,
+            2
+          ],
+          "native_word_count": 1,
+          "raw_filter_acceptance": "1/9",
+          "complete_failure_probability": "8/9",
+          "conditional_word_probability": "1"
+        }
+      ],
+      "accepted_word_receipts": [
+        {
+          "cohort": 0,
+          "target": [
+            0,
+            0
+          ],
+          "free_coordinates": [
+            1,
+            0
+          ],
+          "coefficients": [
+            0,
+            2,
+            1,
+            0
+          ],
+          "word": [
+            2,
+            0
+          ]
+        },
+        {
+          "cohort": 0,
+          "target": [
+            0,
+            1
+          ],
+          "free_coordinates": [
+            0,
+            2
+          ],
+          "coefficients": [
+            0,
+            2,
+            0,
+            2
+          ],
+          "word": [
+            2,
+            2
+          ]
+        },
+        {
+          "cohort": 0,
+          "target": [
+            0,
+            2
+          ],
+          "free_coordinates": [
+            2,
+            1
+          ],
+          "coefficients": [
+            0,
+            2,
+            2,
+            1
+          ],
+          "word": [
+            2,
+            1
+          ]
+        },
+        {
+          "cohort": 0,
+          "target": [
+            1,
+            0
+          ],
+          "free_coordinates": [
+            1,
+            0
+          ],
+          "coefficients": [
+            1,
+            0,
+            1,
+            0
+          ],
+          "word": [
+            0,
+            0
+          ]
+        },
+        {
+          "cohort": 0,
+          "target": [
+            1,
+            1
+          ],
+          "free_coordinates": [
+            0,
+            2
+          ],
+          "coefficients": [
+            1,
+            0,
+            0,
+            2
+          ],
+          "word": [
+            0,
+            2
+          ]
+        },
+        {
+          "cohort": 0,
+          "target": [
+            1,
+            2
+          ],
+          "free_coordinates": [
+            2,
+            1
+          ],
+          "coefficients": [
+            1,
+            0,
+            2,
+            1
+          ],
+          "word": [
+            0,
+            1
+          ]
+        },
+        {
+          "cohort": 0,
+          "target": [
+            2,
+            0
+          ],
+          "free_coordinates": [
+            1,
+            0
+          ],
+          "coefficients": [
+            2,
+            1,
+            1,
+            0
+          ],
+          "word": [
+            1,
+            0
+          ]
+        },
+        {
+          "cohort": 0,
+          "target": [
+            2,
+            1
+          ],
+          "free_coordinates": [
+            0,
+            2
+          ],
+          "coefficients": [
+            2,
+            1,
+            0,
+            2
+          ],
+          "word": [
+            1,
+            2
+          ]
+        },
+        {
+          "cohort": 0,
+          "target": [
+            2,
+            2
+          ],
+          "free_coordinates": [
+            2,
+            1
+          ],
+          "coefficients": [
+            2,
+            1,
+            2,
+            1
+          ],
+          "word": [
+            1,
+            1
+          ]
+        }
+      ],
+      "complete_coordinates_checked_per_cohort": [
+        81
+      ],
+      "complete_native_memberships_checked": 9,
+      "uniform_target_mean_acceptance_exact": "1/9",
+      "source_values_mask_secret_and_errors_used_by_relaxation": false,
+      "discarding_failure_is_free": false,
+      "bounded_exhaustive_replay_is_polynomial_algorithm": false,
+      "physical_uniform_affine_state_circuit_executed": false,
+      "all_quantum_fibre_preparation_excluded": false
+    },
+    {
+      "status": "COMPLETE_EXACT_PUBLIC_AFFINE_FILTER_CONTROL",
+      "public_family": {
+        "modulus": "9",
+        "dimension": 1,
+        "cohorts": 2,
+        "sites": 1,
+        "paired_labels": [
+          [
+            [
+              [
+                3
+              ],
+              [
+                8
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                5
+              ],
+              [
+                1
+              ]
+            ]
+          ]
+        ],
+        "responses_masks_source_IDs_and_errors_supplied": false
+      },
+      "public_affine_recipes": [
+        {
+          "modulus": "9",
+          "matrix": [
+            [
+              3,
+              8
+            ]
+          ],
+          "pivot_columns": [
+            1
+          ],
+          "free_columns": [
+            0
+          ],
+          "pivot_minor_inverse": [
+            [
+              8
+            ]
+          ],
+          "inverse_lift_digits": [
+            1,
+            2
+          ],
+          "free_registers": 1,
+          "free_fibre_size": {
+            "base": "9",
+            "exponent": 1
+          },
+          "coordinate_bijection": "z <-> (A*z,z_free)",
+          "unit_minor_verified_modulo_full_root": true,
+          "uses_composite_modulus_field_inverse": false,
+          "classical_matrix_preprocessing_arithmetic_order": "O(n^2*d+n^3*log(r))",
+          "reversible_affine_map_modular_multiply_add_order": "O(n*d+n^2)",
+          "uniform_free_register_trits": 2,
+          "physical_gate_synthesis_and_precision_supplied": false
+        },
+        {
+          "modulus": "9",
+          "matrix": [
+            [
+              5,
+              1
+            ]
+          ],
+          "pivot_columns": [
+            0
+          ],
+          "free_columns": [
+            1
+          ],
+          "pivot_minor_inverse": [
+            [
+              2
+            ]
+          ],
+          "inverse_lift_digits": [
+            1,
+            2
+          ],
+          "free_registers": 1,
+          "free_fibre_size": {
+            "base": "9",
+            "exponent": 1
+          },
+          "coordinate_bijection": "z <-> (A*z,z_free)",
+          "unit_minor_verified_modulo_full_root": true,
+          "uses_composite_modulus_field_inverse": false,
+          "classical_matrix_preprocessing_arithmetic_order": "O(n^2*d+n^3*log(r))",
+          "reversible_affine_map_modular_multiply_add_order": "O(n*d+n^2)",
+          "uniform_free_register_trits": 2,
+          "physical_gate_synthesis_and_precision_supplied": false
+        }
+      ],
+      "all_target_filter_laws": [
+        {
+          "target": [
+            0
+          ],
+          "native_word_count": 0,
+          "raw_filter_acceptance": "0",
+          "complete_failure_probability": "1",
+          "conditional_word_probability": null
+        },
+        {
+          "target": [
+            1
+          ],
+          "native_word_count": 1,
+          "raw_filter_acceptance": "1/18",
+          "complete_failure_probability": "17/18",
+          "conditional_word_probability": "1"
+        },
+        {
+          "target": [
+            2
+          ],
+          "native_word_count": 0,
+          "raw_filter_acceptance": "0",
+          "complete_failure_probability": "1",
+          "conditional_word_probability": null
+        },
+        {
+          "target": [
+            3
+          ],
+          "native_word_count": 1,
+          "raw_filter_acceptance": "1/18",
+          "complete_failure_probability": "17/18",
+          "conditional_word_probability": "1"
+        },
+        {
+          "target": [
+            4
+          ],
+          "native_word_count": 0,
+          "raw_filter_acceptance": "0",
+          "complete_failure_probability": "1",
+          "conditional_word_probability": null
+        },
+        {
+          "target": [
+            5
+          ],
+          "native_word_count": 3,
+          "raw_filter_acceptance": "1/6",
+          "complete_failure_probability": "5/6",
+          "conditional_word_probability": "1/3"
+        },
+        {
+          "target": [
+            6
+          ],
+          "native_word_count": 0,
+          "raw_filter_acceptance": "0",
+          "complete_failure_probability": "1",
+          "conditional_word_probability": null
+        },
+        {
+          "target": [
+            7
+          ],
+          "native_word_count": 0,
+          "raw_filter_acceptance": "0",
+          "complete_failure_probability": "1",
+          "conditional_word_probability": null
+        },
+        {
+          "target": [
+            8
+          ],
+          "native_word_count": 1,
+          "raw_filter_acceptance": "1/18",
+          "complete_failure_probability": "17/18",
+          "conditional_word_probability": "1"
+        }
+      ],
+      "accepted_word_receipts": [
+        {
+          "cohort": 0,
+          "target": [
+            1
+          ],
+          "free_coordinates": [
+            0
+          ],
+          "coefficients": [
+            0,
+            8
+          ],
+          "word": [
+            2
+          ]
+        },
+        {
+          "cohort": 0,
+          "target": [
+            3
+          ],
+          "free_coordinates": [
+            1
+          ],
+          "coefficients": [
+            1,
+            0
+          ],
+          "word": [
+            0
+          ]
+        },
+        {
+          "cohort": 0,
+          "target": [
+            5
+          ],
+          "free_coordinates": [
+            8
+          ],
+          "coefficients": [
+            8,
+            1
+          ],
+          "word": [
+            1
+          ]
+        },
+        {
+          "cohort": 1,
+          "target": [
+            5
+          ],
+          "free_coordinates": [
+            0
+          ],
+          "coefficients": [
+            1,
+            0
+          ],
+          "word": [
+            0
+          ]
+        },
+        {
+          "cohort": 1,
+          "target": [
+            5
+          ],
+          "free_coordinates": [
+            1
+          ],
+          "coefficients": [
+            8,
+            1
+          ],
+          "word": [
+            1
+          ]
+        },
+        {
+          "cohort": 1,
+          "target": [
+            8
+          ],
+          "free_coordinates": [
+            8
+          ],
+          "coefficients": [
+            0,
+            8
+          ],
+          "word": [
+            2
+          ]
+        }
+      ],
+      "complete_coordinates_checked_per_cohort": [
+        81,
+        81
+      ],
+      "complete_native_memberships_checked": 6,
+      "uniform_target_mean_acceptance_exact": "1/27",
+      "source_values_mask_secret_and_errors_used_by_relaxation": false,
+      "discarding_failure_is_free": false,
+      "bounded_exhaustive_replay_is_polynomial_algorithm": false,
+      "physical_uniform_affine_state_circuit_executed": false,
+      "all_quantum_fibre_preparation_excluded": false
+    }
+  ],
+  "actual_F3_endpoint_countercontrol": {
+    "original_records": [
+      {
+        "label": [
+          1,
+          0
+        ],
+        "value": 2,
+        "modulus": 3,
+        "source_id": "affine-endpoint-0"
+      },
+      {
+        "label": [
+          1,
+          0
+        ],
+        "value": 2,
+        "modulus": 3,
+        "source_id": "affine-endpoint-1"
+      },
+      {
+        "label": [
+          0,
+          1
+        ],
+        "value": 0,
+        "modulus": 3,
+        "source_id": "affine-endpoint-2"
+      },
+      {
+        "label": [
+          0,
+          1
+        ],
+        "value": 0,
+        "modulus": 3,
+        "source_id": "affine-endpoint-3"
+      },
+      {
+        "label": [
+          1,
+          1
+        ],
+        "value": 2,
+        "modulus": 3,
+        "source_id": "affine-endpoint-4"
+      },
+      {
+        "label": [
+          2,
+          1
+        ],
+        "value": 1,
+        "modulus": 3,
+        "source_id": "affine-endpoint-5"
+      }
+    ],
+    "known_mask": [
+      1,
+      2
+    ],
+    "public_endpoint_recipes": [
+      {
+        "cohort": 0,
+        "offset": [
+          2,
+          2
+        ],
+        "affine_recipe": {
+          "modulus": "3",
+          "matrix": [
+            [
+              2,
+              0,
+              0
+            ],
+            [
+              0,
+              2,
+              2
+            ]
+          ],
+          "pivot_columns": [
+            0,
+            1
+          ],
+          "free_columns": [
+            2
+          ],
+          "pivot_minor_inverse": [
+            [
+              2,
+              0
+            ],
+            [
+              0,
+              2
+            ]
+          ],
+          "inverse_lift_digits": [
+            1
+          ],
+          "free_registers": 1,
+          "free_fibre_size": {
+            "base": "3",
+            "exponent": 1
+          },
+          "coordinate_bijection": "z <-> (A*z,z_free)",
+          "unit_minor_verified_modulo_full_root": true,
+          "uses_composite_modulus_field_inverse": false,
+          "classical_matrix_preprocessing_arithmetic_order": "O(n^2*d+n^3*log(r))",
+          "reversible_affine_map_modular_multiply_add_order": "O(n*d+n^2)",
+          "uniform_free_register_trits": 1,
+          "physical_gate_synthesis_and_precision_supplied": false
+        }
+      }
+    ],
+    "actual_original_data_reconstruction": {
+      "status": "COMPLETE_RECEIPT_CHECKED_CLASSICAL_RECONSTRUCTION",
+      "masked_secret": [
+        0,
+        2
+      ],
+      "decisions": [
+        {
+          "coordinate": 0,
+          "digit": 0,
+          "frequency": [
+            1,
+            0
+          ],
+          "lower_prefix_before": 0,
+          "known_phase_correction": 0,
+          "corrected_response": 0,
+          "circular_integer_distances": [
+            0,
+            1,
+            1
+          ],
+          "chosen_trit": 0,
+          "lower_prefix_after": 0
+        },
+        {
+          "coordinate": 1,
+          "digit": 0,
+          "frequency": [
+            0,
+            1
+          ],
+          "lower_prefix_before": 0,
+          "known_phase_correction": 0,
+          "corrected_response": 2,
+          "circular_integer_distances": [
+            1,
+            1,
+            0
+          ],
+          "chosen_trit": 2,
+          "lower_prefix_after": 2
+        }
+      ],
+      "correctness_requires_the_stated_noise_bound": true,
+      "public_family": {
+        "modulus": "3",
+        "dimension": 2,
+        "cohorts": 1,
+        "sites": 3,
+        "paired_labels": [
+          [
+            [
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                0
+              ]
+            ],
+            [
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                1
+              ]
+            ],
+            [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                1
+              ]
+            ]
+          ]
+        ],
+        "responses_masks_source_IDs_and_errors_supplied": false
+      },
+      "public_family_sha256": "78bd65974ff622905dba3e2f43c2191229afa213070993c9841876eac64cc69f",
+      "planned_probes": [
+        {
+          "coordinate": 0,
+          "digit": 0,
+          "frequency": [
+            1,
+            0
+          ]
+        },
+        {
+          "coordinate": 1,
+          "digit": 0,
+          "frequency": [
+            0,
+            1
+          ]
+        }
+      ],
+      "completed_probe_receipts": [
+        {
+          "requested_frequency": [
+            1,
+            0
+          ],
+          "receipt": {
+            "public_family_sha256": "78bd65974ff622905dba3e2f43c2191229afa213070993c9841876eac64cc69f",
+            "target": [
+              1,
+              0
+            ],
+            "cohort": 0,
+            "word": [
+              1,
+              2,
+              0
+            ]
+          },
+          "signed_original_coefficients": [
+            -1,
+            1,
+            0,
+            -1,
+            1,
+            0
+          ],
+          "coefficient_squared_norm": 4,
+          "derived_masked_response": 0,
+          "active_original_source_IDs": [
+            "affine-endpoint-0",
+            "affine-endpoint-1",
+            "affine-endpoint-3",
+            "affine-endpoint-4"
+          ],
+          "fresh_original_errors_created": false
+        },
+        {
+          "requested_frequency": [
+            0,
+            1
+          ],
+          "receipt": {
+            "public_family_sha256": "78bd65974ff622905dba3e2f43c2191229afa213070993c9841876eac64cc69f",
+            "target": [
+              0,
+              1
+            ],
+            "cohort": 0,
+            "word": [
+              2,
+              1,
+              0
+            ]
+          },
+          "signed_original_coefficients": [
+            0,
+            -1,
+            -1,
+            1,
+            1,
+            0
+          ],
+          "coefficient_squared_norm": 4,
+          "derived_masked_response": 2,
+          "active_original_source_IDs": [
+            "affine-endpoint-1",
+            "affine-endpoint-2",
+            "affine-endpoint-3",
+            "affine-endpoint-4"
+          ],
+          "fresh_original_errors_created": false
+        }
+      ],
+      "original_secret": [
+        2,
+        0
+      ],
+      "original_records_paid_once": 6,
+      "helper_calls": 2,
+      "helper_classical_polynomial_runtime_proved_by_receipts": false,
+      "helper_label_only_independence_proved_by_API": false,
+      "new_quantum_algorithm_or_speedup": false
+    },
+    "truth_fixture_only": {
+      "original_secret": [
+        2,
+        0
+      ]
+    },
+    "matches_truth_fixture": true,
+    "label_only_helper_calls": 2,
+    "growing_root_helper_or_new_quantum_algorithm": false
+  },
+  "selector_linearization_checks": [
+    {
+      "modulus": "3",
+      "third_selector_affine_extrapolation_defect": [
+        0,
+        0
+      ],
+      "F3_slope_cyclic_closure_defect": [
+        0,
+        0
+      ],
+      "native_selector_is_an_F3_affine_line_for_arbitrary_public_pairs": true,
+      "higher_root_carries_may_be_discarded": false
+    },
+    {
+      "modulus": "9",
+      "third_selector_affine_extrapolation_defect": [
+        3,
+        6
+      ],
+      "F3_slope_cyclic_closure_defect": [
+        3,
+        3
+      ],
+      "native_selector_is_an_F3_affine_line_for_arbitrary_public_pairs": false,
+      "higher_root_carries_may_be_discarded": false
+    },
+    {
+      "modulus": "43046721",
+      "third_selector_affine_extrapolation_defect": [
+        3,
+        43046718
+      ],
+      "F3_slope_cyclic_closure_defect": [
+        43046715,
+        3
+      ],
+      "native_selector_is_an_F3_affine_line_for_arbitrary_public_pairs": false,
+      "higher_root_carries_may_be_discarded": false
+    },
+    {
+      "modulus": "3433683820292512484657849089281",
+      "third_selector_affine_extrapolation_defect": [
+        3,
+        "3433683820292512484657849089278"
+      ],
+      "F3_slope_cyclic_closure_defect": [
+        "3433683820292512484657849089275",
+        3
+      ],
+      "native_selector_is_an_F3_affine_line_for_arbitrary_public_pairs": false,
+      "higher_root_carries_may_be_discarded": false
+    }
+  ],
+  "growing_relaxation_ledgers": [
+    {
+      "dimension": 8,
+      "root_digits": 8,
+      "cohorts": 1,
+      "sites": 88,
+      "per_cohort_unrestricted_affine_fibre_trits": 1344,
+      "per_target_filter_acceptance_upper": {
+        "base": 3,
+        "negative_exponent": 1256
+      },
+      "uniform_target_mean_filter_acceptance": {
+        "base": 3,
+        "negative_exponent": 1320
+      },
+      "half_success_requires_ordinary_amplification_multiplier_square_at_least": {
+        "base": 3,
+        "exponent": 1256,
+        "denominator": 2
+      },
+      "full_row_rank_modulo3_in_every_cohort_is_an_assumption": true,
+      "target_word_counts_or_population_balance_assumed": false,
+      "bound_is_only_for_uniform_unrestricted_affine_fibre_filter": true,
+      "arbitrary_coherent_fibre_algorithms_excluded": false,
+      "endpoint_linear_bypass_excluded": false,
+      "physical_gate_compiler_supplied": false,
+      "accepted_speedup_candidate": false
+    },
+    {
+      "dimension": 32,
+      "root_digits": 32,
+      "cohorts": 1,
+      "sites": 1048,
+      "per_cohort_unrestricted_affine_fibre_trits": 66048,
+      "per_target_filter_acceptance_upper": {
+        "base": 3,
+        "negative_exponent": 65000
+      },
+      "uniform_target_mean_filter_acceptance": {
+        "base": 3,
+        "negative_exponent": 66024
+      },
+      "half_success_requires_ordinary_amplification_multiplier_square_at_least": {
+        "base": 3,
+        "exponent": 65000,
+        "denominator": 2
+      },
+      "full_row_rank_modulo3_in_every_cohort_is_an_assumption": true,
+      "target_word_counts_or_population_balance_assumed": false,
+      "bound_is_only_for_uniform_unrestricted_affine_fibre_filter": true,
+      "arbitrary_coherent_fibre_algorithms_excluded": false,
+      "endpoint_linear_bypass_excluded": false,
+      "physical_gate_compiler_supplied": false,
+      "accepted_speedup_candidate": false
+    },
+    {
+      "dimension": 64,
+      "root_digits": 64,
+      "cohorts": 1,
+      "sites": 4120,
+      "per_cohort_unrestricted_affine_fibre_trits": 523264,
+      "per_target_filter_acceptance_upper": {
+        "base": 3,
+        "negative_exponent": 519144
+      },
+      "uniform_target_mean_filter_acceptance": {
+        "base": 3,
+        "negative_exponent": 523240
+      },
+      "half_success_requires_ordinary_amplification_multiplier_square_at_least": {
+        "base": 3,
+        "exponent": 519144,
+        "denominator": 2
+      },
+      "full_row_rank_modulo3_in_every_cohort_is_an_assumption": true,
+      "target_word_counts_or_population_balance_assumed": false,
+      "bound_is_only_for_uniform_unrestricted_affine_fibre_filter": true,
+      "arbitrary_coherent_fibre_algorithms_excluded": false,
+      "endpoint_linear_bypass_excluded": false,
+      "physical_gate_compiler_supplied": false,
+      "accepted_speedup_candidate": false
+    },
+    {
+      "dimension": 128,
+      "root_digits": 128,
+      "cohorts": 1,
+      "sites": 16408,
+      "per_cohort_unrestricted_affine_fibre_trits": 4184064,
+      "per_target_filter_acceptance_upper": {
+        "base": 3,
+        "negative_exponent": 4167656
+      },
+      "uniform_target_mean_filter_acceptance": {
+        "base": 3,
+        "negative_exponent": 4184040
+      },
+      "half_success_requires_ordinary_amplification_multiplier_square_at_least": {
+        "base": 3,
+        "exponent": 4167656,
+        "denominator": 2
+      },
+      "full_row_rank_modulo3_in_every_cohort_is_an_assumption": true,
+      "target_word_counts_or_population_balance_assumed": false,
+      "bound_is_only_for_uniform_unrestricted_affine_fibre_filter": true,
+      "arbitrary_coherent_fibre_algorithms_excluded": false,
+      "endpoint_linear_bypass_excluded": false,
+      "physical_gate_compiler_supplied": false,
+      "accepted_speedup_candidate": false
+    }
+  ],
+  "research_decision": "DEPRIORITIZE_UNRESTRICTED_AFFINE_RELAXATION_FILTER_NOT_STRUCTURED_ROW_CONSTRUCTIONS",
+  "accepted_speedup_candidate": false,
+  "new_active_negative_result_created": false,
+  "general_quantum_fibre_lower_bound_proved": false,
+  "remaining_obligations": [
+    "external proof review",
+    "actual physical affine/QFT/filter compiler and precision",
+    "structured row preparation bypassing this uniform relaxation",
+    "production admission wiring"
+  ]
+}

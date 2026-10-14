@@ -1,0 +1,24 @@
+{
+  "id": "NATIVE-NIL3-CONDITIONAL-PHASE-LIFT",
+  "status": "CONDITIONAL_COMPONENT_IMPLEMENTED_NOT_COMPLETE_RECEIVER",
+  "derivation": "research/NIL3_STATE_HSP_DESCENT.md",
+  "producer": "theorems/nil3_state_hsp_descent_receiver.py",
+  "report": "research/reductions/nil3_state_hsp_descent_receiver.json",
+  "independent_checker": "research/certificates/nil3_state_hsp_descent_crosscheck.js",
+  "input_model": "original ideal native level3 qutrit samples and public labels, plus actually known canonical lower-quotient values",
+  "proof_obligations": [
+    {"id": "RING", "claim": "use O/(pi^3), not F3[pi]/(pi^3)", "status": "EXISTING_EXACT_RAMIFIED_RING_BACKEND_HNF9_6_3_AND_ORDER3_GENERATOR_REPLAY"},
+    {"id": "ORIGINAL-SOURCE", "claim": "input qutrits satisfy the ideal original native phase law", "status": "EXPLICIT_SOURCE_PREMISE_WITH729_COMPLETE_SCALAR_CONFORMANCE_CONTROLS"},
+    {"id": "KNOWN-LOWER", "claim": "lower values were actually recovered from lawful inputs", "status": "OPEN_NOT_SUPPLIED_AND_NEVER_ASSIGNED_FROM_SECRET_FIXTURES"},
+    {"id": "PUBLIC-GATES", "claim": "correction depends only on labels and known lower representatives", "status": "SECRET_BLIND_API_EXACT_NINTH_ROOT_EXPONENT_REPLAY"},
+    {"id": "MEASUREMENT", "claim": "correct correction yields a Fourier character of the residual top digits", "status": "EXACT_PHASE_IDENTITY_AND_ACTUAL_NUMERICAL_QUTRIT_GATE_EXECUTION"},
+    {"id": "RANK-SUPPLY", "claim": "finite supplied labels contain enough independent central-character rows", "status": "ACTUAL_F3_RANK_CHECK_INSUFFICIENT_BATCH_RETURNS_NO_ANSWER_NO_FREE_SAMPLES"},
+    {"id": "SOURCE-ERROR", "claim": "noise and approximation losses compose with reconstruction", "status": "OPEN_IDEAL_CONTROLS_ONLY"},
+    {"id": "HARDWARE", "claim": "physical gates, caller controls and precision are costed", "status": "OPEN_NO_UNIVERSAL_HARDWARE_COMPILER_SUPPLIED"},
+    {"id": "FULL-RECEIVER", "claim": "the full native StateHSP secret is recovered in O(n^4)", "status": "NOT_ADMITTED_MISSING_QUOTIENT_STAGE_FULL_RECEIVER_RAISES_NOT_IMPLEMENTED"},
+    {"id": "TREE-LOWER-BOUND", "claim": "every growing-depth algorithm requires the stipulated disjoint recursion tree", "status": "NOT_ADMITTED_COST_LEDGER_IS_NOT_UNIVERSAL_HARDNESS"}
+  ],
+  "falsifiers": ["characteristic3 used for native level3", "wrong hidden-generator order", "known lower data copied from a secret", "ideal residual constructed from unknown top digits inside the receiver", "rank-deficient labels silently guessed", "fixed depth4 or8 called superpolynomial in dimension", "upper-cost recursion declared a necessary lower bound"],
+  "accepted_speedup_candidates": 0,
+  "not_claimed": ["complete nil3 receiver", "full StateHSP-to-native compiler", "O(n^4) full recovery", "general LWE hardness", "quantum speedup", "machine-checked proof"]
+}

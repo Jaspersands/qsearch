@@ -1,0 +1,48 @@
+{
+  "id": "WORKING-CONTRACT-NATIVE-PARTIAL-COORDINATE-CUBIC-DECODER",
+  "status": "IMPLEMENTED_SUPERSEDED_BY_CERTIFIED_PARTIAL_COORDINATE_DECODER_CONTRACT",
+  "implemented_module": "theorems/native_partial_coordinate_decoder.py",
+  "implemented_contract": "research/hypotheses/native_partial_coordinate_decoder_contract.json",
+  "supersedes_as_next_task": "requiring every nonlinear cubic feature to have full linear rank",
+  "probe": {
+    "generator": "native_full_root_slice.source_data(4,16,90,False,103001)",
+    "actual_record_modification": "add integer1 modulo the original modulus ONLY to the first original response",
+    "original_records": 180,
+    "dimension": 4,
+    "original_root_digits": 16,
+    "nonzero_original_errors": 1,
+    "feature_dimension": 34,
+    "coefficient_rank": 25,
+    "all_low_secret_coordinates_unique_in_affine_linear_system": true,
+    "next_secret_digits_solved_after_fixing_actual_nonlinear_features": true,
+    "all_original_mod9_equations_verified": true,
+    "full_root_lift_matches_truth_fixture": true,
+    "existing_decoder_status": "INSUFFICIENT_FEATURE_RANK_NOT_NO_SECRET",
+    "probe_is_an_unbounded_Gaussian_source_or_quantum_algorithm": false
+  },
+  "next_implementation": [
+    "RREF the whole capped augmented F3 system and reject inconsistencies",
+    "Certify all low-secret coordinates by pivots with no free-variable dependence; never assign an undetermined value or consult truth",
+    "Compute canonical nonlinear features from fixed low-secret coordinates, then solve and verify next digits",
+    "Reuse costed full-root lifting and original error/multiple checks",
+    "Reject nonphysical full-rank and inconsistent partial systems; preserve explicit caps",
+    "Independently replay coordinate-uniqueness certificates and original-value verification"
+  ],
+  "next_source_proof": [
+    "Zero-error base rank already forces translated low trits to zero",
+    "Next trits follow from base constraints once canonical squares are enforced",
+    "Secret translation remains proof-only, not a preprocessing oracle",
+    "Charge base-rank failure plus whole-bank triplet tails, not unnecessary nonzero quadratic rank",
+    "Retain original source, coverage, code-separation, full work and adaptive-valuation obligations"
+  ],
+  "prior_art_gate": "Arora-Ge polynomial linearization is established prior art; exact prime-power coordinate-recovery comparison remains pending",
+  "authoritative_background": [
+    "research/NATIVE_GAUSSIAN_QUOTIENT_COMPLETION.md",
+    "research/NATIVE_SMALL_ALPHABET_DECODER.md"
+  ],
+  "generic_decoder_implemented": true,
+  "improved_Gaussian_budget_implemented": true,
+  "accepted_speedup_candidate": false,
+  "new_active_negative_result_created": false,
+  "novelty_claim": false
+}

@@ -36,6 +36,7 @@ SCALING_RUNS_PATH = REGISTRY_DIR / "scaling_runs.json"
 CONJECTURES_PATH = REGISTRY_DIR / "conjectures.json"
 MUTATION_PROPOSALS_PATH = REGISTRY_DIR / "mutation_proposals.json"
 NEGATIVE_RESULTS_PATH = REGISTRY_DIR / "negative_results.json"
+QUARANTINED_NEGATIVES_PATH = REGISTRY_DIR / "quarantined_campaign_negatives.json"
 REJECTED_CANDIDATES_PATH = REGISTRY_DIR / "rejected_candidates.json"
 REDUCTIONS_PATH = REGISTRY_DIR / "reductions.json"
 
@@ -178,7 +179,12 @@ def load_mutation_proposals() -> list[dict[str, Any]]:
 
 
 def load_negative_results() -> list[dict[str, Any]]:
-    return _read_json(NEGATIVE_RESULTS_PATH, [])
+    quarantined = {row["id"] for row in load_quarantined_negative_results()}
+    return [row for row in _read_json(NEGATIVE_RESULTS_PATH, []) if row.get("id") not in quarantined]
+
+
+def load_quarantined_negative_results() -> list[dict[str, Any]]:
+    return _read_json(QUARANTINED_NEGATIVES_PATH, [])
 
 
 def load_rejected_candidates() -> list[dict[str, Any]]:
@@ -269,6 +275,8 @@ def upsert_experiment_result(record: ExperimentResultRecord) -> None:
 
 
 def upsert_negative_result(record: NegativeResultRecord) -> None:
+    if record.id in {row["id"] for row in load_quarantined_negative_results()}:
+        raise ValueError(f"Negative result {record.id} is quarantined; scoped mathematical review is required before reinstatement.")
     records = load_negative_results()
     kept = [item for item in records if item.get("id") != record.id]
     kept.append(asdict(record))
@@ -23826,6 +23834,12 @@ def import_legacy_negative_results(root: Path) -> int:
 def validate_registry() -> dict[str, Any]:
     candidates = load_candidates()
     issues = []
+    quarantined = {row["id"] for row in load_quarantined_negative_results()}
+    for row in _read_json(NEGATIVE_RESULTS_PATH, []):
+        if row.get("id") in quarantined:
+            issues.append({"candidate_id": "research-negative-results", "obligation_id": "NEGATIVE-CLAIM-REVIEW",
+                           "field": row["id"], "message": "Quarantined negative claim was restored without a scoped mathematical review.",
+                           "hard_reject": True})
     from proof_provenance import MANIFEST_PATH, audit_proof_routes
     proof_route_count = 0
     if MANIFEST_PATH.exists():
@@ -23911,6 +23925,7 @@ def validate_registry() -> dict[str, Any]:
         "conjecture_count": len(load_conjectures()),
         "mutation_proposal_count": len(load_mutation_proposals()),
         "negative_result_count": len(load_negative_results()),
+        "quarantined_negative_result_count": len(load_quarantined_negative_results()),
         "rejected_candidate_count": len(load_rejected_candidates()),
         "reduction_edge_count": len(reduction_ledger.get("edges", [])),
         "reduction_route_count": len(reduction_ledger.get("routes", [])),

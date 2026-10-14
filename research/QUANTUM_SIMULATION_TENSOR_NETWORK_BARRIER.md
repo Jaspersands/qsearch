@@ -1,5 +1,11 @@
 # Quantum Simulation of Many-Body Physics: Lieb-Robinson Light Cones, Trotter Error Accumulation, and Classical Tensor Network (MPS/PEPS) Simulation Horizons
 
+**RETRACTED AS A GENERAL NO-GO CONCLUSION,2026-10-13.** The original record is
+quarantined, not active search guidance. Error upper bounds, approximation
+conditions and noise conclusions were overgeneralized. Read
+[the correction](CAMPAIGN_NEGATIVE_CLAIM_AUDIT.md). The original text below is
+retained for provenance, not endorsed as proved.
+
 **Investigation 60**  
 **Epistemic Invariant Enforced**: `speedup_claim_allowed = False` and `accepted_speedup_candidate = False`.  
 **Negative Result Registered**: `NEG-QUANTUM-SIMULATION-TENSOR-NETWORK-HORIZON` (Registry Entry 986).

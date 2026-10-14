@@ -1,0 +1,37 @@
+{
+  "id": "CONTRACT-NATIVE-MODULO-SCALE-PREFIX-AMBIGUITY-PRUNING",
+  "status": "CANONICAL_PREFIX_DAG_PRUNING_AND_HORIZON_AUDIT_NOT_PRODUCER_ORACLE",
+  "authoritative_module": "theorems/native_prefix_ambiguity_pruning.py",
+  "authoritative_derivation": "research/NATIVE_PREFIX_AMBIGUITY_PRUNING.md",
+  "authoritative_artifact": "research/reductions/native_prefix_ambiguity_pruning.json",
+  "source_access": "same actual original classical noisy-linear records and externally supplied candidate multiple lists at each level",
+  "resolved_local_obligations": [
+    "modulo-L projection of original records annihilates the unknown upper quotient L*h without solving for h",
+    "modulo-L circular distance test retains the true prefix P_true = s mod L whenever original errors fit R_orig",
+    "global modulo-L code separation prunes every wrong prefix P != s mod L when 4*R_orig < L = q_0/g",
+    "surviving true candidates with the same child modulus g merge into one canonical node (g, q_0/g, s mod (q_0/g))",
+    "at most d_max distinct nonroot nodes under the radius/code/scope events; implemented level traversal can revisit nodes and costs at most (1+d_max*(d_max+1)/2)*B_level candidate checks",
+    "tight FLINT/Arb Gaussian radius R_gauss = ceil(8*alpha_orig*q_0) extends the non-wrapping pruning horizon to g < q_0/(4*R_gauss)",
+    "explicit wrap-around witnesses, plus a unique-prefix instance outside the sufficient non-wrapping proof gate",
+    "same successful source events already imply exact one-pass classical completion; all root hypotheses in both live controls are compared against that baseline"
+  ],
+  "candidate_admission_requirements": [
+    "do not infer source-wide unique-prefix pruning outside 4*R_orig < L; the gate is not a universal instance impossibility theorem",
+    "union modulo-L code-separation failure bounds across all reachable non-wrapping scales L = q_0/3^d",
+    "pay all candidate unmasking, quotient extraction and modulo-L original-record distance evaluations",
+    "never claim modulo-L prefix pruning constructs the missing multiple producer or a new completion regime beyond the matched one-pass baseline",
+    "declared coefficient size profiles are not usable-valuation coverage from a real or published producer",
+    "do not silently memoize depth-dependent candidate lists as though they were one fixed per-node list"
+  ],
+  "unresolved_obligations": [
+    "constructive efficient quantum decision mechanism or multiple producer",
+    "pruning or decoding when candidate coefficients have large 3-adic valuation g >= q_0/(4*R_orig)",
+    "external review of the composed refresh + canonical DAG reduction interface"
+  ],
+  "production_integration_owner": "Gemini / Antigravity",
+  "research_priority": "retain as a verification/reduction audit, not a breakthrough-search mechanism in its classically dominated safe scope",
+  "accepted_speedup_candidate": false,
+  "new_active_negative_result_created": false,
+  "complete_recursive_search_to_decision_reduction_established": false,
+  "novelty_claim": false
+}

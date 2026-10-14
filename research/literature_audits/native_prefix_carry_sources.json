@@ -1,0 +1,33 @@
+{
+  "status": "PRIMARY_SOURCE_APPLICABILITY_AUDIT_NOT_ALGORITHM_PROOF",
+  "verified_date": "2026-10-14",
+  "records": [
+    {
+      "id": "arXiv:1503.09016v2",
+      "url": "https://arxiv.org/html/1503.09016v2",
+      "title": "Solving systems of diagonal polynomial equations over finite fields",
+      "sections_inspected": ["Definition1", "Theorem3", "Proposition10", "Theorem5", "Corollary6"],
+      "mechanism": "Classical nonzero solution construction for sufficiently large homogeneous diagonal systems; transfer to specified hidden-polynomial graph states.",
+      "problem_family": "Diagonal power sums over finite fields, and a separately specified quantum level-set-state model.",
+      "native_applicability": "Our constraints are mixed, generally inhomogeneous F3 cubics. Diagonal F3 cubes are linear, unlike the implemented divided cubes.",
+      "transfer_obligation": "Supply a structure-preserving transformation with dimension, existence, normalization and source access accounted for.",
+      "Chevalley_Warning_caution": "Divisibility of the number of roots does not make an arbitrary inhomogeneous target solvable.",
+      "automatic_native_carry_solver_transfer_proved": false
+    },
+    {
+      "id": "ARXIV-2411.14697-v2-WITHDRAWN",
+      "url": "https://arxiv.org/abs/2411.14697",
+      "historical_version_inspected": "https://arxiv.org/html/2411.14697v1",
+      "title": "Quantum Advantage via Solving Multivariate Quadratics",
+      "publication_status": "WITHDRAWN",
+      "evidence": "Current author withdrawal notice reports a classical attack; historical v1 concerns specified binary quadratic and code-constrained systems.",
+      "native_applicability": "Neither a general MQ advantage theorem nor a mixed ternary cubic solver. A known classical attack must not be ignored.",
+      "existing_repo_audit": "research/literature_audits/dcp_conditional_carry_sources.json",
+      "open_question": "Audit the actual classical attack before adapting solution-state or coding abstractions.",
+      "quantum_advantage_supporting_evidence_allowed": false
+    }
+  ],
+  "local_carry_derivation_is_not_attributed_to_these_papers": true,
+  "candidate_record_accepted": false,
+  "speedup_claim_allowed": false
+}

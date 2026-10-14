@@ -1,5 +1,11 @@
 # Quantum Walks, Continuous-Time Quantum Search, and the Spatial Graph Topology Horizon: Glued Trees, Childs-Goldstone Anderson Localization, and Classical Reversible Markov Chain Dequantization
 
+**RETRACTED AS A GENERAL NO-GO CONCLUSION,2026-10-13.** The original record is
+quarantined, not active search guidance. Input-size changes and particular-walk
+limits do not establish a general impossibility result. Read
+[the correction](CAMPAIGN_NEGATIVE_CLAIM_AUDIT.md). The original text below is
+retained for provenance, not endorsed as proved.
+
 **Author**: Advanced Quantum Algorithm Research Group  
 **Date**: October 12, 2026  
 **Status**: Proved Mathematical Barrier & Classical Dequantization  
