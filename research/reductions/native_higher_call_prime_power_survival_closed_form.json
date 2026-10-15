@@ -1,0 +1,357 @@
+{
+  "schema_version": "1.0.0",
+  "subsystem": "native_higher_call_prime_power_survival_closed_form",
+  "contract_id": "native-higher-call-prime-power-survival-closed-form-contract",
+  "doc_path": "research/NATIVE_HIGHER_CALL_PRIME_POWER_SURVIVAL_CLOSED_FORM.md",
+  "summary_of_theorems": {
+    "T1_eisenstein_isomorphism_and_squared_trinomial_law": "iota(x, y) = (x + y) + y*omega maps beta_0, beta_1, beta_2 to 1, omega, omega^2; (a, b, c) -> (a - b, b - c) is strictly injective on Sigma_k, so N_k(0) = sum_{a+b+c=k} (k! / (a! b! c!))^2.",
+    "T2_histogram_congruence_criterion": "3^h | Delta(t, u) iff delta_a == delta_b == delta_c == r * 3^(h - 1) (mod 3^h) for some r in {0, 1, 2}.",
+    "T3_fourier_eigenvalue_survival_formula": "N_k(3^h) = (1 / 9^h) sum_{u,v in Z_{3^h}^2} Lambda_h(u, v)^k."
+  },
+  "eisenstein_and_squared_trinomial_audit": [
+    {
+      "calls_k": 1,
+      "simplex_size_binom_k_plus_2_2": 3,
+      "distinct_single_path_endpoints": 3,
+      "simplex_map_strictly_injective": true,
+      "actual_integer_zero_difference_pairs": 3,
+      "squared_trinomial_closed_form_zero_pairs": 3,
+      "zero_pair_fraction": "1/3",
+      "matches_theorem_1": true
+    },
+    {
+      "calls_k": 2,
+      "simplex_size_binom_k_plus_2_2": 6,
+      "distinct_single_path_endpoints": 6,
+      "simplex_map_strictly_injective": true,
+      "actual_integer_zero_difference_pairs": 15,
+      "squared_trinomial_closed_form_zero_pairs": 15,
+      "zero_pair_fraction": "5/27",
+      "matches_theorem_1": true
+    },
+    {
+      "calls_k": 3,
+      "simplex_size_binom_k_plus_2_2": 10,
+      "distinct_single_path_endpoints": 10,
+      "simplex_map_strictly_injective": true,
+      "actual_integer_zero_difference_pairs": 93,
+      "squared_trinomial_closed_form_zero_pairs": 93,
+      "zero_pair_fraction": "31/243",
+      "matches_theorem_1": true
+    },
+    {
+      "calls_k": 4,
+      "simplex_size_binom_k_plus_2_2": 15,
+      "distinct_single_path_endpoints": 15,
+      "simplex_map_strictly_injective": true,
+      "actual_integer_zero_difference_pairs": 639,
+      "squared_trinomial_closed_form_zero_pairs": 639,
+      "zero_pair_fraction": "71/729",
+      "matches_theorem_1": true
+    },
+    {
+      "calls_k": 5,
+      "simplex_size_binom_k_plus_2_2": 21,
+      "distinct_single_path_endpoints": 21,
+      "simplex_map_strictly_injective": true,
+      "actual_integer_zero_difference_pairs": 4653,
+      "squared_trinomial_closed_form_zero_pairs": 4653,
+      "zero_pair_fraction": "517/6561",
+      "matches_theorem_1": true
+    },
+    {
+      "calls_k": 6,
+      "simplex_size_binom_k_plus_2_2": 28,
+      "distinct_single_path_endpoints": 28,
+      "simplex_map_strictly_injective": true,
+      "actual_integer_zero_difference_pairs": 35169,
+      "squared_trinomial_closed_form_zero_pairs": 35169,
+      "zero_pair_fraction": "11723/177147",
+      "matches_theorem_1": true
+    },
+    {
+      "calls_k": 7,
+      "simplex_size_binom_k_plus_2_2": 36,
+      "distinct_single_path_endpoints": 36,
+      "simplex_map_strictly_injective": true,
+      "actual_integer_zero_difference_pairs": 272835,
+      "squared_trinomial_closed_form_zero_pairs": 272835,
+      "zero_pair_fraction": "10105/177147",
+      "matches_theorem_1": true
+    },
+    {
+      "calls_k": 8,
+      "simplex_size_binom_k_plus_2_2": 45,
+      "distinct_single_path_endpoints": 45,
+      "simplex_map_strictly_injective": true,
+      "actual_integer_zero_difference_pairs": 2157759,
+      "squared_trinomial_closed_form_zero_pairs": 2157759,
+      "zero_pair_fraction": "26639/531441",
+      "matches_theorem_1": true
+    },
+    {
+      "calls_k": 9,
+      "simplex_size_binom_k_plus_2_2": 55,
+      "distinct_single_path_endpoints": 55,
+      "simplex_map_strictly_injective": true,
+      "actual_integer_zero_difference_pairs": 17319837,
+      "squared_trinomial_closed_form_zero_pairs": 17319837,
+      "zero_pair_fraction": "5773279/129140163",
+      "matches_theorem_1": true
+    },
+    {
+      "calls_k": 10,
+      "simplex_size_binom_k_plus_2_2": 66,
+      "distinct_single_path_endpoints": 66,
+      "simplex_map_strictly_injective": true,
+      "actual_integer_zero_difference_pairs": 140668065,
+      "squared_trinomial_closed_form_zero_pairs": 140668065,
+      "zero_pair_fraction": "15629785/387420489",
+      "matches_theorem_1": true
+    }
+  ],
+  "prime_power_survival_closed_form_audit": [
+    {
+      "calls_k": 1,
+      "valuation_threshold_h": 1,
+      "modulus_3_pow_h": 3,
+      "actual_survival_count_v3_ge_h": 3,
+      "histogram_congruence_closed_form_count": 3,
+      "fourier_spectral_sum_float": 3.0,
+      "fourier_relative_error": 0.0,
+      "survival_fraction": "1/3",
+      "matches_theorems_2_and_3": true
+    },
+    {
+      "calls_k": 1,
+      "valuation_threshold_h": 2,
+      "modulus_3_pow_h": 9,
+      "actual_survival_count_v3_ge_h": 3,
+      "histogram_congruence_closed_form_count": 3,
+      "fourier_spectral_sum_float": 2.9999999999999996,
+      "fourier_relative_error": 1.4802973661668753e-16,
+      "survival_fraction": "1/3",
+      "matches_theorems_2_and_3": true
+    },
+    {
+      "calls_k": 1,
+      "valuation_threshold_h": 3,
+      "modulus_3_pow_h": 27,
+      "actual_survival_count_v3_ge_h": 3,
+      "histogram_congruence_closed_form_count": 3,
+      "fourier_spectral_sum_float": 3.0000000000000027,
+      "fourier_relative_error": 8.881784197001252e-16,
+      "survival_fraction": "1/3",
+      "matches_theorems_2_and_3": true
+    },
+    {
+      "calls_k": 2,
+      "valuation_threshold_h": 1,
+      "modulus_3_pow_h": 3,
+      "actual_survival_count_v3_ge_h": 27,
+      "histogram_congruence_closed_form_count": 27,
+      "fourier_spectral_sum_float": 27.0,
+      "fourier_relative_error": 0.0,
+      "survival_fraction": "1/3",
+      "matches_theorems_2_and_3": true
+    },
+    {
+      "calls_k": 2,
+      "valuation_threshold_h": 2,
+      "modulus_3_pow_h": 9,
+      "actual_survival_count_v3_ge_h": 15,
+      "histogram_congruence_closed_form_count": 15,
+      "fourier_spectral_sum_float": 15.000000000000005,
+      "fourier_relative_error": 3.552713678800501e-16,
+      "survival_fraction": "5/27",
+      "matches_theorems_2_and_3": true
+    },
+    {
+      "calls_k": 2,
+      "valuation_threshold_h": 3,
+      "modulus_3_pow_h": 27,
+      "actual_survival_count_v3_ge_h": 15,
+      "histogram_congruence_closed_form_count": 15,
+      "fourier_spectral_sum_float": 15.000000000000023,
+      "fourier_relative_error": 1.5395092608135505e-15,
+      "survival_fraction": "5/27",
+      "matches_theorems_2_and_3": true
+    },
+    {
+      "calls_k": 3,
+      "valuation_threshold_h": 1,
+      "modulus_3_pow_h": 3,
+      "actual_survival_count_v3_ge_h": 243,
+      "histogram_congruence_closed_form_count": 243,
+      "fourier_spectral_sum_float": 243.0,
+      "fourier_relative_error": 0.0,
+      "survival_fraction": "1/3",
+      "matches_theorems_2_and_3": true
+    },
+    {
+      "calls_k": 3,
+      "valuation_threshold_h": 2,
+      "modulus_3_pow_h": 9,
+      "actual_survival_count_v3_ge_h": 93,
+      "histogram_congruence_closed_form_count": 93,
+      "fourier_spectral_sum_float": 93.0,
+      "fourier_relative_error": 0.0,
+      "survival_fraction": "31/243",
+      "matches_theorems_2_and_3": true
+    },
+    {
+      "calls_k": 3,
+      "valuation_threshold_h": 3,
+      "modulus_3_pow_h": 27,
+      "actual_survival_count_v3_ge_h": 93,
+      "histogram_congruence_closed_form_count": 93,
+      "fourier_spectral_sum_float": 93.0,
+      "fourier_relative_error": 0.0,
+      "survival_fraction": "31/243",
+      "matches_theorems_2_and_3": true
+    },
+    {
+      "calls_k": 4,
+      "valuation_threshold_h": 1,
+      "modulus_3_pow_h": 3,
+      "actual_survival_count_v3_ge_h": 2187,
+      "histogram_congruence_closed_form_count": 2187,
+      "fourier_spectral_sum_float": 2187.0,
+      "fourier_relative_error": 0.0,
+      "survival_fraction": "1/3",
+      "matches_theorems_2_and_3": true
+    },
+    {
+      "calls_k": 4,
+      "valuation_threshold_h": 2,
+      "modulus_3_pow_h": 9,
+      "actual_survival_count_v3_ge_h": 639,
+      "histogram_congruence_closed_form_count": 639,
+      "fourier_spectral_sum_float": 639.0000000000002,
+      "fourier_relative_error": 3.558273481114743e-16,
+      "survival_fraction": "71/729",
+      "matches_theorems_2_and_3": true
+    },
+    {
+      "calls_k": 4,
+      "valuation_threshold_h": 3,
+      "modulus_3_pow_h": 27,
+      "actual_survival_count_v3_ge_h": 639,
+      "histogram_congruence_closed_form_count": 639,
+      "fourier_spectral_sum_float": 638.9999999999989,
+      "fourier_relative_error": 1.7791367405573714e-15,
+      "survival_fraction": "71/729",
+      "matches_theorems_2_and_3": true
+    },
+    {
+      "calls_k": 5,
+      "valuation_threshold_h": 1,
+      "modulus_3_pow_h": 3,
+      "actual_survival_count_v3_ge_h": 19683,
+      "histogram_congruence_closed_form_count": 19683,
+      "fourier_spectral_sum_float": 19683.0,
+      "fourier_relative_error": 0.0,
+      "survival_fraction": "1/3",
+      "matches_theorems_2_and_3": true
+    },
+    {
+      "calls_k": 5,
+      "valuation_threshold_h": 2,
+      "modulus_3_pow_h": 9,
+      "actual_survival_count_v3_ge_h": 4653,
+      "histogram_congruence_closed_form_count": 4653,
+      "fourier_spectral_sum_float": 4652.999999999998,
+      "fourier_relative_error": 3.909283050818518e-16,
+      "survival_fraction": "517/6561",
+      "matches_theorems_2_and_3": true
+    },
+    {
+      "calls_k": 5,
+      "valuation_threshold_h": 3,
+      "modulus_3_pow_h": 27,
+      "actual_survival_count_v3_ge_h": 4653,
+      "histogram_congruence_closed_form_count": 4653,
+      "fourier_spectral_sum_float": 4652.999999999996,
+      "fourier_relative_error": 7.818566101637036e-16,
+      "survival_fraction": "517/6561",
+      "matches_theorems_2_and_3": true
+    },
+    {
+      "calls_k": 6,
+      "valuation_threshold_h": 1,
+      "modulus_3_pow_h": 3,
+      "actual_survival_count_v3_ge_h": 177147,
+      "histogram_congruence_closed_form_count": 177147,
+      "fourier_spectral_sum_float": 177147.0,
+      "fourier_relative_error": 0.0,
+      "survival_fraction": "1/3",
+      "matches_theorems_2_and_3": true
+    },
+    {
+      "calls_k": 6,
+      "valuation_threshold_h": 2,
+      "modulus_3_pow_h": 9,
+      "actual_survival_count_v3_ge_h": 35289,
+      "histogram_congruence_closed_form_count": 35289,
+      "fourier_spectral_sum_float": 35289.000000000015,
+      "fourier_relative_error": 4.1236405759207833e-16,
+      "survival_fraction": "1307/19683",
+      "matches_theorems_2_and_3": true
+    },
+    {
+      "calls_k": 6,
+      "valuation_threshold_h": 3,
+      "modulus_3_pow_h": 27,
+      "actual_survival_count_v3_ge_h": 35169,
+      "histogram_congruence_closed_form_count": 35169,
+      "fourier_spectral_sum_float": 35169.00000000005,
+      "fourier_relative_error": 1.4481987915290165e-15,
+      "survival_fraction": "11723/177147",
+      "matches_theorems_2_and_3": true
+    },
+    {
+      "calls_k": 7,
+      "valuation_threshold_h": 1,
+      "modulus_3_pow_h": 3,
+      "actual_survival_count_v3_ge_h": 1594323,
+      "histogram_congruence_closed_form_count": 1594323,
+      "fourier_spectral_sum_float": 1594323.0,
+      "fourier_relative_error": 0.0,
+      "survival_fraction": "1/3",
+      "matches_theorems_2_and_3": true
+    },
+    {
+      "calls_k": 7,
+      "valuation_threshold_h": 2,
+      "modulus_3_pow_h": 9,
+      "actual_survival_count_v3_ge_h": 276615,
+      "histogram_congruence_closed_form_count": 276615,
+      "fourier_spectral_sum_float": 276614.9999999999,
+      "fourier_relative_error": 4.20856865415595e-16,
+      "survival_fraction": "3415/59049",
+      "matches_theorems_2_and_3": true
+    },
+    {
+      "calls_k": 7,
+      "valuation_threshold_h": 3,
+      "modulus_3_pow_h": 27,
+      "actual_survival_count_v3_ge_h": 272835,
+      "histogram_congruence_closed_form_count": 272835,
+      "fourier_spectral_sum_float": 272835.00000000047,
+      "fourier_relative_error": 1.7067505536596816e-15,
+      "survival_fraction": "10105/177147",
+      "matches_theorems_2_and_3": true
+    }
+  ],
+  "verification": {
+    "theorem_1_eisenstein_and_squared_trinomial_verified": true,
+    "theorems_2_and_3_prime_power_survival_closed_forms_verified": true
+  },
+  "guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false,
+    "end_to_end_quantum_advantage_claimed": false,
+    "bypassed_UniformCubeSuperposition_prepare_constraint": false
+  }
+}

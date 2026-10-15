@@ -119,8 +119,14 @@ def _load_certificate(path: Path = CERTIFICATE_PATH) -> dict:
     resolved = path
     if not resolved.exists():
         resolved = Path(__file__).resolve().parent / path
+    if not resolved.exists():
+        resolved = Path(__file__).resolve().parent.parent / path
     payload = json.loads(resolved.read_text())
-    kernel = Path(__file__).resolve().parent / TRANSFER_KERNEL_PATH
+    kernel = TRANSFER_KERNEL_PATH
+    if not kernel.exists():
+        kernel = Path(__file__).resolve().parent.parent / TRANSFER_KERNEL_PATH
+    if not kernel.exists():
+        kernel = Path(__file__).resolve().parent / TRANSFER_KERNEL_PATH
     digest = hashlib.sha256(kernel.read_bytes()).hexdigest()
     if payload.get("certificate_contract", {}).get("kernel_sha256") != digest:
         raise ArithmeticError("support-growth certificate does not match transfer kernel")
@@ -271,6 +277,36 @@ def write_transfer_support_growth_report(
     payload = asdict(build_transfer_support_growth_report())
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(payload, indent=2, sort_keys=True))
+    if write_registry:
+        negative_record = NegativeResultRecord(
+            id="NEG-COSET-TYPICAL-DIRECT-FIXED-SUPPORT-TRANSFER-CONTRACTION",
+            source=str(output_path),
+            claim=(
+                "The fixed-support marked-class contraction can be applied termwise to finish high-degree typical-irrep transfer traces."
+            ),
+            reason_invalid=(
+                "Full-support pairs carry 89.5% of n=9 degree-28 weight and 20.5% of n=10 degree-five weight; support nine or ten carries 62.0% at n=10 degree five. Marked injection costs n! there."
+            ),
+            lesson=(
+                "Stop extending fixed-support injection enumeration. Search for a collective representation, centralizer, branching, or tensor-network recurrence over full-support pair orbits."
+            ),
+            applies_to=[registry_candidate_id, registry_experiment_id],
+            evidence=payload.get("headline_metrics", {}),
+        )
+        upsert_negative_result(negative_record)
+        upsert_experiment_result(
+            ExperimentResultRecord(
+                id=registry_result_id or f"RESULT-{registry_experiment_id}-LATEST",
+                experiment_id=registry_experiment_id,
+                candidate_id=registry_candidate_id,
+                created_at=payload.get("created_at", utc_now()),
+                status=payload.get("status", "completed"),
+                summary=payload.get("summary", ""),
+                metrics=payload.get("headline_metrics", {}),
+                falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                artifacts={"report": str(output_path)},
+            )
+        )
     return payload
 
 

@@ -120,6 +120,8 @@ def _read_json(path: Path) -> dict:
     if not resolved.exists():
         resolved = Path(__file__).resolve().parent / path
     if not resolved.exists():
+        resolved = Path(__file__).resolve().parent.parent / path
+    if not resolved.exists():
         raise FileNotFoundError(f"required certificate is missing: {path}")
     payload = json.loads(resolved.read_text())
     if not isinstance(payload, dict):
@@ -462,6 +464,36 @@ def write_typical_source_coverage_report(
     payload = asdict(build_typical_source_coverage_report())
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(payload, indent=2, sort_keys=True))
+    if write_registry:
+        negative_record = NegativeResultRecord(
+            id="NEG-COSET-TYPICAL-FIXED-SOURCE-CATALOG-COVERAGE",
+            source=str(output_path),
+            claim=(
+                "A polynomial catalog of fixed-source typical-irrep separator certificates has inverse-polynomial natural weak-Fourier coverage."
+            ),
+            reason_invalid=(
+                "The maximal Plancherel atom is exp(-Theta(sqrt(n))) by arXiv:2605.25995, and involution weak-Fourier atoms are at most twice as large."
+            ),
+            lesson=(
+                "Stop extending one-source finite ladders as algorithmic coverage. Require a uniform resolver whose circuit and gap guarantees accept arbitrary sampled partitions."
+            ),
+            applies_to=[registry_candidate_id, registry_experiment_id],
+            evidence=payload.get("headline_metrics", {}),
+        )
+        upsert_negative_result(negative_record)
+        upsert_experiment_result(
+            ExperimentResultRecord(
+                id=registry_result_id or f"RESULT-{registry_experiment_id}-LATEST",
+                experiment_id=registry_experiment_id,
+                candidate_id=registry_candidate_id,
+                created_at=payload.get("created_at", ""),
+                status=payload.get("status", "completed"),
+                summary=payload.get("summary", ""),
+                metrics=payload.get("headline_metrics", {}),
+                falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                artifacts={"report": str(output_path)},
+            )
+        )
     return payload
 
 

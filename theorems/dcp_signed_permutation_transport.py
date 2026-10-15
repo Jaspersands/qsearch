@@ -357,6 +357,32 @@ def write_signed_permutation_transport_audit(
     )
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
+    if write_registry:
+        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
+        metrics = dict(payload.get("headline_metrics", {}))
+        experiment_record = ExperimentResultRecord(
+            id=result_id,
+            experiment_id=registry_experiment_id,
+            candidate_id=registry_candidate_id,
+            created_at=utc_now(),
+            status=payload.get("status", "completed"),
+            summary=payload.get("summary", ""),
+            metrics=metrics,
+            falsifiers_triggered=list(payload.get("falsifiers_triggered", [])),
+            artifacts={path.stem: str(path), "report": str(path)},
+        )
+        upsert_experiment_result(experiment_record)
+        upsert_negative_result(
+            NegativeResultRecord(
+                id="NEG-DCP-SIGNED-PERMUTATIONS-AS-GLOBAL-FIBER-TRANSPORT",
+                claim="Coordinate permutations plus arbitrary bit complements provide a broader total linear-depth 2-adic fiber transport than a single exact-valuation pivot.",
+                reason_invalid="Exact coefficient and sign-orbit balance forces the translation to come from an odd number of labels congruent to 2^k, so the class exists exactly when a single pivot exists.",
+                lesson="Exclude all signed-coordinate permutations from the global transport search. Search only genuine coordinate-mixing GF(2)-affine maps, nonlinear arithmetic maps, partial transports, or walks, and subject each to source and classical-access audits.",
+                applies_to=['DHS-GOWERS-SIEVE', 'EXP-DHS-DCP-SIGNED-PERMUTATION-TRANSPORT'],
+                evidence=metrics,
+                source=str(path),
+            )
+        )
     return payload
 
 

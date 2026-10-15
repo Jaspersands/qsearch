@@ -344,6 +344,32 @@ def write_partial_relation_coverage_audit(
     )
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
+    if write_registry:
+        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
+        metrics = dict(payload.get("headline_metrics", {}))
+        experiment_record = ExperimentResultRecord(
+            id=result_id,
+            experiment_id=registry_experiment_id,
+            candidate_id=registry_candidate_id,
+            created_at=utc_now(),
+            status=payload.get("status", "completed"),
+            summary=payload.get("summary", ""),
+            metrics=metrics,
+            falsifiers_triggered=list(payload.get("falsifiers_triggered", [])),
+            artifacts={path.stem: str(path), "report": str(path)},
+        )
+        upsert_experiment_result(experiment_record)
+        upsert_negative_result(
+            NegativeResultRecord(
+                id="NEG-DCP-POLYNOMIAL-SIGNED-RELATION-DICTIONARY-AS-PARTIAL-MAP",
+                claim="A polynomial dictionary of explicit signed-difference masks gives inverse-polynomial source-weighted child-fiber pairing coverage at linear depth.",
+                reason_invalid="With exponentially high probability every mask has linear support, hence exponentially small compatible domain; polynomially many masks remain exponentially small in total.",
+                lesson="Remove explicit signed-relation dictionaries from synthesis. A surviving partial map must be implicitly target-indexed or nontranslation and must prove its exact source-law coverage.",
+                applies_to=['DHS-GOWERS-SIEVE', 'EXP-DHS-DCP-PARTIAL-RELATION-COVERAGE'],
+                evidence=metrics,
+                source=str(path),
+            )
+        )
     return payload
 
 

@@ -1,0 +1,17 @@
+{
+  "contract_id": "native_interleaved_syndrome_work_audit_v1",
+  "title": "Multi-Round Interleaved Syndrome-Work Circuits and Response-Call Degree Audit",
+  "status": "INTERLEAVED_SYNDROME_WORK_PINCHING_AND_RESPONSE_DEGREE_AUDIT_REVIEW_PENDING",
+  "scope": {
+    "one_call_interleaved_theorem": "Arbitrary L-round label-only word/syndrome interleaved circuits are pinched by uniform-secret averaging onto the frequency-fibre blocks C_A(E_eff) = sum_sigma Pi_sigma E_eff Pi_sigma",
+    "diagonal_word_multi_round_conservation": "For arbitrary L-round interleaved T_f^(+-1) and noncommuting syndrome unitaries W_l, every syndrome readout sector satisfies E_s overlap <= C_A and the sector-average across all N syndrome basis states equals the exact fibre collision value",
+    "two_call_response_interleaving": "Applying the response phase gate D_y twice interleaved with a label-only mixer pinches uniform-secret acceptance onto the 4-tuple additive relation f_A(w_1)+f_A(w_2) = f_A(v_1)+f_A(v_2) mod q"
+  },
+  "honesty_guardrails": {
+    "universal_quantum_lower_bound_claimed": false,
+    "scalable_quantum_speedup_supplied": false,
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  }
+}

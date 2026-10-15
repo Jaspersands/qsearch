@@ -249,4 +249,30 @@ def write_subset_sum_carry_anf_audit(
     payload = asdict(report)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
+    if write_registry:
+        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
+        metrics = dict(payload.get("headline_metrics", {}))
+        experiment_record = ExperimentResultRecord(
+            id=result_id,
+            experiment_id=registry_experiment_id,
+            candidate_id=registry_candidate_id,
+            created_at=utc_now(),
+            status=payload.get("status", "completed"),
+            summary=payload.get("summary", ""),
+            metrics=metrics,
+            falsifiers_triggered=list(payload.get("falsifiers_triggered", [])),
+            artifacts={path.stem: str(path), "report": str(path)},
+        )
+        upsert_experiment_result(experiment_record)
+        upsert_negative_result(
+            NegativeResultRecord(
+                id="NEG-DCP-FINITE-FULL-DOMAIN-CARRY-ANF-WITHOUT-SOLVER",
+                claim="Exact finite carry ANF profiles establish a polynomial algebraic density-one subset-sum solver.",
+                reason_invalid="The truth tables and Mobius transforms are exponential, finite degree trends are not uniform theorems, and even compact polynomial systems require a separate polynomial witness-finding algorithm.",
+                lesson="Use full-domain ANF as a rejection test for bounded-degree carry hypotheses. Keep other symbolic, lattice, representation, and non-algebraic solver classes open.",
+                applies_to=['DHS-GOWERS-SIEVE', 'EXP-DHS-DCP-SUBSET-SUM-CARRY-ANF'],
+                evidence=metrics,
+                source=str(path),
+            )
+        )
     return payload

@@ -278,4 +278,30 @@ def write_short_relation_theorem(
     payload = asdict(report)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
+    if write_registry:
+        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
+        metrics = dict(payload.get("headline_metrics", {}))
+        experiment_record = ExperimentResultRecord(
+            id=result_id,
+            experiment_id=registry_experiment_id,
+            candidate_id=registry_candidate_id,
+            created_at=utc_now(),
+            status=payload.get("status", "completed"),
+            summary=payload.get("summary", ""),
+            metrics=metrics,
+            falsifiers_triggered=list(payload.get("falsifiers_triggered", [])),
+            artifacts={path.stem: str(path), "report": str(path)},
+        )
+        upsert_experiment_result(experiment_record)
+        upsert_negative_result(
+            NegativeResultRecord(
+                id="NEG-DCP-SUBSET-SUM-STANDARD-EMBEDDING-UNIQUE-SHORTEST-WITNESS",
+                claim="The planted binary marker vector is uniquely shortest, or isolated among shortest vectors, in the standard density-one modular subset-sum embedding.",
+                reason_invalid="A weight-one-quarter signed relation family has positive exponential expectation and vanishing relative variance, producing exponentially many marker-zero vectors no longer than the witness.",
+                lesson="Abandon standard shortest-vector uniqueness. Add constraints that eliminate signed relations or prove a marker-aware extraction theorem despite competitors.",
+                applies_to=['DHS-GOWERS-SIEVE', 'EXP-DHS-DCP-SUBSET-SUM-SHORT-RELATION-THEOREM'],
+                evidence=metrics,
+                source=str(path),
+            )
+        )
     return payload

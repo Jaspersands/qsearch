@@ -648,6 +648,8 @@ def load_n7_search_certificate(
     if not resolved.exists():
         resolved = Path(__file__).resolve().parent / path
     if not resolved.exists():
+        resolved = Path(__file__).resolve().parent.parent / path
+    if not resolved.exists():
         raise FileNotFoundError(
             "n=7 parity-complete certificate is missing; rerun with "
             "--recompute-n7"

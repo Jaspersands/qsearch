@@ -234,4 +234,30 @@ def write_conditioned_quotient_audit(
     payload = asdict(report)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
+    if write_registry:
+        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
+        metrics = dict(payload.get("headline_metrics", {}))
+        experiment_record = ExperimentResultRecord(
+            id=result_id,
+            experiment_id=registry_experiment_id,
+            candidate_id=registry_candidate_id,
+            created_at=utc_now(),
+            status=payload.get("status", "completed"),
+            summary=payload.get("summary", ""),
+            metrics=metrics,
+            falsifiers_triggered=list(payload.get("falsifiers_triggered", [])),
+            artifacts={path.stem: str(path), "report": str(path)},
+        )
+        upsert_experiment_result(experiment_record)
+        upsert_negative_result(
+            NegativeResultRecord(
+                id="NEG-DCP-LOW-BIT-CONDITIONING-AS-HIGH-BIT-CONCENTRATION-SHORTCUT",
+                claim="Polynomial low-bit conditioning automatically concentrates the remaining quotient onto a polynomial explicit candidate set.",
+                reason_invalid="Exact finite quotient distributions retain broad support/high entropy and no implicit high-bit decoder or geometry theorem is supplied.",
+                lesson="Keep the BDD preconditioner, but require a mechanism that changes quotient geometry and prove it asymptotically.",
+                applies_to=['DHS-GOWERS-SIEVE', 'EXP-DHS-DCP-SUBSET-SUM-CONDITIONED-QUOTIENT'],
+                evidence=metrics,
+                source=str(path),
+            )
+        )
     return payload

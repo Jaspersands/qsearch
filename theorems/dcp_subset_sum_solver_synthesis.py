@@ -1742,4 +1742,96 @@ def write_subset_sum_solver_synthesis(
     payload = asdict(report)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
+    if write_registry:
+        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
+        metrics = dict(payload.get("headline_metrics", {}))
+        experiment_record = ExperimentResultRecord(
+            id=result_id,
+            experiment_id=registry_experiment_id,
+            candidate_id=registry_candidate_id,
+            created_at=utc_now(),
+            status=payload.get("status", "completed"),
+            summary=payload.get("summary", ""),
+            metrics=metrics,
+            falsifiers_triggered=list(payload.get("falsifiers_triggered", [])),
+            artifacts={path.stem: str(path), "report": str(path)},
+        )
+        upsert_experiment_result(experiment_record)
+        upsert_negative_result(
+            NegativeResultRecord(
+                id="NEG-DCP-FINITE-ALL-TARGET-COVERAGE-IS-NOT-RANDOM-LABEL-THEOREM",
+                claim="Exact fixed-depth coverage over every target for finitely many label sets proves an asymptotic coverage law or lower bound under random labels.",
+                reason_invalid="Target sampling is eliminated, but the remaining label-dependent LLL geometry is sampled at finite n and has no concentration theorem.",
+                lesson="Use the census to identify the right label statistic, then prove its source law or abandon the fixed-depth branching mechanism.",
+                applies_to=['DHS-GOWERS-SIEVE', 'EXP-DHS-DCP-MARKER-ALL-TARGET-COVERAGE'],
+                evidence=metrics,
+                source=str(path),
+            )
+        )
+        upsert_negative_result(
+            NegativeResultRecord(
+                id="NEG-DCP-FINITE-MARKER-DEVIATION-GROWTH-IS-NOT-A-LOWER-BOUND",
+                claim="Observed growth or one-step-tree escape of exact witness rounding deviations proves that every polynomial marker-aware affine decoder has negligible source coverage.",
+                reason_invalid="The audit characterizes one LLL basis and one nearest-plane branching grammar on finite inputs; it supplies no distributional theorem or reduction from general affine decoding.",
+                lesson="Use exact profiles to formulate a source theorem or design a qualitatively different decoder, not to claim an affine-CVP lower bound.",
+                applies_to=['DHS-GOWERS-SIEVE', 'EXP-DHS-DCP-MARKER-DEVIATION-GEOMETRY'],
+                evidence=metrics,
+                source=str(path),
+            )
+        )
+        upsert_negative_result(
+            NegativeResultRecord(
+                id="NEG-DCP-FIXED-DEPTH-MARKER-LIST-IS-NOT-COVERAGE",
+                claim="Polynomial size of a fixed-depth marker-aware nearest-plane list, or finite recovery within it, already proves inverse-polynomial uniform-legal subset-sum coverage.",
+                reason_invalid="The list-size theorem is deterministic, while source coverage remains an unproved probability statement; finite failures also say nothing about general affine-CVP decoders.",
+                lesson="Use the bounded list as a stronger classical falsifier, then derive a source-conditioned cell-mass theorem or change the decoder mechanism.",
+                applies_to=['DHS-GOWERS-SIEVE', 'EXP-DHS-DCP-MARKER-AWARE-LIST-DECODER'],
+                evidence=metrics,
+                source=str(path),
+            )
+        )
+        upsert_negative_result(
+            NegativeResultRecord(
+                id="NEG-DCP-LOW-ONLY-CARRY-SELECTION-HIGH-GEOMETRY",
+                claim="Selecting a reachable low carry and discarding the low constraints creates a specially distributed high quotient on which a standard lattice solver gains structural advantage.",
+                reason_invalid="Conditioned on all low data, the high labels remain independent uniform and target translation by the carry is a bijection. Every fixed low-selected quotient is exactly a generic random instance.",
+                lesson="Require a genuinely joint low/high basis or a carry-restricted witness-set theorem. If sweeping carries for a high-only event, prove its generic probability and charge the polynomial union bound.",
+                applies_to=['DHS-GOWERS-SIEVE', 'EXP-DHS-DCP-CARRY-HIGH-PART-NOGO'],
+                evidence=metrics,
+                source=str(path),
+            )
+        )
+        upsert_negative_result(
+            NegativeResultRecord(
+                id="NEG-DCP-SHORT-RELATIONS-CLOSE-MARKER-WITNESS-NOGO",
+                claim="The existence of exponentially many short marker-zero subset-sum relations by itself rules out marker-aware affine decoding because valid Boolean witnesses are correspondingly close.",
+                reason_invalid="Under the exact uniform-legal source, every fixed sub-half Hamming radius contains two witnesses with only exponentially small conditional probability.",
+                lesson="Keep marker-aware affine decoding open, but demand an explicit polynomial decoder and source coverage. Do not infer it from Boolean separation alone.",
+                applies_to=['DHS-GOWERS-SIEVE', 'EXP-DHS-DCP-BOOLEAN-COSET-SEPARATION'],
+                evidence=metrics,
+                source=str(path),
+            )
+        )
+        upsert_negative_result(
+            NegativeResultRecord(
+                id="NEG-DCP-SUBSET-SUM-NEAR-LOG-GROWING-MOMENT-CHAIN",
+                claim="A nonnegative source bad-tuple moment at any fixed fraction below logarithmic order can retain asymptotic density-one signal.",
+                reason_invalid="Integer saturation indices bound every non-self Boolean-lattice transfer path by O(k^2 log k), so terminal bad-state contraction dominates whenever 2^k L(k)(log n+k)=o(n).",
+                lesson="Search only the final near-log window with full resource accounting, a signed observable, or non-moment reduced-basis geometry.",
+                applies_to=['DHS-GOWERS-SIEVE', 'EXP-DHS-DCP-SUBSET-SUM-GROWING-ORDER-CHAIN-THEOREM'],
+                evidence=metrics,
+                source=str(path),
+            )
+        )
+        upsert_negative_result(
+            NegativeResultRecord(
+                id="NEG-DCP-SUBSET-SUM-SOLVER-SYNTHESIS-WEAK-MUTATIONS",
+                claim="LLL retuning, bounded-degree carries, basic deep Wagner trees, or known quantum exponents are new polynomial partial-solver candidates.",
+                reason_invalid="Each route matches a live negative result or retains a positive exponential resource exponent.",
+                lesson="Generate hybrids only when they change geometry, distributions, or theorem interfaces and attach uniform proof obligations before candidate promotion.",
+                applies_to=['DHS-GOWERS-SIEVE', 'EXP-DHS-DCP-SUBSET-SUM-SOLVER-SYNTHESIS'],
+                evidence=metrics,
+                source=str(path),
+            )
+        )
     return payload

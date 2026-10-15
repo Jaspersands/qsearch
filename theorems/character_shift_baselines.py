@@ -285,4 +285,8 @@ def write_character_shift_report(
     )
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(payload, indent=2, sort_keys=True))
+    if write_registry:
+        scaling_record = dict(payload)
+        scaling_record["artifacts"] = {"character_shift_baselines": str(output_path)}
+        upsert_scaling_run(scaling_record)
     return payload

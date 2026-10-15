@@ -448,6 +448,43 @@ def write_affine_transport_audit(
                 artifacts={"dcp_affine_transport": str(path), "report": str(path)},
             )
         )
+    if write_registry:
+        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
+        metrics = dict(payload.get("headline_metrics", {}))
+        experiment_record = ExperimentResultRecord(
+            id=result_id,
+            experiment_id=registry_experiment_id,
+            candidate_id=registry_candidate_id,
+            created_at=utc_now(),
+            status=payload.get("status", "completed"),
+            summary=payload.get("summary", ""),
+            metrics=metrics,
+            falsifiers_triggered=list(payload.get("falsifiers_triggered", [])),
+            artifacts={path.stem: str(path), "report": str(path)},
+        )
+        upsert_experiment_result(experiment_record)
+        upsert_negative_result(
+            NegativeResultRecord(
+                id="NEG-DCP-IMPLICIT-TOTAL-GLOBAL-TRANSPORT-BEYOND-PIVOT",
+                claim="A nonlinear or implicit full-cube bijection can toggle the next subset-sum bit without an exact-valuation label.",
+                reason_invalid="Half-periodicity forces the factored first Fourier coefficient to vanish, which is equivalent to an exact-valuation pivot.",
+                lesson="Delete total full-cube transports from the search space. Retain only target-fiber partial maps or relation samplers and require explicit source coverage, efficient implementation, and classical baselines.",
+                applies_to=['DHS-GOWERS-SIEVE', 'EXP-DHS-DCP-FIBER-BALANCE-OBSTRUCTION'],
+                evidence=metrics,
+                source=str(path),
+            )
+        )
+        upsert_negative_result(
+            NegativeResultRecord(
+                id="NEG-DCP-SET-THEORETIC-FIBER-PAIRING-AS-EFFICIENT-MAP",
+                claim="Large optimal cross-child matching mass on finite fibers is evidence for an efficient quantum transport.",
+                reason_invalid="The multiplicity bound constructs no matching circuit, coherent state preparation, verified output routine, or classical separation.",
+                lesson="Delete total full-cube transports from the search space. Retain only target-fiber partial maps or relation samplers and require explicit source coverage, efficient implementation, and classical baselines.",
+                applies_to=['DHS-GOWERS-SIEVE', 'EXP-DHS-DCP-FIBER-BALANCE-OBSTRUCTION'],
+                evidence=metrics,
+                source=str(path),
+            )
+        )
     return payload
 
 

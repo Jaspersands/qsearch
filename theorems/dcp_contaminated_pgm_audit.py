@@ -294,4 +294,30 @@ def write_contaminated_pgm_audit(
     payload = asdict(report)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
+    if write_registry:
+        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
+        metrics = dict(payload.get("headline_metrics", {}))
+        experiment_record = ExperimentResultRecord(
+            id=result_id,
+            experiment_id=registry_experiment_id,
+            candidate_id=registry_candidate_id,
+            created_at=utc_now(),
+            status=payload.get("status", "completed"),
+            summary=payload.get("summary", ""),
+            metrics=metrics,
+            falsifiers_triggered=list(payload.get("falsifiers_triggered", [])),
+            artifacts={path.stem: str(path), "report": str(path)},
+        )
+        upsert_experiment_result(experiment_record)
+        upsert_negative_result(
+            NegativeResultRecord(
+                id="NEG-DCP-F1-CONTAMINATION-AS-CLEAN-PGM-INFORMATION-BARRIER",
+                claim="The exact f=1 bad-register rate by itself destroys global clean-PGM information at m=Theta(log N).",
+                reason_invalid="Under the primary-source tensor-product contract, the all-good component has constant weight for m=Theta(log N), and every other POVM success contribution is nonnegative.",
+                lesson="Do not cite f=1 contamination as the information barrier for global linear-size measurements. The remaining obstruction is efficient normalized-fiber implementation and end-to-end composition.",
+                applies_to=['DHS-GOWERS-SIEVE', 'EXP-DHS-DCP-CONTAMINATED-PGM-AUDIT'],
+                evidence=metrics,
+                source=str(path),
+            )
+        )
     return payload

@@ -72,6 +72,8 @@ def _read_json(path: Path) -> dict:
     resolved = path
     if not resolved.exists():
         resolved = Path(__file__).resolve().parent / path
+    if not resolved.exists():
+        resolved = Path(__file__).resolve().parent.parent / path
     return json.loads(resolved.read_text())
 
 
@@ -282,6 +284,36 @@ def write_n10_gap_trend_report(
     payload = asdict(build_n10_gap_trend_report())
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(payload, indent=2, sort_keys=True))
+    if write_registry:
+        negative_record = NegativeResultRecord(
+            id="NEG-COSET-TYPICAL-EXISTING-FINITE-GAPS-DO-NOT-ESTABLISH-STABLE-PRECISION",
+            source=str(output_path),
+            claim=(
+                "The existing exactly square-free n=10 blocks provide evidence of stable phase-estimation precision."
+            ),
+            reason_invalid=(
+                "The numerical LCU-normalized gap drops by 7.17x from multiplicity six to eight, and neither magnitude has a machine-verified interval certificate."
+            ),
+            lesson=(
+                "Measure higher exact-ladder gaps and derive a separator-specific all-n bound; treat current numerics only as a kill signal against unsupported precision claims."
+            ),
+            applies_to=[registry_candidate_id, registry_experiment_id],
+            evidence=payload.get("headline_metrics", {}),
+        )
+        upsert_negative_result(negative_record)
+        upsert_experiment_result(
+            ExperimentResultRecord(
+                id=registry_result_id or f"RESULT-{registry_experiment_id}-LATEST",
+                experiment_id=registry_experiment_id,
+                candidate_id=registry_candidate_id,
+                created_at=payload.get("created_at", utc_now()),
+                status=payload.get("status", "completed"),
+                summary=payload.get("summary", ""),
+                metrics=payload.get("headline_metrics", {}),
+                falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                artifacts={"report": str(output_path)},
+            )
+        )
     return payload
 
 

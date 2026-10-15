@@ -402,4 +402,30 @@ def write_subset_sum_bridge_audit(
     payload = asdict(report)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
+    if write_registry:
+        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
+        metrics = dict(payload.get("headline_metrics", {}))
+        experiment_record = ExperimentResultRecord(
+            id=result_id,
+            experiment_id=registry_experiment_id,
+            candidate_id=registry_candidate_id,
+            created_at=utc_now(),
+            status=payload.get("status", "completed"),
+            summary=payload.get("summary", ""),
+            metrics=metrics,
+            falsifiers_triggered=list(payload.get("falsifiers_triggered", [])),
+            artifacts={path.stem: str(path), "report": str(path)},
+        )
+        upsert_experiment_result(experiment_record)
+        upsert_negative_result(
+            NegativeResultRecord(
+                id="NEG-DCP-POLYNOMIAL-EXPLICIT-SUBSET-CANDIDATE-COVERAGE",
+                claim="Testing polynomially many explicit subsets can satisfy Regev's inverse-polynomial legal-input coverage assumption.",
+                reason_invalid="Against a uniform target, M explicit candidate sums cover at most M/N residues. Polynomial M is exponentially below inverse-polynomial coverage for N=2^n.",
+                lesson="Search structural average-case subset-sum algorithms, reversible algebraic decoders, or coherent many-target methods. Do not mutate low-weight or random candidate enumeration.",
+                applies_to=['DHS-GOWERS-SIEVE', 'EXP-DHS-DCP-AVERAGE-SUBSET-SUM-BRIDGE'],
+                evidence=metrics,
+                source=str(path),
+            )
+        )
     return payload

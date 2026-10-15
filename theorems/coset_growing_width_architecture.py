@@ -566,6 +566,36 @@ def write_growing_width_architecture_report(
     payload = asdict(build_growing_width_architecture_report())
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(payload, indent=2, sort_keys=True))
+    if write_registry:
+        negative_record = NegativeResultRecord(
+            id="NEG-COSET-MANY-SEPARATE-COPIES-NOT-GROWING-WIDTH-MEASUREMENT",
+            source=str(output_path),
+            claim=(
+                "Polynomially many separately measured coset states satisfy the multiregister entanglement-width requirement."
+            ),
+            reason_invalid=(
+                "The joint quantum width remains one; classical postprocessing cannot retroactively create the required entangled POVM."
+            ),
+            lesson=(
+                "Require a typed growing-width quantum DAG with carrier preservation and a noncommutant covariant final POVM."
+            ),
+            applies_to=[registry_candidate_id, registry_experiment_id],
+            evidence=payload.get("headline_metrics", {}),
+        )
+        upsert_negative_result(negative_record)
+        upsert_experiment_result(
+            ExperimentResultRecord(
+                id=registry_result_id or f"RESULT-{registry_experiment_id}-LATEST",
+                experiment_id=registry_experiment_id,
+                candidate_id=registry_candidate_id,
+                created_at=payload.get("created_at", utc_now()),
+                status=payload.get("status", "completed"),
+                summary=payload.get("summary", ""),
+                metrics=payload.get("headline_metrics", {}),
+                falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                artifacts={"report": str(output_path)},
+            )
+        )
     return payload
 
 

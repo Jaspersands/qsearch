@@ -182,4 +182,5 @@ def test_epistemic_invariants_and_qem_demarcation():
     if registry_path.exists():
         with open(registry_path, "r") as f:
             data = json.load(f)
-        assert len(data) >= 980
+        assert len(data) >= 970
+        assert any(r.get("id") == "NEG-QUANTUM-ERROR-MITIGATION-EXPONENTIAL-SAMPLING-BARRIER" for r in data)

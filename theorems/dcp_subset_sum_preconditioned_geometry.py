@@ -395,4 +395,30 @@ def write_preconditioned_geometry_audit(
     payload = asdict(report)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
+    if write_registry:
+        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
+        metrics = dict(payload.get("headline_metrics", {}))
+        experiment_record = ExperimentResultRecord(
+            id=result_id,
+            experiment_id=registry_experiment_id,
+            candidate_id=registry_candidate_id,
+            created_at=utc_now(),
+            status=payload.get("status", "completed"),
+            summary=payload.get("summary", ""),
+            metrics=metrics,
+            falsifiers_triggered=list(payload.get("falsifiers_triggered", [])),
+            artifacts={path.stem: str(path), "report": str(path)},
+        )
+        upsert_experiment_result(experiment_record)
+        upsert_negative_result(
+            NegativeResultRecord(
+                id="NEG-DCP-LOW-BIT-PRECONDITIONER-COUNT-GEOMETRY",
+                claim="Conditioning O(log n) low subset-sum bits creates an improved exact-solution or near-residual density that explains a polynomial high-bit solver.",
+                reason_invalid="For every fixed low fiber, high residual indicators are pairwise independent with exact mean F|W|/Q and binomial variance; the ensemble density exponent is unchanged.",
+                lesson="Retain the low-bit BDD only as a representation primitive. Require a theorem about higher-order correlations, LLL basis geometry, or an implicit decoder before further solver promotion.",
+                applies_to=['DHS-GOWERS-SIEVE', 'EXP-DHS-DCP-SUBSET-SUM-PRECONDITIONED-GEOMETRY'],
+                evidence=metrics,
+                source=str(path),
+            )
+        )
     return payload

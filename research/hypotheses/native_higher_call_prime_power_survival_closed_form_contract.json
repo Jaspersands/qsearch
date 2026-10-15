@@ -1,0 +1,30 @@
+{
+  "contract_id": "native-higher-call-prime-power-survival-closed-form-contract",
+  "title": "Higher-Call Prime-Power Survival Closed Forms: Eisenstein Isomorphism, Simplex Injectivity, Squared-Trinomial Zero Law, and Fourier Eigenvalue Spectra",
+  "version": "1.0.0",
+  "scope": "eisenstein_isomorphism_simplex_injectivity_squared_trinomial_zero_law_and_prime_power_fourier_survival_spectra",
+  "theorems": [
+    {
+      "id": "T1",
+      "name": "Unimodular Eisenstein Isomorphism and Squared-Trinomial Zero-Difference Law",
+      "statement": "The unimodular Z-linear map iota(x, y) = (x + y) + y*omega from Z^2 to Z[omega] (omega = e^(2*pi*i/3)) maps beta_0 = (1, 0), beta_1 = (-1, 1), beta_2 = (0, -1) to 1, omega, omega^2. At any fixed call count k >= 1, the map (a, b, c) -> (a - b, b - c) is strictly injective on the simplex Sigma_k = {(a, b, c) in Z_(>=0)^3 : a + b + c = k}, so the number of distinct integer endpoints is (k + 1)*(k + 2)/2 and the exact number of ordered path pairs with Delta(t, u) = (0, 0) in Z^2 is N_k(0) = sum_(a+b+c=k) (k! / (a! b! c!))^2."
+    },
+    {
+      "id": "T2",
+      "name": "Histogram Congruence Criterion for 3^h | Delta(t, u)",
+      "statement": "For any two k-call paths with digit histograms (a, b, c), (a', b', c') in Sigma_k and differences delta_a = a - a', delta_b = b - b', delta_c = c - c' (delta_a + delta_b + delta_c = 0), 3^h divides Delta(t, u) = (delta_a - delta_b, delta_b - delta_c) if and only if delta_a === delta_b === delta_c === r * 3^(h - 1) (mod 3^h) for some r in {0, 1, 2}."
+    },
+    {
+      "id": "T3",
+      "name": "Exact Fourier Eigenvalue Formula for Prime-Power Survival N_k(3^h)",
+      "statement": "For every h >= 1 and k >= 1, the prime-power survival count N_k(3^h) = |{(t, u) : 3^h | Delta(t, u)}| equals (1 / 9^h) * sum_(u, v in Z_(3^h)^2) Lambda_h(u, v)^k, where Lambda_h(u, v) = 3 + 2*cos(2*pi*(2u - v)/3^h) + 2*cos(2*pi*(u + v)/3^h) + 2*cos(2*pi*(u - 2v)/3^h)."
+    }
+  ],
+  "guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false,
+    "end_to_end_quantum_advantage_claimed": false,
+    "bypassed_UniformCubeSuperposition_prepare_constraint": false
+  }
+}

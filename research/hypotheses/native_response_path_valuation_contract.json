@@ -1,0 +1,32 @@
+{
+  "contract_id": "native_response_path_valuation_v1",
+  "status": "HIGHER_RESPONSE_PATH_IDEALS_AND_WEIGHTED_UNITARY_READOUT_REVIEW_PENDING",
+  "scope": {
+    "collision_law": "Positive k-call path-pair census; IID uniform original labels; generated three-adic ideal, not assumed unit coefficients",
+    "measured_schedule": "F_D_DAGGER D_y F_D D_y |PLUS_D>; actual public phases; all measured outcomes retained",
+    "secret_sweep": "Calibration-only complete uniform secret census, fixed error phases independent of the swept secret",
+    "classical_baseline": "Same-public-data FFT simulation with exponential-in-sites D amplitude storage"
+  },
+  "proof_obligations": [
+    "Full ordered path-pair mass and ideal strata partition",
+    "Uniform homomorphism onto the generated ideal under IID original labels",
+    "Actual unitary path weights, Born normalization and exact secret pinching",
+    "Public-only readout construction with no calibration advice",
+    "Scalable noise discrimination, matched efficient classical baselines and source reduction remain open"
+  ],
+  "falsifiers": [
+    "Complete label-bank collision mean differs from the ideal law",
+    "Dense unitary Born law differs from exact weighted readout",
+    "Weighted pinching differs from complete uniform-secret sweep",
+    "Proposed receiver is efficiently simulated under the same access model"
+  ],
+  "honesty_guardrails": {
+    "collision_count_is_arbitrary_mixer_acceptance": false,
+    "unknown_phase_oracle_supplied": false,
+    "efficient_secret_decoder_supplied": false,
+    "accepted_speedup_candidate": false,
+    "general_quantum_lower_bound": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  }
+}

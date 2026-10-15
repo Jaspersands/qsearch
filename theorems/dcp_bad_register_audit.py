@@ -378,4 +378,30 @@ def write_dcp_bad_register_report(
     payload = asdict(report)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
+    if write_registry:
+        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
+        metrics = dict(payload["headline_metrics"])
+        experiment_record = ExperimentResultRecord(
+            id=result_id,
+            experiment_id=registry_experiment_id,
+            candidate_id=registry_candidate_id,
+            created_at=utc_now(),
+            status=payload["status"],
+            summary=payload["summary"],
+            metrics=metrics,
+            falsifiers_triggered=list(payload.get("falsifiers_triggered", [])),
+            artifacts={path.stem: str(path), "report": str(path)},
+        )
+        upsert_experiment_result(experiment_record)
+        upsert_negative_result(
+            NegativeResultRecord(
+                id="NEG-DCP-PERFECT-STATE-SIEVE-DOES-NOT-COVER-REGEV-F1-PROMISE",
+                claim="A sieve tested only on perfect DCP coset states covers the Regev f=1 lattice reduction.",
+                reason_invalid="The theorem permits arbitrary bad basis-state registers at rate 1/log N. They are not identified by the Fourier label and can create corrupted endpoints and random decoder bits.",
+                lesson="Prove adversarial contamination tolerance or restrict the claimed reduction route.",
+                applies_to=["DHS-GOWERS-SIEVE", registry_experiment_id],
+                evidence=metrics,
+                source=str(path),
+            )
+        )
     return payload

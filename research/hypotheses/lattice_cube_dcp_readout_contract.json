@@ -1,0 +1,31 @@
+{
+  "contract_id": "public_lattice_cube_to_opaque_DCP_readout_v1",
+  "status": "PUBLIC_LATTICE_TO_DCP_PHASE_CIRCUIT_AND_OPAQUE_NOISY_REGISTERS_REVIEW_PENDING",
+  "implemented": [
+    "In-place base-2M embedding using original position wires and zero padding",
+    "Positive position QFT, signed cell/label readout, retained colour qubit",
+    "Actual compiled-circuit shot-conditioned simulation with snapshot guards",
+    "Opaque source receipts and destructive measurement/CNOT branch operations",
+    "Complete bounded exact dyadic instrument and independent arithmetic replay"
+  ],
+  "proof_obligations": [
+    "No retained copied position or point/carry/remainder workspace",
+    "Complete Born weights and actual conditional density, including bad cells",
+    "Independent source preparation accounting and consumed disjoint ancestry",
+    "Growing-family source geometry and failure promises remain unproved by finite controls",
+    "Efficient robust receiver, matched classical baselines and fault-tolerant precision remain open"
+  ],
+  "falsifiers": [
+    "Compiled conditional density differs from the exact full instrument",
+    "Snapshots are averaged, coarsened or incomplete relative to measurement memory",
+    "Multipoint cells or nonuniform labels are admitted as ordinary DCP inputs",
+    "Source preparation, merge probability or consumed lineage is undercharged",
+    "Classical lattice/receiver algorithms match the proposed quantum result"
+  ],
+  "accepted_speedup_candidate": false,
+  "efficient_noisy_DCP_decoder_supplied": false,
+  "full_Regev_growing_family_coverage": false,
+  "hardware_noise_or_fault_tolerant_precision_certified": false,
+  "new_active_negative_result_created": false,
+  "novelty_claim": false
+}

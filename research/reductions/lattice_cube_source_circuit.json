@@ -1,0 +1,205 @@
+{
+  "status": "CLEAN_PUBLIC_CUBE_ARITHMETIC_COMPILED_RECEIVER_MISSING",
+  "producer_sha256": "f6b424c99967fb9b62e5ba57cc7695e05a450d9c8054987554faea711d441386",
+  "derivation_sha256": "c2f930c8f549705a5f24757441d9a434e4b273fe756eedcb65d7b67d1326656f",
+  "contract_sha256": "65537e063896e6deadde6eda994b7fd03982e1c952fb4a35cbb439c81a02f4d2",
+  "source_producer_sha256": "8b4298ac1feba05167d0bd9e312913712271efa130df04734ca141838e3de9f9",
+  "precision_policy_producer_sha256": "06d83cbff1ba5995893dad951f0bf131622c759aa9c599fad87d12a7c01aef91",
+  "compiled_public_source_controls": [
+    {
+      "public_source": {
+        "basis_rows": [
+          [
+            1
+          ]
+        ],
+        "prime": 3,
+        "residue_guess": 1,
+        "coordinate": 0,
+        "box": 2,
+        "cube_width": 2,
+        "offsets": [
+          1
+        ],
+        "input_population": 4,
+        "phase_modulus": 4,
+        "explicit_cell_evaluator_available": true,
+        "uniform_hidden_shift_prior_assumed": false,
+        "uniform_secret_twirl_bounds_transferred_to_source": false,
+        "shortest_vector_or_shift_given_to_constructor": false,
+        "normalized_conditional_state_inverse_available": false,
+        "scalable_coherent_evaluator_circuit_compiled": false
+      },
+      "width_certificate": {
+        "initial_uniform_source_qubits": 2,
+        "position_embedding_padding_qubits": 1,
+        "position_phase_register_qubits": 2,
+        "public_coefficient_maxima": [
+          4
+        ],
+        "coordinate_width_certificates": [
+          {
+            "absolute_point_minus_offset_bound": 6,
+            "signed_point_workspace_bits": 4,
+            "low_remainder_bits_to_uncompute": 1,
+            "signed_cell_output_bits": 3,
+            "strict_signed_range_certified": true
+          }
+        ],
+        "classical_constant_multiply_accumulate_terms": 1,
+        "signed_floor_implemented_by_high_bit_copy": true,
+        "physical_point_carry_remainder_workspace_must_return_zero": true,
+        "clean_reversible_arithmetic_gates_compiled": false
+      },
+      "compiled_qubits": 14,
+      "input_qubits": 2,
+      "cell_output_qubits": 3,
+      "shared_arithmetic_workspace_qubits": 9,
+      "constant_additions_including_uncompute": 6,
+      "logical_instruction_count": 37,
+      "library_adder": "Qiskit adder_ripple_c04(kind=fixed), CDKM",
+      "qiskit_version": "2.3.0",
+      "clean_cell_evaluator_logical_circuit_compiled": true,
+      "uniform_parent_logical_circuit_compiled": true,
+      "full_position_QFT_phase_source_readout_compiled": false,
+      "hardware_noise_or_fault_tolerance_cost_certified": false,
+      "shortest_vector_or_shift_or_preimages_used": false
+    },
+    {
+      "public_source": {
+        "basis_rows": [
+          [
+            -1
+          ]
+        ],
+        "prime": 3,
+        "residue_guess": 1,
+        "coordinate": 0,
+        "box": 2,
+        "cube_width": 2,
+        "offsets": [
+          2
+        ],
+        "input_population": 4,
+        "phase_modulus": 4,
+        "explicit_cell_evaluator_available": true,
+        "uniform_hidden_shift_prior_assumed": false,
+        "uniform_secret_twirl_bounds_transferred_to_source": false,
+        "shortest_vector_or_shift_given_to_constructor": false,
+        "normalized_conditional_state_inverse_available": false,
+        "scalable_coherent_evaluator_circuit_compiled": false
+      },
+      "width_certificate": {
+        "initial_uniform_source_qubits": 2,
+        "position_embedding_padding_qubits": 1,
+        "position_phase_register_qubits": 2,
+        "public_coefficient_maxima": [
+          4
+        ],
+        "coordinate_width_certificates": [
+          {
+            "absolute_point_minus_offset_bound": 6,
+            "signed_point_workspace_bits": 4,
+            "low_remainder_bits_to_uncompute": 1,
+            "signed_cell_output_bits": 3,
+            "strict_signed_range_certified": true
+          }
+        ],
+        "classical_constant_multiply_accumulate_terms": 1,
+        "signed_floor_implemented_by_high_bit_copy": true,
+        "physical_point_carry_remainder_workspace_must_return_zero": true,
+        "clean_reversible_arithmetic_gates_compiled": false
+      },
+      "compiled_qubits": 14,
+      "input_qubits": 2,
+      "cell_output_qubits": 3,
+      "shared_arithmetic_workspace_qubits": 9,
+      "constant_additions_including_uncompute": 6,
+      "logical_instruction_count": 49,
+      "library_adder": "Qiskit adder_ripple_c04(kind=fixed), CDKM",
+      "qiskit_version": "2.3.0",
+      "clean_cell_evaluator_logical_circuit_compiled": true,
+      "uniform_parent_logical_circuit_compiled": true,
+      "full_position_QFT_phase_source_readout_compiled": false,
+      "hardware_noise_or_fault_tolerance_cost_certified": false,
+      "shortest_vector_or_shift_or_preimages_used": false
+    },
+    {
+      "public_source": {
+        "basis_rows": [
+          [
+            10000,
+            1000
+          ],
+          [
+            9999,
+            1000
+          ]
+        ],
+        "prime": 389,
+        "residue_guess": 1,
+        "coordinate": 0,
+        "box": 256,
+        "cube_width": 128,
+        "offsets": [
+          1,
+          1
+        ],
+        "input_population": 131072,
+        "phase_modulus": 262144,
+        "explicit_cell_evaluator_available": true,
+        "uniform_hidden_shift_prior_assumed": false,
+        "uniform_secret_twirl_bounds_transferred_to_source": false,
+        "shortest_vector_or_shift_given_to_constructor": false,
+        "normalized_conditional_state_inverse_available": false,
+        "scalable_coherent_evaluator_circuit_compiled": false
+      },
+      "width_certificate": {
+        "initial_uniform_source_qubits": 17,
+        "position_embedding_padding_qubits": 2,
+        "position_phase_register_qubits": 18,
+        "public_coefficient_maxima": [
+          99196,
+          255
+        ],
+        "coordinate_width_certificates": [
+          {
+            "absolute_point_minus_offset_bound": 994509873,
+            "signed_point_workspace_bits": 31,
+            "low_remainder_bits_to_uncompute": 7,
+            "signed_cell_output_bits": 24,
+            "strict_signed_range_certified": true
+          },
+          {
+            "absolute_point_minus_offset_bound": 99451128,
+            "signed_point_workspace_bits": 28,
+            "low_remainder_bits_to_uncompute": 7,
+            "signed_cell_output_bits": 21,
+            "strict_signed_range_certified": true
+          }
+        ],
+        "classical_constant_multiply_accumulate_terms": 4,
+        "signed_floor_implemented_by_high_bit_copy": true,
+        "physical_point_carry_remainder_workspace_must_return_zero": true,
+        "clean_reversible_arithmetic_gates_compiled": false
+      },
+      "compiled_qubits": 125,
+      "input_qubits": 17,
+      "cell_output_qubits": 45,
+      "shared_arithmetic_workspace_qubits": 63,
+      "constant_additions_including_uncompute": 72,
+      "logical_instruction_count": 1593,
+      "library_adder": "Qiskit adder_ripple_c04(kind=fixed), CDKM",
+      "qiskit_version": "2.3.0",
+      "clean_cell_evaluator_logical_circuit_compiled": true,
+      "uniform_parent_logical_circuit_compiled": true,
+      "full_position_QFT_phase_source_readout_compiled": false,
+      "hardware_noise_or_fault_tolerance_cost_certified": false,
+      "shortest_vector_or_shift_or_preimages_used": false
+    }
+  ],
+  "accepted_speedup_candidate": false,
+  "new_active_negative_result_created": false,
+  "efficient_noisy_DCP_decoder_supplied": false,
+  "novelty_claim": false
+}

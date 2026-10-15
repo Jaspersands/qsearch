@@ -288,4 +288,30 @@ def write_iid_hash_estimator_report(
     payload = asdict(report)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
+    if write_registry:
+        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
+        metrics = dict(payload.get("headline_metrics", {}))
+        experiment_record = ExperimentResultRecord(
+            id=result_id,
+            experiment_id=registry_experiment_id,
+            candidate_id=registry_candidate_id,
+            created_at=utc_now(),
+            status=payload.get("status", "completed"),
+            summary=payload.get("summary", ""),
+            metrics=metrics,
+            falsifiers_triggered=list(payload.get("falsifiers_triggered", [])),
+            artifacts={path.stem: str(path), "report": str(path)},
+        )
+        upsert_experiment_result(experiment_record)
+        upsert_negative_result(
+            NegativeResultRecord(
+                id="NEG-DCP-IID-EXACT-LINEAR-HASH-BIN-PARSEVAL",
+                claim="Exact linear iid Monte Carlo estimators provide sample-efficient coarse frequency buckets for DCP decoding.",
+                reason_invalid="Normalized Parseval forces second moment N/B for a bucket of size N/B. Polynomially many coarse buckets require exponential samples, while polynomial samples require exponentially many buckets.",
+                lesson="Search nonlinear iid localization or prove a biased low-variance margin; do not retry exact linear bucket indicators.",
+                applies_to=['DHS-GOWERS-SIEVE', 'EXP-DHS-DCP-IID-LINEAR-HASH-ESTIMATOR'],
+                evidence=metrics,
+                source=str(path),
+            )
+        )
     return payload

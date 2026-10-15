@@ -414,6 +414,32 @@ def write_growing_order_chain_theorem(
     payload = asdict(run_growing_order_chain_theorem(**kwargs))
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n")
+    if write_registry:
+        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
+        metrics = dict(payload.get("headline_metrics", {}))
+        experiment_record = ExperimentResultRecord(
+            id=result_id,
+            experiment_id=registry_experiment_id,
+            candidate_id=registry_candidate_id,
+            created_at=utc_now(),
+            status=payload.get("status", "completed"),
+            summary=payload.get("summary", ""),
+            metrics=metrics,
+            falsifiers_triggered=list(payload.get("falsifiers_triggered", [])),
+            artifacts={path.stem: str(path), "report": str(path)},
+        )
+        upsert_experiment_result(experiment_record)
+        upsert_negative_result(
+            NegativeResultRecord(
+                id="NEG-DCP-SUBSET-SUM-NEAR-LOG-GROWING-MOMENT-CHAIN",
+                claim="A nonnegative source bad-tuple moment at any fixed fraction below logarithmic order can retain asymptotic density-one signal.",
+                reason_invalid="Integer saturation indices bound every non-self Boolean-lattice transfer path by O(k^2 log k), so terminal bad-state contraction dominates whenever 2^k L(k)(log n+k)=o(n).",
+                lesson="Search only the final near-log window with full resource accounting, a signed observable, or non-moment reduced-basis geometry.",
+                applies_to=['DHS-GOWERS-SIEVE', 'EXP-DHS-DCP-SUBSET-SUM-GROWING-ORDER-CHAIN-THEOREM'],
+                evidence=metrics,
+                source=str(path),
+            )
+        )
     return payload
 
 

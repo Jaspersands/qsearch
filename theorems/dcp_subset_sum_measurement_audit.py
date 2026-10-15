@@ -384,4 +384,41 @@ def write_subset_sum_measurement_audit(
     payload = asdict(report)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
+    if write_registry:
+        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
+        metrics = dict(payload.get("headline_metrics", {}))
+        experiment_record = ExperimentResultRecord(
+            id=result_id,
+            experiment_id=registry_experiment_id,
+            candidate_id=registry_candidate_id,
+            created_at=utc_now(),
+            status=payload.get("status", "completed"),
+            summary=payload.get("summary", ""),
+            metrics=metrics,
+            falsifiers_triggered=list(payload.get("falsifiers_triggered", [])),
+            artifacts={path.stem: str(path), "report": str(path)},
+        )
+        upsert_experiment_result(experiment_record)
+        upsert_negative_result(
+            NegativeResultRecord(
+                id="NEG-DCP-COMPUTE-SUBSET-SUM-QFT-NO-INTERFERENCE",
+                claim="Computing the public-label subset sum and Fourier transforming its ancilla reveals the hidden reflection.",
+                reason_invalid="The orthogonal input register retains which-subset information. Summing path probabilities gives the exactly uniform QFT outcome for every hidden reflection.",
+                lesson="A collective architecture must coherently symmetrize equal-sum fibers; sum computation alone creates no interference.",
+                applies_to=['DHS-GOWERS-SIEVE', 'EXP-DHS-DCP-SUBSET-SUM-MEASUREMENT-AUDIT'],
+                evidence=metrics,
+                source=str(path),
+            )
+        )
+        upsert_negative_result(
+            NegativeResultRecord(
+                id="NEG-DCP-EXACT-RESIDUE-MPS-EXPONENTIAL-BOND",
+                claim="An exact polynomial-bond residue-tracking tensor network implements DCP collision-block interference.",
+                reason_invalid="Random prefix subset sums remain collision-free through a linear prefix with high probability, forcing exponentially many exact residue states in the sequential bond.",
+                lesson="Search approximate hashed networks or compressed fiber measurements, and prove their phase signal and error; do not hide an exact N-residue dynamic program in a tensor-network label.",
+                applies_to=['DHS-GOWERS-SIEVE', 'EXP-DHS-DCP-SUBSET-SUM-MEASUREMENT-AUDIT'],
+                evidence=metrics,
+                source=str(path),
+            )
+        )
     return payload

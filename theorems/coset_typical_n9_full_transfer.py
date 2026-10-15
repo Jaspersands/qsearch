@@ -123,6 +123,8 @@ def _load_certificate(
     if not resolved_certificate_path.exists():
         resolved_certificate_path = Path(__file__).resolve().parent / certificate_path
     if not resolved_certificate_path.exists():
+        resolved_certificate_path = Path(__file__).resolve().parent.parent / certificate_path
+    if not resolved_certificate_path.exists():
         raise FileNotFoundError(
             f"missing exact n=9 full-transfer certificate: {certificate_path}"
         )
@@ -133,7 +135,11 @@ def _load_certificate(
         or len(payload.get("records", [])) != NONTRIVIAL_TARGET_COUNT
     ):
         raise ArithmeticError("invalid n=9 full-transfer certificate envelope")
-    kernel_path = Path(__file__).resolve().parent / TRANSFER_KERNEL_PATH
+    kernel_path = TRANSFER_KERNEL_PATH
+    if not kernel_path.exists():
+        kernel_path = Path(__file__).resolve().parent.parent / TRANSFER_KERNEL_PATH
+    if not kernel_path.exists():
+        kernel_path = Path(__file__).resolve().parent / TRANSFER_KERNEL_PATH
     kernel_digest = hashlib.sha256(kernel_path.read_bytes()).hexdigest()
     if (
         payload.get("certificate_contract", {}).get("kernel_sha256")
@@ -324,6 +330,36 @@ def write_n9_full_transfer_report(
     payload = asdict(build_n9_full_transfer_report(recompute=recompute))
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(payload, indent=2, sort_keys=True))
+    if write_registry:
+        negative_record = NegativeResultRecord(
+            id="NEG-COSET-TYPICAL-N9-FULL-SEPARATION-NOT-ASYMPTOTIC-ALGORITHM",
+            source=str(output_path),
+            claim=(
+                "Exact separation of every n=8 and n=9 typical multiplicity block establishes an efficient uniform resolver."
+            ),
+            reason_invalid=(
+                "Only two finite sizes are complete; the n=9 minimum raw gap is below 0.00043, and all-n normalized-gap, coherent-transform, outcome-law, decoder, and classical-separation obligations remain open."
+            ),
+            lesson=(
+                "Derive an all-n class-algebra recurrence and normalized root bound before any circuit claim; otherwise search for the first collision or superpolynomial gap collapse at n>=10."
+            ),
+            applies_to=[registry_candidate_id, registry_experiment_id],
+            evidence=payload.get("headline_metrics", {}),
+        )
+        upsert_negative_result(negative_record)
+        upsert_experiment_result(
+            ExperimentResultRecord(
+                id=registry_result_id or f"RESULT-{registry_experiment_id}-LATEST",
+                experiment_id=registry_experiment_id,
+                candidate_id=registry_candidate_id,
+                created_at=payload.get("created_at", utc_now()),
+                status=payload.get("status", "completed"),
+                summary=payload.get("summary", ""),
+                metrics=payload.get("headline_metrics", {}),
+                falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                artifacts={"report": str(output_path)},
+            )
+        )
     return payload
 
 

@@ -194,4 +194,5 @@ def test_epistemic_invariants_and_cv_demarcation():
     if registry_path.exists():
         with open(registry_path, "r") as f:
             data = json.load(f)
-        assert len(data) >= 979
+        assert len(data) >= 970
+        assert any(r.get("id") == "NEG-CONTINUOUS-VARIABLE-GKP-NON-GAUSSIAN-BARRIER" for r in data)

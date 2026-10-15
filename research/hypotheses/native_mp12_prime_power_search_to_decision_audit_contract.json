@@ -1,0 +1,18 @@
+{
+  "contract_id": "native_mp12_prime_power_search_to_decision_audit_v1",
+  "title": "Micciancio-Peikert Prime-Power Search-to-Decision Adapter, Hensel Subgroup Probes, and Sample Expansion Audit",
+  "status": "MP12_PRIME_POWER_HENSEL_PROBE_AND_SAMPLE_EXPANSION_AUDIT_REVIEW_PENDING",
+  "scope": {
+    "hensel_subgroup_probe": "At level l in [0, r-1], probing a' = a + u*3^(r-1-l)*e_j and y' = y - <a, s_low> + u*3^(r-1)*d + e_widen mod 3^r preserves the error law iff d == s_upper_j mod 3 and shifts by the full order-3 subgroup {0, 3^(r-1), 2*3^(r-1)} when d != s_upper_j mod 3",
+    "false_prefix_propagation": "If s_low != s mod 3^l, none of the 3 candidate digits d in {0, 1, 2} cancels the u-dependent shift",
+    "coupled_widening_and_sample_expansion": "Combines rounded-input widening TV loss, certified adaptive-threshold dither sampler loss, and 2*n*r*R_rep*m_dec disjoint sample expansion"
+  },
+  "honesty_guardrails": {
+    "actual_decision_algorithm_supplied": false,
+    "fixed_single_query_bank_suffices": false,
+    "worst_case_lattice_reduction_compatibility_established": false,
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  }
+}

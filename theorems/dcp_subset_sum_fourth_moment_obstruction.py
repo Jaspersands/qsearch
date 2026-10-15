@@ -517,4 +517,30 @@ def write_fourth_moment_obstruction(
     payload = asdict(report)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
+    if write_registry:
+        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
+        metrics = dict(payload.get("headline_metrics", {}))
+        experiment_record = ExperimentResultRecord(
+            id=result_id,
+            experiment_id=registry_experiment_id,
+            candidate_id=registry_candidate_id,
+            created_at=utc_now(),
+            status=payload.get("status", "completed"),
+            summary=payload.get("summary", ""),
+            metrics=metrics,
+            falsifiers_triggered=list(payload.get("falsifiers_triggered", [])),
+            artifacts={path.stem: str(path), "report": str(path)},
+        )
+        upsert_experiment_result(experiment_record)
+        upsert_negative_result(
+            NegativeResultRecord(
+                id="NEG-DCP-LOW-FIBER-ORDER-LE-3-AND-GENERIC-ORDER-4-SIGNAL",
+                claim="Pairwise, triplewise, or affine-independent fourth-order high residual correlations provide a hidden signal after logarithmic low-bit conditioning.",
+                reason_invalid="Residuals are exactly three-wise independent. At fourth order, only distinct xor-zero affine parallelograms can deviate, and their total contribution is explicitly bounded by additive energy. Exact Smith-type counting proves the source-averaged excess vanishes exponentially at fixed offset.",
+                lesson="Restrict future low-order searches to additive-energy-bearing fourth tuples. Any broader route must prove atypical-fiber concentration, use growing order, exploit reduced-basis geometry, or provide an implicit decoder and state that distinction.",
+                applies_to=['DHS-GOWERS-SIEVE', 'EXP-DHS-DCP-SUBSET-SUM-FOURTH-MOMENT-OBSTRUCTION'],
+                evidence=metrics,
+                source=str(path),
+            )
+        )
     return payload

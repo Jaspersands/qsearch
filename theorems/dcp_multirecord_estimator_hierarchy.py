@@ -413,4 +413,30 @@ def write_multirecord_hierarchy_report(
     payload = asdict(report)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
+    if write_registry:
+        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
+        metrics = dict(payload.get("headline_metrics", {}))
+        experiment_record = ExperimentResultRecord(
+            id=result_id,
+            experiment_id=registry_experiment_id,
+            candidate_id=registry_candidate_id,
+            created_at=utc_now(),
+            status=payload.get("status", "completed"),
+            summary=payload.get("summary", ""),
+            metrics=metrics,
+            falsifiers_triggered=list(payload.get("falsifiers_triggered", [])),
+            artifacts={path.stem: str(path), "report": str(path)},
+        )
+        upsert_experiment_result(experiment_record)
+        upsert_negative_result(
+            NegativeResultRecord(
+                id="NEG-DCP-IID-DISJOINT-MULTIRECORD-MARGIN-PARSEVAL",
+                claim="A fixed-degree product of iid DCP quadrature records creates a sample-efficient coarse-frequency sketch.",
+                reason_invalid="Every fixed signed aggregate label remains uniform. Conditional Jensen and Parseval retain the margin-energy lower bound, while the product outcome contributes a 4^r second moment on disjoint blocks.",
+                lesson="Do not retry disjoint fixed-degree product kernels. Analyze overlapping degenerate U-statistics, adaptive score families, implicit contractions, or premeasurement collective observables.",
+                applies_to=['DHS-GOWERS-SIEVE', 'EXP-DHS-DCP-IID-MULTIRECORD-HIERARCHY'],
+                evidence=metrics,
+                source=str(path),
+            )
+        )
     return payload

@@ -187,4 +187,30 @@ def write_conditioned_tail_theorem(
     payload = asdict(report)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
+    if write_registry:
+        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
+        metrics = dict(payload.get("headline_metrics", {}))
+        experiment_record = ExperimentResultRecord(
+            id=result_id,
+            experiment_id=registry_experiment_id,
+            candidate_id=registry_candidate_id,
+            created_at=utc_now(),
+            status=payload.get("status", "completed"),
+            summary=payload.get("summary", ""),
+            metrics=metrics,
+            falsifiers_triggered=list(payload.get("falsifiers_triggered", [])),
+            artifacts={path.stem: str(path), "report": str(path)},
+        )
+        upsert_experiment_result(experiment_record)
+        upsert_negative_result(
+            NegativeResultRecord(
+                id="NEG-DCP-SUBSET-SUM-FIXED-MOMENT-CONDITIONED-TAIL",
+                claim="An inverse-polynomial mass of logarithmic low-bit fibers has inverse-polynomial conditional signal from a source-nongeneric fixed-order tuple moment.",
+                reason_invalid="Tower plus Markov transfers the all-fixed-order exponentially decaying bad-tuple mean into an exponentially small bound on fibers above every inverse-polynomial threshold.",
+                lesson="Do not select energetic finite fibers. Prove growing-order resource control, a signed observable not dominated by bad tuples, or an explicit reduced-basis event with source coverage and decoding.",
+                applies_to=['DHS-GOWERS-SIEVE', 'EXP-DHS-DCP-SUBSET-SUM-CONDITIONED-FIXED-MOMENT-TAIL'],
+                evidence=metrics,
+                source=str(path),
+            )
+        )
     return payload

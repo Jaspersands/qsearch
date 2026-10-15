@@ -690,6 +690,32 @@ def write_marker_aware_list_decoder(
     payload = asdict(run_marker_aware_list_decoder(**kwargs))
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
+    if write_registry:
+        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
+        metrics = dict(payload.get("headline_metrics", {}))
+        experiment_record = ExperimentResultRecord(
+            id=result_id,
+            experiment_id=registry_experiment_id,
+            candidate_id=registry_candidate_id,
+            created_at=utc_now(),
+            status=payload.get("status", "completed"),
+            summary=payload.get("summary", ""),
+            metrics=metrics,
+            falsifiers_triggered=list(payload.get("falsifiers_triggered", [])),
+            artifacts={path.stem: str(path), "report": str(path)},
+        )
+        upsert_experiment_result(experiment_record)
+        upsert_negative_result(
+            NegativeResultRecord(
+                id="NEG-DCP-FIXED-DEPTH-MARKER-LIST-IS-NOT-COVERAGE",
+                claim="Polynomial size of a fixed-depth marker-aware nearest-plane list, or finite recovery within it, already proves inverse-polynomial uniform-legal subset-sum coverage.",
+                reason_invalid="The list-size theorem is deterministic, while source coverage remains an unproved probability statement; finite failures also say nothing about general affine-CVP decoders.",
+                lesson="Use the bounded list as a stronger classical falsifier, then derive a source-conditioned cell-mass theorem or change the decoder mechanism.",
+                applies_to=['DHS-GOWERS-SIEVE', 'EXP-DHS-DCP-MARKER-AWARE-LIST-DECODER'],
+                evidence=metrics,
+                source=str(path),
+            )
+        )
     return payload
 
 

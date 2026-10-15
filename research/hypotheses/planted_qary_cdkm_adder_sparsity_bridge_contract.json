@@ -1,0 +1,30 @@
+{
+  "contract_id": "planted-qary-cdkm-adder-sparsity-bridge-contract",
+  "title": "Planted q-Ary CDKM Adder Sparsity Bridge: Modulus-Independent Free-Column Cell Widths and Quadratic-to-Bipartite Gate Compression",
+  "version": "1.0.0",
+  "scope": "centered_rref_kernel_basis_sparsity_free_column_cell_width_modulus_independence_and_cdkm_constant_addition_compression",
+  "theorems": [
+    {
+      "id": "T1",
+      "name": "Centered-RREF Sparsity and Exact CDKM Addition Count",
+      "statement": "For any PublicQaryLattice with dimension n, constraint rows m (1 <= m < n - 1), and prime q >= 3, its public row basis B has exactly 1 nonzero entry (+1) in each of the n - m free columns F_j and 1 + nnz(C_(i,*)) <= 1 + (n - m) nonzero entries in each of the m pivot columns P_i, so nnz(B) = n + nnz(C) <= n + m*(n - m). In CubeCosetSource with box = 2^b and free splitting row j_coord = m + j_0, the exact number of CDKM constant additions (including uncompute) in compile_cube_evaluator is N_add = 2 * (b * nnz(B) + (1 + nnz(C_(*, j_0))) + n), saving at least 2*b*((n - m)*(n - m - 1) + m*(m - 1)) + 2*(n - m - 1) additions over a dense n x n basis."
+    },
+    {
+      "id": "T2",
+      "name": "Modulus-Independence of Free-Column Cell Output Widths",
+      "statement": "In CubeCosetSource.clean_arithmetic_plan(), every non-split free column F_j (j != j_0) has exact signed point bound (M_box - 1) + W and the split free column F_(j_0) has exact signed point bound p_split*(M_box - 1) + g_res + W, both completely independent of the modulus q and dimension n. Consequently, all n - m free-column cell output widths are independent of q, while only the m pivot-column cell registers and the shared 2*w + 1 workspace scale as O(log q)."
+    },
+    {
+      "id": "T3",
+      "name": "Closed-Form Gate Count on Non-Split Free Columns",
+      "statement": "In cube_resource_estimate(source), every non-split free column F_j (j != j_0) has bit-shifted coefficients +2^h with popcount(2^h) = 1 (0 <= h < b) and zero colour term, contributing exactly adds(F_j) = b + 1 and popcount_sum(F_j) = b + w - popcount(offsets_(F_j) - 1) to the forward CDKM resource accumulator."
+    }
+  ],
+  "guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false,
+    "end_to_end_quantum_advantage_claimed": false,
+    "bypassed_UniformCubeSuperposition_prepare_constraint": false
+  }
+}

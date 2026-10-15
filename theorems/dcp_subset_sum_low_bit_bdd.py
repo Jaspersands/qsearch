@@ -274,4 +274,30 @@ def write_subset_sum_low_bit_bdd_audit(
     payload = asdict(report)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
+    if write_registry:
+        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
+        metrics = dict(payload.get("headline_metrics", {}))
+        experiment_record = ExperimentResultRecord(
+            id=result_id,
+            experiment_id=registry_experiment_id,
+            candidate_id=registry_candidate_id,
+            created_at=utc_now(),
+            status=payload.get("status", "completed"),
+            summary=payload.get("summary", ""),
+            metrics=metrics,
+            falsifiers_triggered=list(payload.get("falsifiers_triggered", [])),
+            artifacts={path.stem: str(path), "report": str(path)},
+        )
+        upsert_experiment_result(experiment_record)
+        upsert_negative_result(
+            NegativeResultRecord(
+                id="NEG-DCP-POLYNOMIAL-LOW-BIT-BDD-AS-FULL-SUBSET-SUM-SOLVER",
+                claim="A polynomial BDD for O(log n) low subset-sum bits is already a polynomial density-one witness solver.",
+                reason_invalid="The exact representation leaves Theta(n) residual witness entropy and no high-bit geometry or decoding theorem.",
+                lesson="Retain the low-bit BDD as a proved preconditioning/state-preparation primitive. Demand a separate high-bit solver and coverage theorem.",
+                applies_to=['DHS-GOWERS-SIEVE', 'EXP-DHS-DCP-SUBSET-SUM-LOW-BIT-BDD'],
+                evidence=metrics,
+                source=str(path),
+            )
+        )
     return payload

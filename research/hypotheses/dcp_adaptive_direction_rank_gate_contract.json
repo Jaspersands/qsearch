@@ -1,0 +1,35 @@
+{
+  "contract_id": "precomplement_full_label_single_direction_rank_gate_v1",
+  "experiment_id_for_mechanical_integration": "EXP-DHS-DCP-ADAPTIVE-DIRECTION-RANK-GATE",
+  "status": "LOCAL_DERIVATION_EXTERNAL_REVIEW_PENDING",
+  "scope": {
+    "source": "IID uniform A in Z_(2^t)^(n by 3n), t>=3, pure flat phase amplitudes",
+    "n_is_secret_vector_component_count_not_log_cyclic_modulus": true,
+    "native_mean_bound_before_source_or_syndrome_postselection": true,
+    "fixed_label_posterior_law_needs_IID_labels": false,
+    "selection": "Any computation on ALL public labels and initial parity syndrome, BEFORE complement-Z measurement",
+    "instrument": "Parity chart Bx, any preselected nonzero u in ker(B), one retained qubit, all other chart coordinates measured in Z",
+    "event": "Every component of the retained label modulo 2^(t-1) is even; ONE extra phase-level descent",
+    "noisy_mixed_packets_covered": false,
+    "post_complement_selection_covered": false,
+    "multi_output_collective_measurements_covered": false,
+    "general_DCP_lower_bound": false,
+    "all_even_event_implies_secret_recovery": false,
+    "postselected_source_resupply_is_free": false
+  },
+  "remaining_proof_obligations": [
+    "Independent external review of the uniform random-B rank-separator proof",
+    "Physical extraction/noise law for any proposed mixed-state source",
+    "A paid mechanism beyond fixed-before-complement one-output extraction",
+    "Inter-level composition, efficient receiver and matched hard natural source before speedup admission"
+  ],
+  "falsifiers": [
+    "Original signed-label complement census disagrees with affine pushforward",
+    "A full-rank binary matrix cut violates the rank-pair exponent minimum",
+    "A direction chosen after complement outcomes is admitted under this contract",
+    "A non-flat or mixed packet is assigned the pure-state complement law",
+    "A bound on one extra descent is promoted to a general quantum lower bound"
+  ],
+  "accepted_speedup_candidate": false,
+  "novelty_claim": false
+}

@@ -301,6 +301,10 @@ def build_code_schur_filtration_report(
     }
 
 
+def _safe_id(value: str) -> str:
+    return "".join(character if character.isalnum() else "_" for character in value.upper()).strip("_")
+
+
 def write_code_schur_filtration_report(
     output_path: Path = CODE_SCHUR_FILTRATION_PATH,
     pairs: Sequence[CodePairInput] | None = None,
@@ -314,4 +318,42 @@ def write_code_schur_filtration_report(
     payload = build_code_schur_filtration_report(pairs=pairs, max_power=max_power, max_pairs=max_pairs)
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(payload, indent=2, sort_keys=True))
+    if write_registry:
+        metrics = dict(payload["headline_metrics"])
+        experiment_record = ExperimentResultRecord(
+            id=registry_result_id,
+            experiment_id=registry_experiment_id,
+            candidate_id=registry_candidate_id,
+            created_at=utc_now(),
+            status=payload["status"],
+            metrics=metrics,
+            summary=payload["summary"],
+            falsifiers_triggered=list(payload["falsifiers_triggered"]),
+            artifacts={"code_schur_filtration": str(output_path)},
+        )
+        upsert_experiment_result(experiment_record)
+        for record in payload["records"]:
+            if record["status"] == "rejected-by-schur-filtration":
+                upsert_negative_result(
+                    NegativeResultRecord(
+                        id=f"SCHUR-REJECT-{_safe_id(record['id'])}",
+                        claim=f"{record['id']} is a hard code-equivalence row requiring a collective quantum measurement.",
+                        reason_invalid=(
+                            "A polynomial-time permutation-invariant Schur filtration separates the pair; "
+                            "it cannot support a hard code-equivalence coset row."
+                        ),
+                        evidence={
+                            "row_id": record["row_id"],
+                            "source": record["source"],
+                            "distinguishing_invariants": record["distinguishing_invariants"],
+                        },
+                        source="code_schur_filtration.py",
+                        lesson="Apply primal/dual Schur powers and local puncture/shortening filtrations before measurement design.",
+                        applies_to=[
+                            "CODE-COSET-COLLECTIVE",
+                            "PO-DEQUANTIZATION",
+                            "PO-FALSIFIERS",
+                        ],
+                    )
+                )
     return payload

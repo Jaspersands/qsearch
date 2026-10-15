@@ -587,7 +587,10 @@ def write_carry_quadratic_extension_report(
     output_path = path
     for _k in ("write_registry", "registry_experiment_id", "registry_candidate_id", "registry_result_id"):
         kwargs.pop(_k, None)
-    if "run_carry_quadratic_extension" in globals():
+    if "build_carry_quadratic_extension_report" in globals():
+        report = build_carry_quadratic_extension_report(**kwargs)
+        payload = asdict(report) if hasattr(report, "__dataclass_fields__") else (dict(report) if isinstance(report, dict) else report)
+    elif "run_carry_quadratic_extension" in globals():
         report = run_carry_quadratic_extension(**kwargs)
         payload = asdict(report) if hasattr(report, "__dataclass_fields__") else (dict(report) if isinstance(report, dict) else report)
     else:

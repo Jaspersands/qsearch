@@ -1,0 +1,18 @@
+{
+  "contract_id": "native_banded_qft_transfer_matrix_audit_v1",
+  "title": "Banded Cyclic QFT Two-Call Schedules: Analytical Inner-Digit Elimination and O(M 3^b) Transfer-Matrix Contraction",
+  "status": "BANDED_QFT_TWO_CALL_TRANSFER_MATRIX_DEQUANTIZATION_AUDIT_REVIEW_PENDING",
+  "scope": {
+    "inner_digit_elimination": "Analytically summing over each intermediate digit v_{M-1-k} in {0,1,2} reduces the 3^(2M)-path 2-call banded cyclic QFT amplitude to a product of M local window factors L_k^(b)(w_k,...,w_{min(M-1,k+b-1)})",
+    "backward_transfer_matrix_dp": "Sweeping k from M-1 down to 0 eliminates w_k at step k over a boundary state S_k of size 3^min(b-1, M-1-k), computing exact Born probabilities in sum_{k=0}^{M-1} 3^min(b, M-k) <= M*3^b window evaluations",
+    "bandwidth_scaling_threshold": "Constant or O(log M) twiddle bandwidth b is classically contractible in poly(M) time; only b = omega(log M) escapes polynomial transfer-matrix contraction"
+  },
+  "honesty_guardrails": {
+    "full_bandwidth_b_eq_M_is_poly_M": false,
+    "three_or_more_calls_contracted_by_2call_dp": false,
+    "general_quantum_lower_bound_claimed": false,
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  }
+}

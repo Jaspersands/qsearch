@@ -316,4 +316,30 @@ def write_subset_sum_resource_frontier(
     payload = asdict(report)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
+    if write_registry:
+        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
+        metrics = dict(payload.get("headline_metrics", {}))
+        experiment_record = ExperimentResultRecord(
+            id=result_id,
+            experiment_id=registry_experiment_id,
+            candidate_id=registry_candidate_id,
+            created_at=utc_now(),
+            status=payload.get("status", "completed"),
+            summary=payload.get("summary", ""),
+            metrics=metrics,
+            falsifiers_triggered=list(payload.get("falsifiers_triggered", [])),
+            artifacts={path.stem: str(path), "report": str(path)},
+        )
+        upsert_experiment_result(experiment_record)
+        upsert_negative_result(
+            NegativeResultRecord(
+                id="NEG-DCP-KNOWN-SUBSET-SUM-FRONTIERS-REMAIN-EXPONENTIAL",
+                claim="A known meet-in-the-middle, dissection, Wagner, representation, or quantum subset-sum improvement satisfies Regev's polynomial partial-solver contract.",
+                reason_invalid="Every recorded route has a positive exponential time exponent; heuristic/randomized/quantum routes also lack the deterministic matching interface or a replacement composition theorem.",
+                lesson="Use these algorithms as mandatory resource baselines. A viable mutation must drive the exponent to zero by exploiting new density-one structure and prove legal coverage plus interface compatibility.",
+                applies_to=['DHS-GOWERS-SIEVE', 'EXP-DHS-DCP-SUBSET-SUM-RESOURCE-FRONTIER'],
+                evidence=metrics,
+                source=str(path),
+            )
+        )
     return payload

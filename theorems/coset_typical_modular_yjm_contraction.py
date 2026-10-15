@@ -207,6 +207,8 @@ def _load_certificate(path: Path = CERTIFICATE_PATH) -> dict[str, object]:
     resolved = path
     if not resolved.exists():
         resolved = Path(__file__).resolve().parent / path
+    if not resolved.exists():
+        resolved = Path(__file__).resolve().parent.parent / path
     payload = json.loads(resolved.read_text())
     if payload.get("certificate_contract", {}).get(
         "dependency_sha256"
@@ -351,6 +353,8 @@ def _load_n10_target_prime_certificate(
     resolved = path or n10_target_certificate_path(target_partition)
     if not resolved.exists():
         resolved = Path(__file__).resolve().parent / resolved
+    if not resolved.exists():
+        resolved = Path(__file__).resolve().parent.parent / (path or n10_target_certificate_path(target_partition))
     if not resolved.exists():
         return {}
     payload = json.loads(resolved.read_text())

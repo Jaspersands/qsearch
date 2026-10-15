@@ -1,0 +1,438 @@
+{
+  "schema_version": "1.0.0",
+  "subsystem": "dcp_truncated_qft_tree_merge_joint_channel_audit",
+  "contract_id": "dcp-truncated-qft-tree-merge-joint-channel-audit-contract",
+  "doc_path": "research/DCP_TRUNCATED_QFT_TREE_MERGE_JOINT_CHANNEL_AUDIT.md",
+  "summary_of_theorems": {
+    "T1_signed_phase_defect_addition": "Under CNOT merge on branch b_br in {0, 1}, the merged phase defect relative to k_out = (k_1 + (-1)^b_br k_2) mod 2^ell is delta_theta_1 + (-1)^b_br delta_theta_2 (mod 2*pi).",
+    "T2_branch_symmetry_sine_cancellation_and_depth_d_factorization": "0.5*cos(delta_theta_1 + delta_theta_2) + 0.5*cos(delta_theta_1 - delta_theta_2) = cos(delta_theta_1)*cos(delta_theta_2), so v_{eff, d}^{(b)} = (v_{eff, 0}^{(b)})^(2^d).",
+    "T3_joint_cutoff_and_depth_precision_budget": "Whenever Delta_max(ell, b) <= pi/2, v_{eff, d}^{(b)} >= (1 - p_bad)^(2^d) * (cos Delta_max(ell, b))^(2^d) >= (1 - p_bad)^(2^d) * (1 - 2^(d-1) Delta_max(ell, b)^2)."
+  },
+  "joint_channel_cutoff_tree_audit": [
+    {
+      "source_index": 0,
+      "dimension": 1,
+      "box": 4,
+      "ell": 3,
+      "N": 8,
+      "cutoff_b": 0,
+      "p_bad_fraction": "1/4",
+      "v0_fraction": "3/4",
+      "single_copy_mean_cos_defect": 0.3678511301977579,
+      "v_eff_0": 0.27588834764831843,
+      "two_copy_pairs_censused": 576,
+      "max_cnot_merged_density_error": 2.4492935982947064e-16,
+      "two_copy_mean_branch_cos_product": 0.13531445398776784,
+      "v_eff_1_from_full_pair_census": 0.0761143803681194,
+      "v_eff_1_from_square_formula": 0.0761143803681194,
+      "exact_factorization_error_at_d1": 0.0,
+      "delta_max_radians": 3.9269908169872414,
+      "theorem_3_bound_applicable": false,
+      "depth_profiles": [
+        {
+          "depth_d": 0,
+          "leaves_2_pow_d": 1,
+          "v_eff_d": 0.27588834764831843,
+          "expected_quadrature_correlation": 0.13794417382415922,
+          "analytical_cosine_power_lower_bound": null,
+          "analytical_quadratic_lower_bound": null,
+          "respects_theorem_3_bounds": true
+        },
+        {
+          "depth_d": 1,
+          "leaves_2_pow_d": 2,
+          "v_eff_d": 0.0761143803681194,
+          "expected_quadrature_correlation": 0.0380571901840597,
+          "analytical_cosine_power_lower_bound": null,
+          "analytical_quadratic_lower_bound": null,
+          "respects_theorem_3_bounds": true
+        },
+        {
+          "depth_d": 2,
+          "leaves_2_pow_d": 4,
+          "v_eff_d": 0.005793398898822762,
+          "expected_quadrature_correlation": 0.002896699449411381,
+          "analytical_cosine_power_lower_bound": null,
+          "analytical_quadratic_lower_bound": null,
+          "respects_theorem_3_bounds": true
+        },
+        {
+          "depth_d": 3,
+          "leaves_2_pow_d": 8,
+          "v_eff_d": 3.356347080088079e-05,
+          "expected_quadrature_correlation": 1.6781735400440394e-05,
+          "analytical_cosine_power_lower_bound": null,
+          "analytical_quadratic_lower_bound": null,
+          "respects_theorem_3_bounds": true
+        }
+      ],
+      "matches_theorems_1_2_3": true
+    },
+    {
+      "source_index": 0,
+      "dimension": 1,
+      "box": 4,
+      "ell": 3,
+      "N": 8,
+      "cutoff_b": 1,
+      "p_bad_fraction": "1/4",
+      "v0_fraction": "3/4",
+      "single_copy_mean_cos_defect": 0.8535533905932736,
+      "v_eff_0": 0.6401650429449552,
+      "two_copy_pairs_censused": 576,
+      "max_cnot_merged_density_error": 2.4492935982947064e-16,
+      "two_copy_mean_branch_cos_product": 0.7285533905932761,
+      "v_eff_1_from_full_pair_census": 0.40981128220871776,
+      "v_eff_1_from_square_formula": 0.4098112822087164,
+      "exact_factorization_error_at_d1": 1.3877787807814457e-15,
+      "delta_max_radians": 0.7853981633974483,
+      "theorem_3_bound_applicable": true,
+      "depth_profiles": [
+        {
+          "depth_d": 0,
+          "leaves_2_pow_d": 1,
+          "v_eff_d": 0.6401650429449552,
+          "expected_quadrature_correlation": 0.3200825214724776,
+          "analytical_cosine_power_lower_bound": 0.5303300858899107,
+          "analytical_quadratic_lower_bound": 0.5186811468494682,
+          "respects_theorem_3_bounds": true
+        },
+        {
+          "depth_d": 1,
+          "leaves_2_pow_d": 2,
+          "v_eff_d": 0.4098112822087164,
+          "expected_quadrature_correlation": 0.2049056411043582,
+          "analytical_cosine_power_lower_bound": 0.28125000000000006,
+          "analytical_quadratic_lower_bound": 0.21552172027420224,
+          "respects_theorem_3_bounds": true
+        },
+        {
+          "depth_d": 2,
+          "leaves_2_pow_d": 4,
+          "v_eff_d": 0.1679452870255522,
+          "expected_quadrature_correlation": 0.0839726435127761,
+          "analytical_cosine_power_lower_bound": 0.07910156250000001,
+          "analytical_quadratic_lower_bound": -0.07394431469152246,
+          "respects_theorem_3_bounds": true
+        },
+        {
+          "depth_d": 3,
+          "leaves_2_pow_d": 8,
+          "v_eff_d": 0.02820561943409511,
+          "expected_quadrature_correlation": 0.014102809717047554,
+          "analytical_cosine_power_lower_bound": 0.006257057189941409,
+          "analytical_quadratic_lower_bound": -0.14690580167979156,
+          "respects_theorem_3_bounds": true
+        }
+      ],
+      "matches_theorems_1_2_3": true
+    },
+    {
+      "source_index": 0,
+      "dimension": 1,
+      "box": 4,
+      "ell": 3,
+      "N": 8,
+      "cutoff_b": 2,
+      "p_bad_fraction": "1/4",
+      "v0_fraction": "3/4",
+      "single_copy_mean_cos_defect": 1.0,
+      "v_eff_0": 0.75,
+      "two_copy_pairs_censused": 576,
+      "max_cnot_merged_density_error": 2.827516291094377e-16,
+      "two_copy_mean_branch_cos_product": 1.0,
+      "v_eff_1_from_full_pair_census": 0.5625,
+      "v_eff_1_from_square_formula": 0.5625,
+      "exact_factorization_error_at_d1": 0.0,
+      "delta_max_radians": 0.0,
+      "theorem_3_bound_applicable": true,
+      "depth_profiles": [
+        {
+          "depth_d": 0,
+          "leaves_2_pow_d": 1,
+          "v_eff_d": 0.75,
+          "expected_quadrature_correlation": 0.375,
+          "analytical_cosine_power_lower_bound": 0.75,
+          "analytical_quadratic_lower_bound": 0.75,
+          "respects_theorem_3_bounds": true
+        },
+        {
+          "depth_d": 1,
+          "leaves_2_pow_d": 2,
+          "v_eff_d": 0.5625,
+          "expected_quadrature_correlation": 0.28125,
+          "analytical_cosine_power_lower_bound": 0.5625,
+          "analytical_quadratic_lower_bound": 0.5625,
+          "respects_theorem_3_bounds": true
+        },
+        {
+          "depth_d": 2,
+          "leaves_2_pow_d": 4,
+          "v_eff_d": 0.31640625,
+          "expected_quadrature_correlation": 0.158203125,
+          "analytical_cosine_power_lower_bound": 0.31640625,
+          "analytical_quadratic_lower_bound": 0.31640625,
+          "respects_theorem_3_bounds": true
+        },
+        {
+          "depth_d": 3,
+          "leaves_2_pow_d": 8,
+          "v_eff_d": 0.1001129150390625,
+          "expected_quadrature_correlation": 0.05005645751953125,
+          "analytical_cosine_power_lower_bound": 0.1001129150390625,
+          "analytical_quadratic_lower_bound": 0.1001129150390625,
+          "respects_theorem_3_bounds": true
+        }
+      ],
+      "matches_theorems_1_2_3": true
+    },
+    {
+      "source_index": 1,
+      "dimension": 2,
+      "box": 2,
+      "ell": 4,
+      "N": 16,
+      "cutoff_b": 0,
+      "p_bad_fraction": "1/2",
+      "v0_fraction": "1/2",
+      "single_copy_mean_cos_defect": 0.5,
+      "v_eff_0": 0.25,
+      "two_copy_pairs_censused": 1024,
+      "max_cnot_merged_density_error": 2.4492935982947064e-16,
+      "two_copy_mean_branch_cos_product": 0.25,
+      "v_eff_1_from_full_pair_census": 0.0625,
+      "v_eff_1_from_square_formula": 0.0625,
+      "exact_factorization_error_at_d1": 0.0,
+      "delta_max_radians": 6.675884388878311,
+      "theorem_3_bound_applicable": false,
+      "depth_profiles": [
+        {
+          "depth_d": 0,
+          "leaves_2_pow_d": 1,
+          "v_eff_d": 0.25,
+          "expected_quadrature_correlation": 0.125,
+          "analytical_cosine_power_lower_bound": null,
+          "analytical_quadratic_lower_bound": null,
+          "respects_theorem_3_bounds": true
+        },
+        {
+          "depth_d": 1,
+          "leaves_2_pow_d": 2,
+          "v_eff_d": 0.0625,
+          "expected_quadrature_correlation": 0.03125,
+          "analytical_cosine_power_lower_bound": null,
+          "analytical_quadratic_lower_bound": null,
+          "respects_theorem_3_bounds": true
+        },
+        {
+          "depth_d": 2,
+          "leaves_2_pow_d": 4,
+          "v_eff_d": 0.00390625,
+          "expected_quadrature_correlation": 0.001953125,
+          "analytical_cosine_power_lower_bound": null,
+          "analytical_quadratic_lower_bound": null,
+          "respects_theorem_3_bounds": true
+        },
+        {
+          "depth_d": 3,
+          "leaves_2_pow_d": 8,
+          "v_eff_d": 1.52587890625e-05,
+          "expected_quadrature_correlation": 7.62939453125e-06,
+          "analytical_cosine_power_lower_bound": null,
+          "analytical_quadratic_lower_bound": null,
+          "respects_theorem_3_bounds": true
+        }
+      ],
+      "matches_theorems_1_2_3": true
+    },
+    {
+      "source_index": 1,
+      "dimension": 2,
+      "box": 2,
+      "ell": 4,
+      "N": 16,
+      "cutoff_b": 1,
+      "p_bad_fraction": "1/2",
+      "v0_fraction": "1/2",
+      "single_copy_mean_cos_defect": 1.0,
+      "v_eff_0": 0.5,
+      "two_copy_pairs_censused": 1024,
+      "max_cnot_merged_density_error": 2.4492935982947064e-16,
+      "two_copy_mean_branch_cos_product": 1.0,
+      "v_eff_1_from_full_pair_census": 0.25,
+      "v_eff_1_from_square_formula": 0.25,
+      "exact_factorization_error_at_d1": 0.0,
+      "delta_max_radians": 1.9634954084936207,
+      "theorem_3_bound_applicable": false,
+      "depth_profiles": [
+        {
+          "depth_d": 0,
+          "leaves_2_pow_d": 1,
+          "v_eff_d": 0.5,
+          "expected_quadrature_correlation": 0.25,
+          "analytical_cosine_power_lower_bound": null,
+          "analytical_quadratic_lower_bound": null,
+          "respects_theorem_3_bounds": true
+        },
+        {
+          "depth_d": 1,
+          "leaves_2_pow_d": 2,
+          "v_eff_d": 0.25,
+          "expected_quadrature_correlation": 0.125,
+          "analytical_cosine_power_lower_bound": null,
+          "analytical_quadratic_lower_bound": null,
+          "respects_theorem_3_bounds": true
+        },
+        {
+          "depth_d": 2,
+          "leaves_2_pow_d": 4,
+          "v_eff_d": 0.0625,
+          "expected_quadrature_correlation": 0.03125,
+          "analytical_cosine_power_lower_bound": null,
+          "analytical_quadratic_lower_bound": null,
+          "respects_theorem_3_bounds": true
+        },
+        {
+          "depth_d": 3,
+          "leaves_2_pow_d": 8,
+          "v_eff_d": 0.00390625,
+          "expected_quadrature_correlation": 0.001953125,
+          "analytical_cosine_power_lower_bound": null,
+          "analytical_quadratic_lower_bound": null,
+          "respects_theorem_3_bounds": true
+        }
+      ],
+      "matches_theorems_1_2_3": true
+    },
+    {
+      "source_index": 1,
+      "dimension": 2,
+      "box": 2,
+      "ell": 4,
+      "N": 16,
+      "cutoff_b": 2,
+      "p_bad_fraction": "1/2",
+      "v0_fraction": "1/2",
+      "single_copy_mean_cos_defect": 1.0,
+      "v_eff_0": 0.5,
+      "two_copy_pairs_censused": 1024,
+      "max_cnot_merged_density_error": 2.4492935982947064e-16,
+      "two_copy_mean_branch_cos_product": 1.0,
+      "v_eff_1_from_full_pair_census": 0.25,
+      "v_eff_1_from_square_formula": 0.25,
+      "exact_factorization_error_at_d1": 0.0,
+      "delta_max_radians": 0.39269908169872414,
+      "theorem_3_bound_applicable": true,
+      "depth_profiles": [
+        {
+          "depth_d": 0,
+          "leaves_2_pow_d": 1,
+          "v_eff_d": 0.5,
+          "expected_quadrature_correlation": 0.25,
+          "analytical_cosine_power_lower_bound": 0.46193976625564337,
+          "analytical_quadratic_lower_bound": 0.4614468578082447,
+          "respects_theorem_3_bounds": true
+        },
+        {
+          "depth_d": 1,
+          "leaves_2_pow_d": 2,
+          "v_eff_d": 0.25,
+          "expected_quadrature_correlation": 0.125,
+          "analytical_cosine_power_lower_bound": 0.21338834764831843,
+          "analytical_quadratic_lower_bound": 0.21144685780824468,
+          "respects_theorem_3_bounds": true
+        },
+        {
+          "depth_d": 2,
+          "leaves_2_pow_d": 4,
+          "v_eff_d": 0.0625,
+          "expected_quadrature_correlation": 0.03125,
+          "analytical_cosine_power_lower_bound": 0.04553458691207961,
+          "analytical_quadratic_lower_bound": 0.04322342890412235,
+          "respects_theorem_3_bounds": true
+        },
+        {
+          "depth_d": 3,
+          "leaves_2_pow_d": 8,
+          "v_eff_d": 0.00390625,
+          "expected_quadrature_correlation": 0.001953125,
+          "analytical_cosine_power_lower_bound": 0.0020733986052537314,
+          "analytical_quadratic_lower_bound": 0.0014966786130152935,
+          "respects_theorem_3_bounds": true
+        }
+      ],
+      "matches_theorems_1_2_3": true
+    },
+    {
+      "source_index": 1,
+      "dimension": 2,
+      "box": 2,
+      "ell": 4,
+      "N": 16,
+      "cutoff_b": 3,
+      "p_bad_fraction": "1/2",
+      "v0_fraction": "1/2",
+      "single_copy_mean_cos_defect": 1.0,
+      "v_eff_0": 0.5,
+      "two_copy_pairs_censused": 1024,
+      "max_cnot_merged_density_error": 2.4492935982947064e-16,
+      "two_copy_mean_branch_cos_product": 1.0,
+      "v_eff_1_from_full_pair_census": 0.25,
+      "v_eff_1_from_square_formula": 0.25,
+      "exact_factorization_error_at_d1": 0.0,
+      "delta_max_radians": 0.0,
+      "theorem_3_bound_applicable": true,
+      "depth_profiles": [
+        {
+          "depth_d": 0,
+          "leaves_2_pow_d": 1,
+          "v_eff_d": 0.5,
+          "expected_quadrature_correlation": 0.25,
+          "analytical_cosine_power_lower_bound": 0.5,
+          "analytical_quadratic_lower_bound": 0.5,
+          "respects_theorem_3_bounds": true
+        },
+        {
+          "depth_d": 1,
+          "leaves_2_pow_d": 2,
+          "v_eff_d": 0.25,
+          "expected_quadrature_correlation": 0.125,
+          "analytical_cosine_power_lower_bound": 0.25,
+          "analytical_quadratic_lower_bound": 0.25,
+          "respects_theorem_3_bounds": true
+        },
+        {
+          "depth_d": 2,
+          "leaves_2_pow_d": 4,
+          "v_eff_d": 0.0625,
+          "expected_quadrature_correlation": 0.03125,
+          "analytical_cosine_power_lower_bound": 0.0625,
+          "analytical_quadratic_lower_bound": 0.0625,
+          "respects_theorem_3_bounds": true
+        },
+        {
+          "depth_d": 3,
+          "leaves_2_pow_d": 8,
+          "v_eff_d": 0.00390625,
+          "expected_quadrature_correlation": 0.001953125,
+          "analytical_cosine_power_lower_bound": 0.00390625,
+          "analytical_quadratic_lower_bound": 0.00390625,
+          "respects_theorem_3_bounds": true
+        }
+      ],
+      "matches_theorems_1_2_3": true
+    }
+  ],
+  "verification": {
+    "theorem_1_additive_phase_defect_propagation_verified": true,
+    "theorem_2_sine_cancellation_and_visibility_factorization_verified": true,
+    "theorem_3_joint_cutoff_depth_precision_bounds_verified": true
+  },
+  "guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false,
+    "end_to_end_quantum_advantage_claimed": false,
+    "bypassed_UniformCubeSuperposition_prepare_constraint": false
+  }
+}

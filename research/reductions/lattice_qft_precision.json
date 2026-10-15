@@ -1,0 +1,684 @@
+{
+  "status": "LATTICE_QFT_PRECISION_QUERY_AND_POSTSELECTION_DEBT_REVIEW_PENDING",
+  "producer_sha256": "06d83cbff1ba5995893dad951f0bf131622c759aa9c599fad87d12a7c01aef91",
+  "derivation_sha256": "5010e7f37c7991970a60f5b748318b578d0ecdbae7a80690e066849763152e00",
+  "contract_sha256": "681e00256ec3dafbd0701ef1a781a443a56a8735188ab45da6dd8603686f5939",
+  "dependency_sha256": {
+    "ternary_flat_character_certificate.py": "56bdd94e4101402e016dee531406b78da18bf8ebe004deaccd3607e063942246",
+    "ternary_measured_lattice_decoder.py": "151f7c5fbb9e09ad8c231fb841c6d8ce385d54123acd9d15f33b3ce51efced4b",
+    "lattice_cube_source_circuit.py": "f6b424c99967fb9b62e5ba57cc7695e05a450d9c8054987554faea711d441386",
+    "lattice_cube_dcp_readout.py": "db757ca4754b9d59b1d4a2f109969c39949c38f4e3ec3a6b57d45e8f7751506a"
+  },
+  "scaling_precision_profiles": [
+    {
+      "QFT_wires": 264,
+      "retained_maximum_separation": 25,
+      "qiskit_approximation_degree": 238,
+      "query_usage": {
+        "direct_forward_calls": 128,
+        "direct_inverse_calls": 7,
+        "phase_parent_reflections": 3,
+        "total_approximate_QFT_or_inverse_calls": 141,
+        "receiver_usage_bound_is_external_not_proved_here": true
+      },
+      "target_complete_experiment_trace_error": "1/100",
+      "logical_controlled_phases_retained": 6275,
+      "logical_controlled_phases_omitted": 28441,
+      "logical_H_gates": 264,
+      "logical_swaps": 132,
+      "exact_ideal_QFT_selected": false,
+      "retained_dyadic_angle_weight": "8791260947/33554432",
+      "omitted_weight_symbolic": {
+        "coefficient_at_2_pow_minus_cutoff": 237,
+        "cutoff_exponent": 25,
+        "unit_term_exponent": 263
+      },
+      "single_use_ideal_truncation_operator_upper": "336434928379929637234874844775567695768169024463310003734594347481482089319293674115150791631265616870437981899242476933732124712106310127440016452026327000789002381788546186619851/15161869365213846755105668244034616203146012327705233092314587782402483250180155037677530781017216457573589218479677368997146151252307455037721519587328000000000000000000000000000000000",
+      "truncation_bound_method": "EXACT_FINITE_TAIL_MACHIN_PI_UPPER",
+      "Machin_terms": 16,
+      "pi_rational_lower": "2702199289155139770778723466138548690954453271354857406274868882229427215106701002516071935610699965630953755124/860136748176892598733343886651423302289653512937537946071635894779362232608248391056054462678730487823486328125",
+      "pi_rational_upper": "1182664558198884723122287358611764328074688616985936643633156715672834457769192598828753841328454487819350992/376453820913890074899487004189100025511481553604426544559634764263301689662404540823888964951038360595703125",
+      "exact_encoded_binary64_pi": "884279719003555/281474976710656",
+      "single_use_encoded_CP_parameter_operator_error_upper": "16297293422173783596706722904453877161278830390711149506258710987479759335311120709000767658700136916834655100777717/507929401780561817563755027365090677628448609652194750927252074946881646485478480293803881136128000000000000000000000000000000000",
+      "single_use_encoded_QFT_operator_error_upper": "2579334454642472957118576729151285620735831467767856081248624033528426154826597734066646869000568126934787257987290558526703096492574370893221680023254769357495970733921999368572863/116240998466639491789143456537598724224119427845740120374411839665085704918047855288861069321131992841397517341677526495644787159601023821955864983502848000000000000000000000000000000000",
+      "complete_experiment_ideal_truncation_trace_upper": "15812441633856692950039117704451681701103944149775570175525934331629658198006802683412087206669483992910585149264396415885409861468996575989680773245237369037083111944061670771132997/5053956455071282251701889414678205401048670775901744364104862594134161083393385012559176927005738819191196406159892456332382050417435818345907173195776000000000000000000000000000000000",
+      "complete_experiment_encoded_QFT_trace_upper": "121228719368196228984573106270110424174584078985089235818685329575836029276850093501132402843026701965935001125402656250755045535150995431981418961092974159802310624494333970322924561/38746999488879830596381152179199574741373142615246706791470613221695234972682618429620356440377330947132505780559175498548262386533674607318621661167616000000000000000000000000000000000",
+      "ideal_truncation_target_met": true,
+      "encoded_QFT_parameter_target_met": true,
+      "numeric_normal_angle_encoding_supported": true,
+      "external_per_logical_gate_operator_error": null,
+      "complete_experiment_upper_IF_external_gate_bound_holds": null,
+      "arithmetic_preparation_and_hardware_errors_covered": false,
+      "statevector_MPS_roundoff_certified": false,
+      "normalized_rare_branch_accuracy_certified_without_mass_bound": false,
+      "logical_query_budget_proves_efficient_receiver": false
+    },
+    {
+      "QFT_wires": 65536,
+      "retained_maximum_separation": 39,
+      "qiskit_approximation_degree": 65496,
+      "query_usage": {
+        "direct_forward_calls": 10000,
+        "direct_inverse_calls": 7,
+        "phase_parent_reflections": 3,
+        "total_approximate_QFT_or_inverse_calls": 10013,
+        "receiver_usage_bound_is_external_not_proved_here": true
+      },
+      "target_complete_experiment_trace_error": "1/100",
+      "logical_controlled_phases_retained": 2555124,
+      "logical_controlled_phases_omitted": 2144895756,
+      "logical_H_gates": 65536,
+      "logical_swaps": 32768,
+      "exact_ideal_QFT_selected": false,
+      "retained_dyadic_angle_weight": "36027697507270697/549755813888",
+      "omitted_weight_symbolic": {
+        "coefficient_at_2_pow_minus_cutoff": 65495,
+        "cutoff_exponent": 39,
+        "unit_term_exponent": 65535
+      },
+      "single_use_ideal_truncation_operator_upper": "8187/17179869184",
+      "truncation_bound_method": "SYMBOLIC_TAIL_4_TIMES_REMAINING_SPAN",
+      "Machin_terms": 16,
+      "pi_rational_lower": "2702199289155139770778723466138548690954453271354857406274868882229427215106701002516071935610699965630953755124/860136748176892598733343886651423302289653512937537946071635894779362232608248391056054462678730487823486328125",
+      "pi_rational_upper": "1182664558198884723122287358611764328074688616985936643633156715672834457769192598828753841328454487819350992/376453820913890074899487004189100025511481553604426544559634764263301689662404540823888964951038360595703125",
+      "exact_encoded_binary64_pi": "884279719003555/281474976710656",
+      "single_use_encoded_CP_parameter_operator_error_upper": "467518565082716893640321753521994878875217573552089704341489051633070155907577082110339069561804774083083311083894510869769/58253407231409073732751936578447519635851514143790911594344685971507962272126555947935779519740248064000000000000000000000000000000000",
+      "single_use_encoded_QFT_operator_error_upper": "27760902705563657167158796937264445041190026121807130753425320381502767063720786257461602740221561804774083083311083894510869769/58253407231409073732751936578447519635851514143790911594344685971507962272126555947935779519740248064000000000000000000000000000000000",
+      "complete_experiment_ideal_truncation_trace_upper": "81976431/17179869184",
+      "complete_experiment_encoded_QFT_trace_upper": "27760902705563657167158796937264445041190026121807130753425320381502767063720786257461602740221561804774083083311083894510869769/5817777612244988887721156154843455471472237505621782841740206328923196072318641361024246431612928000000000000000000000000000000000",
+      "ideal_truncation_target_met": true,
+      "encoded_QFT_parameter_target_met": true,
+      "numeric_normal_angle_encoding_supported": true,
+      "external_per_logical_gate_operator_error": null,
+      "complete_experiment_upper_IF_external_gate_bound_holds": null,
+      "arithmetic_preparation_and_hardware_errors_covered": false,
+      "statevector_MPS_roundoff_certified": false,
+      "normalized_rare_branch_accuracy_certified_without_mass_bound": false,
+      "logical_query_budget_proves_efficient_receiver": false
+    },
+    {
+      "QFT_wires": 1000000,
+      "retained_maximum_separation": 50,
+      "qiskit_approximation_degree": 999949,
+      "query_usage": {
+        "direct_forward_calls": 1000000,
+        "direct_inverse_calls": 7,
+        "phase_parent_reflections": 3,
+        "total_approximate_QFT_or_inverse_calls": 1000013,
+        "receiver_usage_bound_is_external_not_proved_here": true
+      },
+      "target_complete_experiment_trace_error": "1/100",
+      "logical_controlled_phases_retained": 49998725,
+      "logical_controlled_phases_omitted": 499949501275,
+      "logical_H_gates": 1000000,
+      "logical_swaps": 500000,
+      "exact_ideal_QFT_selected": false,
+      "retained_dyadic_angle_weight": "281474413760702328701/281474976710656",
+      "omitted_weight_symbolic": {
+        "coefficient_at_2_pow_minus_cutoff": 999948,
+        "cutoff_exponent": 50,
+        "unit_term_exponent": 999999
+      },
+      "single_use_ideal_truncation_operator_upper": "999949/281474976710656",
+      "truncation_bound_method": "SYMBOLIC_TAIL_4_TIMES_REMAINING_SPAN",
+      "Machin_terms": 16,
+      "pi_rational_lower": "2702199289155139770778723466138548690954453271354857406274868882229427215106701002516071935610699965630953755124/860136748176892598733343886651423302289653512937537946071635894779362232608248391056054462678730487823486328125",
+      "pi_rational_upper": "1182664558198884723122287358611764328074688616985936643633156715672834457769192598828753841328454487819350992/376453820913890074899487004189100025511481553604426544559634764263301689662404540823888964951038360595703125",
+      "exact_encoded_binary64_pi": "884279719003555/281474976710656",
+      "single_use_encoded_CP_parameter_operator_error_upper": "192241734369925569255153857781826764573291341845039372110395760819631385015434478796188734007609935886460956856287248997346383/1569776026446391881640473238324480529134525012716891933489709432495372457017305086597006269163526684672000000000000000000000000000000000",
+      "single_use_encoded_QFT_operator_error_upper": "5768922070976266640097606488983798919810531429535702432130358635717499592662347201382460183095609935886460956856287248997346383/1569776026446391881640473238324480529134525012716891933489709432495372457017305086597006269163526684672000000000000000000000000000000000",
+      "complete_experiment_ideal_truncation_trace_upper": "999961999337/281474976710656",
+      "complete_experiment_encoded_QFT_trace_upper": "824142438137598475937703965409736529885212709492040913751710904339966274308150258842296879296855739830803925835532340104511906928997/224253718063770268805781891189211504162075001816698847641387061785053208145329298085286609880503812096000000000000000000000000000000000",
+      "ideal_truncation_target_met": true,
+      "encoded_QFT_parameter_target_met": true,
+      "numeric_normal_angle_encoding_supported": true,
+      "external_per_logical_gate_operator_error": null,
+      "complete_experiment_upper_IF_external_gate_bound_holds": null,
+      "arithmetic_preparation_and_hardware_errors_covered": false,
+      "statevector_MPS_roundoff_certified": false,
+      "normalized_rare_branch_accuracy_certified_without_mass_bound": false,
+      "logical_query_budget_proves_efficient_receiver": false
+    },
+    {
+      "QFT_wires": 256,
+      "retained_maximum_separation": 98,
+      "qiskit_approximation_degree": 157,
+      "query_usage": {
+        "direct_forward_calls": "1208925819614629174706176",
+        "direct_inverse_calls": 7,
+        "phase_parent_reflections": 3,
+        "total_approximate_QFT_or_inverse_calls": "1208925819614629174706189",
+        "receiver_usage_bound_is_external_not_proved_here": true
+      },
+      "target_complete_experiment_trace_error": "1/100",
+      "logical_controlled_phases_retained": 20237,
+      "logical_controlled_phases_omitted": 12403,
+      "logical_H_gates": 256,
+      "logical_swaps": 128,
+      "exact_ideal_QFT_selected": false,
+      "retained_dyadic_angle_weight": "20123953278623141748760163385305/79228162514264337593543950336",
+      "omitted_weight_symbolic": {
+        "coefficient_at_2_pow_minus_cutoff": 156,
+        "cutoff_exponent": 98,
+        "unit_term_exponent": 255
+      },
+      "single_use_ideal_truncation_operator_upper": "72640281617042089408709370873945715082467209483632527804670810196369066495968683343866758333097589556160104301386661978579707739262923973700732749213254049/46972386233825225669104306251723622396599984312664380539228922278455969120978389798839332969207432452073350218889086676580598259537051652191216992256000000000000000000000000000000000",
+      "truncation_bound_method": "EXACT_FINITE_TAIL_MACHIN_PI_UPPER",
+      "Machin_terms": 16,
+      "pi_rational_lower": "2702199289155139770778723466138548690954453271354857406274868882229427215106701002516071935610699965630953755124/860136748176892598733343886651423302289653512937537946071635894779362232608248391056054462678730487823486328125",
+      "pi_rational_upper": "1182664558198884723122287358611764328074688616985936643633156715672834457769192598828753841328454487819350992/376453820913890074899487004189100025511481553604426544559634764263301689662404540823888964951038360595703125",
+      "exact_encoded_binary64_pi": "884279719003555/281474976710656",
+      "single_use_encoded_CP_parameter_operator_error_upper": "52228271089013377219192180105568980522519980339193889526456726943578199584109128408647176503184342334511470363920358699093242551664872997/1679040147842788233682209634815446829860253101826345065001591428049751809855865880664908854640274143275926752478206361600000000000000000000000000000000",
+      "single_use_encoded_QFT_operator_error_upper": "202739748730713966253164895757142370283245598152901893778785061664902482955942627773846622901316761541988152977763255055923636651733352802955844924638691871866936214189/6517699525267615044995334360287009806226792081661564763816453330503459830183604326154739981373280101005393092573126859429843777639112430208350683136000000000000000000000000000000000",
+      "complete_experiment_ideal_truncation_trace_upper": "87816711990920088636602933488126094471372298655722034206684394524192849130662172631167760317945090423358011118464858357720912638472665718176696359205578867749829376423184189609261/46972386233825225669104306251723622396599984312664380539228922278455969120978389798839332969207432452073350218889086676580598259537051652191216992256000000000000000000000000000000000",
+      "complete_experiment_encoded_QFT_trace_upper": "1",
+      "ideal_truncation_target_met": true,
+      "encoded_QFT_parameter_target_met": false,
+      "numeric_normal_angle_encoding_supported": true,
+      "external_per_logical_gate_operator_error": null,
+      "complete_experiment_upper_IF_external_gate_bound_holds": null,
+      "arithmetic_preparation_and_hardware_errors_covered": false,
+      "statevector_MPS_roundoff_certified": false,
+      "normalized_rare_branch_accuracy_certified_without_mass_bound": false,
+      "logical_query_budget_proves_efficient_receiver": false
+    }
+  ],
+  "actual_synthesis_controls": [
+    {
+      "plan": {
+        "QFT_wires": 3,
+        "retained_maximum_separation": 0,
+        "qiskit_approximation_degree": 2,
+        "query_usage": {
+          "direct_forward_calls": 1,
+          "direct_inverse_calls": 0,
+          "phase_parent_reflections": 0,
+          "total_approximate_QFT_or_inverse_calls": 1,
+          "receiver_usage_bound_is_external_not_proved_here": true
+        },
+        "target_complete_experiment_trace_error": "1/10",
+        "logical_controlled_phases_retained": 0,
+        "logical_controlled_phases_omitted": 3,
+        "logical_H_gates": 3,
+        "logical_swaps": 1,
+        "exact_ideal_QFT_selected": false,
+        "retained_dyadic_angle_weight": "0",
+        "omitted_weight_symbolic": {
+          "coefficient_at_2_pow_minus_cutoff": 1,
+          "cutoff_exponent": 0,
+          "unit_term_exponent": 2
+        },
+        "single_use_ideal_truncation_operator_upper": "2",
+        "truncation_bound_method": "EXACT_FINITE_TAIL_MACHIN_PI_UPPER",
+        "Machin_terms": 16,
+        "pi_rational_lower": "2702199289155139770778723466138548690954453271354857406274868882229427215106701002516071935610699965630953755124/860136748176892598733343886651423302289653512937537946071635894779362232608248391056054462678730487823486328125",
+        "pi_rational_upper": "1182664558198884723122287358611764328074688616985936643633156715672834457769192598828753841328454487819350992/376453820913890074899487004189100025511481553604426544559634764263301689662404540823888964951038360595703125",
+        "exact_encoded_binary64_pi": "884279719003555/281474976710656",
+        "single_use_encoded_CP_parameter_operator_error_upper": "0",
+        "single_use_encoded_QFT_operator_error_upper": "2",
+        "complete_experiment_ideal_truncation_trace_upper": "1",
+        "complete_experiment_encoded_QFT_trace_upper": "1",
+        "ideal_truncation_target_met": false,
+        "encoded_QFT_parameter_target_met": false,
+        "numeric_normal_angle_encoding_supported": true,
+        "external_per_logical_gate_operator_error": null,
+        "complete_experiment_upper_IF_external_gate_bound_holds": null,
+        "arithmetic_preparation_and_hardware_errors_covered": false,
+        "statevector_MPS_roundoff_certified": false,
+        "normalized_rare_branch_accuracy_certified_without_mass_bound": false,
+        "logical_query_budget_proves_efficient_receiver": false
+      },
+      "actual_synthesized_gate_counts": {
+        "h": 3,
+        "swap": 1
+      },
+      "numerical_dense_operator_difference": 1.982889722747621,
+      "numerical_check_is_a_formal_gate_error_certificate": false
+    },
+    {
+      "plan": {
+        "QFT_wires": 4,
+        "retained_maximum_separation": 1,
+        "qiskit_approximation_degree": 2,
+        "query_usage": {
+          "direct_forward_calls": 1,
+          "direct_inverse_calls": 0,
+          "phase_parent_reflections": 0,
+          "total_approximate_QFT_or_inverse_calls": 1,
+          "receiver_usage_bound_is_external_not_proved_here": true
+        },
+        "target_complete_experiment_trace_error": "1/10",
+        "logical_controlled_phases_retained": 3,
+        "logical_controlled_phases_omitted": 3,
+        "logical_H_gates": 4,
+        "logical_swaps": 2,
+        "exact_ideal_QFT_selected": false,
+        "retained_dyadic_angle_weight": "3/2",
+        "omitted_weight_symbolic": {
+          "coefficient_at_2_pow_minus_cutoff": 1,
+          "cutoff_exponent": 1,
+          "unit_term_exponent": 3
+        },
+        "single_use_ideal_truncation_operator_upper": "147833069774860590390285919826470541009336077123242080454144589459104307221149074853594230166056810977418874/75290764182778014979897400837820005102296310720885308911926952852660337932480908164777792990207672119140625",
+        "truncation_bound_method": "EXACT_FINITE_TAIL_MACHIN_PI_UPPER",
+        "Machin_terms": 16,
+        "pi_rational_lower": "2702199289155139770778723466138548690954453271354857406274868882229427215106701002516071935610699965630953755124/860136748176892598733343886651423302289653512937537946071635894779362232608248391056054462678730487823486328125",
+        "pi_rational_upper": "1182664558198884723122287358611764328074688616985936643633156715672834457769192598828753841328454487819350992/376453820913890074899487004189100025511481553604426544559634764263301689662404540823888964951038360595703125",
+        "exact_encoded_binary64_pi": "884279719003555/281474976710656",
+        "single_use_encoded_CP_parameter_operator_error_upper": "12976642900600785132962003104920136563994522586314721360051898014984302040554347449402968291950185290961377/70641553649583115636235181322805777060968483836757406721328984193566869207190461199613952000000000000000000000000000000000",
+        "single_use_encoded_QFT_operator_error_upper": "24477241101143336476686916365251935425947687265747307094395245435393072493404822108635981503052595846050159263600705064563/12466156526397020406394443762848078304876791265310130597881585445923565154210081388167168000000000000000000000000000000000",
+        "complete_experiment_ideal_truncation_trace_upper": "1",
+        "complete_experiment_encoded_QFT_trace_upper": "1",
+        "ideal_truncation_target_met": false,
+        "encoded_QFT_parameter_target_met": false,
+        "numeric_normal_angle_encoding_supported": true,
+        "external_per_logical_gate_operator_error": null,
+        "complete_experiment_upper_IF_external_gate_bound_holds": null,
+        "arithmetic_preparation_and_hardware_errors_covered": false,
+        "statevector_MPS_roundoff_certified": false,
+        "normalized_rare_branch_accuracy_certified_without_mass_bound": false,
+        "logical_query_budget_proves_efficient_receiver": false
+      },
+      "actual_synthesized_gate_counts": {
+        "h": 4,
+        "cp": 3,
+        "swap": 2
+      },
+      "numerical_dense_operator_difference": 1.6629392246050894,
+      "numerical_check_is_a_formal_gate_error_certificate": false
+    },
+    {
+      "plan": {
+        "QFT_wires": 5,
+        "retained_maximum_separation": 2,
+        "qiskit_approximation_degree": 2,
+        "query_usage": {
+          "direct_forward_calls": 1,
+          "direct_inverse_calls": 0,
+          "phase_parent_reflections": 0,
+          "total_approximate_QFT_or_inverse_calls": 1,
+          "receiver_usage_bound_is_external_not_proved_here": true
+        },
+        "target_complete_experiment_trace_error": "1/10",
+        "logical_controlled_phases_retained": 7,
+        "logical_controlled_phases_omitted": 3,
+        "logical_H_gates": 5,
+        "logical_swaps": 2,
+        "exact_ideal_QFT_selected": false,
+        "retained_dyadic_angle_weight": "11/4",
+        "omitted_weight_symbolic": {
+          "coefficient_at_2_pow_minus_cutoff": 1,
+          "cutoff_exponent": 2,
+          "unit_term_exponent": 4
+        },
+        "single_use_ideal_truncation_operator_upper": "73916534887430295195142959913235270504668038561621040227072294729552153610574537426797115083028405488709437/75290764182778014979897400837820005102296310720885308911926952852660337932480908164777792990207672119140625",
+        "truncation_bound_method": "EXACT_FINITE_TAIL_MACHIN_PI_UPPER",
+        "Machin_terms": 16,
+        "pi_rational_lower": "2702199289155139770778723466138548690954453271354857406274868882229427215106701002516071935610699965630953755124/860136748176892598733343886651423302289653512937537946071635894779362232608248391056054462678730487823486328125",
+        "pi_rational_upper": "1182664558198884723122287358611764328074688616985936643633156715672834457769192598828753841328454487819350992/376453820913890074899487004189100025511481553604426544559634764263301689662404540823888964951038360595703125",
+        "exact_encoded_binary64_pi": "884279719003555/281474976710656",
+        "single_use_encoded_CP_parameter_operator_error_upper": "12976642900600785132962003104920136563994522586314721360051898014984302040554347449402968291950185290961377/38531756536136244892491917085166787487800991183685858211633991378309201385740251563425792000000000000000000000000000000000",
+        "single_use_encoded_QFT_operator_error_upper": "59444728388490974845260111859366280848162217554113818937271408988493301829009442245889715712381960658085577583242044826941/60549903128214099116773012562404951766544414717220634332567700737343030749020395313954816000000000000000000000000000000000",
+        "complete_experiment_ideal_truncation_trace_upper": "73916534887430295195142959913235270504668038561621040227072294729552153610574537426797115083028405488709437/75290764182778014979897400837820005102296310720885308911926952852660337932480908164777792990207672119140625",
+        "complete_experiment_encoded_QFT_trace_upper": "59444728388490974845260111859366280848162217554113818937271408988493301829009442245889715712381960658085577583242044826941/60549903128214099116773012562404951766544414717220634332567700737343030749020395313954816000000000000000000000000000000000",
+        "ideal_truncation_target_met": false,
+        "encoded_QFT_parameter_target_met": false,
+        "numeric_normal_angle_encoding_supported": true,
+        "external_per_logical_gate_operator_error": null,
+        "complete_experiment_upper_IF_external_gate_bound_holds": null,
+        "arithmetic_preparation_and_hardware_errors_covered": false,
+        "statevector_MPS_roundoff_certified": false,
+        "normalized_rare_branch_accuracy_certified_without_mass_bound": false,
+        "logical_query_budget_proves_efficient_receiver": false
+      },
+      "actual_synthesized_gate_counts": {
+        "cp": 7,
+        "h": 5,
+        "swap": 2
+      },
+      "numerical_dense_operator_difference": 0.9427934736519935,
+      "numerical_check_is_a_formal_gate_error_certificate": false
+    },
+    {
+      "plan": {
+        "QFT_wires": 6,
+        "retained_maximum_separation": 5,
+        "qiskit_approximation_degree": 0,
+        "query_usage": {
+          "direct_forward_calls": 1,
+          "direct_inverse_calls": 0,
+          "phase_parent_reflections": 0,
+          "total_approximate_QFT_or_inverse_calls": 1,
+          "receiver_usage_bound_is_external_not_proved_here": true
+        },
+        "target_complete_experiment_trace_error": "1/10",
+        "logical_controlled_phases_retained": 15,
+        "logical_controlled_phases_omitted": 0,
+        "logical_H_gates": 6,
+        "logical_swaps": 3,
+        "exact_ideal_QFT_selected": true,
+        "retained_dyadic_angle_weight": "129/32",
+        "omitted_weight_symbolic": {
+          "coefficient_at_2_pow_minus_cutoff": -1,
+          "cutoff_exponent": 5,
+          "unit_term_exponent": 5
+        },
+        "single_use_ideal_truncation_operator_upper": "0",
+        "truncation_bound_method": "EXACT_FINITE_TAIL_MACHIN_PI_UPPER",
+        "Machin_terms": 16,
+        "pi_rational_lower": "2702199289155139770778723466138548690954453271354857406274868882229427215106701002516071935610699965630953755124/860136748176892598733343886651423302289653512937537946071635894779362232608248391056054462678730487823486328125",
+        "pi_rational_upper": "1182664558198884723122287358611764328074688616985936643633156715672834457769192598828753841328454487819350992/376453820913890074899487004189100025511481553604426544559634764263301689662404540823888964951038360595703125",
+        "exact_encoded_binary64_pi": "884279719003555/281474976710656",
+        "single_use_encoded_CP_parameter_operator_error_upper": "557995644725833760717366133511565872251764471211533018482231614644324987743836940324327636553857967511339211/1130264858393329850179762901164892432975495741388118507541263747097069907315047379193823232000000000000000000000000000000000",
+        "single_use_encoded_QFT_operator_error_upper": "557995644725833760717366133511565872251764471211533018482231614644324987743836940324327636553857967511339211/1130264858393329850179762901164892432975495741388118507541263747097069907315047379193823232000000000000000000000000000000000",
+        "complete_experiment_ideal_truncation_trace_upper": "0",
+        "complete_experiment_encoded_QFT_trace_upper": "557995644725833760717366133511565872251764471211533018482231614644324987743836940324327636553857967511339211/1130264858393329850179762901164892432975495741388118507541263747097069907315047379193823232000000000000000000000000000000000",
+        "ideal_truncation_target_met": true,
+        "encoded_QFT_parameter_target_met": true,
+        "numeric_normal_angle_encoding_supported": true,
+        "external_per_logical_gate_operator_error": null,
+        "complete_experiment_upper_IF_external_gate_bound_holds": null,
+        "arithmetic_preparation_and_hardware_errors_covered": false,
+        "statevector_MPS_roundoff_certified": false,
+        "normalized_rare_branch_accuracy_certified_without_mass_bound": false,
+        "logical_query_budget_proves_efficient_receiver": false
+      },
+      "actual_synthesized_gate_counts": {
+        "cp": 15,
+        "h": 6,
+        "swap": 3
+      },
+      "numerical_dense_operator_difference": 2.1996301879752065e-14,
+      "numerical_check_is_a_formal_gate_error_certificate": false
+    }
+  ],
+  "actual_beyond_old_128_wire_compile": {
+    "clean_evaluator": {
+      "public_source": {
+        "basis_rows": [
+          [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        "prime": 3,
+        "residue_guess": 1,
+        "coordinate": 0,
+        "box": 4294967296,
+        "cube_width": 2,
+        "offsets": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "input_population": "231584178474632390847141970017375815706539969331281128078915168015826259279872",
+        "phase_modulus": "29642774844752946028434172162224104410437116074403984394101141506025761187823616",
+        "explicit_cell_evaluator_available": true,
+        "uniform_hidden_shift_prior_assumed": false,
+        "uniform_secret_twirl_bounds_transferred_to_source": false,
+        "shortest_vector_or_shift_given_to_constructor": false,
+        "normalized_conditional_state_inverse_available": false,
+        "scalable_coherent_evaluator_circuit_compiled": false
+      },
+      "width_certificate": {
+        "initial_uniform_source_qubits": 257,
+        "position_embedding_padding_qubits": 8,
+        "position_phase_register_qubits": 264,
+        "public_coefficient_maxima": [
+          12884901886,
+          4294967295,
+          4294967295,
+          4294967295,
+          4294967295,
+          4294967295,
+          4294967295,
+          4294967295
+        ],
+        "coordinate_width_certificates": [
+          {
+            "absolute_point_minus_offset_bound": 12884901888,
+            "signed_point_workspace_bits": 35,
+            "low_remainder_bits_to_uncompute": 1,
+            "signed_cell_output_bits": 34,
+            "strict_signed_range_certified": true
+          },
+          {
+            "absolute_point_minus_offset_bound": 4294967297,
+            "signed_point_workspace_bits": 34,
+            "low_remainder_bits_to_uncompute": 1,
+            "signed_cell_output_bits": 33,
+            "strict_signed_range_certified": true
+          },
+          {
+            "absolute_point_minus_offset_bound": 4294967297,
+            "signed_point_workspace_bits": 34,
+            "low_remainder_bits_to_uncompute": 1,
+            "signed_cell_output_bits": 33,
+            "strict_signed_range_certified": true
+          },
+          {
+            "absolute_point_minus_offset_bound": 4294967297,
+            "signed_point_workspace_bits": 34,
+            "low_remainder_bits_to_uncompute": 1,
+            "signed_cell_output_bits": 33,
+            "strict_signed_range_certified": true
+          },
+          {
+            "absolute_point_minus_offset_bound": 4294967297,
+            "signed_point_workspace_bits": 34,
+            "low_remainder_bits_to_uncompute": 1,
+            "signed_cell_output_bits": 33,
+            "strict_signed_range_certified": true
+          },
+          {
+            "absolute_point_minus_offset_bound": 4294967297,
+            "signed_point_workspace_bits": 34,
+            "low_remainder_bits_to_uncompute": 1,
+            "signed_cell_output_bits": 33,
+            "strict_signed_range_certified": true
+          },
+          {
+            "absolute_point_minus_offset_bound": 4294967297,
+            "signed_point_workspace_bits": 34,
+            "low_remainder_bits_to_uncompute": 1,
+            "signed_cell_output_bits": 33,
+            "strict_signed_range_certified": true
+          },
+          {
+            "absolute_point_minus_offset_bound": 4294967297,
+            "signed_point_workspace_bits": 34,
+            "low_remainder_bits_to_uncompute": 1,
+            "signed_cell_output_bits": 33,
+            "strict_signed_range_certified": true
+          }
+        ],
+        "classical_constant_multiply_accumulate_terms": 64,
+        "signed_floor_implemented_by_high_bit_copy": true,
+        "physical_point_carry_remainder_workspace_must_return_zero": true,
+        "clean_reversible_arithmetic_gates_compiled": false
+      },
+      "compiled_qubits": 593,
+      "input_qubits": 257,
+      "cell_output_qubits": 265,
+      "shared_arithmetic_workspace_qubits": 71,
+      "constant_additions_including_uncompute": 530,
+      "logical_instruction_count": 3071,
+      "library_adder": "Qiskit adder_ripple_c04(kind=fixed), CDKM",
+      "qiskit_version": "2.3.0",
+      "clean_cell_evaluator_logical_circuit_compiled": true,
+      "uniform_parent_logical_circuit_compiled": true,
+      "full_position_QFT_phase_source_readout_compiled": false,
+      "hardware_noise_or_fault_tolerance_cost_certified": false,
+      "shortest_vector_or_shift_or_preimages_used": false
+    },
+    "phase_modulus": "29642774844752946028434172162224104410437116074403984394101141506025761187823616",
+    "compiled_phase_parent_qubits": 601,
+    "position_qubits": 264,
+    "zero_padding_qubits": 8,
+    "original_position_wires_reused_in_place": true,
+    "copied_original_position_garbage_retained": false,
+    "logical_QFT_H_gates": 264,
+    "logical_QFT_controlled_phase_gates": 6275,
+    "logical_QFT_swap_gates": 132,
+    "public_cell_and_label_measured_colour_qubit_retained": true,
+    "hidden_shift_or_preimages_enter_compiler": false,
+    "hardware_or_fault_tolerant_QFT_precision_certified": false,
+    "QFT_precision_plan": {
+      "QFT_wires": 264,
+      "retained_maximum_separation": 25,
+      "qiskit_approximation_degree": 238,
+      "query_usage": {
+        "direct_forward_calls": 128,
+        "direct_inverse_calls": 0,
+        "phase_parent_reflections": 0,
+        "total_approximate_QFT_or_inverse_calls": 128,
+        "receiver_usage_bound_is_external_not_proved_here": true
+      },
+      "target_complete_experiment_trace_error": "1/100",
+      "logical_controlled_phases_retained": 6275,
+      "logical_controlled_phases_omitted": 28441,
+      "logical_H_gates": 264,
+      "logical_swaps": 132,
+      "exact_ideal_QFT_selected": false,
+      "retained_dyadic_angle_weight": "8791260947/33554432",
+      "omitted_weight_symbolic": {
+        "coefficient_at_2_pow_minus_cutoff": 237,
+        "cutoff_exponent": 25,
+        "unit_term_exponent": 263
+      },
+      "single_use_ideal_truncation_operator_upper": "336434928379929637234874844775567695768169024463310003734594347481482089319293674115150791631265616870437981899242476933732124712106310127440016452026327000789002381788546186619851/15161869365213846755105668244034616203146012327705233092314587782402483250180155037677530781017216457573589218479677368997146151252307455037721519587328000000000000000000000000000000000",
+      "truncation_bound_method": "EXACT_FINITE_TAIL_MACHIN_PI_UPPER",
+      "Machin_terms": 16,
+      "pi_rational_lower": "2702199289155139770778723466138548690954453271354857406274868882229427215106701002516071935610699965630953755124/860136748176892598733343886651423302289653512937537946071635894779362232608248391056054462678730487823486328125",
+      "pi_rational_upper": "1182664558198884723122287358611764328074688616985936643633156715672834457769192598828753841328454487819350992/376453820913890074899487004189100025511481553604426544559634764263301689662404540823888964951038360595703125",
+      "exact_encoded_binary64_pi": "884279719003555/281474976710656",
+      "single_use_encoded_CP_parameter_operator_error_upper": "16297293422173783596706722904453877161278830390711149506258710987479759335311120709000767658700136916834655100777717/507929401780561817563755027365090677628448609652194750927252074946881646485478480293803881136128000000000000000000000000000000000",
+      "single_use_encoded_QFT_operator_error_upper": "2579334454642472957118576729151285620735831467767856081248624033528426154826597734066646869000568126934787257987290558526703096492574370893221680023254769357495970733921999368572863/116240998466639491789143456537598724224119427845740120374411839665085704918047855288861069321131992841397517341677526495644787159601023821955864983502848000000000000000000000000000000000",
+      "complete_experiment_ideal_truncation_trace_upper": "336434928379929637234874844775567695768169024463310003734594347481482089319293674115150791631265616870437981899242476933732124712106310127440016452026327000789002381788546186619851/118452104415733177774263033156520439087078221310197133533707717050019400392032461231855709226697003574793665769372479445290204306658651992482199371776000000000000000000000000000000000",
+      "complete_experiment_encoded_QFT_trace_upper": "2579334454642472957118576729151285620735831467767856081248624033528426154826597734066646869000568126934787257987290558526703096492574370893221680023254769357495970733921999368572863/908132800520621029602683254199990033000933030044844690425092497383482069672248869444227104071343694073418104231855675747224899684382998609030195183616000000000000000000000000000000000",
+      "ideal_truncation_target_met": true,
+      "encoded_QFT_parameter_target_met": true,
+      "numeric_normal_angle_encoding_supported": true,
+      "external_per_logical_gate_operator_error": null,
+      "complete_experiment_upper_IF_external_gate_bound_holds": null,
+      "arithmetic_preparation_and_hardware_errors_covered": false,
+      "statevector_MPS_roundoff_certified": false,
+      "normalized_rare_branch_accuracy_certified_without_mass_bound": false,
+      "logical_query_budget_proves_efficient_receiver": false
+    },
+    "QFT_usage_ledger": {
+      "charged_forward_calls": 0,
+      "charged_inverse_calls": 0,
+      "charged_parent_reflections": 0,
+      "charged_total_QFT_or_inverse_calls": 0,
+      "manual_untracked_circuit_calls_are_outside_accuracy_contract": true
+    }
+  },
+  "large_control_is_resource_only_classically_easy_not_a_DCP_promise": true,
+  "rare_postselection_countercontrols": [
+    {
+      "success_mass": "1/256",
+      "complete_accept_reject_trace_distance": "1/256",
+      "normalized_accepted_payload_trace_distance": "1",
+      "free_conditional_accuracy_inference_valid": false
+    },
+    {
+      "success_mass": "1/4294967296",
+      "complete_accept_reject_trace_distance": "1/4294967296",
+      "normalized_accepted_payload_trace_distance": "1",
+      "free_conditional_accuracy_inference_valid": false
+    },
+    {
+      "success_mass": "1/340282366920938463463374607431768211456",
+      "complete_accept_reject_trace_distance": "1/340282366920938463463374607431768211456",
+      "normalized_accepted_payload_trace_distance": "1",
+      "free_conditional_accuracy_inference_valid": false
+    }
+  ],
+  "hardware_or_full_source_channel_error_certified": false,
+  "efficient_receiver_supplied": false,
+  "accepted_speedup_candidate": false,
+  "new_active_negative_result_created": false,
+  "novelty_claim": false
+}

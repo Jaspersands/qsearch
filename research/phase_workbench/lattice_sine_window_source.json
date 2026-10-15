@@ -1,0 +1,4638 @@
+{
+  "status": "PUBLIC_COHERENT_SINE_WINDOW_SOURCE_AND_UNKNOWN_PHASE_REGISTERS_REVIEW_PENDING",
+  "producer_sha256": "d3eb52d8fd80484fe1af9c53b11c45b6c772f84afdfa7e1d7e7913a29b2f3600",
+  "derivation_sha256": "2c6a8777f9c20036d5b2c506c28bdb38f396a1e5706ff72eff5dd89724625d60",
+  "contract_sha256": "74762b5cf51cacb586c84ac367c8e8df218f88e2053e0f016d31ff74dbd8d723",
+  "dependency_sha256": {
+    "lattice_sine_packet.py": "dcf0af355ec7d4b6493c63318a07ce77c410a31d55df75f2955d1031acdbdde8",
+    "lattice_qft_precision.py": "06d83cbff1ba5995893dad951f0bf131622c759aa9c599fad87d12a7c01aef91",
+    "lattice_cube_dcp_readout.py": "db757ca4754b9d59b1d4a2f109969c39949c38f4e3ec3a6b57d45e8f7751506a",
+    "lattice_cube_coset_source.py": "8b4298ac1feba05167d0bd9e312913712271efa130df04734ca141838e3de9f9",
+    "planted_qary_usvp_source.py": "44ddceba36558fec5488a89e0c9ab8467bc1295431151670e5dead5708b900ba",
+    "ternary_measured_lattice_decoder.py": "151f7c5fbb9e09ad8c231fb841c6d8ce385d54123acd9d15f33b3ce51efced4b"
+  },
+  "actual_source_controls": [
+    {
+      "compiled_resources": {
+        "public_source": {
+          "source_type": "PUBLIC_SINE_WINDOW_LATTICE_INSTRUMENT",
+          "basis_rows": [
+            [
+              1
+            ]
+          ],
+          "prime": 7,
+          "split_prime_certificate": {
+            "prime": 7,
+            "witness": 3,
+            "factors": [
+              {
+                "prime": 2,
+                "exponent": 1,
+                "certificate": {
+                  "prime": 2,
+                  "witness": 1,
+                  "factors": [],
+                  "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                }
+              },
+              {
+                "prime": 3,
+                "exponent": 1,
+                "certificate": {
+                  "prime": 3,
+                  "witness": 2,
+                  "factors": [
+                    {
+                      "prime": 2,
+                      "exponent": 1,
+                      "certificate": {
+                        "prime": 2,
+                        "witness": 1,
+                        "factors": [],
+                        "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                      }
+                    }
+                  ],
+                  "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                }
+              }
+            ],
+            "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+          },
+          "residue": 1,
+          "coordinate": 0,
+          "box": 2,
+          "packet_side": 4,
+          "input_population": 4,
+          "phase_modulus": 4,
+          "hidden_short_vector_or_shift_given": false,
+          "receiver_gets_localization_register": false,
+          "uniform_secret_prior_inferred": false
+        },
+        "closed_resources": {
+          "arithmetic_width_plan": {
+            "point_absolute_bounds": [
+              8
+            ],
+            "localization_absolute_bounds": [
+              11
+            ],
+            "shared_signed_word_bits": 5,
+            "localization_coordinates_share_word_width": true,
+            "all_signed_localization_values_in_range": true,
+            "copied_point_or_original_noise_garbage_retained": false
+          },
+          "input_qubits": 2,
+          "localization_output_qubits": 5,
+          "shared_point_arithmetic_work_qubits": 11,
+          "shared_packet_work_qubits": 2,
+          "zero_padding_qubits": 1,
+          "position_QFT_qubits": 2,
+          "total_source_qubits": 21,
+          "constant_additions_including_uncompute": 4,
+          "point_to_localization_additions": 1,
+          "arithmetic_logical_instructions": 21,
+          "packet_unitary_applications": 1,
+          "packet_plan": {
+            "packet_bits": 2,
+            "packet_side": 4,
+            "logical_qubits": 4,
+            "clean_AND_work_qubits": 1,
+            "known_flag_qubits": 1,
+            "W_forward_uses": 2,
+            "W_inverse_uses": 1,
+            "known_zero_reflections": 1,
+            "H_gates": 12,
+            "X_gates": 7,
+            "CCX_gates": 2,
+            "CP_gates": 7,
+            "P_gates": 3,
+            "logical_instructions": 31,
+            "global_phase_pi_coefficient": "-1/4",
+            "retained_absolute_pi_weight": "13/2",
+            "encoded_binary64_pi": "884279719003555/281474976710656",
+            "Machin_terms": 16,
+            "pi_lower": "2702199289155139770778723466138548690954453271354857406274868882229427215106701002516071935610699965630953755124/860136748176892598733343886651423302289653512937537946071635894779362232608248391056054462678730487823486328125",
+            "pi_upper": "1182664558198884723122287358611764328074688616985936643633156715672834457769192598828753841328454487819350992/376453820913890074899487004189100025511481553604426544559634764263301689662404540823888964951038360595703125",
+            "numeric_normal_angles_supported": true,
+            "encoded_rotation_operator_error_upper": "12976642900600785132962003104920136563994522586314721360051898014984302040554347449402968291950185290961377/16301896996057642069900426459109025475608111654636324627998996352361585201659337199910912000000000000000000000000000000000",
+            "known_zero_parent_success_probability": "1",
+            "postselection_used": false,
+            "flag_clear_for_arbitrary_input_claimed": false,
+            "hardware_synthesis_or_simulator_roundoff_certified": false
+          },
+          "coherent_source_instructions_before_QFT": 24,
+          "no_preimages_or_private_shift_needed": true
+        },
+        "compiled_qubits": 21,
+        "compiled_parent_instructions": 25,
+        "encoded_packet_parameter_operator_upper_per_parent": "12976642900600785132962003104920136563994522586314721360051898014984302040554347449402968291950185290961377/16301896996057642069900426459109025475608111654636324627998996352361585201659337199910912000000000000000000000000000000000",
+        "QFT_precision_plan": null,
+        "QFT_angle_accounting_plan": {
+          "QFT_wires": 2,
+          "retained_maximum_separation": 1,
+          "qiskit_approximation_degree": 0,
+          "query_usage": {
+            "direct_forward_calls": 1,
+            "direct_inverse_calls": 0,
+            "phase_parent_reflections": 0,
+            "total_approximate_QFT_or_inverse_calls": 1,
+            "receiver_usage_bound_is_external_not_proved_here": true
+          },
+          "target_complete_experiment_trace_error": "1/100",
+          "logical_controlled_phases_retained": 1,
+          "logical_controlled_phases_omitted": 0,
+          "logical_H_gates": 2,
+          "logical_swaps": 1,
+          "exact_ideal_QFT_selected": true,
+          "retained_dyadic_angle_weight": "1/2",
+          "omitted_weight_symbolic": {
+            "coefficient_at_2_pow_minus_cutoff": -1,
+            "cutoff_exponent": 1,
+            "unit_term_exponent": 1
+          },
+          "single_use_ideal_truncation_operator_upper": "0",
+          "truncation_bound_method": "EXACT_FINITE_TAIL_MACHIN_PI_UPPER",
+          "Machin_terms": 16,
+          "pi_rational_lower": "2702199289155139770778723466138548690954453271354857406274868882229427215106701002516071935610699965630953755124/860136748176892598733343886651423302289653512937537946071635894779362232608248391056054462678730487823486328125",
+          "pi_rational_upper": "1182664558198884723122287358611764328074688616985936643633156715672834457769192598828753841328454487819350992/376453820913890074899487004189100025511481553604426544559634764263301689662404540823888964951038360595703125",
+          "exact_encoded_binary64_pi": "884279719003555/281474976710656",
+          "single_use_encoded_CP_parameter_operator_error_upper": "12976642900600785132962003104920136563994522586314721360051898014984302040554347449402968291950185290961377/211924660948749346908705543968417331182905451510272220163986952580700607621571383598841856000000000000000000000000000000000",
+          "single_use_encoded_QFT_operator_error_upper": "12976642900600785132962003104920136563994522586314721360051898014984302040554347449402968291950185290961377/211924660948749346908705543968417331182905451510272220163986952580700607621571383598841856000000000000000000000000000000000",
+          "complete_experiment_ideal_truncation_trace_upper": "0",
+          "complete_experiment_encoded_QFT_trace_upper": "12976642900600785132962003104920136563994522586314721360051898014984302040554347449402968291950185290961377/211924660948749346908705543968417331182905451510272220163986952580700607621571383598841856000000000000000000000000000000000",
+          "ideal_truncation_target_met": true,
+          "encoded_QFT_parameter_target_met": true,
+          "numeric_normal_angle_encoding_supported": true,
+          "external_per_logical_gate_operator_error": null,
+          "complete_experiment_upper_IF_external_gate_bound_holds": null,
+          "arithmetic_preparation_and_hardware_errors_covered": false,
+          "statevector_MPS_roundoff_certified": false,
+          "normalized_rare_branch_accuracy_certified_without_mass_bound": false,
+          "logical_query_budget_proves_efficient_receiver": false
+        },
+        "packet_and_retained_QFT_parameter_operator_upper_per_parent": "12976642900600785132962003104920136563994522586314721360051898014984302040554347449402968291950185290961377/15137475782053524779193253140601237941636103679305158583141925184335757687255098828488704000000000000000000000000000000000",
+        "packet_and_QFT_operator_upper_relative_to_ideal_full_QFT": "12976642900600785132962003104920136563994522586314721360051898014984302040554347449402968291950185290961377/15137475782053524779193253140601237941636103679305158583141925184335757687255098828488704000000000000000000000000000000000",
+        "original_position_wires_reused_in_place": true,
+        "localization_register_is_traced_not_replaced_by_a_preimage": true,
+        "arithmetic_and_packet_workspace_return_zero": true,
+        "mixed_colour_inverse_available": false,
+        "full_parent_inverse_requires_localization_and_label_registers": true,
+        "normalized_conditional_colour_error_not_inferred_without_label_mass": true,
+        "hardware_arithmetic_synthesis_or_roundoff_certified": false
+      },
+      "exact_reference": {
+        "public_source": {
+          "source_type": "PUBLIC_SINE_WINDOW_LATTICE_INSTRUMENT",
+          "basis_rows": [
+            [
+              1
+            ]
+          ],
+          "prime": 7,
+          "split_prime_certificate": {
+            "prime": 7,
+            "witness": 3,
+            "factors": [
+              {
+                "prime": 2,
+                "exponent": 1,
+                "certificate": {
+                  "prime": 2,
+                  "witness": 1,
+                  "factors": [],
+                  "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                }
+              },
+              {
+                "prime": 3,
+                "exponent": 1,
+                "certificate": {
+                  "prime": 3,
+                  "witness": 2,
+                  "factors": [
+                    {
+                      "prime": 2,
+                      "exponent": 1,
+                      "certificate": {
+                        "prime": 2,
+                        "witness": 1,
+                        "factors": [],
+                        "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                      }
+                    }
+                  ],
+                  "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                }
+              }
+            ],
+            "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+          },
+          "residue": 1,
+          "coordinate": 0,
+          "box": 2,
+          "packet_side": 4,
+          "input_population": 4,
+          "phase_modulus": 4,
+          "hidden_short_vector_or_shift_given": false,
+          "receiver_gets_localization_register": false,
+          "uniform_secret_prior_inferred": false
+        },
+        "reference_root": 8,
+        "complete_parent_count": 4,
+        "QFT_cutoff": 1,
+        "QFT_is_exact": true,
+        "parents": [
+          [
+            0,
+            [
+              0
+            ]
+          ],
+          [
+            0,
+            [
+              1
+            ]
+          ],
+          [
+            1,
+            [
+              0
+            ]
+          ],
+          [
+            1,
+            [
+              1
+            ]
+          ]
+        ],
+        "public_points": [
+          [
+            0
+          ],
+          [
+            7
+          ],
+          [
+            1
+          ],
+          [
+            8
+          ]
+        ],
+        "complete_public_Gram": [
+          [
+            [
+              "1/4"
+            ],
+            [],
+            [
+              "-1/8",
+              "0",
+              "1/8",
+              "0"
+            ],
+            []
+          ],
+          [
+            [],
+            [
+              "1/4"
+            ],
+            [],
+            [
+              "-1/8",
+              "0",
+              "1/8",
+              "0"
+            ]
+          ],
+          [
+            [
+              "-1/8",
+              "0",
+              "1/8",
+              "0"
+            ],
+            [],
+            [
+              "1/4"
+            ],
+            []
+          ],
+          [
+            [],
+            [
+              "-1/8",
+              "0",
+              "1/8",
+              "0"
+            ],
+            [],
+            [
+              "1/4"
+            ]
+          ]
+        ],
+        "all_label_outcomes": [
+          {
+            "label": 0,
+            "joint_label_probability": [
+              "1/4"
+            ],
+            "unnormalized_colour_density": [
+              [
+                [
+                  "1/8"
+                ],
+                [
+                  "-1/16",
+                  "0",
+                  "1/16",
+                  "0"
+                ]
+              ],
+              [
+                [
+                  "-1/16",
+                  "0",
+                  "1/16",
+                  "0"
+                ],
+                [
+                  "1/8"
+                ]
+              ]
+            ]
+          },
+          {
+            "label": 1,
+            "joint_label_probability": [
+              "1/4"
+            ],
+            "unnormalized_colour_density": [
+              [
+                [
+                  "1/8"
+                ],
+                [
+                  "-1/16",
+                  "0",
+                  "1/16",
+                  "0"
+                ]
+              ],
+              [
+                [
+                  "-1/16",
+                  "0",
+                  "1/16",
+                  "0"
+                ],
+                [
+                  "1/8"
+                ]
+              ]
+            ]
+          },
+          {
+            "label": 2,
+            "joint_label_probability": [
+              "1/4"
+            ],
+            "unnormalized_colour_density": [
+              [
+                [
+                  "1/8"
+                ],
+                [
+                  "-1/16",
+                  "0",
+                  "1/16",
+                  "0"
+                ]
+              ],
+              [
+                [
+                  "-1/16",
+                  "0",
+                  "1/16",
+                  "0"
+                ],
+                [
+                  "1/8"
+                ]
+              ]
+            ]
+          },
+          {
+            "label": 3,
+            "joint_label_probability": [
+              "1/4"
+            ],
+            "unnormalized_colour_density": [
+              [
+                [
+                  "1/8"
+                ],
+                [
+                  "-1/16",
+                  "0",
+                  "1/16",
+                  "0"
+                ]
+              ],
+              [
+                [
+                  "-1/16",
+                  "0",
+                  "1/16",
+                  "0"
+                ],
+                [
+                  "1/8"
+                ]
+              ]
+            ]
+          }
+        ],
+        "label_distribution_uniform": true,
+        "dense_reference_is_not_a_polynomial_preimage_or_receiver_oracle": true
+      },
+      "private_template_audit": {
+        "status": "FINITE_PRIVATE_TEMPLATE_MATCH",
+        "PRIVATE_AUDIT_ONLY_vector": [
+          1
+        ],
+        "PRIVATE_AUDIT_ONLY_basis_coefficients": [
+          1
+        ],
+        "PRIVATE_AUDIT_ONLY_parent_shift": [
+          0
+        ],
+        "PRIVATE_AUDIT_ONLY_cyclic_shift": 0,
+        "exact_marginal_visibility": [
+          "-1/2",
+          "0",
+          "1/2",
+          "0"
+        ],
+        "box_overlap": "1",
+        "finite_marginal_template_matches": true,
+        "correct_trial_flag_given_to_receiver": false,
+        "conservative_private_bad_rate_upper": "121/392",
+        "full_growing_reduction_certified": false
+      },
+      "actual_sampling_audit": {
+        "all_emitted_conditional_densities_agree": true,
+        "private_max_numerical_error": 7.868801631166169e-11,
+        "metadata": {
+          "actual_compiled_source_preparations_charged": 8,
+          "QFT_cutoff": 1,
+          "logical_readout_QFT_is_exact_reference": true,
+          "QFT_usage_ledger": null,
+          "packet_unitaries_charged": 8,
+          "W_calls_charged": 24,
+          "source_shots_independent_given_public_parameters": true,
+          "public_source_fingerprint": "645a50dc113527f38cdf0944a297080dd66adf10b25c728270bf9100d118cb6c",
+          "localization_register_was_unmeasured_and_traced": true,
+          "source_DCP_promise_is_not_inferred_from_samples": true,
+          "numerical_error_is_a_formally_certified_channel_bound": false,
+          "MPS_truncation_threshold": 0.0,
+          "conditioned_snapshot_keys_and_multiplicities_checked": true
+        },
+        "public_receipts": [
+          {
+            "id": "sine-control-0:0",
+            "modulus": 4,
+            "label": 1,
+            "measured_cells": [],
+            "original_source_receipts": [
+              "sine-control-0:0"
+            ],
+            "merge_depth": 0
+          },
+          {
+            "id": "sine-control-0:1",
+            "modulus": 4,
+            "label": 1,
+            "measured_cells": [],
+            "original_source_receipts": [
+              "sine-control-0:1"
+            ],
+            "merge_depth": 0
+          },
+          {
+            "id": "sine-control-0:2",
+            "modulus": 4,
+            "label": 2,
+            "measured_cells": [],
+            "original_source_receipts": [
+              "sine-control-0:2"
+            ],
+            "merge_depth": 0
+          },
+          {
+            "id": "sine-control-0:3",
+            "modulus": 4,
+            "label": 3,
+            "measured_cells": [],
+            "original_source_receipts": [
+              "sine-control-0:3"
+            ],
+            "merge_depth": 0
+          },
+          {
+            "id": "sine-control-0:4",
+            "modulus": 4,
+            "label": 1,
+            "measured_cells": [],
+            "original_source_receipts": [
+              "sine-control-0:4"
+            ],
+            "merge_depth": 0
+          },
+          {
+            "id": "sine-control-0:5",
+            "modulus": 4,
+            "label": 0,
+            "measured_cells": [],
+            "original_source_receipts": [
+              "sine-control-0:5"
+            ],
+            "merge_depth": 0
+          },
+          {
+            "id": "sine-control-0:6",
+            "modulus": 4,
+            "label": 3,
+            "measured_cells": [],
+            "original_source_receipts": [
+              "sine-control-0:6"
+            ],
+            "merge_depth": 0
+          },
+          {
+            "id": "sine-control-0:7",
+            "modulus": 4,
+            "label": 0,
+            "measured_cells": [],
+            "original_source_receipts": [
+              "sine-control-0:7"
+            ],
+            "merge_depth": 0
+          }
+        ],
+        "PRIVATE_AUDIT_ONLY_density_matrices": {
+          "sine-control-0:0": [
+            [
+              [
+                0.5000000000364208,
+                0.0
+              ],
+              [
+                0.353553390649569,
+                5.497859683227634e-11
+              ]
+            ],
+            [
+              [
+                0.353553390649569,
+                -5.497859683227634e-11
+              ],
+              [
+                0.4999999999635793,
+                0.0
+              ]
+            ]
+          ],
+          "sine-control-0:1": [
+            [
+              [
+                0.5000000000364208,
+                0.0
+              ],
+              [
+                0.353553390649569,
+                5.497859683227634e-11
+              ]
+            ],
+            [
+              [
+                0.353553390649569,
+                -5.497859683227634e-11
+              ],
+              [
+                0.4999999999635793,
+                0.0
+              ]
+            ]
+          ],
+          "sine-control-0:2": [
+            [
+              [
+                0.5000000000175929,
+                0.0
+              ],
+              [
+                0.35355339064779645,
+                5.6712016003768646e-11
+              ]
+            ],
+            [
+              [
+                0.35355339064779645,
+                -5.6712016003768646e-11
+              ],
+              [
+                0.49999999998240696,
+                0.0
+              ]
+            ]
+          ],
+          "sine-control-0:3": [
+            [
+              [
+                0.500000000011021,
+                0.0
+              ],
+              [
+                0.35355339064325625,
+                5.491314608145648e-11
+              ]
+            ],
+            [
+              [
+                0.35355339064325625,
+                -5.491314608145648e-11
+              ],
+              [
+                0.49999999998897915,
+                0.0
+              ]
+            ]
+          ],
+          "sine-control-0:4": [
+            [
+              [
+                0.5000000000364208,
+                0.0
+              ],
+              [
+                0.353553390649569,
+                5.497859683227634e-11
+              ]
+            ],
+            [
+              [
+                0.353553390649569,
+                -5.497859683227634e-11
+              ],
+              [
+                0.4999999999635793,
+                0.0
+              ]
+            ]
+          ],
+          "sine-control-0:5": [
+            [
+              [
+                0.5000000000299086,
+                0.0
+              ],
+              [
+                0.35355339064931424,
+                4.00984321297729e-11
+              ]
+            ],
+            [
+              [
+                0.35355339064931424,
+                -4.00984321297729e-11
+              ],
+              [
+                0.4999999999700914,
+                0.0
+              ]
+            ]
+          ],
+          "sine-control-0:6": [
+            [
+              [
+                0.500000000011021,
+                0.0
+              ],
+              [
+                0.35355339064325625,
+                5.491314608145648e-11
+              ]
+            ],
+            [
+              [
+                0.35355339064325625,
+                -5.491314608145648e-11
+              ],
+              [
+                0.49999999998897915,
+                0.0
+              ]
+            ]
+          ],
+          "sine-control-0:7": [
+            [
+              [
+                0.5000000000299086,
+                0.0
+              ],
+              [
+                0.35355339064931424,
+                4.00984321297729e-11
+              ]
+            ],
+            [
+              [
+                0.35355339064931424,
+                -4.00984321297729e-11
+              ],
+              [
+                0.4999999999700914,
+                0.0
+              ]
+            ]
+          ]
+        },
+        "speedup_or_hardware_channel_certificate": false
+      }
+    },
+    {
+      "compiled_resources": {
+        "public_source": {
+          "source_type": "PUBLIC_SINE_WINDOW_LATTICE_INSTRUMENT",
+          "basis_rows": [
+            [
+              -1
+            ]
+          ],
+          "prime": 7,
+          "split_prime_certificate": {
+            "prime": 7,
+            "witness": 3,
+            "factors": [
+              {
+                "prime": 2,
+                "exponent": 1,
+                "certificate": {
+                  "prime": 2,
+                  "witness": 1,
+                  "factors": [],
+                  "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                }
+              },
+              {
+                "prime": 3,
+                "exponent": 1,
+                "certificate": {
+                  "prime": 3,
+                  "witness": 2,
+                  "factors": [
+                    {
+                      "prime": 2,
+                      "exponent": 1,
+                      "certificate": {
+                        "prime": 2,
+                        "witness": 1,
+                        "factors": [],
+                        "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                      }
+                    }
+                  ],
+                  "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                }
+              }
+            ],
+            "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+          },
+          "residue": 1,
+          "coordinate": 0,
+          "box": 2,
+          "packet_side": 4,
+          "input_population": 4,
+          "phase_modulus": 4,
+          "hidden_short_vector_or_shift_given": false,
+          "receiver_gets_localization_register": false,
+          "uniform_secret_prior_inferred": false
+        },
+        "closed_resources": {
+          "arithmetic_width_plan": {
+            "point_absolute_bounds": [
+              8
+            ],
+            "localization_absolute_bounds": [
+              11
+            ],
+            "shared_signed_word_bits": 5,
+            "localization_coordinates_share_word_width": true,
+            "all_signed_localization_values_in_range": true,
+            "copied_point_or_original_noise_garbage_retained": false
+          },
+          "input_qubits": 2,
+          "localization_output_qubits": 5,
+          "shared_point_arithmetic_work_qubits": 11,
+          "shared_packet_work_qubits": 2,
+          "zero_padding_qubits": 1,
+          "position_QFT_qubits": 2,
+          "total_source_qubits": 21,
+          "constant_additions_including_uncompute": 4,
+          "point_to_localization_additions": 1,
+          "arithmetic_logical_instructions": 37,
+          "packet_unitary_applications": 1,
+          "packet_plan": {
+            "packet_bits": 2,
+            "packet_side": 4,
+            "logical_qubits": 4,
+            "clean_AND_work_qubits": 1,
+            "known_flag_qubits": 1,
+            "W_forward_uses": 2,
+            "W_inverse_uses": 1,
+            "known_zero_reflections": 1,
+            "H_gates": 12,
+            "X_gates": 7,
+            "CCX_gates": 2,
+            "CP_gates": 7,
+            "P_gates": 3,
+            "logical_instructions": 31,
+            "global_phase_pi_coefficient": "-1/4",
+            "retained_absolute_pi_weight": "13/2",
+            "encoded_binary64_pi": "884279719003555/281474976710656",
+            "Machin_terms": 16,
+            "pi_lower": "2702199289155139770778723466138548690954453271354857406274868882229427215106701002516071935610699965630953755124/860136748176892598733343886651423302289653512937537946071635894779362232608248391056054462678730487823486328125",
+            "pi_upper": "1182664558198884723122287358611764328074688616985936643633156715672834457769192598828753841328454487819350992/376453820913890074899487004189100025511481553604426544559634764263301689662404540823888964951038360595703125",
+            "numeric_normal_angles_supported": true,
+            "encoded_rotation_operator_error_upper": "12976642900600785132962003104920136563994522586314721360051898014984302040554347449402968291950185290961377/16301896996057642069900426459109025475608111654636324627998996352361585201659337199910912000000000000000000000000000000000",
+            "known_zero_parent_success_probability": "1",
+            "postselection_used": false,
+            "flag_clear_for_arbitrary_input_claimed": false,
+            "hardware_synthesis_or_simulator_roundoff_certified": false
+          },
+          "coherent_source_instructions_before_QFT": 40,
+          "no_preimages_or_private_shift_needed": true
+        },
+        "compiled_qubits": 21,
+        "compiled_parent_instructions": 41,
+        "encoded_packet_parameter_operator_upper_per_parent": "12976642900600785132962003104920136563994522586314721360051898014984302040554347449402968291950185290961377/16301896996057642069900426459109025475608111654636324627998996352361585201659337199910912000000000000000000000000000000000",
+        "QFT_precision_plan": null,
+        "QFT_angle_accounting_plan": {
+          "QFT_wires": 2,
+          "retained_maximum_separation": 1,
+          "qiskit_approximation_degree": 0,
+          "query_usage": {
+            "direct_forward_calls": 1,
+            "direct_inverse_calls": 0,
+            "phase_parent_reflections": 0,
+            "total_approximate_QFT_or_inverse_calls": 1,
+            "receiver_usage_bound_is_external_not_proved_here": true
+          },
+          "target_complete_experiment_trace_error": "1/100",
+          "logical_controlled_phases_retained": 1,
+          "logical_controlled_phases_omitted": 0,
+          "logical_H_gates": 2,
+          "logical_swaps": 1,
+          "exact_ideal_QFT_selected": true,
+          "retained_dyadic_angle_weight": "1/2",
+          "omitted_weight_symbolic": {
+            "coefficient_at_2_pow_minus_cutoff": -1,
+            "cutoff_exponent": 1,
+            "unit_term_exponent": 1
+          },
+          "single_use_ideal_truncation_operator_upper": "0",
+          "truncation_bound_method": "EXACT_FINITE_TAIL_MACHIN_PI_UPPER",
+          "Machin_terms": 16,
+          "pi_rational_lower": "2702199289155139770778723466138548690954453271354857406274868882229427215106701002516071935610699965630953755124/860136748176892598733343886651423302289653512937537946071635894779362232608248391056054462678730487823486328125",
+          "pi_rational_upper": "1182664558198884723122287358611764328074688616985936643633156715672834457769192598828753841328454487819350992/376453820913890074899487004189100025511481553604426544559634764263301689662404540823888964951038360595703125",
+          "exact_encoded_binary64_pi": "884279719003555/281474976710656",
+          "single_use_encoded_CP_parameter_operator_error_upper": "12976642900600785132962003104920136563994522586314721360051898014984302040554347449402968291950185290961377/211924660948749346908705543968417331182905451510272220163986952580700607621571383598841856000000000000000000000000000000000",
+          "single_use_encoded_QFT_operator_error_upper": "12976642900600785132962003104920136563994522586314721360051898014984302040554347449402968291950185290961377/211924660948749346908705543968417331182905451510272220163986952580700607621571383598841856000000000000000000000000000000000",
+          "complete_experiment_ideal_truncation_trace_upper": "0",
+          "complete_experiment_encoded_QFT_trace_upper": "12976642900600785132962003104920136563994522586314721360051898014984302040554347449402968291950185290961377/211924660948749346908705543968417331182905451510272220163986952580700607621571383598841856000000000000000000000000000000000",
+          "ideal_truncation_target_met": true,
+          "encoded_QFT_parameter_target_met": true,
+          "numeric_normal_angle_encoding_supported": true,
+          "external_per_logical_gate_operator_error": null,
+          "complete_experiment_upper_IF_external_gate_bound_holds": null,
+          "arithmetic_preparation_and_hardware_errors_covered": false,
+          "statevector_MPS_roundoff_certified": false,
+          "normalized_rare_branch_accuracy_certified_without_mass_bound": false,
+          "logical_query_budget_proves_efficient_receiver": false
+        },
+        "packet_and_retained_QFT_parameter_operator_upper_per_parent": "12976642900600785132962003104920136563994522586314721360051898014984302040554347449402968291950185290961377/15137475782053524779193253140601237941636103679305158583141925184335757687255098828488704000000000000000000000000000000000",
+        "packet_and_QFT_operator_upper_relative_to_ideal_full_QFT": "12976642900600785132962003104920136563994522586314721360051898014984302040554347449402968291950185290961377/15137475782053524779193253140601237941636103679305158583141925184335757687255098828488704000000000000000000000000000000000",
+        "original_position_wires_reused_in_place": true,
+        "localization_register_is_traced_not_replaced_by_a_preimage": true,
+        "arithmetic_and_packet_workspace_return_zero": true,
+        "mixed_colour_inverse_available": false,
+        "full_parent_inverse_requires_localization_and_label_registers": true,
+        "normalized_conditional_colour_error_not_inferred_without_label_mass": true,
+        "hardware_arithmetic_synthesis_or_roundoff_certified": false
+      },
+      "exact_reference": {
+        "public_source": {
+          "source_type": "PUBLIC_SINE_WINDOW_LATTICE_INSTRUMENT",
+          "basis_rows": [
+            [
+              -1
+            ]
+          ],
+          "prime": 7,
+          "split_prime_certificate": {
+            "prime": 7,
+            "witness": 3,
+            "factors": [
+              {
+                "prime": 2,
+                "exponent": 1,
+                "certificate": {
+                  "prime": 2,
+                  "witness": 1,
+                  "factors": [],
+                  "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                }
+              },
+              {
+                "prime": 3,
+                "exponent": 1,
+                "certificate": {
+                  "prime": 3,
+                  "witness": 2,
+                  "factors": [
+                    {
+                      "prime": 2,
+                      "exponent": 1,
+                      "certificate": {
+                        "prime": 2,
+                        "witness": 1,
+                        "factors": [],
+                        "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                      }
+                    }
+                  ],
+                  "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                }
+              }
+            ],
+            "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+          },
+          "residue": 1,
+          "coordinate": 0,
+          "box": 2,
+          "packet_side": 4,
+          "input_population": 4,
+          "phase_modulus": 4,
+          "hidden_short_vector_or_shift_given": false,
+          "receiver_gets_localization_register": false,
+          "uniform_secret_prior_inferred": false
+        },
+        "reference_root": 8,
+        "complete_parent_count": 4,
+        "QFT_cutoff": 1,
+        "QFT_is_exact": true,
+        "parents": [
+          [
+            0,
+            [
+              0
+            ]
+          ],
+          [
+            0,
+            [
+              1
+            ]
+          ],
+          [
+            1,
+            [
+              0
+            ]
+          ],
+          [
+            1,
+            [
+              1
+            ]
+          ]
+        ],
+        "public_points": [
+          [
+            0
+          ],
+          [
+            -7
+          ],
+          [
+            -1
+          ],
+          [
+            -8
+          ]
+        ],
+        "complete_public_Gram": [
+          [
+            [
+              "1/4"
+            ],
+            [],
+            [
+              "-1/8",
+              "0",
+              "1/8",
+              "0"
+            ],
+            []
+          ],
+          [
+            [],
+            [
+              "1/4"
+            ],
+            [],
+            [
+              "-1/8",
+              "0",
+              "1/8",
+              "0"
+            ]
+          ],
+          [
+            [
+              "-1/8",
+              "0",
+              "1/8",
+              "0"
+            ],
+            [],
+            [
+              "1/4"
+            ],
+            []
+          ],
+          [
+            [],
+            [
+              "-1/8",
+              "0",
+              "1/8",
+              "0"
+            ],
+            [],
+            [
+              "1/4"
+            ]
+          ]
+        ],
+        "all_label_outcomes": [
+          {
+            "label": 0,
+            "joint_label_probability": [
+              "1/4"
+            ],
+            "unnormalized_colour_density": [
+              [
+                [
+                  "1/8"
+                ],
+                [
+                  "-1/16",
+                  "0",
+                  "1/16",
+                  "0"
+                ]
+              ],
+              [
+                [
+                  "-1/16",
+                  "0",
+                  "1/16",
+                  "0"
+                ],
+                [
+                  "1/8"
+                ]
+              ]
+            ]
+          },
+          {
+            "label": 1,
+            "joint_label_probability": [
+              "1/4"
+            ],
+            "unnormalized_colour_density": [
+              [
+                [
+                  "1/8"
+                ],
+                [
+                  "-1/16",
+                  "0",
+                  "1/16",
+                  "0"
+                ]
+              ],
+              [
+                [
+                  "-1/16",
+                  "0",
+                  "1/16",
+                  "0"
+                ],
+                [
+                  "1/8"
+                ]
+              ]
+            ]
+          },
+          {
+            "label": 2,
+            "joint_label_probability": [
+              "1/4"
+            ],
+            "unnormalized_colour_density": [
+              [
+                [
+                  "1/8"
+                ],
+                [
+                  "-1/16",
+                  "0",
+                  "1/16",
+                  "0"
+                ]
+              ],
+              [
+                [
+                  "-1/16",
+                  "0",
+                  "1/16",
+                  "0"
+                ],
+                [
+                  "1/8"
+                ]
+              ]
+            ]
+          },
+          {
+            "label": 3,
+            "joint_label_probability": [
+              "1/4"
+            ],
+            "unnormalized_colour_density": [
+              [
+                [
+                  "1/8"
+                ],
+                [
+                  "-1/16",
+                  "0",
+                  "1/16",
+                  "0"
+                ]
+              ],
+              [
+                [
+                  "-1/16",
+                  "0",
+                  "1/16",
+                  "0"
+                ],
+                [
+                  "1/8"
+                ]
+              ]
+            ]
+          }
+        ],
+        "label_distribution_uniform": true,
+        "dense_reference_is_not_a_polynomial_preimage_or_receiver_oracle": true
+      },
+      "private_template_audit": {
+        "status": "FINITE_PRIVATE_TEMPLATE_MATCH",
+        "PRIVATE_AUDIT_ONLY_vector": [
+          -1
+        ],
+        "PRIVATE_AUDIT_ONLY_basis_coefficients": [
+          1
+        ],
+        "PRIVATE_AUDIT_ONLY_parent_shift": [
+          0
+        ],
+        "PRIVATE_AUDIT_ONLY_cyclic_shift": 0,
+        "exact_marginal_visibility": [
+          "-1/2",
+          "0",
+          "1/2",
+          "0"
+        ],
+        "box_overlap": "1",
+        "finite_marginal_template_matches": true,
+        "correct_trial_flag_given_to_receiver": false,
+        "conservative_private_bad_rate_upper": "121/392",
+        "full_growing_reduction_certified": false
+      },
+      "actual_sampling_audit": {
+        "all_emitted_conditional_densities_agree": true,
+        "private_max_numerical_error": 8.10760884630948e-11,
+        "metadata": {
+          "actual_compiled_source_preparations_charged": 8,
+          "QFT_cutoff": 1,
+          "logical_readout_QFT_is_exact_reference": true,
+          "QFT_usage_ledger": null,
+          "packet_unitaries_charged": 8,
+          "W_calls_charged": 24,
+          "source_shots_independent_given_public_parameters": true,
+          "public_source_fingerprint": "b8893881a65b15264e3ece7ae974bbd2f01e2d0d4a7b324b01af8bdac5d24807",
+          "localization_register_was_unmeasured_and_traced": true,
+          "source_DCP_promise_is_not_inferred_from_samples": true,
+          "numerical_error_is_a_formally_certified_channel_bound": false,
+          "MPS_truncation_threshold": 0.0,
+          "conditioned_snapshot_keys_and_multiplicities_checked": true
+        },
+        "public_receipts": [
+          {
+            "id": "sine-control-1:0",
+            "modulus": 4,
+            "label": 1,
+            "measured_cells": [],
+            "original_source_receipts": [
+              "sine-control-1:0"
+            ],
+            "merge_depth": 0
+          },
+          {
+            "id": "sine-control-1:1",
+            "modulus": 4,
+            "label": 2,
+            "measured_cells": [],
+            "original_source_receipts": [
+              "sine-control-1:1"
+            ],
+            "merge_depth": 0
+          },
+          {
+            "id": "sine-control-1:2",
+            "modulus": 4,
+            "label": 3,
+            "measured_cells": [],
+            "original_source_receipts": [
+              "sine-control-1:2"
+            ],
+            "merge_depth": 0
+          },
+          {
+            "id": "sine-control-1:3",
+            "modulus": 4,
+            "label": 1,
+            "measured_cells": [],
+            "original_source_receipts": [
+              "sine-control-1:3"
+            ],
+            "merge_depth": 0
+          },
+          {
+            "id": "sine-control-1:4",
+            "modulus": 4,
+            "label": 0,
+            "measured_cells": [],
+            "original_source_receipts": [
+              "sine-control-1:4"
+            ],
+            "merge_depth": 0
+          },
+          {
+            "id": "sine-control-1:5",
+            "modulus": 4,
+            "label": 3,
+            "measured_cells": [],
+            "original_source_receipts": [
+              "sine-control-1:5"
+            ],
+            "merge_depth": 0
+          },
+          {
+            "id": "sine-control-1:6",
+            "modulus": 4,
+            "label": 0,
+            "measured_cells": [],
+            "original_source_receipts": [
+              "sine-control-1:6"
+            ],
+            "merge_depth": 0
+          },
+          {
+            "id": "sine-control-1:7",
+            "modulus": 4,
+            "label": 3,
+            "measured_cells": [],
+            "original_source_receipts": [
+              "sine-control-1:7"
+            ],
+            "merge_depth": 0
+          }
+        ],
+        "PRIVATE_AUDIT_ONLY_density_matrices": {
+          "sine-control-1:0": [
+            [
+              [
+                0.499999999997316,
+                0.0
+              ],
+              [
+                0.3535533905275942,
+                -3.2401542866219276e-11
+              ]
+            ],
+            [
+              [
+                0.3535533905275942,
+                3.2401542866219276e-11
+              ],
+              [
+                0.500000000002684,
+                0.0
+              ]
+            ]
+          ],
+          "sine-control-1:1": [
+            [
+              [
+                0.4999999999964907,
+                0.0
+              ],
+              [
+                0.3535533905300107,
+                -3.206461710869189e-11
+              ]
+            ],
+            [
+              [
+                0.3535533905300107,
+                3.206461710869189e-11
+              ],
+              [
+                0.5000000000035094,
+                0.0
+              ]
+            ]
+          ],
+          "sine-control-1:2": [
+            [
+              [
+                0.49999999999740186,
+                0.0
+              ],
+              [
+                0.353553390540936,
+                -2.3554122782462977e-11
+              ]
+            ],
+            [
+              [
+                0.353553390540936,
+                2.3554122782462977e-11
+              ],
+              [
+                0.5000000000025983,
+                0.0
+              ]
+            ]
+          ],
+          "sine-control-1:3": [
+            [
+              [
+                0.499999999997316,
+                0.0
+              ],
+              [
+                0.3535533905275942,
+                -3.2401542866219276e-11
+              ]
+            ],
+            [
+              [
+                0.3535533905275942,
+                3.2401542866219276e-11
+              ],
+              [
+                0.500000000002684,
+                0.0
+              ]
+            ]
+          ],
+          "sine-control-1:4": [
+            [
+              [
+                0.49999999998442557,
+                0.0
+              ],
+              [
+                0.3535533905148883,
+                -2.0713729347904892e-11
+              ]
+            ],
+            [
+              [
+                0.3535533905148883,
+                2.0713729347904892e-11
+              ],
+              [
+                0.5000000000155744,
+                0.0
+              ]
+            ]
+          ],
+          "sine-control-1:5": [
+            [
+              [
+                0.49999999999740186,
+                0.0
+              ],
+              [
+                0.353553390540936,
+                -2.3554122782462977e-11
+              ]
+            ],
+            [
+              [
+                0.353553390540936,
+                2.3554122782462977e-11
+              ],
+              [
+                0.5000000000025983,
+                0.0
+              ]
+            ]
+          ],
+          "sine-control-1:6": [
+            [
+              [
+                0.49999999998442557,
+                0.0
+              ],
+              [
+                0.3535533905148883,
+                -2.0713729347904892e-11
+              ]
+            ],
+            [
+              [
+                0.3535533905148883,
+                2.0713729347904892e-11
+              ],
+              [
+                0.5000000000155744,
+                0.0
+              ]
+            ]
+          ],
+          "sine-control-1:7": [
+            [
+              [
+                0.49999999999740186,
+                0.0
+              ],
+              [
+                0.353553390540936,
+                -2.3554122782462977e-11
+              ]
+            ],
+            [
+              [
+                0.353553390540936,
+                2.3554122782462977e-11
+              ],
+              [
+                0.5000000000025983,
+                0.0
+              ]
+            ]
+          ]
+        },
+        "speedup_or_hardware_channel_certificate": false
+      }
+    },
+    {
+      "compiled_resources": {
+        "public_source": {
+          "source_type": "PUBLIC_SINE_WINDOW_LATTICE_INSTRUMENT",
+          "basis_rows": [
+            [
+              17,
+              0
+            ],
+            [
+              16,
+              1
+            ]
+          ],
+          "prime": 7,
+          "split_prime_certificate": {
+            "prime": 7,
+            "witness": 3,
+            "factors": [
+              {
+                "prime": 2,
+                "exponent": 1,
+                "certificate": {
+                  "prime": 2,
+                  "witness": 1,
+                  "factors": [],
+                  "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                }
+              },
+              {
+                "prime": 3,
+                "exponent": 1,
+                "certificate": {
+                  "prime": 3,
+                  "witness": 2,
+                  "factors": [
+                    {
+                      "prime": 2,
+                      "exponent": 1,
+                      "certificate": {
+                        "prime": 2,
+                        "witness": 1,
+                        "factors": [],
+                        "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                      }
+                    }
+                  ],
+                  "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                }
+              }
+            ],
+            "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+          },
+          "residue": 1,
+          "coordinate": 0,
+          "box": 2,
+          "packet_side": 4,
+          "input_population": 8,
+          "phase_modulus": 16,
+          "hidden_short_vector_or_shift_given": false,
+          "receiver_gets_localization_register": false,
+          "uniform_secret_prior_inferred": false
+        },
+        "closed_resources": {
+          "arithmetic_width_plan": {
+            "point_absolute_bounds": [
+              152,
+              1
+            ],
+            "localization_absolute_bounds": [
+              155,
+              4
+            ],
+            "shared_signed_word_bits": 9,
+            "localization_coordinates_share_word_width": true,
+            "all_signed_localization_values_in_range": true,
+            "copied_point_or_original_noise_garbage_retained": false
+          },
+          "input_qubits": 3,
+          "localization_output_qubits": 18,
+          "shared_point_arithmetic_work_qubits": 19,
+          "shared_packet_work_qubits": 2,
+          "zero_padding_qubits": 2,
+          "position_QFT_qubits": 4,
+          "total_source_qubits": 44,
+          "constant_additions_including_uncompute": 8,
+          "point_to_localization_additions": 2,
+          "arithmetic_logical_instructions": 50,
+          "packet_unitary_applications": 2,
+          "packet_plan": {
+            "packet_bits": 2,
+            "packet_side": 4,
+            "logical_qubits": 4,
+            "clean_AND_work_qubits": 1,
+            "known_flag_qubits": 1,
+            "W_forward_uses": 2,
+            "W_inverse_uses": 1,
+            "known_zero_reflections": 1,
+            "H_gates": 12,
+            "X_gates": 7,
+            "CCX_gates": 2,
+            "CP_gates": 7,
+            "P_gates": 3,
+            "logical_instructions": 31,
+            "global_phase_pi_coefficient": "-1/4",
+            "retained_absolute_pi_weight": "13/2",
+            "encoded_binary64_pi": "884279719003555/281474976710656",
+            "Machin_terms": 16,
+            "pi_lower": "2702199289155139770778723466138548690954453271354857406274868882229427215106701002516071935610699965630953755124/860136748176892598733343886651423302289653512937537946071635894779362232608248391056054462678730487823486328125",
+            "pi_upper": "1182664558198884723122287358611764328074688616985936643633156715672834457769192598828753841328454487819350992/376453820913890074899487004189100025511481553604426544559634764263301689662404540823888964951038360595703125",
+            "numeric_normal_angles_supported": true,
+            "encoded_rotation_operator_error_upper": "12976642900600785132962003104920136563994522586314721360051898014984302040554347449402968291950185290961377/16301896996057642069900426459109025475608111654636324627998996352361585201659337199910912000000000000000000000000000000000",
+            "known_zero_parent_success_probability": "1",
+            "postselection_used": false,
+            "flag_clear_for_arbitrary_input_claimed": false,
+            "hardware_synthesis_or_simulator_roundoff_certified": false
+          },
+          "coherent_source_instructions_before_QFT": 55,
+          "no_preimages_or_private_shift_needed": true
+        },
+        "compiled_qubits": 44,
+        "compiled_parent_instructions": 56,
+        "encoded_packet_parameter_operator_upper_per_parent": "12976642900600785132962003104920136563994522586314721360051898014984302040554347449402968291950185290961377/8150948498028821034950213229554512737804055827318162313999498176180792600829668599955456000000000000000000000000000000000",
+        "QFT_precision_plan": null,
+        "QFT_angle_accounting_plan": {
+          "QFT_wires": 4,
+          "retained_maximum_separation": 3,
+          "qiskit_approximation_degree": 0,
+          "query_usage": {
+            "direct_forward_calls": 1,
+            "direct_inverse_calls": 0,
+            "phase_parent_reflections": 0,
+            "total_approximate_QFT_or_inverse_calls": 1,
+            "receiver_usage_bound_is_external_not_proved_here": true
+          },
+          "target_complete_experiment_trace_error": "1/100",
+          "logical_controlled_phases_retained": 6,
+          "logical_controlled_phases_omitted": 0,
+          "logical_H_gates": 4,
+          "logical_swaps": 2,
+          "exact_ideal_QFT_selected": true,
+          "retained_dyadic_angle_weight": "17/8",
+          "omitted_weight_symbolic": {
+            "coefficient_at_2_pow_minus_cutoff": -1,
+            "cutoff_exponent": 3,
+            "unit_term_exponent": 3
+          },
+          "single_use_ideal_truncation_operator_upper": "0",
+          "truncation_bound_method": "EXACT_FINITE_TAIL_MACHIN_PI_UPPER",
+          "Machin_terms": 16,
+          "pi_rational_lower": "2702199289155139770778723466138548690954453271354857406274868882229427215106701002516071935610699965630953755124/860136748176892598733343886651423302289653512937537946071635894779362232608248391056054462678730487823486328125",
+          "pi_rational_upper": "1182664558198884723122287358611764328074688616985936643633156715672834457769192598828753841328454487819350992/376453820913890074899487004189100025511481553604426544559634764263301689662404540823888964951038360595703125",
+          "exact_encoded_binary64_pi": "884279719003555/281474976710656",
+          "single_use_encoded_CP_parameter_operator_error_upper": "12976642900600785132962003104920136563994522586314721360051898014984302040554347449402968291950185290961377/49864626105588081625577775051392313219507165061240522391526341783694260616840325552668672000000000000000000000000000000000",
+          "single_use_encoded_QFT_operator_error_upper": "12976642900600785132962003104920136563994522586314721360051898014984302040554347449402968291950185290961377/49864626105588081625577775051392313219507165061240522391526341783694260616840325552668672000000000000000000000000000000000",
+          "complete_experiment_ideal_truncation_trace_upper": "0",
+          "complete_experiment_encoded_QFT_trace_upper": "12976642900600785132962003104920136563994522586314721360051898014984302040554347449402968291950185290961377/49864626105588081625577775051392313219507165061240522391526341783694260616840325552668672000000000000000000000000000000000",
+          "ideal_truncation_target_met": true,
+          "encoded_QFT_parameter_target_met": true,
+          "numeric_normal_angle_encoding_supported": true,
+          "external_per_logical_gate_operator_error": null,
+          "complete_experiment_upper_IF_external_gate_bound_holds": null,
+          "arithmetic_preparation_and_hardware_errors_covered": false,
+          "statevector_MPS_roundoff_certified": false,
+          "normalized_rare_branch_accuracy_certified_without_mass_bound": false,
+          "logical_query_budget_proves_efficient_receiver": false
+        },
+        "packet_and_retained_QFT_parameter_operator_upper_per_parent": "142743071906608636462582034154121502203939748449461934960570878164827322446097821943432651211452038200575147/77063513072272489784983834170333574975601982367371716423267982756618402771480503126851584000000000000000000000000000000000",
+        "packet_and_QFT_operator_upper_relative_to_ideal_full_QFT": "142743071906608636462582034154121502203939748449461934960570878164827322446097821943432651211452038200575147/77063513072272489784983834170333574975601982367371716423267982756618402771480503126851584000000000000000000000000000000000",
+        "original_position_wires_reused_in_place": true,
+        "localization_register_is_traced_not_replaced_by_a_preimage": true,
+        "arithmetic_and_packet_workspace_return_zero": true,
+        "mixed_colour_inverse_available": false,
+        "full_parent_inverse_requires_localization_and_label_registers": true,
+        "normalized_conditional_colour_error_not_inferred_without_label_mass": true,
+        "hardware_arithmetic_synthesis_or_roundoff_certified": false
+      },
+      "exact_reference": {
+        "public_source": {
+          "source_type": "PUBLIC_SINE_WINDOW_LATTICE_INSTRUMENT",
+          "basis_rows": [
+            [
+              17,
+              0
+            ],
+            [
+              16,
+              1
+            ]
+          ],
+          "prime": 7,
+          "split_prime_certificate": {
+            "prime": 7,
+            "witness": 3,
+            "factors": [
+              {
+                "prime": 2,
+                "exponent": 1,
+                "certificate": {
+                  "prime": 2,
+                  "witness": 1,
+                  "factors": [],
+                  "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                }
+              },
+              {
+                "prime": 3,
+                "exponent": 1,
+                "certificate": {
+                  "prime": 3,
+                  "witness": 2,
+                  "factors": [
+                    {
+                      "prime": 2,
+                      "exponent": 1,
+                      "certificate": {
+                        "prime": 2,
+                        "witness": 1,
+                        "factors": [],
+                        "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                      }
+                    }
+                  ],
+                  "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                }
+              }
+            ],
+            "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+          },
+          "residue": 1,
+          "coordinate": 0,
+          "box": 2,
+          "packet_side": 4,
+          "input_population": 8,
+          "phase_modulus": 16,
+          "hidden_short_vector_or_shift_given": false,
+          "receiver_gets_localization_register": false,
+          "uniform_secret_prior_inferred": false
+        },
+        "reference_root": 16,
+        "complete_parent_count": 8,
+        "QFT_cutoff": 3,
+        "QFT_is_exact": true,
+        "parents": [
+          [
+            0,
+            [
+              0,
+              0
+            ]
+          ],
+          [
+            0,
+            [
+              0,
+              1
+            ]
+          ],
+          [
+            0,
+            [
+              1,
+              0
+            ]
+          ],
+          [
+            0,
+            [
+              1,
+              1
+            ]
+          ],
+          [
+            1,
+            [
+              0,
+              0
+            ]
+          ],
+          [
+            1,
+            [
+              0,
+              1
+            ]
+          ],
+          [
+            1,
+            [
+              1,
+              0
+            ]
+          ],
+          [
+            1,
+            [
+              1,
+              1
+            ]
+          ]
+        ],
+        "public_points": [
+          [
+            0,
+            0
+          ],
+          [
+            16,
+            1
+          ],
+          [
+            119,
+            0
+          ],
+          [
+            135,
+            1
+          ],
+          [
+            17,
+            0
+          ],
+          [
+            33,
+            1
+          ],
+          [
+            136,
+            0
+          ],
+          [
+            152,
+            1
+          ]
+        ],
+        "complete_public_Gram": [
+          [
+            [
+              "1/8"
+            ],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            []
+          ],
+          [
+            [],
+            [
+              "1/8"
+            ],
+            [],
+            [],
+            [
+              "1/16"
+            ],
+            [],
+            [],
+            []
+          ],
+          [
+            [],
+            [],
+            [
+              "1/8"
+            ],
+            [],
+            [],
+            [],
+            [],
+            []
+          ],
+          [
+            [],
+            [],
+            [],
+            [
+              "1/8"
+            ],
+            [],
+            [],
+            [
+              "1/16"
+            ],
+            []
+          ],
+          [
+            [],
+            [
+              "1/16"
+            ],
+            [],
+            [],
+            [
+              "1/8"
+            ],
+            [],
+            [],
+            []
+          ],
+          [
+            [],
+            [],
+            [],
+            [],
+            [],
+            [
+              "1/8"
+            ],
+            [],
+            []
+          ],
+          [
+            [],
+            [],
+            [],
+            [
+              "1/16"
+            ],
+            [],
+            [],
+            [
+              "1/8"
+            ],
+            []
+          ],
+          [
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [
+              "1/8"
+            ]
+          ]
+        ],
+        "all_label_outcomes": [
+          {
+            "label": 0,
+            "joint_label_probability": [
+              "1/16"
+            ],
+            "unnormalized_colour_density": [
+              [
+                [
+                  "1/32"
+                ],
+                [
+                  "1/128"
+                ]
+              ],
+              [
+                [
+                  "1/128"
+                ],
+                [
+                  "1/32"
+                ]
+              ]
+            ]
+          },
+          {
+            "label": 1,
+            "joint_label_probability": [
+              "1/16"
+            ],
+            "unnormalized_colour_density": [
+              [
+                [
+                  "1/32"
+                ],
+                [
+                  "1/128",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              ],
+              [
+                [
+                  "-1/128",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                [
+                  "1/32"
+                ]
+              ]
+            ]
+          },
+          {
+            "label": 2,
+            "joint_label_probability": [
+              "1/16"
+            ],
+            "unnormalized_colour_density": [
+              [
+                [
+                  "1/32"
+                ],
+                [
+                  "-1/128"
+                ]
+              ],
+              [
+                [
+                  "-1/128"
+                ],
+                [
+                  "1/32"
+                ]
+              ]
+            ]
+          },
+          {
+            "label": 3,
+            "joint_label_probability": [
+              "1/16"
+            ],
+            "unnormalized_colour_density": [
+              [
+                [
+                  "1/32"
+                ],
+                [
+                  "-1/128",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              ],
+              [
+                [
+                  "1/128",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                [
+                  "1/32"
+                ]
+              ]
+            ]
+          },
+          {
+            "label": 4,
+            "joint_label_probability": [
+              "1/16"
+            ],
+            "unnormalized_colour_density": [
+              [
+                [
+                  "1/32"
+                ],
+                [
+                  "1/128"
+                ]
+              ],
+              [
+                [
+                  "1/128"
+                ],
+                [
+                  "1/32"
+                ]
+              ]
+            ]
+          },
+          {
+            "label": 5,
+            "joint_label_probability": [
+              "1/16"
+            ],
+            "unnormalized_colour_density": [
+              [
+                [
+                  "1/32"
+                ],
+                [
+                  "1/128",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              ],
+              [
+                [
+                  "-1/128",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                [
+                  "1/32"
+                ]
+              ]
+            ]
+          },
+          {
+            "label": 6,
+            "joint_label_probability": [
+              "1/16"
+            ],
+            "unnormalized_colour_density": [
+              [
+                [
+                  "1/32"
+                ],
+                [
+                  "-1/128"
+                ]
+              ],
+              [
+                [
+                  "-1/128"
+                ],
+                [
+                  "1/32"
+                ]
+              ]
+            ]
+          },
+          {
+            "label": 7,
+            "joint_label_probability": [
+              "1/16"
+            ],
+            "unnormalized_colour_density": [
+              [
+                [
+                  "1/32"
+                ],
+                [
+                  "-1/128",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              ],
+              [
+                [
+                  "1/128",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                [
+                  "1/32"
+                ]
+              ]
+            ]
+          },
+          {
+            "label": 8,
+            "joint_label_probability": [
+              "1/16"
+            ],
+            "unnormalized_colour_density": [
+              [
+                [
+                  "1/32"
+                ],
+                [
+                  "1/128"
+                ]
+              ],
+              [
+                [
+                  "1/128"
+                ],
+                [
+                  "1/32"
+                ]
+              ]
+            ]
+          },
+          {
+            "label": 9,
+            "joint_label_probability": [
+              "1/16"
+            ],
+            "unnormalized_colour_density": [
+              [
+                [
+                  "1/32"
+                ],
+                [
+                  "1/128",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              ],
+              [
+                [
+                  "-1/128",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                [
+                  "1/32"
+                ]
+              ]
+            ]
+          },
+          {
+            "label": 10,
+            "joint_label_probability": [
+              "1/16"
+            ],
+            "unnormalized_colour_density": [
+              [
+                [
+                  "1/32"
+                ],
+                [
+                  "-1/128"
+                ]
+              ],
+              [
+                [
+                  "-1/128"
+                ],
+                [
+                  "1/32"
+                ]
+              ]
+            ]
+          },
+          {
+            "label": 11,
+            "joint_label_probability": [
+              "1/16"
+            ],
+            "unnormalized_colour_density": [
+              [
+                [
+                  "1/32"
+                ],
+                [
+                  "-1/128",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              ],
+              [
+                [
+                  "1/128",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                [
+                  "1/32"
+                ]
+              ]
+            ]
+          },
+          {
+            "label": 12,
+            "joint_label_probability": [
+              "1/16"
+            ],
+            "unnormalized_colour_density": [
+              [
+                [
+                  "1/32"
+                ],
+                [
+                  "1/128"
+                ]
+              ],
+              [
+                [
+                  "1/128"
+                ],
+                [
+                  "1/32"
+                ]
+              ]
+            ]
+          },
+          {
+            "label": 13,
+            "joint_label_probability": [
+              "1/16"
+            ],
+            "unnormalized_colour_density": [
+              [
+                [
+                  "1/32"
+                ],
+                [
+                  "1/128",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              ],
+              [
+                [
+                  "-1/128",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                [
+                  "1/32"
+                ]
+              ]
+            ]
+          },
+          {
+            "label": 14,
+            "joint_label_probability": [
+              "1/16"
+            ],
+            "unnormalized_colour_density": [
+              [
+                [
+                  "1/32"
+                ],
+                [
+                  "-1/128"
+                ]
+              ],
+              [
+                [
+                  "-1/128"
+                ],
+                [
+                  "1/32"
+                ]
+              ]
+            ]
+          },
+          {
+            "label": 15,
+            "joint_label_probability": [
+              "1/16"
+            ],
+            "unnormalized_colour_density": [
+              [
+                [
+                  "1/32"
+                ],
+                [
+                  "-1/128",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              ],
+              [
+                [
+                  "1/128",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                [
+                  "1/32"
+                ]
+              ]
+            ]
+          }
+        ],
+        "label_distribution_uniform": true,
+        "dense_reference_is_not_a_polynomial_preimage_or_receiver_oracle": true
+      },
+      "private_template_audit": {
+        "status": "FINITE_PRIVATE_TEMPLATE_MATCH",
+        "PRIVATE_AUDIT_ONLY_vector": [
+          1,
+          -1
+        ],
+        "PRIVATE_AUDIT_ONLY_basis_coefficients": [
+          1,
+          -1
+        ],
+        "PRIVATE_AUDIT_ONLY_parent_shift": [
+          0,
+          -1
+        ],
+        "PRIVATE_AUDIT_ONLY_cyclic_shift": 12,
+        "exact_marginal_visibility": [
+          "1/4"
+        ],
+        "box_overlap": "1/2",
+        "finite_marginal_template_matches": true,
+        "correct_trial_flag_given_to_receiver": false,
+        "conservative_private_bad_rate_upper": "1",
+        "full_growing_reduction_certified": false
+      },
+      "actual_sampling_audit": {
+        "all_emitted_conditional_densities_agree": true,
+        "private_max_numerical_error": 9.363467911426038e-11,
+        "metadata": {
+          "actual_compiled_source_preparations_charged": 8,
+          "QFT_cutoff": 3,
+          "logical_readout_QFT_is_exact_reference": true,
+          "QFT_usage_ledger": null,
+          "packet_unitaries_charged": 16,
+          "W_calls_charged": 48,
+          "source_shots_independent_given_public_parameters": true,
+          "public_source_fingerprint": "cf8feed6013172af0b344d6bc89cce12117c3b3fb420194021895f9912879cec",
+          "localization_register_was_unmeasured_and_traced": true,
+          "source_DCP_promise_is_not_inferred_from_samples": true,
+          "numerical_error_is_a_formally_certified_channel_bound": false,
+          "MPS_truncation_threshold": 0.0,
+          "conditioned_snapshot_keys_and_multiplicities_checked": true
+        },
+        "public_receipts": [
+          {
+            "id": "sine-control-2:0",
+            "modulus": 16,
+            "label": 6,
+            "measured_cells": [],
+            "original_source_receipts": [
+              "sine-control-2:0"
+            ],
+            "merge_depth": 0
+          },
+          {
+            "id": "sine-control-2:1",
+            "modulus": 16,
+            "label": 11,
+            "measured_cells": [],
+            "original_source_receipts": [
+              "sine-control-2:1"
+            ],
+            "merge_depth": 0
+          },
+          {
+            "id": "sine-control-2:2",
+            "modulus": 16,
+            "label": 5,
+            "measured_cells": [],
+            "original_source_receipts": [
+              "sine-control-2:2"
+            ],
+            "merge_depth": 0
+          },
+          {
+            "id": "sine-control-2:3",
+            "modulus": 16,
+            "label": 0,
+            "measured_cells": [],
+            "original_source_receipts": [
+              "sine-control-2:3"
+            ],
+            "merge_depth": 0
+          },
+          {
+            "id": "sine-control-2:4",
+            "modulus": 16,
+            "label": 11,
+            "measured_cells": [],
+            "original_source_receipts": [
+              "sine-control-2:4"
+            ],
+            "merge_depth": 0
+          },
+          {
+            "id": "sine-control-2:5",
+            "modulus": 16,
+            "label": 12,
+            "measured_cells": [],
+            "original_source_receipts": [
+              "sine-control-2:5"
+            ],
+            "merge_depth": 0
+          },
+          {
+            "id": "sine-control-2:6",
+            "modulus": 16,
+            "label": 3,
+            "measured_cells": [],
+            "original_source_receipts": [
+              "sine-control-2:6"
+            ],
+            "merge_depth": 0
+          },
+          {
+            "id": "sine-control-2:7",
+            "modulus": 16,
+            "label": 3,
+            "measured_cells": [],
+            "original_source_receipts": [
+              "sine-control-2:7"
+            ],
+            "merge_depth": 0
+          }
+        ],
+        "PRIVATE_AUDIT_ONLY_density_matrices": {
+          "sine-control-2:0": [
+            [
+              [
+                0.49999999996241645,
+                0.0
+              ],
+              [
+                -0.1250000000936192,
+                1.7027401091936276e-12
+              ]
+            ],
+            [
+              [
+                -0.1250000000936192,
+                -1.7027401091936276e-12
+              ],
+              [
+                0.5000000000375836,
+                0.0
+              ]
+            ]
+          ],
+          "sine-control-2:1": [
+            [
+              [
+                0.49999999997023675,
+                0.0
+              ],
+              [
+                3.3703740911943213e-12,
+                -0.12500000005148457
+              ]
+            ],
+            [
+              [
+                3.3703740911943213e-12,
+                0.12500000005148457
+              ],
+              [
+                0.5000000000297633,
+                0.0
+              ]
+            ]
+          ],
+          "sine-control-2:2": [
+            [
+              [
+                0.500000000001404,
+                0.0
+              ],
+              [
+                4.512793069111202e-12,
+                0.12500000004605535
+              ]
+            ],
+            [
+              [
+                4.512793069111202e-12,
+                -0.12500000004605535
+              ],
+              [
+                0.49999999999859607,
+                0.0
+              ]
+            ]
+          ],
+          "sine-control-2:3": [
+            [
+              [
+                0.5000000000118611,
+                0.0
+              ],
+              [
+                0.1250000000426433,
+                -1.2029203664896657e-11
+              ]
+            ],
+            [
+              [
+                0.1250000000426433,
+                1.2029203664896657e-11
+              ],
+              [
+                0.4999999999881388,
+                0.0
+              ]
+            ]
+          ],
+          "sine-control-2:4": [
+            [
+              [
+                0.49999999997023675,
+                0.0
+              ],
+              [
+                3.3703740911943213e-12,
+                -0.12500000005148457
+              ]
+            ],
+            [
+              [
+                3.3703740911943213e-12,
+                0.12500000005148457
+              ],
+              [
+                0.5000000000297633,
+                0.0
+              ]
+            ]
+          ],
+          "sine-control-2:5": [
+            [
+              [
+                0.5000000000151793,
+                0.0
+              ],
+              [
+                0.12500000003528688,
+                -1.1846615646744662e-11
+              ]
+            ],
+            [
+              [
+                0.12500000003528688,
+                1.1846615646744662e-11
+              ],
+              [
+                0.4999999999848207,
+                0.0
+              ]
+            ]
+          ],
+          "sine-control-2:6": [
+            [
+              [
+                0.49999999996292566,
+                0.0
+              ],
+              [
+                -1.916534429590418e-12,
+                -0.1250000000577645
+              ]
+            ],
+            [
+              [
+                -1.916534429590418e-12,
+                0.1250000000577645
+              ],
+              [
+                0.5000000000370745,
+                0.0
+              ]
+            ]
+          ],
+          "sine-control-2:7": [
+            [
+              [
+                0.49999999996292566,
+                0.0
+              ],
+              [
+                -1.916534429590418e-12,
+                -0.1250000000577645
+              ]
+            ],
+            [
+              [
+                -1.916534429590418e-12,
+                0.1250000000577645
+              ],
+              [
+                0.5000000000370745,
+                0.0
+              ]
+            ]
+          ]
+        },
+        "speedup_or_hardware_channel_certificate": false
+      }
+    },
+    {
+      "compiled_resources": {
+        "public_source": {
+          "source_type": "PUBLIC_SINE_WINDOW_LATTICE_INSTRUMENT",
+          "basis_rows": [
+            [
+              1
+            ]
+          ],
+          "prime": 3,
+          "split_prime_certificate": {
+            "prime": 3,
+            "witness": 2,
+            "factors": [
+              {
+                "prime": 2,
+                "exponent": 1,
+                "certificate": {
+                  "prime": 2,
+                  "witness": 1,
+                  "factors": [],
+                  "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                }
+              }
+            ],
+            "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+          },
+          "residue": 1,
+          "coordinate": 0,
+          "box": 2,
+          "packet_side": 4,
+          "input_population": 4,
+          "phase_modulus": 4,
+          "hidden_short_vector_or_shift_given": false,
+          "receiver_gets_localization_register": false,
+          "uniform_secret_prior_inferred": false
+        },
+        "closed_resources": {
+          "arithmetic_width_plan": {
+            "point_absolute_bounds": [
+              4
+            ],
+            "localization_absolute_bounds": [
+              7
+            ],
+            "shared_signed_word_bits": 4,
+            "localization_coordinates_share_word_width": true,
+            "all_signed_localization_values_in_range": true,
+            "copied_point_or_original_noise_garbage_retained": false
+          },
+          "input_qubits": 2,
+          "localization_output_qubits": 4,
+          "shared_point_arithmetic_work_qubits": 9,
+          "shared_packet_work_qubits": 2,
+          "zero_padding_qubits": 1,
+          "position_QFT_qubits": 2,
+          "total_source_qubits": 18,
+          "constant_additions_including_uncompute": 4,
+          "point_to_localization_additions": 1,
+          "arithmetic_logical_instructions": 17,
+          "packet_unitary_applications": 1,
+          "packet_plan": {
+            "packet_bits": 2,
+            "packet_side": 4,
+            "logical_qubits": 4,
+            "clean_AND_work_qubits": 1,
+            "known_flag_qubits": 1,
+            "W_forward_uses": 2,
+            "W_inverse_uses": 1,
+            "known_zero_reflections": 1,
+            "H_gates": 12,
+            "X_gates": 7,
+            "CCX_gates": 2,
+            "CP_gates": 7,
+            "P_gates": 3,
+            "logical_instructions": 31,
+            "global_phase_pi_coefficient": "-1/4",
+            "retained_absolute_pi_weight": "13/2",
+            "encoded_binary64_pi": "884279719003555/281474976710656",
+            "Machin_terms": 16,
+            "pi_lower": "2702199289155139770778723466138548690954453271354857406274868882229427215106701002516071935610699965630953755124/860136748176892598733343886651423302289653512937537946071635894779362232608248391056054462678730487823486328125",
+            "pi_upper": "1182664558198884723122287358611764328074688616985936643633156715672834457769192598828753841328454487819350992/376453820913890074899487004189100025511481553604426544559634764263301689662404540823888964951038360595703125",
+            "numeric_normal_angles_supported": true,
+            "encoded_rotation_operator_error_upper": "12976642900600785132962003104920136563994522586314721360051898014984302040554347449402968291950185290961377/16301896996057642069900426459109025475608111654636324627998996352361585201659337199910912000000000000000000000000000000000",
+            "known_zero_parent_success_probability": "1",
+            "postselection_used": false,
+            "flag_clear_for_arbitrary_input_claimed": false,
+            "hardware_synthesis_or_simulator_roundoff_certified": false
+          },
+          "coherent_source_instructions_before_QFT": 20,
+          "no_preimages_or_private_shift_needed": true
+        },
+        "compiled_qubits": 18,
+        "compiled_parent_instructions": 21,
+        "encoded_packet_parameter_operator_upper_per_parent": "12976642900600785132962003104920136563994522586314721360051898014984302040554347449402968291950185290961377/16301896996057642069900426459109025475608111654636324627998996352361585201659337199910912000000000000000000000000000000000",
+        "QFT_precision_plan": null,
+        "QFT_angle_accounting_plan": {
+          "QFT_wires": 2,
+          "retained_maximum_separation": 1,
+          "qiskit_approximation_degree": 0,
+          "query_usage": {
+            "direct_forward_calls": 1,
+            "direct_inverse_calls": 0,
+            "phase_parent_reflections": 0,
+            "total_approximate_QFT_or_inverse_calls": 1,
+            "receiver_usage_bound_is_external_not_proved_here": true
+          },
+          "target_complete_experiment_trace_error": "1/100",
+          "logical_controlled_phases_retained": 1,
+          "logical_controlled_phases_omitted": 0,
+          "logical_H_gates": 2,
+          "logical_swaps": 1,
+          "exact_ideal_QFT_selected": true,
+          "retained_dyadic_angle_weight": "1/2",
+          "omitted_weight_symbolic": {
+            "coefficient_at_2_pow_minus_cutoff": -1,
+            "cutoff_exponent": 1,
+            "unit_term_exponent": 1
+          },
+          "single_use_ideal_truncation_operator_upper": "0",
+          "truncation_bound_method": "EXACT_FINITE_TAIL_MACHIN_PI_UPPER",
+          "Machin_terms": 16,
+          "pi_rational_lower": "2702199289155139770778723466138548690954453271354857406274868882229427215106701002516071935610699965630953755124/860136748176892598733343886651423302289653512937537946071635894779362232608248391056054462678730487823486328125",
+          "pi_rational_upper": "1182664558198884723122287358611764328074688616985936643633156715672834457769192598828753841328454487819350992/376453820913890074899487004189100025511481553604426544559634764263301689662404540823888964951038360595703125",
+          "exact_encoded_binary64_pi": "884279719003555/281474976710656",
+          "single_use_encoded_CP_parameter_operator_error_upper": "12976642900600785132962003104920136563994522586314721360051898014984302040554347449402968291950185290961377/211924660948749346908705543968417331182905451510272220163986952580700607621571383598841856000000000000000000000000000000000",
+          "single_use_encoded_QFT_operator_error_upper": "12976642900600785132962003104920136563994522586314721360051898014984302040554347449402968291950185290961377/211924660948749346908705543968417331182905451510272220163986952580700607621571383598841856000000000000000000000000000000000",
+          "complete_experiment_ideal_truncation_trace_upper": "0",
+          "complete_experiment_encoded_QFT_trace_upper": "12976642900600785132962003104920136563994522586314721360051898014984302040554347449402968291950185290961377/211924660948749346908705543968417331182905451510272220163986952580700607621571383598841856000000000000000000000000000000000",
+          "ideal_truncation_target_met": true,
+          "encoded_QFT_parameter_target_met": true,
+          "numeric_normal_angle_encoding_supported": true,
+          "external_per_logical_gate_operator_error": null,
+          "complete_experiment_upper_IF_external_gate_bound_holds": null,
+          "arithmetic_preparation_and_hardware_errors_covered": false,
+          "statevector_MPS_roundoff_certified": false,
+          "normalized_rare_branch_accuracy_certified_without_mass_bound": false,
+          "logical_query_budget_proves_efficient_receiver": false
+        },
+        "packet_and_retained_QFT_parameter_operator_upper_per_parent": "12976642900600785132962003104920136563994522586314721360051898014984302040554347449402968291950185290961377/15137475782053524779193253140601237941636103679305158583141925184335757687255098828488704000000000000000000000000000000000",
+        "packet_and_QFT_operator_upper_relative_to_ideal_full_QFT": "12976642900600785132962003104920136563994522586314721360051898014984302040554347449402968291950185290961377/15137475782053524779193253140601237941636103679305158583141925184335757687255098828488704000000000000000000000000000000000",
+        "original_position_wires_reused_in_place": true,
+        "localization_register_is_traced_not_replaced_by_a_preimage": true,
+        "arithmetic_and_packet_workspace_return_zero": true,
+        "mixed_colour_inverse_available": false,
+        "full_parent_inverse_requires_localization_and_label_registers": true,
+        "normalized_conditional_colour_error_not_inferred_without_label_mass": true,
+        "hardware_arithmetic_synthesis_or_roundoff_certified": false
+      },
+      "exact_reference": {
+        "public_source": {
+          "source_type": "PUBLIC_SINE_WINDOW_LATTICE_INSTRUMENT",
+          "basis_rows": [
+            [
+              1
+            ]
+          ],
+          "prime": 3,
+          "split_prime_certificate": {
+            "prime": 3,
+            "witness": 2,
+            "factors": [
+              {
+                "prime": 2,
+                "exponent": 1,
+                "certificate": {
+                  "prime": 2,
+                  "witness": 1,
+                  "factors": [],
+                  "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                }
+              }
+            ],
+            "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+          },
+          "residue": 1,
+          "coordinate": 0,
+          "box": 2,
+          "packet_side": 4,
+          "input_population": 4,
+          "phase_modulus": 4,
+          "hidden_short_vector_or_shift_given": false,
+          "receiver_gets_localization_register": false,
+          "uniform_secret_prior_inferred": false
+        },
+        "reference_root": 8,
+        "complete_parent_count": 4,
+        "QFT_cutoff": 1,
+        "QFT_is_exact": true,
+        "parents": [
+          [
+            0,
+            [
+              0
+            ]
+          ],
+          [
+            0,
+            [
+              1
+            ]
+          ],
+          [
+            1,
+            [
+              0
+            ]
+          ],
+          [
+            1,
+            [
+              1
+            ]
+          ]
+        ],
+        "public_points": [
+          [
+            0
+          ],
+          [
+            3
+          ],
+          [
+            1
+          ],
+          [
+            4
+          ]
+        ],
+        "complete_public_Gram": [
+          [
+            [
+              "1/4"
+            ],
+            [],
+            [
+              "-1/8",
+              "0",
+              "1/8",
+              "0"
+            ],
+            []
+          ],
+          [
+            [],
+            [
+              "1/4"
+            ],
+            [
+              "1/16"
+            ],
+            [
+              "-1/8",
+              "0",
+              "1/8",
+              "0"
+            ]
+          ],
+          [
+            [
+              "-1/8",
+              "0",
+              "1/8",
+              "0"
+            ],
+            [
+              "1/16"
+            ],
+            [
+              "1/4"
+            ],
+            []
+          ],
+          [
+            [],
+            [
+              "-1/8",
+              "0",
+              "1/8",
+              "0"
+            ],
+            [],
+            [
+              "1/4"
+            ]
+          ]
+        ],
+        "all_label_outcomes": [
+          {
+            "label": 0,
+            "joint_label_probability": [
+              "1/4"
+            ],
+            "unnormalized_colour_density": [
+              [
+                [
+                  "1/8"
+                ],
+                [
+                  "-1/16",
+                  "0",
+                  "1/16",
+                  "1/64"
+                ]
+              ],
+              [
+                [
+                  "-1/16",
+                  "0",
+                  "1/16",
+                  "1/64"
+                ],
+                [
+                  "1/8"
+                ]
+              ]
+            ]
+          },
+          {
+            "label": 1,
+            "joint_label_probability": [
+              "1/4"
+            ],
+            "unnormalized_colour_density": [
+              [
+                [
+                  "1/8"
+                ],
+                [
+                  "-1/16",
+                  "1/64",
+                  "1/16",
+                  "0"
+                ]
+              ],
+              [
+                [
+                  "-1/16",
+                  "-1/64",
+                  "1/16",
+                  "0"
+                ],
+                [
+                  "1/8"
+                ]
+              ]
+            ]
+          },
+          {
+            "label": 2,
+            "joint_label_probability": [
+              "1/4"
+            ],
+            "unnormalized_colour_density": [
+              [
+                [
+                  "1/8"
+                ],
+                [
+                  "-1/16",
+                  "0",
+                  "1/16",
+                  "-1/64"
+                ]
+              ],
+              [
+                [
+                  "-1/16",
+                  "0",
+                  "1/16",
+                  "-1/64"
+                ],
+                [
+                  "1/8"
+                ]
+              ]
+            ]
+          },
+          {
+            "label": 3,
+            "joint_label_probability": [
+              "1/4"
+            ],
+            "unnormalized_colour_density": [
+              [
+                [
+                  "1/8"
+                ],
+                [
+                  "-1/16",
+                  "-1/64",
+                  "1/16",
+                  "0"
+                ]
+              ],
+              [
+                [
+                  "-1/16",
+                  "1/64",
+                  "1/16",
+                  "0"
+                ],
+                [
+                  "1/8"
+                ]
+              ]
+            ]
+          }
+        ],
+        "label_distribution_uniform": true,
+        "dense_reference_is_not_a_polynomial_preimage_or_receiver_oracle": true
+      },
+      "private_template_audit": {
+        "status": "ALIASES_OR_MODEL_MISMATCH",
+        "PRIVATE_AUDIT_ONLY_vector": [
+          1
+        ],
+        "PRIVATE_AUDIT_ONLY_basis_coefficients": [
+          1
+        ],
+        "PRIVATE_AUDIT_ONLY_parent_shift": [
+          0
+        ],
+        "PRIVATE_AUDIT_ONLY_cyclic_shift": 0,
+        "exact_marginal_visibility": [
+          "-1/2",
+          "0",
+          "1/2",
+          "0"
+        ],
+        "box_overlap": "1",
+        "finite_marginal_template_matches": false,
+        "correct_trial_flag_given_to_receiver": false,
+        "conservative_private_bad_rate_upper": "121/392",
+        "full_growing_reduction_certified": false
+      },
+      "actual_sampling_audit": {
+        "all_emitted_conditional_densities_agree": true,
+        "private_max_numerical_error": 7.119010982469074e-11,
+        "metadata": {
+          "actual_compiled_source_preparations_charged": 8,
+          "QFT_cutoff": 1,
+          "logical_readout_QFT_is_exact_reference": true,
+          "QFT_usage_ledger": null,
+          "packet_unitaries_charged": 8,
+          "W_calls_charged": 24,
+          "source_shots_independent_given_public_parameters": true,
+          "public_source_fingerprint": "d7ffbda299ebab91394c571c14b1063ad29fea248da5fb970bddcd59cf5309f9",
+          "localization_register_was_unmeasured_and_traced": true,
+          "source_DCP_promise_is_not_inferred_from_samples": true,
+          "numerical_error_is_a_formally_certified_channel_bound": false,
+          "MPS_truncation_threshold": 0.0,
+          "conditioned_snapshot_keys_and_multiplicities_checked": true
+        },
+        "public_receipts": [
+          {
+            "id": "sine-control-3:0",
+            "modulus": 4,
+            "label": 3,
+            "measured_cells": [],
+            "original_source_receipts": [
+              "sine-control-3:0"
+            ],
+            "merge_depth": 0
+          },
+          {
+            "id": "sine-control-3:1",
+            "modulus": 4,
+            "label": 1,
+            "measured_cells": [],
+            "original_source_receipts": [
+              "sine-control-3:1"
+            ],
+            "merge_depth": 0
+          },
+          {
+            "id": "sine-control-3:2",
+            "modulus": 4,
+            "label": 0,
+            "measured_cells": [],
+            "original_source_receipts": [
+              "sine-control-3:2"
+            ],
+            "merge_depth": 0
+          },
+          {
+            "id": "sine-control-3:3",
+            "modulus": 4,
+            "label": 3,
+            "measured_cells": [],
+            "original_source_receipts": [
+              "sine-control-3:3"
+            ],
+            "merge_depth": 0
+          },
+          {
+            "id": "sine-control-3:4",
+            "modulus": 4,
+            "label": 0,
+            "measured_cells": [],
+            "original_source_receipts": [
+              "sine-control-3:4"
+            ],
+            "merge_depth": 0
+          },
+          {
+            "id": "sine-control-3:5",
+            "modulus": 4,
+            "label": 3,
+            "measured_cells": [],
+            "original_source_receipts": [
+              "sine-control-3:5"
+            ],
+            "merge_depth": 0
+          },
+          {
+            "id": "sine-control-3:6",
+            "modulus": 4,
+            "label": 3,
+            "measured_cells": [],
+            "original_source_receipts": [
+              "sine-control-3:6"
+            ],
+            "merge_depth": 0
+          },
+          {
+            "id": "sine-control-3:7",
+            "modulus": 4,
+            "label": 3,
+            "measured_cells": [],
+            "original_source_receipts": [
+              "sine-control-3:7"
+            ],
+            "merge_depth": 0
+          }
+        ],
+        "PRIVATE_AUDIT_ONLY_density_matrices": {
+          "sine-control-3:0": [
+            [
+              [
+                0.4999999999875591,
+                0.0
+              ],
+              [
+                0.3535533905540945,
+                -0.062499999988779205
+              ]
+            ],
+            [
+              [
+                0.3535533905540945,
+                0.062499999988779205
+              ],
+              [
+                0.5000000000124409,
+                0.0
+              ]
+            ]
+          ],
+          "sine-control-3:1": [
+            [
+              [
+                0.5000000000010468,
+                0.0
+              ],
+              [
+                0.35355339058922736,
+                0.06249999992892501
+              ]
+            ],
+            [
+              [
+                0.35355339058922736,
+                -0.06249999992892501
+              ],
+              [
+                0.4999999999989532,
+                0.0
+              ]
+            ]
+          ],
+          "sine-control-3:2": [
+            [
+              [
+                0.5000000000089718,
+                0.0
+              ],
+              [
+                0.41605339061264873,
+                -4.2097339043459866e-11
+              ]
+            ],
+            [
+              [
+                0.41605339061264873,
+                4.2097339043459866e-11
+              ],
+              [
+                0.4999999999910281,
+                0.0
+              ]
+            ]
+          ],
+          "sine-control-3:3": [
+            [
+              [
+                0.4999999999875591,
+                0.0
+              ],
+              [
+                0.3535533905540945,
+                -0.062499999988779205
+              ]
+            ],
+            [
+              [
+                0.3535533905540945,
+                0.062499999988779205
+              ],
+              [
+                0.5000000000124409,
+                0.0
+              ]
+            ]
+          ],
+          "sine-control-3:4": [
+            [
+              [
+                0.5000000000089718,
+                0.0
+              ],
+              [
+                0.41605339061264873,
+                -4.2097339043459866e-11
+              ]
+            ],
+            [
+              [
+                0.41605339061264873,
+                4.2097339043459866e-11
+              ],
+              [
+                0.4999999999910281,
+                0.0
+              ]
+            ]
+          ],
+          "sine-control-3:5": [
+            [
+              [
+                0.4999999999875591,
+                0.0
+              ],
+              [
+                0.3535533905540945,
+                -0.062499999988779205
+              ]
+            ],
+            [
+              [
+                0.3535533905540945,
+                0.062499999988779205
+              ],
+              [
+                0.5000000000124409,
+                0.0
+              ]
+            ]
+          ],
+          "sine-control-3:6": [
+            [
+              [
+                0.4999999999875591,
+                0.0
+              ],
+              [
+                0.3535533905540945,
+                -0.062499999988779205
+              ]
+            ],
+            [
+              [
+                0.3535533905540945,
+                0.062499999988779205
+              ],
+              [
+                0.5000000000124409,
+                0.0
+              ]
+            ]
+          ],
+          "sine-control-3:7": [
+            [
+              [
+                0.4999999999875591,
+                0.0
+              ],
+              [
+                0.3535533905540945,
+                -0.062499999988779205
+              ]
+            ],
+            [
+              [
+                0.3535533905540945,
+                0.062499999988779205
+              ],
+              [
+                0.5000000000124409,
+                0.0
+              ]
+            ]
+          ]
+        },
+        "speedup_or_hardware_channel_certificate": false
+      }
+    }
+  ],
+  "large_compiled_not_simulated": {
+    "public_source": {
+      "source_type": "PUBLIC_SINE_WINDOW_LATTICE_INSTRUMENT",
+      "basis_rows": [
+        [
+          10000,
+          1000
+        ],
+        [
+          9999,
+          1000
+        ]
+      ],
+      "prime": 389,
+      "split_prime_certificate": {
+        "prime": 389,
+        "witness": 2,
+        "factors": [
+          {
+            "prime": 2,
+            "exponent": 2,
+            "certificate": {
+              "prime": 2,
+              "witness": 1,
+              "factors": [],
+              "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+            }
+          },
+          {
+            "prime": 97,
+            "exponent": 1,
+            "certificate": {
+              "prime": 97,
+              "witness": 5,
+              "factors": [
+                {
+                  "prime": 2,
+                  "exponent": 5,
+                  "certificate": {
+                    "prime": 2,
+                    "witness": 1,
+                    "factors": [],
+                    "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                  }
+                },
+                {
+                  "prime": 3,
+                  "exponent": 1,
+                  "certificate": {
+                    "prime": 3,
+                    "witness": 2,
+                    "factors": [
+                      {
+                        "prime": 2,
+                        "exponent": 1,
+                        "certificate": {
+                          "prime": 2,
+                          "witness": 1,
+                          "factors": [],
+                          "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                        }
+                      }
+                    ],
+                    "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                  }
+                }
+              ],
+              "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+            }
+          }
+        ],
+        "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+      },
+      "residue": 1,
+      "coordinate": 0,
+      "box": 256,
+      "packet_side": 128,
+      "input_population": 131072,
+      "phase_modulus": 262144,
+      "hidden_short_vector_or_shift_given": false,
+      "receiver_gets_localization_register": false,
+      "uniform_secret_prior_inferred": false
+    },
+    "closed_resources": {
+      "arithmetic_width_plan": {
+        "point_absolute_bounds": [
+          994509745,
+          99451000
+        ],
+        "localization_absolute_bounds": [
+          994509872,
+          99451127
+        ],
+        "shared_signed_word_bits": 31,
+        "localization_coordinates_share_word_width": true,
+        "all_signed_localization_values_in_range": true,
+        "copied_point_or_original_noise_garbage_retained": false
+      },
+      "input_qubits": 17,
+      "localization_output_qubits": 62,
+      "shared_point_arithmetic_work_qubits": 63,
+      "shared_packet_work_qubits": 7,
+      "zero_padding_qubits": 2,
+      "position_QFT_qubits": 18,
+      "total_source_qubits": 151,
+      "constant_additions_including_uncompute": 68,
+      "point_to_localization_additions": 2,
+      "arithmetic_logical_instructions": 1298,
+      "packet_unitary_applications": 2,
+      "packet_plan": {
+        "packet_bits": 7,
+        "packet_side": 128,
+        "logical_qubits": 14,
+        "clean_AND_work_qubits": 6,
+        "known_flag_qubits": 1,
+        "W_forward_uses": 2,
+        "W_inverse_uses": 1,
+        "known_zero_reflections": 1,
+        "H_gates": 27,
+        "X_gates": 17,
+        "CCX_gates": 12,
+        "CP_gates": 22,
+        "P_gates": 8,
+        "logical_instructions": 86,
+        "global_phase_pi_coefficient": "-1/4",
+        "retained_absolute_pi_weight": "1049/128",
+        "encoded_binary64_pi": "884279719003555/281474976710656",
+        "Machin_terms": 16,
+        "pi_lower": "2702199289155139770778723466138548690954453271354857406274868882229427215106701002516071935610699965630953755124/860136748176892598733343886651423302289653512937537946071635894779362232608248391056054462678730487823486328125",
+        "pi_upper": "1182664558198884723122287358611764328074688616985936643633156715672834457769192598828753841328454487819350992/376453820913890074899487004189100025511481553604426544559634764263301689662404540823888964951038360595703125",
+        "numeric_normal_angles_supported": true,
+        "encoded_rotation_operator_error_upper": "13612498402730223604477141257061223255630254193044142706694441017718532840541510474423713738255744370218484473/13563178300719958202157154813978709195705948896657422090495164965164838887780568550325878784000000000000000000000000000000000",
+        "known_zero_parent_success_probability": "1",
+        "postselection_used": false,
+        "flag_clear_for_arbitrary_input_claimed": false,
+        "hardware_synthesis_or_simulator_roundoff_certified": false
+      },
+      "coherent_source_instructions_before_QFT": 1317,
+      "no_preimages_or_private_shift_needed": true
+    },
+    "compiled_qubits": 151,
+    "compiled_parent_instructions": 1318,
+    "encoded_packet_parameter_operator_upper_per_parent": "13612498402730223604477141257061223255630254193044142706694441017718532840541510474423713738255744370218484473/6781589150359979101078577406989354597852974448328711045247582482582419443890284275162939392000000000000000000000000000000000",
+    "QFT_precision_plan": null,
+    "QFT_angle_accounting_plan": {
+      "QFT_wires": 18,
+      "retained_maximum_separation": 17,
+      "qiskit_approximation_degree": 0,
+      "query_usage": {
+        "direct_forward_calls": 1,
+        "direct_inverse_calls": 0,
+        "phase_parent_reflections": 0,
+        "total_approximate_QFT_or_inverse_calls": 1,
+        "receiver_usage_bound_is_external_not_proved_here": true
+      },
+      "target_complete_experiment_trace_error": "1/100",
+      "logical_controlled_phases_retained": 153,
+      "logical_controlled_phases_omitted": 0,
+      "logical_H_gates": 18,
+      "logical_swaps": 9,
+      "exact_ideal_QFT_selected": true,
+      "retained_dyadic_angle_weight": "2097153/131072",
+      "omitted_weight_symbolic": {
+        "coefficient_at_2_pow_minus_cutoff": -1,
+        "cutoff_exponent": 17,
+        "unit_term_exponent": 17
+      },
+      "single_use_ideal_truncation_operator_upper": "0",
+      "truncation_bound_method": "EXACT_FINITE_TAIL_MACHIN_PI_UPPER",
+      "Machin_terms": 16,
+      "pi_rational_lower": "2702199289155139770778723466138548690954453271354857406274868882229427215106701002516071935610699965630953755124/860136748176892598733343886651423302289653512937537946071635894779362232608248391056054462678730487823486328125",
+      "pi_rational_upper": "1182664558198884723122287358611764328074688616985936643633156715672834457769192598828753841328454487819350992/376453820913890074899487004189100025511481553604426544559634764263301689662404540823888964951038360595703125",
+      "exact_encoded_binary64_pi": "884279719003555/281474976710656",
+      "single_use_encoded_CP_parameter_operator_error_upper": "3023778398769293149327407077499175461732311669495297427155213119757597108583852379617531462485356325943947184409/1543188286659693022112102947723799801822543518908577802296338769369866113454144688392633319424000000000000000000000000000000000",
+      "single_use_encoded_QFT_operator_error_upper": "3023778398769293149327407077499175461732311669495297427155213119757597108583852379617531462485356325943947184409/1543188286659693022112102947723799801822543518908577802296338769369866113454144688392633319424000000000000000000000000000000000",
+      "complete_experiment_ideal_truncation_trace_upper": "0",
+      "complete_experiment_encoded_QFT_trace_upper": "3023778398769293149327407077499175461732311669495297427155213119757597108583852379617531462485356325943947184409/1543188286659693022112102947723799801822543518908577802296338769369866113454144688392633319424000000000000000000000000000000000",
+      "ideal_truncation_target_met": true,
+      "encoded_QFT_parameter_target_met": true,
+      "numeric_normal_angle_encoding_supported": true,
+      "external_per_logical_gate_operator_error": null,
+      "complete_experiment_upper_IF_external_gate_bound_holds": null,
+      "arithmetic_preparation_and_hardware_errors_covered": false,
+      "statevector_MPS_roundoff_certified": false,
+      "normalized_rare_branch_accuracy_certified_without_mass_bound": false,
+      "logical_query_budget_proves_efficient_receiver": false
+    },
+    "packet_and_retained_QFT_parameter_operator_upper_per_parent": "1001680042140275205198469981671890261511301192960219656503766059674653258812430633966864525423926752794599652007/252521719635222494527435027809349058480052575821403640375764525896887182201587312646067270451200000000000000000000000000000000",
+    "packet_and_QFT_operator_upper_relative_to_ideal_full_QFT": "1001680042140275205198469981671890261511301192960219656503766059674653258812430633966864525423926752794599652007/252521719635222494527435027809349058480052575821403640375764525896887182201587312646067270451200000000000000000000000000000000",
+    "original_position_wires_reused_in_place": true,
+    "localization_register_is_traced_not_replaced_by_a_preimage": true,
+    "arithmetic_and_packet_workspace_return_zero": true,
+    "mixed_colour_inverse_available": false,
+    "full_parent_inverse_requires_localization_and_label_registers": true,
+    "normalized_conditional_colour_error_not_inferred_without_label_mass": true,
+    "hardware_arithmetic_synthesis_or_roundoff_certified": false
+  },
+  "public_conditional_promise_budget": {
+    "norm_squared_lower": 1,
+    "norm_squared_upper": 1,
+    "promised_unique_gap": 512,
+    "nonparallel_aliases_excluded_IF_promises_hold": true,
+    "parallel_cross_colour_aliases_excluded_IF_promises_hold": true,
+    "public_basis_coefficient_bounds": [
+      11,
+      11
+    ],
+    "public_parent_shift_bounds": [
+      0,
+      11
+    ],
+    "packet_visibility_loss_upper": "121/401408",
+    "box_boundary_loss_upper": "11/256",
+    "bad_rate_upper_IF_correct_trial_and_promises_hold": "17369/401408",
+    "short_vector_norm_gap_and_correct_trial_are_unverified_assumptions": true,
+    "outer_length_coordinate_residue_trials_are_not_free": true,
+    "efficient_robust_receiver_supplied": false
+  },
+  "approximate_instrument_control": {
+    "compiled_resources": {
+      "public_source": {
+        "source_type": "PUBLIC_SINE_WINDOW_LATTICE_INSTRUMENT",
+        "basis_rows": [
+          [
+            17,
+            0
+          ],
+          [
+            16,
+            1
+          ]
+        ],
+        "prime": 7,
+        "split_prime_certificate": {
+          "prime": 7,
+          "witness": 3,
+          "factors": [
+            {
+              "prime": 2,
+              "exponent": 1,
+              "certificate": {
+                "prime": 2,
+                "witness": 1,
+                "factors": [],
+                "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+              }
+            },
+            {
+              "prime": 3,
+              "exponent": 1,
+              "certificate": {
+                "prime": 3,
+                "witness": 2,
+                "factors": [
+                  {
+                    "prime": 2,
+                    "exponent": 1,
+                    "certificate": {
+                      "prime": 2,
+                      "witness": 1,
+                      "factors": [],
+                      "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                    }
+                  }
+                ],
+                "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+              }
+            }
+          ],
+          "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+        },
+        "residue": 1,
+        "coordinate": 0,
+        "box": 2,
+        "packet_side": 4,
+        "input_population": 8,
+        "phase_modulus": 16,
+        "hidden_short_vector_or_shift_given": false,
+        "receiver_gets_localization_register": false,
+        "uniform_secret_prior_inferred": false
+      },
+      "closed_resources": {
+        "arithmetic_width_plan": {
+          "point_absolute_bounds": [
+            152,
+            1
+          ],
+          "localization_absolute_bounds": [
+            155,
+            4
+          ],
+          "shared_signed_word_bits": 9,
+          "localization_coordinates_share_word_width": true,
+          "all_signed_localization_values_in_range": true,
+          "copied_point_or_original_noise_garbage_retained": false
+        },
+        "input_qubits": 3,
+        "localization_output_qubits": 18,
+        "shared_point_arithmetic_work_qubits": 19,
+        "shared_packet_work_qubits": 2,
+        "zero_padding_qubits": 2,
+        "position_QFT_qubits": 4,
+        "total_source_qubits": 44,
+        "constant_additions_including_uncompute": 8,
+        "point_to_localization_additions": 2,
+        "arithmetic_logical_instructions": 50,
+        "packet_unitary_applications": 2,
+        "packet_plan": {
+          "packet_bits": 2,
+          "packet_side": 4,
+          "logical_qubits": 4,
+          "clean_AND_work_qubits": 1,
+          "known_flag_qubits": 1,
+          "W_forward_uses": 2,
+          "W_inverse_uses": 1,
+          "known_zero_reflections": 1,
+          "H_gates": 12,
+          "X_gates": 7,
+          "CCX_gates": 2,
+          "CP_gates": 7,
+          "P_gates": 3,
+          "logical_instructions": 31,
+          "global_phase_pi_coefficient": "-1/4",
+          "retained_absolute_pi_weight": "13/2",
+          "encoded_binary64_pi": "884279719003555/281474976710656",
+          "Machin_terms": 16,
+          "pi_lower": "2702199289155139770778723466138548690954453271354857406274868882229427215106701002516071935610699965630953755124/860136748176892598733343886651423302289653512937537946071635894779362232608248391056054462678730487823486328125",
+          "pi_upper": "1182664558198884723122287358611764328074688616985936643633156715672834457769192598828753841328454487819350992/376453820913890074899487004189100025511481553604426544559634764263301689662404540823888964951038360595703125",
+          "numeric_normal_angles_supported": true,
+          "encoded_rotation_operator_error_upper": "12976642900600785132962003104920136563994522586314721360051898014984302040554347449402968291950185290961377/16301896996057642069900426459109025475608111654636324627998996352361585201659337199910912000000000000000000000000000000000",
+          "known_zero_parent_success_probability": "1",
+          "postselection_used": false,
+          "flag_clear_for_arbitrary_input_claimed": false,
+          "hardware_synthesis_or_simulator_roundoff_certified": false
+        },
+        "coherent_source_instructions_before_QFT": 55,
+        "no_preimages_or_private_shift_needed": true
+      },
+      "compiled_qubits": 44,
+      "compiled_parent_instructions": 56,
+      "encoded_packet_parameter_operator_upper_per_parent": "12976642900600785132962003104920136563994522586314721360051898014984302040554347449402968291950185290961377/8150948498028821034950213229554512737804055827318162313999498176180792600829668599955456000000000000000000000000000000000",
+      "QFT_precision_plan": {
+        "QFT_wires": 4,
+        "retained_maximum_separation": 0,
+        "qiskit_approximation_degree": 3,
+        "query_usage": {
+          "direct_forward_calls": 2,
+          "direct_inverse_calls": 0,
+          "phase_parent_reflections": 0,
+          "total_approximate_QFT_or_inverse_calls": 2,
+          "receiver_usage_bound_is_external_not_proved_here": true
+        },
+        "target_complete_experiment_trace_error": "1/100",
+        "logical_controlled_phases_retained": 0,
+        "logical_controlled_phases_omitted": 6,
+        "logical_H_gates": 4,
+        "logical_swaps": 2,
+        "exact_ideal_QFT_selected": false,
+        "retained_dyadic_angle_weight": "0",
+        "omitted_weight_symbolic": {
+          "coefficient_at_2_pow_minus_cutoff": 2,
+          "cutoff_exponent": 0,
+          "unit_term_exponent": 3
+        },
+        "single_use_ideal_truncation_operator_upper": "2",
+        "truncation_bound_method": "EXACT_FINITE_TAIL_MACHIN_PI_UPPER",
+        "Machin_terms": 16,
+        "pi_rational_lower": "2702199289155139770778723466138548690954453271354857406274868882229427215106701002516071935610699965630953755124/860136748176892598733343886651423302289653512937537946071635894779362232608248391056054462678730487823486328125",
+        "pi_rational_upper": "1182664558198884723122287358611764328074688616985936643633156715672834457769192598828753841328454487819350992/376453820913890074899487004189100025511481553604426544559634764263301689662404540823888964951038360595703125",
+        "exact_encoded_binary64_pi": "884279719003555/281474976710656",
+        "single_use_encoded_CP_parameter_operator_error_upper": "0",
+        "single_use_encoded_QFT_operator_error_upper": "2",
+        "complete_experiment_ideal_truncation_trace_upper": "1",
+        "complete_experiment_encoded_QFT_trace_upper": "1",
+        "ideal_truncation_target_met": false,
+        "encoded_QFT_parameter_target_met": false,
+        "numeric_normal_angle_encoding_supported": true,
+        "external_per_logical_gate_operator_error": null,
+        "complete_experiment_upper_IF_external_gate_bound_holds": null,
+        "arithmetic_preparation_and_hardware_errors_covered": false,
+        "statevector_MPS_roundoff_certified": false,
+        "normalized_rare_branch_accuracy_certified_without_mass_bound": false,
+        "logical_query_budget_proves_efficient_receiver": false
+      },
+      "QFT_angle_accounting_plan": {
+        "QFT_wires": 4,
+        "retained_maximum_separation": 0,
+        "qiskit_approximation_degree": 3,
+        "query_usage": {
+          "direct_forward_calls": 2,
+          "direct_inverse_calls": 0,
+          "phase_parent_reflections": 0,
+          "total_approximate_QFT_or_inverse_calls": 2,
+          "receiver_usage_bound_is_external_not_proved_here": true
+        },
+        "target_complete_experiment_trace_error": "1/100",
+        "logical_controlled_phases_retained": 0,
+        "logical_controlled_phases_omitted": 6,
+        "logical_H_gates": 4,
+        "logical_swaps": 2,
+        "exact_ideal_QFT_selected": false,
+        "retained_dyadic_angle_weight": "0",
+        "omitted_weight_symbolic": {
+          "coefficient_at_2_pow_minus_cutoff": 2,
+          "cutoff_exponent": 0,
+          "unit_term_exponent": 3
+        },
+        "single_use_ideal_truncation_operator_upper": "2",
+        "truncation_bound_method": "EXACT_FINITE_TAIL_MACHIN_PI_UPPER",
+        "Machin_terms": 16,
+        "pi_rational_lower": "2702199289155139770778723466138548690954453271354857406274868882229427215106701002516071935610699965630953755124/860136748176892598733343886651423302289653512937537946071635894779362232608248391056054462678730487823486328125",
+        "pi_rational_upper": "1182664558198884723122287358611764328074688616985936643633156715672834457769192598828753841328454487819350992/376453820913890074899487004189100025511481553604426544559634764263301689662404540823888964951038360595703125",
+        "exact_encoded_binary64_pi": "884279719003555/281474976710656",
+        "single_use_encoded_CP_parameter_operator_error_upper": "0",
+        "single_use_encoded_QFT_operator_error_upper": "2",
+        "complete_experiment_ideal_truncation_trace_upper": "1",
+        "complete_experiment_encoded_QFT_trace_upper": "1",
+        "ideal_truncation_target_met": false,
+        "encoded_QFT_parameter_target_met": false,
+        "numeric_normal_angle_encoding_supported": true,
+        "external_per_logical_gate_operator_error": null,
+        "complete_experiment_upper_IF_external_gate_bound_holds": null,
+        "arithmetic_preparation_and_hardware_errors_covered": false,
+        "statevector_MPS_roundoff_certified": false,
+        "normalized_rare_branch_accuracy_certified_without_mass_bound": false,
+        "logical_query_budget_proves_efficient_receiver": false
+      },
+      "packet_and_retained_QFT_parameter_operator_upper_per_parent": "12976642900600785132962003104920136563994522586314721360051898014984302040554347449402968291950185290961377/8150948498028821034950213229554512737804055827318162313999498176180792600829668599955456000000000000000000000000000000000",
+      "packet_and_QFT_operator_upper_relative_to_ideal_full_QFT": "2",
+      "original_position_wires_reused_in_place": true,
+      "localization_register_is_traced_not_replaced_by_a_preimage": true,
+      "arithmetic_and_packet_workspace_return_zero": true,
+      "mixed_colour_inverse_available": false,
+      "full_parent_inverse_requires_localization_and_label_registers": true,
+      "normalized_conditional_colour_error_not_inferred_without_label_mass": true,
+      "hardware_arithmetic_synthesis_or_roundoff_certified": false
+    },
+    "exact_reference": {
+      "public_source": {
+        "source_type": "PUBLIC_SINE_WINDOW_LATTICE_INSTRUMENT",
+        "basis_rows": [
+          [
+            17,
+            0
+          ],
+          [
+            16,
+            1
+          ]
+        ],
+        "prime": 7,
+        "split_prime_certificate": {
+          "prime": 7,
+          "witness": 3,
+          "factors": [
+            {
+              "prime": 2,
+              "exponent": 1,
+              "certificate": {
+                "prime": 2,
+                "witness": 1,
+                "factors": [],
+                "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+              }
+            },
+            {
+              "prime": 3,
+              "exponent": 1,
+              "certificate": {
+                "prime": 3,
+                "witness": 2,
+                "factors": [
+                  {
+                    "prime": 2,
+                    "exponent": 1,
+                    "certificate": {
+                      "prime": 2,
+                      "witness": 1,
+                      "factors": [],
+                      "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                    }
+                  }
+                ],
+                "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+              }
+            }
+          ],
+          "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+        },
+        "residue": 1,
+        "coordinate": 0,
+        "box": 2,
+        "packet_side": 4,
+        "input_population": 8,
+        "phase_modulus": 16,
+        "hidden_short_vector_or_shift_given": false,
+        "receiver_gets_localization_register": false,
+        "uniform_secret_prior_inferred": false
+      },
+      "reference_root": 16,
+      "complete_parent_count": 8,
+      "QFT_cutoff": 0,
+      "QFT_is_exact": false,
+      "parents": [
+        [
+          0,
+          [
+            0,
+            0
+          ]
+        ],
+        [
+          0,
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          0,
+          [
+            1,
+            0
+          ]
+        ],
+        [
+          0,
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          1,
+          [
+            0,
+            0
+          ]
+        ],
+        [
+          1,
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          1,
+          [
+            1,
+            0
+          ]
+        ],
+        [
+          1,
+          [
+            1,
+            1
+          ]
+        ]
+      ],
+      "public_points": [
+        [
+          0,
+          0
+        ],
+        [
+          16,
+          1
+        ],
+        [
+          119,
+          0
+        ],
+        [
+          135,
+          1
+        ],
+        [
+          17,
+          0
+        ],
+        [
+          33,
+          1
+        ],
+        [
+          136,
+          0
+        ],
+        [
+          152,
+          1
+        ]
+      ],
+      "complete_public_Gram": [
+        [
+          [
+            "1/8"
+          ],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          []
+        ],
+        [
+          [],
+          [
+            "1/8"
+          ],
+          [],
+          [],
+          [
+            "1/16"
+          ],
+          [],
+          [],
+          []
+        ],
+        [
+          [],
+          [],
+          [
+            "1/8"
+          ],
+          [],
+          [],
+          [],
+          [],
+          []
+        ],
+        [
+          [],
+          [],
+          [],
+          [
+            "1/8"
+          ],
+          [],
+          [],
+          [
+            "1/16"
+          ],
+          []
+        ],
+        [
+          [],
+          [
+            "1/16"
+          ],
+          [],
+          [],
+          [
+            "1/8"
+          ],
+          [],
+          [],
+          []
+        ],
+        [
+          [],
+          [],
+          [],
+          [],
+          [],
+          [
+            "1/8"
+          ],
+          [],
+          []
+        ],
+        [
+          [],
+          [],
+          [],
+          [
+            "1/16"
+          ],
+          [],
+          [],
+          [
+            "1/8"
+          ],
+          []
+        ],
+        [
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [
+            "1/8"
+          ]
+        ]
+      ],
+      "all_label_outcomes": [
+        {
+          "label": 0,
+          "joint_label_probability": [
+            "1/16"
+          ],
+          "unnormalized_colour_density": [
+            [
+              [
+                "1/32"
+              ],
+              [
+                "1/128"
+              ]
+            ],
+            [
+              [
+                "1/128"
+              ],
+              [
+                "1/32"
+              ]
+            ]
+          ]
+        },
+        {
+          "label": 1,
+          "joint_label_probability": [
+            "1/16"
+          ],
+          "unnormalized_colour_density": [
+            [
+              [
+                "1/32"
+              ],
+              [
+                "1/128"
+              ]
+            ],
+            [
+              [
+                "1/128"
+              ],
+              [
+                "1/32"
+              ]
+            ]
+          ]
+        },
+        {
+          "label": 2,
+          "joint_label_probability": [
+            "1/16"
+          ],
+          "unnormalized_colour_density": [
+            [
+              [
+                "1/32"
+              ],
+              [
+                "-1/128"
+              ]
+            ],
+            [
+              [
+                "-1/128"
+              ],
+              [
+                "1/32"
+              ]
+            ]
+          ]
+        },
+        {
+          "label": 3,
+          "joint_label_probability": [
+            "1/16"
+          ],
+          "unnormalized_colour_density": [
+            [
+              [
+                "1/32"
+              ],
+              [
+                "-1/128"
+              ]
+            ],
+            [
+              [
+                "-1/128"
+              ],
+              [
+                "1/32"
+              ]
+            ]
+          ]
+        },
+        {
+          "label": 4,
+          "joint_label_probability": [
+            "1/16"
+          ],
+          "unnormalized_colour_density": [
+            [
+              [
+                "1/32"
+              ],
+              [
+                "1/128"
+              ]
+            ],
+            [
+              [
+                "1/128"
+              ],
+              [
+                "1/32"
+              ]
+            ]
+          ]
+        },
+        {
+          "label": 5,
+          "joint_label_probability": [
+            "1/16"
+          ],
+          "unnormalized_colour_density": [
+            [
+              [
+                "1/32"
+              ],
+              [
+                "1/128"
+              ]
+            ],
+            [
+              [
+                "1/128"
+              ],
+              [
+                "1/32"
+              ]
+            ]
+          ]
+        },
+        {
+          "label": 6,
+          "joint_label_probability": [
+            "1/16"
+          ],
+          "unnormalized_colour_density": [
+            [
+              [
+                "1/32"
+              ],
+              [
+                "-1/128"
+              ]
+            ],
+            [
+              [
+                "-1/128"
+              ],
+              [
+                "1/32"
+              ]
+            ]
+          ]
+        },
+        {
+          "label": 7,
+          "joint_label_probability": [
+            "1/16"
+          ],
+          "unnormalized_colour_density": [
+            [
+              [
+                "1/32"
+              ],
+              [
+                "-1/128"
+              ]
+            ],
+            [
+              [
+                "-1/128"
+              ],
+              [
+                "1/32"
+              ]
+            ]
+          ]
+        },
+        {
+          "label": 8,
+          "joint_label_probability": [
+            "1/16"
+          ],
+          "unnormalized_colour_density": [
+            [
+              [
+                "1/32"
+              ],
+              [
+                "1/128"
+              ]
+            ],
+            [
+              [
+                "1/128"
+              ],
+              [
+                "1/32"
+              ]
+            ]
+          ]
+        },
+        {
+          "label": 9,
+          "joint_label_probability": [
+            "1/16"
+          ],
+          "unnormalized_colour_density": [
+            [
+              [
+                "1/32"
+              ],
+              [
+                "1/128"
+              ]
+            ],
+            [
+              [
+                "1/128"
+              ],
+              [
+                "1/32"
+              ]
+            ]
+          ]
+        },
+        {
+          "label": 10,
+          "joint_label_probability": [
+            "1/16"
+          ],
+          "unnormalized_colour_density": [
+            [
+              [
+                "1/32"
+              ],
+              [
+                "-1/128"
+              ]
+            ],
+            [
+              [
+                "-1/128"
+              ],
+              [
+                "1/32"
+              ]
+            ]
+          ]
+        },
+        {
+          "label": 11,
+          "joint_label_probability": [
+            "1/16"
+          ],
+          "unnormalized_colour_density": [
+            [
+              [
+                "1/32"
+              ],
+              [
+                "-1/128"
+              ]
+            ],
+            [
+              [
+                "-1/128"
+              ],
+              [
+                "1/32"
+              ]
+            ]
+          ]
+        },
+        {
+          "label": 12,
+          "joint_label_probability": [
+            "1/16"
+          ],
+          "unnormalized_colour_density": [
+            [
+              [
+                "1/32"
+              ],
+              [
+                "1/128"
+              ]
+            ],
+            [
+              [
+                "1/128"
+              ],
+              [
+                "1/32"
+              ]
+            ]
+          ]
+        },
+        {
+          "label": 13,
+          "joint_label_probability": [
+            "1/16"
+          ],
+          "unnormalized_colour_density": [
+            [
+              [
+                "1/32"
+              ],
+              [
+                "1/128"
+              ]
+            ],
+            [
+              [
+                "1/128"
+              ],
+              [
+                "1/32"
+              ]
+            ]
+          ]
+        },
+        {
+          "label": 14,
+          "joint_label_probability": [
+            "1/16"
+          ],
+          "unnormalized_colour_density": [
+            [
+              [
+                "1/32"
+              ],
+              [
+                "-1/128"
+              ]
+            ],
+            [
+              [
+                "-1/128"
+              ],
+              [
+                "1/32"
+              ]
+            ]
+          ]
+        },
+        {
+          "label": 15,
+          "joint_label_probability": [
+            "1/16"
+          ],
+          "unnormalized_colour_density": [
+            [
+              [
+                "1/32"
+              ],
+              [
+                "-1/128"
+              ]
+            ],
+            [
+              [
+                "-1/128"
+              ],
+              [
+                "1/32"
+              ]
+            ]
+          ]
+        }
+      ],
+      "label_distribution_uniform": true,
+      "dense_reference_is_not_a_polynomial_preimage_or_receiver_oracle": true
+    },
+    "actual_sampling_audit": {
+      "all_emitted_conditional_densities_agree": true,
+      "private_max_numerical_error": 1.4125534818773036e-10,
+      "metadata": {
+        "actual_compiled_source_preparations_charged": 2,
+        "QFT_cutoff": 0,
+        "logical_readout_QFT_is_exact_reference": false,
+        "QFT_usage_ledger": {
+          "charged_forward_calls": 2,
+          "charged_inverse_calls": 0,
+          "charged_parent_reflections": 0,
+          "charged_total_QFT_or_inverse_calls": 2,
+          "manual_untracked_circuit_calls_are_outside_accuracy_contract": true
+        },
+        "packet_unitaries_charged": 4,
+        "W_calls_charged": 12,
+        "source_shots_independent_given_public_parameters": true,
+        "public_source_fingerprint": "cf8feed6013172af0b344d6bc89cce12117c3b3fb420194021895f9912879cec",
+        "localization_register_was_unmeasured_and_traced": true,
+        "source_DCP_promise_is_not_inferred_from_samples": true,
+        "numerical_error_is_a_formally_certified_channel_bound": false,
+        "MPS_truncation_threshold": 0.0,
+        "conditioned_snapshot_keys_and_multiplicities_checked": true
+      },
+      "public_receipts": [
+        {
+          "id": "sine-cutoff-control:0",
+          "modulus": 16,
+          "label": 5,
+          "measured_cells": [],
+          "original_source_receipts": [
+            "sine-cutoff-control:0"
+          ],
+          "merge_depth": 0
+        },
+        {
+          "id": "sine-cutoff-control:1",
+          "modulus": 16,
+          "label": 0,
+          "measured_cells": [],
+          "original_source_receipts": [
+            "sine-cutoff-control:1"
+          ],
+          "merge_depth": 0
+        }
+      ],
+      "PRIVATE_AUDIT_ONLY_density_matrices": {
+        "sine-cutoff-control:0": [
+          [
+            [
+              0.5000000000235018,
+              0.0
+            ],
+            [
+              0.1250000001350629,
+              4.136526323378054e-11
+            ]
+          ],
+          [
+            [
+              0.1250000001350629,
+              -4.136526323378054e-11
+            ],
+            [
+              0.49999999997649824,
+              0.0
+            ]
+          ]
+        ],
+        "sine-cutoff-control:1": [
+          [
+            [
+              0.4999999999808869,
+              0.0
+            ],
+            [
+              0.12500000010349577,
+              1.1459488298719534e-11
+            ]
+          ],
+          [
+            [
+              0.12500000010349577,
+              -1.1459488298719534e-11
+            ],
+            [
+              0.500000000019113,
+              0.0
+            ]
+          ]
+        ]
+      },
+      "speedup_or_hardware_channel_certificate": false
+    },
+    "private_template_audit": {
+      "status": "APPROXIMATE_QFT_NOT_AN_EXACT_DCP_TEMPLATE",
+      "finite_marginal_template_matches": false,
+      "correct_trial_flag_given_to_receiver": false,
+      "full_growing_reduction_certified": false
+    }
+  },
+  "charged_source_preparations": 34,
+  "accepted_speedup_candidate": false,
+  "hard_lattice_source_or_efficient_receiver_supplied": false,
+  "new_active_negative_result_created": false,
+  "novelty_claim": false
+}

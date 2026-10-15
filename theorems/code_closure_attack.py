@@ -443,4 +443,45 @@ def write_code_closure_attack_report(
     payload = build_code_closure_attack_report(pairs=pairs, t=t, max_pairs=max_pairs)
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(payload, indent=2, sort_keys=True))
+    if write_registry:
+        metrics = dict(payload["headline_metrics"])
+        experiment_record = ExperimentResultRecord(
+            id=registry_result_id,
+            experiment_id=registry_experiment_id,
+            candidate_id=registry_candidate_id,
+            created_at=utc_now(),
+            status=payload["status"],
+            metrics=metrics,
+            summary=payload["summary"],
+            falsifiers_triggered=list(payload["falsifiers_triggered"]),
+            artifacts={"code_closure_attack": str(output_path)},
+        )
+        upsert_experiment_result(experiment_record)
+        for record in payload["records"]:
+            if record["status"] == "rejected-by-t-closure-conductor":
+                upsert_negative_result(
+                    NegativeResultRecord(
+                        id=f"CLOSURE-REJECT-{_safe_id(record['id'])}",
+                        claim=f"{record['id']} is a hard code-equivalence row requiring a collective quantum measurement.",
+                        reason_invalid=(
+                            "A polynomial-time conductor/t-closure signature separates the code pair; "
+                            "it cannot support a hard code-equivalence coset-state row."
+                        ),
+                        evidence={
+                            "row_id": record["row_id"],
+                            "source": record["source"],
+                            "distinguishing_invariants": record["distinguishing_invariants"],
+                        },
+                        source="code_closure_attack.py",
+                        lesson=(
+                            "Run conductors and local t-closures after Schur powers; "
+                            "algebraic support recovery is a polynomial-time classical attack, not a minor invariant."
+                        ),
+                        applies_to=[
+                            "CODE-COSET-COLLECTIVE",
+                            "PO-DEQUANTIZATION",
+                            "PO-FALSIFIERS",
+                        ],
+                    )
+                )
     return payload

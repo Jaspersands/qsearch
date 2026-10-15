@@ -1,0 +1,296 @@
+{
+  "schema_version": "1.0.0",
+  "subsystem": "dcp_noisy_fourier_likelihood_decoder_audit",
+  "contract_id": "dcp-noisy-fourier-likelihood-decoder-audit-contract",
+  "doc_path": "research/DCP_NOISY_FOURIER_LIKELIHOOD_DECODER_AUDIT.md",
+  "summary_of_theorems": {
+    "T1_cnot_tree_merge_visibility_law": "CNOT merge of rho(k_1; s, v_1) and rho(k_2; s, v_2) yields branch b in {0,1} with exact probability 1/2 and normalized state rho(k_1 + (-1)^b k_2 mod N; s, v_1 v_2). A depth-d binary tree produces visibility v_d = (1 - p_bad)^(2^d).",
+    "T2_quadrature_orthogonality_and_moments": "Balanced {X, Y} quadrature score S(s') = z phi_A(k s' / N) satisfies E[S(s')] = (v_d / 2) delta_{s, s'}, E[S(s')^2] = 1/2, Var(S(s)) = 1/2 - v_d^2 / 4, and Var(S(s')) = 1/2 (s' != s), breaking the +/-s sign ambiguity of X-only measurement.",
+    "T3_raw_copy_sample_efficiency_frontier": "SNR_d(M_raw) / SNR_0(M_raw) = 2^(-d) (1 - p_bad)^(2^(d+1) - 2) <= 2^(-d) < 1 for all d >= 1."
+  },
+  "tree_merge_visibility_audit": [
+    {
+      "N": 8,
+      "k1": 3,
+      "k2": 5,
+      "s": 2,
+      "v1_fraction": "7/8",
+      "v2_fraction": "3/4",
+      "v_out_fraction": "21/32",
+      "branch_0_probability": 0.5,
+      "branch_1_probability": 0.5,
+      "branch_probabilities_exact_half": true,
+      "max_density_error_branch_0": 8.036744619404505e-17,
+      "max_density_error_branch_1": 0.0,
+      "post_merge_states_match_theorem_1": true,
+      "tree_depth_scaling": [
+        {
+          "depth_d": 0,
+          "raw_leaves_2_pow_d": 1,
+          "visibility_v_d_fraction": "7/8",
+          "visibility_v_d_float": 0.875,
+          "snr_per_raw_copy_ratio_to_d0_fraction": "1/1",
+          "snr_per_raw_copy_ratio_to_d0_float": 1.0,
+          "strictly_dominated_by_d0": true
+        },
+        {
+          "depth_d": 1,
+          "raw_leaves_2_pow_d": 2,
+          "visibility_v_d_fraction": "49/64",
+          "visibility_v_d_float": 0.765625,
+          "snr_per_raw_copy_ratio_to_d0_fraction": "49/128",
+          "snr_per_raw_copy_ratio_to_d0_float": 0.3828125,
+          "strictly_dominated_by_d0": true
+        },
+        {
+          "depth_d": 2,
+          "raw_leaves_2_pow_d": 4,
+          "visibility_v_d_fraction": "2401/4096",
+          "visibility_v_d_float": 0.586181640625,
+          "snr_per_raw_copy_ratio_to_d0_fraction": "117649/1048576",
+          "snr_per_raw_copy_ratio_to_d0_float": 0.1121988296508789,
+          "strictly_dominated_by_d0": true
+        },
+        {
+          "depth_d": 3,
+          "raw_leaves_2_pow_d": 8,
+          "visibility_v_d_fraction": "5764801/16777216",
+          "visibility_v_d_float": 0.34360891580581665,
+          "snr_per_raw_copy_ratio_to_d0_fraction": "678223072849/35184372088832",
+          "snr_per_raw_copy_ratio_to_d0_float": 0.019276259105510007,
+          "strictly_dominated_by_d0": true
+        }
+      ]
+    },
+    {
+      "N": 16,
+      "k1": 7,
+      "k2": 11,
+      "s": 5,
+      "v1_fraction": "4/5",
+      "v2_fraction": "4/5",
+      "v_out_fraction": "16/25",
+      "branch_0_probability": 0.5,
+      "branch_1_probability": 0.5,
+      "branch_probabilities_exact_half": true,
+      "max_density_error_branch_0": 2.7755575615628914e-17,
+      "max_density_error_branch_1": 8.043842716513107e-17,
+      "post_merge_states_match_theorem_1": true,
+      "tree_depth_scaling": [
+        {
+          "depth_d": 0,
+          "raw_leaves_2_pow_d": 1,
+          "visibility_v_d_fraction": "4/5",
+          "visibility_v_d_float": 0.8,
+          "snr_per_raw_copy_ratio_to_d0_fraction": "1/1",
+          "snr_per_raw_copy_ratio_to_d0_float": 1.0,
+          "strictly_dominated_by_d0": true
+        },
+        {
+          "depth_d": 1,
+          "raw_leaves_2_pow_d": 2,
+          "visibility_v_d_fraction": "16/25",
+          "visibility_v_d_float": 0.64,
+          "snr_per_raw_copy_ratio_to_d0_fraction": "8/25",
+          "snr_per_raw_copy_ratio_to_d0_float": 0.32,
+          "strictly_dominated_by_d0": true
+        },
+        {
+          "depth_d": 2,
+          "raw_leaves_2_pow_d": 4,
+          "visibility_v_d_fraction": "256/625",
+          "visibility_v_d_float": 0.4096,
+          "snr_per_raw_copy_ratio_to_d0_fraction": "1024/15625",
+          "snr_per_raw_copy_ratio_to_d0_float": 0.065536,
+          "strictly_dominated_by_d0": true
+        },
+        {
+          "depth_d": 3,
+          "raw_leaves_2_pow_d": 8,
+          "visibility_v_d_fraction": "65536/390625",
+          "visibility_v_d_float": 0.16777216,
+          "snr_per_raw_copy_ratio_to_d0_fraction": "33554432/6103515625",
+          "snr_per_raw_copy_ratio_to_d0_float": 0.00549755813888,
+          "strictly_dominated_by_d0": true
+        }
+      ]
+    },
+    {
+      "N": 32,
+      "k1": 9,
+      "k2": 14,
+      "s": 13,
+      "v1_fraction": "13/16",
+      "v2_fraction": "7/8",
+      "v_out_fraction": "91/128",
+      "branch_0_probability": 0.5,
+      "branch_1_probability": 0.5,
+      "branch_probabilities_exact_half": true,
+      "max_density_error_branch_0": 7.850462293418876e-17,
+      "max_density_error_branch_1": 3.775166431889533e-16,
+      "post_merge_states_match_theorem_1": true,
+      "tree_depth_scaling": [
+        {
+          "depth_d": 0,
+          "raw_leaves_2_pow_d": 1,
+          "visibility_v_d_fraction": "13/16",
+          "visibility_v_d_float": 0.8125,
+          "snr_per_raw_copy_ratio_to_d0_fraction": "1/1",
+          "snr_per_raw_copy_ratio_to_d0_float": 1.0,
+          "strictly_dominated_by_d0": true
+        },
+        {
+          "depth_d": 1,
+          "raw_leaves_2_pow_d": 2,
+          "visibility_v_d_fraction": "169/256",
+          "visibility_v_d_float": 0.66015625,
+          "snr_per_raw_copy_ratio_to_d0_fraction": "169/512",
+          "snr_per_raw_copy_ratio_to_d0_float": 0.330078125,
+          "strictly_dominated_by_d0": true
+        },
+        {
+          "depth_d": 2,
+          "raw_leaves_2_pow_d": 4,
+          "visibility_v_d_fraction": "28561/65536",
+          "visibility_v_d_float": 0.4358062744140625,
+          "snr_per_raw_copy_ratio_to_d0_fraction": "4826809/67108864",
+          "snr_per_raw_copy_ratio_to_d0_float": 0.07192505896091461,
+          "strictly_dominated_by_d0": true
+        },
+        {
+          "depth_d": 3,
+          "raw_leaves_2_pow_d": 8,
+          "visibility_v_d_fraction": "815730721/4294967296",
+          "visibility_v_d_float": 0.18992710881866515,
+          "snr_per_raw_copy_ratio_to_d0_fraction": "3937376385699289/576460752303423488",
+          "snr_per_raw_copy_ratio_to_d0_float": 0.006830259250029268,
+          "strictly_dominated_by_d0": true
+        }
+      ]
+    }
+  ],
+  "quadrature_orthogonality_audit": [
+    {
+      "N": 4,
+      "visibility_v_fraction": "3/4",
+      "expected_true_quadrature_mean_fraction": "3/8",
+      "expected_true_quadrature_variance_fraction": "23/64",
+      "expected_false_quadrature_variance_fraction": "1/2",
+      "max_quadrature_mean_error": 1.7221595613009655e-17,
+      "max_quadrature_variance_error": 0.0,
+      "x_only_sign_collision_pairs_count": 2,
+      "quadrature_uniquely_identifies_all_oriented_shifts": true
+    },
+    {
+      "N": 8,
+      "visibility_v_fraction": "3/4",
+      "expected_true_quadrature_mean_fraction": "3/8",
+      "expected_true_quadrature_variance_fraction": "23/64",
+      "expected_false_quadrature_variance_fraction": "1/2",
+      "max_quadrature_mean_error": 2.0816681711721685e-17,
+      "max_quadrature_variance_error": 0.0,
+      "x_only_sign_collision_pairs_count": 6,
+      "quadrature_uniquely_identifies_all_oriented_shifts": true
+    },
+    {
+      "N": 16,
+      "visibility_v_fraction": "3/4",
+      "expected_true_quadrature_mean_fraction": "3/8",
+      "expected_true_quadrature_variance_fraction": "23/64",
+      "expected_false_quadrature_variance_fraction": "1/2",
+      "max_quadrature_mean_error": 3.122502256758253e-17,
+      "max_quadrature_variance_error": 0.0,
+      "x_only_sign_collision_pairs_count": 14,
+      "quadrature_uniquely_identifies_all_oriented_shifts": true
+    }
+  ],
+  "live_opaque_phase_decoder_audit": [
+    {
+      "dimension": 1,
+      "box": 2,
+      "width": 2,
+      "phase_modulus": 4,
+      "bad_register_rate": "1/2",
+      "initial_visibility_v0": 0.5,
+      "shots_charged": 96,
+      "PRIVATE_AUDIT_ONLY_true_delta": [
+        -1
+      ],
+      "PRIVATE_AUDIT_ONLY_true_scalar_shift": 3,
+      "decoded_delta_matched_filter": [
+        -1
+      ],
+      "decoded_delta_log_likelihood": [
+        -1
+      ],
+      "best_matched_filter_score": 0.3020833333333333,
+      "opposite_sign_matched_filter_score": -0.09375,
+      "matched_filter_recovered_exact_signed_delta": true,
+      "log_likelihood_recovered_exact_signed_delta": true,
+      "sign_strictly_separated_from_negation": true
+    },
+    {
+      "dimension": 1,
+      "box": 4,
+      "width": 2,
+      "phase_modulus": 8,
+      "bad_register_rate": "1/4",
+      "initial_visibility_v0": 0.75,
+      "shots_charged": 128,
+      "PRIVATE_AUDIT_ONLY_true_delta": [
+        -1
+      ],
+      "PRIVATE_AUDIT_ONLY_true_scalar_shift": 7,
+      "decoded_delta_matched_filter": [
+        -1
+      ],
+      "decoded_delta_log_likelihood": [
+        -1
+      ],
+      "best_matched_filter_score": 0.38163470628841784,
+      "opposite_sign_matched_filter_score": 0.04135072827198008,
+      "matched_filter_recovered_exact_signed_delta": true,
+      "log_likelihood_recovered_exact_signed_delta": true,
+      "sign_strictly_separated_from_negation": true
+    },
+    {
+      "dimension": 2,
+      "box": 2,
+      "width": 2,
+      "phase_modulus": 16,
+      "bad_register_rate": "1/2",
+      "initial_visibility_v0": 0.5,
+      "shots_charged": 128,
+      "PRIVATE_AUDIT_ONLY_true_delta": [
+        0,
+        -1
+      ],
+      "PRIVATE_AUDIT_ONLY_true_scalar_shift": 12,
+      "decoded_delta_matched_filter": [
+        0,
+        -1
+      ],
+      "decoded_delta_log_likelihood": [
+        0,
+        -1
+      ],
+      "best_matched_filter_score": 0.359375,
+      "opposite_sign_matched_filter_score": -8.673617379884035e-19,
+      "matched_filter_recovered_exact_signed_delta": true,
+      "log_likelihood_recovered_exact_signed_delta": true,
+      "sign_strictly_separated_from_negation": true
+    }
+  ],
+  "verification": {
+    "theorem_1_tree_merge_visibility_verified": true,
+    "theorem_2_quadrature_orthogonality_verified": true,
+    "live_opaque_phase_backend_signed_decoding_verified": true
+  },
+  "guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false,
+    "end_to_end_quantum_advantage_claimed": false,
+    "bypassed_UniformCubeSuperposition_prepare_constraint": false
+  }
+}

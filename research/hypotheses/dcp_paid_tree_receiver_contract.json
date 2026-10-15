@@ -1,0 +1,39 @@
+{
+  "contract_id": "paid_adaptive_single_parity_tree_receiver_v1",
+  "experiment_id_for_mechanical_integration": "EXP-DHS-DCP-PAID-TREE-RECEIVER",
+  "status": "BOUNDED_POLICY_BENCHMARK_AND_PHYSICAL_CONTROL_REVIEW_PENDING",
+  "assumptions": [
+    "Independent balanced phase qubits conditioned on one unknown secret and the public transcript",
+    "A common public visibility lower promise, not learned by inspecting private density matrices",
+    "Public dyadic labels, disjoint original ancestry, actual CNOT/Z outcomes",
+    "Uniform independent ORIGINAL labels only for raw-acquisition bounds"
+  ],
+  "derived_claims": [
+    "Disjoint CNOT/Z feedback preserves conditional product form, multiplies visibilities and yields equiprobable branches",
+    "Exact finite Bellman optimum for public-feedback CNOT/Z and one parity-label X output",
+    "Complete matched baseline over all precommitted forests, including best-output selection",
+    "Conditional three-root feedback gain v^3/4 on labels (a,N/2-a,2a)",
+    "Literal original-label template has probability (N-4)/N^3 and needs paid acquisition",
+    "Exact binomial event falsifies the earlier factor-two quadrature confidence claim"
+  ],
+  "proof_obligations": {
+    "uniform_growing_source_geometry_and_hardness": "UNRESOLVED",
+    "polynomial_policy_search_and_source_acquisition": "UNRESOLVED",
+    "full_shift_recovery_not_just_one_parity_bit": "UNRESOLVED",
+    "quantum_advantage_over_strong_classical_algorithms": "UNRESOLVED",
+    "hardware_and_roundoff_error_certificate": "UNRESOLVED",
+    "independent_external_theorem_review": "UNRESOLVED"
+  },
+  "falsifiers": [
+    "Desired measurement branches or high-valuation labels supplied for free",
+    "Secret-dependent expectations used as a receiver oracle",
+    "Maximum merge depth substituted for actual original leaf count",
+    "Zero-label output counted as secret information",
+    "Postselection or root-selection failures omitted from source supply",
+    "Finite Bellman or static-forest enumeration called polynomial or general quantum optimality"
+  ],
+  "efficient_noisy_receiver_supplied": false,
+  "accepted_speedup_candidate": false,
+  "new_active_negative_result_created": false,
+  "novelty_claim": false
+}

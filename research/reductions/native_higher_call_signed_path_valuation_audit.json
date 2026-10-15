@@ -1,0 +1,447 @@
+{
+  "schema_version": "1.0.0",
+  "subsystem": "native_higher_call_signed_path_valuation_audit",
+  "contract_id": "native-higher-call-signed-path-valuation-audit-contract",
+  "doc_path": "research/NATIVE_HIGHER_CALL_SIGNED_PATH_VALUATION_AUDIT.md",
+  "summary_of_theorems": {
+    "T1_single_path_z3_coset_invariant": "For any sign schedule epsilon in {-1, +1}^k with net sign S(epsilon) = sum_l epsilon_l, every single-path sum V_epsilon(t) = (X, Y) satisfies X - Y == S(epsilon) (mod 3). Balanced even schedules (k=2m, S=0) annihilate the mod-3 obstruction for all m >= 1.",
+    "T2_paired_difference_sign_invariance": "The paired path-difference distribution Delta_epsilon(t, u) = V_epsilon(t) - V_epsilon(u) is invariant across all 2^k sign schedules epsilon in {-1, +1}^k.",
+    "T3_universal_one_third_nonunit_law": "Every paired difference satisfies 3 | (Delta_X - Delta_Y) over Z and (Delta_X, Delta_Y) == (sum_l epsilon_l (u_l - t_l)) * (1, 1) (mod 3), so exactly 9^k / 3 = 3^(2k-1) pairs have v_3(Delta) >= 1 and 2 * 3^(2k-1) have v_3(Delta) = 0 for all k >= 1."
+  },
+  "single_path_coset_audit": [
+    {
+      "calls_k": 1,
+      "signs": [
+        1
+      ],
+      "net_sign_S": 1,
+      "net_sign_mod_3": 1,
+      "total_paths": 3,
+      "distinct_integer_endpoints": 3,
+      "all_endpoints_satisfy_X_minus_Y_congruent_S_mod_3": true,
+      "mod3_zero_path_count": 0,
+      "expected_mod3_zero_path_count": 0,
+      "integer_zero_sum_path_count": 0,
+      "closed_form_integer_zero_sum_count": 0,
+      "matches_theorem_1": true
+    },
+    {
+      "calls_k": 1,
+      "signs": [
+        -1
+      ],
+      "net_sign_S": -1,
+      "net_sign_mod_3": 2,
+      "total_paths": 3,
+      "distinct_integer_endpoints": 3,
+      "all_endpoints_satisfy_X_minus_Y_congruent_S_mod_3": true,
+      "mod3_zero_path_count": 0,
+      "expected_mod3_zero_path_count": 0,
+      "integer_zero_sum_path_count": 0,
+      "closed_form_integer_zero_sum_count": 0,
+      "matches_theorem_1": true
+    },
+    {
+      "calls_k": 2,
+      "signs": [
+        1,
+        1
+      ],
+      "net_sign_S": 2,
+      "net_sign_mod_3": 2,
+      "total_paths": 9,
+      "distinct_integer_endpoints": 6,
+      "all_endpoints_satisfy_X_minus_Y_congruent_S_mod_3": true,
+      "mod3_zero_path_count": 0,
+      "expected_mod3_zero_path_count": 0,
+      "integer_zero_sum_path_count": 0,
+      "closed_form_integer_zero_sum_count": 0,
+      "matches_theorem_1": true
+    },
+    {
+      "calls_k": 2,
+      "signs": [
+        1,
+        -1
+      ],
+      "net_sign_S": 0,
+      "net_sign_mod_3": 0,
+      "total_paths": 9,
+      "distinct_integer_endpoints": 7,
+      "all_endpoints_satisfy_X_minus_Y_congruent_S_mod_3": true,
+      "mod3_zero_path_count": 3,
+      "expected_mod3_zero_path_count": 3,
+      "integer_zero_sum_path_count": 3,
+      "closed_form_integer_zero_sum_count": 3,
+      "matches_theorem_1": true
+    },
+    {
+      "calls_k": 3,
+      "signs": [
+        1,
+        1,
+        1
+      ],
+      "net_sign_S": 3,
+      "net_sign_mod_3": 0,
+      "total_paths": 27,
+      "distinct_integer_endpoints": 10,
+      "all_endpoints_satisfy_X_minus_Y_congruent_S_mod_3": true,
+      "mod3_zero_path_count": 9,
+      "expected_mod3_zero_path_count": 9,
+      "integer_zero_sum_path_count": 6,
+      "closed_form_integer_zero_sum_count": 6,
+      "matches_theorem_1": true
+    },
+    {
+      "calls_k": 3,
+      "signs": [
+        1,
+        1,
+        -1
+      ],
+      "net_sign_S": 1,
+      "net_sign_mod_3": 1,
+      "total_paths": 27,
+      "distinct_integer_endpoints": 12,
+      "all_endpoints_satisfy_X_minus_Y_congruent_S_mod_3": true,
+      "mod3_zero_path_count": 0,
+      "expected_mod3_zero_path_count": 0,
+      "integer_zero_sum_path_count": 0,
+      "closed_form_integer_zero_sum_count": 0,
+      "matches_theorem_1": true
+    },
+    {
+      "calls_k": 4,
+      "signs": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "net_sign_S": 4,
+      "net_sign_mod_3": 1,
+      "total_paths": 81,
+      "distinct_integer_endpoints": 15,
+      "all_endpoints_satisfy_X_minus_Y_congruent_S_mod_3": true,
+      "mod3_zero_path_count": 0,
+      "expected_mod3_zero_path_count": 0,
+      "integer_zero_sum_path_count": 0,
+      "closed_form_integer_zero_sum_count": 0,
+      "matches_theorem_1": true
+    },
+    {
+      "calls_k": 4,
+      "signs": [
+        1,
+        -1,
+        1,
+        -1
+      ],
+      "net_sign_S": 0,
+      "net_sign_mod_3": 0,
+      "total_paths": 81,
+      "distinct_integer_endpoints": 19,
+      "all_endpoints_satisfy_X_minus_Y_congruent_S_mod_3": true,
+      "mod3_zero_path_count": 27,
+      "expected_mod3_zero_path_count": 27,
+      "integer_zero_sum_path_count": 15,
+      "closed_form_integer_zero_sum_count": 15,
+      "matches_theorem_1": true
+    },
+    {
+      "calls_k": 4,
+      "signs": [
+        1,
+        1,
+        1,
+        -1
+      ],
+      "net_sign_S": 2,
+      "net_sign_mod_3": 2,
+      "total_paths": 81,
+      "distinct_integer_endpoints": 18,
+      "all_endpoints_satisfy_X_minus_Y_congruent_S_mod_3": true,
+      "mod3_zero_path_count": 0,
+      "expected_mod3_zero_path_count": 0,
+      "integer_zero_sum_path_count": 0,
+      "closed_form_integer_zero_sum_count": 0,
+      "matches_theorem_1": true
+    },
+    {
+      "calls_k": 5,
+      "signs": [
+        1,
+        1,
+        1,
+        1,
+        -1
+      ],
+      "net_sign_S": 3,
+      "net_sign_mod_3": 0,
+      "total_paths": 243,
+      "distinct_integer_endpoints": 25,
+      "all_endpoints_satisfy_X_minus_Y_congruent_S_mod_3": true,
+      "mod3_zero_path_count": 81,
+      "expected_mod3_zero_path_count": 81,
+      "integer_zero_sum_path_count": 36,
+      "closed_form_integer_zero_sum_count": 36,
+      "matches_theorem_1": true
+    },
+    {
+      "calls_k": 6,
+      "signs": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "net_sign_S": 6,
+      "net_sign_mod_3": 0,
+      "total_paths": 729,
+      "distinct_integer_endpoints": 28,
+      "all_endpoints_satisfy_X_minus_Y_congruent_S_mod_3": true,
+      "mod3_zero_path_count": 243,
+      "expected_mod3_zero_path_count": 243,
+      "integer_zero_sum_path_count": 90,
+      "closed_form_integer_zero_sum_count": 90,
+      "matches_theorem_1": true
+    },
+    {
+      "calls_k": 6,
+      "signs": [
+        1,
+        -1,
+        1,
+        -1,
+        1,
+        -1
+      ],
+      "net_sign_S": 0,
+      "net_sign_mod_3": 0,
+      "total_paths": 729,
+      "distinct_integer_endpoints": 37,
+      "all_endpoints_satisfy_X_minus_Y_congruent_S_mod_3": true,
+      "mod3_zero_path_count": 243,
+      "expected_mod3_zero_path_count": 243,
+      "integer_zero_sum_path_count": 93,
+      "closed_form_integer_zero_sum_count": 93,
+      "matches_theorem_1": true
+    },
+    {
+      "calls_k": 6,
+      "signs": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        -1
+      ],
+      "net_sign_S": 4,
+      "net_sign_mod_3": 1,
+      "total_paths": 729,
+      "distinct_integer_endpoints": 33,
+      "all_endpoints_satisfy_X_minus_Y_congruent_S_mod_3": true,
+      "mod3_zero_path_count": 0,
+      "expected_mod3_zero_path_count": 0,
+      "integer_zero_sum_path_count": 0,
+      "closed_form_integer_zero_sum_count": 0,
+      "matches_theorem_1": true
+    }
+  ],
+  "paired_difference_sign_invariance_audit": [
+    {
+      "calls_k": 1,
+      "sign_schedules_checked": 2,
+      "total_ordered_path_pairs": 9,
+      "distinct_difference_vectors": 7,
+      "zero_difference_pair_count": 3,
+      "all_sign_schedules_identical_to_unsigned": true
+    },
+    {
+      "calls_k": 2,
+      "sign_schedules_checked": 4,
+      "total_ordered_path_pairs": 81,
+      "distinct_difference_vectors": 19,
+      "zero_difference_pair_count": 15,
+      "all_sign_schedules_identical_to_unsigned": true
+    },
+    {
+      "calls_k": 3,
+      "sign_schedules_checked": 8,
+      "total_ordered_path_pairs": 729,
+      "distinct_difference_vectors": 37,
+      "zero_difference_pair_count": 93,
+      "all_sign_schedules_identical_to_unsigned": true
+    },
+    {
+      "calls_k": 4,
+      "sign_schedules_checked": 16,
+      "total_ordered_path_pairs": 6561,
+      "distinct_difference_vectors": 61,
+      "zero_difference_pair_count": 639,
+      "all_sign_schedules_identical_to_unsigned": true
+    },
+    {
+      "calls_k": 5,
+      "sign_schedules_checked": 32,
+      "total_ordered_path_pairs": 59049,
+      "distinct_difference_vectors": 91,
+      "zero_difference_pair_count": 4653,
+      "all_sign_schedules_identical_to_unsigned": true
+    }
+  ],
+  "universal_one_third_valuation_audit": [
+    {
+      "calls_k": 1,
+      "total_local_ordered_pairs": 9,
+      "all_pairs_satisfy_3_divides_DeltaX_minus_DeltaY": true,
+      "local_unit_count_v3_eq_0": 6,
+      "expected_local_unit_count_2_times_3_pow_2k_minus_1": 6,
+      "local_nonunit_count_v3_ge_1": 3,
+      "expected_local_nonunit_count_3_pow_2k_minus_1": 3,
+      "local_nonunit_fraction": "1/3",
+      "local_v3_eq_1_count": 0,
+      "local_v3_ge_2_count": 3,
+      "local_integer_zero_pair_count": 3,
+      "two_site_all_sites_v3_ge_1_count": 9,
+      "expected_two_site_v3_ge_1_count": 9,
+      "two_site_iid_expected_collision_density": "89/729",
+      "matches_theorem_3": true
+    },
+    {
+      "calls_k": 2,
+      "total_local_ordered_pairs": 81,
+      "all_pairs_satisfy_3_divides_DeltaX_minus_DeltaY": true,
+      "local_unit_count_v3_eq_0": 54,
+      "expected_local_unit_count_2_times_3_pow_2k_minus_1": 54,
+      "local_nonunit_count_v3_ge_1": 27,
+      "expected_local_nonunit_count_3_pow_2k_minus_1": 27,
+      "local_nonunit_fraction": "1/3",
+      "local_v3_eq_1_count": 12,
+      "local_v3_ge_2_count": 15,
+      "local_integer_zero_pair_count": 15,
+      "two_site_all_sites_v3_ge_1_count": 729,
+      "expected_two_site_v3_ge_1_count": 729,
+      "two_site_iid_expected_collision_density": "353/6561",
+      "matches_theorem_3": true
+    },
+    {
+      "calls_k": 3,
+      "total_local_ordered_pairs": 729,
+      "all_pairs_satisfy_3_divides_DeltaX_minus_DeltaY": true,
+      "local_unit_count_v3_eq_0": 486,
+      "expected_local_unit_count_2_times_3_pow_2k_minus_1": 486,
+      "local_nonunit_count_v3_ge_1": 243,
+      "expected_local_nonunit_count_3_pow_2k_minus_1": 243,
+      "local_nonunit_fraction": "1/3",
+      "local_v3_eq_1_count": 150,
+      "local_v3_ge_2_count": 93,
+      "local_integer_zero_pair_count": 93,
+      "two_site_all_sites_v3_ge_1_count": 59049,
+      "expected_two_site_v3_ge_1_count": 59049,
+      "two_site_iid_expected_collision_density": "20081/531441",
+      "matches_theorem_3": true
+    },
+    {
+      "calls_k": 4,
+      "total_local_ordered_pairs": 6561,
+      "all_pairs_satisfy_3_divides_DeltaX_minus_DeltaY": true,
+      "local_unit_count_v3_eq_0": 4374,
+      "expected_local_unit_count_2_times_3_pow_2k_minus_1": 4374,
+      "local_nonunit_count_v3_ge_1": 2187,
+      "expected_local_nonunit_count_3_pow_2k_minus_1": 2187,
+      "local_nonunit_fraction": "1/3",
+      "local_v3_eq_1_count": 1548,
+      "local_v3_ge_2_count": 639,
+      "local_integer_zero_pair_count": 639,
+      "two_site_all_sites_v3_ge_1_count": 4782969,
+      "expected_two_site_v3_ge_1_count": 4782969,
+      "two_site_iid_expected_collision_density": "151865/4782969",
+      "matches_theorem_3": true
+    },
+    {
+      "calls_k": 5,
+      "total_local_ordered_pairs": 59049,
+      "all_pairs_satisfy_3_divides_DeltaX_minus_DeltaY": true,
+      "local_unit_count_v3_eq_0": 39366,
+      "expected_local_unit_count_2_times_3_pow_2k_minus_1": 39366,
+      "local_nonunit_count_v3_ge_1": 19683,
+      "expected_local_nonunit_count_3_pow_2k_minus_1": 19683,
+      "local_nonunit_fraction": "1/3",
+      "local_v3_eq_1_count": 15030,
+      "local_v3_ge_2_count": 4653,
+      "local_integer_zero_pair_count": 4653,
+      "two_site_all_sites_v3_ge_1_count": 387420489,
+      "expected_two_site_v3_ge_1_count": 387420489,
+      "two_site_iid_expected_collision_density": "11172809/387420489",
+      "matches_theorem_3": true
+    },
+    {
+      "calls_k": 6,
+      "total_local_ordered_pairs": 531441,
+      "all_pairs_satisfy_3_divides_DeltaX_minus_DeltaY": true,
+      "local_unit_count_v3_eq_0": 354294,
+      "expected_local_unit_count_2_times_3_pow_2k_minus_1": 354294,
+      "local_nonunit_count_v3_ge_1": 177147,
+      "expected_local_nonunit_count_3_pow_2k_minus_1": 177147,
+      "local_nonunit_fraction": "1/3",
+      "local_v3_eq_1_count": 141858,
+      "local_v3_ge_2_count": 35289,
+      "local_integer_zero_pair_count": 35169,
+      "two_site_all_sites_v3_ge_1_count": 31381059609,
+      "expected_two_site_v3_ge_1_count": 31381059609,
+      "two_site_iid_expected_collision_density": "94976465/3486784401",
+      "matches_theorem_3": true
+    },
+    {
+      "calls_k": 7,
+      "total_local_ordered_pairs": 4782969,
+      "all_pairs_satisfy_3_divides_DeltaX_minus_DeltaY": true,
+      "local_unit_count_v3_eq_0": 3188646,
+      "expected_local_unit_count_2_times_3_pow_2k_minus_1": 3188646,
+      "local_nonunit_count_v3_ge_1": 1594323,
+      "expected_local_nonunit_count_3_pow_2k_minus_1": 1594323,
+      "local_nonunit_fraction": "1/3",
+      "local_v3_eq_1_count": 1317708,
+      "local_v3_ge_2_count": 276615,
+      "local_integer_zero_pair_count": 272835,
+      "two_site_all_sites_v3_ge_1_count": 2541865828329,
+      "expected_two_site_v3_ge_1_count": 2541865828329,
+      "two_site_iid_expected_collision_density": "825092057/31381059609",
+      "matches_theorem_3": true
+    },
+    {
+      "calls_k": 8,
+      "total_local_ordered_pairs": 43046721,
+      "all_pairs_satisfy_3_divides_DeltaX_minus_DeltaY": true,
+      "local_unit_count_v3_eq_0": 28697814,
+      "expected_local_unit_count_2_times_3_pow_2k_minus_1": 28697814,
+      "local_nonunit_count_v3_ge_1": 14348907,
+      "expected_local_nonunit_count_3_pow_2k_minus_1": 14348907,
+      "local_nonunit_fraction": "1/3",
+      "local_v3_eq_1_count": 12118572,
+      "local_v3_ge_2_count": 2230335,
+      "local_integer_zero_pair_count": 2157759,
+      "two_site_all_sites_v3_ge_1_count": 205891132094649,
+      "expected_two_site_v3_ge_1_count": 205891132094649,
+      "two_site_iid_expected_collision_density": "65340744617/2541865828329",
+      "matches_theorem_3": true
+    }
+  ],
+  "verification": {
+    "theorem_1_single_path_coset_and_zero_counts_verified": true,
+    "theorem_2_paired_difference_sign_invariance_verified": true,
+    "theorem_3_universal_one_third_valuation_law_verified": true
+  },
+  "guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false,
+    "end_to_end_quantum_advantage_claimed": false,
+    "bypassed_UniformCubeSuperposition_prepare_constraint": false
+  }
+}

@@ -21140,11 +21140,11 @@
   },
   {
     "artifacts": {
-      "dcp_carry_affine_degree_invariance": "/private/var/folders/y_/k55rjs0x7nb045dsgq61qw000000gn/T/pytest-of-jaspersands/pytest-24/test_report_keeps_hardness_ten0/carry-affine-degree.json",
-      "report": "/private/var/folders/y_/k55rjs0x7nb045dsgq61qw000000gn/T/pytest-of-jaspersands/pytest-24/test_report_keeps_hardness_ten0/carry-affine-degree.json"
+      "dcp_carry_affine_degree_invariance": "/private/var/folders/y_/k55rjs0x7nb045dsgq61qw000000gn/T/pytest-of-jaspersands/pytest-526/test_report_keeps_hardness_ten0/carry-affine-degree.json",
+      "report": "/private/var/folders/y_/k55rjs0x7nb045dsgq61qw000000gn/T/pytest-of-jaspersands/pytest-526/test_report_keeps_hardness_ten0/carry-affine-degree.json"
     },
     "candidate_id": "DHS-GOWERS-SIEVE",
-    "created_at": "2026-09-23T00:32:42.187463+00:00",
+    "created_at": "2026-10-15T01:59:12.359771+00:00",
     "experiment_id": "EXP-DHS-DCP-CARRY-AFFINE-DEGREE-INVARIANCE",
     "falsifiers_triggered": [
       "Lucas identity fails to match true carry truth-table values.",
@@ -21234,16 +21234,33 @@
   },
   {
     "artifacts": {
-      "dcp_carry_quadratic_extension_boundary": "/private/var/folders/y_/k55rjs0x7nb045dsgq61qw000000gn/T/pytest-of-jaspersands/pytest-24/test_report_refutes_degree_low0/carry-extension.json"
+      "dcp_carry_quadratic_extension_boundary": "/private/var/folders/y_/k55rjs0x7nb045dsgq61qw000000gn/T/pytest-of-jaspersands/pytest-527/test_report_refutes_degree_low0/carry-extension.json"
     },
     "candidate_id": "CODE-COSET-COLLECTIVE",
-    "created_at": "",
+    "created_at": "2026-10-15T01:59:28.276828+00:00",
     "experiment_id": "EXP-DHS-DCP-CARRY-QUADRATIC-EXTENSION-BOUNDARY",
-    "falsifiers_triggered": [],
+    "falsifiers_triggered": [
+      "High full-cube carry ANF degree does not survive auxiliary-variable extension complexity.",
+      "A compact degree-two polynomial system is not evidence of a polynomial witness algorithm.",
+      "The direct carry-column factor graph is not a bounded-treewidth contraction route on random labels.",
+      "Alternative constraint decompositions and arithmetic/quantum algorithms remain open."
+    ],
     "id": "RESULT-EXP-DHS-DCP-CARRY-QUADRATIC-EXTENSION-BOUNDARY-LATEST",
-    "metrics": {},
-    "status": "completed",
-    "summary": ""
+    "metrics": {
+      "alternative_auxiliary_width_no_go_count": 0,
+      "exact_degree_two_extension_theorem_count": 1,
+      "extension_control_count": 3,
+      "finite_control_failure_count": 0,
+      "high_anf_representation_lower_bound_refutation_count": 1,
+      "minimum_treewidth_fraction": 0.9852941176470589,
+      "natural_primal_linear_treewidth_theorem_count": 1,
+      "new_quantum_algorithm_count": 0,
+      "polynomial_witness_solver_count": 0,
+      "primal_graph_control_count": 2,
+      "scaling_record_count": 2
+    },
+    "status": "low-degree-carry-extension-exact-natural-width-linear",
+    "summary": "Defeated high carry ANF degree as a representation lower bound by constructing an exact polynomial-size degree-two carry extension; proved the natural random column-factor encoding nevertheless has linear primal treewidth with exponentially high probability."
   },
   {
     "artifacts": {
@@ -22248,16 +22265,32 @@
   },
   {
     "artifacts": {
-      "dcp_label_incidence_rank_width_no_go": "/private/var/folders/y_/k55rjs0x7nb045dsgq61qw000000gn/T/pytest-of-jaspersands/pytest-24/test_report_keeps_auxiliary_re0/incidence-rank-width.json"
+      "dcp_label_incidence_rank_width_no_go": "/private/var/folders/y_/k55rjs0x7nb045dsgq61qw000000gn/T/pytest-of-jaspersands/pytest-528/test_report_keeps_auxiliary_re0/incidence-rank-width.json"
     },
     "candidate_id": "CODE-COSET-COLLECTIVE",
-    "created_at": "",
+    "created_at": "2026-10-15T02:01:10.342878+00:00",
     "experiment_id": "EXP-DHS-DCP-LABEL-INCIDENCE-RANK-WIDTH-NO-GO",
-    "falsifiers_triggered": [],
+    "falsifiers_triggered": [
+      "Reordering the natural label-bit incidence graph cannot make its exact contraction width sublinear.",
+      "The earlier primal-clique result is strengthened from one elimination convention to every branch decomposition of the fixed graph.",
+      "Graph rewrites, approximate contractions, and general algorithms are not covered."
+    ],
     "id": "RESULT-EXP-DHS-DCP-LABEL-INCIDENCE-RANK-WIDTH-NO-GO-LATEST",
-    "metrics": {},
-    "status": "completed",
-    "summary": ""
+    "metrics": {
+      "all_branch_ordering_linear_rank_width_theorem_count": 1,
+      "approximate_contraction_no_go_count": 0,
+      "auxiliary_graph_rewrite_no_go_count": 0,
+      "cut_rank_control_count": 2,
+      "finite_control_failure_count": 0,
+      "minimum_rank_width_fraction": 0.5,
+      "new_quantum_algorithm_count": 0,
+      "polynomial_subset_sum_solver_count": 0,
+      "rank_tail_control_count": 2,
+      "scaling_record_count": 2,
+      "uniform_submatrix_rank_theorem_count": 1
+    },
+    "status": "random-label-incidence-all-branch-width-linear",
+    "summary": "Proved the random DCP label-bit incidence graph has linear rank-width and treewidth under every branch ordering with 2^-Omega(q^2) failure; auxiliary graph rewrites remain open."
   },
   {
     "artifacts": {

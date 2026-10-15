@@ -419,4 +419,41 @@ def write_fiber_transport_graph_audit(
     )
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
+    if write_registry:
+        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
+        metrics = dict(payload.get("headline_metrics", {}))
+        experiment_record = ExperimentResultRecord(
+            id=result_id,
+            experiment_id=registry_experiment_id,
+            candidate_id=registry_candidate_id,
+            created_at=utc_now(),
+            status=payload.get("status", "completed"),
+            summary=payload.get("summary", ""),
+            metrics=metrics,
+            falsifiers_triggered=list(payload.get("falsifiers_triggered", [])),
+            artifacts={path.stem: str(path), "report": str(path)},
+        )
+        upsert_experiment_result(experiment_record)
+        upsert_negative_result(
+            NegativeResultRecord(
+                id="NEG-DCP-FIBER-WALK-WITHOUT-CLASSICAL-GRAPH-BASELINE",
+                claim="Local fiber connectivity is inherently quantum evidence.",
+                reason_invalid="Classical BFS traverses the identical finite graph; a quantum claim needs an asymptotic oracle/runtime separation after charging graph access.",
+                lesson="Demand a uniform spectral theorem, polynomial state preparation and updates, verified relation output, exact source coverage, and classical baselines before promoting a fiber walk.",
+                applies_to=['DHS-GOWERS-SIEVE', 'EXP-DHS-DCP-FIBER-TRANSPORT-GRAPH'],
+                evidence=metrics,
+                source=str(path),
+            )
+        )
+        upsert_negative_result(
+            NegativeResultRecord(
+                id="NEG-DCP-FINITE-FIBER-GRAPH-GAP-AS-POLYNOMIAL-WALK",
+                claim="A positive spectral gap on exact small subset-sum fiber graphs proves a polynomial quantum relation walk.",
+                reason_invalid="No all-n gap, linear-depth start-state preparation, coherent reflection cost, or verified output theorem follows from finite eigenspectra.",
+                lesson="Demand a uniform spectral theorem, polynomial state preparation and updates, verified relation output, exact source coverage, and classical baselines before promoting a fiber walk.",
+                applies_to=['DHS-GOWERS-SIEVE', 'EXP-DHS-DCP-FIBER-TRANSPORT-GRAPH'],
+                evidence=metrics,
+                source=str(path),
+            )
+        )
     return payload

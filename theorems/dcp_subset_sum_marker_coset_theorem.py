@@ -313,4 +313,30 @@ def write_marker_coset_theorem(
     )
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
+    if write_registry:
+        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
+        metrics = dict(payload.get("headline_metrics", {}))
+        experiment_record = ExperimentResultRecord(
+            id=result_id,
+            experiment_id=registry_experiment_id,
+            candidate_id=registry_candidate_id,
+            created_at=utc_now(),
+            status=payload.get("status", "completed"),
+            summary=payload.get("summary", ""),
+            metrics=metrics,
+            falsifiers_triggered=list(payload.get("falsifiers_triggered", [])),
+            artifacts={path.stem: str(path), "report": str(path)},
+        )
+        upsert_experiment_result(experiment_record)
+        upsert_negative_result(
+            NegativeResultRecord(
+                id="NEG-DCP-SUBSET-SUM-MARKER-FILTER-AS-DECODER",
+                claim="Selecting marker-one lattice vectors supplies a polynomial subset-sum witness decoder.",
+                reason_invalid="Marker-one normalization is easy without a norm bound, while finding one at witness radius is exactly equivalent to the original binary subset-sum search.",
+                lesson="Specify and analyze an affine-CVP algorithm; marker filtering or Bezout normalization alone is not algorithmic progress.",
+                applies_to=['DHS-GOWERS-SIEVE', 'EXP-DHS-DCP-SUBSET-SUM-MARKER-COSET-THEOREM'],
+                evidence=metrics,
+                source=str(path),
+            )
+        )
     return payload

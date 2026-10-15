@@ -1,0 +1,18 @@
+{
+  "contract_id": "native_response_fourier_factorization_audit_v1",
+  "title": "Response-Phase Fourier Factorization: Tensor Qutrit Dequantization, 1-Call Cyclic Autoregressive Chain Rule, and Signed 2-Call Pinching",
+  "status": "RESPONSE_FOURIER_FACTORIZATION_AND_SIGNED_PATH_PINCHING_AUDIT_REVIEW_PENDING",
+  "scope": {
+    "tensor_qutrit_product_factorization": "Replacing cyclic F_{3^M} with tensor-product F_3^(tensor M) factorizes (F_3^dag)^(tensor M) D_y^(+-1) F_3^(tensor M) D_y |+_3>^(tensor M) into M independent 1-qutrit states computable in O(M) operations",
+    "one_call_cyclic_autoregressive_chain_rule": "The 1-call cyclic DFT state F_{3^M} D_y |+_D> satisfies the exact triangular autoregressive chain rule P(v_0,...,v_{M-1}) = prod_{k=0}^{M-1} P_k(v_k | v_0,...,v_{k-1}) with sum_{v_k=0}^2 P_k(v_k | v_{<k}) = 1 by Z_3 Parseval",
+    "signed_two_call_difference_pinching": "The signed (+1,-1) schedule pinches onto difference collisions; diagonal secret and error phases cancel but quadratic Fourier phases remain. No probability floor follows. A valid paired-row countercontrol refutes the former floor."
+  },
+  "honesty_guardrails": {
+    "this_finite_audit_supplies_polynomial_two_call_sampler": false,
+    "full_cyclic_approximate_sampling_has_separate_classical_baseline": true,
+    "general_quantum_lower_bound_claimed": false,
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  }
+}

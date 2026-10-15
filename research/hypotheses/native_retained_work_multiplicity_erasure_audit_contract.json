@@ -1,0 +1,17 @@
+{
+  "contract_id": "native_retained_work_multiplicity_erasure_audit_v1",
+  "title": "Retained Work-Register Multiplicity Erasure, Target-Amplitude Monotonicity, and Preimage Attack Equivalence",
+  "status": "RETAINED_WORK_MULTIPLICITY_ERASURE_AND_PREIMAGE_EQUIVALENCE_AUDIT_REVIEW_PENDING",
+  "scope": {
+    "multiplicity_variance_leakage": "Conditional noiseless secret-readout probability after inverse QFT on the retained work register is 1 / (N * C_A) = 1 / (1 + N * sum_sigma (p_sigma - 1/N)^2)",
+    "target_amplitude_monotonicity": "For any passive diagonal work contraction |w_sigma| <= 1 and any error vector e, the joint probability P_W(readout -s AND zero) is at most 1/N, and for exact multiplicity erasure w_sigma* = m_min^+ / m_sigma equals (S_+ * m_min^+ / D)^2 / N <= 1/N",
+    "chosen_frequency_preimage_equivalence": "A preimage oracle returning (b, w) with sigma(b, w) = e_i directly recovers s_masked[i] + theta_e(b, w) mod q in n classical queries"
+  },
+  "honesty_guardrails": {
+    "universal_quantum_lower_bound_claimed": false,
+    "preimage_oracle_granted_as_free_quantum_primitive": false,
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  }
+}

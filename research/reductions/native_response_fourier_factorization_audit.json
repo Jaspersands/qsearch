@@ -1,0 +1,1573 @@
+{
+  "status": "RESPONSE_FOURIER_FACTORIZATION_AND_SIGNED_PATH_PINCHING_AUDIT_REVIEW_PENDING",
+  "producer_sha256": "28bcccc00ba18f0e4a47a7932138da6a6db5f5255c2e5151d7ae454201369c6c",
+  "derivation_sha256": "6e948a576e783514bf9358f7ffc00ce2f4d9fcfd5324fd57907b7dc8947a7a35",
+  "contract_sha256": "206d37b83eb0e41b16b91c073381f122db8e425dbb7027ec1641e8870670b551",
+  "dependency_sha256": {
+    "native_basis_lottery.py": "8dd21b0b64454b5daaa9b6cc67ff6eb2a715edd045d5f6af5d3c5f3fbd1a0038",
+    "native_full_root_slice.py": "e3cd11cda6bc5a73ca4fb6131c1ac4c0d16f6a5608bd1ccbd1f6d691da77c966",
+    "native_response_path_valuation.py": "20fd0dc47906748ed9da3ca68aeacef704825cd2f6ad349d22a53f399891a28d",
+    "native_word_span_decision.py": "867c8f8b8e19660784714184963fdeaa6d27ab1cf2ae83a7d1ba82e60f5fff96",
+    "ternary_measured_lattice_decoder.py": "151f7c5fbb9e09ad8c231fb841c6d8ce385d54123acd9d15f33b3ce51efced4b"
+  },
+  "tensor_qutrit_factorization_controls": [
+    {
+      "modulus_q": 9,
+      "word_sites_M": 1,
+      "word_dimension_D": 3,
+      "second_call_sign": 1,
+      "single_qutrit_site_marginals": [
+        {
+          "site_index": 0,
+          "digit_phases": [
+            2,
+            3,
+            4
+          ],
+          "marginal_outcome_probabilities": [
+            [
+              "-1/9",
+              "-1/9",
+              "0",
+              "0",
+              "0",
+              "5/9"
+            ],
+            [
+              "1/9",
+              "0",
+              "-1/9",
+              "1/9",
+              "2/9"
+            ],
+            [
+              "1/9",
+              "0",
+              "0",
+              "1/9",
+              "-1/9",
+              "2/9"
+            ]
+          ]
+        }
+      ],
+      "product_of_marginals_all_outcomes": [
+        [
+          "-1/9",
+          "-1/9",
+          "0",
+          "0",
+          "0",
+          "5/9"
+        ],
+        [
+          "1/9",
+          "0",
+          "-1/9",
+          "1/9",
+          "2/9"
+        ],
+        [
+          "1/9",
+          "0",
+          "0",
+          "1/9",
+          "-1/9",
+          "2/9"
+        ]
+      ],
+      "full_path_sum_all_outcomes": [
+        [
+          "-1/9",
+          "-1/9",
+          "0",
+          "0",
+          "0",
+          "5/9"
+        ],
+        [
+          "1/9",
+          "0",
+          "-1/9",
+          "1/9",
+          "2/9"
+        ],
+        [
+          "1/9",
+          "0",
+          "0",
+          "1/9",
+          "-1/9",
+          "2/9"
+        ]
+      ],
+      "product_matches_full_path_sum_identically": true,
+      "single_qutrit_path_terms_evaluated_9_times_3_times_M": 27,
+      "full_dense_path_terms_3_pow_3M": 27,
+      "differs_from_cyclic_F_D_when_M_ge_2": false,
+      "tensor_qutrit_schedule_classically_tractable_in_O_M": true
+    },
+    {
+      "modulus_q": 3,
+      "word_sites_M": 2,
+      "word_dimension_D": 9,
+      "second_call_sign": 1,
+      "single_qutrit_site_marginals": [
+        {
+          "site_index": 0,
+          "digit_phases": [
+            0,
+            0,
+            0
+          ],
+          "marginal_outcome_probabilities": [
+            [
+              "1/3"
+            ],
+            [
+              "1/3"
+            ],
+            [
+              "1/3"
+            ]
+          ]
+        },
+        {
+          "site_index": 1,
+          "digit_phases": [
+            0,
+            0,
+            0
+          ],
+          "marginal_outcome_probabilities": [
+            [
+              "1/3"
+            ],
+            [
+              "1/3"
+            ],
+            [
+              "1/3"
+            ]
+          ]
+        }
+      ],
+      "product_of_marginals_all_outcomes": [
+        [
+          "1/9"
+        ],
+        [
+          "1/9"
+        ],
+        [
+          "1/9"
+        ],
+        [
+          "1/9"
+        ],
+        [
+          "1/9"
+        ],
+        [
+          "1/9"
+        ],
+        [
+          "1/9"
+        ],
+        [
+          "1/9"
+        ],
+        [
+          "1/9"
+        ]
+      ],
+      "full_path_sum_all_outcomes": [
+        [
+          "1/9"
+        ],
+        [
+          "1/9"
+        ],
+        [
+          "1/9"
+        ],
+        [
+          "1/9"
+        ],
+        [
+          "1/9"
+        ],
+        [
+          "1/9"
+        ],
+        [
+          "1/9"
+        ],
+        [
+          "1/9"
+        ],
+        [
+          "1/9"
+        ]
+      ],
+      "product_matches_full_path_sum_identically": true,
+      "single_qutrit_path_terms_evaluated_9_times_3_times_M": 54,
+      "full_dense_path_terms_3_pow_3M": 729,
+      "differs_from_cyclic_F_D_when_M_ge_2": false,
+      "tensor_qutrit_schedule_classically_tractable_in_O_M": true
+    },
+    {
+      "modulus_q": 9,
+      "word_sites_M": 2,
+      "word_dimension_D": 9,
+      "second_call_sign": 1,
+      "single_qutrit_site_marginals": [
+        {
+          "site_index": 0,
+          "digit_phases": [
+            0,
+            8,
+            1
+          ],
+          "marginal_outcome_probabilities": [
+            [
+              "1/9",
+              "0",
+              "0",
+              "1/9",
+              "-1/9",
+              "5/9"
+            ],
+            [
+              "1/9",
+              "0",
+              "-1/9",
+              "1/9",
+              "2/9"
+            ],
+            [
+              "-1/9",
+              "-1/9",
+              "0",
+              "0",
+              "0",
+              "2/9"
+            ]
+          ]
+        },
+        {
+          "site_index": 1,
+          "digit_phases": [
+            8,
+            1,
+            0
+          ],
+          "marginal_outcome_probabilities": [
+            [
+              "-1/9",
+              "-1/9",
+              "0",
+              "0",
+              "0",
+              "5/9"
+            ],
+            [
+              "1/9",
+              "0",
+              "0",
+              "1/9",
+              "-1/9",
+              "2/9"
+            ],
+            [
+              "1/9",
+              "0",
+              "-1/9",
+              "1/9",
+              "2/9"
+            ]
+          ]
+        }
+      ],
+      "product_of_marginals_all_outcomes": [
+        [
+          "1/81",
+          "-4/81",
+          "0",
+          "5/81",
+          "-5/81",
+          "8/27"
+        ],
+        [
+          "7/81",
+          "-1/81",
+          "0",
+          "8/81",
+          "-8/81",
+          "4/27"
+        ],
+        [
+          "1/81",
+          "5/81",
+          "0",
+          "-4/81",
+          "4/81",
+          "1/9"
+        ],
+        [
+          "-2/81",
+          "2/81",
+          "0",
+          "-4/81",
+          "4/81",
+          "1/9"
+        ],
+        [
+          "1/81",
+          "2/81",
+          "0",
+          "-1/81",
+          "1/81",
+          "1/27"
+        ],
+        [
+          "1/81",
+          "5/81",
+          "0",
+          "-4/81",
+          "4/81",
+          "2/27"
+        ],
+        [
+          "-8/81",
+          "-7/81",
+          "0",
+          "-1/81",
+          "1/81",
+          "4/27"
+        ],
+        [
+          "1/81",
+          "-1/81",
+          "0",
+          "2/81",
+          "-2/81",
+          "1/27"
+        ],
+        [
+          "-2/81",
+          "-1/81",
+          "0",
+          "-1/81",
+          "1/81",
+          "1/27"
+        ]
+      ],
+      "full_path_sum_all_outcomes": [
+        [
+          "1/81",
+          "-4/81",
+          "0",
+          "5/81",
+          "-5/81",
+          "8/27"
+        ],
+        [
+          "7/81",
+          "-1/81",
+          "0",
+          "8/81",
+          "-8/81",
+          "4/27"
+        ],
+        [
+          "1/81",
+          "5/81",
+          "0",
+          "-4/81",
+          "4/81",
+          "1/9"
+        ],
+        [
+          "-2/81",
+          "2/81",
+          "0",
+          "-4/81",
+          "4/81",
+          "1/9"
+        ],
+        [
+          "1/81",
+          "2/81",
+          "0",
+          "-1/81",
+          "1/81",
+          "1/27"
+        ],
+        [
+          "1/81",
+          "5/81",
+          "0",
+          "-4/81",
+          "4/81",
+          "2/27"
+        ],
+        [
+          "-8/81",
+          "-7/81",
+          "0",
+          "-1/81",
+          "1/81",
+          "4/27"
+        ],
+        [
+          "1/81",
+          "-1/81",
+          "0",
+          "2/81",
+          "-2/81",
+          "1/27"
+        ],
+        [
+          "-2/81",
+          "-1/81",
+          "0",
+          "-1/81",
+          "1/81",
+          "1/27"
+        ]
+      ],
+      "product_matches_full_path_sum_identically": true,
+      "single_qutrit_path_terms_evaluated_9_times_3_times_M": 54,
+      "full_dense_path_terms_3_pow_3M": 729,
+      "differs_from_cyclic_F_D_when_M_ge_2": true,
+      "tensor_qutrit_schedule_classically_tractable_in_O_M": true
+    }
+  ],
+  "one_call_cyclic_autoregressive_controls": [
+    {
+      "modulus_q": 9,
+      "word_sites_M": 1,
+      "word_dimension_D": 3,
+      "root_order": 9,
+      "autoregressive_conditional_tables": [
+        {
+          "step_k": 0,
+          "paired_site_index": 0,
+          "prefix_modulus_3_pow_k": 1,
+          "prefix_conditionals": [
+            {
+              "v_prefix_mod_3_pow_k": 0,
+              "conditional_probabilities_v_k_0_1_2": [
+                [
+                  "-2/9",
+                  "-1/9",
+                  "0",
+                  "-1/9",
+                  "1/9",
+                  "1/3"
+                ],
+                [
+                  "1/9",
+                  "2/9",
+                  "0",
+                  "-1/9",
+                  "1/9",
+                  "1/3"
+                ],
+                [
+                  "1/9",
+                  "-1/9",
+                  "0",
+                  "2/9",
+                  "-2/9",
+                  "1/3"
+                ]
+              ],
+              "parseval_sum_equals_one": true
+            }
+          ]
+        }
+      ],
+      "chain_rule_product_all_outcomes": [
+        [
+          "-2/9",
+          "-1/9",
+          "0",
+          "-1/9",
+          "1/9",
+          "1/3"
+        ],
+        [
+          "1/9",
+          "2/9",
+          "0",
+          "-1/9",
+          "1/9",
+          "1/3"
+        ],
+        [
+          "1/9",
+          "-1/9",
+          "0",
+          "2/9",
+          "-2/9",
+          "1/3"
+        ]
+      ],
+      "full_cyclic_dft_1call_all_outcomes": [
+        [
+          "-2/9",
+          "-1/9",
+          "0",
+          "-1/9",
+          "1/9",
+          "1/3"
+        ],
+        [
+          "1/9",
+          "2/9",
+          "0",
+          "-1/9",
+          "1/9",
+          "1/3"
+        ],
+        [
+          "1/9",
+          "-1/9",
+          "0",
+          "2/9",
+          "-2/9",
+          "1/3"
+        ]
+      ],
+      "chain_rule_matches_full_cyclic_dft_identically": true,
+      "per_sample_autoregressive_evaluation_steps": 1,
+      "one_call_cyclic_dft_classically_sampleable_in_O_M": true
+    },
+    {
+      "modulus_q": 3,
+      "word_sites_M": 2,
+      "word_dimension_D": 9,
+      "root_order": 9,
+      "autoregressive_conditional_tables": [
+        {
+          "step_k": 0,
+          "paired_site_index": 0,
+          "prefix_modulus_3_pow_k": 1,
+          "prefix_conditionals": [
+            {
+              "v_prefix_mod_3_pow_k": 0,
+              "conditional_probabilities_v_k_0_1_2": [
+                [
+                  "1"
+                ],
+                [],
+                []
+              ],
+              "parseval_sum_equals_one": true
+            }
+          ]
+        },
+        {
+          "step_k": 1,
+          "paired_site_index": 1,
+          "prefix_modulus_3_pow_k": 3,
+          "prefix_conditionals": [
+            {
+              "v_prefix_mod_3_pow_k": 0,
+              "conditional_probabilities_v_k_0_1_2": [
+                [
+                  "1"
+                ],
+                [],
+                []
+              ],
+              "parseval_sum_equals_one": true
+            },
+            {
+              "v_prefix_mod_3_pow_k": 1,
+              "conditional_probabilities_v_k_0_1_2": [
+                [
+                  "-2/9",
+                  "-1/9",
+                  "0",
+                  "-1/9",
+                  "1/9",
+                  "1/3"
+                ],
+                [
+                  "1/9",
+                  "2/9",
+                  "0",
+                  "-1/9",
+                  "1/9",
+                  "1/3"
+                ],
+                [
+                  "1/9",
+                  "-1/9",
+                  "0",
+                  "2/9",
+                  "-2/9",
+                  "1/3"
+                ]
+              ],
+              "parseval_sum_equals_one": true
+            },
+            {
+              "v_prefix_mod_3_pow_k": 2,
+              "conditional_probabilities_v_k_0_1_2": [
+                [
+                  "1/9",
+                  "-1/9",
+                  "0",
+                  "2/9",
+                  "-2/9",
+                  "1/3"
+                ],
+                [
+                  "1/9",
+                  "2/9",
+                  "0",
+                  "-1/9",
+                  "1/9",
+                  "1/3"
+                ],
+                [
+                  "-2/9",
+                  "-1/9",
+                  "0",
+                  "-1/9",
+                  "1/9",
+                  "1/3"
+                ]
+              ],
+              "parseval_sum_equals_one": true
+            }
+          ]
+        }
+      ],
+      "chain_rule_product_all_outcomes": [
+        [
+          "1"
+        ],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        []
+      ],
+      "full_cyclic_dft_1call_all_outcomes": [
+        [
+          "1"
+        ],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        []
+      ],
+      "chain_rule_matches_full_cyclic_dft_identically": true,
+      "per_sample_autoregressive_evaluation_steps": 2,
+      "one_call_cyclic_dft_classically_sampleable_in_O_M": true
+    },
+    {
+      "modulus_q": 9,
+      "word_sites_M": 2,
+      "word_dimension_D": 9,
+      "root_order": 9,
+      "autoregressive_conditional_tables": [
+        {
+          "step_k": 0,
+          "paired_site_index": 0,
+          "prefix_modulus_3_pow_k": 1,
+          "prefix_conditionals": [
+            {
+              "v_prefix_mod_3_pow_k": 0,
+              "conditional_probabilities_v_k_0_1_2": [
+                [
+                  "-2/9",
+                  "-1/9",
+                  "0",
+                  "-1/9",
+                  "1/9",
+                  "1/3"
+                ],
+                [
+                  "1/9",
+                  "-1/9",
+                  "0",
+                  "2/9",
+                  "-2/9",
+                  "1/3"
+                ],
+                [
+                  "1/9",
+                  "2/9",
+                  "0",
+                  "-1/9",
+                  "1/9",
+                  "1/3"
+                ]
+              ],
+              "parseval_sum_equals_one": true
+            }
+          ]
+        },
+        {
+          "step_k": 1,
+          "paired_site_index": 1,
+          "prefix_modulus_3_pow_k": 3,
+          "prefix_conditionals": [
+            {
+              "v_prefix_mod_3_pow_k": 0,
+              "conditional_probabilities_v_k_0_1_2": [
+                [
+                  "-2/9",
+                  "-1/9",
+                  "0",
+                  "-1/9",
+                  "1/9",
+                  "1/3"
+                ],
+                [
+                  "1/9",
+                  "-1/9",
+                  "0",
+                  "2/9",
+                  "-2/9",
+                  "1/3"
+                ],
+                [
+                  "1/9",
+                  "2/9",
+                  "0",
+                  "-1/9",
+                  "1/9",
+                  "1/3"
+                ]
+              ],
+              "parseval_sum_equals_one": true
+            },
+            {
+              "v_prefix_mod_3_pow_k": 1,
+              "conditional_probabilities_v_k_0_1_2": [
+                [
+                  "1/3"
+                ],
+                [
+                  "1/3"
+                ],
+                [
+                  "1/3"
+                ]
+              ],
+              "parseval_sum_equals_one": true
+            },
+            {
+              "v_prefix_mod_3_pow_k": 2,
+              "conditional_probabilities_v_k_0_1_2": [
+                [
+                  "1/9",
+                  "2/9",
+                  "0",
+                  "-1/9",
+                  "1/9",
+                  "1/3"
+                ],
+                [
+                  "1/9",
+                  "-1/9",
+                  "0",
+                  "2/9",
+                  "-2/9",
+                  "1/3"
+                ],
+                [
+                  "-2/9",
+                  "-1/9",
+                  "0",
+                  "-1/9",
+                  "1/9",
+                  "1/3"
+                ]
+              ],
+              "parseval_sum_equals_one": true
+            }
+          ]
+        }
+      ],
+      "chain_rule_product_all_outcomes": [
+        [
+          "-5/27",
+          "-1/9",
+          "0",
+          "-2/27",
+          "2/27",
+          "5/27"
+        ],
+        [
+          "1/27",
+          "-1/27",
+          "0",
+          "2/27",
+          "-2/27",
+          "1/9"
+        ],
+        [
+          "2/27",
+          "5/27",
+          "0",
+          "-1/9",
+          "1/9",
+          "5/27"
+        ],
+        [
+          "-1/27",
+          "-1/27",
+          "0",
+          "0",
+          "0",
+          "2/27"
+        ],
+        [
+          "1/27",
+          "-1/27",
+          "0",
+          "2/27",
+          "-2/27",
+          "1/9"
+        ],
+        [
+          "1/27",
+          "0",
+          "0",
+          "1/27",
+          "-1/27",
+          "2/27"
+        ],
+        [
+          "1/27",
+          "0",
+          "-1/27",
+          "1/27",
+          "2/27"
+        ],
+        [
+          "1/27",
+          "-1/27",
+          "0",
+          "2/27",
+          "-2/27",
+          "1/9"
+        ],
+        [
+          "1/27",
+          "0",
+          "-1/27",
+          "1/27",
+          "2/27"
+        ]
+      ],
+      "full_cyclic_dft_1call_all_outcomes": [
+        [
+          "-5/27",
+          "-1/9",
+          "0",
+          "-2/27",
+          "2/27",
+          "5/27"
+        ],
+        [
+          "1/27",
+          "-1/27",
+          "0",
+          "2/27",
+          "-2/27",
+          "1/9"
+        ],
+        [
+          "2/27",
+          "5/27",
+          "0",
+          "-1/9",
+          "1/9",
+          "5/27"
+        ],
+        [
+          "-1/27",
+          "-1/27",
+          "0",
+          "0",
+          "0",
+          "2/27"
+        ],
+        [
+          "1/27",
+          "-1/27",
+          "0",
+          "2/27",
+          "-2/27",
+          "1/9"
+        ],
+        [
+          "1/27",
+          "0",
+          "0",
+          "1/27",
+          "-1/27",
+          "2/27"
+        ],
+        [
+          "1/27",
+          "0",
+          "-1/27",
+          "1/27",
+          "2/27"
+        ],
+        [
+          "1/27",
+          "-1/27",
+          "0",
+          "2/27",
+          "-2/27",
+          "1/9"
+        ],
+        [
+          "1/27",
+          "0",
+          "-1/27",
+          "1/27",
+          "2/27"
+        ]
+      ],
+      "chain_rule_matches_full_cyclic_dft_identically": true,
+      "per_sample_autoregressive_evaluation_steps": 2,
+      "one_call_cyclic_dft_classically_sampleable_in_O_M": true
+    }
+  ],
+  "signed_two_call_cyclic_controls": [
+    {
+      "original_records": [
+        {
+          "label": [
+            5
+          ],
+          "value": 6,
+          "modulus": 9,
+          "source_id": "known-group-99201-0"
+        },
+        {
+          "label": [
+            8
+          ],
+          "value": 6,
+          "modulus": 9,
+          "source_id": "known-group-99201-1"
+        }
+      ],
+      "public_mask": [
+        1
+      ],
+      "calibration_only": {
+        "masked_secret": [
+          4
+        ],
+        "original_errors": [
+          0,
+          0
+        ]
+      },
+      "modulus_q": 9,
+      "word_dimension_D": 3,
+      "root_order": 9,
+      "schedule": "F_D_DAGGER D_y_DAGGER F_D D_y |PLUS_D>",
+      "diagonal_w_eq_v_zero_phase_path_count": 3,
+      "diagonal_data_phase_cancels_only": true,
+      "diagonal_fourier_component_weights": [
+        [
+          "1/9"
+        ],
+        [
+          "1/9"
+        ],
+        [
+          "1/9"
+        ]
+      ],
+      "diagonal_component_is_probability_lower_bound": false,
+      "exact_observed_all_outcome_probabilities": [
+        [
+          "1/9",
+          "0",
+          "0",
+          "1/9",
+          "-1/9",
+          "2/9"
+        ],
+        [
+          "1/9",
+          "0",
+          "-1/9",
+          "1/9",
+          "2/9"
+        ],
+        [
+          "-1/9",
+          "-1/9",
+          "0",
+          "0",
+          "0",
+          "5/9"
+        ]
+      ],
+      "uniform_secret_mean_all_outcomes": [
+        [
+          "7/27"
+        ],
+        [
+          "7/27"
+        ],
+        [
+          "13/27"
+        ]
+      ],
+      "difference_relation_pinched_all_outcomes": [
+        [
+          "7/27"
+        ],
+        [
+          "7/27"
+        ],
+        [
+          "13/27"
+        ]
+      ],
+      "signed_pinching_matches_secret_sweep_identically": true,
+      "signed_readout_differs_from_unsigned_readout": true
+    },
+    {
+      "original_records": [
+        {
+          "label": [
+            1
+          ],
+          "value": 2,
+          "modulus": 3,
+          "source_id": "known-group-99202-0"
+        },
+        {
+          "label": [
+            2
+          ],
+          "value": 1,
+          "modulus": 3,
+          "source_id": "known-group-99202-1"
+        },
+        {
+          "label": [
+            2
+          ],
+          "value": 1,
+          "modulus": 3,
+          "source_id": "known-group-99202-2"
+        },
+        {
+          "label": [
+            1
+          ],
+          "value": 2,
+          "modulus": 3,
+          "source_id": "known-group-99202-3"
+        }
+      ],
+      "public_mask": [
+        1
+      ],
+      "calibration_only": {
+        "masked_secret": [
+          1
+        ],
+        "original_errors": [
+          -1,
+          1,
+          1,
+          -1
+        ]
+      },
+      "modulus_q": 3,
+      "word_dimension_D": 9,
+      "root_order": 9,
+      "schedule": "F_D_DAGGER D_y_DAGGER F_D D_y |PLUS_D>",
+      "diagonal_w_eq_v_zero_phase_path_count": 9,
+      "diagonal_data_phase_cancels_only": true,
+      "diagonal_fourier_component_weights": [
+        [
+          "1/81"
+        ],
+        [
+          "1/81"
+        ],
+        [
+          "1/81"
+        ],
+        [
+          "1/81"
+        ],
+        [
+          "1/81"
+        ],
+        [
+          "1/81"
+        ],
+        [
+          "1/81"
+        ],
+        [
+          "1/81"
+        ],
+        [
+          "1/81"
+        ]
+      ],
+      "diagonal_component_is_probability_lower_bound": false,
+      "exact_observed_all_outcome_probabilities": [
+        [
+          "1/9"
+        ],
+        [
+          "1/9"
+        ],
+        [
+          "1/9"
+        ],
+        [
+          "1/9"
+        ],
+        [
+          "1/9"
+        ],
+        [
+          "1/9"
+        ],
+        [
+          "1/9"
+        ],
+        [
+          "1/9"
+        ],
+        [
+          "1/9"
+        ]
+      ],
+      "uniform_secret_mean_all_outcomes": [
+        [
+          "1/9"
+        ],
+        [
+          "1/9"
+        ],
+        [
+          "1/9"
+        ],
+        [
+          "1/9"
+        ],
+        [
+          "1/9"
+        ],
+        [
+          "1/9"
+        ],
+        [
+          "1/9"
+        ],
+        [
+          "1/9"
+        ],
+        [
+          "1/9"
+        ]
+      ],
+      "difference_relation_pinched_all_outcomes": [
+        [
+          "1/9"
+        ],
+        [
+          "1/9"
+        ],
+        [
+          "1/9"
+        ],
+        [
+          "1/9"
+        ],
+        [
+          "1/9"
+        ],
+        [
+          "1/9"
+        ],
+        [
+          "1/9"
+        ],
+        [
+          "1/9"
+        ],
+        [
+          "1/9"
+        ]
+      ],
+      "signed_pinching_matches_secret_sweep_identically": true,
+      "signed_readout_differs_from_unsigned_readout": false
+    },
+    {
+      "original_records": [
+        {
+          "label": [
+            2
+          ],
+          "value": 0,
+          "modulus": 9,
+          "source_id": "known-group-99205-0"
+        },
+        {
+          "label": [
+            0
+          ],
+          "value": 8,
+          "modulus": 9,
+          "source_id": "known-group-99205-1"
+        },
+        {
+          "label": [
+            0
+          ],
+          "value": 8,
+          "modulus": 9,
+          "source_id": "known-group-99205-2"
+        },
+        {
+          "label": [
+            2
+          ],
+          "value": 0,
+          "modulus": 9,
+          "source_id": "known-group-99205-3"
+        }
+      ],
+      "public_mask": [
+        0
+      ],
+      "calibration_only": {
+        "masked_secret": [
+          5
+        ],
+        "original_errors": [
+          -1,
+          -1,
+          -1,
+          -1
+        ]
+      },
+      "modulus_q": 9,
+      "word_dimension_D": 9,
+      "root_order": 9,
+      "schedule": "F_D_DAGGER D_y_DAGGER F_D D_y |PLUS_D>",
+      "diagonal_w_eq_v_zero_phase_path_count": 9,
+      "diagonal_data_phase_cancels_only": true,
+      "diagonal_fourier_component_weights": [
+        [
+          "1/81"
+        ],
+        [
+          "1/81"
+        ],
+        [
+          "1/81"
+        ],
+        [
+          "1/81"
+        ],
+        [
+          "1/81"
+        ],
+        [
+          "1/81"
+        ],
+        [
+          "1/81"
+        ],
+        [
+          "1/81"
+        ],
+        [
+          "1/81"
+        ]
+      ],
+      "diagonal_component_is_probability_lower_bound": false,
+      "exact_observed_all_outcome_probabilities": [
+        [
+          "1/81",
+          "0",
+          "-1/81",
+          "1/81",
+          "1/9"
+        ],
+        [
+          "5/81",
+          "5/81",
+          "0",
+          "0",
+          "0",
+          "4/27"
+        ],
+        [
+          "1/27",
+          "2/81",
+          "0",
+          "1/81",
+          "-1/81",
+          "11/81"
+        ],
+        [
+          "2/27",
+          "1/81",
+          "0",
+          "5/81",
+          "-5/81",
+          "4/27"
+        ],
+        [
+          "1/81",
+          "0",
+          "0",
+          "1/81",
+          "-1/81",
+          "1/27"
+        ],
+        [
+          "1/81",
+          "1/81",
+          "0",
+          "0",
+          "0",
+          "2/81"
+        ],
+        [
+          "-1/27",
+          "-5/81",
+          "0",
+          "2/81",
+          "-2/81",
+          "4/27"
+        ],
+        [
+          "-1/27",
+          "-2/81",
+          "0",
+          "-1/81",
+          "1/81",
+          "1/27"
+        ],
+        [
+          "-10/81",
+          "-1/27",
+          "0",
+          "-7/81",
+          "7/81",
+          "17/81"
+        ]
+      ],
+      "uniform_secret_mean_all_outcomes": [
+        [
+          "4/729",
+          "-4/729",
+          "0",
+          "8/729",
+          "-8/729",
+          "7/81"
+        ],
+        [
+          "19/729",
+          "17/729",
+          "0",
+          "2/729",
+          "-2/729",
+          "22/243"
+        ],
+        [
+          "-2/729",
+          "8/729",
+          "0",
+          "-10/729",
+          "10/729",
+          "22/243"
+        ],
+        [
+          "10/729",
+          "11/729",
+          "0",
+          "-1/729",
+          "1/729",
+          "20/243"
+        ],
+        [
+          "1/729",
+          "-1/729",
+          "0",
+          "2/729",
+          "-2/729",
+          "16/243"
+        ],
+        [
+          "-17/729",
+          "-16/729",
+          "0",
+          "-1/729",
+          "1/729",
+          "23/243"
+        ],
+        [
+          "1/729",
+          "-13/729",
+          "0",
+          "14/729",
+          "-14/729",
+          "34/243"
+        ],
+        [
+          "-5/729",
+          "5/729",
+          "0",
+          "-10/729",
+          "10/729",
+          "37/243"
+        ],
+        [
+          "-11/729",
+          "-7/729",
+          "0",
+          "-4/729",
+          "4/729",
+          "16/81"
+        ]
+      ],
+      "difference_relation_pinched_all_outcomes": [
+        [
+          "4/729",
+          "-4/729",
+          "0",
+          "8/729",
+          "-8/729",
+          "7/81"
+        ],
+        [
+          "19/729",
+          "17/729",
+          "0",
+          "2/729",
+          "-2/729",
+          "22/243"
+        ],
+        [
+          "-2/729",
+          "8/729",
+          "0",
+          "-10/729",
+          "10/729",
+          "22/243"
+        ],
+        [
+          "10/729",
+          "11/729",
+          "0",
+          "-1/729",
+          "1/729",
+          "20/243"
+        ],
+        [
+          "1/729",
+          "-1/729",
+          "0",
+          "2/729",
+          "-2/729",
+          "16/243"
+        ],
+        [
+          "-17/729",
+          "-16/729",
+          "0",
+          "-1/729",
+          "1/729",
+          "23/243"
+        ],
+        [
+          "1/729",
+          "-13/729",
+          "0",
+          "14/729",
+          "-14/729",
+          "34/243"
+        ],
+        [
+          "-5/729",
+          "5/729",
+          "0",
+          "-10/729",
+          "10/729",
+          "37/243"
+        ],
+        [
+          "-11/729",
+          "-7/729",
+          "0",
+          "-4/729",
+          "4/729",
+          "16/81"
+        ]
+      ],
+      "signed_pinching_matches_secret_sweep_identically": true,
+      "signed_readout_differs_from_unsigned_readout": true
+    }
+  ],
+  "diagonal_floor_countercontrol": {
+    "modulus_q": 9,
+    "word_dimension_D": 3,
+    "original_pair_values": [
+      8,
+      0
+    ],
+    "digit_phases": [
+      8,
+      1,
+      0
+    ],
+    "outcome_x": 0,
+    "exact_probability": [
+      "1/9",
+      "0",
+      "0",
+      "1/9",
+      "-1/9",
+      "2/9"
+    ],
+    "diagonal_component_weight": "1/9",
+    "old_claimed_floor": "1/3",
+    "probability_floor_claim_refuted": true
+  },
+  "this_finite_audit_supplies_polynomial_two_call_sampler": false,
+  "full_cyclic_approximate_sampling_has_separate_classical_baseline": true,
+  "general_quantum_lower_bound_claimed": false,
+  "accepted_speedup_candidate": false,
+  "new_active_negative_result_created": false,
+  "novelty_claim": false,
+  "research_decision": "TENSOR_F3_AND_ONE_CALL_CYCLIC_F_D_FACTORIZE_IN_O_M_WHILE_TWO_CALL_CYCLIC_F_D_COUPLES_REVERSE_DIGITS"
+}

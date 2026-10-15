@@ -1,0 +1,37 @@
+{
+  "contract_id": "planted-qary-cube-basis-coordinate-bridge-contract",
+  "title": "Planted q-Ary Kernel Basis Coordinate Bounds, q-Independent Cube Shifts, and Deterministic Prime/Residue Selection",
+  "version": "2.0.0",
+  "scope": "centered_rref_kernel_basis_coordinate_decomposition_and_cube_coset_bad_register_bounds_for_planted_qary_usvp",
+  "theorems": [
+    {
+      "id": "T1",
+      "name": "Centered-RREF Basis-Coordinate Decomposition",
+      "statement": "For any public q-ary parity-check matrix H in Z_q^(m x n) with full row rank m over Z_q, let P = (P_0, ..., P_(m-1)) and F = (F_0, ..., F_(n-m-1)) be the pivot and free column indices of its row-reduced echelon form [I_m | R] in P-then-F column order, with centered residue matrix C in [-(q-1)/2, (q-1)/2]^(m x (n-m)). In the public kernel basis B whose first m rows are q e_(P_i) and whose last n - m rows are e_(F_j) - sum_i C_(i,j) e_(P_i), every kernel vector u in ker(H mod q) subset Z^n has unique integer basis coordinates d = u B^(-1) = (d_piv, d_free) given by d_(free, j) = u_(F_j) and d_(piv, i) = (u_(P_i) + sum_j C_(i,j) u_(F_j)) / q in Z."
+    },
+    {
+      "id": "T2",
+      "name": "Nonzero Free-Column Support Invariant",
+      "statement": "For any nonzero short kernel vector u in (-q/2, q/2)^n intersect ker(H mod q), its free-column restriction u_F = (u_(F_0), ..., u_(F_(n-m-1))) is strictly nonzero (supp_F(u) >= 1). Consequently, at least one free basis coordinate d_(free, j) = u_(F_j) is nonzero in (-q/2, q/2) \\ {0}."
+    },
+    {
+      "id": "T3",
+      "name": "Modulus-Independent Pivot-Coordinate and Cube-Shift L1 Bounds",
+      "statement": "For any short kernel vector u in [-U,U]^n with U<q/2 and free support s_F>=1, |d_piv,i|<=floor(U*s_F/2). For ternary u the exact fixed-q attainable maximum is floor((1+s_F*(q-1)/2)/q). Its modulus-uniform envelope is 0 for s_F=1, 1 for s_F=2, and floor((s_F-1)/2) for s_F>=3. The envelope is not necessarily attained at a specified q."
+    },
+    {
+      "id": "T4",
+      "name": "Colinear-Multiple Cube Separation and Deterministic Prime/Residue Selection",
+      "statement": "For a planted ternary kernel vector u in {-1, 0, 1}^n \\ {0}, ||k u||_inf = |k|, so any splitting prime p_split <= W allows colinear multiples k u (e.g. k = p_split or k = 1 - p_split) to collide inside a cube of width W. Choosing the deterministic public prime p_split = nextprime(W) >= W + 1 and residue guess g_res = 1 eliminates all colinear multiple collisions |k| >= 2 inside width-W cubes, yields zero partner box shift delta_(j_pivot) = (1 - 1)/p_split = 0 on any hitting free coordinate d_(j_pivot) = 1 (so ||delta||_1 = ||d||_1 - 1), and collapses outer guessing to at most n - m free-coordinate trials j_pivot in {m, ..., n - 1}."
+    }
+  ],
+  "guardrails": {
+    "source_geometry_certified": false,
+    "private_hitting_coordinate_is_a_public_selector": false,
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false,
+    "end_to_end_quantum_advantage_claimed": false,
+    "bypassed_UniformCubeSuperposition_prepare_constraint": false
+  }
+}

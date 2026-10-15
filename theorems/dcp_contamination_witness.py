@@ -290,4 +290,41 @@ def write_contamination_witness_report(
     payload = asdict(report)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
+    if write_registry:
+        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
+        metrics = dict(payload.get("headline_metrics", {}))
+        experiment_record = ExperimentResultRecord(
+            id=result_id,
+            experiment_id=registry_experiment_id,
+            candidate_id=registry_candidate_id,
+            created_at=utc_now(),
+            status=payload.get("status", "completed"),
+            summary=payload.get("summary", ""),
+            metrics=metrics,
+            falsifiers_triggered=list(payload.get("falsifiers_triggered", [])),
+            artifacts={path.stem: str(path), "report": str(path)},
+        )
+        upsert_experiment_result(experiment_record)
+        upsert_negative_result(
+            NegativeResultRecord(
+                id="NEG-DCP-COLLISION-FREE-BATCH-CANNOT-WITNESS-CONTAMINATION",
+                claim="An arbitrary small batch of public-label DCP qubits contains a state-only contamination witness.",
+                reason_invalid="When the label subset sums are collision-free, the exact hidden-reflection-averaged good ensemble is I/2^m, identical to the uniformly randomized bad basis ensemble.",
+                lesson="A viable witness must exploit global modular subset-sum collisions and charge how they are found and measured.",
+                applies_to=['DHS-GOWERS-SIEVE', 'EXP-DHS-DCP-CONTAMINATION-WITNESS'],
+                evidence=metrics,
+                source=str(path),
+            )
+        )
+        upsert_negative_result(
+            NegativeResultRecord(
+                id="NEG-DCP-LOCAL-BAD-REGISTER-DETECTION-ENSEMBLE-IDENTITY",
+                claim="A state-only local measurement can identify arbitrary bad DCP basis registers before the reflection is known.",
+                reason_invalid="For every nonzero Fourier label, averaging a good phase qubit over the unknown reflection gives I/2. An allowed randomized bad basis qubit has the same density operator.",
+                lesson="Search for collective common-reflection correlations; do not add a local bad-flag oracle.",
+                applies_to=['DHS-GOWERS-SIEVE', 'EXP-DHS-DCP-CONTAMINATION-WITNESS'],
+                evidence=metrics,
+                source=str(path),
+            )
+        )
     return payload

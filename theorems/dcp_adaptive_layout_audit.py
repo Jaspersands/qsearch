@@ -496,6 +496,43 @@ def write_adaptive_layout_audit(
     )
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
+    if write_registry:
+        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
+        metrics = dict(payload["headline_metrics"])
+        experiment_record = ExperimentResultRecord(
+            id=result_id,
+            experiment_id=registry_experiment_id,
+            candidate_id=registry_candidate_id,
+            created_at=utc_now(),
+            status=payload["status"],
+            summary=payload["summary"],
+            metrics=metrics,
+            falsifiers_triggered=list(payload["falsifiers_triggered"]),
+            artifacts={"dcp_adaptive_layout_audit": str(path)},
+        )
+        upsert_experiment_result(experiment_record)
+        upsert_negative_result(
+            NegativeResultRecord(
+                id="NEG-DCP-ADAPTIVE-VALUATION-LAYOUT-COMPRESSION",
+                claim="A label-adaptive balanced cut obtains growing 2-adic subgroup compression by collecting high-valuation labels.",
+                reason_invalid="Having a side divisible by four already requires a binomial half-population large deviation with exponential loss.",
+                lesson="A surviving adaptive layout must use a polynomially computable additive statistic, prove inverse-polynomial source coverage and polynomial bond, and output a verified relation.",
+                applies_to=["DHS-GOWERS-SIEVE", registry_experiment_id],
+                evidence=metrics,
+                source=str(path),
+            )
+        )
+        upsert_negative_result(
+            NegativeResultRecord(
+                id="NEG-DCP-EXPONENTIAL-RANK-ORACLE-AS-LAYOUT-ALGORITHM",
+                claim="Adaptive swap search over exact Schmidt scores is a polynomial layout-selection algorithm.",
+                reason_invalid="Each score uses O(m 2^q) residue dynamic programming at q=Theta(n).",
+                lesson="A surviving adaptive layout must use a polynomially computable additive statistic, prove inverse-polynomial source coverage and polynomial bond, and output a verified relation.",
+                applies_to=["DHS-GOWERS-SIEVE", registry_experiment_id],
+                evidence=metrics,
+                source=str(path),
+            )
+        )
     return payload
 
 

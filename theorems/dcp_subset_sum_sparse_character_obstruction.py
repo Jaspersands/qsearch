@@ -512,6 +512,32 @@ def write_sparse_character_obstruction(
     payload = asdict(run_sparse_character_obstruction(**kwargs))
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
+    if write_registry:
+        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
+        metrics = dict(payload.get("headline_metrics", {}))
+        experiment_record = ExperimentResultRecord(
+            id=result_id,
+            experiment_id=registry_experiment_id,
+            candidate_id=registry_candidate_id,
+            created_at=utc_now(),
+            status=payload.get("status", "completed"),
+            summary=payload.get("summary", ""),
+            metrics=metrics,
+            falsifiers_triggered=list(payload.get("falsifiers_triggered", [])),
+            artifacts={path.stem: str(path), "report": str(path)},
+        )
+        upsert_experiment_result(experiment_record)
+        upsert_negative_result(
+            NegativeResultRecord(
+                id="NEG-DCP-SUBSET-SUM-FULL-LABEL-ADAPTIVE-SPARSE-CHARACTERS",
+                claim="After seeing all labels, polynomially many adaptively selected subset-sum characters retain enough Fourier mass to recover target-dependent density-one fiber structure.",
+                reason_invalid="Low-order characters are annihilated by random antipodal labels, while an exact growing-moment bound controls every high-order character simultaneously. Any polynomial sparse selection contributes only a superpolynomially small nonzero-frequency correction with high source probability.",
+                lesson="Do not search another sparse frequency dictionary. A surviving Fourier route must implicitly contract exponentially many characters with polynomial resources and an explicit witness-decoder implication.",
+                applies_to=['DHS-GOWERS-SIEVE', 'EXP-DHS-DCP-SUBSET-SUM-ADAPTIVE-SPARSE-CHARACTER-OBSTRUCTION'],
+                evidence=metrics,
+                source=str(path),
+            )
+        )
     return payload
 
 

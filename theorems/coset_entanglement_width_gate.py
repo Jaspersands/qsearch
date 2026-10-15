@@ -290,6 +290,36 @@ def write_entanglement_width_gate_report(
     payload = asdict(build_entanglement_width_gate_report())
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(payload, indent=2, sort_keys=True))
+    if write_registry:
+        negative_record = NegativeResultRecord(
+            id="NEG-COSET-BOUNDED-COPY-MECHANISM-AS-GI-DECODER",
+            source=str(output_path),
+            claim=(
+                "A fixed one-, two-, or three-register representation measurement can provide nonnegligible information for the GI-relevant hidden-involution family."
+            ),
+            reason_invalid=(
+                "Primary multiregister lower bounds require entanglement across Omega(n log n) coset states."
+            ),
+            lesson=(
+                "Keep bounded-copy modules as local primitives only and require an explicit growing-width measurement network."
+            ),
+            applies_to=[registry_candidate_id, registry_experiment_id],
+            evidence=payload.get("headline_metrics", {}),
+        )
+        upsert_negative_result(negative_record)
+        upsert_experiment_result(
+            ExperimentResultRecord(
+                id=registry_result_id or f"RESULT-{registry_experiment_id}-LATEST",
+                experiment_id=registry_experiment_id,
+                candidate_id=registry_candidate_id,
+                created_at=payload.get("created_at", utc_now()),
+                status=payload.get("status", "completed"),
+                summary=payload.get("summary", ""),
+                metrics=payload.get("headline_metrics", {}),
+                falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                artifacts={"report": str(output_path)},
+            )
+        )
     return payload
 
 

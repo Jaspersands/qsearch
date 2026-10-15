@@ -505,22 +505,37 @@ def write_low_rank_contraction_search(
     payload = asdict(report)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry and not payload["headline_metrics"]["joint_polynomial_finite_survivor_count"]:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-DCP-IID-TESTED-LOW-RANK-CONTRACTION-DICTIONARIES",
-                source=str(path),
-                claim="Standard polynomial-rank bandlimited or Fejer response contractions yield a polynomial DCP bucket decoder.",
-                reason_invalid=(
-                    "Every tested row either lacked a uniform discrete margin or failed exact Hoeffding sample, precision, "
-                    "or contraction-operation accounting. No finite joint-polynomial survivor remained."
-                ),
-                lesson=(
-                    "Do not retry these dictionaries without a new projection-cancellation mechanism. Search structured "
-                    "tensor networks or algebraic kernels and keep the exact all-order variance gate."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence=payload["headline_metrics"],
-            )
+    if write_registry:
+        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
+        metrics = dict(payload["headline_metrics"])
+        experiment_record = ExperimentResultRecord(
+            id=result_id,
+            experiment_id=registry_experiment_id,
+            candidate_id=registry_candidate_id,
+            created_at=utc_now(),
+            status=payload["status"],
+            summary=payload["summary"],
+            metrics=metrics,
+            falsifiers_triggered=list(payload.get("falsifiers_triggered", [])),
+            artifacts={path.stem: str(path), "report": str(path)},
         )
+        upsert_experiment_result(experiment_record)
+        if not payload["headline_metrics"]["joint_polynomial_finite_survivor_count"]:
+            upsert_negative_result(
+                NegativeResultRecord(
+                    id="NEG-DCP-IID-TESTED-LOW-RANK-CONTRACTION-DICTIONARIES",
+                    source=str(path),
+                    claim="Standard polynomial-rank bandlimited or Fejer response contractions yield a polynomial DCP bucket decoder.",
+                    reason_invalid=(
+                        "Every tested row either lacked a uniform discrete margin or failed exact Hoeffding sample, precision, "
+                        "or contraction-operation accounting. No finite joint-polynomial survivor remained."
+                    ),
+                    lesson=(
+                        "Do not retry these dictionaries without a new projection-cancellation mechanism. Search structured "
+                        "tensor networks or algebraic kernels and keep the exact all-order variance gate."
+                    ),
+                    applies_to=[registry_candidate_id, registry_experiment_id],
+                    evidence=payload["headline_metrics"],
+                )
+            )
     return payload

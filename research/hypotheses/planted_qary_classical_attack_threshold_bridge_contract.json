@@ -1,0 +1,30 @@
+{
+  "contract_id": "planted-qary-classical-attack-threshold-bridge-contract",
+  "title": "Planted q-Ary Classical Attack Threshold Bridge: Free-Support Lower Bounds, LLL lambda_2 Isolation Guarantee, and O(1)-Space Free-Coordinate Kernel Search",
+  "version": "1.0.0",
+  "scope": "free_support_lower_bounds_lll_lambda2_isolation_and_projective_free_coordinate_rref_search_for_planted_qary_usvp",
+  "theorems": [
+    {
+      "id": "T1",
+      "name": "Sharp Free-Column Support Lower Bound and Column-Pair Immunity",
+      "statement": "For any planted ternary vector u in {-1, 0, 1}^n \\ {0} in ker(H mod q) with total Hamming support s = ||u||_1 = ||u||_2^2 and pivot/free partition (P, F) (|P| = m, |F| = n - m), the free-column support s_F = |supp(u) cap F| satisfies max(1, s - m) <= s_F <= min(s, n - m). Whenever s >= 3 and ker(H mod q) contains no nonzero non-parallel vector of squared Euclidean norm <= 2, sparse_column_attack returns NO_UNIT_OR_COLUMN_PAIR_RELATION."
+    },
+    {
+      "id": "T2",
+      "name": "LLL Unique-SVP Isolation Criterion and Large-q Monotonicity",
+      "statement": "For any delta-LLL-reduced basis (b_1, ..., b_n) of ker(H mod q) with Lovasz factor alpha = 1 / (delta - 1/4), ||b_1||_2 <= alpha^((n-1)/2) * sqrt(s). Whenever lambda_2(ker(H mod q)) > alpha^((n-1)/2) * sqrt(s), the shortest reduced basis vector of public_LLL_attack is guaranteed to equal +/- u. Because ||u||_2 = sqrt(s) is independent of q while det(ker(H mod q)) = q^m grows with q, increasing q at fixed (n, m, s) monotonically increases the determinant-normalized gap q^(m/n) / sqrt(s)."
+    },
+    {
+      "id": "T3",
+      "name": "O(1)-Space Projective Free-Coordinate RREF Enumeration vs Ambient MITM",
+      "statement": "In the centered RREF [I_m | C] of H mod q, u in {-1, 0, 1}^n \\ {0} belongs to ker(H mod q) iff u_F in {-1, 0, 1}^(n-m) \\ {0} and u_(P_i) = centered_mod(-sum_j C_(i,j) u_(F_j), q) in {-1, 0, 1} for all 0 <= i < m. Restricting u_F to have first nonzero coordinate +1 checks exactly (3^(n-m) - 1)/2 states in O(1) memory, strictly beating the 3^floor(n/2) + 3^(n - floor(n/2)) states and O(3^floor(n/2)) memory of ambient ternary_MITM_attack whenever m >= ceil(n/2)."
+    }
+  ],
+  "guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false,
+    "end_to_end_quantum_advantage_claimed": false,
+    "bypassed_UniformCubeSuperposition_prepare_constraint": false
+  }
+}

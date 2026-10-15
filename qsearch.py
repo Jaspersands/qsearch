@@ -18971,6 +18971,141 @@ def command_ingest_papers(args: argparse.Namespace) -> int:
     return 0
 
 
+def command_planted_qary_cube_basis_coordinate_bridge(args: argparse.Namespace) -> int:
+    from theorems.planted_qary_cube_basis_coordinate_bridge import (
+        build_planted_qary_cube_basis_coordinate_bridge_report,
+        write_planted_qary_cube_basis_coordinate_bridge_report,
+    )
+
+    payload = (
+        build_planted_qary_cube_basis_coordinate_bridge_report()
+        if args.no_write
+        else write_planted_qary_cube_basis_coordinate_bridge_report()
+    )
+    print(json.dumps(payload, indent=2))
+    return 0
+
+
+def command_dcp_noisy_fourier_likelihood_decoder_audit(args: argparse.Namespace) -> int:
+    from theorems.dcp_noisy_fourier_likelihood_decoder_audit import (
+        build_dcp_noisy_fourier_likelihood_decoder_audit_report,
+        write_dcp_noisy_fourier_likelihood_decoder_audit_report,
+    )
+
+    payload = (
+        build_dcp_noisy_fourier_likelihood_decoder_audit_report()
+        if args.no_write
+        else write_dcp_noisy_fourier_likelihood_decoder_audit_report()
+    )
+    print(json.dumps(payload, indent=2))
+    return 0
+
+
+def command_native_higher_call_signed_path_valuation_audit(args: argparse.Namespace) -> int:
+    from theorems.native_higher_call_signed_path_valuation_audit import (
+        build_native_higher_call_signed_path_valuation_audit_report,
+        write_native_higher_call_signed_path_valuation_audit_report,
+    )
+
+    payload = (
+        build_native_higher_call_signed_path_valuation_audit_report()
+        if args.no_write
+        else write_native_higher_call_signed_path_valuation_audit_report()
+    )
+    print(json.dumps(payload, indent=2))
+    return 0
+
+
+def command_lattice_qft_cutoff_phase_fidelity_bridge(args: argparse.Namespace) -> int:
+    from theorems.lattice_qft_cutoff_phase_fidelity_bridge import (
+        build_lattice_qft_cutoff_phase_fidelity_bridge_report,
+        write_lattice_qft_cutoff_phase_fidelity_bridge_report,
+    )
+
+    payload = (
+        build_lattice_qft_cutoff_phase_fidelity_bridge_report()
+        if args.no_write
+        else write_lattice_qft_cutoff_phase_fidelity_bridge_report()
+    )
+    print(json.dumps(payload, indent=2))
+    return 0
+
+
+def command_planted_qary_cdkm_adder_sparsity_bridge(args: argparse.Namespace) -> int:
+    from theorems.planted_qary_cdkm_adder_sparsity_bridge import (
+        build_planted_qary_cdkm_adder_sparsity_bridge_report,
+        write_planted_qary_cdkm_adder_sparsity_bridge_report,
+    )
+
+    payload = (
+        build_planted_qary_cdkm_adder_sparsity_bridge_report()
+        if args.no_write
+        else write_planted_qary_cdkm_adder_sparsity_bridge_report()
+    )
+    print(json.dumps(payload, indent=2))
+    return 0
+
+
+def command_planted_qary_offset_pair_mass_frontier_audit(args: argparse.Namespace) -> int:
+    from theorems.planted_qary_offset_pair_mass_frontier_audit import (
+        build_planted_qary_offset_pair_mass_frontier_audit_report,
+        write_planted_qary_offset_pair_mass_frontier_audit_report,
+    )
+
+    payload = (
+        build_planted_qary_offset_pair_mass_frontier_audit_report()
+        if args.no_write
+        else write_planted_qary_offset_pair_mass_frontier_audit_report()
+    )
+    print(json.dumps(payload, indent=2))
+    return 0
+
+
+def command_dcp_adaptive_quadrature_tree_sieve_audit(args: argparse.Namespace) -> int:
+    from theorems.dcp_adaptive_quadrature_tree_sieve_audit import (
+        build_dcp_adaptive_quadrature_tree_sieve_audit_report,
+        write_dcp_adaptive_quadrature_tree_sieve_audit_report,
+    )
+
+    payload = (
+        build_dcp_adaptive_quadrature_tree_sieve_audit_report()
+        if args.no_write
+        else write_dcp_adaptive_quadrature_tree_sieve_audit_report()
+    )
+    print(json.dumps(payload, indent=2))
+    return 0
+
+
+def command_native_higher_call_prime_power_survival_closed_form(args: argparse.Namespace) -> int:
+    from theorems.native_higher_call_prime_power_survival_closed_form import (
+        build_native_higher_call_prime_power_survival_closed_form_report,
+        write_native_higher_call_prime_power_survival_closed_form_report,
+    )
+
+    payload = (
+        build_native_higher_call_prime_power_survival_closed_form_report()
+        if args.no_write
+        else write_native_higher_call_prime_power_survival_closed_form_report()
+    )
+    print(json.dumps(payload, indent=2))
+    return 0
+
+
+def command_planted_qary_classical_attack_threshold_bridge(args: argparse.Namespace) -> int:
+    from theorems.planted_qary_classical_attack_threshold_bridge import (
+        build_planted_qary_classical_attack_threshold_bridge_report,
+        write_planted_qary_classical_attack_threshold_bridge_report,
+    )
+
+    payload = (
+        build_planted_qary_classical_attack_threshold_bridge_report()
+        if args.no_write
+        else write_planted_qary_classical_attack_threshold_bridge_report()
+    )
+    print(json.dumps(payload, indent=2))
+    return 0
+
+
 def command_validate(args: argparse.Namespace) -> int:
     validation = validate_registry()
     print(json.dumps(validation, indent=2, sort_keys=True))
@@ -20612,6 +20747,279 @@ def command_native_refresh_crossover_scope_audit(args: argparse.Namespace) -> in
     print(f"Artifact: {REPORT}")
     print(f"Registry valid: {validation['valid']}")
     return 0 if validation["valid"] else 1
+
+
+def command_native_refresh_lottery_crossover(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    from theorems.native_refresh_lottery_crossover import REPORT, build_report, exact_json
+    report = build_report()
+    if not getattr(args, "no_write", False):
+        REPORT.parent.mkdir(parents=True, exist_ok=True)
+        REPORT.write_text(json.dumps(exact_json(report), indent=2) + "\n")
+    validation = validate_registry()
+    print(report["status"])
+    print(f"Artifact: {REPORT}")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_native_gaussian_dither_sampler(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    from theorems.native_gaussian_dither_sampler import REPORT, build_report, exact_json
+    report = build_report()
+    if not getattr(args, "no_write", False):
+        REPORT.parent.mkdir(parents=True, exist_ok=True)
+        REPORT.write_text(json.dumps(exact_json(report), indent=2) + "\n")
+    validation = validate_registry()
+    print(report["status"])
+    print(f"Artifact: {REPORT}")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_native_interleaved_syndrome_work_audit(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    from theorems.native_interleaved_syndrome_work_audit import REPORT, build_report, exact_json
+    report = build_report()
+    if not getattr(args, "no_write", False):
+        REPORT.parent.mkdir(parents=True, exist_ok=True)
+        REPORT.write_text(json.dumps(exact_json(report), indent=2) + "\n")
+    validation = validate_registry()
+    print(report["status"])
+    print(f"Artifact: {REPORT}")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_dcp_collective_majority_purification_audit(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    from theorems.dcp_collective_majority_purification_audit import REPORT, build_report, exact_json
+    report = build_report()
+    if not getattr(args, "no_write", False):
+        REPORT.parent.mkdir(parents=True, exist_ok=True)
+        REPORT.write_text(json.dumps(exact_json(report), indent=2) + "\n")
+    validation = validate_registry()
+    print(report["status"])
+    print(f"Artifact: {REPORT}")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_native_banded_qft_transfer_matrix_audit(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    from theorems.native_banded_qft_transfer_matrix_audit import REPORT, build_report, exact_json
+    report = build_report()
+    if not getattr(args, "no_write", False):
+        REPORT.parent.mkdir(parents=True, exist_ok=True)
+        REPORT.write_text(json.dumps(exact_json(report), indent=2) + "\n")
+    validation = validate_registry()
+    print(report["status"])
+    print(f"Artifact: {REPORT}")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_native_banded_qft_transfer_matrix_audit(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    from theorems.native_banded_qft_transfer_matrix_audit import REPORT, build_report, exact_json
+    report = build_report()
+    if not getattr(args, "no_write", False):
+        REPORT.parent.mkdir(parents=True, exist_ok=True)
+        REPORT.write_text(json.dumps(exact_json(report), indent=2) + "\n")
+    validation = validate_registry()
+    print(report["status"])
+    print(f"Artifact: {REPORT}")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_native_response_fourier_factorization_audit(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    from theorems.native_response_fourier_factorization_audit import REPORT, build_report, exact_json
+    report = build_report()
+    if not getattr(args, "no_write", False):
+        REPORT.parent.mkdir(parents=True, exist_ok=True)
+        REPORT.write_text(json.dumps(exact_json(report), indent=2) + "\n")
+    validation = validate_registry()
+    print(report["status"])
+    print(f"Artifact: {REPORT}")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_native_banded_qft_baseline(args: argparse.Namespace) -> int:
+    from theorems.native_banded_qft_baseline import REPORT, build_report
+    report = build_report()
+    if not args.no_write:
+        REPORT.parent.mkdir(parents=True, exist_ok=True)
+        REPORT.write_text(json.dumps(report, indent=2) + "\n")
+    print(report["status"])
+    print(f"Artifact: {REPORT}")
+    print("Dense-free public-phase sampling. No secret solver or general quantum lower bound.")
+    return 0
+
+
+def command_planted_qary_source(args: argparse.Namespace) -> int:
+    from theorems.planted_qary_usvp_source import REPORT, build_report, exact_json
+    report = build_report()
+    if not args.no_write:
+        REPORT.parent.mkdir(parents=True, exist_ok=True)
+        REPORT.write_text(json.dumps(exact_json(report), indent=2) + "\n")
+    recovered = sum(c["matched_attack_calibration"]["tested_instance_classically_recovers_planted_direction"]
+                    for c in report["source_controls"])
+    print(report["status"])
+    print(f"Public classical recovery: {recovered}/{len(report['source_controls'])} controls")
+    print(f"Artifact: {REPORT}")
+    print("Statistical uniqueness is not computational hardness. No quantum advantage admitted.")
+    return 0
+
+
+def command_dcp_adaptive_affine_packet_receiver(args: argparse.Namespace) -> int:
+    from theorems.dcp_adaptive_affine_packet_receiver import main
+    return main(["--no-write"] if args.no_write else [])
+
+
+def command_dcp_adaptive_direction_rank_gate(args: argparse.Namespace) -> int:
+    from theorems.dcp_adaptive_direction_rank_gate import main
+    return main(["--no-write"] if args.no_write else [])
+
+
+def command_dcp_carry_congruence_source(args: argparse.Namespace) -> int:
+    from theorems.dcp_carry_congruence_source import REPORT, build_report, exact_json
+    report = build_report()
+    if not args.no_write:
+        REPORT.parent.mkdir(parents=True, exist_ok=True)
+        REPORT.write_text(json.dumps(exact_json(report), indent=2) + "\n")
+    print(report["status"])
+    print(f"Conditional source controls: {len(report['native_source_controls'])}")
+    print(f"Artifact: {REPORT}")
+    print("Integer source-law certificate only; no compiled quantum extractor or decoder.")
+    return 0
+
+
+def command_dcp_paid_tree_receiver(args: argparse.Namespace) -> int:
+    from theorems.dcp_paid_tree_receiver import REPORT, build_report, exact_json
+    report = build_report()
+    if not args.no_write:
+        REPORT.parent.mkdir(parents=True, exist_ok=True)
+        REPORT.write_text(json.dumps(exact_json(report), indent=2) + "\n")
+    print(report["status"])
+    print(f"Actual source preparations: {report['actual_source_preparations_charged']}")
+    print(f"Artifact: {REPORT}")
+    print("Bounded exponential single-parity benchmark, not an efficient DCP solver.")
+    return 0
+
+
+def command_lattice_localization_gap_frontier(args: argparse.Namespace) -> int:
+    from theorems.lattice_localization_gap_frontier import REPORT, build_report, exact_json
+    report = build_report()
+    if not args.no_write:
+        REPORT.parent.mkdir(parents=True, exist_ok=True)
+        REPORT.write_text(json.dumps(exact_json(report), indent=2) + "\n")
+    print(report["status"])
+    print(f"Public classical recovery: {report['classically_recovered_controls']}/{report['controls_tested']} controls")
+    print(f"Artifact: {REPORT}")
+    print("Conditional source schedule, not certified hardness or an efficient receiver.")
+    return 0
+
+
+def command_lattice_sine_window_source(args: argparse.Namespace) -> int:
+    from theorems.lattice_sine_window_source import REPORT,build_report,exact_json
+    report=build_report()
+    if not args.no_write:
+        REPORT.parent.mkdir(parents=True,exist_ok=True)
+        REPORT.write_text(json.dumps(exact_json(report),indent=2)+"\n")
+    print(report["status"])
+    print(f"Charged source preparations: {report['charged_source_preparations']}")
+    print(f"Artifact: {REPORT}")
+    print("Public source only. Hardness and efficient noisy decoding remain unproved.")
+    return 0
+
+
+def command_native_response_mpo_baseline(args: argparse.Namespace) -> int:
+    from theorems.native_response_mpo_baseline import REPORT, build_report, exact_json
+    report=build_report()
+    if not args.no_write:
+        REPORT.parent.mkdir(parents=True,exist_ok=True)
+        REPORT.write_text(json.dumps(exact_json(report),indent=2)+"\n")
+    print(report["status"])
+    print(f"Artifact: {REPORT}")
+    print("Fixed public Fourier calls only. No growing-depth or unknown-copy no-go.")
+    return 0
+
+
+def command_native_mp12_prime_power_search_to_decision_audit(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    from theorems.native_mp12_prime_power_search_to_decision_audit import REPORT, build_report, exact_json
+    report = build_report()
+    if not getattr(args, "no_write", False):
+        REPORT.parent.mkdir(parents=True, exist_ok=True)
+        REPORT.write_text(json.dumps(exact_json(report), indent=2) + "\n")
+    validation = validate_registry()
+    print(report["status"])
+    print(f"Artifact: {REPORT}")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_native_response_path_valuation(args: argparse.Namespace) -> int:
+    from theorems.native_response_path_valuation import REPORT, build_report, exact_json
+    report = build_report()
+    if not args.no_write:
+        REPORT.parent.mkdir(parents=True, exist_ok=True)
+        REPORT.write_text(json.dumps(exact_json(report), indent=2) + "\n")
+    print(report["status"])
+    print(f"Artifact: {REPORT}")
+    print("No speedup or general lower bound admitted.")
+    return 0
+
+
+def command_lattice_cube_coset_source(args: argparse.Namespace) -> int:
+    from theorems.lattice_cube_coset_source import REPORT, build_report
+    report = build_report()
+    if not args.no_write:
+        REPORT.parent.mkdir(parents=True, exist_ok=True)
+        REPORT.write_text(json.dumps(report, indent=2) + "\n")
+    print(report["status"])
+    print(f"Artifact: {REPORT}")
+    print("Public LLL solves the calibration. Source circuits have separate workflows; the noisy decoder remains open.")
+    return 0
+
+
+def command_lattice_cube_source_circuit(args: argparse.Namespace) -> int:
+    from theorems.lattice_cube_source_circuit import REPORT, build_report
+    report = build_report()
+    if not args.no_write:
+        REPORT.parent.mkdir(parents=True, exist_ok=True)
+        REPORT.write_text(json.dumps(report, indent=2) + "\n")
+    print(report["status"])
+    print(f"Artifact: {REPORT}")
+    print("Clean logical evaluator compiled. Full phase readout has a separate workflow; the receiver remains open.")
+    return 0
+
+
+def command_lattice_cube_dcp_readout(args: argparse.Namespace) -> int:
+    from theorems.lattice_cube_dcp_readout import REPORT, build_report
+    report = build_report()
+    if not args.no_write:
+        REPORT.parent.mkdir(parents=True, exist_ok=True)
+        REPORT.write_text(json.dumps(report, indent=2) + "\n")
+    print(report["status"])
+    print(f"Artifact: {REPORT}")
+    print("Actual lattice phase registers emitted. Finite diagnostics do not prove a growing-family speedup.")
+    return 0
+
+
+def command_lattice_qft_precision(args: argparse.Namespace) -> int:
+    from theorems.lattice_qft_precision import REPORT, build_report, exact_json
+    report = build_report()
+    if not args.no_write:
+        REPORT.parent.mkdir(parents=True, exist_ok=True)
+        REPORT.write_text(json.dumps(exact_json(report), indent=2) + "\n")
+    print(report["status"])
+    print(f"Artifact: {REPORT}")
+    print("Joint QFT precision is budgeted. Rare conditional accuracy and full source/hardware correctness remain separate.")
+    return 0
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -28433,6 +28841,201 @@ def build_parser() -> argparse.ArgumentParser:
     )
     native_refresh_crossover_scope_audit.add_argument("--no-write", action="store_true")
     native_refresh_crossover_scope_audit.set_defaults(func=command_native_refresh_crossover_scope_audit)
+
+    native_refresh_lottery_crossover = subparsers.add_parser(
+        "native-refresh-lottery-crossover",
+        help="Audit parameter-free refresh-to-clean-basis crossover inequality and composed canonical DAG pipeline.",
+    )
+    native_refresh_lottery_crossover.add_argument("--no-write", action="store_true")
+    native_refresh_lottery_crossover.set_defaults(func=command_native_refresh_lottery_crossover)
+
+    native_gaussian_dither_sampler = subparsers.add_parser(
+        "native-gaussian-dither-sampler",
+        help="Audit certified rounded-Gaussian dither and sign/mask batch sampler with adaptive-threshold union.",
+    )
+    native_gaussian_dither_sampler.add_argument("--no-write", action="store_true")
+    native_gaussian_dither_sampler.set_defaults(func=command_native_gaussian_dither_sampler)
+
+    native_interleaved_syndrome_work_audit = subparsers.add_parser(
+        "native-interleaved-syndrome-work-audit",
+        help="Audit multi-round interleaved syndrome-work circuits, Parseval ground-band conservation, and 2-call 3-adic stratification.",
+    )
+    native_interleaved_syndrome_work_audit.add_argument("--no-write", action="store_true")
+    native_interleaved_syndrome_work_audit.set_defaults(func=command_native_interleaved_syndrome_work_audit)
+
+    dcp_collective_majority_purification_audit = subparsers.add_parser(
+        "dcp-collective-majority-purification-audit",
+        help="Audit DCP shifted-box intersection producer, equal-label heralding dichotomy, and collective majority Helstrom optimality.",
+    )
+    dcp_collective_majority_purification_audit.add_argument("--no-write", action="store_true")
+    dcp_collective_majority_purification_audit.set_defaults(func=command_dcp_collective_majority_purification_audit)
+
+    response_path_valuation = subparsers.add_parser(
+        "native-response-path-valuation",
+        help="Evaluate exact higher-call collision ideals and weighted two-call Fourier readout.",
+    )
+    response_path_valuation.add_argument("--no-write", action="store_true")
+    response_path_valuation.set_defaults(func=command_native_response_path_valuation)
+
+    native_mp12_prime_power_search_to_decision_audit = subparsers.add_parser(
+        "native-mp12-prime-power-search-to-decision-audit",
+        help="Audit Micciancio-Peikert prime-power Hensel subgroup probes, certified dither widening, and disjoint sample expansion.",
+    )
+    native_mp12_prime_power_search_to_decision_audit.add_argument("--no-write", action="store_true")
+    native_mp12_prime_power_search_to_decision_audit.set_defaults(func=command_native_mp12_prime_power_search_to_decision_audit)
+
+    native_response_fourier_factorization_audit = subparsers.add_parser(
+        "native-response-fourier-factorization-audit",
+        help="Audit tensor qutrit F3 factorization, 1-call cyclic autoregressive chain rule, and signed 2-call difference pinching.",
+    )
+    native_response_fourier_factorization_audit.add_argument("--no-write", action="store_true")
+    native_response_fourier_factorization_audit.set_defaults(func=command_native_response_fourier_factorization_audit)
+
+    banded_qft_baseline = subparsers.add_parser(
+        "native-banded-qft-baseline",
+        help="Run certified dense-free classical sampling for two-call banded Fourier schedules.",
+    )
+    banded_qft_baseline.add_argument("--no-write", action="store_true")
+    banded_qft_baseline.set_defaults(func=command_native_banded_qft_baseline)
+
+    planted_qary_source = subparsers.add_parser(
+        "planted-qary-source",
+        help="Generate public q-ary kernel lattices with certified field/rank promises and classical attacks.",
+    )
+    planted_qary_source.add_argument("--no-write", action="store_true")
+    planted_qary_source.set_defaults(func=command_planted_qary_source)
+
+    response_mpo=subparsers.add_parser("native-response-mpo-baseline",
+        help="Run paid exact-integer MPS sampling of fixed public phase/Fourier schedules.")
+    response_mpo.add_argument("--no-write",action="store_true")
+    response_mpo.set_defaults(func=command_native_response_mpo_baseline)
+
+    affine_receiver = subparsers.add_parser("dcp-adaptive-affine-packet-receiver",
+        help="Benchmark paid outcome-adaptive affine measurements on native carry packets.")
+    affine_receiver.add_argument("--no-write", action="store_true")
+    affine_receiver.set_defaults(func=command_dcp_adaptive_affine_packet_receiver)
+
+    adaptive_rank = subparsers.add_parser("dcp-adaptive-direction-rank-gate",
+        help="Certify full-label pre-complement single-output descent and native random cut-rank bounds.")
+    adaptive_rank.add_argument("--no-write", action="store_true")
+    adaptive_rank.set_defaults(func=command_dcp_adaptive_direction_rank_gate)
+
+    carry_source = subparsers.add_parser("dcp-carry-congruence-source",
+        help="Certify higher-modulus conditional carry-source acceptance and full affine output laws.")
+    carry_source.add_argument("--no-write", action="store_true")
+    carry_source.set_defaults(func=command_dcp_carry_congruence_source)
+
+    paid_tree = subparsers.add_parser("dcp-paid-tree-receiver",
+        help="Run paid physical CNOT feedback with a bounded exact single-parity policy benchmark.")
+    paid_tree.add_argument("--no-write", action="store_true")
+    paid_tree.set_defaults(func=command_dcp_paid_tree_receiver)
+
+    localization_frontier = subparsers.add_parser("lattice-localization-gap-frontier",
+        help="Challenge public lower-gap cube/sine localization schedules with classical attacks.")
+    localization_frontier.add_argument("--no-write", action="store_true")
+    localization_frontier.set_defaults(func=command_lattice_localization_gap_frontier)
+
+    sine_source=subparsers.add_parser("lattice-sine-window-source",
+        help="Compile public coherent sine localization and audit actual unknown phase registers.")
+    sine_source.add_argument("--no-write",action="store_true")
+    sine_source.set_defaults(func=command_lattice_sine_window_source)
+
+    native_banded_qft_transfer_matrix_audit = subparsers.add_parser(
+        "native-banded-qft-transfer-matrix-audit",
+        help="Audit banded cyclic QFT two-call transfer-matrix O(M 3^b) contraction and bandwidth scaling.",
+    )
+    native_banded_qft_transfer_matrix_audit.add_argument("--no-write", action="store_true")
+    native_banded_qft_transfer_matrix_audit.set_defaults(func=command_native_banded_qft_transfer_matrix_audit)
+
+    lattice_cube_source = subparsers.add_parser(
+        "lattice-cube-coset-source",
+        help="Census actual public lattice cube fibres, Born weights, contamination and LLL controls.",
+    )
+    lattice_cube_source.add_argument("--no-write", action="store_true")
+    lattice_cube_source.set_defaults(func=command_lattice_cube_coset_source)
+
+    lattice_cube_circuit = subparsers.add_parser(
+        "lattice-cube-source-circuit",
+        help="Compile clean public lattice cube arithmetic and uniform-parent logical circuits.",
+    )
+    lattice_cube_circuit.add_argument("--no-write", action="store_true")
+    lattice_cube_circuit.set_defaults(func=command_lattice_cube_source_circuit)
+
+    lattice_phase_source = subparsers.add_parser(
+        "lattice-cube-dcp-readout",
+        help="Compile and audit actual lattice-to-DCP phase readout with opaque noisy registers.",
+    )
+    lattice_phase_source.add_argument("--no-write", action="store_true")
+    lattice_phase_source.set_defaults(func=command_lattice_cube_dcp_readout)
+
+    lattice_qft_precision = subparsers.add_parser(
+        "lattice-qft-precision", help="Compile budgeted QFT cutoffs and audit encoded angles, inverse calls and rare-event debt.",
+    )
+    lattice_qft_precision.add_argument("--no-write", action="store_true")
+    lattice_qft_precision.set_defaults(func=command_lattice_qft_precision)
+
+    planted_qary_cube_basis_coordinate_bridge = subparsers.add_parser(
+        "planted-qary-cube-basis-coordinate-bridge",
+        help="Audit planted q-ary centered-RREF basis coordinate bounds, q-independent cube shifts, and deterministic prime/residue selection.",
+    )
+    planted_qary_cube_basis_coordinate_bridge.add_argument("--no-write", action="store_true")
+    planted_qary_cube_basis_coordinate_bridge.set_defaults(func=command_planted_qary_cube_basis_coordinate_bridge)
+
+    dcp_noisy_fourier_likelihood_decoder_audit = subparsers.add_parser(
+        "dcp-noisy-fourier-likelihood-decoder-audit",
+        help="Audit CNOT tree-merge visibility multiplication and {X, Y} quadrature Fourier/log-likelihood decoding on OpaquePhaseBackend.",
+    )
+    dcp_noisy_fourier_likelihood_decoder_audit.add_argument("--no-write", action="store_true")
+    dcp_noisy_fourier_likelihood_decoder_audit.set_defaults(func=command_dcp_noisy_fourier_likelihood_decoder_audit)
+
+    native_higher_call_signed_path_valuation_audit = subparsers.add_parser(
+        "native-higher-call-signed-path-valuation-audit",
+        help="Audit higher-call signed response path Z_3-coset invariants, sign-schedule invariance, and the universal 1/3 non-unit valuation law.",
+    )
+    native_higher_call_signed_path_valuation_audit.add_argument("--no-write", action="store_true")
+    native_higher_call_signed_path_valuation_audit.set_defaults(func=command_native_higher_call_signed_path_valuation_audit)
+
+    lattice_qft_cutoff_phase_fidelity_bridge = subparsers.add_parser(
+        "lattice-qft-cutoff-phase-fidelity-bridge",
+        help="Audit exact banded dyadic QFT cutoff kernels, universal label uniformity, and joint-channel quadrature visibility bounds.",
+    )
+    lattice_qft_cutoff_phase_fidelity_bridge.add_argument("--no-write", action="store_true")
+    lattice_qft_cutoff_phase_fidelity_bridge.set_defaults(func=command_lattice_qft_cutoff_phase_fidelity_bridge)
+
+    planted_qary_cdkm_adder_sparsity_bridge = subparsers.add_parser(
+        "planted-qary-cdkm-adder-sparsity-bridge",
+        help="Audit planted q-ary centered-RREF CDKM adder sparsity, modulus-independent free-column cell widths, and gate compression.",
+    )
+    planted_qary_cdkm_adder_sparsity_bridge.add_argument("--no-write", action="store_true")
+    planted_qary_cdkm_adder_sparsity_bridge.set_defaults(func=command_planted_qary_cdkm_adder_sparsity_bridge)
+
+    planted_qary_offset_pair_mass_frontier_audit = subparsers.add_parser(
+        "planted-qary-offset-pair-mass-frontier-audit",
+        help="Audit planted q-ary offset-average pair-mass product bounds and q-independent dyadic (M_box, W) schedules for the 1/ell budget.",
+    )
+    planted_qary_offset_pair_mass_frontier_audit.add_argument("--no-write", action="store_true")
+    planted_qary_offset_pair_mass_frontier_audit.set_defaults(func=command_planted_qary_offset_pair_mass_frontier_audit)
+
+    dcp_adaptive_quadrature_tree_sieve_audit = subparsers.add_parser(
+        "dcp-adaptive-quadrature-tree-sieve-audit",
+        help="Audit bitwise dyadic quadrature demodulation, equal-valuation CNOT pairing dichotomy, and sieve-depth visibility thresholds.",
+    )
+    dcp_adaptive_quadrature_tree_sieve_audit.add_argument("--no-write", action="store_true")
+    dcp_adaptive_quadrature_tree_sieve_audit.set_defaults(func=command_dcp_adaptive_quadrature_tree_sieve_audit)
+
+    native_higher_call_prime_power_survival_closed_form = subparsers.add_parser(
+        "native-higher-call-prime-power-survival-closed-form",
+        help="Audit Eisenstein root-of-unity isomorphism, squared-trinomial zero-difference law, and prime-power Fourier survival spectra.",
+    )
+    native_higher_call_prime_power_survival_closed_form.add_argument("--no-write", action="store_true")
+    native_higher_call_prime_power_survival_closed_form.set_defaults(func=command_native_higher_call_prime_power_survival_closed_form)
+
+    planted_qary_classical_attack_threshold_bridge = subparsers.add_parser(
+        "planted-qary-classical-attack-threshold-bridge",
+        help="Audit planted q-ary free-support lower bounds, LLL lambda_2 isolation, and O(1)-space projective free-coordinate RREF search.",
+    )
+    planted_qary_classical_attack_threshold_bridge.add_argument("--no-write", action="store_true")
+    planted_qary_classical_attack_threshold_bridge.set_defaults(func=command_planted_qary_classical_attack_threshold_bridge)
 
     validate = subparsers.add_parser("validate", help="Validate candidates and experiments against proof obligations.")
     validate.set_defaults(func=command_validate)

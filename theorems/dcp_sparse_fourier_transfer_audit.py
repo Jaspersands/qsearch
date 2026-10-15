@@ -299,4 +299,41 @@ def write_sparse_fourier_transfer_report(
     payload = asdict(report)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
+    if write_registry:
+        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
+        metrics = dict(payload.get("headline_metrics", {}))
+        experiment_record = ExperimentResultRecord(
+            id=result_id,
+            experiment_id=registry_experiment_id,
+            candidate_id=registry_candidate_id,
+            created_at=utc_now(),
+            status=payload.get("status", "completed"),
+            summary=payload.get("summary", ""),
+            metrics=metrics,
+            falsifiers_triggered=list(payload.get("falsifiers_triggered", [])),
+            artifacts={path.stem: str(path), "report": str(path)},
+        )
+        upsert_experiment_result(experiment_record)
+        upsert_negative_result(
+            NegativeResultRecord(
+                id="NEG-DCP-CONSTANT-ARITY-CORRELATED-SCHEDULE-SYNTHESIS",
+                claim="A fixed number of signed combinations of polynomially many iid DCP labels synthesizes the prescribed sparse-FFT query offsets.",
+                reason_invalid="For the audited constant arities, q(2m)^r/N is negligible throughout the asymptotic tail. This does not exclude a fundamentally different iid estimator.",
+                lesson="Do not mutate pair closure into triple or quadruple closure without checking exponential label-space coverage.",
+                applies_to=['DHS-GOWERS-SIEVE', 'EXP-DHS-DCP-SPARSE-FOURIER-TRANSFER-AUDIT'],
+                evidence=metrics,
+                source=str(path),
+            )
+        )
+        upsert_negative_result(
+            NegativeResultRecord(
+                id="NEG-DCP-SPARSE-FFT-CORRELATED-SAMPLE-TRANSFER",
+                claim="A polylogarithmic sparse Fourier transform directly decodes iid random-label DCP records.",
+                reason_invalid="The audited SFT and HashToBins mechanisms construct chosen shifted, filtered, or correlated sample locations. DCP supplies only iid labels and one stochastic outcome per label.",
+                lesson="Audit the joint sample schedule and primitive measurements, not only sample count and asymptotic runtime.",
+                applies_to=['DHS-GOWERS-SIEVE', 'EXP-DHS-DCP-SPARSE-FOURIER-TRANSFER-AUDIT'],
+                evidence=metrics,
+                source=str(path),
+            )
+        )
     return payload

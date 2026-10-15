@@ -494,6 +494,32 @@ def write_gram_block_encoding_report(
     output_path.write_text(
         json.dumps(payload, indent=2, sort_keys=True)
     )
+    if write_registry:
+        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
+        metrics = dict(payload.get("headline_metrics", {}))
+        experiment_record = ExperimentResultRecord(
+            id=result_id,
+            experiment_id=registry_experiment_id,
+            candidate_id=registry_candidate_id,
+            created_at=utc_now(),
+            status=payload.get("status", "completed"),
+            summary=payload.get("summary", ""),
+            metrics=metrics,
+            falsifiers_triggered=list(payload.get("falsifiers_triggered", [])),
+            artifacts={output_path.stem: str(output_path), "report": str(output_path)},
+        )
+        upsert_experiment_result(experiment_record)
+        upsert_negative_result(
+            NegativeResultRecord(
+                id="NEG-DCP-PGM-GRAM-BLOCK-ENCODING-NORMALIZATION",
+                claim="A polynomial projected block encoding of the DCP PGM Gram operator immediately gives a polynomial PGM circuit.",
+                reason_invalid="The direct circuit encodes G/N. Legal density-one fibers have equality amplitude sqrt(c_s/2^m), so generic rescaling or coherent fiber erasure costs sqrt(2^m/c_s), exponential on almost all legal inputs.",
+                lesson="Search only for a structured preconditioner or collision walk that rescales all legal fibers collectively; do not count the unscaled block encoding as implementation.",
+                applies_to=['DHS-GOWERS-SIEVE', 'EXP-DHS-DCP-PGM-GRAM-BLOCK-ENCODING'],
+                evidence=metrics,
+                source=str(output_path),
+            )
+        )
     return payload
 
 

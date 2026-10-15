@@ -585,7 +585,10 @@ def write_incidence_rank_width_report(
     output_path = path
     for _k in ("write_registry", "registry_experiment_id", "registry_candidate_id", "registry_result_id"):
         kwargs.pop(_k, None)
-    if "run_incidence_rank_width" in globals():
+    if "build_incidence_rank_width_report" in globals():
+        report = build_incidence_rank_width_report(**kwargs)
+        payload = asdict(report) if hasattr(report, "__dataclass_fields__") else (dict(report) if isinstance(report, dict) else report)
+    elif "run_incidence_rank_width" in globals():
         report = run_incidence_rank_width(**kwargs)
         payload = asdict(report) if hasattr(report, "__dataclass_fields__") else (dict(report) if isinstance(report, dict) else report)
     else:

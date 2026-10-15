@@ -1,0 +1,19 @@
+{
+  "contract_id": "native_gaussian_dither_sampler_v1",
+  "title": "Certified Rounded-Gaussian Dither Sampler and Adaptive-Threshold Coupling Ledger",
+  "status": "CERTIFIED_DITHER_SAMPLER_AND_BATCH_COUPLING_AUDIT_REVIEW_PENDING",
+  "scope": {
+    "target_distribution": "E = nearest(W) for W ~ sigma^-1 exp(-pi w^2 / sigma^2) with exact rational sigma > 0",
+    "cdf_identity": "F(t) = (1 + erf(sqrt(pi)*(t + 1/2)/sigma))/2 via directed Arb gaussian_radius_box enclosures",
+    "adaptive_threshold_union": "4 * (2*B + 2) * 2^-K over all 2*B + 2 binary-search thresholds, never O(log B) * 2^-K",
+    "complete_batch_policy": "Any single dither or mask abort aborts the entire k-row refresh batch with producer_input=null"
+  },
+  "honesty_guardrails": {
+    "independent_transcendental_certificate_supplied": false,
+    "fresh_public_randomness_is_a_fresh_original_sample": false,
+    "actual_quantum_decision_or_multiple_producer_supplied": false,
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  }
+}

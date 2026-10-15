@@ -329,4 +329,30 @@ def write_target_distribution_audit(
     payload = asdict(report)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
+    if write_registry:
+        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
+        metrics = dict(payload.get("headline_metrics", {}))
+        experiment_record = ExperimentResultRecord(
+            id=result_id,
+            experiment_id=registry_experiment_id,
+            candidate_id=registry_candidate_id,
+            created_at=utc_now(),
+            status=payload.get("status", "completed"),
+            summary=payload.get("summary", ""),
+            metrics=metrics,
+            falsifiers_triggered=list(payload.get("falsifiers_triggered", [])),
+            artifacts={path.stem: str(path), "report": str(path)},
+        )
+        upsert_experiment_result(experiment_record)
+        upsert_negative_result(
+            NegativeResultRecord(
+                id="NEG-DCP-PLANTED-TARGET-REPRESENTATION-SIZE-BIAS",
+                claim="High representation multiplicity observed on planted-witness subset-sum targets transfers directly to Regev's uniform source-target distribution.",
+                reason_invalid="Planting samples targets proportional to witness multiplicity. The exact audit separates this size-biased law from uniform legal and independent uniform source targets.",
+                lesson="Evaluate representation attacks on independent uniform targets and charge legal-input coverage. A rare subfamily must be efficiently detectable and have a polynomial witness algorithm.",
+                applies_to=['DHS-GOWERS-SIEVE', 'EXP-DHS-DCP-SUBSET-SUM-TARGET-DISTRIBUTION'],
+                evidence=metrics,
+                source=str(path),
+            )
+        )
     return payload

@@ -1,0 +1,30 @@
+{
+  "contract_id": "dcp-noisy-fourier-likelihood-decoder-audit-contract",
+  "title": "DCP Noisy-Fourier Quadrature Decoder, CNOT Tree-Merge Visibility Law, and Sign Disambiguation",
+  "version": "1.0.0",
+  "scope": "exact_cnot_tree_merge_visibility_propagation_and_quadrature_fourier_likelihood_decoding_on_opaque_phase_registers",
+  "theorems": [
+    {
+      "id": "T1",
+      "name": "CNOT Tree-Merge Visibility Multiplication Law",
+      "statement": "For any two independent balanced phase-density registers rho(k_1; s, v_1) and rho(k_2; s, v_2) over Z_N undergoing the CNOT + target-Z measurement channel (OpaquePhaseBackend.merge), both branches b in {0, 1} occur with exact probability 1/2 and yield normalized state rho(k_1 + (-1)^b k_2 mod N; s, v_1 * v_2). Over a complete binary merge tree of depth d >= 0 consuming 2^d original source registers of initial visibility v_0 = 1 - p_bad, the surviving receipt has exact visibility v_d = (1 - p_bad)^(2^d)."
+    },
+    {
+      "id": "T2",
+      "name": "Quadrature {X, Y} Orthogonality and Sign Disambiguation",
+      "statement": "While X-only measurement has expectation (v_d / 2) * (delta_(s' == s) + delta_(s' == -s)) and cannot distinguish +delta from -delta, balanced {X, Y} quadrature measurement S(s') = z * phi_A(k s' / N) satisfies E_{k ~ Z_N, A ~ {X, Y}}[S(s')] = (v_d / 2) * delta_(s, s') and E[S(s')^2] = 1/2 identically for all s, s' in Z_N, yielding Var(S(s)) = 1/2 - v_d^2 / 4 and Var(S(s')) = 1/2 for s' != s."
+    },
+    {
+      "id": "T3",
+      "name": "Raw-Copy Sample Efficiency Frontier Across Merge Depths",
+      "statement": "Given M_raw original source preparations partitioned into M_d = M_raw / 2^d depth-d CNOT merge trees (d >= 0), the quadrature matched-filter SNR is SNR_d(M_raw) = (M_raw / 2^(d+1)) * (1 - p_bad)^(2^(d+1)), so SNR_d(M_raw) / SNR_0(M_raw) = 2^(-d) * (1 - p_bad)^(2^(d+1) - 2) <= 2^(-d) < 1 for all d >= 1."
+    }
+  ],
+  "guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false,
+    "end_to_end_quantum_advantage_claimed": false,
+    "bypassed_UniformCubeSuperposition_prepare_constraint": false
+  }
+}

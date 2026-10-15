@@ -129,7 +129,11 @@ def _read_json(path: Path) -> dict[str, Any]:
         if repo_path.exists():
             path = repo_path
         else:
-            return {}
+            repo_path2 = Path(__file__).resolve().parent.parent / path
+            if repo_path2.exists():
+                path = repo_path2
+            else:
+                return {}
     try:
         payload = json.loads(path.read_text())
         if isinstance(payload, dict):

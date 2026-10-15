@@ -473,4 +473,30 @@ def write_dcp_recurrence_report(
     payload = asdict(report)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
+    if write_registry:
+        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
+        metrics = dict(payload.get("headline_metrics", {}))
+        experiment_record = ExperimentResultRecord(
+            id=result_id,
+            experiment_id=registry_experiment_id,
+            candidate_id=registry_candidate_id,
+            created_at=utc_now(),
+            status=payload.get("status", "completed"),
+            summary=payload.get("summary", ""),
+            metrics=metrics,
+            falsifiers_triggered=list(payload.get("falsifiers_triggered", [])),
+            artifacts={path.stem: str(path), "report": str(path)},
+        )
+        upsert_experiment_result(experiment_record)
+        upsert_negative_result(
+            NegativeResultRecord(
+                id="NEG-DCP-FINITE-SCALING-NOT-RECURRENCE-THEOREM",
+                claim="Finite endpoint scaling fits establish an asymptotic DCP sieve improvement.",
+                reason_invalid="The fits select thresholds on a finite budget grid and do not control adaptive bucket occupancy, pair dependence, recursive stage failure, or the lattice parameter map.",
+                lesson="Require a symbolic stochastic recurrence and uniform bounds before comparing asymptotic exponents.",
+                applies_to=['DHS-GOWERS-SIEVE', 'EXP-DHS-DCP-RECURRENCE-SCALING'],
+                evidence=metrics,
+                source=str(path),
+            )
+        )
     return payload

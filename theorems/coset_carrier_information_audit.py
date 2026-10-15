@@ -550,6 +550,36 @@ def write_carrier_information_audit_report(
     payload = asdict(build_carrier_information_audit_report())
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(payload, indent=2, sort_keys=True))
+    if write_registry:
+        negative_record = NegativeResultRecord(
+            id="NEG-COSET-SPECTRAL-SEPARATOR-SEARCH-NOT-INFORMATION-SEARCH",
+            source=str(output_path),
+            claim=(
+                "A large-gap multiplicity separator is the best information-bearing refinement of carrier labels."
+            ),
+            reason_invalid=(
+                "The gap-optimized rule is not information-optimal on the finite controls, and every searched refinement is dominated by direct product Young-basis measurement."
+            ),
+            lesson=(
+                "Rank covariant measurement candidates by hidden-element information and Bayes recovery before gap optimization."
+            ),
+            applies_to=[registry_candidate_id, registry_experiment_id],
+            evidence=payload.get("headline_metrics", {}),
+        )
+        upsert_negative_result(negative_record)
+        upsert_experiment_result(
+            ExperimentResultRecord(
+                id=registry_result_id or f"RESULT-{registry_experiment_id}-LATEST",
+                experiment_id=registry_experiment_id,
+                candidate_id=registry_candidate_id,
+                created_at=payload.get("created_at", utc_now()),
+                status=payload.get("status", "completed"),
+                summary=payload.get("summary", ""),
+                metrics=payload.get("headline_metrics", {}),
+                falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                artifacts={"report": str(output_path)},
+            )
+        )
     return payload
 
 

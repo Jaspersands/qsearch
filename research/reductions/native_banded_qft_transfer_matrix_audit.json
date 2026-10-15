@@ -1,0 +1,807 @@
+{
+  "status": "BANDED_QFT_TWO_CALL_TRANSFER_MATRIX_DEQUANTIZATION_AUDIT_REVIEW_PENDING",
+  "producer_sha256": "ed3dae370806e8b9c75d426726dd879910a4bfefd35246478a9e0be56b9132d0",
+  "derivation_sha256": "726b9cdea81b8f5df98d8610c044fabd4cc7a875ed996235d22b0a3d9eec2a8a",
+  "contract_sha256": "833b3725d865f41db5cffdbc7cd63c95e85760ee7b42c76c89a4f57aa33c6633",
+  "dependency_sha256": {
+    "native_basis_lottery.py": "8dd21b0b64454b5daaa9b6cc67ff6eb2a715edd045d5f6af5d3c5f3fbd1a0038",
+    "native_full_root_slice.py": "e3cd11cda6bc5a73ca4fb6131c1ac4c0d16f6a5608bd1ccbd1f6d691da77c966",
+    "native_response_fourier_factorization_audit.py": "28bcccc00ba18f0e4a47a7932138da6a6db5f5255c2e5151d7ae454201369c6c",
+    "native_response_path_valuation.py": "20fd0dc47906748ed9da3ca68aeacef704825cd2f6ad349d22a53f399891a28d",
+    "native_word_span_decision.py": "867c8f8b8e19660784714184963fdeaa6d27ab1cf2ae83a7d1ba82e60f5fff96",
+    "ternary_measured_lattice_decoder.py": "151f7c5fbb9e09ad8c231fb841c6d8ce385d54123acd9d15f33b3ce51efced4b"
+  },
+  "banded_qft_m2_sweep_control": {
+    "original_records": [
+      {
+        "label": [
+          2
+        ],
+        "value": 0,
+        "modulus": 9,
+        "source_id": "known-group-99205-0"
+      },
+      {
+        "label": [
+          0
+        ],
+        "value": 8,
+        "modulus": 9,
+        "source_id": "known-group-99205-1"
+      },
+      {
+        "label": [
+          0
+        ],
+        "value": 8,
+        "modulus": 9,
+        "source_id": "known-group-99205-2"
+      },
+      {
+        "label": [
+          2
+        ],
+        "value": 0,
+        "modulus": 9,
+        "source_id": "known-group-99205-3"
+      }
+    ],
+    "public_mask": [
+      0
+    ],
+    "calibration_only": {
+      "masked_secret": [
+        5
+      ],
+      "original_errors": [
+        -1,
+        -1,
+        -1,
+        -1
+      ]
+    },
+    "bandwidth_and_sign_sweeps": [
+      {
+        "modulus_q": 9,
+        "word_sites_M": 2,
+        "word_dimension_D": 9,
+        "root_order": 9,
+        "twiddle_bandwidth_b": 1,
+        "second_call_sign": 1,
+        "max_transfer_matrix_boundary_states_3_pow_b_minus_1": 1,
+        "dp_window_evaluations_per_outcome": 6,
+        "dp_window_evaluations_upper_bound_M_times_3_pow_b": 6,
+        "brute_force_path_pairs_per_outcome_3_pow_2M": 81,
+        "transfer_matrix_dp_all_outcomes": [
+          [
+            "1/81",
+            "5/81",
+            "0",
+            "-4/81",
+            "4/81",
+            "2/27"
+          ],
+          [
+            "-2/81",
+            "-1/81",
+            "0",
+            "-1/81",
+            "1/81",
+            "1/27"
+          ],
+          [
+            "1/81",
+            "5/81",
+            "0",
+            "-4/81",
+            "4/81",
+            "1/9"
+          ],
+          [
+            "-2/81",
+            "2/81",
+            "0",
+            "-4/81",
+            "4/81",
+            "1/9"
+          ],
+          [
+            "-8/81",
+            "-7/81",
+            "0",
+            "-1/81",
+            "1/81",
+            "4/27"
+          ],
+          [
+            "1/81",
+            "-4/81",
+            "0",
+            "5/81",
+            "-5/81",
+            "8/27"
+          ],
+          [
+            "1/81",
+            "2/81",
+            "0",
+            "-1/81",
+            "1/81",
+            "1/27"
+          ],
+          [
+            "1/81",
+            "-1/81",
+            "0",
+            "2/81",
+            "-2/81",
+            "1/27"
+          ],
+          [
+            "7/81",
+            "-1/81",
+            "0",
+            "8/81",
+            "-8/81",
+            "4/27"
+          ]
+        ],
+        "brute_force_path_sum_all_outcomes": [
+          [
+            "1/81",
+            "5/81",
+            "0",
+            "-4/81",
+            "4/81",
+            "2/27"
+          ],
+          [
+            "-2/81",
+            "-1/81",
+            "0",
+            "-1/81",
+            "1/81",
+            "1/27"
+          ],
+          [
+            "1/81",
+            "5/81",
+            "0",
+            "-4/81",
+            "4/81",
+            "1/9"
+          ],
+          [
+            "-2/81",
+            "2/81",
+            "0",
+            "-4/81",
+            "4/81",
+            "1/9"
+          ],
+          [
+            "-8/81",
+            "-7/81",
+            "0",
+            "-1/81",
+            "1/81",
+            "4/27"
+          ],
+          [
+            "1/81",
+            "-4/81",
+            "0",
+            "5/81",
+            "-5/81",
+            "8/27"
+          ],
+          [
+            "1/81",
+            "2/81",
+            "0",
+            "-1/81",
+            "1/81",
+            "1/27"
+          ],
+          [
+            "1/81",
+            "-1/81",
+            "0",
+            "2/81",
+            "-2/81",
+            "1/27"
+          ],
+          [
+            "7/81",
+            "-1/81",
+            "0",
+            "8/81",
+            "-8/81",
+            "4/27"
+          ]
+        ],
+        "dp_matches_brute_force_identically": true,
+        "matches_untruncated_cyclic_qft_when_b_eq_M": null
+      },
+      {
+        "modulus_q": 9,
+        "word_sites_M": 2,
+        "word_dimension_D": 9,
+        "root_order": 9,
+        "twiddle_bandwidth_b": 2,
+        "second_call_sign": 1,
+        "max_transfer_matrix_boundary_states_3_pow_b_minus_1": 3,
+        "dp_window_evaluations_per_outcome": 12,
+        "dp_window_evaluations_upper_bound_M_times_3_pow_b": 18,
+        "brute_force_path_pairs_per_outcome_3_pow_2M": 81,
+        "transfer_matrix_dp_all_outcomes": [
+          [
+            "5/81",
+            "0",
+            "0",
+            "5/81",
+            "-5/81",
+            "11/81"
+          ],
+          [
+            "2/81",
+            "2/81",
+            "0",
+            "0",
+            "0",
+            "1/9"
+          ],
+          [
+            "-2/81",
+            "1/27",
+            "0",
+            "-5/81",
+            "5/81",
+            "1/9"
+          ],
+          [
+            "1/81",
+            "4/81",
+            "0",
+            "-1/27",
+            "1/27",
+            "14/81"
+          ],
+          [
+            "-4/27",
+            "-8/81",
+            "0",
+            "-4/81",
+            "4/81",
+            "5/27"
+          ],
+          [
+            "-2/81",
+            "-1/27",
+            "0",
+            "1/81",
+            "-1/81",
+            "2/27"
+          ],
+          [
+            "1/27",
+            "-1/81",
+            "0",
+            "4/81",
+            "-4/81",
+            "5/81"
+          ],
+          [
+            "1/81",
+            "1/27",
+            "0",
+            "-2/81",
+            "2/81",
+            "1/27"
+          ],
+          [
+            "4/81",
+            "0",
+            "0",
+            "4/81",
+            "-4/81",
+            "1/9"
+          ]
+        ],
+        "brute_force_path_sum_all_outcomes": [
+          [
+            "5/81",
+            "0",
+            "0",
+            "5/81",
+            "-5/81",
+            "11/81"
+          ],
+          [
+            "2/81",
+            "2/81",
+            "0",
+            "0",
+            "0",
+            "1/9"
+          ],
+          [
+            "-2/81",
+            "1/27",
+            "0",
+            "-5/81",
+            "5/81",
+            "1/9"
+          ],
+          [
+            "1/81",
+            "4/81",
+            "0",
+            "-1/27",
+            "1/27",
+            "14/81"
+          ],
+          [
+            "-4/27",
+            "-8/81",
+            "0",
+            "-4/81",
+            "4/81",
+            "5/27"
+          ],
+          [
+            "-2/81",
+            "-1/27",
+            "0",
+            "1/81",
+            "-1/81",
+            "2/27"
+          ],
+          [
+            "1/27",
+            "-1/81",
+            "0",
+            "4/81",
+            "-4/81",
+            "5/81"
+          ],
+          [
+            "1/81",
+            "1/27",
+            "0",
+            "-2/81",
+            "2/81",
+            "1/27"
+          ],
+          [
+            "4/81",
+            "0",
+            "0",
+            "4/81",
+            "-4/81",
+            "1/9"
+          ]
+        ],
+        "dp_matches_brute_force_identically": true,
+        "matches_untruncated_cyclic_qft_when_b_eq_M": true
+      },
+      {
+        "modulus_q": 9,
+        "word_sites_M": 2,
+        "word_dimension_D": 9,
+        "root_order": 9,
+        "twiddle_bandwidth_b": 1,
+        "second_call_sign": -1,
+        "max_transfer_matrix_boundary_states_3_pow_b_minus_1": 1,
+        "dp_window_evaluations_per_outcome": 6,
+        "dp_window_evaluations_upper_bound_M_times_3_pow_b": 6,
+        "brute_force_path_pairs_per_outcome_3_pow_2M": 81,
+        "transfer_matrix_dp_all_outcomes": [
+          [
+            "-2/81",
+            "-1/81",
+            "0",
+            "-1/81",
+            "1/81",
+            "1/27"
+          ],
+          [
+            "1/81",
+            "5/81",
+            "0",
+            "-4/81",
+            "4/81",
+            "2/27"
+          ],
+          [
+            "1/81",
+            "5/81",
+            "0",
+            "-4/81",
+            "4/81",
+            "1/9"
+          ],
+          [
+            "1/81",
+            "-1/81",
+            "0",
+            "2/81",
+            "-2/81",
+            "1/27"
+          ],
+          [
+            "1/81",
+            "2/81",
+            "0",
+            "-1/81",
+            "1/81",
+            "1/27"
+          ],
+          [
+            "7/81",
+            "-1/81",
+            "0",
+            "8/81",
+            "-8/81",
+            "4/27"
+          ],
+          [
+            "-8/81",
+            "-7/81",
+            "0",
+            "-1/81",
+            "1/81",
+            "4/27"
+          ],
+          [
+            "-2/81",
+            "2/81",
+            "0",
+            "-4/81",
+            "4/81",
+            "1/9"
+          ],
+          [
+            "1/81",
+            "-4/81",
+            "0",
+            "5/81",
+            "-5/81",
+            "8/27"
+          ]
+        ],
+        "brute_force_path_sum_all_outcomes": [
+          [
+            "-2/81",
+            "-1/81",
+            "0",
+            "-1/81",
+            "1/81",
+            "1/27"
+          ],
+          [
+            "1/81",
+            "5/81",
+            "0",
+            "-4/81",
+            "4/81",
+            "2/27"
+          ],
+          [
+            "1/81",
+            "5/81",
+            "0",
+            "-4/81",
+            "4/81",
+            "1/9"
+          ],
+          [
+            "1/81",
+            "-1/81",
+            "0",
+            "2/81",
+            "-2/81",
+            "1/27"
+          ],
+          [
+            "1/81",
+            "2/81",
+            "0",
+            "-1/81",
+            "1/81",
+            "1/27"
+          ],
+          [
+            "7/81",
+            "-1/81",
+            "0",
+            "8/81",
+            "-8/81",
+            "4/27"
+          ],
+          [
+            "-8/81",
+            "-7/81",
+            "0",
+            "-1/81",
+            "1/81",
+            "4/27"
+          ],
+          [
+            "-2/81",
+            "2/81",
+            "0",
+            "-4/81",
+            "4/81",
+            "1/9"
+          ],
+          [
+            "1/81",
+            "-4/81",
+            "0",
+            "5/81",
+            "-5/81",
+            "8/27"
+          ]
+        ],
+        "dp_matches_brute_force_identically": true,
+        "matches_untruncated_cyclic_qft_when_b_eq_M": null
+      },
+      {
+        "modulus_q": 9,
+        "word_sites_M": 2,
+        "word_dimension_D": 9,
+        "root_order": 9,
+        "twiddle_bandwidth_b": 2,
+        "second_call_sign": -1,
+        "max_transfer_matrix_boundary_states_3_pow_b_minus_1": 3,
+        "dp_window_evaluations_per_outcome": 12,
+        "dp_window_evaluations_upper_bound_M_times_3_pow_b": 18,
+        "brute_force_path_pairs_per_outcome_3_pow_2M": 81,
+        "transfer_matrix_dp_all_outcomes": [
+          [
+            "1/81",
+            "0",
+            "-1/81",
+            "1/81",
+            "1/9"
+          ],
+          [
+            "5/81",
+            "5/81",
+            "0",
+            "0",
+            "0",
+            "4/27"
+          ],
+          [
+            "1/27",
+            "2/81",
+            "0",
+            "1/81",
+            "-1/81",
+            "11/81"
+          ],
+          [
+            "2/27",
+            "1/81",
+            "0",
+            "5/81",
+            "-5/81",
+            "4/27"
+          ],
+          [
+            "1/81",
+            "0",
+            "0",
+            "1/81",
+            "-1/81",
+            "1/27"
+          ],
+          [
+            "1/81",
+            "1/81",
+            "0",
+            "0",
+            "0",
+            "2/81"
+          ],
+          [
+            "-1/27",
+            "-5/81",
+            "0",
+            "2/81",
+            "-2/81",
+            "4/27"
+          ],
+          [
+            "-1/27",
+            "-2/81",
+            "0",
+            "-1/81",
+            "1/81",
+            "1/27"
+          ],
+          [
+            "-10/81",
+            "-1/27",
+            "0",
+            "-7/81",
+            "7/81",
+            "17/81"
+          ]
+        ],
+        "brute_force_path_sum_all_outcomes": [
+          [
+            "1/81",
+            "0",
+            "-1/81",
+            "1/81",
+            "1/9"
+          ],
+          [
+            "5/81",
+            "5/81",
+            "0",
+            "0",
+            "0",
+            "4/27"
+          ],
+          [
+            "1/27",
+            "2/81",
+            "0",
+            "1/81",
+            "-1/81",
+            "11/81"
+          ],
+          [
+            "2/27",
+            "1/81",
+            "0",
+            "5/81",
+            "-5/81",
+            "4/27"
+          ],
+          [
+            "1/81",
+            "0",
+            "0",
+            "1/81",
+            "-1/81",
+            "1/27"
+          ],
+          [
+            "1/81",
+            "1/81",
+            "0",
+            "0",
+            "0",
+            "2/81"
+          ],
+          [
+            "-1/27",
+            "-5/81",
+            "0",
+            "2/81",
+            "-2/81",
+            "4/27"
+          ],
+          [
+            "-1/27",
+            "-2/81",
+            "0",
+            "-1/81",
+            "1/81",
+            "1/27"
+          ],
+          [
+            "-10/81",
+            "-1/27",
+            "0",
+            "-7/81",
+            "7/81",
+            "17/81"
+          ]
+        ],
+        "dp_matches_brute_force_identically": true,
+        "matches_untruncated_cyclic_qft_when_b_eq_M": null
+      }
+    ],
+    "b1_differs_from_b2_unsigned": true,
+    "b1_differs_from_b2_signed": true
+  },
+  "bandwidth_scaling_ledgers": [
+    {
+      "word_sites_M": 16,
+      "twiddle_bandwidth_b": 1,
+      "qft_twiddle_gates_count": 16,
+      "transfer_matrix_boundary_states_3_pow_b_minus_1": 1,
+      "exact_dp_window_evaluations_per_outcome": 48,
+      "dp_window_evaluations_upper_M_3_pow_b": 48,
+      "local_summand_evaluations_3_times_dp_windows": 144,
+      "dp_within_M_3_pow_b_bound": true,
+      "polynomial_in_M_when_b_is_O_log_M": true,
+      "full_bandwidth_b_eq_M": false
+    },
+    {
+      "word_sites_M": 16,
+      "twiddle_bandwidth_b": 2,
+      "qft_twiddle_gates_count": 31,
+      "transfer_matrix_boundary_states_3_pow_b_minus_1": 3,
+      "exact_dp_window_evaluations_per_outcome": 138,
+      "dp_window_evaluations_upper_M_3_pow_b": 144,
+      "local_summand_evaluations_3_times_dp_windows": 414,
+      "dp_within_M_3_pow_b_bound": true,
+      "polynomial_in_M_when_b_is_O_log_M": true,
+      "full_bandwidth_b_eq_M": false
+    },
+    {
+      "word_sites_M": 16,
+      "twiddle_bandwidth_b": 3,
+      "qft_twiddle_gates_count": 45,
+      "transfer_matrix_boundary_states_3_pow_b_minus_1": 9,
+      "exact_dp_window_evaluations_per_outcome": 390,
+      "dp_window_evaluations_upper_M_3_pow_b": 432,
+      "local_summand_evaluations_3_times_dp_windows": 1170,
+      "dp_within_M_3_pow_b_bound": true,
+      "polynomial_in_M_when_b_is_O_log_M": true,
+      "full_bandwidth_b_eq_M": false
+    },
+    {
+      "word_sites_M": 64,
+      "twiddle_bandwidth_b": 2,
+      "qft_twiddle_gates_count": 127,
+      "transfer_matrix_boundary_states_3_pow_b_minus_1": 3,
+      "exact_dp_window_evaluations_per_outcome": 570,
+      "dp_window_evaluations_upper_M_3_pow_b": 576,
+      "local_summand_evaluations_3_times_dp_windows": 1710,
+      "dp_within_M_3_pow_b_bound": true,
+      "polynomial_in_M_when_b_is_O_log_M": true,
+      "full_bandwidth_b_eq_M": false
+    },
+    {
+      "word_sites_M": 64,
+      "twiddle_bandwidth_b": 4,
+      "qft_twiddle_gates_count": 250,
+      "transfer_matrix_boundary_states_3_pow_b_minus_1": 27,
+      "exact_dp_window_evaluations_per_outcome": 4980,
+      "dp_window_evaluations_upper_M_3_pow_b": 5184,
+      "local_summand_evaluations_3_times_dp_windows": 14940,
+      "dp_within_M_3_pow_b_bound": true,
+      "polynomial_in_M_when_b_is_O_log_M": true,
+      "full_bandwidth_b_eq_M": false
+    },
+    {
+      "word_sites_M": 140,
+      "twiddle_bandwidth_b": 3,
+      "qft_twiddle_gates_count": 417,
+      "transfer_matrix_boundary_states_3_pow_b_minus_1": 9,
+      "exact_dp_window_evaluations_per_outcome": 3738,
+      "dp_window_evaluations_upper_M_3_pow_b": 3780,
+      "local_summand_evaluations_3_times_dp_windows": 11214,
+      "dp_within_M_3_pow_b_bound": true,
+      "polynomial_in_M_when_b_is_O_log_M": true,
+      "full_bandwidth_b_eq_M": false
+    },
+    {
+      "word_sites_M": 140,
+      "twiddle_bandwidth_b": 6,
+      "qft_twiddle_gates_count": 825,
+      "transfer_matrix_boundary_states_3_pow_b_minus_1": 243,
+      "exact_dp_window_evaluations_per_outcome": 98778,
+      "dp_window_evaluations_upper_M_3_pow_b": 102060,
+      "local_summand_evaluations_3_times_dp_windows": 296334,
+      "dp_within_M_3_pow_b_bound": true,
+      "polynomial_in_M_when_b_is_O_log_M": true,
+      "full_bandwidth_b_eq_M": false
+    }
+  ],
+  "full_bandwidth_b_eq_M_is_poly_M": false,
+  "three_or_more_calls_contracted_by_2call_dp": false,
+  "general_quantum_lower_bound_claimed": false,
+  "accepted_speedup_candidate": false,
+  "new_active_negative_result_created": false,
+  "novelty_claim": false,
+  "research_decision": "BANDED_TWO_CALL_QFT_SCHEDULES_CONTRACT_IN_O_M_3_POW_B_SO_ANY_TWO_CALL_ADVANTAGE_REQUIRES_SUPERLOG_TWIDDLE_BANDWIDTH"
+}

@@ -474,6 +474,43 @@ def write_target_indexed_locality_audit(
     )
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
+    if write_registry:
+        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
+        metrics = dict(payload.get("headline_metrics", {}))
+        experiment_record = ExperimentResultRecord(
+            id=result_id,
+            experiment_id=registry_experiment_id,
+            candidate_id=registry_candidate_id,
+            created_at=utc_now(),
+            status=payload.get("status", "completed"),
+            summary=payload.get("summary", ""),
+            metrics=metrics,
+            falsifiers_triggered=list(payload.get("falsifiers_triggered", [])),
+            artifacts={path.stem: str(path), "report": str(path)},
+        )
+        upsert_experiment_result(experiment_record)
+        upsert_negative_result(
+            NegativeResultRecord(
+                id="NEG-DCP-LINEAR-PARTNER-SUPPORT-AS-TIME-LOWER-BOUND",
+                claim="A linear minimum partner distance proves exponential classical or quantum search time.",
+                reason_invalid="Output distance is not circuit complexity; only current exact baselines are exponential, with no unrestricted lower bound.",
+                lesson="Search only linear-support target-indexed relation samplers, and require source-law coverage, a polynomial coherent circuit, verified output, and matched classical access.",
+                applies_to=['DHS-GOWERS-SIEVE', 'EXP-DHS-DCP-TARGET-INDEXED-LOCALITY'],
+                evidence=metrics,
+                source=str(path),
+            )
+        )
+        upsert_negative_result(
+            NegativeResultRecord(
+                id="NEG-DCP-TARGET-INDEXED-LOCAL-PARTNER-MAP",
+                claim="Target-indexing lets an implicit map pair inverse-polynomial source mass using beta-local partners at linear depth.",
+                reason_invalid="The source fixes all signs, and the Hamming-ball union bound has exponent H_2(beta)-alpha<0.",
+                lesson="Search only linear-support target-indexed relation samplers, and require source-law coverage, a polynomial coherent circuit, verified output, and matched classical access.",
+                applies_to=['DHS-GOWERS-SIEVE', 'EXP-DHS-DCP-TARGET-INDEXED-LOCALITY'],
+                evidence=metrics,
+                source=str(path),
+            )
+        )
     return payload
 
 

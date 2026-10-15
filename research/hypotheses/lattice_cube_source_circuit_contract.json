@@ -1,0 +1,26 @@
+{
+  "contract_id": "clean_lattice_cube_source_arithmetic_v1",
+  "status": "CLEAN_PUBLIC_CUBE_ARITHMETIC_COMPILED_RECEIVER_MISSING",
+  "implemented_obligations": [
+    "Public-input signed point evaluation with exact width bounds",
+    "Signed floor via high-bit output XOR",
+    "Explicit compute-copy-uncompute CDKM-adder circuit",
+    "Uniform original-source parent circuit with no fibre enumeration"
+  ],
+  "remaining_obligations": [
+    "Full in-place position embedding and DCP Fourier phase-label readout",
+    "Growing-family uniqueness and contamination promises",
+    "Efficient robust collective receiver and matched classical lattice baselines",
+    "Independent formal gate-level verification and fault-tolerant resource accounting"
+  ],
+  "falsifiers": [
+    "Input-dependent phases or nonzero arithmetic workspace on superposed inputs",
+    "Incorrect negative floor or arbitrary-output XOR",
+    "Compilation enumerates private cell preimages",
+    "Hardware errors exceed the declared source contamination contract"
+  ],
+  "accepted_speedup_candidate": false,
+  "efficient_noisy_DCP_decoder_supplied": false,
+  "new_active_negative_result_created": false,
+  "novelty_claim": false
+}

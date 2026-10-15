@@ -298,4 +298,30 @@ def write_embedding_volume_theorem(
     payload = asdict(report)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
+    if write_registry:
+        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
+        metrics = dict(payload.get("headline_metrics", {}))
+        experiment_record = ExperimentResultRecord(
+            id=result_id,
+            experiment_id=registry_experiment_id,
+            candidate_id=registry_candidate_id,
+            created_at=utc_now(),
+            status=payload.get("status", "completed"),
+            summary=payload.get("summary", ""),
+            metrics=metrics,
+            falsifiers_triggered=list(payload.get("falsifiers_triggered", [])),
+            artifacts={path.stem: str(path), "report": str(path)},
+        )
+        upsert_experiment_result(experiment_record)
+        upsert_negative_result(
+            NegativeResultRecord(
+                id="NEG-DCP-SUBSET-SUM-VOLUME-ONLY-LATTICE-GAP",
+                claim="The standard or O(log n) carry-sliced density-one embedding creates an asymptotic planted short-vector separation visible from covolume alone.",
+                reason_invalid="Both exact determinant roots tend to four, placing the planted witness at limiting ratio sqrt(2*pi*e)/4 to the Gaussian volume scale.",
+                lesson="Require an explicit local Gram-Schmidt event, average short-vector count theorem, and decoder coverage. Do not cite determinant or finite LLL recovery as the missing gap.",
+                applies_to=['DHS-GOWERS-SIEVE', 'EXP-DHS-DCP-SUBSET-SUM-EMBEDDING-VOLUME-THEOREM'],
+                evidence=metrics,
+                source=str(path),
+            )
+        )
     return payload

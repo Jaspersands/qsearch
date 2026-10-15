@@ -304,4 +304,30 @@ def write_carry_relation_theorem(
     )
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
+    if write_registry:
+        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
+        metrics = dict(payload.get("headline_metrics", {}))
+        experiment_record = ExperimentResultRecord(
+            id=result_id,
+            experiment_id=registry_experiment_id,
+            candidate_id=registry_candidate_id,
+            created_at=utc_now(),
+            status=payload.get("status", "completed"),
+            summary=payload.get("summary", ""),
+            metrics=metrics,
+            falsifiers_triggered=list(payload.get("falsifiers_triggered", [])),
+            artifacts={path.stem: str(path), "report": str(path)},
+        )
+        upsert_experiment_result(experiment_record)
+        upsert_negative_result(
+            NegativeResultRecord(
+                id="NEG-DCP-SUBSET-SUM-CARRY-SLICED-UNIFORM-SHORTEST-ISOLATION",
+                claim="Logarithmic low-bit carry slicing uniformly isolates the planted binary witness among shortest vectors of the quotient embedding.",
+                reason_invalid="A balanced signed-relation family retains positive exponential expectation and has a rigorous inverse-polynomial Paley-Zygmund source-coverage bound.",
+                lesson="Require a source-subset theorem that avoids the competitor event or a marker-aware extractor; do not infer isolation from low-bit exactness or finite LLL success.",
+                applies_to=['DHS-GOWERS-SIEVE', 'EXP-DHS-DCP-SUBSET-SUM-CARRY-RELATION-THEOREM'],
+                evidence=metrics,
+                source=str(path),
+            )
+        )
     return payload

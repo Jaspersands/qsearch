@@ -1,0 +1,23 @@
+{
+  "contract_id": "native_banded_qft_classical_sampling_v1",
+  "status": "CERTIFIED_DENSE_FREE_TWO_CALL_BANDED_QFT_CLASSICAL_BASELINE",
+  "input": "Public three-digit response-phase tables, modulus, twiddle bandwidth and call sign; no private truth or preimages",
+  "schedule": "F_band^dagger D_y^(+/-1) F_band D_y |plus>",
+  "mass_representation": "Exact Gaussian-integer doubled window contraction on (w,w',x) with unspecified output digits marginalized",
+  "cost": "At most (3M+1) M 27^b windows per sample; 27^(b-1) boundary states; O(M+f+log M) phase bits and charged big integers",
+  "error": "Global phase-state perturbation plus per-digit finite-uniform-grid coupling, total TV <=2^-f under ideal IID bits",
+  "falsifiers": [
+    "Root approximation violates certified complex error",
+    "Exact prefix children fail to sum to parent",
+    "Small independent circuit distribution exceeds TV budget",
+    "Sampler accesses private secret/error information",
+    "Observed work exceeds declared structural bounds"
+  ],
+  "full_cyclic_approximation": "O(log(M/delta)) qutrit twiddle bandwidth suffices for two charged transforms, then doubled contraction supplies a polynomial structural bound in M and inverse accuracy",
+  "exact_full_bandwidth_polynomial_sampler_claimed": false,
+  "full_cyclic_inverse_polynomial_accuracy_structural_sampler_bound": true,
+  "three_or_more_calls_covered": false,
+  "hidden_secret_recovery_algorithm_supplied": false,
+  "accepted_speedup_candidate": false,
+  "new_active_negative_result_created": false
+}

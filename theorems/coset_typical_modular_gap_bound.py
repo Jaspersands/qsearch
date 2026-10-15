@@ -189,6 +189,8 @@ def _load_modular_report(path: Path = MODULAR_REPORT_PATH) -> dict:
     resolved = path
     if not resolved.exists():
         resolved = Path(__file__).resolve().parent / path
+    if not resolved.exists():
+        resolved = Path(__file__).resolve().parent.parent / path
     return json.loads(resolved.read_text())
 
 
@@ -335,6 +337,36 @@ def write_modular_gap_bound_report(
     payload = asdict(build_modular_gap_bound_report())
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(payload, indent=2, sort_keys=True))
+    if write_registry:
+        negative_record = NegativeResultRecord(
+            id="NEG-COSET-TYPICAL-FINITE-SQUARE-FREE-DOES-NOT-CERTIFY-EFFICIENT-PRECISION",
+            source=str(output_path),
+            claim=(
+                "Exact square-freeness of the audited n=10 multiplicity blocks is enough to justify efficient phase estimation."
+            ),
+            reason_invalid=(
+                "Safe denominator clearing and the integer discriminant give only astronomically weak normalized gap lower bounds; the best certified log10 bound is -2057.6."
+            ),
+            lesson=(
+                "Prove an inverse-polynomial normalized gap from separator structure or reject phase-estimation implementations; do not substitute finite square-freeness for precision analysis."
+            ),
+            applies_to=[registry_candidate_id, registry_experiment_id],
+            evidence=payload.get("headline_metrics", {}),
+        )
+        upsert_negative_result(negative_record)
+        upsert_experiment_result(
+            ExperimentResultRecord(
+                id=registry_result_id or f"RESULT-{registry_experiment_id}-LATEST",
+                experiment_id=registry_experiment_id,
+                candidate_id=registry_candidate_id,
+                created_at=payload.get("created_at", utc_now()),
+                status=payload.get("status", "completed"),
+                summary=payload.get("summary", ""),
+                metrics=payload.get("headline_metrics", {}),
+                falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                artifacts={"report": str(output_path)},
+            )
+        )
     return payload
 
 

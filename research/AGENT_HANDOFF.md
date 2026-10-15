@@ -1,6 +1,568 @@
 # Research Agent Handoff
 
-Last updated: 2026-10-14
+Last updated: 2026-10-15
+
+## Latest: Full-Label Pre-Complement Single-Direction Rank Gate
+
+Implemented dcp-adaptive-direction-rank-gate CLI, theorem module, research
+proof document, hypothesis contract, deterministic phase_workbench artifact,
+independent JS replay and dedicated tests. External theorem review remains
+pending; no speedup candidate or central negative theorem is promoted.
+
+Unlike the low-defined carry-source compiler, this posterior law FIXES ALL
+public A before allowing u(A) selection. Only later complement-Z outcomes
+supply randomness. For B=A mod2,D=ker B and nonzero u in D, the retained
+label's low bit is affine in T_u=B diag(u)|D. Uniform complement outcomes
+are D/<u>; T_u u=0 makes their pushforward unchanged. The all-even event
+has probability ZERO or2^-rank(T_u), including affine target consistency.
+rank(T_u)=rank(B_S)+rank(B_complement)-rank(B) is matroid connectivity.
+
+For native IID B, m=3n, prove a simultaneous bound for EVERY full-label
+pre-complement selector. With w=floor(3n/32),r=floor(w/2), full row rank,
+kernel support/complement distance and a low-rank-separator union bound
+give a uniform rank>=r except for a recorded exact source-failure bound.
+The rank-pair exponent minimum is(n-r+1)(w-r+1), proved by constrained
+quadratic minimization and independently checked on small integer grids.
+At n1024 the good-B extra-descent bound is2^-48; n32's source union bound
+is VACUOUS. These are theorem arithmetic, not large physical source trials.
+
+IMPORTANT: n counts SECRET-VECTOR COMPONENTS, not log(cyclic modulus).
+This is not an exponential lower bound for ordinary scalar DHSP. The event
+is ONE extra simultaneous phase descent, not decoding. Good-B bounds hold
+for every initial parity syndrome; native-source MEANS are before source
+or syndrome postselection, which can reweight exceptional B. All-one kernel
+directions and B=0 exceptions are explicitly retained. Mixed/non-flat noise,
+post-complement selection, multi-output correlated packets, other quantum
+instruments and secret-information extraction without all-even labels are
+NOT covered. Source quantum preparations executed by the workflow: zero.
+
+Verification:529 connected tests across20 source/receiver modules pass
+(11 dependency deprecation warnings), including38 new dedicated tests.
+Python compilation, independent JS replay/syntax, live CLI regeneration,
+qsearch validate and git diff --check pass. This is not a full-repository
+regression or external mathematical review. Dedicated tests include14336 complete
+original-phase table cases, actual conditional density matrices, all chart
+syndromes, rank-count bounds, symbolic minimization identities, JS source
+replay and tamper rejection. Do not promote the provisional negative record without
+independent proof review. No commit/push. Gemini may handle central registry
+integration using EXP-DHS-DCP-ADAPTIVE-DIRECTION-RANK-GATE with these scopes.
+
+Next substantive directions: source-valid outcome-adaptive extraction or
+collective correlated-packet readout. Do not repeat pre-complement single-
+direction high-label menus as a way around the same rank penalty.
+
+## Latest: Higher-Modulus Native Carry Congruence Source
+
+Final verification for the receiver/source passes:491 connected tests across
+19 affected/source modules pass (11 dependency deprecation warnings). All3
+affected independent JS replays, Python compilation,14 JS syntax checks
+(10 site scripts plus4 certificates), qsearch validate and git diff --check
+pass. This is NOT a full-repository regression or external theorem review.
+All live artifacts were regenerated before the final provenance tests; do
+not run provenance checks concurrently with a producer still replacing its
+artifact. Source probabilities are binary records, not decimal strings.
+
+Additional next-theory observation to verify before promotion: with fixed
+low-defined directions, the UNCONDITIONAL output label map J is surjective
+modQ by full binary row rank. It is uniform before acceptance. Therefore
+P(accept)<=|conditional output support|/Q^d per component. In the exact
+HNF law this should imply native rejection exponent >= output entropy
+deficit. Forcing all outputs into the order-two subgroup costs at least
+(2/Q)^(n*d) supplied-batch acceptance. This is not yet a registered theorem
+or algorithm no-go; changing directions after higher-label information or
+using another quantum instrument changes the source proof. Derive/check
+this explicitly rather than rewarding uncharged conditional structure.
+
+Implemented dcp-carry-congruence-source CLI, theorem module, doc, hypothesis
+contract, phase_workbench artifact, dedicated tests and independent JS replay.
+This generalizes the q8 source law to arbitrary dyadic phase levels without
+higher-label/state enumeration. It does NOT compile a quantum extractor or
+receiver. Low-defined direction/chart selection remains an unverified lineage
+premise, and mixed noisy packets require a separate output noise law.
+
+Expand the original XOR phase. A degree-h overlap needs its weighted A sum
+divisible by2^(t-h+1). Its low B parity must vanish; for h<t the remaining
+Z variables satisfy one linear congruence modulo2^(t-h). Degree h=t needs
+only low parity. Count the monomial expansion BEFORE claiming polynomial work.
+
+The HNF compiler proves both integer lattice containments, not merely rank
+or determinant equality. Uniform domain Z_Q^m gives exact constraint image
+size prodD/delta_R and acceptance delta_R/prodD for attainable targets.
+With CONSTRAINTS FIRST and FLINT upper ROW HNF, the BOTTOM-RIGHT output block
+has determinant delta_joint/delta_R and spans the conditional output kernel.
+Using the earlier sketch's leading block with this opposite convention is
+wrong. Output coset representatives, correlations, marginal supports and
+joint entropy are explicit. Non-IID outputs are preserved, not auto-rejected.
+
+New general source identity: Z'_li=(-1)^x_i Z_li-x_i B_li modQ is a uniform
+bijection turning the ENTIRE background-x acceptance/output law into x0.
+This proves all-background invariance at every phase level under the stated
+lineage, not just q8. The free top Z bits give jointly uniform top output
+bits by binary rank, even when lower outputs remain correlated.
+
+The live artifact has24 fixed conditional controls at t3,4,8,64, an integer
+target-consistency counterexample where all parity tests pass, and a large
+exact control. That control has fresh IID output labels modulo2^63 but
+acceptance2^-992 and expected2^992 supplied attempts; no resupply oracle is
+provided. Fixed B=0 is calibration, not typical native-family success.
+
+The compiler was further strengthened before scaling: compress equal physical
+intersections by their MINIMUM mixed degree (strongest divisibility), using
+output-sensitive meet closure with separate mixed/singleton witnesses. It
+does not blindly enumerate all monomials. Small full-subset references verify
+the compression, and a64-output disjoint t1024 control certifies2^64-65 zero
+mixed monomials with2016 pair intersections. Its output cardinality2^65472 is
+stored exactly in hexadecimal. No general polynomial closure-size claim.
+Probabilities now use binary numerator/exponent objects and attempt costs
+power-of-two records, avoiding decimal overflow at large component counts.
+Original-register cost includes m roots per batch. A prescribed B's exact
+native probability is recorded separately from conditioning on an observed B.
+
+Next high-reasoning task: use these exact affine source laws to evaluate a
+source-valid high-label/outcome-adaptive transformation or a correlated
+collective receiver beyond fixed-direction extraction. Do not repeat q8
+parity ranks or reject correlations solely for failing an IID interface.
+Cost source supply, extraction noise, coherent access and inter-level
+composition before claiming a sieve improvement. Gemini may integrate
+EXP-DHS-DCP-CARRY-CONGRUENCE-SOURCE as a conditional source diagnostic;
+all efficient-receiver, hardness and speedup obligations stay unresolved.
+No commit/push or new admitted algorithm/active negative theorem.
+
+## Latest: Paid Adaptive Receiver and Exact Confidence Falsifier
+
+CLI dcp-paid-tree-receiver, theorem module, doc, hypothesis contract, live
+phase_workbench artifact, dedicated tests and independent JS checker are now
+implemented. The Bellman benchmark optimizes expected output visibility for
+PUBLIC-FEEDBACK CNOT/Z plus ONE parity-label X readout. Both control orientations
+and ALL branches are paid. Forest state=(label,original-leaf mask), and noise
+uses actual leaves, not2^depth. This is capped EXPONENTIAL work, not a DCP
+solver or general quantum optimum. A visibility/source promise is external;
+receipt ancestry does not certify conditional independence or source geometry.
+
+The matched comparator exhausts all precommitted tree forests INCLUDING
+postmeasurement selection of the best target. Labels(a,N/2-a,2a) admit
+feedback bias v^2/2+v^3/4 versus static optimum v^2/2. Protect the first
+successful branch; recycle its failure. The literal three-label template has
+raw IID probability(N-4)/N^3; a polynomial original sample budget does NOT
+make it common. The union bound does not cover synthesized/sieved labels or
+all other feedback mechanisms. Do not promote this local gain into advantage.
+
+Four fixed, unfiltered six-register batches from the actual compiled sine
+source charge24 preparations. Three stop at a raw parity label; the fourth
+follows three actual merges and measures a three-leaf target. The controller
+uses only public_view/merge/measure and never reads private densities/shift.
+Source/density forward audits remain separate from execution. These finite
+single-trajectory checks do not estimate an asymptotic success rate.
+
+The concurrent adaptive-quadrature audit had two false promotions. Its
+O(ell) "receiver" loop evaluated exact secret-dependent means at prescribed
+labels; that loop is removed, while the valid pointwise identity remains.
+Raw stratum acquisition now costs expected quota*2^(ell-r) preparations.
+The factor-two confidence claim is EXACTLY false even at bad rate1/5<=1/ell:
+ell3,r2,k1,prefix1,bit0,v4/5,35 samples,delta1/10000. One strictly negative
+binomial event has probability>8.15e-5 versus allowed1/30000, although35
+meets the old quota. Rational sqrt(2) and a positive exponential Taylor
+certificate prove this independently. Corrected sufficient Hoeffding factor8
+and a conservative exact dyadic quota give188 shots for that example.
+
+Next high-reasoning task: make feedback completion relations frequent via a
+PAID source-valid transformation without multiplicative visibility collapse,
+or falsify that route. Do not redo the local example or static forest table.
+An efficient unknown-copy collective receiver and a hard growing natural
+source remain unresolved. Gemini can integrate EXP-DHS-DCP-PAID-TREE-RECEIVER
+as a bounded/scoped diagnostic; keep all efficient-receiver/speedup gates false.
+Central registry and full production regressions remain mechanical follow-up.
+No commit/push, new admitted candidate or broad negative theorem is claimed.
+
+## Latest: Source-Scope Corrections And Sine Instrument Validation
+
+The follow-on public localization frontier is now IMPLEMENTED, not just the
+next task below: lattice-localization-gap-frontier CLI, theorem module, doc,
+classical_baselines artifact, dedicated tests and independent JS replay.
+Dense +/-1 plants let j=m be fixed PUBLICLY with residue1 and recovery up to
+sign; there is no private hitting-trial selector. Dimension-only schedules
+match cube and sine total noise bounds. They compare THESE product windows,
+not optimal literature reductions or a new algorithm. At n64, sufficient
+cube/sine gaps are1024/128 (constant noise) and262144/1024 (inverse-log noise).
+All eight new public-LLL controls (n16,32,64; both noise modes; second n32
+seed) recover the plant. Public kernel/index/unimodular attack certificates
+and separate private post-attack calibration are independently replayed.
+The n128..512 table is parameter arithmetic ONLY, not executed attacks.
+
+Keep these as FINITE source-hardness falsifiers, not general dequantization.
+No source quantum samples, large source compilation or quantum decoder was
+performed by this frontier. BKZ/SIS and individual gap certification remain
+unrun/unresolved. Gemini can register the experiment and scoped falsifiers;
+do not mark classical hardness or efficient receiver obligations resolved.
+
+The q-ary coordinate bridge now uses exact fixed-q ternary maximum
+floor((1+s_F*(q-1)/2)/q), distinct from its modulus-uniform envelope.
+The old universal fixed-q sharpness claim was false (q3,s_F9 gives3,not4).
+Forty-five saturation witnesses include small moduli and large free support;
+independent JS verifies their public kernels and coordinate solutions.
+The old extremal-row builder/report examples were deleted because some
+bounded only the free coordinates and violated the full-vector norm premise.
+Replacement witnesses obey the ternary bound on EVERY coordinate.
+
+The offset pair-mass frontier is now explicitly PARTNER SURVIVAL, not a
+certified source bad-register rate. Its gap-two generator promise does not
+meet the sufficient nonparallel separation at scheduled widths. Each result
+records unresolved geometry, null source bad-register rate, private hitting-
+trial/support selection and unexecuted public trials. A public q3,H=(1,1,1)
+counterexample passes the partner schedule but has a same-colour collision.
+JS replay and tamper tests prevent silently restoring the false implication.
+
+Sine packet/source modules now have dedicated coherent/arithmetic/mixed-state
+tests and an independent exact checker. The complete reference additionally
+supports cutoff QFT instruments; metadata binds the actual public source and
+cutoff, and approximate samples cannot inherit exact-DCP character promises.
+Retained-angle parameter error and full-QFT omission error are separate.
+The live workflow charges34 preparations, not32 (two cutoff-control shots).
+Read LATTICE_SINE_WINDOW_SOURCE.md and run its tests/JS replay before reuse.
+
+Final connected verification:310 tests pass across12 affected/source modules;
+all four affected independent JS certificate replays pass; Python compilation,
+all10 site scripts plus4 certificate syntax checks, registry validation and
+git diff --check pass. There are10 dependency deprecation warnings, not source
+test failures. This is NOT a full-repository regression or external proof review.
+
+Next high-reasoning task: attack the source-distribution/classical-hardness
+boundary or construct an efficient UNKNOWN-copy noisy receiver. The public
+noise/gap schedule is now done and its eight live controls all fail hardness.
+Do not repeat these controls or invent another known-phase mixer as progress.
+Source promises remain conditional; no efficient robust decoder is supplied.
+Central-registry refreshes and broad production regressions remain mechanical
+Gemini/Antigravity work. No commit/push; research goal remains active.
+
+## Latest: Fixed-Fourier-Call Public Response MPS Baseline
+
+Read NATIVE_RESPONSE_MPO_BASELINE.md, native_response_mpo_baseline.py and its
+contract/artifact/tests/JS checker. CLI native-response-mpo-baseline now
+implements fixed signed public phase/Fourier schedules beyond two calls.
+The unreversed banded QFT is an exact digit-memory MPO of bond3^(b-1).
+Forward: MPO then reversal. Adjoint: reversal then conjugation/PHYSICAL-leg
+swap, NOT virtual-leg transpose. Each ordered input/output word has exactly
+one virtual path; small tests verify EVERY complex operator column.
+
+MPS bonds are predicted stage by stage, with no SVD/compression. Exact
+FLINT Gaussian-integer matrices compute right environments and child masses.
+Every complete sample pays9M complex products after6M environment products;
+each complex product pays FOUR underlying integer products, with shape-based
+scalar-work bounds. Tensor/environment/root/precision/readout caps fail
+closed. Large trace/calibration integers use HEX above4096 bits; no Python
+interpreter-wide digit limit is disabled. The shared exact-input root helper
+now rejects floats/bools/string turns. Refresh the two-call artifact because
+its producer hash changed, even though its mathematical sampler is unchanged.
+
+Global precision P=f+ceil log2(128 S M3^M), finite-grid K=f+ceil log2(8M),
+and EVERY Fourier truncation are charged. Full cyclic cutoff
+b=min(M,ceil log3(64 max(1,Q) M2^f)) gives total TV<=2^-f. This supplies a
+polynomial STRUCTURAL bound for FIXED Fourier count Q at inverse-polynomial
+resolution, not growing Q, exponential accuracy, hardware or practical
+dominance. The polynomial degree grows with Q. Known classical phase tables
+remain essential; NEVER transfer this to unknown copy-only coset states.
+
+Live three-Fourier-call controls include16-site/b2 (stored bond27) and
+64-site/b1 (bond1). The JS checker replays rounded dense vectors/sample
+traces at small M and EXACT local vectors/draws for the64-site product
+control. The16-site NONPRODUCT outcomes are not independently recomputed;
+their width, precision and operation ledgers are checked. Separate full
+cyclic profiles are mathematical ledgers, not claims of growing full-cyclic
+execution under default caps. No admitted speedup/active negative/novelty.
+
+The old note's "more calls remain open" now means GROWING Fourier-call
+count or mechanisms outside this known product-phase/Fourier model. A
+third or any other fixed number of such calls is no longer a plausible
+exponential sampling separation at inverse-polynomial resolution.
+Existing contaminated/covariant DCP PGM modules already separate information
+robustness from implementability; do not duplicate them as a new receiver.
+Next research should target the efficient UNKNOWN-copy/noisy receiver gap,
+or a quantified growing-call distinguisher that cannot be excluded by the
+fixed-Q simulation, with original sample costs and classical attacks paid.
+
+Final verification for this pass:70 new focused tests within464 connected
+tests pass. New MPO and refreshed two-call JS replays pass; Python compilation,
+all10 site scripts plus both affected certificate syntax checks, registry
+validation and whitespace checks pass. Both live CLI artifacts were refreshed.
+This is not a full-repository regression or endorsement of concurrent Gemini
+work. No commit/push, new accepted speedup, active negative or worker.
+
+New higher-upside source derivation is saved in LATTICE_SINE_WINDOW_SOURCE_SPEC.md,
+NOT IMPLEMENTED. A deterministic known sine packet uses exact matched pi/2
+amplification, not2^-n postselection. Its compact affine-translation Gram can
+yield an actual unknown DCP source at gap of order sqrt(n/epsilon), subject to
+explicit nonparallel AND cross-colour(p-1) alias bounds, norm/coordinate guesses
+and a robust receiver. This may improve the source's n^3/classically-easy ceiling.
+Implement and falsify the packet/instrument before presenting it as a reduction.
+It is not a free lattice Gaussian or phase oracle. Literature comparison and
+public lower-gap LLL/BKZ checks remain mandatory; no novelty is claimed.
+
+## Latest: Corrected Fourier Claims And Paid Classical Sampling
+
+Read NATIVE_BANDED_QFT_BASELINE.md and native_banded_qft_baseline.py.
+CLI native-banded-qft-baseline supplies an ACTUAL dense-free classical
+sampler of F_band^dag D_y^(+/-1) F_band D_y |plus> from public phases.
+Prefix masses use a doubled (w,w',x) network:27^(b-1) boundary states,
+at most(3M+1)M27^b windows per sample. Factor-cache memory, integer bit
+lengths, roots, phase bits and random bits are separately charged. Root
+approximations are certified before sampling; exact Gaussian integers
+avoid rare-prefix normalization/roundoff guesses. Complete sample TV<=2^-f
+under ideal IID bits. Diagnostic PRNG draws do not certify the IID premise.
+Resource caps are preflighted and UNKNOWN, never hardness.
+
+IMPORTANT follow-on result: the actual full cyclic TWO-CALL public-phase
+distribution also has a polynomial structural APPROXIMATE classical sampler
+at inverse-polynomial resolution. Qutrit omitted CPs pay8*pi per maximum
+digit-product4, with BOTH forward and adjoint transforms charged. Exact cutoff
+b=min(M,ceil log3(64 M2^f)) costs <=2^(-f-1) Born TV; the banded sampler at
+f+1 pays the other half. Structural work O(M^5/delta^3) can be impractical:
+default64-site/f20 full-cyclic construction hits a boundary cap. That is
+UNKNOWN, not a counterexample to the constructive polynomial bound. Exact
+full-cyclic sampling and more calls are not covered. DO NOT carry this
+public phase-evaluator access into unknown copy-only coset-state models.
+
+The independent JS checker proves stored root error with rational Machin
+pi/Taylor bounds, replays exact integer marginals and sample traces, and
+reconstructs actual window counts from prefixes. No free exact scalar cost,
+new speedup, noisy-secret solver, EXACT full-bandwidth sampler, more-call
+coverage or new active negative is claimed. Live32-site/b2 and64-site/b1
+controls are sampled without dense3^M outcomes; small controls alone
+enumerate all probabilities to test the circuit distribution.
+
+The older Fourier note had WRONG1/sqrt(3) conditional normalization and a
+false diagonal probability floor. The corrected data-phase cancellation
+retains omega_D^(w(w-x)); exact Gauss component weights and a valid paired
+q9 phase(8,1,0) countercontrol are now independently checked. The banded
+audit's incorrect backward recurrence is replaced with the implemented
+forward recurrence; its original dense routine remains a finite verifier.
+Retained-work preimage checks now distinguish NOISELESS public recovery
+from private-error-subtracted forward equations. No noisy public solver
+follows from those equations alone. Preserve this scope when integrating
+its unfinished producer/checker, especially private errors and signed QFT
+conventions. Do not restore the unconditional recovery flag.
+
+The planted q-ary source pass is now implemented, with CLI planted-qary-source,
+45 focused tests, recursive exact Lucas primality certificates, independent
+RREF/kernel-basis/index proof, complete finite-radius and ternary MITM replays,
+and exact unimodular LLL transformations. Public membership gates any gcd
+normalization; private support/plant/ledger are checked before calibration.
+Eight current controls (including64/128 dimensions and a modulus above2^80)
+are publicly LLL-recovered; no hard regime is established. BKZ/general SIS
+are missing, not failed. Prime-certificate construction is benchmark work,
+not an uncharged solver primitive. Routine full-repository regression,
+registry/UI integration and backups remain Gemini work. No GPT commit/push.
+
+Next leverage: challenge the polynomial-gap/dense-ternary source prior with
+broader public-data baselines before spending quantum receiver effort there.
+For native response mechanisms, TWO-CALL full bandwidth alone is no longer
+a plausible exponential advantage at inverse-polynomial resolution. Seek
+mechanisms outside this paid simulation (with a clear task/advantage lower
+bound), or a robust receiver from genuinely unknown phase-state copies.
+
+Final current verification:394 connected tests pass (not the entire repository).
+Four independent JS replays pass: corrected Fourier identities/countercontrol,
+original banded contraction, new certified marginal sampler/QFT cutoff, and
+planted q-ary source/classical attacks. Python compilation, all10 current site
+JS files plus4 certificate syntax checks, qsearch validate and whitespace
+checks pass. All four relevant CLI artifacts were regenerated. No admitted
+speedup, new active negative, hardware run, commit, push or worker was created.
+The retired root index.js remains absent; its modern site scripts were checked.
+
+Potential higher-leverage next derivation: a banded qutrit QFT WITHOUT its
+digit reversal has operator-Schmidt rank at most3^(b-1) across each ordered
+site cut. Its crossing phases depend on at mostb-1 completed output digits;
+digit reversal itself reverses an MPS ordering without increasing its ranks.
+Product public response phases do not increase those ranks. Check the exact
+MPO/circuit identity and bit/normalization costs BEFORE extending the two-call
+approximation to any fixed number of layers. Constant-layer simulation may
+remove more weak native-response directions, but it is NOT implemented or
+admitted here. Existing DCP contaminated/covariant PGM modules must be read
+before proposing a duplicate robust-copy receiver subsystem.
+
+## Latest: QFT Precision And Growing Source Resource Policy
+
+LATTICE_QFT_PRECISION.md and lattice_qft_precision.py implement the earlier
+spec, with exact query counts for forwards, inverses and phase-parent
+reflections, independent Machin pi enclosures and actual library separation
+mapping checks. Default finite source controls retain exact ideal QFTs.
+Approximate samples are marked and REFUSED as exact DCP by the old model;
+future robust receivers need the JOINT channel-error contract, not a claim
+that all normalized conditional qubits have small error.
+
+The arbitrary128-wire and128-adder-bit/input-size ceilings are replaced by
+explicit adjustable resource policies and CLOSED arithmetic estimates.
+Actual source sampling charges its attached QFT ledger. Untracked manual
+circuit use is outside the declared accuracy contract; no receiver runtime
+bound is proved by a supplied budget. Full hardware/arithmetic and simulator
+roundoff are NOT certified by encoded CP-parameter bounds.
+
+A264-position-wire /601-qubit resource-only source compiles with6275 CP
+gates. Its identity basis is classically easy and does not establish a
+two-point promise. Million-wire symbolic profiles avoid dense tables. An
+extreme query profile meets ideal truncation but FAILS encoded-float angle
+accuracy. Rare-event countercontrols have complete distance2^-k but maximal
+conditional payload error, so no free precision/normalization is inferred.
+
+CLI: python qsearch.py lattice-qft-precision. Independent replay verifies
+math ledgers, not generic hardware or every circuit. Refresh the prior clean
+cube circuit and DCP readout artifacts because their producer hashes changed.
+The planted q-ary source spec remains NOT IMPLEMENTED. Prioritize it with
+matched classical kernel/LLL/BKZ attacks before making harder-source claims;
+then investigate actual robust receivers instead of more capped gate demos.
+
+Final verification:44 new focused tests within308 connected tests pass;
+independent QFT ledger and720-outcome source replays, Python compilation,
+certificate/site syntax, qsearch validate and whitespace checks pass.
+All three affected live CLI artifacts were regenerated with current producer
+and precision-policy dependency hashes. No full repository regression,
+hardware run, commit, push, admitted speedup or new active negative is claimed.
+External IBM-runtime plugin deprecation warnings do not affect these checks.
+
+## Latest: Actual Lattice-To-DCP Readout And Opaque Noisy Registers
+
+Read LATTICE_CUBE_DCP_READOUT.md, lattice_cube_dcp_readout.py and its
+contract/artifact/tests/independent JS replay. The original a wires ARE the
+base-2M position register with n zero gap wires. No copied-a garbage remains.
+Cell and Fourier-label measurement retain the colour qubit; compilation and
+sampling use public lattice inputs only, never preimages or a hidden shift.
+Five finite source controls generate120 charged circuit preparations; the
+127-qubit control is compiled, not simulated. The exact dyadic instrument
+contains ALL720 cell/label outcomes including zero-probability branches.
+
+An important Aer0.17.2 pitfall was caught: deferred measurements return an
+averaged snapshot, and bit-only feed-forward coarsens conditional keys.
+The diagnostic uses a WHOLE-classical-register known Z frame around the
+snapshot, then undoes it. Mandatory checks reject deferred, missing/coarsened
+or multiplicity-mismatched snapshots. Every emitted calibration qubit agrees
+with the independent exact instrument within the declared1e-7 numerical
+tolerance. This is NOT a rigorous channel-error or hardware-precision bound.
+
+OpaquePhaseBackend exposes only public labels/cells/receipt ancestry, and
+supports destructive Pauli measurement or a single physically sampled CNOT
+branch. Inputs are consumed; no cloning, ancestor overlap or free retry.
+Rare unresolved numeric branches consume roots and return UNKNOWN. Actual
+source independence is conditional on fixed public parameters, not inferred
+for every reduction from marginal states or distinct IDs.
+
+Fibre shape, finite f1 bad-rate budget and full growing-family promise are
+separate. The nontrivial2D control fails the f1 noise budget. Other controls
+include shift0, which carries no hidden-shift information. Public lattice
+calibrations remain classically easy; no speedup, broad negative or novelty
+is admitted. Do NOT funnel these mixed registers into the old good-only
+sieve or treat private audit matrices as phase-evaluator access.
+
+CLI: python qsearch.py lattice-cube-dcp-readout. Initial32 focused tests and
+the independent720-outcome instrument replay pass. Gemini owns routine
+registry/UI integration and full regression. Next research work: a robust
+receiver and source-informed classical noisy-Fourier/lattice baselines using
+actual measured transcripts, with every source preparation and merge paid.
+
+Final verification for this pass:37 focused tests within264 connected tests
+pass. The actual full phase-parent inverse pays joint cell/label Born mass;
+source batches are single-claim and neither batches nor live backends can be
+copied through the operation API. Unit tests fork PRIVATE captured fixtures
+only as isolated counterfactual worlds, not extra states in one algorithm.
+Live CLI, independent720-outcome replay, syntax and registry checks pass.
+No full-repository regression, hardware run, commit, push, new admitted
+candidate or active negative is claimed.
+
+Two deeper next-pass derivations are saved, NOT implemented:
+LATTICE_QFT_PRECISION_SPEC.md removes the128-wire growing-source bottleneck
+using a proved logical cutoff/query budget, while charging rare postselection
+and retained-gate precision separately. PLANTED_QARY_USVP_SOURCE_SPEC.md
+specifies a public modular-kernel lattice with an exact rank-conditioned
+statistical uniqueness bound, matched classical attacks and explicit reasons
+why easy planted regimes may fail. Prioritize source precision and genuine
+classical falsification; do not generate disguised diagonal lattices and
+interpret a failed timeout or simulator cap as advantage.
+
+Final verification for the three new response-path/source/compiler passes:
+80 new tests within227 connected tests pass. Both independent JS replays
+pass; the source replay covers393728 original inputs. All three live CLI
+workflows generate artifacts; Python compilation, all10 current site JS
+syntax checks, certificate JS syntax, qsearch validate and whitespace checks
+pass. The retired root index.js is absent; current site scripts were checked.
+This is NOT a full-repository regression or an endorsement of concurrently
+added Gemini audits. No commit, push, new speedup admission, active negative,
+hardware execution or background worker was created by GPT.
+
+## Latest: Clean Public Cube Arithmetic Is Now Compiled
+
+LATTICE_CUBE_SOURCE_CIRCUIT.md and lattice_cube_source_circuit.py compile
+the clean XOR cell evaluator and uniform parent, using the installed
+Qiskit CDKM ripple-adder synthesis. No fibre table, short vector or shift
+is used. Signed point bounds justify high-bit floor copying; the entire
+coordinate arithmetic then runs backward, clearing constants/carries/point
+and low remainders. Shared workspace is2w+1 qubits; at most
+2n(n*log2M+2) additions are charged including uncompute. This supersedes
+the immediately older handoff's missing-CLEAN-EVALUATOR statement only.
+The reference module's false compilation fields describe that reference,
+not this separate actual circuit artifact.
+
+Initial11 gate-level tests pass: signed basis input/output XOR, arbitrary
+complex superpositions, clean workspace, coherent measured fibres and
+the non-free specified-parent inverse. The125-qubit lattice control is
+compiled, NOT densely simulated. No hardware or fault-tolerant cost,
+complete position-QFT phase readout, noisy decoder or speedup is certified.
+CLI: python qsearch.py lattice-cube-source-circuit.
+
+Next: derive and compile in-place base-2M position embedding with no copied
+original-a garbage, signed cell measurement/retention, and position QFT
+to opaque DCP registers. Preserve public basis/offset/cell access, nonuniform
+shift-prior scope, and actual contamination. Gemini can handle routine
+registry/UI wiring and full regression; do not substitute a planted-phase
+generator or conditional inverse. Do not count the classically solved
+calibration as a quantum advantage.
+
+## Latest: Public Lattice Cube Coset Source Reference
+
+Read LATTICE_CUBE_COSET_SOURCE.md and lattice_cube_coset_source.py, its
+contract/artifact/tests/independent checker. The public integer evaluator
+uses the cached Regev cube lemma, not the improved ball construction.
+No short vector, hidden shift or clean flag enters its constructor.
+Three complete131072-input controls retain EVERY cell with Born weights;
+the small-prime countercontrol has invalid multipoint fibres and is refused.
+Fresh-offset overlap pays both box boundaries and geometric cell boundaries.
+Balanced singleton contamination is derived, not guessed; known parent
+inverse prices for a SPECIFIED conditional cell/label are explicit, not
+prices for sampling ANY good cell. Public basis/cell/offset access is richer
+than the abstract copy-only DCP model and must remain available to research.
+
+The public LLL baseline solves this finite norm-one integer calibration
+without truth. No scalable growing-family promise, clean reversible circuit,
+efficient noisy decoder, speedup candidate or new active negative is admitted.
+Tests explicitly show retained physical-point garbage destroys phase coherence.
+The next high-impact missing implementation is clean compute-copy-uncompute
+source arithmetic, NOT a truth-based phase generator or a preimage oracle.
+Gemini may handle routine CLI/registry integration and full regression; GPT
+should derive and audit the clean arithmetic/resource/access contracts first.
+
+CLI: python qsearch.py lattice-cube-coset-source. Standalone --write and
+the independent certificate replay are also available. Initial focused
+verification:31 tests pass;393728 original source inputs replay independently.
+
+## Latest: Higher-Call Collision Ideals And Actual Weighted Interleaving
+
+NATIVE_RESPONSE_PATH_VALUATION.md and native_response_path_valuation.py are a
+distinct subsystem, not a rewrite of the concurrently edited interleaved
+syndrome audit. The exact k-call law uses integer sum multiplicities and
+the minimum three-adic valuation of ALL original-label coefficients. The
+independent JS replay uses multinomial occupancies instead of convolution.
+It retains the mod9 counterexample25/81 versus the old67/243 formula.
+
+Three original-data controls execute the actual measured logical schedule
+F_D^dag D_y F_D D_y |+_D>, retaining every output and Fourier path weight.
+Complete secret censuses agree with weighted additive pinching. These are
+not two-copy uniform projections or unweighted collision-count probabilities.
+The same-public-data FFT baseline is exponential in word sites; no efficient
+dequantization, phase oracle, compiled hardware circuit, scalable receiver,
+speedup candidate or universal lower bound is admitted.
+
+CLI: python qsearch.py native-response-path-valuation. Standalone --write
+and the independent certificate checker also run. Gemini should preserve
+all access/cost/scope fields when integrating registry or UI artifacts.
+Do not infer arbitrary response-interleaving query bounds from reflection
+amplification, or claim sector noncommutation from unequal overlap values.
 
 ## Latest: Physical DCP Bad-Register And Lineage Audit
 

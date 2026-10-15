@@ -1,0 +1,508 @@
+{
+  "status": "PUBLIC_LATTICE_CUBE_COSET_SOURCE_REFERENCE_REVIEW_PENDING",
+  "producer_sha256": "8b4298ac1feba05167d0bd9e312913712271efa130df04734ca141838e3de9f9",
+  "derivation_sha256": "e4fa2e7d96117fde3d42fc95dac991d498788cd45173f0f847c60ce7e63a5d41",
+  "contract_sha256": "4fa8808d780ecc936b5a9980076d9c4a3bfc3bfcce6b98862c34cd9158fbc1a3",
+  "cached_primary_sha256": "884dc13648dcf9d93c489cb6c6b159408f24da59b536c3aedaec1fe0d52069bb",
+  "complete_source_controls": [
+    {
+      "public_source": {
+        "basis_rows": [
+          [
+            10000,
+            1000
+          ],
+          [
+            9999,
+            1000
+          ]
+        ],
+        "prime": 389,
+        "residue_guess": 1,
+        "coordinate": 0,
+        "box": 256,
+        "cube_width": 128,
+        "offsets": [
+          1,
+          1
+        ],
+        "input_population": 131072,
+        "phase_modulus": 262144,
+        "explicit_cell_evaluator_available": true,
+        "uniform_hidden_shift_prior_assumed": false,
+        "uniform_secret_twirl_bounds_transferred_to_source": false,
+        "shortest_vector_or_shift_given_to_constructor": false,
+        "normalized_conditional_state_inverse_available": false,
+        "scalable_coherent_evaluator_circuit_compiled": false
+      },
+      "clean_arithmetic_plan": {
+        "initial_uniform_source_qubits": 17,
+        "position_embedding_padding_qubits": 2,
+        "position_phase_register_qubits": 18,
+        "public_coefficient_maxima": [
+          99196,
+          255
+        ],
+        "coordinate_width_certificates": [
+          {
+            "absolute_point_minus_offset_bound": 994509873,
+            "signed_point_workspace_bits": 31,
+            "low_remainder_bits_to_uncompute": 7,
+            "signed_cell_output_bits": 24,
+            "strict_signed_range_certified": true
+          },
+          {
+            "absolute_point_minus_offset_bound": 99451128,
+            "signed_point_workspace_bits": 28,
+            "low_remainder_bits_to_uncompute": 7,
+            "signed_cell_output_bits": 21,
+            "strict_signed_range_certified": true
+          }
+        ],
+        "classical_constant_multiply_accumulate_terms": 4,
+        "signed_floor_implemented_by_high_bit_copy": true,
+        "physical_point_carry_remainder_workspace_must_return_zero": true,
+        "clean_reversible_arithmetic_gates_compiled": false
+      },
+      "complete_original_domain_censused": 131072,
+      "measured_cell_count": 66272,
+      "fibre_size_histogram": [
+        {
+          "size": 1,
+          "cells": 1472,
+          "Born_mass": "23/2048"
+        },
+        {
+          "size": 2,
+          "cells": 64800,
+          "Born_mass": "2025/2048"
+        }
+      ],
+      "PRIVATE_AUDIT_ONLY_common_differences": [
+        {
+          "difference": [
+            0,
+            -1
+          ],
+          "cells": 64800,
+          "scalar_shift": 261632
+        }
+      ],
+      "PRIVATE_AUDIT_ONLY_singleton_colour_counts": [
+        736,
+        736
+      ],
+      "good_two_point_cell_count": 64800,
+      "good_two_point_Born_mass": "2025/2048",
+      "valid_two_point_source_on_full_domain": true,
+      "bad_register_rate": "23/2048",
+      "position_Fourier_label_uniformity_proved": true,
+      "balanced_bad_basis_mixture_proved": true,
+      "full_growing_family_reduction_promise_proved": false,
+      "reference_enumeration_is_scalable_quantum_source_circuit": false,
+      "multipoint_fibres_are_valid_bad_basis_registers": false
+    },
+    {
+      "public_source": {
+        "basis_rows": [
+          [
+            10000,
+            1000
+          ],
+          [
+            9999,
+            1000
+          ]
+        ],
+        "prime": 389,
+        "residue_guess": 1,
+        "coordinate": 0,
+        "box": 256,
+        "cube_width": 128,
+        "offsets": [
+          64,
+          127
+        ],
+        "input_population": 131072,
+        "phase_modulus": 262144,
+        "explicit_cell_evaluator_available": true,
+        "uniform_hidden_shift_prior_assumed": false,
+        "uniform_secret_twirl_bounds_transferred_to_source": false,
+        "shortest_vector_or_shift_given_to_constructor": false,
+        "normalized_conditional_state_inverse_available": false,
+        "scalable_coherent_evaluator_circuit_compiled": false
+      },
+      "clean_arithmetic_plan": {
+        "initial_uniform_source_qubits": 17,
+        "position_embedding_padding_qubits": 2,
+        "position_phase_register_qubits": 18,
+        "public_coefficient_maxima": [
+          99196,
+          255
+        ],
+        "coordinate_width_certificates": [
+          {
+            "absolute_point_minus_offset_bound": 994509873,
+            "signed_point_workspace_bits": 31,
+            "low_remainder_bits_to_uncompute": 7,
+            "signed_cell_output_bits": 24,
+            "strict_signed_range_certified": true
+          },
+          {
+            "absolute_point_minus_offset_bound": 99451128,
+            "signed_point_workspace_bits": 28,
+            "low_remainder_bits_to_uncompute": 7,
+            "signed_cell_output_bits": 21,
+            "strict_signed_range_certified": true
+          }
+        ],
+        "classical_constant_multiply_accumulate_terms": 4,
+        "signed_floor_implemented_by_high_bit_copy": true,
+        "physical_point_carry_remainder_workspace_must_return_zero": true,
+        "clean_reversible_arithmetic_gates_compiled": false
+      },
+      "complete_original_domain_censused": 131072,
+      "measured_cell_count": 66304,
+      "fibre_size_histogram": [
+        {
+          "size": 1,
+          "cells": 1536,
+          "Born_mass": "3/256"
+        },
+        {
+          "size": 2,
+          "cells": 64768,
+          "Born_mass": "253/256"
+        }
+      ],
+      "PRIVATE_AUDIT_ONLY_common_differences": [
+        {
+          "difference": [
+            0,
+            -1
+          ],
+          "cells": 64768,
+          "scalar_shift": 261632
+        }
+      ],
+      "PRIVATE_AUDIT_ONLY_singleton_colour_counts": [
+        768,
+        768
+      ],
+      "good_two_point_cell_count": 64768,
+      "good_two_point_Born_mass": "253/256",
+      "valid_two_point_source_on_full_domain": true,
+      "bad_register_rate": "3/256",
+      "position_Fourier_label_uniformity_proved": true,
+      "balanced_bad_basis_mixture_proved": true,
+      "full_growing_family_reduction_promise_proved": false,
+      "reference_enumeration_is_scalable_quantum_source_circuit": false,
+      "multipoint_fibres_are_valid_bad_basis_registers": false
+    },
+    {
+      "public_source": {
+        "basis_rows": [
+          [
+            10000,
+            1000
+          ],
+          [
+            9999,
+            1000
+          ]
+        ],
+        "prime": 389,
+        "residue_guess": 1,
+        "coordinate": 0,
+        "box": 256,
+        "cube_width": 128,
+        "offsets": [
+          128,
+          64
+        ],
+        "input_population": 131072,
+        "phase_modulus": 262144,
+        "explicit_cell_evaluator_available": true,
+        "uniform_hidden_shift_prior_assumed": false,
+        "uniform_secret_twirl_bounds_transferred_to_source": false,
+        "shortest_vector_or_shift_given_to_constructor": false,
+        "normalized_conditional_state_inverse_available": false,
+        "scalable_coherent_evaluator_circuit_compiled": false
+      },
+      "clean_arithmetic_plan": {
+        "initial_uniform_source_qubits": 17,
+        "position_embedding_padding_qubits": 2,
+        "position_phase_register_qubits": 18,
+        "public_coefficient_maxima": [
+          99196,
+          255
+        ],
+        "coordinate_width_certificates": [
+          {
+            "absolute_point_minus_offset_bound": 994509873,
+            "signed_point_workspace_bits": 31,
+            "low_remainder_bits_to_uncompute": 7,
+            "signed_cell_output_bits": 24,
+            "strict_signed_range_certified": true
+          },
+          {
+            "absolute_point_minus_offset_bound": 99451128,
+            "signed_point_workspace_bits": 28,
+            "low_remainder_bits_to_uncompute": 7,
+            "signed_cell_output_bits": 21,
+            "strict_signed_range_certified": true
+          }
+        ],
+        "classical_constant_multiply_accumulate_terms": 4,
+        "signed_floor_implemented_by_high_bit_copy": true,
+        "physical_point_carry_remainder_workspace_must_return_zero": true,
+        "clean_reversible_arithmetic_gates_compiled": false
+      },
+      "complete_original_domain_censused": 131072,
+      "measured_cell_count": 66304,
+      "fibre_size_histogram": [
+        {
+          "size": 1,
+          "cells": 1536,
+          "Born_mass": "3/256"
+        },
+        {
+          "size": 2,
+          "cells": 64768,
+          "Born_mass": "253/256"
+        }
+      ],
+      "PRIVATE_AUDIT_ONLY_common_differences": [
+        {
+          "difference": [
+            0,
+            -1
+          ],
+          "cells": 64768,
+          "scalar_shift": 261632
+        }
+      ],
+      "PRIVATE_AUDIT_ONLY_singleton_colour_counts": [
+        768,
+        768
+      ],
+      "good_two_point_cell_count": 64768,
+      "good_two_point_Born_mass": "253/256",
+      "valid_two_point_source_on_full_domain": true,
+      "bad_register_rate": "3/256",
+      "position_Fourier_label_uniformity_proved": true,
+      "balanced_bad_basis_mixture_proved": true,
+      "full_growing_family_reduction_promise_proved": false,
+      "reference_enumeration_is_scalable_quantum_source_circuit": false,
+      "multipoint_fibres_are_valid_bad_basis_registers": false
+    }
+  ],
+  "invalid_geometry_countercontrol": {
+    "public_source": {
+      "basis_rows": [
+        [
+          10000,
+          1000
+        ],
+        [
+          9999,
+          1000
+        ]
+      ],
+      "prime": 3,
+      "residue_guess": 1,
+      "coordinate": 0,
+      "box": 16,
+      "cube_width": 64,
+      "offsets": [
+        1,
+        1
+      ],
+      "input_population": 512,
+      "phase_modulus": 1024,
+      "explicit_cell_evaluator_available": true,
+      "uniform_hidden_shift_prior_assumed": false,
+      "uniform_secret_twirl_bounds_transferred_to_source": false,
+      "shortest_vector_or_shift_given_to_constructor": false,
+      "normalized_conditional_state_inverse_available": false,
+      "scalable_coherent_evaluator_circuit_compiled": false
+    },
+    "clean_arithmetic_plan": {
+      "initial_uniform_source_qubits": 9,
+      "position_embedding_padding_qubits": 2,
+      "position_phase_register_qubits": 10,
+      "public_coefficient_maxima": [
+        46,
+        15
+      ],
+      "coordinate_width_certificates": [
+        {
+          "absolute_point_minus_offset_bound": 610049,
+          "signed_point_workspace_bits": 21,
+          "low_remainder_bits_to_uncompute": 6,
+          "signed_cell_output_bits": 15,
+          "strict_signed_range_certified": true
+        },
+        {
+          "absolute_point_minus_offset_bound": 61064,
+          "signed_point_workspace_bits": 17,
+          "low_remainder_bits_to_uncompute": 6,
+          "signed_cell_output_bits": 11,
+          "strict_signed_range_certified": true
+        }
+      ],
+      "classical_constant_multiply_accumulate_terms": 4,
+      "signed_floor_implemented_by_high_bit_copy": true,
+      "physical_point_carry_remainder_workspace_must_return_zero": true,
+      "clean_reversible_arithmetic_gates_compiled": false
+    },
+    "complete_original_domain_censused": 512,
+    "measured_cell_count": 62,
+    "fibre_size_histogram": [
+      {
+        "size": 1,
+        "cells": 2,
+        "Born_mass": "1/256"
+      },
+      {
+        "size": 2,
+        "cells": 4,
+        "Born_mass": "1/64"
+      },
+      {
+        "size": 3,
+        "cells": 2,
+        "Born_mass": "3/256"
+      },
+      {
+        "size": 4,
+        "cells": 4,
+        "Born_mass": "1/32"
+      },
+      {
+        "size": 5,
+        "cells": 2,
+        "Born_mass": "5/256"
+      },
+      {
+        "size": 6,
+        "cells": 4,
+        "Born_mass": "3/64"
+      },
+      {
+        "size": 7,
+        "cells": 2,
+        "Born_mass": "7/256"
+      },
+      {
+        "size": 8,
+        "cells": 4,
+        "Born_mass": "1/16"
+      },
+      {
+        "size": 9,
+        "cells": 2,
+        "Born_mass": "9/256"
+      },
+      {
+        "size": 10,
+        "cells": 14,
+        "Born_mass": "35/128"
+      },
+      {
+        "size": 11,
+        "cells": 22,
+        "Born_mass": "121/256"
+      }
+    ],
+    "PRIVATE_AUDIT_ONLY_common_differences": [
+      {
+        "difference": [
+          0,
+          -1
+        ],
+        "cells": 4,
+        "scalar_shift": 992
+      }
+    ],
+    "PRIVATE_AUDIT_ONLY_singleton_colour_counts": [
+      1,
+      1
+    ],
+    "good_two_point_cell_count": 4,
+    "good_two_point_Born_mass": "1/64",
+    "valid_two_point_source_on_full_domain": false,
+    "bad_register_rate": null,
+    "position_Fourier_label_uniformity_proved": false,
+    "balanced_bad_basis_mixture_proved": false,
+    "full_growing_family_reduction_promise_proved": false,
+    "reference_enumeration_is_scalable_quantum_source_circuit": false,
+    "multipoint_fibres_are_valid_bad_basis_registers": false
+  },
+  "public_classical_LLL_control": {
+    "reduced_basis_rows": [
+      [
+        -1,
+        0
+      ],
+      [
+        0,
+        1000
+      ]
+    ],
+    "unimodular_row_transform": [
+      [
+        -1,
+        1
+      ],
+      [
+        -9999,
+        10000
+      ]
+    ],
+    "shortest_reduced_row": [
+      -1,
+      0
+    ],
+    "squared_norm": 1,
+    "shortest_vector_truth_given_to_baseline": false,
+    "norm1_in_integer_lattice_proves_global_shortest": true,
+    "LLL_solves_general_unique_SVP_claimed": false
+  },
+  "fixture_geometry_certificate": {
+    "integer_lattice_vertical_spacing": 1000,
+    "shortest_squared_norm": 1,
+    "nonparallel_squared_norm_lower": 1000000,
+    "cube_squared_diameter_upper": 32768,
+    "other_congruent_multiple_squared_norm_lower": 150544,
+    "LLL_preprocessed_basis_promise_inferred": false
+  },
+  "fresh_offset_average": {
+    "private_calibration_difference": [
+      0,
+      -1
+    ],
+    "private_calibration_displacement": [
+      1,
+      0
+    ],
+    "exact_good_Born_mass": "32385/32768",
+    "exact_bad_Born_mass": "383/32768",
+    "failure_parameter_f1_budget": "1/18",
+    "bad_mass_within_declared_f1_budget": true,
+    "average_is_per_offset_guarantee": false
+  },
+  "known_parent_inverse_prices": {
+    "good_specified_cell_inverse_zero_probability": "1/65536",
+    "good_specified_cell_and_Fourier_label_inverse_zero_probability": "1/17179869184",
+    "conditional_normalized_coset_inverse_is_free": false,
+    "prices_apply_to_sampling_any_good_cell": false
+  },
+  "coherent_workspace_obligation": "COMPUTE_CELL_COPY_UNCOMPUTE_POINT_CARRY_AND_REMAINDER_GARBAGE",
+  "source_public_geometry_can_enable_more_than_copy_only_DCP": true,
+  "scalable_quantum_source_circuit_compiled": false,
+  "efficient_noisy_DCP_decoder_supplied": false,
+  "accepted_speedup_candidate": false,
+  "new_active_negative_result_created": false,
+  "novelty_claim": false
+}

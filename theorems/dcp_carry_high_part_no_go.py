@@ -365,6 +365,32 @@ def write_carry_high_part_no_go(
     )
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
+    if write_registry:
+        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
+        metrics = dict(payload.get("headline_metrics", {}))
+        experiment_record = ExperimentResultRecord(
+            id=result_id,
+            experiment_id=registry_experiment_id,
+            candidate_id=registry_candidate_id,
+            created_at=utc_now(),
+            status=payload.get("status", "completed"),
+            summary=payload.get("summary", ""),
+            metrics=metrics,
+            falsifiers_triggered=list(payload.get("falsifiers_triggered", [])),
+            artifacts={path.stem: str(path), "report": str(path)},
+        )
+        upsert_experiment_result(experiment_record)
+        upsert_negative_result(
+            NegativeResultRecord(
+                id="NEG-DCP-LOW-ONLY-CARRY-SELECTION-HIGH-GEOMETRY",
+                claim="Selecting a reachable low carry and discarding the low constraints creates a specially distributed high quotient on which a standard lattice solver gains structural advantage.",
+                reason_invalid="Conditioned on all low data, the high labels remain independent uniform and target translation by the carry is a bijection. Every fixed low-selected quotient is exactly a generic random instance.",
+                lesson="Require a genuinely joint low/high basis or a carry-restricted witness-set theorem. If sweeping carries for a high-only event, prove its generic probability and charge the polynomial union bound.",
+                applies_to=['DHS-GOWERS-SIEVE', 'EXP-DHS-DCP-CARRY-HIGH-PART-NOGO'],
+                evidence=metrics,
+                source=str(path),
+            )
+        )
     return payload
 
 

@@ -291,4 +291,30 @@ def write_hadamard_scaling_report(
     payload = asdict(report)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
+    if write_registry:
+        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
+        metrics = dict(payload.get("headline_metrics", {}))
+        experiment_record = ExperimentResultRecord(
+            id=result_id,
+            experiment_id=registry_experiment_id,
+            candidate_id=registry_candidate_id,
+            created_at=utc_now(),
+            status=payload.get("status", "completed"),
+            summary=payload.get("summary", ""),
+            metrics=metrics,
+            falsifiers_triggered=list(payload.get("falsifiers_triggered", [])),
+            artifacts={path.stem: str(path), "report": str(path)},
+        )
+        upsert_experiment_result(experiment_record)
+        upsert_negative_result(
+            NegativeResultRecord(
+                id="NEG-DCP-HADAMARD-SUBCRITICAL-REGISTER-RATIO-AVERAGE-TV-BOUND",
+                claim="A Hadamard-output decoder with m below 1.7096 log2(N) phase states has inverse-polynomial average signal.",
+                reason_invalid="The signed-relation second-moment and Parseval bound makes expected full-output TV exponentially small for every fixed register ratio below 1/log2(3/2).",
+                lesson="Do not spend effort tuning decoders in the analytically subcritical regime; test supercritical ratios and exact robustness.",
+                applies_to=['DHS-GOWERS-SIEVE', 'EXP-DHS-DCP-HADAMARD-SCALING'],
+                evidence=metrics,
+                source=str(path),
+            )
+        )
     return payload

@@ -461,4 +461,30 @@ def write_carry_slice_lattice_search(
     payload = asdict(report)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
+    if write_registry:
+        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
+        metrics = dict(payload.get("headline_metrics", {}))
+        experiment_record = ExperimentResultRecord(
+            id=result_id,
+            experiment_id=registry_experiment_id,
+            candidate_id=registry_candidate_id,
+            created_at=utc_now(),
+            status=payload.get("status", "completed"),
+            summary=payload.get("summary", ""),
+            metrics=metrics,
+            falsifiers_triggered=list(payload.get("falsifiers_triggered", [])),
+            artifacts={path.stem: str(path), "report": str(path)},
+        )
+        upsert_experiment_result(experiment_record)
+        upsert_negative_result(
+            NegativeResultRecord(
+                id="NEG-DCP-CARRY-SLICED-LLL-FINITE-WITHOUT-COVERAGE-THEOREM",
+                claim="Finite success of a low-carry-sliced LLL embedding proves a polynomial partial density-one subset-sum solver.",
+                reason_invalid="The paired finite audit has no uniform inverse-polynomial legal-input coverage or reversible composition theorem, regardless of whether it improves the unsliced baseline at tested sizes.",
+                lesson="Retain carry slicing as a serious polynomial solver class. Next prove or falsify its average-case short-vector separation and tail coverage instead of tuning finite scales.",
+                applies_to=['DHS-GOWERS-SIEVE', 'EXP-DHS-DCP-SUBSET-SUM-CARRY-SLICE-LATTICE'],
+                evidence=metrics,
+                source=str(path),
+            )
+        )
     return payload

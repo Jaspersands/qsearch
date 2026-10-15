@@ -1,0 +1,32 @@
+{
+  "contract_id": "dcp-adaptive-quadrature-tree-sieve-audit-contract",
+  "title": "DCP Adaptive Quadrature Tree-Sieve Audit: Bitwise Dyadic Demodulation, Deterministic Valuation Advancement on Both CNOT Branches, and Visibility Thresholds",
+  "version": "2.0.0",
+  "scope": "bitwise_dyadic_quadrature_demodulation_equal_valuation_cnot_pairing_dichotomy_and_sieve_depth_visibility_thresholds",
+  "theorems": [
+    {
+      "id": "T1",
+      "name": "Prefix-Demodulated Binary Sign Law on Stratum v_2(k) = ell - 1 - r",
+      "statement": "For any label k = 2^(ell - 1 - r) * (2u + 1) in Z_(2^ell) of 2-adic valuation v_2(k) = ell - 1 - r (0 <= r < ell) and hidden shift s = s_(<r) + s_r * 2^r + 2^(r+1) * s_(>r), the modular phase satisfies 2*pi*k*s / 2^ell === 2*pi*k*s_(<r) / 2^ell + pi*s_r (mod 2*pi). Under balanced {X, Y} quadrature measurement, the prefix-demodulated observable D_r(k, A, z; s_(<r)) = z * phi_A(k * s_(<r) / 2^ell) satisfies E[D_r | k] = (-1)^(s_r) * (v / 2), E[D_r^2 | k] = 1/2, and Var(D_r | k) = 1/2 - v^2 / 4 pointwise for every label k with v_2(k) = ell - 1 - r."
+    },
+    {
+      "id": "T2",
+      "name": "Equal-Valuation CNOT Pairing Dichotomy",
+      "statement": "For any two nonzero labels k_1 = 2^h * u_1 and k_2 = 2^h * u_2 in Z_(2^ell) with identical 2-adic valuation v_2(k_1) = v_2(k_2) = h < ell - 1 (u_1, u_2 odd), both CNOT merge branch outcomes k_+ = (k_1 + k_2) mod 2^ell and k_- = (k_1 - k_2) mod 2^ell satisfy v_2(k_out) >= h + 1 (100% branch survival). Moreover, since {u_1 + u_2 mod 4, u_1 - u_2 mod 4} = {0, 2}, exactly one branch b in {0, 1} yields v_2(k_out) = h + 1 and the complementary branch 1 - b yields v_2(k_out) >= h + 2."
+    },
+    {
+      "id": "T3",
+      "name": "Balanced-Tree Visibility and Paid Raw-Label Acquisition",
+      "statement": "A FULL balanced depth-d tree has 2^d original leaves and visibility v_0^(2^d). Arbitrary trees have visibility v_0^L with their actual leaf count L; a valuation jump does not imply 2^h leaves. Raw IID labels hit prefix stratum r with probability 2^r/2^ell. The pointwise mean identity is not an expectation oracle or a receiver. For bounded scores with mean +/-v/2, m>=8*v^-2*ln(ell/delta) suffices for the per-stage Hoeffding budget; label acquisition is separately paid."
+    }
+  ],
+  "guardrails": {
+    "prescribed_labels_or_exact_means_are_a_free_primitive": false,
+    "end_to_end_sampled_shift_receiver_implemented": false,
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false,
+    "end_to_end_quantum_advantage_claimed": false,
+    "bypassed_UniformCubeSuperposition_prepare_constraint": false
+  }
+}

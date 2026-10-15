@@ -491,6 +491,32 @@ def write_signed_l2_obstruction(
     payload = asdict(run_signed_l2_obstruction(**kwargs))
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
+    if write_registry:
+        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
+        metrics = dict(payload.get("headline_metrics", {}))
+        experiment_record = ExperimentResultRecord(
+            id=result_id,
+            experiment_id=registry_experiment_id,
+            candidate_id=registry_candidate_id,
+            created_at=utc_now(),
+            status=payload.get("status", "completed"),
+            summary=payload.get("summary", ""),
+            metrics=metrics,
+            falsifiers_triggered=list(payload.get("falsifiers_triggered", [])),
+            artifacts={path.stem: str(path), "report": str(path)},
+        )
+        upsert_experiment_result(experiment_record)
+        upsert_negative_result(
+            NegativeResultRecord(
+                id="NEG-DCP-SUBSET-SUM-LOW-ONLY-SPARSE-SIGNED-OBSERVABLE",
+                claim="Signs or cancellations chosen from exposed low data can make a polynomial support of subset-sum high-equation hits depart from its no-hit baseline on inverse-polynomial source mass.",
+                reason_invalid="Distinct nonzero Boolean high equations are conditionally pairwise independent. A support M departs from its no-hit baseline only when an equation hits, with probability at most M/2^(n-b), negligible for fixed-polynomial M and b=O(log n).",
+                lesson="Do not reopen sparse low-only signed scores. A surviving observable must adapt to full high labels, use a dense implicit contraction, be nonlinear, or prove a reduced-basis decoder implication.",
+                applies_to=['DHS-GOWERS-SIEVE', 'EXP-DHS-DCP-SUBSET-SUM-SIGNED-L2-OBSTRUCTION'],
+                evidence=metrics,
+                source=str(path),
+            )
+        )
     return payload
 
 

@@ -1,0 +1,7318 @@
+{
+  "schema_version": "2.0.0",
+  "subsystem": "planted_qary_cube_basis_coordinate_bridge",
+  "contract_id": "planted-qary-cube-basis-coordinate-bridge-contract",
+  "doc_path": "research/PLANTED_QARY_CUBE_BASIS_COORDINATE_BRIDGE.md",
+  "summary_of_theorems": {
+    "T1_basis_coordinate_decomposition": "d = u B^{-1} = (d_piv, d_free) with d_{free,j} = u_{F_j} and d_{piv,i} = (u_{P_i} + sum_j C_{i,j} u_{F_j}) / q in Z.",
+    "T2_nonzero_free_support_invariant": "Every nonzero u in (-q/2, q/2)^n cap ker(H mod q) satisfies s_F = supp_F(u) >= 1.",
+    "T3_modulus_independent_bounds": "For u in [-U, U]^n cap ker(H mod q) with U < q/2, |d_{piv,i}| <= floor(U * s_F / 2) independently of q. The fixed-q ternary maximum is floor((1+s_F*(q-1)/2)/q). The q-independent envelope is 0 (s_F=1), 1 (s_F=2), and floor((s_F-1)/2) (s_F>=3); it is not necessarily sharp at a specified q.",
+    "T4_colinear_separation_and_deterministic_prime_residue": "For ternary u in {-1,0,1}^n \\ {0}, deterministic (p_split=nextprime(W), g_res=1) eliminates colinear multiple collisions |k| >= 2 inside width-W cubes, hits a free coordinate d_{j_pivot} = 1 within at most n - m trials j_pivot in {m, ..., n-1}, and yields delta_{j_pivot} = (1 - 1)/p_split = 0 so ||delta||_1 = ||d||_1 - 1."
+  },
+  "planted_instance_audit": [
+    {
+      "m": 2,
+      "n": 4,
+      "n_minus_m": 2,
+      "q": 1009,
+      "M_box": 16,
+      "width": 4,
+      "p_split_deterministic": 5,
+      "g_res_deterministic": 1,
+      "planted_u": [
+        -1,
+        -1,
+        -1,
+        0
+      ],
+      "d_shift_analytical": [
+        0,
+        0,
+        -1,
+        0
+      ],
+      "d_shift_public_lattice": [
+        0,
+        0,
+        -1,
+        0
+      ],
+      "analytical_matches_public_lattice": true,
+      "free_support_s_F": 1,
+      "max_abs_d_piv": 0,
+      "sharp_ternary_piv_bound": 0,
+      "coarse_piv_bound": 0,
+      "d_l1": 1,
+      "sharp_ternary_l1_bound": 1,
+      "coarse_l1_bound": 1,
+      "delta_partner_on_hit_coord": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "delta_l1": 0,
+      "sharp_delta_l1_bound": 0,
+      "exact_box_p_bad_fraction": "0/1",
+      "exact_box_p_bad_float": 0.0,
+      "sharp_box_p_bad_upper_bound_fraction": "0/1",
+      "sharp_box_p_bad_upper_bound_float": 0.0,
+      "offset_average_pair_good_mass_fraction": "27/64",
+      "p_bad_respects_sharp_bound": true,
+      "free_coordinate_hits_mod_3": [
+        2
+      ],
+      "first_hit_basis_coordinate": 2,
+      "outer_trial_budget_free_coords_only": 2,
+      "cube_coset_source_exhaustive_valid_at_nextprime_W": true,
+      "cube_coset_source_colinear_collision_at_p_le_W": true
+    },
+    {
+      "m": 3,
+      "n": 6,
+      "n_minus_m": 3,
+      "q": 1009,
+      "M_box": 64,
+      "width": 8,
+      "p_split_deterministic": 11,
+      "g_res_deterministic": 1,
+      "planted_u": [
+        0,
+        -1,
+        0,
+        -1,
+        -1,
+        1
+      ],
+      "d_shift_analytical": [
+        0,
+        0,
+        -1,
+        -1,
+        -1,
+        1
+      ],
+      "d_shift_public_lattice": [
+        0,
+        0,
+        -1,
+        -1,
+        -1,
+        1
+      ],
+      "analytical_matches_public_lattice": true,
+      "free_support_s_F": 3,
+      "max_abs_d_piv": 1,
+      "sharp_ternary_piv_bound": 1,
+      "coarse_piv_bound": 1,
+      "d_l1": 4,
+      "sharp_ternary_l1_bound": 6,
+      "coarse_l1_bound": 6,
+      "delta_partner_on_hit_coord": [
+        0,
+        0,
+        1,
+        0,
+        1,
+        -1
+      ],
+      "delta_l1": 3,
+      "sharp_delta_l1_bound": 5,
+      "exact_box_p_bad_fraction": "12097/262144",
+      "exact_box_p_bad_float": 0.046146392822265625,
+      "sharp_box_p_bad_upper_bound_fraction": "5/64",
+      "sharp_box_p_bad_upper_bound_float": 0.078125,
+      "offset_average_pair_good_mass_fraction": "600362847/1073741824",
+      "p_bad_respects_sharp_bound": true,
+      "free_coordinate_hits_mod_3": [
+        3,
+        4,
+        5
+      ],
+      "first_hit_basis_coordinate": 3,
+      "outer_trial_budget_free_coords_only": 3,
+      "cube_coset_source_exhaustive_valid_at_nextprime_W": null,
+      "cube_coset_source_colinear_collision_at_p_le_W": null
+    },
+    {
+      "m": 4,
+      "n": 8,
+      "n_minus_m": 4,
+      "q": 65537,
+      "M_box": 64,
+      "width": 8,
+      "p_split_deterministic": 11,
+      "g_res_deterministic": 1,
+      "planted_u": [
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        -1
+      ],
+      "d_shift_analytical": [
+        -1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        -1
+      ],
+      "d_shift_public_lattice": [
+        -1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        -1
+      ],
+      "analytical_matches_public_lattice": true,
+      "free_support_s_F": 3,
+      "max_abs_d_piv": 1,
+      "sharp_ternary_piv_bound": 1,
+      "coarse_piv_bound": 1,
+      "d_l1": 5,
+      "sharp_ternary_l1_bound": 7,
+      "coarse_l1_bound": 7,
+      "delta_partner_on_hit_coord": [
+        -1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        -1
+      ],
+      "delta_l1": 4,
+      "sharp_delta_l1_bound": 6,
+      "exact_box_p_bad_fraction": "1024255/16777216",
+      "exact_box_p_bad_float": 0.061050355434417725,
+      "sharp_box_p_bad_upper_bound_fraction": "3/32",
+      "sharp_box_p_bad_upper_bound_float": 0.09375,
+      "offset_average_pair_good_mass_fraction": "264760015527/549755813888",
+      "p_bad_respects_sharp_bound": true,
+      "free_coordinate_hits_mod_3": [
+        4,
+        6,
+        7
+      ],
+      "first_hit_basis_coordinate": 4,
+      "outer_trial_budget_free_coords_only": 4,
+      "cube_coset_source_exhaustive_valid_at_nextprime_W": null,
+      "cube_coset_source_colinear_collision_at_p_le_W": null
+    },
+    {
+      "m": 5,
+      "n": 10,
+      "n_minus_m": 5,
+      "q": 1000003,
+      "M_box": 128,
+      "width": 16,
+      "p_split_deterministic": 17,
+      "g_res_deterministic": 1,
+      "planted_u": [
+        -1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        -1
+      ],
+      "d_shift_analytical": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        -1
+      ],
+      "d_shift_public_lattice": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        -1
+      ],
+      "analytical_matches_public_lattice": true,
+      "free_support_s_F": 1,
+      "max_abs_d_piv": 0,
+      "sharp_ternary_piv_bound": 0,
+      "coarse_piv_bound": 0,
+      "d_l1": 1,
+      "sharp_ternary_l1_bound": 1,
+      "coarse_l1_bound": 1,
+      "delta_partner_on_hit_coord": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "delta_l1": 0,
+      "sharp_delta_l1_bound": 0,
+      "exact_box_p_bad_fraction": "0/1",
+      "exact_box_p_bad_float": 0.0,
+      "sharp_box_p_bad_upper_bound_fraction": "0/1",
+      "sharp_box_p_bad_upper_bound_float": 0.0,
+      "offset_average_pair_good_mass_fraction": "11390625/16777216",
+      "p_bad_respects_sharp_bound": true,
+      "free_coordinate_hits_mod_3": [
+        9
+      ],
+      "first_hit_basis_coordinate": 9,
+      "outer_trial_budget_free_coords_only": 5,
+      "cube_coset_source_exhaustive_valid_at_nextprime_W": null,
+      "cube_coset_source_colinear_collision_at_p_le_W": null
+    },
+    {
+      "m": 6,
+      "n": 12,
+      "n_minus_m": 6,
+      "q": 1000000007,
+      "M_box": 128,
+      "width": 16,
+      "p_split_deterministic": 17,
+      "g_res_deterministic": 1,
+      "planted_u": [
+        -1,
+        -1,
+        -1,
+        0,
+        0,
+        -1,
+        -1,
+        -1,
+        0,
+        -1,
+        0,
+        -1
+      ],
+      "d_shift_analytical": [
+        0,
+        0,
+        0,
+        -1,
+        0,
+        0,
+        -1,
+        -1,
+        0,
+        -1,
+        0,
+        -1
+      ],
+      "d_shift_public_lattice": [
+        0,
+        0,
+        0,
+        -1,
+        0,
+        0,
+        -1,
+        -1,
+        0,
+        -1,
+        0,
+        -1
+      ],
+      "analytical_matches_public_lattice": true,
+      "free_support_s_F": 4,
+      "max_abs_d_piv": 1,
+      "sharp_ternary_piv_bound": 1,
+      "coarse_piv_bound": 2,
+      "d_l1": 5,
+      "sharp_ternary_l1_bound": 10,
+      "coarse_l1_bound": 16,
+      "delta_partner_on_hit_coord": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1
+      ],
+      "delta_l1": 4,
+      "sharp_delta_l1_bound": 9,
+      "exact_box_p_bad_fraction": "8290815/268435456",
+      "exact_box_p_bad_float": 0.030885692685842514,
+      "sharp_box_p_bad_upper_bound_fraction": "9/128",
+      "sharp_box_p_bad_upper_bound_float": 0.0703125,
+      "offset_average_pair_good_mass_fraction": "666722261562890625/1152921504606846976",
+      "p_bad_respects_sharp_bound": true,
+      "free_coordinate_hits_mod_3": [
+        6,
+        7,
+        9,
+        11
+      ],
+      "first_hit_basis_coordinate": 6,
+      "outer_trial_budget_free_coords_only": 6,
+      "cube_coset_source_exhaustive_valid_at_nextprime_W": null,
+      "cube_coset_source_colinear_collision_at_p_le_W": null
+    },
+    {
+      "m": 4,
+      "n": 8,
+      "n_minus_m": 4,
+      "q": 1208925819614629174706189,
+      "M_box": 128,
+      "width": 16,
+      "p_split_deterministic": 17,
+      "g_res_deterministic": 1,
+      "planted_u": [
+        -1,
+        -1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0
+      ],
+      "d_shift_analytical": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0
+      ],
+      "d_shift_public_lattice": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0
+      ],
+      "analytical_matches_public_lattice": true,
+      "free_support_s_F": 2,
+      "max_abs_d_piv": 0,
+      "sharp_ternary_piv_bound": 1,
+      "coarse_piv_bound": 1,
+      "d_l1": 2,
+      "sharp_ternary_l1_bound": 6,
+      "coarse_l1_bound": 6,
+      "delta_partner_on_hit_coord": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "delta_l1": 1,
+      "sharp_delta_l1_bound": 5,
+      "exact_box_p_bad_fraction": "1/128",
+      "exact_box_p_bad_float": 0.0078125,
+      "sharp_box_p_bad_upper_bound_fraction": "5/128",
+      "sharp_box_p_bad_upper_bound_float": 0.0390625,
+      "offset_average_pair_good_mass_fraction": "1446609375/2147483648",
+      "p_bad_respects_sharp_bound": true,
+      "free_coordinate_hits_mod_3": [
+        4,
+        5
+      ],
+      "first_hit_basis_coordinate": 4,
+      "outer_trial_budget_free_coords_only": 4,
+      "cube_coset_source_exhaustive_valid_at_nextprime_W": null,
+      "cube_coset_source_colinear_collision_at_p_le_W": null
+    }
+  ],
+  "ternary_saturation_family": [
+    {
+      "q": 3,
+      "m": 3,
+      "n_minus_m": 2,
+      "s_F": 1,
+      "achieved_d_piv_0": 0,
+      "sharp_ternary_bound": 0,
+      "q_independent_envelope": 0,
+      "public_matrix_H": [
+        [
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0
+        ]
+      ],
+      "analysis": {
+        "m": 3,
+        "n": 5,
+        "q": 3,
+        "pivot_cols": [
+          0,
+          1,
+          2
+        ],
+        "free_cols": [
+          3,
+          4
+        ],
+        "C_centered": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "u_vec": [
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        "u_piv": [
+          0,
+          0,
+          0
+        ],
+        "u_free": [
+          1,
+          0
+        ],
+        "u_inf": 1,
+        "free_support_s_F": 1,
+        "d_piv": [
+          0,
+          0,
+          0
+        ],
+        "d_free": [
+          1,
+          0
+        ],
+        "d_full": [
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        "max_abs_d_piv": 0,
+        "d_linf": 1,
+        "d_l1": 1,
+        "pivot_bound_from_support": 0,
+        "pivot_bound_worst_case": 1,
+        "l1_bound_from_support": 1,
+        "l1_bound_worst_case": 5,
+        "nonzero_free_support_satisfied": true,
+        "pivot_support_bound_satisfied": true,
+        "pivot_worst_bound_satisfied": true,
+        "l1_support_bound_satisfied": true,
+        "l1_worst_bound_satisfied": true
+      },
+      "coarse_floor_sF_div_2_bound": 0,
+      "attains_sharp_ternary_bound": true
+    },
+    {
+      "q": 3,
+      "m": 3,
+      "n_minus_m": 2,
+      "s_F": 2,
+      "achieved_d_piv_0": 1,
+      "sharp_ternary_bound": 1,
+      "q_independent_envelope": 1,
+      "public_matrix_H": [
+        [
+          1,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0
+        ]
+      ],
+      "analysis": {
+        "m": 3,
+        "n": 5,
+        "q": 3,
+        "pivot_cols": [
+          0,
+          1,
+          2
+        ],
+        "free_cols": [
+          3,
+          4
+        ],
+        "C_centered": [
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "u_vec": [
+          1,
+          0,
+          0,
+          1,
+          1
+        ],
+        "u_piv": [
+          1,
+          0,
+          0
+        ],
+        "u_free": [
+          1,
+          1
+        ],
+        "u_inf": 1,
+        "free_support_s_F": 2,
+        "d_piv": [
+          1,
+          0,
+          0
+        ],
+        "d_free": [
+          1,
+          1
+        ],
+        "d_full": [
+          1,
+          0,
+          0,
+          1,
+          1
+        ],
+        "max_abs_d_piv": 1,
+        "d_linf": 1,
+        "d_l1": 3,
+        "pivot_bound_from_support": 1,
+        "pivot_bound_worst_case": 1,
+        "l1_bound_from_support": 5,
+        "l1_bound_worst_case": 5,
+        "nonzero_free_support_satisfied": true,
+        "pivot_support_bound_satisfied": true,
+        "pivot_worst_bound_satisfied": true,
+        "l1_support_bound_satisfied": true,
+        "l1_worst_bound_satisfied": true
+      },
+      "coarse_floor_sF_div_2_bound": 1,
+      "attains_sharp_ternary_bound": true
+    },
+    {
+      "q": 3,
+      "m": 3,
+      "n_minus_m": 3,
+      "s_F": 3,
+      "achieved_d_piv_0": 1,
+      "sharp_ternary_bound": 1,
+      "q_independent_envelope": 1,
+      "public_matrix_H": [
+        [
+          1,
+          0,
+          0,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ]
+      ],
+      "analysis": {
+        "m": 3,
+        "n": 6,
+        "q": 3,
+        "pivot_cols": [
+          0,
+          1,
+          2
+        ],
+        "free_cols": [
+          3,
+          4,
+          5
+        ],
+        "C_centered": [
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "u_vec": [
+          1,
+          0,
+          0,
+          1,
+          1,
+          1
+        ],
+        "u_piv": [
+          1,
+          0,
+          0
+        ],
+        "u_free": [
+          1,
+          1,
+          1
+        ],
+        "u_inf": 1,
+        "free_support_s_F": 3,
+        "d_piv": [
+          1,
+          0,
+          0
+        ],
+        "d_free": [
+          1,
+          1,
+          1
+        ],
+        "d_full": [
+          1,
+          0,
+          0,
+          1,
+          1,
+          1
+        ],
+        "max_abs_d_piv": 1,
+        "d_linf": 1,
+        "d_l1": 4,
+        "pivot_bound_from_support": 1,
+        "pivot_bound_worst_case": 1,
+        "l1_bound_from_support": 6,
+        "l1_bound_worst_case": 6,
+        "nonzero_free_support_satisfied": true,
+        "pivot_support_bound_satisfied": true,
+        "pivot_worst_bound_satisfied": true,
+        "l1_support_bound_satisfied": true,
+        "l1_worst_bound_satisfied": true
+      },
+      "coarse_floor_sF_div_2_bound": 1,
+      "attains_sharp_ternary_bound": true
+    },
+    {
+      "q": 3,
+      "m": 3,
+      "n_minus_m": 4,
+      "s_F": 4,
+      "achieved_d_piv_0": 1,
+      "sharp_ternary_bound": 1,
+      "q_independent_envelope": 1,
+      "public_matrix_H": [
+        [
+          1,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "analysis": {
+        "m": 3,
+        "n": 7,
+        "q": 3,
+        "pivot_cols": [
+          0,
+          1,
+          2
+        ],
+        "free_cols": [
+          3,
+          4,
+          5,
+          6
+        ],
+        "C_centered": [
+          [
+            1,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "u_vec": [
+          1,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "u_piv": [
+          1,
+          0,
+          0
+        ],
+        "u_free": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "u_inf": 1,
+        "free_support_s_F": 4,
+        "d_piv": [
+          1,
+          0,
+          0
+        ],
+        "d_free": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "d_full": [
+          1,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "max_abs_d_piv": 1,
+        "d_linf": 1,
+        "d_l1": 5,
+        "pivot_bound_from_support": 2,
+        "pivot_bound_worst_case": 2,
+        "l1_bound_from_support": 10,
+        "l1_bound_worst_case": 10,
+        "nonzero_free_support_satisfied": true,
+        "pivot_support_bound_satisfied": true,
+        "pivot_worst_bound_satisfied": true,
+        "l1_support_bound_satisfied": true,
+        "l1_worst_bound_satisfied": true
+      },
+      "coarse_floor_sF_div_2_bound": 2,
+      "attains_sharp_ternary_bound": true
+    },
+    {
+      "q": 3,
+      "m": 3,
+      "n_minus_m": 5,
+      "s_F": 5,
+      "achieved_d_piv_0": 2,
+      "sharp_ternary_bound": 2,
+      "q_independent_envelope": 2,
+      "public_matrix_H": [
+        [
+          1,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "analysis": {
+        "m": 3,
+        "n": 8,
+        "q": 3,
+        "pivot_cols": [
+          0,
+          1,
+          2
+        ],
+        "free_cols": [
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "C_centered": [
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "u_vec": [
+          1,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "u_piv": [
+          1,
+          0,
+          0
+        ],
+        "u_free": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "u_inf": 1,
+        "free_support_s_F": 5,
+        "d_piv": [
+          2,
+          0,
+          0
+        ],
+        "d_free": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "d_full": [
+          2,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "max_abs_d_piv": 2,
+        "d_linf": 2,
+        "d_l1": 7,
+        "pivot_bound_from_support": 2,
+        "pivot_bound_worst_case": 2,
+        "l1_bound_from_support": 11,
+        "l1_bound_worst_case": 11,
+        "nonzero_free_support_satisfied": true,
+        "pivot_support_bound_satisfied": true,
+        "pivot_worst_bound_satisfied": true,
+        "l1_support_bound_satisfied": true,
+        "l1_worst_bound_satisfied": true
+      },
+      "coarse_floor_sF_div_2_bound": 2,
+      "attains_sharp_ternary_bound": true
+    },
+    {
+      "q": 3,
+      "m": 3,
+      "n_minus_m": 6,
+      "s_F": 6,
+      "achieved_d_piv_0": 2,
+      "sharp_ternary_bound": 2,
+      "q_independent_envelope": 2,
+      "public_matrix_H": [
+        [
+          1,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "analysis": {
+        "m": 3,
+        "n": 9,
+        "q": 3,
+        "pivot_cols": [
+          0,
+          1,
+          2
+        ],
+        "free_cols": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "C_centered": [
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "u_vec": [
+          1,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "u_piv": [
+          1,
+          0,
+          0
+        ],
+        "u_free": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "u_inf": 1,
+        "free_support_s_F": 6,
+        "d_piv": [
+          2,
+          0,
+          0
+        ],
+        "d_free": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "d_full": [
+          2,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "max_abs_d_piv": 2,
+        "d_linf": 2,
+        "d_l1": 8,
+        "pivot_bound_from_support": 3,
+        "pivot_bound_worst_case": 3,
+        "l1_bound_from_support": 15,
+        "l1_bound_worst_case": 15,
+        "nonzero_free_support_satisfied": true,
+        "pivot_support_bound_satisfied": true,
+        "pivot_worst_bound_satisfied": true,
+        "l1_support_bound_satisfied": true,
+        "l1_worst_bound_satisfied": true
+      },
+      "coarse_floor_sF_div_2_bound": 3,
+      "attains_sharp_ternary_bound": true
+    },
+    {
+      "q": 3,
+      "m": 3,
+      "n_minus_m": 7,
+      "s_F": 7,
+      "achieved_d_piv_0": 2,
+      "sharp_ternary_bound": 2,
+      "q_independent_envelope": 3,
+      "public_matrix_H": [
+        [
+          1,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "analysis": {
+        "m": 3,
+        "n": 10,
+        "q": 3,
+        "pivot_cols": [
+          0,
+          1,
+          2
+        ],
+        "free_cols": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "C_centered": [
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "u_vec": [
+          1,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "u_piv": [
+          1,
+          0,
+          0
+        ],
+        "u_free": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "u_inf": 1,
+        "free_support_s_F": 7,
+        "d_piv": [
+          2,
+          0,
+          0
+        ],
+        "d_free": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "d_full": [
+          2,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "max_abs_d_piv": 2,
+        "d_linf": 2,
+        "d_l1": 9,
+        "pivot_bound_from_support": 3,
+        "pivot_bound_worst_case": 3,
+        "l1_bound_from_support": 16,
+        "l1_bound_worst_case": 16,
+        "nonzero_free_support_satisfied": true,
+        "pivot_support_bound_satisfied": true,
+        "pivot_worst_bound_satisfied": true,
+        "l1_support_bound_satisfied": true,
+        "l1_worst_bound_satisfied": true
+      },
+      "coarse_floor_sF_div_2_bound": 3,
+      "attains_sharp_ternary_bound": true
+    },
+    {
+      "q": 3,
+      "m": 3,
+      "n_minus_m": 9,
+      "s_F": 9,
+      "achieved_d_piv_0": 3,
+      "sharp_ternary_bound": 3,
+      "q_independent_envelope": 4,
+      "public_matrix_H": [
+        [
+          1,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "analysis": {
+        "m": 3,
+        "n": 12,
+        "q": 3,
+        "pivot_cols": [
+          0,
+          1,
+          2
+        ],
+        "free_cols": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "C_centered": [
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "u_vec": [
+          1,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "u_piv": [
+          1,
+          0,
+          0
+        ],
+        "u_free": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "u_inf": 1,
+        "free_support_s_F": 9,
+        "d_piv": [
+          3,
+          0,
+          0
+        ],
+        "d_free": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "d_full": [
+          3,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "max_abs_d_piv": 3,
+        "d_linf": 3,
+        "d_l1": 12,
+        "pivot_bound_from_support": 4,
+        "pivot_bound_worst_case": 4,
+        "l1_bound_from_support": 21,
+        "l1_bound_worst_case": 21,
+        "nonzero_free_support_satisfied": true,
+        "pivot_support_bound_satisfied": true,
+        "pivot_worst_bound_satisfied": true,
+        "l1_support_bound_satisfied": true,
+        "l1_worst_bound_satisfied": true
+      },
+      "coarse_floor_sF_div_2_bound": 4,
+      "attains_sharp_ternary_bound": true
+    },
+    {
+      "q": 3,
+      "m": 3,
+      "n_minus_m": 16,
+      "s_F": 16,
+      "achieved_d_piv_0": 5,
+      "sharp_ternary_bound": 5,
+      "q_independent_envelope": 7,
+      "public_matrix_H": [
+        [
+          1,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "analysis": {
+        "m": 3,
+        "n": 19,
+        "q": 3,
+        "pivot_cols": [
+          0,
+          1,
+          2
+        ],
+        "free_cols": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18
+        ],
+        "C_centered": [
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "u_vec": [
+          1,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "u_piv": [
+          1,
+          0,
+          0
+        ],
+        "u_free": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "u_inf": 1,
+        "free_support_s_F": 16,
+        "d_piv": [
+          5,
+          0,
+          0
+        ],
+        "d_free": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "d_full": [
+          5,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "max_abs_d_piv": 5,
+        "d_linf": 5,
+        "d_l1": 21,
+        "pivot_bound_from_support": 8,
+        "pivot_bound_worst_case": 8,
+        "l1_bound_from_support": 40,
+        "l1_bound_worst_case": 40,
+        "nonzero_free_support_satisfied": true,
+        "pivot_support_bound_satisfied": true,
+        "pivot_worst_bound_satisfied": true,
+        "l1_support_bound_satisfied": true,
+        "l1_worst_bound_satisfied": true
+      },
+      "coarse_floor_sF_div_2_bound": 8,
+      "attains_sharp_ternary_bound": true
+    },
+    {
+      "q": 5,
+      "m": 3,
+      "n_minus_m": 2,
+      "s_F": 1,
+      "achieved_d_piv_0": 0,
+      "sharp_ternary_bound": 0,
+      "q_independent_envelope": 0,
+      "public_matrix_H": [
+        [
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0
+        ]
+      ],
+      "analysis": {
+        "m": 3,
+        "n": 5,
+        "q": 5,
+        "pivot_cols": [
+          0,
+          1,
+          2
+        ],
+        "free_cols": [
+          3,
+          4
+        ],
+        "C_centered": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "u_vec": [
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        "u_piv": [
+          0,
+          0,
+          0
+        ],
+        "u_free": [
+          1,
+          0
+        ],
+        "u_inf": 1,
+        "free_support_s_F": 1,
+        "d_piv": [
+          0,
+          0,
+          0
+        ],
+        "d_free": [
+          1,
+          0
+        ],
+        "d_full": [
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        "max_abs_d_piv": 0,
+        "d_linf": 1,
+        "d_l1": 1,
+        "pivot_bound_from_support": 0,
+        "pivot_bound_worst_case": 1,
+        "l1_bound_from_support": 1,
+        "l1_bound_worst_case": 5,
+        "nonzero_free_support_satisfied": true,
+        "pivot_support_bound_satisfied": true,
+        "pivot_worst_bound_satisfied": true,
+        "l1_support_bound_satisfied": true,
+        "l1_worst_bound_satisfied": true
+      },
+      "coarse_floor_sF_div_2_bound": 0,
+      "attains_sharp_ternary_bound": true
+    },
+    {
+      "q": 5,
+      "m": 3,
+      "n_minus_m": 2,
+      "s_F": 2,
+      "achieved_d_piv_0": 1,
+      "sharp_ternary_bound": 1,
+      "q_independent_envelope": 1,
+      "public_matrix_H": [
+        [
+          1,
+          0,
+          0,
+          2,
+          2
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0
+        ]
+      ],
+      "analysis": {
+        "m": 3,
+        "n": 5,
+        "q": 5,
+        "pivot_cols": [
+          0,
+          1,
+          2
+        ],
+        "free_cols": [
+          3,
+          4
+        ],
+        "C_centered": [
+          [
+            2,
+            2
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "u_vec": [
+          1,
+          0,
+          0,
+          1,
+          1
+        ],
+        "u_piv": [
+          1,
+          0,
+          0
+        ],
+        "u_free": [
+          1,
+          1
+        ],
+        "u_inf": 1,
+        "free_support_s_F": 2,
+        "d_piv": [
+          1,
+          0,
+          0
+        ],
+        "d_free": [
+          1,
+          1
+        ],
+        "d_full": [
+          1,
+          0,
+          0,
+          1,
+          1
+        ],
+        "max_abs_d_piv": 1,
+        "d_linf": 1,
+        "d_l1": 3,
+        "pivot_bound_from_support": 1,
+        "pivot_bound_worst_case": 1,
+        "l1_bound_from_support": 5,
+        "l1_bound_worst_case": 5,
+        "nonzero_free_support_satisfied": true,
+        "pivot_support_bound_satisfied": true,
+        "pivot_worst_bound_satisfied": true,
+        "l1_support_bound_satisfied": true,
+        "l1_worst_bound_satisfied": true
+      },
+      "coarse_floor_sF_div_2_bound": 1,
+      "attains_sharp_ternary_bound": true
+    },
+    {
+      "q": 5,
+      "m": 3,
+      "n_minus_m": 3,
+      "s_F": 3,
+      "achieved_d_piv_0": 1,
+      "sharp_ternary_bound": 1,
+      "q_independent_envelope": 1,
+      "public_matrix_H": [
+        [
+          1,
+          0,
+          0,
+          2,
+          2,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ]
+      ],
+      "analysis": {
+        "m": 3,
+        "n": 6,
+        "q": 5,
+        "pivot_cols": [
+          0,
+          1,
+          2
+        ],
+        "free_cols": [
+          3,
+          4,
+          5
+        ],
+        "C_centered": [
+          [
+            2,
+            2,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "u_vec": [
+          1,
+          0,
+          0,
+          1,
+          1,
+          1
+        ],
+        "u_piv": [
+          1,
+          0,
+          0
+        ],
+        "u_free": [
+          1,
+          1,
+          1
+        ],
+        "u_inf": 1,
+        "free_support_s_F": 3,
+        "d_piv": [
+          1,
+          0,
+          0
+        ],
+        "d_free": [
+          1,
+          1,
+          1
+        ],
+        "d_full": [
+          1,
+          0,
+          0,
+          1,
+          1,
+          1
+        ],
+        "max_abs_d_piv": 1,
+        "d_linf": 1,
+        "d_l1": 4,
+        "pivot_bound_from_support": 1,
+        "pivot_bound_worst_case": 1,
+        "l1_bound_from_support": 6,
+        "l1_bound_worst_case": 6,
+        "nonzero_free_support_satisfied": true,
+        "pivot_support_bound_satisfied": true,
+        "pivot_worst_bound_satisfied": true,
+        "l1_support_bound_satisfied": true,
+        "l1_worst_bound_satisfied": true
+      },
+      "coarse_floor_sF_div_2_bound": 1,
+      "attains_sharp_ternary_bound": true
+    },
+    {
+      "q": 5,
+      "m": 3,
+      "n_minus_m": 4,
+      "s_F": 4,
+      "achieved_d_piv_0": 1,
+      "sharp_ternary_bound": 1,
+      "q_independent_envelope": 1,
+      "public_matrix_H": [
+        [
+          1,
+          0,
+          0,
+          2,
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "analysis": {
+        "m": 3,
+        "n": 7,
+        "q": 5,
+        "pivot_cols": [
+          0,
+          1,
+          2
+        ],
+        "free_cols": [
+          3,
+          4,
+          5,
+          6
+        ],
+        "C_centered": [
+          [
+            2,
+            2,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "u_vec": [
+          1,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "u_piv": [
+          1,
+          0,
+          0
+        ],
+        "u_free": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "u_inf": 1,
+        "free_support_s_F": 4,
+        "d_piv": [
+          1,
+          0,
+          0
+        ],
+        "d_free": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "d_full": [
+          1,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "max_abs_d_piv": 1,
+        "d_linf": 1,
+        "d_l1": 5,
+        "pivot_bound_from_support": 2,
+        "pivot_bound_worst_case": 2,
+        "l1_bound_from_support": 10,
+        "l1_bound_worst_case": 10,
+        "nonzero_free_support_satisfied": true,
+        "pivot_support_bound_satisfied": true,
+        "pivot_worst_bound_satisfied": true,
+        "l1_support_bound_satisfied": true,
+        "l1_worst_bound_satisfied": true
+      },
+      "coarse_floor_sF_div_2_bound": 2,
+      "attains_sharp_ternary_bound": true
+    },
+    {
+      "q": 5,
+      "m": 3,
+      "n_minus_m": 5,
+      "s_F": 5,
+      "achieved_d_piv_0": 2,
+      "sharp_ternary_bound": 2,
+      "q_independent_envelope": 2,
+      "public_matrix_H": [
+        [
+          1,
+          0,
+          0,
+          2,
+          2,
+          2,
+          2,
+          1
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "analysis": {
+        "m": 3,
+        "n": 8,
+        "q": 5,
+        "pivot_cols": [
+          0,
+          1,
+          2
+        ],
+        "free_cols": [
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "C_centered": [
+          [
+            2,
+            2,
+            2,
+            2,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "u_vec": [
+          1,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "u_piv": [
+          1,
+          0,
+          0
+        ],
+        "u_free": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "u_inf": 1,
+        "free_support_s_F": 5,
+        "d_piv": [
+          2,
+          0,
+          0
+        ],
+        "d_free": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "d_full": [
+          2,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "max_abs_d_piv": 2,
+        "d_linf": 2,
+        "d_l1": 7,
+        "pivot_bound_from_support": 2,
+        "pivot_bound_worst_case": 2,
+        "l1_bound_from_support": 11,
+        "l1_bound_worst_case": 11,
+        "nonzero_free_support_satisfied": true,
+        "pivot_support_bound_satisfied": true,
+        "pivot_worst_bound_satisfied": true,
+        "l1_support_bound_satisfied": true,
+        "l1_worst_bound_satisfied": true
+      },
+      "coarse_floor_sF_div_2_bound": 2,
+      "attains_sharp_ternary_bound": true
+    },
+    {
+      "q": 5,
+      "m": 3,
+      "n_minus_m": 6,
+      "s_F": 6,
+      "achieved_d_piv_0": 2,
+      "sharp_ternary_bound": 2,
+      "q_independent_envelope": 2,
+      "public_matrix_H": [
+        [
+          1,
+          0,
+          0,
+          2,
+          2,
+          2,
+          2,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "analysis": {
+        "m": 3,
+        "n": 9,
+        "q": 5,
+        "pivot_cols": [
+          0,
+          1,
+          2
+        ],
+        "free_cols": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "C_centered": [
+          [
+            2,
+            2,
+            2,
+            2,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "u_vec": [
+          1,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "u_piv": [
+          1,
+          0,
+          0
+        ],
+        "u_free": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "u_inf": 1,
+        "free_support_s_F": 6,
+        "d_piv": [
+          2,
+          0,
+          0
+        ],
+        "d_free": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "d_full": [
+          2,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "max_abs_d_piv": 2,
+        "d_linf": 2,
+        "d_l1": 8,
+        "pivot_bound_from_support": 3,
+        "pivot_bound_worst_case": 3,
+        "l1_bound_from_support": 15,
+        "l1_bound_worst_case": 15,
+        "nonzero_free_support_satisfied": true,
+        "pivot_support_bound_satisfied": true,
+        "pivot_worst_bound_satisfied": true,
+        "l1_support_bound_satisfied": true,
+        "l1_worst_bound_satisfied": true
+      },
+      "coarse_floor_sF_div_2_bound": 3,
+      "attains_sharp_ternary_bound": true
+    },
+    {
+      "q": 5,
+      "m": 3,
+      "n_minus_m": 7,
+      "s_F": 7,
+      "achieved_d_piv_0": 3,
+      "sharp_ternary_bound": 3,
+      "q_independent_envelope": 3,
+      "public_matrix_H": [
+        [
+          1,
+          0,
+          0,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "analysis": {
+        "m": 3,
+        "n": 10,
+        "q": 5,
+        "pivot_cols": [
+          0,
+          1,
+          2
+        ],
+        "free_cols": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "C_centered": [
+          [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "u_vec": [
+          1,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "u_piv": [
+          1,
+          0,
+          0
+        ],
+        "u_free": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "u_inf": 1,
+        "free_support_s_F": 7,
+        "d_piv": [
+          3,
+          0,
+          0
+        ],
+        "d_free": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "d_full": [
+          3,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "max_abs_d_piv": 3,
+        "d_linf": 3,
+        "d_l1": 10,
+        "pivot_bound_from_support": 3,
+        "pivot_bound_worst_case": 3,
+        "l1_bound_from_support": 16,
+        "l1_bound_worst_case": 16,
+        "nonzero_free_support_satisfied": true,
+        "pivot_support_bound_satisfied": true,
+        "pivot_worst_bound_satisfied": true,
+        "l1_support_bound_satisfied": true,
+        "l1_worst_bound_satisfied": true
+      },
+      "coarse_floor_sF_div_2_bound": 3,
+      "attains_sharp_ternary_bound": true
+    },
+    {
+      "q": 5,
+      "m": 3,
+      "n_minus_m": 9,
+      "s_F": 9,
+      "achieved_d_piv_0": 3,
+      "sharp_ternary_bound": 3,
+      "q_independent_envelope": 4,
+      "public_matrix_H": [
+        [
+          1,
+          0,
+          0,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "analysis": {
+        "m": 3,
+        "n": 12,
+        "q": 5,
+        "pivot_cols": [
+          0,
+          1,
+          2
+        ],
+        "free_cols": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "C_centered": [
+          [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "u_vec": [
+          1,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "u_piv": [
+          1,
+          0,
+          0
+        ],
+        "u_free": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "u_inf": 1,
+        "free_support_s_F": 9,
+        "d_piv": [
+          3,
+          0,
+          0
+        ],
+        "d_free": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "d_full": [
+          3,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "max_abs_d_piv": 3,
+        "d_linf": 3,
+        "d_l1": 12,
+        "pivot_bound_from_support": 4,
+        "pivot_bound_worst_case": 4,
+        "l1_bound_from_support": 21,
+        "l1_bound_worst_case": 21,
+        "nonzero_free_support_satisfied": true,
+        "pivot_support_bound_satisfied": true,
+        "pivot_worst_bound_satisfied": true,
+        "l1_support_bound_satisfied": true,
+        "l1_worst_bound_satisfied": true
+      },
+      "coarse_floor_sF_div_2_bound": 4,
+      "attains_sharp_ternary_bound": true
+    },
+    {
+      "q": 5,
+      "m": 3,
+      "n_minus_m": 16,
+      "s_F": 16,
+      "achieved_d_piv_0": 6,
+      "sharp_ternary_bound": 6,
+      "q_independent_envelope": 7,
+      "public_matrix_H": [
+        [
+          1,
+          0,
+          0,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "analysis": {
+        "m": 3,
+        "n": 19,
+        "q": 5,
+        "pivot_cols": [
+          0,
+          1,
+          2
+        ],
+        "free_cols": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18
+        ],
+        "C_centered": [
+          [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "u_vec": [
+          1,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "u_piv": [
+          1,
+          0,
+          0
+        ],
+        "u_free": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "u_inf": 1,
+        "free_support_s_F": 16,
+        "d_piv": [
+          6,
+          0,
+          0
+        ],
+        "d_free": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "d_full": [
+          6,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "max_abs_d_piv": 6,
+        "d_linf": 6,
+        "d_l1": 22,
+        "pivot_bound_from_support": 8,
+        "pivot_bound_worst_case": 8,
+        "l1_bound_from_support": 40,
+        "l1_bound_worst_case": 40,
+        "nonzero_free_support_satisfied": true,
+        "pivot_support_bound_satisfied": true,
+        "pivot_worst_bound_satisfied": true,
+        "l1_support_bound_satisfied": true,
+        "l1_worst_bound_satisfied": true
+      },
+      "coarse_floor_sF_div_2_bound": 8,
+      "attains_sharp_ternary_bound": true
+    },
+    {
+      "q": 101,
+      "m": 3,
+      "n_minus_m": 2,
+      "s_F": 1,
+      "achieved_d_piv_0": 0,
+      "sharp_ternary_bound": 0,
+      "q_independent_envelope": 0,
+      "public_matrix_H": [
+        [
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0
+        ]
+      ],
+      "analysis": {
+        "m": 3,
+        "n": 5,
+        "q": 101,
+        "pivot_cols": [
+          0,
+          1,
+          2
+        ],
+        "free_cols": [
+          3,
+          4
+        ],
+        "C_centered": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "u_vec": [
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        "u_piv": [
+          0,
+          0,
+          0
+        ],
+        "u_free": [
+          1,
+          0
+        ],
+        "u_inf": 1,
+        "free_support_s_F": 1,
+        "d_piv": [
+          0,
+          0,
+          0
+        ],
+        "d_free": [
+          1,
+          0
+        ],
+        "d_full": [
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        "max_abs_d_piv": 0,
+        "d_linf": 1,
+        "d_l1": 1,
+        "pivot_bound_from_support": 0,
+        "pivot_bound_worst_case": 1,
+        "l1_bound_from_support": 1,
+        "l1_bound_worst_case": 5,
+        "nonzero_free_support_satisfied": true,
+        "pivot_support_bound_satisfied": true,
+        "pivot_worst_bound_satisfied": true,
+        "l1_support_bound_satisfied": true,
+        "l1_worst_bound_satisfied": true
+      },
+      "coarse_floor_sF_div_2_bound": 0,
+      "attains_sharp_ternary_bound": true
+    },
+    {
+      "q": 101,
+      "m": 3,
+      "n_minus_m": 2,
+      "s_F": 2,
+      "achieved_d_piv_0": 1,
+      "sharp_ternary_bound": 1,
+      "q_independent_envelope": 1,
+      "public_matrix_H": [
+        [
+          1,
+          0,
+          0,
+          50,
+          50
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0
+        ]
+      ],
+      "analysis": {
+        "m": 3,
+        "n": 5,
+        "q": 101,
+        "pivot_cols": [
+          0,
+          1,
+          2
+        ],
+        "free_cols": [
+          3,
+          4
+        ],
+        "C_centered": [
+          [
+            50,
+            50
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "u_vec": [
+          1,
+          0,
+          0,
+          1,
+          1
+        ],
+        "u_piv": [
+          1,
+          0,
+          0
+        ],
+        "u_free": [
+          1,
+          1
+        ],
+        "u_inf": 1,
+        "free_support_s_F": 2,
+        "d_piv": [
+          1,
+          0,
+          0
+        ],
+        "d_free": [
+          1,
+          1
+        ],
+        "d_full": [
+          1,
+          0,
+          0,
+          1,
+          1
+        ],
+        "max_abs_d_piv": 1,
+        "d_linf": 1,
+        "d_l1": 3,
+        "pivot_bound_from_support": 1,
+        "pivot_bound_worst_case": 1,
+        "l1_bound_from_support": 5,
+        "l1_bound_worst_case": 5,
+        "nonzero_free_support_satisfied": true,
+        "pivot_support_bound_satisfied": true,
+        "pivot_worst_bound_satisfied": true,
+        "l1_support_bound_satisfied": true,
+        "l1_worst_bound_satisfied": true
+      },
+      "coarse_floor_sF_div_2_bound": 1,
+      "attains_sharp_ternary_bound": true
+    },
+    {
+      "q": 101,
+      "m": 3,
+      "n_minus_m": 3,
+      "s_F": 3,
+      "achieved_d_piv_0": 1,
+      "sharp_ternary_bound": 1,
+      "q_independent_envelope": 1,
+      "public_matrix_H": [
+        [
+          1,
+          0,
+          0,
+          50,
+          50,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ]
+      ],
+      "analysis": {
+        "m": 3,
+        "n": 6,
+        "q": 101,
+        "pivot_cols": [
+          0,
+          1,
+          2
+        ],
+        "free_cols": [
+          3,
+          4,
+          5
+        ],
+        "C_centered": [
+          [
+            50,
+            50,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "u_vec": [
+          1,
+          0,
+          0,
+          1,
+          1,
+          1
+        ],
+        "u_piv": [
+          1,
+          0,
+          0
+        ],
+        "u_free": [
+          1,
+          1,
+          1
+        ],
+        "u_inf": 1,
+        "free_support_s_F": 3,
+        "d_piv": [
+          1,
+          0,
+          0
+        ],
+        "d_free": [
+          1,
+          1,
+          1
+        ],
+        "d_full": [
+          1,
+          0,
+          0,
+          1,
+          1,
+          1
+        ],
+        "max_abs_d_piv": 1,
+        "d_linf": 1,
+        "d_l1": 4,
+        "pivot_bound_from_support": 1,
+        "pivot_bound_worst_case": 1,
+        "l1_bound_from_support": 6,
+        "l1_bound_worst_case": 6,
+        "nonzero_free_support_satisfied": true,
+        "pivot_support_bound_satisfied": true,
+        "pivot_worst_bound_satisfied": true,
+        "l1_support_bound_satisfied": true,
+        "l1_worst_bound_satisfied": true
+      },
+      "coarse_floor_sF_div_2_bound": 1,
+      "attains_sharp_ternary_bound": true
+    },
+    {
+      "q": 101,
+      "m": 3,
+      "n_minus_m": 4,
+      "s_F": 4,
+      "achieved_d_piv_0": 1,
+      "sharp_ternary_bound": 1,
+      "q_independent_envelope": 1,
+      "public_matrix_H": [
+        [
+          1,
+          0,
+          0,
+          50,
+          50,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "analysis": {
+        "m": 3,
+        "n": 7,
+        "q": 101,
+        "pivot_cols": [
+          0,
+          1,
+          2
+        ],
+        "free_cols": [
+          3,
+          4,
+          5,
+          6
+        ],
+        "C_centered": [
+          [
+            50,
+            50,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "u_vec": [
+          1,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "u_piv": [
+          1,
+          0,
+          0
+        ],
+        "u_free": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "u_inf": 1,
+        "free_support_s_F": 4,
+        "d_piv": [
+          1,
+          0,
+          0
+        ],
+        "d_free": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "d_full": [
+          1,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "max_abs_d_piv": 1,
+        "d_linf": 1,
+        "d_l1": 5,
+        "pivot_bound_from_support": 2,
+        "pivot_bound_worst_case": 2,
+        "l1_bound_from_support": 10,
+        "l1_bound_worst_case": 10,
+        "nonzero_free_support_satisfied": true,
+        "pivot_support_bound_satisfied": true,
+        "pivot_worst_bound_satisfied": true,
+        "l1_support_bound_satisfied": true,
+        "l1_worst_bound_satisfied": true
+      },
+      "coarse_floor_sF_div_2_bound": 2,
+      "attains_sharp_ternary_bound": true
+    },
+    {
+      "q": 101,
+      "m": 3,
+      "n_minus_m": 5,
+      "s_F": 5,
+      "achieved_d_piv_0": 2,
+      "sharp_ternary_bound": 2,
+      "q_independent_envelope": 2,
+      "public_matrix_H": [
+        [
+          1,
+          0,
+          0,
+          50,
+          50,
+          50,
+          50,
+          1
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "analysis": {
+        "m": 3,
+        "n": 8,
+        "q": 101,
+        "pivot_cols": [
+          0,
+          1,
+          2
+        ],
+        "free_cols": [
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "C_centered": [
+          [
+            50,
+            50,
+            50,
+            50,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "u_vec": [
+          1,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "u_piv": [
+          1,
+          0,
+          0
+        ],
+        "u_free": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "u_inf": 1,
+        "free_support_s_F": 5,
+        "d_piv": [
+          2,
+          0,
+          0
+        ],
+        "d_free": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "d_full": [
+          2,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "max_abs_d_piv": 2,
+        "d_linf": 2,
+        "d_l1": 7,
+        "pivot_bound_from_support": 2,
+        "pivot_bound_worst_case": 2,
+        "l1_bound_from_support": 11,
+        "l1_bound_worst_case": 11,
+        "nonzero_free_support_satisfied": true,
+        "pivot_support_bound_satisfied": true,
+        "pivot_worst_bound_satisfied": true,
+        "l1_support_bound_satisfied": true,
+        "l1_worst_bound_satisfied": true
+      },
+      "coarse_floor_sF_div_2_bound": 2,
+      "attains_sharp_ternary_bound": true
+    },
+    {
+      "q": 101,
+      "m": 3,
+      "n_minus_m": 6,
+      "s_F": 6,
+      "achieved_d_piv_0": 2,
+      "sharp_ternary_bound": 2,
+      "q_independent_envelope": 2,
+      "public_matrix_H": [
+        [
+          1,
+          0,
+          0,
+          50,
+          50,
+          50,
+          50,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "analysis": {
+        "m": 3,
+        "n": 9,
+        "q": 101,
+        "pivot_cols": [
+          0,
+          1,
+          2
+        ],
+        "free_cols": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "C_centered": [
+          [
+            50,
+            50,
+            50,
+            50,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "u_vec": [
+          1,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "u_piv": [
+          1,
+          0,
+          0
+        ],
+        "u_free": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "u_inf": 1,
+        "free_support_s_F": 6,
+        "d_piv": [
+          2,
+          0,
+          0
+        ],
+        "d_free": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "d_full": [
+          2,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "max_abs_d_piv": 2,
+        "d_linf": 2,
+        "d_l1": 8,
+        "pivot_bound_from_support": 3,
+        "pivot_bound_worst_case": 3,
+        "l1_bound_from_support": 15,
+        "l1_bound_worst_case": 15,
+        "nonzero_free_support_satisfied": true,
+        "pivot_support_bound_satisfied": true,
+        "pivot_worst_bound_satisfied": true,
+        "l1_support_bound_satisfied": true,
+        "l1_worst_bound_satisfied": true
+      },
+      "coarse_floor_sF_div_2_bound": 3,
+      "attains_sharp_ternary_bound": true
+    },
+    {
+      "q": 101,
+      "m": 3,
+      "n_minus_m": 7,
+      "s_F": 7,
+      "achieved_d_piv_0": 3,
+      "sharp_ternary_bound": 3,
+      "q_independent_envelope": 3,
+      "public_matrix_H": [
+        [
+          1,
+          0,
+          0,
+          50,
+          50,
+          50,
+          50,
+          50,
+          50,
+          2
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "analysis": {
+        "m": 3,
+        "n": 10,
+        "q": 101,
+        "pivot_cols": [
+          0,
+          1,
+          2
+        ],
+        "free_cols": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "C_centered": [
+          [
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            2
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "u_vec": [
+          1,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "u_piv": [
+          1,
+          0,
+          0
+        ],
+        "u_free": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "u_inf": 1,
+        "free_support_s_F": 7,
+        "d_piv": [
+          3,
+          0,
+          0
+        ],
+        "d_free": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "d_full": [
+          3,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "max_abs_d_piv": 3,
+        "d_linf": 3,
+        "d_l1": 10,
+        "pivot_bound_from_support": 3,
+        "pivot_bound_worst_case": 3,
+        "l1_bound_from_support": 16,
+        "l1_bound_worst_case": 16,
+        "nonzero_free_support_satisfied": true,
+        "pivot_support_bound_satisfied": true,
+        "pivot_worst_bound_satisfied": true,
+        "l1_support_bound_satisfied": true,
+        "l1_worst_bound_satisfied": true
+      },
+      "coarse_floor_sF_div_2_bound": 3,
+      "attains_sharp_ternary_bound": true
+    },
+    {
+      "q": 101,
+      "m": 3,
+      "n_minus_m": 9,
+      "s_F": 9,
+      "achieved_d_piv_0": 4,
+      "sharp_ternary_bound": 4,
+      "q_independent_envelope": 4,
+      "public_matrix_H": [
+        [
+          1,
+          0,
+          0,
+          50,
+          50,
+          50,
+          50,
+          50,
+          50,
+          50,
+          50,
+          3
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "analysis": {
+        "m": 3,
+        "n": 12,
+        "q": 101,
+        "pivot_cols": [
+          0,
+          1,
+          2
+        ],
+        "free_cols": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "C_centered": [
+          [
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            3
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "u_vec": [
+          1,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "u_piv": [
+          1,
+          0,
+          0
+        ],
+        "u_free": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "u_inf": 1,
+        "free_support_s_F": 9,
+        "d_piv": [
+          4,
+          0,
+          0
+        ],
+        "d_free": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "d_full": [
+          4,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "max_abs_d_piv": 4,
+        "d_linf": 4,
+        "d_l1": 13,
+        "pivot_bound_from_support": 4,
+        "pivot_bound_worst_case": 4,
+        "l1_bound_from_support": 21,
+        "l1_bound_worst_case": 21,
+        "nonzero_free_support_satisfied": true,
+        "pivot_support_bound_satisfied": true,
+        "pivot_worst_bound_satisfied": true,
+        "l1_support_bound_satisfied": true,
+        "l1_worst_bound_satisfied": true
+      },
+      "coarse_floor_sF_div_2_bound": 4,
+      "attains_sharp_ternary_bound": true
+    },
+    {
+      "q": 101,
+      "m": 3,
+      "n_minus_m": 16,
+      "s_F": 16,
+      "achieved_d_piv_0": 7,
+      "sharp_ternary_bound": 7,
+      "q_independent_envelope": 7,
+      "public_matrix_H": [
+        [
+          1,
+          0,
+          0,
+          50,
+          50,
+          50,
+          50,
+          50,
+          50,
+          50,
+          50,
+          50,
+          50,
+          50,
+          50,
+          50,
+          50,
+          6,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "analysis": {
+        "m": 3,
+        "n": 19,
+        "q": 101,
+        "pivot_cols": [
+          0,
+          1,
+          2
+        ],
+        "free_cols": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18
+        ],
+        "C_centered": [
+          [
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            6,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "u_vec": [
+          1,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "u_piv": [
+          1,
+          0,
+          0
+        ],
+        "u_free": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "u_inf": 1,
+        "free_support_s_F": 16,
+        "d_piv": [
+          7,
+          0,
+          0
+        ],
+        "d_free": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "d_full": [
+          7,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "max_abs_d_piv": 7,
+        "d_linf": 7,
+        "d_l1": 23,
+        "pivot_bound_from_support": 8,
+        "pivot_bound_worst_case": 8,
+        "l1_bound_from_support": 40,
+        "l1_bound_worst_case": 40,
+        "nonzero_free_support_satisfied": true,
+        "pivot_support_bound_satisfied": true,
+        "pivot_worst_bound_satisfied": true,
+        "l1_support_bound_satisfied": true,
+        "l1_worst_bound_satisfied": true
+      },
+      "coarse_floor_sF_div_2_bound": 8,
+      "attains_sharp_ternary_bound": true
+    },
+    {
+      "q": 10007,
+      "m": 3,
+      "n_minus_m": 2,
+      "s_F": 1,
+      "achieved_d_piv_0": 0,
+      "sharp_ternary_bound": 0,
+      "q_independent_envelope": 0,
+      "public_matrix_H": [
+        [
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0
+        ]
+      ],
+      "analysis": {
+        "m": 3,
+        "n": 5,
+        "q": 10007,
+        "pivot_cols": [
+          0,
+          1,
+          2
+        ],
+        "free_cols": [
+          3,
+          4
+        ],
+        "C_centered": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "u_vec": [
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        "u_piv": [
+          0,
+          0,
+          0
+        ],
+        "u_free": [
+          1,
+          0
+        ],
+        "u_inf": 1,
+        "free_support_s_F": 1,
+        "d_piv": [
+          0,
+          0,
+          0
+        ],
+        "d_free": [
+          1,
+          0
+        ],
+        "d_full": [
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        "max_abs_d_piv": 0,
+        "d_linf": 1,
+        "d_l1": 1,
+        "pivot_bound_from_support": 0,
+        "pivot_bound_worst_case": 1,
+        "l1_bound_from_support": 1,
+        "l1_bound_worst_case": 5,
+        "nonzero_free_support_satisfied": true,
+        "pivot_support_bound_satisfied": true,
+        "pivot_worst_bound_satisfied": true,
+        "l1_support_bound_satisfied": true,
+        "l1_worst_bound_satisfied": true
+      },
+      "coarse_floor_sF_div_2_bound": 0,
+      "attains_sharp_ternary_bound": true
+    },
+    {
+      "q": 10007,
+      "m": 3,
+      "n_minus_m": 2,
+      "s_F": 2,
+      "achieved_d_piv_0": 1,
+      "sharp_ternary_bound": 1,
+      "q_independent_envelope": 1,
+      "public_matrix_H": [
+        [
+          1,
+          0,
+          0,
+          5003,
+          5003
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0
+        ]
+      ],
+      "analysis": {
+        "m": 3,
+        "n": 5,
+        "q": 10007,
+        "pivot_cols": [
+          0,
+          1,
+          2
+        ],
+        "free_cols": [
+          3,
+          4
+        ],
+        "C_centered": [
+          [
+            5003,
+            5003
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "u_vec": [
+          1,
+          0,
+          0,
+          1,
+          1
+        ],
+        "u_piv": [
+          1,
+          0,
+          0
+        ],
+        "u_free": [
+          1,
+          1
+        ],
+        "u_inf": 1,
+        "free_support_s_F": 2,
+        "d_piv": [
+          1,
+          0,
+          0
+        ],
+        "d_free": [
+          1,
+          1
+        ],
+        "d_full": [
+          1,
+          0,
+          0,
+          1,
+          1
+        ],
+        "max_abs_d_piv": 1,
+        "d_linf": 1,
+        "d_l1": 3,
+        "pivot_bound_from_support": 1,
+        "pivot_bound_worst_case": 1,
+        "l1_bound_from_support": 5,
+        "l1_bound_worst_case": 5,
+        "nonzero_free_support_satisfied": true,
+        "pivot_support_bound_satisfied": true,
+        "pivot_worst_bound_satisfied": true,
+        "l1_support_bound_satisfied": true,
+        "l1_worst_bound_satisfied": true
+      },
+      "coarse_floor_sF_div_2_bound": 1,
+      "attains_sharp_ternary_bound": true
+    },
+    {
+      "q": 10007,
+      "m": 3,
+      "n_minus_m": 3,
+      "s_F": 3,
+      "achieved_d_piv_0": 1,
+      "sharp_ternary_bound": 1,
+      "q_independent_envelope": 1,
+      "public_matrix_H": [
+        [
+          1,
+          0,
+          0,
+          5003,
+          5003,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ]
+      ],
+      "analysis": {
+        "m": 3,
+        "n": 6,
+        "q": 10007,
+        "pivot_cols": [
+          0,
+          1,
+          2
+        ],
+        "free_cols": [
+          3,
+          4,
+          5
+        ],
+        "C_centered": [
+          [
+            5003,
+            5003,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "u_vec": [
+          1,
+          0,
+          0,
+          1,
+          1,
+          1
+        ],
+        "u_piv": [
+          1,
+          0,
+          0
+        ],
+        "u_free": [
+          1,
+          1,
+          1
+        ],
+        "u_inf": 1,
+        "free_support_s_F": 3,
+        "d_piv": [
+          1,
+          0,
+          0
+        ],
+        "d_free": [
+          1,
+          1,
+          1
+        ],
+        "d_full": [
+          1,
+          0,
+          0,
+          1,
+          1,
+          1
+        ],
+        "max_abs_d_piv": 1,
+        "d_linf": 1,
+        "d_l1": 4,
+        "pivot_bound_from_support": 1,
+        "pivot_bound_worst_case": 1,
+        "l1_bound_from_support": 6,
+        "l1_bound_worst_case": 6,
+        "nonzero_free_support_satisfied": true,
+        "pivot_support_bound_satisfied": true,
+        "pivot_worst_bound_satisfied": true,
+        "l1_support_bound_satisfied": true,
+        "l1_worst_bound_satisfied": true
+      },
+      "coarse_floor_sF_div_2_bound": 1,
+      "attains_sharp_ternary_bound": true
+    },
+    {
+      "q": 10007,
+      "m": 3,
+      "n_minus_m": 4,
+      "s_F": 4,
+      "achieved_d_piv_0": 1,
+      "sharp_ternary_bound": 1,
+      "q_independent_envelope": 1,
+      "public_matrix_H": [
+        [
+          1,
+          0,
+          0,
+          5003,
+          5003,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "analysis": {
+        "m": 3,
+        "n": 7,
+        "q": 10007,
+        "pivot_cols": [
+          0,
+          1,
+          2
+        ],
+        "free_cols": [
+          3,
+          4,
+          5,
+          6
+        ],
+        "C_centered": [
+          [
+            5003,
+            5003,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "u_vec": [
+          1,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "u_piv": [
+          1,
+          0,
+          0
+        ],
+        "u_free": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "u_inf": 1,
+        "free_support_s_F": 4,
+        "d_piv": [
+          1,
+          0,
+          0
+        ],
+        "d_free": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "d_full": [
+          1,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "max_abs_d_piv": 1,
+        "d_linf": 1,
+        "d_l1": 5,
+        "pivot_bound_from_support": 2,
+        "pivot_bound_worst_case": 2,
+        "l1_bound_from_support": 10,
+        "l1_bound_worst_case": 10,
+        "nonzero_free_support_satisfied": true,
+        "pivot_support_bound_satisfied": true,
+        "pivot_worst_bound_satisfied": true,
+        "l1_support_bound_satisfied": true,
+        "l1_worst_bound_satisfied": true
+      },
+      "coarse_floor_sF_div_2_bound": 2,
+      "attains_sharp_ternary_bound": true
+    },
+    {
+      "q": 10007,
+      "m": 3,
+      "n_minus_m": 5,
+      "s_F": 5,
+      "achieved_d_piv_0": 2,
+      "sharp_ternary_bound": 2,
+      "q_independent_envelope": 2,
+      "public_matrix_H": [
+        [
+          1,
+          0,
+          0,
+          5003,
+          5003,
+          5003,
+          5003,
+          1
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "analysis": {
+        "m": 3,
+        "n": 8,
+        "q": 10007,
+        "pivot_cols": [
+          0,
+          1,
+          2
+        ],
+        "free_cols": [
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "C_centered": [
+          [
+            5003,
+            5003,
+            5003,
+            5003,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "u_vec": [
+          1,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "u_piv": [
+          1,
+          0,
+          0
+        ],
+        "u_free": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "u_inf": 1,
+        "free_support_s_F": 5,
+        "d_piv": [
+          2,
+          0,
+          0
+        ],
+        "d_free": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "d_full": [
+          2,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "max_abs_d_piv": 2,
+        "d_linf": 2,
+        "d_l1": 7,
+        "pivot_bound_from_support": 2,
+        "pivot_bound_worst_case": 2,
+        "l1_bound_from_support": 11,
+        "l1_bound_worst_case": 11,
+        "nonzero_free_support_satisfied": true,
+        "pivot_support_bound_satisfied": true,
+        "pivot_worst_bound_satisfied": true,
+        "l1_support_bound_satisfied": true,
+        "l1_worst_bound_satisfied": true
+      },
+      "coarse_floor_sF_div_2_bound": 2,
+      "attains_sharp_ternary_bound": true
+    },
+    {
+      "q": 10007,
+      "m": 3,
+      "n_minus_m": 6,
+      "s_F": 6,
+      "achieved_d_piv_0": 2,
+      "sharp_ternary_bound": 2,
+      "q_independent_envelope": 2,
+      "public_matrix_H": [
+        [
+          1,
+          0,
+          0,
+          5003,
+          5003,
+          5003,
+          5003,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "analysis": {
+        "m": 3,
+        "n": 9,
+        "q": 10007,
+        "pivot_cols": [
+          0,
+          1,
+          2
+        ],
+        "free_cols": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "C_centered": [
+          [
+            5003,
+            5003,
+            5003,
+            5003,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "u_vec": [
+          1,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "u_piv": [
+          1,
+          0,
+          0
+        ],
+        "u_free": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "u_inf": 1,
+        "free_support_s_F": 6,
+        "d_piv": [
+          2,
+          0,
+          0
+        ],
+        "d_free": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "d_full": [
+          2,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "max_abs_d_piv": 2,
+        "d_linf": 2,
+        "d_l1": 8,
+        "pivot_bound_from_support": 3,
+        "pivot_bound_worst_case": 3,
+        "l1_bound_from_support": 15,
+        "l1_bound_worst_case": 15,
+        "nonzero_free_support_satisfied": true,
+        "pivot_support_bound_satisfied": true,
+        "pivot_worst_bound_satisfied": true,
+        "l1_support_bound_satisfied": true,
+        "l1_worst_bound_satisfied": true
+      },
+      "coarse_floor_sF_div_2_bound": 3,
+      "attains_sharp_ternary_bound": true
+    },
+    {
+      "q": 10007,
+      "m": 3,
+      "n_minus_m": 7,
+      "s_F": 7,
+      "achieved_d_piv_0": 3,
+      "sharp_ternary_bound": 3,
+      "q_independent_envelope": 3,
+      "public_matrix_H": [
+        [
+          1,
+          0,
+          0,
+          5003,
+          5003,
+          5003,
+          5003,
+          5003,
+          5003,
+          2
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "analysis": {
+        "m": 3,
+        "n": 10,
+        "q": 10007,
+        "pivot_cols": [
+          0,
+          1,
+          2
+        ],
+        "free_cols": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "C_centered": [
+          [
+            5003,
+            5003,
+            5003,
+            5003,
+            5003,
+            5003,
+            2
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "u_vec": [
+          1,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "u_piv": [
+          1,
+          0,
+          0
+        ],
+        "u_free": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "u_inf": 1,
+        "free_support_s_F": 7,
+        "d_piv": [
+          3,
+          0,
+          0
+        ],
+        "d_free": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "d_full": [
+          3,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "max_abs_d_piv": 3,
+        "d_linf": 3,
+        "d_l1": 10,
+        "pivot_bound_from_support": 3,
+        "pivot_bound_worst_case": 3,
+        "l1_bound_from_support": 16,
+        "l1_bound_worst_case": 16,
+        "nonzero_free_support_satisfied": true,
+        "pivot_support_bound_satisfied": true,
+        "pivot_worst_bound_satisfied": true,
+        "l1_support_bound_satisfied": true,
+        "l1_worst_bound_satisfied": true
+      },
+      "coarse_floor_sF_div_2_bound": 3,
+      "attains_sharp_ternary_bound": true
+    },
+    {
+      "q": 10007,
+      "m": 3,
+      "n_minus_m": 9,
+      "s_F": 9,
+      "achieved_d_piv_0": 4,
+      "sharp_ternary_bound": 4,
+      "q_independent_envelope": 4,
+      "public_matrix_H": [
+        [
+          1,
+          0,
+          0,
+          5003,
+          5003,
+          5003,
+          5003,
+          5003,
+          5003,
+          5003,
+          5003,
+          3
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "analysis": {
+        "m": 3,
+        "n": 12,
+        "q": 10007,
+        "pivot_cols": [
+          0,
+          1,
+          2
+        ],
+        "free_cols": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "C_centered": [
+          [
+            5003,
+            5003,
+            5003,
+            5003,
+            5003,
+            5003,
+            5003,
+            5003,
+            3
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "u_vec": [
+          1,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "u_piv": [
+          1,
+          0,
+          0
+        ],
+        "u_free": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "u_inf": 1,
+        "free_support_s_F": 9,
+        "d_piv": [
+          4,
+          0,
+          0
+        ],
+        "d_free": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "d_full": [
+          4,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "max_abs_d_piv": 4,
+        "d_linf": 4,
+        "d_l1": 13,
+        "pivot_bound_from_support": 4,
+        "pivot_bound_worst_case": 4,
+        "l1_bound_from_support": 21,
+        "l1_bound_worst_case": 21,
+        "nonzero_free_support_satisfied": true,
+        "pivot_support_bound_satisfied": true,
+        "pivot_worst_bound_satisfied": true,
+        "l1_support_bound_satisfied": true,
+        "l1_worst_bound_satisfied": true
+      },
+      "coarse_floor_sF_div_2_bound": 4,
+      "attains_sharp_ternary_bound": true
+    },
+    {
+      "q": 10007,
+      "m": 3,
+      "n_minus_m": 16,
+      "s_F": 16,
+      "achieved_d_piv_0": 7,
+      "sharp_ternary_bound": 7,
+      "q_independent_envelope": 7,
+      "public_matrix_H": [
+        [
+          1,
+          0,
+          0,
+          5003,
+          5003,
+          5003,
+          5003,
+          5003,
+          5003,
+          5003,
+          5003,
+          5003,
+          5003,
+          5003,
+          5003,
+          5003,
+          5003,
+          6,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "analysis": {
+        "m": 3,
+        "n": 19,
+        "q": 10007,
+        "pivot_cols": [
+          0,
+          1,
+          2
+        ],
+        "free_cols": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18
+        ],
+        "C_centered": [
+          [
+            5003,
+            5003,
+            5003,
+            5003,
+            5003,
+            5003,
+            5003,
+            5003,
+            5003,
+            5003,
+            5003,
+            5003,
+            5003,
+            5003,
+            6,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "u_vec": [
+          1,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "u_piv": [
+          1,
+          0,
+          0
+        ],
+        "u_free": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "u_inf": 1,
+        "free_support_s_F": 16,
+        "d_piv": [
+          7,
+          0,
+          0
+        ],
+        "d_free": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "d_full": [
+          7,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "max_abs_d_piv": 7,
+        "d_linf": 7,
+        "d_l1": 23,
+        "pivot_bound_from_support": 8,
+        "pivot_bound_worst_case": 8,
+        "l1_bound_from_support": 40,
+        "l1_bound_worst_case": 40,
+        "nonzero_free_support_satisfied": true,
+        "pivot_support_bound_satisfied": true,
+        "pivot_worst_bound_satisfied": true,
+        "l1_support_bound_satisfied": true,
+        "l1_worst_bound_satisfied": true
+      },
+      "coarse_floor_sF_div_2_bound": 8,
+      "attains_sharp_ternary_bound": true
+    },
+    {
+      "q": 1000003,
+      "m": 3,
+      "n_minus_m": 2,
+      "s_F": 1,
+      "achieved_d_piv_0": 0,
+      "sharp_ternary_bound": 0,
+      "q_independent_envelope": 0,
+      "public_matrix_H": [
+        [
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0
+        ]
+      ],
+      "analysis": {
+        "m": 3,
+        "n": 5,
+        "q": 1000003,
+        "pivot_cols": [
+          0,
+          1,
+          2
+        ],
+        "free_cols": [
+          3,
+          4
+        ],
+        "C_centered": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "u_vec": [
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        "u_piv": [
+          0,
+          0,
+          0
+        ],
+        "u_free": [
+          1,
+          0
+        ],
+        "u_inf": 1,
+        "free_support_s_F": 1,
+        "d_piv": [
+          0,
+          0,
+          0
+        ],
+        "d_free": [
+          1,
+          0
+        ],
+        "d_full": [
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        "max_abs_d_piv": 0,
+        "d_linf": 1,
+        "d_l1": 1,
+        "pivot_bound_from_support": 0,
+        "pivot_bound_worst_case": 1,
+        "l1_bound_from_support": 1,
+        "l1_bound_worst_case": 5,
+        "nonzero_free_support_satisfied": true,
+        "pivot_support_bound_satisfied": true,
+        "pivot_worst_bound_satisfied": true,
+        "l1_support_bound_satisfied": true,
+        "l1_worst_bound_satisfied": true
+      },
+      "coarse_floor_sF_div_2_bound": 0,
+      "attains_sharp_ternary_bound": true
+    },
+    {
+      "q": 1000003,
+      "m": 3,
+      "n_minus_m": 2,
+      "s_F": 2,
+      "achieved_d_piv_0": 1,
+      "sharp_ternary_bound": 1,
+      "q_independent_envelope": 1,
+      "public_matrix_H": [
+        [
+          1,
+          0,
+          0,
+          500001,
+          500001
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0
+        ]
+      ],
+      "analysis": {
+        "m": 3,
+        "n": 5,
+        "q": 1000003,
+        "pivot_cols": [
+          0,
+          1,
+          2
+        ],
+        "free_cols": [
+          3,
+          4
+        ],
+        "C_centered": [
+          [
+            500001,
+            500001
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "u_vec": [
+          1,
+          0,
+          0,
+          1,
+          1
+        ],
+        "u_piv": [
+          1,
+          0,
+          0
+        ],
+        "u_free": [
+          1,
+          1
+        ],
+        "u_inf": 1,
+        "free_support_s_F": 2,
+        "d_piv": [
+          1,
+          0,
+          0
+        ],
+        "d_free": [
+          1,
+          1
+        ],
+        "d_full": [
+          1,
+          0,
+          0,
+          1,
+          1
+        ],
+        "max_abs_d_piv": 1,
+        "d_linf": 1,
+        "d_l1": 3,
+        "pivot_bound_from_support": 1,
+        "pivot_bound_worst_case": 1,
+        "l1_bound_from_support": 5,
+        "l1_bound_worst_case": 5,
+        "nonzero_free_support_satisfied": true,
+        "pivot_support_bound_satisfied": true,
+        "pivot_worst_bound_satisfied": true,
+        "l1_support_bound_satisfied": true,
+        "l1_worst_bound_satisfied": true
+      },
+      "coarse_floor_sF_div_2_bound": 1,
+      "attains_sharp_ternary_bound": true
+    },
+    {
+      "q": 1000003,
+      "m": 3,
+      "n_minus_m": 3,
+      "s_F": 3,
+      "achieved_d_piv_0": 1,
+      "sharp_ternary_bound": 1,
+      "q_independent_envelope": 1,
+      "public_matrix_H": [
+        [
+          1,
+          0,
+          0,
+          500001,
+          500001,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ]
+      ],
+      "analysis": {
+        "m": 3,
+        "n": 6,
+        "q": 1000003,
+        "pivot_cols": [
+          0,
+          1,
+          2
+        ],
+        "free_cols": [
+          3,
+          4,
+          5
+        ],
+        "C_centered": [
+          [
+            500001,
+            500001,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "u_vec": [
+          1,
+          0,
+          0,
+          1,
+          1,
+          1
+        ],
+        "u_piv": [
+          1,
+          0,
+          0
+        ],
+        "u_free": [
+          1,
+          1,
+          1
+        ],
+        "u_inf": 1,
+        "free_support_s_F": 3,
+        "d_piv": [
+          1,
+          0,
+          0
+        ],
+        "d_free": [
+          1,
+          1,
+          1
+        ],
+        "d_full": [
+          1,
+          0,
+          0,
+          1,
+          1,
+          1
+        ],
+        "max_abs_d_piv": 1,
+        "d_linf": 1,
+        "d_l1": 4,
+        "pivot_bound_from_support": 1,
+        "pivot_bound_worst_case": 1,
+        "l1_bound_from_support": 6,
+        "l1_bound_worst_case": 6,
+        "nonzero_free_support_satisfied": true,
+        "pivot_support_bound_satisfied": true,
+        "pivot_worst_bound_satisfied": true,
+        "l1_support_bound_satisfied": true,
+        "l1_worst_bound_satisfied": true
+      },
+      "coarse_floor_sF_div_2_bound": 1,
+      "attains_sharp_ternary_bound": true
+    },
+    {
+      "q": 1000003,
+      "m": 3,
+      "n_minus_m": 4,
+      "s_F": 4,
+      "achieved_d_piv_0": 1,
+      "sharp_ternary_bound": 1,
+      "q_independent_envelope": 1,
+      "public_matrix_H": [
+        [
+          1,
+          0,
+          0,
+          500001,
+          500001,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "analysis": {
+        "m": 3,
+        "n": 7,
+        "q": 1000003,
+        "pivot_cols": [
+          0,
+          1,
+          2
+        ],
+        "free_cols": [
+          3,
+          4,
+          5,
+          6
+        ],
+        "C_centered": [
+          [
+            500001,
+            500001,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "u_vec": [
+          1,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "u_piv": [
+          1,
+          0,
+          0
+        ],
+        "u_free": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "u_inf": 1,
+        "free_support_s_F": 4,
+        "d_piv": [
+          1,
+          0,
+          0
+        ],
+        "d_free": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "d_full": [
+          1,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "max_abs_d_piv": 1,
+        "d_linf": 1,
+        "d_l1": 5,
+        "pivot_bound_from_support": 2,
+        "pivot_bound_worst_case": 2,
+        "l1_bound_from_support": 10,
+        "l1_bound_worst_case": 10,
+        "nonzero_free_support_satisfied": true,
+        "pivot_support_bound_satisfied": true,
+        "pivot_worst_bound_satisfied": true,
+        "l1_support_bound_satisfied": true,
+        "l1_worst_bound_satisfied": true
+      },
+      "coarse_floor_sF_div_2_bound": 2,
+      "attains_sharp_ternary_bound": true
+    },
+    {
+      "q": 1000003,
+      "m": 3,
+      "n_minus_m": 5,
+      "s_F": 5,
+      "achieved_d_piv_0": 2,
+      "sharp_ternary_bound": 2,
+      "q_independent_envelope": 2,
+      "public_matrix_H": [
+        [
+          1,
+          0,
+          0,
+          500001,
+          500001,
+          500001,
+          500001,
+          1
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "analysis": {
+        "m": 3,
+        "n": 8,
+        "q": 1000003,
+        "pivot_cols": [
+          0,
+          1,
+          2
+        ],
+        "free_cols": [
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "C_centered": [
+          [
+            500001,
+            500001,
+            500001,
+            500001,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "u_vec": [
+          1,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "u_piv": [
+          1,
+          0,
+          0
+        ],
+        "u_free": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "u_inf": 1,
+        "free_support_s_F": 5,
+        "d_piv": [
+          2,
+          0,
+          0
+        ],
+        "d_free": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "d_full": [
+          2,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "max_abs_d_piv": 2,
+        "d_linf": 2,
+        "d_l1": 7,
+        "pivot_bound_from_support": 2,
+        "pivot_bound_worst_case": 2,
+        "l1_bound_from_support": 11,
+        "l1_bound_worst_case": 11,
+        "nonzero_free_support_satisfied": true,
+        "pivot_support_bound_satisfied": true,
+        "pivot_worst_bound_satisfied": true,
+        "l1_support_bound_satisfied": true,
+        "l1_worst_bound_satisfied": true
+      },
+      "coarse_floor_sF_div_2_bound": 2,
+      "attains_sharp_ternary_bound": true
+    },
+    {
+      "q": 1000003,
+      "m": 3,
+      "n_minus_m": 6,
+      "s_F": 6,
+      "achieved_d_piv_0": 2,
+      "sharp_ternary_bound": 2,
+      "q_independent_envelope": 2,
+      "public_matrix_H": [
+        [
+          1,
+          0,
+          0,
+          500001,
+          500001,
+          500001,
+          500001,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "analysis": {
+        "m": 3,
+        "n": 9,
+        "q": 1000003,
+        "pivot_cols": [
+          0,
+          1,
+          2
+        ],
+        "free_cols": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "C_centered": [
+          [
+            500001,
+            500001,
+            500001,
+            500001,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "u_vec": [
+          1,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "u_piv": [
+          1,
+          0,
+          0
+        ],
+        "u_free": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "u_inf": 1,
+        "free_support_s_F": 6,
+        "d_piv": [
+          2,
+          0,
+          0
+        ],
+        "d_free": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "d_full": [
+          2,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "max_abs_d_piv": 2,
+        "d_linf": 2,
+        "d_l1": 8,
+        "pivot_bound_from_support": 3,
+        "pivot_bound_worst_case": 3,
+        "l1_bound_from_support": 15,
+        "l1_bound_worst_case": 15,
+        "nonzero_free_support_satisfied": true,
+        "pivot_support_bound_satisfied": true,
+        "pivot_worst_bound_satisfied": true,
+        "l1_support_bound_satisfied": true,
+        "l1_worst_bound_satisfied": true
+      },
+      "coarse_floor_sF_div_2_bound": 3,
+      "attains_sharp_ternary_bound": true
+    },
+    {
+      "q": 1000003,
+      "m": 3,
+      "n_minus_m": 7,
+      "s_F": 7,
+      "achieved_d_piv_0": 3,
+      "sharp_ternary_bound": 3,
+      "q_independent_envelope": 3,
+      "public_matrix_H": [
+        [
+          1,
+          0,
+          0,
+          500001,
+          500001,
+          500001,
+          500001,
+          500001,
+          500001,
+          2
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "analysis": {
+        "m": 3,
+        "n": 10,
+        "q": 1000003,
+        "pivot_cols": [
+          0,
+          1,
+          2
+        ],
+        "free_cols": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "C_centered": [
+          [
+            500001,
+            500001,
+            500001,
+            500001,
+            500001,
+            500001,
+            2
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "u_vec": [
+          1,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "u_piv": [
+          1,
+          0,
+          0
+        ],
+        "u_free": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "u_inf": 1,
+        "free_support_s_F": 7,
+        "d_piv": [
+          3,
+          0,
+          0
+        ],
+        "d_free": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "d_full": [
+          3,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "max_abs_d_piv": 3,
+        "d_linf": 3,
+        "d_l1": 10,
+        "pivot_bound_from_support": 3,
+        "pivot_bound_worst_case": 3,
+        "l1_bound_from_support": 16,
+        "l1_bound_worst_case": 16,
+        "nonzero_free_support_satisfied": true,
+        "pivot_support_bound_satisfied": true,
+        "pivot_worst_bound_satisfied": true,
+        "l1_support_bound_satisfied": true,
+        "l1_worst_bound_satisfied": true
+      },
+      "coarse_floor_sF_div_2_bound": 3,
+      "attains_sharp_ternary_bound": true
+    },
+    {
+      "q": 1000003,
+      "m": 3,
+      "n_minus_m": 9,
+      "s_F": 9,
+      "achieved_d_piv_0": 4,
+      "sharp_ternary_bound": 4,
+      "q_independent_envelope": 4,
+      "public_matrix_H": [
+        [
+          1,
+          0,
+          0,
+          500001,
+          500001,
+          500001,
+          500001,
+          500001,
+          500001,
+          500001,
+          500001,
+          3
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "analysis": {
+        "m": 3,
+        "n": 12,
+        "q": 1000003,
+        "pivot_cols": [
+          0,
+          1,
+          2
+        ],
+        "free_cols": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "C_centered": [
+          [
+            500001,
+            500001,
+            500001,
+            500001,
+            500001,
+            500001,
+            500001,
+            500001,
+            3
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "u_vec": [
+          1,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "u_piv": [
+          1,
+          0,
+          0
+        ],
+        "u_free": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "u_inf": 1,
+        "free_support_s_F": 9,
+        "d_piv": [
+          4,
+          0,
+          0
+        ],
+        "d_free": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "d_full": [
+          4,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "max_abs_d_piv": 4,
+        "d_linf": 4,
+        "d_l1": 13,
+        "pivot_bound_from_support": 4,
+        "pivot_bound_worst_case": 4,
+        "l1_bound_from_support": 21,
+        "l1_bound_worst_case": 21,
+        "nonzero_free_support_satisfied": true,
+        "pivot_support_bound_satisfied": true,
+        "pivot_worst_bound_satisfied": true,
+        "l1_support_bound_satisfied": true,
+        "l1_worst_bound_satisfied": true
+      },
+      "coarse_floor_sF_div_2_bound": 4,
+      "attains_sharp_ternary_bound": true
+    },
+    {
+      "q": 1000003,
+      "m": 3,
+      "n_minus_m": 16,
+      "s_F": 16,
+      "achieved_d_piv_0": 7,
+      "sharp_ternary_bound": 7,
+      "q_independent_envelope": 7,
+      "public_matrix_H": [
+        [
+          1,
+          0,
+          0,
+          500001,
+          500001,
+          500001,
+          500001,
+          500001,
+          500001,
+          500001,
+          500001,
+          500001,
+          500001,
+          500001,
+          500001,
+          500001,
+          500001,
+          6,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "analysis": {
+        "m": 3,
+        "n": 19,
+        "q": 1000003,
+        "pivot_cols": [
+          0,
+          1,
+          2
+        ],
+        "free_cols": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18
+        ],
+        "C_centered": [
+          [
+            500001,
+            500001,
+            500001,
+            500001,
+            500001,
+            500001,
+            500001,
+            500001,
+            500001,
+            500001,
+            500001,
+            500001,
+            500001,
+            500001,
+            6,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "u_vec": [
+          1,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "u_piv": [
+          1,
+          0,
+          0
+        ],
+        "u_free": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "u_inf": 1,
+        "free_support_s_F": 16,
+        "d_piv": [
+          7,
+          0,
+          0
+        ],
+        "d_free": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "d_full": [
+          7,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "max_abs_d_piv": 7,
+        "d_linf": 7,
+        "d_l1": 23,
+        "pivot_bound_from_support": 8,
+        "pivot_bound_worst_case": 8,
+        "l1_bound_from_support": 40,
+        "l1_bound_worst_case": 40,
+        "nonzero_free_support_satisfied": true,
+        "pivot_support_bound_satisfied": true,
+        "pivot_worst_bound_satisfied": true,
+        "l1_support_bound_satisfied": true,
+        "l1_worst_bound_satisfied": true
+      },
+      "coarse_floor_sF_div_2_bound": 8,
+      "attains_sharp_ternary_bound": true
+    }
+  ],
+  "verification": {
+    "all_analytical_coordinates_match_public_lattice": true,
+    "all_sharp_and_coarse_bounds_satisfied": true,
+    "all_ternary_saturation_witnesses_attain_bound": true,
+    "all_free_coordinate_mod3_guesses_succeed": true,
+    "exhaustive_cube_coset_source_control_valid": true
+  },
+  "guardrails": {
+    "source_geometry_certified": false,
+    "private_hitting_coordinate_is_a_public_selector": false,
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false,
+    "end_to_end_quantum_advantage_claimed": false,
+    "bypassed_UniformCubeSuperposition_prepare_constraint": false
+  }
+}

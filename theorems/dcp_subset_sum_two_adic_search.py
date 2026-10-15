@@ -419,4 +419,30 @@ def write_subset_sum_two_adic_search(
     payload = asdict(report)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
+    if write_registry:
+        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
+        metrics = dict(payload.get("headline_metrics", {}))
+        experiment_record = ExperimentResultRecord(
+            id=result_id,
+            experiment_id=registry_experiment_id,
+            candidate_id=registry_candidate_id,
+            created_at=utc_now(),
+            status=payload.get("status", "completed"),
+            summary=payload.get("summary", ""),
+            metrics=metrics,
+            falsifiers_triggered=list(payload.get("falsifiers_triggered", [])),
+            artifacts={path.stem: str(path), "report": str(path)},
+        )
+        upsert_experiment_result(experiment_record)
+        upsert_negative_result(
+            NegativeResultRecord(
+                id="NEG-DCP-TWO-ADIC-LOW-DEGREE-LIFTING-WITHOUT-SOLVER",
+                claim="Low-degree or affine descriptions of finite 2-adic lift predicates establish a polynomial density-one subset-sum solver.",
+                reason_invalid="The descriptions were extracted by exponential enumeration, late fits may be interpolation on small fibers, affine hulls overcover exact fibers, and no polynomial equation-solving or reversible coverage theorem follows.",
+                lesson="Use the lift audit to identify a uniform algebraic invariant or exact compact representation. Reject mutations that merely fit finite carry predicates without a solver and legal-input coverage proof.",
+                applies_to=['DHS-GOWERS-SIEVE', 'EXP-DHS-DCP-SUBSET-SUM-TWO-ADIC-SEARCH'],
+                evidence=metrics,
+                source=str(path),
+            )
+        )
     return payload

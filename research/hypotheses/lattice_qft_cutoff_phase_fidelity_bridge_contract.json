@@ -1,0 +1,30 @@
+{
+  "contract_id": "lattice-qft-cutoff-phase-fidelity-bridge-contract",
+  "title": "Lattice QFT Cutoff Phase-Fidelity Bridge: Exact Banded Dyadic Kernel, Universal Label Uniformity, and Joint-Channel Receiver Visibility",
+  "version": "1.0.0",
+  "scope": "exact_banded_dyadic_qft_matrix_kernel_universal_label_uniformity_and_joint_channel_quadrature_visibility_under_separation_cutoff",
+  "theorems": [
+    {
+      "id": "T1",
+      "name": "Exact Banded Dyadic Phase Kernel of the Cutoff-b QFT",
+      "statement": "For ell >= 1 wires (N = 2^ell) and separation cutoff b in {0, ..., ell - 1}, the ideal cutoff-b QFT unitary F_(2^ell)^(b) has exact matrix entries <k | F_(2^ell)^(b) | x> = 2^(-ell/2) * exp(2 * pi * i * Theta_ell^(b)(k, x)), where Theta_ell^(b)(k, x) = sum_{0 <= m, j < ell, ell - 1 - b <= m + j <= ell - 1} k_m x_j 2^(m + j - ell). Every matrix entry has exact modulus 2^(-ell/2)."
+    },
+    {
+      "id": "T2",
+      "name": "Universal Label Uniformity and Pure Two-Point Conditional States",
+      "statement": "For any CubeCosetSource satisfying the two-point cube promise on {0, 1} x {0, ..., M_box - 1}^n with ell = n * log_2(2 M_box) position wires, under readout with F_(2^ell)^(b) for any cutoff b in {0, ..., ell - 1}, every singleton cell and every two-point cell produces conditional label probability 2^(-ell) for all k in Z_(2^ell), so the marginal label distribution Pr[k] = 2^(-ell) is strictly uniform for every cutoff b >= 0."
+    },
+    {
+      "id": "T3",
+      "name": "Joint-Channel Quadrature Visibility and Pointwise Phase-Defect Bound",
+      "statement": "For any two-point cell (x_0, x_1) with shift s = (x_1 - x_0) mod 2^ell, the pointwise phase defect delta_theta_ell^(b)(k; x_0, x_1) = 2 * pi * (Theta_ell^(b)(k, x_1) - Theta_ell^(b)(k, x_0) - k*(x_1 - x_0)/2^ell) satisfies |delta_theta_ell^(b)(k; x_0, x_1)| <= Delta_max(ell, b) := pi * ((ell - b - 2)/2^b + 1/2^(ell - 1)), and the exact joint-channel {X, Y} quadrature visibility is v_eff^(b) = (1 - p_bad) * E_{(x_0, x_1) in G, k ~ Z_(2^ell)}[cos(delta_theta_ell^(b)(k; x_0, x_1))] >= (1 - p_bad) * cos(Delta_max(ell, b)) whenever Delta_max(ell, b) <= pi."
+    }
+  ],
+  "guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false,
+    "end_to_end_quantum_advantage_claimed": false,
+    "bypassed_UniformCubeSuperposition_prepare_constraint": false
+  }
+}

@@ -562,4 +562,30 @@ def write_smith_moment_spectrum(
     payload = asdict(report)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
+    if write_registry:
+        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
+        metrics = dict(payload.get("headline_metrics", {}))
+        experiment_record = ExperimentResultRecord(
+            id=result_id,
+            experiment_id=registry_experiment_id,
+            candidate_id=registry_candidate_id,
+            created_at=utc_now(),
+            status=payload.get("status", "completed"),
+            summary=payload.get("summary", ""),
+            metrics=metrics,
+            falsifiers_triggered=list(payload.get("falsifiers_triggered", [])),
+            artifacts={path.stem: str(path), "report": str(path)},
+        )
+        upsert_experiment_result(experiment_record)
+        upsert_negative_result(
+            NegativeResultRecord(
+                id="NEG-DCP-SUBSET-SUM-SAMPLED-SMITH-FLATNESS",
+                claim="Failure to observe atypical fifth-order or order>=6 dependent Smith types in polynomially many sampled assignment tuples proves density-one subset-sum counts have no useful high-order structure.",
+                reason_invalid="Exponentially rare affine configurations can make a nonnegligible factorial-moment contribution. Only complete enumeration or a uniform analytic count can establish absence.",
+                lesson="Use sampled Smith spectra to generate exact dependency classes and conjectures, never as a lower bound. Promotion requires asymptotic class counts and an algorithmic observable.",
+                applies_to=['DHS-GOWERS-SIEVE', 'EXP-DHS-DCP-SUBSET-SUM-SMITH-MOMENT-SPECTRUM'],
+                evidence=metrics,
+                source=str(path),
+            )
+        )
     return payload

@@ -1,0 +1,16 @@
+{
+  "contract_id": "public_coherent_sine_window_lattice_source_v1",
+  "status": "PUBLIC_COHERENT_SINE_WINDOW_SOURCE_AND_UNKNOWN_PHASE_REGISTERS_REVIEW_PENDING",
+  "literature": "Cached cs_0304005_source/quantum_average.tex, improved_main_lattice_lemma; existing localization approach, no novelty claim",
+  "inputs": "Public row basis, prime/residue/coordinate guesses, dyadic parent and known packet sides; no hidden vector or preimages",
+  "packet": "Deterministic matched pi/2 amplification, known parent inverse and clean Toffoli AND ladder",
+  "instrument": "Add public point into SAME noise register, uncompute arithmetic, trace localization, SINGLE cyclic position QFT",
+  "promises": ["Primitive shortest u with nonparallel norm lambda2", "Correct residue", "lambda2^2 > nK^2", "(p-1)^2 ||u||^2 > nK^2"],
+  "precision": "Packet/global-angle and QFT errors are charged separately; no complete hardware/roundoff or normalized rare-branch guarantee",
+  "falsifiers": ["Retained point/noise garbage", "Wrong residue or alias", "Tensor rather than cyclic QFT", "Private solution enters preparation", "Physical/alias sample promoted to certified DCP", "Classical attacks recover the proposed hard direction"],
+  "efficient_robust_receiver_supplied": false,
+  "hard_lattice_source_supplied": false,
+  "accepted_speedup_candidate": false,
+  "new_active_negative_result_created": false,
+  "novelty_claim": false
+}

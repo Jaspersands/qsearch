@@ -448,4 +448,34 @@ def write_complete_racah_control_report(
     payload = asdict(build_complete_racah_control_report(n=n))
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(payload, indent=2, sort_keys=True))
+    if write_registry:
+        negative_record = NegativeResultRecord(
+            id="NEG-COSET-FINITE-RACAH-AS-UNIFORM-ASSOCIATOR",
+            source=str(output_path),
+            claim=(
+                "Complete finite left/right recoupling matrices imply a scalable coherent Racah associator."
+            ),
+            reason_invalid=(
+                "The construction uses dense n=6 diagonalization, leaves five second-stage multiplicity sectors unresolved, and supplies neither an all-n formula nor a circuit."
+            ),
+            lesson=(
+                "Use the finite matrices as exact controls for deriving compressed partition-level identities; require a uniform gate construction and decoder before algorithmic promotion."
+            ),
+            applies_to=[registry_candidate_id, registry_experiment_id],
+            evidence=payload.get("headline_metrics", {}),
+        )
+        upsert_negative_result(negative_record)
+        upsert_experiment_result(
+            ExperimentResultRecord(
+                id=registry_result_id or f"RESULT-{registry_experiment_id}-LATEST",
+                experiment_id=registry_experiment_id,
+                candidate_id=registry_candidate_id,
+                created_at=payload.get("created_at", utc_now()),
+                status=payload.get("status", "completed"),
+                summary=payload.get("summary", ""),
+                metrics=payload.get("headline_metrics", {}),
+                falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                artifacts={"coset_complete_racah_control": str(output_path)},
+            )
+        )
     return payload

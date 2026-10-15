@@ -460,4 +460,34 @@ def write_commutant_gap_certificate(
     payload = asdict(build_commutant_gap_certificate())
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(payload, indent=2, sort_keys=True))
+    if write_registry:
+        negative_record = NegativeResultRecord(
+            id="NEG-COSET-RESTRICTED-GAP-AS-GENERAL-KRONECKER-TRANSFORM",
+            source=str(output_path),
+            claim=(
+                "The proved (n-2,2) multiplicity-two gap supplies a general efficient internal S_n Kronecker transform."
+            ),
+            reason_invalid=(
+                "The certificate proves one stable parity-split block only; balanced sectors, larger multiplicities, associators, and decoding are absent."
+            ),
+            lesson=(
+                "Use the exact family as a test case for Racah constructions, not as an end-to-end algorithm claim."
+            ),
+            applies_to=[registry_candidate_id, registry_experiment_id],
+            evidence=payload.get("headline_metrics", {}),
+        )
+        upsert_negative_result(negative_record)
+        upsert_experiment_result(
+            ExperimentResultRecord(
+                id=registry_result_id or f"RESULT-{registry_experiment_id}-LATEST",
+                experiment_id=registry_experiment_id,
+                candidate_id=registry_candidate_id,
+                created_at=payload.get("created_at", utc_now()),
+                status=payload.get("status", "completed"),
+                summary=payload.get("summary", ""),
+                metrics=payload.get("headline_metrics", {}),
+                falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                artifacts={"coset_commutant_gap_certificate": str(output_path)},
+            )
+        )
     return payload

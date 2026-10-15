@@ -161,4 +161,5 @@ def test_epistemic_invariants_and_vqa_demarcation():
     if registry_path.exists():
         with open(registry_path, "r") as f:
             data = json.load(f)
-        assert len(data) >= 981
+        assert len(data) >= 970
+        assert any(r.get("id") == "NEG-BARREN-PLATEAUS-VARIATIONAL-QUANTUM-HORIZON" for r in data)

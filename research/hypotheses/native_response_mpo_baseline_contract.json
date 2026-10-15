@@ -1,0 +1,15 @@
+{
+  "contract_id": "native_public_phase_fixed_Q_MPO_sampling_v1",
+  "status": "PUBLIC_PHASE_FIXED_LAYER_MPO_CLASSICAL_SAMPLING_BASELINE",
+  "inputs": "Same classical observations/public mask and fixed signed phase/Fourier schedule; never hidden errors or copy-only phase states",
+  "kernel": "Deterministic digit-memory MPO. Forward: MPO then reversal. Adjoint: reversal then conjugation and physical-leg swap, not virtual-leg swap.",
+  "width": "MPO <=3^(b-1); exact predicted MPS bonds <=3^(Q(b-1)); no SVD truncation",
+  "readout": "FLINT exact Gaussian-integer right environments and ternary CDF comparison",
+  "precision": "Global operator/state perturbation, one final normalization, finite-grid coupling and every Fourier truncation are paid",
+  "full_cyclic": "Fixed Q at inverse-polynomial resolution has a constructive polynomial structural sampling bound",
+  "falsifiers": ["Wrong adjoint/reversal", "MPO kernel mismatch", "Non-normalizing exact prefix masses", "Resource/error bound violation", "Private-data leakage"],
+  "arbitrary_polynomial_depth_simulation_claimed": false,
+  "unknown_phase_copy_simulation_claimed": false,
+  "accepted_speedup_candidate": false,
+  "new_active_negative_result_created": false
+}

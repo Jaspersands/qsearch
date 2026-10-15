@@ -277,4 +277,30 @@ def write_covariant_pgm_audit(
     payload = asdict(report)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
+    if write_registry:
+        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
+        metrics = dict(payload.get("headline_metrics", {}))
+        experiment_record = ExperimentResultRecord(
+            id=result_id,
+            experiment_id=registry_experiment_id,
+            candidate_id=registry_candidate_id,
+            created_at=utc_now(),
+            status=payload.get("status", "completed"),
+            summary=payload.get("summary", ""),
+            metrics=metrics,
+            falsifiers_triggered=list(payload.get("falsifiers_triggered", [])),
+            artifacts={path.stem: str(path), "report": str(path)},
+        )
+        upsert_experiment_result(experiment_record)
+        upsert_negative_result(
+            NegativeResultRecord(
+                id="NEG-DCP-EXACT-PGM-SUCCESS-WITHOUT-IMPLEMENTATION",
+                claim="Constant clean covariant-PGM success at m=Theta(n) is itself a polynomial DCP algorithm.",
+                reason_invalid="The formula assumes the full covariant measurement. Naive implementation uses N outcomes or an N-entry multiplicity table; no polynomial normalized-fiber isometry, block encoding, or walk exists.",
+                lesson="Treat clean PGM success as a target specification. Promote only a uniform polynomial circuit with complete output decoding, exact f=1 robustness, and lattice parameter composition.",
+                applies_to=['DHS-GOWERS-SIEVE', 'EXP-DHS-DCP-COVARIANT-PGM-AUDIT'],
+                evidence=metrics,
+                source=str(path),
+            )
+        )
     return payload

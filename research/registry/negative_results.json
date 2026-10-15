@@ -57450,6 +57450,100 @@
   },
   {
     "applies_to": [
+      "TOPOLOGICAL-QUANTUM-COMPUTING",
+      "ANYONIC-BRAID-GROUPS",
+      "FIBONACCI-ANYONS",
+      "TEMPERLEY-LIEB-COMMUTANT",
+      "JONES-POLYNOMIAL-HARDNESS"
+    ],
+    "claim": "Quantum Fourier sampling can solve the Hidden Subgroup Problem over non-abelian anyonic braid groups B_n in polynomial time.",
+    "evidence": {
+      "artin_braid_satisfaction": "Fibonacci anyon representation rho(B_n) satisfies Artin relations with machine precision (< 1e-15) and generates a dense subgroup in SU(2)",
+      "classical_garside_dequantization": "Braid word problem and abelian writhe invariant w(beta) are solved classically in O(L) to O(L^2 n) via Garside left-greedy normal forms",
+      "epistemic_invariants_enforced": "speedup_claim_allowed = False; accepted_speedup_candidate = False",
+      "garside_center_schur_scalar": "Central Garside element Delta_3^2 acts as scalar exp(2pi i / 5) * I by Schur's lemma, providing 0.000 bits of mutual information about central subgroup orientation",
+      "speedup_claim_allowed": false,
+      "temperley_lieb_catalan_inflation": "Multi-copy commutant algebra C_M = End_{B_n}(V^M) has dimension dim(C_M) = C_M = Theta(4^M / M^1.5) > 6.5e9 for M=20, requiring #P-hard quantum 6j-symbols to diagonalize",
+      "weak_fourier_conjugacy_blindness": "Knot trace characters are class functions invariant under arbitrary conjugation: Tr(gamma beta gamma^-1) == Tr(beta) identically (TV == 0.000, 0.000 bits mutual information)"
+    },
+    "id": "NEG-ANYONIC-BRAID-GROUP-HSP-COMMUTANT-BARRIER",
+    "lesson": "The Hidden Subgroup Problem over anyonic braid groups B_n cannot be solved by quantum Fourier sampling. In non-abelian anyon representations (such as Fibonacci anyons from SU(2)_3 Chern-Simons theory), trace characters are class functions invariant under conjugation, blinding weak Fourier sampling completely (TV == 0.000, 0.000 bits of mutual information). Central Garside elements Delta_n^2 act as global scalar phases exp(2pi i / 5) by Schur's lemma, hiding central subgroups behind unobservable global phases. Furthermore, multi-copy strong Fourier sampling across M registers encounters exponential Catalan commutant inflation dim(C_M) = (1/(M+1)) binom(2M, M) = Theta(4^M / M^1.5), where diagonalizing entangling measurements requires evaluating quantum Racah 6j-coefficients, which is #P-hard. Finally, algebraic word equivalence in B_n is completely dequantized classically in polynomial time via Garside normal forms, while finding black-box hidden subgroups requires Omega(2^{L/2}) queries due to exponential Cayley tree volume.",
+    "reason_invalid": "Braid groups B_n possess infinite conjugacy classes, and anyonic trace characters are class functions that yield identically zero total variation distance between conjugate subgroup orientations in weak Fourier sampling. Central subgroups act as scalar multiples of identity by Schur's lemma, leaving zero detectable relative phases. Multi-copy strong Fourier sampling is obstructed by Temperley-Lieb Catalan commutant explosion dim(C_M) = Theta(4^M / M^1.5) and the #P-hardness of quantum Racah recoupling symbols. On classical computers, the word problem is solved in O(L^2 n) time via Garside normal forms. Thus, claiming polynomial-time quantum Fourier solvability for the Hidden Subgroup Problem over non-abelian braid groups B_n is mathematically invalid.",
+    "source": "research/ANYONIC_BRAID_GROUP_HSP_COMMUTANT_BARRIER.md"
+  },
+  {
+    "applies_to": [
+      "ARBITRARY-DEGREE-NUMBER-FIELD",
+      "MULTIDIMENSIONAL-CONTINUOUS-HSP",
+      "HALLGREN-SCHMIDT-VOLLMER",
+      "EXPONENTIAL-DEGREE-BARRIER",
+      "LATTICE-SIVP-HARDNESS"
+    ],
+    "claim": "Quantum algorithms can compute the unit group regulator and solve the Principal Ideal Problem in polynomial time for algebraic number fields of arbitrary, growing degree n = [K : Q].",
+    "evidence": {
+      "compact_representation_overhead": "Manipulating algebraic units and reduced ideals in degree n requires compact representations with n^{O(n)} overhead",
+      "continuous_torus_dual_lattice": "Quotient R^r / Lambda is an r-dimensional compact torus with complete 1D character basis chi_u(x) = exp(2 pi i u . x) labeled by dual lattice Lambda^*",
+      "epistemic_invariants_enforced": "speedup_claim_allowed = False; accepted_speedup_candidate = False",
+      "exponential_degree_barrier": "For unbounded degree n, quantum complexity is 2^{Omega(n log n)} poly(log |Delta_K|); polynomial time collapses",
+      "lattice_reconstruction_hardness": "Reconstructing dual lattice Lambda^* in dimension r = Theta(n) requires solving SIVP/CVP in dimension r, which is lattice-hard (2^{Omega(r)})",
+      "mesh_volume_explosion": "Sampling hypercube requires (M / Delta)^r = 2^{Omega(n log n)} states, causing exponential mode dispersion",
+      "speedup_claim_allowed": false
+    },
+    "id": "NEG-ARBITRARY-DEGREE-REGULATOR-EXPONENTIAL-BARRIER",
+    "lesson": "While Hallgren (2005) and Schmidt-Vollmer (2005) established polynomial-time quantum algorithms for fixed field degree n = O(1), the algorithm scales as 2^{Omega(n log n)} poly(log |Delta_K|) for growing degree n. When n is unbounded, polynomial tractability collapses due to three compounding mathematical barriers: (1) Lattice reconstruction hardness: dual lattice sampling in dimension r = Theta(n) requires solving SIVP/CVP in dimension r, which is lattice-hard and requires 2^{Omega(r)} operations; (2) Compact representation overhead: manipulating algebraic units and reduced ideals in degree n requires n^{O(n)} operations; and (3) Multi-dimensional grid volume explosion: the sampling mesh requires (M / Delta)^r = 2^{Omega(n log n)} states. Therefore, the quantum regulator algorithm is confined strictly to constant-degree number fields.",
+    "reason_invalid": "The multi-dimensional continuous torus HSP over R^r / Lambda_K (where r = r_1 + r_2 - 1 = Theta(n)) avoids non-abelian representation obstacles because the torus is abelian, yielding dual lattice characters chi_u(x) = exp(2 pi i u . x). However, inverting the dual lattice from noisy quantum samples requires solving BDD and SIVP in dimension r, which is NP-hard under randomized reductions and takes 2^{Omega(r)} = 2^{Omega(n)} operations. Furthermore, polynomial multiplication and compact representation arithmetic scale as n^{O(n)}, and the discrete grid volume grows as 2^{Omega(n log n)}. Thus, claiming polynomial-time quantum solvability for arbitrary degree number fields is mathematically invalid: the algorithm is polynomial only in log |Delta_K| for constant degree n, and exponential in n.",
+    "source": "research/ARBITRARY_DEGREE_NUMBER_FIELD_REGULATOR_BARRIER.md"
+  },
+  {
+    "applies_to": [
+      "VARIATIONAL-QUANTUM-ALGORITHMS",
+      "BARREN-PLATEAUS",
+      "HAAR-MEASURE-CONCENTRATION",
+      "DYNAMICAL-LIE-ALGEBRA",
+      "NOISE-INDUCED-BARREN-PLATEAUS",
+      "VQA-DEQUANTIZATION-DILEMMA"
+    ],
+    "claim": "Variational Quantum Algorithms (VQAs) with universal parameterized quantum circuits can optimize arbitrary non-convex cost landscapes and achieve scalable quantum speedup over classical algorithms without exponential shot overhead or classical simulability.",
+    "evidence": {
+      "dynamical_lie_algebra_dilemma": "Fontana et al. (2024) and Larocca et al. (2022) proved that gradient variance scales inversely with the dimension of the Dynamical Lie Algebra g: Var = Theta(1 / dim(g)). If dim(g) = poly(n), the ansatz is restricted and classically simulable in polynomial time (e.g. matchgates with dim(so(2n)) = n(2n-1)); if dim(g) = 4^n - 1 (universal su(2^n)), the circuit suffers an exponential barren plateau",
+      "epistemic_invariants_enforced": "speedup_claim_allowed = False; accepted_speedup_candidate = False",
+      "haar_gradient_variance_decay": "McClean et al. (2018) proved that for ans\u00e4tze forming approximate 2-designs, global cost gradient variance decays as Var = Theta(1 / 4^n), demanding Omega(4^n) measurement shots per gradient step",
+      "local_vs_global_cost_distinction": "Cerezo et al. (2021) demonstrated that while local cost functions avoid barren plateaus at shallow depth O(log n), any circuit reaching polynomial depth Omega(poly(n)) converges to a 2-design, triggering universal barren plateaus with Var = O(1/poly(n)) decaying to exp(-Omega(n))",
+      "noise_induced_barren_plateaus": "Wang et al. (PRX 2021) proved that local unital noise with error rate eps exponentially dampens gradient variance by (1 - eps)^(2d), extinguishing gradients independently of ansatz design for depth d >= O(1/eps)",
+      "speedup_claim_allowed": false
+    },
+    "id": "NEG-BARREN-PLATEAUS-VARIATIONAL-QUANTUM-HORIZON",
+    "lesson": "Variational Quantum Algorithms (VQAs) cannot provide a scalable quantum computational speedup due to the fundamental conflict between expressibility and trainability. By McClean et al. (2018) and Cerezo et al. (2021), expressive parameterized ans\u00e4tze concentrating under Haar measure experience an exponential vanishing of cost function gradients Var(dC/dtheta) = Omega(1/2^n) to O(1/4^n), requiring an exponential number of measurement shots Omega(2^n) to determine optimization descent directions. The Dynamical Lie Algebra (DLA) classification by Larocca et al. and Fontana et al. establishes a strict dichotomy: ans\u00e4tze whose Lie algebra dimension is polynomial dim(g) = poly(n) avoid barren plateaus but are dequantized classically in polynomial time (such as free-fermionic matchgates with dim(so(2n)) = n(2n-1)), while ans\u00e4tze with exponential Lie algebra dim(g) = 4^n - 1 are intractable to optimize. Furthermore, physical device noise induces Noise-Induced Barren Plateaus (NIBP), damping gradients exponentially by (1 - eps)^(2d) at depth d. Thus, variational heuristic algorithms cannot bypass classical computation for scalable problem solving.",
+    "reason_invalid": "Universal parameterized quantum circuits suffer from Haar measure concentration, forcing gradient variances to vanish exponentially as Var = Theta(1/dim(g)). Resolving gradients above statistical shot noise requires Omega(dim(g)) measurement shots, rendering optimization intractable on NISQ hardware. Conversely, parameterized circuits with polynomial Lie algebra dimensions (dim(g) = poly(n)) that avoid barren plateaus generate unitary representations that are efficiently simulable classically via tensor networks or Lie algebraic covariance techniques. Additionally, local gate noise forces exponential gradient flattening at depth d >= O(1/eps). Therefore, claiming that variational quantum circuits can achieve scalable quantum speedup on general optimization or learning problems is mathematically and physically invalid.",
+    "source": "research/BARREN_PLATEAUS_VQA_OPTIMIZATION_BARRIER.md"
+  },
+  {
+    "applies_to": [
+      "BOSON-SAMPLING",
+      "GAUSSIAN-BOSON-SAMPLING",
+      "PERMANENT-HARDNESS",
+      "HAFNIAN-HARDNESS",
+      "PHOTON-LOSS-DEQUANTIZATION",
+      "MATCHGATE-FERMION-DEMARCATION"
+    ],
+    "claim": "Photonic Boson Sampling and Gaussian Boson Sampling (GBS) on physical linear-optical processors provide an exponential, scalable quantum computational speedup over classical computers for practical or decision problems.",
+    "evidence": {
+      "classical_distinguishable_sampling": "Completely distinguishable photons (HOM visibility x = 0) obey doubly stochastic transition probabilities P_dist(s) = Perm(|U|^2) / prod s! and are classically simulated in O(m n) time (Clifford & Clifford 2018)",
+      "epistemic_invariants_enforced": "speedup_claim_allowed = False; accepted_speedup_candidate = False",
+      "fermion_matchgate_p_demarcation": "Fermion sampling amplitudes are governed by matrix determinants det(U), which are evaluated classically in O(n^3) time via LU decomposition (Valiant 2002, Terhal & DiVincenzo 2002)",
+      "graph_heuristic_classical_subsumption": "GBS adjacency encoding for Dense Subgraph and Max-Clique provides zero asymptotic quantum speedup over classical greedy search and semidefinite programming (SDP) solvers",
+      "hom_interference_coincidence_cancellation": "50:50 beamsplitter Hong-Ou-Mandel bunching cancels coincidence detection Perm(B) = 0.0 with machine precision (< 1e-12), confirming ideal bosonic constructive bunching P(2,0) = P(0,2) = 0.5",
+      "photon_loss_exponential_collapse": "Physical transmission efficiency eta in (0, 1) causes exponential survival collapse P_surv = eta^n; in Jiuzhang benchmarks (n=50, eta=0.40), P_surv ~ 1.27e-20 << 1e-19, extinguishing uncorrupted n-photon coherence",
+      "renema_qi_truncation_dequantization": "Under partial distinguishability x < 1 or loss eta < 1, interference expands in symmetric group cycle types damped by x^k; truncating to k = O(log n) yields an efficient classical polynomial-time simulation",
+      "speedup_claim_allowed": false
+    },
+    "id": "NEG-BOSON-SAMPLING-PHOTONIC-LOSS-DEQUANTIZATION-BARRIER",
+    "lesson": "Boson Sampling and Gaussian Boson Sampling (GBS) do not establish a practical or scalable quantum computational speedup. While exact ideal Boson Sampling is linked to #P-hard matrix permanents and hafnians, physical photonic architectures suffer from transmission loss eta in (0, 1) where pure n-photon coherence decays as P_surv = eta^n (under 1.3e-20 for n=50 at eta=0.40 in Jiuzhang), leaving an incoherent thermalized mixture of low-order photon events. By Renema et al. (2018) and Qi et al. (2020), lossy and partially distinguishable linear optics can be simulated classically in polynomial time poly(n) by truncating cycle-type interference to order O(log n). Distinguishable particles are sampled classically in O(m n) time via Clifford & Clifford (2018), while Fermion Sampling is in P via O(n^3) LU determinants. Furthermore, using GBS as a heuristic for Dense Subgraph or Max-Clique provides zero worst-case speedup over classical greedy/SDP solvers, and verifying GBS samples requires computing #P-hard hafnians, making polynomial-time verification impossible in the supremacy regime.",
+    "reason_invalid": "Boson Sampling solves no structured computational decision problem, decision search, or algebraic problem; its physical implementations are degraded by transmission loss (eta ~ 0.40 in Jiuzhang), extinguishing pure n-photon coherence with probability < 1e-19. Renema et al. (2018) and Qi et al. (2020) proved that such lossy and partially distinguishable systems are dequantized classically in polynomial time. Distinguishable photon sampling is simulated classically in O(m n) time, and free fermions are simulated in O(n^3) time. Moreover, encoding graph problems into GBS provides zero asymptotic speedup over classical semidefinite programming and greedy solvers, and verifying output samples is #P-hard. Thus, claiming that Boson Sampling or GBS achieves a scalable, verifiable quantum speedup is mathematically and physically invalid.",
+    "source": "research/BOSON_SAMPLING_PHOTONIC_LOSS_BARRIER.md"
+  },
+  {
+    "applies_to": [
       "NONABELIAN-COSET-COLLECTIVE-OBSERVABLES",
       "CFI-BASE-FAMILY-SEARCH",
       "BOUNDED-VALENCE-LUKS-SUBSUMPTION",
@@ -57472,6 +57566,32 @@
   },
   {
     "applies_to": [
+      "CAI-FURER-IMMERMAN-GRAPHS",
+      "WEISFEILER-LEHMAN-HIERARCHY",
+      "MULTI-PARTICLE-QUANTUM-WALK",
+      "QUANTUM-ADIABATIC-ALGORITHM",
+      "LUKS-SOLVABLE-TOWER-SUBSUMPTION"
+    ],
+    "claim": "Multi-particle quantum walks or quantum adiabatic evolution can achieve an algorithmic quantum speedup over classical algorithms on Cai-F\u00fcrer-Immerman (CFI) graph isomorphism instances.",
+    "evidence": {
+      "automorphism_group_orders": "|Aut(X(K_4))| = 576 vs |Aut(X'(K_4))| = 192",
+      "cycle_space_parity_obstruction": "All 64 edge flip vectors induce identically 0 mod 2 vertex parity change; sum delta sigma = 2 sum b = 0 mod 2",
+      "exact_cospectrality": "Adjacency (< 1.78e-15) and Laplacian (< 3.55e-15) spectra match identically",
+      "luks_polynomial_subsumption": "Classical Luks algorithm tests bounded-degree isomorphism in O(n^4 log n), dequantizing CFI instances",
+      "one_and_two_wl_invariance": "1-WL hashes and 2-WL pair histograms (10 colors) match identically across all iterations",
+      "quantum_adiabatic_exponential_barrier": "Spectral gap closes exponentially Delta = 2^{-Omega(n)}, requiring T = 2^{Omega(n)}",
+      "quantum_walk_tv_blindness": "CTQW return amplitudes match identically for all t; TV distance identically 0.000",
+      "solvable_tower_structure": "Both automorphism groups are solvable with derived length 4, Sylow 2-subgroups of order 64",
+      "speedup_claim_allowed": false
+    },
+    "id": "NEG-CFI-QUANTUM-WALK-LUKS-SUBSUMPTION",
+    "lesson": "Cai-F\u00fcrer-Immerman (CFI) graphs do not yield a quantum speedup for Graph Isomorphism. While CFI graphs defeat the classical k-Weisfeiler-Lehman hierarchy for k < tw(G), this barrier equally blinds all non-interacting m-particle quantum walks (m < tw(G)), rendering them completely unable to distinguish the graphs (TV distance identically 0.000). Quantum adiabatic algorithms incur an exponentially closing spectral gap Delta = 2^{-Omega(n)} due to the topological parity barrier, requiring exponential evolution time 2^{Omega(n)}. Crucially, classical computation is not bounded by the WL hierarchy: Eugene Luks' (1982) solvable tower algorithm solves bounded-degree Graph Isomorphism in deterministic classical polynomial time O(n^4 log n) by exploiting the solvable 2-group filtration of vertex stabilizers, completely dequantizing CFI graph distinction classically.",
+    "reason_invalid": "On the base graph K_4 (tw = 3), the untwisted CFI graph X(K_4) and twisted graph X'(K_4) on 28 vertices are strictly cospectral (adjacency and Laplacian spectra match within 2e-15) and produce identical 1-WL and 2-WL color refinement partitions (TV distance 0.000). Because m-particle non-interacting quantum walks are bounded by m-WL, any quantum walk with m < tw(G) yields 0.000 bits of mutual information. In the adiabatic model, crossing the topological parity obstruction requires tunneling across a macroscopic cycle cut, closing the spectral gap exponentially Delta = 2^{-Omega(n)} and requiring T = Omega(1/Delta^2) = 2^{Omega(n)} time. Conversely, CFI graphs have bounded valence Delta <= 4. Luks (1982) proved that Graph Isomorphism for valence d is solvable in deterministic classical polynomial time O(n^{f(d)}), specifically O(n^4 log n) for Delta = 3/4. Both Aut(X(K_4)) (order 576) and Aut(X'(K_4)) (order 192) are solvable groups with derived length 4 and Sylow 2-subgroups of order 64. Luks' solvable tower algorithm bypasses the WL hierarchy entirely and solves the isomorphism problem in polynomial classical time, disproving any quantum advantage.",
+    "source": "research/CFI_QUANTUM_WALK_LUKS_SOLVABLE_TOWER_OBSTRUCTION.md"
+  },
+  {
+    "id": "NEG-CHARACTER-SHIFT-UNIFORM-DECODING-LOWER-BOUND-BARRIER",
+    "applies_to": [
       "CHARACTER-SHIFT-DECODING-LOWER-BOUND",
       "LEGENDRE-PRG-INVERSION",
       "CYCLOTOMIC-DEGREE-OBSTRUCTION",
@@ -57481,12 +57601,11 @@
     "evidence": {
       "artifact": "research/classical_baselines/character_shift_decoding_lower_bound_barrier.json",
       "autocorrelation_identity": "sum (x(x+delta) / p) == -1 identically for all delta != 0 (mod p)",
-      "cyclotomic_degree": "deg((x+s)^{(p-1)/2} - y) = (p-1)/2 = 2^{Omega(n)}",
       "exact_agreement_count": "N_agree(delta) == (p - 3) / 2 < p/2 identically",
       "query_ceiling": "k*(p) = 2 ceil(log2 p) samples achieves failure <= 1/p",
-      "uniform_time_lower_bound": "T >= p/2 = 2^{Omega(n)} operations in uniform model"
+      "uniform_time_lower_bound": "T >= p/2 = 2^{Omega(n)} operations in uniform model",
+      "cyclotomic_degree": "deg((x+s)^{(p-1)/2} - y) = (p-1)/2 = 2^{Omega(n)}"
     },
-    "id": "NEG-CHARACTER-SHIFT-UNIFORM-DECODING-LOWER-BOUND-BARRIER",
     "lesson": "Do not confuse logarithmic query complexity O(log p) with polynomial classical decoding time. Shifted Legendre characters are information-theoretically identifiable in O(log p) samples, but uniform decoding without advice requires Omega(p) operations, matching the computational hardness of inverting the Legendre PRG.",
     "reason_invalid": "By Weil's character sum theorem, pairwise agreement between distinct shifts is strictly (p-3)/(2p) < 1/2, allowing O(log p) samples to uniquely fingerprint the shift. However, in the uniform model without advice, recovering the shift s requires solving polynomial equations of degree (p-1)/2 = 2^{Omega(n)} or testing Omega(p) candidate shifts. Efficient decoding is only possible with non-uniform advice of size S = p log2 p bits or via van Dam-Hallgren's quantum Fourier transform.",
     "source": "research/classical_baselines/character_shift_decoding_lower_bound_barrier.json"
@@ -61915,6 +62034,76 @@
   },
   {
     "applies_to": [
+      "REAL-QUADRATIC-REGULATOR",
+      "HALLGREN-ALGORITHM",
+      "CONTINUOUS-ABELIAN-HSP",
+      "SHANKS-INFRASTRUCTURE",
+      "BUCHMANN-INDEX-CALCULUS"
+    ],
+    "claim": "Hallgren's quantum algorithm for real quadratic fields delivers an exponential quantum speedup over all classical algorithms for computing the regulator and solving Pell's equation.",
+    "evidence": {
+      "buchmann_index_calculus_subexponential": "Buchmann's (1990) classical index calculus over smooth prime ideals computes the regulator in subexponential time L_d[1/2, sqrt{2}] = exp((sqrt{2} + o(1)) sqrt{ln d ln ln d})",
+      "continuous_abelian_character_orthogonality": "Quotient R / R Z = S^1 is a 1-dimensional abelian Lie group with complete 1D character basis chi_k(x) = exp(2 pi i k x / R)",
+      "discretization_jitter_bound": "Sampling on discrete grid x_j = j Delta induces bounded roundoff jitter epsilon_k in [-Delta/2, Delta/2]; requires N Delta^2 >= 2 R^2 for Legendre continued fraction convergence",
+      "epistemic_invariants_enforced": "speedup_claim_allowed = False; accepted_speedup_candidate = False",
+      "infrastructure_regularization": "Shanks' reduced ideals have irregular step sizes; regularized function h(x) = (r_x, x - delta(r_x)) restores exact continuous periodicity h(x + R) == h(x)",
+      "speedup_claim_allowed": false,
+      "superpolynomial_not_exponential_speedup": "The quantum speedup is superpolynomial over classical subexponential index calculus (O(log^3 d) vs L[1/2]), placing it in the factoring demarcation class rather than an exponential black-box separation"
+    },
+    "id": "NEG-CONTINUOUS-HSP-IRRATIONAL-JITTER-INDEX-CALCULUS-BOUNDARY",
+    "lesson": "Hallgren's quantum period-finding algorithm for real quadratic fields computes the regulator R = ln epsilon_d in polynomial time O(log^3 d) by discretizing the continuous abelian circle group R / R Z and regularizing Shanks' infrastructure via h(x) = (r_x, x - delta(r_x)). However, this quantum advantage does not represent an exponential speedup over an exponential classical baseline. Classical computation is not restricted to black-box search: Buchmann's (1990) index calculus algorithm over smooth prime ideals computes R in subexponential time L_d[1/2, sqrt{2}] = exp((sqrt{2} + o(1)) sqrt{ln d ln ln d}). The quantum speedup is therefore superpolynomial over subexponential index calculus (identical in complexity structure to Shor's factoring algorithm). Furthermore, the continuous-to-discrete discretization introduces rounding jitter epsilon_k in [-Delta/2, Delta/2], requiring mesh parameter N Delta^2 >= 2 R^2 to prevent phase decoherence and ensure continued fraction convergence.",
+    "reason_invalid": "Hallgren's algorithm maps the continuous non-compact period finding problem over R to the compact circle group R / R Z = S^1, which avoids all non-abelian representation obstructions because all irreps are 1-dimensional characters chi_k(x) = exp(2 pi i k x / R). Shanks' infrastructure cycle has irregular step lengths delta(r_{i+1}) - delta(r_i) in (0, ln(2 sqrt{d})], which is regularized by incorporating the intra-cell offset h(x) = (r_x, x - delta(r_x)). A discrete mesh of N points with spacing Delta produces a state with rounding jitter bounded by Delta / 2. By Legendre's continued fraction theorem, if N Delta^2 >= 2 R^2, the peak frequency mode recovers R with precision 2^{-Omega(n)} in polynomial time O(log^3 d). However, claiming an exponential quantum speedup is mathematically invalid because classical algorithms run in subexponential time L_d[1/2, sqrt{2}] via Buchmann's index calculus, restricting the quantum advantage to a superpolynomial separation over subexponential classical methods.",
+    "source": "research/REAL_QUADRATIC_REGULATOR_INFRASTRUCTURE_DEMARCATION.md"
+  },
+  {
+    "applies_to": [
+      "QPE-CONTINUOUS-SPECTRUM",
+      "SINGULAR-SPECTRAL-MEASURES",
+      "RESOLVENT-LORENTZIAN-BROADENING",
+      "CANTOR-INTERMITTENCY",
+      "KPM-DEQUANTIZATION"
+    ],
+    "claim": "Quantum Phase Estimation or Resolvent simulation can achieve exponential speedup over classical algorithms when estimating continuous spectral densities or singular continuous Hamiltonian spectra.",
+    "evidence": {
+      "almost_mathieu_cantor_intermittency": "Harper Hamiltonian at critical coupling lambda=1 has singular continuous spectrum with gap ratio > 1000 and fractional H\u00f6lder scaling, causing extreme intermittency and QPE breakdown",
+      "epistemic_invariants_enforced": "speedup_claim_allowed = False; accepted_speedup_candidate = False",
+      "kpm_classical_dequantization": "Classical Kernel Polynomial Method (KPM) with Jackson damping evaluates continuous spectral densities to resolution eta in Theta(1/eta) sparse matrix-vector multiplications, matching quantum lower bounds",
+      "resolvent_condition_barrier": "Resolvent Green's function (E + i eta - H)^-1 induces Lorentzian broadening with FWHM = 2 eta and condition number kappa = 1 / eta, requiring Omega(1/eta) quantum circuit depth by QSVT lower bounds",
+      "speedup_claim_allowed": false,
+      "universal_peak_flattening": "On absolutely continuous spectra, QPE measurement probability scales as P(k_max) = Theta(1/N) = Theta(2^-m) -> 0, flattening all discrete peaks and reducing QPE to continuous density sampling"
+    },
+    "id": "NEG-CONTINUOUS-SPECTRUM-QPE-SINGULAR-MEASURE-BARRIER",
+    "lesson": "Quantum Phase Estimation cannot achieve exponential speedup on continuous or singular continuous Hamiltonian spectra. For absolutely continuous spectra dmu_ac(E) = rho(E) dE, generalized eigenstates are non-normalizable in Hilbert space, and the discrete QPE measurement probability exhibits Universal Peak Flattening: P(k_max) = Theta(1/N) = Theta(2^-m) -> 0. Rather than concentrating mass into a sharp discrete peak with O(1) confidence as in discrete eigenvalue estimation, QPE on the continuum smears probability mass into a flat distribution scaling as O(2^-m). Furthermore, simulating the resolvent Green's operator (E + i eta - H)^-1 induces Lorentzian broadening of FWHM = 2 eta, with condition number kappa = 1/eta requiring Omega(1/eta) quantum circuit depth. On classical computers, the Kernel Polynomial Method (KPM) evaluates the continuous spectral density to the same resolution eta using M = Theta(1/eta) Chebyshev matrix-vector multiplications, completely dequantizing continuous spectral estimation. For singular continuous spectra (such as the Almost Mathieu operator at critical coupling), the spectrum is a Cantor set where QPE fluctuates wildly between zero in Hofstadter gaps and intermittent fractional spikes, precluding stable phase extraction.",
+    "reason_invalid": "Standard QPE exponential precision relies strictly on pure-point discrete spectra with normalizable eigenstates in Hilbert space. On absolutely continuous spectra, generalized eigenstates are non-normalizable, and the QPE Fej\u00e9r kernel forces every discrete computational bin to have probability P(k) = Theta(1/N) -> 0 (Universal Peak Flattening). Resolvent simulation requires condition number kappa = 1/eta, lower-bounding quantum circuit depth at Omega(1/eta) queries. Because the classical Kernel Polynomial Method (KPM) computes the identical continuous spectral density in Theta(1/eta) operations, quantum algorithms possess zero exponential speedup for continuous spectral density estimation. On singular continuous spectra, the Cantor structure induces pathological intermittency that prevents continued fraction period recovery. Thus, claiming exponential quantum advantage for continuous spectrum phase estimation is mathematically invalid.",
+    "source": "research/CONTINUOUS_SPECTRUM_QPE_SINGULAR_MEASURE_BARRIER.md"
+  },
+  {
+    "applies_to": [
+      "CONTINUOUS-VARIABLE-QUANTUM-COMPUTING",
+      "GAUSSIAN-DEQUANTIZATION",
+      "HUDSON-THEOREM",
+      "GKP-CODE",
+      "WIGNER-NEGATIVITY",
+      "CUBIC-PHASE-GATE",
+      "FINITE-SQUEEZING-THRESHOLD"
+    ],
+    "claim": "Continuous-variable quantum computing using Gaussian states or finite-squeezing Gottesman-Kitaev-Preskill (GKP) codes achieves scalable fault-tolerant quantum advantage without high-overhead non-Gaussian magic distillation.",
+    "evidence": {
+      "cubic_phase_heisenberg_shear": "Cubic phase gate V_gamma = exp(i gamma x^3) induces non-linear momentum shear p -> p + 3 gamma x^2, breaking symplectic group Sp(2N, R); optical Kerr nonlinearity chi^(3) is suppressed by chi^(3)/kappa <= 10^-6",
+      "epistemic_invariants_enforced": "speedup_claim_allowed = False; accepted_speedup_candidate = False",
+      "finite_squeezing_threshold_barrier": "Physical GKP states require average photon number <n> ~ 1/(2 Delta^2); fault tolerance requires squeezing >= 10 dB (Delta <= 0.3162, <n> >= 5.0 photons), while physical resonators remain sub-threshold (< 9 dB)",
+      "gkp_stabilizer_logical_pauli_algebra": "GKP stabilizers S_x, S_p commute via exp(4 pi i) = 1.0; logical Paulis Z_L, X_L anticommute via exp(pi i) = -1.0; Gaussian operations are confined to the logical Clifford group C^(2)",
+      "hudson_mari_eisert_dequantization": "Pure Gaussian states have non-negative Wigner functions W(x, p) >= 0 (Hudson 1974) and are simulated classically in O(N^3) time via symplectic covariance matrix propagation in Sp(2N, R) (Mari & Eisert 2012)",
+      "speedup_claim_allowed": false,
+      "wigner_negativity_magic_requirement": "Quantum advantage in continuous variables strictly requires Wigner negativity N_W(rho) > 0, which cannot be generated by Gaussian operations alone"
+    },
+    "id": "NEG-CONTINUOUS-VARIABLE-GKP-NON-GAUSSIAN-BARRIER",
+    "lesson": "Continuous-variable (CV) quantum computing without non-Gaussian magic is completely dequantized classically. By Hudson's theorem (1974) and the Mari-Eisert theorem (2012), all pure Gaussian states have non-negative Wigner functions and are simulated classically in O(N^3) time via symplectic covariance propagation in Sp(2N, R). When discrete qubits are encoded into bosonic modes via the Gottesman-Kitaev-Preskill (GKP) grid code, all Gaussian operations (displacements, squeezing, beamsplitters) are strictly confined to the logical Clifford group C^(2), requiring non-Gaussian operations for universality. The canonical non-Clifford gate\u2014the cubic phase gate V_gamma = exp(i gamma x^3)\u2014induces non-linear momentum shear p -> p + 3 gamma x^2, but physical Kerr nonlinearities are astronomically weak (chi^(3)/kappa <= 10^-6), precluding deterministic implementation. Furthermore, physical GKP codes with finite squeezing parameter Delta suffer from intrinsic displacement noise variance sigma^2 = Delta^2 / 2, requiring at least 10 dB of squeezing (<n> >= 5.0 photons) for basic GKP error correction and 13-15 dB for surface code concatenation, while physical hardware remains trapped below 9 dB.",
+    "reason_invalid": "Pure Gaussian CV quantum algorithms have non-negative Wigner functions and are simulated classically in O(N^3) time, providing zero quantum speedup. In GKP bosonic error correction, Gaussian operations only implement the Clifford group, which is dequantized in O(N^2) time via the Gottesman-Knill theorem. Non-Clifford universality requires cubic phase gates or non-Gaussian magic, which are suppressed by orders of magnitude in physical platforms (chi^(3)/kappa <= 10^-6) and demand squeezing exceeding 10 dB, which is currently unachieved experimentally. Thus, claiming that continuous-variable quantum processors achieve scalable quantum advantage without magic state distillation or with sub-10 dB squeezing is mathematically and physically invalid.",
+    "source": "research/CONTINUOUS_VARIABLE_GKP_NON_GAUSSIAN_BARRIER.md"
+  },
+  {
+    "applies_to": [
       "CODE-COSET-COLLECTIVE",
       "EXP-COSET-STABLE-SHAPE-CUBIC-GAP-CERTIFICATE"
     ],
@@ -65014,7 +65203,19 @@
       "PO-MEASUREMENT"
     ],
     "claim": "Initial negative claim for EXP-DHS-DCP-CARRY-QUADRATIC-EXTENSION-BOUNDARY.",
-    "evidence": {},
+    "evidence": {
+      "alternative_auxiliary_width_no_go_count": 0,
+      "exact_degree_two_extension_theorem_count": 1,
+      "extension_control_count": 3,
+      "finite_control_failure_count": 0,
+      "high_anf_representation_lower_bound_refutation_count": 1,
+      "minimum_treewidth_fraction": 0.9852941176470589,
+      "natural_primal_linear_treewidth_theorem_count": 1,
+      "new_quantum_algorithm_count": 0,
+      "polynomial_witness_solver_count": 0,
+      "primal_graph_control_count": 2,
+      "scaling_record_count": 2
+    },
     "id": "NEG-CP-CARRY-QUADRATIC-EXTENSION-BOUNDARY",
     "lesson": "Lesson from exact theorem analysis for EXP-DHS-DCP-CARRY-QUADRATIC-EXTENSION-BOUNDARY.",
     "reason_invalid": "Falsified or refined by exact theorem evaluation.",
@@ -65053,7 +65254,19 @@
       "PO-MEASUREMENT"
     ],
     "claim": "Initial negative claim for EXP-DHS-DCP-LABEL-INCIDENCE-RANK-WIDTH-NO-GO.",
-    "evidence": {},
+    "evidence": {
+      "all_branch_ordering_linear_rank_width_theorem_count": 1,
+      "approximate_contraction_no_go_count": 0,
+      "auxiliary_graph_rewrite_no_go_count": 0,
+      "cut_rank_control_count": 2,
+      "finite_control_failure_count": 0,
+      "minimum_rank_width_fraction": 0.5,
+      "new_quantum_algorithm_count": 0,
+      "polynomial_subset_sum_solver_count": 0,
+      "rank_tail_control_count": 2,
+      "scaling_record_count": 2,
+      "uniform_submatrix_rank_theorem_count": 1
+    },
     "id": "NEG-CP-LABEL-INCIDENCE-RANK-WIDTH-NO-GO",
     "lesson": "Lesson from exact theorem analysis for EXP-DHS-DCP-LABEL-INCIDENCE-RANK-WIDTH-NO-GO.",
     "reason_invalid": "Falsified or refined by exact theorem evaluation.",
@@ -67794,6 +68007,29 @@
   },
   {
     "applies_to": [
+      "FAULT-TOLERANT-QUANTUM-COMPUTING",
+      "EASTIN-KNILL-THEOREM",
+      "BRAVYI-KOENIG-BOUND",
+      "MAGIC-STATE-DISTILLATION",
+      "TRANSVERSAL-OBSTRUCTION"
+    ],
+    "claim": "Universal quantum computation can be achieved transversally without magic state distillation in local topological quantum error correcting codes such as the 2D surface code.",
+    "evidence": {
+      "bravyi_kitaev_distillation_threshold": "15-to-1 magic state distillation requires physical error epsilon < 1/sqrt(35) ~ 0.16903; distillation space-time overhead scales as Omega(log^2.465(1/P_L))",
+      "bravyi_koenig_hierarchy_bound": "In D spatial dimensions, transversal gates are strictly contained in level C^(D) of Clifford hierarchy; 2D surface codes are confined to C^(2) (Clifford group), precluding transversal T-gates",
+      "eastin_knill_transversal_finiteness": "For any code of distance d >= 2, Knill-Laflamme conditions force the continuous transversal Lie algebra dimension to 0, proving G_transversal is strictly finite and non-universal",
+      "epistemic_invariants_enforced": "speedup_claim_allowed = False; accepted_speedup_candidate = False",
+      "gottesman_knill_stabilizer_dequantization": "Transversal Clifford circuits on stabilizer states (T-count = 0) are simulated classically in O(n^2) time via Gottesman-Knill theorem",
+      "speedup_claim_allowed": false,
+      "steane_transversal_t_corruption": "Transversal T^7 on [[7,1,3]] Steane code applies relative phase -1 to weight-4 codewords, corrupting stabilizer codespace and destroying logical coherence"
+    },
+    "id": "NEG-EASTIN-KNILL-NON-CLIFFORD-FAULT-TOLERANT-BARRIER",
+    "lesson": "Universal quantum computation cannot be implemented transversally in any quantum error correcting code. By the Eastin-Knill theorem (2009), the group of logical transversal gates for any code with distance d >= 2 is strictly finite, precluding continuous or universal quantum gate synthesis. By the Bravyi-K\u00f6nig theorem (2013), local topological stabilizer codes in D dimensions are restricted to the D-th level of the Clifford hierarchy C^(D); in 2D surface codes, transversal operations are strictly limited to the Clifford group C^(2) = <H, S, CNOT>. On explicit codes like the [[7,1,3]] Steane code, transversal T^7 applies a relative phase (-1) to weight-4 codewords, knocking states out of the code space. Consequently, universal fault-tolerant quantum computation fundamentally requires non-transversal magic state injection and distillation (e.g. the Bravyi-Kitaev 15-to-1 protocol with threshold 1/sqrt(35) ~ 0.1690), incurring an Omega(log^2.465(1/P_L)) space-time volume overhead that consumes over 90% of physical quantum computer resources and shifts quantum crossover thresholds for polynomial speedups to astronomical problem sizes.",
+    "reason_invalid": "Theoretical quantum algorithms assume that universal gates (including non-Clifford T-gates) can be applied with unit time and error. In fault-tolerant quantum error correction, the Eastin-Knill theorem proves that no code can implement a universal gate set transversally. In 2D surface codes, the Bravyi-K\u00f6nig bound restricts transversal gates strictly to the Clifford group, which is dequantized classically in O(n^2) operations by the Gottesman-Knill theorem. Non-Clifford universality requires magic state distillation, which imposes an exponential physical qubit overhead on polynomial speedups. Thus, claiming fault-tolerant universality without magic state distillation or ignoring Eastin-Knill overhead in algorithmic scaling is mathematically invalid.",
+    "source": "research/EASTIN_KNILL_NON_CLIFFORD_FAULT_TOLERANT_BARRIER.md"
+  },
+  {
+    "applies_to": [
       "DHS-GOWERS-SIEVE",
       "EXP-DHS-DCP-COHERENT-MATCHING-INTERFACE"
     ],
@@ -67977,6 +68213,29 @@
   },
   {
     "applies_to": [
+      "NONABELIAN-COSET-COLLECTIVE-OBSERVABLES",
+      "WREATH-PRODUCT-HSP",
+      "LINEAR-CODE-EQUIVALENCE-BARRIER",
+      "SWAP-CHARACTER-UNIVERSALITY",
+      "SENDRIER-HULL-DEQUANTIZATION"
+    ],
+    "claim": "Quantum algorithms can achieve an exponential speedup for Linear Code Equivalence modeled as an HSP over the wreath product W_n = (S_n x S_n) \rtimes Z_2 over classical algorithms.",
+    "evidence": {
+      "black_box_query_lower_bound": "Omega(n!) = 2^{Omega(n log n)}",
+      "multi_copy_commutant_explosion": "dim(C_M) >= ((n!)^2)^{2M-1} / 2^{2M} >= 2^{Omega(n^2 log^2 n)} at M = Omega(n log n)",
+      "sendrier_classical_dequantization": "LCD and bounded hull h <= O(log n) codes solved in O(n^3 + 2^h n^2) classical time",
+      "single_copy_mutual_info": "I(sigma : M) <= poly(n) / n! = 2^{-Omega(n log n)}",
+      "speedup_claim_allowed": false,
+      "swap_character_universality": "chi_{(lambda, lambda, pm)}(tau_sigma) = pm d_lambda identically for all sigma in S_n",
+      "weak_fourier_blindness": "TV distance identically 0.000 across all candidate code equivalences"
+    },
+    "id": "NEG-LINEAR-CODE-EQUIVALENCE-WREATH-BARRIER",
+    "lesson": "Linear Code Equivalence over the wreath product W_n = (S_n x S_n) \rtimes Z_2 cannot achieve a quantum speedup. All n! code-swapping involutions are conjugate to tau_id in W_n, forcing all character values on extended irreps to be identically pm d_lambda independent of sigma. Weak Fourier sampling is completely blind (TV distance 0.000). Single-copy strong Fourier sampling yields exponentially vanishing information 2^{-Omega(n log n)}. Multi-copy collective measurements require diagonalizing a commutant of dimension 2^{Omega(n^2 log^2 n)}. Furthermore, for all codes with hull dimension h <= O(log n) (including all LCD codes h = 0), Sendrier's Support Splitting Algorithm solves the problem in polynomial classical time O(n^3 + 2^h n^2), completely dequantizing the problem classically.",
+    "reason_invalid": "For any permutation sigma in S_n, the swap involution tau_sigma = (sigma, sigma^-1, 1) satisfies (sigma, 1, 0) (1, 1, 1) (sigma, 1, 0)^-1 = tau_sigma, proving that all code equivalences belong to the exact same conjugacy class in W_n. By Clifford theory, chi_{(lambda, lambda, pm)}(tau_sigma) = pm Tr(rho(sigma) rho(sigma^-1)) = pm d_lambda, which is completely independent of sigma. Consequently, weak Fourier sampling produces identical probability distributions for all sigma, proving TV = 0.000 identically. For single-copy states, mutual information is bounded by poly(n) / n! = 2^{-Omega(n log n)}. The multi-copy commutant dimension is dim(C_M) >= ((n!)^2)^{2M-1} / 2^{2M} >= 2^{Omega(n^2 log^2 n)} at M = Omega(n log n) copies, requiring 2^{Omega(n^2 log^2 n)} quantum gates. On the classical side, for all codes with bounded hull dimension h <= O(log n) (such as LCD codes where the Gram matrix G G^T is invertible over F_q), Sendrier's algorithm computes the equivalence in polynomial classical time O(n^3 + 2^h n^2), dequantizing the problem classically and leaving no quantum advantage.",
+    "source": "research/LINEAR_CODE_EQUIVALENCE_WREATH_COMMUTANT_BARRIER.md"
+  },
+  {
+    "applies_to": [
       "CODE-COSET-COLLECTIVE",
       "MECH-INDEPENDENT-MULTIPLICITY-ONLY-DECODER"
     ],
@@ -68116,6 +68375,28 @@
   },
   {
     "applies_to": [
+      "NONABELIAN-COSET-COLLECTIVE-OBSERVABLES",
+      "LIE-TYPE-MATRIX-HSP",
+      "ORTHOGONAL-PARABOLIC-HSP",
+      "QUADRATIC-INVARIANT-OBSTRUCTION"
+    ],
+    "claim": "Quantum algorithms can achieve an exponential speedup for finding unknown parabolic subgroups P_U stabilizing isotropic subspaces in orthogonal groups O(d, F_q) and SO(d, F_q) over classical algorithms.",
+    "evidence": {
+      "ambient_density_collapse": "|P_m| / |span(P_m)| = q^{-(3m^2+m)/2} prod(1 - q^{-j}) <= 2^{-Omega(m^2 log q)}",
+      "bireflection_equivalence": "R_v in P_U <=> v in U^perp (odd char) and T_v in P_U <=> v in U^perp (char 2)",
+      "gelfand_pair_collapse": "(O^+(4, F_3), P_1) rank 3 with irreps [1, 6, 9], 0.000 bits mutual info",
+      "line_radical_abelian": "E(u, w1) E(u, w2) = E(u, w1 + w2) universally abelian of order q^{d-2}",
+      "query_complexity_bound": "Q_classical <= 4(d - k)(q^k + 1) = O(d q^k)",
+      "speedup_claim_allowed": false,
+      "trace_pairing_degeneracy": "Tr(B C) = 2 sum_{i < j} B_ij C_ij == 0 mod 2 on alternating Lie algebras"
+    },
+    "id": "NEG-ORTHOGONAL-PARABOLIC-DEQUANTIZATION-BOUND",
+    "lesson": "Orthogonal parabolic HSP in O(d, F_q) and SO(d, F_q) cannot yield an exponential quantum speedup. The problem is classically dequantized in O(d q^k) queries via orthogonal reflections (in odd characteristic) and orthogonal transvections (in characteristic 2). For all low dimensions k <= O(log d), the problem is solved in polynomial classical time poly(d, log q). Additive Fourier sampling over M_d(F_q) is extinguished by ambient density collapse 2^{-Omega(m^2 log q)}, Lie algebra trace duality fails over F_2, and single-copy weak Fourier sampling yields identically 0.000 bits of mutual information.",
+    "reason_invalid": "For every k-dimensional isotropic subspace U in F_q^d (1 <= k <= m = floor(d/2)) and every non-singular vector v in F_q^d, the orthogonal reflection R_v (for p > 2) or transvection T_v (for p = 2) belongs to P_U if and only if v in U^perp. In SO(d, F_q) for k < m, bireflections R_{v0} R_v satisfy the identical equivalence. An explicit classical randomized algorithm finds a basis of U^perp in expected O(d q^k) queries and recovers U = (U^perp)^perp in O(d^3) classical time. For all k <= O(log d), the classical time is poly(d, log q), ruling out any quantum speedup. For maximal isotropic parabolics, the ambient density collapses exponentially to q^{-(3m^2+m)/2} prod(1 - q^{-j}) = 2^{-Omega(m^2 log q)}, destroying additive Fourier sampling. Over F_2, the trace pairing on alternating matrices identically vanishes (Tr(B C) == 0 mod 2), invalidating Lie algebra Fourier sampling. Furthermore, (O^+(4, F_3), P_1) is a symmetric Gel'fand pair with irrep dimensions [1, 6, 9], yielding 0.000 bits of single-copy mutual information, and multi-copy collective tomography requires diagonalizing the partition commutant P_M(|X_1|) of dimension B(2M) >= (2M - 1)!! = 2^{Omega(d log d)}.",
+    "source": "research/ORTHOGONAL_PARABOLIC_HSP_OBSTRUCTION_QUADRATIC_INVARIANT.md"
+  },
+  {
+    "applies_to": [
       "CODE-COSET-COLLECTIVE",
       "EXP-CODE-SELF-DUAL-WREATH-COHERENT-COMPONENT-TRIM-HYBRID"
     ],
@@ -68150,6 +68431,172 @@
     "lesson": "Joint parity block decoding improves on independent product USD, but eliminating the inner spins reveals an exact classical correlated constraint sampler with the same threshold. Comparing only against independent-clause Prange creates a false quantum advantage signal.",
     "reason_invalid": "Eliminating the Hamiltonian block spin yields a correlated classical block-Prange sampler whose constraint load 2*c^2 exactly matches the joint quantum erasure load, matching the random-sign Gibbs sampling threshold.",
     "source": "/Users/jaspersands/Desktop/quantum algorithm search/research/classical_baselines/parity_block_usd_prange.json"
+  },
+  {
+    "applies_to": [
+      "QAOA",
+      "COMBINATORIAL-OPTIMIZATION",
+      "MAX-CUT",
+      "GOEMANS-WILLIAMSON-SDP",
+      "HASTINGS-LOCAL-ALGORITHM",
+      "LIGHT-CONE-LOCALITY",
+      "OVERLAP-GAP-PROPERTY"
+    ],
+    "claim": "The Quantum Approximate Optimization Algorithm (QAOA) at bounded depth p = O(1) outperforms classical polynomial-time approximation algorithms or achieves quantum computational advantage for combinatorial optimization on bounded-degree graphs.",
+    "evidence": {
+      "bravyi_lightcone_tree_barrier": "Bravyi et al. (PRL 2020) proved that depth-p QAOA light cones on graphs with girth g > 2p + 1 see only bipartite trees, blinding local measurements to cycle frustration; seeing cycles requires p = Omega(log n), where light cones contain poly(n) qubits and trigger barren plateaus",
+      "epistemic_invariants_enforced": "speedup_claim_allowed = False; accepted_speedup_candidate = False",
+      "farhi_exact_p1_ratio": "For Max-Cut on 3-regular graphs, QAOA at p=1 has exact analytical ratio alpha = 1/2 + sqrt(3)/9 approx 0.69245009, offering only a slight improvement over random guessing (0.50)",
+      "goemans_williamson_sdp_dominance": "The classical Goemans-Williamson SDP algorithm achieves an approximation ratio alpha_GW approx 0.878567, strictly dominating QAOA p=1 (0.6925) and p=2 (0.7559) by over 18%, requiring p >= 11 for QAOA to match",
+      "hastings_classical_local_superiority": "Hastings (2019) proved that a classical randomized local algorithm with interaction radius R=1 achieves alpha > 0.7025 on high-girth 3-regular graphs, strictly beating p=1 QAOA under identical locality constraints",
+      "overlap_gap_property_parisi_barrier": "Gamarnik et al. (2021) proved that the Overlap Gap Property (OGP) on random regular graphs creates an unbridgeable constant gap between spatially stable algorithms (including low-depth QAOA) and the ground state Parisi constant P_* approx 0.7632",
+      "speedup_claim_allowed": false
+    },
+    "id": "NEG-QAOA-BOUNDED-DEPTH-OPTIMIZATION-BARRIER",
+    "lesson": "The Quantum Approximate Optimization Algorithm (QAOA) cannot achieve quantum speedup or surpass classical algorithms on bounded-degree combinatorial optimization problems. At depth p=1 on 3-regular graphs, QAOA achieves an approximation ratio of exactly 1/2 + sqrt(3)/9 approx 0.69245, which is outperformed by classical local rounding algorithms (alpha > 0.7025 by Hastings 2019) and heavily dominated by classical Goemans-Williamson SDP relaxation (alpha_GW approx 0.87857). By the Bravyi-Kliesch-Koenig-Tang theorem (PRL 2020), depth-p QAOA is restricted by Lieb-Robinson light cones to tree-like local neighborhoods on graphs of high girth, rendering it blind to cycle frustration and topological constraints unless depth reaches p = Omega(log n). At logarithmic depth, the circuit light cone explodes to polynomial size, inducing barren plateaus and classical tensor network simulability. Furthermore, the Overlap Gap Property (OGP) rigorously prevents any low-depth quantum or local algorithm from reaching the ground state energy governed by the Parisi constant. Thus, QAOA provides zero algorithmic advantage over classical optimization techniques.",
+    "reason_invalid": "QAOA at low depth p=O(1) is provably inferior to classical algorithms: Goemans-Williamson SDP achieves 0.87856 on Max-Cut, beating QAOA p=1 (0.6925) by over 18%, and classical local algorithms beat p=1 QAOA under identical radius constraints. Light-cone locality prevents low-depth circuits from detecting cycle frustration on high-girth graphs, and the Overlap Gap Property fundamentally blocks spatially stable quantum circuits from optimizing past the clustering barrier. Increasing depth to Omega(log n) requires circuits with polynomial neighborhood size that suffer from barren plateaus and noise-induced fidelity collapse. Therefore, claiming that QAOA achieves scalable quantum advantage or beats classical algorithms on combinatorial optimization is mathematically and computationally invalid.",
+    "source": "research/QAOA_BOUNDED_DEPTH_OPTIMIZATION_BARRIER.md"
+  },
+  {
+    "applies_to": [
+      "QUANTUM-CHAOS",
+      "SPECTRAL-FORM-FACTOR",
+      "RANDOM-MATRIX-THEORY",
+      "WIGNER-SURMISE-REPULSION",
+      "RETURN-FIDELITY-COLLAPSE"
+    ],
+    "claim": "Quantum Fourier Sampling or Quantum Phase Estimation can extract periods or harmonic structures from quantum chaotic Hamiltonians whose spectra obey Random Matrix Theory.",
+    "evidence": {
+      "classical_oganesyan_huse_dequantization": "Classical consecutive gap ratio <r> distinguishes Poisson (<r> ~ 0.386) from GUE (<r> ~ 0.600) in O(N log N) operations without quantum evolution",
+      "epistemic_invariants_enforced": "speedup_claim_allowed = False; accepted_speedup_candidate = False",
+      "return_fidelity_collapse": "Chaotic return fidelity collapses to F(t) = K(t) / N^2 <= 1/N = 2^-n, an exponential suppression of Omega(N) compared to integrable revivals F(T) = 1.000",
+      "sff_linear_ramp": "Spectral Form Factor K(t) exhibits a linear ramp K_GUE(t) ~ t / 2pi and saturates at plateau N, with zero periodic revival spikes of height N^2",
+      "speedup_claim_allowed": false,
+      "swap_test_exponential_measurement_barrier": "Measuring the SFF ramp on quantum computers via two-copy SWAP tests yields <SWAP> = K(t) / N^2 <= 1/N = 2^-n, requiring Omega(N^2) = 2^Omega(n) measurement shots",
+      "wigner_surmise_level_repulsion": "Level spacing distribution obeys Wigner surmise P(0) = 0, precluding harmonic arithmetic progressions"
+    },
+    "id": "NEG-QUANTUM-CHAOS-SFF-PERIOD-FINDING-BARRIER",
+    "lesson": "Quantum period finding and phase estimation cannot operate on quantum chaotic systems whose spectra follow Random Matrix Theory (RMT). Unlike integrable systems where harmonic progressions En = n Delta generate 100% return revivals F(T) = 1.000 and SFF revival spikes of height N^2, chaotic systems exhibit Wigner level repulsion (P(0) = 0) with no harmonic ladder. The Spectral Form Factor K(t) exhibits a linear ramp K(t) ~ t / 2pi and plateau N, never exceeding N for t > t_dip. The quantum return fidelity collapses to F(t) <= 1/N = 2^-n, an exponential suppression of Omega(N) = 2^Omega(n). The system never revives within polynomial time, causing quantum period finding algorithms to fail completely. Furthermore, measuring the SFF ramp on quantum hardware requires Omega(N^2) = 2^Omega(n) SWAP test shots, while classical computation diagnoses quantum chaos via the Oganesyan-Huse ratio <r> in O(N log N) operations.",
+    "reason_invalid": "Quantum period finding fundamentally requires harmonic arithmetic eigenvalue progressions En = n Delta. In quantum chaotic systems (by the Bohigas-Giannoni-Schmit conjecture), energy levels obey Random Matrix Theory with Wigner level repulsion P(0) = 0 and zero harmonic coherence. The Spectral Form Factor lacks periodic revival spikes, replacing them with a linear ramp and plateau K(t) <= N. The state return fidelity collapses to F(t) = K(t) / N^2 <= 1/N = 2^-n -> 0, preventing constructive Fourier interference in polynomial time. Measuring the ramp quantumly requires an exponential number of shots Omega(N^2) = 2^Omega(n), whereas classical algorithms compute the consecutive gap ratio <r> in O(N log N) time. Thus, claiming quantum Fourier speedups for period finding on chaotic Hamiltonians is mathematically invalid.",
+    "source": "research/QUANTUM_CHAOS_SFF_PERIOD_FINDING_BARRIER.md"
+  },
+  {
+    "applies_to": [
+      "QUANTUM-ERGODICITY",
+      "EIGENSTATE-THERMALIZATION-HYPOTHESIS",
+      "SREDNICKI-MATRIX-ANSATZ",
+      "LOCAL-OBSERVABLE-BLINDNESS",
+      "EXPONENTIAL-SHOT-BARRIER"
+    ],
+    "claim": "Quantum algorithms can efficiently extract microscopic phase, period, or group-theoretic information by measuring local observables on highly excited eigenstates or bulk microcanonical states of non-integrable quantum many-body systems.",
+    "evidence": {
+      "classical_microcanonical_dequantization": "Local observable expectation values in the infinite-temperature bulk are predicted classically in O(1) time via Tr(A)/D with error <= O(2^-n/2), eliminating quantum advantage",
+      "eigenstate_fluctuation_thermal_blindness": "Consecutive eigenstate differences in the bulk are suppressed as O(2^-n/2) (0.1373 in chaotic vs 0.3937 in integrable), proving local indistinguishability of adjacent eigenstates",
+      "epistemic_invariants_enforced": "speedup_claim_allowed = False; accepted_speedup_candidate = False",
+      "exponential_measurement_shot_barrier": "Resolving eigenstate identity from local measurements requires resolving bias delta <= O(2^-n/2), demanding Omega(1/delta^2) = Omega(2^n) measurement shots (M > 10^15 for n=50)",
+      "speedup_claim_allowed": false,
+      "srednicki_offdiagonal_rms_scaling": "Off-diagonal elements of local observables scale as RMS ~ 1/sqrt(D) = 2^(-n/2) (0.1194 ~ 0.1250 for n=6, D=64)",
+      "temporal_fluctuation_dephasing": "Long-time temporal variance of local observables relaxes to the diagonal ensemble with fluctuations bounded by Var_t(<A>) <= O(2^-n)"
+    },
+    "id": "NEG-QUANTUM-ERGODICITY-ETH-LOCAL-OBSERVABLE-BARRIER",
+    "lesson": "Quantum algorithms cannot extract microscopic structural data from excited states or bulk microcanonical ensembles of non-integrable quantum many-body systems. By Srednicki's Eigenstate Thermalization Hypothesis (ETH), every individual many-body energy eigenstate behaves as an exact thermal ensemble for all few-body observables. Diagonal matrix elements differ from the smooth microcanonical expectation value by at most O(2^-n/2), and consecutive eigenstate differences vanish exponentially, rendering adjacent eigenstates locally indistinguishable. Temporal fluctuations under Hamiltonian evolution decay as O(2^-n), erasing all relative phase information from local measurements. Distinguishing any specific bulk eigenstate from the thermal ensemble requires resolving an exponentially small bias delta <= O(2^-n/2), demanding an exponential number of measurements M = Omega(2^n). Furthermore, local observable expectation values on bulk chaotic eigenstates are computed classically in O(1) operations via the microcanonical trace Tr(A)/D, completely dequantizing local observable prediction in the ETH bulk.",
+    "reason_invalid": "Quantum phase estimation and Fourier sampling on many-body systems fundamentally require observables whose expectation values vary macroscopically between eigenstates. In non-integrable chaotic systems, the Eigenstate Thermalization Hypothesis enforces universal thermal equivalence: all individual bulk eigenstates yield identical local observable expectation values up to exponentially vanishing corrections O(2^-n/2). Distinguishing eigenstates requires Omega(2^n) quantum measurement shots, rendering polynomial quantum algorithms completely blind to eigenstate identities. Because classical statistical mechanics computes the identical thermal expectation value in O(1) time via Tr(A)/D, claiming quantum algorithmic advantage for local observable or phase extraction from ETH bulk eigenstates is mathematically invalid.",
+    "source": "research/QUANTUM_ERGODICITY_ETH_LOCAL_OBSERVABLE_BARRIER.md"
+  },
+  {
+    "applies_to": [
+      "QUANTUM-ERROR-MITIGATION",
+      "PROBABILISTIC-ERROR-CANCELLATION",
+      "ZERO-NOISE-EXTRAPOLATION",
+      "SAMPLING-OVERHEAD-BARRIER",
+      "TAKAGI-LOWER-BOUND",
+      "NISQ-DEQUANTIZATION"
+    ],
+    "claim": "Quantum Error Mitigation (QEM) methods such as PEC and ZNE can scale to deep quantum circuits and achieve polynomial quantum algorithmic advantage without fault-tolerant quantum error correction.",
+    "evidence": {
+      "epistemic_invariants_enforced": "speedup_claim_allowed = False; accepted_speedup_candidate = False",
+      "pec_exponential_shot_overhead": "PEC local noise inversion requires quasi-probability negativity gamma = (1 + eps/2)/(1 - eps) > 1, scaling total shot overhead as M = Omega(gamma^(2 N_g)) = Omega(e^(3 eps N_g)); at N_g = 300, eps = 0.02, variance overhead exceeds 7e7x requiring > 10^11 shots",
+      "quek_nisq_dichotomy_mps_subsumption": "Quek et al. (2024) proved that shallow mitigatable circuits (d <= O(1/eps)) are simulated classically in polynomial time O(n d chi^3) via Matrix Product States; deep circuits (d >= Omega(1/eps)) require exponential shots, eliminating all speedup",
+      "speedup_claim_allowed": false,
+      "takagi_universal_sampling_lower_bound": "Takagi et al. (PRL 2022) proved that ANY unbiased error mitigation protocol requires M_shots >= Omega((1 + 2 eps)^(2 N_g) / delta^2); for N_g = 500, eps = 0.015, M_shots exceeds 2.75e15 shots (> 8,700 years)",
+      "zne_bias_variance_dilemma": "ZNE Richardson weights a = [3, -3, 1] amplify statistical variance by Lambda = 19x (3.8x worse than linear), while low-order fits retain systematic non-linear bias -c_2 lambda_1 lambda_2 != 0"
+    },
+    "id": "NEG-QUANTUM-ERROR-MITIGATION-EXPONENTIAL-SAMPLING-BARRIER",
+    "lesson": "Quantum Error Mitigation (QEM) cannot provide a scalable quantum computational speedup or substitute for physical fault-tolerant error correction. For Probabilistic Error Cancellation (PEC), inverting noise requires signed quasi-probabilities with 1-norm gamma = (1 + eps/2)/(1 - eps), causing the sampling overhead to explode exponentially as M_shots = Omega(gamma^(2 N_g)) = Omega(e^(3 eps N_g)). For Zero-Noise Extrapolation (ZNE), Richardson extrapolation weights amplify measurement variance exponentially (Lambda = 19x for quadratic fit) while lower-order extrapolation retains uncorrectable non-linear bias. By the Takagi universal lower bound (PRL 2022), any unbiased QEM protocol on N_g gates requires Omega((1 + 2 eps)^(2 N_g) / delta^2) shots, demanding over 2.75e15 shots for 500 gates at 1.5% error. Furthermore, by the Quek et al. dichotomy (Nature Phys 2024), shallow circuits where QEM is sample-efficient are dequantized classically in polynomial time by low-bond Matrix Product States, whereas deep circuits demand astronomical shot counts. Thus, physical fault-tolerant quantum error correction is strictly unavoidable for quantum advantage.",
+    "reason_invalid": "Quantum error mitigation methods scale exponentially in measurement shot requirements with circuit size. The Takagi universal bound proves that any unbiased mitigation protocol requires Omega(e^(4 eps N_g)) shots, which exceeds 10^15 shots for moderate circuits of a few hundred gates. In shallow regimes where shots are polynomial, Quek et al. proved that classical Matrix Product States simulate the expectation values in polynomial time O(n d chi^3). ZNE suffers from an intractable bias-variance tradeoff where non-linear noise bias cannot be removed without exponential variance inflation. Therefore, claiming that QEM enables scalable quantum algorithmic speedups or replaces fault tolerance is mathematically, statistically, and physically invalid.",
+    "source": "research/QUANTUM_ERROR_MITIGATION_EXPONENTIAL_BARRIER.md"
+  },
+  {
+    "applies_to": [
+      "QUANTUM-MACHINE-LEARNING",
+      "QUANTUM-KERNEL-METHODS",
+      "PROJECTED-QUANTUM-KERNELS",
+      "QUANTUM-TANGENT-KERNEL",
+      "HAAR-CONCENTRATION",
+      "TANG-DEQUANTIZATION",
+      "RKHS-SUBSUMPTION"
+    ],
+    "claim": "Quantum kernel methods and quantum neural networks achieve scalable super-polynomial quantum speedup over classical machine learning algorithms on general data distributions without exponential measurement shot overhead or classical RKHS subsumption.",
+    "evidence": {
+      "classical_sq_dequantization_tang": "Tang (STOC 2019) and Chia et al. (JACM 2022) proved that given sample-and-query access to classical input data, randomized classical algorithms evaluate low-rank matrix approximation, PCA, and kernel ridge regression in poly(k, 1/eps) log(Nd) time, dequantizing claimed HHL/QSVM exponential speedups",
+      "epistemic_invariants_enforced": "speedup_claim_allowed = False; accepted_speedup_candidate = False",
+      "haar_kernel_exponential_concentration": "Thanasilp et al. (2022) and Huang et al. (2021) proved that expressive quantum kernels concentrate exponentially as Var(K(x, x')) = Theta(1/8^n), collapsing the Gram matrix to identity K -> I and demanding Omega(4^n) measurement shots to distinguish distinct data points",
+      "projected_quantum_kernel_classical_equivalence": "Huang et al. (Nature Comm 2021) demonstrated that local projected quantum kernels K_PQK(x, x') = exp(-gamma sum_k ||rho_k(x) - rho_k(x')||_F^2) are mathematically equivalent to classical Gaussian RBF kernels on 3n-dimensional classical Bloch vectors evaluated in O(n) classical time with zero quantum speedup",
+      "quantum_tangent_kernel_trace_vanishing": "Liu et al. (2023) and Shaydulin et al. (2024) proved that the trace norm of the QTK vanishes as E[Theta(x, x)] = Theta(P / 2^n); maintaining non-vanishing gradient flow requires exponential overparameterization P = Omega(2^n), rendering training non-scalable",
+      "speedup_claim_allowed": false
+    },
+    "id": "NEG-QUANTUM-MACHINE-LEARNING-KERNEL-CONCENTRATION-BARRIER",
+    "lesson": "Quantum Machine Learning (QML) cannot achieve scalable super-polynomial quantum advantage over classical machine learning. Expressive global quantum feature maps concentrate exponentially under Haar measure, forcing off-diagonal kernel elements to vanish with variance Theta(1/8^n), which collapses the Gram matrix to the identity matrix and requires Omega(4^n) measurement shots per entry to detect any data structure. Projected quantum kernels designed to avoid concentration are mathematically identical to classical Gaussian RBF kernels on classical Bloch feature vectors, running in O(n) classical time without quantum advantage. In variational QNNs, the Quantum Tangent Kernel vanishes as Theta(P / 2^n), demanding exponential overparameterization P = Omega(2^n) to sustain gradient flow. Furthermore, early claims of exponential speedups via HHL (such as QSVM and QPCA) are fully dequantized by classical randomized sample-and-query algorithms operating in poly(k, 1/eps) log(Nd) time. Thus, quantum processors do not expand the computational capacity of classical reproducing kernel Hilbert spaces.",
+    "reason_invalid": "Expressive quantum kernels concentrate exponentially to the identity matrix due to Haar measure geometry, requiring exponentially many measurement shots Omega(4^n) to resolve kernel values. Local projected kernels that avoid concentration are classically simulable in linear time O(n) as standard classical Gaussian RBF kernels on Bloch vectors. Variational QTK gradient flows require an exponential number of parameters P = Omega(2^n) to avoid vanishing, and classical SQ dequantization proves that classical algorithms match logarithmic matrix operations given symmetric data access. Therefore, claiming scalable quantum computational advantage for quantum kernels or QML models on general data distributions is mathematically and computationally invalid.",
+    "source": "research/QUANTUM_MACHINE_LEARNING_KERNEL_CONCENTRATION_BARRIER.md"
+  },
+  {
+    "applies_to": [
+      "QUANTUM-SCRAMBLING",
+      "OUT-OF-TIME-ORDER-CORRELATOR",
+      "MSS-CHAOS-BOUND",
+      "OPERATOR-SIZE-GROWTH",
+      "CLIFFORD-DEQUANTIZATION"
+    ],
+    "claim": "Quantum algorithms can efficiently extract local phases, period structures, or hidden subgroups after time evolution under fast-scrambling quantum chaotic Hamiltonians.",
+    "evidence": {
+      "clifford_gottesman_knill_dequantization": "Clifford scrambling preserves single Pauli strings (|c_P| = 1) and is solved classically in O(n^2) operations via Gottesman-Knill theorem",
+      "epistemic_invariants_enforced": "speedup_claim_allowed = False; accepted_speedup_candidate = False",
+      "maldacena_shenker_stanford_chaos_bound": "Quantum Lyapunov exponent is universally upper bounded by lambda_L <= 2pi k_B T / hbar = 2pi / beta; non-integrable spin chains are strictly sub-maximal",
+      "operator_size_growth_saturation": "Average Pauli operator size S(W(t)) expands from S(W(0)) = 1.0 to the Haar-random infinite-temperature limit (3/4)*n, converting local information into irreducible n-body Pauli entanglement",
+      "otoc_squared_commutator_saturation": "Chaotic Ising chain squared commutator C(t) = 1 - Re(F(t)) saturates to scrambled plateau C(5.0) ~ 0.9411, while integrable chain undergoes periodic revivals to C(5.0) ~ 0.0019",
+      "speedup_claim_allowed": false,
+      "swingle_loschmidt_echo_collapse": "Time-reversal echo return probability F_echo(t) collapses to < 0.01 in chaotic systems, while integrable systems revive to > 0.95"
+    },
+    "id": "NEG-QUANTUM-SCRAMBLING-OTOC-MSS-COMPLEXITY-BARRIER",
+    "lesson": "Quantum algorithms cannot extract phase, period, or group-theoretic structure from quantum states that have undergone time evolution under fast-scrambling chaotic Hamiltonians. In non-integrable systems, the Out-of-Time-Order Correlator (OTOC) decays rapidly, and the squared commutator C(t) = 1 - Re(F(t)) saturates to an extensive scrambled plateau C(t) -> 1.0 with zero revivals. The Heisenberg operator W(t) undergoes exponential operator size growth, saturating to the Haar-random limit S_infty = (3/4)n, delocalizing initially local quantum information across non-local n-body Pauli entanglement. Consequently, all local observables decay to thermal equilibrium, and any subsequent measurement to extract period or phase information requires measuring non-local operators of Pauli weight Omega(n), which is exponentially suppressed by Omega(2^-n). The rate of this scrambling is universally bounded by the Maldacena-Shenker-Stanford (MSS) bound lambda_L <= 2pi / beta. Furthermore, in Clifford circuits where scrambling is superficially fast, operator support remains concentrated on single Pauli strings (|c_P| = 1), dequantizing OTOC evaluation classically in O(n^2) time via the Gottesman-Knill theorem.",
+    "reason_invalid": "Quantum phase estimation and Fourier sampling fundamentally require observables that maintain localized support and coherent periodic revivals. In chaotic many-body systems, quantum scrambling rapidly delocalizes local operators across the entire Hilbert space, saturating the average operator size to (3/4)n and collapsing the Swingle-Loschmidt time-reversal echo to F_echo(t) <= 2^-2n -> 0. Once information is scrambled, extracting any global algebraic period or coset orientation requires measuring operators of weight Omega(n), requiring exponential quantum circuit depth. For Clifford scrambling where operator spreading occurs, the dynamics are dequantized classically in O(n^2) operations by the Gottesman-Knill theorem. Thus, claiming quantum algorithmic speedups for phase or hidden structure extraction in fast-scrambled chaotic systems is mathematically invalid.",
+    "source": "research/QUANTUM_SCRAMBLING_OTOC_MSS_COMPLEXITY_BARRIER.md"
+  },
+  {
+    "applies_to": [
+      "QUANTUM-SUPREMACY",
+      "RANDOM-CIRCUIT-SAMPLING",
+      "PORTER-THOMAS-STATISTICS",
+      "CROSS-ENTROPY-BENCHMARKING",
+      "TENSOR-NETWORK-SLICING",
+      "ANTICONCENTRATION-BARRIER"
+    ],
+    "claim": "Random Circuit Sampling (RCS) on noisy quantum processors provides an exponential, verifiable quantum computational speedup over classical computation for useful problem solving.",
+    "evidence": {
+      "anticoncentration_entropy_deficit": "Shannon entropy of Porter-Thomas random circuit states is within (1 - gamma)/ln(2) ~ 0.6099 bits of maximal entropy; maximum basis probability is bounded by O(n/2^n) -> 0, eliminating constructive interference peaks",
+      "classical_mps_spoofing": "Shallow classical tensor networks and Matrix Product States can spoof noisy XEB fidelity F_XEB <= 0.01 in polynomial time poly(n) without synthesizing full quantum states",
+      "epistemic_invariants_enforced": "speedup_claim_allowed = False; accepted_speedup_candidate = False",
+      "linear_xeb_noise_decay": "Normalized linear XEB decays linearly with depolarizing noise F_norm = lambda; at physical fidelity F ~ 0.0022 (Sycamore), over 99.78% of physical samples are uncorrelated white noise",
+      "porter_thomas_moments": "Haar-random output probabilities obey Porter-Thomas distribution P(p) = D exp(-D p) with E[D p] = 1.0, E[(D p)^2] = 2.0, and anticoncentration ratio E[p^2]/(E[p])^2 = 2.0",
+      "speedup_claim_allowed": false,
+      "tensor_slicing_dequantization": "Pan-Chen (2021) tensor slicing reduces treewidth from tw to tw - s, allowing Sycamore 53-qubit depth-20 amplitude computation in seconds and full sampling in hours on classical GPU clusters",
+      "verification_catch_22": "Computing ideal probabilities p(x) for XEB verification is #P-hard: if classically verifiable, the circuit is classically simulable; if scaled beyond classical simulation (n >= 100), verification is intractable in polynomial time"
+    },
+    "id": "NEG-QUANTUM-SUPREMACY-RCS-ANTICONCENTRATION-BARRIER",
+    "lesson": "Random Circuit Sampling (RCS) does not establish a useful or permanent quantum computational advantage. Output probabilities strictly obey the Porter-Thomas distribution P(p) = D exp(-D p), possessing near-maximal Shannon entropy H(p) = n - 0.61 bits and extreme value peak bound p_max = O(n/2^n), which deliberately eliminates constructive quantum interference and renders RCS structurally incapable of solving decision, search, or algebraic problems. In physical hardware, gate noise collapses total fidelity exponentially to F_XEB ~ 0.002, meaning over 99.78% of experimental samples are uncorrelated white noise; such low-fidelity distributions can be spoofed by classical shallow Matrix Product States in polynomial time poly(n). Furthermore, classical space-time tensor network slicing (Pan & Chen 2021) reduces effective treewidth to tw - s, enabling classical simulation of 53-qubit 20-cycle circuits in seconds on classical GPU clusters and demolishing the 10,000-year speedup claim. Finally, verifying RCS requires computing ideal amplitudes p(x), creating an unbreakable verification dilemma: in the regime where quantum advantage is claimed, classical verification is #P-hard and intractable.",
+    "reason_invalid": "Random Circuit Sampling solves no structured computational decision problem, decision search, or algebraic problem; its output is an anticoncentrated cloud of Porter-Thomas noise with Shannon entropy H(p) ~ n - 0.61 bits. The claimed exponential classical hardness was refuted by classical space-time tensor network slicing (Pan-Chen 2021), which simulated the Sycamore processor in hours rather than 10,000 years. Physical gate errors degrade the output fidelity to F ~ 0.002, which Gao et al. (2021) and Aharonov et al. (2023) proved can be spoofed classically by shallow tensor networks in polynomial time. Moreover, verifying XEB fidelity requires computing #P-hard amplitudes, precluding polynomial-time verification for large circuits. Thus, claiming Random Circuit Sampling provides a scalable, verifiable quantum speedup is mathematically and empirically invalid.",
+    "source": "research/QUANTUM_SUPREMACY_RCS_ANTICONCENTRATION_BARRIER.md"
   },
   {
     "applies_to": [
@@ -72354,6 +72801,142 @@
     "lesson": "Lesson from exact theorem analysis for EXP-CODE-SELF-DUAL-WREATH-WINDOWED-ROOT-FLATNESS-BRIDGE.",
     "reason_invalid": "Falsified or refined by exact theorem evaluation.",
     "source": "EXP-CODE-SELF-DUAL-WREATH-WINDOWED-ROOT-FLATNESS-BRIDGE"
+  },
+  {
+    "applies_to": [
+      "NONABELIAN-COSET-COLLECTIVE-OBSERVABLES",
+      "LIE-TYPE-MATRIX-HSP",
+      "NON-SPLIT-TORAL-HSP",
+      "SINGER-CYCLE-OBSTRUCTION",
+      "DELIGNE-LUSZTIG-COMMUTANT-BARRIER"
+    ],
+    "claim": "Quantum algorithms can efficiently find unknown non-split maximal tori (Singer cycles) in GL(n, F_q) in polynomial time.",
+    "evidence": {
+      "classical_query_lower_bound": "Omega(q^{n(n-1)/4}) = 2^{Omega(n^2 log q)}",
+      "deligne_lusztig_commutant_dim": "dim(C_M) >= n^M, gate lower bound 2^{Omega(n^2 log n)}",
+      "gelfand_pair_collapse": "(GL(2, F_3), T) rank 3 with irreps [1, 2, 3], 0.000 bits mutual info",
+      "singer_cycle_subgroup_count": "N_Singer = (1/n) q^{n(n-1)/2} prod_{j=1}^{n-1} (q^j - 1) = 2^{Theta(n^2 log q)}",
+      "speedup_claim_allowed": false,
+      "transvection_emptiness": "T cap Transvections = empty (T acts irreducibly on F_q^n)"
+    },
+    "id": "NEG-SINGER-CYCLE-TORAL-HSP-BARRIER",
+    "lesson": "Non-split maximal tori (Singer cycles) in GL(n, F_q) constitute an impenetrable barrier for both classical and quantum algorithms. Because T acts irreducibly on F_q^n, it contains zero transvections, zero unipotent elements, and stabilizes no non-trivial subspaces. Classical collision algorithms require 2^{Omega(n^2 log q)} queries. Single-copy weak Fourier sampling suffers complete spherical extinction (0.000 bits mutual information) across cuspidal Deligne-Lusztig representations of exponential dimension 2^{Theta(n^2 log q)}. Multi-copy collective tomography requires diagonalizing a commutant of dimension >= n^M, enforcing a quantum gate lower bound of 2^{Omega(n^2 log n)}.",
+    "reason_invalid": "Every element g in T \\ F_q* I has an irreducible characteristic polynomial of degree n over F_q with no eigenvalues in F_q. Consequently, T contains no transvections or unipotent matrices (T cap Transvections = empty). Classical structured probes cannot produce collisions, enforcing an unconditional query lower bound of Omega(sqrt(|GL|/|T|)) = 2^{Omega(n^2 log q)}. Weak Fourier sampling over GL(n, F_q) projects onto cuspidal Deligne-Lusztig representations R_T^G(theta) with probability d_theta / |G/T|, which is identically independent of T (0.000 bits of mutual information). Multi-copy measurements on M copies require diagonalizing a commutant algebra of dimension >= n^M, which for M = Omega(n^2) copies needed to identify T among N_Singer = 2^{Theta(n^2 log q)} candidates requires at least 2^{Omega(n^2 log n)} quantum gates.",
+    "source": "research/SINGER_CYCLE_TORAL_HSP_OBSTRUCTION_DELIGNE_LUSZTIG_BARRIER.md"
+  },
+  {
+    "applies_to": [
+      "SL2R-HSP",
+      "NONCOMPACT-LIE-GROUP",
+      "HARISH-CHANDRA-CHARACTERS",
+      "CONTINUOUS-PLANCHEREL-MEASURE",
+      "INFINITE-DIMENSIONAL-COMMUTANT"
+    ],
+    "claim": "The Hidden Subgroup Problem over the non-compact Lie group SL(2, R) with respect to discrete Fuchsian subgroups can be solved in polynomial time by quantum Fourier sampling.",
+    "evidence": {
+      "anosov_chaos_lyapunov_exponent": "Geodesic flow on H^2 / Gamma has Lyapunov exponent lambda = 1.000; quantum eigenvalues exhibit GOE level repulsion with zero invariant tori",
+      "continuous_plancherel_measure": "Plancherel density dmu(r) = (1/4pi) r tanh(pi r / 2) dr is continuous with diverging total volume, causing continuous spectral broadening and non-normalizable states",
+      "epistemic_invariants_enforced": "speedup_claim_allowed = False; accepted_speedup_candidate = False",
+      "harish_chandra_character_invariance": "Theta_ir(g gamma g^{-1}) == Theta_ir(gamma) identically for all g, gamma in SL(2, R)",
+      "infinite_dimensional_commutant": "By Repka's theorem (1978), P_ir1 (x) P_ir2 contains a continuous direct integral of principal series irreps; commutant algebra C_M = End_G((P_ir)^{otimes M}) is an infinite-dimensional von Neumann algebra whose Racah intertwiners are transcendental Barnes integrals",
+      "speedup_claim_allowed": false,
+      "weak_fourier_selberg_blindness": "By the Selberg trace formula, weak Fourier sampling distribution on irrep parameter r is strictly conjugate-invariant (TV == 0.000, 0.000 bits mutual information)"
+    },
+    "id": "NEG-SL2R-NONCOMPACT-LIE-CONTINUOUS-SPECTRUM-BARRIER",
+    "lesson": "The Hidden Subgroup Problem over non-compact simple real Lie groups such as SL(2, R) cannot be solved by quantum Fourier sampling. Irreducible representations in the spherical principal series are infinite-dimensional on L^2(R), and characters exist only as Harish-Chandra distributions that are class functions on hyperbolic conjugacy classes (Theta_{ir}(gamma) = cos(r ell / 2) / sinh(ell / 2)). For any discrete Fuchsian subgroup Gamma < SL(2, R), the weak Fourier sampling density is strictly invariant under conjugate orientations g Gamma g^{-1} by the Selberg trace formula, yielding identically zero total variation distance (TV == 0.000, 0.000 bits mutual information). Furthermore, the Plancherel measure dmu(r) = (1/4pi) r tanh(pi r / 2) dr is continuous with diverging volume, inducing unavoidable spectral broadening. Finally, for M >= 2 copies, Repka's theorem (1978) proves the commutant algebra C_M = End_G((P_ir)^{otimes M}) is an infinite-dimensional von Neumann algebra requiring continuous Racah-Wigner 6j-coefficients (transcendental Barnes integrals of gamma functions) that cannot be synthesized by finite-depth discrete quantum circuits.",
+    "reason_invalid": "In SL(2, R), spherical principal series representations are infinite-dimensional on L^2(R), and Harish-Chandra characters are class functions invariant under conjugation. By the Selberg trace formula, weak Fourier sampling on the continuous unitary spectrum provides identically 0.000 bits of mutual information about the conjugate orientation g (TV == 0.000). The continuous Plancherel measure prevents projection onto discrete normalizable states, and the multi-copy commutant algebra is an infinite-dimensional von Neumann algebra decomposing into continuous direct integrals. Diagonalizing entangling measurements across M registers requires continuous Racah 6j-symbols given by transcendental Barnes contour integrals, which cannot be synthesized by discrete quantum circuits. Thus, claiming polynomial-time quantum Fourier solvability for the SL(2, R) Hidden Subgroup Problem is mathematically invalid.",
+    "source": "research/SL2R_NONCOMPACT_LIE_CONTINUOUS_SPECTRUM_BARRIER.md"
+  },
+  {
+    "applies_to": [
+      "GRAPH-ISOMORPHISM-QUANTUM-WALK",
+      "STRONGLY-REGULAR-GRAPHS",
+      "BOSE-MESNER-ALGEBRA",
+      "COSPECTRAL-QUANTUM-BLINDNESS",
+      "NEIGHBORHOOD-TRIANGLE-SUBSUMPTION"
+    ],
+    "claim": "Continuous-time quantum walks or spectral graph invariants can efficiently distinguish non-isomorphic strongly regular graphs with identical parameters (such as the 4x4 Rook graph and the Shrikhande graph) with quantum advantage.",
+    "evidence": {
+      "automorphism_group_orders": "|Aut(Rook)| = 1152 vs |Aut(Shrikhande)| = 192",
+      "clique_demarcation": "Rook has 8 4-cliques (max clique = 4), Shrikhande has 0 4-cliques (max clique = 3)",
+      "exact_cospectrality": "Adjacency {6^1, 2^6, -2^9} and Laplacian {0^1, 4^6, 8^9} spectra are identical to machine precision",
+      "local_neighborhood_subsumption": "Neighbor triangles: Rook has 2 (K_3 \\sqcup K_3) vs Shrikhande has 0 (C_6), solved in O(1) classical operations",
+      "quantum_walk_tv_blindness": "Return amplitudes identical for all t; TV distance identically 0.000",
+      "speedup_claim_allowed": false,
+      "two_wl_invariance": "2-WL color refinement produces identical color histograms"
+    },
+    "id": "NEG-STRONGLY-COSPECTRAL-QUANTUM-WALK-BLINDNESS",
+    "lesson": "Continuous-time quantum walks and spectral invariants are completely blinded by strongly regular graphs with identical parameters. For the 4x4 Rook graph L(K_{4,4}) and the Shrikhande graph (v=16, k=6, lambda=2, mu=2), the 3-dimensional Bose-Mesner algebra forces identical adjacency spectra {6^1, 2^6, -2^9}, identical Laplacian spectra {0^1, 4^6, 8^9}, and identical continuous-time quantum walk return amplitudes for all t (TV distance 0.000). 2-WL also fails to distinguish them. However, classical local neighborhood checks (counting triangles in the neighbor subgraph, 2 vs 0) distinguish them in O(1) operations per vertex, and 3-WL / clique counting (8 vs 0 K_4 cliques) solves the problem in polynomial time, completely subsuming quantum walks.",
+    "reason_invalid": "Both graphs generate isomorphic 3-dimensional Bose-Mesner algebras, guaranteeing identical eigenvalues and walk moments Tr(A^k) and Tr(L^k) for all k >= 0. Because both graphs are vertex-transitive, the return amplitude <v|exp(-i A t)|v> = (1/16) (e^{-6it} + 6 e^{-2it} + 9 e^{2it}) is vertex-invariant and identical across both graphs for all t, proving that single-particle and unentangled quantum walks yield identically 0.000 bits of mutual information. 2-WL color refinement is similarly invariant. In contrast, an elementary classical algorithm examines the neighbor subgraph G[N(v)]: for the Rook graph it is K_3 \\sqcup K_3 (2 triangles), while for the Shrikhande graph it is C_6 (0 triangles). This local check takes O(Delta^3) = O(6^3) = O(1) operations per vertex (O(n) globally), completely dequantizing the distinction classically.",
+    "source": "research/STRONGLY_COSPECTRAL_QUANTUM_WALK_OBSTRUCTION.md"
+  },
+  {
+    "applies_to": [
+      "SU2-HSP",
+      "SO3-HSP",
+      "COMPACT-LIE-GROUP",
+      "WIGNER-D-MATRICES",
+      "CATALAN-COMMUTANT-INFLATION"
+    ],
+    "claim": "The Hidden Subgroup Problem over the compact Lie group SU(2) or SO(3) can be solved in polynomial time by standard quantum Fourier sampling.",
+    "evidence": {
+      "catalan_commutant_inflation": "Commutant dimension of V_1^{otimes M} scales as Catalan number C_M = (1/(M+1)) binom(2M, M) = Theta(4^M / M^{3/2}), exceeding 6.5 billion for M=20",
+      "epistemic_invariants_enforced": "speedup_claim_allowed = False; accepted_speedup_candidate = False",
+      "racah_recoupling_hardness": "Diagonalizing multi-copy commutant requires evaluating 3nj-symbols, which is #P-hard in general (Aharonov-Jones-Landau 2009)",
+      "speedup_claim_allowed": false,
+      "spin_coherent_projector": "Strong Fourier projection for torus U(1)_n onto integer spin j yields rank-1 spin-coherent state |j, n, 0>, but extracting n requires entangling measurements across M = Omega(1/eps^2) copies",
+      "weak_fourier_orientation_blindness": "Wigner characters chi_j(theta) = sin((2j+1)theta) / sin(theta) are class functions; weak Fourier sampling TV distance across all orientations is identically 0.000",
+      "wigner_character_conjugacy_invariance": "chi_j(g h g^{-1}) == chi_j(h) identically for all g, h in SU(2)"
+    },
+    "id": "NEG-SU2-COMPACT-LIE-HSP-COMMUTANT-INFLATION",
+    "lesson": "The Hidden Subgroup Problem over compact non-abelian Lie groups such as SU(2) and SO(3) cannot be solved by quantum Fourier sampling. Irreducible representations have dimension d_j = 2j + 1, and character traces chi_j(theta) are strictly class functions. For any subgroup H <= SU(2) (including continuous tori U(1)_n and finite binary polyhedral groups 2T, 2O, 2I), the weak Fourier sampling distribution is identically invariant under ambient rotations g, forcing total variation distance to zero (TV == 0.000, 0.000 bits mutual information). While strong Fourier sampling on integer spins j yields rank-1 spin-coherent projectors |j, n, 0><j, n, 0|, single-copy measurements provide only O(log j) bits of information. Distinguishing orientations requires multi-copy measurements across M registers, where the SU(2) commutant algebra C_M = End_SU(2)(V_1^{otimes M}) explodes exponentially with Catalan dimension dim(C_M) = (1/(M+1)) binom(2M, M) = Theta(4^M / M^{3/2}). Diagonalizing this commutant requires evaluating Racah recoupling symbols, which is #P-hard in general (Aharonov-Jones-Landau 2009).",
+    "reason_invalid": "In SU(2), irreducible representations have dimension d_j = 2j + 1, and character traces chi_j(theta) = sin((2j+1)theta) / sin(theta) are strictly class functions. For any subgroup H <= SU(2) (including continuous tori U(1)_n and finite binary polyhedral groups 2T, 2O, 2I), the weak Fourier sampling distribution is identically invariant under ambient rotations g, forcing total variation distance to zero (TV == 0.000, 0.000 bits mutual information). While strong Fourier sampling on integer spins j yields rank-1 spin-coherent projectors |j, n, 0><j, n, 0|, single-copy measurements provide only O(log j) bits of information. Distinguishing orientations requires multi-copy measurements across M registers, where the SU(2) commutant algebra C_M = End_SU(2)(V_1^{otimes M}) explodes exponentially with Catalan dimension dim(C_M) = (1/(M+1)) binom(2M, M) = Theta(4^M / M^{3/2}). Diagonalizing this commutant requires evaluating Racah recoupling symbols, which is #P-hard in general (Aharonov-Jones-Landau 2009).",
+    "source": "research/SU2_COMPACT_LIE_HSP_COMMUTANT_INFLATION.md"
+  },
+  {
+    "applies_to": [
+      "NONABELIAN-COSET-COLLECTIVE-OBSERVABLES",
+      "SYMMETRIC-GROUP-HSP",
+      "GRAPH-ISOMORPHISM-QUANTUM-BARRIER",
+      "KRONECKER-RACAH-BARRIER",
+      "MULTI-COPY-COMMUTANT-EXPLOSION"
+    ],
+    "claim": "Quantum algorithms can solve the Hidden Subgroup Problem in symmetric groups S_n efficiently using weak Fourier sampling, single-copy strong Fourier sampling, or multi-copy collective measurements.",
+    "evidence": {
+      "classical_query_lower_bound": "Omega(sqrt(n! / 2)) = 2^{Omega(n log n)}",
+      "gelfand_collapse_multiplicities": "(S_4, H) Hecke algebra non-commutative, transpositions dim 7, matchings dim 8, irrep multiplicity > 1",
+      "kronecker_racah_complexity": "Kronecker positivity NP-hard, computation #P-hard, Racah matrix rank 2^{Omega(n)}",
+      "multi_copy_commutant_explosion": "dim(C_M) >= (n!)^{2M-1} / 2^{2M} >= 2^{Omega(n^2 log^2 n)} at M = Omega(n log n)",
+      "single_copy_mutual_info": "I(H : M) <= poly(n) / n! = 2^{-Omega(n log n)}",
+      "speedup_claim_allowed": false,
+      "weak_fourier_blindness": "TV distance identically 0.000 for conjugate subgroups in S_n"
+    },
+    "id": "NEG-SYMMETRIC-GROUP-KRONECKER-RACAH-BARRIER",
+    "lesson": "The Hidden Subgroup Problem in the symmetric group S_n (and hence the standard quantum approach to Graph Isomorphism) is obstructed at every measurement tier. Weak Fourier sampling produces identical output distributions for conjugate subgroups (TV distance 0.000). Single-copy strong Fourier sampling yields exponentially vanishing mutual information 2^{-Omega(n log n)}. Multi-copy collective measurements require diagonalizing a commutant algebra of factorial dimension 2^{Omega(n^2 log^2 n)} governed by #P-hard Kronecker-Racah Clebsch-Gordan coefficients.",
+    "reason_invalid": "Characters of S_n are class functions, so chi_lambda(H_1) = chi_lambda(H_2) for all conjugate hidden subgroups, proving p(lambda | H_1) = p(lambda | H_2) and TV = 0.000 identically (weak Fourier blindness). For single-copy states, Moore, Russell, and Schulman proved that any POVM yields mutual information at most poly(n) / n! = 2^{-Omega(n log n)}. (S_n, H) is not a Gel'fand pair for n >= 4 (irrep [3,1] has multiplicity 2 for transpositions, and [2,2] has multiplicity 2 for matchings in S_4), inducing non-commutative Hecke algebras of dimension 7 and 8. For M copies, the commutant dimension dim(C_M) = (1/n!) sum chi_perm(g)^{2M} >= (n!)^{2M-1} / 2^{2M}; at the Ettinger-Hoyer-Knill information threshold M = Omega(n log n), this exceeds 2^{Omega(n^2 log^2 n)}, requiring at least 2^{Omega(n^2 log^2 n)} quantum gates. Furthermore, decomposing multi-copy states is equivalent to computing Kronecker coefficients and Racah 6j/3nj symbols, which are #P-hard and require diagonalizing exponential-rank matrices.",
+    "source": "research/GRAPH_ISOMORPHISM_SN_COMMUTANT_RACAH_BARRIER.md"
+  },
+  {
+    "applies_to": [
+      "NONABELIAN-COSET-COLLECTIVE-OBSERVABLES",
+      "LIE-TYPE-MATRIX-HSP",
+      "UNITARY-PARABOLIC-HSP",
+      "HERMITIAN-INVARIANT-OBSTRUCTION",
+      "CLASSICAL-QUADRUMVIRATE-DEMARCATION"
+    ],
+    "claim": "Quantum algorithms can achieve an exponential speedup for finding unknown parabolic subgroups P_U stabilizing isotropic subspaces in unitary groups U(n, F_{q^2}) and SU(n, F_{q^2}) over classical algorithms.",
+    "evidence": {
+      "ambient_density_collapse": "|P_m| / |span(P_m)| = q^{-3 m^2} prod(1 - q^{-2j}) <= 2^{-Omega(m^2 log q)}",
+      "heisenberg_line_radical": "|R_u(P_1)| = q^{2n - 3} with center order q",
+      "query_complexity_bound": "Q_classical <= 4(n - k)(q^{2k} + 1) = O(n q^{2k})",
+      "speedup_claim_allowed": false,
+      "trace_pairing_degeneracy": "Tr(B^2) == 0 mod 2 on off-diagonal skew-Hermitian matrices",
+      "transvection_equivalence": "T_{v, lam} in P_U <=> v in U^perp for all skew-Hermitian lam and isotropic v"
+    },
+    "id": "NEG-UNITARY-PARABOLIC-DEQUANTIZATION-BOUND",
+    "lesson": "Unitary parabolic HSP in U(n, F_{q^2}) and SU(n, F_{q^2}) cannot yield an exponential quantum speedup. The problem is classically dequantized in O(n q^{2k}) queries via unitary transvections T_{v, lam}. For all low dimensions k <= O(log n) (including the line parabolic k=1), the problem is solved in polynomial classical time poly(n, log q). Additive Fourier sampling over M_n(F_{q^2}) is extinguished by exponential ambient density collapse q^{-3 m^2} = 2^{-Omega(m^2 log q)}, Lie algebra trace duality exhibits isotropic degeneracy over F_{2^{2r}}, and single-copy weak Fourier sampling yields identically 0.000 bits of mutual information.",
+    "reason_invalid": "For every k-dimensional isotropic subspace U in F_{q^2}^n (1 <= k <= m = floor(n/2)), every non-zero skew-Hermitian scalar lam, and every non-zero isotropic vector v, the unitary transvection T_{v, lam} belongs to P_U if and only if v in U^perp. An explicit classical randomized algorithm finds a basis of U^perp in expected O(n q^{2k}) queries and recovers U = (U^perp)^perp in O(n^3) classical operations over F_{q^2}. For all k <= O(log n), the classical time is poly(n, log q), ruling out any quantum speedup. For maximal isotropic parabolics, the ambient density collapses exponentially to q^{-3 m^2} prod(1 - q^{-2j}) = 2^{-Omega(m^2 log q)}, destroying additive Fourier sampling. Furthermore, the line radical R_u(P_1) is a generalized Heisenberg group of class 2, (U, P_1) is a Gel'fand pair with 0.000 bits single-copy mutual information, and multi-copy collective tomography requires diagonalizing the partition commutant P_M(|X_1|) of dimension B(2M) >= (2M - 1)!! = 2^{Omega(n log n)}.",
+    "source": "research/UNITARY_PARABOLIC_HSP_OBSTRUCTION_HERMITIAN_DEMARCATION.md"
   },
   {
     "applies_to": [
@@ -85486,564 +86069,5 @@
     "lesson": "Do not treat irrep-label bias as a hidden-permutation algorithm; require collective measurements or additional row/column information.",
     "reason_invalid": "Weak Fourier labels have only small bias; any speedup claim needs collective row/column measurements.",
     "source": "weak_fourier_signal.py"
-  },
-  {
-    "applies_to": [
-      "NONABELIAN-COSET-COLLECTIVE-OBSERVABLES",
-      "LIE-TYPE-MATRIX-HSP",
-      "ORTHOGONAL-PARABOLIC-HSP",
-      "QUADRATIC-INVARIANT-OBSTRUCTION"
-    ],
-    "claim": "Quantum algorithms can achieve an exponential speedup for finding unknown parabolic subgroups P_U stabilizing isotropic subspaces in orthogonal groups O(d, F_q) and SO(d, F_q) over classical algorithms.",
-    "evidence": {
-      "ambient_density_collapse": "|P_m| / |span(P_m)| = q^{-(3m^2+m)/2} prod(1 - q^{-j}) <= 2^{-Omega(m^2 log q)}",
-      "bireflection_equivalence": "R_v in P_U <=> v in U^perp (odd char) and T_v in P_U <=> v in U^perp (char 2)",
-      "gelfand_pair_collapse": "(O^+(4, F_3), P_1) rank 3 with irreps [1, 6, 9], 0.000 bits mutual info",
-      "line_radical_abelian": "E(u, w1) E(u, w2) = E(u, w1 + w2) universally abelian of order q^{d-2}",
-      "query_complexity_bound": "Q_classical <= 4(d - k)(q^k + 1) = O(d q^k)",
-      "speedup_claim_allowed": false,
-      "trace_pairing_degeneracy": "Tr(B C) = 2 sum_{i < j} B_ij C_ij == 0 mod 2 on alternating Lie algebras"
-    },
-    "id": "NEG-ORTHOGONAL-PARABOLIC-DEQUANTIZATION-BOUND",
-    "lesson": "Orthogonal parabolic HSP in O(d, F_q) and SO(d, F_q) cannot yield an exponential quantum speedup. The problem is classically dequantized in O(d q^k) queries via orthogonal reflections (in odd characteristic) and orthogonal transvections (in characteristic 2). For all low dimensions k <= O(log d), the problem is solved in polynomial classical time poly(d, log q). Additive Fourier sampling over M_d(F_q) is extinguished by ambient density collapse 2^{-Omega(m^2 log q)}, Lie algebra trace duality fails over F_2, and single-copy weak Fourier sampling yields identically 0.000 bits of mutual information.",
-    "reason_invalid": "For every k-dimensional isotropic subspace U in F_q^d (1 <= k <= m = floor(d/2)) and every non-singular vector v in F_q^d, the orthogonal reflection R_v (for p > 2) or transvection T_v (for p = 2) belongs to P_U if and only if v in U^perp. In SO(d, F_q) for k < m, bireflections R_{v0} R_v satisfy the identical equivalence. An explicit classical randomized algorithm finds a basis of U^perp in expected O(d q^k) queries and recovers U = (U^perp)^perp in O(d^3) classical time. For all k <= O(log d), the classical time is poly(d, log q), ruling out any quantum speedup. For maximal isotropic parabolics, the ambient density collapses exponentially to q^{-(3m^2+m)/2} prod(1 - q^{-j}) = 2^{-Omega(m^2 log q)}, destroying additive Fourier sampling. Over F_2, the trace pairing on alternating matrices identically vanishes (Tr(B C) == 0 mod 2), invalidating Lie algebra Fourier sampling. Furthermore, (O^+(4, F_3), P_1) is a symmetric Gel'fand pair with irrep dimensions [1, 6, 9], yielding 0.000 bits of single-copy mutual information, and multi-copy collective tomography requires diagonalizing the partition commutant P_M(|X_1|) of dimension B(2M) >= (2M - 1)!! = 2^{Omega(d log d)}.",
-    "source": "research/ORTHOGONAL_PARABOLIC_HSP_OBSTRUCTION_QUADRATIC_INVARIANT.md"
-  },
-  {
-    "applies_to": [
-      "NONABELIAN-COSET-COLLECTIVE-OBSERVABLES",
-      "LIE-TYPE-MATRIX-HSP",
-      "UNITARY-PARABOLIC-HSP",
-      "HERMITIAN-INVARIANT-OBSTRUCTION",
-      "CLASSICAL-QUADRUMVIRATE-DEMARCATION"
-    ],
-    "claim": "Quantum algorithms can achieve an exponential speedup for finding unknown parabolic subgroups P_U stabilizing isotropic subspaces in unitary groups U(n, F_{q^2}) and SU(n, F_{q^2}) over classical algorithms.",
-    "evidence": {
-      "ambient_density_collapse": "|P_m| / |span(P_m)| = q^{-3 m^2} prod(1 - q^{-2j}) <= 2^{-Omega(m^2 log q)}",
-      "heisenberg_line_radical": "|R_u(P_1)| = q^{2n - 3} with center order q",
-      "query_complexity_bound": "Q_classical <= 4(n - k)(q^{2k} + 1) = O(n q^{2k})",
-      "speedup_claim_allowed": false,
-      "trace_pairing_degeneracy": "Tr(B^2) == 0 mod 2 on off-diagonal skew-Hermitian matrices",
-      "transvection_equivalence": "T_{v, lam} in P_U <=> v in U^perp for all skew-Hermitian lam and isotropic v"
-    },
-    "id": "NEG-UNITARY-PARABOLIC-DEQUANTIZATION-BOUND",
-    "lesson": "Unitary parabolic HSP in U(n, F_{q^2}) and SU(n, F_{q^2}) cannot yield an exponential quantum speedup. The problem is classically dequantized in O(n q^{2k}) queries via unitary transvections T_{v, lam}. For all low dimensions k <= O(log n) (including the line parabolic k=1), the problem is solved in polynomial classical time poly(n, log q). Additive Fourier sampling over M_n(F_{q^2}) is extinguished by exponential ambient density collapse q^{-3 m^2} = 2^{-Omega(m^2 log q)}, Lie algebra trace duality exhibits isotropic degeneracy over F_{2^{2r}}, and single-copy weak Fourier sampling yields identically 0.000 bits of mutual information.",
-    "reason_invalid": "For every k-dimensional isotropic subspace U in F_{q^2}^n (1 <= k <= m = floor(n/2)), every non-zero skew-Hermitian scalar lam, and every non-zero isotropic vector v, the unitary transvection T_{v, lam} belongs to P_U if and only if v in U^perp. An explicit classical randomized algorithm finds a basis of U^perp in expected O(n q^{2k}) queries and recovers U = (U^perp)^perp in O(n^3) classical operations over F_{q^2}. For all k <= O(log n), the classical time is poly(n, log q), ruling out any quantum speedup. For maximal isotropic parabolics, the ambient density collapses exponentially to q^{-3 m^2} prod(1 - q^{-2j}) = 2^{-Omega(m^2 log q)}, destroying additive Fourier sampling. Furthermore, the line radical R_u(P_1) is a generalized Heisenberg group of class 2, (U, P_1) is a Gel'fand pair with 0.000 bits single-copy mutual information, and multi-copy collective tomography requires diagonalizing the partition commutant P_M(|X_1|) of dimension B(2M) >= (2M - 1)!! = 2^{Omega(n log n)}.",
-    "source": "research/UNITARY_PARABOLIC_HSP_OBSTRUCTION_HERMITIAN_DEMARCATION.md"
-  },
-  {
-    "applies_to": [
-      "NONABELIAN-COSET-COLLECTIVE-OBSERVABLES",
-      "LIE-TYPE-MATRIX-HSP",
-      "NON-SPLIT-TORAL-HSP",
-      "SINGER-CYCLE-OBSTRUCTION",
-      "DELIGNE-LUSZTIG-COMMUTANT-BARRIER"
-    ],
-    "claim": "Quantum algorithms can efficiently find unknown non-split maximal tori (Singer cycles) in GL(n, F_q) in polynomial time.",
-    "evidence": {
-      "classical_query_lower_bound": "Omega(q^{n(n-1)/4}) = 2^{Omega(n^2 log q)}",
-      "deligne_lusztig_commutant_dim": "dim(C_M) >= n^M, gate lower bound 2^{Omega(n^2 log n)}",
-      "gelfand_pair_collapse": "(GL(2, F_3), T) rank 3 with irreps [1, 2, 3], 0.000 bits mutual info",
-      "singer_cycle_subgroup_count": "N_Singer = (1/n) q^{n(n-1)/2} prod_{j=1}^{n-1} (q^j - 1) = 2^{Theta(n^2 log q)}",
-      "speedup_claim_allowed": false,
-      "transvection_emptiness": "T cap Transvections = empty (T acts irreducibly on F_q^n)"
-    },
-    "id": "NEG-SINGER-CYCLE-TORAL-HSP-BARRIER",
-    "lesson": "Non-split maximal tori (Singer cycles) in GL(n, F_q) constitute an impenetrable barrier for both classical and quantum algorithms. Because T acts irreducibly on F_q^n, it contains zero transvections, zero unipotent elements, and stabilizes no non-trivial subspaces. Classical collision algorithms require 2^{Omega(n^2 log q)} queries. Single-copy weak Fourier sampling suffers complete spherical extinction (0.000 bits mutual information) across cuspidal Deligne-Lusztig representations of exponential dimension 2^{Theta(n^2 log q)}. Multi-copy collective tomography requires diagonalizing a commutant of dimension >= n^M, enforcing a quantum gate lower bound of 2^{Omega(n^2 log n)}.",
-    "reason_invalid": "Every element g in T \\ F_q* I has an irreducible characteristic polynomial of degree n over F_q with no eigenvalues in F_q. Consequently, T contains no transvections or unipotent matrices (T cap Transvections = empty). Classical structured probes cannot produce collisions, enforcing an unconditional query lower bound of Omega(sqrt(|GL|/|T|)) = 2^{Omega(n^2 log q)}. Weak Fourier sampling over GL(n, F_q) projects onto cuspidal Deligne-Lusztig representations R_T^G(theta) with probability d_theta / |G/T|, which is identically independent of T (0.000 bits of mutual information). Multi-copy measurements on M copies require diagonalizing a commutant algebra of dimension >= n^M, which for M = Omega(n^2) copies needed to identify T among N_Singer = 2^{Theta(n^2 log q)} candidates requires at least 2^{Omega(n^2 log n)} quantum gates.",
-    "source": "research/SINGER_CYCLE_TORAL_HSP_OBSTRUCTION_DELIGNE_LUSZTIG_BARRIER.md"
-  },
-  {
-    "applies_to": [
-      "NONABELIAN-COSET-COLLECTIVE-OBSERVABLES",
-      "SYMMETRIC-GROUP-HSP",
-      "GRAPH-ISOMORPHISM-QUANTUM-BARRIER",
-      "KRONECKER-RACAH-BARRIER",
-      "MULTI-COPY-COMMUTANT-EXPLOSION"
-    ],
-    "claim": "Quantum algorithms can solve the Hidden Subgroup Problem in symmetric groups S_n efficiently using weak Fourier sampling, single-copy strong Fourier sampling, or multi-copy collective measurements.",
-    "evidence": {
-      "classical_query_lower_bound": "Omega(sqrt(n! / 2)) = 2^{Omega(n log n)}",
-      "gelfand_collapse_multiplicities": "(S_4, H) Hecke algebra non-commutative, transpositions dim 7, matchings dim 8, irrep multiplicity > 1",
-      "kronecker_racah_complexity": "Kronecker positivity NP-hard, computation #P-hard, Racah matrix rank 2^{Omega(n)}",
-      "multi_copy_commutant_explosion": "dim(C_M) >= (n!)^{2M-1} / 2^{2M} >= 2^{Omega(n^2 log^2 n)} at M = Omega(n log n)",
-      "single_copy_mutual_info": "I(H : M) <= poly(n) / n! = 2^{-Omega(n log n)}",
-      "speedup_claim_allowed": false,
-      "weak_fourier_blindness": "TV distance identically 0.000 for conjugate subgroups in S_n"
-    },
-    "id": "NEG-SYMMETRIC-GROUP-KRONECKER-RACAH-BARRIER",
-    "lesson": "The Hidden Subgroup Problem in the symmetric group S_n (and hence the standard quantum approach to Graph Isomorphism) is obstructed at every measurement tier. Weak Fourier sampling produces identical output distributions for conjugate subgroups (TV distance 0.000). Single-copy strong Fourier sampling yields exponentially vanishing mutual information 2^{-Omega(n log n)}. Multi-copy collective measurements require diagonalizing a commutant algebra of factorial dimension 2^{Omega(n^2 log^2 n)} governed by #P-hard Kronecker-Racah Clebsch-Gordan coefficients.",
-    "reason_invalid": "Characters of S_n are class functions, so chi_lambda(H_1) = chi_lambda(H_2) for all conjugate hidden subgroups, proving p(lambda | H_1) = p(lambda | H_2) and TV = 0.000 identically (weak Fourier blindness). For single-copy states, Moore, Russell, and Schulman proved that any POVM yields mutual information at most poly(n) / n! = 2^{-Omega(n log n)}. (S_n, H) is not a Gel'fand pair for n >= 4 (irrep [3,1] has multiplicity 2 for transpositions, and [2,2] has multiplicity 2 for matchings in S_4), inducing non-commutative Hecke algebras of dimension 7 and 8. For M copies, the commutant dimension dim(C_M) = (1/n!) sum chi_perm(g)^{2M} >= (n!)^{2M-1} / 2^{2M}; at the Ettinger-Hoyer-Knill information threshold M = Omega(n log n), this exceeds 2^{Omega(n^2 log^2 n)}, requiring at least 2^{Omega(n^2 log^2 n)} quantum gates. Furthermore, decomposing multi-copy states is equivalent to computing Kronecker coefficients and Racah 6j/3nj symbols, which are #P-hard and require diagonalizing exponential-rank matrices.",
-    "source": "research/GRAPH_ISOMORPHISM_SN_COMMUTANT_RACAH_BARRIER.md"
-  },
-  {
-    "applies_to": [
-      "NONABELIAN-COSET-COLLECTIVE-OBSERVABLES",
-      "WREATH-PRODUCT-HSP",
-      "LINEAR-CODE-EQUIVALENCE-BARRIER",
-      "SWAP-CHARACTER-UNIVERSALITY",
-      "SENDRIER-HULL-DEQUANTIZATION"
-    ],
-    "claim": "Quantum algorithms can achieve an exponential speedup for Linear Code Equivalence modeled as an HSP over the wreath product W_n = (S_n x S_n) \rtimes Z_2 over classical algorithms.",
-    "evidence": {
-      "black_box_query_lower_bound": "Omega(n!) = 2^{Omega(n log n)}",
-      "multi_copy_commutant_explosion": "dim(C_M) >= ((n!)^2)^{2M-1} / 2^{2M} >= 2^{Omega(n^2 log^2 n)} at M = Omega(n log n)",
-      "sendrier_classical_dequantization": "LCD and bounded hull h <= O(log n) codes solved in O(n^3 + 2^h n^2) classical time",
-      "single_copy_mutual_info": "I(sigma : M) <= poly(n) / n! = 2^{-Omega(n log n)}",
-      "speedup_claim_allowed": false,
-      "swap_character_universality": "chi_{(lambda, lambda, pm)}(tau_sigma) = pm d_lambda identically for all sigma in S_n",
-      "weak_fourier_blindness": "TV distance identically 0.000 across all candidate code equivalences"
-    },
-    "id": "NEG-LINEAR-CODE-EQUIVALENCE-WREATH-BARRIER",
-    "lesson": "Linear Code Equivalence over the wreath product W_n = (S_n x S_n) \rtimes Z_2 cannot achieve a quantum speedup. All n! code-swapping involutions are conjugate to tau_id in W_n, forcing all character values on extended irreps to be identically pm d_lambda independent of sigma. Weak Fourier sampling is completely blind (TV distance 0.000). Single-copy strong Fourier sampling yields exponentially vanishing information 2^{-Omega(n log n)}. Multi-copy collective measurements require diagonalizing a commutant of dimension 2^{Omega(n^2 log^2 n)}. Furthermore, for all codes with hull dimension h <= O(log n) (including all LCD codes h = 0), Sendrier's Support Splitting Algorithm solves the problem in polynomial classical time O(n^3 + 2^h n^2), completely dequantizing the problem classically.",
-    "reason_invalid": "For any permutation sigma in S_n, the swap involution tau_sigma = (sigma, sigma^-1, 1) satisfies (sigma, 1, 0) (1, 1, 1) (sigma, 1, 0)^-1 = tau_sigma, proving that all code equivalences belong to the exact same conjugacy class in W_n. By Clifford theory, chi_{(lambda, lambda, pm)}(tau_sigma) = pm Tr(rho(sigma) rho(sigma^-1)) = pm d_lambda, which is completely independent of sigma. Consequently, weak Fourier sampling produces identical probability distributions for all sigma, proving TV = 0.000 identically. For single-copy states, mutual information is bounded by poly(n) / n! = 2^{-Omega(n log n)}. The multi-copy commutant dimension is dim(C_M) >= ((n!)^2)^{2M-1} / 2^{2M} >= 2^{Omega(n^2 log^2 n)} at M = Omega(n log n) copies, requiring 2^{Omega(n^2 log^2 n)} quantum gates. On the classical side, for all codes with bounded hull dimension h <= O(log n) (such as LCD codes where the Gram matrix G G^T is invertible over F_q), Sendrier's algorithm computes the equivalence in polynomial classical time O(n^3 + 2^h n^2), dequantizing the problem classically and leaving no quantum advantage.",
-    "source": "research/LINEAR_CODE_EQUIVALENCE_WREATH_COMMUTANT_BARRIER.md"
-  },
-  {
-    "applies_to": [
-      "GRAPH-ISOMORPHISM-QUANTUM-WALK",
-      "STRONGLY-REGULAR-GRAPHS",
-      "BOSE-MESNER-ALGEBRA",
-      "COSPECTRAL-QUANTUM-BLINDNESS",
-      "NEIGHBORHOOD-TRIANGLE-SUBSUMPTION"
-    ],
-    "claim": "Continuous-time quantum walks or spectral graph invariants can efficiently distinguish non-isomorphic strongly regular graphs with identical parameters (such as the 4x4 Rook graph and the Shrikhande graph) with quantum advantage.",
-    "evidence": {
-      "automorphism_group_orders": "|Aut(Rook)| = 1152 vs |Aut(Shrikhande)| = 192",
-      "clique_demarcation": "Rook has 8 4-cliques (max clique = 4), Shrikhande has 0 4-cliques (max clique = 3)",
-      "exact_cospectrality": "Adjacency {6^1, 2^6, -2^9} and Laplacian {0^1, 4^6, 8^9} spectra are identical to machine precision",
-      "local_neighborhood_subsumption": "Neighbor triangles: Rook has 2 (K_3 \\sqcup K_3) vs Shrikhande has 0 (C_6), solved in O(1) classical operations",
-      "quantum_walk_tv_blindness": "Return amplitudes identical for all t; TV distance identically 0.000",
-      "speedup_claim_allowed": false,
-      "two_wl_invariance": "2-WL color refinement produces identical color histograms"
-    },
-    "id": "NEG-STRONGLY-COSPECTRAL-QUANTUM-WALK-BLINDNESS",
-    "lesson": "Continuous-time quantum walks and spectral invariants are completely blinded by strongly regular graphs with identical parameters. For the 4x4 Rook graph L(K_{4,4}) and the Shrikhande graph (v=16, k=6, lambda=2, mu=2), the 3-dimensional Bose-Mesner algebra forces identical adjacency spectra {6^1, 2^6, -2^9}, identical Laplacian spectra {0^1, 4^6, 8^9}, and identical continuous-time quantum walk return amplitudes for all t (TV distance 0.000). 2-WL also fails to distinguish them. However, classical local neighborhood checks (counting triangles in the neighbor subgraph, 2 vs 0) distinguish them in O(1) operations per vertex, and 3-WL / clique counting (8 vs 0 K_4 cliques) solves the problem in polynomial time, completely subsuming quantum walks.",
-    "reason_invalid": "Both graphs generate isomorphic 3-dimensional Bose-Mesner algebras, guaranteeing identical eigenvalues and walk moments Tr(A^k) and Tr(L^k) for all k >= 0. Because both graphs are vertex-transitive, the return amplitude <v|exp(-i A t)|v> = (1/16) (e^{-6it} + 6 e^{-2it} + 9 e^{2it}) is vertex-invariant and identical across both graphs for all t, proving that single-particle and unentangled quantum walks yield identically 0.000 bits of mutual information. 2-WL color refinement is similarly invariant. In contrast, an elementary classical algorithm examines the neighbor subgraph G[N(v)]: for the Rook graph it is K_3 \\sqcup K_3 (2 triangles), while for the Shrikhande graph it is C_6 (0 triangles). This local check takes O(Delta^3) = O(6^3) = O(1) operations per vertex (O(n) globally), completely dequantizing the distinction classically.",
-    "source": "research/STRONGLY_COSPECTRAL_QUANTUM_WALK_OBSTRUCTION.md"
-  },
-  {
-    "applies_to": [
-      "CAI-FURER-IMMERMAN-GRAPHS",
-      "WEISFEILER-LEHMAN-HIERARCHY",
-      "MULTI-PARTICLE-QUANTUM-WALK",
-      "QUANTUM-ADIABATIC-ALGORITHM",
-      "LUKS-SOLVABLE-TOWER-SUBSUMPTION"
-    ],
-    "claim": "Multi-particle quantum walks or quantum adiabatic evolution can achieve an algorithmic quantum speedup over classical algorithms on Cai-Fürer-Immerman (CFI) graph isomorphism instances.",
-    "evidence": {
-      "automorphism_group_orders": "|Aut(X(K_4))| = 576 vs |Aut(X'(K_4))| = 192",
-      "cycle_space_parity_obstruction": "All 64 edge flip vectors induce identically 0 mod 2 vertex parity change; sum delta sigma = 2 sum b = 0 mod 2",
-      "exact_cospectrality": "Adjacency (< 1.78e-15) and Laplacian (< 3.55e-15) spectra match identically",
-      "luks_polynomial_subsumption": "Classical Luks algorithm tests bounded-degree isomorphism in O(n^4 log n), dequantizing CFI instances",
-      "one_and_two_wl_invariance": "1-WL hashes and 2-WL pair histograms (10 colors) match identically across all iterations",
-      "quantum_adiabatic_exponential_barrier": "Spectral gap closes exponentially Delta = 2^{-Omega(n)}, requiring T = 2^{Omega(n)}",
-      "quantum_walk_tv_blindness": "CTQW return amplitudes match identically for all t; TV distance identically 0.000",
-      "solvable_tower_structure": "Both automorphism groups are solvable with derived length 4, Sylow 2-subgroups of order 64",
-      "speedup_claim_allowed": false
-    },
-    "id": "NEG-CFI-QUANTUM-WALK-LUKS-SUBSUMPTION",
-    "lesson": "Cai-Fürer-Immerman (CFI) graphs do not yield a quantum speedup for Graph Isomorphism. While CFI graphs defeat the classical k-Weisfeiler-Lehman hierarchy for k < tw(G), this barrier equally blinds all non-interacting m-particle quantum walks (m < tw(G)), rendering them completely unable to distinguish the graphs (TV distance identically 0.000). Quantum adiabatic algorithms incur an exponentially closing spectral gap Delta = 2^{-Omega(n)} due to the topological parity barrier, requiring exponential evolution time 2^{Omega(n)}. Crucially, classical computation is not bounded by the WL hierarchy: Eugene Luks' (1982) solvable tower algorithm solves bounded-degree Graph Isomorphism in deterministic classical polynomial time O(n^4 log n) by exploiting the solvable 2-group filtration of vertex stabilizers, completely dequantizing CFI graph distinction classically.",
-    "reason_invalid": "On the base graph K_4 (tw = 3), the untwisted CFI graph X(K_4) and twisted graph X'(K_4) on 28 vertices are strictly cospectral (adjacency and Laplacian spectra match within 2e-15) and produce identical 1-WL and 2-WL color refinement partitions (TV distance 0.000). Because m-particle non-interacting quantum walks are bounded by m-WL, any quantum walk with m < tw(G) yields 0.000 bits of mutual information. In the adiabatic model, crossing the topological parity obstruction requires tunneling across a macroscopic cycle cut, closing the spectral gap exponentially Delta = 2^{-Omega(n)} and requiring T = Omega(1/Delta^2) = 2^{Omega(n)} time. Conversely, CFI graphs have bounded valence Delta <= 4. Luks (1982) proved that Graph Isomorphism for valence d is solvable in deterministic classical polynomial time O(n^{f(d)}), specifically O(n^4 log n) for Delta = 3/4. Both Aut(X(K_4)) (order 576) and Aut(X'(K_4)) (order 192) are solvable groups with derived length 4 and Sylow 2-subgroups of order 64. Luks' solvable tower algorithm bypasses the WL hierarchy entirely and solves the isomorphism problem in polynomial classical time, disproving any quantum advantage.",
-    "source": "research/CFI_QUANTUM_WALK_LUKS_SOLVABLE_TOWER_OBSTRUCTION.md"
-  },
-  {
-    "applies_to": [
-      "REAL-QUADRATIC-REGULATOR",
-      "HALLGREN-ALGORITHM",
-      "CONTINUOUS-ABELIAN-HSP",
-      "SHANKS-INFRASTRUCTURE",
-      "BUCHMANN-INDEX-CALCULUS"
-    ],
-    "claim": "Hallgren's quantum algorithm for real quadratic fields delivers an exponential quantum speedup over all classical algorithms for computing the regulator and solving Pell's equation.",
-    "evidence": {
-      "buchmann_index_calculus_subexponential": "Buchmann's (1990) classical index calculus over smooth prime ideals computes the regulator in subexponential time L_d[1/2, sqrt{2}] = exp((sqrt{2} + o(1)) sqrt{ln d ln ln d})",
-      "continuous_abelian_character_orthogonality": "Quotient R / R Z = S^1 is a 1-dimensional abelian Lie group with complete 1D character basis chi_k(x) = exp(2 pi i k x / R)",
-      "discretization_jitter_bound": "Sampling on discrete grid x_j = j Delta induces bounded roundoff jitter epsilon_k in [-Delta/2, Delta/2]; requires N Delta^2 >= 2 R^2 for Legendre continued fraction convergence",
-      "epistemic_invariants_enforced": "speedup_claim_allowed = False; accepted_speedup_candidate = False",
-      "infrastructure_regularization": "Shanks' reduced ideals have irregular step sizes; regularized function h(x) = (r_x, x - delta(r_x)) restores exact continuous periodicity h(x + R) == h(x)",
-      "speedup_claim_allowed": false,
-      "superpolynomial_not_exponential_speedup": "The quantum speedup is superpolynomial over classical subexponential index calculus (O(log^3 d) vs L[1/2]), placing it in the factoring demarcation class rather than an exponential black-box separation"
-    },
-    "id": "NEG-CONTINUOUS-HSP-IRRATIONAL-JITTER-INDEX-CALCULUS-BOUNDARY",
-    "lesson": "Hallgren's quantum period-finding algorithm for real quadratic fields computes the regulator R = ln epsilon_d in polynomial time O(log^3 d) by discretizing the continuous abelian circle group R / R Z and regularizing Shanks' infrastructure via h(x) = (r_x, x - delta(r_x)). However, this quantum advantage does not represent an exponential speedup over an exponential classical baseline. Classical computation is not restricted to black-box search: Buchmann's (1990) index calculus algorithm over smooth prime ideals computes R in subexponential time L_d[1/2, sqrt{2}] = exp((sqrt{2} + o(1)) sqrt{ln d ln ln d}). The quantum speedup is therefore superpolynomial over subexponential index calculus (identical in complexity structure to Shor's factoring algorithm). Furthermore, the continuous-to-discrete discretization introduces rounding jitter epsilon_k in [-Delta/2, Delta/2], requiring mesh parameter N Delta^2 >= 2 R^2 to prevent phase decoherence and ensure continued fraction convergence.",
-    "reason_invalid": "Hallgren's algorithm maps the continuous non-compact period finding problem over R to the compact circle group R / R Z = S^1, which avoids all non-abelian representation obstructions because all irreps are 1-dimensional characters chi_k(x) = exp(2 pi i k x / R). Shanks' infrastructure cycle has irregular step lengths delta(r_{i+1}) - delta(r_i) in (0, ln(2 sqrt{d})], which is regularized by incorporating the intra-cell offset h(x) = (r_x, x - delta(r_x)). A discrete mesh of N points with spacing Delta produces a state with rounding jitter bounded by Delta / 2. By Legendre's continued fraction theorem, if N Delta^2 >= 2 R^2, the peak frequency mode recovers R with precision 2^{-Omega(n)} in polynomial time O(log^3 d). However, claiming an exponential quantum speedup is mathematically invalid because classical algorithms run in subexponential time L_d[1/2, sqrt{2}] via Buchmann's index calculus, restricting the quantum advantage to a superpolynomial separation over subexponential classical methods.",
-    "source": "research/REAL_QUADRATIC_REGULATOR_INFRASTRUCTURE_DEMARCATION.md"
-  },
-  {
-    "applies_to": [
-      "ARBITRARY-DEGREE-NUMBER-FIELD",
-      "MULTIDIMENSIONAL-CONTINUOUS-HSP",
-      "HALLGREN-SCHMIDT-VOLLMER",
-      "EXPONENTIAL-DEGREE-BARRIER",
-      "LATTICE-SIVP-HARDNESS"
-    ],
-    "claim": "Quantum algorithms can compute the unit group regulator and solve the Principal Ideal Problem in polynomial time for algebraic number fields of arbitrary, growing degree n = [K : Q].",
-    "evidence": {
-      "compact_representation_overhead": "Manipulating algebraic units and reduced ideals in degree n requires compact representations with n^{O(n)} overhead",
-      "continuous_torus_dual_lattice": "Quotient R^r / Lambda is an r-dimensional compact torus with complete 1D character basis chi_u(x) = exp(2 pi i u . x) labeled by dual lattice Lambda^*",
-      "epistemic_invariants_enforced": "speedup_claim_allowed = False; accepted_speedup_candidate = False",
-      "exponential_degree_barrier": "For unbounded degree n, quantum complexity is 2^{Omega(n log n)} poly(log |Delta_K|); polynomial time collapses",
-      "lattice_reconstruction_hardness": "Reconstructing dual lattice Lambda^* in dimension r = Theta(n) requires solving SIVP/CVP in dimension r, which is lattice-hard (2^{Omega(r)})",
-      "mesh_volume_explosion": "Sampling hypercube requires (M / Delta)^r = 2^{Omega(n log n)} states, causing exponential mode dispersion",
-      "speedup_claim_allowed": false
-    },
-    "id": "NEG-ARBITRARY-DEGREE-REGULATOR-EXPONENTIAL-BARRIER",
-    "lesson": "While Hallgren (2005) and Schmidt-Vollmer (2005) established polynomial-time quantum algorithms for fixed field degree n = O(1), the algorithm scales as 2^{Omega(n log n)} poly(log |Delta_K|) for growing degree n. When n is unbounded, polynomial tractability collapses due to three compounding mathematical barriers: (1) Lattice reconstruction hardness: dual lattice sampling in dimension r = Theta(n) requires solving SIVP/CVP in dimension r, which is lattice-hard and requires 2^{Omega(r)} operations; (2) Compact representation overhead: manipulating algebraic units and reduced ideals in degree n requires n^{O(n)} operations; and (3) Multi-dimensional grid volume explosion: the sampling mesh requires (M / Delta)^r = 2^{Omega(n log n)} states. Therefore, the quantum regulator algorithm is confined strictly to constant-degree number fields.",
-    "reason_invalid": "The multi-dimensional continuous torus HSP over R^r / Lambda_K (where r = r_1 + r_2 - 1 = Theta(n)) avoids non-abelian representation obstacles because the torus is abelian, yielding dual lattice characters chi_u(x) = exp(2 pi i u . x). However, inverting the dual lattice from noisy quantum samples requires solving BDD and SIVP in dimension r, which is NP-hard under randomized reductions and takes 2^{Omega(r)} = 2^{Omega(n)} operations. Furthermore, polynomial multiplication and compact representation arithmetic scale as n^{O(n)}, and the discrete grid volume grows as 2^{Omega(n log n)}. Thus, claiming polynomial-time quantum solvability for arbitrary degree number fields is mathematically invalid: the algorithm is polynomial only in log |Delta_K| for constant degree n, and exponential in n.",
-    "source": "research/ARBITRARY_DEGREE_NUMBER_FIELD_REGULATOR_BARRIER.md"
-  },
-  {
-    "applies_to": [
-      "SU2-HSP",
-      "SO3-HSP",
-      "COMPACT-LIE-GROUP",
-      "WIGNER-D-MATRICES",
-      "CATALAN-COMMUTANT-INFLATION"
-    ],
-    "claim": "The Hidden Subgroup Problem over the compact Lie group SU(2) or SO(3) can be solved in polynomial time by standard quantum Fourier sampling.",
-    "evidence": {
-      "catalan_commutant_inflation": "Commutant dimension of V_1^{otimes M} scales as Catalan number C_M = (1/(M+1)) binom(2M, M) = Theta(4^M / M^{3/2}), exceeding 6.5 billion for M=20",
-      "epistemic_invariants_enforced": "speedup_claim_allowed = False; accepted_speedup_candidate = False",
-      "racah_recoupling_hardness": "Diagonalizing multi-copy commutant requires evaluating 3nj-symbols, which is #P-hard in general (Aharonov-Jones-Landau 2009)",
-      "speedup_claim_allowed": false,
-      "spin_coherent_projector": "Strong Fourier projection for torus U(1)_n onto integer spin j yields rank-1 spin-coherent state |j, n, 0>, but extracting n requires entangling measurements across M = Omega(1/eps^2) copies",
-      "weak_fourier_orientation_blindness": "Wigner characters chi_j(theta) = sin((2j+1)theta) / sin(theta) are class functions; weak Fourier sampling TV distance across all orientations is identically 0.000",
-      "wigner_character_conjugacy_invariance": "chi_j(g h g^{-1}) == chi_j(h) identically for all g, h in SU(2)"
-    },
-    "id": "NEG-SU2-COMPACT-LIE-HSP-COMMUTANT-INFLATION",
-    "lesson": "The Hidden Subgroup Problem over compact non-abelian Lie groups such as SU(2) and SO(3) cannot be solved by quantum Fourier sampling. Irreducible representations have dimension d_j = 2j + 1, and character traces chi_j(theta) are strictly class functions. For any subgroup H <= SU(2) (including continuous tori U(1)_n and finite binary polyhedral groups 2T, 2O, 2I), the weak Fourier sampling distribution is identically invariant under ambient rotations g, forcing total variation distance to zero (TV == 0.000, 0.000 bits mutual information). While strong Fourier sampling on integer spins j yields rank-1 spin-coherent projectors |j, n, 0><j, n, 0|, single-copy measurements provide only O(log j) bits of information. Distinguishing orientations requires multi-copy measurements across M registers, where the SU(2) commutant algebra C_M = End_SU(2)(V_1^{otimes M}) explodes exponentially with Catalan dimension dim(C_M) = (1/(M+1)) binom(2M, M) = Theta(4^M / M^{3/2}). Diagonalizing this commutant requires evaluating Racah recoupling symbols, which is #P-hard in general (Aharonov-Jones-Landau 2009).",
-    "reason_invalid": "In SU(2), irreducible representations have dimension d_j = 2j + 1, and character traces chi_j(theta) = sin((2j+1)theta) / sin(theta) are strictly class functions. For any subgroup H <= SU(2) (including continuous tori U(1)_n and finite binary polyhedral groups 2T, 2O, 2I), the weak Fourier sampling distribution is identically invariant under ambient rotations g, forcing total variation distance to zero (TV == 0.000, 0.000 bits mutual information). While strong Fourier sampling on integer spins j yields rank-1 spin-coherent projectors |j, n, 0><j, n, 0|, single-copy measurements provide only O(log j) bits of information. Distinguishing orientations requires multi-copy measurements across M registers, where the SU(2) commutant algebra C_M = End_SU(2)(V_1^{otimes M}) explodes exponentially with Catalan dimension dim(C_M) = (1/(M+1)) binom(2M, M) = Theta(4^M / M^{3/2}). Diagonalizing this commutant requires evaluating Racah recoupling symbols, which is #P-hard in general (Aharonov-Jones-Landau 2009).",
-    "source": "research/SU2_COMPACT_LIE_HSP_COMMUTANT_INFLATION.md"
-  },
-  {
-    "applies_to": [
-      "SL2R-HSP",
-      "NONCOMPACT-LIE-GROUP",
-      "HARISH-CHANDRA-CHARACTERS",
-      "CONTINUOUS-PLANCHEREL-MEASURE",
-      "INFINITE-DIMENSIONAL-COMMUTANT"
-    ],
-    "claim": "The Hidden Subgroup Problem over the non-compact Lie group SL(2, R) with respect to discrete Fuchsian subgroups can be solved in polynomial time by quantum Fourier sampling.",
-    "evidence": {
-      "anosov_chaos_lyapunov_exponent": "Geodesic flow on H^2 / Gamma has Lyapunov exponent lambda = 1.000; quantum eigenvalues exhibit GOE level repulsion with zero invariant tori",
-      "continuous_plancherel_measure": "Plancherel density dmu(r) = (1/4pi) r tanh(pi r / 2) dr is continuous with diverging total volume, causing continuous spectral broadening and non-normalizable states",
-      "epistemic_invariants_enforced": "speedup_claim_allowed = False; accepted_speedup_candidate = False",
-      "harish_chandra_character_invariance": "Theta_ir(g gamma g^{-1}) == Theta_ir(gamma) identically for all g, gamma in SL(2, R)",
-      "infinite_dimensional_commutant": "By Repka's theorem (1978), P_ir1 (x) P_ir2 contains a continuous direct integral of principal series irreps; commutant algebra C_M = End_G((P_ir)^{otimes M}) is an infinite-dimensional von Neumann algebra whose Racah intertwiners are transcendental Barnes integrals",
-      "speedup_claim_allowed": false,
-      "weak_fourier_selberg_blindness": "By the Selberg trace formula, weak Fourier sampling distribution on irrep parameter r is strictly conjugate-invariant (TV == 0.000, 0.000 bits mutual information)"
-    },
-    "id": "NEG-SL2R-NONCOMPACT-LIE-CONTINUOUS-SPECTRUM-BARRIER",
-    "lesson": "The Hidden Subgroup Problem over non-compact simple real Lie groups such as SL(2, R) cannot be solved by quantum Fourier sampling. Irreducible representations in the spherical principal series are infinite-dimensional on L^2(R), and characters exist only as Harish-Chandra distributions that are class functions on hyperbolic conjugacy classes (Theta_{ir}(gamma) = cos(r ell / 2) / sinh(ell / 2)). For any discrete Fuchsian subgroup Gamma < SL(2, R), the weak Fourier sampling density is strictly invariant under conjugate orientations g Gamma g^{-1} by the Selberg trace formula, yielding identically zero total variation distance (TV == 0.000, 0.000 bits mutual information). Furthermore, the Plancherel measure dmu(r) = (1/4pi) r tanh(pi r / 2) dr is continuous with diverging volume, inducing unavoidable spectral broadening. Finally, for M >= 2 copies, Repka's theorem (1978) proves the commutant algebra C_M = End_G((P_ir)^{otimes M}) is an infinite-dimensional von Neumann algebra requiring continuous Racah-Wigner 6j-coefficients (transcendental Barnes integrals of gamma functions) that cannot be synthesized by finite-depth discrete quantum circuits.",
-    "reason_invalid": "In SL(2, R), spherical principal series representations are infinite-dimensional on L^2(R), and Harish-Chandra characters are class functions invariant under conjugation. By the Selberg trace formula, weak Fourier sampling on the continuous unitary spectrum provides identically 0.000 bits of mutual information about the conjugate orientation g (TV == 0.000). The continuous Plancherel measure prevents projection onto discrete normalizable states, and the multi-copy commutant algebra is an infinite-dimensional von Neumann algebra decomposing into continuous direct integrals. Diagonalizing entangling measurements across M registers requires continuous Racah 6j-symbols given by transcendental Barnes contour integrals, which cannot be synthesized by discrete quantum circuits. Thus, claiming polynomial-time quantum Fourier solvability for the SL(2, R) Hidden Subgroup Problem is mathematically invalid.",
-    "source": "research/SL2R_NONCOMPACT_LIE_CONTINUOUS_SPECTRUM_BARRIER.md"
-  },
-  {
-    "applies_to": [
-      "QPE-CONTINUOUS-SPECTRUM",
-      "SINGULAR-SPECTRAL-MEASURES",
-      "RESOLVENT-LORENTZIAN-BROADENING",
-      "CANTOR-INTERMITTENCY",
-      "KPM-DEQUANTIZATION"
-    ],
-    "claim": "Quantum Phase Estimation or Resolvent simulation can achieve exponential speedup over classical algorithms when estimating continuous spectral densities or singular continuous Hamiltonian spectra.",
-    "evidence": {
-      "almost_mathieu_cantor_intermittency": "Harper Hamiltonian at critical coupling lambda=1 has singular continuous spectrum with gap ratio > 1000 and fractional Hölder scaling, causing extreme intermittency and QPE breakdown",
-      "epistemic_invariants_enforced": "speedup_claim_allowed = False; accepted_speedup_candidate = False",
-      "kpm_classical_dequantization": "Classical Kernel Polynomial Method (KPM) with Jackson damping evaluates continuous spectral densities to resolution eta in Theta(1/eta) sparse matrix-vector multiplications, matching quantum lower bounds",
-      "resolvent_condition_barrier": "Resolvent Green's function (E + i eta - H)^-1 induces Lorentzian broadening with FWHM = 2 eta and condition number kappa = 1 / eta, requiring Omega(1/eta) quantum circuit depth by QSVT lower bounds",
-      "speedup_claim_allowed": false,
-      "universal_peak_flattening": "On absolutely continuous spectra, QPE measurement probability scales as P(k_max) = Theta(1/N) = Theta(2^-m) -> 0, flattening all discrete peaks and reducing QPE to continuous density sampling"
-    },
-    "id": "NEG-CONTINUOUS-SPECTRUM-QPE-SINGULAR-MEASURE-BARRIER",
-    "lesson": "Quantum Phase Estimation cannot achieve exponential speedup on continuous or singular continuous Hamiltonian spectra. For absolutely continuous spectra dmu_ac(E) = rho(E) dE, generalized eigenstates are non-normalizable in Hilbert space, and the discrete QPE measurement probability exhibits Universal Peak Flattening: P(k_max) = Theta(1/N) = Theta(2^-m) -> 0. Rather than concentrating mass into a sharp discrete peak with O(1) confidence as in discrete eigenvalue estimation, QPE on the continuum smears probability mass into a flat distribution scaling as O(2^-m). Furthermore, simulating the resolvent Green's operator (E + i eta - H)^-1 induces Lorentzian broadening of FWHM = 2 eta, with condition number kappa = 1/eta requiring Omega(1/eta) quantum circuit depth. On classical computers, the Kernel Polynomial Method (KPM) evaluates the continuous spectral density to the same resolution eta using M = Theta(1/eta) Chebyshev matrix-vector multiplications, completely dequantizing continuous spectral estimation. For singular continuous spectra (such as the Almost Mathieu operator at critical coupling), the spectrum is a Cantor set where QPE fluctuates wildly between zero in Hofstadter gaps and intermittent fractional spikes, precluding stable phase extraction.",
-    "reason_invalid": "Standard QPE exponential precision relies strictly on pure-point discrete spectra with normalizable eigenstates in Hilbert space. On absolutely continuous spectra, generalized eigenstates are non-normalizable, and the QPE Fejér kernel forces every discrete computational bin to have probability P(k) = Theta(1/N) -> 0 (Universal Peak Flattening). Resolvent simulation requires condition number kappa = 1/eta, lower-bounding quantum circuit depth at Omega(1/eta) queries. Because the classical Kernel Polynomial Method (KPM) computes the identical continuous spectral density in Theta(1/eta) operations, quantum algorithms possess zero exponential speedup for continuous spectral density estimation. On singular continuous spectra, the Cantor structure induces pathological intermittency that prevents continued fraction period recovery. Thus, claiming exponential quantum advantage for continuous spectrum phase estimation is mathematically invalid.",
-    "source": "research/CONTINUOUS_SPECTRUM_QPE_SINGULAR_MEASURE_BARRIER.md"
-  },
-  {
-    "applies_to": [
-      "QUANTUM-CHAOS",
-      "SPECTRAL-FORM-FACTOR",
-      "RANDOM-MATRIX-THEORY",
-      "WIGNER-SURMISE-REPULSION",
-      "RETURN-FIDELITY-COLLAPSE"
-    ],
-    "claim": "Quantum Fourier Sampling or Quantum Phase Estimation can extract periods or harmonic structures from quantum chaotic Hamiltonians whose spectra obey Random Matrix Theory.",
-    "evidence": {
-      "classical_oganesyan_huse_dequantization": "Classical consecutive gap ratio <r> distinguishes Poisson (<r> ~ 0.386) from GUE (<r> ~ 0.600) in O(N log N) operations without quantum evolution",
-      "epistemic_invariants_enforced": "speedup_claim_allowed = False; accepted_speedup_candidate = False",
-      "return_fidelity_collapse": "Chaotic return fidelity collapses to F(t) = K(t) / N^2 <= 1/N = 2^-n, an exponential suppression of Omega(N) compared to integrable revivals F(T) = 1.000",
-      "sff_linear_ramp": "Spectral Form Factor K(t) exhibits a linear ramp K_GUE(t) ~ t / 2pi and saturates at plateau N, with zero periodic revival spikes of height N^2",
-      "speedup_claim_allowed": false,
-      "swap_test_exponential_measurement_barrier": "Measuring the SFF ramp on quantum computers via two-copy SWAP tests yields <SWAP> = K(t) / N^2 <= 1/N = 2^-n, requiring Omega(N^2) = 2^Omega(n) measurement shots",
-      "wigner_surmise_level_repulsion": "Level spacing distribution obeys Wigner surmise P(0) = 0, precluding harmonic arithmetic progressions"
-    },
-    "id": "NEG-QUANTUM-CHAOS-SFF-PERIOD-FINDING-BARRIER",
-    "lesson": "Quantum period finding and phase estimation cannot operate on quantum chaotic systems whose spectra follow Random Matrix Theory (RMT). Unlike integrable systems where harmonic progressions En = n Delta generate 100% return revivals F(T) = 1.000 and SFF revival spikes of height N^2, chaotic systems exhibit Wigner level repulsion (P(0) = 0) with no harmonic ladder. The Spectral Form Factor K(t) exhibits a linear ramp K(t) ~ t / 2pi and plateau N, never exceeding N for t > t_dip. The quantum return fidelity collapses to F(t) <= 1/N = 2^-n, an exponential suppression of Omega(N) = 2^Omega(n). The system never revives within polynomial time, causing quantum period finding algorithms to fail completely. Furthermore, measuring the SFF ramp on quantum hardware requires Omega(N^2) = 2^Omega(n) SWAP test shots, while classical computation diagnoses quantum chaos via the Oganesyan-Huse ratio <r> in O(N log N) operations.",
-    "reason_invalid": "Quantum period finding fundamentally requires harmonic arithmetic eigenvalue progressions En = n Delta. In quantum chaotic systems (by the Bohigas-Giannoni-Schmit conjecture), energy levels obey Random Matrix Theory with Wigner level repulsion P(0) = 0 and zero harmonic coherence. The Spectral Form Factor lacks periodic revival spikes, replacing them with a linear ramp and plateau K(t) <= N. The state return fidelity collapses to F(t) = K(t) / N^2 <= 1/N = 2^-n -> 0, preventing constructive Fourier interference in polynomial time. Measuring the ramp quantumly requires an exponential number of shots Omega(N^2) = 2^Omega(n), whereas classical algorithms compute the consecutive gap ratio <r> in O(N log N) time. Thus, claiming quantum Fourier speedups for period finding on chaotic Hamiltonians is mathematically invalid.",
-    "source": "research/QUANTUM_CHAOS_SFF_PERIOD_FINDING_BARRIER.md"
-  },
-  {
-    "applies_to": [
-      "QUANTUM-SCRAMBLING",
-      "OUT-OF-TIME-ORDER-CORRELATOR",
-      "MSS-CHAOS-BOUND",
-      "OPERATOR-SIZE-GROWTH",
-      "CLIFFORD-DEQUANTIZATION"
-    ],
-    "claim": "Quantum algorithms can efficiently extract local phases, period structures, or hidden subgroups after time evolution under fast-scrambling quantum chaotic Hamiltonians.",
-    "evidence": {
-      "clifford_gottesman_knill_dequantization": "Clifford scrambling preserves single Pauli strings (|c_P| = 1) and is solved classically in O(n^2) operations via Gottesman-Knill theorem",
-      "epistemic_invariants_enforced": "speedup_claim_allowed = False; accepted_speedup_candidate = False",
-      "maldacena_shenker_stanford_chaos_bound": "Quantum Lyapunov exponent is universally upper bounded by lambda_L <= 2pi k_B T / hbar = 2pi / beta; non-integrable spin chains are strictly sub-maximal",
-      "operator_size_growth_saturation": "Average Pauli operator size S(W(t)) expands from S(W(0)) = 1.0 to the Haar-random infinite-temperature limit (3/4)*n, converting local information into irreducible n-body Pauli entanglement",
-      "otoc_squared_commutator_saturation": "Chaotic Ising chain squared commutator C(t) = 1 - Re(F(t)) saturates to scrambled plateau C(5.0) ~ 0.9411, while integrable chain undergoes periodic revivals to C(5.0) ~ 0.0019",
-      "speedup_claim_allowed": false,
-      "swingle_loschmidt_echo_collapse": "Time-reversal echo return probability F_echo(t) collapses to < 0.01 in chaotic systems, while integrable systems revive to > 0.95"
-    },
-    "id": "NEG-QUANTUM-SCRAMBLING-OTOC-MSS-COMPLEXITY-BARRIER",
-    "lesson": "Quantum algorithms cannot extract phase, period, or group-theoretic structure from quantum states that have undergone time evolution under fast-scrambling chaotic Hamiltonians. In non-integrable systems, the Out-of-Time-Order Correlator (OTOC) decays rapidly, and the squared commutator C(t) = 1 - Re(F(t)) saturates to an extensive scrambled plateau C(t) -> 1.0 with zero revivals. The Heisenberg operator W(t) undergoes exponential operator size growth, saturating to the Haar-random limit S_infty = (3/4)n, delocalizing initially local quantum information across non-local n-body Pauli entanglement. Consequently, all local observables decay to thermal equilibrium, and any subsequent measurement to extract period or phase information requires measuring non-local operators of Pauli weight Omega(n), which is exponentially suppressed by Omega(2^-n). The rate of this scrambling is universally bounded by the Maldacena-Shenker-Stanford (MSS) bound lambda_L <= 2pi / beta. Furthermore, in Clifford circuits where scrambling is superficially fast, operator support remains concentrated on single Pauli strings (|c_P| = 1), dequantizing OTOC evaluation classically in O(n^2) time via the Gottesman-Knill theorem.",
-    "reason_invalid": "Quantum phase estimation and Fourier sampling fundamentally require observables that maintain localized support and coherent periodic revivals. In chaotic many-body systems, quantum scrambling rapidly delocalizes local operators across the entire Hilbert space, saturating the average operator size to (3/4)n and collapsing the Swingle-Loschmidt time-reversal echo to F_echo(t) <= 2^-2n -> 0. Once information is scrambled, extracting any global algebraic period or coset orientation requires measuring operators of weight Omega(n), requiring exponential quantum circuit depth. For Clifford scrambling where operator spreading occurs, the dynamics are dequantized classically in O(n^2) operations by the Gottesman-Knill theorem. Thus, claiming quantum algorithmic speedups for phase or hidden structure extraction in fast-scrambled chaotic systems is mathematically invalid.",
-    "source": "research/QUANTUM_SCRAMBLING_OTOC_MSS_COMPLEXITY_BARRIER.md"
-  },
-  {
-    "applies_to": [
-      "QUANTUM-ERGODICITY",
-      "EIGENSTATE-THERMALIZATION-HYPOTHESIS",
-      "SREDNICKI-MATRIX-ANSATZ",
-      "LOCAL-OBSERVABLE-BLINDNESS",
-      "EXPONENTIAL-SHOT-BARRIER"
-    ],
-    "claim": "Quantum algorithms can efficiently extract microscopic phase, period, or group-theoretic information by measuring local observables on highly excited eigenstates or bulk microcanonical states of non-integrable quantum many-body systems.",
-    "evidence": {
-      "classical_microcanonical_dequantization": "Local observable expectation values in the infinite-temperature bulk are predicted classically in O(1) time via Tr(A)/D with error <= O(2^-n/2), eliminating quantum advantage",
-      "eigenstate_fluctuation_thermal_blindness": "Consecutive eigenstate differences in the bulk are suppressed as O(2^-n/2) (0.1373 in chaotic vs 0.3937 in integrable), proving local indistinguishability of adjacent eigenstates",
-      "epistemic_invariants_enforced": "speedup_claim_allowed = False; accepted_speedup_candidate = False",
-      "exponential_measurement_shot_barrier": "Resolving eigenstate identity from local measurements requires resolving bias delta <= O(2^-n/2), demanding Omega(1/delta^2) = Omega(2^n) measurement shots (M > 10^15 for n=50)",
-      "speedup_claim_allowed": false,
-      "srednicki_offdiagonal_rms_scaling": "Off-diagonal elements of local observables scale as RMS ~ 1/sqrt(D) = 2^(-n/2) (0.1194 ~ 0.1250 for n=6, D=64)",
-      "temporal_fluctuation_dephasing": "Long-time temporal variance of local observables relaxes to the diagonal ensemble with fluctuations bounded by Var_t(<A>) <= O(2^-n)"
-    },
-    "id": "NEG-QUANTUM-ERGODICITY-ETH-LOCAL-OBSERVABLE-BARRIER",
-    "lesson": "Quantum algorithms cannot extract microscopic structural data from excited states or bulk microcanonical ensembles of non-integrable quantum many-body systems. By Srednicki's Eigenstate Thermalization Hypothesis (ETH), every individual many-body energy eigenstate behaves as an exact thermal ensemble for all few-body observables. Diagonal matrix elements differ from the smooth microcanonical expectation value by at most O(2^-n/2), and consecutive eigenstate differences vanish exponentially, rendering adjacent eigenstates locally indistinguishable. Temporal fluctuations under Hamiltonian evolution decay as O(2^-n), erasing all relative phase information from local measurements. Distinguishing any specific bulk eigenstate from the thermal ensemble requires resolving an exponentially small bias delta <= O(2^-n/2), demanding an exponential number of measurements M = Omega(2^n). Furthermore, local observable expectation values on bulk chaotic eigenstates are computed classically in O(1) operations via the microcanonical trace Tr(A)/D, completely dequantizing local observable prediction in the ETH bulk.",
-    "reason_invalid": "Quantum phase estimation and Fourier sampling on many-body systems fundamentally require observables whose expectation values vary macroscopically between eigenstates. In non-integrable chaotic systems, the Eigenstate Thermalization Hypothesis enforces universal thermal equivalence: all individual bulk eigenstates yield identical local observable expectation values up to exponentially vanishing corrections O(2^-n/2). Distinguishing eigenstates requires Omega(2^n) quantum measurement shots, rendering polynomial quantum algorithms completely blind to eigenstate identities. Because classical statistical mechanics computes the identical thermal expectation value in O(1) time via Tr(A)/D, claiming quantum algorithmic advantage for local observable or phase extraction from ETH bulk eigenstates is mathematically invalid.",
-    "source": "research/QUANTUM_ERGODICITY_ETH_LOCAL_OBSERVABLE_BARRIER.md"
-  },
-  {
-    "applies_to": [
-      "FAULT-TOLERANT-QUANTUM-COMPUTING",
-      "EASTIN-KNILL-THEOREM",
-      "BRAVYI-KOENIG-BOUND",
-      "MAGIC-STATE-DISTILLATION",
-      "TRANSVERSAL-OBSTRUCTION"
-    ],
-    "claim": "Universal quantum computation can be achieved transversally without magic state distillation in local topological quantum error correcting codes such as the 2D surface code.",
-    "evidence": {
-      "bravyi_kitaev_distillation_threshold": "15-to-1 magic state distillation requires physical error epsilon < 1/sqrt(35) ~ 0.16903; distillation space-time overhead scales as Omega(log^2.465(1/P_L))",
-      "bravyi_koenig_hierarchy_bound": "In D spatial dimensions, transversal gates are strictly contained in level C^(D) of Clifford hierarchy; 2D surface codes are confined to C^(2) (Clifford group), precluding transversal T-gates",
-      "eastin_knill_transversal_finiteness": "For any code of distance d >= 2, Knill-Laflamme conditions force the continuous transversal Lie algebra dimension to 0, proving G_transversal is strictly finite and non-universal",
-      "epistemic_invariants_enforced": "speedup_claim_allowed = False; accepted_speedup_candidate = False",
-      "gottesman_knill_stabilizer_dequantization": "Transversal Clifford circuits on stabilizer states (T-count = 0) are simulated classically in O(n^2) time via Gottesman-Knill theorem",
-      "speedup_claim_allowed": false,
-      "steane_transversal_t_corruption": "Transversal T^7 on [[7,1,3]] Steane code applies relative phase -1 to weight-4 codewords, corrupting stabilizer codespace and destroying logical coherence"
-    },
-    "id": "NEG-EASTIN-KNILL-NON-CLIFFORD-FAULT-TOLERANT-BARRIER",
-    "lesson": "Universal quantum computation cannot be implemented transversally in any quantum error correcting code. By the Eastin-Knill theorem (2009), the group of logical transversal gates for any code with distance d >= 2 is strictly finite, precluding continuous or universal quantum gate synthesis. By the Bravyi-König theorem (2013), local topological stabilizer codes in D dimensions are restricted to the D-th level of the Clifford hierarchy C^(D); in 2D surface codes, transversal operations are strictly limited to the Clifford group C^(2) = <H, S, CNOT>. On explicit codes like the [[7,1,3]] Steane code, transversal T^7 applies a relative phase (-1) to weight-4 codewords, knocking states out of the code space. Consequently, universal fault-tolerant quantum computation fundamentally requires non-transversal magic state injection and distillation (e.g. the Bravyi-Kitaev 15-to-1 protocol with threshold 1/sqrt(35) ~ 0.1690), incurring an Omega(log^2.465(1/P_L)) space-time volume overhead that consumes over 90% of physical quantum computer resources and shifts quantum crossover thresholds for polynomial speedups to astronomical problem sizes.",
-    "reason_invalid": "Theoretical quantum algorithms assume that universal gates (including non-Clifford T-gates) can be applied with unit time and error. In fault-tolerant quantum error correction, the Eastin-Knill theorem proves that no code can implement a universal gate set transversally. In 2D surface codes, the Bravyi-König bound restricts transversal gates strictly to the Clifford group, which is dequantized classically in O(n^2) operations by the Gottesman-Knill theorem. Non-Clifford universality requires magic state distillation, which imposes an exponential physical qubit overhead on polynomial speedups. Thus, claiming fault-tolerant universality without magic state distillation or ignoring Eastin-Knill overhead in algorithmic scaling is mathematically invalid.",
-    "source": "research/EASTIN_KNILL_NON_CLIFFORD_FAULT_TOLERANT_BARRIER.md"
-  },
-  {
-    "applies_to": [
-      "TOPOLOGICAL-QUANTUM-COMPUTING",
-      "ANYONIC-BRAID-GROUPS",
-      "FIBONACCI-ANYONS",
-      "TEMPERLEY-LIEB-COMMUTANT",
-      "JONES-POLYNOMIAL-HARDNESS"
-    ],
-    "claim": "Quantum Fourier sampling can solve the Hidden Subgroup Problem over non-abelian anyonic braid groups B_n in polynomial time.",
-    "evidence": {
-      "artin_braid_satisfaction": "Fibonacci anyon representation rho(B_n) satisfies Artin relations with machine precision (< 1e-15) and generates a dense subgroup in SU(2)",
-      "classical_garside_dequantization": "Braid word problem and abelian writhe invariant w(beta) are solved classically in O(L) to O(L^2 n) via Garside left-greedy normal forms",
-      "epistemic_invariants_enforced": "speedup_claim_allowed = False; accepted_speedup_candidate = False",
-      "garside_center_schur_scalar": "Central Garside element Delta_3^2 acts as scalar exp(2pi i / 5) * I by Schur's lemma, providing 0.000 bits of mutual information about central subgroup orientation",
-      "speedup_claim_allowed": false,
-      "temperley_lieb_catalan_inflation": "Multi-copy commutant algebra C_M = End_{B_n}(V^M) has dimension dim(C_M) = C_M = Theta(4^M / M^1.5) > 6.5e9 for M=20, requiring #P-hard quantum 6j-symbols to diagonalize",
-      "weak_fourier_conjugacy_blindness": "Knot trace characters are class functions invariant under arbitrary conjugation: Tr(gamma beta gamma^-1) == Tr(beta) identically (TV == 0.000, 0.000 bits mutual information)"
-    },
-    "id": "NEG-ANYONIC-BRAID-GROUP-HSP-COMMUTANT-BARRIER",
-    "lesson": "The Hidden Subgroup Problem over anyonic braid groups B_n cannot be solved by quantum Fourier sampling. In non-abelian anyon representations (such as Fibonacci anyons from SU(2)_3 Chern-Simons theory), trace characters are class functions invariant under conjugation, blinding weak Fourier sampling completely (TV == 0.000, 0.000 bits of mutual information). Central Garside elements Delta_n^2 act as global scalar phases exp(2pi i / 5) by Schur's lemma, hiding central subgroups behind unobservable global phases. Furthermore, multi-copy strong Fourier sampling across M registers encounters exponential Catalan commutant inflation dim(C_M) = (1/(M+1)) binom(2M, M) = Theta(4^M / M^1.5), where diagonalizing entangling measurements requires evaluating quantum Racah 6j-coefficients, which is #P-hard. Finally, algebraic word equivalence in B_n is completely dequantized classically in polynomial time via Garside normal forms, while finding black-box hidden subgroups requires Omega(2^{L/2}) queries due to exponential Cayley tree volume.",
-    "reason_invalid": "Braid groups B_n possess infinite conjugacy classes, and anyonic trace characters are class functions that yield identically zero total variation distance between conjugate subgroup orientations in weak Fourier sampling. Central subgroups act as scalar multiples of identity by Schur's lemma, leaving zero detectable relative phases. Multi-copy strong Fourier sampling is obstructed by Temperley-Lieb Catalan commutant explosion dim(C_M) = Theta(4^M / M^1.5) and the #P-hardness of quantum Racah recoupling symbols. On classical computers, the word problem is solved in O(L^2 n) time via Garside normal forms. Thus, claiming polynomial-time quantum Fourier solvability for the Hidden Subgroup Problem over non-abelian braid groups B_n is mathematically invalid.",
-    "source": "research/ANYONIC_BRAID_GROUP_HSP_COMMUTANT_BARRIER.md"
-  },
-  {
-    "applies_to": [
-      "QUANTUM-SUPREMACY",
-      "RANDOM-CIRCUIT-SAMPLING",
-      "PORTER-THOMAS-STATISTICS",
-      "CROSS-ENTROPY-BENCHMARKING",
-      "TENSOR-NETWORK-SLICING",
-      "ANTICONCENTRATION-BARRIER"
-    ],
-    "claim": "Random Circuit Sampling (RCS) on noisy quantum processors provides an exponential, verifiable quantum computational speedup over classical computation for useful problem solving.",
-    "evidence": {
-      "anticoncentration_entropy_deficit": "Shannon entropy of Porter-Thomas random circuit states is within (1 - gamma)/ln(2) ~ 0.6099 bits of maximal entropy; maximum basis probability is bounded by O(n/2^n) -> 0, eliminating constructive interference peaks",
-      "classical_mps_spoofing": "Shallow classical tensor networks and Matrix Product States can spoof noisy XEB fidelity F_XEB <= 0.01 in polynomial time poly(n) without synthesizing full quantum states",
-      "epistemic_invariants_enforced": "speedup_claim_allowed = False; accepted_speedup_candidate = False",
-      "linear_xeb_noise_decay": "Normalized linear XEB decays linearly with depolarizing noise F_norm = lambda; at physical fidelity F ~ 0.0022 (Sycamore), over 99.78% of physical samples are uncorrelated white noise",
-      "porter_thomas_moments": "Haar-random output probabilities obey Porter-Thomas distribution P(p) = D exp(-D p) with E[D p] = 1.0, E[(D p)^2] = 2.0, and anticoncentration ratio E[p^2]/(E[p])^2 = 2.0",
-      "speedup_claim_allowed": false,
-      "tensor_slicing_dequantization": "Pan-Chen (2021) tensor slicing reduces treewidth from tw to tw - s, allowing Sycamore 53-qubit depth-20 amplitude computation in seconds and full sampling in hours on classical GPU clusters",
-      "verification_catch_22": "Computing ideal probabilities p(x) for XEB verification is #P-hard: if classically verifiable, the circuit is classically simulable; if scaled beyond classical simulation (n >= 100), verification is intractable in polynomial time"
-    },
-    "id": "NEG-QUANTUM-SUPREMACY-RCS-ANTICONCENTRATION-BARRIER",
-    "lesson": "Random Circuit Sampling (RCS) does not establish a useful or permanent quantum computational advantage. Output probabilities strictly obey the Porter-Thomas distribution P(p) = D exp(-D p), possessing near-maximal Shannon entropy H(p) = n - 0.61 bits and extreme value peak bound p_max = O(n/2^n), which deliberately eliminates constructive quantum interference and renders RCS structurally incapable of solving decision, search, or algebraic problems. In physical hardware, gate noise collapses total fidelity exponentially to F_XEB ~ 0.002, meaning over 99.78% of experimental samples are uncorrelated white noise; such low-fidelity distributions can be spoofed by classical shallow Matrix Product States in polynomial time poly(n). Furthermore, classical space-time tensor network slicing (Pan & Chen 2021) reduces effective treewidth to tw - s, enabling classical simulation of 53-qubit 20-cycle circuits in seconds on classical GPU clusters and demolishing the 10,000-year speedup claim. Finally, verifying RCS requires computing ideal amplitudes p(x), creating an unbreakable verification dilemma: in the regime where quantum advantage is claimed, classical verification is #P-hard and intractable.",
-    "reason_invalid": "Random Circuit Sampling solves no structured computational decision problem, decision search, or algebraic problem; its output is an anticoncentrated cloud of Porter-Thomas noise with Shannon entropy H(p) ~ n - 0.61 bits. The claimed exponential classical hardness was refuted by classical space-time tensor network slicing (Pan-Chen 2021), which simulated the Sycamore processor in hours rather than 10,000 years. Physical gate errors degrade the output fidelity to F ~ 0.002, which Gao et al. (2021) and Aharonov et al. (2023) proved can be spoofed classically by shallow tensor networks in polynomial time. Moreover, verifying XEB fidelity requires computing #P-hard amplitudes, precluding polynomial-time verification for large circuits. Thus, claiming Random Circuit Sampling provides a scalable, verifiable quantum speedup is mathematically and empirically invalid.",
-    "source": "research/QUANTUM_SUPREMACY_RCS_ANTICONCENTRATION_BARRIER.md"
-  },
-  {
-    "applies_to": [
-      "BOSON-SAMPLING",
-      "GAUSSIAN-BOSON-SAMPLING",
-      "PERMANENT-HARDNESS",
-      "HAFNIAN-HARDNESS",
-      "PHOTON-LOSS-DEQUANTIZATION",
-      "MATCHGATE-FERMION-DEMARCATION"
-    ],
-    "claim": "Photonic Boson Sampling and Gaussian Boson Sampling (GBS) on physical linear-optical processors provide an exponential, scalable quantum computational speedup over classical computers for practical or decision problems.",
-    "evidence": {
-      "classical_distinguishable_sampling": "Completely distinguishable photons (HOM visibility x = 0) obey doubly stochastic transition probabilities P_dist(s) = Perm(|U|^2) / prod s! and are classically simulated in O(m n) time (Clifford & Clifford 2018)",
-      "epistemic_invariants_enforced": "speedup_claim_allowed = False; accepted_speedup_candidate = False",
-      "fermion_matchgate_p_demarcation": "Fermion sampling amplitudes are governed by matrix determinants det(U), which are evaluated classically in O(n^3) time via LU decomposition (Valiant 2002, Terhal & DiVincenzo 2002)",
-      "graph_heuristic_classical_subsumption": "GBS adjacency encoding for Dense Subgraph and Max-Clique provides zero asymptotic quantum speedup over classical greedy search and semidefinite programming (SDP) solvers",
-      "hom_interference_coincidence_cancellation": "50:50 beamsplitter Hong-Ou-Mandel bunching cancels coincidence detection Perm(B) = 0.0 with machine precision (< 1e-12), confirming ideal bosonic constructive bunching P(2,0) = P(0,2) = 0.5",
-      "photon_loss_exponential_collapse": "Physical transmission efficiency eta in (0, 1) causes exponential survival collapse P_surv = eta^n; in Jiuzhang benchmarks (n=50, eta=0.40), P_surv ~ 1.27e-20 << 1e-19, extinguishing uncorrupted n-photon coherence",
-      "renema_qi_truncation_dequantization": "Under partial distinguishability x < 1 or loss eta < 1, interference expands in symmetric group cycle types damped by x^k; truncating to k = O(log n) yields an efficient classical polynomial-time simulation",
-      "speedup_claim_allowed": false
-    },
-    "id": "NEG-BOSON-SAMPLING-PHOTONIC-LOSS-DEQUANTIZATION-BARRIER",
-    "lesson": "Boson Sampling and Gaussian Boson Sampling (GBS) do not establish a practical or scalable quantum computational speedup. While exact ideal Boson Sampling is linked to #P-hard matrix permanents and hafnians, physical photonic architectures suffer from transmission loss eta in (0, 1) where pure n-photon coherence decays as P_surv = eta^n (under 1.3e-20 for n=50 at eta=0.40 in Jiuzhang), leaving an incoherent thermalized mixture of low-order photon events. By Renema et al. (2018) and Qi et al. (2020), lossy and partially distinguishable linear optics can be simulated classically in polynomial time poly(n) by truncating cycle-type interference to order O(log n). Distinguishable particles are sampled classically in O(m n) time via Clifford & Clifford (2018), while Fermion Sampling is in P via O(n^3) LU determinants. Furthermore, using GBS as a heuristic for Dense Subgraph or Max-Clique provides zero worst-case speedup over classical greedy/SDP solvers, and verifying GBS samples requires computing #P-hard hafnians, making polynomial-time verification impossible in the supremacy regime.",
-    "reason_invalid": "Boson Sampling solves no structured computational decision problem, decision search, or algebraic problem; its physical implementations are degraded by transmission loss (eta ~ 0.40 in Jiuzhang), extinguishing pure n-photon coherence with probability < 1e-19. Renema et al. (2018) and Qi et al. (2020) proved that such lossy and partially distinguishable systems are dequantized classically in polynomial time. Distinguishable photon sampling is simulated classically in O(m n) time, and free fermions are simulated in O(n^3) time. Moreover, encoding graph problems into GBS provides zero asymptotic speedup over classical semidefinite programming and greedy solvers, and verifying output samples is #P-hard. Thus, claiming that Boson Sampling or GBS achieves a scalable, verifiable quantum speedup is mathematically and physically invalid.",
-    "source": "research/BOSON_SAMPLING_PHOTONIC_LOSS_BARRIER.md"
-  },
-  {
-    "applies_to": [
-      "CONTINUOUS-VARIABLE-QUANTUM-COMPUTING",
-      "GAUSSIAN-DEQUANTIZATION",
-      "HUDSON-THEOREM",
-      "GKP-CODE",
-      "WIGNER-NEGATIVITY",
-      "CUBIC-PHASE-GATE",
-      "FINITE-SQUEEZING-THRESHOLD"
-    ],
-    "claim": "Continuous-variable quantum computing using Gaussian states or finite-squeezing Gottesman-Kitaev-Preskill (GKP) codes achieves scalable fault-tolerant quantum advantage without high-overhead non-Gaussian magic distillation.",
-    "evidence": {
-      "cubic_phase_heisenberg_shear": "Cubic phase gate V_gamma = exp(i gamma x^3) induces non-linear momentum shear p -> p + 3 gamma x^2, breaking symplectic group Sp(2N, R); optical Kerr nonlinearity chi^(3) is suppressed by chi^(3)/kappa <= 10^-6",
-      "epistemic_invariants_enforced": "speedup_claim_allowed = False; accepted_speedup_candidate = False",
-      "finite_squeezing_threshold_barrier": "Physical GKP states require average photon number <n> ~ 1/(2 Delta^2); fault tolerance requires squeezing >= 10 dB (Delta <= 0.3162, <n> >= 5.0 photons), while physical resonators remain sub-threshold (< 9 dB)",
-      "gkp_stabilizer_logical_pauli_algebra": "GKP stabilizers S_x, S_p commute via exp(4 pi i) = 1.0; logical Paulis Z_L, X_L anticommute via exp(pi i) = -1.0; Gaussian operations are confined to the logical Clifford group C^(2)",
-      "hudson_mari_eisert_dequantization": "Pure Gaussian states have non-negative Wigner functions W(x, p) >= 0 (Hudson 1974) and are simulated classically in O(N^3) time via symplectic covariance matrix propagation in Sp(2N, R) (Mari & Eisert 2012)",
-      "speedup_claim_allowed": false,
-      "wigner_negativity_magic_requirement": "Quantum advantage in continuous variables strictly requires Wigner negativity N_W(rho) > 0, which cannot be generated by Gaussian operations alone"
-    },
-    "id": "NEG-CONTINUOUS-VARIABLE-GKP-NON-GAUSSIAN-BARRIER",
-    "lesson": "Continuous-variable (CV) quantum computing without non-Gaussian magic is completely dequantized classically. By Hudson's theorem (1974) and the Mari-Eisert theorem (2012), all pure Gaussian states have non-negative Wigner functions and are simulated classically in O(N^3) time via symplectic covariance propagation in Sp(2N, R). When discrete qubits are encoded into bosonic modes via the Gottesman-Kitaev-Preskill (GKP) grid code, all Gaussian operations (displacements, squeezing, beamsplitters) are strictly confined to the logical Clifford group C^(2), requiring non-Gaussian operations for universality. The canonical non-Clifford gate—the cubic phase gate V_gamma = exp(i gamma x^3)—induces non-linear momentum shear p -> p + 3 gamma x^2, but physical Kerr nonlinearities are astronomically weak (chi^(3)/kappa <= 10^-6), precluding deterministic implementation. Furthermore, physical GKP codes with finite squeezing parameter Delta suffer from intrinsic displacement noise variance sigma^2 = Delta^2 / 2, requiring at least 10 dB of squeezing (<n> >= 5.0 photons) for basic GKP error correction and 13-15 dB for surface code concatenation, while physical hardware remains trapped below 9 dB.",
-    "reason_invalid": "Pure Gaussian CV quantum algorithms have non-negative Wigner functions and are simulated classically in O(N^3) time, providing zero quantum speedup. In GKP bosonic error correction, Gaussian operations only implement the Clifford group, which is dequantized in O(N^2) time via the Gottesman-Knill theorem. Non-Clifford universality requires cubic phase gates or non-Gaussian magic, which are suppressed by orders of magnitude in physical platforms (chi^(3)/kappa <= 10^-6) and demand squeezing exceeding 10 dB, which is currently unachieved experimentally. Thus, claiming that continuous-variable quantum processors achieve scalable quantum advantage without magic state distillation or with sub-10 dB squeezing is mathematically and physically invalid.",
-    "source": "research/CONTINUOUS_VARIABLE_GKP_NON_GAUSSIAN_BARRIER.md"
-  },
-  {
-    "applies_to": [
-      "QUANTUM-ERROR-MITIGATION",
-      "PROBABILISTIC-ERROR-CANCELLATION",
-      "ZERO-NOISE-EXTRAPOLATION",
-      "SAMPLING-OVERHEAD-BARRIER",
-      "TAKAGI-LOWER-BOUND",
-      "NISQ-DEQUANTIZATION"
-    ],
-    "claim": "Quantum Error Mitigation (QEM) methods such as PEC and ZNE can scale to deep quantum circuits and achieve polynomial quantum algorithmic advantage without fault-tolerant quantum error correction.",
-    "evidence": {
-      "epistemic_invariants_enforced": "speedup_claim_allowed = False; accepted_speedup_candidate = False",
-      "pec_exponential_shot_overhead": "PEC local noise inversion requires quasi-probability negativity gamma = (1 + eps/2)/(1 - eps) > 1, scaling total shot overhead as M = Omega(gamma^(2 N_g)) = Omega(e^(3 eps N_g)); at N_g = 300, eps = 0.02, variance overhead exceeds 7e7x requiring > 10^11 shots",
-      "quek_nisq_dichotomy_mps_subsumption": "Quek et al. (2024) proved that shallow mitigatable circuits (d <= O(1/eps)) are simulated classically in polynomial time O(n d chi^3) via Matrix Product States; deep circuits (d >= Omega(1/eps)) require exponential shots, eliminating all speedup",
-      "speedup_claim_allowed": false,
-      "takagi_universal_sampling_lower_bound": "Takagi et al. (PRL 2022) proved that ANY unbiased error mitigation protocol requires M_shots >= Omega((1 + 2 eps)^(2 N_g) / delta^2); for N_g = 500, eps = 0.015, M_shots exceeds 2.75e15 shots (> 8,700 years)",
-      "zne_bias_variance_dilemma": "ZNE Richardson weights a = [3, -3, 1] amplify statistical variance by Lambda = 19x (3.8x worse than linear), while low-order fits retain systematic non-linear bias -c_2 lambda_1 lambda_2 != 0"
-    },
-    "id": "NEG-QUANTUM-ERROR-MITIGATION-EXPONENTIAL-SAMPLING-BARRIER",
-    "lesson": "Quantum Error Mitigation (QEM) cannot provide a scalable quantum computational speedup or substitute for physical fault-tolerant error correction. For Probabilistic Error Cancellation (PEC), inverting noise requires signed quasi-probabilities with 1-norm gamma = (1 + eps/2)/(1 - eps), causing the sampling overhead to explode exponentially as M_shots = Omega(gamma^(2 N_g)) = Omega(e^(3 eps N_g)). For Zero-Noise Extrapolation (ZNE), Richardson extrapolation weights amplify measurement variance exponentially (Lambda = 19x for quadratic fit) while lower-order extrapolation retains uncorrectable non-linear bias. By the Takagi universal lower bound (PRL 2022), any unbiased QEM protocol on N_g gates requires Omega((1 + 2 eps)^(2 N_g) / delta^2) shots, demanding over 2.75e15 shots for 500 gates at 1.5% error. Furthermore, by the Quek et al. dichotomy (Nature Phys 2024), shallow circuits where QEM is sample-efficient are dequantized classically in polynomial time by low-bond Matrix Product States, whereas deep circuits demand astronomical shot counts. Thus, physical fault-tolerant quantum error correction is strictly unavoidable for quantum advantage.",
-    "reason_invalid": "Quantum error mitigation methods scale exponentially in measurement shot requirements with circuit size. The Takagi universal bound proves that any unbiased mitigation protocol requires Omega(e^(4 eps N_g)) shots, which exceeds 10^15 shots for moderate circuits of a few hundred gates. In shallow regimes where shots are polynomial, Quek et al. proved that classical Matrix Product States simulate the expectation values in polynomial time O(n d chi^3). ZNE suffers from an intractable bias-variance tradeoff where non-linear noise bias cannot be removed without exponential variance inflation. Therefore, claiming that QEM enables scalable quantum algorithmic speedups or replaces fault tolerance is mathematically, statistically, and physically invalid.",
-    "source": "research/QUANTUM_ERROR_MITIGATION_EXPONENTIAL_BARRIER.md"
-  },
-  {
-    "applies_to": [
-      "VARIATIONAL-QUANTUM-ALGORITHMS",
-      "BARREN-PLATEAUS",
-      "HAAR-MEASURE-CONCENTRATION",
-      "DYNAMICAL-LIE-ALGEBRA",
-      "NOISE-INDUCED-BARREN-PLATEAUS",
-      "VQA-DEQUANTIZATION-DILEMMA"
-    ],
-    "claim": "Variational Quantum Algorithms (VQAs) with universal parameterized quantum circuits can optimize arbitrary non-convex cost landscapes and achieve scalable quantum speedup over classical algorithms without exponential shot overhead or classical simulability.",
-    "evidence": {
-      "dynamical_lie_algebra_dilemma": "Fontana et al. (2024) and Larocca et al. (2022) proved that gradient variance scales inversely with the dimension of the Dynamical Lie Algebra g: Var = Theta(1 / dim(g)). If dim(g) = poly(n), the ansatz is restricted and classically simulable in polynomial time (e.g. matchgates with dim(so(2n)) = n(2n-1)); if dim(g) = 4^n - 1 (universal su(2^n)), the circuit suffers an exponential barren plateau",
-      "epistemic_invariants_enforced": "speedup_claim_allowed = False; accepted_speedup_candidate = False",
-      "haar_gradient_variance_decay": "McClean et al. (2018) proved that for ansätze forming approximate 2-designs, global cost gradient variance decays as Var = Theta(1 / 4^n), demanding Omega(4^n) measurement shots per gradient step",
-      "local_vs_global_cost_distinction": "Cerezo et al. (2021) demonstrated that while local cost functions avoid barren plateaus at shallow depth O(log n), any circuit reaching polynomial depth Omega(poly(n)) converges to a 2-design, triggering universal barren plateaus with Var = O(1/poly(n)) decaying to exp(-Omega(n))",
-      "noise_induced_barren_plateaus": "Wang et al. (PRX 2021) proved that local unital noise with error rate eps exponentially dampens gradient variance by (1 - eps)^(2d), extinguishing gradients independently of ansatz design for depth d >= O(1/eps)",
-      "speedup_claim_allowed": false
-    },
-    "id": "NEG-BARREN-PLATEAUS-VARIATIONAL-QUANTUM-HORIZON",
-    "lesson": "Variational Quantum Algorithms (VQAs) cannot provide a scalable quantum computational speedup due to the fundamental conflict between expressibility and trainability. By McClean et al. (2018) and Cerezo et al. (2021), expressive parameterized ansätze concentrating under Haar measure experience an exponential vanishing of cost function gradients Var(dC/dtheta) = Omega(1/2^n) to O(1/4^n), requiring an exponential number of measurement shots Omega(2^n) to determine optimization descent directions. The Dynamical Lie Algebra (DLA) classification by Larocca et al. and Fontana et al. establishes a strict dichotomy: ansätze whose Lie algebra dimension is polynomial dim(g) = poly(n) avoid barren plateaus but are dequantized classically in polynomial time (such as free-fermionic matchgates with dim(so(2n)) = n(2n-1)), while ansätze with exponential Lie algebra dim(g) = 4^n - 1 are intractable to optimize. Furthermore, physical device noise induces Noise-Induced Barren Plateaus (NIBP), damping gradients exponentially by (1 - eps)^(2d) at depth d. Thus, variational heuristic algorithms cannot bypass classical computation for scalable problem solving.",
-    "reason_invalid": "Universal parameterized quantum circuits suffer from Haar measure concentration, forcing gradient variances to vanish exponentially as Var = Theta(1/dim(g)). Resolving gradients above statistical shot noise requires Omega(dim(g)) measurement shots, rendering optimization intractable on NISQ hardware. Conversely, parameterized circuits with polynomial Lie algebra dimensions (dim(g) = poly(n)) that avoid barren plateaus generate unitary representations that are efficiently simulable classically via tensor networks or Lie algebraic covariance techniques. Additionally, local gate noise forces exponential gradient flattening at depth d >= O(1/eps). Therefore, claiming that variational quantum circuits can achieve scalable quantum speedup on general optimization or learning problems is mathematically and physically invalid.",
-    "source": "research/BARREN_PLATEAUS_VQA_OPTIMIZATION_BARRIER.md"
-  },
-  {
-    "applies_to": [
-      "QUANTUM-MACHINE-LEARNING",
-      "QUANTUM-KERNEL-METHODS",
-      "PROJECTED-QUANTUM-KERNELS",
-      "QUANTUM-TANGENT-KERNEL",
-      "HAAR-CONCENTRATION",
-      "TANG-DEQUANTIZATION",
-      "RKHS-SUBSUMPTION"
-    ],
-    "claim": "Quantum kernel methods and quantum neural networks achieve scalable super-polynomial quantum speedup over classical machine learning algorithms on general data distributions without exponential measurement shot overhead or classical RKHS subsumption.",
-    "evidence": {
-      "classical_sq_dequantization_tang": "Tang (STOC 2019) and Chia et al. (JACM 2022) proved that given sample-and-query access to classical input data, randomized classical algorithms evaluate low-rank matrix approximation, PCA, and kernel ridge regression in poly(k, 1/eps) log(Nd) time, dequantizing claimed HHL/QSVM exponential speedups",
-      "epistemic_invariants_enforced": "speedup_claim_allowed = False; accepted_speedup_candidate = False",
-      "haar_kernel_exponential_concentration": "Thanasilp et al. (2022) and Huang et al. (2021) proved that expressive quantum kernels concentrate exponentially as Var(K(x, x')) = Theta(1/8^n), collapsing the Gram matrix to identity K -> I and demanding Omega(4^n) measurement shots to distinguish distinct data points",
-      "projected_quantum_kernel_classical_equivalence": "Huang et al. (Nature Comm 2021) demonstrated that local projected quantum kernels K_PQK(x, x') = exp(-gamma sum_k ||rho_k(x) - rho_k(x')||_F^2) are mathematically equivalent to classical Gaussian RBF kernels on 3n-dimensional classical Bloch vectors evaluated in O(n) classical time with zero quantum speedup",
-      "quantum_tangent_kernel_trace_vanishing": "Liu et al. (2023) and Shaydulin et al. (2024) proved that the trace norm of the QTK vanishes as E[Theta(x, x)] = Theta(P / 2^n); maintaining non-vanishing gradient flow requires exponential overparameterization P = Omega(2^n), rendering training non-scalable",
-      "speedup_claim_allowed": false
-    },
-    "id": "NEG-QUANTUM-MACHINE-LEARNING-KERNEL-CONCENTRATION-BARRIER",
-    "lesson": "Quantum Machine Learning (QML) cannot achieve scalable super-polynomial quantum advantage over classical machine learning. Expressive global quantum feature maps concentrate exponentially under Haar measure, forcing off-diagonal kernel elements to vanish with variance Theta(1/8^n), which collapses the Gram matrix to the identity matrix and requires Omega(4^n) measurement shots per entry to detect any data structure. Projected quantum kernels designed to avoid concentration are mathematically identical to classical Gaussian RBF kernels on classical Bloch feature vectors, running in O(n) classical time without quantum advantage. In variational QNNs, the Quantum Tangent Kernel vanishes as Theta(P / 2^n), demanding exponential overparameterization P = Omega(2^n) to sustain gradient flow. Furthermore, early claims of exponential speedups via HHL (such as QSVM and QPCA) are fully dequantized by classical randomized sample-and-query algorithms operating in poly(k, 1/eps) log(Nd) time. Thus, quantum processors do not expand the computational capacity of classical reproducing kernel Hilbert spaces.",
-    "reason_invalid": "Expressive quantum kernels concentrate exponentially to the identity matrix due to Haar measure geometry, requiring exponentially many measurement shots Omega(4^n) to resolve kernel values. Local projected kernels that avoid concentration are classically simulable in linear time O(n) as standard classical Gaussian RBF kernels on Bloch vectors. Variational QTK gradient flows require an exponential number of parameters P = Omega(2^n) to avoid vanishing, and classical SQ dequantization proves that classical algorithms match logarithmic matrix operations given symmetric data access. Therefore, claiming scalable quantum computational advantage for quantum kernels or QML models on general data distributions is mathematically and computationally invalid.",
-    "source": "research/QUANTUM_MACHINE_LEARNING_KERNEL_CONCENTRATION_BARRIER.md"
-  },
-  {
-    "applies_to": [
-      "QAOA",
-      "COMBINATORIAL-OPTIMIZATION",
-      "MAX-CUT",
-      "GOEMANS-WILLIAMSON-SDP",
-      "HASTINGS-LOCAL-ALGORITHM",
-      "LIGHT-CONE-LOCALITY",
-      "OVERLAP-GAP-PROPERTY"
-    ],
-    "claim": "The Quantum Approximate Optimization Algorithm (QAOA) at bounded depth p = O(1) outperforms classical polynomial-time approximation algorithms or achieves quantum computational advantage for combinatorial optimization on bounded-degree graphs.",
-    "evidence": {
-      "bravyi_lightcone_tree_barrier": "Bravyi et al. (PRL 2020) proved that depth-p QAOA light cones on graphs with girth g > 2p + 1 see only bipartite trees, blinding local measurements to cycle frustration; seeing cycles requires p = Omega(log n), where light cones contain poly(n) qubits and trigger barren plateaus",
-      "epistemic_invariants_enforced": "speedup_claim_allowed = False; accepted_speedup_candidate = False",
-      "farhi_exact_p1_ratio": "For Max-Cut on 3-regular graphs, QAOA at p=1 has exact analytical ratio alpha = 1/2 + sqrt(3)/9 approx 0.69245009, offering only a slight improvement over random guessing (0.50)",
-      "goemans_williamson_sdp_dominance": "The classical Goemans-Williamson SDP algorithm achieves an approximation ratio alpha_GW approx 0.878567, strictly dominating QAOA p=1 (0.6925) and p=2 (0.7559) by over 18%, requiring p >= 11 for QAOA to match",
-      "hastings_classical_local_superiority": "Hastings (2019) proved that a classical randomized local algorithm with interaction radius R=1 achieves alpha > 0.7025 on high-girth 3-regular graphs, strictly beating p=1 QAOA under identical locality constraints",
-      "overlap_gap_property_parisi_barrier": "Gamarnik et al. (2021) proved that the Overlap Gap Property (OGP) on random regular graphs creates an unbridgeable constant gap between spatially stable algorithms (including low-depth QAOA) and the ground state Parisi constant P_* approx 0.7632",
-      "speedup_claim_allowed": false
-    },
-    "id": "NEG-QAOA-BOUNDED-DEPTH-OPTIMIZATION-BARRIER",
-    "lesson": "The Quantum Approximate Optimization Algorithm (QAOA) cannot achieve quantum speedup or surpass classical algorithms on bounded-degree combinatorial optimization problems. At depth p=1 on 3-regular graphs, QAOA achieves an approximation ratio of exactly 1/2 + sqrt(3)/9 approx 0.69245, which is outperformed by classical local rounding algorithms (alpha > 0.7025 by Hastings 2019) and heavily dominated by classical Goemans-Williamson SDP relaxation (alpha_GW approx 0.87857). By the Bravyi-Kliesch-Koenig-Tang theorem (PRL 2020), depth-p QAOA is restricted by Lieb-Robinson light cones to tree-like local neighborhoods on graphs of high girth, rendering it blind to cycle frustration and topological constraints unless depth reaches p = Omega(log n). At logarithmic depth, the circuit light cone explodes to polynomial size, inducing barren plateaus and classical tensor network simulability. Furthermore, the Overlap Gap Property (OGP) rigorously prevents any low-depth quantum or local algorithm from reaching the ground state energy governed by the Parisi constant. Thus, QAOA provides zero algorithmic advantage over classical optimization techniques.",
-    "reason_invalid": "QAOA at low depth p=O(1) is provably inferior to classical algorithms: Goemans-Williamson SDP achieves 0.87856 on Max-Cut, beating QAOA p=1 (0.6925) by over 18%, and classical local algorithms beat p=1 QAOA under identical radius constraints. Light-cone locality prevents low-depth circuits from detecting cycle frustration on high-girth graphs, and the Overlap Gap Property fundamentally blocks spatially stable quantum circuits from optimizing past the clustering barrier. Increasing depth to Omega(log n) requires circuits with polynomial neighborhood size that suffer from barren plateaus and noise-induced fidelity collapse. Therefore, claiming that QAOA achieves scalable quantum advantage or beats classical algorithms on combinatorial optimization is mathematically and computationally invalid.",
-    "source": "research/QAOA_BOUNDED_DEPTH_OPTIMIZATION_BARRIER.md"
   }
 ]

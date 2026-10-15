@@ -811,6 +811,32 @@ def write_qtt_contraction_search(
     payload = asdict(run_qtt_contraction_search(**kwargs))
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
+    if write_registry:
+        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
+        metrics = dict(payload.get("headline_metrics", {}))
+        experiment_record = ExperimentResultRecord(
+            id=result_id,
+            experiment_id=registry_experiment_id,
+            candidate_id=registry_candidate_id,
+            created_at=utc_now(),
+            status=payload.get("status", "completed"),
+            summary=payload.get("summary", ""),
+            metrics=metrics,
+            falsifiers_triggered=list(payload.get("falsifiers_triggered", [])),
+            artifacts={path.stem: str(path), "report": str(path)},
+        )
+        upsert_experiment_result(experiment_record)
+        upsert_negative_result(
+            NegativeResultRecord(
+                id="NEG-DCP-SUBSET-SUM-QTT-FINITE-DENSE-CONTRACTION",
+                claim="The tested natural, structured, or random target-bit ordering gives a QTT with the registered R=n bond cap and additive count error below one half.",
+                reason_invalid="Every tail source unfolding in the finite audit has best rank-cap Frobenius error above the necessary additive-half threshold and tracks histogram-preserving random controls.",
+                lesson="Do not retune the same finite QTT bit order. A surviving dense contraction needs a new algebraic tensorization, a uniform rank theorem, subinstance stability, and verified witness extraction.",
+                applies_to=['DHS-GOWERS-SIEVE', 'EXP-DHS-DCP-SUBSET-SUM-QTT-DENSE-CONTRACTION'],
+                evidence=metrics,
+                source=str(path),
+            )
+        )
     return payload
 
 

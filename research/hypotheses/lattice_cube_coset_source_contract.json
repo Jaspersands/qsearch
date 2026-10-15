@@ -1,0 +1,35 @@
+{
+  "contract_id": "lattice_cube_coset_source_reference_v1",
+  "status": "PUBLIC_LATTICE_CUBE_COSET_SOURCE_REFERENCE_REVIEW_PENDING",
+  "literature_id": "Regev_cs_0304005_cube_lemma",
+  "input_access": "Public integer lattice basis, prime/residue/coordinate guess, dyadic box/width and integer offsets",
+  "implemented": [
+    "Exact public cell evaluator with negative floor division",
+    "Full bounded Born-weighted fibre census, including invalid cells",
+    "Common two-point difference and balanced singleton contamination audit",
+    "Signed scalar-shift embedding and decoding",
+    "Public-data classical LLL calibration baseline"
+  ],
+  "proof_obligations": [
+    "Certified unique-SVP geometry and paid outer guesses for growing instances",
+    "Clean reversible compute-copy-uncompute workspace implementation",
+    "Uniform source preparation without classical preimage enumeration",
+    "Independent fresh source noise or an explicit correlated-noise receiver contract",
+    "Efficient noisy DCP decoding with matched classical lattice baselines"
+  ],
+  "falsifiers": [
+    "Same-colour or multipoint measured fibres",
+    "Different good cells encode different shifts",
+    "Born cell weights or source contamination law fail",
+    "Classical LLL/basis algorithms recover the promised solution efficiently"
+  ],
+  "honesty_guardrails": {
+    "scalable_quantum_source_circuit_compiled": false,
+    "efficient_noisy_DCP_decoder_supplied": false,
+    "shortest_vector_or_shift_is_constructor_advice": false,
+    "conditional_coset_inverse_is_free": false,
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  }
+}

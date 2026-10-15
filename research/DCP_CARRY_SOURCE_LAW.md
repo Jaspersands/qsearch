@@ -1,5 +1,11 @@
 # Carry Extraction: Native Acceptance And The Exact Output Source
 
+Follow-up implemented: DCP_CARRY_CONGRUENCE_SOURCE.md generalizes this q8
+reference to higher dyadic levels using mixed-modulus integer lattices and
+explicit affine output cosets. Its FLINT ROW-HNF convention uses constraints
+first and the bottom-right output block; do not copy the column-HNF sketch
+below without changing that ordering. The q8 reference remains independent.
+
 Status: LOCAL DERIVATION / REVIEW PENDING. No independent theorem review,
 novelty, decoder, quantum speedup, standard-LWE attack or security claim.
 

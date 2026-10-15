@@ -32,6 +32,8 @@ from research_registry import (
 
 
 PROJECT_ROOT = Path(__file__).resolve().parent
+if not (PROJECT_ROOT / "research").exists() and (PROJECT_ROOT.parent / "research").exists():
+    PROJECT_ROOT = PROJECT_ROOT.parent
 DEFAULT_SOURCE_ROOT = PROJECT_ROOT / "research/literature_cache/2002.05276_source"
 DCP_QUANTUM_WALK_SOURCE_AUDIT_PATH = Path(
     "research/reductions/dcp_quantum_walk_source_audit.json"
@@ -369,4 +371,52 @@ def write_quantum_walk_source_audit(
     payload = asdict(run_quantum_walk_source_audit(source_root=source_root))
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
+    if write_registry:
+        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
+        metrics = dict(payload["headline_metrics"])
+        experiment_record = ExperimentResultRecord(
+            id=result_id,
+            experiment_id=registry_experiment_id,
+            candidate_id=registry_candidate_id,
+            created_at=utc_now(),
+            status=payload["status"],
+            summary=payload["summary"],
+            metrics=metrics,
+            falsifiers_triggered=list(payload["falsifiers_triggered"]),
+            artifacts={"dcp_quantum_walk_source_audit": str(path)},
+        )
+        upsert_experiment_result(experiment_record)
+        upsert_negative_result(
+            NegativeResultRecord(
+                id="NEG-DCP-QW-0218-AS-POLYNOMIAL-PARTIAL-SOLVER",
+                claim="The 0.2182 quantum walk supplies the polynomial partial subset-sum solver required by the DCP reduction.",
+                reason_invalid="Its time and memory are both exponential with exponent 0.2182, and the memory model is QRAQM.",
+                lesson="Treat the walk as a concrete exponential baseline and mechanism source, not as a completed DCP speedup.",
+                applies_to=["DHS-GOWERS-SIEVE", registry_experiment_id],
+                evidence=metrics,
+                source=str(path),
+            )
+        )
+        upsert_negative_result(
+            NegativeResultRecord(
+                id="NEG-DCP-QW-HISTORY-INDEPENDENCE-AS-REGEV-COMPOSITION",
+                claim="Internal history independence proves compatibility with Regev's paired-endpoint matching reduction.",
+                reason_invalid="The source certifies the walk transition, but not aligned marked-witness outputs or paired output-workspace fidelity.",
+                lesson="Audit the output interface separately from internal quantum-walk path consistency.",
+                applies_to=["DHS-GOWERS-SIEVE", registry_experiment_id],
+                evidence=metrics,
+                source=str(path),
+            )
+        )
+        upsert_negative_result(
+            NegativeResultRecord(
+                id="NEG-DCP-QW-INTERNAL-HISTORY-BLOCKER-MISAPPLIED",
+                claim="The repaired 0.2182 subset-sum walk retains path-dependent internal update garbage.",
+                reason_invalid="The primary source explicitly makes the update history-independent and the update error data-independent.",
+                lesson="Do not transfer an abstract endpoint-history counterexample to a source algorithm whose internal walk consistency is repaired.",
+                applies_to=["DHS-GOWERS-SIEVE", registry_experiment_id],
+                evidence=metrics,
+                source=str(path),
+            )
+        )
     return payload

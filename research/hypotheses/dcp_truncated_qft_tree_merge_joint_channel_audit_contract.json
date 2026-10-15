@@ -1,0 +1,30 @@
+{
+  "contract_id": "dcp-truncated-qft-tree-merge-joint-channel-audit-contract",
+  "title": "DCP Truncated-QFT Tree-Merge Joint-Channel Audit: Additive Phase-Defect Propagation, Branch-Symmetry Sine Cancellation, and Exact Visibility Factorization",
+  "version": "1.0.0",
+  "scope": "additive_phase_defect_propagation_branch_symmetry_sine_cancellation_and_exact_depth_d_visibility_factorization_under_cutoff_qft",
+  "theorems": [
+    {
+      "id": "T1",
+      "name": "Signed Phase-Defect Addition Modulo 2*pi Under CNOT Merge",
+      "statement": "For any two two-point cell outcomes (c_1, k_1) and (c_2, k_2) sharing modular shift s === x_(1,1) - x_(1,0) === x_(2,1) - x_(2,0) (mod 2^ell) emitted under the cutoff-b QFT F_(2^ell)^(b), both CNOT merge branches b_br in {0, 1} occur with exact probability 1/2, outputting label k_out = (k_1 + (-1)^b_br k_2) mod 2^ell and a pure phase state whose phase defect relative to 2*pi*k_out*s / 2^ell is delta_theta_merged^(b)(b_br) === delta_theta_1 + (-1)^b_br delta_theta_2 (mod 2*pi)."
+    },
+    {
+      "id": "T2",
+      "name": "Pointwise Branch-Symmetry Sine Cancellation and Multiplicative Depth-d Visibility",
+      "statement": "For any two parent phase defects delta_theta_1, delta_theta_2, averaging the quadrature cosine factor over the two equiprobable CNOT branches b_br in {0, 1} cancels the odd sine-sine cross term: 0.5*cos(delta_theta_1 + delta_theta_2) + 0.5*cos(delta_theta_1 - delta_theta_2) = cos(delta_theta_1)*cos(delta_theta_2). Over a complete binary CNOT merge tree of depth d >= 0 consuming 2^d independent source copies emitted under F_(2^ell)^(b), the exact expected {X, Y} quadrature correlation at the true shift s is E[S_d^(b)(s)] = v_(eff,d)^(b) / 2 with v_(eff,d)^(b) = (v_(eff,0)^(b))^(2^d)."
+    },
+    {
+      "id": "T3",
+      "name": "Joint Cutoff-and-Depth Precision Budget for Tree-Merge Receivers",
+      "statement": "Whenever Delta_max(ell, b) = pi * ((ell - b - 2)/2^b + 1/2^(ell - 1)) <= pi/2, the depth-d joint quadrature visibility satisfies v_(eff,d)^(b) >= (1 - p_bad)^(2^d) * (cos(Delta_max(ell, b)))^(2^d) >= (1 - p_bad)^(2^d) * (1 - 2^(d - 1) * Delta_max(ell, b)^2)."
+    }
+  ],
+  "guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false,
+    "end_to_end_quantum_advantage_claimed": false,
+    "bypassed_UniformCubeSuperposition_prepare_constraint": false
+  }
+}

@@ -227,4 +227,30 @@ def write_growing_order_theorem(
     payload = asdict(report)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
+    if write_registry:
+        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
+        metrics = dict(payload.get("headline_metrics", {}))
+        experiment_record = ExperimentResultRecord(
+            id=result_id,
+            experiment_id=registry_experiment_id,
+            candidate_id=registry_candidate_id,
+            created_at=utc_now(),
+            status=payload.get("status", "completed"),
+            summary=payload.get("summary", ""),
+            metrics=metrics,
+            falsifiers_triggered=list(payload.get("falsifiers_triggered", [])),
+            artifacts={path.stem: str(path), "report": str(path)},
+        )
+        upsert_experiment_result(experiment_record)
+        upsert_negative_result(
+            NegativeResultRecord(
+                id="NEG-DCP-SUBSET-SUM-SUB-HALF-LOG-MOMENT-ORDER",
+                claim="A nonnegative bad-tuple moment with 4^k log n=o(n) retains persistent source signal for density-one modular subset sum.",
+                reason_invalid="At most 2^k non-self lattice transitions occur, and their full path overhead is dominated by the strict bad-state contraction whenever 4^k log n=o(n).",
+                lesson="Moment proposals must reach the half-logarithmic boundary or higher and charge q=2^k patterns, or use a signed/non-moment mechanism with an explicit decoder.",
+                applies_to=['DHS-GOWERS-SIEVE', 'EXP-DHS-DCP-SUBSET-SUM-GROWING-ORDER-MOMENT-THEOREM'],
+                evidence=metrics,
+                source=str(path),
+            )
+        )
     return payload

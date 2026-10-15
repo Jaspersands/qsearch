@@ -202,6 +202,8 @@ def _load_certificate(path: Path = CERTIFICATE_PATH) -> dict[str, object]:
     resolved = path
     if not resolved.exists():
         resolved = Path(__file__).resolve().parent / path
+    if not resolved.exists():
+        resolved = Path(__file__).resolve().parent.parent / path
     payload = json.loads(resolved.read_text())
     if payload.get("certificate_contract", {}).get(
         "dependency_sha256"

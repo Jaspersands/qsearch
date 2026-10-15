@@ -1,0 +1,38 @@
+{
+  "contract_id": "planted-qary-offset-pair-mass-frontier-audit-contract",
+  "title": "Planted q-Ary Partner-Survival Frontier and Conditional Source-Geometry Obligations",
+  "version": "2.0.0",
+  "scope": "exact_offset_average_pair_mass_factorization_and_modulus_independent_dyadic_box_width_schedules_for_planted_qary_usvp",
+  "theorems": [
+    {
+      "id": "T1",
+      "name": "Support-Only Cube Survival Law",
+      "statement": "For any planted ternary vector u in {-1, 0, 1}^n \\ {0} with Hamming support s = supp(u) = ||u||_1 in {1, ..., n} and any dyadic cube width W >= 2, the cube-boundary survival factor in offset_average_pair_mass equals P_cube(W, u) = (1 - 1/W)^s and satisfies 1 - s/W <= P_cube(W, u) <= 1 / (1 + s/W)."
+    },
+    {
+      "id": "T2",
+      "name": "Worst-Case Multiplicative and Additive Box Survival Bounds",
+      "statement": "In the public centered-RREF kernel basis B with free support s_F = supp_F(u) and deterministic splitting (p_split = nextprime(W), g_res = 1) on a hitting free coordinate j_coord = m + j_0, the partner box difference delta satisfies P_box(M_box, delta) >= P_box^min(M_box, m, s_F) := (1 - 1/M_box)^(s_F - 1) * (1 - B_tern(s_F)/M_box)^m >= 1 - L_box(m, s_F) / M_box, where L_box(m, s_F) = (s_F - 1) + m * B_tern(s_F)."
+    },
+    {
+      "id": "T3",
+      "name": "Modulus-Independent Dyadic (M_box, W) Schedule for the 1/ell Budget",
+      "statement": "The dyadic schedule bounds intended partner failure 1-P_box*P_cube by 1/ell independently of q. This is a DCP bad-register bound only under independently established at-most-two/common-partner geometry, with fresh uniform offsets and a hitting free-coordinate trial. Neither the geometry nor a public hitting-coordinate selector follows from partner survival."
+    },
+    {
+      "id": "T4",
+      "name": "Conditional Integer-Cube Separation and Unconditional-Transfer Counterexample",
+      "statement": "Same-cell integer differences have squared norm at most n*(W-1)^2. A verified lower bound L>n*(W-1)^2 on every nonparallel lattice vector, a primitive ternary hidden vector, a hitting free-coordinate trial, and prime p with p-1>=W suffice to exclude all unintended differences. The inequalities do not certify the lower bound. The public kernel of H=(1,1,1) over q=3 supplies a same-colour collision even when the partner-failure schedule passes."
+    }
+  ],
+  "guardrails": {
+    "source_geometry_certified": false,
+    "unconditional_dcp_bad_register_budget_certified": false,
+    "private_hitting_coordinate_is_a_public_selector": false,
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false,
+    "end_to_end_quantum_advantage_claimed": false,
+    "bypassed_UniformCubeSuperposition_prepare_constraint": false
+  }
+}

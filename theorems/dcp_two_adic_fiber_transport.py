@@ -462,4 +462,41 @@ def write_two_adic_fiber_transport_audit(
     )
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
+    if write_registry:
+        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
+        metrics = dict(payload.get("headline_metrics", {}))
+        experiment_record = ExperimentResultRecord(
+            id=result_id,
+            experiment_id=registry_experiment_id,
+            candidate_id=registry_candidate_id,
+            created_at=utc_now(),
+            status=payload.get("status", "completed"),
+            summary=payload.get("summary", ""),
+            metrics=metrics,
+            falsifiers_triggered=list(payload.get("falsifiers_triggered", [])),
+            artifacts={path.stem: str(path), "report": str(path)},
+        )
+        upsert_experiment_result(experiment_record)
+        upsert_negative_result(
+            NegativeResultRecord(
+                id="NEG-DCP-LOW-BIT-PIVOTS-AS-FULL-FIBER-SOLVER",
+                claim="Exact single-coordinate or residue-swap transports through low bits imply a full density-one subset-sum solver.",
+                reason_invalid="Random labels supply these explicit local pivots only to logarithmic depth; a linear number of target bits remains.",
+                lesson="Retain only target-dependent partial maps or fiber-walk mechanisms that cross linear 2-adic depth with polynomial circuits, source coverage, and classical baselines.",
+                applies_to=['DHS-GOWERS-SIEVE', 'EXP-DHS-DCP-TWO-ADIC-FIBER-TRANSPORT'],
+                evidence=metrics,
+                source=str(path),
+            )
+        )
+        upsert_negative_result(
+            NegativeResultRecord(
+                id="NEG-DCP-POLYNOMIAL-BLOCK-DICTIONARY-AS-LINEAR-TRANSPORT",
+                claim="A polynomial dictionary of logarithmic-size block substitutions supplies child-fiber transports through linear depth.",
+                reason_invalid="The scoped birthday/union bound is exponentially small at k=n/2 for the audited explicit fixed-block model.",
+                lesson="Retain only target-dependent partial maps or fiber-walk mechanisms that cross linear 2-adic depth with polynomial circuits, source coverage, and classical baselines.",
+                applies_to=['DHS-GOWERS-SIEVE', 'EXP-DHS-DCP-TWO-ADIC-FIBER-TRANSPORT'],
+                evidence=metrics,
+                source=str(path),
+            )
+        )
     return payload

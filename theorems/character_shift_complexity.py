@@ -391,4 +391,43 @@ def write_character_shift_complexity_report(
     )
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(payload, indent=2, sort_keys=True))
+    if write_registry:
+        scaling_record = dict(payload)
+        scaling_record["artifacts"] = {"character_shift_complexity": str(output_path)}
+        upsert_scaling_run(scaling_record)
+        for family in payload["families"]:
+            family_rows = [row for row in payload["preprocessing_records"] if row["family_id"] == family]
+            tested_n_bits = sorted({row["n_bits"] for row in family_rows})
+            fixed_success = sum(1 for row in family_rows if row["success"] and row["first_globally_unique_prefix"] is not None)
+            max_prefix = max((row["prefix_over_n_bits"] or 0.0 for row in family_rows), default=0.0)
+            upsert_negative_result(
+                NegativeResultRecord(
+                    id=f"CHARACTER-QUERY-ADVANTAGE-KILLED-{family.upper()}",
+                    claim=f"{family} supplies a character-shift query advantage or unconditional online decoding separation.",
+                    reason_invalid=(
+                        "Known hidden-shifted-power upper bounds use logarithmically many classical queries "
+                        "with domain-scale uniform time, and every tested row admits fixed-prefix online "
+                        "decoding after modulus-dependent domain-size preprocessing/advice."
+                    ),
+                    evidence={
+                        "family_id": family,
+                        "tested_n_bits": tested_n_bits,
+                        "fixed_prefix_success_count": fixed_success,
+                        "max_unique_prefix_over_n_bits": max_prefix,
+                        "uniform_polylog_classical_decoder_known": False,
+                        "natural_problem_reduction_known": False,
+                    },
+                    source="character_shift_complexity.py",
+                    lesson=(
+                        "The only unresolved claim is a uniform single-instance computational decoding gap. "
+                        "State preprocessing/advice exclusions and attach a natural reduction or named hardness assumption."
+                    ),
+                    applies_to=[
+                        "DHS-GOWERS-SIEVE",
+                        "HYP-LIT-HIDDEN-SHIFT-SIEVE",
+                        "PO-DEQUANTIZATION",
+                        "PO-FALSIFIERS",
+                    ],
+                )
+            )
     return payload

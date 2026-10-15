@@ -1,0 +1,31 @@
+{
+  "contract_id": "native_carry_packet_affine_feedback_receiver_v1",
+  "scope": {
+    "source": "Supplied pure flat native phase registers with known public A; all initial parity syndromes kept",
+    "instrument": "Adaptive invertible binary chart changes and one Z measurement per step, retaining one qubit",
+    "policy_input": "Only public A, chart geometry and past public outcomes",
+    "objective": "All retained-label components even AND at least one component nonzero modulo q/2",
+    "all_branches_charged": true,
+    "optimality_only_over_this_affine_measurement_grammar": true,
+    "mixed_noise_covered": false,
+    "efficient_search_or_uniform_policy_family_supplied": false,
+    "finite_seed_cohort_implies_asymptotic_advantage": false,
+    "classical_hardness_or_speedup_proved": false
+  },
+  "remaining_proof_obligations": [
+    "Independent external review of the physical adaptive affine measurement grammar",
+    "A polynomial-time policy family with non-negligible performance on a growing native source",
+    "A source/noise law for the retained unknown state under the actual mixed-source preparation",
+    "Useful descended-label distribution, recursion and paid inter-level composition",
+    "Matched classical attacks and hard natural-problem reduction"
+  ],
+  "falsifiers": [
+    "Static comparator cannot use all public labels and initial syndrome",
+    "Policy reads the secret, state vector, exact phase means or an unobserved measurement branch",
+    "Only favorable initial syndromes or feedback outcomes are counted",
+    "Zero labels receive useful-descent credit",
+    "Capped exponential Bellman search is promoted as an efficient receiver"
+  ],
+  "accepted_speedup_candidate": false,
+  "novelty_claim": false
+}

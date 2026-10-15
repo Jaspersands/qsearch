@@ -334,4 +334,41 @@ def write_hidden_number_bridge_report(
     payload = asdict(report)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
+    if write_registry:
+        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
+        metrics = dict(payload.get("headline_metrics", {}))
+        experiment_record = ExperimentResultRecord(
+            id=result_id,
+            experiment_id=registry_experiment_id,
+            candidate_id=registry_candidate_id,
+            created_at=utc_now(),
+            status=payload.get("status", "completed"),
+            summary=payload.get("summary", ""),
+            metrics=metrics,
+            falsifiers_triggered=list(payload.get("falsifiers_triggered", [])),
+            artifacts={path.stem: str(path), "report": str(path)},
+        )
+        upsert_experiment_result(experiment_record)
+        upsert_negative_result(
+            NegativeResultRecord(
+                id="NEG-DCP-HNP-LPN-LWE-ANALOGY-NOT-REDUCTION",
+                claim="A structural analogy to hidden-number, LPN, or LWE samples transfers either an algorithm or a hardness result to DCP.",
+                reason_invalid="No advantage-preserving channel reduction matches the groups, noise, outputs, access, and verification models.",
+                lesson="Use adjacent learning problems to generate decoder hypotheses, but require a formal reduction before transferring claims.",
+                applies_to=['DHS-GOWERS-SIEVE', 'EXP-DHS-DCP-RANDOM-FOURIER-BRIDGE'],
+                evidence=metrics,
+                source=str(path),
+            )
+        )
+        upsert_negative_result(
+            NegativeResultRecord(
+                id="NEG-DCP-QUERY-SFT-ACCESS-TRANSFER",
+                claim="A query-access significant Fourier transform or chosen-multiplier hidden-number algorithm transfers to random-label DCP.",
+                reason_invalid="Those algorithms construct correlated chosen queries. DCP supplies independent uniform labels and does not supply an evaluator, repeats, interval conditioning, or chosen multipliers.",
+                lesson="Classify Fourier algorithms by access model before using their runtime or recovery guarantees.",
+                applies_to=['DHS-GOWERS-SIEVE', 'EXP-DHS-DCP-RANDOM-FOURIER-BRIDGE'],
+                evidence=metrics,
+                source=str(path),
+            )
+        )
     return payload

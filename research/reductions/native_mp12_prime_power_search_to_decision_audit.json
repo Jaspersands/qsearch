@@ -1,0 +1,569 @@
+{
+  "status": "MP12_PRIME_POWER_HENSEL_PROBE_AND_SAMPLE_EXPANSION_AUDIT_REVIEW_PENDING",
+  "producer_sha256": "e72dd7b72a5f6516c656abeb41c79844e7c86f82d3a74fac30629734fbb3efbe",
+  "derivation_sha256": "7451eb4fbdc5bf0413365c8db23d38d927ec26be980c230617d3f3ffeb266116",
+  "contract_sha256": "7924137880b6e06ac703ff1dcfc340497dddf8af5cd5d07cdbf49c21cca7ab40",
+  "dependency_sha256": {
+    "native_affine_fibre_relaxation.py": "725c4cc15d814ef1b960cf8bff5b816122a5f4f217c99debf7b47a03c41eb5bd",
+    "native_basis_lottery.py": "8dd21b0b64454b5daaa9b6cc67ff6eb2a715edd045d5f6af5d3c5f3fbd1a0038",
+    "native_gaussian_dither_sampler.py": "f664f1d52975c627932093773e98ab215f02bcdcec00320afa9034e28e3efc5f",
+    "native_small_multiple_completion.py": "5519f9809f60ed4ab1447c5bf6aa217b8bacab3d709abb85314212749149eaac",
+    "native_word_span_decision.py": "867c8f8b8e19660784714184963fdeaa6d27ab1cf2ae83a7d1ba82e60f5fff96",
+    "ternary_covariant_noise.py": "2dadce1a070376a073c4a0fccd1aed2c5988d6478983b654c2a2d640f863d42a",
+    "ternary_measured_lattice_decoder.py": "151f7c5fbb9e09ad8c231fb841c6d8ce385d54123acd9d15f33b3ce51efced4b",
+    "ternary_noise_degradation.py": "def0aebaf71b7bbd0a659993c3181b28c10b2ae26563cb4dbd7a74f26fd4fde4"
+  },
+  "hensel_probe_batch_control": {
+    "original_records": [
+      {
+        "label": [
+          4,
+          7
+        ],
+        "value": 13,
+        "modulus": 27,
+        "source_id": "mp12:0"
+      },
+      {
+        "label": [
+          11,
+          5
+        ],
+        "value": 8,
+        "modulus": 27,
+        "source_id": "mp12:1"
+      },
+      {
+        "label": [
+          2,
+          16
+        ],
+        "value": 19,
+        "modulus": 27,
+        "source_id": "mp12:2"
+      }
+    ],
+    "calibration_secret_FOR_DIAGNOSTIC_ONLY": [
+      19,
+      14
+    ],
+    "true_digit_probe_batch": {
+      "modulus_q": 27,
+      "dimension_n": 2,
+      "batch_rows_m": 3,
+      "level_l": 1,
+      "coordinate_j": 1,
+      "known_lower_prefix_s_low": [
+        1,
+        2
+      ],
+      "candidate_digit_d": 1,
+      "probed_records": [
+        {
+          "label": [
+            4,
+            7
+          ],
+          "value": 23,
+          "modulus": 27,
+          "source_id": "mp12:0:mp12:l1:j1:d1:u0"
+        },
+        {
+          "label": [
+            11,
+            8
+          ],
+          "value": 22,
+          "modulus": 27,
+          "source_id": "mp12:1:mp12:l1:j1:d1:u1"
+        },
+        {
+          "label": [
+            2,
+            22
+          ],
+          "value": 3,
+          "modulus": 27,
+          "source_id": "mp12:2:mp12:l1:j1:d1:u2"
+        }
+      ],
+      "probe_receipts": [
+        {
+          "row_index": 0,
+          "original_source_id": "mp12:0",
+          "probe_u": 0,
+          "widen_dither": 1,
+          "probed_record": {
+            "label": [
+              4,
+              7
+            ],
+            "value": 23,
+            "modulus": 27,
+            "source_id": "mp12:0:mp12:l1:j1:d1:u0"
+          }
+        },
+        {
+          "row_index": 1,
+          "original_source_id": "mp12:1",
+          "probe_u": 1,
+          "widen_dither": -1,
+          "probed_record": {
+            "label": [
+              11,
+              8
+            ],
+            "value": 22,
+            "modulus": 27,
+            "source_id": "mp12:1:mp12:l1:j1:d1:u1"
+          }
+        },
+        {
+          "row_index": 2,
+          "original_source_id": "mp12:2",
+          "probe_u": 2,
+          "widen_dither": 0,
+          "probed_record": {
+            "label": [
+              2,
+              22
+            ],
+            "value": 3,
+            "modulus": 27,
+            "source_id": "mp12:2:mp12:l1:j1:d1:u2"
+          }
+        }
+      ],
+      "original_records_paid_once": 3,
+      "fresh_probe_randomness_is_a_fresh_original_sample": false
+    },
+    "false_digit_probe_batch": {
+      "modulus_q": 27,
+      "dimension_n": 2,
+      "batch_rows_m": 3,
+      "level_l": 1,
+      "coordinate_j": 1,
+      "known_lower_prefix_s_low": [
+        1,
+        2
+      ],
+      "candidate_digit_d": 2,
+      "probed_records": [
+        {
+          "label": [
+            4,
+            7
+          ],
+          "value": 23,
+          "modulus": 27,
+          "source_id": "mp12:0:mp12:l1:j1:d2:u0"
+        },
+        {
+          "label": [
+            11,
+            8
+          ],
+          "value": 4,
+          "modulus": 27,
+          "source_id": "mp12:1:mp12:l1:j1:d2:u1"
+        },
+        {
+          "label": [
+            2,
+            22
+          ],
+          "value": 21,
+          "modulus": 27,
+          "source_id": "mp12:2:mp12:l1:j1:d2:u2"
+        }
+      ],
+      "probe_receipts": [
+        {
+          "row_index": 0,
+          "original_source_id": "mp12:0",
+          "probe_u": 0,
+          "widen_dither": 1,
+          "probed_record": {
+            "label": [
+              4,
+              7
+            ],
+            "value": 23,
+            "modulus": 27,
+            "source_id": "mp12:0:mp12:l1:j1:d2:u0"
+          }
+        },
+        {
+          "row_index": 1,
+          "original_source_id": "mp12:1",
+          "probe_u": 1,
+          "widen_dither": -1,
+          "probed_record": {
+            "label": [
+              11,
+              8
+            ],
+            "value": 4,
+            "modulus": 27,
+            "source_id": "mp12:1:mp12:l1:j1:d2:u1"
+          }
+        },
+        {
+          "row_index": 2,
+          "original_source_id": "mp12:2",
+          "probe_u": 2,
+          "widen_dither": 0,
+          "probed_record": {
+            "label": [
+              2,
+              22
+            ],
+            "value": 21,
+            "modulus": 27,
+            "source_id": "mp12:2:mp12:l1:j1:d2:u2"
+          }
+        }
+      ],
+      "original_records_paid_once": 3,
+      "fresh_probe_randomness_is_a_fresh_original_sample": false
+    }
+  },
+  "complete_hensel_subgroup_censuses": [
+    {
+      "root_digits_r": 2,
+      "modulus_q": 9,
+      "hensel_level_l": 0,
+      "order_3_top_subgroup": [
+        0,
+        3,
+        6
+      ],
+      "secrets_and_labels_pairs_checked": 81,
+      "true_digit_zero_shift_invariance_checks": 81,
+      "false_digit_subgroup_bijection_checks": 162,
+      "false_lower_prefix_all_d_noninvariant_checks": 0,
+      "all_true_digits_preserve_error_law": true,
+      "all_false_digits_biject_onto_order3_subgroup": true,
+      "false_lower_prefix_invalidates_all_candidate_digits": false
+    },
+    {
+      "root_digits_r": 2,
+      "modulus_q": 9,
+      "hensel_level_l": 1,
+      "order_3_top_subgroup": [
+        0,
+        3,
+        6
+      ],
+      "secrets_and_labels_pairs_checked": 81,
+      "true_digit_zero_shift_invariance_checks": 81,
+      "false_digit_subgroup_bijection_checks": 162,
+      "false_lower_prefix_all_d_noninvariant_checks": 81,
+      "all_true_digits_preserve_error_law": true,
+      "all_false_digits_biject_onto_order3_subgroup": true,
+      "false_lower_prefix_invalidates_all_candidate_digits": true
+    },
+    {
+      "root_digits_r": 3,
+      "modulus_q": 27,
+      "hensel_level_l": 1,
+      "order_3_top_subgroup": [
+        0,
+        9,
+        18
+      ],
+      "secrets_and_labels_pairs_checked": 729,
+      "true_digit_zero_shift_invariance_checks": 729,
+      "false_digit_subgroup_bijection_checks": 1458,
+      "false_lower_prefix_all_d_noninvariant_checks": 729,
+      "all_true_digits_preserve_error_law": true,
+      "all_false_digits_biject_onto_order3_subgroup": true,
+      "false_lower_prefix_invalidates_all_candidate_digits": true
+    }
+  ],
+  "coupled_mp12_reduction_ledgers": [
+    {
+      "dimension_n": 8,
+      "root_digits_r": 8,
+      "modulus_q": 6561,
+      "decision_rows_per_query_m_dec": 152,
+      "smoothing_parameter_h": 4,
+      "decision_continuous_width_alpha_dec": "1/512",
+      "search_continuous_width_alpha_search": "1/8192",
+      "widening_width_squared_alpha_dec_sq_minus_alpha_search_sq": "255/67108864",
+      "rounded_input_widening_TV_squared_upper": "28051505152/76838396985",
+      "rounded_input_widening_TV_upper": "5158515301/8537599665",
+      "sigma_widen_rational_floor": "1673055/131072",
+      "certified_dither_sampler_draw_parameters": {
+        "sigma": "1673055/131072",
+        "failure_bits_target": 24,
+        "truncation_bound_B": 307,
+        "minimum_certified_dyadic_bits_K": 37,
+        "active_dyadic_bits_K": 37,
+        "using_uncertified_K_override": false,
+        "total_binary_search_thresholds_2B_plus_2": 616,
+        "max_single_path_queries_ceil_log2_2B_plus_1_plus_2": 12,
+        "required_cdf_enclosure_max_width": "1/68719476736",
+        "adaptive_all_threshold_precision_abort_upper": "77/4294967296",
+        "naive_query_count_precision_bound_DO_NOT_USE": "3/8589934592",
+        "adaptive_over_naive_threshold_multiplier": "154/3",
+        "adaptive_union_strictly_exceeds_naive_for_positive_B": true,
+        "analytical_tail_abort_upper_2_pow_minus_3_f_sq": "1/13407807929942597099574024998205846127479365820592393377723561443721764030073546976801874298166903427690031858186486050853753882811946569946433649006084096",
+        "analytical_tail_abort_upper_2_pow_minus_f_minus_1": "1/33554432",
+        "per_draw_coupling_loss_upper": "205/4294967296",
+        "per_draw_target_2_pow_minus_f": "1/16777216",
+        "meets_per_draw_target": true
+      },
+      "per_query_dither_sampler_TV_loss_upper": "3895/536870912",
+      "assumed_ideal_decision_advantage_EXTERNAL": "1/2",
+      "effective_decision_advantage_lower_after_widening_and_sampler": "0",
+      "total_coordinate_level_hypothesis_tests_2nr": 128,
+      "total_recovery_failure_target": "1/64",
+      "majority_repetitions_per_hypothesis_test": null,
+      "total_decision_oracle_queries": null,
+      "total_disjoint_original_search_samples_required": null,
+      "sample_expansion_multiplier_over_single_query_bank": null,
+      "fixed_single_query_bank_suffices": false,
+      "base_prime_power_route": {
+        "dimension": 8,
+        "root_digits": 8,
+        "original_modulus": 6561,
+        "decision_rows": 152,
+        "declared_omega_sqrt_log_function": "ceil(log2(n+2))",
+        "smoothing_function_value": 4,
+        "decision_continuous_D_alpha_width": "1/512",
+        "search_continuous_D_alpha_width": "1/8192",
+        "search_to_decision_width_multiplier": 16,
+        "fresh_auxiliary_Gaussian_width_squared": "255/67108864",
+        "selected_prime_power_theorem_parameter_guards": true,
+        "search_alpha_q_at_least_2_sqrt_n": false,
+        "worst_case_lattice_reduction_compatibility_established": false,
+        "rounded_search_input_then_fresh_Gaussian_widening_TV_squared_upper": "28051505152/76838396985",
+        "fresh_Gaussian_auxiliary_noise_is_not_a_fresh_original_sample": true,
+        "polynomial_expansion_of_disjoint_original_samples_is_required": true,
+        "fixed_existing_source_bank_suffices_proved": false,
+        "same_width_search_recovery_claimed": false,
+        "rounding_then_widening_claimed_exact": false,
+        "full_source_adapter_or_published_reduction_implemented": false,
+        "actual_decision_algorithm_supplied": false,
+        "source_statement_url": "https://eprint.iacr.org/2011/501",
+        "source_statement": "Section3 Theorem3.1 prime-power example; full adapted proof review pending"
+      },
+      "actual_decision_algorithm_supplied": false
+    },
+    {
+      "dimension_n": 32,
+      "root_digits_r": 32,
+      "modulus_q": 1853020188851841,
+      "decision_rows_per_query_m_dec": 2072,
+      "smoothing_parameter_h": 6,
+      "decision_continuous_width_alpha_dec": "1/32768",
+      "search_continuous_width_alpha_search": "1/1179648",
+      "widening_width_squared_alpha_dec_sq_minus_alpha_search_sq": "1295/1391569403904",
+      "rounded_input_widening_TV_squared_upper": "377957122048/1483690539632567123000305162035",
+      "rounded_input_widening_TV_upper": "748846717539289981219/1483690539632567123000305162035",
+      "sigma_widen_rational_floor": "29625446229174495/524288",
+      "certified_dither_sampler_draw_parameters": {
+        "sigma": "29625446229174495/524288",
+        "failure_bits_target": 28,
+        "truncation_bound_B": 1582169522127,
+        "minimum_certified_dyadic_bits_K": 73,
+        "active_dyadic_bits_K": 73,
+        "using_uncertified_K_override": false,
+        "total_binary_search_thresholds_2B_plus_2": 3164339044256,
+        "max_single_path_queries_ceil_log2_2B_plus_1_plus_2": 44,
+        "required_cdf_enclosure_max_width": "1/4722366482869645213696",
+        "adaptive_all_threshold_precision_abort_upper": "98885595133/73786976294838206464",
+        "naive_query_count_precision_bound_DO_NOT_USE": "11/590295810358705651712",
+        "adaptive_over_naive_threshold_multiplier": "791084761064/11",
+        "adaptive_union_strictly_exceeds_naive_for_positive_B": true,
+        "analytical_tail_abort_upper_2_pow_minus_3_f_sq": "1/13407807929942597099574024998205846127479365820592393377723561443721764030073546976801874298166903427690031858186486050853753882811946569946433649006084096",
+        "analytical_tail_abort_upper_2_pow_minus_f_minus_1": "1/536870912",
+        "per_draw_coupling_loss_upper": "236324548605/73786976294838206464",
+        "per_draw_target_2_pow_minus_f": "1/268435456",
+        "meets_per_draw_target": true
+      },
+      "per_query_dither_sampler_TV_loss_upper": "61208058088695/9223372036854775808",
+      "assumed_ideal_decision_advantage_EXTERNAL": "1/2",
+      "effective_decision_advantage_lower_after_widening_and_sampler": "3421066637924620672410652450687788063525107268043/6842314917296496048505185318328444541192519024640",
+      "total_coordinate_level_hypothesis_tests_2nr": 2048,
+      "total_recovery_failure_target": "1/64",
+      "majority_repetitions_per_hypothesis_test": 153,
+      "total_decision_oracle_queries": 313344,
+      "total_disjoint_original_search_samples_required": 649248768,
+      "sample_expansion_multiplier_over_single_query_bank": 313344,
+      "fixed_single_query_bank_suffices": false,
+      "base_prime_power_route": {
+        "dimension": 32,
+        "root_digits": 32,
+        "original_modulus": 1853020188851841,
+        "decision_rows": 2072,
+        "declared_omega_sqrt_log_function": "ceil(log2(n+2))",
+        "smoothing_function_value": 6,
+        "decision_continuous_D_alpha_width": "1/32768",
+        "search_continuous_D_alpha_width": "1/1179648",
+        "search_to_decision_width_multiplier": 36,
+        "fresh_auxiliary_Gaussian_width_squared": "1295/1391569403904",
+        "selected_prime_power_theorem_parameter_guards": true,
+        "search_alpha_q_at_least_2_sqrt_n": true,
+        "worst_case_lattice_reduction_compatibility_established": false,
+        "rounded_search_input_then_fresh_Gaussian_widening_TV_squared_upper": "377957122048/1483690539632567123000305162035",
+        "fresh_Gaussian_auxiliary_noise_is_not_a_fresh_original_sample": true,
+        "polynomial_expansion_of_disjoint_original_samples_is_required": true,
+        "fixed_existing_source_bank_suffices_proved": false,
+        "same_width_search_recovery_claimed": false,
+        "rounding_then_widening_claimed_exact": false,
+        "full_source_adapter_or_published_reduction_implemented": false,
+        "actual_decision_algorithm_supplied": false,
+        "source_statement_url": "https://eprint.iacr.org/2011/501",
+        "source_statement": "Section3 Theorem3.1 prime-power example; full adapted proof review pending"
+      },
+      "actual_decision_algorithm_supplied": false
+    },
+    {
+      "dimension_n": 64,
+      "root_digits_r": 64,
+      "modulus_q": "3433683820292512484657849089281",
+      "decision_rows_per_query_m_dec": 8216,
+      "smoothing_parameter_h": 7,
+      "decision_continuous_width_alpha_dec": "1/262144",
+      "search_continuous_width_alpha_search": "1/12845056",
+      "widening_width_squared_alpha_dec_sq_minus_alpha_search_sq": "75/5156108238848",
+      "rounded_input_widening_TV_squared_upper": "16642444221218816/884263843330393737864065464605938899925865869420688083182272075",
+      "rounded_input_widening_TV_upper": "1278728174114448928542038016697426323574/294754614443464579288021821535312966641955289806896027727424025",
+      "sigma_widen_rational_floor": "257526286521938436349338681696075/19668992",
+      "certified_dither_sampler_draw_parameters": {
+        "sigma": "257526286521938436349338681696075/19668992",
+        "failure_bits_target": 30,
+        "truncation_bound_B": "392790265797970383560080784",
+        "minimum_certified_dyadic_bits_K": 123,
+        "active_dyadic_bits_K": 123,
+        "using_uncertified_K_override": false,
+        "total_binary_search_thresholds_2B_plus_2": "785580531595940767120161570",
+        "max_single_path_queries_ceil_log2_2B_plus_1_plus_2": 92,
+        "required_cdf_enclosure_max_width": "1/5316911983139663491615228241121378304",
+        "adaptive_all_threshold_precision_abort_upper": "392790265797970383560080785/1329227995784915872903807060280344576",
+        "naive_query_count_precision_bound_DO_NOT_USE": "23/664613997892457936451903530140172288",
+        "adaptive_over_naive_threshold_multiplier": "392790265797970383560080785/46",
+        "adaptive_union_strictly_exceeds_naive_for_positive_B": true,
+        "analytical_tail_abort_upper_2_pow_minus_3_f_sq": "1/13407807929942597099574024998205846127479365820592393377723561443721764030073546976801874298166903427690031858186486050853753882811946569946433649006084096",
+        "analytical_tail_abort_upper_2_pow_minus_f_minus_1": "1/2147483648",
+        "per_draw_coupling_loss_upper": "1011760285440660521009642897/1329227995784915872903807060280344576",
+        "per_draw_target_2_pow_minus_f": "1/1073741824",
+        "meets_per_draw_target": true
+      },
+      "per_query_dither_sampler_TV_loss_upper": "1039077813147558355076903255219/166153499473114484112975882535043072",
+      "assumed_ideal_decision_advantage_EXTERNAL": "1/2",
+      "effective_decision_advantage_lower_after_widening_and_sampler": "12243321395927372654008191551714941128412845197628885763427855849431555748952646201478508039435397/24487255337815127441803304368301048661440444871471021886936838517184177998406111136121589491302400",
+      "total_coordinate_level_hypothesis_tests_2nr": 8192,
+      "total_recovery_failure_target": "1/64",
+      "majority_repetitions_per_hypothesis_test": 169,
+      "total_decision_oracle_queries": 1384448,
+      "total_disjoint_original_search_samples_required": 11374624768,
+      "sample_expansion_multiplier_over_single_query_bank": 1384448,
+      "fixed_single_query_bank_suffices": false,
+      "base_prime_power_route": {
+        "dimension": 64,
+        "root_digits": 64,
+        "original_modulus": "3433683820292512484657849089281",
+        "decision_rows": 8216,
+        "declared_omega_sqrt_log_function": "ceil(log2(n+2))",
+        "smoothing_function_value": 7,
+        "decision_continuous_D_alpha_width": "1/262144",
+        "search_continuous_D_alpha_width": "1/12845056",
+        "search_to_decision_width_multiplier": 49,
+        "fresh_auxiliary_Gaussian_width_squared": "75/5156108238848",
+        "selected_prime_power_theorem_parameter_guards": true,
+        "search_alpha_q_at_least_2_sqrt_n": true,
+        "worst_case_lattice_reduction_compatibility_established": false,
+        "rounded_search_input_then_fresh_Gaussian_widening_TV_squared_upper": "16642444221218816/884263843330393737864065464605938899925865869420688083182272075",
+        "fresh_Gaussian_auxiliary_noise_is_not_a_fresh_original_sample": true,
+        "polynomial_expansion_of_disjoint_original_samples_is_required": true,
+        "fixed_existing_source_bank_suffices_proved": false,
+        "same_width_search_recovery_claimed": false,
+        "rounding_then_widening_claimed_exact": false,
+        "full_source_adapter_or_published_reduction_implemented": false,
+        "actual_decision_algorithm_supplied": false,
+        "source_statement_url": "https://eprint.iacr.org/2011/501",
+        "source_statement": "Section3 Theorem3.1 prime-power example; full adapted proof review pending"
+      },
+      "actual_decision_algorithm_supplied": false
+    },
+    {
+      "dimension_n": 128,
+      "root_digits_r": 128,
+      "modulus_q": "11790184577738583171520872861412518665678211592275841109096961",
+      "decision_rows_per_query_m_dec": 32792,
+      "smoothing_parameter_h": 8,
+      "decision_continuous_width_alpha_dec": "1/2097152",
+      "search_continuous_width_alpha_search": "1/134217728",
+      "widening_width_squared_alpha_dec_sq_minus_alpha_search_sq": "4095/18014398509481984",
+      "rounded_input_widening_TV_squared_upper": "1624502428788066353152/3984677287390853764706998988325641253769083358426487740529352292286984021932254886248815712802551956942731392719834202319209465",
+      "rounded_input_widening_TV_upper": "5363712616090995863103453651685678850436728339198601622924229190323246539/265645152492723584313799932555042750251272223895099182701956819485798934795483659083254380853503463796182092847988946821280631",
+      "sigma_widen_rational_floor": "48280805845839498087377974367484263935952276470369569341752055295/8589934592",
+      "certified_dither_sampler_draw_parameters": {
+        "sigma": "48280805845839498087377974367484263935952276470369569341752055295/8589934592",
+        "failure_bits_target": 32,
+        "truncation_bound_B": "179860017619429149059124195454583555221379833185559396974",
+        "minimum_certified_dyadic_bits_K": 223,
+        "active_dyadic_bits_K": 223,
+        "using_uncertified_K_override": false,
+        "total_binary_search_thresholds_2B_plus_2": "359720035238858298118248390909167110442759666371118793950",
+        "max_single_path_queries_ceil_log2_2B_plus_1_plus_2": 190,
+        "required_cdf_enclosure_max_width": "1/6739986666787659948666753771754907668409286105635143120275902562304",
+        "adaptive_all_threshold_precision_abort_upper": "179860017619429149059124195454583555221379833185559396975/1684996666696914987166688442938726917102321526408785780068975640576",
+        "naive_query_count_precision_bound_DO_NOT_USE": "95/1684996666696914987166688442938726917102321526408785780068975640576",
+        "adaptive_over_naive_threshold_multiplier": "35972003523885829811824839090916711044275966637111879395/19",
+        "adaptive_union_strictly_exceeds_naive_for_positive_B": true,
+        "analytical_tail_abort_upper_2_pow_minus_3_f_sq": "1/13407807929942597099574024998205846127479365820592393377723561443721764030073546976801874298166903427690031858186486050853753882811946569946433649006084096",
+        "analytical_tail_abort_upper_2_pow_minus_f_minus_1": "1/8589934592",
+        "per_draw_coupling_loss_upper": "376019446850262922928992614929823130724578440825060475503/1684996666696914987166688442938726917102321526408785780068975640576",
+        "per_draw_target_2_pow_minus_f": "1/4294967296",
+        "meets_per_draw_target": true
+      },
+      "per_query_dither_sampler_TV_loss_upper": "1541303712639227721085940728597345012840047028941922889086797/210624583337114373395836055367340864637790190801098222508621955072",
+      "assumed_ideal_decision_advantage_EXTERNAL": "1/2",
+      "effective_decision_advantage_lower_after_widening_and_sampler": "13987440449966247003487381598854475912131425838718258141188086056682272462032353804831261066493787821872320073222401942600411291329843568348796934336252322040465119247409902247874252405027893/27975699779652057304292639709134371576666018573562222105804800581652702579340355328039044068529413619620133467135876279648010160761831616244549203413578917275311128325560946412038156992905216",
+      "total_coordinate_level_hypothesis_tests_2nr": 32768,
+      "total_recovery_failure_target": "1/64",
+      "majority_repetitions_per_hypothesis_test": 185,
+      "total_decision_oracle_queries": 6062080,
+      "total_disjoint_original_search_samples_required": 198787727360,
+      "sample_expansion_multiplier_over_single_query_bank": 6062080,
+      "fixed_single_query_bank_suffices": false,
+      "base_prime_power_route": {
+        "dimension": 128,
+        "root_digits": 128,
+        "original_modulus": "11790184577738583171520872861412518665678211592275841109096961",
+        "decision_rows": 32792,
+        "declared_omega_sqrt_log_function": "ceil(log2(n+2))",
+        "smoothing_function_value": 8,
+        "decision_continuous_D_alpha_width": "1/2097152",
+        "search_continuous_D_alpha_width": "1/134217728",
+        "search_to_decision_width_multiplier": 64,
+        "fresh_auxiliary_Gaussian_width_squared": "4095/18014398509481984",
+        "selected_prime_power_theorem_parameter_guards": true,
+        "search_alpha_q_at_least_2_sqrt_n": true,
+        "worst_case_lattice_reduction_compatibility_established": false,
+        "rounded_search_input_then_fresh_Gaussian_widening_TV_squared_upper": "1624502428788066353152/3984677287390853764706998988325641253769083358426487740529352292286984021932254886248815712802551956942731392719834202319209465",
+        "fresh_Gaussian_auxiliary_noise_is_not_a_fresh_original_sample": true,
+        "polynomial_expansion_of_disjoint_original_samples_is_required": true,
+        "fixed_existing_source_bank_suffices_proved": false,
+        "same_width_search_recovery_claimed": false,
+        "rounding_then_widening_claimed_exact": false,
+        "full_source_adapter_or_published_reduction_implemented": false,
+        "actual_decision_algorithm_supplied": false,
+        "source_statement_url": "https://eprint.iacr.org/2011/501",
+        "source_statement": "Section3 Theorem3.1 prime-power example; full adapted proof review pending"
+      },
+      "actual_decision_algorithm_supplied": false
+    }
+  ],
+  "actual_decision_algorithm_supplied": false,
+  "fixed_single_query_bank_suffices": false,
+  "worst_case_lattice_reduction_compatibility_established": false,
+  "accepted_speedup_candidate": false,
+  "new_active_negative_result_created": false,
+  "novelty_claim": false,
+  "research_decision": "PAY_DISJOINT_SAMPLE_EXPANSION_AND_CERTIFIED_DITHER_WIDENING_WHEN_USING_MP12_PRIME_POWER_SEARCH_TO_DECISION"
+}

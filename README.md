@@ -32,6 +32,62 @@ The central question driving Q-Search is: **Can genuine polynomial or super-poly
 
 **The missing result is an efficient receiver, not more infrastructure.**
 
+The [paid banded-QFT classical baseline](research/NATIVE_BANDED_QFT_BASELINE.md)
+now samples two-call public-phase schedules without dense word/state tables,
+with exact prefix masses, certified phase accuracy and charged random bits.
+Run `python qsearch.py native-banded-qft-baseline`. Charging both QFT
+truncations also yields a polynomial structural classical approximation
+to the FULL two-call public-phase distribution at inverse-polynomial accuracy.
+Exact sampling and more calls remain separate; default execution caps can
+be exceeded without disproving this constructive bound.
+The related Fourier audit now explicitly refutes its former diagonal
+probability-floor claim instead of promoting data-phase cancellation.
+The [fixed-call MPO baseline](research/NATIVE_RESPONSE_MPO_BASELINE.md) now
+extends paid approximate simulation to any FIXED number of public
+phase/Fourier calls, with exact integer MPS environments and explicit
+reversal/adjoint handling. A third Fourier call alone is not an escape.
+Run `python qsearch.py native-response-mpo-baseline`; growing call counts
+and unknown phase-state copies are not covered by this bound.
+The [planted q-ary source](research/PLANTED_QARY_USVP_SOURCE.md) now has
+exact field/index/rank certificates and public LLL/MITM attacks. All eight
+current controls, including128 dimensions, are LLL-recovered. Run
+`python qsearch.py planted-qary-source`; uniqueness is not hardness.
+
+The [coherent sine-window source](research/LATTICE_SINE_WINDOW_SOURCE.md)
+now compiles public lattice points into known compact packets, emits actual
+unknown mixed phase qubits, and has complete finite instrument checks for
+full and truncated cyclic QFTs. Run `python qsearch.py lattice-sine-window-source`.
+This improves source experimentation, not hardness or efficient decoding.
+The q-ary partner-survival frontier now explicitly **does not certify source
+validity**: an exact same-colour collision falsifies that unconditional transfer.
+Its basis-coordinate bound also separates fixed-modulus sharpness from a
+modulus-uniform envelope.
+The [public localization gap frontier](research/LATTICE_LOCALIZATION_GAP_FRONTIER.md)
+then tests the lower-gap direction itself: LLL recovers all eight new dense-
+ternary controls across constant and inverse-log noise budgets through n64.
+Run `python qsearch.py lattice-localization-gap-frontier`; better conditional
+source parameters have not established a classically resistant source.
+
+The [paid adaptive receiver benchmark](research/DCP_PAID_TREE_RECEIVER.md)
+now consumes actual unknown phase registers with public feedback and complete
+finite policy certificates. It finds a local gain over fixed CNOT forests,
+but its literal label pattern is exponentially rare in the raw IID source.
+It is not a polynomial receiver. The earlier bitwise algebra audit no longer
+claims an end-to-end decoder or its falsified confidence bound.
+The [higher-modulus carry-source compiler](research/DCP_CARRY_CONGRUENCE_SOURCE.md)
+now certifies conditional acceptance and correlated output-label laws with
+integer lattices instead of enormous state tables. At modulus2^64, one
+fresh-IID control still costs2^992 attempts. It is a source-law tool, not a
+quantum extractor or decoder.
+
+The [full-label pre-complement rank gate](research/DCP_ADAPTIVE_DIRECTION_RANK_GATE.md)
+now tests a missing escape route: choosing one direction using ALL public labels.
+For one retained qubit with complement-Z readout, an exact affine law and a
+uniform random-matrix bound still suppress simultaneous extra phase descent.
+Run `python qsearch.py dcp-adaptive-direction-rank-gate`. This is a local,
+review-pending obstruction for growing secret-vector dimension, not a scalar
+DHSP lower bound; post-outcome selection and collective packets remain open.
+
 **Latest scope checks:** the [refresh crossover audit](research/NATIVE_REFRESH_CROSSOVER_SCOPE_AUDIT.md)
 retains a useful width lemma but rejects incompatible composition scopes and
 matches both recovery controls classically. The [raw spectral-filter audit](research/NATIVE_WORD_SPECTRAL_FILTER_AUDIT.md)
@@ -42,6 +98,32 @@ price. The [syndrome dilation](research/NATIVE_SYNDROME_DILATION.md) constructs
 a constant-gap joint Hamiltonian and genuinely noncommuting word effects,
 but neither removes the average source-overlap cost. None supplies an
 efficient new quantum algorithm.
+
+**Latest constructive checks:** [weighted response paths](research/NATIVE_RESPONSE_PATH_VALUATION.md)
+derive higher-call three-adic collision ideals and test an actual two-call
+Fourier mixer with all interference weights retained. The
+[public lattice cube source](research/LATTICE_CUBE_COSET_SOURCE.md) now
+evaluates actual lattice-to-cell fibres and their Born weights rather than
+granting coset inputs. Public LLL solves its calibration; a useful noisy
+decoder remains unimplemented.
+The [clean arithmetic compiler](research/LATTICE_CUBE_SOURCE_CIRCUIT.md)
+now supplies the public cube evaluator and uniform parent as logical
+Qiskit circuits, with coherent signed-arithmetic regression tests.
+Run `python qsearch.py native-response-path-valuation` or
+`python qsearch.py lattice-cube-coset-source` for the reference artifacts.
+Run `python qsearch.py lattice-cube-source-circuit` for compiled resources.
+The [complete lattice-to-DCP readout](research/LATTICE_CUBE_DCP_READOUT.md)
+now reuses original position wires, measures actual cells/Fourier labels,
+and emits opaque noisy qubit receipts from the compiled source. It rejects
+averaged simulator snapshots and invalid multipoint source contracts.
+Run `python qsearch.py lattice-cube-dcp-readout` for the exact instrument,
+compiled-source calibrations and charged preparation ledger. This is a
+source implementation, not a new quantum algorithm or full reduction proof.
+The [QFT precision ledger](research/LATTICE_QFT_PRECISION.md) replaces the
+fixed128-wire barrier with explicit resource and forward/inverse/reflection
+budgets. It separates omitted rotations, encoded-angle error and rare-event
+conditioning. Run `python qsearch.py lattice-qft-precision`; a264-wire
+QFT in a601-qubit source is compiled, not simulated or claimed as hard.
 
 The [DCP physical bad-register audit](research/DCP_PHYSICAL_BAD_REGISTER_LINEAGE.md) now checks
 physical merges against the lattice reduction's actual noisy-state promise.

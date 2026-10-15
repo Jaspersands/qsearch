@@ -430,6 +430,32 @@ def write_boolean_coset_separation(
     payload = asdict(run_boolean_coset_separation(**kwargs))
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
+    if write_registry:
+        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
+        metrics = dict(payload.get("headline_metrics", {}))
+        experiment_record = ExperimentResultRecord(
+            id=result_id,
+            experiment_id=registry_experiment_id,
+            candidate_id=registry_candidate_id,
+            created_at=utc_now(),
+            status=payload.get("status", "completed"),
+            summary=payload.get("summary", ""),
+            metrics=metrics,
+            falsifiers_triggered=list(payload.get("falsifiers_triggered", [])),
+            artifacts={path.stem: str(path), "dcp_boolean_coset_separation": str(path), "report": str(path)},
+        )
+        upsert_experiment_result(experiment_record)
+        upsert_negative_result(
+            NegativeResultRecord(
+                id="NEG-DCP-SHORT-RELATIONS-CLOSE-MARKER-WITNESS-NOGO",
+                claim="The existence of exponentially many short marker-zero subset-sum relations by itself rules out marker-aware affine decoding because valid Boolean witnesses are correspondingly close.",
+                reason_invalid="Under the exact uniform-legal source, every fixed sub-half Hamming radius contains two witnesses with only exponentially small conditional probability.",
+                lesson="Keep marker-aware affine decoding open, but demand an explicit polynomial decoder and source coverage. Do not infer it from Boolean separation alone.",
+                applies_to=['DHS-GOWERS-SIEVE', 'EXP-DHS-DCP-BOOLEAN-COSET-SEPARATION'],
+                evidence=metrics,
+                source=str(path),
+            )
+        )
     return payload
 
 

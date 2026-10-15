@@ -462,4 +462,30 @@ def write_smith_transfer_order_six(
     payload = asdict(report)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
+    if write_registry:
+        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
+        metrics = dict(payload.get("headline_metrics", {}))
+        experiment_record = ExperimentResultRecord(
+            id=result_id,
+            experiment_id=registry_experiment_id,
+            candidate_id=registry_candidate_id,
+            created_at=utc_now(),
+            status=payload.get("status", "completed"),
+            summary=payload.get("summary", ""),
+            metrics=metrics,
+            falsifiers_triggered=list(payload.get("falsifiers_triggered", [])),
+            artifacts={path.stem: str(path), "report": str(path)},
+        )
+        upsert_experiment_result(experiment_record)
+        upsert_negative_result(
+            NegativeResultRecord(
+                id="NEG-DCP-SUBSET-SUM-SOURCE-AVERAGE-FIXED-SIXTH-MOMENT",
+                claim="A generic source-averaged fixed-sixth-order dependency supplies a persistent density-one modular subset-sum signal at fixed register offset.",
+                reason_invalid="The exhaustive HNF transfer graph is acyclic outside self loops, and every bad terminal lattice has Boolean growth ratio at most 3/4 relative to its source-probability rank penalty.",
+                lesson="Reopen fixed order six only through an inverse-polynomial atypical conditioned-fiber tail. Generic source mechanisms must move to order at least seven, growing order, or non-moment geometry.",
+                applies_to=['DHS-GOWERS-SIEVE', 'EXP-DHS-DCP-SUBSET-SUM-SMITH-TRANSFER-ORDER-SIX'],
+                evidence=metrics,
+                source=str(path),
+            )
+        )
     return payload
