@@ -48,7 +48,11 @@ not resolution of the actual source-noise obligation. No GPT commit/push.
 The prior repository-wide pytest --maxfail=1 run was intentionally interrupted:
 536 tests passed,1 warning,632.85s, inside the unrelated degree-five coset
 Hecke audit. It is NOT a complete regression. The final33-module connected
-regression is run separately; do not infer full-repository health from it.
+regression passes874 tests(11 dependency deprecation warnings),129.63s.
+All three new independent JS replays, Python compilation,14 JS syntax checks
+(10 current site scripts and4 affected checkers), live CLI artifacts,
+qsearch validate and git diff --check pass. Do not infer full-repository health
+or external mathematical review from this connected verification.
 
 Next high-upside target: improve the SUPPLY/PHYSICAL-WIDTH frontier, not more
 formal repairs of this already costed Gaussian baseline. At m~n^2 the generic
