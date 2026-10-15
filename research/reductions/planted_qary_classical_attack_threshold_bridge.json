@@ -1,16 +1,179 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "subsystem": "planted_qary_classical_attack_threshold_bridge",
   "contract_id": "planted-qary-classical-attack-threshold-bridge-contract",
   "doc_path": "research/PLANTED_QARY_CLASSICAL_ATTACK_THRESHOLD_BRIDGE.md",
   "summary_of_theorems": {
     "T1_sharp_free_support_bound_and_column_pair_immunity": "max(1, s - m) <= s_F <= min(s, n - m), and unique plants with s >= 3 are immune to unit/column-pair collisions in sparse_column_attack.",
-    "T2_lll_lambda2_isolation_and_large_q_monotonicity": "||b_1||_2 <= alpha^((n-1)/2) sqrt(s); when lambda_2(ker(H mod q)) > alpha^((n-1)/2) sqrt(s), public_LLL_attack is guaranteed to output +/- u, with determinant gap q^(m/n)/sqrt(s) growing monotonically in q.",
-    "T3_projective_free_coordinate_rref_search": "Projective enumeration over u_F in {-1, 0, 1}^(n-m) \\ {0} checks exactly (3^(n-m) - 1)/2 states in O(1) memory, beating ambient MITM whenever m >= ceil(n/2)."
+    "T2_conditional_LLL_bound_not_determinant_monotonicity": "For a VERIFIED (delta,eta)-reduced basis, alpha=1/(delta-eta^2). The lambda2 isolation criterion is conditional; no growing lambda2 or LLL success follows from determinant alone.",
+    "T3_projective_free_coordinate_rref_search": "Projective enumeration over u_F in {-1, 0, 1}^(n-m) \\ {0} checks exactly (3^(n-m) - 1)/2 states without an exponential table, using O(m*(n-m)+n) additional integer slots. State counts do not certify wall-time dominance over MITM."
   },
   "classical_attack_threshold_audit": [
     {
       "n": 4,
+      "public_problem": {
+        "prime": 257,
+        "dimension": 4,
+        "constraint_rows": 2,
+        "H": [
+          [
+            110,
+            13,
+            167,
+            180
+          ],
+          [
+            100,
+            119,
+            243,
+            105
+          ]
+        ],
+        "row_basis": [
+          [
+            257,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            257,
+            0,
+            0
+          ],
+          [
+            -72,
+            -56,
+            1,
+            0
+          ],
+          [
+            -72,
+            -57,
+            0,
+            1
+          ]
+        ],
+        "public_modular_rref": [
+          [
+            1,
+            0,
+            72,
+            72
+          ],
+          [
+            0,
+            1,
+            56,
+            57
+          ]
+        ],
+        "pivot_columns": [
+          0,
+          1
+        ],
+        "free_columns": [
+          2,
+          3
+        ],
+        "lattice_index": {
+          "prime": 257,
+          "exponent": 2
+        },
+        "prime_certificate": {
+          "prime": 257,
+          "witness": 3,
+          "factors": [
+            {
+              "prime": 2,
+              "exponent": 8,
+              "certificate": {
+                "prime": 2,
+                "witness": 1,
+                "factors": [],
+                "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+              }
+            }
+          ],
+          "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+        },
+        "solver_input_contains_plant_seed_or_solution": false,
+        "public_problem_sha256": "55af878ae6aeca6297844c25434c416f7e364efa6b475d53d7a48e792386bfc7"
+      },
+      "PRIVATE_AUDIT_ONLY_plant": [
+        0,
+        1,
+        1,
+        -1
+      ],
+      "public_LLL_vector": [
+        0,
+        1,
+        1,
+        -1
+      ],
+      "public_LLL_reduced_row_basis": [
+        [
+          0,
+          -1,
+          -1,
+          1
+        ],
+        [
+          -11,
+          7,
+          5,
+          13
+        ],
+        [
+          9,
+          -6,
+          19,
+          13
+        ],
+        [
+          -52,
+          -51,
+          33,
+          -18
+        ]
+      ],
+      "public_LLL_unimodular_transform": [
+        [
+          0,
+          0,
+          -1,
+          1
+        ],
+        [
+          5,
+          4,
+          5,
+          13
+        ],
+        [
+          9,
+          7,
+          19,
+          13
+        ],
+        [
+          4,
+          3,
+          33,
+          -18
+        ]
+      ],
+      "projective_RREF_vector": [
+        0,
+        1,
+        1,
+        -1
+      ],
+      "RREF_constant_space": false,
+      "RREF_exponential_table_stored": false,
+      "RREF_working_storage_order": "O(m*(n-m)+n) integer slots; bit cost depends on log q",
       "m": 2,
       "n_minus_m": 2,
       "q": 257,
@@ -23,8 +186,48 @@
       "sparse_column_attack_status": "NO_UNIT_OR_COLUMN_PAIR_RELATION",
       "sparse_column_immune_at_s_ge_3": true,
       "lll_recovered_squared_norm": 3,
-      "lll_theoretical_norm_sq_ceiling_alpha_4_3": 7.111111111111109,
-      "determinant_root_gap_q_pow_m_over_n_div_sqrt_s": 9.255628917943215,
+      "LLL_reducedness_certificate": {
+        "delta": {
+          "numerator": "3",
+          "denominator": "4"
+        },
+        "eta": {
+          "numerator": "51",
+          "denominator": "100"
+        },
+        "alpha": {
+          "numerator": "10000",
+          "denominator": "4899"
+        },
+        "gram_schmidt_squared_norms": [
+          {
+            "numerator": "3",
+            "denominator": "1"
+          },
+          {
+            "numerator": "1091",
+            "denominator": "3"
+          },
+          {
+            "numerator": "660490",
+            "denominator": "1091"
+          },
+          {
+            "numerator": "66049",
+            "denominator": "10"
+          }
+        ],
+        "size_reduction_verified": true,
+        "lovasz_verified": true,
+        "actual_lambda2_certified": false
+      },
+      "certified_LLL_squared_norm_ceiling": {
+        "numerator": "1000000000000",
+        "denominator": "39192328233"
+      },
+      "LLL_squared_norm_bound_verified": true,
+      "lambda2_isolation_premise_verified": false,
+      "determinant_normalized_proxy_NOT_lambda2_gap": 9.255628917943215,
       "public_lll_recovered_planted_vector": true,
       "ambient_mitm_recovered_planted_vector": true,
       "projective_rref_recovered_planted_vector": true,
@@ -34,6 +237,336 @@
     },
     {
       "n": 6,
+      "public_problem": {
+        "prime": 1009,
+        "dimension": 6,
+        "constraint_rows": 3,
+        "H": [
+          [
+            953,
+            611,
+            820,
+            830,
+            621,
+            81
+          ],
+          [
+            40,
+            762,
+            397,
+            292,
+            657,
+            925
+          ],
+          [
+            46,
+            358,
+            6,
+            668,
+            11,
+            0
+          ]
+        ],
+        "row_basis": [
+          [
+            1009,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1009,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1009,
+            0,
+            0,
+            0
+          ],
+          [
+            -374,
+            -480,
+            117,
+            1,
+            0,
+            0
+          ],
+          [
+            -374,
+            -481,
+            118,
+            0,
+            1,
+            0
+          ],
+          [
+            289,
+            170,
+            -251,
+            0,
+            0,
+            1
+          ]
+        ],
+        "public_modular_rref": [
+          [
+            1,
+            0,
+            0,
+            374,
+            374,
+            720
+          ],
+          [
+            0,
+            1,
+            0,
+            480,
+            481,
+            839
+          ],
+          [
+            0,
+            0,
+            1,
+            892,
+            891,
+            251
+          ]
+        ],
+        "pivot_columns": [
+          0,
+          1,
+          2
+        ],
+        "free_columns": [
+          3,
+          4,
+          5
+        ],
+        "lattice_index": {
+          "prime": 1009,
+          "exponent": 3
+        },
+        "prime_certificate": {
+          "prime": 1009,
+          "witness": 11,
+          "factors": [
+            {
+              "prime": 2,
+              "exponent": 4,
+              "certificate": {
+                "prime": 2,
+                "witness": 1,
+                "factors": [],
+                "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+              }
+            },
+            {
+              "prime": 3,
+              "exponent": 2,
+              "certificate": {
+                "prime": 3,
+                "witness": 2,
+                "factors": [
+                  {
+                    "prime": 2,
+                    "exponent": 1,
+                    "certificate": {
+                      "prime": 2,
+                      "witness": 1,
+                      "factors": [],
+                      "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                    }
+                  }
+                ],
+                "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+              }
+            },
+            {
+              "prime": 7,
+              "exponent": 1,
+              "certificate": {
+                "prime": 7,
+                "witness": 3,
+                "factors": [
+                  {
+                    "prime": 2,
+                    "exponent": 1,
+                    "certificate": {
+                      "prime": 2,
+                      "witness": 1,
+                      "factors": [],
+                      "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                    }
+                  },
+                  {
+                    "prime": 3,
+                    "exponent": 1,
+                    "certificate": {
+                      "prime": 3,
+                      "witness": 2,
+                      "factors": [
+                        {
+                          "prime": 2,
+                          "exponent": 1,
+                          "certificate": {
+                            "prime": 2,
+                            "witness": 1,
+                            "factors": [],
+                            "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                          }
+                        }
+                      ],
+                      "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                    }
+                  }
+                ],
+                "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+              }
+            }
+          ],
+          "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+        },
+        "solver_input_contains_plant_seed_or_solution": false,
+        "public_problem_sha256": "22cb1f5691ab07f12c6221da3e5e81067d6a38a857b4bea8b43bb5f50085c6e2"
+      },
+      "PRIVATE_AUDIT_ONLY_plant": [
+        0,
+        1,
+        -1,
+        1,
+        -1,
+        0
+      ],
+      "public_LLL_vector": [
+        0,
+        1,
+        -1,
+        1,
+        -1,
+        0
+      ],
+      "public_LLL_reduced_row_basis": [
+        [
+          0,
+          -1,
+          1,
+          -1,
+          1,
+          0
+        ],
+        [
+          -8,
+          -9,
+          4,
+          -2,
+          -13,
+          5
+        ],
+        [
+          -18,
+          8,
+          -7,
+          -24,
+          -8,
+          -31
+        ],
+        [
+          -48,
+          -12,
+          -26,
+          20,
+          33,
+          37
+        ],
+        [
+          -50,
+          -6,
+          35,
+          50,
+          9,
+          -53
+        ],
+        [
+          45,
+          -61,
+          -60,
+          -3,
+          -6,
+          -8
+        ]
+      ],
+      "public_LLL_unimodular_transform": [
+        [
+          0,
+          0,
+          0,
+          -1,
+          1,
+          0
+        ],
+        [
+          -7,
+          -8,
+          3,
+          -2,
+          -13,
+          5
+        ],
+        [
+          -3,
+          -10,
+          -4,
+          -24,
+          -8,
+          -31
+        ],
+        [
+          9,
+          19,
+          3,
+          20,
+          33,
+          37
+        ],
+        [
+          37,
+          37,
+          -20,
+          50,
+          9,
+          -53
+        ],
+        [
+          -1,
+          -3,
+          -1,
+          -3,
+          -6,
+          -8
+        ]
+      ],
+      "projective_RREF_vector": [
+        0,
+        1,
+        -1,
+        1,
+        -1,
+        0
+      ],
+      "RREF_constant_space": false,
+      "RREF_exponential_table_stored": false,
+      "RREF_working_storage_order": "O(m*(n-m)+n) integer slots; bit cost depends on log q",
       "m": 3,
       "n_minus_m": 3,
       "q": 1009,
@@ -46,8 +579,56 @@
       "sparse_column_attack_status": "NO_UNIT_OR_COLUMN_PAIR_RELATION",
       "sparse_column_immune_at_s_ge_3": true,
       "lll_recovered_squared_norm": 4,
-      "lll_theoretical_norm_sq_ceiling_alpha_4_3": 16.855967078189295,
-      "determinant_root_gap_q_pow_m_over_n_div_sqrt_s": 15.88238017426859,
+      "LLL_reducedness_certificate": {
+        "delta": {
+          "numerator": "3",
+          "denominator": "4"
+        },
+        "eta": {
+          "numerator": "51",
+          "denominator": "100"
+        },
+        "alpha": {
+          "numerator": "10000",
+          "denominator": "4899"
+        },
+        "gram_schmidt_squared_norms": [
+          {
+            "numerator": "4",
+            "denominator": "1"
+          },
+          {
+            "numerator": "358",
+            "denominator": "1"
+          },
+          {
+            "numerator": "2911497",
+            "denominator": "1432"
+          },
+          {
+            "numerator": "16027649183",
+            "denominator": "2911497"
+          },
+          {
+            "numerator": "131332449",
+            "denominator": "15743"
+          },
+          {
+            "numerator": "1018081",
+            "denominator": "129"
+          }
+        ],
+        "size_reduction_verified": true,
+        "lovasz_verified": true,
+        "actual_lambda2_certified": false
+      },
+      "certified_LLL_squared_norm_ceiling": {
+        "numerator": "400000000000000000000",
+        "denominator": "2821871265749924499"
+      },
+      "LLL_squared_norm_bound_verified": true,
+      "lambda2_isolation_premise_verified": false,
+      "determinant_normalized_proxy_NOT_lambda2_gap": 15.88238017426859,
       "public_lll_recovered_planted_vector": true,
       "ambient_mitm_recovered_planted_vector": true,
       "projective_rref_recovered_planted_vector": true,
@@ -57,6 +638,409 @@
     },
     {
       "n": 8,
+      "public_problem": {
+        "prime": 65537,
+        "dimension": 8,
+        "constraint_rows": 4,
+        "H": [
+          [
+            42338,
+            21427,
+            56465,
+            28656,
+            64746,
+            29104,
+            59878,
+            37932
+          ],
+          [
+            12695,
+            48562,
+            13470,
+            15967,
+            34044,
+            8634,
+            56327,
+            9977
+          ],
+          [
+            60455,
+            13723,
+            9543,
+            12428,
+            416,
+            51002,
+            22238,
+            30537
+          ],
+          [
+            56720,
+            51716,
+            33148,
+            22974,
+            2639,
+            8939,
+            43693,
+            12838
+          ]
+        ],
+        "row_basis": [
+          [
+            65537,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            65537,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            65537,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            65537,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            -4515,
+            4084,
+            -23378,
+            -15130,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            -29062,
+            9754,
+            2565,
+            -30687,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            -24548,
+            5671,
+            25944,
+            -15557,
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            6645,
+            28558,
+            20263,
+            2101,
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        "public_modular_rref": [
+          [
+            1,
+            0,
+            0,
+            0,
+            4515,
+            29062,
+            24548,
+            58892
+          ],
+          [
+            0,
+            1,
+            0,
+            0,
+            61453,
+            55783,
+            59866,
+            36979
+          ],
+          [
+            0,
+            0,
+            1,
+            0,
+            23378,
+            62972,
+            39593,
+            45274
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            15130,
+            30687,
+            15557,
+            63436
+          ]
+        ],
+        "pivot_columns": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "free_columns": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "lattice_index": {
+          "prime": 65537,
+          "exponent": 4
+        },
+        "prime_certificate": {
+          "prime": 65537,
+          "witness": 3,
+          "factors": [
+            {
+              "prime": 2,
+              "exponent": 16,
+              "certificate": {
+                "prime": 2,
+                "witness": 1,
+                "factors": [],
+                "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+              }
+            }
+          ],
+          "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+        },
+        "solver_input_contains_plant_seed_or_solution": false,
+        "public_problem_sha256": "be6370b405b34449f61d6a4a963ca52c60bddc76029dea3dfc60f9c786e22ddc"
+      },
+      "PRIVATE_AUDIT_ONLY_plant": [
+        1,
+        -1,
+        -1,
+        0,
+        -1,
+        1,
+        -1,
+        0
+      ],
+      "public_LLL_vector": [
+        1,
+        -1,
+        -1,
+        0,
+        -1,
+        1,
+        -1,
+        0
+      ],
+      "public_LLL_reduced_row_basis": [
+        [
+          -1,
+          1,
+          1,
+          0,
+          1,
+          -1,
+          1,
+          0
+        ],
+        [
+          -142,
+          -111,
+          0,
+          -225,
+          34,
+          25,
+          -38,
+          -77
+        ],
+        [
+          24,
+          -236,
+          209,
+          1,
+          -30,
+          -328,
+          -249,
+          12
+        ],
+        [
+          -102,
+          -419,
+          68,
+          21,
+          139,
+          -3,
+          109,
+          267
+        ],
+        [
+          -293,
+          81,
+          -22,
+          350,
+          50,
+          274,
+          -127,
+          53
+        ],
+        [
+          198,
+          189,
+          -75,
+          -427,
+          287,
+          96,
+          -105,
+          227
+        ],
+        [
+          -145,
+          151,
+          -30,
+          -136,
+          -227,
+          -34,
+          -75,
+          495
+        ],
+        [
+          294,
+          81,
+          553,
+          -56,
+          -303,
+          32,
+          -3,
+          -146
+        ]
+      ],
+      "public_LLL_unimodular_transform": [
+        [
+          0,
+          0,
+          0,
+          0,
+          1,
+          -1,
+          1,
+          0
+        ],
+        [
+          7,
+          31,
+          50,
+          13,
+          34,
+          25,
+          -38,
+          -77
+        ],
+        [
+          -242,
+          67,
+          97,
+          -220,
+          -30,
+          -328,
+          -249,
+          12
+        ],
+        [
+          22,
+          -134,
+          -76,
+          48,
+          139,
+          -3,
+          109,
+          267
+        ],
+        [
+          72,
+          -56,
+          41,
+          108,
+          50,
+          274,
+          -127,
+          53
+        ],
+        [
+          0,
+          -122,
+          70,
+          79,
+          287,
+          96,
+          -105,
+          227
+        ],
+        [
+          -109,
+          -190,
+          -203,
+          -102,
+          -227,
+          -34,
+          -75,
+          495
+        ],
+        [
+          7,
+          78,
+          -63,
+          -51,
+          -303,
+          32,
+          -3,
+          -146
+        ]
+      ],
+      "projective_RREF_vector": [
+        1,
+        -1,
+        -1,
+        0,
+        -1,
+        1,
+        -1,
+        0
+      ],
+      "RREF_constant_space": false,
+      "RREF_exponential_table_stored": false,
+      "RREF_working_storage_order": "O(m*(n-m)+n) integer slots; bit cost depends on log q",
       "m": 4,
       "n_minus_m": 4,
       "q": 65537,
@@ -69,8 +1053,64 @@
       "sparse_column_attack_status": "NO_UNIT_OR_COLUMN_PAIR_RELATION",
       "sparse_column_immune_at_s_ge_3": true,
       "lll_recovered_squared_norm": 6,
-      "lll_theoretical_norm_sq_ceiling_alpha_4_3": 44.94924554183812,
-      "determinant_root_gap_q_pow_m_over_n_div_sqrt_s": 104.5123597156496,
+      "LLL_reducedness_certificate": {
+        "delta": {
+          "numerator": "3",
+          "denominator": "4"
+        },
+        "eta": {
+          "numerator": "51",
+          "denominator": "100"
+        },
+        "alpha": {
+          "numerator": "10000",
+          "denominator": "4899"
+        },
+        "gram_schmidt_squared_norms": [
+          {
+            "numerator": "6",
+            "denominator": "1"
+          },
+          {
+            "numerator": "276790",
+            "denominator": "3"
+          },
+          {
+            "numerator": "14691612407",
+            "denominator": "55358"
+          },
+          {
+            "numerator": "18962586711304028",
+            "denominator": "73458062035"
+          },
+          {
+            "numerator": "2508668879341482164815",
+            "denominator": "9481293355652014"
+          },
+          {
+            "numerator": "723100852108059731",
+            "denominator": "2336308660540"
+          },
+          {
+            "numerator": "51725869657867",
+            "denominator": "168354899"
+          },
+          {
+            "numerator": "4295098369",
+            "denominator": "12043"
+          }
+        ],
+        "size_reduction_verified": true,
+        "lovasz_verified": true,
+        "actual_lambda2_certified": false
+      },
+      "certified_LLL_squared_norm_ceiling": {
+        "numerator": "20000000000000000000000000000",
+        "denominator": "22575159191374201236941433"
+      },
+      "LLL_squared_norm_bound_verified": true,
+      "lambda2_isolation_premise_verified": false,
+      "determinant_normalized_proxy_NOT_lambda2_gap": 104.5123597156496,
       "public_lll_recovered_planted_vector": true,
       "ambient_mitm_recovered_planted_vector": true,
       "projective_rref_recovered_planted_vector": true,
@@ -80,6 +1120,832 @@
     },
     {
       "n": 10,
+      "public_problem": {
+        "prime": 1000003,
+        "dimension": 10,
+        "constraint_rows": 6,
+        "H": [
+          [
+            623389,
+            919819,
+            128717,
+            21223,
+            359274,
+            21664,
+            237083,
+            510535,
+            670740,
+            183067
+          ],
+          [
+            24305,
+            894121,
+            424282,
+            430145,
+            112528,
+            971436,
+            986551,
+            573771,
+            207270,
+            296129
+          ],
+          [
+            47473,
+            566987,
+            908729,
+            313961,
+            607940,
+            281245,
+            188505,
+            805028,
+            614494,
+            820723
+          ],
+          [
+            58940,
+            166848,
+            67676,
+            362265,
+            62256,
+            374565,
+            966628,
+            678153,
+            174357,
+            225371
+          ],
+          [
+            62855,
+            146629,
+            777265,
+            605621,
+            978272,
+            511419,
+            410161,
+            568345,
+            13134,
+            648076
+          ],
+          [
+            336984,
+            928366,
+            513748,
+            477566,
+            870004,
+            821223,
+            158803,
+            552358,
+            8340,
+            685402
+          ]
+        ],
+        "row_basis": [
+          [
+            1000003,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1000003,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1000003,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1000003,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            1000003,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1000003,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            394901,
+            -377515,
+            -492078,
+            -381952,
+            137916,
+            -49748,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            -264610,
+            189622,
+            25879,
+            233034,
+            -182430,
+            379894,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            130292,
+            -187892,
+            -466200,
+            -148918,
+            -44515,
+            330147,
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            -464619,
+            -380177,
+            396250,
+            364446,
+            26014,
+            -203444,
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        "public_modular_rref": [
+          [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            605102,
+            264610,
+            869711,
+            464619
+          ],
+          [
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            377515,
+            810381,
+            187892,
+            380177
+          ],
+          [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            492078,
+            974124,
+            466200,
+            603753
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            381952,
+            766969,
+            148918,
+            635557
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            862087,
+            182430,
+            44515,
+            973989
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            49748,
+            620109,
+            669856,
+            203444
+          ]
+        ],
+        "pivot_columns": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "free_columns": [
+          6,
+          7,
+          8,
+          9
+        ],
+        "lattice_index": {
+          "prime": 1000003,
+          "exponent": 6
+        },
+        "prime_certificate": {
+          "prime": 1000003,
+          "witness": 2,
+          "factors": [
+            {
+              "prime": 2,
+              "exponent": 1,
+              "certificate": {
+                "prime": 2,
+                "witness": 1,
+                "factors": [],
+                "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+              }
+            },
+            {
+              "prime": 3,
+              "exponent": 1,
+              "certificate": {
+                "prime": 3,
+                "witness": 2,
+                "factors": [
+                  {
+                    "prime": 2,
+                    "exponent": 1,
+                    "certificate": {
+                      "prime": 2,
+                      "witness": 1,
+                      "factors": [],
+                      "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                    }
+                  }
+                ],
+                "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+              }
+            },
+            {
+              "prime": 166667,
+              "exponent": 1,
+              "certificate": {
+                "prime": 166667,
+                "witness": 2,
+                "factors": [
+                  {
+                    "prime": 2,
+                    "exponent": 1,
+                    "certificate": {
+                      "prime": 2,
+                      "witness": 1,
+                      "factors": [],
+                      "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                    }
+                  },
+                  {
+                    "prime": 167,
+                    "exponent": 1,
+                    "certificate": {
+                      "prime": 167,
+                      "witness": 5,
+                      "factors": [
+                        {
+                          "prime": 2,
+                          "exponent": 1,
+                          "certificate": {
+                            "prime": 2,
+                            "witness": 1,
+                            "factors": [],
+                            "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                          }
+                        },
+                        {
+                          "prime": 83,
+                          "exponent": 1,
+                          "certificate": {
+                            "prime": 83,
+                            "witness": 2,
+                            "factors": [
+                              {
+                                "prime": 2,
+                                "exponent": 1,
+                                "certificate": {
+                                  "prime": 2,
+                                  "witness": 1,
+                                  "factors": [],
+                                  "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                                }
+                              },
+                              {
+                                "prime": 41,
+                                "exponent": 1,
+                                "certificate": {
+                                  "prime": 41,
+                                  "witness": 6,
+                                  "factors": [
+                                    {
+                                      "prime": 2,
+                                      "exponent": 3,
+                                      "certificate": {
+                                        "prime": 2,
+                                        "witness": 1,
+                                        "factors": [],
+                                        "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                                      }
+                                    },
+                                    {
+                                      "prime": 5,
+                                      "exponent": 1,
+                                      "certificate": {
+                                        "prime": 5,
+                                        "witness": 2,
+                                        "factors": [
+                                          {
+                                            "prime": 2,
+                                            "exponent": 2,
+                                            "certificate": {
+                                              "prime": 2,
+                                              "witness": 1,
+                                              "factors": [],
+                                              "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                                            }
+                                          }
+                                        ],
+                                        "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                                      }
+                                    }
+                                  ],
+                                  "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                                }
+                              }
+                            ],
+                            "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                          }
+                        }
+                      ],
+                      "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                    }
+                  },
+                  {
+                    "prime": 499,
+                    "exponent": 1,
+                    "certificate": {
+                      "prime": 499,
+                      "witness": 7,
+                      "factors": [
+                        {
+                          "prime": 2,
+                          "exponent": 1,
+                          "certificate": {
+                            "prime": 2,
+                            "witness": 1,
+                            "factors": [],
+                            "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                          }
+                        },
+                        {
+                          "prime": 3,
+                          "exponent": 1,
+                          "certificate": {
+                            "prime": 3,
+                            "witness": 2,
+                            "factors": [
+                              {
+                                "prime": 2,
+                                "exponent": 1,
+                                "certificate": {
+                                  "prime": 2,
+                                  "witness": 1,
+                                  "factors": [],
+                                  "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                                }
+                              }
+                            ],
+                            "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                          }
+                        },
+                        {
+                          "prime": 83,
+                          "exponent": 1,
+                          "certificate": {
+                            "prime": 83,
+                            "witness": 2,
+                            "factors": [
+                              {
+                                "prime": 2,
+                                "exponent": 1,
+                                "certificate": {
+                                  "prime": 2,
+                                  "witness": 1,
+                                  "factors": [],
+                                  "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                                }
+                              },
+                              {
+                                "prime": 41,
+                                "exponent": 1,
+                                "certificate": {
+                                  "prime": 41,
+                                  "witness": 6,
+                                  "factors": [
+                                    {
+                                      "prime": 2,
+                                      "exponent": 3,
+                                      "certificate": {
+                                        "prime": 2,
+                                        "witness": 1,
+                                        "factors": [],
+                                        "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                                      }
+                                    },
+                                    {
+                                      "prime": 5,
+                                      "exponent": 1,
+                                      "certificate": {
+                                        "prime": 5,
+                                        "witness": 2,
+                                        "factors": [
+                                          {
+                                            "prime": 2,
+                                            "exponent": 2,
+                                            "certificate": {
+                                              "prime": 2,
+                                              "witness": 1,
+                                              "factors": [],
+                                              "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                                            }
+                                          }
+                                        ],
+                                        "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                                      }
+                                    }
+                                  ],
+                                  "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                                }
+                              }
+                            ],
+                            "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                          }
+                        }
+                      ],
+                      "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                    }
+                  }
+                ],
+                "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+              }
+            }
+          ],
+          "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+        },
+        "solver_input_contains_plant_seed_or_solution": false,
+        "public_problem_sha256": "442c586d9feede80227249f2b4638a1c671cec572948c58b81e25f09cc23cfe2"
+      },
+      "PRIVATE_AUDIT_ONLY_plant": [
+        1,
+        1,
+        -1,
+        0,
+        -1,
+        1,
+        -1,
+        -1,
+        1,
+        0
+      ],
+      "public_LLL_vector": [
+        1,
+        1,
+        -1,
+        0,
+        -1,
+        1,
+        -1,
+        -1,
+        1,
+        0
+      ],
+      "public_LLL_reduced_row_basis": [
+        [
+          1,
+          1,
+          -1,
+          0,
+          -1,
+          1,
+          -1,
+          -1,
+          1,
+          0
+        ],
+        [
+          -555,
+          -1368,
+          1373,
+          -1965,
+          444,
+          767,
+          1561,
+          -2019,
+          2513,
+          1509
+        ],
+        [
+          -2266,
+          -1217,
+          -2657,
+          -2936,
+          -1387,
+          -2914,
+          -4324,
+          -3572,
+          -5543,
+          -309
+        ],
+        [
+          2603,
+          4587,
+          4787,
+          2805,
+          -5476,
+          1109,
+          5230,
+          687,
+          -3073,
+          -1375
+        ],
+        [
+          -3542,
+          -4173,
+          -1252,
+          5595,
+          3192,
+          -2451,
+          -3283,
+          -6885,
+          1942,
+          -492
+        ],
+        [
+          -4025,
+          3889,
+          3537,
+          2086,
+          4628,
+          -3503,
+          -7347,
+          -1076,
+          3385,
+          -2358
+        ],
+        [
+          3173,
+          4812,
+          2435,
+          -1308,
+          -2490,
+          -7086,
+          2170,
+          3118,
+          4334,
+          -3365
+        ],
+        [
+          -8929,
+          4373,
+          -2402,
+          1680,
+          6055,
+          2133,
+          -365,
+          -2150,
+          3563,
+          28
+        ],
+        [
+          -3077,
+          6384,
+          -568,
+          2308,
+          372,
+          -7953,
+          -948,
+          -2554,
+          945,
+          5608
+        ],
+        [
+          -3985,
+          1312,
+          3530,
+          2906,
+          -4407,
+          1104,
+          -2570,
+          5517,
+          3637,
+          4490
+        ]
+      ],
+      "public_LLL_unimodular_transform": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          -1,
+          -1,
+          1,
+          0
+        ],
+        [
+          -777,
+          2018,
+          1394,
+          891,
+          -511,
+          322,
+          1561,
+          -2019,
+          2513,
+          1509
+        ],
+        [
+          1341,
+          -2114,
+          -4497,
+          -1532,
+          -294,
+          2909,
+          -4324,
+          -3572,
+          -5543,
+          -309
+        ],
+        [
+          -2122,
+          744,
+          1668,
+          1881,
+          -697,
+          734,
+          5230,
+          687,
+          -3073,
+          -1375
+        ],
+        [
+          -1007,
+          244,
+          -337,
+          819,
+          -704,
+          1711,
+          -3283,
+          -6885,
+          1942,
+          -492
+        ],
+        [
+          1080,
+          -2830,
+          -1075,
+          -1192,
+          1029,
+          -1554,
+          -7347,
+          -1076,
+          3385,
+          -2358
+        ],
+        [
+          -2160,
+          -237,
+          4341,
+          1974,
+          550,
+          -3192,
+          2170,
+          3118,
+          4334,
+          -3365
+        ],
+        [
+          -876,
+          950,
+          1526,
+          882,
+          -184,
+          -372,
+          -365,
+          -2150,
+          3563,
+          28
+        ],
+        [
+          2181,
+          2436,
+          -2182,
+          -1670,
+          -439,
+          1752,
+          -948,
+          -2554,
+          945,
+          5608
+        ],
+        [
+          4087,
+          374,
+          -1491,
+          -3362,
+          1406,
+          -2511,
+          -2570,
+          5517,
+          3637,
+          4490
+        ]
+      ],
+      "projective_RREF_vector": [
+        1,
+        1,
+        -1,
+        0,
+        -1,
+        1,
+        -1,
+        -1,
+        1,
+        0
+      ],
+      "RREF_constant_space": false,
+      "RREF_exponential_table_stored": false,
+      "RREF_working_storage_order": "O(m*(n-m)+n) integer slots; bit cost depends on log q",
       "m": 6,
       "n_minus_m": 4,
       "q": 1000003,
@@ -92,8 +1958,72 @@
       "sparse_column_attack_status": "NO_UNIT_OR_COLUMN_PAIR_RELATION",
       "sparse_column_immune_at_s_ge_3": true,
       "lll_recovered_squared_norm": 8,
-      "lll_theoretical_norm_sq_ceiling_alpha_4_3": 106.54635980287553,
-      "determinant_root_gap_q_pow_m_over_n_div_sqrt_s": 1407.5239332238355,
+      "LLL_reducedness_certificate": {
+        "delta": {
+          "numerator": "3",
+          "denominator": "4"
+        },
+        "eta": {
+          "numerator": "51",
+          "denominator": "100"
+        },
+        "alpha": {
+          "numerator": "10000",
+          "denominator": "4899"
+        },
+        "gram_schmidt_squared_norms": [
+          {
+            "numerator": "8",
+            "denominator": "1"
+          },
+          {
+            "numerator": "47633119",
+            "denominator": "2"
+          },
+          {
+            "numerator": "4248839541291217",
+            "denominator": "47633119"
+          },
+          {
+            "numerator": "444392164746134434885973",
+            "denominator": "4248839541291217"
+          },
+          {
+            "numerator": "46569372553398686087648136603525",
+            "denominator": "444392164746134434885973"
+          },
+          {
+            "numerator": "5121547131750936286185457843",
+            "denominator": "46569093138420733725"
+          },
+          {
+            "numerator": "449359581688357469969887",
+            "denominator": "5121516402606427"
+          },
+          {
+            "numerator": "37894333364977046954",
+            "denominator": "449356885543"
+          },
+          {
+            "numerator": "12633075798113697",
+            "denominator": "151576424"
+          },
+          {
+            "numerator": "1000006000009",
+            "denominator": "12633"
+          }
+        ],
+        "size_reduction_verified": true,
+        "lovasz_verified": true,
+        "actual_lambda2_certified": false
+      },
+      "certified_LLL_squared_norm_ceiling": {
+        "numerator": "8000000000000000000000000000000000000",
+        "denominator": "1625425074599934887703129051684099"
+      },
+      "LLL_squared_norm_bound_verified": true,
+      "lambda2_isolation_premise_verified": false,
+      "determinant_normalized_proxy_NOT_lambda2_gap": 1407.5239332238355,
       "public_lll_recovered_planted_vector": true,
       "ambient_mitm_recovered_planted_vector": true,
       "projective_rref_recovered_planted_vector": true,
@@ -103,6 +2033,994 @@
     },
     {
       "n": 12,
+      "public_problem": {
+        "prime": 1000000007,
+        "dimension": 12,
+        "constraint_rows": 7,
+        "H": [
+          [
+            570028604,
+            304390173,
+            106047493,
+            919811285,
+            29694993,
+            135730473,
+            13424609,
+            635452223,
+            269601087,
+            478815236,
+            903301942,
+            793550415
+          ],
+          [
+            815127367,
+            509260161,
+            619334615,
+            402625186,
+            706649918,
+            705247986,
+            291743833,
+            338891702,
+            41406843,
+            453087458,
+            569434263,
+            882400826
+          ],
+          [
+            650817558,
+            712076408,
+            21881801,
+            601060020,
+            125160934,
+            378930587,
+            846938643,
+            456949230,
+            184969355,
+            108316003,
+            888743868,
+            991968248
+          ],
+          [
+            11263773,
+            268777726,
+            665175334,
+            543437803,
+            791505409,
+            68387757,
+            679895905,
+            540774894,
+            758318479,
+            993204052,
+            704661984,
+            469613367
+          ],
+          [
+            183499078,
+            590191953,
+            496694624,
+            797385965,
+            60954886,
+            799091879,
+            102991917,
+            286523795,
+            106638839,
+            729511992,
+            196806811,
+            833913429
+          ],
+          [
+            339097564,
+            767551290,
+            527760396,
+            166026163,
+            157323718,
+            195393210,
+            902550289,
+            739262596,
+            490368474,
+            980923336,
+            571976530,
+            765174728
+          ],
+          [
+            278551259,
+            240322178,
+            170907922,
+            694865098,
+            909977298,
+            759480292,
+            13507123,
+            216153151,
+            76744899,
+            856817750,
+            956664082,
+            646930076
+          ]
+        ],
+        "row_basis": [
+          [
+            1000000007,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1000000007,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1000000007,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1000000007,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            1000000007,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1000000007,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1000000007,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            -254033017,
+            188146781,
+            324902992,
+            343823554,
+            -95114261,
+            -189175735,
+            285480522,
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            147995362,
+            -176056787,
+            -183703636,
+            -226220392,
+            -379197304,
+            -313732342,
+            -182638527,
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            394600925,
+            141113200,
+            -195546175,
+            -80294051,
+            96353401,
+            485776997,
+            -26291779,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            -288563269,
+            -153203193,
+            54346818,
+            -37309112,
+            377958164,
+            17131079,
+            -76550216,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            -399688735,
+            79827689,
+            -5730980,
+            223017992,
+            291136665,
+            -455394687,
+            325058313,
+            0,
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        "public_modular_rref": [
+          [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            254033017,
+            852004645,
+            605399082,
+            288563269,
+            399688735
+          ],
+          [
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            811853226,
+            176056787,
+            858886807,
+            153203193,
+            920172318
+          ],
+          [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            675097015,
+            183703636,
+            195546175,
+            945653189,
+            5730980
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            656176453,
+            226220392,
+            80294051,
+            37309112,
+            776982015
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            95114261,
+            379197304,
+            903646606,
+            622041843,
+            708863342
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            189175735,
+            313732342,
+            514223010,
+            982868928,
+            455394687
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            714519485,
+            182638527,
+            26291779,
+            76550216,
+            674941694
+          ]
+        ],
+        "pivot_columns": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "free_columns": [
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "lattice_index": {
+          "prime": 1000000007,
+          "exponent": 7
+        },
+        "prime_certificate": {
+          "prime": 1000000007,
+          "witness": 5,
+          "factors": [
+            {
+              "prime": 2,
+              "exponent": 1,
+              "certificate": {
+                "prime": 2,
+                "witness": 1,
+                "factors": [],
+                "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+              }
+            },
+            {
+              "prime": 500000003,
+              "exponent": 1,
+              "certificate": {
+                "prime": 500000003,
+                "witness": 2,
+                "factors": [
+                  {
+                    "prime": 2,
+                    "exponent": 1,
+                    "certificate": {
+                      "prime": 2,
+                      "witness": 1,
+                      "factors": [],
+                      "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                    }
+                  },
+                  {
+                    "prime": 41,
+                    "exponent": 2,
+                    "certificate": {
+                      "prime": 41,
+                      "witness": 6,
+                      "factors": [
+                        {
+                          "prime": 2,
+                          "exponent": 3,
+                          "certificate": {
+                            "prime": 2,
+                            "witness": 1,
+                            "factors": [],
+                            "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                          }
+                        },
+                        {
+                          "prime": 5,
+                          "exponent": 1,
+                          "certificate": {
+                            "prime": 5,
+                            "witness": 2,
+                            "factors": [
+                              {
+                                "prime": 2,
+                                "exponent": 2,
+                                "certificate": {
+                                  "prime": 2,
+                                  "witness": 1,
+                                  "factors": [],
+                                  "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                                }
+                              }
+                            ],
+                            "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                          }
+                        }
+                      ],
+                      "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                    }
+                  },
+                  {
+                    "prime": 148721,
+                    "exponent": 1,
+                    "certificate": {
+                      "prime": 148721,
+                      "witness": 6,
+                      "factors": [
+                        {
+                          "prime": 2,
+                          "exponent": 4,
+                          "certificate": {
+                            "prime": 2,
+                            "witness": 1,
+                            "factors": [],
+                            "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                          }
+                        },
+                        {
+                          "prime": 5,
+                          "exponent": 1,
+                          "certificate": {
+                            "prime": 5,
+                            "witness": 2,
+                            "factors": [
+                              {
+                                "prime": 2,
+                                "exponent": 2,
+                                "certificate": {
+                                  "prime": 2,
+                                  "witness": 1,
+                                  "factors": [],
+                                  "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                                }
+                              }
+                            ],
+                            "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                          }
+                        },
+                        {
+                          "prime": 11,
+                          "exponent": 1,
+                          "certificate": {
+                            "prime": 11,
+                            "witness": 2,
+                            "factors": [
+                              {
+                                "prime": 2,
+                                "exponent": 1,
+                                "certificate": {
+                                  "prime": 2,
+                                  "witness": 1,
+                                  "factors": [],
+                                  "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                                }
+                              },
+                              {
+                                "prime": 5,
+                                "exponent": 1,
+                                "certificate": {
+                                  "prime": 5,
+                                  "witness": 2,
+                                  "factors": [
+                                    {
+                                      "prime": 2,
+                                      "exponent": 2,
+                                      "certificate": {
+                                        "prime": 2,
+                                        "witness": 1,
+                                        "factors": [],
+                                        "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                                      }
+                                    }
+                                  ],
+                                  "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                                }
+                              }
+                            ],
+                            "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                          }
+                        },
+                        {
+                          "prime": 13,
+                          "exponent": 2,
+                          "certificate": {
+                            "prime": 13,
+                            "witness": 2,
+                            "factors": [
+                              {
+                                "prime": 2,
+                                "exponent": 2,
+                                "certificate": {
+                                  "prime": 2,
+                                  "witness": 1,
+                                  "factors": [],
+                                  "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                                }
+                              },
+                              {
+                                "prime": 3,
+                                "exponent": 1,
+                                "certificate": {
+                                  "prime": 3,
+                                  "witness": 2,
+                                  "factors": [
+                                    {
+                                      "prime": 2,
+                                      "exponent": 1,
+                                      "certificate": {
+                                        "prime": 2,
+                                        "witness": 1,
+                                        "factors": [],
+                                        "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                                      }
+                                    }
+                                  ],
+                                  "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                                }
+                              }
+                            ],
+                            "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                          }
+                        }
+                      ],
+                      "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                    }
+                  }
+                ],
+                "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+              }
+            }
+          ],
+          "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+        },
+        "solver_input_contains_plant_seed_or_solution": false,
+        "public_problem_sha256": "f6375119081adc79f6c6ba48a15429f8a1bf462159fda13275c314f1b427949f"
+      },
+      "PRIVATE_AUDIT_ONLY_plant": [
+        1,
+        1,
+        -1,
+        -1,
+        0,
+        -1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0
+      ],
+      "public_LLL_vector": [
+        1,
+        1,
+        -1,
+        -1,
+        0,
+        -1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0
+      ],
+      "public_LLL_reduced_row_basis": [
+        [
+          1,
+          1,
+          -1,
+          -1,
+          0,
+          -1,
+          0,
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          -85526,
+          -31169,
+          52523,
+          123185,
+          -57442,
+          -228084,
+          148783,
+          -151735,
+          -14239,
+          220542,
+          9753,
+          -72326
+        ],
+        [
+          -66717,
+          58229,
+          75870,
+          -228238,
+          261371,
+          68258,
+          79851,
+          -17089,
+          212461,
+          -234314,
+          -36676,
+          -195454
+        ],
+        [
+          -228616,
+          14441,
+          -243443,
+          324751,
+          -88609,
+          -210006,
+          -270357,
+          -62616,
+          -1561,
+          48389,
+          101266,
+          -97045
+        ],
+        [
+          28985,
+          132434,
+          66916,
+          5776,
+          -339521,
+          185066,
+          192077,
+          104118,
+          1214,
+          -146652,
+          137663,
+          337467
+        ],
+        [
+          -311658,
+          230844,
+          202876,
+          66460,
+          53737,
+          22914,
+          -26574,
+          129201,
+          87950,
+          94830,
+          61082,
+          193863
+        ],
+        [
+          185502,
+          -179729,
+          246371,
+          -73256,
+          113424,
+          71419,
+          -67593,
+          49036,
+          369802,
+          44828,
+          -224902,
+          -22628
+        ],
+        [
+          -38576,
+          7338,
+          223204,
+          -253467,
+          -110616,
+          56821,
+          -261261,
+          60764,
+          -107976,
+          50683,
+          54329,
+          -260212
+        ],
+        [
+          7994,
+          204379,
+          -71476,
+          -89124,
+          185310,
+          282917,
+          -53,
+          -326595,
+          255468,
+          80000,
+          -98926,
+          65940
+        ],
+        [
+          -49924,
+          183759,
+          -22946,
+          -4810,
+          25313,
+          -247461,
+          37219,
+          205750,
+          -8373,
+          -218210,
+          -388223,
+          8443
+        ],
+        [
+          89347,
+          220620,
+          135857,
+          295834,
+          34936,
+          251716,
+          116955,
+          -80357,
+          -65287,
+          287916,
+          231170,
+          -123066
+        ],
+        [
+          -81147,
+          38512,
+          88719,
+          -156004,
+          -106608,
+          133595,
+          195374,
+          281495,
+          19265,
+          112009,
+          -303820,
+          -372199
+        ]
+      ],
+      "public_LLL_unimodular_transform": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          -149558,
+          2188,
+          88865,
+          83151,
+          -23711,
+          -173410,
+          70772,
+          -151735,
+          -14239,
+          220542,
+          9753,
+          -72326
+        ],
+        [
+          -32028,
+          83669,
+          -364,
+          77346,
+          172282,
+          88867,
+          98248,
+          -17089,
+          212461,
+          -234314,
+          -36676,
+          -195454
+        ],
+        [
+          -44336,
+          27939,
+          23460,
+          50482,
+          -21231,
+          -81770,
+          58160,
+          -62616,
+          -1561,
+          48389,
+          101266,
+          -97045
+        ],
+        [
+          258745,
+          -4530,
+          -67830,
+          -117424,
+          -125786,
+          242640,
+          -132516,
+          104118,
+          1214,
+          -146652,
+          137663,
+          337467
+        ],
+        [
+          77496,
+          -28324,
+          -9486,
+          -57868,
+          -43025,
+          93206,
+          -76669,
+          129201,
+          87950,
+          94830,
+          61082,
+          193863
+        ],
+        [
+          -133904,
+          16905,
+          72861,
+          67052,
+          232164,
+          97067,
+          44859,
+          49036,
+          369802,
+          44828,
+          -224902,
+          -22628
+        ],
+        [
+          -76910,
+          -8499,
+          -34111,
+          18810,
+          15175,
+          -166431,
+          53008,
+          60764,
+          -107976,
+          50683,
+          54329,
+          -260212
+        ],
+        [
+          -154533,
+          74716,
+          174440,
+          158110,
+          76293,
+          11226,
+          112991,
+          -326595,
+          255468,
+          80000,
+          -98926,
+          65940
+        ],
+        [
+          30960,
+          -69544,
+          -89910,
+          -106524,
+          181694,
+          152793,
+          -98467,
+          205750,
+          -8373,
+          -218210,
+          -388223,
+          8443
+        ],
+        [
+          -106844,
+          8236,
+          57147,
+          72048,
+          -111685,
+          -235551,
+          76286,
+          -80357,
+          -65287,
+          287916,
+          231170,
+          -123066
+        ],
+        [
+          -211976,
+          -82211,
+          -51638,
+          -11761,
+          246479,
+          -159408,
+          23831,
+          281495,
+          19265,
+          112009,
+          -303820,
+          -372199
+        ]
+      ],
+      "projective_RREF_vector": [
+        1,
+        1,
+        -1,
+        -1,
+        0,
+        -1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0
+      ],
+      "RREF_constant_space": false,
+      "RREF_exponential_table_stored": false,
+      "RREF_working_storage_order": "O(m*(n-m)+n) integer slots; bit cost depends on log q",
       "m": 7,
       "n_minus_m": 5,
       "q": 1000000007,
@@ -115,8 +3033,80 @@
       "sparse_column_attack_status": "NO_UNIT_OR_COLUMN_PAIR_RELATION",
       "sparse_column_immune_at_s_ge_3": true,
       "lll_recovered_squared_norm": 9,
-      "lll_theoretical_norm_sq_ceiling_alpha_4_3": 213.09271960575103,
-      "determinant_root_gap_q_pow_m_over_n_div_sqrt_s": 59275.980576674396,
+      "LLL_reducedness_certificate": {
+        "delta": {
+          "numerator": "3",
+          "denominator": "4"
+        },
+        "eta": {
+          "numerator": "51",
+          "denominator": "100"
+        },
+        "alpha": {
+          "numerator": "10000",
+          "denominator": "4899"
+        },
+        "gram_schmidt_squared_norms": [
+          {
+            "numerator": "9",
+            "denominator": "1"
+          },
+          {
+            "numerator": "1627820036051",
+            "denominator": "9"
+          },
+          {
+            "numerator": "410066168150498043396390",
+            "denominator": "1627820036051"
+          },
+          {
+            "numerator": "59717419700807533788545036874783542",
+            "denominator": "205033084075249021698195"
+          },
+          {
+            "numerator": "14398663706158264535851086493381080611698348415",
+            "denominator": "59717419700807533788545036874783542"
+          },
+          {
+            "numerator": "3206160787875728572206206028343206780589274696255141105293",
+            "denominator": "14398663706158264535851086493381080611698348415"
+          },
+          {
+            "numerator": "1441193515567552323756590441082299640087179260534211",
+            "denominator": "6412321485978956026503274872671720045114"
+          },
+          {
+            "numerator": "357245990568570715383067887924550040973661804",
+            "denominator": "1441193495390843317666302719602739"
+          },
+          {
+            "numerator": "23664797041694114226992466516960996978",
+            "denominator": "89311496391781724984559499"
+          },
+          {
+            "numerator": "2878898470659578166036023087395",
+            "denominator": "11832398355193479561"
+          },
+          {
+            "numerator": "1247993017471902061151657",
+            "denominator": "5757796860710"
+          },
+          {
+            "numerator": "1000000014000000049",
+            "denominator": "4991972"
+          }
+        ],
+        "size_reduction_verified": true,
+        "lovasz_verified": true,
+        "actual_lambda2_certified": false
+      },
+      "certified_LLL_squared_norm_ceiling": {
+        "numerator": "100000000000000000000000000000000000000000000",
+        "denominator": "4334503166759825765754169507706418278211"
+      },
+      "LLL_squared_norm_bound_verified": true,
+      "lambda2_isolation_premise_verified": false,
+      "determinant_normalized_proxy_NOT_lambda2_gap": 59275.980576674396,
       "public_lll_recovered_planted_vector": true,
       "ambient_mitm_recovered_planted_vector": true,
       "projective_rref_recovered_planted_vector": true,
@@ -126,9 +3116,1231 @@
     },
     {
       "n": 8,
+      "public_problem": {
+        "prime": "1208925819614629174706189",
+        "dimension": 8,
+        "constraint_rows": 4,
+        "H": [
+          [
+            "844364346858168608880956",
+            "697957193303465886221200",
+            "546637505504962444695366",
+            "776042172099931500415850",
+            "221875038824021482267056",
+            "1206692643347348242430073",
+            "457709835627598338755837",
+            "1064576252071838909566970"
+          ],
+          [
+            "503920947241025193969150",
+            "78351621504584717286323",
+            "98361348347700814796222",
+            "69847930294006182623773",
+            "624183298704176126924230",
+            "998805811014355961617437",
+            "965983969507312693385858",
+            "653308832870004226613247"
+          ],
+          [
+            "47998379429953628218653",
+            "1208306161182054295009027",
+            "993181722130237793778092",
+            "1048076759193727905647665",
+            "678405193136153332049756",
+            "954492505381147241164545",
+            "481991537183984590296708",
+            "998505814179380381836223"
+          ],
+          [
+            "823189127006613239664988",
+            "1106498436883994952403891",
+            "380935051718221790217947",
+            "473617592553611839053678",
+            "356301597943311565208472",
+            "718833321675462997588782",
+            "497723221883948785058152",
+            "470505428704239274080814"
+          ]
+        ],
+        "row_basis": [
+          [
+            "1208925819614629174706189",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            "1208925819614629174706189",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            "1208925819614629174706189",
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            "1208925819614629174706189",
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "549042533782841186424136",
+            "-57886700158059333066863",
+            "-420719125904312392875242",
+            "200484588884890262333437",
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            "-549042533782841186424137",
+            "57886700158059333066862",
+            "420719125904312392875243",
+            "-200484588884890262333436",
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            "-272982122601583799038581",
+            "199252063533598583779921",
+            "-574637956744948139533717",
+            "-113018065894725766189235",
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            "-198246497903282930583409",
+            "515338524627340105255634",
+            "-566375144507741711878684",
+            "-353922738037417865090343",
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        "public_modular_rref": [
+          [
+            1,
+            0,
+            0,
+            0,
+            "659883285831787988282053",
+            "549042533782841186424137",
+            "272982122601583799038581",
+            "198246497903282930583409"
+          ],
+          [
+            0,
+            1,
+            0,
+            0,
+            "57886700158059333066863",
+            "1151039119456569841639327",
+            "1009673756081030590926268",
+            "693587294987289069450555"
+          ],
+          [
+            0,
+            0,
+            1,
+            0,
+            "420719125904312392875242",
+            "788206693710316781830946",
+            "574637956744948139533717",
+            "566375144507741711878684"
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            "1008441230729738912372752",
+            "200484588884890262333436",
+            "113018065894725766189235",
+            "353922738037417865090343"
+          ]
+        ],
+        "pivot_columns": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "free_columns": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "lattice_index": {
+          "prime": "1208925819614629174706189",
+          "exponent": 4
+        },
+        "prime_certificate": {
+          "prime": "1208925819614629174706189",
+          "witness": 2,
+          "factors": [
+            {
+              "prime": 2,
+              "exponent": 2,
+              "certificate": {
+                "prime": 2,
+                "witness": 1,
+                "factors": [],
+                "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+              }
+            },
+            {
+              "prime": 1093,
+              "exponent": 1,
+              "certificate": {
+                "prime": 1093,
+                "witness": 5,
+                "factors": [
+                  {
+                    "prime": 2,
+                    "exponent": 2,
+                    "certificate": {
+                      "prime": 2,
+                      "witness": 1,
+                      "factors": [],
+                      "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                    }
+                  },
+                  {
+                    "prime": 3,
+                    "exponent": 1,
+                    "certificate": {
+                      "prime": 3,
+                      "witness": 2,
+                      "factors": [
+                        {
+                          "prime": 2,
+                          "exponent": 1,
+                          "certificate": {
+                            "prime": 2,
+                            "witness": 1,
+                            "factors": [],
+                            "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                          }
+                        }
+                      ],
+                      "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                    }
+                  },
+                  {
+                    "prime": 7,
+                    "exponent": 1,
+                    "certificate": {
+                      "prime": 7,
+                      "witness": 3,
+                      "factors": [
+                        {
+                          "prime": 2,
+                          "exponent": 1,
+                          "certificate": {
+                            "prime": 2,
+                            "witness": 1,
+                            "factors": [],
+                            "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                          }
+                        },
+                        {
+                          "prime": 3,
+                          "exponent": 1,
+                          "certificate": {
+                            "prime": 3,
+                            "witness": 2,
+                            "factors": [
+                              {
+                                "prime": 2,
+                                "exponent": 1,
+                                "certificate": {
+                                  "prime": 2,
+                                  "witness": 1,
+                                  "factors": [],
+                                  "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                                }
+                              }
+                            ],
+                            "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                          }
+                        }
+                      ],
+                      "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                    }
+                  },
+                  {
+                    "prime": 13,
+                    "exponent": 1,
+                    "certificate": {
+                      "prime": 13,
+                      "witness": 2,
+                      "factors": [
+                        {
+                          "prime": 2,
+                          "exponent": 2,
+                          "certificate": {
+                            "prime": 2,
+                            "witness": 1,
+                            "factors": [],
+                            "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                          }
+                        },
+                        {
+                          "prime": 3,
+                          "exponent": 1,
+                          "certificate": {
+                            "prime": 3,
+                            "witness": 2,
+                            "factors": [
+                              {
+                                "prime": 2,
+                                "exponent": 1,
+                                "certificate": {
+                                  "prime": 2,
+                                  "witness": 1,
+                                  "factors": [],
+                                  "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                                }
+                              }
+                            ],
+                            "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                          }
+                        }
+                      ],
+                      "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                    }
+                  }
+                ],
+                "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+              }
+            },
+            {
+              "prime": 31039,
+              "exponent": 1,
+              "certificate": {
+                "prime": 31039,
+                "witness": 7,
+                "factors": [
+                  {
+                    "prime": 2,
+                    "exponent": 1,
+                    "certificate": {
+                      "prime": 2,
+                      "witness": 1,
+                      "factors": [],
+                      "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                    }
+                  },
+                  {
+                    "prime": 3,
+                    "exponent": 1,
+                    "certificate": {
+                      "prime": 3,
+                      "witness": 2,
+                      "factors": [
+                        {
+                          "prime": 2,
+                          "exponent": 1,
+                          "certificate": {
+                            "prime": 2,
+                            "witness": 1,
+                            "factors": [],
+                            "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                          }
+                        }
+                      ],
+                      "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                    }
+                  },
+                  {
+                    "prime": 7,
+                    "exponent": 1,
+                    "certificate": {
+                      "prime": 7,
+                      "witness": 3,
+                      "factors": [
+                        {
+                          "prime": 2,
+                          "exponent": 1,
+                          "certificate": {
+                            "prime": 2,
+                            "witness": 1,
+                            "factors": [],
+                            "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                          }
+                        },
+                        {
+                          "prime": 3,
+                          "exponent": 1,
+                          "certificate": {
+                            "prime": 3,
+                            "witness": 2,
+                            "factors": [
+                              {
+                                "prime": 2,
+                                "exponent": 1,
+                                "certificate": {
+                                  "prime": 2,
+                                  "witness": 1,
+                                  "factors": [],
+                                  "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                                }
+                              }
+                            ],
+                            "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                          }
+                        }
+                      ],
+                      "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                    }
+                  },
+                  {
+                    "prime": 739,
+                    "exponent": 1,
+                    "certificate": {
+                      "prime": 739,
+                      "witness": 3,
+                      "factors": [
+                        {
+                          "prime": 2,
+                          "exponent": 1,
+                          "certificate": {
+                            "prime": 2,
+                            "witness": 1,
+                            "factors": [],
+                            "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                          }
+                        },
+                        {
+                          "prime": 3,
+                          "exponent": 2,
+                          "certificate": {
+                            "prime": 3,
+                            "witness": 2,
+                            "factors": [
+                              {
+                                "prime": 2,
+                                "exponent": 1,
+                                "certificate": {
+                                  "prime": 2,
+                                  "witness": 1,
+                                  "factors": [],
+                                  "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                                }
+                              }
+                            ],
+                            "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                          }
+                        },
+                        {
+                          "prime": 41,
+                          "exponent": 1,
+                          "certificate": {
+                            "prime": 41,
+                            "witness": 6,
+                            "factors": [
+                              {
+                                "prime": 2,
+                                "exponent": 3,
+                                "certificate": {
+                                  "prime": 2,
+                                  "witness": 1,
+                                  "factors": [],
+                                  "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                                }
+                              },
+                              {
+                                "prime": 5,
+                                "exponent": 1,
+                                "certificate": {
+                                  "prime": 5,
+                                  "witness": 2,
+                                  "factors": [
+                                    {
+                                      "prime": 2,
+                                      "exponent": 2,
+                                      "certificate": {
+                                        "prime": 2,
+                                        "witness": 1,
+                                        "factors": [],
+                                        "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                                      }
+                                    }
+                                  ],
+                                  "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                                }
+                              }
+                            ],
+                            "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                          }
+                        }
+                      ],
+                      "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                    }
+                  }
+                ],
+                "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+              }
+            },
+            {
+              "prime": 8908647580887961,
+              "exponent": 1,
+              "certificate": {
+                "prime": 8908647580887961,
+                "witness": 29,
+                "factors": [
+                  {
+                    "prime": 2,
+                    "exponent": 3,
+                    "certificate": {
+                      "prime": 2,
+                      "witness": 1,
+                      "factors": [],
+                      "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                    }
+                  },
+                  {
+                    "prime": 3,
+                    "exponent": 1,
+                    "certificate": {
+                      "prime": 3,
+                      "witness": 2,
+                      "factors": [
+                        {
+                          "prime": 2,
+                          "exponent": 1,
+                          "certificate": {
+                            "prime": 2,
+                            "witness": 1,
+                            "factors": [],
+                            "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                          }
+                        }
+                      ],
+                      "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                    }
+                  },
+                  {
+                    "prime": 5,
+                    "exponent": 1,
+                    "certificate": {
+                      "prime": 5,
+                      "witness": 2,
+                      "factors": [
+                        {
+                          "prime": 2,
+                          "exponent": 2,
+                          "certificate": {
+                            "prime": 2,
+                            "witness": 1,
+                            "factors": [],
+                            "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                          }
+                        }
+                      ],
+                      "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                    }
+                  },
+                  {
+                    "prime": 3529,
+                    "exponent": 1,
+                    "certificate": {
+                      "prime": 3529,
+                      "witness": 17,
+                      "factors": [
+                        {
+                          "prime": 2,
+                          "exponent": 3,
+                          "certificate": {
+                            "prime": 2,
+                            "witness": 1,
+                            "factors": [],
+                            "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                          }
+                        },
+                        {
+                          "prime": 3,
+                          "exponent": 2,
+                          "certificate": {
+                            "prime": 3,
+                            "witness": 2,
+                            "factors": [
+                              {
+                                "prime": 2,
+                                "exponent": 1,
+                                "certificate": {
+                                  "prime": 2,
+                                  "witness": 1,
+                                  "factors": [],
+                                  "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                                }
+                              }
+                            ],
+                            "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                          }
+                        },
+                        {
+                          "prime": 7,
+                          "exponent": 2,
+                          "certificate": {
+                            "prime": 7,
+                            "witness": 3,
+                            "factors": [
+                              {
+                                "prime": 2,
+                                "exponent": 1,
+                                "certificate": {
+                                  "prime": 2,
+                                  "witness": 1,
+                                  "factors": [],
+                                  "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                                }
+                              },
+                              {
+                                "prime": 3,
+                                "exponent": 1,
+                                "certificate": {
+                                  "prime": 3,
+                                  "witness": 2,
+                                  "factors": [
+                                    {
+                                      "prime": 2,
+                                      "exponent": 1,
+                                      "certificate": {
+                                        "prime": 2,
+                                        "witness": 1,
+                                        "factors": [],
+                                        "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                                      }
+                                    }
+                                  ],
+                                  "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                                }
+                              }
+                            ],
+                            "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                          }
+                        }
+                      ],
+                      "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                    }
+                  },
+                  {
+                    "prime": 69467,
+                    "exponent": 1,
+                    "certificate": {
+                      "prime": 69467,
+                      "witness": 2,
+                      "factors": [
+                        {
+                          "prime": 2,
+                          "exponent": 1,
+                          "certificate": {
+                            "prime": 2,
+                            "witness": 1,
+                            "factors": [],
+                            "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                          }
+                        },
+                        {
+                          "prime": 47,
+                          "exponent": 1,
+                          "certificate": {
+                            "prime": 47,
+                            "witness": 5,
+                            "factors": [
+                              {
+                                "prime": 2,
+                                "exponent": 1,
+                                "certificate": {
+                                  "prime": 2,
+                                  "witness": 1,
+                                  "factors": [],
+                                  "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                                }
+                              },
+                              {
+                                "prime": 23,
+                                "exponent": 1,
+                                "certificate": {
+                                  "prime": 23,
+                                  "witness": 5,
+                                  "factors": [
+                                    {
+                                      "prime": 2,
+                                      "exponent": 1,
+                                      "certificate": {
+                                        "prime": 2,
+                                        "witness": 1,
+                                        "factors": [],
+                                        "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                                      }
+                                    },
+                                    {
+                                      "prime": 11,
+                                      "exponent": 1,
+                                      "certificate": {
+                                        "prime": 11,
+                                        "witness": 2,
+                                        "factors": [
+                                          {
+                                            "prime": 2,
+                                            "exponent": 1,
+                                            "certificate": {
+                                              "prime": 2,
+                                              "witness": 1,
+                                              "factors": [],
+                                              "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                                            }
+                                          },
+                                          {
+                                            "prime": 5,
+                                            "exponent": 1,
+                                            "certificate": {
+                                              "prime": 5,
+                                              "witness": 2,
+                                              "factors": [
+                                                {
+                                                  "prime": 2,
+                                                  "exponent": 2,
+                                                  "certificate": {
+                                                    "prime": 2,
+                                                    "witness": 1,
+                                                    "factors": [],
+                                                    "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                                                  }
+                                                }
+                                              ],
+                                              "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                                            }
+                                          }
+                                        ],
+                                        "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                                      }
+                                    }
+                                  ],
+                                  "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                                }
+                              }
+                            ],
+                            "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                          }
+                        },
+                        {
+                          "prime": 739,
+                          "exponent": 1,
+                          "certificate": {
+                            "prime": 739,
+                            "witness": 3,
+                            "factors": [
+                              {
+                                "prime": 2,
+                                "exponent": 1,
+                                "certificate": {
+                                  "prime": 2,
+                                  "witness": 1,
+                                  "factors": [],
+                                  "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                                }
+                              },
+                              {
+                                "prime": 3,
+                                "exponent": 2,
+                                "certificate": {
+                                  "prime": 3,
+                                  "witness": 2,
+                                  "factors": [
+                                    {
+                                      "prime": 2,
+                                      "exponent": 1,
+                                      "certificate": {
+                                        "prime": 2,
+                                        "witness": 1,
+                                        "factors": [],
+                                        "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                                      }
+                                    }
+                                  ],
+                                  "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                                }
+                              },
+                              {
+                                "prime": 41,
+                                "exponent": 1,
+                                "certificate": {
+                                  "prime": 41,
+                                  "witness": 6,
+                                  "factors": [
+                                    {
+                                      "prime": 2,
+                                      "exponent": 3,
+                                      "certificate": {
+                                        "prime": 2,
+                                        "witness": 1,
+                                        "factors": [],
+                                        "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                                      }
+                                    },
+                                    {
+                                      "prime": 5,
+                                      "exponent": 1,
+                                      "certificate": {
+                                        "prime": 5,
+                                        "witness": 2,
+                                        "factors": [
+                                          {
+                                            "prime": 2,
+                                            "exponent": 2,
+                                            "certificate": {
+                                              "prime": 2,
+                                              "witness": 1,
+                                              "factors": [],
+                                              "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                                            }
+                                          }
+                                        ],
+                                        "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                                      }
+                                    }
+                                  ],
+                                  "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                                }
+                              }
+                            ],
+                            "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                          }
+                        }
+                      ],
+                      "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                    }
+                  },
+                  {
+                    "prime": 302831,
+                    "exponent": 1,
+                    "certificate": {
+                      "prime": 302831,
+                      "witness": 7,
+                      "factors": [
+                        {
+                          "prime": 2,
+                          "exponent": 1,
+                          "certificate": {
+                            "prime": 2,
+                            "witness": 1,
+                            "factors": [],
+                            "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                          }
+                        },
+                        {
+                          "prime": 5,
+                          "exponent": 1,
+                          "certificate": {
+                            "prime": 5,
+                            "witness": 2,
+                            "factors": [
+                              {
+                                "prime": 2,
+                                "exponent": 2,
+                                "certificate": {
+                                  "prime": 2,
+                                  "witness": 1,
+                                  "factors": [],
+                                  "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                                }
+                              }
+                            ],
+                            "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                          }
+                        },
+                        {
+                          "prime": 11,
+                          "exponent": 1,
+                          "certificate": {
+                            "prime": 11,
+                            "witness": 2,
+                            "factors": [
+                              {
+                                "prime": 2,
+                                "exponent": 1,
+                                "certificate": {
+                                  "prime": 2,
+                                  "witness": 1,
+                                  "factors": [],
+                                  "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                                }
+                              },
+                              {
+                                "prime": 5,
+                                "exponent": 1,
+                                "certificate": {
+                                  "prime": 5,
+                                  "witness": 2,
+                                  "factors": [
+                                    {
+                                      "prime": 2,
+                                      "exponent": 2,
+                                      "certificate": {
+                                        "prime": 2,
+                                        "witness": 1,
+                                        "factors": [],
+                                        "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                                      }
+                                    }
+                                  ],
+                                  "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                                }
+                              }
+                            ],
+                            "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                          }
+                        },
+                        {
+                          "prime": 2753,
+                          "exponent": 1,
+                          "certificate": {
+                            "prime": 2753,
+                            "witness": 3,
+                            "factors": [
+                              {
+                                "prime": 2,
+                                "exponent": 6,
+                                "certificate": {
+                                  "prime": 2,
+                                  "witness": 1,
+                                  "factors": [],
+                                  "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                                }
+                              },
+                              {
+                                "prime": 43,
+                                "exponent": 1,
+                                "certificate": {
+                                  "prime": 43,
+                                  "witness": 3,
+                                  "factors": [
+                                    {
+                                      "prime": 2,
+                                      "exponent": 1,
+                                      "certificate": {
+                                        "prime": 2,
+                                        "witness": 1,
+                                        "factors": [],
+                                        "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                                      }
+                                    },
+                                    {
+                                      "prime": 3,
+                                      "exponent": 1,
+                                      "certificate": {
+                                        "prime": 3,
+                                        "witness": 2,
+                                        "factors": [
+                                          {
+                                            "prime": 2,
+                                            "exponent": 1,
+                                            "certificate": {
+                                              "prime": 2,
+                                              "witness": 1,
+                                              "factors": [],
+                                              "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                                            }
+                                          }
+                                        ],
+                                        "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                                      }
+                                    },
+                                    {
+                                      "prime": 7,
+                                      "exponent": 1,
+                                      "certificate": {
+                                        "prime": 7,
+                                        "witness": 3,
+                                        "factors": [
+                                          {
+                                            "prime": 2,
+                                            "exponent": 1,
+                                            "certificate": {
+                                              "prime": 2,
+                                              "witness": 1,
+                                              "factors": [],
+                                              "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                                            }
+                                          },
+                                          {
+                                            "prime": 3,
+                                            "exponent": 1,
+                                            "certificate": {
+                                              "prime": 3,
+                                              "witness": 2,
+                                              "factors": [
+                                                {
+                                                  "prime": 2,
+                                                  "exponent": 1,
+                                                  "certificate": {
+                                                    "prime": 2,
+                                                    "witness": 1,
+                                                    "factors": [],
+                                                    "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                                                  }
+                                                }
+                                              ],
+                                              "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                                            }
+                                          }
+                                        ],
+                                        "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                                      }
+                                    }
+                                  ],
+                                  "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                                }
+                              }
+                            ],
+                            "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                          }
+                        }
+                      ],
+                      "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                    }
+                  }
+                ],
+                "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+              }
+            }
+          ],
+          "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+        },
+        "solver_input_contains_plant_seed_or_solution": false,
+        "public_problem_sha256": "6c7b0ab7f1132d32496a1ce11b44f7a11ae060fa3ee13baaa33c23535f320044"
+      },
+      "PRIVATE_AUDIT_ONLY_plant": [
+        1,
+        1,
+        -1,
+        -1,
+        -1,
+        -1,
+        0,
+        0
+      ],
+      "public_LLL_vector": [
+        1,
+        1,
+        -1,
+        -1,
+        -1,
+        -1,
+        0,
+        0
+      ],
+      "public_LLL_reduced_row_basis": [
+        [
+          -1,
+          -1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          -20867489221723,
+          1741668734124,
+          -18029446864397,
+          -13599007186009,
+          -8600200676048,
+          21102834238853,
+          -19484823507724,
+          742769214109
+        ],
+        [
+          -2972134936187,
+          32607508715021,
+          3388160505419,
+          -7214041778335,
+          33738800689889,
+          -277545638137,
+          -24083044293709,
+          -6502037935521
+        ],
+        [
+          -2794514869635,
+          -17188917681945,
+          34718089762497,
+          -18630428082335,
+          -10706002611284,
+          -25365091620460,
+          -4965826171648,
+          20896011055013
+        ],
+        [
+          -3408140320265,
+          -16943380872829,
+          8720941074811,
+          -42803850617748,
+          1402840413132,
+          12328547936712,
+          30881086525494,
+          9636316184166
+        ],
+        [
+          -26217278790182,
+          26035548214127,
+          -13461034999685,
+          29001229439634,
+          9118249394976,
+          -24840174410980,
+          4062519320614,
+          13808181034677
+        ],
+        [
+          -9876700679939,
+          10696273947265,
+          23960049870541,
+          -17910822308809,
+          -32533641488428,
+          27303987194023,
+          16297974260481,
+          27758848034562
+        ],
+        [
+          -34965133690353,
+          21737063348314,
+          2915263802862,
+          -5952605333023,
+          -22657383460483,
+          12466654648608,
+          39812484866008,
+          -39180273611014
+        ]
+      ],
+      "public_LLL_unimodular_transform": [
+        [
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          9211874116527,
+          1472549428408,
+          -19250699799396,
+          3321747724498,
+          -8600200676048,
+          21102834238853,
+          -19484823507724,
+          742769214109
+        ],
+        [
+          -21953098649502,
+          8369778182125,
+          -2655495064121,
+          -9796127415502,
+          33738800689889,
+          -277545638137,
+          -24083044293709,
+          -6502037935521
+        ],
+        [
+          -4352197665218,
+          -7387138202259,
+          12530783894925,
+          3222219163928,
+          -10706002611284,
+          -25365091620460,
+          -4965826171648,
+          20896011055013
+        ],
+        [
+          13515327707615,
+          -9720644678375,
+          15390985959029,
+          7519955247852,
+          1402840413132,
+          12328547936712,
+          30881086525494,
+          9636316184166
+        ],
+        [
+          -12240784446659,
+          -4929675424733,
+          20217987170677,
+          -1209315986813,
+          9118249394976,
+          -24840174410980,
+          4062519320614,
+          13808181034677
+        ],
+        [
+          35407923785951,
+          -17384368273906,
+          -72360635351,
+          19573554499704,
+          -32533641488428,
+          27303987194023,
+          16297974260481,
+          27758848034562
+        ],
+        [
+          18516715510077,
+          8458062359973,
+          -11655241831072,
+          -1923551716274,
+          -22657383460483,
+          12466654648608,
+          39812484866008,
+          -39180273611014
+        ]
+      ],
+      "projective_RREF_vector": [
+        1,
+        1,
+        -1,
+        -1,
+        -1,
+        -1,
+        0,
+        0
+      ],
+      "RREF_constant_space": false,
+      "RREF_exponential_table_stored": false,
+      "RREF_working_storage_order": "O(m*(n-m)+n) integer slots; bit cost depends on log q",
       "m": 4,
       "n_minus_m": 4,
-      "q": 1208925819614629174706189,
+      "q": "1208925819614629174706189",
       "total_support_s": 6,
       "pivot_support_s_P": 4,
       "free_support_s_F": 2,
@@ -138,8 +4350,64 @@
       "sparse_column_attack_status": "NO_UNIT_OR_COLUMN_PAIR_RELATION",
       "sparse_column_immune_at_s_ge_3": true,
       "lll_recovered_squared_norm": 6,
-      "lll_theoretical_norm_sq_ceiling_alpha_4_3": 44.94924554183812,
-      "determinant_root_gap_q_pow_m_over_n_div_sqrt_s": 448873742384.69135,
+      "LLL_reducedness_certificate": {
+        "delta": {
+          "numerator": "3",
+          "denominator": "4"
+        },
+        "eta": {
+          "numerator": "51",
+          "denominator": "100"
+        },
+        "alpha": {
+          "numerator": "10000",
+          "denominator": "4899"
+        },
+        "gram_schmidt_squared_norms": [
+          {
+            "numerator": "6",
+            "denominator": "1"
+          },
+          {
+            "numerator": "5543947754678324297869907293",
+            "denominator": "3"
+          },
+          {
+            "numerator": "15741317655338694192769369215911805281488445683663270607",
+            "denominator": "5543947754678324297869907293"
+          },
+          {
+            "numerator": "42832048893365939494799854836071509177231569261398277872439342724669484055129500000",
+            "denominator": "15741317655338694192769369215911805281488445683663270607"
+          },
+          {
+            "numerator": "185591666615309557016240580223458110461545415656758098320686069796216022128262860908665010813222887474080713",
+            "denominator": "68531278229385503191679767737714414683570510818237244595902948359471174488207200"
+          },
+          {
+            "numerator": "185709416400228552297512127946429843092921675330303541954488365491251338088321984046591362",
+            "denominator": "79366857122655243734500407472999648659926355539194681227220625"
+          },
+          {
+            "numerator": "297930079143330806751659529587378149505970749949857099349359509728643",
+            "denominator": "127067539068505013799569964181801658169522"
+          },
+          {
+            "numerator": "1461501637330902918203716264787593000014474903721",
+            "denominator": "407704064823945967766"
+          }
+        ],
+        "size_reduction_verified": true,
+        "lovasz_verified": true,
+        "actual_lambda2_certified": false
+      },
+      "certified_LLL_squared_norm_ceiling": {
+        "numerator": "20000000000000000000000000000",
+        "denominator": "22575159191374201236941433"
+      },
+      "LLL_squared_norm_bound_verified": true,
+      "lambda2_isolation_premise_verified": false,
+      "determinant_normalized_proxy_NOT_lambda2_gap": 448873742384.69135,
       "public_lll_recovered_planted_vector": true,
       "ambient_mitm_recovered_planted_vector": true,
       "projective_rref_recovered_planted_vector": true,
@@ -149,9 +4417,784 @@
     }
   ],
   "verification": {
-    "theorem_1_free_support_and_sparse_immunity_verified": true,
-    "theorem_2_lll_isolation_and_large_q_scaling_verified": true,
-    "theorem_3_projective_rref_search_verified": true
+    "finite_free_support_and_sparse_attack_controls": true,
+    "finite_LLL_membership_reducedness_and_bounds": true,
+    "finite_projective_rref_search_controls": true
+  },
+  "LLL_parameter_arithmetic": {
+    "delta_3_4_eta_1_2_alpha": {
+      "numerator": "2",
+      "denominator": "1"
+    },
+    "finite_certificates_use_delta": {
+      "numerator": "3",
+      "denominator": "4"
+    },
+    "finite_certificates_use_eta": {
+      "numerator": "51",
+      "denominator": "100"
+    },
+    "finite_certificate_alpha": {
+      "numerator": "10000",
+      "denominator": "4899"
+    },
+    "library_defaults_substituted_for_verified_reducedness": false
+  },
+  "determinant_growth_counterfamily": {
+    "integer_constraint_rows": [
+      [
+        1,
+        -1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        -1,
+        0
+      ],
+      [
+        1,
+        0,
+        -1,
+        0,
+        -2
+      ]
+    ],
+    "primitive_unique_shortest_plant": [
+      1,
+      1,
+      1,
+      1,
+      0
+    ],
+    "independent_next_vector": [
+      1,
+      1,
+      -1,
+      -1,
+      1
+    ],
+    "ordinary_integer_kernel_basis": [
+      [
+        1,
+        1,
+        1,
+        1,
+        0
+      ],
+      [
+        1,
+        1,
+        -1,
+        -1,
+        1
+      ]
+    ],
+    "ordinary_kernel_norm_polynomial": "4*a^2+5*b^2 for integer a,b",
+    "maximum_constraint_row_squared_norm": 6,
+    "proof_radius_squared": 5,
+    "prime_threshold_inclusive": 7,
+    "all_nonzero_modular_wraps_excluded_within_proof_radius": true,
+    "controls": [
+      {
+        "public_problem": {
+          "prime": 7,
+          "dimension": 5,
+          "constraint_rows": 3,
+          "H": [
+            [
+              1,
+              6,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1,
+              6,
+              0
+            ],
+            [
+              1,
+              0,
+              6,
+              0,
+              5
+            ]
+          ],
+          "row_basis": [
+            [
+              7,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              7,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              7,
+              0,
+              0
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              0
+            ],
+            [
+              2,
+              2,
+              0,
+              0,
+              1
+            ]
+          ],
+          "public_modular_rref": [
+            [
+              1,
+              0,
+              0,
+              6,
+              5
+            ],
+            [
+              0,
+              1,
+              0,
+              6,
+              5
+            ],
+            [
+              0,
+              0,
+              1,
+              6,
+              0
+            ]
+          ],
+          "pivot_columns": [
+            0,
+            1,
+            2
+          ],
+          "free_columns": [
+            3,
+            4
+          ],
+          "lattice_index": {
+            "prime": 7,
+            "exponent": 3
+          },
+          "prime_certificate": {
+            "prime": 7,
+            "witness": 3,
+            "factors": [
+              {
+                "prime": 2,
+                "exponent": 1,
+                "certificate": {
+                  "prime": 2,
+                  "witness": 1,
+                  "factors": [],
+                  "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                }
+              },
+              {
+                "prime": 3,
+                "exponent": 1,
+                "certificate": {
+                  "prime": 3,
+                  "witness": 2,
+                  "factors": [
+                    {
+                      "prime": 2,
+                      "exponent": 1,
+                      "certificate": {
+                        "prime": 2,
+                        "witness": 1,
+                        "factors": [],
+                        "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                      }
+                    }
+                  ],
+                  "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                }
+              }
+            ],
+            "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+          },
+          "solver_input_contains_plant_seed_or_solution": false,
+          "public_problem_sha256": "684829623f583d88eb543730f7ccca84921258635a151342c7d9159f743f7e18"
+        },
+        "lll_returned_vector": [
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        "lambda1_squared": 4,
+        "lambda2_squared": 5,
+        "determinant": 343,
+        "determinant_normalized_plant_gap_fifth_power": {
+          "numerator": "343",
+          "denominator": "32"
+        },
+        "successive_minimum_gap_squared": {
+          "numerator": "5",
+          "denominator": "4"
+        }
+      },
+      {
+        "public_problem": {
+          "prime": 11,
+          "dimension": 5,
+          "constraint_rows": 3,
+          "H": [
+            [
+              1,
+              10,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1,
+              10,
+              0
+            ],
+            [
+              1,
+              0,
+              10,
+              0,
+              9
+            ]
+          ],
+          "row_basis": [
+            [
+              11,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              11,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              11,
+              0,
+              0
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              0
+            ],
+            [
+              2,
+              2,
+              0,
+              0,
+              1
+            ]
+          ],
+          "public_modular_rref": [
+            [
+              1,
+              0,
+              0,
+              10,
+              9
+            ],
+            [
+              0,
+              1,
+              0,
+              10,
+              9
+            ],
+            [
+              0,
+              0,
+              1,
+              10,
+              0
+            ]
+          ],
+          "pivot_columns": [
+            0,
+            1,
+            2
+          ],
+          "free_columns": [
+            3,
+            4
+          ],
+          "lattice_index": {
+            "prime": 11,
+            "exponent": 3
+          },
+          "prime_certificate": {
+            "prime": 11,
+            "witness": 2,
+            "factors": [
+              {
+                "prime": 2,
+                "exponent": 1,
+                "certificate": {
+                  "prime": 2,
+                  "witness": 1,
+                  "factors": [],
+                  "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                }
+              },
+              {
+                "prime": 5,
+                "exponent": 1,
+                "certificate": {
+                  "prime": 5,
+                  "witness": 2,
+                  "factors": [
+                    {
+                      "prime": 2,
+                      "exponent": 2,
+                      "certificate": {
+                        "prime": 2,
+                        "witness": 1,
+                        "factors": [],
+                        "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                      }
+                    }
+                  ],
+                  "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                }
+              }
+            ],
+            "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+          },
+          "solver_input_contains_plant_seed_or_solution": false,
+          "public_problem_sha256": "1f821ed8431628465a0f9fb3d84a3000bc59ddbf14589f5935128dd711d71df6"
+        },
+        "lll_returned_vector": [
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        "lambda1_squared": 4,
+        "lambda2_squared": 5,
+        "determinant": 1331,
+        "determinant_normalized_plant_gap_fifth_power": {
+          "numerator": "1331",
+          "denominator": "32"
+        },
+        "successive_minimum_gap_squared": {
+          "numerator": "5",
+          "denominator": "4"
+        }
+      },
+      {
+        "public_problem": {
+          "prime": 101,
+          "dimension": 5,
+          "constraint_rows": 3,
+          "H": [
+            [
+              1,
+              100,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1,
+              100,
+              0
+            ],
+            [
+              1,
+              0,
+              100,
+              0,
+              99
+            ]
+          ],
+          "row_basis": [
+            [
+              101,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              101,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              101,
+              0,
+              0
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              0
+            ],
+            [
+              2,
+              2,
+              0,
+              0,
+              1
+            ]
+          ],
+          "public_modular_rref": [
+            [
+              1,
+              0,
+              0,
+              100,
+              99
+            ],
+            [
+              0,
+              1,
+              0,
+              100,
+              99
+            ],
+            [
+              0,
+              0,
+              1,
+              100,
+              0
+            ]
+          ],
+          "pivot_columns": [
+            0,
+            1,
+            2
+          ],
+          "free_columns": [
+            3,
+            4
+          ],
+          "lattice_index": {
+            "prime": 101,
+            "exponent": 3
+          },
+          "prime_certificate": {
+            "prime": 101,
+            "witness": 2,
+            "factors": [
+              {
+                "prime": 2,
+                "exponent": 2,
+                "certificate": {
+                  "prime": 2,
+                  "witness": 1,
+                  "factors": [],
+                  "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                }
+              },
+              {
+                "prime": 5,
+                "exponent": 2,
+                "certificate": {
+                  "prime": 5,
+                  "witness": 2,
+                  "factors": [
+                    {
+                      "prime": 2,
+                      "exponent": 2,
+                      "certificate": {
+                        "prime": 2,
+                        "witness": 1,
+                        "factors": [],
+                        "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                      }
+                    }
+                  ],
+                  "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                }
+              }
+            ],
+            "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+          },
+          "solver_input_contains_plant_seed_or_solution": false,
+          "public_problem_sha256": "7d37b43fc4dd4515bd763c5435c4d32883100b5085ffca0a96c3c184fddd3f8b"
+        },
+        "lll_returned_vector": [
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        "lambda1_squared": 4,
+        "lambda2_squared": 5,
+        "determinant": 1030301,
+        "determinant_normalized_plant_gap_fifth_power": {
+          "numerator": "1030301",
+          "denominator": "32"
+        },
+        "successive_minimum_gap_squared": {
+          "numerator": "5",
+          "denominator": "4"
+        }
+      },
+      {
+        "public_problem": {
+          "prime": 1009,
+          "dimension": 5,
+          "constraint_rows": 3,
+          "H": [
+            [
+              1,
+              1008,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1,
+              1008,
+              0
+            ],
+            [
+              1,
+              0,
+              1008,
+              0,
+              1007
+            ]
+          ],
+          "row_basis": [
+            [
+              1009,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1009,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1009,
+              0,
+              0
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              0
+            ],
+            [
+              2,
+              2,
+              0,
+              0,
+              1
+            ]
+          ],
+          "public_modular_rref": [
+            [
+              1,
+              0,
+              0,
+              1008,
+              1007
+            ],
+            [
+              0,
+              1,
+              0,
+              1008,
+              1007
+            ],
+            [
+              0,
+              0,
+              1,
+              1008,
+              0
+            ]
+          ],
+          "pivot_columns": [
+            0,
+            1,
+            2
+          ],
+          "free_columns": [
+            3,
+            4
+          ],
+          "lattice_index": {
+            "prime": 1009,
+            "exponent": 3
+          },
+          "prime_certificate": {
+            "prime": 1009,
+            "witness": 11,
+            "factors": [
+              {
+                "prime": 2,
+                "exponent": 4,
+                "certificate": {
+                  "prime": 2,
+                  "witness": 1,
+                  "factors": [],
+                  "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                }
+              },
+              {
+                "prime": 3,
+                "exponent": 2,
+                "certificate": {
+                  "prime": 3,
+                  "witness": 2,
+                  "factors": [
+                    {
+                      "prime": 2,
+                      "exponent": 1,
+                      "certificate": {
+                        "prime": 2,
+                        "witness": 1,
+                        "factors": [],
+                        "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                      }
+                    }
+                  ],
+                  "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                }
+              },
+              {
+                "prime": 7,
+                "exponent": 1,
+                "certificate": {
+                  "prime": 7,
+                  "witness": 3,
+                  "factors": [
+                    {
+                      "prime": 2,
+                      "exponent": 1,
+                      "certificate": {
+                        "prime": 2,
+                        "witness": 1,
+                        "factors": [],
+                        "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                      }
+                    },
+                    {
+                      "prime": 3,
+                      "exponent": 1,
+                      "certificate": {
+                        "prime": 3,
+                        "witness": 2,
+                        "factors": [
+                          {
+                            "prime": 2,
+                            "exponent": 1,
+                            "certificate": {
+                              "prime": 2,
+                              "witness": 1,
+                              "factors": [],
+                              "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                            }
+                          }
+                        ],
+                        "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                      }
+                    }
+                  ],
+                  "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                }
+              }
+            ],
+            "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+          },
+          "solver_input_contains_plant_seed_or_solution": false,
+          "public_problem_sha256": "28989ea5e9c9b0df68569a5f17f638749aed4c8108fc1d5a7d6a6996d89da967"
+        },
+        "lll_returned_vector": [
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        "lambda1_squared": 4,
+        "lambda2_squared": 5,
+        "determinant": 1027243729,
+        "determinant_normalized_plant_gap_fifth_power": {
+          "numerator": "1027243729",
+          "denominator": "32"
+        },
+        "successive_minimum_gap_squared": {
+          "numerator": "5",
+          "denominator": "4"
+        }
+      }
+    ],
+    "determinant_growth_proves_successive_gap_growth": false,
+    "finite_LLL_recovery_proves_monotone_success_probability": false
+  },
+  "unresolved_or_withdrawn_claims": {
+    "general_large_q_LLL_success_monotonicity_proved": false,
+    "lambda2_isolation_of_generated_controls_certified": false,
+    "constant_working_memory": false,
+    "finite_recovery_is_a_general_complexity_theorem": false
   },
   "guardrails": {
     "accepted_speedup_candidate": false,

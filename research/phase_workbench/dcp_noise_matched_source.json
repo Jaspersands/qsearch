@@ -1,0 +1,790 @@
+{
+  "contract_id": "noise_matched_zero_label_conditional_native_source_restoration_v1",
+  "status": "CONDITIONAL_LOCAL_DERIVATION_EXTERNAL_REVIEW_PENDING",
+  "accepted_speedup_candidate": false,
+  "novelty_claim": false,
+  "actual_natural_source_noise_certified": false,
+  "external_theorem_review_complete": false,
+  "source_quantum_preparations_executed": 0,
+  "assumed_not_inferred_premises": {
+    "original_noise_model": "independent-balanced-original-phase-depolarization",
+    "public_visibility_independent_of_fresh_higher_labels": true,
+    "pair_selection_reads_only_coarse_labels": true,
+    "original_diagonal_is_flat": true,
+    "original_higher_label_transcript_discarded": true,
+    "fresh_independent_batches_per_attempt": true,
+    "joint_input_state_factors_conditioned_on_fixed_unknown_secret": true
+  },
+  "two_level_exact_censuses": [
+    {
+      "output_modulus": 8,
+      "base_visibility": {
+        "numerator_hex": "0x3",
+        "denominator_binary_exponent": 2
+      },
+      "raw_census_total": 32768,
+      "joint_label_visibility_rows": [
+        {
+          "label": 0,
+          "visibility_exponent": 2,
+          "raw_count": 3072,
+          "target_probability": "3/32",
+          "restored_probability": "3/32"
+        },
+        {
+          "label": 0,
+          "visibility_exponent": 4,
+          "raw_count": 1024,
+          "target_probability": "1/32",
+          "restored_probability": "1/32"
+        },
+        {
+          "label": 1,
+          "visibility_exponent": 2,
+          "raw_count": 3072,
+          "target_probability": "3/32",
+          "restored_probability": "3/32"
+        },
+        {
+          "label": 1,
+          "visibility_exponent": 4,
+          "raw_count": 1024,
+          "target_probability": "1/32",
+          "restored_probability": "1/32"
+        },
+        {
+          "label": 2,
+          "visibility_exponent": 2,
+          "raw_count": 3072,
+          "target_probability": "3/32",
+          "restored_probability": "3/32"
+        },
+        {
+          "label": 2,
+          "visibility_exponent": 4,
+          "raw_count": 1024,
+          "target_probability": "1/32",
+          "restored_probability": "1/32"
+        },
+        {
+          "label": 3,
+          "visibility_exponent": 2,
+          "raw_count": 3072,
+          "target_probability": "3/32",
+          "restored_probability": "3/32"
+        },
+        {
+          "label": 3,
+          "visibility_exponent": 4,
+          "raw_count": 1024,
+          "target_probability": "1/32",
+          "restored_probability": "1/32"
+        },
+        {
+          "label": 4,
+          "visibility_exponent": 2,
+          "raw_count": 3072,
+          "target_probability": "3/32",
+          "restored_probability": "3/32"
+        },
+        {
+          "label": 4,
+          "visibility_exponent": 4,
+          "raw_count": 1024,
+          "target_probability": "1/32",
+          "restored_probability": "1/32"
+        },
+        {
+          "label": 5,
+          "visibility_exponent": 2,
+          "raw_count": 3072,
+          "target_probability": "3/32",
+          "restored_probability": "3/32"
+        },
+        {
+          "label": 5,
+          "visibility_exponent": 4,
+          "raw_count": 1024,
+          "target_probability": "1/32",
+          "restored_probability": "1/32"
+        },
+        {
+          "label": 6,
+          "visibility_exponent": 2,
+          "raw_count": 3072,
+          "target_probability": "3/32",
+          "restored_probability": "3/32"
+        },
+        {
+          "label": 6,
+          "visibility_exponent": 4,
+          "raw_count": 1024,
+          "target_probability": "1/32",
+          "restored_probability": "1/32"
+        },
+        {
+          "label": 7,
+          "visibility_exponent": 2,
+          "raw_count": 3072,
+          "target_probability": "3/32",
+          "restored_probability": "3/32"
+        },
+        {
+          "label": 7,
+          "visibility_exponent": 4,
+          "raw_count": 1024,
+          "target_probability": "1/32",
+          "restored_probability": "1/32"
+        }
+      ],
+      "accepted_nonzero_input_rows": [
+        {
+          "label": 1,
+          "visibility_exponent": 2,
+          "conditional_probability": "3/28"
+        },
+        {
+          "label": 1,
+          "visibility_exponent": 4,
+          "conditional_probability": "1/28"
+        },
+        {
+          "label": 2,
+          "visibility_exponent": 2,
+          "conditional_probability": "3/28"
+        },
+        {
+          "label": 2,
+          "visibility_exponent": 4,
+          "conditional_probability": "1/28"
+        },
+        {
+          "label": 3,
+          "visibility_exponent": 2,
+          "conditional_probability": "3/28"
+        },
+        {
+          "label": 3,
+          "visibility_exponent": 4,
+          "conditional_probability": "1/28"
+        },
+        {
+          "label": 4,
+          "visibility_exponent": 2,
+          "conditional_probability": "3/28"
+        },
+        {
+          "label": 4,
+          "visibility_exponent": 4,
+          "conditional_probability": "1/28"
+        },
+        {
+          "label": 5,
+          "visibility_exponent": 2,
+          "conditional_probability": "3/28"
+        },
+        {
+          "label": 5,
+          "visibility_exponent": 4,
+          "conditional_probability": "1/28"
+        },
+        {
+          "label": 6,
+          "visibility_exponent": 2,
+          "conditional_probability": "3/28"
+        },
+        {
+          "label": 6,
+          "visibility_exponent": 4,
+          "conditional_probability": "1/28"
+        },
+        {
+          "label": 7,
+          "visibility_exponent": 2,
+          "conditional_probability": "3/28"
+        },
+        {
+          "label": 7,
+          "visibility_exponent": 4,
+          "conditional_probability": "1/28"
+        }
+      ],
+      "charged_nonzero_admission_probability": "7/8",
+      "replacement_recipes_by_exponent": [
+        {
+          "visibility_exponent": 2,
+          "recipe": {
+            "visibility": {
+              "numerator_hex": "0x9",
+              "denominator_binary_exponent": 4
+            },
+            "zero_label_coin_probability": {
+              "numerator_hex": "0x1",
+              "denominator_binary_exponent": 3
+            },
+            "keep_paid_nonzero_qubit_probability": {
+              "numerator_hex": "0x7",
+              "denominator_binary_exponent": 3
+            },
+            "replacement_plus_probability_including_zero_coin": {
+              "numerator_hex": "0x19",
+              "denominator_binary_exponent": 8
+            },
+            "replacement_minus_probability_including_zero_coin": {
+              "numerator_hex": "0x7",
+              "denominator_binary_exponent": 8
+            },
+            "conditional_Z_flip_probability": {
+              "numerator_hex": "0x7",
+              "denominator_binary_exponent": 5
+            },
+            "actions": [
+              "draw public zero coin",
+              "keep nonzero qubit unless coin is zero",
+              "on zero: discard paid qubit, prepare plus, apply public Z coin, label zero"
+            ],
+            "paid_qubit_consumed_before_zero_coin": true,
+            "public_visibility_record_retained": true,
+            "unknown_preparation_inverse_used": false,
+            "hardware_backend_executed": false
+          }
+        },
+        {
+          "visibility_exponent": 4,
+          "recipe": {
+            "visibility": {
+              "numerator_hex": "0x51",
+              "denominator_binary_exponent": 8
+            },
+            "zero_label_coin_probability": {
+              "numerator_hex": "0x1",
+              "denominator_binary_exponent": 3
+            },
+            "keep_paid_nonzero_qubit_probability": {
+              "numerator_hex": "0x7",
+              "denominator_binary_exponent": 3
+            },
+            "replacement_plus_probability_including_zero_coin": {
+              "numerator_hex": "0x151",
+              "denominator_binary_exponent": 12
+            },
+            "replacement_minus_probability_including_zero_coin": {
+              "numerator_hex": "0xaf",
+              "denominator_binary_exponent": 12
+            },
+            "conditional_Z_flip_probability": {
+              "numerator_hex": "0xaf",
+              "denominator_binary_exponent": 9
+            },
+            "actions": [
+              "draw public zero coin",
+              "keep nonzero qubit unless coin is zero",
+              "on zero: discard paid qubit, prepare plus, apply public Z coin, label zero"
+            ],
+            "paid_qubit_consumed_before_zero_coin": true,
+            "public_visibility_record_retained": true,
+            "unknown_preparation_inverse_used": false,
+            "hardware_backend_executed": false
+          }
+        }
+      ],
+      "exact_joint_label_visibility_law_restored": true,
+      "pure_replacement_matches_noisy_zero_blocks": false,
+      "original_higher_labels_retained": false,
+      "source_theorem_inferred_from_finite_histogram": false
+    },
+    {
+      "output_modulus": 2,
+      "base_visibility": {
+        "numerator_hex": "0x3",
+        "denominator_binary_exponent": 2
+      },
+      "raw_census_total": 8388608,
+      "joint_label_visibility_rows": [
+        {
+          "label": 0,
+          "visibility_exponent": 2,
+          "raw_count": 1769472,
+          "target_probability": "27/128",
+          "restored_probability": "27/128"
+        },
+        {
+          "label": 0,
+          "visibility_exponent": 4,
+          "raw_count": 1363968,
+          "target_probability": "333/2048",
+          "restored_probability": "333/2048"
+        },
+        {
+          "label": 0,
+          "visibility_exponent": 6,
+          "raw_count": 681984,
+          "target_probability": "333/4096",
+          "restored_probability": "333/4096"
+        },
+        {
+          "label": 0,
+          "visibility_exponent": 8,
+          "raw_count": 272640,
+          "target_probability": "1065/32768",
+          "restored_probability": "1065/32768"
+        },
+        {
+          "label": 0,
+          "visibility_exponent": 10,
+          "raw_count": 82944,
+          "target_probability": "81/8192",
+          "restored_probability": "81/8192"
+        },
+        {
+          "label": 0,
+          "visibility_exponent": 12,
+          "raw_count": 19968,
+          "target_probability": "39/16384",
+          "restored_probability": "39/16384"
+        },
+        {
+          "label": 0,
+          "visibility_exponent": 14,
+          "raw_count": 3072,
+          "target_probability": "3/8192",
+          "restored_probability": "3/8192"
+        },
+        {
+          "label": 0,
+          "visibility_exponent": 16,
+          "raw_count": 256,
+          "target_probability": "1/32768",
+          "restored_probability": "1/32768"
+        },
+        {
+          "label": 1,
+          "visibility_exponent": 2,
+          "raw_count": 1769472,
+          "target_probability": "27/128",
+          "restored_probability": "27/128"
+        },
+        {
+          "label": 1,
+          "visibility_exponent": 4,
+          "raw_count": 1363968,
+          "target_probability": "333/2048",
+          "restored_probability": "333/2048"
+        },
+        {
+          "label": 1,
+          "visibility_exponent": 6,
+          "raw_count": 681984,
+          "target_probability": "333/4096",
+          "restored_probability": "333/4096"
+        },
+        {
+          "label": 1,
+          "visibility_exponent": 8,
+          "raw_count": 272640,
+          "target_probability": "1065/32768",
+          "restored_probability": "1065/32768"
+        },
+        {
+          "label": 1,
+          "visibility_exponent": 10,
+          "raw_count": 82944,
+          "target_probability": "81/8192",
+          "restored_probability": "81/8192"
+        },
+        {
+          "label": 1,
+          "visibility_exponent": 12,
+          "raw_count": 19968,
+          "target_probability": "39/16384",
+          "restored_probability": "39/16384"
+        },
+        {
+          "label": 1,
+          "visibility_exponent": 14,
+          "raw_count": 3072,
+          "target_probability": "3/8192",
+          "restored_probability": "3/8192"
+        },
+        {
+          "label": 1,
+          "visibility_exponent": 16,
+          "raw_count": 256,
+          "target_probability": "1/32768",
+          "restored_probability": "1/32768"
+        }
+      ],
+      "accepted_nonzero_input_rows": [
+        {
+          "label": 1,
+          "visibility_exponent": 2,
+          "conditional_probability": "27/64"
+        },
+        {
+          "label": 1,
+          "visibility_exponent": 4,
+          "conditional_probability": "333/1024"
+        },
+        {
+          "label": 1,
+          "visibility_exponent": 6,
+          "conditional_probability": "333/2048"
+        },
+        {
+          "label": 1,
+          "visibility_exponent": 8,
+          "conditional_probability": "1065/16384"
+        },
+        {
+          "label": 1,
+          "visibility_exponent": 10,
+          "conditional_probability": "81/4096"
+        },
+        {
+          "label": 1,
+          "visibility_exponent": 12,
+          "conditional_probability": "39/8192"
+        },
+        {
+          "label": 1,
+          "visibility_exponent": 14,
+          "conditional_probability": "3/4096"
+        },
+        {
+          "label": 1,
+          "visibility_exponent": 16,
+          "conditional_probability": "1/16384"
+        }
+      ],
+      "charged_nonzero_admission_probability": "1/2",
+      "replacement_recipes_by_exponent": [
+        {
+          "visibility_exponent": 2,
+          "recipe": {
+            "visibility": {
+              "numerator_hex": "0x9",
+              "denominator_binary_exponent": 4
+            },
+            "zero_label_coin_probability": {
+              "numerator_hex": "0x1",
+              "denominator_binary_exponent": 1
+            },
+            "keep_paid_nonzero_qubit_probability": {
+              "numerator_hex": "0x1",
+              "denominator_binary_exponent": 1
+            },
+            "replacement_plus_probability_including_zero_coin": {
+              "numerator_hex": "0x19",
+              "denominator_binary_exponent": 6
+            },
+            "replacement_minus_probability_including_zero_coin": {
+              "numerator_hex": "0x7",
+              "denominator_binary_exponent": 6
+            },
+            "conditional_Z_flip_probability": {
+              "numerator_hex": "0x7",
+              "denominator_binary_exponent": 5
+            },
+            "actions": [
+              "draw public zero coin",
+              "keep nonzero qubit unless coin is zero",
+              "on zero: discard paid qubit, prepare plus, apply public Z coin, label zero"
+            ],
+            "paid_qubit_consumed_before_zero_coin": true,
+            "public_visibility_record_retained": true,
+            "unknown_preparation_inverse_used": false,
+            "hardware_backend_executed": false
+          }
+        },
+        {
+          "visibility_exponent": 4,
+          "recipe": {
+            "visibility": {
+              "numerator_hex": "0x51",
+              "denominator_binary_exponent": 8
+            },
+            "zero_label_coin_probability": {
+              "numerator_hex": "0x1",
+              "denominator_binary_exponent": 1
+            },
+            "keep_paid_nonzero_qubit_probability": {
+              "numerator_hex": "0x1",
+              "denominator_binary_exponent": 1
+            },
+            "replacement_plus_probability_including_zero_coin": {
+              "numerator_hex": "0x151",
+              "denominator_binary_exponent": 10
+            },
+            "replacement_minus_probability_including_zero_coin": {
+              "numerator_hex": "0xaf",
+              "denominator_binary_exponent": 10
+            },
+            "conditional_Z_flip_probability": {
+              "numerator_hex": "0xaf",
+              "denominator_binary_exponent": 9
+            },
+            "actions": [
+              "draw public zero coin",
+              "keep nonzero qubit unless coin is zero",
+              "on zero: discard paid qubit, prepare plus, apply public Z coin, label zero"
+            ],
+            "paid_qubit_consumed_before_zero_coin": true,
+            "public_visibility_record_retained": true,
+            "unknown_preparation_inverse_used": false,
+            "hardware_backend_executed": false
+          }
+        },
+        {
+          "visibility_exponent": 6,
+          "recipe": {
+            "visibility": {
+              "numerator_hex": "0x2d9",
+              "denominator_binary_exponent": 12
+            },
+            "zero_label_coin_probability": {
+              "numerator_hex": "0x1",
+              "denominator_binary_exponent": 1
+            },
+            "keep_paid_nonzero_qubit_probability": {
+              "numerator_hex": "0x1",
+              "denominator_binary_exponent": 1
+            },
+            "replacement_plus_probability_including_zero_coin": {
+              "numerator_hex": "0x12d9",
+              "denominator_binary_exponent": 14
+            },
+            "replacement_minus_probability_including_zero_coin": {
+              "numerator_hex": "0xd27",
+              "denominator_binary_exponent": 14
+            },
+            "conditional_Z_flip_probability": {
+              "numerator_hex": "0xd27",
+              "denominator_binary_exponent": 13
+            },
+            "actions": [
+              "draw public zero coin",
+              "keep nonzero qubit unless coin is zero",
+              "on zero: discard paid qubit, prepare plus, apply public Z coin, label zero"
+            ],
+            "paid_qubit_consumed_before_zero_coin": true,
+            "public_visibility_record_retained": true,
+            "unknown_preparation_inverse_used": false,
+            "hardware_backend_executed": false
+          }
+        },
+        {
+          "visibility_exponent": 8,
+          "recipe": {
+            "visibility": {
+              "numerator_hex": "0x19a1",
+              "denominator_binary_exponent": 16
+            },
+            "zero_label_coin_probability": {
+              "numerator_hex": "0x1",
+              "denominator_binary_exponent": 1
+            },
+            "keep_paid_nonzero_qubit_probability": {
+              "numerator_hex": "0x1",
+              "denominator_binary_exponent": 1
+            },
+            "replacement_plus_probability_including_zero_coin": {
+              "numerator_hex": "0x119a1",
+              "denominator_binary_exponent": 18
+            },
+            "replacement_minus_probability_including_zero_coin": {
+              "numerator_hex": "0xe65f",
+              "denominator_binary_exponent": 18
+            },
+            "conditional_Z_flip_probability": {
+              "numerator_hex": "0xe65f",
+              "denominator_binary_exponent": 17
+            },
+            "actions": [
+              "draw public zero coin",
+              "keep nonzero qubit unless coin is zero",
+              "on zero: discard paid qubit, prepare plus, apply public Z coin, label zero"
+            ],
+            "paid_qubit_consumed_before_zero_coin": true,
+            "public_visibility_record_retained": true,
+            "unknown_preparation_inverse_used": false,
+            "hardware_backend_executed": false
+          }
+        },
+        {
+          "visibility_exponent": 10,
+          "recipe": {
+            "visibility": {
+              "numerator_hex": "0xe6a9",
+              "denominator_binary_exponent": 20
+            },
+            "zero_label_coin_probability": {
+              "numerator_hex": "0x1",
+              "denominator_binary_exponent": 1
+            },
+            "keep_paid_nonzero_qubit_probability": {
+              "numerator_hex": "0x1",
+              "denominator_binary_exponent": 1
+            },
+            "replacement_plus_probability_including_zero_coin": {
+              "numerator_hex": "0x10e6a9",
+              "denominator_binary_exponent": 22
+            },
+            "replacement_minus_probability_including_zero_coin": {
+              "numerator_hex": "0xf1957",
+              "denominator_binary_exponent": 22
+            },
+            "conditional_Z_flip_probability": {
+              "numerator_hex": "0xf1957",
+              "denominator_binary_exponent": 21
+            },
+            "actions": [
+              "draw public zero coin",
+              "keep nonzero qubit unless coin is zero",
+              "on zero: discard paid qubit, prepare plus, apply public Z coin, label zero"
+            ],
+            "paid_qubit_consumed_before_zero_coin": true,
+            "public_visibility_record_retained": true,
+            "unknown_preparation_inverse_used": false,
+            "hardware_backend_executed": false
+          }
+        },
+        {
+          "visibility_exponent": 12,
+          "recipe": {
+            "visibility": {
+              "numerator_hex": "0x81bf1",
+              "denominator_binary_exponent": 24
+            },
+            "zero_label_coin_probability": {
+              "numerator_hex": "0x1",
+              "denominator_binary_exponent": 1
+            },
+            "keep_paid_nonzero_qubit_probability": {
+              "numerator_hex": "0x1",
+              "denominator_binary_exponent": 1
+            },
+            "replacement_plus_probability_including_zero_coin": {
+              "numerator_hex": "0x1081bf1",
+              "denominator_binary_exponent": 26
+            },
+            "replacement_minus_probability_including_zero_coin": {
+              "numerator_hex": "0xf7e40f",
+              "denominator_binary_exponent": 26
+            },
+            "conditional_Z_flip_probability": {
+              "numerator_hex": "0xf7e40f",
+              "denominator_binary_exponent": 25
+            },
+            "actions": [
+              "draw public zero coin",
+              "keep nonzero qubit unless coin is zero",
+              "on zero: discard paid qubit, prepare plus, apply public Z coin, label zero"
+            ],
+            "paid_qubit_consumed_before_zero_coin": true,
+            "public_visibility_record_retained": true,
+            "unknown_preparation_inverse_used": false,
+            "hardware_backend_executed": false
+          }
+        },
+        {
+          "visibility_exponent": 14,
+          "recipe": {
+            "visibility": {
+              "numerator_hex": "0x48fb79",
+              "denominator_binary_exponent": 28
+            },
+            "zero_label_coin_probability": {
+              "numerator_hex": "0x1",
+              "denominator_binary_exponent": 1
+            },
+            "keep_paid_nonzero_qubit_probability": {
+              "numerator_hex": "0x1",
+              "denominator_binary_exponent": 1
+            },
+            "replacement_plus_probability_including_zero_coin": {
+              "numerator_hex": "0x1048fb79",
+              "denominator_binary_exponent": 30
+            },
+            "replacement_minus_probability_including_zero_coin": {
+              "numerator_hex": "0xfb70487",
+              "denominator_binary_exponent": 30
+            },
+            "conditional_Z_flip_probability": {
+              "numerator_hex": "0xfb70487",
+              "denominator_binary_exponent": 29
+            },
+            "actions": [
+              "draw public zero coin",
+              "keep nonzero qubit unless coin is zero",
+              "on zero: discard paid qubit, prepare plus, apply public Z coin, label zero"
+            ],
+            "paid_qubit_consumed_before_zero_coin": true,
+            "public_visibility_record_retained": true,
+            "unknown_preparation_inverse_used": false,
+            "hardware_backend_executed": false
+          }
+        },
+        {
+          "visibility_exponent": 16,
+          "recipe": {
+            "visibility": {
+              "numerator_hex": "0x290d741",
+              "denominator_binary_exponent": 32
+            },
+            "zero_label_coin_probability": {
+              "numerator_hex": "0x1",
+              "denominator_binary_exponent": 1
+            },
+            "keep_paid_nonzero_qubit_probability": {
+              "numerator_hex": "0x1",
+              "denominator_binary_exponent": 1
+            },
+            "replacement_plus_probability_including_zero_coin": {
+              "numerator_hex": "0x10290d741",
+              "denominator_binary_exponent": 34
+            },
+            "replacement_minus_probability_including_zero_coin": {
+              "numerator_hex": "0xfd6f28bf",
+              "denominator_binary_exponent": 34
+            },
+            "conditional_Z_flip_probability": {
+              "numerator_hex": "0xfd6f28bf",
+              "denominator_binary_exponent": 33
+            },
+            "actions": [
+              "draw public zero coin",
+              "keep nonzero qubit unless coin is zero",
+              "on zero: discard paid qubit, prepare plus, apply public Z coin, label zero"
+            ],
+            "paid_qubit_consumed_before_zero_coin": true,
+            "public_visibility_record_retained": true,
+            "unknown_preparation_inverse_used": false,
+            "hardware_backend_executed": false
+          }
+        }
+      ],
+      "exact_joint_label_visibility_law_restored": true,
+      "pure_replacement_matches_noisy_zero_blocks": false,
+      "original_higher_labels_retained": false,
+      "source_theorem_inferred_from_finite_histogram": false
+    }
+  ],
+  "implemented_wrapper_supply": {
+    "original_qubits_per_first_level_raw_attempt": 4,
+    "first_level_original_qubits_per_restored_output": "32/7",
+    "first_level_outputs_per_second_level_restored_output": "8",
+    "original_qubits_per_second_level_restored_output": "256/7",
+    "ideal_no_failure_two_level_original_qubits": 16,
+    "these_costs_are_universal_lower_bounds": false,
+    "zero_coin_is_drawn_only_after_a_paid_nonzero_output": true
+  },
+  "scope": {
+    "abstract_balanced_product_source_family_closed_under_this_channel": true,
+    "induction_requires_fresh_independent_batches_and_label_visibility_independence": true,
+    "all_joint_natural_lattice_noise_models_covered": false,
+    "correlated_original_faults_covered_by_marginal_visibility": false,
+    "old_full_higher_label_transcript_may_be_retained": false,
+    "exponential_recursive_supply_or_visibility_loss_removed": false,
+    "hardware_reset_or_Z_coin_backend_implemented": false
+  }
+}

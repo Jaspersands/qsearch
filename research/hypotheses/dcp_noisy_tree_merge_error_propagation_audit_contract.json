@@ -1,0 +1,28 @@
+{
+  "contract_id": "dcp-noisy-tree-merge-error-propagation-audit-contract",
+  "title": "DCP Noisy Tree-Merge Error-Propagation Audit: 2^L-Fold Phase-Error Convolution, Double-Exponential Visibility Decay, and Classical-vs-Tree SNR Crossover",
+  "version": "1.0.0",
+  "scope": "dcp_noisy_binary_tree_merge_phase_error_convolution_and_snr_crossover",
+  "theorems": [
+    {
+      "id": "T1",
+      "name": "Exact 2^L-Fold Cyclic Convolution and Harmonic Power Law",
+      "statement": "Under a depth-L binary CNOT tree-merge aligning K = 2^L noisy DCP leaves on Z_q with i.i.d. symmetric phase error kernel K_eta, the post-selected root phase error follows the 2^L-fold cyclic convolution K_eta^(*2^L), and its m-th Fourier harmonic visibility equals Lambda_m^(L) = (lambda_m)^(2^L) exactly."
+    },
+    {
+      "id": "T2",
+      "name": "Double-Exponential Root Visibility Decay and Per-Leaf Noise Threshold",
+      "statement": "For any symmetric noise kernel with fundamental damping lambda_1 in (0, 1), the root visibility at tree depth L decays double-exponentially as Lambda_1^(L) = lambda_1^(2^L) = exp(-2^L ln(1/lambda_1)), requiring 1 - lambda_1 <= 1 - tau^(2^(-L)) to maintain root visibility >= tau."
+    },
+    {
+      "id": "T3",
+      "name": "Strict SNR Dominance of Direct Single-Leaf Readout Over Uncorrected Tree-Merge",
+      "statement": "For every depth L >= 1 (K = 2^L >= 2) and every lambda_1 in (0, 1], the ratio of root harmonic SNR proxy (lambda_1^(2^(L+1))) to K-copy single-leaf harmonic SNR proxy (2^L * lambda_1^2) equals 2^(-L) * lambda_1^(2*(2^L - 1)) <= 2^(-L) < 1."
+    }
+  ],
+  "guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  }
+}

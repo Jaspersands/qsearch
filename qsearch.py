@@ -19106,6 +19106,126 @@ def command_planted_qary_classical_attack_threshold_bridge(args: argparse.Namesp
     return 0
 
 
+def command_dcp_truncated_qft_tree_merge_joint_channel_audit(args: argparse.Namespace) -> int:
+    from theorems.dcp_truncated_qft_tree_merge_joint_channel_audit import (
+        build_dcp_truncated_qft_tree_merge_joint_channel_audit_report,
+        write_dcp_truncated_qft_tree_merge_joint_channel_audit_report,
+    )
+
+    payload = (
+        build_dcp_truncated_qft_tree_merge_joint_channel_audit_report()
+        if args.no_write
+        else write_dcp_truncated_qft_tree_merge_joint_channel_audit_report()
+    )
+    print(json.dumps(payload, indent=2))
+    return 0
+
+
+def command_native_higher_call_weighted_fourier_pinching_audit(args: argparse.Namespace) -> int:
+    from theorems.native_higher_call_weighted_fourier_pinching_audit import (
+        build_native_higher_call_weighted_fourier_pinching_audit,
+        write_native_higher_call_weighted_fourier_pinching_audit,
+    )
+
+    payload = (
+        build_native_higher_call_weighted_fourier_pinching_audit()
+        if args.no_write
+        else write_native_higher_call_weighted_fourier_pinching_audit()
+    )
+    print(json.dumps(payload, indent=2))
+    return 0
+
+
+def command_planted_qary_multiprobe_gl_rank_saturation_bridge(args: argparse.Namespace) -> int:
+    from theorems.planted_qary_multiprobe_gl_rank_saturation_bridge import (
+        build_planted_qary_multiprobe_gl_rank_saturation_bridge,
+        write_planted_qary_multiprobe_gl_rank_saturation_bridge,
+    )
+
+    payload = (
+        build_planted_qary_multiprobe_gl_rank_saturation_bridge()
+        if args.no_write
+        else write_planted_qary_multiprobe_gl_rank_saturation_bridge()
+    )
+    print(json.dumps(payload, indent=2))
+    return 0
+
+
+def command_dcp_noisy_tree_merge_error_propagation_audit(args: argparse.Namespace) -> int:
+    from theorems.dcp_noisy_tree_merge_error_propagation_audit import (
+        build_dcp_noisy_tree_merge_error_propagation_audit,
+        write_dcp_noisy_tree_merge_error_propagation_audit,
+    )
+
+    payload = (
+        build_dcp_noisy_tree_merge_error_propagation_audit()
+        if args.no_write
+        else write_dcp_noisy_tree_merge_error_propagation_audit()
+    )
+    print(json.dumps(payload, indent=2))
+    return 0
+
+
+def command_native_higher_call_prime_power_divisibility_hierarchy_audit(args: argparse.Namespace) -> int:
+    from theorems.native_higher_call_prime_power_divisibility_hierarchy_audit import (
+        build_native_higher_call_prime_power_divisibility_hierarchy_audit,
+        write_native_higher_call_prime_power_divisibility_hierarchy_audit,
+    )
+
+    payload = (
+        build_native_higher_call_prime_power_divisibility_hierarchy_audit()
+        if args.no_write
+        else write_native_higher_call_prime_power_divisibility_hierarchy_audit()
+    )
+    print(json.dumps(payload, indent=2))
+    return 0
+
+
+def command_planted_qary_coset_shift_fourier_bias_bridge(args: argparse.Namespace) -> int:
+    from theorems.planted_qary_coset_shift_fourier_bias_bridge import (
+        build_planted_qary_coset_shift_fourier_bias_bridge,
+        write_planted_qary_coset_shift_fourier_bias_bridge,
+    )
+
+    payload = (
+        build_planted_qary_coset_shift_fourier_bias_bridge()
+        if args.no_write
+        else write_planted_qary_coset_shift_fourier_bias_bridge()
+    )
+    print(json.dumps(payload, indent=2))
+    return 0
+
+
+def command_dcp_pgm_fidelity_window_threshold_audit(args: argparse.Namespace) -> int:
+    from theorems.dcp_pgm_fidelity_window_threshold_audit import (
+        build_dcp_pgm_fidelity_window_threshold_audit,
+        write_dcp_pgm_fidelity_window_threshold_audit,
+    )
+
+    payload = (
+        build_dcp_pgm_fidelity_window_threshold_audit()
+        if args.no_write
+        else write_dcp_pgm_fidelity_window_threshold_audit()
+    )
+    print(json.dumps(payload, indent=2))
+    return 0
+
+
+def command_native_higher_call_kronecker_moment_rank_bridge(args: argparse.Namespace) -> int:
+    from theorems.native_higher_call_kronecker_moment_rank_bridge import (
+        build_native_higher_call_kronecker_moment_rank_bridge,
+        write_native_higher_call_kronecker_moment_rank_bridge,
+    )
+
+    payload = (
+        build_native_higher_call_kronecker_moment_rank_bridge()
+        if args.no_write
+        else write_native_higher_call_kronecker_moment_rank_bridge()
+    )
+    print(json.dumps(payload, indent=2))
+    return 0
+
+
 def command_validate(args: argparse.Namespace) -> int:
     validation = validate_registry()
     print(json.dumps(validation, indent=2, sort_keys=True))
@@ -20872,6 +20992,31 @@ def command_planted_qary_source(args: argparse.Namespace) -> int:
     print(f"Artifact: {REPORT}")
     print("Statistical uniqueness is not computational hardness. No quantum advantage admitted.")
     return 0
+
+
+def command_dcp_noise_matched_source(args: argparse.Namespace) -> int:
+    from theorems.dcp_noise_matched_source import main
+    return main(["--no-write"] if args.no_write else [])
+
+
+def command_dcp_disjoint_kernel_pairing(args: argparse.Namespace) -> int:
+    from theorems.dcp_disjoint_kernel_pairing import main
+    return main(["--no-write"] if args.no_write else [])
+
+
+def command_dcp_affine_fiber_rigidity(args: argparse.Namespace) -> int:
+    from theorems.dcp_affine_fiber_rigidity import main
+    return main(["--no-write"] if args.no_write else [])
+
+
+def command_dcp_nonlinear_fiber_pairing(args: argparse.Namespace) -> int:
+    from theorems.dcp_nonlinear_fiber_pairing import main
+    return main(["--no-write"] if args.no_write else [])
+
+
+def command_dcp_affine_packet_noise(args: argparse.Namespace) -> int:
+    from theorems.dcp_affine_packet_noise import main
+    return main(["--no-write"] if args.no_write else [])
 
 
 def command_dcp_adaptive_affine_packet_receiver(args: argparse.Namespace) -> int:
@@ -28910,6 +29055,31 @@ def build_parser() -> argparse.ArgumentParser:
     response_mpo.add_argument("--no-write",action="store_true")
     response_mpo.set_defaults(func=command_native_response_mpo_baseline)
 
+    matched_source = subparsers.add_parser("dcp-noise-matched-source",
+        help="Check conditional noisy source closure using visibility-matched zero-label replacement and paid supply.")
+    matched_source.add_argument("--no-write", action="store_true")
+    matched_source.set_defaults(func=command_dcp_noise_matched_source)
+
+    disjoint_pairing = subparsers.add_parser("dcp-disjoint-kernel-pairing",
+        help="Compile a polynomial coarse-only nonlinear pairing baseline with paid quadratic supply and exponential recursion.")
+    disjoint_pairing.add_argument("--no-write", action="store_true")
+    disjoint_pairing.set_defaults(func=command_dcp_disjoint_kernel_pairing)
+
+    affine_rigidity = subparsers.add_parser("dcp-affine-fiber-rigidity",
+        help="Test global affine mod4 fibre rigidity; partial and adaptive programs remain outside the obstruction.")
+    affine_rigidity.add_argument("--no-write", action="store_true")
+    affine_rigidity.set_defaults(func=command_dcp_affine_fiber_rigidity)
+
+    nonlinear_pairing = subparsers.add_parser("dcp-nonlinear-fiber-pairing",
+        help="Certify nonlinear phase descent, native fibre parity/coverage and charged pairing/noise frontiers.")
+    nonlinear_pairing.add_argument("--no-write", action="store_true")
+    nonlinear_pairing.set_defaults(func=command_dcp_nonlinear_fiber_pairing)
+
+    affine_noise = subparsers.add_parser("dcp-affine-packet-noise",
+        help="Audit original-register product-noise coherence and noise-aware affine feedback.")
+    affine_noise.add_argument("--no-write", action="store_true")
+    affine_noise.set_defaults(func=command_dcp_affine_packet_noise)
+
     affine_receiver = subparsers.add_parser("dcp-adaptive-affine-packet-receiver",
         help="Benchmark paid outcome-adaptive affine measurements on native carry packets.")
     affine_receiver.add_argument("--no-write", action="store_true")
@@ -29032,10 +29202,66 @@ def build_parser() -> argparse.ArgumentParser:
 
     planted_qary_classical_attack_threshold_bridge = subparsers.add_parser(
         "planted-qary-classical-attack-threshold-bridge",
-        help="Audit planted q-ary free-support lower bounds, LLL lambda_2 isolation, and O(1)-space projective free-coordinate RREF search.",
+        help="Replay public classical attacks, exact LLL reducedness, polynomial-space RREF and determinant-gap counterexamples.",
     )
     planted_qary_classical_attack_threshold_bridge.add_argument("--no-write", action="store_true")
     planted_qary_classical_attack_threshold_bridge.set_defaults(func=command_planted_qary_classical_attack_threshold_bridge)
+
+    dcp_truncated_qft_tree_merge_joint_channel_audit = subparsers.add_parser(
+        "dcp-truncated-qft-tree-merge-joint-channel-audit",
+        help="Audit truncated-QFT CNOT tree-merge additive phase-defect propagation, branch-symmetry sine cancellation, and depth-d visibility factorization.",
+    )
+    dcp_truncated_qft_tree_merge_joint_channel_audit.add_argument("--no-write", action="store_true")
+    dcp_truncated_qft_tree_merge_joint_channel_audit.set_defaults(func=command_dcp_truncated_qft_tree_merge_joint_channel_audit)
+
+    native_higher_call_weighted_fourier_pinching_audit = subparsers.add_parser(
+        "native-higher-call-weighted-fourier-pinching-audit",
+        help="Audit general k-call weighted Fourier pinching varieties, 1/D diagonal floor conservation, and zero-mean off-diagonal interference.",
+    )
+    native_higher_call_weighted_fourier_pinching_audit.add_argument("--no-write", action="store_true")
+    native_higher_call_weighted_fourier_pinching_audit.set_defaults(func=command_native_higher_call_weighted_fourier_pinching_audit)
+
+    planted_qary_multiprobe_gl_rank_saturation_bridge = subparsers.add_parser(
+        "planted-qary-multiprobe-gl-rank-saturation-bridge",
+        help="Audit planted q-ary multiprobe GL_d(F_q) rank-saturation laws, first-moment indistinguishability, and q-Gaussian rank stratification.",
+    )
+    planted_qary_multiprobe_gl_rank_saturation_bridge.add_argument("--no-write", action="store_true")
+    planted_qary_multiprobe_gl_rank_saturation_bridge.set_defaults(func=command_planted_qary_multiprobe_gl_rank_saturation_bridge)
+
+    dcp_noisy_tree_merge_error_propagation_audit = subparsers.add_parser(
+        "dcp-noisy-tree-merge-error-propagation-audit",
+        help="Audit DCP noisy tree-merge 2^L-fold phase-error convolution, double-exponential visibility decay, and classical-vs-tree SNR crossover.",
+    )
+    dcp_noisy_tree_merge_error_propagation_audit.add_argument("--no-write", action="store_true")
+    dcp_noisy_tree_merge_error_propagation_audit.set_defaults(func=command_dcp_noisy_tree_merge_error_propagation_audit)
+
+    native_higher_call_prime_power_divisibility_hierarchy_audit = subparsers.add_parser(
+        "native-higher-call-prime-power-divisibility-hierarchy-audit",
+        help="Audit p-adic subgroup pinching filtration, telescoping valuation shells, and zero-sum shell increments for prime-power LWE.",
+    )
+    native_higher_call_prime_power_divisibility_hierarchy_audit.add_argument("--no-write", action="store_true")
+    native_higher_call_prime_power_divisibility_hierarchy_audit.set_defaults(func=command_native_higher_call_prime_power_divisibility_hierarchy_audit)
+
+    planted_qary_coset_shift_fourier_bias_bridge = subparsers.add_parser(
+        "planted-qary-coset-shift-fourier-bias-bridge",
+        help="Audit planted q-ary coset-shift QFT phase erasure, off-dual shift invariance, and first-moment equalization on B + a.",
+    )
+    planted_qary_coset_shift_fourier_bias_bridge.add_argument("--no-write", action="store_true")
+    planted_qary_coset_shift_fourier_bias_bridge.set_defaults(func=command_planted_qary_coset_shift_fourier_bias_bridge)
+
+    dcp_pgm_fidelity_window_threshold_audit = subparsers.add_parser(
+        "dcp-pgm-fidelity-window-threshold-audit",
+        help="Audit DCP K-copy covariant PGM Bhattacharyya convolution formula, flat-window optimality, and contiguous support copy lower bounds.",
+    )
+    dcp_pgm_fidelity_window_threshold_audit.add_argument("--no-write", action="store_true")
+    dcp_pgm_fidelity_window_threshold_audit.set_defaults(func=command_dcp_pgm_fidelity_window_threshold_audit)
+
+    native_higher_call_kronecker_moment_rank_bridge = subparsers.add_parser(
+        "native-higher-call-kronecker-moment-rank-bridge",
+        help="Audit native higher-call Kronecker moment-rank bridges, non-scalar commutant bounds, and rank-deficiency witnesses.",
+    )
+    native_higher_call_kronecker_moment_rank_bridge.add_argument("--no-write", action="store_true")
+    native_higher_call_kronecker_moment_rank_bridge.set_defaults(func=command_native_higher_call_kronecker_moment_rank_bridge)
 
     validate = subparsers.add_parser("validate", help="Validate candidates and experiments against proof obligations.")
     validate.set_defaults(func=command_validate)

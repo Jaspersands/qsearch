@@ -52,6 +52,11 @@ The [planted q-ary source](research/PLANTED_QARY_USVP_SOURCE.md) now has
 exact field/index/rank certificates and public LLL/MITM attacks. All eight
 current controls, including128 dimensions, are LLL-recovered. Run
 `python qsearch.py planted-qary-source`; uniqueness is not hardness.
+The [classical attack bridge](research/PLANTED_QARY_CLASSICAL_ATTACK_THRESHOLD_BRIDGE.md)
+now independently replays actual public attacks and rational LLL reducedness.
+Its earlier constant-memory and large-q LLL-monotonicity claims are withdrawn;
+an exact unique-shortest counterfamily has growing determinant but fixed
+successive-minimum gap. Finite recovery is not a general isolation theorem.
 
 The [coherent sine-window source](research/LATTICE_SINE_WINDOW_SOURCE.md)
 now compiles public lattice points into known compact packets, emits actual
@@ -87,6 +92,42 @@ uniform random-matrix bound still suppress simultaneous extra phase descent.
 Run `python qsearch.py dcp-adaptive-direction-rank-gate`. This is a local,
 review-pending obstruction for growing secret-vector dimension, not a scalar
 DHSP lower bound; post-outcome selection and collective packets remain open.
+The [affine packet feedback benchmark](research/DCP_ADAPTIVE_AFFINE_PACKET_RECEIVER.md)
+now implements that post-outcome distinction with complete Bellman certificates,
+useful nonzero-label scoring, all-syndrome accounting and a stronger arbitrary-
+pairing comparator. Two unfiltered finite controls improve over fixed directions;
+a selected counterexample proves affine feedback can still miss the pairing
+optimum. Run `python qsearch.py dcp-adaptive-affine-packet-receiver`. Its search
+is exponential, fixed-modulus oracle HSP is not new, and no noisy growing-family
+receiver or speedup is supplied.
+The [original-register packet-noise workbench](research/DCP_AFFINE_PACKET_NOISE.md)
+adds exact mixed-state coherence laws and noise-aware policy/baseline matching
+under an explicit independent balanced-input promise. Run
+`python qsearch.py dcp-affine-packet-noise`. A correlated-noise counterexample
+prevents substituting marginal visibility for a joint source certificate;
+the actual lattice source's noise law remains unresolved.
+The [nonlinear fibre-pairing frontier](research/DCP_NONLINEAR_FIBER_PAIRING.md)
+now compiles the selected11/16 pairing beyond the9/16 affine optimum, charging
+its exponential lookup. A separate coarse-only theorem preserves uniform
+higher-label output and gives near-unit native mean coverage, but supplies no
+efficient pairing program. Constant dephasing and jointly growing inverse-noise
+regimes remain distinct. Run `python qsearch.py dcp-nonlinear-fiber-pairing`.
+The [global affine fibre test](research/DCP_AFFINE_FIBER_RIGIDITY.md) rules out
+one shortcut under a checkable native-label condition: an everywhere-valid
+globally affine mod4 partner map must be identity. Run
+`python qsearch.py dcp-affine-fiber-rigidity`. Useful partial affine proposals
+survive explicit countercontrols; adaptive trees and nonlinear maps are not
+excluded. This is a review-pending architecture restriction, not a DHSP bound.
+The [disjoint-kernel baseline](research/DCP_DISJOINT_KERNEL_PAIRING.md) supplies
+a polynomial coarse-only nonlinear evaluator with explicit reversible gates.
+Run `python qsearch.py dcp-disjoint-kernel-pairing`. Its quadratic per-output
+supply compounds exponentially with phase depth; it closes an implementation
+gap but does not improve known Gaussian/isotropic sieve asymptotics.
+The [noise-matched source channel](research/DCP_NOISE_MATCHED_SOURCE.md) repairs
+zero-label restoration for independent balanced noise by retaining visibility
+and preparing a matching dephased zero state. Run
+`python qsearch.py dcp-noise-matched-source`. This closes an abstract conditional
+source family, not the actual lattice-noise, supply or recovery problem.
 
 **Latest scope checks:** the [refresh crossover audit](research/NATIVE_REFRESH_CROSSOVER_SCOPE_AUDIT.md)
 retains a useful width lemma but rejects incompatible composition scopes and

@@ -1,0 +1,28 @@
+{
+  "contract_id": "dcp-pgm-fidelity-window-threshold-audit-contract",
+  "title": "DCP PGM Fidelity Window-Threshold Audit: Exact Bhattacharyya Convolution Formula, Flat-Window Optimality, and Contiguous Support Copy Lower Bounds",
+  "version": "1.0.0",
+  "scope": "dcp_covariant_pgm_bhattacharyya_convolution_and_contiguous_window_copy_bounds",
+  "theorems": [
+    {
+      "id": "T1",
+      "name": "Exact Bhattacharyya Convolution Formula for K-Copy Covariant PGM Success",
+      "statement": "For any shift-covariant state |psi_s> = sum_u sqrt(p_u) omega_q^(-s u) |u> on Z_q, the K-copy Pretty Good Measurement success probability equals Tr(sqrt(rho_avg^(K)))^2 / q = (1/q) * (sum_{m=0}^{q-1} sqrt(W_K(m)))^2, where W_K = p^(*K) is the K-fold cyclic convolution of p on Z_q."
+    },
+    {
+      "id": "T2",
+      "name": "Support-Rank Upper Bound and Flat-Window Optimality",
+      "statement": "For any K >= 1, P_PGM^succ(K; p) <= |supp(W_K)| / q, with equality at K = 1 (P_PGM^succ(1; p) = R / q) if and only if p_u = 1/R on its R-element support."
+    },
+    {
+      "id": "T3",
+      "name": "Contiguous Window Support-Growth Law and Copy Complexity Lower Bound",
+      "statement": "For any Fourier profile p with contiguous support {0, 1, ..., R-1} in Z_q (2 <= R <= q), |supp(W_K)| = min(q, K(R-1) + 1), forcing P_PGM^succ(K; p) <= min(1, (K(R-1) + 1)/q) and K >= ceil((tau*q - 1)/(R - 1)) to reach success probability >= tau."
+    }
+  ],
+  "guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  }
+}

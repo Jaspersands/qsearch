@@ -1,0 +1,27 @@
+{
+  "contract_id": "coarse_only_disjoint_kernel_nonlinear_involution_v1",
+  "experiment_id_for_mechanical_integration": "EXP-DHS-DCP-DISJOINT-KERNEL-PAIRING",
+  "status": "LOCAL_DERIVATION_EXTERNAL_REVIEW_PENDING",
+  "premise": "n-by-m original public labels, m>=(n+1)^2, pure flat input for fresh-label source law",
+  "mechanism": "disjoint binary parity kernels; invariant signed half-sum controls; canonical Gaussian dependence; compute-copy-uncompute",
+  "public_selection_access": "A modulo4 ONLY",
+  "per_attempt_output_phase_qubits": 1,
+  "per_attempt_original_inputs": "(n+1)^2",
+  "coherent_evaluator_gate_order": "O(n*m+n^3+m), excluding surrounding relation/ordering checks",
+  "ideal_recursive_supply_before_failures": "(n+1)^(t-1)",
+  "improves_existing_Gaussian_or_isotropic_asymptotics": false,
+  "accepted_speedup_candidate": false,
+  "novelty_claim": false,
+  "arbitrary_joint_noise_covered": false,
+  "growing_level_source_composition_certified": false,
+  "native_noise_mechanism": "Exact first-dependence witness law conditioned only on parity B; short-kernel union bounds give a genuine architecture-specific noise upper bound",
+  "inverse_linear_visibility_schedule_sufficient": false,
+  "inverse_quadratic_visibility_is_a_sufficient_per_level_promise": true,
+  "remaining_proof_obligations": [
+    "Independent mathematical review and hardware transpilation/noise analysis",
+    "Improve quadratic per-output supply or retain multiple useful outputs",
+    "Actual joint source noise, fresh-batch supply and growing-level recursion",
+    "Natural hard-problem reduction, final decoder and matched classical recovery"
+  ],
+  "literature": ["https://arxiv.org/abs/2304.08376"]
+}

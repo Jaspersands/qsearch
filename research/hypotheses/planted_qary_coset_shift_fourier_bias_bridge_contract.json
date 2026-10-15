@@ -1,0 +1,28 @@
+{
+  "contract_id": "planted-qary-coset-shift-fourier-bias-bridge-contract",
+  "title": "Planted q-ary Coset-Shift Fourier-Bias Bridge: QFT Phase Erasure, Off-Dual Shift Invariance, and Exact First-Moment Equalization on Affine Cosets B + a",
+  "version": "1.0.0",
+  "scope": "planted_qary_affine_coset_shift_qft_erasure_and_off_dual_probe_invariance",
+  "theorems": [
+    {
+      "id": "T1",
+      "name": "Exact QFT Dual-Subspace Support Conservation and Shift-Phase Erasure",
+      "statement": "For any dimension-d subspace B in F_q^n and shift a in F_q^n, QFT_q^(tensor n) |psi_(B+a)> = q^(-(n-d)/2) sum_(u in B^perp) omega_q^(<a, u>) |u>, so computational-basis measurement after QFT_q^(tensor n) yields the uniform distribution on B^perp identically for all shifts a in F_q^n."
+    },
+    {
+      "id": "T2",
+      "name": "Deterministic Off-Dual Shift Invariance and Dual-Subspace Collapse",
+      "statement": "For every probe u not in B^perp and every window W in F_q of size R, N_W(u; B + a) = q^(d-1) R = N_W(u; B) for all shifts a in F_q^n. For u in B^perp, N_W(u; B + a) = q^d * 1_(<a, u> in W)."
+    },
+    {
+      "id": "T3",
+      "name": "Exact First-Moment Equalization on Non-Trivial Cosets a not in B",
+      "statement": "Averaging over uniform u in F_q^n yields E_u[N_W(u; B + a)] = 1_(0 in W) + (q^d - 1)(R/q) when a in B, whereas for every non-trivial coset shift a in F_q^n \\ B, E_u[N_W(u; B + a)] = q^(d-1) R regardless of whether 0 in W."
+    }
+  ],
+  "guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  }
+}

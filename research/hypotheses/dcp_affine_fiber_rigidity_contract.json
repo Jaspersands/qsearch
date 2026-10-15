@@ -1,0 +1,24 @@
+{
+  "contract_id": "global_affine_mod4_fibre_signature_rigidity_v1",
+  "experiment_id_for_mechanical_integration": "EXP-DHS-DCP-AFFINE-FIBER-RIGIDITY",
+  "status": "LOCAL_DERIVATION_EXTERNAL_REVIEW_PENDING",
+  "relation": "A P(x)=A x modulo4 for EVERY original Boolean x",
+  "map_class": "Boolean-affine bijections P(x)=Lx XOR c",
+  "sufficient_rigidity_gate": "Every low column signature is nonzero and all are pairwise distinct",
+  "proof_mechanism": "All binary linear combinations of preserved diagonal bilinear forms constrain their radicals; nonzero unequal signatures are separable",
+  "failure_of_gate_implies_existence": false,
+  "partial_proposals_excluded": false,
+  "adaptive_measurement_trees_excluded": false,
+  "nonlinear_pairings_excluded": false,
+  "general_quantum_lower_bound": false,
+  "scalar_DHSP_lower_bound": false,
+  "accepted_speedup_candidate": false,
+  "novelty_claim": false,
+  "remaining_proof_obligations": [
+    "Independent review of the multilinear coefficient and simultaneous-form arguments",
+    "Construct an efficient COARSE-only partial or nonlinear pairing with meaningful native coverage",
+    "Preserve source lineage, paid failures and reversible workspace cleanup",
+    "Actual joint source noise, growing-level composition and final decoding",
+    "Natural hard-problem reduction and matched classical recovery baseline"
+  ]
+}

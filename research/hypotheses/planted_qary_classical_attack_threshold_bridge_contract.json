@@ -1,8 +1,8 @@
 {
   "contract_id": "planted-qary-classical-attack-threshold-bridge-contract",
-  "title": "Planted q-Ary Classical Attack Threshold Bridge: Free-Support Lower Bounds, LLL lambda_2 Isolation Guarantee, and O(1)-Space Free-Coordinate Kernel Search",
-  "version": "1.0.0",
-  "scope": "free_support_lower_bounds_lll_lambda2_isolation_and_projective_free_coordinate_rref_search_for_planted_qary_usvp",
+  "title": "Public classical attacks: exact LLL reducedness, polynomial-space RREF and determinant-gap counterfamily",
+  "version": "2.0.0",
+  "scope": "finite_public_classical_controls_and_conditional_LLL_bounds_not_a_hardness_or_monotonicity_theorem",
   "theorems": [
     {
       "id": "T1",
@@ -11,13 +11,21 @@
     },
     {
       "id": "T2",
-      "name": "LLL Unique-SVP Isolation Criterion and Large-q Monotonicity",
-      "statement": "For any delta-LLL-reduced basis (b_1, ..., b_n) of ker(H mod q) with Lovasz factor alpha = 1 / (delta - 1/4), ||b_1||_2 <= alpha^((n-1)/2) * sqrt(s). Whenever lambda_2(ker(H mod q)) > alpha^((n-1)/2) * sqrt(s), the shortest reduced basis vector of public_LLL_attack is guaranteed to equal +/- u. Because ||u||_2 = sqrt(s) is independent of q while det(ker(H mod q)) = q^m grows with q, increasing q at fixed (n, m, s) monotonically increases the determinant-normalized gap q^(m/n) / sqrt(s)."
+      "name": "Conditional (delta,eta)-LLL bound, with independently verified reducedness",
+      "statement": "For a verified (delta,eta)-reduced basis and alpha=1/(delta-eta^2), ||b_1||^2 <= alpha^(n-1)||u||^2 for every nonzero lattice u. Recovery of primitive +/-u from this bound additionally requires lambda2>alpha^((n-1)/2)||u||. No lambda2 premise or monotone LLL success is inferred from determinant growth.",
+      "finite_control_parameters": {
+        "delta": "3/4",
+        "eta": "51/100",
+        "alpha": "10000/4899"
+      },
+      "lambda2_isolation_of_generated_controls_certified": false
     },
     {
       "id": "T3",
-      "name": "O(1)-Space Projective Free-Coordinate RREF Enumeration vs Ambient MITM",
-      "statement": "In the centered RREF [I_m | C] of H mod q, u in {-1, 0, 1}^n \\ {0} belongs to ker(H mod q) iff u_F in {-1, 0, 1}^(n-m) \\ {0} and u_(P_i) = centered_mod(-sum_j C_(i,j) u_(F_j), q) in {-1, 0, 1} for all 0 <= i < m. Restricting u_F to have first nonzero coordinate +1 checks exactly (3^(n-m) - 1)/2 states in O(1) memory, strictly beating the 3^floor(n/2) + 3^(n - floor(n/2)) states and O(3^floor(n/2)) memory of ambient ternary_MITM_attack whenever m >= ceil(n/2)."
+      "name": "Projective free-coordinate enumeration without an exponential table",
+      "statement": "Enumerate (3^(n-m)-1)/2 sign-canonical free assignments and reconstruct pivots from public RREF. Additional working storage is O(m*(n-m)+n) integer slots, not constant; bit cost depends on log q. Fewer assignment states than ambient MITM does not by itself certify wall-time dominance.",
+      "constant_working_memory": false,
+      "cap_exhaustion_is_negative_evidence": false
     }
   ],
   "guardrails": {
@@ -26,5 +34,11 @@
     "novelty_claim": false,
     "end_to_end_quantum_advantage_claimed": false,
     "bypassed_UniformCubeSuperposition_prepare_constraint": false
-  }
+  },
+  "withdrawn_claims": [
+    "alpha=4/3 at delta=3/4, eta=1/2",
+    "determinant growth proves increasing lambda2 gap or LLL success",
+    "RREF enumeration uses O(1) working memory",
+    "finite recovery validates asymptotic LLL isolation"
+  ]
 }

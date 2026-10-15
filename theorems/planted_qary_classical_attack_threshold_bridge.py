@@ -1,27 +1,13 @@
-"""Planted q-ary classical attack threshold bridge: free-support bounds, LLL isolation, and O(1)-space RREF search.
+"""Finite public classical attacks with exact reducedness and claim corrections.
 
-Connects `theorems/planted_qary_usvp_source.py` (`PublicQaryLattice`, `generate_source`,
-`sparse_column_attack`, `public_LLL_attack`, `ternary_MITM_attack`) and
-`theorems/planted_qary_cube_basis_coordinate_bridge.py` by proving and auditing:
-1. Theorem 1 (Sharp Free-Column Support Lower Bound and Column-Pair Immunity):
-   For any planted ternary vector `u in {-1, 0, 1}^n \\ {0}` in `ker(H mod q)` with total support
-   `s = ||u||_1 = ||u||_2^2`, the free-column support `s_F = |supp(u) cap F|` satisfies
-   `max(1, s - m) <= s_F <= min(s, n - m)`. Whenever `s >= 3` and `ker(H mod q)` has no non-parallel
-   vector of squared norm `<= 2`, `sparse_column_attack` returns `NO_UNIT_OR_COLUMN_PAIR_RELATION`.
-2. Theorem 2 (LLL Unique-SVP Isolation Criterion and Large-q Monotonicity):
-   In any `delta`-LLL-reduced basis `(b_1, ..., b_n)` of `ker(H mod q)` with `alpha = 1 / (delta - 1/4)`,
-   `||b_1||_2 <= alpha^((n-1)/2) * sqrt(s)`. Whenever `lambda_2(ker(H mod q)) > alpha^((n-1)/2) * sqrt(s)`,
-   `public_LLL_attack` is guaranteed to return `+/- u`.
-3. Theorem 3 (`O(1)`-Space Projective Free-Coordinate RREF Enumeration vs Ambient MITM):
-   Restricting `u_F in {-1, 0, 1}^(n-m) \\ {0}` to have first nonzero coordinate `+1` and checking
-   `centered_mod(-C u_F, q) in {-1, 0, 1}^m` evaluates exactly `(3^(n-m) - 1) / 2` states in `O(1)`
-   auxiliary memory, strictly beating the `3^floor(n/2) + 3^(n - floor(n/2))` states of ambient
-   `ternary_MITM_attack` whenever `m >= ceil(n/2)`.
+RREF search uses polynomial working storage, not constant space. Determinant
+growth alone does not imply an increasing successive-minimum gap or LLL success.
 """
 
 from __future__ import annotations
 
 import argparse
+from fractions import Fraction
 from itertools import product
 import json
 from pathlib import Path
@@ -41,6 +27,7 @@ from theorems.planted_qary_usvp_source import (
     public_LLL_attack,
     sparse_column_attack,
     ternary_MITM_attack,
+    exact_json,
 )
 
 
@@ -50,8 +37,77 @@ ARTIFACT_PATH = ROOT / "research" / "reductions" / "planted_qary_classical_attac
 DOC_PATH = ROOT / "research" / "PLANTED_QARY_CLASSICAL_ATTACK_THRESHOLD_BRIDGE.md"
 
 
-def projective_free_coordinate_rref_search(problem: PublicQaryLattice) -> dict[str, Any]:
-    """O(1)-space projective enumeration over canonical u_F in {-1, 0, 1}^(n-m) \\ {0}."""
+def lll_alpha(delta: Fraction, eta: Fraction = Fraction(1, 2)) -> Fraction:
+    if type(delta) not in (int, Fraction) or type(eta) not in (int, Fraction):
+        raise ValueError("exact rational LLL parameters required")
+    delta, eta = Fraction(delta), Fraction(eta)
+    if not Fraction(1, 2) <= eta < 1 or not eta * eta < delta <= 1:
+        raise ValueError("require 1/2<=eta<1 and eta^2<delta<=1")
+    return 1 / (delta - eta * eta)
+
+
+def rational_record(value):
+    value = Fraction(value)
+    return {"numerator": str(value.numerator), "denominator": str(value.denominator)}
+
+
+def exact_reducedness(rows, delta=Fraction(3, 4), eta=Fraction(51, 100)):
+    """Verify actual returned rows, rather than infer reduction from library name."""
+    lll_alpha(delta, eta)
+    rows = tuple(tuple(row) for row in rows)
+    if not rows or any(len(row) != len(rows) or any(type(x) is not int for x in row) for row in rows):
+        raise ValueError("square exact integer row basis required")
+    orthogonal, norms, mu = [], [], []
+    for row in rows:
+        v = [Fraction(x) for x in row]
+        coefficients = []
+        for b, norm in zip(orthogonal, norms):
+            coefficient = sum(Fraction(x) * y for x, y in zip(row, b)) / norm
+            coefficients.append(coefficient)
+            v = [x - coefficient * y for x, y in zip(v, b)]
+        norm = sum(x*x for x in v)
+        if not norm:
+            raise ValueError("independent full-rank row basis required")
+        orthogonal.append(v)
+        norms.append(norm)
+        mu.append(coefficients)
+    size = all(abs(x) <= eta for row in mu for x in row)
+    lovasz = all(norms[i] + mu[i][i-1]**2 * norms[i-1] >= delta * norms[i-1]
+                 for i in range(1, len(rows)))
+    return {"delta": rational_record(delta), "eta": rational_record(eta),
+            "alpha": rational_record(lll_alpha(delta, eta)),
+            "gram_schmidt_squared_norms": [rational_record(x) for x in norms],
+            "size_reduction_verified": size, "lovasz_verified": lovasz,
+            "actual_lambda2_certified": False}
+
+
+def determinant_gap_counterfamily():
+    H = ((1, -1, 0, 0, 0), (0, 0, 1, -1, 0), (1, 0, -1, 0, -2))
+    u, v = (1, 1, 1, 1, 0), (1, 1, -1, -1, 1)
+    controls = []
+    for q in (7, 11, 101, 1009):
+        problem = PublicQaryLattice(q, tuple(tuple(x % q for x in row) for row in H))
+        attack = public_LLL_attack(problem)
+        controls.append({"public_problem": problem.public_record(),
+                         "lll_returned_vector": attack["vector"],
+                         "lambda1_squared": 4, "lambda2_squared": 5,
+                         "determinant": q**3,
+                         "determinant_normalized_plant_gap_fifth_power": rational_record(Fraction(q**3, 32)),
+                         "successive_minimum_gap_squared": rational_record(Fraction(5, 4))})
+    return {"integer_constraint_rows": H, "primitive_unique_shortest_plant": u,
+            "independent_next_vector": v, "ordinary_integer_kernel_basis": (u, v),
+            "ordinary_kernel_norm_polynomial": "4*a^2+5*b^2 for integer a,b",
+            "maximum_constraint_row_squared_norm": 6,
+            "proof_radius_squared": 5,
+            "prime_threshold_inclusive": 7,
+            "all_nonzero_modular_wraps_excluded_within_proof_radius": True,
+            "controls": controls,
+            "determinant_growth_proves_successive_gap_growth": False,
+            "finite_LLL_recovery_proves_monotone_success_probability": False}
+
+
+def projective_free_coordinate_rref_search(problem: PublicQaryLattice, max_states=100000) -> dict[str, Any]:
+    """No exponential table; O(m*(n-m)+n) additional integer slots."""
     struct = extract_centered_rref_structure(problem)
     m = struct["m"]
     n = struct["n"]
@@ -60,6 +116,11 @@ def projective_free_coordinate_rref_search(problem: PublicQaryLattice) -> dict[s
     free = struct["free_cols"]
     C = struct["C_centered"]
     k_free = n - m
+    expected_states = (3**k_free - 1) // 2
+    if type(max_states) is not int or max_states < 1:
+        raise ValueError("positive exact state cap required")
+    if expected_states > max_states:
+        raise ValueError("UNKNOWN: complete projective RREF enumeration cap; no negative result")
 
     states_checked = 0
     best: tuple[int, tuple[int, ...]] | None = None
@@ -92,7 +153,6 @@ def projective_free_coordinate_rref_search(problem: PublicQaryLattice) -> dict[s
             if best is None or item < best:
                 best = item
 
-    expected_states = (3**k_free - 1) // 2
     if states_checked != expected_states:
         raise ArithmeticError(f"Expected {expected_states} projective states, checked {states_checked}")
 
@@ -107,13 +167,15 @@ def projective_free_coordinate_rref_search(problem: PublicQaryLattice) -> dict[s
         "ambient_mitm_states": ambient_mitm_states,
         "state_reduction_ratio_vs_mitm": float(ambient_mitm_states) / float(max(1, states_checked)),
         "auxiliary_table_entries_stored": 0,
+        "constant_working_space": False,
+        "working_storage_order": "O(m*(n-m)+n) integer slots; bit cost depends on log q",
         "recovered_vector": list(best[1]) if best is not None else None,
         "recovered_squared_norm": int(best[0]) if best is not None else None,
     }
 
 
 def audit_free_support_and_classical_attacks() -> list[dict[str, Any]]:
-    """Verify Theorems 1, 2, and 3 across dimensions and prime moduli up to q > 2^80."""
+    """Finite source controls, not verification of lambda2 or general LLL success."""
     configs = [
         {"n": 4, "m": 2, "q": 257, "support": 3, "seed": 11},
         {"n": 6, "m": 3, "q": 1009, "support": 4, "seed": 17},
@@ -158,12 +220,22 @@ def audit_free_support_and_classical_attacks() -> list[dict[str, Any]]:
             tuple(mitm_res["vector"]) == plant_canon if mitm_res["vector"] is not None else False
         )
 
-        alpha_bound_sq = ((4.0 / 3.0) ** (n - 1)) * float(s)
+        reducedness = exact_reducedness(lll_res["reduced_row_basis"])
+        ceiling = s * lll_alpha(Fraction(3, 4), Fraction(51, 100))**(n-1)
         det_root_gap = (float(q) ** (float(m) / float(n))) / (float(s) ** 0.5)
 
         rows.append(
             {
                 "n": n,
+                "public_problem": problem.public_record(),
+                "PRIVATE_AUDIT_ONLY_plant": plant_canon,
+                "public_LLL_vector": lll_res["vector"],
+                "public_LLL_reduced_row_basis": lll_res["reduced_row_basis"],
+                "public_LLL_unimodular_transform": lll_res["unimodular_row_transform"],
+                "projective_RREF_vector": rref_res["recovered_vector"],
+                "RREF_constant_space": False,
+                "RREF_exponential_table_stored": False,
+                "RREF_working_storage_order": rref_res["working_storage_order"],
                 "m": m,
                 "n_minus_m": n - m,
                 "q": int(q),
@@ -180,8 +252,11 @@ def audit_free_support_and_classical_attacks() -> list[dict[str, Any]]:
                     sparse_res["status"] == "NO_UNIT_OR_COLUMN_PAIR_RELATION"
                 ),
                 "lll_recovered_squared_norm": int(lll_res["squared_norm"]),
-                "lll_theoretical_norm_sq_ceiling_alpha_4_3": alpha_bound_sq,
-                "determinant_root_gap_q_pow_m_over_n_div_sqrt_s": det_root_gap,
+                "LLL_reducedness_certificate": reducedness,
+                "certified_LLL_squared_norm_ceiling": rational_record(ceiling),
+                "LLL_squared_norm_bound_verified": lll_res["squared_norm"] <= ceiling,
+                "lambda2_isolation_premise_verified": False,
+                "determinant_normalized_proxy_NOT_lambda2_gap": det_root_gap,
                 "public_lll_recovered_planted_vector": bool(lll_recovered),
                 "ambient_mitm_recovered_planted_vector": bool(mitm_recovered),
                 "projective_rref_recovered_planted_vector": bool(rref_recovered),
@@ -206,7 +281,9 @@ def build_planted_qary_classical_attack_threshold_bridge_report() -> dict[str, A
     )
     t2_ok = all(
         r["public_lll_recovered_planted_vector"]
-        and r["lll_recovered_squared_norm"] <= r["lll_theoretical_norm_sq_ceiling_alpha_4_3"]
+        and r["LLL_squared_norm_bound_verified"]
+        and r["LLL_reducedness_certificate"]["size_reduction_verified"]
+        and r["LLL_reducedness_certificate"]["lovasz_verified"]
         for r in audit_rows
     )
     t3_ok = all(
@@ -216,8 +293,8 @@ def build_planted_qary_classical_attack_threshold_bridge_report() -> dict[str, A
         for r in audit_rows
     )
 
-    return {
-        "schema_version": "1.0.0",
+    return exact_json({
+        "schema_version": "2.0.0",
         "subsystem": "planted_qary_classical_attack_threshold_bridge",
         "contract_id": contract["contract_id"],
         "doc_path": str(DOC_PATH.relative_to(ROOT)),
@@ -226,24 +303,38 @@ def build_planted_qary_classical_attack_threshold_bridge_report() -> dict[str, A
                 "max(1, s - m) <= s_F <= min(s, n - m), and unique plants with s >= 3 are immune "
                 "to unit/column-pair collisions in sparse_column_attack."
             ),
-            "T2_lll_lambda2_isolation_and_large_q_monotonicity": (
-                "||b_1||_2 <= alpha^((n-1)/2) sqrt(s); when lambda_2(ker(H mod q)) > alpha^((n-1)/2) sqrt(s), "
-                "public_LLL_attack is guaranteed to output +/- u, with determinant gap q^(m/n)/sqrt(s) "
-                "growing monotonically in q."
+            "T2_conditional_LLL_bound_not_determinant_monotonicity": (
+                "For a VERIFIED (delta,eta)-reduced basis, alpha=1/(delta-eta^2). "
+                "The lambda2 isolation criterion is conditional; no growing lambda2 or LLL success follows from determinant alone."
             ),
             "T3_projective_free_coordinate_rref_search": (
                 "Projective enumeration over u_F in {-1, 0, 1}^(n-m) \\ {0} checks exactly "
-                "(3^(n-m) - 1)/2 states in O(1) memory, beating ambient MITM whenever m >= ceil(n/2)."
+                "(3^(n-m) - 1)/2 states without an exponential table, using O(m*(n-m)+n) additional integer slots. "
+                "State counts do not certify wall-time dominance over MITM."
             ),
         },
         "classical_attack_threshold_audit": audit_rows,
         "verification": {
-            "theorem_1_free_support_and_sparse_immunity_verified": bool(t1_ok),
-            "theorem_2_lll_isolation_and_large_q_scaling_verified": bool(t2_ok),
-            "theorem_3_projective_rref_search_verified": bool(t3_ok),
+            "finite_free_support_and_sparse_attack_controls": bool(t1_ok),
+            "finite_LLL_membership_reducedness_and_bounds": bool(t2_ok),
+            "finite_projective_rref_search_controls": bool(t3_ok),
+        },
+        "LLL_parameter_arithmetic": {
+            "delta_3_4_eta_1_2_alpha": rational_record(lll_alpha(Fraction(3, 4))),
+            "finite_certificates_use_delta": rational_record(Fraction(3, 4)),
+            "finite_certificates_use_eta": rational_record(Fraction(51, 100)),
+            "finite_certificate_alpha": rational_record(lll_alpha(Fraction(3, 4), Fraction(51, 100))),
+            "library_defaults_substituted_for_verified_reducedness": False,
+        },
+        "determinant_growth_counterfamily": determinant_gap_counterfamily(),
+        "unresolved_or_withdrawn_claims": {
+            "general_large_q_LLL_success_monotonicity_proved": False,
+            "lambda2_isolation_of_generated_controls_certified": False,
+            "constant_working_memory": False,
+            "finite_recovery_is_a_general_complexity_theorem": False,
         },
         "guardrails": contract["guardrails"],
-    }
+    })
 
 
 def write_planted_qary_classical_attack_threshold_bridge_report(

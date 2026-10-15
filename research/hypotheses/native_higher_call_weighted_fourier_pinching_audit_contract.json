@@ -1,0 +1,30 @@
+{
+  "contract_id": "native-higher-call-weighted-fourier-pinching-audit-contract",
+  "title": "Higher-Call Weighted Fourier Pinching Audit: Signed Frequency-Collision Varieties, Diagonal Floor Conservation, and 3-Call Exact Cyclotomic Readout",
+  "version": "1.0.0",
+  "scope": "general_k_call_weighted_unitary_path_integral_uniform_secret_signed_frequency_pinching_and_off_diagonal_interference",
+  "theorems": [
+    {
+      "id": "T1",
+      "name": "Exact k-Call Uniform-Secret Signed Frequency Pinching Identity",
+      "statement": "For any k >= 1, response sign tuple epsilon = (epsilon_1, ..., epsilon_k) in {-1, +1}^k, and Fourier direction tuple sigma = (sigma_1, ..., sigma_k) in {-1, +1}^k, averaging the Born probability P_(epsilon, sigma)(x | s) of F_D^(sigma_k) D_y^(epsilon_k) ... F_D^(sigma_1) D_y^(epsilon_1) |+_D> over uniform s ~ Z_q^n pinches the double trajectory sum over (w, w') in {0, ..., D-1}^k x {0, ..., D-1}^k onto the signed frequency fibers tau_epsilon(w) := sum_l epsilon_l f(w_l) mod q == tau_epsilon(w') mod q."
+    },
+    {
+      "id": "T2",
+      "name": "Universal 1/D Diagonal Floor Conservation and Zero-Mean Off-Diagonal Interference",
+      "statement": "On the signed frequency-collision variety V_epsilon(f) = {(w, w') : tau_epsilon(w) == tau_epsilon(w')}, the D^k diagonal pairs w = w' have zero error-phase difference and zero bilinear Fourier-phase difference, contributing the exact floor D^k / D^(k+1) = 1/D to every outcome x in {0, ..., D-1}. The off-diagonal pinched contribution Delta P_(epsilon, sigma)^off(x) sums to zero across all x in {0, ..., D-1}."
+    },
+    {
+      "id": "T3",
+      "name": "Balanced Signed vs Unsigned Pinching Fiber Concentration",
+      "statement": "For k = 2, the balanced signed schedule epsilon = (+1, -1) concentrates all D self-difference trajectories w_1 = w_2 into the zero-frequency fiber tau = 0 in Z_q^n (so |tau_((+1,-1))^(-1)(0)| >= D for every frequency table f), whereas the unsigned schedule epsilon = (+1, +1) pairs off-diagonal transpose trajectories (w_1, w_2) <-> (w_2, w_1) across distinct sum fibers f(w_1) + f(w_2)."
+    }
+  ],
+  "guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false,
+    "end_to_end_quantum_advantage_claimed": false,
+    "bypassed_UniformCubeSuperposition_prepare_constraint": false
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "contract_id": "native-higher-call-prime-power-divisibility-hierarchy-audit-contract",
+  "title": "Native Higher-Call Prime-Power Divisibility Hierarchy Audit: p-Adic Subgroup Pinching Filtration, Telescoping Valuation Shells, and Zero-Sum Shell Increments",
+  "version": "1.0.0",
+  "scope": "prime_power_lwe_k_call_p_adic_subgroup_pinching_filtration_and_telescoping_shells",
+  "theorems": [
+    {
+      "id": "T1",
+      "name": "Exact Level-j p-Adic Subgroup Pinching Identity",
+      "statement": "For q = p^r (p >= 3, r >= 2), averaging the k-call Born probability P_(epsilon, sigma)(x | s) over s uniform on the subgroup H_j = p^(r-j) Z_(p^r)^n pinches the double trajectory sum onto the congruence collision variety V_epsilon^(j)(f) = {(w, w') : tau_epsilon(w) == tau_epsilon(w') mod p^j}."
+    },
+    {
+      "id": "T2",
+      "name": "Monotone p-Adic Collision Filtration and Telescoping Valuation Shells",
+      "statement": "The varieties V_epsilon^(0)(f) supseteq V_epsilon^(1)(f) supseteq ... supseteq V_epsilon^(r)(f) supseteq Delta_k form a monotone decreasing filtration whose valuation difference shells D_epsilon^(j)(f) = V_epsilon^(j)(f) \\ V_epsilon^(j+1)(f) satisfy D^(2k) = |V_epsilon^(r)(f)| + sum_{j=0}^{r-1} |D_epsilon^(j)(f)|."
+    },
+    {
+      "id": "T3",
+      "name": "Diagonal Cancelation and Zero-Sum Conservation of p-Adic Shell Increments",
+      "statement": "Every level-j probability shell increment Delta P_bar_(epsilon, sigma)^(j -> j+1)(x) = P_bar_(epsilon, sigma)^(j)(x) - P_bar_(epsilon, sigma)^(j+1)(x) is supported purely on the off-diagonal valuation shell D_epsilon^(j)(f), satisfies sum_{x=0}^{D-1} Delta P_bar_(epsilon, sigma)^(j -> j+1)(x) = 0, and telescopes to P_bar^(0)(x) - P_bar^(r)(x)."
+    }
+  ],
+  "guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  }
+}

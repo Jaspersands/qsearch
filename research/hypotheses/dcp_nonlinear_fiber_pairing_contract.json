@@ -1,0 +1,42 @@
+{
+  "contract_id": "native_nonlinear_fibre_pairing_supply_compilation_and_noise_frontier_v1",
+  "experiment_id_for_mechanical_integration": "EXP-DHS-DCP-NONLINEAR-FIBER-PAIRING",
+  "status": "LOCAL_DERIVATION_EXTERNAL_REVIEW_PENDING",
+  "scope": {
+    "source": "Unconditional IID uniform vector public labels in Z_(2^t), flat native input; noise bounds require independent balanced ORIGINAL-register dephasing",
+    "relation": "Same subset sum modulo 2^h, DIFFERENT subset sum modulo 2^t; reciprocal partners yield a nonzero label modulo 2^(t-h)",
+    "compiler": "Existing six-XOR-call reciprocal architecture with vector relation check and exact full-space basis-wire maps",
+    "uniform_native_efficient_matching_program_supplied": false,
+    "lookup_reference_is_free_coherent_oracle": false,
+    "postselected_label_sources_inherit_unconditional_mean_bound": false,
+    "full_label_optimized_reference_descended_label_distribution_proved_IID": false,
+    "source_resupply_or_unknown_preparation_inverse_provided": false,
+    "width_noise_bound_is_general_quantum_lower_bound": false,
+    "worst_case_fibre_counting_hardness_is_pairing_hardness": false,
+    "worst_case_counting_hardness_is_native_average_case_hardness": false,
+    "zero_output_labels_receive_credit": false,
+    "hardware_gate_export_implemented": false
+  },
+  "conditional_output_law": {
+    "premise": "Reproducible reciprocal pairing selected ONLY from coarse A mod2^h, independent IID higher lifts, fresh independent batches and pure flat input",
+    "before_zero_filter": "Descended label uniform on Z_(2^(t-h))^n, conditional on coarse admission",
+    "after_zero_filter": "Uniform nonzero labels; zero rejection costs probability 2^(-(t-h)n)",
+    "pure_uniform_source_restoration": "Inject known zero-label |+> with its correct public probability; discard any unused paid sample",
+    "this_supplies_an_efficient_coarse_program": false,
+    "full_label_optimized_programs_covered": false,
+    "noisy_visibility_preserved_by_zero_injection_without_a_new_proof": false
+  },
+  "remaining_proof_obligations": [
+    "Independent external review of the native mean coverage and group-algebra parity proofs",
+    "An explicit polynomial uniform reversible pairing or relation program on native IID labels, not a full table",
+    "Verified coarse-only program lineage for the conditional source law; actual noisy source, recursion and inter-level accounting",
+    "Actual source joint noise and conditioning law, including coherent precision and failed supplies",
+    "A hard natural-problem reduction, classical baselines and efficient final decoder"
+  ],
+  "literature": [
+    "https://www.sciencedirect.com/science/article/pii/S0890540196900164",
+    "https://arxiv.org/html/2304.08376v1"
+  ],
+  "accepted_speedup_candidate": false,
+  "novelty_claim": false
+}

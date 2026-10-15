@@ -1,0 +1,22 @@
+{
+  "contract_id": "noise_matched_zero_label_conditional_native_source_restoration_v1",
+  "experiment_id_for_mechanical_integration": "EXP-DHS-DCP-NOISE-MATCHED-SOURCE",
+  "status": "CONDITIONAL_LOCAL_DERIVATION_EXTERNAL_REVIEW_PENDING",
+  "mechanism": "Preserve the public visibility tag; inject zero with the matching dephased plus state instead of a pure plus",
+  "requires": [
+    "Independent balanced original noise conditional on the fixed unknown classical secret",
+    "Visibility records independent of fresh higher labels",
+    "Coarse-only pairing selection and flat original diagonal",
+    "Discard old higher transcripts and use fresh independent batches"
+  ],
+  "abstract_source_family_closed": true,
+  "actual_natural_source_noise_certified": false,
+  "exponential_supply_or_visibility_loss_removed": false,
+  "accepted_speedup_candidate": false,
+  "novelty_claim": false,
+  "remaining_proof_obligations": [
+    "External review of the conditional source and CQ channel argument",
+    "Derive, rather than assume, the actual natural source joint noise law",
+    "A genuine supply/visibility improvement and final decoder with classical baselines"
+  ]
+}

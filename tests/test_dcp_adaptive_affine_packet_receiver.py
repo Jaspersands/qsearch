@@ -55,6 +55,8 @@ def test_selected_counterexample_falsifies_affine_equals_arbitrary_pairing(repor
     assert boundary["fixed_t_full_HSP_oracle_novelty_claim_allowed"] is False
     assert boundary["copy_only_phase_source_transfer_proved"] is False
     assert boundary["exact_theorem_requires_subgroup_state_creating_unitary_and_inverse"] is True
+    assert boundary["nonexact_forward_only_HSMC_variant_in_Proposition3_exists"] is True
+    assert boundary["missing_inverse_alone_blocks_all_published_methods"] is False
 
 
 def brute_affine_probability(labels, t, root_points):
@@ -89,7 +91,7 @@ def test_bellman_optimum_matches_independent_ambient_measurement_search(labels):
 
 
 def test_arbitrary_pairing_bound_against_independent_maximum_matching(report):
-    for case in report["source_controls"]:
+    for case in report["source_controls"] + [report["affine_grammar_gap_counterexample"]]:
         labels = tuple(tuple(int(a, 16) for a in row) for row in case["public_labels_hex"])
         for identifier, bound in zip(case["root_ids_all_syndromes"], case["arbitrary_basis_pairing_bounds_all_syndromes"]):
             state = case["states"][identifier]
@@ -162,7 +164,7 @@ def opaque_physical_port(case, secret, forced_point):
 
 @pytest.mark.parametrize("secret_seed", [0, 1, 3])
 def test_actual_projector_execution_every_outcome_without_private_state_access(report, secret_seed):
-    for case in report["source_controls"]:
+    for case in report["source_controls"] + [report["affine_grammar_gap_counterexample"]]:
         secret = tuple((secret_seed + 2*j) % 16 for j in range(case["component_count"]))
         total, success = 0.0, 0.0
         for leaf in case["chosen_policy_leaf_ids"]:
@@ -186,7 +188,7 @@ def test_actual_projector_execution_every_outcome_without_private_state_access(r
 
 
 def test_next_low_phase_is_quadratic_but_public_polynomial_is_not_state_oracle(report):
-    for case in report["source_controls"]:
+    for case in report["source_controls"] + [report["affine_grammar_gap_counterexample"]]:
         labels = tuple(tuple(int(a, 16) for a in row) for row in case["public_labels_hex"])
         for record in case["root_quadratic_maps"]:
             state = case["states"][record["root_id"]]
@@ -225,7 +227,7 @@ def test_caps_are_unknown_not_negative_and_cost_is_not_polynomial():
 
 
 def test_all_exported_measurements_partition_the_actual_affine_chart(report):
-    for case in report["source_controls"]:
+    for case in report["source_controls"] + [report["affine_grammar_gap_counterexample"]]:
         for s in case["states"]:
             basis, origin = tuple(int(v, 16) for v in s["basis_hex"]), int(s["origin_hex"], 16)
             assert canonical_chart(basis, origin, case["input_qubits"]) == (basis, origin)

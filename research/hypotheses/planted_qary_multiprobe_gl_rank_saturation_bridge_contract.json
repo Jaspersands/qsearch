@@ -1,0 +1,28 @@
+{
+  "contract_id": "planted-qary-multiprobe-gl-rank-saturation-bridge-contract",
+  "title": "Planted q-ary Multiprobe GL_d(F_q) Rank-Saturation Bridge: Exact k-Probe Acceptance Laws, First-Moment Indistinguishability, and q-Binomial Rank Stratification",
+  "version": "1.0.0",
+  "scope": "planted_qary_k_probe_gl_d_rank_stratification_and_first_moment_indistinguishability",
+  "theorems": [
+    {
+      "id": "T1",
+      "name": "Full-Rank Exact k-Probe Acceptance Law and Universal First-Moment Identity",
+      "statement": "For a dimension-d planted subspace B = rowspan(M) in F_q^n and k probes U = (u_1, ..., u_k), whenever rank([M u_1, ..., M u_k]) = k <= d, the number of b in B with <b, u_l> in W (|W| = R) is exactly q^(d-k) R^k. Averaging over all U in (F_q^n)^k yields E_U[N_W(U; B)] = 1_{0 in W} + (q^d - 1)(R/q)^k."
+    },
+    {
+      "id": "T2",
+      "name": "Zero-Free First-Moment Indistinguishability on B \\ {0}",
+      "statement": "For any zero-free window W in F_q \\ {0} of size R, the normalized expected k-probe acceptance mass on B is M_k^(zero-free)(q, d, R) = ((q^d - 1)/q^d) * (R/q)^k, identical to that of an unstructured subset of F_q^n \\ {0} of size q^d - 1 for every k >= 1."
+    },
+    {
+      "id": "T3",
+      "name": "Exact q-Gaussian Rank Stratification of Projected k-Probe Matrices",
+      "statement": "Under uniform probes U in (F_q^n)^k, P(U) = [M u_1, ..., M u_k] in F_q^(d x k) has exact rank r in {0, ..., min(d, k)} with probability P_rank(r | q, d, k) = q^(-d k) * q_binom(d, r)_q * prod_{j=0}^{r-1} (q^k - q^j), summing to 1 across r."
+    }
+  ],
+  "guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  }
+}

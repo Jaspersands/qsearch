@@ -2,6 +2,359 @@
 
 Last updated: 2026-10-15
 
+## Latest: Polynomial Coarse-Only Baseline, Real Gates And Exact Noise Law
+
+Implemented dcp-disjoint-kernel-pairing with module/doc/contract/live artifact,
+independent JS replay and42 dedicated tests. Combined with the37 new rigidity
+tests,835 connected tests across31 modules pass(11 dependency warnings).
+79 new tests separately pass after final checker changes. Both new independent
+checkers and the preceding nonlinear checker pass; live CLI workflows, Python
+compilation,10 current site JS syntax checks and qsearch validate pass. A broad
+pytest --maxfail=1 run was also launched; its result is NOT yet claimed here.
+No GPT commit/push or central registry/negative-result promotion.
+
+Positive baseline: m>=(n+1)^2 original inputs, supports u_j are n+1 disjoint
+nonempty kernels of A mod2 in fixed n+1-column blocks. Signed half-sum controls
+C_j(x)=sum A_i(1-2x_i)u_ji/2 mod2 are invariant under flipping ANY whole support.
+Choose the canonical first dependence d of these n+1 controls; XOR its supports.
+This gives a fixed-point-free, EVERY-input, coarse-only nonlinear involution
+preserving Ax mod4. Factory and validator RECONSTRUCT canonical parity-only
+preprocessing rather than infer selection lineage from support validity.
+
+Actual static X/CX/CCX compute-copy-uncompute XOR-F gate lists are exported,
+with O(n*m+n^3+m) gates/work, no unknown source inverse, explicit caps. The
+existing six-call compiler dispatches this real program. A cheaper two-stage
+CNOT/Z receiver measures the block complement first, computes d classically,
+then measures logical complement: O(m+n) actual CNOTs per branch. Both stages,
+all outcomes, original oriented pairs, signed labels, Born masses and output
+densities are checked. One batch yields ONE qubit. Selected n6,m49 signatures
+certify that this global map is nonaffine, but it remains an ADAPTIVE affine
+receiver and does NOT escape the existing isotropic/Gaussian baseline.
+
+No breakthrough: two-bit supply(n+1)^2 compounds to ideal(n+1)^(t-1) original
+qubits before failures. This does NOT improve known sieve exponents. The
+coarse-only higher-label law yields mean useful admission1-2^(-(t-2)n), not
+efficient growing-depth recovery, natural hardness or actual noisy supply.
+
+New substantive noise result, NOT a weak lower-bound extrapolation: conditioned
+only on parity B, fresh SECOND low bits make C_j IID uniform F2^n. First
+dependence J=j has probability prod_{i<j}(1-2^(i-n))*2^(j-n); its previous
+witness coefficients are IID fair. For support weights w_j, exact mean
+visibility conditional on J is v^w_j*prod_{i<j}(1+v^w_i)/2. Complete column
+and second-bit censuses verify this; a fixed A mod4 need NOT have that mean.
+
+For native B let r=floor(n/16), b=min(1,(n+1)sum_{w=1}^r binom(n+1,w)/2^n),
+a=v^(r+1),g=min(1,((1+a)^(n+1)-1)/2^n). Native visibility <=b+(1-b)g.
+Independent JS exact arithmetic checks12 growing rows. At v=1-1/n,
+a<16/17,g<=2*(33/34)^(n+1),b<=2(n+1)2^(-n/2) (15^15>2^56 proves the
+binomial generating-function constant). Thus inverse-linear noise is STILL
+exponentially bad for THIS baseline. Bounds at n256/512 are<1/1000 and<1e-6.
+At v=1-1/n^2 a constant WORST-WIDTH LOWER guarantee remains. None of this
+covers arbitrary partial/collective algorithms or proves actual source noise.
+
+Next HIGH-REASONING opportunity: repair noisy zero-label source restoration.
+If output visibility is public and independent of the uniform descended label,
+replace rejected label-zero branches by a KNOWN dephased |+> with the SAME
+visibility, not pure |+>. Exact Z-flip probability(1-v)/2 should restore the
+full CQ joint law. Prove label/visibility independence from coarse-only
+selection, require original independent balanced noise with higher labels
+independent of public visibilities, discard old HIGHER transcripts, and use
+fresh independent batches. Then test whether an abstract noisy source family
+closes under iteration. Do NOT infer these premises for actual lattice sources.
+Possible countercontrols: pure injection mismatch, visibility tied to higher
+labels, correlated original noise, keeping full old A, reused batches.
+This would repair a real proof debt, not the exponential supply/noise barrier.
+
+## Latest: Global Affine Mod-4 Fibre Rigidity
+
+Implemented dcp-affine-fiber-rigidity: exact coefficient validator, polynomial
+signature gate, native birthday bounds, complete finite affine-group censuses,
+independent JS original-assignment replay, documentation, contract and artifact.
+37 dedicated tests and411 connected tests across14 modules pass(1 dependency
+deprecation warning). The CLI and independent checker run successfully. Python
+compilation and checker syntax pass. Root index.js does not exist in this
+organized checkout; current UI scripts are site/js/*.js, not a restored legacy
+root script. This is not a full-repository regression or external proof review.
+
+Important stronger theorem: mod4 preservation by P(x)=Lx XOR c on EVERY x
+implies L^T diag(B_l)L=diag(B_l), B=A mod2. Preserve ALL binary combinations
+of forms, not just original rows. Their radicals force L_ij=0 whenever output
+signature p_i is nonzero and unequal to input p_j. Distinct nonzero columns
+therefore give L=I,c=0. Incomparability is unnecessary: comparable1,2,3 still
+certify rigidity. Native failure union <=(m+binom(m,2))*2^-n; at n64,m192 this
+is18528/2^64<2^-49. Exact birthday product is separately exported under its cap.
+
+Scope-falsifiers survive: good signatures plus translation111 can be useful
+on1/4 of ORIGINAL inputs; repeated signatures admit a useful swap with fixed
+points charged; a coarse-zero coordinate permits full useful translation.
+Repeated signatures do NOT guarantee symmetry; the gate returns UNKNOWN.
+One-bit parity, partial proposals, adaptive measurement trees, nonlinear maps,
+and general quantum receivers are NOT excluded. No scalar DHSP bound or
+accepted candidate. Experiment ID for optional mechanical integration:
+EXP-DHS-DCP-AFFINE-FIBER-RIGIDITY. Do not create a general active negative.
+
+Next investigation: explicit coarse-only nonlinear involution from disjoint
+parity dependencies. Compare against EXISTING greedy common-isotropic/Gaussian
+baseline before calling anything new; an O(n^2)-input two-bit descent would
+close an implementation gap but is not a new sieve exponent or breakthrough.
+Its coherent kernel selection, cleanup, noise and recursive supply must be paid.
+No GPT commits or pushes; leave concurrent Gemini pinching files alone.
+
+## Latest: Native Nonlinear Fibre Pairing And Conditional Fresh-Label Law
+
+Implemented dcp-nonlinear-fiber-pairing CLI, theorem module, proof document,
+hypothesis contract, phase_workbench artifact, independent JS replay and tests.
+Source affine certificate is bound by SHA256 and independently replayed.
+External theorem review remains pending. No accepted candidate, general quantum
+lower bound, hardware gate export or efficient native pairing program supplied.
+No GPT commits/pushes; preserve concurrent Gemini files.
+
+This pass implements the stronger finite comparator as an ACTUAL basis-wire
+compiler, not just its optimal score. Same coarse Ax mod2^h but different
+full Ax mod2^t gives a useful nonzero descended label A(y-x)/2^h. Reuse the
+existing reciprocal six-XOR-call architecture:4 calls on every attempt,
+2 more on success to order endpoints and clean ALL temporary endpoint work.
+Exact full-space forward/inverse maps and original-density instrument tests
+preserve unknown phase. The selected n2,m6,q16 example attains11/16 versus
+affine9/16, but its64-row reference costs64 address comparisons per XOR call
+plus exponential preprocessing/matching. Every failure consumes paid roots.
+
+Group-algebra theorem: F2[(Z_(2^h))^n]=F2[Y_1,...,Y_n]/(Y_i^(2^h)). Each
+subset-sum factor has positive augmentation degree, so every coarse fibre
+is EVEN once m>n(2^h-1). The threshold is sharp via2^h-1 unit columns per
+component. EVEN counts do not ensure useful labels: zero/full-value collision
+controls can have no useful pair at all. Producer multiplies Y polynomials;
+JS independently transforms X-parity counts back to Y.
+
+IMPORTANT POSITIVE SOURCE LAW: a reciprocal pairing selected ONLY from coarse
+B=A modK is independent of IID higher lifts Z in A=B+KZ. For each fixed pair,
+lambda=B(y-x)/K+Z(y-x) modR(q/K) is UNIFORM because one signed coefficient
+is a unit. The zero filter costsR^-n and leaves uniform NONZERO labels. With
+PURE inputs, known zero-label|+> injection at probabilityR^-n restores the
+full uniform source. This is a conditional channel theorem, not an efficient
+F or executed injection backend. Original HIGHER-label transcript must be
+discarded; uniformity conditional on old full A would be false. Fresh source
+batches are needed for IID outputs. No automatic noisy-zero visibility law.
+Two exhaustive high-lift controls and source-law/tamper tests check this.
+
+Maximal coarse-only pairing has native mean useful coverage at least
+(1-O)(1-2^(-(t-h)n)), O<=min(1,2^(hn-m)), O=0 beyond the augmentation threshold.
+At n64,t64,h2,m193 the mean is EXACTLY1-2^-3968 for every perfect coarse-only
+pairing, independent of whether it can be efficiently found. A weaker full-
+collision deletion bound is separately checked. These are MEANS, not claims
+for each full A or postselected source. Reference full-label-optimized tables
+do NOT inherit the new coarse-only fresh-label theorem.
+
+Noise/frontier audit REUSES core/dcp_pairing_programs.py:noise_mass_envelope
+with target bits h*n. Any basis-partner readout has source width capacities
+E p_w<=binom(m,w)/2^(hn), so constant independent visibility<1 is exponentially
+suppressed at m3n,h2. In particular v1/4 gives upper<(125/256)^n<2^-n.
+Joint t=n,v=1-1/n,m3n has existential retained visibility>1/25 on n32..512;
+this is not an efficient algorithm and inter-level noise/label composition is
+not supplied. The report has28 symbolic frontier rows, not executed big sources.
+
+COUNTING FALSIFIER: positive exact-one constraints are Ax=1 mod4 with repeated
+occurrences retained as multiplicities. Worst-case full fibre counting follows
+the Creignou/Hermann non-affine Boolean counting dichotomy, NOT native-average
+or general pairing hardness. Pad coarse-zero columns and give one full label
+4e1 mod8: flipping it is a trivial useful pairing regardless of the original
+solution count. Encoder/program operate at193 inputs without a truth table.
+This is a reduction counterexample, not a candidate algorithm or SAT solver.
+Do not impose canonical ranking/counting on every future pairing proposal.
+
+Next HIGH-REASONING target: construct a uniform efficient COARSE-only partial
+involution with meaningful native coverage, exploiting modular algebra rather
+than generic tiny-circuit search or full fibre ranking. Prove its lineage and
+cleanup; then use the conditional source law. Alternatively seek a collective
+packet instrument outside the basis-pairing/noise architecture. Natural-source
+geometry, actual joint noise, efficient growing-level composition and final
+decoding remain unresolved. Gemini can integrate
+EXP-DHS-DCP-NONLINEAR-FIBER-PAIRING with these exact scopes, not admit a speedup.
+Verification:719 connected tests across27 modules pass(11 dependency
+deprecation warnings). The independent nonlinear checker, live CLI,
+Python compilation,15 JS syntax checks(10 site scripts and5 checkers),
+qsearch validate and git diff --check pass. This is not a full-repository
+regression or external theorem review. A final one-output resource annotation
+is separately rerun in the35-test dedicated suite. All producers finish before
+provenance tests. The pair list denotes alternative measurement outcomes,
+NOT multiple output qubits from one source batch.
+
+## Latest: Classical Attack Bridge Claim Repair And Exact Replay
+
+Corrected the concurrent planted_qary_classical_attack_threshold_bridge module,
+doc, hypothesis contract, live reductions artifact, independent JS checker,
+dedicated tests and existing qsearch help. Kept the useful public RREF attack;
+removed false promotions rather than preserving its old report schema.
+
+At delta3/4,eta1/2,alpha=2, NOT4/3. The actual finite returned bases are now
+verified with exact rational Gram-Schmidt at delta3/4,eta51/100,alpha10000/4899.
+ALL size-reduction/Lovasz inequalities, norms and U*B=L with detU=+/-1 are
+independently replayed. Actual lambda2 isolation is NOT certified; finite
+recoveries no longer set a theorem/large-q-success verification flag.
+
+New infinite counterfamily(q ANY prime>=7): H rows(1,-1,0,0,0),
+(0,0,1,-1,0),(1,0,-1,0,-2), with ordinary integer kernel generated by
+u=(1,1,1,1,0),v=(1,1,-1,-1,1). Every vector of norm<=sqrt5 has|Hx|<q,
+so must lie in that ordinary kernel. Norm is4a^2+5b^2: unique shortest+/-u
+has lambda1^2=4,lambda2^2=5 for ALL q>=7, while determinant=q^3 diverges.
+Thus determinant growth cannot certify successive-gap growth or LLL-success
+monotonicity. Four prime/index/public-vector controls and exact radius censuses
+check the proof structure; no hardness/LLL lower bound is claimed.
+
+Projective free-coordinate enumeration uses O(m(n-m)+n) additional integer
+slots, not O(1) working space. It has no exponential hash table. Assignment
+counts do not establish wall-time dominance over MITM. An explicit cap returns
+UNKNOWN before exponential enumeration, not a negative result.
+
+The JS checker no longer trusts recovery booleans. It verifies public prime
+proofs, rank, lattice index, actual reduced basis/transform and full RREF search
+from H, retaining integers beyond2^80 exactly. Eight forgery classes fail.
+Final verification for all four passes:606 connected tests across23 modules
+pass(11 dependency deprecation warnings). All four independent JS certificate
+replays, Python compilation,14 JS syntax checks(10 site scripts and4 affected
+checkers), live CLI artifacts, qsearch validate and git diff --check pass.
+This is not a full-repository regression or external theorem review. All
+artifact producers finished before final provenance tests. No GPT commit/push
+or central claim promotion.
+
+This closes the concrete faults identified in the Gemini review. Next research
+priority remains a source-valid nonlinear/collective packet receiver and actual
+growing-family noise/supply analysis, not more favorable finite attack metrics.
+
+## Latest: Original-Register Mixed Noise And Noise-Aware Packet Policies
+
+Implemented dcp-affine-packet-noise CLI, theorem module, proof document,
+hypothesis contract, phase_workbench artifact, independent JS replay and tests.
+It binds the full affine-geometry artifact by exact-byte SHA256 and replays
+that certificate before checking noisy policy results. No source quantum
+preparations executed, accepted speedup, noisy lattice certificate or general
+quantum optimality claim. The actual source's joint noise remains unproved.
+
+Conditional source PREMISE: ORIGINAL qubits are independent balanced phase
+depolarizations with public dyadic visibility v_i. Every allowed chart is a
+basis permutation followed by Z measurement. The original joint diagonal
+stays flat, so ALL initial syndromes and feedback branches retain correct
+uniform masses. For final physical pair x,x XOR u, off-diagonal coherence is
+product_(i:u_i=1)v_i, with the original signed output label. This is PHYSICAL
+HAMMING MASK accounting, not merge depth, retained dimension or all supplied
+registers. The controller never reads private phases/densities.
+
+Bellman leaves now score2*useful*visibility, keeping nonzero-label scoring.
+Public input visibilities give exact integer-scaled weights. Compare frozen
+pure policy, the noise-aware optimum, all static directions per syndrome,
+and optimal arbitrary weighted pairings. Producer uses integer-weight blossom;
+independent JS uses exact subset DP. Retained visibility is NOT decoder success.
+
+18 controls reuse unfiltered seeds2,5 plus SELECTED grammar-gap seed94, at
+uniform v1,15/16,3/4,1/2,0 and a heterogeneous pattern. At selected seed94,v1/2,
+noise-aware65/512 beats frozen pure51/512 and static64/512: a tiny finite
+visibility gain, not a major algorithm. Heterogeneous seed2 gives7/8 versus
+frozen3/4. At v0 every visibility score is zero despite any useful labels.
+Exact original-product trace distance is1-product_i(1+v_i)/2, independently
+checked against tensor-density spectra. Caps/selection do not prove hardness.
+
+CORRELATION FALSIFIER: equal mixture of |+>^3 and Z^tensor3|+>^3 has every
+marginal I/2 but retained pair000,011 has visibility1, not the false product0.
+Its exact joint density is exported/replayed and every marginal is traced.
+Flatness suffices for branch uniformity, NOT visibility factorization.
+Biased populations also violate fairness (parity mass0.82 control).
+
+The existing full-QFT sine source has a conditional balanced template under
+its geometric/correct-trial premises. The new bridge test checks ALL labels
+of the public B((17,0),(16,1)),p7,g1,M2,K4 instrument against visibility1/4;
+the private forward audit is never a policy input. Independent fresh shots
+then tensorize after fixing the full public label tuple. This does not prove
+the geometric promises, hard-family trial selection or noisy cutoff model.
+Public visibility lower bounds also certify fixed-policy lower utility by
+coefficientwise monotonicity; lower-weight matching is NOT an actual-source
+upper bound when the true visibilities are larger.
+
+Verification:580 connected tests across22 modules pass(11 dependency
+deprecation warnings), followed by29 passing dedicated noise/bridge tests
+after adding the two finite-source/lower-bound controls. All three independent
+JS replays, Python compilation,13 JS syntax checks, live CLI regeneration,
+registry validation and git diff --check pass. This is not a full-repository
+regression, hardware channel certificate or external theorem review.
+Coverage includes original mixed-state
+projector execution of EVERY chosen leaf for multiple secrets, source hashes,
+integer matching/independent DP, trace distances, read-only CLI and eight
+tamper classes.
+No GPT commit/push. Central registry integration remains Gemini work.
+
+Next high-reasoning task: derive the ACTUAL source's conditional joint noise,
+or a compact known phase-covariant correlated model with characteristic
+function E[(-1)^(e dot u)]. Marginal visibilities are insufficient. Also seek
+efficient nonlinear fibre pairing and growing-n/growing-t composition; do
+not promote these finite exponential policy benchmarks as algorithms.
+
+## Latest: Outcome-Adaptive Affine Packet Receiver And Grammar Falsifier
+
+Implemented dcp-adaptive-affine-packet-receiver CLI, theorem module, research
+document, hypothesis contract, phase_workbench artifact, independent JS replay
+and dedicated tests. This is a bounded EXACT policy benchmark, not an efficient
+receiver, general quantum optimum, noisy-source circuit or new algorithm claim.
+
+Physical state is an affine chart x0+V inside ker(B). The controller uses only
+public A, current chart and observed bits to choose invertible binary chart
+changes and one Z measurement at a time. All branches have probability1/2
+on this PURE FLAT source; retain one unknown phase qubit at dimension1.
+All initial syndromes count. Bellman F counts good ORIGINAL assignments;
+EVERY functional and both children are exported. Strong static comparator
+may choose ANY fixed direction independently for every initial syndrome.
+Useful descent REQUIRES all output-label components even AND some nonzero
+modq/2. Zero labels get no credit. Full retained-label distributions are
+exported, not asserted IID. No unknown-source inverse is available.
+
+Six unfiltered fixed native-label controls(q16) use seeds0,1,2 at n1,m5,
+and3,4,5 at n2,m6. Seed2 improves useful descent1/2->1, seed5 improves
+1/2->3/4. Other controls have no gain. NO asymptotic frequency/hardness
+claim. The exact policy search costs a Gaussian-binomial affine-subspace
+census, at least2^1000 states by logical dimension64; caps return UNKNOWN.
+
+Stronger comparator groups original residual phase values by next low bit.
+Each color has a complete multipartite matching graph; maximum useful pair
+count is min(floor(N/2),N-largest_equal_value_class). NetworkX independently
+verifies this bound. It is attainable by arbitrary computational-basis
+regrouping, not necessarily a polynomial circuit or a general quantum POVM.
+All six primary controls saturate it, but trying to kill that pattern found
+a SELECTED native n2,m6,q16 seed94 example: affine9/16 versus pairing11/16.
+It is separate from the unfiltered cohort and records95 examined seed controls.
+This is a finite falsifier of affine-feedback universality, not an asymptotic
+quantum lower bound. Source quantum preparations executed by CLI: zero.
+
+The next-low phase is now exported as a vector quadratic polynomial: linear
+coefficients use high labels/background, polar coefficients are B(u_i AND u_j).
+Every chart point is checked against the ORIGINAL public phase, without an
+unknown-secret evaluator. The opaque controller port only requests actual
+initial parity measurement, chart-linear measurement, and retained pair;
+test closures keep amplitudes/secrets private and replay every final outcome.
+
+LITERATURE/ACCESS WARNING: base(Z_(2^t))^n with inversion has nilpotency
+class t. Fixed t is known constant-class bounded-prime HSP territory, NOT a
+new Shor-level target under full HSP access. Imran/Ivanyos2304.08376 Theorem1
+uses a subgroup-state creating UNITARY AND ITS INVERSE. Supplied phase copies
+do not automatically provide that interface. Its constant-class theorem also
+does not give a uniform polynomial bound for growing t. ISS0707.1260 provides
+relevant quadratic cancellation, but its source/group-action premises must be
+mapped explicitly. The existing hsp_campaign_claim_audit has related context.
+IMPORTANT: Imran/Ivanyos Proposition3 also has a NON-EXACT HSMC variant without
+inverse calls. A missing inverse is NOT a blanket obstacle. The existing
+NATIVE_ORBIT_SOURCE_ACCESS compiler already creates real coset mixed copies
+with a known relative inverse returning the ORIGINAL unknown seed. Reuse it;
+do not recreate it or confuse that inverse with blank-state purification.
+
+Next high-reasoning tasks: compile/source-cost a nonlinear fibre-pairing rule
+that beats the explicit affine grammar gap; reuse the existing copy-to-coset
+compiler and audit the non-exact published conversion's forward-access and
+class-dependent costs; derive growing-n AND growing-t
+performance and mixed-source noise laws before candidate admission.
+Central integration remains Gemini work; no GPT commit/push or new admitted
+algorithm/negative theorem. Verification:553 connected tests across21 modules
+pass(11 dependency deprecation warnings); the final access-qualification change
+is additionally covered by the receiver's dedicated rerun. Both independent
+JS replays, Python compilation,12 JS syntax checks, live artifacts and registry
+validation pass. This is not a full-repository regression or external review.
+
 ## Latest: Full-Label Pre-Complement Single-Direction Rank Gate
 
 Implemented dcp-adaptive-direction-rank-gate CLI, theorem module, research

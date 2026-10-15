@@ -229,6 +229,8 @@ function verify(report) {
   const boundary=report.known_algorithm_boundary;
   need(boundary.fixed_t_full_HSP_oracle_novelty_claim_allowed===false&&
        boundary.exact_theorem_requires_subgroup_state_creating_unitary_and_inverse===true&&
+       boundary.nonexact_forward_only_HSMC_variant_in_Proposition3_exists===true&&
+       boundary.missing_inverse_alone_blocks_all_published_methods===false&&
        boundary.copy_only_phase_source_transfer_proved===false&&
        boundary.uniform_polynomial_bound_when_t_grows_supplied===false,"known algorithm access boundary");
   need(JSON.stringify(report.scaling_cost_ledgers_not_executed.map(c=>c.logical_dimension))==="[4,8,16,32,64]","cost scaling coverage");

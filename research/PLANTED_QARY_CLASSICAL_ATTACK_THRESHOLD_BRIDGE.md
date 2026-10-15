@@ -1,63 +1,106 @@
-# Planted $q$-Ary Classical Attack Threshold Bridge: Free-Support Lower Bounds, LLL $\lambda_2$ Isolation Guarantee, and $O(1)$-Space Free-Coordinate Kernel Search
+# Public Classical Attack Bridge: Corrected Claims And Exact Certificates
 
-## 1. Motivation and Scope
+CORRECTED2026-10-15. The earlier large-q LLL-success monotonicity, incorrect
+LLL constant, constant-memory and theorem-verification claims are withdrawn.
+The useful public RREF attack remains. No speedup or general hardness claim.
 
-In `theorems/planted_qary_usvp_source.py`, each generated $q$-ary modular kernel instance $\Lambda_q^\perp(H) = \ker(H \bmod q) \subset \mathbb{Z}^n$ ($1 \le m < n - 1$) is benchmarked against three public-data classical attacks:
-1. `sparse_column_attack(problem)` (checking unit vectors and signed column pairs of $H \bmod q$),
-2. `public_LLL_attack(problem)` (exact-Gram FLINT LLL on the public centered-RREF row basis $B$), and
-3. `ternary_MITM_attack(problem)` (meet-in-the-middle syndrome collision over $\{-1, 0, 1\}^{\lfloor n/2 \rfloor}$ and $\{-1, 0, 1\}^{n - \lfloor n/2 \rfloor}$ using $3^{\lfloor n/2 \rfloor} + 3^{n - \lfloor n/2 \rfloor}$ states and $O(3^{\lfloor n/2 \rfloor})$ hash-table storage).
+Run `python qsearch.py planted-qary-classical-attack-threshold-bridge` and
+`node research/certificates/planted_qary_classical_attack_threshold_bridge_crosscheck.js`.
 
-This note proves three exact theorems connecting the centered-RREF structure of $H \bmod q$ to these classical attacks, establishing:
-- the sharp free-column support lower bound $s_F \ge \max(1, s - m)$,
-- the exact LLL isolation threshold $\lambda_2(\Lambda_q^\perp(H)) > \alpha^{(n-1)/2}\sqrt{s}$ and why increasing $q$ at fixed $(n, m, s)$ makes $u$ **easier** (not harder) for LLL to recover, and
-- an $O(1)$-memory RREF free-coordinate kernel search that uses at most $3^{n-m}$ states (and $\frac{3^{n-m} - 1}{2}$ projectively oriented states), strictly beating $O(3^{n/2})$-space full-ambient MITM whenever $m \ge \lceil n/2 \rceil$.
+## What The Source Controls Actually Establish
 
-## 2. Theorem 1 — Sharp Free-Support Lower Bound and Column-Pair Immunity
+Six small public q-ary kernel controls are attacked by signed-column checks,
+FLINT LLL and projective free-coordinate enumeration. All finite LLL/RREF
+recoveries are replayed from their PUBLIC H matrices. Private plants appear
+only in separate forward-calibration fields, never as solver inputs.
 
-Let $u \in \{-1, 0, 1\}^n \setminus \{0\}$ be a planted ternary vector in $\Lambda_q^\perp(H)$ with total Hamming support $s = \|u\|_1 = \|u\|_2^2$, and let $(P, F)$ ($|P| = m, |F| = n - m$) be the pivot and free column partition of $\operatorname{RREF}(H \bmod q)$.
+Nonzero ternary kernel vectors have free support
 
-**Theorem 1 (Free-Column Support Lower Bound and Sparse-Column Immunity).**
-1. **Sharp free-support lower bound**: Since $s_P = |\operatorname{supp}(u) \cap P| \le |P| = m$ and $u \ne 0 \implies s_F \ge 1$ (for $q \ge 3$), the free-column support $s_F = |\operatorname{supp}(u) \cap F|$ satisfies
-   $$
-   \max(1,\; s - m) \;\le\; s_F \;\le\; \min(s,\; n - m).
-   $$
-   In particular, for dense plants with $s = n$, every free column is active: $s_F = n - m$.
-2. **Immunity to `sparse_column_attack` for unique plants of support $s \ge 3$**: Whenever $s \ge 3$ and $\Lambda_q^\perp(H)$ contains no nonzero non-parallel vector of Euclidean norm $\le \sqrt{2}$, `sparse_column_attack(problem)` returns `NO_UNIT_OR_COLUMN_PAIR_RELATION`, because every unit vector has $\|e_j\|_2^2 = 1 < 3 \le \|u\|_2^2$ and every signed column pair has $\|e_i \pm e_j\|_2^2 = 2 < 3 \le \|u\|_2^2$.
+    max(1,s-m) <= s_F <= min(s,n-m).
 
-## 3. Theorem 2 — Exact LLL $\lambda_2$-Isolation Guarantee and Large-$q$ Monotonicity
+The lower bound1 follows because invertible pivot columns cannot annihilate
+a nonzero vector supported entirely on pivots when q>=3. The other bounds
+count coordinates. Absence of unit/signed-column-pair relations is verified
+directly in each control; it is not a hardness certificate.
 
-Let $\delta \in (1/4, 1]$ be the LLL reduction parameter and $\alpha = \frac{1}{\delta - 1/4}$ be the Lovász factor ($\alpha = 4/3$ at $\delta = 3/4$).
+## The Correct LLL Statement
 
-**Theorem 2 (LLL Unique-SVP Isolation Criterion and Large-$q$ Scaling).**
-1. **Unconditional LLL isolation above the $\alpha^{(n-1)/2}$ gap**: Let $(b_1, \dots, b_n)$ be any $\delta$-LLL-reduced basis of $\Lambda_q^\perp(H)$. For any nonzero primitive lattice vector $u \in \Lambda_q^\perp(H)$,
-   $$
-   \|b_1\|_2 \;\le\; \alpha^{(n-1)/2}\,\|u\|_2 \;=\; \alpha^{(n-1)/2}\,\sqrt{s}.
-   $$
-   Consequently, if the second successive minimum satisfies
-   $$
-   \lambda_2\bigl(\Lambda_q^\perp(H)\bigr) \;>\; \alpha^{(n-1)/2}\,\sqrt{s},
-   $$
-   then $b_1$ cannot be non-parallel to $u$, so the shortest reduced basis vector of `public_LLL_attack` is **guaranteed** to equal $\pm u$.
-2. **Large-$q$ monotonicity at fixed $(n, m, s)$**: Because $\|u\|_2 = \sqrt{s}$ is independent of $q$ while $\det(\Lambda_q^\perp(H)) = q^m$ grows with $q$, increasing the modulus $q$ at fixed $(n, m, s)$ increases the determinant-normalized gap $q^{m/n} / \sqrt{s}$ without increasing $\|u\|_2$, making `public_LLL_attack` strictly more effective as $q \to \infty$ (explaining why the $q > 2^{80}$ control in `planted_qary_usvp_source.py` is recovered immediately by LLL).
+For size-reduction parameter eta and Lovasz parameter delta, with
+eta^2<delta<=1, define alpha=1/(delta-eta^2). Size reduction and Lovasz imply
 
-## 4. Theorem 3 — $O(1)$-Space Projective Free-Coordinate RREF Search vs Ambient MITM
+    ||b_(i+1)*||^2 >= (delta-eta^2)||b_i*||^2,
+    ||b_1||^2 <= alpha^(n-1)||u||^2
 
-In `PublicQaryLattice`, the centered RREF matrix $C \in [-(q-1)/2, (q-1)/2]^{m \times (n-m)}$ expresses the $m$ pivot coordinates uniquely modulo $q$ in terms of the $n - m$ free coordinates:
-$$
-u_{P_i} \;\equiv\; -\sum_{j=0}^{n-m-1} C_{i,j} u_{F_j} \pmod q \qquad (0 \le i < m).
-$$
+for every nonzero integer lattice vector u. For the second inequality, choose
+the largest nonzero coefficient i in u's basis expansion; its orthogonal
+projection has norm at least||b_i*||. The recurrence bounds||b_1*|| by that
+projection. A minimum-norm returned row is no longer than b_1.
 
-**Theorem 3 (Projective Free-Coordinate Enumeration).**
-1. **Bijection with valid free-coordinate assignments**: A nonzero vector $u \in \{-1, 0, 1\}^n \setminus \{0\}$ belongs to $\ker(H \bmod q)$ if and only if $u_F \in \{-1, 0, 1\}^{n-m} \setminus \{0\}$ and for every pivot row $0 \le i < m$,
-   $$
-   u_{P_i} \;=\; \operatorname{centered\_mod}\!\left(-\sum_{j=0}^{n-m-1} C_{i,j} u_{F_j},\; q\right) \;\in\; \{-1, 0, 1\}.
-   $$
-2. **Projective sign-canonical search in $\frac{3^{n-m} - 1}{2}$ states and $O(1)$ space**: Restricting $u_F \in \{-1, 0, 1\}^{n-m} \setminus \{0\}$ to have its first nonzero coordinate equal to $+1$ checks exactly
-   $$
-   N_{\text{free,proj}}(n, m) \;=\; \frac{3^{n-m} - 1}{2}
-   $$
-   states in $O(1)$ auxiliary memory, compared to $N_{\text{MITM}}(n) = 3^{\lfloor n/2 \rfloor} + 3^{n - \lfloor n/2 \rfloor}$ states and $O(3^{\lfloor n/2 \rfloor})$ table entries for ambient `ternary_MITM_attack`. Whenever $m \ge \lceil n/2 \rceil$,
-   $$
-   \frac{3^{n-m} - 1}{2} \;<\; \frac{1}{4}\bigl(3^{\lfloor n/2 \rfloor} + 3^{n - \lfloor n/2 \rfloor}\bigr),
-   $$
-   so projective RREF free-coordinate search strictly dominates ambient MITM in **both** state count and memory.
+At delta3/4,eta1/2, alpha is TWO, not4/3. The old code's4/3 ceiling was not
+the advertised theorem. The current finite returned bases are independently
+verified at delta3/4,eta51/100, giving alpha10000/4899. Exact rational
+Gram-Schmidt checks ALL size-reduction and Lovasz inequalities, rather than
+assuming them from a library call or its defaults. The parameters of FLINT's
+call itself are not silently relabeled.
+
+Recovering +/-u from this approximation criterion additionally requires
+primitive u and lambda2>alpha^((n-1)/2)||u||. Those lambda2 premises are NOT
+certified for the six generated controls. Their observed recoveries are finite
+facts, not verification of a growing-family isolation theorem.
+
+## Determinant Growth Does Not Supply A Successive-Minimum Gap
+
+For ANY prime q>=7, use the public modular constraint matrix
+
+    H = [(1,-1,0,0,0),
+         (0,0,1,-1,0),
+         (1,0,-1,0,-2)] mod q.
+
+Its full-rank modular kernel lattice has determinant q^3. Its ordinary
+integer nullspace is generated, over INTEGERS, by
+
+    u=(1,1,1,1,0), v=(1,1,-1,-1,1).
+
+Indeed the rows force x0=x1, x2=x3 and x0-x2=2*x4.
+Write b=x4 and a=x2+b to get x=a*u+b*v, with a,b integers. Orthogonality
+gives||x||^2=4a^2+5b^2. Every vector with norm<=sqrt5 satisfies
+|H_i x|<=sqrt30<q, so modular zero means ORDINARY zero in this ball.
+
+Therefore lambda1^2=4 with unique primitive shortest pair+/-u, and
+lambda2^2=5 for EVERY prime q>=7. The squared successive gap is constantly5/4,
+while q^(3/5)/2 diverges. Exact q7,11,101,1009 certificates bind public H,
+prime proofs, index, witnesses and parameter arithmetic. This is a counterexample
+to deriving successive-gap growth from determinant growth, not a distributional
+theorem about every planted generator or a lower bound on LLL.
+
+The earlier assertion of strictly increasing LLL effectiveness had no specified
+coupling/distribution or success-probability proof and is removed. Determinant
+normalization remains an explicitly labeled proxy, never lambda2.
+
+## Polynomial-Space RREF Baseline
+
+For the public RREF pivot/free split, enumerate ternary u_F whose first
+nonzero coordinate is+1; reconstruct pivot coordinates uniquely as centered
+residues of-C*u_F. Keep only ternary pivots. This checks EXACTLY
+(3^(n-m)-1)/2 assignments, and independently reproduces the minimum-norm
+sign-canonical ternary vector without plant advice.
+
+There is no exponential hash table, but working storage is NOT constant.
+The copied centered m by(n-m) block, current vectors, enumeration state and
+best vector require O(m*(n-m)+n) integer slots in addition to the supplied
+problem. Integer bit costs depend on log q. For m>=ceil(n/2), the assignment
+count is smaller than the ambient MITM half-state sum; per-assignment arithmetic,
+hashing, early termination and memory costs differ, so this is not a wall-time
+dominance theorem. A cap returns UNKNOWN before exponential enumeration,
+not a negative result.
+
+## Independent Replay And Remaining Obligations
+
+The JS checker now certifies primes and full modular rank, reconstructs public
+RREF, verifies lattice index and U*B=L with det(U)=+/-1, recomputes rational
+Gram-Schmidt, checks the correct approximation bound, enumerates the complete
+public free-coordinate search, and verifies the determinant-gap counterfamily.
+It no longer treats recovery booleans as independent proof.
+
+Finite controls still do not supply actual lambda2 isolation, a hard natural
+source, stronger BKZ/SIS experiments, or any end-to-end quantum speedup.

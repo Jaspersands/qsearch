@@ -1,0 +1,28 @@
+{
+  "contract_id": "native-higher-call-kronecker-moment-rank-bridge-contract",
+  "title": "Native Higher-Call Kronecker Moment-Rank Bridge: 4-Tuple Difference-Variety Parseval Identity, Harmonic Conjugate Symmetry, and L2 Signal Energy Bounds",
+  "version": "1.0.0",
+  "scope": "general_k_call_secret_second_moment_kronecker_difference_variety_parseval_and_l2_signal_energy",
+  "theorems": [
+    {
+      "id": "T1",
+      "name": "Exact 4-Tuple Kronecker Difference-Variety Parseval Identity",
+      "statement": "For any k-call schedule (epsilon, sigma) and readout outcome x in {0, ..., D-1}, the secret-Fourier harmonics C_(epsilon, sigma)(delta; x) = sum_(Delta tau_epsilon(w, w') = delta) B_(epsilon, sigma)(w, w'; x) satisfy E_s[P(x | s)] = C(0; x) and Var_(s ~ Z_q^n)[P_(epsilon, sigma)(x | s)] = sum_(delta != 0) |C_(epsilon, sigma)(delta; x)|^2."
+    },
+    {
+      "id": "T2",
+      "name": "Hermitian Conjugate Symmetry and Outcome Sum Annihilation of Non-Zero Harmonics",
+      "statement": "For every difference vector delta in Z_q^n and outcome x, C_(epsilon, sigma)(-delta mod q; x) = conj(C_(epsilon, sigma)(delta; x)), and for every non-zero delta != 0, sum_(x=0)^(D-1) C_(epsilon, sigma)(delta; x) = 0 identically."
+    },
+    {
+      "id": "T3",
+      "name": "4-Tuple Kronecker Multiplicity Bound on Total L2 Secret Signal Energy",
+      "statement": "With M_epsilon(delta) = |{(w, w') : Delta tau_epsilon(w, w') = delta}|, sum_delta M_epsilon(delta) = D^(2k), M_epsilon(0) = |V_epsilon(f)|, and total L2 secret signal energy E_(epsilon, sigma) = sum_x Var_s[P(x | s)] <= (1 / D^(2k+1)) * sum_(delta != 0) M_epsilon(delta)^2."
+    }
+  ],
+  "guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  }
+}

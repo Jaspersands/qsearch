@@ -247,7 +247,7 @@ function verify(report) {
           rank_minima:report.rank_pair_minimization_controls.length,
           general_DCP_lower_bound:false};
 }
-module.exports = {verify, parity, map, readProbability, sameProbability};
+module.exports = {verify, parity, map, readProbability, sameProbability, normalize, add, capped};
 if (require.main === module) {
   const file = process.argv[2] || path.resolve(__dirname,"../phase_workbench/dcp_adaptive_direction_rank_gate.json");
   console.log(JSON.stringify(verify(JSON.parse(fs.readFileSync(file,"utf8")))));
