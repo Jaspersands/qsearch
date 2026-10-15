@@ -114,6 +114,9 @@ filter costs2^(-(t-2)*n), so native mean useful admission is exactly
 Preserve coarse lineage, discard the old HIGHER-label transcript at the output
 interface, and use fresh independent batches. Pure zero-label injection remains
 a theorem-level restoration, not an implemented backend.
+The separate [noise-matched source channel](DCP_NOISE_MATCHED_SOURCE.md) now
+provides an abstract conditional noisy-family induction. It does not certify
+the actual source premises or turn the supply ledger into a fast decoder.
 
 Under independent balanced ORIGINAL-register visibilities, an outcome's
 coherence is the product over the actual flipped support. Reuse that existing

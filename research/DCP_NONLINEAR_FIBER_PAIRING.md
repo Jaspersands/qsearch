@@ -127,6 +127,10 @@ Full-label-optimized matchers DO NOT inherit this theorem.
 For dephased inputs, pairing width changes visibility. Pure zero injection
 does not automatically reproduce that same noise at label0. A separate noisy
 source claim is required; the proof does not silently grant it.
+The subsequent [noise-matched channel](DCP_NOISE_MATCHED_SOURCE.md) supplies
+that repair under an independent balanced-product promise: retain visibility
+and inject a matching dephased zero state. It still does not establish the
+actual natural source's joint noise law.
 
 ## Native Mean Coverage: Stronger Than Pair Existence Alone
 

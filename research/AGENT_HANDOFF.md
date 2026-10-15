@@ -2,6 +2,65 @@
 
 Last updated: 2026-10-15
 
+## Latest: Noise-Matched Source Restoration And Conditional Induction
+
+Implemented dcp-noise-matched-source with module/doc/contract/live artifact,
+independent rational-arithmetic JS replay and CLI. New source physics plus
+concurrent integration tests pass39 checks. A concurrent edit replaced the
+original detailed test file with5 smoke tests; those were PRESERVED, and the
+34 research-critical density/lineage/forgery checks now live separately in
+tests/test_dcp_noise_matched_source_physics.py. Preserve that physics suite;
+passing the integration smoke tests is not a substitute for it.
+
+Conditional proof repair: coarse-only selected pair + original independent
+balanced dephasing, with public visibilities independent of fresh higher lifts,
+gives descended label uniform INDEPENDENT of public pair visibility v. Discard
+old HIGHER transcripts, retain coarse records and visibility, use fresh batches.
+After the paid zero filter, inject zero with its correct probability but prepare
+the KNOWN dephased plus state via Z probability(1-v)/2. Pure plus alone fails.
+This preserves the full joint label/visibility/CQ density, not just label counts,
+and closes the abstract source family under iteration conditional on fixed
+unknown CLASSICAL secret and product input states. These are ASSUMED premises,
+not a certificate of actual natural/lattice-source noise or purification access.
+
+Live exact census: first q32->q8, ALL8^4 higher lifts and8 physical pairs;
+visibility tags(3/4)^2 and(3/4)^4 have masses3/4,1/4, independent of all labels.
+Second q8->q2 uses ALL8^4 IID parent labels, ALL16 independent parent tag tuples
+with3:1 weights, and all8 pairs. Joint law restores exactly at both levels.
+Actual CPTP density tests cover scalar/vector label groups, all source tags,
+unknown-secret phases, pure-injection negative control and positivity/mass.
+Correlated label/visibility, missing/noisy-lineage promises, retained higher
+transcripts and reused batches cannot inherit the theorem. Forged source
+counts, channel coins, restored masses, costs and scope are rejected by JS.
+
+Exported stochastic channel instructions are exact; a hardware reset/Z-coin
+backend is NOT implemented. The specified wrapper consumes a paid nonzero
+qubit BEFORE its zero coin. Its expectation is32/7 raw first-level qubits per
+restored output,8 such outputs per second-level output, hence256/7 original
+qubits, versus ideal no-failure16. These are protocol costs, not universal
+lower bounds: known public tag sampling could sometimes avoid spending
+quantum supply on a zero branch. No claim that supply/visibility loss is fixed.
+
+No accepted candidate, actual natural-source noise certificate or central
+proof/negative-result promotion. Optional mechanical experiment ID:
+EXP-DHS-DCP-NOISE-MATCHED-SOURCE. Register as CONDITIONAL/review-pending,
+not resolution of the actual source-noise obligation. No GPT commit/push.
+The prior repository-wide pytest --maxfail=1 run was intentionally interrupted:
+536 tests passed,1 warning,632.85s, inside the unrelated degree-five coset
+Hecke audit. It is NOT a complete regression. The final33-module connected
+regression is run separately; do not infer full-repository health from it.
+
+Next high-upside target: improve the SUPPLY/PHYSICAL-WIDTH frontier, not more
+formal repairs of this already costed Gaussian baseline. At m~n^2 the generic
+width union bound does not by itself forbid useful O(n)-width pairings at
+v=1-1/n; the disjoint-block selector instead flips Theta(n) blocks and suffers
+native exponential visibility loss. Seek a coarse-only short physical-mask
+program with reciprocal invariance, or a collective instrument outside single-
+pair readout. Compare against core/dcp_balanced_pairing.py before adding a
+duplicate MITM lookup. Vector Z4^n hashing cannot be silently replaced by one
+cyclic integer residue, because cross-component carries change the group.
+Actual natural-source joint noise, hard reduction and final decoding stay open.
+
 ## Latest: Polynomial Coarse-Only Baseline, Real Gates And Exact Noise Law
 
 Implemented dcp-disjoint-kernel-pairing with module/doc/contract/live artifact,
