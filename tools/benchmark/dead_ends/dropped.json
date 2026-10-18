@@ -1,0 +1,18 @@
+{
+ "note": "Curated dead ends left out of items.json because a kept item from the same family has the same killer. Applied by `dead_ends.py build`.",
+ "dropped": [
+  {"source_record": "WEAK-FOURIER-LABEL-BLOCKED-S8-PARTIAL_MATCHING", "kept_instead": "WEAK-FOURIER-LABEL-BLOCKED-S16-PARTIAL_MATCHING", "reason": "same family at a smaller group size"},
+  {"source_record": "WEAK-FOURIER-LABEL-BLOCKED-S10-PARTIAL_MATCHING", "kept_instead": "WEAK-FOURIER-LABEL-BLOCKED-S16-PARTIAL_MATCHING", "reason": "same family at a smaller group size"},
+  {"source_record": "WEAK-FOURIER-LABEL-BLOCKED-S12-FIXED_POINT_FREE_INVOLUTION", "kept_instead": "WEAK-FOURIER-LABEL-BLOCKED-S16-PARTIAL_MATCHING", "reason": "same family at a smaller group size"},
+  {"source_record": "COSET-PGM-CAPACITY-DEBT-S8-PARTIAL_MATCHING", "kept_instead": "COSET-PGM-CAPACITY-DEBT-S16-FIXED_POINT_FREE_INVOLUTION", "reason": "same family at a smaller group size"},
+  {"source_record": "COSET-PGM-CAPACITY-DEBT-S10-PARTIAL_MATCHING", "kept_instead": "COSET-PGM-CAPACITY-DEBT-S16-FIXED_POINT_FREE_INVOLUTION", "reason": "same family at a smaller group size"},
+  {"source_record": "COSET-PGM-CAPACITY-DEBT-S12-PARTIAL_MATCHING", "kept_instead": "COSET-PGM-CAPACITY-DEBT-S16-FIXED_POINT_FREE_INVOLUTION", "reason": "same family at a smaller group size"},
+  {"source_record": "COSET-DISTINGUISHABILITY-DEBT-S10-FIXED_POINT_FREE_INVOLUTION", "kept_instead": "COSET-DISTINGUISHABILITY-DEBT-S14-FIXED_POINT_FREE_INVOLUTION", "reason": "same family at a smaller group size"},
+  {"source_record": "NEG-CODE-SELF-DUAL-GLOBAL-ORBIT-GLOBAL-ORBIT-SELF-DUAL-K8-00-02", "kept_instead": "NEG-CODE-SELF-DUAL-GLOBAL-ORBIT-GLOBAL-ORBIT-SELF-DUAL-K8-00-01", "reason": "second random draw with the same killer"},
+  {"source_record": "NEG-CODE-SELF-DUAL-HSP-NOGO-OVERREACH-SELF-DUAL-K8", "kept_instead": "NEG-CODE-SELF-DUAL-HSP-NOGO-OVERREACH-SELF-DUAL-K12", "reason": "same misapplied Dinh-Moore-Russell hypothesis"},
+  {"source_record": "NEG-CODE-GOPPA-SCALING-GOPPA-SCALE-M6-T3-N48-3-4", "kept_instead": "NEG-CODE-GOPPA-SCALING-GOPPA-SCALE-M6-T3-N48-0-2", "reason": "same Goppa family, invariants killer subsumed"},
+  {"source_record": "QC-AUTOMORPHISM-EQUIVALENT-QC_INDEX5_THREE_CIRCULANTS_TRIAL_19_PRIOR_0", "kept_instead": "QC-AUTOMORPHISM-EQUIVALENT-QC_INDEX4_TWO_CIRCULANTS_TRIAL_11_PRIOR_0", "reason": "same quasi-cyclic symmetry killer"},
+  {"source_record": "CODE-FRONTIER-TRIAGE-CYCLIC_FAMILY_CYCLIC_N21", "kept_instead": "BCH-CODE-SEARCH-BCH_M4_D3_9", "reason": "same cyclotomic and multiplier closure killer"},
+  {"source_record": "NEG-COSET-FINITE-COMMUTANT-SPLITTING-AS-POLY-TRANSFORM", "kept_instead": "NEG-COSET-TYPICAL-N9-FULL-SEPARATION-NOT-ASYMPTOTIC-ALGORITHM", "reason": "same finite-gap-to-asymptotic phase-estimation killer"}
+ ]
+}
