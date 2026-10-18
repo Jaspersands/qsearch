@@ -30,7 +30,7 @@ EXPECTED = {
 def test_consensus_papers_get_expected_flags(arxiv_id: str) -> None:
     paper = PAPERS[arxiv_id]
     report = cc.check_text(paper["abstract"], title=paper["title"])
-    flags = {flag.name for flag in report.flags}
+    flags = {flag.name for flag in report.flags if not flag.negated}
     required, forbidden = EXPECTED[arxiv_id]
     assert required <= flags, f"missing {required - flags}"
     assert not (forbidden & flags), f"wrongly flagged {forbidden & flags}"
@@ -40,8 +40,9 @@ def test_consensus_papers_get_expected_flags(arxiv_id: str) -> None:
 def test_every_flag_quotes_the_text(arxiv_id: str) -> None:
     paper = PAPERS[arxiv_id]
     text = f"{paper['title']}. {paper['abstract']}"
+    sentences = cc.split_sentences(text)
     for flag in cc.check_text(paper["abstract"], title=paper["title"]).flags:
-        assert flag.quote and flag.quote in text
+        assert flag.quote in sentences, "a quote must be one whole sentence of the input"
 
 
 @pytest.mark.parametrize(
@@ -58,8 +59,49 @@ def test_every_flag_quotes_the_text(arxiv_id: str) -> None:
     ],
 )
 def test_rule_flags_on_single_sentences(sentence: str, flag: str) -> None:
-    flags = {f.name for f in cc.check_text(sentence).flags}
-    assert flag in flags
+    flags = {f.name: f for f in cc.check_text(sentence).flags}
+    assert flag in flags and not flags[flag].negated
+
+
+@pytest.mark.parametrize(
+    ("sentence", "flag"),
+    [
+        ("Our algorithm does not require QRAM or any quantum data structure: the input is a classical list.", "input_loading"),
+        ("This is not an oracle separation.", "oracle_model"),
+        ("We give an oracle-free exponential separation.", "oracle_model"),
+        ("The problem is non oracular.", "oracle_model"),
+        ("No black-box access is assumed.", "oracle_model"),
+        ("We prove the speedup unconditionally, without relying on any conjecture or heuristic assumption.", "heuristic_assumption"),
+        ("Our result is rigorous; we do not rely on numerical simulations or empirical evidence.", "numerical_only"),
+        ("The runtime is independent of the condition number.", "parameter_dependence"),
+        ("Unlike algorithms that only output a quantum state, ours outputs the full classical solution.", "readout"),
+        ("We compare against tailored classical algorithms, not just generic heuristics.", "restricted_baseline"),
+        # The negation carries along a list.
+        ("The runtime is independent of the condition number, sparsity and precision.", "parameter_dependence"),
+        ("Unlike algorithms that only output a quantum state or estimate expectation values, ours outputs the solution.", "readout"),
+    ],
+)
+def test_a_caveat_the_sentence_rules_out_is_marked_negated(sentence: str, flag: str) -> None:
+    flags = {f.name: f for f in cc.check_text(sentence).flags}
+    assert flag in flags and flags[flag].negated
+
+
+def test_negation_does_not_carry_into_a_new_clause() -> None:
+    flag = next(f for f in cc.check_text("We do not use QRAM, and we assume block encodings of the matrix.").flags if f.name == "input_loading")
+    assert not flag.negated and flag.match.lower().startswith("block")
+
+
+def test_a_plain_mention_wins_over_an_earlier_negated_one() -> None:
+    text = "We do not use QRAM in the first stage. The second stage loads the data with QRAM."
+    flag = next(f for f in cc.check_text(text).flags if f.name == "input_loading")
+    assert not flag.negated and flag.quote.startswith("The second stage")
+
+
+def test_render_separates_ruled_out_caveats() -> None:
+    report = cc.check_text("This is not an oracle separation. We assume QRAM to load the data.")
+    text = cc.render(report)
+    flags_part, _, ruled_out = text.partition("## Apparently ruled out")
+    assert "input_loading" in flags_part and "oracle_model" in ruled_out
 
 
 def test_claim_strength_is_extracted() -> None:

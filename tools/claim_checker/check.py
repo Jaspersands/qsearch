@@ -7,11 +7,13 @@
 Flags the caveats that most often turn an advantage claim into a negative result:
 input loading, readout, oracle-only separations, heuristic assumptions, finite or
 numerical evidence, restricted classical baselines and parameter dependence. Every flag
-quotes the sentence that raised it. The nearest Q-Search negatives and their lessons
-come from the corpus index.
+quotes the sentence that raised it. A caveat that the sentence itself rules out ("does not
+require QRAM", "oracle-free", "independent of the condition number") is listed separately
+as apparently ruled out, still with its quote. The nearest Q-Search negatives and their
+lessons come from the corpus index.
 
-This reads the abstract only. A missing flag means the abstract does not raise the
-issue, not that the paper is clear of it.
+This reads the abstract only, in English. A missing flag means the abstract does not raise
+the issue, not that the paper is clear of it.
 """
 
 from __future__ import annotations
@@ -129,6 +131,7 @@ class Flag:
     question: str
     quote: str
     match: str
+    negated: bool = False
 
 
 @dataclass
@@ -161,23 +164,63 @@ def split_sentences(text: str) -> list[str]:
     return sentences
 
 
+# A negation within the six words before a match, in the same clause (six, so that "does not require
+# QRAM or any quantum data structure" covers both items), or "-free" right after it.
+_NEGATION_WORDS = frozenset("not no without never nor neither unlike non".split())
+_NEGATION_PHRASES = re.compile(r"\b(independent of|free of|instead of|rather than)\b|n't\b", re.I)
+
+
+def is_negated(sentence: str, match: re.Match) -> bool:
+    if re.match(r"\s*-?\s*free\b", sentence[match.end():], re.I):
+        return True
+    clause = re.split(r"[,;:]", sentence[: match.start()])[-1]
+    words = clause.split()[-6:]
+    if any(word.strip("(\"'").lower() in _NEGATION_WORDS for word in words):
+        return True
+    return bool(_NEGATION_PHRASES.search(" ".join(clause.split()[-7:])))
+
+
+def _continues_list(gap: str) -> bool:
+    """True when the text between two matches only extends a list: ", ", " and ", " or estimate "."""
+    if re.search(r"[;:.]", gap):
+        return False
+    words = re.findall(r"[\w-]+", gap)
+    return len(words) <= 2 and (not words or words[0].lower() in {"and", "or", "nor"})
+
+
+def _first_flag(name: str, spec: FlagSpec, sentences: list[str], patterns: tuple[str, ...]) -> Flag | None:
+    """The first plain mention; failing that, the first negated one. Matches are read in sentence order,
+    and a negation carries along a list ("independent of the condition number, sparsity and precision")."""
+    fallback = None
+    for sentence in sentences:
+        matches = sorted((m for pattern in patterns for m in re.finditer(pattern, sentence, re.I)), key=lambda m: m.start())
+        previous = None
+        for match in matches:
+            if previous is not None and match.start() < previous[0].end():
+                continue  # overlapping alternatives
+            negated = is_negated(sentence, match) or bool(
+                previous and previous[1] and _continues_list(sentence[previous[0].end():match.start()]))
+            previous = (match, negated)
+            flag = Flag(name, spec.title, spec.mode, spec.question, sentence, match.group(0), negated)
+            if not negated:
+                return flag
+            fallback = fallback or flag
+    return fallback
+
+
 def check_text(abstract: str, title: str = "") -> Report:
     text = f"{title}. {abstract}" if title else abstract
     sentences = split_sentences(text)
     flags: list[Flag] = []
     for name, spec in FLAGS.items():
-        for sentence in sentences:
-            match = next((m for p in spec.patterns for m in [re.search(p, sentence, re.I)] if m), None)
-            if match:
-                flags.append(Flag(name, spec.title, spec.mode, spec.question, sentence, match.group(0)))
-                break
-    if not any(f.name == "input_loading" for f in flags) and re.search(DATA_WORDS, text, re.I):
-        for sentence in sentences:
-            match = re.search(SUBLINEAR, sentence, re.I)
-            if match:
-                spec = FLAGS["input_loading"]
-                flags.append(Flag("input_loading", spec.title, spec.mode, spec.question, sentence, match.group(0)))
-                break
+        flag = _first_flag(name, spec, sentences, spec.patterns)
+        if flag:
+            flags.append(flag)
+    loading = next((f for f in flags if f.name == "input_loading"), None)
+    if (loading is None or loading.negated) and re.search(DATA_WORDS, text, re.I):
+        sublinear = _first_flag("input_loading", FLAGS["input_loading"], sentences, (SUBLINEAR,))
+        if sublinear and (loading is None or not sublinear.negated):
+            flags = [f for f in flags if f.name != "input_loading"] + [sublinear]
     claim, claim_quote = "none-stated", ""
     for label, pattern in CLAIMS:
         hit = next((s for s in sentences if re.search(pattern, s, re.I)), None)
@@ -222,10 +265,17 @@ def render(report: Report, source: str = "") -> str:
         "## Flags",
         "",
     ]
-    if not report.flags:
+    raised = [flag for flag in report.flags if not flag.negated]
+    ruled_out = [flag for flag in report.flags if flag.negated]
+    if not raised:
         lines.append("None raised by the abstract.")
-    for flag in report.flags:
+    for flag in raised:
         lines.append(f"- **{flag.title}** (`{flag.name}`, failure mode `{flag.mode}`): \"{flag.quote}\"")
+    if ruled_out:
+        lines += ["", "## Apparently ruled out", "",
+                  "The abstract mentions these caveats with a negation. Check the quote: the paper may still depend on them.", ""]
+        for flag in ruled_out:
+            lines.append(f"- **{flag.title}** (`{flag.name}`): \"{flag.quote}\"")
     lines += ["", "## Questions to ask", ""]
     for flag in report.flags:
         lines.append(f"- {flag.question}")

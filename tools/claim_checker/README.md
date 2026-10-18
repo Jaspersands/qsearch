@@ -22,8 +22,19 @@ python tools/claim_checker/check.py --text "..." --no-corpus
 | `restricted_baseline` | Compared only with generic heuristics, or concedes a tailored classical solver wins | classical competitor |
 | `parameter_dependence` | Condition number, sparsity, rank, gap or precision | resource blow-up |
 
-The checker reads the abstract only. A missing flag means the abstract does not raise
-the issue, not that the paper is clear of it.
+The checker reads the abstract only, and only in English. A missing flag means the
+abstract does not raise the issue, not that the paper is clear of it. It assumes the text
+makes a quantum claim: a classical paper that mentions a data structure or precision still
+gets flags.
+
+**Ruled-out caveats.** A match counts as ruled out when a negation comes within six words
+before it in the same clause ("does not require QRAM", "not an oracle separation",
+"without relying on any conjecture", "independent of the condition number"), or "-free"
+follows it ("oracle-free"). The negation carries along a list ("independent of the
+condition number, sparsity and precision"). Ruled-out caveats are listed in their own
+section with their quote, not dropped: "Without QRAM the speedup disappears" also counts
+as ruled out, so read the quote. A plain mention elsewhere in the abstract still raises
+the flag.
 
 ## Checks
 
@@ -36,6 +47,8 @@ the literature. The fixtures are recorded arXiv abstracts, so the tests run offl
 | Development | Shor, Regev factoring, DQI, HHL, quantum recommendation systems, glued-trees walk | 6 of 6 |
 | Held out until the rules were frozen | QPCA, Grover, shallow circuits (Bravyi-Gosset-König), Yamakawa-Zhandry | 3 of 4 |
 
-The held-out miss was "a non-oracular version" firing the oracle flag. The negation is
-now handled and the paper is a regression test. A planned LLM extraction pass that
-quotes the full paper was not built. The rule layer plus the corpus lookup is the tool.
+The held-out miss was "a non-oracular version" firing the oracle flag. The checker now
+recognises that form, and the paper is a regression test. Twelve sentences that rule a
+caveat out, and one that negates a caveat in an earlier clause only, are regression
+tests too. A planned LLM extraction pass that quotes the full paper was not built. The
+rule layer plus the corpus lookup is the tool.
