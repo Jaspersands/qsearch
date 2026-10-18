@@ -2,7 +2,9 @@
 
 The ledger is shared by several writers (timed.py appends, ledger.py and tokens.py rewrite
 their own kinds), so every write holds an exclusive lock on the ledger file and re-checks
-that the file it locked is still the one at the path.
+that the file it locked is still the one at the path. A rebuild that would drop a large share
+of the existing lines of a kind is refused (see replace_kinds): it usually means a degraded
+environment (shallow clone, missing logs), not less history.
 """
 
 from __future__ import annotations
@@ -15,11 +17,19 @@ import subprocess
 import time
 from contextlib import contextmanager
 from pathlib import Path
-from typing import Any, Iterable, Iterator
+from typing import Any, Callable, Iterable, Iterator
 
 LEDGER = Path("research/audits/spend_ledger.jsonl")
 REGISTRY_DIR = Path("research/registry")
 NEGATIVES = "negative_results.json"
+# A rebuild may drop at most this share of the existing lines of a kind without --force.
+MAX_DROP_SHARE = 0.2
+# Kinds with fewer existing lines than this are not checked (registry_uncommitted is 0 or 1 line).
+DROP_CHECK_MIN_LINES = 5
+
+
+class RebuildRefused(RuntimeError):
+    """A rebuild would drop too many existing ledger lines; nothing was written."""
 
 
 def read_json(path: Path, retries: int = 3, delay_seconds: float = 0.025) -> Any:
@@ -48,6 +58,24 @@ def git(root: Path, *args: str) -> str | None:
         return subprocess.run(["git", "-C", str(root), *args], capture_output=True, text=True, check=True).stdout
     except (subprocess.CalledProcessError, FileNotFoundError):
         return None
+
+
+def main_checkout(root: Path) -> Path | None:
+    """The main checkout that `root` belongs to (a worktree shares it); None outside git."""
+    common_dir = git(root, "rev-parse", "--path-format=absolute", "--git-common-dir")
+    if not common_dir or not common_dir.strip():
+        return None
+    path = Path(common_dir.strip())
+    return path.parent if path.name == ".git" else None
+
+
+def repo_roots(root: Path) -> list[Path]:
+    """`root` and, when it is a worktree, its main checkout: the directories whose files are repo files."""
+    roots = [root.resolve()]
+    main = main_checkout(root)
+    if main is not None and main.resolve() not in roots:
+        roots.append(main.resolve())
+    return roots
 
 
 def to_utc_iso(value: float | str | dt.datetime) -> str:
@@ -126,15 +154,52 @@ def append_event(path: Path, event: dict) -> None:
         os.fsync(handle.fileno())
 
 
-def replace_kinds(path: Path, kinds: Iterable[str], events: Iterable[dict]) -> int:
+def _drop_problems(old: list[dict], new: list[dict], kinds: set[str], max_drop_share: float) -> list[str]:
+    before = {kind: 0 for kind in kinds}
+    after = dict(before)
+    for row in old:
+        if row.get("kind") in kinds:
+            before[row["kind"]] += 1
+    for row in new:
+        if row.get("kind") in kinds:
+            after[row["kind"]] += 1
+    return [
+        f"{kind}: {before[kind]:,} lines would become {after[kind]:,}"
+        for kind in sorted(kinds)
+        if before[kind] >= DROP_CHECK_MIN_LINES and before[kind] - after[kind] > max_drop_share * before[kind]
+    ]
+
+
+def replace_kinds(
+    path: Path,
+    kinds: Iterable[str],
+    events: Iterable[dict],
+    max_drop_share: float | None = None,
+    transform: Callable[[dict], dict] | None = None,
+) -> int:
     """Drop every line whose kind is in `kinds`, add `events`, keep everything else.
 
-    Returns the number of kept lines. Writes a temp file and renames it while holding the lock.
+    With `max_drop_share`, raise RebuildRefused (and write nothing) when a kind in `kinds` with
+    at least DROP_CHECK_MIN_LINES existing lines would lose more than that share of them.
+    `transform` is applied to every kept line. Returns the number of kept lines. Writes a temp
+    file and renames it while holding the lock.
     """
     kinds = set(kinds)
+    events = list(events)
     with _locked(path) as handle:
         handle.seek(0)
-        kept = [row for row in _parse_lines(handle.read()) if row.get("kind") not in kinds]
+        existing = _parse_lines(handle.read())
+        if max_drop_share is not None:
+            problems = _drop_problems(existing, events, kinds, max_drop_share)
+            if problems:
+                raise RebuildRefused(
+                    f"the rebuild would drop more than {max_drop_share:.0%} of the existing lines of a kind ("
+                    + "; ".join(problems) + "). That usually means missing data (a shallow clone, missing or "
+                    "pruned logs, a missing module), not less history."
+                )
+        kept = [row for row in existing if row.get("kind") not in kinds]
+        if transform is not None:
+            kept = [transform(row) for row in kept]
         rows = sorted([*kept, *events], key=_sort_key)
         tmp = path.with_name(f".{path.name}.{os.getpid()}.tmp")
         tmp.write_text("".join(_dump(row) + "\n" for row in rows), encoding="utf-8")

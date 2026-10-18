@@ -9,9 +9,11 @@ summary's shape is fixed because the cockpit reads it:
     {"generated_on": "YYYY-MM-DD",
      "days": [{"date", "runs", "wall_seconds", "cpu_seconds", "negatives_added", "tokens"}]}
 
-Days are UTC calendar days. wall_seconds and cpu_seconds come from timed runs only: a day
-without one has wall_seconds 0.0 and cpu_seconds null. tokens is null on days with no
-token record.
+Days are UTC calendar days, and generated_on is the UTC date too. runs counts experiment
+runs (the run history); commands timed with timed.py are counted apart, as timed commands,
+because any command can be timed. wall_seconds and cpu_seconds come from timed commands
+only: a day without one has wall_seconds 0.0 and cpu_seconds null. tokens is null on days
+with no token record.
 """
 
 from __future__ import annotations
@@ -33,30 +35,20 @@ SUMMARY_FIELDS = ("date", "runs", "wall_seconds", "cpu_seconds", "negatives_adde
 CLUSTER_SHARE = 0.5
 
 
-def _matched_timed_runs(events: list[dict]) -> set[int]:
-    """Timed runs whose window contains an experiment_run: the same run, counted once."""
-    runs = sorted(e["timestamp"] for e in events if e.get("kind") == "experiment_run")
-    matched = set()
-    for index, event in enumerate(events):
-        if event.get("kind") != "timed_run":
-            continue
-        start, end = event["timestamp"], event.get("ended_at") or event["timestamp"]
-        if any(start <= stamp <= end for stamp in runs):
-            matched.add(index)
-    return matched
-
-
 def _uncached(event: dict) -> int:
     return int(event.get("input_tokens") or 0) - int(event.get("cached_input_tokens") or 0) + int(event.get("output_tokens") or 0)
 
 
+def utc_today() -> str:
+    return dt.datetime.now(dt.timezone.utc).date().isoformat()
+
+
 def daily_rows(events: list[dict]) -> list[dict]:
-    matched = _matched_timed_runs(events)
     days: dict[str, dict] = defaultdict(lambda: {
-        "experiment_runs": 0, "timed_runs": 0, "matched": 0, "wall": 0.0, "cpu": None,
+        "experiment_runs": 0, "timed_runs": 0, "wall": 0.0, "cpu": None,
         "negatives": 0, "theorems": 0, "tokens": None, "uncached": None, "written": 0,
     })
-    for index, event in enumerate(events):
+    for event in events:
         kind = event.get("kind")
         if kind not in ACTIVITY_KINDS:
             continue
@@ -66,7 +58,6 @@ def daily_rows(events: list[dict]) -> list[dict]:
             day["written"] += event.get("negatives_written") or 0
         elif kind == "timed_run":
             day["timed_runs"] += 1
-            day["matched"] += index in matched
             day["wall"] += float(event.get("wall_seconds") or 0.0)
             if event.get("cpu_seconds") is not None:
                 day["cpu"] = (day["cpu"] or 0.0) + float(event["cpu_seconds"])
@@ -82,7 +73,7 @@ def daily_rows(events: list[dict]) -> list[dict]:
         day = days[date]
         rows.append({
             "date": date,
-            "runs": day["experiment_runs"] + day["timed_runs"] - day["matched"],
+            "runs": day["experiment_runs"],
             "experiment_runs": day["experiment_runs"],
             "timed_runs": day["timed_runs"],
             "wall_seconds": round(day["wall"], 3),
@@ -105,24 +96,35 @@ def _ratio(part: float, whole: float) -> float | None:
 
 
 def costs(rows: list[dict], events: list[dict]) -> dict:
+    """Totals and ratios for the headline.
+
+    tokens_per_negative divides every Codex token in the ledger by every retained negative dated
+    from the first to the last day with a token record, days without a token record included.
+    timed_registry_growth is the raw change in the negatives registry's record count while timed
+    commands ran, from any writer; it is not a count of retained negatives.
+    """
     token_rows = [row for row in rows if row["tokens"] is not None]
-    token_negatives = sum(row["negatives_added"] for row in token_rows)
+    first_token_day = token_rows[0]["date"] if token_rows else None
+    last_token_day = token_rows[-1]["date"] if token_rows else None
+    token_negatives = sum(row["negatives_added"] for row in rows
+                          if token_rows and first_token_day <= row["date"] <= last_token_day)
     tokens = sum(row["tokens"] for row in token_rows)
     uncached = sum(row["tokens_uncached"] or 0 for row in token_rows)
     timed = [event for event in events if event.get("kind") == "timed_run"]
-    timed_negatives = sum(event.get("negatives_added") or 0 for event in timed)
+    growth = sum(event.get("negatives_added") or 0 for event in timed)
     wall = sum(float(event.get("wall_seconds") or 0.0) for event in timed)
     cpu = sum(float(event.get("cpu_seconds") or 0.0) for event in timed)
     runs = sum(row["runs"] for row in rows)
     negatives = sum(row["negatives_added"] for row in rows)
     return {
         "runs": runs,
+        "experiment_runs": runs,
         "negatives": negatives,
         "runs_per_negative": _ratio(runs, negatives),
         "negatives_written_by_runs": sum(row["negatives_written"] for row in rows),
         "token_days": len(token_rows),
-        "first_token_day": token_rows[0]["date"] if token_rows else None,
-        "last_token_day": token_rows[-1]["date"] if token_rows else None,
+        "first_token_day": first_token_day,
+        "last_token_day": last_token_day,
         "tokens": tokens,
         "tokens_uncached": uncached,
         "token_negatives": token_negatives,
@@ -131,9 +133,9 @@ def costs(rows: list[dict], events: list[dict]) -> dict:
         "timed_runs": len(timed),
         "timed_wall_seconds": wall,
         "timed_cpu_seconds": cpu,
-        "timed_negatives": timed_negatives,
-        "timed_wall_per_negative": _ratio(wall, timed_negatives),
-        "timed_cpu_per_negative": _ratio(cpu, timed_negatives),
+        "timed_registry_growth": growth,
+        "timed_wall_per_registry_record": _ratio(wall, growth),
+        "timed_cpu_per_registry_record": _ratio(cpu, growth),
     }
 
 
@@ -177,14 +179,19 @@ def render(rows: list[dict], events: list[dict], generated_on: str) -> str:
     busiest = max(active, key=lambda row: row["negatives_added"]) if active else None
     span = f"{rows[0]['date']} to {rows[-1]['date']}" if rows else "none"
     timed_note = (
-        "n/a: no timed run has added a negative yet"
-        if cost["timed_wall_per_negative"] is None
-        else f"{_num(cost['timed_wall_per_negative'], 1)} s wall, {_num(cost['timed_cpu_per_negative'], 1)} s CPU"
+        "n/a: the negatives registry did not grow during any timed command"
+        if cost["timed_wall_per_registry_record"] is None
+        else f"{_num(cost['timed_wall_per_registry_record'], 1)} s wall, "
+             f"{_num(cost['timed_cpu_per_registry_record'], 1)} s CPU per record"
     )
+    window = (f"all {cost['token_negatives']:,} retained negatives dated {cost['first_token_day']} to "
+              f"{cost['last_token_day']}" if cost["token_days"] else "no token records")
+    if cost["token_days"] and cost["token_negatives"] != cost["negatives"]:
+        window = window.replace("all ", "", 1)
     lines = [
         "# Spend Report",
         "",
-        f"Generated {generated_on} by `tools/spend/report.py` from `{LEDGER.as_posix()}`; do not edit by hand.",
+        f"Generated {generated_on} (UTC) by `tools/spend/report.py` from `{LEDGER.as_posix()}`; do not edit by hand.",
         "Days are UTC calendar days. See `tools/spend/README.md` for what each source can and cannot tell you.",
         "",
         "## Headline",
@@ -192,24 +199,25 @@ def render(rows: list[dict], events: list[dict], generated_on: str) -> str:
         "| Measure | Value |",
         "|---|---|",
         f"| Days with recorded activity | {len(rows)} ({span}) |",
-        f"| Runs | {cost['runs']:,} |",
+        f"| Experiment runs | {cost['experiment_runs']:,} |",
+        f"| Timed commands | {cost['timed_runs']:,} ({_num(cost['timed_wall_seconds'], 1)} s wall, "
+        f"{_num(cost['timed_cpu_seconds'], 1)} s CPU) |",
         f"| Retained negatives added | {cost['negatives']:,} on {len(active)} days"
         + (f" (most: {busiest['negatives_added']:,} on {busiest['date']})" if busiest else "") + " |",
-        f"| Runs per retained negative | {_num(cost['runs_per_negative'], 2)} |",
+        f"| Experiment runs per retained negative | {_num(cost['runs_per_negative'], 2)} |",
         f"| Codex tokens | {cost['tokens']:,} on {cost['token_days']} days"
         + (f" ({cost['first_token_day']} to {cost['last_token_day']})" if cost["token_days"] else "") + " |",
-        f"| Codex tokens per retained negative | {_num(cost['tokens_per_negative'])} "
-        f"({cost['token_negatives']:,} negatives on days with token records) |",
+        f"| Codex tokens per retained negative | {_num(cost['tokens_per_negative'])} (Codex only; {window}) |",
         f"| Uncached Codex tokens per retained negative | {_num(cost['uncached_tokens_per_negative'])} |",
-        f"| Timed runs | {cost['timed_runs']} ({_num(cost['timed_wall_seconds'], 1)} s wall, "
-        f"{_num(cost['timed_cpu_seconds'], 1)} s CPU) |",
-        f"| Measured time per retained negative | {timed_note} |",
+        f"| Timed seconds per negatives-registry record added during timed commands | {timed_note} |",
         "",
         "## What the numbers mean",
         "",
-        "- **Runs** are the experiment runs in `research/experiment_run_history.json`, plus timed runs that did not",
-        "  log an experiment run inside their own time window. The history has one timestamp per run and no",
-        "  durations.",
+        "- **Experiment runs** are the runs in `research/experiment_run_history.json`. The history has one",
+        "  timestamp per run and no durations.",
+        "- **Timed commands** are commands run through `tools/spend/timed.py`. Any command can be timed (for",
+        "  example `qsearch.py validate`), so they are counted apart from experiment runs; an experiment run",
+        "  made through the wrapper is in both counts.",
         "- **Retained negatives** are records still in `research/registry/negative_results.json`, dated by the",
         "  first commit that contains them. That is the commit day, not the day the work was done. Ids not yet",
         "  committed are dated by the registry file's mtime.",
@@ -217,16 +225,24 @@ def render(rows: list[dict], events: list[dict], generated_on: str) -> str:
         "  are partly history. " + " ".join(note for note in backfills(events) if note),
         f"- The run history's own `negative_results_written` metric sums to {cost['negatives_written_by_runs']:,}."
         " Only some runs set it, so it undercounts.",
-        "- **Wall and CPU seconds** come only from runs made through `tools/spend/timed.py`. Days before the",
+        "- **Wall and CPU seconds** come only from commands run through `tools/spend/timed.py`. Days before the",
         "  wrapper was used show 0.0 wall seconds and no CPU time: unmeasured, not free.",
+        "- **Timed seconds per negatives-registry record** divides timed seconds by the raw change in the",
+        "  record count of `research/registry/negative_results.json` while timed commands ran. Any writer counts,",
+        "  other agents included, and a record added then can be removed later, so it is not a cost per",
+        "  retained negative.",
         "- **Codex tokens** come from Codex session logs whose working directory is this repo, summed per day.",
-        "  The total includes cached input tokens, which dominate; the uncached figure is input minus cached",
-        "  input plus output. The Gemini agents are not counted because their logs hold no labelled token",
-        "  counts, so tokens per negative is a lower bound for the whole loop.",
+        "  A forked session's copy of its parent's history is counted once, under the parent. The total",
+        "  includes cached input tokens, which dominate; the uncached figure is input minus cached input plus",
+        "  output.",
+        "- **Codex tokens per retained negative** divides every Codex token in the ledger by every retained",
+        "  negative dated from the first to the last day with a Codex token record, days without a token record",
+        "  included. It is Codex only: the Gemini agents' tokens are missing, because their logs hold no labelled",
+        "  token counts, and nothing here measures how large the missing part is.",
         "",
         "## Per day",
         "",
-        "| Date | Runs | Timed runs | Retained negatives | Theorem files added | Wall s | CPU s | Codex tokens |",
+        "| Date | Experiment runs | Timed commands | Retained negatives | Theorem files added | Wall s | CPU s | Codex tokens |",
         "|---|---|---|---|---|---|---|---|",
     ]
     for row in rows:
@@ -261,7 +277,7 @@ def main(argv: list[str] | None = None) -> int:
 
     events = read_ledger(args.ledger or args.root / LEDGER)
     rows = daily_rows(events)
-    today = dt.date.today().isoformat()
+    today = utc_today()
     audits = args.root / "research" / "audits"
     audits.mkdir(parents=True, exist_ok=True)
     (audits / "spend_summary.json").write_text(json.dumps(summarize(rows, today), indent=1) + "\n", encoding="utf-8")

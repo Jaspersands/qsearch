@@ -1,9 +1,13 @@
 from __future__ import annotations
 
+import datetime as dt
 import json
 import os
+import re
+import signal
 import subprocess
 import sys
+import time
 from pathlib import Path
 
 import pytest
@@ -191,7 +195,7 @@ def test_ledger_main_rebuilds_derived_kinds_and_keeps_timed_runs(fake_repo: Path
     common.append_event(out, {"kind": "experiment_run", "timestamp": "2026-01-01T00:00:00+00:00", "run_id": "STALE"})
     common.append_event(out, {"kind": "token_day", "timestamp": "2026-07-07T00:00:00+00:00", "total_tokens": 5})
 
-    assert ledger.main(["--root", str(fake_repo)]) == 0
+    assert ledger.main(["--root", str(fake_repo), "--force"]) == 0  # --force: the fake repo has no git history
     rows = _lines(out)
     kinds = [row["kind"] for row in rows]
     assert kinds.count("timed_run") == 1
@@ -206,6 +210,58 @@ def test_ledger_main_rebuilds_derived_kinds_and_keeps_timed_runs(fake_repo: Path
     assert rows == sorted(rows, key=lambda row: row["timestamp"])
 
 
+def _runs(count: int) -> list[dict]:
+    return [{"kind": "experiment_run", "timestamp": f"2026-08-{day:02d}T00:00:00+00:00", "run_id": f"R{day}"}
+            for day in range(1, count + 1)]
+
+
+def test_replace_kinds_refuses_to_drop_a_large_share_of_a_kind(tmp_path: Path) -> None:
+    path = tmp_path / "ledger.jsonl"
+    common.replace_kinds(path, set(), _runs(10))
+    before = path.read_text(encoding="utf-8")
+    with pytest.raises(common.RebuildRefused, match="experiment_run"):
+        common.replace_kinds(path, {"experiment_run"}, _runs(7), max_drop_share=0.2)  # 30% fewer lines
+    assert path.read_text(encoding="utf-8") == before
+    common.replace_kinds(path, {"experiment_run"}, _runs(8), max_drop_share=0.2)  # 20%: allowed
+    assert len(_lines(path)) == 8
+    common.replace_kinds(path, {"experiment_run"}, _runs(1))  # no limit given: no check
+    assert len(_lines(path)) == 1
+
+
+def test_ledger_main_refuses_without_git_history_unless_forced(fake_repo: Path, capsys) -> None:
+    out = fake_repo / "research" / "audits" / "spend_ledger.jsonl"
+    common.replace_kinds(out, set(), [{"kind": "theorem_commit", "timestamp": "2026-08-01T00:00:00+00:00", "sha": "a"}])
+    before = out.read_text(encoding="utf-8")
+    assert ledger.main(["--root", str(fake_repo)]) != 0  # the fake repo is not a git checkout
+    err = capsys.readouterr().err
+    assert "git history" in err and "--force" in err
+    assert out.read_text(encoding="utf-8") == before
+    assert ledger.main(["--root", str(fake_repo), "--force"]) == 0
+
+
+def test_ledger_history_problem_flags_shallow_and_missing_history(fake_repo: Path, monkeypatch) -> None:
+    monkeypatch.setattr(ledger, "git", lambda root, *args: "true\n")
+    assert "shallow" in ledger.history_problem(fake_repo)
+    monkeypatch.setattr(ledger, "git", lambda root, *args: "false\n")
+    assert ledger.history_problem(fake_repo) is None
+    monkeypatch.setattr(ledger, "git", lambda root, *args: None)
+    assert "git history" in ledger.history_problem(fake_repo)
+
+
+def test_ledger_main_refuses_a_rebuild_that_drops_most_lines_of_a_kind(fake_repo: Path, monkeypatch, capsys) -> None:
+    monkeypatch.setattr(ledger, "history_problem", lambda root: None)
+    out = fake_repo / "research" / "audits" / "spend_ledger.jsonl"
+    common.replace_kinds(out, set(), _runs(10))
+    before = out.read_text(encoding="utf-8")
+    (fake_repo / "research" / "experiment_run_history.json").write_text(json.dumps(HISTORY), encoding="utf-8")  # 2 runs
+    assert ledger.main(["--root", str(fake_repo)]) != 0
+    err = capsys.readouterr().err
+    assert "experiment_run" in err and "--force" in err
+    assert out.read_text(encoding="utf-8") == before
+    assert ledger.main(["--root", str(fake_repo), "--force"]) == 0
+    assert [row["kind"] for row in _lines(out)].count("experiment_run") == 2
+
+
 # --- timed: the opt-in wrapper ---------------------------------------------------------------
 
 
@@ -217,11 +273,12 @@ def test_timed_run_records_fields_and_passes_stdout_through(fake_repo: Path, tmp
     assert _lines(out) == [event]
     assert event["kind"] == "timed_run"
     assert event["exit_code"] == 0
-    assert event["command"] == [sys.executable, "-c", "print(1)"]
+    assert event["command"] == [Path(sys.executable).name, "-c", "print(1)"]  # the interpreter by name only
     assert isinstance(event["wall_seconds"], float) and event["wall_seconds"] > 0
     assert isinstance(event["cpu_seconds"], float) and event["cpu_seconds"] >= 0
     assert event["cpu_seconds"] == pytest.approx(event["cpu_user_seconds"] + event["cpu_system_seconds"], abs=2e-3)
-    assert isinstance(event["peak_rss_bytes"], int) and event["peak_rss_bytes"] > 1_000_000
+    # `python -c 'print(1)'` peaks at a few tens of MB at most.
+    assert isinstance(event["peak_rss_bytes"], int) and 1_000_000 < event["peak_rss_bytes"] < 200_000_000
     assert event["timestamp"] <= event["ended_at"]
     assert event["registry_before"] == event["registry_after"] == common.registry_counts(fake_repo)
     assert event["registry_delta"] == {}
@@ -253,9 +310,73 @@ def test_timed_records_the_registry_delta(fake_repo: Path, tmp_path: Path) -> No
     assert event["registry_delta"] == {"negative_results.json": 1}
     assert event["registry_after"]["negative_results.json"] == 3
     assert event["label"] == "codex"
-    # Paths inside the repo are recorded relative to it, so the ledger carries no local paths.
+    # A path inside the repo is recorded relative to it, and the interpreter by its name only.
     assert event["command"][-1] == "research/registry/negative_results.json"
-    assert event["command"][0] == sys.executable
+    assert event["command"][0] == Path(sys.executable).name
+    assert str(fake_repo) not in json.dumps(event["command"])
+
+
+def test_sanitized_command_holds_no_secrets_or_local_paths(tmp_path: Path) -> None:
+    main = tmp_path / "main checkout"  # a space in the path, as in the real checkout
+    worktree = main / ".claude" / "worktrees" / "wt"
+    worktree.mkdir(parents=True)
+    home = str(Path.home())
+    command = [
+        "env", "QS_API_TOKEN=tok-123", "/opt/anaconda3/bin/python3", "-B", str(main / "qsearch.py"),
+        "--root", str(worktree), "validate", "--api-key=key-456", "--password", "pw-789",
+        "--out", str(worktree / "research" / "x.json"), "--cache", "~/cache/dir", "/var/data/other.json",
+        "-c", f"open('{home}/notes.txt'); open('{main}/research/y.json')", "--limit=5", "--auth-token", "tok-abc",
+        "--sort-key", "--verbose", "--config=/etc/qsearch.toml", "https://example.org/a/b",
+    ]
+    recorded = timed.sanitize_command(command, [main, worktree])
+    assert recorded == [
+        "env", "QS_API_TOKEN=<redacted>", "python3", "-B", "qsearch.py",
+        "--root", ".", "validate", "--api-key=<redacted>", "--password", "<redacted>",
+        "--out", "research/x.json", "--cache", "<path>", "<path>",
+        "-c", "open('<path>'); open('research/y.json')", "--limit=5", "--auth-token", "<redacted>",
+        "--sort-key", "--verbose", "--config=<path>", "https://example.org/a/b",
+    ]
+    dumped = json.dumps(recorded)
+    for leak in ("tok-123", "key-456", "pw-789", "tok-abc", home, str(tmp_path), "/opt/", "/var/", "/etc/"):
+        assert leak not in dumped
+    assert timed.sanitize_command(recorded, [main, worktree]) == recorded  # idempotent
+
+
+def test_repo_roots_include_the_main_checkout_of_a_worktree(tmp_path: Path, monkeypatch) -> None:
+    main = tmp_path / "main"
+    worktree = main / ".claude" / "worktrees" / "wt"
+    worktree.mkdir(parents=True)
+    monkeypatch.setattr(common, "git", lambda root, *args: f"{main / '.git'}\n" if "--git-common-dir" in args else None)
+    assert common.repo_roots(worktree) == [worktree.resolve(), main.resolve()]
+    monkeypatch.setattr(common, "git", lambda root, *args: None)
+    assert common.repo_roots(worktree) == [worktree.resolve()]
+
+
+def test_timed_run_records_the_sanitized_command(fake_repo: Path, tmp_path: Path) -> None:
+    out = tmp_path / "ledger.jsonl"
+    command = ["env", "QS_API_TOKEN=tok-123", sys.executable, "-c", "pass", "--token", "tok-456", str(tmp_path / "x")]
+    code, event = timed.run_timed(command, root=fake_repo, ledger=out)
+    assert code == 0
+    assert event["command"] == ["env", "QS_API_TOKEN=<redacted>", Path(sys.executable).name, "-c", "pass",
+                                "--token", "<redacted>", "<path>"]
+    assert event["subcommand"] is None
+    text = out.read_text(encoding="utf-8")
+    for leak in ("tok-123", "tok-456", str(tmp_path), sys.executable):
+        assert leak not in text
+
+
+def test_ledger_rebuild_sanitizes_kept_timed_run_lines(fake_repo: Path) -> None:
+    out = fake_repo / "research" / "audits" / "spend_ledger.jsonl"
+    raw = {
+        "kind": "timed_run", "timestamp": "2026-10-18T21:26:28+00:00", "ended_at": "2026-10-18T21:26:34+00:00",
+        "command": ["/opt/anaconda3/bin/python3", "-B", str(fake_repo / "qsearch.py"), "validate", "--api-key=s3cret"],
+        "subcommand": "validate", "label": "claude-real-run", "wall_seconds": 6.321, "cpu_seconds": 6.788,
+        "exit_code": 0, "source": "tools/spend/timed.py",
+    }
+    common.append_event(out, raw)
+    assert ledger.main(["--root", str(fake_repo), "--force"]) == 0
+    (row,) = [row for row in _lines(out) if row["kind"] == "timed_run"]
+    assert row == {**raw, "command": ["python3", "-B", "qsearch.py", "validate", "--api-key=<redacted>"]}
 
 
 def test_timed_cli_subprocess_passes_exit_code_and_output(fake_repo: Path, tmp_path: Path) -> None:
@@ -292,12 +413,69 @@ def test_timed_without_a_command_is_a_usage_error(fake_repo: Path, tmp_path: Pat
         (["python", "qsearch.py", "validate"], "validate"),
         (["python", "qsearch.py", "--root", "/x", "list", "--kind", "negative"], "list"),
         (["/opt/anaconda3/bin/python3", "-B", "/abs/qsearch.py", "dcp-samples"], "dcp-samples"),
+        (["python", "qsearch.py", "--root=/x", "validate"], "validate"),
         (["python", "qsearch.py", "--help"], None),
         (["python", "-c", "print(1)"], None),
+        # Never a path, a secret or anything else that is not a subcommand name.
+        (["python", "qsearch.py", "/Users/someone/private/file.json"], None),
+        (["python", "qsearch.py", "~/private"], None),
+        (["python", "qsearch.py", "--token", "tok-123", "validate"], None),
+        (["python", "qsearch.py", "QS_API_TOKEN=tok-123"], None),
+        (["python", "tool.py", "validate"], None),
     ],
 )
 def test_subcommand_of(command: list[str], expected: str | None) -> None:
     assert timed.subcommand_of(command) == expected
+
+
+def test_timed_exec_error_exits_126_and_is_recorded(fake_repo: Path, tmp_path: Path, capfd) -> None:
+    out = tmp_path / "ledger.jsonl"
+    program = tmp_path / "not_a_program"
+    program.write_text("plain text, no shebang\n", encoding="utf-8")
+    program.chmod(0o755)  # executable, but exec fails with ENOEXEC
+    code = timed.main(["--root", str(fake_repo), "--ledger", str(out), "--", str(program)])
+    assert code == 126
+    assert "not_a_program" in capfd.readouterr().err
+    (event,) = _lines(out)
+    assert event["exit_code"] == 126
+    assert event["command"] == ["not_a_program"]
+    assert event["peak_rss_bytes"] is None and event["cpu_seconds"] == 0.0  # nothing ran
+
+
+def test_timed_forwards_sigint_sent_to_the_wrapper_only(fake_repo: Path, tmp_path: Path) -> None:
+    out = tmp_path / "ledger.jsonl"
+    marker = tmp_path / "started"
+    child = f"import pathlib, time; pathlib.Path({str(marker)!r}).write_text('1'); time.sleep(30)"
+    wrapper = subprocess.Popen(
+        [sys.executable, str(REPO_ROOT / "tools" / "spend" / "timed.py"), "--root", str(fake_repo), "--ledger", str(out),
+         "--", sys.executable, "-c", child],
+        stdin=subprocess.DEVNULL, stdout=subprocess.PIPE, stderr=subprocess.PIPE, start_new_session=True,
+    )
+    try:
+        deadline = time.monotonic() + 20
+        while not marker.exists() and time.monotonic() < deadline:
+            time.sleep(0.05)
+        assert marker.exists()
+        started = time.monotonic()
+        wrapper.send_signal(signal.SIGINT)  # to the wrapper alone, as `kill -INT <pid>` does
+        code = wrapper.wait(timeout=15)
+    finally:
+        if wrapper.poll() is None:
+            os.killpg(wrapper.pid, signal.SIGKILL)
+            wrapper.wait()
+    assert time.monotonic() - started < 10  # the child did not sleep out its 30 s
+    assert code == 128 + signal.SIGINT
+    (event,) = _lines(out)
+    assert event["exit_code"] == 128 + signal.SIGINT
+    assert event["wall_seconds"] < 25
+
+
+def test_timed_peak_rss_is_the_childs_own_not_an_earlier_childs(fake_repo: Path, tmp_path: Path) -> None:
+    # An earlier, larger child of the same process (as other tests in one pytest run are).
+    subprocess.run([sys.executable, "-c", "b = bytearray(300 * 1024 * 1024); b[::4096] = b'x' * len(b[::4096])"], check=True)
+    code, event = timed.run_timed([sys.executable, "-c", "pass"], root=fake_repo, ledger=tmp_path / "ledger.jsonl")
+    assert code == 0
+    assert 1_000_000 < event["peak_rss_bytes"] < 150 * 1024 * 1024
 
 
 # --- report: per-day table, cost per retained negative, cockpit summary -----------------------
@@ -325,7 +503,7 @@ EVENTS = [
 ]
 
 
-def test_daily_rows_merge_sources_and_dedupe_timed_runs() -> None:
+def test_daily_rows_merge_sources_and_count_runs_apart_from_timed_commands() -> None:
     rows = report.daily_rows(EVENTS)
     assert [row["date"] for row in rows] == ["2026-08-01", "2026-08-02"]  # a report_write-only day is not activity
     first, second = rows
@@ -333,7 +511,8 @@ def test_daily_rows_merge_sources_and_dedupe_timed_runs() -> None:
     assert (first["wall_seconds"], first["cpu_seconds"]) == (0.0, None)
     assert (first["negatives_added"], first["theorems_added"]) == (3, 1)
     assert (first["tokens"], first["tokens_uncached"]) == (1000, 400)
-    assert (second["runs"], second["experiment_runs"], second["timed_runs"]) == (2, 1, 2)
+    # runs are experiment runs only; the timed command that logged no experiment run is not one.
+    assert (second["runs"], second["experiment_runs"], second["timed_runs"]) == (1, 1, 2)
     assert (second["wall_seconds"], second["cpu_seconds"]) == (12.0, 5.0)
     assert second["negatives_added"] == 1
     assert second["tokens"] is None
@@ -358,22 +537,77 @@ def test_summary_has_exactly_the_cockpit_shape() -> None:
 
 def test_costs_per_retained_negative() -> None:
     costs = report.costs(report.daily_rows(EVENTS), EVENTS)
-    assert costs["runs"] == 4 and costs["negatives"] == 4
-    assert costs["runs_per_negative"] == pytest.approx(1.0)
-    # Tokens are compared with negatives on the days that have token records only.
+    assert costs["runs"] == 3 and costs["negatives"] == 4
+    assert costs["runs_per_negative"] == pytest.approx(0.75)
+    # The only token day is 2026-08-01, so the token window holds that day's 3 negatives.
     assert costs["token_days"] == 1
+    assert costs["token_negatives"] == 3
     assert costs["tokens_per_negative"] == pytest.approx(1000 / 3)
     assert costs["uncached_tokens_per_negative"] == pytest.approx(400 / 3)
     assert costs["timed_runs"] == 2
-    assert costs["timed_wall_per_negative"] == pytest.approx(12.0)
-    assert costs["timed_cpu_per_negative"] == pytest.approx(5.0)
+    # Raw growth of the negatives registry while timed commands ran, from any writer.
+    assert costs["timed_registry_growth"] == 1
+    assert costs["timed_wall_per_registry_record"] == pytest.approx(12.0)
+    assert costs["timed_cpu_per_registry_record"] == pytest.approx(5.0)
 
 
 def test_costs_without_timed_negatives_or_tokens_are_none() -> None:
     events = [e for e in EVENTS if e["kind"] not in {"token_day", "timed_run"}]
     costs = report.costs(report.daily_rows(events), events)
     assert costs["tokens_per_negative"] is None
-    assert costs["timed_wall_per_negative"] is None
+    assert costs["timed_wall_per_registry_record"] is None
+
+
+WINDOW_EVENTS = [
+    _event("registry_commit", "2026-07-30T00:00:00+00:00", negatives_new_retained=11),  # before the first token day
+    _event("token_day", "2026-08-01T00:00:00+00:00", date="2026-08-01", input_tokens=900, cached_input_tokens=600,
+           output_tokens=100, total_tokens=1000),
+    _event("registry_commit", "2026-08-01T06:00:00+00:00", negatives_new_retained=2),
+    _event("registry_commit", "2026-08-02T06:00:00+00:00", negatives_new_retained=3),  # no token record that day
+    _event("token_day", "2026-08-03T00:00:00+00:00", date="2026-08-03", input_tokens=1500, cached_input_tokens=1000,
+           output_tokens=500, total_tokens=2000),
+    _event("registry_commit", "2026-08-03T06:00:00+00:00", negatives_new_retained=5),
+    _event("registry_commit", "2026-08-05T06:00:00+00:00", negatives_new_retained=7),  # after the last token day
+]
+
+
+def test_tokens_per_negative_counts_every_negative_in_the_token_window() -> None:
+    rows = report.daily_rows(WINDOW_EVENTS)
+    costs = report.costs(rows, WINDOW_EVENTS)
+    assert (costs["first_token_day"], costs["last_token_day"]) == ("2026-08-01", "2026-08-03")
+    assert costs["token_negatives"] == 2 + 3 + 5  # the 08-02 negatives count although that day has no token record
+    assert costs["tokens_per_negative"] == pytest.approx(3000 / 10)
+    assert costs["uncached_tokens_per_negative"] == pytest.approx((400 + 1000) / 10)
+    text = report.render(rows, WINDOW_EVENTS, generated_on="2026-10-19")
+    assert "10 retained negatives dated 2026-08-01 to 2026-08-03" in text
+    assert "lower bound" not in text
+    assert "Codex only" in text and "Gemini" in text
+
+
+def test_headline_counts_experiment_runs_and_timed_commands_separately() -> None:
+    text = report.render(report.daily_rows(EVENTS), EVENTS, generated_on="2026-10-19")
+    assert "| Experiment runs | 3 |" in text
+    assert "| Timed commands | 2 " in text
+    assert "| Experiment runs per retained negative | 0.75 |" in text
+    assert "Measured time per retained negative" not in text
+    assert "| Timed seconds per negatives-registry record added during timed commands |" in text
+
+
+@pytest.mark.parametrize("zone", ["Etc/GMT-14", "Etc/GMT+12"])  # UTC+14 and UTC-12: one differs from UTC at any hour
+def test_report_generated_on_is_the_utc_date(fake_repo: Path, zone: str) -> None:
+    common.replace_kinds(fake_repo / "research" / "audits" / "spend_ledger.jsonl", set(), EVENTS)
+    before = dt.datetime.now(dt.timezone.utc).date().isoformat()
+    subprocess.run([sys.executable, str(REPO_ROOT / "tools" / "spend" / "report.py"), "--root", str(fake_repo)],
+                   env={**os.environ, "TZ": zone}, check=True, capture_output=True)
+    after = dt.datetime.now(dt.timezone.utc).date().isoformat()
+    summary = json.loads((fake_repo / "research" / "audits" / "spend_summary.json").read_text(encoding="utf-8"))
+    assert summary["generated_on"] in {before, after}
+    assert f"Generated {summary['generated_on']} " in (fake_repo / "research" / "audits" / "SPEND_REPORT.md").read_text(encoding="utf-8")
+
+
+def test_tools_workflow_token_is_read_only() -> None:
+    text = (REPO_ROOT / ".github" / "workflows" / "tools.yml").read_text(encoding="utf-8")
+    assert re.search(r"^permissions:\n  contents: read\n", text, re.M)
 
 
 def test_mtime_check_flags_checkout_clusters() -> None:
@@ -390,7 +624,7 @@ def test_render_reports_per_day_tables_and_costs() -> None:
     text = report.render(report.daily_rows(EVENTS), EVENTS, generated_on="2026-10-19")
     assert text.startswith("# Spend Report")
     assert "| 2026-08-01 | 2 | 0 | 3 | 1 |" in text
-    assert "Runs per retained negative" in text
+    assert "Experiment runs per retained negative" in text
     assert "333" in text  # Codex tokens per retained negative
     assert "Codex" in text and "Gemini" in text
     # The first commit of a file back-fills everything made before it; the report says so.
@@ -496,8 +730,125 @@ def test_token_day_events_hold_aggregates_and_no_identifiers(tmp_path: Path) -> 
         assert secret not in dumped
 
 
+def _rollout(path: Path, session_id: str, start: str, totals: list[tuple[str, int]], parent: str | None = None,
+             cwd: str = PROJECT) -> Path:
+    """A synthetic session log; each total is a cumulative total_tokens (input = total, no cache, no output)."""
+    lines = [{"timestamp": start, "type": "session_meta",
+              "payload": {"id": session_id, "cwd": cwd, "forked_from_id": parent}}]
+    previous = 0
+    for stamp, total in totals:
+        lines.append({"timestamp": stamp, "type": "event_msg", "payload": {"type": "token_count", "info": {
+            "total_token_usage": _usage(total, total, 0, 0, 0),
+            "last_token_usage": _usage(total - previous, total - previous, 0, 0, 0)}}})
+        previous = total
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text("".join(json.dumps(line) + "\n" for line in lines), encoding="utf-8")
+    return path
+
+
+def _totals(days: dict) -> dict[str, int]:
+    return {date: usage["total_tokens"] for date, usage in days.items()}
+
+
+def test_a_fork_that_replays_its_parent_is_counted_once(tmp_path: Path) -> None:
+    sessions = tmp_path / "sessions"
+    _rollout(sessions / "parent.jsonl", "P", "2026-08-01T09:00:00.000Z",
+             [("2026-08-01T10:00:00.000Z", 1000), ("2026-08-01T11:00:00.000Z", 3000)])
+    # The fork's log starts with a copy of the parent's token_count history, re-stamped on the fork's day.
+    _rollout(sessions / "fork.jsonl", "F", "2026-08-05T09:00:00.000Z",
+             [("2026-08-05T09:00:01.000Z", 1000), ("2026-08-05T09:00:01.000Z", 3000), ("2026-08-05T10:00:00.000Z", 3500)],
+             parent="P")
+    # A fork of the fork replays the fork's whole history, the parent's copy included.
+    _rollout(sessions / "grandchild.jsonl", "G", "2026-08-07T09:00:00.000Z",
+             [("2026-08-07T09:00:01.000Z", 1000), ("2026-08-07T09:00:01.000Z", 3000),
+              ("2026-08-07T09:00:01.000Z", 3500), ("2026-08-07T10:00:00.000Z", 3600)], parent="F")
+    days, stats = tokens.import_codex([sessions], PROJECT)
+    assert _totals(days) == {"2026-08-01": 3000, "2026-08-05": 500, "2026-08-07": 100}
+    assert days["2026-08-05"]["input_tokens"] == 500 and days["2026-08-05"]["sessions"] == 1
+    assert stats["replaying_sessions"] == 2
+    assert stats["replayed_events"] == 2 + 3
+
+
+def test_a_fork_of_a_parent_that_kept_running_counts_its_own_turns(tmp_path: Path) -> None:
+    sessions = tmp_path / "sessions"
+    _rollout(sessions / "parent.jsonl", "P", "2026-08-01T09:00:00.000Z",
+             [("2026-08-01T10:00:00.000Z", 1000), ("2026-08-01T11:00:00.000Z", 3000),
+              ("2026-08-02T10:00:00.000Z", 9000)])  # after the fork was made
+    _rollout(sessions / "fork.jsonl", "F", "2026-08-05T09:00:00.000Z",
+             [("2026-08-05T09:00:01.000Z", 1000), ("2026-08-05T09:00:01.000Z", 3000), ("2026-08-05T10:00:00.000Z", 3400)],
+             parent="P")
+    days, _ = tokens.import_codex([sessions], PROJECT)
+    assert _totals(days) == {"2026-08-01": 3000, "2026-08-02": 6000, "2026-08-05": 400}
+
+
+def test_forks_whose_parent_log_is_gone_count_the_shared_history_once(tmp_path: Path) -> None:
+    sessions = tmp_path / "sessions"
+    replay = [("2026-08-05T09:00:01.000Z", 1000), ("2026-08-05T09:00:01.000Z", 3000)]
+    _rollout(sessions / "fork1.jsonl", "F1", "2026-08-05T09:00:00.000Z", [*replay, ("2026-08-05T10:00:00.000Z", 3200)],
+             parent="GONE")
+    _rollout(sessions / "fork2.jsonl", "F2", "2026-08-06T09:00:00.000Z",
+             [(stamp.replace("08-05", "08-06"), total) for stamp, total in replay] + [("2026-08-06T10:00:00.000Z", 3300)],
+             parent="GONE")
+    days, stats = tokens.import_codex([sessions], PROJECT)
+    # The parent's 3000 is counted once, in the earlier fork, on that fork's day (its own day is unknown).
+    assert _totals(days) == {"2026-08-05": 3200, "2026-08-06": 300}
+    assert stats["fork_parent_missing"] == 2
+
+
+def test_a_torn_line_or_a_bad_record_skips_that_line_only(tmp_path: Path) -> None:
+    sessions = tmp_path / "sessions"
+    torn = _rollout(sessions / "a.jsonl", "A", "2026-08-01T09:00:00.000Z",
+                    [("2026-08-01T10:00:00.000Z", 1000), ("2026-08-01T11:00:00.000Z", 3000)])
+    with torn.open("a", encoding="utf-8") as handle:  # a session still being written
+        handle.write('{"timestamp":"2026-08-01T12:00:00.000Z","type":"event_msg","payload":{"type":"token_count","info":{"tot')
+    bad = _rollout(sessions / "b.jsonl", "B", "2026-08-02T09:00:00.000Z",
+                   [("2026-08-02T10:00:00.000Z", 5), ("2026-08-02T11:00:00.000Z", 12)])
+    rows = [json.loads(line) for line in bad.read_text(encoding="utf-8").splitlines()]
+    no_stamp = json.loads(json.dumps(rows[1]))
+    del no_stamp["timestamp"]
+    not_a_number = json.loads(json.dumps(rows[1]))
+    not_a_number["payload"]["info"]["total_token_usage"]["total_tokens"] = "lots"
+    bad.write_text("".join(json.dumps(row) + "\n" for row in [rows[0], no_stamp, not_a_number, *rows[1:]]),
+                   encoding="utf-8")
+    days, stats = tokens.import_codex([sessions], PROJECT)
+    assert _totals(days) == {"2026-08-01": 3000, "2026-08-02": 12}
+    assert stats["bad_lines"] == 3
+    assert stats["in_project"] == 2 and stats["unreadable"] == 0
+
+
+def test_tokens_main_refuses_when_zst_logs_are_skipped(fake_repo: Path, tmp_path: Path, monkeypatch, capsys) -> None:
+    monkeypatch.setattr(tokens, "zstd_available", lambda: False)
+    out = tmp_path / "ledger.jsonl"
+    sessions = _codex_dir(tmp_path / "codex")
+    (sessions / "2026" / "08" / "rollout-z.jsonl.zst").write_bytes(b"\x28\xb5\x2f\xfd compressed")
+    argv = ["--root", str(fake_repo), "--ledger", str(out), "--codex-dir", str(sessions), "--project-dir", PROJECT]
+    assert tokens.main(argv) != 0
+    err = capsys.readouterr().err
+    assert "zstandard" in err and "--force" in err
+    assert not out.exists() or _lines(out) == []
+    assert tokens.main([*argv, "--dry-run"]) == 0  # a preview writes nothing, so it goes ahead
+    assert tokens.main([*argv, "--force"]) == 0
+    assert [row["date"] for row in _lines(out)] == list(EXPECTED_DAYS)
+
+
+def test_tokens_main_refuses_a_rebuild_that_drops_most_token_days(fake_repo: Path, tmp_path: Path, capsys) -> None:
+    out = tmp_path / "ledger.jsonl"
+    old = [{"kind": "token_day", "timestamp": f"2026-07-{day:02d}T00:00:00+00:00", "date": f"2026-07-{day:02d}",
+            "total_tokens": 1} for day in range(1, 11)]
+    common.replace_kinds(out, set(), old)
+    before = out.read_text(encoding="utf-8")
+    argv = ["--root", str(fake_repo), "--ledger", str(out), "--codex-dir", str(_codex_dir(tmp_path / "codex")),
+            "--project-dir", PROJECT]
+    assert tokens.main(argv) != 0  # 3 days would replace 10: pruned or missing logs
+    assert "token_day" in capsys.readouterr().err
+    assert out.read_text(encoding="utf-8") == before
+    assert tokens.main([*argv, "--force"]) == 0
+    assert [row["date"] for row in _lines(out)] == list(EXPECTED_DAYS)
+
+
 def test_import_reads_zstd_archives(tmp_path: Path) -> None:
-    zstandard = pytest.importorskip("zstandard")
+    zstandard = pytest.importorskip(
+        "zstandard", reason="zstandard is not in requirements-tools.txt; pip install zstandard to test .jsonl.zst reading")
     sessions = _codex_dir(tmp_path / "codex")
     for path in list(sessions.rglob("*.jsonl")):
         path.with_suffix(".jsonl.zst").write_bytes(zstandard.ZstdCompressor().compress(path.read_bytes()))

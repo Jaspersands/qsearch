@@ -1,6 +1,6 @@
 # Spend Report
 
-Generated 2026-10-19 by `tools/spend/report.py` from `research/audits/spend_ledger.jsonl`; do not edit by hand.
+Generated 2026-10-18 (UTC) by `tools/spend/report.py` from `research/audits/spend_ledger.jsonl`; do not edit by hand.
 Days are UTC calendar days. See `tools/spend/README.md` for what each source can and cannot tell you.
 
 ## Headline
@@ -8,39 +8,49 @@ Days are UTC calendar days. See `tools/spend/README.md` for what each source can
 | Measure | Value |
 |---|---|
 | Days with recorded activity | 76 (2026-07-06 to 2026-10-18) |
-| Runs | 598 |
+| Experiment runs | 597 |
+| Timed commands | 1 (6.3 s wall, 6.8 s CPU) |
 | Retained negatives added | 976 on 35 days (most: 459 on 2026-07-15) |
-| Runs per retained negative | 0.61 |
-| Codex tokens | 5,471,259,754 on 71 days (2026-07-06 to 2026-10-18) |
-| Codex tokens per retained negative | 6,005,774 (911 negatives on days with token records) |
-| Uncached Codex tokens per retained negative | 189,868 |
-| Timed runs | 1 (6.3 s wall, 6.8 s CPU) |
-| Measured time per retained negative | n/a: no timed run has added a negative yet |
+| Experiment runs per retained negative | 0.61 |
+| Codex tokens | 5,443,573,736 on 71 days (2026-07-06 to 2026-10-18) |
+| Codex tokens per retained negative | 5,577,432 (Codex only; all 976 retained negatives dated 2026-07-06 to 2026-10-18) |
+| Uncached Codex tokens per retained negative | 173,183 |
+| Timed seconds per negatives-registry record added during timed commands | n/a: the negatives registry did not grow during any timed command |
 
 ## What the numbers mean
 
-- **Runs** are the experiment runs in `research/experiment_run_history.json`, plus timed runs that did not
-  log an experiment run inside their own time window. The history has one timestamp per run and no
-  durations.
+- **Experiment runs** are the runs in `research/experiment_run_history.json`. The history has one
+  timestamp per run and no durations.
+- **Timed commands** are commands run through `tools/spend/timed.py`. Any command can be timed (for
+  example `qsearch.py validate`), so they are counted apart from experiment runs; an experiment run
+  made through the wrapper is in both counts.
 - **Retained negatives** are records still in `research/registry/negative_results.json`, dated by the
   first commit that contains them. That is the commit day, not the day the work was done. Ids not yet
   committed are dated by the registry file's mtime.
 - **Back-fills.** The first commit of a file holds everything made before it, so the busiest days
   are partly history. The first registry commit (2026-07-15) holds 459 retained negatives made at any point up to then. The first theorem commit (2026-08-21) adds 724 theorem files at once.
 - The run history's own `negative_results_written` metric sums to 652. Only some runs set it, so it undercounts.
-- **Wall and CPU seconds** come only from runs made through `tools/spend/timed.py`. Days before the
+- **Wall and CPU seconds** come only from commands run through `tools/spend/timed.py`. Days before the
   wrapper was used show 0.0 wall seconds and no CPU time: unmeasured, not free.
+- **Timed seconds per negatives-registry record** divides timed seconds by the raw change in the
+  record count of `research/registry/negative_results.json` while timed commands ran. Any writer counts,
+  other agents included, and a record added then can be removed later, so it is not a cost per
+  retained negative.
 - **Codex tokens** come from Codex session logs whose working directory is this repo, summed per day.
-  The total includes cached input tokens, which dominate; the uncached figure is input minus cached
-  input plus output. The Gemini agents are not counted because their logs hold no labelled token
-  counts, so tokens per negative is a lower bound for the whole loop.
+  A forked session's copy of its parent's history is counted once, under the parent. The total
+  includes cached input tokens, which dominate; the uncached figure is input minus cached input plus
+  output.
+- **Codex tokens per retained negative** divides every Codex token in the ledger by every retained
+  negative dated from the first to the last day with a Codex token record, days without a token record
+  included. It is Codex only: the Gemini agents' tokens are missing, because their logs hold no labelled
+  token counts, and nothing here measures how large the missing part is.
 
 ## Per day
 
-| Date | Runs | Timed runs | Retained negatives | Theorem files added | Wall s | CPU s | Codex tokens |
+| Date | Experiment runs | Timed commands | Retained negatives | Theorem files added | Wall s | CPU s | Codex tokens |
 |---|---|---|---|---|---|---|---|
 | 2026-07-06 | 0 | 0 | 0 | 0 | - | - | 9,438,873 |
-| 2026-07-07 | 12 | 0 | 0 | 0 | - | - | 167,300,390 |
+| 2026-07-07 | 12 | 0 | 0 | 0 | - | - | 115,142,459 |
 | 2026-07-08 | 28 | 0 | 0 | 0 | - | - | 159,277,923 |
 | 2026-07-09 | 11 | 0 | 0 | 0 | - | - | 91,936,755 |
 | 2026-07-10 | 12 | 0 | 0 | 0 | - | - | 81,768,832 |
@@ -114,7 +124,7 @@ Days are UTC calendar days. See `tools/spend/README.md` for what each source can
 | 2026-10-15 | 23 | 0 | 0 | 44 | - | - | 148,474,623 |
 | 2026-10-16 | 0 | 0 | 0 | 0 | - | - | 124,449,227 |
 | 2026-10-17 | 0 | 0 | 0 | 0 | - | - | 61,804,567 |
-| 2026-10-18 | 1 | 1 | 0 | 139 | 6.3 | 6.8 | 96,097,736 |
+| 2026-10-18 | 0 | 1 | 0 | 139 | 6.3 | 6.8 | 120,569,649 |
 
 ## Report-file mtimes
 

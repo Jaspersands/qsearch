@@ -41,6 +41,9 @@ on:
       - "requirements-tools.txt"
       - ".github/workflows/tools.yml"
 
+permissions:
+  contents: read
+
 jobs:
   tools:
     runs-on: ubuntu-latest

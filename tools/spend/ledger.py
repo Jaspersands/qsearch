@@ -11,7 +11,13 @@ Sources and the kinds they give:
   report_write          mtimes of the REPORT json files that theorem modules name
 
 The rebuild replaces only these kinds. Lines of any other kind (timed_run from timed.py,
-token_day from tokens.py) are kept as they are. Git is only read, never written.
+token_day from tokens.py) are kept, and kept timed_run lines have their command re-recorded
+through timed.py's sanitizer, so a line written by an older wrapper loses its local paths and
+secrets on the next rebuild. Git is only read, never written.
+
+The rebuild refuses (exit 3, nothing written) when the checkout has no git history or a
+shallow one, or when it would drop more than 20% of the existing lines of one of its kinds:
+both mean the data is missing here, not that the history got shorter. --force overrides.
 """
 
 from __future__ import annotations
@@ -26,7 +32,12 @@ from pathlib import Path
 if __package__ in (None, ""):
     sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
-from tools.spend.common import LEDGER, NEGATIVES, REGISTRY_DIR, git, read_json, replace_kinds, to_utc_iso  # noqa: E402
+from tools.spend.common import (  # noqa: E402
+    LEDGER, MAX_DROP_SHARE, NEGATIVES, REGISTRY_DIR, RebuildRefused, git, read_json, replace_kinds, repo_roots, to_utc_iso,
+)
+from tools.spend.timed import sanitize_event  # noqa: E402
+
+REFUSED = 3
 
 HISTORY = "research/experiment_run_history.json"
 NEGATIVES_PATH = f"{REGISTRY_DIR.as_posix()}/{NEGATIVES}"
@@ -183,6 +194,16 @@ def report_write_events(root: Path) -> list[dict]:
     return events
 
 
+def history_problem(root: Path) -> str | None:
+    """Why the git history here cannot be trusted to be complete, or None."""
+    shallow = git(root, "rev-parse", "--is-shallow-repository")
+    if shallow is None:
+        return f"no git history at {root} (not a checkout, or git is unavailable)"
+    if shallow.strip() == "true":
+        return "the checkout is shallow, so older commits are missing (git fetch --unshallow fixes it)"
+    return None
+
+
 def build_events(root: Path) -> list[dict]:
     history_path = root / HISTORY
     history = read_json(history_path) if history_path.exists() else []
@@ -198,11 +219,24 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[2])
     parser.add_argument("--out", type=Path, help=f"Ledger path (default: ROOT/{LEDGER}).")
+    parser.add_argument("--force", action="store_true",
+                        help="Rebuild even without full git history or when many existing lines would be dropped.")
     args = parser.parse_args(argv)
 
     out = args.out or args.root / LEDGER
+    problem = history_problem(args.root)
+    if problem and not args.force:
+        print(f"ledger.py: refusing to rebuild {out}: {problem}. The commit lines in it would be lost. "
+              "Use --force to rebuild anyway.", file=sys.stderr)
+        return REFUSED
     events = build_events(args.root)
-    kept = replace_kinds(out, DERIVED_KINDS, events)
+    roots = repo_roots(args.root)
+    try:
+        kept = replace_kinds(out, DERIVED_KINDS, events, max_drop_share=None if args.force else MAX_DROP_SHARE,
+                             transform=lambda row: sanitize_event(row, roots))
+    except RebuildRefused as refused:
+        print(f"ledger.py: refusing to rebuild {out}: {refused} Use --force to rebuild anyway.", file=sys.stderr)
+        return REFUSED
     print(json.dumps({"ledger": str(out), "kept_lines": kept, "derived": dict(Counter(e["kind"] for e in events))}, indent=1))
     return 0
 
