@@ -23,6 +23,7 @@ from __future__ import annotations
 
 import argparse
 import datetime as dt
+import hashlib
 import json
 import random
 import re
@@ -130,7 +131,13 @@ def validate(items: list[dict]) -> list[str]:
     return problems
 
 
+def prompt_alias(item_id: str) -> str:
+    """The id an agent sees. Item ids start with DE- or CT-, which would give the answer away."""
+    return "P-" + hashlib.sha256(f"dead-ends-prompt:{item_id}".encode()).hexdigest()[:6].upper()
+
+
 def agent_prompt(items: list[dict]) -> str:
+    """Proposals under neutral aliases, in alias order, without tracks (some tracks hold only controls)."""
     modes = "\n".join(f"- {key}: {mode.definition}" for key, mode in fm.MODES.items())
     lines = [
         "You are reviewing research proposals in quantum algorithms. Some are sound. Others contain a",
@@ -151,13 +158,15 @@ def agent_prompt(items: list[dict]) -> str:
         "Proposals:",
         "",
     ]
-    for item in items:
-        lines.append(f"[{item['id']}] ({item['track']}) {item['proposal']}")
+    for item in sorted(items, key=lambda i: prompt_alias(i["id"])):
+        lines.append(f"[{prompt_alias(item['id'])}] {item['proposal']}")
         lines.append("")
     return "\n".join(lines).rstrip() + "\n"
 
 
-def parse_reply(reply: str) -> dict[str, dict]:
+def parse_reply(reply: str, items: list[dict] | None = None) -> dict[str, dict]:
+    """Answers keyed by item id. Aliases from the prompt map back; raw item ids (older replies) pass through."""
+    ids = {prompt_alias(i["id"]): i["id"] for i in items or []}
     answers: dict[str, dict] = {}
     for line in reply.splitlines():
         line = line.strip().rstrip(",")
@@ -168,7 +177,7 @@ def parse_reply(reply: str) -> dict[str, dict]:
         except json.JSONDecodeError:
             continue
         if isinstance(row, dict) and row.get("id"):
-            answers[str(row["id"])] = row
+            answers[ids.get(str(row["id"]), str(row["id"]))] = row
     return answers
 
 
@@ -290,6 +299,9 @@ def assemble(curated: list[dict], records: list[dict], labels: dict[str, dict], 
             row = review.get(item["id"])
             if not row:
                 continue
+            if row.get("mode_fit") is False and row.get("verdict") != "drop":
+                item["failure_mode_disputed"] = True
+                report["mode_disputed_in_review"] += 1
             if row.get("verdict") == "drop":
                 group.remove(item)
                 report["dropped_in_review"] += 1
@@ -300,7 +312,7 @@ def assemble(curated: list[dict], records: list[dict], labels: dict[str, dict], 
                 report["fixed_in_review"] += 1
     report.update({"dead_ends": len(dead), "controls": len(ctrl)})
     for key in ("rejected_by_curator", "dropped_duplicates", "dropped_controls", "unknown_records",
-                "dropped_in_review", "fixed_in_review"):
+                "dropped_in_review", "fixed_in_review", "mode_disputed_in_review"):
         report.setdefault(key, 0)
     return sorted(dead + ctrl, key=lambda i: i["id"]), dict(report)
 
@@ -361,6 +373,9 @@ def render(results: dict) -> str:
             f"| {name} | {s['answered']}/{s['n_dead_ends'] + s['n_controls']} | {_pct(s['dead_ends_rejected'])} | "
             f"{_pct(s['failure_mode_accuracy'])} | {_pct(s['killer_found'])} | {_pct(s['controls_pursued'])} |"
         )
+    scored = {s.get("n_mode_scored", s["n_dead_ends"]) for s in results["agents"].values()}
+    if len(scored) == 1 and (n := scored.pop()) < meta["dead_ends"]:
+        lines += ["", f"Failure mode right is scored on the {n} dead ends whose gold mode the held-out review did not dispute."]
     by_mode = results.get("by_mode")
     if by_mode:
         agents = list(results["agents"])
@@ -381,7 +396,9 @@ def score(items: list[dict], answers: dict[str, dict], verdicts: dict[str, float
     dead = [i for i in items if i["kind"] == "dead_end"]
     controls = [i for i in items if i["kind"] == "control"]
     rejected = [0.0 if answers.get(i["id"], {}).get("pursue", True) else 1.0 for i in dead]
-    mode_ok = [1.0 if answers.get(i["id"], {}).get("failure_mode") == i["failure_mode"] else 0.0 for i in dead]
+    # A reviewer may reject the gold mode of an item; such items do not count towards mode accuracy.
+    mode_ok = [1.0 if answers.get(i["id"], {}).get("failure_mode") == i["failure_mode"] else 0.0
+               for i in dead if not i.get("failure_mode_disputed")]
     killer = [float(verdicts.get(i["id"], 0.0)) for i in dead]
     pursued = [1.0 if answers.get(i["id"], {}).get("pursue") is True else 0.0 for i in controls]
     return {
@@ -389,6 +406,7 @@ def score(items: list[dict], answers: dict[str, dict], verdicts: dict[str, float
         "n_controls": len(controls),
         "dead_ends_rejected": _mean(rejected),
         "failure_mode_accuracy": _mean(mode_ok),
+        "n_mode_scored": len(mode_ok),
         "killer_found": _mean(killer),
         "controls_pursued": _mean(pursued),
         "answered": sum(1 for i in items if i["id"] in answers),
@@ -504,7 +522,7 @@ def main(argv: list[str] | None = None) -> int:
         print(f"{len(items)} proposals in {args.out}")
         return 0
 
-    answers = {name: parse_reply(path.read_text(encoding="utf-8")) for name, path in _named(args.answers).items()}
+    answers = {name: parse_reply(path.read_text(encoding="utf-8"), items) for name, path in _named(args.answers).items()}
     if args.command == "judge-export":
         packets = [{"agent": name, **p} for name, rows in answers.items() for p in judge_packets(items, rows)]
         if args.blind is not None:

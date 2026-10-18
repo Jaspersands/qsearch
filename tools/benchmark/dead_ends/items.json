@@ -6,6 +6,7 @@
   "rejected_by_curator": 173,
   "dropped_duplicates": 13,
   "fixed_in_review": 12,
+  "mode_disputed_in_review": 3,
   "dead_ends": 144,
   "controls": 24,
   "dropped_controls": 0,
@@ -525,7 +526,7 @@
    "difficulty": "medium",
    "track": "lattice",
    "failure_mode": "no_signal",
-   "novelty": "adjacent",
+   "novelty": "unclear",
    "source_record": "NEG-DCP-SUBSET-SUM-VOLUME-ONLY-LATTICE-GAP",
    "split": "dev"
   },
@@ -629,7 +630,7 @@
    "difficulty": "easy",
    "track": "dcp",
    "failure_mode": "proof_gap",
-   "novelty": "adjacent",
+   "novelty": "unclear",
    "source_record": "NEG-EDCP-REVEALED-MIXING-COINS-PSEUDORANDOM",
    "split": "heldout"
   },
@@ -644,7 +645,8 @@
    "failure_mode": "hidden_advice",
    "novelty": "adjacent",
    "source_record": "NEG-DCP-DETERMINISTIC-FAVORABLE-BRANCH",
-   "split": "heldout"
+   "split": "heldout",
+   "failure_mode_disputed": true
   },
   {
    "id": "DE-251EAB",
@@ -681,7 +683,7 @@
    "difficulty": "medium",
    "track": "coset_observables",
    "failure_mode": "no_signal",
-   "novelty": "published",
+   "novelty": "unclear",
    "source_record": "NEG-NILPOTENT-CENTRAL-DESCENT-BARRIER",
    "split": "heldout"
   },
@@ -707,7 +709,7 @@
    "difficulty": "easy",
    "track": "dcp",
    "failure_mode": "resource_blowup",
-   "novelty": "adjacent",
+   "novelty": "unclear",
    "source_record": "NEG-DCP-EXACT-RESIDUE-MPS-EXPONENTIAL-BOND",
    "split": "heldout"
   },
@@ -761,7 +763,8 @@
    "failure_mode": "state_prep",
    "novelty": "adjacent",
    "source_record": "NEG-CODE-SELF-DUAL-WREATH-STABLE-PARTITION-MASS-VANISHES",
-   "split": "heldout"
+   "split": "heldout",
+   "failure_mode_disputed": true
   },
   {
    "id": "DE-36A0A8",
@@ -796,9 +799,9 @@
    "killer": "Measured representation labels depend only on characters, which are class functions, so they cannot tell conjugate Fuchsian subgroups apart. The remaining information sits inside infinite-dimensional representations with a continuous Plancherel measure, where there is no normalizable coset state or finite measurement basis, and multi-copy measurements would need continuous recoupling coefficients with no known efficient discretized circuit; the problem is not even well posed without a finite-precision model of group elements.",
    "lesson": "Before extending Fourier sampling to a continuous non-compact group, fix a finite-precision encoding and check that the measured data are not conjugation-invariant.",
    "difficulty": "medium",
-   "track": "applied_barriers",
+   "track": "coset_observables",
    "failure_mode": "no_signal",
-   "novelty": "published",
+   "novelty": "unclear",
    "source_record": "NEG-SL2R-NONCOMPACT-LIE-CONTINUOUS-SPECTRUM-BARRIER",
    "split": "heldout"
   },
@@ -850,7 +853,7 @@
    "difficulty": "medium",
    "track": "dcp",
    "failure_mode": "overbroad",
-   "novelty": "published",
+   "novelty": "unclear",
    "source_record": "NEG-DCP-QW-INTERNAL-HISTORY-BLOCKER-MISAPPLIED",
    "split": "heldout"
   },
@@ -915,7 +918,7 @@
    "difficulty": "medium",
    "track": "lattice",
    "failure_mode": "proof_gap",
-   "novelty": "adjacent",
+   "novelty": "unclear",
    "source_record": "NEG-DCP-HNP-LPN-LWE-ANALOGY-NOT-REDUCTION",
    "split": "dev"
   },
@@ -1084,7 +1087,7 @@
    "difficulty": "hard",
    "track": "dcp",
    "failure_mode": "overbroad",
-   "novelty": "published",
+   "novelty": "unclear",
    "source_record": "NEG-DCP-ARBITRARY-RELATION-INCOMPATIBLE-WITH-MATCHING",
    "split": "heldout"
   },
@@ -1331,7 +1334,7 @@
    "difficulty": "easy",
    "track": "coset_observables",
    "failure_mode": "classical_competitor",
-   "novelty": "published",
+   "novelty": "unclear",
    "source_record": "NEG-CFI-GRAPH-COSET-LUKS-SUBSUMPTION-BARRIER",
    "split": "heldout"
   },
@@ -1409,7 +1412,7 @@
    "difficulty": "medium",
    "track": "coset_observables",
    "failure_mode": "no_signal",
-   "novelty": "published",
+   "novelty": "unclear",
    "source_record": "NEG-ROWSPACE-RREF-GAUGE-ELIMINATION-FOURIER-EXTINCTION-BARRIER",
    "split": "heldout"
   },
@@ -1552,7 +1555,7 @@
    "difficulty": "medium",
    "track": "code_equivalence",
    "failure_mode": "resource_blowup",
-   "novelty": "adjacent",
+   "novelty": "unclear",
    "source_record": "FULL-SOURCE-SELECTOR-SCHUR-NOT-POLYNOMIAL-COMPRESSION",
    "split": "dev"
   },
@@ -1801,7 +1804,8 @@
    "failure_mode": "state_prep",
    "novelty": "adjacent",
    "source_record": "NEG-COSET-TYPICAL-FIXED-SOURCE-CATALOG-COVERAGE",
-   "split": "heldout"
+   "split": "heldout",
+   "failure_mode_disputed": true
   },
   {
    "id": "DE-C35E1B",
@@ -1877,7 +1881,7 @@
    "difficulty": "easy",
    "track": "other",
    "failure_mode": "resource_blowup",
-   "novelty": "adjacent",
+   "novelty": "unclear",
    "source_record": "BOUNDED-PAIR-LCU-MEAN-NOT-THRESHOLD-COMPOSABLE",
    "split": "dev"
   },
@@ -2033,7 +2037,7 @@
    "difficulty": "easy",
    "track": "code_equivalence",
    "failure_mode": "proof_gap",
-   "novelty": "adjacent",
+   "novelty": "unclear",
    "source_record": "NEG-CODE-WREATH-WORD-MAP-MEAN-MIXING-NOT-KTH-MOMENT",
    "split": "heldout"
   },
@@ -2176,7 +2180,7 @@
    "difficulty": "easy",
    "track": "code_equivalence",
    "failure_mode": "no_signal",
-   "novelty": "published",
+   "novelty": "unclear",
    "source_record": "NEG-CODE-SELF-DUAL-WREATH-ONE-COPY-ALGORITHM",
    "split": "heldout"
   },

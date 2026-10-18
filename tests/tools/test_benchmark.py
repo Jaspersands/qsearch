@@ -76,6 +76,48 @@ def test_prompt_contains_proposals_but_no_answers() -> None:
     assert all(mode in prompt for mode in ("classical_competitor", "proof_gap"))
 
 
+def _prompt_items() -> list[dict]:
+    base = {"split": "heldout", "lesson": "", "novelty": None, "source_record": "N"}
+    dead = [dict(base, id=f"DE-{i:06X}", proposal=f"Dead end {i}.", track="dcp", kind="dead_end",
+                 killer="k", failure_mode="readout") for i in range(8)]
+    ctrl = [dict(base, id=f"CT-{i:06X}", proposal=f"Control {i}.", track="dqi_opi", kind="control",
+                 killer="", failure_mode=None) for i in range(4)]
+    return dead + ctrl
+
+
+def test_prompt_hides_item_kind_track_and_order() -> None:
+    items = _prompt_items()
+    prompt = de.agent_prompt(items)
+    assert "DE-" not in prompt and "CT-" not in prompt
+    assert "dqi_opi" not in prompt and "(dcp)" not in prompt
+    order = [line for line in prompt.splitlines() if line.startswith("[P-")]
+    assert len(order) == 12
+    kinds = ["C" if "Control" in line else "D" for line in order]
+    assert kinds != sorted(kinds) and kinds != sorted(kinds, reverse=True)
+
+
+def test_reply_aliases_map_back_to_item_ids() -> None:
+    items = _prompt_items()
+    alias = de.prompt_alias(items[9]["id"])
+    reply = json.dumps({"id": alias, "pursue": True, "failure_mode": None, "killer": ""})
+    old_style = json.dumps({"id": "DE-000001", "pursue": False, "failure_mode": "readout", "killer": "k"})
+    answers = de.parse_reply(reply + "\n" + old_style, items)
+    assert answers[items[9]["id"]]["pursue"] is True
+    assert answers["DE-000001"]["pursue"] is False
+    assert alias not in answers
+
+
+def test_disputed_gold_mode_is_left_out_of_mode_accuracy() -> None:
+    items = [
+        {"id": "A", "kind": "dead_end", "failure_mode": "readout", "split": "heldout"},
+        {"id": "B", "kind": "dead_end", "failure_mode": "proof_gap", "split": "heldout", "failure_mode_disputed": True},
+    ]
+    answers = {"A": {"pursue": False, "failure_mode": "readout"}, "B": {"pursue": False, "failure_mode": "readout"}}
+    score = de.score(items, answers, {})
+    assert score["failure_mode_accuracy"] == pytest.approx(1.0)
+    assert score["n_mode_scored"] == 1
+
+
 def test_score_combines_answers_and_judge_verdicts() -> None:
     items = [
         {"id": "A", "kind": "dead_end", "failure_mode": "readout", "split": "heldout"},
@@ -176,6 +218,20 @@ def test_review_applies_after_split_without_reshuffling() -> None:
     assert report["dropped_in_review"] == 1 and report["fixed_in_review"] == 1
 
 
+def test_review_marks_a_rejected_gold_mode_as_disputed() -> None:
+    records = [_record(i, "x") for i in range(4)]
+    labels = _labels(records, ["readout"] * 4)
+    curated = [{"source_record": r["id"], "keep": True, "proposal": f"Measure packet set {i} in a rotated basis.",
+                "killer": f"Mixed packets carry no phase {i}.", "lesson": "L.", "difficulty": "easy"} for i, r in enumerate(records)]
+    base, _ = de.assemble(curated, records, labels, {}, [], {}, seed=0)
+    target = base[0]["id"]
+    review = {target: {"id": target, "verdict": "ok", "mode_fit": False, "note": "really a proof gap"}}
+    items, report = de.assemble(curated, records, labels, {}, [], {}, seed=0, review=review)
+    flags = {i["id"]: i.get("failure_mode_disputed", False) for i in items}
+    assert flags[target] is True and not any(v for k, v in flags.items() if k != target)
+    assert report["mode_disputed_in_review"] == 1
+
+
 def test_load_drop_list_reads_reasons(tmp_path: Path) -> None:
     assert de.load_drop(tmp_path) == {}
     path = tmp_path / de.DROP_FILE
@@ -268,3 +324,11 @@ def test_render_reports_each_agent() -> None:
                "items": {"n": 3, "dead_ends": 2, "controls": 1, "split": "heldout"}, "generated_on": "2026-10-19"}
     text = de.render(results)
     assert "| haiku |" in text and "50%" in text and de.CANARY in text
+
+
+def test_render_says_how_many_dead_ends_the_mode_score_covers() -> None:
+    row = {"n_dead_ends": 72, "n_controls": 12, "dead_ends_rejected": 1.0, "failure_mode_accuracy": 0.5,
+           "n_mode_scored": 69, "killer_found": 0.5, "controls_pursued": 1.0, "answered": 84}
+    results = {"agents": {"haiku": row}, "items": {"n": 84, "dead_ends": 72, "controls": 12, "split": "heldout"},
+               "generated_on": "2026-10-19"}
+    assert "Failure mode right is scored on the 69 dead ends" in de.render(results)
