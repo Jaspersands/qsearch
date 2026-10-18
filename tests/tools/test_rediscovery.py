@@ -151,6 +151,60 @@ def test_import_verifies_citations_against_abstracts(tmp_path: Path) -> None:
         rd.import_judgements([bad], papers, local={})
 
 
+def test_published_override_needs_its_own_verified_citation(tmp_path: Path) -> None:
+    papers = _papers()
+    (pid, paper), (other, other_paper) = list(papers.items())[:2]
+    quote = " ".join(paper.abstract.split()[3:12])
+    other_quote = " ".join(other_paper.abstract.split()[2:11])
+    out = tmp_path / "j.jsonl"
+    out.write_text(json.dumps({
+        "cluster": "C01", "label": "unclear", "confidence": 0.6,
+        "citations": [{"arxiv_id": pid, "quote": quote}],
+        "member_overrides": {
+            "NEG-A": {"label": "published", "note": f"arXiv:{pid} states it."},
+            "NEG-B": {"label": "published", "note": "arXiv:2208.11060 states it."},
+            "NEG-C": {"label": "published", "note": "own quote", "citations": [{"arxiv_id": other, "quote": other_quote}]},
+            "NEG-D": {"label": "adjacent", "note": "no citation needed"},
+        },
+        "queries": [],
+    }))
+    overrides = rd.import_judgements([out], papers, local={})["C01"]["member_overrides"]
+    assert overrides["NEG-A"]["label"] == "published" and overrides["NEG-A"]["citations"][0]["arxiv_id"] == pid
+    assert overrides["NEG-B"]["label"] == "unclear" and overrides["NEG-B"]["downgraded_from"] == "published"
+    assert overrides["NEG-C"]["label"] == "published" and overrides["NEG-C"]["citations"][0]["arxiv_id"] == other
+    assert overrides["NEG-D"]["label"] == "adjacent"
+
+
+def test_ground_truth_shows_the_members_own_citation() -> None:
+    records = _topic_records()
+    clusters = rd.cluster_negatives(records, n_clusters=3)
+    barren = next(c for c in clusters if c.members[0].startswith("NEG-BARREN"))
+    own = {"arxiv_id": "2208.11060", "quote": "q", "verified": True}
+    judgements = {barren.cluster_id: {
+        "label": "unclear", "confidence": 0.6,
+        "citations": [{"arxiv_id": "2408.02778", "quote": "q", "verified": True}],
+        "member_overrides": {"NEG-BARREN-1": {"label": "published", "note": "n", "citations": [own]}},
+    }}
+    analysis = rd.analyse(records, clusters, judgements, {"NEG-BARREN-1": "kernels", "NEG-BARREN-0": "x"}, shown=set())
+    rows = {r["id"]: r for r in analysis["ground_truth"]["rows"]}
+    assert [c["arxiv_id"] for c in rows["NEG-BARREN-1"]["citations"]] == ["2208.11060"]
+    assert rows["NEG-BARREN-0"]["citations"] == []
+
+
+def test_spot_check_section_lists_disagreements_by_basis() -> None:
+    records = _topic_records()
+    clusters = rd.cluster_negatives(records, n_clusters=3)
+    barren = next(c for c in clusters if c.members[0].startswith("NEG-BARREN"))
+    judgements = {barren.cluster_id: {"label": "published", "confidence": 0.9,
+                                      "citations": [{"arxiv_id": "1803.11173", "quote": "q", "verified": True}], "member_overrides": {}}}
+    spot = {"NEG-BARREN-0": {"agree": True, "note": "label=published; fine"},
+            "NEG-BARREN-1": {"agree": False, "note": "label=adjacent; different setting"}}
+    analysis = rd.analyse(records, clusters, judgements, {}, shown={"NEG-BARREN-0"}, spot_check=spot)
+    assert analysis["spot_check"]["by_basis"] == {"shown": [1, 1], "propagated": [0, 1]}
+    text = rd.render(analysis)
+    assert "## Spot check" in text and "NEG-BARREN-1" in text and "different setting" in text
+
+
 def test_analyse_propagates_labels_and_scores_ground_truth() -> None:
     records = _topic_records()
     clusters = rd.cluster_negatives(records, n_clusters=3)

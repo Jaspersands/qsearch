@@ -326,12 +326,20 @@ def import_judgements(paths: list[Path], papers: dict[str, Paper], local: dict[s
             cluster, label = row.get("cluster"), row.get("label")
             if not cluster or label not in LABELS:
                 raise ValueError(f"{path}: bad cluster/label {cluster!r}/{label!r}")
+            citations = [_verify(c, papers, local) for c in (row.get("citations") or [])[:3]]
             overrides = {}
             for record_id, override in (row.get("member_overrides") or {}).items():
                 if override.get("label") not in LABELS:
                     raise ValueError(f"{path}: bad override label for {record_id}")
-                overrides[record_id] = {"label": override["label"], "note": str(override.get("note", ""))[:300]}
-            citations = [_verify(c, papers, local) for c in (row.get("citations") or [])[:3]]
+                note = str(override.get("note", ""))
+                # A member's own citations, or cluster citations its note names by id; verified ones only.
+                named = set(re.findall(rf"\b({_ID})\b", note))
+                own = [c for c in (_verify(c, papers, local) for c in (override.get("citations") or [])[:3]) if c["verified"]]
+                own += [c for c in citations if c["verified"] and c["arxiv_id"] in named and c not in own]
+                entry_override = {"label": override["label"], "note": note[:300], "citations": own}
+                if override["label"] == "published" and not own:
+                    entry_override["label"], entry_override["downgraded_from"] = "unclear", "published"
+                overrides[record_id] = entry_override
             entry = {
                 "label": label,
                 "barrier": str(row.get("barrier", ""))[:500],
@@ -344,6 +352,20 @@ def import_judgements(paths: list[Path], papers: dict[str, Paper], local: dict[s
                 entry["label"], entry["downgraded_from"] = "unclear", "published"
             judged[cluster] = entry
     return judged
+
+
+def _member_citations(judgements: dict[str, dict], row: dict) -> list[dict]:
+    """Verified citations behind one record's label: its override's own, else its cluster's when the
+    record carries the cluster's published or adjacent label."""
+    judgement = judgements.get(row["cluster"]) if row.get("cluster") else None
+    if judgement is None:
+        return []
+    override = judgement["member_overrides"].get(row["id"])
+    if override is not None:
+        return [c for c in override.get("citations", []) if c["verified"]]
+    if judgement["label"] in ("published", "adjacent"):
+        return [c for c in judgement.get("citations", []) if c["verified"]]
+    return []
 
 
 def analyse(
@@ -385,12 +407,11 @@ def analyse(
     truth_rows = []
     for record_id, reference in sorted(truth.items()):
         row = by_id.get(record_id)
-        cluster_judgement = judgements.get(row["cluster"]) if row and row["cluster"] else None
         truth_rows.append({
             "id": record_id,
             "reference": reference,
             "label": row["label"] if row else "missing",
-            "citations": [c for c in (cluster_judgement or {}).get("citations", []) if c["verified"]],
+            "citations": _member_citations(judgements, row) if row else [],
         })
     cited_rows = []
     for row in rows:
@@ -440,7 +461,16 @@ def analyse(
     }
     if spot_check:
         agree = sum(1 for v in spot_check.values() if v.get("agree"))
-        result["spot_check"] = {"n": len(spot_check), "agree": agree, "rows": spot_check}
+        by_basis: dict[str, list[int]] = {}
+        rows_out = {}
+        for record_id, verdict in spot_check.items():
+            row = by_id.get(record_id, {})
+            basis = row.get("basis", "none")
+            tally = by_basis.setdefault(basis, [0, 0])
+            tally[0] += 1 if verdict.get("agree") else 0
+            tally[1] += 1
+            rows_out[record_id] = {**verdict, "basis": basis, "label": row.get("label"), "cluster": row.get("cluster")}
+        result["spot_check"] = {"n": len(spot_check), "agree": agree, "by_basis": by_basis, "rows": rows_out}
     return result
 
 
@@ -509,11 +539,19 @@ def render(analysis: dict) -> str:
             )
     spot = analysis.get("spot_check")
     if spot:
+        basis_text = "; ".join(f"{basis} {a} of {n}" for basis, (a, n) in sorted(spot.get("by_basis", {}).items()))
         lines += [
             "",
-            f"Spot check: a fresh reviewer re-read {spot['n']} randomly chosen judged records with their label and citations "
-            f"and agreed with {spot['agree']} ({_pct(spot['agree'], spot['n'])}).",
+            "## Spot check",
+            "",
+            f"A fresh reviewer re-read {spot['n']} randomly chosen judged records with their label and citations "
+            f"and agreed with {spot['agree']} ({_pct(spot['agree'], spot['n'])}). By basis: {basis_text}.",
         ]
+        disputed = [(rid, v) for rid, v in sorted(spot["rows"].items()) if not v.get("agree")]
+        if disputed:
+            lines += ["", "| Record | Basis | Cluster | Assigned | Reviewer |", "|---|---|---|---|---|"]
+            for rid, v in disputed:
+                lines.append(f"| `{rid}` | {v.get('basis')} | {v.get('cluster')} | {v.get('label')} | {v.get('note', '').replace('|', '/')} |")
     queue = [c for c in analysis["clusters"] if c["label"] in ("published", "adjacent", "unclear")]
     queue.sort(key=lambda c: (c["confidence"] if c["confidence"] is not None else 0, -c["size"]))
     lines += [
