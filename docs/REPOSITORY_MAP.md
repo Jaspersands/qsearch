@@ -4,7 +4,8 @@ Q-Search organizes its 792 scientific theorem verification modules within a dedi
 
 ## Entry Points & Core Framework (`core/`)
 
-- `qsearch.py` - unified command-line interface for every registered workflow (at root).
+- `qsearch.py` - unified command-line interface for every registered workflow (at root). Since 2026-10-19 it is a short shim; `python qsearch.py ...` works as before.
+- `qsearch_cli/` - where the commands live: `commands/<domain>.py` holds each subcommand's parser lines and function, `registry.py` lists them in `--help` order. See `tools/split_cli/README.md` for how to add one.
 - `core/research_registry.py` - proof-gated candidates, experiments, results, and negative-result persistence.
 - `core/experiment_runner.py` - supported experiment dispatch and run history.
 - `core/proof_gate.py` - mandatory candidate proof obligations.
@@ -39,6 +40,10 @@ Q-Search organizes its 792 scientific theorem verification modules within a dedi
 - `tools/circuit_search/` - searches local readout circuits (product, adaptive) against certified PPT and collective bounds; DCP packets first.
 - `packages/qsearch_classical/` - installable copy of the classical solvers (prime-character OPI, polar Gibbs source, Jacobi sums), generated from `theorems/` by `sync.py` and checked for parity in CI.
 - `tools/benchmark/` - "dead ends", a benchmark for AI research agents built from retained negatives plus literature controls; held-out baselines in `research/audits/DEAD_ENDS_BASELINES.md`.
+- `tools/split_cli/` - the generator and verifier that split the old 30,000-line `qsearch.py` into `qsearch_cli/`; `migrate.py sweep` moves old-style additions into the package. Manifest in `research/audits/cli_manifest.json`.
+- `tools/cockpit/` - builds `site/data/cockpit.json` for `cockpit.html`, a dashboard of what the agents are working on.
+- `tools/spend/` - spend ledger, opt-in timing wrapper (`timed.py`) and per-day Codex token totals; report in `research/audits/SPEND_REPORT.md`.
+- `formal/` - Lean 4 project formalizing parts of the prime-character exterior bound; built by its own workflow, not by `validate.yml`.
 - `docs/` - human-readable project maps and research documentation.
 - `docs/papers/classical-competitors/` - draft preprint on three classical or local competitors; every number is generated from a committed report, and `reproduce.sh` regenerates them.
 - `docs/outreach/` - unsent drafts to outside researchers and an open-problems post; nothing there has been sent.
@@ -51,4 +56,4 @@ Q-Search organizes its 792 scientific theorem verification modules within a dedi
 3. New generated research data belongs under `research/`, never at repository root.
 4. New website assets belong under `site/`.
 5. Maintenance scripts belong under `tools/`.
-6. Only `qsearch.py` and configuration files reside at the repository root.
+6. Only `qsearch.py`, its `qsearch_cli/` package, the site's HTML pages, `README.md`, `conftest.py` and configuration files reside at the repository root.

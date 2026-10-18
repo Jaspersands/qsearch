@@ -1,0 +1,18 @@
+name = "formal"
+version = "0.1.0"
+defaultTargets = ["Formal"]
+
+[leanOptions]
+autoImplicit = false
+relaxedAutoImplicit = false
+
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+rev = "v4.35.0"
+
+[[lean_lib]]
+name = "Formal"
+# Mathlib is built for the Lean module system; these files are ordinary
+# (non-`module`) Lean files, which Lake accepts with this opt-out.
+allowNonModules = true
