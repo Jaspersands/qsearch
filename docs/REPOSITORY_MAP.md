@@ -36,6 +36,7 @@ Q-Search organizes its 792 scientific theorem verification modules within a dedi
 - `tools/arxiv_watch/` - weekly arXiv collision watch; digest in `research/audits/ARXIV_WATCH.md`.
 - `tools/audit/` - read-only audits of the registry (failure modes, rediscovery); outputs in `research/audits/`.
 - `tools/claim_checker/` - flags the fine print (input loading, readout, oracle-only, baselines) in a quantum-advantage abstract.
+- `tools/circuit_search/` - searches local readout circuits (product, adaptive) against certified PPT and collective bounds; DCP packets first.
 - `docs/` - human-readable project maps and research documentation.
 - `tests/` - unit, integration, theorem-contract, and registry tests.
 

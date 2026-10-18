@@ -2,5 +2,7 @@
 scikit-learn>=1.4
 mcp>=1.16
 pytest>=8
+# tools/circuit_search PPT bound (tests skip without it).
+cvxpy>=1.4
 # Optional dense ranker for tools/corpus (`build --dense`); downloads a ~90 MB model once.
 # sentence-transformers>=3
