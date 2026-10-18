@@ -12,7 +12,9 @@ cluster's shared barrier in standard terms, searches arXiv through the `search` 
 (paced to one request per 3 s across processes and cached), and labels the cluster
 published / adjacent / not-found / unclear. A "published" label needs a citation whose
 abstract contains the judge's quote verbatim; otherwise it is downgraded to unclear.
-Labels propagate from the shown members to the rest of the cluster.
+Labels propagate from the shown members to the rest of the cluster, with a guard: an unread
+member inherits the cluster label only when at least half of the members the judge read kept
+that label, and one of those shares the member's track. Otherwise it is withheld (unclear).
 
 Outputs: research/audits/rediscovery_audit.json and REDISCOVERY_AUDIT.md. Inputs that
 make the report reproducible are committed next to them: the cluster assignment, the
@@ -368,6 +370,22 @@ def _member_citations(judgements: dict[str, dict], row: dict) -> list[dict]:
     return []
 
 
+def _inheriting_tracks(clusters: list[Cluster], judgements: dict[str, dict], shown: set[str],
+                       track_of: dict[str, str]) -> dict[str, set[str]]:
+    """Per cluster, the tracks whose unread members may inherit the cluster label: the tracks of read
+    members that kept the label, provided at least half of the read members kept it."""
+    inherit: dict[str, set[str]] = {}
+    for cluster in clusters:
+        judgement = judgements.get(cluster.cluster_id)
+        if judgement is None:
+            continue
+        overrides = judgement["member_overrides"]
+        read = [m for m in cluster.members if m in shown and m in track_of]
+        kept = [m for m in read if overrides.get(m, {}).get("label", judgement["label"]) == judgement["label"]]
+        inherit[cluster.cluster_id] = {track_of[m] for m in kept} if read and 2 * len(kept) >= len(read) else set()
+    return inherit
+
+
 def analyse(
     records: list[dict],
     clusters: list[Cluster],
@@ -378,6 +396,8 @@ def analyse(
     spot_check: dict[str, dict] | None = None,
 ) -> dict:
     cluster_of = {m: c for c in clusters for m in c.members}
+    track_of = {record["id"]: fm.track_for(record) for record in records}
+    inherit = _inheriting_tracks(clusters, judgements, shown, track_of)
     rows = []
     for record in records:
         cluster = cluster_of.get(record["id"])
@@ -386,13 +406,19 @@ def analyse(
             label, basis = UNJUDGED, "none"
         else:
             override = judgement["member_overrides"].get(record["id"])
-            label = override["label"] if override else judgement["label"]
-            basis = "shown" if record["id"] in shown else "propagated"
+            if override:
+                label, basis = override["label"], "shown" if record["id"] in shown else "propagated"
+            elif record["id"] in shown:
+                label, basis = judgement["label"], "shown"
+            elif track_of[record["id"]] in inherit[cluster.cluster_id]:
+                label, basis = judgement["label"], "propagated"
+            else:
+                label, basis = "unclear", "withheld"
         rows.append({
             "id": record["id"],
             "cluster": cluster.cluster_id if cluster else None,
             "similarity": cluster.similarity.get(record["id"]) if cluster else None,
-            "track": fm.track_for(record),
+            "track": track_of[record["id"]],
             "label": label,
             "basis": basis,
             "cited_ids": cited_ids(record),
@@ -401,8 +427,12 @@ def analyse(
     counts = Counter(row["label"] for row in rows)
     judged = [row for row in rows if row["label"] != UNJUDGED]
     by_track: dict[str, Counter] = defaultdict(Counter)
+    by_track_read: dict[str, Counter] = defaultdict(Counter)
     for row in rows:
         by_track[row["track"]][row["label"]] += 1
+        if row["basis"] == "shown":
+            by_track_read[row["track"]][row["label"]] += 1
+    read_rows = [row for row in rows if row["basis"] == "shown"]
 
     truth_rows = []
     for record_id, reference in sorted(truth.items()):
@@ -449,7 +479,9 @@ def analyse(
         "counts": dict(counts),
         "judged": len(judged),
         "basis": dict(Counter(row["basis"] for row in rows)),
+        "read": {"n": len(read_rows), **Counter(row["label"] for row in read_rows)},
         "by_track": {track: dict(counter) for track, counter in sorted(by_track.items())},
+        "by_track_read": {track: dict(counter) for track, counter in sorted(by_track_read.items())},
         "ground_truth": {
             "n": len(truth_rows),
             "published": sum(r["label"] == "published" for r in truth_rows),
@@ -460,17 +492,31 @@ def analyse(
         "records": rows,
     }
     if spot_check:
-        agree = sum(1 for v in spot_check.values() if v.get("agree"))
+        # A verdict is about the label the reviewer saw. When that label has changed since (for
+        # example, the propagation guard withheld it), the verdict says nothing about the current
+        # label: it is counted apart as stale.
+        agree = n = 0
         by_basis: dict[str, list[int]] = {}
         rows_out = {}
-        for record_id, verdict in spot_check.items():
+        stale = {"n": 0, "agreed_with_seen_label": 0, "ids": []}
+        for record_id, verdict in sorted(spot_check.items()):
             row = by_id.get(record_id, {})
             basis = row.get("basis", "none")
+            rows_out[record_id] = {**verdict, "basis": basis, "label": row.get("label"), "cluster": row.get("cluster")}
+            seen = verdict.get("seen_label")
+            if seen is not None and seen != row.get("label"):
+                stale["n"] += 1
+                stale["agreed_with_seen_label"] += 1 if verdict.get("agree") else 0
+                stale["ids"].append(record_id)
+                rows_out[record_id]["stale"] = True
+                continue
+            n += 1
+            agree += 1 if verdict.get("agree") else 0
             tally = by_basis.setdefault(basis, [0, 0])
             tally[0] += 1 if verdict.get("agree") else 0
             tally[1] += 1
-            rows_out[record_id] = {**verdict, "basis": basis, "label": row.get("label"), "cluster": row.get("cluster")}
-        result["spot_check"] = {"n": len(spot_check), "agree": agree, "by_basis": by_basis, "rows": rows_out}
+        result["spot_check"] = {"sampled": len(spot_check), "n": n, "agree": agree, "by_basis": by_basis,
+                                "stale": stale, "rows": rows_out}
     return result
 
 
@@ -486,35 +532,47 @@ def render(analysis: dict) -> str:
         f"Generated {analysis['generated_on']} by `tools/audit/rediscovery.py`; do not edit by hand.",
         f"Scope: the {analysis['total']} records in `research/registry/negative_results.json`, grouped into",
         f"{len(analysis['clusters'])} clusters by shared reasoning. A judge searched arXiv for each cluster's barrier",
-        "and labelled it; labels propagate from the members it read to the rest of the cluster.",
+        "and labelled it. Labels pass from the members it read to the rest of the cluster only when at least",
+        "half of the read members kept the cluster label and one of them shares the record's track.",
         "\"Published\" requires a citation whose abstract contains the judge's quote verbatim.",
         "",
         "## Headline",
         "",
-        "| Label | Records | Share of judged | Meaning |",
-        "|---|---|---|---|",
+        "| Label | Records | Share of judged | Read by a judge | Share of read | Meaning |",
+        "|---|---|---|---|---|---|",
     ]
+    read = analysis.get("read", {"n": 0})
     for label, meaning in LABELS.items():
-        lines.append(f"| {label} | {counts.get(label, 0)} | {_pct(counts.get(label, 0), judged)} | {meaning} |")
+        lines.append(f"| {label} | {counts.get(label, 0)} | {_pct(counts.get(label, 0), judged)} | "
+                     f"{read.get(label, 0)} | {_pct(read.get(label, 0), read['n'])} | {meaning} |")
     if counts.get(UNJUDGED):
-        lines.append(f"| {UNJUDGED} | {counts[UNJUDGED]} | - | Not in a judged cluster (for example, added after the export). |")
+        lines.append(f"| {UNJUDGED} | {counts[UNJUDGED]} | - | - | - | Not in a judged cluster (for example, added after the export). |")
     basis = analysis["basis"]
+    decided = judged - counts.get("unclear", 0)
     lines += [
         "",
-        f"Basis: {basis.get('shown', 0)} records were read by a judge; {basis.get('propagated', 0)} inherited their cluster's label.",
+        f"Basis: {basis.get('shown', 0)} records were read by a judge; {basis.get('propagated', 0)} inherited their "
+        f"cluster's label; {basis.get('withheld', 0)} were withheld and count as unclear, because the judge overrode "
+        "the cluster label for most of the members it read or no read member shares their track.",
+        f"Of the {decided} records with a label other than unclear, {counts.get('published', 0)} "
+        f"({_pct(counts.get('published', 0), decided)}) are published.",
         "",
         "## By track",
         "",
-        "| Track | Records | Published | Adjacent | Not found | Unclear |",
-        "|---|---|---|---|---|---|",
+        "Published (read) counts only the records a judge read.",
+        "",
+        "| Track | Records | Published | Adjacent | Not found | Unclear | Published (read) |",
+        "|---|---|---|---|---|---|---|",
     ]
     tracks = sorted(analysis["by_track"].items(), key=lambda item: -sum(item[1].values()))
     for track, labels in tracks:
         n = sum(labels.values())
+        track_read = analysis.get("by_track_read", {}).get(track, {})
+        n_read = sum(track_read.values())
         lines.append(
             f"| {fm.TRACK_TITLES.get(track, track)} | {n} | "
             + " | ".join(_pct(labels.get(name, 0), n) for name in ("published", "adjacent", "not-found", "unclear"))
-            + " |"
+            + f" | {track_read.get('published', 0)} of {n_read} |"
         )
     gt = analysis["ground_truth"]
     lines += [
@@ -544,10 +602,22 @@ def render(analysis: dict) -> str:
             "",
             "## Spot check",
             "",
-            f"A fresh reviewer re-read {spot['n']} randomly chosen judged records with their label and citations "
-            f"and agreed with {spot['agree']} ({_pct(spot['agree'], spot['n'])}). By basis: {basis_text}.",
         ]
-        disputed = [(rid, v) for rid, v in sorted(spot["rows"].items()) if not v.get("agree")]
+        stale = spot.get("stale") or {"n": 0}
+        agreed = f"{spot['agree']} ({_pct(spot['agree'], spot['n'])}). By basis: {basis_text}."
+        if stale["n"]:
+            lines.append(f"A fresh reviewer re-read {spot.get('sampled', spot['n'])} randomly chosen judged records with "
+                         f"their label and citations. On the {spot['n']} whose label has not changed since, it agreed with {agreed}")
+        else:
+            lines.append(f"A fresh reviewer re-read {spot['n']} randomly chosen judged records with their label and "
+                         f"citations and agreed with {agreed}")
+        if stale["n"]:
+            noun = "record's label" if stale["n"] == 1 else "records' labels"
+            lines += ["", (
+                f"{stale['n']} sampled {noun} changed after the review and {'is' if stale['n'] == 1 else 'are'} left out "
+                f"above: {', '.join(f'`{i}`' for i in stale['ids'])}. The reviewer had agreed with "
+                f"{stale['agreed_with_seen_label']} of the {stale['n']} labels as they were then.")]
+        disputed = [(rid, v) for rid, v in sorted(spot["rows"].items()) if not v.get("agree") and not v.get("stale")]
         if disputed:
             lines += ["", "| Record | Basis | Cluster | Assigned | Reviewer |", "|---|---|---|---|---|"]
             for rid, v in disputed:
@@ -672,7 +742,10 @@ def main(argv: list[str] | None = None) -> int:
         if args.spot_check:
             for path in args.files:
                 for row in _rows(path):
-                    data.setdefault("spot_check", {})[row["id"]] = {"agree": bool(row.get("agree")), "note": str(row.get("note", ""))[:400]}
+                    verdict = {"agree": bool(row.get("agree")), "note": str(row.get("note", ""))[:400]}
+                    if row.get("assigned_label"):
+                        verdict["seen_label"] = str(row["assigned_label"])
+                    data.setdefault("spot_check", {})[row["id"]] = verdict
         else:
             papers = known_papers(root / CACHE_DIR)
             judged = import_judgements(args.files, papers, _local_texts(root, args.files))

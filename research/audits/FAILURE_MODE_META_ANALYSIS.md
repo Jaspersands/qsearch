@@ -27,12 +27,12 @@ Labels by source: 976 judge, 0 rule.
 | Track | Records | Top mode | Second | Third |
 |---|---|---|---|---|
 | Code equivalence | 457 | Classical competitor 45% | Proof gap 19% | Overbroad claim 8% |
-| Coset observables / nonabelian HSP | 254 | Classical competitor 28% | Readout 19% | No signal 17% |
+| Coset observables / nonabelian HSP | 255 | Classical competitor 27% | Readout 18% | No signal 17% |
 | Dihedral coset / hidden shift | 154 | Resource blow-up 18% | No signal 16% | Proof gap 13% |
 | Legacy toy oracles | 53 | Hidden advice or oracle 100% |  |  |
 | Query lower bounds | 22 | Classical competitor 55% | No signal 41% | Resource blow-up 5% |
 | Other | 17 | No signal 35% | Proof gap 24% | Readout 12% |
-| Applied-QC barriers from the literature | 11 | Classical competitor 45% | Readout 36% | No signal 18% |
+| Applied-QC barriers from the literature | 10 | Classical competitor 50% | Readout 40% | No signal 10% |
 | Lattices | 7 | Finite-size evidence 43% | Resource blow-up 14% | Proof gap 14% |
 | DQI / OPI / prime characters | 1 | Proof gap 100% |  |  |
 
@@ -67,7 +67,7 @@ Keyword rules against judge labels on 976 records: primary mode agrees on 49%, a
 
 Use the rules for triage of new records only where precision is high; the judge labels are the ones the distribution above rests on.
 
-A second, independent judge relabeled 214 records: its primary mode matches the first judge's on 89% and falls within the first judge's primary or secondary modes on 93% (kappa 0.86). That is the ceiling for any automatic labeler.
+A second judge, the same model in a fresh context, relabeled 150 groups (214 records). Its primary mode matches the first judge's on 84% of the groups and falls within the first judge's primary or secondary modes on 91% (kappa 0.81). This measures how repeatable one model's labels are; it is not a second expert's opinion.
 
 ## Pre-filters
 

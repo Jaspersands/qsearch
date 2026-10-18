@@ -205,6 +205,30 @@ def test_spot_check_section_lists_disagreements_by_basis() -> None:
     assert "## Spot check" in text and "NEG-BARREN-1" in text and "different setting" in text
 
 
+def test_spot_check_verdict_on_a_label_that_has_since_changed_is_stale() -> None:
+    records = [_neg(f"NEG-BARREN-{i}", f"Barren claim {i}.", "Gradients vanish.") for i in range(6)]
+    cluster = rd.Cluster("C01", [r["id"] for r in records], [])
+    overrides = {f"NEG-BARREN-{i}": {"label": "adjacent", "note": "different setting"} for i in (1, 2)}
+    spot = {"NEG-BARREN-0": {"agree": True, "note": "label=published; fine", "seen_label": "published"},
+            "NEG-BARREN-4": {"agree": True, "note": "label=published; fine", "seen_label": "published"}}
+    analysis = rd.analyse(records, [cluster], _published("C01", overrides), {},
+                          shown={"NEG-BARREN-0", "NEG-BARREN-1", "NEG-BARREN-2"}, spot_check=spot)
+    check = analysis["spot_check"]
+    assert (check["sampled"], check["n"], check["agree"]) == (2, 1, 1)
+    assert check["stale"] == {"n": 1, "agreed_with_seen_label": 1, "ids": ["NEG-BARREN-4"]}
+    text = rd.render(analysis)
+    assert "re-read 2 randomly chosen judged records" in text and "On the 1 whose label has not changed" in text
+    assert "1 sampled record's label changed after the review" in text
+
+
+def test_import_keeps_the_label_the_spot_reviewer_saw(fake_repo: Path, tmp_path: Path) -> None:
+    review = tmp_path / "review.jsonl"
+    review.write_text(json.dumps({"id": "NEG-BARREN-0", "agree": True, "note": "ok", "assigned_label": "published"}) + "\n")
+    assert rd.main(["--root", str(fake_repo), "import", "--spot-check", str(review)]) == 0
+    stored = json.loads((fake_repo / rd.JUDGEMENTS_FILE).read_text())["spot_check"]["NEG-BARREN-0"]
+    assert stored["seen_label"] == "published"
+
+
 def test_analyse_propagates_labels_and_scores_ground_truth() -> None:
     records = _topic_records()
     clusters = rd.cluster_negatives(records, n_clusters=3)
@@ -227,6 +251,35 @@ def test_analyse_propagates_labels_and_scores_ground_truth() -> None:
     report = rd.render(analysis)
     for heading in ("## Headline", "## By track", "## Ground truth", "## Review queue"):
         assert heading in report
+
+
+def _published(cluster: str, overrides: dict | None = None) -> dict:
+    return {cluster: {"label": "published", "confidence": 0.9, "member_overrides": overrides or {},
+                      "citations": [{"arxiv_id": "1803.11173", "quote": "q", "verified": True}]}}
+
+
+def test_unread_members_are_withheld_when_the_judge_mostly_overrode_the_cluster_label() -> None:
+    records = [_neg(f"NEG-BARREN-{i}", f"Barren claim {i}.", "Gradients vanish.") for i in range(6)]
+    cluster = rd.Cluster("C01", [r["id"] for r in records], [])
+    overrides = {f"NEG-BARREN-{i}": {"label": "adjacent", "note": "different setting"} for i in (1, 2)}
+    analysis = rd.analyse(records, [cluster], _published("C01", overrides), {}, shown={"NEG-BARREN-0", "NEG-BARREN-1", "NEG-BARREN-2"})
+    rows = {row["id"]: row for row in analysis["records"]}
+    assert rows["NEG-BARREN-0"]["label"] == "published" and rows["NEG-BARREN-0"]["basis"] == "shown"
+    for i in (3, 4, 5):
+        assert (rows[f"NEG-BARREN-{i}"]["label"], rows[f"NEG-BARREN-{i}"]["basis"]) == ("unclear", "withheld")
+    assert analysis["read"]["published"] == 1 and analysis["read"]["n"] == 3
+
+
+def test_unread_member_on_another_track_does_not_inherit_the_label() -> None:
+    records = [_neg(f"NEG-BARREN-{i}", f"Barren claim {i}.", "Gradients vanish.") for i in range(3)]
+    records.append(_neg("NEG-DCP-SIEVE-0", "Dihedral sieve claim.", "Gradients vanish."))
+    cluster = rd.Cluster("C01", [r["id"] for r in records], [])
+    analysis = rd.analyse(records, [cluster], _published("C01"), {}, shown={"NEG-BARREN-0"})
+    rows = {row["id"]: row for row in analysis["records"]}
+    assert (rows["NEG-BARREN-2"]["label"], rows["NEG-BARREN-2"]["basis"]) == ("published", "propagated")
+    assert (rows["NEG-DCP-SIEVE-0"]["label"], rows["NEG-DCP-SIEVE-0"]["basis"]) == ("unclear", "withheld")
+    report = rd.render(analysis)
+    assert "withheld" in report and "read by a judge" in report
 
 
 def test_cli_export_and_report_on_fake_repo(fake_repo: Path, tmp_path: Path) -> None:

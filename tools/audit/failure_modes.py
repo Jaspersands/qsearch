@@ -220,7 +220,7 @@ TRACKS: tuple[tuple[str, str], ...] = (
     (
         "applied_barriers",
         r"BARREN|BOSON-SAMPLING|QUANTUM-SUPREMACY|RANDOM-CIRCUIT|QUANTUM-MACHINE-LEARNING|ERROR-MITIGATION|QAOA"
-        r"|CONTINUOUS-VARIABLE|SCRAMBLING|QUANTUM-CHAOS|CONTINUOUS-SPECTRUM",
+        r"|CONTINUOUS-VARIABLE|SCRAMBLING|QUANTUM-CHAOS|CONTINUOUS-SPECTRUM-QPE",
     ),
     ("lattice", r"LATTICE|\bLWE\b|\bLLL\b|TERNARY|\bSIS\b|nearest-plane"),
     ("dcp", r"\bDCP\b|\bEDCP\b|\bDHS\b|DIHEDRAL|SUBSET[- ]SUM|KUPERBERG|REGEV|HIDDEN[- ]SHIFT|^HS-"),
@@ -232,7 +232,7 @@ TRACKS: tuple[tuple[str, str], ...] = (
     (
         "coset_observables",
         r"COSET|^CFI|WREATH|HYPEROCTAHEDRAL|COMMUTANT|SYMMETRIC|GRAPH|WEISFEILER|\bWL\b|NONABELIAN|CARRIER|LIE-TYPE"
-        r"|\bS_?\d{1,2}\b|^REP-|FOURIER|IRREP|\bPGM\b|DERANGEMENT|MULTIPLICITY|RACAH|RECOUPLING",
+        r"|\bS_?\d{1,2}\b|^REP-|FOURIER|IRREP|\bPGM\b|DERANGEMENT|MULTIPLICITY|RACAH|RECOUPLING|NONCOMPACT-LIE",
     ),
     ("query_lower_bound", r"QUERY|LOWER-BOUND"),
 )
@@ -498,7 +498,23 @@ def analyse(records: list[dict], judgements: dict, seen: dict[str, str]) -> dict
     }
     second = judgements.get("second_opinion")
     if second:
-        result["second_opinion"] = agreement({i: label["primary"] for i, label in second.items()}, labels)
+        result["second_opinion"] = second_opinion_agreement(records, labels, second)
+    return result
+
+
+def second_opinion_agreement(records: list[dict], first: dict[str, dict], second: dict[str, dict]) -> dict:
+    """Agreement between two judges per judged group. Both judges label whole groups, so counting the
+    expanded records would let every large group count many times over."""
+    by_group: dict[str, tuple[dict, dict]] = {}
+    n_records = 0
+    for key, ids in judge_groups(records).items():
+        shared = [i for i in ids if i in first and i in second]
+        if shared:
+            by_group[key] = (first[shared[0]], second[shared[0]])
+            n_records += len(shared)
+    result = agreement({key: b["primary"] for key, (_, b) in by_group.items()}, {key: a for key, (a, _) in by_group.items()})
+    if result.get("n"):
+        result["records"] = n_records
     return result
 
 
@@ -582,9 +598,11 @@ def render(analysis: dict) -> str:
     if second and second.get("n"):
         lines += [
             "",
-            f"A second, independent judge relabeled {second['n']} records: its primary mode matches the first "
-            f"judge's on {_pct(second['strict'], 1)} and falls within the first judge's primary or secondary modes "
-            f"on {_pct(second['lenient'], 1)} (kappa {second['kappa']:.2f}). That is the ceiling for any automatic labeler.",
+            f"A second judge, the same model in a fresh context, relabeled {second['n']} groups "
+            f"({second.get('records', second['n'])} records). Its primary mode matches the first judge's on "
+            f"{_pct(second['strict'], 1)} of the groups and falls within the first judge's primary or secondary modes "
+            f"on {_pct(second['lenient'], 1)} (kappa {second['kappa']:.2f}). This measures how repeatable one model's "
+            "labels are; it is not a second expert's opinion.",
         ]
 
     lines += [

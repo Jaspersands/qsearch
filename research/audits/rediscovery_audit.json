@@ -1,42 +1,42 @@
 {
  "basis": {
-  "propagated": 610,
-  "shown": 366
+  "propagated": 541,
+  "shown": 366,
+  "withheld": 69
  },
  "by_track": {
   "applied_barriers": {
-   "published": 5,
+   "published": 4,
    "unclear": 6
   },
   "code_equivalence": {
-   "adjacent": 141,
-   "published": 168,
-   "unclear": 148
+   "adjacent": 135,
+   "published": 157,
+   "unclear": 165
   },
   "coset_observables": {
-   "adjacent": 115,
+   "adjacent": 113,
    "not-found": 1,
-   "published": 121,
-   "unclear": 17
+   "published": 111,
+   "unclear": 30
   },
   "dcp": {
-   "adjacent": 111,
+   "adjacent": 109,
    "not-found": 1,
-   "published": 11,
-   "unclear": 31
+   "published": 1,
+   "unclear": 43
   },
   "dqi_opi": {
    "unclear": 1
   },
   "lattice": {
-   "adjacent": 4,
-   "published": 1,
-   "unclear": 2
+   "adjacent": 2,
+   "unclear": 5
   },
   "other": {
-   "adjacent": 9,
-   "published": 2,
-   "unclear": 6
+   "adjacent": 5,
+   "published": 1,
+   "unclear": 11
   },
   "query_lower_bound": {
    "adjacent": 19,
@@ -45,6 +45,44 @@
   },
   "toy_oracle": {
    "adjacent": 53
+  }
+ },
+ "by_track_read": {
+  "applied_barriers": {
+   "published": 4,
+   "unclear": 3
+  },
+  "code_equivalence": {
+   "adjacent": 63,
+   "published": 83,
+   "unclear": 39
+  },
+  "coset_observables": {
+   "adjacent": 35,
+   "not-found": 1,
+   "published": 48,
+   "unclear": 6
+  },
+  "dcp": {
+   "adjacent": 49,
+   "not-found": 1,
+   "published": 1,
+   "unclear": 7
+  },
+  "lattice": {
+   "adjacent": 2
+  },
+  "other": {
+   "adjacent": 3,
+   "published": 1,
+   "unclear": 2
+  },
+  "query_lower_bound": {
+   "adjacent": 11,
+   "published": 1
+  },
+  "toy_oracle": {
+   "adjacent": 6
   }
  },
  "cited_records": [
@@ -669,7 +707,7 @@
    ],
    "tracks": {
     "code_equivalence": 2,
-    "coset_observables": 17,
+    "coset_observables": 18,
     "dcp": 2
    }
   },
@@ -2854,10 +2892,10 @@
   }
  ],
  "counts": {
-  "adjacent": 452,
+  "adjacent": 436,
   "not-found": 2,
-  "published": 309,
-  "unclear": 213
+  "published": 275,
+  "unclear": 263
  },
  "generated_by": "tools/audit/rediscovery.py",
  "generated_on": "2026-10-19",
@@ -3039,13 +3077,20 @@
   "published": "A retrieved abstract states the same barrier for the same problem setting; the records add at most instances.",
   "unclear": "The cluster is too heterogeneous or its records too terse to judge."
  },
+ "read": {
+  "adjacent": 169,
+  "n": 366,
+  "not-found": 2,
+  "published": 138,
+  "unclear": 57
+ },
  "records": [
   {
-   "basis": "propagated",
+   "basis": "withheld",
    "cited_ids": [],
    "cluster": "C18",
    "id": "ADAPTIVE-PALETTE-CATALOGUE-NOT-FREE-ESCAPE",
-   "label": "adjacent",
+   "label": "unclear",
    "similarity": 0.4187,
    "track": "other"
   },
@@ -3140,11 +3185,11 @@
    "track": "other"
   },
   {
-   "basis": "propagated",
+   "basis": "withheld",
    "cited_ids": [],
    "cluster": "C09",
    "id": "BOUNDED-PAIR-LCU-MEAN-NOT-THRESHOLD-COMPOSABLE",
-   "label": "adjacent",
+   "label": "unclear",
    "similarity": 0.3113,
    "track": "other"
   },
@@ -3428,7 +3473,7 @@
    "track": "coset_observables"
   },
   {
-   "basis": "propagated",
+   "basis": "withheld",
    "cited_ids": [],
    "cluster": "C20",
    "id": "CHARACTER-QUERY-ADVANTAGE-KILLED-LEGENDRE_SYMBOL",
@@ -4967,7 +5012,7 @@
    "track": "dcp"
   },
   {
-   "basis": "propagated",
+   "basis": "withheld",
    "cited_ids": [],
    "cluster": "C20",
    "id": "DCP-LOCAL-PAIRING-COVERAGE-NOISE-TRADEOFF",
@@ -5021,11 +5066,11 @@
    "track": "coset_observables"
   },
   {
-   "basis": "propagated",
+   "basis": "withheld",
    "cited_ids": [],
    "cluster": "C04",
    "id": "FAITHFUL-SIGNED-TENSOR-DIAGRAM-RANGE-MISSES-TYPICAL-SOURCE",
-   "label": "published",
+   "label": "unclear",
    "similarity": 0.2389,
    "track": "other"
   },
@@ -5147,7 +5192,7 @@
    "track": "coset_observables"
   },
   {
-   "basis": "propagated",
+   "basis": "withheld",
    "cited_ids": [],
    "cluster": "C10",
    "id": "FOURIER-CONCENTRATION-DOES-NOT-CERTIFY-SHIFT-RECOVERY",
@@ -5174,11 +5219,11 @@
    "track": "query_lower_bound"
   },
   {
-   "basis": "propagated",
+   "basis": "withheld",
    "cited_ids": [],
    "cluster": "C18",
    "id": "FULL-SOURCE-SELECTOR-SCHUR-NOT-POLYNOMIAL-COMPRESSION",
-   "label": "adjacent",
+   "label": "unclear",
    "similarity": 0.3597,
    "track": "code_equivalence"
   },
@@ -6047,7 +6092,7 @@
    "track": "coset_observables"
   },
   {
-   "basis": "propagated",
+   "basis": "withheld",
    "cited_ids": [],
    "cluster": "C14",
    "id": "NEG-AFFINE-ERASURE-INSTRUMENT-MATCHED-CLASSICAL-DUAL",
@@ -6065,11 +6110,11 @@
    "track": "coset_observables"
   },
   {
-   "basis": "propagated",
+   "basis": "withheld",
    "cited_ids": [],
    "cluster": "C13",
    "id": "NEG-ARBITRARY-DEGREE-REGULATOR-EXPONENTIAL-BARRIER",
-   "label": "published",
+   "label": "unclear",
    "similarity": 0.3769,
    "track": "lattice"
   },
@@ -6092,25 +6137,25 @@
    "track": "applied_barriers"
   },
   {
-   "basis": "propagated",
+   "basis": "withheld",
    "cited_ids": [],
    "cluster": "C13",
    "id": "NEG-CFI-GRAPH-COSET-LUKS-SUBSUMPTION-BARRIER",
-   "label": "published",
+   "label": "unclear",
    "similarity": 0.4786,
    "track": "coset_observables"
   },
   {
-   "basis": "propagated",
+   "basis": "withheld",
    "cited_ids": [],
    "cluster": "C13",
    "id": "NEG-CFI-QUANTUM-WALK-LUKS-SUBSUMPTION",
-   "label": "published",
+   "label": "unclear",
    "similarity": 0.399,
    "track": "coset_observables"
   },
   {
-   "basis": "propagated",
+   "basis": "withheld",
    "cited_ids": [],
    "cluster": "C14",
    "id": "NEG-CHARACTER-SHIFT-UNIFORM-DECODING-LOWER-BOUND-BARRIER",
@@ -6119,20 +6164,20 @@
    "track": "query_lower_bound"
   },
   {
-   "basis": "propagated",
+   "basis": "withheld",
    "cited_ids": [],
    "cluster": "C08",
    "id": "NEG-CODE-GOPPA-PROJECTOR-GOPPA-SCALE-M6-T3-N48-3-4",
-   "label": "published",
+   "label": "unclear",
    "similarity": 0.2962,
    "track": "code_equivalence"
   },
   {
-   "basis": "propagated",
+   "basis": "withheld",
    "cited_ids": [],
    "cluster": "C08",
    "id": "NEG-CODE-GOPPA-PROJECTOR-GOPPA-SCALE-M8-T4-N160-0-2",
-   "label": "published",
+   "label": "unclear",
    "similarity": 0.2958,
    "track": "code_equivalence"
   },
@@ -6416,7 +6461,7 @@
    "track": "code_equivalence"
   },
   {
-   "basis": "propagated",
+   "basis": "withheld",
    "cited_ids": [],
    "cluster": "C20",
    "id": "NEG-CODE-SELF-DUAL-FIXED-ORDER-RIGIDITY-SCALING",
@@ -6830,11 +6875,11 @@
    "track": "code_equivalence"
   },
   {
-   "basis": "propagated",
+   "basis": "withheld",
    "cited_ids": [],
    "cluster": "C15",
    "id": "NEG-CODE-SELF-DUAL-WREATH-COMPACT-HARMONIC-LABELS-NOT-TRANSFORM",
-   "label": "adjacent",
+   "label": "unclear",
    "similarity": 0.3238,
    "track": "code_equivalence"
   },
@@ -6884,11 +6929,11 @@
    "track": "code_equivalence"
   },
   {
-   "basis": "propagated",
+   "basis": "withheld",
    "cited_ids": [],
    "cluster": "C04",
    "id": "NEG-CODE-SELF-DUAL-WREATH-ONE-COPY-ALGORITHM",
-   "label": "published",
+   "label": "unclear",
    "similarity": 0.3095,
    "track": "code_equivalence"
   },
@@ -6965,11 +7010,11 @@
    "track": "code_equivalence"
   },
   {
-   "basis": "propagated",
+   "basis": "withheld",
    "cited_ids": [],
    "cluster": "C38",
    "id": "NEG-CODE-WREATH-ALL-ORDER-WORD-MAP-NOT-GROWING-CONTRACTION",
-   "label": "adjacent",
+   "label": "unclear",
    "similarity": 0.4113,
    "track": "code_equivalence"
   },
@@ -7082,20 +7127,20 @@
    "track": "code_equivalence"
   },
   {
-   "basis": "propagated",
+   "basis": "withheld",
    "cited_ids": [],
    "cluster": "C38",
    "id": "NEG-CODE-WREATH-MARGINAL-SHORT-WORD-NOT-JOINT-TAIL",
-   "label": "adjacent",
+   "label": "unclear",
    "similarity": 0.3234,
    "track": "code_equivalence"
   },
   {
-   "basis": "propagated",
+   "basis": "withheld",
    "cited_ids": [],
    "cluster": "C08",
    "id": "NEG-CODE-WREATH-NAIVE-BRANCHWISE-COMMON-CORE-QUOTIENT",
-   "label": "published",
+   "label": "unclear",
    "similarity": 0.214,
    "track": "code_equivalence"
   },
@@ -7154,11 +7199,11 @@
    "track": "code_equivalence"
   },
   {
-   "basis": "propagated",
+   "basis": "withheld",
    "cited_ids": [],
    "cluster": "C08",
    "id": "NEG-CODE-WREATH-SCALAR-COMMUTANT-BLOCKS-ALL-PHYSICAL-FILTERS",
-   "label": "published",
+   "label": "unclear",
    "similarity": 0.2374,
    "track": "code_equivalence"
   },
@@ -7199,11 +7244,11 @@
    "track": "code_equivalence"
   },
   {
-   "basis": "propagated",
+   "basis": "withheld",
    "cited_ids": [],
    "cluster": "C04",
    "id": "NEG-CODE-WREATH-SN-SUBPOVM-PERFORMANCE-TRANSFER",
-   "label": "published",
+   "label": "unclear",
    "similarity": 0.2686,
    "track": "code_equivalence"
   },
@@ -7235,16 +7280,16 @@
    "track": "code_equivalence"
   },
   {
-   "basis": "propagated",
+   "basis": "withheld",
    "cited_ids": [],
    "cluster": "C38",
    "id": "NEG-CODE-WREATH-WORD-MAP-MEAN-MIXING-NOT-KTH-MOMENT",
-   "label": "adjacent",
+   "label": "unclear",
    "similarity": 0.3706,
    "track": "code_equivalence"
   },
   {
-   "basis": "propagated",
+   "basis": "withheld",
    "cited_ids": [],
    "cluster": "C14",
    "id": "NEG-CONTINUOUS-HSP-IRRATIONAL-JITTER-INDEX-CALCULUS-BOUNDARY",
@@ -7514,11 +7559,11 @@
    "track": "coset_observables"
   },
   {
-   "basis": "propagated",
+   "basis": "withheld",
    "cited_ids": [],
    "cluster": "C17",
    "id": "NEG-COSET-KRONECKER-COUNT-AS-TRANSFORM",
-   "label": "adjacent",
+   "label": "unclear",
    "similarity": 0.3915,
    "track": "coset_observables"
   },
@@ -7532,11 +7577,11 @@
    "track": "coset_observables"
   },
   {
-   "basis": "propagated",
+   "basis": "withheld",
    "cited_ids": [],
    "cluster": "C13",
    "id": "NEG-COSET-MULTIPLICITY-CARRIER-DECOUPLING-TRILEMMA",
-   "label": "published",
+   "label": "unclear",
    "similarity": 0.3986,
    "track": "coset_observables"
   },
@@ -7993,7 +8038,7 @@
    "track": "coset_observables"
   },
   {
-   "basis": "propagated",
+   "basis": "withheld",
    "cited_ids": [],
    "cluster": "C02",
    "id": "NEG-CP-ADAPTIVE-LAYOUT-UNIFORM-ENTANGLEMENT-NO-GO",
@@ -8002,7 +8047,7 @@
    "track": "dcp"
   },
   {
-   "basis": "propagated",
+   "basis": "withheld",
    "cited_ids": [],
    "cluster": "C02",
    "id": "NEG-CP-CARRY-QUADRATIC-EXTENSION-BOUNDARY",
@@ -8011,7 +8056,7 @@
    "track": "dcp"
   },
   {
-   "basis": "propagated",
+   "basis": "withheld",
    "cited_ids": [],
    "cluster": "C02",
    "id": "NEG-CP-CNOT-LINEAR-SPLIT-ENTANGLEMENT-NO-GO",
@@ -8020,7 +8065,7 @@
    "track": "dcp"
   },
   {
-   "basis": "propagated",
+   "basis": "withheld",
    "cited_ids": [],
    "cluster": "C02",
    "id": "NEG-CP-LABEL-INCIDENCE-RANK-WIDTH-NO-GO",
@@ -8029,7 +8074,7 @@
    "track": "dcp"
   },
   {
-   "basis": "propagated",
+   "basis": "withheld",
    "cited_ids": [],
    "cluster": "C02",
    "id": "NEG-CP-LINEAR-REPARAMETERIZATION-AFFINE-FLAT-NO-GO",
@@ -8056,20 +8101,20 @@
    "track": "dcp"
   },
   {
-   "basis": "propagated",
+   "basis": "withheld",
    "cited_ids": [],
    "cluster": "C08",
    "id": "NEG-DCP-ARBITRARY-QUANTUM-RELATION-SOLVER-WITHOUT-WORKSPACE-OVERLAP",
-   "label": "published",
+   "label": "unclear",
    "similarity": 0.2719,
    "track": "dcp"
   },
   {
-   "basis": "propagated",
+   "basis": "withheld",
    "cited_ids": [],
    "cluster": "C08",
    "id": "NEG-DCP-ARBITRARY-RELATION-INCOMPATIBLE-WITH-MATCHING",
-   "label": "published",
+   "label": "unclear",
    "similarity": 0.2696,
    "track": "dcp"
   },
@@ -8110,7 +8155,7 @@
    "track": "dcp"
   },
   {
-   "basis": "propagated",
+   "basis": "withheld",
    "cited_ids": [],
    "cluster": "C10",
    "id": "NEG-DCP-CARRY-SLICED-LLL-FINITE-WITHOUT-COVERAGE-THEOREM",
@@ -8191,11 +8236,11 @@
    "track": "dcp"
   },
   {
-   "basis": "propagated",
+   "basis": "withheld",
    "cited_ids": [],
    "cluster": "C08",
    "id": "NEG-DCP-ENDPOINT-HISTORY-ORTHOGONALITY",
-   "label": "published",
+   "label": "unclear",
    "similarity": 0.3844,
    "track": "dcp"
   },
@@ -8218,11 +8263,11 @@
    "track": "dcp"
   },
   {
-   "basis": "propagated",
+   "basis": "withheld",
    "cited_ids": [],
    "cluster": "C07",
    "id": "NEG-DCP-EXACT-RESIDUE-MPS-EXPONENTIAL-BOND",
-   "label": "adjacent",
+   "label": "unclear",
    "similarity": 0.242,
    "track": "dcp"
   },
@@ -8272,11 +8317,11 @@
    "track": "dcp"
   },
   {
-   "basis": "propagated",
+   "basis": "withheld",
    "cited_ids": [],
    "cluster": "C08",
    "id": "NEG-DCP-FINITE-COMMON-HISTORY-WITHOUT-SCALING",
-   "label": "published",
+   "label": "unclear",
    "similarity": 0.3636,
    "track": "dcp"
   },
@@ -8353,11 +8398,11 @@
    "track": "dcp"
   },
   {
-   "basis": "propagated",
+   "basis": "withheld",
    "cited_ids": [],
    "cluster": "C13",
    "id": "NEG-DCP-GENERAL-POVM-SECRET-VARIANCE-COLLAPSE",
-   "label": "published",
+   "label": "unclear",
    "similarity": 0.3383,
    "track": "dcp"
   },
@@ -8389,11 +8434,11 @@
    "track": "dcp"
   },
   {
-   "basis": "propagated",
+   "basis": "withheld",
    "cited_ids": [],
    "cluster": "C05",
    "id": "NEG-DCP-HNP-LPN-LWE-ANALOGY-NOT-REDUCTION",
-   "label": "adjacent",
+   "label": "unclear",
    "similarity": 0.24,
    "track": "lattice"
   },
@@ -8713,11 +8758,11 @@
    "track": "dcp"
   },
   {
-   "basis": "propagated",
+   "basis": "withheld",
    "cited_ids": [],
    "cluster": "C08",
    "id": "NEG-DCP-QUANTUM-RELATION-SUCCESS-WITHOUT-FIDELITY",
-   "label": "published",
+   "label": "unclear",
    "similarity": 0.4086,
    "track": "dcp"
   },
@@ -8742,20 +8787,20 @@
    "track": "dcp"
   },
   {
-   "basis": "propagated",
+   "basis": "withheld",
    "cited_ids": [],
    "cluster": "C08",
    "id": "NEG-DCP-QW-HISTORY-INDEPENDENCE-AS-REGEV-COMPOSITION",
-   "label": "published",
+   "label": "unclear",
    "similarity": 0.2583,
    "track": "dcp"
   },
   {
-   "basis": "propagated",
+   "basis": "withheld",
    "cited_ids": [],
    "cluster": "C08",
    "id": "NEG-DCP-QW-INTERNAL-HISTORY-BLOCKER-MISAPPLIED",
-   "label": "published",
+   "label": "unclear",
    "similarity": 0.2525,
    "track": "dcp"
   },
@@ -8787,7 +8832,7 @@
    "track": "dcp"
   },
   {
-   "basis": "propagated",
+   "basis": "withheld",
    "cited_ids": [],
    "cluster": "C20",
    "id": "NEG-DCP-RELATION-MEAN-SUCCESS-WITHOUT-WEIGHTED-LOSS",
@@ -9012,11 +9057,11 @@
    "track": "dcp"
   },
   {
-   "basis": "propagated",
+   "basis": "withheld",
    "cited_ids": [],
    "cluster": "C36",
    "id": "NEG-DCP-SUBSET-SUM-VOLUME-ONLY-LATTICE-GAP",
-   "label": "adjacent",
+   "label": "unclear",
    "similarity": 0.3199,
    "track": "lattice"
   },
@@ -9084,11 +9129,11 @@
    "track": "dcp"
   },
   {
-   "basis": "propagated",
+   "basis": "withheld",
    "cited_ids": [],
    "cluster": "C13",
    "id": "NEG-DIHEDRAL-COSET-CHIRP-ALIASING-SPECTRAL-FLATNESS-BARRIER",
-   "label": "published",
+   "label": "unclear",
    "similarity": 0.4051,
    "track": "dcp"
   },
@@ -9111,11 +9156,11 @@
    "track": "dcp"
   },
   {
-   "basis": "propagated",
+   "basis": "withheld",
    "cited_ids": [],
    "cluster": "C18",
    "id": "NEG-EDCP-REVEALED-MIXING-COINS-PSEUDORANDOM",
-   "label": "adjacent",
+   "label": "unclear",
    "similarity": 0.1995,
    "track": "dcp"
   },
@@ -9138,20 +9183,20 @@
    "track": "dcp"
   },
   {
-   "basis": "propagated",
+   "basis": "withheld",
    "cited_ids": [],
    "cluster": "C13",
    "id": "NEG-GODSIL-MCKAY-COSPECTRAL-TENSOR-INVARIANCE-BARRIER",
-   "label": "published",
+   "label": "unclear",
    "similarity": 0.3871,
    "track": "coset_observables"
   },
   {
-   "basis": "propagated",
+   "basis": "withheld",
    "cited_ids": [],
    "cluster": "C13",
    "id": "NEG-ISOTROPIC-PARABOLIC-DEQUANTIZATION-BOUND",
-   "label": "published",
+   "label": "unclear",
    "similarity": 0.4932,
    "track": "coset_observables"
   },
@@ -9219,7 +9264,7 @@
    "track": "coset_observables"
   },
   {
-   "basis": "propagated",
+   "basis": "withheld",
    "cited_ids": [],
    "cluster": "C14",
    "id": "NEG-NATIVE-PHASE-BANK-HISTORY-ERASURE-DEQUANTIZATION-BARRIER",
@@ -9228,20 +9273,20 @@
    "track": "lattice"
   },
   {
-   "basis": "propagated",
+   "basis": "withheld",
    "cited_ids": [],
    "cluster": "C08",
    "id": "NEG-NATIVE-TOTAL-ISOTROPY-DOES-NOT-COMPILE-IID-PRODUCTS",
-   "label": "published",
+   "label": "unclear",
    "similarity": 0.2136,
    "track": "dcp"
   },
   {
-   "basis": "propagated",
+   "basis": "withheld",
    "cited_ids": [],
    "cluster": "C13",
    "id": "NEG-NILPOTENT-CENTRAL-DESCENT-BARRIER",
-   "label": "published",
+   "label": "unclear",
    "similarity": 0.3774,
    "track": "coset_observables"
   },
@@ -9255,7 +9300,7 @@
    "track": "coset_observables"
   },
   {
-   "basis": "propagated",
+   "basis": "withheld",
    "cited_ids": [],
    "cluster": "C14",
    "id": "NEG-PARITY-BLOCK-MED-LPN-DECODING-BARRIER",
@@ -9264,7 +9309,7 @@
    "track": "code_equivalence"
   },
   {
-   "basis": "propagated",
+   "basis": "withheld",
    "cited_ids": [],
    "cluster": "C14",
    "id": "NEG-PARITY-BLOCK-USD-MATCHED-CLASSICAL-PRANGE",
@@ -9363,11 +9408,11 @@
    "track": "dcp"
   },
   {
-   "basis": "propagated",
+   "basis": "withheld",
    "cited_ids": [],
    "cluster": "C13",
    "id": "NEG-ROWSPACE-RREF-GAUGE-ELIMINATION-FOURIER-EXTINCTION-BARRIER",
-   "label": "published",
+   "label": "unclear",
    "similarity": 0.4764,
    "track": "coset_observables"
   },
@@ -9399,11 +9444,11 @@
    "track": "code_equivalence"
   },
   {
-   "basis": "propagated",
+   "basis": "withheld",
    "cited_ids": [],
    "cluster": "C36",
    "id": "NEG-SELF-DUAL-WREATH-AFFINE-PLANE-SUPPORT-PRESSURE-NO-GO",
-   "label": "adjacent",
+   "label": "unclear",
    "similarity": 0.2537,
    "track": "code_equivalence"
   },
@@ -9894,11 +9939,11 @@
    "track": "code_equivalence"
   },
   {
-   "basis": "propagated",
+   "basis": "withheld",
    "cited_ids": [],
    "cluster": "C08",
    "id": "NEG-SELF-DUAL-WREATH-INTERLEAVED-TARGET-MARGIN-STABILITY",
-   "label": "published",
+   "label": "unclear",
    "similarity": 0.0,
    "track": "code_equivalence"
   },
@@ -10065,11 +10110,11 @@
    "track": "code_equivalence"
   },
   {
-   "basis": "propagated",
+   "basis": "withheld",
    "cited_ids": [],
    "cluster": "C13",
    "id": "NEG-SELF-DUAL-WREATH-NAIMARK-COMPRESSED-PERMUTATION-BARRIER",
-   "label": "published",
+   "label": "unclear",
    "similarity": 0.3637,
    "track": "code_equivalence"
   },
@@ -10335,11 +10380,11 @@
    "track": "code_equivalence"
   },
   {
-   "basis": "propagated",
+   "basis": "withheld",
    "cited_ids": [],
    "cluster": "C13",
    "id": "NEG-SELF-DUAL-WREATH-PLANCHEREL-SIGN-ORBIT-MASS-EXTINCTION-BARRIER",
-   "label": "published",
+   "label": "unclear",
    "similarity": 0.3295,
    "track": "code_equivalence"
   },
@@ -10452,11 +10497,11 @@
    "track": "code_equivalence"
   },
   {
-   "basis": "propagated",
+   "basis": "withheld",
    "cited_ids": [],
    "cluster": "C08",
    "id": "NEG-SELF-DUAL-WREATH-REVERSIBLE-AUTOMATON-FIBER-COLLAPSE",
-   "label": "published",
+   "label": "unclear",
    "similarity": 0.0,
    "track": "code_equivalence"
   },
@@ -10488,7 +10533,7 @@
    "track": "code_equivalence"
   },
   {
-   "basis": "propagated",
+   "basis": "withheld",
    "cited_ids": [],
    "cluster": "C25",
    "id": "NEG-SELF-DUAL-WREATH-SIBLING-FRAME-JACOBI-SURROGATE",
@@ -10776,13 +10821,13 @@
    "track": "coset_observables"
   },
   {
-   "basis": "propagated",
+   "basis": "withheld",
    "cited_ids": [],
    "cluster": "C13",
    "id": "NEG-SL2R-NONCOMPACT-LIE-CONTINUOUS-SPECTRUM-BARRIER",
-   "label": "published",
+   "label": "unclear",
    "similarity": 0.4812,
-   "track": "applied_barriers"
+   "track": "coset_observables"
   },
   {
    "basis": "shown",
@@ -10794,11 +10839,11 @@
    "track": "coset_observables"
   },
   {
-   "basis": "propagated",
+   "basis": "withheld",
    "cited_ids": [],
    "cluster": "C13",
    "id": "NEG-SU2-COMPACT-LIE-HSP-COMMUTANT-INFLATION",
-   "label": "published",
+   "label": "unclear",
    "similarity": 0.4955,
    "track": "coset_observables"
   },
@@ -10821,20 +10866,20 @@
    "track": "coset_observables"
   },
   {
-   "basis": "propagated",
+   "basis": "withheld",
    "cited_ids": [],
    "cluster": "C13",
    "id": "NEG-WREATH-COSET-PERMUTATION-HOLEVO-INFORMATION-COLLAPSE",
-   "label": "published",
+   "label": "unclear",
    "similarity": 0.3717,
    "track": "coset_observables"
   },
   {
-   "basis": "propagated",
+   "basis": "withheld",
    "cited_ids": [],
    "cluster": "C13",
    "id": "NEG-WREATH-ORIENTATION-SUBPOVM-DECODER-GAP",
-   "label": "published",
+   "label": "unclear",
    "similarity": 0.2879,
    "track": "coset_observables"
   },
@@ -10929,7 +10974,7 @@
    "track": "dcp"
   },
   {
-   "basis": "propagated",
+   "basis": "withheld",
    "cited_ids": [],
    "cluster": "C14",
    "id": "POLYNOMIAL-READOUT-TIME-NOT-SMALL-FOURIER-NORM",
@@ -11181,11 +11226,11 @@
    "track": "query_lower_bound"
   },
   {
-   "basis": "propagated",
+   "basis": "withheld",
    "cited_ids": [],
    "cluster": "C08",
    "id": "RANDOM-TRIVIAL-HULL-CODE-NOT-INDEPENDENT-OF-GI",
-   "label": "published",
+   "label": "unclear",
    "similarity": 0.2022,
    "track": "code_equivalence"
   },
@@ -11550,11 +11595,11 @@
    "track": "query_lower_bound"
   },
   {
-   "basis": "propagated",
+   "basis": "withheld",
    "cited_ids": [],
    "cluster": "C18",
    "id": "SOURCE-LABELS-DO-NOT-RESCUE-FIXED-LARGE-CELLS",
-   "label": "adjacent",
+   "label": "unclear",
    "similarity": 0.4456,
    "track": "other"
   },
@@ -11595,11 +11640,11 @@
    "track": "other"
   },
   {
-   "basis": "propagated",
+   "basis": "withheld",
    "cited_ids": [],
    "cluster": "C07",
    "id": "SYSTEMATIC-LOCAL-CUBIC-LOSS-PROOF-GAP",
-   "label": "adjacent",
+   "label": "unclear",
    "similarity": 0.2151,
    "track": "other"
   },
@@ -11703,11 +11748,11 @@
    "track": "coset_observables"
   },
   {
-   "basis": "propagated",
+   "basis": "withheld",
    "cited_ids": [],
    "cluster": "C17",
    "id": "UNANCHORED-RELATIVE-GRAPH-GAUGE-NOT-POVM-INVARIANT",
-   "label": "adjacent",
+   "label": "unclear",
    "similarity": 0.284,
    "track": "coset_observables"
   },
@@ -11830,229 +11875,272 @@
   }
  ],
  "spot_check": {
-  "agree": 27,
+  "agree": 25,
   "by_basis": {
    "propagated": [
-    16,
-    18
+    14,
+    15
    ],
    "shown": [
     11,
     12
    ]
   },
-  "n": 30,
+  "n": 27,
   "rows": {
    "CFI-STRUCTURAL-DECODER-DEQUANTIZED-PETERSEN": {
     "agree": true,
     "basis": "shown",
     "cluster": "C19",
     "label": "published",
-    "note": "label=published; 2107.03778 states that the CFI-query (twist parity of an unordered CFI graph) is in PTIME, which is exactly the record's barrier. The Petersen base graph is only an instance."
+    "note": "label=published; 2107.03778 states that the CFI-query (twist parity of an unordered CFI graph) is in PTIME, which is exactly the record's barrier. The Petersen base graph is only an instance.",
+    "seen_label": "published"
    },
    "CODE-FRONTIER-TRIAGE-HAMMING_7_4_PERMUTED": {
     "agree": true,
     "basis": "propagated",
     "cluster": "C12",
     "label": "published",
-    "note": "label=published; A permuted [7,4] Hamming code is an equivalent control that classical canonicalization and code-equivalence algorithms resolve. The fit is weak because SSA struggles with transitive automorphism groups, but n=7 is trivially classical."
+    "note": "label=published; A permuted [7,4] Hamming code is an equivalent control that classical canonicalization and code-equivalence algorithms resolve. The fit is weak because SSA struggles with transitive automorphism groups, but n=7 is trivially classical.",
+    "seen_label": "published"
    },
    "CODE-STRUCTURAL-INVARIANT-REJECTED-CODE_FAMILY_RANDOM_WEAK_COLLISION_12_5": {
     "agree": true,
     "basis": "shown",
     "cluster": "C31",
     "label": "published",
-    "note": "label=published; Support splitting and punctured/shortened weight profiles are published classical code-equivalence invariants (1111.4382 cites Sendrier's SSA as a classical attack). This random [12,5] pair is an instance."
+    "note": "label=published; Support splitting and punctured/shortened weight profiles are published classical code-equivalence invariants (1111.4382 cites Sendrier's SSA as a classical attack). This random [12,5] pair is an instance.",
+    "seen_label": "published"
    },
    "CODE-STRUCTURAL-INVARIANT-REJECTED-CODE_FAMILY_RANDOM_WEAK_COLLISION_9_4": {
     "agree": true,
     "basis": "shown",
     "cluster": "C31",
     "label": "published",
-    "note": "label=published; Hull dimension, support splitting and punctured/shortened weight profiles are published classical code-equivalence invariants (1111.4382, 1905.00073). This random [9,4] pair is an instance."
+    "note": "label=published; Hull dimension, support splitting and punctured/shortened weight profiles are published classical code-equivalence invariants (1111.4382, 1905.00073). This random [9,4] pair is an instance.",
+    "seen_label": "published"
    },
    "FINITE-CARRIER-BRANCH-SUCCESS-NOT-ALL-N-DECODER": {
     "agree": true,
     "basis": "shown",
     "cluster": "C04",
     "label": "published",
-    "note": "label=published; quant-ph/0504067 and quant-ph/0401083 already state that a finite-n success certificate for a hidden-involution measurement is not an efficient algorithm without an efficient circuit and decoder. Only the finite-to-all-n proof gap is project-specific."
+    "note": "label=published; quant-ph/0504067 and quant-ph/0401083 already state that a finite-n success certificate for a hidden-involution measurement is not an efficient algorithm without an efficient circuit and decoder. Only the finite-to-all-n proof gap is project-specific.",
+    "seen_label": "published"
    },
    "HS-DEQUANTIZED-QUADRATIC_CHIRP": {
     "agree": false,
     "basis": "shown",
     "cluster": "C14",
     "label": "unclear",
-    "note": "label=adjacent; The record is clear: a quadratic-chirp hidden shift is recovered classically from an explicit evaluator, because the shift difference is a linear phase. This is known for Boolean quadratic/bent hidden shifts (2408.02778, folklore O(n)-query attack); a chirp is a neighbouring setting."
+    "note": "label=adjacent; The record is clear: a quadratic-chirp hidden shift is recovered classically from an explicit evaluator, because the shift difference is a linear phase. This is known for Boolean quadratic/bent hidden shifts (2408.02778, folklore O(n)-query attack); a chirp is a neighbouring setting.",
+    "seen_label": "unclear"
    },
    "LEGACY-BERNSTEIN_VAZIRANI": {
     "agree": true,
     "basis": "propagated",
     "cluster": "C01",
     "label": "adjacent",
-    "note": "label=adjacent; A procedural rejection: an N=3 custom-oracle simulation is not evidence of speedup. This parallels known speedup-detection pitfalls (1401.2910) in another setting. The record is terse, and BV itself is a published algorithm covered by oracle identification."
+    "note": "label=adjacent; A procedural rejection: an N=3 custom-oracle simulation is not evidence of speedup. This parallels known speedup-detection pitfalls (1401.2910) in another setting. The record is terse, and BV itself is a published algorithm covered by oracle identification.",
+    "seen_label": "adjacent"
    },
    "LEGACY-NONLINEARTERNARYPRODUCTSUMSECRETFINDING": {
     "agree": true,
     "basis": "propagated",
     "cluster": "C01",
     "label": "adjacent",
-    "note": "label=adjacent; A procedural rejection (N=3 cap, zero simulation successes, no scalable family). Speedup-detection pitfalls and oracle-identification query bounds are known, but no abstract states this barrier for this problem."
+    "note": "label=adjacent; A procedural rejection (N=3 cap, zero simulation successes, no scalable family). Speedup-detection pitfalls and oracle-identification query bounds are known, but no abstract states this barrier for this problem.",
+    "seen_label": "adjacent"
    },
    "LEGACY-NOVEL_NONLINEAR_BITWISE_ROTATION_SECRET_FINDING": {
     "agree": true,
     "basis": "propagated",
     "cluster": "C01",
     "label": "adjacent",
-    "note": "label=adjacent; A procedural rejection (N=3 cap, zero simulation successes, no scalable family). Speedup-detection pitfalls and oracle-identification query bounds are known, but no abstract states this barrier for this problem."
+    "note": "label=adjacent; A procedural rejection (N=3 cap, zero simulation successes, no scalable family). Speedup-detection pitfalls and oracle-identification query bounds are known, but no abstract states this barrier for this problem.",
+    "seen_label": "adjacent"
    },
    "NEG-CODE-SELF-DUAL-AUTOMORPHISM-SELF-DUAL-K16-INSTANCE-07": {
     "agree": true,
     "basis": "propagated",
     "cluster": "C46",
     "label": "published",
-    "note": "label=published; 1008.2390 and 1805.09972 extend the no-go to hidden subgroups given by code automorphism groups, provided they are small with large minimal degree. The record only certifies that this instance is non-rigid, which falls under that known condition."
+    "note": "label=published; 1008.2390 and 1805.09972 extend the no-go to hidden subgroups given by code automorphism groups, provided they are small with large minimal degree. The record only certifies that this instance is non-rigid, which falls under that known condition.",
+    "seen_label": "published"
    },
    "NEG-CODE-SELF-DUAL-HIGH-ORDER-RIGID-SELF-DUAL-K32-INSTANCE-03": {
     "agree": true,
     "basis": "shown",
     "cluster": "C57",
     "label": "published",
-    "note": "label=published; The record only certifies that this instance is rigid, which puts it in the hidden-involution case where Dinh-Moore-Russell (1008.2390) show coset-state measurements fail for codes with small automorphism group. It adds an instance, not a new barrier."
+    "note": "label=published; The record only certifies that this instance is rigid, which puts it in the hidden-involution case where Dinh-Moore-Russell (1008.2390) show coset-state measurements fail for codes with small automorphism group. It adds an instance, not a new barrier.",
+    "seen_label": "published"
    },
    "NEG-CODE-SELF-DUAL-SELF-DUAL-K6-01-05": {
     "agree": true,
     "basis": "shown",
     "cluster": "C48",
     "label": "adjacent",
-    "note": "label=adjacent; The trivial-hull reduction to GI is published (1905.00073). The record's own point, that small random self-dual codes collide so a large hull does not guarantee hardness, is only implied by the literature, not stated."
+    "note": "label=adjacent; The trivial-hull reduction to GI is published (1905.00073). The record's own point, that small random self-dual codes collide so a large hull does not guarantee hardness, is only implied by the literature, not stated.",
+    "seen_label": "adjacent"
    },
    "NEG-CODE-SELF-DUAL-WREATH-SCALAR-SUBSET-ORBIT-PRECONDITIONER": {
     "agree": true,
     "basis": "propagated",
     "cluster": "C09",
     "label": "adjacent",
-    "note": "label=adjacent; The record's barrier (Hamming-weight orbit sums do not commute, so there is no (k+1)-dim commutative algebra) differs from the cluster's pair-local PGM barrier, and the cited abstracts do not state it. It is known elsewhere: S_k-invariant algebras are noncommutative (Schur-Weyl/Terwilliger)."
+    "note": "label=adjacent; The record's barrier (Hamming-weight orbit sums do not commute, so there is no (k+1)-dim commutative algebra) differs from the cluster's pair-local PGM barrier, and the cited abstracts do not state it. It is known elsewhere: S_k-invariant algebras are noncommutative (Schur-Weyl/Terwilliger).",
+    "seen_label": "adjacent"
    },
    "NEG-COSET-FINITE-NATURAL-PGM-NOT-EFFICIENT-DECODER": {
     "agree": true,
     "basis": "shown",
     "cluster": "C04",
     "label": "published",
-    "note": "label=published; quant-ph/0504067 and quant-ph/0401083 state that information-theoretically adequate multiregister measurements for the GI-type hidden-involution HSP do not give efficient algorithms. The record restates this for its finite-n PGM."
+    "note": "label=published; quant-ph/0504067 and quant-ph/0401083 state that information-theoretically adequate multiregister measurements for the GI-type hidden-involution HSP do not give efficient algorithms. The record restates this for its finite-n PGM.",
+    "seen_label": "published"
    },
    "NEG-COSET-KRONECKER-COUNT-AS-TRANSFORM": {
     "agree": true,
-    "basis": "propagated",
+    "basis": "withheld",
     "cluster": "C17",
-    "label": "adjacent",
-    "note": "label=adjacent; The barrier (counting or projecting a Kronecker multiplicity space gives no basis or amplitudes) is not the cluster's polar-cost bound and is absent from the cited QLS/polar abstracts. It parallels the known weak- versus strong-Fourier-sampling gap in HSP."
+    "label": "unclear",
+    "note": "label=adjacent; The barrier (counting or projecting a Kronecker multiplicity space gives no basis or amplitudes) is not the cluster's polar-cost bound and is absent from the cited QLS/polar abstracts. It parallels the known weak- versus strong-Fourier-sampling gap in HSP.",
+    "seen_label": "adjacent",
+    "stale": true
    },
    "NEG-COSET-STABLE-LEAKAGE-AS-SINGLE-COMPLEMENT-REPAIR": {
     "agree": false,
     "basis": "propagated",
     "cluster": "C06",
     "label": "adjacent",
-    "note": "label=not-found; The record's barrier (leakage spreads over every character-allowed complementary sector, so one extra intermediate partition cannot close the associator) differs from the cluster's spectral-gap/circuit barrier. No cited abstract states it or clearly implies it."
+    "note": "label=not-found; The record's barrier (leakage spreads over every character-allowed complementary sector, so one extra intermediate partition cannot close the associator) differs from the cluster's spectral-gap/circuit barrier. No cited abstract states it or clearly implies it.",
+    "seen_label": "adjacent"
    },
    "NEG-COSET-TRANSPOSITION-SIGNATURE-ALONE-AS-STABLE-SHAPE-ROUTER": {
     "agree": true,
     "basis": "propagated",
     "cluster": "C15",
     "label": "adjacent",
-    "note": "label=adjacent; Kemp-Ramgoolam 1911.11649 studies the same question (telling Young diagrams apart by central class sums), but the abstract only poses it. The paper body shows T_2 alone fails beyond n=5, so this is borderline published; the record adds stable-range collisions."
+    "note": "label=adjacent; Kemp-Ramgoolam 1911.11649 studies the same question (telling Young diagrams apart by central class sums), but the abstract only poses it. The paper body shows T_2 alone fails beyond n=5, so this is borderline published; the record adds stable-range collisions.",
+    "seen_label": "adjacent"
    },
    "NEG-DCP-IID-EXACT-LINEAR-HASH-BIN-PARSEVAL": {
     "agree": true,
     "basis": "shown",
     "cluster": "C58",
     "label": "adjacent",
-    "note": "label=adjacent; The Parseval/variance bound for linear iid bucket estimators is not stated in the DCP abstracts. It is implied, for a restricted estimator class, by the known DCP sample-versus-time tradeoffs (Ettinger-Hoyer, Kuperberg, Bacon-Childs-van Dam)."
+    "note": "label=adjacent; The Parseval/variance bound for linear iid bucket estimators is not stated in the DCP abstracts. It is implied, for a restricted estimator class, by the known DCP sample-versus-time tradeoffs (Ettinger-Hoyer, Kuperberg, Bacon-Childs-van Dam).",
+    "seen_label": "adjacent"
    },
    "NEG-DCP-QW-HISTORY-INDEPENDENCE-AS-REGEV-COMPOSITION": {
     "agree": false,
-    "basis": "propagated",
+    "basis": "withheld",
     "cluster": "C08",
-    "label": "published",
-    "note": "label=not-found; Mis-clustered. The record is a DCP/quantum-walk interface gap (walk-internal history independence does not certify the outputs Regev's reduction needs), not symmetric-group Fourier sampling. The cited S_n abstracts do not address it."
+    "label": "unclear",
+    "note": "label=not-found; Mis-clustered. The record is a DCP/quantum-walk interface gap (walk-internal history independence does not certify the outputs Regev's reduction needs), not symmetric-group Fourier sampling. The cited S_n abstracts do not address it.",
+    "seen_label": "published",
+    "stale": true
    },
    "NEG-SELF-DUAL-WREATH-MATRIX-CAYLEY-BOUNDARY": {
     "agree": true,
     "basis": "propagated",
     "cluster": "C11",
     "label": "unclear",
-    "note": "label=unclear; Templated stub with no citations and no stated barrier ('Falsified or refined by exact theorem evaluation')."
+    "note": "label=unclear; Templated stub with no citations and no stated barrier ('Falsified or refined by exact theorem evaluation').",
+    "seen_label": "unclear"
    },
    "NEG-SELF-DUAL-WREATH-MIXED-SPLIT-TARGET-GENUS": {
     "agree": true,
     "basis": "propagated",
     "cluster": "C34",
     "label": "unclear",
-    "note": "label=unclear; Templated stub: the reason is only 'Falsified or refined by exact theorem evaluation' and no barrier is stated, so nothing can be matched to the literature."
+    "note": "label=unclear; Templated stub: the reason is only 'Falsified or refined by exact theorem evaluation' and no barrier is stated, so nothing can be matched to the literature.",
+    "seen_label": "unclear"
    },
    "NEG-SELF-DUAL-WREATH-PGM-QUANTUM-SAMPLING-REDUCTION": {
     "agree": true,
     "basis": "propagated",
     "cluster": "C11",
     "label": "unclear",
-    "note": "label=unclear; Templated stub with no citations and no stated barrier ('Falsified or refined by exact theorem evaluation')."
+    "note": "label=unclear; Templated stub with no citations and no stated barrier ('Falsified or refined by exact theorem evaluation').",
+    "seen_label": "unclear"
    },
    "NEG-SELF-DUAL-WREATH-REGULAR-MASTER-CENTRAL-SUPPORT": {
     "agree": true,
     "basis": "propagated",
     "cluster": "C25",
     "label": "unclear",
-    "note": "label=unclear; Templated stub with no citations and no stated barrier ('Falsified or refined by exact theorem evaluation')."
+    "note": "label=unclear; Templated stub with no citations and no stated barrier ('Falsified or refined by exact theorem evaluation').",
+    "seen_label": "unclear"
    },
    "NEG-SELF-DUAL-WREATH-TRANSPOSE-EDGE-ADMISSION-NO-GO": {
     "agree": true,
     "basis": "propagated",
     "cluster": "C02",
     "label": "unclear",
-    "note": "label=unclear; Templated stub. The reason states no barrier, so it cannot be checked against the cited PGM-optimality paper (quant-ph/0501177)."
+    "note": "label=unclear; Templated stub. The reason states no barrier, so it cannot be checked against the cited PGM-optimality paper (quant-ph/0501177).",
+    "seen_label": "unclear"
    },
    "NEG-WREATH-COSET-PERMUTATION-HOLEVO-INFORMATION-COLLAPSE": {
     "agree": true,
-    "basis": "propagated",
+    "basis": "withheld",
     "cluster": "C13",
-    "label": "published",
-    "note": "label=published; The barrier (O(1) coset copies carry negligible information about the hidden permutation, so Omega(n log n) entangled copies are needed) is stated by Hallgren-Roetteler-Sen and Moore-Russell-Schulman for the S_n wr Z_2 / GI setting. The Holevo/Fano bound only adds a specific estimate."
+    "label": "unclear",
+    "note": "label=published; The barrier (O(1) coset copies carry negligible information about the hidden permutation, so Omega(n log n) entangled copies are needed) is stated by Hallgren-Roetteler-Sen and Moore-Russell-Schulman for the S_n wr Z_2 / GI setting. The Holevo/Fano bound only adds a specific estimate.",
+    "seen_label": "published",
+    "stale": true
    },
    "REP-SFS-NOGO-S12": {
     "agree": true,
     "basis": "propagated",
     "cluster": "C08",
     "label": "published",
-    "note": "label=published; Same barrier, same setting: single-register strong Fourier sampling over S_n reveals essentially nothing about a hidden permutation (quant-ph/0501056), so collective measurements are required (quant-ph/0511149). S_12 is just an instance."
+    "note": "label=published; Same barrier, same setting: single-register strong Fourier sampling over S_n reveals essentially nothing about a hidden permutation (quant-ph/0501056), so collective measurements are required (quant-ph/0511149). S_12 is just an instance.",
+    "seen_label": "published"
    },
    "REP-SFS-NOGO-S16": {
     "agree": true,
     "basis": "shown",
     "cluster": "C08",
     "label": "published",
-    "note": "label=published; Same barrier, same setting: single-register strong Fourier sampling over S_n reveals essentially nothing about a hidden permutation (quant-ph/0501056), so collective measurements are needed (quant-ph/0511149). S_16 is just an instance."
+    "note": "label=published; Same barrier, same setting: single-register strong Fourier sampling over S_n reveals essentially nothing about a hidden permutation (quant-ph/0501056), so collective measurements are needed (quant-ph/0511149). S_16 is just an instance.",
+    "seen_label": "published"
    },
    "SCHUR-COMPANION-FINAL-ROOT-RAW-METRIC-ACCESS-SQRT-WIDTH": {
     "agree": true,
     "basis": "shown",
     "cluster": "C17",
     "label": "adjacent",
-    "note": "label=adjacent; Singular values of O(w^-1/2) forcing Omega(sqrt(w)) cost for QSVT or amplification is the known condition-number/normalization lower bound (HHL, 2101.11868, 2007.15698). The record applies it to a new setting, the hidden-involution polar hierarchy."
+    "note": "label=adjacent; Singular values of O(w^-1/2) forcing Omega(sqrt(w)) cost for QSVT or amplification is the known condition-number/normalization lower bound (HHL, 2101.11868, 2007.15698). The record applies it to a new setting, the hidden-involution polar hierarchy.",
+    "seen_label": "adjacent"
    },
    "SCHUR-COMPANION-FIXED-ARITY-WELL-CONDITIONED-NO-POLY-DIMENSIONAL-ENDPOINT-ALGEBRA": {
     "agree": true,
     "basis": "propagated",
     "cluster": "C17",
     "label": "adjacent",
-    "note": "label=adjacent; The barrier (two well-conditioned positive generators already generate all of M_D(C), so algebra dimension is no circuit lower bound) is a standard Burnside-type fact, not the cluster's polar-cost bound. The cited QLS/polar abstracts do not state it."
+    "note": "label=adjacent; The barrier (two well-conditioned positive generators already generate all of M_D(C), so algebra dimension is no circuit lower bound) is a standard Burnside-type fact, not the cluster's polar-cost bound. The cited QLS/polar abstracts do not state it.",
+    "seen_label": "adjacent"
    },
    "SCHUR-REJECT-SCHUR_CODE_EQUIVALENCE_WORKBENCH_RANDOM_8_4_WEAK_INVARIANT_COLLISION": {
     "agree": true,
     "basis": "shown",
     "cluster": "C49",
     "label": "published",
-    "note": "label=published; 2603.23230 and 1203.6686 state that Schur (componentwise) products of punctured or shortened codes give poly-time PEP invariants and easy instances. The random [8,4] pair is a specific instance."
+    "note": "label=published; 2603.23230 and 1203.6686 state that Schur (componentwise) products of punctured or shortened codes give poly-time PEP invariants and easy instances. The random [8,4] pair is a specific instance.",
+    "seen_label": "published"
    }
+  },
+  "sampled": 30,
+  "stale": {
+   "agreed_with_seen_label": 2,
+   "ids": [
+    "NEG-COSET-KRONECKER-COUNT-AS-TRANSFORM",
+    "NEG-DCP-QW-HISTORY-INDEPENDENCE-AS-REGEV-COMPOSITION",
+    "NEG-WREATH-COSET-PERMUTATION-HOLEVO-INFORMATION-COLLAPSE"
+   ],
+   "n": 3
   }
  },
  "total": 976

@@ -76,6 +76,9 @@ def test_templated_records_are_read_through_their_evidence_keys() -> None:
         ("NEG-SELF-DUAL-WREATH-POLAR-FACTOR-TRANSFER", ["CODE-COSET-COLLECTIVE"], "code_equivalence"),
         ("NEG-POLAR-CODE-GIBBS-SOURCE", [], "bpqm_gibbs"),
         ("NEG-BARREN-PLATEAUS-VARIATIONAL-QUANTUM-HORIZON", ["BARREN-PLATEAUS"], "applied_barriers"),
+        ("NEG-CONTINUOUS-SPECTRUM-QPE-SINGULAR-MEASURE-BARRIER", ["QPE-CONTINUOUS-SPECTRUM"], "applied_barriers"),
+        # An HSP over a noncompact Lie group, not an applied-QC barrier, despite "continuous spectrum".
+        ("NEG-SL2R-NONCOMPACT-LIE-CONTINUOUS-SPECTRUM-BARRIER", ["SL2R-HSP", "NONCOMPACT-LIE-GROUP"], "coset_observables"),
         ("NEG-WIDGET", [], "other"),
     ],
 )
@@ -184,6 +187,21 @@ def test_analyse_prefers_judge_labels_and_renders_report() -> None:
     report = fm.render(analysis)
     for heading in ("## Where proposals die", "## By track", "## Over time", "## How far to trust the labels", "## Pre-filters"):
         assert heading in report
+
+
+def test_second_opinion_agreement_counts_judged_groups_not_expanded_records() -> None:
+    # Four records share one reason (one group); two more are singletons.
+    records = [_neg(f"G{i}", "shared reason text") for i in range(4)] + [_neg("S1", "first lone reason"), _neg("S2", "second lone reason")]
+    first = {f"G{i}": {"primary": "proof_gap", "secondary": []} for i in range(4)}
+    first |= {"S1": {"primary": "readout", "secondary": []}, "S2": {"primary": "state_prep", "secondary": []}}
+    second = {f"G{i}": {"primary": "proof_gap", "secondary": []} for i in range(4)}
+    second |= {"S1": {"primary": "finite_size", "secondary": []}, "S2": {"primary": "finite_size", "secondary": []}}
+    analysis = fm.analyse(records, {"labels": first, "second_opinion": second}, {})
+    opinion = analysis["second_opinion"]
+    assert opinion["n"] == 3 and opinion["records"] == 6
+    assert opinion["strict"] == pytest.approx(1 / 3, abs=1e-4)
+    report = fm.render(analysis)
+    assert "3 groups" in report and "independent" not in report
 
 
 def test_cli_writes_outputs_without_judgements(fake_repo: Path) -> None:

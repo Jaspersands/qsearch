@@ -3,33 +3,37 @@
 Generated 2026-10-19 by `tools/audit/rediscovery.py`; do not edit by hand.
 Scope: the 976 records in `research/registry/negative_results.json`, grouped into
 60 clusters by shared reasoning. A judge searched arXiv for each cluster's barrier
-and labelled it; labels propagate from the members it read to the rest of the cluster.
+and labelled it. Labels pass from the members it read to the rest of the cluster only when at least
+half of the read members kept the cluster label and one of them shares the record's track.
 "Published" requires a citation whose abstract contains the judge's quote verbatim.
 
 ## Headline
 
-| Label | Records | Share of judged | Meaning |
-|---|---|---|---|
-| published | 309 | 32% | A retrieved abstract states the same barrier for the same problem setting; the records add at most instances. |
-| adjacent | 452 | 46% | The technique or barrier is known, but in a different setting, or the literature only implies it. |
-| not-found | 2 | 0% | No retrieved abstract states the barrier after a reasonable search. |
-| unclear | 213 | 22% | The cluster is too heterogeneous or its records too terse to judge. |
+| Label | Records | Share of judged | Read by a judge | Share of read | Meaning |
+|---|---|---|---|---|---|
+| published | 275 | 28% | 138 | 38% | A retrieved abstract states the same barrier for the same problem setting; the records add at most instances. |
+| adjacent | 436 | 45% | 169 | 46% | The technique or barrier is known, but in a different setting, or the literature only implies it. |
+| not-found | 2 | 0% | 2 | 1% | No retrieved abstract states the barrier after a reasonable search. |
+| unclear | 263 | 27% | 57 | 16% | The cluster is too heterogeneous or its records too terse to judge. |
 
-Basis: 366 records were read by a judge; 610 inherited their cluster's label.
+Basis: 366 records were read by a judge; 541 inherited their cluster's label; 69 were withheld and count as unclear, because the judge overrode the cluster label for most of the members it read or no read member shares their track.
+Of the 713 records with a label other than unclear, 275 (39%) are published.
 
 ## By track
 
-| Track | Records | Published | Adjacent | Not found | Unclear |
-|---|---|---|---|---|---|
-| Code equivalence | 457 | 37% | 31% | 0% | 32% |
-| Coset observables / nonabelian HSP | 254 | 48% | 45% | 0% | 7% |
-| Dihedral coset / hidden shift | 154 | 7% | 72% | 1% | 20% |
-| Legacy toy oracles | 53 | 0% | 100% | 0% | 0% |
-| Query lower bounds | 22 | 5% | 86% | 0% | 9% |
-| Other | 17 | 12% | 53% | 0% | 35% |
-| Applied-QC barriers from the literature | 11 | 45% | 0% | 0% | 55% |
-| Lattices | 7 | 14% | 57% | 0% | 29% |
-| DQI / OPI / prime characters | 1 | 0% | 0% | 0% | 100% |
+Published (read) counts only the records a judge read.
+
+| Track | Records | Published | Adjacent | Not found | Unclear | Published (read) |
+|---|---|---|---|---|---|---|
+| Code equivalence | 457 | 34% | 30% | 0% | 36% | 83 of 185 |
+| Coset observables / nonabelian HSP | 255 | 44% | 44% | 0% | 12% | 48 of 90 |
+| Dihedral coset / hidden shift | 154 | 1% | 71% | 1% | 28% | 1 of 58 |
+| Legacy toy oracles | 53 | 0% | 100% | 0% | 0% | 0 of 6 |
+| Query lower bounds | 22 | 5% | 86% | 0% | 9% | 1 of 12 |
+| Other | 17 | 6% | 29% | 0% | 65% | 1 of 6 |
+| Applied-QC barriers from the literature | 10 | 40% | 0% | 0% | 60% | 4 of 7 |
+| Lattices | 7 | 0% | 29% | 0% | 71% | 0 of 2 |
+| DQI / OPI / prime characters | 1 | 0% | 0% | 0% | 100% | 0 of 0 |
 
 ## Ground truth
 
@@ -55,13 +59,14 @@ Records that cite an arXiv id themselves (ids were hidden from the judge):
 
 ## Spot check
 
-A fresh reviewer re-read 30 randomly chosen judged records with their label and citations and agreed with 27 (90%). By basis: propagated 16 of 18; shown 11 of 12.
+A fresh reviewer re-read 30 randomly chosen judged records with their label and citations. On the 27 whose label has not changed since, it agreed with 25 (93%). By basis: propagated 14 of 15; shown 11 of 12.
+
+3 sampled records' labels changed after the review and are left out above: `NEG-COSET-KRONECKER-COUNT-AS-TRANSFORM`, `NEG-DCP-QW-HISTORY-INDEPENDENCE-AS-REGEV-COMPOSITION`, `NEG-WREATH-COSET-PERMUTATION-HOLEVO-INFORMATION-COLLAPSE`. The reviewer had agreed with 2 of the 3 labels as they were then.
 
 | Record | Basis | Cluster | Assigned | Reviewer |
 |---|---|---|---|---|
 | `HS-DEQUANTIZED-QUADRATIC_CHIRP` | shown | C14 | unclear | label=adjacent; The record is clear: a quadratic-chirp hidden shift is recovered classically from an explicit evaluator, because the shift difference is a linear phase. This is known for Boolean quadratic/bent hidden shifts (2408.02778, folklore O(n)-query attack); a chirp is a neighbouring setting. |
 | `NEG-COSET-STABLE-LEAKAGE-AS-SINGLE-COMPLEMENT-REPAIR` | propagated | C06 | adjacent | label=not-found; The record's barrier (leakage spreads over every character-allowed complementary sector, so one extra intermediate partition cannot close the associator) differs from the cluster's spectral-gap/circuit barrier. No cited abstract states it or clearly implies it. |
-| `NEG-DCP-QW-HISTORY-INDEPENDENCE-AS-REGEV-COMPOSITION` | propagated | C08 | published | label=not-found; Mis-clustered. The record is a DCP/quantum-walk interface gap (walk-internal history independence does not certify the outputs Regev's reduction needs), not symmetric-group Fourier sampling. The cited S_n abstracts do not address it. |
 
 ## Review queue
 

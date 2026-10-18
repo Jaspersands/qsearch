@@ -1972,123 +1972,153 @@
  "spot_check": {
   "CFI-STRUCTURAL-DECODER-DEQUANTIZED-PETERSEN": {
    "agree": true,
-   "note": "label=published; 2107.03778 states that the CFI-query (twist parity of an unordered CFI graph) is in PTIME, which is exactly the record's barrier. The Petersen base graph is only an instance."
+   "note": "label=published; 2107.03778 states that the CFI-query (twist parity of an unordered CFI graph) is in PTIME, which is exactly the record's barrier. The Petersen base graph is only an instance.",
+   "seen_label": "published"
   },
   "CODE-FRONTIER-TRIAGE-HAMMING_7_4_PERMUTED": {
    "agree": true,
-   "note": "label=published; A permuted [7,4] Hamming code is an equivalent control that classical canonicalization and code-equivalence algorithms resolve. The fit is weak because SSA struggles with transitive automorphism groups, but n=7 is trivially classical."
+   "note": "label=published; A permuted [7,4] Hamming code is an equivalent control that classical canonicalization and code-equivalence algorithms resolve. The fit is weak because SSA struggles with transitive automorphism groups, but n=7 is trivially classical.",
+   "seen_label": "published"
   },
   "CODE-STRUCTURAL-INVARIANT-REJECTED-CODE_FAMILY_RANDOM_WEAK_COLLISION_12_5": {
    "agree": true,
-   "note": "label=published; Support splitting and punctured/shortened weight profiles are published classical code-equivalence invariants (1111.4382 cites Sendrier's SSA as a classical attack). This random [12,5] pair is an instance."
+   "note": "label=published; Support splitting and punctured/shortened weight profiles are published classical code-equivalence invariants (1111.4382 cites Sendrier's SSA as a classical attack). This random [12,5] pair is an instance.",
+   "seen_label": "published"
   },
   "CODE-STRUCTURAL-INVARIANT-REJECTED-CODE_FAMILY_RANDOM_WEAK_COLLISION_9_4": {
    "agree": true,
-   "note": "label=published; Hull dimension, support splitting and punctured/shortened weight profiles are published classical code-equivalence invariants (1111.4382, 1905.00073). This random [9,4] pair is an instance."
+   "note": "label=published; Hull dimension, support splitting and punctured/shortened weight profiles are published classical code-equivalence invariants (1111.4382, 1905.00073). This random [9,4] pair is an instance.",
+   "seen_label": "published"
   },
   "FINITE-CARRIER-BRANCH-SUCCESS-NOT-ALL-N-DECODER": {
    "agree": true,
-   "note": "label=published; quant-ph/0504067 and quant-ph/0401083 already state that a finite-n success certificate for a hidden-involution measurement is not an efficient algorithm without an efficient circuit and decoder. Only the finite-to-all-n proof gap is project-specific."
+   "note": "label=published; quant-ph/0504067 and quant-ph/0401083 already state that a finite-n success certificate for a hidden-involution measurement is not an efficient algorithm without an efficient circuit and decoder. Only the finite-to-all-n proof gap is project-specific.",
+   "seen_label": "published"
   },
   "HS-DEQUANTIZED-QUADRATIC_CHIRP": {
    "agree": false,
-   "note": "label=adjacent; The record is clear: a quadratic-chirp hidden shift is recovered classically from an explicit evaluator, because the shift difference is a linear phase. This is known for Boolean quadratic/bent hidden shifts (2408.02778, folklore O(n)-query attack); a chirp is a neighbouring setting."
+   "note": "label=adjacent; The record is clear: a quadratic-chirp hidden shift is recovered classically from an explicit evaluator, because the shift difference is a linear phase. This is known for Boolean quadratic/bent hidden shifts (2408.02778, folklore O(n)-query attack); a chirp is a neighbouring setting.",
+   "seen_label": "unclear"
   },
   "LEGACY-BERNSTEIN_VAZIRANI": {
    "agree": true,
-   "note": "label=adjacent; A procedural rejection: an N=3 custom-oracle simulation is not evidence of speedup. This parallels known speedup-detection pitfalls (1401.2910) in another setting. The record is terse, and BV itself is a published algorithm covered by oracle identification."
+   "note": "label=adjacent; A procedural rejection: an N=3 custom-oracle simulation is not evidence of speedup. This parallels known speedup-detection pitfalls (1401.2910) in another setting. The record is terse, and BV itself is a published algorithm covered by oracle identification.",
+   "seen_label": "adjacent"
   },
   "LEGACY-NONLINEARTERNARYPRODUCTSUMSECRETFINDING": {
    "agree": true,
-   "note": "label=adjacent; A procedural rejection (N=3 cap, zero simulation successes, no scalable family). Speedup-detection pitfalls and oracle-identification query bounds are known, but no abstract states this barrier for this problem."
+   "note": "label=adjacent; A procedural rejection (N=3 cap, zero simulation successes, no scalable family). Speedup-detection pitfalls and oracle-identification query bounds are known, but no abstract states this barrier for this problem.",
+   "seen_label": "adjacent"
   },
   "LEGACY-NOVEL_NONLINEAR_BITWISE_ROTATION_SECRET_FINDING": {
    "agree": true,
-   "note": "label=adjacent; A procedural rejection (N=3 cap, zero simulation successes, no scalable family). Speedup-detection pitfalls and oracle-identification query bounds are known, but no abstract states this barrier for this problem."
+   "note": "label=adjacent; A procedural rejection (N=3 cap, zero simulation successes, no scalable family). Speedup-detection pitfalls and oracle-identification query bounds are known, but no abstract states this barrier for this problem.",
+   "seen_label": "adjacent"
   },
   "NEG-CODE-SELF-DUAL-AUTOMORPHISM-SELF-DUAL-K16-INSTANCE-07": {
    "agree": true,
-   "note": "label=published; 1008.2390 and 1805.09972 extend the no-go to hidden subgroups given by code automorphism groups, provided they are small with large minimal degree. The record only certifies that this instance is non-rigid, which falls under that known condition."
+   "note": "label=published; 1008.2390 and 1805.09972 extend the no-go to hidden subgroups given by code automorphism groups, provided they are small with large minimal degree. The record only certifies that this instance is non-rigid, which falls under that known condition.",
+   "seen_label": "published"
   },
   "NEG-CODE-SELF-DUAL-HIGH-ORDER-RIGID-SELF-DUAL-K32-INSTANCE-03": {
    "agree": true,
-   "note": "label=published; The record only certifies that this instance is rigid, which puts it in the hidden-involution case where Dinh-Moore-Russell (1008.2390) show coset-state measurements fail for codes with small automorphism group. It adds an instance, not a new barrier."
+   "note": "label=published; The record only certifies that this instance is rigid, which puts it in the hidden-involution case where Dinh-Moore-Russell (1008.2390) show coset-state measurements fail for codes with small automorphism group. It adds an instance, not a new barrier.",
+   "seen_label": "published"
   },
   "NEG-CODE-SELF-DUAL-SELF-DUAL-K6-01-05": {
    "agree": true,
-   "note": "label=adjacent; The trivial-hull reduction to GI is published (1905.00073). The record's own point, that small random self-dual codes collide so a large hull does not guarantee hardness, is only implied by the literature, not stated."
+   "note": "label=adjacent; The trivial-hull reduction to GI is published (1905.00073). The record's own point, that small random self-dual codes collide so a large hull does not guarantee hardness, is only implied by the literature, not stated.",
+   "seen_label": "adjacent"
   },
   "NEG-CODE-SELF-DUAL-WREATH-SCALAR-SUBSET-ORBIT-PRECONDITIONER": {
    "agree": true,
-   "note": "label=adjacent; The record's barrier (Hamming-weight orbit sums do not commute, so there is no (k+1)-dim commutative algebra) differs from the cluster's pair-local PGM barrier, and the cited abstracts do not state it. It is known elsewhere: S_k-invariant algebras are noncommutative (Schur-Weyl/Terwilliger)."
+   "note": "label=adjacent; The record's barrier (Hamming-weight orbit sums do not commute, so there is no (k+1)-dim commutative algebra) differs from the cluster's pair-local PGM barrier, and the cited abstracts do not state it. It is known elsewhere: S_k-invariant algebras are noncommutative (Schur-Weyl/Terwilliger).",
+   "seen_label": "adjacent"
   },
   "NEG-COSET-FINITE-NATURAL-PGM-NOT-EFFICIENT-DECODER": {
    "agree": true,
-   "note": "label=published; quant-ph/0504067 and quant-ph/0401083 state that information-theoretically adequate multiregister measurements for the GI-type hidden-involution HSP do not give efficient algorithms. The record restates this for its finite-n PGM."
+   "note": "label=published; quant-ph/0504067 and quant-ph/0401083 state that information-theoretically adequate multiregister measurements for the GI-type hidden-involution HSP do not give efficient algorithms. The record restates this for its finite-n PGM.",
+   "seen_label": "published"
   },
   "NEG-COSET-KRONECKER-COUNT-AS-TRANSFORM": {
    "agree": true,
-   "note": "label=adjacent; The barrier (counting or projecting a Kronecker multiplicity space gives no basis or amplitudes) is not the cluster's polar-cost bound and is absent from the cited QLS/polar abstracts. It parallels the known weak- versus strong-Fourier-sampling gap in HSP."
+   "note": "label=adjacent; The barrier (counting or projecting a Kronecker multiplicity space gives no basis or amplitudes) is not the cluster's polar-cost bound and is absent from the cited QLS/polar abstracts. It parallels the known weak- versus strong-Fourier-sampling gap in HSP.",
+   "seen_label": "adjacent"
   },
   "NEG-COSET-STABLE-LEAKAGE-AS-SINGLE-COMPLEMENT-REPAIR": {
    "agree": false,
-   "note": "label=not-found; The record's barrier (leakage spreads over every character-allowed complementary sector, so one extra intermediate partition cannot close the associator) differs from the cluster's spectral-gap/circuit barrier. No cited abstract states it or clearly implies it."
+   "note": "label=not-found; The record's barrier (leakage spreads over every character-allowed complementary sector, so one extra intermediate partition cannot close the associator) differs from the cluster's spectral-gap/circuit barrier. No cited abstract states it or clearly implies it.",
+   "seen_label": "adjacent"
   },
   "NEG-COSET-TRANSPOSITION-SIGNATURE-ALONE-AS-STABLE-SHAPE-ROUTER": {
    "agree": true,
-   "note": "label=adjacent; Kemp-Ramgoolam 1911.11649 studies the same question (telling Young diagrams apart by central class sums), but the abstract only poses it. The paper body shows T_2 alone fails beyond n=5, so this is borderline published; the record adds stable-range collisions."
+   "note": "label=adjacent; Kemp-Ramgoolam 1911.11649 studies the same question (telling Young diagrams apart by central class sums), but the abstract only poses it. The paper body shows T_2 alone fails beyond n=5, so this is borderline published; the record adds stable-range collisions.",
+   "seen_label": "adjacent"
   },
   "NEG-DCP-IID-EXACT-LINEAR-HASH-BIN-PARSEVAL": {
    "agree": true,
-   "note": "label=adjacent; The Parseval/variance bound for linear iid bucket estimators is not stated in the DCP abstracts. It is implied, for a restricted estimator class, by the known DCP sample-versus-time tradeoffs (Ettinger-Hoyer, Kuperberg, Bacon-Childs-van Dam)."
+   "note": "label=adjacent; The Parseval/variance bound for linear iid bucket estimators is not stated in the DCP abstracts. It is implied, for a restricted estimator class, by the known DCP sample-versus-time tradeoffs (Ettinger-Hoyer, Kuperberg, Bacon-Childs-van Dam).",
+   "seen_label": "adjacent"
   },
   "NEG-DCP-QW-HISTORY-INDEPENDENCE-AS-REGEV-COMPOSITION": {
    "agree": false,
-   "note": "label=not-found; Mis-clustered. The record is a DCP/quantum-walk interface gap (walk-internal history independence does not certify the outputs Regev's reduction needs), not symmetric-group Fourier sampling. The cited S_n abstracts do not address it."
+   "note": "label=not-found; Mis-clustered. The record is a DCP/quantum-walk interface gap (walk-internal history independence does not certify the outputs Regev's reduction needs), not symmetric-group Fourier sampling. The cited S_n abstracts do not address it.",
+   "seen_label": "published"
   },
   "NEG-SELF-DUAL-WREATH-MATRIX-CAYLEY-BOUNDARY": {
    "agree": true,
-   "note": "label=unclear; Templated stub with no citations and no stated barrier ('Falsified or refined by exact theorem evaluation')."
+   "note": "label=unclear; Templated stub with no citations and no stated barrier ('Falsified or refined by exact theorem evaluation').",
+   "seen_label": "unclear"
   },
   "NEG-SELF-DUAL-WREATH-MIXED-SPLIT-TARGET-GENUS": {
    "agree": true,
-   "note": "label=unclear; Templated stub: the reason is only 'Falsified or refined by exact theorem evaluation' and no barrier is stated, so nothing can be matched to the literature."
+   "note": "label=unclear; Templated stub: the reason is only 'Falsified or refined by exact theorem evaluation' and no barrier is stated, so nothing can be matched to the literature.",
+   "seen_label": "unclear"
   },
   "NEG-SELF-DUAL-WREATH-PGM-QUANTUM-SAMPLING-REDUCTION": {
    "agree": true,
-   "note": "label=unclear; Templated stub with no citations and no stated barrier ('Falsified or refined by exact theorem evaluation')."
+   "note": "label=unclear; Templated stub with no citations and no stated barrier ('Falsified or refined by exact theorem evaluation').",
+   "seen_label": "unclear"
   },
   "NEG-SELF-DUAL-WREATH-REGULAR-MASTER-CENTRAL-SUPPORT": {
    "agree": true,
-   "note": "label=unclear; Templated stub with no citations and no stated barrier ('Falsified or refined by exact theorem evaluation')."
+   "note": "label=unclear; Templated stub with no citations and no stated barrier ('Falsified or refined by exact theorem evaluation').",
+   "seen_label": "unclear"
   },
   "NEG-SELF-DUAL-WREATH-TRANSPOSE-EDGE-ADMISSION-NO-GO": {
    "agree": true,
-   "note": "label=unclear; Templated stub. The reason states no barrier, so it cannot be checked against the cited PGM-optimality paper (quant-ph/0501177)."
+   "note": "label=unclear; Templated stub. The reason states no barrier, so it cannot be checked against the cited PGM-optimality paper (quant-ph/0501177).",
+   "seen_label": "unclear"
   },
   "NEG-WREATH-COSET-PERMUTATION-HOLEVO-INFORMATION-COLLAPSE": {
    "agree": true,
-   "note": "label=published; The barrier (O(1) coset copies carry negligible information about the hidden permutation, so Omega(n log n) entangled copies are needed) is stated by Hallgren-Roetteler-Sen and Moore-Russell-Schulman for the S_n wr Z_2 / GI setting. The Holevo/Fano bound only adds a specific estimate."
+   "note": "label=published; The barrier (O(1) coset copies carry negligible information about the hidden permutation, so Omega(n log n) entangled copies are needed) is stated by Hallgren-Roetteler-Sen and Moore-Russell-Schulman for the S_n wr Z_2 / GI setting. The Holevo/Fano bound only adds a specific estimate.",
+   "seen_label": "published"
   },
   "REP-SFS-NOGO-S12": {
    "agree": true,
-   "note": "label=published; Same barrier, same setting: single-register strong Fourier sampling over S_n reveals essentially nothing about a hidden permutation (quant-ph/0501056), so collective measurements are required (quant-ph/0511149). S_12 is just an instance."
+   "note": "label=published; Same barrier, same setting: single-register strong Fourier sampling over S_n reveals essentially nothing about a hidden permutation (quant-ph/0501056), so collective measurements are required (quant-ph/0511149). S_12 is just an instance.",
+   "seen_label": "published"
   },
   "REP-SFS-NOGO-S16": {
    "agree": true,
-   "note": "label=published; Same barrier, same setting: single-register strong Fourier sampling over S_n reveals essentially nothing about a hidden permutation (quant-ph/0501056), so collective measurements are needed (quant-ph/0511149). S_16 is just an instance."
+   "note": "label=published; Same barrier, same setting: single-register strong Fourier sampling over S_n reveals essentially nothing about a hidden permutation (quant-ph/0501056), so collective measurements are needed (quant-ph/0511149). S_16 is just an instance.",
+   "seen_label": "published"
   },
   "SCHUR-COMPANION-FINAL-ROOT-RAW-METRIC-ACCESS-SQRT-WIDTH": {
    "agree": true,
-   "note": "label=adjacent; Singular values of O(w^-1/2) forcing Omega(sqrt(w)) cost for QSVT or amplification is the known condition-number/normalization lower bound (HHL, 2101.11868, 2007.15698). The record applies it to a new setting, the hidden-involution polar hierarchy."
+   "note": "label=adjacent; Singular values of O(w^-1/2) forcing Omega(sqrt(w)) cost for QSVT or amplification is the known condition-number/normalization lower bound (HHL, 2101.11868, 2007.15698). The record applies it to a new setting, the hidden-involution polar hierarchy.",
+   "seen_label": "adjacent"
   },
   "SCHUR-COMPANION-FIXED-ARITY-WELL-CONDITIONED-NO-POLY-DIMENSIONAL-ENDPOINT-ALGEBRA": {
    "agree": true,
-   "note": "label=adjacent; The barrier (two well-conditioned positive generators already generate all of M_D(C), so algebra dimension is no circuit lower bound) is a standard Burnside-type fact, not the cluster's polar-cost bound. The cited QLS/polar abstracts do not state it."
+   "note": "label=adjacent; The barrier (two well-conditioned positive generators already generate all of M_D(C), so algebra dimension is no circuit lower bound) is a standard Burnside-type fact, not the cluster's polar-cost bound. The cited QLS/polar abstracts do not state it.",
+   "seen_label": "adjacent"
   },
   "SCHUR-REJECT-SCHUR_CODE_EQUIVALENCE_WORKBENCH_RANDOM_8_4_WEAK_INVARIANT_COLLISION": {
    "agree": true,
-   "note": "label=published; 2603.23230 and 1203.6686 state that Schur (componentwise) products of punctured or shortened codes give poly-time PEP invariants and easy instances. The random [8,4] pair is a specific instance."
+   "note": "label=published; 2603.23230 and 1203.6686 state that Schur (componentwise) products of punctured or shortened codes give poly-time PEP invariants and easy instances. The random [8,4] pair is a specific instance.",
+   "seen_label": "published"
   }
  }
 }

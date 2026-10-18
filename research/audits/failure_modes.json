@@ -2,7 +2,7 @@
  "by_track": {
   "applied_barriers": {
    "classical_competitor": 5,
-   "no_signal": 2,
+   "no_signal": 1,
    "readout": 4
   },
   "code_equivalence": {
@@ -20,7 +20,7 @@
    "classical_competitor": 70,
    "finite_size": 23,
    "hidden_advice": 2,
-   "no_signal": 43,
+   "no_signal": 44,
    "overbroad": 21,
    "proof_gap": 34,
    "readout": 47,
@@ -14810,7 +14810,7 @@
     "readout"
    ],
    "templated": false,
-   "track": "applied_barriers"
+   "track": "coset_observables"
   },
   {
    "first_seen": "2026-10-12",
@@ -16882,7 +16882,7 @@
  "second_opinion": {
   "confusion": {
    "classical_competitor": {
-    "classical_competitor": 81
+    "classical_competitor": 33
    },
    "finite_size": {
     "finite_size": 12,
@@ -16897,7 +16897,7 @@
    },
    "overbroad": {
     "finite_size": 1,
-    "overbroad": 16,
+    "overbroad": 9,
     "proof_gap": 2
    },
    "proof_gap": {
@@ -16909,7 +16909,7 @@
    },
    "readout": {
     "no_signal": 4,
-    "readout": 20
+    "readout": 11
    },
    "resource_blowup": {
     "readout": 3,
@@ -16921,14 +16921,14 @@
     "state_prep": 6
    }
   },
-  "kappa": 0.8595,
-  "lenient": 0.9346,
-  "n": 214,
+  "kappa": 0.8134,
+  "lenient": 0.9067,
+  "n": 150,
   "per_mode": {
    "classical_competitor": {
     "precision": 1.0,
     "recall": 1.0,
-    "support": 81
+    "support": 33
    },
    "finite_size": {
     "precision": 0.9231,
@@ -16946,9 +16946,9 @@
     "support": 24
    },
    "overbroad": {
-    "precision": 0.8889,
-    "recall": 0.8421,
-    "support": 19
+    "precision": 0.8182,
+    "recall": 0.75,
+    "support": 12
    },
    "proof_gap": {
     "precision": 0.8696,
@@ -16956,9 +16956,9 @@
     "support": 28
    },
    "readout": {
-    "precision": 0.8,
-    "recall": 0.8333,
-    "support": 24
+    "precision": 0.6875,
+    "recall": 0.7333,
+    "support": 15
    },
    "resource_blowup": {
     "precision": 0.9,
@@ -16976,7 +16976,8 @@
     "support": 0
    }
   },
-  "strict": 0.8879
+  "records": 214,
+  "strict": 0.84
  },
  "total": 976,
  "trend": {
