@@ -1,0 +1,56 @@
+{
+  "all_checks_passed": true,
+  "certificate_sha256_16": "c7b234bcc428d497",
+  "colliding_instance_audit": {
+    "K_wires": 3,
+    "Q_group_size": 8,
+    "additive_energy_E4": 648,
+    "exact_identity_verified": true,
+    "excess_ratio_over_haar": 162.0,
+    "f2_dihedral_closed_form_half_E4": 324.0,
+    "f2_dihedral_explicit": 324.0,
+    "f2_haar_2design_benchmark": 2.0,
+    "hilbert_dim_D": 8,
+    "n_rows": 1,
+    "q_mod": 8
+  },
+  "flat_bijection_audit": {
+    "K_wires": 3,
+    "Q_group_size": 8,
+    "additive_energy_E4": 512,
+    "exact_identity_verified": true,
+    "excess_ratio_over_haar": 128.0,
+    "f2_dihedral_closed_form_half_E4": 256.0,
+    "f2_dihedral_explicit": 256.0,
+    "f2_haar_2design_benchmark": 2.0,
+    "hilbert_dim_D": 8,
+    "n_rows": 1,
+    "q_mod": 8
+  },
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "proof_status": "LOCAL_DERIVATION_REVIEW_PENDING_NOT_FORMALLY_VERIFIED",
+  "schema_version": "dcp-haar-random-vs-dihedral-2-design-frame-potential-bridge-v1",
+  "scope_constraints": {
+    "applies_to": "Second frame potential F_2(D_Q; A) = 0.5 * E_4(A) of the 2Q-element dihedral group representation on K-wire DCP states",
+    "controls_included": "Evaluates flat bijection A=[[1,2,4]] mod 8 (E_4=512, F_2=256), colliding A=[[1,1,2]] mod 8 (E_4=704, F_2=352), and zero control A=[[0,0,0]] mod 8 (E_4=4096, F_2=2048).",
+    "does_not_claim": "Convergence of the abelian-by-Z_2 dihedral group to a full unitary 2-design"
+  },
+  "theorem_id": "dcp_haar_random_vs_dihedral_2_design_frame_potential_bridge",
+  "zero_matrix_control": {
+    "K_wires": 3,
+    "Q_group_size": 8,
+    "additive_energy_E4": 4096,
+    "exact_identity_verified": true,
+    "excess_ratio_over_haar": 1024.0,
+    "f2_dihedral_closed_form_half_E4": 2048.0,
+    "f2_dihedral_explicit": 2048.0,
+    "f2_haar_2design_benchmark": 2.0,
+    "hilbert_dim_D": 8,
+    "n_rows": 1,
+    "q_mod": 8
+  }
+}

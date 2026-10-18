@@ -1,0 +1,55 @@
+{
+  "hypothesis_id": "explicit_low_rate_character_DQI_source_and_coherent_ambiguity",
+  "status": "KNOWN_MECHANISM_SOURCE_AND_AMBIGUITY_CERTIFIED_LOCALLY_DECODER_UNIMPLEMENTED",
+  "scientific_question": "Can compact quadratic-character OPI supply flat Fourier errors and negligible coherent unique-erasure error beyond half distance without random input shifts?",
+  "problem_input": "Explicit prime p=3 mod4, public shifts/orientations and quadratic cosets; degree<K on N distinct points; strict and zero-including modes",
+  "proposed_quantum_mechanism": "Known DQI sparse Fourier source, K-row syndrome for dual GRS, verified unique list decoding and conditional erasure, Fourier readout",
+  "expected_advantage_target_not_established": "Efficient code-intersection output at low rate; known asymptotic DQI score target, not a finite or new speedup result",
+  "classical_baselines": "Existing prime-character jet repair reaches109/127 at N127,K39; high-rate norm solvers do not apply but their failure is not hardness",
+  "established_locally_review_pending": [
+    "Gauss formula gives exact probability1/(p-1) at every nonzero local Fourier frequency for p=3 mod4",
+    "MDS subspace intersections bound ambiguity against all error weights through ell<K, for fixed source shifts",
+    "Unique-good and ambiguous-bad images are disjoint; coalescing amplification is charged by M=sum binomial(N,r)",
+    "Herald success>=1-epsilon and pure trace distance squared<=M*epsilon/(1-epsilon+M*epsilon)",
+    "Native bounded error/syndrome/flag/erasure isometry plus Fourier output matches independently expanded DQI filter"
+  ],
+  "resource_requirements_and_nonimplementations": [
+    "Compile controlled uniform-range, Legendre-phase and radial-weight states with certified synthesis errors",
+    "Use the DUAL GRS code of dimension N-K, not a decoder at rate K/N",
+    "Provide actual finite list-decoder parameters and reversible time/space/uncomputation",
+    "Published Theorem9.16 has runtime B_delta*N^O(exp(1.5/delta))*polylog(p), not a practical finite gate budget",
+    "Supply a matched finite quantum score/tail and stronger classical comparison"
+  ],
+  "falsifiers": [
+    "A p=1 mod4 source is mislabeled as flat; p5 is a retained counterexample",
+    "Only equal-weight competitors are counted; retained weights2/3 collision falsifies that shortcut",
+    "Bad source mass is used as linear output TV without fiber amplification",
+    "Repeated or non-MDS columns are admitted using only a nominal syndrome dimension",
+    "Exhaustive small decoding or an asymptotic theorem is mislabeled as a compiled efficient finite decoder",
+    "A stronger classical low-rate solver matches or exceeds the actual quantum output/resource guarantee"
+  ],
+  "executed_evidence": [
+    "Eight analytic N127,K39,61-bit profiles at ell19/24/32/38, both zero conventions; ell38 has only a trivial bound",
+    "Six native N6,K3,ell2 controls with full charged error balls and coefficient outputs over F7/F19/F43",
+    "Independent DFT/Gauss laws, MDS minors, mixed-weight and coherent-amplification countercontrols"
+  ],
+  "literature": [
+    "https://arxiv.org/html/2610.12357",
+    "https://quangvdao.github.io/papers/authored/reed-solomon-codes-beyond-johnson.pdf",
+    "https://www.cmi.ac.in/~siddhi/Quadratic_Gauss_Sum.pdf"
+  ],
+  "decoder_source_pdf_sha256": "b67c188ec477b6063caf9c1c06b214c71e358ff09b9517adcdb1db212ea2700a",
+  "decoder_sections_audited": "Definition9.1, Sections9.7/9.8, Theorem9.16; finite equation87 and Theorem6.8; not the entire proof or Lean development",
+  "evidence": [
+    "theorems/prime_character_capacity_source.py",
+    "tests/test_prime_character_capacity_source.py",
+    "research/classical_baselines/prime_character_capacity_source.json",
+    "research/PRIME_CHARACTER_CAPACITY_SOURCE.md"
+  ],
+  "large_capacity_decoder_implemented_or_executed": false,
+  "finite_large_quantum_tail_or_gate_budget_supplied": false,
+  "new_algorithm_novelty_or_classical_hardness_claimed": false,
+  "independent_or_formal_application_review_completed": false,
+  "accepted_speedup_candidate": false,
+  "new_central_candidate_negative_or_proof_registered": false
+}

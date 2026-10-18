@@ -1,0 +1,73 @@
+{
+  "all_checks_passed": true,
+  "certificate_sha256_16": "c2d928ef6591edb1",
+  "cooperative_4branch_audit": {
+    "L_branches": 4,
+    "exact_bayes_optimality_verified": true,
+    "gammas": [
+      0.8,
+      0.65,
+      0.6,
+      0.55
+    ],
+    "optimal_llr_bayes_error": 0.05593749999999999,
+    "optimal_llr_weights": [
+      2.1972245773362196,
+      1.550597412411167,
+      1.3862943611198906,
+      1.2367626271489272
+    ],
+    "single_best_branch_error": 0.09999999999999998,
+    "total_prob_check": 1.0,
+    "unweighted_majority_error": 0.07978125
+  },
+  "disparity_3branch_audit": {
+    "L_branches": 3,
+    "exact_bayes_optimality_verified": true,
+    "gammas": [
+      0.9,
+      0.25,
+      0.25
+    ],
+    "optimal_llr_bayes_error": 0.04999999999999999,
+    "optimal_llr_weights": [
+      2.9444389791664407,
+      0.5108256237659906,
+      0.5108256237659906
+    ],
+    "single_best_branch_error": 0.04999999999999999,
+    "total_prob_check": 1.0,
+    "unweighted_majority_error": 0.16406249999999997
+  },
+  "equal_3branch_control": {
+    "L_branches": 3,
+    "exact_bayes_optimality_verified": true,
+    "gammas": [
+      0.7,
+      0.7,
+      0.7
+    ],
+    "optimal_llr_bayes_error": 0.06075000000000001,
+    "optimal_llr_weights": [
+      1.7346010553881064,
+      1.7346010553881064,
+      1.7346010553881064
+    ],
+    "single_best_branch_error": 0.15000000000000002,
+    "total_prob_check": 1.0,
+    "unweighted_majority_error": 0.06075000000000001
+  },
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "proof_status": "LOCAL_DERIVATION_REVIEW_PENDING_NOT_FORMALLY_VERIFIED",
+  "schema_version": "dcp-multi-antenna-mimo-spatial-diversity-combining-bridge-v1",
+  "scope_constraints": {
+    "applies_to": "Maximal-ratio LLR diversity combining w_l* = 2*atanh(gamma_l) vs. unweighted majority voting across heterogeneous CNOT branches",
+    "controls_included": "Includes 3-branch disparity audit [0.90, 0.25, 0.25] (majority degrades >3.2x), 4-branch cooperative audit [0.80, 0.65, 0.60, 0.55] (LLR strictly beats both single-best and majority), and equal-weight control [0.70, 0.70, 0.70].",
+    "does_not_claim": "Coherent quantum amplitude addition across branches without entangling measurements"
+  },
+  "theorem_id": "dcp_multi_antenna_mimo_spatial_diversity_combining_bridge"
+}

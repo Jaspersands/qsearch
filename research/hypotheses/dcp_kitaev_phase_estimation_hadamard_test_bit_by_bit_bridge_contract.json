@@ -1,0 +1,12 @@
+{
+  "hypothesis_id": "dcp_kitaev_phase_estimation_hadamard_test_bit_by_bit_bridge",
+  "title": "Kitaev Non-Adaptive X/Y Hadamard Test vs. Coherent Adaptive R_Z(-phi_known) Feedforward",
+  "status": "VERIFIED_FINITE_IDENTITIES_REVIEW_PENDING",
+  "claims": [
+    "Even with optimal Bayesian post-rotation using phi_known, 2 copies (1 X + 1 Y) of Kitaev's non-adaptive quadrature measurement have Bayes error 0.5*(1 - gamma*max(|cos(phi)|, |sin(phi)|)) >= 0.5*(1 - gamma) (worse than 1 copy of coherent R_Z(-phi_known) feedforward!).",
+    "Coherent R_Z(-phi_known) feedforward achieves an exact 2.0x per-copy Fisher information gain over non-adaptive X/Y sampling across all phi_known."
+  ],
+  "favorable_controls": [
+    "Angle sweep phi in {0, pi/8, pi/4, 3*pi/8, pi/2} at gamma = 0.8"
+  ]
+}

@@ -2,6 +2,126 @@
 
 Last updated: 2026-10-18
 
+## Finite Low-Rate DQI Mean And Tail, Not Yet An Efficient Receiver
+
+Previous goal pass was PROGRESS: exact character sources and whole-ball
+coherent ambiguity were bounded, but finite output performance was missing.
+This pass supplies that SPECIFIC missing proof step, not another asymptotic
+semicircle label. Read PRIME_CHARACTER_FINITE_READOUT.md; producer
+`python theorems/prime_character_finite_readout.py --write`.
+
+For the radius-L radial source family, flat magnitudes bound bad mass by
+epsilon uniformly over ALL radial weights. Unique-good and ambiguous-bad
+syndrome images have disjoint supports. With M=sum_(r<=L)C(N,r), the
+coalesced radial Gram obeys ||G-I||<=max(1,M-1)*epsilon=delta. The native
+score recurrence sends a degree-ell filter through L=ell+1, so SOURCE norm
+alone is insufficient. T[j,j]=rho+(1-2rho)j/N and
+T[j,j+1]=sqrt(rho(1-rho)(j+1)(N-j))/N. T is a positive contraction and
+|mu_ideal-u*T*u|<=2delta/(1-delta) if delta<1. Do not drop the extra radius
+or assume G*T commutes on the whole extended space. The old2ell+1<=K branch
+uses exact RS moments and does NOT assert the whole extended Gram is identity.
+
+Numerical eigenvectors only PROPOSE saved dyadic rational radial weights.
+Exact native rho, rational isqrt enclosures, signed products, Gram correction
+and the existing unique-herald TV correction certify THAT finite filter,
+not a global optimum. At N127,K39,p61,ell32: L33 Gram error<=1.027e-49,
+mean correction<=2.054e-49, herald TV<=7.257e-35. Conditional exact-receiver
+mean~0.9028547353515506 (114.66255/127). Integer score support ALONE gives
+per-attempt tail>=0.314586 at110 and>=0.0509655 at115, with herald failure
+paid. Four/16 fresh independent attempts at110 have floors0.779295/0.997627.
+Repeated bounds are conservative128-bit dyadic lower enclosures, not
+huge serialized exact powers or empirically measured success probabilities.
+
+The SAME-input saved classical word is109/127. Radii22/24 means0.840571/
+0.854932 do NOT exceed it. A zero lower tail is UNKNOWN, not an actual zero
+tail. Strict siblings have no imported zero-including classical comparator.
+Radius37 stays UNKNOWN (weak Gram bound), radius38 UNKNOWN (observable reaches
+capacity), regardless of their attractive numerical Rayleigh values.
+
+Decisive falsifiers: p7,N4,K2,ell1 has source ambiguity0 and filter norm1,
+but actual native mean0.760829 vs ambient0.801007. The new method rejects
+that false inference. Independent ONE-dimensional dual-code sums overF10007,
+N5,K4,ell2 recover all extended Gram entries and the true mean for both zero
+conventions, without p^4 enumeration. Signed weights, exact sqrt and sharp
+two-point tail controls are also retained.
+
+This does NOT implement the finite decoder, source/QFT gate circuit, synthesis
+error budget or a matched-runtime advantage. Known fixed-gap decoder bounds
+remain severe; the generic finite certificate does not license N127. Local
+source/Gram/observable applications need independent review. No novelty,
+classical hardness, central candidate/negative/proof promotion or GPT Git work.
+Next research must change the actual decoder/runtime or find another
+constructive mechanism, not more ideal-score meshes. A possible interleaved
+decoder bypass must PRESERVE the single-polynomial objective; joint shared-
+support product/parity readout in extra registers is not that objective.
+
+Clean milestone:13 focused tests and325 selected connected regressions pass
+in48.66s with RuntimeWarning as error. One heavyweight Morse live replay was
+deselected; it passed in the earlier pass and no dependencies changed here.
+Not a full-repository suite. Live producer, Python compile, per-file site JS,
+strict JSON/evidence paths, source/dependency AND classical input artifact SHA,
+plain qsearch validate and git diff --check pass. Registry unchanged. All
+owned producer/test/validation sessions terminal. Goal ACTIVE; no blocker.
+
+## Low-Rate Character Source And Coherent Ambiguity
+
+Previous goal pass was PROGRESS: the exterior trace count enlarged the
+fixed-input classical norm regime and the false universal DCP hierarchy was
+corrected. This pass returns to the DIFFERENT low-rate degree barrier rather
+than refining high-rate constants. Read PRIME_CHARACTER_CAPACITY_SOURCE.md;
+producer `python theorems/prime_character_capacity_source.py --write`.
+
+For the exact quadratic lists at p=3 mod4, centered local Fourier coefficients
+are e(-xi*t_i/p)*(eta+(-1)^sigma_i*chi(-xi)*i*sqrt(p))/sqrt(p^2-1), xi!=0,
+with eta+1 including zero and eta-1 strict. Every nonzero probability is
+exactly1/(p-1), for FIXED public shifts. A p5 counterexample rejects applying
+that flatness at p=1 mod4. Uniform-range/Legendre controlled source compilation
+is described mathematically, but NOT implemented as a scalable gate circuit.
+
+Use K-row Vandermonde H, kernel DUAL GRS dimension N-K. The syndrome decoder
+therefore has code rate(N-K)/N, not K/N. For errors of weight j<=ell<K,
+intersections with competitor supports of size r and overlap h have dimension
+j+r-K only when j+r-h>K. Exact subset counts and p^(j+r-K)-1 give epsilon_j;
+epsilon=max_j epsilon_j. ALL weights r<=ell are counted. The retained F7
+weight5 kernel word splits into errors of weights2/3, disproving equal-weight-
+only testing. No source-shift randomness or error-vector tables in large bounds.
+
+Unique-good and ambiguous-bad syndrome images have disjoint supports. Each
+fiber has size<=M=sum_(r<=ell)C(N,r), an O(N)-bit COUNT not an enumeration.
+Herald success>=1-epsilon; pure trace distance SQUARED to the normalized full
+ideal pushforward <=M*epsilon/(1-epsilon+M*epsilon). The M22,epsilon1/100
+aligned-phase counterexample saturates this and has distance>40*epsilon.
+Do not use failed source mass directly as output TV. At N127,K39,p61,ell32,
+epsilon~3.198e-99, squared distance bound~5.266e-69 (TV<=its sqrt). Ell19
+has zero ambiguity; ell24 also has a strong bound; ell38 gives only1.
+Both zero conventions and all original input specs are retained.
+
+Six actual bounded native N6,K3,ell2 calibrations over F7/F19/F43 enumerate
+all577/4969/26713 ball errors and343/6859/79507 coefficient words. The
+source/syndrome/unique-flag/conditional-erasure basis map is injective and
+retains bad errors. FFT outputs match an INDEPENDENT native centered-filter
+complex-amplitude expansion. Bad masses0.288889/0.100000/0.046032 do not make
+finite readout exact; including-zero TV0.290700/0.189571/0.114454 is retained.
+This decoder is EXHAUSTIVE and explicitly charged, not the efficient decoder.
+
+The author-hosted full Dao-Kominers-Thaler PDF was read at Definition9.1,
+Sections9.7/9.8, Theorem9.16, equation87 and Theorem6.8 (not its whole proof
+or Lean development). Runtime B_delta*N^O(exp(1.5/delta))*polylog(p) is
+fixed-gap polynomial but NOT a practical finite gate bound. Generic finite
+threshold N_delta>500 already exceeds N127; do not silently apply it there.
+An exact bounded-length fallback does not remove its costs. Source PDF/hash
+and primary Gauss evaluation are recorded. This supersedes abstract-only
+decoder knowledge, not any nonimplementation flag.
+
+23 focused and72 selected connected tests pass with RuntimeWarning as error;
+not the full repository. Live producer, Python compilation, per-file site JS,
+plain qsearch validate and git diff --check pass. No new quantum algorithm,
+large coherent decoder, finite large score/tail/gate budget, classical
+hardness, central candidate/negative/proof promotion, GPT commit or push.
+Local source/coherent applications remain REVIEW PENDING. Next substantive
+work is a named finite decoder/readout certificate or a different mechanism,
+not source-seed/ambiguity sweeps. Goal ACTIVE; no operational blocker.
+
 ## Exterior-Trace Classical Falsifier And DCP Claim Correction
 
 Previous goal turn was PROGRESS: live review reproduced a false universal

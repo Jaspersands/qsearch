@@ -1,0 +1,54 @@
+{
+  "all_checks_passed": true,
+  "certificate_sha256_16": "4513aec7c13ce3b7",
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "proof_status": "LOCAL_DERIVATION_REVIEW_PENDING_NOT_FORMALLY_VERIFIED",
+  "schema_version": "dcp-grand-synthesis-50-subsystem-taxonomy-and-frontier-bridge-v1",
+  "scope_constraints": {
+    "applies_to": "Grand synthesis and simultaneous cross-verification of the 6 core mathematical laws across Subsystems 51-116",
+    "controls_included": "Cross-verifies live certificate executions across Subsystems 77, 95, 101, 98, 111, and 100.",
+    "does_not_claim": "Unconditional polynomial-time quantum algorithm for worst-case LWE without collision or trapdoor resources"
+  },
+  "six_core_laws_summary": {
+    "law_1_ternary_witness_and_sign_routing": {
+      "certificate_sha": "67f3d1fb1bf96ae9",
+      "passed": true
+    },
+    "law_2_carry_nilpotency_and_ccz_magic": {
+      "certificate_sha": "4620c2b108fce0e0",
+      "m2_ccz_bits": 1.540568381362703,
+      "m2_mod4_bits": 0.0,
+      "passed": true
+    },
+    "law_3_pgm_spectrum_and_qsvt_hierarchy": {
+      "certificate_sha": "16a87507c8346b05",
+      "colliding_mod8_p1_p3_p5_ceiling": [
+        0.6089150429449552,
+        0.6227836087068004,
+        0.6246125576852336,
+        0.625
+      ],
+      "passed": true
+    },
+    "law_4_sine_window_optimality_and_rejection_sampling": {
+      "certificate_sha": "955e0aaa9472f5e4",
+      "p32_sine_acceptance_prob": 0.5167950439865087,
+      "passed": true
+    },
+    "law_5_adaptive_feedforward_2x_fisher_gain": {
+      "certificate_sha": "00e5b68b968ccdcf",
+      "fisher_ratio_coherent_over_kitaev_xy": 2.0,
+      "passed": true
+    },
+    "law_6_newton_hensel_end_to_end_receiver": {
+      "certificate_sha": "9e0e4547f11f04ff",
+      "passed": true,
+      "total_secrets_reconstructed_100pct": 128
+    }
+  },
+  "theorem_id": "dcp_grand_synthesis_50_subsystem_taxonomy_and_frontier_bridge"
+}

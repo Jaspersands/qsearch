@@ -74,6 +74,14 @@ siblings. It also has an exact inverse-polynomial first-trial success bound
 for an IID-shift population, NOT a fixed-input amplification theorem. An
 all-parameter counterexample killed its first monic pencil and motivated an
 expanded square-leading family. Dimension39 remains outside this degree budget.
+A [low-rate Fourier-source analysis](research/PRIME_CHARACTER_CAPACITY_SOURCE.md)
+now controls coherent decoding ambiguity for the fixed character inputs beyond
+half distance. The actual finite capacity decoder, large quantum score/tail
+and gate budget were missing at that stage. A
+[finite readout follow-up](research/PRIME_CHARACTER_FINITE_READOUT.md) now gives
+a conditional114.66/127 mean at radius32, with finite tails, but STILL no
+implemented large decoder or matched runtime advantage. This is known DQI,
+not a new quantum algorithm or an established speedup.
 The [fixed-input Morse extension](research/PRIME_CHARACTER_MORSE_ATTACK.md)
 now supplies an explicit classical probability bound under degree/field-size
 conditions, with a strict127/127 witness in a declared1279-bit field lift.

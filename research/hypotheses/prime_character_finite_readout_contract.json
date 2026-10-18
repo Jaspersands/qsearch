@@ -1,0 +1,50 @@
+{
+  "hypothesis_id": "finite_character_DQI_readout_via_radial_near_isometry",
+  "status": "FINITE_SCORE_AND_TAIL_CONDITIONAL_ON_EXACT_DECODER_LOCAL_APPLICATION_REVIEW_PENDING",
+  "question": "Does a whole-ball flat-source ambiguity bound certify a finite native DQI mean and tail beyond half distance?",
+  "problem_input": "Explicit fixed prime-field quadratic-coset OPI, p=3 mod4, N distinct points, degree<K, strict or zero-including; no IID shift assumption",
+  "algorithmic_mechanism": "Known radial DQI source, K-row syndrome for dual GRS, verified unique erasure with heralding, coefficient-space Fourier readout",
+  "new_local_step": "Uniform radial near-isometry of the coalescing map through ell+1 controls the finite score quotient; source normalization alone is insufficient",
+  "mean_bound": "delta=max(1,M_L-1)*epsilon_L, L=ell+1; |mu_ideal-u*T*u|<=2delta/(1-delta) if delta<1, followed by the charged unique-herald TV correction",
+  "exact_branch": "When 2ell+1<=K, use exact RS moments without asserting the full extended Gram matrix is identity",
+  "finite_evidence": [
+    "N127,K39,p61,ell32 conditional mean0.9028547353515506, approximately114.66255 accepted positions",
+    "Conditional exact-decoder one-attempt tail floors0.314586 for110/127 and0.0509655 for115/127, including herald failure",
+    "Same-input saved classical witness109/127; strict siblings do not inherit that comparator",
+    "The ell22/24 mean comparisons remain below the saved classical score",
+    "Exact-normalization p7 counterexample rejects a false mean; independent one-dimensional dual-code Gram checks over F10007"
+  ],
+  "proof_obligations_review_pending": [
+    "Whole-ball ambiguity bounds are uniform over all radial coefficient vectors, hence bound the Gram operator",
+    "The native predicate recurrence reaches one extra radius and the Jacobi operator is a contraction",
+    "The finite quotient and herald-TV corrections have the stated direction and normalization",
+    "Actual compiled source/decoder/QFT errors must be separately supplied, not assumed zero"
+  ],
+  "strongest_classical_comparison": "Exact saved same-input jet witness109/127; no classical optimum, tail upper bound, equal-cost comparison or asymptotic hardness is established",
+  "resource_debt": [
+    "Actual finite phase-correct coherent list decoder and its verified time/space/uncomputation",
+    "Controlled source, arithmetic, radial-weight and QFT synthesis/error budgets",
+    "Known fixed-gap decoder theorem has severe exponents and finite thresholds, not a practical gate certificate"
+  ],
+  "falsifiers": [
+    "Only the source radius is certified instead of the score's extra observable radius",
+    "A per-state norm estimate is promoted to a uniform Gram operator estimate",
+    "A large delta or capacity-reaching radius is admitted because a numerical Rayleigh value looks good",
+    "Zero-including classical witnesses are imported as strict-task comparators",
+    "An asymptotic decoder or ideal coalescing map is silently treated as a compiled efficient quantum receiver",
+    "A stronger classical attack matches the actual quantum score/cost guarantee"
+  ],
+  "literature": ["https://arxiv.org/html/2610.12357"],
+  "evidence": [
+    "theorems/prime_character_finite_readout.py",
+    "tests/test_prime_character_finite_readout.py",
+    "research/classical_baselines/prime_character_finite_readout.json",
+    "research/PRIME_CHARACTER_FINITE_READOUT.md"
+  ],
+  "large_quantum_decoder_or_circuit_executed": false,
+  "matched_runtime_or_asymptotic_advantage_established": false,
+  "new_algorithm_or_novelty_claimed": false,
+  "independent_or_formal_application_review_completed": false,
+  "accepted_speedup_candidate": false,
+  "new_central_candidate_negative_or_proof_registered": false
+}

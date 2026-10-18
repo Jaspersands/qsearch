@@ -1,0 +1,12 @@
+{
+  "hypothesis_id": "dcp_short_integer_solution_sis_dual_homomorphic_trapdoor_bridge",
+  "title": "SIS Dual Gadget Trapdoor A = [G | -G R mod 2^t] Binary Witness Compilation",
+  "status": "VERIFIED_FINITE_IDENTITIES_REVIEW_PENDING",
+  "claims": [
+    "For any gadget header A = [G | -G R mod 2^t] with binary trapdoor R in {0, 1}^{(nt) x m}, T = [[R], [I_m]] in {0, 1}^{K x m} satisfies A T == 0 (mod 2^t) with zero carry defect on the all-zero syndrome branch.",
+    "Puncturing a single active gadget bit idx = i*t + r from column t_j and applying Pauli-X sign rectification isolates the exact canonical dyadic scale +2^r e_i (mod 2^t)."
+  ],
+  "favorable_controls": [
+    "2D Z_8^2 (n=2, t=3, K=8) gadget trapdoor extracting all 6 dyadic scales"
+  ]
+}

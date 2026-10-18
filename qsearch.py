@@ -19658,6 +19658,105 @@ def command_ternary_cubic_syndrome_twirl_reflection_collapse(args: argparse.Name
         print(json.dumps(payload["summary"], indent=2))
     return 0
 
+
+def command_prime_character_capacity_source(args: argparse.Namespace) -> int:
+    from theorems.prime_character_capacity_source import run_controls, REPORT
+    report = run_controls()
+    if not getattr(args, "no_write", False):
+        REPORT.write_text(json.dumps(report, indent=2, allow_nan=False) + "\n")
+    if getattr(args, "json", False):
+        print(json.dumps(report, indent=2))
+    else:
+        print(json.dumps({"controls": len(report["bounded_physical_controls"]),
+                          "large_profiles": len(report["analytic_large_profiles"])}, indent=2))
+    return 0
+
+
+def command_prime_character_finite_readout(args: argparse.Namespace) -> int:
+    from theorems.prime_character_finite_readout import run_controls, REPORT
+    report = run_controls()
+    if not getattr(args, "no_write", False):
+        REPORT.write_text(json.dumps(report, indent=2, allow_nan=False) + "\n")
+    if getattr(args, "json", False):
+        print(json.dumps(report, indent=2))
+    else:
+        print(json.dumps({"profiles": len(report["fixed_input_profiles"]),
+                          "unlicensed_degree_controls": len(report["unlicensed_degree_controls"])}, indent=2))
+    return 0
+
+
+def command_dcp_grand_synthesis_50_subsystem_taxonomy_and_frontier_bridge(args: argparse.Namespace) -> int:
+    from theorems.dcp_grand_synthesis_50_subsystem_taxonomy_and_frontier_bridge import (
+        generate_dcp_grand_synthesis_50_subsystem_taxonomy_and_frontier_certificate,
+    )
+    cert = generate_dcp_grand_synthesis_50_subsystem_taxonomy_and_frontier_certificate()
+    print(json.dumps(cert, indent=2, sort_keys=True))
+    return 0
+
+
+def command_dcp_non_stationary_markov_drift_secret_tracking_kalman_bridge(args: argparse.Namespace) -> int:
+    from theorems.dcp_non_stationary_markov_drift_secret_tracking_kalman_bridge import (
+        generate_dcp_non_stationary_markov_drift_secret_tracking_kalman_certificate,
+    )
+    cert = generate_dcp_non_stationary_markov_drift_secret_tracking_kalman_certificate()
+    print(json.dumps(cert, indent=2, sort_keys=True))
+    return 0
+
+
+def command_dcp_quantum_z_error_detection_stabilizer_iceberg_code_bridge(args: argparse.Namespace) -> int:
+    from theorems.dcp_quantum_z_error_detection_stabilizer_iceberg_code_bridge import (
+        generate_dcp_quantum_z_error_detection_stabilizer_iceberg_code_certificate,
+    )
+    cert = generate_dcp_quantum_z_error_detection_stabilizer_iceberg_code_bridge() if False else generate_dcp_quantum_z_error_detection_stabilizer_iceberg_code_certificate()
+    print(json.dumps(cert, indent=2, sort_keys=True))
+    return 0
+
+
+def command_dcp_short_integer_solution_sis_dual_homomorphic_trapdoor_bridge(args: argparse.Namespace) -> int:
+    from theorems.dcp_short_integer_solution_sis_dual_homomorphic_trapdoor_bridge import (
+        generate_dcp_short_integer_solution_sis_dual_homomorphic_trapdoor_certificate,
+    )
+    cert = generate_dcp_short_integer_solution_sis_dual_homomorphic_trapdoor_certificate()
+    print(json.dumps(cert, indent=2, sort_keys=True))
+    return 0
+
+
+def command_dcp_haar_random_vs_dihedral_2_design_frame_potential_bridge(args: argparse.Namespace) -> int:
+    from theorems.dcp_haar_random_vs_dihedral_2_design_frame_potential_bridge import (
+        generate_dcp_haar_random_vs_dihedral_2_design_frame_potential_certificate,
+    )
+    cert = generate_dcp_haar_random_vs_dihedral_2_design_frame_potential_certificate()
+    print(json.dumps(cert, indent=2, sort_keys=True))
+    return 0
+
+
+def command_dcp_kitaev_phase_estimation_hadamard_test_bit_by_bit_bridge(args: argparse.Namespace) -> int:
+    from theorems.dcp_kitaev_phase_estimation_hadamard_test_bit_by_bit_bridge import (
+        generate_dcp_kitaev_phase_estimation_hadamard_test_bit_by_bit_certificate,
+    )
+    cert = generate_dcp_kitaev_phase_estimation_hadamard_test_bit_by_bit_certificate()
+    print(json.dumps(cert, indent=2, sort_keys=True))
+    return 0
+
+
+def command_dcp_multi_antenna_mimo_spatial_diversity_combining_bridge(args: argparse.Namespace) -> int:
+    from theorems.dcp_multi_antenna_mimo_spatial_diversity_combining_bridge import (
+        generate_dcp_multi_antenna_mimo_spatial_diversity_combining_certificate,
+    )
+    cert = generate_dcp_multi_antenna_mimo_spatial_diversity_combining_certificate()
+    print(json.dumps(cert, indent=2, sort_keys=True))
+    return 0
+
+
+def command_dcp_walsh_hadamard_gold_bent_nonlinear_carry_spectrum_bridge(args: argparse.Namespace) -> int:
+    from theorems.dcp_walsh_hadamard_gold_bent_nonlinear_carry_spectrum_bridge import (
+        generate_dcp_walsh_hadamard_gold_bent_nonlinear_carry_spectrum_certificate,
+    )
+    cert = generate_dcp_walsh_hadamard_gold_bent_nonlinear_carry_spectrum_certificate()
+    print(json.dumps(cert, indent=2, sort_keys=True))
+    return 0
+
+
 def command_validate(args: argparse.Namespace) -> int:
     validation = validate_registry()
     print(json.dumps(validation, indent=2, sort_keys=True))
@@ -29984,6 +30083,70 @@ def build_parser() -> argparse.ArgumentParser:
     ternary_cubic_syndrome_twirl_reflection_collapse.add_argument("--no-write", action="store_true")
     ternary_cubic_syndrome_twirl_reflection_collapse.set_defaults(func=command_ternary_cubic_syndrome_twirl_reflection_collapse)
 
+    prime_character_capacity_source = subparsers.add_parser(
+        "prime-character-capacity-source",
+        help="Run the prime character capacity source ambiguity accounting and native Fourier filter audit.",
+    )
+    prime_character_capacity_source.add_argument("--no-write", action="store_true")
+    prime_character_capacity_source.add_argument("--json", action="store_true")
+    prime_character_capacity_source.set_defaults(func=command_prime_character_capacity_source)
+
+    prime_character_finite_readout = subparsers.add_parser(
+        "prime-character-finite-readout",
+        help="Run the prime character finite readout radial near-isometry means and tails audit.",
+    )
+    prime_character_finite_readout.add_argument("--no-write", action="store_true")
+    prime_character_finite_readout.add_argument("--json", action="store_true")
+    prime_character_finite_readout.set_defaults(func=command_prime_character_finite_readout)
+
+    dcp_grand_synthesis_50_subsystem_taxonomy_and_frontier_bridge = subparsers.add_parser(
+        "dcp-grand-synthesis-50-subsystem-taxonomy-and-frontier-bridge",
+        help="Run the DCP grand synthesis 50-subsystem taxonomy and unified 6-law frontier bridge certificate.",
+    )
+    dcp_grand_synthesis_50_subsystem_taxonomy_and_frontier_bridge.set_defaults(func=command_dcp_grand_synthesis_50_subsystem_taxonomy_and_frontier_bridge)
+
+    dcp_non_stationary_markov_drift_secret_tracking_kalman_bridge = subparsers.add_parser(
+        "dcp-non-stationary-markov-drift-secret-tracking-kalman-bridge",
+        help="Run the DCP non-stationary drifting secret tracking via cross-packet CNOT velocity locking bridge certificate.",
+    )
+    dcp_non_stationary_markov_drift_secret_tracking_kalman_bridge.set_defaults(func=command_dcp_non_stationary_markov_drift_secret_tracking_kalman_bridge)
+
+    dcp_quantum_z_error_detection_stabilizer_iceberg_code_bridge = subparsers.add_parser(
+        "dcp-quantum-z-error-detection-stabilizer-iceberg-code-bridge",
+        help="Run the DCP quantum Z-error-detection [[2m+2, 2m, 2]] Iceberg stabilizer code bridge certificate.",
+    )
+    dcp_quantum_z_error_detection_stabilizer_iceberg_code_bridge.set_defaults(func=command_dcp_quantum_z_error_detection_stabilizer_iceberg_code_bridge)
+
+    dcp_short_integer_solution_sis_dual_homomorphic_trapdoor_bridge = subparsers.add_parser(
+        "dcp-short-integer-solution-sis-dual-homomorphic-trapdoor-bridge",
+        help="Run the DCP Short Integer Solution (SIS) dual gadget trapdoor binary witness compilation bridge certificate.",
+    )
+    dcp_short_integer_solution_sis_dual_homomorphic_trapdoor_bridge.set_defaults(func=command_dcp_short_integer_solution_sis_dual_homomorphic_trapdoor_bridge)
+
+    dcp_haar_random_vs_dihedral_2_design_frame_potential_bridge = subparsers.add_parser(
+        "dcp-haar-random-vs-dihedral-2-design-frame-potential-bridge",
+        help="Run the DCP Haar-random vs dihedral 2-design frame potential and additive energy bridge certificate.",
+    )
+    dcp_haar_random_vs_dihedral_2_design_frame_potential_bridge.set_defaults(func=command_dcp_haar_random_vs_dihedral_2_design_frame_potential_bridge)
+
+    dcp_kitaev_phase_estimation_hadamard_test_bit_by_bit_bridge = subparsers.add_parser(
+        "dcp-kitaev-phase-estimation-hadamard-test-bit-by-bit-bridge",
+        help="Run the DCP Kitaev bit-by-bit phase estimation vs coherent feedforward bridge certificate.",
+    )
+    dcp_kitaev_phase_estimation_hadamard_test_bit_by_bit_bridge.set_defaults(func=command_dcp_kitaev_phase_estimation_hadamard_test_bit_by_bit_bridge)
+
+    dcp_multi_antenna_mimo_spatial_diversity_combining_bridge = subparsers.add_parser(
+        "dcp-multi-antenna-mimo-spatial-diversity-combining-bridge",
+        help="Run the DCP multi-antenna MIMO spatial diversity combining bridge certificate.",
+    )
+    dcp_multi_antenna_mimo_spatial_diversity_combining_bridge.set_defaults(func=command_dcp_multi_antenna_mimo_spatial_diversity_combining_bridge)
+
+    dcp_walsh_hadamard_gold_bent_nonlinear_carry_spectrum_bridge = subparsers.add_parser(
+        "dcp-walsh-hadamard-gold-bent-nonlinear-carry-spectrum-bridge",
+        help="Run the DCP Walsh-Hadamard Gold bent nonlinear carry spectrum bridge certificate.",
+    )
+    dcp_walsh_hadamard_gold_bent_nonlinear_carry_spectrum_bridge.set_defaults(func=command_dcp_walsh_hadamard_gold_bent_nonlinear_carry_spectrum_bridge)
+
     validate = subparsers.add_parser("validate", help="Validate candidates and experiments against proof obligations.")
     validate.set_defaults(func=command_validate)
 
@@ -30381,3 +30544,19 @@ if __name__ == "__main__":
 # Subsystem CLI hook: dcp-lattice-gram-schmidt-babai-nearest-plane-vs-rounding-bridge -> theorems.dcp_lattice_gram_schmidt_babai_nearest_plane_vs_rounding_bridge
 
 # Subsystem CLI hook: dcp-composite-crt-coprime-modulus-tensor-factorization-bridge -> theorems.dcp_composite_crt_coprime_modulus_tensor_factorization_bridge
+
+# Subsystem CLI hook: dcp-walsh-hadamard-gold-bent-nonlinear-carry-spectrum-bridge -> theorems.dcp_walsh_hadamard_gold_bent_nonlinear_carry_spectrum_bridge
+
+# Subsystem CLI hook: dcp-multi-antenna-mimo-spatial-diversity-combining-bridge -> theorems.dcp_multi_antenna_mimo_spatial_diversity_combining_bridge
+
+# Subsystem CLI hook: dcp-kitaev-phase-estimation-hadamard-test-bit-by-bit-bridge -> theorems.dcp_kitaev_phase_estimation_hadamard_test_bit_by_bit_bridge
+
+# Subsystem CLI hook: dcp-haar-random-vs-dihedral-2-design-frame-potential-bridge -> theorems.dcp_haar_random_vs_dihedral_2_design_frame_potential_bridge
+
+# Subsystem CLI hook: dcp-quantum-z-error-detection-stabilizer-iceberg-code-bridge -> theorems.dcp_quantum_z_error_detection_stabilizer_iceberg_code_bridge
+
+# Subsystem CLI hook: dcp-non-stationary-markov-drift-secret-tracking-kalman-bridge -> theorems.dcp_non_stationary_markov_drift_secret_tracking_kalman_bridge
+
+# Subsystem CLI hook: dcp-short-integer-solution-sis-dual-homomorphic-trapdoor-bridge -> theorems.dcp_short_integer_solution_sis_dual_homomorphic_trapdoor_bridge
+
+# Subsystem CLI hook: dcp-grand-synthesis-50-subsystem-taxonomy-and-frontier-bridge -> theorems.dcp_grand_synthesis_50_subsystem_taxonomy_and_frontier_bridge

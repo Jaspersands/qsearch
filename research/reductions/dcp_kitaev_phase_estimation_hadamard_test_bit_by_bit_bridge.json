@@ -1,0 +1,78 @@
+{
+  "all_checks_passed": true,
+  "certificate_sha256_16": "00e5b68b968ccdcf",
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "kitaev_vs_coherent_audit": {
+    "all_verified": true,
+    "gamma": 0.8,
+    "records": [
+      {
+        "exact_identities_verified": true,
+        "one_copy_coherent_feedforward_error": 0.09999999999999998,
+        "per_copy_fisher_coherent_feedforward": 0.6400000000000001,
+        "per_copy_fisher_kitaev_xy": 0.32000000000000006,
+        "phi_over_pi": 0.0,
+        "three_copy_coherent_feedforward_error": 0.027999999999999987,
+        "three_copy_kitaev_xy_error": 0.14100000000000001,
+        "two_copy_kitaev_xy_error_closed_form": 0.09999999999999998,
+        "two_copy_kitaev_xy_error_explicit": 0.09999999999999998
+      },
+      {
+        "exact_identities_verified": true,
+        "one_copy_coherent_feedforward_error": 0.09999999999999998,
+        "per_copy_fisher_coherent_feedforward": 0.6400000000000001,
+        "per_copy_fisher_kitaev_xy": 0.32000000000000006,
+        "phi_over_pi": 0.125,
+        "three_copy_coherent_feedforward_error": 0.027999999999999987,
+        "three_copy_kitaev_xy_error": 0.1253353872099522,
+        "two_copy_kitaev_xy_error_closed_form": 0.13044818699548527,
+        "two_copy_kitaev_xy_error_explicit": 0.13044818699548527
+      },
+      {
+        "exact_identities_verified": true,
+        "one_copy_coherent_feedforward_error": 0.09999999999999998,
+        "per_copy_fisher_coherent_feedforward": 0.6400000000000001,
+        "per_copy_fisher_kitaev_xy": 0.32000000000000006,
+        "phi_over_pi": 0.25,
+        "three_copy_coherent_feedforward_error": 0.027999999999999987,
+        "three_copy_kitaev_xy_error": 0.12099076528401055,
+        "two_copy_kitaev_xy_error_closed_form": 0.21715728752538094,
+        "two_copy_kitaev_xy_error_explicit": 0.217157287525381
+      },
+      {
+        "exact_identities_verified": true,
+        "one_copy_coherent_feedforward_error": 0.09999999999999998,
+        "per_copy_fisher_coherent_feedforward": 0.6400000000000001,
+        "per_copy_fisher_kitaev_xy": 0.32000000000000006,
+        "phi_over_pi": 0.375,
+        "three_copy_coherent_feedforward_error": 0.027999999999999987,
+        "three_copy_kitaev_xy_error": 0.12533538720995221,
+        "two_copy_kitaev_xy_error_closed_form": 0.13044818699548527,
+        "two_copy_kitaev_xy_error_explicit": 0.13044818699548527
+      },
+      {
+        "exact_identities_verified": true,
+        "one_copy_coherent_feedforward_error": 0.09999999999999998,
+        "per_copy_fisher_coherent_feedforward": 0.6400000000000001,
+        "per_copy_fisher_kitaev_xy": 0.32000000000000006,
+        "phi_over_pi": 0.5,
+        "three_copy_coherent_feedforward_error": 0.027999999999999987,
+        "three_copy_kitaev_xy_error": 0.1409999999999999,
+        "two_copy_kitaev_xy_error_closed_form": 0.09999999999999998,
+        "two_copy_kitaev_xy_error_explicit": 0.09999999999999998
+      }
+    ]
+  },
+  "proof_status": "LOCAL_DERIVATION_REVIEW_PENDING_NOT_FORMALLY_VERIFIED",
+  "schema_version": "dcp-kitaev-phase-estimation-hadamard-test-bit-by-bit-bridge-v1",
+  "scope_constraints": {
+    "applies_to": "Kitaev non-adaptive X/Y two-quadrature Hadamard test with classical post-rotation vs. coherent R_Z(-phi_known) feedforward",
+    "controls_included": "Proves and verifies the exact 2-copy (1 X + 1 Y) Bayes error law P_err = 0.5*(1 - gamma * max(|cos(phi)|, |sin(phi)|)) >= P_err^{1-copy-coherent} = 0.5*(1 - gamma) across phi in [0, pi/2].",
+    "does_not_claim": "Failure of Kitaev's non-adaptive estimator when given 2x additional quantum copies"
+  },
+  "theorem_id": "dcp_kitaev_phase_estimation_hadamard_test_bit_by_bit_bridge"
+}

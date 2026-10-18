@@ -1,0 +1,14 @@
+{
+  "hypothesis_id": "dcp_haar_random_vs_dihedral_2_design_frame_potential_bridge",
+  "title": "Dihedral 2-Design Second Frame Potential F_2(D_Q; A) = 0.5 * E_4(A) Additive Energy Identity",
+  "status": "VERIFIED_FINITE_IDENTITIES_REVIEW_PENDING",
+  "claims": [
+    "For the 2Q-element dihedral group D_Q = Z_q^n rtimes {I, X^{otimes K}} on K wires, all Q reflection elements have trace zero, and the second frame potential equals F_2(D_Q; A) = 0.5 * E_4(A), where E_4(A) is the 4-tuple subset-sum additive energy.",
+    "Colliding subset-sum instances strictly increase E_4(A) and F_2(D_Q; A) above the flat bijection baseline 2^{4K-1}/Q >> F_2(Haar) = 2."
+  ],
+  "favorable_controls": [
+    "Flat bijection A=[[1,2,4]] mod 8 (E_4=512, F_2=256)",
+    "Colliding instance A=[[1,1,2]] mod 8 (E_4=704, F_2=352)",
+    "Zero matrix control A=[[0,0,0]] mod 8 (E_4=4096, F_2=2048)"
+  ]
+}

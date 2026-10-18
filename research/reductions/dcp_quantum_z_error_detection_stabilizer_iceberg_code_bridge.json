@@ -1,0 +1,123 @@
+{
+  "all_checks_passed": true,
+  "certificate_sha256_16": "c1e935954a3a0d23",
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "iceberg_6_4_2_audit": {
+    "all_verified": true,
+    "ancilla_overhead_qubits": 2,
+    "k_logical_wires": 4,
+    "n_physical_qubits": 6,
+    "records": [
+      {
+        "error_suppression_factor": 1.0,
+        "exact_identities_verified": true,
+        "iceberg_accept_prob_closed_form": 1.0,
+        "iceberg_accept_prob_explicit": 1.0,
+        "iceberg_post_selected_logical_error_closed_form": 0.0,
+        "iceberg_post_selected_logical_error_explicit": 0.0,
+        "p_physical": 0.0,
+        "unencoded_block_error_prob": 0.0
+      },
+      {
+        "error_suppression_factor": 52.42516888279732,
+        "exact_identities_verified": true,
+        "iceberg_accept_prob_closed_form": 0.9707400747004999,
+        "iceberg_accept_prob_explicit": 0.9707400747004999,
+        "iceberg_post_selected_logical_error_closed_form": 0.00037864445261737156,
+        "iceberg_post_selected_logical_error_explicit": 0.0003786444526174054,
+        "p_physical": 0.005,
+        "unencoded_block_error_prob": 0.019850499375000052
+      },
+      {
+        "error_suppression_factor": 25.78334439136055,
+        "exact_identities_verified": true,
+        "iceberg_accept_prob_closed_form": 0.942921190432,
+        "iceberg_accept_prob_explicit": 0.942921190432,
+        "iceberg_post_selected_logical_error_closed_form": 0.0015282730355649088,
+        "iceberg_post_selected_logical_error_explicit": 0.0015282730355649194,
+        "p_physical": 0.01,
+        "unencoded_block_error_prob": 0.039403990000000055
+      },
+      {
+        "error_suppression_factor": 12.498728395541907,
+        "exact_identities_verified": true,
+        "iceberg_accept_prob_closed_form": 0.8913788948479999,
+        "iceberg_accept_prob_explicit": 0.8913788948479999,
+        "iceberg_post_selected_logical_error_closed_form": 0.0062111790530379185,
+        "iceberg_post_selected_logical_error_explicit": 0.006211179053037933,
+        "p_physical": 0.02,
+        "unencoded_block_error_prob": 0.07763184000000012
+      },
+      {
+        "error_suppression_factor": 4.637378005540131,
+        "exact_identities_verified": true,
+        "iceberg_accept_prob_closed_form": 0.7657205,
+        "iceberg_accept_prob_explicit": 0.7657204999999998,
+        "iceberg_post_selected_logical_error_closed_form": 0.039999704526652025,
+        "iceberg_post_selected_logical_error_explicit": 0.039999704526651705,
+        "p_physical": 0.05,
+        "unencoded_block_error_prob": 0.18549375000000012
+      }
+    ]
+  },
+  "iceberg_8_6_2_audit": {
+    "all_verified": true,
+    "ancilla_overhead_qubits": 2,
+    "k_logical_wires": 6,
+    "n_physical_qubits": 8,
+    "records": [
+      {
+        "error_suppression_factor": 1.0,
+        "exact_identities_verified": true,
+        "iceberg_accept_prob_closed_form": 1.0,
+        "iceberg_accept_prob_explicit": 1.0,
+        "iceberg_post_selected_logical_error_closed_form": 0.0,
+        "iceberg_post_selected_logical_error_explicit": 0.0,
+        "p_physical": 0.0,
+        "unencoded_block_error_prob": 0.0
+      },
+      {
+        "error_suppression_factor": 41.92977721148424,
+        "exact_identities_verified": true,
+        "iceberg_accept_prob_closed_form": 0.96137234721396,
+        "iceberg_accept_prob_explicit": 0.96137234721396,
+        "iceberg_post_selected_logical_error_closed_form": 0.0007065978551304974,
+        "iceberg_post_selected_logical_error_explicit": 0.0007065978551305164,
+        "p_physical": 0.005,
+        "unencoded_block_error_prob": 0.029627490643734378
+      },
+      {
+        "error_suppression_factor": 20.5373336875475,
+        "exact_identities_verified": true,
+        "iceberg_accept_prob_closed_form": 0.9253815112908927,
+        "iceberg_accept_prob_explicit": 0.9253815112908927,
+        "iceberg_post_selected_logical_error_closed_form": 0.0028494375895777857,
+        "iceberg_post_selected_logical_error_explicit": 0.002849437589577818,
+        "p_physical": 0.01,
+        "unencoded_block_error_prob": 0.058519850599
+      },
+      {
+        "error_suppression_factor": 9.89298972282404,
+        "exact_identities_verified": true,
+        "iceberg_accept_prob_closed_form": 0.8606947894919167,
+        "iceberg_accept_prob_explicit": 0.8606947894919167,
+        "iceberg_post_selected_logical_error_closed_form": 0.01153924368006043,
+        "iceberg_post_selected_logical_error_explicit": 0.011539243680060495,
+        "p_physical": 0.02,
+        "unencoded_block_error_prob": 0.11415761913600009
+      }
+    ]
+  },
+  "proof_status": "LOCAL_DERIVATION_REVIEW_PENDING_NOT_FORMALLY_VERIFIED",
+  "schema_version": "dcp-quantum-z-error-detection-stabilizer-iceberg-code-bridge-v1",
+  "scope_constraints": {
+    "applies_to": "[[2m + 2, 2m, 2]] Iceberg quantum parity error-detecting code for 2m compressed DCP survivor wires",
+    "controls_included": "Evaluates [[6, 4, 2]] (4 logical wires) and [[8, 6, 2]] (6 logical wires), verifying 100% weight-1 error elimination and >26.5x logical infidelity reduction at p = 0.01.",
+    "does_not_claim": "Active correction of weight-1 errors without post-selection (since code distance is d = 2)"
+  },
+  "theorem_id": "dcp_quantum_z_error_detection_stabilizer_iceberg_code_bridge"
+}

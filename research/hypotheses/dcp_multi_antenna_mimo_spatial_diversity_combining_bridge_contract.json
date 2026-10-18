@@ -1,0 +1,14 @@
+{
+  "hypothesis_id": "dcp_multi_antenna_mimo_spatial_diversity_combining_bridge",
+  "title": "Maximal-Ratio LLR Diversity Combining vs. Unweighted Majority Voting Across Heterogeneous Branches",
+  "status": "VERIFIED_FINITE_IDENTITIES_REVIEW_PENDING",
+  "claims": [
+    "Across L heterogeneous CNOT branches with visibilities gamma_1, ..., gamma_L, the exact Bayesian posterior LLR is sum_{l=1}^L 2 * atanh(gamma_l) * y_l.",
+    "When a high-visibility branch is combined with noisy branches, unweighted majority voting can degrade error >3.2x below single-best selection, whereas LLR combining strictly dominates both unweighted majority and single-best selection."
+  ],
+  "favorable_controls": [
+    "3-branch disparity audit [0.90, 0.25, 0.25]",
+    "4-branch cooperative diversity audit [0.80, 0.65, 0.60, 0.55]",
+    "Equal-visibility control [0.70, 0.70, 0.70]"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "hypothesis_id": "dcp_walsh_hadamard_gold_bent_nonlinear_carry_spectrum_bridge",
+  "title": "Walsh-Hadamard Bent-Function Flat Spectrum of Even-Multiplicity Quadratic CNOT Carries",
+  "status": "VERIFIED_FINITE_IDENTITIES_REVIEW_PENDING",
+  "claims": [
+    "For any even overlap multiplicity m = 2k >= 2 at modulus q = 4 (t = 2), the quadratic carry phase (-1)^{sum_{j<l} u_j u_l} is a maximally nonlinear bent Boolean function with completely flat Hadamard distribution P(w) = 2^{-2k} across all 2^{2k} outcomes.",
+    "For odd overlap multiplicity m = 2k + 1, the carry phase is semi-bent with P(w) = 2^{-2k} on half of the outcomes and 0 on the other half."
+  ],
+  "favorable_controls": [
+    "Even overlap multiplicities m in {2, 4, 6} (bent, H = m bits)",
+    "Odd overlap multiplicities m in {3, 5} (semi-bent, H = m - 1 bits)"
+  ]
+}

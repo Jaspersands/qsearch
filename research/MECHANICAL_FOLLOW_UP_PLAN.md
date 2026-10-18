@@ -2,6 +2,30 @@
 
 ## Current Research Override
 
+NEW finite readout producer: `python theorems/prime_character_finite_readout.py
+--write`; read PRIME_CHARACTER_FINITE_READOUT.md. It supersedes the earlier
+"finite mean/tail missing" status, NOT the decoder/gate/runtime debt. Preserve
+the extra observable radius, exact-moment versus extended-Gram branches,
+rational actual weights/sqrt directions, UNKNOWN high-degree cases and the
+same-input/zero-convention classical comparator. The114.66/127 mean and finite
+tails are CONDITIONAL mathematical receiver certificates, not quantum runs
+or speedups. Do not restore the invalid normalization-implies-score shortcut,
+serialize giant repetition fractions or import a strict classical comparator
+from zero-including data. Optional CLI/EXP exposure can reuse the producer;
+main-model work must address the decoder/runtime or a different mechanism.
+
+NEW low-rate source producer: `python theorems/prime_character_capacity_source.py
+--write`; read PRIME_CHARACTER_CAPACITY_SOURCE.md. Preserve p=3 mod4 flatness,
+the K-row syndrome/DUAL-code convention, whole-ball ambiguity (not same-weight
+only), coherent fiber amplification, all nonimplementation flags and all
+charged exhaustive calibrations. The large ell32 rational bounds are NOT a
+quantum execution, finite quantum score or runtime certificate. The full
+capacity paper was partially audited; generic finite parameters do not
+silently license N127. Useful optional CLI/EXP wiring must reuse this producer,
+not rebuild another source sampler or promote a speedup. Actual scalable
+controlled source/decoder compilation remains unimplemented. Main-model work
+needs finite decoder/readout mathematics or a different constructive mechanism.
+
 NEW sharper classical bound: `python theorems/prime_character_exterior_bound.py
 --write`; read PRIME_CHARACTER_EXTERIOR_BOUND.md. The previous "trace sharpening
 unimplemented" instruction below is superseded. Use the actual Morse solver's

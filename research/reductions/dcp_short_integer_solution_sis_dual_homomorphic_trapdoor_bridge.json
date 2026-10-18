@@ -1,0 +1,120 @@
+{
+  "all_checks_passed": true,
+  "certificate_sha256_16": "f3f404876cdea6e9",
+  "gadget_trapdoor_n2_t3_audit": {
+    "K_total_wires": 8,
+    "all_punctured_dyadic_scales_verified": true,
+    "all_verified": true,
+    "m_trapdoor_cols": 2,
+    "n_dim": 2,
+    "num_punctured_scales_extracted": 6,
+    "punctured_records": [
+      {
+        "dyadic_scale_r": 0,
+        "gadget_row_idx": 0,
+        "pauli_x_rectified_column_sum_mod_q": [
+          1,
+          0
+        ],
+        "punctured_weight": 3,
+        "raw_column_sum_mod_q": [
+          7,
+          0
+        ],
+        "target_coord_i": 0,
+        "trapdoor_col_j": 0
+      },
+      {
+        "dyadic_scale_r": 1,
+        "gadget_row_idx": 1,
+        "pauli_x_rectified_column_sum_mod_q": [
+          2,
+          0
+        ],
+        "punctured_weight": 3,
+        "raw_column_sum_mod_q": [
+          6,
+          0
+        ],
+        "target_coord_i": 0,
+        "trapdoor_col_j": 0
+      },
+      {
+        "dyadic_scale_r": 2,
+        "gadget_row_idx": 2,
+        "pauli_x_rectified_column_sum_mod_q": [
+          4,
+          0
+        ],
+        "punctured_weight": 3,
+        "raw_column_sum_mod_q": [
+          4,
+          0
+        ],
+        "target_coord_i": 0,
+        "trapdoor_col_j": 0
+      },
+      {
+        "dyadic_scale_r": 0,
+        "gadget_row_idx": 3,
+        "pauli_x_rectified_column_sum_mod_q": [
+          0,
+          1
+        ],
+        "punctured_weight": 3,
+        "raw_column_sum_mod_q": [
+          0,
+          7
+        ],
+        "target_coord_i": 1,
+        "trapdoor_col_j": 1
+      },
+      {
+        "dyadic_scale_r": 1,
+        "gadget_row_idx": 4,
+        "pauli_x_rectified_column_sum_mod_q": [
+          0,
+          2
+        ],
+        "punctured_weight": 3,
+        "raw_column_sum_mod_q": [
+          0,
+          6
+        ],
+        "target_coord_i": 1,
+        "trapdoor_col_j": 1
+      },
+      {
+        "dyadic_scale_r": 2,
+        "gadget_row_idx": 5,
+        "pauli_x_rectified_column_sum_mod_q": [
+          0,
+          4
+        ],
+        "punctured_weight": 3,
+        "raw_column_sum_mod_q": [
+          0,
+          4
+        ],
+        "target_coord_i": 1,
+        "trapdoor_col_j": 1
+      }
+    ],
+    "q_mod": 8,
+    "t_bits": 3,
+    "zero_sum_at_eq_0_mod_2t_verified": true
+  },
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "proof_status": "LOCAL_DERIVATION_REVIEW_PENDING_NOT_FORMALLY_VERIFIED",
+  "schema_version": "dcp-short-integer-solution-sis-dual-homomorphic-trapdoor-bridge-v1",
+  "scope_constraints": {
+    "applies_to": "Micciancio-Peikert / GPV gadget trapdoor A = [G | -G R mod 2^t] binary zero-sum witness compilation and punctured dyadic scale extraction",
+    "controls_included": "Evaluates 2D Z_8^2 (n=2, t=3, K=8) gadget trapdoor, verifying A * T == 0 mod 8 and exact extraction of all 6 dyadic scale vectors +/- 2^r e_i via 1-bit puncturing + Pauli-X rectification.",
+    "does_not_claim": "Efficient recovery of the secret trapdoor R from a random public matrix A without trapdoor knowledge"
+  },
+  "theorem_id": "dcp_short_integer_solution_sis_dual_homomorphic_trapdoor_bridge"
+}

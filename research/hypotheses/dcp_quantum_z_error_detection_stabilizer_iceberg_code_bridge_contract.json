@@ -1,0 +1,12 @@
+{
+  "hypothesis_id": "dcp_quantum_z_error_detection_stabilizer_iceberg_code_bridge",
+  "title": "[[2m + 2, 2m, 2]] Iceberg Stabilizer Error-Detecting Code for Compressed Survivor Wires",
+  "status": "VERIFIED_FINITE_IDENTITIES_REVIEW_PENDING",
+  "claims": [
+    "Encoding 2m survivor wires into the [[2m + 2, 2m, 2]] Iceberg code with stabilizers X^{otimes (2m+2)} and Z^{otimes (2m+2)} detects 100% of single-qubit X, Y, Z faults with only 2 ancilla qubits.",
+    "Under independent phase-flip rate p, post-selecting on S_X = +1 accepts with probability 0.5*(1 + (1 - 2p)^{2m+2}) and suppresses logical error from O(2mp) to C(2m+2, 2) p^2 + O(p^3)."
+  ],
+  "favorable_controls": [
+    "[[6, 4, 2]] and [[8, 6, 2]] Iceberg codes (>26.5x logical error suppression at p = 0.01)"
+  ]
+}

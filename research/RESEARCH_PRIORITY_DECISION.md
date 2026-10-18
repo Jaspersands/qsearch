@@ -4,6 +4,33 @@
 breakthrough probabilities are assigned: the evidence does not support them.
 This decision supersedes instructions to keep extending DCP by inertia.
 
+FINITE LOW-RATE READOUT PASS2026-10-18:
+[The finite Gram/readout certificate](PRIME_CHARACTER_FINITE_READOUT.md)
+now licenses a CONDITIONAL exact-receiver mean114.66255/127 at radius32,
+with one-attempt tail>=0.314586 at110 and>=0.0509655 at115. It pays for an
+EXTRA observable radius, uses exact rational weights/enclosures and separately
+charges unique-herald TV. A native exact-normalization/wrong-mean counterexample
+rejects using source norm alone. The easier22/24-radius means still lose to
+the saved same-input109/127 classical word;37/38 remain UNKNOWN. This removes
+the missing finite-score status below, NOT the actual decoder/gate/runtime
+debt. No measured large quantum result, new algorithm or speedup is claimed.
+Next work must address finite decoding cost or a different constructive route,
+not source/mean parameter scans. Any interleaved shortcut must preserve the
+original objective, not replace it with a shared-support product/parity task.
+
+LOW-RATE SOURCE/DECODER PASS2026-10-18:
+[The explicit character source](PRIME_CHARACTER_CAPACITY_SOURCE.md) supplies
+exact flat nonzero Fourier probabilities at p=3 mod4, for fixed shifts and
+both zero conventions. Whole-ball MDS intersection counting and a charged
+coherent fiber-amplification bound control unique-erasure error well beyond
+half distance. At N127,K39,ell32,p61 squared trace error<=5.266e-69, but ell38
+has only a trivial bound. Six exhaustive SMALL physical calibrations retain
+finite TV discrepancies; they are not efficient large decoders. Full-paper
+review now confirms the known fixed-gap decoder's huge exponent/finite length
+conditions; the generic finite certificate does not cover N127. No finite
+large quantum score/tail/gate budget or classical hardness follows. Next
+remove the ACTUAL finite decoder/readout blocker, not add more source bounds.
+
 EXTERIOR-TRACE CLASSICAL FOLLOW-UP2026-10-18:
 [The exact n-cycle character expansion](PRIME_CHARACTER_EXTERIOR_BOUND.md)
 replaces the factorial-genus error by (R-2)*(2^(n-1)-1)*sqrt(p), using explicit
