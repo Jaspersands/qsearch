@@ -72,12 +72,12 @@ def parse_atom(body: bytes) -> list[Paper]:
     return papers
 
 
-def query_url(search_query: str, max_results: int = 50, start: int = 0) -> str:
+def query_url(search_query: str, max_results: int = 50, start: int = 0, sort_by: str = "submittedDate") -> str:
     params = {
         "search_query": search_query,
         "start": start,
         "max_results": max_results,
-        "sortBy": "submittedDate",
+        "sortBy": sort_by,
         "sortOrder": "descending",
     }
     return f"{API}?{urllib.parse.urlencode(params)}"
@@ -120,5 +120,12 @@ class Client:
             cached.write_bytes(body)
         return body
 
-    def search(self, search_query: str, max_results: int = 50, start: int = 0) -> list[Paper]:
-        return parse_atom(self._fetch(query_url(search_query, max_results, start)))
+    def search(
+        self, search_query: str, max_results: int = 50, start: int = 0, sort_by: str = "submittedDate"
+    ) -> list[Paper]:
+        return parse_atom(self._fetch(query_url(search_query, max_results, start, sort_by)))
+
+    def get(self, arxiv_ids: list[str]) -> list[Paper]:
+        """Fetch specific papers by id (new-style '2408.08292' or old-style 'quant-ph/9508027')."""
+        params = {"id_list": ",".join(arxiv_ids), "max_results": len(arxiv_ids)}
+        return parse_atom(self._fetch(f"{API}?{urllib.parse.urlencode(params, safe=',/')}"))

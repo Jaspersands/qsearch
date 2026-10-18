@@ -35,6 +35,7 @@ Q-Search organizes its 792 scientific theorem verification modules within a dedi
 - `tools/corpus/` - searchable index and MCP server over notes, registries, theorem modules and literature ("has this been tried?"); index lives in the git-ignored `research/corpus_index/`.
 - `tools/arxiv_watch/` - weekly arXiv collision watch; digest in `research/audits/ARXIV_WATCH.md`.
 - `tools/audit/` - read-only audits of the registry (failure modes, rediscovery); outputs in `research/audits/`.
+- `tools/claim_checker/` - flags the fine print (input loading, readout, oracle-only, baselines) in a quantum-advantage abstract.
 - `docs/` - human-readable project maps and research documentation.
 - `tests/` - unit, integration, theorem-contract, and registry tests.
 

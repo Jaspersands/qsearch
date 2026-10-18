@@ -67,6 +67,29 @@ def test_client_builds_query_and_waits_between_calls() -> None:
     assert sleeps == [3.0]
 
 
+def test_client_fetches_papers_by_id() -> None:
+    urls: list[str] = []
+
+    class Response:
+        def read(self) -> bytes:
+            return FIXTURE.read_bytes()
+
+        def __enter__(self):
+            return self
+
+        def __exit__(self, *exc) -> None:
+            return None
+
+    def opener(request, timeout=0):
+        urls.append(request.full_url)
+        return Response()
+
+    papers = Client(opener=opener, sleep=lambda s: None).get(["2408.08292", "quant-ph/9508027"])
+    query = parse_qs(urlparse(urls[0]).query)
+    assert query["id_list"] == ["2408.08292,quant-ph/9508027"]
+    assert len(papers) == 5
+
+
 def test_client_cache_replays_without_network(tmp_path: Path) -> None:
     calls: list[str] = []
 
