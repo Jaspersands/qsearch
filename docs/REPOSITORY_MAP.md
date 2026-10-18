@@ -37,6 +37,7 @@ Q-Search organizes its 792 scientific theorem verification modules within a dedi
 - `tools/audit/` - read-only audits of the registry (failure modes, rediscovery); outputs in `research/audits/`.
 - `tools/claim_checker/` - flags the fine print (input loading, readout, oracle-only, baselines) in a quantum-advantage abstract.
 - `tools/circuit_search/` - searches local readout circuits (product, adaptive) against certified PPT and collective bounds; DCP packets first.
+- `packages/qsearch_classical/` - installable copy of the classical solvers (prime-character OPI, polar Gibbs source, Jacobi sums), generated from `theorems/` by `sync.py` and checked for parity in CI.
 - `docs/` - human-readable project maps and research documentation.
 - `tests/` - unit, integration, theorem-contract, and registry tests.
 
