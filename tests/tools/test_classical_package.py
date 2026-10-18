@@ -78,7 +78,10 @@ print(json.dumps(diff))
 '''
 
 
-@pytest.mark.parametrize("module", ["prime_character_opi", "prime_character_norm_attack", "polar_conditional_sampler"])
+@pytest.mark.parametrize("module", [
+    "prime_character_opi", "prime_character_norm_attack", "prime_character_capacity_source",
+    "prime_character_finite_readout", "polar_conditional_sampler", "polar_source_design",
+])
 def test_package_reproduces_the_committed_report(module: str) -> None:
     pytest.importorskip("flint")
     env = {k: v for k, v in os.environ.items() if k != "PYTHONPATH"} | {

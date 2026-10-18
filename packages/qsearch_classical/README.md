@@ -67,11 +67,16 @@ rules trivial. The groups are listed in `qsearch_classical.PRIME_CHARACTER`, `PO
 - **Parity:** the committed package matches a fresh sync of `theorems/`.
 - **Isolation:** the package imports with only `src/` on the path, and no `theorems` or
   `core` module gets loaded.
-- **Reproduction:** `prime_character_opi`, `prime_character_norm_attack` and
-  `polar_conditional_sampler` recompute their committed reports exactly, ignoring source
-  hashes and library versions. The OPI report includes the 127 of 127 positions recovered
-  at N = 127, K = 77. These three modules finish in seconds. The others take minutes, and
-  `docs/papers/classical-competitors/reproduce.sh` runs them.
+- **Reproduction:** six modules recompute their committed reports exactly, ignoring
+  source hashes and library versions. They are the OPI, norm-attack, capacity-source,
+  finite-readout, conditional-sampler and small source-design modules, and each finishes
+  in seconds. The OPI report includes the 127 of 127 positions recovered at N = 127,
+  K = 77.
+
+The Morse attack and the exterior bound are too slow for CI. Both were checked once by
+hand on 2026-10-19 and matched exactly, in 271 s and 21 s.
+`docs/papers/classical-competitors/reproduce.sh` reruns everything, including the
+N = 32768 polar design.
 
 An editable install was checked in a fresh virtual environment, with
 `--system-site-packages` and `--no-deps`. The editable install itself downloaded nothing.
