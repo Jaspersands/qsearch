@@ -252,18 +252,46 @@ def test_real_cli_starts_without_importing_theorem_modules() -> None:
     heavy, names = map(int, result.stdout.split())
     assert heavy == 0
     manifest = json.loads((REPO / gen.MANIFEST).read_text())
-    assert names == len(manifest["subcommands"]) + sum(len(s["aliases"]) for s in manifest["subcommands"])
+    assert names >= len(manifest["subcommands"]) + sum(len(s["aliases"]) for s in manifest["subcommands"])
 
 
-def test_real_registry_matches_manifest_and_resolves() -> None:
+def test_every_real_subcommand_renders_its_help_page() -> None:
+    # argparse only formats help lazily, so a bad help string (a stray "%") fails here, not at build time.
+    probe = (
+        "import sys, argparse, qsearch\n"
+        "parser = qsearch.build_parser()\n"
+        "parser.format_help()\n"
+        "sub = next(a for a in parser._actions if isinstance(a, argparse._SubParsersAction))\n"
+        "for name, page in sub.choices.items():\n"
+        "    assert page.format_help().startswith('usage:'), name\n"
+        "heavy = [m for m, v in sys.modules.items() if '/theorems/' in str(getattr(v, '__file__', ''))]\n"
+        "print(len(sub.choices), len(heavy))\n"
+    )
+    result = _run(REPO, "-c", probe)
+    assert result.returncode == 0, result.stderr[-2000:]
+    rendered, heavy = map(int, result.stdout.split())
+    assert rendered > 800
+    assert heavy == 0
+
+
+def test_real_registry_keeps_every_migrated_subcommand() -> None:
+    # New subcommands may be added after the migration; none of the migrated ones may vanish.
     sys.path.insert(0, str(REPO))
     from qsearch_cli import registry
 
     manifest = json.loads((REPO / gen.MANIFEST).read_text())
-    assert [n for n, _, _ in registry.ORDER] == [s["name"] for s in manifest["subcommands"]]
-    assert len(registry.FUNCTIONS) == manifest["functions"]
+    order = {n: (m, a) for n, m, a in registry.ORDER}
+    assert len(order) == len(registry.ORDER), "duplicate subcommand in ORDER"
+    for entry in manifest["subcommands"]:
+        assert order.get(entry["name"], (None,))[0] == entry["module"], entry["name"]
+    assert len(registry.FUNCTIONS) >= manifest["functions"]
+    import importlib
+
     for name, module, adder in registry.ORDER:
-        assert module.startswith("qsearch_cli.commands.") and adder == gen.adder_name(name)
+        assert module.startswith("qsearch_cli.commands."), name
+        assert callable(getattr(importlib.import_module(module), adder, None)), f"{name}: {module}.{adder} missing"
+    for function, module in registry.FUNCTIONS.items():
+        assert callable(getattr(importlib.import_module(module), function, None)), f"{module}.{function} missing"
 
 
 def test_sweep_moves_legacy_style_additions(tmp_path: Path) -> None:

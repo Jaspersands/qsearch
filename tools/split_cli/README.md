@@ -66,7 +66,18 @@ python tools/split_cli/migrate.py verify --root . --legacy LEGACY_QSEARCH.py
 - **The checker fails when it should.** Deleting one name from one command's import line made it report the undefined name. Changing one default in the test fixture made it report the default.
 - **Test results:**
   - The 22 test files that exercise `qsearch` (560 tests) pass before and after the split.
-  - `tests/tools/test_split_cli.py` covers extraction, generation, verification, the shim's identity and monkeypatch behaviour, lazy startup and `sweep` on a fixture CLI. It also checks the real repository: startup imports no theorem module, and the registry matches the manifest.
+  - `tests/tools/test_split_cli.py` covers extraction, generation, verification, the shim's identity and monkeypatch behaviour, lazy startup and `sweep` on a fixture CLI. It also checks the real repository: startup imports no theorem module, every subcommand's help page renders, and every subcommand in the manifest is still in the registry. Commands added later are allowed.
+
+## Continuous integration
+
+- **`.github/workflows/ci-fast.yml`** runs on changes to `qsearch.py`, `qsearch_cli/`, this tool, the manifest or the site. It installs only pytest, because building the parser imports no research code. It runs:
+  - `tests/tools/test_split_cli.py`: lazy startup, every subcommand's help page, and no migrated subcommand missing;
+  - `tests/test_cli_parser_integrity.py`;
+  - the site JavaScript tests.
+
+  In a fresh venv with only pytest, the Python part took about 10 s.
+- **`.github/workflows/ci-full.yml`** runs every night and on demand. It runs all of `tests/` (15,886 tests in 1,254 files) in 8 shards with `pytest-split`. `validate.yml` never runs the whole suite. With no stored `.test_durations` file, the shards are balanced by test count, not time.
+- **No `pytest.ini`.** The agents run `pytest tests/test_<x>.py` many times a day. A root config file would change the rootdir and options of every such run. The root `conftest.py` already sets `sys.path`, and nothing else needed configuring.
 
 ## Merging where qsearch.py has moved on
 
