@@ -1,0 +1,115 @@
+{
+  "all_checks_passed": true,
+  "certificate_sha256_16": "db03c37e940db510",
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "proof_status": "LOCAL_DERIVATION_REVIEW_PENDING_NOT_FORMALLY_VERIFIED",
+  "schema_version": "dcp-adaptive-bayesian-posterior-phase-alignment-bridge-v1",
+  "scope_constraints": {
+    "applies_to": "Adaptive phase-feedforward counter-rotation R_Z(-phi_known) vs. non-adaptive fixed-X and random X/Y quadratures in dyadic bit peeling",
+    "controls_included": "Includes stage r=1 (mod 8, blind spot at s_low=1) and stage r=2 (mod 16, u=3, blind spots at s_low in {1,3}), verifying uniform D_TV = gamma and exact 2.0x Fisher-information gain over random X/Y sampling.",
+    "does_not_claim": "Recovery of the next bit b_r when the wire label itself is zero modulo 2^{t-r} (v_2(a) >= t - r)"
+  },
+  "stage1_mod8_audit": {
+    "exact_laws_verified": true,
+    "gamma": 0.8,
+    "max_alignment_matrix_error": 4.898587196589413e-17,
+    "max_random_xy_tv": 0.4,
+    "min_adaptive_feedforward_tv": 0.8,
+    "min_fixed_x_tv": 9.797174393178826e-17,
+    "min_random_xy_tv": 0.4,
+    "num_prefixes": 2,
+    "prefix_records": [
+      {
+        "fisher_info_feedforward": 0.6400000000000001,
+        "fisher_info_fixed_x": 0.6400000000000001,
+        "fisher_info_random_xy": 0.32000000000000006,
+        "phi_known_over_pi": 0.0,
+        "s_low": 0,
+        "sample_complexity_ratio_xy_over_feedforward": 2.0,
+        "tv_adaptive_feedforward": 0.8,
+        "tv_fixed_x": 0.8,
+        "tv_random_xy": 0.4
+      },
+      {
+        "fisher_info_feedforward": 0.6400000000000001,
+        "fisher_info_fixed_x": 2.3996156522589726e-33,
+        "fisher_info_random_xy": 0.32000000000000006,
+        "phi_known_over_pi": 0.5,
+        "s_low": 1,
+        "sample_complexity_ratio_xy_over_feedforward": 2.0,
+        "tv_adaptive_feedforward": 0.8,
+        "tv_fixed_x": 9.797174393178826e-17,
+        "tv_random_xy": 0.4
+      }
+    ],
+    "q_mod": 8,
+    "stage_r": 1,
+    "t_bits": 3,
+    "u_odd": 1
+  },
+  "stage2_mod16_audit": {
+    "exact_laws_verified": true,
+    "gamma": 0.75,
+    "max_alignment_matrix_error": 7.025251435875306e-17,
+    "max_random_xy_tv": 0.5303300858899106,
+    "min_adaptive_feedforward_tv": 0.75,
+    "min_fixed_x_tv": 9.184850993605148e-17,
+    "min_random_xy_tv": 0.375,
+    "num_prefixes": 4,
+    "prefix_records": [
+      {
+        "fisher_info_feedforward": 0.5625,
+        "fisher_info_fixed_x": 0.5625,
+        "fisher_info_random_xy": 0.28125,
+        "phi_known_over_pi": 0.0,
+        "s_low": 0,
+        "sample_complexity_ratio_xy_over_feedforward": 2.0,
+        "tv_adaptive_feedforward": 0.75,
+        "tv_fixed_x": 0.75,
+        "tv_random_xy": 0.375
+      },
+      {
+        "fisher_info_feedforward": 0.5625,
+        "fisher_info_fixed_x": 0.28124999999999994,
+        "fisher_info_random_xy": 0.28125,
+        "phi_known_over_pi": 0.75,
+        "s_low": 1,
+        "sample_complexity_ratio_xy_over_feedforward": 2.0,
+        "tv_adaptive_feedforward": 0.75,
+        "tv_fixed_x": 0.5303300858899105,
+        "tv_random_xy": 0.5303300858899106
+      },
+      {
+        "fisher_info_feedforward": 0.5625,
+        "fisher_info_fixed_x": 1.8981334749314138e-32,
+        "fisher_info_random_xy": 0.28125,
+        "phi_known_over_pi": 1.5,
+        "s_low": 2,
+        "sample_complexity_ratio_xy_over_feedforward": 2.0,
+        "tv_adaptive_feedforward": 0.75,
+        "tv_fixed_x": 9.184850993605148e-17,
+        "tv_random_xy": 0.3750000000000001
+      },
+      {
+        "fisher_info_feedforward": 0.5625,
+        "fisher_info_fixed_x": 0.28125000000000006,
+        "fisher_info_random_xy": 0.28125,
+        "phi_known_over_pi": 2.25,
+        "s_low": 3,
+        "sample_complexity_ratio_xy_over_feedforward": 2.0,
+        "tv_adaptive_feedforward": 0.75,
+        "tv_fixed_x": 0.5303300858899107,
+        "tv_random_xy": 0.5303300858899106
+      }
+    ],
+    "q_mod": 16,
+    "stage_r": 2,
+    "t_bits": 4,
+    "u_odd": 3
+  },
+  "theorem_id": "dcp_adaptive_bayesian_posterior_phase_alignment_bridge"
+}

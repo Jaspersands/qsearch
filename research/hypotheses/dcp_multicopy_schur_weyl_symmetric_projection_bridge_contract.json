@@ -1,0 +1,14 @@
+{
+  "hypothesis_id": "dcp_multicopy_schur_weyl_symmetric_projection_bridge",
+  "title": "DCP Multi-Copy Schur-Weyl Symmetric-Subspace Projection and Classical r-Sample Majority Bridge",
+  "status": "VERIFIED_SCOPED_BRIDGE",
+  "claims": [
+    "The r-copy symmetric subspace projection probability P(Sym^r | theta, gamma) = sum_{k=0}^r ((1+gamma)/2)^{r-k} ((1-gamma)/2)^k is strictly independent of the secret phase theta.",
+    "For commuting half-period targets (theta in {0, pi}), classical r-sample Binomial majority voting on single-copy X outcomes achieves the exact 2^r x 2^r collective quantum Helstrom trace distance, whereas non-commuting quadrature targets (theta = pi/2) on matched headers exhibit a scoped collective Schur-Weyl gain subject to r-way header collision costs."
+  ],
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  }
+}

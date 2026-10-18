@@ -1,0 +1,14 @@
+{
+  "hypothesis_id": "dcp_sine_vs_box_window_pair_difference_overlap_bridge",
+  "title": "DCP Discrete Sine vs. Flat Box Window Shift-Autocorrelation and Quadratic Dephasing Bridge",
+  "status": "VERIFIED_SCOPED_BRIDGE",
+  "claims": [
+    "The discrete sine window on {0, ..., P-1} has exact shift autocorrelation gamma_{sin}(Delta; P) = (1 - Delta/P)*cos(pi*Delta/P) + (1/P)*(sin(pi*Delta/P)/sin(pi/P)), with unit-shift overlap gamma_{sin}(1; P) == (1 - 1/P)*cos(pi/P) + 1/P.",
+    "Unit-shift dephasing loss scales quadratically as pi^2/(2*P^2) for the sine window vs. linearly as 1/P for the box window, while near the edge Delta = P - 1 the box window retains larger overlap."
+  ],
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  }
+}

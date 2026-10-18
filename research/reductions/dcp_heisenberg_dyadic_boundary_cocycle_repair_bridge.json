@@ -1,0 +1,52 @@
+{
+  "all_checks_passed": true,
+  "certificate_sha256_16": "1563bf8b9e4111ee",
+  "cocycle_repair_audits": [
+    {
+      "exact_cocycle_repair_verified": true,
+      "half_period_even_vs_odd_inner_product_abs": 6.123233995736766e-17,
+      "half_period_msb_x_minus_prob_for_odd_s1": 0.9999999999999998,
+      "max_mismatched_parity_formula_error": 2.220446049250313e-16,
+      "max_repaired_unit_concentration_error": 4.440892098500626e-16,
+      "q_mod": 8,
+      "s1": 5,
+      "t_bits": 3,
+      "true_parity_b": 1
+    },
+    {
+      "exact_cocycle_repair_verified": true,
+      "half_period_even_vs_odd_inner_product_abs": 6.123233995736766e-17,
+      "half_period_msb_x_minus_prob_for_odd_s1": 0.9999999999999999,
+      "max_mismatched_parity_formula_error": 2.220446049250313e-16,
+      "max_repaired_unit_concentration_error": 4.440892098500626e-16,
+      "q_mod": 16,
+      "s1": 11,
+      "t_bits": 4,
+      "true_parity_b": 1
+    },
+    {
+      "exact_cocycle_repair_verified": true,
+      "half_period_even_vs_odd_inner_product_abs": 0.0,
+      "half_period_msb_x_minus_prob_for_odd_s1": 0.0,
+      "max_mismatched_parity_formula_error": 2.220446049250313e-16,
+      "max_repaired_unit_concentration_error": 2.220446049250313e-16,
+      "q_mod": 8,
+      "s1": 6,
+      "t_bits": 3,
+      "true_parity_b": 0
+    }
+  ],
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "proof_status": "LOCAL_DERIVATION_REVIEW_PENDING_NOT_FORMALLY_VERIFIED",
+  "schema_version": "dcp-heisenberg-dyadic-boundary-cocycle-repair-bridge-v1",
+  "scope_constraints": {
+    "applies_to": "Coherent boundary-cocycle repair U_{cocycle}(b; Delta) in dyadic Heisenberg H_3(Z_{2^t}) finite-difference dechirping",
+    "controls_included": "Includes 100% QFT peak restoration across all 2^t shifts Delta for both odd and even s_1, exact (1 - 2*Delta/2^t)^2 mismatch law, and deterministic single-shot MSB X-basis parity extraction at Delta = 2^{t-1}.",
+    "does_not_claim": "Elimination of independent unmeasured anchor aliasing y_{0,1} != y_{0,2}"
+  },
+  "theorem_id": "dcp_heisenberg_dyadic_boundary_cocycle_repair_bridge"
+}

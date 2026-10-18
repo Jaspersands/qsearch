@@ -1,0 +1,1421 @@
+{
+  "schema_version": "1.0",
+  "subsystem": "polar_conditional_sampler",
+  "calibrations": [
+    {
+      "positions": 2,
+      "noise_probability": "1/10",
+      "frozen_coordinates": [
+        1
+      ],
+      "source_law_entries_charged": 4,
+      "source_construction_is_exponential_calibration": true,
+      "shaping_prefix_queries_charged": 4,
+      "shaping_recursive_calls_charged": 12,
+      "frozen_prefix_bias_sum": "2/5",
+      "source_shaping_joint_TV": "2/5",
+      "syndrome_uniformity_TV": "2/5",
+      "uniform_syndrome_average_TV": "2/5",
+      "native_syndrome_weighted_average_TV": "18/125",
+      "worst_syndrome_TV": "18/25",
+      "average_conditional_TV_upper": "4/5",
+      "worst_conditional_TV_upper": "1",
+      "all_syndromes": [
+        {
+          "syndrome": 0,
+          "native_mass": "9/10",
+          "sampler_TV": "2/25"
+        },
+        {
+          "syndrome": 1,
+          "native_mass": "1/10",
+          "sampler_TV": "18/25"
+        }
+      ],
+      "worst_case_sign_dequantization_proved": false,
+      "shaping_is_exact_native_conditional_sampler": false,
+      "native_full_law_calibration_not_quantum_advantage": true
+    },
+    {
+      "positions": 4,
+      "noise_probability": "7/40",
+      "frozen_coordinates": [
+        0,
+        1
+      ],
+      "source_law_entries_charged": 16,
+      "source_construction_is_exponential_calibration": true,
+      "shaping_prefix_queries_charged": 32,
+      "shaping_recursive_calls_charged": 224,
+      "frozen_prefix_bias_sum": "96161/320000",
+      "source_shaping_joint_TV": "163761/640000",
+      "syndrome_uniformity_TV": "163761/640000",
+      "uniform_syndrome_average_TV": "0",
+      "native_syndrome_weighted_average_TV": "0",
+      "worst_syndrome_TV": "0",
+      "average_conditional_TV_upper": "96161/160000",
+      "worst_conditional_TV_upper": "1",
+      "all_syndromes": [
+        {
+          "syndrome": 0,
+          "native_mass": "323761/640000",
+          "sampler_TV": "0"
+        },
+        {
+          "syndrome": 1,
+          "native_mass": "131439/640000",
+          "sampler_TV": "0"
+        },
+        {
+          "syndrome": 2,
+          "native_mass": "53361/640000",
+          "sampler_TV": "0"
+        },
+        {
+          "syndrome": 3,
+          "native_mass": "131439/640000",
+          "sampler_TV": "0"
+        }
+      ],
+      "worst_case_sign_dequantization_proved": false,
+      "shaping_is_exact_native_conditional_sampler": true,
+      "native_full_law_calibration_not_quantum_advantage": true
+    },
+    {
+      "positions": 8,
+      "noise_probability": "7/40",
+      "frozen_coordinates": [
+        0,
+        1,
+        2
+      ],
+      "source_law_entries_charged": 256,
+      "source_construction_is_exponential_calibration": true,
+      "shaping_prefix_queries_charged": 1280,
+      "shaping_recursive_calls_charged": 19200,
+      "frozen_prefix_bias_sum": "9955250721/51200000000",
+      "source_shaping_joint_TV": "28234290721/204800000000",
+      "syndrome_uniformity_TV": "28234290721/204800000000",
+      "uniform_syndrome_average_TV": "0",
+      "native_syndrome_weighted_average_TV": "0",
+      "worst_syndrome_TV": "0",
+      "average_conditional_TV_upper": "9955250721/25600000000",
+      "worst_conditional_TV_upper": "1",
+      "all_syndromes": [
+        {
+          "syndrome": 0,
+          "native_mass": "53834290721/204800000000",
+          "sampler_TV": "0"
+        },
+        {
+          "syndrome": 1,
+          "native_mass": "24784269279/204800000000",
+          "sampler_TV": "0"
+        },
+        {
+          "syndrome": 2,
+          "native_mass": "17276210721/204800000000",
+          "sampler_TV": "0"
+        },
+        {
+          "syndrome": 3,
+          "native_mass": "24784269279/204800000000",
+          "sampler_TV": "0"
+        },
+        {
+          "syndrome": 4,
+          "native_mass": "17276210721/204800000000",
+          "sampler_TV": "0"
+        },
+        {
+          "syndrome": 5,
+          "native_mass": "24784269279/204800000000",
+          "sampler_TV": "0"
+        },
+        {
+          "syndrome": 6,
+          "native_mass": "17276210721/204800000000",
+          "sampler_TV": "0"
+        },
+        {
+          "syndrome": 7,
+          "native_mass": "24784269279/204800000000",
+          "sampler_TV": "0"
+        }
+      ],
+      "worst_case_sign_dequantization_proved": false,
+      "shaping_is_exact_native_conditional_sampler": true,
+      "native_full_law_calibration_not_quantum_advantage": true
+    },
+    {
+      "positions": 8,
+      "noise_probability": "7/40",
+      "frozen_coordinates": [
+        0,
+        1,
+        2,
+        4
+      ],
+      "source_law_entries_charged": 256,
+      "source_construction_is_exponential_calibration": true,
+      "shaping_prefix_queries_charged": 1024,
+      "shaping_recursive_calls_charged": 15360,
+      "frozen_prefix_bias_sum": "14525010721/51200000000",
+      "source_shaping_joint_TV": "7056496859319264597123/44101050958643200000000",
+      "syndrome_uniformity_TV": "64792370721/409600000000",
+      "uniform_syndrome_average_TV": "121923481680000/29265524337001681",
+      "native_syndrome_weighted_average_TV": "81324486324081/17226973030720000",
+      "worst_syndrome_TV": "975387853440000/17429443798121681",
+      "average_conditional_TV_upper": "14525010721/25600000000",
+      "worst_conditional_TV_upper": "1",
+      "all_syndromes": [
+        {
+          "syndrome": 0,
+          "native_mass": "90392370721/409600000000",
+          "sampler_TV": "52047671247411840000/4866209164354722379841"
+        },
+        {
+          "syndrome": 1,
+          "native_mass": "24784269279/409600000000",
+          "sampler_TV": "0"
+        },
+        {
+          "syndrome": 2,
+          "native_mass": "17276210721/409600000000",
+          "sampler_TV": "0"
+        },
+        {
+          "syndrome": 3,
+          "native_mass": "24784269279/409600000000",
+          "sampler_TV": "0"
+        },
+        {
+          "syndrome": 4,
+          "native_mass": "17276210721/409600000000",
+          "sampler_TV": "0"
+        },
+        {
+          "syndrome": 5,
+          "native_mass": "24784269279/409600000000",
+          "sampler_TV": "0"
+        },
+        {
+          "syndrome": 6,
+          "native_mass": "17276210721/409600000000",
+          "sampler_TV": "0"
+        },
+        {
+          "syndrome": 7,
+          "native_mass": "24784269279/409600000000",
+          "sampler_TV": "0"
+        },
+        {
+          "syndrome": 8,
+          "native_mass": "17276210721/409600000000",
+          "sampler_TV": "975387853440000/17429443798121681"
+        },
+        {
+          "syndrome": 9,
+          "native_mass": "24784269279/409600000000",
+          "sampler_TV": "0"
+        },
+        {
+          "syndrome": 10,
+          "native_mass": "17276210721/409600000000",
+          "sampler_TV": "0"
+        },
+        {
+          "syndrome": 11,
+          "native_mass": "24784269279/409600000000",
+          "sampler_TV": "0"
+        },
+        {
+          "syndrome": 12,
+          "native_mass": "17276210721/409600000000",
+          "sampler_TV": "0"
+        },
+        {
+          "syndrome": 13,
+          "native_mass": "24784269279/409600000000",
+          "sampler_TV": "0"
+        },
+        {
+          "syndrome": 14,
+          "native_mass": "17276210721/409600000000",
+          "sampler_TV": "0"
+        },
+        {
+          "syndrome": 15,
+          "native_mass": "24784269279/409600000000",
+          "sampler_TV": "0"
+        }
+      ],
+      "worst_case_sign_dequantization_proved": false,
+      "shaping_is_exact_native_conditional_sampler": false,
+      "native_full_law_calibration_not_quantum_advantage": true
+    }
+  ],
+  "scalable_native_samples": [
+    {
+      "positions": 16,
+      "noise_probability": "7/40",
+      "frozen_coordinates": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "frozen_set_is_a_supplied_public_control_not_certified_polar_design": true,
+      "samples": [
+        {
+          "noise_word_hex": "0x0",
+          "polar_word_hex": "0x0",
+          "seed": 29,
+          "target": 0,
+          "recursive_work": {
+            "recursive_calls": 248,
+            "maximum_fraction_bits": 81
+          },
+          "exact_rational_Bernoulli_draws": 8,
+          "future_frozen_constraints_in_prefix_conditionals": false,
+          "native_conditional_distribution_certified": true,
+          "exactness_reason": "PREFIX_CONSTRAINTS_OR_FAIR_INDEPENDENT_SOURCE",
+          "unconditional_source_table_materialized": false
+        },
+        {
+          "noise_word_hex": "0x8003",
+          "polar_word_hex": "0xfeff",
+          "seed": 30,
+          "target": 255,
+          "recursive_work": {
+            "recursive_calls": 248,
+            "maximum_fraction_bits": 51
+          },
+          "exact_rational_Bernoulli_draws": 8,
+          "future_frozen_constraints_in_prefix_conditionals": false,
+          "native_conditional_distribution_certified": true,
+          "exactness_reason": "PREFIX_CONSTRAINTS_OR_FAIR_INDEPENDENT_SOURCE",
+          "unconditional_source_table_materialized": false
+        },
+        {
+          "noise_word_hex": "0xc0",
+          "polar_word_hex": "0x5500",
+          "seed": 31,
+          "target": 0,
+          "recursive_work": {
+            "recursive_calls": 248,
+            "maximum_fraction_bits": 75
+          },
+          "exact_rational_Bernoulli_draws": 8,
+          "future_frozen_constraints_in_prefix_conditionals": false,
+          "native_conditional_distribution_certified": true,
+          "exactness_reason": "PREFIX_CONSTRAINTS_OR_FAIR_INDEPENDENT_SOURCE",
+          "unconditional_source_table_materialized": false
+        },
+        {
+          "noise_word_hex": "0x7000",
+          "polar_word_hex": "0xfff",
+          "seed": 32,
+          "target": 255,
+          "recursive_work": {
+            "recursive_calls": 248,
+            "maximum_fraction_bits": 59
+          },
+          "exact_rational_Bernoulli_draws": 8,
+          "future_frozen_constraints_in_prefix_conditionals": false,
+          "native_conditional_distribution_certified": true,
+          "exactness_reason": "PREFIX_CONSTRAINTS_OR_FAIR_INDEPENDENT_SOURCE",
+          "unconditional_source_table_materialized": false
+        }
+      ],
+      "signed_Gibbs_samples": [
+        {
+          "noise_word_hex": "0xa122",
+          "polar_word_hex": "0xf4f7",
+          "seed": 171,
+          "target": 247,
+          "recursive_work": {
+            "recursive_calls": 248,
+            "maximum_fraction_bits": 31
+          },
+          "exact_rational_Bernoulli_draws": 8,
+          "future_frozen_constraints_in_prefix_conditionals": false,
+          "native_conditional_distribution_certified": true,
+          "exactness_reason": "PREFIX_CONSTRAINTS_OR_FAIR_INDEPENDENT_SOURCE",
+          "unconditional_source_table_materialized": false,
+          "Gibbs_kernel_word_hex": "0xf3c3",
+          "public_clause_signs_hex": "0x52e1",
+          "channel_overlap": "13/20",
+          "code_check_masks_hex": [
+            "0xffff",
+            "0xff00",
+            "0xf0f0",
+            "0xf000",
+            "0xcccc",
+            "0xcc00",
+            "0xc0c0",
+            "0xc000"
+          ],
+          "top_level_polar_transforms_including_native_checks": 19,
+          "native_constraint_dot_products": 8,
+          "binary_check_description_bits": 128,
+          "binary_transform_work_is_additional_to_rational_recursion_counter": true,
+          "native_Gibbs_weight": "product_j(1+c*(-1)^(y_j+J_j)); H_F*y=0"
+        },
+        {
+          "noise_word_hex": "0x1e00",
+          "polar_word_hex": "0x300c",
+          "seed": 172,
+          "target": 12,
+          "recursive_work": {
+            "recursive_calls": 248,
+            "maximum_fraction_bits": 41
+          },
+          "exact_rational_Bernoulli_draws": 8,
+          "future_frozen_constraints_in_prefix_conditionals": false,
+          "native_conditional_distribution_certified": true,
+          "exactness_reason": "PREFIX_CONSTRAINTS_OR_FAIR_INDEPENDENT_SOURCE",
+          "unconditional_source_table_materialized": false,
+          "Gibbs_kernel_word_hex": "0xccc",
+          "public_clause_signs_hex": "0x12cc",
+          "channel_overlap": "13/20",
+          "code_check_masks_hex": [
+            "0xffff",
+            "0xff00",
+            "0xf0f0",
+            "0xf000",
+            "0xcccc",
+            "0xcc00",
+            "0xc0c0",
+            "0xc000"
+          ],
+          "top_level_polar_transforms_including_native_checks": 19,
+          "native_constraint_dot_products": 8,
+          "binary_check_description_bits": 128,
+          "binary_transform_work_is_additional_to_rational_recursion_counter": true,
+          "native_Gibbs_weight": "product_j(1+c*(-1)^(y_j+J_j)); H_F*y=0"
+        }
+      ],
+      "distributional_TV_not_certified_by_sample_feasibility": true
+    },
+    {
+      "positions": 16,
+      "noise_probability": "7/40",
+      "frozen_coordinates": [
+        0,
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14
+      ],
+      "frozen_set_is_a_supplied_public_control_not_certified_polar_design": true,
+      "samples": [
+        {
+          "noise_word_hex": "0x0",
+          "polar_word_hex": "0x0",
+          "seed": 29,
+          "target": 0,
+          "recursive_work": {
+            "recursive_calls": 248,
+            "maximum_fraction_bits": 81
+          },
+          "exact_rational_Bernoulli_draws": 8,
+          "future_frozen_constraints_in_prefix_conditionals": false,
+          "native_conditional_distribution_certified": false,
+          "exactness_reason": null,
+          "unconditional_source_table_materialized": false
+        },
+        {
+          "noise_word_hex": "0x8101",
+          "polar_word_hex": "0xfffd",
+          "seed": 30,
+          "target": 255,
+          "recursive_work": {
+            "recursive_calls": 248,
+            "maximum_fraction_bits": 51
+          },
+          "exact_rational_Bernoulli_draws": 8,
+          "future_frozen_constraints_in_prefix_conditionals": false,
+          "native_conditional_distribution_certified": false,
+          "exactness_reason": null,
+          "unconditional_source_table_materialized": false
+        },
+        {
+          "noise_word_hex": "0x808",
+          "polar_word_hex": "0x2222",
+          "seed": 31,
+          "target": 0,
+          "recursive_work": {
+            "recursive_calls": 248,
+            "maximum_fraction_bits": 71
+          },
+          "exact_rational_Bernoulli_draws": 8,
+          "future_frozen_constraints_in_prefix_conditionals": false,
+          "native_conditional_distribution_certified": false,
+          "exactness_reason": null,
+          "unconditional_source_table_materialized": false
+        },
+        {
+          "noise_word_hex": "0x8000",
+          "polar_word_hex": "0xffff",
+          "seed": 32,
+          "target": 255,
+          "recursive_work": {
+            "recursive_calls": 248,
+            "maximum_fraction_bits": 71
+          },
+          "exact_rational_Bernoulli_draws": 8,
+          "future_frozen_constraints_in_prefix_conditionals": false,
+          "native_conditional_distribution_certified": false,
+          "exactness_reason": null,
+          "unconditional_source_table_materialized": false
+        }
+      ],
+      "signed_Gibbs_samples": [
+        {
+          "noise_word_hex": "0xb3",
+          "polar_word_hex": "0x5155",
+          "seed": 171,
+          "target": 223,
+          "recursive_work": {
+            "recursive_calls": 248,
+            "maximum_fraction_bits": 55
+          },
+          "exact_rational_Bernoulli_draws": 8,
+          "future_frozen_constraints_in_prefix_conditionals": false,
+          "native_conditional_distribution_certified": false,
+          "exactness_reason": null,
+          "unconditional_source_table_materialized": false,
+          "Gibbs_kernel_word_hex": "0x5252",
+          "public_clause_signs_hex": "0x52e1",
+          "channel_overlap": "13/20",
+          "code_check_masks_hex": [
+            "0xffff",
+            "0xf0f0",
+            "0xcccc",
+            "0xc0c0",
+            "0xaaaa",
+            "0xa0a0",
+            "0x8888",
+            "0x8080"
+          ],
+          "top_level_polar_transforms_including_native_checks": 19,
+          "native_constraint_dot_products": 8,
+          "binary_check_description_bits": 128,
+          "binary_transform_work_is_additional_to_rational_recursion_counter": true,
+          "native_Gibbs_weight": "product_j(1+c*(-1)^(y_j+J_j)); H_F*y=0"
+        },
+        {
+          "noise_word_hex": "0xfe20",
+          "polar_word_hex": "0xc506",
+          "seed": 172,
+          "target": 178,
+          "recursive_work": {
+            "recursive_calls": 248,
+            "maximum_fraction_bits": 71
+          },
+          "exact_rational_Bernoulli_draws": 8,
+          "future_frozen_constraints_in_prefix_conditionals": false,
+          "native_conditional_distribution_certified": false,
+          "exactness_reason": null,
+          "unconditional_source_table_materialized": false,
+          "Gibbs_kernel_word_hex": "0xecec",
+          "public_clause_signs_hex": "0x12cc",
+          "channel_overlap": "13/20",
+          "code_check_masks_hex": [
+            "0xffff",
+            "0xf0f0",
+            "0xcccc",
+            "0xc0c0",
+            "0xaaaa",
+            "0xa0a0",
+            "0x8888",
+            "0x8080"
+          ],
+          "top_level_polar_transforms_including_native_checks": 19,
+          "native_constraint_dot_products": 8,
+          "binary_check_description_bits": 128,
+          "binary_transform_work_is_additional_to_rational_recursion_counter": true,
+          "native_Gibbs_weight": "product_j(1+c*(-1)^(y_j+J_j)); H_F*y=0"
+        }
+      ],
+      "distributional_TV_not_certified_by_sample_feasibility": true
+    },
+    {
+      "positions": 32,
+      "noise_probability": "7/40",
+      "frozen_coordinates": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "frozen_set_is_a_supplied_public_control_not_certified_polar_design": true,
+      "samples": [
+        {
+          "noise_word_hex": "0x0",
+          "polar_word_hex": "0x0",
+          "seed": 29,
+          "target": 0,
+          "recursive_work": {
+            "recursive_calls": 1008,
+            "maximum_fraction_bits": 162
+          },
+          "exact_rational_Bernoulli_draws": 16,
+          "future_frozen_constraints_in_prefix_conditionals": false,
+          "native_conditional_distribution_certified": true,
+          "exactness_reason": "PREFIX_CONSTRAINTS_OR_FAIR_INDEPENDENT_SOURCE",
+          "unconditional_source_table_materialized": false
+        },
+        {
+          "noise_word_hex": "0x700c0000",
+          "polar_word_hex": "0x3fcffff",
+          "seed": 30,
+          "target": 65535,
+          "recursive_work": {
+            "recursive_calls": 1008,
+            "maximum_fraction_bits": 111
+          },
+          "exact_rational_Bernoulli_draws": 16,
+          "future_frozen_constraints_in_prefix_conditionals": false,
+          "native_conditional_distribution_certified": true,
+          "exactness_reason": "PREFIX_CONSTRAINTS_OR_FAIR_INDEPENDENT_SOURCE",
+          "unconditional_source_table_materialized": false
+        },
+        {
+          "noise_word_hex": "0x3c00000",
+          "polar_word_hex": "0x333c0000",
+          "seed": 31,
+          "target": 0,
+          "recursive_work": {
+            "recursive_calls": 1008,
+            "maximum_fraction_bits": 149
+          },
+          "exact_rational_Bernoulli_draws": 16,
+          "future_frozen_constraints_in_prefix_conditionals": false,
+          "native_conditional_distribution_certified": true,
+          "exactness_reason": "PREFIX_CONSTRAINTS_OR_FAIR_INDEPENDENT_SOURCE",
+          "unconditional_source_table_materialized": false
+        },
+        {
+          "noise_word_hex": "0x80000000",
+          "polar_word_hex": "0xffffffff",
+          "seed": 32,
+          "target": 65535,
+          "recursive_work": {
+            "recursive_calls": 1008,
+            "maximum_fraction_bits": 152
+          },
+          "exact_rational_Bernoulli_draws": 16,
+          "future_frozen_constraints_in_prefix_conditionals": false,
+          "native_conditional_distribution_certified": true,
+          "exactness_reason": "PREFIX_CONSTRAINTS_OR_FAIR_INDEPENDENT_SOURCE",
+          "unconditional_source_table_materialized": false
+        }
+      ],
+      "signed_Gibbs_samples": [
+        {
+          "noise_word_hex": "0x92228019",
+          "polar_word_hex": "0xab94ab7b",
+          "seed": 171,
+          "target": 43899,
+          "recursive_work": {
+            "recursive_calls": 1008,
+            "maximum_fraction_bits": 71
+          },
+          "exact_rational_Bernoulli_draws": 16,
+          "future_frozen_constraints_in_prefix_conditionals": false,
+          "native_conditional_distribution_certified": true,
+          "exactness_reason": "PREFIX_CONSTRAINTS_OR_FAIR_INDEPENDENT_SOURCE",
+          "unconditional_source_table_materialized": false,
+          "Gibbs_kernel_word_hex": "0xc0c3ffc0",
+          "public_clause_signs_hex": "0x52e17fd9",
+          "channel_overlap": "13/20",
+          "code_check_masks_hex": [
+            "0xffffffff",
+            "0xffff0000",
+            "0xff00ff00",
+            "0xff000000",
+            "0xf0f0f0f0",
+            "0xf0f00000",
+            "0xf000f000",
+            "0xf0000000",
+            "0xcccccccc",
+            "0xcccc0000",
+            "0xcc00cc00",
+            "0xcc000000",
+            "0xc0c0c0c0",
+            "0xc0c00000",
+            "0xc000c000",
+            "0xc0000000"
+          ],
+          "top_level_polar_transforms_including_native_checks": 35,
+          "native_constraint_dot_products": 16,
+          "binary_check_description_bits": 512,
+          "binary_transform_work_is_additional_to_rational_recursion_counter": true,
+          "native_Gibbs_weight": "product_j(1+c*(-1)^(y_j+J_j)); H_F*y=0"
+        },
+        {
+          "noise_word_hex": "0x22c02a10",
+          "polar_word_hex": "0x369605b4",
+          "seed": 172,
+          "target": 1460,
+          "recursive_work": {
+            "recursive_calls": 1008,
+            "maximum_fraction_bits": 81
+          },
+          "exact_rational_Bernoulli_draws": 16,
+          "future_frozen_constraints_in_prefix_conditionals": false,
+          "native_conditional_distribution_certified": true,
+          "exactness_reason": "PREFIX_CONSTRAINTS_OR_FAIR_INDEPENDENT_SOURCE",
+          "unconditional_source_table_materialized": false,
+          "Gibbs_kernel_word_hex": "0x300c3ccf",
+          "public_clause_signs_hex": "0x12cc16df",
+          "channel_overlap": "13/20",
+          "code_check_masks_hex": [
+            "0xffffffff",
+            "0xffff0000",
+            "0xff00ff00",
+            "0xff000000",
+            "0xf0f0f0f0",
+            "0xf0f00000",
+            "0xf000f000",
+            "0xf0000000",
+            "0xcccccccc",
+            "0xcccc0000",
+            "0xcc00cc00",
+            "0xcc000000",
+            "0xc0c0c0c0",
+            "0xc0c00000",
+            "0xc000c000",
+            "0xc0000000"
+          ],
+          "top_level_polar_transforms_including_native_checks": 35,
+          "native_constraint_dot_products": 16,
+          "binary_check_description_bits": 512,
+          "binary_transform_work_is_additional_to_rational_recursion_counter": true,
+          "native_Gibbs_weight": "product_j(1+c*(-1)^(y_j+J_j)); H_F*y=0"
+        }
+      ],
+      "distributional_TV_not_certified_by_sample_feasibility": true
+    },
+    {
+      "positions": 32,
+      "noise_probability": "7/40",
+      "frozen_coordinates": [
+        0,
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14,
+        16,
+        18,
+        20,
+        22,
+        24,
+        26,
+        28,
+        30
+      ],
+      "frozen_set_is_a_supplied_public_control_not_certified_polar_design": true,
+      "samples": [
+        {
+          "noise_word_hex": "0x0",
+          "polar_word_hex": "0x0",
+          "seed": 29,
+          "target": 0,
+          "recursive_work": {
+            "recursive_calls": 1008,
+            "maximum_fraction_bits": 162
+          },
+          "exact_rational_Bernoulli_draws": 16,
+          "future_frozen_constraints_in_prefix_conditionals": false,
+          "native_conditional_distribution_certified": false,
+          "exactness_reason": null,
+          "unconditional_source_table_materialized": false
+        },
+        {
+          "noise_word_hex": "0x80400040",
+          "polar_word_hex": "0xffffdddd",
+          "seed": 30,
+          "target": 65535,
+          "recursive_work": {
+            "recursive_calls": 1008,
+            "maximum_fraction_bits": 132
+          },
+          "exact_rational_Bernoulli_draws": 16,
+          "future_frozen_constraints_in_prefix_conditionals": false,
+          "native_conditional_distribution_certified": false,
+          "exactness_reason": null,
+          "unconditional_source_table_materialized": false
+        },
+        {
+          "noise_word_hex": "0x20042004",
+          "polar_word_hex": "0xaa02a8",
+          "seed": 31,
+          "target": 0,
+          "recursive_work": {
+            "recursive_calls": 1008,
+            "maximum_fraction_bits": 140
+          },
+          "exact_rational_Bernoulli_draws": 16,
+          "future_frozen_constraints_in_prefix_conditionals": false,
+          "native_conditional_distribution_certified": false,
+          "exactness_reason": null,
+          "unconditional_source_table_materialized": false
+        },
+        {
+          "noise_word_hex": "0x10009000",
+          "polar_word_hex": "0x555555ff",
+          "seed": 32,
+          "target": 65535,
+          "recursive_work": {
+            "recursive_calls": 1008,
+            "maximum_fraction_bits": 132
+          },
+          "exact_rational_Bernoulli_draws": 16,
+          "future_frozen_constraints_in_prefix_conditionals": false,
+          "native_conditional_distribution_certified": false,
+          "exactness_reason": null,
+          "unconditional_source_table_materialized": false
+        }
+      ],
+      "signed_Gibbs_samples": [
+        {
+          "noise_word_hex": "0xd382000",
+          "polar_word_hex": "0xc6a0359",
+          "seed": 171,
+          "target": 10269,
+          "recursive_work": {
+            "recursive_calls": 1008,
+            "maximum_fraction_bits": 92
+          },
+          "exact_rational_Bernoulli_draws": 16,
+          "future_frozen_constraints_in_prefix_conditionals": false,
+          "native_conditional_distribution_certified": false,
+          "exactness_reason": null,
+          "unconditional_source_table_materialized": false,
+          "Gibbs_kernel_word_hex": "0x5fd95fd9",
+          "public_clause_signs_hex": "0x52e17fd9",
+          "channel_overlap": "13/20",
+          "code_check_masks_hex": [
+            "0xffffffff",
+            "0xff00ff00",
+            "0xf0f0f0f0",
+            "0xf000f000",
+            "0xcccccccc",
+            "0xcc00cc00",
+            "0xc0c0c0c0",
+            "0xc000c000",
+            "0xaaaaaaaa",
+            "0xaa00aa00",
+            "0xa0a0a0a0",
+            "0xa000a000",
+            "0x88888888",
+            "0x88008800",
+            "0x80808080",
+            "0x80008000"
+          ],
+          "top_level_polar_transforms_including_native_checks": 35,
+          "native_constraint_dot_products": 16,
+          "binary_check_description_bits": 512,
+          "binary_transform_work_is_additional_to_rational_recursion_counter": true,
+          "native_Gibbs_weight": "product_j(1+c*(-1)^(y_j+J_j)); H_F*y=0"
+        },
+        {
+          "noise_word_hex": "0x30410",
+          "polar_word_hex": "0x30514",
+          "seed": 172,
+          "target": 310,
+          "recursive_work": {
+            "recursive_calls": 1008,
+            "maximum_fraction_bits": 140
+          },
+          "exact_rational_Bernoulli_draws": 16,
+          "future_frozen_constraints_in_prefix_conditionals": false,
+          "native_conditional_distribution_certified": false,
+          "exactness_reason": null,
+          "unconditional_source_table_materialized": false,
+          "Gibbs_kernel_word_hex": "0x12cf12cf",
+          "public_clause_signs_hex": "0x12cc16df",
+          "channel_overlap": "13/20",
+          "code_check_masks_hex": [
+            "0xffffffff",
+            "0xff00ff00",
+            "0xf0f0f0f0",
+            "0xf000f000",
+            "0xcccccccc",
+            "0xcc00cc00",
+            "0xc0c0c0c0",
+            "0xc000c000",
+            "0xaaaaaaaa",
+            "0xaa00aa00",
+            "0xa0a0a0a0",
+            "0xa000a000",
+            "0x88888888",
+            "0x88008800",
+            "0x80808080",
+            "0x80008000"
+          ],
+          "top_level_polar_transforms_including_native_checks": 35,
+          "native_constraint_dot_products": 16,
+          "binary_check_description_bits": 512,
+          "binary_transform_work_is_additional_to_rational_recursion_counter": true,
+          "native_Gibbs_weight": "product_j(1+c*(-1)^(y_j+J_j)); H_F*y=0"
+        }
+      ],
+      "distributional_TV_not_certified_by_sample_feasibility": true
+    },
+    {
+      "positions": 64,
+      "noise_probability": "7/40",
+      "frozen_coordinates": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "frozen_set_is_a_supplied_public_control_not_certified_polar_design": true,
+      "samples": [
+        {
+          "noise_word_hex": "0x0",
+          "polar_word_hex": "0x0",
+          "seed": 29,
+          "target": 0,
+          "recursive_work": {
+            "recursive_calls": 4064,
+            "maximum_fraction_bits": 323
+          },
+          "exact_rational_Bernoulli_draws": 32,
+          "future_frozen_constraints_in_prefix_conditionals": false,
+          "native_conditional_distribution_certified": true,
+          "exactness_reason": "PREFIX_CONSTRAINTS_OR_FAIR_INDEPENDENT_SOURCE",
+          "unconditional_source_table_materialized": false
+        },
+        {
+          "noise_word_hex": "0x4003030000000000",
+          "polar_word_hex": "0x3cffffffff",
+          "seed": 30,
+          "target": 4294967295,
+          "recursive_work": {
+            "recursive_calls": 4064,
+            "maximum_fraction_bits": 273
+          },
+          "exact_rational_Bernoulli_draws": 32,
+          "future_frozen_constraints_in_prefix_conditionals": false,
+          "native_conditional_distribution_certified": true,
+          "exactness_reason": "PREFIX_CONSTRAINTS_OR_FAIR_INDEPENDENT_SOURCE",
+          "unconditional_source_table_materialized": false
+        },
+        {
+          "noise_word_hex": "0x30000000000000",
+          "polar_word_hex": "0xf0f00000000",
+          "seed": 31,
+          "target": 0,
+          "recursive_work": {
+            "recursive_calls": 4064,
+            "maximum_fraction_bits": 303
+          },
+          "exact_rational_Bernoulli_draws": 32,
+          "future_frozen_constraints_in_prefix_conditionals": false,
+          "native_conditional_distribution_certified": true,
+          "exactness_reason": "PREFIX_CONSTRAINTS_OR_FAIR_INDEPENDENT_SOURCE",
+          "unconditional_source_table_materialized": false
+        },
+        {
+          "noise_word_hex": "0x400f030000000000",
+          "polar_word_hex": "0xf0033ffffffff",
+          "seed": 32,
+          "target": 4294967295,
+          "recursive_work": {
+            "recursive_calls": 4064,
+            "maximum_fraction_bits": 253
+          },
+          "exact_rational_Bernoulli_draws": 32,
+          "future_frozen_constraints_in_prefix_conditionals": false,
+          "native_conditional_distribution_certified": true,
+          "exactness_reason": "PREFIX_CONSTRAINTS_OR_FAIR_INDEPENDENT_SOURCE",
+          "unconditional_source_table_materialized": false
+        }
+      ],
+      "signed_Gibbs_samples": [
+        {
+          "noise_word_hex": "0x8215441062218029",
+          "polar_word_hex": "0xeeefbf1488b5d549",
+          "seed": 171,
+          "target": 2293617993,
+          "recursive_work": {
+            "recursive_calls": 4064,
+            "maximum_fraction_bits": 152
+          },
+          "exact_rational_Bernoulli_draws": 32,
+          "future_frozen_constraints_in_prefix_conditionals": false,
+          "native_conditional_distribution_certified": true,
+          "exactness_reason": "PREFIX_CONSTRAINTS_OR_FAIR_INDEPENDENT_SOURCE",
+          "unconditional_source_table_materialized": false,
+          "Gibbs_kernel_word_hex": "0x3fc3cc30c0fff0",
+          "public_clause_signs_hex": "0x822a87dc52e17fd9",
+          "channel_overlap": "13/20",
+          "code_check_masks_hex": [
+            "0xffffffffffffffff",
+            "0xffffffff00000000",
+            "0xffff0000ffff0000",
+            "0xffff000000000000",
+            "0xff00ff00ff00ff00",
+            "0xff00ff0000000000",
+            "0xff000000ff000000",
+            "0xff00000000000000",
+            "0xf0f0f0f0f0f0f0f0",
+            "0xf0f0f0f000000000",
+            "0xf0f00000f0f00000",
+            "0xf0f0000000000000",
+            "0xf000f000f000f000",
+            "0xf000f00000000000",
+            "0xf0000000f0000000",
+            "0xf000000000000000",
+            "0xcccccccccccccccc",
+            "0xcccccccc00000000",
+            "0xcccc0000cccc0000",
+            "0xcccc000000000000",
+            "0xcc00cc00cc00cc00",
+            "0xcc00cc0000000000",
+            "0xcc000000cc000000",
+            "0xcc00000000000000",
+            "0xc0c0c0c0c0c0c0c0",
+            "0xc0c0c0c000000000",
+            "0xc0c00000c0c00000",
+            "0xc0c0000000000000",
+            "0xc000c000c000c000",
+            "0xc000c00000000000",
+            "0xc0000000c0000000",
+            "0xc000000000000000"
+          ],
+          "top_level_polar_transforms_including_native_checks": 67,
+          "native_constraint_dot_products": 32,
+          "binary_check_description_bits": 2048,
+          "binary_transform_work_is_additional_to_rational_recursion_counter": true,
+          "native_Gibbs_weight": "product_j(1+c*(-1)^(y_j+J_j)); H_F*y=0"
+        },
+        {
+          "noise_word_hex": "0x802118121001510",
+          "polar_word_hex": "0x3fc56a603ed75e0",
+          "seed": 172,
+          "target": 65893856,
+          "recursive_work": {
+            "recursive_calls": 4064,
+            "maximum_fraction_bits": 202
+          },
+          "exact_rational_Bernoulli_draws": 32,
+          "future_frozen_constraints_in_prefix_conditionals": false,
+          "native_conditional_distribution_certified": true,
+          "exactness_reason": "PREFIX_CONSTRAINTS_OR_FAIR_INDEPENDENT_SOURCE",
+          "unconditional_source_table_materialized": false,
+          "Gibbs_kernel_word_hex": "0xc03cccc033cc03cf",
+          "public_clause_signs_hex": "0xc83edd4112cc16df",
+          "channel_overlap": "13/20",
+          "code_check_masks_hex": [
+            "0xffffffffffffffff",
+            "0xffffffff00000000",
+            "0xffff0000ffff0000",
+            "0xffff000000000000",
+            "0xff00ff00ff00ff00",
+            "0xff00ff0000000000",
+            "0xff000000ff000000",
+            "0xff00000000000000",
+            "0xf0f0f0f0f0f0f0f0",
+            "0xf0f0f0f000000000",
+            "0xf0f00000f0f00000",
+            "0xf0f0000000000000",
+            "0xf000f000f000f000",
+            "0xf000f00000000000",
+            "0xf0000000f0000000",
+            "0xf000000000000000",
+            "0xcccccccccccccccc",
+            "0xcccccccc00000000",
+            "0xcccc0000cccc0000",
+            "0xcccc000000000000",
+            "0xcc00cc00cc00cc00",
+            "0xcc00cc0000000000",
+            "0xcc000000cc000000",
+            "0xcc00000000000000",
+            "0xc0c0c0c0c0c0c0c0",
+            "0xc0c0c0c000000000",
+            "0xc0c00000c0c00000",
+            "0xc0c0000000000000",
+            "0xc000c000c000c000",
+            "0xc000c00000000000",
+            "0xc0000000c0000000",
+            "0xc000000000000000"
+          ],
+          "top_level_polar_transforms_including_native_checks": 67,
+          "native_constraint_dot_products": 32,
+          "binary_check_description_bits": 2048,
+          "binary_transform_work_is_additional_to_rational_recursion_counter": true,
+          "native_Gibbs_weight": "product_j(1+c*(-1)^(y_j+J_j)); H_F*y=0"
+        }
+      ],
+      "distributional_TV_not_certified_by_sample_feasibility": true
+    },
+    {
+      "positions": 64,
+      "noise_probability": "7/40",
+      "frozen_coordinates": [
+        0,
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14,
+        16,
+        18,
+        20,
+        22,
+        24,
+        26,
+        28,
+        30,
+        32,
+        34,
+        36,
+        38,
+        40,
+        42,
+        44,
+        46,
+        48,
+        50,
+        52,
+        54,
+        56,
+        58,
+        60,
+        62
+      ],
+      "frozen_set_is_a_supplied_public_control_not_certified_polar_design": true,
+      "samples": [
+        {
+          "noise_word_hex": "0x2000200020002000",
+          "polar_word_hex": "0x888800008888",
+          "seed": 29,
+          "target": 0,
+          "recursive_work": {
+            "recursive_calls": 4064,
+            "maximum_fraction_bits": 283
+          },
+          "exact_rational_Bernoulli_draws": 32,
+          "future_frozen_constraints_in_prefix_conditionals": false,
+          "native_conditional_distribution_certified": false,
+          "exactness_reason": null,
+          "unconditional_source_table_materialized": false
+        },
+        {
+          "noise_word_hex": "0x8040180000401800",
+          "polar_word_hex": "0xffddffddf5d7d7f5",
+          "seed": 30,
+          "target": 4294967295,
+          "recursive_work": {
+            "recursive_calls": 4064,
+            "maximum_fraction_bits": 253
+          },
+          "exact_rational_Bernoulli_draws": 32,
+          "future_frozen_constraints_in_prefix_conditionals": false,
+          "native_conditional_distribution_certified": false,
+          "exactness_reason": null,
+          "unconditional_source_table_materialized": false
+        },
+        {
+          "noise_word_hex": "0x8000000080000000",
+          "polar_word_hex": "0xaaaaaaaaaaaaaaaa",
+          "seed": 31,
+          "target": 0,
+          "recursive_work": {
+            "recursive_calls": 4064,
+            "maximum_fraction_bits": 303
+          },
+          "exact_rational_Bernoulli_draws": 32,
+          "future_frozen_constraints_in_prefix_conditionals": false,
+          "native_conditional_distribution_certified": false,
+          "exactness_reason": null,
+          "unconditional_source_table_materialized": false
+        },
+        {
+          "noise_word_hex": "0x801280008012",
+          "polar_word_hex": "0x7777777577777577",
+          "seed": 32,
+          "target": 4294967295,
+          "recursive_work": {
+            "recursive_calls": 4064,
+            "maximum_fraction_bits": 253
+          },
+          "exact_rational_Bernoulli_draws": 32,
+          "future_frozen_constraints_in_prefix_conditionals": false,
+          "native_conditional_distribution_certified": false,
+          "exactness_reason": null,
+          "unconditional_source_table_materialized": false
+        }
+      ],
+      "signed_Gibbs_samples": [
+        {
+          "noise_word_hex": "0x3ecb8004ee007801",
+          "polar_word_hex": "0x69ddd2c3223f77c1",
+          "seed": 171,
+          "target": 2680752121,
+          "recursive_work": {
+            "recursive_calls": 4064,
+            "maximum_fraction_bits": 140
+          },
+          "exact_rational_Bernoulli_draws": 32,
+          "future_frozen_constraints_in_prefix_conditionals": false,
+          "native_conditional_distribution_certified": false,
+          "exactness_reason": null,
+          "unconditional_source_table_materialized": false,
+          "Gibbs_kernel_word_hex": "0xbce107d8bce107d8",
+          "public_clause_signs_hex": "0x822a87dc52e17fd9",
+          "channel_overlap": "13/20",
+          "code_check_masks_hex": [
+            "0xffffffffffffffff",
+            "0xffff0000ffff0000",
+            "0xff00ff00ff00ff00",
+            "0xff000000ff000000",
+            "0xf0f0f0f0f0f0f0f0",
+            "0xf0f00000f0f00000",
+            "0xf000f000f000f000",
+            "0xf0000000f0000000",
+            "0xcccccccccccccccc",
+            "0xcccc0000cccc0000",
+            "0xcc00cc00cc00cc00",
+            "0xcc000000cc000000",
+            "0xc0c0c0c0c0c0c0c0",
+            "0xc0c00000c0c00000",
+            "0xc000c000c000c000",
+            "0xc0000000c0000000",
+            "0xaaaaaaaaaaaaaaaa",
+            "0xaaaa0000aaaa0000",
+            "0xaa00aa00aa00aa00",
+            "0xaa000000aa000000",
+            "0xa0a0a0a0a0a0a0a0",
+            "0xa0a00000a0a00000",
+            "0xa000a000a000a000",
+            "0xa0000000a0000000",
+            "0x8888888888888888",
+            "0x8888000088880000",
+            "0x8800880088008800",
+            "0x8800000088000000",
+            "0x8080808080808080",
+            "0x8080000080800000",
+            "0x8000800080008000",
+            "0x8000000080000000"
+          ],
+          "top_level_polar_transforms_including_native_checks": 67,
+          "native_constraint_dot_products": 32,
+          "binary_check_description_bits": 2048,
+          "binary_transform_work_is_additional_to_rational_recursion_counter": true,
+          "native_Gibbs_weight": "product_j(1+c*(-1)^(y_j+J_j)); H_F*y=0"
+        },
+        {
+          "noise_word_hex": "0xdcf0fb0606023098",
+          "polar_word_hex": "0xc20fef420165ffc8",
+          "seed": 172,
+          "target": 2209881080,
+          "recursive_work": {
+            "recursive_calls": 4064,
+            "maximum_fraction_bits": 278
+          },
+          "exact_rational_Bernoulli_draws": 32,
+          "future_frozen_constraints_in_prefix_conditionals": false,
+          "native_conditional_distribution_certified": false,
+          "exactness_reason": null,
+          "unconditional_source_table_materialized": false,
+          "Gibbs_kernel_word_hex": "0x14ce264714ce2647",
+          "public_clause_signs_hex": "0xc83edd4112cc16df",
+          "channel_overlap": "13/20",
+          "code_check_masks_hex": [
+            "0xffffffffffffffff",
+            "0xffff0000ffff0000",
+            "0xff00ff00ff00ff00",
+            "0xff000000ff000000",
+            "0xf0f0f0f0f0f0f0f0",
+            "0xf0f00000f0f00000",
+            "0xf000f000f000f000",
+            "0xf0000000f0000000",
+            "0xcccccccccccccccc",
+            "0xcccc0000cccc0000",
+            "0xcc00cc00cc00cc00",
+            "0xcc000000cc000000",
+            "0xc0c0c0c0c0c0c0c0",
+            "0xc0c00000c0c00000",
+            "0xc000c000c000c000",
+            "0xc0000000c0000000",
+            "0xaaaaaaaaaaaaaaaa",
+            "0xaaaa0000aaaa0000",
+            "0xaa00aa00aa00aa00",
+            "0xaa000000aa000000",
+            "0xa0a0a0a0a0a0a0a0",
+            "0xa0a00000a0a00000",
+            "0xa000a000a000a000",
+            "0xa0000000a0000000",
+            "0x8888888888888888",
+            "0x8888000088880000",
+            "0x8800880088008800",
+            "0x8800000088000000",
+            "0x8080808080808080",
+            "0x8080000080800000",
+            "0x8000800080008000",
+            "0x8000000080000000"
+          ],
+          "top_level_polar_transforms_including_native_checks": 67,
+          "native_constraint_dot_products": 32,
+          "binary_check_description_bits": 2048,
+          "binary_transform_work_is_additional_to_rational_recursion_counter": true,
+          "native_Gibbs_weight": "product_j(1+c*(-1)^(y_j+J_j)); H_F*y=0"
+        }
+      ],
+      "distributional_TV_not_certified_by_sample_feasibility": true
+    }
+  ],
+  "native_channel_source_duality": [
+    {
+      "positions": 2,
+      "source_probability": "7/40",
+      "pure_state_overlap": "13/20",
+      "native_synthesized_Holevo_information": [
+        0.4709306101378332,
+        0.8671010599752815
+      ],
+      "source_conditional_entropies": [
+        0.8671010599752816,
+        0.4709306101378333
+      ],
+      "native_synthesized_root_fidelities": [
+        0.6499999999999999,
+        0.42250000000000015
+      ],
+      "native_bit_Helstrom_errors": [
+        0.21125000000000005,
+        0.04681853800050473
+      ],
+      "source_mean_absolute_posterior_biases": [
+        0.4225,
+        0.65
+      ],
+      "reverse_index_fidelity_max_error": 1.6653345369377348e-16,
+      "reverse_index_identity_max_error": 1.1102230246251565e-16,
+      "minimum_numerical_density_eigenvalue": -9.356129387873703e-18,
+      "state_vectors_materialized": 4,
+      "density_matrix_entries": 16,
+      "native_density_calibration_is_not_a_quantum_decoder": true,
+      "asymptotic_capacity_or_Gibbs_separation_proved_by_numerics": false
+    },
+    {
+      "positions": 4,
+      "source_probability": "7/40",
+      "pure_state_overlap": "13/20",
+      "native_synthesized_Holevo_information": [
+        0.24002099742259642,
+        0.7018402228530696,
+        0.7573111369412304,
+        0.9768909830093331
+      ],
+      "source_conditional_entropies": [
+        0.9768909830093331,
+        0.7573111369412303,
+        0.7018402228530702,
+        0.24002099742259655
+      ],
+      "native_synthesized_root_fidelities": [
+        0.8376874999999998,
+        0.4225000000000001,
+        0.42250000000000004,
+        0.1785062500000001
+      ],
+      "native_bit_Helstrom_errors": [
+        0.333246875,
+        0.11382964880145596,
+        0.08925312499999999,
+        0.008030611035875046
+      ],
+      "source_mean_absolute_posterior_biases": [
+        0.17850625,
+        0.4225,
+        0.4225,
+        0.8376875
+      ],
+      "reverse_index_fidelity_max_error": 2.220446049250313e-16,
+      "reverse_index_identity_max_error": 6.661338147750939e-16,
+      "minimum_numerical_density_eigenvalue": -6.966816658086329e-17,
+      "state_vectors_materialized": 16,
+      "density_matrix_entries": 256,
+      "native_density_calibration_is_not_a_quantum_decoder": true,
+      "asymptotic_capacity_or_Gibbs_separation_proved_by_numerics": false
+    }
+  ],
+  "source_sha256": "eb6d9f62ae7ae4eff108e6928c32e01b9751a0a3b3df11705d57e638c61fb93c",
+  "numpy_version": "2.3.3",
+  "dependency_sha256": {
+    "bpqm_gibbs_frontier.py": "2a04051490619942a146a9cdf835bc2ef46039de2effa854263059c100b118b5"
+  },
+  "accepted_speedup_candidate": false,
+  "quantum_decoder_implemented": false,
+  "all_polar_code_Gibbs_tasks_dequantized": false,
+  "local_hybrid_derivation_review_pending": true,
+  "literature": [
+    "https://arxiv.org/pdf/2109.08170",
+    "https://arxiv.org/pdf/2401.07167",
+    "https://arxiv.org/abs/0807.3917",
+    "https://arxiv.org/html/2506.09239v2",
+    "https://arxiv.org/abs/1701.05583",
+    "https://arxiv.org/abs/2103.09225"
+  ]
+}

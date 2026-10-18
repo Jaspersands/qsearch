@@ -1,0 +1,28 @@
+{
+  "contract_id": "dcp-cyclic-subgroup-quotient-aliasing-audit-contract",
+  "title": "DCP Cyclic-Subgroup Quotient-Aliasing Audit: g-Fold Coset Indistinguishability, Euler-Ramanujan Divisor-Stratum Sum, and Folded-Kernel Parseval Identity",
+  "version": "1.0.0",
+  "scope": "dcp_composite_modulus_divisor_strata_folded_kernel_aliasing_and_ramanujan_sum_identities",
+  "theorems": [
+    {
+      "id": "T1",
+      "name": "Exact Coset Periodicity and Folded Visibility Identity",
+      "statement": "For any difference d in {1, ..., q-1} with g = gcd(d, q), m = q/g, and d' = d/g, rho_d((s + k*m) mod q; K_eta) = rho_d(s; K_eta) for all k in {0, ..., g-1}, and lambda_d(K_eta) = lambda_(d')(K_eta^(m)) where K_eta^(m)(e_bar) = sum_(k=0)^(g-1) K_eta(e_bar + k*m)."
+    },
+    {
+      "id": "T2",
+      "name": "Exact Divisor-Stratum Cardinality and Ramanujan-Sum Visibility Total",
+      "statement": "The divisor strata D_g(q) = {d in {1, ..., q-1} : gcd(d, q) = g} have cardinality |D_g(q)| = phi(q/g) summing to q - 1, and sum_(d in D_g(q)) lambda_d(K_eta) = sum_(e=0)^(q-1) K_eta(e) c_(q/g)(e) where c_m(e) is Ramanujan's sum."
+    },
+    {
+      "id": "T3",
+      "name": "Subgroup Parseval Identity and Monotone Purity Under Folding",
+      "statement": "For every divisor g | q with m = q/g, the folded kernel purity satisfies ||K_eta^(m)||_2^2 = sum_(e_bar=0)^(m-1) K_eta^(m)(e_bar)^2 = (g/q) * sum_(k=0)^(m-1) lambda_(k*g)(K_eta)^2 >= ||K_eta||_2^2."
+    }
+  ],
+  "guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  }
+}

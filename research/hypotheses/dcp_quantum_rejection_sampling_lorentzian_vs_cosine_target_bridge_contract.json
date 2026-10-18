@@ -1,0 +1,12 @@
+{
+  "hypothesis_id": "dcp_quantum_rejection_sampling_lorentzian_vs_cosine_target_bridge",
+  "title": "Single-Shot Quantum Rejection Sampling Box-to-Sine Window Acceptance Law",
+  "status": "VERIFIED_FINITE_IDENTITIES_REVIEW_PENDING",
+  "claims": [
+    "Transforming a uniform box window on {0, ..., P-1} into a target profile psi_f via a single diagonal POVM achieves maximum acceptance probability P_accept*(box -> f) = 1 / (P * max_x |psi_f(x)|^2).",
+    "For the Dirichlet-optimal sine window psi_sin*, P_accept*(box -> sin*) >= (P + 1) / (2 * P) > 1/2 for all P >= 1, strictly dominating peaked Lorentzian windows in both acceptance probability and unit-shift overlap gamma(1)."
+  ],
+  "favorable_controls": [
+    "Odd and even window lengths P in {7, 8, 15, 16, 31, 32}"
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "all_checks_passed": true,
+  "audit_q12_4x3": {
+    "bezout_identity_verified": true,
+    "exact_crt_laws_verified": true,
+    "idempotent_e1": 9,
+    "idempotent_e2": 4,
+    "max_crt_phase_splitting_error": 7.550332863779066e-16,
+    "max_s1_leakage_under_2t_multiple_witness": 0.0,
+    "max_s2_leakage_under_p_multiple_witness": 0.0,
+    "q1_dyadic": 4,
+    "q2_prime": 3,
+    "q_composite": 12,
+    "t_bits": 2
+  },
+  "audit_q24_8x3": {
+    "bezout_identity_verified": true,
+    "exact_crt_laws_verified": true,
+    "idempotent_e1": 9,
+    "idempotent_e2": 16,
+    "max_crt_phase_splitting_error": 7.850462293418876e-16,
+    "max_s1_leakage_under_2t_multiple_witness": 0.0,
+    "max_s2_leakage_under_p_multiple_witness": 0.0,
+    "q1_dyadic": 8,
+    "q2_prime": 3,
+    "q_composite": 24,
+    "t_bits": 3
+  },
+  "audit_q40_8x5": {
+    "bezout_identity_verified": true,
+    "exact_crt_laws_verified": true,
+    "idempotent_e1": 25,
+    "idempotent_e2": 16,
+    "max_crt_phase_splitting_error": 3.510833468576701e-16,
+    "max_s1_leakage_under_2t_multiple_witness": 0.0,
+    "max_s2_leakage_under_p_multiple_witness": 0.0,
+    "q1_dyadic": 8,
+    "q2_prime": 5,
+    "q_composite": 40,
+    "t_bits": 3
+  },
+  "certificate_sha256_16": "e6e281c38f3cca10",
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "proof_status": "LOCAL_DERIVATION_REVIEW_PENDING_NOT_FORMALLY_VERIFIED",
+  "schema_version": "dcp-composite-crt-coprime-modulus-tensor-factorization-bridge-v1",
+  "scope_constraints": {
+    "applies_to": "Chinese Remainder Theorem Bezout phase splitting and orthogonal factor annihilation over composite moduli q = 2^t * p",
+    "controls_included": "Evaluates q = 12 (4x3), q = 24 (8x3), and q = 40 (8x5) exhaustively across all (a, s) in Z_q^2, verifying < 1e-12 phase splitting error and exact 0.0 cross-factor leakage.",
+    "does_not_claim": "CRT splitting across prime powers p^k without p-adic carry compensation (see Subsystem 83)"
+  },
+  "theorem_id": "dcp_composite_crt_coprime_modulus_tensor_factorization_bridge"
+}

@@ -1,0 +1,87 @@
+{
+  "all_checks_passed": true,
+  "audit_n4_q16": {
+    "all_verified": true,
+    "conjugate_poly": [
+      5,
+      9,
+      5,
+      13
+    ],
+    "conjugation_is_involution": true,
+    "constant_term_doubled": true,
+    "galois_group_order": 4,
+    "group_homomorphism_verified": true,
+    "midpoint_degree_n_over_2_annihilated": true,
+    "n_deg": 4,
+    "palindromic_sum_projects_pure_constant_term": true,
+    "q_mod": 16,
+    "sample_poly": [
+      5,
+      3,
+      11,
+      7
+    ],
+    "sum_with_conjugate": [
+      10,
+      12,
+      0,
+      4
+    ]
+  },
+  "audit_n8_q32": {
+    "all_verified": true,
+    "conjugate_poly": [
+      9,
+      29,
+      13,
+      27,
+      9,
+      25,
+      18,
+      31
+    ],
+    "conjugation_is_involution": true,
+    "constant_term_doubled": true,
+    "galois_group_order": 8,
+    "group_homomorphism_verified": true,
+    "midpoint_degree_n_over_2_annihilated": true,
+    "n_deg": 8,
+    "palindromic_sum_projects_pure_constant_term": true,
+    "q_mod": 32,
+    "sample_poly": [
+      9,
+      1,
+      14,
+      7,
+      23,
+      5,
+      19,
+      3
+    ],
+    "sum_with_conjugate": [
+      18,
+      30,
+      27,
+      2,
+      0,
+      30,
+      5,
+      2
+    ]
+  },
+  "certificate_sha256_16": "60a38f5e813e978b",
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "proof_status": "LOCAL_DERIVATION_REVIEW_PENDING_NOT_FORMALLY_VERIFIED",
+  "schema_version": "dcp-galois-frobenius-automorphism-prime-power-peeling-bridge-v1",
+  "scope_constraints": {
+    "applies_to": "Cyclotomic Galois automorphisms tau_u: X -> X^u mod (X^n + 1) and conjugation CNOT constant-term projection over R_q",
+    "controls_included": "Evaluates R_{16}[X]/(X^4+1) (|Gal|=4) and R_{32}[X]/(X^8+1) (|Gal|=8), verifying exact group closure, universal degree-(n/2) annihilation, and pure constant-term projection on palindromic polynomials.",
+    "does_not_claim": "Vanishing of non-palindromic coefficients i != n/2 under id + tau_{2n-1} without pairing f_i = f_{n-i}"
+  },
+  "theorem_id": "dcp_galois_frobenius_automorphism_prime_power_peeling_bridge"
+}

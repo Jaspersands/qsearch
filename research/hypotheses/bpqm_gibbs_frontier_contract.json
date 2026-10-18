@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0",
+  "contract_id": "binary_bpqm_gibbs_frontier_review_pending_v1",
+  "status": "research_experiment_not_an_accepted_candidate",
+  "problem": "Total-variation Gibbs sampling for public random regular signed XOR Ising Hamiltonians",
+  "input_model": "H from binary regular LDPC socket ensemble with parallel edges summed modulo two; B=H^T; IID uniform signs; all input explicit",
+  "mechanism": "Known BPQM plus erasure recovery, composed with the known quantum-decoding-to-Gibbs reduction",
+  "concrete_probe": {"variable_degree": 3, "check_degree": 6, "overlap_c_exact": "13/20", "beta": "atanh(13/20)"},
+  "implemented": [
+    "Exact integer-mass binary channel-combining bounds",
+    "Sufficient finite-stage contraction certificate for the original unrounded tree",
+    "Physical parity-node and direct seven-wire Helstrom controls",
+    "Full-rank Prange dimension bound only",
+    "Rank-aware affine-cluster step and exact small detailed-balance checks",
+    "Actual regular socket source, exact finite TV/character controls, larger seeded native trajectories",
+    "Exact-kernel replica exchange and an integer bucket-elimination sampling reference for the targeted 32-spin graph",
+    "Bounded actual coherent tree/erasure decoder with exact left-inverse recovery, retained records and full-state cyclic readout checks",
+    "Unfiltered raw socket topology/rank plans, single-copy word-error floors and exact weighted duplicate-factor reduction"
+  ],
+  "classical_probe_artifact": "research/classical_baselines/affine_cluster_native_probe.json",
+  "classical_probe_decision": "INCONCLUSIVE_ASYMPTOTICALLY_EXACT_CLASSICAL_REFERENCE_EXISTS_FOR_TARGETED_FINITE_GRAPH",
+  "expected_advantage": "Conditional polynomial quantum Gibbs sampling in a regime beyond one classical proposal; no all-classical lower bound, new algorithm or speedup established",
+  "resource_obligations": [
+    "Count distinct physical outputs in each local tree, never clone repeated leaves",
+    "Charge code linear algebra, coherent flags/adjoints, precision, gate synthesis and sequential measurement error",
+    "Obtain finite-block code distance, neighborhood and error bounds for the actual ensemble",
+    "Retain failure mass and the random-sign scope of the Gibbs reduction"
+  ],
+  "stronger_classical_baselines": ["affine-cluster Gibbs dynamics", "parallel tempering", "Turbo Prange with sampling-law scrutiny", "factor/tensor contraction", "BP-guided sampling"],
+  "falsifiers": [
+    "The certified local degradation/information-order argument fails independent review",
+    "The external block theorem or coherent composition does not cover the specified source",
+    "Finite-block costs or errors erase the useful regime",
+    "A matched polynomial classical sampler works at the same c",
+    "Novelty comparison shows no new structural content beyond existing BPQM/DQI results"
+  ],
+  "literature": ["https://arxiv.org/abs/2609.05857", "https://arxiv.org/abs/2609.40345", "https://arxiv.org/abs/2109.08170", "https://arxiv.org/abs/2604.24633"],
+  "accepted_speedup_candidate": false,
+  "classical_hardness_proved": false,
+  "finite_graph_decoder_implemented": true,
+  "finite_graph_decoder_scope": "Bounded explicit-herald full-root reference, not the uniform published extrinsic-policy LDPC decoder; finite cyclic Gibbs readout is not exact",
+  "uniform_reliable_BPQM_decoder_implemented": false,
+  "coherent_erasure_artifact": "research/phase_workbench/coherent_bpqm_erasure.json",
+  "coherent_erasure_derivation": "research/COHERENT_BPQM_ERASURE.md",
+  "word_error_floor_is_a_sampling_lower_bound": false
+}

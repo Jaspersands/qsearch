@@ -1,0 +1,60 @@
+{
+  "schema_version": "1.0",
+  "contract_id": "dcp_prefix_peeling_error_propagation_union_bridge_v1",
+  "title": "Clean DCP Dyadic Prefix-Peeling Reduction: Exact Truncation Uniformity, Incorrect-Prefix Character Depolarization, and Binomial Majority-Verifier Bounds",
+  "family": "dcp_clean_decoder_falsification",
+  "status": "locked_before_theorems",
+  "theorems": [
+    {
+      "id": "T1_correct_prefix_phase_reduction_and_truncation_uniformity",
+      "statement": "When hat_p_k = s mod 2^k, writing s = hat_p_k + 2^k s^{(k)} and a = tilde_a + 2^{t-k} h_a (tilde_a = a mod 2^{t-k}, h_a = floor(a / 2^{t-k})) yields omega_{2^t}^{a(s - hat_p_k)} = omega_{2^{t-k}}^{tilde_a s^{(k)}} for every h_a in Z_{2^k}, so tilde_a is uniform on Z_{2^{t-k}} with fiber size 2^k and conditional state |psi_{tilde_a}(s^{(k)})> of pure visibility 1."
+    },
+    {
+      "id": "T2_incorrect_prefix_character_depolarization",
+      "statement": "Whenever hat_p_k != s mod 2^k, delta = (s - hat_p_k) mod 2^t has 2-adic valuation v_2(delta) in {0, ..., k-1}, so averaging over unobserved high label bits h_a in Z_{2^k} gives bar{rho}_{tilde_a}(s, hat_p_k)[0, 1] = (1/2) omega_{2^t}^{-tilde_a delta} (2^{-k} sum_{h_a=0}^{2^k - 1} omega_{2^k}^{-h_a (delta mod 2^k)}) = 0. Thus bar{rho}_{tilde_a}(s, hat_p_k) = I_2 / 2 for every tilde_a in Z_{2^{t-k}} and all 2^k - 1 wrong prefixes."
+    },
+    {
+      "id": "T3_binomial_majority_tail_and_nonprimitive_verifier_orthogonality",
+      "statement": "For odd R = 2m + 1 invocations at advantage eps in (0, 1/2], exact majority error P_maj(R, eps) = sum_{j=0}^m C(R, j)(1/2+eps)^j(1/2-eps)^{R-j} <= (1 - 4 eps^2)^{R/2} <= exp(-2 R eps^2). For any candidate c != s mod 2^t of arbitrary 2-adic valuation v_2(s - c) in {0, ..., t-1}, the X-basis verifier has exact single-shot acceptance P_+(s, c) = 1/2 and L_ver-shot survival 2^{-L_ver}."
+    }
+  ],
+  "test_instances": [
+    {
+      "instance_id": "t4_k2_R5_eps_1_4_peeling_audit",
+      "t": 4,
+      "k": 2,
+      "R_majority": 5,
+      "epsilon": "1/4",
+      "L_verifier": 6
+    },
+    {
+      "instance_id": "t5_k2_R7_eps_1_8_peeling_audit",
+      "t": 5,
+      "k": 2,
+      "R_majority": 7,
+      "epsilon": "1/8",
+      "L_verifier": 8
+    },
+    {
+      "instance_id": "t5_k3_R9_eps_1_4_peeling_audit",
+      "t": 5,
+      "k": 3,
+      "R_majority": 9,
+      "epsilon": "1/4",
+      "L_verifier": 8
+    },
+    {
+      "instance_id": "t6_k3_R11_eps_1_8_peeling_audit",
+      "t": 6,
+      "k": 3,
+      "R_majority": 11,
+      "epsilon": "1/8",
+      "L_verifier": 10
+    }
+  ],
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "all_checks_passed": true,
+  "audit_3x3_mod256": {
+    "all_verified": true,
+    "coupled_phases": [
+      63,
+      168,
+      72
+    ],
+    "decoupled_phases": [
+      137,
+      42,
+      219
+    ],
+    "decoupled_state_fidelity": 1.0,
+    "exact_inverse_verified": true,
+    "expected_secret_mod": [
+      137,
+      42,
+      219
+    ],
+    "m_bits": 8,
+    "n_dim": 3,
+    "num_newton_steps": 3,
+    "q_mod": 256,
+    "steps_history": [
+      {
+        "guaranteed_precision_bits": 1,
+        "step_j": 0,
+        "verified_identity_mod_2_pow_2j": true
+      },
+      {
+        "guaranteed_precision_bits": 2,
+        "step_j": 1,
+        "verified_identity_mod_2_pow_2j": true
+      },
+      {
+        "guaranteed_precision_bits": 4,
+        "step_j": 2,
+        "verified_identity_mod_2_pow_2j": true
+      },
+      {
+        "guaranteed_precision_bits": 8,
+        "step_j": 3,
+        "verified_identity_mod_2_pow_2j": true
+      }
+    ]
+  },
+  "audit_4x4_mod65536": {
+    "all_verified": true,
+    "coupled_phases": [
+      49223,
+      59752,
+      42786,
+      44598
+    ],
+    "decoupled_phases": [
+      12345,
+      54321,
+      9999,
+      42424
+    ],
+    "decoupled_state_fidelity": 1.0,
+    "exact_inverse_verified": true,
+    "expected_secret_mod": [
+      12345,
+      54321,
+      9999,
+      42424
+    ],
+    "m_bits": 16,
+    "n_dim": 4,
+    "num_newton_steps": 4,
+    "q_mod": 65536,
+    "steps_history": [
+      {
+        "guaranteed_precision_bits": 1,
+        "step_j": 0,
+        "verified_identity_mod_2_pow_2j": true
+      },
+      {
+        "guaranteed_precision_bits": 2,
+        "step_j": 1,
+        "verified_identity_mod_2_pow_2j": true
+      },
+      {
+        "guaranteed_precision_bits": 4,
+        "step_j": 2,
+        "verified_identity_mod_2_pow_2j": true
+      },
+      {
+        "guaranteed_precision_bits": 8,
+        "step_j": 3,
+        "verified_identity_mod_2_pow_2j": true
+      },
+      {
+        "guaranteed_precision_bits": 16,
+        "step_j": 4,
+        "verified_identity_mod_2_pow_2j": true
+      }
+    ]
+  },
+  "certificate_sha256_16": "5f4e02105cb91711",
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "proof_status": "LOCAL_DERIVATION_REVIEW_PENDING_NOT_FORMALLY_VERIFIED",
+  "schema_version": "dcp-modular-inversion-newton-hensel-lifting-quantum-bridge-v1",
+  "scope_constraints": {
+    "applies_to": "2-adic Newton-Hensel quadratic matrix inversion over GL_n(Z_{2^m}) and phase-preconditioning decoupling of n compressed DCP wires",
+    "controls_included": "Includes 3x3 inversion mod 2^8 = 256 (3 Newton steps) and 4x4 inversion mod 2^16 = 65536 (4 Newton steps), verifying exact phase decoupling and 100% product state fidelity.",
+    "does_not_claim": "Invertibility when det(U) == 0 (mod 2) prior to factoring out the maximal power of 2"
+  },
+  "theorem_id": "dcp_modular_inversion_newton_hensel_lifting_quantum_bridge"
+}

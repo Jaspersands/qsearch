@@ -1,0 +1,90 @@
+{
+  "all_checks_passed": true,
+  "certificate_sha256_16": "09dc4702f64eb14d",
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "proof_status": "LOCAL_DERIVATION_REVIEW_PENDING_NOT_FORMALLY_VERIFIED",
+  "schema_version": "dcp-post-selected-weak-value-phase-amplification-obstruction-v1",
+  "scope_constraints": {
+    "applies_to": "Post-selected weak-value phase amplification vs. total per-copy classical and quantum Fisher information on DCP states",
+    "controls_included": "Compares weak post-selection angles eps in {0.05, 0.15, 0.30, 0.60} against full non-post-selected readout eps=pi/2 (p_accept = 1.0), verifying exact Fisher chain-rule conservation and I_net <= I_total <= QFI = gamma^2.",
+    "does_not_claim": "Absence of technical-noise / detector-saturation advantages when pointer readout is limited by classical detector dynamic range"
+  },
+  "theorem_id": "dcp_post_selected_weak_value_phase_amplification_obstruction",
+  "weak_value_fisher_audit": {
+    "all_verified": true,
+    "gamma": 0.95,
+    "quantum_fisher_info_bound": 0.9025,
+    "records": [
+      {
+        "chain_rule_error": 6.938893903907228e-18,
+        "conditional_contrast_on_accepted": 0.004231599860460344,
+        "conditional_fisher_info_given_accept": 0.006558872096469464,
+        "discarded_accept_reject_fisher_info": 0.02058509473072881,
+        "eps": 0.05,
+        "exact_conservation_verified": true,
+        "net_per_copy_post_selected_fisher_info": 0.00018382952824527117,
+        "p_accept": 0.02802761290988182,
+        "p_reject": 0.9719723870901182,
+        "quantum_fisher_info_bound": 0.9025,
+        "total_3outcome_fisher_info": 0.020768924258974086
+      },
+      {
+        "chain_rule_error": 6.938893903907228e-18,
+        "conditional_contrast_on_accepted": 0.0223913552544866,
+        "conditional_fisher_info_given_accept": 0.19060946895882208,
+        "discarded_accept_reject_fisher_info": 0.01194157354264411,
+        "eps": 0.15,
+        "exact_conservation_verified": true,
+        "net_per_copy_post_selected_fisher_info": 0.009026088607910258,
+        "p_accept": 0.047353831146028695,
+        "p_reject": 0.9526461688539711,
+        "quantum_fisher_info_bound": 0.9025,
+        "total_3outcome_fisher_info": 0.020967662150554362
+      },
+      {
+        "chain_rule_error": 1.3877787807814457e-17,
+        "conditional_contrast_on_accepted": 0.037460707948362426,
+        "conditional_fisher_info_given_accept": 0.5502341903949963,
+        "discarded_accept_reject_fisher_info": 0.004768995141996548,
+        "eps": 0.3,
+        "exact_conservation_verified": true,
+        "net_per_copy_post_selected_fisher_info": 0.06090579193812747,
+        "p_accept": 0.11069067135650924,
+        "p_reject": 0.8893093286434907,
+        "quantum_fisher_info_bound": 0.9025,
+        "total_3outcome_fisher_info": 0.06567478708012403
+      },
+      {
+        "chain_rule_error": 5.551115123125783e-17,
+        "conditional_contrast_on_accepted": 0.045018500546713414,
+        "conditional_fisher_info_given_accept": 0.8070602861106456,
+        "discarded_accept_reject_fisher_info": 0.0011717032709570713,
+        "eps": 0.6,
+        "exact_conservation_verified": true,
+        "net_per_copy_post_selected_fisher_info": 0.27137802454460713,
+        "p_accept": 0.33625496039759534,
+        "p_reject": 0.6637450396024047,
+        "quantum_fisher_info_bound": 0.9025,
+        "total_3outcome_fisher_info": 0.27254972781556425
+      },
+      {
+        "chain_rule_error": 0.0,
+        "conditional_contrast_on_accepted": 0.047480210807144374,
+        "conditional_fisher_info_given_accept": 0.9022797022514891,
+        "discarded_accept_reject_fisher_info": 0.0,
+        "eps": 1.5707963267948966,
+        "exact_conservation_verified": true,
+        "net_per_copy_post_selected_fisher_info": 0.9022797022514891,
+        "p_accept": 1.0,
+        "p_reject": 3.653438728065143e-33,
+        "quantum_fisher_info_bound": 0.9025,
+        "total_3outcome_fisher_info": 0.9022797022514891
+      }
+    ],
+    "theta": 0.05
+  }
+}

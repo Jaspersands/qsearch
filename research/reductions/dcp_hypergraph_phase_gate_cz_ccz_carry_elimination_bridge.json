@@ -1,0 +1,61 @@
+{
+  "all_checks_passed": true,
+  "certificate_sha256_16": "51428a178702a111",
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "mod4_m2_audit": {
+    "col_dot_s": 1,
+    "deg2_only_repaired_product_fidelity": 1.0,
+    "exact_cutoff_and_repair_verified": true,
+    "full_hypergraph_repaired_product_fidelity": 1.0,
+    "m_trees": 2,
+    "max_degree_t_polynomial_mod_error": 0,
+    "q_mod": 4,
+    "t_bits": 2,
+    "unrepaired_product_fidelity": 0.25
+  },
+  "mod4_m3_audit": {
+    "col_dot_s": 1,
+    "deg2_only_repaired_product_fidelity": 0.9999999999999998,
+    "exact_cutoff_and_repair_verified": true,
+    "full_hypergraph_repaired_product_fidelity": 0.9999999999999998,
+    "m_trees": 3,
+    "max_degree_t_polynomial_mod_error": 0,
+    "q_mod": 4,
+    "t_bits": 2,
+    "unrepaired_product_fidelity": 4.519771434409536e-33
+  },
+  "mod8_m3_audit": {
+    "col_dot_s": 1,
+    "deg2_only_repaired_product_fidelity": 0.5624999999999998,
+    "exact_cutoff_and_repair_verified": true,
+    "full_hypergraph_repaired_product_fidelity": 0.9999999999999998,
+    "m_trees": 3,
+    "max_degree_t_polynomial_mod_error": 0,
+    "q_mod": 8,
+    "t_bits": 3,
+    "unrepaired_product_fidelity": 0.4999999999999999
+  },
+  "mod8_m4_audit": {
+    "col_dot_s": 1,
+    "deg2_only_repaired_product_fidelity": 0.25,
+    "exact_cutoff_and_repair_verified": true,
+    "full_hypergraph_repaired_product_fidelity": 1.0,
+    "m_trees": 4,
+    "max_degree_t_polynomial_mod_error": 0,
+    "q_mod": 8,
+    "t_bits": 3,
+    "unrepaired_product_fidelity": 0.45312499999999994
+  },
+  "proof_status": "LOCAL_DERIVATION_REVIEW_PENDING_NOT_FORMALLY_VERIFIED",
+  "schema_version": "dcp-hypergraph-phase-gate-cz-ccz-carry-elimination-bridge-v1",
+  "scope_constraints": {
+    "applies_to": "Degree-t nilpotency cutoff of overlapping CNOT carries modulo 2^t and conditional CZ / CCZ unentanglement",
+    "controls_included": "Includes mod 4 m=2 (unrepaired F=0.25 -> CZ F=1.0), mod 4 m=3 (degree-3 vanishes mod 4 so CZ alone gives F=1.0), mod 8 m=3 (deg-2 only F=9/16=0.5625 -> +CCZ F=1.0), and mod 8 m=4 (degree-4 vanishes mod 8).",
+    "does_not_claim": "Secret-independent unentanglement when the lower prefix bits <A_{., r}, s> mod 2^{t-1} are unknown"
+  },
+  "theorem_id": "dcp_hypergraph_phase_gate_cz_ccz_carry_elimination_bridge"
+}

@@ -1,0 +1,48 @@
+{
+  "hypothesis_id": "fixed_input_mixed_quadratic_OPI_tame_Morse_norm_solver",
+  "status": "EXACT_GEOMETRY_AND_NATIVE_WITNESSES_EXPLICIT_FIXED_INPUT_BOUND_LOCAL_PROOF_REVIEW_PENDING",
+  "problem": "Public mixed quadratic-coset OPI, strict or zero-including, not an oracle separation task",
+  "input_promises": [
+    "Verified odd prime, distinct public evaluation points, shifts, orientations and nonsquare",
+    "Majority group A has size<K; n=2*floor((K-1)/2)>=4; n-|B|>=3",
+    "Characteristic>max(n+|B|-1,2N)",
+    "An actual Morse certificate and an explicitly positive finite-field probability bound are required"
+  ],
+  "classical_mechanism": "Public unit arithmetic progression, tame Morse rational map, exact critical-value resultant, S_n monodromy, explicit Galois-closure twist/Weil count, polynomial norm and strict Cayley rotation",
+  "local_fixed_input_result": "Under the explicit sufficiently-large-field threshold, Morse search succeeds in expected<=2 trials and irreducible fibers have probability>=1/(2n); all arithmetic is polynomial-size in N/logp",
+  "does_not_assume": ["IID input shifts", "a field-sized table", "a free PIP or norm oracle", "an enumerated S_n or factorial-degree extension", "fixed-degree constants are uniform in n"],
+  "proof_obligations_review_pending": [
+    "Finite simple inertia plus the one-branch tame quotient argument gives geometric S_n",
+    "Geometric S_n forces arithmetic S_n and constant field Fp",
+    "Galois-closure genus is 1+n!*(-2+d/2+1-1/s)/2, with d=n+|B|-1,s=n-|B|",
+    "An n-cycle twist has n rational points per unramified irreducible fiber; subtract all branch fibers before dividing",
+    "The generic bad discriminant polynomial is nonzero and has degree<=(2d-2)(n+d+1)"
+  ],
+  "executed_evidence": [
+    "Complete quartic control over F10007:2528 irreducible fibers, positive explicit bound and genus9",
+    "Four N15,K12,p=2^61-1 controls: perfect witnesses and verified fixed-input bounds",
+    "Original N127,K77,61-bit controls: Morse conditions pass but the explicit probability bound is ZERO",
+    "Declared 1279-bit prime lift retaining all127 shifts/orientations: exact Morse certificate, field threshold met, strict127/127 witness after69 fibers"
+  ],
+  "falsifiers": [
+    "Non-Morse critical points or values, nonsquarefree poles or common numerator/denominator factors",
+    "Wild characteristic or degree slack failure",
+    "The field is too small for a positive explicit bound, even if numerical search happens to succeed",
+    "The Galois, twist, genus or generic discriminant-degree proof fails independent review",
+    "A population probability or seeded replay is incorrectly promoted to a fixed-input IID confidence certificate"
+  ],
+  "literature": ["https://arxiv.org/html/1302.0625", "https://arxiv.org/html/2610.12357"],
+  "evidence": [
+    "theorems/prime_character_morse_attack.py",
+    "tests/test_prime_character_morse_attack.py",
+    "research/classical_baselines/prime_character_morse_attack.json",
+    "research/PRIME_CHARACTER_MORSE_ATTACK.md"
+  ],
+  "all_inputs_all_rates_or_all_fields_dequantized": false,
+  "external_quantum_OPI_paper_refuted": false,
+  "sharper_exterior_power_trace_bound_implemented": true,
+  "exterior_follow_up": "research/PRIME_CHARACTER_EXTERIOR_BOUND.md",
+  "accepted_speedup_candidate": false,
+  "new_central_candidate_negative_or_proof_registered": false,
+  "independent_or_formal_proof_review_completed": false
+}

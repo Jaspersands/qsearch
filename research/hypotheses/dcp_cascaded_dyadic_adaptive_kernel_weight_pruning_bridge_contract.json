@@ -1,0 +1,14 @@
+{
+  "hypothesis_id": "dcp_cascaded_dyadic_adaptive_kernel_weight_pruning_bridge",
+  "title": "DCP Cascaded Multi-Stage Dyadic Adaptive Kernel Routing and Minimum-Weight Pruning Bridge",
+  "status": "VERIFIED_SCOPED_BRIDGE",
+  "claims": [
+    "At every dyadic level 1 <= ell < t, -2^ell == +2^ell (mod 2^{ell+1}) makes tilde_A^{(ell)} mod 2^{ell+1} invariant under coset-representative sign flips, enabling 100% mod-2^L elimination from (n+1)^{L-1} Stage-1 wires.",
+    "Minimum-Hamming-weight kernel selection at n=1 reduces expected composite wire weight from 2^L to 2*(5/4)^{L-1} and replaces doubly-exponential visibility decay gamma_0^{2^L} with V_ell = (3/4)*V_{ell-1} + (1/4)*V_{ell-1}^2."
+  ],
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  }
+}

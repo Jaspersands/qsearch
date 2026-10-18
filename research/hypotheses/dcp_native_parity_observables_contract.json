@@ -1,0 +1,47 @@
+{
+  "contract_id": "native_noisy_parity_observable_geometry_review_pending_v1",
+  "status": "SCOPED_SPARSE_OBSERVABLE_BOUND_DENSE_RECEIVER_OPEN",
+  "source": "K TOTAL original native phase qubits, one uniform unknown S in Z_q^n, q=2^t, IID uniform unfiltered classical full labels",
+  "noise": "Original INDEPENDENT Z faults with public visibility v; native frontier uses v=1-1/n, t=n+8, K=2*n*t",
+  "target": "First original secret parity, with h=(q/2,0,...,0)",
+  "observable_class": "For each public label matrix, a Hermitian effective binary-decision observable O on the ORIGINAL input with operator norm <=1 and at most D nonzero target-frequency-coupling entries per row",
+  "statements": [
+    "For support weights <=r, native target-witness probability <=sum_(w=1..r) binom(K,w)*2^(w-1)/q^n; sign reversal is the same event for order-two h",
+    "On labels without these short witnesses, any observable in the specified class has average bit advantage <=sqrt(D)*v^(r+1)/2",
+    "Adding half the label-exception probability bounds unconditional advantage, including charged failures",
+    "At K=2*n*t and fixed polynomial D, v=1-1/n gives exponentially small advantage in n; this is NOT a bound on every polynomial quantum circuit",
+    "The finite exact source parity-density kernel has entries 2*v^Hamming(x,y)*1[A(x-y)=h]/2^K; optimal advantage is sum of weighted frequency-pair block nuclear norms divided by 2^K"
+  ],
+  "positive_controls": [
+    "Actual partial-involution pair measurements retain all branches and match the physical Born law for every secret",
+    "A dense collective finite reference exceeds disjoint-pairing success; its exponential enumeration/eigendecomposition is explicit",
+    "A polynomial Hadamard/multi-controlled-Z circuit has an exponentially dense effective observable, preventing an invalid circuit lower-bound inference"
+  ],
+  "falsifiers": [
+    "An IID full-label census exceeds the exact signed-witness union bound",
+    "A Hermitian norm-one observable with certified target degree violates the independent-noise Cauchy bound",
+    "Actual native source parity-conditioned density differs from the weighted target-frequency kernel",
+    "A claimed receiver assumes a classical label evaluator erases original quantum input garbage",
+    "A conclusion changes to correlated noise, normalized postselected advantage, chosen labels or secret-dependent labels without new proof"
+  ],
+  "unresolved": [
+    "Efficient structured dense target-frequency measurement rather than explicit matrix diagonalization",
+    "Noise-tolerant coherent subset-sum operations with finite-gate and original-copy costs",
+    "Actual natural-source noise transfer, source purification access and growing-modulus scaling",
+    "Clean/fixed-rank scalar targets remain open; growing-rank inverse-dimension-noise obstructions must not define the entire algorithm search space",
+    "Independent theorem review and novelty assessment"
+  ],
+  "literature_links": [
+    "https://arxiv.org/abs/quant-ph/0501044"
+  ],
+  "guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false,
+    "all_polynomial_circuit_receivers_excluded": false,
+    "correlated_noise_with_matching_marginals_covered": false,
+    "dense_reference_is_efficient_quantum_algorithm": false,
+    "computing_classical_frequency_erases_the_quantum_input": false,
+    "actual_natural_source_noise_certified": false
+  }
+}

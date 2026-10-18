@@ -1,0 +1,33 @@
+{
+  "contract_id": "two_level_fresh_pair_compression_noise_converse_v1",
+  "experiment_id_for_mechanical_integration": "EXP-DHS-DCP-PAIRING-COMPOSITION-BARRIER",
+  "status": "CONDITIONAL_LOCAL_DERIVATION_EXTERNAL_REVIEW_PENDING",
+  "source": "IID uniform Z4^n coarse labels; flat-diagonal independent original dephasing of visibility<=1-1/n",
+  "instrument_class": "Each accepted outcome is a computational-basis-pair isometry retaining its balanced phase density as one qubit; not an arbitrary postselected subspace map",
+  "first_level_short_event": "For weight<r1, native endpoint probability<=sum binom(m1,w)/4^n",
+  "two_level_unconditional_signal": "At most R*epsilon1+epsilon2+(1-1/n)^(r1*r2)",
+  "decoder_extension": "Q independent final attempts are within Q*U/2 trace distance of a secret-independent CQ reference",
+  "conditioned_tag_pooling": "All failed attempts charged; entire second available pool counted; labels IID uniform given retained tags/coarse records",
+  "original_source_noise_certificate_supplied": false,
+  "general_DHSP_or_retained_block_no_go": false,
+  "accepted_speedup_candidate": false,
+  "new_active_negative_result_created": false,
+  "novelty_claim": false,
+  "excluded_escape_routes": [
+    "Retain implicit correlated phase blocks instead of one-pair outputs",
+    "Actual collective purification/interference across multiple pairs",
+    "Correlated faults, revealed error flags or a stronger original noise promise",
+    "Legitimately charged superpolynomial pooling, or different source laws"
+  ],
+  "falsifiers": [
+    "Any native short-mask census violating the unit-coefficient union bound",
+    "An accepted paired-output density outside the product-visibility law under the exact premises",
+    "A decoder beating the CQ trace-distance bound without additional secret-bearing outputs",
+    "Application when a required premise is false or absent"
+  ],
+  "remaining_obligations": [
+    "Independent proof review of the composition and CQ hybrid arguments",
+    "Derive rather than assume the actual natural-source joint noise",
+    "Use correlated block primitives or remove a specifically named premise"
+  ]
+}

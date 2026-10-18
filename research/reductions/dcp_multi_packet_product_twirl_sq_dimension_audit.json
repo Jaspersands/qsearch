@@ -1,0 +1,57 @@
+{
+  "all_checks_passed": true,
+  "certificate_sha256_16": "49764e8e313ca81a",
+  "chosen_basis_header_control": {
+    "basis_header_biases": [
+      0.35355339059327373,
+      -0.35355339059327373,
+      -0.5
+    ],
+    "constructive_basis_readout_exact": true,
+    "gamma": 0.5,
+    "n": 3,
+    "q": 8
+  },
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "schema_version": "dcp-multi-packet-product-twirl-sq-dimension-audit-v1",
+  "scope_constraints": {
+    "applies_to": "Product-twirled single-coordinate DCP observations over uniform random headers a ~ Unif(Z_q^n)",
+    "controls_included": "Includes both uniform-header orthogonal cosine-pair SQ dimension and chosen-header standard-basis constructive readout.",
+    "does_not_claim": "Hardness under chosen/deterministic basis headers a = e_i or joint un-twirled multi-copy quantum measurements"
+  },
+  "theorem_id": "dcp_multi_packet_product_twirl_sq_dimension_audit",
+  "uniform_header_sq_audits": [
+    {
+      "exact_orthogonality_and_chi_square_verified": true,
+      "expected_orthogonal_sq_dimension": 9,
+      "gamma": 0.5,
+      "max_chi_square_formula_error": 0.0,
+      "max_norm_formula_error": 0.0,
+      "max_off_diagonal_inner_product": 3.0616169978683824e-17,
+      "max_sign_asymmetry": 2.4492935982947064e-16,
+      "n": 2,
+      "non_two_torsion_pair_count": 6,
+      "q": 4,
+      "two_torsion_nonzero_count": 3,
+      "unordered_nonzero_pair_count": 9
+    },
+    {
+      "exact_orthogonality_and_chi_square_verified": true,
+      "expected_orthogonal_sq_dimension": 12,
+      "gamma": 0.4,
+      "max_chi_square_formula_error": 6.938893903907228e-17,
+      "max_norm_formula_error": 5.551115123125783e-17,
+      "max_off_diagonal_inner_product": 5.551115123125783e-17,
+      "max_sign_asymmetry": 2.220446049250313e-16,
+      "n": 2,
+      "non_two_torsion_pair_count": 12,
+      "q": 5,
+      "two_torsion_nonzero_count": 0,
+      "unordered_nonzero_pair_count": 12
+    }
+  ]
+}

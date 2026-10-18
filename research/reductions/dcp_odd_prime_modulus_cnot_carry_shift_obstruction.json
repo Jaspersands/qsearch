@@ -1,0 +1,85 @@
+{
+  "all_checks_passed": true,
+  "certificate_sha256_16": "0b17c138fd62175b",
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "p5_composite_wt4_subwitness_control": {
+    "K": 4,
+    "all_support_cols_zero_mod_p": false,
+    "anchor_invariant_mod_p": false,
+    "hamming_weight_h": 4,
+    "has_proper_zero_sum_subset": true,
+    "invariance_iff_zero_columns_verified": true,
+    "minimal_witness_exact_monochrome_fraction_verified": true,
+    "monochrome_2_to_minus_h_minus_1_fraction": 0.125,
+    "n": 1,
+    "p_mod": 5,
+    "sub_witness_characterization_verified": true,
+    "target_Av_mod_p": [
+      0
+    ],
+    "zero_tilde_anchor_fraction": 0.25
+  },
+  "p5_minimal_wt2_audit": {
+    "K": 2,
+    "all_support_cols_zero_mod_p": false,
+    "anchor_invariant_mod_p": false,
+    "hamming_weight_h": 2,
+    "has_proper_zero_sum_subset": false,
+    "invariance_iff_zero_columns_verified": true,
+    "minimal_witness_exact_monochrome_fraction_verified": true,
+    "monochrome_2_to_minus_h_minus_1_fraction": 0.5,
+    "n": 1,
+    "p_mod": 5,
+    "sub_witness_characterization_verified": true,
+    "target_Av_mod_p": [
+      0
+    ],
+    "zero_tilde_anchor_fraction": 0.5
+  },
+  "p5_zero_column_invariance_control": {
+    "K": 3,
+    "all_support_cols_zero_mod_p": true,
+    "anchor_invariant_mod_p": true,
+    "hamming_weight_h": 2,
+    "has_proper_zero_sum_subset": true,
+    "invariance_iff_zero_columns_verified": true,
+    "minimal_witness_exact_monochrome_fraction_verified": true,
+    "monochrome_2_to_minus_h_minus_1_fraction": 0.5,
+    "n": 1,
+    "p_mod": 5,
+    "sub_witness_characterization_verified": true,
+    "target_Av_mod_p": [
+      0
+    ],
+    "zero_tilde_anchor_fraction": 1.0
+  },
+  "p7_minimal_wt3_audit": {
+    "K": 3,
+    "all_support_cols_zero_mod_p": false,
+    "anchor_invariant_mod_p": false,
+    "hamming_weight_h": 3,
+    "has_proper_zero_sum_subset": false,
+    "invariance_iff_zero_columns_verified": true,
+    "minimal_witness_exact_monochrome_fraction_verified": true,
+    "monochrome_2_to_minus_h_minus_1_fraction": 0.25,
+    "n": 1,
+    "p_mod": 7,
+    "sub_witness_characterization_verified": true,
+    "target_Av_mod_p": [
+      0
+    ],
+    "zero_tilde_anchor_fraction": 0.25
+  },
+  "proof_status": "LOCAL_DERIVATION_REVIEW_PENDING_NOT_FORMALLY_VERIFIED",
+  "schema_version": "dcp-odd-prime-modulus-cnot-carry-shift-obstruction-v1",
+  "scope_constraints": {
+    "applies_to": "Binary CNOT witness compression over odd prime moduli Z_p (p >= 3)",
+    "controls_included": "Includes minimal wt=2 (p=5, fraction 1/2) and wt=3 (p=7, fraction 1/4) zero-sum witnesses, composite wt=4 sub-witness escape (fraction 1/4 > 1/8), and zero-column anchor-invariance control.",
+    "does_not_claim": "Inability to use known non-zero syndrome-dependent effective labels tilde_A(v, y_syn) or qutrit/p-dit modular adders"
+  },
+  "theorem_id": "dcp_odd_prime_modulus_cnot_carry_shift_obstruction"
+}

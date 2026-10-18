@@ -1,0 +1,90 @@
+{
+  "schema_version": "2.0",
+  "contract_id": "dcp_clean_linear_witness_conditioned_labels_review_pending_v2",
+  "title": "Clean DCP Linear Witness Identities, Carry Conditions, and Conditioned-Label Controls",
+  "family": "dcp_clean_decoder_falsification",
+  "status": "corrected_review_pending_not_a_general_no_go",
+  "theorems": [
+    {
+      "id": "T1_2adic_hensel_disjoint_boolean_translate_obstruction",
+      "statement": "For every t >= 2 and every A in Z_{2^t}^{n x K} with an odd-determinant n x n pivot block A_P in GL_n(Z_{2^t}), the deterministic 2-adic witness map w_P(t) = A_P^{-1}(t - A_{bar{P}} u_0) mod 2^t lands in {0,1}^K for exactly 2^n of the 2^{nt} targets (verified coverage beta_A = 2^{-n(t-1)}, direct-filter success 2^{-(K-nt)} 2^{-2n(t-1)}), and for the parity target h = (2^{t-1}, 0, ..., 0) satisfies T_valid intersect (T_valid + h) = empty, yielding an identically zero forward-SWAP observable (Adv_SWAP = 0) across all secrets S in Z_{2^t}^n."
+    },
+    {
+      "id": "T2_bitwise_f2_rref_carry_parity_vanishing_criterion",
+      "statement": "For any F_2-right inverse R_{F_2} in F_2^{K x (nt)} of the stacked bit-matrix M_{F_2} in F_2^{(nt) x K}, the CNOT witness candidate w(t) = R_{F_2} bits(t) mod 2 in {0,1}^K satisfies (A w(t))_ell^{(b)} = t_ell^{(b)} XOR (c_ell^{(b)}(w(t)) mod 2), so A w(t) = t mod 2^t holds if and only if all n(t-1) intermediate carry parities c_ell^{(b)}(w(t)) mod 2 vanish simultaneously."
+    },
+    {
+      "id": "T3_disjoint_support_kernel_linearization_with_even_labels",
+      "statement": "Pairwise-disjoint nonzero directions of weight >=2 give m <= floor(K/2) and exact affine Boolean subset-sum linearization. Effective columns are even because the directions lie in ker(A mod 2). They cannot be IID uniform on the full group. No source-average advantage decay is established; finite conditional parity overlap and the probability 2^(m-K) of selecting one affine subspace are recorded separately."
+    }
+  ],
+  "test_instances": [
+    {
+      "instance_id": "n1_t3_K3_clean_dcp_obstruction",
+      "n": 1,
+      "t": 3,
+      "K": 3,
+      "A_hensel": [[3, 3, 6]],
+      "A_f2_rref": [[1, 3, 4]],
+      "disjoint_kernel_A": [[1, 3, 5, 7]],
+      "disjoint_kernel_x0": [0, 0, 0, 0],
+      "disjoint_kernel_V": [[1, 1, 0, 0], [0, 0, 1, 1]]
+    },
+    {
+      "instance_id": "n1_t4_K4_clean_dcp_obstruction",
+      "n": 1,
+      "t": 4,
+      "K": 4,
+      "A_hensel": [[1, 12, 10, 7]],
+      "A_f2_rref": [[11, 13, 1, 2]],
+      "disjoint_kernel_A": [[3, 5, 9, 15]],
+      "disjoint_kernel_x0": [1, 0, 0, 1],
+      "disjoint_kernel_V": [[1, 1, 0, 0], [0, 0, 1, 1]]
+    },
+    {
+      "instance_id": "n1_t5_K5_clean_dcp_obstruction",
+      "n": 1,
+      "t": 5,
+      "K": 5,
+      "A_hensel": [[5, 14, 9, 20, 3]],
+      "A_f2_rref": [[1, 2, 4, 15, 24]],
+      "disjoint_kernel_A": [[1, 7, 11, 19, 2, 6]],
+      "disjoint_kernel_x0": [0, 1, 0, 0, 0, 0],
+      "disjoint_kernel_V": [[1, 1, 0, 0, 0, 0], [0, 0, 1, 1, 0, 0]]
+    },
+    {
+      "instance_id": "n2_t3_K6_clean_dcp_obstruction",
+      "n": 2,
+      "t": 3,
+      "K": 6,
+      "A_hensel": [
+        [5, 6, 5, 6, 4, 1],
+        [6, 3, 4, 2, 1, 7]
+      ],
+      "A_f2_rref": [
+        [3, 0, 5, 1, 3, 1],
+        [4, 3, 3, 4, 1, 3]
+      ],
+      "disjoint_kernel_A": [
+        [1, 3, 2, 6, 5, 7],
+        [3, 5, 1, 1, 2, 6]
+      ],
+      "disjoint_kernel_x0": [1, 0, 0, 1, 0, 0],
+      "disjoint_kernel_V": [
+        [1, 1, 0, 0, 0, 0],
+        [0, 0, 1, 1, 0, 0]
+      ]
+    }
+  ],
+  "asymptotic_scaling_grid": [
+    {"n": 8, "t": 16, "K": 128},
+    {"n": 16, "t": 24, "K": 384},
+    {"n": 32, "t": 40, "K": 1280},
+    {"n": 64, "t": 72, "K": 4608}
+  ],
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  }
+}

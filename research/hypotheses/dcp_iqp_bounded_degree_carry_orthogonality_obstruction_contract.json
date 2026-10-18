@@ -1,0 +1,81 @@
+{
+  "schema_version": "1.0",
+  "contract_id": "dcp_iqp_bounded_degree_carry_orthogonality_obstruction_v1",
+  "title": "Clean and Noisy DCP IQP / Polynomial-Phase Readout: Directional-Derivative Structure, Carry-Polynomial Degree 2^{t-1}, and Sparse-Row Advantage Bounds",
+  "family": "dcp_clean_decoder_falsification",
+  "status": "locked_before_theorems",
+  "theorems": [
+    {
+      "id": "T1_iqp_directional_derivative_matrix_and_row_sparsity",
+      "statement": "For any Boolean polynomial P : F_2^K -> F_2 of degree <= d and non-zero mask u in {0,1}^K \\ {0}, O_{P, u} = D_P X(u) D_P^dagger has exact entries O_{P, u}[x, y] = (-1)^{P(x) XOR P(x XOR u)} 1[y == x XOR u], row degree 1, and directional derivative degree deg_{F_2}(Delta_u P) <= max(0, d - 1)."
+    },
+    {
+      "id": "T2_lucas_carry_degree_orthogonality",
+      "statement": "On w = 2^{t-1} variables, the MSB carry indicator C_{t-1}(x) = binom(wt_H(x), 2^{t-1}) mod 2 has exact F_2-algebraic degree 2^{t-1} (full-product ANF monomial), so for every Boolean polynomial Q : F_2^w -> F_2 of degree < 2^{t-1} (including Delta_u P for deg(P) <= 2^{t-1}), the top-degree ANF coefficient of Q(x) XOR C_{t-1}(x) is 1 != 0 and sum_{x in {0,1}^w} Q(x) mod 2 == 0."
+    },
+    {
+      "id": "T3_clean_source_average_and_adaptive_sparse_row_bounds",
+      "statement": "For any M_terms label-independent IQP strings (P_j, u_j) with weights |w_j| <= 1, E_A[|Adv(O; A)|] <= (1/2) sum_j |w_j| v^{wt_H(u_j)} 2^{-nt} <= M_terms / (2 * 2^{nt}) even on a clean source (v=1). For label-adaptive (P_j, u_j) with ||O||_op <= 1, O has row degree D <= M_terms and obeys |Adv(O; A)| <= min(1/2, sqrt(M_terms) v^{w_min(A)} / 2)."
+    }
+  ],
+  "test_instances": [
+    {
+      "instance_id": "n1_t2_K3_clean_iqp_quadratic_audit",
+      "n": 1,
+      "t": 2,
+      "q": 4,
+      "K": 3,
+      "visibility": "1",
+      "A": [[1, 2, 3]],
+      "u": [1, 1, 0],
+      "poly_monomials": [[0, 1], [1, 2]]
+    },
+    {
+      "instance_id": "n1_t3_K4_noisy_iqp_cubic_audit",
+      "n": 1,
+      "t": 3,
+      "q": 8,
+      "K": 4,
+      "visibility": "3/4",
+      "A": [[1, 3, 5, 7]],
+      "u": [1, 1, 1, 1],
+      "poly_monomials": [[0, 1, 2], [1, 3], [0]]
+    },
+    {
+      "instance_id": "n1_t3_K3_clean_source_census_iqp",
+      "n": 1,
+      "t": 3,
+      "q": 8,
+      "K": 3,
+      "visibility": "1",
+      "A": [[2, 3, 7]],
+      "u": [1, 0, 1],
+      "poly_monomials": [[0, 2], [1, 2]]
+    },
+    {
+      "instance_id": "n2_t2_K4_vector_noisy_iqp_audit",
+      "n": 2,
+      "t": 2,
+      "q": 4,
+      "K": 4,
+      "visibility": "1/2",
+      "A": [
+        [1, 1, 2, 3],
+        [2, 2, 1, 1]
+      ],
+      "u": [1, 1, 0, 0],
+      "poly_monomials": [[0, 1], [2, 3]]
+    }
+  ],
+  "asymptotic_scaling_grid": [
+    {"n": 8, "t": 16, "K": 256, "M_terms": 64},
+    {"n": 16, "t": 24, "K": 768, "M_terms": 256},
+    {"n": 32, "t": 40, "K": 2560, "M_terms": 1024},
+    {"n": 64, "t": 72, "K": 9216, "M_terms": 4096}
+  ],
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  }
+}

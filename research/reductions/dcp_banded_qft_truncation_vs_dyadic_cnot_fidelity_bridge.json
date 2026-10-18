@@ -1,0 +1,67 @@
+{
+  "all_checks_passed": true,
+  "banded_qft_audits": [
+    {
+      "band_b": 1,
+      "dim_2_to_m": 16,
+      "exact_product_and_sublattice_iff_verified": true,
+      "expected_sublattice_size": 2,
+      "half_period_peak_probability": 1.0,
+      "m_wires": 4,
+      "max_formula_error": 9.992007221626409e-16,
+      "odd_k0_1_peak_probability": 0.4105334745170029,
+      "sublattice_modulus_2_to_m_minus_b": 8,
+      "unit_fidelity_frequency_count": 2
+    },
+    {
+      "band_b": 2,
+      "dim_2_to_m": 16,
+      "exact_product_and_sublattice_iff_verified": true,
+      "expected_sublattice_size": 4,
+      "half_period_peak_probability": 1.0,
+      "m_wires": 4,
+      "max_formula_error": 4.440892098500626e-16,
+      "odd_k0_1_peak_probability": 0.8210669490340056,
+      "sublattice_modulus_2_to_m_minus_b": 4,
+      "unit_fidelity_frequency_count": 4
+    },
+    {
+      "band_b": 3,
+      "dim_2_to_m": 16,
+      "exact_product_and_sublattice_iff_verified": true,
+      "expected_sublattice_size": 8,
+      "half_period_peak_probability": 1.0,
+      "m_wires": 4,
+      "max_formula_error": 2.220446049250313e-16,
+      "odd_k0_1_peak_probability": 0.9619397662556434,
+      "sublattice_modulus_2_to_m_minus_b": 2,
+      "unit_fidelity_frequency_count": 8
+    },
+    {
+      "band_b": 4,
+      "dim_2_to_m": 16,
+      "exact_product_and_sublattice_iff_verified": true,
+      "expected_sublattice_size": 16,
+      "half_period_peak_probability": 1.0,
+      "m_wires": 4,
+      "max_formula_error": 0.0,
+      "odd_k0_1_peak_probability": 1.0,
+      "sublattice_modulus_2_to_m_minus_b": 1,
+      "unit_fidelity_frequency_count": 16
+    }
+  ],
+  "certificate_sha256_16": "e3f5cefc607893d0",
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "proof_status": "LOCAL_DERIVATION_REVIEW_PENDING_NOT_FORMALLY_VERIFIED",
+  "schema_version": "dcp-banded-qft-truncation-vs-dyadic-cnot-fidelity-bridge-v1",
+  "scope_constraints": {
+    "applies_to": "Band-b truncated inverse QFT_{2^m}^{(b)_dagger} on m-wire dyadic progression phase states",
+    "controls_included": "Includes exhaustive verification across m=4, b=1..4 showing P(K_0|K_0) == 1.0 iff K_0 in 2^{m-b} Z_{2^m}, exact b=1 unit survival on the half-period target K_0=8, and odd-frequency leakage P(1|1) = 0.4106 at b=1.",
+    "does_not_claim": "Unit fidelity of b=1 (H^{tensor m}) outside the half-period sublattice {0, 2^{m-1}}"
+  },
+  "theorem_id": "dcp_banded_qft_truncation_vs_dyadic_cnot_fidelity_bridge"
+}

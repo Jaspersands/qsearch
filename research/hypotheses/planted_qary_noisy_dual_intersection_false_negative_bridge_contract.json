@@ -1,0 +1,28 @@
+{
+  "contract_id": "planted-qary-noisy-dual-intersection-false-negative-bridge-contract",
+  "title": "Planted q-ary Noisy Dual-Intersection False-Negative Bridge: Weight-Stratified True-Codeword Survival, Universal Spurious Noise-Invariance, and Primal Minimum-Distance Scaling",
+  "version": "1.0.0",
+  "scope": "planted_qary_noisy_dual_qft_intersection_false_negative_rate_spurious_invariance_and_primal_distance_scaling",
+  "theorems": [
+    {
+      "id": "T1",
+      "name": "Exact Weight-Power Survival Law and False-Negative Rate on B",
+      "statement": "Under m i.i.d. noisy QFT_q^(tensor n) dual samples u = (v + xi) mod q at noise rate gamma in [0, 1], any planted codeword b in B of Hamming weight wt_H(b) survives all m zero-syndrome checks with exact probability S_planted(wt_H(b); q, gamma, m) = (1/q + ((q-1)/q) * (1 - gamma)^(wt_H(b)))^m."
+    },
+    {
+      "id": "T2",
+      "name": "Universal Noise-Invariance of Non-Planted Spurious Survival on F_q^n \\ B",
+      "statement": "For every non-planted vector x in F_q^n \\ B, every noise rate gamma in [0, 1], and every m >= 1, Pr[x in B_hat_(m, gamma)] = q^(-m) identically, so E[|B_hat_(m, gamma) \\ B|] = (q^n - q^d) q^(-m) is independent of gamma."
+    },
+    {
+      "id": "T3",
+      "name": "Primal Minimum-Distance Survival-to-Spurious Frontier",
+      "statement": "For any gamma in (0, 1), the m-sample survival-to-spurious ratio Pr[b in B_hat_(m, gamma)] / q^(-m) = (1 + (q - 1)(1 - gamma)^(wt_H(b)))^m over non-zero b in B \\ {0} is maximized at minimum-weight planted codewords wt_H(b) = d_min(B) = min_(b in B \\ {0}) wt_H(b)."
+    }
+  ],
+  "guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  }
+}

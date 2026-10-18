@@ -1,0 +1,33 @@
+{
+  "contract_id": "native_Z4_bounded_tree_clean_XOR_F_v1",
+  "experiment_id_for_mechanical_integration": "EXP-DHS-DCP-NATIVE-TREE-RECEIVER",
+  "status": "CLEAN_BASIS_PROGRAM_EXTERNAL_REVIEW_PENDING",
+  "mechanism": "Static componentwise Z4 signed-list tree, reversible compaction and unique root join",
+  "source_model": "n=b(a+1), k=2^a disjoint physical blocks, L=4^b distinct fixed supports per leaf",
+  "overflow_rule": "Reject whole attempt on ANY overflow; never silently truncate and accept",
+  "clean_basis_wire_interpreter_implemented": true,
+  "hardware_gate_export_implemented": false,
+  "time_and_coherent_space": "O(k*C^2*poly(n,m,log C)), including retained comparison/count histories",
+  "source_mass_obligations": [
+    "IID uniform original coarse labels before source or syndrome postselection",
+    "Independent complete unfiltered affine mark seed",
+    "Capacity at least 256*ceil(M)*k*L for the inherited lower bound",
+    "Reciprocal endpoint check, nonzero higher label check and full cleanup"
+  ],
+  "falsifiers": [
+    "Any disagreement with full native graph on nonoverflow inputs",
+    "Any nonzero workspace after XOR-F, including failure or nonzero target wires",
+    "Any accepted overflow or one-sided proposal promoted to a physical pair",
+    "Any use of packed cyclic addition instead of componentwise Z4 addition",
+    "Any data-dependent slot count, erased comparator history or free QRAM assumption"
+  ],
+  "remaining_proof_obligations": [
+    "Independent mathematical review of native moment and overflow bounds",
+    "Explicit low-level gate export if physical gate counts are to be claimed",
+    "Actual natural-source joint noise and independent batch supply",
+    "Escape from one-output growing-depth recursion, hard reduction and final decoder",
+    "Matched known classical and quantum sieve comparison"
+  ],
+  "accepted_speedup_candidate": false,
+  "novelty_claim": false
+}

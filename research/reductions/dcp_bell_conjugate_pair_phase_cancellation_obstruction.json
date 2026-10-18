@@ -1,0 +1,202 @@
+{
+  "all_checks_passed": true,
+  "certificate_sha256_16": "ca404659bdb8fb34",
+  "distinct_header_audit": {
+    "a1": [
+      1,
+      3
+    ],
+    "a2": [
+      2,
+      5
+    ],
+    "closed_form_probabilities": {
+      "Phi_minus": 0.15100505063388334,
+      "Phi_plus": 0.34899494936611664,
+      "Psi_minus": 0.34899494936611664,
+      "Psi_plus": 0.15100505063388336
+    },
+    "exact_law_and_sign_invariance": true,
+    "explicit_probabilities": {
+      "Phi_minus": 0.1510050506338833,
+      "Phi_plus": 0.3489949493661166,
+      "Psi_minus": 0.3489949493661166,
+      "Psi_plus": 0.1510050506338833
+    },
+    "gamma_1": 0.8,
+    "gamma_2": 0.7,
+    "max_formula_error": 5.551115123125783e-17,
+    "max_sign_inversion_diff": 5.551115123125783e-17,
+    "q": 8,
+    "s": [
+      3,
+      1
+    ]
+  },
+  "fixed_header_countercontrol": {
+    "all_individual_x_bits_are_fair": true,
+    "bell_total_variation": 0.9999999999999998,
+    "does_not_support_simulation_at_given_headers": true,
+    "headers": [
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    "q": 4,
+    "secrets": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        3
+      ]
+    ]
+  },
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "matched_header_swap_test_controls": {
+    "s_1": {
+      "a1": [
+        3,
+        5
+      ],
+      "a2": [
+        3,
+        5
+      ],
+      "closed_form_probabilities": {
+        "Phi_minus": 0.24999999999999997,
+        "Phi_plus": 0.25,
+        "Psi_minus": 0.16,
+        "Psi_plus": 0.33999999999999997
+      },
+      "exact_law_and_sign_invariance": true,
+      "explicit_probabilities": {
+        "Phi_minus": 0.24999999999999992,
+        "Phi_plus": 0.24999999999999997,
+        "Psi_minus": 0.15999999999999998,
+        "Psi_plus": 0.3399999999999999
+      },
+      "gamma_1": 0.6,
+      "gamma_2": 0.6,
+      "max_formula_error": 5.551115123125783e-17,
+      "max_sign_inversion_diff": 2.7755575615628914e-17,
+      "q": 8,
+      "s": [
+        1,
+        2
+      ]
+    },
+    "s_2": {
+      "a1": [
+        3,
+        5
+      ],
+      "a2": [
+        3,
+        5
+      ],
+      "closed_form_probabilities": {
+        "Phi_minus": 0.25,
+        "Phi_plus": 0.25,
+        "Psi_minus": 0.16,
+        "Psi_plus": 0.33999999999999997
+      },
+      "exact_law_and_sign_invariance": true,
+      "explicit_probabilities": {
+        "Phi_minus": 0.24999999999999992,
+        "Phi_plus": 0.24999999999999997,
+        "Psi_minus": 0.15999999999999998,
+        "Psi_plus": 0.3399999999999999
+      },
+      "gamma_1": 0.6,
+      "gamma_2": 0.6,
+      "max_formula_error": 8.326672684688674e-17,
+      "max_sign_inversion_diff": 8.326672684688674e-17,
+      "q": 8,
+      "s": [
+        7,
+        4
+      ]
+    },
+    "swap_test_secret_independent": true
+  },
+  "proof_status": "LOCAL_DERIVATION_REVIEW_PENDING_NOT_FORMALLY_VERIFIED",
+  "random_header_transcript_simulation": [
+    {
+      "chosen_header_queries": 0,
+      "full_joint_law_verified": true,
+      "gamma_1": 0.8,
+      "gamma_2": 0.7,
+      "gamma_source": 0.8,
+      "max_full_joint_probability_error": 4.336808689942018e-19,
+      "q": 4,
+      "random_x_samples_per_bell_transcript": 1,
+      "secret": [
+        1,
+        3
+      ],
+      "total_simulated_mass": 1.0,
+      "transcripts_compared": 1024
+    },
+    {
+      "chosen_header_queries": 0,
+      "full_joint_law_verified": true,
+      "gamma_1": 0.6,
+      "gamma_2": 0.4,
+      "gamma_source": 1.0,
+      "max_full_joint_probability_error": 3.469446951953614e-18,
+      "q": 5,
+      "random_x_samples_per_bell_transcript": 1,
+      "secret": [
+        2
+      ],
+      "total_simulated_mass": 1.0,
+      "transcripts_compared": 100
+    },
+    {
+      "chosen_header_queries": 0,
+      "full_joint_law_verified": true,
+      "gamma_1": 0.0,
+      "gamma_2": 1.0,
+      "gamma_source": 0.0,
+      "max_full_joint_probability_error": 3.469446951953614e-18,
+      "q": 4,
+      "random_x_samples_per_bell_transcript": 1,
+      "secret": [
+        1
+      ],
+      "total_simulated_mass": 1.0,
+      "transcripts_compared": 64
+    }
+  ],
+  "schema_version": "dcp-bell-conjugate-pair-phase-cancellation-obstruction-v2",
+  "scope_constraints": {
+    "applies_to": "Two-copy Bell-basis measurements on single-qubit DCP phase states rho(a_1, s) tensor rho(a_2, s)",
+    "controls_included": "Includes both general distinct-header Bell probabilities and the matched-header swap-test control (a_1 == a_2) where P(Psi^+) = (1 + gamma^2)/4 is secret-independent.",
+    "does_not_claim": "Inability to estimate state purity gamma^2 on matched headers a_1 == a_2 or doubled-header cosines on Phi^pm"
+  },
+  "simulation_scope": {
+    "classical_DCP_solver_claimed": false,
+    "classical_work": "O(n log q) bit operations up to integer arithmetic and random sampling",
+    "excludes": [
+      "prespecified/correlated input headers",
+      "header-dependent coherence",
+      "additional header-correlated side information",
+      "unmeasured retained quantum outputs"
+    ],
+    "input": "IID uniform random-header X observations with fixed known coherence",
+    "output": "IID full Bell transcripts with synthetic independent uniform public headers"
+  },
+  "theorem_id": "dcp_bell_conjugate_pair_phase_cancellation_obstruction"
+}

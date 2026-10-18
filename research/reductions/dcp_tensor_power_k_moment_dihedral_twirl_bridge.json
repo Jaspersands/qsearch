@@ -1,0 +1,69 @@
+{
+  "active_ternary_collision_audit": {
+    "exact_ternary_twirl_law_verified": true,
+    "formula_error": 0.0,
+    "frob_sq_explicit_twirl": 0.007938,
+    "frob_sq_ternary_closed_form": 0.007938,
+    "max_imaginary_entry_abs": 5.7488212313232765e-18,
+    "n": 1,
+    "q_mod": 8,
+    "r_copies": 3
+  },
+  "all_checks_passed": true,
+  "certificate_sha256_16": "f12960ca6b3e4a20",
+  "collision_free_ternary_control": {
+    "exact_ternary_twirl_law_verified": true,
+    "formula_error": 8.459790331160331e-34,
+    "frob_sq_explicit_twirl": 8.459790331160331e-34,
+    "frob_sq_ternary_closed_form": 0.0,
+    "max_imaginary_entry_abs": 7.300351078261611e-18,
+    "n": 1,
+    "q_mod": 8,
+    "r_copies": 2
+  },
+  "ensemble_frobenius_audits": [
+    {
+      "closed_form_mean_frob_sq": 0.07260299999999999,
+      "empirical_mean_frob_sq": 0.07260299999999997,
+      "exact_ensemble_identity_verified": true,
+      "formula_error": 1.3877787807814457e-17,
+      "n": 1,
+      "q_mod": 4,
+      "r_copies": 3,
+      "total_instances": 64
+    },
+    {
+      "closed_form_mean_frob_sq": 0.14262150000000004,
+      "empirical_mean_frob_sq": 0.14262149999999998,
+      "exact_ensemble_identity_verified": true,
+      "formula_error": 5.551115123125783e-17,
+      "n": 1,
+      "q_mod": 3,
+      "r_copies": 3,
+      "total_instances": 27
+    },
+    {
+      "closed_form_mean_frob_sq": 0.105712890625,
+      "empirical_mean_frob_sq": 0.105712890625,
+      "exact_ensemble_identity_verified": true,
+      "formula_error": 0.0,
+      "n": 2,
+      "q_mod": 2,
+      "r_copies": 2,
+      "total_instances": 16
+    }
+  ],
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "proof_status": "LOCAL_DERIVATION_REVIEW_PENDING_NOT_FORMALLY_VERIFIED",
+  "schema_version": "dcp-tensor-power-k-moment-dihedral-twirl-bridge-v1",
+  "scope_constraints": {
+    "applies_to": "Secret-twirled r-copy DCP density operators bar_rho^{(r)}(A) = E_s[otimes_{j=1}^r rho(a_j, s, gamma_j)]",
+    "controls_included": "Includes collision-free ternary control (a=[1,3] mod 8 with bar_rho^{(2)} == I_4/4), active 3-copy ternary collision audit (a=[1,2,3] mod 8), and exact ensemble identity (prod(1+gamma_j^2)-1)/(2^r q^n) across dyadic q=4,2^2 and prime q=3.",
+    "does_not_claim": "Single-secret distinguishability bounds when s is fixed rather than twirled"
+  },
+  "theorem_id": "dcp_tensor_power_k_moment_dihedral_twirl_bridge"
+}

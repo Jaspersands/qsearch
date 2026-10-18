@@ -1,0 +1,14 @@
+{
+  "hypothesis_id": "dcp_ternary_signed_witness_cnot_routing_bridge",
+  "title": "DCP Ternary Signed-Support Witness Extraction and CNOT-Syndrome Routing Bridge",
+  "status": "VERIFIED_SCOPED_BRIDGE",
+  "claims": [
+    "Every ternary zero-sum witness delta in {-1, 0, +1}^K with support S = {r_0 < r_1 < ... < r_{w-1}} and delta_{r_0} = +1 is realized on the unique w-wire CNOT-star syndrome branch d_j^*(delta) = (1 - delta_{r_j})/2 with Born probability 2^{-(w-1)}.",
+    "Whenever 2^K > q^n, Pigeonhole Principle guarantees at least one non-trivial ternary zero-sum witness delta = x - y in {-1, 0, +1}^K \\ {0^K}, even when the binary zero-sum witness set is empty."
+  ],
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  }
+}

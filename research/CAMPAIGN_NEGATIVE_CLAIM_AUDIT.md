@@ -1,13 +1,15 @@
-# Campaign Negative Claims: Three General Conclusions Retracted
+# Campaign Negative Claims: Five General Conclusions Retracted
 
-Reviewed2026-10-13. This is a scoped integrity correction, NOT a positive
+Reviewed2026-10-13; extended2026-10-16. This is a scoped integrity correction, NOT a positive
 quantum speedup, a comprehensive audit of61 investigations, or a rejection
 of the underlying literature. The original records and numerical checks are
-preserved. Three broad negatives are removed from active search guidance:
+preserved. Five broad negatives are removed from active search guidance:
 
 - `NEG-QUANTUM-ANNEALING-SPECTRAL-GAP-BARRIER`
 - `NEG-QUANTUM-SIMULATION-TENSOR-NETWORK-HORIZON`
 - `NEG-QUANTUM-WALKS-SPATIAL-TOPOLOGY-BARRIER`
+- `NEG-EASTIN-KNILL-NON-CLIFFORD-FAULT-TOLERANT-BARRIER`
+- `NEG-QUANTUM-ERGODICITY-ETH-LOCAL-OBSERVABLE-BARRIER`
 
 Their full original records live in
 `registry/quarantined_campaign_negatives.json`. Ordinary registry loading
@@ -114,13 +116,95 @@ search advantage: a target fraction1/N still takes orderN random samples,
 versus a square-root quantum query scale in the appropriate model. Both
 being polynomial is not a proof that their complexities match.
 
+## Fixed-Code Transversal Limits Are Not A Distillation Mandate
+
+The [Eastin-Knill theorem](https://arxiv.org/abs/0811.4262) restricts universal
+transversal encoded gates for a fixed error-detecting code (modulo physically
+irrelevant global phases). It does not require magic state distillation in
+every fault-tolerant implementation. [Paetznick-Reichardt](https://arxiv.org/abs/1304.3709)
+give a universal construction using transversal operations AND fault-tolerant
+error correction without state distillation. This does not contradict the
+fixed-code transversal-only theorem or eliminate the cost of error correction.
+The campaign record's narrowly stated transversal-only obstruction can be
+retained in a properly scoped replacement; its architectural mandate cannot.
+
+Its Steane example also checks the WRONG stabilizer type. Transversal diagonal
+T commutes with every Z stabilizer, so their expectations cannot change. In
+the eight-word simplex support of logical zero, T^7 assigns phase+1 to zero
+and-1 to each nonzero weight-four word. A nonzero simplex X stabilizer pairs
+zero with its weight-four partner, giving expectation(6-2)/8=1/2 instead of1.
+Z expectations remain1. The conclusion that T^7 fails on THIS code is valid;
+the claimed Z-stabilizer proof was not.
+
+The 15-to-1 small-error expansion is not an exact threshold equation. For the
+ideal independent phase-fault/check model, enumerate all2^15 error masks,
+accept those with XOR of their nonzero four-bit positions zero, and count
+odd accepted weight as logical error. The exact map, with v=1-2p, is
+
+    p_out=(1+15v^8-15v^7-v^15)/(2(1+15v^8)).
+
+At p=3/20, the cubic approximation35p^3=189/1600<p predicts purification,
+but the exact output624658088490057/3729440300000000>p does NOT purify.
+This directly refutes treating1/sqrt(35) as the exact threshold. The
+[Bravyi-Kitaev protocol](https://arxiv.org/abs/quant-ph/0403025) is context;
+the enumerator and exact counterexample are reconstructed locally. No
+hardware threshold or universal lower bound is inferred.
+
+Finally polylogarithmic overhead is not exponential overhead. For search
+size N=2^(2n), a stipulated per-query overhead n^3 changes sqrt(N) to
+n^3*sqrt(N), leaving classical/quantum work ratio2^n/n^3 unbounded. This
+conditional accounting example does not certify a hardware crossover or
+assume every architecture has that overhead. It refutes the universal
+asymptotic-erasure inference, not the importance of fault-tolerant costs.
+
+## ETH Premises And Measurement Access Must Be Named
+
+Nonintegrability does not establish strong ETH for EVERY eigenstate.
+[Shiraishi-Mori](https://arxiv.org/abs/1702.08227) construct local Hamiltonians
+with no local conserved quantities but embedded nonthermal eigenstates.
+This does not refute conditional ETH predictions for models/states satisfying
+their premises. Six-qubit Ising comparisons are not proofs of a universal
+thermodynamic or computational bound.
+
+A small mean difference alone does not imply an inverse-square sample lower
+bound. Bernoulli(0) versus Bernoulli(delta), delta=2^-n, can be distinguished
+by asking whether ANY positive event appears in T=2^n independent samples.
+Equal-prior success is1-(1-delta)^T/2>=1-1/(2e), despite T being only1/delta,
+not1/delta^2. The missing variance-away-from-zero/likelihood premise matters.
+Hoeffding gives a sufficient sample bound, not a universal necessary bound.
+This counterexample does not itself make thermal eigenstate inference easy.
+
+Local indistinguishability also does not block arbitrary joint records or
+controlled-evolution phase estimation. GHZ+ and GHZ- have identical reduced
+density matrices on EVERY proper subsystem, but H on each wire followed by
+all Z measurements and one classical parity distinguishes them in one shot.
+They are eigenstates of the efficiently measurable Pauli product X^n with
+eigenvalues+1,-1. This is a counterexample to the access implication, NOT a
+counterexample to ETH in a local chaotic Hamiltonian and not a new algorithm.
+The general ETH-to-QPE impossibility inference in the active record is invalid.
+
+The normalized full identity is the infinite-temperature ensemble, not an
+arbitrary energy-window microcanonical state. Computing its Pauli trace does
+not solve general thermal expectation estimation. A defensible local-measurement
+lower bound needs an explicit state family, promises on its density operators,
+permitted sequential/collective channels, and a controlled relative-entropy or
+trace-distance calculation. None of these broad exclusions are reinstated.
+
 ## Evidence And Next Work
 
 The producer `theorems/campaign_negative_claim_audit.py --write` checks exact
-matrix identities, preserves original-record hashes, and emits14 structural
+matrix identities, preserves original-record hashes, and emits25 structural
 countercontrols. These are calibration counterexamples, never toy algorithm
 candidates. Tests cover the counterexamples and deny reintroduction of the
 quarantined IDs into search guidance.
+
+For the two2026-10-16 extensions, run
+`python theorems/campaign_negative_claim_audit.py --quarantine-reviewed --write`.
+The writer preserves complete originals in the existing quarantine, rejects
+changed originals, checks for concurrent changes and excludes the IDs from
+active loading before removing their raw active copies. Re-running is safe.
+Ordinary registry upserts continue to reject quarantined IDs. This is a
+specific mathematical review, not blanket removal of unreviewed negatives.
 
 Next, audit the remaining campaign claims individually: identify quantifiers,
 input size, access model, approximation norm, source theorem and its actual

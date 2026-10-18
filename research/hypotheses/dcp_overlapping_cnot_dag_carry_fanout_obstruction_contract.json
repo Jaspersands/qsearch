@@ -1,0 +1,15 @@
+{
+  "hypothesis_id": "dcp_overlapping_cnot_dag_carry_fanout_obstruction",
+  "title": "DCP Overlapping CNOT DAG Carry Fanout Obstruction",
+  "status": "V1_NECESSITY_RETRACTED_V2_DERIVATION_REVIEW_PENDING",
+  "claims": [
+    "Overlapping CNOT DAG compression x(u; x_0) = x_0 xor V u introduces multilinear carry cross-terms (-2)^{|J|-1} prod_{j in J} u_j on shared rows |S_r| >= 2.",
+    "Cross-terms vanish for all (x_0, u) mod 2^t iff 4*A_{.,r} == 0 on each shared row AND 2*sum_{r:j,k in S_r} A_{.,r} == 0 on every wire pair, all modulo 2^t.",
+    "The old termwise 2*A == 0 condition is sufficient but not necessary; duplicate shared rows can cancel even for full-column-rank V."
+  ],
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  }
+}

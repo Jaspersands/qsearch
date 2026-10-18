@@ -36480,6 +36480,2419 @@
       ]
     ]
   },
+  "linear_decoder_control": {
+    "labels": [
+      [
+        0,
+        2,
+        2,
+        1,
+        2
+      ],
+      [
+        1,
+        1,
+        0,
+        2,
+        0
+      ]
+    ],
+    "dimension": 2,
+    "samples": 5,
+    "degree": 3,
+    "decoder_offset": [
+      0,
+      0
+    ],
+    "decoder_mode": "linear-right-inverse",
+    "decoder_basis_table_status_counts": {
+      "LINEAR_ERASURE_NOT_BINARY_ERROR_DECODING": 243
+    },
+    "exact_decoder_error_probability": {
+      "numerator": 1,
+      "denominator": 1
+    },
+    "exact_missing_coherent_vector_norm_squared": {
+      "numerator": 9,
+      "denominator": 16
+    },
+    "pointwise_failure_probability_upper_bound": {
+      "numerator": 1,
+      "denominator": 1
+    },
+    "executed_valid_signed_zero_sum_probability": 0.24999999999999997,
+    "executed_nonempty_boolean_zero_sum_probability": 0.24999999999999997,
+    "unheralded_state_norm_squared": 1.0,
+    "secret_zero_register_probability": 0.0,
+    "failure_branches_discarded_or_renormalized": false,
+    "verified_signed_witnesses": [
+      [
+        1,
+        1,
+        2,
+        2,
+        2
+      ],
+      [
+        2,
+        2,
+        1,
+        1,
+        1
+      ]
+    ],
+    "verified_boolean_witnesses": [
+      [
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      [
+        1,
+        1,
+        0,
+        0,
+        1
+      ]
+    ],
+    "random_signed_guess_zero_sum_probability": {
+      "numerator": 1,
+      "denominator": 16
+    },
+    "exhaustive_classical_reference_finds_a_witness": true,
+    "exhaustive_classical_reference_is_scalable_baseline": false,
+    "specialized_full_target_source": {
+      "original_labels": [
+        [
+          0,
+          2,
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          2
+        ]
+      ],
+      "independent_full_target": [
+        2,
+        2
+      ],
+      "verified_target_witnesses": [
+        [
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          0,
+          0
+        ]
+      ],
+      "executed_unconditional_target_success": 0.24999999999999997,
+      "last_column_guaranteed_in_mapped_zero_witness": true,
+      "hidden_marker_inclusion_probability_loss": false,
+      "generic_zero_solver_automatically_has_this_property": false,
+      "extra_public_arithmetic_columns": 1,
+      "extra_known_prepared_qutrits": 1,
+      "extra_unknown_native_DCP_states_assumed": false,
+      "empty_original_witness_allowed_only_for_zero_target": true
+    },
+    "ideal_coherent_vector_norm_squared_NOT_a_normalized_physical_state": {
+      "numerator": 9,
+      "denominator": 16
+    },
+    "explicit_simulator_dimension": 2187,
+    "basis_table_is_only_exponential_verification_not_runtime_implementation": true,
+    "scalable_reversible_decoder_circuit_compiled": false,
+    "native_growing_modulus_DCP_solver": false,
+    "candidate_record_accepted": false,
+    "speedup_claim_allowed": false,
+    "novelty_claim": false,
+    "decoder_basis_table": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        2
+      ]
+    ],
+    "linear_erasure_classical_comparison": {
+      "right_inverse": [
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "exact_classical_signed_witness_success": {
+        "numerator": 1,
+        "denominator": 4
+      },
+      "actual_full_output_distribution_max_error": 2.7755575615628914e-17,
+      "all_classical_output_probabilities": [
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 1,
+          "denominator": 8
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 1,
+          "denominator": 8
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 1,
+          "denominator": 8
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 1,
+          "denominator": 8
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 1,
+          "denominator": 8
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 1,
+          "denominator": 8
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 1,
+          "denominator": 8
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 1,
+          "denominator": 8
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        }
+      ],
+      "actual_quantum_output_probabilities": [
+        4.965116195337005e-103,
+        3.711618602733234e-70,
+        3.7116186027332327e-70,
+        1.9233534833448504e-102,
+        1.4846474410932936e-69,
+        1.484647441093293e-69,
+        1.7849276172079631e-102,
+        1.4846474410932933e-69,
+        1.484647441093293e-69,
+        1.7570265869849763e-68,
+        8.03982736192599e-68,
+        3.07855398408669e-36,
+        1.1251569736776964e-67,
+        2.6309550741841073e-67,
+        1.231421593634676e-35,
+        4.649338697564241e-68,
+        2.1470430799166684e-67,
+        1.2314215936346756e-35,
+        1.6628934006288206e-68,
+        3.07855398408669e-36,
+        6.301617202806192e-68,
+        2.7583218021801e-68,
+        1.231421593634676e-35,
+        2.9616227734181237e-67,
+        1.961103136500297e-68,
+        1.2314215936346756e-35,
+        4.035234598899794e-67,
+        2.3726889373814473e-67,
+        1.440370299194502e-36,
+        1.4403702991945025e-36,
+        3.320353814750718e-67,
+        4.709059639712654e-36,
+        4.709059639712657e-36,
+        2.7727625258448982e-67,
+        3.3833974673010386e-37,
+        3.383397467301047e-37,
+        7.144898032734624e-35,
+        1.243488334731961e-35,
+        1.159239142380915e-34,
+        2.108207259120728e-34,
+        1.7333369499485123e-33,
+        0.12500000000000003,
+        9.749142155685575e-35,
+        3.3125109512686416e-35,
+        1.3956799636528094e-33,
+        3.385279507867923e-35,
+        4.565962721042616e-34,
+        8.449150772577175e-35,
+        2.06830594790838e-34,
+        0.12500000000000003,
+        4.333342374871281e-33,
+        2.1779959948082933e-34,
+        7.640695139347398e-34,
+        9.709358765009256e-35,
+        1.3374513502689145e-36,
+        4.639961644947341e-36,
+        3.3953353430169133e-37,
+        1.3374513502689154e-36,
+        2.3976739885679836e-36,
+        2.5104449834605414e-37,
+        1.3374513502689132e-36,
+        3.2255213326729514e-36,
+        7.898341596601701e-36,
+        6.649638062825665e-35,
+        8.450848365462458e-36,
+        4.6148847076545266e-35,
+        8.937320529291166e-36,
+        1.2679461962121095e-35,
+        1.3727693519227758e-33,
+        2.748609876699739e-34,
+        4.718528363748728e-33,
+        0.125,
+        1.5326435776500447e-34,
+        3.799675441917528e-35,
+        1.238183081072769e-34,
+        1.2687297755781646e-35,
+        1.4882890944521782e-33,
+        3.075041103280518e-35,
+        4.2203455868251345e-35,
+        0.125,
+        3.4666738998970245e-33,
+        5.604773123072394e-35,
+        3.8006839309712203e-38,
+        3.8006839309712323e-38,
+        3.80068393097122e-38,
+        3.800683930971228e-38,
+        2.1465526877172196e-35,
+        3.8006839309712323e-38,
+        9.390230624246967e-36,
+        3.8006839309712166e-38,
+        1.2776240204004299e-35,
+        1.1852400011314166e-67,
+        3.1409098155508997e-67,
+        7.391878056671599e-67,
+        2.4925865332619476e-65,
+        6.885015789242236e-34,
+        2.79930053183841e-67,
+        7.814983597742126e-34,
+        2.522260182467447e-65,
+        2.775486668735018e-34,
+        4.3793242610730666e-36,
+        2.989726357408923e-36,
+        1.8766259096406776e-34,
+        1.1555579666323417e-33,
+        0.125,
+        1.6450287067378019e-35,
+        9.377812268686569e-35,
+        5.473392244558417e-34,
+        2.743822404719593e-34,
+        2.0820133128113043e-35,
+        1.4770273717743328e-35,
+        1.6445394495868798e-35,
+        1.1040152478697203e-35,
+        2.8894410623886954e-35,
+        1.2327882234695166e-35,
+        1.460289274256179e-35,
+        1.7055404101534542e-35,
+        3.0005891844504077e-35,
+        1.5024045084450202e-35,
+        5.734236485999063e-35,
+        2.866561177847654e-35,
+        1.1105349889969317e-34,
+        6.701114769095964e-34,
+        3.3525876009027983e-35,
+        1.4925958750695244e-35,
+        8.927686610470389e-34,
+        1.1511721321803938e-34,
+        5.707404909984406e-35,
+        1.1047427168737649e-34,
+        1.0209415966618722e-34,
+        8.377614444863525e-34,
+        2.1689417904743598e-33,
+        2.7934941435113346e-34,
+        9.525001733556395e-34,
+        0.12499999999999999,
+        5.208950450062195e-36,
+        1.3374513502689159e-36,
+        1.3374513502689139e-36,
+        6.301671191533759e-36,
+        1.3374513502689157e-36,
+        6.987744754148204e-67,
+        7.871873777170398e-36,
+        4.498972298552828e-67,
+        1.3374513502689127e-36,
+        1.337451350268914e-36,
+        5.888661461899265e-36,
+        2.5541361728249166e-66,
+        1.337451350268917e-36,
+        7.450996653854031e-34,
+        2.6441260130128972e-36,
+        2.0698570106112192e-66,
+        3.035053280653035e-35,
+        6.420074248166038e-34,
+        1.3374513502689135e-36,
+        2.410350100411306e-66,
+        2.6017540519140866e-37,
+        2.792679923408412e-66,
+        2.6441260130128955e-36,
+        1.8168411950153197e-33,
+        1.3374513502689145e-36,
+        6.420074248166038e-34,
+        6.8175276759047e-34,
+        1.6284857926840833e-37,
+        3.800683930971224e-38,
+        3.800683930971225e-38,
+        3.800683930971221e-38,
+        3.8006839309712166e-38,
+        7.91716153828504e-37,
+        3.800683930971222e-38,
+        9.374868369117011e-36,
+        3.800683930971227e-38,
+        1.8941458678585988e-35,
+        1.145879650889915e-35,
+        4.1004884427106404e-35,
+        3.1418621177563175e-35,
+        1.1883543387186343e-33,
+        1.651837909986948e-34,
+        1.0474287992030014e-34,
+        0.12499999999999997,
+        1.2518544638517036e-33,
+        1.3627366683517663e-36,
+        5.3268110062881875e-68,
+        5.156279777590919e-67,
+        3.149415357120388e-66,
+        1.9584608475629585e-65,
+        9.462323180953724e-34,
+        7.010671894754898e-67,
+        8.620524781043653e-34,
+        4.161729301071287e-65,
+        1.1999246234050746e-35,
+        1.7891011917359528e-36,
+        1.7891011917359548e-36,
+        1.819727257984626e-35,
+        2.8615829779771078e-36,
+        1.8065993658681556e-36,
+        2.766660067901242e-35,
+        1.8065993658681562e-36,
+        3.3915221060326325e-36,
+        1.7891011917359524e-36,
+        1.0925494090518753e-35,
+        1.806599365868157e-36,
+        2.861582977977098e-36,
+        6.118228834645898e-34,
+        2.1688335888862208e-33,
+        1.8065993658681582e-36,
+        5.009964104414172e-34,
+        7.447262477894624e-36,
+        1.789101191735954e-36,
+        1.806599365868157e-36,
+        5.5144494624238015e-36,
+        1.806599365868151e-36,
+        2.168833588886221e-33,
+        5.209058012414304e-35,
+        3.3915221060326365e-36,
+        7.447262477894623e-36,
+        4.700156956400012e-34,
+        1.1750904604648155e-35,
+        9.310613882967543e-36,
+        6.780237785342219e-36,
+        1.2008461428826169e-35,
+        1.1893699352090766e-35,
+        4.720678629465041e-36,
+        6.658651720794822e-36,
+        6.159828346847079e-36,
+        3.4535048422837506e-35,
+        1.0534014936305598e-34,
+        2.8445001254389373e-35,
+        2.4078389936050555e-35,
+        1.0353945482108265e-34,
+        0.12499999999999999,
+        7.29791270867077e-34,
+        4.884862627082198e-35,
+        4.1666967137628364e-33,
+        2.1624613876244695e-33,
+        2.0124354785865453e-35,
+        7.220101396445577e-36,
+        2.1560832371567467e-35,
+        9.410171795188893e-36,
+        9.787360189980354e-34,
+        1.0064218447447468e-35,
+        8.431089454140445e-36,
+        2.468303428550232e-33,
+        1.0091799848766698e-34
+      ],
+      "secret_register_erasure_implies_signed_witness": false,
+      "classical_sampler_is_polynomial_even_when_success_is_exponential": true,
+      "output_distribution_including_failures_is_exactly_classically_reproducible": true,
+      "new_algorithmic_advantage": false
+    }
+  },
+  "linear_decoder_random_systematic_source_ledger": [
+    {
+      "dimension": 16,
+      "columns": 64,
+      "source": "A=[I_n|C], C IID uniform ternary; systematic right inverse",
+      "expected_unconditional_signed_witness_success": {
+        "numerator": 65536,
+        "denominator": 43046721
+      },
+      "large_quantum_state_executed": false,
+      "all_adaptive_inverses_or_general_decoders_have_this_bound": false,
+      "same_full_output_distribution_has_polynomial_classical_sampler": true
+    },
+    {
+      "dimension": 32,
+      "columns": 128,
+      "source": "A=[I_n|C], C IID uniform ternary; systematic right inverse",
+      "expected_unconditional_signed_witness_success": {
+        "numerator": 4294967296,
+        "denominator": 1853020188851841
+      },
+      "large_quantum_state_executed": false,
+      "all_adaptive_inverses_or_general_decoders_have_this_bound": false,
+      "same_full_output_distribution_has_polynomial_classical_sampler": true
+    },
+    {
+      "dimension": 64,
+      "columns": 256,
+      "source": "A=[I_n|C], C IID uniform ternary; systematic right inverse",
+      "expected_unconditional_signed_witness_success": {
+        "numerator": 18446744073709551616,
+        "denominator": 3433683820292512484657849089281
+      },
+      "large_quantum_state_executed": false,
+      "all_adaptive_inverses_or_general_decoders_have_this_bound": false,
+      "same_full_output_distribution_has_polynomial_classical_sampler": true
+    },
+    {
+      "dimension": 128,
+      "columns": 512,
+      "source": "A=[I_n|C], C IID uniform ternary; systematic right inverse",
+      "expected_unconditional_signed_witness_success": {
+        "numerator": 340282366920938463463374607431768211456,
+        "denominator": 11790184577738583171520872861412518665678211592275841109096961
+      },
+      "large_quantum_state_executed": false,
+      "all_adaptive_inverses_or_general_decoders_have_this_bound": false,
+      "same_full_output_distribution_has_polynomial_classical_sampler": true
+    }
+  ],
   "claim_gate": {
     "actual_preparation_erasure_local_readout_and_witness_mapping_executed": true,
     "published_asymptotic_algorithm_fully_implemented": false,
@@ -36492,7 +38905,7 @@
     "speedup_claim_allowed": false
   },
   "dependency_sha256": {
-    "theorems/ternary_decoder_filter.py": "82247036161f244c9345f6ddf358ad7bd175a99b692060001c8bf6da7dfd75c0",
+    "theorems/ternary_decoder_filter.py": "96f19af58fa8b9776ba7eac0807e3b30fa3cf06406e416be7789b1973bffec8a",
     "theorems/ternary_quotient_decoder.py": "7cbec68cc281c1e7df32f790390792abd65a667841328616d36c1390f99bfa9e"
   }
 }

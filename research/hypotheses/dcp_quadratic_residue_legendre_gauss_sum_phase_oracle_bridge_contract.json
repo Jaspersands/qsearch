@@ -1,0 +1,13 @@
+{
+  "hypothesis_id": "dcp_quadratic_residue_legendre_gauss_sum_phase_oracle_bridge",
+  "title": "Prime-Modulus Quadratic Gauss Sum and Legendre-Eigenstate Binary Sign Kickback",
+  "status": "VERIFIED_FINITE_IDENTITIES_REVIEW_PENDING",
+  "claims": [
+    "For any odd prime p and non-zero residue z in F_p^x, the quadratic Gauss sum satisfies G(z; p) = (z/p)_L * eps_p * sqrt(p), where eps_p = 1 for p == 1 (mod 4) and eps_p = i for p == 3 (mod 4).",
+    "Phase kickback against the Legendre-weighted Fourier state extracts the exact multiplicative binary sign (a*s / p)_L = (a/p)_L * (s/p)_L in {-1, +1}."
+  ],
+  "favorable_controls": [
+    "p in {5, 13} (p == 1 mod 4, real Gauss sums)",
+    "p in {7, 11} (p == 3 mod 4, imaginary Gauss sums)"
+  ]
+}

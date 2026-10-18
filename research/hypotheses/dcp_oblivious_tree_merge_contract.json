@@ -1,0 +1,26 @@
+{
+  "contract_id": "native_bounded_oblivious_rank_join_v1",
+  "experiment_id_for_mechanical_integration": "EXP-DHS-DCP-OBLIVIOUS-TREE-MERGE",
+  "status": "CLEAN_OBLIVIOUS_JOIN_EXTERNAL_REVIEW_PENDING",
+  "literature": ["https://arxiv.org/abs/2003.09481"],
+  "mechanism": "Group counts, pair-rank interval join, fixed-address fetch requests, response sort and complete reversal",
+  "output_semantics": "Every matching row pair when total<=capacity; all output records invalid and overflow bit set otherwise",
+  "time_and_coherent_space": "O((left_slots+right_slots+capacity)*log^2(left_slots+right_slots+capacity)*poly(record_bits))",
+  "no_free_random_access": true,
+  "whole_tree_backend_integrated": false,
+  "hardware_gate_export_implemented": false,
+  "accepted_speedup_candidate": false,
+  "novelty_claim": false,
+  "falsifiers": [
+    "Any missing or duplicated matching row-pair on a nonoverflow input",
+    "Any nonzero work after output copy and reversal",
+    "Any input-dependent sort/scan allocation or data-dependent source indexing",
+    "Any count saturation, accepted overflow, or free coherent count-oracle claim"
+  ],
+  "remaining_obligations": [
+    "Independent review and low-level gate export if gate counts are claimed",
+    "Integrate into complete native tree preserving global overflow and reciprocity",
+    "Charge transient join buffers, live retained node payloads and recomputation",
+    "Actual growing-depth supply, noise, natural problem reduction and decoder"
+  ]
+}

@@ -1,0 +1,371 @@
+{
+  "status": "EXACT_CLIFFORD_COORDINATES_QUADRATIC_FIBER_DECODING_OPEN",
+  "finite_controls": [
+    {
+      "plan": {
+        "full_labels": [
+          [
+            1,
+            5,
+            9
+          ]
+        ],
+        "original_phase_bits": 4,
+        "actually_measured_coarse_bits_per_component": 2,
+        "higher_syndrome_constraints_not_measured_or_imposed": false,
+        "complete_measured_parity_fiber_affine_index_compiled": false,
+        "measured_syndrome": [
+          1
+        ],
+        "original_phase_wires": 3,
+        "binary_low_syndrome_rank": 1,
+        "cleared_pivot_wires": [
+          0
+        ],
+        "retained_free_wires": [
+          1,
+          2
+        ],
+        "retained_quantum_wires": 2,
+        "affine_origin_hex": "0x1",
+        "kernel_direction_hex": [
+          "0x3",
+          "0x5"
+        ],
+        "Clifford_gates_after_measured_syndrome": [
+          [
+            "CX",
+            1,
+            0
+          ],
+          [
+            "CX",
+            2,
+            0
+          ],
+          [
+            "X",
+            0
+          ]
+        ],
+        "extra_zero_work_qubits": 0,
+        "quadratic_high_syndrome_equations": [
+          {
+            "constant": 0,
+            "linear_variables": [],
+            "quadratic_pairs": [
+              [
+                0,
+                1
+              ]
+            ],
+            "equation_rhs": 0
+          }
+        ],
+        "full_fiber_enumeration_used_by_compiler": false,
+        "remaining_quadratic_fiber_inverse_supplied": false,
+        "higher_phase_linearity_in_free_bits_assumed": false,
+        "fresh_independent_phase_qubits_supplied": false,
+        "original_independent_Z_noise_may_be_correlated_in_free_coordinates": true,
+        "noise_kernel": "v^popcount(XOR_j ((u_j XOR u'_j)*V_j))",
+        "noise_kernel_formula_requires_original_independent_Z_faults": true,
+        "unitary_coordinate_change_increases_information": false,
+        "hardware_transpilation_or_execution_performed": false
+      },
+      "visibility_exact": "3/4",
+      "secret_used_only_for_bounded_density_calibration": [
+        1
+      ],
+      "allowed_free_words": [
+        0,
+        1,
+        2
+      ],
+      "original_fiber_assignments": [
+        1,
+        2,
+        4
+      ],
+      "full_Born_syndrome_probability_exact": "3/8",
+      "max_original_density_residual": 1.11046909574323e-16,
+      "actual_same_packet_noise_overlap_matrix_exact": [
+        [
+          "1",
+          "9/16",
+          "9/16"
+        ],
+        [
+          "9/16",
+          "1",
+          "9/16"
+        ],
+        [
+          "9/16",
+          "9/16",
+          "1"
+        ]
+      ],
+      "independent_noise_oracle_or_state_inverse_supplied": false,
+      "quadratic_equations_solved_only_by_bounded_control_enumeration": true
+    },
+    {
+      "plan": {
+        "full_labels": [
+          [
+            1,
+            0,
+            5,
+            1
+          ],
+          [
+            0,
+            1,
+            1,
+            2
+          ]
+        ],
+        "original_phase_bits": 4,
+        "actually_measured_coarse_bits_per_component": 2,
+        "higher_syndrome_constraints_not_measured_or_imposed": false,
+        "complete_measured_parity_fiber_affine_index_compiled": false,
+        "measured_syndrome": [
+          1,
+          1
+        ],
+        "original_phase_wires": 4,
+        "binary_low_syndrome_rank": 2,
+        "cleared_pivot_wires": [
+          0,
+          1
+        ],
+        "retained_free_wires": [
+          2,
+          3
+        ],
+        "retained_quantum_wires": 2,
+        "affine_origin_hex": "0x3",
+        "kernel_direction_hex": [
+          "0x7",
+          "0x9"
+        ],
+        "Clifford_gates_after_measured_syndrome": [
+          [
+            "CX",
+            2,
+            0
+          ],
+          [
+            "CX",
+            3,
+            0
+          ],
+          [
+            "X",
+            0
+          ],
+          [
+            "CX",
+            2,
+            1
+          ],
+          [
+            "X",
+            1
+          ]
+        ],
+        "extra_zero_work_qubits": 0,
+        "quadratic_high_syndrome_equations": [
+          {
+            "constant": 0,
+            "linear_variables": [],
+            "quadratic_pairs": [
+              [
+                0,
+                1
+              ]
+            ],
+            "equation_rhs": 0
+          },
+          {
+            "constant": 0,
+            "linear_variables": [
+              1
+            ],
+            "quadratic_pairs": [],
+            "equation_rhs": 0
+          }
+        ],
+        "full_fiber_enumeration_used_by_compiler": false,
+        "remaining_quadratic_fiber_inverse_supplied": false,
+        "higher_phase_linearity_in_free_bits_assumed": false,
+        "fresh_independent_phase_qubits_supplied": false,
+        "original_independent_Z_noise_may_be_correlated_in_free_coordinates": true,
+        "noise_kernel": "v^popcount(XOR_j ((u_j XOR u'_j)*V_j))",
+        "noise_kernel_formula_requires_original_independent_Z_faults": true,
+        "unitary_coordinate_change_increases_information": false,
+        "hardware_transpilation_or_execution_performed": false
+      },
+      "visibility_exact": "7/8",
+      "secret_used_only_for_bounded_density_calibration": [
+        1,
+        2
+      ],
+      "allowed_free_words": [
+        0,
+        1
+      ],
+      "original_fiber_assignments": [
+        3,
+        4
+      ],
+      "full_Born_syndrome_probability_exact": "1/8",
+      "max_original_density_residual": 0.0,
+      "actual_same_packet_noise_overlap_matrix_exact": [
+        [
+          "1",
+          "343/512"
+        ],
+        [
+          "343/512",
+          "1"
+        ]
+      ],
+      "independent_noise_oracle_or_state_inverse_supplied": false,
+      "quadratic_equations_solved_only_by_bounded_control_enumeration": true
+    },
+    {
+      "plan": {
+        "full_labels": [
+          [
+            2,
+            0,
+            2
+          ],
+          [
+            0,
+            2,
+            2
+          ]
+        ],
+        "original_phase_bits": 4,
+        "actually_measured_coarse_bits_per_component": 2,
+        "higher_syndrome_constraints_not_measured_or_imposed": false,
+        "complete_measured_parity_fiber_affine_index_compiled": false,
+        "measured_syndrome": [
+          2,
+          0
+        ],
+        "original_phase_wires": 3,
+        "binary_low_syndrome_rank": 0,
+        "cleared_pivot_wires": [],
+        "retained_free_wires": [
+          0,
+          1,
+          2
+        ],
+        "retained_quantum_wires": 3,
+        "affine_origin_hex": "0x0",
+        "kernel_direction_hex": [
+          "0x1",
+          "0x2",
+          "0x4"
+        ],
+        "Clifford_gates_after_measured_syndrome": [],
+        "extra_zero_work_qubits": 0,
+        "quadratic_high_syndrome_equations": [
+          {
+            "constant": 1,
+            "linear_variables": [
+              0,
+              2
+            ],
+            "quadratic_pairs": [],
+            "equation_rhs": 0
+          },
+          {
+            "constant": 0,
+            "linear_variables": [
+              1,
+              2
+            ],
+            "quadratic_pairs": [],
+            "equation_rhs": 0
+          }
+        ],
+        "full_fiber_enumeration_used_by_compiler": false,
+        "remaining_quadratic_fiber_inverse_supplied": false,
+        "higher_phase_linearity_in_free_bits_assumed": false,
+        "fresh_independent_phase_qubits_supplied": false,
+        "original_independent_Z_noise_may_be_correlated_in_free_coordinates": true,
+        "noise_kernel": "v^popcount(XOR_j ((u_j XOR u'_j)*V_j))",
+        "noise_kernel_formula_requires_original_independent_Z_faults": true,
+        "unitary_coordinate_change_increases_information": false,
+        "hardware_transpilation_or_execution_performed": false
+      },
+      "visibility_exact": "1/2",
+      "secret_used_only_for_bounded_density_calibration": [
+        1,
+        1
+      ],
+      "allowed_free_words": [
+        1,
+        6
+      ],
+      "original_fiber_assignments": [
+        1,
+        6
+      ],
+      "full_Born_syndrome_probability_exact": "1/4",
+      "max_original_density_residual": 1.1113815588758066e-16,
+      "actual_same_packet_noise_overlap_matrix_exact": [
+        [
+          "1",
+          "1/8"
+        ],
+        [
+          "1/8",
+          "1"
+        ]
+      ],
+      "independent_noise_oracle_or_state_inverse_supplied": false,
+      "quadratic_equations_solved_only_by_bounded_control_enumeration": true
+    }
+  ],
+  "rank_failure_bounds_at_width_3n": [
+    {
+      "components": 8,
+      "binary_rank_less_than_n_probability_power_of_two_upper_exponent": 16,
+      "retained_free_wires_IF_full_rank": 16,
+      "CNOT_gate_count_upper": 128,
+      "X_gate_count_upper": 8
+    },
+    {
+      "components": 32,
+      "binary_rank_less_than_n_probability_power_of_two_upper_exponent": 64,
+      "retained_free_wires_IF_full_rank": 64,
+      "CNOT_gate_count_upper": 2048,
+      "X_gate_count_upper": 32
+    },
+    {
+      "components": 128,
+      "binary_rank_less_than_n_probability_power_of_two_upper_exponent": 256,
+      "retained_free_wires_IF_full_rank": 256,
+      "CNOT_gate_count_upper": 32768,
+      "X_gate_count_upper": 128
+    },
+    {
+      "components": 512,
+      "binary_rank_less_than_n_probability_power_of_two_upper_exponent": 1024,
+      "retained_free_wires_IF_full_rank": 1024,
+      "CNOT_gate_count_upper": 524288,
+      "X_gate_count_upper": 512
+    }
+  ],
+  "compiles_the_actual_mod4_fiber_not_arbitrary_MQ": true,
+  "coherent_remaining_fiber_enumeration_or_inverse": false,
+  "source_noise_becomes_independent_after_compression": false,
+  "accepted_speedup_candidate": false,
+  "new_active_negative_result_created": false,
+  "novelty_claim": false,
+  "actual_natural_source_noise_certified": false
+}

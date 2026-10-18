@@ -1,0 +1,14 @@
+{
+  "hypothesis_id": "dcp_banded_qft_truncation_vs_dyadic_cnot_fidelity_bridge",
+  "title": "DCP Banded-QFT Truncation Phase-Leakage vs. Exact Dyadic Sublattice Fidelity Bridge",
+  "status": "VERIFIED_SCOPED_BRIDGE",
+  "claims": [
+    "Under band-b truncated QFT_{2^m}^{(b)_dagger}, the exact peak survival probability on |psi(K_0)> is prod_{j=0}^{m-1-b} cos^2(pi * sum_{l=j+b}^{m-1} k_l 2^{j-1-l}).",
+    "P_{QFT^{(b)}}(K_0 | K_0) == 1.0 holds iff K_0 == 0 (mod 2^{m-b}); in particular b = 1 (H^{tensor m}) is lossless iff K_0 in {0, 2^{m-1}}."
+  ],
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  }
+}

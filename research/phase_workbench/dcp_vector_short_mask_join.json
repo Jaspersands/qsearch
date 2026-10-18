@@ -1,0 +1,3232 @@
+{
+  "contract_id": "vector_Z4_short_mask_balanced_sorting_join_frontier_v1",
+  "status": "LOCAL_DERIVATION_EXTERNAL_REVIEW_PENDING",
+  "accepted_speedup_candidate": false,
+  "novelty_claim": false,
+  "external_theorem_review_complete": false,
+  "source_quantum_preparations_executed": 0,
+  "finite_controls": [
+    {
+      "program": {
+        "kind": "VECTOR_Z4_BALANCED_SORT_JOIN",
+        "width": 2,
+        "components": 2,
+        "descent_bits": 2,
+        "coarse_labels": [
+          [
+            1,
+            3
+          ],
+          [
+            1,
+            3
+          ]
+        ],
+        "per_block_weight": 1,
+        "list_length_hex": "0x1",
+        "hash_rows_hex": [],
+        "hash_offset_hex": "0x0",
+        "resource_ledger": {
+          "secret_vector_components": 2,
+          "group": "Z4^n with componentwise modular addition",
+          "group_cardinality_binary_exponent": 4,
+          "original_registers": 2,
+          "per_block_weight": 1,
+          "physical_mask_width": 2,
+          "hash_bits": 0,
+          "public_seed_bits": 0,
+          "mean_degree": {
+            "numerator_hex": "0x1",
+            "denominator_binary_exponent": 4
+          },
+          "degree_second_moment": {
+            "numerator_hex": "0x1",
+            "denominator_binary_exponent": 4
+          },
+          "native_mean_coarse_coverage_lower_bound": {
+            "numerator_hex": "0x1",
+            "denominator_binary_exponent": 4
+          },
+          "mark_probability": {
+            "numerator_hex": "0x1",
+            "denominator_binary_exponent": 0
+          },
+          "counts_hex": {
+            "each_list_length": "0x1",
+            "available_block_supports": "0x1",
+            "padded_records": "0x2",
+            "one_xor_record_evaluations": "0x4",
+            "one_xor_comparators": "0x2",
+            "one_xor_scan_steps": "0x4",
+            "six_xor_comparators": "0xc",
+            "persistent_workspace_bits": "0x3d"
+          },
+          "record_bits": 9,
+          "scan_state_bits": 14,
+          "full_assignment_table_used": false,
+          "coherent_RAM_assumed": false,
+          "polynomial_time_claimed": false,
+          "gate_export_implemented": false,
+          "time_form": "O(L*log(L)^2*poly(n,m))",
+          "space_form": "O(L*poly(n,m)) coherent basis-wire bits"
+        },
+        "selection_access": "coarse-labels-and-independent-unfiltered-affine-seed",
+        "seed_has_been_conditioned_on_success": false,
+        "uniform_efficient_program_supplied": false,
+        "table_lookup_is_a_free_coherent_oracle": false
+      },
+      "all_original_assignments_checked": 4,
+      "diagnostic_proposal_table_NOT_free_oracle": [
+        3,
+        null,
+        null,
+        0
+      ],
+      "compiler": {
+        "phase_bits": 3,
+        "descent_bits": 2,
+        "public_labels_hex": [
+          [
+            "0x1",
+            "0x3"
+          ],
+          [
+            "0x1",
+            "0x3"
+          ]
+        ],
+        "program": {
+          "kind": "VECTOR_Z4_BALANCED_SORT_JOIN",
+          "width": 2,
+          "components": 2,
+          "descent_bits": 2,
+          "coarse_labels": [
+            [
+              1,
+              3
+            ],
+            [
+              1,
+              3
+            ]
+          ],
+          "per_block_weight": 1,
+          "list_length_hex": "0x1",
+          "hash_rows_hex": [],
+          "hash_offset_hex": "0x0",
+          "resource_ledger": {
+            "secret_vector_components": 2,
+            "group": "Z4^n with componentwise modular addition",
+            "group_cardinality_binary_exponent": 4,
+            "original_registers": 2,
+            "per_block_weight": 1,
+            "physical_mask_width": 2,
+            "hash_bits": 0,
+            "public_seed_bits": 0,
+            "mean_degree": {
+              "numerator_hex": "0x1",
+              "denominator_binary_exponent": 4
+            },
+            "degree_second_moment": {
+              "numerator_hex": "0x1",
+              "denominator_binary_exponent": 4
+            },
+            "native_mean_coarse_coverage_lower_bound": {
+              "numerator_hex": "0x1",
+              "denominator_binary_exponent": 4
+            },
+            "mark_probability": {
+              "numerator_hex": "0x1",
+              "denominator_binary_exponent": 0
+            },
+            "counts_hex": {
+              "each_list_length": "0x1",
+              "available_block_supports": "0x1",
+              "padded_records": "0x2",
+              "one_xor_record_evaluations": "0x4",
+              "one_xor_comparators": "0x2",
+              "one_xor_scan_steps": "0x4",
+              "six_xor_comparators": "0xc",
+              "persistent_workspace_bits": "0x3d"
+            },
+            "record_bits": 9,
+            "scan_state_bits": 14,
+            "full_assignment_table_used": false,
+            "coherent_RAM_assumed": false,
+            "polynomial_time_claimed": false,
+            "gate_export_implemented": false,
+            "time_form": "O(L*log(L)^2*poly(n,m))",
+            "space_form": "O(L*poly(n,m)) coherent basis-wire bits"
+          },
+          "selection_access": "coarse-labels-and-independent-unfiltered-affine-seed",
+          "seed_has_been_conditioned_on_success": false,
+          "uniform_efficient_program_supplied": false,
+          "table_lookup_is_a_free_coherent_oracle": false
+        },
+        "pairs": [
+          {
+            "first": 0,
+            "second": 3,
+            "descended_label_hex": [
+              "0x1",
+              "0x1"
+            ],
+            "physical_Hamming_width": 2,
+            "unconditional_pair_probability": {
+              "numerator_hex": "0x1",
+              "denominator_binary_exponent": 1
+            }
+          }
+        ],
+        "accepted_assignments": [
+          0,
+          3
+        ],
+        "useful_descent_probability": {
+          "numerator_hex": "0x1",
+          "denominator_binary_exponent": 1
+        },
+        "accepted_XOR_F_calls": 6,
+        "failed_XOR_F_calls": 4,
+        "original_unknown_phase_qubits_per_attempt": 2,
+        "compiler_qubits_excluding_F_internal_work": 10,
+        "output_qubits_on_accepted_attempt": 1,
+        "pair_list_is_measurement_outcomes_not_parallel_outputs": true,
+        "known_public_relation_bit_arithmetic_order": "O(n*m*t) per check plus reversible cleanup",
+        "basis_wire_permutations_and_clean_accepted_workspace_implemented": true,
+        "hardware_gate_export_backend_implemented": false,
+        "secret_or_phase_evaluator_is_program_input": false,
+        "fresh_descended_labels_IID_certified": false,
+        "same_A_source_resupply_or_inverse_supplied": false
+      },
+      "source_selection": "unfiltered seeded finite control, NOT a source probability estimate"
+    },
+    {
+      "program": {
+        "kind": "VECTOR_Z4_BALANCED_SORT_JOIN",
+        "width": 2,
+        "components": 2,
+        "descent_bits": 2,
+        "coarse_labels": [
+          [
+            3,
+            1
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "per_block_weight": 1,
+        "list_length_hex": "0x1",
+        "hash_rows_hex": [],
+        "hash_offset_hex": "0x0",
+        "resource_ledger": {
+          "secret_vector_components": 2,
+          "group": "Z4^n with componentwise modular addition",
+          "group_cardinality_binary_exponent": 4,
+          "original_registers": 2,
+          "per_block_weight": 1,
+          "physical_mask_width": 2,
+          "hash_bits": 0,
+          "public_seed_bits": 0,
+          "mean_degree": {
+            "numerator_hex": "0x1",
+            "denominator_binary_exponent": 4
+          },
+          "degree_second_moment": {
+            "numerator_hex": "0x1",
+            "denominator_binary_exponent": 4
+          },
+          "native_mean_coarse_coverage_lower_bound": {
+            "numerator_hex": "0x1",
+            "denominator_binary_exponent": 4
+          },
+          "mark_probability": {
+            "numerator_hex": "0x1",
+            "denominator_binary_exponent": 0
+          },
+          "counts_hex": {
+            "each_list_length": "0x1",
+            "available_block_supports": "0x1",
+            "padded_records": "0x2",
+            "one_xor_record_evaluations": "0x4",
+            "one_xor_comparators": "0x2",
+            "one_xor_scan_steps": "0x4",
+            "six_xor_comparators": "0xc",
+            "persistent_workspace_bits": "0x3d"
+          },
+          "record_bits": 9,
+          "scan_state_bits": 14,
+          "full_assignment_table_used": false,
+          "coherent_RAM_assumed": false,
+          "polynomial_time_claimed": false,
+          "gate_export_implemented": false,
+          "time_form": "O(L*log(L)^2*poly(n,m))",
+          "space_form": "O(L*poly(n,m)) coherent basis-wire bits"
+        },
+        "selection_access": "coarse-labels-and-independent-unfiltered-affine-seed",
+        "seed_has_been_conditioned_on_success": false,
+        "uniform_efficient_program_supplied": false,
+        "table_lookup_is_a_free_coherent_oracle": false
+      },
+      "all_original_assignments_checked": 4,
+      "diagnostic_proposal_table_NOT_free_oracle": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "compiler": {
+        "phase_bits": 3,
+        "descent_bits": 2,
+        "public_labels_hex": [
+          [
+            "0x3",
+            "0x1"
+          ],
+          [
+            "0x0",
+            "0x3"
+          ]
+        ],
+        "program": {
+          "kind": "VECTOR_Z4_BALANCED_SORT_JOIN",
+          "width": 2,
+          "components": 2,
+          "descent_bits": 2,
+          "coarse_labels": [
+            [
+              3,
+              1
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          "per_block_weight": 1,
+          "list_length_hex": "0x1",
+          "hash_rows_hex": [],
+          "hash_offset_hex": "0x0",
+          "resource_ledger": {
+            "secret_vector_components": 2,
+            "group": "Z4^n with componentwise modular addition",
+            "group_cardinality_binary_exponent": 4,
+            "original_registers": 2,
+            "per_block_weight": 1,
+            "physical_mask_width": 2,
+            "hash_bits": 0,
+            "public_seed_bits": 0,
+            "mean_degree": {
+              "numerator_hex": "0x1",
+              "denominator_binary_exponent": 4
+            },
+            "degree_second_moment": {
+              "numerator_hex": "0x1",
+              "denominator_binary_exponent": 4
+            },
+            "native_mean_coarse_coverage_lower_bound": {
+              "numerator_hex": "0x1",
+              "denominator_binary_exponent": 4
+            },
+            "mark_probability": {
+              "numerator_hex": "0x1",
+              "denominator_binary_exponent": 0
+            },
+            "counts_hex": {
+              "each_list_length": "0x1",
+              "available_block_supports": "0x1",
+              "padded_records": "0x2",
+              "one_xor_record_evaluations": "0x4",
+              "one_xor_comparators": "0x2",
+              "one_xor_scan_steps": "0x4",
+              "six_xor_comparators": "0xc",
+              "persistent_workspace_bits": "0x3d"
+            },
+            "record_bits": 9,
+            "scan_state_bits": 14,
+            "full_assignment_table_used": false,
+            "coherent_RAM_assumed": false,
+            "polynomial_time_claimed": false,
+            "gate_export_implemented": false,
+            "time_form": "O(L*log(L)^2*poly(n,m))",
+            "space_form": "O(L*poly(n,m)) coherent basis-wire bits"
+          },
+          "selection_access": "coarse-labels-and-independent-unfiltered-affine-seed",
+          "seed_has_been_conditioned_on_success": false,
+          "uniform_efficient_program_supplied": false,
+          "table_lookup_is_a_free_coherent_oracle": false
+        },
+        "pairs": [],
+        "accepted_assignments": [],
+        "useful_descent_probability": {
+          "numerator_hex": "0x0",
+          "denominator_binary_exponent": 0
+        },
+        "accepted_XOR_F_calls": 6,
+        "failed_XOR_F_calls": 4,
+        "original_unknown_phase_qubits_per_attempt": 2,
+        "compiler_qubits_excluding_F_internal_work": 10,
+        "output_qubits_on_accepted_attempt": 1,
+        "pair_list_is_measurement_outcomes_not_parallel_outputs": true,
+        "known_public_relation_bit_arithmetic_order": "O(n*m*t) per check plus reversible cleanup",
+        "basis_wire_permutations_and_clean_accepted_workspace_implemented": true,
+        "hardware_gate_export_backend_implemented": false,
+        "secret_or_phase_evaluator_is_program_input": false,
+        "fresh_descended_labels_IID_certified": false,
+        "same_A_source_resupply_or_inverse_supplied": false
+      },
+      "source_selection": "unfiltered seeded finite control, NOT a source probability estimate"
+    },
+    {
+      "program": {
+        "kind": "VECTOR_Z4_BALANCED_SORT_JOIN",
+        "width": 8,
+        "components": 2,
+        "descent_bits": 2,
+        "coarse_labels": [
+          [
+            0,
+            1,
+            2,
+            0,
+            2,
+            2,
+            2,
+            3
+          ],
+          [
+            3,
+            2,
+            3,
+            0,
+            1,
+            0,
+            2,
+            2
+          ]
+        ],
+        "per_block_weight": 1,
+        "list_length_hex": "0x4",
+        "hash_rows_hex": [
+          "0x78",
+          "0xe2"
+        ],
+        "hash_offset_hex": "0x2",
+        "resource_ledger": {
+          "secret_vector_components": 2,
+          "group": "Z4^n with componentwise modular addition",
+          "group_cardinality_binary_exponent": 4,
+          "original_registers": 8,
+          "per_block_weight": 1,
+          "physical_mask_width": 2,
+          "hash_bits": 2,
+          "public_seed_bits": 18,
+          "mean_degree": {
+            "numerator_hex": "0x1",
+            "denominator_binary_exponent": 0
+          },
+          "degree_second_moment": {
+            "numerator_hex": "0x1f",
+            "denominator_binary_exponent": 4
+          },
+          "native_mean_coarse_coverage_lower_bound": {
+            "numerator_hex": "0x11",
+            "denominator_binary_exponent": 9
+          },
+          "mark_probability": {
+            "numerator_hex": "0x1",
+            "denominator_binary_exponent": 2
+          },
+          "counts_hex": {
+            "each_list_length": "0x4",
+            "available_block_supports": "0x4",
+            "padded_records": "0x8",
+            "one_xor_record_evaluations": "0x10",
+            "one_xor_comparators": "0x30",
+            "one_xor_scan_steps": "0x10",
+            "six_xor_comparators": "0x120",
+            "persistent_workspace_bits": "0x23e"
+          },
+          "record_bits": 17,
+          "scan_state_bits": 46,
+          "full_assignment_table_used": false,
+          "coherent_RAM_assumed": false,
+          "polynomial_time_claimed": false,
+          "gate_export_implemented": false,
+          "time_form": "O(L*log(L)^2*poly(n,m))",
+          "space_form": "O(L*poly(n,m)) coherent basis-wire bits"
+        },
+        "selection_access": "coarse-labels-and-independent-unfiltered-affine-seed",
+        "seed_has_been_conditioned_on_success": false,
+        "uniform_efficient_program_supplied": false,
+        "table_lookup_is_a_free_coherent_oracle": false
+      },
+      "all_original_assignments_checked": 256,
+      "diagnostic_proposal_table_NOT_free_oracle": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        170,
+        171,
+        null,
+        null,
+        174,
+        175,
+        null,
+        null,
+        178,
+        179,
+        null,
+        null,
+        182,
+        183,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        202,
+        203,
+        null,
+        null,
+        206,
+        207,
+        null,
+        null,
+        210,
+        211,
+        null,
+        null,
+        214,
+        215,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        40,
+        41,
+        null,
+        null,
+        44,
+        45,
+        null,
+        null,
+        48,
+        49,
+        null,
+        null,
+        52,
+        53,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        72,
+        73,
+        null,
+        null,
+        76,
+        77,
+        null,
+        null,
+        80,
+        81,
+        null,
+        null,
+        84,
+        85,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "compiler": {
+        "phase_bits": 4,
+        "descent_bits": 2,
+        "public_labels_hex": [
+          [
+            "0x0",
+            "0x9",
+            "0xe",
+            "0x8",
+            "0xe",
+            "0x6",
+            "0x2",
+            "0x7"
+          ],
+          [
+            "0x7",
+            "0x6",
+            "0x3",
+            "0xc",
+            "0x5",
+            "0x8",
+            "0xa",
+            "0x2"
+          ]
+        ],
+        "program": {
+          "kind": "VECTOR_Z4_BALANCED_SORT_JOIN",
+          "width": 8,
+          "components": 2,
+          "descent_bits": 2,
+          "coarse_labels": [
+            [
+              0,
+              1,
+              2,
+              0,
+              2,
+              2,
+              2,
+              3
+            ],
+            [
+              3,
+              2,
+              3,
+              0,
+              1,
+              0,
+              2,
+              2
+            ]
+          ],
+          "per_block_weight": 1,
+          "list_length_hex": "0x4",
+          "hash_rows_hex": [
+            "0x78",
+            "0xe2"
+          ],
+          "hash_offset_hex": "0x2",
+          "resource_ledger": {
+            "secret_vector_components": 2,
+            "group": "Z4^n with componentwise modular addition",
+            "group_cardinality_binary_exponent": 4,
+            "original_registers": 8,
+            "per_block_weight": 1,
+            "physical_mask_width": 2,
+            "hash_bits": 2,
+            "public_seed_bits": 18,
+            "mean_degree": {
+              "numerator_hex": "0x1",
+              "denominator_binary_exponent": 0
+            },
+            "degree_second_moment": {
+              "numerator_hex": "0x1f",
+              "denominator_binary_exponent": 4
+            },
+            "native_mean_coarse_coverage_lower_bound": {
+              "numerator_hex": "0x11",
+              "denominator_binary_exponent": 9
+            },
+            "mark_probability": {
+              "numerator_hex": "0x1",
+              "denominator_binary_exponent": 2
+            },
+            "counts_hex": {
+              "each_list_length": "0x4",
+              "available_block_supports": "0x4",
+              "padded_records": "0x8",
+              "one_xor_record_evaluations": "0x10",
+              "one_xor_comparators": "0x30",
+              "one_xor_scan_steps": "0x10",
+              "six_xor_comparators": "0x120",
+              "persistent_workspace_bits": "0x23e"
+            },
+            "record_bits": 17,
+            "scan_state_bits": 46,
+            "full_assignment_table_used": false,
+            "coherent_RAM_assumed": false,
+            "polynomial_time_claimed": false,
+            "gate_export_implemented": false,
+            "time_form": "O(L*log(L)^2*poly(n,m))",
+            "space_form": "O(L*poly(n,m)) coherent basis-wire bits"
+          },
+          "selection_access": "coarse-labels-and-independent-unfiltered-affine-seed",
+          "seed_has_been_conditioned_on_success": false,
+          "uniform_efficient_program_supplied": false,
+          "table_lookup_is_a_free_coherent_oracle": false
+        },
+        "pairs": [
+          {
+            "first": 40,
+            "second": 170,
+            "descended_label_hex": [
+              "0x0",
+              "0x2"
+            ],
+            "physical_Hamming_width": 2,
+            "unconditional_pair_probability": {
+              "numerator_hex": "0x1",
+              "denominator_binary_exponent": 7
+            }
+          },
+          {
+            "first": 41,
+            "second": 171,
+            "descended_label_hex": [
+              "0x0",
+              "0x2"
+            ],
+            "physical_Hamming_width": 2,
+            "unconditional_pair_probability": {
+              "numerator_hex": "0x1",
+              "denominator_binary_exponent": 7
+            }
+          },
+          {
+            "first": 44,
+            "second": 174,
+            "descended_label_hex": [
+              "0x0",
+              "0x2"
+            ],
+            "physical_Hamming_width": 2,
+            "unconditional_pair_probability": {
+              "numerator_hex": "0x1",
+              "denominator_binary_exponent": 7
+            }
+          },
+          {
+            "first": 45,
+            "second": 175,
+            "descended_label_hex": [
+              "0x0",
+              "0x2"
+            ],
+            "physical_Hamming_width": 2,
+            "unconditional_pair_probability": {
+              "numerator_hex": "0x1",
+              "denominator_binary_exponent": 7
+            }
+          },
+          {
+            "first": 48,
+            "second": 178,
+            "descended_label_hex": [
+              "0x0",
+              "0x2"
+            ],
+            "physical_Hamming_width": 2,
+            "unconditional_pair_probability": {
+              "numerator_hex": "0x1",
+              "denominator_binary_exponent": 7
+            }
+          },
+          {
+            "first": 49,
+            "second": 179,
+            "descended_label_hex": [
+              "0x0",
+              "0x2"
+            ],
+            "physical_Hamming_width": 2,
+            "unconditional_pair_probability": {
+              "numerator_hex": "0x1",
+              "denominator_binary_exponent": 7
+            }
+          },
+          {
+            "first": 52,
+            "second": 182,
+            "descended_label_hex": [
+              "0x0",
+              "0x2"
+            ],
+            "physical_Hamming_width": 2,
+            "unconditional_pair_probability": {
+              "numerator_hex": "0x1",
+              "denominator_binary_exponent": 7
+            }
+          },
+          {
+            "first": 53,
+            "second": 183,
+            "descended_label_hex": [
+              "0x0",
+              "0x2"
+            ],
+            "physical_Hamming_width": 2,
+            "unconditional_pair_probability": {
+              "numerator_hex": "0x1",
+              "denominator_binary_exponent": 7
+            }
+          },
+          {
+            "first": 72,
+            "second": 202,
+            "descended_label_hex": [
+              "0x0",
+              "0x2"
+            ],
+            "physical_Hamming_width": 2,
+            "unconditional_pair_probability": {
+              "numerator_hex": "0x1",
+              "denominator_binary_exponent": 7
+            }
+          },
+          {
+            "first": 73,
+            "second": 203,
+            "descended_label_hex": [
+              "0x0",
+              "0x2"
+            ],
+            "physical_Hamming_width": 2,
+            "unconditional_pair_probability": {
+              "numerator_hex": "0x1",
+              "denominator_binary_exponent": 7
+            }
+          },
+          {
+            "first": 76,
+            "second": 206,
+            "descended_label_hex": [
+              "0x0",
+              "0x2"
+            ],
+            "physical_Hamming_width": 2,
+            "unconditional_pair_probability": {
+              "numerator_hex": "0x1",
+              "denominator_binary_exponent": 7
+            }
+          },
+          {
+            "first": 77,
+            "second": 207,
+            "descended_label_hex": [
+              "0x0",
+              "0x2"
+            ],
+            "physical_Hamming_width": 2,
+            "unconditional_pair_probability": {
+              "numerator_hex": "0x1",
+              "denominator_binary_exponent": 7
+            }
+          },
+          {
+            "first": 80,
+            "second": 210,
+            "descended_label_hex": [
+              "0x0",
+              "0x2"
+            ],
+            "physical_Hamming_width": 2,
+            "unconditional_pair_probability": {
+              "numerator_hex": "0x1",
+              "denominator_binary_exponent": 7
+            }
+          },
+          {
+            "first": 81,
+            "second": 211,
+            "descended_label_hex": [
+              "0x0",
+              "0x2"
+            ],
+            "physical_Hamming_width": 2,
+            "unconditional_pair_probability": {
+              "numerator_hex": "0x1",
+              "denominator_binary_exponent": 7
+            }
+          },
+          {
+            "first": 84,
+            "second": 214,
+            "descended_label_hex": [
+              "0x0",
+              "0x2"
+            ],
+            "physical_Hamming_width": 2,
+            "unconditional_pair_probability": {
+              "numerator_hex": "0x1",
+              "denominator_binary_exponent": 7
+            }
+          },
+          {
+            "first": 85,
+            "second": 215,
+            "descended_label_hex": [
+              "0x0",
+              "0x2"
+            ],
+            "physical_Hamming_width": 2,
+            "unconditional_pair_probability": {
+              "numerator_hex": "0x1",
+              "denominator_binary_exponent": 7
+            }
+          }
+        ],
+        "accepted_assignments": [
+          40,
+          41,
+          44,
+          45,
+          48,
+          49,
+          52,
+          53,
+          72,
+          73,
+          76,
+          77,
+          80,
+          81,
+          84,
+          85,
+          170,
+          171,
+          174,
+          175,
+          178,
+          179,
+          182,
+          183,
+          202,
+          203,
+          206,
+          207,
+          210,
+          211,
+          214,
+          215
+        ],
+        "useful_descent_probability": {
+          "numerator_hex": "0x1",
+          "denominator_binary_exponent": 3
+        },
+        "accepted_XOR_F_calls": 6,
+        "failed_XOR_F_calls": 4,
+        "original_unknown_phase_qubits_per_attempt": 8,
+        "compiler_qubits_excluding_F_internal_work": 28,
+        "output_qubits_on_accepted_attempt": 1,
+        "pair_list_is_measurement_outcomes_not_parallel_outputs": true,
+        "known_public_relation_bit_arithmetic_order": "O(n*m*t) per check plus reversible cleanup",
+        "basis_wire_permutations_and_clean_accepted_workspace_implemented": true,
+        "hardware_gate_export_backend_implemented": false,
+        "secret_or_phase_evaluator_is_program_input": false,
+        "fresh_descended_labels_IID_certified": false,
+        "same_A_source_resupply_or_inverse_supplied": false
+      },
+      "source_selection": "unfiltered seeded finite control, NOT a source probability estimate"
+    },
+    {
+      "program": {
+        "kind": "VECTOR_Z4_BALANCED_SORT_JOIN",
+        "width": 8,
+        "components": 2,
+        "descent_bits": 2,
+        "coarse_labels": [
+          [
+            2,
+            1,
+            1,
+            1,
+            3,
+            0,
+            1,
+            1
+          ],
+          [
+            2,
+            3,
+            2,
+            1,
+            2,
+            3,
+            0,
+            1
+          ]
+        ],
+        "per_block_weight": 1,
+        "list_length_hex": "0x4",
+        "hash_rows_hex": [
+          "0x1f",
+          "0xea"
+        ],
+        "hash_offset_hex": "0x1",
+        "resource_ledger": {
+          "secret_vector_components": 2,
+          "group": "Z4^n with componentwise modular addition",
+          "group_cardinality_binary_exponent": 4,
+          "original_registers": 8,
+          "per_block_weight": 1,
+          "physical_mask_width": 2,
+          "hash_bits": 2,
+          "public_seed_bits": 18,
+          "mean_degree": {
+            "numerator_hex": "0x1",
+            "denominator_binary_exponent": 0
+          },
+          "degree_second_moment": {
+            "numerator_hex": "0x1f",
+            "denominator_binary_exponent": 4
+          },
+          "native_mean_coarse_coverage_lower_bound": {
+            "numerator_hex": "0x11",
+            "denominator_binary_exponent": 9
+          },
+          "mark_probability": {
+            "numerator_hex": "0x1",
+            "denominator_binary_exponent": 2
+          },
+          "counts_hex": {
+            "each_list_length": "0x4",
+            "available_block_supports": "0x4",
+            "padded_records": "0x8",
+            "one_xor_record_evaluations": "0x10",
+            "one_xor_comparators": "0x30",
+            "one_xor_scan_steps": "0x10",
+            "six_xor_comparators": "0x120",
+            "persistent_workspace_bits": "0x23e"
+          },
+          "record_bits": 17,
+          "scan_state_bits": 46,
+          "full_assignment_table_used": false,
+          "coherent_RAM_assumed": false,
+          "polynomial_time_claimed": false,
+          "gate_export_implemented": false,
+          "time_form": "O(L*log(L)^2*poly(n,m))",
+          "space_form": "O(L*poly(n,m)) coherent basis-wire bits"
+        },
+        "selection_access": "coarse-labels-and-independent-unfiltered-affine-seed",
+        "seed_has_been_conditioned_on_success": false,
+        "uniform_efficient_program_supplied": false,
+        "table_lookup_is_a_free_coherent_oracle": false
+      },
+      "all_original_assignments_checked": 256,
+      "diagnostic_proposal_table_NOT_free_oracle": [
+        null,
+        21,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        31,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        11,
+        null,
+        null,
+        54,
+        null,
+        null,
+        null,
+        null,
+        null,
+        60,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        34,
+        null,
+        null,
+        null,
+        null,
+        null,
+        40,
+        null,
+        null,
+        null,
+        null,
+        null,
+        86,
+        null,
+        null,
+        null,
+        null,
+        null,
+        92,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        66,
+        null,
+        null,
+        null,
+        null,
+        null,
+        72,
+        null,
+        null,
+        null,
+        null,
+        117,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        127,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        97,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        107,
+        null,
+        null,
+        150,
+        null,
+        null,
+        null,
+        null,
+        null,
+        156,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        130,
+        null,
+        null,
+        null,
+        null,
+        null,
+        136,
+        null,
+        null,
+        null,
+        null,
+        181,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        191,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        161,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        171,
+        null,
+        213,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        223,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        193,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        203,
+        null,
+        null,
+        246,
+        null,
+        null,
+        null,
+        null,
+        null,
+        252,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        226,
+        null,
+        null,
+        null,
+        null,
+        null,
+        232,
+        null,
+        null,
+        null
+      ],
+      "compiler": {
+        "phase_bits": 4,
+        "descent_bits": 2,
+        "public_labels_hex": [
+          [
+            "0x6",
+            "0x1",
+            "0x5",
+            "0xd",
+            "0xb",
+            "0x8",
+            "0x9",
+            "0x1"
+          ],
+          [
+            "0xa",
+            "0xb",
+            "0x2",
+            "0x5",
+            "0xa",
+            "0xb",
+            "0xc",
+            "0x5"
+          ]
+        ],
+        "program": {
+          "kind": "VECTOR_Z4_BALANCED_SORT_JOIN",
+          "width": 8,
+          "components": 2,
+          "descent_bits": 2,
+          "coarse_labels": [
+            [
+              2,
+              1,
+              1,
+              1,
+              3,
+              0,
+              1,
+              1
+            ],
+            [
+              2,
+              3,
+              2,
+              1,
+              2,
+              3,
+              0,
+              1
+            ]
+          ],
+          "per_block_weight": 1,
+          "list_length_hex": "0x4",
+          "hash_rows_hex": [
+            "0x1f",
+            "0xea"
+          ],
+          "hash_offset_hex": "0x1",
+          "resource_ledger": {
+            "secret_vector_components": 2,
+            "group": "Z4^n with componentwise modular addition",
+            "group_cardinality_binary_exponent": 4,
+            "original_registers": 8,
+            "per_block_weight": 1,
+            "physical_mask_width": 2,
+            "hash_bits": 2,
+            "public_seed_bits": 18,
+            "mean_degree": {
+              "numerator_hex": "0x1",
+              "denominator_binary_exponent": 0
+            },
+            "degree_second_moment": {
+              "numerator_hex": "0x1f",
+              "denominator_binary_exponent": 4
+            },
+            "native_mean_coarse_coverage_lower_bound": {
+              "numerator_hex": "0x11",
+              "denominator_binary_exponent": 9
+            },
+            "mark_probability": {
+              "numerator_hex": "0x1",
+              "denominator_binary_exponent": 2
+            },
+            "counts_hex": {
+              "each_list_length": "0x4",
+              "available_block_supports": "0x4",
+              "padded_records": "0x8",
+              "one_xor_record_evaluations": "0x10",
+              "one_xor_comparators": "0x30",
+              "one_xor_scan_steps": "0x10",
+              "six_xor_comparators": "0x120",
+              "persistent_workspace_bits": "0x23e"
+            },
+            "record_bits": 17,
+            "scan_state_bits": 46,
+            "full_assignment_table_used": false,
+            "coherent_RAM_assumed": false,
+            "polynomial_time_claimed": false,
+            "gate_export_implemented": false,
+            "time_form": "O(L*log(L)^2*poly(n,m))",
+            "space_form": "O(L*poly(n,m)) coherent basis-wire bits"
+          },
+          "selection_access": "coarse-labels-and-independent-unfiltered-affine-seed",
+          "seed_has_been_conditioned_on_success": false,
+          "uniform_efficient_program_supplied": false,
+          "table_lookup_is_a_free_coherent_oracle": false
+        },
+        "pairs": [
+          {
+            "first": 1,
+            "second": 21,
+            "descended_label_hex": [
+              "0x0",
+              "0x3"
+            ],
+            "physical_Hamming_width": 2,
+            "unconditional_pair_probability": {
+              "numerator_hex": "0x1",
+              "denominator_binary_exponent": 7
+            }
+          },
+          {
+            "first": 11,
+            "second": 31,
+            "descended_label_hex": [
+              "0x0",
+              "0x3"
+            ],
+            "physical_Hamming_width": 2,
+            "unconditional_pair_probability": {
+              "numerator_hex": "0x1",
+              "denominator_binary_exponent": 7
+            }
+          },
+          {
+            "first": 34,
+            "second": 54,
+            "descended_label_hex": [
+              "0x0",
+              "0x3"
+            ],
+            "physical_Hamming_width": 2,
+            "unconditional_pair_probability": {
+              "numerator_hex": "0x1",
+              "denominator_binary_exponent": 7
+            }
+          },
+          {
+            "first": 40,
+            "second": 60,
+            "descended_label_hex": [
+              "0x0",
+              "0x3"
+            ],
+            "physical_Hamming_width": 2,
+            "unconditional_pair_probability": {
+              "numerator_hex": "0x1",
+              "denominator_binary_exponent": 7
+            }
+          },
+          {
+            "first": 66,
+            "second": 86,
+            "descended_label_hex": [
+              "0x0",
+              "0x3"
+            ],
+            "physical_Hamming_width": 2,
+            "unconditional_pair_probability": {
+              "numerator_hex": "0x1",
+              "denominator_binary_exponent": 7
+            }
+          },
+          {
+            "first": 72,
+            "second": 92,
+            "descended_label_hex": [
+              "0x0",
+              "0x3"
+            ],
+            "physical_Hamming_width": 2,
+            "unconditional_pair_probability": {
+              "numerator_hex": "0x1",
+              "denominator_binary_exponent": 7
+            }
+          },
+          {
+            "first": 97,
+            "second": 117,
+            "descended_label_hex": [
+              "0x0",
+              "0x3"
+            ],
+            "physical_Hamming_width": 2,
+            "unconditional_pair_probability": {
+              "numerator_hex": "0x1",
+              "denominator_binary_exponent": 7
+            }
+          },
+          {
+            "first": 107,
+            "second": 127,
+            "descended_label_hex": [
+              "0x0",
+              "0x3"
+            ],
+            "physical_Hamming_width": 2,
+            "unconditional_pair_probability": {
+              "numerator_hex": "0x1",
+              "denominator_binary_exponent": 7
+            }
+          },
+          {
+            "first": 130,
+            "second": 150,
+            "descended_label_hex": [
+              "0x0",
+              "0x3"
+            ],
+            "physical_Hamming_width": 2,
+            "unconditional_pair_probability": {
+              "numerator_hex": "0x1",
+              "denominator_binary_exponent": 7
+            }
+          },
+          {
+            "first": 136,
+            "second": 156,
+            "descended_label_hex": [
+              "0x0",
+              "0x3"
+            ],
+            "physical_Hamming_width": 2,
+            "unconditional_pair_probability": {
+              "numerator_hex": "0x1",
+              "denominator_binary_exponent": 7
+            }
+          },
+          {
+            "first": 161,
+            "second": 181,
+            "descended_label_hex": [
+              "0x0",
+              "0x3"
+            ],
+            "physical_Hamming_width": 2,
+            "unconditional_pair_probability": {
+              "numerator_hex": "0x1",
+              "denominator_binary_exponent": 7
+            }
+          },
+          {
+            "first": 171,
+            "second": 191,
+            "descended_label_hex": [
+              "0x0",
+              "0x3"
+            ],
+            "physical_Hamming_width": 2,
+            "unconditional_pair_probability": {
+              "numerator_hex": "0x1",
+              "denominator_binary_exponent": 7
+            }
+          },
+          {
+            "first": 193,
+            "second": 213,
+            "descended_label_hex": [
+              "0x0",
+              "0x3"
+            ],
+            "physical_Hamming_width": 2,
+            "unconditional_pair_probability": {
+              "numerator_hex": "0x1",
+              "denominator_binary_exponent": 7
+            }
+          },
+          {
+            "first": 203,
+            "second": 223,
+            "descended_label_hex": [
+              "0x0",
+              "0x3"
+            ],
+            "physical_Hamming_width": 2,
+            "unconditional_pair_probability": {
+              "numerator_hex": "0x1",
+              "denominator_binary_exponent": 7
+            }
+          },
+          {
+            "first": 226,
+            "second": 246,
+            "descended_label_hex": [
+              "0x0",
+              "0x3"
+            ],
+            "physical_Hamming_width": 2,
+            "unconditional_pair_probability": {
+              "numerator_hex": "0x1",
+              "denominator_binary_exponent": 7
+            }
+          },
+          {
+            "first": 232,
+            "second": 252,
+            "descended_label_hex": [
+              "0x0",
+              "0x3"
+            ],
+            "physical_Hamming_width": 2,
+            "unconditional_pair_probability": {
+              "numerator_hex": "0x1",
+              "denominator_binary_exponent": 7
+            }
+          }
+        ],
+        "accepted_assignments": [
+          1,
+          11,
+          21,
+          31,
+          34,
+          40,
+          54,
+          60,
+          66,
+          72,
+          86,
+          92,
+          97,
+          107,
+          117,
+          127,
+          130,
+          136,
+          150,
+          156,
+          161,
+          171,
+          181,
+          191,
+          193,
+          203,
+          213,
+          223,
+          226,
+          232,
+          246,
+          252
+        ],
+        "useful_descent_probability": {
+          "numerator_hex": "0x1",
+          "denominator_binary_exponent": 3
+        },
+        "accepted_XOR_F_calls": 6,
+        "failed_XOR_F_calls": 4,
+        "original_unknown_phase_qubits_per_attempt": 8,
+        "compiler_qubits_excluding_F_internal_work": 28,
+        "output_qubits_on_accepted_attempt": 1,
+        "pair_list_is_measurement_outcomes_not_parallel_outputs": true,
+        "known_public_relation_bit_arithmetic_order": "O(n*m*t) per check plus reversible cleanup",
+        "basis_wire_permutations_and_clean_accepted_workspace_implemented": true,
+        "hardware_gate_export_backend_implemented": false,
+        "secret_or_phase_evaluator_is_program_input": false,
+        "fresh_descended_labels_IID_certified": false,
+        "same_A_source_resupply_or_inverse_supplied": false
+      },
+      "source_selection": "unfiltered seeded finite control, NOT a source probability estimate"
+    },
+    {
+      "program": {
+        "kind": "VECTOR_Z4_BALANCED_SORT_JOIN",
+        "width": 8,
+        "components": 2,
+        "descent_bits": 2,
+        "coarse_labels": [
+          [
+            2,
+            0,
+            1,
+            2,
+            3,
+            1,
+            1,
+            2
+          ],
+          [
+            3,
+            3,
+            0,
+            0,
+            1,
+            3,
+            0,
+            3
+          ]
+        ],
+        "per_block_weight": 1,
+        "list_length_hex": "0x4",
+        "hash_rows_hex": [
+          "0xf0",
+          "0x3c"
+        ],
+        "hash_offset_hex": "0x1",
+        "resource_ledger": {
+          "secret_vector_components": 2,
+          "group": "Z4^n with componentwise modular addition",
+          "group_cardinality_binary_exponent": 4,
+          "original_registers": 8,
+          "per_block_weight": 1,
+          "physical_mask_width": 2,
+          "hash_bits": 2,
+          "public_seed_bits": 18,
+          "mean_degree": {
+            "numerator_hex": "0x1",
+            "denominator_binary_exponent": 0
+          },
+          "degree_second_moment": {
+            "numerator_hex": "0x1f",
+            "denominator_binary_exponent": 4
+          },
+          "native_mean_coarse_coverage_lower_bound": {
+            "numerator_hex": "0x11",
+            "denominator_binary_exponent": 9
+          },
+          "mark_probability": {
+            "numerator_hex": "0x1",
+            "denominator_binary_exponent": 2
+          },
+          "counts_hex": {
+            "each_list_length": "0x4",
+            "available_block_supports": "0x4",
+            "padded_records": "0x8",
+            "one_xor_record_evaluations": "0x10",
+            "one_xor_comparators": "0x30",
+            "one_xor_scan_steps": "0x10",
+            "six_xor_comparators": "0x120",
+            "persistent_workspace_bits": "0x23e"
+          },
+          "record_bits": 17,
+          "scan_state_bits": 46,
+          "full_assignment_table_used": false,
+          "coherent_RAM_assumed": false,
+          "polynomial_time_claimed": false,
+          "gate_export_implemented": false,
+          "time_form": "O(L*log(L)^2*poly(n,m))",
+          "space_form": "O(L*poly(n,m)) coherent basis-wire bits"
+        },
+        "selection_access": "coarse-labels-and-independent-unfiltered-affine-seed",
+        "seed_has_been_conditioned_on_success": false,
+        "uniform_efficient_program_supplied": false,
+        "table_lookup_is_a_free_coherent_oracle": false
+      },
+      "all_original_assignments_checked": 256,
+      "diagnostic_proposal_table_NOT_free_oracle": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "compiler": {
+        "phase_bits": 4,
+        "descent_bits": 2,
+        "public_labels_hex": [
+          [
+            "0x2",
+            "0x0",
+            "0xd",
+            "0xa",
+            "0xf",
+            "0xd",
+            "0x5",
+            "0x6"
+          ],
+          [
+            "0x3",
+            "0xf",
+            "0xc",
+            "0x4",
+            "0x1",
+            "0x7",
+            "0x4",
+            "0xb"
+          ]
+        ],
+        "program": {
+          "kind": "VECTOR_Z4_BALANCED_SORT_JOIN",
+          "width": 8,
+          "components": 2,
+          "descent_bits": 2,
+          "coarse_labels": [
+            [
+              2,
+              0,
+              1,
+              2,
+              3,
+              1,
+              1,
+              2
+            ],
+            [
+              3,
+              3,
+              0,
+              0,
+              1,
+              3,
+              0,
+              3
+            ]
+          ],
+          "per_block_weight": 1,
+          "list_length_hex": "0x4",
+          "hash_rows_hex": [
+            "0xf0",
+            "0x3c"
+          ],
+          "hash_offset_hex": "0x1",
+          "resource_ledger": {
+            "secret_vector_components": 2,
+            "group": "Z4^n with componentwise modular addition",
+            "group_cardinality_binary_exponent": 4,
+            "original_registers": 8,
+            "per_block_weight": 1,
+            "physical_mask_width": 2,
+            "hash_bits": 2,
+            "public_seed_bits": 18,
+            "mean_degree": {
+              "numerator_hex": "0x1",
+              "denominator_binary_exponent": 0
+            },
+            "degree_second_moment": {
+              "numerator_hex": "0x1f",
+              "denominator_binary_exponent": 4
+            },
+            "native_mean_coarse_coverage_lower_bound": {
+              "numerator_hex": "0x11",
+              "denominator_binary_exponent": 9
+            },
+            "mark_probability": {
+              "numerator_hex": "0x1",
+              "denominator_binary_exponent": 2
+            },
+            "counts_hex": {
+              "each_list_length": "0x4",
+              "available_block_supports": "0x4",
+              "padded_records": "0x8",
+              "one_xor_record_evaluations": "0x10",
+              "one_xor_comparators": "0x30",
+              "one_xor_scan_steps": "0x10",
+              "six_xor_comparators": "0x120",
+              "persistent_workspace_bits": "0x23e"
+            },
+            "record_bits": 17,
+            "scan_state_bits": 46,
+            "full_assignment_table_used": false,
+            "coherent_RAM_assumed": false,
+            "polynomial_time_claimed": false,
+            "gate_export_implemented": false,
+            "time_form": "O(L*log(L)^2*poly(n,m))",
+            "space_form": "O(L*poly(n,m)) coherent basis-wire bits"
+          },
+          "selection_access": "coarse-labels-and-independent-unfiltered-affine-seed",
+          "seed_has_been_conditioned_on_success": false,
+          "uniform_efficient_program_supplied": false,
+          "table_lookup_is_a_free_coherent_oracle": false
+        },
+        "pairs": [],
+        "accepted_assignments": [],
+        "useful_descent_probability": {
+          "numerator_hex": "0x0",
+          "denominator_binary_exponent": 0
+        },
+        "accepted_XOR_F_calls": 6,
+        "failed_XOR_F_calls": 4,
+        "original_unknown_phase_qubits_per_attempt": 8,
+        "compiler_qubits_excluding_F_internal_work": 28,
+        "output_qubits_on_accepted_attempt": 1,
+        "pair_list_is_measurement_outcomes_not_parallel_outputs": true,
+        "known_public_relation_bit_arithmetic_order": "O(n*m*t) per check plus reversible cleanup",
+        "basis_wire_permutations_and_clean_accepted_workspace_implemented": true,
+        "hardware_gate_export_backend_implemented": false,
+        "secret_or_phase_evaluator_is_program_input": false,
+        "fresh_descended_labels_IID_certified": false,
+        "same_A_source_resupply_or_inverse_supplied": false
+      },
+      "source_selection": "unfiltered seeded finite control, NOT a source probability estimate"
+    },
+    {
+      "program": {
+        "kind": "VECTOR_Z4_BALANCED_SORT_JOIN",
+        "width": 8,
+        "components": 2,
+        "descent_bits": 2,
+        "coarse_labels": [
+          [
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            2
+          ],
+          [
+            0,
+            0,
+            1,
+            2,
+            0,
+            0,
+            3,
+            3
+          ]
+        ],
+        "per_block_weight": 1,
+        "list_length_hex": "0x4",
+        "hash_rows_hex": [
+          "0xf",
+          "0x28"
+        ],
+        "hash_offset_hex": "0x3",
+        "resource_ledger": {
+          "secret_vector_components": 2,
+          "group": "Z4^n with componentwise modular addition",
+          "group_cardinality_binary_exponent": 4,
+          "original_registers": 8,
+          "per_block_weight": 1,
+          "physical_mask_width": 2,
+          "hash_bits": 2,
+          "public_seed_bits": 18,
+          "mean_degree": {
+            "numerator_hex": "0x1",
+            "denominator_binary_exponent": 0
+          },
+          "degree_second_moment": {
+            "numerator_hex": "0x1f",
+            "denominator_binary_exponent": 4
+          },
+          "native_mean_coarse_coverage_lower_bound": {
+            "numerator_hex": "0x11",
+            "denominator_binary_exponent": 9
+          },
+          "mark_probability": {
+            "numerator_hex": "0x1",
+            "denominator_binary_exponent": 2
+          },
+          "counts_hex": {
+            "each_list_length": "0x4",
+            "available_block_supports": "0x4",
+            "padded_records": "0x8",
+            "one_xor_record_evaluations": "0x10",
+            "one_xor_comparators": "0x30",
+            "one_xor_scan_steps": "0x10",
+            "six_xor_comparators": "0x120",
+            "persistent_workspace_bits": "0x23e"
+          },
+          "record_bits": 17,
+          "scan_state_bits": 46,
+          "full_assignment_table_used": false,
+          "coherent_RAM_assumed": false,
+          "polynomial_time_claimed": false,
+          "gate_export_implemented": false,
+          "time_form": "O(L*log(L)^2*poly(n,m))",
+          "space_form": "O(L*poly(n,m)) coherent basis-wire bits"
+        },
+        "selection_access": "coarse-labels-and-independent-unfiltered-affine-seed",
+        "seed_has_been_conditioned_on_success": false,
+        "uniform_efficient_program_supplied": false,
+        "table_lookup_is_a_free_coherent_oracle": false
+      },
+      "all_original_assignments_checked": 256,
+      "diagnostic_proposal_table_NOT_free_oracle": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "compiler": {
+        "phase_bits": 4,
+        "descent_bits": 2,
+        "public_labels_hex": [
+          [
+            "0x2",
+            "0xa",
+            "0xa",
+            "0xb",
+            "0x7",
+            "0x3",
+            "0x7",
+            "0x2"
+          ],
+          [
+            "0x4",
+            "0x8",
+            "0x5",
+            "0x6",
+            "0x8",
+            "0x0",
+            "0x3",
+            "0x3"
+          ]
+        ],
+        "program": {
+          "kind": "VECTOR_Z4_BALANCED_SORT_JOIN",
+          "width": 8,
+          "components": 2,
+          "descent_bits": 2,
+          "coarse_labels": [
+            [
+              2,
+              2,
+              2,
+              3,
+              3,
+              3,
+              3,
+              2
+            ],
+            [
+              0,
+              0,
+              1,
+              2,
+              0,
+              0,
+              3,
+              3
+            ]
+          ],
+          "per_block_weight": 1,
+          "list_length_hex": "0x4",
+          "hash_rows_hex": [
+            "0xf",
+            "0x28"
+          ],
+          "hash_offset_hex": "0x3",
+          "resource_ledger": {
+            "secret_vector_components": 2,
+            "group": "Z4^n with componentwise modular addition",
+            "group_cardinality_binary_exponent": 4,
+            "original_registers": 8,
+            "per_block_weight": 1,
+            "physical_mask_width": 2,
+            "hash_bits": 2,
+            "public_seed_bits": 18,
+            "mean_degree": {
+              "numerator_hex": "0x1",
+              "denominator_binary_exponent": 0
+            },
+            "degree_second_moment": {
+              "numerator_hex": "0x1f",
+              "denominator_binary_exponent": 4
+            },
+            "native_mean_coarse_coverage_lower_bound": {
+              "numerator_hex": "0x11",
+              "denominator_binary_exponent": 9
+            },
+            "mark_probability": {
+              "numerator_hex": "0x1",
+              "denominator_binary_exponent": 2
+            },
+            "counts_hex": {
+              "each_list_length": "0x4",
+              "available_block_supports": "0x4",
+              "padded_records": "0x8",
+              "one_xor_record_evaluations": "0x10",
+              "one_xor_comparators": "0x30",
+              "one_xor_scan_steps": "0x10",
+              "six_xor_comparators": "0x120",
+              "persistent_workspace_bits": "0x23e"
+            },
+            "record_bits": 17,
+            "scan_state_bits": 46,
+            "full_assignment_table_used": false,
+            "coherent_RAM_assumed": false,
+            "polynomial_time_claimed": false,
+            "gate_export_implemented": false,
+            "time_form": "O(L*log(L)^2*poly(n,m))",
+            "space_form": "O(L*poly(n,m)) coherent basis-wire bits"
+          },
+          "selection_access": "coarse-labels-and-independent-unfiltered-affine-seed",
+          "seed_has_been_conditioned_on_success": false,
+          "uniform_efficient_program_supplied": false,
+          "table_lookup_is_a_free_coherent_oracle": false
+        },
+        "pairs": [],
+        "accepted_assignments": [],
+        "useful_descent_probability": {
+          "numerator_hex": "0x0",
+          "denominator_binary_exponent": 0
+        },
+        "accepted_XOR_F_calls": 6,
+        "failed_XOR_F_calls": 4,
+        "original_unknown_phase_qubits_per_attempt": 8,
+        "compiler_qubits_excluding_F_internal_work": 28,
+        "output_qubits_on_accepted_attempt": 1,
+        "pair_list_is_measurement_outcomes_not_parallel_outputs": true,
+        "known_public_relation_bit_arithmetic_order": "O(n*m*t) per check plus reversible cleanup",
+        "basis_wire_permutations_and_clean_accepted_workspace_implemented": true,
+        "hardware_gate_export_backend_implemented": false,
+        "secret_or_phase_evaluator_is_program_input": false,
+        "fresh_descended_labels_IID_certified": false,
+        "same_A_source_resupply_or_inverse_supplied": false
+      },
+      "source_selection": "unfiltered seeded finite control, NOT a source probability estimate"
+    }
+  ],
+  "complete_source_censuses": [
+    {
+      "components": 1,
+      "width": 4,
+      "weight": 1,
+      "list_length": 2,
+      "all_label_seed_assignments_enumerated": 4194304,
+      "sum_unmarked_degrees": 4096,
+      "sum_squared_unmarked_degrees": 7168,
+      "mutual_unique_marked_assignments": 200704,
+      "observed_coarse_acceptance_probability": {
+        "numerator_hex": "0x31",
+        "denominator_binary_exponent": 10
+      },
+      "resource_ledger": {
+        "secret_vector_components": 1,
+        "group": "Z4^n with componentwise modular addition",
+        "group_cardinality_binary_exponent": 2,
+        "original_registers": 4,
+        "per_block_weight": 1,
+        "physical_mask_width": 2,
+        "hash_bits": 2,
+        "public_seed_bits": 10,
+        "mean_degree": {
+          "numerator_hex": "0x1",
+          "denominator_binary_exponent": 0
+        },
+        "degree_second_moment": {
+          "numerator_hex": "0x7",
+          "denominator_binary_exponent": 2
+        },
+        "native_mean_coarse_coverage_lower_bound": {
+          "numerator_hex": "0x5",
+          "denominator_binary_exponent": 7
+        },
+        "mark_probability": {
+          "numerator_hex": "0x1",
+          "denominator_binary_exponent": 2
+        },
+        "counts_hex": {
+          "each_list_length": "0x2",
+          "available_block_supports": "0x2",
+          "padded_records": "0x4",
+          "one_xor_record_evaluations": "0x8",
+          "one_xor_comparators": "0xc",
+          "one_xor_scan_steps": "0x8",
+          "six_xor_comparators": "0x48",
+          "persistent_workspace_bits": "0xb4"
+        },
+        "record_bits": 11,
+        "scan_state_bits": 26,
+        "full_assignment_table_used": false,
+        "coherent_RAM_assumed": false,
+        "polynomial_time_claimed": false,
+        "gate_export_implemented": false,
+        "time_form": "O(L*log(L)^2*poly(n,m))",
+        "space_form": "O(L*poly(n,m)) coherent basis-wire bits"
+      },
+      "uniform_hash_seed_space_rank_or_success_postselected": false
+    },
+    {
+      "components": 2,
+      "width": 2,
+      "weight": 1,
+      "list_length": 1,
+      "all_label_seed_assignments_enumerated": 1024,
+      "sum_unmarked_degrees": 64,
+      "sum_squared_unmarked_degrees": 64,
+      "mutual_unique_marked_assignments": 64,
+      "observed_coarse_acceptance_probability": {
+        "numerator_hex": "0x1",
+        "denominator_binary_exponent": 4
+      },
+      "resource_ledger": {
+        "secret_vector_components": 2,
+        "group": "Z4^n with componentwise modular addition",
+        "group_cardinality_binary_exponent": 4,
+        "original_registers": 2,
+        "per_block_weight": 1,
+        "physical_mask_width": 2,
+        "hash_bits": 0,
+        "public_seed_bits": 0,
+        "mean_degree": {
+          "numerator_hex": "0x1",
+          "denominator_binary_exponent": 4
+        },
+        "degree_second_moment": {
+          "numerator_hex": "0x1",
+          "denominator_binary_exponent": 4
+        },
+        "native_mean_coarse_coverage_lower_bound": {
+          "numerator_hex": "0x1",
+          "denominator_binary_exponent": 4
+        },
+        "mark_probability": {
+          "numerator_hex": "0x1",
+          "denominator_binary_exponent": 0
+        },
+        "counts_hex": {
+          "each_list_length": "0x1",
+          "available_block_supports": "0x1",
+          "padded_records": "0x2",
+          "one_xor_record_evaluations": "0x4",
+          "one_xor_comparators": "0x2",
+          "one_xor_scan_steps": "0x4",
+          "six_xor_comparators": "0xc",
+          "persistent_workspace_bits": "0x3d"
+        },
+        "record_bits": 9,
+        "scan_state_bits": 14,
+        "full_assignment_table_used": false,
+        "coherent_RAM_assumed": false,
+        "polynomial_time_claimed": false,
+        "gate_export_implemented": false,
+        "time_form": "O(L*log(L)^2*poly(n,m))",
+        "space_form": "O(L*poly(n,m)) coherent basis-wire bits"
+      },
+      "uniform_hash_seed_space_rank_or_success_postselected": false
+    }
+  ],
+  "native_short_mask_frontiers": [
+    {
+      "resource_ledger": {
+        "secret_vector_components": 8,
+        "group": "Z4^n with componentwise modular addition",
+        "group_cardinality_binary_exponent": 16,
+        "original_registers": 32,
+        "per_block_weight": 3,
+        "physical_mask_width": 6,
+        "hash_bits": 2,
+        "public_seed_bits": 66,
+        "mean_degree": {
+          "numerator_hex": "0x1",
+          "denominator_binary_exponent": 0
+        },
+        "degree_second_moment": {
+          "numerator_hex": "0x1ffff",
+          "denominator_binary_exponent": 16
+        },
+        "native_mean_coarse_coverage_lower_bound": {
+          "numerator_hex": "0x10001",
+          "denominator_binary_exponent": 21
+        },
+        "mark_probability": {
+          "numerator_hex": "0x1",
+          "denominator_binary_exponent": 2
+        },
+        "counts_hex": {
+          "each_list_length": "0x100",
+          "available_block_supports": "0x230",
+          "padded_records": "0x200",
+          "one_xor_record_evaluations": "0x400",
+          "one_xor_comparators": "0x5a00",
+          "one_xor_scan_steps": "0x400",
+          "six_xor_comparators": "0x21c00",
+          "persistent_workspace_bits": "0x1e3a6"
+        },
+        "record_bits": 53,
+        "scan_state_bits": 166,
+        "full_assignment_table_used": false,
+        "coherent_RAM_assumed": false,
+        "polynomial_time_claimed": false,
+        "gate_export_implemented": false,
+        "time_form": "O(L*log(L)^2*poly(n,m))",
+        "space_form": "O(L*poly(n,m)) coherent basis-wire bits"
+      },
+      "phase_bits": 10,
+      "original_visibility": {
+        "numerator_hex": "0x7",
+        "denominator_binary_exponent": 3
+      },
+      "uniform_higher_label_nonzero_probability": {
+        "numerator_hex": "0xffffffffffffffff",
+        "denominator_binary_exponent": 64
+      },
+      "native_mean_useful_probability_lower_bound": {
+        "numerator_hex": "0x10000fffffffffffeffff",
+        "denominator_binary_exponent": 85
+      },
+      "native_mean_useful_visibility_lower_bound": {
+        "numerator_hex": "0x1cb92cb90fffffffe346d346f",
+        "denominator_binary_exponent": 103
+      },
+      "source_coverage_lower_bound_is_for_each_fixed_A_or_seed": false,
+      "favorable_A_or_seed_selection_uncharged": false,
+      "abstract_noisy_source_wrapper_may_apply_under_its_separate_premises": true,
+      "classical_partner_search_is_a_classical_secret_decoder": false,
+      "exponential_recursive_supply_removed": false
+    },
+    {
+      "resource_ledger": {
+        "secret_vector_components": 16,
+        "group": "Z4^n with componentwise modular addition",
+        "group_cardinality_binary_exponent": 32,
+        "original_registers": 64,
+        "per_block_weight": 5,
+        "physical_mask_width": 10,
+        "hash_bits": 2,
+        "public_seed_bits": 130,
+        "mean_degree": {
+          "numerator_hex": "0x1",
+          "denominator_binary_exponent": 0
+        },
+        "degree_second_moment": {
+          "numerator_hex": "0x1ffffffff",
+          "denominator_binary_exponent": 32
+        },
+        "native_mean_coarse_coverage_lower_bound": {
+          "numerator_hex": "0x100000001",
+          "denominator_binary_exponent": 37
+        },
+        "mark_probability": {
+          "numerator_hex": "0x1",
+          "denominator_binary_exponent": 2
+        },
+        "counts_hex": {
+          "each_list_length": "0x10000",
+          "available_block_supports": "0x312a0",
+          "padded_records": "0x20000",
+          "one_xor_record_evaluations": "0x40000",
+          "one_xor_comparators": "0x1320000",
+          "one_xor_scan_steps": "0x40000",
+          "six_xor_comparators": "0x72c0000",
+          "persistent_workspace_bits": "0x3ef0146"
+        },
+        "record_bits": 101,
+        "scan_state_bits": 326,
+        "full_assignment_table_used": false,
+        "coherent_RAM_assumed": false,
+        "polynomial_time_claimed": false,
+        "gate_export_implemented": false,
+        "time_form": "O(L*log(L)^2*poly(n,m))",
+        "space_form": "O(L*poly(n,m)) coherent basis-wire bits"
+      },
+      "phase_bits": 18,
+      "original_visibility": {
+        "numerator_hex": "0xf",
+        "denominator_binary_exponent": 4
+      },
+      "uniform_higher_label_nonzero_probability": {
+        "numerator_hex": "0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+        "denominator_binary_exponent": 256
+      },
+      "native_mean_useful_probability_lower_bound": {
+        "numerator_hex": "0x100000000fffffffffffffffffffffffffffffffffffffffffffffffffffffffeffffffff",
+        "denominator_binary_exponent": 293
+      },
+      "native_mean_useful_visibility_lower_bound": {
+        "numerator_hex": "0x86430aace7430aac60ffffffffffffffffffffffffffffffffffffffffffffff79bcf55318bcf5539f",
+        "denominator_binary_exponent": 333
+      },
+      "source_coverage_lower_bound_is_for_each_fixed_A_or_seed": false,
+      "favorable_A_or_seed_selection_uncharged": false,
+      "abstract_noisy_source_wrapper_may_apply_under_its_separate_premises": true,
+      "classical_partner_search_is_a_classical_secret_decoder": false,
+      "exponential_recursive_supply_removed": false
+    },
+    {
+      "resource_ledger": {
+        "secret_vector_components": 32,
+        "group": "Z4^n with componentwise modular addition",
+        "group_cardinality_binary_exponent": 64,
+        "original_registers": 128,
+        "per_block_weight": 8,
+        "physical_mask_width": 16,
+        "hash_bits": 2,
+        "public_seed_bits": 258,
+        "mean_degree": {
+          "numerator_hex": "0x1",
+          "denominator_binary_exponent": 0
+        },
+        "degree_second_moment": {
+          "numerator_hex": "0x1ffffffffffffffff",
+          "denominator_binary_exponent": 64
+        },
+        "native_mean_coarse_coverage_lower_bound": {
+          "numerator_hex": "0x10000000000000001",
+          "denominator_binary_exponent": 69
+        },
+        "mark_probability": {
+          "numerator_hex": "0x1",
+          "denominator_binary_exponent": 2
+        },
+        "counts_hex": {
+          "each_list_length": "0x100000000",
+          "available_block_supports": "0x107d1ec78",
+          "padded_records": "0x200000000",
+          "one_xor_record_evaluations": "0x400000000",
+          "one_xor_comparators": "0x46200000000",
+          "one_xor_scan_steps": "0x400000000",
+          "six_xor_comparators": "0x1a4c00000000",
+          "persistent_workspace_bits": "0x8c700000286"
+        },
+        "record_bits": 197,
+        "scan_state_bits": 646,
+        "full_assignment_table_used": false,
+        "coherent_RAM_assumed": false,
+        "polynomial_time_claimed": false,
+        "gate_export_implemented": false,
+        "time_form": "O(L*log(L)^2*poly(n,m))",
+        "space_form": "O(L*poly(n,m)) coherent basis-wire bits"
+      },
+      "phase_bits": 34,
+      "original_visibility": {
+        "numerator_hex": "0x1f",
+        "denominator_binary_exponent": 5
+      },
+      "uniform_higher_label_nonzero_probability": {
+        "numerator_hex": "0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+        "denominator_binary_exponent": 1024
+      },
+      "native_mean_useful_probability_lower_bound": {
+        "numerator_hex": "0x10000000000000000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffeffffffffffffffff",
+        "denominator_binary_exponent": 1093
+      },
+      "native_mean_useful_visibility_lower_bound": {
+        "numerator_hex": "0x9a09afbae83050aa780aafbae83050a9de00ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff65f6504517cfaf5587f5504517cfaf5621ff",
+        "denominator_binary_exponent": 1173
+      },
+      "source_coverage_lower_bound_is_for_each_fixed_A_or_seed": false,
+      "favorable_A_or_seed_selection_uncharged": false,
+      "abstract_noisy_source_wrapper_may_apply_under_its_separate_premises": true,
+      "classical_partner_search_is_a_classical_secret_decoder": false,
+      "exponential_recursive_supply_removed": false
+    },
+    {
+      "resource_ledger": {
+        "secret_vector_components": 64,
+        "group": "Z4^n with componentwise modular addition",
+        "group_cardinality_binary_exponent": 128,
+        "original_registers": 256,
+        "per_block_weight": 16,
+        "physical_mask_width": 32,
+        "hash_bits": 2,
+        "public_seed_bits": 514,
+        "mean_degree": {
+          "numerator_hex": "0x1",
+          "denominator_binary_exponent": 0
+        },
+        "degree_second_moment": {
+          "numerator_hex": "0x1ffffffffffffffffffffffffffffffff",
+          "denominator_binary_exponent": 128
+        },
+        "native_mean_coarse_coverage_lower_bound": {
+          "numerator_hex": "0x100000000000000000000000000000001",
+          "denominator_binary_exponent": 133
+        },
+        "mark_probability": {
+          "numerator_hex": "0x1",
+          "denominator_binary_exponent": 2
+        },
+        "counts_hex": {
+          "each_list_length": "0x10000000000000000",
+          "available_block_supports": "0x50f65073ae2fcec78",
+          "padded_records": "0x20000000000000000",
+          "one_xor_record_evaluations": "0x40000000000000000",
+          "one_xor_comparators": "0x10c20000000000000000",
+          "one_xor_scan_steps": "0x40000000000000000",
+          "six_xor_comparators": "0x648c0000000000000000",
+          "persistent_workspace_bits": "0x15770000000000000506"
+        },
+        "record_bits": 389,
+        "scan_state_bits": 1286,
+        "full_assignment_table_used": false,
+        "coherent_RAM_assumed": false,
+        "polynomial_time_claimed": false,
+        "gate_export_implemented": false,
+        "time_form": "O(L*log(L)^2*poly(n,m))",
+        "space_form": "O(L*poly(n,m)) coherent basis-wire bits"
+      },
+      "phase_bits": 66,
+      "original_visibility": {
+        "numerator_hex": "0x3f",
+        "denominator_binary_exponent": 6
+      },
+      "uniform_higher_label_nonzero_probability": {
+        "numerator_hex": "0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+        "denominator_binary_exponent": 4096
+      },
+      "native_mean_useful_probability_lower_bound": {
+        "numerator_hex": "0x100000000000000000000000000000000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffeffffffffffffffffffffffffffffffff",
+        "denominator_binary_exponent": 4229
+      },
+      "native_mean_useful_visibility_lower_bound": {
+        "numerator_hex": "0x9aa8fe8012cc82c2955405c54bc55c2fe531f7643d6b7ac3955405c54bc55c2f4a88f8e42a9ef800ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff6557017fed337d3d6aabfa3ab43aa3d01ace089bc294853c6aabfa3ab43aa3d0b577071bd56107ff",
+        "denominator_binary_exponent": 4421
+      },
+      "source_coverage_lower_bound_is_for_each_fixed_A_or_seed": false,
+      "favorable_A_or_seed_selection_uncharged": false,
+      "abstract_noisy_source_wrapper_may_apply_under_its_separate_premises": true,
+      "classical_partner_search_is_a_classical_secret_decoder": false,
+      "exponential_recursive_supply_removed": false
+    },
+    {
+      "resource_ledger": {
+        "secret_vector_components": 128,
+        "group": "Z4^n with componentwise modular addition",
+        "group_cardinality_binary_exponent": 256,
+        "original_registers": 512,
+        "per_block_weight": 30,
+        "physical_mask_width": 60,
+        "hash_bits": 2,
+        "public_seed_bits": 1026,
+        "mean_degree": {
+          "numerator_hex": "0x1",
+          "denominator_binary_exponent": 0
+        },
+        "degree_second_moment": {
+          "numerator_hex": "0x1ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+          "denominator_binary_exponent": 256
+        },
+        "native_mean_coarse_coverage_lower_bound": {
+          "numerator_hex": "0x10000000000000000000000000000000000000000000000000000000000000001",
+          "denominator_binary_exponent": 261
+        },
+        "mark_probability": {
+          "numerator_hex": "0x1",
+          "denominator_binary_exponent": 2
+        },
+        "counts_hex": {
+          "each_list_length": "0x100000000000000000000000000000000",
+          "available_block_supports": "0x356d3051fb4f306ff27f8036fbbb08080",
+          "padded_records": "0x200000000000000000000000000000000",
+          "one_xor_record_evaluations": "0x400000000000000000000000000000000",
+          "one_xor_comparators": "0x418200000000000000000000000000000000",
+          "one_xor_scan_steps": "0x400000000000000000000000000000000",
+          "six_xor_comparators": "0x1890c00000000000000000000000000000000",
+          "persistent_workspace_bits": "0x3ad700000000000000000000000000000a06"
+        },
+        "record_bits": 773,
+        "scan_state_bits": 2566,
+        "full_assignment_table_used": false,
+        "coherent_RAM_assumed": false,
+        "polynomial_time_claimed": false,
+        "gate_export_implemented": false,
+        "time_form": "O(L*log(L)^2*poly(n,m))",
+        "space_form": "O(L*poly(n,m)) coherent basis-wire bits"
+      },
+      "phase_bits": 130,
+      "original_visibility": {
+        "numerator_hex": "0x7f",
+        "denominator_binary_exponent": 7
+      },
+      "uniform_higher_label_nonzero_probability": {
+        "numerator_hex": "0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+        "denominator_binary_exponent": 16384
+      },
+      "native_mean_useful_probability_lower_bound": {
+        "numerator_hex": "0x10000000000000000000000000000000000000000000000000000000000000000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffeffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+        "denominator_binary_exponent": 16645
+      },
+      "native_mean_useful_visibility_lower_bound": {
+        "numerator_hex": "0x9fe7f678d993c38fc848ab0134b3a4e953f5110c3e32d3164bd0bce55171be3f52619d0f4690c128427562187cbb7e551bb8b72c4e32d3164bd0bce55171be3eb279a6966cfcfd987a2cb7174807d96bc7c3a6200fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff60180987266c3c7037b754fecb4c5b16ac0aeef3c1cd2ce9b42f431aae8e41c0ad9e62f0b96f3ed7bd8a9de7834481aae44748d3b1cd2ce9b42f431aae8e41c14d8659699303026785d348e8b7f82694383c59dff",
+        "denominator_binary_exponent": 17065
+      },
+      "source_coverage_lower_bound_is_for_each_fixed_A_or_seed": false,
+      "favorable_A_or_seed_selection_uncharged": false,
+      "abstract_noisy_source_wrapper_may_apply_under_its_separate_premises": true,
+      "classical_partner_search_is_a_classical_secret_decoder": false,
+      "exponential_recursive_supply_removed": false
+    }
+  ],
+  "scope": {
+    "relation": "A(y-x)=0 in Z4^n, not one cyclic integer congruence",
+    "full_higher_labels_are_program_inputs": false,
+    "coarse_only_fresh_higher_label_law_applies_with_fresh_batches": true,
+    "sorting_network_gate_export_implemented": false,
+    "coherent_RAM_assumed": false,
+    "polynomial_time_or_coherent_space_claimed": false,
+    "constant_mean_coverage_and_visibility_implies_scalable_decoder": false,
+    "natural_source_noise_or_hardness_certified": false,
+    "improves_known_DCP_time_query_tradeoff": false
+  },
+  "literature": [
+    "https://arxiv.org/abs/1207.2307",
+    "https://arxiv.org/abs/2206.14408"
+  ]
+}

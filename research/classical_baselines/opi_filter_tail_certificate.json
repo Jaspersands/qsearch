@@ -1,0 +1,3073 @@
+{
+  "schema_version": "1.0",
+  "subsystem": "opi_filter_tail_certificate",
+  "instances": [
+    {
+      "field_bits": 4,
+      "positions": 7,
+      "RS_dimension": 3,
+      "public_seed": 29,
+      "classical_best_of_four": 7,
+      "filters": [
+        {
+          "moments": {
+            "positions": 7,
+            "RS_dimension": 3,
+            "filter_degree": 0,
+            "certified_moment_order": 3,
+            "maximum_RS_certified_order": 3,
+            "rational_Krawtchouk_coefficients": [
+              "1"
+            ],
+            "filter_normalization": "1",
+            "normalized_score_moments": [
+              "1",
+              "1/2",
+              "2/7",
+              "5/28"
+            ],
+            "mean_score": "1/2",
+            "precision_bits": 128,
+            "filter_is_this_rational_polynomial_not_exact_reference_eigenfilter": true,
+            "weighted_binomial_law_is_the_native_full_score_distribution": false,
+            "moments_beyond_RS_cutoff_not_certified_by_this_method": true,
+            "RS_K_wise_independence_and_balanced_public_predicates_required": true,
+            "coherent_filter_and_decoder_executed": false,
+            "local_moment_derivation_review_pending": true
+          },
+          "tail_certificates": [
+            {
+              "accepted_count_threshold": 6,
+              "tail_probability_lower": "0",
+              "tail_probability_upper": "7/48",
+              "minorant_coefficients": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "majorant_coefficients": [
+                "0",
+                "7/3",
+                "-343/36",
+                "343/36"
+              ],
+              "lower_solver": {
+                "status": "EXACTLY_VERIFIED_RATIONAL_DUAL",
+                "constant_repair": "0",
+                "numerical_LP_optimum_is_certified": false
+              },
+              "upper_solver": {
+                "status": "EXACTLY_VERIFIED_RATIONAL_DUAL",
+                "constant_repair": "0",
+                "numerical_LP_optimum_is_certified": false
+              },
+              "support_points_checked": 8,
+              "matched_quantum_gate_budget_supplied": false,
+              "independent_repetitions": [
+                {
+                  "attempts": 1,
+                  "success_lower": "0",
+                  "success_upper": "88150841013566710655659/604462909807314587353088",
+                  "dyadic_enclosure_bits": 80
+                },
+                {
+                  "attempts": 4,
+                  "success_lower": "0",
+                  "success_upper": "8834278821048492837041/18889465931478580854784",
+                  "dyadic_enclosure_bits": 80
+                },
+                {
+                  "attempts": 16,
+                  "success_lower": "0",
+                  "success_upper": "1111856594527247894964851/1208925819614629174706176",
+                  "dyadic_enclosure_bits": 80
+                }
+              ]
+            },
+            {
+              "accepted_count_threshold": 7,
+              "tail_probability_lower": "0",
+              "tail_probability_upper": "1/16",
+              "minorant_coefficients": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "majorant_coefficients": [
+                "0",
+                "1",
+                "-49/12",
+                "49/12"
+              ],
+              "lower_solver": {
+                "status": "EXACTLY_VERIFIED_RATIONAL_DUAL",
+                "constant_repair": "0",
+                "numerical_LP_optimum_is_certified": false
+              },
+              "upper_solver": {
+                "status": "EXACTLY_VERIFIED_RATIONAL_DUAL",
+                "constant_repair": "0",
+                "numerical_LP_optimum_is_certified": false
+              },
+              "support_points_checked": 8,
+              "matched_quantum_gate_budget_supplied": false,
+              "independent_repetitions": [
+                {
+                  "attempts": 1,
+                  "success_lower": "0",
+                  "success_upper": "1/16",
+                  "dyadic_enclosure_bits": 80
+                },
+                {
+                  "attempts": 4,
+                  "success_lower": "0",
+                  "success_upper": "14911/65536",
+                  "dyadic_enclosure_bits": 80
+                },
+                {
+                  "attempts": 16,
+                  "success_lower": "0",
+                  "success_upper": "11878335717996660991/18446744073709551616",
+                  "dyadic_enclosure_bits": 80
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "moments": {
+            "positions": 7,
+            "RS_dimension": 3,
+            "filter_degree": 1,
+            "certified_moment_order": 1,
+            "maximum_RS_certified_order": 1,
+            "rational_Krawtchouk_coefficients": [
+              "9369319/13250218",
+              "1205031641645281807157423094556444384503458099/4508815543258423405474748564135348927262097408"
+            ],
+            "filter_normalization": "20329417603128520199447383264087106362064516913142571961931070821900745444417035454651375903/20329417603128751783625857896477953504086264156381737680965630204263244758953257483280318464",
+            "normalized_score_moments": [
+              "1",
+              "319114770449071646156484590896090669347855198503736431432587800479910514181775/463168356949264781694283940034751631411901368859557190942760157403726947650846"
+            ],
+            "mean_score": "319114770449071646156484590896090669347855198503736431432587800479910514181775/463168356949264781694283940034751631411901368859557190942760157403726947650846",
+            "precision_bits": 128,
+            "filter_is_this_rational_polynomial_not_exact_reference_eigenfilter": true,
+            "weighted_binomial_law_is_the_native_full_score_distribution": false,
+            "moments_beyond_RS_cutoff_not_certified_by_this_method": true,
+            "RS_K_wise_independence_and_balanced_public_predicates_required": true,
+            "coherent_filter_and_decoder_executed": false,
+            "local_moment_derivation_review_pending": true
+          },
+          "tail_certificates": [
+            {
+              "accepted_count_threshold": 6,
+              "tail_probability_lower": "0",
+              "tail_probability_upper": "744601131047833841031797378757544895144995463175385006676038201119791199757475/926336713898529563388567880069503262823802737719114381885520314807453895301692",
+              "minorant_coefficients": [
+                "0",
+                "0"
+              ],
+              "majorant_coefficients": [
+                "0",
+                "7/6"
+              ],
+              "lower_solver": {
+                "status": "EXACTLY_VERIFIED_RATIONAL_DUAL",
+                "constant_repair": "0",
+                "numerical_LP_optimum_is_certified": false
+              },
+              "upper_solver": {
+                "status": "EXACTLY_VERIFIED_RATIONAL_DUAL",
+                "constant_repair": "0",
+                "numerical_LP_optimum_is_certified": false
+              },
+              "support_points_checked": 8,
+              "matched_quantum_gate_budget_supplied": false,
+              "independent_repetitions": [
+                {
+                  "attempts": 1,
+                  "success_lower": "0",
+                  "success_upper": "971749817460637009105209/1208925819614629174706176",
+                  "dyadic_enclosure_bits": 80
+                },
+                {
+                  "attempts": 4,
+                  "success_lower": "0",
+                  "success_upper": "1207134867319515981710945/1208925819614629174706176",
+                  "dyadic_enclosure_bits": 80
+                },
+                {
+                  "attempts": 16,
+                  "success_lower": "0",
+                  "success_upper": "302231454902201576116629/302231454903657293676544",
+                  "dyadic_enclosure_bits": 80
+                }
+              ]
+            },
+            {
+              "accepted_count_threshold": 7,
+              "tail_probability_lower": "0",
+              "tail_probability_upper": "319114770449071646156484590896090669347855198503736431432587800479910514181775/463168356949264781694283940034751631411901368859557190942760157403726947650846",
+              "minorant_coefficients": [
+                "0",
+                "0"
+              ],
+              "majorant_coefficients": [
+                "0",
+                "1"
+              ],
+              "lower_solver": {
+                "status": "EXACTLY_VERIFIED_RATIONAL_DUAL",
+                "constant_repair": "0",
+                "numerical_LP_optimum_is_certified": false
+              },
+              "upper_solver": {
+                "status": "EXACTLY_VERIFIED_RATIONAL_DUAL",
+                "constant_repair": "0",
+                "numerical_LP_optimum_is_certified": false
+              },
+              "support_points_checked": 8,
+              "matched_quantum_gate_budget_supplied": false,
+              "independent_repetitions": [
+                {
+                  "attempts": 1,
+                  "success_lower": "0",
+                  "success_upper": "832928414966260293518751/1208925819614629174706176",
+                  "dyadic_enclosure_bits": 80
+                },
+                {
+                  "attempts": 4,
+                  "success_lower": "0",
+                  "success_upper": "149701724088732631578267/151115727451828646838272",
+                  "dyadic_enclosure_bits": 80
+                },
+                {
+                  "attempts": 16,
+                  "success_lower": "0",
+                  "success_upper": "151115726293390710716877/151115727451828646838272",
+                  "dyadic_enclosure_bits": 80
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "classical_finite_best_score_is_not_a_quantum_tail_bound": true
+    },
+    {
+      "field_bits": 4,
+      "positions": 7,
+      "RS_dimension": 3,
+      "public_seed": 71,
+      "classical_best_of_four": 7,
+      "filters": [
+        {
+          "moments": {
+            "positions": 7,
+            "RS_dimension": 3,
+            "filter_degree": 0,
+            "certified_moment_order": 3,
+            "maximum_RS_certified_order": 3,
+            "rational_Krawtchouk_coefficients": [
+              "1"
+            ],
+            "filter_normalization": "1",
+            "normalized_score_moments": [
+              "1",
+              "1/2",
+              "2/7",
+              "5/28"
+            ],
+            "mean_score": "1/2",
+            "precision_bits": 128,
+            "filter_is_this_rational_polynomial_not_exact_reference_eigenfilter": true,
+            "weighted_binomial_law_is_the_native_full_score_distribution": false,
+            "moments_beyond_RS_cutoff_not_certified_by_this_method": true,
+            "RS_K_wise_independence_and_balanced_public_predicates_required": true,
+            "coherent_filter_and_decoder_executed": false,
+            "local_moment_derivation_review_pending": true
+          },
+          "tail_certificates": [
+            {
+              "accepted_count_threshold": 6,
+              "tail_probability_lower": "0",
+              "tail_probability_upper": "7/48",
+              "minorant_coefficients": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "majorant_coefficients": [
+                "0",
+                "7/3",
+                "-343/36",
+                "343/36"
+              ],
+              "lower_solver": {
+                "status": "EXACTLY_VERIFIED_RATIONAL_DUAL",
+                "constant_repair": "0",
+                "numerical_LP_optimum_is_certified": false
+              },
+              "upper_solver": {
+                "status": "EXACTLY_VERIFIED_RATIONAL_DUAL",
+                "constant_repair": "0",
+                "numerical_LP_optimum_is_certified": false
+              },
+              "support_points_checked": 8,
+              "matched_quantum_gate_budget_supplied": false,
+              "independent_repetitions": [
+                {
+                  "attempts": 1,
+                  "success_lower": "0",
+                  "success_upper": "88150841013566710655659/604462909807314587353088",
+                  "dyadic_enclosure_bits": 80
+                },
+                {
+                  "attempts": 4,
+                  "success_lower": "0",
+                  "success_upper": "8834278821048492837041/18889465931478580854784",
+                  "dyadic_enclosure_bits": 80
+                },
+                {
+                  "attempts": 16,
+                  "success_lower": "0",
+                  "success_upper": "1111856594527247894964851/1208925819614629174706176",
+                  "dyadic_enclosure_bits": 80
+                }
+              ]
+            },
+            {
+              "accepted_count_threshold": 7,
+              "tail_probability_lower": "0",
+              "tail_probability_upper": "1/16",
+              "minorant_coefficients": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "majorant_coefficients": [
+                "0",
+                "1",
+                "-49/12",
+                "49/12"
+              ],
+              "lower_solver": {
+                "status": "EXACTLY_VERIFIED_RATIONAL_DUAL",
+                "constant_repair": "0",
+                "numerical_LP_optimum_is_certified": false
+              },
+              "upper_solver": {
+                "status": "EXACTLY_VERIFIED_RATIONAL_DUAL",
+                "constant_repair": "0",
+                "numerical_LP_optimum_is_certified": false
+              },
+              "support_points_checked": 8,
+              "matched_quantum_gate_budget_supplied": false,
+              "independent_repetitions": [
+                {
+                  "attempts": 1,
+                  "success_lower": "0",
+                  "success_upper": "1/16",
+                  "dyadic_enclosure_bits": 80
+                },
+                {
+                  "attempts": 4,
+                  "success_lower": "0",
+                  "success_upper": "14911/65536",
+                  "dyadic_enclosure_bits": 80
+                },
+                {
+                  "attempts": 16,
+                  "success_lower": "0",
+                  "success_upper": "11878335717996660991/18446744073709551616",
+                  "dyadic_enclosure_bits": 80
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "moments": {
+            "positions": 7,
+            "RS_dimension": 3,
+            "filter_degree": 1,
+            "certified_moment_order": 1,
+            "maximum_RS_certified_order": 1,
+            "rational_Krawtchouk_coefficients": [
+              "9369319/13250218",
+              "1205031641645281807157423094556444384503458099/4508815543258423405474748564135348927262097408"
+            ],
+            "filter_normalization": "20329417603128520199447383264087106362064516913142571961931070821900745444417035454651375903/20329417603128751783625857896477953504086264156381737680965630204263244758953257483280318464",
+            "normalized_score_moments": [
+              "1",
+              "319114770449071646156484590896090669347855198503736431432587800479910514181775/463168356949264781694283940034751631411901368859557190942760157403726947650846"
+            ],
+            "mean_score": "319114770449071646156484590896090669347855198503736431432587800479910514181775/463168356949264781694283940034751631411901368859557190942760157403726947650846",
+            "precision_bits": 128,
+            "filter_is_this_rational_polynomial_not_exact_reference_eigenfilter": true,
+            "weighted_binomial_law_is_the_native_full_score_distribution": false,
+            "moments_beyond_RS_cutoff_not_certified_by_this_method": true,
+            "RS_K_wise_independence_and_balanced_public_predicates_required": true,
+            "coherent_filter_and_decoder_executed": false,
+            "local_moment_derivation_review_pending": true
+          },
+          "tail_certificates": [
+            {
+              "accepted_count_threshold": 6,
+              "tail_probability_lower": "0",
+              "tail_probability_upper": "744601131047833841031797378757544895144995463175385006676038201119791199757475/926336713898529563388567880069503262823802737719114381885520314807453895301692",
+              "minorant_coefficients": [
+                "0",
+                "0"
+              ],
+              "majorant_coefficients": [
+                "0",
+                "7/6"
+              ],
+              "lower_solver": {
+                "status": "EXACTLY_VERIFIED_RATIONAL_DUAL",
+                "constant_repair": "0",
+                "numerical_LP_optimum_is_certified": false
+              },
+              "upper_solver": {
+                "status": "EXACTLY_VERIFIED_RATIONAL_DUAL",
+                "constant_repair": "0",
+                "numerical_LP_optimum_is_certified": false
+              },
+              "support_points_checked": 8,
+              "matched_quantum_gate_budget_supplied": false,
+              "independent_repetitions": [
+                {
+                  "attempts": 1,
+                  "success_lower": "0",
+                  "success_upper": "971749817460637009105209/1208925819614629174706176",
+                  "dyadic_enclosure_bits": 80
+                },
+                {
+                  "attempts": 4,
+                  "success_lower": "0",
+                  "success_upper": "1207134867319515981710945/1208925819614629174706176",
+                  "dyadic_enclosure_bits": 80
+                },
+                {
+                  "attempts": 16,
+                  "success_lower": "0",
+                  "success_upper": "302231454902201576116629/302231454903657293676544",
+                  "dyadic_enclosure_bits": 80
+                }
+              ]
+            },
+            {
+              "accepted_count_threshold": 7,
+              "tail_probability_lower": "0",
+              "tail_probability_upper": "319114770449071646156484590896090669347855198503736431432587800479910514181775/463168356949264781694283940034751631411901368859557190942760157403726947650846",
+              "minorant_coefficients": [
+                "0",
+                "0"
+              ],
+              "majorant_coefficients": [
+                "0",
+                "1"
+              ],
+              "lower_solver": {
+                "status": "EXACTLY_VERIFIED_RATIONAL_DUAL",
+                "constant_repair": "0",
+                "numerical_LP_optimum_is_certified": false
+              },
+              "upper_solver": {
+                "status": "EXACTLY_VERIFIED_RATIONAL_DUAL",
+                "constant_repair": "0",
+                "numerical_LP_optimum_is_certified": false
+              },
+              "support_points_checked": 8,
+              "matched_quantum_gate_budget_supplied": false,
+              "independent_repetitions": [
+                {
+                  "attempts": 1,
+                  "success_lower": "0",
+                  "success_upper": "832928414966260293518751/1208925819614629174706176",
+                  "dyadic_enclosure_bits": 80
+                },
+                {
+                  "attempts": 4,
+                  "success_lower": "0",
+                  "success_upper": "149701724088732631578267/151115727451828646838272",
+                  "dyadic_enclosure_bits": 80
+                },
+                {
+                  "attempts": 16,
+                  "success_lower": "0",
+                  "success_upper": "151115726293390710716877/151115727451828646838272",
+                  "dyadic_enclosure_bits": 80
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "classical_finite_best_score_is_not_a_quantum_tail_bound": true
+    },
+    {
+      "field_bits": 15,
+      "positions": 31,
+      "RS_dimension": 9,
+      "public_seed": 29,
+      "classical_best_of_four": 27,
+      "filters": [
+        {
+          "moments": {
+            "positions": 31,
+            "RS_dimension": 9,
+            "filter_degree": 1,
+            "certified_moment_order": 7,
+            "maximum_RS_certified_order": 7,
+            "rational_Krawtchouk_coefficients": [
+              "9369319/13250218",
+              "286310073307124717791811313342586714914812343/2254407771629211702737374282067674463631048704"
+            ],
+            "filter_normalization": "5082354400782130049861845816021776590497934215079179656575115618196760070347161441187268943/5082354400782187945906464474119488376021566039095434420241407551065811189738314370820079616",
+            "normalized_score_moments": [
+              "1",
+              "68294481198547821032426985392432398293211764664873332409065506389812713064895/115792089237316195423570985008687907852560802333028102667034210159983745504126",
+              "20591975209889860583693476240984784335559316571549092551891820525886682692985/57896044618658097711785492504343953926280401166514051333517105079991872752063",
+              "48579012716168450468935201637072258419443370386822507941232730941880529616305495/222552395514121727604103433186698158892621862084080013326039751927488758858930172",
+              "234585402693790010741430404750486428094068113060868659209513157782640330295178270/1724781065234443388931801607196910731417819431151620103276808077438037881156708833",
+              "4594365632751930973229311372320668927081706177003700002198315115219749248996110790/53468213022267745056885849823104232673952402365700223201581050400579174315857973823",
+              "182326587429611462619457105268148223282575858044282113626506689212196048293607965895/3315029207380600193526922689032462425785048946673413838498025124835908807583194377026",
+              "14653551129117645393074545858768417952337552207838450139479043632944216114338449712215/411063621715194423997338413440025340797346069387503315973755115479652692140316102751224"
+            ],
+            "mean_score": "68294481198547821032426985392432398293211764664873332409065506389812713064895/115792089237316195423570985008687907852560802333028102667034210159983745504126",
+            "precision_bits": 128,
+            "filter_is_this_rational_polynomial_not_exact_reference_eigenfilter": true,
+            "weighted_binomial_law_is_the_native_full_score_distribution": false,
+            "moments_beyond_RS_cutoff_not_certified_by_this_method": true,
+            "RS_K_wise_independence_and_balanced_public_predicates_required": true,
+            "coherent_filter_and_decoder_executed": false,
+            "local_moment_derivation_review_pending": true
+          },
+          "tail_certificates": [
+            {
+              "accepted_count_threshold": 25,
+              "tail_probability_lower": "0",
+              "tail_probability_upper": "27921469261894778374504757724160236113299907391673620544564474144824704195422673692355342650921679452294196119392289617500555608073308240609/1696822345174580689940054217384988237041791075275371684219704992597531083552200147081041515195910784270929398629809267332917401969493120955190",
+              "minorant_coefficients": [
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "majorant_coefficients": [
+                "37069776015857188789486518485026900594433199929273553/164125290346957245493686300187327662301066207148484440212125795128",
+                "22240942921/854106871",
+                "-311641036889/848377864",
+                "21937221394/10500525",
+                "-2881344540271/469251294",
+                "10286295622396/1042433021",
+                "-5658588614847/686069276",
+                "2233079809369/794774259"
+              ],
+              "lower_solver": {
+                "status": "EXACTLY_VERIFIED_RATIONAL_DUAL",
+                "constant_repair": "0",
+                "numerical_LP_optimum_is_certified": false
+              },
+              "upper_solver": {
+                "status": "EXACTLY_VERIFIED_RATIONAL_DUAL",
+                "constant_repair": "37069776015857188789486518485026900594433199929273553/164125290346957245493686300187327662301066207148484440212125795128",
+                "numerical_LP_optimum_is_certified": false
+              },
+              "support_points_checked": 32,
+              "matched_quantum_gate_budget_supplied": false,
+              "independent_repetitions": [
+                {
+                  "attempts": 1,
+                  "success_lower": "0",
+                  "success_upper": "4973264468179766379551/302231454903657293676544",
+                  "dyadic_enclosure_bits": 80
+                },
+                {
+                  "attempts": 4,
+                  "success_lower": "0",
+                  "success_upper": "19407407266850954895443/302231454903657293676544",
+                  "dyadic_enclosure_bits": 80
+                },
+                {
+                  "attempts": 16,
+                  "success_lower": "0",
+                  "success_upper": "140934514424094808408681/604462909807314587353088",
+                  "dyadic_enclosure_bits": 80
+                }
+              ]
+            },
+            {
+              "accepted_count_threshold": 27,
+              "tail_probability_lower": "0",
+              "tail_probability_upper": "131762967726186569937492261537271645008443875663479116086928054551431889222245540361655687301380601682642704182450495008090210130037747444323729/38757035261200480512895522741295045124982429946790031772541199046442783518368786925945145477371118514425991424959601264131238970463299888798972600",
+              "minorant_coefficients": [
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "majorant_coefficients": [
+                "23424816707961157852208471104610855089342899432458889/24793502904553051483902836644467071881441062365564354111316449152600",
+                "8479004081/479541496",
+                "-225324810587/982125566",
+                "912298497158/756361485",
+                "-3443640550387/1045831473",
+                "815104367849/165179962",
+                "-2772554479916/718434445",
+                "1221789455467/990634550"
+              ],
+              "lower_solver": {
+                "status": "EXACTLY_VERIFIED_RATIONAL_DUAL",
+                "constant_repair": "0",
+                "numerical_LP_optimum_is_certified": false
+              },
+              "upper_solver": {
+                "status": "EXACTLY_VERIFIED_RATIONAL_DUAL",
+                "constant_repair": "23424816707961157852208471104610855089342899432458889/24793502904553051483902836644467071881441062365564354111316449152600",
+                "numerical_LP_optimum_is_certified": false
+              },
+              "support_points_checked": 32,
+              "matched_quantum_gate_budget_supplied": false,
+              "independent_repetitions": [
+                {
+                  "attempts": 1,
+                  "success_lower": "0",
+                  "success_upper": "2055003081114182837179/604462909807314587353088",
+                  "dyadic_enclosure_bits": 80
+                },
+                {
+                  "attempts": 4,
+                  "success_lower": "0",
+                  "success_upper": "2044547168169978839821/151115727451828646838272",
+                  "dyadic_enclosure_bits": 80
+                },
+                {
+                  "attempts": 16,
+                  "success_lower": "0",
+                  "success_upper": "32054833010243583719609/604462909807314587353088",
+                  "dyadic_enclosure_bits": 80
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "moments": {
+            "positions": 31,
+            "RS_dimension": 9,
+            "filter_degree": 3,
+            "certified_moment_order": 3,
+            "maximum_RS_certified_order": 3,
+            "rational_Krawtchouk_coefficients": [
+              "1047181/4712272",
+              "75356696370936122593256189752332286003565697/827762208571518422290186753986029841098473472",
+              "37741970845335367311797485414026077075679069/1212404550479595995962189667835470078078353408",
+              "5189755994624963068874044326862556533053805/705724531487277275038304206587826500930633728"
+            ],
+            "filter_normalization": "207691949740775105532047162020963912506811755709110500461120148517347732924958173464788663363803690525748953771119971800402867855/207691949740776609150172385427298747533487117142471175618685670343177413377926044890546273119543655967941029934889326889805021184",
+            "normalized_score_moments": [
+              "1",
+              "292775287023155018095236746744329917577827136407090001819521061814432473591933743628570505378349697891983402249015454328234439839/415383899481550211064094324041927825013623511418221000922240297034695465849916346929577326727607381051497907542239943600805735710",
+              "3244133703684000747239745453314187748883547672764122969504133459015774207525618865910251203560090550103239037754619054509845646102/6438450441964028271493462022649881287711164426982425514294724604037779720673703377408448564277914406298217566904719125812488903505",
+              "290346688920566479976116528473741383223745118899412399184797360693071886368032151939695434433074184183750753621668492273139189012973/798367854803539505665189290808585279676184388945820763772545850900684685363539218798647621970461386380978978296185171600748624034620"
+            ],
+            "mean_score": "292775287023155018095236746744329917577827136407090001819521061814432473591933743628570505378349697891983402249015454328234439839/415383899481550211064094324041927825013623511418221000922240297034695465849916346929577326727607381051497907542239943600805735710",
+            "precision_bits": 128,
+            "filter_is_this_rational_polynomial_not_exact_reference_eigenfilter": true,
+            "weighted_binomial_law_is_the_native_full_score_distribution": false,
+            "moments_beyond_RS_cutoff_not_certified_by_this_method": true,
+            "RS_K_wise_independence_and_balanced_public_predicates_required": true,
+            "coherent_filter_and_decoder_executed": false,
+            "local_moment_derivation_review_pending": true
+          },
+          "tail_certificates": [
+            {
+              "accepted_count_threshold": 25,
+              "tail_probability_lower": "0",
+              "tail_probability_upper": "39520980470836047997582164465884550003073360123816511201361878152482527688984856003087665605360844229567372991273709405910554353313169202390276437033153/124896293756288860687268392612608123208057934874124286736329465203540247672488483344426521420412683511017413644060316173968035799182450084102825908210500",
+              "minorant_coefficients": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "majorant_coefficients": [
+                "19516412835/12027071238165434366702",
+                "651/25",
+                "-57993252155/735936298",
+                "32685087747/548573189"
+              ],
+              "lower_solver": {
+                "status": "EXACTLY_VERIFIED_RATIONAL_DUAL",
+                "constant_repair": "0",
+                "numerical_LP_optimum_is_certified": false
+              },
+              "upper_solver": {
+                "status": "EXACTLY_VERIFIED_RATIONAL_DUAL",
+                "constant_repair": "19516412835/12027071238165434366702",
+                "numerical_LP_optimum_is_certified": false
+              },
+              "support_points_checked": 32,
+              "matched_quantum_gate_budget_supplied": false,
+              "independent_repetitions": [
+                {
+                  "attempts": 1,
+                  "success_lower": "0",
+                  "success_upper": "191270422326977482753969/604462909807314587353088",
+                  "dyadic_enclosure_bits": 80
+                },
+                {
+                  "attempts": 4,
+                  "success_lower": "0",
+                  "success_upper": "236242583783584014677463/302231454903657293676544",
+                  "dyadic_enclosure_bits": 80
+                },
+                {
+                  "attempts": 16,
+                  "success_lower": "0",
+                  "success_upper": "1206178407546726219185689/1208925819614629174706176",
+                  "dyadic_enclosure_bits": 80
+                }
+              ]
+            },
+            {
+              "accepted_count_threshold": 27,
+              "tail_probability_lower": "0",
+              "tail_probability_upper": "126547300112826898304882609648290602644559555425557312186868958718274765180665188503563795902769741616194606453880166322817528827643540672501234657981267/953794395170056778091503166979586837520624099886809407272852573921354963351326355843881782206338924144422612946935687303200902586656570919167805228368900",
+              "minorant_coefficients": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "majorant_coefficients": [
+                "40626613431/42521771286420271969085",
+                "2387/135",
+                "-21897461390/429226913",
+                "24460728041/665072999"
+              ],
+              "lower_solver": {
+                "status": "EXACTLY_VERIFIED_RATIONAL_DUAL",
+                "constant_repair": "0",
+                "numerical_LP_optimum_is_certified": false
+              },
+              "upper_solver": {
+                "status": "EXACTLY_VERIFIED_RATIONAL_DUAL",
+                "constant_repair": "40626613431/42521771286420271969085",
+                "numerical_LP_optimum_is_certified": false
+              },
+              "support_points_checked": 32,
+              "matched_quantum_gate_budget_supplied": false,
+              "independent_repetitions": [
+                {
+                  "attempts": 1,
+                  "success_lower": "0",
+                  "success_upper": "160397565013622270183463/1208925819614629174706176",
+                  "dyadic_enclosure_bits": 80
+                },
+                {
+                  "attempts": 4,
+                  "success_lower": "0",
+                  "success_upper": "524822666625758150796927/1208925819614629174706176",
+                  "dyadic_enclosure_bits": 80
+                },
+                {
+                  "attempts": 16,
+                  "success_lower": "0",
+                  "success_upper": "1084964152319117004723793/1208925819614629174706176",
+                  "dyadic_enclosure_bits": 80
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "moments": {
+            "positions": 31,
+            "RS_dimension": 9,
+            "filter_degree": 4,
+            "certified_moment_order": 1,
+            "maximum_RS_certified_order": 1,
+            "rational_Krawtchouk_coefficients": [
+              "465444/4047481",
+              "68436962050868831726582857246677530724962229/1202960438738664000081843034824460641079656448",
+              "44755593451656353320726237612263299299118199/1772525064490930800226839452743754273414709248",
+              "4755117252909124865135429385654206623468719/504285537046887807191109559978798082185756672",
+              "562996334315753545961762990214835935310065/228917667542820483676674771056575245725990912"
+            ],
+            "filter_normalization": "453382592151775705265707131864130605016118514623822892021670701558089221609204941948647777189290134732741268661070975517998497230106108724615/453382592151780766631466496625503717009213410295836061927609280409742346000034090842893466010436348274401134782624691052882852285465426395136",
+            "normalized_score_moments": [
+              "1",
+              "75297625521400313276228827647374757765168586759142278062518007464026713669486539751045171814949377514703833308199462539911651514741312955491/100751687144839045614601584858695690003581892138627309338149044790686493690934431544143950486508918829498059702460216781777443828912468605470"
+            ],
+            "mean_score": "75297625521400313276228827647374757765168586759142278062518007464026713669486539751045171814949377514703833308199462539911651514741312955491/100751687144839045614601584858695690003581892138627309338149044790686493690934431544143950486508918829498059702460216781777443828912468605470",
+            "precision_bits": 128,
+            "filter_is_this_rational_polynomial_not_exact_reference_eigenfilter": true,
+            "weighted_binomial_law_is_the_native_full_score_distribution": false,
+            "moments_beyond_RS_cutoff_not_certified_by_this_method": true,
+            "RS_K_wise_independence_and_balanced_public_predicates_required": true,
+            "coherent_filter_and_decoder_executed": false,
+            "local_moment_derivation_review_pending": true
+          },
+          "tail_certificates": [
+            {
+              "accepted_count_threshold": 25,
+              "tail_probability_lower": "0",
+              "tail_probability_upper": "2334226391163409711563093657068617490720226189533410619938058231384828123754082732282400326263430702955818832554183338737261196956980701620221/2518792178620976140365039621467392250089547303465682733453726119767162342273360788603598762162722970737451492561505419544436095722811715136750",
+              "minorant_coefficients": [
+                "0",
+                "0"
+              ],
+              "majorant_coefficients": [
+                "0",
+                "31/25"
+              ],
+              "lower_solver": {
+                "status": "EXACTLY_VERIFIED_RATIONAL_DUAL",
+                "constant_repair": "0",
+                "numerical_LP_optimum_is_certified": false
+              },
+              "upper_solver": {
+                "status": "EXACTLY_VERIFIED_RATIONAL_DUAL",
+                "constant_repair": "0",
+                "numerical_LP_optimum_is_certified": false
+              },
+              "support_points_checked": 32,
+              "matched_quantum_gate_budget_supplied": false,
+              "independent_repetitions": [
+                {
+                  "attempts": 1,
+                  "success_lower": "0",
+                  "success_upper": "1120341160757574005322635/1208925819614629174706176",
+                  "dyadic_enclosure_bits": 80
+                },
+                {
+                  "attempts": 4,
+                  "success_lower": "0",
+                  "success_upper": "1208890967020504305110527/1208925819614629174706176",
+                  "dyadic_enclosure_bits": 80
+                },
+                {
+                  "attempts": 16,
+                  "success_lower": "0",
+                  "success_upper": "1208925819614629173871071/1208925819614629174706176",
+                  "dyadic_enclosure_bits": 80
+                }
+              ]
+            },
+            {
+              "accepted_count_threshold": 27,
+              "tail_probability_lower": "0",
+              "tail_probability_upper": "2334226391163409711563093657068617490720226189533410619938058231384828123754082732282400326263430702955818832554183338737261196956980701620221/2720295552910654231594242791184783630096711087742937352130024209348535329655229651691886663135740808396447611966425853107990983380636652347690",
+              "minorant_coefficients": [
+                "0",
+                "0"
+              ],
+              "majorant_coefficients": [
+                "0",
+                "31/27"
+              ],
+              "lower_solver": {
+                "status": "EXACTLY_VERIFIED_RATIONAL_DUAL",
+                "constant_repair": "0",
+                "numerical_LP_optimum_is_certified": false
+              },
+              "upper_solver": {
+                "status": "EXACTLY_VERIFIED_RATIONAL_DUAL",
+                "constant_repair": "0",
+                "numerical_LP_optimum_is_certified": false
+              },
+              "support_points_checked": 32,
+              "matched_quantum_gate_budget_supplied": false,
+              "independent_repetitions": [
+                {
+                  "attempts": 1,
+                  "success_lower": "0",
+                  "success_upper": "1037352926627383338261699/1208925819614629174706176",
+                  "dyadic_enclosure_bits": 80
+                },
+                {
+                  "attempts": 4,
+                  "success_lower": "0",
+                  "success_upper": "1208435368486880205840695/1208925819614629174706176",
+                  "dyadic_enclosure_bits": 80
+                },
+                {
+                  "attempts": 16,
+                  "success_lower": "0",
+                  "success_upper": "1208925819614596426765829/1208925819614629174706176",
+                  "dyadic_enclosure_bits": 80
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "classical_finite_best_score_is_not_a_quantum_tail_bound": true
+    },
+    {
+      "field_bits": 15,
+      "positions": 31,
+      "RS_dimension": 9,
+      "public_seed": 71,
+      "classical_best_of_four": 27,
+      "filters": [
+        {
+          "moments": {
+            "positions": 31,
+            "RS_dimension": 9,
+            "filter_degree": 1,
+            "certified_moment_order": 7,
+            "maximum_RS_certified_order": 7,
+            "rational_Krawtchouk_coefficients": [
+              "9369319/13250218",
+              "286310073307124717791811313342586714914812343/2254407771629211702737374282067674463631048704"
+            ],
+            "filter_normalization": "5082354400782130049861845816021776590497934215079179656575115618196760070347161441187268943/5082354400782187945906464474119488376021566039095434420241407551065811189738314370820079616",
+            "normalized_score_moments": [
+              "1",
+              "68294481198547821032426985392432398293211764664873332409065506389812713064895/115792089237316195423570985008687907852560802333028102667034210159983745504126",
+              "20591975209889860583693476240984784335559316571549092551891820525886682692985/57896044618658097711785492504343953926280401166514051333517105079991872752063",
+              "48579012716168450468935201637072258419443370386822507941232730941880529616305495/222552395514121727604103433186698158892621862084080013326039751927488758858930172",
+              "234585402693790010741430404750486428094068113060868659209513157782640330295178270/1724781065234443388931801607196910731417819431151620103276808077438037881156708833",
+              "4594365632751930973229311372320668927081706177003700002198315115219749248996110790/53468213022267745056885849823104232673952402365700223201581050400579174315857973823",
+              "182326587429611462619457105268148223282575858044282113626506689212196048293607965895/3315029207380600193526922689032462425785048946673413838498025124835908807583194377026",
+              "14653551129117645393074545858768417952337552207838450139479043632944216114338449712215/411063621715194423997338413440025340797346069387503315973755115479652692140316102751224"
+            ],
+            "mean_score": "68294481198547821032426985392432398293211764664873332409065506389812713064895/115792089237316195423570985008687907852560802333028102667034210159983745504126",
+            "precision_bits": 128,
+            "filter_is_this_rational_polynomial_not_exact_reference_eigenfilter": true,
+            "weighted_binomial_law_is_the_native_full_score_distribution": false,
+            "moments_beyond_RS_cutoff_not_certified_by_this_method": true,
+            "RS_K_wise_independence_and_balanced_public_predicates_required": true,
+            "coherent_filter_and_decoder_executed": false,
+            "local_moment_derivation_review_pending": true
+          },
+          "tail_certificates": [
+            {
+              "accepted_count_threshold": 25,
+              "tail_probability_lower": "0",
+              "tail_probability_upper": "27921469261894778374504757724160236113299907391673620544564474144824704195422673692355342650921679452294196119392289617500555608073308240609/1696822345174580689940054217384988237041791075275371684219704992597531083552200147081041515195910784270929398629809267332917401969493120955190",
+              "minorant_coefficients": [
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "majorant_coefficients": [
+                "37069776015857188789486518485026900594433199929273553/164125290346957245493686300187327662301066207148484440212125795128",
+                "22240942921/854106871",
+                "-311641036889/848377864",
+                "21937221394/10500525",
+                "-2881344540271/469251294",
+                "10286295622396/1042433021",
+                "-5658588614847/686069276",
+                "2233079809369/794774259"
+              ],
+              "lower_solver": {
+                "status": "EXACTLY_VERIFIED_RATIONAL_DUAL",
+                "constant_repair": "0",
+                "numerical_LP_optimum_is_certified": false
+              },
+              "upper_solver": {
+                "status": "EXACTLY_VERIFIED_RATIONAL_DUAL",
+                "constant_repair": "37069776015857188789486518485026900594433199929273553/164125290346957245493686300187327662301066207148484440212125795128",
+                "numerical_LP_optimum_is_certified": false
+              },
+              "support_points_checked": 32,
+              "matched_quantum_gate_budget_supplied": false,
+              "independent_repetitions": [
+                {
+                  "attempts": 1,
+                  "success_lower": "0",
+                  "success_upper": "4973264468179766379551/302231454903657293676544",
+                  "dyadic_enclosure_bits": 80
+                },
+                {
+                  "attempts": 4,
+                  "success_lower": "0",
+                  "success_upper": "19407407266850954895443/302231454903657293676544",
+                  "dyadic_enclosure_bits": 80
+                },
+                {
+                  "attempts": 16,
+                  "success_lower": "0",
+                  "success_upper": "140934514424094808408681/604462909807314587353088",
+                  "dyadic_enclosure_bits": 80
+                }
+              ]
+            },
+            {
+              "accepted_count_threshold": 27,
+              "tail_probability_lower": "0",
+              "tail_probability_upper": "131762967726186569937492261537271645008443875663479116086928054551431889222245540361655687301380601682642704182450495008090210130037747444323729/38757035261200480512895522741295045124982429946790031772541199046442783518368786925945145477371118514425991424959601264131238970463299888798972600",
+              "minorant_coefficients": [
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "majorant_coefficients": [
+                "23424816707961157852208471104610855089342899432458889/24793502904553051483902836644467071881441062365564354111316449152600",
+                "8479004081/479541496",
+                "-225324810587/982125566",
+                "912298497158/756361485",
+                "-3443640550387/1045831473",
+                "815104367849/165179962",
+                "-2772554479916/718434445",
+                "1221789455467/990634550"
+              ],
+              "lower_solver": {
+                "status": "EXACTLY_VERIFIED_RATIONAL_DUAL",
+                "constant_repair": "0",
+                "numerical_LP_optimum_is_certified": false
+              },
+              "upper_solver": {
+                "status": "EXACTLY_VERIFIED_RATIONAL_DUAL",
+                "constant_repair": "23424816707961157852208471104610855089342899432458889/24793502904553051483902836644467071881441062365564354111316449152600",
+                "numerical_LP_optimum_is_certified": false
+              },
+              "support_points_checked": 32,
+              "matched_quantum_gate_budget_supplied": false,
+              "independent_repetitions": [
+                {
+                  "attempts": 1,
+                  "success_lower": "0",
+                  "success_upper": "2055003081114182837179/604462909807314587353088",
+                  "dyadic_enclosure_bits": 80
+                },
+                {
+                  "attempts": 4,
+                  "success_lower": "0",
+                  "success_upper": "2044547168169978839821/151115727451828646838272",
+                  "dyadic_enclosure_bits": 80
+                },
+                {
+                  "attempts": 16,
+                  "success_lower": "0",
+                  "success_upper": "32054833010243583719609/604462909807314587353088",
+                  "dyadic_enclosure_bits": 80
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "moments": {
+            "positions": 31,
+            "RS_dimension": 9,
+            "filter_degree": 3,
+            "certified_moment_order": 3,
+            "maximum_RS_certified_order": 3,
+            "rational_Krawtchouk_coefficients": [
+              "1047181/4712272",
+              "75356696370936122593256189752332286003565697/827762208571518422290186753986029841098473472",
+              "37741970845335367311797485414026077075679069/1212404550479595995962189667835470078078353408",
+              "5189755994624963068874044326862556533053805/705724531487277275038304206587826500930633728"
+            ],
+            "filter_normalization": "207691949740775105532047162020963912506811755709110500461120148517347732924958173464788663363803690525748953771119971800402867855/207691949740776609150172385427298747533487117142471175618685670343177413377926044890546273119543655967941029934889326889805021184",
+            "normalized_score_moments": [
+              "1",
+              "292775287023155018095236746744329917577827136407090001819521061814432473591933743628570505378349697891983402249015454328234439839/415383899481550211064094324041927825013623511418221000922240297034695465849916346929577326727607381051497907542239943600805735710",
+              "3244133703684000747239745453314187748883547672764122969504133459015774207525618865910251203560090550103239037754619054509845646102/6438450441964028271493462022649881287711164426982425514294724604037779720673703377408448564277914406298217566904719125812488903505",
+              "290346688920566479976116528473741383223745118899412399184797360693071886368032151939695434433074184183750753621668492273139189012973/798367854803539505665189290808585279676184388945820763772545850900684685363539218798647621970461386380978978296185171600748624034620"
+            ],
+            "mean_score": "292775287023155018095236746744329917577827136407090001819521061814432473591933743628570505378349697891983402249015454328234439839/415383899481550211064094324041927825013623511418221000922240297034695465849916346929577326727607381051497907542239943600805735710",
+            "precision_bits": 128,
+            "filter_is_this_rational_polynomial_not_exact_reference_eigenfilter": true,
+            "weighted_binomial_law_is_the_native_full_score_distribution": false,
+            "moments_beyond_RS_cutoff_not_certified_by_this_method": true,
+            "RS_K_wise_independence_and_balanced_public_predicates_required": true,
+            "coherent_filter_and_decoder_executed": false,
+            "local_moment_derivation_review_pending": true
+          },
+          "tail_certificates": [
+            {
+              "accepted_count_threshold": 25,
+              "tail_probability_lower": "0",
+              "tail_probability_upper": "39520980470836047997582164465884550003073360123816511201361878152482527688984856003087665605360844229567372991273709405910554353313169202390276437033153/124896293756288860687268392612608123208057934874124286736329465203540247672488483344426521420412683511017413644060316173968035799182450084102825908210500",
+              "minorant_coefficients": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "majorant_coefficients": [
+                "19516412835/12027071238165434366702",
+                "651/25",
+                "-57993252155/735936298",
+                "32685087747/548573189"
+              ],
+              "lower_solver": {
+                "status": "EXACTLY_VERIFIED_RATIONAL_DUAL",
+                "constant_repair": "0",
+                "numerical_LP_optimum_is_certified": false
+              },
+              "upper_solver": {
+                "status": "EXACTLY_VERIFIED_RATIONAL_DUAL",
+                "constant_repair": "19516412835/12027071238165434366702",
+                "numerical_LP_optimum_is_certified": false
+              },
+              "support_points_checked": 32,
+              "matched_quantum_gate_budget_supplied": false,
+              "independent_repetitions": [
+                {
+                  "attempts": 1,
+                  "success_lower": "0",
+                  "success_upper": "191270422326977482753969/604462909807314587353088",
+                  "dyadic_enclosure_bits": 80
+                },
+                {
+                  "attempts": 4,
+                  "success_lower": "0",
+                  "success_upper": "236242583783584014677463/302231454903657293676544",
+                  "dyadic_enclosure_bits": 80
+                },
+                {
+                  "attempts": 16,
+                  "success_lower": "0",
+                  "success_upper": "1206178407546726219185689/1208925819614629174706176",
+                  "dyadic_enclosure_bits": 80
+                }
+              ]
+            },
+            {
+              "accepted_count_threshold": 27,
+              "tail_probability_lower": "0",
+              "tail_probability_upper": "126547300112826898304882609648290602644559555425557312186868958718274765180665188503563795902769741616194606453880166322817528827643540672501234657981267/953794395170056778091503166979586837520624099886809407272852573921354963351326355843881782206338924144422612946935687303200902586656570919167805228368900",
+              "minorant_coefficients": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "majorant_coefficients": [
+                "40626613431/42521771286420271969085",
+                "2387/135",
+                "-21897461390/429226913",
+                "24460728041/665072999"
+              ],
+              "lower_solver": {
+                "status": "EXACTLY_VERIFIED_RATIONAL_DUAL",
+                "constant_repair": "0",
+                "numerical_LP_optimum_is_certified": false
+              },
+              "upper_solver": {
+                "status": "EXACTLY_VERIFIED_RATIONAL_DUAL",
+                "constant_repair": "40626613431/42521771286420271969085",
+                "numerical_LP_optimum_is_certified": false
+              },
+              "support_points_checked": 32,
+              "matched_quantum_gate_budget_supplied": false,
+              "independent_repetitions": [
+                {
+                  "attempts": 1,
+                  "success_lower": "0",
+                  "success_upper": "160397565013622270183463/1208925819614629174706176",
+                  "dyadic_enclosure_bits": 80
+                },
+                {
+                  "attempts": 4,
+                  "success_lower": "0",
+                  "success_upper": "524822666625758150796927/1208925819614629174706176",
+                  "dyadic_enclosure_bits": 80
+                },
+                {
+                  "attempts": 16,
+                  "success_lower": "0",
+                  "success_upper": "1084964152319117004723793/1208925819614629174706176",
+                  "dyadic_enclosure_bits": 80
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "moments": {
+            "positions": 31,
+            "RS_dimension": 9,
+            "filter_degree": 4,
+            "certified_moment_order": 1,
+            "maximum_RS_certified_order": 1,
+            "rational_Krawtchouk_coefficients": [
+              "465444/4047481",
+              "68436962050868831726582857246677530724962229/1202960438738664000081843034824460641079656448",
+              "44755593451656353320726237612263299299118199/1772525064490930800226839452743754273414709248",
+              "4755117252909124865135429385654206623468719/504285537046887807191109559978798082185756672",
+              "562996334315753545961762990214835935310065/228917667542820483676674771056575245725990912"
+            ],
+            "filter_normalization": "453382592151775705265707131864130605016118514623822892021670701558089221609204941948647777189290134732741268661070975517998497230106108724615/453382592151780766631466496625503717009213410295836061927609280409742346000034090842893466010436348274401134782624691052882852285465426395136",
+            "normalized_score_moments": [
+              "1",
+              "75297625521400313276228827647374757765168586759142278062518007464026713669486539751045171814949377514703833308199462539911651514741312955491/100751687144839045614601584858695690003581892138627309338149044790686493690934431544143950486508918829498059702460216781777443828912468605470"
+            ],
+            "mean_score": "75297625521400313276228827647374757765168586759142278062518007464026713669486539751045171814949377514703833308199462539911651514741312955491/100751687144839045614601584858695690003581892138627309338149044790686493690934431544143950486508918829498059702460216781777443828912468605470",
+            "precision_bits": 128,
+            "filter_is_this_rational_polynomial_not_exact_reference_eigenfilter": true,
+            "weighted_binomial_law_is_the_native_full_score_distribution": false,
+            "moments_beyond_RS_cutoff_not_certified_by_this_method": true,
+            "RS_K_wise_independence_and_balanced_public_predicates_required": true,
+            "coherent_filter_and_decoder_executed": false,
+            "local_moment_derivation_review_pending": true
+          },
+          "tail_certificates": [
+            {
+              "accepted_count_threshold": 25,
+              "tail_probability_lower": "0",
+              "tail_probability_upper": "2334226391163409711563093657068617490720226189533410619938058231384828123754082732282400326263430702955818832554183338737261196956980701620221/2518792178620976140365039621467392250089547303465682733453726119767162342273360788603598762162722970737451492561505419544436095722811715136750",
+              "minorant_coefficients": [
+                "0",
+                "0"
+              ],
+              "majorant_coefficients": [
+                "0",
+                "31/25"
+              ],
+              "lower_solver": {
+                "status": "EXACTLY_VERIFIED_RATIONAL_DUAL",
+                "constant_repair": "0",
+                "numerical_LP_optimum_is_certified": false
+              },
+              "upper_solver": {
+                "status": "EXACTLY_VERIFIED_RATIONAL_DUAL",
+                "constant_repair": "0",
+                "numerical_LP_optimum_is_certified": false
+              },
+              "support_points_checked": 32,
+              "matched_quantum_gate_budget_supplied": false,
+              "independent_repetitions": [
+                {
+                  "attempts": 1,
+                  "success_lower": "0",
+                  "success_upper": "1120341160757574005322635/1208925819614629174706176",
+                  "dyadic_enclosure_bits": 80
+                },
+                {
+                  "attempts": 4,
+                  "success_lower": "0",
+                  "success_upper": "1208890967020504305110527/1208925819614629174706176",
+                  "dyadic_enclosure_bits": 80
+                },
+                {
+                  "attempts": 16,
+                  "success_lower": "0",
+                  "success_upper": "1208925819614629173871071/1208925819614629174706176",
+                  "dyadic_enclosure_bits": 80
+                }
+              ]
+            },
+            {
+              "accepted_count_threshold": 27,
+              "tail_probability_lower": "0",
+              "tail_probability_upper": "2334226391163409711563093657068617490720226189533410619938058231384828123754082732282400326263430702955818832554183338737261196956980701620221/2720295552910654231594242791184783630096711087742937352130024209348535329655229651691886663135740808396447611966425853107990983380636652347690",
+              "minorant_coefficients": [
+                "0",
+                "0"
+              ],
+              "majorant_coefficients": [
+                "0",
+                "31/27"
+              ],
+              "lower_solver": {
+                "status": "EXACTLY_VERIFIED_RATIONAL_DUAL",
+                "constant_repair": "0",
+                "numerical_LP_optimum_is_certified": false
+              },
+              "upper_solver": {
+                "status": "EXACTLY_VERIFIED_RATIONAL_DUAL",
+                "constant_repair": "0",
+                "numerical_LP_optimum_is_certified": false
+              },
+              "support_points_checked": 32,
+              "matched_quantum_gate_budget_supplied": false,
+              "independent_repetitions": [
+                {
+                  "attempts": 1,
+                  "success_lower": "0",
+                  "success_upper": "1037352926627383338261699/1208925819614629174706176",
+                  "dyadic_enclosure_bits": 80
+                },
+                {
+                  "attempts": 4,
+                  "success_lower": "0",
+                  "success_upper": "1208435368486880205840695/1208925819614629174706176",
+                  "dyadic_enclosure_bits": 80
+                },
+                {
+                  "attempts": 16,
+                  "success_lower": "0",
+                  "success_upper": "1208925819614596426765829/1208925819614629174706176",
+                  "dyadic_enclosure_bits": 80
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "classical_finite_best_score_is_not_a_quantum_tail_bound": true
+    },
+    {
+      "field_bits": 31,
+      "positions": 31,
+      "RS_dimension": 9,
+      "public_seed": 29,
+      "classical_best_of_four": 30,
+      "filters": [
+        {
+          "moments": {
+            "positions": 31,
+            "RS_dimension": 9,
+            "filter_degree": 1,
+            "certified_moment_order": 7,
+            "maximum_RS_certified_order": 7,
+            "rational_Krawtchouk_coefficients": [
+              "9369319/13250218",
+              "286310073307124717791811313342586714914812343/2254407771629211702737374282067674463631048704"
+            ],
+            "filter_normalization": "5082354400782130049861845816021776590497934215079179656575115618196760070347161441187268943/5082354400782187945906464474119488376021566039095434420241407551065811189738314370820079616",
+            "normalized_score_moments": [
+              "1",
+              "68294481198547821032426985392432398293211764664873332409065506389812713064895/115792089237316195423570985008687907852560802333028102667034210159983745504126",
+              "20591975209889860583693476240984784335559316571549092551891820525886682692985/57896044618658097711785492504343953926280401166514051333517105079991872752063",
+              "48579012716168450468935201637072258419443370386822507941232730941880529616305495/222552395514121727604103433186698158892621862084080013326039751927488758858930172",
+              "234585402693790010741430404750486428094068113060868659209513157782640330295178270/1724781065234443388931801607196910731417819431151620103276808077438037881156708833",
+              "4594365632751930973229311372320668927081706177003700002198315115219749248996110790/53468213022267745056885849823104232673952402365700223201581050400579174315857973823",
+              "182326587429611462619457105268148223282575858044282113626506689212196048293607965895/3315029207380600193526922689032462425785048946673413838498025124835908807583194377026",
+              "14653551129117645393074545858768417952337552207838450139479043632944216114338449712215/411063621715194423997338413440025340797346069387503315973755115479652692140316102751224"
+            ],
+            "mean_score": "68294481198547821032426985392432398293211764664873332409065506389812713064895/115792089237316195423570985008687907852560802333028102667034210159983745504126",
+            "precision_bits": 128,
+            "filter_is_this_rational_polynomial_not_exact_reference_eigenfilter": true,
+            "weighted_binomial_law_is_the_native_full_score_distribution": false,
+            "moments_beyond_RS_cutoff_not_certified_by_this_method": true,
+            "RS_K_wise_independence_and_balanced_public_predicates_required": true,
+            "coherent_filter_and_decoder_executed": false,
+            "local_moment_derivation_review_pending": true
+          },
+          "tail_certificates": [
+            {
+              "accepted_count_threshold": 25,
+              "tail_probability_lower": "0",
+              "tail_probability_upper": "27921469261894778374504757724160236113299907391673620544564474144824704195422673692355342650921679452294196119392289617500555608073308240609/1696822345174580689940054217384988237041791075275371684219704992597531083552200147081041515195910784270929398629809267332917401969493120955190",
+              "minorant_coefficients": [
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "majorant_coefficients": [
+                "37069776015857188789486518485026900594433199929273553/164125290346957245493686300187327662301066207148484440212125795128",
+                "22240942921/854106871",
+                "-311641036889/848377864",
+                "21937221394/10500525",
+                "-2881344540271/469251294",
+                "10286295622396/1042433021",
+                "-5658588614847/686069276",
+                "2233079809369/794774259"
+              ],
+              "lower_solver": {
+                "status": "EXACTLY_VERIFIED_RATIONAL_DUAL",
+                "constant_repair": "0",
+                "numerical_LP_optimum_is_certified": false
+              },
+              "upper_solver": {
+                "status": "EXACTLY_VERIFIED_RATIONAL_DUAL",
+                "constant_repair": "37069776015857188789486518485026900594433199929273553/164125290346957245493686300187327662301066207148484440212125795128",
+                "numerical_LP_optimum_is_certified": false
+              },
+              "support_points_checked": 32,
+              "matched_quantum_gate_budget_supplied": false,
+              "independent_repetitions": [
+                {
+                  "attempts": 1,
+                  "success_lower": "0",
+                  "success_upper": "4973264468179766379551/302231454903657293676544",
+                  "dyadic_enclosure_bits": 80
+                },
+                {
+                  "attempts": 4,
+                  "success_lower": "0",
+                  "success_upper": "19407407266850954895443/302231454903657293676544",
+                  "dyadic_enclosure_bits": 80
+                },
+                {
+                  "attempts": 16,
+                  "success_lower": "0",
+                  "success_upper": "140934514424094808408681/604462909807314587353088",
+                  "dyadic_enclosure_bits": 80
+                }
+              ]
+            },
+            {
+              "accepted_count_threshold": 30,
+              "tail_probability_lower": "0",
+              "tail_probability_upper": "87308074372402015091315890528886810928242572668763612240330130301566978977302671622893969167906050170662117555428248462330693654000701132949/162925953701107443271327033781102276567416966858723357215271817915163390443964010593976359308563487052382318684094213892116957953962664524706176",
+              "minorant_coefficients": [
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "majorant_coefficients": [
+                "0",
+                "1184350015/424952222",
+                "-11578630713/320179771",
+                "189156335722/994928849",
+                "-526330987621/1014101719",
+                "566014821043/727697076",
+                "-235269863897/386769344",
+                "168153469224/864971135"
+              ],
+              "lower_solver": {
+                "status": "EXACTLY_VERIFIED_RATIONAL_DUAL",
+                "constant_repair": "0",
+                "numerical_LP_optimum_is_certified": false
+              },
+              "upper_solver": {
+                "status": "EXACTLY_VERIFIED_RATIONAL_DUAL",
+                "constant_repair": "0",
+                "numerical_LP_optimum_is_certified": false
+              },
+              "support_points_checked": 32,
+              "matched_quantum_gate_budget_supplied": false,
+              "independent_repetitions": [
+                {
+                  "attempts": 1,
+                  "success_lower": "0",
+                  "success_upper": "647834080279584499957/1208925819614629174706176",
+                  "dyadic_enclosure_bits": 80
+                },
+                {
+                  "attempts": 4,
+                  "success_lower": "0",
+                  "success_upper": "2589254113551573331709/1208925819614629174706176",
+                  "dyadic_enclosure_bits": 80
+                },
+                {
+                  "attempts": 16,
+                  "success_lower": "0",
+                  "success_upper": "10323790250194346534417/1208925819614629174706176",
+                  "dyadic_enclosure_bits": 80
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "moments": {
+            "positions": 31,
+            "RS_dimension": 9,
+            "filter_degree": 3,
+            "certified_moment_order": 3,
+            "maximum_RS_certified_order": 3,
+            "rational_Krawtchouk_coefficients": [
+              "1047181/4712272",
+              "75356696370936122593256189752332286003565697/827762208571518422290186753986029841098473472",
+              "37741970845335367311797485414026077075679069/1212404550479595995962189667835470078078353408",
+              "5189755994624963068874044326862556533053805/705724531487277275038304206587826500930633728"
+            ],
+            "filter_normalization": "207691949740775105532047162020963912506811755709110500461120148517347732924958173464788663363803690525748953771119971800402867855/207691949740776609150172385427298747533487117142471175618685670343177413377926044890546273119543655967941029934889326889805021184",
+            "normalized_score_moments": [
+              "1",
+              "292775287023155018095236746744329917577827136407090001819521061814432473591933743628570505378349697891983402249015454328234439839/415383899481550211064094324041927825013623511418221000922240297034695465849916346929577326727607381051497907542239943600805735710",
+              "3244133703684000747239745453314187748883547672764122969504133459015774207525618865910251203560090550103239037754619054509845646102/6438450441964028271493462022649881287711164426982425514294724604037779720673703377408448564277914406298217566904719125812488903505",
+              "290346688920566479976116528473741383223745118899412399184797360693071886368032151939695434433074184183750753621668492273139189012973/798367854803539505665189290808585279676184388945820763772545850900684685363539218798647621970461386380978978296185171600748624034620"
+            ],
+            "mean_score": "292775287023155018095236746744329917577827136407090001819521061814432473591933743628570505378349697891983402249015454328234439839/415383899481550211064094324041927825013623511418221000922240297034695465849916346929577326727607381051497907542239943600805735710",
+            "precision_bits": 128,
+            "filter_is_this_rational_polynomial_not_exact_reference_eigenfilter": true,
+            "weighted_binomial_law_is_the_native_full_score_distribution": false,
+            "moments_beyond_RS_cutoff_not_certified_by_this_method": true,
+            "RS_K_wise_independence_and_balanced_public_predicates_required": true,
+            "coherent_filter_and_decoder_executed": false,
+            "local_moment_derivation_review_pending": true
+          },
+          "tail_certificates": [
+            {
+              "accepted_count_threshold": 25,
+              "tail_probability_lower": "0",
+              "tail_probability_upper": "39520980470836047997582164465884550003073360123816511201361878152482527688984856003087665605360844229567372991273709405910554353313169202390276437033153/124896293756288860687268392612608123208057934874124286736329465203540247672488483344426521420412683511017413644060316173968035799182450084102825908210500",
+              "minorant_coefficients": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "majorant_coefficients": [
+                "19516412835/12027071238165434366702",
+                "651/25",
+                "-57993252155/735936298",
+                "32685087747/548573189"
+              ],
+              "lower_solver": {
+                "status": "EXACTLY_VERIFIED_RATIONAL_DUAL",
+                "constant_repair": "0",
+                "numerical_LP_optimum_is_certified": false
+              },
+              "upper_solver": {
+                "status": "EXACTLY_VERIFIED_RATIONAL_DUAL",
+                "constant_repair": "19516412835/12027071238165434366702",
+                "numerical_LP_optimum_is_certified": false
+              },
+              "support_points_checked": 32,
+              "matched_quantum_gate_budget_supplied": false,
+              "independent_repetitions": [
+                {
+                  "attempts": 1,
+                  "success_lower": "0",
+                  "success_upper": "191270422326977482753969/604462909807314587353088",
+                  "dyadic_enclosure_bits": 80
+                },
+                {
+                  "attempts": 4,
+                  "success_lower": "0",
+                  "success_upper": "236242583783584014677463/302231454903657293676544",
+                  "dyadic_enclosure_bits": 80
+                },
+                {
+                  "attempts": 16,
+                  "success_lower": "0",
+                  "success_upper": "1206178407546726219185689/1208925819614629174706176",
+                  "dyadic_enclosure_bits": 80
+                }
+              ]
+            },
+            {
+              "accepted_count_threshold": 30,
+              "tail_probability_lower": "0",
+              "tail_probability_upper": "2971832031246732350600549457460737157822360714773011004577364280514127495444065868714153219513982374472486955714060269890972022572712111338563/59730324440042653457583658512882068460535011460813916866034859877062959853209655132126976874439123756498526396834527482354294877143171579438400",
+              "minorant_coefficients": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "majorant_coefficients": [
+                "0",
+                "2387/360",
+                "-20541770185/1073741587",
+                "29791/2160"
+              ],
+              "lower_solver": {
+                "status": "EXACTLY_VERIFIED_RATIONAL_DUAL",
+                "constant_repair": "0",
+                "numerical_LP_optimum_is_certified": false
+              },
+              "upper_solver": {
+                "status": "EXACTLY_VERIFIED_RATIONAL_DUAL",
+                "constant_repair": "0",
+                "numerical_LP_optimum_is_certified": false
+              },
+              "support_points_checked": 32,
+              "matched_quantum_gate_budget_supplied": false,
+              "independent_repetitions": [
+                {
+                  "attempts": 1,
+                  "success_lower": "0",
+                  "success_upper": "60149086880288819007597/1208925819614629174706176",
+                  "dyadic_enclosure_bits": 80
+                },
+                {
+                  "attempts": 4,
+                  "success_lower": "0",
+                  "success_upper": "111614263286966691104999/604462909807314587353088",
+                  "dyadic_enclosure_bits": 80
+                },
+                {
+                  "attempts": 16,
+                  "success_lower": "0",
+                  "success_upper": "674637972117543605046649/1208925819614629174706176",
+                  "dyadic_enclosure_bits": 80
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "moments": {
+            "positions": 31,
+            "RS_dimension": 9,
+            "filter_degree": 4,
+            "certified_moment_order": 1,
+            "maximum_RS_certified_order": 1,
+            "rational_Krawtchouk_coefficients": [
+              "465444/4047481",
+              "68436962050868831726582857246677530724962229/1202960438738664000081843034824460641079656448",
+              "44755593451656353320726237612263299299118199/1772525064490930800226839452743754273414709248",
+              "4755117252909124865135429385654206623468719/504285537046887807191109559978798082185756672",
+              "562996334315753545961762990214835935310065/228917667542820483676674771056575245725990912"
+            ],
+            "filter_normalization": "453382592151775705265707131864130605016118514623822892021670701558089221609204941948647777189290134732741268661070975517998497230106108724615/453382592151780766631466496625503717009213410295836061927609280409742346000034090842893466010436348274401134782624691052882852285465426395136",
+            "normalized_score_moments": [
+              "1",
+              "75297625521400313276228827647374757765168586759142278062518007464026713669486539751045171814949377514703833308199462539911651514741312955491/100751687144839045614601584858695690003581892138627309338149044790686493690934431544143950486508918829498059702460216781777443828912468605470"
+            ],
+            "mean_score": "75297625521400313276228827647374757765168586759142278062518007464026713669486539751045171814949377514703833308199462539911651514741312955491/100751687144839045614601584858695690003581892138627309338149044790686493690934431544143950486508918829498059702460216781777443828912468605470",
+            "precision_bits": 128,
+            "filter_is_this_rational_polynomial_not_exact_reference_eigenfilter": true,
+            "weighted_binomial_law_is_the_native_full_score_distribution": false,
+            "moments_beyond_RS_cutoff_not_certified_by_this_method": true,
+            "RS_K_wise_independence_and_balanced_public_predicates_required": true,
+            "coherent_filter_and_decoder_executed": false,
+            "local_moment_derivation_review_pending": true
+          },
+          "tail_certificates": [
+            {
+              "accepted_count_threshold": 25,
+              "tail_probability_lower": "0",
+              "tail_probability_upper": "2334226391163409711563093657068617490720226189533410619938058231384828123754082732282400326263430702955818832554183338737261196956980701620221/2518792178620976140365039621467392250089547303465682733453726119767162342273360788603598762162722970737451492561505419544436095722811715136750",
+              "minorant_coefficients": [
+                "0",
+                "0"
+              ],
+              "majorant_coefficients": [
+                "0",
+                "31/25"
+              ],
+              "lower_solver": {
+                "status": "EXACTLY_VERIFIED_RATIONAL_DUAL",
+                "constant_repair": "0",
+                "numerical_LP_optimum_is_certified": false
+              },
+              "upper_solver": {
+                "status": "EXACTLY_VERIFIED_RATIONAL_DUAL",
+                "constant_repair": "0",
+                "numerical_LP_optimum_is_certified": false
+              },
+              "support_points_checked": 32,
+              "matched_quantum_gate_budget_supplied": false,
+              "independent_repetitions": [
+                {
+                  "attempts": 1,
+                  "success_lower": "0",
+                  "success_upper": "1120341160757574005322635/1208925819614629174706176",
+                  "dyadic_enclosure_bits": 80
+                },
+                {
+                  "attempts": 4,
+                  "success_lower": "0",
+                  "success_upper": "1208890967020504305110527/1208925819614629174706176",
+                  "dyadic_enclosure_bits": 80
+                },
+                {
+                  "attempts": 16,
+                  "success_lower": "0",
+                  "success_upper": "1208925819614629173871071/1208925819614629174706176",
+                  "dyadic_enclosure_bits": 80
+                }
+              ]
+            },
+            {
+              "accepted_count_threshold": 30,
+              "tail_probability_lower": "0",
+              "tail_probability_upper": "2334226391163409711563093657068617490720226189533410619938058231384828123754082732282400326263430702955818832554183338737261196956980701620221/3022550614345171368438047545760870700107456764158819280144471343720594810728032946324318514595267564884941791073806503453323314867374058164100",
+              "minorant_coefficients": [
+                "0",
+                "0"
+              ],
+              "majorant_coefficients": [
+                "0",
+                "31/30"
+              ],
+              "lower_solver": {
+                "status": "EXACTLY_VERIFIED_RATIONAL_DUAL",
+                "constant_repair": "0",
+                "numerical_LP_optimum_is_certified": false
+              },
+              "upper_solver": {
+                "status": "EXACTLY_VERIFIED_RATIONAL_DUAL",
+                "constant_repair": "0",
+                "numerical_LP_optimum_is_certified": false
+              },
+              "support_points_checked": 32,
+              "matched_quantum_gate_budget_supplied": false,
+              "independent_repetitions": [
+                {
+                  "attempts": 1,
+                  "success_lower": "0",
+                  "success_upper": "933617633964645004435529/1208925819614629174706176",
+                  "dyadic_enclosure_bits": 80
+                },
+                {
+                  "attempts": 4,
+                  "success_lower": "0",
+                  "success_upper": "602837183092780753530575/604462909807314587353088",
+                  "dyadic_enclosure_bits": 80
+                },
+                {
+                  "attempts": 16,
+                  "success_lower": "0",
+                  "success_upper": "1208925819551371795856755/1208925819614629174706176",
+                  "dyadic_enclosure_bits": 80
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "classical_finite_best_score_is_not_a_quantum_tail_bound": true
+    },
+    {
+      "field_bits": 31,
+      "positions": 31,
+      "RS_dimension": 9,
+      "public_seed": 71,
+      "classical_best_of_four": 30,
+      "filters": [
+        {
+          "moments": {
+            "positions": 31,
+            "RS_dimension": 9,
+            "filter_degree": 1,
+            "certified_moment_order": 7,
+            "maximum_RS_certified_order": 7,
+            "rational_Krawtchouk_coefficients": [
+              "9369319/13250218",
+              "286310073307124717791811313342586714914812343/2254407771629211702737374282067674463631048704"
+            ],
+            "filter_normalization": "5082354400782130049861845816021776590497934215079179656575115618196760070347161441187268943/5082354400782187945906464474119488376021566039095434420241407551065811189738314370820079616",
+            "normalized_score_moments": [
+              "1",
+              "68294481198547821032426985392432398293211764664873332409065506389812713064895/115792089237316195423570985008687907852560802333028102667034210159983745504126",
+              "20591975209889860583693476240984784335559316571549092551891820525886682692985/57896044618658097711785492504343953926280401166514051333517105079991872752063",
+              "48579012716168450468935201637072258419443370386822507941232730941880529616305495/222552395514121727604103433186698158892621862084080013326039751927488758858930172",
+              "234585402693790010741430404750486428094068113060868659209513157782640330295178270/1724781065234443388931801607196910731417819431151620103276808077438037881156708833",
+              "4594365632751930973229311372320668927081706177003700002198315115219749248996110790/53468213022267745056885849823104232673952402365700223201581050400579174315857973823",
+              "182326587429611462619457105268148223282575858044282113626506689212196048293607965895/3315029207380600193526922689032462425785048946673413838498025124835908807583194377026",
+              "14653551129117645393074545858768417952337552207838450139479043632944216114338449712215/411063621715194423997338413440025340797346069387503315973755115479652692140316102751224"
+            ],
+            "mean_score": "68294481198547821032426985392432398293211764664873332409065506389812713064895/115792089237316195423570985008687907852560802333028102667034210159983745504126",
+            "precision_bits": 128,
+            "filter_is_this_rational_polynomial_not_exact_reference_eigenfilter": true,
+            "weighted_binomial_law_is_the_native_full_score_distribution": false,
+            "moments_beyond_RS_cutoff_not_certified_by_this_method": true,
+            "RS_K_wise_independence_and_balanced_public_predicates_required": true,
+            "coherent_filter_and_decoder_executed": false,
+            "local_moment_derivation_review_pending": true
+          },
+          "tail_certificates": [
+            {
+              "accepted_count_threshold": 25,
+              "tail_probability_lower": "0",
+              "tail_probability_upper": "27921469261894778374504757724160236113299907391673620544564474144824704195422673692355342650921679452294196119392289617500555608073308240609/1696822345174580689940054217384988237041791075275371684219704992597531083552200147081041515195910784270929398629809267332917401969493120955190",
+              "minorant_coefficients": [
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "majorant_coefficients": [
+                "37069776015857188789486518485026900594433199929273553/164125290346957245493686300187327662301066207148484440212125795128",
+                "22240942921/854106871",
+                "-311641036889/848377864",
+                "21937221394/10500525",
+                "-2881344540271/469251294",
+                "10286295622396/1042433021",
+                "-5658588614847/686069276",
+                "2233079809369/794774259"
+              ],
+              "lower_solver": {
+                "status": "EXACTLY_VERIFIED_RATIONAL_DUAL",
+                "constant_repair": "0",
+                "numerical_LP_optimum_is_certified": false
+              },
+              "upper_solver": {
+                "status": "EXACTLY_VERIFIED_RATIONAL_DUAL",
+                "constant_repair": "37069776015857188789486518485026900594433199929273553/164125290346957245493686300187327662301066207148484440212125795128",
+                "numerical_LP_optimum_is_certified": false
+              },
+              "support_points_checked": 32,
+              "matched_quantum_gate_budget_supplied": false,
+              "independent_repetitions": [
+                {
+                  "attempts": 1,
+                  "success_lower": "0",
+                  "success_upper": "4973264468179766379551/302231454903657293676544",
+                  "dyadic_enclosure_bits": 80
+                },
+                {
+                  "attempts": 4,
+                  "success_lower": "0",
+                  "success_upper": "19407407266850954895443/302231454903657293676544",
+                  "dyadic_enclosure_bits": 80
+                },
+                {
+                  "attempts": 16,
+                  "success_lower": "0",
+                  "success_upper": "140934514424094808408681/604462909807314587353088",
+                  "dyadic_enclosure_bits": 80
+                }
+              ]
+            },
+            {
+              "accepted_count_threshold": 30,
+              "tail_probability_lower": "0",
+              "tail_probability_upper": "87308074372402015091315890528886810928242572668763612240330130301566978977302671622893969167906050170662117555428248462330693654000701132949/162925953701107443271327033781102276567416966858723357215271817915163390443964010593976359308563487052382318684094213892116957953962664524706176",
+              "minorant_coefficients": [
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "majorant_coefficients": [
+                "0",
+                "1184350015/424952222",
+                "-11578630713/320179771",
+                "189156335722/994928849",
+                "-526330987621/1014101719",
+                "566014821043/727697076",
+                "-235269863897/386769344",
+                "168153469224/864971135"
+              ],
+              "lower_solver": {
+                "status": "EXACTLY_VERIFIED_RATIONAL_DUAL",
+                "constant_repair": "0",
+                "numerical_LP_optimum_is_certified": false
+              },
+              "upper_solver": {
+                "status": "EXACTLY_VERIFIED_RATIONAL_DUAL",
+                "constant_repair": "0",
+                "numerical_LP_optimum_is_certified": false
+              },
+              "support_points_checked": 32,
+              "matched_quantum_gate_budget_supplied": false,
+              "independent_repetitions": [
+                {
+                  "attempts": 1,
+                  "success_lower": "0",
+                  "success_upper": "647834080279584499957/1208925819614629174706176",
+                  "dyadic_enclosure_bits": 80
+                },
+                {
+                  "attempts": 4,
+                  "success_lower": "0",
+                  "success_upper": "2589254113551573331709/1208925819614629174706176",
+                  "dyadic_enclosure_bits": 80
+                },
+                {
+                  "attempts": 16,
+                  "success_lower": "0",
+                  "success_upper": "10323790250194346534417/1208925819614629174706176",
+                  "dyadic_enclosure_bits": 80
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "moments": {
+            "positions": 31,
+            "RS_dimension": 9,
+            "filter_degree": 3,
+            "certified_moment_order": 3,
+            "maximum_RS_certified_order": 3,
+            "rational_Krawtchouk_coefficients": [
+              "1047181/4712272",
+              "75356696370936122593256189752332286003565697/827762208571518422290186753986029841098473472",
+              "37741970845335367311797485414026077075679069/1212404550479595995962189667835470078078353408",
+              "5189755994624963068874044326862556533053805/705724531487277275038304206587826500930633728"
+            ],
+            "filter_normalization": "207691949740775105532047162020963912506811755709110500461120148517347732924958173464788663363803690525748953771119971800402867855/207691949740776609150172385427298747533487117142471175618685670343177413377926044890546273119543655967941029934889326889805021184",
+            "normalized_score_moments": [
+              "1",
+              "292775287023155018095236746744329917577827136407090001819521061814432473591933743628570505378349697891983402249015454328234439839/415383899481550211064094324041927825013623511418221000922240297034695465849916346929577326727607381051497907542239943600805735710",
+              "3244133703684000747239745453314187748883547672764122969504133459015774207525618865910251203560090550103239037754619054509845646102/6438450441964028271493462022649881287711164426982425514294724604037779720673703377408448564277914406298217566904719125812488903505",
+              "290346688920566479976116528473741383223745118899412399184797360693071886368032151939695434433074184183750753621668492273139189012973/798367854803539505665189290808585279676184388945820763772545850900684685363539218798647621970461386380978978296185171600748624034620"
+            ],
+            "mean_score": "292775287023155018095236746744329917577827136407090001819521061814432473591933743628570505378349697891983402249015454328234439839/415383899481550211064094324041927825013623511418221000922240297034695465849916346929577326727607381051497907542239943600805735710",
+            "precision_bits": 128,
+            "filter_is_this_rational_polynomial_not_exact_reference_eigenfilter": true,
+            "weighted_binomial_law_is_the_native_full_score_distribution": false,
+            "moments_beyond_RS_cutoff_not_certified_by_this_method": true,
+            "RS_K_wise_independence_and_balanced_public_predicates_required": true,
+            "coherent_filter_and_decoder_executed": false,
+            "local_moment_derivation_review_pending": true
+          },
+          "tail_certificates": [
+            {
+              "accepted_count_threshold": 25,
+              "tail_probability_lower": "0",
+              "tail_probability_upper": "39520980470836047997582164465884550003073360123816511201361878152482527688984856003087665605360844229567372991273709405910554353313169202390276437033153/124896293756288860687268392612608123208057934874124286736329465203540247672488483344426521420412683511017413644060316173968035799182450084102825908210500",
+              "minorant_coefficients": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "majorant_coefficients": [
+                "19516412835/12027071238165434366702",
+                "651/25",
+                "-57993252155/735936298",
+                "32685087747/548573189"
+              ],
+              "lower_solver": {
+                "status": "EXACTLY_VERIFIED_RATIONAL_DUAL",
+                "constant_repair": "0",
+                "numerical_LP_optimum_is_certified": false
+              },
+              "upper_solver": {
+                "status": "EXACTLY_VERIFIED_RATIONAL_DUAL",
+                "constant_repair": "19516412835/12027071238165434366702",
+                "numerical_LP_optimum_is_certified": false
+              },
+              "support_points_checked": 32,
+              "matched_quantum_gate_budget_supplied": false,
+              "independent_repetitions": [
+                {
+                  "attempts": 1,
+                  "success_lower": "0",
+                  "success_upper": "191270422326977482753969/604462909807314587353088",
+                  "dyadic_enclosure_bits": 80
+                },
+                {
+                  "attempts": 4,
+                  "success_lower": "0",
+                  "success_upper": "236242583783584014677463/302231454903657293676544",
+                  "dyadic_enclosure_bits": 80
+                },
+                {
+                  "attempts": 16,
+                  "success_lower": "0",
+                  "success_upper": "1206178407546726219185689/1208925819614629174706176",
+                  "dyadic_enclosure_bits": 80
+                }
+              ]
+            },
+            {
+              "accepted_count_threshold": 30,
+              "tail_probability_lower": "0",
+              "tail_probability_upper": "2971832031246732350600549457460737157822360714773011004577364280514127495444065868714153219513982374472486955714060269890972022572712111338563/59730324440042653457583658512882068460535011460813916866034859877062959853209655132126976874439123756498526396834527482354294877143171579438400",
+              "minorant_coefficients": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "majorant_coefficients": [
+                "0",
+                "2387/360",
+                "-20541770185/1073741587",
+                "29791/2160"
+              ],
+              "lower_solver": {
+                "status": "EXACTLY_VERIFIED_RATIONAL_DUAL",
+                "constant_repair": "0",
+                "numerical_LP_optimum_is_certified": false
+              },
+              "upper_solver": {
+                "status": "EXACTLY_VERIFIED_RATIONAL_DUAL",
+                "constant_repair": "0",
+                "numerical_LP_optimum_is_certified": false
+              },
+              "support_points_checked": 32,
+              "matched_quantum_gate_budget_supplied": false,
+              "independent_repetitions": [
+                {
+                  "attempts": 1,
+                  "success_lower": "0",
+                  "success_upper": "60149086880288819007597/1208925819614629174706176",
+                  "dyadic_enclosure_bits": 80
+                },
+                {
+                  "attempts": 4,
+                  "success_lower": "0",
+                  "success_upper": "111614263286966691104999/604462909807314587353088",
+                  "dyadic_enclosure_bits": 80
+                },
+                {
+                  "attempts": 16,
+                  "success_lower": "0",
+                  "success_upper": "674637972117543605046649/1208925819614629174706176",
+                  "dyadic_enclosure_bits": 80
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "moments": {
+            "positions": 31,
+            "RS_dimension": 9,
+            "filter_degree": 4,
+            "certified_moment_order": 1,
+            "maximum_RS_certified_order": 1,
+            "rational_Krawtchouk_coefficients": [
+              "465444/4047481",
+              "68436962050868831726582857246677530724962229/1202960438738664000081843034824460641079656448",
+              "44755593451656353320726237612263299299118199/1772525064490930800226839452743754273414709248",
+              "4755117252909124865135429385654206623468719/504285537046887807191109559978798082185756672",
+              "562996334315753545961762990214835935310065/228917667542820483676674771056575245725990912"
+            ],
+            "filter_normalization": "453382592151775705265707131864130605016118514623822892021670701558089221609204941948647777189290134732741268661070975517998497230106108724615/453382592151780766631466496625503717009213410295836061927609280409742346000034090842893466010436348274401134782624691052882852285465426395136",
+            "normalized_score_moments": [
+              "1",
+              "75297625521400313276228827647374757765168586759142278062518007464026713669486539751045171814949377514703833308199462539911651514741312955491/100751687144839045614601584858695690003581892138627309338149044790686493690934431544143950486508918829498059702460216781777443828912468605470"
+            ],
+            "mean_score": "75297625521400313276228827647374757765168586759142278062518007464026713669486539751045171814949377514703833308199462539911651514741312955491/100751687144839045614601584858695690003581892138627309338149044790686493690934431544143950486508918829498059702460216781777443828912468605470",
+            "precision_bits": 128,
+            "filter_is_this_rational_polynomial_not_exact_reference_eigenfilter": true,
+            "weighted_binomial_law_is_the_native_full_score_distribution": false,
+            "moments_beyond_RS_cutoff_not_certified_by_this_method": true,
+            "RS_K_wise_independence_and_balanced_public_predicates_required": true,
+            "coherent_filter_and_decoder_executed": false,
+            "local_moment_derivation_review_pending": true
+          },
+          "tail_certificates": [
+            {
+              "accepted_count_threshold": 25,
+              "tail_probability_lower": "0",
+              "tail_probability_upper": "2334226391163409711563093657068617490720226189533410619938058231384828123754082732282400326263430702955818832554183338737261196956980701620221/2518792178620976140365039621467392250089547303465682733453726119767162342273360788603598762162722970737451492561505419544436095722811715136750",
+              "minorant_coefficients": [
+                "0",
+                "0"
+              ],
+              "majorant_coefficients": [
+                "0",
+                "31/25"
+              ],
+              "lower_solver": {
+                "status": "EXACTLY_VERIFIED_RATIONAL_DUAL",
+                "constant_repair": "0",
+                "numerical_LP_optimum_is_certified": false
+              },
+              "upper_solver": {
+                "status": "EXACTLY_VERIFIED_RATIONAL_DUAL",
+                "constant_repair": "0",
+                "numerical_LP_optimum_is_certified": false
+              },
+              "support_points_checked": 32,
+              "matched_quantum_gate_budget_supplied": false,
+              "independent_repetitions": [
+                {
+                  "attempts": 1,
+                  "success_lower": "0",
+                  "success_upper": "1120341160757574005322635/1208925819614629174706176",
+                  "dyadic_enclosure_bits": 80
+                },
+                {
+                  "attempts": 4,
+                  "success_lower": "0",
+                  "success_upper": "1208890967020504305110527/1208925819614629174706176",
+                  "dyadic_enclosure_bits": 80
+                },
+                {
+                  "attempts": 16,
+                  "success_lower": "0",
+                  "success_upper": "1208925819614629173871071/1208925819614629174706176",
+                  "dyadic_enclosure_bits": 80
+                }
+              ]
+            },
+            {
+              "accepted_count_threshold": 30,
+              "tail_probability_lower": "0",
+              "tail_probability_upper": "2334226391163409711563093657068617490720226189533410619938058231384828123754082732282400326263430702955818832554183338737261196956980701620221/3022550614345171368438047545760870700107456764158819280144471343720594810728032946324318514595267564884941791073806503453323314867374058164100",
+              "minorant_coefficients": [
+                "0",
+                "0"
+              ],
+              "majorant_coefficients": [
+                "0",
+                "31/30"
+              ],
+              "lower_solver": {
+                "status": "EXACTLY_VERIFIED_RATIONAL_DUAL",
+                "constant_repair": "0",
+                "numerical_LP_optimum_is_certified": false
+              },
+              "upper_solver": {
+                "status": "EXACTLY_VERIFIED_RATIONAL_DUAL",
+                "constant_repair": "0",
+                "numerical_LP_optimum_is_certified": false
+              },
+              "support_points_checked": 32,
+              "matched_quantum_gate_budget_supplied": false,
+              "independent_repetitions": [
+                {
+                  "attempts": 1,
+                  "success_lower": "0",
+                  "success_upper": "933617633964645004435529/1208925819614629174706176",
+                  "dyadic_enclosure_bits": 80
+                },
+                {
+                  "attempts": 4,
+                  "success_lower": "0",
+                  "success_upper": "602837183092780753530575/604462909807314587353088",
+                  "dyadic_enclosure_bits": 80
+                },
+                {
+                  "attempts": 16,
+                  "success_lower": "0",
+                  "success_upper": "1208925819551371795856755/1208925819614629174706176",
+                  "dyadic_enclosure_bits": 80
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "classical_finite_best_score_is_not_a_quantum_tail_bound": true
+    },
+    {
+      "field_bits": 31,
+      "positions": 127,
+      "RS_dimension": 39,
+      "public_seed": 29,
+      "classical_best_of_four": 105,
+      "filters": [
+        {
+          "moments": {
+            "positions": 127,
+            "RS_dimension": 39,
+            "filter_degree": 16,
+            "certified_moment_order": 7,
+            "maximum_RS_certified_order": 7,
+            "rational_Krawtchouk_coefficients": [
+              "98/11382365",
+              "2808151491939400077271472023563478318863/562379733715914644958198994770675562434265088",
+              "11903450572349800254424212604138740857349/4175795822894678531637072760949996944743202816",
+              "5884654909603100061456702747605006360565/3678416997049185012438879315378241461945368576",
+              "1951138537186776482103663586502987547991/2213963510908823561662434893101371652858445824",
+              "552285485551704492587065902827947636731/1160978697213935328794360253538129243585642496",
+              "141195878745123735623419186318137217/562356155869725412120445427041040309682176",
+              "40105848485154434615151606949194605641/310302873633413740631286277150553461946843136",
+              "40826613052085399364531780019917174049/631165389677118043660767995118929555031588864",
+              "38941817626862403453219585784237161695/1242265263953417378711875313917778175996198912",
+              "28755940712710837780927334635283921195/1965104807508533635177765141448296606774329344",
+              "4325474498161261968110570653112987025/662116623066329303951237890974404612125097984",
+              "556008283485739088395527223917096995/201423469057398700029799130142564344320229376",
+              "381700008261300364299642912090911205/351381229276911117974235698236892408295981056",
+              "331494194619604556392239991560551231/856439505043780511298562649027342107118927872",
+              "402399136348985253828108683301072647/3418647820118309036000183383687081631697338368",
+              "29117162755249694703478778910023375/1138747454688848307333986929529048820736851968"
+            ],
+            "filter_normalization": "373626427850335165173501535317758657159244541574329687493728374012649439348650227920699548336063934241097883064621142803535220566807628135370701165643906058482344294468791124555912633314867020687836914534006949438517598712446096594136204583822020346326814674148049744058126156962612428691915762522301/373626427850330919513661091049044530202994241799757525113852929558857026584743871597914497408813042516669344819981946760703411487291744501660940131694731822703484770810622028863159177014263357880624838728890095153204374369732254413304548288372138399340385705004908290831161442152527830851040732774400",
+            "normalized_score_moments": [
+              "1",
+              "590314442939609718192439071062940054840298863460460208415358986200711794205893658047560894307646212570737301475319975928034421841605184002750642699948359251931295554183155572130750558407080730364172477799001422654219126104185263426325105045602110285687464750416045410551864223501231403513735722593261/747252855700670330347003070635517314318489083148659374987456748025298878697300455841399096672127868482195766129242285607070441133615256270741402331287812116964688588937582249111825266629734041375673829068013898877035197424892193188272409167644040692653629348296099488116252313925224857383831525044602",
+              "29686466235042743249569506071826251785092904997247687184392344690388188878379675010908271915194149640490020605367971680499922522656334567822991178634111361192483020708129006604001771997483103180680506867899051164045791086720505500509783410978207277372667591030007945975717413059722604871225803229279202/47450556336992565977034694985355349459224056779939870311703503499606478797278578945928842638680119648619431149206885136048973011984568773192079048036776069427257725397536472818600904430988111627355288145818882578691735036480654267455297982145396583983505463616802317495382021934251778443873301840332227",
+              "11962028820826253069632100820915585065428356251197463157014661192481946706861887627721982635065580603723509216531082666229130735721665529529199754301890734358200289516120057908781108989501563308378846829159192801544981928308165003750361025267461171715309642083885730041297422084464659541091609030154385255/24104882619192223516333625052560517525285820844209454118345379777800091229017518104531852060449500781498671023797097649112878290088160936781576156402682243269046924501948528191849259450941960706696486378075992349975401398532172367867291374929861464663620775517335577287654067142599903449487637334888771316",
+              "301618388537256071375999120763907418788525427871647818817733844482120556046657012385087130836558928162078767036889677154647907835185973999297754709637023842279594210789999940441973586360426353578908083007398245220652216917483991159660849295467536645012202701704418656354056347438199086707927569483331934131/765330023159353096643592595418796431427824811803650168257465807945152896521306199818886302919271649812582805005557850359333885710299109742815042965785161223792239852936865770091213987567407252437613442503912757111718994403396472679786501154023101503069959622675404578883016631777546934521232485382718489283",
+              "30452590803224655320238984518851103392089842904927680347953516881763237647765756225511145688013814337370966692779910780867043458026211954258435153009376902828590202758713492217119372986605982061790915746560424547910120658122199140723264890895952177254705921950655156580542117983790957094325214089715681505328/97196912941237843273736259618187146791333751099063571368698157609034417858205887376998560470747499526198016235705846995635403485207986937337510456654715475421614461322981952801584176421060721059576907197996920153188312289231352030332885646560933890889884872079776381518143112235748460684196525643605248138941",
+              "3077534583792330180389379454285043058907379838134403817137718308006213104251531463067359402415161231690856790598064040320651013244174521293726007361409911079115156309929128963906968819489620883900760711792553434618383651171961500776146187984850292005446832899347640044735027832836201718575602746600118913998972/12344007943537206095764504971509767642499386389581073563824666016347371067992147696878817179784932439827148061934642568445696242621414341041863827995148865378545036588018708005801190405474711574566267214145608859454915660732381707852276477113238604143015378754131600452804175253940054506892958756737866513645507",
+              "2490334694222915727964299306174148491680440233523974689397097696596123348997744230397199994904638520996316684441747776604427196812108134426026205057858396719096713084107607257335672893617851355906866869412033267489913654408305740442419953099069891979219735281036249234698281058252023424877602668951238629388003205/12541512070633801393296737051053923924779376571814370740845860672608929005080022060028878254661491358864382430925596849540827382503356970498533649243071247224601757173427007333894009451962306959759327489571938601206194311304099815177912900747050421809303624814197706060049042058003095379003246096845672377863835112"
+            ],
+            "mean_score": "590314442939609718192439071062940054840298863460460208415358986200711794205893658047560894307646212570737301475319975928034421841605184002750642699948359251931295554183155572130750558407080730364172477799001422654219126104185263426325105045602110285687464750416045410551864223501231403513735722593261/747252855700670330347003070635517314318489083148659374987456748025298878697300455841399096672127868482195766129242285607070441133615256270741402331287812116964688588937582249111825266629734041375673829068013898877035197424892193188272409167644040692653629348296099488116252313925224857383831525044602",
+            "precision_bits": 128,
+            "filter_is_this_rational_polynomial_not_exact_reference_eigenfilter": true,
+            "weighted_binomial_law_is_the_native_full_score_distribution": false,
+            "moments_beyond_RS_cutoff_not_certified_by_this_method": true,
+            "RS_K_wise_independence_and_balanced_public_predicates_required": true,
+            "coherent_filter_and_decoder_executed": false,
+            "local_moment_derivation_review_pending": true
+          },
+          "tail_certificates": [
+            {
+              "accepted_count_threshold": 102,
+              "tail_probability_lower": "394000523998968328642649038920746467161680765447963524426664196493353777015735184549579748076884676992591576859424982909193134639748930714227680065722493364479199878397995109746761350890291262874353795032438496247257251670096614085112203918652987746887068033102687574772470613338356561030554110854641787611054295892530009928604875916383079599336134138132143167898109743/17418149270817786916880548094372338270015094303900594988376792841662903159612992350468761633448634618772397156208243942538526081432827830006199180337877926572747246048114743647294351723764903813155626964012960232908720766914499046535155696326098156018503542229342958606027542230675050170117677744616852109566810724166350541652926829488292964609483486911894579937810579456",
+              "tail_probability_upper": "1652689862318942091116668798995074722609750050123248524803135954249717289412448015992943201861862476008516425937396373138191763581870129891033531118754094331462402889302423851715376611623837273722966739177499524360803500518735845081367519473489238790848677084512078025493230815389504940574009984877234080345426036555623947261310059623949135888324318341769881980505782137830/1979231971961121551361330836396246957620570226771807828138482347544473531065377624329735579870562827218780017831216538600363852612654322775334586296245960824176291904005866226561799901062705133522052968999416172677115110221572157019712951628389925571116085086765520407718408791022271584336336680284662781653576830003167504956834767713008296814499267893634243609522420519761",
+              "minorant_coefficients": [
+                "0",
+                "-340737211610/645449843",
+                "3035277890067/445585202",
+                "-19215465175067/557615137",
+                "34928456961633/399063319",
+                "-4868582680777/40984758",
+                "22118741398655/268435456",
+                "-17407223871646/757445613"
+              ],
+              "majorant_coefficients": [
+                "558175680546821672954887829913926156119274699506191040943368892535295286288/26486776957249252333937333572965436432372177321652828085748369315640197305",
+                "-225636624204/495638743",
+                "1460008510460/374407683",
+                "-4634140260860/270913701",
+                "39198185444314/941398137",
+                "-31357782786681/554887838",
+                "39878529104621/1000762390",
+                "-10031185866184/885112423"
+              ],
+              "lower_solver": {
+                "status": "EXACTLY_VERIFIED_RATIONAL_DUAL",
+                "constant_repair": "0",
+                "numerical_LP_optimum_is_certified": false
+              },
+              "upper_solver": {
+                "status": "EXACTLY_VERIFIED_RATIONAL_DUAL",
+                "constant_repair": "4400121807611454530169189229650846886390147555726756395225497693373022/28233575368340980835738351618818465987997492480373510095369871609035515342791010845",
+                "numerical_LP_optimum_is_certified": false
+              },
+              "support_points_checked": 128,
+              "matched_quantum_gate_budget_supplied": false,
+              "independent_repetitions": [
+                {
+                  "attempts": 1,
+                  "success_lower": "27346039983826761925057/1208925819614629174706176",
+                  "success_upper": "252368023894770938686525/302231454903657293676544",
+                  "dyadic_enclosure_bits": 80
+                },
+                {
+                  "attempts": 4,
+                  "success_lower": "105728388708324607033587/1208925819614629174706176",
+                  "success_upper": "1208030105044566237564057/1208925819614629174706176",
+                  "dyadic_enclosure_bits": 80
+                },
+                {
+                  "attempts": 16,
+                  "success_lower": "370597749977633636044923/1208925819614629174706176",
+                  "success_upper": "604462909807132428786677/604462909807314587353088",
+                  "dyadic_enclosure_bits": 80
+                }
+              ]
+            },
+            {
+              "accepted_count_threshold": 105,
+              "tail_probability_lower": "0",
+              "tail_probability_upper": "20585117479779830099641525342789227115109824167232185674691285914376580903257301663022620420709656009774165957587587808636188796530495863422917610558827065570919415458587846432679013445672079530279278716789212264710051244866179088122340929583147323227780897392453829997660590944837385132860499753026609659192044618744508783920982622203422142220779553970766870399796475039/81065590757774531700979276636134667789209002397202444340989984525119365974224112215113864831888630353612018425445269414873940445411815622343451197364986324010223357766105481890880142702460030850417642462535327793141236979602972809571778146050800468807580093001521260676717651053366282314057483346519705763621540106460805738507491131288211932271715235448815754189691457115",
+              "minorant_coefficients": [
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "majorant_coefficients": [
+                "2166423466077329983620407767321915299984897830194259909299221/22253296194107789046891236035571936085367357454120906912445476258835140",
+                "75631100421/172594316",
+                "-5229748011232/837671231",
+                "22521074698317/644996311",
+                "-28759136176304/292971685",
+                "30075985849572/203830343",
+                "-57685567753348/508775059",
+                "261819446651/7473063"
+              ],
+              "lower_solver": {
+                "status": "EXACTLY_VERIFIED_RATIONAL_DUAL",
+                "constant_repair": "0",
+                "numerical_LP_optimum_is_certified": false
+              },
+              "upper_solver": {
+                "status": "EXACTLY_VERIFIED_RATIONAL_DUAL",
+                "constant_repair": "2166423466077329983620407767321915299984897830194259909299221/22253296194107789046891236035571936085367357454120906912445476258835140",
+                "numerical_LP_optimum_is_certified": false
+              },
+              "support_points_checked": 128,
+              "matched_quantum_gate_budget_supplied": false,
+              "independent_repetitions": [
+                {
+                  "attempts": 1,
+                  "success_lower": "0",
+                  "success_upper": "306984502160302829433981/1208925819614629174706176",
+                  "dyadic_enclosure_bits": 80
+                },
+                {
+                  "attempts": 4,
+                  "success_lower": "0",
+                  "success_upper": "417186026258821621186009/604462909807314587353088",
+                  "dyadic_enclosure_bits": 80
+                },
+                {
+                  "attempts": 16,
+                  "success_lower": "0",
+                  "success_upper": "1197786524289170560394737/1208925819614629174706176",
+                  "dyadic_enclosure_bits": 80
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "moments": {
+            "positions": 127,
+            "RS_dimension": 39,
+            "filter_degree": 18,
+            "certified_moment_order": 3,
+            "maximum_RS_certified_order": 3,
+            "rational_Krawtchouk_coefficients": [
+              "27/15637273",
+              "4559471777234939910408519092022421786541/4283212417378244255460092759903375784285306880",
+              "300534546249803202332858036346104355299/463944041601309789532136110143939665413013504",
+              "538861906761519060877173614978485476449/1386233459020979168057045428015744113855954944",
+              "585172400397283286288612231391173287/2546673234036303460559895562019353294536704",
+              "189181547874609597717721108086571548807/1415740534044977965508576762037278746660044800",
+              "141882926847844421510167779118601448933/1858514588753035410413265947729065816333746176",
+              "74523921202712424782732006197279384931/1742287913648703129301947448501974781912940544",
+              "1210588035256746970518438329967325175/51612200396845746093883544816735656559509504",
+              "16101765739314208459246367879079645685/1282273537891188067380502254168309033747873792",
+              "111077403085670631781259383820136819/16976091791543508299876698259207910475169792",
+              "1699387542145065530872766245800384225/514114720821286710060172934279942493886742528",
+              "677177940743649031571380641674681789/420441918461178365189898971111603127550214144",
+              "167681350469984456583931178586855471/223077380011708484269598906208310843427258368",
+              "758440856850017428193761296086978013/2280384757378772684568936567911711933009494016",
+              "102268482176774099787159721609018159/744720720595233362481975204912203422079385600",
+              "290381990646830825120911164377935875/5643158382989847085337665572745800940269862912",
+              "33278549275099580984850595609952841/2016584765670534731561285232308219092412661760",
+              "2232932424373872226554753874119773/588573989756754645998682645301558215815725056"
+            ],
+            "filter_normalization": "230586712636950826737639734195742468353318586913455312366337268962779547623333262074934256103821507589497435981743508019361209521088278518351774943479794804056407945041255721436235934326106265036951033241692864312564193270576064025822649052184793043147303579613162736227178312662505430135503361916689/230586712636965754135345117953619423726550055537461525034449302143225028283332450402893827912762992116022540056388067022027022649606338227176293713215324691439064601716632245572312973327774300364857342560598051220444083639819714326928803292584667981700784906504928148733784114341566936733745602887680",
+            "normalized_score_moments": [
+              "1",
+              "372746397276104025312836696678953229621924137653534498716341704915972510743349660855261201766983442814437723119357432525715856441697777474780715241034682757956586519814744002194231140758422598311249331715922959910573666496577076691402711953321018700449658862846664810230243887758217774495704164577129/461173425273901653475279468391484936706637173826910624732674537925559095246666524149868512207643015178994871963487016038722419042176557036703549886959589608112815890082511442872471868652212530073902066483385728625128386541152128051645298104369586086294607159226325472454356625325010860271006723833378",
+              "95875183487237066038482933797045362687985349758954054876129224528333172844284287616200128420074329566272699305809679174063022302751000235130490487927892991437069188438997065450783594980503619926237102956338527579139483802343322326871043583790130014172822934808098251130247955554406505272777211439153668/146422562524463774978401231214296467404357302690044123352624165791365012740816621417583252625926657319330871848407127592294368045891056859153377089109669700575819045101197383112009818297077478298463906108474968838478262726815800656397382148137343582398537773054358337504258228540690948136044634817097515",
+              "39512326355070299882947792917586572827997351980348481643938513231175463677249377094959461045564484460967074886346436137825716386880519727010349729188448522224522111129590688462883986589672354477882681980620073333583396298557963404761035045108126128446831286120864015050935500022740815819830178982813926811/74382661762427597689027825456862605441413509766542414663133076222013426472334843680132292333970741918220082898990820816885538967312656884449915561267712207892516074911408270620900987694915358975619664303105284169946957465222426733449870131253770539858457188711614035452163180098671001653110674487085537620"
+            ],
+            "mean_score": "372746397276104025312836696678953229621924137653534498716341704915972510743349660855261201766983442814437723119357432525715856441697777474780715241034682757956586519814744002194231140758422598311249331715922959910573666496577076691402711953321018700449658862846664810230243887758217774495704164577129/461173425273901653475279468391484936706637173826910624732674537925559095246666524149868512207643015178994871963487016038722419042176557036703549886959589608112815890082511442872471868652212530073902066483385728625128386541152128051645298104369586086294607159226325472454356625325010860271006723833378",
+            "precision_bits": 128,
+            "filter_is_this_rational_polynomial_not_exact_reference_eigenfilter": true,
+            "weighted_binomial_law_is_the_native_full_score_distribution": false,
+            "moments_beyond_RS_cutoff_not_certified_by_this_method": true,
+            "RS_K_wise_independence_and_balanced_public_predicates_required": true,
+            "coherent_filter_and_decoder_executed": false,
+            "local_moment_derivation_review_pending": true
+          },
+          "tail_certificates": [
+            {
+              "accepted_count_threshold": 102,
+              "tail_probability_lower": "984829737814996788236273181360502952968414648821420542326505757095114416653059254492969151086745518372308710190229079407424710853148208635013648779857952668284025240491682477673648909147087454898187432464614919366331611090360315105154236349918084477521062681817078551457846166887495759623262261302381739917961744187096795440334391/5531714242929320419836490689531227005761812978388536108845228413050383275923756221688921414897566980565701806147752198069758780767820404348973013285022268508918328201339550266130499682314679144217901378833835986043831556113837304725181173414641121863861956810931020498533944779930003512282326634600961370277576348416115233558729045",
+              "tail_probability_upper": "19402372188478676405035406162271644967908930714278920932649484850677394458118952507899380691437158421175993959194039397072619337510063377732513315518096487691070618915371531200845873223796441761854762325695786602631786506212787795066569587336311224908284422018265262692657077804225232609699878915472215306852024632327024569124280242/19423301485245395301095394768539137682241232341926127716994847695428343925683246761820468629291174077550652065415044378185010928756518024258434145413296423288387587082537688253185659008209586173207578657839984734879907215591299801923153297995868197654879109392741573189231605937831294954671414338237212527761335654477565711438482215",
+              "minorant_coefficients": [
+                "-5293880348953041319/121547993133078408898469554234052",
+                "-120306061906/720246167",
+                "191364040705/493303164",
+                "-112072036391/501029189"
+              ],
+              "majorant_coefficients": [
+                "4734113621990783/1871872481108327670732100377843",
+                "3003190023/890980274",
+                "-65875792/17445861",
+                "1488195163/1058222777"
+              ],
+              "lower_solver": {
+                "status": "EXACTLY_VERIFIED_RATIONAL_DUAL",
+                "constant_repair": "5293880348953041319/121547993133078408898469554234052",
+                "numerical_LP_optimum_is_certified": false
+              },
+              "upper_solver": {
+                "status": "EXACTLY_VERIFIED_RATIONAL_DUAL",
+                "constant_repair": "4734113621990783/1871872481108327670732100377843",
+                "numerical_LP_optimum_is_certified": false
+              },
+              "support_points_checked": 128,
+              "matched_quantum_gate_budget_supplied": false,
+              "independent_repetitions": [
+                {
+                  "attempts": 1,
+                  "success_lower": "215229139771757305670761/1208925819614629174706176",
+                  "success_upper": "1207623159134026343606161/1208925819614629174706176",
+                  "dyadic_enclosure_bits": 80
+                },
+                {
+                  "attempts": 4,
+                  "success_lower": "164270432457684320831953/302231454903657293676544",
+                  "success_upper": "302231454903249851483127/302231454903657293676544",
+                  "dyadic_enclosure_bits": 80
+                },
+                {
+                  "attempts": 16,
+                  "success_lower": "144554627766206031345111/151115727451828646838272",
+                  "success_upper": "1",
+                  "dyadic_enclosure_bits": 80
+                }
+              ]
+            },
+            {
+              "accepted_count_threshold": 105,
+              "tail_probability_lower": "0",
+              "tail_probability_upper": "215437849066085906555154091784732359030825543686006182194706659360015215865867353169114273585470522395884421426350839428520942977656764662615254028577451233461086192655321195129212912734646035911740341856140720104272241408802771639199701900707963185056040443262551025699843951095667524166907724659534314256474338782295160202161913879/286371270640395668470592276823294417353860010224062347793232030131378484743256937344593841633692533081600642803063988118306132654875673596941730906754012287515834283716697009893000018181637710162210886636117819616933623227886170895645996353005200671012885512710582814021028395000597608912477211775079798976315493801140830747917243930",
+              "minorant_coefficients": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "majorant_coefficients": [
+                "8971080343072797312/124192442559027806791050613842137",
+                "106665682212/870277919",
+                "-292792679249/898154837",
+                "16813347242/77566613"
+              ],
+              "lower_solver": {
+                "status": "EXACTLY_VERIFIED_RATIONAL_DUAL",
+                "constant_repair": "0",
+                "numerical_LP_optimum_is_certified": false
+              },
+              "upper_solver": {
+                "status": "EXACTLY_VERIFIED_RATIONAL_DUAL",
+                "constant_repair": "8971080343072797312/124192442559027806791050613842137",
+                "numerical_LP_optimum_is_certified": false
+              },
+              "support_points_checked": 128,
+              "matched_quantum_gate_budget_supplied": false,
+              "independent_repetitions": [
+                {
+                  "attempts": 1,
+                  "success_lower": "0",
+                  "success_upper": "454739013581573472635803/604462909807314587353088",
+                  "dyadic_enclosure_bits": 80
+                },
+                {
+                  "attempts": 4,
+                  "success_lower": "0",
+                  "success_upper": "301093760786408768309479/302231454903657293676544",
+                  "dyadic_enclosure_bits": 80
+                },
+                {
+                  "attempts": 16,
+                  "success_lower": "0",
+                  "success_upper": "1208925819371888219953409/1208925819614629174706176",
+                  "dyadic_enclosure_bits": 80
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "moments": {
+            "positions": 127,
+            "RS_dimension": 39,
+            "filter_degree": 19,
+            "certified_moment_order": 1,
+            "maximum_RS_certified_order": 1,
+            "rational_Krawtchouk_coefficients": [
+              "13/16754346",
+              "150975886663408606304917850729219264455/307068596074069883329336733811479327524519936",
+              "574439449161016247496981816307110856331/1865880511008589504862625886168837586923028480",
+              "78383485526010246186654127734748707657/411815505247957384437254827282252229563645952",
+              "559630523848884460526342395803249344449/4821151880513612876687730068557175742584061952",
+              "91138789576233322472054598915190230603/1306531246981881007625415839808297494237937664",
+              "11133965522276097923600903993745848145/269874882663694006926631230782668482591850496",
+              "36046485253442452047346357942458362117/1503213519285674406926471838623689083096924160",
+              "941167246070536974894538584231870001/68825468998133148502794215177323509478064128",
+              "5016178649201147031084858245533992355/656949648001114178970086212169682856689270784",
+              "8503945265723436247834789883565354469/2042062216905455775728483284228546726056689664",
+              "3084231884897691292393792817703065475/1394485136277628465326800530558660777099657216",
+              "1604936660352676577921956883327429793/1408470741558079036175145226924106450590498816",
+              "730542363752982656269488360026894535/1289337374475508098708922581800333252107436032",
+              "726310494299592704958949349464400247/2689696464970925803792027884832481212073246720",
+              "342824599752379977245356968613686061/2807486567410076336673728858693417505541586944",
+              "271488162715089937590824204547971325/5264008623836832109639040854278568731933147136",
+              "53980792388695601499939448094704499/2727707366485462313914740681981039448365727744",
+              "25247463147165351120830847393354241/3879797803204830999808821724929399048326086656",
+              "678150111355938430427880257385321/441391147168890750989174031287184363662344192"
+            ],
+            "filter_normalization": "886829575845152048360379235149801759137352724717686076682679635193854543038751681786206480681737024604282961843187009737832530113532051028377970738080080531204466371933422160610642584046291679785832842598992348540622669247141542232573995305972639208806503019994790128778650368371826526719367128564006695617316505933314320304691/886829575845135859154410800347380837550234775272644697315241099170447531502976687573804042686074154851901219130304722456103058213954462447589273675354530862984880506094851280546497091322561570830413992005906964102331229853683054995877361970511097738659824822428282063275453109119232032082356977122173818864281637899796375142400",
+            "normalized_score_moments": [
+              "1",
+              "2897556067079422223716241916192044040275733278547506749525561909985394143844527104096097595545127108074386616746002681670773554092805448530303637225326120788702675612147638076545699154010390013751014103054042094470491034876493451915433216742020231348783531099631964832557280038504207236013544862923817423776280229837623079582607/3547318303380608193441516940599207036549410898870744306730718540775418172155006727144825922726948098417131847372748038951330120454128204113511882952320322124817865487733688642442570336185166719143331370395969394162490676988566168930295981223890556835226012079979160515114601473487306106877468514256026782469266023733257281218764"
+            ],
+            "mean_score": "2897556067079422223716241916192044040275733278547506749525561909985394143844527104096097595545127108074386616746002681670773554092805448530303637225326120788702675612147638076545699154010390013751014103054042094470491034876493451915433216742020231348783531099631964832557280038504207236013544862923817423776280229837623079582607/3547318303380608193441516940599207036549410898870744306730718540775418172155006727144825922726948098417131847372748038951330120454128204113511882952320322124817865487733688642442570336185166719143331370395969394162490676988566168930295981223890556835226012079979160515114601473487306106877468514256026782469266023733257281218764",
+            "precision_bits": 128,
+            "filter_is_this_rational_polynomial_not_exact_reference_eigenfilter": true,
+            "weighted_binomial_law_is_the_native_full_score_distribution": false,
+            "moments_beyond_RS_cutoff_not_certified_by_this_method": true,
+            "RS_K_wise_independence_and_balanced_public_predicates_required": true,
+            "coherent_filter_and_decoder_executed": false,
+            "local_moment_derivation_review_pending": true
+          },
+          "tail_certificates": [
+            {
+              "accepted_count_threshold": 102,
+              "tail_probability_lower": "9710471877645194874369512355869682423527625589588182209943789949827820880599262778576976438809384785316783742094788638103899203919343347883861749432064805558635388481647482834604188604617693112902322677870437187340803053469485331300124422623623140937681229575364321708199816067816402179095877651466107790191720792319145703895925/92230275887895813029479440455579382950284683370639351974998682060160872476030174905765473990900650558845428031691449012734583131807333306951308956760328375245264502681075904703506828740814334697726615630295204248224757601702720392187695511821154477715876314079458173392979638310669958778814181370656696344200916617064689311687864",
+              "tail_probability_upper": "1",
+              "minorant_coefficients": [
+                "-101/26",
+                "127/26"
+              ],
+              "majorant_coefficients": [
+                "1",
+                "0"
+              ],
+              "lower_solver": {
+                "status": "EXACTLY_VERIFIED_RATIONAL_DUAL",
+                "constant_repair": "0",
+                "numerical_LP_optimum_is_certified": false
+              },
+              "upper_solver": {
+                "status": "EXACTLY_VERIFIED_RATIONAL_DUAL",
+                "constant_repair": "0",
+                "numerical_LP_optimum_is_certified": false
+              },
+              "support_points_checked": 128,
+              "matched_quantum_gate_budget_supplied": false,
+              "independent_repetitions": [
+                {
+                  "attempts": 1,
+                  "success_lower": "63640925176217908482349/604462909807314587353088",
+                  "success_upper": "1",
+                  "dyadic_enclosure_bits": 80
+                },
+                {
+                  "attempts": 4,
+                  "success_lower": "217108613038523147017001/604462909807314587353088",
+                  "success_upper": "1",
+                  "dyadic_enclosure_bits": 80
+                },
+                {
+                  "attempts": 16,
+                  "success_lower": "1005055250887382619960137/1208925819614629174706176",
+                  "success_upper": "1",
+                  "dyadic_enclosure_bits": 80
+                }
+              ]
+            },
+            {
+              "accepted_count_threshold": 105,
+              "tail_probability_lower": "0",
+              "tail_probability_upper": "367989620519086622411962723356389593115018126375533357189746362568145056268254942220204394634231142725447100326742340572188241369786291963348561927616417340165239802742750035721303792559319531746378791087863345997752361429314668393260018526236569381295508449653259533734774564890034318973720197591324812819587589189378131106991089/372468421854963860311359278762916738837688144381428152206725446781418908076275706350206721886329550333798843974138544089889662647683461431918747709993633823105875876212037307456469885299442505510049793891576786387061521083799447737681078028508508467698731268397811854087033154716167141222134193996882812159272932491992014527970220",
+              "minorant_coefficients": [
+                "0",
+                "0"
+              ],
+              "majorant_coefficients": [
+                "0",
+                "127/105"
+              ],
+              "lower_solver": {
+                "status": "EXACTLY_VERIFIED_RATIONAL_DUAL",
+                "constant_repair": "0",
+                "numerical_LP_optimum_is_certified": false
+              },
+              "upper_solver": {
+                "status": "EXACTLY_VERIFIED_RATIONAL_DUAL",
+                "constant_repair": "0",
+                "numerical_LP_optimum_is_certified": false
+              },
+              "support_points_checked": 128,
+              "matched_quantum_gate_budget_supplied": false,
+              "independent_repetitions": [
+                {
+                  "attempts": 1,
+                  "success_lower": "0",
+                  "success_upper": "1194388913240389313203867/1208925819614629174706176",
+                  "dyadic_enclosure_bits": 80
+                },
+                {
+                  "attempts": 4,
+                  "success_lower": "0",
+                  "success_upper": "1208925794339754312657813/1208925819614629174706176",
+                  "dyadic_enclosure_bits": 80
+                },
+                {
+                  "attempts": 16,
+                  "success_lower": "0",
+                  "success_upper": "1",
+                  "dyadic_enclosure_bits": 80
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "classical_finite_best_score_is_not_a_quantum_tail_bound": true
+    },
+    {
+      "field_bits": 31,
+      "positions": 127,
+      "RS_dimension": 39,
+      "public_seed": 71,
+      "classical_best_of_four": 104,
+      "filters": [
+        {
+          "moments": {
+            "positions": 127,
+            "RS_dimension": 39,
+            "filter_degree": 16,
+            "certified_moment_order": 7,
+            "maximum_RS_certified_order": 7,
+            "rational_Krawtchouk_coefficients": [
+              "98/11382365",
+              "2808151491939400077271472023563478318863/562379733715914644958198994770675562434265088",
+              "11903450572349800254424212604138740857349/4175795822894678531637072760949996944743202816",
+              "5884654909603100061456702747605006360565/3678416997049185012438879315378241461945368576",
+              "1951138537186776482103663586502987547991/2213963510908823561662434893101371652858445824",
+              "552285485551704492587065902827947636731/1160978697213935328794360253538129243585642496",
+              "141195878745123735623419186318137217/562356155869725412120445427041040309682176",
+              "40105848485154434615151606949194605641/310302873633413740631286277150553461946843136",
+              "40826613052085399364531780019917174049/631165389677118043660767995118929555031588864",
+              "38941817626862403453219585784237161695/1242265263953417378711875313917778175996198912",
+              "28755940712710837780927334635283921195/1965104807508533635177765141448296606774329344",
+              "4325474498161261968110570653112987025/662116623066329303951237890974404612125097984",
+              "556008283485739088395527223917096995/201423469057398700029799130142564344320229376",
+              "381700008261300364299642912090911205/351381229276911117974235698236892408295981056",
+              "331494194619604556392239991560551231/856439505043780511298562649027342107118927872",
+              "402399136348985253828108683301072647/3418647820118309036000183383687081631697338368",
+              "29117162755249694703478778910023375/1138747454688848307333986929529048820736851968"
+            ],
+            "filter_normalization": "373626427850335165173501535317758657159244541574329687493728374012649439348650227920699548336063934241097883064621142803535220566807628135370701165643906058482344294468791124555912633314867020687836914534006949438517598712446096594136204583822020346326814674148049744058126156962612428691915762522301/373626427850330919513661091049044530202994241799757525113852929558857026584743871597914497408813042516669344819981946760703411487291744501660940131694731822703484770810622028863159177014263357880624838728890095153204374369732254413304548288372138399340385705004908290831161442152527830851040732774400",
+            "normalized_score_moments": [
+              "1",
+              "590314442939609718192439071062940054840298863460460208415358986200711794205893658047560894307646212570737301475319975928034421841605184002750642699948359251931295554183155572130750558407080730364172477799001422654219126104185263426325105045602110285687464750416045410551864223501231403513735722593261/747252855700670330347003070635517314318489083148659374987456748025298878697300455841399096672127868482195766129242285607070441133615256270741402331287812116964688588937582249111825266629734041375673829068013898877035197424892193188272409167644040692653629348296099488116252313925224857383831525044602",
+              "29686466235042743249569506071826251785092904997247687184392344690388188878379675010908271915194149640490020605367971680499922522656334567822991178634111361192483020708129006604001771997483103180680506867899051164045791086720505500509783410978207277372667591030007945975717413059722604871225803229279202/47450556336992565977034694985355349459224056779939870311703503499606478797278578945928842638680119648619431149206885136048973011984568773192079048036776069427257725397536472818600904430988111627355288145818882578691735036480654267455297982145396583983505463616802317495382021934251778443873301840332227",
+              "11962028820826253069632100820915585065428356251197463157014661192481946706861887627721982635065580603723509216531082666229130735721665529529199754301890734358200289516120057908781108989501563308378846829159192801544981928308165003750361025267461171715309642083885730041297422084464659541091609030154385255/24104882619192223516333625052560517525285820844209454118345379777800091229017518104531852060449500781498671023797097649112878290088160936781576156402682243269046924501948528191849259450941960706696486378075992349975401398532172367867291374929861464663620775517335577287654067142599903449487637334888771316",
+              "301618388537256071375999120763907418788525427871647818817733844482120556046657012385087130836558928162078767036889677154647907835185973999297754709637023842279594210789999940441973586360426353578908083007398245220652216917483991159660849295467536645012202701704418656354056347438199086707927569483331934131/765330023159353096643592595418796431427824811803650168257465807945152896521306199818886302919271649812582805005557850359333885710299109742815042965785161223792239852936865770091213987567407252437613442503912757111718994403396472679786501154023101503069959622675404578883016631777546934521232485382718489283",
+              "30452590803224655320238984518851103392089842904927680347953516881763237647765756225511145688013814337370966692779910780867043458026211954258435153009376902828590202758713492217119372986605982061790915746560424547910120658122199140723264890895952177254705921950655156580542117983790957094325214089715681505328/97196912941237843273736259618187146791333751099063571368698157609034417858205887376998560470747499526198016235705846995635403485207986937337510456654715475421614461322981952801584176421060721059576907197996920153188312289231352030332885646560933890889884872079776381518143112235748460684196525643605248138941",
+              "3077534583792330180389379454285043058907379838134403817137718308006213104251531463067359402415161231690856790598064040320651013244174521293726007361409911079115156309929128963906968819489620883900760711792553434618383651171961500776146187984850292005446832899347640044735027832836201718575602746600118913998972/12344007943537206095764504971509767642499386389581073563824666016347371067992147696878817179784932439827148061934642568445696242621414341041863827995148865378545036588018708005801190405474711574566267214145608859454915660732381707852276477113238604143015378754131600452804175253940054506892958756737866513645507",
+              "2490334694222915727964299306174148491680440233523974689397097696596123348997744230397199994904638520996316684441747776604427196812108134426026205057858396719096713084107607257335672893617851355906866869412033267489913654408305740442419953099069891979219735281036249234698281058252023424877602668951238629388003205/12541512070633801393296737051053923924779376571814370740845860672608929005080022060028878254661491358864382430925596849540827382503356970498533649243071247224601757173427007333894009451962306959759327489571938601206194311304099815177912900747050421809303624814197706060049042058003095379003246096845672377863835112"
+            ],
+            "mean_score": "590314442939609718192439071062940054840298863460460208415358986200711794205893658047560894307646212570737301475319975928034421841605184002750642699948359251931295554183155572130750558407080730364172477799001422654219126104185263426325105045602110285687464750416045410551864223501231403513735722593261/747252855700670330347003070635517314318489083148659374987456748025298878697300455841399096672127868482195766129242285607070441133615256270741402331287812116964688588937582249111825266629734041375673829068013898877035197424892193188272409167644040692653629348296099488116252313925224857383831525044602",
+            "precision_bits": 128,
+            "filter_is_this_rational_polynomial_not_exact_reference_eigenfilter": true,
+            "weighted_binomial_law_is_the_native_full_score_distribution": false,
+            "moments_beyond_RS_cutoff_not_certified_by_this_method": true,
+            "RS_K_wise_independence_and_balanced_public_predicates_required": true,
+            "coherent_filter_and_decoder_executed": false,
+            "local_moment_derivation_review_pending": true
+          },
+          "tail_certificates": [
+            {
+              "accepted_count_threshold": 102,
+              "tail_probability_lower": "394000523998968328642649038920746467161680765447963524426664196493353777015735184549579748076884676992591576859424982909193134639748930714227680065722493364479199878397995109746761350890291262874353795032438496247257251670096614085112203918652987746887068033102687574772470613338356561030554110854641787611054295892530009928604875916383079599336134138132143167898109743/17418149270817786916880548094372338270015094303900594988376792841662903159612992350468761633448634618772397156208243942538526081432827830006199180337877926572747246048114743647294351723764903813155626964012960232908720766914499046535155696326098156018503542229342958606027542230675050170117677744616852109566810724166350541652926829488292964609483486911894579937810579456",
+              "tail_probability_upper": "1652689862318942091116668798995074722609750050123248524803135954249717289412448015992943201861862476008516425937396373138191763581870129891033531118754094331462402889302423851715376611623837273722966739177499524360803500518735845081367519473489238790848677084512078025493230815389504940574009984877234080345426036555623947261310059623949135888324318341769881980505782137830/1979231971961121551361330836396246957620570226771807828138482347544473531065377624329735579870562827218780017831216538600363852612654322775334586296245960824176291904005866226561799901062705133522052968999416172677115110221572157019712951628389925571116085086765520407718408791022271584336336680284662781653576830003167504956834767713008296814499267893634243609522420519761",
+              "minorant_coefficients": [
+                "0",
+                "-340737211610/645449843",
+                "3035277890067/445585202",
+                "-19215465175067/557615137",
+                "34928456961633/399063319",
+                "-4868582680777/40984758",
+                "22118741398655/268435456",
+                "-17407223871646/757445613"
+              ],
+              "majorant_coefficients": [
+                "558175680546821672954887829913926156119274699506191040943368892535295286288/26486776957249252333937333572965436432372177321652828085748369315640197305",
+                "-225636624204/495638743",
+                "1460008510460/374407683",
+                "-4634140260860/270913701",
+                "39198185444314/941398137",
+                "-31357782786681/554887838",
+                "39878529104621/1000762390",
+                "-10031185866184/885112423"
+              ],
+              "lower_solver": {
+                "status": "EXACTLY_VERIFIED_RATIONAL_DUAL",
+                "constant_repair": "0",
+                "numerical_LP_optimum_is_certified": false
+              },
+              "upper_solver": {
+                "status": "EXACTLY_VERIFIED_RATIONAL_DUAL",
+                "constant_repair": "4400121807611454530169189229650846886390147555726756395225497693373022/28233575368340980835738351618818465987997492480373510095369871609035515342791010845",
+                "numerical_LP_optimum_is_certified": false
+              },
+              "support_points_checked": 128,
+              "matched_quantum_gate_budget_supplied": false,
+              "independent_repetitions": [
+                {
+                  "attempts": 1,
+                  "success_lower": "27346039983826761925057/1208925819614629174706176",
+                  "success_upper": "252368023894770938686525/302231454903657293676544",
+                  "dyadic_enclosure_bits": 80
+                },
+                {
+                  "attempts": 4,
+                  "success_lower": "105728388708324607033587/1208925819614629174706176",
+                  "success_upper": "1208030105044566237564057/1208925819614629174706176",
+                  "dyadic_enclosure_bits": 80
+                },
+                {
+                  "attempts": 16,
+                  "success_lower": "370597749977633636044923/1208925819614629174706176",
+                  "success_upper": "604462909807132428786677/604462909807314587353088",
+                  "dyadic_enclosure_bits": 80
+                }
+              ]
+            },
+            {
+              "accepted_count_threshold": 104,
+              "tail_probability_lower": "68988897132535239598338201566187280454582018530461359926196930903656785771089687566405455323202952588804702893740824562426270943400344138869164057305297863499725796464032711841924423031354500315521069968160882918337260968139277335966838020905918720095762705566889855349710036648487443360742176501709341889624608015272512257908667390207235418999070347201025740728366187559/701150450474961633101111197100025651366642908631759523664337019923626435634711521129498617440771098432125272743886964139837103822231729032218653021525102595516070077298684145725090116708675567683895047961534894607660598404352153447090758435048494957506459301832826938919260822891003011073878802667306368855176748836327965589070864022694420829681799102100135068179589941433840",
+              "tail_probability_upper": "1647526687074070820195513954443956130594996217154385118529918860087265908021438117951461453400338274222254898476524263479176676534325136392606156857943566298739376993049240265557523156637797257200803254738149265576200897407397954711311969283587467631836002400932308768474424217548676546183689266993146748759156287829306409548364411824792774621430330577057930633096884782959/4071566087742884990406839830764946101188733147938438545705694269214696737152164328373492098717751007965068396993850764605564015560922727431780694661002116307874648889197358516465891665498380719458472959854104279830266689244868298419510415352654560414725379766585202873900728285275323458609478247339637722827615329999141608462810153321574225614488479889377213828194868241160",
+              "minorant_coefficients": [
+                "-19648712702332885781195129123074961122111404524389794244381607033276531753/9673238589042173229939892270921399991071405639221551459355930024865878360",
+                "18353280277/490113256",
+                "-91498451085/330900437",
+                "475239461623/447790486",
+                "-1878897098086/814980143",
+                "2081711945203/728383185",
+                "-1272245248005/674703433",
+                "62220685908/121076281"
+              ],
+              "majorant_coefficients": [
+                "1380365890044332956626672700559978667268927558831114294212792812/12259603462915576040363298640691251216466339577459190308128355457492619805",
+                "189343659665/829199491",
+                "-3361769941597/971857743",
+                "3157129346871/153858119",
+                "-23783185810079/389913464",
+                "86360823352873/893987186",
+                "-62085746167480/796807549",
+                "807432337886/32066865"
+              ],
+              "lower_solver": {
+                "status": "EXACTLY_VERIFIED_RATIONAL_DUAL",
+                "constant_repair": "17447258216791395433278426768470792681531322376376898514942192897843/5847764191427920147220256196666001427305795681432743241747681553559002702400865160",
+                "numerical_LP_optimum_is_certified": false
+              },
+              "upper_solver": {
+                "status": "EXACTLY_VERIFIED_RATIONAL_DUAL",
+                "constant_repair": "1380365890044332956626672700559978667268927558831114294212792812/12259603462915576040363298640691251216466339577459190308128355457492619805",
+                "numerical_LP_optimum_is_certified": false
+              },
+              "support_points_checked": 128,
+              "matched_quantum_gate_budget_supplied": false,
+              "independent_repetitions": [
+                {
+                  "attempts": 1,
+                  "success_lower": "118950874172244207403/1208925819614629174706176",
+                  "success_upper": "489182174029781296115381/1208925819614629174706176",
+                  "dyadic_enclosure_bits": 80
+                },
+                {
+                  "attempts": 4,
+                  "success_lower": "475733277083491713117/1208925819614629174706176",
+                  "success_upper": "1057041689619406242349437/1208925819614629174706176",
+                  "dyadic_enclosure_bits": 80
+                },
+                {
+                  "attempts": 16,
+                  "success_lower": "950905073606389065995/604462909807314587353088",
+                  "success_upper": "1208624622621425754327137/1208925819614629174706176",
+                  "dyadic_enclosure_bits": 80
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "moments": {
+            "positions": 127,
+            "RS_dimension": 39,
+            "filter_degree": 18,
+            "certified_moment_order": 3,
+            "maximum_RS_certified_order": 3,
+            "rational_Krawtchouk_coefficients": [
+              "27/15637273",
+              "4559471777234939910408519092022421786541/4283212417378244255460092759903375784285306880",
+              "300534546249803202332858036346104355299/463944041601309789532136110143939665413013504",
+              "538861906761519060877173614978485476449/1386233459020979168057045428015744113855954944",
+              "585172400397283286288612231391173287/2546673234036303460559895562019353294536704",
+              "189181547874609597717721108086571548807/1415740534044977965508576762037278746660044800",
+              "141882926847844421510167779118601448933/1858514588753035410413265947729065816333746176",
+              "74523921202712424782732006197279384931/1742287913648703129301947448501974781912940544",
+              "1210588035256746970518438329967325175/51612200396845746093883544816735656559509504",
+              "16101765739314208459246367879079645685/1282273537891188067380502254168309033747873792",
+              "111077403085670631781259383820136819/16976091791543508299876698259207910475169792",
+              "1699387542145065530872766245800384225/514114720821286710060172934279942493886742528",
+              "677177940743649031571380641674681789/420441918461178365189898971111603127550214144",
+              "167681350469984456583931178586855471/223077380011708484269598906208310843427258368",
+              "758440856850017428193761296086978013/2280384757378772684568936567911711933009494016",
+              "102268482176774099787159721609018159/744720720595233362481975204912203422079385600",
+              "290381990646830825120911164377935875/5643158382989847085337665572745800940269862912",
+              "33278549275099580984850595609952841/2016584765670534731561285232308219092412661760",
+              "2232932424373872226554753874119773/588573989756754645998682645301558215815725056"
+            ],
+            "filter_normalization": "230586712636950826737639734195742468353318586913455312366337268962779547623333262074934256103821507589497435981743508019361209521088278518351774943479794804056407945041255721436235934326106265036951033241692864312564193270576064025822649052184793043147303579613162736227178312662505430135503361916689/230586712636965754135345117953619423726550055537461525034449302143225028283332450402893827912762992116022540056388067022027022649606338227176293713215324691439064601716632245572312973327774300364857342560598051220444083639819714326928803292584667981700784906504928148733784114341566936733745602887680",
+            "normalized_score_moments": [
+              "1",
+              "372746397276104025312836696678953229621924137653534498716341704915972510743349660855261201766983442814437723119357432525715856441697777474780715241034682757956586519814744002194231140758422598311249331715922959910573666496577076691402711953321018700449658862846664810230243887758217774495704164577129/461173425273901653475279468391484936706637173826910624732674537925559095246666524149868512207643015178994871963487016038722419042176557036703549886959589608112815890082511442872471868652212530073902066483385728625128386541152128051645298104369586086294607159226325472454356625325010860271006723833378",
+              "95875183487237066038482933797045362687985349758954054876129224528333172844284287616200128420074329566272699305809679174063022302751000235130490487927892991437069188438997065450783594980503619926237102956338527579139483802343322326871043583790130014172822934808098251130247955554406505272777211439153668/146422562524463774978401231214296467404357302690044123352624165791365012740816621417583252625926657319330871848407127592294368045891056859153377089109669700575819045101197383112009818297077478298463906108474968838478262726815800656397382148137343582398537773054358337504258228540690948136044634817097515",
+              "39512326355070299882947792917586572827997351980348481643938513231175463677249377094959461045564484460967074886346436137825716386880519727010349729188448522224522111129590688462883986589672354477882681980620073333583396298557963404761035045108126128446831286120864015050935500022740815819830178982813926811/74382661762427597689027825456862605441413509766542414663133076222013426472334843680132292333970741918220082898990820816885538967312656884449915561267712207892516074911408270620900987694915358975619664303105284169946957465222426733449870131253770539858457188711614035452163180098671001653110674487085537620"
+            ],
+            "mean_score": "372746397276104025312836696678953229621924137653534498716341704915972510743349660855261201766983442814437723119357432525715856441697777474780715241034682757956586519814744002194231140758422598311249331715922959910573666496577076691402711953321018700449658862846664810230243887758217774495704164577129/461173425273901653475279468391484936706637173826910624732674537925559095246666524149868512207643015178994871963487016038722419042176557036703549886959589608112815890082511442872471868652212530073902066483385728625128386541152128051645298104369586086294607159226325472454356625325010860271006723833378",
+            "precision_bits": 128,
+            "filter_is_this_rational_polynomial_not_exact_reference_eigenfilter": true,
+            "weighted_binomial_law_is_the_native_full_score_distribution": false,
+            "moments_beyond_RS_cutoff_not_certified_by_this_method": true,
+            "RS_K_wise_independence_and_balanced_public_predicates_required": true,
+            "coherent_filter_and_decoder_executed": false,
+            "local_moment_derivation_review_pending": true
+          },
+          "tail_certificates": [
+            {
+              "accepted_count_threshold": 102,
+              "tail_probability_lower": "984829737814996788236273181360502952968414648821420542326505757095114416653059254492969151086745518372308710190229079407424710853148208635013648779857952668284025240491682477673648909147087454898187432464614919366331611090360315105154236349918084477521062681817078551457846166887495759623262261302381739917961744187096795440334391/5531714242929320419836490689531227005761812978388536108845228413050383275923756221688921414897566980565701806147752198069758780767820404348973013285022268508918328201339550266130499682314679144217901378833835986043831556113837304725181173414641121863861956810931020498533944779930003512282326634600961370277576348416115233558729045",
+              "tail_probability_upper": "19402372188478676405035406162271644967908930714278920932649484850677394458118952507899380691437158421175993959194039397072619337510063377732513315518096487691070618915371531200845873223796441761854762325695786602631786506212787795066569587336311224908284422018265262692657077804225232609699878915472215306852024632327024569124280242/19423301485245395301095394768539137682241232341926127716994847695428343925683246761820468629291174077550652065415044378185010928756518024258434145413296423288387587082537688253185659008209586173207578657839984734879907215591299801923153297995868197654879109392741573189231605937831294954671414338237212527761335654477565711438482215",
+              "minorant_coefficients": [
+                "-5293880348953041319/121547993133078408898469554234052",
+                "-120306061906/720246167",
+                "191364040705/493303164",
+                "-112072036391/501029189"
+              ],
+              "majorant_coefficients": [
+                "4734113621990783/1871872481108327670732100377843",
+                "3003190023/890980274",
+                "-65875792/17445861",
+                "1488195163/1058222777"
+              ],
+              "lower_solver": {
+                "status": "EXACTLY_VERIFIED_RATIONAL_DUAL",
+                "constant_repair": "5293880348953041319/121547993133078408898469554234052",
+                "numerical_LP_optimum_is_certified": false
+              },
+              "upper_solver": {
+                "status": "EXACTLY_VERIFIED_RATIONAL_DUAL",
+                "constant_repair": "4734113621990783/1871872481108327670732100377843",
+                "numerical_LP_optimum_is_certified": false
+              },
+              "support_points_checked": 128,
+              "matched_quantum_gate_budget_supplied": false,
+              "independent_repetitions": [
+                {
+                  "attempts": 1,
+                  "success_lower": "215229139771757305670761/1208925819614629174706176",
+                  "success_upper": "1207623159134026343606161/1208925819614629174706176",
+                  "dyadic_enclosure_bits": 80
+                },
+                {
+                  "attempts": 4,
+                  "success_lower": "164270432457684320831953/302231454903657293676544",
+                  "success_upper": "302231454903249851483127/302231454903657293676544",
+                  "dyadic_enclosure_bits": 80
+                },
+                {
+                  "attempts": 16,
+                  "success_lower": "144554627766206031345111/151115727451828646838272",
+                  "success_upper": "1",
+                  "dyadic_enclosure_bits": 80
+                }
+              ]
+            },
+            {
+              "accepted_count_threshold": 104,
+              "tail_probability_lower": "8461106846994906858279145398921044906189716953033562536960432804150197984243732073573538865176184711096146595998208219930814036042440197095175048877929606723920804723147593259388411546820492909169236980378627368982644250053209484235541618509518228980519580677627422956591419514423016013297497494704569149159526558335488503358170589386423/1888587465815422166134178618538827081759375388859514281345718671597578582082339932004803636766213153336328568626637157786790858149489249212806595200628500672024565192395440471407628064576018067709224964359409321555065742848561159089760286860438562010353840768093931249357675208681358888157416344104083902406946096900101775844110162184348000",
+              "tail_probability_upper": "29206859295749733364714593126439972637745451870021880657362523542574326136718683729829860847092981062205205046979136048646316325942048958905118980332437115933447953224167730288242538537354092576195388511400560326393385692934268238682604892457463016423924327660773902496309465914402542554215807169811610561490901238937302121922136/32051707280284279644076263654423754405463353673924702207135741456788972029931317428288179101570949572561340733009773366778737189148980847290120580934811308193385516830731598013524628528357693179383469369792287789827187002866020203194294634589290962599374561398984981149082899825953759444519685657435618311233087386241665612745965",
+              "minorant_coefficients": [
+                "-2776406331/1073735153",
+                "13968755087/929819979",
+                "-17489834849/621679548",
+                "8195832691/490889800"
+              ],
+              "majorant_coefficients": [
+                "26645884407149359/1751408427281884646513781396231",
+                "21436396783/460222857",
+                "-130035050965/983677173",
+                "67489933346/719582297"
+              ],
+              "lower_solver": {
+                "status": "EXACTLY_VERIFIED_RATIONAL_DUAL",
+                "constant_repair": "0",
+                "numerical_LP_optimum_is_certified": false
+              },
+              "upper_solver": {
+                "status": "EXACTLY_VERIFIED_RATIONAL_DUAL",
+                "constant_repair": "26645884407149359/1751408427281884646513781396231",
+                "numerical_LP_optimum_is_certified": false
+              },
+              "support_points_checked": 128,
+              "matched_quantum_gate_budget_supplied": false,
+              "independent_repetitions": [
+                {
+                  "attempts": 1,
+                  "success_lower": "2708069050281933730535/604462909807314587353088",
+                  "success_upper": "550811942772900367720855/604462909807314587353088",
+                  "dyadic_enclosure_bits": 80
+                },
+                {
+                  "attempts": 4,
+                  "success_lower": "21519396919828900624285/1208925819614629174706176",
+                  "success_upper": "1208850790254853706237487/1208925819614629174706176",
+                  "dyadic_enclosure_bits": 80
+                },
+                {
+                  "attempts": 16,
+                  "success_lower": "83806413597433024197847/1208925819614629174706176",
+                  "success_upper": "75557863725914322298135/75557863725914323419136",
+                  "dyadic_enclosure_bits": 80
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "moments": {
+            "positions": 127,
+            "RS_dimension": 39,
+            "filter_degree": 19,
+            "certified_moment_order": 1,
+            "maximum_RS_certified_order": 1,
+            "rational_Krawtchouk_coefficients": [
+              "13/16754346",
+              "150975886663408606304917850729219264455/307068596074069883329336733811479327524519936",
+              "574439449161016247496981816307110856331/1865880511008589504862625886168837586923028480",
+              "78383485526010246186654127734748707657/411815505247957384437254827282252229563645952",
+              "559630523848884460526342395803249344449/4821151880513612876687730068557175742584061952",
+              "91138789576233322472054598915190230603/1306531246981881007625415839808297494237937664",
+              "11133965522276097923600903993745848145/269874882663694006926631230782668482591850496",
+              "36046485253442452047346357942458362117/1503213519285674406926471838623689083096924160",
+              "941167246070536974894538584231870001/68825468998133148502794215177323509478064128",
+              "5016178649201147031084858245533992355/656949648001114178970086212169682856689270784",
+              "8503945265723436247834789883565354469/2042062216905455775728483284228546726056689664",
+              "3084231884897691292393792817703065475/1394485136277628465326800530558660777099657216",
+              "1604936660352676577921956883327429793/1408470741558079036175145226924106450590498816",
+              "730542363752982656269488360026894535/1289337374475508098708922581800333252107436032",
+              "726310494299592704958949349464400247/2689696464970925803792027884832481212073246720",
+              "342824599752379977245356968613686061/2807486567410076336673728858693417505541586944",
+              "271488162715089937590824204547971325/5264008623836832109639040854278568731933147136",
+              "53980792388695601499939448094704499/2727707366485462313914740681981039448365727744",
+              "25247463147165351120830847393354241/3879797803204830999808821724929399048326086656",
+              "678150111355938430427880257385321/441391147168890750989174031287184363662344192"
+            ],
+            "filter_normalization": "886829575845152048360379235149801759137352724717686076682679635193854543038751681786206480681737024604282961843187009737832530113532051028377970738080080531204466371933422160610642584046291679785832842598992348540622669247141542232573995305972639208806503019994790128778650368371826526719367128564006695617316505933314320304691/886829575845135859154410800347380837550234775272644697315241099170447531502976687573804042686074154851901219130304722456103058213954462447589273675354530862984880506094851280546497091322561570830413992005906964102331229853683054995877361970511097738659824822428282063275453109119232032082356977122173818864281637899796375142400",
+            "normalized_score_moments": [
+              "1",
+              "2897556067079422223716241916192044040275733278547506749525561909985394143844527104096097595545127108074386616746002681670773554092805448530303637225326120788702675612147638076545699154010390013751014103054042094470491034876493451915433216742020231348783531099631964832557280038504207236013544862923817423776280229837623079582607/3547318303380608193441516940599207036549410898870744306730718540775418172155006727144825922726948098417131847372748038951330120454128204113511882952320322124817865487733688642442570336185166719143331370395969394162490676988566168930295981223890556835226012079979160515114601473487306106877468514256026782469266023733257281218764"
+            ],
+            "mean_score": "2897556067079422223716241916192044040275733278547506749525561909985394143844527104096097595545127108074386616746002681670773554092805448530303637225326120788702675612147638076545699154010390013751014103054042094470491034876493451915433216742020231348783531099631964832557280038504207236013544862923817423776280229837623079582607/3547318303380608193441516940599207036549410898870744306730718540775418172155006727144825922726948098417131847372748038951330120454128204113511882952320322124817865487733688642442570336185166719143331370395969394162490676988566168930295981223890556835226012079979160515114601473487306106877468514256026782469266023733257281218764",
+            "precision_bits": 128,
+            "filter_is_this_rational_polynomial_not_exact_reference_eigenfilter": true,
+            "weighted_binomial_law_is_the_native_full_score_distribution": false,
+            "moments_beyond_RS_cutoff_not_certified_by_this_method": true,
+            "RS_K_wise_independence_and_balanced_public_predicates_required": true,
+            "coherent_filter_and_decoder_executed": false,
+            "local_moment_derivation_review_pending": true
+          },
+          "tail_certificates": [
+            {
+              "accepted_count_threshold": 102,
+              "tail_probability_lower": "9710471877645194874369512355869682423527625589588182209943789949827820880599262778576976438809384785316783742094788638103899203919343347883861749432064805558635388481647482834604188604617693112902322677870437187340803053469485331300124422623623140937681229575364321708199816067816402179095877651466107790191720792319145703895925/92230275887895813029479440455579382950284683370639351974998682060160872476030174905765473990900650558845428031691449012734583131807333306951308956760328375245264502681075904703506828740814334697726615630295204248224757601702720392187695511821154477715876314079458173392979638310669958778814181370656696344200916617064689311687864",
+              "tail_probability_upper": "1",
+              "minorant_coefficients": [
+                "-101/26",
+                "127/26"
+              ],
+              "majorant_coefficients": [
+                "1",
+                "0"
+              ],
+              "lower_solver": {
+                "status": "EXACTLY_VERIFIED_RATIONAL_DUAL",
+                "constant_repair": "0",
+                "numerical_LP_optimum_is_certified": false
+              },
+              "upper_solver": {
+                "status": "EXACTLY_VERIFIED_RATIONAL_DUAL",
+                "constant_repair": "0",
+                "numerical_LP_optimum_is_certified": false
+              },
+              "support_points_checked": 128,
+              "matched_quantum_gate_budget_supplied": false,
+              "independent_repetitions": [
+                {
+                  "attempts": 1,
+                  "success_lower": "63640925176217908482349/604462909807314587353088",
+                  "success_upper": "1",
+                  "dyadic_enclosure_bits": 80
+                },
+                {
+                  "attempts": 4,
+                  "success_lower": "217108613038523147017001/604462909807314587353088",
+                  "success_upper": "1",
+                  "dyadic_enclosure_bits": 80
+                },
+                {
+                  "attempts": 16,
+                  "success_lower": "1005055250887382619960137/1208925819614629174706176",
+                  "success_upper": "1",
+                  "dyadic_enclosure_bits": 80
+                }
+              ]
+            },
+            {
+              "accepted_count_threshold": 104,
+              "tail_probability_lower": "2615835270883978487486478474671268350428803791846693596482352868276984536289249324287324593355488588482520047349292560201238963011086939656837983527424161308999657506180105549719047932247359674615659937078498399015821699492352993439532460175842027267229205415406000677970613120841789965340940622954054225253188744852631141458397/85135639281134596642596406574380968877185861572897863361537244978610036131720161451475822145446754362011164336945952934831922890899076898724285190855687730995628771705608527418621688068444001259439952889503265459899776247725588054327103549373373364045424289919499852362750435363695346565059244342144642779262384569598174749250336",
+              "tail_probability_upper": "367989620519086622411962723356389593115018126375533357189746362568145056268254942220204394634231142725447100326742340572188241369786291963348561927616417340165239802742750035721303792559319531746378791087863345997752361429314668393260018526236569381295508449653259533734774564890034318973720197591324812819587589189378131106991089/368921103551583252117917761822317531801138733482557407899994728240643489904120699623061895963602602235381712126765796050938332527229333227805235827041313500981058010724303618814027314963257338790906462521180816992899030406810881568750782047284617910863505256317832693571918553242679835115256725482626785376803666468258757246751456",
+              "minorant_coefficients": [
+                "-103/24",
+                "127/24"
+              ],
+              "majorant_coefficients": [
+                "0",
+                "127/104"
+              ],
+              "lower_solver": {
+                "status": "EXACTLY_VERIFIED_RATIONAL_DUAL",
+                "constant_repair": "0",
+                "numerical_LP_optimum_is_certified": false
+              },
+              "upper_solver": {
+                "status": "EXACTLY_VERIFIED_RATIONAL_DUAL",
+                "constant_repair": "0",
+                "numerical_LP_optimum_is_certified": false
+              },
+              "support_points_checked": 128,
+              "matched_quantum_gate_budget_supplied": false,
+              "independent_repetitions": [
+                {
+                  "attempts": 1,
+                  "success_lower": "37144852913919703819575/1208925819614629174706176",
+                  "success_upper": "75367088876346681422119/75557863725914323419136",
+                  "dyadic_enclosure_bits": 80
+                },
+                {
+                  "attempts": 4,
+                  "success_lower": "141870836009936627692385/1208925819614629174706176",
+                  "success_upper": "302231454891374265190905/302231454903657293676544",
+                  "dyadic_enclosure_bits": 80
+                },
+                {
+                  "attempts": 16,
+                  "success_lower": "237587808147773420489397/604462909807314587353088",
+                  "success_upper": "1",
+                  "dyadic_enclosure_bits": 80
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "classical_finite_best_score_is_not_a_quantum_tail_bound": true
+    }
+  ],
+  "source_sha256": "c4d47f6ec878abbed1fb8fc80d785266bff2c362e2e9e1b1707fa04c73fbbf64",
+  "input_artifact_sha256": "eff1b7a6bcacfed1a20ab904813a135cd804b1a956a58633eac4302e3cfffd83",
+  "dependency_sha256": {
+    "explicit_quadratic_opi.py": "83e9dbe5ede47b4b729429c47ec6233c038c41782ac13cbd88035e397f527333",
+    "explicit_cubic_opi.py": "38c1cd231fcf7426a068775cf2ab5bdae180a41efd3a1c937930ff126516ccb8"
+  },
+  "scipy_version": "1.15.3",
+  "accepted_speedup_candidate": false,
+  "new_quantum_algorithm_claimed": false,
+  "matched_gate_budget_supplied": false,
+  "literature": [
+    "https://arxiv.org/html/2610.02145v2#A1"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "contract_id": "planted-qary-punctured-coordinate-projection-bridge-contract",
+  "title": "Planted q-ary Punctured-Coordinate Projection Bridge: Bipartite Schmidt Entanglement Spectrum, Puncturing-Shortening QFT Duality, and d_min(B) Rank-Locking",
+  "version": "1.0.0",
+  "scope": "planted_qary_coordinate_puncturing_bipartite_schmidt_spectrum_shortened_dual_and_dmin_rank_locking",
+  "theorems": [
+    {
+      "id": "T1",
+      "name": "Bipartite Schmidt Spectrum and Purity Law Across (J, J_bar)",
+      "statement": "For any coordinate bipartition (J, J_bar) with d_J = rank(M_(:, J)) and d_(J_bar) = rank(M_(:, J_bar)), the reduced state rho_(B, J) = Tr_(J_bar)(|psi_B><psi_B|) has Schmidt rank q^(d_J + d_(J_bar) - d), non-zero eigenvalues all equal to q^(-(d_J + d_(J_bar) - d)), and purity Tr(rho_(B, J)^2) = q^(-(d_J + d_(J_bar) - d))."
+    },
+    {
+      "id": "T2",
+      "name": "Puncturing-Shortening Duality Under Local QFT_q^(tensor m) Readout",
+      "statement": "Local QFT_q^(tensor m) readout on J samples uniformly from the punctured dual pi_J(B^perp) of size q^(m - k_J) (where k_J = d - d_(J_bar)), while the dual of the punctured code (B_J)^perp equals the shortened dual {u_J in F_q^m : iota_J(u_J) in B^perp} of size q^(m - d_J)."
+    },
+    {
+      "id": "T3",
+      "name": "J-Supported Classical Probe Dichotomy and Minimum-Distance Rank-Locking",
+      "statement": "Under uniform J-supported probes u = iota_J(u_J), Var_(u_J)[N_W(iota_J(u_J); B)] = q^(2(d - d_J)) (q^(d_J) - 1) (1_(0 in W) - R/q)^2, and whenever n - |J| < d_min(B), d_J = d for every subset J of size |J|, locking the dual-hit probability at q^(-d)."
+    }
+  ],
+  "guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  }
+}

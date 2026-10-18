@@ -1,0 +1,58 @@
+{
+  "all_checks_passed": true,
+  "certificate_sha256_16": "229575f376b7f742",
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "proof_status": "LOCAL_DERIVATION_REVIEW_PENDING_NOT_FORMALLY_VERIFIED",
+  "schema_version": "dcp-sine-vs-box-window-pair-difference-overlap-bridge-v1",
+  "scope_constraints": {
+    "applies_to": "Position-shift autocorrelation gamma(Delta; P) of discrete sine vs. flat box windows on {0, ..., P-1}",
+    "controls_included": "Includes exact verification of gamma_{sin}(Delta; P) across all Delta = 0..P for P in {8, 16, 32}, exact unit-shift identity gamma_{sin}(1; P) == (1 - 1/P)*cos(pi/P) + 1/P (>6.69x smaller dephasing loss at P=32), and the Delta = P - 1 boundary crossover countercontrol.",
+    "does_not_claim": "Superiority of the sine window at extreme boundary shifts Delta -> P - 1"
+  },
+  "theorem_id": "dcp_sine_vs_box_window_pair_difference_overlap_bridge",
+  "window_overlap_audits": [
+    {
+      "P": 8,
+      "delta_1_box_dephasing_loss": 0.125,
+      "delta_1_box_visibility": 0.875,
+      "delta_1_closed_form_visibility": 0.9333945909473759,
+      "delta_1_loss_reduction_ratio_box_over_sine": 1.8767244549348752,
+      "delta_1_sine_dephasing_loss": 0.06660540905262391,
+      "delta_1_sine_visibility": 0.9333945909473761,
+      "edge_delta_P_minus_1_box_visibility": 0.125,
+      "edge_delta_P_minus_1_sine_visibility": 0.009515058436089172,
+      "exact_identities_and_crossover_verified": true,
+      "max_closed_form_error_all_deltas": 2.220446049250313e-16
+    },
+    {
+      "P": 16,
+      "delta_1_box_dephasing_loss": 0.0625,
+      "delta_1_box_visibility": 0.9375,
+      "delta_1_closed_form_visibility": 0.9819862003780285,
+      "delta_1_loss_reduction_ratio_box_over_sine": 3.4695622973272666,
+      "delta_1_sine_dephasing_loss": 0.01801379962197136,
+      "delta_1_sine_visibility": 0.9819862003780286,
+      "edge_delta_P_minus_1_box_visibility": 0.0625,
+      "edge_delta_P_minus_1_sine_visibility": 0.0012009199747980996,
+      "exact_identities_and_crossover_verified": true,
+      "max_closed_form_error_all_deltas": 2.220446049250313e-16
+    },
+    {
+      "P": 32,
+      "delta_1_box_dephasing_loss": 0.03125,
+      "delta_1_box_visibility": 0.96875,
+      "delta_1_closed_form_visibility": 0.9953352039636908,
+      "delta_1_loss_reduction_ratio_box_over_sine": 6.699113906966243,
+      "delta_1_sine_dephasing_loss": 0.0046647960363092045,
+      "delta_1_sine_visibility": 0.9953352039636908,
+      "edge_delta_P_minus_1_box_visibility": 0.03125,
+      "edge_delta_P_minus_1_sine_visibility": 0.00015047729149384717,
+      "exact_identities_and_crossover_verified": true,
+      "max_closed_form_error_all_deltas": 2.220446049250313e-16
+    }
+  ]
+}

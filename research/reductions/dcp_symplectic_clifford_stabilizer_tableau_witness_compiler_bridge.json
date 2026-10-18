@@ -1,0 +1,57 @@
+{
+  "all_checks_passed": true,
+  "certificate_sha256_16": "979e7ff74de6c5ee",
+  "coupled_tableau_audit": {
+    "K_wires": 4,
+    "all_m_witnesses_in_even_sublattice": true,
+    "exact_tableau_laws_verified": true,
+    "extracted_even_sublattice_columns": [
+      [
+        2,
+        2
+      ],
+      [
+        2,
+        4
+      ]
+    ],
+    "m_witnesses": 2,
+    "n_rows": 2,
+    "q_mod": 8,
+    "symplectic_form_preserved_mod2": true,
+    "witness_supports_disjoint": false
+  },
+  "disjoint_tableau_audit": {
+    "K_wires": 4,
+    "all_m_witnesses_in_even_sublattice": true,
+    "exact_tableau_laws_verified": true,
+    "extracted_even_sublattice_columns": [
+      [
+        4,
+        6
+      ],
+      [
+        12,
+        4
+      ]
+    ],
+    "m_witnesses": 2,
+    "n_rows": 2,
+    "q_mod": 16,
+    "symplectic_form_preserved_mod2": true,
+    "witness_supports_disjoint": true
+  },
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "proof_status": "LOCAL_DERIVATION_REVIEW_PENDING_NOT_FORMALLY_VERIFIED",
+  "schema_version": "dcp-symplectic-clifford-stabilizer-tableau-witness-compiler-bridge-v1",
+  "scope_constraints": {
+    "applies_to": "Symplectic GL_K(F_2) stabilizer tableau compilation S_W = diag(W, (W^{-1})^T) for mod-2 CNOT witness extraction",
+    "controls_included": "Includes 4-wire disjoint 2-witness compiler over Z_{16}^2 and 4-wire overlapping 2-witness compiler over Z_8^2, verifying S_W^T Omega S_W == Omega mod 2 and exact even-sublattice column extraction.",
+    "does_not_claim": "Multi-wire carry independence when columns of W^{-1} share overlapping row supports (see Subsystem 87)"
+  },
+  "theorem_id": "dcp_symplectic_clifford_stabilizer_tableau_witness_compiler_bridge"
+}

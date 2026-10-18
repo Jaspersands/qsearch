@@ -1,0 +1,22 @@
+{
+  "contract_id": "phase_qubit_latent_error_equality_access_falsifier_v1",
+  "experiment_id_for_mechanical_integration": "EXP-DHS-DCP-LATENT-ERROR-ACCESS",
+  "status": "EXACT_ACCESS_FALSIFIERS_EXTERNAL_REVIEW_PENDING",
+  "input_model": "Only the phase qubits; three distinct possible pure phase errors with full product error support; unknown classical secret",
+  "comparison_goal": "Error equality with zero false positives and nonzero success on equal inputs",
+  "obstruction": "Four unequal product inputs span the whole two-qubit space; any positive effect annihilating them is zero",
+  "general_purification_no_go": false,
+  "orthogonal_error_register_excluded": false,
+  "false_positive_protocols_excluded": false,
+  "correlated_equal_error_promises_excluded": false,
+  "accepted_speedup_candidate": false,
+  "novelty_claim": false,
+  "review_target": "research/DCP_INTERLEAVED_TREE_MERGE_SYNDROME_PRUNING_AUDIT.md",
+  "required_follow_up": [
+    "Keep valid classical power-renormalization identities conditional on an extra latent-error oracle",
+    "Do not identify retained error e with actual CNOT sum error2e",
+    "Fix strict SNR dominance at q3,p2/3 and endpoint/zero-ratio cases",
+    "Require real source error-register or encoded-syndrome access before a physical receiver claim"
+  ],
+  "literature": ["https://arxiv.org/abs/quant-ph/0202087"]
+}

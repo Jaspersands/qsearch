@@ -1,0 +1,73 @@
+{
+  "schema_version": "2.0",
+  "contract_id": "dcp_coordinate_rounding_coverage_review_pending_v2",
+  "title": "Clean DCP Coordinate Rounding: Exact Coverage Identities and No-Overflow Countercontrols",
+  "family": "dcp_clean_decoder_falsification",
+  "status": "corrected_review_pending_not_a_no_go",
+  "theorems": [
+    {
+      "id": "T1_coset_bijection_and_parallelepiped_vertex_identity",
+      "statement": "For any A in Z_{2^t}^{n x K} with an odd-determinant n x n pivot block and any full-rank basis B_red in Z^{K x K} of the q-ary kernel lattice Lambda_q(A) = {z in Z^K : A z = 0 mod 2^t} (det = 2^{nt}), the half-open fundamental parallelepiped P_c(B_red) = c + B_red[-1/2, 1/2)^K centered at c = (1/2, ..., 1/2)^T contains uniquely one integer point z_Babai(t) per target coset t in Z_{2^t}^n, and |{t in Z_{2^t}^n : z_Babai(t) in {0,1}^K}| == |{0,1}^K intersect P_c(B_red)|."
+    },
+    {
+      "id": "T2_half_integer_l_infinity_box_overflow_dichotomy",
+      "statement": "For every target t in Z_{2^t}^n, the centered residual e(t) = z_Babai(t) - c lies in (Z + 1/2)^K, so z_Babai(t) in {0,1}^K iff ||e(t)||_infinity == 1/2, and z_Babai(t) notin {0,1}^K iff ||e(t)||_infinity >= 3/2."
+    },
+    {
+      "id": "T3_direct_filter_and_forward_swap_babai_formula",
+      "statement": "When U_t|0> = |z_Babai(t)> is plugged into dcp_direct_witness_filter and dcp_forward_sampler_swap on K = nt + Delta clean phase qubits, verified coverage is beta_Babai(A) = |{0,1}^K intersect P_c(B_LLL)| / 2^{nt}, direct-filter full-secret success is 2^{-Delta} beta_Babai(A)^2, and forward-SWAP parity advantage is |{t in Z_{2^t}^n : ||e(t)||_inf == 1/2 and ||e((t+h) mod 2^t)||_inf == 1/2}| / (2 * 2^K)."
+    }
+  ],
+  "test_instances": [
+    {
+      "instance_id": "n1_t2_K2_no_overflow_countercontrol",
+      "n": 1,
+      "t": 2,
+      "K": 2,
+      "A": [[2, 1]]
+    },
+    {
+      "instance_id": "n1_t6_binary_weights_easy_countercontrol",
+      "n": 1,
+      "t": 6,
+      "K": 6,
+      "A": [[1, 2, 4, 8, 16, 32]]
+    },
+    {
+      "instance_id": "n1_t3_K3_babai_lll_witness_audit",
+      "n": 1,
+      "t": 3,
+      "K": 3,
+      "A": [[1, 3, 5]]
+    },
+    {
+      "instance_id": "n1_t4_K4_babai_lll_witness_audit",
+      "n": 1,
+      "t": 4,
+      "K": 4,
+      "A": [[3, 5, 7, 11]]
+    },
+    {
+      "instance_id": "n1_t5_K5_babai_lll_witness_audit",
+      "n": 1,
+      "t": 5,
+      "K": 5,
+      "A": [[5, 9, 13, 19, 27]]
+    },
+    {
+      "instance_id": "n2_t3_K6_babai_lll_witness_audit",
+      "n": 2,
+      "t": 3,
+      "K": 6,
+      "A": [
+        [1, 2, 3, 5, 6, 7],
+        [2, 3, 5, 1, 7, 4]
+      ]
+    }
+  ],
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  }
+}

@@ -1,0 +1,135 @@
+{
+  "all_checks_passed": true,
+  "certificate_sha256_16": "da8bb9ca6d5be2b6",
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "monotone_pgm_saturation_verified": true,
+  "multiplicity_4_staircase_sweep": [
+    {
+      "K": 4,
+      "M_representative_cap": 1,
+      "Q_group_size": 4,
+      "closed_form_m_rep_success": 0.25,
+      "exact_match_verified": true,
+      "explicit_coherent_qft_success": 0.25,
+      "full_pgm_benchmark": 1.0,
+      "max_fiber_size": 4,
+      "n": 1,
+      "occupied_residue_count_R": 4,
+      "q_mod": 4,
+      "single_rep_baseline_M1": 0.25
+    },
+    {
+      "K": 4,
+      "M_representative_cap": 2,
+      "Q_group_size": 4,
+      "closed_form_m_rep_success": 0.5000000000000001,
+      "exact_match_verified": true,
+      "explicit_coherent_qft_success": 0.5000000000000001,
+      "full_pgm_benchmark": 1.0,
+      "max_fiber_size": 4,
+      "n": 1,
+      "occupied_residue_count_R": 4,
+      "q_mod": 4,
+      "single_rep_baseline_M1": 0.25
+    },
+    {
+      "K": 4,
+      "M_representative_cap": 3,
+      "Q_group_size": 4,
+      "closed_form_m_rep_success": 0.7499999999999999,
+      "exact_match_verified": true,
+      "explicit_coherent_qft_success": 0.7499999999999999,
+      "full_pgm_benchmark": 1.0,
+      "max_fiber_size": 4,
+      "n": 1,
+      "occupied_residue_count_R": 4,
+      "q_mod": 4,
+      "single_rep_baseline_M1": 0.25
+    },
+    {
+      "K": 4,
+      "M_representative_cap": 4,
+      "Q_group_size": 4,
+      "closed_form_m_rep_success": 1.0,
+      "exact_match_verified": true,
+      "explicit_coherent_qft_success": 1.0,
+      "full_pgm_benchmark": 1.0,
+      "max_fiber_size": 4,
+      "n": 1,
+      "occupied_residue_count_R": 4,
+      "q_mod": 4,
+      "single_rep_baseline_M1": 0.25
+    },
+    {
+      "K": 4,
+      "M_representative_cap": 5,
+      "Q_group_size": 4,
+      "closed_form_m_rep_success": 1.0,
+      "exact_match_verified": true,
+      "explicit_coherent_qft_success": 1.0,
+      "full_pgm_benchmark": 1.0,
+      "max_fiber_size": 4,
+      "n": 1,
+      "occupied_residue_count_R": 4,
+      "q_mod": 4,
+      "single_rep_baseline_M1": 0.25
+    }
+  ],
+  "proof_status": "LOCAL_DERIVATION_REVIEW_PENDING_NOT_FORMALLY_VERIFIED",
+  "schema_version": "dcp-coherent-multi-representative-amplitude-equalization-bridge-v1",
+  "scope_constraints": {
+    "applies_to": "Coherent M-representative fiber concentration W_y^(M) and post-erasure QFT secret recovery over Z_q^n",
+    "controls_included": "Includes multiplicity-4 surjective staircase A=[[1,1,2,2]] mod 4 (exact steps 0.25, 0.50, 0.75, 1.00 for M=1..4) and non-uniform colliding audit A=[[1,1,2]] mod 8 (saturating P_PGM at M=2).",
+    "does_not_claim": "Polynomial-time computation of M colliding subset-sum witnesses for worst-case cryptographic instances without trapdoor or sieve preprocessing"
+  },
+  "staircase_law_verified": true,
+  "theorem_id": "dcp_coherent_multi_representative_amplitude_equalization_bridge",
+  "variable_multiplicity_sweep": [
+    {
+      "K": 3,
+      "M_representative_cap": 1,
+      "Q_group_size": 8,
+      "closed_form_m_rep_success": 0.390625,
+      "exact_match_verified": true,
+      "explicit_coherent_qft_success": 0.390625,
+      "full_pgm_benchmark": 0.6089150429449555,
+      "max_fiber_size": 2,
+      "n": 1,
+      "occupied_residue_count_R": 5,
+      "q_mod": 8,
+      "single_rep_baseline_M1": 0.390625
+    },
+    {
+      "K": 3,
+      "M_representative_cap": 2,
+      "Q_group_size": 8,
+      "closed_form_m_rep_success": 0.6089150429449555,
+      "exact_match_verified": true,
+      "explicit_coherent_qft_success": 0.6089150429449552,
+      "full_pgm_benchmark": 0.6089150429449555,
+      "max_fiber_size": 2,
+      "n": 1,
+      "occupied_residue_count_R": 5,
+      "q_mod": 8,
+      "single_rep_baseline_M1": 0.390625
+    },
+    {
+      "K": 3,
+      "M_representative_cap": 3,
+      "Q_group_size": 8,
+      "closed_form_m_rep_success": 0.6089150429449555,
+      "exact_match_verified": true,
+      "explicit_coherent_qft_success": 0.6089150429449552,
+      "full_pgm_benchmark": 0.6089150429449555,
+      "max_fiber_size": 2,
+      "n": 1,
+      "occupied_residue_count_R": 5,
+      "q_mod": 8,
+      "single_rep_baseline_M1": 0.390625
+    }
+  ]
+}

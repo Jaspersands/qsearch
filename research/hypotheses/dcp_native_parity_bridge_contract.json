@@ -1,0 +1,49 @@
+{
+  "contract_id": "native_parity_to_cyclic_dcp_review_pending_v1",
+  "status": "CONDITIONAL_REDUCTION_NO_NATIVE_PREDICTOR",
+  "source": "Clean scalar cyclic-DCP phase samples with IID uniform classical labels modulo 2^t; no coherent label oracle, preparation inverse or accessible environment",
+  "native_family": "n=t-8 components, uniform fixed native secret in Z_(2^t)^n and IID uniform original full labels; either clean accepted explicitly or independent injected Z visibility 1-1/n",
+  "required_unimplemented_primitive": "For every supported dimension, predict first native secret parity with average advantage at least inverse polynomial using polynomial original copies and finite-gate time",
+  "reduction": "Choose one private global uniform mask per fresh predictor invocation; augment scalar labels, apply known private phase rotations, unmask one parity prediction, amplify and remove the recovered scalar prefix on fresh original samples",
+  "private_control_data_not_decoder_inputs": [
+    "global mask including known auxiliary native secret coordinates",
+    "known phase correction angles and recovered scalar prefix",
+    "independent injected fault coins and preparation workspace"
+  ],
+  "proof_obligations": [
+    "Exact source pushforward for every fixed scalar secret, with one mask shared across all samples in an invocation",
+    "Uniform fresh label truncation after correct prefix removal, without postselection",
+    "Uniform inverse-polynomial predictor advantage at EVERY stage with fresh masks, samples, randomness and workspace",
+    "Charge original source copies, auxiliary randomness, bounded rejection coins, private phase arithmetic, and finite-gate precision",
+    "Explicitly charge terminal enumeration 2^(n0+7) when predictor supports only n>=n0; polynomial conclusion requires fixed n0",
+    "Verify suffix candidates on fresh CLEAN original samples and charge approximate-control error separately"
+  ],
+  "copy_bounds": {
+    "specified_bit": "First-coordinate parity corresponds to target frequency h=(q/2,0,...,0)",
+    "exact_blindness": "Absent a Boolean frequency difference h, parity-conditioned source densities coincide; all secret-blind subsequent instruments remain blind",
+    "clean_average_advantage_upper": "min(1/2,(2^K-1)/(2*q^n)) for K TOTAL original IID phase qubits, including all rejected or adaptively selected draws",
+    "independent_noise_average_advantage_upper": "min(1/2,((1+v)^K-1)/(2*q^n)); independent original Z faults required, not merely equal marginal visibilities",
+    "scope": "These are necessary copy thresholds, not sufficient resources or computational lower bounds; clean upper bound survives any secret-blind noise channel"
+  },
+  "falsifiers": [
+    "An actual original-source density violates the target-frequency identity or the clean subset-sum overlap formula",
+    "A claimed native predictor budget violates its necessary average-advantage bound",
+    "A predictor reads private masks, known auxiliary secrets, preparation angles or fault tags",
+    "A recursion reuses measured samples, refreshes masks per packet, or fails to cost its unsupported-dimension tail",
+    "A proposed implementation assumes free growing-modulus rotations or replaces total-information lower bounds by a useful-bit guarantee"
+  ],
+  "literature_links": [
+    "https://arxiv.org/abs/quant-ph/0501044",
+    "https://arxiv.org/abs/quant-ph/0505030"
+  ],
+  "guardrails": {
+    "accepted_speedup_candidate": false,
+    "native_predictor_implemented_or_certified": false,
+    "actual_scalar_recovery_executed": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false,
+    "quantum_copy_lower_bound_implies_computational_hardness": false,
+    "native_task_reduces_back_to_scalar_DCP_proved": false,
+    "natural_lattice_source_noise_certified": false
+  }
+}

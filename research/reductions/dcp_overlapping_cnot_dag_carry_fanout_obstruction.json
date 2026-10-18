@@ -1,0 +1,122 @@
+{
+  "theorem_id": "dcp_overlapping_cnot_dag_carry_fanout_obstruction",
+  "schema_version": "dcp-overlapping-cnot-dag-carry-fanout-obstruction-v2",
+  "scope_constraints": {
+    "applies_to": "Overlapping CNOT DAG wire compression x(u; x_0) = x_0 xor (V u) over Z_{2^t}",
+    "does_not_claim": "Termwise necessity, impossibility for a fixed anchor or secret, or a general receiver no-go. Aggregate cancellations are retained.",
+    "controls_included": "Includes odd shared-row quadratic carry cross-term audit alongside disjoint-support, half-period shared-row, and t=1 mod-2 constructive zero-cross-term controls."
+  },
+  "odd_shared_row_obstruction": {
+    "n": 1,
+    "K": 3,
+    "m": 2,
+    "t": 3,
+    "shared_row_indices": [
+      1
+    ],
+    "shared_rows_divisible_by_2_to_t_minus_1": false,
+    "max_multilinear_expansion_error": 0,
+    "non_zero_cross_term_evaluations": 8,
+    "total_evaluations": 32,
+    "cross_terms_identically_zero": false,
+    "analytic_conditions": {
+      "anchor_toggle_condition": false,
+      "aggregate_pair_condition": false,
+      "all_anchor_linearity_predicted": false,
+      "old_termwise_sufficient_condition": false
+    },
+    "iff_criterion_verified": true
+  },
+  "disjoint_support_control": {
+    "n": 1,
+    "K": 4,
+    "m": 2,
+    "t": 3,
+    "shared_row_indices": [],
+    "shared_rows_divisible_by_2_to_t_minus_1": true,
+    "max_multilinear_expansion_error": 0,
+    "non_zero_cross_term_evaluations": 0,
+    "total_evaluations": 64,
+    "cross_terms_identically_zero": true,
+    "analytic_conditions": {
+      "anchor_toggle_condition": true,
+      "aggregate_pair_condition": true,
+      "all_anchor_linearity_predicted": true,
+      "old_termwise_sufficient_condition": true
+    },
+    "iff_criterion_verified": true
+  },
+  "half_period_shared_row_control": {
+    "n": 1,
+    "K": 3,
+    "m": 2,
+    "t": 3,
+    "shared_row_indices": [
+      1
+    ],
+    "shared_rows_divisible_by_2_to_t_minus_1": true,
+    "max_multilinear_expansion_error": 0,
+    "non_zero_cross_term_evaluations": 0,
+    "total_evaluations": 32,
+    "cross_terms_identically_zero": true,
+    "analytic_conditions": {
+      "anchor_toggle_condition": true,
+      "aggregate_pair_condition": true,
+      "all_anchor_linearity_predicted": true,
+      "old_termwise_sufficient_condition": true
+    },
+    "iff_criterion_verified": true
+  },
+  "mod2_overlapping_control": {
+    "n": 1,
+    "K": 3,
+    "m": 2,
+    "t": 1,
+    "shared_row_indices": [
+      1
+    ],
+    "shared_rows_divisible_by_2_to_t_minus_1": true,
+    "max_multilinear_expansion_error": 0,
+    "non_zero_cross_term_evaluations": 0,
+    "total_evaluations": 32,
+    "cross_terms_identically_zero": true,
+    "analytic_conditions": {
+      "anchor_toggle_condition": true,
+      "aggregate_pair_condition": true,
+      "all_anchor_linearity_predicted": true,
+      "old_termwise_sufficient_condition": true
+    },
+    "iff_criterion_verified": true
+  },
+  "aggregate_cancellation_counterexample_to_v1": {
+    "n": 1,
+    "K": 4,
+    "m": 2,
+    "t": 2,
+    "shared_row_indices": [
+      0,
+      1
+    ],
+    "shared_rows_divisible_by_2_to_t_minus_1": false,
+    "max_multilinear_expansion_error": 0,
+    "non_zero_cross_term_evaluations": 0,
+    "total_evaluations": 64,
+    "cross_terms_identically_zero": true,
+    "analytic_conditions": {
+      "anchor_toggle_condition": true,
+      "aggregate_pair_condition": true,
+      "all_anchor_linearity_predicted": true,
+      "old_termwise_sufficient_condition": false
+    },
+    "iff_criterion_verified": true
+  },
+  "v1_termwise_necessity_retracted": true,
+  "general_derivation_review_pending": true,
+  "all_checks_passed": true,
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "certificate_sha256_16": "ad281aeb2d64cb61"
+}

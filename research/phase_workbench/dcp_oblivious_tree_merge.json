@@ -1,0 +1,5928 @@
+{
+  "status": "CLEAN_OBLIVIOUS_JOIN_EXTERNAL_REVIEW_PENDING",
+  "contract_id": "native_bounded_oblivious_rank_join_v1",
+  "native_labels": [
+    [
+      0,
+      0,
+      1,
+      2,
+      1,
+      2,
+      3,
+      2
+    ],
+    [
+      3,
+      2,
+      2,
+      1,
+      2,
+      0,
+      2,
+      2
+    ],
+    [
+      0,
+      1,
+      2,
+      2,
+      2,
+      2,
+      1,
+      2
+    ]
+  ],
+  "key_bits": 2,
+  "payload_bits": 14,
+  "native_controls": [
+    {
+      "assignment": 0,
+      "capacity": 2,
+      "left": [
+        [
+          1,
+          0,
+          3073
+        ],
+        [
+          1,
+          0,
+          6146
+        ],
+        [
+          1,
+          1,
+          10500
+        ],
+        [
+          1,
+          2,
+          9736
+        ]
+      ],
+      "right": [
+        [
+          1,
+          3,
+          10512
+        ],
+        [
+          1,
+          2,
+          8736
+        ],
+        [
+          1,
+          1,
+          6976
+        ],
+        [
+          1,
+          2,
+          10880
+        ]
+      ],
+      "target": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "overflow_output": 1,
+      "workspace_clean": true,
+      "basis_pair_count_diagnostic": 3,
+      "schedule": {
+        "left_slots": 4,
+        "right_slots": 4,
+        "capacity": 2,
+        "output_slots": 2,
+        "input_sort_slots": 8,
+        "rank_sort_slots": 16,
+        "fetch_sort_slots": 64,
+        "record_field_bits": 14,
+        "sort_sizes": [
+          8,
+          16,
+          64,
+          64
+        ],
+        "comparators": 2896,
+        "scan_steps": 192,
+        "record_evaluations": 384,
+        "persistent_workspace_bits": 18108,
+        "time_and_coherent_storage_form": "O((left_slots+right_slots+capacity)*log^2(left_slots+right_slots+capacity)*poly(record_bits))",
+        "data_dependent_RAM_reads": false,
+        "whole_attempt_overflow_rejection": true,
+        "hardware_gate_export_implemented": false
+      },
+      "metrics": {
+        "record_evaluations": 384,
+        "comparators": 2896,
+        "scan_steps": 192
+      }
+    },
+    {
+      "assignment": 0,
+      "capacity": 4,
+      "left": [
+        [
+          1,
+          0,
+          3073
+        ],
+        [
+          1,
+          0,
+          6146
+        ],
+        [
+          1,
+          1,
+          10500
+        ],
+        [
+          1,
+          2,
+          9736
+        ]
+      ],
+      "right": [
+        [
+          1,
+          3,
+          10512
+        ],
+        [
+          1,
+          2,
+          8736
+        ],
+        [
+          1,
+          1,
+          6976
+        ],
+        [
+          1,
+          2,
+          10880
+        ]
+      ],
+      "target": [
+        [
+          1,
+          10500,
+          6976
+        ],
+        [
+          1,
+          9736,
+          8736
+        ],
+        [
+          1,
+          9736,
+          10880
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "overflow_output": 0,
+      "workspace_clean": true,
+      "basis_pair_count_diagnostic": 3,
+      "schedule": {
+        "left_slots": 4,
+        "right_slots": 4,
+        "capacity": 4,
+        "output_slots": 4,
+        "input_sort_slots": 8,
+        "rank_sort_slots": 16,
+        "fetch_sort_slots": 64,
+        "record_field_bits": 14,
+        "sort_sizes": [
+          8,
+          16,
+          64,
+          64
+        ],
+        "comparators": 2896,
+        "scan_steps": 192,
+        "record_evaluations": 384,
+        "persistent_workspace_bits": 18108,
+        "time_and_coherent_storage_form": "O((left_slots+right_slots+capacity)*log^2(left_slots+right_slots+capacity)*poly(record_bits))",
+        "data_dependent_RAM_reads": false,
+        "whole_attempt_overflow_rejection": true,
+        "hardware_gate_export_implemented": false
+      },
+      "metrics": {
+        "record_evaluations": 384,
+        "comparators": 2896,
+        "scan_steps": 192
+      }
+    },
+    {
+      "assignment": 0,
+      "capacity": 16,
+      "left": [
+        [
+          1,
+          0,
+          3073
+        ],
+        [
+          1,
+          0,
+          6146
+        ],
+        [
+          1,
+          1,
+          10500
+        ],
+        [
+          1,
+          2,
+          9736
+        ]
+      ],
+      "right": [
+        [
+          1,
+          3,
+          10512
+        ],
+        [
+          1,
+          2,
+          8736
+        ],
+        [
+          1,
+          1,
+          6976
+        ],
+        [
+          1,
+          2,
+          10880
+        ]
+      ],
+      "target": [
+        [
+          1,
+          10500,
+          6976
+        ],
+        [
+          1,
+          9736,
+          8736
+        ],
+        [
+          1,
+          9736,
+          10880
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "overflow_output": 0,
+      "workspace_clean": true,
+      "basis_pair_count_diagnostic": 3,
+      "schedule": {
+        "left_slots": 4,
+        "right_slots": 4,
+        "capacity": 16,
+        "output_slots": 16,
+        "input_sort_slots": 8,
+        "rank_sort_slots": 32,
+        "fetch_sort_slots": 128,
+        "record_field_bits": 14,
+        "sort_sizes": [
+          8,
+          32,
+          128,
+          128
+        ],
+        "comparators": 7696,
+        "scan_steps": 352,
+        "record_evaluations": 736,
+        "persistent_workspace_bits": 34844,
+        "time_and_coherent_storage_form": "O((left_slots+right_slots+capacity)*log^2(left_slots+right_slots+capacity)*poly(record_bits))",
+        "data_dependent_RAM_reads": false,
+        "whole_attempt_overflow_rejection": true,
+        "hardware_gate_export_implemented": false
+      },
+      "metrics": {
+        "record_evaluations": 736,
+        "comparators": 7696,
+        "scan_steps": 352
+      }
+    },
+    {
+      "assignment": 1,
+      "capacity": 2,
+      "left": [
+        [
+          1,
+          0,
+          1025
+        ],
+        [
+          1,
+          0,
+          6146
+        ],
+        [
+          1,
+          1,
+          10500
+        ],
+        [
+          1,
+          2,
+          9736
+        ]
+      ],
+      "right": [
+        [
+          1,
+          3,
+          10512
+        ],
+        [
+          1,
+          2,
+          8736
+        ],
+        [
+          1,
+          1,
+          6976
+        ],
+        [
+          1,
+          2,
+          10880
+        ]
+      ],
+      "target": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "overflow_output": 1,
+      "workspace_clean": true,
+      "basis_pair_count_diagnostic": 3,
+      "schedule": {
+        "left_slots": 4,
+        "right_slots": 4,
+        "capacity": 2,
+        "output_slots": 2,
+        "input_sort_slots": 8,
+        "rank_sort_slots": 16,
+        "fetch_sort_slots": 64,
+        "record_field_bits": 14,
+        "sort_sizes": [
+          8,
+          16,
+          64,
+          64
+        ],
+        "comparators": 2896,
+        "scan_steps": 192,
+        "record_evaluations": 384,
+        "persistent_workspace_bits": 18108,
+        "time_and_coherent_storage_form": "O((left_slots+right_slots+capacity)*log^2(left_slots+right_slots+capacity)*poly(record_bits))",
+        "data_dependent_RAM_reads": false,
+        "whole_attempt_overflow_rejection": true,
+        "hardware_gate_export_implemented": false
+      },
+      "metrics": {
+        "record_evaluations": 384,
+        "comparators": 2896,
+        "scan_steps": 192
+      }
+    },
+    {
+      "assignment": 1,
+      "capacity": 4,
+      "left": [
+        [
+          1,
+          0,
+          1025
+        ],
+        [
+          1,
+          0,
+          6146
+        ],
+        [
+          1,
+          1,
+          10500
+        ],
+        [
+          1,
+          2,
+          9736
+        ]
+      ],
+      "right": [
+        [
+          1,
+          3,
+          10512
+        ],
+        [
+          1,
+          2,
+          8736
+        ],
+        [
+          1,
+          1,
+          6976
+        ],
+        [
+          1,
+          2,
+          10880
+        ]
+      ],
+      "target": [
+        [
+          1,
+          10500,
+          6976
+        ],
+        [
+          1,
+          9736,
+          8736
+        ],
+        [
+          1,
+          9736,
+          10880
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "overflow_output": 0,
+      "workspace_clean": true,
+      "basis_pair_count_diagnostic": 3,
+      "schedule": {
+        "left_slots": 4,
+        "right_slots": 4,
+        "capacity": 4,
+        "output_slots": 4,
+        "input_sort_slots": 8,
+        "rank_sort_slots": 16,
+        "fetch_sort_slots": 64,
+        "record_field_bits": 14,
+        "sort_sizes": [
+          8,
+          16,
+          64,
+          64
+        ],
+        "comparators": 2896,
+        "scan_steps": 192,
+        "record_evaluations": 384,
+        "persistent_workspace_bits": 18108,
+        "time_and_coherent_storage_form": "O((left_slots+right_slots+capacity)*log^2(left_slots+right_slots+capacity)*poly(record_bits))",
+        "data_dependent_RAM_reads": false,
+        "whole_attempt_overflow_rejection": true,
+        "hardware_gate_export_implemented": false
+      },
+      "metrics": {
+        "record_evaluations": 384,
+        "comparators": 2896,
+        "scan_steps": 192
+      }
+    },
+    {
+      "assignment": 1,
+      "capacity": 16,
+      "left": [
+        [
+          1,
+          0,
+          1025
+        ],
+        [
+          1,
+          0,
+          6146
+        ],
+        [
+          1,
+          1,
+          10500
+        ],
+        [
+          1,
+          2,
+          9736
+        ]
+      ],
+      "right": [
+        [
+          1,
+          3,
+          10512
+        ],
+        [
+          1,
+          2,
+          8736
+        ],
+        [
+          1,
+          1,
+          6976
+        ],
+        [
+          1,
+          2,
+          10880
+        ]
+      ],
+      "target": [
+        [
+          1,
+          10500,
+          6976
+        ],
+        [
+          1,
+          9736,
+          8736
+        ],
+        [
+          1,
+          9736,
+          10880
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "overflow_output": 0,
+      "workspace_clean": true,
+      "basis_pair_count_diagnostic": 3,
+      "schedule": {
+        "left_slots": 4,
+        "right_slots": 4,
+        "capacity": 16,
+        "output_slots": 16,
+        "input_sort_slots": 8,
+        "rank_sort_slots": 32,
+        "fetch_sort_slots": 128,
+        "record_field_bits": 14,
+        "sort_sizes": [
+          8,
+          32,
+          128,
+          128
+        ],
+        "comparators": 7696,
+        "scan_steps": 352,
+        "record_evaluations": 736,
+        "persistent_workspace_bits": 34844,
+        "time_and_coherent_storage_form": "O((left_slots+right_slots+capacity)*log^2(left_slots+right_slots+capacity)*poly(record_bits))",
+        "data_dependent_RAM_reads": false,
+        "whole_attempt_overflow_rejection": true,
+        "hardware_gate_export_implemented": false
+      },
+      "metrics": {
+        "record_evaluations": 736,
+        "comparators": 7696,
+        "scan_steps": 352
+      }
+    },
+    {
+      "assignment": 2,
+      "capacity": 2,
+      "left": [
+        [
+          1,
+          0,
+          3073
+        ],
+        [
+          1,
+          0,
+          14338
+        ],
+        [
+          1,
+          1,
+          10500
+        ],
+        [
+          1,
+          2,
+          9736
+        ]
+      ],
+      "right": [
+        [
+          1,
+          3,
+          10512
+        ],
+        [
+          1,
+          2,
+          8736
+        ],
+        [
+          1,
+          1,
+          6976
+        ],
+        [
+          1,
+          2,
+          10880
+        ]
+      ],
+      "target": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "overflow_output": 1,
+      "workspace_clean": true,
+      "basis_pair_count_diagnostic": 3,
+      "schedule": {
+        "left_slots": 4,
+        "right_slots": 4,
+        "capacity": 2,
+        "output_slots": 2,
+        "input_sort_slots": 8,
+        "rank_sort_slots": 16,
+        "fetch_sort_slots": 64,
+        "record_field_bits": 14,
+        "sort_sizes": [
+          8,
+          16,
+          64,
+          64
+        ],
+        "comparators": 2896,
+        "scan_steps": 192,
+        "record_evaluations": 384,
+        "persistent_workspace_bits": 18108,
+        "time_and_coherent_storage_form": "O((left_slots+right_slots+capacity)*log^2(left_slots+right_slots+capacity)*poly(record_bits))",
+        "data_dependent_RAM_reads": false,
+        "whole_attempt_overflow_rejection": true,
+        "hardware_gate_export_implemented": false
+      },
+      "metrics": {
+        "record_evaluations": 384,
+        "comparators": 2896,
+        "scan_steps": 192
+      }
+    },
+    {
+      "assignment": 2,
+      "capacity": 4,
+      "left": [
+        [
+          1,
+          0,
+          3073
+        ],
+        [
+          1,
+          0,
+          14338
+        ],
+        [
+          1,
+          1,
+          10500
+        ],
+        [
+          1,
+          2,
+          9736
+        ]
+      ],
+      "right": [
+        [
+          1,
+          3,
+          10512
+        ],
+        [
+          1,
+          2,
+          8736
+        ],
+        [
+          1,
+          1,
+          6976
+        ],
+        [
+          1,
+          2,
+          10880
+        ]
+      ],
+      "target": [
+        [
+          1,
+          10500,
+          6976
+        ],
+        [
+          1,
+          9736,
+          8736
+        ],
+        [
+          1,
+          9736,
+          10880
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "overflow_output": 0,
+      "workspace_clean": true,
+      "basis_pair_count_diagnostic": 3,
+      "schedule": {
+        "left_slots": 4,
+        "right_slots": 4,
+        "capacity": 4,
+        "output_slots": 4,
+        "input_sort_slots": 8,
+        "rank_sort_slots": 16,
+        "fetch_sort_slots": 64,
+        "record_field_bits": 14,
+        "sort_sizes": [
+          8,
+          16,
+          64,
+          64
+        ],
+        "comparators": 2896,
+        "scan_steps": 192,
+        "record_evaluations": 384,
+        "persistent_workspace_bits": 18108,
+        "time_and_coherent_storage_form": "O((left_slots+right_slots+capacity)*log^2(left_slots+right_slots+capacity)*poly(record_bits))",
+        "data_dependent_RAM_reads": false,
+        "whole_attempt_overflow_rejection": true,
+        "hardware_gate_export_implemented": false
+      },
+      "metrics": {
+        "record_evaluations": 384,
+        "comparators": 2896,
+        "scan_steps": 192
+      }
+    },
+    {
+      "assignment": 2,
+      "capacity": 16,
+      "left": [
+        [
+          1,
+          0,
+          3073
+        ],
+        [
+          1,
+          0,
+          14338
+        ],
+        [
+          1,
+          1,
+          10500
+        ],
+        [
+          1,
+          2,
+          9736
+        ]
+      ],
+      "right": [
+        [
+          1,
+          3,
+          10512
+        ],
+        [
+          1,
+          2,
+          8736
+        ],
+        [
+          1,
+          1,
+          6976
+        ],
+        [
+          1,
+          2,
+          10880
+        ]
+      ],
+      "target": [
+        [
+          1,
+          10500,
+          6976
+        ],
+        [
+          1,
+          9736,
+          8736
+        ],
+        [
+          1,
+          9736,
+          10880
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "overflow_output": 0,
+      "workspace_clean": true,
+      "basis_pair_count_diagnostic": 3,
+      "schedule": {
+        "left_slots": 4,
+        "right_slots": 4,
+        "capacity": 16,
+        "output_slots": 16,
+        "input_sort_slots": 8,
+        "rank_sort_slots": 32,
+        "fetch_sort_slots": 128,
+        "record_field_bits": 14,
+        "sort_sizes": [
+          8,
+          32,
+          128,
+          128
+        ],
+        "comparators": 7696,
+        "scan_steps": 352,
+        "record_evaluations": 736,
+        "persistent_workspace_bits": 34844,
+        "time_and_coherent_storage_form": "O((left_slots+right_slots+capacity)*log^2(left_slots+right_slots+capacity)*poly(record_bits))",
+        "data_dependent_RAM_reads": false,
+        "whole_attempt_overflow_rejection": true,
+        "hardware_gate_export_implemented": false
+      },
+      "metrics": {
+        "record_evaluations": 736,
+        "comparators": 7696,
+        "scan_steps": 352
+      }
+    },
+    {
+      "assignment": 3,
+      "capacity": 2,
+      "left": [
+        [
+          1,
+          0,
+          1025
+        ],
+        [
+          1,
+          0,
+          14338
+        ],
+        [
+          1,
+          1,
+          10500
+        ],
+        [
+          1,
+          2,
+          9736
+        ]
+      ],
+      "right": [
+        [
+          1,
+          3,
+          10512
+        ],
+        [
+          1,
+          2,
+          8736
+        ],
+        [
+          1,
+          1,
+          6976
+        ],
+        [
+          1,
+          2,
+          10880
+        ]
+      ],
+      "target": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "overflow_output": 1,
+      "workspace_clean": true,
+      "basis_pair_count_diagnostic": 3,
+      "schedule": {
+        "left_slots": 4,
+        "right_slots": 4,
+        "capacity": 2,
+        "output_slots": 2,
+        "input_sort_slots": 8,
+        "rank_sort_slots": 16,
+        "fetch_sort_slots": 64,
+        "record_field_bits": 14,
+        "sort_sizes": [
+          8,
+          16,
+          64,
+          64
+        ],
+        "comparators": 2896,
+        "scan_steps": 192,
+        "record_evaluations": 384,
+        "persistent_workspace_bits": 18108,
+        "time_and_coherent_storage_form": "O((left_slots+right_slots+capacity)*log^2(left_slots+right_slots+capacity)*poly(record_bits))",
+        "data_dependent_RAM_reads": false,
+        "whole_attempt_overflow_rejection": true,
+        "hardware_gate_export_implemented": false
+      },
+      "metrics": {
+        "record_evaluations": 384,
+        "comparators": 2896,
+        "scan_steps": 192
+      }
+    },
+    {
+      "assignment": 3,
+      "capacity": 4,
+      "left": [
+        [
+          1,
+          0,
+          1025
+        ],
+        [
+          1,
+          0,
+          14338
+        ],
+        [
+          1,
+          1,
+          10500
+        ],
+        [
+          1,
+          2,
+          9736
+        ]
+      ],
+      "right": [
+        [
+          1,
+          3,
+          10512
+        ],
+        [
+          1,
+          2,
+          8736
+        ],
+        [
+          1,
+          1,
+          6976
+        ],
+        [
+          1,
+          2,
+          10880
+        ]
+      ],
+      "target": [
+        [
+          1,
+          10500,
+          6976
+        ],
+        [
+          1,
+          9736,
+          8736
+        ],
+        [
+          1,
+          9736,
+          10880
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "overflow_output": 0,
+      "workspace_clean": true,
+      "basis_pair_count_diagnostic": 3,
+      "schedule": {
+        "left_slots": 4,
+        "right_slots": 4,
+        "capacity": 4,
+        "output_slots": 4,
+        "input_sort_slots": 8,
+        "rank_sort_slots": 16,
+        "fetch_sort_slots": 64,
+        "record_field_bits": 14,
+        "sort_sizes": [
+          8,
+          16,
+          64,
+          64
+        ],
+        "comparators": 2896,
+        "scan_steps": 192,
+        "record_evaluations": 384,
+        "persistent_workspace_bits": 18108,
+        "time_and_coherent_storage_form": "O((left_slots+right_slots+capacity)*log^2(left_slots+right_slots+capacity)*poly(record_bits))",
+        "data_dependent_RAM_reads": false,
+        "whole_attempt_overflow_rejection": true,
+        "hardware_gate_export_implemented": false
+      },
+      "metrics": {
+        "record_evaluations": 384,
+        "comparators": 2896,
+        "scan_steps": 192
+      }
+    },
+    {
+      "assignment": 3,
+      "capacity": 16,
+      "left": [
+        [
+          1,
+          0,
+          1025
+        ],
+        [
+          1,
+          0,
+          14338
+        ],
+        [
+          1,
+          1,
+          10500
+        ],
+        [
+          1,
+          2,
+          9736
+        ]
+      ],
+      "right": [
+        [
+          1,
+          3,
+          10512
+        ],
+        [
+          1,
+          2,
+          8736
+        ],
+        [
+          1,
+          1,
+          6976
+        ],
+        [
+          1,
+          2,
+          10880
+        ]
+      ],
+      "target": [
+        [
+          1,
+          10500,
+          6976
+        ],
+        [
+          1,
+          9736,
+          8736
+        ],
+        [
+          1,
+          9736,
+          10880
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "overflow_output": 0,
+      "workspace_clean": true,
+      "basis_pair_count_diagnostic": 3,
+      "schedule": {
+        "left_slots": 4,
+        "right_slots": 4,
+        "capacity": 16,
+        "output_slots": 16,
+        "input_sort_slots": 8,
+        "rank_sort_slots": 32,
+        "fetch_sort_slots": 128,
+        "record_field_bits": 14,
+        "sort_sizes": [
+          8,
+          32,
+          128,
+          128
+        ],
+        "comparators": 7696,
+        "scan_steps": 352,
+        "record_evaluations": 736,
+        "persistent_workspace_bits": 34844,
+        "time_and_coherent_storage_form": "O((left_slots+right_slots+capacity)*log^2(left_slots+right_slots+capacity)*poly(record_bits))",
+        "data_dependent_RAM_reads": false,
+        "whole_attempt_overflow_rejection": true,
+        "hardware_gate_export_implemented": false
+      },
+      "metrics": {
+        "record_evaluations": 736,
+        "comparators": 7696,
+        "scan_steps": 352
+      }
+    },
+    {
+      "assignment": 4,
+      "capacity": 2,
+      "left": [
+        [
+          1,
+          0,
+          3073
+        ],
+        [
+          1,
+          0,
+          6146
+        ],
+        [
+          1,
+          3,
+          11012
+        ],
+        [
+          1,
+          2,
+          9736
+        ]
+      ],
+      "right": [
+        [
+          1,
+          3,
+          10512
+        ],
+        [
+          1,
+          2,
+          8736
+        ],
+        [
+          1,
+          1,
+          6976
+        ],
+        [
+          1,
+          2,
+          10880
+        ]
+      ],
+      "target": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "overflow_output": 1,
+      "workspace_clean": true,
+      "basis_pair_count_diagnostic": 3,
+      "schedule": {
+        "left_slots": 4,
+        "right_slots": 4,
+        "capacity": 2,
+        "output_slots": 2,
+        "input_sort_slots": 8,
+        "rank_sort_slots": 16,
+        "fetch_sort_slots": 64,
+        "record_field_bits": 14,
+        "sort_sizes": [
+          8,
+          16,
+          64,
+          64
+        ],
+        "comparators": 2896,
+        "scan_steps": 192,
+        "record_evaluations": 384,
+        "persistent_workspace_bits": 18108,
+        "time_and_coherent_storage_form": "O((left_slots+right_slots+capacity)*log^2(left_slots+right_slots+capacity)*poly(record_bits))",
+        "data_dependent_RAM_reads": false,
+        "whole_attempt_overflow_rejection": true,
+        "hardware_gate_export_implemented": false
+      },
+      "metrics": {
+        "record_evaluations": 384,
+        "comparators": 2896,
+        "scan_steps": 192
+      }
+    },
+    {
+      "assignment": 4,
+      "capacity": 4,
+      "left": [
+        [
+          1,
+          0,
+          3073
+        ],
+        [
+          1,
+          0,
+          6146
+        ],
+        [
+          1,
+          3,
+          11012
+        ],
+        [
+          1,
+          2,
+          9736
+        ]
+      ],
+      "right": [
+        [
+          1,
+          3,
+          10512
+        ],
+        [
+          1,
+          2,
+          8736
+        ],
+        [
+          1,
+          1,
+          6976
+        ],
+        [
+          1,
+          2,
+          10880
+        ]
+      ],
+      "target": [
+        [
+          1,
+          9736,
+          8736
+        ],
+        [
+          1,
+          9736,
+          10880
+        ],
+        [
+          1,
+          11012,
+          10512
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "overflow_output": 0,
+      "workspace_clean": true,
+      "basis_pair_count_diagnostic": 3,
+      "schedule": {
+        "left_slots": 4,
+        "right_slots": 4,
+        "capacity": 4,
+        "output_slots": 4,
+        "input_sort_slots": 8,
+        "rank_sort_slots": 16,
+        "fetch_sort_slots": 64,
+        "record_field_bits": 14,
+        "sort_sizes": [
+          8,
+          16,
+          64,
+          64
+        ],
+        "comparators": 2896,
+        "scan_steps": 192,
+        "record_evaluations": 384,
+        "persistent_workspace_bits": 18108,
+        "time_and_coherent_storage_form": "O((left_slots+right_slots+capacity)*log^2(left_slots+right_slots+capacity)*poly(record_bits))",
+        "data_dependent_RAM_reads": false,
+        "whole_attempt_overflow_rejection": true,
+        "hardware_gate_export_implemented": false
+      },
+      "metrics": {
+        "record_evaluations": 384,
+        "comparators": 2896,
+        "scan_steps": 192
+      }
+    },
+    {
+      "assignment": 4,
+      "capacity": 16,
+      "left": [
+        [
+          1,
+          0,
+          3073
+        ],
+        [
+          1,
+          0,
+          6146
+        ],
+        [
+          1,
+          3,
+          11012
+        ],
+        [
+          1,
+          2,
+          9736
+        ]
+      ],
+      "right": [
+        [
+          1,
+          3,
+          10512
+        ],
+        [
+          1,
+          2,
+          8736
+        ],
+        [
+          1,
+          1,
+          6976
+        ],
+        [
+          1,
+          2,
+          10880
+        ]
+      ],
+      "target": [
+        [
+          1,
+          9736,
+          8736
+        ],
+        [
+          1,
+          9736,
+          10880
+        ],
+        [
+          1,
+          11012,
+          10512
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "overflow_output": 0,
+      "workspace_clean": true,
+      "basis_pair_count_diagnostic": 3,
+      "schedule": {
+        "left_slots": 4,
+        "right_slots": 4,
+        "capacity": 16,
+        "output_slots": 16,
+        "input_sort_slots": 8,
+        "rank_sort_slots": 32,
+        "fetch_sort_slots": 128,
+        "record_field_bits": 14,
+        "sort_sizes": [
+          8,
+          32,
+          128,
+          128
+        ],
+        "comparators": 7696,
+        "scan_steps": 352,
+        "record_evaluations": 736,
+        "persistent_workspace_bits": 34844,
+        "time_and_coherent_storage_form": "O((left_slots+right_slots+capacity)*log^2(left_slots+right_slots+capacity)*poly(record_bits))",
+        "data_dependent_RAM_reads": false,
+        "whole_attempt_overflow_rejection": true,
+        "hardware_gate_export_implemented": false
+      },
+      "metrics": {
+        "record_evaluations": 736,
+        "comparators": 7696,
+        "scan_steps": 352
+      }
+    },
+    {
+      "assignment": 5,
+      "capacity": 2,
+      "left": [
+        [
+          1,
+          0,
+          1025
+        ],
+        [
+          1,
+          0,
+          6146
+        ],
+        [
+          1,
+          3,
+          11012
+        ],
+        [
+          1,
+          2,
+          9736
+        ]
+      ],
+      "right": [
+        [
+          1,
+          3,
+          10512
+        ],
+        [
+          1,
+          2,
+          8736
+        ],
+        [
+          1,
+          1,
+          6976
+        ],
+        [
+          1,
+          2,
+          10880
+        ]
+      ],
+      "target": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "overflow_output": 1,
+      "workspace_clean": true,
+      "basis_pair_count_diagnostic": 3,
+      "schedule": {
+        "left_slots": 4,
+        "right_slots": 4,
+        "capacity": 2,
+        "output_slots": 2,
+        "input_sort_slots": 8,
+        "rank_sort_slots": 16,
+        "fetch_sort_slots": 64,
+        "record_field_bits": 14,
+        "sort_sizes": [
+          8,
+          16,
+          64,
+          64
+        ],
+        "comparators": 2896,
+        "scan_steps": 192,
+        "record_evaluations": 384,
+        "persistent_workspace_bits": 18108,
+        "time_and_coherent_storage_form": "O((left_slots+right_slots+capacity)*log^2(left_slots+right_slots+capacity)*poly(record_bits))",
+        "data_dependent_RAM_reads": false,
+        "whole_attempt_overflow_rejection": true,
+        "hardware_gate_export_implemented": false
+      },
+      "metrics": {
+        "record_evaluations": 384,
+        "comparators": 2896,
+        "scan_steps": 192
+      }
+    },
+    {
+      "assignment": 5,
+      "capacity": 4,
+      "left": [
+        [
+          1,
+          0,
+          1025
+        ],
+        [
+          1,
+          0,
+          6146
+        ],
+        [
+          1,
+          3,
+          11012
+        ],
+        [
+          1,
+          2,
+          9736
+        ]
+      ],
+      "right": [
+        [
+          1,
+          3,
+          10512
+        ],
+        [
+          1,
+          2,
+          8736
+        ],
+        [
+          1,
+          1,
+          6976
+        ],
+        [
+          1,
+          2,
+          10880
+        ]
+      ],
+      "target": [
+        [
+          1,
+          9736,
+          8736
+        ],
+        [
+          1,
+          9736,
+          10880
+        ],
+        [
+          1,
+          11012,
+          10512
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "overflow_output": 0,
+      "workspace_clean": true,
+      "basis_pair_count_diagnostic": 3,
+      "schedule": {
+        "left_slots": 4,
+        "right_slots": 4,
+        "capacity": 4,
+        "output_slots": 4,
+        "input_sort_slots": 8,
+        "rank_sort_slots": 16,
+        "fetch_sort_slots": 64,
+        "record_field_bits": 14,
+        "sort_sizes": [
+          8,
+          16,
+          64,
+          64
+        ],
+        "comparators": 2896,
+        "scan_steps": 192,
+        "record_evaluations": 384,
+        "persistent_workspace_bits": 18108,
+        "time_and_coherent_storage_form": "O((left_slots+right_slots+capacity)*log^2(left_slots+right_slots+capacity)*poly(record_bits))",
+        "data_dependent_RAM_reads": false,
+        "whole_attempt_overflow_rejection": true,
+        "hardware_gate_export_implemented": false
+      },
+      "metrics": {
+        "record_evaluations": 384,
+        "comparators": 2896,
+        "scan_steps": 192
+      }
+    },
+    {
+      "assignment": 5,
+      "capacity": 16,
+      "left": [
+        [
+          1,
+          0,
+          1025
+        ],
+        [
+          1,
+          0,
+          6146
+        ],
+        [
+          1,
+          3,
+          11012
+        ],
+        [
+          1,
+          2,
+          9736
+        ]
+      ],
+      "right": [
+        [
+          1,
+          3,
+          10512
+        ],
+        [
+          1,
+          2,
+          8736
+        ],
+        [
+          1,
+          1,
+          6976
+        ],
+        [
+          1,
+          2,
+          10880
+        ]
+      ],
+      "target": [
+        [
+          1,
+          9736,
+          8736
+        ],
+        [
+          1,
+          9736,
+          10880
+        ],
+        [
+          1,
+          11012,
+          10512
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "overflow_output": 0,
+      "workspace_clean": true,
+      "basis_pair_count_diagnostic": 3,
+      "schedule": {
+        "left_slots": 4,
+        "right_slots": 4,
+        "capacity": 16,
+        "output_slots": 16,
+        "input_sort_slots": 8,
+        "rank_sort_slots": 32,
+        "fetch_sort_slots": 128,
+        "record_field_bits": 14,
+        "sort_sizes": [
+          8,
+          32,
+          128,
+          128
+        ],
+        "comparators": 7696,
+        "scan_steps": 352,
+        "record_evaluations": 736,
+        "persistent_workspace_bits": 34844,
+        "time_and_coherent_storage_form": "O((left_slots+right_slots+capacity)*log^2(left_slots+right_slots+capacity)*poly(record_bits))",
+        "data_dependent_RAM_reads": false,
+        "whole_attempt_overflow_rejection": true,
+        "hardware_gate_export_implemented": false
+      },
+      "metrics": {
+        "record_evaluations": 736,
+        "comparators": 7696,
+        "scan_steps": 352
+      }
+    },
+    {
+      "assignment": 6,
+      "capacity": 2,
+      "left": [
+        [
+          1,
+          0,
+          3073
+        ],
+        [
+          1,
+          0,
+          14338
+        ],
+        [
+          1,
+          3,
+          11012
+        ],
+        [
+          1,
+          2,
+          9736
+        ]
+      ],
+      "right": [
+        [
+          1,
+          3,
+          10512
+        ],
+        [
+          1,
+          2,
+          8736
+        ],
+        [
+          1,
+          1,
+          6976
+        ],
+        [
+          1,
+          2,
+          10880
+        ]
+      ],
+      "target": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "overflow_output": 1,
+      "workspace_clean": true,
+      "basis_pair_count_diagnostic": 3,
+      "schedule": {
+        "left_slots": 4,
+        "right_slots": 4,
+        "capacity": 2,
+        "output_slots": 2,
+        "input_sort_slots": 8,
+        "rank_sort_slots": 16,
+        "fetch_sort_slots": 64,
+        "record_field_bits": 14,
+        "sort_sizes": [
+          8,
+          16,
+          64,
+          64
+        ],
+        "comparators": 2896,
+        "scan_steps": 192,
+        "record_evaluations": 384,
+        "persistent_workspace_bits": 18108,
+        "time_and_coherent_storage_form": "O((left_slots+right_slots+capacity)*log^2(left_slots+right_slots+capacity)*poly(record_bits))",
+        "data_dependent_RAM_reads": false,
+        "whole_attempt_overflow_rejection": true,
+        "hardware_gate_export_implemented": false
+      },
+      "metrics": {
+        "record_evaluations": 384,
+        "comparators": 2896,
+        "scan_steps": 192
+      }
+    },
+    {
+      "assignment": 6,
+      "capacity": 4,
+      "left": [
+        [
+          1,
+          0,
+          3073
+        ],
+        [
+          1,
+          0,
+          14338
+        ],
+        [
+          1,
+          3,
+          11012
+        ],
+        [
+          1,
+          2,
+          9736
+        ]
+      ],
+      "right": [
+        [
+          1,
+          3,
+          10512
+        ],
+        [
+          1,
+          2,
+          8736
+        ],
+        [
+          1,
+          1,
+          6976
+        ],
+        [
+          1,
+          2,
+          10880
+        ]
+      ],
+      "target": [
+        [
+          1,
+          9736,
+          8736
+        ],
+        [
+          1,
+          9736,
+          10880
+        ],
+        [
+          1,
+          11012,
+          10512
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "overflow_output": 0,
+      "workspace_clean": true,
+      "basis_pair_count_diagnostic": 3,
+      "schedule": {
+        "left_slots": 4,
+        "right_slots": 4,
+        "capacity": 4,
+        "output_slots": 4,
+        "input_sort_slots": 8,
+        "rank_sort_slots": 16,
+        "fetch_sort_slots": 64,
+        "record_field_bits": 14,
+        "sort_sizes": [
+          8,
+          16,
+          64,
+          64
+        ],
+        "comparators": 2896,
+        "scan_steps": 192,
+        "record_evaluations": 384,
+        "persistent_workspace_bits": 18108,
+        "time_and_coherent_storage_form": "O((left_slots+right_slots+capacity)*log^2(left_slots+right_slots+capacity)*poly(record_bits))",
+        "data_dependent_RAM_reads": false,
+        "whole_attempt_overflow_rejection": true,
+        "hardware_gate_export_implemented": false
+      },
+      "metrics": {
+        "record_evaluations": 384,
+        "comparators": 2896,
+        "scan_steps": 192
+      }
+    },
+    {
+      "assignment": 6,
+      "capacity": 16,
+      "left": [
+        [
+          1,
+          0,
+          3073
+        ],
+        [
+          1,
+          0,
+          14338
+        ],
+        [
+          1,
+          3,
+          11012
+        ],
+        [
+          1,
+          2,
+          9736
+        ]
+      ],
+      "right": [
+        [
+          1,
+          3,
+          10512
+        ],
+        [
+          1,
+          2,
+          8736
+        ],
+        [
+          1,
+          1,
+          6976
+        ],
+        [
+          1,
+          2,
+          10880
+        ]
+      ],
+      "target": [
+        [
+          1,
+          9736,
+          8736
+        ],
+        [
+          1,
+          9736,
+          10880
+        ],
+        [
+          1,
+          11012,
+          10512
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "overflow_output": 0,
+      "workspace_clean": true,
+      "basis_pair_count_diagnostic": 3,
+      "schedule": {
+        "left_slots": 4,
+        "right_slots": 4,
+        "capacity": 16,
+        "output_slots": 16,
+        "input_sort_slots": 8,
+        "rank_sort_slots": 32,
+        "fetch_sort_slots": 128,
+        "record_field_bits": 14,
+        "sort_sizes": [
+          8,
+          32,
+          128,
+          128
+        ],
+        "comparators": 7696,
+        "scan_steps": 352,
+        "record_evaluations": 736,
+        "persistent_workspace_bits": 34844,
+        "time_and_coherent_storage_form": "O((left_slots+right_slots+capacity)*log^2(left_slots+right_slots+capacity)*poly(record_bits))",
+        "data_dependent_RAM_reads": false,
+        "whole_attempt_overflow_rejection": true,
+        "hardware_gate_export_implemented": false
+      },
+      "metrics": {
+        "record_evaluations": 736,
+        "comparators": 7696,
+        "scan_steps": 352
+      }
+    },
+    {
+      "assignment": 7,
+      "capacity": 2,
+      "left": [
+        [
+          1,
+          0,
+          1025
+        ],
+        [
+          1,
+          0,
+          14338
+        ],
+        [
+          1,
+          3,
+          11012
+        ],
+        [
+          1,
+          2,
+          9736
+        ]
+      ],
+      "right": [
+        [
+          1,
+          3,
+          10512
+        ],
+        [
+          1,
+          2,
+          8736
+        ],
+        [
+          1,
+          1,
+          6976
+        ],
+        [
+          1,
+          2,
+          10880
+        ]
+      ],
+      "target": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "overflow_output": 1,
+      "workspace_clean": true,
+      "basis_pair_count_diagnostic": 3,
+      "schedule": {
+        "left_slots": 4,
+        "right_slots": 4,
+        "capacity": 2,
+        "output_slots": 2,
+        "input_sort_slots": 8,
+        "rank_sort_slots": 16,
+        "fetch_sort_slots": 64,
+        "record_field_bits": 14,
+        "sort_sizes": [
+          8,
+          16,
+          64,
+          64
+        ],
+        "comparators": 2896,
+        "scan_steps": 192,
+        "record_evaluations": 384,
+        "persistent_workspace_bits": 18108,
+        "time_and_coherent_storage_form": "O((left_slots+right_slots+capacity)*log^2(left_slots+right_slots+capacity)*poly(record_bits))",
+        "data_dependent_RAM_reads": false,
+        "whole_attempt_overflow_rejection": true,
+        "hardware_gate_export_implemented": false
+      },
+      "metrics": {
+        "record_evaluations": 384,
+        "comparators": 2896,
+        "scan_steps": 192
+      }
+    },
+    {
+      "assignment": 7,
+      "capacity": 4,
+      "left": [
+        [
+          1,
+          0,
+          1025
+        ],
+        [
+          1,
+          0,
+          14338
+        ],
+        [
+          1,
+          3,
+          11012
+        ],
+        [
+          1,
+          2,
+          9736
+        ]
+      ],
+      "right": [
+        [
+          1,
+          3,
+          10512
+        ],
+        [
+          1,
+          2,
+          8736
+        ],
+        [
+          1,
+          1,
+          6976
+        ],
+        [
+          1,
+          2,
+          10880
+        ]
+      ],
+      "target": [
+        [
+          1,
+          9736,
+          8736
+        ],
+        [
+          1,
+          9736,
+          10880
+        ],
+        [
+          1,
+          11012,
+          10512
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "overflow_output": 0,
+      "workspace_clean": true,
+      "basis_pair_count_diagnostic": 3,
+      "schedule": {
+        "left_slots": 4,
+        "right_slots": 4,
+        "capacity": 4,
+        "output_slots": 4,
+        "input_sort_slots": 8,
+        "rank_sort_slots": 16,
+        "fetch_sort_slots": 64,
+        "record_field_bits": 14,
+        "sort_sizes": [
+          8,
+          16,
+          64,
+          64
+        ],
+        "comparators": 2896,
+        "scan_steps": 192,
+        "record_evaluations": 384,
+        "persistent_workspace_bits": 18108,
+        "time_and_coherent_storage_form": "O((left_slots+right_slots+capacity)*log^2(left_slots+right_slots+capacity)*poly(record_bits))",
+        "data_dependent_RAM_reads": false,
+        "whole_attempt_overflow_rejection": true,
+        "hardware_gate_export_implemented": false
+      },
+      "metrics": {
+        "record_evaluations": 384,
+        "comparators": 2896,
+        "scan_steps": 192
+      }
+    },
+    {
+      "assignment": 7,
+      "capacity": 16,
+      "left": [
+        [
+          1,
+          0,
+          1025
+        ],
+        [
+          1,
+          0,
+          14338
+        ],
+        [
+          1,
+          3,
+          11012
+        ],
+        [
+          1,
+          2,
+          9736
+        ]
+      ],
+      "right": [
+        [
+          1,
+          3,
+          10512
+        ],
+        [
+          1,
+          2,
+          8736
+        ],
+        [
+          1,
+          1,
+          6976
+        ],
+        [
+          1,
+          2,
+          10880
+        ]
+      ],
+      "target": [
+        [
+          1,
+          9736,
+          8736
+        ],
+        [
+          1,
+          9736,
+          10880
+        ],
+        [
+          1,
+          11012,
+          10512
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "overflow_output": 0,
+      "workspace_clean": true,
+      "basis_pair_count_diagnostic": 3,
+      "schedule": {
+        "left_slots": 4,
+        "right_slots": 4,
+        "capacity": 16,
+        "output_slots": 16,
+        "input_sort_slots": 8,
+        "rank_sort_slots": 32,
+        "fetch_sort_slots": 128,
+        "record_field_bits": 14,
+        "sort_sizes": [
+          8,
+          32,
+          128,
+          128
+        ],
+        "comparators": 7696,
+        "scan_steps": 352,
+        "record_evaluations": 736,
+        "persistent_workspace_bits": 34844,
+        "time_and_coherent_storage_form": "O((left_slots+right_slots+capacity)*log^2(left_slots+right_slots+capacity)*poly(record_bits))",
+        "data_dependent_RAM_reads": false,
+        "whole_attempt_overflow_rejection": true,
+        "hardware_gate_export_implemented": false
+      },
+      "metrics": {
+        "record_evaluations": 736,
+        "comparators": 7696,
+        "scan_steps": 352
+      }
+    },
+    {
+      "assignment": 8,
+      "capacity": 2,
+      "left": [
+        [
+          1,
+          0,
+          3073
+        ],
+        [
+          1,
+          0,
+          6146
+        ],
+        [
+          1,
+          1,
+          10500
+        ],
+        [
+          1,
+          2,
+          11784
+        ]
+      ],
+      "right": [
+        [
+          1,
+          3,
+          10512
+        ],
+        [
+          1,
+          2,
+          8736
+        ],
+        [
+          1,
+          1,
+          6976
+        ],
+        [
+          1,
+          2,
+          10880
+        ]
+      ],
+      "target": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "overflow_output": 1,
+      "workspace_clean": true,
+      "basis_pair_count_diagnostic": 3,
+      "schedule": {
+        "left_slots": 4,
+        "right_slots": 4,
+        "capacity": 2,
+        "output_slots": 2,
+        "input_sort_slots": 8,
+        "rank_sort_slots": 16,
+        "fetch_sort_slots": 64,
+        "record_field_bits": 14,
+        "sort_sizes": [
+          8,
+          16,
+          64,
+          64
+        ],
+        "comparators": 2896,
+        "scan_steps": 192,
+        "record_evaluations": 384,
+        "persistent_workspace_bits": 18108,
+        "time_and_coherent_storage_form": "O((left_slots+right_slots+capacity)*log^2(left_slots+right_slots+capacity)*poly(record_bits))",
+        "data_dependent_RAM_reads": false,
+        "whole_attempt_overflow_rejection": true,
+        "hardware_gate_export_implemented": false
+      },
+      "metrics": {
+        "record_evaluations": 384,
+        "comparators": 2896,
+        "scan_steps": 192
+      }
+    },
+    {
+      "assignment": 8,
+      "capacity": 4,
+      "left": [
+        [
+          1,
+          0,
+          3073
+        ],
+        [
+          1,
+          0,
+          6146
+        ],
+        [
+          1,
+          1,
+          10500
+        ],
+        [
+          1,
+          2,
+          11784
+        ]
+      ],
+      "right": [
+        [
+          1,
+          3,
+          10512
+        ],
+        [
+          1,
+          2,
+          8736
+        ],
+        [
+          1,
+          1,
+          6976
+        ],
+        [
+          1,
+          2,
+          10880
+        ]
+      ],
+      "target": [
+        [
+          1,
+          10500,
+          6976
+        ],
+        [
+          1,
+          11784,
+          8736
+        ],
+        [
+          1,
+          11784,
+          10880
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "overflow_output": 0,
+      "workspace_clean": true,
+      "basis_pair_count_diagnostic": 3,
+      "schedule": {
+        "left_slots": 4,
+        "right_slots": 4,
+        "capacity": 4,
+        "output_slots": 4,
+        "input_sort_slots": 8,
+        "rank_sort_slots": 16,
+        "fetch_sort_slots": 64,
+        "record_field_bits": 14,
+        "sort_sizes": [
+          8,
+          16,
+          64,
+          64
+        ],
+        "comparators": 2896,
+        "scan_steps": 192,
+        "record_evaluations": 384,
+        "persistent_workspace_bits": 18108,
+        "time_and_coherent_storage_form": "O((left_slots+right_slots+capacity)*log^2(left_slots+right_slots+capacity)*poly(record_bits))",
+        "data_dependent_RAM_reads": false,
+        "whole_attempt_overflow_rejection": true,
+        "hardware_gate_export_implemented": false
+      },
+      "metrics": {
+        "record_evaluations": 384,
+        "comparators": 2896,
+        "scan_steps": 192
+      }
+    },
+    {
+      "assignment": 8,
+      "capacity": 16,
+      "left": [
+        [
+          1,
+          0,
+          3073
+        ],
+        [
+          1,
+          0,
+          6146
+        ],
+        [
+          1,
+          1,
+          10500
+        ],
+        [
+          1,
+          2,
+          11784
+        ]
+      ],
+      "right": [
+        [
+          1,
+          3,
+          10512
+        ],
+        [
+          1,
+          2,
+          8736
+        ],
+        [
+          1,
+          1,
+          6976
+        ],
+        [
+          1,
+          2,
+          10880
+        ]
+      ],
+      "target": [
+        [
+          1,
+          10500,
+          6976
+        ],
+        [
+          1,
+          11784,
+          8736
+        ],
+        [
+          1,
+          11784,
+          10880
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "overflow_output": 0,
+      "workspace_clean": true,
+      "basis_pair_count_diagnostic": 3,
+      "schedule": {
+        "left_slots": 4,
+        "right_slots": 4,
+        "capacity": 16,
+        "output_slots": 16,
+        "input_sort_slots": 8,
+        "rank_sort_slots": 32,
+        "fetch_sort_slots": 128,
+        "record_field_bits": 14,
+        "sort_sizes": [
+          8,
+          32,
+          128,
+          128
+        ],
+        "comparators": 7696,
+        "scan_steps": 352,
+        "record_evaluations": 736,
+        "persistent_workspace_bits": 34844,
+        "time_and_coherent_storage_form": "O((left_slots+right_slots+capacity)*log^2(left_slots+right_slots+capacity)*poly(record_bits))",
+        "data_dependent_RAM_reads": false,
+        "whole_attempt_overflow_rejection": true,
+        "hardware_gate_export_implemented": false
+      },
+      "metrics": {
+        "record_evaluations": 736,
+        "comparators": 7696,
+        "scan_steps": 352
+      }
+    },
+    {
+      "assignment": 9,
+      "capacity": 2,
+      "left": [
+        [
+          1,
+          0,
+          1025
+        ],
+        [
+          1,
+          0,
+          6146
+        ],
+        [
+          1,
+          1,
+          10500
+        ],
+        [
+          1,
+          2,
+          11784
+        ]
+      ],
+      "right": [
+        [
+          1,
+          3,
+          10512
+        ],
+        [
+          1,
+          2,
+          8736
+        ],
+        [
+          1,
+          1,
+          6976
+        ],
+        [
+          1,
+          2,
+          10880
+        ]
+      ],
+      "target": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "overflow_output": 1,
+      "workspace_clean": true,
+      "basis_pair_count_diagnostic": 3,
+      "schedule": {
+        "left_slots": 4,
+        "right_slots": 4,
+        "capacity": 2,
+        "output_slots": 2,
+        "input_sort_slots": 8,
+        "rank_sort_slots": 16,
+        "fetch_sort_slots": 64,
+        "record_field_bits": 14,
+        "sort_sizes": [
+          8,
+          16,
+          64,
+          64
+        ],
+        "comparators": 2896,
+        "scan_steps": 192,
+        "record_evaluations": 384,
+        "persistent_workspace_bits": 18108,
+        "time_and_coherent_storage_form": "O((left_slots+right_slots+capacity)*log^2(left_slots+right_slots+capacity)*poly(record_bits))",
+        "data_dependent_RAM_reads": false,
+        "whole_attempt_overflow_rejection": true,
+        "hardware_gate_export_implemented": false
+      },
+      "metrics": {
+        "record_evaluations": 384,
+        "comparators": 2896,
+        "scan_steps": 192
+      }
+    },
+    {
+      "assignment": 9,
+      "capacity": 4,
+      "left": [
+        [
+          1,
+          0,
+          1025
+        ],
+        [
+          1,
+          0,
+          6146
+        ],
+        [
+          1,
+          1,
+          10500
+        ],
+        [
+          1,
+          2,
+          11784
+        ]
+      ],
+      "right": [
+        [
+          1,
+          3,
+          10512
+        ],
+        [
+          1,
+          2,
+          8736
+        ],
+        [
+          1,
+          1,
+          6976
+        ],
+        [
+          1,
+          2,
+          10880
+        ]
+      ],
+      "target": [
+        [
+          1,
+          10500,
+          6976
+        ],
+        [
+          1,
+          11784,
+          8736
+        ],
+        [
+          1,
+          11784,
+          10880
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "overflow_output": 0,
+      "workspace_clean": true,
+      "basis_pair_count_diagnostic": 3,
+      "schedule": {
+        "left_slots": 4,
+        "right_slots": 4,
+        "capacity": 4,
+        "output_slots": 4,
+        "input_sort_slots": 8,
+        "rank_sort_slots": 16,
+        "fetch_sort_slots": 64,
+        "record_field_bits": 14,
+        "sort_sizes": [
+          8,
+          16,
+          64,
+          64
+        ],
+        "comparators": 2896,
+        "scan_steps": 192,
+        "record_evaluations": 384,
+        "persistent_workspace_bits": 18108,
+        "time_and_coherent_storage_form": "O((left_slots+right_slots+capacity)*log^2(left_slots+right_slots+capacity)*poly(record_bits))",
+        "data_dependent_RAM_reads": false,
+        "whole_attempt_overflow_rejection": true,
+        "hardware_gate_export_implemented": false
+      },
+      "metrics": {
+        "record_evaluations": 384,
+        "comparators": 2896,
+        "scan_steps": 192
+      }
+    },
+    {
+      "assignment": 9,
+      "capacity": 16,
+      "left": [
+        [
+          1,
+          0,
+          1025
+        ],
+        [
+          1,
+          0,
+          6146
+        ],
+        [
+          1,
+          1,
+          10500
+        ],
+        [
+          1,
+          2,
+          11784
+        ]
+      ],
+      "right": [
+        [
+          1,
+          3,
+          10512
+        ],
+        [
+          1,
+          2,
+          8736
+        ],
+        [
+          1,
+          1,
+          6976
+        ],
+        [
+          1,
+          2,
+          10880
+        ]
+      ],
+      "target": [
+        [
+          1,
+          10500,
+          6976
+        ],
+        [
+          1,
+          11784,
+          8736
+        ],
+        [
+          1,
+          11784,
+          10880
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "overflow_output": 0,
+      "workspace_clean": true,
+      "basis_pair_count_diagnostic": 3,
+      "schedule": {
+        "left_slots": 4,
+        "right_slots": 4,
+        "capacity": 16,
+        "output_slots": 16,
+        "input_sort_slots": 8,
+        "rank_sort_slots": 32,
+        "fetch_sort_slots": 128,
+        "record_field_bits": 14,
+        "sort_sizes": [
+          8,
+          32,
+          128,
+          128
+        ],
+        "comparators": 7696,
+        "scan_steps": 352,
+        "record_evaluations": 736,
+        "persistent_workspace_bits": 34844,
+        "time_and_coherent_storage_form": "O((left_slots+right_slots+capacity)*log^2(left_slots+right_slots+capacity)*poly(record_bits))",
+        "data_dependent_RAM_reads": false,
+        "whole_attempt_overflow_rejection": true,
+        "hardware_gate_export_implemented": false
+      },
+      "metrics": {
+        "record_evaluations": 736,
+        "comparators": 7696,
+        "scan_steps": 352
+      }
+    },
+    {
+      "assignment": 10,
+      "capacity": 2,
+      "left": [
+        [
+          1,
+          0,
+          3073
+        ],
+        [
+          1,
+          0,
+          14338
+        ],
+        [
+          1,
+          1,
+          10500
+        ],
+        [
+          1,
+          2,
+          11784
+        ]
+      ],
+      "right": [
+        [
+          1,
+          3,
+          10512
+        ],
+        [
+          1,
+          2,
+          8736
+        ],
+        [
+          1,
+          1,
+          6976
+        ],
+        [
+          1,
+          2,
+          10880
+        ]
+      ],
+      "target": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "overflow_output": 1,
+      "workspace_clean": true,
+      "basis_pair_count_diagnostic": 3,
+      "schedule": {
+        "left_slots": 4,
+        "right_slots": 4,
+        "capacity": 2,
+        "output_slots": 2,
+        "input_sort_slots": 8,
+        "rank_sort_slots": 16,
+        "fetch_sort_slots": 64,
+        "record_field_bits": 14,
+        "sort_sizes": [
+          8,
+          16,
+          64,
+          64
+        ],
+        "comparators": 2896,
+        "scan_steps": 192,
+        "record_evaluations": 384,
+        "persistent_workspace_bits": 18108,
+        "time_and_coherent_storage_form": "O((left_slots+right_slots+capacity)*log^2(left_slots+right_slots+capacity)*poly(record_bits))",
+        "data_dependent_RAM_reads": false,
+        "whole_attempt_overflow_rejection": true,
+        "hardware_gate_export_implemented": false
+      },
+      "metrics": {
+        "record_evaluations": 384,
+        "comparators": 2896,
+        "scan_steps": 192
+      }
+    },
+    {
+      "assignment": 10,
+      "capacity": 4,
+      "left": [
+        [
+          1,
+          0,
+          3073
+        ],
+        [
+          1,
+          0,
+          14338
+        ],
+        [
+          1,
+          1,
+          10500
+        ],
+        [
+          1,
+          2,
+          11784
+        ]
+      ],
+      "right": [
+        [
+          1,
+          3,
+          10512
+        ],
+        [
+          1,
+          2,
+          8736
+        ],
+        [
+          1,
+          1,
+          6976
+        ],
+        [
+          1,
+          2,
+          10880
+        ]
+      ],
+      "target": [
+        [
+          1,
+          10500,
+          6976
+        ],
+        [
+          1,
+          11784,
+          8736
+        ],
+        [
+          1,
+          11784,
+          10880
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "overflow_output": 0,
+      "workspace_clean": true,
+      "basis_pair_count_diagnostic": 3,
+      "schedule": {
+        "left_slots": 4,
+        "right_slots": 4,
+        "capacity": 4,
+        "output_slots": 4,
+        "input_sort_slots": 8,
+        "rank_sort_slots": 16,
+        "fetch_sort_slots": 64,
+        "record_field_bits": 14,
+        "sort_sizes": [
+          8,
+          16,
+          64,
+          64
+        ],
+        "comparators": 2896,
+        "scan_steps": 192,
+        "record_evaluations": 384,
+        "persistent_workspace_bits": 18108,
+        "time_and_coherent_storage_form": "O((left_slots+right_slots+capacity)*log^2(left_slots+right_slots+capacity)*poly(record_bits))",
+        "data_dependent_RAM_reads": false,
+        "whole_attempt_overflow_rejection": true,
+        "hardware_gate_export_implemented": false
+      },
+      "metrics": {
+        "record_evaluations": 384,
+        "comparators": 2896,
+        "scan_steps": 192
+      }
+    },
+    {
+      "assignment": 10,
+      "capacity": 16,
+      "left": [
+        [
+          1,
+          0,
+          3073
+        ],
+        [
+          1,
+          0,
+          14338
+        ],
+        [
+          1,
+          1,
+          10500
+        ],
+        [
+          1,
+          2,
+          11784
+        ]
+      ],
+      "right": [
+        [
+          1,
+          3,
+          10512
+        ],
+        [
+          1,
+          2,
+          8736
+        ],
+        [
+          1,
+          1,
+          6976
+        ],
+        [
+          1,
+          2,
+          10880
+        ]
+      ],
+      "target": [
+        [
+          1,
+          10500,
+          6976
+        ],
+        [
+          1,
+          11784,
+          8736
+        ],
+        [
+          1,
+          11784,
+          10880
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "overflow_output": 0,
+      "workspace_clean": true,
+      "basis_pair_count_diagnostic": 3,
+      "schedule": {
+        "left_slots": 4,
+        "right_slots": 4,
+        "capacity": 16,
+        "output_slots": 16,
+        "input_sort_slots": 8,
+        "rank_sort_slots": 32,
+        "fetch_sort_slots": 128,
+        "record_field_bits": 14,
+        "sort_sizes": [
+          8,
+          32,
+          128,
+          128
+        ],
+        "comparators": 7696,
+        "scan_steps": 352,
+        "record_evaluations": 736,
+        "persistent_workspace_bits": 34844,
+        "time_and_coherent_storage_form": "O((left_slots+right_slots+capacity)*log^2(left_slots+right_slots+capacity)*poly(record_bits))",
+        "data_dependent_RAM_reads": false,
+        "whole_attempt_overflow_rejection": true,
+        "hardware_gate_export_implemented": false
+      },
+      "metrics": {
+        "record_evaluations": 736,
+        "comparators": 7696,
+        "scan_steps": 352
+      }
+    },
+    {
+      "assignment": 11,
+      "capacity": 2,
+      "left": [
+        [
+          1,
+          0,
+          1025
+        ],
+        [
+          1,
+          0,
+          14338
+        ],
+        [
+          1,
+          1,
+          10500
+        ],
+        [
+          1,
+          2,
+          11784
+        ]
+      ],
+      "right": [
+        [
+          1,
+          3,
+          10512
+        ],
+        [
+          1,
+          2,
+          8736
+        ],
+        [
+          1,
+          1,
+          6976
+        ],
+        [
+          1,
+          2,
+          10880
+        ]
+      ],
+      "target": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "overflow_output": 1,
+      "workspace_clean": true,
+      "basis_pair_count_diagnostic": 3,
+      "schedule": {
+        "left_slots": 4,
+        "right_slots": 4,
+        "capacity": 2,
+        "output_slots": 2,
+        "input_sort_slots": 8,
+        "rank_sort_slots": 16,
+        "fetch_sort_slots": 64,
+        "record_field_bits": 14,
+        "sort_sizes": [
+          8,
+          16,
+          64,
+          64
+        ],
+        "comparators": 2896,
+        "scan_steps": 192,
+        "record_evaluations": 384,
+        "persistent_workspace_bits": 18108,
+        "time_and_coherent_storage_form": "O((left_slots+right_slots+capacity)*log^2(left_slots+right_slots+capacity)*poly(record_bits))",
+        "data_dependent_RAM_reads": false,
+        "whole_attempt_overflow_rejection": true,
+        "hardware_gate_export_implemented": false
+      },
+      "metrics": {
+        "record_evaluations": 384,
+        "comparators": 2896,
+        "scan_steps": 192
+      }
+    },
+    {
+      "assignment": 11,
+      "capacity": 4,
+      "left": [
+        [
+          1,
+          0,
+          1025
+        ],
+        [
+          1,
+          0,
+          14338
+        ],
+        [
+          1,
+          1,
+          10500
+        ],
+        [
+          1,
+          2,
+          11784
+        ]
+      ],
+      "right": [
+        [
+          1,
+          3,
+          10512
+        ],
+        [
+          1,
+          2,
+          8736
+        ],
+        [
+          1,
+          1,
+          6976
+        ],
+        [
+          1,
+          2,
+          10880
+        ]
+      ],
+      "target": [
+        [
+          1,
+          10500,
+          6976
+        ],
+        [
+          1,
+          11784,
+          8736
+        ],
+        [
+          1,
+          11784,
+          10880
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "overflow_output": 0,
+      "workspace_clean": true,
+      "basis_pair_count_diagnostic": 3,
+      "schedule": {
+        "left_slots": 4,
+        "right_slots": 4,
+        "capacity": 4,
+        "output_slots": 4,
+        "input_sort_slots": 8,
+        "rank_sort_slots": 16,
+        "fetch_sort_slots": 64,
+        "record_field_bits": 14,
+        "sort_sizes": [
+          8,
+          16,
+          64,
+          64
+        ],
+        "comparators": 2896,
+        "scan_steps": 192,
+        "record_evaluations": 384,
+        "persistent_workspace_bits": 18108,
+        "time_and_coherent_storage_form": "O((left_slots+right_slots+capacity)*log^2(left_slots+right_slots+capacity)*poly(record_bits))",
+        "data_dependent_RAM_reads": false,
+        "whole_attempt_overflow_rejection": true,
+        "hardware_gate_export_implemented": false
+      },
+      "metrics": {
+        "record_evaluations": 384,
+        "comparators": 2896,
+        "scan_steps": 192
+      }
+    },
+    {
+      "assignment": 11,
+      "capacity": 16,
+      "left": [
+        [
+          1,
+          0,
+          1025
+        ],
+        [
+          1,
+          0,
+          14338
+        ],
+        [
+          1,
+          1,
+          10500
+        ],
+        [
+          1,
+          2,
+          11784
+        ]
+      ],
+      "right": [
+        [
+          1,
+          3,
+          10512
+        ],
+        [
+          1,
+          2,
+          8736
+        ],
+        [
+          1,
+          1,
+          6976
+        ],
+        [
+          1,
+          2,
+          10880
+        ]
+      ],
+      "target": [
+        [
+          1,
+          10500,
+          6976
+        ],
+        [
+          1,
+          11784,
+          8736
+        ],
+        [
+          1,
+          11784,
+          10880
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "overflow_output": 0,
+      "workspace_clean": true,
+      "basis_pair_count_diagnostic": 3,
+      "schedule": {
+        "left_slots": 4,
+        "right_slots": 4,
+        "capacity": 16,
+        "output_slots": 16,
+        "input_sort_slots": 8,
+        "rank_sort_slots": 32,
+        "fetch_sort_slots": 128,
+        "record_field_bits": 14,
+        "sort_sizes": [
+          8,
+          32,
+          128,
+          128
+        ],
+        "comparators": 7696,
+        "scan_steps": 352,
+        "record_evaluations": 736,
+        "persistent_workspace_bits": 34844,
+        "time_and_coherent_storage_form": "O((left_slots+right_slots+capacity)*log^2(left_slots+right_slots+capacity)*poly(record_bits))",
+        "data_dependent_RAM_reads": false,
+        "whole_attempt_overflow_rejection": true,
+        "hardware_gate_export_implemented": false
+      },
+      "metrics": {
+        "record_evaluations": 736,
+        "comparators": 7696,
+        "scan_steps": 352
+      }
+    },
+    {
+      "assignment": 12,
+      "capacity": 2,
+      "left": [
+        [
+          1,
+          0,
+          3073
+        ],
+        [
+          1,
+          0,
+          6146
+        ],
+        [
+          1,
+          3,
+          11012
+        ],
+        [
+          1,
+          2,
+          11784
+        ]
+      ],
+      "right": [
+        [
+          1,
+          3,
+          10512
+        ],
+        [
+          1,
+          2,
+          8736
+        ],
+        [
+          1,
+          1,
+          6976
+        ],
+        [
+          1,
+          2,
+          10880
+        ]
+      ],
+      "target": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "overflow_output": 1,
+      "workspace_clean": true,
+      "basis_pair_count_diagnostic": 3,
+      "schedule": {
+        "left_slots": 4,
+        "right_slots": 4,
+        "capacity": 2,
+        "output_slots": 2,
+        "input_sort_slots": 8,
+        "rank_sort_slots": 16,
+        "fetch_sort_slots": 64,
+        "record_field_bits": 14,
+        "sort_sizes": [
+          8,
+          16,
+          64,
+          64
+        ],
+        "comparators": 2896,
+        "scan_steps": 192,
+        "record_evaluations": 384,
+        "persistent_workspace_bits": 18108,
+        "time_and_coherent_storage_form": "O((left_slots+right_slots+capacity)*log^2(left_slots+right_slots+capacity)*poly(record_bits))",
+        "data_dependent_RAM_reads": false,
+        "whole_attempt_overflow_rejection": true,
+        "hardware_gate_export_implemented": false
+      },
+      "metrics": {
+        "record_evaluations": 384,
+        "comparators": 2896,
+        "scan_steps": 192
+      }
+    },
+    {
+      "assignment": 12,
+      "capacity": 4,
+      "left": [
+        [
+          1,
+          0,
+          3073
+        ],
+        [
+          1,
+          0,
+          6146
+        ],
+        [
+          1,
+          3,
+          11012
+        ],
+        [
+          1,
+          2,
+          11784
+        ]
+      ],
+      "right": [
+        [
+          1,
+          3,
+          10512
+        ],
+        [
+          1,
+          2,
+          8736
+        ],
+        [
+          1,
+          1,
+          6976
+        ],
+        [
+          1,
+          2,
+          10880
+        ]
+      ],
+      "target": [
+        [
+          1,
+          11784,
+          8736
+        ],
+        [
+          1,
+          11784,
+          10880
+        ],
+        [
+          1,
+          11012,
+          10512
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "overflow_output": 0,
+      "workspace_clean": true,
+      "basis_pair_count_diagnostic": 3,
+      "schedule": {
+        "left_slots": 4,
+        "right_slots": 4,
+        "capacity": 4,
+        "output_slots": 4,
+        "input_sort_slots": 8,
+        "rank_sort_slots": 16,
+        "fetch_sort_slots": 64,
+        "record_field_bits": 14,
+        "sort_sizes": [
+          8,
+          16,
+          64,
+          64
+        ],
+        "comparators": 2896,
+        "scan_steps": 192,
+        "record_evaluations": 384,
+        "persistent_workspace_bits": 18108,
+        "time_and_coherent_storage_form": "O((left_slots+right_slots+capacity)*log^2(left_slots+right_slots+capacity)*poly(record_bits))",
+        "data_dependent_RAM_reads": false,
+        "whole_attempt_overflow_rejection": true,
+        "hardware_gate_export_implemented": false
+      },
+      "metrics": {
+        "record_evaluations": 384,
+        "comparators": 2896,
+        "scan_steps": 192
+      }
+    },
+    {
+      "assignment": 12,
+      "capacity": 16,
+      "left": [
+        [
+          1,
+          0,
+          3073
+        ],
+        [
+          1,
+          0,
+          6146
+        ],
+        [
+          1,
+          3,
+          11012
+        ],
+        [
+          1,
+          2,
+          11784
+        ]
+      ],
+      "right": [
+        [
+          1,
+          3,
+          10512
+        ],
+        [
+          1,
+          2,
+          8736
+        ],
+        [
+          1,
+          1,
+          6976
+        ],
+        [
+          1,
+          2,
+          10880
+        ]
+      ],
+      "target": [
+        [
+          1,
+          11784,
+          8736
+        ],
+        [
+          1,
+          11784,
+          10880
+        ],
+        [
+          1,
+          11012,
+          10512
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "overflow_output": 0,
+      "workspace_clean": true,
+      "basis_pair_count_diagnostic": 3,
+      "schedule": {
+        "left_slots": 4,
+        "right_slots": 4,
+        "capacity": 16,
+        "output_slots": 16,
+        "input_sort_slots": 8,
+        "rank_sort_slots": 32,
+        "fetch_sort_slots": 128,
+        "record_field_bits": 14,
+        "sort_sizes": [
+          8,
+          32,
+          128,
+          128
+        ],
+        "comparators": 7696,
+        "scan_steps": 352,
+        "record_evaluations": 736,
+        "persistent_workspace_bits": 34844,
+        "time_and_coherent_storage_form": "O((left_slots+right_slots+capacity)*log^2(left_slots+right_slots+capacity)*poly(record_bits))",
+        "data_dependent_RAM_reads": false,
+        "whole_attempt_overflow_rejection": true,
+        "hardware_gate_export_implemented": false
+      },
+      "metrics": {
+        "record_evaluations": 736,
+        "comparators": 7696,
+        "scan_steps": 352
+      }
+    },
+    {
+      "assignment": 13,
+      "capacity": 2,
+      "left": [
+        [
+          1,
+          0,
+          1025
+        ],
+        [
+          1,
+          0,
+          6146
+        ],
+        [
+          1,
+          3,
+          11012
+        ],
+        [
+          1,
+          2,
+          11784
+        ]
+      ],
+      "right": [
+        [
+          1,
+          3,
+          10512
+        ],
+        [
+          1,
+          2,
+          8736
+        ],
+        [
+          1,
+          1,
+          6976
+        ],
+        [
+          1,
+          2,
+          10880
+        ]
+      ],
+      "target": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "overflow_output": 1,
+      "workspace_clean": true,
+      "basis_pair_count_diagnostic": 3,
+      "schedule": {
+        "left_slots": 4,
+        "right_slots": 4,
+        "capacity": 2,
+        "output_slots": 2,
+        "input_sort_slots": 8,
+        "rank_sort_slots": 16,
+        "fetch_sort_slots": 64,
+        "record_field_bits": 14,
+        "sort_sizes": [
+          8,
+          16,
+          64,
+          64
+        ],
+        "comparators": 2896,
+        "scan_steps": 192,
+        "record_evaluations": 384,
+        "persistent_workspace_bits": 18108,
+        "time_and_coherent_storage_form": "O((left_slots+right_slots+capacity)*log^2(left_slots+right_slots+capacity)*poly(record_bits))",
+        "data_dependent_RAM_reads": false,
+        "whole_attempt_overflow_rejection": true,
+        "hardware_gate_export_implemented": false
+      },
+      "metrics": {
+        "record_evaluations": 384,
+        "comparators": 2896,
+        "scan_steps": 192
+      }
+    },
+    {
+      "assignment": 13,
+      "capacity": 4,
+      "left": [
+        [
+          1,
+          0,
+          1025
+        ],
+        [
+          1,
+          0,
+          6146
+        ],
+        [
+          1,
+          3,
+          11012
+        ],
+        [
+          1,
+          2,
+          11784
+        ]
+      ],
+      "right": [
+        [
+          1,
+          3,
+          10512
+        ],
+        [
+          1,
+          2,
+          8736
+        ],
+        [
+          1,
+          1,
+          6976
+        ],
+        [
+          1,
+          2,
+          10880
+        ]
+      ],
+      "target": [
+        [
+          1,
+          11784,
+          8736
+        ],
+        [
+          1,
+          11784,
+          10880
+        ],
+        [
+          1,
+          11012,
+          10512
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "overflow_output": 0,
+      "workspace_clean": true,
+      "basis_pair_count_diagnostic": 3,
+      "schedule": {
+        "left_slots": 4,
+        "right_slots": 4,
+        "capacity": 4,
+        "output_slots": 4,
+        "input_sort_slots": 8,
+        "rank_sort_slots": 16,
+        "fetch_sort_slots": 64,
+        "record_field_bits": 14,
+        "sort_sizes": [
+          8,
+          16,
+          64,
+          64
+        ],
+        "comparators": 2896,
+        "scan_steps": 192,
+        "record_evaluations": 384,
+        "persistent_workspace_bits": 18108,
+        "time_and_coherent_storage_form": "O((left_slots+right_slots+capacity)*log^2(left_slots+right_slots+capacity)*poly(record_bits))",
+        "data_dependent_RAM_reads": false,
+        "whole_attempt_overflow_rejection": true,
+        "hardware_gate_export_implemented": false
+      },
+      "metrics": {
+        "record_evaluations": 384,
+        "comparators": 2896,
+        "scan_steps": 192
+      }
+    },
+    {
+      "assignment": 13,
+      "capacity": 16,
+      "left": [
+        [
+          1,
+          0,
+          1025
+        ],
+        [
+          1,
+          0,
+          6146
+        ],
+        [
+          1,
+          3,
+          11012
+        ],
+        [
+          1,
+          2,
+          11784
+        ]
+      ],
+      "right": [
+        [
+          1,
+          3,
+          10512
+        ],
+        [
+          1,
+          2,
+          8736
+        ],
+        [
+          1,
+          1,
+          6976
+        ],
+        [
+          1,
+          2,
+          10880
+        ]
+      ],
+      "target": [
+        [
+          1,
+          11784,
+          8736
+        ],
+        [
+          1,
+          11784,
+          10880
+        ],
+        [
+          1,
+          11012,
+          10512
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "overflow_output": 0,
+      "workspace_clean": true,
+      "basis_pair_count_diagnostic": 3,
+      "schedule": {
+        "left_slots": 4,
+        "right_slots": 4,
+        "capacity": 16,
+        "output_slots": 16,
+        "input_sort_slots": 8,
+        "rank_sort_slots": 32,
+        "fetch_sort_slots": 128,
+        "record_field_bits": 14,
+        "sort_sizes": [
+          8,
+          32,
+          128,
+          128
+        ],
+        "comparators": 7696,
+        "scan_steps": 352,
+        "record_evaluations": 736,
+        "persistent_workspace_bits": 34844,
+        "time_and_coherent_storage_form": "O((left_slots+right_slots+capacity)*log^2(left_slots+right_slots+capacity)*poly(record_bits))",
+        "data_dependent_RAM_reads": false,
+        "whole_attempt_overflow_rejection": true,
+        "hardware_gate_export_implemented": false
+      },
+      "metrics": {
+        "record_evaluations": 736,
+        "comparators": 7696,
+        "scan_steps": 352
+      }
+    },
+    {
+      "assignment": 14,
+      "capacity": 2,
+      "left": [
+        [
+          1,
+          0,
+          3073
+        ],
+        [
+          1,
+          0,
+          14338
+        ],
+        [
+          1,
+          3,
+          11012
+        ],
+        [
+          1,
+          2,
+          11784
+        ]
+      ],
+      "right": [
+        [
+          1,
+          3,
+          10512
+        ],
+        [
+          1,
+          2,
+          8736
+        ],
+        [
+          1,
+          1,
+          6976
+        ],
+        [
+          1,
+          2,
+          10880
+        ]
+      ],
+      "target": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "overflow_output": 1,
+      "workspace_clean": true,
+      "basis_pair_count_diagnostic": 3,
+      "schedule": {
+        "left_slots": 4,
+        "right_slots": 4,
+        "capacity": 2,
+        "output_slots": 2,
+        "input_sort_slots": 8,
+        "rank_sort_slots": 16,
+        "fetch_sort_slots": 64,
+        "record_field_bits": 14,
+        "sort_sizes": [
+          8,
+          16,
+          64,
+          64
+        ],
+        "comparators": 2896,
+        "scan_steps": 192,
+        "record_evaluations": 384,
+        "persistent_workspace_bits": 18108,
+        "time_and_coherent_storage_form": "O((left_slots+right_slots+capacity)*log^2(left_slots+right_slots+capacity)*poly(record_bits))",
+        "data_dependent_RAM_reads": false,
+        "whole_attempt_overflow_rejection": true,
+        "hardware_gate_export_implemented": false
+      },
+      "metrics": {
+        "record_evaluations": 384,
+        "comparators": 2896,
+        "scan_steps": 192
+      }
+    },
+    {
+      "assignment": 14,
+      "capacity": 4,
+      "left": [
+        [
+          1,
+          0,
+          3073
+        ],
+        [
+          1,
+          0,
+          14338
+        ],
+        [
+          1,
+          3,
+          11012
+        ],
+        [
+          1,
+          2,
+          11784
+        ]
+      ],
+      "right": [
+        [
+          1,
+          3,
+          10512
+        ],
+        [
+          1,
+          2,
+          8736
+        ],
+        [
+          1,
+          1,
+          6976
+        ],
+        [
+          1,
+          2,
+          10880
+        ]
+      ],
+      "target": [
+        [
+          1,
+          11784,
+          8736
+        ],
+        [
+          1,
+          11784,
+          10880
+        ],
+        [
+          1,
+          11012,
+          10512
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "overflow_output": 0,
+      "workspace_clean": true,
+      "basis_pair_count_diagnostic": 3,
+      "schedule": {
+        "left_slots": 4,
+        "right_slots": 4,
+        "capacity": 4,
+        "output_slots": 4,
+        "input_sort_slots": 8,
+        "rank_sort_slots": 16,
+        "fetch_sort_slots": 64,
+        "record_field_bits": 14,
+        "sort_sizes": [
+          8,
+          16,
+          64,
+          64
+        ],
+        "comparators": 2896,
+        "scan_steps": 192,
+        "record_evaluations": 384,
+        "persistent_workspace_bits": 18108,
+        "time_and_coherent_storage_form": "O((left_slots+right_slots+capacity)*log^2(left_slots+right_slots+capacity)*poly(record_bits))",
+        "data_dependent_RAM_reads": false,
+        "whole_attempt_overflow_rejection": true,
+        "hardware_gate_export_implemented": false
+      },
+      "metrics": {
+        "record_evaluations": 384,
+        "comparators": 2896,
+        "scan_steps": 192
+      }
+    },
+    {
+      "assignment": 14,
+      "capacity": 16,
+      "left": [
+        [
+          1,
+          0,
+          3073
+        ],
+        [
+          1,
+          0,
+          14338
+        ],
+        [
+          1,
+          3,
+          11012
+        ],
+        [
+          1,
+          2,
+          11784
+        ]
+      ],
+      "right": [
+        [
+          1,
+          3,
+          10512
+        ],
+        [
+          1,
+          2,
+          8736
+        ],
+        [
+          1,
+          1,
+          6976
+        ],
+        [
+          1,
+          2,
+          10880
+        ]
+      ],
+      "target": [
+        [
+          1,
+          11784,
+          8736
+        ],
+        [
+          1,
+          11784,
+          10880
+        ],
+        [
+          1,
+          11012,
+          10512
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "overflow_output": 0,
+      "workspace_clean": true,
+      "basis_pair_count_diagnostic": 3,
+      "schedule": {
+        "left_slots": 4,
+        "right_slots": 4,
+        "capacity": 16,
+        "output_slots": 16,
+        "input_sort_slots": 8,
+        "rank_sort_slots": 32,
+        "fetch_sort_slots": 128,
+        "record_field_bits": 14,
+        "sort_sizes": [
+          8,
+          32,
+          128,
+          128
+        ],
+        "comparators": 7696,
+        "scan_steps": 352,
+        "record_evaluations": 736,
+        "persistent_workspace_bits": 34844,
+        "time_and_coherent_storage_form": "O((left_slots+right_slots+capacity)*log^2(left_slots+right_slots+capacity)*poly(record_bits))",
+        "data_dependent_RAM_reads": false,
+        "whole_attempt_overflow_rejection": true,
+        "hardware_gate_export_implemented": false
+      },
+      "metrics": {
+        "record_evaluations": 736,
+        "comparators": 7696,
+        "scan_steps": 352
+      }
+    },
+    {
+      "assignment": 15,
+      "capacity": 2,
+      "left": [
+        [
+          1,
+          0,
+          1025
+        ],
+        [
+          1,
+          0,
+          14338
+        ],
+        [
+          1,
+          3,
+          11012
+        ],
+        [
+          1,
+          2,
+          11784
+        ]
+      ],
+      "right": [
+        [
+          1,
+          3,
+          10512
+        ],
+        [
+          1,
+          2,
+          8736
+        ],
+        [
+          1,
+          1,
+          6976
+        ],
+        [
+          1,
+          2,
+          10880
+        ]
+      ],
+      "target": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "overflow_output": 1,
+      "workspace_clean": true,
+      "basis_pair_count_diagnostic": 3,
+      "schedule": {
+        "left_slots": 4,
+        "right_slots": 4,
+        "capacity": 2,
+        "output_slots": 2,
+        "input_sort_slots": 8,
+        "rank_sort_slots": 16,
+        "fetch_sort_slots": 64,
+        "record_field_bits": 14,
+        "sort_sizes": [
+          8,
+          16,
+          64,
+          64
+        ],
+        "comparators": 2896,
+        "scan_steps": 192,
+        "record_evaluations": 384,
+        "persistent_workspace_bits": 18108,
+        "time_and_coherent_storage_form": "O((left_slots+right_slots+capacity)*log^2(left_slots+right_slots+capacity)*poly(record_bits))",
+        "data_dependent_RAM_reads": false,
+        "whole_attempt_overflow_rejection": true,
+        "hardware_gate_export_implemented": false
+      },
+      "metrics": {
+        "record_evaluations": 384,
+        "comparators": 2896,
+        "scan_steps": 192
+      }
+    },
+    {
+      "assignment": 15,
+      "capacity": 4,
+      "left": [
+        [
+          1,
+          0,
+          1025
+        ],
+        [
+          1,
+          0,
+          14338
+        ],
+        [
+          1,
+          3,
+          11012
+        ],
+        [
+          1,
+          2,
+          11784
+        ]
+      ],
+      "right": [
+        [
+          1,
+          3,
+          10512
+        ],
+        [
+          1,
+          2,
+          8736
+        ],
+        [
+          1,
+          1,
+          6976
+        ],
+        [
+          1,
+          2,
+          10880
+        ]
+      ],
+      "target": [
+        [
+          1,
+          11784,
+          8736
+        ],
+        [
+          1,
+          11784,
+          10880
+        ],
+        [
+          1,
+          11012,
+          10512
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "overflow_output": 0,
+      "workspace_clean": true,
+      "basis_pair_count_diagnostic": 3,
+      "schedule": {
+        "left_slots": 4,
+        "right_slots": 4,
+        "capacity": 4,
+        "output_slots": 4,
+        "input_sort_slots": 8,
+        "rank_sort_slots": 16,
+        "fetch_sort_slots": 64,
+        "record_field_bits": 14,
+        "sort_sizes": [
+          8,
+          16,
+          64,
+          64
+        ],
+        "comparators": 2896,
+        "scan_steps": 192,
+        "record_evaluations": 384,
+        "persistent_workspace_bits": 18108,
+        "time_and_coherent_storage_form": "O((left_slots+right_slots+capacity)*log^2(left_slots+right_slots+capacity)*poly(record_bits))",
+        "data_dependent_RAM_reads": false,
+        "whole_attempt_overflow_rejection": true,
+        "hardware_gate_export_implemented": false
+      },
+      "metrics": {
+        "record_evaluations": 384,
+        "comparators": 2896,
+        "scan_steps": 192
+      }
+    },
+    {
+      "assignment": 15,
+      "capacity": 16,
+      "left": [
+        [
+          1,
+          0,
+          1025
+        ],
+        [
+          1,
+          0,
+          14338
+        ],
+        [
+          1,
+          3,
+          11012
+        ],
+        [
+          1,
+          2,
+          11784
+        ]
+      ],
+      "right": [
+        [
+          1,
+          3,
+          10512
+        ],
+        [
+          1,
+          2,
+          8736
+        ],
+        [
+          1,
+          1,
+          6976
+        ],
+        [
+          1,
+          2,
+          10880
+        ]
+      ],
+      "target": [
+        [
+          1,
+          11784,
+          8736
+        ],
+        [
+          1,
+          11784,
+          10880
+        ],
+        [
+          1,
+          11012,
+          10512
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "overflow_output": 0,
+      "workspace_clean": true,
+      "basis_pair_count_diagnostic": 3,
+      "schedule": {
+        "left_slots": 4,
+        "right_slots": 4,
+        "capacity": 16,
+        "output_slots": 16,
+        "input_sort_slots": 8,
+        "rank_sort_slots": 32,
+        "fetch_sort_slots": 128,
+        "record_field_bits": 14,
+        "sort_sizes": [
+          8,
+          32,
+          128,
+          128
+        ],
+        "comparators": 7696,
+        "scan_steps": 352,
+        "record_evaluations": 736,
+        "persistent_workspace_bits": 34844,
+        "time_and_coherent_storage_form": "O((left_slots+right_slots+capacity)*log^2(left_slots+right_slots+capacity)*poly(record_bits))",
+        "data_dependent_RAM_reads": false,
+        "whole_attempt_overflow_rejection": true,
+        "hardware_gate_export_implemented": false
+      },
+      "metrics": {
+        "record_evaluations": 736,
+        "comparators": 7696,
+        "scan_steps": 352
+      }
+    }
+  ],
+  "symbolic_node_cost_frontiers": [
+    {
+      "leaf_list_binary_exponent": 4,
+      "resource_ledger": {
+        "left_slots": 16,
+        "right_slots": 16,
+        "capacity": 512,
+        "output_slots": 256,
+        "input_sort_slots": 32,
+        "rank_sort_slots": 512,
+        "fetch_sort_slots": 2048,
+        "record_field_bits": 16,
+        "sort_sizes": [
+          32,
+          512,
+          2048,
+          2048
+        ],
+        "comparators": 293856,
+        "scan_steps": 5248,
+        "record_evaluations": 11392,
+        "persistent_workspace_bits": 681168,
+        "time_and_coherent_storage_form": "O((left_slots+right_slots+capacity)*log^2(left_slots+right_slots+capacity)*poly(record_bits))",
+        "data_dependent_RAM_reads": false,
+        "whole_attempt_overflow_rejection": true,
+        "hardware_gate_export_implemented": false
+      },
+      "cartesian_candidate_cells": 256,
+      "fixed_sort_slots_total": 4640,
+      "native_probability_or_speedup_estimate": false
+    },
+    {
+      "leaf_list_binary_exponent": 8,
+      "resource_ledger": {
+        "left_slots": 256,
+        "right_slots": 256,
+        "capacity": 8192,
+        "output_slots": 8192,
+        "input_sort_slots": 512,
+        "rank_sort_slots": 16384,
+        "fetch_sort_slots": 65536,
+        "record_field_bits": 32,
+        "sort_sizes": [
+          512,
+          16384,
+          65536,
+          65536
+        ],
+        "comparators": 19569152,
+        "scan_steps": 165888,
+        "record_evaluations": 362496,
+        "persistent_workspace_bits": 43650752,
+        "time_and_coherent_storage_form": "O((left_slots+right_slots+capacity)*log^2(left_slots+right_slots+capacity)*poly(record_bits))",
+        "data_dependent_RAM_reads": false,
+        "whole_attempt_overflow_rejection": true,
+        "hardware_gate_export_implemented": false
+      },
+      "cartesian_candidate_cells": 65536,
+      "fixed_sort_slots_total": 147968,
+      "native_probability_or_speedup_estimate": false
+    },
+    {
+      "leaf_list_binary_exponent": 12,
+      "resource_ledger": {
+        "left_slots": 4096,
+        "right_slots": 4096,
+        "capacity": 131072,
+        "output_slots": 131072,
+        "input_sort_slots": 8192,
+        "rank_sort_slots": 262144,
+        "fetch_sort_slots": 1048576,
+        "record_field_bits": 48,
+        "sort_sizes": [
+          8192,
+          262144,
+          1048576,
+          1048576
+        ],
+        "comparators": 485974016,
+        "scan_steps": 2654208,
+        "record_evaluations": 5799936,
+        "persistent_workspace_bits": 1055765152,
+        "time_and_coherent_storage_form": "O((left_slots+right_slots+capacity)*log^2(left_slots+right_slots+capacity)*poly(record_bits))",
+        "data_dependent_RAM_reads": false,
+        "whole_attempt_overflow_rejection": true,
+        "hardware_gate_export_implemented": false
+      },
+      "cartesian_candidate_cells": 16777216,
+      "fixed_sort_slots_total": 2367488,
+      "native_probability_or_speedup_estimate": false
+    },
+    {
+      "leaf_list_binary_exponent": 16,
+      "resource_ledger": {
+        "left_slots": 65536,
+        "right_slots": 65536,
+        "capacity": 2097152,
+        "output_slots": 2097152,
+        "input_sort_slots": 131072,
+        "rank_sort_slots": 4194304,
+        "fetch_sort_slots": 16777216,
+        "record_field_bits": 64,
+        "sort_sizes": [
+          131072,
+          4194304,
+          16777216,
+          16777216
+        ],
+        "comparators": 11147542528,
+        "scan_steps": 42467328,
+        "record_evaluations": 92798976,
+        "persistent_workspace_bits": 22913024896,
+        "time_and_coherent_storage_form": "O((left_slots+right_slots+capacity)*log^2(left_slots+right_slots+capacity)*poly(record_bits))",
+        "data_dependent_RAM_reads": false,
+        "whole_attempt_overflow_rejection": true,
+        "hardware_gate_export_implemented": false
+      },
+      "cartesian_candidate_cells": 4294967296,
+      "fixed_sort_slots_total": 37879808,
+      "native_probability_or_speedup_estimate": false
+    },
+    {
+      "leaf_list_binary_exponent": 32,
+      "resource_ledger": {
+        "left_slots": 4294967296,
+        "right_slots": 4294967296,
+        "capacity": 137438953472,
+        "output_slots": 137438953472,
+        "input_sort_slots": 8589934592,
+        "rank_sort_slots": 274877906944,
+        "fetch_sort_slots": 1099511627776,
+        "record_field_bits": 128,
+        "sort_sizes": [
+          8589934592,
+          274877906944,
+          1099511627776,
+          1099511627776
+        ],
+        "comparators": 2011702551904256,
+        "scan_steps": 2783138807808,
+        "record_evaluations": 6081673691136,
+        "persistent_workspace_bits": 3278541810566912,
+        "time_and_coherent_storage_form": "O((left_slots+right_slots+capacity)*log^2(left_slots+right_slots+capacity)*poly(record_bits))",
+        "data_dependent_RAM_reads": false,
+        "whole_attempt_overflow_rejection": true,
+        "hardware_gate_export_implemented": false
+      },
+      "cartesian_candidate_cells": 18446744073709551616,
+      "fixed_sort_slots_total": 2482491097088,
+      "native_probability_or_speedup_estimate": false
+    },
+    {
+      "leaf_list_binary_exponent": 64,
+      "resource_ledger": {
+        "left_slots": 18446744073709551616,
+        "right_slots": 18446744073709551616,
+        "capacity": 590295810358705651712,
+        "output_slots": 590295810358705651712,
+        "input_sort_slots": 36893488147419103232,
+        "rank_sort_slots": 1180591620717411303424,
+        "fetch_sort_slots": 4722366482869645213696,
+        "record_field_bits": 256,
+        "sort_sizes": [
+          36893488147419103232,
+          1180591620717411303424,
+          4722366482869645213696,
+          4722366482869645213696
+        ],
+        "comparators": 27833664943521836308627456,
+        "scan_steps": 11953490159763789447168,
+        "record_evaluations": 26120589608372725088256,
+        "persistent_workspace_bits": 33439095511944031467736576,
+        "time_and_coherent_storage_form": "O((left_slots+right_slots+capacity)*log^2(left_slots+right_slots+capacity)*poly(record_bits))",
+        "data_dependent_RAM_reads": false,
+        "whole_attempt_overflow_rejection": true,
+        "hardware_gate_export_implemented": false
+      },
+      "cartesian_candidate_cells": 340282366920938463463374607431768211456,
+      "fixed_sort_slots_total": 10662218074604120834048,
+      "native_probability_or_speedup_estimate": false
+    }
+  ],
+  "whole_tree_receiver_uses_this_backend": false,
+  "accepted_speedup_candidate": false,
+  "novelty_claim": false,
+  "hardware_gate_export_implemented": false,
+  "source_quantum_preparations_executed": 0,
+  "basis_diagnostic_count_is_free_coherent_oracle": false,
+  "literature": [
+    "https://arxiv.org/abs/2003.09481"
+  ],
+  "next_integration_contract": "Replace only nonroot Cartesian expansion; preserve native graph, whole-attempt overflow rejection, reciprocal checks and original-noise accounting."
+}

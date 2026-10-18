@@ -1,0 +1,59 @@
+{
+  "all_checks_passed": true,
+  "certificate_sha256_16": "a8cc92ad8f4f8071",
+  "echo_vs_readout_sweep": {
+    "all_verified": true,
+    "gamma": 0.9,
+    "records": [
+      {
+        "exact_laws_verified": true,
+        "prob_d0": 0.5,
+        "theta_0": 0.0,
+        "x0_expectation_given_d0_zero_sum": 0.81,
+        "x0_expectation_given_d1_diff": 0.81,
+        "x0_expectation_uncomputed_closed_form": 0.81,
+        "x0_expectation_uncomputed_explicit": 0.81
+      },
+      {
+        "exact_laws_verified": true,
+        "prob_d0": 0.5,
+        "theta_0": 0.7853981633974483,
+        "x0_expectation_given_d0_zero_sum": 0.81,
+        "x0_expectation_given_d1_diff": 1.2662834515177758e-16,
+        "x0_expectation_uncomputed_closed_form": 0.40500000000000014,
+        "x0_expectation_uncomputed_explicit": 0.4050000000000001
+      },
+      {
+        "exact_laws_verified": true,
+        "prob_d0": 0.5,
+        "theta_0": 1.5707963267948966,
+        "x0_expectation_given_d0_zero_sum": 0.81,
+        "x0_expectation_given_d1_diff": -0.81,
+        "x0_expectation_uncomputed_closed_form": 3.037013559890262e-33,
+        "x0_expectation_uncomputed_explicit": 0.0
+      },
+      {
+        "exact_laws_verified": true,
+        "prob_d0": 0.5,
+        "theta_0": 2.356194490192345,
+        "x0_expectation_given_d0_zero_sum": 0.81,
+        "x0_expectation_given_d1_diff": -1.2570227859227785e-16,
+        "x0_expectation_uncomputed_closed_form": 0.4049999999999999,
+        "x0_expectation_uncomputed_explicit": 0.40499999999999997
+      }
+    ]
+  },
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "proof_status": "LOCAL_DERIVATION_REVIEW_PENDING_NOT_FORMALLY_VERIFIED",
+  "schema_version": "dcp-coherent-cnot-uncomputation-echo-loschmidt-visibility-bridge-v1",
+  "scope_constraints": {
+    "applies_to": "Coherent CNOT uncomputation echo CNOT^dagger (X_0 otimes I_1) CNOT = X_0 otimes X_1 vs. classical syndrome readout on DCP pairs",
+    "controls_included": "Evaluates theta_0 in {0, pi/4, pi/2, 3*pi/4} on a zero-sum pair theta_0 + theta_1 = 0, verifying constant d_1=0 expectation +gamma^2=0.81 vs complete destructive cancellation (<X_0>=0) of uncomputed echo at theta_0=pi/2.",
+    "does_not_claim": "Loss of coherence when the syndrome wire is measured in the Z basis or used for conditional Pauli-frame routing"
+  },
+  "theorem_id": "dcp_coherent_cnot_uncomputation_echo_loschmidt_visibility_bridge"
+}

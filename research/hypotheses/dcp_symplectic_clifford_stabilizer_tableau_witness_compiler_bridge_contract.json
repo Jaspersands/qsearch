@@ -1,0 +1,13 @@
+{
+  "hypothesis_id": "dcp_symplectic_clifford_stabilizer_tableau_witness_compiler_bridge",
+  "title": "Symplectic GL_K(F_2) Stabilizer Tableau Witness Compiler",
+  "status": "VERIFIED_FINITE_IDENTITIES_REVIEW_PENDING",
+  "claims": [
+    "Any reversible CNOT network |x> -> |W x mod 2> induces the 2K x 2K symplectic tableau S_W = diag(W, (W^{-1})^T) preserving S_W^T Omega S_W == Omega (mod 2).",
+    "Placing m linearly independent mod-2 kernel witnesses in the first m columns of W^{-1} compiles a unified CNOT circuit whose anchor-zero branch extracts all m even-sublattice columns A v_j in (2*Z_q)^n."
+  ],
+  "favorable_controls": [
+    "4-wire disjoint 2-witness compiler over Z_{16}^2",
+    "4-wire overlapping 2-witness compiler over Z_8^2"
+  ]
+}

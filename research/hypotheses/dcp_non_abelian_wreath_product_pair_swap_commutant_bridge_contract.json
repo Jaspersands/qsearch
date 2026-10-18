@@ -1,0 +1,12 @@
+{
+  "hypothesis_id": "dcp_non_abelian_wreath_product_pair_swap_commutant_bridge",
+  "title": "Wreath-Product B_M = S_2 wr S_M Sector Decomposition and Binomial Singlet Sufficiency",
+  "status": "VERIFIED_FINITE_IDENTITIES_REVIEW_PENDING",
+  "claims": [
+    "Under B_M = S_2 wr S_M on 2M qubits, the Hilbert space decomposes into M+1 singlet-count sectors of dimension C(M, k) * 3^{M-k} summing to 4^M.",
+    "Under intra-pair singlet/triplet measurement, the singlet count K_sing ~ Binomial(M, (1 - gamma^2 cos(theta_0))/2), whereas coherent Sym^{2M}(C^2) projection strictly dominates when all 2M copies share the same signed phase."
+  ],
+  "favorable_controls": [
+    "M = 1, 2, 3, 4 pairs (2M = 2..8 qubits) at gamma = 0.6"
+  ]
+}

@@ -4,6 +4,18 @@ LOCAL IMPLEMENTATION AUDIT / REVIEW PENDING. Known literature reduction,
 exponential finite-state verification, not a newly discovered or compiled
 scalable quantum algorithm. No candidate acceptance or speedup claim.
 
+## New Constructive Shortcut Tested: Linear Decoder
+
+The [linear-erasure falsifier](TERNARY_LINEAR_ERASURE_FALSIFIER.md) tests replacing
+the hard decoder with public Gaussian elimination. The complete quantum word
+distribution then equals the polynomial classical sampler `(I-R*A)*e`, e
+uniform in {1,2}^m and A*R=I. Zero coordinates/failures are retained. For a
+systematic inverse this is free-sign assignment plus ordinary pivot solving;
+its improved success over blind signs is entirely classical. Nonlinear
+decoders and general DCP receivers are NOT excluded. The live filter report
+now includes the actual full-distribution comparison and scoped large-n
+systematic-source ledgers; no large quantum circuit is executed.
+
 ## Published Component
 
 [arXiv2609.40321v1, Section3](https://arxiv.org/html/2609.40321v1) credits the
@@ -89,8 +101,10 @@ ambiguity, no-solution inputs, all native labels, offset invariance, no-decoder
 contrast, nonempty Boolean witness conversion and independent-target source
 bijection/witnesses. An independent Node program
 rebuilds the physical state and compares decoder tables against bounded root
-enumeration. It checks84 matrices,4512 source branches,7128 output basis words
-and59364 root-equation evaluations. These are not independent theorem review.
+enumeration. With the new linear control, it checks85 matrices,4800 source
+branches,7371 output basis words and65061 root-equation evaluations. The linear
+control also independently reconstructs every classical projection probability.
+These are not independent theorem review.
 
 Next THEORY priority: seek a source-valid extension or a substantially better
 coherent arithmetic primitive, not more small-instance curves. Ternary results

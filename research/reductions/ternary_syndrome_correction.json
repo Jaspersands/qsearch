@@ -1,0 +1,2979 @@
+{
+  "status": "NONLINEAR_SYNDROME_CORRECTION_WITH_EXACT_LOW_RANK_CLASSICAL_SAMPLER",
+  "proof_status": "LOCAL_DERIVATION_REVIEW_PENDING",
+  "controls": [
+    {
+      "actual_quantum_control": {
+        "labels": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "dimension": 1,
+        "samples": 3,
+        "degree": 2,
+        "decoder_offset": [
+          0
+        ],
+        "decoder_mode": "quadratic-syndrome",
+        "decoder_basis_table_status_counts": {
+          "PUBLIC_QUADRATIC_CORRECTION_NOT_CERTIFIED_DECODING": 27
+        },
+        "exact_decoder_error_probability": {
+          "numerator": 3,
+          "denominator": 4
+        },
+        "exact_missing_coherent_vector_norm_squared": {
+          "numerator": 1,
+          "denominator": 2
+        },
+        "pointwise_failure_probability_upper_bound": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "executed_valid_signed_zero_sum_probability": 0.41666666666666674,
+        "executed_nonempty_boolean_zero_sum_probability": 0.41666666666666674,
+        "unheralded_state_norm_squared": 1.0000000000000004,
+        "secret_zero_register_probability": 0.24999999999999994,
+        "failure_branches_discarded_or_renormalized": false,
+        "verified_signed_witnesses": [
+          [
+            1,
+            1,
+            1
+          ],
+          [
+            2,
+            2,
+            2
+          ]
+        ],
+        "verified_boolean_witnesses": [
+          [
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        "random_signed_guess_zero_sum_probability": {
+          "numerator": 1,
+          "denominator": 4
+        },
+        "exhaustive_classical_reference_finds_a_witness": true,
+        "exhaustive_classical_reference_is_scalable_baseline": false,
+        "specialized_full_target_source": {
+          "original_labels": [
+            [
+              1,
+              1
+            ]
+          ],
+          "independent_full_target": [
+            0
+          ],
+          "verified_target_witnesses": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "executed_unconditional_target_success": 0.41666666666666674,
+          "last_column_guaranteed_in_mapped_zero_witness": true,
+          "hidden_marker_inclusion_probability_loss": false,
+          "generic_zero_solver_automatically_has_this_property": false,
+          "extra_public_arithmetic_columns": 1,
+          "extra_known_prepared_qutrits": 1,
+          "extra_unknown_native_DCP_states_assumed": false,
+          "empty_original_witness_allowed_only_for_zero_target": true
+        },
+        "ideal_coherent_vector_norm_squared_NOT_a_normalized_physical_state": {
+          "numerator": 3,
+          "denominator": 4
+        },
+        "explicit_simulator_dimension": 81,
+        "basis_table_is_only_exponential_verification_not_runtime_implementation": true,
+        "scalable_reversible_decoder_circuit_compiled": false,
+        "native_growing_modulus_DCP_solver": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false,
+        "novelty_claim": false,
+        "decoder_basis_table": [
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            2
+          ],
+          [
+            2
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            2
+          ],
+          [
+            2
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            2
+          ],
+          [
+            2
+          ],
+          [
+            2
+          ]
+        ],
+        "quadratic_syndrome_program": {
+          "labels": [
+            [
+              1,
+              1,
+              1
+            ]
+          ],
+          "right_inverse": [
+            [
+              1
+            ],
+            [
+              0
+            ],
+            [
+              0
+            ]
+          ],
+          "kernel_rows": [
+            [
+              1,
+              2,
+              0
+            ]
+          ],
+          "upper_triangle_quadratic_coefficients": [
+            [
+              1
+            ]
+          ],
+          "syndrome_rank": 1,
+          "program_construction_or_search_cost_is_free": false,
+          "secret_or_true_witness_used": false,
+          "full_reversible_gate_export_implemented": false,
+          "arithmetic_evaluation_upper_order": "O(n*m+r*m+n*r^2) field operations"
+        },
+        "actual_quantum_word_probabilities": [
+          2.0684697435419873e-35,
+          8.483808453158219e-35,
+          8.483808453158219e-35,
+          6.51249805040651e-35,
+          1.928029239177139e-33,
+          0.0833333333333334,
+          1.912290435501023e-34,
+          0.08333333333333336,
+          1.639139747519053e-33,
+          1.284422148043928e-34,
+          3.1169648648269295e-33,
+          0.20833333333333343,
+          5.187560575871779e-34,
+          0.20833333333333343,
+          2.709957575980447e-33,
+          2.6965087817549336e-35,
+          1.4551659040584592e-33,
+          2.6594167388699878e-33,
+          1.5049760957365594e-34,
+          0.20833333333333343,
+          4.5433846991974336e-33,
+          6.737482096800956e-36,
+          1.7819454106939718e-33,
+          2.0441812351448977e-33,
+          2.9810907369158323e-34,
+          6.405524961120416e-33,
+          0.20833333333333334
+        ]
+      },
+      "exact_classical_output_distribution": [
+        {
+          "word": [
+            0,
+            1,
+            2
+          ],
+          "probability": {
+            "numerator": 1,
+            "denominator": 12
+          }
+        },
+        {
+          "word": [
+            0,
+            2,
+            1
+          ],
+          "probability": {
+            "numerator": 1,
+            "denominator": 12
+          }
+        },
+        {
+          "word": [
+            1,
+            0,
+            2
+          ],
+          "probability": {
+            "numerator": 5,
+            "denominator": 24
+          }
+        },
+        {
+          "word": [
+            1,
+            1,
+            1
+          ],
+          "probability": {
+            "numerator": 5,
+            "denominator": 24
+          }
+        },
+        {
+          "word": [
+            2,
+            0,
+            1
+          ],
+          "probability": {
+            "numerator": 5,
+            "denominator": 24
+          }
+        },
+        {
+          "word": [
+            2,
+            2,
+            2
+          ],
+          "probability": {
+            "numerator": 5,
+            "denominator": 24
+          }
+        }
+      ],
+      "exact_classical_signed_success": {
+        "numerator": 5,
+        "denominator": 12
+      },
+      "linear_free_sign_baseline_success": {
+        "numerator": 1,
+        "denominator": 2
+      },
+      "actual_full_output_max_error": 8.326672684688674e-17,
+      "finite_gain_over_linear_baseline": {
+        "numerator": -1,
+        "denominator": 12
+      },
+      "quantum_advantage_from_this_gain": false
+    },
+    {
+      "actual_quantum_control": {
+        "labels": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "dimension": 1,
+        "samples": 3,
+        "degree": 2,
+        "decoder_offset": [
+          0
+        ],
+        "decoder_mode": "quadratic-syndrome",
+        "decoder_basis_table_status_counts": {
+          "PUBLIC_QUADRATIC_CORRECTION_NOT_CERTIFIED_DECODING": 27
+        },
+        "exact_decoder_error_probability": {
+          "numerator": 5,
+          "denominator": 8
+        },
+        "exact_missing_coherent_vector_norm_squared": {
+          "numerator": 3,
+          "denominator": 8
+        },
+        "pointwise_failure_probability_upper_bound": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "executed_valid_signed_zero_sum_probability": 0.3333333333333334,
+        "executed_nonempty_boolean_zero_sum_probability": 0.3333333333333334,
+        "unheralded_state_norm_squared": 1.0000000000000004,
+        "secret_zero_register_probability": 0.3749999999999999,
+        "failure_branches_discarded_or_renormalized": false,
+        "verified_signed_witnesses": [
+          [
+            1,
+            1,
+            1
+          ],
+          [
+            2,
+            2,
+            2
+          ]
+        ],
+        "verified_boolean_witnesses": [
+          [
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        "random_signed_guess_zero_sum_probability": {
+          "numerator": 1,
+          "denominator": 4
+        },
+        "exhaustive_classical_reference_finds_a_witness": true,
+        "exhaustive_classical_reference_is_scalable_baseline": false,
+        "specialized_full_target_source": {
+          "original_labels": [
+            [
+              1,
+              1
+            ]
+          ],
+          "independent_full_target": [
+            0
+          ],
+          "verified_target_witnesses": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "executed_unconditional_target_success": 0.3333333333333334,
+          "last_column_guaranteed_in_mapped_zero_witness": true,
+          "hidden_marker_inclusion_probability_loss": false,
+          "generic_zero_solver_automatically_has_this_property": false,
+          "extra_public_arithmetic_columns": 1,
+          "extra_known_prepared_qutrits": 1,
+          "extra_unknown_native_DCP_states_assumed": false,
+          "empty_original_witness_allowed_only_for_zero_target": true
+        },
+        "ideal_coherent_vector_norm_squared_NOT_a_normalized_physical_state": {
+          "numerator": 3,
+          "denominator": 4
+        },
+        "explicit_simulator_dimension": 81,
+        "basis_table_is_only_exponential_verification_not_runtime_implementation": true,
+        "scalable_reversible_decoder_circuit_compiled": false,
+        "native_growing_modulus_DCP_solver": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false,
+        "novelty_claim": false,
+        "decoder_basis_table": [
+          [
+            0
+          ],
+          [
+            2
+          ],
+          [
+            2
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            2
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            2
+          ],
+          [
+            2
+          ],
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ]
+        ],
+        "quadratic_syndrome_program": {
+          "labels": [
+            [
+              1,
+              1,
+              1
+            ]
+          ],
+          "right_inverse": [
+            [
+              1
+            ],
+            [
+              0
+            ],
+            [
+              0
+            ]
+          ],
+          "kernel_rows": [
+            [
+              1,
+              2,
+              0
+            ],
+            [
+              1,
+              0,
+              2
+            ]
+          ],
+          "upper_triangle_quadratic_coefficients": [
+            [
+              1,
+              1,
+              2
+            ]
+          ],
+          "syndrome_rank": 2,
+          "program_construction_or_search_cost_is_free": false,
+          "secret_or_true_witness_used": false,
+          "full_reversible_gate_export_implemented": false,
+          "arithmetic_evaluation_upper_order": "O(n*m+r*m+n*r^2) field operations"
+        },
+        "actual_quantum_word_probabilities": [
+          0.0833333333333334,
+          3.0661696862212174e-34,
+          1.2780106001703651e-33,
+          4.843606329618334e-34,
+          5.42973082553101e-34,
+          0.041666666666666685,
+          1.6404003196562473e-33,
+          0.04166666666666669,
+          8.910019566046491e-34,
+          5.100358501428221e-34,
+          3.0150303518593484e-33,
+          0.1666666666666667,
+          1.9355000363068867e-33,
+          0.16666666666666674,
+          4.441675934243063e-33,
+          0.08333333333333337,
+          1.7421287953768895e-33,
+          4.061411505509091e-33,
+          1.753939960131081e-33,
+          0.1666666666666667,
+          2.250391831037128e-33,
+          0.08333333333333337,
+          1.5020121801352067e-33,
+          3.2035361226253786e-33,
+          2.8025218492578266e-33,
+          4.140749380432557e-33,
+          0.16666666666666669
+        ]
+      },
+      "exact_classical_output_distribution": [
+        {
+          "word": [
+            0,
+            0,
+            0
+          ],
+          "probability": {
+            "numerator": 1,
+            "denominator": 12
+          }
+        },
+        {
+          "word": [
+            0,
+            1,
+            2
+          ],
+          "probability": {
+            "numerator": 1,
+            "denominator": 24
+          }
+        },
+        {
+          "word": [
+            0,
+            2,
+            1
+          ],
+          "probability": {
+            "numerator": 1,
+            "denominator": 24
+          }
+        },
+        {
+          "word": [
+            1,
+            0,
+            2
+          ],
+          "probability": {
+            "numerator": 1,
+            "denominator": 6
+          }
+        },
+        {
+          "word": [
+            1,
+            1,
+            1
+          ],
+          "probability": {
+            "numerator": 1,
+            "denominator": 6
+          }
+        },
+        {
+          "word": [
+            1,
+            2,
+            0
+          ],
+          "probability": {
+            "numerator": 1,
+            "denominator": 12
+          }
+        },
+        {
+          "word": [
+            2,
+            0,
+            1
+          ],
+          "probability": {
+            "numerator": 1,
+            "denominator": 6
+          }
+        },
+        {
+          "word": [
+            2,
+            1,
+            0
+          ],
+          "probability": {
+            "numerator": 1,
+            "denominator": 12
+          }
+        },
+        {
+          "word": [
+            2,
+            2,
+            2
+          ],
+          "probability": {
+            "numerator": 1,
+            "denominator": 6
+          }
+        }
+      ],
+      "exact_classical_signed_success": {
+        "numerator": 1,
+        "denominator": 3
+      },
+      "linear_free_sign_baseline_success": {
+        "numerator": 1,
+        "denominator": 2
+      },
+      "actual_full_output_max_error": 8.326672684688674e-17,
+      "finite_gain_over_linear_baseline": {
+        "numerator": -1,
+        "denominator": 6
+      },
+      "quantum_advantage_from_this_gain": false
+    },
+    {
+      "actual_quantum_control": {
+        "labels": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "dimension": 1,
+        "samples": 3,
+        "degree": 2,
+        "decoder_offset": [
+          0
+        ],
+        "decoder_mode": "quadratic-syndrome",
+        "decoder_basis_table_status_counts": {
+          "PUBLIC_QUADRATIC_CORRECTION_NOT_CERTIFIED_DECODING": 27
+        },
+        "exact_decoder_error_probability": {
+          "numerator": 7,
+          "denominator": 8
+        },
+        "exact_missing_coherent_vector_norm_squared": {
+          "numerator": 5,
+          "denominator": 8
+        },
+        "pointwise_failure_probability_upper_bound": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "executed_valid_signed_zero_sum_probability": 0.5833333333333335,
+        "executed_nonempty_boolean_zero_sum_probability": 0.5833333333333335,
+        "unheralded_state_norm_squared": 1.0000000000000004,
+        "secret_zero_register_probability": 0.12499999999999997,
+        "failure_branches_discarded_or_renormalized": false,
+        "verified_signed_witnesses": [
+          [
+            1,
+            1,
+            1
+          ],
+          [
+            2,
+            2,
+            2
+          ]
+        ],
+        "verified_boolean_witnesses": [
+          [
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        "random_signed_guess_zero_sum_probability": {
+          "numerator": 1,
+          "denominator": 4
+        },
+        "exhaustive_classical_reference_finds_a_witness": true,
+        "exhaustive_classical_reference_is_scalable_baseline": false,
+        "specialized_full_target_source": {
+          "original_labels": [
+            [
+              1,
+              1
+            ]
+          ],
+          "independent_full_target": [
+            0
+          ],
+          "verified_target_witnesses": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "executed_unconditional_target_success": 0.5833333333333335,
+          "last_column_guaranteed_in_mapped_zero_witness": true,
+          "hidden_marker_inclusion_probability_loss": false,
+          "generic_zero_solver_automatically_has_this_property": false,
+          "extra_public_arithmetic_columns": 1,
+          "extra_known_prepared_qutrits": 1,
+          "extra_unknown_native_DCP_states_assumed": false,
+          "empty_original_witness_allowed_only_for_zero_target": true
+        },
+        "ideal_coherent_vector_norm_squared_NOT_a_normalized_physical_state": {
+          "numerator": 3,
+          "denominator": 4
+        },
+        "explicit_simulator_dimension": 81,
+        "basis_table_is_only_exponential_verification_not_runtime_implementation": true,
+        "scalable_reversible_decoder_circuit_compiled": false,
+        "native_growing_modulus_DCP_solver": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false,
+        "novelty_claim": false,
+        "decoder_basis_table": [
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            0
+          ],
+          [
+            2
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            1
+          ],
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ],
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            1
+          ],
+          [
+            0
+          ],
+          [
+            2
+          ],
+          [
+            2
+          ],
+          [
+            2
+          ],
+          [
+            2
+          ]
+        ],
+        "quadratic_syndrome_program": {
+          "labels": [
+            [
+              1,
+              1,
+              1
+            ]
+          ],
+          "right_inverse": [
+            [
+              1
+            ],
+            [
+              0
+            ],
+            [
+              0
+            ]
+          ],
+          "kernel_rows": [
+            [
+              1,
+              2,
+              0
+            ],
+            [
+              1,
+              0,
+              2
+            ]
+          ],
+          "upper_triangle_quadratic_coefficients": [
+            [
+              0,
+              1,
+              0
+            ]
+          ],
+          "syndrome_rank": 2,
+          "program_construction_or_search_cost_is_free": false,
+          "secret_or_true_witness_used": false,
+          "full_reversible_gate_export_implemented": false,
+          "arithmetic_evaluation_upper_order": "O(n*m+r*m+n*r^2) field operations"
+        },
+        "actual_quantum_word_probabilities": [
+          0.08333333333333338,
+          3.7861959444140255e-34,
+          1.350013225989646e-33,
+          5.197111166211414e-34,
+          2.5590783440248726e-33,
+          0.08333333333333337,
+          1.9488240788094327e-33,
+          0.08333333333333337,
+          3.293886366187223e-33,
+          1.0612488923582173e-33,
+          7.920108691918833e-34,
+          0.041666666666666685,
+          6.278095754478021e-34,
+          0.29166666666666685,
+          1.408336271833166e-33,
+          0.041666666666666685,
+          1.0233488000816156e-33,
+          2.303762773762155e-33,
+          2.3418130201516478e-33,
+          0.041666666666666685,
+          5.838449094537788e-34,
+          0.041666666666666685,
+          1.615785240026384e-33,
+          1.7691816937447584e-33,
+          3.4802726520203896e-34,
+          1.9740781929969167e-33,
+          0.2916666666666667
+        ]
+      },
+      "exact_classical_output_distribution": [
+        {
+          "word": [
+            0,
+            0,
+            0
+          ],
+          "probability": {
+            "numerator": 1,
+            "denominator": 12
+          }
+        },
+        {
+          "word": [
+            0,
+            1,
+            2
+          ],
+          "probability": {
+            "numerator": 1,
+            "denominator": 12
+          }
+        },
+        {
+          "word": [
+            0,
+            2,
+            1
+          ],
+          "probability": {
+            "numerator": 1,
+            "denominator": 12
+          }
+        },
+        {
+          "word": [
+            1,
+            0,
+            2
+          ],
+          "probability": {
+            "numerator": 1,
+            "denominator": 24
+          }
+        },
+        {
+          "word": [
+            1,
+            1,
+            1
+          ],
+          "probability": {
+            "numerator": 7,
+            "denominator": 24
+          }
+        },
+        {
+          "word": [
+            1,
+            2,
+            0
+          ],
+          "probability": {
+            "numerator": 1,
+            "denominator": 24
+          }
+        },
+        {
+          "word": [
+            2,
+            0,
+            1
+          ],
+          "probability": {
+            "numerator": 1,
+            "denominator": 24
+          }
+        },
+        {
+          "word": [
+            2,
+            1,
+            0
+          ],
+          "probability": {
+            "numerator": 1,
+            "denominator": 24
+          }
+        },
+        {
+          "word": [
+            2,
+            2,
+            2
+          ],
+          "probability": {
+            "numerator": 7,
+            "denominator": 24
+          }
+        }
+      ],
+      "exact_classical_signed_success": {
+        "numerator": 7,
+        "denominator": 12
+      },
+      "linear_free_sign_baseline_success": {
+        "numerator": 1,
+        "denominator": 2
+      },
+      "actual_full_output_max_error": 1.6653345369377348e-16,
+      "finite_gain_over_linear_baseline": {
+        "numerator": 1,
+        "denominator": 12
+      },
+      "quantum_advantage_from_this_gain": false
+    },
+    {
+      "actual_quantum_control": {
+        "labels": [
+          [
+            1,
+            0,
+            1,
+            2
+          ],
+          [
+            0,
+            1,
+            2,
+            2
+          ]
+        ],
+        "dimension": 2,
+        "samples": 4,
+        "degree": 2,
+        "decoder_offset": [
+          0,
+          0
+        ],
+        "decoder_mode": "quadratic-syndrome",
+        "decoder_basis_table_status_counts": {
+          "PUBLIC_QUADRATIC_CORRECTION_NOT_CERTIFIED_DECODING": 81
+        },
+        "exact_decoder_error_probability": {
+          "numerator": 7,
+          "denominator": 8
+        },
+        "exact_missing_coherent_vector_norm_squared": {
+          "numerator": 1,
+          "denominator": 8
+        },
+        "pointwise_failure_probability_upper_bound": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "executed_valid_signed_zero_sum_probability": 0.0,
+        "executed_nonempty_boolean_zero_sum_probability": 0.0,
+        "unheralded_state_norm_squared": 1.0,
+        "secret_zero_register_probability": 0.12499999999999989,
+        "failure_branches_discarded_or_renormalized": false,
+        "verified_signed_witnesses": [],
+        "verified_boolean_witnesses": [],
+        "random_signed_guess_zero_sum_probability": {
+          "numerator": 0,
+          "denominator": 1
+        },
+        "exhaustive_classical_reference_finds_a_witness": false,
+        "exhaustive_classical_reference_is_scalable_baseline": false,
+        "specialized_full_target_source": {
+          "original_labels": [
+            [
+              1,
+              0,
+              1
+            ],
+            [
+              0,
+              1,
+              2
+            ]
+          ],
+          "independent_full_target": [
+            2,
+            1
+          ],
+          "verified_target_witnesses": [],
+          "executed_unconditional_target_success": 0.0,
+          "last_column_guaranteed_in_mapped_zero_witness": true,
+          "hidden_marker_inclusion_probability_loss": false,
+          "generic_zero_solver_automatically_has_this_property": false,
+          "extra_public_arithmetic_columns": 1,
+          "extra_known_prepared_qutrits": 1,
+          "extra_unknown_native_DCP_states_assumed": false,
+          "empty_original_witness_allowed_only_for_zero_target": true
+        },
+        "ideal_coherent_vector_norm_squared_NOT_a_normalized_physical_state": {
+          "numerator": 0,
+          "denominator": 1
+        },
+        "explicit_simulator_dimension": 729,
+        "basis_table_is_only_exponential_verification_not_runtime_implementation": true,
+        "scalable_reversible_decoder_circuit_compiled": false,
+        "native_growing_modulus_DCP_solver": false,
+        "candidate_record_accepted": false,
+        "speedup_claim_allowed": false,
+        "novelty_claim": false,
+        "decoder_basis_table": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "quadratic_syndrome_program": {
+          "labels": [
+            [
+              1,
+              0,
+              1,
+              2
+            ],
+            [
+              0,
+              1,
+              2,
+              2
+            ]
+          ],
+          "right_inverse": [
+            [
+              1,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "kernel_rows": [
+            [
+              2,
+              1,
+              1,
+              0
+            ]
+          ],
+          "upper_triangle_quadratic_coefficients": [
+            [
+              1
+            ],
+            [
+              2
+            ]
+          ],
+          "syndrome_rank": 1,
+          "program_construction_or_search_cost_is_free": false,
+          "secret_or_true_witness_used": false,
+          "full_reversible_gate_export_implemented": false,
+          "arithmetic_evaluation_upper_order": "O(n*m+r*m+n*r^2) field operations"
+        },
+        "actual_quantum_word_probabilities": [
+          3.000776624534863e-35,
+          1.2575433916500733e-36,
+          1.257543391650073e-36,
+          1.2575433916500733e-36,
+          7.114364952168994e-35,
+          1.5136092226179854e-36,
+          1.2575433916500733e-36,
+          1.5136092226179854e-36,
+          7.11436495216899e-35,
+          2.434609286402799e-34,
+          4.177047983837571e-35,
+          1.595194235440936e-35,
+          9.531781414286777e-35,
+          1.5506957846350245e-33,
+          1.6636674583397344e-33,
+          1.7129041263882138e-34,
+          1.213616935335068e-33,
+          0.1875,
+          8.013423730701962e-35,
+          1.245495100103468e-35,
+          3.840688185832388e-35,
+          3.3843739697241215e-34,
+          0.18750000000000003,
+          1.8561155015769756e-33,
+          7.298900287155287e-35,
+          1.4528493493854054e-33,
+          7.315123725186657e-34,
+          1.6728323040198277e-34,
+          2.726408616186501e-35,
+          9.34780856186521e-35,
+          6.076645110281639e-34,
+          1.6469511728221965e-33,
+          0.18750000000000003,
+          7.311785902073935e-35,
+          2.778145738359687e-33,
+          1.5337796614588036e-33,
+          3.30084015227482e-34,
+          0.12500000000000003,
+          1.299603266899408e-33,
+          4.6405264789939555e-35,
+          4.22612408646202e-34,
+          8.64859102991032e-34,
+          3.8509508524062455e-35,
+          2.1406788818722248e-33,
+          5.675525793142238e-34,
+          2.792049998006673e-35,
+          1.004065527621799e-33,
+          1.6298551622259173e-33,
+          1.6258839815838858e-35,
+          3.4979691446990075e-34,
+          2.9260063434054552e-33,
+          2.983068712146846e-35,
+          1.1091477549413468e-34,
+          2.640373224516801e-35,
+          2.788509492047878e-34,
+          3.835994572525255e-36,
+          7.678538313613825e-35,
+          2.726722758896447e-34,
+          1.030474216893007e-33,
+          2.383218418377823e-33,
+          6.949638327900338e-34,
+          0.18750000000000003,
+          2.8432814700902377e-33,
+          3.0881986034135734e-35,
+          1.9229719966583287e-33,
+          8.745354796597773e-34,
+          2.54433120829131e-35,
+          4.6356676585322055e-35,
+          6.557592282962636e-35,
+          6.920117201539337e-36,
+          7.606237707533899e-34,
+          1.6040075648250794e-33,
+          2.182754737702811e-34,
+          2.346577071513508e-33,
+          0.12499999999999999,
+          3.7149342812755606e-35,
+          2.1944662015238884e-33,
+          7.980507228057343e-34,
+          6.833629333718596e-35,
+          3.0464637482836068e-33,
+          2.027640226122143e-33
+        ]
+      },
+      "exact_classical_output_distribution": [
+        {
+          "word": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "probability": {
+            "numerator": 3,
+            "denominator": 16
+          }
+        },
+        {
+          "word": [
+            0,
+            2,
+            1,
+            1
+          ],
+          "probability": {
+            "numerator": 3,
+            "denominator": 16
+          }
+        },
+        {
+          "word": [
+            1,
+            0,
+            1,
+            2
+          ],
+          "probability": {
+            "numerator": 3,
+            "denominator": 16
+          }
+        },
+        {
+          "word": [
+            1,
+            1,
+            0,
+            1
+          ],
+          "probability": {
+            "numerator": 1,
+            "denominator": 8
+          }
+        },
+        {
+          "word": [
+            2,
+            0,
+            2,
+            1
+          ],
+          "probability": {
+            "numerator": 3,
+            "denominator": 16
+          }
+        },
+        {
+          "word": [
+            2,
+            2,
+            0,
+            2
+          ],
+          "probability": {
+            "numerator": 1,
+            "denominator": 8
+          }
+        }
+      ],
+      "exact_classical_signed_success": {
+        "numerator": 0,
+        "denominator": 1
+      },
+      "linear_free_sign_baseline_success": {
+        "numerator": 0,
+        "denominator": 1
+      },
+      "actual_full_output_max_error": 2.7755575615628914e-17,
+      "finite_gain_over_linear_baseline": {
+        "numerator": 0,
+        "denominator": 1
+      },
+      "quantum_advantage_from_this_gain": false
+    }
+  ],
+  "classical_per_sample_upper_order": "O(poly(n,m,r)*9^r)",
+  "complete_one_row_IID_source_census": {
+    "all_IID_label_matrices": 27,
+    "all_source_cases": [
+      {
+        "labels": [
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "rank_zero_classical_fallback": true,
+        "unconditional_success": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "linear_success": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "actual_quantum_comparison_error": 0.0
+      },
+      {
+        "labels": [
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        "rank_zero_classical_fallback": false,
+        "unconditional_success": {
+          "numerator": 0,
+          "denominator": 1
+        },
+        "linear_success": {
+          "numerator": 0,
+          "denominator": 1
+        },
+        "actual_quantum_comparison_error": 2.220446049250313e-16
+      },
+      {
+        "labels": [
+          [
+            0,
+            0,
+            2
+          ]
+        ],
+        "rank_zero_classical_fallback": false,
+        "unconditional_success": {
+          "numerator": 0,
+          "denominator": 1
+        },
+        "linear_success": {
+          "numerator": 0,
+          "denominator": 1
+        },
+        "actual_quantum_comparison_error": 2.220446049250313e-16
+      },
+      {
+        "labels": [
+          [
+            0,
+            1,
+            0
+          ]
+        ],
+        "rank_zero_classical_fallback": false,
+        "unconditional_success": {
+          "numerator": 0,
+          "denominator": 1
+        },
+        "linear_success": {
+          "numerator": 0,
+          "denominator": 1
+        },
+        "actual_quantum_comparison_error": 1.6653345369377348e-16
+      },
+      {
+        "labels": [
+          [
+            0,
+            1,
+            1
+          ]
+        ],
+        "rank_zero_classical_fallback": false,
+        "unconditional_success": {
+          "numerator": 2,
+          "denominator": 3
+        },
+        "linear_success": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "actual_quantum_comparison_error": 5.551115123125783e-17
+      },
+      {
+        "labels": [
+          [
+            0,
+            1,
+            2
+          ]
+        ],
+        "rank_zero_classical_fallback": false,
+        "unconditional_success": {
+          "numerator": 2,
+          "denominator": 3
+        },
+        "linear_success": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "actual_quantum_comparison_error": 8.326672684688674e-17
+      },
+      {
+        "labels": [
+          [
+            0,
+            2,
+            0
+          ]
+        ],
+        "rank_zero_classical_fallback": false,
+        "unconditional_success": {
+          "numerator": 0,
+          "denominator": 1
+        },
+        "linear_success": {
+          "numerator": 0,
+          "denominator": 1
+        },
+        "actual_quantum_comparison_error": 1.6653345369377348e-16
+      },
+      {
+        "labels": [
+          [
+            0,
+            2,
+            1
+          ]
+        ],
+        "rank_zero_classical_fallback": false,
+        "unconditional_success": {
+          "numerator": 2,
+          "denominator": 3
+        },
+        "linear_success": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "actual_quantum_comparison_error": 1.1102230246251565e-16
+      },
+      {
+        "labels": [
+          [
+            0,
+            2,
+            2
+          ]
+        ],
+        "rank_zero_classical_fallback": false,
+        "unconditional_success": {
+          "numerator": 2,
+          "denominator": 3
+        },
+        "linear_success": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "actual_quantum_comparison_error": 8.326672684688674e-17
+      },
+      {
+        "labels": [
+          [
+            1,
+            0,
+            0
+          ]
+        ],
+        "rank_zero_classical_fallback": false,
+        "unconditional_success": {
+          "numerator": 0,
+          "denominator": 1
+        },
+        "linear_success": {
+          "numerator": 0,
+          "denominator": 1
+        },
+        "actual_quantum_comparison_error": 1.6653345369377348e-16
+      },
+      {
+        "labels": [
+          [
+            1,
+            0,
+            1
+          ]
+        ],
+        "rank_zero_classical_fallback": false,
+        "unconditional_success": {
+          "numerator": 2,
+          "denominator": 3
+        },
+        "linear_success": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "actual_quantum_comparison_error": 5.551115123125783e-17
+      },
+      {
+        "labels": [
+          [
+            1,
+            0,
+            2
+          ]
+        ],
+        "rank_zero_classical_fallback": false,
+        "unconditional_success": {
+          "numerator": 2,
+          "denominator": 3
+        },
+        "linear_success": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "actual_quantum_comparison_error": 8.326672684688674e-17
+      },
+      {
+        "labels": [
+          [
+            1,
+            1,
+            0
+          ]
+        ],
+        "rank_zero_classical_fallback": false,
+        "unconditional_success": {
+          "numerator": 2,
+          "denominator": 3
+        },
+        "linear_success": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "actual_quantum_comparison_error": 4.163336342344337e-17
+      },
+      {
+        "labels": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "rank_zero_classical_fallback": false,
+        "unconditional_success": {
+          "numerator": 7,
+          "denominator": 12
+        },
+        "linear_success": {
+          "numerator": 1,
+          "denominator": 2
+        },
+        "actual_quantum_comparison_error": 1.6653345369377348e-16
+      },
+      {
+        "labels": [
+          [
+            1,
+            1,
+            2
+          ]
+        ],
+        "rank_zero_classical_fallback": false,
+        "unconditional_success": {
+          "numerator": 7,
+          "denominator": 12
+        },
+        "linear_success": {
+          "numerator": 1,
+          "denominator": 2
+        },
+        "actual_quantum_comparison_error": 6.938893903907228e-17
+      },
+      {
+        "labels": [
+          [
+            1,
+            2,
+            0
+          ]
+        ],
+        "rank_zero_classical_fallback": false,
+        "unconditional_success": {
+          "numerator": 2,
+          "denominator": 3
+        },
+        "linear_success": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "actual_quantum_comparison_error": 5.551115123125783e-17
+      },
+      {
+        "labels": [
+          [
+            1,
+            2,
+            1
+          ]
+        ],
+        "rank_zero_classical_fallback": false,
+        "unconditional_success": {
+          "numerator": 7,
+          "denominator": 12
+        },
+        "linear_success": {
+          "numerator": 1,
+          "denominator": 2
+        },
+        "actual_quantum_comparison_error": 1.1102230246251565e-16
+      },
+      {
+        "labels": [
+          [
+            1,
+            2,
+            2
+          ]
+        ],
+        "rank_zero_classical_fallback": false,
+        "unconditional_success": {
+          "numerator": 7,
+          "denominator": 12
+        },
+        "linear_success": {
+          "numerator": 1,
+          "denominator": 2
+        },
+        "actual_quantum_comparison_error": 5.551115123125783e-17
+      },
+      {
+        "labels": [
+          [
+            2,
+            0,
+            0
+          ]
+        ],
+        "rank_zero_classical_fallback": false,
+        "unconditional_success": {
+          "numerator": 0,
+          "denominator": 1
+        },
+        "linear_success": {
+          "numerator": 0,
+          "denominator": 1
+        },
+        "actual_quantum_comparison_error": 1.6653345369377348e-16
+      },
+      {
+        "labels": [
+          [
+            2,
+            0,
+            1
+          ]
+        ],
+        "rank_zero_classical_fallback": false,
+        "unconditional_success": {
+          "numerator": 2,
+          "denominator": 3
+        },
+        "linear_success": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "actual_quantum_comparison_error": 8.326672684688674e-17
+      },
+      {
+        "labels": [
+          [
+            2,
+            0,
+            2
+          ]
+        ],
+        "rank_zero_classical_fallback": false,
+        "unconditional_success": {
+          "numerator": 2,
+          "denominator": 3
+        },
+        "linear_success": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "actual_quantum_comparison_error": 8.326672684688674e-17
+      },
+      {
+        "labels": [
+          [
+            2,
+            1,
+            0
+          ]
+        ],
+        "rank_zero_classical_fallback": false,
+        "unconditional_success": {
+          "numerator": 2,
+          "denominator": 3
+        },
+        "linear_success": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "actual_quantum_comparison_error": 5.551115123125783e-17
+      },
+      {
+        "labels": [
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        "rank_zero_classical_fallback": false,
+        "unconditional_success": {
+          "numerator": 7,
+          "denominator": 12
+        },
+        "linear_success": {
+          "numerator": 1,
+          "denominator": 2
+        },
+        "actual_quantum_comparison_error": 1.1102230246251565e-16
+      },
+      {
+        "labels": [
+          [
+            2,
+            1,
+            2
+          ]
+        ],
+        "rank_zero_classical_fallback": false,
+        "unconditional_success": {
+          "numerator": 7,
+          "denominator": 12
+        },
+        "linear_success": {
+          "numerator": 1,
+          "denominator": 2
+        },
+        "actual_quantum_comparison_error": 1.6653345369377348e-16
+      },
+      {
+        "labels": [
+          [
+            2,
+            2,
+            0
+          ]
+        ],
+        "rank_zero_classical_fallback": false,
+        "unconditional_success": {
+          "numerator": 2,
+          "denominator": 3
+        },
+        "linear_success": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "actual_quantum_comparison_error": 8.326672684688674e-17
+      },
+      {
+        "labels": [
+          [
+            2,
+            2,
+            1
+          ]
+        ],
+        "rank_zero_classical_fallback": false,
+        "unconditional_success": {
+          "numerator": 7,
+          "denominator": 12
+        },
+        "linear_success": {
+          "numerator": 1,
+          "denominator": 2
+        },
+        "actual_quantum_comparison_error": 6.938893903907228e-17
+      },
+      {
+        "labels": [
+          [
+            2,
+            2,
+            2
+          ]
+        ],
+        "rank_zero_classical_fallback": false,
+        "unconditional_success": {
+          "numerator": 7,
+          "denominator": 12
+        },
+        "linear_success": {
+          "numerator": 1,
+          "denominator": 2
+        },
+        "actual_quantum_comparison_error": 5.551115123125783e-17
+      }
+    ],
+    "mean_success": {
+      "numerator": 41,
+      "denominator": 81
+    },
+    "linear_mean_success": {
+      "numerator": 17,
+      "denominator": 27
+    },
+    "favorable_source_selection": false,
+    "large_rank_success_proved": false
+  },
+  "all_27_quadratic_policies_on_one_easy_control": [
+    {
+      "public_coefficients": [
+        0,
+        0,
+        0
+      ],
+      "success": {
+        "numerator": 1,
+        "denominator": 2
+      }
+    },
+    {
+      "public_coefficients": [
+        0,
+        0,
+        1
+      ],
+      "success": {
+        "numerator": 5,
+        "denominator": 12
+      }
+    },
+    {
+      "public_coefficients": [
+        0,
+        0,
+        2
+      ],
+      "success": {
+        "numerator": 5,
+        "denominator": 12
+      }
+    },
+    {
+      "public_coefficients": [
+        0,
+        1,
+        0
+      ],
+      "success": {
+        "numerator": 7,
+        "denominator": 12
+      }
+    },
+    {
+      "public_coefficients": [
+        0,
+        1,
+        1
+      ],
+      "success": {
+        "numerator": 5,
+        "denominator": 12
+      }
+    },
+    {
+      "public_coefficients": [
+        0,
+        1,
+        2
+      ],
+      "success": {
+        "numerator": 1,
+        "denominator": 3
+      }
+    },
+    {
+      "public_coefficients": [
+        0,
+        2,
+        0
+      ],
+      "success": {
+        "numerator": 7,
+        "denominator": 12
+      }
+    },
+    {
+      "public_coefficients": [
+        0,
+        2,
+        1
+      ],
+      "success": {
+        "numerator": 1,
+        "denominator": 3
+      }
+    },
+    {
+      "public_coefficients": [
+        0,
+        2,
+        2
+      ],
+      "success": {
+        "numerator": 5,
+        "denominator": 12
+      }
+    },
+    {
+      "public_coefficients": [
+        1,
+        0,
+        0
+      ],
+      "success": {
+        "numerator": 5,
+        "denominator": 12
+      }
+    },
+    {
+      "public_coefficients": [
+        1,
+        0,
+        1
+      ],
+      "success": {
+        "numerator": 5,
+        "denominator": 12
+      }
+    },
+    {
+      "public_coefficients": [
+        1,
+        0,
+        2
+      ],
+      "success": {
+        "numerator": 1,
+        "denominator": 4
+      }
+    },
+    {
+      "public_coefficients": [
+        1,
+        1,
+        0
+      ],
+      "success": {
+        "numerator": 5,
+        "denominator": 12
+      }
+    },
+    {
+      "public_coefficients": [
+        1,
+        1,
+        1
+      ],
+      "success": {
+        "numerator": 1,
+        "denominator": 3
+      }
+    },
+    {
+      "public_coefficients": [
+        1,
+        1,
+        2
+      ],
+      "success": {
+        "numerator": 1,
+        "denominator": 3
+      }
+    },
+    {
+      "public_coefficients": [
+        1,
+        2,
+        0
+      ],
+      "success": {
+        "numerator": 1,
+        "denominator": 3
+      }
+    },
+    {
+      "public_coefficients": [
+        1,
+        2,
+        1
+      ],
+      "success": {
+        "numerator": 5,
+        "denominator": 12
+      }
+    },
+    {
+      "public_coefficients": [
+        1,
+        2,
+        2
+      ],
+      "success": {
+        "numerator": 1,
+        "denominator": 3
+      }
+    },
+    {
+      "public_coefficients": [
+        2,
+        0,
+        0
+      ],
+      "success": {
+        "numerator": 5,
+        "denominator": 12
+      }
+    },
+    {
+      "public_coefficients": [
+        2,
+        0,
+        1
+      ],
+      "success": {
+        "numerator": 1,
+        "denominator": 4
+      }
+    },
+    {
+      "public_coefficients": [
+        2,
+        0,
+        2
+      ],
+      "success": {
+        "numerator": 5,
+        "denominator": 12
+      }
+    },
+    {
+      "public_coefficients": [
+        2,
+        1,
+        0
+      ],
+      "success": {
+        "numerator": 1,
+        "denominator": 3
+      }
+    },
+    {
+      "public_coefficients": [
+        2,
+        1,
+        1
+      ],
+      "success": {
+        "numerator": 1,
+        "denominator": 3
+      }
+    },
+    {
+      "public_coefficients": [
+        2,
+        1,
+        2
+      ],
+      "success": {
+        "numerator": 5,
+        "denominator": 12
+      }
+    },
+    {
+      "public_coefficients": [
+        2,
+        2,
+        0
+      ],
+      "success": {
+        "numerator": 5,
+        "denominator": 12
+      }
+    },
+    {
+      "public_coefficients": [
+        2,
+        2,
+        1
+      ],
+      "success": {
+        "numerator": 1,
+        "denominator": 3
+      }
+    },
+    {
+      "public_coefficients": [
+        2,
+        2,
+        2
+      ],
+      "success": {
+        "numerator": 1,
+        "denominator": 3
+      }
+    }
+  ],
+  "random_full_syndrome_quadratic_source_bounds": [
+    {
+      "dimension": 16,
+      "columns": 32,
+      "syndrome_rank": 16,
+      "paid_program_draw_times_repetition_budget": 1,
+      "conditional_full_row_rank_source_success_upper": {
+        "numerator": 17265962626,
+        "denominator": 1853020188851841
+      },
+      "unconditional_IID_source_success_upper_including_arbitrary_rank_failure_fallback": {
+        "numerator": 2884834891,
+        "denominator": 617673396283947
+      },
+      "unconditional_success_at_most_two_to_minus": 17,
+      "rank_failure_upper": {
+        "numerator": 21523360,
+        "denominator": 1853020188851841
+      },
+      "uniform_Q_coefficients_chosen_after_public_R_and_H": true,
+      "arbitrary_optimized_or_structured_Q_covered": false,
+      "coherent_repetitions_or_amplitude_amplification_covered": false,
+      "large_quantum_circuit_executed": false,
+      "classical_hardness_or_general_quantum_no_go": false
+    },
+    {
+      "dimension": 16,
+      "columns": 32,
+      "syndrome_rank": 16,
+      "paid_program_draw_times_repetition_budget": 256,
+      "conditional_full_row_rank_source_success_upper": {
+        "numerator": 4420086432256,
+        "denominator": 1853020188851841
+      },
+      "unconditional_IID_source_success_upper_including_arbitrary_rank_failure_fallback": {
+        "numerator": 245562748832,
+        "denominator": 205891132094649
+      },
+      "unconditional_success_at_most_two_to_minus": 9,
+      "rank_failure_upper": {
+        "numerator": 21523360,
+        "denominator": 1853020188851841
+      },
+      "uniform_Q_coefficients_chosen_after_public_R_and_H": true,
+      "arbitrary_optimized_or_structured_Q_covered": false,
+      "coherent_repetitions_or_amplitude_amplification_covered": false,
+      "large_quantum_circuit_executed": false,
+      "classical_hardness_or_general_quantum_no_go": false
+    },
+    {
+      "dimension": 16,
+      "columns": 64,
+      "syndrome_rank": 48,
+      "paid_program_draw_times_repetition_budget": 1,
+      "conditional_full_row_rank_source_success_upper": {
+        "numerator": 159606673130039857933186,
+        "denominator": 3433683820292512484657849089281
+      },
+      "unconditional_IID_source_success_upper_including_arbitrary_rank_failure_fallback": {
+        "numerator": 8867037396113327832217,
+        "denominator": 381520424476945831628649898809
+      },
+      "unconditional_success_at_most_two_to_minus": 25,
+      "rank_failure_upper": {
+        "numerator": 21523360,
+        "denominator": 3433683820292512484657849089281
+      },
+      "uniform_Q_coefficients_chosen_after_public_R_and_H": true,
+      "arbitrary_optimized_or_structured_Q_covered": false,
+      "coherent_repetitions_or_amplitude_amplification_covered": false,
+      "large_quantum_circuit_executed": false,
+      "classical_hardness_or_general_quantum_no_go": false
+    },
+    {
+      "dimension": 16,
+      "columns": 64,
+      "syndrome_rank": 48,
+      "paid_program_draw_times_repetition_budget": 256,
+      "conditional_full_row_rank_source_success_upper": {
+        "numerator": 40859308321290203630895616,
+        "denominator": 3433683820292512484657849089281
+      },
+      "unconditional_IID_source_success_upper_including_arbitrary_rank_failure_fallback": {
+        "numerator": 6809884720215033945657056,
+        "denominator": 1144561273430837494885949696427
+      },
+      "unconditional_success_at_most_two_to_minus": 17,
+      "rank_failure_upper": {
+        "numerator": 21523360,
+        "denominator": 3433683820292512484657849089281
+      },
+      "uniform_Q_coefficients_chosen_after_public_R_and_H": true,
+      "arbitrary_optimized_or_structured_Q_covered": false,
+      "coherent_repetitions_or_amplitude_amplification_covered": false,
+      "large_quantum_circuit_executed": false,
+      "classical_hardness_or_general_quantum_no_go": false
+    },
+    {
+      "dimension": 32,
+      "columns": 64,
+      "syndrome_rank": 32,
+      "paid_program_draw_times_repetition_budget": 1,
+      "conditional_full_row_rank_source_success_upper": {
+        "numerator": 73790682335215910146,
+        "denominator": 3433683820292512484657849089281
+      },
+      "unconditional_IID_source_success_upper_including_arbitrary_rank_failure_fallback": {
+        "numerator": 4099585297522486777,
+        "denominator": 381520424476945831628649898809
+      },
+      "unconditional_success_at_most_two_to_minus": 36,
+      "rank_failure_upper": {
+        "numerator": 926510094425920,
+        "denominator": 3433683820292512484657849089281
+      },
+      "uniform_Q_coefficients_chosen_after_public_R_and_H": true,
+      "arbitrary_optimized_or_structured_Q_covered": false,
+      "coherent_repetitions_or_amplitude_amplification_covered": false,
+      "large_quantum_circuit_executed": false,
+      "classical_hardness_or_general_quantum_no_go": false
+    },
+    {
+      "dimension": 32,
+      "columns": 64,
+      "syndrome_rank": 32,
+      "paid_program_draw_times_repetition_budget": 1024,
+      "conditional_full_row_rank_source_success_upper": {
+        "numerator": 75561658711261091989504,
+        "denominator": 3433683820292512484657849089281
+      },
+      "unconditional_IID_source_success_upper_including_arbitrary_rank_failure_fallback": {
+        "numerator": 12593610094046880140224,
+        "denominator": 1144561273430837494885949696427
+      },
+      "unconditional_success_at_most_two_to_minus": 26,
+      "rank_failure_upper": {
+        "numerator": 926510094425920,
+        "denominator": 3433683820292512484657849089281
+      },
+      "uniform_Q_coefficients_chosen_after_public_R_and_H": true,
+      "arbitrary_optimized_or_structured_Q_covered": false,
+      "coherent_repetitions_or_amplitude_amplification_covered": false,
+      "large_quantum_circuit_executed": false,
+      "classical_hardness_or_general_quantum_no_go": false
+    },
+    {
+      "dimension": 32,
+      "columns": 128,
+      "syndrome_rank": 96,
+      "paid_program_draw_times_repetition_budget": 1,
+      "conditional_full_row_rank_source_success_upper": {
+        "numerator": 12725372243401352400703511378575498188853278466,
+        "denominator": 11790184577738583171520872861412518665678211592275841109096961
+      },
+      "unconditional_IID_source_success_upper_including_arbitrary_rank_failure_fallback": {
+        "numerator": 2120895373900225400117251896429558534840355051,
+        "denominator": 3930061525912861057173624287137506221892737197425280369698987
+      },
+      "unconditional_success_at_most_two_to_minus": 50,
+      "rank_failure_upper": {
+        "numerator": 926510094425920,
+        "denominator": 11790184577738583171520872861412518665678211592275841109096961
+      },
+      "uniform_Q_coefficients_chosen_after_public_R_and_H": true,
+      "arbitrary_optimized_or_structured_Q_covered": false,
+      "coherent_repetitions_or_amplitude_amplification_covered": false,
+      "large_quantum_circuit_executed": false,
+      "classical_hardness_or_general_quantum_no_go": false
+    },
+    {
+      "dimension": 32,
+      "columns": 128,
+      "syndrome_rank": 96,
+      "paid_program_draw_times_repetition_budget": 1024,
+      "conditional_full_row_rank_source_success_upper": {
+        "numerator": 13030781177242984858320395651661310145385757149184,
+        "denominator": 11790184577738583171520872861412518665678211592275841109096961
+      },
+      "unconditional_IID_source_success_upper_including_arbitrary_rank_failure_fallback": {
+        "numerator": 2171796862873830809720065941943551999734324333504,
+        "denominator": 3930061525912861057173624287137506221892737197425280369698987
+      },
+      "unconditional_success_at_most_two_to_minus": 40,
+      "rank_failure_upper": {
+        "numerator": 926510094425920,
+        "denominator": 11790184577738583171520872861412518665678211592275841109096961
+      },
+      "uniform_Q_coefficients_chosen_after_public_R_and_H": true,
+      "arbitrary_optimized_or_structured_Q_covered": false,
+      "coherent_repetitions_or_amplitude_amplification_covered": false,
+      "large_quantum_circuit_executed": false,
+      "classical_hardness_or_general_quantum_no_go": false
+    },
+    {
+      "dimension": 64,
+      "columns": 128,
+      "syndrome_rank": 64,
+      "paid_program_draw_times_repetition_budget": 1,
+      "conditional_full_row_rank_source_success_upper": {
+        "numerator": 1361129474551121494438523399042771024386,
+        "denominator": 11790184577738583171520872861412518665678211592275841109096961
+      },
+      "unconditional_IID_source_success_upper_including_arbitrary_rank_failure_fallback": {
+        "numerator": 226854912997467552455172647283436685611,
+        "denominator": 3930061525912861057173624287137506221892737197425280369698987
+      },
+      "unconditional_success_at_most_two_to_minus": 73,
+      "rank_failure_upper": {
+        "numerator": 1716841910146256242328924544640,
+        "denominator": 11790184577738583171520872861412518665678211592275841109096961
+      },
+      "uniform_Q_coefficients_chosen_after_public_R_and_H": true,
+      "arbitrary_optimized_or_structured_Q_covered": false,
+      "coherent_repetitions_or_amplitude_amplification_covered": false,
+      "large_quantum_circuit_executed": false,
+      "classical_hardness_or_general_quantum_no_go": false
+    },
+    {
+      "dimension": 64,
+      "columns": 128,
+      "syndrome_rank": 64,
+      "paid_program_draw_times_repetition_budget": 4096,
+      "conditional_full_row_rank_source_success_upper": {
+        "numerator": 5575186327761393641220191842479190115885056,
+        "denominator": 11790184577738583171520872861412518665678211592275841109096961
+      },
+      "unconditional_IID_source_success_upper_including_arbitrary_rank_failure_fallback": {
+        "numerator": 929197721294137887506747392493974660829056,
+        "denominator": 3930061525912861057173624287137506221892737197425280369698987
+      },
+      "unconditional_success_at_most_two_to_minus": 61,
+      "rank_failure_upper": {
+        "numerator": 1716841910146256242328924544640,
+        "denominator": 11790184577738583171520872861412518665678211592275841109096961
+      },
+      "uniform_Q_coefficients_chosen_after_public_R_and_H": true,
+      "arbitrary_optimized_or_structured_Q_covered": false,
+      "coherent_repetitions_or_amplitude_amplification_covered": false,
+      "large_quantum_circuit_executed": false,
+      "classical_hardness_or_general_quantum_no_go": false
+    },
+    {
+      "dimension": 64,
+      "columns": 256,
+      "syndrome_rank": 192,
+      "paid_program_draw_times_repetition_budget": 1,
+      "conditional_full_row_rank_source_success_upper": {
+        "numerator": 80967532045687025990725893643925003788355048515812024564338894764387689883773673168868109826,
+        "denominator": 139008452377144732764939786789661303114218850808529137991604824430036072629766435941001769154109609521811665540548899435521
+      },
+      "unconditional_IID_source_success_upper_including_arbitrary_rank_failure_fallback": {
+        "numerator": 4498196224760390332818105202440277988241947139767334698018827677670639454238119879262066617,
+        "denominator": 15445383597460525862771087421073478123802094534281015332400536047781785847751826215666863239345512169090185060060988826169
+      },
+      "unconditional_success_at_most_two_to_minus": 101,
+      "rank_failure_upper": {
+        "numerator": 1716841910146256242328924544640,
+        "denominator": 139008452377144732764939786789661303114218850808529137991604824430036072629766435941001769154109609521811665540548899435521
+      },
+      "uniform_Q_coefficients_chosen_after_public_R_and_H": true,
+      "arbitrary_optimized_or_structured_Q_covered": false,
+      "coherent_repetitions_or_amplitude_amplification_covered": false,
+      "large_quantum_circuit_executed": false,
+      "classical_hardness_or_general_quantum_no_go": false
+    },
+    {
+      "dimension": 64,
+      "columns": 256,
+      "syndrome_rank": 192,
+      "paid_program_draw_times_repetition_budget": 4096,
+      "conditional_full_row_rank_source_success_upper": {
+        "numerator": 331643011259134058458013260365516815517102278720766052615532112954931977763936965299683777847296,
+        "denominator": 139008452377144732764939786789661303114218850808529137991604824430036072629766435941001769154109609521811665540548899435521
+      },
+      "unconditional_IID_source_success_upper_including_arbitrary_rank_failure_fallback": {
+        "numerator": 2047179081846506533691439878799486515537668387165222547009457487397318898668083196199639672448,
+        "denominator": 1716153733051169540307898602341497569311343837142335036933392894197976205305758468407429248816168018787798340006776536241
+      },
+      "unconditional_success_at_most_two_to_minus": 89,
+      "rank_failure_upper": {
+        "numerator": 1716841910146256242328924544640,
+        "denominator": 139008452377144732764939786789661303114218850808529137991604824430036072629766435941001769154109609521811665540548899435521
+      },
+      "uniform_Q_coefficients_chosen_after_public_R_and_H": true,
+      "arbitrary_optimized_or_structured_Q_covered": false,
+      "coherent_repetitions_or_amplitude_amplification_covered": false,
+      "large_quantum_circuit_executed": false,
+      "classical_hardness_or_general_quantum_no_go": false
+    },
+    {
+      "dimension": 128,
+      "columns": 256,
+      "syndrome_rank": 128,
+      "paid_program_draw_times_repetition_budget": 1,
+      "conditional_full_row_rank_source_success_upper": {
+        "numerator": 463168356949264805274653095511917974454825661487599587514253520583334736753666,
+        "denominator": 139008452377144732764939786789661303114218850808529137991604824430036072629766435941001769154109609521811665540548899435521
+      },
+      "unconditional_IID_source_success_upper_including_arbitrary_rank_failure_fallback": {
+        "numerator": 25731575386070267614713204069472285887538806827784347399581395158843102547257,
+        "denominator": 15445383597460525862771087421073478123802094534281015332400536047781785847751826215666863239345512169090185060060988826169
+      },
+      "unconditional_success_at_most_two_to_minus": 148,
+      "rank_failure_upper": {
+        "numerator": 5895092288869291585760436430706259332839105796137920554548480,
+        "denominator": 139008452377144732764939786789661303114218850808529137991604824430036072629766435941001769154109609521811665540548899435521
+      },
+      "uniform_Q_coefficients_chosen_after_public_R_and_H": true,
+      "arbitrary_optimized_or_structured_Q_covered": false,
+      "coherent_repetitions_or_amplitude_amplification_covered": false,
+      "large_quantum_circuit_executed": false,
+      "classical_hardness_or_general_quantum_no_go": false
+    },
+    {
+      "dimension": 128,
+      "columns": 256,
+      "syndrome_rank": 128,
+      "paid_program_draw_times_repetition_budget": 16384,
+      "conditional_full_row_rank_source_success_upper": {
+        "numerator": 7588550360256754569619916316867264093467863637812831641833529681237356326972063744,
+        "denominator": 139008452377144732764939786789661303114218850808529137991604824430036072629766435941001769154109609521811665540548899435521
+      },
+      "unconditional_IID_source_success_upper_including_arbitrary_rank_failure_fallback": {
+        "numerator": 1264758393376125761605284416907500446106564085112374026749867982138272028013526784,
+        "denominator": 46336150792381577588313262263220434371406283602843045997201608143345357543255478647000589718036536507270555180182966478507
+      },
+      "unconditional_success_at_most_two_to_minus": 134,
+      "rank_failure_upper": {
+        "numerator": 5895092288869291585760436430706259332839105796137920554548480,
+        "denominator": 139008452377144732764939786789661303114218850808529137991604824430036072629766435941001769154109609521811665540548899435521
+      },
+      "uniform_Q_coefficients_chosen_after_public_R_and_H": true,
+      "arbitrary_optimized_or_structured_Q_covered": false,
+      "coherent_repetitions_or_amplitude_amplification_covered": false,
+      "large_quantum_circuit_executed": false,
+      "classical_hardness_or_general_quantum_no_go": false
+    },
+    {
+      "dimension": 128,
+      "columns": 512,
+      "syndrome_rank": 384,
+      "paid_program_draw_times_repetition_budget": 1,
+      "conditional_full_row_rank_source_success_upper": {
+        "numerator": 3277870622784640238333798831139269379002019812821927147889420349898388541094913490924687437105169061021664135914413709803701554859114937858104246614162410531575931381651231537937439746,
+        "denominator": 19323349832288915105454068722019581055401465761603328550184537628902466746415537000017939429786029354390082329294586119505153509101332940884098040478728639542560550133727399482778062322407372338121043399668242276591791504658985882995272436541441
+      },
+      "unconditional_IID_source_success_upper_including_arbitrary_rank_failure_fallback": {
+        "numerator": 546311770464106706388966471856544896500336635470321191314903391649731423515818915154114572850861510170277355985735618300618890840615446073545961247837303841706934932207251229841089451,
+        "denominator": 6441116610762971701818022907339860351800488587201109516728179209634155582138512333339313143262009784796694109764862039835051169700444313628032680159576213180853516711242466494259354107469124112707014466556080758863930501552995294331757478847147
+      },
+      "unconditional_success_at_most_two_to_minus": 202,
+      "rank_failure_upper": {
+        "numerator": 5895092288869291585760436430706259332839105796137920554548480,
+        "denominator": 19323349832288915105454068722019581055401465761603328550184537628902466746415537000017939429786029354390082329294586119505153509101332940884098040478728639542560550133727399482778062322407372338121043399668242276591791504658985882995272436541441
+      },
+      "uniform_Q_coefficients_chosen_after_public_R_and_H": true,
+      "arbitrary_optimized_or_structured_Q_covered": false,
+      "coherent_repetitions_or_amplitude_amplification_covered": false,
+      "large_quantum_circuit_executed": false,
+      "classical_hardness_or_general_quantum_no_go": false
+    },
+    {
+      "dimension": 128,
+      "columns": 512,
+      "syndrome_rank": 384,
+      "paid_program_draw_times_repetition_budget": 16384,
+      "conditional_full_row_rank_source_success_upper": {
+        "numerator": 53704632283703545664860960049385789505569092613274454391020263012735197857299062635310078969531089895778945202821754221423846274811739141867179976526436934149340059756973777517567012798464,
+        "denominator": 19323349832288915105454068722019581055401465761603328550184537628902466746415537000017939429786029354390082329294586119505153509101332940884098040478728639542560550133727399482778062322407372338121043399668242276591791504658985882995272436541441
+      },
+      "unconditional_IID_source_success_upper_including_arbitrary_rank_failure_fallback": {
+        "numerator": 2983590682427974759158942224965877194753838478515247466167792389596399880961059035295004387196171660876608066823430790079102571477884651089209063780406099753436595857510298321856006771968,
+        "denominator": 2147038870254323900606007635779953450600162862400369838909393069878051860712837444446437714420669928265564703254954013278350389900148104542677560053192071060284505570414155498086451369156374704235671488852026919621310167184331764777252492949049
+      },
+      "unconditional_success_at_most_two_to_minus": 188,
+      "rank_failure_upper": {
+        "numerator": 5895092288869291585760436430706259332839105796137920554548480,
+        "denominator": 19323349832288915105454068722019581055401465761603328550184537628902466746415537000017939429786029354390082329294586119505153509101332940884098040478728639542560550133727399482778062322407372338121043399668242276591791504658985882995272436541441
+      },
+      "uniform_Q_coefficients_chosen_after_public_R_and_H": true,
+      "arbitrary_optimized_or_structured_Q_covered": false,
+      "coherent_repetitions_or_amplitude_amplification_covered": false,
+      "large_quantum_circuit_executed": false,
+      "classical_hardness_or_general_quantum_no_go": false
+    }
+  ],
+  "easy_control_has_deterministic_classical_signed_witness": [
+    1,
+    1,
+    1
+  ],
+  "quadratic_policy_optimization_is_free_or_scalable": false,
+  "all_growing_rank_quadratic_filters_dequantized": false,
+  "published_nonlinear_quotient_decoder_dequantized": false,
+  "rank_or_nonstabilizer_input_alone_establishes_quantum_advantage": false,
+  "coherent_output_channel_simulated_by_classical_word_sampler": false,
+  "accepted_speedup_candidate": false,
+  "new_active_negative_result_created": false,
+  "novelty_claim": false,
+  "dependency_sha256": {
+    "theorems/ternary_syndrome_correction.py": "3311fd210f705568e8357ccfce1896656e765bb565d1419b7c53a37c475d0791",
+    "theorems/ternary_decoder_filter.py": "96f19af58fa8b9776ba7eac0807e3b30fa3cf06406e416be7789b1973bffec8a",
+    "theorems/ternary_quotient_decoder.py": "7cbec68cc281c1e7df32f790390792abd65a667841328616d36c1390f99bfa9e"
+  }
+}

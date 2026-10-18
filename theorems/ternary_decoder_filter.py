@@ -17,6 +17,7 @@ from fractions import Fraction
 from pathlib import Path
 
 import numpy as np
+from flint import nmod_mat
 
 from ternary_quotient_decoder import decode_ternary_binary_error, run_controls as decoder_controls
 
@@ -112,7 +113,69 @@ def signed_word_to_target_witness(labels, target, signs):
     return word
 
 
-def audit_filter(labels, degree=2, *, decoder_offset=None, decoder_mode="computed", include_table=False):
+def linear_erasure_right_inverse(labels):
+    """Public Gaussian elimination, not a binary-error decoder or hidden advice."""
+    A = tuple(tuple(row) for row in labels)
+    if (not A or not A[0] or any(len(row) != len(A[0]) for row in A)
+            or any(type(x) is not int or x not in (0,1,2) for row in A for x in row)):
+        raise ValueError("canonical nonempty rectangular F3 matrix required")
+    n,m = len(A),len(A[0])
+    augmented = [list(row)+[int(i == j) for j in range(n)] for i,row in enumerate(A)]
+    reduced,_ = nmod_mat(augmented,3).rref()
+    pivots = [next((j for j in range(m) if reduced[i,j]),None) for i in range(n)]
+    if any(j is None for j in pivots):
+        raise ValueError("full row rank required for linear erasure")
+    R = [[0]*n for _ in range(m)]
+    for i,pivot in enumerate(pivots):
+        R[pivot] = [int(reduced[i,m+j]) for j in range(n)]
+    return tuple(tuple(row) for row in R)
+
+
+def _linear_erasure_data(labels, right_inverse=None):
+    A = tuple(tuple(row) for row in labels)
+    default = linear_erasure_right_inverse(A)
+    R = default if right_inverse is None else tuple(tuple(row) for row in right_inverse)
+    n,m = len(A),len(A[0])
+    if (len(R) != m or any(len(row) != n for row in R)
+            or any(type(x) is not int or x not in (0,1,2) for row in R for x in row)
+            or any(sum(A[i][k]*R[k][j] for k in range(m)) % 3 != int(i == j)
+                   for i in range(n) for j in range(n))):
+        raise ValueError("canonical right inverse R with A R=I required")
+    return A,R
+
+
+def linear_erasure_classical_output(labels, signs, *, right_inverse=None):
+    """Exact efficient output sampler with IID random signs supplied as coins.
+
+    Quantum erasure d(b)=R^T b has the SAME word distribution as this public
+    projection (I-R A)e. No source-state, secret or density lookup is used.
+    A matrix-dependent R is allowed; finding it is still a charged computation.
+    """
+    A,R = _linear_erasure_data(labels,right_inverse)
+    signs = tuple(signs)
+    m = len(A[0])
+    if len(signs) != m or any(type(x) is not int or x not in (1,2) for x in signs):
+        raise ValueError("m explicit canonical independent sign coins required")
+    syndrome = tuple(sum(a*x for a,x in zip(row,signs)) % 3 for row in A)
+    return tuple((x-sum(a*y for a,y in zip(row,syndrome))) % 3 for x,row in zip(signs,R))
+
+
+def linear_erasure_reference(labels, *, right_inverse=None, cap=4096):
+    """Bounded distribution census; the actual sampler above is polynomial."""
+    A,R = _linear_erasure_data(labels,right_inverse)
+    m = len(A[0])
+    if type(cap) is not int or cap < 1 or 2**m > cap:
+        raise ValueError("UNKNOWN: sign-census verification cap, not a sampler lower bound")
+    counts = Counter(linear_erasure_classical_output(A,e,right_inverse=R)
+                     for e in itertools.product((1,2),repeat=m))
+    success = Fraction(sum(count for word,count in counts.items() if all(word)),2**m)
+    return {"right_inverse": R, "all_output_counts": counts,
+            "random_sign_words_charged_to_reference": 2**m,
+            "all_nonzero_success": success}
+
+
+def audit_filter(labels, degree=2, *, decoder_offset=None, decoder_mode="computed", include_table=False,
+                 linear_right_inverse=None, syndrome_correction=None):
     A = tuple(tuple(row) for row in labels)
     if not A or not A[0] or any(len(row) != len(A[0]) for row in A):
         raise ValueError("nonempty rectangular ternary label matrix required")
@@ -122,20 +185,47 @@ def audit_filter(labels, degree=2, *, decoder_offset=None, decoder_mode="compute
     offset = (0,)*n if decoder_offset is None else tuple(decoder_offset)
     if len(offset) != n or any(type(v) is not int or v not in (0,1,2) for v in offset):
         raise ValueError("canonical decoder corruption offset required")
-    if decoder_mode not in ("computed", "constant-zero"):
-        raise ValueError("computed or constant-zero calibration decoder required")
+    if decoder_mode not in ("computed", "constant-zero", "linear-right-inverse", "quadratic-syndrome"):
+        raise ValueError("explicit supported decoder mode required")
+    if decoder_mode == "quadratic-syndrome":
+        from ternary_syndrome_correction import SyndromeQuadratic
+        try:
+            # Rebuild from validated PUBLIC data; never invoke a supplied decoder
+            # callback or rely on Python import aliases as a mathematical gate.
+            syndrome_correction = SyndromeQuadratic(
+                syndrome_correction.labels,syndrome_correction.kernel_rows,
+                syndrome_correction.coefficients,syndrome_correction.right_inverse)
+        except (AttributeError,TypeError) as error:
+            raise ValueError("explicit public quadratic program data required") from error
+        if syndrome_correction.labels != A:
+            raise ValueError("typed public quadratic program bound to these exact labels required")
+    elif syndrome_correction is not None:
+        raise ValueError("syndrome correction is only legal in the explicit quadratic mode")
+    linear = None
+    if decoder_mode == "linear-right-inverse":
+        linear = linear_erasure_reference(A,right_inverse=linear_right_inverse)
+    elif linear_right_inverse is not None:
+        raise ValueError("right inverse is only legal in the explicit linear decoder mode")
     secrets = tuple(itertools.product(range(3), repeat=n))
     observations = tuple(itertools.product(range(3), repeat=m))
     signed = tuple(itertools.product((1,2), repeat=m))
     status_counts = Counter()
     decoded = []
     for b in observations:
-        record = decode_ternary_binary_error(A,tuple((v-1) % 3 for v in b),degree)
-        status_counts[record["status"]] += 1
-        # A failed decoder is extended to a total classical function, not accepted.
-        d = record["secret"] if record["secret"] is not None else (0,)*n
-        if decoder_mode == "constant-zero":
-            d = (0,)*n
+        if syndrome_correction is not None:
+            d = syndrome_correction.decode(b)
+            status_counts["PUBLIC_QUADRATIC_CORRECTION_NOT_CERTIFIED_DECODING"] += 1
+        elif linear is not None:
+            R = linear["right_inverse"]
+            d = tuple(sum(R[j][i]*b[j] for j in range(m)) % 3 for i in range(n))
+            status_counts["LINEAR_ERASURE_NOT_BINARY_ERROR_DECODING"] += 1
+        else:
+            record = decode_ternary_binary_error(A,tuple((v-1) % 3 for v in b),degree)
+            status_counts[record["status"]] += 1
+            # A failed decoder is extended to a total function, not accepted.
+            d = record["secret"] if record["secret"] is not None else (0,)*n
+            if decoder_mode == "constant-zero":
+                d = (0,)*n
         decoded.append(tuple((x+y) % 3 for x,y in zip(d,offset)))
     G,N = 3**n,2**m
     source = np.zeros((3**m,G), dtype=complex)
@@ -215,6 +305,27 @@ def audit_filter(labels, degree=2, *, decoder_offset=None, decoder_mode="compute
            "candidate_record_accepted": False, "speedup_claim_allowed": False, "novelty_claim": False}
     if include_table:
         row["decoder_basis_table"] = decoded
+    if syndrome_correction is not None:
+        row["quadratic_syndrome_program"] = syndrome_correction.public_record()
+        row["actual_quantum_word_probabilities"] = masses.tolist()
+    if linear is not None:
+        predicted = np.zeros_like(masses)
+        for word,count in linear["all_output_counts"].items():
+            predicted[_index(word)] = count/2**m
+        residual = float(np.max(abs(masses-predicted)))
+        if residual > 1e-12:
+            raise ArithmeticError("linear quantum erasure differs from the public classical sampler")
+        row["linear_erasure_classical_comparison"] = {
+            "right_inverse": linear["right_inverse"],
+            "exact_classical_signed_witness_success": exact(linear["all_nonzero_success"]),
+            "actual_full_output_distribution_max_error": residual,
+            "all_classical_output_probabilities": [exact(Fraction(int(count),2**m)) for count in
+                (linear["all_output_counts"].get(word,0) for word in observations)],
+            "actual_quantum_output_probabilities": masses.tolist(),
+            "secret_register_erasure_implies_signed_witness": False,
+            "classical_sampler_is_polynomial_even_when_success_is_exponential": True,
+            "output_distribution_including_failures_is_exactly_classically_reproducible": True,
+            "new_algorithmic_advantage": False}
     return row
 
 
@@ -232,6 +343,7 @@ def run_controls():
     vector = audit_filter(A,3,include_table=True)
     offset = audit_filter(((1,1,1,1),),decoder_offset=(1,),include_table=True)
     no_decoder = audit_filter(A,3,decoder_mode="constant-zero",include_table=True)
+    linear_decoder = audit_filter(A,3,decoder_mode="linear-right-inverse",include_table=True)
     assert abs(no_decoder["executed_valid_signed_zero_sum_probability"]-
                float(read(no_decoder["random_signed_guess_zero_sum_probability"]))) < 1e-12
     return {"status": "KNOWN_TERNARY_QUANTUM_REDUCTION_FINITE_AUDIT_REVIEW_PENDING",
@@ -248,6 +360,15 @@ def run_controls():
                 "all_source_instances_including_failures": complete},
             "fixed_two_dimensional_source": vector, "global_decoder_offset_control": offset,
             "no_decoder_control": no_decoder,
+            "linear_decoder_control": linear_decoder,
+            "linear_decoder_random_systematic_source_ledger": [
+                {"dimension": n, "columns": 4*n,
+                 "source": "A=[I_n|C], C IID uniform ternary; systematic right inverse",
+                 "expected_unconditional_signed_witness_success": exact(Fraction(2,3)**n),
+                 "large_quantum_state_executed": False,
+                 "all_adaptive_inverses_or_general_decoders_have_this_bound": False,
+                 "same_full_output_distribution_has_polynomial_classical_sampler": True}
+                for n in (16,32,64,128)],
             "claim_gate": {"actual_preparation_erasure_local_readout_and_witness_mapping_executed": True,
                            "published_asymptotic_algorithm_fully_implemented": False,
                            "scalable_quantum_circuit_compiled": False,

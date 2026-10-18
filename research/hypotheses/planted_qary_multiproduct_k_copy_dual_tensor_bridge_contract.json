@@ -1,0 +1,28 @@
+{
+  "contract_id": "planted-qary-multiproduct-k-copy-dual-tensor-bridge-contract",
+  "title": "Planted q-ary Multiproduct K-Copy Dual-Tensor Bridge: Primal-Difference Shift Cancellation, Constant-Sum Dual Fiber Spectral Decomposition, and K-Invariant Coset Purity",
+  "version": "1.0.0",
+  "scope": "planted_qary_k_copy_affine_coset_primal_difference_disentanglement_and_dual_fiber_spectral_invariance",
+  "theorems": [
+    {
+      "id": "T1",
+      "name": "Exact Two-Copy Disentanglement and Shift Cancellation into |psi_B>",
+      "statement": "For any dimension-d subspace B in F_q^n and shift a in F_q^n, the modular subtraction unitary U_sub|x_1, x_2> = |x_1, (x_2 - x_1) mod q> maps |psi_(B+a)> tensor |psi_(B+a)> to the exact product state |psi_(B+a)> tensor |psi_B>."
+    },
+    {
+      "id": "T2",
+      "name": "Orthonormal Constant-Sum Dual Fiber Decomposition of Shift-Averaged K-Copy State",
+      "statement": "Averaging the K-copy Fourier state QFT_q^(tensor nK) |psi_(B+a)>^(tensor K) over uniform a ~ Unif(F_q^n) diagonalizes the density operator into q^(n-d) orthonormal constant-sum fiber projectors |Phi_(B^perp)^(K)(s_perp)><Phi_(B^perp)^(K)(s_perp)| indexed by s_perp = u_1 + ... + u_K mod q in B^perp, each supported on q^((K-1)(n-d)) tuples."
+    },
+    {
+      "id": "T3",
+      "name": "Exact K-Invariance of Coset-Ensemble Rank, Spectrum, and Purity",
+      "statement": "For every copy count K >= 1, the shift-averaged K-copy state rho_bar_B^(K) = E_(a ~ F_q^n)[(|psi_(B+a)><psi_(B+a)|)^(tensor K)] has exact rank q^(n-d), non-zero eigenvalues all equal to q^(-(n-d)), and purity Tr((rho_bar_B^(K))^2) = q^(-(n-d)) independent of K."
+    }
+  ],
+  "guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  }
+}

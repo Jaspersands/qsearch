@@ -113,7 +113,7 @@ def test_raw_file_reintroduction_is_filtered_and_detected_by_validation(isolated
 
 def test_live_report_is_scoped_and_never_certifies_the_remaining_campaign():
     r = build_report()
-    assert len(r["quarantined_ids"]) == 3
+    assert len(r["quarantined_ids"]) == len(IDS) == 5
     assert len(r["stationary_small_gap_controls"]) == len(r["periodic_Trotter_controls"]) == 3
     assert len(r["positive_slow_chain_controls"]) == 3 and len(r["graph_input_controls"]) == 4
     assert not r["remaining_campaign_claims_verified"]

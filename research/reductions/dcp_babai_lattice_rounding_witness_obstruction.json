@@ -1,0 +1,495 @@
+{
+  "schema_version": "2.0",
+  "subsystem": "dcp_babai_lattice_rounding_witness_obstruction",
+  "contract_id": "dcp_coordinate_rounding_coverage_review_pending_v2",
+  "title": "Clean DCP Coordinate Rounding: Exact Coverage Identities and No-Overflow Countercontrols",
+  "family": "dcp_clean_decoder_falsification",
+  "note_path": "research/DCP_BABAI_LATTICE_ROUNDING_WITNESS_OBSTRUCTION.md",
+  "contract_path": "research/hypotheses/dcp_babai_lattice_rounding_witness_obstruction_contract.json",
+  "summary": {
+    "num_instances": 6,
+    "theorem1_coset_parallelepiped_identity_passed": true,
+    "theorem2_half_integer_dichotomy_passed": true,
+    "theorem3_babai_filter_swap_formula_passed": true,
+    "all_theorems_passed": true,
+    "universal_overflow_claim": "RETRACTED_BY_STRUCTURED_COUNTEREXAMPLE",
+    "general_decay_bound_proved": false,
+    "verification_scope": "finite_identity_controls_and_local_derivations_review_pending",
+    "min_verified_coverage_beta_float": 0.5,
+    "min_forward_swap_advantage_float": 0.046875
+  },
+  "instances": [
+    {
+      "instance_id": "n1_t2_K2_no_overflow_countercontrol",
+      "n": 1,
+      "t": 2,
+      "q": 4,
+      "K": 2,
+      "A": [
+        [
+          2,
+          1
+        ]
+      ],
+      "piv_cols": [
+        1
+      ],
+      "R_piv": [
+        [
+          1
+        ]
+      ],
+      "B_col": [
+        [
+          -2,
+          1
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "lattice_determinant": 4,
+      "total_targets": 4,
+      "coset_invariance_verified_targets": 4,
+      "valid_boolean_witness_targets": 4,
+      "parallelepiped_boolean_vertex_count": 4,
+      "box_overflow_target_count": 0,
+      "overflow_observed": false,
+      "half_integer_dichotomy_verified_targets": 4,
+      "max_residual_linf_exact": "1/2",
+      "verified_coverage_beta_babai_exact": "1",
+      "verified_coverage_beta_babai_float": 1.0,
+      "direct_filter_success_babai_exact": "1",
+      "paired_valid_targets_for_h": 4,
+      "swap_reciprocal_valid_pairs": 4,
+      "forward_swap_advantage_babai_exact": "1/2",
+      "forward_swap_advantage_babai_float": 0.5,
+      "theorem1_coset_parallelepiped_identity_passed": true,
+      "theorem2_half_integer_dichotomy_passed": true,
+      "theorem3_babai_filter_swap_formula_passed": true,
+      "instance_passed": true
+    },
+    {
+      "instance_id": "n1_t6_binary_weights_easy_countercontrol",
+      "n": 1,
+      "t": 6,
+      "q": 64,
+      "K": 6,
+      "A": [
+        [
+          1,
+          2,
+          4,
+          8,
+          16,
+          32
+        ]
+      ],
+      "piv_cols": [
+        0
+      ],
+      "R_piv": [
+        [
+          1
+        ]
+      ],
+      "B_col": [
+        [
+          0,
+          2,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          -2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          -2,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          -2,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          1,
+          -2
+        ],
+        [
+          2,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "lattice_determinant": 64,
+      "total_targets": 64,
+      "coset_invariance_verified_targets": 64,
+      "valid_boolean_witness_targets": 64,
+      "parallelepiped_boolean_vertex_count": 64,
+      "box_overflow_target_count": 0,
+      "overflow_observed": false,
+      "half_integer_dichotomy_verified_targets": 64,
+      "max_residual_linf_exact": "1/2",
+      "verified_coverage_beta_babai_exact": "1",
+      "verified_coverage_beta_babai_float": 1.0,
+      "direct_filter_success_babai_exact": "1",
+      "paired_valid_targets_for_h": 64,
+      "swap_reciprocal_valid_pairs": 64,
+      "forward_swap_advantage_babai_exact": "1/2",
+      "forward_swap_advantage_babai_float": 0.5,
+      "theorem1_coset_parallelepiped_identity_passed": true,
+      "theorem2_half_integer_dichotomy_passed": true,
+      "theorem3_babai_filter_swap_formula_passed": true,
+      "instance_passed": true
+    },
+    {
+      "instance_id": "n1_t3_K3_babai_lll_witness_audit",
+      "n": 1,
+      "t": 3,
+      "q": 8,
+      "K": 3,
+      "A": [
+        [
+          1,
+          3,
+          5
+        ]
+      ],
+      "piv_cols": [
+        0
+      ],
+      "R_piv": [
+        [
+          1
+        ]
+      ],
+      "B_col": [
+        [
+          0,
+          1,
+          -2
+        ],
+        [
+          -1,
+          -1,
+          -1
+        ],
+        [
+          -1,
+          2,
+          1
+        ]
+      ],
+      "lattice_determinant": 8,
+      "total_targets": 8,
+      "coset_invariance_verified_targets": 8,
+      "valid_boolean_witness_targets": 6,
+      "parallelepiped_boolean_vertex_count": 6,
+      "box_overflow_target_count": 2,
+      "overflow_observed": true,
+      "half_integer_dichotomy_verified_targets": 8,
+      "max_residual_linf_exact": "3/2",
+      "verified_coverage_beta_babai_exact": "3/4",
+      "verified_coverage_beta_babai_float": 0.75,
+      "direct_filter_success_babai_exact": "9/16",
+      "paired_valid_targets_for_h": 4,
+      "swap_reciprocal_valid_pairs": 4,
+      "forward_swap_advantage_babai_exact": "1/4",
+      "forward_swap_advantage_babai_float": 0.25,
+      "theorem1_coset_parallelepiped_identity_passed": true,
+      "theorem2_half_integer_dichotomy_passed": true,
+      "theorem3_babai_filter_swap_formula_passed": true,
+      "instance_passed": true
+    },
+    {
+      "instance_id": "n1_t4_K4_babai_lll_witness_audit",
+      "n": 1,
+      "t": 4,
+      "q": 16,
+      "K": 4,
+      "A": [
+        [
+          3,
+          5,
+          7,
+          11
+        ]
+      ],
+      "piv_cols": [
+        0
+      ],
+      "R_piv": [
+        [
+          11
+        ]
+      ],
+      "B_col": [
+        [
+          0,
+          1,
+          1,
+          2
+        ],
+        [
+          -1,
+          -1,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          -2,
+          0
+        ],
+        [
+          -1,
+          1,
+          1,
+          -1
+        ]
+      ],
+      "lattice_determinant": 16,
+      "total_targets": 16,
+      "coset_invariance_verified_targets": 16,
+      "valid_boolean_witness_targets": 11,
+      "parallelepiped_boolean_vertex_count": 11,
+      "box_overflow_target_count": 5,
+      "overflow_observed": true,
+      "half_integer_dichotomy_verified_targets": 16,
+      "max_residual_linf_exact": "3/2",
+      "verified_coverage_beta_babai_exact": "11/16",
+      "verified_coverage_beta_babai_float": 0.6875,
+      "direct_filter_success_babai_exact": "121/256",
+      "paired_valid_targets_for_h": 8,
+      "swap_reciprocal_valid_pairs": 8,
+      "forward_swap_advantage_babai_exact": "1/4",
+      "forward_swap_advantage_babai_float": 0.25,
+      "theorem1_coset_parallelepiped_identity_passed": true,
+      "theorem2_half_integer_dichotomy_passed": true,
+      "theorem3_babai_filter_swap_formula_passed": true,
+      "instance_passed": true
+    },
+    {
+      "instance_id": "n1_t5_K5_babai_lll_witness_audit",
+      "n": 1,
+      "t": 5,
+      "q": 32,
+      "K": 5,
+      "A": [
+        [
+          5,
+          9,
+          13,
+          19,
+          27
+        ]
+      ],
+      "piv_cols": [
+        0
+      ],
+      "R_piv": [
+        [
+          13
+        ]
+      ],
+      "B_col": [
+        [
+          1,
+          0,
+          -1,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          -1,
+          -2,
+          -1
+        ],
+        [
+          0,
+          -1,
+          0,
+          1,
+          -2
+        ],
+        [
+          0,
+          -1,
+          1,
+          0,
+          3
+        ],
+        [
+          1,
+          0,
+          1,
+          0,
+          -1
+        ]
+      ],
+      "lattice_determinant": 32,
+      "total_targets": 32,
+      "coset_invariance_verified_targets": 32,
+      "valid_boolean_witness_targets": 16,
+      "parallelepiped_boolean_vertex_count": 16,
+      "box_overflow_target_count": 16,
+      "overflow_observed": true,
+      "half_integer_dichotomy_verified_targets": 32,
+      "max_residual_linf_exact": "3/2",
+      "verified_coverage_beta_babai_exact": "1/2",
+      "verified_coverage_beta_babai_float": 0.5,
+      "direct_filter_success_babai_exact": "1/4",
+      "paired_valid_targets_for_h": 4,
+      "swap_reciprocal_valid_pairs": 4,
+      "forward_swap_advantage_babai_exact": "1/16",
+      "forward_swap_advantage_babai_float": 0.0625,
+      "theorem1_coset_parallelepiped_identity_passed": true,
+      "theorem2_half_integer_dichotomy_passed": true,
+      "theorem3_babai_filter_swap_formula_passed": true,
+      "instance_passed": true
+    },
+    {
+      "instance_id": "n2_t3_K6_babai_lll_witness_audit",
+      "n": 2,
+      "t": 3,
+      "q": 8,
+      "K": 6,
+      "A": [
+        [
+          1,
+          2,
+          3,
+          5,
+          6,
+          7
+        ],
+        [
+          2,
+          3,
+          5,
+          1,
+          7,
+          4
+        ]
+      ],
+      "piv_cols": [
+        0,
+        1
+      ],
+      "R_piv": [
+        [
+          5,
+          2
+        ],
+        [
+          2,
+          7
+        ]
+      ],
+      "B_col": [
+        [
+          0,
+          1,
+          0,
+          -2,
+          -1,
+          0
+        ],
+        [
+          -1,
+          1,
+          0,
+          0,
+          1,
+          -1
+        ],
+        [
+          0,
+          -1,
+          1,
+          -1,
+          1,
+          0
+        ],
+        [
+          -1,
+          0,
+          0,
+          1,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          -2,
+          -1
+        ],
+        [
+          1,
+          0,
+          1,
+          0,
+          0,
+          2
+        ]
+      ],
+      "lattice_determinant": 64,
+      "total_targets": 64,
+      "coset_invariance_verified_targets": 64,
+      "valid_boolean_witness_targets": 33,
+      "parallelepiped_boolean_vertex_count": 33,
+      "box_overflow_target_count": 31,
+      "overflow_observed": true,
+      "half_integer_dichotomy_verified_targets": 64,
+      "max_residual_linf_exact": "3/2",
+      "verified_coverage_beta_babai_exact": "33/64",
+      "verified_coverage_beta_babai_float": 0.515625,
+      "direct_filter_success_babai_exact": "1089/4096",
+      "paired_valid_targets_for_h": 6,
+      "swap_reciprocal_valid_pairs": 6,
+      "forward_swap_advantage_babai_exact": "3/64",
+      "forward_swap_advantage_babai_float": 0.046875,
+      "theorem1_coset_parallelepiped_identity_passed": true,
+      "theorem2_half_integer_dichotomy_passed": true,
+      "theorem3_babai_filter_swap_formula_passed": true,
+      "instance_passed": true
+    }
+  ],
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false,
+    "rounding_method": "basis_coordinate_rounding_not_nearest_plane",
+    "finite_calibration_not_a_uniform_source_scaling_theorem": true
+  },
+  "sha256": "b1342b92c3d5ec8068547fe58df86cee62e390657d25b10564105826045ff07a"
+}

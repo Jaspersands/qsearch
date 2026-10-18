@@ -1,0 +1,36 @@
+{
+  "all_checks_passed": true,
+  "carry_leakage_audit": {
+    "exact_product_and_tv_verified": true,
+    "m": 3,
+    "max_product_law_error": 1.1102230246251565e-16,
+    "max_single_outcome_probability": 0.36427669529663687,
+    "t": 3,
+    "tv_distance_from_zero_shift_closed_form": 0.9375,
+    "tv_distance_from_zero_shift_empirical": 0.9375,
+    "tv_formula_error": 0.0
+  },
+  "certificate_sha256_16": "270f69d2a2a5ebcb",
+  "half_period_constructive_control": {
+    "exact_product_and_tv_verified": true,
+    "m": 3,
+    "max_product_law_error": 2.220446049250313e-16,
+    "max_single_outcome_probability": 0.9999999999999998,
+    "t": 3,
+    "tv_distance_from_zero_shift_closed_form": 1.0,
+    "tv_distance_from_zero_shift_empirical": 0.9999999999999999,
+    "tv_formula_error": 1.1102230246251565e-16
+  },
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "schema_version": "dcp-coset-subspace-qft-concentration-and-leakage-bridge-v1",
+  "scope_constraints": {
+    "applies_to": "H^{tensor m} computational-basis readout on m-wire compressed DCP phase states",
+    "controls_included": "Includes both the half-period constructive concentration control (max outcome prob = 1.0 on z=(1,0,1)) and the non-half-period carry-leakage audit.",
+    "does_not_claim": "Anti-concentration when all wire phases lie in the half-period subgroup {0, pi}"
+  },
+  "theorem_id": "dcp_coset_subspace_qft_concentration_and_leakage_bridge"
+}

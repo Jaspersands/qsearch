@@ -166,7 +166,7 @@ def resource_estimate(source):
 
 
 @dataclass
-class CompiledSineSource:
+class CompiledSinePosition:
     source: SineWindowSource
     evaluator: QuantumCircuit
     input_register: QuantumRegister
@@ -176,9 +176,13 @@ class CompiledSineSource:
     padding: QuantumRegister
     position_wires: tuple
     coherent_parent: QuantumCircuit
+    resources: dict
+
+
+@dataclass
+class CompiledSineSource(CompiledSinePosition):
     qft_plan: object
     qft_ledger: object
-    resources: dict
 
     def readout_circuit(self,diagnostic=True):
         bits=ClassicalRegister(len(self.position_wires),"label")
@@ -207,14 +211,12 @@ class CompiledSineSource:
             "hardware_arithmetic_synthesis_or_roundoff_certified":False}
 
 
-def compile_source(source,qft_plan=None,policy=None):
+def compile_position_parent(source,policy=None):
+    """Public position/localization parent BEFORE choosing a Fourier group."""
     policy=CircuitResourcePolicy() if policy is None else policy
     if not isinstance(policy,CircuitResourcePolicy):raise ValueError("typed circuit policy required")
     E=resource_estimate(source);W=E["arithmetic_width_plan"]["shared_signed_word_bits"];ell=E["position_QFT_qubits"]
     policy.check(qubits=E["total_source_qubits"],adder_bits=W,constant_additions=E["constant_additions_including_uncompute"]+source.dimension)
-    if qft_plan is not None and (not isinstance(qft_plan,QFTPrecisionPlan) or qft_plan.wires!=ell):
-        raise ValueError("QFT plan must match complete cyclic position register")
-    if qft_plan is None and ell-1>1022:raise ValueError("UNKNOWN_NUMERIC_QFT_RANGE; provide a budgeted approximation")
     packet=compile_packet(source.packet_bits,policy)
     inputs=QuantumRegister(E["input_qubits"],"input")
     outputs=tuple(QuantumRegister(W,f"y_{i}") for i in range(source.dimension))
@@ -243,12 +245,27 @@ def compile_source(source,qft_plan=None,policy=None):
         parent.append(packet.circuit.to_gate(),[*register[:source.packet_bits],*packet_work])
     parent.compose(evaluator,inplace=True)
     wires=tuple(q for j in range(source.dimension) for q in (*inputs[1+j*m:1+(j+1)*m],padding[j]))
-    qft=QFTGate(ell) if qft_plan is None else compile_qft(qft_plan,policy).to_gate()
-    parent.append(qft,list(wires));policy.check(qubits=parent.num_qubits,QFT_instructions=ell+ell//2+(ell*(ell-1)//2 if qft_plan is None else qft_plan.controlled_phases))
     if parent.num_qubits!=E["total_source_qubits"]:raise ArithmeticError("source qubit count mismatch")
+    if len(parent.data)!=E["coherent_source_instructions_before_QFT"]:raise ArithmeticError("position parent instruction count mismatch")
+    return CompiledSinePosition(source,evaluator,inputs,outputs,(constant,point,carry),packet_work,padding,wires,parent,E)
+
+
+def compile_source(source,qft_plan=None,policy=None):
+    """Cyclic-group source; product-group readout is a separate instrument."""
+    policy=CircuitResourcePolicy() if policy is None else policy
+    ell=resource_estimate(source)["position_QFT_qubits"]
+    if qft_plan is not None and (not isinstance(qft_plan,QFTPrecisionPlan) or qft_plan.wires!=ell):
+        raise ValueError("QFT plan must match complete cyclic position register")
+    if qft_plan is None and ell-1>1022:raise ValueError("UNKNOWN_NUMERIC_QFT_RANGE; provide a budgeted approximation")
+    position=compile_position_parent(source,policy)
+    parent=position.coherent_parent
+    qft=QFTGate(ell) if qft_plan is None else compile_qft(qft_plan,policy).to_gate()
+    parent.append(qft,list(position.position_wires))
+    policy.check(qubits=parent.num_qubits,QFT_instructions=ell+ell//2+(ell*(ell-1)//2 if qft_plan is None else qft_plan.controlled_phases))
+    E=position.resources
     if len(parent.data)!=E["coherent_source_instructions_before_QFT"]+1:raise ArithmeticError("parent instruction count mismatch")
-    return CompiledSineSource(source,evaluator,inputs,outputs,(constant,point,carry),packet_work,padding,wires,parent,
-        qft_plan,None if qft_plan is None else QFTUsageLedger(qft_plan),E)
+    return CompiledSineSource(**vars(position),qft_plan=qft_plan,
+                             qft_ledger=None if qft_plan is None else QFTUsageLedger(qft_plan))
 
 
 def exact_reference(source,work_cap=2000000,qft_cutoff=None):
@@ -339,6 +356,8 @@ class SinePhaseBatch(SimulatedPhaseBatch):
 
 
 def simulate_batch(compiled,shots=8,seed=0,batch_tag=None):
+    if not isinstance(compiled,CompiledSineSource):
+        raise ValueError("cyclic sine compiler required; product-group output is a different source")
     integer(shots,"positive shots",1)
     if shots>64 or compiled.coherent_parent.num_qubits>48:raise ValueError("UNKNOWN_SINE_SIMULATOR_CAP")
     if compiled.qft_ledger is not None:compiled.qft_ledger.charge("forward",shots)

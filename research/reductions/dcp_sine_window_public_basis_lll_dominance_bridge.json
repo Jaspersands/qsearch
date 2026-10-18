@@ -1,0 +1,271 @@
+{
+  "schema_version": "1.0",
+  "subsystem": "dcp_sine_window_public_basis_lll_dominance_bridge",
+  "contract_id": "dcp_sine_window_public_basis_lll_dominance_bridge_v1",
+  "title": "Sine-Window Clean-Budget Source vs. Classical LLL Basis Reduction: Exact Gap Lower Bound, Outer-Trial Preparation Overhead, and Access-Model Dichotomy",
+  "family": "dcp_clean_decoder_falsification",
+  "note_path": "research/DCP_SINE_WINDOW_PUBLIC_BASIS_LLL_DOMINANCE_BRIDGE.md",
+  "contract_path": "research/hypotheses/dcp_sine_window_public_basis_lll_dominance_bridge_contract.json",
+  "summary": {
+    "num_instances": 4,
+    "theorem1_gap_lower_bound_passed": true,
+    "theorem2_outer_trial_overhead_passed": true,
+    "theorem3_public_lll_recovery_passed": true,
+    "all_theorems_passed": true,
+    "min_single_sweep_quantum_preparations": 20496,
+    "max_single_sweep_quantum_preparations": 46469808,
+    "classical_lll_quantum_preparations": 0
+  },
+  "instances": [
+    {
+      "instance_id": "diag_2d_native_lift_adv_p0",
+      "dimension": 2,
+      "basis": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          257
+        ]
+      ],
+      "norm_sq_interval": [
+        1,
+        2
+      ],
+      "predictor_family": "native_lift",
+      "cyclic_phase_bits_t": 40,
+      "parent_box_bits_m": 19,
+      "packet_side_bits_w": 10,
+      "packet_side_S": 1024,
+      "shared_signed_word_bits_W": 31,
+      "hypothetical_copies_per_invocation": 1600,
+      "assumed_clean_advantage_exact": "1/16",
+      "visibility_loss_budget_gamma_exact": "1/51200",
+      "gap_audit": {
+        "packet_side_sq_actual": 1048576,
+        "packet_side_sq_min_bound_exact": "49561600/49",
+        "required_unique_gap_G": 1450,
+        "required_gap_sq_actual": 2102500,
+        "strict_radius_sq_exact": "2097152",
+        "algebraic_gap_sq_lower_bound_exact": "99123200/49",
+        "lll_worst_case_gap_sq_threshold": 2,
+        "within_lll_guaranteed_uniqueness_window": true,
+        "theorem1_passed": true
+      },
+      "overhead_audit": {
+        "splitting_prime_p": 1451,
+        "outer_coordinate_residue_trials": 2900,
+        "single_sweep_quantum_preparations": 4640000,
+        "min_sweep_preparations_bound": 4640000,
+        "total_source_qubits_per_prep": 176,
+        "w_calls_per_prep": 6,
+        "theorem2_passed": true
+      },
+      "classical_lll_audit": {
+        "recovered_shortest_vector": [
+          1,
+          0
+        ],
+        "recovered_norm_squared": 1,
+        "in_public_lattice": true,
+        "is_primitive": true,
+        "quantum_preparations_used": 0,
+        "theorem3_passed": true
+      },
+      "instance_passed": true
+    },
+    {
+      "instance_id": "sheared_2d_native_lift_adv_p0",
+      "dimension": 2,
+      "basis": [
+        [
+          17,
+          0
+        ],
+        [
+          16,
+          1
+        ]
+      ],
+      "norm_sq_interval": [
+        1,
+        2
+      ],
+      "predictor_family": "native_lift",
+      "cyclic_phase_bits_t": 40,
+      "parent_box_bits_m": 19,
+      "packet_side_bits_w": 10,
+      "packet_side_S": 1024,
+      "shared_signed_word_bits_W": 35,
+      "hypothetical_copies_per_invocation": 1600,
+      "assumed_clean_advantage_exact": "1/16",
+      "visibility_loss_budget_gamma_exact": "1/51200",
+      "gap_audit": {
+        "packet_side_sq_actual": 1048576,
+        "packet_side_sq_min_bound_exact": "49561600/49",
+        "required_unique_gap_G": 1450,
+        "required_gap_sq_actual": 2102500,
+        "strict_radius_sq_exact": "2097152",
+        "algebraic_gap_sq_lower_bound_exact": "99123200/49",
+        "lll_worst_case_gap_sq_threshold": 2,
+        "within_lll_guaranteed_uniqueness_window": true,
+        "theorem1_passed": true
+      },
+      "overhead_audit": {
+        "splitting_prime_p": 1451,
+        "outer_coordinate_residue_trials": 2900,
+        "single_sweep_quantum_preparations": 4640000,
+        "min_sweep_preparations_bound": 4640000,
+        "total_source_qubits_per_prep": 192,
+        "w_calls_per_prep": 6,
+        "theorem2_passed": true
+      },
+      "classical_lll_audit": {
+        "recovered_shortest_vector": [
+          -1,
+          1
+        ],
+        "recovered_norm_squared": 2,
+        "in_public_lattice": true,
+        "is_primitive": true,
+        "quantum_preparations_used": 0,
+        "theorem3_passed": true
+      },
+      "instance_passed": true
+    },
+    {
+      "instance_id": "diag_2d_scalar_adv_p0",
+      "dimension": 2,
+      "basis": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          257
+        ]
+      ],
+      "norm_sq_interval": [
+        1,
+        2
+      ],
+      "predictor_family": "scalar",
+      "cyclic_phase_bits_t": 28,
+      "parent_box_bits_m": 13,
+      "packet_side_bits_w": 8,
+      "packet_side_S": 256,
+      "shared_signed_word_bits_W": 23,
+      "hypothetical_copies_per_invocation": 28,
+      "assumed_clean_advantage_exact": "1/16",
+      "visibility_loss_budget_gamma_exact": "1/896",
+      "gap_audit": {
+        "packet_side_sq_actual": 65536,
+        "packet_side_sq_min_bound_exact": "123904/7",
+        "required_unique_gap_G": 364,
+        "required_gap_sq_actual": 132496,
+        "strict_radius_sq_exact": "131072",
+        "algebraic_gap_sq_lower_bound_exact": "247808/7",
+        "lll_worst_case_gap_sq_threshold": 2,
+        "within_lll_guaranteed_uniqueness_window": true,
+        "theorem1_passed": true
+      },
+      "overhead_audit": {
+        "splitting_prime_p": 367,
+        "outer_coordinate_residue_trials": 732,
+        "single_sweep_quantum_preparations": 20496,
+        "min_sweep_preparations_bound": 20384,
+        "total_source_qubits_per_prep": 130,
+        "w_calls_per_prep": 6,
+        "theorem2_passed": true
+      },
+      "classical_lll_audit": {
+        "recovered_shortest_vector": [
+          1,
+          0
+        ],
+        "recovered_norm_squared": 1,
+        "in_public_lattice": true,
+        "is_primitive": true,
+        "quantum_preparations_used": 0,
+        "theorem3_passed": true
+      },
+      "instance_passed": true
+    },
+    {
+      "instance_id": "diag_3d_native_lift_adv_p0",
+      "dimension": 3,
+      "basis": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          257,
+          0
+        ],
+        [
+          0,
+          0,
+          65537
+        ]
+      ],
+      "norm_sq_interval": [
+        1,
+        2
+      ],
+      "predictor_family": "native_lift",
+      "cyclic_phase_bits_t": 66,
+      "parent_box_bits_m": 21,
+      "packet_side_bits_w": 11,
+      "packet_side_S": 2048,
+      "shared_signed_word_bits_W": 39,
+      "hypothetical_copies_per_invocation": 4356,
+      "assumed_clean_advantage_exact": "1/16",
+      "visibility_loss_budget_gamma_exact": "1/139392",
+      "gap_audit": {
+        "packet_side_sq_actual": 4194304,
+        "packet_side_sq_min_bound_exact": "134931456/49",
+        "required_unique_gap_G": 3549,
+        "required_gap_sq_actual": 12595401,
+        "strict_radius_sq_exact": "12582912",
+        "algebraic_gap_sq_lower_bound_exact": "404794368/49",
+        "lll_worst_case_gap_sq_threshold": 4,
+        "within_lll_guaranteed_uniqueness_window": true,
+        "theorem1_passed": true
+      },
+      "overhead_audit": {
+        "splitting_prime_p": 3557,
+        "outer_coordinate_residue_trials": 10668,
+        "single_sweep_quantum_preparations": 46469808,
+        "min_sweep_preparations_bound": 46378332,
+        "total_source_qubits_per_prep": 274,
+        "w_calls_per_prep": 9,
+        "theorem2_passed": true
+      },
+      "classical_lll_audit": {
+        "recovered_shortest_vector": [
+          1,
+          0,
+          0
+        ],
+        "recovered_norm_squared": 1,
+        "in_public_lattice": true,
+        "is_primitive": true,
+        "quantum_preparations_used": 0,
+        "theorem3_passed": true
+      },
+      "instance_passed": true
+    }
+  ],
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "sha256": "e37837fe75e2c4a2514f338ad16b8b05fd1aede16f385e728557581db37489f0"
+}

@@ -1,0 +1,45 @@
+{
+  "contract_id": "planted-qary-noisy-parity-check-likelihood-bridge-contract",
+  "title": "Planted q-ary Noisy Parity-Check Likelihood Bridge: Exact Weight-Power Fourier Damping, Off-Dual Noise Invariance, and Dual Minimum-Distance Scaling",
+  "version": "2.0.0",
+  "scope": "planted_qary_depolarizing_noise_parity_check_weight_power_damping_and_dual_distance_frontier",
+  "theorems": [
+    {
+      "id": "T1",
+      "name": "Exact Weight-Power Law for Classical Noisy Planted Subspace Characters",
+      "statement": "Under i.i.d. q-ary depolarizing noise of rate gamma in [0, 1] on a dimension-d subspace B in F_q^n, E_(b ~ B, e ~ D_gamma^n)[omega_q^(<u, b + e>)] equals (1 - gamma)^(wt_H(u)) for u in B^perp and 0 for u not in B^perp."
+    },
+    {
+      "id": "T2",
+      "name": "Off-Dual Noise Invariance and On-Dual Weight-Stratified Window Acceptance",
+      "statement": "For any window W in F_q of size R, p_W(u | B, gamma) = R/q for all u not in B^perp and all gamma in [0, 1], whereas for u in B^perp, p_W(u | B, gamma) = R/q + (1 - gamma)^(wt_H(u)) * (1_(0 in W) - R/q)."
+    },
+    {
+      "id": "T3",
+      "name": "Dual Minimum-Distance Bias Frontier",
+      "statement": "For any gamma in (0, 1), the distinguishing bias |p_W(u | B, gamma) - R/q| over non-zero probes u in F_q^n \\ {0} is maximized at minimum-weight dual checks wt_H(u) = d^perp(B) = min_(v in B^perp \\ {0}) wt_H(v), where it equals (1 - gamma)^(d^perp(B)) * |1_(0 in W) - R/q|."
+    }
+  ],
+  "implemented_field": "prime fields only; integer residues are not extension-field arithmetic",
+  "physical_source_laws": {
+    "coherent_random_translation": "E_e X^e |B><B| X^-e gives QFT probability 1/|B^perp| on B^perp and zero elsewhere, independently of the translation distribution",
+    "coherent_translation_and_phase_noise": "Adding independent Z^f phase noise with iid coordinate replacement rate gamma convolves the uniform dual distribution with the phase-error law",
+    "incoherent_classical_samples": "The diagonal density operator of ANY classical sample distribution gives a uniform QFT output on the entire ambient space",
+    "counterexample": "All three sources above have identical computational marginals for the controls. Classical sample characters alone do not specify a coherent source or its QFT probabilities."
+  },
+  "retracted_claim": "The v1 note incorrectly assigned the phase-noise convolution formula to a mixture of translated coherent coset states. Translation changes Fourier phases, not Fourier probabilities.",
+  "proof_obligations": [
+    "Specify the actual joint density operator, environment and available registers before using a Fourier-noise formula",
+    "Supply and cost a coherent unknown-subspace source; explicit generator matrices here are calibration inputs, not a hidden-subspace algorithm",
+    "Do not infer a quantum state preparation or its inverse from a classical noisy sampler",
+    "Prove any noise law for the actual reduction, including correlations; iid coordinate noise is only a conditional model here"
+  ],
+  "guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false,
+    "coherent_source_from_classical_samples_supplied": false,
+    "natural_problem_reduction_noise_certified": false,
+    "finite_checks_are_asymptotic_proof": false
+  }
+}

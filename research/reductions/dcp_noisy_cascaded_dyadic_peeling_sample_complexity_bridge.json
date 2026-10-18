@@ -1,0 +1,258 @@
+{
+  "all_checks_passed": true,
+  "certificate_sha256_16": "ed01cf43bbe698ba",
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "noiseless_t5_control": {
+    "all_singly_exponential_bounds_verified": true,
+    "cumulative_raw_qubits_per_unit_fisher_pruned": 31.0,
+    "cumulative_raw_qubits_per_unit_fisher_unpruned": 31.0,
+    "cumulative_savings_ratio_unpruned_over_pruned": 1.0,
+    "gamma_0": 1.0,
+    "levels": [
+      {
+        "bit_level_ell": 1,
+        "fisher_per_raw_qubit_pruned": 1.0,
+        "fisher_per_raw_qubit_unpruned": 1.0,
+        "lower_bound_holds": true,
+        "pruned_visibility": 1.0,
+        "raw_qubits_per_unit_fisher_pruned": 1.0,
+        "raw_qubits_per_unit_fisher_unpruned": 1.0,
+        "raw_wires_per_packet": 1,
+        "sample_savings_factor": 1.0,
+        "singly_exponential_visibility_lower_bound": 1.0,
+        "unpruned_visibility": 1.0
+      },
+      {
+        "bit_level_ell": 2,
+        "fisher_per_raw_qubit_pruned": 0.5,
+        "fisher_per_raw_qubit_unpruned": 0.5,
+        "lower_bound_holds": true,
+        "pruned_visibility": 1.0,
+        "raw_qubits_per_unit_fisher_pruned": 2.0,
+        "raw_qubits_per_unit_fisher_unpruned": 2.0,
+        "raw_wires_per_packet": 2,
+        "sample_savings_factor": 1.0,
+        "singly_exponential_visibility_lower_bound": 1.0,
+        "unpruned_visibility": 1.0
+      },
+      {
+        "bit_level_ell": 3,
+        "fisher_per_raw_qubit_pruned": 0.25,
+        "fisher_per_raw_qubit_unpruned": 0.25,
+        "lower_bound_holds": true,
+        "pruned_visibility": 1.0,
+        "raw_qubits_per_unit_fisher_pruned": 4.0,
+        "raw_qubits_per_unit_fisher_unpruned": 4.0,
+        "raw_wires_per_packet": 4,
+        "sample_savings_factor": 1.0,
+        "singly_exponential_visibility_lower_bound": 0.75,
+        "unpruned_visibility": 1.0
+      },
+      {
+        "bit_level_ell": 4,
+        "fisher_per_raw_qubit_pruned": 0.125,
+        "fisher_per_raw_qubit_unpruned": 0.125,
+        "lower_bound_holds": true,
+        "pruned_visibility": 1.0,
+        "raw_qubits_per_unit_fisher_pruned": 8.0,
+        "raw_qubits_per_unit_fisher_unpruned": 8.0,
+        "raw_wires_per_packet": 8,
+        "sample_savings_factor": 1.0,
+        "singly_exponential_visibility_lower_bound": 0.5625,
+        "unpruned_visibility": 1.0
+      },
+      {
+        "bit_level_ell": 5,
+        "fisher_per_raw_qubit_pruned": 0.0625,
+        "fisher_per_raw_qubit_unpruned": 0.0625,
+        "lower_bound_holds": true,
+        "pruned_visibility": 1.0,
+        "raw_qubits_per_unit_fisher_pruned": 16.0,
+        "raw_qubits_per_unit_fisher_unpruned": 16.0,
+        "raw_wires_per_packet": 16,
+        "sample_savings_factor": 1.0,
+        "singly_exponential_visibility_lower_bound": 0.421875,
+        "unpruned_visibility": 1.0
+      }
+    ],
+    "noiseless_baseline_raw_qubits": 31.0,
+    "t_bits": 5
+  },
+  "noisy_t5_gamma_0_85_audit": {
+    "all_singly_exponential_bounds_verified": true,
+    "cumulative_raw_qubits_per_unit_fisher_pruned": 86.39870380036203,
+    "cumulative_raw_qubits_per_unit_fisher_unpruned": 3029.7506709968065,
+    "cumulative_savings_ratio_unpruned_over_pruned": 35.06708477939123,
+    "gamma_0": 0.85,
+    "levels": [
+      {
+        "bit_level_ell": 1,
+        "fisher_per_raw_qubit_pruned": 0.7224999999999999,
+        "fisher_per_raw_qubit_unpruned": 0.7224999999999999,
+        "lower_bound_holds": true,
+        "pruned_visibility": 0.85,
+        "raw_qubits_per_unit_fisher_pruned": 1.384083044982699,
+        "raw_qubits_per_unit_fisher_unpruned": 1.384083044982699,
+        "raw_wires_per_packet": 1,
+        "sample_savings_factor": 1.0,
+        "singly_exponential_visibility_lower_bound": 0.85,
+        "unpruned_visibility": 0.85
+      },
+      {
+        "bit_level_ell": 2,
+        "fisher_per_raw_qubit_pruned": 0.26100312499999995,
+        "fisher_per_raw_qubit_unpruned": 0.26100312499999995,
+        "lower_bound_holds": true,
+        "pruned_visibility": 0.7224999999999999,
+        "raw_qubits_per_unit_fisher_pruned": 3.8313717508171607,
+        "raw_qubits_per_unit_fisher_unpruned": 3.8313717508171607,
+        "raw_wires_per_packet": 2,
+        "sample_savings_factor": 1.0,
+        "singly_exponential_visibility_lower_bound": 0.7224999999999999,
+        "unpruned_visibility": 0.7224999999999999
+      },
+      {
+        "bit_level_ell": 3,
+        "fisher_per_raw_qubit_pruned": 0.11302256044982906,
+        "fisher_per_raw_qubit_unpruned": 0.0681226312597656,
+        "lower_bound_holds": true,
+        "pruned_visibility": 0.6723765624999999,
+        "raw_qubits_per_unit_fisher_pruned": 8.84779106065202,
+        "raw_qubits_per_unit_fisher_unpruned": 14.679409492959753,
+        "raw_wires_per_packet": 4,
+        "sample_savings_factor": 1.6591044467858382,
+        "singly_exponential_visibility_lower_bound": 0.5418749999999999,
+        "unpruned_visibility": 0.5220062499999999
+      },
+      {
+        "bit_level_ell": 4,
+        "fisher_per_raw_qubit_pruned": 0.04763318015038218,
+        "fisher_per_raw_qubit_unpruned": 0.00928138577950799,
+        "lower_bound_holds": true,
+        "pruned_visibility": 0.617304982324829,
+        "raw_qubits_per_unit_fisher_pruned": 20.993769402817765,
+        "raw_qubits_per_unit_fisher_unpruned": 107.74253153099842,
+        "raw_wires_per_packet": 8,
+        "sample_savings_factor": 5.13211941427428,
+        "singly_exponential_visibility_lower_bound": 0.40640624999999997,
+        "unpruned_visibility": 0.27249052503906246
+      },
+      {
+        "bit_level_ell": 5,
+        "fisher_per_raw_qubit_pruned": 0.01947734927338101,
+        "fisher_per_raw_qubit_unpruned": 0.00034457648795221247,
+        "lower_bound_holds": true,
+        "pruned_visibility": 0.5582450970443862,
+        "raw_qubits_per_unit_fisher_pruned": 51.34168854109239,
+        "raw_qubits_per_unit_fisher_unpruned": 2902.1132751770483,
+        "raw_wires_per_packet": 16,
+        "sample_savings_factor": 56.525473891539065,
+        "singly_exponential_visibility_lower_bound": 0.30480468749999995,
+        "unpruned_visibility": 0.07425108623606391
+      }
+    ],
+    "noiseless_baseline_raw_qubits": 31.0,
+    "t_bits": 5
+  },
+  "noisy_t6_gamma_0_85_audit": {
+    "all_singly_exponential_bounds_verified": true,
+    "cumulative_raw_qubits_per_unit_fisher_pruned": 216.16096561601594,
+    "cumulative_raw_qubits_per_unit_fisher_unpruned": 1055812.433415853,
+    "cumulative_savings_ratio_unpruned_over_pruned": 4884.380629994859,
+    "gamma_0": 0.85,
+    "levels": [
+      {
+        "bit_level_ell": 1,
+        "fisher_per_raw_qubit_pruned": 0.7224999999999999,
+        "fisher_per_raw_qubit_unpruned": 0.7224999999999999,
+        "lower_bound_holds": true,
+        "pruned_visibility": 0.85,
+        "raw_qubits_per_unit_fisher_pruned": 1.384083044982699,
+        "raw_qubits_per_unit_fisher_unpruned": 1.384083044982699,
+        "raw_wires_per_packet": 1,
+        "sample_savings_factor": 1.0,
+        "singly_exponential_visibility_lower_bound": 0.85,
+        "unpruned_visibility": 0.85
+      },
+      {
+        "bit_level_ell": 2,
+        "fisher_per_raw_qubit_pruned": 0.26100312499999995,
+        "fisher_per_raw_qubit_unpruned": 0.26100312499999995,
+        "lower_bound_holds": true,
+        "pruned_visibility": 0.7224999999999999,
+        "raw_qubits_per_unit_fisher_pruned": 3.8313717508171607,
+        "raw_qubits_per_unit_fisher_unpruned": 3.8313717508171607,
+        "raw_wires_per_packet": 2,
+        "sample_savings_factor": 1.0,
+        "singly_exponential_visibility_lower_bound": 0.7224999999999999,
+        "unpruned_visibility": 0.7224999999999999
+      },
+      {
+        "bit_level_ell": 3,
+        "fisher_per_raw_qubit_pruned": 0.11302256044982906,
+        "fisher_per_raw_qubit_unpruned": 0.0681226312597656,
+        "lower_bound_holds": true,
+        "pruned_visibility": 0.6723765624999999,
+        "raw_qubits_per_unit_fisher_pruned": 8.84779106065202,
+        "raw_qubits_per_unit_fisher_unpruned": 14.679409492959753,
+        "raw_wires_per_packet": 4,
+        "sample_savings_factor": 1.6591044467858382,
+        "singly_exponential_visibility_lower_bound": 0.5418749999999999,
+        "unpruned_visibility": 0.5220062499999999
+      },
+      {
+        "bit_level_ell": 4,
+        "fisher_per_raw_qubit_pruned": 0.04763318015038218,
+        "fisher_per_raw_qubit_unpruned": 0.00928138577950799,
+        "lower_bound_holds": true,
+        "pruned_visibility": 0.617304982324829,
+        "raw_qubits_per_unit_fisher_pruned": 20.993769402817765,
+        "raw_qubits_per_unit_fisher_unpruned": 107.74253153099842,
+        "raw_wires_per_packet": 8,
+        "sample_savings_factor": 5.13211941427428,
+        "singly_exponential_visibility_lower_bound": 0.40640624999999997,
+        "unpruned_visibility": 0.27249052503906246
+      },
+      {
+        "bit_level_ell": 5,
+        "fisher_per_raw_qubit_pruned": 0.01947734927338101,
+        "fisher_per_raw_qubit_unpruned": 0.00034457648795221247,
+        "lower_bound_holds": true,
+        "pruned_visibility": 0.5582450970443862,
+        "raw_qubits_per_unit_fisher_pruned": 51.34168854109239,
+        "raw_qubits_per_unit_fisher_unpruned": 2902.1132751770483,
+        "raw_wires_per_packet": 16,
+        "sample_savings_factor": 56.525473891539065,
+        "singly_exponential_visibility_lower_bound": 0.30480468749999995,
+        "unpruned_visibility": 0.07425108623606391
+      },
+      {
+        "bit_level_ell": 6,
+        "fisher_per_raw_qubit_pruned": 0.00770640081336317,
+        "fisher_per_raw_qubit_unpruned": 9.498636483958501e-07,
+        "lower_bound_holds": true,
+        "pruned_visibility": 0.4965932198768137,
+        "raw_qubits_per_unit_fisher_pruned": 129.76226181565391,
+        "raw_qubits_per_unit_fisher_unpruned": 1052782.6827448562,
+        "raw_wires_per_packet": 32,
+        "sample_savings_factor": 8113.165322599621,
+        "singly_exponential_visibility_lower_bound": 0.22860351562499998,
+        "unpruned_visibility": 0.0055132238072354
+      }
+    ],
+    "noiseless_baseline_raw_qubits": 63.0,
+    "t_bits": 6
+  },
+  "proof_status": "LOCAL_DERIVATION_REVIEW_PENDING_NOT_FORMALLY_VERIFIED",
+  "schema_version": "dcp-noisy-cascaded-dyadic-peeling-sample-complexity-bridge-v1",
+  "scope_constraints": {
+    "applies_to": "Cumulative raw-qubit sample complexity of L-stage cascaded dyadic bit peeling under independent Z-dephasing",
+    "controls_included": "Includes noiseless gamma_0=1.0 control (exact 2^t - 1 = 31 raw qubits at t=5), noisy t=5 and t=6 budgets at gamma_0=0.85 showing transition from doubly-exponential gamma_0^{-2^ell} to singly-exponential O((32/9)^ell) overhead.",
+    "does_not_claim": "Polynomial raw-qubit scaling in growing dimension n (where Stage-1 pool size scales as (n+1)^{ell-1})"
+  },
+  "theorem_id": "dcp_noisy_cascaded_dyadic_peeling_sample_complexity_bridge"
+}

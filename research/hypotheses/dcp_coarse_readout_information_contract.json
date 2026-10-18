@@ -1,0 +1,38 @@
+{
+  "contract_id": "native_coarse_readout_information_review_pending_v1",
+  "status": "CONDITIONAL_LINEAR_INFORMATION_LOWER_BOUND_DECODER_OPEN",
+  "literature_links": [
+    "https://arxiv.org/abs/quant-ph/9807029",
+    "https://arxiv.org/abs/quant-ph/0302112"
+  ],
+  "source": "IID full labels over Z_(2^(n+8))^n, m=3n with mod2 or m=5n with mod4, original secret uniform over the full group",
+  "noise": "Secret-independent mixture of original Z errors with every marginal visibility >=1-1/n; correlations permitted, actual natural-source law not certified",
+  "positive_statement": "For n>=64, actual fixed-X readout after mod2 at width3n carries >=n/4 residual-secret bits except source probability <2^(-n^2-3n). Mod4 at width5n carries >=n/16 bits except probability <2^(-n^2). Syndrome may be retained or ignored. Parity affine compression preserves the readout information but not independent product phase noise.",
+  "proof_dependencies": [
+    "Full Boolean frequency injectivity implies a uniform average original density and exactly uniform raw X output",
+    "Dyadic phase grids retain nonnegative extra harmonics in even cosine moments",
+    "A positive finite binary-entropy series with rational inverse-ln2 lower constant bounds raw accessible information",
+    "Exact pinching as secret-coset twirl and classical information chain rule charge at most bn coset-label bits for b measured residue bits"
+  ],
+  "matched_baseline": "Original raw phase qubits with known S/H product twirl give the same discarded-syndrome z marginal, without a coherent syndrome register; not a classical simulator of unknown-secret data",
+  "falsifiers": [
+    "A full-frequency-injective actual source/readout violates the rational information lower bound",
+    "The reduction's noise depends on the secret or violates the required marginal visibility promise",
+    "A comparison changes the original/residual secret priors or conflates the full twirl and syndrome instruments",
+    "An asserted algorithm depends on uncharged exponential classical likelihood evaluation or on inverting mutual information into a recovery guarantee"
+  ],
+  "unresolved": [
+    "Efficient computational inference from the actual growing-modulus transcript",
+    "Worst-case or nonuniform/adaptive-prior recovery guarantees",
+    "Natural problem reduction and its actual source noise",
+    "Independent theorem review and novelty assessment"
+  ],
+  "guardrails": {
+    "accepted_speedup_candidate": false,
+    "novelty_claim": false,
+    "efficient_decoder_supplied": false,
+    "actual_natural_source_noise_certified": false,
+    "full_secret_negation_alias_removed": false,
+    "information_bound_is_sample_complexity_upper_bound": false
+  }
+}

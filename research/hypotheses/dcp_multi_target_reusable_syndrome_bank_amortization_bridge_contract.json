@@ -1,0 +1,14 @@
+{
+  "hypothesis_id": "dcp_multi_target_reusable_syndrome_bank_amortization_bridge",
+  "title": "DCP Mod-2 Bucket-Pairing Disjoint Kernel Capacity and Exact Binomial Expectation Bridge",
+  "status": "VERIFIED_SCOPED_BRIDGE",
+  "claims": [
+    "Within-bucket disjoint pairing on A^{(0)} = A mod 2 in F_2^{n x K} extracts m_{pair}(A) = k_{0^n} + sum_{c != 0} floor(k_c / 2) >= (K - (2^n - 1))/2 disjoint mod-2 kernel wires of weight <= 2.",
+    "Over uniform A^{(0)} in F_2^{n x K}, E[m_{pair}] = K/2 + K/2^{n+1} - ((2^n - 1)/4)*(1 - (1 - 2^{1-n})^K) holds identically for all n >= 1 and K >= 1."
+  ],
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  }
+}

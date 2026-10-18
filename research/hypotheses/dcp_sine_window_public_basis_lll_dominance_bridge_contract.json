@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.0",
+  "contract_id": "dcp_sine_window_public_basis_lll_dominance_bridge_v1",
+  "title": "Sine-Window Clean-Budget Source vs. Classical LLL Basis Reduction: Exact Gap Lower Bound, Outer-Trial Preparation Overhead, and Access-Model Dichotomy",
+  "family": "dcp_clean_decoder_falsification",
+  "status": "locked_before_theorems",
+  "theorems": [
+    {
+      "id": "T1_clean_budget_gap_lower_bound_and_lll_uniqueness_window",
+      "statement": "For any public basis B in Z^{d x d}, norm-squared interval [ell_lower^2, ell_upper^2], copy budget K(t), and advantage eps(t) with gamma(t) = eps(t)/(2 K(t)), the packet loss bound (242/49) ell_upper^2 / S^2 <= gamma(t)/2 forces S^2 >= (968/49) K(t) ell_upper^2 / eps(t) and G_req^2 > d S^2 / ell_lower^2 >= (968/49) d (K(t)/eps(t)) (ell_upper^2 / ell_lower^2). Whenever G_req > 2^{(d-1)/2}, classical LLL is guaranteed to recover the unique shortest vector in polynomial time with 0 quantum preparations."
+    },
+    {
+      "id": "T2_outer_trial_preparation_and_qubit_overhead",
+      "statement": "A single invocation of the hypothetical K(t)-copy predictor across all d(p-1) outer coordinate/residue trials requires N_prep^sweep = d(p-1) K(t) >= d G_req K(t) coherent sine-window parent preparations, each using Q_total = 1 + d m + d W + 2W + 1 + w + d qubits and 3d packet unitaries."
+    },
+    {
+      "id": "T3_public_basis_lll_recovery_across_calibration_families",
+      "statement": "Across all benchmark bases of the clean-first sine-window planner, public-basis FLINT LLL recovers the exact primitive shortest vector u with ||u||_2^2 in [ell_lower^2, ell_upper^2] using 0 quantum preparations."
+    }
+  ],
+  "test_instances": [
+    {
+      "instance_id": "diag_2d_native_lift_adv_p0",
+      "basis": [[1, 0], [0, 257]],
+      "norm_sq_lower": 1,
+      "norm_sq_upper": 2,
+      "copy_power": 2,
+      "advantage_power": 0,
+      "predictor_family": "native_lift"
+    },
+    {
+      "instance_id": "sheared_2d_native_lift_adv_p0",
+      "basis": [[17, 0], [16, 1]],
+      "norm_sq_lower": 1,
+      "norm_sq_upper": 2,
+      "copy_power": 2,
+      "advantage_power": 0,
+      "predictor_family": "native_lift"
+    },
+    {
+      "instance_id": "diag_2d_scalar_adv_p0",
+      "basis": [[1, 0], [0, 257]],
+      "norm_sq_lower": 1,
+      "norm_sq_upper": 2,
+      "copy_power": 1,
+      "advantage_power": 0,
+      "predictor_family": "scalar"
+    },
+    {
+      "instance_id": "diag_3d_native_lift_adv_p0",
+      "basis": [[1, 0, 0], [0, 257, 0], [0, 0, 65537]],
+      "norm_sq_lower": 1,
+      "norm_sq_upper": 2,
+      "copy_power": 2,
+      "advantage_power": 0,
+      "predictor_family": "native_lift"
+    }
+  ],
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  }
+}

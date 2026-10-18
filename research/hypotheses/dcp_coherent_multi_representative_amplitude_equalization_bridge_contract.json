@@ -1,0 +1,14 @@
+{
+  "hypothesis_id": "dcp_coherent_multi_representative_amplitude_equalization_bridge",
+  "title": "Coherent M-Representative Fiber Concentration and Monotone PGM Interpolation",
+  "status": "VERIFIED_FINITE_IDENTITIES_REVIEW_PENDING",
+  "claims": [
+    "Coherently concentrating m_y = min(M, N_A(y)) representatives per occupied subset-sum fiber into |0^K> transfers amplitude sqrt(m_y / 2^K) exp(2*pi*i <y, s>/q).",
+    "Inverse QFT measurement achieves exact success probability P_QFT^(M)(A) = (1 / (2^K * Q)) * (sum_{y in Z_q^n} sqrt(min(M, N_A(y))))^2, interpolating monotonically from single-rep erasure (M=1) to P_PGM(A) (M >= max_y N_A(y)).",
+    "On constant-multiplicity C surjective instances, P_QFT^(M)(A) = min(M, C) / C forms an exact linear staircase."
+  ],
+  "favorable_controls": [
+    "Multiplicity-4 surjective instance A=[[1,1,2,2]] mod 4 (staircase 0.25, 0.50, 0.75, 1.00 for M=1..4)",
+    "Variable-multiplicity instance A=[[1,1,2]] mod 8 (reaches P_PGM = 0.608915 at M=2)"
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "hypothesis_id": "coherent_bpqm_linear_erasure_cyclic_sampling",
+  "status": "KNOWN_COHERENT_STAGE_IMPLEMENTED_EXACT_CYCLIC_READOUT_FALSIFIED_NO_ADVANTAGE_PROMOTION",
+  "problem": "Explicit signed XOR Gibbs sampling, with code C=ker H and c=tanh(beta)",
+  "input_model": "Public binary checks, raw socket edge multiplicities when available, public signs and exact rational c; no PGM, partition or state-preparation oracle",
+  "mechanism": "Sequential actual tree-root projectors, retained coherent records, public GF2 left inverse for erased information, A/XOR-source-label/A-adjoint and sign/Fourier readout",
+  "expected_asymptotic_advantage": "Only conditional known polynomial Gibbs sampling via a uniform reliable quantum LDPC decoder; no new speedup or classical gap is established by this bounded implementation",
+  "resource_requirements": [
+    "M+2k+number_of_good_roots qubits including retained records",
+    "All root circuits, copying, adjoints and public linear recovery CNOTs",
+    "Uniform coherent reliability arithmetic and synthesis errors are NOT implemented by exponential herald tables",
+    "Actual random-ensemble topology and erasure rank, not a free minimum-distance promise"
+  ],
+  "literature_ids": ["arxiv:2609.05857", "arxiv:2609.40345v1", "arxiv:2109.08170"],
+  "established_locally_review_pending": [
+    "Good-coordinate restriction injectivity is exactly tested and a public left inverse or ambiguity codeword is returned",
+    "The full retained-record complex state matches an independent noncommuting projector-history formula",
+    "Cyclic erasure recovery does not make the small native Gibbs readout exact",
+    "A public low-weight codeword gives a genie-aided single-copy word-error floor, not a Gibbs sampling lower bound",
+    "Duplicate signed factors have an exact classical weighted-factor reduction without changing the Gibbs law"
+  ],
+  "falsifiers": [
+    "A nonzero kernel codeword supported on excluded coordinates disproves unique erasure recovery for that instance/policy",
+    "Unconditional Gibbs TV remains nonzero despite valid linear recovery; work cannot be reset or postselected away",
+    "Mean TV exceeds word error by over24 times in the c1/5 native control, rejecting a unit-constant delta TV budget but not proving an asymptotic exponent",
+    "Raw parallel edges must not be hidden by mod2 cancellation",
+    "The full-root policy is not the paper's extrinsic dv-1 policy and does not inherit its density evolution automatically",
+    "A word-error floor cannot be promoted to sampling hardness; the actual large witness is duplicate unary factors"
+  ],
+  "classical_baselines": [
+    "Independent exact integer factor Gibbs reference on every small sign case",
+    "Existing affine-cluster, tempering and Prange methods on the same public socket source",
+    "Exact duplicate/opposite/constant factor preprocessing on every unfiltered native source"
+  ],
+  "next_decisive_work": "Require a new normalized-coset mechanism or uniform phase-correct compiler with actual source/error costs; no seed/order/depth or controlled-table arms race",
+  "evidence": [
+    "theorems/coherent_bpqm_erasure.py",
+    "tests/test_coherent_bpqm_erasure_physics.py",
+    "research/phase_workbench/coherent_bpqm_erasure.json",
+    "research/COHERENT_BPQM_ERASURE.md"
+  ],
+  "uniform_reliability_register_compiler_implemented": false,
+  "large_quantum_circuit_executed": false,
+  "asymptotic_classical_separation_established": false,
+  "accepted_speedup_candidate": false,
+  "new_central_negative_registered": false,
+  "independent_or_formal_review_completed": false
+}

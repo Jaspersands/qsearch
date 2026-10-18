@@ -1,0 +1,12 @@
+{
+  "hypothesis_id": "dcp_composite_crt_coprime_modulus_tensor_factorization_bridge",
+  "title": "Composite CRT Coprime Modulus (q = 2^t * p) Bezout Phase Splitting and Factor Annihilation",
+  "status": "VERIFIED_FINITE_IDENTITIES_REVIEW_PENDING",
+  "claims": [
+    "Over a composite modulus q = 2^t * p (p odd prime), the CRT Bezout idempotents e_1 = p*(p^{-1} mod 2^t) and e_2 = 2^t*((2^t)^{-1} mod p) factorize exp(2*pi*i a s / q) into independent dyadic Z_{2^t} and odd-prime Z_p phases.",
+    "Witnesses satisfying A v == 0 (mod p) completely annihilate the Z_p secret component s_2 (zero cross-factor leakage), while witnesses satisfying A w == 0 (mod 2^t) completely annihilate the Z_{2^t} component s_1."
+  ],
+  "favorable_controls": [
+    "Composite moduli q = 12 (4x3), q = 24 (8x3), and q = 40 (8x5)"
+  ]
+}

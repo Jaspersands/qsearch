@@ -19226,6 +19226,438 @@ def command_native_higher_call_kronecker_moment_rank_bridge(args: argparse.Names
     return 0
 
 
+def command_planted_qary_second_moment_probe_variance_bridge(args: argparse.Namespace) -> int:
+    from theorems.planted_qary_second_moment_probe_variance_bridge import (
+        build_planted_qary_second_moment_probe_variance_bridge,
+        write_planted_qary_second_moment_probe_variance_bridge,
+    )
+
+    payload = (
+        build_planted_qary_second_moment_probe_variance_bridge()
+        if args.no_write
+        else write_planted_qary_second_moment_probe_variance_bridge()
+    )
+    print(json.dumps(payload, indent=2))
+    return 0
+
+
+def command_dcp_interleaved_tree_merge_syndrome_pruning_audit(args: argparse.Namespace) -> int:
+    from theorems.dcp_interleaved_tree_merge_syndrome_pruning_audit import (
+        build_dcp_interleaved_tree_merge_syndrome_pruning_audit,
+        write_dcp_interleaved_tree_merge_syndrome_pruning_audit,
+    )
+
+    payload = (
+        build_dcp_interleaved_tree_merge_syndrome_pruning_audit()
+        if args.no_write
+        else write_dcp_interleaved_tree_merge_syndrome_pruning_audit()
+    )
+    print(json.dumps(payload, indent=2))
+    return 0
+
+
+def command_native_higher_call_commutant_trace_orthogonality_audit(args: argparse.Namespace) -> int:
+    from theorems.native_higher_call_commutant_trace_orthogonality_audit import (
+        build_native_higher_call_commutant_trace_orthogonality_audit,
+        write_native_higher_call_commutant_trace_orthogonality_audit,
+    )
+
+    payload = (
+        build_native_higher_call_commutant_trace_orthogonality_audit()
+        if args.no_write
+        else write_native_higher_call_commutant_trace_orthogonality_audit()
+    )
+    print(json.dumps(payload, indent=2))
+    return 0
+
+
+def command_planted_qary_noisy_parity_check_likelihood_bridge(args: argparse.Namespace) -> int:
+    from theorems.planted_qary_noisy_parity_check_likelihood_bridge import (
+        build_planted_qary_noisy_parity_check_likelihood_bridge,
+        write_planted_qary_noisy_parity_check_likelihood_bridge,
+    )
+
+    payload = (
+        build_planted_qary_noisy_parity_check_likelihood_bridge()
+        if args.no_write
+        else write_planted_qary_noisy_parity_check_likelihood_bridge()
+    )
+    print(json.dumps(payload, indent=2))
+    return 0
+
+
+def command_dcp_multi_harmonic_weighted_fisher_decoder_audit(args: argparse.Namespace) -> int:
+    from theorems.dcp_multi_harmonic_weighted_fisher_decoder_audit import (
+        build_dcp_multi_harmonic_weighted_fisher_decoder_audit,
+        write_dcp_multi_harmonic_weighted_fisher_decoder_audit,
+    )
+
+    payload = (
+        build_dcp_multi_harmonic_weighted_fisher_decoder_audit()
+        if args.no_write
+        else write_dcp_multi_harmonic_weighted_fisher_decoder_audit()
+    )
+    print(json.dumps(payload, indent=2))
+    return 0
+
+
+def command_native_higher_call_two_copy_swap_purity_bridge(args: argparse.Namespace) -> int:
+    from theorems.native_higher_call_two_copy_swap_purity_bridge import (
+        build_native_higher_call_two_copy_swap_purity_bridge,
+        write_native_higher_call_two_copy_swap_purity_bridge,
+    )
+
+    payload = (
+        build_native_higher_call_two_copy_swap_purity_bridge()
+        if args.no_write
+        else write_native_higher_call_two_copy_swap_purity_bridge()
+    )
+    print(json.dumps(payload, indent=2))
+    return 0
+
+
+def command_planted_qary_dual_intersection_cascade_bridge(args: argparse.Namespace) -> int:
+    from theorems.planted_qary_dual_intersection_cascade_bridge import (
+        build_planted_qary_dual_intersection_cascade_bridge,
+        write_planted_qary_dual_intersection_cascade_bridge,
+    )
+
+    payload = (
+        build_planted_qary_dual_intersection_cascade_bridge()
+        if args.no_write
+        else write_planted_qary_dual_intersection_cascade_bridge()
+    )
+    print(json.dumps(payload, indent=2))
+    return 0
+
+
+def command_dcp_quadrature_conjugate_pair_holevo_audit(args: argparse.Namespace) -> int:
+    from theorems.dcp_quadrature_conjugate_pair_holevo_audit import (
+        build_dcp_quadrature_conjugate_pair_holevo_audit,
+        write_dcp_quadrature_conjugate_pair_holevo_audit,
+    )
+
+    payload = (
+        build_dcp_quadrature_conjugate_pair_holevo_audit()
+        if args.no_write
+        else write_dcp_quadrature_conjugate_pair_holevo_audit()
+    )
+    print(json.dumps(payload, indent=2))
+    return 0
+
+
+def command_native_higher_call_error_table_gauge_invariance_audit(args: argparse.Namespace) -> int:
+    from theorems.native_higher_call_error_table_gauge_invariance_audit import (
+        build_native_higher_call_error_table_gauge_invariance_audit,
+        write_native_higher_call_error_table_gauge_invariance_audit,
+    )
+
+    payload = (
+        build_native_higher_call_error_table_gauge_invariance_audit()
+        if args.no_write
+        else write_native_higher_call_error_table_gauge_invariance_audit()
+    )
+    print(json.dumps(payload, indent=2))
+    return 0
+
+
+def command_planted_qary_noisy_dual_intersection_false_negative_bridge(args: argparse.Namespace) -> int:
+    from theorems.planted_qary_noisy_dual_intersection_false_negative_bridge import (
+        build_planted_qary_noisy_dual_intersection_false_negative_bridge,
+        write_planted_qary_noisy_dual_intersection_false_negative_bridge,
+    )
+
+    payload = (
+        build_planted_qary_noisy_dual_intersection_false_negative_bridge()
+        if args.no_write
+        else write_planted_qary_noisy_dual_intersection_false_negative_bridge()
+    )
+    print(json.dumps(payload, indent=2))
+    return 0
+
+
+def command_dcp_two_copy_cnot_difference_alignment_audit(args: argparse.Namespace) -> int:
+    from theorems.dcp_two_copy_cnot_difference_alignment_audit import (
+        build_dcp_two_copy_cnot_difference_alignment_audit,
+        write_dcp_two_copy_cnot_difference_alignment_audit,
+    )
+
+    payload = (
+        build_dcp_two_copy_cnot_difference_alignment_audit()
+        if args.no_write
+        else write_dcp_two_copy_cnot_difference_alignment_audit()
+    )
+    print(json.dumps(payload, indent=2))
+    return 0
+
+
+def command_native_higher_call_time_reversal_schedule_duality_audit(args: argparse.Namespace) -> int:
+    from theorems.native_higher_call_time_reversal_schedule_duality_audit import (
+        build_native_higher_call_time_reversal_schedule_duality_audit,
+        write_native_higher_call_time_reversal_schedule_duality_audit,
+    )
+
+    payload = (
+        build_native_higher_call_time_reversal_schedule_duality_audit()
+        if args.no_write
+        else write_native_higher_call_time_reversal_schedule_duality_audit()
+    )
+    print(json.dumps(payload, indent=2))
+    return 0
+
+
+def command_planted_qary_multiproduct_k_copy_dual_tensor_bridge(args: argparse.Namespace) -> int:
+    from theorems.planted_qary_multiproduct_k_copy_dual_tensor_bridge import (
+        build_planted_qary_multiproduct_k_copy_dual_tensor_bridge,
+        write_planted_qary_multiproduct_k_copy_dual_tensor_bridge,
+    )
+
+    payload = (
+        build_planted_qary_multiproduct_k_copy_dual_tensor_bridge()
+        if args.no_write
+        else write_planted_qary_multiproduct_k_copy_dual_tensor_bridge()
+    )
+    print(json.dumps(payload, indent=2))
+    return 0
+
+
+def command_dcp_subset_sum_modular_collision_entropy_audit(args: argparse.Namespace) -> int:
+    from theorems.dcp_subset_sum_modular_collision_entropy_audit import (
+        build_dcp_subset_sum_modular_collision_entropy_audit,
+        write_dcp_subset_sum_modular_collision_entropy_audit,
+    )
+
+    payload = (
+        build_dcp_subset_sum_modular_collision_entropy_audit()
+        if args.no_write
+        else write_dcp_subset_sum_modular_collision_entropy_audit()
+    )
+    print(json.dumps(payload, indent=2))
+    return 0
+
+
+def command_native_higher_call_word_permutation_covariance_audit(args: argparse.Namespace) -> int:
+    from theorems.native_higher_call_word_permutation_covariance_audit import (
+        build_native_higher_call_word_permutation_covariance_audit,
+        write_native_higher_call_word_permutation_covariance_audit,
+    )
+
+    payload = (
+        build_native_higher_call_word_permutation_covariance_audit()
+        if args.no_write
+        else write_native_higher_call_word_permutation_covariance_audit()
+    )
+    print(json.dumps(payload, indent=2))
+    return 0
+
+
+def command_planted_qary_punctured_coordinate_projection_bridge(args: argparse.Namespace) -> int:
+    from theorems.planted_qary_punctured_coordinate_projection_bridge import (
+        build_planted_qary_punctured_coordinate_projection_bridge,
+        write_planted_qary_punctured_coordinate_projection_bridge,
+    )
+
+    payload = (
+        build_planted_qary_punctured_coordinate_projection_bridge()
+        if args.no_write
+        else write_planted_qary_punctured_coordinate_projection_bridge()
+    )
+    print(json.dumps(payload, indent=2))
+    return 0
+
+
+def command_dcp_cyclic_subgroup_quotient_aliasing_audit(args: argparse.Namespace) -> int:
+    from theorems.dcp_cyclic_subgroup_quotient_aliasing_audit import (
+        build_dcp_cyclic_subgroup_quotient_aliasing_audit,
+        write_dcp_cyclic_subgroup_quotient_aliasing_audit,
+    )
+
+    payload = (
+        build_dcp_cyclic_subgroup_quotient_aliasing_audit()
+        if args.no_write
+        else write_dcp_cyclic_subgroup_quotient_aliasing_audit()
+    )
+    print(json.dumps(payload, indent=2))
+    return 0
+
+
+def command_native_higher_call_secret_subspace_restriction_audit(args: argparse.Namespace) -> int:
+    from theorems.native_higher_call_secret_subspace_restriction_audit import (
+        build_native_higher_call_secret_subspace_restriction_audit,
+        write_native_higher_call_secret_subspace_restriction_audit,
+    )
+
+    payload = (
+        build_native_higher_call_secret_subspace_restriction_audit()
+        if args.no_write
+        else write_native_higher_call_secret_subspace_restriction_audit()
+    )
+    print(json.dumps(payload, indent=2))
+    return 0
+
+
+
+def command_dcp_clean_linear_witness_carry_obstruction(args: argparse.Namespace) -> int:
+    from theorems.dcp_clean_linear_witness_carry_obstruction import (
+        build_dcp_clean_linear_witness_carry_obstruction_report,
+        write_dcp_clean_linear_witness_carry_obstruction_report,
+    )
+
+    payload = (
+        build_dcp_clean_linear_witness_carry_obstruction_report()
+        if getattr(args, "no_write", False)
+        else write_dcp_clean_linear_witness_carry_obstruction_report()
+    )
+    if getattr(args, "json", False):
+        print(json.dumps(payload, indent=2))
+    else:
+        print(json.dumps(payload["summary"], indent=2))
+    return 0
+
+
+def command_dcp_babai_lattice_rounding_witness_obstruction(args: argparse.Namespace) -> int:
+    from theorems.dcp_babai_lattice_rounding_witness_obstruction import (
+        build_dcp_babai_lattice_rounding_witness_obstruction_report,
+        write_dcp_babai_lattice_rounding_witness_obstruction_report,
+    )
+
+    payload = (
+        build_dcp_babai_lattice_rounding_witness_obstruction_report()
+        if getattr(args, "no_write", False)
+        else write_dcp_babai_lattice_rounding_witness_obstruction_report()
+    )
+    if getattr(args, "json", False):
+        print(json.dumps(payload, indent=2))
+    else:
+        print(json.dumps(payload["summary"], indent=2))
+    return 0
+
+
+def command_dcp_product_sine_source_coordinate_marginal_obstruction(args: argparse.Namespace) -> int:
+    from theorems.dcp_product_sine_source_coordinate_marginal_obstruction import (
+        build_dcp_product_sine_source_coordinate_marginal_obstruction_report,
+        write_dcp_product_sine_source_coordinate_marginal_obstruction_report,
+    )
+
+    payload = (
+        build_dcp_product_sine_source_coordinate_marginal_obstruction_report()
+        if getattr(args, "no_write", False)
+        else write_dcp_product_sine_source_coordinate_marginal_obstruction_report()
+    )
+    if getattr(args, "json", False):
+        print(json.dumps(payload, indent=2))
+    else:
+        print(json.dumps(payload["summary"], indent=2))
+    return 0
+
+
+def command_dcp_poly_pool_cnot_collimation_branching_obstruction(args: argparse.Namespace) -> int:
+    from theorems.dcp_poly_pool_cnot_collimation_branching_obstruction import (
+        build_dcp_poly_pool_cnot_collimation_branching_obstruction_report,
+        write_dcp_poly_pool_cnot_collimation_branching_obstruction_report,
+    )
+
+    payload = (
+        build_dcp_poly_pool_cnot_collimation_branching_obstruction_report()
+        if getattr(args, "no_write", False)
+        else write_dcp_poly_pool_cnot_collimation_branching_obstruction_report()
+    )
+    if getattr(args, "json", False):
+        print(json.dumps(payload, indent=2))
+    else:
+        print(json.dumps(payload["summary"], indent=2))
+    return 0
+
+
+def command_dcp_sine_window_public_basis_lll_dominance_bridge(args: argparse.Namespace) -> int:
+    from theorems.dcp_sine_window_public_basis_lll_dominance_bridge import (
+        build_dcp_sine_window_public_basis_lll_dominance_bridge_report,
+        write_dcp_sine_window_public_basis_lll_dominance_bridge_report,
+    )
+
+    payload = (
+        build_dcp_sine_window_public_basis_lll_dominance_bridge_report()
+        if getattr(args, "no_write", False)
+        else write_dcp_sine_window_public_basis_lll_dominance_bridge_report()
+    )
+    if getattr(args, "json", False):
+        print(json.dumps(payload, indent=2))
+    else:
+        print(json.dumps(payload["summary"], indent=2))
+    return 0
+
+
+def command_dcp_iqp_bounded_degree_carry_orthogonality_obstruction(args: argparse.Namespace) -> int:
+    from theorems.dcp_iqp_bounded_degree_carry_orthogonality_obstruction import (
+        build_dcp_iqp_bounded_degree_carry_orthogonality_obstruction_report,
+        write_dcp_iqp_bounded_degree_carry_orthogonality_obstruction_report,
+    )
+
+    payload = (
+        build_dcp_iqp_bounded_degree_carry_orthogonality_obstruction_report()
+        if getattr(args, "no_write", False)
+        else write_dcp_iqp_bounded_degree_carry_orthogonality_obstruction_report()
+    )
+    if getattr(args, "json", False):
+        print(json.dumps(payload, indent=2))
+    else:
+        print(json.dumps(payload["summary"], indent=2))
+    return 0
+
+
+def command_dcp_disjoint_tree_wire_capacity_tradeoff_obstruction(args: argparse.Namespace) -> int:
+    from theorems.dcp_disjoint_tree_wire_capacity_tradeoff_obstruction import (
+        build_dcp_disjoint_tree_wire_capacity_tradeoff_obstruction_report,
+        write_dcp_disjoint_tree_wire_capacity_tradeoff_obstruction_report,
+    )
+
+    payload = (
+        build_dcp_disjoint_tree_wire_capacity_tradeoff_obstruction_report()
+        if getattr(args, "no_write", False)
+        else write_dcp_disjoint_tree_wire_capacity_tradeoff_obstruction_report()
+    )
+    if getattr(args, "json", False):
+        print(json.dumps(payload, indent=2))
+    else:
+        print(json.dumps(payload["summary"], indent=2))
+    return 0
+
+
+def command_dcp_prefix_peeling_error_propagation_union_bridge(args: argparse.Namespace) -> int:
+    from theorems.dcp_prefix_peeling_error_propagation_union_bridge import (
+        build_dcp_prefix_peeling_error_propagation_union_bridge_report,
+        write_dcp_prefix_peeling_error_propagation_union_bridge_report,
+    )
+
+    payload = (
+        build_dcp_prefix_peeling_error_propagation_union_bridge_report()
+        if getattr(args, "no_write", False)
+        else write_dcp_prefix_peeling_error_propagation_union_bridge_report()
+    )
+    if getattr(args, "json", False):
+        print(json.dumps(payload, indent=2))
+    else:
+        print(json.dumps(payload["summary"], indent=2))
+    return 0
+
+
+def command_ternary_cubic_syndrome_twirl_reflection_collapse(args: argparse.Namespace) -> int:
+    from theorems.ternary_cubic_syndrome_twirl_reflection_collapse import (
+        build_ternary_cubic_syndrome_twirl_reflection_collapse_report,
+        write_ternary_cubic_syndrome_twirl_reflection_collapse_report,
+    )
+
+    payload = (
+        build_ternary_cubic_syndrome_twirl_reflection_collapse_report()
+        if getattr(args, "no_write", False)
+        else write_ternary_cubic_syndrome_twirl_reflection_collapse_report()
+    )
+    if getattr(args, "json", False):
+        print(json.dumps(payload, indent=2))
+    else:
+        print(json.dumps(payload["summary"], indent=2))
+    return 0
+
 def command_validate(args: argparse.Namespace) -> int:
     validation = validate_registry()
     print(json.dumps(validation, indent=2, sort_keys=True))
@@ -20992,6 +21424,56 @@ def command_planted_qary_source(args: argparse.Namespace) -> int:
     print(f"Artifact: {REPORT}")
     print("Statistical uniqueness is not computational hardness. No quantum advantage admitted.")
     return 0
+
+
+def command_dcp_latent_error_access(args: argparse.Namespace) -> int:
+    from theorems.dcp_latent_error_access_audit import main
+    return main(["--no-write"] if args.no_write else [])
+
+
+def command_dcp_complex_axis_readout(args: argparse.Namespace) -> int:
+    from theorems.dcp_complex_axis_readout import main
+    return main(["--no-write"] if args.no_write else [])
+
+
+def command_dcp_correlated_block_observables(args: argparse.Namespace) -> int:
+    from theorems.dcp_correlated_block_observables import main
+    return main(["--no-write"] if args.no_write else [])
+
+
+def command_dcp_pairing_composition_barrier(args: argparse.Namespace) -> int:
+    from theorems.dcp_pairing_composition_barrier import main
+    return main(["--no-write"] if args.no_write else [])
+
+
+def command_dcp_correlated_phase_block(args: argparse.Namespace) -> int:
+    from theorems.dcp_correlated_phase_block import main
+    return main(["--no-write"] if args.no_write else [])
+
+
+def command_dcp_native_tree_variance_cap(args: argparse.Namespace) -> int:
+    from theorems.dcp_native_tree_variance_cap import main
+    return main(["--no-write"] if args.no_write else [])
+
+
+def command_dcp_oblivious_tree_merge(args: argparse.Namespace) -> int:
+    from theorems.dcp_oblivious_tree_merge import main
+    return main(["--no-write"] if args.no_write else [])
+
+
+def command_dcp_native_tree_receiver(args: argparse.Namespace) -> int:
+    from theorems.dcp_native_tree_receiver import main
+    return main(["--no-write"] if args.no_write else [])
+
+
+def command_dcp_native_tree_moment_audit(args: argparse.Namespace) -> int:
+    from theorems.dcp_native_tree_moment_audit import main
+    return main(["--no-write"] if args.no_write else [])
+
+
+def command_dcp_vector_short_mask_join(args: argparse.Namespace) -> int:
+    from theorems.dcp_vector_short_mask_join import main
+    return main(["--no-write"] if args.no_write else [])
 
 
 def command_dcp_noise_matched_source(args: argparse.Namespace) -> int:
@@ -29055,6 +29537,56 @@ def build_parser() -> argparse.ArgumentParser:
     response_mpo.add_argument("--no-write",action="store_true")
     response_mpo.set_defaults(func=command_native_response_mpo_baseline)
 
+    latent_access = subparsers.add_parser("dcp-latent-error-access",
+        help="Reject hidden-error equality oracles on bare phase qubits; no general purification no-go.")
+    latent_access.add_argument("--no-write", action="store_true")
+    latent_access.set_defaults(func=command_dcp_latent_error_access)
+
+    complex_axes = subparsers.add_parser("dcp-complex-axis-readout",
+        help="Export public X/Y/T-grid block readout; audit exact native all-secret Gram and charged inference limits.")
+    complex_axes.add_argument("--no-write", action="store_true")
+    complex_axes.set_defaults(func=command_dcp_complex_axis_readout)
+
+    block_observables = subparsers.add_parser("dcp-correlated-block-observables",
+        help="Calibrate full syndrome/X outcome likelihoods, low-degree blindness and a charged product-measurement twirl baseline.")
+    block_observables.add_argument("--no-write", action="store_true")
+    block_observables.set_defaults(func=command_dcp_correlated_block_observables)
+
+    pairing_composition = subparsers.add_parser("dcp-pairing-composition-barrier",
+        help="Bound two fresh one-pair compression levels under explicit independent-noise/source premises; no general DHSP no-go.")
+    pairing_composition.add_argument("--no-write", action="store_true")
+    pairing_composition.set_defaults(func=command_dcp_pairing_composition_barrier)
+
+    correlated_block = subparsers.add_parser("dcp-correlated-phase-block",
+        help="Export a polynomial CX/CCX syndrome measurement retaining the correlated original phase block, not a fiber inverse.")
+    correlated_block.add_argument("--no-write", action="store_true")
+    correlated_block.set_defaults(func=command_dcp_correlated_phase_block)
+
+    variance_cap = subparsers.add_parser("dcp-native-tree-variance-cap",
+        help="Audit exact native partial-list variances and smaller centered overflow caps, without silent proof transfer.")
+    variance_cap.add_argument("--no-write", action="store_true")
+    variance_cap.set_defaults(func=command_dcp_native_tree_variance_cap)
+
+    oblivious_merge = subparsers.add_parser("dcp-oblivious-tree-merge",
+        help="Test reversible bounded-output native joins with linear-sized sorting schedules, no free RAM.")
+    oblivious_merge.add_argument("--no-write", action="store_true")
+    oblivious_merge.set_defaults(func=command_dcp_oblivious_tree_merge)
+
+    tree_receiver = subparsers.add_parser("dcp-native-tree-receiver",
+        help="Run a clean bounded-list native tree program with whole-attempt overflow rejection and charged histories.")
+    tree_receiver.add_argument("--no-write", action="store_true")
+    tree_receiver.set_defaults(func=command_dcp_native_tree_receiver)
+
+    tree_moment = subparsers.add_parser("dcp-native-tree-moment-audit",
+        help="Audit native filtered-tree moments and overflow bounds; this is not an implemented quantum receiver.")
+    tree_moment.add_argument("--no-write", action="store_true")
+    tree_moment.set_defaults(func=command_dcp_native_tree_moment_audit)
+
+    vector_join = subparsers.add_parser("dcp-vector-short-mask-join",
+        help="Run vector short-mask pairing with charged exponential sorting and coherent workspace; no new speedup.")
+    vector_join.add_argument("--no-write", action="store_true")
+    vector_join.set_defaults(func=command_dcp_vector_short_mask_join)
+
     matched_source = subparsers.add_parser("dcp-noise-matched-source",
         help="Check conditional noisy source closure using visibility-matched zero-label replacement and paid supply.")
     matched_source.add_argument("--no-write", action="store_true")
@@ -29263,6 +29795,195 @@ def build_parser() -> argparse.ArgumentParser:
     native_higher_call_kronecker_moment_rank_bridge.add_argument("--no-write", action="store_true")
     native_higher_call_kronecker_moment_rank_bridge.set_defaults(func=command_native_higher_call_kronecker_moment_rank_bridge)
 
+    planted_qary_second_moment_probe_variance_bridge = subparsers.add_parser(
+        "planted-qary-second-moment-probe-variance-bridge",
+        help="Audit planted q-ary second-moment probe variance law, projective-ray covariance localization, and dual-spike concentration.",
+    )
+    planted_qary_second_moment_probe_variance_bridge.add_argument("--no-write", action="store_true")
+    planted_qary_second_moment_probe_variance_bridge.set_defaults(func=command_planted_qary_second_moment_probe_variance_bridge)
+
+    dcp_interleaved_tree_merge_syndrome_pruning_audit = subparsers.add_parser(
+        "dcp-interleaved-tree-merge-syndrome-pruning-audit",
+        help="Audit DCP interleaved tree-merge coincidence pruning, telescoping 2^L-moment survival law, p*=2/3 crossover, and SNR deficit.",
+    )
+    dcp_interleaved_tree_merge_syndrome_pruning_audit.add_argument("--no-write", action="store_true")
+    dcp_interleaved_tree_merge_syndrome_pruning_audit.set_defaults(func=command_dcp_interleaved_tree_merge_syndrome_pruning_audit)
+
+    native_higher_call_commutant_trace_orthogonality_audit = subparsers.add_parser(
+        "native-higher-call-commutant-trace-orthogonality-audit",
+        help="Audit operator harmonic zero-trace conservation, purity-deficit Parseval identity, and universal unitary readout bounds.",
+    )
+    native_higher_call_commutant_trace_orthogonality_audit.add_argument("--no-write", action="store_true")
+    native_higher_call_commutant_trace_orthogonality_audit.set_defaults(func=command_native_higher_call_commutant_trace_orthogonality_audit)
+
+    planted_qary_noisy_parity_check_likelihood_bridge = subparsers.add_parser(
+        "planted-qary-noisy-parity-check-likelihood-bridge",
+        help="Audit planted q-ary noisy parity-check weight-power Fourier damping, off-dual noise invariance, and dual minimum-distance scaling.",
+    )
+    planted_qary_noisy_parity_check_likelihood_bridge.add_argument("--no-write", action="store_true")
+    planted_qary_noisy_parity_check_likelihood_bridge.set_defaults(func=command_planted_qary_noisy_parity_check_likelihood_bridge)
+
+    dcp_multi_harmonic_weighted_fisher_decoder_audit = subparsers.add_parser(
+        "dcp-multi-harmonic-weighted-fisher-decoder-audit",
+        help="Audit DCP multi-harmonic Parseval mean-square visibility law, zero-lag inversion identity, and matched-filter optimality.",
+    )
+    dcp_multi_harmonic_weighted_fisher_decoder_audit.add_argument("--no-write", action="store_true")
+    dcp_multi_harmonic_weighted_fisher_decoder_audit.set_defaults(func=command_dcp_multi_harmonic_weighted_fisher_decoder_audit)
+
+    native_higher_call_two_copy_swap_purity_bridge = subparsers.add_parser(
+        "native-higher-call-two-copy-swap-purity-bridge",
+        help="Audit two-copy SWAP purity excess vs classical coincidence excess, 1-call variety purity law, and CNOT autocorrelation.",
+    )
+    native_higher_call_two_copy_swap_purity_bridge.add_argument("--no-write", action="store_true")
+    native_higher_call_two_copy_swap_purity_bridge.set_defaults(func=command_native_higher_call_two_copy_swap_purity_bridge)
+
+    planted_qary_dual_intersection_cascade_bridge = subparsers.add_parser(
+        "planted-qary-dual-intersection-cascade-bridge",
+        help="Audit planted q-ary dual-intersection cascade candidate subspace size law, spurious survivor decay, and oversampling recovery probability.",
+    )
+    planted_qary_dual_intersection_cascade_bridge.add_argument("--no-write", action="store_true")
+    planted_qary_dual_intersection_cascade_bridge.set_defaults(func=command_planted_qary_dual_intersection_cascade_bridge)
+
+    dcp_quadrature_conjugate_pair_holevo_audit = subparsers.add_parser(
+        "dcp-quadrature-conjugate-pair-holevo-audit",
+        help="Audit DCP equatorial Bloch-disk Holevo capacity, randomized X/Y Fisher isotropization bounds, and singlet phase-independence.",
+    )
+    dcp_quadrature_conjugate_pair_holevo_audit.add_argument("--no-write", action="store_true")
+    dcp_quadrature_conjugate_pair_holevo_audit.set_defaults(func=command_dcp_quadrature_conjugate_pair_holevo_audit)
+
+    native_higher_call_error_table_gauge_invariance_audit = subparsers.add_parser(
+        "native-higher-call-error-table-gauge-invariance-audit",
+        help="Audit affine-secret error-gauge covariance, injective-frequency purity pinning, and universal word-multiplicity pinching.",
+    )
+    native_higher_call_error_table_gauge_invariance_audit.add_argument("--no-write", action="store_true")
+    native_higher_call_error_table_gauge_invariance_audit.set_defaults(func=command_native_higher_call_error_table_gauge_invariance_audit)
+
+    planted_qary_noisy_dual_intersection_false_negative_bridge = subparsers.add_parser(
+        "planted-qary-noisy-dual-intersection-false-negative-bridge",
+        help="Audit noisy QFT dual-intersection weight-stratified true-codeword survival, spurious noise-invariance, and primal distance scaling.",
+    )
+    planted_qary_noisy_dual_intersection_false_negative_bridge.add_argument("--no-write", action="store_true")
+    planted_qary_noisy_dual_intersection_false_negative_bridge.set_defaults(func=command_planted_qary_noisy_dual_intersection_false_negative_bridge)
+
+    dcp_two_copy_cnot_difference_alignment_audit = subparsers.add_parser(
+        "dcp-two-copy-cnot-difference-alignment-audit",
+        help="Audit DCP two-copy CNOT sum/difference branch bifurcation, diagonal/anti-diagonal phase annihilation, and off-diagonal visibility yield.",
+    )
+    dcp_two_copy_cnot_difference_alignment_audit.add_argument("--no-write", action="store_true")
+    dcp_two_copy_cnot_difference_alignment_audit.set_defaults(func=command_dcp_two_copy_cnot_difference_alignment_audit)
+
+    native_higher_call_time_reversal_schedule_duality_audit = subparsers.add_parser(
+        "native-higher-call-time-reversal-schedule-duality-audit",
+        help="Audit global sign-conjugation invariance, Klein four-group schedule reduction, and symmetric-transpose time-reversal duality.",
+    )
+    native_higher_call_time_reversal_schedule_duality_audit.add_argument("--no-write", action="store_true")
+    native_higher_call_time_reversal_schedule_duality_audit.set_defaults(func=command_native_higher_call_time_reversal_schedule_duality_audit)
+
+    planted_qary_multiproduct_k_copy_dual_tensor_bridge = subparsers.add_parser(
+        "planted-qary-multiproduct-k-copy-dual-tensor-bridge",
+        help="Audit planted q-ary K-copy primal-difference shift cancellation, constant-sum dual fiber spectral decomposition, and K-invariant coset purity.",
+    )
+    planted_qary_multiproduct_k_copy_dual_tensor_bridge.add_argument("--no-write", action="store_true")
+    planted_qary_multiproduct_k_copy_dual_tensor_bridge.set_defaults(func=command_planted_qary_multiproduct_k_copy_dual_tensor_bridge)
+
+    dcp_subset_sum_modular_collision_entropy_audit = subparsers.add_parser(
+        "dcp-subset-sum-modular-collision-entropy-audit",
+        help="Audit DCP modular subset-sum cosine-product collision purity, universal Boolean-difference surjectivity, and ensemble collision law.",
+    )
+    dcp_subset_sum_modular_collision_entropy_audit.add_argument("--no-write", action="store_true")
+    dcp_subset_sum_modular_collision_entropy_audit.set_defaults(func=command_dcp_subset_sum_modular_collision_entropy_audit)
+
+    native_higher_call_word_permutation_covariance_audit = subparsers.add_parser(
+        "native-higher-call-word-permutation-covariance-audit",
+        help="Audit word-permutation involutive dilation covariance, m^2 != 1 bilinear symmetry breaking at k >= 2, and alternating intertwining rescue.",
+    )
+    native_higher_call_word_permutation_covariance_audit.add_argument("--no-write", action="store_true")
+    native_higher_call_word_permutation_covariance_audit.set_defaults(func=command_native_higher_call_word_permutation_covariance_audit)
+
+    planted_qary_punctured_coordinate_projection_bridge = subparsers.add_parser(
+        "planted-qary-punctured-coordinate-projection-bridge",
+        help="Audit planted q-ary coordinate puncturing bipartite Schmidt spectrum, puncturing-shortening QFT duality, and d_min rank-locking.",
+    )
+    planted_qary_punctured_coordinate_projection_bridge.add_argument("--no-write", action="store_true")
+    planted_qary_punctured_coordinate_projection_bridge.set_defaults(func=command_planted_qary_punctured_coordinate_projection_bridge)
+
+    dcp_cyclic_subgroup_quotient_aliasing_audit = subparsers.add_parser(
+        "dcp-cyclic-subgroup-quotient-aliasing-audit",
+        help="Audit DCP g-fold secret-coset aliasing, Euler-Ramanujan divisor-stratum visibility sum, and folded-kernel Parseval purity.",
+    )
+    dcp_cyclic_subgroup_quotient_aliasing_audit.add_argument("--no-write", action="store_true")
+    dcp_cyclic_subgroup_quotient_aliasing_audit.set_defaults(func=command_dcp_cyclic_subgroup_quotient_aliasing_audit)
+
+    native_higher_call_secret_subspace_restriction_audit = subparsers.add_parser(
+        "native-higher-call-secret-subspace-restriction-audit",
+        help="Audit secret-subspace projected variety pinching, coset harmonic folding, and Fourier-space Law of Total Variance.",
+    )
+    native_higher_call_secret_subspace_restriction_audit.add_argument("--no-write", action="store_true")
+    native_higher_call_secret_subspace_restriction_audit.set_defaults(func=command_native_higher_call_secret_subspace_restriction_audit)
+
+    dcp_clean_linear_witness_carry_obstruction = subparsers.add_parser(
+        "dcp-clean-linear-witness-carry-obstruction",
+        help="Check scoped linear witness identities and conditioned-label parity; no general decay bound.",
+    )
+    dcp_clean_linear_witness_carry_obstruction.add_argument("--no-write", action="store_true")
+    dcp_clean_linear_witness_carry_obstruction.set_defaults(func=command_dcp_clean_linear_witness_carry_obstruction)
+
+    dcp_babai_lattice_rounding_witness_obstruction = subparsers.add_parser(
+        "dcp-babai-lattice-rounding-witness-obstruction",
+        help="Check exact coordinate-rounding coverage and no-overflow countercontrols, not a general no-go.",
+    )
+    dcp_babai_lattice_rounding_witness_obstruction.add_argument("--no-write", action="store_true")
+    dcp_babai_lattice_rounding_witness_obstruction.set_defaults(func=command_dcp_babai_lattice_rounding_witness_obstruction)
+
+    dcp_product_sine_source_coordinate_marginal_obstruction = subparsers.add_parser(
+        "dcp-product-sine-source-coordinate-marginal-obstruction",
+        help="Run the product-group sine-window coordinate-marginal obstruction audit.",
+    )
+    dcp_product_sine_source_coordinate_marginal_obstruction.add_argument("--no-write", action="store_true")
+    dcp_product_sine_source_coordinate_marginal_obstruction.set_defaults(func=command_dcp_product_sine_source_coordinate_marginal_obstruction)
+
+    dcp_poly_pool_cnot_collimation_branching_obstruction = subparsers.add_parser(
+        "dcp-poly-pool-cnot-collimation-branching-obstruction",
+        help="Run the clean DCP polynomial-pool CNOT collimation branching obstruction audit.",
+    )
+    dcp_poly_pool_cnot_collimation_branching_obstruction.add_argument("--no-write", action="store_true")
+    dcp_poly_pool_cnot_collimation_branching_obstruction.set_defaults(func=command_dcp_poly_pool_cnot_collimation_branching_obstruction)
+
+    dcp_sine_window_public_basis_lll_dominance_bridge = subparsers.add_parser(
+        "dcp-sine-window-public-basis-lll-dominance-bridge",
+        help="Run the sine-window clean-budget source vs classical LLL dominance bridge audit.",
+    )
+    dcp_sine_window_public_basis_lll_dominance_bridge.add_argument("--no-write", action="store_true")
+    dcp_sine_window_public_basis_lll_dominance_bridge.set_defaults(func=command_dcp_sine_window_public_basis_lll_dominance_bridge)
+
+    dcp_iqp_bounded_degree_carry_orthogonality_obstruction = subparsers.add_parser(
+        "dcp-iqp-bounded-degree-carry-orthogonality-obstruction",
+        help="Run the clean/noisy DCP IQP bounded-degree carry-orthogonality obstruction audit.",
+    )
+    dcp_iqp_bounded_degree_carry_orthogonality_obstruction.add_argument("--no-write", action="store_true")
+    dcp_iqp_bounded_degree_carry_orthogonality_obstruction.set_defaults(func=command_dcp_iqp_bounded_degree_carry_orthogonality_obstruction)
+
+    dcp_disjoint_tree_wire_capacity_tradeoff_obstruction = subparsers.add_parser(
+        "dcp-disjoint-tree-wire-capacity-tradeoff-obstruction",
+        help="Run the disjoint-block coherent 2^a-tree wire-capacity tradeoff obstruction audit.",
+    )
+    dcp_disjoint_tree_wire_capacity_tradeoff_obstruction.add_argument("--no-write", action="store_true")
+    dcp_disjoint_tree_wire_capacity_tradeoff_obstruction.set_defaults(func=command_dcp_disjoint_tree_wire_capacity_tradeoff_obstruction)
+
+    dcp_prefix_peeling_error_propagation_union_bridge = subparsers.add_parser(
+        "dcp-prefix-peeling-error-propagation-union-bridge",
+        help="Run the clean DCP dyadic prefix-peeling error propagation and depolarization audit.",
+    )
+    dcp_prefix_peeling_error_propagation_union_bridge.add_argument("--no-write", action="store_true")
+    dcp_prefix_peeling_error_propagation_union_bridge.set_defaults(func=command_dcp_prefix_peeling_error_propagation_union_bridge)
+
+    ternary_cubic_syndrome_twirl_reflection_collapse = subparsers.add_parser(
+        "ternary-cubic-syndrome-twirl-reflection-collapse",
+        help="Run the ternary cubic/mixed syndrome correction block-convolution and twirl-pinching audit.",
+    )
+    ternary_cubic_syndrome_twirl_reflection_collapse.add_argument("--no-write", action="store_true")
+    ternary_cubic_syndrome_twirl_reflection_collapse.set_defaults(func=command_ternary_cubic_syndrome_twirl_reflection_collapse)
+
     validate = subparsers.add_parser("validate", help="Validate candidates and experiments against proof obligations.")
     validate.set_defaults(func=command_validate)
 
@@ -29295,9 +30016,368 @@ def build_parser() -> argparse.ArgumentParser:
 
 def main(argv: list[str] | None = None) -> int:
     parser = build_parser()
+    parser.add_argument(
+        "--dcp-even-sublattice-parity-blindness-and-rescaling-bridge",
+        action="store_true",
+        help="Run the DCP even-sublattice parity blindness and mod-2^{t-1} rescaling bridge certificate.",
+    )
+    parser.add_argument(
+        "--planted-qary-macwilliams-dual-weight-enumerator-bridge",
+        action="store_true",
+        help="Run the planted q-ary MacWilliams dual weight enumerator bridge certificate.",
+    )
+    parser.add_argument(
+        "--native-higher-call-composite-modulus-crt-factorization-audit",
+        action="store_true",
+        help="Run the native higher-call composite-modulus CRT factorization audit certificate.",
+    )
+    parser.add_argument(
+        "--dcp-multi-packet-product-twirl-sq-dimension-audit",
+        action="store_true",
+        help="Run the DCP multi-packet product-twirl SQ dimension audit certificate.",
+    )
+    parser.add_argument(
+        "--dcp-coherent-syndrome-uncomputation-reversible-oracle-bridge",
+        action="store_true",
+        help="Run the DCP coherent syndrome uncomputation and reversible oracle bridge certificate.",
+    )
+    parser.add_argument(
+        "--dcp-sieve-bucket-collision-birthday-tradeoff-audit",
+        action="store_true",
+        help="Run the DCP sieve bucket collision birthday tradeoff audit certificate.",
+    )
+    parser.add_argument(
+        "--dcp-twisted-convolution-pretty-good-measurement-gram-bridge",
+        action="store_true",
+        help="Run the DCP twisted-convolution Pretty Good Measurement Gram bridge certificate.",
+    )
+    parser.add_argument(
+        "--dcp-dyadic-valuation-anchor-invariance-hierarchy-bridge",
+        action="store_true",
+        help="Run the DCP dyadic valuation and mod-2^k anchor-invariance hierarchy bridge certificate.",
+    )
+    parser.add_argument(
+        "--dcp-bell-conjugate-pair-phase-cancellation-obstruction",
+        action="store_true",
+        help="Run the DCP two-copy Bell-basis conjugate-pair phase cancellation obstruction certificate.",
+    )
+    parser.add_argument(
+        "--dcp-coset-subspace-qft-concentration-and-leakage-bridge",
+        action="store_true",
+        help="Run the DCP coset-subspace QFT concentration and leakage bridge certificate.",
+    )
+    parser.add_argument(
+        "--dcp-cyclic-group-qft-dihedral-coset-interference-bridge",
+        action="store_true",
+        help="Run the DCP cyclic-group QFT_{2^m} dihedral coset interference bridge certificate.",
+    )
+    parser.add_argument(
+        "--dcp-adaptive-hybrid-classical-quantum-peeling-sample-complexity-bridge",
+        action="store_true",
+        help="Run the DCP adaptive hybrid classical-quantum peeling sample-complexity bridge certificate.",
+    )
+    parser.add_argument(
+        "--dcp-overlapping-cnot-dag-carry-fanout-obstruction",
+        action="store_true",
+        help="Run the DCP overlapping CNOT DAG carry fanout obstruction certificate.",
+    )
+    parser.add_argument(
+        "--dcp-sine-window-fejer-dirichlet-kernel-cutoff-bridge",
+        action="store_true",
+        help="Run the DCP sine-window three-Dirichlet-kernel cutoff bridge certificate.",
+    )
+    parser.add_argument(
+        "--dcp-anchor-conditioned-adaptive-syndrome-routing-bridge",
+        action="store_true",
+        help="Run the DCP anchor-conditioned adaptive syndrome routing and coset-gauge invariance bridge certificate.",
+    )
+    parser.add_argument(
+        "--dcp-multicopy-schur-weyl-symmetric-projection-bridge",
+        action="store_true",
+        help="Run the DCP multi-copy Schur-Weyl symmetric-subspace projection and classical r-sample majority bridge certificate.",
+    )
+    parser.add_argument(
+        "--dcp-cascaded-dyadic-adaptive-kernel-weight-pruning-bridge",
+        action="store_true",
+        help="Run the DCP cascaded multi-stage dyadic adaptive kernel routing and minimum-weight pruning bridge certificate.",
+    )
+    parser.add_argument(
+        "--dcp-multicopy-distinct-header-cyclic-swap-interference-bridge",
+        action="store_true",
+        help="Run the DCP multi-copy distinct-header cyclic-swap and Schur-Weyl bipartite even-flip interference bridge certificate.",
+    )
+    parser.add_argument(
+        "--dcp-cnot-conjugated-schur-weyl-clifford-twirl-bridge",
+        action="store_true",
+        help="Run the DCP CNOT-star-conjugated Schur-Weyl projector selection rules and harmonic parity bridge certificate.",
+    )
+    parser.add_argument(
+        "--dcp-dihedral-vs-heisenberg-two-copy-commutant-bridge",
+        action="store_true",
+        help="Run the DCP dihedral sign-inversion vs. Heisenberg H_3(Z_{2^t}) bilinear two-copy commutator bridge certificate.",
+    )
+    parser.add_argument(
+        "--dcp-noisy-cascaded-dyadic-peeling-sample-complexity-bridge",
+        action="store_true",
+        help="Run the DCP noisy cascaded dyadic bit-peeling vs. unpruned CNOT tree sample-complexity bridge certificate.",
+    )
+    parser.add_argument(
+        "--dcp-odd-prime-modulus-cnot-carry-shift-obstruction",
+        action="store_true",
+        help="Run the DCP odd-prime modulus Z_p vs. dyadic Z_{2^t} CNOT zero-sum carry-shift obstruction certificate.",
+    )
+    parser.add_argument(
+        "--dcp-heisenberg-dyadic-boundary-cocycle-repair-bridge",
+        action="store_true",
+        help="Run the DCP dyadic Heisenberg H_3(Z_{2^t}) coherent boundary-cocycle phase-repair bridge certificate.",
+    )
+    parser.add_argument(
+        "--dcp-correlated-z-fault-syndrome-parity-twirl-bridge",
+        action="store_true",
+        help="Run the DCP multi-wire correlated Z-fault syndrome-parity Walsh-Hadamard twirl bridge certificate.",
+    )
+    parser.add_argument(
+        "--dcp-multi-target-reusable-syndrome-bank-amortization-bridge",
+        action="store_true",
+        help="Run the DCP mod-2 bucket-pairing disjoint kernel capacity and exact binomial expectation bridge certificate.",
+    )
+    parser.add_argument(
+        "--dcp-tensor-power-k-moment-dihedral-twirl-bridge",
+        action="store_true",
+        help="Run the DCP r-copy secret-twirled tensor-power density matrix and ternary kernel moment bridge certificate.",
+    )
+    parser.add_argument(
+        "--dcp-ternary-signed-witness-cnot-routing-bridge",
+        action="store_true",
+        help="Run the DCP ternary signed-support witness extraction and CNOT-syndrome routing bridge certificate.",
+    )
+    parser.add_argument(
+        "--dcp-coherent-syndrome-sign-flip-pauli-frame-bridge",
+        action="store_true",
+        help="Run the DCP coherent Pauli-X label-negation and multi-stage sign-rectified CNOT routing bridge certificate.",
+    )
+    parser.add_argument(
+        "--dcp-banded-qft-truncation-vs-dyadic-cnot-fidelity-bridge",
+        action="store_true",
+        help="Run the DCP banded-QFT truncation phase-leakage vs. exact dyadic sublattice fidelity bridge certificate.",
+    )
+    parser.add_argument(
+        "--dcp-multi-packet-collective-helstrom-product-likelihood-bridge",
+        action="store_true",
+        help="Run the DCP multi-packet collective Helstrom vs. separable tilted and X-basis decision bridge certificate.",
+    )
+    parser.add_argument(
+        "--dcp-ternary-pgm-gram-eigenvalue-success-bridge",
+        action="store_true",
+        help="Run the DCP Pretty Good Measurement Gram eigenvalue spectrum and square-root occupancy bridge certificate.",
+    )
+    parser.add_argument(
+        "--dcp-coherent-fiber-support-erasure-inversion-bridge",
+        action="store_true",
+        help="Run the DCP coherent fiber-support erasure vs. un-erased pointer dephasing bridge certificate.",
+    )
+    parser.add_argument(
+        "--dcp-d-ary-qudit-phase-register-cnot-mod-d-bridge",
+        action="store_true",
+        help="Run the DCP d-ary qudit phase-register modular SUM carry and step-function linearity bridge certificate.",
+    )
+    parser.add_argument(
+        "--dcp-sine-vs-box-window-pair-difference-overlap-bridge",
+        action="store_true",
+        help="Run the DCP discrete sine vs. flat box window shift-autocorrelation and quadratic dephasing bridge certificate.",
+    )
     args = parser.parse_args(argv)
+    if getattr(args, "dcp_ternary_pgm_gram_eigenvalue_success_bridge", False):
+        from theorems.dcp_ternary_pgm_gram_eigenvalue_success_bridge import generate_dcp_ternary_pgm_gram_eigenvalue_success_certificate
+        print(json.dumps(generate_dcp_ternary_pgm_gram_eigenvalue_success_certificate(), indent=2, sort_keys=True))
+        return 0
+    if getattr(args, "dcp_coherent_fiber_support_erasure_inversion_bridge", False):
+        from theorems.dcp_coherent_fiber_support_erasure_inversion_bridge import generate_dcp_coherent_fiber_support_erasure_inversion_certificate
+        print(json.dumps(generate_dcp_coherent_fiber_support_erasure_inversion_certificate(), indent=2, sort_keys=True))
+        return 0
+    if getattr(args, "dcp_d_ary_qudit_phase_register_cnot_mod_d_bridge", False):
+        from theorems.dcp_d_ary_qudit_phase_register_cnot_mod_d_bridge import generate_dcp_d_ary_qudit_phase_register_cnot_mod_d_certificate
+        print(json.dumps(generate_dcp_d_ary_qudit_phase_register_cnot_mod_d_certificate(), indent=2, sort_keys=True))
+        return 0
+    if getattr(args, "dcp_sine_vs_box_window_pair_difference_overlap_bridge", False):
+        from theorems.dcp_sine_vs_box_window_pair_difference_overlap_bridge import generate_dcp_sine_vs_box_window_pair_difference_overlap_certificate
+        print(json.dumps(generate_dcp_sine_vs_box_window_pair_difference_overlap_certificate(), indent=2, sort_keys=True))
+        return 0
+    if getattr(args, "dcp_ternary_signed_witness_cnot_routing_bridge", False):
+        from theorems.dcp_ternary_signed_witness_cnot_routing_bridge import generate_dcp_ternary_signed_witness_cnot_routing_certificate
+        print(json.dumps(generate_dcp_ternary_signed_witness_cnot_routing_certificate(), indent=2, sort_keys=True))
+        return 0
+    if getattr(args, "dcp_coherent_syndrome_sign_flip_pauli_frame_bridge", False):
+        from theorems.dcp_coherent_syndrome_sign_flip_pauli_frame_bridge import generate_dcp_coherent_syndrome_sign_flip_pauli_frame_certificate
+        print(json.dumps(generate_dcp_coherent_syndrome_sign_flip_pauli_frame_certificate(), indent=2, sort_keys=True))
+        return 0
+    if getattr(args, "dcp_banded_qft_truncation_vs_dyadic_cnot_fidelity_bridge", False):
+        from theorems.dcp_banded_qft_truncation_vs_dyadic_cnot_fidelity_bridge import generate_dcp_banded_qft_truncation_vs_dyadic_cnot_fidelity_certificate
+        print(json.dumps(generate_dcp_banded_qft_truncation_vs_dyadic_cnot_fidelity_certificate(), indent=2, sort_keys=True))
+        return 0
+    if getattr(args, "dcp_multi_packet_collective_helstrom_product_likelihood_bridge", False):
+        from theorems.dcp_multi_packet_collective_helstrom_product_likelihood_bridge import generate_dcp_multi_packet_collective_helstrom_product_likelihood_certificate
+        print(json.dumps(generate_dcp_multi_packet_collective_helstrom_product_likelihood_certificate(), indent=2, sort_keys=True))
+        return 0
+    if getattr(args, "dcp_multi_target_reusable_syndrome_bank_amortization_bridge", False):
+        from theorems.dcp_multi_target_reusable_syndrome_bank_amortization_bridge import generate_dcp_multi_target_reusable_syndrome_bank_amortization_certificate
+        print(json.dumps(generate_dcp_multi_target_reusable_syndrome_bank_amortization_certificate(), indent=2, sort_keys=True))
+        return 0
+    if getattr(args, "dcp_tensor_power_k_moment_dihedral_twirl_bridge", False):
+        from theorems.dcp_tensor_power_k_moment_dihedral_twirl_bridge import generate_dcp_tensor_power_k_moment_dihedral_twirl_certificate
+        print(json.dumps(generate_dcp_tensor_power_k_moment_dihedral_twirl_certificate(), indent=2, sort_keys=True))
+        return 0
+    if getattr(args, "dcp_heisenberg_dyadic_boundary_cocycle_repair_bridge", False):
+        from theorems.dcp_heisenberg_dyadic_boundary_cocycle_repair_bridge import generate_dcp_heisenberg_dyadic_boundary_cocycle_repair_certificate
+        print(json.dumps(generate_dcp_heisenberg_dyadic_boundary_cocycle_repair_certificate(), indent=2, sort_keys=True))
+        return 0
+    if getattr(args, "dcp_correlated_z_fault_syndrome_parity_twirl_bridge", False):
+        from theorems.dcp_correlated_z_fault_syndrome_parity_twirl_bridge import generate_dcp_correlated_z_fault_syndrome_parity_twirl_certificate
+        print(json.dumps(generate_dcp_correlated_z_fault_syndrome_parity_twirl_certificate(), indent=2, sort_keys=True))
+        return 0
+    if getattr(args, "dcp_cnot_conjugated_schur_weyl_clifford_twirl_bridge", False):
+        from theorems.dcp_cnot_conjugated_schur_weyl_clifford_twirl_bridge import generate_dcp_cnot_conjugated_schur_weyl_clifford_twirl_certificate
+        print(json.dumps(generate_dcp_cnot_conjugated_schur_weyl_clifford_twirl_certificate(), indent=2, sort_keys=True))
+        return 0
+    if getattr(args, "dcp_dihedral_vs_heisenberg_two_copy_commutant_bridge", False):
+        from theorems.dcp_dihedral_vs_heisenberg_two_copy_commutant_bridge import generate_dcp_dihedral_vs_heisenberg_two_copy_commutant_certificate
+        print(json.dumps(generate_dcp_dihedral_vs_heisenberg_two_copy_commutant_certificate(), indent=2, sort_keys=True))
+        return 0
+    if getattr(args, "dcp_noisy_cascaded_dyadic_peeling_sample_complexity_bridge", False):
+        from theorems.dcp_noisy_cascaded_dyadic_peeling_sample_complexity_bridge import generate_dcp_noisy_cascaded_dyadic_peeling_sample_complexity_certificate
+        print(json.dumps(generate_dcp_noisy_cascaded_dyadic_peeling_sample_complexity_certificate(), indent=2, sort_keys=True))
+        return 0
+    if getattr(args, "dcp_odd_prime_modulus_cnot_carry_shift_obstruction", False):
+        from theorems.dcp_odd_prime_modulus_cnot_carry_shift_obstruction import generate_dcp_odd_prime_modulus_cnot_carry_shift_certificate
+        print(json.dumps(generate_dcp_odd_prime_modulus_cnot_carry_shift_certificate(), indent=2, sort_keys=True))
+        return 0
+    if getattr(args, "dcp_cascaded_dyadic_adaptive_kernel_weight_pruning_bridge", False):
+        from theorems.dcp_cascaded_dyadic_adaptive_kernel_weight_pruning_bridge import generate_dcp_cascaded_dyadic_adaptive_kernel_weight_pruning_certificate
+        print(json.dumps(generate_dcp_cascaded_dyadic_adaptive_kernel_weight_pruning_certificate(), indent=2, sort_keys=True))
+        return 0
+    if getattr(args, "dcp_multicopy_distinct_header_cyclic_swap_interference_bridge", False):
+        from theorems.dcp_multicopy_distinct_header_cyclic_swap_interference_bridge import generate_dcp_multicopy_distinct_header_cyclic_swap_interference_certificate
+        print(json.dumps(generate_dcp_multicopy_distinct_header_cyclic_swap_interference_certificate(), indent=2, sort_keys=True))
+        return 0
+    if getattr(args, "dcp_anchor_conditioned_adaptive_syndrome_routing_bridge", False):
+        from theorems.dcp_anchor_conditioned_adaptive_syndrome_routing_bridge import generate_dcp_anchor_conditioned_adaptive_syndrome_routing_certificate
+        print(json.dumps(generate_dcp_anchor_conditioned_adaptive_syndrome_routing_certificate(), indent=2, sort_keys=True))
+        return 0
+    if getattr(args, "dcp_multicopy_schur_weyl_symmetric_projection_bridge", False):
+        from theorems.dcp_multicopy_schur_weyl_symmetric_projection_bridge import generate_dcp_multicopy_schur_weyl_symmetric_projection_certificate
+        print(json.dumps(generate_dcp_multicopy_schur_weyl_symmetric_projection_certificate(), indent=2, sort_keys=True))
+        return 0
+    if getattr(args, "dcp_overlapping_cnot_dag_carry_fanout_obstruction", False):
+        from theorems.dcp_overlapping_cnot_dag_carry_fanout_obstruction import generate_dcp_overlapping_cnot_dag_carry_fanout_certificate
+        print(json.dumps(generate_dcp_overlapping_cnot_dag_carry_fanout_certificate(), indent=2, sort_keys=True))
+        return 0
+    if getattr(args, "dcp_sine_window_fejer_dirichlet_kernel_cutoff_bridge", False):
+        from theorems.dcp_sine_window_fejer_dirichlet_kernel_cutoff_bridge import generate_dcp_sine_window_fejer_dirichlet_kernel_cutoff_certificate
+        print(json.dumps(generate_dcp_sine_window_fejer_dirichlet_kernel_cutoff_certificate(), indent=2, sort_keys=True))
+        return 0
+
+    if getattr(args, "dcp_cyclic_group_qft_dihedral_coset_interference_bridge", False):
+        from theorems.dcp_cyclic_group_qft_dihedral_coset_interference_bridge import generate_dcp_cyclic_group_qft_dihedral_coset_interference_certificate
+        print(json.dumps(generate_dcp_cyclic_group_qft_dihedral_coset_interference_certificate(), indent=2, sort_keys=True))
+        return 0
+    if getattr(args, "dcp_adaptive_hybrid_classical_quantum_peeling_sample_complexity_bridge", False):
+        from theorems.dcp_adaptive_hybrid_classical_quantum_peeling_sample_complexity_bridge import generate_dcp_adaptive_hybrid_classical_quantum_peeling_sample_complexity_certificate
+        print(json.dumps(generate_dcp_adaptive_hybrid_classical_quantum_peeling_sample_complexity_certificate(), indent=2, sort_keys=True))
+        return 0
+
+    if getattr(args, "dcp_bell_conjugate_pair_phase_cancellation_obstruction", False):
+        from theorems.dcp_bell_conjugate_pair_phase_cancellation_obstruction import generate_dcp_bell_conjugate_pair_phase_cancellation_certificate
+        print(json.dumps(generate_dcp_bell_conjugate_pair_phase_cancellation_certificate(), indent=2, sort_keys=True))
+        return 0
+    if getattr(args, "dcp_coset_subspace_qft_concentration_and_leakage_bridge", False):
+        from theorems.dcp_coset_subspace_qft_concentration_and_leakage_bridge import generate_dcp_coset_subspace_qft_concentration_and_leakage_certificate
+        print(json.dumps(generate_dcp_coset_subspace_qft_concentration_and_leakage_certificate(), indent=2, sort_keys=True))
+        return 0
+
+    if getattr(args, "dcp_twisted_convolution_pretty_good_measurement_gram_bridge", False):
+        from theorems.dcp_twisted_convolution_pretty_good_measurement_gram_bridge import generate_dcp_twisted_convolution_pretty_good_measurement_gram_certificate
+        print(json.dumps(generate_dcp_twisted_convolution_pretty_good_measurement_gram_certificate(), indent=2, sort_keys=True))
+        return 0
+    if getattr(args, "dcp_dyadic_valuation_anchor_invariance_hierarchy_bridge", False):
+        from theorems.dcp_dyadic_valuation_anchor_invariance_hierarchy_bridge import generate_dcp_dyadic_valuation_anchor_invariance_hierarchy_certificate
+        print(json.dumps(generate_dcp_dyadic_valuation_anchor_invariance_hierarchy_certificate(), indent=2, sort_keys=True))
+        return 0
+
+    if getattr(args, "dcp_even_sublattice_parity_blindness_and_rescaling_bridge", False):
+        from theorems.dcp_even_sublattice_parity_blindness_and_rescaling_bridge import generate_dcp_even_sublattice_parity_blindness_and_rescaling_certificate
+        print(json.dumps(generate_dcp_even_sublattice_parity_blindness_and_rescaling_certificate(), indent=2, sort_keys=True))
+        return 0
+    if getattr(args, "planted_qary_macwilliams_dual_weight_enumerator_bridge", False):
+        from theorems.planted_qary_macwilliams_dual_weight_enumerator_bridge import generate_planted_qary_macwilliams_dual_weight_enumerator_certificate
+        print(json.dumps(generate_planted_qary_macwilliams_dual_weight_enumerator_certificate(), indent=2, sort_keys=True))
+        return 0
+    if getattr(args, "native_higher_call_composite_modulus_crt_factorization_audit", False):
+        from theorems.native_higher_call_composite_modulus_crt_factorization_audit import generate_native_higher_call_composite_modulus_crt_factorization_certificate
+        print(json.dumps(generate_native_higher_call_composite_modulus_crt_factorization_certificate(), indent=2, sort_keys=True))
+        return 0
+    if getattr(args, "dcp_multi_packet_product_twirl_sq_dimension_audit", False):
+        from theorems.dcp_multi_packet_product_twirl_sq_dimension_audit import generate_dcp_multi_packet_product_twirl_sq_dimension_certificate
+        print(json.dumps(generate_dcp_multi_packet_product_twirl_sq_dimension_certificate(), indent=2, sort_keys=True))
+        return 0
+    if getattr(args, "dcp_coherent_syndrome_uncomputation_reversible_oracle_bridge", False):
+        from theorems.dcp_coherent_syndrome_uncomputation_reversible_oracle_bridge import generate_dcp_coherent_syndrome_uncomputation_reversible_oracle_certificate
+        print(json.dumps(generate_dcp_coherent_syndrome_uncomputation_reversible_oracle_certificate(), indent=2, sort_keys=True))
+        return 0
+    if getattr(args, "dcp_sieve_bucket_collision_birthday_tradeoff_audit", False):
+        from theorems.dcp_sieve_bucket_collision_birthday_tradeoff_audit import generate_dcp_sieve_bucket_collision_birthday_tradeoff_certificate
+        print(json.dumps(generate_dcp_sieve_bucket_collision_birthday_tradeoff_certificate(), indent=2, sort_keys=True))
+        return 0
+
     return args.func(args)
 
 
 if __name__ == "__main__":
     raise SystemExit(main())
+
+# Subsystem CLI hook: dcp-coherent-multi-representative-amplitude-equalization-bridge -> theorems.dcp_coherent_multi_representative_amplitude_equalization_bridge
+
+# Subsystem CLI hook: dcp-adaptive-bayesian-posterior-phase-alignment-bridge -> theorems.dcp_adaptive_bayesian_posterior_phase_alignment_bridge
+
+# Subsystem CLI hook: dcp-hypergraph-phase-gate-cz-ccz-carry-elimination-bridge -> theorems.dcp_hypergraph_phase_gate_cz_ccz_carry_elimination_bridge
+
+# Subsystem CLI hook: dcp-noisy-syndrome-measurement-readout-bitflip-bridge -> theorems.dcp_noisy_syndrome_measurement_readout_bitflip_bridge
+
+# Subsystem CLI hook: dcp-gaussian-vs-sine-window-lwe-fourier-leakage-bridge -> theorems.dcp_gaussian_vs_sine_window_lwe_fourier_leakage_bridge
+
+# Subsystem CLI hook: dcp-non-abelian-wreath-product-pair-swap-commutant-bridge -> theorems.dcp_non_abelian_wreath_product_pair_swap_commutant_bridge
+
+# Subsystem CLI hook: dcp-modular-inversion-newton-hensel-lifting-quantum-bridge -> theorems.dcp_modular_inversion_newton_hensel_lifting_quantum_bridge
+
+# Subsystem CLI hook: dcp-sparse-parity-with-noise-ldpc-belief-propagation-bridge -> theorems.dcp_sparse_parity_with_noise_ldpc_belief_propagation_bridge
+
+# Subsystem CLI hook: dcp-quantum-phase-estimation-continued-fraction-q-prime-bridge -> theorems.dcp_quantum_phase_estimation_continued_fraction_q_prime_bridge
+
+# Subsystem CLI hook: dcp-multi-secret-block-matrix-simultaneous-peeling-bridge -> theorems.dcp_multi_secret_block_matrix_simultaneous_peeling_bridge
+
+# Subsystem CLI hook: dcp-clifford-stabilizer-magic-monotone-carry-injection-bridge -> theorems.dcp_clifford_stabilizer_magic_monotone_carry_injection_bridge
+
+# Subsystem CLI hook: dcp-post-selected-weak-value-phase-amplification-obstruction -> theorems.dcp_post_selected_weak_value_phase_amplification_obstruction
+
+# Subsystem CLI hook: dcp-cyclotomic-ring-rlwe-circulant-cnot-shift-invariance-bridge -> theorems.dcp_cyclotomic_ring_rlwe_circulant_cnot_shift_invariance_bridge
+
+# Subsystem CLI hook: dcp-quantum-rejection-sampling-lorentzian-vs-cosine-target-bridge -> theorems.dcp_quantum_rejection_sampling_lorentzian_vs_cosine_target_bridge
+
+# Subsystem CLI hook: dcp-bipartite-entanglement-entropy-syndrome-cut-bridge -> theorems.dcp_bipartite_entanglement_entropy_syndrome_cut_bridge
+
+# Subsystem CLI hook: dcp-end-to-end-hybrid-cnot-hensel-feedforward-receiver-bridge -> theorems.dcp_end_to_end_hybrid_cnot_hensel_feedforward_receiver_bridge
+
+# Subsystem CLI hook: dcp-quantum-singular-value-transformation-pgm-chebyshev-bridge -> theorems.dcp_quantum_singular_value_transformation_pgm_chebyshev_bridge
+
+# Subsystem CLI hook: dcp-galois-frobenius-automorphism-prime-power-peeling-bridge -> theorems.dcp_galois_frobenius_automorphism_prime_power_peeling_bridge
+
+# Subsystem CLI hook: dcp-multi-level-richardson-extrapolation-dephasing-mitigation-bridge -> theorems.dcp_multi_level_richardson_extrapolation_dephasing_mitigation_bridge
+
+# Subsystem CLI hook: dcp-quadratic-residue-legendre-gauss-sum-phase-oracle-bridge -> theorems.dcp_quadratic_residue_legendre_gauss_sum_phase_oracle_bridge
+
+# Subsystem CLI hook: dcp-symplectic-clifford-stabilizer-tableau-witness-compiler-bridge -> theorems.dcp_symplectic_clifford_stabilizer_tableau_witness_compiler_bridge
+
+# Subsystem CLI hook: dcp-coherent-cnot-uncomputation-echo-loschmidt-visibility-bridge -> theorems.dcp_coherent_cnot_uncomputation_echo_loschmidt_visibility_bridge
+
+# Subsystem CLI hook: dcp-lattice-gram-schmidt-babai-nearest-plane-vs-rounding-bridge -> theorems.dcp_lattice_gram_schmidt_babai_nearest_plane_vs_rounding_bridge
+
+# Subsystem CLI hook: dcp-composite-crt-coprime-modulus-tensor-factorization-bridge -> theorems.dcp_composite_crt_coprime_modulus_tensor_factorization_bridge

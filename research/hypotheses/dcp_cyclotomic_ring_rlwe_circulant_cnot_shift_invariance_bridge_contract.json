@@ -1,0 +1,12 @@
+{
+  "hypothesis_id": "dcp_cyclotomic_ring_rlwe_circulant_cnot_shift_invariance_bridge",
+  "title": "Cyclotomic Ring-LWE Negacyclic CNOT Shift-Orbit Invariance and Wrap-Around Pauli-X Frame",
+  "status": "VERIFIED_FINITE_IDENTITIES_REVIEW_PENDING",
+  "claims": [
+    "Over R_{2^t} = Z_{2^t}[X]/(X^n + 1), any mod-2 kernel witness generates n valid mod-2 kernel witnesses via cyclic shifts S^r(v) because X^n == -1 == +1 (mod 2).",
+    "Applying a Pauli-X sign-flip frame gate on wires that wrap across the X^n = -1 boundary restores exact mod-2^t negacyclic shift equivariance across all n shifts."
+  ],
+  "favorable_controls": [
+    "R_8 = Z_8[X]/(X^4 + 1) across all r = 0, 1, 2, 3 shifts"
+  ]
+}

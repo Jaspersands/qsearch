@@ -1,0 +1,51 @@
+{
+  "all_checks_passed": true,
+  "certificate_sha256_16": "9c0f00abcb93cf9d",
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "p16_window_comparison": {
+    "P_window_size": 16,
+    "exact_optimality_verified": true,
+    "gamma1_box": 0.9375,
+    "gamma1_sine_optimal_closed_form": 0.9829730996839018,
+    "gamma1_sine_optimal_explicit": 0.9829730996839018,
+    "gamma1_truncated_gaussian": 0.9700349611133873,
+    "gaussian_sigma": 7.2,
+    "loss1_box": 0.0625,
+    "loss1_sine_optimal": 0.017026900316098215,
+    "loss1_truncated_gaussian": 0.029965038886612727,
+    "max_dirichlet_laplacian_eigenvector_error": 2.445960101127298e-16,
+    "qft_leakage_outside_b1_gaussian": 0.007216557468272433,
+    "qft_leakage_outside_b1_sine": 0.006891372080491176,
+    "qft_leakage_outside_b2_gaussian": 4.336762284673501e-05,
+    "qft_leakage_outside_b2_sine": 0.001322376964042138
+  },
+  "p32_window_comparison": {
+    "P_window_size": 32,
+    "exact_optimality_verified": true,
+    "gamma1_box": 0.9687499999999998,
+    "gamma1_sine_optimal_closed_form": 0.9954719225730846,
+    "gamma1_sine_optimal_explicit": 0.9954719225730845,
+    "gamma1_truncated_gaussian": 0.9924017635561655,
+    "gaussian_sigma": 14.4,
+    "loss1_box": 0.03125000000000022,
+    "loss1_sine_optimal": 0.004528077426915411,
+    "loss1_truncated_gaussian": 0.007598236443834505,
+    "max_dirichlet_laplacian_eigenvector_error": 1.0419182877585698e-16,
+    "qft_leakage_outside_b1_gaussian": 0.007187823927016224,
+    "qft_leakage_outside_b1_sine": 0.00821129751442684,
+    "qft_leakage_outside_b2_gaussian": 4.92769601034837e-05,
+    "qft_leakage_outside_b2_sine": 0.0017878275901065388
+  },
+  "proof_status": "LOCAL_DERIVATION_REVIEW_PENDING_NOT_FORMALLY_VERIFIED",
+  "schema_version": "dcp-gaussian-vs-sine-window-lwe-fourier-leakage-bridge-v1",
+  "scope_constraints": {
+    "applies_to": "Finite-support Dirichlet-Laplacian unit-shift optimality of the discrete sine window vs. truncated Gaussian and box windows on {0, ..., P-1}",
+    "controls_included": "Includes P=16 and P=32 window comparisons verifying exact ground-state eigenvector error < 1e-12, gamma_box(1) < gamma_gauss(1) < gamma_sin*(1) = cos(pi/(P+1)), and the mainlobe (|k|<=1) vs far-sidelobe (|k|>=3) tradeoff.",
+    "does_not_claim": "Superiority of the sine window over a Gaussian window in the far-sidelobe QFT tail |k| >= 3"
+  },
+  "theorem_id": "dcp_gaussian_vs_sine_window_lwe_fourier_leakage_bridge"
+}

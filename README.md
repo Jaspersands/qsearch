@@ -26,11 +26,180 @@ Rather than optimizing for small-scale demonstrations, toy circuits, or prematur
 
 ## Executive Summary
 
-The central question driving Q-Search is: **Can genuine polynomial or super-polynomial quantum speedups be established for non-abelian hidden subgroup problems, linear code equivalence, or dihedral coset instances without falling to classical dequantization?**
+The central question driving Q-Search is: **Can explicit computational structure support major quantum speedups after state preparation, readout, precision, and strong classical competitors are charged?**
 
 ### Current Research Decision
 
-**The missing result is an efficient receiver, not more infrastructure.**
+**Test constructive algorithms, not more surrounding infrastructure. No breakthrough algorithm is implemented.**
+
+The [Jacobi/surface-counting proposal](research/JACOBI_KNOWN_NORM_REDUCTION.md)
+has a decisive classical competitor: published known-relative-norm generator
+recovery removes its proposed prime-conductor asymptotic quantum opening
+under the stated Jacobi identities. Both classical-theorem inputs are now
+constructed and checked, including all51 profiles at a61-bit prime. The
+published recovery algorithm itself is NOT implemented; the existing actual
+count uses LLL. Local reduction review is pending. Do not pursue LLL failures
+as quantum evidence or extend this conclusion to generic principal ideals.
+
+The [independent-qubit HDQI family](research/HDQI_PREDECESSOR_UNIFORM.md)
+has a classical optimum-energy solver. A different
+[Hermitian qutrit construction](research/HERMITIAN_QUTRIT_PILOT.md) now has
+an actual checked readout, but its missing pilot is already the filtered
+seed state. Any constructible low-bond MPS pilot also has a matched classical
+energy contraction, tested without exponential arrays at64 sites. Neither
+result settles general HDQI, arbitrary quantum sources or Gibbs sampling.
+
+The [coherent BPQM erasure stage](research/COHERENT_BPQM_ERASURE.md) now
+executes cyclic-code recovery with every record retained. Valid linear
+recovery does not make the finite Gibbs readout exact. Unfiltered native
+rank failures are preserved; one comes from duplicate unary factors that
+have an exact classical reduction, NOT a sampling-hardness witness.
+
+A [conjugate-register quadratic-DQI repair](research/CONJUGATE_CHIRP_REPAIR.md)
+was implemented and challenged at the full-state level. Its public decoder
+erases labels, but it prepares a different bilinear objective. A scoped
+expected-score bound removes the diagonal proposal's asymptotic mean
+advantage; a separate joint-moment bound checks its rare-good-output escape.
+Postselecting back to the intended target is not a free repair.
+This rejects one concrete proposal, not quadratic quantum algorithms in general.
+
+The [prime-field character OPI test](research/PRIME_CHARACTER_OPI.md) now has
+a constructive classical power-completion solver for common-coset high-rate
+inputs, plus an adaptive mixed-coset attack. On the saved127-position mixed
+inputs, classical scores improve102/102 to109/109 at dimension39, and118/118
+to124/122 at dimension77. All proposals and native witnesses are retained.
+An independent [quadratic-extension norm attack](research/PRIME_CHARACTER_NORM_ATTACK.md)
+now makes BOTH dimension77 mixed inputs perfect127/127, including strict
+siblings. It also has an exact inverse-polynomial first-trial success bound
+for an IID-shift population, NOT a fixed-input amplification theorem. An
+all-parameter counterexample killed its first monic pencil and motivated an
+expanded square-leading family. Dimension39 remains outside this degree budget.
+The [fixed-input Morse extension](research/PRIME_CHARACTER_MORSE_ATTACK.md)
+now supplies an explicit classical probability bound under degree/field-size
+conditions, with a strict127/127 witness in a declared1279-bit field lift.
+An [exterior-character trace refinement](research/PRIME_CHARACTER_EXTERIOR_BOUND.md)
+reduces the sufficient threshold from756 to169bits and executes strict127/127
+in a declared192-bit field after24 fiber tests. The cohomological application
+is review pending; the original61-bit large cases STILL have zero lower bound.
+These are stronger competitors, not a general asymptotic dequantization or a new
+quantum algorithm. Strictly excluding zero also has a constructive common-
+coset solver at one extra degree; the exact boundary is not silently covered.
+Three recent DCP claims were corrected: termwise carry
+necessity missed cancellations, and a dephased branch bound was wrongly
+applied to a coherent state; another comparator assumed unavailable classical
+phase samples and mischarged flagged erasures. Their old conclusions must
+not guide search.
+The latest multi-packet local-Helstrom > X-readout claim was also corrected:
+an explicit distinct-header counterexample reverses that ordering. Passing
+the selected controls did not establish a universal measurement hierarchy.
+
+The [polar source-design follow-up](research/POLAR_SOURCE_DESIGN.md) now
+constructs a non-prefix half-rate family at32,768 coordinates with classical
+average-sign Gibbs TV error<=0.010221, without a full source table. This
+closes the missing public-code construction premise for that polar route.
+It is a classical competitor, not a new quantum algorithm or an all-sign result.
+
+The [compact cubic-target follow-up](research/EXPLICIT_CUBIC_OPI.md) now tests
+fields much larger than the code length without supplying a hard oracle.
+Constructive cubic polarization plus exact residual optimization reaches
+105/127 and104/127 classically, above the known filter mean0.81683. This removes
+another finite mean-score comparison, not an asymptotic quantum advantage.
+The saved pool-tail bound explains why neither finite wins nor failed attacks
+settle that question. Every source, paid attempt and native witness is retained.
+The [native filter-tail certificates](research/OPI_FILTER_TAIL_CERTIFICATE.md)
+now make that caveat quantitative: a known filter still guarantees a positive
+ideal probability of reaching104/127. No quantum gate-budget advantage follows.
+
+The latest [explicit quadratic-target OPI test](research/EXPLICIT_QUADRATIC_OPI.md)
+compares a known DQI score guarantee with attacks on compact public predicates,
+not oracle lower bounds. Accepted-affine-flat interpolation gives a scoped
+high-rate classical explanation; repair removes the initial finite mean-score
+gap in both127-position controls, with all restart/neighborhood work charged.
+Lower-rate asymptotics and matched quantum-tail comparisons remain open.
+Solver limits are not hardness evidence, and no new quantum algorithm is claimed.
+
+The new [BPQM Gibbs-sampling experiment](research/BPQM_GIBBS_FRONTIER.md) tests
+a concrete literature-backed decoder beyond product-USD/Prange. Exact local
+channel bounds show a sufficient tree convergence regime, but physical tree
+costs are enormous and a stronger classical cluster sampler remains live.
+This is not a new quantum algorithm or an established classical separation.
+The [stronger classical follow-up](research/AFFINE_CLUSTER_NATIVE_PROBE.md)
+now tests the actual input ensemble and supplies an exact factor sampler for
+the targeted32-spin graph. Agreement between Monte Carlo methods was not enough:
+an exact observable reference exposes their finite-run discrepancies.
+
+The [coherent coset-readout experiment](research/COHERENT_LOCAL_GIBBS.md)
+now executes source/decoder/XOR/adjoint circuits with every workspace retained.
+It shows why whole-codeword accuracy is not the universal sampling objective:
+a parity PGM gives correct unconditional Gibbs samples despite word errors.
+Overlapping local measurements fail to compose exactly; a global reference
+works but has an exponential table and a matched exact classical sampler.
+The missing contribution is an efficient coherent transform, not a free PGM.
+The [full tree BPQM follow-up](research/COHERENT_BPQM_TREE.md) now repairs the
+overlap control with actual herald-controlled message-passing gates. It still
+has explicit-table growth and a tractable classical tree baseline; it is not
+the missing efficient cyclic-code decoder.
+The [log-reliability arithmetic contract](research/BPQM_LOG_RELIABILITY.md)
+now separates signed register range, conditional precision and whole-program
+error from the still-unimplemented reversible arithmetic and its gate costs.
+The [cyclic split-channel test](research/COHERENT_BPQM_SPLIT.md) now pays for
+weaker outputs and retained ancillas when unrolling loops. One level improves
+the finite control, but another worsens it; an exact classical sampler remains
+cheap. More unrolling is not an established route to correct Gibbs sampling.
+
+The [current research decision](research/RESEARCH_PRIORITY_DECISION.md) stops
+DCP-by-inertia and compares independent directions. A concrete shortcut to the
+ternary filter was tested and [exactly classically reproduced](research/TERNARY_LINEAR_ERASURE_FALSIFIER.md),
+including all failures. The [nonlinear follow-up](research/TERNARY_SYNDROME_CORRECTION.md)
+now executes too: a finite gain is reproduced classically, and random dense
+quadratics have exponentially small source-average success in this template.
+Structured coefficients remain unresolved, not an implemented algorithm.
+Compare independent constructive mechanisms before extending this track.
+DCP remains a conditional reserve; its source budgeting below supplies no
+efficient finder. Test counts and registry counts are not algorithmic progress.
+
+Two new DCP audit claims were [corrected](research/DCP_BABAI_LATTICE_ROUNDING_WITNESS_OBSTRUCTION.md):
+LLL coordinate rounding need not overflow, and
+[disjoint-kernel labels are not uniform on the full group](research/DCP_CLEAN_LINEAR_WITNESS_CARRY_OBSTRUCTION.md).
+Their unsupported impossibility bounds are withdrawn. A real native-label
+rounding experiment loses coverage in the tested range, but establishes no
+general no-go. New integrations are not automatically verified mathematics.
+
+An [independent dynamics test](research/CONDITIONAL_BOSON_DYNAMICS.md) now checks
+configuration-controlled bosonic displacement. Its specified Pauli readouts
+have certified classical baselines; local readout on64 controls needs only two
+assignments. A real hopping countercontrol prevents extending this conclusion
+to the full interacting model. The published quantum polaron algorithm is
+not refuted, and no new speedup is claimed.
+
+The [clean-source budget](research/DCP_CLEAN_SOURCE_BUDGET.md) closes the
+copy/advantage/noise/modulus tradeoff using public source parameters. Smaller
+noise can preserve a clean predictor at a worse gap; inverse-dimension-noise
+robustness is not a prerequisite for every useful algorithm. This is a costed
+application of existing reductions, not a new one. Scalar and lifted-native
+targets remain distinct, with explicit copy lower-bound gates and no hidden
+short-vector or correct-trial oracle.
+
+The [parity reduction](research/DCP_NATIVE_PARITY_BRIDGE.md) identifies the
+useful bit that would suffice for cyclic DCP. Total information does not
+guarantee access to it. The [measurement audit](research/DCP_NATIVE_PARITY_OBSERVABLES.md)
+and [forward-SWAP attempt](research/DCP_FORWARD_SAMPLER_SWAP.md) eliminate
+specific noisy templates, not all efficient circuits. The
+[multimode workbench](research/DCP_CONDITIONAL_ERROR_FRAMES.md) shows an
+information-only escape whose current transform is exponential. Robustness
+work remains optional lower-gap research, not the sole search direction.
+
+The latest [coarse-readout analysis](research/DCP_COARSE_READOUT_INFORMATION.md)
+now gives a conditional native LINEAR accessible-information bound: with3n
+original phase qubits, mod2 projection and fixed-X readout retain at leastn/4
+uniform-prior residual-secret bits for n>=64, under the stated noise promise.
+Mod4 at width5n is another escape. No efficient decoder or natural-source noise
+certificate is supplied. These bits do NOT certify first-bit access. The
+current priority is useful-bit inference with an honest total-copy budget
+from these real transcripts, not adding measurement complexity merely to obtain
+information. The [weighted-moment search](research/DCP_WEIGHTED_FIBER_MOMENT_SEARCH.md)
+also exposes sparse high-moment witnesses whose paid POVM mass is small;
+none is promoted to an algorithm or an all-measurement no-go.
 
 The [paid banded-QFT classical baseline](research/NATIVE_BANDED_QFT_BASELINE.md)
 now samples two-call public-phase schedules without dense word/state tables,
@@ -128,6 +297,59 @@ zero-label restoration for independent balanced noise by retaining visibility
 and preparing a matching dephased zero state. Run
 `python qsearch.py dcp-noise-matched-source`. This closes an abstract conditional
 source family, not the actual lattice-noise, supply or recovery problem.
+The [vector short-mask join](research/DCP_VECTOR_SHORT_MASK_JOIN.md) implements
+a contrasting frontier: linear original supply and constant scoped per-level
+signal, but exponential sorting time and COHERENT workspace. Run
+`python qsearch.py dcp-vector-short-mask-join`. This is a baseline to beat,
+not a polynomial receiver or new DCP algorithm.
+The [native tree audit](research/DCP_NATIVE_TREE_MOMENT_SPEC.md) tests a further
+search direction: zero-sum tree filters with exact native correlation and
+overflow accounting. Run `python qsearch.py dcp-native-tree-moment-audit`.
+The [bounded native tree program](research/DCP_NATIVE_TREE_RECEIVER.md) now
+implements the abstract clean XOR-F schedule with whole-attempt overflow
+rejection and charged sorting/count histories. Run
+`python qsearch.py dcp-native-tree-receiver`. Low-level gate export, a scalable
+decoder and independent review remain missing; expected classical list sizes
+are not free coherent work.
+The [oblivious bounded join](research/DCP_OBLIVIOUS_TREE_MERGE.md) supplies a
+tested alternative to quadratic pair materialization using fixed-address
+sorting, rank requests and complete reversal. Run
+`python qsearch.py dcp-oblivious-tree-merge`. Its integration into the complete
+tree is still pending; no complete-tree exponent improvement is claimed.
+The [centered overflow-cap derivation](research/DCP_NATIVE_TREE_VARIANCE_CAP.md)
+uses exact intermediate-list variances to reduce the cap required by the
+native acceptance proof. Run `python qsearch.py dcp-native-tree-variance-cap`.
+It is a review-pending alternate certificate, not a silent default-cap change.
+The [latent-error access check](research/DCP_LATENT_ERROR_ACCESS_REVIEW.md)
+blocks interpreting hidden error equality as an available phase-qubit syndrome.
+Run `python qsearch.py dcp-latent-error-access`. Exact span and CNOT controls
+separate classical conditioning from a physical receiver; this is not a
+general purification no-go.
+The current collective research target is an
+[implicit correlated phase block](research/DCP_PAIRING_COMPOSITION_BARRIER.md),
+not repeated one-pair compression. `python qsearch.py dcp-correlated-phase-block`
+exports a polynomial CX/CCX syndrome circuit without a fiber inverse.
+`python qsearch.py dcp-correlated-block-observables` checks the full joint
+readout and a product-measurement baseline. Its native mean-information bound
+and charged sample lower bound concern this fixed readout, not all algorithms;
+no efficient unknown-secret decoder has been found.
+
+The [complex-axis readout](research/DCP_COMPLEX_AXIS_READOUT.md) removes the
+fixed real circuit's secret-negation alias with actual S-dagger/H gates, but
+does not provide a decoder. [All-POVM fiber analysis](research/DCP_FIBER_ACCESSIBLE_INFORMATION.md)
+now isolates the weighted fourth-moment bound needed to test whether retained
+Holevo information is accessible at all on one block; that native bound is open.
+[Quadratic fiber coordinates](research/DCP_QUADRATIC_FIBER_COORDINATES.md)
+provide exact Clifford compression of the measured low-bit constraints and
+explicit remaining quadratic equations, preserving higher phases and correlated noise.
+Both new theory producers run standalone with `--write`; routine CLI integration
+is queued for Gemini, not claimed complete.
+
+**Scientific corrections:** [noisy-subspace QFT](research/PLANTED_QARY_NOISY_PARITY_CHECK_LIKELIHOOD_BRIDGE.md)
+now distinguishes coherent translation, phase noise and classical samples using
+actual density operators. Two additional [overbroad campaign negatives](research/CAMPAIGN_NEGATIVE_CLAIM_AUDIT.md)
+are quarantined rather than used to reject research directions. Green finite
+tests do not establish a general mathematical theorem, positive or negative.
 
 **Latest scope checks:** the [refresh crossover audit](research/NATIVE_REFRESH_CROSSOVER_SCOPE_AUDIT.md)
 retains a useful width lemma but rejects incompatible composition scopes and

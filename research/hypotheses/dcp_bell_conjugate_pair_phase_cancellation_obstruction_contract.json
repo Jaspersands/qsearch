@@ -1,0 +1,17 @@
+{
+  "hypothesis_id": "dcp_bell_conjugate_pair_phase_cancellation_obstruction",
+  "title": "DCP Bell Conjugate-Pair Phase Cancellation Obstruction",
+  "status": "LOCAL_DERIVATION_REVIEW_PENDING",
+  "claims": [
+    "Bell measurement on rho(a_1, s) tensor rho(a_2, s) samples sum-header cosine on Phi^pm and difference-header cosine on Psi^pm with attenuated coherence gamma_1 * gamma_2.",
+    "All four Bell outcome probabilities are invariant under s -> -s mod q.",
+    "Includes the matched-header swap-test control a_1 == a_2 where P(Psi^+) = (1 + gamma^2)/4 is secret-independent.",
+    "For IID uniform random headers and fixed known coherence, one random-header X observation and public randomness reproduce the complete Bell transcript using synthetic headers; no chosen-header query is needed.",
+    "This does not simulate prespecified or selected header pairs, retained quantum outputs, header-dependent noise or extra correlated side information, and is not a classical DCP solver."
+  ],
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  }
+}

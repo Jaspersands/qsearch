@@ -291,6 +291,12 @@ def program_value(program, x):
     if program["kind"] == "POLYNOMIAL_DISJOINT_PARITY_KERNEL":
         from theorems.dcp_disjoint_kernel_pairing import partner
         return partner(program, x)
+    if program["kind"] == "VECTOR_Z4_BALANCED_SORT_JOIN":
+        from theorems.dcp_vector_short_mask_join import propose
+        return propose(program, x)
+    if program["kind"] == "NATIVE_Z4_BOUNDED_TREE_SORT_JOIN":
+        from theorems.dcp_native_tree_receiver import propose
+        return propose(program, x)
     if m > 12:
         raise ValueError("UNKNOWN: exponential lookup reference cap")
     if program["kind"] != "EXPONENTIAL_LOOKUP_REFERENCE" or len(program["table"]) != 1 << m:

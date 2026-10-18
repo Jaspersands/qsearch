@@ -1,0 +1,95 @@
+{
+  "all_checks_passed": true,
+  "certificate_sha256_16": "8f6a2fd862f59acc",
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "proof_status": "LOCAL_DERIVATION_REVIEW_PENDING_NOT_FORMALLY_VERIFIED",
+  "readout_error_sweep": {
+    "all_verified": true,
+    "gamma": 0.9,
+    "records": [
+      {
+        "error_rate_reduction_factor": 1.0,
+        "eta": 0.0,
+        "eta_post_selected": 0.0,
+        "exact_identities_verified": true,
+        "parity_check_accept_prob_per_syndrome": 1.0,
+        "single_pair_visibility_unverified": 0.9,
+        "single_pair_visibility_verified": 0.9,
+        "two_pair_alignment_prob_unverified": 1.0,
+        "two_pair_net_visibility_unverified": 0.81,
+        "two_pair_net_visibility_verified": 0.81
+      },
+      {
+        "error_rate_reduction_factor": 98.02,
+        "eta": 0.01,
+        "eta_post_selected": 0.00010201999591920018,
+        "exact_identities_verified": true,
+        "parity_check_accept_prob_per_syndrome": 0.9802,
+        "single_pair_visibility_unverified": 0.882,
+        "single_pair_visibility_verified": 0.8998163640073454,
+        "two_pair_alignment_prob_unverified": 0.9802,
+        "two_pair_net_visibility_unverified": 0.777924,
+        "two_pair_net_visibility_verified": 0.8096694889353997
+      },
+      {
+        "error_rate_reduction_factor": 18.099999999999994,
+        "eta": 0.05,
+        "eta_post_selected": 0.00276243093922652,
+        "exact_identities_verified": true,
+        "parity_check_accept_prob_per_syndrome": 0.9049999999999999,
+        "single_pair_visibility_unverified": 0.81,
+        "single_pair_visibility_verified": 0.8950276243093923,
+        "two_pair_alignment_prob_unverified": 0.905,
+        "two_pair_net_visibility_unverified": 0.6561000000000001,
+        "two_pair_net_visibility_verified": 0.8010744482769148
+      },
+      {
+        "error_rate_reduction_factor": 8.2,
+        "eta": 0.1,
+        "eta_post_selected": 0.012195121951219514,
+        "exact_identities_verified": true,
+        "parity_check_accept_prob_per_syndrome": 0.8200000000000001,
+        "single_pair_visibility_unverified": 0.7200000000000001,
+        "single_pair_visibility_verified": 0.8780487804878049,
+        "two_pair_alignment_prob_unverified": 0.8200000000000001,
+        "two_pair_net_visibility_unverified": 0.5184000000000001,
+        "two_pair_net_visibility_verified": 0.7709696609161213
+      },
+      {
+        "error_rate_reduction_factor": 2.5,
+        "eta": 0.25,
+        "eta_post_selected": 0.1,
+        "exact_identities_verified": true,
+        "parity_check_accept_prob_per_syndrome": 0.625,
+        "single_pair_visibility_unverified": 0.45,
+        "single_pair_visibility_verified": 0.7200000000000001,
+        "two_pair_alignment_prob_unverified": 0.625,
+        "two_pair_net_visibility_unverified": 0.2025,
+        "two_pair_net_visibility_verified": 0.5184000000000001
+      },
+      {
+        "error_rate_reduction_factor": 1.0,
+        "eta": 0.5,
+        "eta_post_selected": 0.5,
+        "exact_identities_verified": true,
+        "parity_check_accept_prob_per_syndrome": 0.5,
+        "single_pair_visibility_unverified": 0.0,
+        "single_pair_visibility_verified": 0.0,
+        "two_pair_alignment_prob_unverified": 0.5,
+        "two_pair_net_visibility_unverified": 0.0,
+        "two_pair_net_visibility_verified": 0.0
+      }
+    ]
+  },
+  "schema_version": "dcp-noisy-syndrome-measurement-readout-bitflip-bridge-v1",
+  "scope_constraints": {
+    "applies_to": "Classical syndrome measurement readout bit-flip damping (1-2*eta)^2 and 2-readout parity-check O(eta^2) suppression",
+    "controls_included": "Includes noiseless eta=0.0 control, realistic eta=0.05 readout error (18.1x suppression to eta_post = 0.002762), and maximal-noise eta=0.50 erasure control (visibility = 0.0).",
+    "does_not_claim": "Protection against coherent phase errors on the unmeasured survivor wire prior to the CNOT gate"
+  },
+  "theorem_id": "dcp_noisy_syndrome_measurement_readout_bitflip_bridge"
+}

@@ -1,0 +1,14 @@
+{
+  "hypothesis_id": "dcp_coherent_fiber_support_erasure_inversion_bridge",
+  "title": "DCP Coherent Fiber-Support Erasure vs. Un-Erased Pointer Dephasing Bridge",
+  "status": "VERIFIED_SCOPED_BRIDGE",
+  "claims": [
+    "Computing |x> -> |x, A x mod q> without uncomputing |x> leaves the reduced label density matrix rho_{label}(s) = sum_y (N_A(y)/2^K)|y><y| strictly independent of s.",
+    "Single-representative canonical uncomputation achieves ancilla-zero probability R(A)/2^K and unconditional recovery R(A)^2 / (2^K * Q) <= P_{PGM}(A), with equality iff A is collision-free."
+  ],
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  }
+}

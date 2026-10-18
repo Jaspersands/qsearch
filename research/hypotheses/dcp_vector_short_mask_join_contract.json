@@ -1,0 +1,25 @@
+{
+  "contract_id": "vector_Z4_short_mask_balanced_sorting_join_frontier_v1",
+  "experiment_id_for_mechanical_integration": "EXP-DHS-DCP-VECTOR-SHORT-MASK-JOIN",
+  "status": "LOCAL_DERIVATION_EXTERNAL_REVIEW_PENDING",
+  "mechanism": "Componentwise vector modular sums, balanced fixed supports, unconditioned affine isolation and reversible sorting join",
+  "relation": "A(y-x)=0 in Z4^n with nonzero full descended label",
+  "default_original_supply": "4n",
+  "default_list_length_per_half": "2^n",
+  "default_physical_mask_width": "2k<=2n",
+  "default_source_mean_coarse_coverage_lower": "1/32+1/(32*4^n)",
+  "noise_scope": "Independent balanced original visibility; source-mean lower bound, not arbitrary correlated noise",
+  "time_and_coherent_workspace_are_exponential": true,
+  "coherent_RAM_assumed": false,
+  "sorting_gate_export_implemented": false,
+  "efficient_growing_depth_decoder_supplied": false,
+  "accepted_speedup_candidate": false,
+  "novelty_claim": false,
+  "remaining_proof_obligations": [
+    "Independent review of the vector moment/isolation argument and source interface",
+    "An efficient short-mask evaluator without exponential coherent histories",
+    "Amortized multi-output or other escape from one-output recursive supply",
+    "Actual natural-source joint noise, hard reduction and final decoder"
+  ],
+  "literature": ["https://arxiv.org/abs/1207.2307", "https://arxiv.org/abs/2206.14408"]
+}

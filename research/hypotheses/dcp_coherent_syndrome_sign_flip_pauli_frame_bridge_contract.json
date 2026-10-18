@@ -1,0 +1,14 @@
+{
+  "hypothesis_id": "dcp_coherent_syndrome_sign_flip_pauli_frame_bridge",
+  "title": "DCP Coherent Pauli-X Label-Negation and Multi-Stage Sign-Rectified CNOT Routing Bridge",
+  "status": "VERIFIED_SCOPED_BRIDGE",
+  "claims": [
+    "Conjugating any single-qubit DCP phase state rho(a, s, gamma) by the secret-independent Pauli-X gate satisfies X rho(a, s, gamma) X == rho((-a) mod q, s, gamma) identically.",
+    "At level k = 3 (mod 8), syndrome-conditioned Pauli-X sign rectification aligns the d_2 = 0 Stage-2 CNOT branch to 0 mod 8 across 100% of odd-mod-4 wire pairs in {2, 6}^2 (vs. 50% without rectification)."
+  ],
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  }
+}

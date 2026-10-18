@@ -1,0 +1,14 @@
+{
+  "hypothesis_id": "dcp_cnot_conjugated_schur_weyl_clifford_twirl_bridge",
+  "title": "DCP CNOT-Star-Conjugated Schur-Weyl Projector Selection Rules and Harmonic Parity Bridge",
+  "status": "VERIFIED_SCOPED_BRIDGE",
+  "claims": [
+    "Under the r-wire CNOT star U_{star}, bitwise complements satisfy w_{star}(bar_x) = w_{star}(x) + (1 - 2*x_0) != w_{star}(x), so U_{star}^dagger Pi_lambda U_{star} has strictly zero degree-r phase harmonics for all r >= 1 and lambda |- r.",
+    "For odd r, U_{star}^dagger Pi_lambda U_{star} couples only even-Hamming-distance pairs, yielding at r=3 the exact closed-form probability 1/2 + (g1*g2*cos(t1-t2) + g0*cos(t0)*(g1*cos(t1)+g2*cos(t2)))/6."
+  ],
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "all_checks_passed": true,
+  "certificate_sha256_16": "76c8b6f874f1aff5",
+  "evenness_checks": [
+    {
+      "K": 3,
+      "all_anchors_checked": 8,
+      "all_effective_columns_even": true,
+      "distinct_rescaled_column_count": 3,
+      "halving_bijection_holds": true,
+      "in_mod2_kernel": true,
+      "n": 1,
+      "t": 3
+    },
+    {
+      "K": 3,
+      "all_anchors_checked": 8,
+      "all_effective_columns_even": true,
+      "distinct_rescaled_column_count": 4,
+      "halving_bijection_holds": true,
+      "in_mod2_kernel": true,
+      "n": 2,
+      "t": 3
+    }
+  ],
+  "fixed_instance_controls": {
+    "all_anchor_resonant_A_2_0_mod_4": {
+      "K": 2,
+      "halving_isomorphism_exact": true,
+      "m": 1,
+      "max_odd_target_advantage": 0.0,
+      "mean_conditional_advantage": 1.0,
+      "n": 1,
+      "odd_target_strictly_blind": true,
+      "subspace_selection_probability": 0.5,
+      "t": 2,
+      "unconditional_branch_contribution": 0.5
+    },
+    "half_anchor_resonant_A_1_1_mod_4": {
+      "K": 2,
+      "halving_isomorphism_exact": true,
+      "m": 1,
+      "max_odd_target_advantage": 0.0,
+      "mean_conditional_advantage": 0.5,
+      "n": 1,
+      "odd_target_strictly_blind": true,
+      "subspace_selection_probability": 0.5,
+      "t": 2,
+      "unconditional_branch_contribution": 0.25
+    }
+  },
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "schema_version": "dcp-even-sublattice-parity-blindness-and-rescaling-bridge-v1",
+  "scope_constraints": {
+    "applies_to": "Disjoint mod-2 kernel witness compression V_1, ..., V_m in ker(A mod 2) conditioned on the anchor subspace event y = (I_K, V) u",
+    "does_not_claim": "General DCP impossibility or fixed-instance uniformity across anchors x_0",
+    "reconciles": "Explains why effective columns lie in the index-2^n even sublattice (2 Z_{2^t})^n (isomorphic to Z_{2^{t-1}}^n of size Q_even = 2^{n(t-1)}), exhibits fixed-instance resonant controls (Adv_cond = 1.0 for A=[[2,0]] mod 4 and E_{x_0}[Adv_cond] = 0.5 for A=[[1,1]] mod 4), and proves exact IID uniformity of the halved columns B_j(x_0) over Z_{2^{t-1}}^n under uniform upper bits A^{(high)} = floor(A/2)."
+  },
+  "t1_blindness_audit": {
+    "K": 2,
+    "halving_isomorphism_exact": true,
+    "m": 1,
+    "max_odd_target_advantage": 0.0,
+    "mean_conditional_advantage": 0.0,
+    "n": 1,
+    "odd_target_strictly_blind": true,
+    "subspace_selection_probability": 0.5,
+    "t": 1,
+    "unconditional_branch_contribution": 0.0
+  },
+  "theorem_id": "dcp_even_sublattice_parity_blindness_and_rescaling_bridge",
+  "upper_bit_ensemble_checks": [
+    {
+      "K": 3,
+      "bound_respected": true,
+      "distinct_rescaled_column_tuples": 2,
+      "ensemble_mean_conditional_advantage": 0.5,
+      "exact_iid_uniform_over_even_sublattice": true,
+      "expected_distinct_tuples": 2,
+      "m": 1,
+      "n": 1,
+      "q_even_sublattice_size": 2,
+      "rescaled_bcdv_bound_q_even": 0.7071067811865476,
+      "t": 2,
+      "total_upper_bit_instances": 8
+    },
+    {
+      "K": 3,
+      "bound_respected": true,
+      "distinct_rescaled_column_tuples": 4,
+      "ensemble_mean_conditional_advantage": 0.25,
+      "exact_iid_uniform_over_even_sublattice": true,
+      "expected_distinct_tuples": 4,
+      "m": 1,
+      "n": 1,
+      "q_even_sublattice_size": 4,
+      "rescaled_bcdv_bound_q_even": 0.5,
+      "t": 3,
+      "total_upper_bit_instances": 64
+    },
+    {
+      "K": 4,
+      "bound_respected": true,
+      "distinct_rescaled_column_tuples": 4,
+      "ensemble_mean_conditional_advantage": 0.75,
+      "exact_iid_uniform_over_even_sublattice": true,
+      "expected_distinct_tuples": 4,
+      "m": 2,
+      "n": 1,
+      "q_even_sublattice_size": 2,
+      "rescaled_bcdv_bound_q_even": 1.0,
+      "t": 2,
+      "total_upper_bit_instances": 16
+    }
+  ]
+}

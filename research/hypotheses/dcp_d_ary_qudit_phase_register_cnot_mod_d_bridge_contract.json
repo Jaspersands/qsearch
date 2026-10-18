@@ -1,0 +1,14 @@
+{
+  "hypothesis_id": "dcp_d_ary_qudit_phase_register_cnot_mod_d_bridge",
+  "title": "DCP d-ary Qudit Phase-Register Modular SUM Carry and Step-Function Linearity Bridge",
+  "status": "VERIFIED_SCOPED_BRIDGE",
+  "claims": [
+    "For any v in ker(A mod d), the d-ary modular SUM phase increment Phi(u; y) - Phi(0; y) lies in (d Z_{d^t})^n across 100% of syndromes y in Z_d^K.",
+    "For d >= 3 and t >= 2, the threshold carry 1[y_r + u >= d] is a non-linear step function of u in Z_d for y_r != 0, so all-syndrome linearity mod d^t holds iff A_{.,r} == 0 (mod d^{t-1}) on supp(v)."
+  ],
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  }
+}

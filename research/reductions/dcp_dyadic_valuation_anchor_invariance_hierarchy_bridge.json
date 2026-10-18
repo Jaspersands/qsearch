@@ -1,0 +1,76 @@
+{
+  "all_checks_passed": true,
+  "certificate_sha256_16": "8155522ff2ff7644",
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "level_1_universal_invariance": {
+    "K": 2,
+    "anchor_invariant_mod_2k": true,
+    "distinct_residues_mod_2k": 1,
+    "iff_characterization_verified": true,
+    "k_level": 1,
+    "matching_anchor_fraction": 1.0,
+    "mod_2k": 2,
+    "n": 1,
+    "support_cols_divisible_by_2_to_k_minus_1": true,
+    "t": 3,
+    "target_Av_mod_2k": [
+      0
+    ]
+  },
+  "level_2_even_column_constructive_control": {
+    "K": 3,
+    "anchor_invariant_mod_2k": true,
+    "distinct_residues_mod_2k": 1,
+    "iff_characterization_verified": true,
+    "k_level": 2,
+    "matching_anchor_fraction": 1.0,
+    "mod_2k": 4,
+    "n": 1,
+    "support_cols_divisible_by_2_to_k_minus_1": true,
+    "t": 3,
+    "target_Av_mod_2k": [
+      0
+    ]
+  },
+  "level_2_odd_column_splitting": {
+    "K": 2,
+    "anchor_invariant_mod_2k": false,
+    "distinct_residues_mod_2k": 2,
+    "iff_characterization_verified": true,
+    "k_level": 2,
+    "matching_anchor_fraction": 0.5,
+    "mod_2k": 4,
+    "n": 1,
+    "support_cols_divisible_by_2_to_k_minus_1": false,
+    "t": 3,
+    "target_Av_mod_2k": [
+      0
+    ]
+  },
+  "level_3_doubly_even_constructive_control": {
+    "K": 3,
+    "anchor_invariant_mod_2k": true,
+    "distinct_residues_mod_2k": 1,
+    "iff_characterization_verified": true,
+    "k_level": 3,
+    "matching_anchor_fraction": 1.0,
+    "mod_2k": 8,
+    "n": 1,
+    "support_cols_divisible_by_2_to_k_minus_1": true,
+    "t": 3,
+    "target_Av_mod_2k": [
+      0
+    ]
+  },
+  "schema_version": "dcp-dyadic-valuation-anchor-invariance-hierarchy-bridge-v1",
+  "scope_constraints": {
+    "applies_to": "Dyadic modulus congruence tilde_A(v, x_0) == A v (mod 2^k) across anchors x_0 in {0,1}^K",
+    "controls_included": "Includes universal k=1 invariance, odd-column k=2 50/50 residue splitting on A=[[1,3]] mod 8, even-column k=2 constructive invariance on A=[[2,6,1]] mod 8, and doubly-even k=3 constructive invariance on A=[[4,4,3]] mod 8.",
+    "does_not_claim": "Failure of mod-2^k invariance when active columns r in supp(v) satisfy A_{.,r} == 0 (mod 2^{k-1})"
+  },
+  "theorem_id": "dcp_dyadic_valuation_anchor_invariance_hierarchy_bridge"
+}

@@ -1,0 +1,12 @@
+{
+  "hypothesis_id": "dcp_post_selected_weak_value_phase_amplification_obstruction",
+  "title": "Post-Selected Weak-Value Phase Amplification vs. Total Per-Copy Fisher Information Conservation",
+  "status": "VERIFIED_FINITE_IDENTITIES_REVIEW_PENDING",
+  "claims": [
+    "Post-selecting a weakly coupled pointer at small angle eps amplifies the conditional expectation contrast by O(1/eps) while reducing the acceptance probability as O(eps^2 + theta^2).",
+    "By the exact Fisher information chain rule I_total = P_acc * I_cond + I_binary(acc/rej) <= I_Q = gamma^2, post-selected weak-value amplification never exceeds the non-post-selected quantum Fisher information bound."
+  ],
+  "favorable_controls": [
+    "Weak post-selection eps=0.02 vs balanced readout eps=pi/4 (where I_net == gamma^2)"
+  ]
+}

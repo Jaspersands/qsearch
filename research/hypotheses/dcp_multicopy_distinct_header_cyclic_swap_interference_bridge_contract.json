@@ -1,0 +1,14 @@
+{
+  "hypothesis_id": "dcp_multicopy_distinct_header_cyclic_swap_interference_bridge",
+  "title": "DCP Multi-Copy Distinct-Header Cyclic-Swap and Schur-Weyl Bipartite Even-Flip Interference Bridge",
+  "status": "VERIFIED_SCOPED_BRIDGE",
+  "claims": [
+    "Every r-cycle permutation trace Tr(C_r (rho_1 tensor ... tensor rho_r)) expands purely over even-sized alternating subsets 2m <= 2*floor(r/2) of balanced header differences sum_{l=1}^m (theta_{j_l} - theta_{k_l}) and is strictly invariant under s -> -s.",
+    "At r=3 distinct headers, Tr(Pi_{Sym^3}(rho_1 tensor rho_2 tensor rho_3)) = 1/2 + (1/6)*sum_{j<k} gamma_j*gamma_k*cos(theta_j - theta_k) reduces strictly to 2-body pairwise differences with zero 3-body sum harmonic."
+  ],
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  }
+}

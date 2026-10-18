@@ -1,0 +1,43 @@
+{
+  "all_checks_passed": true,
+  "certificate_sha256_16": "80a744f820dfe15d",
+  "dyadic_progression_constructive_control": {
+    "argmax_K": 5,
+    "dim_2m": 8,
+    "exact_product_formula_verified": true,
+    "m": 3,
+    "max_outcome_probability": 1.0,
+    "max_product_formula_error": 4.052223410726854e-31,
+    "total_probability_sum": 1.0
+  },
+  "generic_non_dyadic_audit": {
+    "argmax_K": 2,
+    "dim_2m": 8,
+    "exact_product_formula_verified": true,
+    "m": 3,
+    "max_outcome_probability": 0.7285533905932737,
+    "max_product_formula_error": 2.220446049250313e-16,
+    "total_probability_sum": 1.0000000000000002
+  },
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "non_dyadic_pi_conflict_audit": {
+    "argmax_K": 3,
+    "dim_2m": 8,
+    "exact_product_formula_verified": true,
+    "m": 3,
+    "max_outcome_probability": 0.426776695296637,
+    "max_product_formula_error": 5.551115123125783e-16,
+    "total_probability_sum": 1.0
+  },
+  "schema_version": "dcp-cyclic-group-qft-dihedral-coset-interference-bridge-v1",
+  "scope_constraints": {
+    "applies_to": "Cyclic QFT_{2^m}^dagger readout on m-wire product phase states",
+    "controls_included": "Includes both the dyadic geometric progression constructive control (K_0 = 5, P(5) = 1.0) and non-dyadic phase-conflict audits.",
+    "does_not_claim": "Failure of QFT_{2^m} when wire phases follow the dyadic progression theta_j = 2^j * theta_0 (mod 2*pi)"
+  },
+  "theorem_id": "dcp_cyclic_group_qft_dihedral_coset_interference_bridge"
+}

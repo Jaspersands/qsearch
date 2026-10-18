@@ -1,0 +1,59 @@
+{
+  "all_checks_passed": true,
+  "certificate_sha256_16": "8be70c2d1ff9a01a",
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "maximal_bell_control": {
+    "bloch_coherence_squared": 1.8746997283273217e-33,
+    "col_phases_mod_q": [
+      1,
+      2,
+      3
+    ],
+    "exact_purity_law_verified": true,
+    "h_weight": 3,
+    "purity_closed_form": 0.5,
+    "purity_explicit": 0.4999999999999998,
+    "q_mod": 8,
+    "renyi_2_entropy_bits": 1.0
+  },
+  "partial_entanglement_audit": {
+    "bloch_coherence_squared": 0.2500000000000001,
+    "col_phases_mod_q": [
+      1,
+      1,
+      1
+    ],
+    "exact_purity_law_verified": true,
+    "h_weight": 3,
+    "purity_closed_form": 0.625,
+    "purity_explicit": 0.6249999999999998,
+    "q_mod": 8,
+    "renyi_2_entropy_bits": 0.6780719051126377
+  },
+  "proof_status": "LOCAL_DERIVATION_REVIEW_PENDING_NOT_FORMALLY_VERIFIED",
+  "schema_version": "dcp-bipartite-entanglement-entropy-syndrome-cut-bridge-v1",
+  "scope_constraints": {
+    "applies_to": "Pre-measurement bipartite purity Tr(rho_surv^2) and Renyi-2 entanglement entropy across the survivor-syndrome CNOT cut",
+    "controls_included": "Includes separable control (phases=[3,4,0] mod 8, purity=1.0, S_2=0), maximal Bell entanglement control (phases=[1,2,3] mod 8, purity=0.5, S_2=1.0 bit), and partial entanglement audit (phases=[1,1,1] mod 8, purity=0.625).",
+    "does_not_claim": "Preservation of survivor coherence when syndrome wires are discarded without classical measurement readout"
+  },
+  "separable_control": {
+    "bloch_coherence_squared": 1.0,
+    "col_phases_mod_q": [
+      3,
+      4,
+      0
+    ],
+    "exact_purity_law_verified": true,
+    "h_weight": 3,
+    "purity_closed_form": 1.0,
+    "purity_explicit": 0.9999999999999996,
+    "q_mod": 8,
+    "renyi_2_entropy_bits": 0.0
+  },
+  "theorem_id": "dcp_bipartite_entanglement_entropy_syndrome_cut_bridge"
+}

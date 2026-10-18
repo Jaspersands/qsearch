@@ -1,0 +1,271 @@
+{
+  "schema_version": "1.0",
+  "subsystem": "dcp_product_sine_source_coordinate_marginal_obstruction",
+  "contract_id": "dcp_product_sine_source_coordinate_marginal_obstruction_v1",
+  "title": "Product-Group Sine-Window Source Coordinate-Marginal Dephasing and Full-Vector Subset-Sum Equivalence Obstruction",
+  "family": "dcp_clean_decoder_falsification",
+  "note_path": "research/DCP_PRODUCT_SINE_SOURCE_COORDINATE_MARGINAL_OBSTRUCTION.md",
+  "contract_path": "research/hypotheses/dcp_product_sine_source_coordinate_marginal_obstruction_contract.json",
+  "summary": {
+    "num_instances": 4,
+    "theorem1_marginal_dephasing_passed": true,
+    "theorem2_k_copy_threshold_invariance_passed": true,
+    "theorem3_postselection_blowup_passed": true,
+    "all_theorems_passed": true,
+    "max_marginal_formula_error": 7.850462293418876e-17,
+    "max_k_copy_density_difference_error": 1.5308084989341915e-17
+  },
+  "instances": [
+    {
+      "instance_id": "n2_q4_K3_clean_product_sine_marginal_audit",
+      "n": 2,
+      "L": 2,
+      "q": 4,
+      "K": 3,
+      "visibility_exact": "1",
+      "A": [
+        [
+          1,
+          2,
+          1
+        ],
+        [
+          2,
+          0,
+          2
+        ]
+      ],
+      "marginal_audit": {
+        "total_shifts": 16,
+        "zero_aux_shift_count": 4,
+        "nonzero_aux_shift_count": 12,
+        "max_marginal_formula_error": 3.6022649490937693e-17,
+        "max_nonzero_aux_trace_distance_from_maximally_mixed": 3.6022649490937693e-17,
+        "theorem1_passed": true
+      },
+      "k_copy_parity_audit": {
+        "full_vector_target_ordered_pairs": 16,
+        "coord1_only_target_ordered_pairs": 16,
+        "killed_by_auxiliary_averaging_pairs": 0,
+        "max_density_difference_error": 1.5308084989341915e-17,
+        "optimal_helstrom_parity_advantage": 0.5,
+        "cyclic_k_min_for_adv_1_16": 2,
+        "product_k_min_for_adv_1_16": 2,
+        "theorem2_passed": true
+      },
+      "postselection_audit": {
+        "total_label_outcomes": 16,
+        "aux_zero_accepted_outcomes": 4,
+        "acceptance_probability_exact": "1/4",
+        "scalar_1d_k_min_for_adv_1_16": 1,
+        "expected_total_preparations_with_postselection": 4,
+        "theorem3_passed": true
+      },
+      "instance_passed": true
+    },
+    {
+      "instance_id": "n2_q4_K3_noisy_product_sine_marginal_audit",
+      "n": 2,
+      "L": 2,
+      "q": 4,
+      "K": 3,
+      "visibility_exact": "3/4",
+      "A": [
+        [
+          1,
+          3,
+          2
+        ],
+        [
+          1,
+          1,
+          2
+        ]
+      ],
+      "marginal_audit": {
+        "total_shifts": 16,
+        "zero_aux_shift_count": 4,
+        "nonzero_aux_shift_count": 12,
+        "max_marginal_formula_error": 2.2962127484012877e-17,
+        "max_nonzero_aux_trace_distance_from_maximally_mixed": 2.2962127484012877e-17,
+        "theorem1_passed": true
+      },
+      "k_copy_parity_audit": {
+        "full_vector_target_ordered_pairs": 8,
+        "coord1_only_target_ordered_pairs": 16,
+        "killed_by_auxiliary_averaging_pairs": 8,
+        "max_density_difference_error": 1.1481063742006436e-17,
+        "optimal_helstrom_parity_advantage": 0.24609375,
+        "cyclic_k_min_for_adv_1_16": 2,
+        "product_k_min_for_adv_1_16": 2,
+        "theorem2_passed": true
+      },
+      "postselection_audit": {
+        "total_label_outcomes": 16,
+        "aux_zero_accepted_outcomes": 4,
+        "acceptance_probability_exact": "1/4",
+        "scalar_1d_k_min_for_adv_1_16": 1,
+        "expected_total_preparations_with_postselection": 4,
+        "theorem3_passed": true
+      },
+      "instance_passed": true
+    },
+    {
+      "instance_id": "n2_q8_K4_clean_product_sine_marginal_audit",
+      "n": 2,
+      "L": 3,
+      "q": 8,
+      "K": 4,
+      "visibility_exact": "1",
+      "A": [
+        [
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          4,
+          2,
+          6,
+          0
+        ]
+      ],
+      "marginal_audit": {
+        "total_shifts": 64,
+        "zero_aux_shift_count": 8,
+        "nonzero_aux_shift_count": 56,
+        "max_marginal_formula_error": 7.850462293418876e-17,
+        "max_nonzero_aux_trace_distance_from_maximally_mixed": 4.163336342344337e-17,
+        "theorem1_passed": true
+      },
+      "k_copy_parity_audit": {
+        "full_vector_target_ordered_pairs": 20,
+        "coord1_only_target_ordered_pairs": 32,
+        "killed_by_auxiliary_averaging_pairs": 12,
+        "max_density_difference_error": 8.700508930450058e-18,
+        "optimal_helstrom_parity_advantage": 0.5,
+        "cyclic_k_min_for_adv_1_16": 4,
+        "product_k_min_for_adv_1_16": 4,
+        "theorem2_passed": true
+      },
+      "postselection_audit": {
+        "total_label_outcomes": 64,
+        "aux_zero_accepted_outcomes": 8,
+        "acceptance_probability_exact": "1/8",
+        "scalar_1d_k_min_for_adv_1_16": 1,
+        "expected_total_preparations_with_postselection": 8,
+        "theorem3_passed": true
+      },
+      "instance_passed": true
+    },
+    {
+      "instance_id": "n3_q4_K3_noisy_product_sine_marginal_audit",
+      "n": 3,
+      "L": 2,
+      "q": 4,
+      "K": 3,
+      "visibility_exact": "1/2",
+      "A": [
+        [
+          2,
+          1,
+          3
+        ],
+        [
+          1,
+          1,
+          2
+        ],
+        [
+          3,
+          1,
+          0
+        ]
+      ],
+      "marginal_audit": {
+        "total_shifts": 64,
+        "zero_aux_shift_count": 4,
+        "nonzero_aux_shift_count": 60,
+        "max_marginal_formula_error": 1.6055825018535704e-17,
+        "max_nonzero_aux_trace_distance_from_maximally_mixed": 1.6055825018535704e-17,
+        "theorem1_passed": true
+      },
+      "k_copy_parity_audit": {
+        "full_vector_target_ordered_pairs": 2,
+        "coord1_only_target_ordered_pairs": 16,
+        "killed_by_auxiliary_averaging_pairs": 14,
+        "max_density_difference_error": 6.988436701791435e-18,
+        "optimal_helstrom_parity_advantage": 0.015625,
+        "cyclic_k_min_for_adv_1_16": 6,
+        "product_k_min_for_adv_1_16": 6,
+        "theorem2_passed": true
+      },
+      "postselection_audit": {
+        "total_label_outcomes": 64,
+        "aux_zero_accepted_outcomes": 4,
+        "acceptance_probability_exact": "1/16",
+        "scalar_1d_k_min_for_adv_1_16": 1,
+        "expected_total_preparations_with_postselection": 16,
+        "theorem3_passed": true
+      },
+      "instance_passed": true
+    }
+  ],
+  "asymptotic_scaling": [
+    {
+      "n": 8,
+      "coordinate_bits_L": 8,
+      "total_group_entropy_bits_nL": 64,
+      "cyclic_qft_controlled_phases": 2016,
+      "product_qft_controlled_phases": 224,
+      "cyclic_minimum_copies": 62,
+      "product_minimum_copies": 62,
+      "cyclic_equals_product_minimum_copies": true,
+      "aux_zero_postselection_acceptance_neg_log2": 56,
+      "scalar_1d_minimum_copies_after_postselection": 6
+    },
+    {
+      "n": 16,
+      "coordinate_bits_L": 10,
+      "total_group_entropy_bits_nL": 160,
+      "cyclic_qft_controlled_phases": 12720,
+      "product_qft_controlled_phases": 720,
+      "cyclic_minimum_copies": 158,
+      "product_minimum_copies": 158,
+      "cyclic_equals_product_minimum_copies": true,
+      "aux_zero_postselection_acceptance_neg_log2": 150,
+      "scalar_1d_minimum_copies_after_postselection": 8
+    },
+    {
+      "n": 32,
+      "coordinate_bits_L": 12,
+      "total_group_entropy_bits_nL": 384,
+      "cyclic_qft_controlled_phases": 73536,
+      "product_qft_controlled_phases": 2112,
+      "cyclic_minimum_copies": 382,
+      "product_minimum_copies": 382,
+      "cyclic_equals_product_minimum_copies": true,
+      "aux_zero_postselection_acceptance_neg_log2": 372,
+      "scalar_1d_minimum_copies_after_postselection": 10
+    },
+    {
+      "n": 64,
+      "coordinate_bits_L": 14,
+      "total_group_entropy_bits_nL": 896,
+      "cyclic_qft_controlled_phases": 400960,
+      "product_qft_controlled_phases": 5824,
+      "cyclic_minimum_copies": 894,
+      "product_minimum_copies": 894,
+      "cyclic_equals_product_minimum_copies": true,
+      "aux_zero_postselection_acceptance_neg_log2": 882,
+      "scalar_1d_minimum_copies_after_postselection": 12
+    }
+  ],
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "sha256": "9b20fba089e7cad71d5f2cb98702110d08ff43883f20df4387f44434fff34d61"
+}

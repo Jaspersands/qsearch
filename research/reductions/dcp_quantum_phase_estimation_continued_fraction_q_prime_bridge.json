@@ -1,0 +1,53 @@
+{
+  "all_checks_passed": true,
+  "certificate_sha256_16": "6b29bf0430b65ac9",
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "proof_status": "LOCAL_DERIVATION_REVIEW_PENDING_NOT_FORMALLY_VERIFIED",
+  "resolved_q17_m6": {
+    "asymptotic_8_over_pi2_bound": 0.8105694691387022,
+    "both_nearest_bins_round_correctly_for_all_z": true,
+    "dim_2m": 64,
+    "exact_laws_verified": true,
+    "finite_m_midpoint_2bin_bound": 0.8107322491663862,
+    "m_bits": 6,
+    "min_2bin_capture_prob": 0.8122210484580389,
+    "min_total_rounding_recovery_prob": 0.9017821844428282,
+    "q_prime": 17,
+    "satisfies_2m_ge_2q": true
+  },
+  "resolved_q31_m6": {
+    "asymptotic_8_over_pi2_bound": 0.8105694691387022,
+    "both_nearest_bins_round_correctly_for_all_z": true,
+    "dim_2m": 64,
+    "exact_laws_verified": true,
+    "finite_m_midpoint_2bin_bound": 0.8107322491663862,
+    "m_bits": 6,
+    "min_2bin_capture_prob": 0.8111807327426296,
+    "min_total_rounding_recovery_prob": 0.8111807327426296,
+    "q_prime": 31,
+    "satisfies_2m_ge_2q": true
+  },
+  "schema_version": "dcp-quantum-phase-estimation-continued-fraction-q-prime-bridge-v1",
+  "scope_constraints": {
+    "applies_to": "Dyadic m-qubit inverse QFT applied to non-dyadic prime-modulus Z_q phase registers",
+    "controls_included": "Includes under-resolved control (q=17, 2^m=16 < 2q) and resolved prime instances (q=17, 2^m=64 and q=31, 2^m=64), verifying P_2bin > 8/pi^2 = 0.810569 and 100% dual-bin rounding accuracy whenever 2^m >= 2q.",
+    "does_not_claim": "Preparation of the contiguous u in {0, ..., 2^m - 1} phase progression without coherent modular arithmetic or witness ladder"
+  },
+  "theorem_id": "dcp_quantum_phase_estimation_continued_fraction_q_prime_bridge",
+  "under_resolved_q17_m4": {
+    "asymptotic_8_over_pi2_bound": 0.8105694691387022,
+    "both_nearest_bins_round_correctly_for_all_z": false,
+    "dim_2m": 16,
+    "exact_laws_verified": true,
+    "finite_m_midpoint_2bin_bound": 0.8131786634360739,
+    "m_bits": 4,
+    "min_2bin_capture_prob": 0.8146466526153354,
+    "min_total_rounding_recovery_prob": 0.0,
+    "q_prime": 17,
+    "satisfies_2m_ge_2q": false
+  }
+}

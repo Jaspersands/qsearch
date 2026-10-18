@@ -1,0 +1,16 @@
+{
+  "hypothesis_id": "dcp_coherent_syndrome_uncomputation_reversible_oracle_bridge",
+  "title": "DCP Coherent Syndrome Uncomputation and Reversible Oracle Bridge",
+  "status": "V1_COHERENT_BOUND_RETRACTED_NATIVE_CONTROLS_VERIFIED",
+  "claims": [
+    "Secret-independent unitaries preserve coherent trace distance sqrt(1-|<Psi(s)|Psi(s')>|^2), NOT an upper bound by branch-average trace distance.",
+    "D_coherent >= D_dephased >= D_discarded. The branch-average formula applies only after dephasing the syndrome.",
+    "Native CNOT collimation has secret-dependent branch-amplitude phases that must be retained.",
+    "For zero branch-amplitude phases and publicly known secret-independent target phase offsets, explicit controlled phase correction and Hadamard gates erase the syndrome deterministically. This is not generic DCP uncomputation."
+  ],
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  }
+}

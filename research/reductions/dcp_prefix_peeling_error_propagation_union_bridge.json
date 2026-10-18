@@ -1,0 +1,187 @@
+{
+  "schema_version": "1.0",
+  "subsystem": "dcp_prefix_peeling_error_propagation_union_bridge",
+  "contract_id": "dcp_prefix_peeling_error_propagation_union_bridge_v1",
+  "title": "Clean DCP Dyadic Prefix-Peeling Reduction: Exact Truncation Uniformity, Incorrect-Prefix Character Depolarization, and Binomial Majority-Verifier Bounds",
+  "family": "dcp_clean_decoder_falsification",
+  "note_path": "research/DCP_PREFIX_PEELING_ERROR_PROPAGATION_UNION_BRIDGE.md",
+  "contract_path": "research/hypotheses/dcp_prefix_peeling_error_propagation_union_bridge_contract.json",
+  "summary": {
+    "num_instances": 4,
+    "theorem1_correct_prefix_reduction_passed": true,
+    "theorem2_wrong_prefix_depolarization_passed": true,
+    "theorem3_majority_and_verifier_passed": true,
+    "all_theorems_passed": true,
+    "max_correct_prefix_state_error": 7.850462293418876e-17,
+    "max_wrong_prefix_depolarized_error": 1.3668035872266426e-16,
+    "max_verifier_single_shot_prob_error": 0.0
+  },
+  "instances": [
+    {
+      "instance_id": "t4_k2_R5_eps_1_4_peeling_audit",
+      "t": 4,
+      "k": 2,
+      "q": 16,
+      "q_residual": 4,
+      "q_prefix": 4,
+      "R_majority": 5,
+      "epsilon_exact": "1/4",
+      "L_verifier": 6,
+      "peeling_channel_audit": {
+        "truncation_fiber_multiplicity": 4,
+        "truncation_uniform": true,
+        "correct_prefix_pairs_checked": 16,
+        "wrong_prefix_pairs_checked": 48,
+        "max_correct_prefix_state_error": 0.0,
+        "max_wrong_prefix_depolarized_error": 1.0007415106216804e-16,
+        "theorem1_passed": true,
+        "theorem2_passed": true
+      },
+      "majority_and_verifier_audit": {
+        "majority_error_exact": "53/512",
+        "majority_error_float": 0.103515625,
+        "bhattacharyya_upper_bound": 0.48713928962874675,
+        "hoeffding_upper_bound": 0.5352614285189903,
+        "true_candidate_pairs_checked": 16,
+        "false_candidate_pairs_checked": 240,
+        "false_pairs_by_2adic_valuation": {
+          "0": 128,
+          "1": 64,
+          "2": 32,
+          "3": 16
+        },
+        "max_verifier_single_shot_prob_error": 0.0,
+        "false_candidate_L_shot_survival_exact": "1/64",
+        "theorem3_passed": true
+      },
+      "instance_passed": true
+    },
+    {
+      "instance_id": "t5_k2_R7_eps_1_8_peeling_audit",
+      "t": 5,
+      "k": 2,
+      "q": 32,
+      "q_residual": 8,
+      "q_prefix": 4,
+      "R_majority": 7,
+      "epsilon_exact": "1/8",
+      "L_verifier": 8,
+      "peeling_channel_audit": {
+        "truncation_fiber_multiplicity": 4,
+        "truncation_uniform": true,
+        "correct_prefix_pairs_checked": 32,
+        "wrong_prefix_pairs_checked": 96,
+        "max_correct_prefix_state_error": 0.0,
+        "max_wrong_prefix_depolarized_error": 1.3668035872266426e-16,
+        "theorem1_passed": true,
+        "theorem2_passed": true
+      },
+      "majority_and_verifier_audit": {
+        "majority_error_exact": "127413/524288",
+        "majority_error_float": 0.24302101135253906,
+        "bhattacharyya_upper_bound": 0.7978099849517841,
+        "hoeffding_upper_bound": 0.8035225736890608,
+        "true_candidate_pairs_checked": 32,
+        "false_candidate_pairs_checked": 992,
+        "false_pairs_by_2adic_valuation": {
+          "0": 512,
+          "1": 256,
+          "2": 128,
+          "3": 64,
+          "4": 32
+        },
+        "max_verifier_single_shot_prob_error": 0.0,
+        "false_candidate_L_shot_survival_exact": "1/256",
+        "theorem3_passed": true
+      },
+      "instance_passed": true
+    },
+    {
+      "instance_id": "t5_k3_R9_eps_1_4_peeling_audit",
+      "t": 5,
+      "k": 3,
+      "q": 32,
+      "q_residual": 4,
+      "q_prefix": 8,
+      "R_majority": 9,
+      "epsilon_exact": "1/4",
+      "L_verifier": 8,
+      "peeling_channel_audit": {
+        "truncation_fiber_multiplicity": 8,
+        "truncation_uniform": true,
+        "correct_prefix_pairs_checked": 32,
+        "wrong_prefix_pairs_checked": 224,
+        "max_correct_prefix_state_error": 1.232595164407831e-32,
+        "max_wrong_prefix_depolarized_error": 1.0007415106216804e-16,
+        "theorem1_passed": true,
+        "theorem2_passed": true
+      },
+      "majority_and_verifier_audit": {
+        "majority_error_exact": "6413/131072",
+        "majority_error_float": 0.04892730712890625,
+        "bhattacharyya_upper_bound": 0.27401585041617005,
+        "hoeffding_upper_bound": 0.32465246735834974,
+        "true_candidate_pairs_checked": 32,
+        "false_candidate_pairs_checked": 992,
+        "false_pairs_by_2adic_valuation": {
+          "0": 512,
+          "1": 256,
+          "2": 128,
+          "3": 64,
+          "4": 32
+        },
+        "max_verifier_single_shot_prob_error": 0.0,
+        "false_candidate_L_shot_survival_exact": "1/256",
+        "theorem3_passed": true
+      },
+      "instance_passed": true
+    },
+    {
+      "instance_id": "t6_k3_R11_eps_1_8_peeling_audit",
+      "t": 6,
+      "k": 3,
+      "q": 64,
+      "q_residual": 8,
+      "q_prefix": 8,
+      "R_majority": 11,
+      "epsilon_exact": "1/8",
+      "L_verifier": 10,
+      "peeling_channel_audit": {
+        "truncation_fiber_multiplicity": 8,
+        "truncation_uniform": true,
+        "correct_prefix_pairs_checked": 64,
+        "wrong_prefix_pairs_checked": 448,
+        "max_correct_prefix_state_error": 7.850462293418876e-17,
+        "max_wrong_prefix_depolarized_error": 1.3668035872266426e-16,
+        "theorem1_passed": true,
+        "theorem2_passed": true
+      },
+      "majority_and_verifier_audit": {
+        "majority_error_exact": "417343023/2147483648",
+        "majority_error_float": 0.19434048933908343,
+        "bhattacharyya_upper_bound": 0.701200182086529,
+        "hoeffding_upper_bound": 0.7091061824373984,
+        "true_candidate_pairs_checked": 64,
+        "false_candidate_pairs_checked": 4032,
+        "false_pairs_by_2adic_valuation": {
+          "0": 2048,
+          "1": 1024,
+          "2": 512,
+          "3": 256,
+          "4": 128,
+          "5": 64
+        },
+        "max_verifier_single_shot_prob_error": 0.0,
+        "false_candidate_L_shot_survival_exact": "1/1024",
+        "theorem3_passed": true
+      },
+      "instance_passed": true
+    }
+  ],
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "sha256": "e396e03f2421a5ccf219efbca3f50189bda2264ece268cf02f0a14e4c5c63e9e"
+}

@@ -1,0 +1,14 @@
+{
+  "hypothesis_id": "dcp_adaptive_bayesian_posterior_phase_alignment_bridge",
+  "title": "Adaptive Phase-Feedforward Counter-Rotation vs. Non-Adaptive Quadrature Peeling",
+  "status": "VERIFIED_FINITE_IDENTITIES_REVIEW_PENDING",
+  "claims": [
+    "At stage r of dyadic bit peeling with known prefix s_low = s mod 2^r, non-adaptive Pauli-X measurement has expectation (-1)^{b_r} gamma cos(phi_known) and suffers a complete blind spot at phi_known = +/- pi/2.",
+    "Adaptive counter-rotation R_Z(-phi_known) restores uniform Helstrom distinguishing bias D_TV = gamma across all 2^r prefixes s_low.",
+    "Adaptive phase-feedforward achieves an exact 2.0x Fisher-information / sample-complexity improvement over non-adaptive 50/50 random X/Y quadrature sampling."
+  ],
+  "favorable_controls": [
+    "Stage r=1 mod 8 (blind spot at s_low=1 eliminated by R_Z(-pi/2))",
+    "Stage r=2 mod 16 with odd multiplier u=3"
+  ]
+}

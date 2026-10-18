@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.0",
+  "contract_id": "dcp_disjoint_tree_wire_capacity_tradeoff_obstruction_v1",
+  "title": "Disjoint-Block Coherent 2^a-Tree Receiver: Physical-Wire Capacity Inequality, Polynomial-Sample Depth Ceiling, and Joint List-Width AM-GM Tradeoff",
+  "family": "dcp_clean_decoder_falsification",
+  "status": "locked_before_theorems",
+  "theorems": [
+    {
+      "id": "T1_disjoint_block_combinatorial_wire_capacity_inequality",
+      "statement": "In any disjoint-block 2^a-tree over an N_bits-bit group where each of the k = 2^a leaves supplies L_list = 2^{b_bits} (b_bits = ceil(N_bits / (a + 1))) distinct non-empty supports inside its m_leaf-wire block, C(m_leaf, floor(m_leaf / 2)) >= 2^{b_bits} forces m_leaf >= m_leaf^min(b_bits) >= b_bits + 1 and total physical phase-qubit width K_wires(a, N_bits) >= 2^a m_leaf^min(b_bits) >= 2^a (b_bits + 1)."
+    },
+    {
+      "id": "T2_polynomial_wire_depth_ceiling_and_oblivious_join_bound",
+      "statement": "Under any phase-qubit budget K >= 2, every feasible disjoint-block tree depth a in A(K, N_bits) = {a >= 0 : 2^a m_leaf^min(ceil(N_bits / (a + 1))) <= K} satisfies a <= floor(log_2 K), and the minimum oblivious-join record-complexity exponent satisfies E_obliv^min(K, N_bits) = min_{a in A(K, N_bits)} (a + ceil(N_bits / (a + 1))) >= N_bits / (floor(log_2 K) + 1)."
+    },
+    {
+      "id": "T3_unconstrained_am_gm_joint_list_width_frontier",
+      "statement": "Across all unconstrained integer tree depths a >= 0, the oblivious-join record exponent E(a, N_bits) = a + ceil(N_bits / (a + 1)) satisfies E(a, N_bits) >= ceil(2 * sqrt(N_bits)) - 1, attained at a* in {floor(sqrt(N_bits)) - 1, ceil(sqrt(N_bits)) - 1}, where required physical wire width is K_wires(a*, N_bits) >= 2^{a*} (ceil(N_bits / (a* + 1)) + 1) = 2^{Theta(sqrt(N_bits))}."
+    }
+  ],
+  "test_instances": [
+    {
+      "instance_id": "z4_n12_Nbits24_K256_tree_frontier",
+      "N_bits": 24,
+      "K_budget": 256,
+      "visibility": "11/12",
+      "max_depth_sweep": 12
+    },
+    {
+      "instance_id": "z4_n30_Nbits60_K1024_tree_frontier",
+      "N_bits": 60,
+      "K_budget": 1024,
+      "visibility": "29/30",
+      "max_depth_sweep": 16
+    },
+    {
+      "instance_id": "z4_n64_Nbits128_K4096_tree_frontier",
+      "N_bits": 128,
+      "K_budget": 4096,
+      "visibility": "63/64",
+      "max_depth_sweep": 20
+    },
+    {
+      "instance_id": "native_n64_t72_Nbits4608_K18432_tree_frontier",
+      "N_bits": 4608,
+      "K_budget": 18432,
+      "visibility": "63/64",
+      "max_depth_sweep": 80
+    }
+  ],
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  }
+}

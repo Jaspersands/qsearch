@@ -1,0 +1,25 @@
+{
+  "contract_id": "native_partial_list_variance_centered_overflow_cap_v1",
+  "experiment_id_for_mechanical_integration": "EXP-DHS-DCP-NATIVE-TREE-VARIANCE-CAP",
+  "status": "LOCAL_DERIVATION_EXTERNAL_REVIEW_PENDING",
+  "source_model": "Fixed distinct supports in disjoint physical leaf blocks; fresh independent uniform Z4 component chunks; uniform source assignment",
+  "partial_list_variance": "Var(Z_r)=L^2*(f_r-1), f0=1, fr=f_(r-1)^2+(L-1)/L^2",
+  "centered_overflow_bound": "P(any overflow)<=S/(C+1-L)^2, S=sum of ALL nonroot full-list variances",
+  "capacity_recipe": "C=L+ceil(sqrt(256*ceil(M)*ceil(S)))-1 when S>0, else L",
+  "degree_overflow_independence_assumed": false,
+  "receiver_default_capacity_updated": false,
+  "accepted_speedup_candidate": false,
+  "novelty_claim": false,
+  "falsifiers": [
+    "Partial-list equality-pattern census disagrees with L^2*f_r",
+    "Dependent native leaf census violates mean4/variance3 at L4",
+    "M*S/(C+1-L)^2 exceeds1/256",
+    "Any transfer to silent-truncation acceptance, label-adaptive leaves or postselected sources without proof"
+  ],
+  "remaining_obligations": [
+    "Independent mathematical review and rational certificate replay",
+    "Explicit cap-proof selector in the full receiver, not a silent default replacement",
+    "Complete oblivious backend cost/cleanup integration",
+    "Original noise, growing-depth supply, hard reduction and final decoder"
+  ]
+}

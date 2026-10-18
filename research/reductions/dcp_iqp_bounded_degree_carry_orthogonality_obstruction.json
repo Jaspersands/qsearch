@@ -1,0 +1,338 @@
+{
+  "schema_version": "1.0",
+  "subsystem": "dcp_iqp_bounded_degree_carry_orthogonality_obstruction",
+  "contract_id": "dcp_iqp_bounded_degree_carry_orthogonality_obstruction_v1",
+  "title": "Clean and Noisy DCP IQP / Polynomial-Phase Readout: Directional-Derivative Structure, Carry-Polynomial Degree 2^{t-1}, and Sparse-Row Advantage Bounds",
+  "family": "dcp_clean_decoder_falsification",
+  "note_path": "research/DCP_IQP_BOUNDED_DEGREE_CARRY_ORTHOGONALITY_OBSTRUCTION.md",
+  "contract_path": "research/hypotheses/dcp_iqp_bounded_degree_carry_orthogonality_obstruction_contract.json",
+  "summary": {
+    "num_instances": 4,
+    "theorem1_iqp_derivative_sparsity_passed": true,
+    "theorem2_lucas_carry_degree_passed": true,
+    "theorem3_source_average_and_adaptive_bounds_passed": true,
+    "all_theorems_passed": true,
+    "max_matrix_entry_error": 0.0,
+    "max_advantage_formula_error": 0.0
+  },
+  "instances": [
+    {
+      "instance_id": "n1_t2_K3_clean_iqp_quadratic_audit",
+      "n": 1,
+      "t": 2,
+      "q": 4,
+      "K": 3,
+      "visibility_exact": "1",
+      "A": [
+        [
+          1,
+          2,
+          3
+        ]
+      ],
+      "u": [
+        1,
+        1,
+        0
+      ],
+      "u_weight": 2,
+      "iqp_matrix_audit": {
+        "degree_P": 2,
+        "degree_directional_derivative": 1,
+        "max_matrix_entry_error": 0.0,
+        "all_rows_have_degree_one": true,
+        "unsigned_target_hits": 0,
+        "signed_target_hits": 0,
+        "advantage_trace": 0.0,
+        "advantage_formula": 0.0,
+        "advantage_abs_error": 0.0,
+        "theorem1_passed": true
+      },
+      "lucas_carry_audit": {
+        "w_lucas_vars": 2,
+        "carry_anf_degree": 2,
+        "derivative_anf_degree": 1,
+        "xor_anf_degree": 2,
+        "derivative_truth_table_parity_mod2": 0,
+        "signed_correlation_lhs": 2,
+        "signed_correlation_rhs": 2,
+        "theorem2_passed": true
+      },
+      "source_average_audit": {
+        "active_pivot_column_r0": 0,
+        "all_x_hit_counts_over_pivot_column": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "pointwise_hit_probability_exact": "1/4",
+        "single_term_mean_abs_advantage_upper_exact": "1/8",
+        "theorem3_passed": true
+      },
+      "instance_passed": true
+    },
+    {
+      "instance_id": "n1_t3_K4_noisy_iqp_cubic_audit",
+      "n": 1,
+      "t": 3,
+      "q": 8,
+      "K": 4,
+      "visibility_exact": "3/4",
+      "A": [
+        [
+          1,
+          3,
+          5,
+          7
+        ]
+      ],
+      "u": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "u_weight": 4,
+      "iqp_matrix_audit": {
+        "degree_P": 3,
+        "degree_directional_derivative": 2,
+        "max_matrix_entry_error": 0.0,
+        "all_rows_have_degree_one": true,
+        "unsigned_target_hits": 2,
+        "signed_target_hits": 2,
+        "advantage_trace": 0.019775390625,
+        "advantage_formula": 0.019775390625,
+        "advantage_abs_error": 0.0,
+        "theorem1_passed": true
+      },
+      "lucas_carry_audit": {
+        "w_lucas_vars": 4,
+        "carry_anf_degree": 4,
+        "derivative_anf_degree": 2,
+        "xor_anf_degree": 4,
+        "derivative_truth_table_parity_mod2": 0,
+        "signed_correlation_lhs": 2,
+        "signed_correlation_rhs": 2,
+        "theorem2_passed": true
+      },
+      "source_average_audit": {
+        "active_pivot_column_r0": 0,
+        "all_x_hit_counts_over_pivot_column": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "pointwise_hit_probability_exact": "1/8",
+        "single_term_mean_abs_advantage_upper_exact": "81/4096",
+        "theorem3_passed": true
+      },
+      "instance_passed": true
+    },
+    {
+      "instance_id": "n1_t3_K3_clean_source_census_iqp",
+      "n": 1,
+      "t": 3,
+      "q": 8,
+      "K": 3,
+      "visibility_exact": "1",
+      "A": [
+        [
+          2,
+          3,
+          7
+        ]
+      ],
+      "u": [
+        1,
+        0,
+        1
+      ],
+      "u_weight": 2,
+      "iqp_matrix_audit": {
+        "degree_P": 2,
+        "degree_directional_derivative": 1,
+        "max_matrix_entry_error": 0.0,
+        "all_rows_have_degree_one": true,
+        "unsigned_target_hits": 0,
+        "signed_target_hits": 0,
+        "advantage_trace": 0.0,
+        "advantage_formula": 0.0,
+        "advantage_abs_error": 0.0,
+        "theorem1_passed": true
+      },
+      "lucas_carry_audit": {
+        "w_lucas_vars": 4,
+        "carry_anf_degree": 4,
+        "derivative_anf_degree": 1,
+        "xor_anf_degree": 4,
+        "derivative_truth_table_parity_mod2": 0,
+        "signed_correlation_lhs": -2,
+        "signed_correlation_rhs": -2,
+        "theorem2_passed": true
+      },
+      "source_average_audit": {
+        "active_pivot_column_r0": 0,
+        "all_x_hit_counts_over_pivot_column": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "pointwise_hit_probability_exact": "1/8",
+        "single_term_mean_abs_advantage_upper_exact": "1/16",
+        "theorem3_passed": true
+      },
+      "instance_passed": true
+    },
+    {
+      "instance_id": "n2_t2_K4_vector_noisy_iqp_audit",
+      "n": 2,
+      "t": 2,
+      "q": 4,
+      "K": 4,
+      "visibility_exact": "1/2",
+      "A": [
+        [
+          1,
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          2,
+          1,
+          1
+        ]
+      ],
+      "u": [
+        1,
+        1,
+        0,
+        0
+      ],
+      "u_weight": 2,
+      "iqp_matrix_audit": {
+        "degree_P": 2,
+        "degree_directional_derivative": 1,
+        "max_matrix_entry_error": 0.0,
+        "all_rows_have_degree_one": true,
+        "unsigned_target_hits": 8,
+        "signed_target_hits": -8,
+        "advantage_trace": -0.0625,
+        "advantage_formula": -0.0625,
+        "advantage_abs_error": 0.0,
+        "theorem1_passed": true
+      },
+      "lucas_carry_audit": {
+        "w_lucas_vars": 2,
+        "carry_anf_degree": 2,
+        "derivative_anf_degree": 1,
+        "xor_anf_degree": 2,
+        "derivative_truth_table_parity_mod2": 0,
+        "signed_correlation_lhs": 2,
+        "signed_correlation_rhs": 2,
+        "theorem2_passed": true
+      },
+      "source_average_audit": {
+        "active_pivot_column_r0": 0,
+        "all_x_hit_counts_over_pivot_column": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "pointwise_hit_probability_exact": "1/16",
+        "single_term_mean_abs_advantage_upper_exact": "1/128",
+        "theorem3_passed": true
+      },
+      "instance_passed": true
+    }
+  ],
+  "asymptotic_scaling": [
+    {
+      "n": 8,
+      "t": 16,
+      "K": 256,
+      "M_terms": 64,
+      "msb_carry_anf_degree_power_of_two_exponent": 15,
+      "clean_nonadaptive_mean_advantage_upper_neg_log2": 123,
+      "noisy_adaptive_min_target_hamming_distance": 21,
+      "noisy_adaptive_average_advantage_upper_neg_log2": 2,
+      "sparse_class_excluded_at_1_16": false
+    },
+    {
+      "n": 16,
+      "t": 24,
+      "K": 768,
+      "M_terms": 256,
+      "msb_carry_anf_degree_power_of_two_exponent": 23,
+      "clean_nonadaptive_mean_advantage_upper_neg_log2": 377,
+      "noisy_adaptive_min_target_hamming_distance": 63,
+      "noisy_adaptive_average_advantage_upper_neg_log2": 2,
+      "sparse_class_excluded_at_1_16": false
+    },
+    {
+      "n": 32,
+      "t": 40,
+      "K": 2560,
+      "M_terms": 1024,
+      "msb_carry_anf_degree_power_of_two_exponent": 39,
+      "clean_nonadaptive_mean_advantage_upper_neg_log2": 1271,
+      "noisy_adaptive_min_target_hamming_distance": 210,
+      "noisy_adaptive_average_advantage_upper_neg_log2": 5,
+      "sparse_class_excluded_at_1_16": true
+    },
+    {
+      "n": 64,
+      "t": 72,
+      "K": 9216,
+      "M_terms": 4096,
+      "msb_carry_anf_degree_power_of_two_exponent": 71,
+      "clean_nonadaptive_mean_advantage_upper_neg_log2": 4597,
+      "noisy_adaptive_min_target_hamming_distance": 762,
+      "noisy_adaptive_average_advantage_upper_neg_log2": 12,
+      "sparse_class_excluded_at_1_16": true
+    }
+  ],
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "sha256": "c8422407bbbdc5cccad4952387e32a80a62641dec2f18bb68dcd33d5a67910a6"
+}

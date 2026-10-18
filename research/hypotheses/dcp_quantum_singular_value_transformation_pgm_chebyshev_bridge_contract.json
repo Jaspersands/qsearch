@@ -1,0 +1,14 @@
+{
+  "hypothesis_id": "dcp_quantum_singular_value_transformation_pgm_chebyshev_bridge",
+  "title": "Odd-Polynomial QSVT Singular-Value Equalization on Subset-Sum Fiber Block Encodings",
+  "status": "VERIFIED_FINITE_IDENTITIES_REVIEW_PENDING",
+  "claims": [
+    "The subset-sum fiber block encoding on occupied residues has singular values sigma_y = sqrt(N_A(y) / N_max) with condition number kappa = sqrt(N_max / N_min).",
+    "Degree-1 linear QSVT P_1(sigma) = sigma reproduces P_PGM(A), whereas concave odd QSVT polynomials P_3(sigma) = 0.5*sigma*(3 - sigma^2) and P_5(sigma) = (1/8)*sigma*(15 - 10*sigma^2 + 3*sigma^4) strictly boost post-selected QFT recovery above P_PGM(A) toward the flat-fiber ceiling R(A)/Q."
+  ],
+  "favorable_controls": [
+    "Non-flat colliding instance A=[[1,1,2]] mod 8 (P_1=0.6089 < P_3=0.6227 < P_5=0.6246 < 5/8=0.625)",
+    "High-disparity instance A=[[1,1,1,2]] mod 8",
+    "Flat surjective control A=[[1,2,4]] mod 8 (P_1=P_3=P_5=1.0)"
+  ]
+}

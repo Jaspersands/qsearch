@@ -1,0 +1,541 @@
+{
+  "contract_id": "correlated_block_joint_readout_local_blindness_twirl_baseline_v1",
+  "status": "BOUNDED_FULL_OUTCOME_CALIBRATION_AND_LOCAL_DERIVATION_REVIEW_PENDING",
+  "finite_controls": [
+    {
+      "full_labels": [
+        [
+          1,
+          0,
+          5,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          2
+        ]
+      ],
+      "phase_bits": 4,
+      "visibility_exact": "7/8",
+      "residual_secret_modulus": 4,
+      "source_secret_known_only_for_likelihood_calibration": true,
+      "joint_syndrome_and_X_information": {
+        "uniform_secret_mutual_information_bits": 0.08844263820503584,
+        "optimal_one_copy_Bayes_guess_probability": 0.08343505859375,
+        "secret_hypotheses_enumerated": 16,
+        "likelihood_evaluation_is_free_or_polynomial": false
+      },
+      "discarded_syndrome_X_information": {
+        "uniform_secret_mutual_information_bits": 0.020630029672083067,
+        "optimal_one_copy_Bayes_guess_probability": 0.072967529296875,
+        "secret_hypotheses_enumerated": 16,
+        "likelihood_evaluation_is_free_or_polynomial": false
+      },
+      "product_measurement_twirl_max_probability_residual": 4.163336342344337e-17,
+      "twirl_reproduces_joint_syndrome_and_X": false,
+      "twirl_requires_single_qubit_source_measurement_access": true,
+      "classical_unknown_secret_DCP_simulation_supplied": false,
+      "minimum_signed_relation_diagnostic": {
+        "minimum_nonzero_signed_support": 3,
+        "witness": [
+          1,
+          1,
+          -1,
+          0
+        ],
+        "signed_relations_tested": 19,
+        "diagnostic_search_is_polynomial": false
+      },
+      "all_X_outcomes_k_wise_uniform_conditional_on_syndrome": 2,
+      "max_nonconstant_parity_bias_through_blind_degree": 8.326672684688674e-17,
+      "full_likelihood_entries_enumerated": 4096,
+      "basis_addresses_enumerated": 16,
+      "syndrome_probabilities": [
+        0.0625,
+        0.0625,
+        0.0625,
+        0.0625,
+        0.0625,
+        0.125,
+        0.0625,
+        0.0,
+        0.0,
+        0.125,
+        0.125,
+        0.0,
+        0.0,
+        0.0625,
+        0.125,
+        0.0625
+      ],
+      "minimum_probability_before_roundoff_clamp": 0.0,
+      "full_X_outcome_retained_not_independent_marginal_samples": true,
+      "efficient_decoder_or_quantum_advantage_claimed": false
+    },
+    {
+      "full_labels": [
+        [
+          1,
+          4,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          4
+        ]
+      ],
+      "phase_bits": 3,
+      "visibility_exact": "7/8",
+      "residual_secret_modulus": 2,
+      "source_secret_known_only_for_likelihood_calibration": true,
+      "joint_syndrome_and_X_information": {
+        "uniform_secret_mutual_information_bits": 1.3254198667659725,
+        "optimal_one_copy_Bayes_guess_probability": 0.87890625,
+        "secret_hypotheses_enumerated": 4,
+        "likelihood_evaluation_is_free_or_polynomial": false
+      },
+      "discarded_syndrome_X_information": {
+        "uniform_secret_mutual_information_bits": 1.3254198667659725,
+        "optimal_one_copy_Bayes_guess_probability": 0.8789062500000001,
+        "secret_hypotheses_enumerated": 4,
+        "likelihood_evaluation_is_free_or_polynomial": false
+      },
+      "product_measurement_twirl_max_probability_residual": 8.326672684688674e-17,
+      "twirl_reproduces_joint_syndrome_and_X": false,
+      "twirl_requires_single_qubit_source_measurement_access": true,
+      "classical_unknown_secret_DCP_simulation_supplied": false,
+      "minimum_signed_relation_diagnostic": {
+        "minimum_nonzero_signed_support": 1,
+        "witness": [
+          0,
+          1,
+          0,
+          0
+        ],
+        "signed_relations_tested": 2,
+        "diagnostic_search_is_polynomial": false
+      },
+      "all_X_outcomes_k_wise_uniform_conditional_on_syndrome": 0,
+      "max_nonconstant_parity_bias_through_blind_degree": 0.0,
+      "full_likelihood_entries_enumerated": 1024,
+      "basis_addresses_enumerated": 16,
+      "syndrome_probabilities": [
+        0.25,
+        0.25,
+        0.0,
+        0.0,
+        0.25,
+        0.25,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "minimum_probability_before_roundoff_clamp": 0.0,
+      "full_X_outcome_retained_not_independent_marginal_samples": true,
+      "efficient_decoder_or_quantum_advantage_claimed": false
+    },
+    {
+      "full_labels": [
+        [
+          4,
+          5,
+          6,
+          12,
+          3,
+          1
+        ],
+        [
+          13,
+          0,
+          4,
+          7,
+          15,
+          10
+        ]
+      ],
+      "phase_bits": 4,
+      "visibility_exact": "1/2",
+      "residual_secret_modulus": 4,
+      "source_secret_known_only_for_likelihood_calibration": true,
+      "joint_syndrome_and_X_information": {
+        "uniform_secret_mutual_information_bits": 0.008545457178099472,
+        "optimal_one_copy_Bayes_guess_probability": 0.07696533203125,
+        "secret_hypotheses_enumerated": 16,
+        "likelihood_evaluation_is_free_or_polynomial": false
+      },
+      "discarded_syndrome_X_information": {
+        "uniform_secret_mutual_information_bits": 0.0068390378886701835,
+        "optimal_one_copy_Bayes_guess_probability": 0.0744476318359375,
+        "secret_hypotheses_enumerated": 16,
+        "likelihood_evaluation_is_free_or_polynomial": false
+      },
+      "product_measurement_twirl_max_probability_residual": 1.3877787807814457e-17,
+      "twirl_reproduces_joint_syndrome_and_X": false,
+      "twirl_requires_single_qubit_source_measurement_access": true,
+      "classical_unknown_secret_DCP_simulation_supplied": false,
+      "minimum_signed_relation_diagnostic": {
+        "minimum_nonzero_signed_support": 2,
+        "witness": [
+          1,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "signed_relations_tested": 12,
+        "diagnostic_search_is_polynomial": false
+      },
+      "all_X_outcomes_k_wise_uniform_conditional_on_syndrome": 1,
+      "max_nonconstant_parity_bias_through_blind_degree": 1.0408340855860843e-16,
+      "full_likelihood_entries_enumerated": 16384,
+      "basis_addresses_enumerated": 64,
+      "syndrome_probabilities": [
+        0.0625,
+        0.0625,
+        0.0625,
+        0.0625,
+        0.0625,
+        0.0625,
+        0.0625,
+        0.0625,
+        0.0625,
+        0.0625,
+        0.0625,
+        0.0625,
+        0.0625,
+        0.0625,
+        0.0625,
+        0.0625
+      ],
+      "minimum_probability_before_roundoff_clamp": 0.000823974609375,
+      "full_X_outcome_retained_not_independent_marginal_samples": true,
+      "efficient_decoder_or_quantum_advantage_claimed": false
+    }
+  ],
+  "native_joint_information_blindness_frontiers": [
+    {
+      "components": 64,
+      "original_phase_qubits": 256,
+      "blind_local_support_or_X_parity_degree": 16,
+      "any_signed_relation_through_degree_k_probability_power_of_two_upper_exponent": 16,
+      "simultaneous_local_blindness_and_Holevo_event_exception_power_of_two_upper_exponent": 15,
+      "all_k_local_reduced_states_secret_independent_IF_no_short_relation": true,
+      "full_X_readout_k_wise_uniform_IF_no_short_relation": true,
+      "joint_high_degree_X_correlations_excluded": false,
+      "local_measurement_circuits_or_full_output_decoders_ruled_out": false,
+      "retained_Holevo_lower_bits_IF_full_injective": 110,
+      "efficient_readout_or_decoder_supplied": false
+    },
+    {
+      "components": 256,
+      "original_phase_qubits": 1024,
+      "blind_local_support_or_X_parity_degree": 64,
+      "any_signed_relation_through_degree_k_probability_power_of_two_upper_exponent": 64,
+      "simultaneous_local_blindness_and_Holevo_event_exception_power_of_two_upper_exponent": 63,
+      "all_k_local_reduced_states_secret_independent_IF_no_short_relation": true,
+      "full_X_readout_k_wise_uniform_IF_no_short_relation": true,
+      "joint_high_degree_X_correlations_excluded": false,
+      "local_measurement_circuits_or_full_output_decoders_ruled_out": false,
+      "retained_Holevo_lower_bits_IF_full_injective": 490,
+      "efficient_readout_or_decoder_supplied": false
+    },
+    {
+      "components": 1024,
+      "original_phase_qubits": 4096,
+      "blind_local_support_or_X_parity_degree": 256,
+      "any_signed_relation_through_degree_k_probability_power_of_two_upper_exponent": 256,
+      "simultaneous_local_blindness_and_Holevo_event_exception_power_of_two_upper_exponent": 255,
+      "all_k_local_reduced_states_secret_independent_IF_no_short_relation": true,
+      "full_X_readout_k_wise_uniform_IF_no_short_relation": true,
+      "joint_high_degree_X_correlations_excluded": false,
+      "local_measurement_circuits_or_full_output_decoders_ruled_out": false,
+      "retained_Holevo_lower_bits_IF_full_injective": 2022,
+      "efficient_readout_or_decoder_supplied": false
+    },
+    {
+      "components": 4096,
+      "original_phase_qubits": 16384,
+      "blind_local_support_or_X_parity_degree": 1024,
+      "any_signed_relation_through_degree_k_probability_power_of_two_upper_exponent": 1024,
+      "simultaneous_local_blindness_and_Holevo_event_exception_power_of_two_upper_exponent": 1023,
+      "all_k_local_reduced_states_secret_independent_IF_no_short_relation": true,
+      "full_X_readout_k_wise_uniform_IF_no_short_relation": true,
+      "joint_high_degree_X_correlations_excluded": false,
+      "local_measurement_circuits_or_full_output_decoders_ruled_out": false,
+      "retained_Holevo_lower_bits_IF_full_injective": 8162,
+      "efficient_readout_or_decoder_supplied": false
+    },
+    {
+      "components": 16384,
+      "original_phase_qubits": 65536,
+      "blind_local_support_or_X_parity_degree": 4096,
+      "any_signed_relation_through_degree_k_probability_power_of_two_upper_exponent": 4096,
+      "simultaneous_local_blindness_and_Holevo_event_exception_power_of_two_upper_exponent": 4095,
+      "all_k_local_reduced_states_secret_independent_IF_no_short_relation": true,
+      "full_X_readout_k_wise_uniform_IF_no_short_relation": true,
+      "joint_high_degree_X_correlations_excluded": false,
+      "local_measurement_circuits_or_full_output_decoders_ruled_out": false,
+      "retained_Holevo_lower_bits_IF_full_injective": 32734,
+      "efficient_readout_or_decoder_supplied": false
+    },
+    {
+      "components": 65536,
+      "original_phase_qubits": 262144,
+      "blind_local_support_or_X_parity_degree": 16384,
+      "any_signed_relation_through_degree_k_probability_power_of_two_upper_exponent": 16384,
+      "simultaneous_local_blindness_and_Holevo_event_exception_power_of_two_upper_exponent": 16383,
+      "all_k_local_reduced_states_secret_independent_IF_no_short_relation": true,
+      "full_X_readout_k_wise_uniform_IF_no_short_relation": true,
+      "joint_high_degree_X_correlations_excluded": false,
+      "local_measurement_circuits_or_full_output_decoders_ruled_out": false,
+      "retained_Holevo_lower_bits_IF_full_injective": 131034,
+      "efficient_readout_or_decoder_supplied": false
+    }
+  ],
+  "complete_native_collision_censuses": [
+    {
+      "components": 1,
+      "width": 3,
+      "phase_bits": 4,
+      "fixed_residual_secret": 1,
+      "visibility_exact": "1",
+      "all_original_label_matrices": 4096,
+      "native_mean_uniform_reference_collision_multiplier": 2.625,
+      "primitive_secret_formula_exact_rational": "21/8",
+      "even_secret_exception_in_formula": false
+    },
+    {
+      "components": 1,
+      "width": 3,
+      "phase_bits": 4,
+      "fixed_residual_secret": 1,
+      "visibility_exact": "1/2",
+      "all_original_label_matrices": 4096,
+      "native_mean_uniform_reference_collision_multiplier": 1.5703125,
+      "primitive_secret_formula_exact_rational": "201/128",
+      "even_secret_exception_in_formula": false
+    },
+    {
+      "components": 1,
+      "width": 3,
+      "phase_bits": 4,
+      "fixed_residual_secret": 1,
+      "visibility_exact": "0",
+      "all_original_label_matrices": 4096,
+      "native_mean_uniform_reference_collision_multiplier": 1.375,
+      "primitive_secret_formula_exact_rational": "11/8",
+      "even_secret_exception_in_formula": false
+    },
+    {
+      "components": 1,
+      "width": 3,
+      "phase_bits": 4,
+      "fixed_residual_secret": 2,
+      "visibility_exact": "1",
+      "all_original_label_matrices": 4096,
+      "native_mean_uniform_reference_collision_multiplier": 4.25,
+      "primitive_secret_formula_exact_rational": null,
+      "even_secret_exception_in_formula": true
+    },
+    {
+      "components": 1,
+      "width": 3,
+      "phase_bits": 4,
+      "fixed_residual_secret": 2,
+      "visibility_exact": "1/2",
+      "all_original_label_matrices": 4096,
+      "native_mean_uniform_reference_collision_multiplier": 1.7802734375,
+      "primitive_secret_formula_exact_rational": null,
+      "even_secret_exception_in_formula": true
+    },
+    {
+      "components": 1,
+      "width": 3,
+      "phase_bits": 4,
+      "fixed_residual_secret": 2,
+      "visibility_exact": "0",
+      "all_original_label_matrices": 4096,
+      "native_mean_uniform_reference_collision_multiplier": 1.375,
+      "primitive_secret_formula_exact_rational": null,
+      "even_secret_exception_in_formula": true
+    }
+  ],
+  "native_fixed_readout_information_frontiers": [
+    {
+      "components": 64,
+      "original_phase_qubits_per_batch": 192,
+      "original_phase_bits": 72,
+      "residual_secret_entropy_bits": 4480,
+      "mean_information_bits_per_fixed_readout_batch_upper": {
+        "integer_part": 1,
+        "dyadic_correction_exponent": 10
+      },
+      "all_even_secret_prior_probability_exponent": 64,
+      "all_even_secret_KL_bits_upper": 320,
+      "full_secret_identification_ceiling": {
+        "half_plus_two_to_negative_exponent": 4417
+      },
+      "three_quarter_full_secret_identification_target_attainable": false,
+      "Fano_target": "negation orbit under original uniform-secret prior",
+      "three_quarter_negation_orbit_identification_attempt_lower_bound": 3355,
+      "raw_original_qubits_lower_bound_for_that_orbit_target": 644160,
+      "retained_block_Holevo_lower_bits_IF_full_injective": 50,
+      "full_frequency_noninjectivity_probability_upper_exponent": 4224,
+      "information_upper_is_native_mean_not_pointwise_in_A": true,
+      "only_unrotated_syndrome_then_complete_X_readout_covered": true,
+      "adaptively_secret_aligned_bases_or_other_collective_measurements_covered": false,
+      "source_preparation_or_decoder_implemented": false,
+      "polynomial_sample_lower_bound_is_a_general_algorithmic_no_go": false
+    },
+    {
+      "components": 256,
+      "original_phase_qubits_per_batch": 768,
+      "original_phase_bits": 264,
+      "residual_secret_entropy_bits": 67072,
+      "mean_information_bits_per_fixed_readout_batch_upper": {
+        "integer_part": 1,
+        "dyadic_correction_exponent": 49
+      },
+      "all_even_secret_prior_probability_exponent": 256,
+      "all_even_secret_KL_bits_upper": 1280,
+      "full_secret_identification_ceiling": {
+        "half_plus_two_to_negative_exponent": 66817
+      },
+      "three_quarter_full_secret_identification_target_attainable": false,
+      "Fano_target": "negation orbit under original uniform-secret prior",
+      "three_quarter_negation_orbit_identification_attempt_lower_bound": 50302,
+      "raw_original_qubits_lower_bound_for_that_orbit_target": 38631936,
+      "retained_block_Holevo_lower_bits_IF_full_injective": 239,
+      "full_frequency_noninjectivity_probability_upper_exponent": 66048,
+      "information_upper_is_native_mean_not_pointwise_in_A": true,
+      "only_unrotated_syndrome_then_complete_X_readout_covered": true,
+      "adaptively_secret_aligned_bases_or_other_collective_measurements_covered": false,
+      "source_preparation_or_decoder_implemented": false,
+      "polynomial_sample_lower_bound_is_a_general_algorithmic_no_go": false
+    },
+    {
+      "components": 1024,
+      "original_phase_qubits_per_batch": 3072,
+      "original_phase_bits": 1032,
+      "residual_secret_entropy_bits": 1054720,
+      "mean_information_bits_per_fixed_readout_batch_upper": {
+        "integer_part": 1,
+        "dyadic_correction_exponent": 202
+      },
+      "all_even_secret_prior_probability_exponent": 1024,
+      "all_even_secret_KL_bits_upper": 5120,
+      "full_secret_identification_ceiling": {
+        "half_plus_two_to_negative_exponent": 1053697
+      },
+      "three_quarter_full_secret_identification_target_attainable": false,
+      "Fano_target": "negation orbit under original uniform-secret prior",
+      "three_quarter_negation_orbit_identification_attempt_lower_bound": 791038,
+      "raw_original_qubits_lower_bound_for_that_orbit_target": 2430068736,
+      "retained_block_Holevo_lower_bits_IF_full_injective": 1004,
+      "full_frequency_noninjectivity_probability_upper_exponent": 1050624,
+      "information_upper_is_native_mean_not_pointwise_in_A": true,
+      "only_unrotated_syndrome_then_complete_X_readout_covered": true,
+      "adaptively_secret_aligned_bases_or_other_collective_measurements_covered": false,
+      "source_preparation_or_decoder_implemented": false,
+      "polynomial_sample_lower_bound_is_a_general_algorithmic_no_go": false
+    },
+    {
+      "components": 4096,
+      "original_phase_qubits_per_batch": 12288,
+      "original_phase_bits": 4104,
+      "residual_secret_entropy_bits": 16801792,
+      "mean_information_bits_per_fixed_readout_batch_upper": {
+        "integer_part": 1,
+        "dyadic_correction_exponent": 817
+      },
+      "all_even_secret_prior_probability_exponent": 4096,
+      "all_even_secret_KL_bits_upper": 20480,
+      "full_secret_identification_ceiling": {
+        "half_plus_two_to_negative_exponent": 16797697
+      },
+      "three_quarter_full_secret_identification_target_attainable": false,
+      "Fano_target": "negation orbit under original uniform-secret prior",
+      "three_quarter_negation_orbit_identification_attempt_lower_bound": 12601342,
+      "raw_original_qubits_lower_bound_for_that_orbit_target": 154845290496,
+      "retained_block_Holevo_lower_bits_IF_full_injective": 4073,
+      "full_frequency_noninjectivity_probability_upper_exponent": 16785408,
+      "information_upper_is_native_mean_not_pointwise_in_A": true,
+      "only_unrotated_syndrome_then_complete_X_readout_covered": true,
+      "adaptively_secret_aligned_bases_or_other_collective_measurements_covered": false,
+      "source_preparation_or_decoder_implemented": false,
+      "polynomial_sample_lower_bound_is_a_general_algorithmic_no_go": false
+    },
+    {
+      "components": 16384,
+      "original_phase_qubits_per_batch": 49152,
+      "original_phase_bits": 16392,
+      "residual_secret_entropy_bits": 268533760,
+      "mean_information_bits_per_fixed_readout_batch_upper": {
+        "integer_part": 1,
+        "dyadic_correction_exponent": 3274
+      },
+      "all_even_secret_prior_probability_exponent": 16384,
+      "all_even_secret_KL_bits_upper": 81920,
+      "full_secret_identification_ceiling": {
+        "half_plus_two_to_negative_exponent": 268517377
+      },
+      "three_quarter_full_secret_identification_target_attainable": false,
+      "Fano_target": "negation orbit under original uniform-secret prior",
+      "three_quarter_negation_orbit_identification_attempt_lower_bound": 201400318,
+      "raw_original_qubits_lower_bound_for_that_orbit_target": 9899228430336,
+      "retained_block_Holevo_lower_bits_IF_full_injective": 16358,
+      "full_frequency_noninjectivity_probability_upper_exponent": 268468224,
+      "information_upper_is_native_mean_not_pointwise_in_A": true,
+      "only_unrotated_syndrome_then_complete_X_readout_covered": true,
+      "adaptively_secret_aligned_bases_or_other_collective_measurements_covered": false,
+      "source_preparation_or_decoder_implemented": false,
+      "polynomial_sample_lower_bound_is_a_general_algorithmic_no_go": false
+    },
+    {
+      "components": 65536,
+      "original_phase_qubits_per_batch": 196608,
+      "original_phase_bits": 65544,
+      "residual_secret_entropy_bits": 4295360512,
+      "mean_information_bits_per_fixed_readout_batch_upper": {
+        "integer_part": 1,
+        "dyadic_correction_exponent": 13105
+      },
+      "all_even_secret_prior_probability_exponent": 65536,
+      "all_even_secret_KL_bits_upper": 327680,
+      "full_secret_identification_ceiling": {
+        "half_plus_two_to_negative_exponent": 4295294977
+      },
+      "three_quarter_full_secret_identification_target_attainable": false,
+      "Fano_target": "negation orbit under original uniform-secret prior",
+      "three_quarter_negation_orbit_identification_attempt_lower_bound": 3221520382,
+      "raw_original_qubits_lower_bound_for_that_orbit_target": 633376679264256,
+      "retained_block_Holevo_lower_bits_IF_full_injective": 65507,
+      "full_frequency_noninjectivity_probability_upper_exponent": 4295098368,
+      "information_upper_is_native_mean_not_pointwise_in_A": true,
+      "only_unrotated_syndrome_then_complete_X_readout_covered": true,
+      "adaptively_secret_aligned_bases_or_other_collective_measurements_covered": false,
+      "source_preparation_or_decoder_implemented": false,
+      "polynomial_sample_lower_bound_is_a_general_algorithmic_no_go": false
+    }
+  ],
+  "selected_controls_are_native_advantage_estimates": false,
+  "accepted_speedup_candidate": false,
+  "novelty_claim": false,
+  "source_quantum_preparations_executed": 0,
+  "exponential_fiber_and_secret_enumeration_charged": true,
+  "efficient_unknown_secret_inference_implemented": false,
+  "prior_source_and_gate_contract": "research/DCP_PAIRING_COMPOSITION_BARRIER.md#6-physical-retained-block-escape"
+}

@@ -1,0 +1,14 @@
+{
+  "hypothesis_id": "dcp_noisy_syndrome_measurement_readout_bitflip_bridge",
+  "title": "Classical Syndrome Measurement Readout Bit-Flip Damping and Parity-Check Verification",
+  "status": "VERIFIED_FINITE_IDENTITIES_REVIEW_PENDING",
+  "claims": [
+    "Independent readout bit-flip error eta in [0, 1/2] on a CNOT syndrome wire damps Pauli-X sign-rectified visibility by (1 - 2*eta) per pair and (1 - 2*eta)^2 across two Stage-2 pairs.",
+    "Adding a 1-ancilla parity-check verification readout and post-selecting on agreement reduces the effective readout error rate to eta_post = eta^2 / ((1 - eta)^2 + eta^2) = O(eta^2)."
+  ],
+  "favorable_controls": [
+    "Noiseless eta=0.0 control",
+    "Realistic eta=0.05 readout error (18.1x suppression to eta_post = 0.002762)",
+    "Maximal eta=0.50 erasure control"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "contract_id": "native-higher-call-error-table-gauge-invariance-audit-contract",
+  "title": "Native Higher-Call Error-Table Gauge-Invariance Audit: Affine-Secret Gauge Covariance, Injective-Frequency Purity Pinning, and Universal Word-Multiplicity Pinching",
+  "version": "1.0.0",
+  "scope": "general_k_call_error_table_gauge_covariance_injective_purity_pinning_and_word_multiplicity_pinching",
+  "theorems": [
+    {
+      "id": "T1",
+      "name": "Exact Affine-Secret Gauge Covariance and Moment Invariance",
+      "statement": "Under any affine secret-gauge shift e_tilde(w) = (e(w) + <f(w), Delta_s> + c_0) mod q, rho^(e_tilde)(s) = rho^(e)((s + Delta_s) mod q) and rho_hat^(e_tilde)(delta) = omega_q^(-<delta, Delta_s>) rho_hat^(e)(delta), leaving rho_bar, E_s[P(x | s)], E_(epsilon, sigma), and V_HS(epsilon, sigma) identically invariant."
+    },
+    {
+      "id": "T2",
+      "name": "Exact Error-Table Independence Under Injective Signed Frequency Maps",
+      "statement": "Whenever tau_epsilon is injective on {0, ..., D-1}^k (|V_epsilon(f)| = D^k), rho_bar^(e) = I_D / D, E_s[P^(e)(x | s)] = 1/D, and V_HS(epsilon, sigma; e) = 1 - 1/D identically for every error table e in Z_q^D."
+    },
+    {
+      "id": "T3",
+      "name": "Subvariety Inclusion W_epsilon subseteq V_epsilon(f) and Frequency-Independent Error-Averaged Readout",
+      "statement": "For any frequency table f, the signed word-multiplicity variety W_epsilon = {(w, w') : mu_epsilon(w) == mu_epsilon(w') mod q} satisfies Delta_k subseteq W_epsilon subseteq V_epsilon(f), and averaging E_s[P^(e)(x | s)] over e ~ Unif(Z_q^D) pinches onto W_epsilon, producing a distribution completely independent of f."
+    }
+  ],
+  "guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  }
+}

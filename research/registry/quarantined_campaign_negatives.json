@@ -1,13 +1,7 @@
 [
   {
     "id": "NEG-QUANTUM-ANNEALING-SPECTRAL-GAP-BARRIER",
-    "status": "QUARANTINED_OVERBROAD_NO_GO",
-    "reviewed_on": "2026-10-13",
-    "review": "research/CAMPAIGN_NEGATIVE_CLAIM_AUDIT.md",
-    "retraction_reasons": [
-      "Stoquastic positive path-integral weights do not imply polynomial mixing; Hastings-Freedman give counterexamples.",
-      "A sufficient adiabatic error bound is not a necessary runtime lower bound for every Hamiltonian path."
-    ],
+    "original_checks_are_general_proofs": false,
     "original_record": {
       "applies_to": [
         "QUANTUM-ANNEALING",
@@ -33,19 +27,18 @@
       "reason_invalid": "First-order quantum phase transitions across extensive Hamming distances force the minimum spectral gap to vanish exponentially Delta_min = Theta(e^(-alpha n)), demanding exponentially large annealing runtimes T = Omega(e^(2 alpha n)) under the adiabatic theorem. Anderson localization traps the state in local minima near s -> 1. Standard stoquastic Hamiltonians have zero sign problem, allowing classical Path Integral Monte Carlo and Simulated Quantum Annealing to match quantum tunneling in polynomial time. Open-system thermal noise easily exceeds the spectral gap for moderate qubit numbers. Therefore, claiming scalable quantum algorithmic speedups for quantum annealers on NP-hard optimization problems is mathematically, physically, and computationally invalid.",
       "source": "research/QUANTUM_ANNEALING_SPECTRAL_GAP_BARRIER.md"
     },
-    "original_checks_are_general_proofs": false,
-    "reinstatement_requires_scoped_mathematical_review": true
+    "reinstatement_requires_scoped_mathematical_review": true,
+    "retraction_reasons": [
+      "Stoquastic positive path-integral weights do not imply polynomial mixing; Hastings-Freedman give counterexamples.",
+      "A sufficient adiabatic error bound is not a necessary runtime lower bound for every Hamiltonian path."
+    ],
+    "review": "research/CAMPAIGN_NEGATIVE_CLAIM_AUDIT.md",
+    "reviewed_on": "2026-10-13",
+    "status": "QUARANTINED_OVERBROAD_NO_GO"
   },
   {
     "id": "NEG-QUANTUM-SIMULATION-TENSOR-NETWORK-HORIZON",
-    "status": "QUARANTINED_OVERBROAD_NO_GO",
-    "reviewed_on": "2026-10-13",
-    "review": "research/CAMPAIGN_NEGATIVE_CLAIM_AUDIT.md",
-    "retraction_reasons": [
-      "A Trotter upper error bound is not a necessary gate-count lower bound.",
-      "An area-law statement does not by itself prove constant bond dimension at machine precision or convergence of DMRG.",
-      "Small target fidelity does not imply a maximally mixed output."
-    ],
+    "original_checks_are_general_proofs": false,
     "original_record": {
       "applies_to": [
         "QUANTUM-SIMULATION",
@@ -72,19 +65,19 @@
       "reason_invalid": "Trotter errors accumulate extensively, demanding super-linear gate counts that overwhelm NISQ coherence times. 1D gapped ground states and short-time dynamics (t <= O(log N)) are proven to obey area laws and are simulated in polynomial time classically by Matrix Product States (MPS) and TEBD algorithms. Higher-dimensional long-time dynamics that defeat tensor networks require gate counts where physical noise completely thermalizes the quantum processor (F < 10^-43). Therefore, claiming that noisy NISQ quantum simulators achieve scalable quantum computational advantage over classical simulation methods is mathematically, physically, and computationally invalid.",
       "source": "research/QUANTUM_SIMULATION_TENSOR_NETWORK_BARRIER.md"
     },
-    "original_checks_are_general_proofs": false,
-    "reinstatement_requires_scoped_mathematical_review": true
+    "reinstatement_requires_scoped_mathematical_review": true,
+    "retraction_reasons": [
+      "A Trotter upper error bound is not a necessary gate-count lower bound.",
+      "An area-law statement does not by itself prove constant bond dimension at machine precision or convergence of DMRG.",
+      "Small target fidelity does not imply a maximally mixed output."
+    ],
+    "review": "research/CAMPAIGN_NEGATIVE_CLAIM_AUDIT.md",
+    "reviewed_on": "2026-10-13",
+    "status": "QUARANTINED_OVERBROAD_NO_GO"
   },
   {
     "id": "NEG-QUANTUM-WALKS-SPATIAL-TOPOLOGY-BARRIER",
-    "status": "QUARANTINED_OVERBROAD_NO_GO",
-    "reviewed_on": "2026-10-13",
-    "review": "research/CAMPAIGN_NEGATIVE_CLAIM_AUDIT.md",
-    "retraction_reasons": [
-      "O(N) BFS with N exponential in tree depth does not give a polynomial-depth classical algorithm.",
-      "The dimensional threshold belongs to a specified walk Hamiltonian, not all quantum spatial search models.",
-      "One finite disorder simulation does not prove all-graph or all-time localization."
-    ],
+    "original_checks_are_general_proofs": false,
     "original_record": {
       "applies_to": [
         "QUANTUM-WALKS",
@@ -111,18 +104,19 @@
       "reason_invalid": "The glued-trees speedup requires an artificial black-box oracle model and collapses under explicit adjacency representations or random perturbations. Continuous-time quantum walk spatial search suffers from energy dispersion collapse in low dimensions d <= 4, yielding zero speedup in 1D. Spatial disorder induces Anderson localization that freezes wavepacket spreading. Szegedy walks achieve at most quadratic speedups over classical Markov chains and are dequantized by classical MCMC on expanders. Therefore, claiming that quantum walks achieve scalable, general-purpose speedups on arbitrary graphs or physical spatial topologies is mathematically, physically, and computationally invalid.",
       "source": "research/QUANTUM_WALKS_SPATIAL_TOPOLOGY_BARRIER.md"
     },
-    "original_checks_are_general_proofs": false,
-    "reinstatement_requires_scoped_mathematical_review": true
+    "reinstatement_requires_scoped_mathematical_review": true,
+    "retraction_reasons": [
+      "O(N) BFS with N exponential in tree depth does not give a polynomial-depth classical algorithm.",
+      "The dimensional threshold belongs to a specified walk Hamiltonian, not all quantum spatial search models.",
+      "One finite disorder simulation does not prove all-graph or all-time localization."
+    ],
+    "review": "research/CAMPAIGN_NEGATIVE_CLAIM_AUDIT.md",
+    "reviewed_on": "2026-10-13",
+    "status": "QUARANTINED_OVERBROAD_NO_GO"
   },
   {
     "id": "NEG-UNITRIANGULAR-SUPERCHARACTER-BARRIER",
-    "status": "QUARANTINED_OVERBROAD_NO_GO",
-    "reviewed_on": "2026-10-13",
-    "review": "research/HSP_CAMPAIGN_CLAIM_AUDIT.md",
-    "retraction_reasons": [
-      "Published constant-class bounded-prime-factor HSP algorithms cover U4(F_(2^r)); central bypass is not a general impossibility.",
-      "Wildness and coarse supercharacter blindness are not quantum computational lower bounds."
-    ],
+    "original_checks_are_general_proofs": false,
     "original_record": {
       "applies_to": [
         "NONABELIAN-COSET-COLLECTIVE-OBSERVABLES",
@@ -136,8 +130,8 @@
         "central_intersection_bypass": "26/27 non-trivial involutions in U_4(F_2) satisfy H cap Z_1 = {I}, 20/27 satisfy H cap Z_2 = {I}",
         "classical_query_lower_bound": "Omega(q^{n(n-1)/4}) = 2^{Omega(n^2 log q)}",
         "speedup_claim_allowed": false,
-        "superclass_bell_contraction": "U_4(F_2) order 64 contracts to B(4) = 15 superclasses",
         "supercharacter_tv_blindness": "TV distance identically 0.000 for distinct involutions in the same superclass",
+        "superclass_bell_contraction": "U_4(F_2) order 64 contracts to B(4) = 15 superclasses",
         "transvection_emptiness": "21/27 compound involutions contain zero elementary transvections",
         "wild_representation_type": "Irrep classification is wild for n >= 6, precluding efficient non-abelian QFT"
       },
@@ -146,18 +140,18 @@
       "reason_invalid": "The center Z_1(U_n(F_q)) is 1-dimensional, concentrated in the corner entry (1, n). In U_4(F_2) of order 64, exactly 26 out of 27 non-trivial involutions satisfy H cap Z_1 = {I}, causing central induction (Ivanyos et al.) to fail immediately at step 0. Supercharacters are constant on superclasses (orbit size B(n)), so any two hidden subgroups with non-trivial elements in the same superclass produce identical supercharacter Fourier measurement distributions, proving TV = 0.000 (supercharacter blindness). Compound involutions (21 of 27) contain zero elementary transvections (support >= 2), defeating single-coordinate transvection probes. For n >= 6, the representation theory of U_n(F_q) is wild (containing the matrix pair classification problem), blocking efficient circuit synthesis for non-abelian Fourier transforms. The classical randomized query lower bound is unconditionally Omega(q^{n(n-1)/4}) = 2^{Omega(n^2 log q)}.",
       "source": "research/UNITRIANGULAR_SUPERCHARACTER_HSP_OBSTRUCTION.md"
     },
-    "original_checks_are_general_proofs": false,
-    "reinstatement_requires_scoped_mathematical_review": true
+    "reinstatement_requires_scoped_mathematical_review": true,
+    "retraction_reasons": [
+      "Published constant-class bounded-prime-factor HSP algorithms cover U4(F_(2^r)); central bypass is not a general impossibility.",
+      "Wildness and coarse supercharacter blindness are not quantum computational lower bounds."
+    ],
+    "review": "research/HSP_CAMPAIGN_CLAIM_AUDIT.md",
+    "reviewed_on": "2026-10-13",
+    "status": "QUARANTINED_OVERBROAD_NO_GO"
   },
   {
     "id": "NEG-DIHEDRAL-HSP-SUBSET-SUM-COMMUTANT-BARRIER",
-    "status": "QUARANTINED_OVERBROAD_NO_GO",
-    "reviewed_on": "2026-10-13",
-    "review": "research/HSP_CAMPAIGN_CLAIM_AUDIT.md",
-    "retraction_reasons": [
-      "Average-case subset-sum measurement reductions do not make every entangling measurement NP-complete to construct.",
-      "A structured dyadic source has an efficient inverse-QFT decoder; obtaining that source from random DCP inputs is separately costly."
-    ],
+    "original_checks_are_general_proofs": false,
     "original_record": {
       "applies_to": [
         "DIHEDRAL-HSP",
@@ -182,18 +176,18 @@
       "reason_invalid": "On the dihedral group D_N = Z_N \\rtimes Z_2, every reflection element r^d s has matrix representation rho_j(r^d s) = [[0, omega^{jd}], [omega^{-jd}, 0]], whose trace is identically zero for all 2D irreps rho_j and all reflection axes d. By Frobenius' formula, p(rho_j | H_d) = (2 / 2N) [2 + 0] = 2/N identically independent of d, proving that weak Fourier sampling provides identically 0.000 bits of mutual information. Single-copy projection states Pi_{H_d} have rank 1 with pure state |phi_{j, d}> = (1/sqrt{2}) [|0> + omega^{-jd} |1>], reducing single-copy extraction to LWE/LPN. For M copies on (C^2)^{\\otimes M}, an operator commutes with the group action U(r) = diag(exp(-2pi i sum b_k j_k / N)) if and only if X_{b, b'} != 0 implies sum (b_k - b'_k) j_k = 0 mod N. The commutant algebra dimension is identically dim(C_M) = sum_{v in Z_N} |f^{-1}(v)|^2. For M < log_2 N, all subset sums are distinct with high probability, rendering C_M purely diagonal and abelian (dimension 2^M) with no entangling capability. Constructing entangling measurements for M >= log_2 N requires solving the NP-complete Modular Subset Sum Problem. Kuperberg's sieve balances collision tree depth with bucket width at Theta(sqrt{n}), lower-bounding state complexity at 2^{Omega(sqrt{n})}. Finally, Regev's quantum reduction from uSVP_{poly(n)} to DHSP establishes that a polynomial-time quantum algorithm for DHSP would break post-quantum lattice cryptography, validating DHSP's structural quantum hardness.",
       "source": "research/DIHEDRAL_HSP_SUBSET_SUM_COMMUTANT_BARRIER.md"
     },
-    "original_checks_are_general_proofs": false,
-    "reinstatement_requires_scoped_mathematical_review": true
+    "reinstatement_requires_scoped_mathematical_review": true,
+    "retraction_reasons": [
+      "Average-case subset-sum measurement reductions do not make every entangling measurement NP-complete to construct.",
+      "A structured dyadic source has an efficient inverse-QFT decoder; obtaining that source from random DCP inputs is separately costly."
+    ],
+    "review": "research/HSP_CAMPAIGN_CLAIM_AUDIT.md",
+    "reviewed_on": "2026-10-13",
+    "status": "QUARANTINED_OVERBROAD_NO_GO"
   },
   {
     "id": "NEG-BENT-FUNCTION-HIDDEN-SHIFT-DUAL-DEQUANTIZATION-BARRIER",
-    "status": "QUARANTINED_OVERBROAD_NO_GO",
-    "reviewed_on": "2026-10-13",
-    "review": "research/HSP_CAMPAIGN_CLAIM_AUDIT.md",
-    "retraction_reasons": [
-      "Explicit higher-degree Maiorana-McFarland functions can have efficient duals and nonlinear derivatives.",
-      "Flat outcomes in two bases do not prove that all measurements or hidden-shift algorithms fail."
-    ],
+    "original_checks_are_general_proofs": false,
     "original_record": {
       "applies_to": [
         "BENT-FUNCTION-HIDDEN-SHIFT",
@@ -217,19 +211,18 @@
       "reason_invalid": "For any bent function f: F_2^n -> F_2, the Walsh transform satisfies |hat{f}(u)| = 2^{n/2} identically everywhere. In the standard black-box query model where only f and g(x) = f(x + s) are accessible, the quantum state H^{\\otimes n} |\\psi_g> has amplitudes (1/2^{n/2}) (-1)^{\\tilde{f}(y) + y . s}. The measurement probabilities in the computational basis are P(y) = 1/2^n identically for all y, and in the Hadamard basis are P(z) = 1/2^n identically for all z, yielding zero mutual information without an oracle for the dual bent function \\tilde{f}. In the genuine black-box model, computing \\tilde{f}(y) = (1/2)(1 - 2^{-n/2} hat{f}(y)) requires 2^{Omega(n)} queries (Russell & Shparlinski 2004). Conversely, if f is an explicit quadratic bent function where \\tilde{f} is computable in polynomial time (such as f(x, y) = x . y), the algebraic derivative Delta_s(x) = g(x) + f(x) = s^T (A + A^T) x + c_s is an affine function. Evaluating Delta_s at the origin and at the n standard basis vectors yields a linear system M s = L_s over F_2, which is solved in n + 1 classical queries and O(n^3) time, completely dequantizing the quantum algorithm classically.",
       "source": "research/BENT_FUNCTION_HIDDEN_SHIFT_DUAL_DEQUANTIZATION_BARRIER.md"
     },
-    "original_checks_are_general_proofs": false,
-    "reinstatement_requires_scoped_mathematical_review": true
+    "reinstatement_requires_scoped_mathematical_review": true,
+    "retraction_reasons": [
+      "Explicit higher-degree Maiorana-McFarland functions can have efficient duals and nonlinear derivatives.",
+      "Flat outcomes in two bases do not prove that all measurements or hidden-shift algorithms fail."
+    ],
+    "review": "research/HSP_CAMPAIGN_CLAIM_AUDIT.md",
+    "reviewed_on": "2026-10-13",
+    "status": "QUARANTINED_OVERBROAD_NO_GO"
   },
   {
     "id": "NEG-LEGENDRE-HIDDEN-SHIFT-CLASSICAL-PRF-DEMARCATION",
-    "status": "QUARANTINED_OVERBROAD_NO_GO",
-    "reviewed_on": "2026-10-13",
-    "review": "research/HSP_CAMPAIGN_CLAIM_AUDIT.md",
-    "retraction_reasons": [
-      "Jacobi evaluation is polynomial-time arithmetic and does not require factoring.",
-      "Identifiability from classical samples is not a computational recovery lower bound.",
-      "Nonprimitive composite characters do not support full-modulus shift identification with totient success."
-    ],
+    "original_checks_are_general_proofs": false,
     "original_record": {
       "applies_to": [
         "LEGENDRE-HIDDEN-SHIFT",
@@ -249,22 +242,23 @@
         "weil_bound_prf_hardness": "Correlation between distinct shifts is bounded by |sum chi(x+s1) chi(x+s2)| <= 2 sqrt(p) + 1; classical PRF key recovery requires Omega(sqrt(p)) time"
       },
       "id": "NEG-LEGENDRE-HIDDEN-SHIFT-CLASSICAL-PRF-DEMARCATION",
-      "lesson": "The Legendre Symbol Hidden Shift Problem does not threaten classical cryptographic primitives. While Wim van Dam, Sean Hallgren, and Lawrence Ip (2006) proved that 1 coherent quantum query can reconstruct the secret shift s with probability (p - 1)/p via Gauss sum phase sifting, this speedup strictly requires coherent quantum superposition queries sum |x> |g(x)>. In any real-world cryptographic setting (such as Damgård's Legendre PRF), access is restricted to classical input-output pairs (x_i, g(x_i)). By Holevo's theorem and the Weil bound (|sum chi(x+s1) chi(x+s2)| <= 2 sqrt(p) + 1), classical queries produce an unentangled classical mixture from which recovering s requires Omega(sqrt{p}) operations, leaving zero quantum advantage. Furthermore, on composite moduli N, the success probability collapses to the totient ratio phi(N)/N, and implementing the Jacobi phase cancellation gate is as hard as factoring N.",
+      "lesson": "The Legendre Symbol Hidden Shift Problem does not threaten classical cryptographic primitives. While Wim van Dam, Sean Hallgren, and Lawrence Ip (2006) proved that 1 coherent quantum query can reconstruct the secret shift s with probability (p - 1)/p via Gauss sum phase sifting, this speedup strictly requires coherent quantum superposition queries sum |x> |g(x)>. In any real-world cryptographic setting (such as Damg\u00e5rd's Legendre PRF), access is restricted to classical input-output pairs (x_i, g(x_i)). By Holevo's theorem and the Weil bound (|sum chi(x+s1) chi(x+s2)| <= 2 sqrt(p) + 1), classical queries produce an unentangled classical mixture from which recovering s requires Omega(sqrt{p}) operations, leaving zero quantum advantage. Furthermore, on composite moduli N, the success probability collapses to the totient ratio phi(N)/N, and implementing the Jacobi phase cancellation gate is as hard as factoring N.",
       "reason_invalid": "The van Dam-Hallgren-Ip algorithm prepares the superposition state (1/sqrt{p-1}) sum_{x != -s} chi(x+s) |x> and applies QFT_p, yielding amplitudes proportional to the Gauss sum g(chi, k) = chi(k) tau_p omega^{-ks}. Because |tau_p|^2 = p, the target probability after phase cancellation is exactly P(success) = |tau_p (p - 1) / (p sqrt{p-1})|^2 = (p - 1)/p. Crucially, this requires coherent superposition access to the oracle. Against a classical server providing pairs (x, chi(x+s)), the quantum adversary holds only a classical diagonal mixture rho_classical with zero quantum coherence. By the Weil bound, any classical algorithm requires Omega(sqrt{p}) time via baby-step giant-step (Khovratovich 2020), and quantum algorithms given classical data have the identical lower bound. For composite moduli N = prod p_i, the Gauss sum vanishes on all non-coprime elements, restricting the peak probability to exactly phi(N)/N = prod (1 - 1/p_i). Moreover, implementing the phase gate |k> -> (k/N) |k> on composite moduli requires solving the Quadratic Residuosity Problem, which is polynomial-time equivalent to factoring N.",
       "source": "research/LEGENDRE_HIDDEN_SHIFT_CLASSICAL_PRF_DEMARCATION.md"
     },
-    "original_checks_are_general_proofs": false,
-    "reinstatement_requires_scoped_mathematical_review": true
+    "reinstatement_requires_scoped_mathematical_review": true,
+    "retraction_reasons": [
+      "Jacobi evaluation is polynomial-time arithmetic and does not require factoring.",
+      "Identifiability from classical samples is not a computational recovery lower bound.",
+      "Nonprimitive composite characters do not support full-modulus shift identification with totient success."
+    ],
+    "review": "research/HSP_CAMPAIGN_CLAIM_AUDIT.md",
+    "reviewed_on": "2026-10-13",
+    "status": "QUARANTINED_OVERBROAD_NO_GO"
   },
   {
     "id": "NEG-HEISENBERG-UNIPOTENT-REPRESENTATION-BOUNDARY",
-    "status": "QUARANTINED_OVERBROAD_NO_GO",
-    "reviewed_on": "2026-10-13",
-    "review": "research/HSP_CAMPAIGN_CLAIM_AUDIT.md",
-    "retraction_reasons": [
-      "Published bounded-class bounded-prime-factor algorithms extend beyond the Heisenberg boundary.",
-      "U4 over a growing characteristic-two field is a nontrivial covered family despite center-bypassing hidden subgroups."
-    ],
+    "original_checks_are_general_proofs": false,
     "original_record": {
       "applies_to": [
         "HEISENBERG-HSP",
@@ -288,19 +282,18 @@
       "reason_invalid": "In H_3(Z_p), non-central characters vanish identically on non-central elements Tr(rho_w(g)) = 0, forcing weak Fourier total variation distance to zero (TV = 0.000, 0.000 bits info). However, the representation projector Pi_H is strictly rank-1 onto a quadratic chirp state |psi> = (1/sqrt(p)) sum omega^{alpha z^2 + beta z} |z>, which can be de-chirped with 100% probability via U = diag(omega^{-alpha z^2}) and QFT_p in BQP. For U_n(F_p) with n >= 4, this mechanism fails completely. First, the derived subgroup [G, G] has codimension n - 1 and dimension binom(n-1, 2), while the center Z_1 has dimension 1. In U_4(F_2), 26 out of 27 involutions (96.3%) satisfy H cap Z_1 = {I}, so subgroups do not project into the center, preventing reduction to lower-dimensional quotients. Second, for n >= 6, classifying irreps contains the wild matrix pair problem, ruling out closed-form irreps and efficient QFT implementations. Third, supercharacter coarsening collapses superclasses to Bell numbers B(n), rendering TV distance identically 0.000 for subgroups sharing superclass profiles. Fourth, group powers yield polynomial phases of degree n - 1 >= 3, making phase de-chirping equivalent to solving systems of multivariate non-linear equations over finite fields.",
       "source": "research/HEISENBERG_HSP_DECHIRPING_UNIPOTENT_BOUNDARY.md"
     },
-    "original_checks_are_general_proofs": false,
-    "reinstatement_requires_scoped_mathematical_review": true
+    "reinstatement_requires_scoped_mathematical_review": true,
+    "retraction_reasons": [
+      "Published bounded-class bounded-prime-factor algorithms extend beyond the Heisenberg boundary.",
+      "U4 over a growing characteristic-two field is a nontrivial covered family despite center-bypassing hidden subgroups."
+    ],
+    "review": "research/HSP_CAMPAIGN_CLAIM_AUDIT.md",
+    "reviewed_on": "2026-10-13",
+    "status": "QUARANTINED_OVERBROAD_NO_GO"
   },
   {
     "id": "NEG-CENTRAL-DESCENT-TREE-DILATION-BARRIER",
-    "status": "QUARANTINED_OVERBROAD_NO_GO",
-    "reviewed_on": "2026-10-13",
-    "review": "research/NIL3_STATE_HSP_DESCENT.md",
-    "retraction_reasons": [
-      "The claimed complete receiver assigns lower secret components directly to recovered values.",
-      "The simulated characteristic-three ring is not the stated cyclotomic quotient; even hidden-generator order differs.",
-      "The declared disjoint-tree cost is not a universal copy lower bound; every fixed depth is polynomial in dimension."
-    ],
+    "original_checks_are_general_proofs": false,
     "original_record": {
       "applies_to": [
         "DHS-GOWERS-SIEVE",
@@ -320,7 +313,88 @@
       "reason_invalid": "Conditioning on zero-sum central character windows of size W=(n+1)^2 at each central level creates a complete conditioning tree of depth r-2 with branching factor W. Leaf copy complexity scales as W^(r-2) = (n+1)^(2(r-2)), which is strictly superpolynomial / exponential n^Omega(r) when r = omega(1).",
       "source": "/Users/jaspersands/Desktop/quantum algorithm search/research/reductions/nil3_state_hsp_descent_receiver.json"
     },
+    "reinstatement_requires_scoped_mathematical_review": true,
+    "retraction_reasons": [
+      "The claimed complete receiver assigns lower secret components directly to recovered values.",
+      "The simulated characteristic-three ring is not the stated cyclotomic quotient; even hidden-generator order differs.",
+      "The declared disjoint-tree cost is not a universal copy lower bound; every fixed depth is polynomial in dimension."
+    ],
+    "review": "research/NIL3_STATE_HSP_DESCENT.md",
+    "reviewed_on": "2026-10-13",
+    "status": "QUARANTINED_OVERBROAD_NO_GO"
+  },
+  {
+    "id": "NEG-EASTIN-KNILL-NON-CLIFFORD-FAULT-TOLERANT-BARRIER",
     "original_checks_are_general_proofs": false,
-    "reinstatement_requires_scoped_mathematical_review": true
+    "original_record": {
+      "applies_to": [
+        "FAULT-TOLERANT-QUANTUM-COMPUTING",
+        "EASTIN-KNILL-THEOREM",
+        "BRAVYI-KOENIG-BOUND",
+        "MAGIC-STATE-DISTILLATION",
+        "TRANSVERSAL-OBSTRUCTION"
+      ],
+      "claim": "Universal quantum computation can be achieved transversally without magic state distillation in local topological quantum error correcting codes such as the 2D surface code.",
+      "evidence": {
+        "bravyi_kitaev_distillation_threshold": "15-to-1 magic state distillation requires physical error epsilon < 1/sqrt(35) ~ 0.16903; distillation space-time overhead scales as Omega(log^2.465(1/P_L))",
+        "bravyi_koenig_hierarchy_bound": "In D spatial dimensions, transversal gates are strictly contained in level C^(D) of Clifford hierarchy; 2D surface codes are confined to C^(2) (Clifford group), precluding transversal T-gates",
+        "eastin_knill_transversal_finiteness": "For any code of distance d >= 2, Knill-Laflamme conditions force the continuous transversal Lie algebra dimension to 0, proving G_transversal is strictly finite and non-universal",
+        "epistemic_invariants_enforced": "speedup_claim_allowed = False; accepted_speedup_candidate = False",
+        "gottesman_knill_stabilizer_dequantization": "Transversal Clifford circuits on stabilizer states (T-count = 0) are simulated classically in O(n^2) time via Gottesman-Knill theorem",
+        "speedup_claim_allowed": false,
+        "steane_transversal_t_corruption": "Transversal T^7 on [[7,1,3]] Steane code applies relative phase -1 to weight-4 codewords, corrupting stabilizer codespace and destroying logical coherence"
+      },
+      "id": "NEG-EASTIN-KNILL-NON-CLIFFORD-FAULT-TOLERANT-BARRIER",
+      "lesson": "Universal quantum computation cannot be implemented transversally in any quantum error correcting code. By the Eastin-Knill theorem (2009), the group of logical transversal gates for any code with distance d >= 2 is strictly finite, precluding continuous or universal quantum gate synthesis. By the Bravyi-K\u00f6nig theorem (2013), local topological stabilizer codes in D dimensions are restricted to the D-th level of the Clifford hierarchy C^(D); in 2D surface codes, transversal operations are strictly limited to the Clifford group C^(2) = <H, S, CNOT>. On explicit codes like the [[7,1,3]] Steane code, transversal T^7 applies a relative phase (-1) to weight-4 codewords, knocking states out of the code space. Consequently, universal fault-tolerant quantum computation fundamentally requires non-transversal magic state injection and distillation (e.g. the Bravyi-Kitaev 15-to-1 protocol with threshold 1/sqrt(35) ~ 0.1690), incurring an Omega(log^2.465(1/P_L)) space-time volume overhead that consumes over 90% of physical quantum computer resources and shifts quantum crossover thresholds for polynomial speedups to astronomical problem sizes.",
+      "reason_invalid": "Theoretical quantum algorithms assume that universal gates (including non-Clifford T-gates) can be applied with unit time and error. In fault-tolerant quantum error correction, the Eastin-Knill theorem proves that no code can implement a universal gate set transversally. In 2D surface codes, the Bravyi-K\u00f6nig bound restricts transversal gates strictly to the Clifford group, which is dequantized classically in O(n^2) operations by the Gottesman-Knill theorem. Non-Clifford universality requires magic state distillation, which imposes an exponential physical qubit overhead on polynomial speedups. Thus, claiming fault-tolerant universality without magic state distillation or ignoring Eastin-Knill overhead in algorithmic scaling is mathematically invalid.",
+      "source": "research/EASTIN_KNILL_NON_CLIFFORD_FAULT_TOLERANT_BARRIER.md"
+    },
+    "reinstatement_requires_scoped_mathematical_review": true,
+    "retraction_reasons": [
+      "Fixed-code transversal nonuniversality does not require magic state distillation for every fault-tolerant architecture; arXiv:1304.3709 supplies a counterexample using error correction.",
+      "The stated polylogarithmic overhead is not exponential and does not asymptotically erase every polynomial quantum speedup.",
+      "A leading-order cubic error expansion does not determine an exact distillation threshold; the numerical proxy is not a general theorem.",
+      "Diagonal transversal T commutes with every Z stabilizer; the note's claimed changed Z-stabilizer expectation is impossible. The Steane obstruction must instead be checked with X stabilizers."
+    ],
+    "review": "research/CAMPAIGN_NEGATIVE_CLAIM_AUDIT.md",
+    "reviewed_on": "2026-10-16",
+    "status": "QUARANTINED_OVERBROAD_NO_GO"
+  },
+  {
+    "id": "NEG-QUANTUM-ERGODICITY-ETH-LOCAL-OBSERVABLE-BARRIER",
+    "original_checks_are_general_proofs": false,
+    "original_record": {
+      "applies_to": [
+        "QUANTUM-ERGODICITY",
+        "EIGENSTATE-THERMALIZATION-HYPOTHESIS",
+        "SREDNICKI-MATRIX-ANSATZ",
+        "LOCAL-OBSERVABLE-BLINDNESS",
+        "EXPONENTIAL-SHOT-BARRIER"
+      ],
+      "claim": "Quantum algorithms can efficiently extract microscopic phase, period, or group-theoretic information by measuring local observables on highly excited eigenstates or bulk microcanonical states of non-integrable quantum many-body systems.",
+      "evidence": {
+        "classical_microcanonical_dequantization": "Local observable expectation values in the infinite-temperature bulk are predicted classically in O(1) time via Tr(A)/D with error <= O(2^-n/2), eliminating quantum advantage",
+        "eigenstate_fluctuation_thermal_blindness": "Consecutive eigenstate differences in the bulk are suppressed as O(2^-n/2) (0.1373 in chaotic vs 0.3937 in integrable), proving local indistinguishability of adjacent eigenstates",
+        "epistemic_invariants_enforced": "speedup_claim_allowed = False; accepted_speedup_candidate = False",
+        "exponential_measurement_shot_barrier": "Resolving eigenstate identity from local measurements requires resolving bias delta <= O(2^-n/2), demanding Omega(1/delta^2) = Omega(2^n) measurement shots (M > 10^15 for n=50)",
+        "speedup_claim_allowed": false,
+        "srednicki_offdiagonal_rms_scaling": "Off-diagonal elements of local observables scale as RMS ~ 1/sqrt(D) = 2^(-n/2) (0.1194 ~ 0.1250 for n=6, D=64)",
+        "temporal_fluctuation_dephasing": "Long-time temporal variance of local observables relaxes to the diagonal ensemble with fluctuations bounded by Var_t(<A>) <= O(2^-n)"
+      },
+      "id": "NEG-QUANTUM-ERGODICITY-ETH-LOCAL-OBSERVABLE-BARRIER",
+      "lesson": "Quantum algorithms cannot extract microscopic structural data from excited states or bulk microcanonical ensembles of non-integrable quantum many-body systems. By Srednicki's Eigenstate Thermalization Hypothesis (ETH), every individual many-body energy eigenstate behaves as an exact thermal ensemble for all few-body observables. Diagonal matrix elements differ from the smooth microcanonical expectation value by at most O(2^-n/2), and consecutive eigenstate differences vanish exponentially, rendering adjacent eigenstates locally indistinguishable. Temporal fluctuations under Hamiltonian evolution decay as O(2^-n), erasing all relative phase information from local measurements. Distinguishing any specific bulk eigenstate from the thermal ensemble requires resolving an exponentially small bias delta <= O(2^-n/2), demanding an exponential number of measurements M = Omega(2^n). Furthermore, local observable expectation values on bulk chaotic eigenstates are computed classically in O(1) operations via the microcanonical trace Tr(A)/D, completely dequantizing local observable prediction in the ETH bulk.",
+      "reason_invalid": "Quantum phase estimation and Fourier sampling on many-body systems fundamentally require observables whose expectation values vary macroscopically between eigenstates. In non-integrable chaotic systems, the Eigenstate Thermalization Hypothesis enforces universal thermal equivalence: all individual bulk eigenstates yield identical local observable expectation values up to exponentially vanishing corrections O(2^-n/2). Distinguishing eigenstates requires Omega(2^n) quantum measurement shots, rendering polynomial quantum algorithms completely blind to eigenstate identities. Because classical statistical mechanics computes the identical thermal expectation value in O(1) time via Tr(A)/D, claiming quantum algorithmic advantage for local observable or phase extraction from ETH bulk eigenstates is mathematically invalid.",
+      "source": "research/QUANTUM_ERGODICITY_ETH_LOCAL_OBSERVABLE_BARRIER.md"
+    },
+    "reinstatement_requires_scoped_mathematical_review": true,
+    "retraction_reasons": [
+      "Nonintegrability does not imply strong ETH for every eigenstate; arXiv:1702.08227 constructs counterexamples.",
+      "A small expectation difference alone does not give an inverse-square sample lower bound without variance or likelihood hypotheses; rare-event Bernoulli laws refute that inference.",
+      "Blind local marginals do not exclude complete joint measurement records or phase estimation with controlled evolution.",
+      "An infinite-temperature full trace is not a general energy-window microcanonical expectation or an efficient algorithm for all thermal observables."
+    ],
+    "review": "research/CAMPAIGN_NEGATIVE_CLAIM_AUDIT.md",
+    "reviewed_on": "2026-10-16",
+    "status": "QUARANTINED_OVERBROAD_NO_GO"
   }
 ]

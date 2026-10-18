@@ -1,0 +1,46 @@
+{
+  "all_checks_passed": true,
+  "certificate_sha256_16": "bcc82490b405a9dc",
+  "dyadic_even_s1_constructive_control": {
+    "delta_1_peak_prob": 0.9999999999999998,
+    "exact_boundary_cocycle_law_verified": true,
+    "half_period_delta_peak_prob": 0.9999999999999998,
+    "max_cocycle_formula_error": 2.220446049250313e-16,
+    "q_mod": 8,
+    "s1": 6,
+    "s1_is_odd": false,
+    "t_bits": 3
+  },
+  "dyadic_odd_s1_boundary_cocycle_audit": {
+    "delta_1_peak_prob": 0.5624999999999998,
+    "exact_boundary_cocycle_law_verified": true,
+    "half_period_delta_peak_prob": 6.076076328422919e-32,
+    "max_cocycle_formula_error": 2.220446049250313e-16,
+    "q_mod": 8,
+    "s1": 5,
+    "s1_is_odd": true,
+    "t_bits": 3
+  },
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "odd_prime_heisenberg_audit": {
+    "exact_odd_prime_law_verified": true,
+    "independent_anchor_alias_verified": true,
+    "max_unit_concentration_error": 4.440892098500626e-16,
+    "p_mod": 7,
+    "s1": 5,
+    "s2": 3,
+    "y0": 4
+  },
+  "proof_status": "LOCAL_DERIVATION_REVIEW_PENDING_NOT_FORMALLY_VERIFIED",
+  "schema_version": "dcp-dihedral-vs-heisenberg-two-copy-commutant-bridge-v1",
+  "scope_constraints": {
+    "applies_to": "Quadratic-chirp finite-difference QFT elimination in H_3(Z_p) and H_3(Z_{2^t})",
+    "controls_included": "Includes exact unit concentration in odd-prime H_3(Z_7), exact (1 - 2*Delta/2^t)^2 boundary-cocycle law in dyadic H_3(Z_8) for odd s_1=5 (0.5625 at Delta=1 and 0.0 at Delta=4), unit concentration for even s_1=6, and independent-anchor aliasing.",
+    "does_not_claim": "Boundary-free unit QFT concentration in H_3(Z_{2^t}) when s_1 is odd and Delta > 0, or dechirping across independent unmeasured anchors y_{0,1} != y_{0,2}"
+  },
+  "theorem_id": "dcp_dihedral_vs_heisenberg_two_copy_commutant_bridge"
+}

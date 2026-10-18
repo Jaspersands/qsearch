@@ -1,0 +1,28 @@
+{
+  "contract_id": "planted-qary-second-moment-probe-variance-bridge-contract",
+  "title": "Planted q-ary Second-Moment Probe-Variance Bridge: Exact Two-Point Variance Law, Projective-Ray Covariance Localization, and Dual-Spike Concentration",
+  "version": "1.0.0",
+  "scope": "planted_qary_second_moment_probe_variance_projective_ray_covariance_and_dual_spike_localization",
+  "theorems": [
+    {
+      "id": "T1",
+      "name": "Exact Two-Point Probe Variance Law for Planted Subspaces",
+      "statement": "For any dimension-d subspace B in F_q^n and window W in F_q of size R, N_W(u; B) takes value q^(d-1) R on F_q^n \\ B^perp (prob 1 - q^(-d)) and q^d * 1_(0 in W) on B^perp (prob q^(-d)), with exact variance Var_u[N_W(u; B)] = (q^d - 1) * (1_(0 in W) - R/q)^2."
+    },
+    {
+      "id": "T2",
+      "name": "Projective-Ray Covariance Localization and Zero Off-Ray Covariance",
+      "statement": "For any b, b' in F_q^n \\ {0} on distinct projective rays, Cov_u(1_(<b, u> in W), 1_(<b', u> in W)) = 0, so Var_u[N_W(u; B)] decomposes into the sum of L_d = (q^d - 1)/(q - 1) uncorrelated projective-ray variances."
+    },
+    {
+      "id": "T3",
+      "name": "Subspace vs Ray-Free Subset Variance Ratio and Off-Dual Flatness",
+      "statement": "For any ray-free subset S in F_q^n \\ {0} of size q^d - 1 and zero-free window W in F_q \\ {0} of size R, Var_u[N_W(u; S)] = (q^d - 1)(R/q)(1 - R/q) and Var_u[N_W(u; B)] / Var_u[N_W(u; S)] = R / (q - R), while Var_(u not in B^perp)[N_W(u; B)] = 0."
+    }
+  ],
+  "guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  }
+}

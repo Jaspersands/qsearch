@@ -1,0 +1,32 @@
+{
+  "contract_id": "public_complex_axes_native_Gram_and_inference_contract_v1",
+  "experiment_id_for_mechanical_integration": "EXP-DHS-DCP-COMPLEX-AXIS-READOUT",
+  "status": "COMPLEX_GATE_READOUT_EXACT_KERNEL_REVIEW_PENDING",
+  "source": "IID native full labels A in Z_(2^t)^(n*m), t>=3; balanced original independent dephasing; residual secret modulo2^(t-2)",
+  "physical_readout": "Measure A*x mod4, apply known local phase feedback then fresh independent uniform S-dagger mask, H all original qubits, retain mask/syndrome/full outcome",
+  "feedback_scope": "Arbitrary public A/syndrome/history-dependent local phases before the fresh uniform mask; actual gate export implements a polynomial T-grid policy",
+  "native_Gram": "For source-matched Q(A,R,y,z)=P(A)2^(-m)D_y/2^(2m), every distinct residual-secret pair has inner product1; all diagonal norms equal the weighted coarse parallelogram count",
+  "all_secret_classes_included": true,
+  "reference_sampling_needs_secret_or_fiber_sizes": false,
+  "centered_norm_at_m3n_upper": "6",
+  "source_ensemble_identifiability_is_efficient_learning_or_TV_separation": false,
+  "statistical_query_gate": "At tolerance tau, one bounded one-record expectation query separates at most floor(6/tau^2) secrets from reference",
+  "raw_sample_algorithms_or_multi_record_inference_excluded": false,
+  "Pauli_importance_estimator_second_moment": "2^w for a fixed X/Y Pauli string of support w",
+  "accepted_speedup_candidate": false,
+  "novelty_claim": false,
+  "source_quantum_preparations_executed": 0,
+  "falsifiers": [
+    "Real X-only readout falsely claimed to distinguish negation pairs",
+    "Random-mask native Gram off-diagonal differs from1 or diagonals depend on secret",
+    "Known phase feedback changes the claimed native normalized kernel",
+    "Variance, mask probabilities, syndrome weights or exponential likelihood enumeration omitted",
+    "SQ obstruction promoted to a general raw-sample or quantum algorithm lower bound"
+  ],
+  "remaining_obligations": [
+    "Independent mathematical review and actual natural-source noise transfer",
+    "Efficient raw-record inference exploiting algebra beyond bounded one-record expectations",
+    "More informative collective/adaptive readout not protected by compulsory random masks",
+    "Growing-modulus decoder and hard-problem reduction"
+  ]
+}

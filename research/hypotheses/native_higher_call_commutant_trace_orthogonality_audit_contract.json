@@ -1,0 +1,28 @@
+{
+  "contract_id": "native-higher-call-commutant-trace-orthogonality-audit-contract",
+  "title": "Native Higher-Call Commutant Trace-Orthogonality Audit: Operator Harmonic Zero-Trace Conservation, Purity-Deficit Parseval Identity, and Universal Unitary Readout Bounds",
+  "version": "1.0.0",
+  "scope": "general_k_call_operator_harmonics_purity_deficit_parseval_and_universal_unitary_readout_bounds",
+  "theorems": [
+    {
+      "id": "T1",
+      "name": "Operator Harmonic Adjoint Symmetry and Zero-Trace Orthogonality",
+      "statement": "For any k-call schedule (epsilon, sigma), the matrix secret-Fourier harmonics rho_hat_(epsilon, sigma)(delta) satisfy rho_hat(-delta mod q) = rho_hat(delta)^dagger, Tr(rho_hat(0)) = 1, and Tr(rho_hat(delta)) = 0 for all delta != 0."
+    },
+    {
+      "id": "T2",
+      "name": "Exact Purity-Deficit Parseval Identity for Hilbert-Schmidt Variance",
+      "statement": "The full operator Hilbert-Schmidt variance V_HS(epsilon, sigma) = E_s[||rho(s) - rho_bar||_F^2] equals the exact purity deficit 1 - Tr(rho_bar^2) = sum_(delta != 0) ||rho_hat(delta)||_F^2 = sum_(delta != 0) ||M_hat(delta)||_F^2 <= 1 - 1/D."
+    },
+    {
+      "id": "T3",
+      "name": "Exact Diagonal/Off-Diagonal Conservation and Universal Unitary Readout Bound",
+      "statement": "For every post-circuit unitary V in U(D), the rotated readout L2 signal energy E_(epsilon, sigma)(V) = sum_x Var_s[<x|V rho(s) V^dagger|x>] plus the non-zero harmonic off-diagonal Frobenius norm squared equals 1 - Tr(rho_bar^2), so E_(epsilon, sigma)(V) <= 1 - Tr(rho_bar^2) <= 1 - 1/D for all V in U(D)."
+    }
+  ],
+  "guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  }
+}

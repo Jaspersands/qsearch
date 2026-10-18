@@ -57590,7 +57590,6 @@
     "source": "research/CFI_QUANTUM_WALK_LUKS_SOLVABLE_TOWER_OBSTRUCTION.md"
   },
   {
-    "id": "NEG-CHARACTER-SHIFT-UNIFORM-DECODING-LOWER-BOUND-BARRIER",
     "applies_to": [
       "CHARACTER-SHIFT-DECODING-LOWER-BOUND",
       "LEGENDRE-PRG-INVERSION",
@@ -57601,11 +57600,12 @@
     "evidence": {
       "artifact": "research/classical_baselines/character_shift_decoding_lower_bound_barrier.json",
       "autocorrelation_identity": "sum (x(x+delta) / p) == -1 identically for all delta != 0 (mod p)",
+      "cyclotomic_degree": "deg((x+s)^{(p-1)/2} - y) = (p-1)/2 = 2^{Omega(n)}",
       "exact_agreement_count": "N_agree(delta) == (p - 3) / 2 < p/2 identically",
       "query_ceiling": "k*(p) = 2 ceil(log2 p) samples achieves failure <= 1/p",
-      "uniform_time_lower_bound": "T >= p/2 = 2^{Omega(n)} operations in uniform model",
-      "cyclotomic_degree": "deg((x+s)^{(p-1)/2} - y) = (p-1)/2 = 2^{Omega(n)}"
+      "uniform_time_lower_bound": "T >= p/2 = 2^{Omega(n)} operations in uniform model"
     },
+    "id": "NEG-CHARACTER-SHIFT-UNIFORM-DECODING-LOWER-BOUND-BARRIER",
     "lesson": "Do not confuse logarithmic query complexity O(log p) with polynomial classical decoding time. Shifted Legendre characters are information-theoretically identifiable in O(log p) samples, but uniform decoding without advice requires Omega(p) operations, matching the computational hardness of inverting the Legendre PRG.",
     "reason_invalid": "By Weil's character sum theorem, pairwise agreement between distinct shifts is strictly (p-3)/(2p) < 1/2, allowing O(log p) samples to uniquely fingerprint the shift. However, in the uniform model without advice, recovering the shift s requires solving polynomial equations of degree (p-1)/2 = 2^{Omega(n)} or testing Omega(p) candidate shifts. Efficient decoding is only possible with non-uniform advice of size S = p log2 p bits or via van Dam-Hallgren's quantum Fourier transform.",
     "source": "research/classical_baselines/character_shift_decoding_lower_bound_barrier.json"
@@ -68007,29 +68007,6 @@
   },
   {
     "applies_to": [
-      "FAULT-TOLERANT-QUANTUM-COMPUTING",
-      "EASTIN-KNILL-THEOREM",
-      "BRAVYI-KOENIG-BOUND",
-      "MAGIC-STATE-DISTILLATION",
-      "TRANSVERSAL-OBSTRUCTION"
-    ],
-    "claim": "Universal quantum computation can be achieved transversally without magic state distillation in local topological quantum error correcting codes such as the 2D surface code.",
-    "evidence": {
-      "bravyi_kitaev_distillation_threshold": "15-to-1 magic state distillation requires physical error epsilon < 1/sqrt(35) ~ 0.16903; distillation space-time overhead scales as Omega(log^2.465(1/P_L))",
-      "bravyi_koenig_hierarchy_bound": "In D spatial dimensions, transversal gates are strictly contained in level C^(D) of Clifford hierarchy; 2D surface codes are confined to C^(2) (Clifford group), precluding transversal T-gates",
-      "eastin_knill_transversal_finiteness": "For any code of distance d >= 2, Knill-Laflamme conditions force the continuous transversal Lie algebra dimension to 0, proving G_transversal is strictly finite and non-universal",
-      "epistemic_invariants_enforced": "speedup_claim_allowed = False; accepted_speedup_candidate = False",
-      "gottesman_knill_stabilizer_dequantization": "Transversal Clifford circuits on stabilizer states (T-count = 0) are simulated classically in O(n^2) time via Gottesman-Knill theorem",
-      "speedup_claim_allowed": false,
-      "steane_transversal_t_corruption": "Transversal T^7 on [[7,1,3]] Steane code applies relative phase -1 to weight-4 codewords, corrupting stabilizer codespace and destroying logical coherence"
-    },
-    "id": "NEG-EASTIN-KNILL-NON-CLIFFORD-FAULT-TOLERANT-BARRIER",
-    "lesson": "Universal quantum computation cannot be implemented transversally in any quantum error correcting code. By the Eastin-Knill theorem (2009), the group of logical transversal gates for any code with distance d >= 2 is strictly finite, precluding continuous or universal quantum gate synthesis. By the Bravyi-K\u00f6nig theorem (2013), local topological stabilizer codes in D dimensions are restricted to the D-th level of the Clifford hierarchy C^(D); in 2D surface codes, transversal operations are strictly limited to the Clifford group C^(2) = <H, S, CNOT>. On explicit codes like the [[7,1,3]] Steane code, transversal T^7 applies a relative phase (-1) to weight-4 codewords, knocking states out of the code space. Consequently, universal fault-tolerant quantum computation fundamentally requires non-transversal magic state injection and distillation (e.g. the Bravyi-Kitaev 15-to-1 protocol with threshold 1/sqrt(35) ~ 0.1690), incurring an Omega(log^2.465(1/P_L)) space-time volume overhead that consumes over 90% of physical quantum computer resources and shifts quantum crossover thresholds for polynomial speedups to astronomical problem sizes.",
-    "reason_invalid": "Theoretical quantum algorithms assume that universal gates (including non-Clifford T-gates) can be applied with unit time and error. In fault-tolerant quantum error correction, the Eastin-Knill theorem proves that no code can implement a universal gate set transversally. In 2D surface codes, the Bravyi-K\u00f6nig bound restricts transversal gates strictly to the Clifford group, which is dequantized classically in O(n^2) operations by the Gottesman-Knill theorem. Non-Clifford universality requires magic state distillation, which imposes an exponential physical qubit overhead on polynomial speedups. Thus, claiming fault-tolerant universality without magic state distillation or ignoring Eastin-Knill overhead in algorithmic scaling is mathematically invalid.",
-    "source": "research/EASTIN_KNILL_NON_CLIFFORD_FAULT_TOLERANT_BARRIER.md"
-  },
-  {
-    "applies_to": [
       "DHS-GOWERS-SIEVE",
       "EXP-DHS-DCP-COHERENT-MATCHING-INTERFACE"
     ],
@@ -68479,29 +68456,6 @@
     "lesson": "Quantum period finding and phase estimation cannot operate on quantum chaotic systems whose spectra follow Random Matrix Theory (RMT). Unlike integrable systems where harmonic progressions En = n Delta generate 100% return revivals F(T) = 1.000 and SFF revival spikes of height N^2, chaotic systems exhibit Wigner level repulsion (P(0) = 0) with no harmonic ladder. The Spectral Form Factor K(t) exhibits a linear ramp K(t) ~ t / 2pi and plateau N, never exceeding N for t > t_dip. The quantum return fidelity collapses to F(t) <= 1/N = 2^-n, an exponential suppression of Omega(N) = 2^Omega(n). The system never revives within polynomial time, causing quantum period finding algorithms to fail completely. Furthermore, measuring the SFF ramp on quantum hardware requires Omega(N^2) = 2^Omega(n) SWAP test shots, while classical computation diagnoses quantum chaos via the Oganesyan-Huse ratio <r> in O(N log N) operations.",
     "reason_invalid": "Quantum period finding fundamentally requires harmonic arithmetic eigenvalue progressions En = n Delta. In quantum chaotic systems (by the Bohigas-Giannoni-Schmit conjecture), energy levels obey Random Matrix Theory with Wigner level repulsion P(0) = 0 and zero harmonic coherence. The Spectral Form Factor lacks periodic revival spikes, replacing them with a linear ramp and plateau K(t) <= N. The state return fidelity collapses to F(t) = K(t) / N^2 <= 1/N = 2^-n -> 0, preventing constructive Fourier interference in polynomial time. Measuring the ramp quantumly requires an exponential number of shots Omega(N^2) = 2^Omega(n), whereas classical algorithms compute the consecutive gap ratio <r> in O(N log N) time. Thus, claiming quantum Fourier speedups for period finding on chaotic Hamiltonians is mathematically invalid.",
     "source": "research/QUANTUM_CHAOS_SFF_PERIOD_FINDING_BARRIER.md"
-  },
-  {
-    "applies_to": [
-      "QUANTUM-ERGODICITY",
-      "EIGENSTATE-THERMALIZATION-HYPOTHESIS",
-      "SREDNICKI-MATRIX-ANSATZ",
-      "LOCAL-OBSERVABLE-BLINDNESS",
-      "EXPONENTIAL-SHOT-BARRIER"
-    ],
-    "claim": "Quantum algorithms can efficiently extract microscopic phase, period, or group-theoretic information by measuring local observables on highly excited eigenstates or bulk microcanonical states of non-integrable quantum many-body systems.",
-    "evidence": {
-      "classical_microcanonical_dequantization": "Local observable expectation values in the infinite-temperature bulk are predicted classically in O(1) time via Tr(A)/D with error <= O(2^-n/2), eliminating quantum advantage",
-      "eigenstate_fluctuation_thermal_blindness": "Consecutive eigenstate differences in the bulk are suppressed as O(2^-n/2) (0.1373 in chaotic vs 0.3937 in integrable), proving local indistinguishability of adjacent eigenstates",
-      "epistemic_invariants_enforced": "speedup_claim_allowed = False; accepted_speedup_candidate = False",
-      "exponential_measurement_shot_barrier": "Resolving eigenstate identity from local measurements requires resolving bias delta <= O(2^-n/2), demanding Omega(1/delta^2) = Omega(2^n) measurement shots (M > 10^15 for n=50)",
-      "speedup_claim_allowed": false,
-      "srednicki_offdiagonal_rms_scaling": "Off-diagonal elements of local observables scale as RMS ~ 1/sqrt(D) = 2^(-n/2) (0.1194 ~ 0.1250 for n=6, D=64)",
-      "temporal_fluctuation_dephasing": "Long-time temporal variance of local observables relaxes to the diagonal ensemble with fluctuations bounded by Var_t(<A>) <= O(2^-n)"
-    },
-    "id": "NEG-QUANTUM-ERGODICITY-ETH-LOCAL-OBSERVABLE-BARRIER",
-    "lesson": "Quantum algorithms cannot extract microscopic structural data from excited states or bulk microcanonical ensembles of non-integrable quantum many-body systems. By Srednicki's Eigenstate Thermalization Hypothesis (ETH), every individual many-body energy eigenstate behaves as an exact thermal ensemble for all few-body observables. Diagonal matrix elements differ from the smooth microcanonical expectation value by at most O(2^-n/2), and consecutive eigenstate differences vanish exponentially, rendering adjacent eigenstates locally indistinguishable. Temporal fluctuations under Hamiltonian evolution decay as O(2^-n), erasing all relative phase information from local measurements. Distinguishing any specific bulk eigenstate from the thermal ensemble requires resolving an exponentially small bias delta <= O(2^-n/2), demanding an exponential number of measurements M = Omega(2^n). Furthermore, local observable expectation values on bulk chaotic eigenstates are computed classically in O(1) operations via the microcanonical trace Tr(A)/D, completely dequantizing local observable prediction in the ETH bulk.",
-    "reason_invalid": "Quantum phase estimation and Fourier sampling on many-body systems fundamentally require observables whose expectation values vary macroscopically between eigenstates. In non-integrable chaotic systems, the Eigenstate Thermalization Hypothesis enforces universal thermal equivalence: all individual bulk eigenstates yield identical local observable expectation values up to exponentially vanishing corrections O(2^-n/2). Distinguishing eigenstates requires Omega(2^n) quantum measurement shots, rendering polynomial quantum algorithms completely blind to eigenstate identities. Because classical statistical mechanics computes the identical thermal expectation value in O(1) time via Tr(A)/D, claiming quantum algorithmic advantage for local observable or phase extraction from ETH bulk eigenstates is mathematically invalid.",
-    "source": "research/QUANTUM_ERGODICITY_ETH_LOCAL_OBSERVABLE_BARRIER.md"
   },
   {
     "applies_to": [

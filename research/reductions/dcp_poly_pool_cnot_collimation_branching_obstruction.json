@@ -1,0 +1,204 @@
+{
+  "schema_version": "1.0",
+  "subsystem": "dcp_poly_pool_cnot_collimation_branching_obstruction",
+  "contract_id": "dcp_poly_pool_cnot_collimation_branching_obstruction_v1",
+  "title": "Clean DCP Polynomial-Pool CNOT Collimation Sieve: Exact 1/2 Sign-Branching Law, Bucket-Pairing Capacity, and Superpolynomial Depth Barrier",
+  "family": "dcp_clean_decoder_falsification",
+  "note_path": "research/DCP_POLY_POOL_CNOT_COLLIMATION_BRANCHING_OBSTRUCTION.md",
+  "contract_path": "research/hypotheses/dcp_poly_pool_cnot_collimation_branching_obstruction_contract.json",
+  "summary": {
+    "num_instances": 4,
+    "theorem1_cnot_branching_passed": true,
+    "theorem2_bucket_occupancy_pairing_passed": true,
+    "theorem3_superpolynomial_depth_barrier_passed": true,
+    "all_theorems_passed": true,
+    "max_branch_probability_error": 0.0,
+    "max_conditional_state_error": 5.959374814064025e-16
+  },
+  "instances": [
+    {
+      "instance_id": "q8_n1_M4_B4_clean_collimation_pool",
+      "n": 1,
+      "t": 3,
+      "q": 8,
+      "M_pool": 4,
+      "b_bits": 2,
+      "B_buckets": 4,
+      "v1_exact": "1",
+      "v2_exact": "1",
+      "cnot_branching_audit": {
+        "total_triples_checked": 512,
+        "max_branch_probability_error": 0.0,
+        "max_conditional_state_error": 1.7678754448531875e-16,
+        "non_2_torsion_same_bucket_residues": 2,
+        "z1_only_cancels_residues": 2,
+        "theorem1_passed": true
+      },
+      "bucket_pairing_audit": {
+        "total_bucket_assignments": 256,
+        "parity_identity_verified_assignments": 256,
+        "max_disjoint_pairs_observed": 2,
+        "collision_probability_exact": "29/32",
+        "collision_probability_birthday_upper_exact": "1",
+        "expected_disjoint_pairs_exact": "17/16",
+        "expected_disjoint_pairs_upper_exact": "3/2",
+        "expected_subtraction_children_exact": "17/32",
+        "expected_subtraction_children_upper_exact": "3/4",
+        "theorem2_passed": true
+      },
+      "instance_passed": true
+    },
+    {
+      "instance_id": "q8_n1_M5_B4_noisy_collimation_pool",
+      "n": 1,
+      "t": 3,
+      "q": 8,
+      "M_pool": 5,
+      "b_bits": 2,
+      "B_buckets": 4,
+      "v1_exact": "3/4",
+      "v2_exact": "1/2",
+      "cnot_branching_audit": {
+        "total_triples_checked": 512,
+        "max_branch_probability_error": 0.0,
+        "max_conditional_state_error": 6.206335383118183e-17,
+        "non_2_torsion_same_bucket_residues": 2,
+        "z1_only_cancels_residues": 2,
+        "theorem1_passed": true
+      },
+      "bucket_pairing_audit": {
+        "total_bucket_assignments": 1024,
+        "parity_identity_verified_assignments": 1024,
+        "max_disjoint_pairs_observed": 2,
+        "collision_probability_exact": "1",
+        "collision_probability_birthday_upper_exact": "1",
+        "expected_disjoint_pairs_exact": "49/32",
+        "expected_disjoint_pairs_upper_exact": "5/2",
+        "expected_subtraction_children_exact": "49/64",
+        "expected_subtraction_children_upper_exact": "5/4",
+        "theorem2_passed": true
+      },
+      "instance_passed": true
+    },
+    {
+      "instance_id": "q16_n1_M4_B8_clean_collimation_pool",
+      "n": 1,
+      "t": 4,
+      "q": 16,
+      "M_pool": 4,
+      "b_bits": 3,
+      "B_buckets": 8,
+      "v1_exact": "1",
+      "v2_exact": "1",
+      "cnot_branching_audit": {
+        "total_triples_checked": 4096,
+        "max_branch_probability_error": 0.0,
+        "max_conditional_state_error": 5.959374814064025e-16,
+        "non_2_torsion_same_bucket_residues": 6,
+        "z1_only_cancels_residues": 6,
+        "theorem1_passed": true
+      },
+      "bucket_pairing_audit": {
+        "total_bucket_assignments": 4096,
+        "parity_identity_verified_assignments": 4096,
+        "max_disjoint_pairs_observed": 2,
+        "collision_probability_exact": "151/256",
+        "collision_probability_birthday_upper_exact": "3/4",
+        "expected_disjoint_pairs_exact": "81/128",
+        "expected_disjoint_pairs_upper_exact": "3/4",
+        "expected_subtraction_children_exact": "81/256",
+        "expected_subtraction_children_upper_exact": "3/8",
+        "theorem2_passed": true
+      },
+      "instance_passed": true
+    },
+    {
+      "instance_id": "q4_n2_M4_B4_vector_collimation_pool",
+      "n": 2,
+      "t": 2,
+      "q": 4,
+      "M_pool": 4,
+      "b_bits": 2,
+      "B_buckets": 4,
+      "v1_exact": "1",
+      "v2_exact": "3/4",
+      "cnot_branching_audit": {
+        "total_triples_checked": 4096,
+        "max_branch_probability_error": 0.0,
+        "max_conditional_state_error": 9.18485099360515e-17,
+        "non_2_torsion_same_bucket_residues": 2,
+        "z1_only_cancels_residues": 2,
+        "theorem1_passed": true
+      },
+      "bucket_pairing_audit": {
+        "total_bucket_assignments": 256,
+        "parity_identity_verified_assignments": 256,
+        "max_disjoint_pairs_observed": 2,
+        "collision_probability_exact": "29/32",
+        "collision_probability_birthday_upper_exact": "1",
+        "expected_disjoint_pairs_exact": "17/16",
+        "expected_disjoint_pairs_upper_exact": "3/2",
+        "expected_subtraction_children_exact": "17/32",
+        "expected_subtraction_children_upper_exact": "3/4",
+        "theorem2_passed": true
+      },
+      "instance_passed": true
+    }
+  ],
+  "asymptotic_scaling": [
+    {
+      "n": 8,
+      "t": 16,
+      "total_group_bits_nt": 128,
+      "M_pool": 16384,
+      "max_bits_cancelled_per_level_b": 14,
+      "minimum_tree_depth_L": 10,
+      "poly_pool_initial_preparations_log2_lower": 20,
+      "kuperberg_subexponential_log2_scale": 19.6,
+      "bcdv_information_theoretic_minimum_copies": 126,
+      "theorem3_passed": true
+    },
+    {
+      "n": 16,
+      "t": 24,
+      "total_group_bits_nt": 384,
+      "M_pool": 147456,
+      "max_bits_cancelled_per_level_b": 17,
+      "minimum_tree_depth_L": 23,
+      "poly_pool_initial_preparations_log2_lower": 46,
+      "kuperberg_subexponential_log2_scale": 33.94,
+      "bcdv_information_theoretic_minimum_copies": 382,
+      "theorem3_passed": true
+    },
+    {
+      "n": 32,
+      "t": 40,
+      "total_group_bits_nt": 1280,
+      "M_pool": 1638400,
+      "max_bits_cancelled_per_level_b": 20,
+      "minimum_tree_depth_L": 64,
+      "poly_pool_initial_preparations_log2_lower": 128,
+      "kuperberg_subexponential_log2_scale": 61.97,
+      "bcdv_information_theoretic_minimum_copies": 1278,
+      "theorem3_passed": true
+    },
+    {
+      "n": 64,
+      "t": 72,
+      "total_group_bits_nt": 4608,
+      "M_pool": 21233664,
+      "max_bits_cancelled_per_level_b": 24,
+      "minimum_tree_depth_L": 192,
+      "poly_pool_initial_preparations_log2_lower": 384,
+      "kuperberg_subexponential_log2_scale": 117.58,
+      "bcdv_information_theoretic_minimum_copies": 4606,
+      "theorem3_passed": true
+    }
+  ],
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "sha256": "5990302f7ab02db3c6782c480b3a2aec780aa076b1ed0d0fdc79d4cef027ee48"
+}

@@ -1,0 +1,89 @@
+{
+  "all_checks_passed": true,
+  "certificate_sha256_16": "fcbd4700797a80ae",
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "proof_status": "LOCAL_DERIVATION_REVIEW_PENDING_NOT_FORMALLY_VERIFIED",
+  "schema_version": "dcp-non-abelian-wreath-product-pair-swap-commutant-bridge-v1",
+  "scope_constraints": {
+    "applies_to": "Hyperoctahedral wreath-product B_M = S_2 wr S_M sector decomposition and Binomial singlet-count vs. global Sym^{2M} distinguishing distance",
+    "controls_included": "Evaluates M = 1, 2, 3, 4 pairs (2M = 2..8 qubits) at gamma = 0.6, verifying sum_{k=0}^M C(M,k) 3^{M-k} = 4^M and strict dominance D_TV^{Sym^{2M}} > D_TV^{Binomial-singlet}.",
+    "does_not_claim": "Inter-pair coherent advantage when the M pairs have independent unknown headers with unaligned phase magnitudes"
+  },
+  "theorem_id": "dcp_non_abelian_wreath_product_pair_swap_commutant_bridge",
+  "wreath_pair_sweep": [
+    {
+      "M_pairs": 1,
+      "exact_laws_verified": true,
+      "gamma": 0.6,
+      "p_singlet_theta_0": 0.32,
+      "p_singlet_theta_pi": 0.6799999999999999,
+      "sym2m_advantage_over_singlet": 0.2400000000000002,
+      "total_hilbert_dimension": 4,
+      "total_qubits_2M": 2,
+      "tv_binomial_singlet": 0.3599999999999999,
+      "tv_global_sym2m": 0.6000000000000001,
+      "wreath_sector_dimensions": [
+        3,
+        1
+      ]
+    },
+    {
+      "M_pairs": 2,
+      "exact_laws_verified": true,
+      "gamma": 0.6,
+      "p_singlet_theta_0": 0.32,
+      "p_singlet_theta_pi": 0.6799999999999999,
+      "sym2m_advantage_over_singlet": 0.43200000000000033,
+      "total_hilbert_dimension": 16,
+      "total_qubits_2M": 4,
+      "tv_binomial_singlet": 0.35999999999999993,
+      "tv_global_sym2m": 0.7920000000000003,
+      "wreath_sector_dimensions": [
+        9,
+        6,
+        1
+      ]
+    },
+    {
+      "M_pairs": 3,
+      "exact_laws_verified": true,
+      "gamma": 0.6,
+      "p_singlet_theta_0": 0.32,
+      "p_singlet_theta_pi": 0.6799999999999999,
+      "sym2m_advantage_over_singlet": 0.3674880000000005,
+      "total_hilbert_dimension": 64,
+      "total_qubits_2M": 6,
+      "tv_binomial_singlet": 0.5166719999999998,
+      "tv_global_sym2m": 0.8841600000000003,
+      "wreath_sector_dimensions": [
+        27,
+        27,
+        9,
+        1
+      ]
+    },
+    {
+      "M_pairs": 4,
+      "exact_laws_verified": true,
+      "gamma": 0.6,
+      "p_singlet_theta_0": 0.32,
+      "p_singlet_theta_pi": 0.6799999999999999,
+      "sym2m_advantage_over_singlet": 0.41664000000000057,
+      "total_hilbert_dimension": 256,
+      "total_qubits_2M": 8,
+      "tv_binomial_singlet": 0.5166719999999998,
+      "tv_global_sym2m": 0.9333120000000004,
+      "wreath_sector_dimensions": [
+        81,
+        108,
+        54,
+        12,
+        1
+      ]
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "all_checks_passed": true,
+  "certificate_sha256_16": "a7fff3ac155916c4",
+  "contiguous_window_coupling_control": {
+    "archimedean_window_couples_crt_factors": true,
+    "fourier_y1_coupling_gap": 0.8660254037844386,
+    "q": 6,
+    "q1": 2,
+    "q2": 3,
+    "tv_distance_from_crt_product": 0.5,
+    "window_support": [
+      0,
+      1
+    ]
+  },
+  "crt_product_channel_audit": {
+    "exact_crt_factorization": true,
+    "idempotent_sum_mod_q": 1,
+    "idempotents": [
+      3,
+      4
+    ],
+    "max_character_factorization_error": 2.266215559059192e-15,
+    "max_fourier_factorization_error": 3.381708567648044e-16,
+    "p_valid_factorization_abs_diff": 4.718447854656915e-16,
+    "p_valid_product": 0.23500000000000007,
+    "p_valid_q": 0.2349999999999996,
+    "p_valid_q1": 0.625,
+    "p_valid_q2": 0.3760000000000001,
+    "q": 6,
+    "q1": 2,
+    "q2": 3
+  },
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "schema_version": "native-higher-call-composite-modulus-crt-factorization-audit-v1",
+  "scope_constraints": {
+    "applies_to": "Composite coprime moduli q = q1 * q2 with gcd(q1, q2) = 1 under CRT-product error channels",
+    "controls_included": "Includes both exact CRT-product channel factorization and the contiguous window W={0,1} mod 6 countercontrol where CRT marginals are statistically coupled.",
+    "does_not_claim": "CRT independence for non-divisible contiguous archimedean windows"
+  },
+  "theorem_id": "native_higher_call_composite_modulus_crt_factorization_audit"
+}

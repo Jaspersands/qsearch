@@ -1,0 +1,53 @@
+{
+  "all_checks_passed": true,
+  "certificate_sha256_16": "67f3d1fb1bf96ae9",
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "proof_status": "LOCAL_DERIVATION_REVIEW_PENDING_NOT_FORMALLY_VERIFIED",
+  "q3_2d_pigeonhole_audit": {
+    "K": 4,
+    "binary_zero_sum_witness_count": 1,
+    "cnot_syndrome_bijection_verified": true,
+    "n": 2,
+    "oriented_ternary_zero_sum_witness_count": 4,
+    "pigeonhole_guarantee_respected": true,
+    "pigeonhole_ternary_collision_guaranteed": true,
+    "q_mod": 3,
+    "q_to_n": 9,
+    "two_to_K": 16
+  },
+  "q5_binary_empty_ternary_rich_control": {
+    "K": 3,
+    "binary_zero_sum_witness_count": 0,
+    "cnot_syndrome_bijection_verified": true,
+    "n": 1,
+    "oriented_ternary_zero_sum_witness_count": 3,
+    "pigeonhole_guarantee_respected": true,
+    "pigeonhole_ternary_collision_guaranteed": true,
+    "q_mod": 5,
+    "q_to_n": 5,
+    "two_to_K": 8
+  },
+  "q8_dyadic_binary_empty_control": {
+    "K": 4,
+    "binary_zero_sum_witness_count": 0,
+    "cnot_syndrome_bijection_verified": true,
+    "n": 1,
+    "oriented_ternary_zero_sum_witness_count": 9,
+    "pigeonhole_guarantee_respected": true,
+    "pigeonhole_ternary_collision_guaranteed": true,
+    "q_mod": 8,
+    "q_to_n": 8,
+    "two_to_K": 16
+  },
+  "schema_version": "dcp-ternary-signed-witness-cnot-routing-bridge-v1",
+  "scope_constraints": {
+    "applies_to": "Signed ternary zero-sum witnesses delta in {-1, 0, +1}^K and their realization via w-wire CNOT star syndrome branches",
+    "controls_included": "Includes q=5 (A=[[1,1,1]]) and dyadic q=8 (A=[[1,1,1,1]]) controls with 0 binary witnesses vs. 3 and 9 ternary witnesses, plus 2D q=3 pigeonhole verification.",
+    "does_not_claim": "Deterministic single-shot projection onto d^*(delta) without paying the 2^{-(w-1)} syndrome branch probability"
+  },
+  "theorem_id": "dcp_ternary_signed_witness_cnot_routing_bridge"
+}

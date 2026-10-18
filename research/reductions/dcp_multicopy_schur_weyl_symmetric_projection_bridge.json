@@ -1,0 +1,188 @@
+{
+  "all_checks_passed": true,
+  "certificate_sha256_16": "eff7ba6859141d4b",
+  "half_period_commuting_majority_audits": [
+    {
+      "classical_majority_matches_collective_helstrom": true,
+      "classical_r_sample_majority_tv_distance": 0.8,
+      "collective_helstrom_trace_distance": 0.8000000000000002,
+      "commutator_frobenius_norm": 9.975813767832881e-18,
+      "gamma": 0.8,
+      "non_symmetric_sector_trace_distance_loss": 3.3306690738754696e-16,
+      "r_copies": 2,
+      "symmetric_subspace_restricted_trace_distance": 0.7999999999999998
+    },
+    {
+      "classical_majority_matches_collective_helstrom": true,
+      "classical_r_sample_majority_tv_distance": 0.9440000000000002,
+      "collective_helstrom_trace_distance": 0.944,
+      "commutator_frobenius_norm": 7.522302798473468e-18,
+      "gamma": 0.8,
+      "non_symmetric_sector_trace_distance_loss": 0.14399999999999957,
+      "r_copies": 3,
+      "symmetric_subspace_restricted_trace_distance": 0.8000000000000004
+    },
+    {
+      "classical_majority_matches_collective_helstrom": true,
+      "classical_r_sample_majority_tv_distance": 0.8784999999999998,
+      "collective_helstrom_trace_distance": 0.8785000000000001,
+      "commutator_frobenius_norm": 1.817634883186418e-18,
+      "gamma": 0.7,
+      "non_symmetric_sector_trace_distance_loss": 0.26775000000000027,
+      "r_copies": 4,
+      "symmetric_subspace_restricted_trace_distance": 0.6107499999999998
+    }
+  ],
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "noncommuting_quadrature_and_harmonic_audits": [
+    {
+      "collective_helstrom_tv": 0.649923072370877,
+      "collective_minus_fixed_basis_tv_gain": 0.08423764742163897,
+      "dicke_ghz_expectation_closed_form": -0.32000000000000006,
+      "dicke_ghz_expectation_explicit": -0.32000000000000006,
+      "gamma": 0.8,
+      "harmonic_identity_error": 0.0,
+      "naive_x_basis_r_sample_tv": 0.56,
+      "optimal_fixed_single_copy_basis_r_sample_tv": 0.565685424949238,
+      "r_copies": 2,
+      "requires_r_identical_headers_birthday_scale_Q_to_r_minus_1_over_r": true,
+      "separable_even_y_pauli_mean": -0.32000000000000006,
+      "symmetric_subspace_helstrom_tv": 0.6499230723708768,
+      "theta_quad": 1.5707963267948966
+    },
+    {
+      "collective_helstrom_tv": 0.5951290471766982,
+      "collective_minus_fixed_basis_tv_gain": 0.027129047176698395,
+      "dicke_ghz_expectation_closed_form": -0.12800000000000003,
+      "dicke_ghz_expectation_explicit": -0.12800000000000003,
+      "gamma": 0.8,
+      "harmonic_identity_error": 0.0,
+      "naive_x_basis_r_sample_tv": 0.38599999999999995,
+      "optimal_fixed_single_copy_basis_r_sample_tv": 0.5679999999999998,
+      "r_copies": 3,
+      "requires_r_identical_headers_birthday_scale_Q_to_r_minus_1_over_r": true,
+      "separable_even_y_pauli_mean": -0.12800000000000003,
+      "symmetric_subspace_helstrom_tv": 0.5231290471766984,
+      "theta_quad": 1.0471975511965976
+    },
+    {
+      "collective_helstrom_tv": 0.8660254037844388,
+      "collective_minus_fixed_basis_tv_gain": 0.15891862259789136,
+      "dicke_ghz_expectation_closed_form": -0.5,
+      "dicke_ghz_expectation_explicit": -0.5,
+      "gamma": 1.0,
+      "harmonic_identity_error": 0.0,
+      "naive_x_basis_r_sample_tv": 0.75,
+      "optimal_fixed_single_copy_basis_r_sample_tv": 0.7071067811865475,
+      "r_copies": 2,
+      "requires_r_identical_headers_birthday_scale_Q_to_r_minus_1_over_r": true,
+      "separable_even_y_pauli_mean": -0.5,
+      "symmetric_subspace_helstrom_tv": 0.8660254037844388,
+      "theta_quad": 1.5707963267948966
+    }
+  ],
+  "proof_status": "LOCAL_DERIVATION_REVIEW_PENDING_NOT_FORMALLY_VERIFIED",
+  "schema_version": "dcp-multicopy-schur-weyl-symmetric-projection-bridge-v1",
+  "scope_constraints": {
+    "applies_to": "r-copy symmetric subspace projections Pi_{Sym^r} and Schur-Weyl measurements on matched-header DCP phase states rho(a, s, gamma)^{tensor r}",
+    "controls_included": "Includes exact theta-independent symmetric projection weight across r=2,3,4, exact equality between collective Helstrom trace distance and classical r-sample Binomial majority voting at theta in {0, pi}, non-symmetric sector loss under pure Sym^r postselection at r>=3, and scoped non-commuting quadrature gain at theta=pi/2 on matched headers.",
+    "does_not_claim": "Collective advantage for commuting half-period targets (theta in {0, pi}) or collision-free multi-copy acquisition under IID uniform random headers"
+  },
+  "symmetric_projection_audits": [
+    {
+      "closed_form_probability": 0.91,
+      "explicit_probabilities": [
+        0.91,
+        0.9099999999999999,
+        0.91,
+        0.91,
+        0.91,
+        0.91
+      ],
+      "full_hilbert_dimension": 4,
+      "gamma": 0.8,
+      "max_formula_error": 1.1102230246251565e-16,
+      "max_theta_spread": 1.1102230246251565e-16,
+      "r_copies": 2,
+      "secret_independent_projection_verified": true,
+      "symmetric_subspace_dimension": 3
+    },
+    {
+      "closed_form_probability": 0.78125,
+      "explicit_probabilities": [
+        0.78125,
+        0.78125,
+        0.78125,
+        0.78125,
+        0.78125,
+        0.78125
+      ],
+      "full_hilbert_dimension": 8,
+      "gamma": 0.75,
+      "max_formula_error": 0.0,
+      "max_theta_spread": 0.0,
+      "r_copies": 3,
+      "secret_independent_projection_verified": true,
+      "symmetric_subspace_dimension": 4
+    },
+    {
+      "closed_form_probability": 0.5456000000000001,
+      "explicit_probabilities": [
+        0.5455999999999996,
+        0.5455999999999996,
+        0.5455999999999996,
+        0.5455999999999996,
+        0.5455999999999996,
+        0.5455999999999996
+      ],
+      "full_hilbert_dimension": 16,
+      "gamma": 0.6,
+      "max_formula_error": 4.440892098500626e-16,
+      "max_theta_spread": 0.0,
+      "r_copies": 4,
+      "secret_independent_projection_verified": true,
+      "symmetric_subspace_dimension": 5
+    },
+    {
+      "closed_form_probability": 1.0,
+      "explicit_probabilities": [
+        0.9999999999999998,
+        0.9999999999999998,
+        0.9999999999999998,
+        0.9999999999999998,
+        0.9999999999999998,
+        0.9999999999999998
+      ],
+      "full_hilbert_dimension": 8,
+      "gamma": 1.0,
+      "max_formula_error": 2.220446049250313e-16,
+      "max_theta_spread": 0.0,
+      "r_copies": 3,
+      "secret_independent_projection_verified": true,
+      "symmetric_subspace_dimension": 4
+    },
+    {
+      "closed_form_probability": 0.5,
+      "explicit_probabilities": [
+        0.5000000000000001,
+        0.5000000000000001,
+        0.5000000000000001,
+        0.5000000000000001,
+        0.5000000000000001,
+        0.5000000000000001
+      ],
+      "full_hilbert_dimension": 8,
+      "gamma": 0.0,
+      "max_formula_error": 1.1102230246251565e-16,
+      "max_theta_spread": 0.0,
+      "r_copies": 3,
+      "secret_independent_projection_verified": true,
+      "symmetric_subspace_dimension": 4
+    }
+  ],
+  "theorem_id": "dcp_multicopy_schur_weyl_symmetric_projection_bridge"
+}

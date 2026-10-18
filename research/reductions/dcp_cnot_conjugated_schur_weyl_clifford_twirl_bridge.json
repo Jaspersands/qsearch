@@ -1,0 +1,87 @@
+{
+  "all_checks_passed": true,
+  "certificate_sha256_16": "9d52b3de0295fe18",
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "proof_status": "LOCAL_DERIVATION_REVIEW_PENDING_NOT_FORMALLY_VERIFIED",
+  "r3_closed_form_and_ghz_escape_audit": {
+    "closed_form_cnot_sym3_probability": 0.526422910848409,
+    "constructive_h0_ghz_d00_plus_prob": 0.07330476048760767,
+    "exact_two_body_law_verified": true,
+    "explicit_cnot_sym3_probability": 0.526422910848409,
+    "formula_error": 0.0,
+    "gammas": [
+      0.9,
+      0.8,
+      0.7
+    ],
+    "thetas": [
+      0.35,
+      1.15,
+      2.25
+    ]
+  },
+  "schema_version": "dcp-cnot-conjugated-schur-weyl-clifford-twirl-bridge-v1",
+  "scope_constraints": {
+    "applies_to": "CNOT-star-conjugated Schur-Weyl projectors U_{star}^dagger Pi_lambda U_{star} on r single-qubit DCP phase states",
+    "controls_included": "Includes universal complement weight shift w_{star}(bar_x) = w_{star}(x) +/- 1 across r = 2..5, strict even-harmonic selection rule for odd r, exact r=3 closed-form probability 1/2 + (g1*g2*cos(t1-t2) + g0*cos(t0)*(g1*cos(t1)+g2*cos(t2)))/6, and H_0 GHZ escape.",
+    "does_not_claim": "Absence of degree-r harmonics when an additional Hadamard gate H_0 is applied on the CNOT control wire (standard GHZ readout)"
+  },
+  "selection_rule_audits": [
+    {
+      "complement_weight_shift_plus_minus_1_verified": true,
+      "degree_r_harmonic_strictly_excluded": true,
+      "dim_2_to_r": 4,
+      "max_coupled_hamming_distance": 1,
+      "observed_coupled_hamming_distances": [
+        0,
+        1
+      ],
+      "odd_r_strictly_even_harmonics": false,
+      "r_copies": 2
+    },
+    {
+      "complement_weight_shift_plus_minus_1_verified": true,
+      "degree_r_harmonic_strictly_excluded": true,
+      "dim_2_to_r": 8,
+      "max_coupled_hamming_distance": 2,
+      "observed_coupled_hamming_distances": [
+        0,
+        2
+      ],
+      "odd_r_strictly_even_harmonics": true,
+      "r_copies": 3
+    },
+    {
+      "complement_weight_shift_plus_minus_1_verified": true,
+      "degree_r_harmonic_strictly_excluded": true,
+      "dim_2_to_r": 16,
+      "max_coupled_hamming_distance": 3,
+      "observed_coupled_hamming_distances": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "odd_r_strictly_even_harmonics": false,
+      "r_copies": 4
+    },
+    {
+      "complement_weight_shift_plus_minus_1_verified": true,
+      "degree_r_harmonic_strictly_excluded": true,
+      "dim_2_to_r": 32,
+      "max_coupled_hamming_distance": 4,
+      "observed_coupled_hamming_distances": [
+        0,
+        2,
+        4
+      ],
+      "odd_r_strictly_even_harmonics": true,
+      "r_copies": 5
+    }
+  ],
+  "theorem_id": "dcp_cnot_conjugated_schur_weyl_clifford_twirl_bridge"
+}

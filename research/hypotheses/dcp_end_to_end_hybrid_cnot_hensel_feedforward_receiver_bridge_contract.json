@@ -1,0 +1,13 @@
+{
+  "hypothesis_id": "dcp_end_to_end_hybrid_cnot_hensel_feedforward_receiver_bridge",
+  "title": "End-to-End Hybrid CNOT + Pauli-X Frame + Newton-Hensel + R_Z Feedforward Constructive Receiver",
+  "status": "VERIFIED_FINITE_IDENTITIES_REVIEW_PENDING",
+  "claims": [
+    "Combining mod-2 CNOT compression, Pauli-X sign-flip frame rectification, 2-adic Newton-Hensel matrix inversion V = U^{-1} mod 2^{t-1}, and stage-by-stage adaptive R_Z(-phi_known) phase feedforward achieves uniform distinguishing bias D_TV = gamma across all stages and secrets.",
+    "Exhaustive evaluation across all 64 secrets of Z_8^2 (t=4) and all 64 secrets of Z_4^3 (t=3) achieves 100% deterministic secret reconstruction across both syndrome sign branches."
+  ],
+  "favorable_controls": [
+    "Exhaustive 64-secret 2D Z_8^2 (t=4, q=16) receiver verification",
+    "Exhaustive 64-secret 3D Z_4^3 (t=3, q=8) receiver verification"
+  ]
+}

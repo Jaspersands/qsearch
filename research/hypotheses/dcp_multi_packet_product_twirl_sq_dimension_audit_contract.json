@@ -1,0 +1,15 @@
+{
+  "hypothesis_id": "dcp_multi_packet_product_twirl_sq_dimension_audit",
+  "title": "DCP Multi-Packet Product-Twirl SQ Dimension Audit",
+  "status": "VERIFIED_SCOPED_AUDIT",
+  "claims": [
+    "Product-twirled cosine marginals are invariant under s -> -s mod q for any packet count T >= 1.",
+    "Over uniform headers a in Z_q^n, distinct unordered shift pairs {s, -s} have strictly orthogonal cosine profiles and single-packet chi-square divergence gamma^2 (if 2s=0) or gamma^2/2 (if 2s!=0).",
+    "Under chosen basis headers a = e_i, coordinate cosines are directly readable in O(n/gamma^2) samples."
+  ],
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  }
+}

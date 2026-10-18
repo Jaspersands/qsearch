@@ -1,0 +1,85 @@
+{
+  "all_checks_passed": true,
+  "certificate_sha256_16": "1837b60f8ddc0243",
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "ldpc_star_check_sweep": [
+    {
+      "L_auxiliary_checks": 0,
+      "bp_map_error_prob": 0.25,
+      "direct_only_error_prob": 0.25,
+      "exact_bp_bayes_equivalence_verified": true,
+      "gamma_check": 0.7,
+      "gamma_direct": 0.5,
+      "gamma_partner": 0.7,
+      "max_bp_vs_exact_bayes_llr_error": 0.0,
+      "single_check_extrinsic_bias": 0.48999999999999994,
+      "single_check_extrinsic_llr": 1.0721206732211332,
+      "total_probability_sum": 1.0
+    },
+    {
+      "L_auxiliary_checks": 1,
+      "bp_map_error_prob": 0.24999999999999997,
+      "direct_only_error_prob": 0.25,
+      "exact_bp_bayes_equivalence_verified": true,
+      "gamma_check": 0.7,
+      "gamma_direct": 0.5,
+      "gamma_partner": 0.7,
+      "max_bp_vs_exact_bayes_llr_error": 4.440892098500626e-16,
+      "single_check_extrinsic_bias": 0.48999999999999994,
+      "single_check_extrinsic_llr": 1.0721206732211332,
+      "total_probability_sum": 0.9999999999999998
+    },
+    {
+      "L_auxiliary_checks": 2,
+      "bp_map_error_prob": 0.1600125,
+      "direct_only_error_prob": 0.25,
+      "exact_bp_bayes_equivalence_verified": true,
+      "gamma_check": 0.7,
+      "gamma_direct": 0.5,
+      "gamma_partner": 0.7,
+      "max_bp_vs_exact_bayes_llr_error": 2.220446049250313e-16,
+      "single_check_extrinsic_bias": 0.48999999999999994,
+      "single_check_extrinsic_llr": 1.0721206732211332,
+      "total_probability_sum": 0.9999999999999994
+    },
+    {
+      "L_auxiliary_checks": 3,
+      "bp_map_error_prob": 0.15906262499999993,
+      "direct_only_error_prob": 0.25,
+      "exact_bp_bayes_equivalence_verified": true,
+      "gamma_check": 0.7,
+      "gamma_direct": 0.5,
+      "gamma_partner": 0.7,
+      "max_bp_vs_exact_bayes_llr_error": 4.440892098500626e-16,
+      "single_check_extrinsic_bias": 0.48999999999999994,
+      "single_check_extrinsic_llr": 1.0721206732211332,
+      "total_probability_sum": 0.9999999999999987
+    },
+    {
+      "L_auxiliary_checks": 4,
+      "bp_map_error_prob": 0.10777649906250031,
+      "direct_only_error_prob": 0.25,
+      "exact_bp_bayes_equivalence_verified": true,
+      "gamma_check": 0.7,
+      "gamma_direct": 0.5,
+      "gamma_partner": 0.7,
+      "max_bp_vs_exact_bayes_llr_error": 4.440892098500626e-16,
+      "single_check_extrinsic_bias": 0.48999999999999994,
+      "single_check_extrinsic_llr": 1.0721206732211332,
+      "total_probability_sum": 0.9999999999999976
+    }
+  ],
+  "monotone_map_error_reduction_verified": true,
+  "proof_status": "LOCAL_DERIVATION_REVIEW_PENDING_NOT_FORMALLY_VERIFIED",
+  "schema_version": "dcp-sparse-parity-with-noise-ldpc-belief-propagation-bridge-v1",
+  "scope_constraints": {
+    "applies_to": "Exact hyperbolic-tangent LLR belief propagation and MAP bit-error suppression on tree-structured noisy CNOT parity checks",
+    "controls_included": "Evaluates L = 0, 1, 2, 3, 4 auxiliary checks at gamma_0 = 0.5 (direct error 0.25) and gamma_partner = gamma_check = 0.7 (extrinsic bias 0.49), verifying < 1e-12 LLR error vs brute-force 2^L marginalization.",
+    "does_not_claim": "Exact Bayes optimality of loopy belief propagation on short-cycle check graphs without girth control"
+  },
+  "theorem_id": "dcp_sparse_parity_with_noise_ldpc_belief_propagation_bridge"
+}

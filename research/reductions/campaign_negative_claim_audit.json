@@ -1,13 +1,15 @@
 {
   "status": "CAMPAIGN_GENERAL_NO_GO_OVERCLAIMS_QUARANTINED",
-  "derivation_sha256": "30bce8df0f861ad36a4e86bc0b829adb1622a0964d50dbd0573c7f119b2f7f7d",
+  "derivation_sha256": "fd0f949528da0a5375f312adc11358f634df93359041219fe7f66ff297326939",
   "quarantined_ids": [
     "NEG-QUANTUM-ANNEALING-SPECTRAL-GAP-BARRIER",
     "NEG-QUANTUM-SIMULATION-TENSOR-NETWORK-HORIZON",
-    "NEG-QUANTUM-WALKS-SPATIAL-TOPOLOGY-BARRIER"
+    "NEG-QUANTUM-WALKS-SPATIAL-TOPOLOGY-BARRIER",
+    "NEG-EASTIN-KNILL-NON-CLIFFORD-FAULT-TOLERANT-BARRIER",
+    "NEG-QUANTUM-ERGODICITY-ETH-LOCAL-OBSERVABLE-BARRIER"
   ],
-  "active_negative_count_diagnostic": 978,
-  "original_records_sha256": "2503cca1a4893a6b6bf0695e7bc0eb2c9d248e001732d16ee0b3763bf9dd5886",
+  "active_negative_count_diagnostic": 976,
+  "original_records_sha256": "20b341b6c962e9f240464ce95d80d765ad7f2f154029975e16134b7e56801667",
   "stationary_small_gap_controls": [
     {
       "n": 8,
@@ -435,6 +437,199 @@
       "every_quantum_walk_algorithm_has_a_speedup": false
     }
   ],
+  "fault_tolerant_overhead_controls": [
+    {
+      "log2_search_space": 32,
+      "classical_query_scale": 4294967296,
+      "quantum_query_scale": 65536,
+      "illustrative_polylog_per_query_overhead": 4096,
+      "charged_quantum_work": 268435456,
+      "classical_to_quantum_work_ratio": "16",
+      "all_physical_architectures_have_this_overhead": false,
+      "polylog_overhead_is_exponential_overhead": false,
+      "quadratic_advantage_necessarily_disappears_asymptotically": false,
+      "finite_hardware_crossover_certified": false
+    },
+    {
+      "log2_search_space": 128,
+      "classical_query_scale": "340282366920938463463374607431768211456",
+      "quantum_query_scale": "18446744073709551616",
+      "illustrative_polylog_per_query_overhead": 262144,
+      "charged_quantum_work": "4835703278458516698824704",
+      "classical_to_quantum_work_ratio": "70368744177664",
+      "all_physical_architectures_have_this_overhead": false,
+      "polylog_overhead_is_exponential_overhead": false,
+      "quadratic_advantage_necessarily_disappears_asymptotically": false,
+      "finite_hardware_crossover_certified": false
+    },
+    {
+      "log2_search_space": 512,
+      "classical_query_scale": "13407807929942597099574024998205846127479365820592393377723561443721764030073546976801874298166903427690031858186486050853753882811946569946433649006084096",
+      "quantum_query_scale": "115792089237316195423570985008687907853269984665640564039457584007913129639936",
+      "illustrative_polylog_per_query_overhead": 16777216,
+      "charged_quantum_work": "1942668892225729070919461906823518906642406839052139521251812409738904285205208498176",
+      "classical_to_quantum_work_ratio": "6901746346790563787434755862277025452451108972170386555162524223799296",
+      "all_physical_architectures_have_this_overhead": false,
+      "polylog_overhead_is_exponential_overhead": false,
+      "quadratic_advantage_necessarily_disappears_asymptotically": false,
+      "finite_hardware_crossover_certified": false
+    }
+  ],
+  "rare_event_controls": [
+    {
+      "n": 8,
+      "Bernoulli_p0": "0",
+      "Bernoulli_p1": "1/256",
+      "mean_difference": "1/256",
+      "p1_variance": "255/65536",
+      "independent_samples_for_constant_success": 256,
+      "misused_inverse_square_necessity": 65536,
+      "exact_equal_prior_success_expression": "1-(1-2^(-n))^(2^n)/2",
+      "success_lower_bound": "1-1/(2*e)",
+      "mean_gap_alone_implies_inverse_square_lower_bound": false,
+      "ETH_or_general_quantum_algorithm_refuted": false
+    },
+    {
+      "n": 64,
+      "Bernoulli_p0": "0",
+      "Bernoulli_p1": "1/18446744073709551616",
+      "mean_difference": "1/18446744073709551616",
+      "p1_variance": "18446744073709551615/340282366920938463463374607431768211456",
+      "independent_samples_for_constant_success": "18446744073709551616",
+      "misused_inverse_square_necessity": "340282366920938463463374607431768211456",
+      "exact_equal_prior_success_expression": "1-(1-2^(-n))^(2^n)/2",
+      "success_lower_bound": "1-1/(2*e)",
+      "mean_gap_alone_implies_inverse_square_lower_bound": false,
+      "ETH_or_general_quantum_algorithm_refuted": false
+    },
+    {
+      "n": 256,
+      "Bernoulli_p0": "0",
+      "Bernoulli_p1": "1/115792089237316195423570985008687907853269984665640564039457584007913129639936",
+      "mean_difference": "1/115792089237316195423570985008687907853269984665640564039457584007913129639936",
+      "p1_variance": "115792089237316195423570985008687907853269984665640564039457584007913129639935/13407807929942597099574024998205846127479365820592393377723561443721764030073546976801874298166903427690031858186486050853753882811946569946433649006084096",
+      "independent_samples_for_constant_success": "115792089237316195423570985008687907853269984665640564039457584007913129639936",
+      "misused_inverse_square_necessity": "13407807929942597099574024998205846127479365820592393377723561443721764030073546976801874298166903427690031858186486050853753882811946569946433649006084096",
+      "exact_equal_prior_success_expression": "1-(1-2^(-n))^(2^n)/2",
+      "success_lower_bound": "1-1/(2*e)",
+      "mean_gap_alone_implies_inverse_square_lower_bound": false,
+      "ETH_or_general_quantum_algorithm_refuted": false
+    }
+  ],
+  "local_blindness_controls": [
+    {
+      "qubits": 2,
+      "state_pair": "(|0^n>+|1^n>)/sqrt(2), (|0^n>-|1^n>)/sqrt(2)",
+      "every_proper_subsystem_trace_distance": "0",
+      "full_state_trace_distance": "1",
+      "global_X_parity_expectations": [
+        1,
+        -1
+      ],
+      "one_shot_joint_X_readout_success": "1",
+      "physical_single_qubit_H_gates": 2,
+      "Z_measurements": 2,
+      "classical_XOR_operations": 1,
+      "proves_failure_of_ETH_for_a_local_chaotic_Hamiltonian": false,
+      "local_marginal_blindness_excludes_joint_product_readout": false,
+      "H_X_parity_eigenvalues": [
+        1,
+        -1
+      ],
+      "phase_estimation_requires_distinct_local_expectations": false
+    },
+    {
+      "qubits": 8,
+      "state_pair": "(|0^n>+|1^n>)/sqrt(2), (|0^n>-|1^n>)/sqrt(2)",
+      "every_proper_subsystem_trace_distance": "0",
+      "full_state_trace_distance": "1",
+      "global_X_parity_expectations": [
+        1,
+        -1
+      ],
+      "one_shot_joint_X_readout_success": "1",
+      "physical_single_qubit_H_gates": 8,
+      "Z_measurements": 8,
+      "classical_XOR_operations": 7,
+      "proves_failure_of_ETH_for_a_local_chaotic_Hamiltonian": false,
+      "local_marginal_blindness_excludes_joint_product_readout": false,
+      "H_X_parity_eigenvalues": [
+        1,
+        -1
+      ],
+      "phase_estimation_requires_distinct_local_expectations": false
+    },
+    {
+      "qubits": 256,
+      "state_pair": "(|0^n>+|1^n>)/sqrt(2), (|0^n>-|1^n>)/sqrt(2)",
+      "every_proper_subsystem_trace_distance": "0",
+      "full_state_trace_distance": "1",
+      "global_X_parity_expectations": [
+        1,
+        -1
+      ],
+      "one_shot_joint_X_readout_success": "1",
+      "physical_single_qubit_H_gates": 256,
+      "Z_measurements": 256,
+      "classical_XOR_operations": 255,
+      "proves_failure_of_ETH_for_a_local_chaotic_Hamiltonian": false,
+      "local_marginal_blindness_excludes_joint_product_readout": false,
+      "H_X_parity_eigenvalues": [
+        1,
+        -1
+      ],
+      "phase_estimation_requires_distinct_local_expectations": false
+    }
+  ],
+  "Steane_stabilizer_countercontrol": {
+    "simplex_codewords": [
+      0,
+      15,
+      51,
+      60,
+      85,
+      90,
+      102,
+      105
+    ],
+    "X_stabilizer_mask": 15,
+    "Z_stabilizer_mask": 15,
+    "X_stabilizer_expectation_before": "1",
+    "X_stabilizer_expectation_after_T7": "1/2",
+    "Z_stabilizer_expectation_before_and_after_T7": "1",
+    "T7_changes_a_Z_stabilizer_expectation": false,
+    "T7_preserves_Steane_code": false,
+    "fixed_code_transversal_nonuniversality_is_retracted": false
+  },
+  "distillation_threshold_countercontrol": {
+    "fault_model": "ideal independent phase faults; four simplex checks; logical fault is odd accepted parity",
+    "accepted_error_weight_enumerator": [
+      1,
+      0,
+      0,
+      35,
+      105,
+      168,
+      280,
+      435,
+      435,
+      280,
+      168,
+      105,
+      35,
+      0,
+      0,
+      1
+    ],
+    "input_error": "3/20",
+    "acceptance_probability": "37294403/320000000",
+    "exact_output_error": "624658088490057/3729440300000000",
+    "leading_cubic_output_proxy": "189/1600",
+    "cubic_predicts_purification": true,
+    "exact_map_purifies_at_this_input": false,
+    "leading_order_crossing_is_exact_protocol_threshold": false,
+    "hardware_noise_threshold_or_universal_distillation_lower_bound": false
+  },
   "primary_source_contradictions": [
     {
       "claim": "absence of a sign problem implies polynomial QMC equilibration",
@@ -450,6 +645,16 @@
       "claim": "critical dimension4 excludes improved spatial-search Hamiltonians",
       "source": "https://arxiv.org/abs/quant-ph/0405120",
       "assessment": "Dirac/coin variant improves the critical dimension to2"
+    },
+    {
+      "claim": "Eastin-Knill requires magic state distillation in every fault-tolerant architecture",
+      "source": "https://arxiv.org/abs/1304.3709",
+      "assessment": "published universal construction uses transversal gates PLUS error correction without state distillation; fixed-code transversal-only nonuniversality remains valid"
+    },
+    {
+      "claim": "all nonintegrable local Hamiltonians obey strong ETH",
+      "source": "https://arxiv.org/abs/1702.08227",
+      "assessment": "published embedded eigenstate counterexamples; does not refute conditional ETH statements for ensembles satisfying their premises"
     }
   ],
   "remaining_campaign_claims_verified": false,

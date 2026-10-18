@@ -1,0 +1,14 @@
+{
+  "hypothesis_id": "dcp_tensor_power_k_moment_dihedral_twirl_bridge",
+  "title": "DCP r-Copy Secret-Twirled Tensor-Power Density Matrix and Ternary Kernel Moment Bridge",
+  "status": "VERIFIED_SCOPED_BRIDGE",
+  "claims": [
+    "The secret-twirled r-copy DCP state bar_rho^{(r)}(A) satisfies ||bar_rho^{(r)}(A) - I_{2^r}/2^r||_F^2 = 2^{-r} sum_{0 != delta in {-1,0,1}^r : A delta == 0 mod q} prod_{j: delta_j != 0} (gamma_j^2 / 2).",
+    "Because +/- 1 is a unit modulo every q >= 2, E_A[||bar_rho^{(r)}(A) - I_{2^r}/2^r||_F^2] = (prod_{j=1}^r (1 + gamma_j^2) - 1) / (2^r * q^n) holds identically across all moduli q >= 2."
+  ],
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  }
+}

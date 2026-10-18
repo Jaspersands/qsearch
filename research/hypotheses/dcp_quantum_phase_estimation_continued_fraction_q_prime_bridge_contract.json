@@ -1,0 +1,13 @@
+{
+  "hypothesis_id": "dcp_quantum_phase_estimation_continued_fraction_q_prime_bridge",
+  "title": "Non-Dyadic Odd-Prime QFT 2-Bin Capture Bound and Exact Modular Rounding Recovery",
+  "status": "VERIFIED_FINITE_IDENTITIES_REVIEW_PENDING",
+  "claims": [
+    "Applying an m-qubit dyadic QFT_{2^m}^dagger to a prime-modulus Z_q phase progression concentrates > 8/pi^2 ~ 81.057% of the probability mass into the 2 nearest bins {floor(2^m z / q), ceil(2^m z / q)}.",
+    "Whenever 2^m >= 2*q, the closed-form rounding map z_hat(k) = floor((q * k + 2^{m-1}) / 2^m) mod q deterministically recovers z = a*s mod q on both nearest bins across 100% of z in Z_q."
+  ],
+  "favorable_controls": [
+    "Under-resolved control q=17, 2^m=16 < 2*q",
+    "Resolved prime instances q=17, 2^m=64 and q=31, 2^m=64"
+  ]
+}

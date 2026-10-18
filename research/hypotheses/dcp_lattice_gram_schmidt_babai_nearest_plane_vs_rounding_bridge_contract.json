@@ -1,0 +1,13 @@
+{
+  "hypothesis_id": "dcp_lattice_gram_schmidt_babai_nearest_plane_vs_rounding_bridge",
+  "title": "Babai Nearest Plane Gram-Schmidt Orthorhombic Radius vs. Coordinate Rounding",
+  "status": "VERIFIED_FINITE_IDENTITIES_REVIEW_PENDING",
+  "claims": [
+    "For any full-rank lattice basis B, the inscribed L2 ball radius of Babai Coordinate Rounding satisfies r_CR(B) = 1 / (2 max_i ||(B^{-1})_{i,.}||_2) <= r_NP(B) = 0.5 min_i ||b_tilde_i||_2, with strict inequality whenever the minimal row has non-zero Gram-Schmidt coupling.",
+    "Target errors with r_CR(B) < ||e||_2 < r_NP(B) inside the Gram-Schmidt box are deterministically decoded by Nearest Plane while overflowing Coordinate Rounding."
+  ],
+  "favorable_controls": [
+    "Orthogonal 3D basis 4*I_3 control (r_NP == r_CR == 2.0)",
+    "Skewed 3D modular basis audit (r_NP = 2.0 > r_CR = 1.71499)"
+  ]
+}

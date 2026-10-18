@@ -1,0 +1,12 @@
+{
+  "hypothesis_id": "dcp_clifford_stabilizer_magic_monotone_carry_injection_bridge",
+  "title": "Stabilizer Renyi-2 Magic Injection by Binary-XOR Carries Across Modulo 2^t Hierarchy",
+  "status": "VERIFIED_FINITE_IDENTITIES_REVIEW_PENDING",
+  "claims": [
+    "At t=1 (mod 2) and t=2 (mod 4), the m-wire binary-XOR carry state |psi_{t, m}> is an exact stabilizer state (Z-product and CZ-graph state respectively) with stabilizer Renyi-2 magic M_2 = 0 for all m >= 1.",
+    "At t=3 (mod 8), |psi_{3, m}> injects exact non-Clifford stabilizer Renyi-2 magic M_2 = log_2(4/3) ~ 0.415037 bits, while the isolated 3-body carry state CCZ|+>^{\otimes 3} has M_2 = log_2(16/9) ~ 0.830075 bits."
+  ],
+  "favorable_controls": [
+    "m=2 and m=3 overlapping wires across t=1, 2, 3 and isolated CCZ|+>^3"
+  ]
+}

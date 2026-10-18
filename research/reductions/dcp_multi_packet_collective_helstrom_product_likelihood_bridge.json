@@ -1,0 +1,98 @@
+{
+  "all_checks_passed": true,
+  "certificate_sha256_16": "381e8fa2437531d8",
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "product_order_counterexample": {
+    "evaluation": {
+      "M_packets": 2,
+      "gammas": [
+        1.0,
+        1.0
+      ],
+      "sign_symmetrization_collapses_to_x_basis": true,
+      "single_copy_sign_symmetrized_tv": 0.49999999999999994,
+      "single_copy_x_sin_sq_bias": 0.4999999999999999,
+      "strict_three_tier_hierarchy_holds": false,
+      "thetas": [
+        1.5707963267948966,
+        1.6689710972195777
+      ],
+      "tier1_x_basis_tv": 0.7745042850823902,
+      "tier2_separable_tilted_helstrom_tv": 0.7409511253549592,
+      "tier3_collective_helstrom_tv": 0.880059250893024
+    },
+    "headers": [
+      16,
+      17
+    ],
+    "q": 64,
+    "secret": 1
+  },
+  "proof_status": "LOCAL_DERIVATION_REVIEW_PENDING_NOT_FORMALLY_VERIFIED",
+  "schema_version": "dcp-multi-packet-collective-helstrom-product-likelihood-bridge-v1",
+  "scope_constraints": {
+    "applies_to": "Binary hypothesis testing H_0: s = 0 vs H_1: s = s^* across M distinct-header DCP phase packets",
+    "controls_included": "Includes strict 3-tier hierarchy D_tr^{coll} > D_TV^{sep-Hel} > D_TV^{X^M} on M=2 and M=3 distinct headers, plus exact single-copy collapse to gamma*sin^2(theta/2) under s^* <-> -s^* symmetrization.",
+    "does_not_claim": "Tilted or single-copy linear-angle bias when s^* is unknown and sign-symmetrized (s^* <-> -s^*)"
+  },
+  "single_packet_audit": {
+    "M_packets": 1,
+    "gammas": [
+      0.85
+    ],
+    "sign_symmetrization_collapses_to_x_basis": true,
+    "single_copy_sign_symmetrized_tv": 0.21249999999999994,
+    "single_copy_x_sin_sq_bias": 0.21249999999999994,
+    "strict_three_tier_hierarchy_holds": true,
+    "thetas": [
+      1.0471975511965976
+    ],
+    "tier1_x_basis_tv": 0.21250000000000002,
+    "tier2_separable_tilted_helstrom_tv": 0.4249999999999998,
+    "tier3_collective_helstrom_tv": 0.4249999999999999
+  },
+  "theorem_id": "dcp_multi_packet_collective_helstrom_product_likelihood_bridge",
+  "three_packet_distinct_header_audit": {
+    "M_packets": 3,
+    "gammas": [
+      0.85,
+      0.8,
+      0.75
+    ],
+    "sign_symmetrization_collapses_to_x_basis": true,
+    "single_copy_sign_symmetrized_tv": 0.12447961799571727,
+    "single_copy_x_sin_sq_bias": 0.1244796179957173,
+    "strict_three_tier_hierarchy_holds": true,
+    "thetas": [
+      0.7853981633974483,
+      1.0471975511965976,
+      2.0943951023931953
+    ],
+    "tier1_x_basis_tv": 0.5746387141870984,
+    "tier2_separable_tilted_helstrom_tv": 0.649519052838329,
+    "tier3_collective_helstrom_tv": 0.6993082283909401
+  },
+  "two_packet_distinct_header_audit": {
+    "M_packets": 2,
+    "gammas": [
+      0.85,
+      0.8
+    ],
+    "sign_symmetrization_collapses_to_x_basis": true,
+    "single_copy_sign_symmetrized_tv": 0.21249999999999994,
+    "single_copy_x_sin_sq_bias": 0.21249999999999994,
+    "strict_three_tier_hierarchy_holds": true,
+    "thetas": [
+      1.0471975511965976,
+      1.5707963267948966
+    ],
+    "tier1_x_basis_tv": 0.47625,
+    "tier2_separable_tilted_helstrom_tv": 0.565685424949238,
+    "tier3_collective_helstrom_tv": 0.6146543744251725
+  },
+  "universal_strict_three_tier_hierarchy_claimed": false
+}

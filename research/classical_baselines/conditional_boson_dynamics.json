@@ -1,0 +1,585 @@
+{
+  "schema_version": 1,
+  "status": "CONTROLLED_DISPLACEMENT_SCALAR_READOUT_HAS_A_CLASSICAL_BASELINE",
+  "proof_status": "LOCAL_DERIVATION_REVIEW_PENDING",
+  "physical_controls": [
+    {
+      "model": {
+        "frequencies": [
+          "1"
+        ],
+        "force_offsets": [
+          "0"
+        ],
+        "force_matrix": [
+          [
+            "1/2"
+          ]
+        ],
+        "diagonal_linear": [
+          "0"
+        ],
+        "diagonal_pairs": [],
+        "diagonal_constant": "0",
+        "initial_controls": "uniform logical plus; dual-rail fixed-particle realization allowed",
+        "initial_bosons": "vacuum",
+        "noncommuting_hopping_included": false
+      },
+      "time_in_pi_units": "2",
+      "observable": "Y",
+      "analytic_reference": {
+        "lower": "1",
+        "upper": "1",
+        "configurations_enumerated": 2,
+        "max_precision_bits_used": 64,
+        "exponential_reference_is_the_scalable_estimator": false
+      },
+      "finite_Fock_reference": {
+        "Pauli_expectation": 1.0000000000003126,
+        "norm_squared": 1.0000000000003126,
+        "explicit_state_dimension": 48,
+        "Fock_dimension_per_mode": 24,
+        "hopping": [
+          "0"
+        ],
+        "noncommuting_hopping_included": false,
+        "finite_Fock_recurrence_is_exact_infinite_displacement": false,
+        "floating_sparse_reference_is_formally_certified": false
+      },
+      "cutoff_bound": {
+        "state_2norm_error_upper": "82788630963923208947724446695547950596652245775100984291614994146010899717641/3978585891278293137243057985174566720803649206378781739523711815145275976100267004264448",
+        "Pauli_expectation_error_upper": "82788630963923208947724446695547950596652245775100984291614994146010899717641/1989292945639146568621528992587283360401824603189390869761855907572637988050133502132224",
+        "Hamiltonian_sector": "DIAGONAL_FERMION_FORCES_NO_HOPPING",
+        "uniform_in_control_configurations": true,
+        "includes_intermediate_boundary_leakage": true,
+        "numeric_sparse_exponential_roundoff_certified": false
+      }
+    },
+    {
+      "model": {
+        "frequencies": [
+          "1"
+        ],
+        "force_offsets": [
+          "0"
+        ],
+        "force_matrix": [
+          [
+            "1/2"
+          ]
+        ],
+        "diagonal_linear": [
+          "0"
+        ],
+        "diagonal_pairs": [],
+        "diagonal_constant": "0",
+        "initial_controls": "uniform logical plus; dual-rail fixed-particle realization allowed",
+        "initial_bosons": "vacuum",
+        "noncommuting_hopping_included": false
+      },
+      "time_in_pi_units": "2",
+      "observable": "X",
+      "analytic_reference": {
+        "lower": "0",
+        "upper": "0",
+        "configurations_enumerated": 2,
+        "max_precision_bits_used": 64,
+        "exponential_reference_is_the_scalable_estimator": false
+      },
+      "finite_Fock_reference": {
+        "Pauli_expectation": 1.0545290589189929e-14,
+        "norm_squared": 1.0000000000003126,
+        "explicit_state_dimension": 48,
+        "Fock_dimension_per_mode": 24,
+        "hopping": [
+          "0"
+        ],
+        "noncommuting_hopping_included": false,
+        "finite_Fock_recurrence_is_exact_infinite_displacement": false,
+        "floating_sparse_reference_is_formally_certified": false
+      },
+      "cutoff_bound": {
+        "state_2norm_error_upper": "82788630963923208947724446695547950596652245775100984291614994146010899717641/3978585891278293137243057985174566720803649206378781739523711815145275976100267004264448",
+        "Pauli_expectation_error_upper": "82788630963923208947724446695547950596652245775100984291614994146010899717641/1989292945639146568621528992587283360401824603189390869761855907572637988050133502132224",
+        "Hamiltonian_sector": "DIAGONAL_FERMION_FORCES_NO_HOPPING",
+        "uniform_in_control_configurations": true,
+        "includes_intermediate_boundary_leakage": true,
+        "numeric_sparse_exponential_roundoff_certified": false
+      }
+    },
+    {
+      "model": {
+        "frequencies": [
+          "1"
+        ],
+        "force_offsets": [
+          "1/5"
+        ],
+        "force_matrix": [
+          [
+            "2/5",
+            "-1/3"
+          ]
+        ],
+        "diagonal_linear": [
+          "1/7",
+          "-1/5"
+        ],
+        "diagonal_pairs": [
+          [
+            0,
+            1,
+            "3/11"
+          ]
+        ],
+        "diagonal_constant": "0",
+        "initial_controls": "uniform logical plus; dual-rail fixed-particle realization allowed",
+        "initial_bosons": "vacuum",
+        "noncommuting_hopping_included": false
+      },
+      "time_in_pi_units": "3/5",
+      "observable": "XY",
+      "analytic_reference": {
+        "lower": "-30631394995084073563/295147905179352825856",
+        "upper": "-30631394995084073399/295147905179352825856",
+        "configurations_enumerated": 4,
+        "max_precision_bits_used": 64,
+        "exponential_reference_is_the_scalable_estimator": false
+      },
+      "finite_Fock_reference": {
+        "Pauli_expectation": -0.10378320312478248,
+        "norm_squared": 0.999999999999969,
+        "explicit_state_dimension": 96,
+        "Fock_dimension_per_mode": 24,
+        "hopping": [
+          "0",
+          "0"
+        ],
+        "noncommuting_hopping_included": false,
+        "finite_Fock_recurrence_is_exact_infinite_displacement": false,
+        "floating_sparse_reference_is_formally_certified": false
+      },
+      "cutoff_bound": {
+        "state_2norm_error_upper": "37105346109772211228276169353102851666082618316078813294226545857787179649781/948568795032094272909893509191171341133987714380927500611236528192824358010355712",
+        "Pauli_expectation_error_upper": "37105346109772211228276169353102851666082618316078813294226545857787179649781/474284397516047136454946754595585670566993857190463750305618264096412179005177856",
+        "Hamiltonian_sector": "DIAGONAL_FERMION_FORCES_NO_HOPPING",
+        "uniform_in_control_configurations": true,
+        "includes_intermediate_boundary_leakage": true,
+        "numeric_sparse_exponential_roundoff_certified": false
+      }
+    },
+    {
+      "model": {
+        "frequencies": [
+          "1"
+        ],
+        "force_offsets": [
+          "1/5"
+        ],
+        "force_matrix": [
+          [
+            "2/5",
+            "-1/3"
+          ]
+        ],
+        "diagonal_linear": [
+          "1/7",
+          "-1/5"
+        ],
+        "diagonal_pairs": [
+          [
+            0,
+            1,
+            "3/11"
+          ]
+        ],
+        "diagonal_constant": "0",
+        "initial_controls": "uniform logical plus; dual-rail fixed-particle realization allowed",
+        "initial_bosons": "vacuum",
+        "noncommuting_hopping_included": false
+      },
+      "time_in_pi_units": "3/5",
+      "observable": "XX",
+      "analytic_reference": {
+        "lower": "102765363700445383523/147573952589676412928",
+        "upper": "102765363700445383619/147573952589676412928",
+        "configurations_enumerated": 4,
+        "max_precision_bits_used": 64,
+        "exponential_reference_is_the_scalable_estimator": false
+      },
+      "finite_Fock_reference": {
+        "Pauli_expectation": 0.6963651911267617,
+        "norm_squared": 0.999999999999969,
+        "explicit_state_dimension": 96,
+        "Fock_dimension_per_mode": 24,
+        "hopping": [
+          "0",
+          "0"
+        ],
+        "noncommuting_hopping_included": false,
+        "finite_Fock_recurrence_is_exact_infinite_displacement": false,
+        "floating_sparse_reference_is_formally_certified": false
+      },
+      "cutoff_bound": {
+        "state_2norm_error_upper": "37105346109772211228276169353102851666082618316078813294226545857787179649781/948568795032094272909893509191171341133987714380927500611236528192824358010355712",
+        "Pauli_expectation_error_upper": "37105346109772211228276169353102851666082618316078813294226545857787179649781/474284397516047136454946754595585670566993857190463750305618264096412179005177856",
+        "Hamiltonian_sector": "DIAGONAL_FERMION_FORCES_NO_HOPPING",
+        "uniform_in_control_configurations": true,
+        "includes_intermediate_boundary_leakage": true,
+        "numeric_sparse_exponential_roundoff_certified": false
+      }
+    }
+  ],
+  "noncommuting_scope_falsifier": {
+    "model": {
+      "frequencies": [
+        "1"
+      ],
+      "force_offsets": [
+        "0"
+      ],
+      "force_matrix": [
+        [
+          "1/2"
+        ]
+      ],
+      "diagonal_linear": [
+        "0"
+      ],
+      "diagonal_pairs": [],
+      "diagonal_constant": "0",
+      "initial_controls": "uniform logical plus; dual-rail fixed-particle realization allowed",
+      "initial_bosons": "vacuum",
+      "noncommuting_hopping_included": false
+    },
+    "time_in_pi_units": "1/2",
+    "observable": "X",
+    "no_hopping": {
+      "Pauli_expectation": 0.7708848583978984,
+      "norm_squared": 0.9999999999999896,
+      "explicit_state_dimension": 48,
+      "Fock_dimension_per_mode": 24,
+      "hopping": [
+        "0"
+      ],
+      "noncommuting_hopping_included": false,
+      "finite_Fock_recurrence_is_exact_infinite_displacement": false,
+      "floating_sparse_reference_is_formally_certified": false
+    },
+    "with_hopping": {
+      "Pauli_expectation": 0.7239018693745567,
+      "norm_squared": 1.0000000000000053,
+      "explicit_state_dimension": 48,
+      "Fock_dimension_per_mode": 24,
+      "hopping": [
+        "2/3"
+      ],
+      "noncommuting_hopping_included": true,
+      "finite_Fock_recurrence_is_exact_infinite_displacement": false,
+      "floating_sparse_reference_is_formally_certified": false
+    },
+    "perturbative_readout_budget": {
+      "time_in_pi_units": "1/2",
+      "hopping": [
+        "2/3"
+      ],
+      "additional_Pauli_expectation_error_upper": "2",
+      "H0_estimator_with_reduced_error_budget_suffices": false,
+      "remaining_additive_error_budget": "0",
+      "large_bound_is_evidence_of_quantum_advantage": false
+    },
+    "H0_estimator_claimed_valid_after_adding_hopping": false
+  },
+  "large_force_exact_input_pair": {
+    "lower": "190794540422940552566669474565300089521/340282366920938463463374607431768211456",
+    "upper": "190794540422942838794547748822463214257/340282366920938463463374607431768211456",
+    "precision_bits": 128,
+    "time_in_pi_units": "1/3",
+    "observable": "X",
+    "configuration": [
+      0
+    ],
+    "arithmetic_error_upper": "253822283/75557863725914323419136",
+    "relative_phase_retained": true
+  },
+  "large_force_model": {
+    "frequencies": [
+      "1"
+    ],
+    "force_offsets": [
+      "1208925819614629174706176"
+    ],
+    "force_matrix": [
+      [
+        "1"
+      ]
+    ],
+    "diagonal_linear": [
+      "0"
+    ],
+    "diagonal_pairs": [],
+    "diagonal_constant": "0",
+    "initial_controls": "uniform logical plus; dual-rail fixed-particle realization allowed",
+    "initial_bosons": "vacuum",
+    "noncommuting_hopping_included": false
+  },
+  "64_control_model": {
+    "frequencies": [
+      "1",
+      "2"
+    ],
+    "force_offsets": [
+      "0",
+      "0"
+    ],
+    "force_matrix": [
+      [
+        "-1/8",
+        "-1/16",
+        "0",
+        "1/16",
+        "1/8",
+        "-1/8",
+        "-1/16",
+        "0",
+        "1/16",
+        "1/8",
+        "-1/8",
+        "-1/16",
+        "0",
+        "1/16",
+        "1/8",
+        "-1/8",
+        "-1/16",
+        "0",
+        "1/16",
+        "1/8",
+        "-1/8",
+        "-1/16",
+        "0",
+        "1/16",
+        "1/8",
+        "-1/8",
+        "-1/16",
+        "0",
+        "1/16",
+        "1/8",
+        "-1/8",
+        "-1/16",
+        "0",
+        "1/16",
+        "1/8",
+        "-1/8",
+        "-1/16",
+        "0",
+        "1/16",
+        "1/8",
+        "-1/8",
+        "-1/16",
+        "0",
+        "1/16",
+        "1/8",
+        "-1/8",
+        "-1/16",
+        "0",
+        "1/16",
+        "1/8",
+        "-1/8",
+        "-1/16",
+        "0",
+        "1/16",
+        "1/8",
+        "-1/8",
+        "-1/16",
+        "0",
+        "1/16",
+        "1/8",
+        "-1/8",
+        "-1/16",
+        "0",
+        "1/16"
+      ],
+      [
+        "-1/8",
+        "0",
+        "1/8",
+        "-1/16",
+        "1/16",
+        "-1/8",
+        "0",
+        "1/8",
+        "-1/16",
+        "1/16",
+        "-1/8",
+        "0",
+        "1/8",
+        "-1/16",
+        "1/16",
+        "-1/8",
+        "0",
+        "1/8",
+        "-1/16",
+        "1/16",
+        "-1/8",
+        "0",
+        "1/8",
+        "-1/16",
+        "1/16",
+        "-1/8",
+        "0",
+        "1/8",
+        "-1/16",
+        "1/16",
+        "-1/8",
+        "0",
+        "1/8",
+        "-1/16",
+        "1/16",
+        "-1/8",
+        "0",
+        "1/8",
+        "-1/16",
+        "1/16",
+        "-1/8",
+        "0",
+        "1/8",
+        "-1/16",
+        "1/16",
+        "-1/8",
+        "0",
+        "1/8",
+        "-1/16",
+        "1/16",
+        "-1/8",
+        "0",
+        "1/8",
+        "-1/16",
+        "1/16",
+        "-1/8",
+        "0",
+        "1/8",
+        "-1/16",
+        "1/16",
+        "-1/8",
+        "0",
+        "1/8",
+        "-1/16"
+      ]
+    ],
+    "diagonal_linear": [
+      "1/13",
+      "1/13",
+      "1/13",
+      "1/13",
+      "1/13",
+      "1/13",
+      "1/13",
+      "1/13",
+      "1/13",
+      "1/13",
+      "1/13",
+      "1/13",
+      "1/13",
+      "1/13",
+      "1/13",
+      "1/13",
+      "1/13",
+      "1/13",
+      "1/13",
+      "1/13",
+      "1/13",
+      "1/13",
+      "1/13",
+      "1/13",
+      "1/13",
+      "1/13",
+      "1/13",
+      "1/13",
+      "1/13",
+      "1/13",
+      "1/13",
+      "1/13",
+      "1/13",
+      "1/13",
+      "1/13",
+      "1/13",
+      "1/13",
+      "1/13",
+      "1/13",
+      "1/13",
+      "1/13",
+      "1/13",
+      "1/13",
+      "1/13",
+      "1/13",
+      "1/13",
+      "1/13",
+      "1/13",
+      "1/13",
+      "1/13",
+      "1/13",
+      "1/13",
+      "1/13",
+      "1/13",
+      "1/13",
+      "1/13",
+      "1/13",
+      "1/13",
+      "1/13",
+      "1/13",
+      "1/13",
+      "1/13",
+      "1/13",
+      "1/13"
+    ],
+    "diagonal_pairs": [],
+    "diagonal_constant": "0",
+    "initial_controls": "uniform logical plus; dual-rail fixed-particle realization allowed",
+    "initial_bosons": "vacuum",
+    "noncommuting_hopping_included": false
+  },
+  "64_control_seeded_estimator": {
+    "arithmetic_sample_mean_interval": [
+      "24563187938279296717347/37778931862957161709568",
+      "24563187938279296747073/37778931862957161709568"
+    ],
+    "time_in_pi_units": "2/7",
+    "observable": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+    "controls": 64,
+    "boson_modes": 2,
+    "confidence_interval": [
+      "15118454972540006289955/37778931862957161709568",
+      "34007920904018587174465/37778931862957161709568"
+    ],
+    "additive_error_target": "1/2",
+    "failure_probability_model_upper": "1/8",
+    "coverage_requires_IID_uniform_random_bits": true,
+    "seeded_replay_is_a_certified_IID_source": false,
+    "randomness_mode": "SEEDED_PSEUDORANDOM_REPLAY",
+    "sample_count": 128,
+    "configuration_random_bits_charged": 8192,
+    "max_precision_bits_used": 64,
+    "bosonic_cutoff_materialized": false,
+    "all_joint_measurement_outcomes_sampled": false,
+    "relative_error_for_tiny_expectations_certified": false
+  },
+  "64_control_exact_local_readout": {
+    "lower": "9103244824627291435/9223372036854775808",
+    "upper": "568952801539205729/576460752303423488",
+    "time_in_pi_units": "2/7",
+    "observable": "XIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+    "controls": 64,
+    "max_precision_bits_used": 64,
+    "flipped_assignments": 2,
+    "analytically_summed_control_bits": 63,
+    "no_statistical_sampling": true,
+    "cost_upper_order": "O(2^k*poly(n,M,input_bits,precision)); k=Pauli X/Y weight"
+  },
+  "general_Hubbard_Holstein_or_joint_sampling_dequantized": false,
+  "new_active_negative_result_created": false,
+  "accepted_speedup_candidate": false,
+  "novelty_claim": false,
+  "dependency_sha256": {
+    "theorems/conditional_boson_dynamics.py": "2f1c3b05380dcd416f9c77d2dfab02228adb12f9a410584da711659cca3bd743"
+  }
+}

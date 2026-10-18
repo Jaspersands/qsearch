@@ -1,0 +1,809 @@
+{
+  "schema_version": 1,
+  "contract_id": "native_parity_to_cyclic_dcp_review_pending_v1",
+  "status": "CONDITIONAL_NATIVE_PARITY_TO_CYCLIC_DCP_REDUCTION_PREDICTOR_MISSING",
+  "literature_links": [
+    "https://arxiv.org/abs/quant-ph/0501044",
+    "https://arxiv.org/abs/quant-ph/0505030"
+  ],
+  "complete_source_pushforward_control": {
+    "calibration_phase_bits": 3,
+    "components": 2,
+    "fixed_scalar_secrets": 8,
+    "secret_mask_pairs_checked": 512,
+    "exact_phase_identities_checked": 32768,
+    "native_scaling_relation_t_equals_n_plus_8_used_in_this_small_control": false,
+    "unknown_scalar_secret_is_an_input_to_adapter": false,
+    "per_packet_mask_refresh_has_been_authorized": false
+  },
+  "parity_density_controls": [
+    {
+      "full_labels": [
+        [
+          1,
+          2
+        ]
+      ],
+      "original_phase_bits": 4,
+      "visibility_exact": "1",
+      "target_frequency": [
+        8
+      ],
+      "target_difference_ordered_pairs": 0,
+      "max_exact_parity_density_identity_residual": 4.347204570675246e-17,
+      "optimal_original_quantum_parity_guess_probability": 0.5,
+      "clean_subset_sum_overlap_optimal_parity_guess_probability": 0.5,
+      "subset_sum_occupancy_histogram": [
+        {
+          "frequency": [
+            0
+          ],
+          "count": 1
+        },
+        {
+          "frequency": [
+            1
+          ],
+          "count": 1
+        },
+        {
+          "frequency": [
+            2
+          ],
+          "count": 1
+        },
+        {
+          "frequency": [
+            3
+          ],
+          "count": 1
+        }
+      ],
+      "actual_mod2_joint_X_parity_guess_probability": 0.5,
+      "actual_mod2_joint_X_total_secret_information_bits": 0.449561981653572,
+      "full_density_and_secret_enumeration_is_polynomial": false,
+      "fixture_is_a_native_high_probability_statement": false
+    },
+    {
+      "full_labels": [
+        [
+          8
+        ]
+      ],
+      "original_phase_bits": 4,
+      "visibility_exact": "1",
+      "target_frequency": [
+        8
+      ],
+      "target_difference_ordered_pairs": 2,
+      "max_exact_parity_density_identity_residual": 1.267886079296281e-16,
+      "optimal_original_quantum_parity_guess_probability": 1.0,
+      "clean_subset_sum_overlap_optimal_parity_guess_probability": 1.0,
+      "subset_sum_occupancy_histogram": [
+        {
+          "frequency": [
+            0
+          ],
+          "count": 1
+        },
+        {
+          "frequency": [
+            8
+          ],
+          "count": 1
+        }
+      ],
+      "actual_mod2_joint_X_parity_guess_probability": 1.0,
+      "actual_mod2_joint_X_total_secret_information_bits": 1.0,
+      "full_density_and_secret_enumeration_is_polynomial": false,
+      "fixture_is_a_native_high_probability_statement": false
+    },
+    {
+      "full_labels": [
+        [
+          8
+        ]
+      ],
+      "original_phase_bits": 4,
+      "visibility_exact": "1/2",
+      "target_frequency": [
+        8
+      ],
+      "target_difference_ordered_pairs": 2,
+      "max_exact_parity_density_identity_residual": 6.339430396481405e-17,
+      "optimal_original_quantum_parity_guess_probability": 0.75,
+      "clean_subset_sum_overlap_optimal_parity_guess_probability": 1.0,
+      "subset_sum_occupancy_histogram": [
+        {
+          "frequency": [
+            0
+          ],
+          "count": 1
+        },
+        {
+          "frequency": [
+            8
+          ],
+          "count": 1
+        }
+      ],
+      "actual_mod2_joint_X_parity_guess_probability": 0.75,
+      "actual_mod2_joint_X_total_secret_information_bits": 0.18872187554086717,
+      "full_density_and_secret_enumeration_is_polynomial": false,
+      "fixture_is_a_native_high_probability_statement": false
+    },
+    {
+      "full_labels": [
+        [
+          8
+        ]
+      ],
+      "original_phase_bits": 4,
+      "visibility_exact": "0",
+      "target_frequency": [
+        8
+      ],
+      "target_difference_ordered_pairs": 2,
+      "max_exact_parity_density_identity_residual": 2.7955785174519424e-33,
+      "optimal_original_quantum_parity_guess_probability": 0.5,
+      "clean_subset_sum_overlap_optimal_parity_guess_probability": 1.0,
+      "subset_sum_occupancy_histogram": [
+        {
+          "frequency": [
+            0
+          ],
+          "count": 1
+        },
+        {
+          "frequency": [
+            8
+          ],
+          "count": 1
+        }
+      ],
+      "actual_mod2_joint_X_parity_guess_probability": 0.5,
+      "actual_mod2_joint_X_total_secret_information_bits": 0.0,
+      "full_density_and_secret_enumeration_is_polynomial": false,
+      "fixture_is_a_native_high_probability_statement": false
+    },
+    {
+      "full_labels": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "original_phase_bits": 3,
+      "visibility_exact": "1",
+      "target_frequency": [
+        4,
+        0
+      ],
+      "target_difference_ordered_pairs": 0,
+      "max_exact_parity_density_identity_residual": 2.799845839821127e-17,
+      "optimal_original_quantum_parity_guess_probability": 0.5,
+      "clean_subset_sum_overlap_optimal_parity_guess_probability": 0.5,
+      "subset_sum_occupancy_histogram": [
+        {
+          "frequency": [
+            0,
+            0
+          ],
+          "count": 1
+        },
+        {
+          "frequency": [
+            0,
+            1
+          ],
+          "count": 1
+        },
+        {
+          "frequency": [
+            1,
+            0
+          ],
+          "count": 1
+        },
+        {
+          "frequency": [
+            1,
+            1
+          ],
+          "count": 1
+        }
+      ],
+      "actual_mod2_joint_X_parity_guess_probability": 0.5,
+      "actual_mod2_joint_X_total_secret_information_bits": 2.002141564884324e-17,
+      "full_density_and_secret_enumeration_is_polynomial": false,
+      "fixture_is_a_native_high_probability_statement": false
+    },
+    {
+      "full_labels": [
+        [
+          4,
+          0
+        ],
+        [
+          0,
+          4
+        ]
+      ],
+      "original_phase_bits": 3,
+      "visibility_exact": "1",
+      "target_frequency": [
+        4,
+        0
+      ],
+      "target_difference_ordered_pairs": 4,
+      "max_exact_parity_density_identity_residual": 3.061616997868383e-17,
+      "optimal_original_quantum_parity_guess_probability": 1.0,
+      "clean_subset_sum_overlap_optimal_parity_guess_probability": 1.0,
+      "subset_sum_occupancy_histogram": [
+        {
+          "frequency": [
+            0,
+            0
+          ],
+          "count": 1
+        },
+        {
+          "frequency": [
+            0,
+            4
+          ],
+          "count": 1
+        },
+        {
+          "frequency": [
+            4,
+            0
+          ],
+          "count": 1
+        },
+        {
+          "frequency": [
+            4,
+            4
+          ],
+          "count": 1
+        }
+      ],
+      "actual_mod2_joint_X_parity_guess_probability": 1.0,
+      "actual_mod2_joint_X_total_secret_information_bits": 2.0,
+      "full_density_and_secret_enumeration_is_polynomial": false,
+      "fixture_is_a_native_high_probability_statement": false
+    },
+    {
+      "full_labels": [
+        [
+          1,
+          2,
+          4
+        ],
+        [
+          1,
+          2,
+          3
+        ]
+      ],
+      "original_phase_bits": 3,
+      "visibility_exact": "1",
+      "target_frequency": [
+        4,
+        0
+      ],
+      "target_difference_ordered_pairs": 0,
+      "max_exact_parity_density_identity_residual": 1.3877787807814457e-17,
+      "optimal_original_quantum_parity_guess_probability": 0.5,
+      "clean_subset_sum_overlap_optimal_parity_guess_probability": 0.5,
+      "subset_sum_occupancy_histogram": [
+        {
+          "frequency": [
+            0,
+            0
+          ],
+          "count": 1
+        },
+        {
+          "frequency": [
+            1,
+            1
+          ],
+          "count": 1
+        },
+        {
+          "frequency": [
+            2,
+            2
+          ],
+          "count": 1
+        },
+        {
+          "frequency": [
+            3,
+            3
+          ],
+          "count": 1
+        },
+        {
+          "frequency": [
+            4,
+            3
+          ],
+          "count": 1
+        },
+        {
+          "frequency": [
+            5,
+            4
+          ],
+          "count": 1
+        },
+        {
+          "frequency": [
+            6,
+            5
+          ],
+          "count": 1
+        },
+        {
+          "frequency": [
+            7,
+            6
+          ],
+          "count": 1
+        }
+      ],
+      "actual_mod2_joint_X_parity_guess_probability": 0.5,
+      "actual_mod2_joint_X_total_secret_information_bits": 0.5,
+      "full_density_and_secret_enumeration_is_polynomial": false,
+      "fixture_is_a_native_high_probability_statement": false
+    },
+    {
+      "full_labels": [
+        [
+          4,
+          4
+        ]
+      ],
+      "original_phase_bits": 4,
+      "visibility_exact": "1",
+      "target_frequency": [
+        8
+      ],
+      "target_difference_ordered_pairs": 2,
+      "max_exact_parity_density_identity_residual": 3.061616997868383e-17,
+      "optimal_original_quantum_parity_guess_probability": 0.75,
+      "clean_subset_sum_overlap_optimal_parity_guess_probability": 0.75,
+      "subset_sum_occupancy_histogram": [
+        {
+          "frequency": [
+            0
+          ],
+          "count": 1
+        },
+        {
+          "frequency": [
+            4
+          ],
+          "count": 2
+        },
+        {
+          "frequency": [
+            8
+          ],
+          "count": 1
+        }
+      ],
+      "actual_mod2_joint_X_parity_guess_probability": 0.75,
+      "actual_mod2_joint_X_total_secret_information_bits": 0.8112781244591327,
+      "full_density_and_secret_enumeration_is_polynomial": false,
+      "fixture_is_a_native_high_probability_statement": false
+    }
+  ],
+  "native_copy_frontiers": [
+    {
+      "native_components": 8,
+      "original_phase_bits": 16,
+      "original_phase_qubits": 24,
+      "specified_target": "first-coordinate parity of the uniform original secret",
+      "all_algorithms_bit_advantage_power_of_two_upper_exponent": 105,
+      "fixed_target_exact_blindness_failure_probability_upper_power_exponent": 90,
+      "no_copy_advantage_exact": null,
+      "probability_any_low_secret_parity_is_accessible_upper_power_exponent": 82,
+      "required_prediction_advantage_exact": "1/16",
+      "minimum_original_copies_necessary_for_that_advantage": 138,
+      "requested_budget_not_excluded_by_this_necessary_bound": false,
+      "independent_original_Z_visibility_for_stronger_threshold": "7/8",
+      "clean_average_advantage_upper_formula": "min(1/2,(2^K-1)/(2*q^n))",
+      "independent_Z_average_advantage_upper_formula": "min(1/2,((1+v)^K-1)/(2*q^n))",
+      "stronger_noisy_threshold_requires_independent_original_Z_faults": true,
+      "arbitrary_secret_blind_joint_or_adaptive_measurements_covered": true,
+      "any_secret_blind_noise_channel_also_covered_by_data_processing": true,
+      "arbitrary_noise_data_processing_claim_is_for_clean_upper_bound_only": true,
+      "average_advantage_bound_uses_subset_sum_mass_not_only_target_existence": true,
+      "requires_source_labels_IID_uniform_and_secret_independent": true,
+      "positive_mutual_information_guarantees_this_bit_access": false,
+      "sufficient_copy_count_or_efficient_decoder_proved": false
+    },
+    {
+      "native_components": 32,
+      "original_phase_bits": 40,
+      "original_phase_qubits": 96,
+      "specified_target": "first-coordinate parity of the uniform original secret",
+      "all_algorithms_bit_advantage_power_of_two_upper_exponent": 1185,
+      "fixed_target_exact_blindness_failure_probability_upper_power_exponent": 1127,
+      "no_copy_advantage_exact": null,
+      "probability_any_low_secret_parity_is_accessible_upper_power_exponent": 1095,
+      "required_prediction_advantage_exact": "1/16",
+      "minimum_original_copies_necessary_for_that_advantage": 1307,
+      "requested_budget_not_excluded_by_this_necessary_bound": false,
+      "independent_original_Z_visibility_for_stronger_threshold": "31/32",
+      "clean_average_advantage_upper_formula": "min(1/2,(2^K-1)/(2*q^n))",
+      "independent_Z_average_advantage_upper_formula": "min(1/2,((1+v)^K-1)/(2*q^n))",
+      "stronger_noisy_threshold_requires_independent_original_Z_faults": true,
+      "arbitrary_secret_blind_joint_or_adaptive_measurements_covered": true,
+      "any_secret_blind_noise_channel_also_covered_by_data_processing": true,
+      "arbitrary_noise_data_processing_claim_is_for_clean_upper_bound_only": true,
+      "average_advantage_bound_uses_subset_sum_mass_not_only_target_existence": true,
+      "requires_source_labels_IID_uniform_and_secret_independent": true,
+      "positive_mutual_information_guarantees_this_bit_access": false,
+      "sufficient_copy_count_or_efficient_decoder_proved": false
+    },
+    {
+      "native_components": 32,
+      "original_phase_bits": 40,
+      "original_phase_qubits": 384,
+      "specified_target": "first-coordinate parity of the uniform original secret",
+      "all_algorithms_bit_advantage_power_of_two_upper_exponent": 897,
+      "fixed_target_exact_blindness_failure_probability_upper_power_exponent": 666,
+      "no_copy_advantage_exact": null,
+      "probability_any_low_secret_parity_is_accessible_upper_power_exponent": 634,
+      "required_prediction_advantage_exact": "1/16",
+      "minimum_original_copies_necessary_for_that_advantage": 1307,
+      "requested_budget_not_excluded_by_this_necessary_bound": false,
+      "independent_original_Z_visibility_for_stronger_threshold": "31/32",
+      "clean_average_advantage_upper_formula": "min(1/2,(2^K-1)/(2*q^n))",
+      "independent_Z_average_advantage_upper_formula": "min(1/2,((1+v)^K-1)/(2*q^n))",
+      "stronger_noisy_threshold_requires_independent_original_Z_faults": true,
+      "arbitrary_secret_blind_joint_or_adaptive_measurements_covered": true,
+      "any_secret_blind_noise_channel_also_covered_by_data_processing": true,
+      "arbitrary_noise_data_processing_claim_is_for_clean_upper_bound_only": true,
+      "average_advantage_bound_uses_subset_sum_mass_not_only_target_existence": true,
+      "requires_source_labels_IID_uniform_and_secret_independent": true,
+      "positive_mutual_information_guarantees_this_bit_access": false,
+      "sufficient_copy_count_or_efficient_decoder_proved": false
+    },
+    {
+      "native_components": 64,
+      "original_phase_bits": 72,
+      "original_phase_qubits": 192,
+      "specified_target": "first-coordinate parity of the uniform original secret",
+      "all_algorithms_bit_advantage_power_of_two_upper_exponent": 4417,
+      "fixed_target_exact_blindness_failure_probability_upper_power_exponent": 4301,
+      "no_copy_advantage_exact": null,
+      "probability_any_low_secret_parity_is_accessible_upper_power_exponent": 4237,
+      "required_prediction_advantage_exact": "1/16",
+      "minimum_original_copies_necessary_for_that_advantage": 4658,
+      "requested_budget_not_excluded_by_this_necessary_bound": false,
+      "independent_original_Z_visibility_for_stronger_threshold": "63/64",
+      "clean_average_advantage_upper_formula": "min(1/2,(2^K-1)/(2*q^n))",
+      "independent_Z_average_advantage_upper_formula": "min(1/2,((1+v)^K-1)/(2*q^n))",
+      "stronger_noisy_threshold_requires_independent_original_Z_faults": true,
+      "arbitrary_secret_blind_joint_or_adaptive_measurements_covered": true,
+      "any_secret_blind_noise_channel_also_covered_by_data_processing": true,
+      "arbitrary_noise_data_processing_claim_is_for_clean_upper_bound_only": true,
+      "average_advantage_bound_uses_subset_sum_mass_not_only_target_existence": true,
+      "requires_source_labels_IID_uniform_and_secret_independent": true,
+      "positive_mutual_information_guarantees_this_bit_access": false,
+      "sufficient_copy_count_or_efficient_decoder_proved": false
+    },
+    {
+      "native_components": 64,
+      "original_phase_bits": 72,
+      "original_phase_qubits": 1536,
+      "specified_target": "first-coordinate parity of the uniform original secret",
+      "all_algorithms_bit_advantage_power_of_two_upper_exponent": 3073,
+      "fixed_target_exact_blindness_failure_probability_upper_power_exponent": 2151,
+      "no_copy_advantage_exact": null,
+      "probability_any_low_secret_parity_is_accessible_upper_power_exponent": 2087,
+      "required_prediction_advantage_exact": "1/16",
+      "minimum_original_copies_necessary_for_that_advantage": 4658,
+      "requested_budget_not_excluded_by_this_necessary_bound": false,
+      "independent_original_Z_visibility_for_stronger_threshold": "63/64",
+      "clean_average_advantage_upper_formula": "min(1/2,(2^K-1)/(2*q^n))",
+      "independent_Z_average_advantage_upper_formula": "min(1/2,((1+v)^K-1)/(2*q^n))",
+      "stronger_noisy_threshold_requires_independent_original_Z_faults": true,
+      "arbitrary_secret_blind_joint_or_adaptive_measurements_covered": true,
+      "any_secret_blind_noise_channel_also_covered_by_data_processing": true,
+      "arbitrary_noise_data_processing_claim_is_for_clean_upper_bound_only": true,
+      "average_advantage_bound_uses_subset_sum_mass_not_only_target_existence": true,
+      "requires_source_labels_IID_uniform_and_secret_independent": true,
+      "positive_mutual_information_guarantees_this_bit_access": false,
+      "sufficient_copy_count_or_efficient_decoder_proved": false
+    },
+    {
+      "native_components": 128,
+      "original_phase_bits": 136,
+      "original_phase_qubits": 384,
+      "specified_target": "first-coordinate parity of the uniform original secret",
+      "all_algorithms_bit_advantage_power_of_two_upper_exponent": 17025,
+      "fixed_target_exact_blindness_failure_probability_upper_power_exponent": 16794,
+      "no_copy_advantage_exact": null,
+      "probability_any_low_secret_parity_is_accessible_upper_power_exponent": 16666,
+      "required_prediction_advantage_exact": "1/16",
+      "minimum_original_copies_necessary_for_that_advantage": 17504,
+      "requested_budget_not_excluded_by_this_necessary_bound": false,
+      "independent_original_Z_visibility_for_stronger_threshold": "127/128",
+      "clean_average_advantage_upper_formula": "min(1/2,(2^K-1)/(2*q^n))",
+      "independent_Z_average_advantage_upper_formula": "min(1/2,((1+v)^K-1)/(2*q^n))",
+      "stronger_noisy_threshold_requires_independent_original_Z_faults": true,
+      "arbitrary_secret_blind_joint_or_adaptive_measurements_covered": true,
+      "any_secret_blind_noise_channel_also_covered_by_data_processing": true,
+      "arbitrary_noise_data_processing_claim_is_for_clean_upper_bound_only": true,
+      "average_advantage_bound_uses_subset_sum_mass_not_only_target_existence": true,
+      "requires_source_labels_IID_uniform_and_secret_independent": true,
+      "positive_mutual_information_guarantees_this_bit_access": false,
+      "sufficient_copy_count_or_efficient_decoder_proved": false
+    },
+    {
+      "native_components": 128,
+      "original_phase_bits": 136,
+      "original_phase_qubits": 6144,
+      "specified_target": "first-coordinate parity of the uniform original secret",
+      "all_algorithms_bit_advantage_power_of_two_upper_exponent": 11265,
+      "fixed_target_exact_blindness_failure_probability_upper_power_exponent": 7578,
+      "no_copy_advantage_exact": null,
+      "probability_any_low_secret_parity_is_accessible_upper_power_exponent": 7450,
+      "required_prediction_advantage_exact": "1/16",
+      "minimum_original_copies_necessary_for_that_advantage": 17504,
+      "requested_budget_not_excluded_by_this_necessary_bound": false,
+      "independent_original_Z_visibility_for_stronger_threshold": "127/128",
+      "clean_average_advantage_upper_formula": "min(1/2,(2^K-1)/(2*q^n))",
+      "independent_Z_average_advantage_upper_formula": "min(1/2,((1+v)^K-1)/(2*q^n))",
+      "stronger_noisy_threshold_requires_independent_original_Z_faults": true,
+      "arbitrary_secret_blind_joint_or_adaptive_measurements_covered": true,
+      "any_secret_blind_noise_channel_also_covered_by_data_processing": true,
+      "arbitrary_noise_data_processing_claim_is_for_clean_upper_bound_only": true,
+      "average_advantage_bound_uses_subset_sum_mass_not_only_target_existence": true,
+      "requires_source_labels_IID_uniform_and_secret_independent": true,
+      "positive_mutual_information_guarantees_this_bit_access": false,
+      "sufficient_copy_count_or_efficient_decoder_proved": false
+    }
+  ],
+  "conditional_resource_frontiers": [
+    {
+      "original_phase_bits": 16,
+      "maximum_native_components": 8,
+      "status": "CONDITIONAL_ON_UNIMPLEMENTED_NATIVE_PARITY_PREDICTOR",
+      "required_native_average_prediction_advantage_exact": "1/16",
+      "assumed_native_sample_budget_per_invocation": 256,
+      "necessary_sample_budget_at_largest_dimension": 138,
+      "minimum_predictor_components": 2,
+      "polynomial_implication_requires_that_threshold_fixed_independently_of_input_size": true,
+      "native_noise_matching": "inject_independent",
+      "adaptive_bit_stages": 7,
+      "fresh_independent_masked_invocations_per_stage": 2817,
+      "native_predictor_invocations_upper": 19719,
+      "fresh_clean_scalar_phase_samples_upper": 5061888,
+      "global_private_mask_random_bits_upper": 2524032,
+      "auxiliary_label_random_bits_upper": 565383168,
+      "optional_noise_coin_random_bits_expected_upper_per_sample": 8,
+      "noise_coin_rejection_attempt_cap_per_sample": 41,
+      "noise_coin_random_bits_worst_case_upper_per_sample": 164,
+      "noise_coin_cap_abort_probability_upper_exact": "19773/8589934592",
+      "native_predictor_own_runtime_and_randomness_remain_a_hypothesis": true,
+      "known_control_classical_arithmetic_per_sample_schoolbook_bit_cost": "O(n*t^2), plus precision-dependent finite-gate synthesis",
+      "advantage_lower_bound_required_at_every_stage_and_native_dimension": true,
+      "mask_samples_internal_randomness_and_workspace_reset_per_invocation_required": true,
+      "known_single_wire_rotations_upper": 10123776,
+      "per_rotation_diamond_error_power_of_two_upper_exponent": 42,
+      "finite_gate_synthesis_must_be_paid_not_executed": true,
+      "terminal_suffix_bits": 9,
+      "terminal_candidate_count": 512,
+      "fresh_clean_verifier_samples_per_candidate": 27,
+      "overall_failure_upper_exact_IF_predictor_hypothesis": "43293/4294967296",
+      "overall_failure_target_exact": "1/65536",
+      "correct_scalar_recovery_executed": false,
+      "native_predictor_implemented_or_certified": false,
+      "coherent_label_oracle_or_purifying_preparation_environment_supplied": false,
+      "new_algorithm_or_speedup_established": false
+    },
+    {
+      "original_phase_bits": 32,
+      "maximum_native_components": 24,
+      "status": "CONDITIONAL_ON_UNIMPLEMENTED_NATIVE_PARITY_PREDICTOR",
+      "required_native_average_prediction_advantage_exact": "1/16",
+      "assumed_native_sample_budget_per_invocation": 1536,
+      "necessary_sample_budget_at_largest_dimension": 789,
+      "minimum_predictor_components": 2,
+      "polynomial_implication_requires_that_threshold_fixed_independently_of_input_size": true,
+      "native_noise_matching": "inject_independent",
+      "adaptive_bit_stages": 23,
+      "fresh_independent_masked_invocations_per_stage": 2945,
+      "native_predictor_invocations_upper": 67735,
+      "fresh_clean_scalar_phase_samples_upper": 104054784,
+      "global_private_mask_random_bits_upper": 52020480,
+      "auxiliary_label_random_bits_upper": 76574146560,
+      "optional_noise_coin_random_bits_expected_upper_per_sample": 12,
+      "noise_coin_rejection_attempt_cap_per_sample": 45,
+      "noise_coin_random_bits_worst_case_upper_per_sample": 270,
+      "noise_coin_cap_abort_probability_upper_exact": "6351/2147483648",
+      "native_predictor_own_runtime_and_randomness_remain_a_hypothesis": true,
+      "known_control_classical_arithmetic_per_sample_schoolbook_bit_cost": "O(n*t^2), plus precision-dependent finite-gate synthesis",
+      "advantage_lower_bound_required_at_every_stage_and_native_dimension": true,
+      "mask_samples_internal_randomness_and_workspace_reset_per_invocation_required": true,
+      "known_single_wire_rotations_upper": 208109568,
+      "per_rotation_diamond_error_power_of_two_upper_exponent": 46,
+      "finite_gate_synthesis_must_be_paid_not_executed": true,
+      "terminal_suffix_bits": 9,
+      "terminal_candidate_count": 512,
+      "fresh_clean_verifier_samples_per_candidate": 27,
+      "overall_failure_upper_exact_IF_predictor_hypothesis": "13383/1073741824",
+      "overall_failure_target_exact": "1/65536",
+      "correct_scalar_recovery_executed": false,
+      "native_predictor_implemented_or_certified": false,
+      "coherent_label_oracle_or_purifying_preparation_environment_supplied": false,
+      "new_algorithm_or_speedup_established": false
+    },
+    {
+      "original_phase_bits": 64,
+      "maximum_native_components": 56,
+      "status": "CONDITIONAL_ON_UNIMPLEMENTED_NATIVE_PARITY_PREDICTOR",
+      "required_native_average_prediction_advantage_exact": "1/16",
+      "assumed_native_sample_budget_per_invocation": 7168,
+      "necessary_sample_budget_at_largest_dimension": 3628,
+      "minimum_predictor_components": 2,
+      "polynomial_implication_requires_that_threshold_fixed_independently_of_input_size": true,
+      "native_noise_matching": "inject_independent",
+      "adaptive_bit_stages": 55,
+      "fresh_independent_masked_invocations_per_stage": 3073,
+      "native_predictor_invocations_upper": 169015,
+      "fresh_clean_scalar_phase_samples_upper": 1211513344,
+      "global_private_mask_random_bits_upper": 605749760,
+      "auxiliary_label_random_bits_upper": 4264478310400,
+      "optional_noise_coin_random_bits_expected_upper_per_sample": 14,
+      "noise_coin_rejection_attempt_cap_per_sample": 49,
+      "noise_coin_random_bits_worst_case_upper_per_sample": 343,
+      "noise_coin_cap_abort_probability_upper_exact": "2366237/1099511627776",
+      "native_predictor_own_runtime_and_randomness_remain_a_hypothesis": true,
+      "known_control_classical_arithmetic_per_sample_schoolbook_bit_cost": "O(n*t^2), plus precision-dependent finite-gate synthesis",
+      "advantage_lower_bound_required_at_every_stage_and_native_dimension": true,
+      "mask_samples_internal_randomness_and_workspace_reset_per_invocation_required": true,
+      "known_single_wire_rotations_upper": 2423026688,
+      "per_rotation_diamond_error_power_of_two_upper_exponent": 50,
+      "finite_gate_synthesis_must_be_paid_not_executed": true,
+      "terminal_suffix_bits": 9,
+      "terminal_candidate_count": 512,
+      "fresh_clean_verifier_samples_per_candidate": 27,
+      "overall_failure_upper_exact_IF_predictor_hypothesis": "6261533/549755813888",
+      "overall_failure_target_exact": "1/65536",
+      "correct_scalar_recovery_executed": false,
+      "native_predictor_implemented_or_certified": false,
+      "coherent_label_oracle_or_purifying_preparation_environment_supplied": false,
+      "new_algorithm_or_speedup_established": false
+    },
+    {
+      "original_phase_bits": 128,
+      "maximum_native_components": 120,
+      "status": "CONDITIONAL_ON_UNIMPLEMENTED_NATIVE_PARITY_PREDICTOR",
+      "required_native_average_prediction_advantage_exact": "1/16",
+      "assumed_native_sample_budget_per_invocation": 30720,
+      "necessary_sample_budget_at_largest_dimension": 15451,
+      "minimum_predictor_components": 2,
+      "polynomial_implication_requires_that_threshold_fixed_independently_of_input_size": true,
+      "native_noise_matching": "inject_independent",
+      "adaptive_bit_stages": 119,
+      "fresh_independent_masked_invocations_per_stage": 3201,
+      "native_predictor_invocations_upper": 380919,
+      "fresh_clean_scalar_phase_samples_upper": 11701845504,
+      "global_private_mask_random_bits_upper": 5850915840,
+      "auxiliary_label_random_bits_upper": 178242300149760,
+      "optional_noise_coin_random_bits_expected_upper_per_sample": 16,
+      "noise_coin_rejection_attempt_cap_per_sample": 52,
+      "noise_coin_random_bits_worst_case_upper_per_sample": 416,
+      "noise_coin_cap_abort_probability_upper_exact": "22855167/8796093022208",
+      "native_predictor_own_runtime_and_randomness_remain_a_hypothesis": true,
+      "known_control_classical_arithmetic_per_sample_schoolbook_bit_cost": "O(n*t^2), plus precision-dependent finite-gate synthesis",
+      "advantage_lower_bound_required_at_every_stage_and_native_dimension": true,
+      "mask_samples_internal_randomness_and_workspace_reset_per_invocation_required": true,
+      "known_single_wire_rotations_upper": 23403691008,
+      "per_rotation_diamond_error_power_of_two_upper_exponent": 53,
+      "finite_gate_synthesis_must_be_paid_not_executed": true,
+      "terminal_suffix_bits": 9,
+      "terminal_candidate_count": 512,
+      "fresh_clean_verifier_samples_per_candidate": 27,
+      "overall_failure_upper_exact_IF_predictor_hypothesis": "55197183/4398046511104",
+      "overall_failure_target_exact": "1/65536",
+      "correct_scalar_recovery_executed": false,
+      "native_predictor_implemented_or_certified": false,
+      "coherent_label_oracle_or_purifying_preparation_environment_supplied": false,
+      "new_algorithm_or_speedup_established": false
+    }
+  ],
+  "large_only_predictor_tail_cost_countercontrol": {
+    "original_phase_bits": 80,
+    "maximum_native_components": 72,
+    "status": "CONDITIONAL_ON_UNIMPLEMENTED_NATIVE_PARITY_PREDICTOR",
+    "required_native_average_prediction_advantage_exact": "1/16",
+    "assumed_native_sample_budget_per_invocation": 11520,
+    "necessary_sample_budget_at_largest_dimension": 5816,
+    "minimum_predictor_components": 64,
+    "polynomial_implication_requires_that_threshold_fixed_independently_of_input_size": true,
+    "native_noise_matching": "inject_independent",
+    "adaptive_bit_stages": 9,
+    "fresh_independent_masked_invocations_per_stage": 3201,
+    "native_predictor_invocations_upper": 28809,
+    "fresh_clean_scalar_phase_samples_upper": 210145308487699543889152,
+    "global_private_mask_random_bits_upper": 165939840,
+    "auxiliary_label_random_bits_upper": 1885076582400,
+    "optional_noise_coin_random_bits_expected_upper_per_sample": 16,
+    "noise_coin_rejection_attempt_cap_per_sample": 96,
+    "noise_coin_random_bits_worst_case_upper_per_sample": 768,
+    "noise_coin_cap_abort_probability_upper_exact": "820880111280076343317/309485009821345068724781056",
+    "native_predictor_own_runtime_and_randomness_remain_a_hypothesis": true,
+    "known_control_classical_arithmetic_per_sample_schoolbook_bit_cost": "O(n*t^2), plus precision-dependent finite-gate synthesis",
+    "advantage_lower_bound_required_at_every_stage_and_native_dimension": true,
+    "mask_samples_internal_randomness_and_workspace_reset_per_invocation_required": true,
+    "known_single_wire_rotations_upper": 420290616975399087778304,
+    "per_rotation_diamond_error_power_of_two_upper_exponent": 97,
+    "finite_gate_synthesis_must_be_paid_not_executed": true,
+    "terminal_suffix_bits": 71,
+    "terminal_candidate_count": 2361183241434822606848,
+    "fresh_clean_verifier_samples_per_candidate": 89,
+    "overall_failure_upper_exact_IF_predictor_hypothesis": "5810724383218513944659/618970019642690137449562112",
+    "overall_failure_target_exact": "1/65536",
+    "correct_scalar_recovery_executed": false,
+    "native_predictor_implemented_or_certified": false,
+    "coherent_label_oracle_or_purifying_preparation_environment_supplied": false,
+    "new_algorithm_or_speedup_established": false
+  },
+  "impossible_single_packet_predictor_countercontrol": {
+    "original_phase_bits": 72,
+    "maximum_native_components": 64,
+    "status": "INCONSISTENT_NATIVE_PREDICTOR_COPY_BUDGET",
+    "required_native_average_prediction_advantage_exact": "1/16",
+    "assumed_native_sample_budget_per_invocation": 192,
+    "necessary_sample_budget_at_largest_dimension": 4658,
+    "minimum_predictor_components": 2,
+    "polynomial_implication_requires_that_threshold_fixed_independently_of_input_size": true,
+    "native_noise_matching": "inject_independent",
+    "adaptive_bit_stages": 63,
+    "fresh_independent_masked_invocations_per_stage": 3201,
+    "native_predictor_invocations_upper": 201663,
+    "fresh_clean_scalar_phase_samples_upper": 38733120,
+    "global_private_mask_random_bits_upper": 929263104,
+    "auxiliary_label_random_bits_upper": 175630726656,
+    "optional_noise_coin_random_bits_expected_upper_per_sample": 14,
+    "noise_coin_rejection_attempt_cap_per_sample": 44,
+    "noise_coin_random_bits_worst_case_upper_per_sample": 308,
+    "noise_coin_cap_abort_probability_upper_exact": "605205/274877906944",
+    "native_predictor_own_runtime_and_randomness_remain_a_hypothesis": true,
+    "known_control_classical_arithmetic_per_sample_schoolbook_bit_cost": "O(n*t^2), plus precision-dependent finite-gate synthesis",
+    "advantage_lower_bound_required_at_every_stage_and_native_dimension": true,
+    "mask_samples_internal_randomness_and_workspace_reset_per_invocation_required": true,
+    "known_single_wire_rotations_upper": 77466240,
+    "per_rotation_diamond_error_power_of_two_upper_exponent": 45,
+    "finite_gate_synthesis_must_be_paid_not_executed": true,
+    "terminal_suffix_bits": 9,
+    "terminal_candidate_count": 512,
+    "fresh_clean_verifier_samples_per_candidate": 27,
+    "overall_failure_upper_exact_IF_predictor_hypothesis": "1386517/137438953472",
+    "overall_failure_target_exact": "1/65536",
+    "correct_scalar_recovery_executed": false,
+    "native_predictor_implemented_or_certified": false,
+    "coherent_label_oracle_or_purifying_preparation_environment_supplied": false,
+    "new_algorithm_or_speedup_established": false
+  },
+  "first_bit_prediction_not_full_vector_recovery_is_sufficient": true,
+  "positive_mutual_information_instantiates_predictor": false,
+  "accepted_speedup_candidate": false,
+  "novelty_claim": false,
+  "native_predictor_implemented_or_certified": false,
+  "actual_quantum_source_or_recovery_executed": false
+}

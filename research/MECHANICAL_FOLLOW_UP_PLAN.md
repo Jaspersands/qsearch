@@ -1,5 +1,545 @@
 # Mechanical Follow-Up Implementation Plan (pass 2)
 
+## Current Research Override
+
+NEW sharper classical bound: `python theorems/prime_character_exterior_bound.py
+--write`; read PRIME_CHARACTER_EXTERIOR_BOUND.md. The previous "trace sharpening
+unimplemented" instruction below is superseded. Use the actual Morse solver's
+bound_method="exterior"; it retains the twist bound when stronger and must
+still reject non-Morse or zero-bound inputs. Degree76/modulus58 threshold is
+now169bits versus756; a192-bit declared field lift preserves the127 original
+shifts/orientations and gives strict127/127 after24 fibers. The original61-bit
+large source still has zero probability bound. Preserve all local-review,
+different-field, seeded-versus-uniform, source/hash and charged-enumeration
+flags. Do not materialize exterior-power matrices or a field table for large
+inputs; rank sums are just big integers. Optional CLI exposure remains routine
+work. Main-model next science should change the low-rate degree barrier or
+compare an independent constructive mechanism, not refine high-rate constants.
+
+CORRECTED DCP claim: the multi-packet local-Helstrom > X hierarchy was NOT
+universal. Preserve the mod64,headers16/17,secret1 pure-state counterexample
+in the producer, JSON, Python tests and independent JS. Do not regenerate the
+old overclaim from the positive two/three-packet examples. Optimal one-wire
+binary decisions need not give the optimal product experiment. No central
+candidate/negative/proof promotion or GPT Git work.
+
+NEW fixed-input classical source: `python theorems/prime_character_morse_attack.py
+--write`. Read PRIME_CHARACTER_MORSE_ATTACK.md. Reuse exact unit-progression
+preparation, squarefree critical-point AND critical-value resultant checks,
+the explicit tame genus/twist bound, field guards, strict norm witnesses and
+the declared1279-bit field lift. Do not turn the original61-bit large geometry
+certificates into probability claims: their bound is ZERO. The large prime
+lift preserves shifts/orientations but is a DIFFERENT field/problem, explicitly
+recorded as such. A fixed-degree Bank-BarySoroker-Rosenzweig asymptotic alone
+does not supply a uniform algorithm; preserve the explicit local proof/status.
+Original prime/norm artifacts were regenerated after removing the arbitrary
+127-bit prime cap and extending strict rotations to either first coset. Exact
+large IID-population counts use fmpz/fmpq decimal rendering; do not silently
+round them or trip Python's decimal-int limit by converting through int(str).
+No central candidate/negative/proof promotion or GPT Git work. Routine optional
+CLI/EXP bindings can expose this producer; they must retain the source/hash,
+randomness, field-size and local-review flags. The possible exterior-power
+trace sharpening is unimplemented mathematics, not a delegated wiring task.
+
+NEW substantive classical attack: `python theorems/prime_character_norm_attack.py
+--write`. Read PRIME_CHARACTER_NORM_ATTACK.md. Both original K77 mixed inputs
+are now perfect127/127, with strict siblings, from a norm over Fp2. Keep the
+original prime-character producer/artifact unchanged as the historical source;
+the new tests verify identical input specs. Preserve all factorization failures,
+square-leading pencil parameters, exact norm checks, strict Cayley rotations,
+independent native witnesses and the all23-parameter monic-pencil counterexample
+with its expanded-family repair. The IID first-trial rational probability
+bound is NOT a fixed-instance success bound or a PRNG certificate; never
+amplify it or randomize a fixed input by RS translations under an IID label.
+K39 remains outside the sufficient degree budget, not proved hard. Optional
+CLI/EXP bindings should reuse this producer and retain every honesty field.
+No new central candidate/negative/proof is requested, and no GPT Git work.
+Next scientific work is a structural norm-frequency argument/counterexample
+for the actual expanded family, not more budget/seed scans or new plumbing.
+
+NEW actual coherent stage: `python theorems/coherent_bpqm_erasure.py --write`.
+Read COHERENT_BPQM_ERASURE.md and the local contract. Optional CLI/EXP exposure
+should reuse this producer, NOT rebuild its circuits. Preserve raw parallel
+edges, exact good-restriction left inverse/rank-failure witnesses, retained
+root records, all source/XOR/adjoints and independent complex-history tests.
+The finite cyclic readout is NOT exact, and large socket plans are NOT quantum
+executions or word/TV estimates. Genie's exact word-error floor is NOT a
+sampling lower bound; duplicate factors have an exact weighted classical
+reduction that does NOT retain the regular common-overlap ensemble. Preserve
+full-root versus extrinsic-edge policies and exponential-herald-table flags.
+No central candidate, active negative, accepted proof or speedup is requested.
+Useful implementation work is the already specified uniform phase-correct
+reliability-register compiler, not more controlled tables/order/seed scans.
+Next main-model research must remove a new scientific blocker, not reimplement
+another known decoder stage or add routine CLI plumbing.
+
+Verification milestone for that stage:305 selected connected tests pass,
+including30 focused erasure controls, not a full-repo regression. Upstream
+Qiskit/control and IBM transpiler-plugin deprecations remain; do not confuse
+them with a failed scientific test or perform a broad framework migration
+as main-model research. The existing frontier contract now says bounded
+finite decoder implemented=true, uniform reliable decoder implemented=false.
+
+SUPERSEDING arithmetic decision: read JACOBI_KNOWN_NORM_REDUCTION.md; run
+`python theorems/jacobi_known_norm_reduction.py --write`. Published
+Lenstra-Silverberg Theorem1.3 supplies classical polynomial-time recovery
+from the known ideal AND relative norm; it is not generic PIP. Both exact
+theorem inputs are constructed for six small controls and51 large public
+profiles, without LLL/truth/phase. Keep the distinction between that imported
+theorem and the unimplemented GS recovery algorithm. The old uniform-LLL
+geometry question is superseded for this prime-conductor speedup target.
+Optional exposure must preserve local-review-pending/nonimplementation
+flags. Do not create/promote central claims, build a mock GS oracle, rerun
+prime scans or invest in known quantum PIP for this proposal. Next scientific
+work needs an independent end-to-end mechanism, not mechanical GS reimplementation.
+
+New arithmetic producer: jacobi_surface_reconstruction.py --write. Read
+JACOBI_SURFACE_RECONSTRUCTION.md. Preserve14 native surface counts,1032
+symmetric triple records, positive-versus-inverse prime convention, h+v local
+digits, ambiguous small-p residue rejection and the CLASSICAL public61-bit
+certificate. LLL+prime-primary normalization uses no true sum or phase; it
+is prior-art-style classical arithmetic, not a new quantum routine. Keep
+failed LLL rows UNKNOWN, no scalar-gain/hardness promotion, and fixed-order
+versus growing-conductor costs distinct. The reported quantum PIP/unit/phase
+dependencies are NOT IMPLEMENTED; do not replace them with exhaustive sums
+and label that quantum. Optional qsearch exposure must reuse this producer
+and honesty flags. The generator-geometry next step is now SUPERSEDED by the
+known-norm theorem comparison above, not more size scans or plumbing. No candidate,
+central negative or accepted-proof update is requested.
+
+New independent scientific test: hermitian_qutrit_pilot.py --write. Preserve
+HERMITIAN_QUTRIT_PILOT.md, the local contract, exact coefficient/rank witnesses
+and actual Bell/charge-MPS physics. The known directional pilot is NOT a
+Hermitian source; A^3 scalar is not H=A+A^dagger. The degree2 rank4 witness
+only rejects a bond3 transfer, not polynomial bonds or alternative gauges.
+Pilot alpha(P(H))=P(H)|0>; readout preserves energy. Constructible controlled-
+precision pilot MPSs have a matched classical energy contraction, without
+asserting that arbitrary quantum sources or optimum energies are classical.
+Retain56 rank records, three charged native filters and the NONDEGENERATE
+64-site product source (last character magnitude>1e-4, not a filter pilot).
+No new central candidate/negative. Optional qsearch/EXP exposure should reuse
+the producer; do not promote assumptions or build new infrastructure. Next
+main-model work is a named constructive source/code mechanism, not wiring.
+
+New independent scientific result: hdqi_predecessor_uniform.py --write.
+Read HDQI_PREDECESSOR_UNIFORM.md. The validated independent-label physical
+Pauli input has an exact classical optimum-energy radius recurrence, rational
+outward certificates and bounded executed canonical ground circuits. Preserve
+the dependent-triangle and path-P4 rejection, source SHA and all512-term data;
+that large certificate is NOT a512-qubit quantum run. No Gibbs/output-sampling
+dequantization, native Clifford transport, compiled HDQI or new algorithm is
+claimed. Optional qsearch exposure should just reuse this producer/artifact;
+do not create/promote a candidate or general negative. Routine wiring is
+Gemini's, not a reason for another main-model subsystem. Next science needs
+a specified dependent-label decoder/central-constraint calculation or a real
+pilot construction outside predecessor uniformity.
+
+2026-10-17 completed integrity/reduction pass: preserve Bell/sieve/sine V2
+sources, contracts, regenerated artifacts and adversarial controls. Bell now
+has a REAL one-random-X-sample full-transcript simulator, not a chosen-header
+assertion. Synthetic IID raw headers and fixed known coherences are essential;
+this is not a classical DCP solver or a fixed/selected-header simulator.
+Sieve now propagates entire rational pool distributions; NEVER restore
+f(E[M]) or call fresh IID rebucketing a proved DCP law. Sine cubic decay uses
+principal distance from2*pi*Z; preserve its enhanced aliased-main-lobe case.
+All local proof statuses remain REVIEW PENDING. No new candidate/negative.
+
+Confirmed small Gemini wiring task: global certificate --flags added in
+qsearch.main cannot run standalone because build_parser requires command.
+Fix actual standalone invocation, retain no-argument usage errors, reject
+ambiguous combinations, and add CLI tests. Do not use an unrelated command
+silently as the long-term workaround. During this pass --flag validate is a
+temporary dispatcher invocation ONLY; it does not execute validation.
+The independent plain qsearch validate run passes. Do not add more theorem
+modules just to make new CLI entries; next main-model task is constructive.
+
+NEW completed science: conjugate_chirp_repair.py --write and its six native
+controls, local rejected-hypothesis contract and exact symbolic bounds. Read
+CONJUGATE_CHIRP_REPAIR.md. Preserve the distinction between successful
+BILINEAR label erasure and failed ORIGINAL quadratic state preparation.
+Some small original-score means improve; do not infer a no-go from fidelity.
+The diagonal expected-score bound assumes standard external Weil estimates
+and is uniform over input q. A SEPARATE joint-moment bound now controls the
+same diagonal readout's constant-gap tails; do not infer it from the mean
+or extend it to full TV/other quantum algorithms. Preserve the distinct
+certificates, their explicit logp scaling premise and review-pending status.
+No new decoder-depth/weight sweep or promotion is requested. Optional CLI
+exposure should reuse this producer/report without creating a candidate.
+
+Strict OPI completion is implemented in the SAME prime-character producer:
+include_zero is a required canonical specification field, not display text.
+Preserve ten new strict controls, all base/final roots and public avoidance
+costs, one-degree slack, exact densities and the small tight-boundary failure.
+Do not restore strict zero-residual interpolation, enable the zero-including
+jet on strict inputs, or accept diagonal zero roots. The original24 sources
+and repair data are retained. No new candidate/negative or quantum discovery.
+
+The adaptive-hybrid-peeling v1 dominance claim is also RETRACTED. Its existing
+CLI now returns native public-CNOT/separable-readout controls and exact
+flagged-erasure accounting, not gamma^h classical sample access or a16x
+universal DCP penalty. Preserve its v2 contract/tests/artifact. Do not promote
+these finite physical controls to a decoder or new negative. No new wiring
+or candidate admission is needed for this correction.
+
+NEW producer: `python theorems/prime_character_opi.py --write`. Read
+PRIME_CHARACTER_OPI.md. The common-coset completion, quadratic jets, ADAPTIVE
+root-value repair and diagonal/projective guards are implemented. Do not
+queue those as still-missing research. Optional CLI exposure should reuse
+the producer/report. Preserve prime vs extension fields, including-zero list
+density, all24 sources/344 initial witnesses, all1934 repair proposals and
+native coefficients, exact degree/cap statuses and paid counters. No branch
+of the SCL expression above its threshold, finite best-vs-mean advantage,
+random-oracle hardness transfer, homogeneous-at-infinity solution or sampled
+local optimum is valid. Do not auto-admit a candidate or general negative.
+Next scientific work needs a stronger structural solver or real quantum
+decoder, not seed/degree/budget scans. Routine wiring/backups remain Gemini's.
+
+2026-10-17 integrity correction: the overlapping-CNOT and coherent-syndrome
+v1 claims are RETRACTED. Preserve their v2 contracts/artifacts and adversarial
+tests. Do not copy old termwise-necessity or coherent-branch-average upper
+bounds into a registry, summary or new theorem. No new negative was admitted.
+Their existing CLI dispatch already returns the corrected producers.
+
+Fourth producer: `python theorems/polar_source_design.py --write`, plus the
+separate parameterized large report from
+`python theorems/polar_source_design.py --length 32768 --grid 256 --power 3 --write`.
+Read POLAR_SOURCE_DESIGN.md. Preserve the full F/all upper means, nonuniform
+mesh, root-versus-squared fidelity convention and setup work. Do not repeat
+the billion-pair run per CI invocation; its artifact audit is separate from
+small independent native controls. N32768 half rate now has classical average
+TV<=0.010221. This is NOT worst-sign or all-code dequantization. No quantum
+polar receiver should be queued on a random-sign SC-fidelity advantage premise.
+Optional native large draws require charging exact arithmetic and the O(N^2)
+sampler/check-generation work; they have NOT already been run. Any optimized
+SC implementation must retain exact/controlled rational probabilities and
+the current all-prefix native tests. CLI exposure and regression stay mechanical.
+
+Third producer: `python theorems/polar_conditional_sampler.py --write`.
+Read POLAR_CONDITIONAL_SAMPLER.md. Preserve the exact SC recursion, native
+signed Gibbs outputs, all-syndrome TV results and distinction between prefix
+exactness and general average-case bounds. No future-frozen conditioning is
+silently available. Full source-design/density tables are calibration-only;
+large samples use none. Check channel/source conventions before wiring a
+quantum polar receiver. CLI exposure/regression is mechanical; no generic
+negative, quantum decoder or all-sign certificate is implied by these results.
+
+Second producer: `python theorems/opi_filter_tail_certificate.py --write`.
+Read OPI_FILTER_TAIL_CERTIFICATE.md. Run after the cubic artifact, preserve
+its input hash, exact moment cutoff, dual polynomials and pointwise verifier.
+N127 degree19 still guarantees a positive104 tail: a classical best witness
+does NOT kill that tail. No broad negative entry, no nominal gate comparison,
+no weighted-binomial surrogate presented as the native score distribution.
+An LP failure returns a trivial certificate, not evidence of hardness.
+
+2026-10-17: compact cubic producer is implemented, NOT a task to rederive.
+Read EXPLICIT_CUBIC_OPI.md. Optional CLI wiring should expose
+`python theorems/explicit_cubic_opi.py --write` and its existing report, not
+create new candidates. Keep all32 trials, field/polynomial conventions,
+coefficient descriptions, resource counts, UNKNOWN caps and every witness.
+Known DQI is a theoretical score reference, not an executed quantum decoder.
+The no-large-flat bound is geometric only; the blind-pool IID suffix bound
+does not cover adaptive repairs or all classical algorithms. Best scores
+105/127 and104/127 remove the finite mean comparison, not an asymptotic gap.
+Do not implement a batch of extra seed/degree scans as research progress.
+Production regression and rare backups remain mechanical work; no GPT commit.
+
+LATEST explicit-OPI repair is implemented in its existing producer. Preserve
+all neighborhoods/caps, checked local-fixed-point semantics and independent
+native witnesses. Both127-position mean-score signals disappear after repair;
+this is not asymptotic dequantization or a quantum-tail comparison. The fixed
+flat solver is now executable too. Do not queue these as still-missing tasks,
+or propose dense symmetric e3 as a hard cubic replacement (e3=e1*e2).
+
+NEW independent producer: `python theorems/explicit_quadratic_opi.py --write`.
+Read EXPLICIT_QUADRATIC_OPI.md. These are compact EXPLICIT balanced predicates,
+not folded random oracles. Known DQI score reference is theoretical, not an
+executed quantum decoder. Preserve strict distance, field-basis, paid-restart,
+native-witness, IID-source and UNKNOWN-solver flags. The high-rate rank bound
+is a scoped classical derivation, not a general OPI no-go or quantum novelty.
+SMT timeout statuses are not stable replay certificates or hardness evidence.
+
+Targeted split-receiver repair tested in
+`tests/test_coherent_bpqm_split_sharpening.py`: even free exact sign sharpening
+does not restore the native orbit/Gibbs law. Do not spend implementation time
+on a QSVT sign compiler for THIS receiver on that premise. The finite gap is
+benign; different operators or joint eigenvector-changing methods remain open.
+
+NEW cyclic producer: `python theorems/coherent_bpqm_split.py --write`.
+Read COHERENT_BPQM_SPLIT.md. ENU outputs are weaker, not fresh native copies;
+each root keeps private split scratch, never reset/reused as if clean. Full
+readout metrics include this scratch. Heterogeneous/Fourier-input root support
+is now implemented. Both prior coherent artifacts must be refreshed when their
+shared helper changes. Do not register a broad negative or speedup: the finite
+native family is classically easy, and deeper unrolling worsens the tested
+whole-output error. More allocation/depth scans are not the research priority.
+
+NEW precision contract: BPQM_LOG_RELIABILITY.md and
+`python theorems/bpqm_log_reliability.py --write`. This is a classical Arb
+reference, NOT a compiled quantum reliability register. Use its signed-range,
+uniform-error, orthogonal-herald and four-adjoint-occurrence budgets when
+implementing actual reversible arithmetic. Source/overflow/garbage/synthesis
+costs are separate. A full herald table is not an arithmetic implementation.
+
+LATEST TREE PRODUCER: `python theorems/coherent_bpqm_tree.py --write`.
+Read COHERENT_BPQM_TREE.md. Expose the known finite coherent tree repair
+without claiming efficient approximate reliability arithmetic, classical
+hardness or a cyclic-block algorithm. Preserve signed overlap tables, every
+herald, physical channel identity and exponential conditional-table flags.
+The local readout source changed; refresh BOTH coherent producers together.
+
+LATEST COHERENT PRODUCER: `python theorems/coherent_local_gibbs.py --write`.
+Read COHERENT_LOCAL_GIBBS.md before optional CLI/EXP exposure. Preserve the
+unconditional metric, retained registers, all-sign enumeration, global 2^M
+table cost and matched classical sampler. Whole-word error is NOT universally
+necessary for Gibbs sampling; do not reject exact coset readout by that proxy.
+Neither small exactness nor the generic exponential PGM is a speedup claim.
+Routine integration/backups remain Gemini work, no main-model commit/push.
+
+LATEST actual-source work is NOW IMPLEMENTED: `affine_cluster_native_probe.py
+--write`, its random-socket generator, exact nullspace/character laws, exact
+small native TV, longer cluster and replica-exchange tests, plus the32-spin
+integer factor reference. Do not repeat items1..3 below as if still missing.
+Read AFFINE_CLUSTER_NATIVE_PROBE.md before exposure or refreshes. Preserve
+adaptive-target selection, all work counts, seeded/nonstationary flags,
+exponential-width cost and UNKNOWN cap status. Exact finite classical sampling
+does not prove a general BPQM dequantization; MCMC sticking does not prove
+hardness. The optional geometry mode reuses the sampler's existing RREF and
+does not change its RNG stream. No candidate or negative-result promotion.
+
+NEW constructive producer: `python theorems/bpqm_gibbs_frontier.py --write`.
+Read BPQM_GIBBS_FRONTIER.md before optional wiring. It certifies a LOCAL tree
+success condition for a KNOWN decoder mechanism and includes a stronger
+affine-cluster classical sampler. Preserve missing finite-block/circuit,
+non-admission, >10^12-output extrinsic tree, source-ensemble and UNKNOWN flags.
+Do not compare that tree as an executed4096-qubit decoder or claim classical
+hardness from a Prange dimension bound. Exact stationary Gibbs law does NOT
+prove cluster mixing. Useful Gemini work is implementing the specified actual
+random regular socket source and running classical baselines, with all mixing
+and finite-size caveats. Energy-only traces are not Gibbs-sampling accuracy.
+
+Concrete BPQM follow-up for Gemini, not more theory modules:
+
+1. For even clause count M, use M/2 spins,3 sockets per clause and6 per spin.
+   Uniformly shuffle/match the sockets. XOR repeated endpoints into each clause
+   mask, including parallel-edge cancellation, then draw each sign independently.
+   Do not reject rank failures, short cycles or unfavorable signs. Keep seeds.
+2. Run the existing affine-cluster step and a genuine parallel-tempering
+   comparator on these actual inputs at c=1/2,13/20,4/5 and multiple sizes.
+   Keep burn-in, chain length, all failed moves and CPU work explicit.
+3. Record selected-rank deficiency, holding probabilities, Hamming jumps, energy,
+   replica overlap and multiple-start diagnostics. These are NOT TV guarantees.
+   At small sizes compare the complete sampled law with exact Gibbs; never
+   quietly use exact tables at large sizes or compare optimization alone.
+4. Do not compile an overlapping computation tree by cloning source outputs.
+   Internal BPQM heralds must be coherent and uncomputed before reusing outputs;
+   a new physical test shows that destructive herald measurement is not gentle.
+5. Preserve the exact integer density certificates and source hashes. Larger
+   floating threshold scans are not a substitute. New classical success would
+   falsify the separation conjecture, not invalidate the tree identity.
+
+LATEST: two new audit modules were scientifically corrected, not merely wired.
+Preserve their v2 contracts and regenerated artifacts. Coordinate-rounding
+universal overflow is FALSE; compressed disjoint-kernel IID decay is NOT proved.
+The optional native-label control producer is in the existing rounding module
+(`--native-controls --write`), not a new quantum algorithm. Keep exact target
+censuses separate from seeded replay, retain all rank failures and paid source
+copies, and do not extrapolate zero sampled witnesses to zero success.
+Concurrent subsystems44..50 were not scientifically reviewed by this pass.
+Optional CLI exposure remains mechanical; do not have the main model generate
+more obstruction modules just to fill a queue. Existing JS rounding replay
+uses Number arithmetic, NOT BigInt exact rational inversion; its header is
+corrected and a future exact checker must certify its arithmetic honestly.
+
+Read RESEARCH_PRIORITY_DECISION.md and the top of AGENT_HANDOFF.md first.
+The latest INDEPENDENT physics baseline is `conditional_boson_dynamics.py --write`
+with its proof note and actual sparse/dense Hamiltonian tests. Optional CLI/EXP
+exposure is routine integration, not new theory work. Preserve vacuum/product-
+input, Pauli-only, precision, cutoff and noncommuting-hopping scope. NEVER
+register it as a general simulation negative or a refutation of the polaron
+paper. No main-model commit/push; bundled backups remain infrequent Gemini work.
+
+The nonlinear ternary correction experiment is now complete, including an
+exact classical sampler and random-dense source-average failure bound. Do not
+spend another research pass regenerating adjacent barrier notes or treating
+source-budget work as an implemented decoder. Optional exposure of the existing
+`ternary_syndrome_correction.py --write` artifact belongs to routine integration.
+Its independent replay uses `ternary_decoder_filter_crosscheck.js --syndrome-correction`.
+Keep measured-word vs coherent-channel and random vs structured-Q scope flags.
+
+## Source-Budget Verification Checkpoint
+
+Final focused30 tests pass with RuntimeWarning as error. Connected265 tests
+across9 modules pass, including the full original sine-window source suite;
+one later added POVM-transfer test passes in the final focused run. Do NOT add
+overlapping counts or call this full-repository coverage. Six connected-run
+warnings are the existing Qiskit translation-plugin deprecation. New producer,
+Python compilation, all10 site JS syntax checks and qsearch validate pass.
+No algorithm, generic lattice promise, accepted candidate or new reduction
+is certified. The easy live calibration has an exact scoped unimodular proof.
+
+## Clean-First Source Budget Override
+
+Read the new top of AGENT_HANDOFF.md: efficient CLEAN arithmetic/bit decoding
+is again the main target. Do not require inverse-dimension-noise multimode
+correction before a clean algorithm. Regev already permits a stronger noise
+promise at an explicit worse polynomial gap; this is not a new reduction.
+
+`python theorems/dcp_clean_source_budget.py --write` closes the public source-
+modulus/copy/advantage fixed point, rejects impossible copy models, pays joint
+precision and outer guesses, and crosschecks the existing sine-source ledger.
+Optional qsearch/EXP and independent replay are mechanical work. Keep scalar
+and native rank distinct, norm/trial assumptions visible, altered-receipt
+rejection and the coherent-noise marginal counterexample. The one easy source
+calibration has an exact unimodular uniqueness certificate; it is not hard-
+instance evidence or permission to certify arbitrary input lattice promises.
+No new accepted candidate, novelty or full large-source execution is claimed.
+
+## Latest Verification And Integration Boundary
+
+The four parity-related producers below are standalone and have proof notes,
+contracts, live artifacts and150 research tests. Final connected verification:
+549 tests across27 selected modules,54.78s; NOT a full repository run.
+New research tests also pass with RuntimeWarning treated as error. Python
+compilation, all10 current site JS syntax checks and qsearch validate pass.
+Registry counts remain8 candidates/796 experiments/807 results/976 active
+negatives/11 quarantined. Do not promote information-only bounds to algorithms.
+
+Concurrent CLI integration had accidentally registered the two-copy SWAP
+purity command twice. The duplicate block alone was removed, and the handler
+is preserved; test_cli_parser_integrity.py now guards parser construction.
+Keep this regression while integrating new commands. Other concurrent modules
+remain scientifically unreviewed unless their own evidence says otherwise.
+
+Useful Gemini work: optional qsearch/EXP bindings, independent arithmetic/
+Born replays, full production regressions and one infrequent bundled backup.
+Main-model next work is the structural multimode transport problem, not
+mechanical generation of more loosely justified barrier notes.
+
+## Multimode Frame Integration (2026-10-16)
+
+`python theorems/dcp_conditional_error_frames.py --write` produces an information-
+only multimode escape, not a polynomial noise decoder. Optional CLI/EXP/replay
+integration must preserve missing-transform, exact-source, fixed-error-library,
+phase-alignment and actual-noise-tail obligations. Never promote the analytical
+large-n failure bounds to live quantum circuit performance or accepted candidates.
+Full small-source censuses and actual controlled-unitary tests check the Gram,
+Born weights, bad frames, aliases and gauge/normalization traps. Generic mode
+erasure pays1/P before amplification even if the Gram is near identity.
+Do not ask the main model to spend time on repetitive wiring or backups.
+
+## Forward-Sampler Instrument (2026-10-16)
+
+`python theorems/dcp_forward_sampler_swap.py --write` is a forward-only sampler/
+SWAP parity receiver with actual history/phase dependence. Its clean uniform-
+sampler route is conditional on a MISSING native sampler. Its independent-
+noise single-SWAP limitation is a TEMPLATE result, not a general negative.
+Keep the positive clean route and source/phase/history guards intact. Do not
+turn output probabilities into coherent amplitudes or give a classical output
+device coherent target control. Do not replace the separate direct inverse-
+finder filter: these are different sufficient interfaces and resource regimes.
+43 physics tests include actual complex instruments, target erasure, all paid
+failures, complete source moments and the strongest-sampler spectral bound.
+Optional CLI/EXP/replay wiring and broad regressions remain mechanical work.
+
+## Parity-Observable Integration (2026-10-16)
+
+`python theorems/dcp_native_parity_observables.py --write` adds an exact native
+short-edge union frontier, scoped independent-noise sparse-observable bound,
+actual pairing/dense POVM controls and rank/noise countercontrols. Wire an
+optional `dcp-native-parity-observables` command or EXP record without candidate
+admission or a general active negative. All new producers use standalone
+`--write`; inspect main() rather than assuming the older main(argv) interface.
+
+The live JSON keeps spectral controls NUMERICAL and their exponential costs
+explicit. Do not claim a polynomial quantum receiver from a dense matrix sign.
+Do not equate polynomial gate count with sparse effective observables: even
+product-X plus an efficient nonlinear classical decision can be dense.
+Do not transfer the inverse-n noisy growing-rank obstruction to scalar/clean
+DCP. Do not duplicate theoretical work; independent replay, broad regressions
+and infrequent bundled backup are the useful mechanical tasks.
+
+## Useful-Bit Override (2026-10-16)
+
+The cyclic-DCP reduction now needs a native FIRST-BIT predictor, not full-vector
+recovery. Read DCP_NATIVE_PARITY_BRIDGE.md and the top of AGENT_HANDOFF.md.
+`python theorems/dcp_native_parity_bridge.py --write` produces live reductions
+JSON;39 focused physics tests cover masks, actual density identities, independent
+noise, copy thresholds, finite precision and explicit unsupported-dimension tail
+costs. Optional `dcp-native-parity-bridge` CLI/EXP integration is mechanical work.
+No accepted candidate, general active negative, implemented native predictor,
+or speedup is supplied. Keep the public decoder view separate from private
+mask/angle/noise data and do not alter the proof gates to admit this contract.
+
+Total information is NOT this bit: a width192 native n64,t72 packet is bounded
+by average advantage2^-4417. Necessary constant-advantage copies are4606 clean
+or4658 for independent-v63/64 Z faults. The latter is not valid for correlated
+noise with identical marginals. Do not declare the known linear information
+bound a decoder or a recovery sample upper bound. Do not silently turn an
+n>=64-only predictor into a512-candidate tail; its actual tail is2^71.
+
+## Current Override: Scientific Corrections And Fiber Integration (2026-10-16)
+
+Read the TOP of AGENT_HANDOFF.md first. Older numbered investigation entries
+below are historical, NOT a mandate to manufacture more general barriers.
+Finite numerical agreement and a false speedup flag do not prove a no-go.
+
+Two additional campaign records were independently reviewed and quarantined:
+NEG-EASTIN-KNILL-NON-CLIFFORD-FAULT-TOLERANT-BARRIER and
+NEG-QUANTUM-ERGODICITY-ETH-LOCAL-OBSERVABLE-BARRIER. Do not regenerate them
+as active negatives. The exact reviewed scope and primary sources are in
+CAMPAIGN_NEGATIVE_CLAIM_AUDIT.md. Preserve originals and valid narrower results.
+
+The noisy-parity bridge is now schema v2 with nine ACTUAL quantum density
+controls, three source models and independent Born-sum crosschecks. Do not
+restore the false claim that translation noise convolves coherent-coset QFT
+probabilities, or infer coherent state access from classical samples.
+
+Mechanical queue for Gemini/Antigravity:
+
+CURRENT2026-10-16 ADDENDUM: the latest two standalone producers are
+`dcp_weighted_fiber_moment_search.py` and `dcp_coarse_readout_information.py`.
+Use their --write workflows and proof notes, not the temporary wide-only name
+(it was replaced before integration). The information result is conditional:
+mod2/width3n gives>=n/4 bits for n>=64; mod4/width5n gives>=n/16. Both are
+uniform-prior readout bounds, NOT decoders or sample-complexity upper bounds.
+The old mod4/width3n upper bound is not contradicted. Keep original source,
+noise, quotient target and all costs explicit. The weighted search's sparse
+high-moment witness has tiny paid POVM mass; it is not a positive algorithm.
+
+Wire these two commands ALONGSIDE the previous two below, add optional EXP
+records without candidate admission, and run broad validation. The shared
+measurement_channel and coordinate_plan now explicitly support coarse_bits1
+or2 (default2); do not apply mod4-specific source theorems to the new mod2
+case. The actual parity compiler clears ONLY measured linear constraints and
+does not impose unmeasured high-bit equations or reset correlated noise.
+
+1. Wire `dcp-fiber-accessible-information` and `dcp-quadratic-fiber-coordinates`
+   into qsearch using the corresponding theorems/*.py producers. Both standalone
+   `--write` workflows already generate live phase_workbench JSON. Expose only
+   research-critical artifacts, no UI redesign or accepted candidate promotion.
+2. Register optional experiment records with their actual falsifiers. The
+   weighted native all-POVM bound and remaining quadratic-fiber decoder are OPEN.
+   No adaptive-prior theorem, IID compressed noise, full-fiber inverse, natural
+   source noise certification or new speedup is provided.
+3. Run new physics suites plus the broader regression and `python qsearch.py validate`.
+   The main-model consolidated13-module run passed265 tests, NOT the full repo.
+   Expected current validation:8 candidates,796 experiments,807 results,
+   976 active negatives,11 quarantined negatives. Counts are diagnostics, not
+   hardcoded acceptance conditions if legitimate concurrent work changes them.
+4. Add an independent replay of the new coordinate/moment algebra if useful.
+   Check arbitrary-input reversible gates, the actual source density and the
+   all-complex-weight bound, not just producer flags or a formula copied twice.
+5. Make one infrequent bundled backup after broad verification, not one commit
+   per artifact. Do not launch another sequence of literature-wide no-go notes
+   or spend the main model on repetitive integration.
+
+Highest-reasoning next work: weighted native-fiber moment bounds or explicit
+counterexamples; simultaneous structure of carry Hessians restricted through
+the common binary kernel; physically paid joint-packet measurement/decoding.
+Full mathematical contracts are in DCP_FIBER_ACCESSIBLE_INFORMATION.md and
+DCP_QUADRATIC_FIBER_COORDINATES.md. Neither a matrix rank nor a small finite
+control resolves these tasks.
+
 ## Latest Handoff (2026-10-12, Investigation 61 Proved — Quantum Walks, Continuous-Time Quantum Search, and the Spatial Graph Topology Horizon: Glued Trees, Childs-Goldstone Anderson Localization, and Classical Reversible Markov Chain Dequantization)
 
 Read `research/QUANTUM_WALKS_SPATIAL_TOPOLOGY_BARRIER.md` and the TOP of `research/AGENT_HANDOFF.md`.

@@ -1,0 +1,31 @@
+{
+  "hypothesis_id": "conjugate_chirp_same_target_quadratic_DQI_repair",
+  "status": "REJECTED_AS_SAME_TARGET_PREPARATION",
+  "problem_and_input": "Public odd-prime quadratic forms and explicit local lists; optimize the ORIGINAL single-register quadratic objective.",
+  "mechanism_tested": "Prepare controlled conjugate chirps, change to sum/difference coordinates, Fourier-transform, decode public scaled-Vandermonde syndromes, erase labels and invert.",
+  "intended_advantage": "A hypothetical efficient same-target preparation beyond known linear DQI; not established.",
+  "positive_subroutine": "Weight<=1 public decoder and native bilinear label erasure execute correctly on the charged good directions.",
+  "failed_obligation": "The output is a bilinear objective, not the intended original quadratic-filter state.",
+  "classical_and_known_mechanism_checks": [
+    "Diagonal paired output reduces to ordinary unrestricted linear DQI plus a classical randomization.",
+    "Rank-one original constraints already absorb into linear predicates.",
+    "For the specified diagonal randomization, an external-Weil-based, review-pending bound makes expected-score advantage over uniform classical x vanish, uniformly over any input q distribution.",
+    "A SEPARATE joint-moment bound controls constant-gap score tails for the SAME paired diagonal randomization, using nonzero consecutive Vandermonde blocks. This is not inferred from the mean."
+  ],
+  "falsifiers_executed": [
+    "Full native QFT/decoder/erasure amplitudes and marginal states.",
+    "Original objective scores, not state fidelity alone.",
+    "Exact finite-field convolutions and Kloosterman/Salie/Gauss identities.",
+    "Charged z=0 success and exact rational general-filter bounds."
+  ],
+  "not_claimed": [
+    "A general quadratic-DQI impossibility theorem.",
+    "A full-output-distribution or all-algorithm score-tail no-go.",
+    "A new speedup or efficient compiled quantum state preparation."
+  ],
+  "local_derivations_review_pending": true,
+  "central_CandidateRecord_admitted": false,
+  "new_active_negative_result_created": false,
+  "literature": ["https://arxiv.org/html/2510.08061", "https://people.math.ethz.ch/~kowalski/elements.pdf"],
+  "evidence": ["theorems/conjugate_chirp_repair.py", "tests/test_conjugate_chirp_repair.py", "research/classical_baselines/conjugate_chirp_repair.json", "research/CONJUGATE_CHIRP_REPAIR.md"]
+}

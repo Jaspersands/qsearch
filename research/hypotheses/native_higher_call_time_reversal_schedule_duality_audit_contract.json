@@ -1,0 +1,28 @@
+{
+  "contract_id": "native-higher-call-time-reversal-schedule-duality-audit-contract",
+  "title": "Native Higher-Call Time-Reversal Schedule-Duality Audit: Global Sign-Conjugation Invariance, Klein Four-Group Schedule Reduction, and Symmetric-Transpose Time-Reversal Duality",
+  "version": "1.0.0",
+  "scope": "general_k_call_schedule_sign_conjugation_klein_four_group_reduction_and_time_reversal_duality",
+  "theorems": [
+    {
+      "id": "T1",
+      "name": "Exact Global Sign-Conjugation Invariance (epsilon, sigma) <-> (-epsilon, -sigma)",
+      "statement": "For every k-call schedule (epsilon, sigma) and phase vector y in Z_q^D, |Psi_(-epsilon, -sigma)(y)> = conj(|Psi_(epsilon, sigma)(y)>), so P_(-epsilon, -sigma)(x | y) = P_(epsilon, sigma)(x | y) identically for all outcomes x in {0, ..., D-1}."
+    },
+    {
+      "id": "T2",
+      "name": "Final-Fourier Reflection sigma_k <-> -sigma_k and Klein Four-Group Schedule Quotient",
+      "statement": "Flipping sigma_k -> -sigma_k permutes outcomes by modular negation P_(epsilon, (sigma_(1..k-1), -sigma_k))(x | y) = P_(epsilon, sigma)((-x) mod D | y), so the Klein four-group G_4 = {I, iota_1, iota_2, iota_1*iota_2} partitions the 4^k schedules into 4^(k-1) orbits of size 4 with identical E_(epsilon, sigma) and V_HS(epsilon, sigma)."
+    },
+    {
+      "id": "T3",
+      "name": "Symmetric-Matrix Transpose Identity and Exact Zero-Outcome Time-Reversal Duality",
+      "statement": "For epsilon^rev = (epsilon_k, ..., epsilon_1) and sigma^rev = (sigma_(k-1), ..., sigma_1, sigma_k), complex symmetry of D_y and F_D implies <0_D | Psi_(epsilon, sigma)(y)> = <0_D | Psi_(epsilon^rev, sigma^rev)(y)> and P_(epsilon, sigma)(0 | y) = P_(epsilon^rev, sigma^rev)(0 | y) for all y in Z_q^D."
+    }
+  ],
+  "guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  }
+}

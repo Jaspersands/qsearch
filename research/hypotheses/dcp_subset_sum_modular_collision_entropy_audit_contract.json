@@ -1,0 +1,28 @@
+{
+  "contract_id": "dcp-subset-sum-modular-collision-entropy-audit-contract",
+  "title": "DCP Subset-Sum Modular Collision-Entropy Audit: Cosine-Product Parseval Formula, Universal Boolean-Difference Surjectivity, and Exact Ensemble Collision Law",
+  "version": "1.0.0",
+  "scope": "dcp_modular_subset_sum_fiber_collision_purity_cosine_product_and_universal_boolean_difference_law",
+  "theorems": [
+    {
+      "id": "T1",
+      "name": "Exact Cosine-Squared Product Identity for Subset-Sum Collision Probability",
+      "statement": "For any weight vector a = (a_1, ..., a_m) in Z_q^m, the modular subset-sum fiber distribution P_a(z) = 2^(-m) |{x in {0,1}^m : <a, x> == z mod q}| has collision probability C(a) = sum_z P_a(z)^2 = (1/q) * sum_(u=0)^(q-1) prod_(j=1)^m cos^2(pi * u * a_j / q)."
+    },
+    {
+      "id": "T2",
+      "name": "Universal Z_q-Surjectivity of Non-Zero Boolean Differences and Exact Mean Collision Law",
+      "statement": "For every modulus q >= 2 (prime or composite) and every distinct pair x != x' in {0, 1}^m, x - x' has at least one +-1 coordinate (a unit mod q), so Pr_(a ~ Z_q^m)[f_a(x) == f_a(x') mod q] = 1/q and E_(a ~ Z_q^m)[C(a)] = 1/q + (1 - 1/q) * 2^(-m)."
+    },
+    {
+      "id": "T3",
+      "name": "Exact Single-Coordinate Cosine-Squared Character Average on Z_q",
+      "statement": "For every modulus q >= 2 and frequency u in {0, ..., q-1}, (1/q) * sum_(a=0)^(q-1) cos^2(pi * u * a / q) equals 1 for u = 0 and 1/2 for all u in {1, ..., q-1}."
+    }
+  ],
+  "guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  }
+}

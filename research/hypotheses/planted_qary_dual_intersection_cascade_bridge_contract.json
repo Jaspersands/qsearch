@@ -1,0 +1,28 @@
+{
+  "contract_id": "planted-qary-dual-intersection-cascade-bridge-contract",
+  "title": "Planted q-ary Dual-Intersection Cascade Bridge: Exact Candidate Subspace Size Law, Spurious Survivor Decay, and Oversampling Recovery Probability",
+  "version": "1.0.0",
+  "scope": "planted_qary_dual_qft_sample_intersection_cascade_spurious_decay_and_recovery_probability",
+  "theorems": [
+    {
+      "id": "T1",
+      "name": "Deterministic Rank-Cardinality Law and Recovery Criterion",
+      "statement": "For any m-tuple U_perp = (u^(1), ..., u^(m)) in (B^perp)^m of rank r_perp = dim(span(U_perp)), the orthogonal intersection subspace B_hat_m(U_perp) contains B, has cardinality q^(n - r_perp), and equals B if and only if r_perp = n - d."
+    },
+    {
+      "id": "T2",
+      "name": "Exact Exponential Decay of Expected Spurious Survivors",
+      "statement": "Under m i.i.d. uniform dual samples U_perp ~ Unif((B^perp)^m), every non-planted vector x in F_q^n \\ B survives in B_hat_m(U_perp) with probability q^(-m), so E[|B_hat_m(U_perp)|] = q^d + (q^n - q^d) q^(-m) and E[|B_hat_m(U_perp) \\ B|] = (q^n - q^d) q^(-m)."
+    },
+    {
+      "id": "T3",
+      "name": "Exact Full-Recovery Probability Law and Two-Sided Oversampling Bounds",
+      "statement": "For m >= n - d with oversampling margin Delta_m = m - (n - d) >= 0, P_recover(q, n - d, m) = Pr[B_hat_m(U_perp) = B] = prod_(i=1)^(n-d) (1 - q^(-(Delta_m + i))), satisfying 1 - sum_(i=1)^(n-d) q^(-(Delta_m + i)) <= P_recover <= 1 - q^(-(Delta_m + 1))."
+    }
+  ],
+  "guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "hypothesis_id": "fixed_input_quadratic_OPI_exterior_trace_classical_falsifier",
+  "status": "EXACT_GEOMETRY_NATIVE_WITNESS_AND_LOCAL_TRACE_BOUND_REVIEW_PENDING",
+  "scientific_question": "Can a cycle-indicator trace expansion reduce the factorial-genus field threshold for the existing fixed-input norm solver?",
+  "problem_and_input": "Explicit prime-field mixed quadratic-coset OPI; fixed public shifts/orientations, verified nonsquare; strict or zero-including; no oracle table or IID input assumption",
+  "input_promises": [
+    "Majority size<K; even n=2*floor((K-1)/2)>=4; minority size b; n-b>=3",
+    "p>max(n+b-1,2N) and actual exact tame Morse critical-point/critical-value checks pass",
+    "A positive explicit count is required, not just favorable witness search"
+  ],
+  "classical_mechanism": "Reuse norm solver; exact n-cycle indicator from exterior powers of standard S_n; tame compact-support trace formula, zero geometric coinvariants and explicit rank sum",
+  "local_count": "A=(n+b-2)*(2^(n-1)-1); irreducible probability>=max(0,(p+1-(n+b)-A*ceil(sqrt(p)))/(n*p))",
+  "sufficient_field": "p>=max(16*A^2,4*(n+b+A),2*D_bad) plus input characteristic restrictions",
+  "asymptotic_research_consequence": "Expected-polynomial classical perfect search under the stated high-rate and field promises; no quantum advantage in that promised structured family if local proof survives review",
+  "resource_accounting": "Polynomial exact arithmetic/resultants/factorization in N/logp; O(n)-bit rank-sum integer; no exponential-rank sheaf, field-sized table or group enumerated in the large-input solver",
+  "strongest_classical_baseline": "Take the maximum of the prior explicit twist bound and new trace bound, keeping the old bound when stronger",
+  "proof_obligations_review_pending": [
+    "The existing exact Morse and tame inertia argument really gives geometric and arithmetic S_n",
+    "All nontrivial exterior powers of standard S_n have zero invariants; finite-monodromy coinvariants therefore vanish",
+    "Finite-monodromy sheaves have weight0, are tame, and have Hc1 dimension (R-2)*rank with Hc0=Hc2=0",
+    "Trace/factorization identity and all branch losses give the stated explicit lower count",
+    "The previous generic two-parameter Morse discriminant-degree bound is valid"
+  ],
+  "falsifiers": [
+    "A geometric A_n or other smaller-monodromy case is admitted under the S_n label",
+    "A non-Morse map, wild characteristic or zero-bound field reaches the certified norm stage",
+    "A complete finite-field factorization count violates the character trace bound or exact indicator",
+    "The trivial-character leading term or rational/geometric branch distinction is mishandled",
+    "The local cohomological application or earlier Morse reduction fails independent review"
+  ],
+  "executed_evidence": [
+    "Exact conjugacy-class and invariant checks n2..12, independent matrix determinant, A_n countermodel",
+    "Full quartic calibrations p29/101/1009/10007",
+    "Fixed127-position strict192-bit-field source: one verified geometry,24 fibers, perfect127/127,169-bit sufficient threshold instead of756-bit twist threshold",
+    "Original61-bit large source still has zero bound and is not promoted"
+  ],
+  "literature": ["https://people.math.ethz.ch/~kowalski/elements.pdf", "https://arxiv.org/html/1302.0625"],
+  "trace_source_version": "Fouvry-Kowalski-Michel, Trace functions over finite fields and applications, draft December3,2014; Chapter4, PDF pages33-35",
+  "trace_source_pdf_sha256": "40dfd0f77b43e5f79ac7304695efb3a6d2d7ed23c3f14a5dde8468d80a0a6e43",
+  "evidence": [
+    "theorems/prime_character_exterior_bound.py",
+    "tests/test_prime_character_exterior_bound.py",
+    "research/classical_baselines/prime_character_exterior_bound.json",
+    "research/PRIME_CHARACTER_EXTERIOR_BOUND.md"
+  ],
+  "all_field_or_low_rate_dequantization_claimed": false,
+  "independent_or_formal_proof_review_completed": false,
+  "accepted_speedup_candidate": false,
+  "new_central_candidate_negative_or_proof_registered": false
+}

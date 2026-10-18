@@ -1,0 +1,1300 @@
+{
+  "contract_id": "public_complex_axes_native_Gram_and_inference_contract_v1",
+  "status": "COMPLEX_GATE_READOUT_EXACT_KERNEL_REVIEW_PENDING",
+  "selected_controls": [
+    {
+      "full_labels": [
+        [
+          4,
+          8
+        ]
+      ],
+      "phase_bits": 4,
+      "visibility_exact": "7/8",
+      "residual_secret_modulus": 4,
+      "public_source_syndrome_T_feedback_used": false,
+      "fixed_X_information": {
+        "uniform_secret_mutual_information_bits": 0.994064900074479,
+        "optimal_one_copy_Bayes_guess_probability": 0.673828125,
+        "secret_hypotheses_enumerated": 4,
+        "likelihood_evaluation_is_free_or_polynomial": false
+      },
+      "public_random_XY_information": {
+        "uniform_secret_mutual_information_bits": 0.6627099333829862,
+        "optimal_one_copy_Bayes_guess_probability": 0.5712890625,
+        "secret_hypotheses_enumerated": 4,
+        "likelihood_evaluation_is_free_or_polynomial": false
+      },
+      "fixed_X_aliases": {
+        "all_secret_laws_distinct_on_this_selected_matrix": false,
+        "number_of_distinct_likelihood_classes": 3,
+        "maximum_negation_pair_probability_difference": 2.220446049250313e-16,
+        "complete_likelihood_comparisons_are_exponential": true,
+        "aliases_by_secret_index": [
+          [
+            0
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            2
+          ],
+          [
+            1,
+            3
+          ]
+        ]
+      },
+      "random_XY_aliases": {
+        "all_secret_laws_distinct_on_this_selected_matrix": true,
+        "number_of_distinct_likelihood_classes": 4,
+        "maximum_negation_pair_probability_difference": 0.205078125,
+        "complete_likelihood_comparisons_are_exponential": true,
+        "aliases_by_secret_index": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ]
+        ]
+      },
+      "exported_readout_plan": {
+        "syndrome_circuit": {
+          "kind": "COMPONENTWISE_MOD4_CONTROLLED_ADD",
+          "input_phase_qubits": 2,
+          "measured_syndrome_qubits": 2,
+          "total_qubits": 4,
+          "extra_zero_work_qubits": 0,
+          "gates": [],
+          "gate_counts": {},
+          "action_on_arbitrary_syndrome": "(x,z)->(x,z+A*x) componentwise modulo4, NOT bitwise XOR",
+          "hardware_gate_export_implemented": true,
+          "hardware_transpilation_executed": false,
+          "unknown_source_inverse_used": false,
+          "retained_original_phase_qubits": 2
+        },
+        "public_Y_axis_mask_hex": "0x1",
+        "terminal_gates_after_syndrome_measurement": [
+          [
+            "SDG",
+            0
+          ],
+          [
+            "H",
+            0
+          ],
+          [
+            "H",
+            1
+          ]
+        ],
+        "terminal_Z_measurement_wires": [
+          0,
+          1
+        ],
+        "actual_axes": "X/Y after optional public T-grid phase feedback",
+        "T_grid_feedback_coefficients": [
+          0,
+          0
+        ],
+        "feedback_uses_public_source_and_measured_syndrome_only": true,
+        "feedback_computed_only_for_realized_syndrome": true,
+        "full_feedback_table_is_calibration_only": true,
+        "measured_syndrome_index": 0,
+        "public_uniform_mask_bits_per_attempt": 2,
+        "mask_is_retained_in_classical_record": true,
+        "source_quantum_preparations_per_attempt": 2,
+        "quantum_samples_multiplied_by_number_of_calibrated_masks": false,
+        "unknown_source_inverse_or_duplicate_packet_used": false,
+        "hardware_transpilation_or_execution_performed": false
+      },
+      "all_public_masks_calibrated": 4,
+      "likelihood_entries_enumerated": 256,
+      "selected_matrix_is_native_average_evidence": false,
+      "higher_mutual_information_than_fixed_X_guaranteed": false,
+      "decoder_or_speedup_candidate_supplied": false
+    },
+    {
+      "full_labels": [
+        [
+          1,
+          0,
+          5,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          2
+        ]
+      ],
+      "phase_bits": 4,
+      "visibility_exact": "7/8",
+      "residual_secret_modulus": 4,
+      "public_source_syndrome_T_feedback_used": false,
+      "fixed_X_information": {
+        "uniform_secret_mutual_information_bits": 0.08844263820503584,
+        "optimal_one_copy_Bayes_guess_probability": 0.08343505859375,
+        "secret_hypotheses_enumerated": 16,
+        "likelihood_evaluation_is_free_or_polynomial": false
+      },
+      "public_random_XY_information": {
+        "uniform_secret_mutual_information_bits": 0.08844263820503583,
+        "optimal_one_copy_Bayes_guess_probability": 0.08343505859375,
+        "secret_hypotheses_enumerated": 16,
+        "likelihood_evaluation_is_free_or_polynomial": false
+      },
+      "fixed_X_aliases": {
+        "all_secret_laws_distinct_on_this_selected_matrix": false,
+        "number_of_distinct_likelihood_classes": 3,
+        "maximum_negation_pair_probability_difference": 4.336808689942018e-18,
+        "complete_likelihood_comparisons_are_exponential": true,
+        "aliases_by_secret_index": [
+          [
+            0,
+            1,
+            2,
+            3
+          ],
+          [
+            0,
+            1,
+            2,
+            3
+          ],
+          [
+            0,
+            1,
+            2,
+            3
+          ],
+          [
+            0,
+            1,
+            2,
+            3
+          ],
+          [
+            4,
+            5,
+            6,
+            7,
+            12,
+            13,
+            14,
+            15
+          ],
+          [
+            4,
+            5,
+            6,
+            7,
+            12,
+            13,
+            14,
+            15
+          ],
+          [
+            4,
+            5,
+            6,
+            7,
+            12,
+            13,
+            14,
+            15
+          ],
+          [
+            4,
+            5,
+            6,
+            7,
+            12,
+            13,
+            14,
+            15
+          ],
+          [
+            8,
+            9,
+            10,
+            11
+          ],
+          [
+            8,
+            9,
+            10,
+            11
+          ],
+          [
+            8,
+            9,
+            10,
+            11
+          ],
+          [
+            8,
+            9,
+            10,
+            11
+          ],
+          [
+            4,
+            5,
+            6,
+            7,
+            12,
+            13,
+            14,
+            15
+          ],
+          [
+            4,
+            5,
+            6,
+            7,
+            12,
+            13,
+            14,
+            15
+          ],
+          [
+            4,
+            5,
+            6,
+            7,
+            12,
+            13,
+            14,
+            15
+          ],
+          [
+            4,
+            5,
+            6,
+            7,
+            12,
+            13,
+            14,
+            15
+          ]
+        ]
+      },
+      "random_XY_aliases": {
+        "all_secret_laws_distinct_on_this_selected_matrix": false,
+        "number_of_distinct_likelihood_classes": 4,
+        "maximum_negation_pair_probability_difference": 0.0006542205810546877,
+        "complete_likelihood_comparisons_are_exponential": true,
+        "aliases_by_secret_index": [
+          [
+            0,
+            1,
+            2,
+            3
+          ],
+          [
+            0,
+            1,
+            2,
+            3
+          ],
+          [
+            0,
+            1,
+            2,
+            3
+          ],
+          [
+            0,
+            1,
+            2,
+            3
+          ],
+          [
+            4,
+            5,
+            6,
+            7
+          ],
+          [
+            4,
+            5,
+            6,
+            7
+          ],
+          [
+            4,
+            5,
+            6,
+            7
+          ],
+          [
+            4,
+            5,
+            6,
+            7
+          ],
+          [
+            8,
+            9,
+            10,
+            11
+          ],
+          [
+            8,
+            9,
+            10,
+            11
+          ],
+          [
+            8,
+            9,
+            10,
+            11
+          ],
+          [
+            8,
+            9,
+            10,
+            11
+          ],
+          [
+            12,
+            13,
+            14,
+            15
+          ],
+          [
+            12,
+            13,
+            14,
+            15
+          ],
+          [
+            12,
+            13,
+            14,
+            15
+          ],
+          [
+            12,
+            13,
+            14,
+            15
+          ]
+        ]
+      },
+      "exported_readout_plan": {
+        "syndrome_circuit": {
+          "kind": "COMPONENTWISE_MOD4_CONTROLLED_ADD",
+          "input_phase_qubits": 4,
+          "measured_syndrome_qubits": 4,
+          "total_qubits": 8,
+          "extra_zero_work_qubits": 0,
+          "gates": [
+            [
+              "CCX",
+              0,
+              4,
+              5
+            ],
+            [
+              "CX",
+              0,
+              4
+            ],
+            [
+              "CCX",
+              2,
+              4,
+              5
+            ],
+            [
+              "CX",
+              2,
+              4
+            ],
+            [
+              "CCX",
+              3,
+              4,
+              5
+            ],
+            [
+              "CX",
+              3,
+              4
+            ],
+            [
+              "CCX",
+              1,
+              6,
+              7
+            ],
+            [
+              "CX",
+              1,
+              6
+            ],
+            [
+              "CCX",
+              2,
+              6,
+              7
+            ],
+            [
+              "CX",
+              2,
+              6
+            ],
+            [
+              "CX",
+              3,
+              7
+            ]
+          ],
+          "gate_counts": {
+            "CCX": 5,
+            "CX": 6
+          },
+          "action_on_arbitrary_syndrome": "(x,z)->(x,z+A*x) componentwise modulo4, NOT bitwise XOR",
+          "hardware_gate_export_implemented": true,
+          "hardware_transpilation_executed": false,
+          "unknown_source_inverse_used": false,
+          "retained_original_phase_qubits": 4
+        },
+        "public_Y_axis_mask_hex": "0x1",
+        "terminal_gates_after_syndrome_measurement": [
+          [
+            "SDG",
+            0
+          ],
+          [
+            "H",
+            0
+          ],
+          [
+            "H",
+            1
+          ],
+          [
+            "H",
+            2
+          ],
+          [
+            "H",
+            3
+          ]
+        ],
+        "terminal_Z_measurement_wires": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "actual_axes": "X/Y after optional public T-grid phase feedback",
+        "T_grid_feedback_coefficients": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "feedback_uses_public_source_and_measured_syndrome_only": true,
+        "feedback_computed_only_for_realized_syndrome": true,
+        "full_feedback_table_is_calibration_only": true,
+        "measured_syndrome_index": 0,
+        "public_uniform_mask_bits_per_attempt": 4,
+        "mask_is_retained_in_classical_record": true,
+        "source_quantum_preparations_per_attempt": 4,
+        "quantum_samples_multiplied_by_number_of_calibrated_masks": false,
+        "unknown_source_inverse_or_duplicate_packet_used": false,
+        "hardware_transpilation_or_execution_performed": false
+      },
+      "all_public_masks_calibrated": 16,
+      "likelihood_entries_enumerated": 65536,
+      "selected_matrix_is_native_average_evidence": false,
+      "higher_mutual_information_than_fixed_X_guaranteed": false,
+      "decoder_or_speedup_candidate_supplied": false
+    },
+    {
+      "full_labels": [
+        [
+          6,
+          2,
+          9
+        ]
+      ],
+      "phase_bits": 4,
+      "visibility_exact": "1/2",
+      "residual_secret_modulus": 4,
+      "public_source_syndrome_T_feedback_used": false,
+      "fixed_X_information": {
+        "uniform_secret_mutual_information_bits": 0.03417449780627624,
+        "optimal_one_copy_Bayes_guess_probability": 0.3125,
+        "secret_hypotheses_enumerated": 4,
+        "likelihood_evaluation_is_free_or_polynomial": false
+      },
+      "public_random_XY_information": {
+        "uniform_secret_mutual_information_bits": 0.02278299853751753,
+        "optimal_one_copy_Bayes_guess_probability": 0.296875,
+        "secret_hypotheses_enumerated": 4,
+        "likelihood_evaluation_is_free_or_polynomial": false
+      },
+      "fixed_X_aliases": {
+        "all_secret_laws_distinct_on_this_selected_matrix": false,
+        "number_of_distinct_likelihood_classes": 3,
+        "maximum_negation_pair_probability_difference": 1.0408340855860843e-17,
+        "complete_likelihood_comparisons_are_exponential": true,
+        "aliases_by_secret_index": [
+          [
+            0
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            2
+          ],
+          [
+            1,
+            3
+          ]
+        ]
+      },
+      "random_XY_aliases": {
+        "all_secret_laws_distinct_on_this_selected_matrix": true,
+        "number_of_distinct_likelihood_classes": 4,
+        "maximum_negation_pair_probability_difference": 0.001953125,
+        "complete_likelihood_comparisons_are_exponential": true,
+        "aliases_by_secret_index": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ]
+        ]
+      },
+      "exported_readout_plan": {
+        "syndrome_circuit": {
+          "kind": "COMPONENTWISE_MOD4_CONTROLLED_ADD",
+          "input_phase_qubits": 3,
+          "measured_syndrome_qubits": 2,
+          "total_qubits": 5,
+          "extra_zero_work_qubits": 0,
+          "gates": [
+            [
+              "CX",
+              0,
+              4
+            ],
+            [
+              "CX",
+              1,
+              4
+            ],
+            [
+              "CCX",
+              2,
+              3,
+              4
+            ],
+            [
+              "CX",
+              2,
+              3
+            ]
+          ],
+          "gate_counts": {
+            "CX": 3,
+            "CCX": 1
+          },
+          "action_on_arbitrary_syndrome": "(x,z)->(x,z+A*x) componentwise modulo4, NOT bitwise XOR",
+          "hardware_gate_export_implemented": true,
+          "hardware_transpilation_executed": false,
+          "unknown_source_inverse_used": false,
+          "retained_original_phase_qubits": 3
+        },
+        "public_Y_axis_mask_hex": "0x1",
+        "terminal_gates_after_syndrome_measurement": [
+          [
+            "SDG",
+            0
+          ],
+          [
+            "H",
+            0
+          ],
+          [
+            "H",
+            1
+          ],
+          [
+            "H",
+            2
+          ]
+        ],
+        "terminal_Z_measurement_wires": [
+          0,
+          1,
+          2
+        ],
+        "actual_axes": "X/Y after optional public T-grid phase feedback",
+        "T_grid_feedback_coefficients": [
+          0,
+          0,
+          0
+        ],
+        "feedback_uses_public_source_and_measured_syndrome_only": true,
+        "feedback_computed_only_for_realized_syndrome": true,
+        "full_feedback_table_is_calibration_only": true,
+        "measured_syndrome_index": 0,
+        "public_uniform_mask_bits_per_attempt": 3,
+        "mask_is_retained_in_classical_record": true,
+        "source_quantum_preparations_per_attempt": 3,
+        "quantum_samples_multiplied_by_number_of_calibrated_masks": false,
+        "unknown_source_inverse_or_duplicate_packet_used": false,
+        "hardware_transpilation_or_execution_performed": false
+      },
+      "all_public_masks_calibrated": 8,
+      "likelihood_entries_enumerated": 1024,
+      "selected_matrix_is_native_average_evidence": false,
+      "higher_mutual_information_than_fixed_X_guaranteed": false,
+      "decoder_or_speedup_candidate_supplied": false
+    },
+    {
+      "full_labels": [
+        [
+          6,
+          2,
+          9
+        ]
+      ],
+      "phase_bits": 4,
+      "visibility_exact": "1/2",
+      "residual_secret_modulus": 4,
+      "public_source_syndrome_T_feedback_used": true,
+      "fixed_X_information": {
+        "uniform_secret_mutual_information_bits": 0.03417449780627624,
+        "optimal_one_copy_Bayes_guess_probability": 0.3125,
+        "secret_hypotheses_enumerated": 4,
+        "likelihood_evaluation_is_free_or_polynomial": false
+      },
+      "public_random_XY_information": {
+        "uniform_secret_mutual_information_bits": 0.022661009479261397,
+        "optimal_one_copy_Bayes_guess_probability": 0.29419417382415924,
+        "secret_hypotheses_enumerated": 4,
+        "likelihood_evaluation_is_free_or_polynomial": false
+      },
+      "fixed_X_aliases": {
+        "all_secret_laws_distinct_on_this_selected_matrix": false,
+        "number_of_distinct_likelihood_classes": 3,
+        "maximum_negation_pair_probability_difference": 1.0408340855860843e-17,
+        "complete_likelihood_comparisons_are_exponential": true,
+        "aliases_by_secret_index": [
+          [
+            0
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            2
+          ],
+          [
+            1,
+            3
+          ]
+        ]
+      },
+      "random_XY_aliases": {
+        "all_secret_laws_distinct_on_this_selected_matrix": true,
+        "number_of_distinct_likelihood_classes": 4,
+        "maximum_negation_pair_probability_difference": 0.0013810679320049772,
+        "complete_likelihood_comparisons_are_exponential": true,
+        "aliases_by_secret_index": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ]
+        ]
+      },
+      "exported_readout_plan": {
+        "syndrome_circuit": {
+          "kind": "COMPONENTWISE_MOD4_CONTROLLED_ADD",
+          "input_phase_qubits": 3,
+          "measured_syndrome_qubits": 2,
+          "total_qubits": 5,
+          "extra_zero_work_qubits": 0,
+          "gates": [
+            [
+              "CX",
+              0,
+              4
+            ],
+            [
+              "CX",
+              1,
+              4
+            ],
+            [
+              "CCX",
+              2,
+              3,
+              4
+            ],
+            [
+              "CX",
+              2,
+              3
+            ]
+          ],
+          "gate_counts": {
+            "CX": 3,
+            "CCX": 1
+          },
+          "action_on_arbitrary_syndrome": "(x,z)->(x,z+A*x) componentwise modulo4, NOT bitwise XOR",
+          "hardware_gate_export_implemented": true,
+          "hardware_transpilation_executed": false,
+          "unknown_source_inverse_used": false,
+          "retained_original_phase_qubits": 3
+        },
+        "public_Y_axis_mask_hex": "0x1",
+        "terminal_gates_after_syndrome_measurement": [
+          [
+            "T",
+            0
+          ],
+          [
+            "T",
+            0
+          ],
+          [
+            "T",
+            0
+          ],
+          [
+            "T",
+            0
+          ],
+          [
+            "T",
+            0
+          ],
+          [
+            "T",
+            0
+          ],
+          [
+            "SDG",
+            0
+          ],
+          [
+            "H",
+            0
+          ],
+          [
+            "T",
+            1
+          ],
+          [
+            "T",
+            1
+          ],
+          [
+            "T",
+            1
+          ],
+          [
+            "H",
+            1
+          ],
+          [
+            "T",
+            2
+          ],
+          [
+            "T",
+            2
+          ],
+          [
+            "T",
+            2
+          ],
+          [
+            "H",
+            2
+          ]
+        ],
+        "terminal_Z_measurement_wires": [
+          0,
+          1,
+          2
+        ],
+        "actual_axes": "X/Y after optional public T-grid phase feedback",
+        "T_grid_feedback_coefficients": [
+          6,
+          3,
+          3
+        ],
+        "feedback_uses_public_source_and_measured_syndrome_only": true,
+        "feedback_computed_only_for_realized_syndrome": true,
+        "full_feedback_table_is_calibration_only": true,
+        "measured_syndrome_index": 0,
+        "public_uniform_mask_bits_per_attempt": 3,
+        "mask_is_retained_in_classical_record": true,
+        "source_quantum_preparations_per_attempt": 3,
+        "quantum_samples_multiplied_by_number_of_calibrated_masks": false,
+        "unknown_source_inverse_or_duplicate_packet_used": false,
+        "hardware_transpilation_or_execution_performed": false
+      },
+      "all_public_masks_calibrated": 8,
+      "likelihood_entries_enumerated": 1024,
+      "selected_matrix_is_native_average_evidence": false,
+      "higher_mutual_information_than_fixed_X_guaranteed": false,
+      "decoder_or_speedup_candidate_supplied": false
+    }
+  ],
+  "complete_native_Gram_censuses": [
+    {
+      "components": 1,
+      "physical_width": 2,
+      "phase_bits": 4,
+      "visibility_exact": "1",
+      "public_source_syndrome_T_feedback_used": false,
+      "all_original_label_matrices": 256,
+      "all_public_axis_masks": 4,
+      "all_residual_secrets": 4,
+      "full_Gram_observed": [
+        [
+          1.359375,
+          1.0,
+          1.0,
+          1.0
+        ],
+        [
+          1.0,
+          1.359375,
+          1.0,
+          1.0
+        ],
+        [
+          1.0,
+          1.0,
+          1.359375,
+          1.0
+        ],
+        [
+          1.0,
+          1.0,
+          1.0,
+          1.359375
+        ]
+      ],
+      "exact_common_diagonal_from_coarse_parallelogram_census": "87/64",
+      "exact_off_diagonal": "1",
+      "includes_zero_and_order_two_secrets": true,
+      "source_family_identifiable_in_L2": true,
+      "efficient_inference_or_TV_lower_bound_proved": false,
+      "fiber_sizes_enumerated_only_for_bounded_control": true
+    },
+    {
+      "components": 1,
+      "physical_width": 2,
+      "phase_bits": 4,
+      "visibility_exact": "1/2",
+      "public_source_syndrome_T_feedback_used": false,
+      "all_original_label_matrices": 256,
+      "all_public_axis_masks": 4,
+      "all_residual_secrets": 4,
+      "full_Gram_observed": [
+        [
+          1.0693359375,
+          1.0,
+          1.0,
+          1.0
+        ],
+        [
+          1.0,
+          1.0693359375,
+          1.0,
+          1.0
+        ],
+        [
+          1.0,
+          1.0,
+          1.0693359375,
+          1.0
+        ],
+        [
+          1.0,
+          1.0,
+          1.0,
+          1.0693359375
+        ]
+      ],
+      "exact_common_diagonal_from_coarse_parallelogram_census": "1095/1024",
+      "exact_off_diagonal": "1",
+      "includes_zero_and_order_two_secrets": true,
+      "source_family_identifiable_in_L2": true,
+      "efficient_inference_or_TV_lower_bound_proved": false,
+      "fiber_sizes_enumerated_only_for_bounded_control": true
+    },
+    {
+      "components": 1,
+      "physical_width": 2,
+      "phase_bits": 4,
+      "visibility_exact": "0",
+      "public_source_syndrome_T_feedback_used": false,
+      "all_original_label_matrices": 256,
+      "all_public_axis_masks": 4,
+      "all_residual_secrets": 4,
+      "full_Gram_observed": [
+        [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      ],
+      "exact_common_diagonal_from_coarse_parallelogram_census": "1",
+      "exact_off_diagonal": "1",
+      "includes_zero_and_order_two_secrets": true,
+      "source_family_identifiable_in_L2": false,
+      "efficient_inference_or_TV_lower_bound_proved": false,
+      "fiber_sizes_enumerated_only_for_bounded_control": true
+    },
+    {
+      "components": 1,
+      "physical_width": 2,
+      "phase_bits": 4,
+      "visibility_exact": "1/2",
+      "public_source_syndrome_T_feedback_used": true,
+      "all_original_label_matrices": 256,
+      "all_public_axis_masks": 4,
+      "all_residual_secrets": 4,
+      "full_Gram_observed": [
+        [
+          1.0693359375,
+          1.0,
+          1.0,
+          1.0
+        ],
+        [
+          1.0,
+          1.0693359375,
+          1.0,
+          1.0
+        ],
+        [
+          1.0,
+          1.0,
+          1.0693359375,
+          1.0
+        ],
+        [
+          1.0,
+          1.0,
+          1.0,
+          1.0693359375
+        ]
+      ],
+      "exact_common_diagonal_from_coarse_parallelogram_census": "1095/1024",
+      "exact_off_diagonal": "1",
+      "includes_zero_and_order_two_secrets": true,
+      "source_family_identifiable_in_L2": true,
+      "efficient_inference_or_TV_lower_bound_proved": false,
+      "fiber_sizes_enumerated_only_for_bounded_control": true
+    },
+    {
+      "components": 1,
+      "physical_width": 2,
+      "phase_bits": 3,
+      "visibility_exact": "1/2",
+      "public_source_syndrome_T_feedback_used": false,
+      "all_original_label_matrices": 64,
+      "all_public_axis_masks": 4,
+      "all_residual_secrets": 2,
+      "full_Gram_observed": [
+        [
+          1.0693359375,
+          1.0
+        ],
+        [
+          1.0,
+          1.0693359375
+        ]
+      ],
+      "exact_common_diagonal_from_coarse_parallelogram_census": "1095/1024",
+      "exact_off_diagonal": "1",
+      "includes_zero_and_order_two_secrets": true,
+      "source_family_identifiable_in_L2": true,
+      "efficient_inference_or_TV_lower_bound_proved": false,
+      "fiber_sizes_enumerated_only_for_bounded_control": true
+    }
+  ],
+  "native_inference_frontiers": [
+    {
+      "components": 8,
+      "original_phase_bits": 16,
+      "physical_width": 24,
+      "all_residual_secret_count_binary_exponent": 112,
+      "source_matched_reference_sampling": "draw A,R; draw uniform original x; set y=A*x mod4; draw uniform z",
+      "reference_sampler_needs_fiber_sizes_or_secret": false,
+      "centered_density_squared_norm_upper": "6",
+      "any_public_source_syndrome_local_phase_feedback_before_random_mask_covered": true,
+      "random_axes_may_depend_on_secret_history_instead_of_fresh_uniform_coins": false,
+      "adaptive_phase_feedback_transcript_information_bits_upper_per_fresh_batch": "3",
+      "positive_norm_lower_factors_at_inverse_n_noise": [
+        {
+          "base_numerator": 7,
+          "base_denominator": 8,
+          "exponent": 48
+        },
+        {
+          "one_minus_two_to_negative": 8
+        }
+      ],
+      "every_distinct_secret_pair_source_kernel_exact": "1",
+      "unavoidable_negation_alias_after_public_XY_mask": false,
+      "statistical_queries": 64,
+      "absolute_SQ_tolerance": "1/64",
+      "max_secrets_distinguished_per_query_hex": "0x6000",
+      "SQ_uniform_identification_probability_power_of_two_upper_exponent": 91,
+      "SQ_query_evaluation_time_restricted": false,
+      "raw_sample_learning_or_joint_multi_record_queries_ruled_out": false,
+      "efficient_decoder_or_classical_simulator_supplied": false,
+      "Pauli_importance_estimator_second_moment_at_weight_floor_n_over_four": {
+        "power_of_two": 2
+      },
+      "all_source_theorems_external_review_complete": false
+    },
+    {
+      "components": 16,
+      "original_phase_bits": 24,
+      "physical_width": 48,
+      "all_residual_secret_count_binary_exponent": 352,
+      "source_matched_reference_sampling": "draw A,R; draw uniform original x; set y=A*x mod4; draw uniform z",
+      "reference_sampler_needs_fiber_sizes_or_secret": false,
+      "centered_density_squared_norm_upper": "6",
+      "any_public_source_syndrome_local_phase_feedback_before_random_mask_covered": true,
+      "random_axes_may_depend_on_secret_history_instead_of_fresh_uniform_coins": false,
+      "adaptive_phase_feedback_transcript_information_bits_upper_per_fresh_batch": "3",
+      "positive_norm_lower_factors_at_inverse_n_noise": [
+        {
+          "base_numerator": 15,
+          "base_denominator": 16,
+          "exponent": 96
+        },
+        {
+          "one_minus_two_to_negative": 16
+        }
+      ],
+      "every_distinct_secret_pair_source_kernel_exact": "1",
+      "unavoidable_negation_alias_after_public_XY_mask": false,
+      "statistical_queries": 256,
+      "absolute_SQ_tolerance": "1/256",
+      "max_secrets_distinguished_per_query_hex": "0x60000",
+      "SQ_uniform_identification_probability_power_of_two_upper_exponent": 325,
+      "SQ_query_evaluation_time_restricted": false,
+      "raw_sample_learning_or_joint_multi_record_queries_ruled_out": false,
+      "efficient_decoder_or_classical_simulator_supplied": false,
+      "Pauli_importance_estimator_second_moment_at_weight_floor_n_over_four": {
+        "power_of_two": 4
+      },
+      "all_source_theorems_external_review_complete": false
+    },
+    {
+      "components": 32,
+      "original_phase_bits": 40,
+      "physical_width": 96,
+      "all_residual_secret_count_binary_exponent": 1216,
+      "source_matched_reference_sampling": "draw A,R; draw uniform original x; set y=A*x mod4; draw uniform z",
+      "reference_sampler_needs_fiber_sizes_or_secret": false,
+      "centered_density_squared_norm_upper": "6",
+      "any_public_source_syndrome_local_phase_feedback_before_random_mask_covered": true,
+      "random_axes_may_depend_on_secret_history_instead_of_fresh_uniform_coins": false,
+      "adaptive_phase_feedback_transcript_information_bits_upper_per_fresh_batch": "3",
+      "positive_norm_lower_factors_at_inverse_n_noise": [
+        {
+          "base_numerator": 31,
+          "base_denominator": 32,
+          "exponent": 192
+        },
+        {
+          "one_minus_two_to_negative": 32
+        }
+      ],
+      "every_distinct_secret_pair_source_kernel_exact": "1",
+      "unavoidable_negation_alias_after_public_XY_mask": false,
+      "statistical_queries": 1024,
+      "absolute_SQ_tolerance": "1/1024",
+      "max_secrets_distinguished_per_query_hex": "0x600000",
+      "SQ_uniform_identification_probability_power_of_two_upper_exponent": 1183,
+      "SQ_query_evaluation_time_restricted": false,
+      "raw_sample_learning_or_joint_multi_record_queries_ruled_out": false,
+      "efficient_decoder_or_classical_simulator_supplied": false,
+      "Pauli_importance_estimator_second_moment_at_weight_floor_n_over_four": {
+        "power_of_two": 8
+      },
+      "all_source_theorems_external_review_complete": false
+    },
+    {
+      "components": 64,
+      "original_phase_bits": 72,
+      "physical_width": 192,
+      "all_residual_secret_count_binary_exponent": 4480,
+      "source_matched_reference_sampling": "draw A,R; draw uniform original x; set y=A*x mod4; draw uniform z",
+      "reference_sampler_needs_fiber_sizes_or_secret": false,
+      "centered_density_squared_norm_upper": "6",
+      "any_public_source_syndrome_local_phase_feedback_before_random_mask_covered": true,
+      "random_axes_may_depend_on_secret_history_instead_of_fresh_uniform_coins": false,
+      "adaptive_phase_feedback_transcript_information_bits_upper_per_fresh_batch": "3",
+      "positive_norm_lower_factors_at_inverse_n_noise": [
+        {
+          "base_numerator": 63,
+          "base_denominator": 64,
+          "exponent": 384
+        },
+        {
+          "one_minus_two_to_negative": 64
+        }
+      ],
+      "every_distinct_secret_pair_source_kernel_exact": "1",
+      "unavoidable_negation_alias_after_public_XY_mask": false,
+      "statistical_queries": 4096,
+      "absolute_SQ_tolerance": "1/4096",
+      "max_secrets_distinguished_per_query_hex": "0x6000000",
+      "SQ_uniform_identification_probability_power_of_two_upper_exponent": 4441,
+      "SQ_query_evaluation_time_restricted": false,
+      "raw_sample_learning_or_joint_multi_record_queries_ruled_out": false,
+      "efficient_decoder_or_classical_simulator_supplied": false,
+      "Pauli_importance_estimator_second_moment_at_weight_floor_n_over_four": {
+        "power_of_two": 16
+      },
+      "all_source_theorems_external_review_complete": false
+    },
+    {
+      "components": 128,
+      "original_phase_bits": 136,
+      "physical_width": 384,
+      "all_residual_secret_count_binary_exponent": 17152,
+      "source_matched_reference_sampling": "draw A,R; draw uniform original x; set y=A*x mod4; draw uniform z",
+      "reference_sampler_needs_fiber_sizes_or_secret": false,
+      "centered_density_squared_norm_upper": "6",
+      "any_public_source_syndrome_local_phase_feedback_before_random_mask_covered": true,
+      "random_axes_may_depend_on_secret_history_instead_of_fresh_uniform_coins": false,
+      "adaptive_phase_feedback_transcript_information_bits_upper_per_fresh_batch": "3",
+      "positive_norm_lower_factors_at_inverse_n_noise": [
+        {
+          "base_numerator": 127,
+          "base_denominator": 128,
+          "exponent": 768
+        },
+        {
+          "one_minus_two_to_negative": 128
+        }
+      ],
+      "every_distinct_secret_pair_source_kernel_exact": "1",
+      "unavoidable_negation_alias_after_public_XY_mask": false,
+      "statistical_queries": 16384,
+      "absolute_SQ_tolerance": "1/16384",
+      "max_secrets_distinguished_per_query_hex": "0x60000000",
+      "SQ_uniform_identification_probability_power_of_two_upper_exponent": 17107,
+      "SQ_query_evaluation_time_restricted": false,
+      "raw_sample_learning_or_joint_multi_record_queries_ruled_out": false,
+      "efficient_decoder_or_classical_simulator_supplied": false,
+      "Pauli_importance_estimator_second_moment_at_weight_floor_n_over_four": {
+        "power_of_two": 32
+      },
+      "all_source_theorems_external_review_complete": false
+    },
+    {
+      "components": 256,
+      "original_phase_bits": 264,
+      "physical_width": 768,
+      "all_residual_secret_count_binary_exponent": 67072,
+      "source_matched_reference_sampling": "draw A,R; draw uniform original x; set y=A*x mod4; draw uniform z",
+      "reference_sampler_needs_fiber_sizes_or_secret": false,
+      "centered_density_squared_norm_upper": "6",
+      "any_public_source_syndrome_local_phase_feedback_before_random_mask_covered": true,
+      "random_axes_may_depend_on_secret_history_instead_of_fresh_uniform_coins": false,
+      "adaptive_phase_feedback_transcript_information_bits_upper_per_fresh_batch": "3",
+      "positive_norm_lower_factors_at_inverse_n_noise": [
+        {
+          "base_numerator": 255,
+          "base_denominator": 256,
+          "exponent": 1536
+        },
+        {
+          "one_minus_two_to_negative": 256
+        }
+      ],
+      "every_distinct_secret_pair_source_kernel_exact": "1",
+      "unavoidable_negation_alias_after_public_XY_mask": false,
+      "statistical_queries": 65536,
+      "absolute_SQ_tolerance": "1/65536",
+      "max_secrets_distinguished_per_query_hex": "0x600000000",
+      "SQ_uniform_identification_probability_power_of_two_upper_exponent": 67021,
+      "SQ_query_evaluation_time_restricted": false,
+      "raw_sample_learning_or_joint_multi_record_queries_ruled_out": false,
+      "efficient_decoder_or_classical_simulator_supplied": false,
+      "Pauli_importance_estimator_second_moment_at_weight_floor_n_over_four": {
+        "power_of_two": 64
+      },
+      "all_source_theorems_external_review_complete": false
+    }
+  ],
+  "accepted_speedup_candidate": false,
+  "novelty_claim": false,
+  "source_quantum_preparations_executed": 0,
+  "actual_natural_source_noise_certified": false,
+  "same_state_copy_source_or_unknown_inverse_required": false,
+  "identifiability_does_not_prove_efficient_learning": true,
+  "random_axes_guarantee_per_attempt_information_improvement": false,
+  "reference_is_an_exact_classical_sampler_for_real_data": false
+}

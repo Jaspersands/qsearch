@@ -1,0 +1,13 @@
+{
+  "hypothesis_id": "dcp_modular_inversion_newton_hensel_lifting_quantum_bridge",
+  "title": "Quadratic 2-Adic Newton-Hensel Matrix Inversion and Zero-Ancilla Phase Decoupling",
+  "status": "VERIFIED_FINITE_IDENTITIES_REVIEW_PENDING",
+  "claims": [
+    "For any U in Z_{2^m}^{n x n} with det(U) == 1 (mod 2), the Newton-Hensel iteration V_{j+1} = V_j(2I - UV_j) mod 2^{2^{j+1}} squares the residual I - UV_j at each step and reaches U^{-1} mod 2^m in ceil(log_2 m) steps.",
+    "Preconditioning n coupled DCP wires by V_L^T decouples U^T s mod 2^m into n independent 1D scalar phase registers with 100% product state fidelity."
+  ],
+  "favorable_controls": [
+    "3x3 matrix inversion mod 2^8 = 256 in 3 Newton steps",
+    "4x4 matrix inversion mod 2^16 = 65536 in 4 Newton steps"
+  ]
+}

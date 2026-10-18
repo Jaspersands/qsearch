@@ -1,0 +1,90 @@
+{
+  "schema_version": "1.0",
+  "contract_id": "ternary_cubic_syndrome_twirl_reflection_collapse_v1",
+  "title": "Ternary Cubic and Mixed-Degree Syndrome Corrections: Fermat Exponent Reduction, Arbitrary-Function Low-Rank Classical Simulation, and Exact Single-Point Twirl Pinching",
+  "family": "ternary_syndrome_decoder_falsification",
+  "status": "locked_before_theorems",
+  "theorems": [
+    {
+      "id": "T1_arbitrary_function_low_rank_block_convolution_equivalence",
+      "statement": "For any full-row-rank A in F_3^{n x m} with right inverse R (A R = I_n), any independent H in F_3^{r x m} with H A^T = 0 mod 3 (N = 3^r), and any deterministic map F : F_3^r -> F_3^n, the coherent ternary filter with d(b) = R^T b + F(H b) mod 3 has exact output word distribution matching the O(poly(n, m, r) * 9^r) classical block-convolution sampler over cosets e_0 + H^T u."
+    },
+    {
+      "id": "T2_fermat_cubic_reduction_and_single_point_twirl_pinching",
+      "statement": "Over F_3, x^3 = x reduces univariate cubes to linear terms. Any mixed polynomial basis phi_mixed(x) with phi_mixed(0) = 0 containing both odd-degree and even-degree coordinates is strictly injective on F_3^r (phi_mixed(x) == phi_mixed(y) iff x == y), eliminating the y = -x reflection alias of homogeneous quadratics and pinching the z != 0 coefficient-averaged distribution in each occupied block to the exact constant E[P(v | z != 0, e_0)] = (N - 1)/N^2 + (sum_u tilde_sigma_u)^2 / (N^2 B) <= (2N - 1)/N^2 < 2/N."
+    },
+    {
+      "id": "T3_full_syndrome_mixed_twirl_source_average_bound",
+      "statement": "For full H in F_3^{(m-n) x m} spanning ker(A) (N = 3^{m-n}), E_{F_mixed}[Pr(success | A)] <= V_A / 2^m + 2 V_A / 3^{m-n}, and averaging over IID uniform A in F_3^{n x m} (m >= n) yields E_{A, F_mixed}[Pr(success)] <= 3^{-n} + 2(2/3)^m + (3^n - 1)/(2 * 3^m)."
+    }
+  ],
+  "test_instances": [
+    {
+      "instance_id": "n1_m3_r2_cubic_mixed_control",
+      "n": 1,
+      "m": 3,
+      "r": 2,
+      "A": [[1, 1, 1]],
+      "R": [[1], [0], [0]],
+      "H": [
+        [1, 2, 0],
+        [1, 0, 2]
+      ]
+    },
+    {
+      "instance_id": "n1_m3_r2_asymmetric_cubic_mixed_control",
+      "n": 1,
+      "m": 3,
+      "r": 2,
+      "A": [[1, 2, 1]],
+      "R": [[1], [0], [0]],
+      "H": [
+        [1, 1, 0],
+        [2, 0, 1]
+      ]
+    },
+    {
+      "instance_id": "n1_m4_r2_subspace_cubic_mixed_control",
+      "n": 1,
+      "m": 4,
+      "r": 2,
+      "A": [[1, 1, 1, 1]],
+      "R": [[1], [0], [0], [0]],
+      "H": [
+        [1, 2, 0, 0],
+        [0, 0, 1, 2]
+      ]
+    },
+    {
+      "instance_id": "n2_m4_r2_vector_cubic_mixed_control",
+      "n": 2,
+      "m": 4,
+      "r": 2,
+      "A": [
+        [1, 0, 1, 2],
+        [0, 1, 2, 1]
+      ],
+      "R": [
+        [1, 0],
+        [0, 1],
+        [0, 0],
+        [0, 0]
+      ],
+      "H": [
+        [2, 1, 1, 0],
+        [1, 2, 0, 1]
+      ]
+    }
+  ],
+  "asymptotic_scaling_grid": [
+    {"n": 16, "m": 48, "T_trials": 256},
+    {"n": 32, "m": 96, "T_trials": 1024},
+    {"n": 64, "m": 128, "T_trials": 4096},
+    {"n": 128, "m": 256, "T_trials": 16384}
+  ],
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  }
+}

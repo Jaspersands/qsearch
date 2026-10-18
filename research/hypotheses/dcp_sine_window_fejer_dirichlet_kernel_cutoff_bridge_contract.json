@@ -1,0 +1,16 @@
+{
+  "hypothesis_id": "dcp_sine_window_fejer_dirichlet_kernel_cutoff_bridge",
+  "title": "DCP Sine-Window Fejer/Dirichlet Kernel Cutoff Bridge",
+  "status": "LOCAL_DERIVATION_REVIEW_PENDING_UNRESTRICTED_DECAY_RETRACTED",
+  "claims": [
+    "tilde_gamma_sin(phi; P) = D_P(phi) + 0.5*D_P(phi + 2*pi/P) + 0.5*D_P(phi - 2*pi/P) holds identically for all phi and P >= 2.",
+    "At phi = 2*pi/P (P >= 3), D_P(2*pi/P) = 0 whereas tilde_gamma_sin(2*pi/P; P) = 1/2.",
+    "Cubic sidelobe decay is scoped to principal distance delta=dist(phi,2*pi*Z), P>=4, 4*pi/P<=delta<=pi; unrestricted absolute-frequency decay is retracted.",
+    "The P8, phi=2*pi*7.5/8 aliased-main-lobe control has sine magnitude larger than the box magnitude."
+  ],
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  }
+}

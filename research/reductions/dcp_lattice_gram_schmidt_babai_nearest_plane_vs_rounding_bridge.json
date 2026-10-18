@@ -1,0 +1,57 @@
+{
+  "all_checks_passed": true,
+  "certificate_sha256_16": "77be271d318d9ea1",
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "orthogonal_basis_control": {
+    "K_dim": 3,
+    "coordinate_rounding_recovered_exact_lattice_point": true,
+    "exact_separation_verified": true,
+    "gram_schmidt_norms": [
+      4.0,
+      4.0,
+      4.0
+    ],
+    "inscribed_radius_coordinate_rounding": 2.0,
+    "inscribed_radius_nearest_plane": 2.0,
+    "inverse_row_norms": [
+      0.25,
+      0.25,
+      0.25
+    ],
+    "nearest_plane_recovered_exact_lattice_point": true,
+    "radius_ratio_np_over_cr": 1.0,
+    "test_error_norm": 1.5264337522473748
+  },
+  "proof_status": "LOCAL_DERIVATION_REVIEW_PENDING_NOT_FORMALLY_VERIFIED",
+  "schema_version": "dcp-lattice-gram-schmidt-babai-nearest-plane-vs-rounding-bridge-v1",
+  "scope_constraints": {
+    "applies_to": "Babai Nearest Plane vs. Coordinate Rounding inscribed L2 decoding radii and short-relation recovery",
+    "controls_included": "Includes orthogonal 3D basis control (r_NP == r_CR == 2.0, both succeed) and skewed 3D basis audit (r_NP = 2.0 > r_CR = 1.71499, Nearest Plane succeeds where Coordinate Rounding overflows).",
+    "does_not_claim": "Polynomial-time solution of exact CVP beyond the Gram-Schmidt orthorhombic radius r_NP(B)"
+  },
+  "skewed_3d_basis_audit": {
+    "K_dim": 3,
+    "coordinate_rounding_recovered_exact_lattice_point": false,
+    "exact_separation_verified": true,
+    "gram_schmidt_norms": [
+      4.0,
+      4.0,
+      4.0
+    ],
+    "inscribed_radius_coordinate_rounding": 1.7457431218879391,
+    "inscribed_radius_nearest_plane": 2.0,
+    "inverse_row_norms": [
+      0.28641098093474,
+      0.2795084971874737,
+      0.25
+    ],
+    "nearest_plane_recovered_exact_lattice_point": true,
+    "radius_ratio_np_over_cr": 1.14564392373896,
+    "test_error_norm": 1.979898987322333
+  },
+  "theorem_id": "dcp_lattice_gram_schmidt_babai_nearest_plane_vs_rounding_bridge"
+}

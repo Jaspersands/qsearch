@@ -124,6 +124,44 @@ def _join_step(state: tuple[int, ...], record: tuple[int, int, int]) -> tuple[in
     return key, left_count, right_count, left_xor, right_xor, count, image
 
 
+def evaluate_record_join(width, assignment, output, records_factory, marked, resource, padding):
+    """Group-agnostic fixed-address join; keys are already encoded group values."""
+    size = 1 << width
+    if (type(assignment) is not int or type(output) is not int
+            or not 0 <= assignment < size or not 0 <= output < 2*size):
+        raise ValueError("basis wire out of range")
+    records = list(records_factory())
+    real_records = len(records)
+    records.extend([padding]*(resource["padded_records"]-real_records))
+    flags = sort_records(records)
+    comparisons, scan_steps = len(flags), 0
+    states = [(0,)*7]
+    for record in records:
+        states.append(_join_step(states[-1], record))
+        scan_steps += 1
+    count, mask_xor = states[-1][-2:]
+    if marked() and count == 1:
+        output ^= size | (assignment ^ mask_xor)
+    for i in range(len(records)-1, -1, -1):
+        scan_steps += 1
+        states[-1] = tuple(a ^ b for a, b in zip(states[-1], _join_step(states[-2], records[i])))
+        if any(states[-1]):
+            raise ArithmeticError("join prefix did not uncompute")
+        states.pop()
+    comparisons += unsort_records(records, flags)
+    for i, expected in enumerate(records_factory()):
+        records[i] = tuple(a ^ b for a, b in zip(records[i], expected))
+    for i in range(real_records, len(records)):
+        records[i] = tuple(a ^ b for a, b in zip(records[i], padding))
+    clean = not flags and states == [(0,)*7] and not any(any(row) for row in records)
+    return {"output": output, "workspace_clean": clean,
+            "neighbor_count_before_source_mark": count,
+            "support_xor_before_source_mark": mask_xor,
+            "record_evaluations": 2*real_records,
+            "comparators": comparisons, "scan_steps": scan_steps,
+            "persistent_workspace_bits": resource["persistent_workspace_bits"]}
+
+
 @dataclass(frozen=True)
 class BalancedPairingProgram:
     labels: tuple[int, ...]
@@ -157,48 +195,13 @@ class BalancedPairingProgram:
                 yield key, side, mask
 
     def evaluate_xor(self, assignment: int, output: int = 0) -> dict:
-        size = 1 << len(self.labels)
-        if (type(assignment) is not int or type(output) is not int
-                or not 0 <= assignment < size or not 0 <= output < 2*size):
-            raise ValueError("basis wire out of range")
         resource = balanced_certificate(self.n, len(self.labels), self.weight, self.list_length)
         # Explicit controls may use any hash width, not just the theorem's choice.
         extra_bits = len(self.hash_rows)-resource["hash_bits"]
         resource["persistent_workspace_bits"] += (2*resource["padded_records"]+1)*extra_bits
-        records = list(self._records(assignment))
-        real_records = len(records)
         padding = (1 << (self.n+len(self.hash_rows)), 2, 0)
-        records.extend([padding]*(resource["padded_records"]-real_records))
-        flags = sort_records(records)
-        comparisons, scan_steps = len(flags), 0
-        states = [(0,)*7]
-        for record in records:
-            states.append(_join_step(states[-1], record))
-            scan_steps += 1
-        count, mask_xor = states[-1][-2:]
-        if self.marked(assignment) and count == 1:
-            output ^= size | (assignment ^ mask_xor)
-        # Each prefix is a separate clean register, not an irreversible reset.
-        for i in range(len(records)-1, -1, -1):
-            scan_steps += 1
-            states[-1] = tuple(a ^ b for a, b in zip(states[-1], _join_step(states[-2], records[i])))
-            if any(states[-1]):
-                raise ArithmeticError("join prefix did not uncompute")
-            states.pop()
-        comparisons += unsort_records(records, flags)
-        # Reverse the public, fixed-index record-generation circuit.
-        for i, expected in enumerate(self._records(assignment)):
-            records[i] = tuple(a ^ b for a, b in zip(records[i], expected))
-        for i in range(real_records, len(records)):
-            records[i] = tuple(a ^ b for a, b in zip(records[i], padding))
-        clean = (not flags and states == [(0,)*7] and not any(any(row) for row in records))
-        return {"output": output, "workspace_clean": clean,
-                # Diagnostic classical replay values, NOT retained quantum outputs.
-                "neighbor_count_before_source_mark": count,
-                "support_xor_before_source_mark": mask_xor,
-                "record_evaluations": 2*real_records,
-                "comparators": comparisons, "scan_steps": scan_steps,
-                "persistent_workspace_bits": resource["persistent_workspace_bits"]}
+        return evaluate_record_join(len(self.labels), assignment, output,
+                                    lambda: self._records(assignment), lambda: self.marked(assignment), resource, padding)
 
     def propose(self, assignment: int) -> int | None:
         row = self.evaluate_xor(assignment)

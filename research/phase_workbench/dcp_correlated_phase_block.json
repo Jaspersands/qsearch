@@ -1,0 +1,639 @@
+{
+  "contract_id": "native_correlated_phase_block_gate_and_information_control_v1",
+  "status": "PHYSICAL_GATE_EXPORT_INFORMATION_BOUND_REVIEW_PENDING",
+  "finite_controls": [
+    {
+      "full_labels": [
+        [
+          1,
+          4,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          4
+        ]
+      ],
+      "phase_bits": 3,
+      "visibility_exact": "1",
+      "exported_circuit": {
+        "kind": "COMPONENTWISE_MOD4_CONTROLLED_ADD",
+        "input_phase_qubits": 4,
+        "measured_syndrome_qubits": 4,
+        "total_qubits": 8,
+        "extra_zero_work_qubits": 0,
+        "gates": [
+          [
+            "CCX",
+            0,
+            4,
+            5
+          ],
+          [
+            "CX",
+            0,
+            4
+          ],
+          [
+            "CCX",
+            2,
+            6,
+            7
+          ],
+          [
+            "CX",
+            2,
+            6
+          ]
+        ],
+        "gate_counts": {
+          "CCX": 2,
+          "CX": 2
+        },
+        "action_on_arbitrary_syndrome": "(x,z)->(x,z+A*x) componentwise modulo4, NOT bitwise XOR",
+        "hardware_gate_export_implemented": true,
+        "hardware_transpilation_executed": false,
+        "unknown_source_inverse_used": false,
+        "retained_original_phase_qubits": 4
+      },
+      "all_secret_states_checked": 64,
+      "full_frequency_map_injective": true,
+      "fiber_sizes": [
+        {
+          "syndrome": [
+            0,
+            0
+          ],
+          "size": 4
+        },
+        {
+          "syndrome": [
+            0,
+            1
+          ],
+          "size": 4
+        },
+        {
+          "syndrome": [
+            1,
+            0
+          ],
+          "size": 4
+        },
+        {
+          "syndrome": [
+            1,
+            1
+          ],
+          "size": 4
+        }
+      ],
+      "syndrome_probabilities_sum": "1",
+      "syndrome_entropy_bits": 2.0,
+      "retained_block_Holevo_bits": 1.9999999999999996,
+      "scoped_Holevo_lower_bits": 2.0,
+      "injective_uniform_block_average_max_residual": 1.5308084989341906e-17,
+      "efficient_decoder_or_accessible_information_lower_bound": false,
+      "sample_block_record": {
+        "kind": "IMPLICIT_CORRELATED_PHASE_BLOCK",
+        "public_full_labels": [
+          [
+            1,
+            4,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            4
+          ]
+        ],
+        "original_phase_bits": 3,
+        "coarse_projection_bits": 2,
+        "measured_syndrome": [
+          0,
+          0
+        ],
+        "factored_phase_modulus_bits": 1,
+        "retained_quantum_basis": "original Boolean assignment, restricted to measured fiber",
+        "retained_original_quantum_wires": 4,
+        "compact_quantum_index_supplied": false,
+        "fiber_cardinality_known_without_paid_computation": false,
+        "fiber_inverse_or_uniform_fiber_state_oracle_supplied": false,
+        "fresh_IID_product_phase_source_certified": false,
+        "all_measurement_outcomes_retained": true,
+        "measured_syndrome_provenance_not_certified_by_record_alone": true,
+        "retained_correlations_may_not_be_replaced_by_marginal_qubits": true,
+        "descended_phase_coefficients_defined_only_on_measured_fiber": true
+      }
+    },
+    {
+      "full_labels": [
+        [
+          1,
+          4,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          4
+        ]
+      ],
+      "phase_bits": 3,
+      "visibility_exact": "7/8",
+      "exported_circuit": {
+        "kind": "COMPONENTWISE_MOD4_CONTROLLED_ADD",
+        "input_phase_qubits": 4,
+        "measured_syndrome_qubits": 4,
+        "total_qubits": 8,
+        "extra_zero_work_qubits": 0,
+        "gates": [
+          [
+            "CCX",
+            0,
+            4,
+            5
+          ],
+          [
+            "CX",
+            0,
+            4
+          ],
+          [
+            "CCX",
+            2,
+            6,
+            7
+          ],
+          [
+            "CX",
+            2,
+            6
+          ]
+        ],
+        "gate_counts": {
+          "CCX": 2,
+          "CX": 2
+        },
+        "action_on_arbitrary_syndrome": "(x,z)->(x,z+A*x) componentwise modulo4, NOT bitwise XOR",
+        "hardware_gate_export_implemented": true,
+        "hardware_transpilation_executed": false,
+        "unknown_source_inverse_used": false,
+        "retained_original_phase_qubits": 4
+      },
+      "all_secret_states_checked": 64,
+      "full_frequency_map_injective": true,
+      "fiber_sizes": [
+        {
+          "syndrome": [
+            0,
+            0
+          ],
+          "size": 4
+        },
+        {
+          "syndrome": [
+            0,
+            1
+          ],
+          "size": 4
+        },
+        {
+          "syndrome": [
+            1,
+            0
+          ],
+          "size": 4
+        },
+        {
+          "syndrome": [
+            1,
+            1
+          ],
+          "size": 4
+        }
+      ],
+      "syndrome_probabilities_sum": "1",
+      "syndrome_entropy_bits": 2.0,
+      "retained_block_Holevo_bits": 1.325419866765972,
+      "scoped_Holevo_lower_bits": 0.6508397335319445,
+      "injective_uniform_block_average_max_residual": 1.3394574365674169e-17,
+      "efficient_decoder_or_accessible_information_lower_bound": false,
+      "sample_block_record": {
+        "kind": "IMPLICIT_CORRELATED_PHASE_BLOCK",
+        "public_full_labels": [
+          [
+            1,
+            4,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            4
+          ]
+        ],
+        "original_phase_bits": 3,
+        "coarse_projection_bits": 2,
+        "measured_syndrome": [
+          0,
+          0
+        ],
+        "factored_phase_modulus_bits": 1,
+        "retained_quantum_basis": "original Boolean assignment, restricted to measured fiber",
+        "retained_original_quantum_wires": 4,
+        "compact_quantum_index_supplied": false,
+        "fiber_cardinality_known_without_paid_computation": false,
+        "fiber_inverse_or_uniform_fiber_state_oracle_supplied": false,
+        "fresh_IID_product_phase_source_certified": false,
+        "all_measurement_outcomes_retained": true,
+        "measured_syndrome_provenance_not_certified_by_record_alone": true,
+        "retained_correlations_may_not_be_replaced_by_marginal_qubits": true,
+        "descended_phase_coefficients_defined_only_on_measured_fiber": true
+      }
+    },
+    {
+      "full_labels": [
+        [
+          1,
+          2,
+          5,
+          12
+        ]
+      ],
+      "phase_bits": 5,
+      "visibility_exact": "7/8",
+      "exported_circuit": {
+        "kind": "COMPONENTWISE_MOD4_CONTROLLED_ADD",
+        "input_phase_qubits": 4,
+        "measured_syndrome_qubits": 2,
+        "total_qubits": 6,
+        "extra_zero_work_qubits": 0,
+        "gates": [
+          [
+            "CCX",
+            0,
+            4,
+            5
+          ],
+          [
+            "CX",
+            0,
+            4
+          ],
+          [
+            "CX",
+            1,
+            5
+          ],
+          [
+            "CCX",
+            2,
+            4,
+            5
+          ],
+          [
+            "CX",
+            2,
+            4
+          ]
+        ],
+        "gate_counts": {
+          "CCX": 2,
+          "CX": 3
+        },
+        "action_on_arbitrary_syndrome": "(x,z)->(x,z+A*x) componentwise modulo4, NOT bitwise XOR",
+        "hardware_gate_export_implemented": true,
+        "hardware_transpilation_executed": false,
+        "unknown_source_inverse_used": false,
+        "retained_original_phase_qubits": 4
+      },
+      "all_secret_states_checked": 32,
+      "full_frequency_map_injective": true,
+      "fiber_sizes": [
+        {
+          "syndrome": [
+            0
+          ],
+          "size": 4
+        },
+        {
+          "syndrome": [
+            1
+          ],
+          "size": 4
+        },
+        {
+          "syndrome": [
+            2
+          ],
+          "size": 4
+        },
+        {
+          "syndrome": [
+            3
+          ],
+          "size": 4
+        }
+      ],
+      "syndrome_probabilities_sum": "1",
+      "syndrome_entropy_bits": 2.0,
+      "retained_block_Holevo_bits": 1.078984200758073,
+      "scoped_Holevo_lower_bits": 0.6508397335319445,
+      "injective_uniform_block_average_max_residual": 1.4846841437362876e-17,
+      "efficient_decoder_or_accessible_information_lower_bound": false,
+      "sample_block_record": {
+        "kind": "IMPLICIT_CORRELATED_PHASE_BLOCK",
+        "public_full_labels": [
+          [
+            1,
+            2,
+            5,
+            12
+          ]
+        ],
+        "original_phase_bits": 5,
+        "coarse_projection_bits": 2,
+        "measured_syndrome": [
+          0
+        ],
+        "factored_phase_modulus_bits": 3,
+        "retained_quantum_basis": "original Boolean assignment, restricted to measured fiber",
+        "retained_original_quantum_wires": 4,
+        "compact_quantum_index_supplied": false,
+        "fiber_cardinality_known_without_paid_computation": false,
+        "fiber_inverse_or_uniform_fiber_state_oracle_supplied": false,
+        "fresh_IID_product_phase_source_certified": false,
+        "all_measurement_outcomes_retained": true,
+        "measured_syndrome_provenance_not_certified_by_record_alone": true,
+        "retained_correlations_may_not_be_replaced_by_marginal_qubits": true,
+        "descended_phase_coefficients_defined_only_on_measured_fiber": true
+      }
+    },
+    {
+      "full_labels": [
+        [
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "phase_bits": 3,
+      "visibility_exact": "3/4",
+      "exported_circuit": {
+        "kind": "COMPONENTWISE_MOD4_CONTROLLED_ADD",
+        "input_phase_qubits": 4,
+        "measured_syndrome_qubits": 2,
+        "total_qubits": 6,
+        "extra_zero_work_qubits": 0,
+        "gates": [
+          [
+            "CCX",
+            0,
+            4,
+            5
+          ],
+          [
+            "CX",
+            0,
+            4
+          ],
+          [
+            "CCX",
+            1,
+            4,
+            5
+          ],
+          [
+            "CX",
+            1,
+            4
+          ],
+          [
+            "CCX",
+            2,
+            4,
+            5
+          ],
+          [
+            "CX",
+            2,
+            4
+          ],
+          [
+            "CCX",
+            3,
+            4,
+            5
+          ],
+          [
+            "CX",
+            3,
+            4
+          ]
+        ],
+        "gate_counts": {
+          "CCX": 4,
+          "CX": 4
+        },
+        "action_on_arbitrary_syndrome": "(x,z)->(x,z+A*x) componentwise modulo4, NOT bitwise XOR",
+        "hardware_gate_export_implemented": true,
+        "hardware_transpilation_executed": false,
+        "unknown_source_inverse_used": false,
+        "retained_original_phase_qubits": 4
+      },
+      "all_secret_states_checked": 8,
+      "full_frequency_map_injective": false,
+      "fiber_sizes": [
+        {
+          "syndrome": [
+            0
+          ],
+          "size": 2
+        },
+        {
+          "syndrome": [
+            1
+          ],
+          "size": 4
+        },
+        {
+          "syndrome": [
+            2
+          ],
+          "size": 6
+        },
+        {
+          "syndrome": [
+            3
+          ],
+          "size": 4
+        }
+      ],
+      "syndrome_probabilities_sum": "1",
+      "syndrome_entropy_bits": 1.9056390622295665,
+      "retained_block_Holevo_bits": 0.009184022419175833,
+      "scoped_Holevo_lower_bits": null,
+      "injective_uniform_block_average_max_residual": null,
+      "efficient_decoder_or_accessible_information_lower_bound": false,
+      "sample_block_record": {
+        "kind": "IMPLICIT_CORRELATED_PHASE_BLOCK",
+        "public_full_labels": [
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "original_phase_bits": 3,
+        "coarse_projection_bits": 2,
+        "measured_syndrome": [
+          0
+        ],
+        "factored_phase_modulus_bits": 1,
+        "retained_quantum_basis": "original Boolean assignment, restricted to measured fiber",
+        "retained_original_quantum_wires": 4,
+        "compact_quantum_index_supplied": false,
+        "fiber_cardinality_known_without_paid_computation": false,
+        "fiber_inverse_or_uniform_fiber_state_oracle_supplied": false,
+        "fresh_IID_product_phase_source_certified": false,
+        "all_measurement_outcomes_retained": true,
+        "measured_syndrome_provenance_not_certified_by_record_alone": true,
+        "retained_correlations_may_not_be_replaced_by_marginal_qubits": true,
+        "descended_phase_coefficients_defined_only_on_measured_fiber": true
+      }
+    }
+  ],
+  "native_information_frontiers": [
+    {
+      "components": 64,
+      "original_phase_qubits": 256,
+      "original_phase_bits": 72,
+      "source_original_visibility": "1-1/n",
+      "measured_syndrome_bits": 128,
+      "exported_gate_count_upper": 32768,
+      "extra_arithmetic_work_qubits": 0,
+      "live_quantum_wires_before_measurement": 384,
+      "live_quantum_wires_after_measurement": 256,
+      "full_frequency_noninjectivity_probability_power_of_two_upper_exponent": 4096,
+      "entropy_loss_bits_upper": 18,
+      "retained_block_Holevo_bits_lower_IF_injective": 110,
+      "bound_is_pointwise_in_public_labels": false,
+      "Holevo_is_accessible_information_or_efficient_decoder": false,
+      "compact_fiber_index_or_fiber_inverse_supplied": false,
+      "actual_natural_source_noise_certified": false
+    },
+    {
+      "components": 256,
+      "original_phase_qubits": 1024,
+      "original_phase_bits": 264,
+      "source_original_visibility": "1-1/n",
+      "measured_syndrome_bits": 512,
+      "exported_gate_count_upper": 524288,
+      "extra_arithmetic_work_qubits": 0,
+      "live_quantum_wires_before_measurement": 1536,
+      "live_quantum_wires_after_measurement": 1024,
+      "full_frequency_noninjectivity_probability_power_of_two_upper_exponent": 65536,
+      "entropy_loss_bits_upper": 22,
+      "retained_block_Holevo_bits_lower_IF_injective": 490,
+      "bound_is_pointwise_in_public_labels": false,
+      "Holevo_is_accessible_information_or_efficient_decoder": false,
+      "compact_fiber_index_or_fiber_inverse_supplied": false,
+      "actual_natural_source_noise_certified": false
+    },
+    {
+      "components": 1024,
+      "original_phase_qubits": 4096,
+      "original_phase_bits": 1032,
+      "source_original_visibility": "1-1/n",
+      "measured_syndrome_bits": 2048,
+      "exported_gate_count_upper": 8388608,
+      "extra_arithmetic_work_qubits": 0,
+      "live_quantum_wires_before_measurement": 6144,
+      "live_quantum_wires_after_measurement": 4096,
+      "full_frequency_noninjectivity_probability_power_of_two_upper_exponent": 1048576,
+      "entropy_loss_bits_upper": 26,
+      "retained_block_Holevo_bits_lower_IF_injective": 2022,
+      "bound_is_pointwise_in_public_labels": false,
+      "Holevo_is_accessible_information_or_efficient_decoder": false,
+      "compact_fiber_index_or_fiber_inverse_supplied": false,
+      "actual_natural_source_noise_certified": false
+    },
+    {
+      "components": 4096,
+      "original_phase_qubits": 16384,
+      "original_phase_bits": 4104,
+      "source_original_visibility": "1-1/n",
+      "measured_syndrome_bits": 8192,
+      "exported_gate_count_upper": 134217728,
+      "extra_arithmetic_work_qubits": 0,
+      "live_quantum_wires_before_measurement": 24576,
+      "live_quantum_wires_after_measurement": 16384,
+      "full_frequency_noninjectivity_probability_power_of_two_upper_exponent": 16777216,
+      "entropy_loss_bits_upper": 30,
+      "retained_block_Holevo_bits_lower_IF_injective": 8162,
+      "bound_is_pointwise_in_public_labels": false,
+      "Holevo_is_accessible_information_or_efficient_decoder": false,
+      "compact_fiber_index_or_fiber_inverse_supplied": false,
+      "actual_natural_source_noise_certified": false
+    },
+    {
+      "components": 16384,
+      "original_phase_qubits": 65536,
+      "original_phase_bits": 16392,
+      "source_original_visibility": "1-1/n",
+      "measured_syndrome_bits": 32768,
+      "exported_gate_count_upper": 2147483648,
+      "extra_arithmetic_work_qubits": 0,
+      "live_quantum_wires_before_measurement": 98304,
+      "live_quantum_wires_after_measurement": 65536,
+      "full_frequency_noninjectivity_probability_power_of_two_upper_exponent": 268435456,
+      "entropy_loss_bits_upper": 34,
+      "retained_block_Holevo_bits_lower_IF_injective": 32734,
+      "bound_is_pointwise_in_public_labels": false,
+      "Holevo_is_accessible_information_or_efficient_decoder": false,
+      "compact_fiber_index_or_fiber_inverse_supplied": false,
+      "actual_natural_source_noise_certified": false
+    },
+    {
+      "components": 65536,
+      "original_phase_qubits": 262144,
+      "original_phase_bits": 65544,
+      "source_original_visibility": "1-1/n",
+      "measured_syndrome_bits": 131072,
+      "exported_gate_count_upper": 34359738368,
+      "extra_arithmetic_work_qubits": 0,
+      "live_quantum_wires_before_measurement": 393216,
+      "live_quantum_wires_after_measurement": 262144,
+      "full_frequency_noninjectivity_probability_power_of_two_upper_exponent": 4294967296,
+      "entropy_loss_bits_upper": 38,
+      "retained_block_Holevo_bits_lower_IF_injective": 131034,
+      "bound_is_pointwise_in_public_labels": false,
+      "Holevo_is_accessible_information_or_efficient_decoder": false,
+      "compact_fiber_index_or_fiber_inverse_supplied": false,
+      "actual_natural_source_noise_certified": false
+    }
+  ],
+  "hardware_gate_export_implemented": true,
+  "hardware_transpilation_or_execution_performed": false,
+  "source_quantum_preparations_executed": 0,
+  "accepted_speedup_candidate": false,
+  "novelty_claim": false,
+  "external_theorem_review_complete": false,
+  "source_noise_and_IID_labels_are_assumed_not_inferred": true,
+  "implicit_block_is_fresh_product_source": false,
+  "efficient_block_decoder_supplied": false,
+  "prior_local_derivation": "research/DCP_MULTI_OUTPUT_FREQUENCY_BOUND.md#6-correlated-blocks-retain-information"
+}

@@ -1,0 +1,83 @@
+{
+  "schema_version": "1.0",
+  "contract_id": "dcp_product_sine_source_coordinate_marginal_obstruction_v1",
+  "title": "Product-Group Sine-Window Source Coordinate-Marginal Dephasing and Full-Vector Subset-Sum Equivalence Obstruction",
+  "family": "dcp_clean_decoder_falsification",
+  "status": "locked_before_theorems",
+  "theorems": [
+    {
+      "id": "T1_single_coordinate_marginal_dephasing_identity",
+      "statement": "For any shift h = (h_1, h_aux) in Z_q x Z_q^{n-1} and visibility v in [0, 1], averaging the product-group sine-window colour state rho_{(k_1, k_aux)}(h) over uniform auxiliary labels k_aux in Z_q^{n-1} yields effective marginal visibility v_eff(h_aux) = v * 1[h_2 == ... == h_n == 0 mod q]. Thus for all q^{n-1} - 1 non-zero auxiliary shifts h_aux != 0, bar{rho}_{k_1}(h) = I_2 / 2 is independent of h_1 and k_1."
+    },
+    {
+      "id": "T2_k_copy_parity_density_and_cyclic_product_threshold_invariance",
+      "statement": "Over K product-group samples with labels A in Z_q^{n x K} and uniform prior h in Z_q^n, the h_1 mod 2 parity density difference satisfies (rho_even^{(K)} - rho_odd^{(K)})[x, x'] = (2/2^K) v^{wt_H(x XOR x')} 1[A(x - x') == (q/2, 0, ..., 0)^T mod q]. Because |G_prod| = q^n = (2M)^n = |G_cyclic|, the universal average parity advantage bound min(1/2, ((1+v)^K - 1)/(2 q^n)) and minimum copy threshold K_min are strictly invariant between cyclic and product-group readouts."
+    },
+    {
+      "id": "T3_auxiliary_zero_postselection_sample_blowup",
+      "statement": "Postselecting product-group samples with k_2 == ... == k_n == 0 mod q restores scalar h_1 phase states with visibility v and group size q, but succeeds with probability P_accept = q^{-(n-1)} = 2^{-L(n-1)} per preparation, requiring E[N_prep] = K_1 * 2^{L(n-1)} source preparations for K_1 retained samples."
+    }
+  ],
+  "test_instances": [
+    {
+      "instance_id": "n2_q4_K3_clean_product_sine_marginal_audit",
+      "n": 2,
+      "L": 2,
+      "q": 4,
+      "K": 3,
+      "visibility": "1",
+      "A": [
+        [1, 2, 1],
+        [2, 0, 2]
+      ]
+    },
+    {
+      "instance_id": "n2_q4_K3_noisy_product_sine_marginal_audit",
+      "n": 2,
+      "L": 2,
+      "q": 4,
+      "K": 3,
+      "visibility": "3/4",
+      "A": [
+        [1, 3, 2],
+        [1, 1, 2]
+      ]
+    },
+    {
+      "instance_id": "n2_q8_K4_clean_product_sine_marginal_audit",
+      "n": 2,
+      "L": 3,
+      "q": 8,
+      "K": 4,
+      "visibility": "1",
+      "A": [
+        [1, 2, 3, 4],
+        [4, 2, 6, 0]
+      ]
+    },
+    {
+      "instance_id": "n3_q4_K3_noisy_product_sine_marginal_audit",
+      "n": 3,
+      "L": 2,
+      "q": 4,
+      "K": 3,
+      "visibility": "1/2",
+      "A": [
+        [2, 1, 3],
+        [1, 1, 2],
+        [3, 1, 0]
+      ]
+    }
+  ],
+  "asymptotic_scaling_grid": [
+    {"n": 8, "L": 8, "advantage": "1/16", "visibility": "1"},
+    {"n": 16, "L": 10, "advantage": "1/16", "visibility": "1"},
+    {"n": 32, "L": 12, "advantage": "1/16", "visibility": "1"},
+    {"n": 64, "L": 14, "advantage": "1/16", "visibility": "1"}
+  ],
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  }
+}

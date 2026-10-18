@@ -1,0 +1,1033 @@
+{
+  "schema_version": 1,
+  "contract_id": "clean_predictor_noise_source_budget_review_pending_v1",
+  "status": "CLEAN_FIRST_CONDITIONAL_SOURCE_TRADEOFF_NOT_A_DECODER",
+  "public_fixed_point_plans": [
+    {
+      "public_basis_rows": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          257
+        ]
+      ],
+      "lattice_dimension": 2,
+      "assumed_shortest_norm_squared_interval": [
+        1,
+        2
+      ],
+      "norm_interval_squared_ratio_exact": "2",
+      "constant_factor_norm_interval": true,
+      "public_coefficient_absolute_bounds": [
+        2,
+        1
+      ],
+      "all_trial_parent_shift_l1_upper": 4,
+      "parent_box_bits": 19,
+      "parent_box_side_hex": "0x80000",
+      "cyclic_phase_bits": 40,
+      "predictor_family": "native_lift",
+      "predictor_secret_components": 32,
+      "lifted_native_components": 32,
+      "declared_predictor_copy_budget_not_excluded_by_bit_access_bound": true,
+      "sample_model": {
+        "copy_multiplier": 1,
+        "copy_power": 2,
+        "advantage_coefficient_exact": "1/16",
+        "advantage_power": 0
+      },
+      "packet_side_hex": "0x400",
+      "packet_side_bits": 10,
+      "packet_loss_upper_exact": "121/12845056",
+      "boundary_loss_upper_exact": "1/131072",
+      "required_unique_gap_strict_sufficient": 1450,
+      "splitting_prime_lower_bound": 1451,
+      "coordinate_residue_trial_count_upper_formula": "n*(selected_prime-1), times all length guesses",
+      "fixed_point_history": [
+        {
+          "parent_box_bits": 4,
+          "cyclic_phase_bits": 10,
+          "hypothetical_predictor_copy_upper": 100,
+          "target_visibility_loss_exact": "1/3200",
+          "public_box_loss_upper_exact": "1/4"
+        },
+        {
+          "parent_box_bits": 15,
+          "cyclic_phase_bits": 32,
+          "hypothetical_predictor_copy_upper": 1024,
+          "target_visibility_loss_exact": "1/32768",
+          "public_box_loss_upper_exact": "1/8192"
+        },
+        {
+          "parent_box_bits": 18,
+          "cyclic_phase_bits": 38,
+          "hypothetical_predictor_copy_upper": 1444,
+          "target_visibility_loss_exact": "1/46208",
+          "public_box_loss_upper_exact": "1/65536"
+        },
+        {
+          "parent_box_bits": 19,
+          "cyclic_phase_bits": 40,
+          "hypothetical_predictor_copy_upper": 1600,
+          "target_visibility_loss_exact": "1/51200",
+          "public_box_loss_upper_exact": "1/131072"
+        }
+      ],
+      "clean_transfer_budget": {
+        "original_source_calls": 1600,
+        "assumed_clean_average_advantage_exact": "1/16",
+        "visibility_loss_per_original_qubit_upper_exact": "1/51200",
+        "classical_Z_fault_union_trace_distance_upper_exact": "1/64",
+        "per_call_joint_CQ_preparation_error_upper_exact": "1/204800",
+        "all_adapter_channel_error_upper_exact": "1/128",
+        "total_charged_trace_channel_error_upper_exact": "1/32",
+        "noisy_average_advantage_lower_IF_clean_predictor_exact": "1/32",
+        "half_clean_advantage_preserved": true,
+        "arbitrary_correlated_classical_Z_masks_covered_IF_fixed_secret_marginal_union_bounds_hold": true,
+        "arbitrary_coherent_noise_with_same_one_qubit_marginals_covered": false,
+        "preparation_error_requires_joint_CQ_or_uniform_channel_hybrid_bound": true,
+        "original_full_label_law_and_private_adapter_boundary_must_be_preserved": true,
+        "clean_predictor_implemented_or_certified": false,
+        "fixed_inverse_dimension_benchmark_noise_is_mandatory": false
+      },
+      "per_known_adapter_rotation_error_required_exact": "1/409600",
+      "known_adapter_rotations_upper_per_invocation": 3200,
+      "short_vector_gap_correct_trial_and_joint_preparation_precision_certified": false,
+      "native_clean_predictor_supplied": false,
+      "source_gate_cost_bit_lengths_and_all_outer_guesses_must_be_paid": true,
+      "higher_required_gap_is_a_classical_hardness_certificate": false
+    },
+    {
+      "public_basis_rows": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          257
+        ]
+      ],
+      "lattice_dimension": 2,
+      "assumed_shortest_norm_squared_interval": [
+        1,
+        2
+      ],
+      "norm_interval_squared_ratio_exact": "2",
+      "constant_factor_norm_interval": true,
+      "public_coefficient_absolute_bounds": [
+        2,
+        1
+      ],
+      "all_trial_parent_shift_l1_upper": 4,
+      "parent_box_bits": 26,
+      "parent_box_side_hex": "0x4000000",
+      "cyclic_phase_bits": 54,
+      "predictor_family": "native_lift",
+      "predictor_secret_components": 46,
+      "lifted_native_components": 46,
+      "declared_predictor_copy_budget_not_excluded_by_bit_access_bound": true,
+      "sample_model": {
+        "copy_multiplier": 1,
+        "copy_power": 2,
+        "advantage_coefficient_exact": "1/16",
+        "advantage_power": 1
+      },
+      "packet_side_hex": "0x4000",
+      "packet_side_bits": 14,
+      "packet_loss_upper_exact": "121/3288334336",
+      "boundary_loss_upper_exact": "1/16777216",
+      "required_unique_gap_strict_sufficient": 23172,
+      "splitting_prime_lower_bound": 23173,
+      "coordinate_residue_trial_count_upper_formula": "n*(selected_prime-1), times all length guesses",
+      "fixed_point_history": [
+        {
+          "parent_box_bits": 4,
+          "cyclic_phase_bits": 10,
+          "hypothetical_predictor_copy_upper": 100,
+          "target_visibility_loss_exact": "1/32000",
+          "public_box_loss_upper_exact": "1/4"
+        },
+        {
+          "parent_box_bits": 18,
+          "cyclic_phase_bits": 38,
+          "hypothetical_predictor_copy_upper": 1444,
+          "target_visibility_loss_exact": "1/1755904",
+          "public_box_loss_upper_exact": "1/65536"
+        },
+        {
+          "parent_box_bits": 24,
+          "cyclic_phase_bits": 50,
+          "hypothetical_predictor_copy_upper": 2500,
+          "target_visibility_loss_exact": "1/4000000",
+          "public_box_loss_upper_exact": "1/4194304"
+        },
+        {
+          "parent_box_bits": 25,
+          "cyclic_phase_bits": 52,
+          "hypothetical_predictor_copy_upper": 2704,
+          "target_visibility_loss_exact": "1/4499456",
+          "public_box_loss_upper_exact": "1/8388608"
+        },
+        {
+          "parent_box_bits": 26,
+          "cyclic_phase_bits": 54,
+          "hypothetical_predictor_copy_upper": 2916,
+          "target_visibility_loss_exact": "1/5038848",
+          "public_box_loss_upper_exact": "1/16777216"
+        }
+      ],
+      "clean_transfer_budget": {
+        "original_source_calls": 2916,
+        "assumed_clean_average_advantage_exact": "1/864",
+        "visibility_loss_per_original_qubit_upper_exact": "1/5038848",
+        "classical_Z_fault_union_trace_distance_upper_exact": "1/3456",
+        "per_call_joint_CQ_preparation_error_upper_exact": "1/20155392",
+        "all_adapter_channel_error_upper_exact": "1/6912",
+        "total_charged_trace_channel_error_upper_exact": "1/1728",
+        "noisy_average_advantage_lower_IF_clean_predictor_exact": "1/1728",
+        "half_clean_advantage_preserved": true,
+        "arbitrary_correlated_classical_Z_masks_covered_IF_fixed_secret_marginal_union_bounds_hold": true,
+        "arbitrary_coherent_noise_with_same_one_qubit_marginals_covered": false,
+        "preparation_error_requires_joint_CQ_or_uniform_channel_hybrid_bound": true,
+        "original_full_label_law_and_private_adapter_boundary_must_be_preserved": true,
+        "clean_predictor_implemented_or_certified": false,
+        "fixed_inverse_dimension_benchmark_noise_is_mandatory": false
+      },
+      "per_known_adapter_rotation_error_required_exact": "1/40310784",
+      "known_adapter_rotations_upper_per_invocation": 5832,
+      "short_vector_gap_correct_trial_and_joint_preparation_precision_certified": false,
+      "native_clean_predictor_supplied": false,
+      "source_gate_cost_bit_lengths_and_all_outer_guesses_must_be_paid": true,
+      "higher_required_gap_is_a_classical_hardness_certificate": false
+    },
+    {
+      "public_basis_rows": [
+        [
+          17,
+          0
+        ],
+        [
+          16,
+          1
+        ]
+      ],
+      "lattice_dimension": 2,
+      "assumed_shortest_norm_squared_interval": [
+        1,
+        2
+      ],
+      "norm_interval_squared_ratio_exact": "2",
+      "constant_factor_norm_interval": true,
+      "public_coefficient_absolute_bounds": [
+        2,
+        2
+      ],
+      "all_trial_parent_shift_l1_upper": 5,
+      "parent_box_bits": 19,
+      "parent_box_side_hex": "0x80000",
+      "cyclic_phase_bits": 40,
+      "predictor_family": "native_lift",
+      "predictor_secret_components": 32,
+      "lifted_native_components": 32,
+      "declared_predictor_copy_budget_not_excluded_by_bit_access_bound": true,
+      "sample_model": {
+        "copy_multiplier": 1,
+        "copy_power": 2,
+        "advantage_coefficient_exact": "1/16",
+        "advantage_power": 0
+      },
+      "packet_side_hex": "0x400",
+      "packet_side_bits": 10,
+      "packet_loss_upper_exact": "121/12845056",
+      "boundary_loss_upper_exact": "5/524288",
+      "required_unique_gap_strict_sufficient": 1450,
+      "splitting_prime_lower_bound": 1451,
+      "coordinate_residue_trial_count_upper_formula": "n*(selected_prime-1), times all length guesses",
+      "fixed_point_history": [
+        {
+          "parent_box_bits": 4,
+          "cyclic_phase_bits": 10,
+          "hypothetical_predictor_copy_upper": 100,
+          "target_visibility_loss_exact": "1/3200",
+          "public_box_loss_upper_exact": "5/16"
+        },
+        {
+          "parent_box_bits": 15,
+          "cyclic_phase_bits": 32,
+          "hypothetical_predictor_copy_upper": 1024,
+          "target_visibility_loss_exact": "1/32768",
+          "public_box_loss_upper_exact": "5/32768"
+        },
+        {
+          "parent_box_bits": 19,
+          "cyclic_phase_bits": 40,
+          "hypothetical_predictor_copy_upper": 1600,
+          "target_visibility_loss_exact": "1/51200",
+          "public_box_loss_upper_exact": "5/524288"
+        }
+      ],
+      "clean_transfer_budget": {
+        "original_source_calls": 1600,
+        "assumed_clean_average_advantage_exact": "1/16",
+        "visibility_loss_per_original_qubit_upper_exact": "1/51200",
+        "classical_Z_fault_union_trace_distance_upper_exact": "1/64",
+        "per_call_joint_CQ_preparation_error_upper_exact": "1/204800",
+        "all_adapter_channel_error_upper_exact": "1/128",
+        "total_charged_trace_channel_error_upper_exact": "1/32",
+        "noisy_average_advantage_lower_IF_clean_predictor_exact": "1/32",
+        "half_clean_advantage_preserved": true,
+        "arbitrary_correlated_classical_Z_masks_covered_IF_fixed_secret_marginal_union_bounds_hold": true,
+        "arbitrary_coherent_noise_with_same_one_qubit_marginals_covered": false,
+        "preparation_error_requires_joint_CQ_or_uniform_channel_hybrid_bound": true,
+        "original_full_label_law_and_private_adapter_boundary_must_be_preserved": true,
+        "clean_predictor_implemented_or_certified": false,
+        "fixed_inverse_dimension_benchmark_noise_is_mandatory": false
+      },
+      "per_known_adapter_rotation_error_required_exact": "1/409600",
+      "known_adapter_rotations_upper_per_invocation": 3200,
+      "short_vector_gap_correct_trial_and_joint_preparation_precision_certified": false,
+      "native_clean_predictor_supplied": false,
+      "source_gate_cost_bit_lengths_and_all_outer_guesses_must_be_paid": true,
+      "higher_required_gap_is_a_classical_hardness_certificate": false
+    },
+    {
+      "public_basis_rows": [
+        [
+          17,
+          0
+        ],
+        [
+          16,
+          1
+        ]
+      ],
+      "lattice_dimension": 2,
+      "assumed_shortest_norm_squared_interval": [
+        1,
+        2
+      ],
+      "norm_interval_squared_ratio_exact": "2",
+      "constant_factor_norm_interval": true,
+      "public_coefficient_absolute_bounds": [
+        2,
+        2
+      ],
+      "all_trial_parent_shift_l1_upper": 5,
+      "parent_box_bits": 26,
+      "parent_box_side_hex": "0x4000000",
+      "cyclic_phase_bits": 54,
+      "predictor_family": "native_lift",
+      "predictor_secret_components": 46,
+      "lifted_native_components": 46,
+      "declared_predictor_copy_budget_not_excluded_by_bit_access_bound": true,
+      "sample_model": {
+        "copy_multiplier": 1,
+        "copy_power": 2,
+        "advantage_coefficient_exact": "1/16",
+        "advantage_power": 1
+      },
+      "packet_side_hex": "0x4000",
+      "packet_side_bits": 14,
+      "packet_loss_upper_exact": "121/3288334336",
+      "boundary_loss_upper_exact": "5/67108864",
+      "required_unique_gap_strict_sufficient": 23172,
+      "splitting_prime_lower_bound": 23173,
+      "coordinate_residue_trial_count_upper_formula": "n*(selected_prime-1), times all length guesses",
+      "fixed_point_history": [
+        {
+          "parent_box_bits": 4,
+          "cyclic_phase_bits": 10,
+          "hypothetical_predictor_copy_upper": 100,
+          "target_visibility_loss_exact": "1/32000",
+          "public_box_loss_upper_exact": "5/16"
+        },
+        {
+          "parent_box_bits": 19,
+          "cyclic_phase_bits": 40,
+          "hypothetical_predictor_copy_upper": 1600,
+          "target_visibility_loss_exact": "1/2048000",
+          "public_box_loss_upper_exact": "5/524288"
+        },
+        {
+          "parent_box_bits": 25,
+          "cyclic_phase_bits": 52,
+          "hypothetical_predictor_copy_upper": 2704,
+          "target_visibility_loss_exact": "1/4499456",
+          "public_box_loss_upper_exact": "5/33554432"
+        },
+        {
+          "parent_box_bits": 26,
+          "cyclic_phase_bits": 54,
+          "hypothetical_predictor_copy_upper": 2916,
+          "target_visibility_loss_exact": "1/5038848",
+          "public_box_loss_upper_exact": "5/67108864"
+        }
+      ],
+      "clean_transfer_budget": {
+        "original_source_calls": 2916,
+        "assumed_clean_average_advantage_exact": "1/864",
+        "visibility_loss_per_original_qubit_upper_exact": "1/5038848",
+        "classical_Z_fault_union_trace_distance_upper_exact": "1/3456",
+        "per_call_joint_CQ_preparation_error_upper_exact": "1/20155392",
+        "all_adapter_channel_error_upper_exact": "1/6912",
+        "total_charged_trace_channel_error_upper_exact": "1/1728",
+        "noisy_average_advantage_lower_IF_clean_predictor_exact": "1/1728",
+        "half_clean_advantage_preserved": true,
+        "arbitrary_correlated_classical_Z_masks_covered_IF_fixed_secret_marginal_union_bounds_hold": true,
+        "arbitrary_coherent_noise_with_same_one_qubit_marginals_covered": false,
+        "preparation_error_requires_joint_CQ_or_uniform_channel_hybrid_bound": true,
+        "original_full_label_law_and_private_adapter_boundary_must_be_preserved": true,
+        "clean_predictor_implemented_or_certified": false,
+        "fixed_inverse_dimension_benchmark_noise_is_mandatory": false
+      },
+      "per_known_adapter_rotation_error_required_exact": "1/40310784",
+      "known_adapter_rotations_upper_per_invocation": 5832,
+      "short_vector_gap_correct_trial_and_joint_preparation_precision_certified": false,
+      "native_clean_predictor_supplied": false,
+      "source_gate_cost_bit_lengths_and_all_outer_guesses_must_be_paid": true,
+      "higher_required_gap_is_a_classical_hardness_certificate": false
+    },
+    {
+      "public_basis_rows": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          257,
+          0
+        ],
+        [
+          0,
+          0,
+          65537
+        ]
+      ],
+      "lattice_dimension": 3,
+      "assumed_shortest_norm_squared_interval": [
+        1,
+        2
+      ],
+      "norm_interval_squared_ratio_exact": "2",
+      "constant_factor_norm_interval": true,
+      "public_coefficient_absolute_bounds": [
+        2,
+        1,
+        1
+      ],
+      "all_trial_parent_shift_l1_upper": 5,
+      "parent_box_bits": 21,
+      "parent_box_side_hex": "0x200000",
+      "cyclic_phase_bits": 66,
+      "predictor_family": "native_lift",
+      "predictor_secret_components": 58,
+      "lifted_native_components": 58,
+      "declared_predictor_copy_budget_not_excluded_by_bit_access_bound": true,
+      "sample_model": {
+        "copy_multiplier": 1,
+        "copy_power": 2,
+        "advantage_coefficient_exact": "1/16",
+        "advantage_power": 0
+      },
+      "packet_side_hex": "0x800",
+      "packet_side_bits": 11,
+      "packet_loss_upper_exact": "121/51380224",
+      "boundary_loss_upper_exact": "5/2097152",
+      "required_unique_gap_strict_sufficient": 3549,
+      "splitting_prime_lower_bound": 3550,
+      "coordinate_residue_trial_count_upper_formula": "n*(selected_prime-1), times all length guesses",
+      "fixed_point_history": [
+        {
+          "parent_box_bits": 3,
+          "cyclic_phase_bits": 12,
+          "hypothetical_predictor_copy_upper": 144,
+          "target_visibility_loss_exact": "1/4608",
+          "public_box_loss_upper_exact": "5/8"
+        },
+        {
+          "parent_box_bits": 16,
+          "cyclic_phase_bits": 51,
+          "hypothetical_predictor_copy_upper": 2601,
+          "target_visibility_loss_exact": "1/83232",
+          "public_box_loss_upper_exact": "5/65536"
+        },
+        {
+          "parent_box_bits": 20,
+          "cyclic_phase_bits": 63,
+          "hypothetical_predictor_copy_upper": 3969,
+          "target_visibility_loss_exact": "1/127008",
+          "public_box_loss_upper_exact": "5/1048576"
+        },
+        {
+          "parent_box_bits": 21,
+          "cyclic_phase_bits": 66,
+          "hypothetical_predictor_copy_upper": 4356,
+          "target_visibility_loss_exact": "1/139392",
+          "public_box_loss_upper_exact": "5/2097152"
+        }
+      ],
+      "clean_transfer_budget": {
+        "original_source_calls": 4356,
+        "assumed_clean_average_advantage_exact": "1/16",
+        "visibility_loss_per_original_qubit_upper_exact": "1/139392",
+        "classical_Z_fault_union_trace_distance_upper_exact": "1/64",
+        "per_call_joint_CQ_preparation_error_upper_exact": "1/557568",
+        "all_adapter_channel_error_upper_exact": "1/128",
+        "total_charged_trace_channel_error_upper_exact": "1/32",
+        "noisy_average_advantage_lower_IF_clean_predictor_exact": "1/32",
+        "half_clean_advantage_preserved": true,
+        "arbitrary_correlated_classical_Z_masks_covered_IF_fixed_secret_marginal_union_bounds_hold": true,
+        "arbitrary_coherent_noise_with_same_one_qubit_marginals_covered": false,
+        "preparation_error_requires_joint_CQ_or_uniform_channel_hybrid_bound": true,
+        "original_full_label_law_and_private_adapter_boundary_must_be_preserved": true,
+        "clean_predictor_implemented_or_certified": false,
+        "fixed_inverse_dimension_benchmark_noise_is_mandatory": false
+      },
+      "per_known_adapter_rotation_error_required_exact": "1/1115136",
+      "known_adapter_rotations_upper_per_invocation": 8712,
+      "short_vector_gap_correct_trial_and_joint_preparation_precision_certified": false,
+      "native_clean_predictor_supplied": false,
+      "source_gate_cost_bit_lengths_and_all_outer_guesses_must_be_paid": true,
+      "higher_required_gap_is_a_classical_hardness_certificate": false
+    },
+    {
+      "public_basis_rows": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          257,
+          0
+        ],
+        [
+          0,
+          0,
+          65537
+        ]
+      ],
+      "lattice_dimension": 3,
+      "assumed_shortest_norm_squared_interval": [
+        1,
+        2
+      ],
+      "norm_interval_squared_ratio_exact": "2",
+      "constant_factor_norm_interval": true,
+      "public_coefficient_absolute_bounds": [
+        2,
+        1,
+        1
+      ],
+      "all_trial_parent_shift_l1_upper": 5,
+      "parent_box_bits": 28,
+      "parent_box_side_hex": "0x10000000",
+      "cyclic_phase_bits": 87,
+      "predictor_family": "native_lift",
+      "predictor_secret_components": 79,
+      "lifted_native_components": 79,
+      "declared_predictor_copy_budget_not_excluded_by_bit_access_bound": true,
+      "sample_model": {
+        "copy_multiplier": 1,
+        "copy_power": 2,
+        "advantage_coefficient_exact": "1/16",
+        "advantage_power": 1
+      },
+      "packet_side_hex": "0x8000",
+      "packet_side_bits": 15,
+      "packet_loss_upper_exact": "121/13153337344",
+      "boundary_loss_upper_exact": "5/268435456",
+      "required_unique_gap_strict_sufficient": 56757,
+      "splitting_prime_lower_bound": 56758,
+      "coordinate_residue_trial_count_upper_formula": "n*(selected_prime-1), times all length guesses",
+      "fixed_point_history": [
+        {
+          "parent_box_bits": 3,
+          "cyclic_phase_bits": 12,
+          "hypothetical_predictor_copy_upper": 144,
+          "target_visibility_loss_exact": "1/55296",
+          "public_box_loss_upper_exact": "5/8"
+        },
+        {
+          "parent_box_bits": 20,
+          "cyclic_phase_bits": 63,
+          "hypothetical_predictor_copy_upper": 3969,
+          "target_visibility_loss_exact": "1/8001504",
+          "public_box_loss_upper_exact": "5/1048576"
+        },
+        {
+          "parent_box_bits": 27,
+          "cyclic_phase_bits": 84,
+          "hypothetical_predictor_copy_upper": 7056,
+          "target_visibility_loss_exact": "1/18966528",
+          "public_box_loss_upper_exact": "5/134217728"
+        },
+        {
+          "parent_box_bits": 28,
+          "cyclic_phase_bits": 87,
+          "hypothetical_predictor_copy_upper": 7569,
+          "target_visibility_loss_exact": "1/21072096",
+          "public_box_loss_upper_exact": "5/268435456"
+        }
+      ],
+      "clean_transfer_budget": {
+        "original_source_calls": 7569,
+        "assumed_clean_average_advantage_exact": "1/1392",
+        "visibility_loss_per_original_qubit_upper_exact": "1/21072096",
+        "classical_Z_fault_union_trace_distance_upper_exact": "1/5568",
+        "per_call_joint_CQ_preparation_error_upper_exact": "1/84288384",
+        "all_adapter_channel_error_upper_exact": "1/11136",
+        "total_charged_trace_channel_error_upper_exact": "1/2784",
+        "noisy_average_advantage_lower_IF_clean_predictor_exact": "1/2784",
+        "half_clean_advantage_preserved": true,
+        "arbitrary_correlated_classical_Z_masks_covered_IF_fixed_secret_marginal_union_bounds_hold": true,
+        "arbitrary_coherent_noise_with_same_one_qubit_marginals_covered": false,
+        "preparation_error_requires_joint_CQ_or_uniform_channel_hybrid_bound": true,
+        "original_full_label_law_and_private_adapter_boundary_must_be_preserved": true,
+        "clean_predictor_implemented_or_certified": false,
+        "fixed_inverse_dimension_benchmark_noise_is_mandatory": false
+      },
+      "per_known_adapter_rotation_error_required_exact": "1/168576768",
+      "known_adapter_rotations_upper_per_invocation": 15138,
+      "short_vector_gap_correct_trial_and_joint_preparation_precision_certified": false,
+      "native_clean_predictor_supplied": false,
+      "source_gate_cost_bit_lengths_and_all_outer_guesses_must_be_paid": true,
+      "higher_required_gap_is_a_classical_hardness_certificate": false
+    }
+  ],
+  "clean_scalar_comparison": {
+    "public_basis_rows": [
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        257
+      ]
+    ],
+    "lattice_dimension": 2,
+    "assumed_shortest_norm_squared_interval": [
+      1,
+      2
+    ],
+    "norm_interval_squared_ratio_exact": "2",
+    "constant_factor_norm_interval": true,
+    "public_coefficient_absolute_bounds": [
+      2,
+      1
+    ],
+    "all_trial_parent_shift_l1_upper": 4,
+    "parent_box_bits": 13,
+    "parent_box_side_hex": "0x2000",
+    "cyclic_phase_bits": 28,
+    "predictor_family": "scalar",
+    "predictor_secret_components": 1,
+    "lifted_native_components": null,
+    "declared_predictor_copy_budget_not_excluded_by_bit_access_bound": true,
+    "sample_model": {
+      "copy_multiplier": 1,
+      "copy_power": 1,
+      "advantage_coefficient_exact": "1/16",
+      "advantage_power": 0
+    },
+    "packet_side_hex": "0x100",
+    "packet_side_bits": 8,
+    "packet_loss_upper_exact": "121/802816",
+    "boundary_loss_upper_exact": "1/2048",
+    "required_unique_gap_strict_sufficient": 364,
+    "splitting_prime_lower_bound": 365,
+    "coordinate_residue_trial_count_upper_formula": "n*(selected_prime-1), times all length guesses",
+    "fixed_point_history": [
+      {
+        "parent_box_bits": 4,
+        "cyclic_phase_bits": 10,
+        "hypothetical_predictor_copy_upper": 10,
+        "target_visibility_loss_exact": "1/320",
+        "public_box_loss_upper_exact": "1/4"
+      },
+      {
+        "parent_box_bits": 12,
+        "cyclic_phase_bits": 26,
+        "hypothetical_predictor_copy_upper": 26,
+        "target_visibility_loss_exact": "1/832",
+        "public_box_loss_upper_exact": "1/1024"
+      },
+      {
+        "parent_box_bits": 13,
+        "cyclic_phase_bits": 28,
+        "hypothetical_predictor_copy_upper": 28,
+        "target_visibility_loss_exact": "1/896",
+        "public_box_loss_upper_exact": "1/2048"
+      }
+    ],
+    "clean_transfer_budget": {
+      "original_source_calls": 28,
+      "assumed_clean_average_advantage_exact": "1/16",
+      "visibility_loss_per_original_qubit_upper_exact": "1/896",
+      "classical_Z_fault_union_trace_distance_upper_exact": "1/64",
+      "per_call_joint_CQ_preparation_error_upper_exact": "1/3584",
+      "all_adapter_channel_error_upper_exact": "1/128",
+      "total_charged_trace_channel_error_upper_exact": "1/32",
+      "noisy_average_advantage_lower_IF_clean_predictor_exact": "1/32",
+      "half_clean_advantage_preserved": true,
+      "arbitrary_correlated_classical_Z_masks_covered_IF_fixed_secret_marginal_union_bounds_hold": true,
+      "arbitrary_coherent_noise_with_same_one_qubit_marginals_covered": false,
+      "preparation_error_requires_joint_CQ_or_uniform_channel_hybrid_bound": true,
+      "original_full_label_law_and_private_adapter_boundary_must_be_preserved": true,
+      "clean_predictor_implemented_or_certified": false,
+      "fixed_inverse_dimension_benchmark_noise_is_mandatory": false
+    },
+    "per_known_adapter_rotation_error_required_exact": "1/7168",
+    "known_adapter_rotations_upper_per_invocation": 56,
+    "short_vector_gap_correct_trial_and_joint_preparation_precision_certified": false,
+    "native_clean_predictor_supplied": false,
+    "source_gate_cost_bit_lengths_and_all_outer_guesses_must_be_paid": true,
+    "higher_required_gap_is_a_classical_hardness_certificate": false
+  },
+  "existing_source_integration_control": {
+    "selected_prime": 1451,
+    "prime_certificate": {
+      "prime": 1451,
+      "witness": 2,
+      "factors": [
+        {
+          "prime": 2,
+          "exponent": 1,
+          "certificate": {
+            "prime": 2,
+            "witness": 1,
+            "factors": [],
+            "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+          }
+        },
+        {
+          "prime": 5,
+          "exponent": 2,
+          "certificate": {
+            "prime": 5,
+            "witness": 2,
+            "factors": [
+              {
+                "prime": 2,
+                "exponent": 2,
+                "certificate": {
+                  "prime": 2,
+                  "witness": 1,
+                  "factors": [],
+                  "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                }
+              }
+            ],
+            "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+          }
+        },
+        {
+          "prime": 29,
+          "exponent": 1,
+          "certificate": {
+            "prime": 29,
+            "witness": 2,
+            "factors": [
+              {
+                "prime": 2,
+                "exponent": 2,
+                "certificate": {
+                  "prime": 2,
+                  "witness": 1,
+                  "factors": [],
+                  "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                }
+              },
+              {
+                "prime": 7,
+                "exponent": 1,
+                "certificate": {
+                  "prime": 7,
+                  "witness": 3,
+                  "factors": [
+                    {
+                      "prime": 2,
+                      "exponent": 1,
+                      "certificate": {
+                        "prime": 2,
+                        "witness": 1,
+                        "factors": [],
+                        "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                      }
+                    },
+                    {
+                      "prime": 3,
+                      "exponent": 1,
+                      "certificate": {
+                        "prime": 3,
+                        "witness": 2,
+                        "factors": [
+                          {
+                            "prime": 2,
+                            "exponent": 1,
+                            "certificate": {
+                              "prime": 2,
+                              "witness": 1,
+                              "factors": [],
+                              "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                            }
+                          }
+                        ],
+                        "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                      }
+                    }
+                  ],
+                  "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                }
+              }
+            ],
+            "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+          }
+        }
+      ],
+      "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+    },
+    "coordinate_residue_trials_upper": 2900,
+    "existing_source_promise_budget": {
+      "norm_squared_lower": 1,
+      "norm_squared_upper": 1,
+      "promised_unique_gap": 1450,
+      "nonparallel_aliases_excluded_IF_promises_hold": true,
+      "parallel_cross_colour_aliases_excluded_IF_promises_hold": true,
+      "public_basis_coefficient_bounds": [
+        2,
+        2
+      ],
+      "public_parent_shift_bounds": [
+        0,
+        2
+      ],
+      "packet_visibility_loss_upper": "121/25690112",
+      "box_boundary_loss_upper": "1/262144",
+      "bad_rate_upper_IF_correct_trial_and_promises_hold": "219/25690112",
+      "short_vector_norm_gap_and_correct_trial_are_unverified_assumptions": true,
+      "outer_length_coordinate_residue_trials_are_not_free": true,
+      "efficient_robust_receiver_supplied": false
+    },
+    "symbolic_source_resources": {
+      "arithmetic_width_plan": {
+        "point_absolute_bounds": [
+          1104594591688,
+          1104595115975
+        ],
+        "localization_absolute_bounds": [
+          1104594592711,
+          1104595116998
+        ],
+        "shared_signed_word_bits": 42,
+        "localization_coordinates_share_word_width": true,
+        "all_signed_localization_values_in_range": true,
+        "copied_point_or_original_noise_garbage_retained": false
+      },
+      "input_qubits": 39,
+      "localization_output_qubits": 84,
+      "shared_point_arithmetic_work_qubits": 85,
+      "shared_packet_work_qubits": 10,
+      "zero_padding_qubits": 2,
+      "position_QFT_qubits": 40,
+      "total_source_qubits": 220,
+      "constant_additions_including_uncompute": 156,
+      "point_to_localization_additions": 2,
+      "arithmetic_logical_instructions": 2114,
+      "packet_unitary_applications": 2,
+      "packet_plan": {
+        "packet_bits": 10,
+        "packet_side": 1024,
+        "logical_qubits": 20,
+        "clean_AND_work_qubits": 9,
+        "known_flag_qubits": 1,
+        "W_forward_uses": 2,
+        "W_inverse_uses": 1,
+        "known_zero_reflections": 1,
+        "H_gates": 36,
+        "X_gates": 23,
+        "CCX_gates": 18,
+        "CP_gates": 31,
+        "P_gates": 11,
+        "logical_instructions": 119,
+        "global_phase_pi_coefficient": "-1/4",
+        "retained_absolute_pi_weight": "8441/1024",
+        "encoded_binary64_pi": "884279719003555/281474976710656",
+        "Machin_terms": 16,
+        "pi_lower": "2702199289155139770778723466138548690954453271354857406274868882229427215106701002516071935610699965630953755124/860136748176892598733343886651423302289653512937537946071635894779362232608248391056054462678730487823486328125",
+        "pi_upper": "1182664558198884723122287358611764328074688616985936643633156715672834457769192598828753841328454487819350992/376453820913890074899487004189100025511481553604426544559634764263301689662404540823888964951038360595703125",
+        "numeric_normal_angles_supported": true,
+        "encoded_rotation_operator_error_upper": "4762427944520488143797055139505690118985989789177502739139046571499238848883445513930889363145718001782825359/4717627235033028939880749500514333633289025703185190292346144335709509178358458626200305664000000000000000000000000000000000",
+        "known_zero_parent_success_probability": "1",
+        "postselection_used": false,
+        "flag_clear_for_arbitrary_input_claimed": false,
+        "hardware_synthesis_or_simulator_roundoff_certified": false
+      },
+      "coherent_source_instructions_before_QFT": 2155,
+      "no_preimages_or_private_shift_needed": true
+    },
+    "large_source_executed": false,
+    "actual_lattice_promises_certified_from_basis": true,
+    "public_plan": {
+      "public_basis_rows": [
+        [
+          1451,
+          1451
+        ],
+        [
+          1450,
+          1451
+        ]
+      ],
+      "lattice_dimension": 2,
+      "assumed_shortest_norm_squared_interval": [
+        1,
+        1
+      ],
+      "norm_interval_squared_ratio_exact": "1",
+      "constant_factor_norm_interval": true,
+      "public_coefficient_absolute_bounds": [
+        2,
+        2
+      ],
+      "all_trial_parent_shift_l1_upper": 5,
+      "parent_box_bits": 19,
+      "parent_box_side_hex": "0x80000",
+      "cyclic_phase_bits": 40,
+      "predictor_family": "native_lift",
+      "predictor_secret_components": 32,
+      "lifted_native_components": 32,
+      "declared_predictor_copy_budget_not_excluded_by_bit_access_bound": true,
+      "sample_model": {
+        "copy_multiplier": 1,
+        "copy_power": 2,
+        "advantage_coefficient_exact": "1/16",
+        "advantage_power": 0
+      },
+      "packet_side_hex": "0x400",
+      "packet_side_bits": 10,
+      "packet_loss_upper_exact": "121/25690112",
+      "boundary_loss_upper_exact": "5/524288",
+      "required_unique_gap_strict_sufficient": 1450,
+      "splitting_prime_lower_bound": 1451,
+      "coordinate_residue_trial_count_upper_formula": "n*(selected_prime-1), times all length guesses",
+      "fixed_point_history": [
+        {
+          "parent_box_bits": 4,
+          "cyclic_phase_bits": 10,
+          "hypothetical_predictor_copy_upper": 100,
+          "target_visibility_loss_exact": "1/3200",
+          "public_box_loss_upper_exact": "5/16"
+        },
+        {
+          "parent_box_bits": 15,
+          "cyclic_phase_bits": 32,
+          "hypothetical_predictor_copy_upper": 1024,
+          "target_visibility_loss_exact": "1/32768",
+          "public_box_loss_upper_exact": "5/32768"
+        },
+        {
+          "parent_box_bits": 19,
+          "cyclic_phase_bits": 40,
+          "hypothetical_predictor_copy_upper": 1600,
+          "target_visibility_loss_exact": "1/51200",
+          "public_box_loss_upper_exact": "5/524288"
+        }
+      ],
+      "clean_transfer_budget": {
+        "original_source_calls": 1600,
+        "assumed_clean_average_advantage_exact": "1/16",
+        "visibility_loss_per_original_qubit_upper_exact": "1/51200",
+        "classical_Z_fault_union_trace_distance_upper_exact": "1/64",
+        "per_call_joint_CQ_preparation_error_upper_exact": "1/204800",
+        "all_adapter_channel_error_upper_exact": "1/128",
+        "total_charged_trace_channel_error_upper_exact": "1/32",
+        "noisy_average_advantage_lower_IF_clean_predictor_exact": "1/32",
+        "half_clean_advantage_preserved": true,
+        "arbitrary_correlated_classical_Z_masks_covered_IF_fixed_secret_marginal_union_bounds_hold": true,
+        "arbitrary_coherent_noise_with_same_one_qubit_marginals_covered": false,
+        "preparation_error_requires_joint_CQ_or_uniform_channel_hybrid_bound": true,
+        "original_full_label_law_and_private_adapter_boundary_must_be_preserved": true,
+        "clean_predictor_implemented_or_certified": false,
+        "fixed_inverse_dimension_benchmark_noise_is_mandatory": false
+      },
+      "per_known_adapter_rotation_error_required_exact": "1/409600",
+      "known_adapter_rotations_upper_per_invocation": 3200,
+      "short_vector_gap_correct_trial_and_joint_preparation_precision_certified": false,
+      "native_clean_predictor_supplied": false,
+      "source_gate_cost_bit_lengths_and_all_outer_guesses_must_be_paid": true,
+      "higher_required_gap_is_a_classical_hardness_certificate": false
+    },
+    "certificate_scope": "THIS_CLASSICALLY_EASY_UNIMODULAR_DIAGONAL_CALIBRATION_ONLY",
+    "unimodular_left_transform": [
+      [
+        1,
+        -1
+      ],
+      [
+        -1450,
+        1451
+      ]
+    ],
+    "diagonalized_basis": [
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        1451
+      ]
+    ],
+    "shortest_norm_squared_exact": 1,
+    "shortest_nonparallel_norm_squared_exact": 2105401,
+    "known_parent_shift_FOR_CALIBRATION_ONLY": [
+      0,
+      -1
+    ],
+    "short_vector_was_input_to_planner_or_source_constructor": false
+  },
+  "actual_noise_physics_controls": {
+    "classical_Z_mixture_controls": [
+      {
+        "noise_law": "shared_all_Z",
+        "actual_fixed_secret_joint_trace_distance_max": 0.06250000000000006,
+        "marginal_union_upper_exact": "3/16",
+        "all_eight_secrets_checked": true
+      },
+      {
+        "noise_law": "disjoint_single_Z",
+        "actual_fixed_secret_joint_trace_distance_max": 0.1875000000000001,
+        "marginal_union_upper_exact": "3/16",
+        "all_eight_secrets_checked": true
+      },
+      {
+        "noise_law": "independent_Z",
+        "actual_fixed_secret_joint_trace_distance_max": 0.17602539062500006,
+        "marginal_union_upper_exact": "3/16",
+        "all_eight_secrets_checked": true
+      }
+    ],
+    "coherent_noise_marginal_counterexample": {
+      "amplitude_exact": "1/8",
+      "one_qubit_trace_distance": 0.01562500000000011,
+      "sum_two_marginal_trace_distances": 0.03125000000000022,
+      "joint_trace_distance": 0.12499999999999992,
+      "classical_Z_mask_assumption_satisfied": false
+    }
+  },
+  "classically_easy_calibration_bases_are_hard_instances": false,
+  "inverse_n_noise_robustness_is_a_prerequisite_for_polynomial_clean_DCP_progress": false,
+  "new_lattice_reduction_or_novelty_claim": false,
+  "accepted_speedup_candidate": false,
+  "regev_primary_context": "https://arxiv.org/abs/cs/0304005",
+  "cached_primary_proof": "research/literature_cache/cs_0304005_source/quantum_average.tex"
+}

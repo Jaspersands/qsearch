@@ -1,0 +1,23 @@
+{
+  "contract_id": "native_signed_tree_second_moment_and_overflow_contract_v1",
+  "experiment_id_for_mechanical_integration": "EXP-DHS-DCP-NATIVE-TREE-MOMENT-AUDIT",
+  "status": "LOCAL_DERIVATION_RECEIVER_NOT_IMPLEMENTED",
+  "mechanism": "Exact shared-leaf tree constraint redundancies using native two-wise uniform signed sums",
+  "source_model": "IID uniform Z4^n original labels, fixed disjoint physical blocks and distinct fixed supports per leaf",
+  "moment_parameters": "n=b(a+1), k=2^a, L=4^b",
+  "second_moment": "f0=1, f_r=f_(r-1)^2+(L-1)/L^2, M=f_a+1-1/L",
+  "overflow_rule": "Reject whole attempt on any overflow; exact nonoverflow graph required",
+  "overflow_edge_loss": "At most 2*theta^2*sqrt(M*delta); no degree/overflow independence assumed",
+  "coherent_receiver_implemented": false,
+  "conditional_graph_bound_is_an_algorithm": false,
+  "free_random_list_oracle_or_QRAM": false,
+  "accepted_speedup_candidate": false,
+  "novelty_claim": false,
+  "remaining_proof_obligations": [
+    "Independent review of native shared-leaf moments and overflow-incident edge bound",
+    "Clean fixed-address bounded-list receiver with whole-attempt overflow rejection and paid histories",
+    "Actual source noise/supply and amortized escape from one-output recursion",
+    "Hard natural-problem reduction and final decoder with matched classical attacks"
+  ],
+  "literature": ["https://people.eecs.berkeley.edu/~daw/papers/genbday.html", "https://arxiv.org/abs/2410.06856"]
+}

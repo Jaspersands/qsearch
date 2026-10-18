@@ -1,0 +1,14 @@
+{
+  "hypothesis_id": "dcp_cyclic_group_qft_dihedral_coset_interference_bridge",
+  "title": "DCP Cyclic-Group QFT_{2^m} Dihedral Coset Interference Bridge",
+  "status": "VERIFIED_SCOPED_BRIDGE",
+  "claims": [
+    "Cyclic QFT_{2^m}^dagger on an m-wire product phase state yields the exact product distribution prod_{j=0}^{m-1} cos^2(theta_j/2 - pi*K/2^{m-j}).",
+    "Achieves probability 1.0 at K_0 iff theta_j == 2*pi*2^j*K_0/2^m (mod 2*pi) for all j."
+  ],
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  }
+}

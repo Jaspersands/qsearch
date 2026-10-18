@@ -1,0 +1,78 @@
+{
+  "schema_version": "1.0",
+  "contract_id": "dcp_poly_pool_cnot_collimation_branching_obstruction_v1",
+  "title": "Clean DCP Polynomial-Pool CNOT Collimation Sieve: Exact 1/2 Sign-Branching Law, Bucket-Pairing Capacity, and Superpolynomial Depth Barrier",
+  "family": "dcp_clean_decoder_falsification",
+  "status": "locked_before_theorems",
+  "theorems": [
+    {
+      "id": "T1_cnot_z_branching_law_and_subtraction_halving",
+      "statement": "For any secret S in Z_q^n, labels a_1, a_2 in Z_q^n, and visibilities v_1, v_2 in [0, 1], applying CNOT_{1->2} to rho_{a_1}(S, v_1) otimes rho_{a_2}(S, v_2) and measuring qubit 2 in the Z basis yields z in {0, 1} with Pr[z=0] = Pr[z=1] = 1/2 and conditional state rho_{(a_1 + (-1)^z a_2) mod q}(S, v_1 v_2). When a_1 == a_2 mod 2^b with 2 a_2 != 0 mod 2^b, only z=1 cancels the low b bits, so 2 consumed parents yield at most 1/2 expected collimated child."
+    },
+    {
+      "id": "T2_bucket_occupancy_disjoint_pairing_bound",
+      "statement": "In a pool of M_pool independent qubits distributed uniformly across B = 2^b buckets with occupancies (c_0, ..., c_{B-1}), the maximum number of disjoint matched pairs is N_pairs(c) = sum_{u=0}^{B-1} floor(c_u / 2) <= floor(M_pool / 2), with E[N_pairs] <= min(M_pool / 2, C(M_pool, 2) / B) and expected surviving subtraction children E[M_child] = E[N_pairs] / 2 <= min(M_pool / 4, M_pool(M_pool - 1)/(4 B))."
+    },
+    {
+      "id": "T3_superpolynomial_depth_and_sample_barrier",
+      "statement": "Cancelling nt - 1 label bits using polynomial pools of size M_pool (which cancel at most b = floor(log_2 C(M_pool, 2)) bits per level) requires tree depth L_min = ceil((nt - 1)/b) = Omega(nt / log(nt)) and expected initial preparations >= 4^{L_min} = 2^{2 ceil((nt - 1)/b)} = 2^{Omega(nt / log(nt))}, strictly worse than Kuperberg's subexponential collimation sieve 2^{Theta(sqrt(nt))}."
+    }
+  ],
+  "test_instances": [
+    {
+      "instance_id": "q8_n1_M4_B4_clean_collimation_pool",
+      "n": 1,
+      "t": 3,
+      "q": 8,
+      "M_pool": 4,
+      "b_bits": 2,
+      "B_buckets": 4,
+      "v1": "1",
+      "v2": "1"
+    },
+    {
+      "instance_id": "q8_n1_M5_B4_noisy_collimation_pool",
+      "n": 1,
+      "t": 3,
+      "q": 8,
+      "M_pool": 5,
+      "b_bits": 2,
+      "B_buckets": 4,
+      "v1": "3/4",
+      "v2": "1/2"
+    },
+    {
+      "instance_id": "q16_n1_M4_B8_clean_collimation_pool",
+      "n": 1,
+      "t": 4,
+      "q": 16,
+      "M_pool": 4,
+      "b_bits": 3,
+      "B_buckets": 8,
+      "v1": "1",
+      "v2": "1"
+    },
+    {
+      "instance_id": "q4_n2_M4_B4_vector_collimation_pool",
+      "n": 2,
+      "t": 2,
+      "q": 4,
+      "M_pool": 4,
+      "b_bits": 2,
+      "B_buckets": 4,
+      "v1": "1",
+      "v2": "3/4"
+    }
+  ],
+  "asymptotic_scaling_grid": [
+    {"n": 8, "t": 16, "M_pool": 16384},
+    {"n": 16, "t": 24, "M_pool": 147456},
+    {"n": 32, "t": 40, "M_pool": 1638400},
+    {"n": 64, "t": 72, "M_pool": 21233664}
+  ],
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  }
+}

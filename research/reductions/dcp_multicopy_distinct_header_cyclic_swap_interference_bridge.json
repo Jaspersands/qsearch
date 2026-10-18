@@ -1,0 +1,83 @@
+{
+  "all_checks_passed": true,
+  "certificate_sha256_16": "7028bdcbd480a0e0",
+  "cyclic_shift_even_flip_audits": [
+    {
+      "bipartite_even_flip_closed_form": 0.722075263604409,
+      "exact_even_flip_law_verified": true,
+      "explicit_tensor_trace_imag": 0.0,
+      "explicit_tensor_trace_real": 0.722075263604409,
+      "matrix_product_trace_real": 0.722075263604409,
+      "max_identity_and_sign_error": 0.0,
+      "max_pair_degree_floor_r_over_2": 1,
+      "negated_secret_trace_real": 0.722075263604409,
+      "r_copies": 2
+    },
+    {
+      "bipartite_even_flip_closed_form": 0.38748357255694044,
+      "exact_even_flip_law_verified": true,
+      "explicit_tensor_trace_imag": 1.3877787807814457e-17,
+      "explicit_tensor_trace_real": 0.3874835725569404,
+      "matrix_product_trace_real": 0.3874835725569404,
+      "max_identity_and_sign_error": 5.721958498152797e-17,
+      "max_pair_degree_floor_r_over_2": 1,
+      "negated_secret_trace_real": 0.3874835725569404,
+      "r_copies": 3
+    },
+    {
+      "bipartite_even_flip_closed_form": 0.20759069000060523,
+      "exact_even_flip_law_verified": true,
+      "explicit_tensor_trace_imag": -1.734723475976807e-17,
+      "explicit_tensor_trace_real": 0.2075906900006052,
+      "matrix_product_trace_real": 0.20759069000060526,
+      "max_identity_and_sign_error": 3.469446951953614e-17,
+      "max_pair_degree_floor_r_over_2": 2,
+      "negated_secret_trace_real": 0.2075906900006052,
+      "r_copies": 4
+    },
+    {
+      "bipartite_even_flip_closed_form": 0.11477287703332796,
+      "exact_even_flip_law_verified": true,
+      "explicit_tensor_trace_imag": 1.5612511283791264e-17,
+      "explicit_tensor_trace_real": 0.11477287703332796,
+      "matrix_product_trace_real": 0.11477287703332795,
+      "max_identity_and_sign_error": 3.122502256758253e-17,
+      "max_pair_degree_floor_r_over_2": 2,
+      "negated_secret_trace_real": 0.11477287703332796,
+      "r_copies": 5
+    }
+  ],
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "proof_status": "LOCAL_DERIVATION_REVIEW_PENDING_NOT_FORMALLY_VERIFIED",
+  "schema_version": "dcp-multicopy-distinct-header-cyclic_swap-interference-bridge-v1",
+  "scope_constraints": {
+    "applies_to": "r-cycle permutation traces Tr(C_r (rho_1 tensor ... tensor rho_r)) and Schur-Weyl sector projectors Pi_lambda on distinct headers",
+    "controls_included": "Includes exact bipartite even-flip cycle expansion across r = 2, 3, 4, 5, exact r=3 symmetric projection reduction to 2-body pairwise differences (common-phase-shift invariance), and constructive contrast with the weight-changing GHZ sum observable.",
+    "does_not_claim": "Absence of r-fold sum harmonics in weight-changing CNOT/GHZ circuits outside the permutation algebra C[S_r]"
+  },
+  "theorem_id": "dcp_multicopy_distinct_header_cyclic_swap_interference_bridge",
+  "three_copy_symmetric_pairwise_audit": {
+    "common_shift_invariance_error": 0.0,
+    "gammas": [
+      0.9,
+      0.8,
+      0.7
+    ],
+    "pairwise_formula_error": 1.1102230246251565e-16,
+    "sym3_prob_explicit_8x8": 0.5554044122939843,
+    "sym3_prob_pairwise_closed_form": 0.5554044122939842,
+    "sym3_prob_under_common_phase_shift": 0.5554044122939843,
+    "thetas": [
+      0.25,
+      1.15,
+      2.35
+    ],
+    "three_body_sum_absent_in_sym3_projector_verified": true,
+    "weight_changing_ghz_sum_harmonic_closed_form": -0.10339047902478465,
+    "weight_changing_ghz_sum_harmonic_explicit": -0.10339047902478464
+  }
+}

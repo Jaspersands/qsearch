@@ -1,0 +1,84 @@
+{
+  "all_checks_passed": true,
+  "audit_n4_q8": {
+    "all_shifts_equivariant_under_pauli_x_wrap_frame": true,
+    "all_shifts_preserve_mod2_kernel": true,
+    "base_even_sublattice_vector": [
+      6,
+      4,
+      4,
+      4
+    ],
+    "n_deg": 4,
+    "q_mod": 8,
+    "shift_records": [
+      {
+        "pauli_x_rectified_matches_negacyclic_orbit_mod_q": true,
+        "rectified_even_sublattice_vector": [
+          6,
+          4,
+          4,
+          4
+        ],
+        "shift_r": 0,
+        "unrectified_is_mod2_kernel_witness": true,
+        "unrectified_matches_negacyclic_orbit_mod_q": true,
+        "wrapped_across_xn_boundary": false
+      },
+      {
+        "pauli_x_rectified_matches_negacyclic_orbit_mod_q": true,
+        "rectified_even_sublattice_vector": [
+          4,
+          6,
+          4,
+          4
+        ],
+        "shift_r": 1,
+        "unrectified_is_mod2_kernel_witness": true,
+        "unrectified_matches_negacyclic_orbit_mod_q": true,
+        "wrapped_across_xn_boundary": false
+      },
+      {
+        "pauli_x_rectified_matches_negacyclic_orbit_mod_q": true,
+        "rectified_even_sublattice_vector": [
+          4,
+          4,
+          6,
+          4
+        ],
+        "shift_r": 2,
+        "unrectified_is_mod2_kernel_witness": true,
+        "unrectified_matches_negacyclic_orbit_mod_q": true,
+        "wrapped_across_xn_boundary": false
+      },
+      {
+        "pauli_x_rectified_matches_negacyclic_orbit_mod_q": true,
+        "rectified_even_sublattice_vector": [
+          4,
+          4,
+          4,
+          6
+        ],
+        "shift_r": 3,
+        "unrectified_is_mod2_kernel_witness": true,
+        "unrectified_matches_negacyclic_orbit_mod_q": false,
+        "wrapped_across_xn_boundary": true
+      }
+    ],
+    "wrap_around_requires_sign_flip": true
+  },
+  "certificate_sha256_16": "1f0032bf8d41c679",
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "proof_status": "LOCAL_DERIVATION_REVIEW_PENDING_NOT_FORMALLY_VERIFIED",
+  "schema_version": "dcp-cyclotomic-ring-rlwe-circulant-cnot-shift-invariance-bridge-v1",
+  "scope_constraints": {
+    "applies_to": "Cyclotomic Ring-LWE / Ideal-DCP block-negacyclic CNOT witness shift orbits over R_{2^t} = Z_{2^t}[X]/(X^n + 1)",
+    "controls_included": "Evaluates R_8 = Z_8[X]/(X^4+1) on a(X)=[1,2,3,0] and b(X)=[2,1,4,3], verifying 100% mod-2 kernel preservation across all 4 cyclic shifts and exact mod-8 negacyclic orbit equivariance under wrap-around Pauli-X sign rectification.",
+    "does_not_claim": "Disjointness of shifted witnesses when the base witness uses multiple shifts within the same polynomial block"
+  },
+  "theorem_id": "dcp_cyclotomic_ring_rlwe_circulant_cnot_shift_invariance_bridge"
+}

@@ -1,0 +1,28 @@
+{
+  "contract_id": "dcp-multi-harmonic-weighted-fisher-decoder-audit-contract",
+  "title": "DCP Multi-Harmonic Weighted Fisher Decoder Audit: Exact Parseval Mean-Square Visibility Law, Zero-Lag Inversion Identity, and Matched-Filter Optimality",
+  "version": "1.0.0",
+  "scope": "dcp_multi_harmonic_visibility_parseval_purity_and_matched_filter_snr_gap",
+  "theorems": [
+    {
+      "id": "T1",
+      "name": "Exact Sum of Non-Zero Harmonic Visibilities via K_eta(0)",
+      "statement": "For any symmetric probability distribution K_eta on Z_q, the sum of non-zero harmonic visibilities lambda_d = sum_e K_eta(e) cos(2*pi*d*e/q) over d in {1, ..., q-1} equals q * K_eta(0) - 1."
+    },
+    {
+      "id": "T2",
+      "name": "Exact Parseval Collision-Purity Law for Quadratic Visibility",
+      "statement": "For any symmetric probability distribution K_eta on Z_q, the sum of squared non-zero harmonic visibilities over d in {1, ..., q-1} equals q * sum_(e in Z_q) K_eta(e)^2 - 1."
+    },
+    {
+      "id": "T3",
+      "name": "Cauchy-Schwarz Matched-Filter Optimality and Physical-Space SNR Gap Identity",
+      "statement": "Matched-harmonic weighting w_d* = lambda_d maximizes SNR(w; K_eta) at SNR_matched = q * sum_e K_eta(e)^2 - 1, exceeding uniform weighting SNR_unif = (q * K_eta(0) - 1)^2 / (q - 1) by exactly q * sum_(e=1)^(q-1) (K_eta(e) - (1 - K_eta(0))/(q - 1))^2 >= 0."
+    }
+  ],
+  "guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  }
+}

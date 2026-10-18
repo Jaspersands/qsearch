@@ -1,0 +1,32 @@
+{
+  "contract_id": "dcp-interleaved-tree-merge-syndrome-pruning-audit-contract",
+  "title": "Conditional Classical Latent-Error Coincidence Identities: No Physical Syndrome Filter Supplied",
+  "version": "2.0.0",
+  "scope": "conditional_classical_latent_error_equality_retaining_one_original_error_not_CNOT_merging",
+  "theorems": [
+    {
+      "id": "T1",
+      "name": "Single-Step Coincidence Renormalization and p* = 2/3 Purification Crossover",
+      "statement": "For the symmetric nearest-neighbor kernel K_eta(0) = 1 - p, K_eta(+-1) = p/2 on Z_q, single-step coincidence pruning succeeds with probability P_acc^(1)(p) = (1 - p)^2 + p^2 / 2 and changes fundamental visibility by lambda_1^(1)(p) - lambda_1(p) = p(1 - p)(2 - 3p)(1 - cos(2*pi/q)) / (2*P_acc^(1)(p)), which is positive for 0 < p < 2/3, zero at p* = 2/3, and negative for 2/3 < p < 1."
+    },
+    {
+      "id": "T2",
+      "name": "Exact Telescoping 2^L-Moment Identity for Depth-L Tree Survival",
+      "statement": "Across L recursive binary coincidence-pruning layers consuming K = 2^L leaves, the surviving root error distribution is K^(L)(e) = K_eta(e)^(2^L) / sum_z K_eta(z)^(2^L), and the joint survival probability prod_(l=1)^L (P_acc^(l))^(2^(L-l)) telescopes identically to the 2^L-th moment norm sum_(e in Z_q) K_eta(e)^(2^L)."
+    },
+    {
+      "id": "T3",
+      "name": "Conditional Classical SNR Proxy Upper Bound Only",
+      "statement": "For a conditional CLASSICAL retained-error posterior, SNR_proxy=P_surv*lambda^2<=P_surv<=1. Comparisons with K*lambda_base^2 are finite diagnostics, not a certified universal dominance theorem; q3,p2/3 has both proxies exactly zero."
+    }
+  ],
+  "guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false,
+    "physical_equality_instrument_supplied": false,
+    "CNOT_sum_merge_error_law_claimed": false,
+    "universal_direct_leaf_dominance_claimed": false,
+    "external_theorem_review_complete": false
+  }
+}

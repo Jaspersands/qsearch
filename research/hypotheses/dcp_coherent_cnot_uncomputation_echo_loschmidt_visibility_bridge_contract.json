@@ -1,0 +1,12 @@
+{
+  "hypothesis_id": "dcp_coherent_cnot_uncomputation_echo_loschmidt_visibility_bridge",
+  "title": "Coherent CNOT Uncomputation Echo vs. Syndrome-Conditioned Readout Visibility",
+  "status": "VERIFIED_FINITE_IDENTITIES_REVIEW_PENDING",
+  "claims": [
+    "Because CNOT_{0->1}^dagger (X_0 otimes I_1) CNOT_{0->1} = X_0 otimes X_1, uncomputing or tracing out the syndrome wire without Z_1 readout yields <X_0>_{uncomputed} = 0.5 * gamma^2 * (cos(theta_0 + theta_1) + cos(theta_0 - theta_1)).",
+    "On a zero-sum pair theta_0 + theta_1 = 0, syndrome-conditioned readout (d_1=0) maintains constant visibility +gamma^2 across all theta_0, whereas uncomputed echo suffers a complete blind spot (<X_0> = 0) at theta_0 = +/- pi/2."
+  ],
+  "favorable_controls": [
+    "Zero-sum pair sweep across theta_0 in {0, pi/4, pi/2, 3*pi/4} at gamma = 0.9"
+  ]
+}

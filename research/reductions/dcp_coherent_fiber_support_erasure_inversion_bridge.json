@@ -1,0 +1,45 @@
+{
+  "all_checks_passed": true,
+  "certificate_sha256_16": "83f2b598982395f4",
+  "colliding_fiber_audit": {
+    "K": 4,
+    "Q_group_size": 4,
+    "full_coherent_fiber_pgm_recovery_prob": 1.0,
+    "hierarchy_and_collision_free_iff_verified": true,
+    "is_collision_free": false,
+    "n": 1,
+    "occupied_fibers_R": 4,
+    "q_mod": 4,
+    "single_rep_ancilla_zero_probability": 0.25,
+    "single_rep_unconditional_recovery_prob": 0.25,
+    "unerased_pointer_max_secret_difference": 0.0,
+    "unerased_pointer_strictly_secret_blind": true
+  },
+  "collision_free_control": {
+    "K": 3,
+    "Q_group_size": 8,
+    "full_coherent_fiber_pgm_recovery_prob": 1.0,
+    "hierarchy_and_collision_free_iff_verified": true,
+    "is_collision_free": true,
+    "n": 1,
+    "occupied_fibers_R": 8,
+    "q_mod": 8,
+    "single_rep_ancilla_zero_probability": 1.0,
+    "single_rep_unconditional_recovery_prob": 1.0,
+    "unerased_pointer_max_secret_difference": 0.0,
+    "unerased_pointer_strictly_secret_blind": true
+  },
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "proof_status": "LOCAL_DERIVATION_REVIEW_PENDING_NOT_FORMALLY_VERIFIED",
+  "schema_version": "dcp-coherent-fiber-support-erasure-inversion-bridge-v1",
+  "scope_constraints": {
+    "applies_to": "Un-erased pointer traceout, single-representative canonical uncomputation, and full coherent fiber normalization",
+    "controls_included": "Includes exact secret-blindness of un-erased pointer traceout (0.0 distance), collision-free equality P_{single-rep} == P_{PGM} == 1.0 on A=[[1,2,4]] mod 8, and multi-collision separation P_{single-rep} = 0.25 vs P_{PGM} = 0.9286 on A=[[1,1,2,2]] mod 4.",
+    "does_not_claim": "Efficient quantum circuit synthesis for uniform multi-preimage fiber normalization on arbitrary A"
+  },
+  "theorem_id": "dcp_coherent_fiber_support_erasure_inversion_bridge"
+}

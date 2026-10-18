@@ -1,0 +1,12 @@
+{
+  "hypothesis_id": "dcp_gaussian_vs_sine_window_lwe_fourier_leakage_bridge",
+  "title": "Finite-Support Dirichlet-Laplacian Optimality of Sine Windows vs. Truncated Gaussians",
+  "status": "VERIFIED_FINITE_IDENTITIES_REVIEW_PENDING",
+  "claims": [
+    "The discrete sine window psi_sin*(x) = sqrt(2/(P+1)) sin(pi*(x+1)/(P+1)) is the exact ground-state eigenvector of the P x P Dirichlet Laplacian and globally maximizes unit-shift overlap gamma(1) = cos(pi/(P+1)) over all profiles supported on {0, ..., P-1}.",
+    "At unit shift Delta=1, gamma_box(1) < gamma_gauss(1) < gamma_sin*(1), while narrower truncated Gaussians achieve lower far-sidelobe QFT leakage outside |k| <= 2."
+  ],
+  "favorable_controls": [
+    "P=16 and P=32 window comparisons (sine vs truncated Gaussian sigma=0.45*P vs box)"
+  ]
+}

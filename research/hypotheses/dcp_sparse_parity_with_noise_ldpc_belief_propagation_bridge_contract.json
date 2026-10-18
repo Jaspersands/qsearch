@@ -1,0 +1,12 @@
+{
+  "hypothesis_id": "dcp_sparse_parity_with_noise_ldpc_belief_propagation_bridge",
+  "title": "Exact Hyperbolic-Tangent Belief Propagation LLR Algebra on Noisy CNOT Parity Checks",
+  "status": "VERIFIED_FINITE_IDENTITIES_REVIEW_PENDING",
+  "claims": [
+    "A weight-2 noisy parity check c = z_0 (+) z_l with measurement bias gamma_check and partner prior bias gamma_partner contributes exact extrinsic LLR 2 * atanh(gamma_check * gamma_partner) to z_0.",
+    "Across L disjoint auxiliary checks on a star tree, additive BP LLR pooling matches exact 2^L marginal Bayes inference to < 1e-12 and monotonically reduces MAP bit error probability."
+  ],
+  "favorable_controls": [
+    "L = 0, 1, 2, 3, 4 auxiliary checks at gamma_0 = 0.5, gamma_partner = gamma_check = 0.7"
+  ]
+}

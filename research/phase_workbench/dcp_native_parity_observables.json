@@ -1,0 +1,1442 @@
+{
+  "schema_version": 1,
+  "contract_id": "native_noisy_parity_observable_geometry_review_pending_v1",
+  "status": "SCOPED_NATIVE_SPARSE_OBSERVABLE_BOUND_DENSE_DECODER_OPEN",
+  "native_frontiers": [
+    {
+      "native_components": 8,
+      "original_phase_bits": 16,
+      "total_original_phase_qubits": 256,
+      "specified_target": "(q/2,0,...,0)",
+      "excluded_signed_support_weights_through": 20,
+      "minimum_target_edge_Hamming_distance_on_good_labels": 21,
+      "oriented_short_signed_witness_count_hex": "0x1d8fb289d359f045cc5a6dd3987a00",
+      "union_bound_denominator_binary_exponent": 128,
+      "label_exception_probability_upper_power_of_two_exponent": 8,
+      "exact_union_count_formula": "sum_(w=1..r) binom(K,w)*2^(w-1)",
+      "native_scaling_t_equals_n_plus_8": true,
+      "label_dependent_observable_selection_covered": true,
+      "IID_uniform_unfiltered_original_labels_required": true,
+      "short_witness_absence_is_computational_hardness": false,
+      "independent_original_Z_visibility_exact": "7/8",
+      "maximum_target_coupling_entries_per_observable_row": 1,
+      "ceil_sqrt_target_row_degree": 1,
+      "good_label_advantage_upper_formula": "min(1/2,ceil(sqrt(D))*v^(r+1)/2)",
+      "good_label_advantage_power_of_two_upper_exponent": 5,
+      "good_label_advantage_exactly_zero": false,
+      "average_advantage_power_of_two_upper_exponent": 4,
+      "requested_average_advantage_exact": "1/16",
+      "sparse_class_excluded_at_requested_average_advantage": true,
+      "average_bound_includes_all_label_exceptions": true,
+      "requires_original_independent_Z_faults_not_only_marginal_visibilities": true,
+      "observable_is_effective_binary_decision_on_original_input": true,
+      "observable_operator_norm_at_most_one_required": true,
+      "postselected_conditional_advantage_without_acceptance_cost_covered": false,
+      "all_polynomial_gate_circuits_induce_sparse_observables": false,
+      "general_DCP_or_quantum_decoder_no_go": false
+    },
+    {
+      "native_components": 8,
+      "original_phase_bits": 16,
+      "total_original_phase_qubits": 256,
+      "specified_target": "(q/2,0,...,0)",
+      "excluded_signed_support_weights_through": 20,
+      "minimum_target_edge_Hamming_distance_on_good_labels": 21,
+      "oriented_short_signed_witness_count_hex": "0x1d8fb289d359f045cc5a6dd3987a00",
+      "union_bound_denominator_binary_exponent": 128,
+      "label_exception_probability_upper_power_of_two_exponent": 8,
+      "exact_union_count_formula": "sum_(w=1..r) binom(K,w)*2^(w-1)",
+      "native_scaling_t_equals_n_plus_8": true,
+      "label_dependent_observable_selection_covered": true,
+      "IID_uniform_unfiltered_original_labels_required": true,
+      "short_witness_absence_is_computational_hardness": false,
+      "independent_original_Z_visibility_exact": "7/8",
+      "maximum_target_coupling_entries_per_observable_row": 4096,
+      "ceil_sqrt_target_row_degree": 64,
+      "good_label_advantage_upper_formula": "min(1/2,ceil(sqrt(D))*v^(r+1)/2)",
+      "good_label_advantage_power_of_two_upper_exponent": 1,
+      "good_label_advantage_exactly_zero": false,
+      "average_advantage_power_of_two_upper_exponent": 1,
+      "requested_average_advantage_exact": "1/16",
+      "sparse_class_excluded_at_requested_average_advantage": false,
+      "average_bound_includes_all_label_exceptions": true,
+      "requires_original_independent_Z_faults_not_only_marginal_visibilities": true,
+      "observable_is_effective_binary_decision_on_original_input": true,
+      "observable_operator_norm_at_most_one_required": true,
+      "postselected_conditional_advantage_without_acceptance_cost_covered": false,
+      "all_polynomial_gate_circuits_induce_sparse_observables": false,
+      "general_DCP_or_quantum_decoder_no_go": false
+    },
+    {
+      "native_components": 16,
+      "original_phase_bits": 24,
+      "total_original_phase_qubits": 768,
+      "specified_target": "(q/2,0,...,0)",
+      "excluded_signed_support_weights_through": 62,
+      "minimum_target_edge_Hamming_distance_on_good_labels": 63,
+      "oriented_short_signed_witness_count_hex": "0xcab97028e7d30f66aa7d562361261a74195759acf3dbd041eb1b90d7cb91215ce1a0981814a1a2124429c7a16e00",
+      "union_bound_denominator_binary_exponent": 384,
+      "label_exception_probability_upper_power_of_two_exponent": 16,
+      "exact_union_count_formula": "sum_(w=1..r) binom(K,w)*2^(w-1)",
+      "native_scaling_t_equals_n_plus_8": true,
+      "label_dependent_observable_selection_covered": true,
+      "IID_uniform_unfiltered_original_labels_required": true,
+      "short_witness_absence_is_computational_hardness": false,
+      "independent_original_Z_visibility_exact": "15/16",
+      "maximum_target_coupling_entries_per_observable_row": 1,
+      "ceil_sqrt_target_row_degree": 1,
+      "good_label_advantage_upper_formula": "min(1/2,ceil(sqrt(D))*v^(r+1)/2)",
+      "good_label_advantage_power_of_two_upper_exponent": 6,
+      "good_label_advantage_exactly_zero": false,
+      "average_advantage_power_of_two_upper_exponent": 6,
+      "requested_average_advantage_exact": "1/16",
+      "sparse_class_excluded_at_requested_average_advantage": true,
+      "average_bound_includes_all_label_exceptions": true,
+      "requires_original_independent_Z_faults_not_only_marginal_visibilities": true,
+      "observable_is_effective_binary_decision_on_original_input": true,
+      "observable_operator_norm_at_most_one_required": true,
+      "postselected_conditional_advantage_without_acceptance_cost_covered": false,
+      "all_polynomial_gate_circuits_induce_sparse_observables": false,
+      "general_DCP_or_quantum_decoder_no_go": false
+    },
+    {
+      "native_components": 16,
+      "original_phase_bits": 24,
+      "total_original_phase_qubits": 768,
+      "specified_target": "(q/2,0,...,0)",
+      "excluded_signed_support_weights_through": 62,
+      "minimum_target_edge_Hamming_distance_on_good_labels": 63,
+      "oriented_short_signed_witness_count_hex": "0xcab97028e7d30f66aa7d562361261a74195759acf3dbd041eb1b90d7cb91215ce1a0981814a1a2124429c7a16e00",
+      "union_bound_denominator_binary_exponent": 384,
+      "label_exception_probability_upper_power_of_two_exponent": 16,
+      "exact_union_count_formula": "sum_(w=1..r) binom(K,w)*2^(w-1)",
+      "native_scaling_t_equals_n_plus_8": true,
+      "label_dependent_observable_selection_covered": true,
+      "IID_uniform_unfiltered_original_labels_required": true,
+      "short_witness_absence_is_computational_hardness": false,
+      "independent_original_Z_visibility_exact": "15/16",
+      "maximum_target_coupling_entries_per_observable_row": 65536,
+      "ceil_sqrt_target_row_degree": 256,
+      "good_label_advantage_upper_formula": "min(1/2,ceil(sqrt(D))*v^(r+1)/2)",
+      "good_label_advantage_power_of_two_upper_exponent": 1,
+      "good_label_advantage_exactly_zero": false,
+      "average_advantage_power_of_two_upper_exponent": 1,
+      "requested_average_advantage_exact": "1/16",
+      "sparse_class_excluded_at_requested_average_advantage": false,
+      "average_bound_includes_all_label_exceptions": true,
+      "requires_original_independent_Z_faults_not_only_marginal_visibilities": true,
+      "observable_is_effective_binary_decision_on_original_input": true,
+      "observable_operator_norm_at_most_one_required": true,
+      "postselected_conditional_advantage_without_acceptance_cost_covered": false,
+      "all_polynomial_gate_circuits_induce_sparse_observables": false,
+      "general_DCP_or_quantum_decoder_no_go": false
+    },
+    {
+      "native_components": 32,
+      "original_phase_bits": 40,
+      "total_original_phase_qubits": 2560,
+      "specified_target": "(q/2,0,...,0)",
+      "excluded_signed_support_weights_through": 209,
+      "minimum_target_edge_Hamming_distance_on_good_labels": 210,
+      "oriented_short_signed_witness_count_hex": "0x99045a9828bca8a6be118c0ae49ae21adacad274fd3c821eecff3b1c8be54e0727d1e9b881baef8b208f5433edef9d73f74bd294679e933cdfb89d03f629ffd06e403aebe6ccc507f72d1a865f2b14d28c341bdebbe96fefe3fda39db3b59f11850a9f93b472eedd72a67dea68f6d4b0cd5760ecc6d70f47b4442933f97654122cdcdeb5364446d319da481fd8808482ef07167bfdb12f71549cc400",
+      "union_bound_denominator_binary_exponent": 1280,
+      "label_exception_probability_upper_power_of_two_exponent": 32,
+      "exact_union_count_formula": "sum_(w=1..r) binom(K,w)*2^(w-1)",
+      "native_scaling_t_equals_n_plus_8": true,
+      "label_dependent_observable_selection_covered": true,
+      "IID_uniform_unfiltered_original_labels_required": true,
+      "short_witness_absence_is_computational_hardness": false,
+      "independent_original_Z_visibility_exact": "31/32",
+      "maximum_target_coupling_entries_per_observable_row": 1,
+      "ceil_sqrt_target_row_degree": 1,
+      "good_label_advantage_upper_formula": "min(1/2,ceil(sqrt(D))*v^(r+1)/2)",
+      "good_label_advantage_power_of_two_upper_exponent": 10,
+      "good_label_advantage_exactly_zero": false,
+      "average_advantage_power_of_two_upper_exponent": 10,
+      "requested_average_advantage_exact": "1/16",
+      "sparse_class_excluded_at_requested_average_advantage": true,
+      "average_bound_includes_all_label_exceptions": true,
+      "requires_original_independent_Z_faults_not_only_marginal_visibilities": true,
+      "observable_is_effective_binary_decision_on_original_input": true,
+      "observable_operator_norm_at_most_one_required": true,
+      "postselected_conditional_advantage_without_acceptance_cost_covered": false,
+      "all_polynomial_gate_circuits_induce_sparse_observables": false,
+      "general_DCP_or_quantum_decoder_no_go": false
+    },
+    {
+      "native_components": 32,
+      "original_phase_bits": 40,
+      "total_original_phase_qubits": 2560,
+      "specified_target": "(q/2,0,...,0)",
+      "excluded_signed_support_weights_through": 209,
+      "minimum_target_edge_Hamming_distance_on_good_labels": 210,
+      "oriented_short_signed_witness_count_hex": "0x99045a9828bca8a6be118c0ae49ae21adacad274fd3c821eecff3b1c8be54e0727d1e9b881baef8b208f5433edef9d73f74bd294679e933cdfb89d03f629ffd06e403aebe6ccc507f72d1a865f2b14d28c341bdebbe96fefe3fda39db3b59f11850a9f93b472eedd72a67dea68f6d4b0cd5760ecc6d70f47b4442933f97654122cdcdeb5364446d319da481fd8808482ef07167bfdb12f71549cc400",
+      "union_bound_denominator_binary_exponent": 1280,
+      "label_exception_probability_upper_power_of_two_exponent": 32,
+      "exact_union_count_formula": "sum_(w=1..r) binom(K,w)*2^(w-1)",
+      "native_scaling_t_equals_n_plus_8": true,
+      "label_dependent_observable_selection_covered": true,
+      "IID_uniform_unfiltered_original_labels_required": true,
+      "short_witness_absence_is_computational_hardness": false,
+      "independent_original_Z_visibility_exact": "31/32",
+      "maximum_target_coupling_entries_per_observable_row": 1048576,
+      "ceil_sqrt_target_row_degree": 1024,
+      "good_label_advantage_upper_formula": "min(1/2,ceil(sqrt(D))*v^(r+1)/2)",
+      "good_label_advantage_power_of_two_upper_exponent": 1,
+      "good_label_advantage_exactly_zero": false,
+      "average_advantage_power_of_two_upper_exponent": 1,
+      "requested_average_advantage_exact": "1/16",
+      "sparse_class_excluded_at_requested_average_advantage": false,
+      "average_bound_includes_all_label_exceptions": true,
+      "requires_original_independent_Z_faults_not_only_marginal_visibilities": true,
+      "observable_is_effective_binary_decision_on_original_input": true,
+      "observable_operator_norm_at_most_one_required": true,
+      "postselected_conditional_advantage_without_acceptance_cost_covered": false,
+      "all_polynomial_gate_circuits_induce_sparse_observables": false,
+      "general_DCP_or_quantum_decoder_no_go": false
+    },
+    {
+      "native_components": 64,
+      "original_phase_bits": 72,
+      "total_original_phase_qubits": 9216,
+      "specified_target": "(q/2,0,...,0)",
+      "excluded_signed_support_weights_through": 761,
+      "minimum_target_edge_Hamming_distance_on_good_labels": 762,
+      "oriented_short_signed_witness_count_hex": "0xb3563a4bd709b4dd3dda291db1e23cc0e57dbcb6cacf6f00b39bb7c022fd2951d4105e965235a4a35abbb84c51d4f873091ec8b1f30566f337532c5d8e712c08888aba1a1195b3f7b5e0d11ef8d992790d285c70374a661216afca057aa9e93900ce39235e414c1c30edefdc4f53e32a8af1007d02ef2dac6008ceff55589d16fe87092e96005e1fd94735d79fd37ca997b372941fa8dd7cd62b91c0744dcb5c79fc2d29340fb29a6d47d855be4ca156feba61551e145d041593d47b75e2ed4455eee983bdbd299203c19de9f992a7f8e538138b04ee49b3d5aeb1d162fa46f31f928bdeb119f1e9aac3a1ead907b196b4fc9f855771236060cc94f76736321adb8b14f225e265f6da1cec4e039743eeba140ffc7162e58f917e3f2fc8be33a85fed61fc74284508d739964ee6d30bbaccc2c13fd7edbd5cf92e08c6de6051cb015be34b1feb955fba4e962415e63da90b1cd4cee4a0c40e065656a9d4217fe7152ab7a02809d884ddba1802f2bed2a247c41c1dae2df1482230f9e641369fe958577aadfa0c160f916d83e6183b923650a416145711eeaca56a2dbbe4f92b9bc7f0d714cf0c20a600880563ced48aa734d59bff5b6956cce5f2a325853dab73ade0ed27da42cf23ec5ae26d294ae5302755d22daef229867b142d0e90c410ccab13f9ecb1cc7c4ce4bead842a5f39f936bb08517c7c6cad830112a24eaf8b053e1cd92d7899d23caf16c98821b48b8798b66bc43faa5bcd83d9c2966f38562d8c4a90eba08482c242c265d86afeb074dd285209aaa12800",
+      "union_bound_denominator_binary_exponent": 4608,
+      "label_exception_probability_upper_power_of_two_exponent": 64,
+      "exact_union_count_formula": "sum_(w=1..r) binom(K,w)*2^(w-1)",
+      "native_scaling_t_equals_n_plus_8": true,
+      "label_dependent_observable_selection_covered": true,
+      "IID_uniform_unfiltered_original_labels_required": true,
+      "short_witness_absence_is_computational_hardness": false,
+      "independent_original_Z_visibility_exact": "63/64",
+      "maximum_target_coupling_entries_per_observable_row": 1,
+      "ceil_sqrt_target_row_degree": 1,
+      "good_label_advantage_upper_formula": "min(1/2,ceil(sqrt(D))*v^(r+1)/2)",
+      "good_label_advantage_power_of_two_upper_exponent": 18,
+      "good_label_advantage_exactly_zero": false,
+      "average_advantage_power_of_two_upper_exponent": 18,
+      "requested_average_advantage_exact": "1/16",
+      "sparse_class_excluded_at_requested_average_advantage": true,
+      "average_bound_includes_all_label_exceptions": true,
+      "requires_original_independent_Z_faults_not_only_marginal_visibilities": true,
+      "observable_is_effective_binary_decision_on_original_input": true,
+      "observable_operator_norm_at_most_one_required": true,
+      "postselected_conditional_advantage_without_acceptance_cost_covered": false,
+      "all_polynomial_gate_circuits_induce_sparse_observables": false,
+      "general_DCP_or_quantum_decoder_no_go": false
+    },
+    {
+      "native_components": 64,
+      "original_phase_bits": 72,
+      "total_original_phase_qubits": 9216,
+      "specified_target": "(q/2,0,...,0)",
+      "excluded_signed_support_weights_through": 761,
+      "minimum_target_edge_Hamming_distance_on_good_labels": 762,
+      "oriented_short_signed_witness_count_hex": "0xb3563a4bd709b4dd3dda291db1e23cc0e57dbcb6cacf6f00b39bb7c022fd2951d4105e965235a4a35abbb84c51d4f873091ec8b1f30566f337532c5d8e712c08888aba1a1195b3f7b5e0d11ef8d992790d285c70374a661216afca057aa9e93900ce39235e414c1c30edefdc4f53e32a8af1007d02ef2dac6008ceff55589d16fe87092e96005e1fd94735d79fd37ca997b372941fa8dd7cd62b91c0744dcb5c79fc2d29340fb29a6d47d855be4ca156feba61551e145d041593d47b75e2ed4455eee983bdbd299203c19de9f992a7f8e538138b04ee49b3d5aeb1d162fa46f31f928bdeb119f1e9aac3a1ead907b196b4fc9f855771236060cc94f76736321adb8b14f225e265f6da1cec4e039743eeba140ffc7162e58f917e3f2fc8be33a85fed61fc74284508d739964ee6d30bbaccc2c13fd7edbd5cf92e08c6de6051cb015be34b1feb955fba4e962415e63da90b1cd4cee4a0c40e065656a9d4217fe7152ab7a02809d884ddba1802f2bed2a247c41c1dae2df1482230f9e641369fe958577aadfa0c160f916d83e6183b923650a416145711eeaca56a2dbbe4f92b9bc7f0d714cf0c20a600880563ced48aa734d59bff5b6956cce5f2a325853dab73ade0ed27da42cf23ec5ae26d294ae5302755d22daef229867b142d0e90c410ccab13f9ecb1cc7c4ce4bead842a5f39f936bb08517c7c6cad830112a24eaf8b053e1cd92d7899d23caf16c98821b48b8798b66bc43faa5bcd83d9c2966f38562d8c4a90eba08482c242c265d86afeb074dd285209aaa12800",
+      "union_bound_denominator_binary_exponent": 4608,
+      "label_exception_probability_upper_power_of_two_exponent": 64,
+      "exact_union_count_formula": "sum_(w=1..r) binom(K,w)*2^(w-1)",
+      "native_scaling_t_equals_n_plus_8": true,
+      "label_dependent_observable_selection_covered": true,
+      "IID_uniform_unfiltered_original_labels_required": true,
+      "short_witness_absence_is_computational_hardness": false,
+      "independent_original_Z_visibility_exact": "63/64",
+      "maximum_target_coupling_entries_per_observable_row": 16777216,
+      "ceil_sqrt_target_row_degree": 4096,
+      "good_label_advantage_upper_formula": "min(1/2,ceil(sqrt(D))*v^(r+1)/2)",
+      "good_label_advantage_power_of_two_upper_exponent": 6,
+      "good_label_advantage_exactly_zero": false,
+      "average_advantage_power_of_two_upper_exponent": 6,
+      "requested_average_advantage_exact": "1/16",
+      "sparse_class_excluded_at_requested_average_advantage": true,
+      "average_bound_includes_all_label_exceptions": true,
+      "requires_original_independent_Z_faults_not_only_marginal_visibilities": true,
+      "observable_is_effective_binary_decision_on_original_input": true,
+      "observable_operator_norm_at_most_one_required": true,
+      "postselected_conditional_advantage_without_acceptance_cost_covered": false,
+      "all_polynomial_gate_circuits_induce_sparse_observables": false,
+      "general_DCP_or_quantum_decoder_no_go": false
+    },
+    {
+      "native_components": 128,
+      "original_phase_bits": 136,
+      "total_original_phase_qubits": 34816,
+      "specified_target": "(q/2,0,...,0)",
+      "excluded_signed_support_weights_through": 2896,
+      "minimum_target_edge_Hamming_distance_on_good_labels": 2897,
+      "oriented_short_signed_witness_count_hex": "0x20f9da8b9ad9f586d060975624d4b2470b988abfc8638cfa9486223ccd502b5f97cb6d5684478fe2c8c5be7fdd493fde5c618c855311c69d3f3302c0d5c551b01a886fd79519829050046d6caa62aace8111e6ddef5b7721fe15a407746a3e1680de34f2159087f96a5afe044cc26dd7c20124a653efc4f01c5760aabf6be287d3a408086d776796e221d638ebda5c44a37ad57e814dcbaa28668f6e344712522db1d77b53ba94c7d3928fe93493a38c78a574c2d81069a0e8642aede5678da203bac7c98be3e108c7be9e426783bfba1081b23069f42505104bd9b55f05797a3ae603b654e72bdae2ac309598ff3fa835ad8359d133e85833dec11b2014fa554650abe99fec904448906f200b83271ceedcb288d7de0ea62668c04c8bb3a8523dc4cdbcddd0aa68f3f717345caf915fd66c5ce2cdafecf147cc9c5420850399cb18859aba3084f93bbc6524e62d3750bddaf50399c974470f69c8e3958dbdcf05b5dc3240b1752bb65a62a962601797a6758a6f90d13d5ba9942029deddf5cdf1675fdbbf5d5154effaba69ca2347fe8b3baad94930695ca835e9171cfcf2f082b1fa8da1b874005e70a61a7c9e71b6b1c778fa24c75956e27bc57079d328479397195486a4c5b2290b244c26c7298836f9e3d71b9da5b9cbeff72704ad14f66db639f60ef093a6fc7819a2c6f0f3b8980f8aa6b0b0492991ec2508c79f0b9a45faf78b930448377229cf2ea75f935b064a222ae2ca4e53e7a364a9e98eebbdcc12d99ff159d2b45cb7cc52d740db04359652cc58d3e7466a1f0fab9462f9cbd78c56babbc19ad41f3b23e8527face2c6976d1d4fa40f1bdfef1196208ff4a97ae6b99be65ef039ec3a241c77d5b9bfcb4b478b725e34b635a88d61698b03b5e3b5b10ac3c0736ac69f7aaca84fb1c79441ae3b3586fc261f1fc649af65006ad42ac8e3bc8bc77d31a00e62fa1ec2aa5feef12d206216627bc8af674974e0b1f3cb91655422fe971d864b2261945059466c76aa5bdbdbb62f5f1a463b6e771e5366163317488d9be0d0ad12e254afd53c705124db59b78b2b8e371dadb371517b135bf4b65461211bf0cfc07a31593558d3765f92cf80e145a9beef2f8fe3b5d9f92629e490a1d53848b933347cc44d5260838585af90d017e2d479956a0a8521f041210cc9dcafe3ef0dbe3e112b8575f9b11a54a15ba41fdd156387d5f67d475459c7be71f7c56941a08c0defad2e7c384dcb92b323a606c1cbddac118c995ad515096eed54cf99cf294aceba92d014178b92294d670fb3a4c30092ce2f11ed685ee0c50bb57810af3e2507dcd97aad485e27203421b7ff833066981c7a7cedf444e88b8e35345df040f51414ad8b099156cb4bee2d63aeb5eb0bb2f1956ce074cd4e757ca5b58661f00bf044a86e2796860b1ab2ee8c474f924b8dacef2110b1d1b23ad24fda55318d2c3f4772aebc9050f6c72da0d4c75531a5dc9f7dd744a18f968fcb6d018ff041e2167cbe2794e856fac5c6d6fdb5a0e35ed070a0b0dd2e823f1ccff30a9df1984864b01cd3efee691513b93c2af3550c4f6da592357cf982f629e84eee2a7cc55703eaa044c39c2752e3ac238661951a3bfd570aba54ea5f5bb1181cdaef467d73dc96fd636c979120c8f90deafdbe30e2461ffa1a08e1c7811f4d05b96d880158cec6a94b53d80e04d5fe6321e9fcd1c0b366278ea515cd5feacddab819c603d23751b97a6563a1eb0c89e8b28651ae7beec8b5759fc10246bb0b1ac0e575e71ca0a3e278071a28e666563bbf3d83c4a83e5bcc69c440fdb32aafc3753be59983a42ec03baba39d40ecff5f71c8a2348b5491985ed964bd94db365782d0b42798ce08409041cfa2a69f9a49a8fda0febf2aee9f5c452591a805fba0fd685ada64ea1042a95c89701d6134f5f1c943806f25ce39490ee3c04514f1fedd49b1ccefe7bad087041b0e404267835caee264a04d5f8645960ebc0fbe8f596efde9319c41323088f55d88cbc47a03a2751a1e6022fa40d0ffc069a2187e9294f006d612b95667d7a65040df82e495e84d0f87bef99f274fb217f46f148a98df7b56bfd0eede2230943f9ec330ac8aada4325289b6c23a107ec56e0e65ae47c8889f80ce6d07f2e4dfcd5d75368443057f949acae48d7ce306671e741320bc128eaeadb7ca3f0079a90e110ccd7624e322e60f4b11e0fd4575661c1e925b52f9c84911246b63aa57f5b9936243a9657ac8769733adc9d811d23758881f30a4c66dab13fbec2aff2b43e2d1e70c1812040a1597a8805aa7222a12aaa56466bfe573c916f7b364a04f5b0c9ed65bf706eef4ebafb52daa9e71ac286f08352cc6b33524df1d8d4822cbbdcc3c34243e207519099aa278513752ce87f6a05b5fe47555cbf0683aa17eb83321b775e7c7ecccdb2f8b58d081dcd0c18efc9de2e958e3caea7b13a332c344c31f8afe2fb286f4da8842bdd6059319d294bf6e1c6f64329d1e516e78254b03fab28be9360b86cc4094b8224d3d36a908ebbd61717f5321e1b14b4c7687f035171a667a5f54aeecef39cf74180d8c9f6c6c78aacf18744297428eab45a286e7c5d76f347b989251584236a2f36f6d4d82f9898656caf52122abbd1a31dae4a9c3361be677ea58ed1bcb5a580edcbdae8c5f981430a9773b2dbf34565b846a06f17b82208cd370506ddedc2ba8eeef2afb54de74e844e65be51bad3cbb2d0912634360537bffa40a4cc51bf61ec36327926a715fb28127be02112a0378502a8ac0df86574ecd070396096569cada56f53d38a70954ac08e197c4c7d965d45ebbc498f6c83a432cd6dfcce0cc11ca322f020403455e2bb7626ad5ebe77201ce38b047a03ede960a026cfd88b0a4ceee7a5349083d1c34b83124cc9668564c2383fe163322bcabecdaacc3e3e8f289169636e80604130a20c3af7d8bf7ab7ceee139f06e94fa3abe81966089ae7d54e5dfae38025666ad8a6a0902a795bd81f2bdaf511a6d5d4d26e6d16f05e39311b6c2365db83fe97bbb0fe8e5b39baee0d000",
+      "union_bound_denominator_binary_exponent": 17408,
+      "label_exception_probability_upper_power_of_two_exponent": 128,
+      "exact_union_count_formula": "sum_(w=1..r) binom(K,w)*2^(w-1)",
+      "native_scaling_t_equals_n_plus_8": true,
+      "label_dependent_observable_selection_covered": true,
+      "IID_uniform_unfiltered_original_labels_required": true,
+      "short_witness_absence_is_computational_hardness": false,
+      "independent_original_Z_visibility_exact": "127/128",
+      "maximum_target_coupling_entries_per_observable_row": 1,
+      "ceil_sqrt_target_row_degree": 1,
+      "good_label_advantage_upper_formula": "min(1/2,ceil(sqrt(D))*v^(r+1)/2)",
+      "good_label_advantage_power_of_two_upper_exponent": 33,
+      "good_label_advantage_exactly_zero": false,
+      "average_advantage_power_of_two_upper_exponent": 33,
+      "requested_average_advantage_exact": "1/16",
+      "sparse_class_excluded_at_requested_average_advantage": true,
+      "average_bound_includes_all_label_exceptions": true,
+      "requires_original_independent_Z_faults_not_only_marginal_visibilities": true,
+      "observable_is_effective_binary_decision_on_original_input": true,
+      "observable_operator_norm_at_most_one_required": true,
+      "postselected_conditional_advantage_without_acceptance_cost_covered": false,
+      "all_polynomial_gate_circuits_induce_sparse_observables": false,
+      "general_DCP_or_quantum_decoder_no_go": false
+    },
+    {
+      "native_components": 128,
+      "original_phase_bits": 136,
+      "total_original_phase_qubits": 34816,
+      "specified_target": "(q/2,0,...,0)",
+      "excluded_signed_support_weights_through": 2896,
+      "minimum_target_edge_Hamming_distance_on_good_labels": 2897,
+      "oriented_short_signed_witness_count_hex": "0x20f9da8b9ad9f586d060975624d4b2470b988abfc8638cfa9486223ccd502b5f97cb6d5684478fe2c8c5be7fdd493fde5c618c855311c69d3f3302c0d5c551b01a886fd79519829050046d6caa62aace8111e6ddef5b7721fe15a407746a3e1680de34f2159087f96a5afe044cc26dd7c20124a653efc4f01c5760aabf6be287d3a408086d776796e221d638ebda5c44a37ad57e814dcbaa28668f6e344712522db1d77b53ba94c7d3928fe93493a38c78a574c2d81069a0e8642aede5678da203bac7c98be3e108c7be9e426783bfba1081b23069f42505104bd9b55f05797a3ae603b654e72bdae2ac309598ff3fa835ad8359d133e85833dec11b2014fa554650abe99fec904448906f200b83271ceedcb288d7de0ea62668c04c8bb3a8523dc4cdbcddd0aa68f3f717345caf915fd66c5ce2cdafecf147cc9c5420850399cb18859aba3084f93bbc6524e62d3750bddaf50399c974470f69c8e3958dbdcf05b5dc3240b1752bb65a62a962601797a6758a6f90d13d5ba9942029deddf5cdf1675fdbbf5d5154effaba69ca2347fe8b3baad94930695ca835e9171cfcf2f082b1fa8da1b874005e70a61a7c9e71b6b1c778fa24c75956e27bc57079d328479397195486a4c5b2290b244c26c7298836f9e3d71b9da5b9cbeff72704ad14f66db639f60ef093a6fc7819a2c6f0f3b8980f8aa6b0b0492991ec2508c79f0b9a45faf78b930448377229cf2ea75f935b064a222ae2ca4e53e7a364a9e98eebbdcc12d99ff159d2b45cb7cc52d740db04359652cc58d3e7466a1f0fab9462f9cbd78c56babbc19ad41f3b23e8527face2c6976d1d4fa40f1bdfef1196208ff4a97ae6b99be65ef039ec3a241c77d5b9bfcb4b478b725e34b635a88d61698b03b5e3b5b10ac3c0736ac69f7aaca84fb1c79441ae3b3586fc261f1fc649af65006ad42ac8e3bc8bc77d31a00e62fa1ec2aa5feef12d206216627bc8af674974e0b1f3cb91655422fe971d864b2261945059466c76aa5bdbdbb62f5f1a463b6e771e5366163317488d9be0d0ad12e254afd53c705124db59b78b2b8e371dadb371517b135bf4b65461211bf0cfc07a31593558d3765f92cf80e145a9beef2f8fe3b5d9f92629e490a1d53848b933347cc44d5260838585af90d017e2d479956a0a8521f041210cc9dcafe3ef0dbe3e112b8575f9b11a54a15ba41fdd156387d5f67d475459c7be71f7c56941a08c0defad2e7c384dcb92b323a606c1cbddac118c995ad515096eed54cf99cf294aceba92d014178b92294d670fb3a4c30092ce2f11ed685ee0c50bb57810af3e2507dcd97aad485e27203421b7ff833066981c7a7cedf444e88b8e35345df040f51414ad8b099156cb4bee2d63aeb5eb0bb2f1956ce074cd4e757ca5b58661f00bf044a86e2796860b1ab2ee8c474f924b8dacef2110b1d1b23ad24fda55318d2c3f4772aebc9050f6c72da0d4c75531a5dc9f7dd744a18f968fcb6d018ff041e2167cbe2794e856fac5c6d6fdb5a0e35ed070a0b0dd2e823f1ccff30a9df1984864b01cd3efee691513b93c2af3550c4f6da592357cf982f629e84eee2a7cc55703eaa044c39c2752e3ac238661951a3bfd570aba54ea5f5bb1181cdaef467d73dc96fd636c979120c8f90deafdbe30e2461ffa1a08e1c7811f4d05b96d880158cec6a94b53d80e04d5fe6321e9fcd1c0b366278ea515cd5feacddab819c603d23751b97a6563a1eb0c89e8b28651ae7beec8b5759fc10246bb0b1ac0e575e71ca0a3e278071a28e666563bbf3d83c4a83e5bcc69c440fdb32aafc3753be59983a42ec03baba39d40ecff5f71c8a2348b5491985ed964bd94db365782d0b42798ce08409041cfa2a69f9a49a8fda0febf2aee9f5c452591a805fba0fd685ada64ea1042a95c89701d6134f5f1c943806f25ce39490ee3c04514f1fedd49b1ccefe7bad087041b0e404267835caee264a04d5f8645960ebc0fbe8f596efde9319c41323088f55d88cbc47a03a2751a1e6022fa40d0ffc069a2187e9294f006d612b95667d7a65040df82e495e84d0f87bef99f274fb217f46f148a98df7b56bfd0eede2230943f9ec330ac8aada4325289b6c23a107ec56e0e65ae47c8889f80ce6d07f2e4dfcd5d75368443057f949acae48d7ce306671e741320bc128eaeadb7ca3f0079a90e110ccd7624e322e60f4b11e0fd4575661c1e925b52f9c84911246b63aa57f5b9936243a9657ac8769733adc9d811d23758881f30a4c66dab13fbec2aff2b43e2d1e70c1812040a1597a8805aa7222a12aaa56466bfe573c916f7b364a04f5b0c9ed65bf706eef4ebafb52daa9e71ac286f08352cc6b33524df1d8d4822cbbdcc3c34243e207519099aa278513752ce87f6a05b5fe47555cbf0683aa17eb83321b775e7c7ecccdb2f8b58d081dcd0c18efc9de2e958e3caea7b13a332c344c31f8afe2fb286f4da8842bdd6059319d294bf6e1c6f64329d1e516e78254b03fab28be9360b86cc4094b8224d3d36a908ebbd61717f5321e1b14b4c7687f035171a667a5f54aeecef39cf74180d8c9f6c6c78aacf18744297428eab45a286e7c5d76f347b989251584236a2f36f6d4d82f9898656caf52122abbd1a31dae4a9c3361be677ea58ed1bcb5a580edcbdae8c5f981430a9773b2dbf34565b846a06f17b82208cd370506ddedc2ba8eeef2afb54de74e844e65be51bad3cbb2d0912634360537bffa40a4cc51bf61ec36327926a715fb28127be02112a0378502a8ac0df86574ecd070396096569cada56f53d38a70954ac08e197c4c7d965d45ebbc498f6c83a432cd6dfcce0cc11ca322f020403455e2bb7626ad5ebe77201ce38b047a03ede960a026cfd88b0a4ceee7a5349083d1c34b83124cc9668564c2383fe163322bcabecdaacc3e3e8f289169636e80604130a20c3af7d8bf7ab7ceee139f06e94fa3abe81966089ae7d54e5dfae38025666ad8a6a0902a795bd81f2bdaf511a6d5d4d26e6d16f05e39311b6c2365db83fe97bbb0fe8e5b39baee0d000",
+      "union_bound_denominator_binary_exponent": 17408,
+      "label_exception_probability_upper_power_of_two_exponent": 128,
+      "exact_union_count_formula": "sum_(w=1..r) binom(K,w)*2^(w-1)",
+      "native_scaling_t_equals_n_plus_8": true,
+      "label_dependent_observable_selection_covered": true,
+      "IID_uniform_unfiltered_original_labels_required": true,
+      "short_witness_absence_is_computational_hardness": false,
+      "independent_original_Z_visibility_exact": "127/128",
+      "maximum_target_coupling_entries_per_observable_row": 268435456,
+      "ceil_sqrt_target_row_degree": 16384,
+      "good_label_advantage_upper_formula": "min(1/2,ceil(sqrt(D))*v^(r+1)/2)",
+      "good_label_advantage_power_of_two_upper_exponent": 19,
+      "good_label_advantage_exactly_zero": false,
+      "average_advantage_power_of_two_upper_exponent": 19,
+      "requested_average_advantage_exact": "1/16",
+      "sparse_class_excluded_at_requested_average_advantage": true,
+      "average_bound_includes_all_label_exceptions": true,
+      "requires_original_independent_Z_faults_not_only_marginal_visibilities": true,
+      "observable_is_effective_binary_decision_on_original_input": true,
+      "observable_operator_norm_at_most_one_required": true,
+      "postselected_conditional_advantage_without_acceptance_cost_covered": false,
+      "all_polynomial_gate_circuits_induce_sparse_observables": false,
+      "general_DCP_or_quantum_decoder_no_go": false
+    }
+  ],
+  "rank_and_noise_scope_controls": [
+    {
+      "phase_bits": 16,
+      "regimes": [
+        {
+          "regime": "native_growing_rank_noisy",
+          "components": 8,
+          "phase_bits": 16,
+          "secret_entropy_bits": 128,
+          "original_phase_qubits": 256,
+          "independent_original_Z_visibility_exact": "7/8",
+          "expected_original_Z_faults_exact": "16",
+          "minimum_coherence_if_a_target_edge_exists_power_of_two_lower_exponent": 50,
+          "maximum_target_edge_coherence_on_good_labels_power_of_two_upper_exponent": 4,
+          "target_edges_or_efficient_receiver_existence_proved": false
+        },
+        {
+          "regime": "scalar_same_modulus_and_visibility",
+          "components": 1,
+          "phase_bits": 16,
+          "secret_entropy_bits": 16,
+          "original_phase_qubits": 32,
+          "independent_original_Z_visibility_exact": "7/8",
+          "expected_original_Z_faults_exact": "2",
+          "minimum_coherence_if_a_target_edge_exists_power_of_two_lower_exponent": 7,
+          "maximum_target_edge_coherence_on_good_labels_power_of_two_upper_exponent": 0,
+          "target_edges_or_efficient_receiver_existence_proved": false
+        },
+        {
+          "regime": "native_growing_rank_clean",
+          "components": 8,
+          "phase_bits": 16,
+          "secret_entropy_bits": 128,
+          "original_phase_qubits": 256,
+          "independent_original_Z_visibility_exact": "1",
+          "expected_original_Z_faults_exact": "0",
+          "minimum_coherence_if_a_target_edge_exists_power_of_two_lower_exponent": 0,
+          "maximum_target_edge_coherence_on_good_labels_power_of_two_upper_exponent": 0,
+          "target_edges_or_efficient_receiver_existence_proved": false
+        }
+      ],
+      "growing_rank_noise_bound_is_a_scalar_DCP_lower_bound": false,
+      "clean_scalar_DCP_lift_requires_injecting_noise": false,
+      "fault_count_is_a_decoder_failure_probability": false
+    },
+    {
+      "phase_bits": 32,
+      "regimes": [
+        {
+          "regime": "native_growing_rank_noisy",
+          "components": 24,
+          "phase_bits": 32,
+          "secret_entropy_bits": 768,
+          "original_phase_qubits": 1536,
+          "independent_original_Z_visibility_exact": "23/24",
+          "expected_original_Z_faults_exact": "32",
+          "minimum_coherence_if_a_target_edge_exists_power_of_two_lower_exponent": 95,
+          "maximum_target_edge_coherence_on_good_labels_power_of_two_upper_exponent": 7,
+          "target_edges_or_efficient_receiver_existence_proved": false
+        },
+        {
+          "regime": "scalar_same_modulus_and_visibility",
+          "components": 1,
+          "phase_bits": 32,
+          "secret_entropy_bits": 32,
+          "original_phase_qubits": 64,
+          "independent_original_Z_visibility_exact": "23/24",
+          "expected_original_Z_faults_exact": "4/3",
+          "minimum_coherence_if_a_target_edge_exists_power_of_two_lower_exponent": 4,
+          "maximum_target_edge_coherence_on_good_labels_power_of_two_upper_exponent": 0,
+          "target_edges_or_efficient_receiver_existence_proved": false
+        },
+        {
+          "regime": "native_growing_rank_clean",
+          "components": 24,
+          "phase_bits": 32,
+          "secret_entropy_bits": 768,
+          "original_phase_qubits": 1536,
+          "independent_original_Z_visibility_exact": "1",
+          "expected_original_Z_faults_exact": "0",
+          "minimum_coherence_if_a_target_edge_exists_power_of_two_lower_exponent": 0,
+          "maximum_target_edge_coherence_on_good_labels_power_of_two_upper_exponent": 0,
+          "target_edges_or_efficient_receiver_existence_proved": false
+        }
+      ],
+      "growing_rank_noise_bound_is_a_scalar_DCP_lower_bound": false,
+      "clean_scalar_DCP_lift_requires_injecting_noise": false,
+      "fault_count_is_a_decoder_failure_probability": false
+    },
+    {
+      "phase_bits": 72,
+      "regimes": [
+        {
+          "regime": "native_growing_rank_noisy",
+          "components": 64,
+          "phase_bits": 72,
+          "secret_entropy_bits": 4608,
+          "original_phase_qubits": 9216,
+          "independent_original_Z_visibility_exact": "63/64",
+          "expected_original_Z_faults_exact": "72",
+          "minimum_coherence_if_a_target_edge_exists_power_of_two_lower_exponent": 210,
+          "maximum_target_edge_coherence_on_good_labels_power_of_two_upper_exponent": 17,
+          "target_edges_or_efficient_receiver_existence_proved": false
+        },
+        {
+          "regime": "scalar_same_modulus_and_visibility",
+          "components": 1,
+          "phase_bits": 72,
+          "secret_entropy_bits": 72,
+          "original_phase_qubits": 144,
+          "independent_original_Z_visibility_exact": "63/64",
+          "expected_original_Z_faults_exact": "9/8",
+          "minimum_coherence_if_a_target_edge_exists_power_of_two_lower_exponent": 4,
+          "maximum_target_edge_coherence_on_good_labels_power_of_two_upper_exponent": 0,
+          "target_edges_or_efficient_receiver_existence_proved": false
+        },
+        {
+          "regime": "native_growing_rank_clean",
+          "components": 64,
+          "phase_bits": 72,
+          "secret_entropy_bits": 4608,
+          "original_phase_qubits": 9216,
+          "independent_original_Z_visibility_exact": "1",
+          "expected_original_Z_faults_exact": "0",
+          "minimum_coherence_if_a_target_edge_exists_power_of_two_lower_exponent": 0,
+          "maximum_target_edge_coherence_on_good_labels_power_of_two_upper_exponent": 0,
+          "target_edges_or_efficient_receiver_existence_proved": false
+        }
+      ],
+      "growing_rank_noise_bound_is_a_scalar_DCP_lower_bound": false,
+      "clean_scalar_DCP_lift_requires_injecting_noise": false,
+      "fault_count_is_a_decoder_failure_probability": false
+    },
+    {
+      "phase_bits": 128,
+      "regimes": [
+        {
+          "regime": "native_growing_rank_noisy",
+          "components": 120,
+          "phase_bits": 128,
+          "secret_entropy_bits": 15360,
+          "original_phase_qubits": 30720,
+          "independent_original_Z_visibility_exact": "119/120",
+          "expected_original_Z_faults_exact": "128",
+          "minimum_coherence_if_a_target_edge_exists_power_of_two_lower_exponent": 371,
+          "maximum_target_edge_coherence_on_good_labels_power_of_two_upper_exponent": 31,
+          "target_edges_or_efficient_receiver_existence_proved": false
+        },
+        {
+          "regime": "scalar_same_modulus_and_visibility",
+          "components": 1,
+          "phase_bits": 128,
+          "secret_entropy_bits": 128,
+          "original_phase_qubits": 256,
+          "independent_original_Z_visibility_exact": "119/120",
+          "expected_original_Z_faults_exact": "16/15",
+          "minimum_coherence_if_a_target_edge_exists_power_of_two_lower_exponent": 4,
+          "maximum_target_edge_coherence_on_good_labels_power_of_two_upper_exponent": 0,
+          "target_edges_or_efficient_receiver_existence_proved": false
+        },
+        {
+          "regime": "native_growing_rank_clean",
+          "components": 120,
+          "phase_bits": 128,
+          "secret_entropy_bits": 15360,
+          "original_phase_qubits": 30720,
+          "independent_original_Z_visibility_exact": "1",
+          "expected_original_Z_faults_exact": "0",
+          "minimum_coherence_if_a_target_edge_exists_power_of_two_lower_exponent": 0,
+          "maximum_target_edge_coherence_on_good_labels_power_of_two_upper_exponent": 0,
+          "target_edges_or_efficient_receiver_existence_proved": false
+        }
+      ],
+      "growing_rank_noise_bound_is_a_scalar_DCP_lower_bound": false,
+      "clean_scalar_DCP_lift_requires_injecting_noise": false,
+      "fault_count_is_a_decoder_failure_probability": false
+    }
+  ],
+  "physical_controls": [
+    {
+      "full_labels": [
+        [
+          1,
+          2
+        ]
+      ],
+      "phase_bits": 4,
+      "original_qubits": 2,
+      "independent_original_Z_visibility_exact": "1",
+      "target_ordered_edges": 0,
+      "minimum_target_Hamming_distance": null,
+      "target_geometry_maximum_row_degree": 0,
+      "matching_edges": [],
+      "weighted_frequency_pair_blocks": [],
+      "physical_parity_density_kernel_residual": 4.347204570675246e-17,
+      "original_quantum_optimal_success_probability": 0.5,
+      "measured_dense_reference_success_probability": 0.5,
+      "measured_pairing_success_probability": 0.5,
+      "pairing_success_spread_over_all_fixed_secrets": 0.0,
+      "pairing_advantage_upper_from_minimum_distance": 0,
+      "all_original_secrets_checked": 16,
+      "matrix_entries_allocated_for_kernel": 16,
+      "dense_reference_eigendecomposition_dimension": 4,
+      "numerical_density_and_spectral_calibration_tolerance": 1e-10,
+      "numerical_spectral_sign_zero_threshold": 1e-11,
+      "finite_float_replay_is_an_exact_algebraic_certificate": false,
+      "finite_universal_gate_receiver_exported": false,
+      "exponential_enumeration_and_spectral_costs_paid_as_reference_only": true,
+      "fixture_establishes_native_high_probability_performance": false
+    },
+    {
+      "full_labels": [
+        [
+          8
+        ]
+      ],
+      "phase_bits": 4,
+      "original_qubits": 1,
+      "independent_original_Z_visibility_exact": "1/2",
+      "target_ordered_edges": 2,
+      "minimum_target_Hamming_distance": 1,
+      "target_geometry_maximum_row_degree": 1,
+      "matching_edges": [
+        [
+          0,
+          1,
+          1
+        ]
+      ],
+      "weighted_frequency_pair_blocks": [
+        {
+          "frequency": [
+            0
+          ],
+          "paired_frequency": [
+            8
+          ],
+          "left_fiber_size": 1,
+          "right_fiber_size": 1,
+          "singular_values": [
+            0.5
+          ],
+          "numerical_rank_not_exact_certificate": 1
+        }
+      ],
+      "physical_parity_density_kernel_residual": 6.339430396481405e-17,
+      "original_quantum_optimal_success_probability": 0.75,
+      "measured_dense_reference_success_probability": 0.7499999999999999,
+      "measured_pairing_success_probability": 0.75,
+      "pairing_success_spread_over_all_fixed_secrets": 0.0,
+      "pairing_advantage_upper_from_minimum_distance": 0.25,
+      "all_original_secrets_checked": 16,
+      "matrix_entries_allocated_for_kernel": 4,
+      "dense_reference_eigendecomposition_dimension": 2,
+      "numerical_density_and_spectral_calibration_tolerance": 1e-10,
+      "numerical_spectral_sign_zero_threshold": 1e-11,
+      "finite_float_replay_is_an_exact_algebraic_certificate": false,
+      "finite_universal_gate_receiver_exported": false,
+      "exponential_enumeration_and_spectral_costs_paid_as_reference_only": true,
+      "fixture_establishes_native_high_probability_performance": false
+    },
+    {
+      "full_labels": [
+        [
+          2,
+          2,
+          2,
+          2
+        ]
+      ],
+      "phase_bits": 3,
+      "original_qubits": 4,
+      "independent_original_Z_visibility_exact": "1",
+      "target_ordered_edges": 56,
+      "minimum_target_Hamming_distance": 2,
+      "target_geometry_maximum_row_degree": 6,
+      "matching_edges": [
+        [
+          0,
+          3,
+          2
+        ],
+        [
+          1,
+          7,
+          2
+        ],
+        [
+          2,
+          11,
+          2
+        ],
+        [
+          4,
+          13,
+          2
+        ],
+        [
+          5,
+          15,
+          2
+        ],
+        [
+          8,
+          14,
+          2
+        ]
+      ],
+      "weighted_frequency_pair_blocks": [
+        {
+          "frequency": [
+            0
+          ],
+          "paired_frequency": [
+            4
+          ],
+          "left_fiber_size": 2,
+          "right_fiber_size": 6,
+          "singular_values": [
+            3.4641016151377553,
+            4.3447026290303425e-16
+          ],
+          "numerical_rank_not_exact_certificate": 1
+        },
+        {
+          "frequency": [
+            2
+          ],
+          "paired_frequency": [
+            6
+          ],
+          "left_fiber_size": 4,
+          "right_fiber_size": 4,
+          "singular_values": [
+            4.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "numerical_rank_not_exact_certificate": 1
+        }
+      ],
+      "physical_parity_density_kernel_residual": 7.654042494670958e-18,
+      "original_quantum_optimal_success_probability": 0.9665063509461098,
+      "measured_dense_reference_success_probability": 0.9665063509461096,
+      "measured_pairing_success_probability": 0.875,
+      "pairing_success_spread_over_all_fixed_secrets": 0.0,
+      "pairing_advantage_upper_from_minimum_distance": 0.5,
+      "all_original_secrets_checked": 8,
+      "matrix_entries_allocated_for_kernel": 256,
+      "dense_reference_eigendecomposition_dimension": 16,
+      "numerical_density_and_spectral_calibration_tolerance": 1e-10,
+      "numerical_spectral_sign_zero_threshold": 1e-11,
+      "finite_float_replay_is_an_exact_algebraic_certificate": false,
+      "finite_universal_gate_receiver_exported": false,
+      "exponential_enumeration_and_spectral_costs_paid_as_reference_only": true,
+      "fixture_establishes_native_high_probability_performance": false
+    },
+    {
+      "full_labels": [
+        [
+          2,
+          2,
+          2,
+          2
+        ]
+      ],
+      "phase_bits": 3,
+      "original_qubits": 4,
+      "independent_original_Z_visibility_exact": "3/4",
+      "target_ordered_edges": 56,
+      "minimum_target_Hamming_distance": 2,
+      "target_geometry_maximum_row_degree": 6,
+      "matching_edges": [
+        [
+          0,
+          3,
+          2
+        ],
+        [
+          1,
+          7,
+          2
+        ],
+        [
+          2,
+          11,
+          2
+        ],
+        [
+          4,
+          13,
+          2
+        ],
+        [
+          5,
+          15,
+          2
+        ],
+        [
+          8,
+          14,
+          2
+        ]
+      ],
+      "weighted_frequency_pair_blocks": [
+        {
+          "frequency": [
+            0
+          ],
+          "paired_frequency": [
+            4
+          ],
+          "left_fiber_size": 2,
+          "right_fiber_size": 6,
+          "singular_values": [
+            1.948557158514987,
+            1.4261118085652044e-16
+          ],
+          "numerical_rank_not_exact_certificate": 1
+        },
+        {
+          "frequency": [
+            2
+          ],
+          "paired_frequency": [
+            6
+          ],
+          "left_fiber_size": 4,
+          "right_fiber_size": 4,
+          "singular_values": [
+            2.0039062499999996,
+            0.24609375000000006,
+            0.24609375000000006,
+            0.24609374999999992
+          ],
+          "numerical_rank_not_exact_certificate": 4
+        }
+      ],
+      "physical_parity_density_kernel_residual": 4.305398903252414e-18,
+      "original_quantum_optimal_success_probability": 0.7931715411571867,
+      "measured_dense_reference_success_probability": 0.7931715411571867,
+      "measured_pairing_success_probability": 0.7109375,
+      "pairing_success_spread_over_all_fixed_secrets": 0.0,
+      "pairing_advantage_upper_from_minimum_distance": 0.28125,
+      "all_original_secrets_checked": 8,
+      "matrix_entries_allocated_for_kernel": 256,
+      "dense_reference_eigendecomposition_dimension": 16,
+      "numerical_density_and_spectral_calibration_tolerance": 1e-10,
+      "numerical_spectral_sign_zero_threshold": 1e-11,
+      "finite_float_replay_is_an_exact_algebraic_certificate": false,
+      "finite_universal_gate_receiver_exported": false,
+      "exponential_enumeration_and_spectral_costs_paid_as_reference_only": true,
+      "fixture_establishes_native_high_probability_performance": false
+    },
+    {
+      "full_labels": [
+        [
+          2,
+          2,
+          2,
+          2
+        ]
+      ],
+      "phase_bits": 3,
+      "original_qubits": 4,
+      "independent_original_Z_visibility_exact": "0",
+      "target_ordered_edges": 56,
+      "minimum_target_Hamming_distance": 2,
+      "target_geometry_maximum_row_degree": 6,
+      "matching_edges": [
+        [
+          0,
+          3,
+          2
+        ],
+        [
+          1,
+          7,
+          2
+        ],
+        [
+          2,
+          11,
+          2
+        ],
+        [
+          4,
+          13,
+          2
+        ],
+        [
+          5,
+          15,
+          2
+        ],
+        [
+          8,
+          14,
+          2
+        ]
+      ],
+      "weighted_frequency_pair_blocks": [
+        {
+          "frequency": [
+            0
+          ],
+          "paired_frequency": [
+            4
+          ],
+          "left_fiber_size": 2,
+          "right_fiber_size": 6,
+          "singular_values": [
+            0.0,
+            0.0
+          ],
+          "numerical_rank_not_exact_certificate": 0
+        },
+        {
+          "frequency": [
+            2
+          ],
+          "paired_frequency": [
+            6
+          ],
+          "left_fiber_size": 4,
+          "right_fiber_size": 4,
+          "singular_values": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "numerical_rank_not_exact_certificate": 0
+        }
+      ],
+      "physical_parity_density_kernel_residual": 0.0,
+      "original_quantum_optimal_success_probability": 0.5,
+      "measured_dense_reference_success_probability": 0.5,
+      "measured_pairing_success_probability": 0.5,
+      "pairing_success_spread_over_all_fixed_secrets": 0.0,
+      "pairing_advantage_upper_from_minimum_distance": 0.0,
+      "all_original_secrets_checked": 8,
+      "matrix_entries_allocated_for_kernel": 256,
+      "dense_reference_eigendecomposition_dimension": 16,
+      "numerical_density_and_spectral_calibration_tolerance": 1e-10,
+      "numerical_spectral_sign_zero_threshold": 1e-11,
+      "finite_float_replay_is_an_exact_algebraic_certificate": false,
+      "finite_universal_gate_receiver_exported": false,
+      "exponential_enumeration_and_spectral_costs_paid_as_reference_only": true,
+      "fixture_establishes_native_high_probability_performance": false
+    },
+    {
+      "full_labels": [
+        [
+          1,
+          2,
+          3,
+          4,
+          6,
+          1
+        ],
+        [
+          2,
+          1,
+          4,
+          3,
+          1,
+          6
+        ]
+      ],
+      "phase_bits": 3,
+      "original_qubits": 6,
+      "independent_original_Z_visibility_exact": "3/4",
+      "target_ordered_edges": 64,
+      "minimum_target_Hamming_distance": 2,
+      "target_geometry_maximum_row_degree": 2,
+      "matching_edges": [
+        [
+          2,
+          16,
+          2
+        ],
+        [
+          3,
+          17,
+          2
+        ],
+        [
+          6,
+          20,
+          2
+        ],
+        [
+          7,
+          21,
+          2
+        ],
+        [
+          10,
+          24,
+          2
+        ],
+        [
+          11,
+          25,
+          2
+        ],
+        [
+          14,
+          28,
+          2
+        ],
+        [
+          15,
+          29,
+          2
+        ],
+        [
+          34,
+          48,
+          2
+        ],
+        [
+          35,
+          49,
+          2
+        ],
+        [
+          38,
+          52,
+          2
+        ],
+        [
+          39,
+          53,
+          2
+        ],
+        [
+          42,
+          56,
+          2
+        ],
+        [
+          43,
+          57,
+          2
+        ],
+        [
+          46,
+          60,
+          2
+        ],
+        [
+          47,
+          61,
+          2
+        ],
+        [
+          0,
+          23,
+          4
+        ],
+        [
+          8,
+          31,
+          4
+        ],
+        [
+          18,
+          36,
+          4
+        ],
+        [
+          19,
+          37,
+          4
+        ],
+        [
+          26,
+          44,
+          4
+        ],
+        [
+          27,
+          45,
+          4
+        ],
+        [
+          32,
+          55,
+          4
+        ],
+        [
+          40,
+          63,
+          4
+        ]
+      ],
+      "weighted_frequency_pair_blocks": [
+        {
+          "frequency": [
+            0,
+            0
+          ],
+          "paired_frequency": [
+            4,
+            0
+          ],
+          "left_fiber_size": 1,
+          "right_fiber_size": 1,
+          "singular_values": [
+            0.31640625
+          ],
+          "numerical_rank_not_exact_certificate": 1
+        },
+        {
+          "frequency": [
+            0,
+            1
+          ],
+          "paired_frequency": [
+            4,
+            1
+          ],
+          "left_fiber_size": 2,
+          "right_fiber_size": 1,
+          "singular_values": [
+            0.6453829599850484
+          ],
+          "numerical_rank_not_exact_certificate": 1
+        },
+        {
+          "frequency": [
+            0,
+            2
+          ],
+          "paired_frequency": [
+            4,
+            2
+          ],
+          "left_fiber_size": 1,
+          "right_fiber_size": 1,
+          "singular_values": [
+            0.31640625
+          ],
+          "numerical_rank_not_exact_certificate": 1
+        },
+        {
+          "frequency": [
+            0,
+            3
+          ],
+          "paired_frequency": [
+            4,
+            3
+          ],
+          "left_fiber_size": 1,
+          "right_fiber_size": 1,
+          "singular_values": [
+            0.31640625
+          ],
+          "numerical_rank_not_exact_certificate": 1
+        },
+        {
+          "frequency": [
+            0,
+            4
+          ],
+          "paired_frequency": [
+            4,
+            4
+          ],
+          "left_fiber_size": 1,
+          "right_fiber_size": 2,
+          "singular_values": [
+            0.6453829599850484
+          ],
+          "numerical_rank_not_exact_certificate": 1
+        },
+        {
+          "frequency": [
+            0,
+            5
+          ],
+          "paired_frequency": [
+            4,
+            5
+          ],
+          "left_fiber_size": 1,
+          "right_fiber_size": 1,
+          "singular_values": [
+            0.31640625
+          ],
+          "numerical_rank_not_exact_certificate": 1
+        },
+        {
+          "frequency": [
+            1,
+            0
+          ],
+          "paired_frequency": [
+            5,
+            0
+          ],
+          "left_fiber_size": 2,
+          "right_fiber_size": 1,
+          "singular_values": [
+            0.6453829599850484
+          ],
+          "numerical_rank_not_exact_certificate": 1
+        },
+        {
+          "frequency": [
+            1,
+            1
+          ],
+          "paired_frequency": [
+            5,
+            1
+          ],
+          "left_fiber_size": 1,
+          "right_fiber_size": 1,
+          "singular_values": [
+            0.31640625
+          ],
+          "numerical_rank_not_exact_certificate": 1
+        },
+        {
+          "frequency": [
+            1,
+            4
+          ],
+          "paired_frequency": [
+            5,
+            4
+          ],
+          "left_fiber_size": 1,
+          "right_fiber_size": 1,
+          "singular_values": [
+            0.31640625
+          ],
+          "numerical_rank_not_exact_certificate": 1
+        },
+        {
+          "frequency": [
+            1,
+            5
+          ],
+          "paired_frequency": [
+            5,
+            5
+          ],
+          "left_fiber_size": 1,
+          "right_fiber_size": 2,
+          "singular_values": [
+            0.6453829599850484
+          ],
+          "numerical_rank_not_exact_certificate": 1
+        },
+        {
+          "frequency": [
+            1,
+            6
+          ],
+          "paired_frequency": [
+            5,
+            6
+          ],
+          "left_fiber_size": 1,
+          "right_fiber_size": 1,
+          "singular_values": [
+            0.31640625
+          ],
+          "numerical_rank_not_exact_certificate": 1
+        },
+        {
+          "frequency": [
+            1,
+            7
+          ],
+          "paired_frequency": [
+            5,
+            7
+          ],
+          "left_fiber_size": 1,
+          "right_fiber_size": 1,
+          "singular_values": [
+            0.31640625
+          ],
+          "numerical_rank_not_exact_certificate": 1
+        },
+        {
+          "frequency": [
+            2,
+            1
+          ],
+          "paired_frequency": [
+            6,
+            1
+          ],
+          "left_fiber_size": 1,
+          "right_fiber_size": 1,
+          "singular_values": [
+            0.5625
+          ],
+          "numerical_rank_not_exact_certificate": 1
+        },
+        {
+          "frequency": [
+            2,
+            2
+          ],
+          "paired_frequency": [
+            6,
+            2
+          ],
+          "left_fiber_size": 2,
+          "right_fiber_size": 1,
+          "singular_values": [
+            0.6453829599850484
+          ],
+          "numerical_rank_not_exact_certificate": 1
+        },
+        {
+          "frequency": [
+            2,
+            3
+          ],
+          "paired_frequency": [
+            6,
+            3
+          ],
+          "left_fiber_size": 1,
+          "right_fiber_size": 2,
+          "singular_values": [
+            0.6453829599850484
+          ],
+          "numerical_rank_not_exact_certificate": 1
+        },
+        {
+          "frequency": [
+            2,
+            4
+          ],
+          "paired_frequency": [
+            6,
+            4
+          ],
+          "left_fiber_size": 1,
+          "right_fiber_size": 1,
+          "singular_values": [
+            0.5625
+          ],
+          "numerical_rank_not_exact_certificate": 1
+        },
+        {
+          "frequency": [
+            2,
+            6
+          ],
+          "paired_frequency": [
+            6,
+            6
+          ],
+          "left_fiber_size": 1,
+          "right_fiber_size": 1,
+          "singular_values": [
+            0.5625
+          ],
+          "numerical_rank_not_exact_certificate": 1
+        },
+        {
+          "frequency": [
+            2,
+            7
+          ],
+          "paired_frequency": [
+            6,
+            7
+          ],
+          "left_fiber_size": 1,
+          "right_fiber_size": 1,
+          "singular_values": [
+            0.5625
+          ],
+          "numerical_rank_not_exact_certificate": 1
+        },
+        {
+          "frequency": [
+            3,
+            0
+          ],
+          "paired_frequency": [
+            7,
+            0
+          ],
+          "left_fiber_size": 1,
+          "right_fiber_size": 1,
+          "singular_values": [
+            0.5625
+          ],
+          "numerical_rank_not_exact_certificate": 1
+        },
+        {
+          "frequency": [
+            3,
+            2
+          ],
+          "paired_frequency": [
+            7,
+            2
+          ],
+          "left_fiber_size": 1,
+          "right_fiber_size": 1,
+          "singular_values": [
+            0.5625
+          ],
+          "numerical_rank_not_exact_certificate": 1
+        },
+        {
+          "frequency": [
+            3,
+            3
+          ],
+          "paired_frequency": [
+            7,
+            3
+          ],
+          "left_fiber_size": 1,
+          "right_fiber_size": 1,
+          "singular_values": [
+            0.5625
+          ],
+          "numerical_rank_not_exact_certificate": 1
+        },
+        {
+          "frequency": [
+            3,
+            5
+          ],
+          "paired_frequency": [
+            7,
+            5
+          ],
+          "left_fiber_size": 1,
+          "right_fiber_size": 1,
+          "singular_values": [
+            0.5625
+          ],
+          "numerical_rank_not_exact_certificate": 1
+        },
+        {
+          "frequency": [
+            3,
+            6
+          ],
+          "paired_frequency": [
+            7,
+            6
+          ],
+          "left_fiber_size": 2,
+          "right_fiber_size": 1,
+          "singular_values": [
+            0.6453829599850484
+          ],
+          "numerical_rank_not_exact_certificate": 1
+        },
+        {
+          "frequency": [
+            3,
+            7
+          ],
+          "paired_frequency": [
+            7,
+            7
+          ],
+          "left_fiber_size": 1,
+          "right_fiber_size": 2,
+          "singular_values": [
+            0.6453829599850484
+          ],
+          "numerical_rank_not_exact_certificate": 1
+        }
+      ],
+      "physical_parity_density_kernel_residual": 1.3321456366467192e-18,
+      "original_quantum_optimal_success_probability": 0.6905361512481312,
+      "measured_dense_reference_success_probability": 0.6905361512481311,
+      "measured_pairing_success_probability": 0.68017578125,
+      "pairing_success_spread_over_all_fixed_secrets": 0.0,
+      "pairing_advantage_upper_from_minimum_distance": 0.28125,
+      "all_original_secrets_checked": 64,
+      "matrix_entries_allocated_for_kernel": 4096,
+      "dense_reference_eigendecomposition_dimension": 64,
+      "numerical_density_and_spectral_calibration_tolerance": 1e-10,
+      "numerical_spectral_sign_zero_threshold": 1e-11,
+      "finite_float_replay_is_an_exact_algebraic_certificate": false,
+      "finite_universal_gate_receiver_exported": false,
+      "exponential_enumeration_and_spectral_costs_paid_as_reference_only": true,
+      "fixture_establishes_native_high_probability_performance": false
+    }
+  ],
+  "polynomial_circuit_dense_observable_counterexample": {
+    "observable": "H^K (I-2|1^K><1^K|) H^K = I-2|minus^K><minus^K|",
+    "circuit": "2K Hadamards and one multi-controlled Z; polynomial clean-ancilla decomposition",
+    "direct_measurement": "K Hadamards, measure all original wires, return minus iff all outcomes are one; polynomial classical AND",
+    "nonzero_off_diagonal_entries_per_row": "2^K-1",
+    "for_all_labels_equal_target_h_target_degree_per_row": "2^(K-1)",
+    "this_structured_label_fixture_is_native_typical": false,
+    "polynomial_gates_imply_sparse_observable": false
+  },
+  "accepted_speedup_candidate": false,
+  "new_active_negative_result_created": false,
+  "general_quantum_decoder_impossibility_proved": false,
+  "novelty_claim": false
+}

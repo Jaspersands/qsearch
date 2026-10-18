@@ -1,0 +1,28 @@
+{
+  "contract_id": "native-higher-call-two-copy-swap-purity-bridge-contract",
+  "title": "Native Higher-Call Two-Copy SWAP Purity Bridge: Coherent SWAP Excess vs Classical Coincidence Excess, 1-Call Variety Purity Law, and CNOT Autocorrelation Equivalence",
+  "version": "1.0.0",
+  "scope": "general_k_call_two_copy_swap_purity_excess_cnot_difference_autocorrelation_and_k1_variety_purity",
+  "theorems": [
+    {
+      "id": "T1",
+      "name": "Coherent Same-Secret vs Independent-Secret SWAP Identity",
+      "statement": "For any k-call schedule (epsilon, sigma), Tr(S_D * E_s[rho(s) tensor rho(s)]) = 1 and Tr(S_D * (rho_bar tensor rho_bar)) = Tr(rho_bar^2), so the two-copy SWAP expectation excess equals the operator Hilbert-Schmidt variance V_HS(epsilon, sigma) = 1 - Tr(rho_bar^2) and the independent-pair antisymmetric projector probability equals V_HS / 2."
+    },
+    {
+      "id": "T2",
+      "name": "Final-Fourier Direction Invariance of Purity and Exact 1-Call Collision Variety Law",
+      "statement": "The ensemble purity Tr(rho_bar_(epsilon, sigma)^2) = ||M_hat_(epsilon, sigma)(0)||_F^2 is invariant under flipping sigma_k -> -sigma_k, and for k = 1 it equals |V_(epsilon_1)(f)| / D^2 independently of the error table e."
+    },
+    {
+      "id": "T3",
+      "name": "Exact Harmonic Autocorrelation Law and Two-Copy Coincidence Excess Identity",
+      "statement": "Under modular CNOT difference readout Delta = (x_2 - x_1) mod D on two same-secret copies, E_s[P_diff(Delta | s)] = sum_x C(0; x) C(0; x + Delta) + sum_(delta != 0) sum_x C(delta; x) conj(C(delta; x + Delta)), and at Delta = 0 the coincidence excess E_s[P_diff(0 | s)] - sum_x C(0; x)^2 equals E_(epsilon, sigma) <= V_HS(epsilon, sigma)."
+    }
+  ],
+  "guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  }
+}

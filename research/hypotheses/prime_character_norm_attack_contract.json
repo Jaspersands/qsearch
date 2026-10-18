@@ -1,0 +1,43 @@
+{
+  "hypothesis_id": "mixed_quadratic_coset_polynomial_norm_classical_attack",
+  "status": "PERFECT_NATIVE_HIGH_RATE_WITNESSES_IID_POPULATION_BOUND_LOCAL_APPLICATION_REVIEW_PENDING",
+  "problem": "Explicit prime-field mixed quadratic-coset OPI, strict or zero-including",
+  "input_model": "Public p,N,K,shifts,orientations and verified nonsquare; no field table, hidden oracle or rejected source",
+  "classical_mechanism": "Interpolate one coset group and search a square-leading polynomial norm pencil for the opposite group; factor over Fp and Fp2; norm-one Cayley rotation avoids strict zeros",
+  "degree_budget": "K>max(|A|,|B|+(|B| mod2))",
+  "complexity": "Expected polynomial work per finite-field factorization trial in N/logp; no worst-case fixed-input trial-count or full bit/gate comparison proved",
+  "established_locally_review_pending": [
+    "Exact polynomial identities turn each valid norm representation into a native two-coset witness",
+    "Strict zero avoidance has at most2N forbidden Cayley parameters if F has no native zero and p>2N",
+    "Both unchanged N127,K77 mixed sources now have perfect127/127 classical witnesses, including strict siblings",
+    "First-trial success over IID uniform shifts and independent uniform algorithm parameters is at least I_p(D)/p^D; p>2N yields a conservative1/(2N) bound",
+    "The IID population result rules out negligible classical success for that scoped high-rate random population, not a general OPI quantum advantage"
+  ],
+  "falsifiers_and_limits": [
+    "A fixed monic pencil fails for every parameter on a strict p23 input solved by Q=13; it cannot support a uniform success theorem",
+    "Varying square leading coefficients repairs that instance and its fixed-factor obstruction, but does not prove general fixed-input norm frequency",
+    "A population-mean success bound cannot be amplified as if it held on every fixed input",
+    "Seeded PRNG replay is not an IID-source certificate",
+    "Degree nonapplicability or bounded-search exhaustion is not hardness or unsatisfiability",
+    "Saved K39 sources, higher power indices, arbitrary oracle lists and all-input polynomial solvability remain outside this result"
+  ],
+  "literature": [
+    "https://arxiv.org/html/2610.12357",
+    "https://doi.org/10.1016/j.ffa.2026.102812",
+    "https://flintlib.org/doc/fq_default_poly.html"
+  ],
+  "next_decisive_work": "A structural fixed-input expanded-pencil norm-frequency theorem/counterexample or a lower-rate mechanism, not a seed/trial-count sweep",
+  "evidence": [
+    "theorems/prime_character_norm_attack.py",
+    "tests/test_prime_character_norm_attack.py",
+    "research/classical_baselines/prime_character_norm_attack.json",
+    "research/PRIME_CHARACTER_NORM_ATTACK.md"
+  ],
+  "fixed_instance_inverse_polynomial_success_proved": false,
+  "separate_fixed_input_Morse_family_follow_up": "research/PRIME_CHARACTER_MORSE_ATTACK.md",
+  "high_probability_or_worst_case_classical_solver_proved": false,
+  "quantum_algorithm_or_general_OPI_refutation_claimed": false,
+  "accepted_speedup_candidate": false,
+  "new_central_negative_registered": false,
+  "independent_or_formal_review_completed": false
+}

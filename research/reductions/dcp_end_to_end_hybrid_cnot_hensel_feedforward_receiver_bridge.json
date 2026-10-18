@@ -1,0 +1,43 @@
+{
+  "all_checks_passed": true,
+  "audit_2d_mod16": {
+    "exact_end_to_end_verified": true,
+    "exact_reconstructions": 64,
+    "gamma": 0.85,
+    "m_upper_bits": 3,
+    "min_stage_tv_bias_across_all_secrets_and_signs": 0.85,
+    "n_dim": 2,
+    "num_newton_hensel_steps": 2,
+    "q_half": 8,
+    "reconstruction_accuracy": 1.0,
+    "t_bits": 4,
+    "total_secrets_tested": 64
+  },
+  "audit_3d_mod8": {
+    "exact_end_to_end_verified": true,
+    "exact_reconstructions": 64,
+    "gamma": 0.9,
+    "m_upper_bits": 2,
+    "min_stage_tv_bias_across_all_secrets_and_signs": 0.9,
+    "n_dim": 3,
+    "num_newton_hensel_steps": 1,
+    "q_half": 4,
+    "reconstruction_accuracy": 1.0,
+    "t_bits": 3,
+    "total_secrets_tested": 64
+  },
+  "certificate_sha256_16": "9e0e4547f11f04ff",
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "proof_status": "LOCAL_DERIVATION_REVIEW_PENDING_NOT_FORMALLY_VERIFIED",
+  "schema_version": "dcp-end-to-end-hybrid-cnot-hensel-feedforward-receiver-bridge-v1",
+  "scope_constraints": {
+    "applies_to": "End-to-end hybrid receiver combining mod-2 CNOT compression, Pauli-X sign-flip rectification, 2-adic Newton-Hensel decoupling, and adaptive R_Z(-phi_known) phase feedforward",
+    "controls_included": "Exhaustively tests all 64 secrets of 2D Z_8^2 (t=4, q=16) and all 64 secrets of 3D Z_4^3 (t=3, q=8) across both +/- syndrome signs, verifying 100% reconstruction accuracy and uniform stage bias D_TV == gamma.",
+    "does_not_claim": "Polynomial-time compilation of the dyadic scale ladder 2^{t-2-r} * U without sufficient pool collisions or trapdoor structure"
+  },
+  "theorem_id": "dcp_end_to_end_hybrid_cnot_hensel_feedforward_receiver_bridge"
+}

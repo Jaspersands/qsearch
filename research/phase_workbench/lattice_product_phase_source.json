@@ -1,0 +1,2285 @@
+{
+  "schema_version": 1,
+  "contract_id": "public_lattice_product_group_phase_source_review_pending_v1",
+  "status": "PHYSICAL_PRODUCT_GROUP_SOURCE_FULL_VECTOR_DECODER_MISSING",
+  "actual_source_controls": [
+    {
+      "resources": {
+        "public_source": {
+          "source_type": "PUBLIC_SINE_WINDOW_PRODUCT_GROUP_INSTRUMENT",
+          "basis_rows": [
+            [
+              1
+            ]
+          ],
+          "prime": 7,
+          "split_prime_certificate": {
+            "prime": 7,
+            "witness": 3,
+            "factors": [
+              {
+                "prime": 2,
+                "exponent": 1,
+                "certificate": {
+                  "prime": 2,
+                  "witness": 1,
+                  "factors": [],
+                  "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                }
+              },
+              {
+                "prime": 3,
+                "exponent": 1,
+                "certificate": {
+                  "prime": 3,
+                  "witness": 2,
+                  "factors": [
+                    {
+                      "prime": 2,
+                      "exponent": 1,
+                      "certificate": {
+                        "prime": 2,
+                        "witness": 1,
+                        "factors": [],
+                        "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                      }
+                    }
+                  ],
+                  "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                }
+              }
+            ],
+            "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+          },
+          "residue": 1,
+          "coordinate": 0,
+          "box": 2,
+          "packet_side": 4,
+          "input_population": 4,
+          "hidden_short_vector_or_shift_given": false,
+          "receiver_gets_localization_register": false,
+          "uniform_secret_prior_inferred": false,
+          "phase_group": "PRODUCT_OF_CYCLIC_TWO_POWER_GROUPS",
+          "rank": 1,
+          "coordinate_modulus": 4,
+          "total_label_bits": 2,
+          "scalar_cyclic_DCP_contract_granted": false
+        },
+        "position_and_arithmetic_resources": {
+          "arithmetic_width_plan": {
+            "point_absolute_bounds": [
+              8
+            ],
+            "localization_absolute_bounds": [
+              11
+            ],
+            "shared_signed_word_bits": 5,
+            "localization_coordinates_share_word_width": true,
+            "all_signed_localization_values_in_range": true,
+            "copied_point_or_original_noise_garbage_retained": false
+          },
+          "input_qubits": 2,
+          "localization_output_qubits": 5,
+          "shared_point_arithmetic_work_qubits": 11,
+          "shared_packet_work_qubits": 2,
+          "zero_padding_qubits": 1,
+          "position_QFT_qubits": 2,
+          "total_source_qubits": 21,
+          "constant_additions_including_uncompute": 4,
+          "point_to_localization_additions": 1,
+          "arithmetic_logical_instructions": 21,
+          "packet_unitary_applications": 1,
+          "packet_plan": {
+            "packet_bits": 2,
+            "packet_side": 4,
+            "logical_qubits": 4,
+            "clean_AND_work_qubits": 1,
+            "known_flag_qubits": 1,
+            "W_forward_uses": 2,
+            "W_inverse_uses": 1,
+            "known_zero_reflections": 1,
+            "H_gates": 12,
+            "X_gates": 7,
+            "CCX_gates": 2,
+            "CP_gates": 7,
+            "P_gates": 3,
+            "logical_instructions": 31,
+            "global_phase_pi_coefficient": "-1/4",
+            "retained_absolute_pi_weight": "13/2",
+            "encoded_binary64_pi": "884279719003555/281474976710656",
+            "Machin_terms": 16,
+            "pi_lower": "2702199289155139770778723466138548690954453271354857406274868882229427215106701002516071935610699965630953755124/860136748176892598733343886651423302289653512937537946071635894779362232608248391056054462678730487823486328125",
+            "pi_upper": "1182664558198884723122287358611764328074688616985936643633156715672834457769192598828753841328454487819350992/376453820913890074899487004189100025511481553604426544559634764263301689662404540823888964951038360595703125",
+            "numeric_normal_angles_supported": true,
+            "encoded_rotation_operator_error_upper": "12976642900600785132962003104920136563994522586314721360051898014984302040554347449402968291950185290961377/16301896996057642069900426459109025475608111654636324627998996352361585201659337199910912000000000000000000000000000000000",
+            "known_zero_parent_success_probability": "1",
+            "postselection_used": false,
+            "flag_clear_for_arbitrary_input_claimed": false,
+            "hardware_synthesis_or_simulator_roundoff_certified": false
+          },
+          "coherent_source_instructions_before_QFT": 24,
+          "no_preimages_or_private_shift_needed": true
+        },
+        "compiled_qubits": 21,
+        "compiled_parent_instructions": 25,
+        "coordinate_QFT_count_per_parent": 1,
+        "coordinate_QFT_wires": 2,
+        "logical_controlled_phases_per_parent": 1,
+        "coordinate_QFT_precision_accounting": {
+          "QFT_wires": 2,
+          "retained_maximum_separation": 1,
+          "qiskit_approximation_degree": 0,
+          "query_usage": {
+            "direct_forward_calls": 1,
+            "direct_inverse_calls": 0,
+            "phase_parent_reflections": 0,
+            "total_approximate_QFT_or_inverse_calls": 1,
+            "receiver_usage_bound_is_external_not_proved_here": true
+          },
+          "target_complete_experiment_trace_error": "1/100",
+          "logical_controlled_phases_retained": 1,
+          "logical_controlled_phases_omitted": 0,
+          "logical_H_gates": 2,
+          "logical_swaps": 1,
+          "exact_ideal_QFT_selected": true,
+          "retained_dyadic_angle_weight": "1/2",
+          "omitted_weight_symbolic": {
+            "coefficient_at_2_pow_minus_cutoff": -1,
+            "cutoff_exponent": 1,
+            "unit_term_exponent": 1
+          },
+          "single_use_ideal_truncation_operator_upper": "0",
+          "truncation_bound_method": "EXACT_FINITE_TAIL_MACHIN_PI_UPPER",
+          "Machin_terms": 16,
+          "pi_rational_lower": "2702199289155139770778723466138548690954453271354857406274868882229427215106701002516071935610699965630953755124/860136748176892598733343886651423302289653512937537946071635894779362232608248391056054462678730487823486328125",
+          "pi_rational_upper": "1182664558198884723122287358611764328074688616985936643633156715672834457769192598828753841328454487819350992/376453820913890074899487004189100025511481553604426544559634764263301689662404540823888964951038360595703125",
+          "exact_encoded_binary64_pi": "884279719003555/281474976710656",
+          "single_use_encoded_CP_parameter_operator_error_upper": "12976642900600785132962003104920136563994522586314721360051898014984302040554347449402968291950185290961377/211924660948749346908705543968417331182905451510272220163986952580700607621571383598841856000000000000000000000000000000000",
+          "single_use_encoded_QFT_operator_error_upper": "12976642900600785132962003104920136563994522586314721360051898014984302040554347449402968291950185290961377/211924660948749346908705543968417331182905451510272220163986952580700607621571383598841856000000000000000000000000000000000",
+          "complete_experiment_ideal_truncation_trace_upper": "0",
+          "complete_experiment_encoded_QFT_trace_upper": "12976642900600785132962003104920136563994522586314721360051898014984302040554347449402968291950185290961377/211924660948749346908705543968417331182905451510272220163986952580700607621571383598841856000000000000000000000000000000000",
+          "ideal_truncation_target_met": true,
+          "encoded_QFT_parameter_target_met": true,
+          "numeric_normal_angle_encoding_supported": true,
+          "external_per_logical_gate_operator_error": null,
+          "complete_experiment_upper_IF_external_gate_bound_holds": null,
+          "arithmetic_preparation_and_hardware_errors_covered": false,
+          "statevector_MPS_roundoff_certified": false,
+          "normalized_rare_branch_accuracy_certified_without_mass_bound": false,
+          "logical_query_budget_proves_efficient_receiver": false
+        },
+        "encoded_packet_and_QFT_parameter_operator_upper_per_parent": "12976642900600785132962003104920136563994522586314721360051898014984302040554347449402968291950185290961377/15137475782053524779193253140601237941636103679305158583141925184335757687255098828488704000000000000000000000000000000000",
+        "source_position_wires_reused_in_place": true,
+        "localization_register_unmeasured_and_traced": true,
+        "mixed_colour_inverse_or_correct_trial_flag_available": false,
+        "hardware_roundoff_and_full_finite_gate_synthesis_certified": false
+      },
+      "complete_instrument": {
+        "public_source": {
+          "source_type": "PUBLIC_SINE_WINDOW_PRODUCT_GROUP_INSTRUMENT",
+          "basis_rows": [
+            [
+              1
+            ]
+          ],
+          "prime": 7,
+          "split_prime_certificate": {
+            "prime": 7,
+            "witness": 3,
+            "factors": [
+              {
+                "prime": 2,
+                "exponent": 1,
+                "certificate": {
+                  "prime": 2,
+                  "witness": 1,
+                  "factors": [],
+                  "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                }
+              },
+              {
+                "prime": 3,
+                "exponent": 1,
+                "certificate": {
+                  "prime": 3,
+                  "witness": 2,
+                  "factors": [
+                    {
+                      "prime": 2,
+                      "exponent": 1,
+                      "certificate": {
+                        "prime": 2,
+                        "witness": 1,
+                        "factors": [],
+                        "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                      }
+                    }
+                  ],
+                  "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                }
+              }
+            ],
+            "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+          },
+          "residue": 1,
+          "coordinate": 0,
+          "box": 2,
+          "packet_side": 4,
+          "input_population": 4,
+          "hidden_short_vector_or_shift_given": false,
+          "receiver_gets_localization_register": false,
+          "uniform_secret_prior_inferred": false,
+          "phase_group": "PRODUCT_OF_CYCLIC_TWO_POWER_GROUPS",
+          "rank": 1,
+          "coordinate_modulus": 4,
+          "total_label_bits": 2,
+          "scalar_cyclic_DCP_contract_granted": false
+        },
+        "reference_root": 8,
+        "all_label_outcomes": [
+          {
+            "label": [
+              0
+            ],
+            "joint_label_probability": [
+              "1/4"
+            ],
+            "unnormalized_colour_density": [
+              [
+                [
+                  "1/8"
+                ],
+                [
+                  "-1/16",
+                  "0",
+                  "1/16",
+                  "0"
+                ]
+              ],
+              [
+                [
+                  "-1/16",
+                  "0",
+                  "1/16",
+                  "0"
+                ],
+                [
+                  "1/8"
+                ]
+              ]
+            ]
+          },
+          {
+            "label": [
+              1
+            ],
+            "joint_label_probability": [
+              "1/4"
+            ],
+            "unnormalized_colour_density": [
+              [
+                [
+                  "1/8"
+                ],
+                [
+                  "-1/16",
+                  "0",
+                  "1/16",
+                  "0"
+                ]
+              ],
+              [
+                [
+                  "-1/16",
+                  "0",
+                  "1/16",
+                  "0"
+                ],
+                [
+                  "1/8"
+                ]
+              ]
+            ]
+          },
+          {
+            "label": [
+              2
+            ],
+            "joint_label_probability": [
+              "1/4"
+            ],
+            "unnormalized_colour_density": [
+              [
+                [
+                  "1/8"
+                ],
+                [
+                  "-1/16",
+                  "0",
+                  "1/16",
+                  "0"
+                ]
+              ],
+              [
+                [
+                  "-1/16",
+                  "0",
+                  "1/16",
+                  "0"
+                ],
+                [
+                  "1/8"
+                ]
+              ]
+            ]
+          },
+          {
+            "label": [
+              3
+            ],
+            "joint_label_probability": [
+              "1/4"
+            ],
+            "unnormalized_colour_density": [
+              [
+                [
+                  "1/8"
+                ],
+                [
+                  "-1/16",
+                  "0",
+                  "1/16",
+                  "0"
+                ]
+              ],
+              [
+                [
+                  "-1/16",
+                  "0",
+                  "1/16",
+                  "0"
+                ],
+                [
+                  "1/8"
+                ]
+              ]
+            ]
+          }
+        ],
+        "label_distribution_uniform": true,
+        "complete_parent_count": 4,
+        "QFT_group": "PRODUCT_OF_CYCLIC_TWO_POWER_GROUPS",
+        "bounded_public_Gram_and_all_label_enumeration_are_polynomial_decoder": false
+      },
+      "private_forward_template": {
+        "status": "FINITE_PRODUCT_PHASE_TEMPLATE_MATCH",
+        "finite_template_matches": true,
+        "PRIVATE_AUDIT_ONLY_parent_shift": [
+          0
+        ],
+        "PRIVATE_AUDIT_ONLY_short_vector": [
+          1
+        ],
+        "visibility_exact": [
+          "-1/2",
+          "0",
+          "1/2",
+          "0"
+        ],
+        "box_overlap_exact": "1",
+        "correct_trial_flag_supplied_to_receiver": false,
+        "uniform_polynomial_full_vector_decoder_supplied": false
+      },
+      "actual_source_audit": {
+        "all_emitted_product_densities_agree": true,
+        "private_max_numerical_error": 7.868801631166169e-11,
+        "metadata": {
+          "actual_compiled_source_preparations_charged": 4,
+          "phase_group": "PRODUCT_OF_CYCLIC_TWO_POWER_GROUPS",
+          "local_QFT_applications_charged": 4,
+          "W_calls_charged": 12,
+          "source_shots_independent_given_public_parameters": true,
+          "public_source_fingerprint": "fbfef0e4b87cc992ed225105d3b9e06389bf2e7e8764fde9bebc4122d1cd1add",
+          "localization_register_was_unmeasured_and_traced": true,
+          "conditioned_snapshot_keys_and_counts_checked": true,
+          "MPS_truncation_threshold": 0.0,
+          "source_promise_not_inferred_from_samples": true,
+          "numerical_error_is_a_formally_certified_channel_bound": false
+        },
+        "public_receipts": [
+          {
+            "id": "product-source-0:0",
+            "phase_group": "PRODUCT_OF_CYCLIC_TWO_POWER_GROUPS",
+            "coordinate_modulus": 4,
+            "label": [
+              0
+            ],
+            "original_source_receipts": [
+              "product-source-0:0"
+            ],
+            "merge_depth": 0
+          },
+          {
+            "id": "product-source-0:1",
+            "phase_group": "PRODUCT_OF_CYCLIC_TWO_POWER_GROUPS",
+            "coordinate_modulus": 4,
+            "label": [
+              1
+            ],
+            "original_source_receipts": [
+              "product-source-0:1"
+            ],
+            "merge_depth": 0
+          },
+          {
+            "id": "product-source-0:2",
+            "phase_group": "PRODUCT_OF_CYCLIC_TWO_POWER_GROUPS",
+            "coordinate_modulus": 4,
+            "label": [
+              1
+            ],
+            "original_source_receipts": [
+              "product-source-0:2"
+            ],
+            "merge_depth": 0
+          },
+          {
+            "id": "product-source-0:3",
+            "phase_group": "PRODUCT_OF_CYCLIC_TWO_POWER_GROUPS",
+            "coordinate_modulus": 4,
+            "label": [
+              0
+            ],
+            "original_source_receipts": [
+              "product-source-0:3"
+            ],
+            "merge_depth": 0
+          }
+        ],
+        "PRIVATE_AUDIT_ONLY_density_matrices": {
+          "product-source-0:0": [
+            [
+              [
+                0.5000000000299086,
+                0.0
+              ],
+              [
+                0.35355339064931424,
+                4.00984321297729e-11
+              ]
+            ],
+            [
+              [
+                0.35355339064931424,
+                -4.00984321297729e-11
+              ],
+              [
+                0.4999999999700914,
+                0.0
+              ]
+            ]
+          ],
+          "product-source-0:1": [
+            [
+              [
+                0.5000000000364208,
+                0.0
+              ],
+              [
+                0.353553390649569,
+                5.497859683227634e-11
+              ]
+            ],
+            [
+              [
+                0.353553390649569,
+                -5.497859683227634e-11
+              ],
+              [
+                0.4999999999635793,
+                0.0
+              ]
+            ]
+          ],
+          "product-source-0:2": [
+            [
+              [
+                0.5000000000364208,
+                0.0
+              ],
+              [
+                0.353553390649569,
+                5.497859683227634e-11
+              ]
+            ],
+            [
+              [
+                0.353553390649569,
+                -5.497859683227634e-11
+              ],
+              [
+                0.4999999999635793,
+                0.0
+              ]
+            ]
+          ],
+          "product-source-0:3": [
+            [
+              [
+                0.5000000000299086,
+                0.0
+              ],
+              [
+                0.35355339064931424,
+                4.00984321297729e-11
+              ]
+            ],
+            [
+              [
+                0.35355339064931424,
+                -4.00984321297729e-11
+              ],
+              [
+                0.4999999999700914,
+                0.0
+              ]
+            ]
+          ]
+        },
+        "speedup_or_hardware_certificate": false
+      }
+    },
+    {
+      "resources": {
+        "public_source": {
+          "source_type": "PUBLIC_SINE_WINDOW_PRODUCT_GROUP_INSTRUMENT",
+          "basis_rows": [
+            [
+              17,
+              0
+            ],
+            [
+              16,
+              1
+            ]
+          ],
+          "prime": 7,
+          "split_prime_certificate": {
+            "prime": 7,
+            "witness": 3,
+            "factors": [
+              {
+                "prime": 2,
+                "exponent": 1,
+                "certificate": {
+                  "prime": 2,
+                  "witness": 1,
+                  "factors": [],
+                  "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                }
+              },
+              {
+                "prime": 3,
+                "exponent": 1,
+                "certificate": {
+                  "prime": 3,
+                  "witness": 2,
+                  "factors": [
+                    {
+                      "prime": 2,
+                      "exponent": 1,
+                      "certificate": {
+                        "prime": 2,
+                        "witness": 1,
+                        "factors": [],
+                        "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                      }
+                    }
+                  ],
+                  "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                }
+              }
+            ],
+            "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+          },
+          "residue": 1,
+          "coordinate": 0,
+          "box": 2,
+          "packet_side": 4,
+          "input_population": 8,
+          "hidden_short_vector_or_shift_given": false,
+          "receiver_gets_localization_register": false,
+          "uniform_secret_prior_inferred": false,
+          "phase_group": "PRODUCT_OF_CYCLIC_TWO_POWER_GROUPS",
+          "rank": 2,
+          "coordinate_modulus": 4,
+          "total_label_bits": 4,
+          "scalar_cyclic_DCP_contract_granted": false
+        },
+        "position_and_arithmetic_resources": {
+          "arithmetic_width_plan": {
+            "point_absolute_bounds": [
+              152,
+              1
+            ],
+            "localization_absolute_bounds": [
+              155,
+              4
+            ],
+            "shared_signed_word_bits": 9,
+            "localization_coordinates_share_word_width": true,
+            "all_signed_localization_values_in_range": true,
+            "copied_point_or_original_noise_garbage_retained": false
+          },
+          "input_qubits": 3,
+          "localization_output_qubits": 18,
+          "shared_point_arithmetic_work_qubits": 19,
+          "shared_packet_work_qubits": 2,
+          "zero_padding_qubits": 2,
+          "position_QFT_qubits": 4,
+          "total_source_qubits": 44,
+          "constant_additions_including_uncompute": 8,
+          "point_to_localization_additions": 2,
+          "arithmetic_logical_instructions": 50,
+          "packet_unitary_applications": 2,
+          "packet_plan": {
+            "packet_bits": 2,
+            "packet_side": 4,
+            "logical_qubits": 4,
+            "clean_AND_work_qubits": 1,
+            "known_flag_qubits": 1,
+            "W_forward_uses": 2,
+            "W_inverse_uses": 1,
+            "known_zero_reflections": 1,
+            "H_gates": 12,
+            "X_gates": 7,
+            "CCX_gates": 2,
+            "CP_gates": 7,
+            "P_gates": 3,
+            "logical_instructions": 31,
+            "global_phase_pi_coefficient": "-1/4",
+            "retained_absolute_pi_weight": "13/2",
+            "encoded_binary64_pi": "884279719003555/281474976710656",
+            "Machin_terms": 16,
+            "pi_lower": "2702199289155139770778723466138548690954453271354857406274868882229427215106701002516071935610699965630953755124/860136748176892598733343886651423302289653512937537946071635894779362232608248391056054462678730487823486328125",
+            "pi_upper": "1182664558198884723122287358611764328074688616985936643633156715672834457769192598828753841328454487819350992/376453820913890074899487004189100025511481553604426544559634764263301689662404540823888964951038360595703125",
+            "numeric_normal_angles_supported": true,
+            "encoded_rotation_operator_error_upper": "12976642900600785132962003104920136563994522586314721360051898014984302040554347449402968291950185290961377/16301896996057642069900426459109025475608111654636324627998996352361585201659337199910912000000000000000000000000000000000",
+            "known_zero_parent_success_probability": "1",
+            "postselection_used": false,
+            "flag_clear_for_arbitrary_input_claimed": false,
+            "hardware_synthesis_or_simulator_roundoff_certified": false
+          },
+          "coherent_source_instructions_before_QFT": 55,
+          "no_preimages_or_private_shift_needed": true
+        },
+        "compiled_qubits": 44,
+        "compiled_parent_instructions": 57,
+        "coordinate_QFT_count_per_parent": 2,
+        "coordinate_QFT_wires": 2,
+        "logical_controlled_phases_per_parent": 2,
+        "coordinate_QFT_precision_accounting": {
+          "QFT_wires": 2,
+          "retained_maximum_separation": 1,
+          "qiskit_approximation_degree": 0,
+          "query_usage": {
+            "direct_forward_calls": 1,
+            "direct_inverse_calls": 0,
+            "phase_parent_reflections": 0,
+            "total_approximate_QFT_or_inverse_calls": 1,
+            "receiver_usage_bound_is_external_not_proved_here": true
+          },
+          "target_complete_experiment_trace_error": "1/100",
+          "logical_controlled_phases_retained": 1,
+          "logical_controlled_phases_omitted": 0,
+          "logical_H_gates": 2,
+          "logical_swaps": 1,
+          "exact_ideal_QFT_selected": true,
+          "retained_dyadic_angle_weight": "1/2",
+          "omitted_weight_symbolic": {
+            "coefficient_at_2_pow_minus_cutoff": -1,
+            "cutoff_exponent": 1,
+            "unit_term_exponent": 1
+          },
+          "single_use_ideal_truncation_operator_upper": "0",
+          "truncation_bound_method": "EXACT_FINITE_TAIL_MACHIN_PI_UPPER",
+          "Machin_terms": 16,
+          "pi_rational_lower": "2702199289155139770778723466138548690954453271354857406274868882229427215106701002516071935610699965630953755124/860136748176892598733343886651423302289653512937537946071635894779362232608248391056054462678730487823486328125",
+          "pi_rational_upper": "1182664558198884723122287358611764328074688616985936643633156715672834457769192598828753841328454487819350992/376453820913890074899487004189100025511481553604426544559634764263301689662404540823888964951038360595703125",
+          "exact_encoded_binary64_pi": "884279719003555/281474976710656",
+          "single_use_encoded_CP_parameter_operator_error_upper": "12976642900600785132962003104920136563994522586314721360051898014984302040554347449402968291950185290961377/211924660948749346908705543968417331182905451510272220163986952580700607621571383598841856000000000000000000000000000000000",
+          "single_use_encoded_QFT_operator_error_upper": "12976642900600785132962003104920136563994522586314721360051898014984302040554347449402968291950185290961377/211924660948749346908705543968417331182905451510272220163986952580700607621571383598841856000000000000000000000000000000000",
+          "complete_experiment_ideal_truncation_trace_upper": "0",
+          "complete_experiment_encoded_QFT_trace_upper": "12976642900600785132962003104920136563994522586314721360051898014984302040554347449402968291950185290961377/211924660948749346908705543968417331182905451510272220163986952580700607621571383598841856000000000000000000000000000000000",
+          "ideal_truncation_target_met": true,
+          "encoded_QFT_parameter_target_met": true,
+          "numeric_normal_angle_encoding_supported": true,
+          "external_per_logical_gate_operator_error": null,
+          "complete_experiment_upper_IF_external_gate_bound_holds": null,
+          "arithmetic_preparation_and_hardware_errors_covered": false,
+          "statevector_MPS_roundoff_certified": false,
+          "normalized_rare_branch_accuracy_certified_without_mass_bound": false,
+          "logical_query_budget_proves_efficient_receiver": false
+        },
+        "encoded_packet_and_QFT_parameter_operator_upper_per_parent": "12976642900600785132962003104920136563994522586314721360051898014984302040554347449402968291950185290961377/7568737891026762389596626570300618970818051839652579291570962592167878843627549414244352000000000000000000000000000000000",
+        "source_position_wires_reused_in_place": true,
+        "localization_register_unmeasured_and_traced": true,
+        "mixed_colour_inverse_or_correct_trial_flag_available": false,
+        "hardware_roundoff_and_full_finite_gate_synthesis_certified": false
+      },
+      "complete_instrument": {
+        "public_source": {
+          "source_type": "PUBLIC_SINE_WINDOW_PRODUCT_GROUP_INSTRUMENT",
+          "basis_rows": [
+            [
+              17,
+              0
+            ],
+            [
+              16,
+              1
+            ]
+          ],
+          "prime": 7,
+          "split_prime_certificate": {
+            "prime": 7,
+            "witness": 3,
+            "factors": [
+              {
+                "prime": 2,
+                "exponent": 1,
+                "certificate": {
+                  "prime": 2,
+                  "witness": 1,
+                  "factors": [],
+                  "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                }
+              },
+              {
+                "prime": 3,
+                "exponent": 1,
+                "certificate": {
+                  "prime": 3,
+                  "witness": 2,
+                  "factors": [
+                    {
+                      "prime": 2,
+                      "exponent": 1,
+                      "certificate": {
+                        "prime": 2,
+                        "witness": 1,
+                        "factors": [],
+                        "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                      }
+                    }
+                  ],
+                  "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                }
+              }
+            ],
+            "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+          },
+          "residue": 1,
+          "coordinate": 0,
+          "box": 2,
+          "packet_side": 4,
+          "input_population": 8,
+          "hidden_short_vector_or_shift_given": false,
+          "receiver_gets_localization_register": false,
+          "uniform_secret_prior_inferred": false,
+          "phase_group": "PRODUCT_OF_CYCLIC_TWO_POWER_GROUPS",
+          "rank": 2,
+          "coordinate_modulus": 4,
+          "total_label_bits": 4,
+          "scalar_cyclic_DCP_contract_granted": false
+        },
+        "reference_root": 16,
+        "all_label_outcomes": [
+          {
+            "label": [
+              0,
+              0
+            ],
+            "joint_label_probability": [
+              "1/16"
+            ],
+            "unnormalized_colour_density": [
+              [
+                [
+                  "1/32"
+                ],
+                [
+                  "1/128"
+                ]
+              ],
+              [
+                [
+                  "1/128"
+                ],
+                [
+                  "1/32"
+                ]
+              ]
+            ]
+          },
+          {
+            "label": [
+              0,
+              1
+            ],
+            "joint_label_probability": [
+              "1/16"
+            ],
+            "unnormalized_colour_density": [
+              [
+                [
+                  "1/32"
+                ],
+                [
+                  "1/128",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              ],
+              [
+                [
+                  "-1/128",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                [
+                  "1/32"
+                ]
+              ]
+            ]
+          },
+          {
+            "label": [
+              0,
+              2
+            ],
+            "joint_label_probability": [
+              "1/16"
+            ],
+            "unnormalized_colour_density": [
+              [
+                [
+                  "1/32"
+                ],
+                [
+                  "-1/128"
+                ]
+              ],
+              [
+                [
+                  "-1/128"
+                ],
+                [
+                  "1/32"
+                ]
+              ]
+            ]
+          },
+          {
+            "label": [
+              0,
+              3
+            ],
+            "joint_label_probability": [
+              "1/16"
+            ],
+            "unnormalized_colour_density": [
+              [
+                [
+                  "1/32"
+                ],
+                [
+                  "-1/128",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              ],
+              [
+                [
+                  "1/128",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                [
+                  "1/32"
+                ]
+              ]
+            ]
+          },
+          {
+            "label": [
+              1,
+              0
+            ],
+            "joint_label_probability": [
+              "1/16"
+            ],
+            "unnormalized_colour_density": [
+              [
+                [
+                  "1/32"
+                ],
+                [
+                  "1/128"
+                ]
+              ],
+              [
+                [
+                  "1/128"
+                ],
+                [
+                  "1/32"
+                ]
+              ]
+            ]
+          },
+          {
+            "label": [
+              1,
+              1
+            ],
+            "joint_label_probability": [
+              "1/16"
+            ],
+            "unnormalized_colour_density": [
+              [
+                [
+                  "1/32"
+                ],
+                [
+                  "1/128",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              ],
+              [
+                [
+                  "-1/128",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                [
+                  "1/32"
+                ]
+              ]
+            ]
+          },
+          {
+            "label": [
+              1,
+              2
+            ],
+            "joint_label_probability": [
+              "1/16"
+            ],
+            "unnormalized_colour_density": [
+              [
+                [
+                  "1/32"
+                ],
+                [
+                  "-1/128"
+                ]
+              ],
+              [
+                [
+                  "-1/128"
+                ],
+                [
+                  "1/32"
+                ]
+              ]
+            ]
+          },
+          {
+            "label": [
+              1,
+              3
+            ],
+            "joint_label_probability": [
+              "1/16"
+            ],
+            "unnormalized_colour_density": [
+              [
+                [
+                  "1/32"
+                ],
+                [
+                  "-1/128",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              ],
+              [
+                [
+                  "1/128",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                [
+                  "1/32"
+                ]
+              ]
+            ]
+          },
+          {
+            "label": [
+              2,
+              0
+            ],
+            "joint_label_probability": [
+              "1/16"
+            ],
+            "unnormalized_colour_density": [
+              [
+                [
+                  "1/32"
+                ],
+                [
+                  "1/128"
+                ]
+              ],
+              [
+                [
+                  "1/128"
+                ],
+                [
+                  "1/32"
+                ]
+              ]
+            ]
+          },
+          {
+            "label": [
+              2,
+              1
+            ],
+            "joint_label_probability": [
+              "1/16"
+            ],
+            "unnormalized_colour_density": [
+              [
+                [
+                  "1/32"
+                ],
+                [
+                  "1/128",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              ],
+              [
+                [
+                  "-1/128",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                [
+                  "1/32"
+                ]
+              ]
+            ]
+          },
+          {
+            "label": [
+              2,
+              2
+            ],
+            "joint_label_probability": [
+              "1/16"
+            ],
+            "unnormalized_colour_density": [
+              [
+                [
+                  "1/32"
+                ],
+                [
+                  "-1/128"
+                ]
+              ],
+              [
+                [
+                  "-1/128"
+                ],
+                [
+                  "1/32"
+                ]
+              ]
+            ]
+          },
+          {
+            "label": [
+              2,
+              3
+            ],
+            "joint_label_probability": [
+              "1/16"
+            ],
+            "unnormalized_colour_density": [
+              [
+                [
+                  "1/32"
+                ],
+                [
+                  "-1/128",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              ],
+              [
+                [
+                  "1/128",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                [
+                  "1/32"
+                ]
+              ]
+            ]
+          },
+          {
+            "label": [
+              3,
+              0
+            ],
+            "joint_label_probability": [
+              "1/16"
+            ],
+            "unnormalized_colour_density": [
+              [
+                [
+                  "1/32"
+                ],
+                [
+                  "1/128"
+                ]
+              ],
+              [
+                [
+                  "1/128"
+                ],
+                [
+                  "1/32"
+                ]
+              ]
+            ]
+          },
+          {
+            "label": [
+              3,
+              1
+            ],
+            "joint_label_probability": [
+              "1/16"
+            ],
+            "unnormalized_colour_density": [
+              [
+                [
+                  "1/32"
+                ],
+                [
+                  "1/128",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              ],
+              [
+                [
+                  "-1/128",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                [
+                  "1/32"
+                ]
+              ]
+            ]
+          },
+          {
+            "label": [
+              3,
+              2
+            ],
+            "joint_label_probability": [
+              "1/16"
+            ],
+            "unnormalized_colour_density": [
+              [
+                [
+                  "1/32"
+                ],
+                [
+                  "-1/128"
+                ]
+              ],
+              [
+                [
+                  "-1/128"
+                ],
+                [
+                  "1/32"
+                ]
+              ]
+            ]
+          },
+          {
+            "label": [
+              3,
+              3
+            ],
+            "joint_label_probability": [
+              "1/16"
+            ],
+            "unnormalized_colour_density": [
+              [
+                [
+                  "1/32"
+                ],
+                [
+                  "-1/128",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              ],
+              [
+                [
+                  "1/128",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                [
+                  "1/32"
+                ]
+              ]
+            ]
+          }
+        ],
+        "label_distribution_uniform": true,
+        "complete_parent_count": 8,
+        "QFT_group": "PRODUCT_OF_CYCLIC_TWO_POWER_GROUPS",
+        "bounded_public_Gram_and_all_label_enumeration_are_polynomial_decoder": false
+      },
+      "private_forward_template": {
+        "status": "FINITE_PRODUCT_PHASE_TEMPLATE_MATCH",
+        "finite_template_matches": true,
+        "PRIVATE_AUDIT_ONLY_parent_shift": [
+          0,
+          -1
+        ],
+        "PRIVATE_AUDIT_ONLY_short_vector": [
+          1,
+          -1
+        ],
+        "visibility_exact": [
+          "1/4"
+        ],
+        "box_overlap_exact": "1/2",
+        "correct_trial_flag_supplied_to_receiver": false,
+        "uniform_polynomial_full_vector_decoder_supplied": false
+      },
+      "actual_source_audit": {
+        "all_emitted_product_densities_agree": true,
+        "private_max_numerical_error": 8.376982814145868e-11,
+        "metadata": {
+          "actual_compiled_source_preparations_charged": 4,
+          "phase_group": "PRODUCT_OF_CYCLIC_TWO_POWER_GROUPS",
+          "local_QFT_applications_charged": 8,
+          "W_calls_charged": 24,
+          "source_shots_independent_given_public_parameters": true,
+          "public_source_fingerprint": "50cbcdce6b1ee61f93f2fa7c8fe0a53b9a87a32514e13a08617143ef15142fff",
+          "localization_register_was_unmeasured_and_traced": true,
+          "conditioned_snapshot_keys_and_counts_checked": true,
+          "MPS_truncation_threshold": 0.0,
+          "source_promise_not_inferred_from_samples": true,
+          "numerical_error_is_a_formally_certified_channel_bound": false
+        },
+        "public_receipts": [
+          {
+            "id": "product-source-1:0",
+            "phase_group": "PRODUCT_OF_CYCLIC_TWO_POWER_GROUPS",
+            "coordinate_modulus": 4,
+            "label": [
+              1,
+              2
+            ],
+            "original_source_receipts": [
+              "product-source-1:0"
+            ],
+            "merge_depth": 0
+          },
+          {
+            "id": "product-source-1:1",
+            "phase_group": "PRODUCT_OF_CYCLIC_TWO_POWER_GROUPS",
+            "coordinate_modulus": 4,
+            "label": [
+              1,
+              2
+            ],
+            "original_source_receipts": [
+              "product-source-1:1"
+            ],
+            "merge_depth": 0
+          },
+          {
+            "id": "product-source-1:2",
+            "phase_group": "PRODUCT_OF_CYCLIC_TWO_POWER_GROUPS",
+            "coordinate_modulus": 4,
+            "label": [
+              0,
+              3
+            ],
+            "original_source_receipts": [
+              "product-source-1:2"
+            ],
+            "merge_depth": 0
+          },
+          {
+            "id": "product-source-1:3",
+            "phase_group": "PRODUCT_OF_CYCLIC_TWO_POWER_GROUPS",
+            "coordinate_modulus": 4,
+            "label": [
+              0,
+              0
+            ],
+            "original_source_receipts": [
+              "product-source-1:3"
+            ],
+            "merge_depth": 0
+          }
+        ],
+        "PRIVATE_AUDIT_ONLY_density_matrices": {
+          "product-source-1:0": [
+            [
+              [
+                0.5000000000054585,
+                0.0
+              ],
+              [
+                -0.1250000000837474,
+                1.9384145388504832e-12
+              ]
+            ],
+            [
+              [
+                -0.1250000000837474,
+                -1.9384145388504832e-12
+              ],
+              [
+                0.4999999999945416,
+                0.0
+              ]
+            ]
+          ],
+          "product-source-1:1": [
+            [
+              [
+                0.5000000000054585,
+                0.0
+              ],
+              [
+                -0.1250000000837474,
+                1.9384145388504832e-12
+              ]
+            ],
+            [
+              [
+                -0.1250000000837474,
+                -1.9384145388504832e-12
+              ],
+              [
+                0.4999999999945416,
+                0.0
+              ]
+            ]
+          ],
+          "product-source-1:2": [
+            [
+              [
+                0.4999999999478213,
+                0.0
+              ],
+              [
+                -6.872135474880293e-12,
+                -0.1250000000346516
+              ]
+            ],
+            [
+              [
+                -6.872135474880293e-12,
+                0.1250000000346516
+              ],
+              [
+                0.5000000000521787,
+                0.0
+              ]
+            ]
+          ],
+          "product-source-1:3": [
+            [
+              [
+                0.49999999998902805,
+                0.0
+              ],
+              [
+                0.12500000003785114,
+                3.6422993585235105e-12
+              ]
+            ],
+            [
+              [
+                0.12500000003785114,
+                -3.6422993585235105e-12
+              ],
+              [
+                0.500000000010972,
+                0.0
+              ]
+            ]
+          ]
+        },
+        "speedup_or_hardware_certificate": false
+      }
+    },
+    {
+      "resources": {
+        "public_source": {
+          "source_type": "PUBLIC_SINE_WINDOW_PRODUCT_GROUP_INSTRUMENT",
+          "basis_rows": [
+            [
+              1
+            ]
+          ],
+          "prime": 3,
+          "split_prime_certificate": {
+            "prime": 3,
+            "witness": 2,
+            "factors": [
+              {
+                "prime": 2,
+                "exponent": 1,
+                "certificate": {
+                  "prime": 2,
+                  "witness": 1,
+                  "factors": [],
+                  "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                }
+              }
+            ],
+            "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+          },
+          "residue": 1,
+          "coordinate": 0,
+          "box": 2,
+          "packet_side": 4,
+          "input_population": 4,
+          "hidden_short_vector_or_shift_given": false,
+          "receiver_gets_localization_register": false,
+          "uniform_secret_prior_inferred": false,
+          "phase_group": "PRODUCT_OF_CYCLIC_TWO_POWER_GROUPS",
+          "rank": 1,
+          "coordinate_modulus": 4,
+          "total_label_bits": 2,
+          "scalar_cyclic_DCP_contract_granted": false
+        },
+        "position_and_arithmetic_resources": {
+          "arithmetic_width_plan": {
+            "point_absolute_bounds": [
+              4
+            ],
+            "localization_absolute_bounds": [
+              7
+            ],
+            "shared_signed_word_bits": 4,
+            "localization_coordinates_share_word_width": true,
+            "all_signed_localization_values_in_range": true,
+            "copied_point_or_original_noise_garbage_retained": false
+          },
+          "input_qubits": 2,
+          "localization_output_qubits": 4,
+          "shared_point_arithmetic_work_qubits": 9,
+          "shared_packet_work_qubits": 2,
+          "zero_padding_qubits": 1,
+          "position_QFT_qubits": 2,
+          "total_source_qubits": 18,
+          "constant_additions_including_uncompute": 4,
+          "point_to_localization_additions": 1,
+          "arithmetic_logical_instructions": 17,
+          "packet_unitary_applications": 1,
+          "packet_plan": {
+            "packet_bits": 2,
+            "packet_side": 4,
+            "logical_qubits": 4,
+            "clean_AND_work_qubits": 1,
+            "known_flag_qubits": 1,
+            "W_forward_uses": 2,
+            "W_inverse_uses": 1,
+            "known_zero_reflections": 1,
+            "H_gates": 12,
+            "X_gates": 7,
+            "CCX_gates": 2,
+            "CP_gates": 7,
+            "P_gates": 3,
+            "logical_instructions": 31,
+            "global_phase_pi_coefficient": "-1/4",
+            "retained_absolute_pi_weight": "13/2",
+            "encoded_binary64_pi": "884279719003555/281474976710656",
+            "Machin_terms": 16,
+            "pi_lower": "2702199289155139770778723466138548690954453271354857406274868882229427215106701002516071935610699965630953755124/860136748176892598733343886651423302289653512937537946071635894779362232608248391056054462678730487823486328125",
+            "pi_upper": "1182664558198884723122287358611764328074688616985936643633156715672834457769192598828753841328454487819350992/376453820913890074899487004189100025511481553604426544559634764263301689662404540823888964951038360595703125",
+            "numeric_normal_angles_supported": true,
+            "encoded_rotation_operator_error_upper": "12976642900600785132962003104920136563994522586314721360051898014984302040554347449402968291950185290961377/16301896996057642069900426459109025475608111654636324627998996352361585201659337199910912000000000000000000000000000000000",
+            "known_zero_parent_success_probability": "1",
+            "postselection_used": false,
+            "flag_clear_for_arbitrary_input_claimed": false,
+            "hardware_synthesis_or_simulator_roundoff_certified": false
+          },
+          "coherent_source_instructions_before_QFT": 20,
+          "no_preimages_or_private_shift_needed": true
+        },
+        "compiled_qubits": 18,
+        "compiled_parent_instructions": 21,
+        "coordinate_QFT_count_per_parent": 1,
+        "coordinate_QFT_wires": 2,
+        "logical_controlled_phases_per_parent": 1,
+        "coordinate_QFT_precision_accounting": {
+          "QFT_wires": 2,
+          "retained_maximum_separation": 1,
+          "qiskit_approximation_degree": 0,
+          "query_usage": {
+            "direct_forward_calls": 1,
+            "direct_inverse_calls": 0,
+            "phase_parent_reflections": 0,
+            "total_approximate_QFT_or_inverse_calls": 1,
+            "receiver_usage_bound_is_external_not_proved_here": true
+          },
+          "target_complete_experiment_trace_error": "1/100",
+          "logical_controlled_phases_retained": 1,
+          "logical_controlled_phases_omitted": 0,
+          "logical_H_gates": 2,
+          "logical_swaps": 1,
+          "exact_ideal_QFT_selected": true,
+          "retained_dyadic_angle_weight": "1/2",
+          "omitted_weight_symbolic": {
+            "coefficient_at_2_pow_minus_cutoff": -1,
+            "cutoff_exponent": 1,
+            "unit_term_exponent": 1
+          },
+          "single_use_ideal_truncation_operator_upper": "0",
+          "truncation_bound_method": "EXACT_FINITE_TAIL_MACHIN_PI_UPPER",
+          "Machin_terms": 16,
+          "pi_rational_lower": "2702199289155139770778723466138548690954453271354857406274868882229427215106701002516071935610699965630953755124/860136748176892598733343886651423302289653512937537946071635894779362232608248391056054462678730487823486328125",
+          "pi_rational_upper": "1182664558198884723122287358611764328074688616985936643633156715672834457769192598828753841328454487819350992/376453820913890074899487004189100025511481553604426544559634764263301689662404540823888964951038360595703125",
+          "exact_encoded_binary64_pi": "884279719003555/281474976710656",
+          "single_use_encoded_CP_parameter_operator_error_upper": "12976642900600785132962003104920136563994522586314721360051898014984302040554347449402968291950185290961377/211924660948749346908705543968417331182905451510272220163986952580700607621571383598841856000000000000000000000000000000000",
+          "single_use_encoded_QFT_operator_error_upper": "12976642900600785132962003104920136563994522586314721360051898014984302040554347449402968291950185290961377/211924660948749346908705543968417331182905451510272220163986952580700607621571383598841856000000000000000000000000000000000",
+          "complete_experiment_ideal_truncation_trace_upper": "0",
+          "complete_experiment_encoded_QFT_trace_upper": "12976642900600785132962003104920136563994522586314721360051898014984302040554347449402968291950185290961377/211924660948749346908705543968417331182905451510272220163986952580700607621571383598841856000000000000000000000000000000000",
+          "ideal_truncation_target_met": true,
+          "encoded_QFT_parameter_target_met": true,
+          "numeric_normal_angle_encoding_supported": true,
+          "external_per_logical_gate_operator_error": null,
+          "complete_experiment_upper_IF_external_gate_bound_holds": null,
+          "arithmetic_preparation_and_hardware_errors_covered": false,
+          "statevector_MPS_roundoff_certified": false,
+          "normalized_rare_branch_accuracy_certified_without_mass_bound": false,
+          "logical_query_budget_proves_efficient_receiver": false
+        },
+        "encoded_packet_and_QFT_parameter_operator_upper_per_parent": "12976642900600785132962003104920136563994522586314721360051898014984302040554347449402968291950185290961377/15137475782053524779193253140601237941636103679305158583141925184335757687255098828488704000000000000000000000000000000000",
+        "source_position_wires_reused_in_place": true,
+        "localization_register_unmeasured_and_traced": true,
+        "mixed_colour_inverse_or_correct_trial_flag_available": false,
+        "hardware_roundoff_and_full_finite_gate_synthesis_certified": false
+      },
+      "complete_instrument": {
+        "public_source": {
+          "source_type": "PUBLIC_SINE_WINDOW_PRODUCT_GROUP_INSTRUMENT",
+          "basis_rows": [
+            [
+              1
+            ]
+          ],
+          "prime": 3,
+          "split_prime_certificate": {
+            "prime": 3,
+            "witness": 2,
+            "factors": [
+              {
+                "prime": 2,
+                "exponent": 1,
+                "certificate": {
+                  "prime": 2,
+                  "witness": 1,
+                  "factors": [],
+                  "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                }
+              }
+            ],
+            "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+          },
+          "residue": 1,
+          "coordinate": 0,
+          "box": 2,
+          "packet_side": 4,
+          "input_population": 4,
+          "hidden_short_vector_or_shift_given": false,
+          "receiver_gets_localization_register": false,
+          "uniform_secret_prior_inferred": false,
+          "phase_group": "PRODUCT_OF_CYCLIC_TWO_POWER_GROUPS",
+          "rank": 1,
+          "coordinate_modulus": 4,
+          "total_label_bits": 2,
+          "scalar_cyclic_DCP_contract_granted": false
+        },
+        "reference_root": 8,
+        "all_label_outcomes": [
+          {
+            "label": [
+              0
+            ],
+            "joint_label_probability": [
+              "1/4"
+            ],
+            "unnormalized_colour_density": [
+              [
+                [
+                  "1/8"
+                ],
+                [
+                  "-1/16",
+                  "0",
+                  "1/16",
+                  "1/64"
+                ]
+              ],
+              [
+                [
+                  "-1/16",
+                  "0",
+                  "1/16",
+                  "1/64"
+                ],
+                [
+                  "1/8"
+                ]
+              ]
+            ]
+          },
+          {
+            "label": [
+              1
+            ],
+            "joint_label_probability": [
+              "1/4"
+            ],
+            "unnormalized_colour_density": [
+              [
+                [
+                  "1/8"
+                ],
+                [
+                  "-1/16",
+                  "1/64",
+                  "1/16",
+                  "0"
+                ]
+              ],
+              [
+                [
+                  "-1/16",
+                  "-1/64",
+                  "1/16",
+                  "0"
+                ],
+                [
+                  "1/8"
+                ]
+              ]
+            ]
+          },
+          {
+            "label": [
+              2
+            ],
+            "joint_label_probability": [
+              "1/4"
+            ],
+            "unnormalized_colour_density": [
+              [
+                [
+                  "1/8"
+                ],
+                [
+                  "-1/16",
+                  "0",
+                  "1/16",
+                  "-1/64"
+                ]
+              ],
+              [
+                [
+                  "-1/16",
+                  "0",
+                  "1/16",
+                  "-1/64"
+                ],
+                [
+                  "1/8"
+                ]
+              ]
+            ]
+          },
+          {
+            "label": [
+              3
+            ],
+            "joint_label_probability": [
+              "1/4"
+            ],
+            "unnormalized_colour_density": [
+              [
+                [
+                  "1/8"
+                ],
+                [
+                  "-1/16",
+                  "-1/64",
+                  "1/16",
+                  "0"
+                ]
+              ],
+              [
+                [
+                  "-1/16",
+                  "1/64",
+                  "1/16",
+                  "0"
+                ],
+                [
+                  "1/8"
+                ]
+              ]
+            ]
+          }
+        ],
+        "label_distribution_uniform": true,
+        "complete_parent_count": 4,
+        "QFT_group": "PRODUCT_OF_CYCLIC_TWO_POWER_GROUPS",
+        "bounded_public_Gram_and_all_label_enumeration_are_polynomial_decoder": false
+      },
+      "private_forward_template": {
+        "status": "ALIASES_OR_MODEL_MISMATCH",
+        "finite_template_matches": false,
+        "PRIVATE_AUDIT_ONLY_parent_shift": [
+          0
+        ],
+        "PRIVATE_AUDIT_ONLY_short_vector": [
+          1
+        ],
+        "visibility_exact": [
+          "-1/2",
+          "0",
+          "1/2",
+          "0"
+        ],
+        "box_overlap_exact": "1",
+        "correct_trial_flag_supplied_to_receiver": false,
+        "uniform_polynomial_full_vector_decoder_supplied": false
+      },
+      "actual_source_audit": {
+        "all_emitted_product_densities_agree": true,
+        "private_max_numerical_error": 7.72547625719677e-11,
+        "metadata": {
+          "actual_compiled_source_preparations_charged": 4,
+          "phase_group": "PRODUCT_OF_CYCLIC_TWO_POWER_GROUPS",
+          "local_QFT_applications_charged": 4,
+          "W_calls_charged": 12,
+          "source_shots_independent_given_public_parameters": true,
+          "public_source_fingerprint": "1132de6d6569bf94e0cf77d58524be53e94c95fc18744fe604caf7e358fb7937",
+          "localization_register_was_unmeasured_and_traced": true,
+          "conditioned_snapshot_keys_and_counts_checked": true,
+          "MPS_truncation_threshold": 0.0,
+          "source_promise_not_inferred_from_samples": true,
+          "numerical_error_is_a_formally_certified_channel_bound": false
+        },
+        "public_receipts": [
+          {
+            "id": "product-source-2:0",
+            "phase_group": "PRODUCT_OF_CYCLIC_TWO_POWER_GROUPS",
+            "coordinate_modulus": 4,
+            "label": [
+              1
+            ],
+            "original_source_receipts": [
+              "product-source-2:0"
+            ],
+            "merge_depth": 0
+          },
+          {
+            "id": "product-source-2:1",
+            "phase_group": "PRODUCT_OF_CYCLIC_TWO_POWER_GROUPS",
+            "coordinate_modulus": 4,
+            "label": [
+              0
+            ],
+            "original_source_receipts": [
+              "product-source-2:1"
+            ],
+            "merge_depth": 0
+          },
+          {
+            "id": "product-source-2:2",
+            "phase_group": "PRODUCT_OF_CYCLIC_TWO_POWER_GROUPS",
+            "coordinate_modulus": 4,
+            "label": [
+              0
+            ],
+            "original_source_receipts": [
+              "product-source-2:2"
+            ],
+            "merge_depth": 0
+          },
+          {
+            "id": "product-source-2:3",
+            "phase_group": "PRODUCT_OF_CYCLIC_TWO_POWER_GROUPS",
+            "coordinate_modulus": 4,
+            "label": [
+              2
+            ],
+            "original_source_receipts": [
+              "product-source-2:3"
+            ],
+            "merge_depth": 0
+          }
+        ],
+        "PRIVATE_AUDIT_ONLY_density_matrices": {
+          "product-source-2:0": [
+            [
+              [
+                0.5000000000010468,
+                0.0
+              ],
+              [
+                0.35355339058922736,
+                0.06249999992892501
+              ]
+            ],
+            [
+              [
+                0.35355339058922736,
+                -0.06249999992892501
+              ],
+              [
+                0.4999999999989532,
+                0.0
+              ]
+            ]
+          ],
+          "product-source-2:1": [
+            [
+              [
+                0.5000000000089718,
+                0.0
+              ],
+              [
+                0.41605339061264873,
+                -4.2097339043459866e-11
+              ]
+            ],
+            [
+              [
+                0.41605339061264873,
+                4.2097339043459866e-11
+              ],
+              [
+                0.4999999999910281,
+                0.0
+              ]
+            ]
+          ],
+          "product-source-2:2": [
+            [
+              [
+                0.5000000000089718,
+                0.0
+              ],
+              [
+                0.41605339061264873,
+                -4.2097339043459866e-11
+              ]
+            ],
+            [
+              [
+                0.41605339061264873,
+                4.2097339043459866e-11
+              ],
+              [
+                0.4999999999910281,
+                0.0
+              ]
+            ]
+          ],
+          "product-source-2:3": [
+            [
+              [
+                0.499999999984228,
+                0.0
+              ],
+              [
+                0.29105339052128043,
+                -2.8022517897695255e-11
+              ]
+            ],
+            [
+              [
+                0.29105339052128043,
+                2.8022517897695255e-11
+              ],
+              [
+                0.5000000000157719,
+                0.0
+              ]
+            ]
+          ]
+        },
+        "speedup_or_hardware_certificate": false
+      }
+    }
+  ],
+  "large_compiled_not_simulated": {
+    "public_source": {
+      "source_type": "PUBLIC_SINE_WINDOW_PRODUCT_GROUP_INSTRUMENT",
+      "basis_rows": [
+        [
+          10000,
+          1000
+        ],
+        [
+          9999,
+          1000
+        ]
+      ],
+      "prime": 389,
+      "split_prime_certificate": {
+        "prime": 389,
+        "witness": 2,
+        "factors": [
+          {
+            "prime": 2,
+            "exponent": 2,
+            "certificate": {
+              "prime": 2,
+              "witness": 1,
+              "factors": [],
+              "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+            }
+          },
+          {
+            "prime": 97,
+            "exponent": 1,
+            "certificate": {
+              "prime": 97,
+              "witness": 5,
+              "factors": [
+                {
+                  "prime": 2,
+                  "exponent": 5,
+                  "certificate": {
+                    "prime": 2,
+                    "witness": 1,
+                    "factors": [],
+                    "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                  }
+                },
+                {
+                  "prime": 3,
+                  "exponent": 1,
+                  "certificate": {
+                    "prime": 3,
+                    "witness": 2,
+                    "factors": [
+                      {
+                        "prime": 2,
+                        "exponent": 1,
+                        "certificate": {
+                          "prime": 2,
+                          "witness": 1,
+                          "factors": [],
+                          "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                        }
+                      }
+                    ],
+                    "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+                  }
+                }
+              ],
+              "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+            }
+          }
+        ],
+        "method": "LUCAS_FULL_N_MINUS_ONE_ORDER_CERTIFICATE"
+      },
+      "residue": 1,
+      "coordinate": 0,
+      "box": 256,
+      "packet_side": 128,
+      "input_population": 131072,
+      "hidden_short_vector_or_shift_given": false,
+      "receiver_gets_localization_register": false,
+      "uniform_secret_prior_inferred": false,
+      "phase_group": "PRODUCT_OF_CYCLIC_TWO_POWER_GROUPS",
+      "rank": 2,
+      "coordinate_modulus": 512,
+      "total_label_bits": 18,
+      "scalar_cyclic_DCP_contract_granted": false
+    },
+    "position_and_arithmetic_resources": {
+      "arithmetic_width_plan": {
+        "point_absolute_bounds": [
+          994509745,
+          99451000
+        ],
+        "localization_absolute_bounds": [
+          994509872,
+          99451127
+        ],
+        "shared_signed_word_bits": 31,
+        "localization_coordinates_share_word_width": true,
+        "all_signed_localization_values_in_range": true,
+        "copied_point_or_original_noise_garbage_retained": false
+      },
+      "input_qubits": 17,
+      "localization_output_qubits": 62,
+      "shared_point_arithmetic_work_qubits": 63,
+      "shared_packet_work_qubits": 7,
+      "zero_padding_qubits": 2,
+      "position_QFT_qubits": 18,
+      "total_source_qubits": 151,
+      "constant_additions_including_uncompute": 68,
+      "point_to_localization_additions": 2,
+      "arithmetic_logical_instructions": 1298,
+      "packet_unitary_applications": 2,
+      "packet_plan": {
+        "packet_bits": 7,
+        "packet_side": 128,
+        "logical_qubits": 14,
+        "clean_AND_work_qubits": 6,
+        "known_flag_qubits": 1,
+        "W_forward_uses": 2,
+        "W_inverse_uses": 1,
+        "known_zero_reflections": 1,
+        "H_gates": 27,
+        "X_gates": 17,
+        "CCX_gates": 12,
+        "CP_gates": 22,
+        "P_gates": 8,
+        "logical_instructions": 86,
+        "global_phase_pi_coefficient": "-1/4",
+        "retained_absolute_pi_weight": "1049/128",
+        "encoded_binary64_pi": "884279719003555/281474976710656",
+        "Machin_terms": 16,
+        "pi_lower": "2702199289155139770778723466138548690954453271354857406274868882229427215106701002516071935610699965630953755124/860136748176892598733343886651423302289653512937537946071635894779362232608248391056054462678730487823486328125",
+        "pi_upper": "1182664558198884723122287358611764328074688616985936643633156715672834457769192598828753841328454487819350992/376453820913890074899487004189100025511481553604426544559634764263301689662404540823888964951038360595703125",
+        "numeric_normal_angles_supported": true,
+        "encoded_rotation_operator_error_upper": "13612498402730223604477141257061223255630254193044142706694441017718532840541510474423713738255744370218484473/13563178300719958202157154813978709195705948896657422090495164965164838887780568550325878784000000000000000000000000000000000",
+        "known_zero_parent_success_probability": "1",
+        "postselection_used": false,
+        "flag_clear_for_arbitrary_input_claimed": false,
+        "hardware_synthesis_or_simulator_roundoff_certified": false
+      },
+      "coherent_source_instructions_before_QFT": 1317,
+      "no_preimages_or_private_shift_needed": true
+    },
+    "compiled_qubits": 151,
+    "compiled_parent_instructions": 1319,
+    "coordinate_QFT_count_per_parent": 2,
+    "coordinate_QFT_wires": 9,
+    "logical_controlled_phases_per_parent": 72,
+    "coordinate_QFT_precision_accounting": {
+      "QFT_wires": 9,
+      "retained_maximum_separation": 8,
+      "qiskit_approximation_degree": 0,
+      "query_usage": {
+        "direct_forward_calls": 1,
+        "direct_inverse_calls": 0,
+        "phase_parent_reflections": 0,
+        "total_approximate_QFT_or_inverse_calls": 1,
+        "receiver_usage_bound_is_external_not_proved_here": true
+      },
+      "target_complete_experiment_trace_error": "1/100",
+      "logical_controlled_phases_retained": 36,
+      "logical_controlled_phases_omitted": 0,
+      "logical_H_gates": 9,
+      "logical_swaps": 4,
+      "exact_ideal_QFT_selected": true,
+      "retained_dyadic_angle_weight": "1793/256",
+      "omitted_weight_symbolic": {
+        "coefficient_at_2_pow_minus_cutoff": -1,
+        "cutoff_exponent": 8,
+        "unit_term_exponent": 8
+      },
+      "single_use_ideal_truncation_operator_upper": "0",
+      "truncation_bound_method": "EXACT_FINITE_TAIL_MACHIN_PI_UPPER",
+      "Machin_terms": 16,
+      "pi_rational_lower": "2702199289155139770778723466138548690954453271354857406274868882229427215106701002516071935610699965630953755124/860136748176892598733343886651423302289653512937537946071635894779362232608248391056054462678730487823486328125",
+      "pi_rational_upper": "1182664558198884723122287358611764328074688616985936643633156715672834457769192598828753841328454487819350992/376453820913890074899487004189100025511481553604426544559634764263301689662404540823888964951038360595703125",
+      "exact_encoded_binary64_pi": "884279719003555/281474976710656",
+      "single_use_encoded_CP_parameter_operator_error_upper": "2115192792797927976672806506101982259931107181569299581688459376442441232610358634252683831587880202426704451/2466032418312719673119482693450674399219263435755894925544575448211788888687376100059250688000000000000000000000000000000000",
+      "single_use_encoded_QFT_operator_error_upper": "2115192792797927976672806506101982259931107181569299581688459376442441232610358634252683831587880202426704451/2466032418312719673119482693450674399219263435755894925544575448211788888687376100059250688000000000000000000000000000000000",
+      "complete_experiment_ideal_truncation_trace_upper": "0",
+      "complete_experiment_encoded_QFT_trace_upper": "2115192792797927976672806506101982259931107181569299581688459376442441232610358634252683831587880202426704451/2466032418312719673119482693450674399219263435755894925544575448211788888687376100059250688000000000000000000000000000000000",
+      "ideal_truncation_target_met": true,
+      "encoded_QFT_parameter_target_met": true,
+      "numeric_normal_angle_encoding_supported": true,
+      "external_per_logical_gate_operator_error": null,
+      "complete_experiment_upper_IF_external_gate_bound_holds": null,
+      "arithmetic_preparation_and_hardware_errors_covered": false,
+      "statevector_MPS_roundoff_certified": false,
+      "normalized_rare_branch_accuracy_certified_without_mass_bound": false,
+      "logical_query_budget_proves_efficient_receiver": false
+    },
+    "encoded_packet_and_QFT_parameter_operator_upper_per_parent": "16830705842079218317451718027081417123500895794450193603987311725434639746598988641875649874659390322376905969/4521059433573319400719051604659569731901982965552474030165054988388279629260189516775292928000000000000000000000000000000000",
+    "source_position_wires_reused_in_place": true,
+    "localization_register_unmeasured_and_traced": true,
+    "mixed_colour_inverse_or_correct_trial_flag_available": false,
+    "hardware_roundoff_and_full_finite_gate_synthesis_certified": false
+  },
+  "actual_source_preparations_charged": 12,
+  "same_parent_group_resource_comparisons": [
+    {
+      "original_rank": 8,
+      "coordinate_bits": 33,
+      "total_label_entropy_bits": 264,
+      "cyclic_group": {
+        "rank": 1,
+        "modulus_bits": 264,
+        "full_QFT_controlled_phases": 34716
+      },
+      "product_group": {
+        "rank": 8,
+        "modulus_bits_per_coordinate": 33,
+        "full_local_QFT_controlled_phases": 4224
+      },
+      "optional_scalar_to_restricted_native_lift": {
+        "rank": 256,
+        "modulus_bits_per_coordinate": 264,
+        "secret_entropy_bits": 67584
+      },
+      "product_has_smaller_group_entropy_than_unlifted_cyclic_source": false,
+      "group_isomorphism_or_equal_decoder_difficulty_claimed": false,
+      "restricted_first_bit_guarantee_is_full_vector_guarantee": false
+    },
+    {
+      "original_rank": 16,
+      "coordinate_bits": 65,
+      "total_label_entropy_bits": 1040,
+      "cyclic_group": {
+        "rank": 1,
+        "modulus_bits": 1040,
+        "full_QFT_controlled_phases": 540280
+      },
+      "product_group": {
+        "rank": 16,
+        "modulus_bits_per_coordinate": 65,
+        "full_local_QFT_controlled_phases": 33280
+      },
+      "optional_scalar_to_restricted_native_lift": {
+        "rank": 1032,
+        "modulus_bits_per_coordinate": 1040,
+        "secret_entropy_bits": 1073280
+      },
+      "product_has_smaller_group_entropy_than_unlifted_cyclic_source": false,
+      "group_isomorphism_or_equal_decoder_difficulty_claimed": false,
+      "restricted_first_bit_guarantee_is_full_vector_guarantee": false
+    },
+    {
+      "original_rank": 32,
+      "coordinate_bits": 129,
+      "total_label_entropy_bits": 4128,
+      "cyclic_group": {
+        "rank": 1,
+        "modulus_bits": 4128,
+        "full_QFT_controlled_phases": 8518128
+      },
+      "product_group": {
+        "rank": 32,
+        "modulus_bits_per_coordinate": 129,
+        "full_local_QFT_controlled_phases": 264192
+      },
+      "optional_scalar_to_restricted_native_lift": {
+        "rank": 4120,
+        "modulus_bits_per_coordinate": 4128,
+        "secret_entropy_bits": 17007360
+      },
+      "product_has_smaller_group_entropy_than_unlifted_cyclic_source": false,
+      "group_isomorphism_or_equal_decoder_difficulty_claimed": false,
+      "restricted_first_bit_guarantee_is_full_vector_guarantee": false
+    },
+    {
+      "original_rank": 64,
+      "coordinate_bits": 257,
+      "total_label_entropy_bits": 16448,
+      "cyclic_group": {
+        "rank": 1,
+        "modulus_bits": 16448,
+        "full_QFT_controlled_phases": 135260128
+      },
+      "product_group": {
+        "rank": 64,
+        "modulus_bits_per_coordinate": 257,
+        "full_local_QFT_controlled_phases": 2105344
+      },
+      "optional_scalar_to_restricted_native_lift": {
+        "rank": 16440,
+        "modulus_bits_per_coordinate": 16448,
+        "secret_entropy_bits": 270405120
+      },
+      "product_has_smaller_group_entropy_than_unlifted_cyclic_source": false,
+      "group_isomorphism_or_equal_decoder_difficulty_claimed": false,
+      "restricted_first_bit_guarantee_is_full_vector_guarantee": false
+    }
+  ],
+  "relabeling_cyclic_receipts_as_vector_receipts_is_valid": false,
+  "restricted_native_first_bit_predictor_alone_decodes_general_vector_shifts": false,
+  "uniform_polynomial_full_vector_decoder_supplied": false,
+  "accepted_speedup_candidate": false,
+  "new_active_negative_result_created": false,
+  "novelty_claim": false
+}

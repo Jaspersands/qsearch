@@ -1,0 +1,14 @@
+{
+  "hypothesis_id": "dcp_anchor_conditioned_adaptive_syndrome_routing_bridge",
+  "title": "DCP Anchor-Conditioned Adaptive Syndrome Routing and Coset-Gauge Invariance Bridge",
+  "status": "VERIFIED_SCOPED_BRIDGE",
+  "claims": [
+    "Under disjoint mod-2 kernel compression, shifting the coset representative x_0 = tilde_y_syn xor V w flips effective columns by (-1)^{w_j} mod 2^t and leaves tilde_A_j(x_0) mod 4 strictly invariant across all 2^m coset representatives.",
+    "Single-wire (m=1) secret-independent unitaries U(y_syn) preserve conditional Helstrom distance, whereas m = n + 1 disjoint mod-2 kernel wires enable adaptive Stage-2 CNOT routing w(y_syn) in ker((tilde_A(y_syn) mod 4)/2) across 100% of syndromes."
+  ],
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  }
+}

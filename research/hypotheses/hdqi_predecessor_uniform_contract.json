@@ -1,0 +1,33 @@
+{
+  "hypothesis_id": "hdqi_independent_predecessor_uniform_energy",
+  "status": "LOCAL_PROPOSAL_ENERGY_ADVANTAGE_REJECTED_REVIEW_PENDING",
+  "problem": "Compute optimum energy to explicit additive error for an explicit rational Pauli Hamiltonian",
+  "input_model": "Full public Pauli words and rational coefficients, independent symplectic labels, verified predecessor-uniform order; no hidden oracle or advice",
+  "proposed_mechanism": "Known efficient HDQI pilot MPS plus reversible full-rank linear syndrome inversion and polynomial filtering",
+  "intended_advantage": "A polynomial algorithm would matter only if a substantially harder matched classical optimum-energy problem survived",
+  "decisive_classical_falsifier": "Exact radius expression R<-R+abs(c) or R<-sqrt(R^2+c^2) gives a polynomial-time additive-energy approximation",
+  "proof_obligations": [
+    "Verify full symplectic column rank on the actual input",
+    "Find and verify a genuine predecessor-uniform order",
+    "Justify independent commuting sign sectors and symmetric spectra, rather than assume them from a graph alone",
+    "Use controlled bit precision and charge rank/order work",
+    "Do not turn energy solvability into Gibbs/output-sampling dequantization",
+    "Do not apply the recurrence to dependent labels"
+  ],
+  "experiments": [
+    "Native Hamiltonian diagonalization and executed canonical ground-state residual versus the scalar optimum",
+    "Exact rational outward enclosures versus independent high-precision scalar evaluation",
+    "Dependent commuting triangle must reject: actual ground energy -1 instead of incorrect -3",
+    "Non-predecessor graph must reject as unsupported rather than label it hard"
+  ],
+  "literature_ids": ["arxiv:2604.01022", "arxiv:2601.18773"],
+  "evidence": [
+    "theorems/hdqi_predecessor_uniform.py",
+    "tests/test_hdqi_predecessor_uniform.py",
+    "research/classical_baselines/hdqi_predecessor_uniform.json",
+    "research/HDQI_PREDECESSOR_UNIFORM.md"
+  ],
+  "new_quantum_algorithm_claimed": false,
+  "general_HDQI_negative_claimed": false,
+  "formal_or_independent_proof_review_completed": false
+}

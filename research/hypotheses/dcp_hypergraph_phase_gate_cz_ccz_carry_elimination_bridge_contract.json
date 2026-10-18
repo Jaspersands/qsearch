@@ -1,0 +1,14 @@
+{
+  "hypothesis_id": "dcp_hypergraph_phase_gate_cz_ccz_carry_elimination_bridge",
+  "title": "Degree-t Nilpotency Cutoff of Overlapping CNOT Carries Modulo 2^t and Hypergraph Phase Repair",
+  "status": "VERIFIED_FINITE_IDENTITIES_REVIEW_PENDING",
+  "claims": [
+    "In the Z_{2^t} expansion of x_r = u_1 (+) ... (+) u_m = sum_{k=1}^m (-2)^{k-1} sum_{|J|=k} prod_{j in J} u_j, all multilinear carry terms of degree k >= t + 1 vanish identically modulo 2^t.",
+    "At t=2 (mod 4), pairwise CZ^{p_r} gates conditioned on LSB parity p_r = <A_{.,r}, s> mod 2 restore 100% product state fidelity for any m >= 2 overlapping trees.",
+    "At t=3 (mod 8), pairwise controlled-S gates plus 3-body CCZ^{p_r} gates restore 100% product state fidelity for any m >= 3 overlapping trees."
+  ],
+  "favorable_controls": [
+    "mod 4 m=2 and m=3 overlapping trees (CZ repair F=1.0)",
+    "mod 8 m=3 and m=4 overlapping trees (controlled-S + CCZ repair F=1.0 vs 9/16 without CCZ)"
+  ]
+}

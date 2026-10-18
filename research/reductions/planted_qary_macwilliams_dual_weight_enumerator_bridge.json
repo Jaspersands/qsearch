@@ -1,0 +1,69 @@
+{
+  "all_checks_passed": true,
+  "certificate_sha256_16": "4ec10dbd3e00e0cd",
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "macwilliams_and_valid_check_audits": [
+    {
+      "abs_diff": 1.1102230246251565e-16,
+      "bridge_identity_exact": true,
+      "d": 2,
+      "gamma": 0.25,
+      "macwilliams_identity_exact": true,
+      "n": 4,
+      "p_valid_dual_sum": 0.4861111111111112,
+      "p_valid_primal_poly": 0.4861111111111111,
+      "q": 3
+    },
+    {
+      "abs_diff": 5.551115123125783e-17,
+      "bridge_identity_exact": true,
+      "d": 2,
+      "gamma": 0.6,
+      "macwilliams_identity_exact": true,
+      "n": 4,
+      "p_valid_dual_sum": 0.16800000000000007,
+      "p_valid_primal_poly": 0.168,
+      "q": 3
+    },
+    {
+      "abs_diff": 0.0,
+      "bridge_identity_exact": true,
+      "d": 2,
+      "gamma": 0.3,
+      "macwilliams_identity_exact": true,
+      "n": 5,
+      "p_valid_dual_sum": 0.4815249999999999,
+      "p_valid_primal_poly": 0.4815249999999999,
+      "q": 2
+    }
+  ],
+  "schema_version": "planted-qary-macwilliams-dual-weight-enumerator-bridge-v1",
+  "scope_constraints": {
+    "applies_to": "Rank-d check matrices B in F_q^{d x n} under symmetric q-ary local depolarizing noise",
+    "controls_included": "Includes both off-dual secret control (B s != 0 -> orthogonal fraction 1/q) and on-dual constructive control (s in ker(B) -> orthogonal fraction 1.0).",
+    "does_not_claim": "Impossibility when the secret s lies in the dual code ker(B)"
+  },
+  "secret_syndrome_controls": {
+    "d": 2,
+    "expected_off_dual_fraction": 0.3333333333333333,
+    "n": 4,
+    "off_dual_exact_one_over_q": true,
+    "off_dual_orthogonal_fraction": 0.3333333333333333,
+    "on_dual_constructive_alignment_unit": true,
+    "on_dual_orthogonal_fraction": 1.0,
+    "q": 3,
+    "s_off_dual_syndrome": [
+      1,
+      0
+    ],
+    "s_on_dual_syndrome": [
+      0,
+      0
+    ]
+  },
+  "theorem_id": "planted_qary_macwilliams_dual_weight_enumerator_bridge"
+}

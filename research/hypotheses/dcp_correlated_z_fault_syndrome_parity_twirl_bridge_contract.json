@@ -1,0 +1,14 @@
+{
+  "hypothesis_id": "dcp_correlated_z_fault_syndrome_parity_twirl_bridge",
+  "title": "DCP Multi-Wire Correlated Z-Fault Syndrome-Parity Walsh-Hadamard Twirl Bridge",
+  "status": "VERIFIED_SCOPED_BRIDGE",
+  "claims": [
+    "Under any joint Z-fault distribution p(e) on {0,1}^h, every CNOT-star syndrome branch d in {0,1}^{h-1} has exact conditional visibility hat_p(1^h) = E_{e ~ p}[(-1)^{e_0 xor ... xor e_{h-1}}].",
+    "Even-weight correlated Z-faults achieve noiseless conditional visibility hat_p(1^h) = 1.0 despite zero single-wire marginals, whereas a 50/50 mixture of wt=0 and wt=1 faults collapses hat_p(1^h) to 0.0 despite (1 - 1/h) marginals."
+  ],
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "contract_id": "native_conditional_multimode_error_frames_review_pending_v1",
+  "status": "INFORMATION_ONLY_ESCAPE_UNIFORM_EFFICIENT_TRANSPORT_MISSING",
+  "source": "K original phase qubits, IID uniform full labels A over Z_(2^t)^n, one fixed unknown secret, and independent original Z faults with probability1/(2n)",
+  "frame": "For F_f={x:A*x=f}, |F_(f,e)>=|F_f|^(-1/2)*sum_x (-1)^(e.x)|x>, for a FIXED error set E independent of A and the realized error",
+  "exact_moments": [
+    "For fixed nonzero binary d independent of A, E_A sum_f B_f(d)^2=2^K*(1-1/q^n)",
+    "For M fixed error patterns, E_A sum_f (d_f/2^K)*||Gram_f-I||_F^2 <=4*M*(M-1)*(q^n-1)/2^K"
+  ],
+  "conditional_transform": "On Gram-error-squared<1 fibers use polar orthogonalization and a public unitary mapping the frame basis to the SAME error-pattern computational basis across all frequencies. Use identity on bad fibers; do not reject them. This is an exponential reference, not a supplied polynomial circuit.",
+  "information_only_bound": "At K=2*n*t, E includes every original error of weight<=2t. A suitable arbitrary controlled frame unitary has source-average parity failure <=0.5*sqrt((q^n-1)/2^K)+sqrt(20*M*(M-1)*(q^n-1)/2^K)+(11/16)^t, capped1; uniform for each fixed secret.",
+  "proof_obligations": [
+    "Keep error-pattern library independent of labels, secret and actual faults; no hidden-error oracle",
+    "Use actual Born fiber weights, not a uniform average of normalized rare fibers",
+    "Retain coherent full-frequency branches and align error bases/phases across paired frequencies",
+    "Derive and cost a uniform finite-gate transform without exponential fiber/error enumeration, dense SVD, free QRAM, or arbitrary input erasure",
+    "Charge all bad frames, noise tails, original sample calls, approximation, ancillas and natural-source preparation"
+  ],
+  "positive_countercontrols": [
+    "Known orthogonal error modes admit actual coherent correction using a public unitary that never receives the realized fault",
+    "Nonorthogonal near-identity frames have actual approximate polar transport with a verified state-distance bound",
+    "Binary-rowspace error aliases shift the secret by q/2 times a binary vector, preserving the first-secret parity for t>=2; Gram-near-identity is sufficient, NOT necessary"
+  ],
+  "falsifiers": [
+    "A complete native label census violates the fixed-difference signed moment or the Born-normalized frame bound",
+    "An actual controlled-unitary circuit violates the polar/state-distance estimate",
+    "A native error tail is treated as absent or a source mean becomes a per-matrix/all-error guarantee",
+    "An efficient-decoder claim substitutes approximate orthogonality, known dense matrices or a private realized error for a uniform circuit"
+  ],
+  "literature_links": [
+    "https://arxiv.org/abs/quant-ph/9604034",
+    "https://arxiv.org/abs/0907.5391",
+    "https://arxiv.org/abs/quant-ph/0501044"
+  ],
+  "guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false,
+    "uniform_polynomial_frame_transform_supplied": false,
+    "dense_SVD_is_efficient_quantum_syndrome_decoding": false,
+    "information_bound_is_computational_algorithm": false,
+    "correlated_or_actual_natural_source_noise_certified": false,
+    "all_error_modes_must_be_distinguishable_for_parity_recovery": false
+  }
+}

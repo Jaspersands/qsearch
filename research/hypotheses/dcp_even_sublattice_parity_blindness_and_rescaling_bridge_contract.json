@@ -1,0 +1,15 @@
+{
+  "hypothesis_id": "dcp_even_sublattice_parity_blindness_and_rescaling_bridge",
+  "title": "DCP Even-Sublattice Parity Blindness and Mod-2^{t-1} Rescaling Bridge",
+  "status": "VERIFIED_SCOPED_BRIDGE",
+  "claims": [
+    "For any v in ker(A mod 2) and any x_0 in {0,1}^K, tilde_A(v, x_0) lies in the even sublattice (2 Z_{2^t})^n.",
+    "Any target shift h with an odd coordinate has strictly zero compressed collisions on ker(A mod 2), while for t >= 2 halving maps tilde_A_j(x_0)/2 -> B_j(x_0) in Z_{2^{t-1}}^n and h -> h' = (2^{t-2}, 0, ..., 0).",
+    "Conditioned on any fixed (A mod 2, disjoint non-empty V_1..V_m, x_0), uniform upper bits A^{(high)} = floor(A/2) induce exact IID uniform halved columns B_1(x_0), ..., B_m(x_0) over Z_{2^{t-1}}^n of size Q_even = 2^{n(t-1)}."
+  ],
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  }
+}

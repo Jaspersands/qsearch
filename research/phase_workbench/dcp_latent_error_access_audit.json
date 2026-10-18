@@ -1,0 +1,1036 @@
+{
+  "contract_id": "phase_qubit_latent_error_equality_access_falsifier_v1",
+  "status": "EXACT_ACCESS_FALSIFIERS_EXTERNAL_REVIEW_PENDING",
+  "accepted_speedup_candidate": false,
+  "novelty_claim": false,
+  "external_theorem_review_complete": false,
+  "source_quantum_preparations_executed": 0,
+  "unequal_input_span_controls": [
+    {
+      "modulus": 3,
+      "possible_error_exponents": [
+        0,
+        1,
+        2
+      ],
+      "unequal_error_index_pairs": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "normalized_product_vectors_in_quadratic_field": [
+        [
+          [
+            "1/2",
+            "0"
+          ],
+          [
+            "0",
+            "1/2"
+          ],
+          [
+            "1/2",
+            "0"
+          ],
+          [
+            "0",
+            "1/2"
+          ]
+        ],
+        [
+          [
+            "1/2",
+            "0"
+          ],
+          [
+            "1/2",
+            "0"
+          ],
+          [
+            "0",
+            "1/2"
+          ],
+          [
+            "0",
+            "1/2"
+          ]
+        ],
+        [
+          [
+            "1/2",
+            "0"
+          ],
+          [
+            "-1/2",
+            "-1/2"
+          ],
+          [
+            "1/2",
+            "0"
+          ],
+          [
+            "-1/2",
+            "-1/2"
+          ]
+        ],
+        [
+          [
+            "1/2",
+            "0"
+          ],
+          [
+            "-1/2",
+            "-1/2"
+          ],
+          [
+            "0",
+            "1/2"
+          ],
+          [
+            "1/2",
+            "0"
+          ]
+        ]
+      ],
+      "unequal_input_Gram_matrix_in_quadratic_field": [
+        [
+          [
+            "1",
+            "0"
+          ],
+          [
+            "1/4",
+            "0"
+          ],
+          [
+            "0",
+            "-1/2"
+          ],
+          [
+            "-1/4",
+            "-1/4"
+          ]
+        ],
+        [
+          [
+            "1/4",
+            "0"
+          ],
+          [
+            "1",
+            "0"
+          ],
+          [
+            "0",
+            "1/4"
+          ],
+          [
+            "1/2",
+            "1/2"
+          ]
+        ],
+        [
+          [
+            "1/2",
+            "1/2"
+          ],
+          [
+            "-1/4",
+            "-1/4"
+          ],
+          [
+            "1",
+            "0"
+          ],
+          [
+            "0",
+            "-1/2"
+          ]
+        ],
+        [
+          [
+            "0",
+            "1/4"
+          ],
+          [
+            "0",
+            "-1/2"
+          ],
+          [
+            "1/2",
+            "1/2"
+          ],
+          [
+            "1",
+            "0"
+          ]
+        ]
+      ],
+      "Gram_determinant_exact_rational": "81/256",
+      "input_Hilbert_dimension": 4,
+      "unequal_input_span_dimension": 4,
+      "positive_effect_rejecting_all_unequal_inputs_must_be_zero": true,
+      "general_quantum_purification_impossible": false
+    },
+    {
+      "modulus": 4,
+      "possible_error_exponents": [
+        0,
+        1,
+        3
+      ],
+      "unequal_error_index_pairs": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "normalized_product_vectors_in_quadratic_field": [
+        [
+          [
+            "1/2",
+            "0"
+          ],
+          [
+            "0",
+            "1/2"
+          ],
+          [
+            "1/2",
+            "0"
+          ],
+          [
+            "0",
+            "1/2"
+          ]
+        ],
+        [
+          [
+            "1/2",
+            "0"
+          ],
+          [
+            "1/2",
+            "0"
+          ],
+          [
+            "0",
+            "1/2"
+          ],
+          [
+            "0",
+            "1/2"
+          ]
+        ],
+        [
+          [
+            "1/2",
+            "0"
+          ],
+          [
+            "0",
+            "-1/2"
+          ],
+          [
+            "1/2",
+            "0"
+          ],
+          [
+            "0",
+            "-1/2"
+          ]
+        ],
+        [
+          [
+            "1/2",
+            "0"
+          ],
+          [
+            "0",
+            "-1/2"
+          ],
+          [
+            "0",
+            "1/2"
+          ],
+          [
+            "1/2",
+            "0"
+          ]
+        ]
+      ],
+      "unequal_input_Gram_matrix_in_quadratic_field": [
+        [
+          [
+            "1",
+            "0"
+          ],
+          [
+            "1/2",
+            "0"
+          ],
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0"
+          ]
+        ],
+        [
+          [
+            "1/2",
+            "0"
+          ],
+          [
+            "1",
+            "0"
+          ],
+          [
+            "0",
+            "1/2"
+          ],
+          [
+            "1/2",
+            "1/2"
+          ]
+        ],
+        [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "-1/2"
+          ],
+          [
+            "1",
+            "0"
+          ],
+          [
+            "1/2",
+            "-1/2"
+          ]
+        ],
+        [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "1/2",
+            "-1/2"
+          ],
+          [
+            "1/2",
+            "1/2"
+          ],
+          [
+            "1",
+            "0"
+          ]
+        ]
+      ],
+      "Gram_determinant_exact_rational": "1/8",
+      "input_Hilbert_dimension": 4,
+      "unequal_input_span_dimension": 4,
+      "positive_effect_rejecting_all_unequal_inputs_must_be_zero": true,
+      "general_quantum_purification_impossible": false
+    }
+  ],
+  "physical_CNOT_Z_controls": [
+    {
+      "input_error_exponents": [
+        0,
+        0
+      ],
+      "errors_equal": true,
+      "branches": [
+        {
+          "measured_target_Z": 0,
+          "Born_probability": "1/2",
+          "root_density_quadratic_field": [
+            [
+              [
+                "1/2",
+                "0"
+              ],
+              [
+                "1/2",
+                "0"
+              ]
+            ],
+            [
+              [
+                "1/2",
+                "0"
+              ],
+              [
+                "1/2",
+                "0"
+              ]
+            ]
+          ],
+          "root_error_exponent_mod4": 0
+        },
+        {
+          "measured_target_Z": 1,
+          "Born_probability": "1/2",
+          "root_density_quadratic_field": [
+            [
+              [
+                "1/2",
+                "0"
+              ],
+              [
+                "1/2",
+                "0"
+              ]
+            ],
+            [
+              [
+                "1/2",
+                "0"
+              ],
+              [
+                "1/2",
+                "0"
+              ]
+            ]
+          ],
+          "root_error_exponent_mod4": 0
+        }
+      ]
+    },
+    {
+      "input_error_exponents": [
+        0,
+        1
+      ],
+      "errors_equal": false,
+      "branches": [
+        {
+          "measured_target_Z": 0,
+          "Born_probability": "1/2",
+          "root_density_quadratic_field": [
+            [
+              [
+                "1/2",
+                "0"
+              ],
+              [
+                "0",
+                "-1/2"
+              ]
+            ],
+            [
+              [
+                "0",
+                "1/2"
+              ],
+              [
+                "1/2",
+                "0"
+              ]
+            ]
+          ],
+          "root_error_exponent_mod4": 1
+        },
+        {
+          "measured_target_Z": 1,
+          "Born_probability": "1/2",
+          "root_density_quadratic_field": [
+            [
+              [
+                "1/2",
+                "0"
+              ],
+              [
+                "0",
+                "1/2"
+              ]
+            ],
+            [
+              [
+                "0",
+                "-1/2"
+              ],
+              [
+                "1/2",
+                "0"
+              ]
+            ]
+          ],
+          "root_error_exponent_mod4": 3
+        }
+      ]
+    },
+    {
+      "input_error_exponents": [
+        0,
+        3
+      ],
+      "errors_equal": false,
+      "branches": [
+        {
+          "measured_target_Z": 0,
+          "Born_probability": "1/2",
+          "root_density_quadratic_field": [
+            [
+              [
+                "1/2",
+                "0"
+              ],
+              [
+                "0",
+                "1/2"
+              ]
+            ],
+            [
+              [
+                "0",
+                "-1/2"
+              ],
+              [
+                "1/2",
+                "0"
+              ]
+            ]
+          ],
+          "root_error_exponent_mod4": 3
+        },
+        {
+          "measured_target_Z": 1,
+          "Born_probability": "1/2",
+          "root_density_quadratic_field": [
+            [
+              [
+                "1/2",
+                "0"
+              ],
+              [
+                "0",
+                "-1/2"
+              ]
+            ],
+            [
+              [
+                "0",
+                "1/2"
+              ],
+              [
+                "1/2",
+                "0"
+              ]
+            ]
+          ],
+          "root_error_exponent_mod4": 1
+        }
+      ]
+    },
+    {
+      "input_error_exponents": [
+        1,
+        0
+      ],
+      "errors_equal": false,
+      "branches": [
+        {
+          "measured_target_Z": 0,
+          "Born_probability": "1/2",
+          "root_density_quadratic_field": [
+            [
+              [
+                "1/2",
+                "0"
+              ],
+              [
+                "0",
+                "-1/2"
+              ]
+            ],
+            [
+              [
+                "0",
+                "1/2"
+              ],
+              [
+                "1/2",
+                "0"
+              ]
+            ]
+          ],
+          "root_error_exponent_mod4": 1
+        },
+        {
+          "measured_target_Z": 1,
+          "Born_probability": "1/2",
+          "root_density_quadratic_field": [
+            [
+              [
+                "1/2",
+                "0"
+              ],
+              [
+                "0",
+                "-1/2"
+              ]
+            ],
+            [
+              [
+                "0",
+                "1/2"
+              ],
+              [
+                "1/2",
+                "0"
+              ]
+            ]
+          ],
+          "root_error_exponent_mod4": 1
+        }
+      ]
+    },
+    {
+      "input_error_exponents": [
+        1,
+        1
+      ],
+      "errors_equal": true,
+      "branches": [
+        {
+          "measured_target_Z": 0,
+          "Born_probability": "1/2",
+          "root_density_quadratic_field": [
+            [
+              [
+                "1/2",
+                "0"
+              ],
+              [
+                "-1/2",
+                "0"
+              ]
+            ],
+            [
+              [
+                "-1/2",
+                "0"
+              ],
+              [
+                "1/2",
+                "0"
+              ]
+            ]
+          ],
+          "root_error_exponent_mod4": 2
+        },
+        {
+          "measured_target_Z": 1,
+          "Born_probability": "1/2",
+          "root_density_quadratic_field": [
+            [
+              [
+                "1/2",
+                "0"
+              ],
+              [
+                "1/2",
+                "0"
+              ]
+            ],
+            [
+              [
+                "1/2",
+                "0"
+              ],
+              [
+                "1/2",
+                "0"
+              ]
+            ]
+          ],
+          "root_error_exponent_mod4": 0
+        }
+      ]
+    },
+    {
+      "input_error_exponents": [
+        1,
+        3
+      ],
+      "errors_equal": false,
+      "branches": [
+        {
+          "measured_target_Z": 0,
+          "Born_probability": "1/2",
+          "root_density_quadratic_field": [
+            [
+              [
+                "1/2",
+                "0"
+              ],
+              [
+                "1/2",
+                "0"
+              ]
+            ],
+            [
+              [
+                "1/2",
+                "0"
+              ],
+              [
+                "1/2",
+                "0"
+              ]
+            ]
+          ],
+          "root_error_exponent_mod4": 0
+        },
+        {
+          "measured_target_Z": 1,
+          "Born_probability": "1/2",
+          "root_density_quadratic_field": [
+            [
+              [
+                "1/2",
+                "0"
+              ],
+              [
+                "-1/2",
+                "0"
+              ]
+            ],
+            [
+              [
+                "-1/2",
+                "0"
+              ],
+              [
+                "1/2",
+                "0"
+              ]
+            ]
+          ],
+          "root_error_exponent_mod4": 2
+        }
+      ]
+    },
+    {
+      "input_error_exponents": [
+        3,
+        0
+      ],
+      "errors_equal": false,
+      "branches": [
+        {
+          "measured_target_Z": 0,
+          "Born_probability": "1/2",
+          "root_density_quadratic_field": [
+            [
+              [
+                "1/2",
+                "0"
+              ],
+              [
+                "0",
+                "1/2"
+              ]
+            ],
+            [
+              [
+                "0",
+                "-1/2"
+              ],
+              [
+                "1/2",
+                "0"
+              ]
+            ]
+          ],
+          "root_error_exponent_mod4": 3
+        },
+        {
+          "measured_target_Z": 1,
+          "Born_probability": "1/2",
+          "root_density_quadratic_field": [
+            [
+              [
+                "1/2",
+                "0"
+              ],
+              [
+                "0",
+                "1/2"
+              ]
+            ],
+            [
+              [
+                "0",
+                "-1/2"
+              ],
+              [
+                "1/2",
+                "0"
+              ]
+            ]
+          ],
+          "root_error_exponent_mod4": 3
+        }
+      ]
+    },
+    {
+      "input_error_exponents": [
+        3,
+        1
+      ],
+      "errors_equal": false,
+      "branches": [
+        {
+          "measured_target_Z": 0,
+          "Born_probability": "1/2",
+          "root_density_quadratic_field": [
+            [
+              [
+                "1/2",
+                "0"
+              ],
+              [
+                "1/2",
+                "0"
+              ]
+            ],
+            [
+              [
+                "1/2",
+                "0"
+              ],
+              [
+                "1/2",
+                "0"
+              ]
+            ]
+          ],
+          "root_error_exponent_mod4": 0
+        },
+        {
+          "measured_target_Z": 1,
+          "Born_probability": "1/2",
+          "root_density_quadratic_field": [
+            [
+              [
+                "1/2",
+                "0"
+              ],
+              [
+                "-1/2",
+                "0"
+              ]
+            ],
+            [
+              [
+                "-1/2",
+                "0"
+              ],
+              [
+                "1/2",
+                "0"
+              ]
+            ]
+          ],
+          "root_error_exponent_mod4": 2
+        }
+      ]
+    },
+    {
+      "input_error_exponents": [
+        3,
+        3
+      ],
+      "errors_equal": true,
+      "branches": [
+        {
+          "measured_target_Z": 0,
+          "Born_probability": "1/2",
+          "root_density_quadratic_field": [
+            [
+              [
+                "1/2",
+                "0"
+              ],
+              [
+                "-1/2",
+                "0"
+              ]
+            ],
+            [
+              [
+                "-1/2",
+                "0"
+              ],
+              [
+                "1/2",
+                "0"
+              ]
+            ]
+          ],
+          "root_error_exponent_mod4": 2
+        },
+        {
+          "measured_target_Z": 1,
+          "Born_probability": "1/2",
+          "root_density_quadratic_field": [
+            [
+              [
+                "1/2",
+                "0"
+              ],
+              [
+                "1/2",
+                "0"
+              ]
+            ],
+            [
+              [
+                "1/2",
+                "0"
+              ],
+              [
+                "1/2",
+                "0"
+              ]
+            ]
+          ],
+          "root_error_exponent_mod4": 0
+        }
+      ]
+    }
+  ],
+  "conditional_classical_vs_physical_controls": {
+    "q4_p_half": {
+      "formal_latent_equality_probability": "3/8",
+      "formal_retained_error_kernel": {
+        "0": "2/3",
+        "1": "1/6",
+        "3": "1/6"
+      },
+      "CNOT_sum_error_kernel_IF_latent_equality_were_known": {
+        "0": "2/3",
+        "1": "0",
+        "2": "1/3",
+        "3": "0"
+      },
+      "formal_retained_error_visibility": "2/3",
+      "CNOT_sum_branch_visibility_given_magic_equality": "1/3",
+      "latent_error_equality_measurement_available": false
+    },
+    "q3_p_two_thirds": {
+      "exact_input_visibility": "0",
+      "exact_formal_pruned_visibility": "0",
+      "leaf_SNR_exact": "0",
+      "pruned_SNR_exact": "0",
+      "strict_leaf_dominance": false
+    },
+    "endpoint_p_zero_or_one": {
+      "formal_retained_error_visibility_gain": "0",
+      "strict_purifying_or_degrading": false
+    }
+  },
+  "access_receipts": [
+    {
+      "access_model": "phase-qubits-only",
+      "possible_phase_errors": 3,
+      "full_product_error_support_assumed": true,
+      "status": "ZERO_FALSE_POSITIVE_EQUALITY_HERALD_HAS_ZERO_SUCCESS",
+      "latent_error_equality_available": false,
+      "extra_source_access_proved": false,
+      "accepted_speedup_candidate": false
+    },
+    {
+      "access_model": "orthogonal-error-register-supplied",
+      "possible_phase_errors": 3,
+      "full_product_error_support_assumed": true,
+      "status": "CONDITIONAL_EXTRA_SOURCE_ACCESS_NOT_CERTIFIED",
+      "latent_error_equality_available": "ONLY_IF_THE_EXTRA_REGISTER_IS_ACTUALLY_SUPPLIED",
+      "extra_source_access_proved": false,
+      "accepted_speedup_candidate": false
+    }
+  ],
+  "tensor_extension_q4": [
+    {
+      "input_qubits": 2,
+      "non_all_equal_product_basis_dimension": 4,
+      "Gram_determinant_one_over_two_exponent": 3,
+      "same_no_false_positive_all_equal_herald_obstruction": true
+    },
+    {
+      "input_qubits": 3,
+      "non_all_equal_product_basis_dimension": 8,
+      "Gram_determinant_one_over_two_exponent": 10,
+      "same_no_false_positive_all_equal_herald_obstruction": true
+    },
+    {
+      "input_qubits": 4,
+      "non_all_equal_product_basis_dimension": 16,
+      "Gram_determinant_one_over_two_exponent": 28,
+      "same_no_false_positive_all_equal_herald_obstruction": true
+    },
+    {
+      "input_qubits": 8,
+      "non_all_equal_product_basis_dimension": 256,
+      "Gram_determinant_one_over_two_exponent": 960,
+      "same_no_false_positive_all_equal_herald_obstruction": true
+    },
+    {
+      "input_qubits": 16,
+      "non_all_equal_product_basis_dimension": 65536,
+      "Gram_determinant_one_over_two_exponent": 507904,
+      "same_no_false_positive_all_equal_herald_obstruction": true
+    }
+  ],
+  "scope": {
+    "comparison_goal_is_exact_hidden_error_equality": true,
+    "three_distinct_possible_phase_errors_required": true,
+    "four_unequal_product_inputs_allowed_by_source_promise": true,
+    "unknown_secret_may_be_fixed_to_zero_for_counterexample": true,
+    "false_positive_purification_protocols_excluded": false,
+    "ensemble_equivalent_false_positive_channels_excluded": false,
+    "orthogonal_error_register_or_encoded_redundancy_excluded": false,
+    "correlated_equal_error_source_promises_excluded": false,
+    "all_noise_mitigation_or_quantum_algorithms_excluded": false,
+    "classical_conditional_kernel_identity_is_a_physical_instrument": false,
+    "original_hidden_error_labels_used_only_for_calibration": true
+  },
+  "review_target": "research/DCP_INTERLEAVED_TREE_MERGE_SYNDROME_PRUNING_AUDIT.md",
+  "literature": [
+    "https://arxiv.org/abs/quant-ph/0202087"
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "adaptive_routing_n1_m2_control": {
+    "K": 4,
+    "adaptive_cnot_routing_mod4_zero_fraction": 1.0,
+    "all_coset_representatives_and_stage2_branches_consistent": true,
+    "blind_fixed_cnot_mod4_zero_fraction": 0.5,
+    "m": 2,
+    "max_statevector_routing_residual": 0.0,
+    "n": 1,
+    "public_syndrome_only_no_secret_used": true,
+    "routing_vector_histogram": {
+      "01": 2,
+      "10": 1,
+      "11": 1
+    },
+    "single_wire_selection_mod4_zero_fraction": 0.75,
+    "t": 3,
+    "total_syndromes": 4
+  },
+  "adaptive_routing_n2_m3_control": {
+    "K": 6,
+    "adaptive_cnot_routing_mod4_zero_fraction": 1.0,
+    "all_coset_representatives_and_stage2_branches_consistent": true,
+    "blind_fixed_cnot_mod4_zero_fraction": 0.25,
+    "m": 3,
+    "max_statevector_routing_residual": 4.440892098500626e-16,
+    "n": 2,
+    "public_syndrome_only_no_secret_used": true,
+    "routing_vector_histogram": {
+      "001": 4,
+      "011": 1,
+      "100": 2,
+      "110": 1
+    },
+    "single_wire_selection_mod4_zero_fraction": 0.75,
+    "t": 3,
+    "total_syndromes": 8
+  },
+  "all_checks_passed": true,
+  "certificate_sha256_16": "95bd61b8800c1a4d",
+  "coset_invariance_1d": {
+    "K": 4,
+    "coset_size_per_syndrome": 4,
+    "distinct_mod4_tuples_across_syndromes": 4,
+    "m": 2,
+    "mod4_coset_invariance_verified": true,
+    "n": 1,
+    "num_syndromes": 4,
+    "sign_equivariance_mod_2t_verified": true,
+    "t": 3,
+    "total_anchors_checked": 16
+  },
+  "coset_invariance_2d": {
+    "K": 6,
+    "coset_size_per_syndrome": 8,
+    "distinct_mod4_tuples_across_syndromes": 8,
+    "m": 3,
+    "mod4_coset_invariance_verified": true,
+    "n": 2,
+    "num_syndromes": 8,
+    "sign_equivariance_mod_2t_verified": true,
+    "t": 3,
+    "total_anchors_checked": 64
+  },
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "proof_status": "LOCAL_DERIVATION_REVIEW_PENDING_NOT_FORMALLY_VERIFIED",
+  "schema_version": "dcp-anchor-conditioned-adaptive-syndrome-routing-bridge-v1",
+  "scope_constraints": {
+    "applies_to": "Anchor-conditioned downstream quantum routing U(y_syn) after disjoint mod-2 kernel CNOT compression",
+    "controls_included": "Includes exact coset-gauge sign equivariance mod 2^t, 100% mod-4 coset invariance across x_0 in y_syn + span(V), single-wire unitary trace-distance invariance, and multi-wire (m = n + 1) adaptive CNOT routing achieving 100% mod-4 elimination vs 50% (n=1) and 25% (n=2) blind CNOT pairing.",
+    "does_not_claim": "Single-wire (m=1) phase repair or free wire supply without paying the (n+1)-fold Stage-2 witness overhead and visibility attenuation"
+  },
+  "single_wire_unitary_invariance_obstruction": {
+    "K": 2,
+    "max_unitary_trace_distance_change": 3.3306690738754696e-16,
+    "s_target": 2,
+    "single_wire_unitary_invariance_verified": true,
+    "t": 3,
+    "total_syndromes": 2,
+    "two_mod4_syndrome_fraction": 0.5,
+    "zero_mod4_syndrome_fraction": 0.5
+  },
+  "theorem_id": "dcp_anchor_conditioned_adaptive_syndrome_routing_bridge"
+}

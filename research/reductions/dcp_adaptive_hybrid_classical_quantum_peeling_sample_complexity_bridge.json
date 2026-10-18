@@ -1,0 +1,564 @@
+{
+  "theorem_id": "dcp_adaptive_hybrid_classical_quantum_peeling_sample_complexity_bridge",
+  "schema_version": "dcp-adaptive-hybrid-classical-quantum-peeling-sample-complexity-bridge-v2",
+  "v1_classical_dominance_and_16x_sample_penalty_retracted": true,
+  "scope_constraints": {
+    "applies_to": "Specified native GHZ/CNOT readout and two explicit separable measurement protocols",
+    "does_not_claim": "Classical dominance, optimal separable bounds, a DCP decoder, or asymptotic advantage",
+    "classical_modular_phase_samples_are_not_supplied_by_the_input": true,
+    "Fisher_accounting_is_for_a_coarsened_cosine_coin_not_discrete_secret_recovery": true
+  },
+  "native_audits": [
+    {
+      "public_labels": [
+        [
+          1,
+          1
+        ]
+      ],
+      "witness": [
+        1,
+        1
+      ],
+      "phase_bits": 3,
+      "accounting": {
+        "gate_plan": {
+          "original_public_label_columns": 2,
+          "selected_original_wires": [
+            0,
+            1
+          ],
+          "source_phase_qubits_consumed_per_packet": 2,
+          "witness_finding_and_pool_acquisition_cost_not_included": true,
+          "target_label": [
+            2
+          ],
+          "local_wire_order": "selected wires in ascending original-index order; target local wire0",
+          "gates": [
+            [
+              "CX",
+              0,
+              1
+            ],
+            [
+              "H",
+              0
+            ]
+          ],
+          "measure_Z_local_wires": [
+            0,
+            1
+          ],
+          "syndrome_bits": 1,
+          "realized_label_arithmetic_multiply_adds_upper": 2,
+          "all_syndromes_and_target_outcomes_retained": true,
+          "full_exponential_syndrome_table_needed_by_circuit": false,
+          "visibility_model": "independent original Z faults",
+          "per_wire_visibility_exact": "1",
+          "actual_hardware_execution": false
+        },
+        "hamming_weight": 2,
+        "target_w_mod_2t": [
+          2
+        ],
+        "native_syndromes_enumerated": 2,
+        "matched_syndromes": 1,
+        "p_match_up_to_sign_exact": "1/2",
+        "zero_target_is_secret_independent": false,
+        "conditional_visibility_exact": "1",
+        "flagged_vs_forgotten_accounting": {
+          "acceptance_exact": "1/2",
+          "conditional_visibility_exact": "1",
+          "target_cosine_exact": "0",
+          "flagged_local_Fisher_exact": "1/2",
+          "fair_coin_replacement_local_Fisher_exact": "1/4",
+          "flagged_inverse_local_Fisher_exact": "2",
+          "fair_coin_replacement_inverse_local_Fisher_exact": "4",
+          "at_zero_cosine_flagged_acceptance_penalty": "2",
+          "at_zero_cosine_fair_coin_acceptance_penalty": "4",
+          "discrete_secret_recovery_complexity_or_global_lower_bound": false,
+          "unmatched_syndromes_are_deliberately_coarsened_not_proved_useless": true
+        },
+        "classical_phase_bearing_modular_samples_supplied": false,
+        "classical_dominance_established": false,
+        "v1_unconditional_sample_complexity_ratio_retracted": true,
+        "exhaustive_count_is_calibration_not_circuit_cost": true
+      },
+      "native_law": {
+        "calibration_secret": [
+          2
+        ],
+        "selected_phases_radians": [
+          1.5707963267948966,
+          1.5707963267948966
+        ],
+        "native_density_dimension": 4,
+        "native_input_trace": 1.0,
+        "branches": [
+          {
+            "syndrome": 0,
+            "effective_label": [
+              2
+            ],
+            "probability": 0.5,
+            "joint_X_plus_probability": 0.0,
+            "joint_X_minus_probability": 0.5,
+            "target_match_up_to_sign": true
+          },
+          {
+            "syndrome": 1,
+            "effective_label": [
+              0
+            ],
+            "probability": 0.5,
+            "joint_X_plus_probability": 0.5,
+            "joint_X_minus_probability": 0.0,
+            "target_match_up_to_sign": false
+          }
+        ],
+        "total_Born_probability": 1.0,
+        "max_native_branch_law_residual": 0.0,
+        "independent_X_parity_mean": 0.0,
+        "independent_X_product_cosine_formula": 3.749399456654644e-33,
+        "random_even_XY_signed_parity_mean": -0.5,
+        "random_even_XY_formula": -0.5,
+        "hypothetical_modular_sample_target_cosine_mean": -1.0,
+        "matched_flag_probability": 0.5,
+        "matched_flag_signed_joint_mean": -0.5,
+        "matched_flag_conditional_mean": -1.0,
+        "matched_branch_formula_residual": 0.0,
+        "separable_protocol_formula_residual": 3.749399456654644e-33,
+        "X_parity_is_target_cosine_counterexample": true,
+        "secret_used_to_choose_circuit_or_measurement": false,
+        "native_source_has_independent_Z_faults": true,
+        "full_laws_are_exponential_reference_not_decoder": true
+      }
+    },
+    {
+      "public_labels": [
+        [
+          1,
+          1,
+          1
+        ]
+      ],
+      "witness": [
+        1,
+        1,
+        1
+      ],
+      "phase_bits": 3,
+      "accounting": {
+        "gate_plan": {
+          "original_public_label_columns": 3,
+          "selected_original_wires": [
+            0,
+            1,
+            2
+          ],
+          "source_phase_qubits_consumed_per_packet": 3,
+          "witness_finding_and_pool_acquisition_cost_not_included": true,
+          "target_label": [
+            3
+          ],
+          "local_wire_order": "selected wires in ascending original-index order; target local wire0",
+          "gates": [
+            [
+              "CX",
+              0,
+              1
+            ],
+            [
+              "CX",
+              0,
+              2
+            ],
+            [
+              "H",
+              0
+            ]
+          ],
+          "measure_Z_local_wires": [
+            0,
+            1,
+            2
+          ],
+          "syndrome_bits": 2,
+          "realized_label_arithmetic_multiply_adds_upper": 3,
+          "all_syndromes_and_target_outcomes_retained": true,
+          "full_exponential_syndrome_table_needed_by_circuit": false,
+          "visibility_model": "independent original Z faults",
+          "per_wire_visibility_exact": "4/5",
+          "actual_hardware_execution": false
+        },
+        "hamming_weight": 3,
+        "target_w_mod_2t": [
+          3
+        ],
+        "native_syndromes_enumerated": 4,
+        "matched_syndromes": 1,
+        "p_match_up_to_sign_exact": "1/4",
+        "zero_target_is_secret_independent": false,
+        "conditional_visibility_exact": "64/125",
+        "flagged_vs_forgotten_accounting": {
+          "acceptance_exact": "1/4",
+          "conditional_visibility_exact": "64/125",
+          "target_cosine_exact": "0",
+          "flagged_local_Fisher_exact": "1024/15625",
+          "fair_coin_replacement_local_Fisher_exact": "256/15625",
+          "flagged_inverse_local_Fisher_exact": "15625/1024",
+          "fair_coin_replacement_inverse_local_Fisher_exact": "15625/256",
+          "at_zero_cosine_flagged_acceptance_penalty": "4",
+          "at_zero_cosine_fair_coin_acceptance_penalty": "16",
+          "discrete_secret_recovery_complexity_or_global_lower_bound": false,
+          "unmatched_syndromes_are_deliberately_coarsened_not_proved_useless": true
+        },
+        "classical_phase_bearing_modular_samples_supplied": false,
+        "classical_dominance_established": false,
+        "v1_unconditional_sample_complexity_ratio_retracted": true,
+        "exhaustive_count_is_calibration_not_circuit_cost": true
+      },
+      "native_law": {
+        "calibration_secret": [
+          1
+        ],
+        "selected_phases_radians": [
+          0.7853981633974483,
+          0.7853981633974483,
+          0.7853981633974483
+        ],
+        "native_density_dimension": 8,
+        "native_input_trace": 0.9999999999999998,
+        "branches": [
+          {
+            "syndrome": 0,
+            "effective_label": [
+              3
+            ],
+            "probability": 0.24999999999999994,
+            "joint_X_plus_probability": 0.07974516600406094,
+            "joint_X_minus_probability": 0.170254833995939,
+            "target_match_up_to_sign": true
+          },
+          {
+            "syndrome": 1,
+            "effective_label": [
+              1
+            ],
+            "probability": 0.24999999999999994,
+            "joint_X_plus_probability": 0.170254833995939,
+            "joint_X_minus_probability": 0.07974516600406094,
+            "target_match_up_to_sign": false
+          },
+          {
+            "syndrome": 2,
+            "effective_label": [
+              1
+            ],
+            "probability": 0.24999999999999994,
+            "joint_X_plus_probability": 0.170254833995939,
+            "joint_X_minus_probability": 0.07974516600406094,
+            "target_match_up_to_sign": false
+          },
+          {
+            "syndrome": 3,
+            "effective_label": [
+              7
+            ],
+            "probability": 0.24999999999999994,
+            "joint_X_plus_probability": 0.170254833995939,
+            "joint_X_minus_probability": 0.07974516600406094,
+            "target_match_up_to_sign": false
+          }
+        ],
+        "total_Born_probability": 0.9999999999999998,
+        "max_native_branch_law_residual": 5.551115123125783e-17,
+        "independent_X_parity_mean": 0.18101933598375614,
+        "independent_X_product_cosine_formula": 0.18101933598375622,
+        "random_even_XY_signed_parity_mean": -0.09050966799187807,
+        "random_even_XY_formula": -0.09050966799187808,
+        "hypothetical_modular_sample_target_cosine_mean": -0.3620386719675123,
+        "matched_flag_probability": 0.24999999999999994,
+        "matched_flag_signed_joint_mean": -0.09050966799187807,
+        "matched_flag_conditional_mean": -0.3620386719675123,
+        "matched_branch_formula_residual": 0.0,
+        "separable_protocol_formula_residual": 8.326672684688674e-17,
+        "X_parity_is_target_cosine_counterexample": true,
+        "secret_used_to_choose_circuit_or_measurement": false,
+        "native_source_has_independent_Z_faults": true,
+        "full_laws_are_exponential_reference_not_decoder": true
+      }
+    },
+    {
+      "public_labels": [
+        [
+          3,
+          5,
+          7
+        ]
+      ],
+      "witness": [
+        1,
+        0,
+        0
+      ],
+      "phase_bits": 3,
+      "accounting": {
+        "gate_plan": {
+          "original_public_label_columns": 3,
+          "selected_original_wires": [
+            0
+          ],
+          "source_phase_qubits_consumed_per_packet": 1,
+          "witness_finding_and_pool_acquisition_cost_not_included": true,
+          "target_label": [
+            3
+          ],
+          "local_wire_order": "selected wires in ascending original-index order; target local wire0",
+          "gates": [
+            [
+              "H",
+              0
+            ]
+          ],
+          "measure_Z_local_wires": [
+            0
+          ],
+          "syndrome_bits": 0,
+          "realized_label_arithmetic_multiply_adds_upper": 1,
+          "all_syndromes_and_target_outcomes_retained": true,
+          "full_exponential_syndrome_table_needed_by_circuit": false,
+          "visibility_model": "independent original Z faults",
+          "per_wire_visibility_exact": "4/5",
+          "actual_hardware_execution": false
+        },
+        "hamming_weight": 1,
+        "target_w_mod_2t": [
+          3
+        ],
+        "native_syndromes_enumerated": 1,
+        "matched_syndromes": 1,
+        "p_match_up_to_sign_exact": "1",
+        "zero_target_is_secret_independent": false,
+        "conditional_visibility_exact": "4/5",
+        "flagged_vs_forgotten_accounting": {
+          "acceptance_exact": "1",
+          "conditional_visibility_exact": "4/5",
+          "target_cosine_exact": "0",
+          "flagged_local_Fisher_exact": "16/25",
+          "fair_coin_replacement_local_Fisher_exact": "16/25",
+          "flagged_inverse_local_Fisher_exact": "25/16",
+          "fair_coin_replacement_inverse_local_Fisher_exact": "25/16",
+          "at_zero_cosine_flagged_acceptance_penalty": "1",
+          "at_zero_cosine_fair_coin_acceptance_penalty": "1",
+          "discrete_secret_recovery_complexity_or_global_lower_bound": false,
+          "unmatched_syndromes_are_deliberately_coarsened_not_proved_useless": true
+        },
+        "classical_phase_bearing_modular_samples_supplied": false,
+        "classical_dominance_established": false,
+        "v1_unconditional_sample_complexity_ratio_retracted": true,
+        "exhaustive_count_is_calibration_not_circuit_cost": true
+      },
+      "native_law": {
+        "calibration_secret": [
+          3
+        ],
+        "selected_phases_radians": [
+          0.7853981633974483
+        ],
+        "native_density_dimension": 2,
+        "native_input_trace": 0.9999999999999998,
+        "branches": [
+          {
+            "syndrome": 0,
+            "effective_label": [
+              3
+            ],
+            "probability": 0.9999999999999998,
+            "joint_X_plus_probability": 0.7828427124746189,
+            "joint_X_minus_probability": 0.21715728752538088,
+            "target_match_up_to_sign": true
+          }
+        ],
+        "total_Born_probability": 0.9999999999999998,
+        "max_native_branch_law_residual": 2.220446049250313e-16,
+        "independent_X_parity_mean": 0.565685424949238,
+        "independent_X_product_cosine_formula": 0.5656854249492381,
+        "random_even_XY_signed_parity_mean": 0.565685424949238,
+        "random_even_XY_formula": 0.5656854249492381,
+        "hypothetical_modular_sample_target_cosine_mean": 0.5656854249492381,
+        "matched_flag_probability": 0.9999999999999998,
+        "matched_flag_signed_joint_mean": 0.565685424949238,
+        "matched_flag_conditional_mean": 0.5656854249492381,
+        "matched_branch_formula_residual": 0.0,
+        "separable_protocol_formula_residual": 1.1102230246251565e-16,
+        "X_parity_is_target_cosine_counterexample": false,
+        "secret_used_to_choose_circuit_or_measurement": false,
+        "native_source_has_independent_Z_faults": true,
+        "full_laws_are_exponential_reference_not_decoder": true
+      }
+    },
+    {
+      "public_labels": [
+        [
+          1,
+          1,
+          1
+        ]
+      ],
+      "witness": [
+        1,
+        1,
+        1
+      ],
+      "phase_bits": 1,
+      "accounting": {
+        "gate_plan": {
+          "original_public_label_columns": 3,
+          "selected_original_wires": [
+            0,
+            1,
+            2
+          ],
+          "source_phase_qubits_consumed_per_packet": 3,
+          "witness_finding_and_pool_acquisition_cost_not_included": true,
+          "target_label": [
+            1
+          ],
+          "local_wire_order": "selected wires in ascending original-index order; target local wire0",
+          "gates": [
+            [
+              "CX",
+              0,
+              1
+            ],
+            [
+              "CX",
+              0,
+              2
+            ],
+            [
+              "H",
+              0
+            ]
+          ],
+          "measure_Z_local_wires": [
+            0,
+            1,
+            2
+          ],
+          "syndrome_bits": 2,
+          "realized_label_arithmetic_multiply_adds_upper": 3,
+          "all_syndromes_and_target_outcomes_retained": true,
+          "full_exponential_syndrome_table_needed_by_circuit": false,
+          "visibility_model": "independent original Z faults",
+          "per_wire_visibility_exact": "4/5",
+          "actual_hardware_execution": false
+        },
+        "hamming_weight": 3,
+        "target_w_mod_2t": [
+          1
+        ],
+        "native_syndromes_enumerated": 4,
+        "matched_syndromes": 4,
+        "p_match_up_to_sign_exact": "1",
+        "zero_target_is_secret_independent": false,
+        "conditional_visibility_exact": "64/125",
+        "flagged_vs_forgotten_accounting": {
+          "acceptance_exact": "1",
+          "conditional_visibility_exact": "64/125",
+          "target_cosine_exact": "0",
+          "flagged_local_Fisher_exact": "4096/15625",
+          "fair_coin_replacement_local_Fisher_exact": "4096/15625",
+          "flagged_inverse_local_Fisher_exact": "15625/4096",
+          "fair_coin_replacement_inverse_local_Fisher_exact": "15625/4096",
+          "at_zero_cosine_flagged_acceptance_penalty": "1",
+          "at_zero_cosine_fair_coin_acceptance_penalty": "1",
+          "discrete_secret_recovery_complexity_or_global_lower_bound": false,
+          "unmatched_syndromes_are_deliberately_coarsened_not_proved_useless": true
+        },
+        "classical_phase_bearing_modular_samples_supplied": false,
+        "classical_dominance_established": false,
+        "v1_unconditional_sample_complexity_ratio_retracted": true,
+        "exhaustive_count_is_calibration_not_circuit_cost": true
+      },
+      "native_law": {
+        "calibration_secret": [
+          1
+        ],
+        "selected_phases_radians": [
+          3.141592653589793,
+          3.141592653589793,
+          3.141592653589793
+        ],
+        "native_density_dimension": 8,
+        "native_input_trace": 0.9999999999999998,
+        "branches": [
+          {
+            "syndrome": 0,
+            "effective_label": [
+              1
+            ],
+            "probability": 0.24999999999999994,
+            "joint_X_plus_probability": 0.060999999999999985,
+            "joint_X_minus_probability": 0.18899999999999995,
+            "target_match_up_to_sign": true
+          },
+          {
+            "syndrome": 1,
+            "effective_label": [
+              1
+            ],
+            "probability": 0.24999999999999994,
+            "joint_X_plus_probability": 0.060999999999999985,
+            "joint_X_minus_probability": 0.18899999999999995,
+            "target_match_up_to_sign": true
+          },
+          {
+            "syndrome": 2,
+            "effective_label": [
+              1
+            ],
+            "probability": 0.24999999999999994,
+            "joint_X_plus_probability": 0.060999999999999985,
+            "joint_X_minus_probability": 0.18899999999999995,
+            "target_match_up_to_sign": true
+          },
+          {
+            "syndrome": 3,
+            "effective_label": [
+              1
+            ],
+            "probability": 0.24999999999999994,
+            "joint_X_plus_probability": 0.060999999999999985,
+            "joint_X_minus_probability": 0.18899999999999995,
+            "target_match_up_to_sign": true
+          }
+        ],
+        "total_Born_probability": 0.9999999999999998,
+        "max_native_branch_law_residual": 5.551115123125783e-17,
+        "independent_X_parity_mean": -0.5119999999999999,
+        "independent_X_product_cosine_formula": -0.512,
+        "random_even_XY_signed_parity_mean": -0.12799999999999997,
+        "random_even_XY_formula": -0.128,
+        "hypothetical_modular_sample_target_cosine_mean": -0.512,
+        "matched_flag_probability": 0.9999999999999998,
+        "matched_flag_signed_joint_mean": -0.5119999999999999,
+        "matched_flag_conditional_mean": -0.512,
+        "matched_branch_formula_residual": 0.0,
+        "separable_protocol_formula_residual": 1.1102230246251565e-16,
+        "X_parity_is_target_cosine_counterexample": false,
+        "secret_used_to_choose_circuit_or_measurement": false,
+        "native_source_has_independent_Z_faults": true,
+        "full_laws_are_exponential_reference_not_decoder": true
+      }
+    }
+  ],
+  "all_checks_passed": true,
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "certificate_sha256_16": "0a38de15d31b93a9"
+}

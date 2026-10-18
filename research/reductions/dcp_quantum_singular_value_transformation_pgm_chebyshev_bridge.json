@@ -1,0 +1,104 @@
+{
+  "all_checks_passed": true,
+  "certificate_sha256_16": "16a87507c8346b05",
+  "colliding_mod8_audit": {
+    "K": 3,
+    "Q_group_size": 8,
+    "condition_number_kappa": 1.4142135623730951,
+    "deg1_linear": {
+      "conditional_qft_success": 0.6089150429449552,
+      "max_boundedness_val": 1.0,
+      "normalized_acceptance_weight": 0.2
+    },
+    "deg3_qsvt": {
+      "conditional_qft_success": 0.6227836087068004,
+      "max_boundedness_val": 1.0,
+      "normalized_acceptance_weight": 0.228125
+    },
+    "deg5_qsvt": {
+      "conditional_qft_success": 0.6246125576852336,
+      "max_boundedness_val": 1.0,
+      "normalized_acceptance_weight": 0.240283203125
+    },
+    "exact_hierarchy_verified": true,
+    "is_flat_support": false,
+    "n": 1,
+    "n_max": 2,
+    "n_min": 1,
+    "occupied_residue_count_R": 5,
+    "pgm_baseline_prob": 0.6089150429449555,
+    "q_mod": 8,
+    "rank_ceiling_R_over_Q": 0.625
+  },
+  "flat_control_mod8": {
+    "K": 3,
+    "Q_group_size": 8,
+    "condition_number_kappa": 1.0,
+    "deg1_linear": {
+      "conditional_qft_success": 1.0,
+      "max_boundedness_val": 1.0,
+      "normalized_acceptance_weight": 0.125
+    },
+    "deg3_qsvt": {
+      "conditional_qft_success": 1.0,
+      "max_boundedness_val": 1.0,
+      "normalized_acceptance_weight": 0.125
+    },
+    "deg5_qsvt": {
+      "conditional_qft_success": 1.0,
+      "max_boundedness_val": 1.0,
+      "normalized_acceptance_weight": 0.125
+    },
+    "exact_hierarchy_verified": true,
+    "is_flat_support": true,
+    "n": 1,
+    "n_max": 1,
+    "n_min": 1,
+    "occupied_residue_count_R": 8,
+    "pgm_baseline_prob": 1.0,
+    "q_mod": 8,
+    "rank_ceiling_R_over_Q": 1.0
+  },
+  "high_disparity_mod8_audit": {
+    "K": 4,
+    "Q_group_size": 8,
+    "condition_number_kappa": 2.0,
+    "deg1_linear": {
+      "conditional_qft_success": 0.6997595264191643,
+      "max_boundedness_val": 1.0,
+      "normalized_acceptance_weight": 0.16666666666666666
+    },
+    "deg3_qsvt": {
+      "conditional_qft_success": 0.731361569547772,
+      "max_boundedness_val": 1.0,
+      "normalized_acceptance_weight": 0.20182291666666666
+    },
+    "deg5_qsvt": {
+      "conditional_qft_success": 0.7420227780147542,
+      "max_boundedness_val": 1.0,
+      "normalized_acceptance_weight": 0.21816507975260416
+    },
+    "exact_hierarchy_verified": true,
+    "is_flat_support": false,
+    "n": 1,
+    "n_max": 4,
+    "n_min": 1,
+    "occupied_residue_count_R": 6,
+    "pgm_baseline_prob": 0.6997595264191643,
+    "q_mod": 8,
+    "rank_ceiling_R_over_Q": 0.75
+  },
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "proof_status": "LOCAL_DERIVATION_REVIEW_PENDING_NOT_FORMALLY_VERIFIED",
+  "schema_version": "dcp-quantum-singular-value-transformation-pgm-chebyshev-bridge-v1",
+  "scope_constraints": {
+    "applies_to": "Odd-polynomial QSVT singular-value equalization P_d(sigma) on subset-sum fiber block encodings over Z_q^n",
+    "controls_included": "Includes A=[[1,1,2]] mod 8 (P_1=0.6089 < P_3=0.6227 < P_5=0.6246 < 5/8=0.625), high-disparity A=[[1,1,1,2]] mod 8, and flat control A=[[1,2,4]] mod 8 (P_1=P_3=P_5=1.0).",
+    "does_not_claim": "Efficient implementation of the reflection around the subset-sum fiber support without coherent collision-finding"
+  },
+  "theorem_id": "dcp_quantum_singular_value_transformation_pgm_chebyshev_bridge"
+}

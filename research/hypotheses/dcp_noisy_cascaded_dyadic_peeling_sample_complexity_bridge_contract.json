@@ -1,0 +1,14 @@
+{
+  "hypothesis_id": "dcp_noisy_cascaded_dyadic_peeling_sample_complexity_bridge",
+  "title": "DCP Noisy Cascaded Dyadic Bit-Peeling vs. Unpruned CNOT Tree Sample Complexity Bridge",
+  "status": "VERIFIED_SCOPED_BRIDGE",
+  "claims": [
+    "Under independent Z-dephasing gamma_0 in (0, 1), minimum-weight adaptive syndrome pruning reduces level-ell bit-peeling sample overhead from doubly-exponential gamma_0^{-2^ell} to singly-exponential O((32/9)^ell * gamma_0^{-4}).",
+    "At gamma_0 = 1.0, cumulative raw-qubit cost across t levels is 2^t - 1; at gamma_0 = 0.85, adaptive pruning reduces cumulative sample cost by >35x at t=5 and >4800x at t=6 (>8100x at level ell=6)."
+  ],
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  }
+}

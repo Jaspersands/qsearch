@@ -1,0 +1,573 @@
+{
+  "contract_id": "two_level_fresh_pair_compression_noise_converse_v1",
+  "status": "CONDITIONAL_LOCAL_DERIVATION_EXTERNAL_REVIEW_PENDING",
+  "native_short_mask_censuses": [
+    {
+      "components": 1,
+      "pool_width": 3,
+      "short_threshold": 2,
+      "all_native_label_assignments_and_basis_endpoints": 512,
+      "short_relation_endpoint_count": 296,
+      "sum_short_relation_degrees": 384,
+      "short_endpoint_probability": {
+        "numerator_hex": "0x25",
+        "denominator_binary_exponent": 6
+      },
+      "expected_short_degree": {
+        "numerator_hex": "0x3",
+        "denominator_binary_exponent": 2
+      }
+    },
+    {
+      "components": 2,
+      "pool_width": 2,
+      "short_threshold": 2,
+      "all_native_label_assignments_and_basis_endpoints": 1024,
+      "short_relation_endpoint_count": 124,
+      "sum_short_relation_degrees": 128,
+      "short_endpoint_probability": {
+        "numerator_hex": "0x1f",
+        "denominator_binary_exponent": 8
+      },
+      "expected_short_degree": {
+        "numerator_hex": "0x1",
+        "denominator_binary_exponent": 3
+      }
+    },
+    {
+      "components": 2,
+      "pool_width": 3,
+      "short_threshold": 3,
+      "all_native_label_assignments_and_basis_endpoints": 32768,
+      "short_relation_endpoint_count": 10832,
+      "sum_short_relation_degrees": 12288,
+      "short_endpoint_probability": {
+        "numerator_hex": "0x2a5",
+        "denominator_binary_exponent": 11
+      },
+      "expected_short_degree": {
+        "numerator_hex": "0x3",
+        "denominator_binary_exponent": 3
+      }
+    }
+  ],
+  "polynomial_budget_frontiers": [
+    {
+      "components": 64,
+      "first_pool": {
+        "components": 64,
+        "pool_width_hex": "0x1000",
+        "ceil_log2_pool_width": 12,
+        "long_mask_minimum_width": 6,
+        "short_means_weight_strictly_less_than": 6,
+        "native_short_endpoint_probability_upper": {
+          "one_over_two_exponent": 64
+        },
+        "counting_exponent_check": true,
+        "bound_is_pointwise_in_labels": false
+      },
+      "second_pool": {
+        "components": 64,
+        "pool_width_hex": "0x1000",
+        "ceil_log2_pool_width": 12,
+        "long_mask_minimum_width": 6,
+        "short_means_weight_strictly_less_than": 6,
+        "native_short_endpoint_probability_upper": {
+          "one_over_two_exponent": 64
+        },
+        "counting_exponent_check": true,
+        "bound_is_pointwise_in_labels": false
+      },
+      "first_level_attempt_budget_hex": "0x1000000000000",
+      "final_attempt_budget_hex": "0x1000000",
+      "original_visibility_upper_exact_rational": "63/64",
+      "long_long_original_visibility_exponent_lower": 36,
+      "long_long_visibility_power_of_two_upper_exponent": 0,
+      "union_of_first_short_or_second_short_probability_bound": "min(1,(R+1)*2^(-n))",
+      "unconditional_final_visibility_power_of_two_upper_exponent": 0,
+      "joint_output_distance_from_secret_independent_reference_power_of_two_upper_exponent": 0,
+      "any_uniform_secret_bit_guess_probability_upper": "min(1,1/2+2^(-readout_exponent))",
+      "bound_uses_unconditional_Born_weight_not_free_postselection": true,
+      "conditional_visibility_requires_dividing_by_paid_acceptance": true,
+      "runtime_or_tree_merge_rule_restricted": false,
+      "source_and_pair_output_architecture_restricted": true,
+      "assumed_source_promises_not_inferred": {
+        "original_noise": "independent-balanced-dephasing-with-visibility-at-most-1-minus-1-over-n",
+        "fresh_IID_uniform_coarse_label_pools_before_selection": true,
+        "flat_input_diagonal_at_each_pair_projection": true,
+        "each_successful_outcome_retains_exactly_one_original_basis_pair": true,
+        "retained_pair_channel_is_basis_isometry_with_balanced_phase_density": true,
+        "no_intermediate_collective_purification_or_interference_between_pairs": true,
+        "latent_error_flags_or_environment_access_supplied": false,
+        "second_pool_labels_IID_uniform_given_retained_coarse_records_and_visibility_tags": true,
+        "higher_parent_label_transcripts_discarded": true,
+        "independent_fresh_batches_no_qubit_reuse": true,
+        "all_first_level_attempts_including_failures_and_tag_selection_charged": true,
+        "all_second_level_available_parents_included_in_pool_width": true,
+        "only_final_phase_qubit_retained_as_secret_bearing_quantum_output": true,
+        "all_retained_classical_records_secret_independent": true,
+        "zero_replacement_preserves_visibility_not_pure_plus": true
+      },
+      "actual_natural_source_noise_certified": false,
+      "general_DHSP_or_retained_block_no_go": false
+    },
+    {
+      "components": 256,
+      "first_pool": {
+        "components": 256,
+        "pool_width_hex": "0x10000",
+        "ceil_log2_pool_width": 16,
+        "long_mask_minimum_width": 16,
+        "short_means_weight_strictly_less_than": 16,
+        "native_short_endpoint_probability_upper": {
+          "one_over_two_exponent": 256
+        },
+        "counting_exponent_check": true,
+        "bound_is_pointwise_in_labels": false
+      },
+      "second_pool": {
+        "components": 256,
+        "pool_width_hex": "0x10000",
+        "ceil_log2_pool_width": 16,
+        "long_mask_minimum_width": 16,
+        "short_means_weight_strictly_less_than": 16,
+        "native_short_endpoint_probability_upper": {
+          "one_over_two_exponent": 256
+        },
+        "counting_exponent_check": true,
+        "bound_is_pointwise_in_labels": false
+      },
+      "first_level_attempt_budget_hex": "0x10000000000000000",
+      "final_attempt_budget_hex": "0x100000000",
+      "original_visibility_upper_exact_rational": "255/256",
+      "long_long_original_visibility_exponent_lower": 256,
+      "long_long_visibility_power_of_two_upper_exponent": 1,
+      "union_of_first_short_or_second_short_probability_bound": "min(1,(R+1)*2^(-n))",
+      "unconditional_final_visibility_power_of_two_upper_exponent": 0,
+      "joint_output_distance_from_secret_independent_reference_power_of_two_upper_exponent": 0,
+      "any_uniform_secret_bit_guess_probability_upper": "min(1,1/2+2^(-readout_exponent))",
+      "bound_uses_unconditional_Born_weight_not_free_postselection": true,
+      "conditional_visibility_requires_dividing_by_paid_acceptance": true,
+      "runtime_or_tree_merge_rule_restricted": false,
+      "source_and_pair_output_architecture_restricted": true,
+      "assumed_source_promises_not_inferred": {
+        "original_noise": "independent-balanced-dephasing-with-visibility-at-most-1-minus-1-over-n",
+        "fresh_IID_uniform_coarse_label_pools_before_selection": true,
+        "flat_input_diagonal_at_each_pair_projection": true,
+        "each_successful_outcome_retains_exactly_one_original_basis_pair": true,
+        "retained_pair_channel_is_basis_isometry_with_balanced_phase_density": true,
+        "no_intermediate_collective_purification_or_interference_between_pairs": true,
+        "latent_error_flags_or_environment_access_supplied": false,
+        "second_pool_labels_IID_uniform_given_retained_coarse_records_and_visibility_tags": true,
+        "higher_parent_label_transcripts_discarded": true,
+        "independent_fresh_batches_no_qubit_reuse": true,
+        "all_first_level_attempts_including_failures_and_tag_selection_charged": true,
+        "all_second_level_available_parents_included_in_pool_width": true,
+        "only_final_phase_qubit_retained_as_secret_bearing_quantum_output": true,
+        "all_retained_classical_records_secret_independent": true,
+        "zero_replacement_preserves_visibility_not_pure_plus": true
+      },
+      "actual_natural_source_noise_certified": false,
+      "general_DHSP_or_retained_block_no_go": false
+    },
+    {
+      "components": 1024,
+      "first_pool": {
+        "components": 1024,
+        "pool_width_hex": "0x100000",
+        "ceil_log2_pool_width": 20,
+        "long_mask_minimum_width": 52,
+        "short_means_weight_strictly_less_than": 52,
+        "native_short_endpoint_probability_upper": {
+          "one_over_two_exponent": 1024
+        },
+        "counting_exponent_check": true,
+        "bound_is_pointwise_in_labels": false
+      },
+      "second_pool": {
+        "components": 1024,
+        "pool_width_hex": "0x100000",
+        "ceil_log2_pool_width": 20,
+        "long_mask_minimum_width": 52,
+        "short_means_weight_strictly_less_than": 52,
+        "native_short_endpoint_probability_upper": {
+          "one_over_two_exponent": 1024
+        },
+        "counting_exponent_check": true,
+        "bound_is_pointwise_in_labels": false
+      },
+      "first_level_attempt_budget_hex": "0x100000000000000000000",
+      "final_attempt_budget_hex": "0x10000000000",
+      "original_visibility_upper_exact_rational": "1023/1024",
+      "long_long_original_visibility_exponent_lower": 2704,
+      "long_long_visibility_power_of_two_upper_exponent": 2,
+      "union_of_first_short_or_second_short_probability_bound": "min(1,(R+1)*2^(-n))",
+      "unconditional_final_visibility_power_of_two_upper_exponent": 1,
+      "joint_output_distance_from_secret_independent_reference_power_of_two_upper_exponent": 0,
+      "any_uniform_secret_bit_guess_probability_upper": "min(1,1/2+2^(-readout_exponent))",
+      "bound_uses_unconditional_Born_weight_not_free_postselection": true,
+      "conditional_visibility_requires_dividing_by_paid_acceptance": true,
+      "runtime_or_tree_merge_rule_restricted": false,
+      "source_and_pair_output_architecture_restricted": true,
+      "assumed_source_promises_not_inferred": {
+        "original_noise": "independent-balanced-dephasing-with-visibility-at-most-1-minus-1-over-n",
+        "fresh_IID_uniform_coarse_label_pools_before_selection": true,
+        "flat_input_diagonal_at_each_pair_projection": true,
+        "each_successful_outcome_retains_exactly_one_original_basis_pair": true,
+        "retained_pair_channel_is_basis_isometry_with_balanced_phase_density": true,
+        "no_intermediate_collective_purification_or_interference_between_pairs": true,
+        "latent_error_flags_or_environment_access_supplied": false,
+        "second_pool_labels_IID_uniform_given_retained_coarse_records_and_visibility_tags": true,
+        "higher_parent_label_transcripts_discarded": true,
+        "independent_fresh_batches_no_qubit_reuse": true,
+        "all_first_level_attempts_including_failures_and_tag_selection_charged": true,
+        "all_second_level_available_parents_included_in_pool_width": true,
+        "only_final_phase_qubit_retained_as_secret_bearing_quantum_output": true,
+        "all_retained_classical_records_secret_independent": true,
+        "zero_replacement_preserves_visibility_not_pure_plus": true
+      },
+      "actual_natural_source_noise_certified": false,
+      "general_DHSP_or_retained_block_no_go": false
+    },
+    {
+      "components": 4096,
+      "first_pool": {
+        "components": 4096,
+        "pool_width_hex": "0x1000000",
+        "ceil_log2_pool_width": 24,
+        "long_mask_minimum_width": 171,
+        "short_means_weight_strictly_less_than": 171,
+        "native_short_endpoint_probability_upper": {
+          "one_over_two_exponent": 4096
+        },
+        "counting_exponent_check": true,
+        "bound_is_pointwise_in_labels": false
+      },
+      "second_pool": {
+        "components": 4096,
+        "pool_width_hex": "0x1000000",
+        "ceil_log2_pool_width": 24,
+        "long_mask_minimum_width": 171,
+        "short_means_weight_strictly_less_than": 171,
+        "native_short_endpoint_probability_upper": {
+          "one_over_two_exponent": 4096
+        },
+        "counting_exponent_check": true,
+        "bound_is_pointwise_in_labels": false
+      },
+      "first_level_attempt_budget_hex": "0x1000000000000000000000000",
+      "final_attempt_budget_hex": "0x1000000000000",
+      "original_visibility_upper_exact_rational": "4095/4096",
+      "long_long_original_visibility_exponent_lower": 29241,
+      "long_long_visibility_power_of_two_upper_exponent": 7,
+      "union_of_first_short_or_second_short_probability_bound": "min(1,(R+1)*2^(-n))",
+      "unconditional_final_visibility_power_of_two_upper_exponent": 6,
+      "joint_output_distance_from_secret_independent_reference_power_of_two_upper_exponent": 0,
+      "any_uniform_secret_bit_guess_probability_upper": "min(1,1/2+2^(-readout_exponent))",
+      "bound_uses_unconditional_Born_weight_not_free_postselection": true,
+      "conditional_visibility_requires_dividing_by_paid_acceptance": true,
+      "runtime_or_tree_merge_rule_restricted": false,
+      "source_and_pair_output_architecture_restricted": true,
+      "assumed_source_promises_not_inferred": {
+        "original_noise": "independent-balanced-dephasing-with-visibility-at-most-1-minus-1-over-n",
+        "fresh_IID_uniform_coarse_label_pools_before_selection": true,
+        "flat_input_diagonal_at_each_pair_projection": true,
+        "each_successful_outcome_retains_exactly_one_original_basis_pair": true,
+        "retained_pair_channel_is_basis_isometry_with_balanced_phase_density": true,
+        "no_intermediate_collective_purification_or_interference_between_pairs": true,
+        "latent_error_flags_or_environment_access_supplied": false,
+        "second_pool_labels_IID_uniform_given_retained_coarse_records_and_visibility_tags": true,
+        "higher_parent_label_transcripts_discarded": true,
+        "independent_fresh_batches_no_qubit_reuse": true,
+        "all_first_level_attempts_including_failures_and_tag_selection_charged": true,
+        "all_second_level_available_parents_included_in_pool_width": true,
+        "only_final_phase_qubit_retained_as_secret_bearing_quantum_output": true,
+        "all_retained_classical_records_secret_independent": true,
+        "zero_replacement_preserves_visibility_not_pure_plus": true
+      },
+      "actual_natural_source_noise_certified": false,
+      "general_DHSP_or_retained_block_no_go": false
+    },
+    {
+      "components": 16384,
+      "first_pool": {
+        "components": 16384,
+        "pool_width_hex": "0x10000000",
+        "ceil_log2_pool_width": 28,
+        "long_mask_minimum_width": 586,
+        "short_means_weight_strictly_less_than": 586,
+        "native_short_endpoint_probability_upper": {
+          "one_over_two_exponent": 16384
+        },
+        "counting_exponent_check": true,
+        "bound_is_pointwise_in_labels": false
+      },
+      "second_pool": {
+        "components": 16384,
+        "pool_width_hex": "0x10000000",
+        "ceil_log2_pool_width": 28,
+        "long_mask_minimum_width": 586,
+        "short_means_weight_strictly_less_than": 586,
+        "native_short_endpoint_probability_upper": {
+          "one_over_two_exponent": 16384
+        },
+        "counting_exponent_check": true,
+        "bound_is_pointwise_in_labels": false
+      },
+      "first_level_attempt_budget_hex": "0x10000000000000000000000000000",
+      "final_attempt_budget_hex": "0x100000000000000",
+      "original_visibility_upper_exact_rational": "16383/16384",
+      "long_long_original_visibility_exponent_lower": 343396,
+      "long_long_visibility_power_of_two_upper_exponent": 20,
+      "union_of_first_short_or_second_short_probability_bound": "min(1,(R+1)*2^(-n))",
+      "unconditional_final_visibility_power_of_two_upper_exponent": 19,
+      "joint_output_distance_from_secret_independent_reference_power_of_two_upper_exponent": 0,
+      "any_uniform_secret_bit_guess_probability_upper": "min(1,1/2+2^(-readout_exponent))",
+      "bound_uses_unconditional_Born_weight_not_free_postselection": true,
+      "conditional_visibility_requires_dividing_by_paid_acceptance": true,
+      "runtime_or_tree_merge_rule_restricted": false,
+      "source_and_pair_output_architecture_restricted": true,
+      "assumed_source_promises_not_inferred": {
+        "original_noise": "independent-balanced-dephasing-with-visibility-at-most-1-minus-1-over-n",
+        "fresh_IID_uniform_coarse_label_pools_before_selection": true,
+        "flat_input_diagonal_at_each_pair_projection": true,
+        "each_successful_outcome_retains_exactly_one_original_basis_pair": true,
+        "retained_pair_channel_is_basis_isometry_with_balanced_phase_density": true,
+        "no_intermediate_collective_purification_or_interference_between_pairs": true,
+        "latent_error_flags_or_environment_access_supplied": false,
+        "second_pool_labels_IID_uniform_given_retained_coarse_records_and_visibility_tags": true,
+        "higher_parent_label_transcripts_discarded": true,
+        "independent_fresh_batches_no_qubit_reuse": true,
+        "all_first_level_attempts_including_failures_and_tag_selection_charged": true,
+        "all_second_level_available_parents_included_in_pool_width": true,
+        "only_final_phase_qubit_retained_as_secret_bearing_quantum_output": true,
+        "all_retained_classical_records_secret_independent": true,
+        "zero_replacement_preserves_visibility_not_pure_plus": true
+      },
+      "actual_natural_source_noise_certified": false,
+      "general_DHSP_or_retained_block_no_go": false
+    },
+    {
+      "components": 65536,
+      "first_pool": {
+        "components": 65536,
+        "pool_width_hex": "0x100000000",
+        "ceil_log2_pool_width": 32,
+        "long_mask_minimum_width": 2048,
+        "short_means_weight_strictly_less_than": 2048,
+        "native_short_endpoint_probability_upper": {
+          "one_over_two_exponent": 65536
+        },
+        "counting_exponent_check": true,
+        "bound_is_pointwise_in_labels": false
+      },
+      "second_pool": {
+        "components": 65536,
+        "pool_width_hex": "0x100000000",
+        "ceil_log2_pool_width": 32,
+        "long_mask_minimum_width": 2048,
+        "short_means_weight_strictly_less_than": 2048,
+        "native_short_endpoint_probability_upper": {
+          "one_over_two_exponent": 65536
+        },
+        "counting_exponent_check": true,
+        "bound_is_pointwise_in_labels": false
+      },
+      "first_level_attempt_budget_hex": "0x100000000000000000000000000000000",
+      "final_attempt_budget_hex": "0x10000000000000000",
+      "original_visibility_upper_exact_rational": "65535/65536",
+      "long_long_original_visibility_exponent_lower": 4194304,
+      "long_long_visibility_power_of_two_upper_exponent": 64,
+      "union_of_first_short_or_second_short_probability_bound": "min(1,(R+1)*2^(-n))",
+      "unconditional_final_visibility_power_of_two_upper_exponent": 63,
+      "joint_output_distance_from_secret_independent_reference_power_of_two_upper_exponent": 0,
+      "any_uniform_secret_bit_guess_probability_upper": "min(1,1/2+2^(-readout_exponent))",
+      "bound_uses_unconditional_Born_weight_not_free_postselection": true,
+      "conditional_visibility_requires_dividing_by_paid_acceptance": true,
+      "runtime_or_tree_merge_rule_restricted": false,
+      "source_and_pair_output_architecture_restricted": true,
+      "assumed_source_promises_not_inferred": {
+        "original_noise": "independent-balanced-dephasing-with-visibility-at-most-1-minus-1-over-n",
+        "fresh_IID_uniform_coarse_label_pools_before_selection": true,
+        "flat_input_diagonal_at_each_pair_projection": true,
+        "each_successful_outcome_retains_exactly_one_original_basis_pair": true,
+        "retained_pair_channel_is_basis_isometry_with_balanced_phase_density": true,
+        "no_intermediate_collective_purification_or_interference_between_pairs": true,
+        "latent_error_flags_or_environment_access_supplied": false,
+        "second_pool_labels_IID_uniform_given_retained_coarse_records_and_visibility_tags": true,
+        "higher_parent_label_transcripts_discarded": true,
+        "independent_fresh_batches_no_qubit_reuse": true,
+        "all_first_level_attempts_including_failures_and_tag_selection_charged": true,
+        "all_second_level_available_parents_included_in_pool_width": true,
+        "only_final_phase_qubit_retained_as_secret_bearing_quantum_output": true,
+        "all_retained_classical_records_secret_independent": true,
+        "zero_replacement_preserves_visibility_not_pure_plus": true
+      },
+      "actual_natural_source_noise_certified": false,
+      "general_DHSP_or_retained_block_no_go": false
+    },
+    {
+      "components": 262144,
+      "first_pool": {
+        "components": 262144,
+        "pool_width_hex": "0x1000000000",
+        "ceil_log2_pool_width": 36,
+        "long_mask_minimum_width": 7282,
+        "short_means_weight_strictly_less_than": 7282,
+        "native_short_endpoint_probability_upper": {
+          "one_over_two_exponent": 262144
+        },
+        "counting_exponent_check": true,
+        "bound_is_pointwise_in_labels": false
+      },
+      "second_pool": {
+        "components": 262144,
+        "pool_width_hex": "0x1000000000",
+        "ceil_log2_pool_width": 36,
+        "long_mask_minimum_width": 7282,
+        "short_means_weight_strictly_less_than": 7282,
+        "native_short_endpoint_probability_upper": {
+          "one_over_two_exponent": 262144
+        },
+        "counting_exponent_check": true,
+        "bound_is_pointwise_in_labels": false
+      },
+      "first_level_attempt_budget_hex": "0x1000000000000000000000000000000000000",
+      "final_attempt_budget_hex": "0x1000000000000000000",
+      "original_visibility_upper_exact_rational": "262143/262144",
+      "long_long_original_visibility_exponent_lower": 53027524,
+      "long_long_visibility_power_of_two_upper_exponent": 202,
+      "union_of_first_short_or_second_short_probability_bound": "min(1,(R+1)*2^(-n))",
+      "unconditional_final_visibility_power_of_two_upper_exponent": 201,
+      "joint_output_distance_from_secret_independent_reference_power_of_two_upper_exponent": 130,
+      "any_uniform_secret_bit_guess_probability_upper": "min(1,1/2+2^(-readout_exponent))",
+      "bound_uses_unconditional_Born_weight_not_free_postselection": true,
+      "conditional_visibility_requires_dividing_by_paid_acceptance": true,
+      "runtime_or_tree_merge_rule_restricted": false,
+      "source_and_pair_output_architecture_restricted": true,
+      "assumed_source_promises_not_inferred": {
+        "original_noise": "independent-balanced-dephasing-with-visibility-at-most-1-minus-1-over-n",
+        "fresh_IID_uniform_coarse_label_pools_before_selection": true,
+        "flat_input_diagonal_at_each_pair_projection": true,
+        "each_successful_outcome_retains_exactly_one_original_basis_pair": true,
+        "retained_pair_channel_is_basis_isometry_with_balanced_phase_density": true,
+        "no_intermediate_collective_purification_or_interference_between_pairs": true,
+        "latent_error_flags_or_environment_access_supplied": false,
+        "second_pool_labels_IID_uniform_given_retained_coarse_records_and_visibility_tags": true,
+        "higher_parent_label_transcripts_discarded": true,
+        "independent_fresh_batches_no_qubit_reuse": true,
+        "all_first_level_attempts_including_failures_and_tag_selection_charged": true,
+        "all_second_level_available_parents_included_in_pool_width": true,
+        "only_final_phase_qubit_retained_as_secret_bearing_quantum_output": true,
+        "all_retained_classical_records_secret_independent": true,
+        "zero_replacement_preserves_visibility_not_pure_plus": true
+      },
+      "actual_natural_source_noise_certified": false,
+      "general_DHSP_or_retained_block_no_go": false
+    },
+    {
+      "components": 1048576,
+      "first_pool": {
+        "components": 1048576,
+        "pool_width_hex": "0x10000000000",
+        "ceil_log2_pool_width": 40,
+        "long_mask_minimum_width": 26215,
+        "short_means_weight_strictly_less_than": 26215,
+        "native_short_endpoint_probability_upper": {
+          "one_over_two_exponent": 1048576
+        },
+        "counting_exponent_check": true,
+        "bound_is_pointwise_in_labels": false
+      },
+      "second_pool": {
+        "components": 1048576,
+        "pool_width_hex": "0x10000000000",
+        "ceil_log2_pool_width": 40,
+        "long_mask_minimum_width": 26215,
+        "short_means_weight_strictly_less_than": 26215,
+        "native_short_endpoint_probability_upper": {
+          "one_over_two_exponent": 1048576
+        },
+        "counting_exponent_check": true,
+        "bound_is_pointwise_in_labels": false
+      },
+      "first_level_attempt_budget_hex": "0x10000000000000000000000000000000000000000",
+      "final_attempt_budget_hex": "0x100000000000000000000",
+      "original_visibility_upper_exact_rational": "1048575/1048576",
+      "long_long_original_visibility_exponent_lower": 687226225,
+      "long_long_visibility_power_of_two_upper_exponent": 655,
+      "union_of_first_short_or_second_short_probability_bound": "min(1,(R+1)*2^(-n))",
+      "unconditional_final_visibility_power_of_two_upper_exponent": 654,
+      "joint_output_distance_from_secret_independent_reference_power_of_two_upper_exponent": 575,
+      "any_uniform_secret_bit_guess_probability_upper": "min(1,1/2+2^(-readout_exponent))",
+      "bound_uses_unconditional_Born_weight_not_free_postselection": true,
+      "conditional_visibility_requires_dividing_by_paid_acceptance": true,
+      "runtime_or_tree_merge_rule_restricted": false,
+      "source_and_pair_output_architecture_restricted": true,
+      "assumed_source_promises_not_inferred": {
+        "original_noise": "independent-balanced-dephasing-with-visibility-at-most-1-minus-1-over-n",
+        "fresh_IID_uniform_coarse_label_pools_before_selection": true,
+        "flat_input_diagonal_at_each_pair_projection": true,
+        "each_successful_outcome_retains_exactly_one_original_basis_pair": true,
+        "retained_pair_channel_is_basis_isometry_with_balanced_phase_density": true,
+        "no_intermediate_collective_purification_or_interference_between_pairs": true,
+        "latent_error_flags_or_environment_access_supplied": false,
+        "second_pool_labels_IID_uniform_given_retained_coarse_records_and_visibility_tags": true,
+        "higher_parent_label_transcripts_discarded": true,
+        "independent_fresh_batches_no_qubit_reuse": true,
+        "all_first_level_attempts_including_failures_and_tag_selection_charged": true,
+        "all_second_level_available_parents_included_in_pool_width": true,
+        "only_final_phase_qubit_retained_as_secret_bearing_quantum_output": true,
+        "all_retained_classical_records_secret_independent": true,
+        "zero_replacement_preserves_visibility_not_pure_plus": true
+      },
+      "actual_natural_source_noise_certified": false,
+      "general_DHSP_or_retained_block_no_go": false
+    }
+  ],
+  "scope_countermodels": {
+    "pointwise_favorable_zero_coarse_column": {
+      "components": 2,
+      "width": 2,
+      "full_labels": [
+        [
+          4,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "phase_bits": 3,
+      "short_pair_coverage_at_this_selected_matrix": "1",
+      "unconditional_native_short_union_bound": "1/8",
+      "contradicts_mean_bound": false
+    },
+    "all_or_none_correlated_original_dephasing": {
+      "same_single_register_visibility": "1/2",
+      "four_bit_pair_visibility": "1/2",
+      "independent_four_bit_visibility": "1/16",
+      "covered_by_independent_original_noise_converse": false
+    },
+    "inverse_quadratic_original_noise": {
+      "covered": false,
+      "reason": "Visibility may be much larger than1-1/n"
+    },
+    "retained_correlated_phase_block": {
+      "covered": false,
+      "reason": "Outcome retains more than one original basis pair"
+    }
+  },
+  "accepted_speedup_candidate": false,
+  "new_active_negative_result_created": false,
+  "novelty_claim": false,
+  "external_theorem_review_complete": false,
+  "source_quantum_preparations_executed": 0,
+  "actual_natural_source_noise_certified": false,
+  "literature_context": [
+    "https://arxiv.org/abs/cs/0304005",
+    "https://arxiv.org/abs/quant-ph/0302112",
+    "https://arxiv.org/abs/1112.3333"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "hypothesis_id": "dcp_odd_prime_modulus_cnot_carry_shift_obstruction",
+  "title": "DCP Odd-Prime Modulus Z_p vs. Dyadic Z_{2^t} CNOT Zero-Sum Carry-Shift Obstruction",
+  "status": "VERIFIED_SCOPED_BRIDGE",
+  "claims": [
+    "Over any odd prime modulus p >= 3, gcd(2, p) == 1 implies tilde_A(v, x_0) == A v (mod p) holds for all x_0 in {0,1}^K iff A_{.,r} == 0 (mod p) for all r in supp(v).",
+    "For any minimal (subset-sum-free) zero-sum witness A v == 0 (mod p) of weight h, tilde_A(v, x_0) == 0 (mod p) holds on an exact 2^{-(h-1)} fraction of anchors."
+  ],
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  }
+}

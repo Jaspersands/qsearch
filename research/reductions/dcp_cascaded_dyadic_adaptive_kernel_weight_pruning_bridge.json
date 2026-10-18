@@ -1,0 +1,172 @@
+{
+  "all_checks_passed": true,
+  "all_level_dyadic_sign_invariance": {
+    "all_levels_sign_invariant": true,
+    "levels": [
+      {
+        "ell": 1,
+        "mod_2_ell": 2,
+        "next_mod_2_ell_plus_1": 4,
+        "sign_invariance_mod_next_level_verified": true,
+        "vectors_checked": 64
+      },
+      {
+        "ell": 2,
+        "mod_2_ell": 4,
+        "next_mod_2_ell_plus_1": 8,
+        "sign_invariance_mod_next_level_verified": true,
+        "vectors_checked": 16
+      },
+      {
+        "ell": 3,
+        "mod_2_ell": 8,
+        "next_mod_2_ell_plus_1": 16,
+        "sign_invariance_mod_next_level_verified": true,
+        "vectors_checked": 4
+      }
+    ],
+    "n_rows": 2,
+    "t_bits": 4
+  },
+  "certificate_sha256_16": "7f944ea2a5343db4",
+  "fixed_instance_mod8_controls": {
+    "all_four_mod8_pair_sums": {
+      "K": 8,
+      "a_row": [
+        1,
+        3,
+        5,
+        7,
+        1,
+        5,
+        3,
+        7
+      ],
+      "adaptive_mod8_zero_fraction": 1.0,
+      "blind_mod8_zero_fraction": 0.25,
+      "deterministic_mod8_elimination_verified": true,
+      "empirical_mean_pruned_visibility": 0.49094692910217264,
+      "empirical_mean_pruned_weight": 4.4375,
+      "gamma_0": 0.85,
+      "t_bits": 3,
+      "total_stage1_syndromes": 16,
+      "unpruned_full_tree_visibility": 0.2724905250390624,
+      "unpruned_full_tree_weight": 8.0,
+      "visibility_gain_ratio_over_unpruned": 1.8017027529004679
+    },
+    "all_zero_mod8_pair_sums": {
+      "K": 8,
+      "a_row": [
+        1,
+        7,
+        3,
+        5,
+        1,
+        7,
+        3,
+        5
+      ],
+      "adaptive_mod8_zero_fraction": 1.0,
+      "blind_mod8_zero_fraction": 0.375,
+      "deterministic_mod8_elimination_verified": true,
+      "empirical_mean_pruned_visibility": 0.6872741683599854,
+      "empirical_mean_pruned_weight": 2.375,
+      "gamma_0": 0.85,
+      "t_bits": 3,
+      "total_stage1_syndromes": 16,
+      "unpruned_full_tree_visibility": 0.2724905250390624,
+      "unpruned_full_tree_weight": 8.0,
+      "visibility_gain_ratio_over_unpruned": 2.5221947378223977
+    }
+  },
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "multistage_recurrence_audit": {
+    "exact_recurrence_verified": true,
+    "gamma_0": 0.85,
+    "max_stages": 6,
+    "stage_records": [
+      {
+        "mean_pruned_visibility": 0.7224999999999999,
+        "mean_pruned_weight": 2.0,
+        "modulus_2_to_ell": 2,
+        "raw_wires_required": 2,
+        "stage1_wires_required": 1,
+        "stage_ell": 1,
+        "unpruned_visibility": 0.7224999999999999,
+        "unpruned_weight": 2.0
+      },
+      {
+        "mean_pruned_visibility": 0.6723765624999999,
+        "mean_pruned_weight": 2.5,
+        "modulus_2_to_ell": 4,
+        "raw_wires_required": 4,
+        "stage1_wires_required": 2,
+        "stage_ell": 2,
+        "unpruned_visibility": 0.5220062499999999,
+        "unpruned_weight": 4.0
+      },
+      {
+        "mean_pruned_visibility": 0.617304982324829,
+        "mean_pruned_weight": 3.125,
+        "modulus_2_to_ell": 8,
+        "raw_wires_required": 8,
+        "stage1_wires_required": 4,
+        "stage_ell": 3,
+        "unpruned_visibility": 0.27249052503906246,
+        "unpruned_weight": 8.0
+      },
+      {
+        "mean_pruned_visibility": 0.5582450970443861,
+        "mean_pruned_weight": 3.90625,
+        "modulus_2_to_ell": 16,
+        "raw_wires_required": 16,
+        "stage1_wires_required": 8,
+        "stage_ell": 4,
+        "unpruned_visibility": 0.07425108623606391,
+        "unpruned_weight": 16.0
+      },
+      {
+        "mean_pruned_visibility": 0.49659321987681365,
+        "mean_pruned_weight": 4.8828125,
+        "modulus_2_to_ell": 32,
+        "raw_wires_required": 32,
+        "stage1_wires_required": 16,
+        "stage_ell": 5,
+        "unpruned_visibility": 0.0055132238072354,
+        "unpruned_weight": 32.0
+      },
+      {
+        "mean_pruned_visibility": 0.4340961214145156,
+        "mean_pruned_weight": 6.103515625,
+        "modulus_2_to_ell": 64,
+        "raw_wires_required": 64,
+        "stage1_wires_required": 32,
+        "stage_ell": 6,
+        "unpruned_visibility": 3.0395636748667204e-05,
+        "unpruned_weight": 64.0
+      }
+    ]
+  },
+  "proof_status": "LOCAL_DERIVATION_REVIEW_PENDING_NOT_FORMALLY_VERIFIED",
+  "schema_version": "dcp-cascaded-dyadic-adaptive-kernel-weight-pruning-bridge-v1",
+  "scope_constraints": {
+    "applies_to": "L-stage cascaded adaptive CNOT routing across dyadic levels k = 1, ..., L with minimum-Hamming-weight kernel selection",
+    "controls_included": "Includes universal all-level coset sign invariance (-2^ell == 2^ell mod 2^{ell+1}), fixed-instance 3-stage mod-8 controls (mean weight 19/8 = 2.375 on r_j=0 pairs and 71/16 = 4.4375 on r_j=4 pairs), exact upper-bit ensemble match to 25/8 = 3.125, and 6-stage distribution propagation.",
+    "does_not_claim": "Elimination of the (n+1)^{L-1} upfront Stage-1 wire pool requirement or an unconditional DCP speedup"
+  },
+  "theorem_id": "dcp_cascaded_dyadic_adaptive_kernel_weight_pruning_bridge",
+  "upper_bit_ensemble_three_stage_audit": {
+    "all_configurations_achieve_100_percent_mod8_elimination": true,
+    "closed_form_mean_pruned_visibility": 0.617304982324829,
+    "closed_form_mean_pruned_weight": 3.125,
+    "ensemble_mean_pruned_visibility": 0.617304982324829,
+    "ensemble_mean_pruned_weight": 3.125,
+    "exact_ensemble_recurrence_match": true,
+    "gamma_0": 0.85,
+    "upper_bit_pair_configurations": 16
+  }
+}

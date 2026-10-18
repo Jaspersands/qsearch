@@ -1,0 +1,38 @@
+{
+  "contract_id": "clean_predictor_noise_source_budget_review_pending_v1",
+  "status": "CLEAN_FIRST_CONDITIONAL_RESOURCE_TRANSFER_NO_PREDICTOR",
+  "research_decision": "Do not require robustness to inverse-native-dimension noise before pursuing a polynomial clean scalar or native predictor. Stronger source promises can preserve useful clean advantage at an explicit worse gap and precision cost.",
+  "clean_primitive": "A bounded uniform clean useful-bit predictor with K(t) original copies and advantage epsilon(t), either scalar rank1 or lifted native rank t-8; no primitive is implemented",
+  "copy_gate": "Reject declared first-bit budgets for which (2^K-1)/(2*q^rank)<epsilon; compare exact integers without constructing the enormous native group size",
+  "noise_transfer": "For a classical original-Z-mask mixture, even correlated, fixed-secret source-average marginal fault probability<=gamma/2 gives total trace distance<=K*gamma/2. Add actual joint-CQ/uniform-channel preparation and adapter errors. Marginal visibilities alone do not grant this for coherent noise.",
+  "budget": "gamma=epsilon/(2K), per-call joint preparation error epsilon/(8K), total adapter error epsilon/8 preserve advantage at least epsilon/2",
+  "public_source_plan": "Use only public B and a squared-norm interval. Bound all parent displacements, solve C/2^m<=gamma(t)/2 with actual t=n*(m+1), choose dyadic packet side to charge its other half, and enforce strict nonparallel/parallel alias thresholds.",
+  "proof_obligations": [
+    "Supply the actual uniform clean predictor, not assumed complexity exponents or correct private-secret fixtures",
+    "Prove the original full-label law and correct-trial source promise; no clean/correct-trial oracle",
+    "Keep norm/gap and actual source preparation precision unverified unless independently certified",
+    "Charge every coordinate/residue/length trial, splitting-prime certificate, parent/packet bit width, source call and finite-gate approximation",
+    "Use joint CQ/channel error, not rare-condition normalized state accuracy or arbitrary noise marginals",
+    "For correlated faults across repeated calls, budget the entire bounded amplified procedure or prove the fresh independence needed by majority",
+    "Dimension-only polynomial gap claims additionally require controlled norm interval and log parent-coefficient bounds; arbitrary public input bit length is not silently dimension-only"
+  ],
+  "falsifiers": [
+    "The final source modulus changes t so the proposed predictor/noise/box budget no longer closes",
+    "A declared native copy budget violates the useful-bit access upper bound",
+    "Actual sine-source promise_budget disagrees with the planner or an alias strictness condition fails",
+    "A candidate uses private shortest-vector coordinates or silently grants a correct norm/residue trial",
+    "A noisy performance transfer invokes local marginals despite a coherent joint-state counterexample"
+  ],
+  "literature_links": [
+    "https://arxiv.org/abs/cs/0304005"
+  ],
+  "guardrails": {
+    "accepted_speedup_candidate": false,
+    "native_or_scalar_clean_predictor_supplied": false,
+    "new_lattice_reduction_or_novelty_claim": false,
+    "general_lattice_gap_or_correct_trial_certified": false,
+    "large_source_or_predictor_executed": false,
+    "stronger_gap_is_a_classical_hardness_certificate": false,
+    "inverse_dimension_noise_robustness_is_always_required": false
+  }
+}

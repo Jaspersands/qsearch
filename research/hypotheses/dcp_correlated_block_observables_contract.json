@@ -1,0 +1,31 @@
+{
+  "contract_id": "correlated_block_joint_readout_local_blindness_twirl_baseline_v1",
+  "experiment_id_for_mechanical_integration": "EXP-DHS-DCP-CORRELATED-BLOCK-OBSERVABLES",
+  "status": "BOUNDED_FULL_OUTCOME_CALIBRATION_AND_LOCAL_DERIVATION_REVIEW_PENDING",
+  "source": "Original independent dephased phase qubits; actual mod4 syndrome measurement; retain syndrome and all final X-basis outcomes",
+  "readout": "Joint law P(y,z|s), not products of one-bit marginals or separately normalized postselection branches",
+  "classical_baseline_scope": "If y is discarded, z has an exact mixture-of-product-phase-measurements twirl baseline. This requires access to individual raw phase qubits, not a classical unknown-secret DCP simulator.",
+  "native_local_blindness": "At m4n, except probability<=2^(-[2n-ceil(n/2)-5floor(n/4)]), all k<=floor(n/4) reduced states are secret-independent and X readout is k-wise uniform conditional on each syndrome",
+  "local_blindness_is_a_general_local_measurement_circuit_lower_bound": false,
+  "full_joint_high_degree_correlations_excluded": false,
+  "all_exponential_likelihood_and_secret_enumeration_charged": true,
+  "native_collision_formula_scope": "Input phase bits>=4; fixed residual secret has an odd component; all original labels IID uniform",
+  "native_collision_multiplier": "G/M+(M+(1+v^2)^m-2)/M+((2+v^2)^m-M-(1+v^2)^m+1)/(G*M), G=4^n,M=2^m",
+  "native_information_frontier": "At m3n, fixed syndrome/complete-X readout has mean information<=1+2^(-h), h=min(floor(n/5)-1,n-ceil(log2(5n)))-1; all-even secret KL cost explicitly charged",
+  "native_information_bound_rules_out_polynomial_sample_algorithms": false,
+  "accepted_speedup_candidate": false,
+  "novelty_claim": false,
+  "falsifiers": [
+    "Any direct density measurement disagreeing with the joint likelihood/BSC law",
+    "Syndrome-discarded output disagreeing with the exact product twirl mixture",
+    "A low-degree parity bias without a corresponding short signed coarse relation",
+    "Promoting low-order marginal blindness to blindness of the entire X outcome",
+    "Claiming efficient inference from an exponentially enumerated likelihood table"
+  ],
+  "remaining_obligations": [
+    "Independent local-blindness and source-transfer review",
+    "Scalable syndrome-aware inference using the full observed string or another collective observable",
+    "Matched classical likelihood/computation baselines and all sample/memory costs",
+    "Growing modulus, actual natural-source noise and final hard-problem reduction"
+  ]
+}

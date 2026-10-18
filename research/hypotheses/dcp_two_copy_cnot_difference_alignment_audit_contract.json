@@ -1,0 +1,28 @@
+{
+  "contract_id": "dcp-two-copy-cnot-difference-alignment-audit-contract",
+  "title": "DCP Two-Copy CNOT Difference-Alignment Audit: Exact Sum/Difference Branch Bifurcation, Diagonal/Anti-Diagonal Phase Annihilation, and Off-Diagonal Visibility Yield",
+  "version": "1.0.0",
+  "scope": "dcp_two_copy_cnot_parity_projection_sum_difference_bifurcation_and_ensemble_visibility_yield",
+  "theorems": [
+    {
+      "id": "T1",
+      "name": "Equiprobable Syndrome Branches and Exact Sum/Difference State Bifurcation",
+      "statement": "Applying CNOT_(1 -> 2) to rho_(d_1)(s; K_eta) tensor rho_(d_2)(s; K_eta) and measuring the target qubit yields z in {0, 1} with Pr(z = 0) = Pr(z = 1) = 1/2, reducing the first register to a DCP pair state with difference (d_1 + d_2) mod q on z = 0 and (d_1 - d_2) mod q on z = 1, both with product visibility lambda_(d_1) * lambda_(d_2)."
+    },
+    {
+      "id": "T2",
+      "name": "Exact Active Quadratic Visibility and Diagonal/Anti-Diagonal Phase Annihilation",
+      "statement": "On the anti-diagonal d_1 + d_2 == 0 mod q, the z = 0 sum branch is secret-independent (d_+ = 0); on the diagonal d_1 = d_2, the z = 1 difference branch is secret-independent (d_- = 0)."
+    },
+    {
+      "id": "T3",
+      "name": "Exact Off-Diagonal Pair Formula for Ensemble-Averaged Active Visibility",
+      "statement": "Averaging the active quadratic visibility Y(d_1, d_2; K_eta) over uniform (d_1, d_2) in {1, ..., q-1}^2 yields ((q * ||K_eta||_2^2 - 1)^2 - sum_(d=1)^(q-1) lambda_d^4) / (q - 1)^2 = (1 / (q - 1)^2) * sum_(d_1 != d_2) lambda_(d_1)^2 * lambda_(d_2)^2."
+    }
+  ],
+  "guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  }
+}

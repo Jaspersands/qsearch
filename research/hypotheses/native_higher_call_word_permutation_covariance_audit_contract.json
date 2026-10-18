@@ -1,0 +1,28 @@
+{
+  "contract_id": "native-higher-call-word-permutation-covariance-audit-contract",
+  "title": "Native Higher-Call Word-Permutation Covariance Audit: Involutive Dilation Invariance, m^2 != 1 Bilinear Symmetry Breaking at k >= 2, and Alternating Intertwining Rescue",
+  "version": "1.0.0",
+  "scope": "general_k_call_word_permutation_covariance_involutive_dilation_and_alternating_intertwining",
+  "theorems": [
+    {
+      "id": "T1",
+      "name": "Exact Dilation Intertwining and Involutive Covariance (m^2 == 1 mod D)",
+      "statement": "For any unit m in Z_D^*, F_D^(sigma_l) Pi_m = Pi_(m^(-1)) F_D^(sigma_l). Whenever m^2 == 1 mod D, Pi_m commutes with F_D^(+-1), so |Psi_(epsilon, sigma)(y^(m))> = Pi_m |Psi_(epsilon, sigma)(y)> and P(x | y^(m)) = P((m^(-1) x) mod D | y) for all k >= 1."
+    },
+    {
+      "id": "T2",
+      "name": "Alternating (m, m^(-1)) Intertwining Rescue vs Uniform-Dilation Symmetry Breaking at k >= 2",
+      "statement": "For any unit m in Z_D^*, alternating y^(m) on odd calls and y^(m^(-1)) on even calls maps |Psi(y)> to Pi_m |Psi(y)> (odd k) or Pi_(m^(-1)) |Psi(y)> (even k), whereas uniform dilation y^(m) with m^2 != 1 mod D at k >= 2 scales internal bilinear phases by m^(-2) != 1 mod D while preserving |V_epsilon(f^(m))| = |V_epsilon(f)|."
+    },
+    {
+      "id": "T3",
+      "name": "k = 1 Cyclic Word-Translation Invariance vs k >= 2 Internal Ramp Breaking",
+      "statement": "Under cyclic word translation y^[+b]_w = y_((w + b) mod D), at k = 1 the Born distribution P_(epsilon_1, sigma_1)(x | y^[+b]) = P_(epsilon_1, sigma_1)(x | y) is invariant for all b in Z_D, whereas at k >= 2 internal phase ramps break translation invariance while preserving |V_epsilon(f^[+b])| = |V_epsilon(f)|."
+    }
+  ],
+  "guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  }
+}

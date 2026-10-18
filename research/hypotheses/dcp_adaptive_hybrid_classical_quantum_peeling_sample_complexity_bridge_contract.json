@@ -1,0 +1,17 @@
+{
+  "hypothesis_id": "dcp_adaptive_hybrid_classical_quantum_peeling_sample_complexity_bridge",
+  "title": "DCP Adaptive Hybrid Classical-Quantum Peeling Sample-Complexity Bridge",
+  "status": "V1_CLASSICAL_DOMINANCE_RETRACTED_NATIVE_INSTRUMENTS_CHECKED",
+  "claims": [
+    "Native independent X parity has mean gamma^h*product(cos(theta_i)), not gamma^h*cos(sum(theta_i)). Modular phase-bearing classical samples are not supplied by the input.",
+    "An explicit uniform-even-Y signed product-Pauli protocol has mean 2^(1-h)*gamma^h*cos(sum(theta_i)); this is one legal separable competitor, not an optimality bound.",
+    "The public star-CNOT circuit retains all measured syndromes and yields conditional visibility gamma^h at the realized signed label. No hidden secret chooses its gates.",
+    "For the coarsened matched-cosine coin at zero cosine, retained erasures give local Fisher information p*gamma^(2h), whereas fair-coin replacement gives p^2*gamma^(2h). Neither is a discrete-secret recovery bound.",
+    "No classical dominance, all-receiver no-go, DCP decoder or asymptotic quantum advantage is established."
+  ],
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  }
+}

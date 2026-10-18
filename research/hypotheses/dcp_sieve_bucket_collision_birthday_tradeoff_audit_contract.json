@@ -1,0 +1,16 @@
+{
+  "hypothesis_id": "dcp_sieve_bucket_collision_birthday_tradeoff_audit",
+  "title": "DCP Sieve Bucket Collision Birthday Tradeoff Audit",
+  "status": "LOCAL_DERIVATION_REVIEW_PENDING_V1_MEAN_CLOSURE_RETRACTED",
+  "claims": [
+    "Expected disjoint collision pairs across B uniform buckets from M balls equals M/2 - (B/4)*(1 - (1 - 2/B)^M).",
+    "Multilayer pool laws are propagated exactly in rational arithmetic under fresh IID uniform bucket assignments; the v1 recurrence f(E[M]) is retracted.",
+    "Independent label-independent phase noise on disjoint binary trees gives conditional output coherence gamma_L = gamma_0^{2^L}; shared noise and actual DCP bucket independence are not covered.",
+    "Pair counts precede any additional merge-branch rejection, which must be charged separately in an actual algorithm."
+  ],
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  }
+}

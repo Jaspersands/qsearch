@@ -1,0 +1,31 @@
+{
+  "all_checks_passed": true,
+  "certificate_sha256_16": "8259dbec0919f2a0",
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "mod8_sign_rectification_audit": {
+    "exact_rectification_verified": true,
+    "max_density_coherence_residual": 7.807123344564376e-17,
+    "pairs_tested": 4,
+    "pauli_x_rectified_d0_mod8_zero_fraction": 1.0,
+    "t_bits": 3,
+    "unrectified_d0_mod8_zero_fraction": 0.5
+  },
+  "pauli_x_density_negation_audit": {
+    "angles_tested": 5,
+    "exact_pauli_x_negation_verified": true,
+    "gammas_tested": 4,
+    "max_matrix_entry_error": 0.0
+  },
+  "proof_status": "LOCAL_DERIVATION_REVIEW_PENDING_NOT_FORMALLY_VERIFIED",
+  "schema_version": "dcp-coherent-syndrome-sign-flip-pauli-frame-bridge-v1",
+  "scope_constraints": {
+    "applies_to": "Pauli-X conjugation X rho(a, s, gamma) X == rho(-a, s, gamma) and sign-rectified CNOT pairing",
+    "controls_included": "Includes exact 2x2 density-matrix verification of X rho(theta, gamma) X == rho(-theta, gamma) and 100% d_2=0 branch alignment on {2, 6}^2 mod 8 (up from 50% without Pauli-X rectification).",
+    "does_not_claim": "Elimination of the Stage-2 syndrome coin flip d_2 in {0, 1} when combining two quantum wires"
+  },
+  "theorem_id": "dcp_coherent_syndrome_sign_flip_pauli_frame_bridge"
+}

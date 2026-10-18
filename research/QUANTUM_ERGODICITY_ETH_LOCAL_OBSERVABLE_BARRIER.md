@@ -1,6 +1,14 @@
 # Quantum Ergodicity, the Eigenstate Thermalization Hypothesis (ETH), and the Local Observable Measurement Barrier: Microcanonical Equivalence and Algorithmic Information Horizons
 
-**Status**: Formally Proved & Computationally Verified  
+**Status**: QUARANTINED_OVERBROAD_NO_GO, reviewed 2026-10-16.
+
+The text below is retained as an ORIGINAL AUDIT TARGET, not current search
+guidance. Nonintegrability does not establish strong ETH for every eigenstate;
+small mean differences alone do not imply an inverse-square shot lower bound;
+and local blindness does not rule out joint readout or phase estimation.
+The finite Ising checks are calibrations, not the stated general proofs.
+See [the correction](CAMPAIGN_NEGATIVE_CLAIM_AUDIT.md) and countercontrols.
+
 **Invariants Enforced**: `speedup_claim_allowed = False`, `accepted_speedup_candidate = False`  
 **Classification**: Quantum Ergodicity / Eigenstate Thermalization Hypothesis / Measurement Complexity Horizons  
 **Negative Result ID**: `NEG-QUANTUM-ERGODICITY-ETH-LOCAL-OBSERVABLE-BARRIER` (975 negative results total)

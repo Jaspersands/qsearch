@@ -1,0 +1,1326 @@
+{
+  "status": "NATIVE_COARSE_READOUT_LINEAR_INFORMATION_DECODER_OPEN",
+  "finite_controls": [
+    {
+      "full_labels": [
+        [
+          1,
+          2,
+          4,
+          8,
+          16
+        ]
+      ],
+      "original_phase_bits": 6,
+      "visibility_exact": "1",
+      "measured_coarse_bits_per_component": 2,
+      "original_noise_model": "independent original Z faults",
+      "full_frequency_map_injective": true,
+      "exported_product_twirl_plan": {
+        "original_phase_wires": 5,
+        "public_dual_values": [
+          1
+        ],
+        "gates": [
+          [
+            "S",
+            0
+          ],
+          [
+            "H",
+            0
+          ],
+          [
+            "S",
+            1
+          ],
+          [
+            "S",
+            1
+          ],
+          [
+            "H",
+            1
+          ],
+          [
+            "H",
+            2
+          ],
+          [
+            "H",
+            3
+          ],
+          [
+            "H",
+            4
+          ]
+        ],
+        "terminal_Z_measurement_wires": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "uniform_random_bits_per_packet": 2,
+        "extra_zero_qubits": 0,
+        "coarse_bits_per_component": 2,
+        "pointwise_z_channel_equality_is_after_ignoring_twirl_values": true,
+        "twirl_values_may_be_retained_without_weakening_information_lower_bound": true,
+        "complete_twirl_and_syndrome_instruments_are_identical": false,
+        "same_discarded_syndrome_fixed_X_channel": true,
+        "baseline_requires_actual_unknown_secret_phase_qubits": true,
+        "classical_simulation_of_unknown_secret_data_supplied": false,
+        "hardware_transpilation_or_execution_performed": false
+      },
+      "raw_full_original_secret_information_bits": 2.278615916838924,
+      "pinched_residual_secret_X_information_bits": 1.3931066648530905,
+      "joint_syndrome_X_information_bits": 1.3931066648530908,
+      "charged_secret_coset_information_loss_bits": 0.8855092519858336,
+      "raw_output_uniformity_residual": 1.3877787807814457e-17,
+      "actual_pinching_vs_classical_secret_coset_average_residual": 6.938893903907228e-17,
+      "certified_information_lower_bits_exact": "393606007484197/2166828180701184",
+      "all_original_secrets_enumerated": 64,
+      "all_residual_secrets_enumerated": 16,
+      "selected_fixture_is_native_source_average_evidence": false,
+      "likelihood_tables_are_polynomial_decoders": false
+    },
+    {
+      "full_labels": [
+        [
+          1,
+          2,
+          4,
+          8,
+          16
+        ]
+      ],
+      "original_phase_bits": 6,
+      "visibility_exact": "7/8",
+      "measured_coarse_bits_per_component": 2,
+      "original_noise_model": "independent original Z faults",
+      "full_frequency_map_injective": true,
+      "exported_product_twirl_plan": {
+        "original_phase_wires": 5,
+        "public_dual_values": [
+          1
+        ],
+        "gates": [
+          [
+            "S",
+            0
+          ],
+          [
+            "H",
+            0
+          ],
+          [
+            "S",
+            1
+          ],
+          [
+            "S",
+            1
+          ],
+          [
+            "H",
+            1
+          ],
+          [
+            "H",
+            2
+          ],
+          [
+            "H",
+            3
+          ],
+          [
+            "H",
+            4
+          ]
+        ],
+        "terminal_Z_measurement_wires": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "uniform_random_bits_per_packet": 2,
+        "extra_zero_qubits": 0,
+        "coarse_bits_per_component": 2,
+        "pointwise_z_channel_equality_is_after_ignoring_twirl_values": true,
+        "twirl_values_may_be_retained_without_weakening_information_lower_bound": true,
+        "complete_twirl_and_syndrome_instruments_are_identical": false,
+        "same_discarded_syndrome_fixed_X_channel": true,
+        "baseline_requires_actual_unknown_secret_phase_qubits": true,
+        "classical_simulation_of_unknown_secret_data_supplied": false,
+        "hardware_transpilation_or_execution_performed": false
+      },
+      "raw_full_original_secret_information_bits": 1.5872204400366157,
+      "pinched_residual_secret_X_information_bits": 0.9594926568745434,
+      "joint_syndrome_X_information_bits": 0.9594926568745433,
+      "charged_secret_coset_information_loss_bits": 0.6277277831620722,
+      "raw_output_uniformity_residual": 2.0816681711721685e-17,
+      "actual_pinching_vs_classical_secret_coset_average_residual": 6.938893903907228e-17,
+      "certified_information_lower_bits_exact": "0",
+      "all_original_secrets_enumerated": 64,
+      "all_residual_secrets_enumerated": 16,
+      "selected_fixture_is_native_source_average_evidence": false,
+      "likelihood_tables_are_polynomial_decoders": false
+    },
+    {
+      "full_labels": [
+        [
+          1,
+          2,
+          4,
+          8,
+          16
+        ]
+      ],
+      "original_phase_bits": 6,
+      "visibility_exact": "0",
+      "measured_coarse_bits_per_component": 2,
+      "original_noise_model": "independent original Z faults",
+      "full_frequency_map_injective": true,
+      "exported_product_twirl_plan": {
+        "original_phase_wires": 5,
+        "public_dual_values": [
+          1
+        ],
+        "gates": [
+          [
+            "S",
+            0
+          ],
+          [
+            "H",
+            0
+          ],
+          [
+            "S",
+            1
+          ],
+          [
+            "S",
+            1
+          ],
+          [
+            "H",
+            1
+          ],
+          [
+            "H",
+            2
+          ],
+          [
+            "H",
+            3
+          ],
+          [
+            "H",
+            4
+          ]
+        ],
+        "terminal_Z_measurement_wires": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "uniform_random_bits_per_packet": 2,
+        "extra_zero_qubits": 0,
+        "coarse_bits_per_component": 2,
+        "pointwise_z_channel_equality_is_after_ignoring_twirl_values": true,
+        "twirl_values_may_be_retained_without_weakening_information_lower_bound": true,
+        "complete_twirl_and_syndrome_instruments_are_identical": false,
+        "same_discarded_syndrome_fixed_X_channel": true,
+        "baseline_requires_actual_unknown_secret_phase_qubits": true,
+        "classical_simulation_of_unknown_secret_data_supplied": false,
+        "hardware_transpilation_or_execution_performed": false
+      },
+      "raw_full_original_secret_information_bits": 0.0,
+      "pinched_residual_secret_X_information_bits": 1.3013920171748107e-16,
+      "joint_syndrome_X_information_bits": 1.5266329432242972e-16,
+      "charged_secret_coset_information_loss_bits": -1.3013920171748107e-16,
+      "raw_output_uniformity_residual": 0.0,
+      "actual_pinching_vs_classical_secret_coset_average_residual": 1.3877787807814457e-17,
+      "certified_information_lower_bits_exact": "0",
+      "all_original_secrets_enumerated": 64,
+      "all_residual_secrets_enumerated": 16,
+      "selected_fixture_is_native_source_average_evidence": false,
+      "likelihood_tables_are_polynomial_decoders": false
+    },
+    {
+      "full_labels": [
+        [
+          1,
+          2,
+          4,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          2,
+          4
+        ]
+      ],
+      "original_phase_bits": 4,
+      "visibility_exact": "3/4",
+      "measured_coarse_bits_per_component": 2,
+      "original_noise_model": "independent original Z faults",
+      "full_frequency_map_injective": true,
+      "exported_product_twirl_plan": {
+        "original_phase_wires": 6,
+        "public_dual_values": [
+          1,
+          1
+        ],
+        "gates": [
+          [
+            "S",
+            0
+          ],
+          [
+            "H",
+            0
+          ],
+          [
+            "S",
+            1
+          ],
+          [
+            "S",
+            1
+          ],
+          [
+            "H",
+            1
+          ],
+          [
+            "H",
+            2
+          ],
+          [
+            "S",
+            3
+          ],
+          [
+            "H",
+            3
+          ],
+          [
+            "S",
+            4
+          ],
+          [
+            "S",
+            4
+          ],
+          [
+            "H",
+            4
+          ],
+          [
+            "H",
+            5
+          ]
+        ],
+        "terminal_Z_measurement_wires": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "uniform_random_bits_per_packet": 4,
+        "extra_zero_qubits": 0,
+        "coarse_bits_per_component": 2,
+        "pointwise_z_channel_equality_is_after_ignoring_twirl_values": true,
+        "twirl_values_may_be_retained_without_weakening_information_lower_bound": true,
+        "complete_twirl_and_syndrome_instruments_are_identical": false,
+        "same_discarded_syndrome_fixed_X_channel": true,
+        "baseline_requires_actual_unknown_secret_phase_qubits": true,
+        "classical_simulation_of_unknown_secret_data_supplied": false,
+        "hardware_transpilation_or_execution_performed": false
+      },
+      "raw_full_original_secret_information_bits": 1.3400569666917632,
+      "pinched_residual_secret_X_information_bits": 0.4564355568004036,
+      "joint_syndrome_X_information_bits": 0.4564355568004036,
+      "charged_secret_coset_information_loss_bits": 0.8836214098913596,
+      "raw_output_uniformity_residual": 1.3877787807814457e-17,
+      "actual_pinching_vs_classical_secret_coset_average_residual": 1.3877787807814457e-17,
+      "certified_information_lower_bits_exact": "0",
+      "all_original_secrets_enumerated": 256,
+      "all_residual_secrets_enumerated": 16,
+      "selected_fixture_is_native_source_average_evidence": false,
+      "likelihood_tables_are_polynomial_decoders": false
+    },
+    {
+      "full_labels": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "original_phase_bits": 4,
+      "visibility_exact": "1",
+      "measured_coarse_bits_per_component": 2,
+      "original_noise_model": "independent original Z faults",
+      "full_frequency_map_injective": false,
+      "exported_product_twirl_plan": {
+        "original_phase_wires": 5,
+        "public_dual_values": [
+          1
+        ],
+        "gates": [
+          [
+            "H",
+            0
+          ],
+          [
+            "H",
+            1
+          ],
+          [
+            "H",
+            2
+          ],
+          [
+            "H",
+            3
+          ],
+          [
+            "H",
+            4
+          ]
+        ],
+        "terminal_Z_measurement_wires": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "uniform_random_bits_per_packet": 2,
+        "extra_zero_qubits": 0,
+        "coarse_bits_per_component": 2,
+        "pointwise_z_channel_equality_is_after_ignoring_twirl_values": true,
+        "twirl_values_may_be_retained_without_weakening_information_lower_bound": true,
+        "complete_twirl_and_syndrome_instruments_are_identical": false,
+        "same_discarded_syndrome_fixed_X_channel": true,
+        "baseline_requires_actual_unknown_secret_phase_qubits": true,
+        "classical_simulation_of_unknown_secret_data_supplied": false,
+        "hardware_transpilation_or_execution_performed": false
+      },
+      "raw_full_original_secret_information_bits": 0.0,
+      "pinched_residual_secret_X_information_bits": 0.0,
+      "joint_syndrome_X_information_bits": 0.0,
+      "charged_secret_coset_information_loss_bits": 0.0,
+      "raw_output_uniformity_residual": 0.96875,
+      "actual_pinching_vs_classical_secret_coset_average_residual": 0.0,
+      "certified_information_lower_bits_exact": null,
+      "all_original_secrets_enumerated": 16,
+      "all_residual_secrets_enumerated": 4,
+      "selected_fixture_is_native_source_average_evidence": false,
+      "likelihood_tables_are_polynomial_decoders": false
+    },
+    {
+      "full_labels": [
+        [
+          1,
+          2,
+          4,
+          8,
+          16
+        ]
+      ],
+      "original_phase_bits": 6,
+      "visibility_exact": "31/32",
+      "measured_coarse_bits_per_component": 2,
+      "original_noise_model": "shared all-wire Z fault",
+      "full_frequency_map_injective": true,
+      "exported_product_twirl_plan": {
+        "original_phase_wires": 5,
+        "public_dual_values": [
+          1
+        ],
+        "gates": [
+          [
+            "S",
+            0
+          ],
+          [
+            "H",
+            0
+          ],
+          [
+            "S",
+            1
+          ],
+          [
+            "S",
+            1
+          ],
+          [
+            "H",
+            1
+          ],
+          [
+            "H",
+            2
+          ],
+          [
+            "H",
+            3
+          ],
+          [
+            "H",
+            4
+          ]
+        ],
+        "terminal_Z_measurement_wires": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "uniform_random_bits_per_packet": 2,
+        "extra_zero_qubits": 0,
+        "coarse_bits_per_component": 2,
+        "pointwise_z_channel_equality_is_after_ignoring_twirl_values": true,
+        "twirl_values_may_be_retained_without_weakening_information_lower_bound": true,
+        "complete_twirl_and_syndrome_instruments_are_identical": false,
+        "same_discarded_syndrome_fixed_X_channel": true,
+        "baseline_requires_actual_unknown_secret_phase_qubits": true,
+        "classical_simulation_of_unknown_secret_data_supplied": false,
+        "hardware_transpilation_or_execution_performed": false
+      },
+      "raw_full_original_secret_information_bits": 2.174919706610543,
+      "pinched_residual_secret_X_information_bits": 1.3060744200411039,
+      "joint_syndrome_X_information_bits": 1.3060744200411039,
+      "charged_secret_coset_information_loss_bits": 0.8688452865694392,
+      "raw_output_uniformity_residual": 1.3877787807814457e-17,
+      "actual_pinching_vs_classical_secret_coset_average_residual": 6.938893903907228e-17,
+      "certified_information_lower_bits_exact": "3038130851921601475983991476858772482462290365583175505125157/3166822933909521992078211107165960537589302731153883267894083584",
+      "all_original_secrets_enumerated": 64,
+      "all_residual_secrets_enumerated": 16,
+      "selected_fixture_is_native_source_average_evidence": false,
+      "likelihood_tables_are_polynomial_decoders": false
+    },
+    {
+      "full_labels": [
+        [
+          1,
+          2,
+          4,
+          8,
+          16
+        ]
+      ],
+      "original_phase_bits": 6,
+      "visibility_exact": "1",
+      "measured_coarse_bits_per_component": 1,
+      "original_noise_model": "independent original Z faults",
+      "full_frequency_map_injective": true,
+      "exported_product_twirl_plan": {
+        "original_phase_wires": 5,
+        "public_dual_values": [
+          1
+        ],
+        "gates": [
+          [
+            "Z",
+            0
+          ],
+          [
+            "H",
+            0
+          ],
+          [
+            "H",
+            1
+          ],
+          [
+            "H",
+            2
+          ],
+          [
+            "H",
+            3
+          ],
+          [
+            "H",
+            4
+          ]
+        ],
+        "terminal_Z_measurement_wires": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "uniform_random_bits_per_packet": 1,
+        "extra_zero_qubits": 0,
+        "coarse_bits_per_component": 1,
+        "pointwise_z_channel_equality_is_after_ignoring_twirl_values": true,
+        "twirl_values_may_be_retained_without_weakening_information_lower_bound": true,
+        "complete_twirl_and_syndrome_instruments_are_identical": false,
+        "same_discarded_syndrome_fixed_X_channel": true,
+        "baseline_requires_actual_unknown_secret_phase_qubits": true,
+        "classical_simulation_of_unknown_secret_data_supplied": false,
+        "hardware_transpilation_or_execution_performed": false
+      },
+      "raw_full_original_secret_information_bits": 2.278615916838924,
+      "pinched_residual_secret_X_information_bits": 1.8359076422551444,
+      "joint_syndrome_X_information_bits": 1.8359076422551444,
+      "charged_secret_coset_information_loss_bits": 0.4427082745837798,
+      "raw_output_uniformity_residual": 1.3877787807814457e-17,
+      "actual_pinching_vs_classical_secret_coset_average_residual": 1.6653345369377348e-16,
+      "certified_information_lower_bits_exact": "2560434188185381/2166828180701184",
+      "all_original_secrets_enumerated": 64,
+      "all_residual_secrets_enumerated": 32,
+      "selected_fixture_is_native_source_average_evidence": false,
+      "likelihood_tables_are_polynomial_decoders": false,
+      "parity_compression_plan_on_example_measured_zero_syndrome": {
+        "full_labels": [
+          [
+            1,
+            2,
+            4,
+            8,
+            16
+          ]
+        ],
+        "original_phase_bits": 6,
+        "actually_measured_coarse_bits_per_component": 1,
+        "higher_syndrome_constraints_not_measured_or_imposed": true,
+        "complete_measured_parity_fiber_affine_index_compiled": true,
+        "measured_syndrome": [
+          0
+        ],
+        "original_phase_wires": 5,
+        "binary_low_syndrome_rank": 1,
+        "cleared_pivot_wires": [
+          0
+        ],
+        "retained_free_wires": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "retained_quantum_wires": 4,
+        "affine_origin_hex": "0x0",
+        "kernel_direction_hex": [
+          "0x2",
+          "0x4",
+          "0x8",
+          "0x10"
+        ],
+        "Clifford_gates_after_measured_syndrome": [],
+        "extra_zero_work_qubits": 0,
+        "quadratic_high_syndrome_equations": [],
+        "full_fiber_enumeration_used_by_compiler": false,
+        "remaining_quadratic_fiber_inverse_supplied": false,
+        "higher_phase_linearity_in_free_bits_assumed": false,
+        "fresh_independent_phase_qubits_supplied": false,
+        "original_independent_Z_noise_may_be_correlated_in_free_coordinates": true,
+        "noise_kernel": "v^popcount(XOR_j ((u_j XOR u'_j)*V_j))",
+        "noise_kernel_formula_requires_original_independent_Z_faults": true,
+        "unitary_coordinate_change_increases_information": false,
+        "hardware_transpilation_or_execution_performed": false
+      },
+      "actual_compiler_must_use_realized_syndrome_not_postselect_zero": true
+    },
+    {
+      "full_labels": [
+        [
+          1,
+          2,
+          4,
+          8,
+          16
+        ]
+      ],
+      "original_phase_bits": 6,
+      "visibility_exact": "3/4",
+      "measured_coarse_bits_per_component": 1,
+      "original_noise_model": "independent original Z faults",
+      "full_frequency_map_injective": true,
+      "exported_product_twirl_plan": {
+        "original_phase_wires": 5,
+        "public_dual_values": [
+          1
+        ],
+        "gates": [
+          [
+            "Z",
+            0
+          ],
+          [
+            "H",
+            0
+          ],
+          [
+            "H",
+            1
+          ],
+          [
+            "H",
+            2
+          ],
+          [
+            "H",
+            3
+          ],
+          [
+            "H",
+            4
+          ]
+        ],
+        "terminal_Z_measurement_wires": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "uniform_random_bits_per_packet": 1,
+        "extra_zero_qubits": 0,
+        "coarse_bits_per_component": 1,
+        "pointwise_z_channel_equality_is_after_ignoring_twirl_values": true,
+        "twirl_values_may_be_retained_without_weakening_information_lower_bound": true,
+        "complete_twirl_and_syndrome_instruments_are_identical": false,
+        "same_discarded_syndrome_fixed_X_channel": true,
+        "baseline_requires_actual_unknown_secret_phase_qubits": true,
+        "classical_simulation_of_unknown_secret_data_supplied": false,
+        "hardware_transpilation_or_execution_performed": false
+      },
+      "raw_full_original_secret_information_bits": 1.1117770318211424,
+      "pinched_residual_secret_X_information_bits": 0.8909027575835207,
+      "joint_syndrome_X_information_bits": 0.8909027575835207,
+      "charged_secret_coset_information_loss_bits": 0.22087427423762174,
+      "raw_output_uniformity_residual": 1.0408340855860843e-17,
+      "actual_pinching_vs_classical_secret_coset_average_residual": 7.632783294297951e-17,
+      "certified_information_lower_bits_exact": "415518924263910606423363784306109/4441213877899601708143699680034816",
+      "all_original_secrets_enumerated": 64,
+      "all_residual_secrets_enumerated": 32,
+      "selected_fixture_is_native_source_average_evidence": false,
+      "likelihood_tables_are_polynomial_decoders": false,
+      "parity_compression_plan_on_example_measured_zero_syndrome": {
+        "full_labels": [
+          [
+            1,
+            2,
+            4,
+            8,
+            16
+          ]
+        ],
+        "original_phase_bits": 6,
+        "actually_measured_coarse_bits_per_component": 1,
+        "higher_syndrome_constraints_not_measured_or_imposed": true,
+        "complete_measured_parity_fiber_affine_index_compiled": true,
+        "measured_syndrome": [
+          0
+        ],
+        "original_phase_wires": 5,
+        "binary_low_syndrome_rank": 1,
+        "cleared_pivot_wires": [
+          0
+        ],
+        "retained_free_wires": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "retained_quantum_wires": 4,
+        "affine_origin_hex": "0x0",
+        "kernel_direction_hex": [
+          "0x2",
+          "0x4",
+          "0x8",
+          "0x10"
+        ],
+        "Clifford_gates_after_measured_syndrome": [],
+        "extra_zero_work_qubits": 0,
+        "quadratic_high_syndrome_equations": [],
+        "full_fiber_enumeration_used_by_compiler": false,
+        "remaining_quadratic_fiber_inverse_supplied": false,
+        "higher_phase_linearity_in_free_bits_assumed": false,
+        "fresh_independent_phase_qubits_supplied": false,
+        "original_independent_Z_noise_may_be_correlated_in_free_coordinates": true,
+        "noise_kernel": "v^popcount(XOR_j ((u_j XOR u'_j)*V_j))",
+        "noise_kernel_formula_requires_original_independent_Z_faults": true,
+        "unitary_coordinate_change_increases_information": false,
+        "hardware_transpilation_or_execution_performed": false
+      },
+      "actual_compiler_must_use_realized_syndrome_not_postselect_zero": true
+    },
+    {
+      "full_labels": [
+        [
+          1,
+          2,
+          4,
+          8,
+          16
+        ]
+      ],
+      "original_phase_bits": 6,
+      "visibility_exact": "0",
+      "measured_coarse_bits_per_component": 1,
+      "original_noise_model": "independent original Z faults",
+      "full_frequency_map_injective": true,
+      "exported_product_twirl_plan": {
+        "original_phase_wires": 5,
+        "public_dual_values": [
+          1
+        ],
+        "gates": [
+          [
+            "Z",
+            0
+          ],
+          [
+            "H",
+            0
+          ],
+          [
+            "H",
+            1
+          ],
+          [
+            "H",
+            2
+          ],
+          [
+            "H",
+            3
+          ],
+          [
+            "H",
+            4
+          ]
+        ],
+        "terminal_Z_measurement_wires": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "uniform_random_bits_per_packet": 1,
+        "extra_zero_qubits": 0,
+        "coarse_bits_per_component": 1,
+        "pointwise_z_channel_equality_is_after_ignoring_twirl_values": true,
+        "twirl_values_may_be_retained_without_weakening_information_lower_bound": true,
+        "complete_twirl_and_syndrome_instruments_are_identical": false,
+        "same_discarded_syndrome_fixed_X_channel": true,
+        "baseline_requires_actual_unknown_secret_phase_qubits": true,
+        "classical_simulation_of_unknown_secret_data_supplied": false,
+        "hardware_transpilation_or_execution_performed": false
+      },
+      "raw_full_original_secret_information_bits": 0.0,
+      "pinched_residual_secret_X_information_bits": -3.503747738547566e-17,
+      "joint_syndrome_X_information_bits": -5.75615699904243e-17,
+      "charged_secret_coset_information_loss_bits": 3.503747738547566e-17,
+      "raw_output_uniformity_residual": 0.0,
+      "actual_pinching_vs_classical_secret_coset_average_residual": 1.3877787807814457e-17,
+      "certified_information_lower_bits_exact": "0",
+      "all_original_secrets_enumerated": 64,
+      "all_residual_secrets_enumerated": 32,
+      "selected_fixture_is_native_source_average_evidence": false,
+      "likelihood_tables_are_polynomial_decoders": false,
+      "parity_compression_plan_on_example_measured_zero_syndrome": {
+        "full_labels": [
+          [
+            1,
+            2,
+            4,
+            8,
+            16
+          ]
+        ],
+        "original_phase_bits": 6,
+        "actually_measured_coarse_bits_per_component": 1,
+        "higher_syndrome_constraints_not_measured_or_imposed": true,
+        "complete_measured_parity_fiber_affine_index_compiled": true,
+        "measured_syndrome": [
+          0
+        ],
+        "original_phase_wires": 5,
+        "binary_low_syndrome_rank": 1,
+        "cleared_pivot_wires": [
+          0
+        ],
+        "retained_free_wires": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "retained_quantum_wires": 4,
+        "affine_origin_hex": "0x0",
+        "kernel_direction_hex": [
+          "0x2",
+          "0x4",
+          "0x8",
+          "0x10"
+        ],
+        "Clifford_gates_after_measured_syndrome": [],
+        "extra_zero_work_qubits": 0,
+        "quadratic_high_syndrome_equations": [],
+        "full_fiber_enumeration_used_by_compiler": false,
+        "remaining_quadratic_fiber_inverse_supplied": false,
+        "higher_phase_linearity_in_free_bits_assumed": false,
+        "fresh_independent_phase_qubits_supplied": false,
+        "original_independent_Z_noise_may_be_correlated_in_free_coordinates": true,
+        "noise_kernel": "v^popcount(XOR_j ((u_j XOR u'_j)*V_j))",
+        "noise_kernel_formula_requires_original_independent_Z_faults": true,
+        "unitary_coordinate_change_increases_information": false,
+        "hardware_transpilation_or_execution_performed": false
+      },
+      "actual_compiler_must_use_realized_syndrome_not_postselect_zero": true
+    }
+  ],
+  "native_frontiers": [
+    {
+      "components": 16,
+      "physical_width": 48,
+      "original_phase_bits": 24,
+      "measured_coarse_bits_per_component": 1,
+      "original_Z_marginal_visibility_lower_bound": "15/16",
+      "raw_X_information_per_original_qubit_lower_bits_exact": "4303918986818856719451692055803181190530214784985375/11703705111745870568975108140391994421404707804151808",
+      "secret_coset_entropy_charged_bits": 16,
+      "discard_syndrome_fixed_X_information_lower_bits_exact": "1208051848710699589379968027017549150185936550804317/731481569484116910560944258774499651337794237759488",
+      "retained_joint_syndrome_X_information_lower_bits_exact": "1208051848710699589379968027017549150185936550804317/731481569484116910560944258774499651337794237759488",
+      "uniform_n_ge_64_information_lower_bits_exact": "0",
+      "full_frequency_noninjectivity_probability_power_of_two_upper_exponent": 304,
+      "bound_is_pointwise_on_every_full_frequency_injective_matrix": true,
+      "pointwise_syndrome_information_lower_bound_claimed": false,
+      "uniform_original_and_residual_secret_priors_required": true,
+      "source_original_phase_qubits_per_attempt": 48,
+      "actual_syndrome_CX_CCX_gate_count_upper": 768,
+      "actual_terminal_H_gates": 48,
+      "same_discarded_syndrome_law_via_product_twirl_phase_gate_count_upper": 48,
+      "product_twirl_phase_gate": "Z",
+      "product_twirl_needs_coherent_syndrome_register": false,
+      "parity_only_can_clear_measured_linear_constraints_with_Clifford_gates": true,
+      "parity_compression_CNOT_count_upper": 512,
+      "compressed_free_wires": "m-rank(A mod2)",
+      "fresh_independent_phase_source_after_compression": false,
+      "extra_arithmetic_scratch_qubits": 0,
+      "all_syndrome_branches_retained_or_physically_discarded_without_postselection": true,
+      "requires_random_XY_masks_or_collective_terminal_measurement": false,
+      "full_secret_identification_or_efficient_inference_proved": false,
+      "information_lower_bound_is_a_sample_complexity_upper_bound": false,
+      "beats_original_raw_phase_qubit_measurement_baseline": false,
+      "actual_natural_source_noise_certified": false,
+      "uniform_prior_bound_valid_for_arbitrary_adaptive_posteriors": false
+    },
+    {
+      "components": 32,
+      "physical_width": 96,
+      "original_phase_bits": 40,
+      "measured_coarse_bits_per_component": 1,
+      "original_Z_marginal_visibility_lower_bound": "31/32",
+      "raw_X_information_per_original_qubit_lower_bits_exact": "1267336799734193117126481241161755969532213550534669942258658465/3166822933909521992078211107165960537589302731153883267894083584",
+      "secret_coset_entropy_charged_bits": 32,
+      "discard_syndrome_fixed_X_information_lower_bits_exact": "211729155097685786433744205439769123669112640150042186293963937/32987738894890854084148032366312088933221903449519617373896704",
+      "retained_joint_syndrome_X_information_lower_bits_exact": "211729155097685786433744205439769123669112640150042186293963937/32987738894890854084148032366312088933221903449519617373896704",
+      "uniform_n_ge_64_information_lower_bits_exact": "0",
+      "full_frequency_noninjectivity_probability_power_of_two_upper_exponent": 1120,
+      "bound_is_pointwise_on_every_full_frequency_injective_matrix": true,
+      "pointwise_syndrome_information_lower_bound_claimed": false,
+      "uniform_original_and_residual_secret_priors_required": true,
+      "source_original_phase_qubits_per_attempt": 96,
+      "actual_syndrome_CX_CCX_gate_count_upper": 3072,
+      "actual_terminal_H_gates": 96,
+      "same_discarded_syndrome_law_via_product_twirl_phase_gate_count_upper": 96,
+      "product_twirl_phase_gate": "Z",
+      "product_twirl_needs_coherent_syndrome_register": false,
+      "parity_only_can_clear_measured_linear_constraints_with_Clifford_gates": true,
+      "parity_compression_CNOT_count_upper": 2048,
+      "compressed_free_wires": "m-rank(A mod2)",
+      "fresh_independent_phase_source_after_compression": false,
+      "extra_arithmetic_scratch_qubits": 0,
+      "all_syndrome_branches_retained_or_physically_discarded_without_postselection": true,
+      "requires_random_XY_masks_or_collective_terminal_measurement": false,
+      "full_secret_identification_or_efficient_inference_proved": false,
+      "information_lower_bound_is_a_sample_complexity_upper_bound": false,
+      "beats_original_raw_phase_qubit_measurement_baseline": false,
+      "actual_natural_source_noise_certified": false,
+      "uniform_prior_bound_valid_for_arbitrary_adaptive_posteriors": false
+    },
+    {
+      "components": 64,
+      "physical_width": 192,
+      "original_phase_bits": 72,
+      "measured_coarse_bits_per_component": 1,
+      "original_Z_marginal_visibility_lower_bound": "63/64",
+      "raw_X_information_per_original_qubit_lower_bits_exact": "12883640588520952139017276604462715414502992255938388182153773255258665/30842178987220331925099065259550457490640893219386414918382530125103104",
+      "secret_coset_entropy_charged_bits": 64,
+      "discard_syndrome_fixed_X_information_lower_bits_exact": "7808742778342524491952764553837688752868083548428749628078789640672891/481909046675317686329672894680475898291263956552912733099727033204736",
+      "retained_joint_syndrome_X_information_lower_bits_exact": "7808742778342524491952764553837688752868083548428749628078789640672891/481909046675317686329672894680475898291263956552912733099727033204736",
+      "uniform_n_ge_64_information_lower_bits_exact": "16",
+      "full_frequency_noninjectivity_probability_power_of_two_upper_exponent": 4288,
+      "bound_is_pointwise_on_every_full_frequency_injective_matrix": true,
+      "pointwise_syndrome_information_lower_bound_claimed": false,
+      "uniform_original_and_residual_secret_priors_required": true,
+      "source_original_phase_qubits_per_attempt": 192,
+      "actual_syndrome_CX_CCX_gate_count_upper": 12288,
+      "actual_terminal_H_gates": 192,
+      "same_discarded_syndrome_law_via_product_twirl_phase_gate_count_upper": 192,
+      "product_twirl_phase_gate": "Z",
+      "product_twirl_needs_coherent_syndrome_register": false,
+      "parity_only_can_clear_measured_linear_constraints_with_Clifford_gates": true,
+      "parity_compression_CNOT_count_upper": 8192,
+      "compressed_free_wires": "m-rank(A mod2)",
+      "fresh_independent_phase_source_after_compression": false,
+      "extra_arithmetic_scratch_qubits": 0,
+      "all_syndrome_branches_retained_or_physically_discarded_without_postselection": true,
+      "requires_random_XY_masks_or_collective_terminal_measurement": false,
+      "full_secret_identification_or_efficient_inference_proved": false,
+      "information_lower_bound_is_a_sample_complexity_upper_bound": false,
+      "beats_original_raw_phase_qubit_measurement_baseline": false,
+      "actual_natural_source_noise_certified": false,
+      "uniform_prior_bound_valid_for_arbitrary_adaptive_posteriors": false
+    },
+    {
+      "components": 128,
+      "physical_width": 384,
+      "original_phase_bits": 136,
+      "measured_coarse_bits_per_component": 1,
+      "original_Z_marginal_visibility_lower_bound": "127/128",
+      "raw_X_information_per_original_qubit_lower_bits_exact": "3562508184809468827471919416302470262862475794550218916930851679879195567434653719/8345367455511852836567608031546154894800874334822046731451786994618315079409467392",
+      "secret_coset_entropy_charged_bits": 128,
+      "discard_syndrome_fixed_X_information_lower_bits_exact": "780719032972184548616050072453751964595517682942870006446922681673090540964831255/21732727748728783428561479248818111705210610246932413363155695298485195519295488",
+      "retained_joint_syndrome_X_information_lower_bits_exact": "780719032972184548616050072453751964595517682942870006446922681673090540964831255/21732727748728783428561479248818111705210610246932413363155695298485195519295488",
+      "uniform_n_ge_64_information_lower_bits_exact": "32",
+      "full_frequency_noninjectivity_probability_power_of_two_upper_exponent": 16768,
+      "bound_is_pointwise_on_every_full_frequency_injective_matrix": true,
+      "pointwise_syndrome_information_lower_bound_claimed": false,
+      "uniform_original_and_residual_secret_priors_required": true,
+      "source_original_phase_qubits_per_attempt": 384,
+      "actual_syndrome_CX_CCX_gate_count_upper": 49152,
+      "actual_terminal_H_gates": 384,
+      "same_discarded_syndrome_law_via_product_twirl_phase_gate_count_upper": 384,
+      "product_twirl_phase_gate": "Z",
+      "product_twirl_needs_coherent_syndrome_register": false,
+      "parity_only_can_clear_measured_linear_constraints_with_Clifford_gates": true,
+      "parity_compression_CNOT_count_upper": 32768,
+      "compressed_free_wires": "m-rank(A mod2)",
+      "fresh_independent_phase_source_after_compression": false,
+      "extra_arithmetic_scratch_qubits": 0,
+      "all_syndrome_branches_retained_or_physically_discarded_without_postselection": true,
+      "requires_random_XY_masks_or_collective_terminal_measurement": false,
+      "full_secret_identification_or_efficient_inference_proved": false,
+      "information_lower_bound_is_a_sample_complexity_upper_bound": false,
+      "beats_original_raw_phase_qubit_measurement_baseline": false,
+      "actual_natural_source_noise_certified": false,
+      "uniform_prior_bound_valid_for_arbitrary_adaptive_posteriors": false
+    },
+    {
+      "components": 256,
+      "physical_width": 768,
+      "original_phase_bits": 264,
+      "measured_coarse_bits_per_component": 1,
+      "original_Z_marginal_visibility_lower_bound": "255/256",
+      "raw_X_information_per_original_qubit_lower_bits_exact": "12031276818808688279964940973597338940349711957296773397096706976712218061571716119435313625/27877951340187000012662107302118189012671169989096123648842648688722948764534570898880987136",
+      "secret_coset_entropy_charged_bits": 256,
+      "discard_syndrome_fixed_X_information_lower_bits_exact": "8215879116239064827232715618673827808377965882794196542447472241413705420180577459424953739/108898247422605468799461356648899175830746757769906733003291596440324018611463167573753856",
+      "retained_joint_syndrome_X_information_lower_bits_exact": "8215879116239064827232715618673827808377965882794196542447472241413705420180577459424953739/108898247422605468799461356648899175830746757769906733003291596440324018611463167573753856",
+      "uniform_n_ge_64_information_lower_bits_exact": "64",
+      "full_frequency_noninjectivity_probability_power_of_two_upper_exponent": 66304,
+      "bound_is_pointwise_on_every_full_frequency_injective_matrix": true,
+      "pointwise_syndrome_information_lower_bound_claimed": false,
+      "uniform_original_and_residual_secret_priors_required": true,
+      "source_original_phase_qubits_per_attempt": 768,
+      "actual_syndrome_CX_CCX_gate_count_upper": 196608,
+      "actual_terminal_H_gates": 768,
+      "same_discarded_syndrome_law_via_product_twirl_phase_gate_count_upper": 768,
+      "product_twirl_phase_gate": "Z",
+      "product_twirl_needs_coherent_syndrome_register": false,
+      "parity_only_can_clear_measured_linear_constraints_with_Clifford_gates": true,
+      "parity_compression_CNOT_count_upper": 131072,
+      "compressed_free_wires": "m-rank(A mod2)",
+      "fresh_independent_phase_source_after_compression": false,
+      "extra_arithmetic_scratch_qubits": 0,
+      "all_syndrome_branches_retained_or_physically_discarded_without_postselection": true,
+      "requires_random_XY_masks_or_collective_terminal_measurement": false,
+      "full_secret_identification_or_efficient_inference_proved": false,
+      "information_lower_bound_is_a_sample_complexity_upper_bound": false,
+      "beats_original_raw_phase_qubit_measurement_baseline": false,
+      "actual_natural_source_noise_certified": false,
+      "uniform_prior_bound_valid_for_arbitrary_adaptive_posteriors": false
+    },
+    {
+      "components": 1024,
+      "physical_width": 3072,
+      "original_phase_bits": 1032,
+      "measured_coarse_bits_per_component": 1,
+      "original_Z_marginal_visibility_lower_bound": "1023/1024",
+      "raw_X_information_per_original_qubit_lower_bits_exact": "2906107246134758878944316313007215599312000461252895953813629936767480993343252961796914633833379261555215805/6678667969763088241810710447119677171599597248458034632323858700294719415169667761099894026656685999247065088",
+      "secret_coset_entropy_charged_bits": 1024,
+      "discard_syndrome_fixed_X_information_lower_bits_exact": "2039653768641188395022238491901969626336404135300653229117031110007723564860091124290849874843451785418582327/6522136689221765861143271921015309737890231687947299445628768262006561928876628672949115260406919921139712",
+      "retained_joint_syndrome_X_information_lower_bits_exact": "2039653768641188395022238491901969626336404135300653229117031110007723564860091124290849874843451785418582327/6522136689221765861143271921015309737890231687947299445628768262006561928876628672949115260406919921139712",
+      "uniform_n_ge_64_information_lower_bits_exact": "256",
+      "full_frequency_noninjectivity_probability_power_of_two_upper_exponent": 1051648,
+      "bound_is_pointwise_on_every_full_frequency_injective_matrix": true,
+      "pointwise_syndrome_information_lower_bound_claimed": false,
+      "uniform_original_and_residual_secret_priors_required": true,
+      "source_original_phase_qubits_per_attempt": 3072,
+      "actual_syndrome_CX_CCX_gate_count_upper": 3145728,
+      "actual_terminal_H_gates": 3072,
+      "same_discarded_syndrome_law_via_product_twirl_phase_gate_count_upper": 3072,
+      "product_twirl_phase_gate": "Z",
+      "product_twirl_needs_coherent_syndrome_register": false,
+      "parity_only_can_clear_measured_linear_constraints_with_Clifford_gates": true,
+      "parity_compression_CNOT_count_upper": 2097152,
+      "compressed_free_wires": "m-rank(A mod2)",
+      "fresh_independent_phase_source_after_compression": false,
+      "extra_arithmetic_scratch_qubits": 0,
+      "all_syndrome_branches_retained_or_physically_discarded_without_postselection": true,
+      "requires_random_XY_masks_or_collective_terminal_measurement": false,
+      "full_secret_identification_or_efficient_inference_proved": false,
+      "information_lower_bound_is_a_sample_complexity_upper_bound": false,
+      "beats_original_raw_phase_qubit_measurement_baseline": false,
+      "actual_natural_source_noise_certified": false,
+      "uniform_prior_bound_valid_for_arbitrary_adaptive_posteriors": false
+    },
+    {
+      "components": 16,
+      "physical_width": 80,
+      "original_phase_bits": 24,
+      "measured_coarse_bits_per_component": 2,
+      "original_Z_marginal_visibility_lower_bound": "15/16",
+      "raw_X_information_per_original_qubit_lower_bits_exact": "4303918986818856719451692055803181190530214784985375/11703705111745870568975108140391994421404707804151808",
+      "secret_coset_entropy_charged_bits": 32,
+      "discard_syndrome_fixed_X_information_lower_bits_exact": "0",
+      "retained_joint_syndrome_X_information_lower_bits_exact": "0",
+      "uniform_n_ge_64_information_lower_bits_exact": "0",
+      "full_frequency_noninjectivity_probability_power_of_two_upper_exponent": 256,
+      "bound_is_pointwise_on_every_full_frequency_injective_matrix": true,
+      "pointwise_syndrome_information_lower_bound_claimed": false,
+      "uniform_original_and_residual_secret_priors_required": true,
+      "source_original_phase_qubits_per_attempt": 80,
+      "actual_syndrome_CX_CCX_gate_count_upper": 2560,
+      "actual_terminal_H_gates": 80,
+      "same_discarded_syndrome_law_via_product_twirl_phase_gate_count_upper": 240,
+      "product_twirl_phase_gate": "S",
+      "product_twirl_needs_coherent_syndrome_register": false,
+      "parity_only_can_clear_measured_linear_constraints_with_Clifford_gates": false,
+      "parity_compression_CNOT_count_upper": null,
+      "compressed_free_wires": "mod4 fiber still constrained quadratically",
+      "fresh_independent_phase_source_after_compression": false,
+      "extra_arithmetic_scratch_qubits": 0,
+      "all_syndrome_branches_retained_or_physically_discarded_without_postselection": true,
+      "requires_random_XY_masks_or_collective_terminal_measurement": false,
+      "full_secret_identification_or_efficient_inference_proved": false,
+      "information_lower_bound_is_a_sample_complexity_upper_bound": false,
+      "beats_original_raw_phase_qubit_measurement_baseline": false,
+      "actual_natural_source_noise_certified": false,
+      "uniform_prior_bound_valid_for_arbitrary_adaptive_posteriors": false
+    },
+    {
+      "components": 32,
+      "physical_width": 160,
+      "original_phase_bits": 40,
+      "measured_coarse_bits_per_component": 2,
+      "original_Z_marginal_visibility_lower_bound": "31/32",
+      "raw_X_information_per_original_qubit_lower_bits_exact": "1267336799734193117126481241161755969532213550534669942258658465/3166822933909521992078211107165960537589302731153883267894083584",
+      "secret_coset_entropy_charged_bits": 64,
+      "discard_syndrome_fixed_X_information_lower_bits_exact": "3038130851921601475983991476858772482462290365583175505125157/98963216684672562252444097098936266799665710348558852121690112",
+      "retained_joint_syndrome_X_information_lower_bits_exact": "3038130851921601475983991476858772482462290365583175505125157/98963216684672562252444097098936266799665710348558852121690112",
+      "uniform_n_ge_64_information_lower_bits_exact": "0",
+      "full_frequency_noninjectivity_probability_power_of_two_upper_exponent": 1024,
+      "bound_is_pointwise_on_every_full_frequency_injective_matrix": true,
+      "pointwise_syndrome_information_lower_bound_claimed": false,
+      "uniform_original_and_residual_secret_priors_required": true,
+      "source_original_phase_qubits_per_attempt": 160,
+      "actual_syndrome_CX_CCX_gate_count_upper": 10240,
+      "actual_terminal_H_gates": 160,
+      "same_discarded_syndrome_law_via_product_twirl_phase_gate_count_upper": 480,
+      "product_twirl_phase_gate": "S",
+      "product_twirl_needs_coherent_syndrome_register": false,
+      "parity_only_can_clear_measured_linear_constraints_with_Clifford_gates": false,
+      "parity_compression_CNOT_count_upper": null,
+      "compressed_free_wires": "mod4 fiber still constrained quadratically",
+      "fresh_independent_phase_source_after_compression": false,
+      "extra_arithmetic_scratch_qubits": 0,
+      "all_syndrome_branches_retained_or_physically_discarded_without_postselection": true,
+      "requires_random_XY_masks_or_collective_terminal_measurement": false,
+      "full_secret_identification_or_efficient_inference_proved": false,
+      "information_lower_bound_is_a_sample_complexity_upper_bound": false,
+      "beats_original_raw_phase_qubit_measurement_baseline": false,
+      "actual_natural_source_noise_certified": false,
+      "uniform_prior_bound_valid_for_arbitrary_adaptive_posteriors": false
+    },
+    {
+      "components": 64,
+      "physical_width": 320,
+      "original_phase_bits": 72,
+      "measured_coarse_bits_per_component": 2,
+      "original_Z_marginal_visibility_lower_bound": "63/64",
+      "raw_X_information_per_original_qubit_lower_bits_exact": "12883640588520952139017276604462715414502992255938388182153773255258665/30842178987220331925099065259550457490640893219386414918382530125103104",
+      "secret_coset_entropy_charged_bits": 128,
+      "discard_syndrome_fixed_X_information_lower_bits_exact": "2733844968164096844888252503212662091233174840919111074003806026087117/481909046675317686329672894680475898291263956552912733099727033204736",
+      "retained_joint_syndrome_X_information_lower_bits_exact": "2733844968164096844888252503212662091233174840919111074003806026087117/481909046675317686329672894680475898291263956552912733099727033204736",
+      "uniform_n_ge_64_information_lower_bits_exact": "4",
+      "full_frequency_noninjectivity_probability_power_of_two_upper_exponent": 4096,
+      "bound_is_pointwise_on_every_full_frequency_injective_matrix": true,
+      "pointwise_syndrome_information_lower_bound_claimed": false,
+      "uniform_original_and_residual_secret_priors_required": true,
+      "source_original_phase_qubits_per_attempt": 320,
+      "actual_syndrome_CX_CCX_gate_count_upper": 40960,
+      "actual_terminal_H_gates": 320,
+      "same_discarded_syndrome_law_via_product_twirl_phase_gate_count_upper": 960,
+      "product_twirl_phase_gate": "S",
+      "product_twirl_needs_coherent_syndrome_register": false,
+      "parity_only_can_clear_measured_linear_constraints_with_Clifford_gates": false,
+      "parity_compression_CNOT_count_upper": null,
+      "compressed_free_wires": "mod4 fiber still constrained quadratically",
+      "fresh_independent_phase_source_after_compression": false,
+      "extra_arithmetic_scratch_qubits": 0,
+      "all_syndrome_branches_retained_or_physically_discarded_without_postselection": true,
+      "requires_random_XY_masks_or_collective_terminal_measurement": false,
+      "full_secret_identification_or_efficient_inference_proved": false,
+      "information_lower_bound_is_a_sample_complexity_upper_bound": false,
+      "beats_original_raw_phase_qubit_measurement_baseline": false,
+      "actual_natural_source_noise_certified": false,
+      "uniform_prior_bound_valid_for_arbitrary_adaptive_posteriors": false
+    },
+    {
+      "components": 128,
+      "physical_width": 640,
+      "original_phase_bits": 136,
+      "measured_coarse_bits_per_component": 2,
+      "original_Z_marginal_visibility_lower_bound": "127/128",
+      "raw_X_information_per_original_qubit_lower_bits_exact": "3562508184809468827471919416302470262862475794550218916930851679879195567434653719/8345367455511852836567608031546154894800874334822046731451786994618315079409467392",
+      "secret_coset_entropy_charged_bits": 256,
+      "discard_syndrome_fixed_X_information_lower_bits_exact": "1121806013023638464224381018420041524710630303107001121750684410159347678354333811/65198183246186350285684437746454335115631830740797240089467085895455586557886464",
+      "retained_joint_syndrome_X_information_lower_bits_exact": "1121806013023638464224381018420041524710630303107001121750684410159347678354333811/65198183246186350285684437746454335115631830740797240089467085895455586557886464",
+      "uniform_n_ge_64_information_lower_bits_exact": "8",
+      "full_frequency_noninjectivity_probability_power_of_two_upper_exponent": 16384,
+      "bound_is_pointwise_on_every_full_frequency_injective_matrix": true,
+      "pointwise_syndrome_information_lower_bound_claimed": false,
+      "uniform_original_and_residual_secret_priors_required": true,
+      "source_original_phase_qubits_per_attempt": 640,
+      "actual_syndrome_CX_CCX_gate_count_upper": 163840,
+      "actual_terminal_H_gates": 640,
+      "same_discarded_syndrome_law_via_product_twirl_phase_gate_count_upper": 1920,
+      "product_twirl_phase_gate": "S",
+      "product_twirl_needs_coherent_syndrome_register": false,
+      "parity_only_can_clear_measured_linear_constraints_with_Clifford_gates": false,
+      "parity_compression_CNOT_count_upper": null,
+      "compressed_free_wires": "mod4 fiber still constrained quadratically",
+      "fresh_independent_phase_source_after_compression": false,
+      "extra_arithmetic_scratch_qubits": 0,
+      "all_syndrome_branches_retained_or_physically_discarded_without_postselection": true,
+      "requires_random_XY_masks_or_collective_terminal_measurement": false,
+      "full_secret_identification_or_efficient_inference_proved": false,
+      "information_lower_bound_is_a_sample_complexity_upper_bound": false,
+      "beats_original_raw_phase_qubit_measurement_baseline": false,
+      "actual_natural_source_noise_certified": false,
+      "uniform_prior_bound_valid_for_arbitrary_adaptive_posteriors": false
+    },
+    {
+      "components": 256,
+      "physical_width": 1280,
+      "original_phase_bits": 264,
+      "measured_coarse_bits_per_component": 2,
+      "original_Z_marginal_visibility_lower_bound": "255/256",
+      "raw_X_information_per_original_qubit_lower_bits_exact": "12031276818808688279964940973597338940349711957296773397096706976712218061571716119435313625/27877951340187000012662107302118189012671169989096123648842648688722948764534570898880987136",
+      "secret_coset_entropy_charged_bits": 512,
+      "discard_syndrome_fixed_X_information_lower_bits_exact": "4400481413669441374500490263750316676406219808291619687798237506115192778789438799414593853/108898247422605468799461356648899175830746757769906733003291596440324018611463167573753856",
+      "retained_joint_syndrome_X_information_lower_bits_exact": "4400481413669441374500490263750316676406219808291619687798237506115192778789438799414593853/108898247422605468799461356648899175830746757769906733003291596440324018611463167573753856",
+      "uniform_n_ge_64_information_lower_bits_exact": "16",
+      "full_frequency_noninjectivity_probability_power_of_two_upper_exponent": 65536,
+      "bound_is_pointwise_on_every_full_frequency_injective_matrix": true,
+      "pointwise_syndrome_information_lower_bound_claimed": false,
+      "uniform_original_and_residual_secret_priors_required": true,
+      "source_original_phase_qubits_per_attempt": 1280,
+      "actual_syndrome_CX_CCX_gate_count_upper": 655360,
+      "actual_terminal_H_gates": 1280,
+      "same_discarded_syndrome_law_via_product_twirl_phase_gate_count_upper": 3840,
+      "product_twirl_phase_gate": "S",
+      "product_twirl_needs_coherent_syndrome_register": false,
+      "parity_only_can_clear_measured_linear_constraints_with_Clifford_gates": false,
+      "parity_compression_CNOT_count_upper": null,
+      "compressed_free_wires": "mod4 fiber still constrained quadratically",
+      "fresh_independent_phase_source_after_compression": false,
+      "extra_arithmetic_scratch_qubits": 0,
+      "all_syndrome_branches_retained_or_physically_discarded_without_postselection": true,
+      "requires_random_XY_masks_or_collective_terminal_measurement": false,
+      "full_secret_identification_or_efficient_inference_proved": false,
+      "information_lower_bound_is_a_sample_complexity_upper_bound": false,
+      "beats_original_raw_phase_qubit_measurement_baseline": false,
+      "actual_natural_source_noise_certified": false,
+      "uniform_prior_bound_valid_for_arbitrary_adaptive_posteriors": false
+    },
+    {
+      "components": 1024,
+      "physical_width": 5120,
+      "original_phase_bits": 1032,
+      "measured_coarse_bits_per_component": 2,
+      "original_Z_marginal_visibility_lower_bound": "1023/1024",
+      "raw_X_information_per_original_qubit_lower_bits_exact": "2906107246134758878944316313007215599312000461252895953813629936767480993343252961796914633833379261555215805/6678667969763088241810710447119677171599597248458034632323858700294719415169667761099894026656685999247065088",
+      "secret_coset_entropy_charged_bits": 2048,
+      "discard_syndrome_fixed_X_information_lower_bits_exact": "1173200291147617911100160670796723653360807809348410504420432283247966136376929286784785115853524309281948849/6522136689221765861143271921015309737890231687947299445628768262006561928876628672949115260406919921139712",
+      "retained_joint_syndrome_X_information_lower_bits_exact": "1173200291147617911100160670796723653360807809348410504420432283247966136376929286784785115853524309281948849/6522136689221765861143271921015309737890231687947299445628768262006561928876628672949115260406919921139712",
+      "uniform_n_ge_64_information_lower_bits_exact": "64",
+      "full_frequency_noninjectivity_probability_power_of_two_upper_exponent": 1048576,
+      "bound_is_pointwise_on_every_full_frequency_injective_matrix": true,
+      "pointwise_syndrome_information_lower_bound_claimed": false,
+      "uniform_original_and_residual_secret_priors_required": true,
+      "source_original_phase_qubits_per_attempt": 5120,
+      "actual_syndrome_CX_CCX_gate_count_upper": 10485760,
+      "actual_terminal_H_gates": 5120,
+      "same_discarded_syndrome_law_via_product_twirl_phase_gate_count_upper": 15360,
+      "product_twirl_phase_gate": "S",
+      "product_twirl_needs_coherent_syndrome_register": false,
+      "parity_only_can_clear_measured_linear_constraints_with_Clifford_gates": false,
+      "parity_compression_CNOT_count_upper": null,
+      "compressed_free_wires": "mod4 fiber still constrained quadratically",
+      "fresh_independent_phase_source_after_compression": false,
+      "extra_arithmetic_scratch_qubits": 0,
+      "all_syndrome_branches_retained_or_physically_discarded_without_postselection": true,
+      "requires_random_XY_masks_or_collective_terminal_measurement": false,
+      "full_secret_identification_or_efficient_inference_proved": false,
+      "information_lower_bound_is_a_sample_complexity_upper_bound": false,
+      "beats_original_raw_phase_qubit_measurement_baseline": false,
+      "actual_natural_source_noise_certified": false,
+      "uniform_prior_bound_valid_for_arbitrary_adaptive_posteriors": false
+    }
+  ],
+  "entropy_series_log_constant_certificate": {
+    "exp_7_over_10_degree3_lower_exact": "12013/6000",
+    "therefore_inverse_ln2_strictly_larger_than": "10/7"
+  },
+  "actual_positive_information_lower_bound_not_Holevo_only": true,
+  "any_secret_independent_correlated_Z_fault_distribution_with_marginal_visibility_lower_bound_covered": true,
+  "general_nonunital_noise_or_secret_dependent_faults_covered": false,
+  "mod4_width3n_upper_bound_does_not_cover_mod2_or_every_packet_width": true,
+  "full_secret_negation_alias_of_real_readout_removed": false,
+  "accepted_speedup_candidate": false,
+  "new_active_negative_result_created": false,
+  "novelty_claim": false,
+  "efficient_decoder_supplied": false,
+  "actual_natural_source_noise_certified": false
+}

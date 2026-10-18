@@ -1,0 +1,28 @@
+{
+  "contract_id": "dcp-quadrature-conjugate-pair-holevo-audit-contract",
+  "title": "DCP Quadrature Conjugate-Pair Holevo Audit: Exact Bloch-Disk Holevo Capacity, Randomized X/Y Fisher Isotropization Bounds, and Singlet Phase-Independence",
+  "version": "1.0.0",
+  "scope": "dcp_equatorial_bloch_disk_holevo_capacity_conjugate_xy_fisher_envelope_and_singlet_invariance",
+  "theorems": [
+    {
+      "id": "T1",
+      "name": "Exact Single-Pair Holevo Capacity on Z_q",
+      "statement": "For any symmetric noise kernel K_eta on Z_q and non-zero difference d in {1, ..., q-1} with harmonic visibility lambda_d, the uniform secret average of rho_d(s; K_eta) is I_2 / 2 and the exact Holevo capacity is chi_d(K_eta) = 1 - h_2((1 + |lambda_d|)/2) bits."
+    },
+    {
+      "id": "T2",
+      "name": "Exact SLD Quantum Fisher Information and Conjugate X/Y Classical Fisher Envelope",
+      "statement": "For any lambda_d in (-1, 1) and phase theta in [0, 2*pi), the SLD quantum Fisher information is constantly I_Q(theta; lambda_d) = lambda_d^2, while the 50/50 sigma_X/sigma_Y quadrature classical Fisher information satisfies lambda_d^2 / 2 = I_XY(0; lambda_d) <= I_XY(theta; lambda_d) <= I_XY(pi/4; lambda_d) = lambda_d^2 / (2 - lambda_d^2) < lambda_d^2."
+    },
+    {
+      "id": "T3",
+      "name": "Two-Copy Singlet Phase Independence and Noise-Purity Estimation",
+      "statement": "For two independent copies rho_d(theta; lambda_d) tensor rho_d(theta; lambda_d), the singlet projection probability <Psi^-|rho_d tensor rho_d|Psi^-> = (1 - lambda_d^2)/4 and triplet probability (3 + lambda_d^2)/4 are identically independent of theta, while <00|rho_d tensor rho_d|11> = (lambda_d^2 / 4) * e^(-2 i theta)."
+    }
+  ],
+  "guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  }
+}

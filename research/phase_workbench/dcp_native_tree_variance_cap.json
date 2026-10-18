@@ -1,0 +1,599 @@
+{
+  "contract_id": "native_partial_list_variance_centered_overflow_cap_v1",
+  "status": "LOCAL_DERIVATION_EXTERNAL_REVIEW_PENDING",
+  "partial_list_pattern_censuses": [
+    {
+      "depth": 1,
+      "chunk_components": 1,
+      "equality_patterns": 4,
+      "complete_partial_list_second_moment": {
+        "numerator_hex": "0x13",
+        "denominator_binary_exponent": 0
+      },
+      "complete_partial_list_variance": {
+        "numerator_hex": "0x3",
+        "denominator_binary_exponent": 0
+      }
+    },
+    {
+      "depth": 2,
+      "chunk_components": 1,
+      "equality_patterns": 16,
+      "complete_partial_list_second_moment": {
+        "numerator_hex": "0x199",
+        "denominator_binary_exponent": 4
+      },
+      "complete_partial_list_variance": {
+        "numerator_hex": "0x99",
+        "denominator_binary_exponent": 4
+      }
+    },
+    {
+      "depth": 3,
+      "chunk_components": 1,
+      "equality_patterns": 256,
+      "complete_partial_list_second_moment": {
+        "numerator_hex": "0x2bd71",
+        "denominator_binary_exponent": 12
+      },
+      "complete_partial_list_variance": {
+        "numerator_hex": "0x1bd71",
+        "denominator_binary_exponent": 12
+      }
+    }
+  ],
+  "dependent_leaf_native_census": {
+    "physical_supports": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        1,
+        2
+      ]
+    ],
+    "all_native_label_assignments": 65536,
+    "leaf_entries_jointly_IID": false,
+    "three_support_parity_constraint_always_zero": true,
+    "partial_list_mean": "4",
+    "partial_list_second_moment": "19",
+    "partial_list_variance": "3"
+  },
+  "centered_cap_frontiers": [
+    {
+      "depth": 1,
+      "chunk_components": 1,
+      "components": 2,
+      "leaf_count": 2,
+      "leaf_list_length_hex": "0x4",
+      "partial_list_variance_by_level": [],
+      "sum_nonroot_full_list_variances": {
+        "numerator_hex": "0x0",
+        "denominator_binary_exponent": 0
+      },
+      "root_graph_second_moment": {
+        "numerator_hex": "0x1f",
+        "denominator_binary_exponent": 4
+      },
+      "centered_capacity_hex": "0x4",
+      "old_Markov_capacity_hex": "0x1000",
+      "integer_deviation_threshold_hex": "0x1",
+      "overflow_probability_upper_exact_rational": "0",
+      "M_times_overflow_upper_exact_rational": "0",
+      "marked_overflow_loss_upper": {
+        "numerator_hex": "0x0",
+        "denominator_binary_exponent": 0
+      },
+      "coarse_accepted_mass_lower_IF_receiver_and_source": {
+        "numerator_hex": "0x11",
+        "denominator_binary_exponent": 9
+      },
+      "capacity_reduction_factor_exact_rational": "1024",
+      "variance_bound_is_pointwise_in_A_or_x": false,
+      "nodes_or_degree_and_overflow_assumed_independent": false,
+      "whole_attempt_overflow_rejection_required": true,
+      "applies_to_silently_truncated_accepted_lists": false,
+      "existing_receiver_default_capacity_updated": false
+    },
+    {
+      "depth": 2,
+      "chunk_components": 1,
+      "components": 3,
+      "leaf_count": 4,
+      "leaf_list_length_hex": "0x4",
+      "partial_list_variance_by_level": [
+        {
+          "level": 1,
+          "nonroot_nodes": 2,
+          "each_full_list_mean": 4,
+          "each_full_list_variance": {
+            "numerator_hex": "0x3",
+            "denominator_binary_exponent": 0
+          },
+          "sum_of_variances_at_level": {
+            "numerator_hex": "0x6",
+            "denominator_binary_exponent": 0
+          }
+        }
+      ],
+      "sum_nonroot_full_list_variances": {
+        "numerator_hex": "0x6",
+        "denominator_binary_exponent": 0
+      },
+      "root_graph_second_moment": {
+        "numerator_hex": "0x259",
+        "denominator_binary_exponent": 8
+      },
+      "centered_capacity_hex": "0x47",
+      "old_Markov_capacity_hex": "0x3000",
+      "integer_deviation_threshold_hex": "0x44",
+      "overflow_probability_upper_exact_rational": "3/2312",
+      "M_times_overflow_upper_exact_rational": "1803/591872",
+      "marked_overflow_loss_upper": {
+        "numerator_hex": "0x1",
+        "denominator_binary_exponent": 9
+      },
+      "coarse_accepted_mass_lower_IF_receiver_and_source": {
+        "numerator_hex": "0x227",
+        "denominator_binary_exponent": 16
+      },
+      "capacity_reduction_factor_exact_rational": "12288/71",
+      "variance_bound_is_pointwise_in_A_or_x": false,
+      "nodes_or_degree_and_overflow_assumed_independent": false,
+      "whole_attempt_overflow_rejection_required": true,
+      "applies_to_silently_truncated_accepted_lists": false,
+      "existing_receiver_default_capacity_updated": false
+    },
+    {
+      "depth": 3,
+      "chunk_components": 1,
+      "components": 4,
+      "leaf_count": 8,
+      "leaf_list_length_hex": "0x4",
+      "partial_list_variance_by_level": [
+        {
+          "level": 1,
+          "nonroot_nodes": 4,
+          "each_full_list_mean": 4,
+          "each_full_list_variance": {
+            "numerator_hex": "0x3",
+            "denominator_binary_exponent": 0
+          },
+          "sum_of_variances_at_level": {
+            "numerator_hex": "0xc",
+            "denominator_binary_exponent": 0
+          }
+        },
+        {
+          "level": 2,
+          "nonroot_nodes": 2,
+          "each_full_list_mean": 4,
+          "each_full_list_variance": {
+            "numerator_hex": "0x99",
+            "denominator_binary_exponent": 4
+          },
+          "sum_of_variances_at_level": {
+            "numerator_hex": "0x99",
+            "denominator_binary_exponent": 3
+          }
+        }
+      ],
+      "sum_nonroot_full_list_variances": {
+        "numerator_hex": "0xf9",
+        "denominator_binary_exponent": 3
+      },
+      "root_graph_second_moment": {
+        "numerator_hex": "0x37d71",
+        "denominator_binary_exponent": 16
+      },
+      "centered_capacity_hex": "0xb9",
+      "old_Markov_capacity_hex": "0x8000",
+      "integer_deviation_threshold_hex": "0xb6",
+      "overflow_probability_upper_exact_rational": "249/264992",
+      "M_times_overflow_upper_exact_rational": "56951529/17366515712",
+      "marked_overflow_loss_upper": {
+        "numerator_hex": "0x1",
+        "denominator_binary_exponent": 11
+      },
+      "coarse_accepted_mass_lower_IF_receiver_and_source": {
+        "numerator_hex": "0x4828f",
+        "denominator_binary_exponent": 27
+      },
+      "capacity_reduction_factor_exact_rational": "32768/185",
+      "variance_bound_is_pointwise_in_A_or_x": false,
+      "nodes_or_degree_and_overflow_assumed_independent": false,
+      "whole_attempt_overflow_rejection_required": true,
+      "applies_to_silently_truncated_accepted_lists": false,
+      "existing_receiver_default_capacity_updated": false
+    },
+    {
+      "depth": 4,
+      "chunk_components": 4,
+      "components": 20,
+      "leaf_count": 16,
+      "leaf_list_length_hex": "0x100",
+      "partial_list_variance_by_level": [
+        {
+          "level": 1,
+          "nonroot_nodes": 8,
+          "each_full_list_mean": 256,
+          "each_full_list_variance": {
+            "numerator_hex": "0xff",
+            "denominator_binary_exponent": 0
+          },
+          "sum_of_variances_at_level": {
+            "numerator_hex": "0x7f8",
+            "denominator_binary_exponent": 0
+          }
+        },
+        {
+          "level": 2,
+          "nonroot_nodes": 4,
+          "each_full_list_mean": 256,
+          "each_full_list_variance": {
+            "numerator_hex": "0x2fdfe01",
+            "denominator_binary_exponent": 16
+          },
+          "sum_of_variances_at_level": {
+            "numerator_hex": "0x2fdfe01",
+            "denominator_binary_exponent": 14
+          }
+        },
+        {
+          "level": 3,
+          "nonroot_nodes": 2,
+          "each_full_list_mean": 256,
+          "each_full_list_variance": {
+            "numerator_hex": "0x703effa0dfffc01",
+            "denominator_binary_exponent": 48
+          },
+          "sum_of_variances_at_level": {
+            "numerator_hex": "0x703effa0dfffc01",
+            "denominator_binary_exponent": 47
+          }
+        }
+      ],
+      "sum_nonroot_full_list_variances": {
+        "numerator_hex": "0x10fbebfc0dfffc01",
+        "denominator_binary_exponent": 47
+      },
+      "root_graph_second_moment": {
+        "numerator_hex": "0x20e3817234995262d474c0f841c0ff801",
+        "denominator_binary_exponent": 128
+      },
+      "centered_capacity_hex": "0xb18",
+      "old_Markov_capacity_hex": "0x300000",
+      "integer_deviation_threshold_hex": "0xa19",
+      "overflow_probability_upper_exact_rational": "244766238312077517/188087912625036328960",
+      "M_times_overflow_upper_exact_rational": "171205456948731082809843165214720839859709939370936185037/64003000097266026103397534146871717403167056442083256565760",
+      "marked_overflow_loss_upper": {
+        "numerator_hex": "0x1",
+        "denominator_binary_exponent": 9
+      },
+      "coarse_accepted_mass_lower_IF_receiver_and_source": {
+        "numerator_hex": "0x271c7e8dcb66ad9d2b8b3f07be3f007ff",
+        "denominator_binary_exponent": 136
+      },
+      "capacity_reduction_factor_exact_rational": "393216/355",
+      "variance_bound_is_pointwise_in_A_or_x": false,
+      "nodes_or_degree_and_overflow_assumed_independent": false,
+      "whole_attempt_overflow_rejection_required": true,
+      "applies_to_silently_truncated_accepted_lists": false,
+      "existing_receiver_default_capacity_updated": false
+    },
+    {
+      "depth": 4,
+      "chunk_components": 8,
+      "components": 40,
+      "leaf_count": 16,
+      "leaf_list_length_hex": "0x10000",
+      "partial_list_variance_by_level": [
+        {
+          "level": 1,
+          "nonroot_nodes": 8,
+          "each_full_list_mean": 65536,
+          "each_full_list_variance": {
+            "numerator_hex": "0xffff",
+            "denominator_binary_exponent": 0
+          },
+          "sum_of_variances_at_level": {
+            "numerator_hex": "0x7fff8",
+            "denominator_binary_exponent": 0
+          }
+        },
+        {
+          "level": 2,
+          "nonroot_nodes": 4,
+          "each_full_list_mean": 65536,
+          "each_full_list_variance": {
+            "numerator_hex": "0x2fffdfffe0001",
+            "denominator_binary_exponent": 32
+          },
+          "sum_of_variances_at_level": {
+            "numerator_hex": "0x2fffdfffe0001",
+            "denominator_binary_exponent": 30
+          }
+        },
+        {
+          "level": 3,
+          "nonroot_nodes": 2,
+          "each_full_list_mean": 65536,
+          "each_full_list_variance": {
+            "numerator_hex": "0x70003ffeffffa000dfffffffc0001",
+            "denominator_binary_exponent": 96
+          },
+          "sum_of_variances_at_level": {
+            "numerator_hex": "0x70003ffeffffa000dfffffffc0001",
+            "denominator_binary_exponent": 95
+          }
+        }
+      ],
+      "sum_nonroot_full_list_variances": {
+        "numerator_hex": "0x10fffbffebfffc000dfffffffc0001",
+        "denominator_binary_exponent": 95
+      },
+      "root_graph_second_moment": {
+        "numerator_hex": "0x2000e00380017ff23ff4801940127fe2dff46014c000fff84001c000ffff80001",
+        "denominator_binary_exponent": 256
+      },
+      "centered_capacity_hex": "0x1a197",
+      "old_Markov_capacity_hex": "0x30000000",
+      "integer_deviation_threshold_hex": "0xa198",
+      "overflow_probability_upper_exact_rational": "88268729658263422452339834762297345/67792029806594561939812215428042719232",
+      "M_times_overflow_upper_exact_rational": "20443824779016276682758743136449985444732809857996210348051484417782223911381045562719434726999734489965370015745/7849780764943996896793092880296738625652746651844231490991386718115484548114320973801340283658617634953542502449152",
+      "marked_overflow_loss_upper": {
+        "numerator_hex": "0x1",
+        "denominator_binary_exponent": 9
+      },
+      "coarse_accepted_mass_lower_IF_receiver_and_source": {
+        "numerator_hex": "0x27ff1ffc7ffe800dc00b7fe6bfed801d200b9feb3fff0007bffe3fff00007ffff",
+        "denominator_binary_exponent": 264
+      },
+      "capacity_reduction_factor_exact_rational": "805306368/106903",
+      "variance_bound_is_pointwise_in_A_or_x": false,
+      "nodes_or_degree_and_overflow_assumed_independent": false,
+      "whole_attempt_overflow_rejection_required": true,
+      "applies_to_silently_truncated_accepted_lists": false,
+      "existing_receiver_default_capacity_updated": false
+    },
+    {
+      "depth": 4,
+      "chunk_components": 16,
+      "components": 80,
+      "leaf_count": 16,
+      "leaf_list_length_hex": "0x100000000",
+      "partial_list_variance_by_level": [
+        {
+          "level": 1,
+          "nonroot_nodes": 8,
+          "each_full_list_mean": 4294967296,
+          "each_full_list_variance": {
+            "numerator_hex": "0xffffffff",
+            "denominator_binary_exponent": 0
+          },
+          "sum_of_variances_at_level": {
+            "numerator_hex": "0x7fffffff8",
+            "denominator_binary_exponent": 0
+          }
+        },
+        {
+          "level": 2,
+          "nonroot_nodes": 4,
+          "each_full_list_mean": 4294967296,
+          "each_full_list_variance": {
+            "numerator_hex": "0x2fffffffdfffffffe00000001",
+            "denominator_binary_exponent": 64
+          },
+          "sum_of_variances_at_level": {
+            "numerator_hex": "0x2fffffffdfffffffe00000001",
+            "denominator_binary_exponent": 62
+          }
+        },
+        {
+          "level": 3,
+          "nonroot_nodes": 2,
+          "each_full_list_mean": 4294967296,
+          "each_full_list_variance": {
+            "numerator_hex": "0x700000003ffffffeffffffffa0000000dfffffffffffffffc00000001",
+            "denominator_binary_exponent": 192
+          },
+          "sum_of_variances_at_level": {
+            "numerator_hex": "0x700000003ffffffeffffffffa0000000dfffffffffffffffc00000001",
+            "denominator_binary_exponent": 191
+          }
+        }
+      ],
+      "sum_nonroot_full_list_variances": {
+        "numerator_hex": "0x10fffffffbffffffebfffffffc0000000dfffffffffffffffc00000001",
+        "denominator_binary_exponent": 191
+      },
+      "root_graph_second_moment": {
+        "numerator_hex": "0x20000000e0000003800000017ffffff23ffffff480000019400000127fffffe2dffffff460000014c0000000fffffff840000001c0000000ffffffff800000001",
+        "denominator_binary_exponent": 512
+      },
+      "centered_capacity_hex": "0x100a19792",
+      "old_Markov_capacity_hex": "0x300000000000",
+      "integer_deviation_threshold_hex": "0xa19793",
+      "overflow_probability_upper_exact_rational": "528626405209287738798803345647071944554039830779470417882758878795/405985118306979054543954198465495176721823251964509363174020317446144",
+      "M_times_overflow_upper_exact_rational": "14175442638587615549243728538797727687296786242427532866476893935637000656951588409081396613231988667189638378859865480395640721902521569172669463058823139107581754238921063928009935414014135284163905783666597223238571595/5443370488674997218537728436273163738412943054722563510101786913289488389603292888542198842841201944010350679238606481820266134395829965766183273162700136651375559927239577027805220687768065661133997679078031216748814925824",
+      "marked_overflow_loss_upper": {
+        "numerator_hex": "0x1",
+        "denominator_binary_exponent": 9
+      },
+      "coarse_accepted_mass_lower_IF_receiver_and_source": {
+        "numerator_hex": "0x27ffffff1ffffffc7ffffffe8000000dc000000b7fffffe6bfffffed8000001d2000000b9fffffeb3fffffff00000007bffffffe3fffffff000000007ffffffff",
+        "denominator_binary_exponent": 520
+      },
+      "capacity_reduction_factor_exact_rational": "8796093022208/717592899",
+      "variance_bound_is_pointwise_in_A_or_x": false,
+      "nodes_or_degree_and_overflow_assumed_independent": false,
+      "whole_attempt_overflow_rejection_required": true,
+      "applies_to_silently_truncated_accepted_lists": false,
+      "existing_receiver_default_capacity_updated": false
+    },
+    {
+      "depth": 4,
+      "chunk_components": 32,
+      "components": 160,
+      "leaf_count": 16,
+      "leaf_list_length_hex": "0x10000000000000000",
+      "partial_list_variance_by_level": [
+        {
+          "level": 1,
+          "nonroot_nodes": 8,
+          "each_full_list_mean": 18446744073709551616,
+          "each_full_list_variance": {
+            "numerator_hex": "0xffffffffffffffff",
+            "denominator_binary_exponent": 0
+          },
+          "sum_of_variances_at_level": {
+            "numerator_hex": "0x7fffffffffffffff8",
+            "denominator_binary_exponent": 0
+          }
+        },
+        {
+          "level": 2,
+          "nonroot_nodes": 4,
+          "each_full_list_mean": 18446744073709551616,
+          "each_full_list_variance": {
+            "numerator_hex": "0x2fffffffffffffffdfffffffffffffffe0000000000000001",
+            "denominator_binary_exponent": 128
+          },
+          "sum_of_variances_at_level": {
+            "numerator_hex": "0x2fffffffffffffffdfffffffffffffffe0000000000000001",
+            "denominator_binary_exponent": 126
+          }
+        },
+        {
+          "level": 3,
+          "nonroot_nodes": 2,
+          "each_full_list_mean": 18446744073709551616,
+          "each_full_list_variance": {
+            "numerator_hex": "0x70000000000000003ffffffffffffffeffffffffffffffffa000000000000000dfffffffffffffffffffffffffffffffc0000000000000001",
+            "denominator_binary_exponent": 384
+          },
+          "sum_of_variances_at_level": {
+            "numerator_hex": "0x70000000000000003ffffffffffffffeffffffffffffffffa000000000000000dfffffffffffffffffffffffffffffffc0000000000000001",
+            "denominator_binary_exponent": 383
+          }
+        }
+      ],
+      "sum_nonroot_full_list_variances": {
+        "numerator_hex": "0x10fffffffffffffffbffffffffffffffebfffffffffffffffc000000000000000dfffffffffffffffffffffffffffffffc0000000000000001",
+        "denominator_binary_exponent": 383
+      },
+      "root_graph_second_moment": {
+        "numerator_hex": "0x2000000000000000e00000000000000380000000000000017ffffffffffffff23ffffffffffffff4800000000000001940000000000000127fffffffffffffe2dffffffffffffff46000000000000014c000000000000000fffffffffffffff84000000000000001c000000000000000ffffffffffffffff80000000000000001",
+        "denominator_binary_exponent": 1024
+      },
+      "centered_capacity_hex": "0x1000000a197927d80",
+      "old_Markov_capacity_hex": "0x30000000000000000000",
+      "integer_deviation_threshold_hex": "0xa197927d81",
+      "overflow_probability_upper_exact_rational": "12356258313025317139180896709310499167120067230565414367916650826508665804182311027965392581548331561044123752845040080159617023112904705/9489606384406453571917821865885768990750441468291813220009382430632630184554462126675186779795594022413831457125125215035490951780255137792",
+      "M_times_overflow_upper_exact_rational": "4442552148382206700208262639238746789580942870261248776157353793494543149761661826434562177222773715454836718679503275256452175611701091244746414961525512393106039773468703988815807816884387997937610862984653334457940770376029358821200938882078169864023245013896822602142593132131052598376763122108294809164734376127416623395115073461284818985233213020845566066990074714823305168139238757288548472583223075372904637738413182030082700193619247105/1705940024979308479488970444375191784381735879880096881792787092333096538621021410000608935271194989305895193067059176912806125067649177195076799044713098510641073295794905511957101009809907474463553251552888732186752099068012764773401418812050488398132474807904551545115869996967250023454553913496296992748128666710403977844317422362399595566806670397036253885249614209609909538138739239673446559918029844704723213077954717551318708180562395267072",
+      "marked_overflow_loss_upper": {
+        "numerator_hex": "0x1",
+        "denominator_binary_exponent": 9
+      },
+      "coarse_accepted_mass_lower_IF_receiver_and_source": {
+        "numerator_hex": "0x27ffffffffffffff1ffffffffffffffc7ffffffffffffffe800000000000000dc00000000000000b7fffffffffffffe6bfffffffffffffed800000000000001d200000000000000b9fffffffffffffeb3fffffffffffffff0000000000000007bffffffffffffffe3fffffffffffffff00000000000000007ffffffffffffffff",
+        "denominator_binary_exponent": 1032
+      },
+      "capacity_reduction_factor_exact_rational": "1770887431076116955136/144115193497986299",
+      "variance_bound_is_pointwise_in_A_or_x": false,
+      "nodes_or_degree_and_overflow_assumed_independent": false,
+      "whole_attempt_overflow_rejection_required": true,
+      "applies_to_silently_truncated_accepted_lists": false,
+      "existing_receiver_default_capacity_updated": false
+    },
+    {
+      "depth": 4,
+      "chunk_components": 64,
+      "components": 320,
+      "leaf_count": 16,
+      "leaf_list_length_hex": "0x100000000000000000000000000000000",
+      "partial_list_variance_by_level": [
+        {
+          "level": 1,
+          "nonroot_nodes": 8,
+          "each_full_list_mean": 340282366920938463463374607431768211456,
+          "each_full_list_variance": {
+            "numerator_hex": "0xffffffffffffffffffffffffffffffff",
+            "denominator_binary_exponent": 0
+          },
+          "sum_of_variances_at_level": {
+            "numerator_hex": "0x7fffffffffffffffffffffffffffffff8",
+            "denominator_binary_exponent": 0
+          }
+        },
+        {
+          "level": 2,
+          "nonroot_nodes": 4,
+          "each_full_list_mean": 340282366920938463463374607431768211456,
+          "each_full_list_variance": {
+            "numerator_hex": "0x2fffffffffffffffffffffffffffffffdfffffffffffffffffffffffffffffffe00000000000000000000000000000001",
+            "denominator_binary_exponent": 256
+          },
+          "sum_of_variances_at_level": {
+            "numerator_hex": "0x2fffffffffffffffffffffffffffffffdfffffffffffffffffffffffffffffffe00000000000000000000000000000001",
+            "denominator_binary_exponent": 254
+          }
+        },
+        {
+          "level": 3,
+          "nonroot_nodes": 2,
+          "each_full_list_mean": 340282366920938463463374607431768211456,
+          "each_full_list_variance": {
+            "numerator_hex": "0x700000000000000000000000000000003ffffffffffffffffffffffffffffffeffffffffffffffffffffffffffffffffa0000000000000000000000000000000dfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffc00000000000000000000000000000001",
+            "denominator_binary_exponent": 768
+          },
+          "sum_of_variances_at_level": {
+            "numerator_hex": "0x700000000000000000000000000000003ffffffffffffffffffffffffffffffeffffffffffffffffffffffffffffffffa0000000000000000000000000000000dfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffc00000000000000000000000000000001",
+            "denominator_binary_exponent": 767
+          }
+        }
+      ],
+      "sum_nonroot_full_list_variances": {
+        "numerator_hex": "0x10fffffffffffffffffffffffffffffffbffffffffffffffffffffffffffffffebfffffffffffffffffffffffffffffffc0000000000000000000000000000000dfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffc00000000000000000000000000000001",
+        "denominator_binary_exponent": 767
+      },
+      "root_graph_second_moment": {
+        "numerator_hex": "0x20000000000000000000000000000000e0000000000000000000000000000003800000000000000000000000000000017ffffffffffffffffffffffffffffff23ffffffffffffffffffffffffffffff480000000000000000000000000000019400000000000000000000000000000127fffffffffffffffffffffffffffffe2dffffffffffffffffffffffffffffff460000000000000000000000000000014c0000000000000000000000000000000fffffffffffffffffffffffffffffff840000000000000000000000000000001c0000000000000000000000000000000ffffffffffffffffffffffffffffffff800000000000000000000000000000001",
+        "denominator_binary_exponent": 2048
+      },
+      "centered_capacity_hex": "0x100000000000000a197927d80e3d2717f",
+      "old_Markov_capacity_hex": "0x300000000000000000000000000000000000",
+      "integer_deviation_threshold_hex": "0xa197927d80e3d27180",
+      "overflow_probability_upper_exact_rational": "2993669009768769729329925447860260770271398156748287680144912045166535444414401272728091373247081054208415501749375920598099901302410362024999744461450921867017524477176492607655957440054028620708940981486713326050249088640175922170856890235096705225000871377490038925995/2299137799502415152125757847013369276215907906563021860717163091555848976076946042312691369274850652112055834248145807498246031474032358564112606931231512910788401061948359510007213839809533273613815791057439184719401233477409041715513661001533299648277022609562932741144576",
+      "M_times_overflow_upper_exact_rational": "193492839128385885133836380693990848738375565275379674181863952647435434191462793457028100146394276777944262800396977427296669988612673535382000213844931267809682668676359751321371045768125045600066694898273165438367925883093308727805206819776542635826523613369351873069363328948261510043516253704181564797224342703426013986691387133338567421829442906985884853303339361431860064319544935000375417734092398715112075970545904040034463152029690368382449841360735820039582338697507409890673710171350983957285149175854803894522264239182551027982006956399570583042082921086108387645044632481533849944903306323168912467755768998538271963169636181849072094246144710848470971068747433335970893904170001716023864769061933996891750209328492712687249905093640813771972461335155377144819400825103229987587168089448995154913167480685330673609828838761895706280240340743013647345113905780115461735361195/74301250225300179891405292394252871794148273985539025532181633832112935290141018721421430091500956615383626647905868971044018404560218189849127584346481491396087217130344616062564801918175122929318798188043372147501786200361626537885417945594176657104090273363132800631003374116329867328494983283499831251947465331448147710288368325286505398370461713014885486368134229611868676271212177519730139994260213960597020826539523735009634049497037454996267212376662313783787975653868726717191450219356253795375554076100118149318877407948524649472760252136642289381651683414906634170418708889076603907727180813035783627615037617661196360741324559847986543504522239402484918794111609018484849225951783759338769255925977563168847578066711254911451925438531902077857975759526440889488704851608820026074269408603120260992756647795745691502299345020825166997622812297270929198490948413653002492739321856",
+      "marked_overflow_loss_upper": {
+        "numerator_hex": "0x1",
+        "denominator_binary_exponent": 9
+      },
+      "coarse_accepted_mass_lower_IF_receiver_and_source": {
+        "numerator_hex": "0x27ffffffffffffffffffffffffffffff1ffffffffffffffffffffffffffffffc7ffffffffffffffffffffffffffffffe8000000000000000000000000000000dc000000000000000000000000000000b7fffffffffffffffffffffffffffffe6bfffffffffffffffffffffffffffffed8000000000000000000000000000001d2000000000000000000000000000000b9fffffffffffffffffffffffffffffeb3fffffffffffffffffffffffffffffff00000000000000000000000000000007bffffffffffffffffffffffffffffffe3fffffffffffffffffffffffffffffff000000000000000000000000000000007ffffffffffffffffffffffffffffffff",
+        "denominator_binary_exponent": 2056
+      },
+      "capacity_reduction_factor_exact_rational": "1393796574908163946345982392040522594123776/113427455640312822148074111112621467093",
+      "variance_bound_is_pointwise_in_A_or_x": false,
+      "nodes_or_degree_and_overflow_assumed_independent": false,
+      "whole_attempt_overflow_rejection_required": true,
+      "applies_to_silently_truncated_accepted_lists": false,
+      "existing_receiver_default_capacity_updated": false
+    }
+  ],
+  "accepted_speedup_candidate": false,
+  "novelty_claim": false,
+  "source_quantum_preparations_executed": 0,
+  "receiver_default_capacity_updated": false,
+  "oblivious_join_backend_integrated": false
+}

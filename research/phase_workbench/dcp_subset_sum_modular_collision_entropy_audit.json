@@ -1,0 +1,140 @@
+{
+  "cases": [
+    {
+      "all_theorems_verified": true,
+      "boolean_cube_size_2_pow_m": 8,
+      "case_id": "q5_prime_m3",
+      "is_composite_q": false,
+      "m": 3,
+      "max_cosine_formula_residual": 2.220446049250313e-16,
+      "max_single_coord_cos_residual": 1.1102230246251565e-16,
+      "mean_collision_probability_exact": "3/10",
+      "mean_collision_probability_float": 0.3,
+      "mean_off_diagonal_collision_exact": "7/40",
+      "mean_off_diagonal_collision_float": 0.175,
+      "pairwise_boolean_difference_surjective": true,
+      "q": 5,
+      "theorem1_verified": true,
+      "theorem2_verified": true,
+      "theorem3_verified": true,
+      "theoretical_mean_collision_exact": "3/10",
+      "total_weight_vectors_q_pow_m": 125
+    },
+    {
+      "all_theorems_verified": true,
+      "boolean_cube_size_2_pow_m": 8,
+      "case_id": "q6_composite_m3",
+      "is_composite_q": true,
+      "m": 3,
+      "max_cosine_formula_residual": 1.6653345369377348e-16,
+      "max_single_coord_cos_residual": 1.6653345369377348e-16,
+      "mean_collision_probability_exact": "13/48",
+      "mean_collision_probability_float": 0.2708333333333333,
+      "mean_off_diagonal_collision_exact": "7/48",
+      "mean_off_diagonal_collision_float": 0.14583333333333334,
+      "pairwise_boolean_difference_surjective": true,
+      "q": 6,
+      "theorem1_verified": true,
+      "theorem2_verified": true,
+      "theorem3_verified": true,
+      "theoretical_mean_collision_exact": "13/48",
+      "total_weight_vectors_q_pow_m": 216
+    },
+    {
+      "all_theorems_verified": true,
+      "boolean_cube_size_2_pow_m": 8,
+      "case_id": "q8_power_of_two_m3",
+      "is_composite_q": true,
+      "m": 3,
+      "max_cosine_formula_residual": 2.7755575615628914e-16,
+      "max_single_coord_cos_residual": 2.220446049250313e-16,
+      "mean_collision_probability_exact": "15/64",
+      "mean_collision_probability_float": 0.234375,
+      "mean_off_diagonal_collision_exact": "7/64",
+      "mean_off_diagonal_collision_float": 0.109375,
+      "pairwise_boolean_difference_surjective": true,
+      "q": 8,
+      "theorem1_verified": true,
+      "theorem2_verified": true,
+      "theorem3_verified": true,
+      "theoretical_mean_collision_exact": "15/64",
+      "total_weight_vectors_q_pow_m": 512
+    },
+    {
+      "all_theorems_verified": true,
+      "boolean_cube_size_2_pow_m": 8,
+      "case_id": "q9_odd_prime_power_m3",
+      "is_composite_q": true,
+      "m": 3,
+      "max_cosine_formula_residual": 3.3306690738754696e-16,
+      "max_single_coord_cos_residual": 3.3306690738754696e-16,
+      "mean_collision_probability_exact": "2/9",
+      "mean_collision_probability_float": 0.2222222222222222,
+      "mean_off_diagonal_collision_exact": "7/72",
+      "mean_off_diagonal_collision_float": 0.09722222222222222,
+      "pairwise_boolean_difference_surjective": true,
+      "q": 9,
+      "theorem1_verified": true,
+      "theorem2_verified": true,
+      "theorem3_verified": true,
+      "theoretical_mean_collision_exact": "2/9",
+      "total_weight_vectors_q_pow_m": 729
+    },
+    {
+      "all_theorems_verified": true,
+      "boolean_cube_size_2_pow_m": 16,
+      "case_id": "q4_composite_m4",
+      "is_composite_q": true,
+      "m": 4,
+      "max_cosine_formula_residual": 5.551115123125783e-17,
+      "max_single_coord_cos_residual": 0.0,
+      "mean_collision_probability_exact": "19/64",
+      "mean_collision_probability_float": 0.296875,
+      "mean_off_diagonal_collision_exact": "15/64",
+      "mean_off_diagonal_collision_float": 0.234375,
+      "pairwise_boolean_difference_surjective": true,
+      "q": 4,
+      "theorem1_verified": true,
+      "theorem2_verified": true,
+      "theorem3_verified": true,
+      "theoretical_mean_collision_exact": "19/64",
+      "total_weight_vectors_q_pow_m": 256
+    }
+  ],
+  "certificate_sha256": "b5600385a0e4c1cf80ccdc6e0a11d4fa201019713448b5d0691db6b14db5813c",
+  "contract_id": "dcp-subset-sum-modular-collision-entropy-audit-contract",
+  "contract_path": "research/hypotheses/dcp_subset_sum_modular_collision_entropy_audit_contract.json",
+  "doc_path": "research/DCP_SUBSET_SUM_MODULAR_COLLISION_ENTROPY_AUDIT.md",
+  "guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "schema_version": "2026-04-12.dcp-subset-sum-modular-collision-entropy-audit.v1",
+  "status": "VERIFIED_EXACT_SUBSET_SUM_COLLISION_AND_BOOLEAN_SURJECTIVITY_LAWS",
+  "summary": {
+    "all_cases_verified": true,
+    "case_count": 5,
+    "max_cosine_formula_residual": 3.3306690738754696e-16,
+    "max_single_coord_cos_residual": 3.3306690738754696e-16,
+    "scientific_verdict": "Across prime, power-of-two, odd prime-power, and composite moduli q in {4, 5, 6, 8, 9}, the modular subset-sum collision probability C(a) equals (1/q) sum_{u=0}^{q-1} prod_{j=1}^m cos^2(pi u a_j / q). Because every non-zero Boolean difference x - x' in {-1, 0, +1}^m \\ {0} contains at least one unit coordinate +-1 mod q, Pr_a[f_a(x) == f_a(x') mod q] = 1/q holds universally even for composite q, yielding E_a[C(a)] = 1/q + (1 - 1/q) 2^{-m}."
+  },
+  "theorems": [
+    {
+      "id": "T1",
+      "name": "Exact Cosine-Squared Product Identity for Subset-Sum Collision Probability",
+      "statement": "For any weight vector a = (a_1, ..., a_m) in Z_q^m, the modular subset-sum fiber distribution P_a(z) = 2^(-m) |{x in {0,1}^m : <a, x> == z mod q}| has collision probability C(a) = sum_z P_a(z)^2 = (1/q) * sum_(u=0)^(q-1) prod_(j=1)^m cos^2(pi * u * a_j / q)."
+    },
+    {
+      "id": "T2",
+      "name": "Universal Z_q-Surjectivity of Non-Zero Boolean Differences and Exact Mean Collision Law",
+      "statement": "For every modulus q >= 2 (prime or composite) and every distinct pair x != x' in {0, 1}^m, x - x' has at least one +-1 coordinate (a unit mod q), so Pr_(a ~ Z_q^m)[f_a(x) == f_a(x') mod q] = 1/q and E_(a ~ Z_q^m)[C(a)] = 1/q + (1 - 1/q) * 2^(-m)."
+    },
+    {
+      "id": "T3",
+      "name": "Exact Single-Coordinate Cosine-Squared Character Average on Z_q",
+      "statement": "For every modulus q >= 2 and frequency u in {0, ..., q-1}, (1/q) * sum_(a=0)^(q-1) cos^2(pi * u * a / q) equals 1 for u = 0 and 1/2 for all u in {1, ..., q-1}."
+    }
+  ],
+  "title": "DCP Subset-Sum Modular Collision-Entropy Audit: Cosine-Product Parseval Formula, Universal Boolean-Difference Surjectivity, and Exact Ensemble Collision Law"
+}

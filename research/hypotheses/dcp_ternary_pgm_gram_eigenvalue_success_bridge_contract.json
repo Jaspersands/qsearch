@@ -1,0 +1,14 @@
+{
+  "hypothesis_id": "dcp_ternary_pgm_gram_eigenvalue_success_bridge",
+  "title": "DCP Pretty Good Measurement (PGM) Gram Eigenvalue Spectrum and Square-Root Occupancy Bridge",
+  "status": "VERIFIED_SCOPED_BRIDGE",
+  "claims": [
+    "The Q x Q secret Gram matrix G(A) has exact Fourier eigenvalues lambda_y(G(A)) = (Q / 2^K) * N_A(y) where N_A(y) is the subset-sum occupancy count mod q.",
+    "The exact PGM secret-recovery probability is P_{PGM}(A) = (sum_y sqrt(N_A(y)))^2 / (2^K * Q) <= R(A) / Q, with equality iff N_A(y) is constant across all R(A) occupied residues."
+  ],
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  }
+}

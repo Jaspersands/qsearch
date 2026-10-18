@@ -1,0 +1,12 @@
+{
+  "hypothesis_id": "dcp_galois_frobenius_automorphism_prime_power_peeling_bridge",
+  "title": "Cyclotomic Galois Automorphism Witness Equivariance and Conjugation Constant-Term Projection",
+  "status": "VERIFIED_FINITE_IDENTITIES_REVIEW_PENDING",
+  "claims": [
+    "Over R_q = Z_q[X]/(X^n + 1) (n = 2^k, q = 2^t), the n Galois automorphisms tau_u: X -> X^u (u odd in 1..2n-1) form an exact group homomorphism and act modulo 2 as pure coordinate permutations fixing degree 0.",
+    "Under complex conjugation tau_{2n-1}: X -> -X^{n-1}, summing f(X) + tau_{2n-1}(f)(X) via CNOT identically annihilates the midpoint degree-(n/2) coefficient across all f in R_q and projects palindromic polynomials onto 2*f_0 mod q."
+  ],
+  "favorable_controls": [
+    "R_16[X]/(X^4+1) and R_32[X]/(X^8+1) group homomorphism and midpoint annihilation audits"
+  ]
+}

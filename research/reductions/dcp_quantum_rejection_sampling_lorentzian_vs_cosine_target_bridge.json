@@ -1,0 +1,91 @@
+{
+  "all_checks_passed": true,
+  "certificate_sha256_16": "955e0aaa9472f5e4",
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "proof_status": "LOCAL_DERIVATION_REVIEW_PENDING_NOT_FORMALLY_VERIFIED",
+  "rejection_sampling_sweep": [
+    {
+      "P_window_size": 7,
+      "exact_laws_verified": true,
+      "gamma1_lorentzian": 0.8703330703829308,
+      "gamma1_sine": 0.9238795325112867,
+      "max_povm_singular_value_sine": 1.0,
+      "p_accept_lorentzian": 0.30816798188662803,
+      "p_accept_sine_closed_form": 0.5714285714285714,
+      "p_accept_sine_explicit": 0.5714285714285714,
+      "p_accept_sine_lower_bound": 0.5714285714285714,
+      "post_selected_state_fidelity_sine": 1.0
+    },
+    {
+      "P_window_size": 8,
+      "exact_laws_verified": true,
+      "gamma1_lorentzian": 0.8999535256663871,
+      "gamma1_sine": 0.9396926207859085,
+      "max_povm_singular_value_sine": 1.0,
+      "p_accept_lorentzian": 0.3697554787641271,
+      "p_accept_sine_closed_form": 0.5799888023207419,
+      "p_accept_sine_explicit": 0.5799888023207418,
+      "p_accept_sine_lower_bound": 0.5625,
+      "post_selected_state_fidelity_sine": 1.0
+    },
+    {
+      "P_window_size": 15,
+      "exact_laws_verified": true,
+      "gamma1_lorentzian": 0.9676353194875522,
+      "gamma1_sine": 0.9807852804032303,
+      "max_povm_singular_value_sine": 1.0,
+      "p_accept_lorentzian": 0.30707168306440397,
+      "p_accept_sine_closed_form": 0.5333333333333333,
+      "p_accept_sine_explicit": 0.5333333333333334,
+      "p_accept_sine_lower_bound": 0.5333333333333333,
+      "post_selected_state_fidelity_sine": 1.0
+    },
+    {
+      "P_window_size": 16,
+      "exact_laws_verified": true,
+      "gamma1_lorentzian": 0.9712335802370308,
+      "gamma1_sine": 0.9829730996839018,
+      "max_povm_singular_value_sine": 1.0,
+      "p_accept_lorentzian": 0.32224227890787116,
+      "p_accept_sine_closed_form": 0.5358116053966487,
+      "p_accept_sine_explicit": 0.5358116053966485,
+      "p_accept_sine_lower_bound": 0.53125,
+      "post_selected_state_fidelity_sine": 1.0
+    },
+    {
+      "P_window_size": 31,
+      "exact_laws_verified": true,
+      "gamma1_lorentzian": 0.9912556750812448,
+      "gamma1_sine": 0.9951847266721969,
+      "max_povm_singular_value_sine": 1.0,
+      "p_accept_lorentzian": 0.30703485705404415,
+      "p_accept_sine_closed_form": 0.5161290322580645,
+      "p_accept_sine_explicit": 0.5161290322580645,
+      "p_accept_sine_lower_bound": 0.5161290322580645,
+      "post_selected_state_fidelity_sine": 1.0
+    },
+    {
+      "P_window_size": 32,
+      "exact_laws_verified": true,
+      "gamma1_lorentzian": 0.9917307314453103,
+      "gamma1_sine": 0.9954719225730845,
+      "max_povm_singular_value_sine": 1.0,
+      "p_accept_lorentzian": 0.31079357387140444,
+      "p_accept_sine_closed_form": 0.5167950439865086,
+      "p_accept_sine_explicit": 0.5167950439865087,
+      "p_accept_sine_lower_bound": 0.515625,
+      "post_selected_state_fidelity_sine": 1.0
+    }
+  ],
+  "schema_version": "dcp-quantum-rejection-sampling-lorentzian-vs-cosine-target-bridge-v1",
+  "scope_constraints": {
+    "applies_to": "Single-shot quantum rejection sampling from a uniform box window to the Dirichlet-optimal sine window vs. peaked Lorentzian targets",
+    "controls_included": "Evaluates odd and even window lengths P in {7, 8, 15, 16, 31, 32}, verifying exact closed-form P_accept*(box -> sin*) > (P+1)/(2P) > 0.5, 100% post-selected fidelity, and strict dominance over Lorentzian targets.",
+    "does_not_claim": "Unitary (post-selection-free) conversion without coherent amplitude amplification or direct state preparation"
+  },
+  "theorem_id": "dcp_quantum_rejection_sampling_lorentzian_vs_cosine_target_bridge"
+}

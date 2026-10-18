@@ -1,6 +1,14 @@
 # Quantum Error Correcting Codes, the Eastin-Knill Theorem, and the Non-Clifford Gate Fault-Tolerant Horizon: Transversal Obstructions and Magic State Distillation Bounds
 
-**Status**: Formally Proved & Computationally Verified  
+**Status**: QUARANTINED_OVERBROAD_NO_GO, reviewed 2026-10-16.
+
+The text below is retained as an ORIGINAL AUDIT TARGET, not current search
+guidance. Fixed-code transversal nonuniversality remains valid; universal
+distillation necessity, the exact threshold inferred from a cubic approximation,
+and asymptotic elimination of polynomial speedups do not follow. Its diagonal
+T/Z-stabilizer example also uses the wrong stabilizer type. See
+[the correction](CAMPAIGN_NEGATIVE_CLAIM_AUDIT.md) and exact countercontrols.
+
 **Invariants Enforced**: `speedup_claim_allowed = False`, `accepted_speedup_candidate = False`  
 **Classification**: Fault-Tolerant Quantum Computing / Quantum Error Correction / Eastin-Knill Obstructions / Magic State Resource Theory  
 **Negative Result ID**: `NEG-EASTIN-KNILL-NON-CLIFFORD-FAULT-TOLERANT-BARRIER` (976 negative results total)

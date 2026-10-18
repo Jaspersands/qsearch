@@ -1,0 +1,28 @@
+{
+  "contract_id": "native_correlated_phase_block_gate_and_information_control_v1",
+  "experiment_id_for_mechanical_integration": "EXP-DHS-DCP-CORRELATED-PHASE-BLOCK",
+  "status": "PHYSICAL_GATE_EXPORT_INFORMATION_BOUND_REVIEW_PENDING",
+  "mechanism": "Reversible componentwise A*x mod4 into two syndrome wires per component; measure syndrome and retain ALL original phase qubits",
+  "static_gate_bound": "At most2*n*m CX/CCX gates, zero extra arithmetic work qubits, m+2n total wires",
+  "arbitrary_syndrome_action": "(x,z)->(x,z+A*x) modulo4 componentwise; not general XOR into the syndrome",
+  "input_source_not_prepared_by_this_module": true,
+  "retained_block_representation": "Implicit measured-fiber predicate on original Boolean basis; no compact fiber index or fiber inverse",
+  "native_information_bound": "m4n,t=n+8,v=1-1/n: except probability<=2^(-n^2), Holevo>=max(0,2n-2ceil(log2n)-6)",
+  "Holevo_is_accessible_information_or_efficient_decoder": false,
+  "hardware_gate_export_implemented": true,
+  "hardware_transpilation_or_execution_performed": false,
+  "accepted_speedup_candidate": false,
+  "novelty_claim": false,
+  "falsifiers": [
+    "Any gate-basis input changing x or disagreeing with componentwise modular addition",
+    "Any missing measurement outcome, uncharged postselection or probability-mass loss",
+    "Injective finite source whose Holevo falls below the proven entropy lower bound",
+    "Granting fresh product-state, inverse or compact-index access from a block record"
+  ],
+  "remaining_obligations": [
+    "Independent information-bound review and actual natural-source noise law",
+    "A useful scalable observable/transition on the implicit block",
+    "Matched classical dequantization checks and full secret decoder",
+    "Physical backend transpilation if hardware resource claims are needed"
+  ]
+}

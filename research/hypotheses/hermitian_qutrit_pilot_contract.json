@@ -1,0 +1,40 @@
+{
+  "hypothesis_id": "hermitian_qutrit_prefix_weyl_pilot",
+  "status": "DIRECT_LOW_BOND_TRANSFER_FALSIFIED_OTHER_SOURCES_UNRESOLVED",
+  "problem": "Energy optimization or explicitly defined polynomial-filter energy estimation for a public Hermitian qutrit Hamiltonian",
+  "input_model": "Explicit integer c_j and U_j=Z_<j X_j, H=sum c_j(U_j+U_j^dagger); no oracle or source advice",
+  "mechanism": "Coherent coefficient pilot followed by an explicit linear-label qutrit Bell isometry",
+  "intended_advantage": "Would require a real polynomial source and charged ground-filter guarantee not matched by classical energy contraction",
+  "literature_ids": ["arxiv:2604.01022", "arxiv:2601.18773", "arxiv:1310.6049"],
+  "established_locally_review_pending": [
+    "The known one-directional degree+1 pilot bond does not directly transfer to Hermitian inverse-pair completion",
+    "An exact nonzero degree-two minor has rank4, exceeding bond3 in the stated basis and cut",
+    "Native public label/Fourier/SUM gates prepare the intended filtered purification",
+    "The pilot alpha(P(H)) is P(H)|0>, and the Bell isometry preserves energy for arbitrary pilots",
+    "Any supplied bondD pilot MPS gives a paired-output MPS of bond<=3D; the same energy is classically contractible"
+  ],
+  "proof_obligations_and_blockers": [
+    "Actually construct the Hermitian pilot; exponential enumeration and TT-SVD are not efficient algorithms",
+    "Prove polynomial filter degree, gap/overlap requirements and precision cost",
+    "Charge source data, normalization, readout and all classical preprocessing",
+    "Compare against direct pilot-MPS and paired-output-MPS energy contraction",
+    "Do not infer asymptotic hardness from finite Schmidt lower bounds or unsupported caps",
+    "Do not infer a classical optimum-energy solver or arbitrary-output simulation from a mean-energy contraction"
+  ],
+  "falsifiable_experiments": [
+    "Characteristic-zero minor versus a claimed degree+1 bond",
+    "Every group-algebra coefficient versus native Hilbert-Schmidt projection",
+    "Full prepared purification versus vec(P(H)), not just output labels",
+    "Arbitrary entangled-pilot source/output energy identity and exact charge-MPS map",
+    "Scalable product source with dense helpers disabled versus an independent closed form"
+  ],
+  "evidence": [
+    "theorems/hermitian_qutrit_pilot.py",
+    "tests/test_hermitian_qutrit_pilot.py",
+    "research/classical_baselines/hermitian_qutrit_pilot.json",
+    "research/HERMITIAN_QUTRIT_PILOT.md"
+  ],
+  "accepted_speedup_candidate": false,
+  "general_HDQI_negative_claimed": false,
+  "independent_or_formal_review_completed": false
+}

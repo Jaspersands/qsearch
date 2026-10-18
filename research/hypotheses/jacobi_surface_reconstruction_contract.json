@@ -1,0 +1,57 @@
+{
+  "hypothesis_id": "exact_split_fermat_surface_cm_reconstruction",
+  "status": "PRIME_CONDUCTOR_ADVANTAGE_REMOVED_BY_PUBLISHED_KNOWN_NORM_RECOVERY_LOCAL_APPLICATION_REVIEW_PENDING",
+  "problem": "Exact projective count of X^d+Y^d+Z^d=W^d over prime F_p with d|(p-1)",
+  "input_model": "Explicit binary p,d and verified order-d residue root; d=poly(log p) is required for a polynomial succinct-input target",
+  "proposed_quantum_mechanism": "Public Jacobi ideal carries, published PIP/unit primitives, norm normalization, exact local residues and prime-square integer lifting",
+  "intended_advantage": "The prime-conductor polynomial-in-d/log-p target already follows classically from published known-norm recovery and the stated Jacobi/primary identities; no credible asymptotic quantum advantage remains for this scoped proposal",
+  "implemented_classical_mechanism": "Exact public ideal lattice, LLL balanced-row test, prime-conductor primary congruence and complete surface-count certificate",
+  "literature_ids": ["arxiv:1706.07373v3", "arxiv:1501.00178v3", "arxiv:2607.29453", "arxiv:2510.02280", "arxiv:quant-ph/0207131", "arxiv:math/0411623", "arxiv:quant-ph/0405081"],
+  "local_results_review_pending": [
+    "The complete three-character sum gives the surface correction with B=(d-1)(d^2-3d+3) terms and absolute bound Bp",
+    "Prime-square residue lifting is unique for p>2B; otherwise a charged small-prime classical branch is polynomial in d",
+    "Positive residue-root embeddings require complementary carries relative to inverse-root prime labels",
+    "For odd prime conductor, the primary congruence J=1 mod(1-zeta)^2 removes root-of-unity ambiguity without a quantum phase oracle",
+    "A real classical public-input reconstruction completes at p=2^61-1,d=11 without an exhaustive sum source",
+    "Lenstra-Silverberg Theorem1.3 recovers a generator from I and known w when I*bar(I)=w*A; the Jacobi witness supplies the required YES instance",
+    "Public exact CM and group-ring reduction certificates cover all51 ideal profiles at the61-bit input; recovery itself is not executed",
+    "The theorem-based classical asymptotic comparison does not require uniform LLL success and is scoped to prime-conductor exact identification"
+  ],
+  "proof_obligations_and_falsifiers": [
+    "Independently review generic three-character ideal, norm and primary-normalization derivations",
+    "Do not treat repeated-character quantum residue theorems as a complete implemented generic CM routine",
+    "Account for nonzero local valuations: h unit digits require h+v input digits",
+    "Keep polynomial-in-degree distinct from polynomial-in-log-degree input complexity",
+    "Compare the published known-relative-norm recovery theorem, not only LLL or fixed-degree Jacobi methods; independently review the local application",
+    "A failed balanced-row search is UNKNOWN, not hardness; finite success is not a uniform LLL theorem",
+    "Curve point counting is existing quantum prior art and is not a rediscovery claim"
+  ],
+  "experiments": [
+    "Exact character sums versus independent projective charts and full-field integer convolution",
+    "Every split-prime valuation versus the chosen positive character convention",
+    "Unit contamination must fail exact relative-norm normalization",
+    "Root selection must reject ambiguous intervals and ambiguous prime-square integer lifts",
+    "Public 61-bit ideal reconstruction with true-sum and character-table helpers disabled",
+    "Independent algebraic certificate replay without LLL or a count oracle",
+    "Exact I*bar(I)=p^2*A HNF, normalized trace Gram and explicit module action replay with an independent matrix implementation",
+    "Independent group-ring augmentation/autocorrelation lift and signed cyclic action",
+    "Reject wrong norms and nonideal lattices even at the correct determinant; input conditions alone do not imply generator existence"
+  ],
+  "evidence": [
+    "theorems/jacobi_surface_reconstruction.py",
+    "tests/test_jacobi_surface_reconstruction.py",
+    "research/classical_baselines/jacobi_surface_reconstruction.json",
+    "research/JACOBI_SURFACE_RECONSTRUCTION.md",
+    "theorems/jacobi_known_norm_reduction.py",
+    "tests/test_jacobi_known_norm_reduction.py",
+    "research/classical_baselines/jacobi_known_norm_reduction.json",
+    "research/JACOBI_KNOWN_NORM_REDUCTION.md"
+  ],
+  "quantum_PIP_unit_phase_implementation_exists": false,
+  "worst_case_classical_LLL_success_proved": false,
+  "published_classical_known_norm_recovery_implemented_here": false,
+  "prime_conductor_theorem_based_classical_reduction_established_locally": true,
+  "accepted_speedup_candidate": false,
+  "new_quantum_algorithm_claimed": false,
+  "independent_or_formal_review_completed": false
+}

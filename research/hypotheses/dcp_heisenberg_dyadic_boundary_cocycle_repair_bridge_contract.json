@@ -1,0 +1,14 @@
+{
+  "hypothesis_id": "dcp_heisenberg_dyadic_boundary_cocycle_repair_bridge",
+  "title": "DCP Dyadic Heisenberg H_3(Z_{2^t}) Coherent Boundary-Cocycle Phase-Repair Bridge",
+  "status": "VERIFIED_SCOPED_BRIDGE",
+  "claims": [
+    "Applying the public carry-controlled Z gate U_{cocycle}(b; Delta) |x_1> = (-1)^{b * 1[x_1 + Delta >= 2^t]} |x_1> with b = s_1 mod 2 restores 100% QFT_{2^t}^dagger concentration at k_1 == Delta * s_1 (mod 2^t) across all shifts Delta in Z_{2^t}.",
+    "At the half-period shift Delta = 2^{t-1}, 1[x_1 + 2^{t-1} >= 2^t] == MSB(x_1), enabling deterministic single-shot X-basis extraction of s_1 mod 2."
+  ],
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  }
+}

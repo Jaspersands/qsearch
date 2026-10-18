@@ -1,0 +1,325 @@
+{
+  "schema_version": "1.0",
+  "subsystem": "ternary_cubic_syndrome_twirl_reflection_collapse",
+  "contract_id": "ternary_cubic_syndrome_twirl_reflection_collapse_v1",
+  "title": "Ternary Cubic and Mixed-Degree Syndrome Corrections: Fermat Exponent Reduction, Arbitrary-Function Low-Rank Classical Simulation, and Exact Single-Point Twirl Pinching",
+  "family": "ternary_syndrome_decoder_falsification",
+  "note_path": "research/TERNARY_CUBIC_SYNDROME_TWIRL_REFLECTION_COLLAPSE.md",
+  "contract_path": "research/hypotheses/ternary_cubic_syndrome_twirl_reflection_collapse_contract.json",
+  "summary": {
+    "num_instances": 4,
+    "theorem1_block_convolution_passed": true,
+    "theorem2_fermat_single_point_pinching_passed": true,
+    "theorem3_source_average_decay_passed": true,
+    "all_theorems_passed": true,
+    "max_statevector_vs_classical_error": 1.1102230246251565e-16
+  },
+  "instances": [
+    {
+      "instance_id": "n1_m3_r2_cubic_mixed_control",
+      "n": 1,
+      "m": 3,
+      "r": 2,
+      "N": 9,
+      "A": [
+        [
+          1,
+          1,
+          1
+        ]
+      ],
+      "R": [
+        [
+          1
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "H": [
+        [
+          1,
+          2,
+          0
+        ],
+        [
+          1,
+          0,
+          2
+        ]
+      ],
+      "block_convolution_audit": {
+        "max_statevector_vs_classical_error": 8.326672684688674e-17,
+        "valid_signed_zero_sum_count_V_A": 2,
+        "cubic_policy_valid_success_exact": "7/18",
+        "cubic_policy_valid_success_float": 0.3888888888888889,
+        "theorem1_passed": true
+      },
+      "twirl_pinching_audit": {
+        "fermat_identity_verified_residues": 3,
+        "distinct_homogeneous_quadratic_vectors": 5,
+        "distinct_mixed_cubic_vectors": 9,
+        "anchor_block_occupied_size_B": 2,
+        "anchor_block_signed_sum": 0,
+        "common_pinched_point_mass_exact": "1/9",
+        "quadratic_reflection_bound_2_over_N_exact": "2/9",
+        "all_v_match_pinched_formula": true,
+        "theorem2_passed": true
+      },
+      "source_bound_audit": {
+        "V_A": 2,
+        "fixed_A_twirl_success_upper_exact": "17/36",
+        "theorem3_passed": true
+      },
+      "instance_passed": true
+    },
+    {
+      "instance_id": "n1_m3_r2_asymmetric_cubic_mixed_control",
+      "n": 1,
+      "m": 3,
+      "r": 2,
+      "N": 9,
+      "A": [
+        [
+          1,
+          2,
+          1
+        ]
+      ],
+      "R": [
+        [
+          1
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "H": [
+        [
+          1,
+          1,
+          0
+        ],
+        [
+          2,
+          0,
+          1
+        ]
+      ],
+      "block_convolution_audit": {
+        "max_statevector_vs_classical_error": 1.1102230246251565e-16,
+        "valid_signed_zero_sum_count_V_A": 2,
+        "cubic_policy_valid_success_exact": "17/36",
+        "cubic_policy_valid_success_float": 0.4722222222222222,
+        "theorem1_passed": true
+      },
+      "twirl_pinching_audit": {
+        "fermat_identity_verified_residues": 3,
+        "distinct_homogeneous_quadratic_vectors": 5,
+        "distinct_mixed_cubic_vectors": 9,
+        "anchor_block_occupied_size_B": 3,
+        "anchor_block_signed_sum": 3,
+        "common_pinched_point_mass_exact": "1/9",
+        "quadratic_reflection_bound_2_over_N_exact": "2/9",
+        "all_v_match_pinched_formula": true,
+        "theorem2_passed": true
+      },
+      "source_bound_audit": {
+        "V_A": 2,
+        "fixed_A_twirl_success_upper_exact": "17/36",
+        "theorem3_passed": true
+      },
+      "instance_passed": true
+    },
+    {
+      "instance_id": "n1_m4_r2_subspace_cubic_mixed_control",
+      "n": 1,
+      "m": 4,
+      "r": 2,
+      "N": 9,
+      "A": [
+        [
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "R": [
+        [
+          1
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "H": [
+        [
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          2
+        ]
+      ],
+      "block_convolution_audit": {
+        "max_statevector_vs_classical_error": 6.938893903907228e-17,
+        "valid_signed_zero_sum_count_V_A": 6,
+        "cubic_policy_valid_success_exact": "17/36",
+        "cubic_policy_valid_success_float": 0.4722222222222222,
+        "theorem1_passed": true
+      },
+      "twirl_pinching_audit": {
+        "fermat_identity_verified_residues": 3,
+        "distinct_homogeneous_quadratic_vectors": 5,
+        "distinct_mixed_cubic_vectors": 9,
+        "anchor_block_occupied_size_B": 1,
+        "anchor_block_signed_sum": 1,
+        "common_pinched_point_mass_exact": "1/9",
+        "quadratic_reflection_bound_2_over_N_exact": "2/9",
+        "all_v_match_pinched_formula": true,
+        "theorem2_passed": true
+      },
+      "source_bound_audit": {
+        "V_A": 6,
+        "fixed_A_twirl_success_upper_exact": "25/24",
+        "theorem3_passed": true
+      },
+      "instance_passed": true
+    },
+    {
+      "instance_id": "n2_m4_r2_vector_cubic_mixed_control",
+      "n": 2,
+      "m": 4,
+      "r": 2,
+      "N": 9,
+      "A": [
+        [
+          1,
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          1,
+          2,
+          1
+        ]
+      ],
+      "R": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "H": [
+        [
+          2,
+          1,
+          1,
+          0
+        ],
+        [
+          1,
+          2,
+          0,
+          1
+        ]
+      ],
+      "block_convolution_audit": {
+        "max_statevector_vs_classical_error": 2.7755575615628914e-17,
+        "valid_signed_zero_sum_count_V_A": 2,
+        "cubic_policy_valid_success_exact": "25/72",
+        "cubic_policy_valid_success_float": 0.3472222222222222,
+        "theorem1_passed": true
+      },
+      "twirl_pinching_audit": {
+        "fermat_identity_verified_residues": 3,
+        "distinct_homogeneous_quadratic_vectors": 5,
+        "distinct_mixed_cubic_vectors": 9,
+        "anchor_block_occupied_size_B": 2,
+        "anchor_block_signed_sum": 2,
+        "common_pinched_point_mass_exact": "1/9",
+        "quadratic_reflection_bound_2_over_N_exact": "2/9",
+        "all_v_match_pinched_formula": true,
+        "theorem2_passed": true
+      },
+      "source_bound_audit": {
+        "V_A": 2,
+        "fixed_A_twirl_success_upper_exact": "25/72",
+        "theorem3_passed": true
+      },
+      "instance_passed": true
+    }
+  ],
+  "asymptotic_scaling": [
+    {
+      "n": 16,
+      "m": 48,
+      "syndrome_rank_r": 32,
+      "T_trials": 256,
+      "single_trial_upper_bound_exact": "805323387932171/26588814358957503287787",
+      "multi_trial_upper_bound_power_of_two_neg_exponent": 16
+    },
+    {
+      "n": 32,
+      "m": 96,
+      "syndrome_rank_r": 64,
+      "T_trials": 1024,
+      "single_trial_upper_bound_exact": "1197380048440347362118343805291/2120895147045314119491609587512844743630072107",
+      "multi_trial_upper_bound_power_of_two_neg_exponent": 40
+    },
+    {
+      "n": 64,
+      "m": 128,
+      "syndrome_rank_r": 64,
+      "T_trials": 4096,
+      "single_trial_upper_bound_exact": "226854912997467552455172647283436685611/3930061525912861057173624287137506221892737197425280369698987",
+      "multi_trial_upper_bound_power_of_two_neg_exponent": 61
+    },
+    {
+      "n": 128,
+      "m": 256,
+      "syndrome_rank_r": 128,
+      "T_trials": 16384,
+      "single_trial_upper_bound_exact": "25731575386070267614713204069472285887538806827784347399581395158843102547257/15445383597460525862771087421073478123802094534281015332400536047781785847751826215666863239345512169090185060060988826169",
+      "multi_trial_upper_bound_power_of_two_neg_exponent": 134
+    }
+  ],
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "sha256": "f5cc4c1a049c9d91142b358d5ac0f0dffaa75d1347a8db7ccd035e45f0edbe52"
+}

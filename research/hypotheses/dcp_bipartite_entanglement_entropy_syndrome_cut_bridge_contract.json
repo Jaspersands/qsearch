@@ -1,0 +1,14 @@
+{
+  "hypothesis_id": "dcp_bipartite_entanglement_entropy_syndrome_cut_bridge",
+  "title": "Exact Pre-Measurement Bipartite Purity and Renyi-2 Entanglement Across the Survivor-Syndrome Cut",
+  "status": "VERIFIED_FINITE_IDENTITIES_REVIEW_PENDING",
+  "claims": [
+    "Prior to measuring the (h-1) syndrome wires of a weight-h CNOT witness tree, the reduced survivor state has exact purity Tr(rho_surv(s)^2) = 0.5 * (1 + prod_{r=1}^{h-1} cos^2(2*pi <A_{.,r}, s> / q)).",
+    "The survivor-syndrome cut is separable (S_2 = 0) iff 2 <A_{.,r}, s> == 0 (mod q) for all r >= 1, and maximally Bell-entangled (S_2 = 1 bit) iff at least one syndrome wire sits at a quarter-period cos(2*pi <A_{.,r}, s> / q) = 0."
+  ],
+  "favorable_controls": [
+    "Separable control phases=[3,4,0] mod 8 (purity=1.0, S_2=0)",
+    "Maximal Bell control phases=[1,2,3] mod 8 (purity=0.5, S_2=1.0 bit)",
+    "Partial entanglement audit phases=[1,1,1] mod 8 (purity=0.625)"
+  ]
+}

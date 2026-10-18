@@ -1,0 +1,69 @@
+{
+  "all_checks_passed": true,
+  "audit_m2_qubits": {
+    "exact_magic_laws_verified": true,
+    "expected_m2_ccz_bits": 0.0,
+    "expected_m2_t3_bits": 0.41503749927884376,
+    "isolated_degree3_ccz_hypergraph": {
+      "pauli_fourth_moment_xi": 1.0,
+      "stabilizer_renyi_2_magic_bits": 0.0,
+      "unit_expectation_pauli_count": 4
+    },
+    "level_t1_mod2": {
+      "pauli_fourth_moment_xi": 1.0,
+      "stabilizer_renyi_2_magic_bits": 0.0,
+      "unit_expectation_pauli_count": 4
+    },
+    "level_t2_mod4_cz_graph": {
+      "pauli_fourth_moment_xi": 1.0,
+      "stabilizer_renyi_2_magic_bits": 0.0,
+      "unit_expectation_pauli_count": 4
+    },
+    "level_t3_mod8_xor": {
+      "pauli_fourth_moment_xi": 0.75,
+      "stabilizer_renyi_2_magic_bits": 0.4150374992788438,
+      "unit_expectation_pauli_count": 2
+    },
+    "m_qubits": 2
+  },
+  "audit_m3_qubits": {
+    "exact_magic_laws_verified": true,
+    "expected_m2_ccz_bits": 1.5405683813627027,
+    "expected_m2_t3_bits": 0.41503749927884376,
+    "isolated_degree3_ccz_hypergraph": {
+      "pauli_fourth_moment_xi": 0.34374999999999994,
+      "stabilizer_renyi_2_magic_bits": 1.540568381362703,
+      "unit_expectation_pauli_count": 1
+    },
+    "level_t1_mod2": {
+      "pauli_fourth_moment_xi": 0.9999999999999998,
+      "stabilizer_renyi_2_magic_bits": 0.0,
+      "unit_expectation_pauli_count": 8
+    },
+    "level_t2_mod4_cz_graph": {
+      "pauli_fourth_moment_xi": 0.9999999999999998,
+      "stabilizer_renyi_2_magic_bits": 0.0,
+      "unit_expectation_pauli_count": 8
+    },
+    "level_t3_mod8_xor": {
+      "pauli_fourth_moment_xi": 0.7499999999999996,
+      "stabilizer_renyi_2_magic_bits": 0.41503749927884465,
+      "unit_expectation_pauli_count": 4
+    },
+    "m_qubits": 3
+  },
+  "certificate_sha256_16": "4620c2b108fce0e0",
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "proof_status": "LOCAL_DERIVATION_REVIEW_PENDING_NOT_FORMALLY_VERIFIED",
+  "schema_version": "dcp-clifford-stabilizer-magic-monotone-carry-injection-bridge-v1",
+  "scope_constraints": {
+    "applies_to": "Stabilizer Renyi-2 magic M_2 of overlapping CNOT binary-XOR phase states modulo 2^t and isolated CCZ carry states",
+    "controls_included": "Evaluates m=2 and m=3 overlapping wires across t=1 (mod 2, M_2=0), t=2 (mod 4 CZ-graph state, M_2=0), t=3 (mod 8, M_2 = log_2(4/3) = 0.415037), and isolated 3-body CCZ|+>^3 carry (M_2 = log_2(16/9) = 0.830075).",
+    "does_not_claim": "Classical Gottesman-Knill simulability at t >= 3 where M_2 > 0"
+  },
+  "theorem_id": "dcp_clifford_stabilizer_magic_monotone_carry_injection_bridge"
+}

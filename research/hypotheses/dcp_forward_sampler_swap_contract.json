@@ -1,0 +1,43 @@
+{
+  "contract_id": "forward_target_sampler_swap_parity_review_pending_v1",
+  "status": "CONDITIONAL_CLEAN_RECEIVER_AND_SCOPED_NOISY_TEMPLATE_FALSIFIER",
+  "source": "Original K product phase qubits on IID full labels A in Z_q^n; q is a power of two; h=(q/2,0,...,0)",
+  "coherent_sampler_access": "A read-only full-target-controlled forward program U_t on blank witness/history, with actual amplitudes alpha_(t,y,g). A measured classical output oracle is not this access.",
+  "instrument": "Compute F(x)+h, apply U once, uncompute the explicit target from unchanged original x, verify F(y)=F(x)+h, then one controlled full-word SWAP and H readout. Fair guesses on invalid outputs pay all failures. Internal sampler history is retained/traced, not silently erased.",
+  "exact_observable": "O[x,y]=1[F(x)-F(y)=h]*sum_g alpha_(F(x),x,g)*conj(alpha_(F(y),y,g)); norm<=1",
+  "clean_sufficient_condition": "Phase-aligned clean uniform amplitudes on each nonempty arithmetic fiber implement optimal parity measurement. Native average success is >=1-0.5*sqrt((q^n-1)/2^K). No polynomial sampler is supplied.",
+  "proof_obligations": [
+    "Uniform polynomial forward sampler with coherent read-only target control and explicit amplitude/history law; output coverage alone does not suffice",
+    "Compute/uncompute the full target, verify outputs, pay one sampler call, K controlled SWAPs and all preparation/workspace/precision costs",
+    "For independent noise use ORIGINAL Hamming distance, not sampled hidden fault labels or a fresh clean phase law",
+    "A claimed decoder must survive the single-SWAP spectral norm restriction and its native average second-moment bound",
+    "Actual growing-modulus full-target source, not structured dyadic calibration or selected labels"
+  ],
+  "noisy_self_critique": {
+    "best_single_SWAP_advantage": "sum_(unordered f,f+h) ||C_f||_op / 2^K, C_f[x,y]=v^Hamming(x,y)",
+    "arbitrary_measurement_advantage": "sum_(unordered f,f+h) ||C_f||_* / 2^K; generally larger under noise",
+    "native_average_SUP_sampler_advantage_squared_upper": "(((1+v^2)/2)^K-2^-K)/4",
+    "scope": "Any target-only coherent preparation/history and one full-word SWAP with validity/fair failure, on unfiltered original IID labels with independent original Z noise. Not arbitrary original-word control, selected subwords, sequential collective operations or other readouts.",
+    "clean_or_correlated_noise_extension_granted": false
+  },
+  "falsifiers": [
+    "An actual forward/validity/SWAP instrument disagrees with the history-Gram observable",
+    "A claimed history-blind transfer equates identical classical output distributions with identical bit signal",
+    "A single-SWAP preparation exceeds the sum of leading block singular values",
+    "A full native IID source census violates the exact average squared-advantage upper bound",
+    "The proposed uniform sampler uses an exponential truth table, free source inverse, uncharged target postselection or unknown preparation environment"
+  ],
+  "literature_links": [
+    "https://arxiv.org/abs/quant-ph/0501044",
+    "https://arxiv.org/abs/quant-ph/0102001"
+  ],
+  "guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false,
+    "uniform_polynomial_native_sampler_implemented": false,
+    "general_quantum_decoder_impossibility_claimed": false,
+    "output_probabilities_determine_coherent_sampler_signal": false,
+    "finite_spectral_reference_is_efficient_state_preparation": false
+  }
+}

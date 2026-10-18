@@ -1,0 +1,69 @@
+{
+  "all_checks_passed": true,
+  "certificate_sha256_16": "37195304b322c6b3",
+  "ensemble_expectation_audits": [
+    {
+      "K": 4,
+      "all_pigeonhole_bounds_satisfied": true,
+      "closed_form_mean_m_pair": 2.75,
+      "empirical_mean_m_pair": 2.75,
+      "exact_expectation_verified": true,
+      "formula_error": 0.0,
+      "n": 1,
+      "total_matrices_enumerated": 16
+    },
+    {
+      "K": 5,
+      "all_pigeonhole_bounds_satisfied": true,
+      "closed_form_mean_m_pair": 3.5,
+      "empirical_mean_m_pair": 3.5,
+      "exact_expectation_verified": true,
+      "formula_error": 0.0,
+      "n": 1,
+      "total_matrices_enumerated": 32
+    },
+    {
+      "K": 3,
+      "all_pigeonhole_bounds_satisfied": true,
+      "closed_form_mean_m_pair": 1.21875,
+      "empirical_mean_m_pair": 1.21875,
+      "exact_expectation_verified": true,
+      "formula_error": 0.0,
+      "n": 2,
+      "total_matrices_enumerated": 64
+    },
+    {
+      "K": 4,
+      "all_pigeonhole_bounds_satisfied": true,
+      "closed_form_mean_m_pair": 1.796875,
+      "empirical_mean_m_pair": 1.796875,
+      "exact_expectation_verified": true,
+      "formula_error": 0.0,
+      "n": 2,
+      "total_matrices_enumerated": 256
+    },
+    {
+      "K": 3,
+      "all_pigeonhole_bounds_satisfied": true,
+      "closed_form_mean_m_pair": 0.67578125,
+      "empirical_mean_m_pair": 0.67578125,
+      "exact_expectation_verified": true,
+      "formula_error": 0.0,
+      "n": 3,
+      "total_matrices_enumerated": 512
+    }
+  ],
+  "honesty_guardrails": {
+    "accepted_speedup_candidate": false,
+    "new_active_negative_result_created": false,
+    "novelty_claim": false
+  },
+  "proof_status": "LOCAL_DERIVATION_REVIEW_PENDING_NOT_FORMALLY_VERIFIED",
+  "schema_version": "dcp-multi-target-reusable-syndrome-bank-amortization-bridge-v1",
+  "scope_constraints": {
+    "applies_to": "Disjoint weight-<=2 mod-2 kernel witness packing via residue bucket pairing in F_2^{n x K}",
+    "controls_included": "Includes exact exhaustive verification of E[m_{pair}] = K/2 + K/2^{n+1} - ((2^n-1)/4)*(1 - (1 - 2^{1-n})^K) across (n,K) in {(1,4), (1,5), (2,3), (2,4), (3,3)} and deterministic pigeonhole lower bound (K - (2^n - 1))/2.",
+    "does_not_claim": "Polynomial packing efficiency when K << 2^n"
+  },
+  "theorem_id": "dcp_multi_target_reusable_syndrome_bank_amortization_bridge"
+}
