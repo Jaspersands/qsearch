@@ -38,7 +38,10 @@ Q-Search organizes its 792 scientific theorem verification modules within a dedi
 - `tools/claim_checker/` - flags the fine print (input loading, readout, oracle-only, baselines) in a quantum-advantage abstract.
 - `tools/circuit_search/` - searches local readout circuits (product, adaptive) against certified PPT and collective bounds; DCP packets first.
 - `packages/qsearch_classical/` - installable copy of the classical solvers (prime-character OPI, polar Gibbs source, Jacobi sums), generated from `theorems/` by `sync.py` and checked for parity in CI.
+- `tools/benchmark/` - "dead ends", a benchmark for AI research agents built from retained negatives plus literature controls; held-out baselines in `research/audits/DEAD_ENDS_BASELINES.md`.
 - `docs/` - human-readable project maps and research documentation.
+- `docs/papers/classical-competitors/` - draft preprint on three classical or local competitors; every number is generated from a committed report, and `reproduce.sh` regenerates them.
+- `docs/outreach/` - unsent drafts to outside researchers and an open-problems post; nothing there has been sent.
 - `tests/` - unit, integration, theorem-contract, and registry tests.
 
 ## Organization Policy
