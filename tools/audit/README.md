@@ -85,9 +85,11 @@ Measured on 2026-10-19 with 6 judges and 190 arXiv searches:
 How to read it:
 
 - Almost nothing came back not-found. The registry's barriers are mostly instances of
-  published ones (32%) or known techniques in a new setting (46%). The highest published
-  share is in coset observables / nonabelian HSP (48%) and code equivalence (37%). The
-  lowest is in the dihedral coset track (7%), where most records are adjacent.
+  published ones (32%) or known techniques in a new setting (46%). Among the three
+  largest tracks, the published share is highest in coset observables / nonabelian HSP
+  (48%) and code equivalence (37%), and lowest in the dihedral coset track (7%), where
+  most records are adjacent. The small applied-QC track, barriers taken from the
+  literature, has 5 of 11 published.
 - Unclear is mostly templated records ("Falsified or refined by exact theorem
   evaluation") and mixed clusters.
 - Labels are cluster-level. The reviewer found records whose own barrier differs from

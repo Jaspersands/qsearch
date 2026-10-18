@@ -37,9 +37,11 @@ rather than search:
 - **PPT bound** is the best measurement whose effects stay positive under partial
   transpose across every cut. Every local protocol is such a measurement, including
   two-way, multi-round and POVM-based ones. So this is an upper bound on all of them. The
-  bound is certified: the solver's dual is repaired into an exactly feasible dual
-  solution, so it does not rely on solver tolerance. The test suite checks the certificate
-  against the primal value.
+  bound is certified: the solver's dual is repaired into a feasible dual solution and
+  the residual eigenvalue is added, so it rests on floating-point eigenvalue accuracy,
+  not on solver tolerance. The test suite checks the certificate against the primal
+  value. The reported PPT bound is the smaller of this certificate and the collective
+  value, which is itself an upper bound on every measurement.
 
 ### Findings (seed 0, 12 restarts)
 
@@ -71,7 +73,7 @@ kind exceeds 0.6895, a certified gap of 0.0098. The one-way adaptive search reac
 |---|---|---|---|---|
 | three_packet | 0.6263 | 0.6263 | 0.6369 | Adaptive search is optimal among local protocols to within 4e-6. Certified gap 0.0106. |
 | two_packet | 0.4967 | 0.5122 | 0.5143 | Certified gap 0.0022, with an open window of 0.0155. |
-| mod64 | 0.7745 | 0.8305 | 0.8305 | Open. On two qubits a PPT measurement is separable, so a separable measurement reaches the collective score. Whether LOCC reaches it is undecided: the search found nothing above the X basis. |
+| mod64 | 0.7745 | 0.8305 | 0.8305 | Open. The PPT program's primal solution, a PPT and so (on two qubits) separable measurement, comes within 1e-7 of the collective score. That rests on solver precision, not on a certificate. Whether LOCC reaches it is undecided: the search found nothing above the X basis. |
 
 ### Scope
 
