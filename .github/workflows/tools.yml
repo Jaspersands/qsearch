@@ -5,12 +5,14 @@ on:
     branches: [main]
     paths:
       - "tools/corpus/**"
+      - "tools/arxiv_watch/**"
       - "tests/tools/**"
       - "requirements-tools.txt"
       - ".github/workflows/tools.yml"
   pull_request:
     paths:
       - "tools/corpus/**"
+      - "tools/arxiv_watch/**"
       - "tests/tools/**"
       - "requirements-tools.txt"
       - ".github/workflows/tools.yml"

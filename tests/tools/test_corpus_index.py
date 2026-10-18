@@ -164,6 +164,12 @@ def test_snippet_picks_the_sentence_sharing_most_query_terms() -> None:
     assert snippet(text, "Helstrom readout") == "The Helstrom readout loses to X basis."
 
 
+def test_mentions_finds_documents_citing_an_arxiv_id(corpus: Corpus) -> None:
+    assert corpus.mentions("2408.08292") == ["literature:jordan-dqi-2024"]
+    assert corpus.mentions("quant-ph/0501044") == ["literature:dihedral_sources:ARXIV-quant-ph-0501044-v2"]
+    assert corpus.mentions("9999.99999") == []
+
+
 def test_index_version_change_forces_full_reparse(fake_repo: Path, corpus: Corpus, monkeypatch) -> None:
     import tools.corpus.api as api
 

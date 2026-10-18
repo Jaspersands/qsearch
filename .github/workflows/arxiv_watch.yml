@@ -1,0 +1,42 @@
+name: arXiv watch
+
+on:
+  schedule:
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Install tool dependencies
+        run: pip install -r requirements-tools.txt
+      - name: Fetch new papers and update the digest
+        run: python tools/arxiv_watch/watch.py
+      - name: Open a pull request when the digest changed
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if git diff --quiet -- research/audits; then
+            echo "No new papers."
+            exit 0
+          fi
+          day="$(date -u +%Y-%m-%d)"
+          branch="arxiv-watch/${day}"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch -c "${branch}"
+          git add research/audits/arxiv_collisions.json research/audits/ARXIV_WATCH.md
+          git commit -m "arXiv watch ${day}"
+          git push origin "${branch}"
+          gh pr create --base main --head "${branch}" --title "arXiv watch ${day}" \
+            --body "New papers from the weekly arXiv watch. Read research/audits/ARXIV_WATCH.md; labels are triage, not judgement."

@@ -26,7 +26,7 @@ def parse_records(root: Path, rel: str) -> list[Doc]:
         if not isinstance(record, dict) or "id" not in record:
             continue
         title = str(record.get("title", record["id"]))
-        text = " ".join([title] + [str(record.get(name, "")) for name in _SEED_FIELDS])
+        text = " ".join([title] + [str(record.get(name, "")) for name in _SEED_FIELDS] + [str(record.get("url") or "")])
         meta = {"url": record.get("url"), "year": record.get("year"), "tags": record.get("tags", []), "status": "seed"}
         docs.append(Doc(f"literature:{record['id']}", "literature", rel, 0, title[:300], text, meta))
     return unique_ids(docs)
@@ -53,7 +53,8 @@ def parse_audit(root: Path, rel: str) -> list[Doc]:
         rid = str(record.get("id", index))
         title = str(record.get("title", rid))
         meta = {"url": record.get("url"), "audit_status": status, "checked_on": checked, "status": "audit"}
-        docs.append(Doc(f"literature:{stem}:{rid}", "literature", rel, 0, title[:300], flatten(_without_urls(record), 4000), meta))
+        text = f"{flatten(_without_urls(record), 4000)} {rid} {record.get('url') or ''}"
+        docs.append(Doc(f"literature:{stem}:{rid}", "literature", rel, 0, title[:300], text, meta))
     return unique_ids(docs)
 
 

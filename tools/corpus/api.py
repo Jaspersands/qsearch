@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import hashlib
 import os
+import re
 import time
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -26,7 +27,7 @@ from tools.corpus.store import Store
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 # Bump when parsers change what they emit, so existing indexes re-parse every file.
-INDEX_VERSION = "2"
+INDEX_VERSION = "3"
 REFIT_FRACTION = 0.05
 POOL = 200
 
@@ -222,6 +223,16 @@ class Corpus:
             if len(hits) >= k:
                 break
         return hits
+
+    def mentions(self, phrase: str, limit: int = 50) -> list[str]:
+        """Doc ids whose text contains the phrase as consecutive tokens (e.g. an arXiv id)."""
+        self._state()
+        tokens = re.findall(r"[A-Za-z0-9]+", phrase)
+        if not tokens:
+            return []
+        rows = self.store.fts('"' + " ".join(tokens) + '"', (), limit)
+        found = self.store.rows(rows)
+        return [found[r].doc_id for r in rows if r in found]
 
     def similar(self, doc_id: str, k: int = 10, dense: bool = False) -> list[Hit]:
         doc = self.get(doc_id)
