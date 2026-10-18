@@ -1,0 +1,6 @@
+# Dependencies for tools/ side projects (corpus index, MCP server). Not needed by qsearch.py.
+scikit-learn>=1.4
+mcp>=1.16
+pytest>=8
+# Optional dense ranker for tools/corpus (`build --dense`); downloads a ~90 MB model once.
+# sentence-transformers>=3

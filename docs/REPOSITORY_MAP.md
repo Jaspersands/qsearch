@@ -32,6 +32,7 @@ Q-Search organizes its 792 scientific theorem verification modules within a dedi
 
 - `site/` - public progress-page styles, assets, and frontend behavior.
 - `tools/` - maintenance and artifact-generation utilities (`build_progress_snapshot.py`).
+- `tools/corpus/` - searchable index and MCP server over notes, registries, theorem modules and literature ("has this been tried?"); index lives in the git-ignored `research/corpus_index/`.
 - `docs/` - human-readable project maps and research documentation.
 - `tests/` - unit, integration, theorem-contract, and registry tests.
 

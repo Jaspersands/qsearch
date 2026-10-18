@@ -1,0 +1,34 @@
+name: Tools
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "tools/corpus/**"
+      - "tests/tools/**"
+      - "requirements-tools.txt"
+      - ".github/workflows/tools.yml"
+  pull_request:
+    paths:
+      - "tools/corpus/**"
+      - "tests/tools/**"
+      - "requirements-tools.txt"
+      - ".github/workflows/tools.yml"
+
+jobs:
+  tools:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Install tool dependencies
+        run: pip install -r requirements-tools.txt
+      - name: Unit tests
+        run: python -m pytest -q tests/tools
+      - name: Build the corpus index over the committed repository
+        run: python tools/corpus/cli.py build
+      - name: Held-out retrieval check
+        run: python tools/corpus/cli.py heldout tests/tools/fixtures/corpus_heldout.json -k 5 --min 16 --no-refresh
