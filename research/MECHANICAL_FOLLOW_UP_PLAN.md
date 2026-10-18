@@ -1,5 +1,18 @@
 # Mechanical Follow-Up Implementation Plan (pass 2)
 
+## CLI Wiring Change: qsearch.py Is Now A Shim (2026-10-19)
+
+The subcommands moved out of `qsearch.py` into `qsearch_cli/`. `python qsearch.py <command>`, every option and every README command work as before. `qsearch.command_x`, `from qsearch import x` and `monkeypatch.setattr(qsearch, name, ...)` also still work.
+
+To wire a new subcommand:
+1. Add `add_<name>(subparsers)` and `command_<name>(args)` to the matching `qsearch_cli/commands/<domain>.py`, where the domain is dcp, code, coset, self_dual_wreath, native or general.
+2. Import theorem code inside the command function.
+3. Append one line to `ORDER` and one to `FUNCTIONS` in `qsearch_cli/registry.py`.
+
+The old three-place style still works, but only inside the marked legacy block at the bottom of `qsearch.py`. `python tools/split_cli/migrate.py sweep --root .` moves those additions later.
+
+Do not add top-level theorem imports to `qsearch.py`. They make every command slow again: startup dropped from about 5 s to under 1.5 s. Details: `tools/split_cli/README.md`.
+
 ## Current Research Override
 
 NEW finite readout producer: `python theorems/prime_character_finite_readout.py

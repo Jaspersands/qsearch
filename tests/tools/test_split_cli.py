@@ -239,6 +239,33 @@ def test_shim_keeps_identity_monkeypatching_and_lazy_startup(tmp_path: Path) -> 
     assert result.returncode == 0 and result.stdout.strip() == "ok", result.stderr
 
 
+def test_real_cli_starts_without_importing_theorem_modules() -> None:
+    probe = (
+        "import sys, argparse, qsearch\n"
+        "parser = qsearch.build_parser()\n"
+        "heavy = [m for m, v in sys.modules.items() if '/theorems/' in str(getattr(v, '__file__', ''))]\n"
+        "sub = next(a for a in parser._actions if isinstance(a, argparse._SubParsersAction))\n"
+        "print(len(heavy), len(sub.choices))\n"
+    )
+    result = _run(REPO, "-c", probe)
+    assert result.returncode == 0, result.stderr
+    heavy, names = map(int, result.stdout.split())
+    assert heavy == 0
+    manifest = json.loads((REPO / gen.MANIFEST).read_text())
+    assert names == len(manifest["subcommands"]) + sum(len(s["aliases"]) for s in manifest["subcommands"])
+
+
+def test_real_registry_matches_manifest_and_resolves() -> None:
+    sys.path.insert(0, str(REPO))
+    from qsearch_cli import registry
+
+    manifest = json.loads((REPO / gen.MANIFEST).read_text())
+    assert [n for n, _, _ in registry.ORDER] == [s["name"] for s in manifest["subcommands"]]
+    assert len(registry.FUNCTIONS) == manifest["functions"]
+    for name, module, adder in registry.ORDER:
+        assert module.startswith("qsearch_cli.commands.") and adder == gen.adder_name(name)
+
+
 def test_sweep_moves_legacy_style_additions(tmp_path: Path) -> None:
     root = _fixture(tmp_path)
     assert _run(root, str(MIGRATE), "generate", "--root", str(root), "--shim").returncode == 0
