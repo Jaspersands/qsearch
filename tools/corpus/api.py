@@ -6,6 +6,7 @@ import hashlib
 import os
 import re
 import time
+import uuid
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
@@ -22,12 +23,12 @@ from tools.corpus.ranking import (
     snippet,
     top_rows,
 )
-from tools.corpus.sources import discover, parse_file
+from tools.corpus.sources import discover, parse_source
 from tools.corpus.store import Store
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 # Bump when parsers change what they emit, so existing indexes re-parse every file.
-INDEX_VERSION = "3"
+INDEX_VERSION = "4"
 REFIT_FRACTION = 0.05
 POOL = 200
 
@@ -89,55 +90,106 @@ class Corpus:
 
     # building -----------------------------------------------------------------
     def refresh(self, full: bool = False, dense: bool = False) -> BuildStats:
+        """Re-parse changed files, then bring the TF-IDF pickle in step with the database.
+
+        Files are stat'ed, hashed and parsed before any write, so an unchanged index is never
+        locked: a no-op refresh only reads. Changes are applied in one write transaction that is
+        rolled back on any exception. Each committed change stores a fresh `epoch` token in the
+        database; the TF-IDF pickle records the epoch it reflects, and a pickle whose epoch does
+        not match (a crash between commit and save, or another agent's write) is refit.
+        """
         start = time.time()
         stats = BuildStats()
-        if self.store.info("version") != INDEX_VERSION:
-            full = True
+        version_ok = self.store.info("version") == INDEX_VERSION
+        full = full or not version_ok
         states = self.store.file_states()
         files = discover(self.root)
         stats.files_scanned = len(files)
-        added: list[int] = []
-        removed: list[int] = []
+        touched: list[tuple[str, float, int, str]] = []
+        parsed: list[tuple[str, float, int, str, list[Doc], list[str]]] = []
         for rel in files:
             path = self.root / rel
             try:
                 stat = path.stat()
+                known = states.get(rel)
+                if known and known[0] == stat.st_mtime and known[1] == stat.st_size and not full:
+                    continue
+                sha = hashlib.sha1(path.read_bytes()).hexdigest()
             except FileNotFoundError:
                 continue
-            known = states.get(rel)
-            if known and known[0] == stat.st_mtime and known[1] == stat.st_size and not full:
-                continue
-            sha = hashlib.sha1(path.read_bytes()).hexdigest()
             if known and known[2] == sha and not full:
-                self.store.set_file_state(rel, stat.st_mtime, stat.st_size, sha)
+                touched.append((rel, stat.st_mtime, stat.st_size, sha))
                 continue
-            new_ids, old_ids = self.store.replace_file(rel, parse_file(self.root, rel))
-            self.store.set_file_state(rel, stat.st_mtime, stat.st_size, sha)
-            added.extend(new_ids)
-            removed.extend(old_ids)
-            stats.files_changed += 1
-        for rel in set(states) - set(files):
-            removed.extend(self.store.remove_file(rel))
-            stats.files_changed += 1
-        self.store.set_info("version", INDEX_VERSION)
-        self.store.commit()
+            docs, issues = parse_source(self.root, rel)
+            parsed.append((rel, stat.st_mtime, stat.st_size, sha, docs, issues))
+        gone = sorted(set(states) - set(files))
 
+        added: list[int] = []
+        removed: list[int] = []
+        base_epoch = self.store.info("epoch") or ""
+        new_epoch = base_epoch
+        if touched or parsed or gone or not version_ok:
+            with self.store.write():
+                base_epoch = new_epoch = self.store.info("epoch") or ""
+                for rel, mtime, size, sha in touched:
+                    self.store.set_file_state(rel, mtime, size, sha)
+                for rel, mtime, size, sha, docs, issues in parsed:
+                    new_ids, old_ids = self.store.replace_file(rel, docs)
+                    self.store.set_issues(rel, issues)
+                    self.store.set_file_state(rel, mtime, size, sha)
+                    added.extend(new_ids)
+                    removed.extend(old_ids)
+                for rel in gone:
+                    removed.extend(self.store.remove_file(rel))
+                if not version_ok:
+                    self.store.drop_orphan_fts_rows()
+                    self.store.set_info("version", INDEX_VERSION)
+                if added or removed:
+                    new_epoch = uuid.uuid4().hex
+                    self.store.set_info("epoch", new_epoch)
+        stats.files_changed = len(parsed) + len(gone)
         stats.docs_total = self.store.count()
         stats.docs_added, stats.docs_removed = len(added), len(removed)
-        tfidf = None if full else TfidfState.load(self.tfidf_path)
-        if tfidf is None or tfidf.changed_since_fit + len(added) + len(removed) > REFIT_FRACTION * max(stats.docs_total, 1):
-            tfidf = TfidfState.fit(self.store.texts())
-            stats.refit = True
-            tfidf.save(self.tfidf_path)
-        elif added or removed:
-            tfidf.patch(set(removed), self.store.texts(added))
-            tfidf.save(self.tfidf_path)
-        self._tfidf, self._kinds, self._dense = tfidf, None, None
+        stats.refit = self._sync_tfidf(base_epoch, new_epoch, added, removed, force_refit=full)
 
         if dense:
             stats.vectors_added = self._embed_missing()
         stats.seconds = round(time.time() - start, 3)
         return stats
+
+    def _sync_tfidf(self, base: str, ours: str, added: list[int], removed: list[int], force_refit: bool = False) -> bool:
+        """Make the TF-IDF state match the database epoch; returns True when it was refit.
+
+        A state is patched only when it reflects exactly the epoch our changes started from and
+        nobody committed after us; anything else is refit from the stored texts. The epoch is
+        read before the texts, so a saved state never claims to be newer than its content.
+        """
+        current = self.store.info("epoch") or ""
+        tfidf = None
+        if not force_refit:
+            if self._tfidf is not None and self._tfidf.epoch in {base, current}:
+                tfidf = self._tfidf
+            else:
+                tfidf = TfidfState.load(self.tfidf_path)
+        if tfidf is not None and tfidf.epoch == current and not force_refit:
+            if tfidf is not self._tfidf:  # another agent refreshed: drop caches built on the old rows
+                self._tfidf, self._kinds, self._dense = tfidf, None, None
+            return False
+        patchable = (
+            tfidf is not None
+            and tfidf.epoch == base
+            and current == ours
+            and tfidf.changed_since_fit + len(added) + len(removed) <= REFIT_FRACTION * max(self.store.count(), 1)
+        )
+        if patchable:
+            assert tfidf is not None
+            tfidf.patch(set(removed), self.store.texts(added))
+        else:
+            tfidf = TfidfState.fit(self.store.texts())
+        tfidf.epoch = current
+        tfidf.save(self.tfidf_path)
+        self._tfidf, self._kinds, self._dense = tfidf, None, None
+        return not patchable
 
     def _embedder_or_default(self) -> Embedder:
         if self._embedder is None:
@@ -152,10 +204,21 @@ class Corpus:
             vectors = embed([text for _, text in chunk]).astype(np.float32)
             self.store.put_vectors((sha, vector.tobytes()) for (sha, _), vector in zip(chunk, vectors))
             self.store.commit()
+        if missing:
+            self._dense = None
         return len(missing)
 
     def has_dense(self) -> bool:
-        return self.store.has_vectors()
+        """True when every document has a stored vector, so a dense ranking can see all of them."""
+        return self.store.has_vectors() and self.store.docs_without_vectors() == 0
+
+    def issues(self) -> list[dict[str, str]]:
+        """Parse problems recorded for indexed files (skipped records, files indexed as raw text)."""
+        return [{"path": path, "message": message} for path, message in self.store.issues()]
+
+    def incomplete(self) -> bool:
+        """True when a registry file or record could not be read, so negatives may be missing."""
+        return any(path.startswith("research/registry/") for path, _ in self.store.issues())
 
     # lookup ---------------------------------------------------------------------
     def doc_ids(self) -> list[str]:
@@ -166,9 +229,13 @@ class Corpus:
 
     def _state(self) -> TfidfState:
         if self._tfidf is None:
-            self._tfidf = TfidfState.load(self.tfidf_path)
-            if self._tfidf is None:
-                self.refresh()
+            loaded = TfidfState.load(self.tfidf_path)
+            if loaded is None and not self.store.count():
+                self.refresh()  # first use: build the index
+            elif loaded is None or loaded.epoch != (self.store.info("epoch") or ""):
+                self._sync_tfidf("", "", [], [], force_refit=True)  # pickle missing or out of step
+            else:
+                self._tfidf = loaded
         assert self._tfidf is not None
         return self._tfidf
 
@@ -202,14 +269,25 @@ class Corpus:
         rankings: list[list[int]] = [self.store.fts(fts_match(query), tuple(kinds), pool)]
         allowed = np.isin(self._row_kinds(), list(kinds)) if kinds else None
         rankings.append(top_rows(state.scores(query), state.rowids, allowed, pool))
-        if dense and self.has_dense():
+        covered: set[int] | None = None
+        if dense and self.store.has_vectors():
             ids, matrix = self._dense_matrix()
             qvec = self._embedder_or_default()([query])[0]
             kinds_by_row = self.store.kinds_by_row() if kinds else {}
             dense_allowed = np.array([kinds_by_row.get(int(i)) in kinds for i in ids]) if kinds else None
             rankings.append(top_rows(matrix @ qvec, ids, dense_allowed, pool))
+            if len(ids) < self.store.count():
+                covered = set(ids.tolist())
 
         fused = rrf(rankings)
+        if covered is not None:
+            # Docs added since the last `build --dense` have no vector. Score them on the other
+            # rankings alone, scaled up to the same number of rankers, so they are neither buried
+            # nor favoured by a ranker that cannot see them.
+            scale = len(rankings) / (len(rankings) - 1)
+            fused = sorted(
+                ((key, score if key in covered else score * scale) for key, score in fused), key=lambda item: -item[1]
+            )
         rows = self.store.rows([rowid for rowid, _ in fused[: pool * 2]])
         wanted_tags = {tag.lower() for tag in tags}
         hits: list[Hit] = []
@@ -225,14 +303,24 @@ class Corpus:
         return hits
 
     def mentions(self, phrase: str, limit: int = 50) -> list[str]:
-        """Doc ids whose text contains the phrase as consecutive tokens (e.g. an arXiv id)."""
-        self._state()
+        """Doc ids whose text contains the phrase as consecutive tokens, e.g. an arXiv id.
+
+        A version suffix or a glued prefix is allowed: "2609.35656" also matches "2609.35656v1",
+        "arXiv:2609.35656v2" and "arXiv2609.35656". FTS5 keeps "35656v1" as one token, so the
+        last token is searched as a prefix and every candidate is checked with a regex.
+        """
         tokens = re.findall(r"[A-Za-z0-9]+", phrase)
         if not tokens:
             return []
-        rows = self.store.fts('"' + " ".join(tokens) + '"', (), limit)
-        found = self.store.rows(rows)
-        return [found[r].doc_id for r in rows if r in found]
+        self._state()
+        first = r"(?<![0-9])" if tokens[0][0].isdigit() else r"(?<![A-Za-z0-9])"
+        pattern = re.compile(
+            first + r"[^A-Za-z0-9]{1,2}".join(re.escape(t) for t in tokens) + r"(?:v[0-9]+)?(?![A-Za-z0-9])", re.I
+        )
+        candidates = self.store.fts(f'"{tokens[-1]}" *', (), max(limit * 20, 1000))
+        found = self.store.rows(candidates)
+        hits = [found[r].doc_id for r in candidates if r in found and pattern.search(f"{found[r].title}\n{found[r].text}")]
+        return hits[:limit]
 
     def similar(self, doc_id: str, k: int = 10, dense: bool = False) -> list[Hit]:
         doc = self.get(doc_id)

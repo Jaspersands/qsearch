@@ -8,7 +8,7 @@ from pathlib import Path
 from tools.corpus.docs import Doc, words
 
 
-def parse(root: Path, rel: str) -> list[Doc]:
+def parse(root: Path, rel: str, issues: list[str] | None = None) -> list[Doc]:
     path = root / rel
     source = path.read_text(encoding="utf-8", errors="replace")
     stem = path.stem

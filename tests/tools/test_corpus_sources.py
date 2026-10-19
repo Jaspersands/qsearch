@@ -154,3 +154,48 @@ def test_templated_dequant_claims_are_titled_by_their_target(fake_repo: Path) ->
     (fake_repo / rel).write_text(json.dumps(records, indent=2))
     docs = parse_file(fake_repo, rel)
     assert docs[0].title == f"EXP-COSET-WIDGET-0: {template}"
+
+
+def test_record_lines_are_exact_and_linear_in_file_size() -> None:
+    import json
+    import time
+
+    from tools.corpus.sources.registry import _id_lines
+
+    records = [{"id": f"NEG-{i}", "claim": "x " * 40} for i in range(20000)]
+    text = "\n\n" + json.dumps(records, indent=2)  # leading blank lines must not shift the first line number
+    lines = text.splitlines()
+    start = time.process_time()
+    found = _id_lines(text)
+    elapsed = time.process_time() - start
+    assert len(found) == 20000
+    for rid in ("NEG-0", "NEG-777", "NEG-19999"):
+        assert lines[found[rid] - 1].strip().startswith(f'"id": "{rid}"')
+    assert elapsed < 1.0  # quadratic counting took tens of seconds on this input
+
+
+def test_note_ids_are_unique_when_numbered_and_repeated_headings_collide(fake_repo: Path) -> None:
+    long = " ".join(f"w{i}" for i in range(450))
+    (fake_repo / "research" / "DUP.md").write_text(
+        f"# Dup\n\n## Results\n\n{long}\n\n## Results\n\nsecond section here.\n\n## Results 2\n\nthird section here.\n"
+    )
+    ids = [doc.doc_id for doc in parse_file(fake_repo, "research/DUP.md")]
+    assert len(ids) == len(set(ids)) == 4
+    assert ids == [doc.doc_id for doc in parse_file(fake_repo, "research/DUP.md")]  # deterministic
+    journal = "# H\n\n## Pass 2\n\nnewest pass text.\n\n## Pass\n\nmiddle pass text.\n\n## Pass\n\noldest pass text.\n"
+    (fake_repo / "research" / "AGENT_HANDOFF.md").write_text(journal)
+    ids = [doc.doc_id for doc in parse_file(fake_repo, "research/AGENT_HANDOFF.md")]
+    assert len(ids) == len(set(ids)) == 3
+
+
+def test_parser_crash_falls_back_to_raw_text_and_reports_the_problem(fake_repo: Path, monkeypatch) -> None:
+    from tools.corpus import sources
+    from tools.corpus.sources import parse_source
+
+    def crash(root, rel, issues=None):
+        raise AttributeError("'str' object has no attribute 'get'")
+
+    monkeypatch.setattr(sources.registry, "parse", crash)
+    docs, issues = parse_source(fake_repo, "research/registry/negative_results.json")
+    assert [doc.meta["status"] for doc in docs] == ["unparseable"]
+    assert issues and "AttributeError" in issues[0]

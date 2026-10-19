@@ -8,7 +8,8 @@ from typing import Callable
 from tools.corpus.docs import Doc
 from tools.corpus.sources import literature, markdown, registry, theorems
 
-Parser = Callable[[Path, str], list[Doc]]
+# parser(root, rel, issues) -> docs; a parser appends one line to `issues` per record it had to skip.
+Parser = Callable[[Path, str, list[str]], list[Doc]]
 
 
 def _parser_for(rel: str) -> Parser | None:
@@ -53,17 +54,32 @@ def discover(root: Path) -> list[str]:
 _FALLBACK_KIND = {"hypotheses": "hypothesis", "literature_audits": "literature", "registry": "registry"}
 
 
-def parse_file(root: Path, rel: str) -> list[Doc]:
-    """Parse one source file; a file that cannot be parsed becomes one raw-text document."""
+def parse_source(root: Path, rel: str) -> tuple[list[Doc], list[str]]:
+    """Parse one source file into (docs, issues).
+
+    A parser failure of any kind (bad JSON, an unexpected record shape, a bug) never escapes:
+    the file becomes one raw-text document with status `unparseable` and the failure is
+    returned as an issue, so callers can say the index is incomplete instead of empty.
+    """
     parser = _parser_for(rel)
     if parser is None:
-        return []
+        return [], []
+    issues: list[str] = []
     try:
-        return parser(root, rel)
-    except (ValueError, UnicodeDecodeError) as error:
+        return parser(root, rel, issues), issues
+    except Exception as error:  # noqa: BLE001 - one bad file must not take the index down
+        message = f"unparseable, indexed as raw text ({type(error).__name__}: {error})"[:300]
         path = root / rel
         parts = rel.split("/")
         kind = _FALLBACK_KIND.get(parts[1] if len(parts) > 2 else "", "literature" if "literature" in rel else "note")
-        raw = path.read_text(encoding="utf-8", errors="replace")[:4000]
-        meta = {"status": "unparseable", "error": f"{type(error).__name__}: {error}"[:300]}
-        return [Doc(f"{kind}:{path.stem}", kind, rel, 0, path.stem, raw, meta)]
+        try:
+            raw = path.read_text(encoding="utf-8", errors="replace")[:4000]
+        except OSError:
+            return [], [message]
+        meta = {"status": "unparseable", "error": message}
+        return [Doc(f"{kind}:{path.stem}", kind, rel, 0, path.stem, raw, meta)], [message]
+
+
+def parse_file(root: Path, rel: str) -> list[Doc]:
+    """Parse one source file; a file that cannot be parsed becomes one raw-text document."""
+    return parse_source(root, rel)[0]

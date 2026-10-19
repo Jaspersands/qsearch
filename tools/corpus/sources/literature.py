@@ -18,7 +18,7 @@ _SEED_FIELDS = (
 )
 
 
-def parse_records(root: Path, rel: str) -> list[Doc]:
+def parse_records(root: Path, rel: str, issues: list[str] | None = None) -> list[Doc]:
     data = read_json(root / rel)
     records = data if isinstance(data, list) else data.get("records", []) if isinstance(data, dict) else []
     docs = []
@@ -36,7 +36,7 @@ def _without_urls(record: dict[str, Any]) -> dict[str, Any]:
     return {key: value for key, value in record.items() if key not in {"url", "pdf", "html"}}
 
 
-def parse_audit(root: Path, rel: str) -> list[Doc]:
+def parse_audit(root: Path, rel: str, issues: list[str] | None = None) -> list[Doc]:
     path = root / rel
     data = read_json(path)
     stem = path.stem
@@ -58,7 +58,7 @@ def parse_audit(root: Path, rel: str) -> list[Doc]:
     return unique_ids(docs)
 
 
-def parse_hypothesis(root: Path, rel: str) -> list[Doc]:
+def parse_hypothesis(root: Path, rel: str, issues: list[str] | None = None) -> list[Doc]:
     path = root / rel
     data = read_json(path)
     stem = path.stem

@@ -5,7 +5,7 @@ from __future__ import annotations
 import re
 from pathlib import Path
 
-from tools.corpus.docs import Doc, slugify
+from tools.corpus.docs import Doc, slugify, unique_ids
 
 MAX_WORDS = 400
 JOURNALS = {"AGENT_HANDOFF.md", "MECHANICAL_FOLLOW_UP_PLAN.md"}
@@ -67,7 +67,7 @@ def _split(body: list[str], first_line: int) -> list[tuple[int, str]]:
     return [(line, " ".join(tokens)) for line, tokens in pieces if tokens]
 
 
-def parse(root: Path, rel: str) -> list[Doc]:
+def parse(root: Path, rel: str, issues: list[str] | None = None) -> list[Doc]:
     path = root / rel
     lines = path.read_text(encoding="utf-8", errors="replace").splitlines()
     stem = path.stem
@@ -93,7 +93,7 @@ def parse(root: Path, rel: str) -> list[Doc]:
                 doc_id = base if part == 0 else f"{base}~{part + 1}"
                 meta = {"rank": index - 1, "file": path.name, "status": "journal"}
                 docs.append(Doc(doc_id, "handoff", rel, line if part == 0 else part_line, heading, text, meta))
-        return docs
+        return unique_ids(docs)
 
     used: dict[str, int] = {}
     for heading, line, body in sections:
@@ -109,4 +109,5 @@ def parse(root: Path, rel: str) -> list[Doc]:
             piece = anchor if part == 0 else f"{anchor}-{part + 1}"
             meta = {"status": status, "note": stem, "heading": heading}
             docs.append(Doc(f"note:{stem}#{piece}", "note", rel, line if part == 0 else part_line, chunk_title, text, meta))
-    return docs
+    # A split piece ("results-2"), a repeated heading and a heading "Results 2" can share a slug.
+    return unique_ids(docs)

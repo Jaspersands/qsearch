@@ -5,7 +5,9 @@
     python tools/corpus/cli.py similar negative:NEG-DCP-LOCAL-HELSTROM-HIERARCHY
     python tools/corpus/cli.py build [--full] [--dense]
 
-Every query first refreshes the index incrementally (about 0.1 s when nothing changed).
+Every query first refreshes the index incrementally (well under a second when nothing changed).
+A file or registry record that could not be parsed is reported on stderr; when it is a registry
+file, `been-tried` says INDEX INCOMPLETE and exits 2, because missing negatives are not novelty.
 """
 
 from __future__ import annotations
@@ -54,6 +56,21 @@ def _print_hit(index: int, hit: Hit) -> None:
         print(f"     {hit.snippet}")
 
 
+def _warn_issues(corpus: Corpus) -> None:
+    issues = corpus.issues()
+    for issue in issues[:10]:
+        print(f"warning: {issue['path']}: {issue['message']}", file=sys.stderr)
+    if len(issues) > 10:
+        print(f"warning: ... and {len(issues) - 10} more parse problems", file=sys.stderr)
+    if corpus.incomplete():
+        print("warning: INDEX INCOMPLETE: a registry file or record could not be read; "
+              "results may be missing retained negatives.", file=sys.stderr)
+
+
+def _issues_json(corpus: Corpus) -> dict:
+    return {"index_incomplete": corpus.incomplete(), "index_issues": corpus.issues()}
+
+
 def _corpus(args: argparse.Namespace) -> Corpus:
     corpus = Corpus(Path(args.root) if args.root else None)
     if args.command == "build" or not getattr(args, "no_refresh", False):
@@ -64,6 +81,9 @@ def _corpus(args: argparse.Namespace) -> Corpus:
                 f"docs +{stats.docs_added} -{stats.docs_removed}, docs total {stats.docs_total}, "
                 f"refit {stats.refit}, vectors +{stats.vectors_added}, {stats.seconds}s"
             )
+    _warn_issues(corpus)
+    if getattr(args, "dense", False) and args.command != "build" and not corpus.has_dense():
+        print("note: dense vectors do not cover every document; run `build --dense` to update them.", file=sys.stderr)
     return corpus
 
 
@@ -78,7 +98,7 @@ def cmd_search(args: argparse.Namespace) -> int:
     tags = tuple(t for t in (args.tags or "").split(",") if t)
     hits = corpus.search(args.query, kinds=kinds, tags=tags, k=args.k, dense=args.dense)
     if args.json:
-        print(json.dumps({"query": args.query, "hits": [_hit_json(h) for h in hits]}, indent=2))
+        print(json.dumps({"query": args.query, "hits": [_hit_json(h) for h in hits], **_issues_json(corpus)}, indent=2))
         return 0
     for index, hit in enumerate(hits, start=1):
         _print_hit(index, hit)
@@ -88,20 +108,28 @@ def cmd_search(args: argparse.Namespace) -> int:
 def cmd_been_tried(args: argparse.Namespace) -> int:
     corpus = _corpus(args)
     groups = corpus.been_tried(args.idea, k=args.k, dense=args.dense)
+    incomplete = corpus.incomplete()
     if args.json:
-        payload = {"query": args.idea, "groups": {name: [_hit_json(h) for h in hits] for name, hits in groups.items()}}
+        payload = {
+            "query": args.idea,
+            "groups": {name: [_hit_json(h) for h in hits] for name, hits in groups.items()},
+            **_issues_json(corpus),
+        }
         print(json.dumps(payload, indent=2))
-        return 0
+        return 2 if incomplete else 0
+    if incomplete:
+        print("INDEX INCOMPLETE: a registry file or record could not be read (see the warnings on stderr).")
+        print("An empty group below does not mean the idea is new.\n")
     print(f"Been tried? {args.idea[:120]}\n")
     for name, hits in groups.items():
         print(name)
         if not hits:
-            print("  (nothing close)")
+            print("  (nothing close; the index is incomplete)" if incomplete else "  (nothing close)")
         for index, hit in enumerate(hits, start=1):
             _print_hit(index, hit)
         print()
     print("Ranked by text similarity. A close match is a lead to read, not a verdict on the idea.")
-    return 0
+    return 2 if incomplete else 0
 
 
 def cmd_similar(args: argparse.Namespace) -> int:

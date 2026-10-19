@@ -72,3 +72,27 @@ def test_script_runs_directly_without_package_install(fake_repo: Path) -> None:
         check=True,
     )
     assert json.loads(result.stdout)["hits"]
+
+
+def _cli(fake_repo: Path, *args: str) -> subprocess.CompletedProcess:
+    return subprocess.run([sys.executable, str(CLI), "--root", str(fake_repo), *args], capture_output=True, text=True)
+
+
+def test_corrupt_registry_is_reported_as_incomplete_not_as_novel(fake_repo: Path) -> None:
+    negatives = fake_repo / "research" / "registry" / "negative_results.json"
+    text = negatives.read_text()
+    negatives.write_text(text[: len(text) // 2])  # a non-atomic rewrite caught half-way
+    idea = "quadratic extension norm for mixed coset OPI"
+    result = _cli(fake_repo, "been-tried", idea, "--json")
+    payload = json.loads(result.stdout)
+    assert result.returncode == 2
+    assert payload["index_incomplete"] is True
+    assert any(issue["path"].endswith("negative_results.json") for issue in payload["index_issues"])
+    assert "negative_results.json" in result.stderr
+    text_mode = _cli(fake_repo, "been-tried", idea)
+    assert text_mode.returncode == 2
+    assert "INDEX INCOMPLETE" in text_mode.stdout
+    negatives.write_text(text)  # repaired: the warning goes away
+    ok = _cli(fake_repo, "been-tried", idea, "--json")
+    assert ok.returncode == 0
+    assert json.loads(ok.stdout)["index_incomplete"] is False

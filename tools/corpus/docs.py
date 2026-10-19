@@ -72,13 +72,22 @@ def words(identifier: str) -> str:
 
 
 def unique_ids(docs: list[Doc]) -> list[Doc]:
-    """Suffix repeated doc_ids within one file with -2, -3, ... in order."""
-    seen: dict[str, int] = {}
+    """Suffix repeated doc_ids within one file with -2, -3, ... in order.
+
+    A suffix never reuses an id that another document of the file already has, so a heading
+    "Results 2" and a second "Results" heading cannot both end up as `results-2`.
+    """
+    taken = {doc.doc_id for doc in docs}
+    seen: set[str] = set()
     result = []
     for doc in docs:
-        count = seen.get(doc.doc_id, 0) + 1
-        seen[doc.doc_id] = count
-        if count > 1:
-            doc = Doc(f"{doc.doc_id}-{count}", doc.kind, doc.path, doc.line, doc.title, doc.text, doc.meta)
+        if doc.doc_id in seen:
+            count = 2
+            while f"{doc.doc_id}-{count}" in taken:
+                count += 1
+            new_id = f"{doc.doc_id}-{count}"
+            taken.add(new_id)
+            doc = Doc(new_id, doc.kind, doc.path, doc.line, doc.title, doc.text, doc.meta)
+        seen.add(doc.doc_id)
         result.append(doc)
     return result

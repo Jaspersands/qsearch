@@ -77,6 +77,7 @@ class TfidfState:
     matrix: object  # scipy.sparse.csr_matrix, rows L2-normalized
     rowids: np.ndarray
     changed_since_fit: int = 0
+    epoch: str = ""  # the database epoch (info table) this state reflects; see Corpus.refresh
 
     @classmethod
     def fit(cls, items: Iterable[tuple[int, str]]) -> "TfidfState":
@@ -119,17 +120,23 @@ class TfidfState:
         return np.asarray((self.matrix @ vector.T).todense()).ravel()
 
     def save(self, path: Path) -> None:
-        tmp = path.with_suffix(".tmp")
-        with tmp.open("wb") as handle:
-            pickle.dump(self, handle, protocol=pickle.HIGHEST_PROTOCOL)
-        os.replace(tmp, path)
+        tmp = path.with_suffix(f".{os.getpid()}.tmp")  # per process, so two agents never share a temp file
+        try:
+            with tmp.open("wb") as handle:
+                pickle.dump(self, handle, protocol=pickle.HIGHEST_PROTOCOL)
+            os.replace(tmp, path)
+        finally:
+            tmp.unlink(missing_ok=True)
 
     @staticmethod
     def load(path: Path) -> "TfidfState | None":
-        if not path.exists():
+        """The saved state, or None when it is missing or unreadable (it is then refit)."""
+        try:
+            with path.open("rb") as handle:
+                state = pickle.load(handle)
+        except (OSError, EOFError, pickle.UnpicklingError, AttributeError, ImportError, ValueError):
             return None
-        with path.open("rb") as handle:
-            return pickle.load(handle)
+        return state if isinstance(state, TfidfState) else None
 
 
 def top_rows(scores: np.ndarray, rowids: np.ndarray, allowed: np.ndarray | None, limit: int) -> list[int]:

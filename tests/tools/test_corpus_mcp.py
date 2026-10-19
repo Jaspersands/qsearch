@@ -75,3 +75,48 @@ def test_stdio_round_trip_like_an_agent_client(fake_repo: Path) -> None:
 
     payload = anyio.run(go)
     assert payload["groups"]["Killed before"][0]["doc_id"] == "negative:NEG-DCP-LOCAL-HELSTROM-HIERARCHY"
+
+
+def test_malformed_record_neither_breaks_the_server_nor_locks_out_other_agents(fake_repo: Path) -> None:
+    from tests.tools.conftest import NEGATIVES, QUARANTINED
+    from tools.corpus.api import Corpus
+
+    server = create_server(fake_repo, dense="off", refresh_seconds=0)
+    _call(server, "search_corpus", {"query": "warmup"})
+    registry = fake_repo / "research" / "registry"
+    kangaroo = {"id": "NEG-NEW-ONE", "claim": "Kangaroo sieve", "reason_invalid": "x", "lesson": "y", "applies_to": ["DCP"]}
+    (registry / "negative_results.json").write_text(json.dumps(NEGATIVES + [kangaroo], indent=2))
+    bad = QUARANTINED + [{"id": "NEG-Q2", "original_record": "see NEG-NEW-ONE", "status": "QUARANTINED"}]
+    (registry / "quarantined_campaign_negatives.json").write_text(json.dumps(bad, indent=2))
+    hits = _call(server, "search_corpus", {"query": "kangaroo sieve", "kinds": ["negative"]})["hits"]
+    assert hits[0]["doc_id"] == "negative:NEG-NEW-ONE"
+    other = Corpus(fake_repo)
+    other.store.conn.execute("PRAGMA busy_timeout = 500")
+    (fake_repo / "theorems" / "numbat.py").write_text('"""Numbat sieve."""\n')
+    other.refresh()  # another agent can still write the index
+    assert other.search("numbat sieve")[0].doc_id == "theorem:numbat"
+
+
+def test_auto_dense_waits_for_full_vector_coverage(fake_repo: Path) -> None:
+    import numpy as np
+
+    from tools.corpus.api import Corpus
+
+    calls: list[int] = []
+
+    def embed(texts):
+        calls.append(len(texts))
+        return np.ones((len(texts), 3), dtype=np.float32) / np.sqrt(3)
+
+    Corpus(fake_repo, embedder=embed).refresh(dense=True)  # someone ran `build --dense` once
+    del calls[:]
+    server = create_server(fake_repo, dense="auto", refresh_seconds=0, embedder=embed)
+    _call(server, "search_corpus", {"query": "Helstrom"})
+    assert calls == [1]  # coverage is complete, so the query was embedded
+    (fake_repo / "theorems" / "wombat_sieve.py").write_text('"""Wombat sieve for hidden shifts."""\n')
+    hits = _call(server, "search_corpus", {"query": "wombat sieve hidden shift", "k": 1})["hits"]
+    assert hits[0]["doc_id"] == "theorem:wombat_sieve"
+    assert calls == [1]  # the new doc has no vector, so auto mode stayed lexical
+    on = create_server(fake_repo, dense="on", refresh_seconds=0, embedder=embed)
+    _call(on, "search_corpus", {"query": "wombat"})
+    assert calls == [1, 1, 1]  # "on" embeds the one missing doc, then the query

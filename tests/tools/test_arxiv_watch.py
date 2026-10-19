@@ -1,12 +1,14 @@
 from __future__ import annotations
 
+import datetime as dt
 import json
+import re
 from pathlib import Path
 from urllib.parse import parse_qs, urlparse
 
 import pytest
 
-from tools.arxiv_watch.tracks import TRACKS, classify
+from tools.arxiv_watch.tracks import CATEGORIES, TRACKS, classify
 from tools.arxiv_watch.watch import label_for, replay_seeds, run
 from tools.corpus.api import Corpus
 from tools.corpus.sources.arxiv import Client, Paper, parse_atom
@@ -139,9 +141,17 @@ def test_classify_unrelated_text_has_no_track() -> None:
     assert classify("A survey of superconducting qubit fabrication yields") == []
 
 
-def test_every_track_has_a_category_limited_query() -> None:
-    for track in TRACKS.values():
-        assert "cat:quant-ph" in track.arxiv_query()
+def test_every_track_query_ands_its_phrases_with_the_category_filter() -> None:
+    categories = re.fullmatch(r"\((cat:[\w.-]+)( OR cat:[\w.-]+)*\)", CATEGORIES)
+    assert categories is not None and "cat:quant-ph" in CATEGORIES
+    for name, track in TRACKS.items():
+        query = track.arxiv_query()
+        phrases, sep, tail = query.rpartition(" AND ")
+        assert sep and tail == CATEGORIES, name  # the category filter restricts every phrase
+        assert phrases.startswith("(") and phrases.endswith(")"), name
+        terms = phrases[1:-1].split(" OR ")
+        assert terms == [f'abs:"{phrase}"' for phrase in track.phrases], name
+        assert all('"' not in phrase and " AND " not in phrase for phrase in track.phrases), name
 
 
 def test_label_rules() -> None:
@@ -217,3 +227,205 @@ def test_replay_seeds_reports_track_accuracy(fake_repo: Path) -> None:
     result = replay_seeds(fake_repo)
     assert result["checked"] == 1
     assert result["matched"] == 1
+
+
+# --- paging, overlap and idempotent runs --------------------------------------------------------
+
+
+class PagedClient:
+    """Serves a newest-first result list in pages, like the arXiv API with sortBy=submittedDate."""
+
+    def __init__(self, papers: list[Paper]) -> None:
+        self.papers = sorted(papers, key=lambda p: p.published, reverse=True)
+        self.calls: list[tuple[int, int]] = []
+
+    def search(self, query: str, max_results: int = 50, start: int = 0) -> list[Paper]:
+        self.calls.append((start, max_results))
+        return self.papers[start : start + max_results]
+
+
+def _daily(count: int, newest: str = "2026-10-18", per_day: int = 2) -> list[Paper]:
+    day0 = dt.date.fromisoformat(newest)
+    return [
+        _paper(f"2610.{50000 + i:05d}", f"Dihedral coset note {i}", "Coset states.", (day0 - dt.timedelta(days=i // per_day)).isoformat())
+        for i in range(count)
+    ]
+
+
+def _state(root: Path) -> dict:
+    return json.loads((root / "research" / "audits" / "arxiv_collisions.json").read_text())
+
+
+def test_run_pages_until_results_are_older_than_since(fake_repo: Path) -> None:
+    corpus = Corpus(fake_repo)
+    corpus.refresh()
+    papers = _daily(250)
+    since = "2026-07-20"
+    client = PagedClient(papers)
+    report = run(fake_repo, client, corpus, since=since, tracks={"dcp": TRACKS["dcp"]}, page_size=100, today="2026-10-19")
+    assert client.calls == [(0, 100), (100, 100)]  # the second page reaches past `since`, so no third
+    in_range = {p.arxiv_id for p in papers if p.published >= since}
+    assert len(in_range) == 182 and set(_state(fake_repo)["papers"]) == in_range
+    assert report.truncated == {}
+
+
+def test_hitting_the_page_cap_is_recorded_and_reported(fake_repo: Path) -> None:
+    corpus = Corpus(fake_repo)
+    corpus.refresh()
+    papers = _daily(250)
+    since = "2026-07-20"
+    report = run(fake_repo, PagedClient(papers), corpus, since=since, tracks={"dcp": TRACKS["dcp"]},
+                 page_size=50, max_pages=2, today="2026-10-19")
+    oldest = min(p.published for p in papers[:100])
+    assert report.truncated["dcp"]["oldest_seen"] == oldest
+    gaps = _state(fake_repo)["gaps"]
+    assert gaps == [{"track": "dcp", "since": since, "until": oldest, "found_on": "2026-10-19"}]
+    digest = (fake_repo / "research" / "audits" / "ARXIV_WATCH.md").read_text()
+    assert "Incomplete coverage" in digest and f"| dcp | {since} to {oldest} |" in digest
+    # A backfill that is not cut short closes the gap.
+    again = run(fake_repo, PagedClient(papers), corpus, since=since, tracks={"dcp": TRACKS["dcp"]},
+                page_size=100, max_pages=5, today="2026-10-20")
+    assert again.truncated == {} and again.new == 82
+    assert _state(fake_repo)["gaps"] == []
+    assert "Incomplete coverage" not in (fake_repo / "research" / "audits" / "ARXIV_WATCH.md").read_text()
+
+
+def test_paging_goes_through_the_paced_client(fake_repo: Path) -> None:
+    urls: list[str] = []
+    sleeps: list[float] = []
+    empty = b'<feed xmlns="http://www.w3.org/2005/Atom"></feed>'
+
+    class Response:
+        def __init__(self, body: bytes) -> None:
+            self.body = body
+
+        def read(self) -> bytes:
+            return self.body
+
+        def __enter__(self):
+            return self
+
+        def __exit__(self, *exc) -> None:
+            return None
+
+    def opener(request, timeout=0):
+        urls.append(request.full_url)
+        start = parse_qs(urlparse(request.full_url).query)["start"][0]
+        return Response(FIXTURE.read_bytes() if start == "0" else empty)
+
+    corpus = Corpus(fake_repo)
+    corpus.refresh()
+    client = Client(opener=opener, sleep=sleeps.append, delay=3.0)
+    # The fixture's five entries reach back to 2025-12-01, so a full page asks for the next one.
+    run(fake_repo, client, corpus, since="2025-06-01", tracks={"dcp": TRACKS["dcp"]}, page_size=5, today="2026-10-19")
+    assert [parse_qs(urlparse(u).query)["start"] for u in urls] == [["0"], ["5"]]
+    assert sleeps == [3.0]
+
+
+def test_paper_announced_after_the_last_run_is_still_recorded(fake_repo: Path) -> None:
+    corpus = Corpus(fake_repo)
+    corpus.refresh()
+    tracks = {"dcp": TRACKS["dcp"]}
+    early = _paper("2610.00001", "Dequantizing the dihedral coset problem", "An efficient classical algorithm.", "2026-10-14")
+    run(fake_repo, FakeClient([early]), corpus, tracks=tracks, today="2026-10-19")
+    # Submitted Friday 2026-10-16 after the cutoff, so first listed after the Monday run.
+    friday = _paper("2610.99999", "Dequantizing dihedral cosets again", "An efficient classical algorithm.", "2026-10-16")
+    report = run(fake_repo, FakeClient([early, friday]), corpus, tracks=tracks, today="2026-10-26")
+    assert report.new == 1
+    state = _state(fake_repo)
+    assert "2610.99999" in state["papers"]
+    assert state["papers"]["2610.00001"]["first_seen"] == "2026-10-19"  # seen papers are not re-reported
+
+
+def test_run_without_new_papers_leaves_the_outputs_untouched(fake_repo: Path) -> None:
+    corpus = Corpus(fake_repo)
+    corpus.refresh()
+    papers = [_paper("2610.11111", "Dihedral coset note", "Coset states.", "2026-10-15")]
+    run(fake_repo, FakeClient(papers), corpus, tracks={"dcp": TRACKS["dcp"]}, today="2026-10-19")
+    paths = [fake_repo / "research" / "audits" / name for name in ("arxiv_collisions.json", "ARXIV_WATCH.md")]
+    before = [path.read_bytes() for path in paths]
+    report = run(fake_repo, FakeClient(papers), corpus, tracks={"dcp": TRACKS["dcp"]}, today="2026-10-26")
+    assert report.new == 0
+    assert [path.read_bytes() for path in paths] == before  # so the weekly job opens no pull request
+
+
+# --- labels ---------------------------------------------------------------------------------------
+
+# Titles and sentences from papers in research/audits/arxiv_collisions.json (2026-10-18 run).
+LABEL_CASES = [
+    # Positive quantum results whose wording tripped the old kill cues ("lower bound", "limitation", ...).
+    ("2609.35656", "The power of oracle access: Optimal sample and query complexity of the abelian state hidden subgroup problem",
+     "In the query model, we give a time-efficient quantum algorithm using O(log(|G/H|)/sqrt(eps)) forward and inverse "
+     "queries, and prove a matching lower bound which holds even in the stronger conjugate-query setting.",
+     ["nonabelian_hsp"], "possible-scoop"),
+    ("2609.38060", "Classical Verification of Quantum Computation with Quasilinear Resources, from Compiled Nonlocal Games",
+     "This is achieved by constructing a new computational self-test for certifying the prover's quantum state and using "
+     "it to dequantize the efficient verification protocol of Broadbent (ToC 2018).",
+     ["lattice"], "related"),
+    ("2610.00502", "Quantum Algorithms for OPI Variants Beyond Locality and Classical Decodability",
+     "To date, applications that have not been dequantized have relied on efficient classical decoders. We also give an "
+     "efficient classical algorithm under a stronger three-fold multiplication property, leaving intermediate regimes "
+     "as candidates for quantum advantage.",
+     ["dqi_opi"], "possible-scoop"),
+    ("2610.03566", "Gibbs state preparation through quantum decoding",
+     "We propose a Gibbs state preparation algorithm that exploits algebraic structure in the Hamiltonian. However, we "
+     '"dequantize" this strategy for commuting Hamiltonians, contributing a classical rejection sampler.',
+     ["dqi_opi", "bpqm_gibbs"], "possible-scoop"),
+    ("2610.03645", "Exponential quantum space advantage in random data streams",
+     "We show two unconditional quantum space advantages in the random-order streaming model. Our lower bound is shown "
+     "using density-restoring partitions.",
+     ["dqi_opi"], "possible-scoop"),
+    ("2610.04597", "Efficient Quantum State Identity Testing",
+     "We present two quantum algorithms with complementary guarantees on circuit depth and sample complexity. We also "
+     "prove a matching sample complexity lower bound for any quantum algorithm with failure probability at most delta.",
+     ["representation"], "possible-scoop"),
+    ("2610.16827", "The Quantum Character Transform",
+     "I give complementary quantum algorithms for class convolution based on direct class-sum block encoding, as well as "
+     "characterizing the central information used in hidden-subgroup problems, including its limitations for graph isomorphism.",
+     ["nonabelian_hsp"], "possible-scoop"),
+    # A cap on DQI's margin over classical completion is kill-like even though it mentions quantum advantage.
+    ("2610.06753", "Discovering New Problems for Decoded Quantum Interferometry",
+     "It is hard to tell which problems could give it a quantum advantage. We prove that under worst-case Hamming decoding "
+     "DQI's guarantee can exceed Prange completion by at most (sqrt(2)-1)/2, so no candidate in this setting can exceed "
+     "OPI's margin.",
+     ["dqi_opi"], "possible-kill"),
+    # Kills: a classical algorithm framed in the title, or a stated no-advantage result.
+    ("2609.40250", "An (almost) efficient classical algorithm for sampling from typical Gibbs states",
+     "Gibbs state preparation has emerged as a potential avenue for quantum advantage. Here, we give strong evidence "
+     "against an exponential quantum advantage in Gibbs sampling.",
+     ["bpqm_gibbs"], "possible-kill"),
+    ("2609.40302", "Solving Sparse SDPs in Sublinear Time: A Classical Algorithm Inspired by the Quantum OR Lemma",
+     "We give the first sublinear-time classical solvers for sparse semidefinite programs. This suggests a quartic "
+     "quantum speedup when m is close to n.",
+     ["bpqm_gibbs"], "possible-kill"),
+    ("2609.40036", "Cycle Codes and Decoded Quantum Interferometry",
+     "However, these no-go results rely on minimum distance assumptions that underestimate actual DQI performance. "
+     "These bounds rule out quantum advantage in the regimes we analyze.",
+     ["dqi_opi"], "possible-kill"),
+    # Scoops that should stay scoops.
+    ("2609.40260", "Quantum Algorithms for Minimum Generating Set",
+     "In this paper, we present a polynomial-time quantum algorithm for computing a minimum-sized generating set.",
+     ["representation"], "possible-scoop"),
+    ("2610.01902", "Exponential quantum advantages for decoded quantum interferometry in the streaming setting",
+     "Any classical algorithm that produces an answer satisfying just 76% of the constraints requires polynomial space.",
+     ["dqi_opi"], "possible-scoop"),
+    ("2609.35101", "From Simple Sources to Quantum Advantage: Homomorphic Polynomial Transduction via Relative Decoding",
+     "We recast this approach as quantum state transduction through algebra homomorphisms.",
+     ["dqi_opi"], "possible-scoop"),
+    # Classical hardness is not a classical win.
+    ("2609.40310", "Planted Cliques and Quantum Symmetry-Adapted Measurements",
+     "Detection is statistically possible but conjectured hard for polynomial-time classical algorithms.",
+     ["representation"], "related"),
+    # Generic negative results for quantum algorithms.
+    ("2610.90001", "Query lower bounds for the dihedral coset problem",
+     "We prove that any quantum algorithm requires exponentially many coset states.", ["dcp"], "possible-kill"),
+    ("2610.90002", "No quantum speedup for hidden shifts of bent functions",
+     "We study hidden shift problems for quantum computers.", ["hidden_shift"], "possible-kill"),
+    ("2610.90003", "Notes on dihedral coset states",
+     "Quantum algorithms with superpolynomial speed-ups motivate this survey of coset states.", ["dcp"], "related"),
+]
+
+
+@pytest.mark.parametrize(("arxiv_id", "title", "abstract", "tracks", "expected"), LABEL_CASES, ids=[c[0] for c in LABEL_CASES])
+def test_labels_on_committed_papers(arxiv_id: str, title: str, abstract: str, tracks: list[str], expected: str) -> None:
+    assert label_for(_paper(arxiv_id, title, abstract), tracks, cited=False)[0] == expected

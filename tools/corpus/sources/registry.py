@@ -8,13 +8,17 @@ from typing import Any, Callable
 
 from tools.corpus.docs import Doc, flatten, read_json, unique_ids, words
 
-_ID_LINE = re.compile(r'^\s*"id":\s*"((?:[^"\\]|\\.)*)"', re.MULTILINE)
+_ID_LINE = re.compile(r'^[ \t]*"id":[ \t]*"((?:[^"\\]|\\.)*)"', re.MULTILINE)
 
 
 def _id_lines(text: str) -> dict[str, int]:
+    """1-based line of the first `"id": "..."` line for each id, in one pass over the text."""
     lines: dict[str, int] = {}
+    line, position = 1, 0
     for match in _ID_LINE.finditer(text):
-        lines.setdefault(match.group(1), text.count("\n", 0, match.start()) + 1)
+        line += text.count("\n", position, match.start())
+        position = match.start()
+        lines.setdefault(match.group(1), line)
     return lines
 
 
@@ -38,6 +42,8 @@ def _negative(record: dict[str, Any]) -> tuple[str, str, str, str, dict[str, Any
 
 def _quarantined(record: dict[str, Any]) -> tuple[str, str, str, str, dict[str, Any]]:
     original = record.get("original_record") or {}
+    if not isinstance(original, dict):  # a free-text note instead of the original record
+        original = {"claim": flatten(original, 2000)}
     claim = str(original.get("claim", ""))
     reason = str(original.get("reason_invalid", ""))
     retraction = flatten(record.get("retraction_reasons"), 2000)
@@ -115,14 +121,16 @@ PARSERS: dict[str, Callable[[dict[str, Any]], tuple[str, str, str, str, dict[str
 }
 
 
-def parse(root: Path, rel: str) -> list[Doc]:
+def parse(root: Path, rel: str, issues: list[str] | None = None) -> list[Doc]:
+    """One document per record; a record that cannot be read is skipped and named in `issues`."""
+    issues = [] if issues is None else issues
     path = root / rel
     parser = PARSERS.get(path.name)
     if parser is None:
         return []
     records = read_json(path)
     if not isinstance(records, list):
-        return []
+        raise ValueError(f"expected a JSON list of records, found {type(records).__name__}")
     lines = _id_lines(path.read_text(encoding="utf-8"))
     # A claim repeated across many records is a template; title those records by their target.
     claim_counts: dict[str, int] = {}
@@ -131,15 +139,20 @@ def parse(root: Path, rel: str) -> list[Doc]:
             claim = str(record.get("claim_under_test", ""))
             claim_counts[claim] = claim_counts.get(claim, 0) + 1
     docs = []
-    for record in records:
-        if not isinstance(record, dict):
+    skipped: list[str] = []
+    for index, record in enumerate(records):
+        if not isinstance(record, dict) or ("id" not in record and parser is not _proof):
+            skipped.append(f"#{index} (not a record with an id)")
             continue
-        if "id" not in record and parser is not _proof:
-            continue
-        doc_id, kind, title, text, meta = parser(record)
-        if claim_counts.get(title, 0) > 3 and record.get("target_id"):
-            title = f"{record['target_id']}: {title}"
-            meta["templated"] = True
-        line = lines.get(str(record.get("id", "")), 0)
-        docs.append(Doc(doc_id, kind, rel, line, title[:300], text, meta))
+        try:
+            doc_id, kind, title, text, meta = parser(record)
+            if claim_counts.get(title, 0) > 3 and record.get("target_id"):
+                title = f"{record['target_id']}: {title}"
+                meta["templated"] = True
+            line = lines.get(str(record.get("id", "")), 0)
+            docs.append(Doc(doc_id, kind, rel, line, str(title)[:300], text, meta))
+        except Exception as error:  # noqa: BLE001 - skip one malformed record, keep the rest
+            skipped.append(f"{record.get('id', f'#{index}')} ({type(error).__name__}: {error})"[:200])
+    if skipped:
+        issues.append(f"skipped {len(skipped)} malformed record(s): " + "; ".join(skipped[:5])[:600])
     return unique_ids(docs)
